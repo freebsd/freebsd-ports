@@ -28,8 +28,8 @@ CONFIGURE_ARGS=		--with-libevent=${LOCALBASE} --program-prefix=
 
 PORTSCOUT=	ignore:1
 
-OPTIONS=	REPCACHED	"Enable data replication feature"	off \
-		SASL		"Enable SASL support"			off
+OPTIONS_DEFINE=	REPCACHED SASL DOCS
+REPCACHED_DESC=	Enable data replication feature
 
 MAN1=		memcached.1
 
@@ -45,7 +45,7 @@ PORTDOCS=	protocol.txt threads.txt
 CFLAGS+=       -fstack-protector
 .endif
 
-.if defined(WITH_REPCACHED)
+.if ${PORT_OPTIONS:MREPCACHED}
 # WWW: http://repcached.lab.klab.org/
 PATCH_SITES+=		${MASTER_SITE_SOURCEFORGE:C/%SUBDIR%/repcached\/repcached\/2.2-${PORTVERSION}/}
 PATCH_DIST_STRIP+=	-p1
@@ -53,7 +53,7 @@ PATCHFILES+=		repcached-2.2-${PORTVERSION}.patch.gz
 CONFIGURE_ARGS+=	--enable-replication --disable-threads
 .endif
 
-.if defined(WITH_SASL) && !defined(WITHOUT_SASL)
+.if ${PORT_OPTIONS:MSASL}
 LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--enable-sasl
 CFLAGS+=		-I${LOCALBASE}/include
@@ -68,7 +68,7 @@ post-configure:
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/memcached-tool ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/${MAN1} ${MAN1PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}

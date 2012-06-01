@@ -14,16 +14,16 @@ MASTER_SITES=	http://www.fluxcode.net/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to convert between the 4 common bases used in programming
 
-OPTIONS=	GTK2 "GTK+-2 support" off
+OPTIONS_DEFINE=	GTK2
 
 USE_GNOME=	pkgconfig
 
 PLIST_FILES=	bin/${PORTNAME}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GTK2)
-USE_GNOME+=	gtk12
+.if ${PORT_OPTIONS:MGTK2}
+USE_GNOME+=	gtk20
 GTK_CFLAGS=	`pkg-config --cflags gtk+-2.0`
 GTK_LIBS=	`pkg-config --libs gtk+-2.0`
 .else
@@ -43,4 +43,4 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -21,10 +21,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 
 		${PYTHON_PKGNAMEPREFIX}imaging>=0:${PORTSDIR}/graphics/py-imaging \
 		${PYXML}
 
-OPTIONS=	LXML "Enable lxml support" off \
-		REPORTLAB2 "Enable ReportLab2 support" off \
-		CHARDET "Enable chardet support" off \
-		PYGNOMEEXTRAS "Enable python-gnome-extras support" off
+OPTIONS_DEFINE=	LXML REPORTLAB2 CHARDET PYGNOMEEXTRAS
+LXML_DESC=	Enable lxml support
+REPORTLAB2_DESC=	Enable ReportLab2 support
+CHARDET_DESC=	Enable chardet support
+PYGNOMEEXTRAS_DESC=	Enable python-gnome-extras support
 
 USE_XZ=		yes
 USE_GNOME=	pygtk2
@@ -38,21 +39,21 @@ MAN1=		${PORTNAME}.1
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_LXML)
+.if ${PORT_OPTIONS:MLXML}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}lxml>=0:${PORTSDIR}/devel/py-lxml
 .endif
 
-.if defined(WITH_REPORTLAB2)
+.if ${PORT_OPTIONS:MREPORTLAB2}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}reportlab2>=2:${PORTSDIR}/print/py-reportlab2
 .else
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}reportlab>=1.19:${PORTSDIR}/print/py-reportlab
 .endif
 
-.if defined(WITH_CHARDET)
+.if ${PORT_OPTIONS:MCHARDET}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}chardet>=0:${PORTSDIR}/textproc/py-chardet
 .endif
 
-.if defined(WITH_PYGNOMEEXTRAS)
+.if ${PORT_OPTIONS:MPYGNOMEEXTRAS}
 USE_GNOME+=	pygnomeextras
 .endif
 
