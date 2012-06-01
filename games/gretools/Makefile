@@ -7,7 +7,7 @@
 
 PORTNAME=	gretools
 PORTVERSION=	1.2.4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games gnome
 MASTER_SITES=	http://www.cs.utexas.edu/~arvindn/gretools/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION:R}

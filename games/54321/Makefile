@@ -7,7 +7,7 @@
 
 PORTNAME=	54321
 PORTVERSION=	1.0.2001.11.16
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	http://www.nklein.com/products/54321/${PORTVERSION}/
 DISTNAME=	${PORTNAME}
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	llwang@infor.org
 COMMENT=	54321 is five games in four-, three-, or two-dimensions for one player
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_SDL=	image sdl
 USE_GMAKE=	yes

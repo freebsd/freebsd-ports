@@ -7,7 +7,7 @@
 
 PORTNAME=	xemacs-devel
 PORTVERSION=	${XEMACS_VER:S/-/./}
-PORTREVISION=	9
+PORTREVISION=	10
 PORTEPOCH=	1
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
@@ -26,10 +26,11 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* \
 RUN_DEPENDS+=	${LOCALBASE}/lib/xemacs/xemacs-packages/etc/enriched.doc:${PORTSDIR}/editors/xemacs-packages
 .if !defined(WITHOUT_X11)
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		compface.1:${PORTSDIR}/mail/faces
 USE_XORG+=	xbitmaps x11 ice xext xaw xt xmu
+CFLAGS+=	-I${LOCALBASE}/include/libpng15
 .endif
 
 XEMACS_MAJOR_VER?=	21

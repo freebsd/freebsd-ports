@@ -7,7 +7,7 @@
 
 PORTNAME=	frogatto
 PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.frogatto.com/files/
 
@@ -16,7 +16,8 @@ COMMENT=	An old-school 2D classic adventure platformer game
 
 NO_PACKAGE=	Package will be 144M, set FORCE_PACKAGE if you really want it
 
-LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
+		png15:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

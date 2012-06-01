@@ -41,7 +41,7 @@ do-install:	# empty
 .else					# master port
 
 PORTVERSION=	7.0.0
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	../releases/7/Fedora/source/SRPMS/

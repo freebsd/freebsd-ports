@@ -7,7 +7,7 @@
 
 PORTNAME=	libgnomecanvasmm
 PORTVERSION=	2.0.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF/gtkmm/OldFiles
 DIST_SUBDIR=	gnome2

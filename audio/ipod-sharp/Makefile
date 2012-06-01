@@ -7,6 +7,7 @@
 
 PORTNAME=	ipod-sharp
 PORTVERSION=	0.8.5
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.banshee.fm/${PORTNAME}/${PORTVERSION}/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	htmldoc
 PORTVERSION=	1.8.27
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_EASYSW}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
@@ -17,7 +17,7 @@ MAINTAINER=	jose@diasfernandes.pt
 COMMENT=	Converts HTML to PDF and/or PostScript
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg	\
-		png:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 
 OPTIONS=	HTMLDOCGUI "Build GUI front-end" off
 # .bz2 file is available since Aug 2, but we don't want to
@@ -36,7 +36,7 @@ MAN1=	htmldoc.1
 post-patch:
 	${REINPLACE_CMD} -e 's,@JPEG@ @ZLIB@ @PNG@ ,,' ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's|@LDFLAGS@|-L${LOCALBASE}/lib @LDFLAGS@|'	\
-	    -e 's|@JPEGINC@ @PNGINC@ @ZLIBINC@|-I${LOCALBASE}/include|' \
+	    -e 's|@JPEGINC@ @PNGINC@ @ZLIBINC@|-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15|' \
 		${WRKSRC}/Makedefs.in
 	# Remove redundant code:
 	${REINPLACE_CMD} -Ee 's,(md5|snprintf|rc4)\.o,,g'	\

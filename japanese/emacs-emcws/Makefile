@@ -7,7 +7,7 @@
 
 PORTNAME=	emcws
 PORTVERSION=	${EMACS_VER}
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	japanese editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
@@ -24,6 +24,8 @@ PATCHFILES+=		emacs-21.1-fontset.patch emacs-21.2-menu-encode.patch
 
 MAINTAINER=	nakaji@jp.freebsd.org
 COMMENT=	Emacs + Canna + Wnn + Sj3
+
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_EMACS=		yes
 EMACS_PORT_NAME=	emacs21

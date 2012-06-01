@@ -31,7 +31,7 @@ MAKE_JOBS_UNSAFE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PNG)
-LIB_DEPENDS+=	png:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 
 CONFIGURE_ARGS+=	--PNGLIBS="-L${LOCALBASE}/lib -lpng" \
 			--PNGINCL="-I${LOCALBASE}/include"

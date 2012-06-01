@@ -7,7 +7,7 @@
 
 PORTNAME=	edge
 PORTVERSION=	1.35
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/EDGE%20Source%20Code/${PORTVERSION} \
 		SF/${PORTNAME}/EDGE%20Binaries/${PORTVERSION}:wad
@@ -24,7 +24,7 @@ LICENSE_COMB=	dual
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 		GLEW.1:${PORTSDIR}/graphics/glew \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/Edge-${PORTVERSION}-source
 

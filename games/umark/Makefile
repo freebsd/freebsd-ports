@@ -7,7 +7,7 @@
 
 PORTNAME=	umark
 DISTVERSION=	2.0.0-Beta3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games benchmarks
 MASTER_SITES=	SF/ut2k3botbench/UMark%20for%20Linux/2.0.0%20Beta%203
 DISTNAME=	UMark-for-Linux-v${DISTVERSION:S/.//g}

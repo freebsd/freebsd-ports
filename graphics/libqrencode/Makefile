@@ -8,7 +8,7 @@
 
 PORTNAME=	libqrencode
 PORTVERSION=	3.3.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://fukuchi.org/works/qrencode/
 DISTNAME=	qrencode-${PORTVERSION}
@@ -16,7 +16,7 @@ DISTNAME=	qrencode-${PORTVERSION}
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A C library for encoding data in a QR Code symbol
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes

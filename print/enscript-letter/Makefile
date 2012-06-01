@@ -7,7 +7,7 @@
 
 PORTNAME=	enscript
 PORTVERSION=	1.6.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES+=	print
 MASTER_SITES=	http://www.codento.com/people/mtr/genscript/
 PKGNAMESUFFIX=	-${PAPERSIZE}

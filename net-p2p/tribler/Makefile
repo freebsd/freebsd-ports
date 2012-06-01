@@ -7,6 +7,7 @@
 
 PORTNAME=	tribler
 PORTVERSION=	5.5.24
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 #MASTER_SITES=	http://dl.tribler.org/
 MASTER_SITES=	GENTOO/distfiles \

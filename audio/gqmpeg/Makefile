@@ -7,7 +7,7 @@
 
 PORTNAME=	gqmpeg
 PORTVERSION=	0.20.0
-PORTREVISION=	9
+PORTREVISION=	10
 PORTEPOCH=	1
 CATEGORIES+=	audio
 MASTER_SITES=	SF
@@ -15,6 +15,7 @@ MASTER_SITES=	SF
 MAINTAINER?=	lyngbol@wheel.dk
 COMMENT?=	Another gtk-based MP3 frontend
 
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	ogg123:${PORTSDIR}/audio/vorbis-tools \
 		xmp:${PORTSDIR}/audio/xmp
 
@@ -25,11 +26,13 @@ RUN_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123
 .endif
 
 USE_GNOME=	gdkpixbuf
+USE_GETTEXT=	yes
 WANT_GNOME=	yes
+USE_GETTETX=	yes
 USE_AUTOTOOLS=	autoconf213 libtool
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 MAN1=		gqmpeg.1
 

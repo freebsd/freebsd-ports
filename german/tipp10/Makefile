@@ -7,6 +7,7 @@
 
 PORTNAME=	tipp10
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	german
 MASTER_SITES=	http://www.tipp10.com/en/download/
 DISTNAME=	tipp10_source_v2-1-0

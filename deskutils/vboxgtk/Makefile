@@ -7,7 +7,7 @@
 
 PORTNAME=	vboxgtk
 PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils emulators gnome
 MASTER_SITES=	SF
 

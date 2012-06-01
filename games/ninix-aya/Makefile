@@ -7,6 +7,7 @@
 
 PORTNAME=	ninix-aya
 PORTVERSION=	4.3.9
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	ninix-aya/54987
@@ -18,7 +19,7 @@ COMMENT=	Ninix-aya is a compatible with desktop mascot program "Ukagaka"
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		${PYTHON_SITELIBDIR}/chardet/__init__.py:${PORTSDIR}/textproc/py-chardet \
 		${PYNUMPY} \

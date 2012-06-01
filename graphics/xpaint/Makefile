@@ -7,13 +7,14 @@
 
 PORTNAME=	xpaint
 PORTVERSION=	2.9.9
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/sf-${PORTNAME}/sf-${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A simple paint program
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		openjpeg:${PORTSDIR}/graphics/openjpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \

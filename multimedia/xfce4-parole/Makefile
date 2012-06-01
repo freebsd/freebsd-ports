@@ -7,7 +7,7 @@
 
 PORTNAME=	parole
 PORTVERSION=	0.2.0.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia xfce
 MASTER_SITES=	XFCE/src/apps/parole/0.2/
 DIST_SUBDIR=	xfce4

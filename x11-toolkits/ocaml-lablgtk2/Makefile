@@ -6,7 +6,7 @@
 
 PORTNAME=	lablgtk2
 PORTVERSION=	2.14.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://forge.ocamlcore.org/frs/download.php/561/ \
 		ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/olabl/ \

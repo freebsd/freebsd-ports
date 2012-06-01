@@ -7,6 +7,7 @@
 
 PORTNAME=	pdfjam
 PORTVERSION=	2.08
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www2.warwick.ac.uk/fac/sci/statistics/staff/academic/firth/software/pdfjam/ \
 		ftp://ftp.stack.nl/pub/users/johans/pdfjam/

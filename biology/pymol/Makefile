@@ -6,6 +6,7 @@
 
 PORTNAME=	pymol
 PORTVERSION=	${VERSION}.${SVNREVISION}
+PORTREVISION=	1
 CATEGORIES=	biology python
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|maho/pymol|}
 
@@ -15,7 +16,7 @@ COMMENT=	Free and Open-Source molecular modeling system
 BUILD_DEPENDS=	${PYNUMERIC}
 RUN_DEPENDS=	${PYNUMERIC} \
 		${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/py-Pmw
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 VERSION=	1.5.0.1

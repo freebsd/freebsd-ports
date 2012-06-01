@@ -7,7 +7,7 @@
 
 PORTNAME=	gltron
 PORTVERSION=	0.70
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/${PORTVERSION}
 EXTRACT_SUFX=	-source.tar.gz
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	-source.tar.gz
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	A 3D worm game for two players for X Window System
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_GL=		gl
 USE_SDL=	sdl sound

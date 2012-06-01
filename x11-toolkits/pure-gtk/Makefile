@@ -7,7 +7,7 @@
 
 PORTNAME=	pure-gtk
 PORTVERSION=	0.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	lichray@gmail.com

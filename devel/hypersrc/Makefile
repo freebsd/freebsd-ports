@@ -8,7 +8,7 @@
 
 PORTNAME=	hypersrc
 PORTVERSION=	5.4.21
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.jimbrooks.org/hypersrc/%SUBDIR%/ \
 		http://www.home.earthlink.net/~jebrooks1/ftp/hypersrc/%SUBDIR%/

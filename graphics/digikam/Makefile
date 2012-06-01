@@ -7,7 +7,7 @@
 
 PORTNAME=	digikam
 DISTVERSION=	0.9.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics kde
 MASTER_SITES=	SF
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		kexiv2.5:${PORTSDIR}/graphics/libkexiv2 \
 		lcms.1:${PORTSDIR}/graphics/lcms \
 		kdcraw.4:${PORTSDIR}/graphics/libkdcraw \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		jasper.4:${PORTSDIR}/graphics/jasper
 
@@ -34,6 +34,7 @@ USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
+CFLAGS+=	-I${LOCALBASE}/include/libpng15
 CONFIGURE_ARGS=	--without-included-sqlite3
 
 MAN1=		digitaglinktree.1

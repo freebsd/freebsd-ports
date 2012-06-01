@@ -6,7 +6,7 @@
 
 PORTNAME=	protomol
 PORTVERSION=	2.0.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	biology
 MASTER_SITES=	SF/${PORTNAME}/ProtoMol/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-tar.gz
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	# nada
 MAINTAINER=	sangwoos@gmail.com
 COMMENT=	OO, component based, framework for molecular dynamics (MD) simulations
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 

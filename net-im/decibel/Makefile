@@ -6,7 +6,7 @@
 
 PORTNAME=	decibel
 PORTVERSION=	0.5.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	net-im
 MASTER_SITES=	http://decibel.kde.org/fileadmin/downloads/decibel/releases/
 

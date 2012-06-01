@@ -7,11 +7,14 @@
 
 PORTNAME=	qpxtool
 DISTVERSION=	0.7.1_002
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION:C/\.[^.]*$/.x/}/${DISTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A GUI for testing CD/DVD quality and transfer rate
+
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

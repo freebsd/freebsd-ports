@@ -7,7 +7,7 @@
 
 PORTNAME=	solarwolf
 PORTVERSION=	1.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.pygame.org/shredwheat/solarwolf/
 

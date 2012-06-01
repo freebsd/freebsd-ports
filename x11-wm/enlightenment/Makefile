@@ -7,6 +7,7 @@
 
 PORTNAME=	enlightenment
 PORTVERSION=	0.16.999.55225
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	http://download.enlightenment.org/snapshots/2010-12-03/ \

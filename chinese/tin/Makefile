@@ -7,7 +7,7 @@
 #
 
 # Don't reset PORTREVISION and keep bumping it even if PORTVERSION is changed.
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	chinese
 
 MAINTAINER=	ports@FreeBSD.org

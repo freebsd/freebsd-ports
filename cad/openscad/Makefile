@@ -7,7 +7,7 @@
 
 PORTNAME=	openscad
 PORTVERSION=	2011.12
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	https://cloud.github.com/downloads/openscad/openscad/
 DISTNAME=	openscad-${PORTVERSION}.src

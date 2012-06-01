@@ -7,7 +7,7 @@
 
 PORTNAME=		xmltex
 PORTVERSION=		1.9
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=		print
 MASTER_SITES=		ftp://ftp.ctan.org/tex-archive/%SUBDIR%/ \
 			${MASTER_SITE_TEX_CTAN}
@@ -21,7 +21,7 @@ COMMENT=		A non-validating XML parser, written in TeX
 BUILD_DEPENDS=		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 			${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 			latex:${PORTSDIR}/print/teTeX-base
-LIB_DEPENDS=		png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=		png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS=		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 			${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 			latex:${PORTSDIR}/print/teTeX-base

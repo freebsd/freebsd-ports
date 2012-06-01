@@ -32,13 +32,13 @@ IGNORE=		cannot build OpenCV and gavl plugins simultaneously
 .endif
 
 .if defined(BUILDING_FREI0R_OPENCV)
-PORTREVISION=	1
+PORTREVISION=	2
 COMMENT=	Frei0r OpenCV plugins
 PKGNAMESUFFIX=  -plugins-opencv
 LIB_DEPENDS+=	opencv_legacy.2:${PORTSDIR}/graphics/opencv
 FREI0R_PLUGINS=	facebl0r facedetect
 .elif defined(BUILDING_FREI0R_GAVL)
-PORTREVISION=	1
+PORTREVISION=	2
 COMMENT=	Frei0r gavl plugins
 PKGNAMESUFFIX=  -plugins-gavl
 LIB_DEPENDS+=	gavl.1:${PORTSDIR}/multimedia/gavl

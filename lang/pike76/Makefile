@@ -7,7 +7,7 @@
 
 PORTNAME=	pike76
 PORTVERSION=	7.6.112
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/beta/${PORTVERSION}/ \
 		http://pike.ida.liu.se/pub/pike/beta/${PORTVERSION}/ \

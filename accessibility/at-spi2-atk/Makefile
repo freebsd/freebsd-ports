@@ -8,6 +8,7 @@
 
 PORTNAME=	at-spi2-atk
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	accessibility x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

@@ -7,7 +7,7 @@
 
 PORTNAME=	qmailmrtg7
 PORTVERSION=	4.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail net-mgmt
 MASTER_SITES=	http://www.inter7.com/qmailmrtg7/
 

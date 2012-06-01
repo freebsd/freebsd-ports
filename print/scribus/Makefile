@@ -8,6 +8,7 @@
 
 PORTNAME=	scribus
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	print editors
 MASTER_SITES=	SF \
 		http://www.scribus.net/downloads/${PORTVERSION}/
@@ -17,7 +18,7 @@ COMMENT=	A comprehensive desktop publishing program
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		lcms.1:${PORTSDIR}/graphics/lcms \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		cups.2:${PORTSDIR}/print/cups-client \
 		freetype.9:${PORTSDIR}/print/freetype2 \

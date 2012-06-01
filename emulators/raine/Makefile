@@ -7,7 +7,7 @@
 
 PORTNAME=	raine
 PORTVERSION=	0.43.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	emulators games
 MASTER_SITES=	http://www.rainemu.com/html/archive/
 DISTNAME=	${PORTNAME}s-${PORTVERSION}
@@ -17,7 +17,7 @@ COMMENT=	Arcade Emulator for M68000, M68020 and Z80 based hardware
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/nasm:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		vga.1:${PORTSDIR}/graphics/svgalib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

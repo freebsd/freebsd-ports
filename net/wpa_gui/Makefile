@@ -7,7 +7,7 @@
 
 PORTNAME=	wpa_gui
 PORTVERSION=	0.5.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://hostap.epitest.fi/releases/
 DISTNAME=	wpa_supplicant-${PORTVERSION}

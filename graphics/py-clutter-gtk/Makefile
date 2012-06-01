@@ -8,6 +8,7 @@
 
 PORTNAME=	clutter
 PORTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://www.clutter-project.org/sources/pyclutter-gtk/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

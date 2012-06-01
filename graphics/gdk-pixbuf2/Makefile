@@ -7,7 +7,7 @@
 
 PORTNAME?=	gdk-pixbuf
 PORTVERSION=	2.23.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	graphics
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/gdk-pixbuf/${PORTVERSION:R}
@@ -64,7 +64,7 @@ PLIST_SUB+=	JPEG="@comment "
 .endif
 
 .if !defined(WITHOUT_PNG)
-LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 PLIST_SUB+=	PNG=""
 .else
 CONFIGURE_ARGS+=--without-libpng

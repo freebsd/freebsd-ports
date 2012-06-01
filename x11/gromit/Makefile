@@ -7,7 +7,7 @@
 
 PORTNAME=	gromit
 PORTVERSION=	20041213
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11
 MASTER_SITES=	http://www.home.unix-ag.org/simon/gromit/
 

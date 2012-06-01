@@ -7,7 +7,7 @@
 
 PORTNAME=	traindirector
 PORTVERSION=	3.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.backerstreet.com/traindir/
 DISTNAME=	tdir36src

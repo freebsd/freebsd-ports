@@ -7,14 +7,14 @@
 
 PORTNAME=	freesynd
 PORTVERSION=	0.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	FreeSynd GPLed reimplementation of the classic Bullfrog game Syndicate
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_GMAKE=	yes
 USE_ZIP=	yes

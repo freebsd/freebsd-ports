@@ -7,7 +7,7 @@
 
 PORTNAME=	xtexsh
 PORTVERSION=	1.4.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	print
 MASTER_SITES=	http://www.mat.univie.ac.at/~gerald/ftp/xtexsh/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}

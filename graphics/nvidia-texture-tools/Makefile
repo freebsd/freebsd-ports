@@ -7,6 +7,7 @@
 
 PORTNAME=	nvidia-texture-tools
 DISTVERSION=	2.0.8-1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE \
 		http://mirror.amdmi3.ru/distfiles/
@@ -14,7 +15,7 @@ MASTER_SITES=	GOOGLE_CODE \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Texture Tools with support for DirectX 10 texture formats
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR
@@ -23,8 +24,8 @@ USE_CMAKE=	yes
 CMAKE_ARGS=	-DNVTT_SHARED=TRUE
 MAKE_JOBS_SAFE=	yes
 
-CFLAGS+=	-fPIC
-CXXFLAGS+=	-fPIC
+CFLAGS+=	-fPIC -I${LOCALBASE}/include/libpng15
+CXXFLAGS+=	-fPIC -I${LOCALBASE}/include/libpng15
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

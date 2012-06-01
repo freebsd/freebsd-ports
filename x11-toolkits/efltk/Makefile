@@ -7,14 +7,14 @@
 
 PORTNAME=	efltk
 PORTVERSION=	2.0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/ede/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extended Fast Light Toolkit
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -31,6 +31,7 @@ MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/lib"
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>

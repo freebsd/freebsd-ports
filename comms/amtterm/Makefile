@@ -7,6 +7,7 @@
 
 PORTNAME=	amtterm
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	https://www.kraxel.org/releases/${PORTNAME}/
 

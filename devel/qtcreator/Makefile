@@ -7,6 +7,7 @@
 
 PORTNAME=	qtcreator
 PORTVERSION=	2.5.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.qt.nokia.com/qtcreator/
 DISTNAME=	qt-creator-${PORTVERSION}-src

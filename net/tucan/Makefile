@@ -7,6 +7,7 @@
 
 PORTNAME=	tucan
 PORTVERSION=	0.3.10
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://forja.rediris.es/frs/download.php/2051/ \
 		http://build-tucan-doc.googlecode.com/files/

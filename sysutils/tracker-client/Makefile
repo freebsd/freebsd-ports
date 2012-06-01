@@ -8,7 +8,7 @@
 
 PORTNAME=	tracker
 PORTVERSION=	0.6.95
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX?=	-client
@@ -92,7 +92,7 @@ CONFIGURE_ARGS+=	--disable-libtrackergtk --disable-gui \
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|libpng|libpng14|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|libpng|libpng15|' ${WRKSRC}/configure
 
 post-build:
 .if defined(TRACKER_SLAVE) && ${TRACKER_SLAVE}=="libtrackergtk"

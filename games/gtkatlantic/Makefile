@@ -7,6 +7,7 @@
 
 PORTNAME=	gtkatlantic
 PORTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://download.tuxfamily.org/gtkatlantic/downloads/v0.4/
 

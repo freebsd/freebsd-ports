@@ -7,14 +7,14 @@
 
 PORTNAME=	magicpoint
 PORTVERSION=	1.13a
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES?=	misc
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An X11-based presentation tool
 
-LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png \
 		mng:${PORTSDIR}/graphics/libmng
 RUN_DEPENDS+=	pnmscale:${PORTSDIR}/graphics/netpbm
 
@@ -78,7 +78,7 @@ CONFIGURE_ARGS+=	--disable-imlib
 post-patch:
 	${REINPLACE_CMD} -e 's|-lungif|-lgif|' \
 		-e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
-		${WRKSRC}/configure ${WRKSRC}/image/png.c
+		${WRKSRC}/configure
 
 post-configure:
 	cd ${WRKSRC}/contrib/xmindpath && \

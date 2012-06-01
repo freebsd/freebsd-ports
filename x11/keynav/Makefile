@@ -7,6 +7,7 @@
 
 PORTNAME=	keynav
 DISTVERSION=	0.20110708.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://semicomplete.googlecode.com/files/

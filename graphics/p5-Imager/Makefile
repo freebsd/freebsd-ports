@@ -7,6 +7,7 @@
 
 PORTNAME=	Imager
 PORTVERSION=	0.90
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,7 +21,7 @@ LICENSE_COMB=	dual
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		gif.5:${PORTSDIR}/graphics/giflib \
 		jpeg:${PORTSDIR}/graphics/jpeg \
-		png:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		t1:${PORTSDIR}/devel/t1lib \
 		tiff:${PORTSDIR}/graphics/tiff
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	notify-osd
 PORTVERSION=	0.9.29
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpadlibrarian.net/43419242/ \
 		CRITICAL

@@ -7,6 +7,7 @@
 
 PORTNAME=	jrrd
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	SF/opennms/JRRD/stable-1.0
 

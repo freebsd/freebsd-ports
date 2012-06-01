@@ -52,7 +52,7 @@ LDFLAGS+=	${PTHREAD_LIBS}
 .endif
 
 .if defined(WITH_PNG)
-LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=	--with-libpng=${PREFIX}
 .else
 CONFIGURE_ARGS+=	--disable-png

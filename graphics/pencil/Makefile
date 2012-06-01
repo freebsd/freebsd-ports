@@ -7,7 +7,7 @@
 
 PORTNAME=	pencil
 PORTVERSION=	0.4.4b
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}-planner/Pencil/${PORTVERSION}eta
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFFIX}
@@ -18,7 +18,7 @@ COMMENT=	Pencil - a traditional 2D animation software
 LICENSE=	GPLv2
 
 LIB_DEPENDS+=	ming:${PORTSDIR}/graphics/ming \
-		png:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2 \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		iconv:${PORTSDIR}/converters/libiconv \

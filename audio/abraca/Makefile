@@ -7,6 +7,7 @@
 
 PORTNAME=	abraca
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://cloud.github.com/downloads/Abraca/Abraca/
 

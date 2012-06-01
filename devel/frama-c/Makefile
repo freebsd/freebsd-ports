@@ -7,7 +7,9 @@
 
 PORTNAME=		frama-c
 DISTVERSIONPREFIX=	Nitrogen-
+PORTREVISION=	1
 DISTVERSION=		20111001
+PORTREVISION=	1
 CATEGORIES=		devel
 MASTER_SITES=		http://frama-c.com/download/ LOCAL/bf
 

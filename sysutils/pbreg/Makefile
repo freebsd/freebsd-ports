@@ -7,6 +7,7 @@
 
 PORTNAME=	pbreg
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.pcbsd.org/pub/software/ \
 		http://www.pcbsd.org/~kris/software/

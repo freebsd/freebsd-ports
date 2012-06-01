@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrellflynn
 PORTVERSION=	0.8
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/ \
 		http://horus.comlab.uni-rostock.de/flynn/

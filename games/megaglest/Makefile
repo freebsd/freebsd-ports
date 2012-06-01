@@ -7,7 +7,7 @@
 
 PORTNAME=	megaglest
 PORTVERSION=	3.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/current_release/
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}.3
@@ -17,7 +17,7 @@ COMMENT=	Open source 3D real-time strategy game
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		xerces-c.27:${PORTSDIR}/textproc/xerces-c2 \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS=	${DATADIR}/tutorials/basic_tutorial/basic_tutorial.xml:${PORTSDIR}/games/megaglest-data
@@ -33,6 +33,7 @@ USE_OPENAL=	al alut
 USE_SDL=	yes
 USE_WX=		2.8+
 
+CFLAGS+=	-I${LOCALBASE}/include/libpng15
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS=	EDITOR "Install MegaGlest Editor" off

@@ -7,7 +7,7 @@
 
 PORTNAME=	pyside-tools
 PORTVERSION=	0.2.13
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.pyside.org/files/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/

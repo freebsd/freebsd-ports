@@ -7,7 +7,7 @@
 
 PORTNAME=	sqlkit
 PORTVERSION=	0.9.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases python
 MASTER_SITES=	http://sqlkit.argolinux.org/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

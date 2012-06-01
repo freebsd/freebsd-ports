@@ -8,7 +8,7 @@
 
 PORTNAME=	abiword
 PORTVERSION=	2.8.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -18,7 +18,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An open-source, cross-platform WYSIWYG word processor
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		wv-1.2:${PORTSDIR}/textproc/wv \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		fribidi.3:${PORTSDIR}/converters/fribidi \

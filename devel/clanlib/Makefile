@@ -8,7 +8,7 @@
 
 PORTNAME=	clanlib
 PORTVERSION=	0.8.1
-PORTREVISION=	10
+PORTREVISION=	11
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.clanlib.org/download/releases-0.8/
@@ -19,12 +19,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform game SDK
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		mikmod:${PORTSDIR}/audio/libmikmod \
 		vorbis:${PORTSDIR}/audio/libvorbis
 
 WRKSRC=		${WRKDIR}/ClanLib-${PORTVERSION}
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15 ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes

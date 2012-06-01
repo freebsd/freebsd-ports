@@ -7,7 +7,7 @@
 
 PORTNAME=	openam
 PORTVERSION=	1.1.18
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://www.voxgratia.org/releases/
 DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}-src-

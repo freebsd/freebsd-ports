@@ -7,7 +7,7 @@
 
 PORTNAME=	grass
 PORTVERSION=	6.4.2
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	2
 CATEGORIES=	databases geography
 MASTER_SITES=	http://grass.osgeo.org/%SUBDIR%/ \
@@ -28,7 +28,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	gdal.17:${PORTSDIR}/graphics/gdal \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		proj.7:${PORTSDIR}/graphics/proj \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		fftw3.6:${PORTSDIR}/math/fftw3 \

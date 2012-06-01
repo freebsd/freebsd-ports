@@ -7,7 +7,7 @@
 
 PORTNAME=	kmancala
 PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games kde
 MASTER_SITES=	http://horinek.net/~dal/ \
 		LOCAL/makc

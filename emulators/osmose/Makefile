@@ -7,6 +7,7 @@
 
 PORTNAME=	osmose
 PORTVERSION=	0.9.96
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://bcz.asterope.fr/osmose/
 DISTNAME=	Osmose-${PORTVERSION:S/./-/g}-QT

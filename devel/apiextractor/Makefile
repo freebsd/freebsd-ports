@@ -7,7 +7,7 @@
 
 PORTNAME=	apiextractor
 PORTVERSION=	0.10.10
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.pyside.org/files/
 

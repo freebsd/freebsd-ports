@@ -1,17 +1,23 @@
-@unexec rm -f %D/bin/libpng14-config
 bin/libpng-config
-@exec ln -sf %f %D/bin/libpng14-config
-include/libpng/png.h
-@exec ln -sf libpng/%f %D/include/%f
-@unexec rm -f %D/include/%f
-include/libpng/pngconf.h
-@exec ln -sf libpng/%f %D/include/%f
-@unexec rm -f %D/include/%f
-include/libpng/pngpriv.h
+bin/libpng15-config
+include/libpng15/png.h
+include/libpng15/pngconf.h
+include/libpng15/pngdebug.h
+include/libpng15/pnginfo.h
+include/libpng15/pnglibconf.h
+include/libpng15/pngpriv.h
+include/libpng15/pngstruct.h
+include/png.h
+include/pngconf.h
+include/pnglibconf.h
 lib/libpng.a
 lib/libpng.so
-lib/libpng.so.%%SHLIB_VER%%
-libdata/pkgconfig/libpng14.pc
-@exec ln -sf %f %D/libdata/pkgconfig/libpng.pc
-@unexec rm -f %D/libdata/pkgconfig/libpng.pc
-@dirrm include/libpng
+libdata/pkgconfig/libpng15.pc
+libdata/pkgconfig/libpng.pc
+lib/libpng/libpng15-release.cmake
+lib/libpng/libpng15.cmake
+lib/libpng15.a
+lib/libpng15.so
+lib/libpng15.so.15
+@dirrm lib/libpng
+@dirrm include/libpng15

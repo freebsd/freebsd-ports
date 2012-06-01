@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-recordmydesktop
 PORTVERSION=	0.3.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia deskutils
 MASTER_SITES=	SF/recordmydesktop/gtk-recordMyDesktop/${PORTVERSION}
 

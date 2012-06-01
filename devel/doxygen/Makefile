@@ -7,6 +7,7 @@
 
 PORTNAME=	doxygen
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/ \
 		http://ftp.stack.nl/pub/users/dimitri/
@@ -19,7 +20,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake
-LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_BISON=	build
 USE_ICONV=	yes

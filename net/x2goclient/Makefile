@@ -6,7 +6,7 @@
 
 PORTNAME=	x2goclient
 DISTVERSION=	3.01-5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://code.x2go.org/releases/source/x2goclient/pre-git/
 DISTNAME=	${PORTNAME}_${DISTVERSION}

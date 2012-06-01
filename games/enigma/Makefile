@@ -7,7 +7,7 @@
 
 PORTNAME=	enigma
 PORTVERSION=	1.01
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	BERLIOS/enigma-game
 DISTNAME=	${PORTNAME}-${PORTVERSION}-64bit
@@ -15,7 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-64bit
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Enigma is a reimplementation of Oxyd, a puzzle game
 
-LIB_DEPENDS=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2
+LIB_DEPENDS=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2 \
+		png15:${PORTSDIR}/graphics/png
 BUILD_DEPENDS=	${LOCALBASE}/lib/libenet.a:${PORTSDIR}/net/enet
 
 USE_GMAKE=	yes
@@ -26,7 +27,7 @@ USE_SDL=	image mixer sdl ttf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-cxxlua \
 		--with-libintl-prefix="${LOCALBASE}"
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR}
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15 -I${LUA_INCDIR}
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
 MAKE_JOBS_SAFE=	yes
 

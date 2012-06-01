@@ -10,7 +10,7 @@ EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - "${DISTNAME}/source/${PORTNAME}-core/*" \
 
 .if ${PKGNAMESUFFIX} == "-core"
 LIB_DEPENDS+=		freetype.9:${PORTSDIR}/print/freetype2 \
-			png.6:${PORTSDIR}/graphics/png
+			png15:${PORTSDIR}/graphics/png
 .else
 PLIST=			${WRKDIR}/pkg-plist
 .endif
@@ -20,7 +20,7 @@ MAN6=	mupen64plus.6
 .endif
 
 .if ${PKGNAMESUFFIX} == "-video-rice"
-LIB_DEPENDS+=		png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=		png15:${PORTSDIR}/graphics/png
 .endif
 
 .if ${PKGNAMESUFFIX} != "-core"

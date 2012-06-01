@@ -7,6 +7,7 @@
 
 PORTNAME=	stjerm
 PORTVERSION=	0.15
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://stjerm-terminal.googlecode.com/files/
 

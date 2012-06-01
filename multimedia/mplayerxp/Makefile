@@ -7,7 +7,7 @@
 
 PORTNAME=	mplayerxp
 PORTVERSION=	0.7.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	multimedia audio
 MASTER_SITES=	SF
 
@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-threaded branch of the well known mplayer media player
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		vcdinfo.2:${PORTSDIR}/multimedia/vcdimager
 RUN_DEPENDS=	${LOCALBASE}/share/mplayer/fonts:${PORTSDIR}/multimedia/mplayer-fonts
 

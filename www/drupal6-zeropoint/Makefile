@@ -7,6 +7,7 @@
 
 PORTNAME=	zeropoint
 DISTVERSION=	6.x-2.3
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	whitekid@gmail.com

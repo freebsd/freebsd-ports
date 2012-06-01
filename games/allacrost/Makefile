@@ -7,7 +7,7 @@
 
 PORTNAME=	allacrost
 PORTVERSION=	1.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-demo/${PORTVERSION}
 DISTNAME=	${PORTNAME}_demo_source_${PORTVERSION}
@@ -16,7 +16,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A single player 2D role-playing game
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		ogg.7:${PORTSDIR}/audio/libogg \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		boost_thread.4:${PORTSDIR}/devel/boost-libs
@@ -34,7 +34,7 @@ USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--datadir=${DATADIR}
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR}
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR} -I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

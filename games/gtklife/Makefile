@@ -7,7 +7,7 @@
 
 PORTNAME=	gtklife
 PORTVERSION=	5.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://ironphoenix.org/tril/gtklife/
 

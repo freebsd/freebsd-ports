@@ -7,7 +7,7 @@
 
 PORTNAME=	gphys
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science ruby
 MASTER_SITES=	http://ruby.gfd-dennou.org/products/gphys/ \
 		http://dennou-h.gfd-dennou.org/library/ruby/products/gphys/ \

@@ -7,7 +7,7 @@
 
 PORTNAME=	gracer
 PORTVERSION=	0.1.5
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -16,14 +16,15 @@ COMMENT=	A 3D motor sport simulator
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 LIB_DEPENDS=	gif.5:${PORTSDIR}/graphics/giflib \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tcl84.1:${PORTSDIR}/lang/tcl84
 
 USE_GL=		glut
 USE_PERL5_BUILD=yes
 USE_AUTOTOOLS=	autoconf213
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
+		CPPFLAGS="${CPPFLAGS}"
 CPPFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/tcl8.4
 USE_GMAKE=	yes

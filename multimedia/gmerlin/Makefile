@@ -7,7 +7,7 @@
 
 PORTNAME=	gmerlin
 PORTVERSION=	1.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -115,7 +115,7 @@ PLIST_SUB+=	JPEG="@comment "
 .endif
 
 .if !defined(WITHOUT_PNG)
-LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 PLIST_SUB+=	PNG=""
 .else
 CONFIGURE_ARGS+=--disable-libpng

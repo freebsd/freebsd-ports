@@ -7,7 +7,7 @@
 
 PORTNAME=	abinit
 PORTVERSION=	5.7.3
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.abinit.org/pub/abinitio/ABINIT_v${PORTVERSION}/
 

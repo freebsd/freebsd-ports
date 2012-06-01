@@ -7,6 +7,7 @@
 
 PORTNAME=	gourmet
 PORTVERSION=	0.15.9
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	SF/grecipe-manager/0.15.8
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	xymon
 PORTVERSION=	4.3.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF/xymon/Xymon/${PORTVERSION}
 PKGNAMESUFFIX=	-server${PKGNAMESUFFIX2}
@@ -16,7 +16,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	System for monitoring servers and networks
 
 BUILD_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
-LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		pcre:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
 

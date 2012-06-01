@@ -7,7 +7,7 @@
 
 PORTNAME=	pcbsd-netmanager
 PORTVERSION=	8.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net kde
 MASTER_SITES=	ftp://ftp.pcbsd.org/pub/software/ \
 		http://www.pcbsd.org/~kris/software/

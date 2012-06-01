@@ -7,7 +7,7 @@
 
 PORTNAME=	xbmc
 PORTVERSION=	11.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mirrors.xbmc.org/releases/source/
 
@@ -46,7 +46,7 @@ LIB_DEPENDS=	ass.5:${PORTSDIR}/multimedia/libass \
 		ogg.7:${PORTSDIR}/audio/libogg \
 		pcre.1:${PORTSDIR}/devel/pcre \
 		plist.1:${PORTSDIR}/devel/libplist \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		smbclient.0:${PORTSDIR}/net/samba-libsmbclient	\
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \

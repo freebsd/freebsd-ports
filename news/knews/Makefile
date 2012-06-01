@@ -7,7 +7,7 @@
 
 PORTNAME=	knews
 PORTVERSION=	1.0b.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=dinoex
@@ -16,7 +16,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A threaded nntp newsreader for X
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		compface:${PORTSDIR}/mail/faces
 RUN_DEPENDS=	newsp:${PORTSDIR}/print/mp-letter
 

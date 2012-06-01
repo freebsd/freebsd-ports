@@ -7,7 +7,7 @@
 
 PORTNAME=	fusenshi
 PORTVERSION=	0.9.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.ongs.co.jp/projects/fusenshi/
 EXTRACT_SUFX=	.tgz

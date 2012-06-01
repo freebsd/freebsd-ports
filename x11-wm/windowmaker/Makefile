@@ -6,7 +6,7 @@
 
 PORTNAME?=	windowmaker
 PORTVERSION=	0.95.2
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	http://windowmaker.org/pub/%SUBDIR%/ \
 		http://dougbarton.us/Downloads/
@@ -17,7 +17,7 @@ MAINTAINER=	dougb@FreeBSD.org
 COMMENT?=	GNUstep-compliant NeXTstep window manager clone
 
 LIB_DEPENDS=	gif:${PORTSDIR}/graphics/giflib \
-		png:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		jbig:${PORTSDIR}/graphics/jbigkit \
 		tiff:${PORTSDIR}/graphics/tiff
 

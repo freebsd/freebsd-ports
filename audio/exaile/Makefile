@@ -7,6 +7,7 @@
 
 PORTNAME=	exaile
 PORTVERSION=	${PORTVERSION_MAJOR}.${PORTVERSION_MINOR} # See below
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://launchpad.net/${LP_DIR}/ \
 		http://wickedmachine.net/mirror/
@@ -38,7 +39,9 @@ OPTIONS=	BAD "Install bad GStreamer plugins" On \
 		SEXY "UI enhancements"  On
 
 PORTVERSION_MAJOR=	0.3.2
+PORTREVISION=	1
 PORTVERSION_MINOR=	2
+PORTREVISION=	1
 LP_DIR=		${PORTNAME}/${PORTVERSION_MAJOR}/${PORTVERSION}/+download
 
 MANCOMPRESSED=	yes

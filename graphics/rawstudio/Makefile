@@ -7,7 +7,7 @@
 
 PORTNAME=	rawstudio
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://rawstudio.org/files/release/
 
@@ -17,6 +17,7 @@ COMMENT=	Open-source program to read and manipulate RAW photo images
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+		png15:${PORTSDIR}/graphics/png \
 		lcms.1:${PORTSDIR}/graphics/lcms \
 		exiv2.10:${PORTSDIR}/graphics/exiv2 \
 		dbus-1.3:${PORTSDIR}/devel/dbus \

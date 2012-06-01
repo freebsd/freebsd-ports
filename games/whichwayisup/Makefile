@@ -7,7 +7,7 @@
 
 PORTNAME=	whichwayisup
 PORTVERSION=	0.7.9
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSION=	${PORTVERSION:S/.//g}
 CATEGORIES=	games
 MASTER_SITES=	http://www.hectigo.net/games/whichwayisup/

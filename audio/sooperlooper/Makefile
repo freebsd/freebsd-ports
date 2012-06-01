@@ -7,6 +7,7 @@
 
 PORTNAME=	sooperlooper
 PORTVERSION=	1.6.18
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://essej.net/sooperlooper/
 

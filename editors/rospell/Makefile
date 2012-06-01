@@ -6,7 +6,7 @@
 
 PORTNAME=	rospell
 PORTVERSION=	2009.02.r2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors textproc # this should/will be romanian ;)
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	rospell/rospell/2008.00

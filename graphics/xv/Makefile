@@ -7,7 +7,7 @@
 
 PORTNAME=	xv
 PORTVERSION=	3.10a
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES+=	graphics
 MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/:base \
 		SF/png-mng/XV%20jumbo%20patches/20070520
@@ -24,7 +24,7 @@ COMMENT?=	An X11 program that displays images of various formats
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		jasper.4:${PORTSDIR}/graphics/jasper
 
 USE_IMAKE=	yes
@@ -34,6 +34,7 @@ MAN1=		bggen.1 vdcomp.1 xcmap.1 xv.1 xvp2p.1
 .endif
 
 XVDIST=		${DISTDIR}/${DIST_SUBDIR}
+CFLAGS+=	-I${LOCALBASE}/include/libpng15
 
 pre-patch:
 	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/xv-3.10a-jumbo-fix-enh-patch-20070520.txt

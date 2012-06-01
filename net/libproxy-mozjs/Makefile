@@ -5,7 +5,7 @@
 # $FreeBSD$
 #    $MCom: ports/net/libproxy-mozjs/Makefile,v 1.5 2011/01/12 13:10:53 kwm Exp $
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net www
 PKGNAMESUFFIX=	-mozjs
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	glosm
 PORTVERSION=	0.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://cloud.github.com/downloads/AMDmi3/glosm/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -15,7 +15,7 @@ MASTER_SITES=	http://cloud.github.com/downloads/AMDmi3/glosm/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	3D OpenGL renderer for OpenStreetMap
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		expat.6:${PORTSDIR}/textproc/expat2
 
 USE_BZIP2=	yes

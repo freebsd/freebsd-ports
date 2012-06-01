@@ -7,7 +7,7 @@
 
 PORTNAME=	faenza
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://fc05.deviantart.com/fs71/f/2011/320/4/f/
 PKGNAMEPREFIX=	gnome-icons-

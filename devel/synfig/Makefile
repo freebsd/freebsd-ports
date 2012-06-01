@@ -7,6 +7,7 @@
 
 PORTNAME=	synfig
 DISTVERSION=	0.63.05
+PORTREVISION=	1
 CATEGORIES=	devel graphics multimedia
 MASTER_SITES=	SF
 
@@ -18,7 +19,7 @@ LIB_DEPENDS=	glibmm-2.4.1:${PORTSDIR}/devel/glibmm \
 		MagickWand:${PORTSDIR}/graphics/ImageMagick \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		mng:${PORTSDIR}/graphics/libmng \
-		png:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		tiff:${PORTSDIR}/graphics/tiff \
 		avcodec:${PORTSDIR}/multimedia/ffmpeg \
 		dv:${PORTSDIR}/multimedia/libdv \

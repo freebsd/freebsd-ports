@@ -7,7 +7,7 @@
 
 PORTNAME=	pidgin-birthday-reminder
 PORTVERSION=	1.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	http://launchpadlibrarian.net/56075754/
 

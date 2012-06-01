@@ -7,7 +7,7 @@
 
 PORTNAME=	nexuiz
 PORTVERSION=	2.5.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/NexuizRelease/Nexuiz%20${PORTVERSION} \
 		SF/${PORTNAME}/mappack/nexmappack_r2:mappack
@@ -55,7 +55,7 @@ PLIST_SUB+=	MAPPACK="@comment "
 
 .if defined(WITH_CLIENT) || defined(WITH_SDL_CLIENT)
 LIB_DEPENDS+=	modplug.1:${PORTSDIR}/audio/libmodplug \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		theora.0:${PORTSDIR}/multimedia/libtheora
 .endif
 

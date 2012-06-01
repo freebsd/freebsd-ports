@@ -7,6 +7,7 @@
 
 PORTNAME=	sivp
 DISTVERSION=	1.0.0.r286
+PORTREVISION=	1
 CATEGORIES=	math graphics multimedia
 MASTER_SITES=	LOCAL/makc
 PKGNAMEPREFIX=	scilab-toolbox-

@@ -7,7 +7,7 @@
 
 PORTNAME=	ezfm
 PORTVERSION=	0.4.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-fm
 MASTER_SITES=	ftp://ftp.ma.utexas.edu/pub/mzou/
 DISTNAME=	EZFM-0.4-src

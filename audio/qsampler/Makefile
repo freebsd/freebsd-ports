@@ -7,7 +7,7 @@
 
 PORTNAME=	qsampler
 PORTVERSION=	0.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION} \
 		http://download.linuxsampler.org/packages/

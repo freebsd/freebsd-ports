@@ -7,6 +7,7 @@
 
 PORTNAME=	jokosher
 PORTVERSION=	0.11.5
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://launchpadlibrarian.net/43860543/
 

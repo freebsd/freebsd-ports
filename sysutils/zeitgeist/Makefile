@@ -7,6 +7,7 @@
 
 PORTNAME=	zeitgeist
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/${PORTVERSION}/+download/
 

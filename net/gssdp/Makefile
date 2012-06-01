@@ -7,7 +7,7 @@
 
 PORTNAME=	gssdp
 PORTVERSION=	0.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://www.gupnp.org/sites/all/files/sources/
 

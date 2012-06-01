@@ -7,7 +7,7 @@
 
 PORTNAME=	GraphicsMagick
 PORTVERSION=	1.1.15
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
@@ -22,9 +22,10 @@ CONFLICTS=	GraphicsMagick-1.[23].*
 LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2	\
 		fpx.[2-9]:${PORTSDIR}/graphics/libfpx	\
 		jbig:${PORTSDIR}/graphics/jbigkit	\
+		png15:${PORTSDIR}/graphics/png		\
 		wmflite:${PORTSDIR}/graphics/libwmf	\
 		xml2:${PORTSDIR}/textproc/libxml2
-OTHERGRAPHICS=	jasper jpeg lcms png tiff
+OTHERGRAPHICS=	jasper jpeg lcms tiff
 LIB_DEPENDS+=	${OTHERGRAPHICS:C|(.+)|\1:${PORTSDIR}/graphics/\1|}
 
 OPTIONS=	Q8BIT "Use 8-bit pixels (speed) instead of 16 (quality)" off \
@@ -56,6 +57,7 @@ USE_LDCONFIG=	yes
 ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
 
 CFLAGS+=	-DPNG_DEPSTRUCT=
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

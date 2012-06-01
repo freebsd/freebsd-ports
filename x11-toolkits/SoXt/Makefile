@@ -7,6 +7,7 @@
 
 PORTNAME=	SoXt
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.coin3d.org/coin/src/all/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	uae
 PORTVERSION=	0.8.29
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.amigaemulator.org/files/sources/develop/
 

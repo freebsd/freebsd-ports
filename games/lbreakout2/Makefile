@@ -7,14 +7,14 @@
 
 PORTNAME=	lbreakout2
 PORTVERSION=	2.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/lgames/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	mmendez@gmail.com
 COMMENT=	The polished successor to LBreakout
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_SDL=	mixer net sdl
 USE_GMAKE=	yes
@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--enable-sdl-net \
 		--disable-nls
 MAKE_JOBS_SAFE=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:

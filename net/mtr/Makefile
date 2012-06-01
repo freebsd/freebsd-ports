@@ -7,7 +7,7 @@
 
 PORTNAME=	mtr
 PORTVERSION=	0.82
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		http://launchpadlibrarian.net/82181604/ \

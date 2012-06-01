@@ -7,7 +7,7 @@
 
 PORTNAME=	flare
 DISTVERSION=	015_1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://cloud.github.com/downloads/clintbellanger/flare/ \
 		http://mirror.amdmi3.ru/files/

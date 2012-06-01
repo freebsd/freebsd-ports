@@ -7,7 +7,7 @@
 
 PORTNAME=	mrxvt
 PORTVERSION=	0.4.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11
 MASTER_SITES=	SF/materm/${PORTNAME}%20source/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tabbed version of rxvt
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 
 CONFLICTS=	mrxvt-0.5.*
 

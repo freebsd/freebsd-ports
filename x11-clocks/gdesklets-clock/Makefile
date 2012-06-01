@@ -7,7 +7,7 @@
 
 PORTNAME=	clock
 PORTVERSION=	0.32
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	x11-clocks gnome
 MASTER_SITES=	http://www.gdesklets.info/archive/
 PKGNAMEPREFIX=	gdesklets-

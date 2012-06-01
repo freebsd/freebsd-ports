@@ -28,9 +28,10 @@ PORTDOCS=	caveat.txt history.txt manual.html manual.pdf manual.txt \
 .include <bsd.port.options.mk>
 
 .ifndef(WITH_BUNDLED_LIBPNG)
+BROKEN=		does not build with libpng 1.5.x
 CONFIGURE_ARGS+=	--with-system-libpng
 CFLAGS+=	"-I${LOCALBASE}/include"
-LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 .endif
 
 .ifndef(WITH_BUNDLED_ZLIB)

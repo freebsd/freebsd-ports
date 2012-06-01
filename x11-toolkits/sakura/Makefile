@@ -7,6 +7,7 @@
 
 PORTNAME=	sakura
 PORTVERSION=	2.4.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	http://www.pleyades.net/david/projects/sakura/
 

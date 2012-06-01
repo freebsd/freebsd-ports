@@ -7,6 +7,7 @@
 
 PORTNAME=	liblarch_gtk
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://gtg.fritalk.com/publique/gtg.fritalk.com/liblarch/0.1/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

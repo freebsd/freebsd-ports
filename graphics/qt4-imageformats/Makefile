@@ -8,6 +8,7 @@
 
 PORTNAME=	imageformats
 DISTVERSION=	${QT4_VERSION}
+PORTREVISION=	1
 CATEGORIES?=	graphics
 PKGNAMEPREFIX=	qt4-
 
@@ -16,7 +17,7 @@ COMMENT=	Qt imageformat plugins for GIF, JPEG, MNG and SVG
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		mng:${PORTSDIR}/graphics/libmng \
-		png:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		tiff:${PORTSDIR}/graphics/tiff
 
 USE_QT_VER=	4

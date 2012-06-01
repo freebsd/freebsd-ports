@@ -7,7 +7,7 @@
 
 PORTNAME=	quake2max
 PORTVERSION=	0.45
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/engines/Quake2MaX/:src \
 		${MASTER_SITE_LOCAL:S/$/:data/}
@@ -48,7 +48,7 @@ Q2MAX_DATA=	${PORTNAME}.044.rar
 
 .if defined(WITH_GLX) || defined(WITH_SDLGL)
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 USE_GL=		yes
 .endif
 

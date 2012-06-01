@@ -7,14 +7,14 @@
 
 PORTNAME=	danpei
 PORTVERSION=	2.9.7
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	bu7cher@yandex.ru
 COMMENT=	Image Viewer for X Window System with thumbnail preview feature
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 .if !defined(WITHOUT_IMAGEMAGICK)
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick

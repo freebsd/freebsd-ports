@@ -7,7 +7,7 @@
 
 PORTNAME=	gle-graphics
 PORTVERSION=	4.0.12
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics print
 MASTER_SITES=	SF/glx/gle4%20%28Current%20Active%20Version%29/${PORTVERSION}
 DISTNAME=	GLE-${PORTVERSION}-src
@@ -40,7 +40,7 @@ post-patch:
 
 .if !defined(WITHOUT_BITMAP_IMAGES)
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		tiffxx.4:${PORTSDIR}/graphics/tiff
 CONFIGURE_ARGS+=	 --with-jpeg=${LOCALBASE} --with-tiff=${LOCALBASE} --with-png=${LOCALBASE}
 .else

@@ -7,6 +7,7 @@
 
 PORTNAME=	GraphicsMagick
 PORTVERSION=	1.3.15
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
 		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/1.3/
@@ -19,10 +20,11 @@ COMMENT=	Fast image processing tools based on ImageMagick
 CONFLICTS=	GraphicsMagick-1.[12].*
 
 LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2	\
+		png15:${PORTSDIR}/graphics/png		\
 		jbig:${PORTSDIR}/graphics/jbigkit	\
 		wmflite:${PORTSDIR}/graphics/libwmf	\
 		xml2:${PORTSDIR}/textproc/libxml2
-OTHERGRAPHICS=	jasper jpeg lcms png tiff
+OTHERGRAPHICS=	jasper jpeg lcms tiff
 LIB_DEPENDS+=	${OTHERGRAPHICS:C|(.+)|\1:${PORTSDIR}/graphics/\1|}
 
 OPTIONS=	Q8BIT "Use 8-bit pixels (speed) instead of 16 (quality)" off \

@@ -7,6 +7,7 @@
 
 PORTNAME=	wifimgr
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	net-mgmt sysutils
 MASTER_SITES=	http://opal.com/freebsd/ports/net-mgmt/wifimgr/ \
 		CRITICAL

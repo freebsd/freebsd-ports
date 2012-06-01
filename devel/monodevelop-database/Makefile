@@ -7,6 +7,7 @@
 
 PORTNAME=	monodevelop-database
 PORTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 

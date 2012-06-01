@@ -7,7 +7,7 @@
 
 PORTNAME=	povray
 PORTVERSION=	3.1g
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.povray.org/pub/povray/%SUBDIR%/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.povray.org/pub/povray/%SUBDIR%/ \
@@ -19,7 +19,7 @@ DISTFILES=	povuni_s.tgz povuni_d.tgz
 MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	Persistence of Vision Ray Tracer
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 OPTIONS=	X11 "X Window support" On
 

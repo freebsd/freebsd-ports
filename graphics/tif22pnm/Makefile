@@ -8,7 +8,7 @@
 
 PORTNAME=	tif22pnm
 PORTVERSION=	0.12
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://pts.szit.bme.hu/ \
 		GOOGLE_CODE
@@ -16,7 +16,7 @@ MASTER_SITES=	http://pts.szit.bme.hu/ \
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Converts TIFF- sampled images to PNM image
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 
@@ -36,8 +36,8 @@ do-build:
 	cd ${WRKSRC} \
 		&& ${CC} ${CFLAGS} -DNDEBUG -I${LOCALBASE}/include \
 		${TIF22PNM_SRCS} -o tif22pnm -L${LOCALBASE}/lib -ltiff \
-		&& ${CC} ${CFLAGS} -DNDEBUG `pkg-config libpng14 --cflags` \
-		${PNG2PNM_SRCS} -o png22pnm `pkg-config libpng14 --libs`
+		&& ${CC} ${CFLAGS} -DNDEBUG `pkg-config libpng15 --cflags` \
+		${PNG2PNM_SRCS} -o png22pnm `pkg-config libpng15 --libs`
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/png22pnm ${PREFIX}/bin

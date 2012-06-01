@@ -8,7 +8,7 @@
 
 PORTNAME=	xvattr
 PORTVERSION=	1.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/ \
 		http://www.dtek.chalmers.se/groups/dvd/dist/

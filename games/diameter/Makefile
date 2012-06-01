@@ -7,7 +7,7 @@
 
 PORTNAME=	diameter
 PORTVERSION=	0.4.0.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	SF/game${PORTNAME}/game${PORTNAME}/${PORTNAME}-0.4.0
 
@@ -15,6 +15,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Arcade-style game with elements of economy and adventure
 
 BUILD_DEPENDS=	guichan>=0.8.1:${PORTSDIR}/devel/guichan
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
@@ -33,6 +34,6 @@ DATADIR=	${PREFIX}/share/gamediameter
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|; /^CFLAGS=.*march/ d; \
-		/PKG_CONFIG/ s|libpng|libpng14|' ${WRKSRC}/configure
+		/PKG_CONFIG/ s|libpng|libpng15|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

@@ -7,7 +7,7 @@
 
 PORTNAME=	tenebrae
 PORTVERSION=	1.04
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	http://tenebrae.sourceforge.net/downloads/
 DISTFILES=	${PORTNAME}_src${EXTRACT_SUFX} \
@@ -16,7 +16,7 @@ DISTFILES=	${PORTNAME}_src${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake 1 source port with advanced graphics
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes

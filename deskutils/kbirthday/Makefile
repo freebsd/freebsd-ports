@@ -6,7 +6,7 @@
 
 PORTNAME=	kbirthday
 PORTVERSION=	0.7.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://www.gfai.de/~jaham/download/ \
 		http://freshmeat.net/redir/kbirthday/32531/url_tgz/

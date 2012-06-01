@@ -7,7 +7,7 @@
 
 PORTNAME=	xdx
 PORTVERSION=	2.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.chronos.org.uk/download/ \
 		${MASTER_SITE_LOCAL}

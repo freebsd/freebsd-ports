@@ -6,6 +6,7 @@
 
 PORTNAME=	opengtl
 PORTVERSION=	0.9.16
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://download.${PORTNAME}.org/
 DISTNAME=	OpenGTL-${PORTVERSION}
@@ -16,7 +17,7 @@ COMMENT=	Graphics Transformation Languages
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libLLVM-3.0.so:${PORTSDIR}/devel/llvm
 

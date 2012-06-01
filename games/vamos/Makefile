@@ -7,6 +7,7 @@
 
 PORTNAME=	vamos
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -16,7 +17,7 @@ COMMENT=	An automotive simulation framework
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_OPENAL=	al alut
 USE_GL=		glut

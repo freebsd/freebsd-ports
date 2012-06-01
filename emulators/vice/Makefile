@@ -6,7 +6,7 @@
 
 PORTNAME=	vice
 PORTVERSION=	2.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/VICE/ \
 		ftp://ftp.zimmers.net/pub/cbm/crossplatform/emulators/VICE/
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
 		pkg-config:${PORTSDIR}/devel/pkg-config
-LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		gif:${PORTSDIR}/graphics/giflib \
 		mp3lame:${PORTSDIR}/audio/lame
 .if defined(VICE_WITH_XAW3D)

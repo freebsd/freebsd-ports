@@ -7,7 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	0.99.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-ui/${PORTVERSION}
 DISTNAME=	${PORTNAME}-ui-${PORTVERSION}
@@ -18,7 +18,7 @@ COMMENT=	An X11 multimedia player
 BUILD_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 # Please update libxine PLUGINSDIR as well (see below)
 LIB_DEPENDS=	xine.2:${PORTSDIR}/multimedia/libxine \
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 USE_XZ=		yes

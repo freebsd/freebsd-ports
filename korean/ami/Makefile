@@ -7,6 +7,7 @@
 
 PORTNAME=	ami
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	korean x11
 MASTER_SITES=	http://kldp.net/frs/download.php/942/ \
 		http://www.kr.freebsd.org/~hwang/ami/:hjdic \

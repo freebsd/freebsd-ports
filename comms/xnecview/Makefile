@@ -6,6 +6,7 @@
 
 PORTNAME=	xnecview
 PORTVERSION=	1.36
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://wwwhome.cs.utwente.nl/%7Eptdeboer/ham/xnecview/
 EXTRACT_SUFX=	.tgz
@@ -13,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	A X viewer of nec2c data
 
-LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	nec2c:${PORTSDIR}/comms/nec2c
 
 USE_GNOME=	gtk20

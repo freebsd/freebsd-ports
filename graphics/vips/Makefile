@@ -7,7 +7,7 @@
 
 PORTNAME=	vips
 PORTVERSION=	7.26.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/supported/${PORTVERSION:R}/
 
@@ -25,7 +25,7 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		GraphicsMagick:${PORTSDIR}/graphics/GraphicsMagick \
 		IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		orc-0:${PORTSDIR}/devel/orc	\
-		png:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		matio:${PORTSDIR}/math/matio	\
 		lcms:${PORTSDIR}/graphics/lcms
 

@@ -8,7 +8,7 @@
 
 PORTNAME=	mircryption
 DISTVERSION=	0.3.3
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	irc security
 MASTER_SITES=	http://mircryption.sourceforge.net/Downloads/

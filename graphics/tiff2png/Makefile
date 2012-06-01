@@ -7,7 +7,7 @@
 
 PORTNAME=	tiff2png
 PORTVERSION=	0.91
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/png-mng/${PORTNAME}/${PORTVERSION}
@@ -17,7 +17,7 @@ COMMENT=	Converts TIFF images to PNG format
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 
 MAKEFILE=	Makefile.unx
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"

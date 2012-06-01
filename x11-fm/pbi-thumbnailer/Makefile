@@ -7,7 +7,7 @@
 
 PORTNAME=	pbi-thumbnailer
 PORTVERSION=	0.9.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	http://www.marcuscom.com/pbi-thumbnailer/
 

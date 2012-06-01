@@ -7,7 +7,7 @@
 
 PORTNAME=	openmsx
 PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -15,7 +15,7 @@ MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Open source MSX emulator
 
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
-		png:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		ogg:${PORTSDIR}/audio/libogg \
 		vorbis:${PORTSDIR}/audio/libvorbis \
 		theora:${PORTSDIR}/multimedia/libtheora

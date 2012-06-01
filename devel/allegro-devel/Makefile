@@ -7,7 +7,7 @@
 
 PORTNAME=	allegro
 DISTVERSION=	4.4.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/alleg/allegro/${PORTVERSION}
 PKGNAMESUFFIX=	-devel
@@ -41,7 +41,7 @@ PORTSCOUT=	limit:^4\.3\.[0-9]*
 CFLAGS+=	-L${LOCALBASE}/lib
 LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib \
 		jack.0:${PORTSDIR}/audio/jack \
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 post-install:
 		@cd ${WRKSRC}/docs/man/ && \
 		    ${FIND} . -type f -and -name "*.3" -exec ${INSTALL_MAN} {} ${PREFIX}/man/man3/{} \;

@@ -6,7 +6,7 @@
 
 PORTNAME=	ksocrat
 PORTVERSION=	3.2.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	russian kde
 MASTER_SITES=	http://ksocrat.linux.kiev.ua/download/
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}

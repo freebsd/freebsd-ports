@@ -7,6 +7,7 @@
 
 PORTNAME=	aaphoto
 PORTVERSION=	0.41
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://log69.com/downloads/
 DISTNAME=	${PORTNAME}_sources_v${PORTVERSION}
@@ -16,7 +17,7 @@ COMMENT=	Auto Adjust Photo, automatic color correction of photos
 
 LIB_DEPENDS=	jasper:${PORTSDIR}/graphics/jasper \
 		jpeg:${PORTSDIR}/graphics/jpeg \
-		png:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 
 LICENSE=	GPLv3
 

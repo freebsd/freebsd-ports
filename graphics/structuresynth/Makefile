@@ -7,7 +7,7 @@
 
 PORTNAME=	structuresynth
 PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Structure%20Synth/Version%201.5%20%28Hinxton%29
 DISTNAME=	StructureSynth-Source-v${PORTVERSION}

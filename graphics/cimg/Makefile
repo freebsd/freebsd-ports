@@ -7,7 +7,7 @@
 
 PORTNAME=	cimg
 PORTVERSION=	1.4.9
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	3
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF/${PORTNAME}		\
@@ -46,7 +46,7 @@ LIB_DEPENDS+=	board.0:${PORTSDIR}/graphics/libboard
 USE_FORTRAN=	yes
 
 . if !defined(WITH_DEBUG)
-LIB_DEPENDS+=	png:${PORTSDIR}/graphics/png		\
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png		\
 		jpeg:${PORTSDIR}/graphics/jpeg		\
 		tiff:${PORTSDIR}/graphics/tiff		\
 		opencv_legacy.2:${PORTSDIR}/graphics/opencv		\

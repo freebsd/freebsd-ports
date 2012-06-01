@@ -7,7 +7,7 @@
 
 PORTNAME=	netpbm
 PORTVERSION=	10.35.84
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/netpbm/super_stable/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -17,7 +17,7 @@ COMMENT=	A toolkit for conversion of images between different formats
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		jbig.1:${PORTSDIR}/graphics/jbigkit \
 		jasper.4:${PORTSDIR}/graphics/jasper \
 		xml2.5:${PORTSDIR}/textproc/libxml2

@@ -7,7 +7,7 @@
 
 PORTNAME=	gdchart
 PORTVERSION=	0.11.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.fred.net/brv/chart/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/

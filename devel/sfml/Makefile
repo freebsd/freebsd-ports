@@ -7,7 +7,7 @@
 
 PORTNAME=	sfml
 PORTVERSION=	1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF
 DISTNAME=	SFML-${PORTVERSION}-sdk-linux-32
@@ -17,7 +17,7 @@ COMMENT=	Simple and Fast Multimedia Library
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_GMAKE=	yes

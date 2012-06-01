@@ -7,6 +7,7 @@
 
 PORTNAME=	libkate
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -17,7 +18,7 @@ LICENSE=	BSD
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	ogg.7:${PORTSDIR}/audio/libogg \
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

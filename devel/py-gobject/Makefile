@@ -8,6 +8,7 @@
 
 PORTNAME=	gobject
 PORTVERSION=	2.28.6
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/pygobject/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}

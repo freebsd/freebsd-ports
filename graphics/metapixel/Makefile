@@ -6,7 +6,7 @@
 
 PORTNAME=	metapixel
 PORTVERSION=	1.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.complang.tuwien.ac.at/schani/metapixel/files/ \
 		http://mirror.roe.ch/dist/metapixel/
@@ -14,12 +14,12 @@ MASTER_SITES=	http://www.complang.tuwien.ac.at/schani/metapixel/files/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A photomosaic generator
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		gif.5:${PORTSDIR}/graphics/giflib
 
 USE_GMAKE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include -I.
+CPPFLAGS+=	-I${LOCALBASE}/include -I. -I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/metapixel bin/metapixel-convert bin/metapixel-imagesize \

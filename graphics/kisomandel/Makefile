@@ -8,14 +8,14 @@
 
 PORTNAME=	kisomandel
 PORTVERSION=	0.66
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fractal rendering program with nice 3d-display in realtime
 
-LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 PLIST_FILES=	bin/kisomandel
 USE_BZIP2=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	fl_editor
 PORTVERSION=	0.4.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://source.robertk.com/fl_editor/
 EXTRACT_SUFX=	.tgz

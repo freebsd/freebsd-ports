@@ -12,7 +12,7 @@
 
 PORTNAME=	mlton
 PORTVERSION=	20070826
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	lang
 MASTER_SITES=	http://mlton.org/pages/Download/attachments/ \
 		http://mlton.org/pages/Experimental/attachments/ \

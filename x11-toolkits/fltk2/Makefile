@@ -7,6 +7,7 @@
 
 PORTNAME=	fltk
 PORTVERSION=	2.0.${SNAPSHOT}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_EASYSW}
 MASTER_SITE_SUBDIR=	fltk/snapshots
@@ -31,7 +32,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 # If xprop cannot connect to an X server of if xprop cannot be found, X overlay
 # support will be disabled without breaking the build.
 BUILD_DEPENDS=	xprop:${PORTSDIR}/x11/xprop
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
 SNAPSHOT=	r9166

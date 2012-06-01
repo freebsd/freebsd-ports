@@ -7,6 +7,7 @@
 
 PORTNAME=	webp
 PORTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
@@ -15,7 +16,7 @@ MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Google WebP image format conversion tool
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

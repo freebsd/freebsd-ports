@@ -7,6 +7,7 @@
 
 PORTNAME=	wmauda
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://www.netswarm.net/misc/ \
 		${MASTER_SITE_GENTOO}

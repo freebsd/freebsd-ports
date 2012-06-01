@@ -7,14 +7,14 @@
 
 PORTNAME=	xaos
 PORTVERSION=	3.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics math
 MASTER_SITES=	SF/${PORTNAME}/XaoS/${PORTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A real-time fractal browser for X11 and ASCII terminals
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_XORG=	x11 xext
 GNU_CONFIGURE=	yes
@@ -24,7 +24,7 @@ OPTIONS=	PTHREAD "Enable SMP support (experimental)" off \
 		GTK2 "GTK+ User Interface (experimental)" off \
 		NLS "Native Language Support" on
 
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-aa-driver=no --with-dga-driver=no \
 		--with-ggi-driver=no --with-svga-driver=no \

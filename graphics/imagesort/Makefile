@@ -7,7 +7,7 @@
 
 PORTNAME=	imagesort
 PORTVERSION=	2.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/viewers/X
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A flexible X utility for managing many image files
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		gif.5:${PORTSDIR}/graphics/giflib
 
 USE_XORG=	x11 xt

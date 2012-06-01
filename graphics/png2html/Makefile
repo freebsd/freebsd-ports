@@ -7,7 +7,7 @@
 
 PORTNAME=	png2html
 PORTVERSION=	1.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.geoffholden.com/content/projects/png2html/
 
@@ -17,7 +17,7 @@ COMMENT=	Takes a PNG image and transforms it into HTML
 LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		gd.4:${PORTSDIR}/graphics/gd
 
 PLIST_FILES=	bin/png2html

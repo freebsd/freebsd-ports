@@ -7,7 +7,7 @@
 
 PORTNAME=	visionworkbench
 PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://ti.arc.nasa.gov/m/project/nasa-vision-workbench/
 DISTNAME=	VisionWorkbench-${PORTVERSION}
@@ -31,7 +31,7 @@ USE_LDCONFIG=	yes
 USE_PYTHON=	2.4+
 
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
-LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 LIB_DEPENDS+=	boost_thread.4:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS+=	boost_python.4:${PORTSDIR}/devel/boost-python-libs
 LIB_DEPENDS+=	gdal:${PORTSDIR}/graphics/gdal

@@ -7,7 +7,7 @@
 
 PORTNAME=	bittyrant
 PORTVERSION=	1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-p2p java
 MASTER_SITES=	http://bittyrant.cs.washington.edu/dist_010807/
 DISTNAME=	BitTyrant-src

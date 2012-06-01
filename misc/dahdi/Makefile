@@ -7,7 +7,7 @@
 
 PORTNAME=	dahdi
 PORTVERSION=	${DAHDI_VERSION:S/-//g}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_LOCAL}\
 		http://downloads.digium.com/pub/telephony/firmware/releases/:firmware

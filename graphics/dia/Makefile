@@ -8,7 +8,7 @@
 
 PORTNAME=	dia
 DISTVERSION=	0.97.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
@@ -18,7 +18,8 @@ MAINTAINER?=	gnome@FreeBSD.org
 COMMENT=	Diagram creation program, similar to Visio
 
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
+		png15:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

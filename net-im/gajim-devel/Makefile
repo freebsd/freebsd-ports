@@ -7,6 +7,7 @@
 
 PORTNAME=	gajim
 PORTVERSION=	20101030
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.bamus.cz/distfiles/
 PKGNAMESUFFIX=	-devel

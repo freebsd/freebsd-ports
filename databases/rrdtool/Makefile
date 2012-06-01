@@ -7,7 +7,7 @@
 
 PORTNAME=	rrdtool
 PORTVERSION=	1.4.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
@@ -18,7 +18,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		cairo.2:${PORTSDIR}/graphics/cairo \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		xml2:${PORTSDIR}/textproc/libxml2 \
 		pangocairo-1\.0.0:${PORTSDIR}/x11-toolkits/pango
 

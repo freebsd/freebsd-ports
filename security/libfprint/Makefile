@@ -7,7 +7,7 @@
 
 PORTNAME=	libfprint
 PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://people.freedesktop.org/~hadess/
 

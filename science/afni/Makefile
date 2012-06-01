@@ -16,6 +16,7 @@
 
 PORTNAME=	afni
 PORTVERSION=	2012.04.17.2129
+PORTREVISION=	1
 CATEGORIES=	science biology graphics
 MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/AFNI/${PORTVERSION}/ \
 		http://www.acadix.biz/Ports/distfiles/AFNI/${PORTVERSION}/

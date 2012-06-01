@@ -7,6 +7,7 @@
 
 PORTNAME=	pdfcube
 DISTVERSION=	0.0.4-beta
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://code.100allora.it/releases/pdfcube/
 

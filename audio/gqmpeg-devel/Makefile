@@ -7,12 +7,14 @@
 
 PORTNAME=	gqmpeg
 PORTVERSION=	0.91.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Another gtk-based MP3 frontend
+
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 .if defined(WITH_MPG321)
 RUN_DEPENDS+=	mpg321:${PORTSDIR}/audio/mpg321

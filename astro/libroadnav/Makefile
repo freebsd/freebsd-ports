@@ -8,7 +8,7 @@
 
 PORTNAME=	libroadnav
 PORTVERSION=	0.19
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	astro geography
 MASTER_SITES=	SF/roadnav/LibRoadnav/${PORTVERSION}
 

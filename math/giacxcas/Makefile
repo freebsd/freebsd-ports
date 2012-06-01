@@ -7,6 +7,7 @@
 
 PORTNAME=	giacxcas
 PORTVERSION=	0.9.5
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp-fourier.ujf-grenoble.fr/linux/xcas/freebsd/ \
 		http://people.math.jussieu.fr/~han/xcas/sources/

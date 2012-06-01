@@ -7,7 +7,7 @@
 
 PORTNAME=	plutocracy
 PORTVERSION=	0.0.20081229
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 
@@ -15,6 +15,8 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Multiplayer 3D economy/trade-based RTS
 
 LICENSE=	GPLv2
+
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_SDL=	sdl pango

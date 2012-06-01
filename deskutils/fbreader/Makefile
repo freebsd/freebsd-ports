@@ -7,6 +7,7 @@
 
 PORTNAME=	fbreader
 PORTVERSION=	0.12.10
+PORTREVISION=	1
 DISTVERSIONPREFIX=	sources-
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.fbreader.org/

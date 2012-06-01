@@ -7,14 +7,14 @@
 
 PORTNAME=	pushover
 PORTVERSION=	0.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Pushover/${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A puzzle game where the goal is to push over all dominoes
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

@@ -7,14 +7,14 @@
 
 PORTNAME=	compiz
 PORTVERSION=	0.8.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compiz Composite/Window Manager
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		gtop-2.0.7:${PORTSDIR}/devel/libgtop \
 		startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 RUN_DEPENDS=	glxinfo:${PORTSDIR}/graphics/mesa-demos \
@@ -83,7 +83,7 @@ DESKTOP_ENTRIES=	"Compiz Manager" \
 			false
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|libpng|libpng14|' -e 's|gnome-desktop-2.0|gnome-desktop-2.0 gconf-2.0|g' \
+	@${REINPLACE_CMD} -e 's|libpng|libpng15|' -e 's|gnome-desktop-2.0|gnome-desktop-2.0 gconf-2.0|g' \
 		${WRKSRC}/configure
 
 post-install:

@@ -7,6 +7,7 @@
 
 PORTNAME=	metisse
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://insitu.lri.fr/metisse/download/metisse/
 
@@ -17,12 +18,13 @@ LICENSE=	GPLv3
 
 CONFLICTS=	fvwm-1.* fvwm-2.5.*
 
-LIB_DEPENDS=	Nucleo.0:${PORTSDIR}/x11-toolkits/nucleo
+LIB_DEPENDS=	Nucleo.0:${PORTSDIR}/x11-toolkits/nucleo \
+		png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/libdata/xorg/fonts:${PORTSDIR}/x11-fonts/xorg-fonts
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-fontdir=${LOCALBASE}/lib/X11/fonts
 MAKE_ARGS=	METISSE_DOC_DIR="${DOCSDIR}"

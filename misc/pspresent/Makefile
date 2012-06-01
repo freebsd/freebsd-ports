@@ -7,7 +7,7 @@
 
 PORTNAME=	pspresent
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	http://www.cse.unsw.edu.au/~matthewc/pspresent/
 

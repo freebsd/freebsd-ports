@@ -7,7 +7,7 @@
 
 PORTNAME=	libclaw
 PORTVERSION=	1.5.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -15,7 +15,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	C++ Library Absolutely Wonderful
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	eieio
 PORTVERSION=	0.17
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel elisp
 MASTER_SITES=	SF/cedet/${PORTNAME}/${PORTVERSION} \
 		http://dryice.name/computer/FreeBSD/distfiles/

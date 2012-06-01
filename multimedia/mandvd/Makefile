@@ -7,7 +7,7 @@
 
 PORTNAME=	mandvd
 DISTVERSION=	2.4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://csgib36.ifrance.com/FTP/
 DISTNAME=	ManDVD

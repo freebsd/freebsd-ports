@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-specimen
 PORTVERSION=	0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	http://uwstopia.nl/geek/projects/gnome-specimen/releases/
 

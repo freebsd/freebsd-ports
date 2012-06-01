@@ -7,13 +7,15 @@
 
 PORTNAME=	chbg
 PORTVERSION=	1.5
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Change Background Picture with time period
+
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_GNOME=	gdkpixbuf
 USE_GMAKE=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	wx
 PORTVERSION=	2.6.4
-PORTREVISION?=	5
+PORTREVISION?=	6
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/wxwindows/wxGTK/${PORTVERSION}
 PKGNAMESUFFIX=	${WXGTK_FLAVOR}
@@ -16,7 +16,7 @@ DISTNAME=	wxGTK-${PORTVERSION}
 MAINTAINER?=	fjoe@FreeBSD.org
 COMMENT?=	The wxWidgets GUI toolkit with GTK+ bindings
 
-LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png\
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png\
 		jpeg.11:${PORTSDIR}/graphics/jpeg\
 		tiff.4:${PORTSDIR}/graphics/tiff\
 		expat.6:${PORTSDIR}/textproc/expat2\

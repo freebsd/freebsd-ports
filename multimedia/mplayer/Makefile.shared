@@ -18,7 +18,7 @@ MAINTAINER?=	thomas.e.zander@googlemail.com
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/yasm:${PORTSDIR}/devel/yasm

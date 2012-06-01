@@ -7,7 +7,7 @@
 
 PORTNAME=	xbmc
 PORTVERSION=	70
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/nox
 PKGNAMESUFFIX=	-pvr-ppa-odk
@@ -47,7 +47,7 @@ LIB_DEPENDS=	asound.2:${PORTSDIR}/audio/alsa-lib	\
 		mpeg2:${PORTSDIR}/multimedia/libmpeg2 \
 		ogg.7:${PORTSDIR}/audio/libogg \
 		pcre.1:${PORTSDIR}/devel/pcre \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		smbclient.0:${PORTSDIR}/net/samba-libsmbclient	\
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \

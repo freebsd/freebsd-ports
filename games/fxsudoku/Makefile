@@ -7,7 +7,7 @@
 
 PORTNAME=	fxsudoku
 PORTVERSION=	0.5.1
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	games
 MASTER_SITES=	http://www.fifthplanet.net/files/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	loader-png
 DISTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
 		http://files.roorback.net/e17/2011-05-25/base/
@@ -16,7 +17,7 @@ DISTNAME=	evas-${DISTVERSION}
 MAINTAINER=	magik@roorback.net
 COMMENT=	A hardware accelerated canvas API (PNG loader)
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 LICENSE=	BSD

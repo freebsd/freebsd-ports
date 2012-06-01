@@ -7,7 +7,7 @@
 
 PORTNAME=	kyra
 PORTVERSION=	2.0.7
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}2/${PORTVERSION}
 DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/./_/g}
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/./_/g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple Sprite engine written in C++
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 

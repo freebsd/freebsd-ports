@@ -7,7 +7,7 @@
 
 PORTNAME=	passivetex
 PORTVERSION=	1.24
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	print
 MASTER_SITES=	http://www.tei-c.org/Software/passivetex/
 DISTNAME=	${PORTNAME}

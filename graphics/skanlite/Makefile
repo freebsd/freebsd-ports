@@ -7,7 +7,7 @@
 
 PORTNAME=	skanlite
 PORTVERSION=	0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics kde
 MASTER_SITES=	SF/sanewidget/Skanlite/
 DIST_SUBDIR=	KDE/extragear

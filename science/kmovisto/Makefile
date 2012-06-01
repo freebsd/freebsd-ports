@@ -8,7 +8,7 @@
 
 PORTNAME=	kmovisto
 PORTVERSION=	0.7.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	science
 MASTER_SITES=	http://mitglied.multimania.de/pageofmh/download/
 

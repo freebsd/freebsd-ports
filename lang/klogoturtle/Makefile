@@ -6,7 +6,7 @@
 
 PORTNAME=	klogoturtle
 PORTVERSION=	0.6
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	lang kde
 MASTER_SITES=	http://klogoturtle.sourceforge.net/
 

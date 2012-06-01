@@ -7,6 +7,7 @@
 
 PORTNAME=	gtimelapse
 DISTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Relase	# yes, this is not a typo (here)
 

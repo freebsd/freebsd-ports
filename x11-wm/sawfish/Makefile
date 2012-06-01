@@ -8,6 +8,7 @@
 
 PORTNAME=	sawfish
 PORTVERSION=	1.8.2
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://download.tuxfamily.org/sawfish/

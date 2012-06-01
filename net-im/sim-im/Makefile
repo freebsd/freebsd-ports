@@ -6,7 +6,7 @@
 
 PORTNAME=	sim-im
 PORTVERSION=	0.9.4.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		http://sim-im.lehis.ru/dist/ \

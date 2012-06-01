@@ -7,6 +7,7 @@
 
 PORTNAME=	torcs
 DISTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/all-in-one/${PORTVERSION}
 
@@ -16,7 +17,7 @@ COMMENT=	The Open Racing Car Simulator
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 

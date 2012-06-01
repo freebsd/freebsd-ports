@@ -7,6 +7,7 @@
 
 PORTNAME=	qt4-qtsolutions-singleapplication
 PORTVERSION=	20110722
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.pcbsd.org/pub/software/ \
 		http://www.pcbsd.org/~kris/software/

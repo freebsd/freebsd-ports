@@ -7,7 +7,7 @@
 
 PORTNAME=	misterproper
 PORTVERSION=	0.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	misc gnome
 MASTER_SITES=	SF
 #ftp://misterproper.sourceforge.net/pub/misterproper/releases/ \

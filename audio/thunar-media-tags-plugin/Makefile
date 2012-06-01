@@ -7,6 +7,7 @@
 
 PORTNAME=	thunar-media-tags-plugin
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	audio xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=/src/thunar-plugins//${PORTNAME}/${PORTVERSION:R}

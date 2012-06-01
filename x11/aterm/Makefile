@@ -65,7 +65,7 @@ CONFIGURE_ARGS+=	--disable-mousewheel
 
 .if defined(WITH_BGIMG)
 LIB_DEPENDS+=	AfterImage.0:${PORTSDIR}/graphics/libafterimage \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 CONFIGURE_ARGS+=	--with-afterimage-config --with-png --with-jpeg
 .else

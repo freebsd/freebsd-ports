@@ -7,7 +7,7 @@
 
 PORTNAME=	yamt
 PORTVERSION=	0.5
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	audio gnome
 MASTER_SITES=	SF \
 		ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/

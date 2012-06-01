@@ -7,14 +7,14 @@
 
 PORTNAME=	ocropus
 PORTVERSION=	0.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	The OCRopus(tm) open source document analysis and OCR system
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		iulib.0:${PORTSDIR}/graphics/iulib \

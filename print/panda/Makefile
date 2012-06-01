@@ -7,7 +7,7 @@
 
 PORTNAME=	panda
 PORTVERSION=	0.5.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	SF \
 		SAVANNAH \
@@ -20,7 +20,7 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_BZIP2=	yes

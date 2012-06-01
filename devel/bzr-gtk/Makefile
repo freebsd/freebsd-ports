@@ -7,6 +7,7 @@
 
 PORTNAME=	bzr-gtk
 PORTVERSION=	0.100.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpadlibrarian.net/65442805/ \
 		http://www.c-s.li/ports/

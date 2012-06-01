@@ -7,7 +7,7 @@
 
 PORTNAME=	deng
 PORTVERSION=	1.9.0b6.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Doomsday%20Engine/1.9.0-beta6.9
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/-beta/}
@@ -17,7 +17,7 @@ COMMENT=	An enhanced Doom, Heretic and Hexen source port
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
 USE_GL=		gl glu
@@ -31,6 +31,7 @@ BUILD_WRKSRC=	${BUILDDIR}
 INSTALL_WRKSRC=	${BUILDDIR}
 
 USE_CMAKE=	yes
+CFLAGS+=	-I${LOCALBASE}/include/libpng15
 CMAKE_ARGS+=	-DCMAKE_EXE_LINKER_FLAGS:STRING="-Wl,--export-dynamic"
 
 MAN6=		doomsday.6

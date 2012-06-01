@@ -11,6 +11,7 @@ PKGNAMESUFFIX=	-python
 COMMENT=	The Visualization Toolkit Python libs
 
 LIB_DEPENDS=	vtkCommon.${LIBVER}:${PORTSDIR}/math/vtk \
+		png15:${PORTSDIR}/graphics/png \
 		tcl84:${PORTSDIR}/lang/tcl84 \
 		tk84:${PORTSDIR}/x11-toolkits/tk84
 
@@ -39,7 +40,7 @@ CMAKE_DEFS=	-DVTK_WRAP_PYTHON:BOOL=ON \
 		-DJPEG_LIBRARY:PATH=${LOCALBASE}/lib/libjpeg.so \
 		-DJPEG_INCLUDE_DIR:PATH=${LOCALBASE}/include \
 		-DPNG_LIBRARY:PATH=${LOCALBASE}/lib/libpng.so \
-		-DPNG_INCLUDE_DIR:PATH=${LOCALBASE}/include \
+		-DPNG_INCLUDE_DIR:PATH=${LOCALBASE}/include/libpng15 \
 		-DTIFF_LIBRARY:PATH=${LOCALBASE}/lib/libtiff.so \
 		-DTIFF_INCLUDE_DIR:PATH=${LOCALBASE}/include \
 		-DTCL_INCLUDE_PATH:PATH=${TCL_INCLUDE_DIR} \

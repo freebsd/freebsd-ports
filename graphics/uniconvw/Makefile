@@ -7,6 +7,7 @@
 
 PORTNAME=	uniconvw
 PORTVERSION=	1.1.5
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	GOOGLE_CODE \
 		http://mirror.amdmi3.ru/distfiles/

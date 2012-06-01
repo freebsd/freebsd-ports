@@ -7,7 +7,7 @@
 
 PORTNAME=	jadetex
 PORTVERSION=	3.13
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	japanese print
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-ptex
@@ -17,7 +17,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A pTeX backend for Jade, for typesetting SGML documents
 
 BUILD_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex
 
 PKGMESSAGE=	${WRKDIR}/pkg-message

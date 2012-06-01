@@ -6,7 +6,7 @@
 
 PORTNAME=	qt
 PORTVERSION=	3.18.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://www.riverbankcomputing.com/static/Downloads/PyQt3/ \

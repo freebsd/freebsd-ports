@@ -7,7 +7,7 @@
 
 PORTNAME=	paintown
 PORTVERSION=	3.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -18,7 +18,7 @@ LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS+=	alleg.42:${PORTSDIR}/devel/allegro \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2
 
 USE_SCONS=	yes

@@ -8,7 +8,7 @@
 
 PORTNAME=	matplotlib
 PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=1.4:${PORTSDIR}/devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=1.4:${PORTSDIR}/devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz
@@ -102,8 +102,6 @@ post-extract:
 
 # bsd.tcl.mk doesn't set TK_VER, so we use TCL_VER instead
 post-patch:
-	${REINPLACE_CMD} -e 's|png_infopp_NULL|NULL|' \
-		${WRKSRC}/src/_png.cpp
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 			 -e 's|%%TCL_INCLUDEDIR%%|${TCL_INCLUDEDIR}|g' \
 			 -e 's|%%TK_INCLUDEDIR%%|${TK_INCLUDEDIR}|g' \

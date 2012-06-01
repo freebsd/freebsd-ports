@@ -6,14 +6,14 @@
 
 PORTNAME=	ffmpegthumbnailer
 PORTVERSION=	2.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia graphics
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	dierk@blaxxtarz.de
 COMMENT=	Lightweight video thumbnailer that can be used by file managers
 
-LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		swscale:${PORTSDIR}/multimedia/ffmpeg \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 

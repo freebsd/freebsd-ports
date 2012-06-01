@@ -7,7 +7,7 @@
 
 PORTNAME=	dvda-author
 PORTVERSION=	09.05
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/dvd-audio/${PORTNAME}-core/${PORTNAME}-${PORTVERSION}-core
@@ -20,7 +20,7 @@ LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 	ogg.7:${PORTSDIR}/audio/libogg \
 	sox.1:${PORTSDIR}/audio/sox \
 	samplerate.1:${PORTSDIR}/audio/libsamplerate \
-	png.6:${PORTSDIR}/graphics/png
+	png15:${PORTSDIR}/graphics/png
 
 MAN1=		dvda-author.1
 

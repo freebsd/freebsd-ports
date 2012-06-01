@@ -7,6 +7,7 @@
 
 PORTNAME=	dataplot
 PORTVERSION=	20090821
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.nist.gov/pub/dataplot/unix/:source \
 		LOCAL/beech:source \
@@ -21,7 +22,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free software system for statistical visualization
 
 LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
-		png:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg
 
 USE_FORTRAN=	yes

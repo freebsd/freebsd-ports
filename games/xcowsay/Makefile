@@ -7,6 +7,7 @@
 
 PORTNAME=	xcowsay
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.nickg.me.uk/files/ \
 		http://www.predatorlabs.net/dl/

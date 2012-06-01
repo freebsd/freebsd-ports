@@ -7,6 +7,7 @@
 
 PORTNAME=	ramblercontacts
 PORTVERSION=	0.3.2.1030
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://developers.rambler.ru/upload/contacts/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}_beta_src

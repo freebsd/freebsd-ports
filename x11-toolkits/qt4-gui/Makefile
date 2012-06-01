@@ -8,13 +8,14 @@
 
 PORTNAME=	gui
 DISTVERSION=	${QT4_VERSION}
+PORTREVISION=	1
 CATEGORIES?=	x11-toolkits
 PKGNAMEPREFIX=	qt4-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt graphical user interface library
 
-LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 

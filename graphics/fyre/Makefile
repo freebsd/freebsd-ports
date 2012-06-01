@@ -7,6 +7,7 @@
 
 PORTNAME=	fyre
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://releases.navi.cx/fyre/
 

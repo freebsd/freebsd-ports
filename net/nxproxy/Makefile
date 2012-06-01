@@ -6,7 +6,7 @@
 
 PORTNAME=	nxproxy
 DISTVERSION=	3.4.0-2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://x2go.obviously-nice.de/deb/pool-lenny/nxproxy/:nxproxy \
 		http://x2go.obviously-nice.de/deb/pool-lenny/nxcomp/:nxcomp
@@ -16,7 +16,7 @@ DISTFILES=	nxcomp-${DISTVERSION:S/2/1/}.tar.gz:nxcomp\
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	An x2go helper program
 
-LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg
 
 LICENSE=	GPLv2
@@ -25,6 +25,8 @@ CONFLICTS=	nxserver-[0-9]*
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf
 USE_XORG=	ice x11 sm
+CXXFLAGS+=	-I${LOCALBASE}/include/libpng15
+CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS}"
 PLIST_FILES=	bin/nxproxy bin/setsid
 
 .include <bsd.port.pre.mk>

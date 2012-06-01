@@ -7,6 +7,7 @@
 
 PORTNAME=	xloadimage
 PORTVERSION=	4.1.17
+PORTREVISION=	1
 CATEGORIES=	x11 graphics
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/:x11 \
 		${MASTER_SITE_DEBIAN_POOL}
@@ -18,7 +19,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 Image Loading Utility
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 LICENCE=	MIT

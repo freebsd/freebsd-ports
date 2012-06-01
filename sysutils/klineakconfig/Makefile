@@ -7,7 +7,7 @@
 
 PORTNAME=	klineakconfig
 PORTVERSION=	0.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils kde
 MASTER_SITES=	SF/lineak/Klineakconfig/Klineakconfig-${PORTVERSION}
 DIST_SUBDIR=	lineak

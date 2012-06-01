@@ -8,6 +8,7 @@
 
 PORTNAME=	burrtools
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF \
 		http://www.c-s.li/ports/
@@ -17,7 +18,7 @@ COMMENT=	A puzzle solver
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		xmlwrapp.5:${PORTSDIR}/textproc/xmlwrapp \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk \
 		boost_thread:${PORTSDIR}/devel/boost-libs

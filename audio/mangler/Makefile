@@ -7,6 +7,7 @@
 
 PORTNAME=	mangler
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mangler.org/downloads/ \
 		http://ultimeordi.com/pub/mangler/

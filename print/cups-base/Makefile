@@ -71,15 +71,15 @@ CUPSSYSGRP=	wheel
 
 # UNIQUENAME must be set before bsd.port.pre.mk so OPTIONSFILE can be included
 .if defined(CUPS_CLIENT)
-PORTREVISION=	1
+PORTREVISION=	2
 LICENSE=	LGPL21
 CUPS_SUFFIX=	-client
 .elif defined(CUPS_IMAGE)
-PORTREVISION=	0
+PORTREVISION=	1
 CUPS_SUFFIX=	-image
 LICENSE=	LGPL21
 .else
-PORTREVISION=	0
+PORTREVISION=	1
 CUPS_SUFFIX=	-base
 CONFLICTS+=	cupsddk-*
 .endif
@@ -102,7 +102,7 @@ DESCR=		${MASTERDIR}/pkg-descr.client
 .elif defined(CUPS_IMAGE)
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/${PKGCATEGORY}/cups-client \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 # force build if old cups is installed.
 BUILD_DEPENDS+=	cups-client${PKGNAMESUFFIX2}>=${PORTVERSION}:${PORTSDIR}/${PKGCATEGORY}/cups-client

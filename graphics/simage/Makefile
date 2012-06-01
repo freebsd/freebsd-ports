@@ -7,6 +7,7 @@
 
 PORTNAME=	simage
 PORTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://ftp.coin3d.org/coin/src/all/
 
@@ -18,7 +19,7 @@ LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		jasper.4:${PORTSDIR}/graphics/jasper \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		gif.5:${PORTSDIR}/graphics/giflib \
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 
 USE_GNOME=	gnomehack
 USE_AUTOTOOLS=	libtool

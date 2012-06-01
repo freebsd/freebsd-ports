@@ -7,6 +7,7 @@
 
 PORTNAME=	links-hacked
 DISTVERSION=	101110
+PORTREVISION=	1
 CATEGORIES?=	www
 MASTER_SITES=	http://xray.sai.msu.ru/~karpov/links-hacked/downloads/ http://links-hacked.nm.ru/
 
@@ -39,7 +40,7 @@ OPTIONS=	SVGALIB "non-X11 graphics support" off \
 .include <bsd.port.options.mk>
 
 .ifdef(WITH_SVGALIB) || defined(WITH_X11) || defined(WITH_DIRECTFB)
-LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 CONFIGURE_ARGS+=	--enable-graphics

@@ -7,7 +7,7 @@
 
 PORTNAME=	wmfire
 PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.swanson.ukfsn.org/wmfire/
 

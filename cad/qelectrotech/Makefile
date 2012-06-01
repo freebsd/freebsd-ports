@@ -7,6 +7,7 @@
 
 PORTNAME=	qelectrotech
 PORTVERSION=	0.22
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://download.tuxfamily.org/qet/tags/20100313/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

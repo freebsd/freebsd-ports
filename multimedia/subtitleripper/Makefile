@@ -7,7 +7,7 @@
 
 PORTNAME=	subtitleripper
 DISTVERSION=	0.3-4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.3-4
 EXTRACT_SUFX=	.tgz
@@ -16,7 +16,7 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Convert DVD subtitles into text format (subrip srt) or VobSub format
 
 LIB_DEPENDS=	netpbm:${PORTSDIR}/graphics/netpbm \
-		png:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	gocr:${PORTSDIR}/graphics/gocr \
 		xv:${PORTSDIR}/graphics/xv \
 		transcode:${PORTSDIR}/multimedia/transcode

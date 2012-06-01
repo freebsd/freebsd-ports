@@ -7,6 +7,7 @@
 
 PORTNAME=	alt-ergo
 PORTVERSION=	0.94
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://alt-ergo.lri.fr/http/ LOCAL/bf
 

@@ -6,7 +6,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	5.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	http://rpm5.org/files/rpm/rpm-${PORTVERSION:R}/
 

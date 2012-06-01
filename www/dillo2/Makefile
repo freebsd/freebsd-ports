@@ -6,6 +6,7 @@
 
 PORTNAME=	dillo
 PORTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.dillo.org/download/ LOCAL/bf
 

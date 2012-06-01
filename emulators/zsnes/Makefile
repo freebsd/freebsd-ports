@@ -7,7 +7,7 @@
 
 PORTNAME=	zsnes
 PORTVERSION=	1.51
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/ZSNES%20v${PORTVERSION}
@@ -18,7 +18,7 @@ COMMENT=	Intel x86 only Super Nintendo Entertainment System (SNES) Emulator
 
 # This must be >= 0.98!
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	non-portable, for a portable emulator see emulators/snes9x
@@ -40,8 +40,8 @@ CONFIGURE_ARGS+=	--disable-cpucheck
 MAN1=		zsnes.1
 PLIST_FILES=	bin/zsnes
 
-CFLAGS+=	-I${LOCALBASE}/include
-CPPFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>

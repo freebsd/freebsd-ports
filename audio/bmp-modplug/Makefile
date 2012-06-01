@@ -7,7 +7,7 @@
 
 PORTNAME=	modplug
 PORTVERSION=	2.0.5
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES?=	audio
 MASTER_SITES=	ftp://ftp.osuosl.org/pub/FreeBSD/distfiles/ \
 		http://ftp.osuosl.org/pub/FreeBSD/distfiles/ \

@@ -7,6 +7,7 @@
 
 PORTNAME=	tomboy-plugin-todo
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://romain.blogreen.org/distfiles/
 DISTNAME=	tomboy-todo-${PORTVERSION}

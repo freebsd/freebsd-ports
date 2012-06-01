@@ -7,7 +7,7 @@
 
 PORTNAME=	osdmixer
 PORTVERSION=	0.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://bsd-geek.de/FreeBSD/distfiles/
 

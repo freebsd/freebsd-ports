@@ -8,7 +8,7 @@
 
 PORTNAME=	multi-gnome-terminal
 PORTVERSION=	1.6.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11 gnome
 MASTER_SITES=	SF/multignometerm/multignometerm/mgt-${PORTVERSION}
 

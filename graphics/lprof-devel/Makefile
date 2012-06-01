@@ -7,7 +7,7 @@
 
 PORTNAME=	lprof
 PORTVERSION=	20080514
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/ \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|amdmi3|}

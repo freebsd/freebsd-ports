@@ -7,7 +7,7 @@
 
 PORTNAME=	lanmap
 DISTVERSION=	2006-03-07-rev81
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.parseerror.com/lanmap/rev/
 

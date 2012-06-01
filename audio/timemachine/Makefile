@@ -7,7 +7,7 @@
 
 PORTNAME=	timemachine
 PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://plugin.org.uk/timemachine/
 

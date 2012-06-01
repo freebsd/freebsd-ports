@@ -7,6 +7,7 @@
 
 PORTNAME=	gdesklets
 PORTVERSION=	0.36.2
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GENTOO/distfiles
 # XXX		currently broken: http://www.gdesklets.de/files/

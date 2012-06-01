@@ -8,13 +8,15 @@
 
 PORTNAME=	kompozer
 DISTVERSION=	0.8b3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/current/${DISTVERSION}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Complete Web Authoring Suite
+
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 WANT_GNOME=	yes
 WANT_PERL=	yes
@@ -24,6 +26,7 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/mozilla
 MAKEFILE=	client.mk
 ALL_TARGET=	build_all
+#CFLAGS+=	-I${LOCALBASE}/include/libpng15
 MOZ_EXTENSIONS=	wallet,xml-rpc,xmlextras,pref,universalchardet,spellcheck
 MOZ_OPTIONS=	--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
 				--enable-application=composer \

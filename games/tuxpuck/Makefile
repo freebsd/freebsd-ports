@@ -8,7 +8,7 @@
 
 PORTNAME=	tuxpuck
 PORTVERSION=	0.8.2
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	games
 MASTER_SITES=	http://www.sourcefiles.org/Games/Sports/Miscellaneous/
 
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shufflepuck Cafe Clone
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		freetype.9:${PORTSDIR}/print/freetype2
 
@@ -25,6 +25,7 @@ USE_GMAKE=	yes
 ALL_TARGET=	tuxpuck
 MAKE_JOBS_UNSAFE=	yes
 
+CFLAGS+=	-I${LOCALBASE}/include/libpng15
 MANCOMPRESSED=	yes
 MAN6=		tuxpuck.6
 PLIST_FILES=	bin/tuxpuck

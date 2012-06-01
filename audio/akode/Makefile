@@ -7,7 +7,7 @@
 
 PORTNAME=	akode
 PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/ \

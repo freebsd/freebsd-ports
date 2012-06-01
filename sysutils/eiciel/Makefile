@@ -7,6 +7,7 @@
 
 PORTNAME=	eiciel
 PORTVERSION=	0.9.8.1
+PORTREVISION=	1
 CATEGORIES=	sysutils security
 MASTER_SITES=	http://rofi.roger-ferrer.org/eiciel/download/
 

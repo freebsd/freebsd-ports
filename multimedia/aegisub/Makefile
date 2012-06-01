@@ -9,6 +9,7 @@
 
 PORTNAME=	aegisub
 PORTVERSION=	2.1.9
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.aegisub.org/pub/releases/ \
 		http://ftp2.aegisub.org/pub/releases/ \

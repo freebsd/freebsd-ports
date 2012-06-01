@@ -7,7 +7,7 @@
 
 PORTNAME=	spiralsynth
 PORTVERSION=	0.1.7
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	http://www.pawfal.org/Software/SpiralSynth/dload/
 DISTNAME=	SpiralSynth-${PORTVERSION}

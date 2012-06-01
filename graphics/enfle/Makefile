@@ -7,7 +7,7 @@
 
 PORTNAME=	enfle
 PORTVERSION=	20101006
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://enfle.fennel.org/files/stable/
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	arc.1:${PORTSDIR}/archivers/libarc \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		gif.5:${PORTSDIR}/graphics/giflib \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		theora.0:${PORTSDIR}/multimedia/libtheora
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
@@ -42,7 +42,7 @@ CONFIGURE_ARGS=	--with-ungif
 
 PKGDEINSTALL=	${PKGINSTALL}
 
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>

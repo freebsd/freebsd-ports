@@ -7,7 +7,7 @@
 
 PORTNAME=	exrtools
 PORTVERSION=	0.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://scanline.ca/exrtools/ \
 		CRITICAL
@@ -18,7 +18,7 @@ COMMENT=	Utilities for manipulating with HDR images in OpenEXR format
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
-		png:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes

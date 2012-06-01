@@ -7,7 +7,7 @@
 
 PORTNAME=	libgfx
 DISTVERSION=	1.1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://mgarland.org/files/dist/
 
@@ -18,7 +18,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		gzstream.0:${PORTSDIR}/devel/gzstream \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
@@ -26,6 +26,7 @@ BUILD_WRKSRC=	${WRKSRC}/src
 
 USE_GL=		glu
 USE_GMAKE=	yes
+USE_XORG=	x11 xext xft xinerama
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gzstream --with-libtiff-lzw --with-x
 ALL_TARGET=	${PORTNAME}.so

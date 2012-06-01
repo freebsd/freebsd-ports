@@ -7,6 +7,7 @@
 
 PORTNAME=	vuze
 PORTVERSION=	4.7.0.0
+PORTREVISION=	1
 CATEGORIES=	net-p2p java
 # Moved to x-obsolete, could do with an update
 MASTER_SITES=	SF/azureus/vuze/Vuze_${PORTVERSION:S/.//g}

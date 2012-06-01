@@ -10,7 +10,7 @@
 
 PORTNAME=	libpano12
 PORTVERSION=	2.8.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics java
 MASTER_SITES=	SF/panotools/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -18,7 +18,7 @@ MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Panorama Tools to make panorama pictures
 
 LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
-		png:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg
 
 USE_GNOME=	gtk20 glib20 pango atk
@@ -28,6 +28,7 @@ USE_AUTOTOOLS=	autoconf:env autoheader:env aclocal:env \
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include/gtk-2.0 \
 		-I${LOCALBASE}/include/glib-2.0 \
+		-I${LOCALBASE}/include/libpng15 \
 		-I${LOCALBASE}/include/pango-1.0 \
 		-I${LOCALBASE}/include/atk-1.0
 CONFIGURE_ARGS=	--with-png=${LOCALBASE} \

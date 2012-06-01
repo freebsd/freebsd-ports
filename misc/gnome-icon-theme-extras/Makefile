@@ -8,6 +8,7 @@
 
 PORTNAME=	gnome-icon-theme-extras
 PORTVERSION=	2.30.1
+PORTREVISION=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

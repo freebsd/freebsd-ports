@@ -8,7 +8,7 @@
 
 PORTNAME=	ploticus
 PORTVERSION=	2.40
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=	SF
 DISTNAME=	pl${PORTVERSION:S/.//}src
@@ -19,7 +19,7 @@ COMMENT?=	Generates plots and graphs from data
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		ming.5:${PORTSDIR}/graphics/ming \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 BUILD_WRKSRC=	${WRKSRC}/src

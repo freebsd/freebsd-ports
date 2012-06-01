@@ -7,7 +7,7 @@
 
 PORTNAME=	logstalgia
 PORTVERSION=	1.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils www
 MASTER_SITES=	GOOGLE_CODE CRITICAL
 
@@ -17,7 +17,7 @@ COMMENT=	A website access log visualization tool
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	ftgl:${PORTSDIR}/graphics/ftgl \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		pcre.1:${PORTSDIR}/devel/pcre
 

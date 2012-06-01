@@ -7,7 +7,7 @@
 
 PORTNAME=	haze
 PORTVERSION=	0.4.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/telepathy-haze/
 PKGNAMEPREFIX=	telepathy-

@@ -6,7 +6,7 @@
 
 PORTNAME=	kasablanca
 PORTVERSION=	0.4.0.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	ftp kde
 MASTER_SITES=	BERLIOS \
 		http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/

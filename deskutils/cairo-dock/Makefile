@@ -7,7 +7,7 @@
 
 PORTNAME=	cairo-dock
 DISTVERSION=	2.3.0~3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpadlibrarian.net/73753213/
 

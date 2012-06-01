@@ -7,7 +7,7 @@
 
 PORTNAME=	megapov
 PORTVERSION=	1.2.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://megapov.inetart.net/packages/unix/
 
@@ -15,7 +15,7 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Unofficial extensions of POV-Ray
 
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray-meta
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		tiff:${PORTSDIR}/graphics/tiff
 
@@ -26,9 +26,9 @@ GNU_CONFIGURE=	yes
 ALL_TARGET=	# empty
 CONFIGURE_ARGS+=	COMPILED_BY="ports@FreeBSD.org"
 LDFLAGS+= -L${LOCALBASE}/lib -L${LOCALBASE}/lib
-CFLAGS+= -I${LOCALBASE}/include
-CXXFLAGS+= -I${LOCALBASE}/include
-CPPFLAGS+= -I${LOCALBASE}/include
+CFLAGS+= -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
+CXXFLAGS+= -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
+CPPFLAGS+= -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 
 .include <bsd.port.pre.mk>
 

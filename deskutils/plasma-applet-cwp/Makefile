@@ -7,6 +7,7 @@
 
 PORTNAME=	cwp
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	plasma-applet-

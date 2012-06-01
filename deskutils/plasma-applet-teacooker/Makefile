@@ -7,7 +7,7 @@
 
 PORTNAME=	teacooker
 PORTVERSION=	0.3.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/
 PKGNAMEPREFIX=	plasma-applet-

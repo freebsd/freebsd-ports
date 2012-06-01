@@ -8,14 +8,14 @@
 
 PORTNAME=	xautomation
 PORTVERSION=	1.03
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://hoopajoo.net/static/projects/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Control X from the command line for scripts
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_XORG=	xtst
 GNU_CONFIGURE=	yes

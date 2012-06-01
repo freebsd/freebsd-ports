@@ -7,6 +7,7 @@
 
 PORTNAME=	terminatorx
 PORTVERSION=	3.84
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://terminatorx.org/dist/
 DISTNAME=	terminatorX-${PORTVERSION}

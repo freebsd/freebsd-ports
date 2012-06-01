@@ -7,7 +7,7 @@
 
 PORTNAME=	waimea
 PORTVERSION=	0.5.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://dev.gentoo.org/~nixphoeni/ \
 		${MASTER_SITE_LOCAL}
@@ -36,7 +36,7 @@ OPTIONS=	PNG "Enable PNG support" On \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PNG)
-LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 .else
 CONFIGURE_ARGS+=	--disable-png
 .endif

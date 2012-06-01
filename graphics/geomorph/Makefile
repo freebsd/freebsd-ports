@@ -7,7 +7,7 @@
 
 PORTNAME=	geomorph
 PORTVERSION=	0.50
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -15,7 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Height field generator and editor
 
-LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
+LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext \
+		png15:${PORTSDIR}/graphics/png
 
 USE_GL=		yes
 USE_GMAKE=	yes
@@ -39,7 +40,7 @@ CFLAGS+=	-O0
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|libpng|libpng14|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|libpng|libpng15|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/local/share/geomorph/GeoMorph.xpm|geomorph.xpm|' \
 		${WRKSRC}/geomorph.desktop
 	@${FIND} ${WRKSRC} -exec ${GREP} -q /usr/local/share/geomorph {} \; -print | \

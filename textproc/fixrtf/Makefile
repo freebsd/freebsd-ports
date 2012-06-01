@@ -9,7 +9,7 @@
 
 PORTNAME=	fixrtf
 PORTVERSION=	0.1.20060303
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -20,7 +20,7 @@ DISTFILES=	# none
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	A patch making it possible to embed PNGs into RTFs
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/src
 

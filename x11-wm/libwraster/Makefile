@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libwraster
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	libwraster from Window Maker
 

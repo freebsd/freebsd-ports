@@ -7,6 +7,7 @@
 
 PORTNAME=	tomboy-plugin-wordcount
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.proven-corporation.com/~jhs/
 DISTNAME=	tomboy-wordcount-${PORTVERSION}

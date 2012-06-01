@@ -8,7 +8,7 @@
 
 PORTNAME=	images
 PORTVERSION=	3.0.2
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/cristal/caml-light/bazar-ocaml/ \
@@ -32,6 +32,7 @@ USE_OCAML_WASH=	yes
 OCAML_PKGDIRS=	camlimages
 USE_OCAML_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 
@@ -48,7 +49,7 @@ OPTIONS=	PNG "Enable PNG support" on \
 .include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_PNG)
-LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=	--with-png
 .else
 CONFIGURE_ARGS+=	--without-png

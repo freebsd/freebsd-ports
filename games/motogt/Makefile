@@ -7,7 +7,7 @@
 
 PORTNAME=	motogt
 PORTVERSION=	20110505
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/motogt/
 DISTNAME=	MotoGT-${PORTVERSION}
@@ -16,7 +16,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	2D top-viewed motorcycle racing game
 
 LIB_DEPENDS=	sfml-system.1:${PORTSDIR}/devel/sfml \
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 
 LICENSE=	GPLv2 CCbySA
 LICENSE_COMB=	multi
@@ -29,6 +29,7 @@ USE_ZIP=	yes
 BUILD_WRKSRC=	${WRKSRC}/src
 MAKEFILE=	Makefile.lnx
 MAKE_JOBS_UNSAFE=	yes
+CFLAGS+=	-I${LOCALBASE}/include/libpng15
 MAKE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 SUB_FILES=	motogt
 

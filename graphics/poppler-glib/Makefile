@@ -6,7 +6,7 @@
 #   $MCom$
 #
 
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	-glib
 
 MAINTAINER=	gnome@FreeBSD.org

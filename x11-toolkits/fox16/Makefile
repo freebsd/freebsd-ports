@@ -7,6 +7,7 @@
 
 PORTNAME=	fox
 PORTVERSION=	${MAJORVER}.${SHVER}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.fox-toolkit.org/pub/
 
@@ -14,7 +15,7 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Fast and extensive C++ GUI toolkit -- ver.1.6
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 

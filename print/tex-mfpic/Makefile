@@ -6,6 +6,7 @@
 
 PORTNAME=	mfpic
 PORTVERSION=	1.06.20110308
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://comp.uark.edu/~luecking/tex/
 PKGNAMEPREFIX=	tex-

@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkradiant
 PORTVERSION=	1.5.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|source/:id|} \
 		http://www.bsd-geek.de/FreeBSD/distfiles/:fb
@@ -23,7 +23,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libsvn/__init__.py:${PORTSDIR}/devel/py-subversion
 LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext \
 		mhash.2:${PORTSDIR}/security/mhash \
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/GPL/GtkRadiant
 
@@ -38,9 +38,6 @@ DATADIR=	${PREFIX}/lib/${PORTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-ldl//' ${WRKSRC}/SConscript
-	@${REINPLACE_CMD} -e 's/png_infopp_NULL/NULL/' \
-		-e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
-		${WRKSRC}/plugins/imagepng/plugin.cpp
 	@${GREP} -Rl 'defined[[:blank:]]*([[:blank:]]*__linux__[[:blank:]]*) || defined[[:blank:]]*([[:blank:]]*__APPLE__[[:blank:]]*)' ${WRKSRC} | \
 		${XARGS} ${REINPLACE_CMD} -e \
 		's/\(defined[[:blank:]]*([[:blank:]]*__linux__[[:blank:]]*) || defined[[:blank:]]*([[:blank:]]*__APPLE__[[:blank:]]*)\)/\1 || defined (__FreeBSD__)/'

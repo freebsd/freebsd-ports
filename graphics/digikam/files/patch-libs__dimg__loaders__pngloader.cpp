@@ -1,5 +1,5 @@
 --- digikam/libs/dimg/loaders/pngloader.cpp.orig	2009-07-03 07:19:41.000000000 +0200
-+++ digikam/libs/dimg/loaders/pngloader.cpp	2010-03-29 18:35:49.000000000 +0200
++++ digikam/libs/dimg/loaders/pngloader.cpp	2012-05-05 08:00:13.000000000 +0200
 @@ -88,7 +88,11 @@
      unsigned char buf[PNG_BYTES_TO_CHECK];
  
@@ -36,7 +36,17 @@
                  png_set_gray_to_rgb(png_ptr);
  
                  if (QImage::systemByteOrder() == QImage::LittleEndian)       // Intel
-@@ -526,7 +538,11 @@
+@@ -403,7 +415,8 @@
+ 
+     QMap<int, QByteArray>& metaData = imageMetaData();
+ 
+-    png_charp   profile_name, profile_data=NULL;
++    png_charp   profile_name=NULL;
++    png_byte    *profile_data=NULL;
+     png_uint_32 profile_size;
+     int         compression_type;
+ 
+@@ -526,7 +539,11 @@
      // PNG error handling. If an error occurs during writing, libpng
      // will jump here
  
@@ -49,3 +59,12 @@
      {
          DDebug() << k_funcinfo << "Internal libPNG error during writing file. Process aborted!" << endl;
          fclose(f);
+@@ -599,7 +616,7 @@
+ 
+     if (!profile_rawdata.isEmpty())
+     {
+-        png_set_iCCP(png_ptr, info_ptr, (png_charp)"icc", PNG_COMPRESSION_TYPE_BASE, profile_rawdata.data(), profile_rawdata.size());
++        png_set_iCCP(png_ptr, info_ptr, (png_charp)"icc", PNG_COMPRESSION_TYPE_BASE, (png_byte*) profile_rawdata.data(), profile_rawdata.size());
+     }
+ 
+     // -------------------------------------------------------------------

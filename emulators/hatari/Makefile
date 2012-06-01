@@ -7,7 +7,7 @@
 
 PORTNAME=	hatari
 PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	BERLIOS
 
@@ -18,7 +18,7 @@ LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	portaudio>=19:${PORTSDIR}/audio/portaudio2
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	portaudio>=19:${PORTSDIR}/audio/portaudio2
 
 USE_BZIP2=	yes

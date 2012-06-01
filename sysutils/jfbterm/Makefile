@@ -7,7 +7,7 @@
 PORTNAME=	jfbterm
 PORTVERSION=	0.6.1
 DISTVERSIONPREFIX=${OPSYS}-
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ac.auone-net.jp/~baba/${PORTNAME}/ \
 		http://chirashi-no-ura.net/files/
@@ -76,7 +76,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/iconv.h:${PORTSDIR}/converters/libiconv
 
 .if !defined(WITHOUT_PNG)
 . if !defined(NO_SHARED)
-LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 . else
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libpng.a:${PORTSDIR}/graphics/png
 . endif

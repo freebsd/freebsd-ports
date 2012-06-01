@@ -7,7 +7,7 @@
 
 PORTNAME=	qtcurve
 PORTVERSION=	1.8.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://craigd.wikispaces.com/file/view/
 PKGNAMEPREFIX=	kde4-style-
