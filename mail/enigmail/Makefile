@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	enigmail
-PORTVERSION?=	1.4.1
+PORTVERSION?=	1.4.2
 PORTREVISION?=	0
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.mozilla-enigmail.org/download/source/
