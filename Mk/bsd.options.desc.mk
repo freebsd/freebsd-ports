@@ -81,6 +81,7 @@ LASH_DESC?=		Enable LDASH audio support
 LASTFM_DESC?=		Support Last.FM stream input
 LCMS2_DESC?=		Enable LCMS2 support
 LDAP_DESC?=		Enable LDAP support
+MAD_DESC?=		Enable Mad mp3 decoder support
 MAGICK_DESC?=		Enable ImageMagick Library
 MIKMOD_DESC?=		Support MOD audio format
 MIXER_DESC?=		Enable Mixer support
