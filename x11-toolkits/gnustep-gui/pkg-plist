@@ -813,7 +813,7 @@ GNUstep/System/Tools/set_show_service
 @dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSSpellPanel.gorm
 @dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSPrintPanel.gorm
 @dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSPageLayout.gorm
-@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSFindPanel.gorm
+%%GNUSTEP_DEVEL%%@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSFindPanel.gorm
 @dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSDataLinkPanel.gorm
 @dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj
 @dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources
