@@ -167,6 +167,7 @@ share/doc/shibboleth/logo.jpg
 @exec mkdir -p %D/data
 @exec mkdir -p /var/log/shibboleth
 @exec mkdir -p /var/run/shibboleth
+@exec chown www:www /var/run/shibboleth
 @exec chmod -R ug=rwx,o= /var/run/shibboleth
 @unexec rm -rf /var/run/shibboleth 2>&1 >/dev/null || true
 @dirrmtry share/doc/shibboleth/api
