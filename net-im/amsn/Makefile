@@ -49,7 +49,7 @@ CONFIGURE_ENV+=	CFLAGS+="-I${LOCALBASE}/include" \
 		LDFLAGS+="-L${LOCALBASE}/lib"
 
 post-patch:
-	@${FIND} ${WRKSRC} -name '*.c' -or -name '*.h' | ${XARGS} ${REINPLACE_CMD} -e 's|||'
+	@${FIND} ${WRKSRC} -name '*.c' -or -name '*.h' | ${XARGS} ${REINPLACE_CMD} -e 's|||'
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 	${REINPLACE_CMD} -e 's|Linux|FreeBSD|g' ${WRKSRC}/amsn.desktop
 
