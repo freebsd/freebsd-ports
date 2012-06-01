@@ -37,21 +37,20 @@ NO_BUILD=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 CONFIGURE_ENV=	ac_cv_path_PERL=${PERL}
 
-OPTIONS=	FLAC "Enable FLAC support" off \
-		VORBIS "Enable Ogg Vorbis support" off
+OPTIONS_DEFINE=	FLAC VORBIS DOCS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_FLAC) || exists(${SITE_PERL}/${PERL_ARCH}/Audio/FLAC/Header.pm)
+.if ${PORT_OPTIONS:MFLAC} || exists(${SITE_PERL}/${PERL_ARCH}/Audio/FLAC/Header.pm)
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Audio/FLAC/Header.pm:${PORTSDIR}/audio/p5-Audio-FLAC-Header
 .endif
 
-.if defined(WITH_VORBIS) || exists(${SITE_PERL}/Ogg/Vorbis/Header/PurePerl.pm)
+.if ${PORT_OPTIONS:MVORBIS} || exists(${SITE_PERL}/Ogg/Vorbis/Header/PurePerl.pm)
 BUILD_DEPENDS+=	${SITE_PERL}/Ogg/Vorbis/Header/PurePerl.pm:${PORTSDIR}/audio/p5-Ogg-Vorbis-Header-PurePerl
 BUILD_DEPENDS+=	oggdec:${PORTSDIR}/audio/vorbis-tools
 .endif
 
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}
@@ -65,4 +64,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/ipod.svg ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

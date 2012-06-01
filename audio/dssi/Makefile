@@ -24,7 +24,7 @@ LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \
 		jack.0:${PORTSDIR}/audio/jack
 RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 
-OPTIONS=	QT "Enable Qt4 support" off
+OPTIONS_DEFINE=	QT4
 
 USE_GNOME=	gnomehack
 USE_GMAKE=	yes
@@ -39,7 +39,7 @@ MAN1=		dssi_analyse_plugin.1 dssi_list_plugins.1 dssi_osc_send.1 \
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_QT)
+.if ${PORT_OPTIONS:MQT4}
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui
 QT_NONSTANDARD=	yes
@@ -57,7 +57,7 @@ post-patch:
 		's|-ldl$$||' ${WRKSRC}/jack-dssi-host/Makefile.in
 	@${REINPLACE_CMD} -e \
 		'/alsa >=/s|$$PKG_CONFIG|${FALSE}|' ${WRKSRC}/configure
-.if !defined(WITH_QT)
+.if empty(PORT_OPTIONS:MQT4)
 	@${REINPLACE_CMD} -e \
 		'/QtCore >=/s|$$PKG_CONFIG|${FALSE}|' ${WRKSRC}/configure
 .endif

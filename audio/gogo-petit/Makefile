@@ -30,11 +30,11 @@ MAKE_ENV+=	AS="${AS}" \
 ONLY_FOR_ARCHS=	i386
 PLIST_FILES=	bin/gogo-petit
 
-OPTIONS=	THREADS	"build a multithreaded encoder for SMP" Off
+OPTIONS_DEFINE=	THREADS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.ifdef(WITH_THREADS)
+.if ${PORT_OPTIONS:MTHREADS}
 LDFLAGS+=	${PTHREAD_LIBS}
 CFLAGS+=	${PTHREAD_CFLAGS}
 MAKEFILE=	${FILESDIR}/Makefile.rfork
@@ -42,4 +42,4 @@ MAKEFILE=	${FILESDIR}/Makefile.rfork
 MAKEFILE=	${FILESDIR}/Makefile.unthreaded
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

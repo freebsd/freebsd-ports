@@ -17,10 +17,8 @@ COMMENT=	An mp3 streaming source client for icecast 2
 LIB_DEPENDS=	shout.5:${PORTSDIR}/audio/libshout2 \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
-OPTIONS=	FLAC "Enable flac transcoding support" Off \
-		FAAD "Enable mpep4 transcoding support" Off \
-		VORBIS "Enable ogg/vorbis transcoding support" Off \
-		PYTHON "Enable Python scripting" On
+OPTIONS_DEFINE=	FLAC FAAD VORBIS PYTHON
+OPTIONS_DEFAULT=	PYTHON
 
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
@@ -42,35 +40,35 @@ MAN1=		ices0.1
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_FLAC)
-CONFIGURE_ARGS+=--without-flac
-.else
+.if ${PORT_OPTIONS:MFLAC}
 LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac \
 		mp3lame:${PORTSDIR}/audio/lame
+.else
+CONFIGURE_ARGS+=--without-flac
 .endif
 
-.if !defined(WITH_FAAD)
-CONFIGURE_ARGS+=--without-faad
-.else
+.if ${PORT_OPTIONS:MFAAD}
 LIB_DEPENDS+=	faad:${PORTSDIR}/audio/faad \
 		mp3lame:${PORTSDIR}/audio/lame
+.else
+CONFIGURE_ARGS+=--without-faad
 .endif
 
-.if defined(WITH_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 BUILD_DEPENDS+=	python:${PORTSDIR}/lang/python
 RUN_DEPENDS+=	python:${PORTSDIR}/lang/python
 .else
 CONFIGURE_ARGS+=--without-python
 .endif
 
-.if !defined(WITH_VORBIS)
-CONFIGURE_ARGS+=--without-vorbis
-.else
+.if ${PORT_OPTIONS:MVORBIS}
 LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis \
 		mp3lame:${PORTSDIR}/audio/lame
+.else
+CONFIGURE_ARGS+=--without-vorbis
 .endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

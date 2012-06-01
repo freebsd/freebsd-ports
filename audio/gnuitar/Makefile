@@ -23,7 +23,9 @@ TXT_DOCS=	AUTHORS COPYING FAQ INSTALL NEWS README TODO ChangeLog
 HTML_DOCS=	faq.html index.html install.html readme.html
 PORTDOCS=	${TXT_DOCS} ${HTML_DOCS}
 
-OPTIONS=	SUID	"Use suid to allow highest priority (priv. dropped)"	On
+OPTIONS_DEFINE=	SUID DOCS
+OPTIONS_DEFAULT=	SUID
+SUID_DESC=	Use suid to allow highest priority (priv. dropped)
 
 DESKTOP_ENTRIES="GNUitar" \
 		"Apply guitar effects in real-time" \
@@ -32,7 +34,7 @@ DESKTOP_ENTRIES="GNUitar" \
 		"" \
 		true
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 pre-fetch:
 	@${CAT} pkg-message
@@ -47,7 +49,7 @@ do-install:
 post-install:
 	@${MKDIR} ${PREFIX}/share/pixmaps
 	@${INSTALL_DATA} ${WRKSRC}/src/gnuitar.xpm ${PREFIX}/share/pixmaps
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in ${TXT_DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
@@ -56,10 +58,10 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/docs/${i} ${DOCSDIR}
 .endfor
 .endif
-.if defined(WITH_SUID)
+.if ${PORT_OPTIONS:MSUID}
 # make it setuid-root to be able to set realtime priority (root
 # privileges are dropped in the main routine)
 	@${CHMOD} u+s ${PREFIX}/bin/gnuitar
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

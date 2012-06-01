@@ -19,10 +19,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3
 
-OPTIONS=	OSS "Enable OSS support" on \
-		ALSA "Enable ALSA support" off \
-		PORTAUDIO "Enable PortAudio support" off \
-		JACK "Enable JACK support" on \
+OPTIONS_DEFINE=	OSS ALSA PORTAUDIO JACK
+OPTIONS_DEFAULT=	OSS JACK
 
 USE_BZIP2=	yes
 USE_QT_VER=	4
@@ -35,20 +33,20 @@ MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_OSS)
-CMAKE_ARGS+=	-DSOUNDSYSTEM_USE_OSS:BOOL=false
-.else
+.if ${PORT_OPTIONS:MOSS}
 CMAKE_ARGS+=	-DSOUNDSYSTEM_USE_OSS:BOOL=true
+.else
+CMAKE_ARGS+=	-DSOUNDSYSTEM_USE_OSS:BOOL=false
 .endif
 
-.if defined(WITH_ALSA)
+.if ${PORT_OPTIONS:MALSA}
 LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
 CMAKE_ARGS+=	-DSOUNDSYSTEM_USE_ALSA:BOOL=true
 .else
 CMAKE_ARGS+=	-DSOUNDSYSTEM_USE_ALSA:BOOL=false
 .endif
 
-.if defined(WITH_PORTAUDIO)
+.if ${PORT_OPTIONS:MPORTAUDIO}
 BUILD_DEPENDS+=	portaudio>=19:${PORTSDIR}/audio/portaudio2
 RUN_DEPENDS+=	portaudio>=19:${PORTSDIR}/audio/portaudio2
 CMAKE_ARGS+=	-DSOUNDSYSTEM_USE_PORTAUDIO:BOOL=true
@@ -56,11 +54,11 @@ CMAKE_ARGS+=	-DSOUNDSYSTEM_USE_PORTAUDIO:BOOL=true
 CMAKE_ARGS+=	-DSOUNDSYSTEM_USE_PORTAUDIO:BOOL=false
 .endif
 
-.if defined(WITHOUT_JACK)
-CMAKE_ARGS+=	-DSOUNDSYSTEM_USE_JACK:BOOL=false
-.else
+.if ${PORT_OPTIONS:MJACK}
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 CMAKE_ARGS+=	-DSOUNDSYSTEM_USE_JACK:BOOL=true
+.else
+CMAKE_ARGS+=	-DSOUNDSYSTEM_USE_JACK:BOOL=false
 .endif
 
 .include <bsd.port.mk>

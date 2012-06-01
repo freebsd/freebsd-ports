@@ -19,19 +19,19 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ladspa-prefix="${LOCALBASE}"
 
-OPTIONS=	NLS "Native language support" on
+OPTIONS_DEFINE=	NLS
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
@@ -39,4 +39,4 @@ post-patch:
 		's|$$(LIBS)$$|$$(LIBS) $$(LDFLAGS)|g ; \
 		 s|-lc | |g'
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -17,12 +17,13 @@ COMMENT=	An IceCast, IceCast2 and ShoutCast live audio streamer
 
 LICENSE=	GPLv3
 
-OPTIONS=	VORBIS "Ogg Vorbis support" on \
-		LAME "LAME support for MP3" off \
-		TWOLAME "TwoLAME support for MP2" off \
-		FAAC "FAAC support for AAC" off \
-		JACK "Jack support" off \
-		AACPLUS "AAC HEv2 and libsamplerate support" off
+OPTIONS_DEFINE=	JACK
+OPTIONS_MULTI=	CODEC
+OPTIONS_MULTI_CODEC=	VORBIS LAME TWOLAME FAAC AACPLUS
+OPTIONS_DEFAULT=	VORBIS
+
+AACPLUS_DESC=	AAC HEv2 and libsamplerate support
+TWOLAME_DESC=	TwoLAME support for MP2
 
 USE_AUTOTOOLS=	aclocal autoconf
 GNU_CONFIGURE=	yes
@@ -39,52 +40,47 @@ MAN5=		darkice.cfg.5
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_VORBIS)
-CONFIGURE_ARGS+=	--without-vorbis
-.else
+.if ${PORT_OPTIONS:MVORBIS}
 CONFIGURE_ARGS+=	--with-vorbis-prefix=${LOCALBASE}
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+.else
+CONFIGURE_ARGS+=	--without-vorbis
 .endif
 
-.if defined(WITH_LAME)
+.if ${PORT_OPTIONS:MLAME}
 LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
 CONFIGURE_ARGS+=	--with-lame-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-lame
 .endif
 
-.if defined(WITH_TWOLAME)
+.if ${PORT_OPTIONS:MTWOLAME}
 LIB_DEPENDS+=	twolame.0:${PORTSDIR}/audio/twolame
 CONFIGURE_ARGS+=	--with-twolame-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-twolame
 .endif
 
-.if defined(WITH_FAAC)
+.if ${PORT_OPTIONS:MFAAC}
 LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
 CONFIGURE_ARGS+=	--with-faac-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-faac
 .endif
 
-.if defined(WITH_JACK)
+.if ${PORT_OPTIONS:MJACK}
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 CONFIGURE_ARGS+=	--with-jack-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-jack
 .endif
 
-.if defined(WITH_AACPLUS)
+.if ${PORT_OPTIONS:MAACPLUS}
 LIB_DEPENDS+=	aacplus.2:${PORTSDIR}/audio/libaacplus \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate
 CONFIGURE_ARGS+=	--with-aacplus-prefix=${LOCALBASE} --with-samplerate-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-aacplus --without-samplerate
-.endif
-
-.if defined(WITHOUT_VORBIS) && defined(WITHOUT_LAME) && defined(WITHOUT_TWOLAME) && \
-	defined(WITHOUT_FAAC) && defined(WITHOUT_AACPLUS)
-IGNORE=at least one of VORBIS,LAME,TWOLAME,FAAC,AACPLUS options must be set
 .endif
 
 post-patch:

@@ -4,7 +4,7 @@ bin/csb64enc
 bin/csbeats
 bin/csmixer
 bin/csound
-%%FLTKGUI%%bin/csound5gui
+%%FLTK%%bin/csound5gui
 bin/cvanal
 bin/dnoise
 bin/envext
@@ -27,7 +27,7 @@ bin/scsort
 bin/sdif2ad
 bin/sndinfo
 bin/srconv
-%%FLTKGUI%%bin/winsound
+%%FLTK%%bin/winsound
 include/csound/CppSound.hpp
 include/csound/CsoundFile.hpp
 include/csound/OpcodeBase.hpp
@@ -53,7 +53,7 @@ lib/csound/plugins64/libcellular.so
 lib/csound/plugins64/libcontrol.so
 lib/csound/plugins64/libcs_date.so
 lib/csound/plugins64/libdoppler.so
-%%DSSI%%lib/csound/plugins64/libdssi4cs.so
+%%LADSPA%%lib/csound/plugins64/libdssi4cs.so
 lib/csound/plugins64/libfareygen.so
 %%FLUIDSYNTH%%lib/csound/plugins64/libfluidOpcodes.so
 lib/csound/plugins64/libfractalnoise.so
@@ -75,8 +75,8 @@ lib/csound/plugins64/libsystem_call.so
 lib/csound/plugins64/libudprecv.so
 lib/csound/plugins64/libudpsend.so
 lib/csound/plugins64/liburandom.so
-%%FLTKGUI%%lib/csound/plugins64/libvirtual.so
-%%FLTKGUI%%lib/csound/plugins64/libwidgets.so
+%%FLTK%%lib/csound/plugins64/libvirtual.so
+%%FLTK%%lib/csound/plugins64/libwidgets.so
 lib/libcsladspa.so
 lib/libcsnd.so.5
 lib/libcsound64.so
