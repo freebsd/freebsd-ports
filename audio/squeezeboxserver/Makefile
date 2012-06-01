@@ -18,12 +18,10 @@ COMMENT=	Slim Devices audio streaming server
 
 # Defaults support playback of relativly unrestricted formats on SB2 or
 # SB3 devices and wired SB1 devices.
-OPTIONS=	APE "Support Monkey's Audio Codec input" on \
-		FAAD "Support AAC input via FAAD" on \
-		FLAC "Support FLAC output (and input on SliMP3 and SB1)" on \
-		LAME "Support MP3 output via LAME" off \
-		SHORTEN "Support Shorten input" off \
-		SOX "Support OGG Vorbis input via SoX (SliMP3 and SB1)" on
+OPTIONS_DEFINE=	APE FAAD FLAC LAME SHORTEN SOX DOCS
+OPTIONS_DEFAULT=	APE FAAD FLAX SOX
+SHORTEN_DESC=	Support Shorten input
+SOX_DESC=	Support OGG Vorbis input via SoX (SliMP3 and SB1)
 
 RESTRICTED=	Contains non-redistributable firmware, documentation, and images
 
@@ -61,22 +59,22 @@ RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
 USE_MYSQL=	server
 WANT_MYSQL_VER=	50
 
-.if !defined(WITHOUT_APE)
+.if ${PORT_OPTIONS:MAPE}
 RUN_DEPENDS+=	mac:${PORTSDIR}/audio/mac
 .endif
-.if !defined(WITHOUT_FAAD)
+.if ${PORT_OPTIONS:MFAAD}
 RUN_DEPENDS+=	faad:${PORTSDIR}/audio/faad
 .endif
-.if !defined(WITHOUT_FLAC)
+.if ${PORT_OPTIONS:MFLAC}
 RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
 .endif
-.if !defined(WITHOUT_LAME)
+.if ${PORT_OPTIONS:MLAME}
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 .endif
-.if !defined(WITHOUT_SHORTEN)
+.if ${PORT_OPTIONS:MSHORTEN}
 RUN_DEPENDS+=	shorten:${PORTSDIR}/audio/shorten
 .endif
-.if !defined(WITHOUT_SOX)
+.if ${PORT_OPTIONS:MSOX}
 RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox
 .endif
 
@@ -187,7 +185,7 @@ do-build:
 .for _CONF in ${CONFFILES}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${_CONF} ${TMP_SLIMDIR}/${_CONF}.sample
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${TMP_DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCFILES} ${TMP_DOCSDIR}
 .endif
@@ -210,7 +208,7 @@ do-install:
 	    ${LOCALBASE}/share/mysql/english/errmsg.sys \
 	    ${PREFIX}/${SLIMDIR}/MySQL/
 	@${INSTALL_SCRIPT} ${WRKDIR}/softsqueeze.sh ${PREFIX}/bin/softsqueeze
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@cd ${TMP_DOCSDIR} && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif

@@ -26,59 +26,60 @@ GNU_CONFIGURE=		yes
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 
-OPTIONS=		SHOUTCAST "SHOUTcast plugin" on \
-			LIVE365 "Live365 plugin" on \
-			XIPH "Xiph plugin" on \
-			LOCAL "Local plugin" on \
-			LOCAL_METADATA "metadata support for the Local plugin" on \
-			PYTHON "Python plugin" on
+OPTIONS_DEFINE=	SHOUTCAST LIVE365 XIPH LOCAL LOCAL_METADATA
+OPTIONS_DEFAULT=	SHOUTCAST LIVE365 XIPH LOCAL LOCAL_METADATA
+SHOUTCAST_DESC=	SHOUTcast plugin
+LIVE365_DESC=	Live365 plugin
+LOCAL_DESC=	Local plugin
+LOCAL_METADATA_DESC=	metadata support for the Local plugin
+XIPH_DESC=	Xiph plugin
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_SHOUTCAST)
+.if ${PORT_OPTIONS:MSHOUTCAST}
+PLIST_SUB+=		SHOUTCAST=""
+.else
 CONFIGURE_ARGS+=	--disable-shoutcast
 PLIST_SUB+=		SHOUTCAST="@comment "
-.else
-PLIST_SUB+=		SHOUTCAST=""
 .endif
 
-.if defined(WITHOUT_LIVE365)
+.if ${PORT_OPTIONS:MLIVE365}
+PLIST_SUB+=		LIVE365=""
+.else
 CONFIGURE_ARGS+=	--disable-live365
 PLIST_SUB+=		LIVE365="@comment "
-.else
-PLIST_SUB+=		LIVE365=""
 .endif
 
-.if defined(WITHOUT_XIPH)
-CONFIGURE_ARGS+=	--disable-xiph
-PLIST_SUB+=		XIPH="@comment "
-.else
+.if ${PORT_OPTIONS:MXIPH}
 PLIST_SUB+=		XIPH=""
 USE_GNOME+=		libxml2
+.else
+CONFIGURE_ARGS+=	--disable-xiph
+PLIST_SUB+=		XIPH="@comment "
 .endif
 
-.if defined(WITHOUT_LOCAL)
+.if ${PORT_OPTIONS:MLOCAL}
+PLIST_SUB+=		LOCAL=""
+.if ${PORT_OPTIONS:MLOCAL_METADATA}
+LIB_DEPENDS+=		tag_c:${PORTSDIR}/audio/taglib
+.else
+CONFIGURE_ARGS+=	--disable-local-metadata
+.endif
+.else
 CONFIGURE_ARGS+=	--disable-local
 PLIST_SUB+=		LOCAL="@comment "
-.else
-PLIST_SUB+=		LOCAL=""
-.if defined(WITHOUT_LOCAL_METADATA)
-CONFIGURE_ARGS+=	--disable-local-metadata
-.else
-LIB_DEPENDS+=		tag_c:${PORTSDIR}/audio/taglib
-.endif
 .endif
 
-.if defined(WITHOUT_PYTHON)
-CONFIGURE_ARGS+=	--disable-python
-PLIST_SUB+=		PYTHON="@comment "
-.else
+.if ${PORT_OPTIONS:MPYTHON}
 PLIST_SUB+=		PYTHON=""
 USE_PYTHON=		2.5+
 # we need to manually include this, because USE_PYTHON is defined
 # after including bsd.port.pre.mk
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 USE_GNOME+=		pygtk2
+.else
+CONFIGURE_ARGS+=	--disable-python
+PLIST_SUB+=		PYTHON="@comment "
 .endif
 
 post-patch:
@@ -86,4 +87,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|[(]datadir[)]/help|(datadir)/gnome/help|g' \
 		${WRKSRC}/help/C/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

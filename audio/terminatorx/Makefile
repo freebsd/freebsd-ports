@@ -23,12 +23,10 @@ BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa \
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		lrdf.2:${PORTSDIR}/textproc/liblrdf
 
-OPTIONS=	ALSA "ALSA support" off \
-		JACK "JACK support" on \
-		MPG123 "mpg123 support" on \
-		SOX "sox (.au) support" on \
-		VORBIS "OGG Vorbis support" on \
-		MAD "MPEG Audio Decoder (libmad) support" on
+OPTIONS_DEFINE=	ALSA JACK MPG123 SOX VORBIS MAD
+OPTIONS_DEFAULT=	JACK MPG123 SOX VORBIS MAD
+SOX_DESC=	sox (.au) support
+MPG123_DESC=	mpg123 support
 
 USE_BZIP2=	yes
 USE_XORG=	x11 xext xi xxf86dga ice sm
@@ -46,40 +44,40 @@ MAN1=		terminatorX.1
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_ALSA)
-LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
-.else
+.if ${PORT_OPTIONS:MALSA}
 CONFIGURE_ARGS+=	--disable-alsa
+.else
+LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
 .endif
 
-.if !defined(WITHOUT_JACK)
+.if ${PORT_OPTIONS:MJACK}
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 .else
 CONFIGURE_ARGS+=	--disable-jack
 .endif
 
-.if !defined(WITHOUT_MPG123)
+.if ${PORT_OPTIONS:MMPG123}
 BUILD_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123
 .else
 CONFIGURE_ARGS+=	--disable-mpg123
 .endif
 
-.if !defined(WITHOUT_SOX)
+.if ${PORT_OPTIONS:MSOX}
 BUILD_DEPENDS+=	sox:${PORTSDIR}/audio/sox
 .else
 CONFIGURE_ARGS+=	--disable-sox
 .endif
 
-.if !defined(WITHOUT_VORBIS)
+.if ${PORT_OPTIONS:MVORBIS}
 BUILD_DEPENDS+=	oggenc:${PORTSDIR}/audio/vorbis-tools
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 .else
 CONFIGURE_ARGS+=	--disable-vorbis
 .endif
 
-.if !defined(WITHOUT_MAD)
+.if ${PORT_OPTIONS:MMAD}
 LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/mad
 .else
 CONFIGURE_ARGS+=	--disable-mad
@@ -116,4 +114,4 @@ do-install:
 		${PREFIX}/share/omf/terminatorX/terminatorX-C.omf
 	@scrollkeeper-install -q ${PREFIX}/share/omf/terminatorX/terminatorX-C.omf 2>/dev/null || ${TRUE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
