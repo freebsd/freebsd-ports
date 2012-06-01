@@ -1,6 +1,14 @@
---- src/swft/readpng.c.orig	2006-07-20 15:57:17.000000000 +0200
-+++ src/swft/readpng.c	2010-03-29 16:19:53.000000000 +0200
-@@ -69,7 +69,7 @@
+--- src/swft/readpng.c.orig	2009-11-30 01:18:53.000000000 +0100
++++ src/swft/readpng.c	2012-05-05 07:48:08.000000000 +0200
+@@ -51,6 +51,7 @@
+ #include <stdlib.h>
+ 
+ #include "png.h"        /* libpng header; includes zlib.h */
++#include "zlib.h"
+ #include "readpng.h"    /* typedefs, common macros, public prototypes */
+ 
+ /* future versions of libpng will provide this macro: */
+@@ -87,7 +88,7 @@
       * have used slightly more general png_sig_cmp() function instead */
  
      fread(sig, 1, 8, infile);

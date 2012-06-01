@@ -7,7 +7,7 @@
 
 PORTNAME=	gtktetcolor
 PORTVERSION=	0.6.4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games gnome
 MASTER_SITES=	SUNSITE/games \
 		http://canopus.iacp.dvo.ru/~panov/gtktetcolor/

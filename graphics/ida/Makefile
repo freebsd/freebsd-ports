@@ -7,6 +7,7 @@
 
 PORTNAME=	ida
 PORTVERSION=	2.09
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.kraxel.org/releases/fbida/
 DISTNAME=	fbida-${PORTVERSION}
@@ -58,7 +59,7 @@ MAKE_ARGS+=	HAVE_LIBPCD=no
 .if defined(WITHOUT_PNG)
 MAKE_ARGS+=	HAVE_LIBPNG=no
 .else
-LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 .endif
 
 .if defined(WITH_SANE)

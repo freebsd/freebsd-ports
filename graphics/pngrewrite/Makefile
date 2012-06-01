@@ -7,6 +7,7 @@
 
 PORTNAME=	pngrewrite
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://entropymine.com/jason/pngrewrite/ \
 		http://mirror.roe.ch/dist/pngrewrite/
@@ -14,7 +15,7 @@ MASTER_SITES=	http://entropymine.com/jason/pngrewrite/ \
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	A PNG palette optimizer
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes

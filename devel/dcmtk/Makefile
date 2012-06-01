@@ -7,6 +7,7 @@
 
 PORTNAME=	dcmtk
 DISTVERSION=	3.6.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://dicom.offis.de/pub/dicom/offis/software/${PORTNAME}/${PORTNAME}${PORTVERSION:S/.//g}/
 
@@ -14,7 +15,7 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A toolkit to work with DICOM files
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
-    		png.6:${PORTSDIR}/graphics/png \
+    		png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
 USE_GNOME=	libxml2

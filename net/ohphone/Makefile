@@ -7,7 +7,7 @@
 
 PORTNAME=	ohphone
 PORTVERSION=	1.4.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.frm2.tum.de/pub/jpulz/FreeBSD/distfiles/
 

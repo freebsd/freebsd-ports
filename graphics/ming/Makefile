@@ -7,7 +7,7 @@
 
 PORTNAME=	ming
 PORTVERSION=	0.4.4
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Releases/
 
@@ -16,7 +16,7 @@ COMMENT=	Flash 4/5 movie output library with many languages support
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		gif.5:${PORTSDIR}/graphics/giflib \
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 
 CONFLICTS=	ja-ming-[0-9]*
 

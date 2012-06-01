@@ -7,6 +7,7 @@
 
 PORTNAME=	gpodder
 PORTVERSION=	3.1.2
+PORTREVISION=	1
 CATEGORIES=	multimedia python
 MASTER_SITES=	http://gpodder.org/src/
 

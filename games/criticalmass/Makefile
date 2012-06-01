@@ -7,7 +7,7 @@
 
 PORTNAME=	criticalmass
 PORTVERSION=	1.0.0
-PORTREVISION=	10
+PORTREVISION=	11
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Critical%20Mass/${PORTVERSION}
@@ -16,6 +16,8 @@ DISTNAME=	CriticalMass-${PORTVERSION}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	An SDL/OpenGL space shoot\'em up game
 
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+
 CONFLICTS=	shaaft-[0-9]*
 
 USE_BZIP2=	yes
@@ -23,6 +25,7 @@ USE_SDL=	image mixer sdl
 USE_GL=		gl
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
+CFLAGS=		-I${LOCALBASE}/include/libpng15
 CONFIGURE_ARGS=	--disable-optimize
 
 MAN6=		critter.6

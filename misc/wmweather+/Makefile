@@ -6,7 +6,7 @@
 
 PORTNAME=		wmweather+
 PORTVERSION=		2.11
-PORTREVISION=		5
+PORTREVISION=	6
 CATEGORIES=		misc windowmaker geography
 MASTER_SITES=		SF/wmweatherplus/wmweather%2B/
 DISTNAME=		wmweather%2B-${PORTVERSION}
@@ -18,7 +18,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		pcre:${PORTSDIR}/devel/pcre \
 		tiff:${PORTSDIR}/graphics/tiff \
 		Hermes:${PORTSDIR}/graphics/Hermes \
-		png:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		gif.5:${PORTSDIR}/graphics/giflib
 

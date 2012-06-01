@@ -7,6 +7,7 @@
 
 PORTNAME=	monodevelop-vala
 PORTVERSION=	2.8
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 

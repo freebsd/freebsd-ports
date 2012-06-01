@@ -7,7 +7,7 @@
 
 PORTNAME=	vsound
 PORTVERSION=	0.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.vsound.org/
 

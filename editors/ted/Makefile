@@ -7,6 +7,7 @@
 
 PORTNAME=	ted
 PORTVERSION=	2.22
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.nluug.nl/pub/editors/ted/
 EXTRACT_SUFX=	.src.tar.gz
@@ -17,7 +18,7 @@ COMMENT=	X11 based RTF editor
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		paper.2:${PORTSDIR}/print/libpaper
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
@@ -30,6 +31,7 @@ USE_XORG=	xext xft
 USE_ICONV=	yes
 USE_GHOSTSCRIPT_RUN=	yes
 GNU_CONFIGURE=	yes
+CFLAGS+=	-I${LOCALBASE}/include/libpng15
 MAKE_ENV=	DEF_AFMDIR="-DAFMDIR=\"\\\"${AFMDIR}/\\\"\"" \
 		DEF_INDDIR="-DINDDIR=\"\\\"${INDDIR}/\\\"\"" \
 		DEF_DOCUMENT_DIR="-DDOCUMENT_DIR=\"\\\"${DOCSDIR}/\\\"\"" \

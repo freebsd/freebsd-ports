@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomekiss
 PORTVERSION=	2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games gnome
 MASTER_SITES=	http://devel.tlrmx.org/kiss/source/
 

@@ -6,6 +6,7 @@
 
 PORTNAME=	nomencl
 PORTVERSION=	4.2.20050922
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.ctan.org/tex-archive/%SUBDIR%/ \
 		${MASTER_SITE_TEX_CTAN}

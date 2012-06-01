@@ -7,7 +7,7 @@
 
 PORTNAME=	pgplot
 PORTVERSION=	5.2.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.astro.caltech.edu/pub/pgplot/
 DISTNAME=	${PORTNAME}${PORTVERSION:R}
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:R}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A C/FORTRAN library for drawing graphs on a variety of display devices
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 MAKE_JOBS_UNSAFE=	yes
 

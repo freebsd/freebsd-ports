@@ -8,6 +8,7 @@
 
 PORTNAME?=	gutenprint
 PORTVERSION=	5.2.7
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	SF/gimp-print/gutenprint-5.2/${PORTVERSION}
 PKGNAMESUFFIX?=	-base

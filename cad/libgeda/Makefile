@@ -7,7 +7,7 @@
 
 PORTNAME=	libgeda
 PORTVERSION=	1.4.3
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/release/v1.4/${PORTVERSION}/ \

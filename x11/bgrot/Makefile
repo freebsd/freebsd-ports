@@ -7,7 +7,7 @@
 
 PORTNAME=	bgrot
 PORTVERSION=	1.30
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	http://www.over-yonder.net/~fullermd/projects/bgrot/ \
 		http://distfiles.over-yonder.net/bgrot/

@@ -8,6 +8,7 @@
 
 PORTNAME=	jpilot
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES+=	palm comms
 MASTER_SITES=	http://www.mirrorservice.org/sites/master.us.finkmirrors.net/distfiles/ \
 		http://jpilot.org/

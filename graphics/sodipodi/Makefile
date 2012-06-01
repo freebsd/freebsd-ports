@@ -7,14 +7,15 @@
 
 PORTNAME=	sodipodi
 PORTVERSION=	0.34
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A small vector based drawing program with GNOME libraries
 
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
+		png15:${PORTSDIR}/graphics/png
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libglade2 libartlgpl2 desktopfileutils

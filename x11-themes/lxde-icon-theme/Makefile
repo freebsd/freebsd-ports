@@ -7,6 +7,7 @@
 
 PORTNAME=	lxde-icon-theme
 PORTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	SF/lxde/LXDE%20Icon%20Theme/lxde-icon-theme-${PORTVERSION}
 

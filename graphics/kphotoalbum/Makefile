@@ -6,7 +6,7 @@
 
 PORTNAME=		kphotoalbum
 PORTVERSION=		3.1.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=		graphics kde
 MASTER_SITES=		http://www.kphotoalbum.org/data/download/
 

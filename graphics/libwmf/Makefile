@@ -7,7 +7,7 @@
 
 PORTNAME=	libwmf
 PORTVERSION=	0.2.8.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	SF/wvware/${PORTNAME}/${PORTVERSION}
 
@@ -16,7 +16,7 @@ COMMENT=	Tools and library for converting Microsoft WMF (windows metafile)
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2     # XXX
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_AUTOTOOLS=	libtool

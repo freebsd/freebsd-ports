@@ -7,6 +7,7 @@
 
 PORTNAME=	openerp-server
 PORTVERSION=	6.0.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	finance python
 MASTER_SITES=	http://www.openerp.com/download/stable/source/

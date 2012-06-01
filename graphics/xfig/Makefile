@@ -7,6 +7,7 @@
 
 PORTNAME=	xfig
 PORTVERSION=	3.2.5b
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/mcj/mcj_dist_src/3.0/
 DISTNAME=	${PORTNAME}.${PORTVERSION}.full
@@ -15,7 +16,7 @@ MAINTAINER=	mjl@luckie.org.nz
 COMMENT=	A drawing program for X11
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		Xaw3d.8:${PORTSDIR}/x11-toolkits/Xaw3d
 RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
 
@@ -47,6 +48,10 @@ OPTIONS=	GHOSTSCRIPT "Ghostscript support" on \
 PLIST_SUB+=	JPORTDOCS="@comment "
 .else
 PLIST_SUB=	JPORTDOCS=""
+.endif
+
+.if !defined(WITHOUT_I18N)
+USE_GETETEXT=	yes
 .endif
 
 post-extract:

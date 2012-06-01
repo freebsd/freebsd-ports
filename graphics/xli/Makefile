@@ -7,7 +7,7 @@
 
 PORTNAME=	xli
 PORTVERSION=	1.17.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/x/${PORTNAME}
@@ -17,7 +17,7 @@ MAINTAINER=	lichray@gmail.com
 COMMENT=	Utilities to display images in X11
 
 CONFLICTS_INSTALL=	xloadimage-*
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
 USE_XORG=	xi

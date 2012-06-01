@@ -6,6 +6,7 @@
 
 PORTNAME=	ros-laser_pipeline
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://code.ros.org/svn/release/download/stacks/${STACKNAME}/${STACKNAME}-${PORTVERSION}/
 DISTNAME=	laser_pipeline-${PORTVERSION}

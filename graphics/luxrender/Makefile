@@ -7,6 +7,7 @@
 
 PORTNAME=	luxrender
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://src.luxrender.net/lux/archive/ \
 		http://freebsd.nsu.ru/distfiles/luxrender/
@@ -22,7 +23,7 @@ BROKEN=		does not build with boost-1.48.0
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libfreeimage.a:${PORTSDIR}/graphics/freeimage
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 
 HG_NODEID=	9206b3ba7011

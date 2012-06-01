@@ -7,6 +7,7 @@
 
 PORTNAME=	sagasu
 PORTVERSION=	2.0.10
+PORTREVISION=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 

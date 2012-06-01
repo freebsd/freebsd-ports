@@ -7,7 +7,7 @@
 
 PORTNAME=	autopano-sift-C
 PORTVERSION=	2.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/hugin/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -18,7 +18,7 @@ RESTRICTED=	May be covered by patents
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		pano13:${PORTSDIR}/graphics/libpano13
 
 CONFLICTS=	autopano-sift-[0-9]*

@@ -7,6 +7,7 @@
 
 PORTNAME=	valide
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpadlibrarian.net/68237064/
 

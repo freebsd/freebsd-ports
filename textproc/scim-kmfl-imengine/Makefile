@@ -7,7 +7,7 @@
 
 PORTNAME=	scim-kmfl-imengine
 PORTVERSION=	0.9.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/kmfl/kmfl/${PORTVERSION} \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/${DIST_SUBDIR}/
@@ -21,7 +21,7 @@ LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		kmfl.0:${PORTSDIR}/textproc/libkmfl \
 		kmflcomp.0:${PORTSDIR}/textproc/kmflcomp \
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp \
 		scim:${PORTSDIR}/textproc/scim
 

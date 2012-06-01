@@ -7,7 +7,7 @@
 
 PORTNAME=	wml
 PORTVERSION=	2.0.12
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	www lang
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=thewml
 MAINTAINER=	rodrigo@bebik.net
 COMMENT=	Website META Language, webdesign toolkit for HTML generation
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	\
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		p5-Bit-Vector>=5.2:${PORTSDIR}/math/p5-Bit-Vector \
@@ -31,6 +31,7 @@ BUILD_DEPENDS=	lynx:${PORTSDIR}/www/lynx \
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 CONFIGURE_ARGS=	--with-perl=${PERL5} --with-catdir=man \
 		--prefix=${PREFIX}
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	luakit
 PORTVERSION=	2011.07.22
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/mason-larobina/${PORTNAME}/tarball/${PORTVERSION}-r1/
 

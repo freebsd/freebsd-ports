@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libquicktime
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-lame
-PORTREVISION=	1
+PORTREVISION=	2
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	LAME plugin for libquicktime

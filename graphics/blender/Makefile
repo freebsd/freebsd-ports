@@ -6,6 +6,7 @@
 
 PORTNAME=	blender
 PORTVERSION=	2.63
+PORTREVISION=	1
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -15,7 +16,7 @@ MAINTAINER=	mva@FreeBSD.org
 COMMENT=	3D modeling/rendering/animation/gaming package
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_XORG=	x11 xext xmu

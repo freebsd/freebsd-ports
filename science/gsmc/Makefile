@@ -7,7 +7,7 @@
 
 PORTNAME=	gsmc
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science hamradio
 MASTER_SITES=	http://www.qsl.net/ik5nax/
 

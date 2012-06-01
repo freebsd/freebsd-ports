@@ -7,7 +7,7 @@
 
 PORTNAME=	dvipdfmx
 PORTVERSION=	20100328
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://project.ktug.or.kr/dvipdfmx/snapshot/latest/ \
 		http://project.ktug.or.kr/dvipdfmx/snapshot/archive/
@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dvipdfm with Asian languages by CID-keyed font technology support
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX-base
-LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		paper:${PORTSDIR}/print/libpaper
 RUN_DEPENDS=	${ADOBECMAPDIR}/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps \
 		kpsepath:${PORTSDIR}/print/teTeX-base

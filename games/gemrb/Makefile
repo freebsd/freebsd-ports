@@ -7,6 +7,7 @@
 
 PORTNAME=	gemrb
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	games emulators
 MASTER_SITES=	SF/${PORTNAME}/GemRB%20Sources/GemRB%20${PORTVERSION}%20Sources
 
@@ -16,7 +17,7 @@ COMMENT=	GemRB (Game engine made with preRendered Background)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 
 USE_CMAKE=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	pvmpov
 PORTVERSION=	3.1g.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics parallel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-3.1g2.tgz
 DISTNAME=	${PORTNAME}-3.1g2
@@ -18,6 +18,7 @@ COMMENT=	Distributed rendering package for Persistence of Vision Ray Tracer
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/povray31:configure \
 		aimk:${PORTSDIR}/net/pvm
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	povray31:${PORTSDIR}/graphics/povray31 \
 		pvmd:${PORTSDIR}/net/pvm
 

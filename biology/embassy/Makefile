@@ -8,7 +8,7 @@
 
 PORTNAME=	embassy
 PORTVERSION=	6.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
 MASTER_SITES=	ftp://emboss.open-bio.org/pub/EMBOSS/
 DIST_SUBDIR=	emboss

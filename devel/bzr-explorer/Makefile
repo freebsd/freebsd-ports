@@ -7,6 +7,7 @@
 
 PORTNAME=	bzr-explorer
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://launchpadlibrarian.net/93535508/ \
 		http://www.c-s.li/ports/

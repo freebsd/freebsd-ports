@@ -7,7 +7,7 @@
 
 PORTNAME=	most
 PORTVERSION=	5.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/most/ \
 		CRITICAL

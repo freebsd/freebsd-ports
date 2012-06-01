@@ -7,6 +7,7 @@
 
 PORTNAME=	mtpaint
 PORTVERSION=	3.40
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -17,7 +18,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		gif.5:${PORTSDIR}/graphics/giflib \
 		freetype.9:${PORTSDIR}/print/freetype2

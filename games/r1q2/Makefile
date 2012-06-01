@@ -7,7 +7,7 @@
 
 PORTNAME=	r1q2
 PORTVERSION=	7904
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.r1ch.net/stuff/r1q2/src/
 DISTNAME=	${PORTNAME}-b${PORTVERSION}-src
@@ -69,8 +69,9 @@ PLIST_SUB+=	GAME="@comment "
 USE_GL=		yes
 USE_SDL=	sdl
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 ALL_TARGET+=	ref_gl
+CFLAGS+=	-I${LOCALBASE}/include/libpng15
 PLIST_SUB+=	REF_GL=""
 .else
 PLIST_SUB+=	REF_GL="@comment "
@@ -83,9 +84,6 @@ BROKEN=		Does not compile on sparc64
 post-patch:
 	@${REINPLACE_CMD} -e 's|game$$(ARCH)|game|g' \
 		${BUILD_WRKSRC}/game/Makefile
-# Resolve name collision with jpeg-8
-	${REINPLACE_CMD} -e 's|jpeg_mem_src|local_jpeg_mem_src|' \
-		${WRKSRC}/ref_gl/gl_image.c
 
 pre-build:
 	@${FIND} ${BUILD_WRKSRC} -type d -depth 1 -exec ${MKDIR} {}/.depends \;

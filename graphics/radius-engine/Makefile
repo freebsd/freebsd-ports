@@ -16,7 +16,7 @@ COMMENT=	Lua script-based 2D engine built on top of OpenGL and SDL
 LICENSE=	MIT
 
 LIB_DEPENDS=	lua-5.1:${PORTSDIR}/lang/lua \
-		png:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		physfs.1:${PORTSDIR}/devel/physfs
 
 GNU_CONFIGURE=	yes

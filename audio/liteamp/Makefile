@@ -6,6 +6,7 @@
 
 PORTNAME=	liteamp
 PORTVERSION=	0.2.4.2
+PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://kldp.net/frs/download.php/1153/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	q2p
 PORTVERSION=	0.2.20061231
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/engines/Q2P/
 DISTNAME=	Q2P-0.2-2006-12-31
@@ -41,7 +41,7 @@ LIBDIR=		${PREFIX}/lib/${PORTNAME}
 .if !defined(WITHOUT_GLX) || !defined(WITHOUT_SDLGL)
 USE_GL=		glu
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 .endif
 
 .if !defined(WITHOUT_SDL) || !defined(WITHOUT_SDLGL)

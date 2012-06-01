@@ -7,13 +7,14 @@
 
 PORTNAME=	gif2png
 PORTVERSION=	2.5.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.catb.org/~esr/gif2png/
 
 MAINTAINER=	saper@saper.info
 COMMENT=	Converts GIF images to a PNG format
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_PYTHON_RUN=	yes
 GNU_CONFIGURE=	yes

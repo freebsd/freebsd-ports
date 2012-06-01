@@ -7,6 +7,7 @@
 
 PORTNAME=	jbig2dec
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF \
 		http://ghostscript.com/~giles/jbig2/jbig2dec/
@@ -36,8 +37,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	png:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=--with-libpng=${LOCALBASE}
+CFLAGS+=	-I${LOCALBASE}/include/libpng15
 .endif
 
 .if ${PORT_OPTIONS:MTESTS}

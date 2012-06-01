@@ -6,7 +6,7 @@
 
 PORTNAME=	qscintilla
 PORTVERSION=	1.7.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.riverbankcomputing.com/static/Downloads/QScintilla1/ \
 		http://ns.ael.ru/~fluffy.khv/pyqt/QScintilla1/

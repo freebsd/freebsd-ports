@@ -7,7 +7,7 @@
 
 PORTNAME=	slirc
 PORTVERSION=	0.12
-PORTREVISION=	3
+PORTREVISION=	4
 # Assign with += for slave ports
 CATEGORIES+=	irc
 MASTER_SITES=	http://members.core.com/~stabro/

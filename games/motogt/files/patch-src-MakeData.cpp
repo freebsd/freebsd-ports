@@ -1,14 +1,16 @@
---- src/MakeData.cpp.orig	2011-01-10 20:40:30.000000000 +0300
-+++ src/MakeData.cpp	2011-09-26 23:15:04.000000000 +0400
-@@ -5,6 +5,7 @@
+--- src/MakeData.cpp.orig	2011-01-10 18:40:30.000000000 +0100
++++ src/MakeData.cpp	2012-05-03 20:21:33.000000000 +0200
+@@ -4,7 +4,9 @@
+ #include <cstdio>
  #define PNG_DEBUG 3
  #include <png.h>
++#include <pngpriv.h>
  #include <fstream>
 +#include <sys/stat.h>
  #include "global.h"
  #include "Config.h"
  #include "Confirm.h"
-@@ -376,7 +377,12 @@
+@@ -376,7 +378,12 @@
  				}
  				fname[2]='0'+i; 
  				fname[1]='0'+j;

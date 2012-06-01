@@ -8,7 +8,7 @@
 
 PORTNAME=	flounder
 PORTVERSION=	0.40
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	science
 MASTER_SITES=	http://www.enel.ucalgary.ca/People/vigmond/flounder/
 EXTRACT_SUFX=	.tgz
@@ -18,7 +18,7 @@ COMMENT=	A quick way to visualize regularly spaced 4D data
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
 		ungif:${PORTSDIR}/graphics/libungif \
-		png:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 
 USE_GL=		glut
 GNU_CONFIGURE=	yes

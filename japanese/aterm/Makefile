@@ -7,7 +7,7 @@
 
 PORTNAME=	aterm
 PORTVERSION=	0.4.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES+=	japanese x11
 MASTER_SITES=	SF
 
@@ -22,7 +22,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A color vt102 terminal emulator with transparency support
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 
 USE_AUTOTOOLS=	autoconf:env
 USE_XORG=	xpm xmu

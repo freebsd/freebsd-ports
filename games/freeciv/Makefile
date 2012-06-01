@@ -7,6 +7,7 @@
 
 PORTNAME=	freeciv
 PORTVERSION=	2.3.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION}
 
@@ -30,7 +31,7 @@ MAN6=		freeciv-server.6 freeciv-client.6 \
 
 .ifndef WITHOUT_X11
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		ggz.5:${PORTSDIR}/games/libggz \
 		ggz-gtk.1:${PORTSDIR}/games/ggz-gtk-client \
 		ggzcore.9:${PORTSDIR}/games/ggz-client-libs \

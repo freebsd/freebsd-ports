@@ -7,7 +7,7 @@
 
 PORTNAME=	cinepaint
 PORTVERSION=	0.22
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/CinePaint/CinePaint-${PORTVERSION}-1
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An editing tool used for painting and retouching of movies
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		lcms.1:${PORTSDIR}/graphics/lcms \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		ftgl.2:${PORTSDIR}/graphics/ftgl
@@ -27,7 +27,7 @@ USE_PYTHON=	yes
 USE_GNOME=	gtk12
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
-USE_XORG=	xpm
+USE_XORG=	xpm xi xext xft xinerama
 
 MAN1=		cinepaint.1 cinepainttool.1
 
@@ -38,7 +38,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-1
 OPTIONS=	OPENEXR "Use OpenEXR" on
 
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 .include <bsd.port.pre.mk>
 

@@ -8,7 +8,7 @@
 
 PORTNAME=	rubber
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	http://launchpadlibrarian.net/53558954/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	fetion
 PORTVERSION=	0.98.5.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.logvinov.ru/files/dist/fetion/ \
 		LOCAL/avl

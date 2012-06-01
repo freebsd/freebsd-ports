@@ -8,7 +8,7 @@
 
 PORTNAME=	armagetron
 PORTVERSION=	0.2.8.2.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}ad/${PORTNAME}ad-src/${PORTVERSION}
 DISTNAME=	armagetronad-${PORTVERSION}
@@ -24,7 +24,7 @@ CXXFLAGS+=	${CFLAGS} -I${LOCALBASE}/include
 
 BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 OPTIONS=	MUSIC	"Compile in support for background music" on \

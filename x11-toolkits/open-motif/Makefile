@@ -8,6 +8,7 @@
 
 PORTNAME=	open-motif
 PORTVERSION=	2.3.3
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.ics.com/openmotif/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/${PORTVERSION}/
 DISTNAME=	openmotif-${PORTVERSION}
@@ -16,7 +17,7 @@ DIST_SUBDIR=	openmotif
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Motif X11 Toolkit (industry standard GUI (IEEE 1295))
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
 MAKE_JOBS_UNSAFE=	yes

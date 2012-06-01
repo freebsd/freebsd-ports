@@ -7,7 +7,7 @@
 
 PORTNAME=	cachesaver
 PORTVERSION=	0.10.9
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-

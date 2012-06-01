@@ -8,7 +8,7 @@
 
 PORTNAME=	sonice
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://freebsd.t-hosting.hu/${PORTNAME}/
 

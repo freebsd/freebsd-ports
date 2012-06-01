@@ -7,7 +7,7 @@
 
 PORTNAME=	demonquake
 PORTVERSION=	0.16.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake1/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another improved Quake engine based on FuhQuake
 
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 
 USE_GMAKE=	yes
 USE_DOS2UNIX=	yes
@@ -57,10 +57,6 @@ USE_SDL=	sdl
 MAKE_ENV+=	BUILD_DEMONQUAKE_SDL=YES
 PLIST_FILES+=	bin/${PORTNAME}-sdl
 .endif
-
-post-patch:
-	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
-		${WRKSRC}/gl_image.c
 
 do-install:
 .if !defined(WITHOUT_GLX)

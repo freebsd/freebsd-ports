@@ -7,6 +7,7 @@
 
 PORTNAME=	HTML-HTMLDoc
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://kostjn.spb.ru/freebsd/ \
 		CPAN

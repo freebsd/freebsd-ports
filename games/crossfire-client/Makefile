@@ -7,7 +7,7 @@
 
 PORTNAME=	crossfire-client
 PORTVERSION=	1.70.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/crossfire/crossfire-${PORTVERSION}
 

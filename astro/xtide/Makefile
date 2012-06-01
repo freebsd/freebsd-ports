@@ -7,7 +7,7 @@
 
 PORTNAME=	xtide
 PORTVERSION=	2.12.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro geography
 MASTER_SITES=	ftp://ftp.flaterco.com/xtide/ \
 		http://www.c-s.li/ports/
@@ -20,7 +20,7 @@ COMMENT=	Harmonic tide clock and tide predictor
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -29,7 +29,7 @@ GNU_CONFIGURE=	yes
 MAN1=		tide.1
 MAN8=		xttpd.8
 
-CPPFLAGS+=	-I../${TCD_DISTNAME} -I${LOCALBASE}/include/libpng
+CPPFLAGS+=	-I../${TCD_DISTNAME} -I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L../${TCD_DISTNAME}/.libs -L${LOCALBASE}/lib
 MAKE_JOBS_SAFE=	yes
 

@@ -8,12 +8,14 @@
 PORTNAME=	fwbuilder
 DISTVERSION=	5.1.0
 PORTVERSION=	${DISTVERSION}
+PORTREVISION=	1
 CATEGORIES=	security
 BUILD=		3599
 # XXX in developement version of this port: PKGNAMESUFFIX=	-devel
 .if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX} == -devel
 MASTER_SITES=   http://www.fwbuilder.org/nightly_builds/fwbuilder-5.0/current_build/
 PORTVERSION=	${DISTVERSION}.b${BUILD}
+PORTREVISION=	1
 .else
 MASTER_SITES=	SF/${PORTNAME}/Current_Packages/${PORTVERSION}
 .endif

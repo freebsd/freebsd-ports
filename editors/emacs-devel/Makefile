@@ -7,6 +7,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}.${EMACS_REV}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	editors ipv6
 MASTER_SITES=	http://distfiles.pirateparty.in/%SUBDIR%/ \
@@ -162,7 +163,7 @@ LIB_DEPENDS+=   gif.5:${PORTSDIR}/graphics/giflib
 .if defined(WITHOUT_PNG)
 CONFIGURE_ARGS+=	--without-png
 .else
-LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 .endif
 
 .if defined(WITHOUT_XPM)

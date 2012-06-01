@@ -15,7 +15,7 @@
 
 PORTNAME=	vtk
 PORTVERSION=	4.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math graphics
 MASTER_SITES=	http://ovt.irfu.se/vtk/files/
 DISTFILES?=	VTK-${PORTVERSION}-LatestRelease.tar.gz
@@ -49,7 +49,7 @@ BUILD_DEPENDS+=	${CMAKE}:${PORTSDIR}/devel/cmake
 
 LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2 \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 .if defined(WITH_TESTING) && (!defined(PKGNAMESUFFIX) || ${PKGNAMESUFFIX}=="-java")
@@ -132,8 +132,6 @@ do-configure:
 patch-common:
 	@${FIND} ${VTKSRCDIR} -name "*.cxx" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc.h|stdlib.h|g'
-	@${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
-		${VTKSRCDIR}/IO/vtkPNGReader.cxx
 	@${REINPLACE_CMD} -E 's|lib/vtk\)|lib\)|g' \
 		${VTKSRCDIR}/vtkGenerateVTKConfig.cmake
 .if defined(WRAP)

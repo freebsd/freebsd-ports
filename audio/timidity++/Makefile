@@ -7,7 +7,7 @@
 
 PORTNAME=	timidity++
 PORTVERSION=	2.13.2
-PORTREVISION?=	9
+PORTREVISION?=	10
 CATEGORIES+=	audio
 MASTER_SITES=	SF/timidity/TiMidity%2B%2B/TiMidity%2B%2B-${PORTVERSION}
 DISTNAME=	TiMidity++-${PORTVERSION}
@@ -56,7 +56,8 @@ CONFIGURE_ARGS+=--without-x --disable-spectrogram --disable-wrd --disable-dynami
 .else
 CONFIGURE_ARGS+=--with-x    --enable-spectrogram  --enable-wrd  --enable-dynamic
 USE_XORG=	x11 xext
-LIB_DEPENDS+=	png:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
+CPPFLAGS+=	-I${LOCALBASE}/include/libpng15
 .endif
 
 .if ${HAVE_GNOME:Mesound}!=""

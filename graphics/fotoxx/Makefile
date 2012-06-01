@@ -7,6 +7,7 @@
 
 PORTNAME=	fotoxx
 PORTVERSION=	11.03
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://kornelix.squarespace.com/downloads/ \
 		http://www.rodperson.com/DL/

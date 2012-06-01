@@ -7,6 +7,7 @@
 
 PORTNAME=	bitcoin
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	https://nodeload.github.com/${PORTNAME}/${PORTNAME}/tarball/	\
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/

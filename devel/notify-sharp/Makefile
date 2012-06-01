@@ -7,6 +7,7 @@
 
 PORTNAME=	notify-sharp
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://romain.blogreen.org/distfiles/
 

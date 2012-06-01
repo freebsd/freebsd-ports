@@ -7,6 +7,7 @@
 
 PORTNAME=	xsane
 PORTVERSION=	0.998
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.xsane.org/download/ \
 		http://gd.tuwien.ac.at/hci/sane/xsane/ \
@@ -16,7 +17,7 @@ MAINTAINER=	domi@nonsensss.de
 COMMENT=	Gtk-based X11 frontend for SANE (Scanner Access Now Easy)
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		sane.1:${PORTSDIR}/graphics/sane-backends
 

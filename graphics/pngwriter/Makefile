@@ -8,20 +8,20 @@
 
 PORTNAME=	pngwriter
 PORTVERSION=	0.5.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ library for creating PNG images
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 
 USE_GNOME=	pkgconfig
-CXXFLAGS+=	`pkg-config --cflags freetype2 libpng14` -I${LOCALBASE}/include
+CXXFLAGS+=	`pkg-config --cflags freetype2 libpng15` -I${LOCALBASE}/include
 
 PORTDOCS=	*
 PORTEXAMPLES=	*

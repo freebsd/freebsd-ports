@@ -7,7 +7,7 @@
 
 PORTNAME=	gladtex
 PORTVERSION=	1.2
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	textproc math www
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,7 @@ COMMENT=	A program to replace LaTeX formulas in HTML files with images
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	gif.5:${PORTSDIR}/graphics/giflib \
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		dvips:${PORTSDIR}/print/dvipsk-tetex
 
@@ -28,7 +28,7 @@ BINPATH=	${PREFIX}/bin
 INCPATH=	-I${LOCALBASE}/include
 LIBPATH=	-L${LOCALBASE}/lib
 
-MAKE_ENV+=	BINPATH=${BINPATH} INCPATH=${INCPATH} LIBPATH=${LIBPATH}
+MAKE_ENV+=	BINPATH=${BINPATH} INCPATH="${INCPATH}" LIBPATH=${LIBPATH}
 
 .if !defined(NO_INSTALL_MANPAGES)
 MAN1=	${PORTNAME}.1

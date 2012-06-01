@@ -7,6 +7,7 @@
 
 PORTNAME=	leptonica
 PORTVERSION=	1.68
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 
@@ -15,7 +16,7 @@ COMMENT=	C library for efficient image processing and image analysis operations
 
 LIB_DEPENDS=	gif.5:${PORTSDIR}/graphics/giflib \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		webp.2:${PORTSDIR}/graphics/webp
 

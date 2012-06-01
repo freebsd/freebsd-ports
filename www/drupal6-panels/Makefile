@@ -7,6 +7,7 @@
 
 PORTNAME=	panels
 DISTVERSION=	6.x-3.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 

@@ -6,6 +6,7 @@
 
 PORTNAME=	openvsp
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	https://nodeload.github.com/OpenVSP/OpenVSP/tarball/
 DISTNAME=	OpenVSP_${PORTVERSION}_Community
@@ -17,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libopenNURBS.a:${PORTSDIR}/graphics/opennurbs
 
 LIB_DEPENDS+=	fltk:${PORTSDIR}/x11-toolkits/fltk
 LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
-LIB_DEPENDS+=	png:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/OpenVSP-OpenVSP-574d7c3/src
 

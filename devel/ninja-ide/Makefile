@@ -7,7 +7,7 @@
 
 PORTNAME=	ninja-ide
 DISTVERSION=	2.0-beta2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/downloads/${PORTNAME}/${PORTNAME}/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/

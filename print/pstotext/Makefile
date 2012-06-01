@@ -7,7 +7,7 @@
 
 PORTNAME=	pstotext
 PORTVERSION=	1.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	http://mirror.cs.wisc.edu/pub/mirrors/ghost/contrib/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	xxxterm
 PORTVERSION=	1.10.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	https://opensource.conformal.com/snapshots/xxxterm/ \

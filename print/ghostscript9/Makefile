@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript9
 PORTVERSION=	9.05
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	http://downloads.ghostscript.com/public/:gs_srcs \
 		SF/ghostscript/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
@@ -27,7 +27,7 @@ LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 		idn:${PORTSDIR}/dns/libidn \
 		jbig2dec:${PORTSDIR}/graphics/jbig2dec \
 		jpeg:${PORTSDIR}/graphics/jpeg \
-		png:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		tiff:${PORTSDIR}/graphics/tiff
 
 # XXX: lcms shared lib support is broken

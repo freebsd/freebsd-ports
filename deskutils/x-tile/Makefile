@@ -7,6 +7,7 @@
 
 PORTNAME=	x-tile
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	deskutils devel python
 MASTER_SITES=	http://www.giuspen.com/software/
 

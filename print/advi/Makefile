@@ -8,7 +8,7 @@
 
 PORTNAME=	advi
 PORTVERSION=	1.9
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://gallium.inria.fr/${PORTNAME}/ \
 		http://caml.inria.fr/distrib/bazar-ocaml/${PORTNAME}/
@@ -19,7 +19,7 @@ COMMENT=	Active-DVI viewer
 BUILD_DEPENDS=	${CI_DEPEND}:${PORTSDIR}/graphics/ocaml-images \
 		kpsewhich:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=	gif.5:${PORTSDIR}/graphics/giflib \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 RUN_DEPENDS=	kpsewhich:${PORTSDIR}/print/teTeX-base

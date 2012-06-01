@@ -7,7 +7,7 @@
 
 PORTNAME=	clive
 PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 #PORTEPOCH=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.gna.org/clive/1.0.x/ \

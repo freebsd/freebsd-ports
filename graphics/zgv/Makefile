@@ -7,7 +7,7 @@
 
 PORTNAME=	zgv
 PORTVERSION=	5.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/viewers/svga
@@ -18,7 +18,7 @@ COMMENT=	Graphics viewer for SVGAlib
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		vga.1:${PORTSDIR}/graphics/svgalib \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 
 ONLY_FOR_ARCHS=	i386
 USE_GMAKE=	yes

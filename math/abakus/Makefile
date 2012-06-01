@@ -6,7 +6,7 @@
 
 PORTNAME=	abakus
 PORTVERSION=	0.91
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	math kde
 MASTER_SITES=	http://purinchu.net/abakus/ \
 		http://www.athame.co.uk/mirror/

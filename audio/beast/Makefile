@@ -7,7 +7,7 @@
 
 PORTNAME=	beast
 PORTVERSION=	0.7.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://beast.testbit.eu/_dist/beast/v${PORTVERSION:R}/
 

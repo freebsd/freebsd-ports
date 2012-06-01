@@ -7,7 +7,7 @@
 
 PORTNAME=	picviz
 PORTVERSION=	0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics security
 MASTER_SITES=	http://www.wallinfire.net/picviz/attachment/wiki/ReleasesDownload/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}?format=raw

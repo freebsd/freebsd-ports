@@ -6,6 +6,7 @@
 
 PORTNAME=	dynare
 PORTVERSION=	4.2.5
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.dynare.org/download/dynare-4.2/source/${DISTNAME}.tar.gz/at_download/file
 

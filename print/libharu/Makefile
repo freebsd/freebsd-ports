@@ -8,17 +8,18 @@
 
 PORTNAME=	libharu
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://libharu.org/files/
 
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Haru Free PDF Library
 
-LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-png=${LOCALBASE}
-CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 USE_LDCONFIG=	yes
 
 SOVERSION=	2

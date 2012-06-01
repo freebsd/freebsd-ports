@@ -7,7 +7,7 @@
 
 PORTNAME=	racket
 PORTVERSION=	5.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://download.racket-lang.org/installers/${PORTVERSION}/${PORTNAME}/ \
 		http://www.eecs.northwestern.edu/racket/${PORTVERSION}/${PORTNAME}/ \
@@ -48,7 +48,7 @@ USE_GNOME=	pango
 LIB_DEPENDS+=	ffi.5:${PORTSDIR}/devel/libffi		\
 		cairo.2:${PORTSDIR}/graphics/cairo	\
 		jpeg.11:${PORTSDIR}/graphics/jpeg	\
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 
 .if defined(WITH_RACKET_PLACES)
 CONFIGURE_ARGS+=	--enable-places

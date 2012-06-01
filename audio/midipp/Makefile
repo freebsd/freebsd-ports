@@ -7,6 +7,7 @@
 
 PORTNAME=	midipp
 PORTVERSION=	1.0.11
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://hselasky.homeunix.org:8192/distfiles/

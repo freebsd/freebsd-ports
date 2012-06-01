@@ -7,6 +7,7 @@
 
 PORTNAME=	minetest
 DISTVERSION=	0.4.dev-20120122-1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 
@@ -51,7 +52,7 @@ CXXFLAGS+=	-O3 -ffast-math -fomit-frame-pointer -funroll-loops
 .if !defined(WITHOUT_CLIENT)
 USE_GL=		gl
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 CMAKE_ARGS+=	-DBUILD_CLIENT=1
 PLIST_SUB+=	CLIENT=""
 .else

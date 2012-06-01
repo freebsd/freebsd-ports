@@ -7,7 +7,7 @@
 
 PORTNAME=	qtresistors
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	http://qt-apps.org/CONTENT/content-files/
 DISTNAME=	118297-qtResistors-201001102229

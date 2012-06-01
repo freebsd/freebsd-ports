@@ -7,6 +7,7 @@
 
 PORTNAME=	bargraph
 PORTVERSION=	4.7
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://bargraphgen.googlecode.com/files/
 DISTNAME=	bargraphgen-${PORTVERSION}

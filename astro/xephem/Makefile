@@ -7,17 +7,19 @@
 
 PORTNAME=	xephem
 PORTVERSION=	3.7.5
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	# http://www.clearskyinstitute.com/xephem/
 
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	An interactive astronomical ephemeris program
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
 USE_MOTIF=	yes
 USE_GMAKE=	yes
+USE_XORG=	xp xt xext xmu x11 xft
 MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/GUI/xephem

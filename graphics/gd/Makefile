@@ -7,7 +7,7 @@
 
 PORTNAME=	gd
 PORTVERSION=	2.0.35
-PORTREVISION?=	7
+PORTREVISION?=	8
 PORTEPOCH=	1
 CATEGORIES+=	graphics
 MASTER_SITES=	http://www.libgd.org/releases/ \
@@ -19,7 +19,7 @@ MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT?=	A graphics library for fast creation of images
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 CONFLICTS=	bazaar-1.*

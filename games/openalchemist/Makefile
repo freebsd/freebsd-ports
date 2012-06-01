@@ -7,7 +7,7 @@
 
 PORTNAME=	openalchemist
 PORTVERSION=	0.3
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -24,7 +24,7 @@ LICENSE_PERMS_CCbySA=	${_LICENSE_PERMS_DEFAULT}
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	clanCore-0.8:${PORTSDIR}/devel/clanlib \
 	jpeg.11:${PORTSDIR}/graphics/jpeg \
-	png.6:${PORTSDIR}/graphics/png
+	png15:${PORTSDIR}/graphics/png
 
 USE_AUTOTOOLS=	aclocal automake autoconf
 # Necessary to find pkg.m4 (PKG_CHECK_MODULES)

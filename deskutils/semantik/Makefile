@@ -7,7 +7,7 @@
 
 PORTNAME=	semantik
 PORTVERSION=	0.7.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://${PORTNAME}.googlecode.com/files/ \
 		http://freehackers.org/~tnagy/

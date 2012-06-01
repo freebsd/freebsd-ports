@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_pagespeed
 PORTVERSION=	0.10.21.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		gsed:${PORTSDIR}/textproc/gsed \
 		svn:${PORTSDIR}/devel/subversion \
 		flock:${PORTSDIR}/sysutils/flock
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		icutu.48:${PORTSDIR}/devel/icu \
 		opencv_legacy.2:${PORTSDIR}/graphics/opencv \

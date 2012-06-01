@@ -7,7 +7,7 @@
 
 PORTNAME=	ovt
 PORTVERSION=	2.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	science astro java
 MASTER_SITES=	http://ovt.irfu.se/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_${OVTBUILD}-src

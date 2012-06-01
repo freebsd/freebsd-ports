@@ -7,6 +7,7 @@
 
 PORTNAME=	xpad
 PORTVERSION=	4.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 PKGNAMESUFFIX=	-current

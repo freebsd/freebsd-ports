@@ -57,7 +57,7 @@ MASTER_SITE_SUBDIR=	${PRT_MODEL:L}${SUBDIR_SUFFIX}
 
 MAINTAINER=	ume@FreeBSD.org
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	pstops:${PORTSDIR}/print/psutils-${PAPERSIZE} \
 		${LOCALBASE}/lib/pluginwrapper/pips.so:${PORTSDIR}/www/linuxpluginwrapper
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	alevt
 PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://www.goron.de/~froese/alevt/
 
@@ -23,7 +23,7 @@ MAN1=		alevt.1x alevt-date.1 alevt-cap.1
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PNG)
-LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 MAKE_ARGS+=	-DWITH_PNG
 .endif
 

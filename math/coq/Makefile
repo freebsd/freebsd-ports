@@ -7,6 +7,7 @@
 
 PORTNAME=	coq
 PORTVERSION=	8.3.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	http://coq.inria.fr/distrib/V${COQVERSION}/files/ \

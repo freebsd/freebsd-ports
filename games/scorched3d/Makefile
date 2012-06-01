@@ -7,6 +7,7 @@
 
 PORTNAME=	scorched3d
 PORTVERSION=	0.${SCORCH_VERSION}${SCORCH_REVISION}
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Version%20${SCORCH_VERSION}
 DISTNAME=	Scorched3D-${SCORCH_VERSION}-src
@@ -19,7 +20,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	GLEW.1:${PORTSDIR}/graphics/glew \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		fftw3.6:${PORTSDIR}/math/fftw3 \
 		fftw3f.6:${PORTSDIR}/math/fftw3-float \
 		expat.6:${PORTSDIR}/textproc/expat2

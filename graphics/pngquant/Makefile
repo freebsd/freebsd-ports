@@ -7,6 +7,7 @@
 
 PORTNAME=	pngquant
 PORTVERSION=	1.7.2
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	graphics
 MASTER_SITES=	http://pngquant.org/
@@ -17,7 +18,7 @@ COMMENT=	Converts 32-bit RGBA PNGs into 8-bit RGBA-palette PNGs
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 OPTIONS=	OPTIMIZED_CFLAGS "Additional optimization" off \
 		OPENMP "Enable OpenMP support" off \

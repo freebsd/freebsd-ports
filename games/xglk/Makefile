@@ -7,7 +7,7 @@
 
 PORTNAME=	xglk
 PORTVERSION=	411
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.ifarchive.org/if-archive/programming/glk/implementations/
 DISTNAME=	${PORTNAME}-0${PORTVERSION}
@@ -18,7 +18,7 @@ COMMENT=	X Windows Implementation of the Glk API
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg png15:${PORTSDIR}/graphics/png
 
 USE_XORG=	x11
 

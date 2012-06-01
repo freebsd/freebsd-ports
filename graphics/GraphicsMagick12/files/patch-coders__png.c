@@ -1,6 +1,32 @@
 --- coders/png.c.orig	2010-01-06 23:01:31.000000000 +0100
-+++ coders/png.c	2010-03-28 17:21:20.000000000 +0200
-@@ -1955,13 +1955,13 @@
++++ coders/png.c	2012-05-10 04:50:59.000000000 +0200
+@@ -75,6 +75,7 @@
+ #if defined(HasPNG)
+ #include "png.h"
+ #include "zlib.h"
++#include "pngpriv.h"
+ 
+ #if PNG_LIBPNG_VER > 95
+ /*
+@@ -1292,7 +1293,7 @@
+                         "  libpng-%.1024s error: %.1024s", PNG_LIBPNG_VER_STRING,
+                         message);
+   (void) ThrowException2(&image->exception,CoderError,message,image->filename);
+-  longjmp(ping->jmpbuf,1);
++  longjmp(png_jmpbuf(ping),1);
+ }
+ 
+ static void PNGWarningHandler(png_struct *ping,png_const_charp message)
+@@ -1593,7 +1594,7 @@
+       ThrowReaderException(ResourceLimitError,MemoryAllocationFailed,image);
+     }
+   png_pixels=(unsigned char *) NULL;
+-  if (setjmp(ping->jmpbuf))
++  if (setjmp(png_jmpbuf(ping)))
+     {
+       /*
+         PNG image is corrupt.
+@@ -1955,13 +1956,13 @@
          Image has a transparent background.
        */
        transparent_color.red=
@@ -18,7 +44,7 @@
        if (ping_info->color_type == PNG_COLOR_TYPE_GRAY)
          {
            transparent_color.red=transparent_color.opacity;
-@@ -2469,7 +2469,7 @@
+@@ -2469,7 +2470,7 @@
                      index=indexes[x];
                      if (index < ping_info->num_trans)
                        q->opacity=
@@ -27,7 +53,16 @@
  		    else
  		      q->opacity=OpaqueOpacity;
                      q++;
-@@ -6258,13 +6258,13 @@
+@@ -6054,7 +6055,7 @@
+   AcquireSemaphoreInfo(&png_semaphore);
+ #endif
+ 
+-  if (setjmp(ping->jmpbuf))
++  if (setjmp(png_jmpbuf(ping)))
+     {
+       /*
+         PNG write failed.
+@@ -6258,13 +6259,13 @@
          /*
            Identify which colormap entry is transparent.
          */
@@ -44,7 +79,7 @@
          for (y=0; y < (long) image->rows; y++)
            {
              register const PixelPacket
-@@ -6284,7 +6284,7 @@
+@@ -6284,7 +6285,7 @@
  
                      index=indexes[x];
                      assert((unsigned long) index < number_colors);
@@ -53,7 +88,7 @@
                                                          ScaleQuantumToChar(p->opacity));
                    }
                  p++;
-@@ -6292,14 +6292,14 @@
+@@ -6292,14 +6293,14 @@
            }
          ping_info->num_trans=0;
          for (i=0; i < (long) number_colors; i++)
@@ -70,7 +105,7 @@
          /*
            Identify which colormap entry is the background color.
          */
-@@ -6441,12 +6441,12 @@
+@@ -6441,12 +6442,12 @@
                    (p->opacity != OpaqueOpacity))
                  {
                    ping_info->valid|=PNG_INFO_tRNS;
@@ -88,7 +123,7 @@
                      (ScaleQuantumToChar(MaxRGB-p->opacity));
                  }
              }
-@@ -6467,7 +6467,7 @@
+@@ -6467,7 +6468,7 @@
                      {
                        if (p->opacity != OpaqueOpacity)
                          {
@@ -97,7 +132,7 @@
                              {
                                break;  /* Can't use RGB + tRNS for multiple
                                           transparent colors.  */
-@@ -6480,7 +6480,7 @@
+@@ -6480,7 +6481,7 @@
                          }
                        else
                          {
@@ -106,7 +141,7 @@
                              break; /* Can't use RGB + tRNS when another pixel
                                        having the same RGB samples is
                                        transparent. */
-@@ -6498,10 +6498,10 @@
+@@ -6498,10 +6499,10 @@
                ping_info->color_type &= 0x03;  /* changes 4 or 6 to 0 or 2 */
                if (image->depth == 8)
                  {
@@ -121,7 +156,7 @@
                  }
              }
          }
-@@ -6517,7 +6517,7 @@
+@@ -6517,7 +6518,7 @@
              {
                ping_info->color_type=PNG_COLOR_TYPE_GRAY;
                if (save_image_depth == 16 && image->depth == 8)
@@ -130,7 +165,7 @@
              }
            if (image->depth > QuantumDepth)
              image->depth=QuantumDepth;
-@@ -6701,13 +6701,13 @@
+@@ -6701,13 +6702,13 @@
                        ping_info->num_trans=0;
                      if (ping_info->num_trans != 0)
                        {
@@ -147,7 +182,7 @@
                        }
                    }
  
-@@ -6726,10 +6726,10 @@
+@@ -6726,10 +6727,10 @@
                image->depth=8;
              if ((save_image_depth == 16) && (image->depth == 8))
                {
@@ -162,7 +197,7 @@
                }
            }
  
-@@ -6756,8 +6756,8 @@
+@@ -6756,8 +6757,8 @@
                                    "  Setting up bKGD chunk");
            png_set_bKGD(ping,ping_info,&background);
  
@@ -173,7 +208,7 @@
          }
      }
    if (logging)
-@@ -7332,7 +7332,7 @@
+@@ -7332,7 +7333,7 @@
  #endif
    if (ping_info->valid & PNG_INFO_tRNS)
      {
@@ -182,3 +217,16 @@
        ping_info->valid&=(~PNG_INFO_tRNS);
      }
    png_destroy_write_struct(&ping,&ping_info);
+@@ -8416,10 +8416,10 @@
+             {
+               (void) LogMagickEvent(CoderEvent,GetMagickModule(),
+                                     "     TERM delay: %lu",
+-                                    (png_uint_32) (mng_info->ticks_per_second*final_delay/100));
++                                    (uint64_t) (mng_info->ticks_per_second*final_delay/100));
+               if (image->iterations == 0)
+                 (void) LogMagickEvent(CoderEvent,GetMagickModule(),
+-                                      "     TERM iterations: %lu",PNG_MAX_UINT);
++                                      "     TERM iterations: %lu", (uint64_t)PNG_MAX_UINT);
+               else
+                 (void) LogMagickEvent(CoderEvent,GetMagickModule(),
+                                       "     Image iterations: %lu",

@@ -7,6 +7,7 @@
 
 PORTNAME=	wkhtmltopdf
 DISTVERSION=	0.11.0_rc1
+PORTREVISION=	1
 CATEGORIES=	converters
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}:wkhtmltopdf \
 		${MASTER_SITE_LOCAL}
@@ -66,7 +67,7 @@ BROKEN=		Does not link on powerpc
 CONFIGURE_ARGS+=	-qt-libtiff -qt-libpng -qt-libmng -qt-libjpeg
 .else
 LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		mng:${PORTSDIR}/graphics/libmng \
 		tiff:${PORTSDIR}/graphics/tiff
 CONFIGURE_ARGS+=	-system-libtiff -system-libpng -system-libmng \

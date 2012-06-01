@@ -7,13 +7,15 @@
 
 PORTNAME=	gnomeiconedit
 PORTVERSION=	1.2.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF/giconedit/giconedit-${PORTVERSION}/tar.gz
 DISTNAME=	gnome-iconedit-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small GNOME Icon Editor
+
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_GNOME=	gnomeprefix gnomehack bonobo gnomeprint
 USE_GMAKE=	yes

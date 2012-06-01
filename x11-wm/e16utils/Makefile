@@ -7,7 +7,7 @@
 
 PORTNAME=	e16utils
 PORTVERSION=	0.16
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	SF/enlightenment/e16menuedit/e16menuedit:src1 \
 		SF/enlightenment/e16keyedit/0.2:src2

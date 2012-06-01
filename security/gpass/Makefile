@@ -7,7 +7,7 @@
 
 PORTNAME=	gpass
 PORTVERSION=	0.5.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	security gnome
 MASTER_SITES=	http://projects.netlab.jp/gpass/release/
 

@@ -1,6 +1,14 @@
 --- src/png.c.orig	1998-11-21 15:55:13.000000000 +0100
-+++ src/png.c	2010-09-15 07:51:20.000000000 +0200
-@@ -76,10 +76,16 @@
++++ src/png.c	2012-05-06 13:39:28.000000000 +0200
+@@ -20,6 +20,7 @@
+ #else
+ 
+ #include <png.h>
++#include <pngpriv.h>
+ #include <setjmp.h>
+ 
+ static unsigned int	 p_cmap_inited = False;
+@@ -76,10 +77,16 @@
      return fp;
  }
  
@@ -19,7 +27,7 @@
      Pixmap		pixmap;
      FILE *volatile	vol_fp  = NULL;
      void *volatile	vol_pic = NULL;
-@@ -92,13 +98,21 @@
+@@ -92,13 +99,21 @@
  
      init_png_cmap();
  
@@ -46,7 +54,7 @@
  	ArtTextAddLine(main_widgets.text, "[knews: png error.]",
  		       ascii_font->body_font, global.alert_pixel);
      else {
-@@ -108,58 +122,55 @@
+@@ -108,58 +123,55 @@
  	unsigned int	per_line = 0;
  	unsigned int	i, j, pass;
  
@@ -117,7 +125,7 @@
  	    vol_pn  = pn;
  	} else {
 -	    png_set_dither(&p_str, p_cmap, cmap_size,
-+	    png_set_dither(png_ptr, p_cmap, cmap_size,
++	    png_set_quantize(png_ptr, p_cmap, cmap_size,
  			   cmap_size, NULL, True);
  	}
  
@@ -128,7 +136,7 @@
  
  	vol_pic = pic = (unsigned char *)XtMalloc(h * per_line);
  
-@@ -167,14 +178,14 @@
+@@ -167,14 +179,14 @@
  	for (i = 0 ; i < pass ; i++) {
  	    row = pic;
  	    for (j = 0 ; j < h ; j++) {
@@ -145,7 +153,7 @@
      }
  
      if (!vol_did)
-@@ -204,7 +215,7 @@
+@@ -204,7 +216,7 @@
  	}
      }
  

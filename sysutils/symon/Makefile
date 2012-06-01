@@ -7,6 +7,7 @@
 
 PORTNAME=	symon
 PORTVERSION=	2.85
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://wpd.home.xs4all.nl/symon/philes/ \
 		${MASTER_SITE_LOCAL}

@@ -7,7 +7,7 @@
 
 PORTNAME=	q2pro
 PORTVERSION=	${SVN_REV}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alepulver
@@ -68,7 +68,7 @@ PLIST_SUB+=	GAME="@comment "
 .if !defined(WITHOUT_GL)
 USE_GL=		yes
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 ALL_TARGET+=	ref_newgl
 PLIST_SUB+=	GL=""
 .else

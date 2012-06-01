@@ -7,6 +7,7 @@
 
 PORTNAME=	netpanzer
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/madpilot/netpanzer
 

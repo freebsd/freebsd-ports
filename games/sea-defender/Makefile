@@ -7,7 +7,7 @@
 
 PORTNAME=	sea-defender
 PORTVERSION=	r20100723
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 

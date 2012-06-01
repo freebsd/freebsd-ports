@@ -7,6 +7,7 @@
 
 PORTNAME=	netsurf
 PORTVERSION=	2.9
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.netsurf-browser.org/projects/releases/ \
 		http://www.netsurf-browser.org/downloads/releases/:netsurf

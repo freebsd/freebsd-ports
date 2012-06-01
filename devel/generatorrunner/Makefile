@@ -7,7 +7,7 @@
 
 PORTNAME=	generatorrunner
 PORTVERSION=	0.6.16
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.pyside.org/files/
 

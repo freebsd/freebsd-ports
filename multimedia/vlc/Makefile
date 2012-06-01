@@ -7,7 +7,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	1.1.13
-PORTREVISION=	9
+PORTREVISION=	10
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -501,7 +501,7 @@ CONFIGURE_ARGS+=--disable-mozilla
 .if defined(WITHOUT_PNG)
 CONFIGURE_ARGS+=--disable-png
 .else
-LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=--enable-png
 .endif
 

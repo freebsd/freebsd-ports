@@ -8,6 +8,7 @@
 
 PORTNAME=	librsvg2
 PORTVERSION=	2.34.1
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/librsvg/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}

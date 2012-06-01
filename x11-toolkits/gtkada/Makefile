@@ -7,6 +7,7 @@
 
 PORTNAME=	gtkada
 PORTVERSION=	2.22
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://downloads.dragonlace.net/src/ \
 		http://dragonlace.mirrors.ada.cx/src/

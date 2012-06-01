@@ -7,7 +7,7 @@
 
 PORTNAME=	jmp
 PORTVERSION=	0.51
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.khelekore.org/jmp/ \
 		http://www.klop.ws/~ronald/software-mirrors/

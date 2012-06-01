@@ -7,7 +7,7 @@
 
 PORTNAME=	ming
 PORTVERSION=	0.1.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	japanese graphics
 MASTER_SITES=	http://dist.bsdlab.org/
 #MASTER_SITES=	http://blue.ribbon.to/~harpy/ming/jaming/
@@ -16,7 +16,7 @@ DISTNAME=	jaming-${PORTVERSION}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	LGPL'ed Flash 4/5 movie output library with Japanese languages support
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		gif.5:${PORTSDIR}/graphics/giflib
 
 CONFLICTS=	ming-*

@@ -7,7 +7,7 @@
 
 PORTNAME=	flyhard
 PORTVERSION=	0.42
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.markboyd.me.uk/games/flyhard/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.markboyd.me.uk/games/flyhard/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Game resembling Thrust, but with lots of shooting and puzzles
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
 GNU_CONFIGURE=	yes

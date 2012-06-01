@@ -7,6 +7,7 @@
 
 PORTNAME=	zoom
 PORTVERSION=	1.1.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.logicalshift.co.uk/unix/zoom/ \
 		http://mirror.4bit.ws/
@@ -15,7 +16,7 @@ MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Z-Interpreter for X with full V6 support
 
 LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 
 USE_CSTD=	gnu89
 USE_PERL5=	yes

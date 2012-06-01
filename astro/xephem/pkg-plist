@@ -2,15 +2,12 @@ bin/xephem
 lib/X11/app-defaults/XEphem
 lib/X11/xephem/auxil/HAReyfigs.csf
 lib/X11/xephem/auxil/README
-lib/X11/xephem/auxil/SOHO_512_20030809_0719_eit_304.gif
 lib/X11/xephem/auxil/SOHO_512_20090703_1900_eit_171.gif
 lib/X11/xephem/auxil/analemma.plt
 lib/X11/xephem/auxil/annotation.ano
 lib/X11/xephem/auxil/astorb2edb.pl
 lib/X11/xephem/auxil/classicfigs.csf
 lib/X11/xephem/auxil/dearth.gif
-lib/X11/xephem/auxil/eyepieces.epl
-lib/X11/xephem/auxil/eyepieces.eyp
 lib/X11/xephem/auxil/favorites.fav
 lib/X11/xephem/auxil/jupiter.1020
 lib/X11/xephem/auxil/jupiter.9910

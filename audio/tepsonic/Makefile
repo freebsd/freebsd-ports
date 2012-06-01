@@ -7,6 +7,7 @@
 
 PORTNAME=	tepsonic
 PORTVERSION=	0.98.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.tepsonic.org/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

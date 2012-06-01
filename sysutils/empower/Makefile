@@ -8,6 +8,7 @@
 
 PORTNAME=	empower
 PORTVERSION=	20110129
+PORTREVISION=	1
 CATEGORIES=	sysutils enlightenment
 MASTER_SITES=	http://files.roorback.net/e17/2011-01-29/extra/
 

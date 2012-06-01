@@ -1,7 +1,14 @@
-
---- renderer/rf_image.c.orig	2010-07-08 22:47:22.720284451 +0200
-+++ renderer/rf_image.c	2010-07-08 22:53:00.496664288 +0200
-@@ -44,7 +44,7 @@
+--- renderer/rf_image.c.orig	2012-04-29 06:34:41.000000000 +0200
++++ renderer/rf_image.c	2012-04-29 06:35:42.000000000 +0200
+@@ -32,6 +32,7 @@
+ #else
+ # include <jpeglib.h>
+ # include <png.h>
++# include <pngpriv.h>
+ #endif
+ 
+ #define MAX_IMAGE_HASH			(MAX_IMAGES/4)
+@@ -44,7 +45,7 @@
  image_t			*r_lmTextures[R_MAX_LIGHTMAPS];
  static image_t	r_imageList[MAX_IMAGES];
  static image_t	*r_imageHashTree[MAX_IMAGE_HASH];
@@ -10,7 +17,7 @@
  
  static byte		r_intensityTable[256];
  static byte		r_gammaTable[256];
-@@ -261,21 +261,6 @@
+@@ -261,21 +262,6 @@
      cinfo->src->bytes_in_buffer -= (size_t) num_bytes;
  }
  
@@ -32,7 +39,7 @@
  /*
  =============
  R_LoadJPG
-@@ -610,7 +595,7 @@
+@@ -610,7 +596,7 @@
  		png_set_filler (png_ptr, 0xFF, PNG_FILLER_AFTER);
  
  	if (info_ptr->color_type == PNG_COLOR_TYPE_GRAY && info_ptr->bit_depth < 8)
@@ -41,5 +48,3 @@
  
  	if (png_get_valid (png_ptr, info_ptr, PNG_INFO_tRNS))
  		png_set_tRNS_to_alpha (png_ptr);
-
-

@@ -7,7 +7,7 @@
 
 PORTNAME=	stratagus
 PORTVERSION=	2.2.5.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://launchpadlibrarian.net/59493540/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.orig.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free cross-platform real-time strategy gaming engine
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 OPTIONS=	MIKMOD "Enable Mikmod support" off \
 		MNG "Enable MNG support" off \
@@ -32,6 +32,7 @@ USE_AUTOTOOLS=	aclocal autoheader autoconf
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-extra-includes=${LUA_INCDIR} \
+		--with-extra-includes=${LOCALBASE}/include/libpng15 \
 		--with-extra-libs=${LUA_LIBDIR} \
 		--without-gles
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

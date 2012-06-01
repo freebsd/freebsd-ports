@@ -7,7 +7,7 @@
 
 PORTNAME=	xnc
 PORTVERSION=	5.0.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.xnc.dubna.su/src-5/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -23,7 +23,7 @@ COMMENT=	File manager for X Window
 #		unarj:${PORTSDIR}/archivers/unarj	\
 #		lha:${PORTSDIR}/archivers/lha
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -32,7 +32,7 @@ GNU_CONFIGURE=	yes
 USE_XORG=	x11 xext xt
 CONFIGURE_ARGS+=--with-pty=BSD --with-libintl-prefix=${LOCALBASE}
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 
 MAN1=		ives.1 xjpegroot.1 xnc.1 xnlaunch.1 iedit.1 iview.1
 

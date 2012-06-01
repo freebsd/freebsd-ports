@@ -7,6 +7,7 @@
 
 PORTNAME=	gbsdconv
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	converters python
 MASTER_SITES=	https://github.com/buganini/${PORTNAME}/tarball/${PORTVERSION}/
 DISTNAME=	buganini-${PORTNAME}-${PORTVERSION}-0-g${GITVERSION}

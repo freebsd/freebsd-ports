@@ -7,6 +7,7 @@
 
 PORTNAME=	float
 PORTVERSION=	0.1a2
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://kde-look.org/CONTENT/content-files/ \
 		http://mirror.amdmi3.ru/distfiles/

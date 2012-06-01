@@ -6,7 +6,7 @@
 #
 
 PORTVERSION=	2.6.2
-PORTREVISION=	7
+PORTREVISION=	8
 MASTERDIR=	${.CURDIR}/../pips800
 COMMENT=	Photo Image Print System for Linux --- EPSON PM-G800
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -149,7 +150,7 @@ LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
 .if defined(WITHOUT_PNG)
 CONFIGURE_ARGS+=	--without-png
 .else
-LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 .endif
 
 .if defined(WITHOUT_XPM)

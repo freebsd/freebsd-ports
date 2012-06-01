@@ -7,7 +7,7 @@
 
 PORTNAME=	bmp-wma
 PORTVERSION=	0.1.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	audio
 MASTER_SITES=	http://download.berlios.de/bmp-plugins/
 

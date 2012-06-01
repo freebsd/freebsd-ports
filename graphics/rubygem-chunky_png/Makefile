@@ -7,6 +7,7 @@
 
 PORTNAME=	chunky_png
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 

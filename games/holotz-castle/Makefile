@@ -7,7 +7,7 @@
 
 PORTNAME=	holotz-castle
 PORTVERSION=	1.3.13
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://www.mainreactor.net/holotzcastle/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

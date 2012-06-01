@@ -7,7 +7,7 @@
 
 PORTNAME=	lensfun
 PORTVERSION=	0.2.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	BERLIOS
 
@@ -16,7 +16,7 @@ COMMENT=	Library for fixing lens geometry distortions
 
 LICENSE=	LGPL3
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

@@ -7,7 +7,7 @@
 -PNGDIR = $(SRCDIR)/libpng
 -LIBPNGINC = -I$(PNGDIR)
 +PNGDIR =
-+LIBPNGINC = -I%LOCALBASE%/include
++LIBPNGINC = -I%LOCALBASE%/include/libpng15
  #LIBPNGLIB = $(PNGDIR)/libpng.a
  #LIBPNGINC = -I/usr/X11R6/include
 -LIBPNGLIB = -L$(PNGDIR) -lpng

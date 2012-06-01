@@ -8,6 +8,7 @@
 
 PORTNAME=	edje_viewer
 PORTVERSION=	20110129
+PORTREVISION=	1
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://files.roorback.net/e17/2011-01-29/extra/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	optar
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://xps.crucible.gr/
 DISTFILES=	optar.tgz \
@@ -17,7 +17,7 @@ EXTRACT_ONLY=	optar.tgz
 MAINTAINER=	antonakis@gmail.com
 COMMENT=	A tool for encoding data on paper
 
-BUILD_DEPENDS=	${LOCALBASE}/include/libpng/png.h:${PORTSDIR}/graphics/png
+BUILD_DEPENDS=	${LOCALBASE}/include/libpng15/png.h:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
 USE_GMAKE=	yes

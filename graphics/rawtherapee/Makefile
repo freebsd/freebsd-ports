@@ -7,6 +7,7 @@
 
 PORTNAME=	rawtherapee
 PORTVERSION=	4.0.8
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 
@@ -19,7 +20,7 @@ LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		iptcdata.3:${PORTSDIR}/graphics/libiptcdata \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		lcms2.2:${PORTSDIR}/graphics/lcms2 \
-		png:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		sigc-2.0:${PORTSDIR}/devel/libsigc++20
 

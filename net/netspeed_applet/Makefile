@@ -7,6 +7,7 @@
 
 PORTNAME=	netspeed_applet
 PORTVERSION=	0.16
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	http://launchpadlibrarian.net/49741506/
 

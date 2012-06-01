@@ -7,7 +7,7 @@
 
 PORTNAME=	dvdauthor
 PORTVERSION=	0.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -46,7 +46,7 @@ CFLAGS+=	-DICONV_CONV=yes
 .if defined(WITH_IMAGEMAGICK)
 LIB_DEPENDS+=	MagickWand.5:${PORTSDIR}/graphics/ImageMagick
 .else
-LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 .endif
 
 pre-everything::

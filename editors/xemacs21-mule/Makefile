@@ -7,7 +7,7 @@
 
 PORTNAME=	xemacs-mule
 PORTVERSION=	${XEMACS_VER}
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
@@ -38,7 +38,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/xemacs/mule-packages/pkginfo/MANIFEST.mule-base:${
 RUN_DEPENDS+=	${LOCALBASE}/lib/xemacs-${XEMACS_VER}/lisp/x-win-xfree86.elc:${PORTSDIR}/editors/xemacs21-mule
 .endif
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		compface.1:${PORTSDIR}/mail/faces
 
@@ -48,10 +48,11 @@ XEMACS_ARCH=	${CONFIGURE_TARGET}
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_XORG=	xpm
+USE_XORG=	xpm xbitmaps xaw
 STRIP=
 USE_AUTOTOOLS=	autoconf213
 CONFIGURE_TARGET=${MACHINE_ARCH}--freebsd
+CFLAGS+=	-I${LOCALBASE}/include/libpng15
 
 CONFIGURE_ARGS=	--with-x11 \
 		--with-mule \

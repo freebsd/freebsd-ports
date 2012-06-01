@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-communications
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

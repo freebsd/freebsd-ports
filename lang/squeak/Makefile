@@ -7,7 +7,7 @@
 
 PORTNAME=		squeak
 PORTVERSION=		4.4.7
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		lang
 ##################################################
 MASTER_SITES=		http://www.squeakvm.org/unix/release/:vmsrc \

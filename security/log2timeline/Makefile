@@ -7,6 +7,7 @@
 
 PORTNAME=	log2timeline
 PORTVERSION=	0.62
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://log2timeline.net/files/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

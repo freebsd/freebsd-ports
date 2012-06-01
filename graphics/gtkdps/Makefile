@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkdps
 PORTVERSION=	0.3.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 #		ftp://ftp.gyve.org/pub/gtkDPS/
 MASTER_SITES=	${MASTER_SITE_LOCAL}

@@ -7,6 +7,7 @@
 
 PORTNAME=	fv
 PORTVERSION=	1.03
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.eaflux.com/fv/sources/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -16,7 +17,7 @@ COMMENT=	A viewer of hdr/pfm images
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_ZIP=	yes
 USE_GL=		glut
@@ -25,9 +26,9 @@ USE_GMAKE=	yes
 ALL_TARGET=	${PORTNAME}
 MAKE_JOBS_SAFE=	yes
 
-CXXFLAGS+=	$$(pkg-config --cflags libpng14) \
+CXXFLAGS+=	$$(pkg-config --cflags libpng15) \
 		-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	$$(pkg-config --libs libpng14) \
+LDFLAGS+=	$$(pkg-config --libs libpng15) \
 		-L${LOCALBASE}/lib -lglut -lGLU -lGL -lbz2 -lm ${PTHREAD_LIBS}
 
 PORTDOCS=	AUTHORS ChangeLog README

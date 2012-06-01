@@ -7,7 +7,7 @@
 
 PORTNAME=	bmp-docklet
 PORTVERSION=	1.3
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	deskutils audio
 MASTER_SITES=	http://mark.xnull.de/bmp-docklet/ \
 		${MASTER_SITE_LOCAL}

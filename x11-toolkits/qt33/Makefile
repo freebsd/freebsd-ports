@@ -8,7 +8,7 @@
 
 PORTNAME=	qt
 PORTVERSION=	3.3.8
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES?=	x11-toolkits ipv6
 MASTER_SITES=	${MASTER_SITE_QT}
 DISTNAME=	qt-x11-free-${PORTVERSION}
@@ -20,7 +20,7 @@ COMMENT=	Multiplatform C++ application framework
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 LIB_DEPENDS+=	mng:${PORTSDIR}/graphics/libmng \
-		png:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg
 
 EXTRA_PATCHES=	${PATCHDIR}/0081-format-string-fixes.diff
@@ -110,7 +110,8 @@ CONFIGURE_ARGS+=-disable-opengl
 
 .if ${PORT_OPTIONS:MCUPS}
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
-CUPS=	-cups -L${LOCALBASE}/lib -I${LOCALBASE}/include
+.elif defined(WITHOUT_CUPS)
+CUPS=	-cups -L${LOCALBASE}/lib -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 .else
 CUPS=
 .endif

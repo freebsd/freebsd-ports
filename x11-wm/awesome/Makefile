@@ -7,7 +7,7 @@
 
 PORTNAME=	awesome
 PORTVERSION=	3.4.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/
 

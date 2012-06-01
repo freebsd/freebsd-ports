@@ -8,6 +8,7 @@
 
 PORTNAME=	mythtv
 PORTVERSION=	0.25
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.osuosl.org/pub/mythtv/old_releases/ \

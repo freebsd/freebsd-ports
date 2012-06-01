@@ -7,7 +7,7 @@
 
 PORTNAME=	filelight
 PORTVERSION=	1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://www.methylblue.com/filelight/packages/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	irrlicht
 PORTVERSION=	1.7.3
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	SF/${PORTNAME}/Irrlicht%20SDK/1.7/${PORTVERSION}
 
@@ -14,13 +15,14 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	High performance realtime 3D engine
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 
 USE_ZIP=	yes
 USE_DOS2UNIX=	Makefile *.cpp *.h *.txt
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_LDCONFIG=	yes
+CFLAGS+=	-I${LOCALBASE}/include/libpng15
 MAKE_ENV+=	SHLIB_VER=${SHARED_LIB_VER}
 
 PLIST_SUB+=	SHARED_LIB_VER=${SHARED_LIB_VER}
@@ -66,8 +68,6 @@ post-extract:
 	@${RM} ${WRKSRC}/media/Thumbs.db
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
-		${WRKSRC}/source/Irrlicht/CImageLoaderPNG.cpp
 	@${REINPLACE_CMD} -e '/#define.*_IRR_USE_NON_SYSTEM_JPEG_LIB_/ d' \
 		-e '/#define.*_IRR_USE_NON_SYSTEM_LIB_PNG_/ d' \
 		-e '/#define.*_IRR_USE_NON_SYSTEM_ZLIB_/ d' \

@@ -7,6 +7,7 @@
 
 PORTNAME=	dreampie
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://launchpadlibrarian.net/55587528/
 

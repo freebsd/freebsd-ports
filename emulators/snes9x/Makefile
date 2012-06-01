@@ -7,7 +7,7 @@
 
 PORTNAME=	snes9x
 PORTVERSION=	1.51
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators
 MASTER_SITES=	http://files.ipherswipsite.com/snes9x/ \
 		http://www.lysator.liu.se/snes9x/${PORTVERSION}/
@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Super Nintendo Entertainment System(SNES) Emulator
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_XORG=	x11 sm ice xext
@@ -79,7 +79,7 @@ SNES9X_BIN=	snes9x
 .endif
 
 .if !defined(WITHOUT_SCREENSHOT)
-LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=	--with-screenshot
 .else
 CONFIGURE_ARGS+=	--without-screenshot

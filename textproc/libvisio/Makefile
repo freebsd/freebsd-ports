@@ -7,6 +7,7 @@
 
 PORTNAME=	libvisio
 PORTVERSION=	0.0.16
+PORTREVISION=	1
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://dev-www.libreoffice.org/src/ \
 		LOCAL/sunpoet

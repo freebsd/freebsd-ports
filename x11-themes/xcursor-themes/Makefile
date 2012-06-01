@@ -7,6 +7,7 @@
 
 PORTNAME=	xcursor-themes
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 
 MAINTAINER=	x11@FreeBSD.org

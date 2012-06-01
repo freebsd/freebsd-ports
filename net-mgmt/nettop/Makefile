@@ -7,7 +7,7 @@
 
 PORTNAME=	nettop
 PORTVERSION=	0.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://srparish.net/scripts/
 

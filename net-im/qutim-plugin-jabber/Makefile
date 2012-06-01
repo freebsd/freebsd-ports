@@ -7,7 +7,7 @@
 
 PORTNAME=	jabber
 PORTVERSION=	0.2
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://qutim.org/download/ \

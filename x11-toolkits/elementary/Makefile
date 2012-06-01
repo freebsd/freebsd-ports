@@ -7,6 +7,7 @@
 
 PORTNAME=	elementary
 PORTVERSION=	0.7.0.55225
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits enlightenment
 MASTER_SITES=	http://download.enlightenment.org/snapshots/2010-12-03/ \
 		http://files.roorback.net/e17/2010-12-03/base/

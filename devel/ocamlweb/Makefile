@@ -7,7 +7,7 @@
 
 PORTNAME=	ocamlweb
 PORTVERSION=	1.34
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lri.fr/~filliatr/ftp/ocamlweb/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTDOCS}

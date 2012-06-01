@@ -7,7 +7,7 @@
 
 PORTNAME=	shaaft
 PORTVERSION=	0.5.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	SF/criticalmass/OldFiles
 DISTNAME=	Shaaft-${PORTVERSION}
@@ -15,13 +15,15 @@ DISTNAME=	Shaaft-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OpenGL 3D falling block game similar to Blockout
 
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+
 CONFLICTS=	criticalmass-*
 
 USE_BZIP2=	yes
 USE_SDL=	mixer image sdl
 USE_GL=		yes
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-optimize
 DATADIR=	${PREFIX}/share/Shaaft

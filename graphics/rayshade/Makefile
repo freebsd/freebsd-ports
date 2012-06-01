@@ -7,7 +7,7 @@
 
 PORTNAME=	rayshade
 PORTVERSION=	4.0.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://ccl.net/cca/software/SOURCES/C/rayshade/ \
 		http://www.mirrorservice.org/sites/graphics.stanford.edu/pub/rayshade/ \

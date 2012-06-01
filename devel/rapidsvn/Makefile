@@ -7,7 +7,7 @@
 
 PORTNAME=	rapidsvn
 PORTVERSION=	0.12.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.rapidsvn.org/download/release/0.12/
 DISTNAME=	${PORTNAME}-0.12.0-1

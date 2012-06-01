@@ -7,7 +7,7 @@
 
 PORTNAME=	subtitlecomposer
 PORTVERSION=	0.4.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/subcomposer/subcomposer/${PORTNAME}-${PORTVERSION}
 

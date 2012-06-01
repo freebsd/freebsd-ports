@@ -7,6 +7,7 @@
 
 PORTNAME=	vidalia
 PORTVERSION=	0.2.18
+PORTREVISION=	1
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	https://archive.torproject.org/tor-package-archive/vidalia/ \
 		https://www.torproject.org/dist/vidalia/ \

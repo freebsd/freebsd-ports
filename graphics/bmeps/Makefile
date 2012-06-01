@@ -7,7 +7,7 @@
 
 PORTNAME=	bmeps
 PORTVERSION=	2.2.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics perl5
 MASTER_SITES=	SF/dktools/dktools/dktools-${PORTVERSION}
 DISTNAME=	dktools-${PORTVERSION}
@@ -20,7 +20,7 @@ LICENSE_FILE=	${WRKSRC}/bsdlic.txt
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		netpbm:${PORTSDIR}/graphics/netpbm \
-		png:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 
 USE_ZIP=	yes
 USE_PERL5=	yes

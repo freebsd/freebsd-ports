@@ -7,7 +7,7 @@
 
 PORTNAME=	trayicons
 PORTVERSION=	1.03
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://tripie.sweb.cz/gkrellm/trayicons/dist/
 PKGNAMEPREFIX=	gkrellm-

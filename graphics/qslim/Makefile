@@ -8,7 +8,7 @@
 
 PORTNAME=	qslim
 PORTVERSION=	2.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://mgarland.org/files/dist/ \
 		CENKES
@@ -18,7 +18,7 @@ COMMENT=	SlimKit Surface Modeling Tools
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		gfx.0:${PORTSDIR}/graphics/libgfx \
 		forms.2:${PORTSDIR}/x11-toolkits/xforms

@@ -7,6 +7,7 @@
 
 PORTNAME=	tomboy-plugin-latex
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.reitwiessner.de/programs/tomboy-latex/v${PORTVERSION}/
 DISTNAME=	tomboy-latex-${PORTVERSION}

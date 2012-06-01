@@ -595,7 +595,7 @@ nss_CPPFLAGS+=		-I${LOCALBASE}/include/nss -I${LOCALBASE}/include/nss/nss
 nss_LDFLAGS+=		-L${LOCALBASE}/lib/nss -Wl,-rpath,${PREFIX}/lib/${MOZ_RPATH}
 
 
-png_LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+png_LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 png_MOZ_OPTIONS=	--with-system-png=${LOCALBASE}
 
 xft_LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft

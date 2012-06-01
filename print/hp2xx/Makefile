@@ -7,7 +7,7 @@
 
 PORTNAME=	hp2xx
 PORTVERSION=	3.4.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print x11
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A HPGL to vector- and raster formats converter and previewer for X11
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/sources

@@ -7,7 +7,7 @@
 
 PORTNAME=	inkscape
 PORTVERSION=	0.48.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=${PORTNAME:L}/${PORTNAME:L}/${PORTVERSION}
@@ -23,6 +23,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		gtkspell.0:${PORTSDIR}/textproc/gtkspell \
 		lcms.1:${PORTSDIR}/graphics/lcms \
 		wpg-0.2:${PORTSDIR}/graphics/libwpg \
+		png15:${PORTSDIR}/graphics/png \
 		Magick++.5:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS=	${SITE_PERL}/XML/XQL.pm:${PORTSDIR}/textproc/p5-XML-XQL
 
@@ -63,7 +64,7 @@ CONFIGURE_ARGS+=	--enable-poppler-cairo=no
 post-patch:
 	@${REINPLACE_CMD} -e 's|ieefp.h|ieeefp.h|' \
 		${WRKSRC}/src/2geom/bezier-utils.cpp
-	@${REINPLACE_CMD} -e 's|libpng >= 1.2|libpng14 >= 1.2|g' \
+	@${REINPLACE_CMD} -e 's|libpng >= 1.2|libpng15 >= 1.2|g' \
 		-e 's|-ldl||g' \
 	    	${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "*.h" -o -name "*.cpp" | ${XARGS} \

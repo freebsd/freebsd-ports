@@ -7,6 +7,7 @@
 
 PORTNAME=	quantumstyle
 DISTVERSION=	rc6
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://saidlankri.free.fr/ \
 		http://mirror.amdmi3.ru/distfiles/

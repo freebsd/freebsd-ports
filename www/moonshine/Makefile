@@ -7,7 +7,7 @@
 
 PORTNAME=	moonshine
 PORTVERSION=	0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www multimedia
 MASTER_SITES=	http://romain.blogreen.org/distfiles/
 DISTNAME=	abock-${PORTNAME}-${GITCOMMIT}

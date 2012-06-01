@@ -7,6 +7,7 @@
 
 PORTNAME=	hugin
 PORTVERSION=	2011.4.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
@@ -15,7 +16,7 @@ COMMENT=	A GUI for Panorama Tools, to stitch panoramic images
 
 LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 		jpeg:${PORTSDIR}/graphics/jpeg \
-		png:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		exiv2.10:${PORTSDIR}/graphics/exiv2 \
 		pano13:${PORTSDIR}/graphics/libpano13 \

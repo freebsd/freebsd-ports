@@ -7,6 +7,7 @@
 
 PORTNAME=	snortreport
 PORTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://www.symmetrixtech.com/ids/
 

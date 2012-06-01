@@ -7,6 +7,7 @@
 
 PORTNAME=	thegrind
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/radius-engine/ld21/
 
@@ -17,7 +18,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	radius:${PORTSDIR}/graphics/radius-engine \
 		lua-5.1:${PORTSDIR}/lang/lua \
-		png:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		physfs.1:${PORTSDIR}/devel/physfs
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 

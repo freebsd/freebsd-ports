@@ -7,7 +7,7 @@
 
 PORTNAME=	nucleo
 PORTVERSION=	0.7.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://insitu.lri.fr/metisse/download/nucleo/
 
@@ -18,7 +18,7 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		exif.12:${PORTSDIR}/graphics/libexif
 
 USE_BZIP2=	yes
@@ -82,11 +82,5 @@ PLIST_SUB+=	GD=""
 CONFIGURE_ARGS+=	--without-gd
 PLIST_SUB+=	GD="@comment "
 .endif
-
-post-patch:
-# Fix for libpng 1.4
-	@${REINPLACE_CMD} -e \
-		's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
-			${WRKSRC}/nucleo/image/encoding/PNGenc.cxx
 
 .include <bsd.port.post.mk>

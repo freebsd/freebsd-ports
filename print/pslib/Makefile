@@ -8,6 +8,7 @@
 
 PORTNAME=	pslib
 PORTVERSION=	0.4.5
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -15,7 +16,7 @@ MAINTAINER=	mva@FreeBSD.org
 COMMENT=	A C-library for generating multi page PostScript documents
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_GNOME=	gnomehack intlhack pkgconfig

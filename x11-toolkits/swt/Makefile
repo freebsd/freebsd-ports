@@ -7,6 +7,7 @@
 
 PORTNAME=	swt
 DISTVERSION=	3.5.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits devel java
 #MASTER_SITES=	${MASTER_SITE_ECLIPSE}
 MASTER_SITES=	http://archive.eclipse.org/eclipse/downloads/drops/${MASTER_SITE_SUBDIR}/

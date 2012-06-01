@@ -7,7 +7,7 @@
 
 PORTNAME=	nonpareil
 PORTVERSION=	0.79
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://nonpareil.brouhaha.com/download/
 
@@ -16,6 +16,8 @@ COMMENT=	Simulator for many HP calculators
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_BISON=	build
 USE_GNOME=	gtk20 libxml2

@@ -7,23 +7,24 @@
 
 PORTNAME=	gnofract4d
 PORTVERSION=	3.14
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Weird GNOME fractal generator
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+		png15:${PORTSDIR}/graphics/png
 
 LICENSE=	BSD
-
-BROKEN=		does not compile
 
 USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui lthack \
 		pygtk2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
+CFLAGS+=	-I${LOCALBASE}/include
 PORTDOCS=	README COPYING
 INSTALLS_EGGINFO=	yes
 PYDISTUTILS_EGGINFODIR=	${PYTHON_SITELIBDIR}
@@ -49,7 +50,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '249,251d' ${WRKSRC}/setup.py
 
 	# fixup library detection
-	@${REINPLACE_CMD} -e "s/libpng/libpng14/" ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e "s/libpng/libpng15/" ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} \
 	     -e "s,/usr/include/jpeglib.h,${LOCALBASE}/include/jpeglib.h," \
 	     ${WRKSRC}/setup.py

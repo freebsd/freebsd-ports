@@ -7,6 +7,7 @@
 
 PORTNAME=	eos-movrec
 DISTVERSION=	0.3.1_beta
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.3_beta
 
@@ -24,6 +25,7 @@ QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build gui
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 DISTVERSIONSUFFIX=	-src
+PORTREVISION=	1
 
 PLIST_FILES=	bin/eos_movrec
 

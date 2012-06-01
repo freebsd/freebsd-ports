@@ -7,14 +7,14 @@
 
 PORTNAME=	visualboyadvance-m
 PORTVERSION=	1.8.0r${SVN_REV}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://update.cooltrainer.org/emulators/visualboyadvance-m/
 
 MAINTAINER=	root@cooltrainer.org
 COMMENT=	Game Boy Advance emulator with GTK frontend
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		cairomm-1.0.1:${PORTSDIR}/graphics/cairomm \
 		sfml-system.1:${PORTSDIR}/devel/sfml
 

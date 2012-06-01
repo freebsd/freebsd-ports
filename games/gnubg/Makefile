@@ -7,7 +7,7 @@
 
 PORTNAME=	gnubg
 PORTVERSION=	0.15
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	http://www.gnubg.org/media/sources/:src \
 		${MASTER_SITE_GNU_ALPHA:S/$/:ts/}
@@ -22,6 +22,7 @@ COMMENT=	GNU Backgammon
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 		gdbm.4:${PORTSDIR}/databases/gdbm \
+		png15:${PORTSDIR}/graphics/png \
 		gtkextra-x11-2.0.1:${PORTSDIR}/x11-toolkits/gtkextra2 \
 		gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 
@@ -72,7 +73,7 @@ post-extract:
 	${GUNZIP_CMD} --stdout ${DISTDIR}/${DIST_SUBDIR}/gnubg_ts0.bd.gz > ${WRKSRC}/gnubg_ts0.bd
 
 post-patch:
-	${REINPLACE_CMD} -e 's|libpng12|libpng14|g' ${WRKSRC}/configure.in
+	${REINPLACE_CMD} -e 's|libpng12|libpng15|g' ${WRKSRC}/configure.in
 
 pre-configure:
 	cd ${WRKSRC} && ./autogen.sh

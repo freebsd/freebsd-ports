@@ -7,7 +7,7 @@
 
 PORTNAME=	gpac
 PORTVERSION=	0.4.5
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/GPAC/GPAC%20${PORTVERSION}
@@ -77,8 +77,9 @@ CONFIGURE_ARGS+=	--use-jpeg=no
 .endif
 
 .if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=	--use-png=local
+CFLAGS+=	-I${LOCALBASE}/include/libpng15
 .else
 CONFIGURE_ARGS+=	--use-png=no
 .endif

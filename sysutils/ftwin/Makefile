@@ -7,7 +7,7 @@
 
 PORTNAME=	ftwin
 PORTVERSION=	0.8.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.meroware.org/ftwin/
 

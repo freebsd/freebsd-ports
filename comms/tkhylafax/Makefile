@@ -7,7 +7,7 @@
 
 PORTNAME=	tkhylafax
 PORTVERSION=	3.2b
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	comms tk
 MASTER_SITES=	ftp://ftp.hylafax.org/contrib/tkhylafax/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/beta/}

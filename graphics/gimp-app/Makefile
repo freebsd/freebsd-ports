@@ -8,7 +8,7 @@
 
 PORTNAME=	gimp-app
 DISTVERSION=	2.6.12
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -25,7 +25,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNU Image Manipulation Program
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		lcms.1:${PORTSDIR}/graphics/lcms \
@@ -194,7 +194,7 @@ post-patch:
 			${WRKSRC}/plug-ins/pygimp/Makefile.in
 	@${REINPLACE_CMD} -e 's/-u /-Wl,-u,/' \
 		${WRKSRC}/app/Makefile.in
-	@${REINPLACE_CMD} -e 's|"libpng"|"libpng14"|' \
+	@${REINPLACE_CMD} -e 's|"libpng"|"libpng15"|' \
 	    	-e 's|x86_64|amd64|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} '/curl.types.h/d' ${WRKSRC}/plug-ins/file-uri/uri-backend-libcurl.c

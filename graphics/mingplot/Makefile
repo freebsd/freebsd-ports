@@ -7,6 +7,7 @@
 
 PORTNAME=	mingplot
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	graphics www
 MASTER_SITES=	http://0xcc.net/mingplot/
 

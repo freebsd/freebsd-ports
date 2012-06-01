@@ -7,7 +7,7 @@
 
 PORTNAME=	morpheus
 PORTVERSION=	0.3
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.winnicki.net/morpheus/meat/
 

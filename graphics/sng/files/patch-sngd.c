@@ -1,6 +1,25 @@
---- sngd.c.orig	2003-11-15 20:25:10.000000000 +0100
-+++ sngd.c	2010-03-29 16:10:17.000000000 +0200
-@@ -793,17 +793,17 @@
+--- sngd.c.orig	2012-05-04 08:20:04.000000000 +0200
++++ sngd.c	2012-05-04 08:42:54.000000000 +0200
+@@ -10,6 +10,7 @@
+ #define PNG_INTERNAL
+ #include "config.h"	/* for RGBTXT */
+ #include "png.h"
++#include "pngpriv.h"
+ #include "sng.h"
+ 
+ png_structp png_ptr;
+@@ -726,8 +727,8 @@
+ 	}
+ #ifdef PNG_FLOATING_POINT_SUPPORTED
+ #ifndef MNG_INTERFACE
+-	fprintf(fpout, "    width:  %g\n", info_ptr->scal_pixel_width);
+-	fprintf(fpout, "    height: %g\n", info_ptr->scal_pixel_height);
++	fprintf(fpout, "    width:  %s\n", info_ptr->scal_s_width);
++	fprintf(fpout, "    height: %s\n", info_ptr->scal_s_height);
+ #else
+ 	fprintf(fpout, "    width:  %g\n", info_ptr->scal.pixel_width);
+ 	fprintf(fpout, "    height: %g\n", info_ptr->scal.pixel_height);
+@@ -794,17 +795,17 @@
  	fprintf(fpout, "tRNS {\n");
  	switch (info_ptr->color_type) {
  	case PNG_COLOR_TYPE_GRAY:

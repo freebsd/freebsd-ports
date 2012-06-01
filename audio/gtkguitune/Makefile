@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkguitune
 PORTVERSION=	0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.oocities.org/harpin_floh/mysoft/
 DISTNAME=	${PORTNAME}-gtk2-${PORTVERSION}

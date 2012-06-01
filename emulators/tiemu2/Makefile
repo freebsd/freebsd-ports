@@ -7,7 +7,7 @@
 
 PORTNAME=	tiemu2
 PORTVERSION=	2.08
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.ticalc.org/pub/unix/ \
 		http://freebsd.nsu.ru/distfiles/tiemu/

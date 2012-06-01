@@ -7,6 +7,7 @@
 
 PORTNAME=	openvrml
 PORTVERSION=	0.18.9
+PORTREVISION=	1
 CATEGORIES=	www graphics
 MASTER_SITES=	SF
 
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone	\
 LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig		\
 		js.1:${PORTSDIR}/lang/spidermonkey			\
 		jpeg.11:${PORTSDIR}/graphics/jpeg			\
-		png.6:${PORTSDIR}/graphics/png				\
+		png15:${PORTSDIR}/graphics/png				\
 		curl.6:${PORTSDIR}/ftp/curl				\
 		gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
 
@@ -33,7 +34,8 @@ CONFIGURE_ARGS=	--enable-gecko-rpath \
 		--disable-mozilla-plugin
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		LIBS="-lm" BOOST_LIB_SUFFIX=""
-CPPFLAGS+=	-I${LOCALBASE}/include -I${JAVA_HOME}/include -I${JAVA_HOME}/include/${OPSYS:L}
+CPPFLAGS+=	-I${LOCALBASE}/include -I${JAVA_HOME}/include -I${JAVA_HOME}/include/${OPSYS:L} \
+		-I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib -L${JAVA_HOME}/jre/lib/${ARCH}/client ${PTHREAD_LIBS}
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

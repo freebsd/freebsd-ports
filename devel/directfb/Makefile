@@ -7,7 +7,7 @@
 
 PORTNAME=	directfb
 PORTVERSION=	1.4.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.directfb.org/downloads/Core/${DISTNAME:R}/
 DISTNAME=	DirectFB-${PORTVERSION}
@@ -16,7 +16,7 @@ MAINTAINER=	anatoly.borodin@gmail.com
 COMMENT=	Graphic development lightweight API
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -27,7 +27,7 @@ OPTIONS=	FREETYPE2	"Enable Freetype support" on \
 		UNIQUE		"Enable Unique (WM Module)" off \
 		TESTS		"Install test apps" off
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15 ${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes

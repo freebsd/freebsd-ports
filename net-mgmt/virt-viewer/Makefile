@@ -7,6 +7,7 @@
 
 PORTNAME=	virt-viewer
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://virt-manager.org/download/sources/${PORTNAME}/
 

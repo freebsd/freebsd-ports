@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20120531:
+  AFFECTS: users of graphics/png
+  AUTHOR: dinoex@FreeBSD.org
+
+  The PNG library has been updated to version 1.5.10.  Please rebuild all
+  ports that depend on it.
+
+  If you use portmaster:
+        portmaster -r png-
+  If you use portupgrade:
+        portupgrade -fr graphics/png
+
+20120531:
   AFFECTS: users of editors/koffice-kde4
   AUTHOR: kde@FreeBSD.org
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	grig
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/groundstation/Grig/${PORTVERSION}
 

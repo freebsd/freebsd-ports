@@ -7,6 +7,7 @@
 
 PORTNAME=	pcmanx
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	chinese net gnome
 MASTER_SITES=	http://pcmanx-gtk2.googlecode.com/files/
 DISTNAME=	${PORTNAME}-gtk2-${PORTVERSION}

@@ -7,7 +7,7 @@
 
 PORTNAME=	mapnik
 PORTVERSION=	2.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://cloud.github.com/downloads/${PORTNAME}/${PORTNAME}/
@@ -19,7 +19,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	proj:${PORTSDIR}/graphics/proj \
-		png:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		tiff:${PORTSDIR}/graphics/tiff \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		icuuc:${PORTSDIR}/devel/icu \

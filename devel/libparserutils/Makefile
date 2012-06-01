@@ -7,6 +7,7 @@
 
 PORTNAME=	libparserutils
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.netsurf-browser.org/projects/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

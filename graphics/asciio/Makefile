@@ -7,7 +7,7 @@
 
 PORTNAME=	asciio
 PORTVERSION=	1.02.71
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://mirror.switch.ch/ftp/mirror/CPAN/authors/id/N/NK/NKH/ \
 		CRITICAL

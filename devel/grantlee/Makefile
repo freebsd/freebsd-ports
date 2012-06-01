@@ -6,6 +6,7 @@
 
 PORTNAME=	grantlee
 DISTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.${PORTNAME}.org/ \
 		http://www.loegria.net/${PORTNAME}/

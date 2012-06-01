@@ -7,7 +7,7 @@
 
 PORTNAME=	octave-forge-oct2mat
 PORTVERSION=	1.0.7
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

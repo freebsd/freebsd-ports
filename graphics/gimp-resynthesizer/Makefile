@@ -7,7 +7,7 @@
 
 PORTNAME=	resynthesizer
 PORTVERSION=	0.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.logarithmic.net/pfh-files/resynthesizer/ \
 		http://mirror.amdmi3.ru/distfiles/

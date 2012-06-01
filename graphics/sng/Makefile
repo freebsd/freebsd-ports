@@ -8,6 +8,7 @@
 
 PORTNAME=	sng
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
@@ -16,9 +17,10 @@ COMMENT=	Compiler/decompiler for Scriptable Network Graphics
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/X11/rgb.txt:${PORTSDIR}/x11/rgb
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/rgb.txt:${PORTSDIR}/x11/rgb
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
+CFLAGS+=	-I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-png-inc=${LOCALBASE}/include \
 		--with-rgbtxt=${LOCALBASE}/lib/X11/rgb.txt
@@ -26,7 +28,7 @@ CONFIGURE_ARGS=	--with-png-inc=${LOCALBASE}/include \
 MAN1=		sng.1
 PLIST_FILES=	bin/sng bin/sng_regress
 
-pre-patch:
+no-pre-patch:
 	@${REINPLACE_CMD} -e 's|-static||g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e '33,34s|^static ||' ${WRKSRC}/sngd.c
 

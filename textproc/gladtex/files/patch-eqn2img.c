@@ -1,5 +1,23 @@
---- ./eqn2img.c.orig	2012-05-01 18:17:08.000000000 +0200
-+++ ./eqn2img.c	2012-05-01 18:18:00.000000000 +0200
+--- eqn2img.c.orig	2010-07-31 17:30:20.000000000 +0200
++++ eqn2img.c	2012-05-06 15:41:55.000000000 +0200
+@@ -367,7 +367,7 @@
+   info_ptr = png_create_info_struct(png_ptr);
+   assert(info_ptr);
+   
+-  if(setjmp(png_ptr->jmpbuf)) {
++  if(setjmp(png_jmpbuf(png_ptr))) {
+     png_destroy_read_struct(&png_ptr, &info_ptr, NULL);
+     fclose(fp);
+     return NULL;
+@@ -580,7 +580,7 @@
+   assert(info_ptr);
+ 
+   /* error handling, libpng longjmps here on any error */
+-  if(setjmp(png_ptr->jmpbuf)) {
++  if(setjmp(png_jmpbuf(png_ptr))) {
+     png_destroy_read_struct(&png_ptr, &info_ptr, NULL);
+     fclose(fp);
+     return -1;
 @@ -715,7 +715,7 @@
      fprintf(stderr, " -> ps");
  

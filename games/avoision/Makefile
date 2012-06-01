@@ -7,6 +7,7 @@
 
 PORTNAME=	avoision
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/avsn/
 
@@ -22,7 +23,7 @@ LICENSE_PERMS_CCbyNCSA3=dist-mirror pkg-mirror auto-accept
 
 LIB_DEPENDS=	radius:${PORTSDIR}/graphics/radius-engine \
 		lua-5.1:${PORTSDIR}/lang/lua \
-		png:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		physfs.1:${PORTSDIR}/devel/physfs
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	turpial
 PORTVERSION=	1.6.7.1
+PORTREVISION=	1
 CATEGORIES=	net-im python
 MASTER_SITES=	http://turpial.org.ve/files/sources/%SUBDIR%/
 MASTER_SITE_SUBDIR=	stable

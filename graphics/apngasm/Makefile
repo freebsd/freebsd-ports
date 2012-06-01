@@ -7,6 +7,7 @@
 
 PORTNAME=	apngasm
 PORTVERSION=	2.6
+PORTREVISION=	1
 DISTVERSIONSUFFIX=-src
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
@@ -31,7 +32,7 @@ PLIST_FILES=	bin/${PORTNAME}
 .include <bsd.port.pre.mk>
 
 .if !defined(NO_SHARED)
-LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libpng.a:${PORTSDIR}/graphics/png
 LDFLAGS+=	-static

@@ -7,7 +7,7 @@
 
 PORTNAME=	ppracer
 DISTVERSION=	0.5alpha
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D downhill racing game... kind of like TuxRacer Improved
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
@@ -28,7 +28,7 @@ DOS2UNIX_REGEX=	.*\.(c|cpp|h)
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' \
-		-e 's,libpng12,libpng14,g' ${WRKSRC}/configure
+		-e 's,libpng12,libpng15,g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,RacingMode::,,' ${WRKSRC}/src/racingmode.h
 
 .include <bsd.port.mk>

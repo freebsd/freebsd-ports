@@ -7,7 +7,7 @@
 
 PORTNAME=	qtorrent
 PORTVERSION=	0.9.6.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://cdn.thegraveyard.org/releases/qtorrent/
 

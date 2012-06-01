@@ -8,6 +8,7 @@
 
 PORTNAME=	gnome-system-monitor
 PORTVERSION=	2.28.2
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

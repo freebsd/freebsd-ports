@@ -7,6 +7,7 @@
 
 PORTNAME=	backlogs
 PORTVERSION=	0.6.16
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://people.freebsd.org/~pgollucci/ \
 		LOCAL/pgollucci

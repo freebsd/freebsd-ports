@@ -7,6 +7,7 @@
 
 PORTNAME=	http-auth
 PORTVERSION=	20100730
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://dist.codelabs.ru/fbsd/
 DISTNAME=	AdamLantos-redmine_http_auth-${GITREV}

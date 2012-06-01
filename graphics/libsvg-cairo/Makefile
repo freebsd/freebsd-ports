@@ -8,7 +8,7 @@
 
 PORTNAME=	libsvg-cairo
 PORTVERSION=	0.1.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/snapshots/
 

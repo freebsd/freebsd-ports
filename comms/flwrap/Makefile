@@ -7,6 +7,7 @@
 
 PORTNAME=	flwrap
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/fldigi-distro/ \
 		${MASTER_SITE_LOCAL}

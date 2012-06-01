@@ -7,7 +7,7 @@
 
 PORTNAME=	ksqlanalyzer
 PORTVERSION=	0.2.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	databases kde
 MASTER_SITES=	http://www.kpage.de/download/
 

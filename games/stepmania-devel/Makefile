@@ -7,7 +7,7 @@
 
 PORTNAME=	stepmania
 PORTVERSION=	20071121
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
 PKGNAMESUFFIX=	-devel
@@ -17,7 +17,7 @@ MAINTAINER=	braddo@tranceaddict.net
 COMMENT=	Stepmania dance and rhythm game
 
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		m.3:${PORTSDIR}/misc/compat5x
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \

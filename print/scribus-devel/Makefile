@@ -7,6 +7,7 @@
 
 PORTNAME=	scribus
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	print editors
 MASTER_SITES=	http://download.tuxfamily.org/bartcoding/FreeBSD/ \
 				${MASTER_SITE_LOCAL}
@@ -17,7 +18,7 @@ COMMENT=	A comprehensive desktop publishing program
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		lcms:${PORTSDIR}/graphics/lcms \
-		png:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		tiff:${PORTSDIR}/graphics/tiff \
 		cups:${PORTSDIR}/print/cups-base \
 		freetype:${PORTSDIR}/print/freetype2 \

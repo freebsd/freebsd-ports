@@ -7,6 +7,7 @@
 
 PORTNAME=	gio-sharp
 PORTVERSION=	2.22.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 

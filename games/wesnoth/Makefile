@@ -7,7 +7,7 @@
 
 PORTNAME=	wesnoth
 PORTVERSION=	1.8.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTNAME}-${PORTVERSION} \
 		http://files.wesnoth.org/
@@ -15,11 +15,12 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTNAME}-${PORTVERS
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	A fantasy turn-based strategy game
 
-LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
-
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
+		png15:${PORTSDIR}/graphics/png
 
 CONFLICTS=	wesnoth-devel-[0-9]*
 

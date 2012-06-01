@@ -7,7 +7,7 @@
 
 PORTNAME=	pidgin-audacious-remote
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://pidginaudacious.sourceforge.net/files/ \
 		ftp://ftp.lissyara.su/users/gx_ua/distfiles/

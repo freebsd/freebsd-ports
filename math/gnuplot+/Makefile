@@ -7,7 +7,7 @@
 
 PORTNAME=	gnuplot371+
 PORTVERSION=	1.2.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	math japanese graphics
 MASTER_SITES=	SF/gnuplot/gnuplot/3.7.1 \
 		http://www.yama-ga.com/gnuplot/:patch \
@@ -20,7 +20,7 @@ EXTRACT_ONLY=	gnuplot-3.7.1.tar.gz
 MAINTAINER=	nakaji@jp.freebsd.org
 COMMENT=	A command-driven interactive function plotting program
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		VFlib2.24:${PORTSDIR}/japanese/vflib
 
 USE_XORG=	x11

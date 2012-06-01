@@ -7,7 +7,7 @@
 
 PORTNAME=	platex209
 PORTVERSION=	1.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/platex/
 DISTNAME=	${PORTNAME}

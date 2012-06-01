@@ -7,7 +7,7 @@
 
 PORTNAME=	widelands
 DISTVERSION=	build16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://launchpadlibrarian.net/69520494/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -17,12 +17,13 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Realtime strategy game inspired by Settlers II
 
 LIB_DEPENDS=	ggzcore.9:${PORTSDIR}/games/ggz-client-libs \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		GLEW.1:${PORTSDIR}/graphics/glew
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
+USE_GETTEXT=	yes
 CMAKE_OUTSOURCE=yes
 CMAKE_ARGS=	-DWL_INSTALL_PREFIX="${PREFIX}" \
 		-DWL_INSTALL_DATADIR="share/widelands" \
@@ -31,6 +32,7 @@ CMAKE_ARGS=	-DWL_INSTALL_PREFIX="${PREFIX}" \
 USE_LUA=	5.1+
 USE_SDL=	sdl mixer image net ttf gfx
 USE_PYTHON_BUILD=2.5+
+CFLAGS+=	-I${LOCALBASE}/include/libpng15
 MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/widelands

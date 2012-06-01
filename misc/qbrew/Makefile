@@ -7,7 +7,7 @@
 
 PORTNAME=	qbrew
 PORTVERSION=	0.4.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc
 MASTER_SITES=	http://www.usermode.org/code/
 

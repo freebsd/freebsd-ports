@@ -6,7 +6,7 @@
 
 PORTNAME=	kallers
 PORTVERSION=	0.3.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	comms kde
 MASTER_SITES=	http://www.nadmm.com/kallers/src/
 

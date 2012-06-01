@@ -7,7 +7,7 @@
 
 PORTNAME=	libgdiplus
 PORTVERSION=	2.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 
@@ -16,7 +16,7 @@ COMMENT=	GDI+ API for System.Windows.Forms in Mono
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		gif.5:${PORTSDIR}/graphics/giflib \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		cairo.2:${PORTSDIR}/graphics/cairo
 
 GNU_CONFIGURE=	yes
@@ -25,7 +25,7 @@ USE_GNOME=	gnomehack glib20
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	x11
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	lib/libgdiplus.a \

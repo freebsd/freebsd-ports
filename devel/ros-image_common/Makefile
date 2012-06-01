@@ -6,6 +6,7 @@
 
 PORTNAME=	ros-image_common
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://code.ros.org/svn/release/download/stacks/${STACKNAME}/${STACKNAME}-${PORTVERSION}/
 DISTNAME=	image_common-${PORTVERSION}

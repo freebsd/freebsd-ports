@@ -8,6 +8,7 @@
 
 PORTNAME?=	R
 PORTVERSION=	2.15.0
+PORTREVISION=	1
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -178,7 +179,7 @@ PLIST_SUB+=		PANGOCAIRO=""
 .if defined(WITHOUT_PNG)
 CONFIGURE_ARGS+=	--without-libpng
 .else
-LIB_DEPENDS+=		png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=		png15:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=	--with-libpng
 .endif
 

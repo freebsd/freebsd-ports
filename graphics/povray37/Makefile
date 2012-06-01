@@ -7,7 +7,7 @@
 
 PORTNAME=	povray
 DISTVERSION=	3.7.0.RC3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.povray.org/beta/source/
 DIST_SUBDIR=	${UNIQUENAME}
@@ -69,7 +69,7 @@ CONFIGURE_ARGS+=--disable-io-restrictions
 .if defined(WITH_STATIC)
 BUILD_DEPENDS+=	png>=1.4:${PORTSDIR}/graphics/png
 .else
-LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 LIBS+=		-lpng
 .endif
 .else

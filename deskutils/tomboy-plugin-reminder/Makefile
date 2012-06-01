@@ -7,6 +7,7 @@
 
 PORTNAME=	tomboy-plugin-reminder
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://flukkost.nu/
 DISTNAME=	tomboy-reminder-${PORTVERSION}

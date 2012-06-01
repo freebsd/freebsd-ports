@@ -7,6 +7,7 @@
 
 PORTNAME=	gecko-mediaplayer
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	www multimedia gnome
 MASTER_SITES=	GOOGLE_CODE
 

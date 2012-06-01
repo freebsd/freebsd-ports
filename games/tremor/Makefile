@@ -7,7 +7,7 @@
 
 PORTNAME=	tremor
 PORTVERSION=	3.2.4.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake1/:src \
 		http://tremor.quakedev.com/:data
@@ -21,7 +21,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced Quake engine based on JoeQuake
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 
 USE_BZIP2=	yes
@@ -90,10 +90,6 @@ post-extract:
 	@${UNZIP_CMD} -q ${DISTDIR}/${DIST_SUBDIR}/tremor_texture_packX.zip \
 		-d ${WRKDIR}
 .endif
-
-post-patch:
-	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
-		${WRKSRC}/image.c
 
 do-install:
 .if !defined(WITHOUT_GLX)

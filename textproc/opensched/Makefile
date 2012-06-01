@@ -7,7 +7,7 @@
 
 PORTNAME=	opensched
 PORTVERSION=	0.1.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	textproc
 MASTER_SITES=	http://hitachi-id.com/dlsoftware/opensched/
 

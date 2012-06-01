@@ -10,7 +10,7 @@ PORTNAME=	gnustep-gui
 PORTVERSION=	0.20.0
 .else
 PORTVERSION=	0.17.1
-PORTREVISION=	2
+PORTREVISION=	3
 .endif
 CATEGORIES=	x11-toolkits gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
@@ -21,7 +21,7 @@ COMMENT=	GNUstep GUI library
 
 LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
-LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
 .if defined(WITH_GNUSTEP_DEVEL)
 LIB_DEPENDS+=	sndfile:${PORTSDIR}/audio/libsndfile
@@ -55,6 +55,8 @@ MAKE_FLAGS+=	OPTFLAG="${CFLAGS}"
 MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
 BREAKS_IF_PEDANTIC=	yes
 PLIST_SUB+=	BASEVERSION=${PORTVERSION:C/[.][0-9]*$//1}
+
+ADDITIONAL_INCLUDE_DIRS+=	-I${LOCALBASE}/include/libpng15
 
 .if defined(WITH_GNUSTEP_DEVEL)
 EXTRA_PATCHES+=	${FILESDIR}/AudioOutputSink.m.patch
@@ -92,6 +94,9 @@ PLIST_SUB+=	WITH_ASPELL=""
 .else
 PLIST_SUB+=	WITH_ASPELL="@comment "
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e "s|libpng/png.h|png.h|" ${WRKSRC}/configure
 
 pre-configure:
 .for file in config.guess config.sub install-sh

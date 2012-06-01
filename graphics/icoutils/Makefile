@@ -7,6 +7,7 @@
 
 PORTNAME=	icoutils
 PORTVERSION=	0.29.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SAVANNAH
 
@@ -16,7 +17,7 @@ COMMENT=	Convert/extract images in Microsoft Windows(R) icon/cursor files
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 
 USE_BZIP2=	yes

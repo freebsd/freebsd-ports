@@ -7,7 +7,7 @@
 
 PORTNAME=	dc20ctrl
 PORTVERSION=	0.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.paternostro.org/~ugo/binaries/
 
@@ -16,7 +16,7 @@ COMMENT=	Digital camera control and download tool for Kodak DC20 camera
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		png.6:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 
 MAKE_ARGS=	-DUSE_JPEG -DUSE_TIFF -DUSE_PNG
 

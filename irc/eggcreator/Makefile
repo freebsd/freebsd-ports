@@ -8,7 +8,7 @@
 
 PORTNAME=	eggcreator
 PORTVERSION=	0.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	irc
 MASTER_SITES=	http://www.oook.cz/bsd/distfiles/ \
 		LOCAL/beech

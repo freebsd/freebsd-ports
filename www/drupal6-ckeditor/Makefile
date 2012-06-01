@@ -7,6 +7,7 @@
 
 PORTNAME=	ckeditor
 DISTVERSION=	6.x-1.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/:1 \
 		http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.3/:2

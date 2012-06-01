@@ -7,7 +7,7 @@
 
 PORTNAME=	enblend
 PORTVERSION=	3.1.r20080615
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	vd/enblend
@@ -33,7 +33,7 @@ USE_AUTOTOOLS=	automake:env autoconf:env
 USE_GCC=	4.4+
 USE_GL=		glew glut
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		enblend.1 enfuse.1

@@ -7,6 +7,7 @@
 
 PORTNAME=	att_remover
 PORTVERSION=	1.0.13
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-

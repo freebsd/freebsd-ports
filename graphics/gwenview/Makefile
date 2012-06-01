@@ -7,7 +7,7 @@
 
 PORTNAME=	gwenview
 PORTVERSION=	1.4.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics kde
 MASTER_SITES=	SF
 
@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An image viewer and browser for the KDE environment
 
 LIB_DEPENDS=	kipi.2:${PORTSDIR}/graphics/libkipi \
+		png15:${PORTSDIR}/graphics/png \
 		exiv2.10:${PORTSDIR}/graphics/exiv2
 
 USE_BZIP2=	yes
@@ -22,6 +23,7 @@ USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool
 
+CFLAGS+=-I${LOCALBASE}/include/libpng15
 CONFIGURE_ARGS+=--enable-kipi
 
 MAN1=	gwenview.1

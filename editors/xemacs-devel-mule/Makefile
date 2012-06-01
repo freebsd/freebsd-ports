@@ -7,7 +7,7 @@
 
 PORTNAME=	xemacs-devel-mule
 PORTVERSION=	${XEMACS_VER:S/-/./}
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
@@ -40,15 +40,15 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/xemacs-${XEMACS_VER}/lisp/x-win-xfree86.elc:${POR
 .if !defined(WITHOUT_X11)
 BUILD_DEPENDS+=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
+		png15:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		compface.1:${PORTSDIR}/mail/faces
 
-USE_XORG+=	x11 xft xpm
+USE_XORG+=	x11 xft xpm xbitmaps
 CONFIGURE_ARGS=--with-xpm --with-xft=all
 # XXX: needed until port updated to work nicely with autoconf >= 2.64
 #      see files/patch-configure.ac for more details
-CFLAGS+=	-I${LOCALBASE}/include/freetype2
+CFLAGS+=	-I${LOCALBASE}/include/freetype2 -I${LOCALBASE}/include/libpng15
 .endif
 
 XEMACS_REL=	21.5

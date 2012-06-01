@@ -7,7 +7,7 @@
 
 PORTNAME=	roxbg
 PORTVERSION=	1.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11 deskutils
 MASTER_SITES=	http://vvelox.net/programs/unix/x11/
 EXTRACT_SUFX=

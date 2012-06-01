@@ -7,7 +7,7 @@
 
 PORTNAME=	caph
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/caphgame/${PORTNAME}/caphgame-${PORTVERSION}/
 DISTNAME=	caphgame-${PORTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	caphgame-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Physics-based sandbox game
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/doc/caph/COPYING

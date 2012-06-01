@@ -7,7 +7,7 @@
 
 PORTNAME=	g2ipmsg
 PORTVERSION=	0.9.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.ipmsg.org/archive/ \
 		${MASTER_SITE_LOCAL} \

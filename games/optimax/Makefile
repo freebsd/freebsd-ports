@@ -7,7 +7,7 @@
 
 PORTNAME=	optimax
 PORTVERSION=	0.63
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.corewar.info/optimax/dload/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}_unix

@@ -6,6 +6,7 @@
 
 PORTNAME=	chapterfolder
 PORTVERSION=	2.0.20051124
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.ctan.org/tex-archive/%SUBDIR%/ \
 		${MASTER_SITE_TEX_CTAN}

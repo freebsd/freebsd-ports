@@ -7,6 +7,7 @@
 
 PORTNAME=	fltk
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_EASYSW}
 MASTER_SITE_SUBDIR=	fltk/${PORTVERSION}
@@ -15,7 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Cross-platform C++ graphical user interface toolkit
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
 USE_LDCONFIG=	yes

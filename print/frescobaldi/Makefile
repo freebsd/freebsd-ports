@@ -7,7 +7,7 @@
 
 PORTNAME=	frescobaldi
 PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	http://lilykde.googlecode.com/files/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=		landscape
 PORTVERSION=		0.7
-PORTREVISION=		11
+PORTREVISION=	12
 CATEGORIES=		graphics kde
 MASTER_SITES=		http://homepage.ntlworld.com/jon.belson/files/
 

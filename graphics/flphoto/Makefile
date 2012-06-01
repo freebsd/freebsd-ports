@@ -7,7 +7,7 @@
 
 PORTNAME=	flphoto
 PORTVERSION=	1.3.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	SF/fltk/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -16,11 +16,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A basic image management and display program
 
 LIB_DEPENDS=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
-		fltk.1:${PORTSDIR}/x11-toolkits/fltk
+		fltk.1:${PORTSDIR}/x11-toolkits/fltk \
+		png15:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_BZIP2=	yes
+USE_XORG=	xinerama
 GNU_CONFIGURE=	yes
 
 MAN1=		flphoto.1

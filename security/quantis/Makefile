@@ -7,6 +7,7 @@
 
 PORTNAME=	quantis
 DISTVERSION=	v11.12.13
+PORTREVISION=	1
 CATEGORIES=	security devel java
 MASTER_SITES=	http://www.idquantique.com/files/products/quantis/ \
 		${MASTER_SITE_LOCAL}

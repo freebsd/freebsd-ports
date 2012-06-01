@@ -2,7 +2,7 @@
 
 PORTNAME=	anki
 PORTVERSION=	1.2.11
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE \
 		http://ankisrs.net/download/mirror/
