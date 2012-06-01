@@ -23,7 +23,7 @@ LIB_DEPENDS=	akode:${PORTSDIR}/audio/akode \
 
 CONFLICTS=	kdemultimedia-3.3*
 
-OPTIONS=	GSTREAMER "Enable gstreamer support" off
+OPTIONS_DEFINE=	GSTREAMER
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
@@ -39,7 +39,7 @@ WANT_GSTREAMER=	yes
 
 .include <bsd.port.pre.mk>
 
-.if  defined(WITH_GSTREAMER) || exists(${LOCALBASE}/lib/libgstreamer-0.10.so)
+.if  ${PORT_OPTIONS:MGSTREAMER} || exists(${LOCALBASE}/lib/libgstreamer-0.10.so)
 GSTREAMER_OVERRIDE=yes
 USE_GSTREAMER=	yes
 .endif

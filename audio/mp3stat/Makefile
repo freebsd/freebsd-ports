@@ -32,18 +32,20 @@ PLIST_DIRS=	lib/mp3stat
 CXX+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib \
 		-Wl,--rpath,${LOCALBASE}/lib
 
-OPTIONS=	VORBIS "Ogg/Vorbis support" on
+OPTIONS_DEFINE=	VORBIS DOCS
+OPTIONS_DEFAULT=	VORBIS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITHOUT_VORBIS)
-MAKE_ARGS+=	VORBIS=""
-.else
+.if ${PÖRT_OPTIONS:MVORBIS}
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 PLIST_FILES+=	lib/mp3stat/input_vorb.so
+.else
+MAKE_ARGS+=	VORBIS=""
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	README
 .endif
 
@@ -61,12 +63,12 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ui/gtk/ui_gtk2.so ${PREFIX}/lib/mp3stat
 	${INSTALL_DATA} ${WRKSRC}/ui/console/ui_console.so ${PREFIX}/lib/mp3stat
 	${INSTALL_DATA} ${WRKSRC}/input/mp3/input_mp3.so ${PREFIX}/lib/mp3stat
-.if !defined(WITHOUT_VORBIS)
+.if ${PORT_OPTIONS:MVORBIS}
 	${INSTALL_DATA} ${WRKSRC}/input/vorbis/input_vorb.so ${PREFIX}/lib/mp3stat
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

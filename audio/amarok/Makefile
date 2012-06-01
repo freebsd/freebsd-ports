@@ -30,17 +30,15 @@ USE_SDL=	sdl
 USE_RUBY=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	GPOD "iPod support" on \
-		NJB "Creative Nomad and Dell support" on \
-		MTP "MTP device support" on \
-		LIBVISUAL "libvisual support" off \
-		OPENGL "OpenGL support" on \
-		AMAZON "Amazon cover fetching support" on \
-		MYSQL "Use MySQL as collection backend" off \
-		POSTGRESQL "Use PostgreSQL as collection backend" off \
-		HIDEMENUBAR "Revert the 'Hide Menubar' feature" off \
+OPTIONS_DEFINE=	GPOD NJB MTP LIBVISUAL OPENGL AMAZON MYSQL PGSQL HIDEMENUBAR
+OPTIONS_DEFAULT=	GPOD NJB MTP OPENGL AMAZON
+GPOD_DESC=		Enable Ipod support
+NJB_DESC=		Enable Creative Nomad and Dell support
+LIBVISUAL_DESC=		Enable libvisual support
+AMAZON_DESC=		Enable Amazon cover fetching support
+HIDEMENUBAR_DESC=	Revert the 'Hide Menubar' feature
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=--without-exscalibar \
 		--without-musicbrainz \
@@ -49,60 +47,60 @@ CONFIGURE_ARGS+=--without-exscalibar \
 
 CFLAGS+=	-I${LOCALBASE}/include/ruby-${RUBY_VER} -I${LOCALBASE}/include/ruby-${RUBY_VER}/${RUBY_ARCH}
 
-.if !defined(WITH_GPOD)
-PLIST_SUB+=	GPOD="@comment "
-CONFIGURE_ARGS+=--without-libgpod
-.else
+.if ${PORT_OPTIONS:MGPOD}
 LIB_DEPENDS+=	gpod.7:${PORTSDIR}/audio/libgpod
 CONFIGURE_ARGS+=--with-libgpod
 PLIST_SUB+=	GPOD=""
+.else
+PLIST_SUB+=	GPOD="@comment "
+CONFIGURE_ARGS+=--without-libgpod
 .endif
 
-.if !defined(WITH_NJB)
-PLIST_SUB+=	NJB="@comment "
-.else
+.if ${PORT_OPTIONS:MNJB}
 LIB_DEPENDS+=	njb.6:${PORTSDIR}/audio/libnjb
 CONFIGURE_ARGS+=--with-libnjb
 PLIST_SUB+=	NJB=""
+.else
+PLIST_SUB+=	NJB="@comment "
 .endif
 
-.if !defined(WITH_MTP)
-PLIST_SUB+=	MTP="@comment "
-.else
+.if ${PORT_OPTIONS:MMTP}
 LIB_DEPENDS+=	mtp.9:${PORTSDIR}/audio/libmtp
 CONFIGURE_ARGS+=--with-libmtp
 PLIST_SUB+=	MTP=""
-.endif
-
-.if defined(WITHOUT_LIBVISUAL)
-CONFIGURE_ARGS+=--without-libvisual
 .else
-LIB_DEPENDS+=	visual-0.4:${PORTSDIR}/graphics/libvisual04
+PLIST_SUB+=	MTP="@comment "
 .endif
 
-.if defined(WITHOUT_OPENGL)
+.if ${PORT_OPTIONS:MLIBVISUAL}
+LIB_DEPENDS+=	visual-0.4:${PORTSDIR}/graphics/libvisual04
+.else
+CONFIGURE_ARGS+=--without-libvisual
+.endif
+
+.if empty(PORT_OPTIONS:MOPENGL)
 CONFIGURE_ARGS+=--without-opengl
 .endif
 
-.if defined(WITHOUT_AMAZON)
+.if empty(PORT_OPTIONS:MAMAZON)
 CONFIGURE_ARGS+=--disable-amazon
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=--enable-mysql
 .endif
 
-.if defined(WITH_POSTGRESQL)
+.if ${PORT_OPTIONS:MPOSTGRESQL}
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=--enable-postgresql
 .endif
 
-.if defined(WITH_HIDEMENUBAR)
+.if ${PORT_OPTIONS:MHIDEMENUBAR}
 EXTRA_PATCHES=	${PATCHDIR}/hide-main-menu-bar-feature.patch
 .endif
 
-.if defined(DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--enable-debug=full
 STRIP=		# none
 .endif
@@ -121,18 +119,8 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${TOUCH}
 
 post-install:
-.if defined(WITH_MTP) || defined(WITH_NJB) || defined(WITH_GPOD)
+.if !empty(PORT_OPTIONS:MMTP) || !empty${PORT_OPTIONS:MNJB} || !empty(PORT_OPTIONS:MGPOD)
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-check-options-version:
-.ifdef(_OPTIONS_READ)
-	@(if ${PKG_VERSION} -t ${_OPTIONS_READ} ${MIN_OPTIONS_VER} | ${GREP} -q '<'; \
-	 then	${ECHO_CMD} ""; \
-		${ECHO_CMD} "===> You have unsupported (old) OPTIONS, please do a 'make rmconfig; make'"; \
-		${ECHO_CMD} ""; \
-		exit 1; \
-	fi)
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
