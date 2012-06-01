@@ -15,7 +15,9 @@ COMMENT=	Media Transfer Protocol (MTP) library
 
 LICENSE=	LGPL21
 
-OPTIONS=	MTPZ "Enable functionality to connect to MTPZ devices" on
+OPTIONS_DEFINE=	MTPZ
+OPTIONS_DEFAULT=	MTPZ
+MTPZ_DESC=	Enable functionality to connect to MTPZ devices
 
 USE_GNOME=	gnomehack
 USE_ICONV=	yes
@@ -28,10 +30,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_MTPZ)
-CONFIGURE_ARGS+=--disable-mtpz
-.else
+.if ${PORT_OPTIONS:MMTPZ}
 LIB_DEPENDS+=	gcrypt.18:${PORTSDIR}/security/libgcrypt
+.else
+CONFIGURE_ARGS+=--disable-mtpz
 .endif
 
 .include <bsd.port.pre.mk>

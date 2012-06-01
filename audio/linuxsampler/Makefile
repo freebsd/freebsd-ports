@@ -21,11 +21,10 @@ RESTRICTED=	no commercial use
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	"not yet ported"
 
-OPTIONS=	JACK "Enable JACK support" on \
-		ALSA "Enable ALSA support" off \
-		ARTS "Enable aRts support" off \
-		DSSI "Enable DSSI support" off \
-		LV2CORE "Enable LV2 support" off
+OPTIONS_DEFINE=	JACK ALSA ARTS DSSI LV2CORE
+OPTIONS_DEFAULT=	JACK
+DSSI_DESC=	Enable DSSI support
+LV2CORE_DESC=	Enable LV2 support
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack
@@ -43,25 +42,25 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_JACK)
-CONFIGURE_ARGS+=--disable-jack-driver
-.else
+.if ${PORT_OPTIONS:MJACK}
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+.else
+CONFIGURE_ARGS+=--disable-jack-driver
 .endif
 
-.if defined(WITH_ALSA)
+.if ${PORT_OPTIONS:MALSA}
 LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
 .else
 CONFIGURE_ARGS+=--disable-alsa-driver
 .endif
 
-.if defined(WITH_ARTS)
+.if ${PORT_OPTIONS:MARTS}
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 .else
 CONFIGURE_ARGS+=--disable-arts-driver
 .endif
 
-.if defined(WITH_DSSI)
+.if ${PORT_OPTIONS:MDSSI}
 BUILD_DEPENDS+=	dssi>=0:${PORTSDIR}/audio/dssi
 RUN_DEPENDS+=	dssi>=0:${PORTSDIR}/audio/dssi
 PLIST_SUB+=	DSSI=""
@@ -70,7 +69,7 @@ CONFIGURE_ENV+=	ac_cv_header_dssi_h=no
 PLIST_SUB+=	DSSI="@comment "
 .endif
 
-.if defined(WITH_LV2CORE)
+.if ${PORT_OPTIONS:MLV2CORE}
 BUILD_DEPENDS+=	lv2core>=0:${PORTSDIR}/audio/lv2core
 RUN_DEPENDS+=	lv2core>=0:${PORTSDIR}/audio/lv2core
 PLIST_SUB+=	LV2CORE=""

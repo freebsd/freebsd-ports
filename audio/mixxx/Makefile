@@ -29,10 +29,9 @@ LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		portaudio.2:${PORTSDIR}/audio/portaudio2 \
 		tag.1:${PORTSDIR}/audio/taglib
 
-OPTIONS=	LAME "LAME MP3 audio encoder support" off \
-		SHOUTCAST "Shoutcast Broadcasting" off \
-		FAAD "FAAD AAC audio decoder plugin" off \
-		WAVPACK "WavPack audio support plugin" off
+OPTIONS_DEFINE=	LAME FAAD WAVPACK SHOUTCAST DOCS
+SHOUTCAST_DESC=	Enable Shoutcast Broadcasting
+WAVPACK_DESC=	Enable WavPack audio support plugin
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -48,18 +47,18 @@ MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_LAME)
+.if ${PORT_OPTIONS:MLAME}
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 .endif
 
-.if defined(WITH_SHOUTCAST)
+.if ${PORT_OPTIONS:MSHOUTCAST}
 LIB_DEPENDS+=	shout.5:${PORTSDIR}/audio/libshout2
 SCONS_ARGS+=	shoutcast=1
 .else
 SCONS_ARGS+=	shoutcast=0
 .endif
 
-.if defined(WITH_FAAD)
+.if ${PORT_OPTIONS:MFAAD}
 LIB_DEPENDS+=	faad.2:${PORTSDIR}/audio/faad \
 		mp4v2.10:${PORTSDIR}/multimedia/mp4v2
 SCONS_ARGS+=	faad=1
@@ -69,7 +68,7 @@ SCONS_ARGS+=	faad=0
 PLIST_SUB+=	FAAD="@comment "
 .endif
 
-.if defined(WITH_WAVPACK)
+.if ${PORT_OPTIONS:MWAVPACK}
 LIB_DEPENDS+=	wavpack.2:${PORTSDIR}/audio/wavpack
 SCONS_ARGS+=	wv=1
 PLIST_SUB+=	WAVPACK=""
@@ -91,7 +90,7 @@ post-patch:
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/mixxx
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for FILE in Mixxx-Manual.pdf README
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}

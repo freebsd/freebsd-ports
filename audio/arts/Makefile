@@ -38,8 +38,7 @@ _NO_KDE_FINAL=	yes
 CFLAGS+=	-DHAVE_VASPRINTF
 CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
 
-OPTIONS=	ESD "Enable esound support" off \
-		NAS "Enable NAS support" off
+OPTIONS_DEFINE=	ESOUND NAS
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
@@ -48,11 +47,11 @@ OPTIONS=	ESD "Enable esound support" off \
 LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
 .endif
 
-.if defined(WITH_ESD)
+.if ${PORT_OPTIONS:MESOUND}
 USE_GNOME+=	esound
 .endif
 
-.if defined(WITH_NAS)
+.if ${PORT_OPTIONS:MNAS}
 LIB_DEPENDS+=	audio:${PORTSDIR}/audio/nas
 .endif
 
@@ -64,11 +63,11 @@ pre-configure:
 		${WRKSRC}/configure
 .endif
 
-.if defined(WITH_NAS)
+.if ${PORT_OPTIONS:MNAS}
 	${REINPLACE_CMD} \
 		-e 's|LIBS="-laudio  $$LIBS"|LIBS="-laudio -lm -lXt -lXau $$LIBS"|g' \
 			${WRKSRC}/configure
-.elif defined(WITHOUT_NAS)
+.else
 	${REINPLACE_CMD} \
 		-e 's|ac_cv_lib_audio_AuOpenServer=yes|ac_cv_lib_audio_AuOpenServer=no|g' \
 			${WRKSRC}/configure
