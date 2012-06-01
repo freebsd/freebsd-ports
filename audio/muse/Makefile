@@ -8,7 +8,7 @@
 
 PORTNAME=	MuSE
 PORTVERSION=	0.9.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.dyne.org/muse/releases/ \
 		http://www.ljudmila.org/~jaromil/muse/releases/
@@ -28,9 +28,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT -DHAVE_SYS_UIO_H \
 		${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl
 
-OPTIONS=	X11	"Build with X11 support" on \
-		MP3	"Build with MP3 support" on \
-		SNDFILE	"Build with sndfile support" on
+OPTIONS_DEFINE=	X11 LAME SNDFILE
+OPTIONS_DEFAULT=	X11
 
 .include <bsd.port.pre.mk>
 
@@ -38,18 +37,18 @@ OPTIONS=	X11	"Build with X11 support" on \
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-broken-scandir
 .endif
 
-.if defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
+USE_GNOME+=	gtk20
+.else
 PKGNAMESUFFIX=	-nox11
 CONFIGURE_ARGS+=--without-x --with-rubik
-.else
-USE_GNOME+=	gtk20
 .endif
 
-.if !defined(WITHOUT_MP3) || exists(${LOCALBASE}/lib/libmp3lame.so.0)
+.if ${PORT_OPTIONS:MMP3} || exists(${LOCALBASE}/lib/libmp3lame.so.0)
 LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
 .endif
 
-.if !defined(WITHOUT_SNDFILE) || exists(${LOCALBASE}/lib/libsndfile.so.1)
+.if ${PORT_OPTIONS:MSNDFILE} || exists(${LOCALBASE}/lib/libsndfile.so.1)
 LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
 .endif
 
