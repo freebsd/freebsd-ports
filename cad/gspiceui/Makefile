@@ -20,8 +20,10 @@ LICENSE_FILE=	${WRKSRC}/License
 
 RUN_DEPENDS=	gwave:${PORTSDIR}/cad/gwave
 
-OPTIONS=	NGSPICE "Use ng-spice as backend" on \
-		GNUCAP "Use gnucap as backend" off
+OPTIONS_DEFINE=	NGSPICE GNUCAP EXAMPLES DOCS
+OPTIONS_DEFAULT=	NGSPICE
+NGSPICE_DESC=	Use ng-spice as backend
+GNUCAP_DESC=	Use gnucap as backend
 
 USE_WX=		2.6+
 WX_UNICODE=	yes
@@ -34,13 +36,13 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/gspiceui
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NGSPICE)
+.if ${PORT_OPTIONS:MNGSPICE}
 RUN_DEPENDS+=	ngspice:${PORTSDIR}/cad/ngspice_rework
 .endif
 
-.if defined(WITH_GNUCAP)
+.if ${PORT_OPTIONS:MGNUCAP}
 RUN_DEPENDS+=	gnucap:${PORTSDIR}/cad/gnucap
 .endif
 
@@ -56,14 +58,14 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/gspiceui ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/gspiceui.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONs:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for dir in html
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${DOCSDIR} \
 		"! -name Makefile")
 .endfor
 .endif
-.if !defined(WITHOUT_EXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 .for dir in lib sch
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${EXAMPLESDIR} \
@@ -71,4 +73,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

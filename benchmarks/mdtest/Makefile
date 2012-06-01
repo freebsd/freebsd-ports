@@ -16,7 +16,8 @@ COMMENT=	A filesystem metadata benchmark utility
 
 LICENSE=	GPLv2
 
-OPTIONS=	OPENMPI "Use openmpi instead of mpich2" off
+OPTIONS_DEFINE=	OPENMPI EXAMPLES
+OPENMPI_DESC=	Use openmpi instead of mpich2
 
 MAN1=		${PORTNAME}.1
 PORTEXAMPLES=	*
@@ -24,9 +25,9 @@ PLIST_FILES=	bin/${PORTNAME}
 
 CFLAGS+=	-DDarwin
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_OPENMPI)
+.if ${PORT_OPTIONS:MOPENMPI}
 BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpicc:${PORTSDIR}/net/openmpi
 RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
 MPICC=		${LOCALBASE}/mpi/openmpi/bin/mpicc
@@ -42,9 +43,9 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@(cd ${WRKSRC}/scripts && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

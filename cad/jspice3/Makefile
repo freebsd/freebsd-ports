@@ -18,12 +18,13 @@ COMMENT=	An adaptation of the Berkeley Spice3f4 with superconductivity
 
 CONFLICTS=	spice-[0-9]*
 
-OPTIONS=	X "Use X window system" on
+OPTIONS_DEFINE=	X11 EXAMPLES
+OPTIONS_DEFAULT=	X11
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.5
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_X)
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=	x11 xaw xt
 .endif
 
@@ -31,7 +32,7 @@ pre-configure:
 	@${REINPLACE_CMD} -e 's+/usr/local+${PREFIX}+g ;	\
 	 s+-O -g+${CFLAGS}+g;' \
 		${WRKSRC}/conf/unixconf/mkheader.0
-.if !defined(WITHOUT_X)
+.if ${PORT_OPTIONS:MX11}
 	@${REINPLACE_CMD} -e 's+#%%WITH_X%%++g' 		\
 		${WRKSRC}/conf/unixconf/mkheader.0
 .else
@@ -45,10 +46,10 @@ do-install:
 	@(cd ${WRKSRC}/src/bin;${SETENV} ${MAKE_ENV} ${MAKE} install)
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MV} ${PREFIX}/lib/jspice3/examples ${EXAMPLESDIR}
 .else
 	${RM} -R ${PREFIX}/lib/jspice3/examples
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

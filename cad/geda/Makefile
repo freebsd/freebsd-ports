@@ -26,14 +26,14 @@ RUN_DEPENDS=	${DATADIR}/sym:${PORTSDIR}/cad/geda-symbols \
 
 NO_BUILD=	yes
 
-OPTIONS=	EXAMPLES	"Install gEDA's examples"	on \
-		DOCS		"Install gEDA's documentation"	on
+OPTIONS_DEFINE=	EXAMPLES DOCS
 
-.if !defined(WITHOUT_EXAMPLES)
+.include <bsd.port.options.mk>
+.if ${PORT_OPTIONS:MEXAMPLES}
 RUN_DEPENDS+=	${EXAMPLESDIR}/README:${PORTSDIR}/cad/geda-examples
 .endif
 
-.if !defined(WITHOUT_DOCS)
+.if ${PORT_OPTIONS:MDOCS}
 RUN_DEPENDS+=	${DOCSDIR}/gedadocs.html:${PORTSDIR}/cad/geda-docs
 .endif
 

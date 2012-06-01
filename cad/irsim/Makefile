@@ -25,8 +25,11 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	PIC_CFLAGS="-fpic" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-OPTIONS=	SCHEME	"Enable built-in Scheme interpreter" on \
-		TCL	"Enable built-in  Tcl interpreter" off
+OPTIONS_SINGLE=	INTERPRETER
+OPTIONS_SINGLE_INTERPRETER=	TCL SCHEME
+OPTIONS_DEFAULT=	SCHEME
+SCHEME_DESC=	Enable built-in Scheme interpreter
+TCL_DESC=	Enable built-in Tcl interpreter
 
 MAN1=		irsim.1
 MAN3=		irsim-analyzer.3
@@ -34,15 +37,9 @@ MAN5=		netchange.5
 
 TK_VER=		8.4
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_TCL) && !defined(WITHOUT_SCHEME)
-IGNORE=		you should select only one interpreter
-.elif !defined(WITH_TCL) && defined(WITHOUT_SCHEME)
-IGNORE=		you should select at least one interpreter
-.endif
-
-.if defined(WITH_TCL)
+.if ${PORT_OPTIONS:MTCL}
 LIB_DEPENDS+=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/lib/tcl${TK_VER} \
 			--with-tk=${LOCALBASE}/lib/tk${TK_VER} \
@@ -56,11 +53,11 @@ PLIST_SUB+=	TCL=""
 PLIST_SUB+=	TCL="@comment "
 .endif
 
-.if !defined(WITHOUT_SCHEME)
+.if ${PORT_OPTIONS:MSCHEME}
 CONFIGURE_ARGS+=	--with-interpreter=scheme
 PLIST_SUB+=	SCHEME=""
 .else
 PLIST_SUB+=	SCHEME="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
