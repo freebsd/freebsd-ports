@@ -19,23 +19,22 @@ COMMENT=	Gstreamer Plugins Mp3 decoder meta-port
 
 NO_BUILD=	yes
 WANT_GSTREAMER=	yes
-OPTIONS=	MAD "Use MAD Mp3" On \
-		FLUENDO "Use Fluendo Mp3" Off
 
-.include <bsd.port.pre.mk>
+OPTIONS_MULTI=	MP3
+OPTIONS_MULTI_MP3=	MAD FLUENDO
+OPTIONS_DEFAULT=	MAD
+FLUENDO_DESC=	Use Fluendo Mp3 decoded
 
-.if !defined(WITH_MAD) && !defined(WITH_FLUENDO)
-WITH_MAD=	yes
-.endif
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MAD)
+.if ${PORT_OPTIONS:MMAD}
 USE_GSTREAMER+=	mad
 .endif
 
-.if defined(WITH_FLUENDO)
+.if ${PORT_OPTIONS:MFLUENDO}
 USE_GSTREAMER+=	fluendo-mp3
 .endif
 
 do-install:
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
