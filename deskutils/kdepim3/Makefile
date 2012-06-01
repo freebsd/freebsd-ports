@@ -37,13 +37,14 @@ CONFIGURE_ARGS=	--with-gpg=${LOCALBASE}/bin/gpg \
 		--with-gpgsm=${LOCALBASE}/bin/gpgsm \
 		--with-ssl-dir=${OPENSSLBASE}
 
-OPTIONS=	GNOKII "KAdressbook import/export for Nokia phones" off \
-		KITCHENSYNC "PIM synchronization utility" off
+OPTIONS_DEFINE=	GNOKII KITCHENSYNC
+GNOKII_DESC=	KAdressbook import/export for Nokia phones
+KITCHENSYNC_DESC=	PIM synchronization utility
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_KITCHENSYNC)
+.if ${PORT_OPTIONS:MKITCHENSYNC}
 LIB_DEPENDS+=	opensync.0:${PORTSDIR}/devel/libopensync022
 PLIST_SUB+=	KITCHENSYNC=""
 .else
@@ -52,15 +53,15 @@ DO_NOT_COMPILE+=kitchensync
 .endif
 
 .if exists(${LOCALBASE}/bin/gnokii)
-.	if !defined(WITH_GNOKII)
+.	if empty(PORT_OPTIONS:MGNOKII)
 GNOKII_OVERRIDE=yes
-WITH_GNOKII=	yes
+PORT_OPTIONS+=	GNOKII
 .	endif
 .endif
 
-.if defined(WITH_GNOKII)
+.if ${PORT_OPTIONS:MGNOKII)
 LIB_DEPENDS+=	gnokii:${PORTSDIR}/comms/gnokii
-.endif # defined ($(WITH_GNOKII))
+.endif
 
 .if defined(DO_NOT_COMPILE)
 CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
@@ -76,4 +77,4 @@ pre-everything::
 	@${ECHO_MSG}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

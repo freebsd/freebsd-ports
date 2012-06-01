@@ -16,7 +16,9 @@ COMMENT=	Blog editor for GNOME
 
 LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup
 
-OPTIONS=	GTKSPELL "Enable GtkSpell support" On
+OPTIONS_DEFINE=	GTKSPELL
+OPTIONS_DEFAULT=	GTKSPELL
+GTKSPELL_DESC=	Enable GtkSpell support
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
@@ -35,12 +37,12 @@ GCONF_SCHEMAS=	drivel.schemas
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_GTKSPELL)
-CONFIGURE_ARGS+=	--without-gtkspell
-.else
+.if ${PORT_OPTIONS:MGTKSPELL}
 LIB_DEPENDS+=		gtkspell.0:${PORTSDIR}/textproc/gtkspell
+.else
+CONFIGURE_ARGS+=	--without-gtkspell
 .endif
 
 post-patch:
@@ -48,4 +50,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|make -C|$$(MAKE) -C|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e '/-ldl/s|^|#|g' ${WRKSRC}/src/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

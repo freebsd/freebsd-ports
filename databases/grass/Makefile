@@ -74,10 +74,8 @@ USE_LDCONFIG=	${PREFIX}/${GRASS_INST_DIR}/lib
 
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	MYSQL	"Enable MySQL support" Off \
-		ODBC	"Enable ODBC support" Off \
-		PGSQL	"Enable PostgreSQL support" On \
-		SQLITE	"Enable SQLite support" Off
+OPTIONS_DEFINE=	MYSQL ODBC PGSQL SQLITE
+OPTIONS_DEFAULT=	PGSQL
 
 BASH_SCRIPTS=	i.spectral r.tileset
 
@@ -95,7 +93,7 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-vector-v.info-main.c
 GRASS_INST_DIR=	${PORTNAME}-${PORTVERSION}
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-mysql \
 		--with-mysql-includes=${LOCALBASE}/include/mysql \
@@ -105,7 +103,7 @@ PLIST_SUB+=	MYSQL=""
 PLIST_SUB+=	MYSQL="@comment "
 .endif
 
-.if defined(WITH_ODBC)
+.if ${PORT_OPTIONS:MODBC}
 LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=--with-odbc
 PLIST_SUB+=	ODBC=""
@@ -113,7 +111,7 @@ PLIST_SUB+=	ODBC=""
 PLIST_SUB+=	ODBC="@comment "
 .endif
 
-.if !defined(WITHOUT_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=--with-postgres
 PLIST_SUB+=	PGSQL=""
@@ -121,7 +119,7 @@ PLIST_SUB+=	PGSQL=""
 PLIST_SUB+=	PGSQL="@comment "
 .endif
 
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 USE_SQLITE=	yes
 CONFIGURE_ARGS+=--with-sqlite
 PLIST_SUB+=	SQLITE=""

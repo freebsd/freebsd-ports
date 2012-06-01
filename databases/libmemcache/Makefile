@@ -20,12 +20,12 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-OPTIONS=	DEBUG	"Build with debugging turned on" off
+OPTIONS_DEFINE=	DEBUG
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--enable-debug
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

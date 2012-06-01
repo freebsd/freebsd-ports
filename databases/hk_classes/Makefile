@@ -38,17 +38,16 @@ PYDISTUTILS_PKGVERSION=	1.1
 NOT_FOR_ARCHS=	ia64
 NOT_FOR_ARCHS_REASON_ia64=	Does not build
 
-OPTIONS=	MYSQL		"Build MySQL driver"		on  \
-		POSTGRESQL	"Build PostrgreSQL driver"	off \
-		ODBC		"Build unixODBC driver"		off \
-		PARADOX		"Build Paradox driver"		off \
-		SQLITE2		"Build with sqlite2 driver"	off \
-		SQLITE3		"Build with sqlite3 driver"	off \
-		DBASE		"Build with dbase driver"	off
+OPTIONS_DEFINE=	MYSQL PGSQL ODBC PARADOX SQLITE2 SQLITE3 DBASE
+OPTIONS_DEFAULT=	MYSQL
+SQLITE3_DESC=	Enable SQLite 3 backend
+SQLITE2_DESC=	Enable SQLite 2 backend
+PARADOX_DESC=	Enable paradox backend
+DBASE_DESC=	Enable Dbase backend
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql-dir=${LOCALBASE} \
 			--with-mysql-incdir=${LOCALBASE}/include/mysql \
@@ -61,14 +60,14 @@ CONFIGURE_ARGS+=	--without-mysql
 PLIST_SUB+=	MYSQL="@comment "
 .endif
 
-.if !defined(WITH_DBASE)
+.if ${PORT_OPTIONS:MDBASE}
+PLIST_SUB+=	DBASE=""
+.else
 CONFIGURE_ARGS+=	--without-dbase
 PLIST_SUB+=	DBASE="@comment "
-.else
-PLIST_SUB+=	DBASE=""
 .endif
 
-.if defined(WITH_POSTGRESQL)
+.if ${PORT_OPTIONS:MPOSTGRESQL}
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=	--with-postgres-incdir=${LOCALBASE}/include/ \
 			--with-postgres-libdir=${LOCALBASE}/lib
@@ -80,7 +79,7 @@ CONFIGURE_ARGS+=	--without-postgres
 PLIST_SUB+=	POSTGRESQL="@comment "
 .endif
 
-.if defined(WITH_ODBC)
+.if ${PORT_OPTIONS:MODBC}
 LIB_DEPENDS+=		odbc.2:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-odbc-incdir=${LOCALBASE}/include/\
 			--with-odbc-libdir=${LOCALBASE}/lib
@@ -90,7 +89,7 @@ CONFIGURE_ARGS+=	--without-odbc
 PLIST_SUB+=	ODBC="@comment "
 .endif
 
-.if defined(WITH_PARADOX)
+.if ${PORT_OPTIONS:MPARADOX}
 LIB_DEPENDS+=		px:${PORTSDIR}/databases/pxlib
 CONFIGURE_ARGS+=	--with-paradox-incdir=${LOCALBASE}/include/\
 			--with-paradox-libdir=${LOCALBASE}/lib
@@ -101,7 +100,7 @@ PLIST_SUB+=	PARADOX="@comment "
 .endif
 
 # XXX does not work yet
-.if defined(WITH_MSACCESS)
+.if ${PORT_OPTIONS:MMSACCESS}
 LIB_DEPENDS+=		mdb:${PORTSDIR}/databases/mdbtools
 CONFIGURE_ARGS+=	--with-mdb-incdir=${LOCALBASE}/include/\
 			--with-mdb-libdir=${LOCALBASE}/lib
@@ -114,7 +113,7 @@ PLIST_SUB+=	MSACCESS="@comment "
 # XXX does not work yet
 CONFIGURE_ARGS+=	--without-xbase
 
-.if defined(WITH_SQLITE2)
+.if ${PORT_OPTIONS:MSQLITE2}
 LIB_DEPENDS+=		sqlite.2:${PORTSDIR}/databases/sqlite2
 CONFIGURE_ARGS+=	--with-sqlite-incdir=${LOCALBASE}/include/\
 			--with-sqlite-libdir=${LOCALBASE}/lib
@@ -124,7 +123,7 @@ CONFIGURE_ARGS+=	--without-sqlite
 PLIST_SUB+=	SQLITE2="@comment "
 .endif
 
-.if defined(WITH_SQLITE3)
+.if ${PORT_OPTIONS:MSQLITE3}
 LIB_DEPENDS+=		sqlite3:${PORTSDIR}/databases/sqlite3
 CONFIGURE_ARGS+=	--with-sqlite-incdir3=${LOCALBASE}/include/\
 			--with-sqlite-libdir3=${LOCALBASE}/lib
@@ -148,4 +147,4 @@ post-install:
 		${PREFIX}/etc/rc.d/hk_classes.sh; \
 	 ${CHMOD} a+x ${PREFIX}/etc/rc.d/hk_classes.sh
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
