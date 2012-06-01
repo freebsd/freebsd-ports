@@ -1,5 +1,3 @@
-bin/gif2epsn
-bin/gif2ps
 bin/gif2rgb
 %%X11%%bin/gif2x11
 bin/gifasm
@@ -33,20 +31,12 @@ lib/libgif.a
 lib/libgif.la
 lib/libgif.so
 lib/libgif.so.5
-%%PORTDOCS%%%%DOCSDIR%%/GifFileType.png
-%%PORTDOCS%%%%DOCSDIR%%/gif2bgi.html
-%%PORTDOCS%%%%DOCSDIR%%/gif2epsn.html
-%%PORTDOCS%%%%DOCSDIR%%/gif2herc.html
-%%PORTDOCS%%%%DOCSDIR%%/gif2iris.html
-%%PORTDOCS%%%%DOCSDIR%%/gif2ps.html
 %%PORTDOCS%%%%DOCSDIR%%/gif2rgb.html
-%%PORTDOCS%%%%DOCSDIR%%/gif2rle.html
 %%PORTDOCS%%%%DOCSDIR%%/gif2x11.html
 %%PORTDOCS%%%%DOCSDIR%%/gif89.txt
 %%PORTDOCS%%%%DOCSDIR%%/gif_lib.html
 %%PORTDOCS%%%%DOCSDIR%%/gifasm.html
 %%PORTDOCS%%%%DOCSDIR%%/gifbg.html
-%%PORTDOCS%%%%DOCSDIR%%/gifburst.html
 %%PORTDOCS%%%%DOCSDIR%%/gifclip.html
 %%PORTDOCS%%%%DOCSDIR%%/gifclrmp.html
 %%PORTDOCS%%%%DOCSDIR%%/gifcolor.html
@@ -66,11 +56,10 @@ lib/libgif.so.5
 %%PORTDOCS%%%%DOCSDIR%%/giftext.html
 %%PORTDOCS%%%%DOCSDIR%%/gifwedge.html
 %%PORTDOCS%%%%DOCSDIR%%/icon2gif.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/intro.html
 %%PORTDOCS%%%%DOCSDIR%%/liberror.html
 %%PORTDOCS%%%%DOCSDIR%%/lzgif.txt
 %%PORTDOCS%%%%DOCSDIR%%/raw2gif.html
 %%PORTDOCS%%%%DOCSDIR%%/rgb2gif.html
-%%PORTDOCS%%%%DOCSDIR%%/rle2gif.html
 %%PORTDOCS%%%%DOCSDIR%%/text2gif.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

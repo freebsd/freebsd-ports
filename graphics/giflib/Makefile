@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	giflib
-PORTVERSION=	4.1.6
+PORTVERSION=	4.2.0
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%204.x/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-4.x
 PKGNAMESUFFIX=	${NOX11SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Tools and library routines for working with GIF images
+
+BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto
 
 CONFLICTS=	libungif-[0-9]*
 
@@ -35,7 +37,6 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.png ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}
 .endif
 
