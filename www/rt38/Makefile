@@ -12,7 +12,7 @@
 #   o install a sample into etc/apache22/Includes
 
 PORTNAME=	rt
-PORTVERSION=	3.8.12
+PORTVERSION=	3.8.13
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/release/
@@ -20,23 +20,15 @@ MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	RT is an industrial-grade ticketing system written in Perl
 
-.if defined(NOPORTDOCS)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-noportdocs-Makefile.in
-.endif
-
-CONFLICTS=	rt-2* rt-3.0* rt-3.2* rt-3.4* rt-3.6*
+CONFLICTS=	rt-4.0*
 LATEST_LINK=	rt38
 
-OPTIONS=	MYSQL 		"Enable MySQL backend" 		on  \
-		APACHE		"Enable ${APACHE_PORT} server"	on  \
-		MODPERL		"Enable mod_perl support"	on \
-		POSTGRESQL 	"Enable Postgresql backend"	off \
-		ORACLE		"Enable Oracle backend"		off \
-		SQLITE		"Enable SQLite backend" 	off \
-		DEV 		"Configure for Developers"	off \
-		STANDALONE	"Enable standalone server"	off \
-		FASTCGI		"Enable FastCGI support" 	off \
-		GRAPHVIZ	"Enable GraphViz charts"	on
+OPTIONS_DEFINE=	APACHE DEV DOCS FASTCGI GRAPHVIZ MODPERL STANDALONE
+OPTIONS_SINGLE=	DB
+OPTIONS_SINGLE_DB=	MYSQL PGSQL ORACLE SQLITE
+OPTIONS_DEFAULT=	APACHE GRAPHVIZ MODPERL MYSQL
+DEV_DESC=		Configure for Developers
+STANDALONE_DESC=	Enable standalone server
 
 .include "${.CURDIR}/Makefile.cpan"
 
@@ -55,33 +47,37 @@ RUN_DEPENDS+=	${BUILD_DEPENDS}
 USE_PERL5=	5.8.3+
 USE_AUTOTOOLS=	autoconf
 
-.include <bsd.port.pre.mk>
-.if defined(WITH_DEV)
+.include <bsd.port.options.mk>
+.if empty(PORT_OPTIONS:MDOCS)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-noportdocs-Makefile.in
+.endif
+
+.if ${PORT_OPTIONS:MDEV}
 BUILD_DEPENDS+=	${DEV_DEPS}
 RUN_DEPENDS+=	${DEV_DEPS}
 .endif
 
-.if defined(WITH_STANDALONE)
+.if ${PORT_OPTIONS:MSTANDALONE}
 BUILD_DEPENDS+=	${STANDALONE_DEPS}
 RUN_DEPENDS+=	${STANDALONE_DEPS}
 .endif
 
-.if defined(WITH_APACHE) || defined(WITH_FASTCGI) || defined(WITH_MODPERL)
+.if !empty(PORT_OPTIONS:MAPACHE) || !empty(PORT_OPTIONS:MFASTCGI) || !empty(PORT_OPTIONS:MMODPERL)
 USE_APACHE=	20+
 .endif
 
-.if defined(WITH_FASTCGI)
+.if ${PORT_OPTIONS:MFASTCGI}
 BUILD_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
 RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi \
 		p5-FCGI>=0.74:${PORTSDIR}/www/p5-FCGI
 .endif
 
-.if defined(WITH_GRAPHVIZ)
+.if ${PORT_OPTIONS:MGRAPHVIZ}
 BUILD_DEPENDS+=	${GRAPHVIZ_DEPS}
 RUN_DEPENDS+=	${GRAPHVIZ_DEPS}
 .endif
 
-.if defined(WITH_MODPERL)
+.if ${PORT_OPTIONS:MMODPERL}
 WITH_APACHE=	yes
 
 .include "${.CURDIR}/../../Mk/bsd.apache.mk"
@@ -92,36 +88,26 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-li
 	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI
 .endif
 
-.if !defined(WITHOUT_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 DB_TYPE=	mysql
 USE_MYSQL=	yes
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
-.elif defined(WITH_POSTGRESQL)
+.elif ${PORT_OPTIONS:MPGSQL}
 DB_TYPE=	Pg
 USE_PGSQL=	yes
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
-.elif defined (WITH_SQLITE)
+.elif ${PORT_OPTIONS:MQLITE}
 DB_TYPE=	SQLite
 USE_SQLITE=	yes
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
-.elif defined (WITH_ORACLE)
+.elif ${PORT_OPTIONS:MORACLE}
 DB_TYPE=	Oracle
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Oracle.pm:${PORTSDIR}/databases/p5-DBD-Oracle
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Oracle.pm:${PORTSDIR}/databases/p5-DBD-Oracle
-.else
-IGNORE=	you must choose a database backend
 .endif
-
-### Only 1 Backend
-#.if (defined(WITH_MYSQL) && (defined(WITH_POSTGRESQL) || defined(WITH_SQLITE) || defined(WITH_ORACLE))) ||
-#    (defined(WITH_POSTGRESQL) && (defined(WITH_MYSQL) || defined(WITH_SQLITE) || defined(WITH_ORACLE))) ||
-#    (defined(WITH_SQLITE) && (defined(WITH_MYSQL) || defined(WITH_POSTGRELSQL) || defined(WITH_ORACLE))) ||
-#    (defined(WITH_ORACLE) && (defined(WITH_MYSQL) || defined(WITH_POSTGRELSQL) || defined(WITH_SQLITE)))
-#IGNORE=	Select exactly one of WITH_MYSQL, WITH_POSTGRESQL, WITH_SQLITE, WITH_ORACLE
-#.endif
 
 RT_ETC_PATH?=	${PREFIX}/etc/${PORTNAME}38
 RT_LAYOUT=	FreeBSD
@@ -171,7 +157,7 @@ pre-fetch:
 	@${ECHO} "      DB_DBA_PASSWORD=password        Password of database administrator"
 	@${ECHO} "      DB_USER=username                Name of database user for RT (rt_user)"
 	@${ECHO} "      DB_PASSWORD=password            Name of database password for RT (rt_pass)"
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 	@${ECHO} ""
 	@${ECHO} "SQLITE is not recommended for production use"
 .endif
@@ -194,4 +180,4 @@ post-install:
 		${CP} -p ${RT_ETC_PATH}/RT_SiteConfig.pm-dist ${RT_ETC_PATH}/RT_SiteConfig.pm
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
