@@ -1,15 +1,15 @@
---- Makefile.orig	2011-05-27 00:49:17.000000000 +0200
-+++ Makefile	2012-05-11 19:42:37.000000000 +0200
-@@ -11,7 +11,7 @@
- # Linux users, please use Makefile.linux :
- #  make -f Makefile.linux
+--- Makefile.orig	2012-05-30 10:27:24.587226775 +0200
++++ Makefile	2012-05-30 10:28:12.497226510 +0200
+@@ -15,7 +15,7 @@
+ # $ CONFIG_OPTIONS="--ipv6 --igd2" make
+ #
  
--CFLAGS = -pipe -Wall -Os
-+CFLAGS += -pipe -Wall
- #CFLAGS = -pipe -Wall -O -g -DDEBUG
- CC ?= gcc
- RM = rm -f
-@@ -32,10 +32,12 @@
+-CFLAGS ?= -pipe -Os
++CFLAGS ?= -pipe
+ #CFLAGS = -pipe -O -g -DDEBUG
+ CFLAGS += -ansi
+ CFLAGS += -Wall
+@@ -43,10 +43,12 @@
  
  # better way to find if we are using ipf or pf
  .if $(OSNAME) == "FreeBSD"
