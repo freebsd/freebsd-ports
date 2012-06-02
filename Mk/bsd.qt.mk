@@ -146,9 +146,9 @@ QTCGFLIBS?=
 #
 # QT4 version
 #
-QT4_VERSION?=		4.8.1
+QT4_VERSION?=		4.8.2
 
-_QT_COMPONENTS_ALL=	accessible assistant assistant-adp assistantclient \
+_USE_QT4_ALL=	accessible assistant assistant-adp assistantclient \
 			clucene codecs-cn codecs-jp codecs-kr codecs-tw corelib \
 			dbus declarative demo designer doc \
 			graphicssystems-opengl gui help help-tools \
@@ -342,26 +342,26 @@ xmlpatterns-tool_DEPENDS=	${QT_PREFIX}/bin/xmlpatterns
 .if defined(_POSTMKINCLUDED) && !defined(Qt_Post_Include)
 Qt_Post_Include= bsd.qt.mk
 
-.for component in ${_QT_COMPONENTS_ALL}
+.for component in ${_USE_QT4_ALL}
 ${component}_BUILD_DEPENDS?=	${${component}_DEPENDS}:${PORTSDIR}/${${component}_PORT}
 ${component}_RUN_DEPENDS?=	${${component}_DEPENDS}:${PORTSDIR}/${${component}_PORT}
 
 ${component}_build_BUILD_DEPENDS?=	${${component}_BUILD_DEPENDS}
 ${component}_run_RUN_DEPENDS?=		${${component}_RUN_DEPENDS}
 
-_QT_COMPONENTS_ALL_SUFFIXED+=	${component} ${component}_build ${component}_run
+_USE_QT4_ALL_SUFFIXED+=	${component} ${component}_build ${component}_run
 .endfor
 
-.if defined(USE_QT4)
-QT_COMPONENTS=	${USE_QT4}
-.endif
 .if defined(QT_COMPONENTS)
-. for component in ${QT_COMPONENTS:O:u}
-.  if ${_QT_COMPONENTS_ALL_SUFFIXED:M${component}}!= ""
+USE_QT4=  ${QT_COMPONENTS}
+.endif
+.if defined(USE_QT4)
+. for component in ${USE_QT4:O:u}
+.  if ${_USE_QT4_ALL_SUFFIXED:M${component}}!= ""
 BUILD_DEPENDS+=	${${component}_BUILD_DEPENDS}
 RUN_DEPENDS+=	${${component}_RUN_DEPENDS}
 .  else
-IGNORE=	can't be installed: unknown Qt 4 component '${component}'
+IGNORE=	can't be installed: unknown USE_QT4 component '${component}'
 .  endif
 . endfor
 .endif

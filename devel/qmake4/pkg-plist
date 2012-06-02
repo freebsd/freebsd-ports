@@ -187,8 +187,6 @@ share/qt4/mkspecs/freebsd-clang/qmake.conf
 share/qt4/mkspecs/freebsd-clang/qplatformdefs.h
 share/qt4/mkspecs/freebsd-g++/qmake.conf
 share/qt4/mkspecs/freebsd-g++/qplatformdefs.h
-share/qt4/mkspecs/freebsd-g++34/qmake.conf
-share/qt4/mkspecs/freebsd-g++34/qplatformdefs.h
 share/qt4/mkspecs/freebsd-g++42/qmake.conf
 share/qt4/mkspecs/freebsd-g++42/qplatformdefs.h
 share/qt4/mkspecs/freebsd-g++44/qmake.conf
@@ -227,6 +225,8 @@ share/qt4/mkspecs/irix-g++-64/qmake.conf
 share/qt4/mkspecs/irix-g++-64/qplatformdefs.h
 share/qt4/mkspecs/irix-g++/qmake.conf
 share/qt4/mkspecs/irix-g++/qplatformdefs.h
+share/qt4/mkspecs/linux-arm-gnueabi-g++/qmake.conf
+share/qt4/mkspecs/linux-arm-gnueabi-g++/qplatformdefs.h
 share/qt4/mkspecs/linux-cxx/qmake.conf
 share/qt4/mkspecs/linux-cxx/qplatformdefs.h
 share/qt4/mkspecs/linux-ecc-64/qmake.conf
@@ -401,6 +401,10 @@ share/qt4/mkspecs/unixware-cc/qmake.conf
 share/qt4/mkspecs/unixware-cc/qplatformdefs.h
 share/qt4/mkspecs/unixware-g++/qmake.conf
 share/qt4/mkspecs/unixware-g++/qplatformdefs.h
+share/qt4/mkspecs/unsupported/blackberry-armv7le-qcc/qmake.conf
+share/qt4/mkspecs/unsupported/blackberry-armv7le-qcc/qplatformdefs.h
+share/qt4/mkspecs/unsupported/blackberry-x86-qcc/qmake.conf
+share/qt4/mkspecs/unsupported/blackberry-x86-qcc/qplatformdefs.h
 share/qt4/mkspecs/unsupported/linux-armcc/qmake.conf
 share/qt4/mkspecs/unsupported/linux-armcc/qplatformdefs.h
 share/qt4/mkspecs/unsupported/linux-clang/qmake.conf
@@ -569,6 +573,8 @@ share/qt4/mkspecs/wincewm65professional-msvc2008/qplatformdefs.h
 @dirrm share/qt4/mkspecs/unsupported/linux-host-g++
 @dirrm share/qt4/mkspecs/unsupported/linux-clang
 @dirrm share/qt4/mkspecs/unsupported/linux-armcc
+@dirrm share/qt4/mkspecs/unsupported/blackberry-x86-qcc
+@dirrm share/qt4/mkspecs/unsupported/blackberry-armv7le-qcc
 @dirrm share/qt4/mkspecs/unsupported
 @dirrm share/qt4/mkspecs/unixware-g++
 @dirrm share/qt4/mkspecs/unixware-cc
@@ -654,6 +660,7 @@ share/qt4/mkspecs/wincewm65professional-msvc2008/qplatformdefs.h
 @dirrm share/qt4/mkspecs/linux-g++
 @dirrm share/qt4/mkspecs/linux-ecc-64
 @dirrm share/qt4/mkspecs/linux-cxx
+@dirrm share/qt4/mkspecs/linux-arm-gnueabi-g++
 @dirrm share/qt4/mkspecs/irix-g++-64
 @dirrm share/qt4/mkspecs/irix-g++
 @dirrm share/qt4/mkspecs/irix-cc-64
@@ -673,7 +680,6 @@ share/qt4/mkspecs/wincewm65professional-msvc2008/qplatformdefs.h
 @dirrm share/qt4/mkspecs/freebsd-g++46
 @dirrm share/qt4/mkspecs/freebsd-g++44
 @dirrm share/qt4/mkspecs/freebsd-g++42
-@dirrm share/qt4/mkspecs/freebsd-g++34
 @dirrm share/qt4/mkspecs/freebsd-g++
 @dirrm share/qt4/mkspecs/freebsd-clang
 @dirrm share/qt4/mkspecs/features/win32

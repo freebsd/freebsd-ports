@@ -8,7 +8,6 @@
 
 PORTNAME=	makeqpf
 DISTVERSION=	${QT4_VERSION}
-PORTREVISION=	1
 CATEGORIES?=	devel
 PKGNAMEPREFIX=	qt4-
 
@@ -45,6 +44,10 @@ BUILD_WRKSRC=	${WRKSRC}/tools/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
+
+.if ${OSVERSION} < 802502
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-tools__makeqpf__qpf2.cpp
+.endif
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|^TARGET[[:blank:]]*=[[:blank:]]*|TARGET=${PORTNAME}-qt4|g' \
