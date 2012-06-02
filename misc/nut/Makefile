@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	17.8
+PORTVERSION=	17.9
 CATEGORIES=	misc
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	health-
@@ -16,8 +16,6 @@ COMMENT=	Nutrition software to record what you eat
 
 LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-OPTIONS=	GUI "Build FLTK-based GUI" off
 
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
@@ -31,9 +29,11 @@ PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/FOOD_DES.txt \
 		%%DATADIR%%/WEIGHT.txt %%DATADIR%%/sr24.nut
 PLIST_DIRS=	%%DATADIR%%
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	GUI
 
-.if defined(WITH_GUI)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGUI}
 USE_XORG=	xpm
 BUILD_DEPENDS+=	${LOCALBASE}/lib/fltk11/libfltk.so:${PORTSDIR}/x11-toolkits/fltk11
 MAKE_ENV+=	HAVE_FLTK=1 FLTK_NUT="fltk/Nut"
@@ -67,4 +67,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
