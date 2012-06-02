@@ -39,7 +39,7 @@ you update your ports collection, before attempting any port upgrades.
   and all characters after it will be ignored.
 
 20120530:
-  AFFECTS: users of net/nss-pam-ldap
+  AFFECTS: users of net/nss-pam-ldapd
   AUTHOR: scheidell@FreeBSD.org
 
   The net/nss-pam-ldapd port no longer provides an option for SASL. This has
