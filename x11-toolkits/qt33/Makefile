@@ -111,7 +111,6 @@ CONFIGURE_ARGS+=-disable-opengl
 
 .if ${PORT_OPTIONS:MCUPS}
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
-.else
 CUPS=	-cups -L${LOCALBASE}/lib -I${LOCALBASE}/include
 .endif
 
@@ -119,7 +118,7 @@ CUPS=	-cups -L${LOCALBASE}/lib -I${LOCALBASE}/include
 LIB_DEPENDS+=	audio:${PORTSDIR}/audio/nas
 CONFIGURE_ARGS+=-system-nas-sound -no-pch
 .else
-CONFIGURE_ARGS+=-no-nas-sound
+CONFIGURE_ARGS+=-no-nas-sound -no-pch
 .endif
 
 .if ${PORT_OPTIONS:MKDE_PATCHES}
