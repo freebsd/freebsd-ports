@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An X11-based presentation tool
 
-XLIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png \
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png \
 		mng:${PORTSDIR}/graphics/libmng
 RUN_DEPENDS+=	pnmscale:${PORTSDIR}/graphics/netpbm
 
