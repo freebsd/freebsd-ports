@@ -1929,6 +1929,7 @@
     SUBDIR += p5-IO-Any
     SUBDIR += p5-IO-Async
     SUBDIR += p5-IO-BufferedSelect
+    SUBDIR += p5-IO-Callback
     SUBDIR += p5-IO-Capture
     SUBDIR += p5-IO-CaptureOutput
     SUBDIR += p5-IO-Digest
