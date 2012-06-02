@@ -34,9 +34,10 @@ CONFIGURE_ARGS=		--enable-sandboxed --with-devdir=/var/run/lirc \
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 
-OPTIONS=	MINIMAL "Build with minmal dependencies" Off \
-		DEBUG "Build debug version" Off \
-		UARTLIRC "Install serial LIRC driver" Off
+OPTIONS_DEFINE=	MINIMAL DEBUG UARTLIRC
+
+MINIMAL_DESC=	Build with minmal dependencies
+UARTLIRC_DESC=	Install serial LIRC driver
 
 USE_RC_SUBR=	lircd.sh
 PORTDOCS=	html images irxevent.keys lirc.css lirc.hwdb
@@ -52,7 +53,7 @@ PLIST_SUB+=	SMODE2=
 PLIST_SUB+=	SMODE2="@comment "
 .endif
 
-.if defined(WITHOUT_MINIMAL)
+.if empty(PORT_OPTIONS:MMINIMAL)
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libirman.a:${PORTSDIR}/comms/libirman
 LIB_DEPENDS+=		ftdi.19:${PORTSDIR}/devel/libftdi
 CONFIGURE_ARGS+=	--with-driver=userspace
@@ -60,11 +61,11 @@ CONFIGURE_ARGS+=	--with-driver=userspace
 CONFIGURE_ARGS+=	--with-driver=dvico
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-.if defined(WITH_UARTLIRC)
+.if ${PORT_OPTIONS:MUARTLIRC}
 RUN_DEPENDS+=		uartlirc>=0.3:${PORTSDIR}/comms/uartlirc
 .endif
 
@@ -73,12 +74,12 @@ MAN1=		ircat.1 irexec.1 irpty.1 irrecord.1 irsend.1 irw.1 \
 MAN8=		lircd.8 lircmd.8
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${DOCSDIR}/)
 	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} images ${DOCSDIR}/)
 	@(cd ${WRKSRC}/doc && ${INSTALL_DATA} irxevent.keys lirc.css lirc.hwdb ${DOCSDIR}/)
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} remotes ${EXAMPLESDIR}/)
 .endif
 	@${INSTALL_DATA} ${WRKDIR}/lircd.conf ${PREFIX}/etc/lircd.conf.sample

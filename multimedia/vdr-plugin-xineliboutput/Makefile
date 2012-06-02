@@ -18,10 +18,10 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:snapshot
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - xineliboutput plugin/viewer
 
-LIB_DEPENDS+=	xine.2:${PORTSDIR}/multimedia/libxine \
-		avutil.1:${PORTSDIR}/multimedia/ffmpeg \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		vdpau.1:${PORTSDIR}/multimedia/libvdpau
+LIB_DEPENDS+=	xine:${PORTSDIR}/multimedia/libxine \
+		avutil:${PORTSDIR}/multimedia/ffmpeg \
+		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
+		vdpau:${PORTSDIR}/multimedia/libvdpau
 
 USE_BZIP2=	yes
 PATCH_STRIP=	-p1
@@ -35,19 +35,18 @@ WRKSRC=		${WRKDIR}/vdr-${PLUGIN}
 
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
-OPTIONS=	LIBBLURAY	"Enable libbluray support"		off \
-		LIBEXTRACTOR	"Enable libextractor support"		off
+OPTIONS_DEFINE=	LIBBLURAY LIBEXTRACTOR
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_LIBEXTRACTOR)
-LIB_DEPENDS+=	extractor.3:${PORTSDIR}/textproc/libextractor
+.if ${PORT_OPTIONS:MLIBEXTRACTOR}
+LIB_DEPENDS+=	extractor:${PORTSDIR}/textproc/libextractor
 CONFIGURE_OPTS+=	--enable-libextractor
 .else
 CONFIGURE_OPTS+=	--disable-libextractor
 .endif
 
-.if defined(WITH_LIBBLURAY)
+.if ${PORT_OPTIONS:MLIBBLURAY}
 CONFIGURE_OPTS+=	--enable-libbluray
 LIB_DEPENDS+=	bluray:${PORTSDIR}/multimedia/libbluray
 .else
@@ -67,11 +66,11 @@ post-install: post-install-pluginlocales
 	@if [ ! -f ${PREFIX}/etc/vdr/plugins/${PLUGIN}/allowed_hosts.conf ]; then \
 	    ${INSTALL_DATA} ${WRKSRC}/examples/allowed_hosts.conf ${PREFIX}/etc/vdr/plugins/${PLUGIN}; \
 	fi
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}/xine
 	${INSTALL_DATA} ${FILESDIR}/keymap ${EXAMPLESDIR}/xine
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
 .endif

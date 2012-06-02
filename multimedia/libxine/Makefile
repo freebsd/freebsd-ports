@@ -16,23 +16,23 @@ DISTNAME=	${PORTNAME}-lib-${PORTVERSION}
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Libraries for xine multimedia player
 
-LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
-		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		speex.1:${PORTSDIR}/audio/speex \
-		mng.1:${PORTSDIR}/graphics/libmng \
+LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
+		vorbis:${PORTSDIR}/audio/libvorbis \
+		speex:${PORTSDIR}/audio/speex \
+		mng:${PORTSDIR}/graphics/libmng \
 		png15:${PORTSDIR}/graphics/png \
-		dvdread.4:${PORTSDIR}/multimedia/libdvdread \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		fame-0.9.1:${PORTSDIR}/multimedia/libfame \
-		cdio.13:${PORTSDIR}/sysutils/libcdio \
-		modplug.1:${PORTSDIR}/audio/libmodplug \
-		vcdinfo.2:${PORTSDIR}/multimedia/vcdimager \
-		theora.0:${PORTSDIR}/multimedia/libtheora \
-		mad.2:${PORTSDIR}/audio/libmad \
-		dca.0:${PORTSDIR}/multimedia/libdca \
-		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
-		faad.2:${PORTSDIR}/audio/faad \
-		vdpau.1:${PORTSDIR}/multimedia/libvdpau
+		dvdread:${PORTSDIR}/multimedia/libdvdread \
+		freetype:${PORTSDIR}/print/freetype2 \
+		fame-0.9:${PORTSDIR}/multimedia/libfame \
+		cdio:${PORTSDIR}/sysutils/libcdio \
+		modplug:${PORTSDIR}/audio/libmodplug \
+		vcdinfo:${PORTSDIR}/multimedia/vcdimager \
+		theora:${PORTSDIR}/multimedia/libtheora \
+		mad:${PORTSDIR}/audio/libmad \
+		dca:${PORTSDIR}/multimedia/libdca \
+		avcodec:${PORTSDIR}/multimedia/ffmpeg \
+		faad:${PORTSDIR}/audio/faad \
+		vdpau:${PORTSDIR}/multimedia/libvdpau
 
 BUILD_DEPENDS+=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
 
@@ -70,19 +70,8 @@ CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 \
 		--enable-dvb
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	CACA "Enable libcaca support" off \
-		ESOUND "Enable EsounD support" off \
-		JACK "Enable JACK support" off \
-		GNOMEVFS2 "Enable GnomeVFS2 support" off \
-		PULSEAUDIO "Enable PulseAudio support" off \
-		XVMC "Enable XvMC support" off \
-		SMB "Enable SMB protocol support" off \
-		AALIB "Enable aalib support" off \
-		IMAGEMAGICK "Enable ImageMagick support" off \
-		GTK2 "Enable gdkpixbuf support" off \
-		WAVPACK "Enable WavPack support" off \
-		VAAPI "Enable VAAPI support" off \
-		LIBBLURAY "Enable libbluray support" off
+OPTIONS_DEFINE=	CACA ESOUND JACK GNOMEVFS2 PULSEAUDIO XVMC SMB AALIB \
+		IMAGEMAGICK GTK2 WAVPACK VAAPI LIBBLURAY
 
 MAN1=	xine-config.1 xine-list-1.2.1
 MAN5=	xine.5
@@ -109,7 +98,7 @@ DEBUG_FLAGS=	-g -O1
 IGNORE=		only builds with -O1 or higher, check CFLAGS
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
@@ -117,15 +106,15 @@ PLIST_SUB+=	NLS="@comment "
 CONFIGURE_ARGS+=	--disable-nls
 .endif
 
-.if defined(WITH_CACA)
-LIB_DEPENDS+=	caca.0:${PORTSDIR}/graphics/libcaca
+.if ${PORT_OPTIONS:MCACA}
+LIB_DEPENDS+=	caca:${PORTSDIR}/graphics/libcaca
 PLIST_SUB+=	WITH_CACA=""
 .else
 PLIST_SUB+=	WITH_CACA="@comment "
 CONFIGURE_ARGS+=	--without-caca --disable-cacatest
 .endif
 
-.if defined(WITH_ESOUND)
+.if ${PORT_OPTIONS:MESOUND}
 USE_GNOME+=	esound
 PLIST_SUB+=	WITH_ESOUND=""
 .else
@@ -133,7 +122,7 @@ PLIST_SUB+=	WITH_ESOUND="@comment "
 CONFIGURE_ARGS+=	--without-esound
 .endif
 
-.if defined(WITH_JACK)
+.if ${PORT_OPTIONS:MJACK}
 LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
 PLIST_SUB+=	WITH_JACK=""
 .else
@@ -141,7 +130,7 @@ PLIST_SUB+=	WITH_JACK="@comment "
 CONFIGURE_ARGS+=	--without-jack
 .endif
 
-.if defined(WITH_GNOMEVFS2)
+.if ${PORT_OPTIONS:MGNOMEVFS2}
 USE_GNOME+=	gnomevfs2
 PLIST_SUB+=	WITH_GNOMEVFS2=""
 .else
@@ -149,21 +138,21 @@ PLIST_SUB+=	WITH_GNOMEVFS2="@comment "
 CONFIGURE_ARGS+=	--disable-gnomevfs
 .endif
 
-.if defined(WITH_PULSEAUDIO)
-LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+.if ${PORT_OPTIONS:MPULSEAUDIO}
+LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
 PLIST_SUB+=	WITH_PULSEAUDIO=""
 .else
 PLIST_SUB+=	WITH_PULSEAUDIO="@comment "
 CONFIGURE_ARGS+=	--without-pulseaudio
 .endif
 
-.if defined(WITH_XVMC)
+.if ${PORT_OPTIONS:MXVMC}
 .if defined(WITH_NVIDIA_GL) || exists(${LOCALBASE}/lib/libXvMCNVIDIA.so.1)
 CONFIGURE_ARGS+=	--with-xvmc-lib=XvMCNVIDIA
-LIB_DEPENDS+=	XvMCNVIDIA.1:${PORTSDIR}/x11/nvidia-driver
+LIB_DEPENDS+=	XvMCNVIDIA:${PORTSDIR}/x11/nvidia-driver
 .else
 CONFIGURE_ARGS+=	--with-xvmc-lib=XvMCW
-LIB_DEPENDS+=	XvMC.1:${PORTSDIR}/x11/libXvMC
+LIB_DEPENDS+=	XvMC:${PORTSDIR}/x11/libXvMC
 .endif
 PLIST_SUB+=	WITH_XVMC=""
 .else
@@ -171,31 +160,32 @@ CONFIGURE_ARGS+=	--disable-xvmc
 PLIST_SUB+=	WITH_XVMC="@comment "
 .endif
 
-.if defined(WITH_SMB)
-LIB_DEPENDS+=	smbclient.0:${PORTSDIR}/net/samba-libsmbclient
+.if ${PORT_OPTIONS:MSMB}
+LIB_DEPENDS+=	smbclient:${PORTSDIR}/net/samba-libsmbclient
 PLIST_SUB+=	WITH_SMB=""
+CONFIGURE_ARGS+=	--enable-samba
 .else
 PLIST_SUB+=	WITH_SMB="@comment "
 CONFIGURE_ARGS+=	--disable-samba
 .endif
 
-.if defined(WITH_AALIB)
-LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
+.if ${PORT_OPTIONS:MAALIB}
+LIB_DEPENDS+=	aa:${PORTSDIR}/graphics/aalib
 PLIST_SUB+=	WITH_AALIB=""
 .else
 PLIST_SUB+=	WITH_AALIB="@comment "
 CONFIGURE_ARGS+=	--disable-aalib --disable-aalibtest
 .endif
 
-.if defined(WITH_IMAGEMAGICK)
-LIB_DEPENDS+=	MagickWand.5:${PORTSDIR}/graphics/ImageMagick
+.if ${PORT_OPTIONS:MMAGICK}
+LIB_DEPENDS+=	MagickWand:${PORTSDIR}/graphics/ImageMagick
 PLIST_SUB+=	WITH_IMAGEMAGICK=""
 .else
 PLIST_SUB+=	WITH_IMAGEMAGICK="@comment "
 CONFIGURE_ARGS+=	--without-imagemagick
 .endif
 
-.if defined(WITH_GTK2)
+.if ${PORT_OPTIONS:MGTK2}
 USE_GNOME+=	gtk20
 PLIST_SUB+=	WITH_GTK2=""
 .else
@@ -203,8 +193,8 @@ PLIST_SUB+=	WITH_GTK2="@comment "
 CONFIGURE_ARGS+=	--disable-gdkpixbuf
 .endif
 
-.if defined(WITH_WAVPACK)
-LIB_DEPENDS+=	wavpack.2:${PORTSDIR}/audio/wavpack
+.if ${PORT_OPTIONS:MWAVPACK}
+LIB_DEPENDS+=	wavpack:${PORTSDIR}/audio/wavpack
 PLIST_SUB+=	WITH_WAVPACK=""
 CONFIGURE_ARGS+=	--with-wavpack
 .else
@@ -212,13 +202,13 @@ PLIST_SUB+=	WITH_WAVPACK="@comment "
 CONFIGURE_ARGS+=	--without-wavpack
 .endif
 
-.if defined(WITH_VAAPI)
-LIB_DEPENDS+=	va.1:${PORTSDIR}/multimedia/libva
+.if ${PORT_OPTIONS:MVAAPI}
+LIB_DEPENDS+=	va:${PORTSDIR}/multimedia/libva
 .endif
 
-.if defined(WITH_LIBBLURAY)
+.if ${PORT_OPTIONS:MLIBBLURAY}
 CONFIGURE_OPTS+=	--enable-bluray
-LIB_DEPENDS+=	bluray.2:${PORTSDIR}/multimedia/libbluray
+LIB_DEPENDS+=	bluray:${PORTSDIR}/multimedia/libbluray
 PLIST_SUB+=	LIBBLURAY=""
 .else
 CONFIGURE_OPTS+=	--disable-bluray
@@ -239,7 +229,7 @@ CONFIGURE_ARGS+=	--disable-vidix
 .endif
 
 post-patch:
-.if defined(WITH_VAAPI)
+.if ${PORT_OPTIONS:MVAAPI}
 	${PATCH} ${PATCH_DIST_ARGS} <${FILESDIR}/ffmpeg-vaapi_xine-lib-1.2.1-defaultoff.diff
 .endif
 .for f in libtool ltmain.sh

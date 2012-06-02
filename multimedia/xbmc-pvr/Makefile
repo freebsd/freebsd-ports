@@ -27,33 +27,33 @@ BUILD_DEPENDS=	enca:${PORTSDIR}/converters/enca \
 		nasm:${PORTSDIR}/devel/nasm \
 		dvdread-config:${PORTSDIR}/multimedia/libdvdread
 
-LIB_DEPENDS=	asound.2:${PORTSDIR}/audio/alsa-lib	\
-		boost_thread.4:${PORTSDIR}/devel/boost-libs \
-		cdio.13:${PORTSDIR}/sysutils/libcdio	\
-		curl.6:${PORTSDIR}/ftp/curl \
-		dbus-1.3:${PORTSDIR}/devel/dbus \
-		enca.5:${PORTSDIR}/converters/enca \
-		GLEW.1:${PORTSDIR}/graphics/glew \
-		avcodec.1:${PORTSDIR}/multimedia/ffmpeg	\
-		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		fribidi.3:${PORTSDIR}/converters/fribidi \
-		lzo2.2:${PORTSDIR}/archivers/lzo2 \
-		jasper.4:${PORTSDIR}/graphics/jasper \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		faad.2:${PORTSDIR}/audio/faad \
+LIB_DEPENDS=	asound:${PORTSDIR}/audio/alsa-lib	\
+		boost_thread:${PORTSDIR}/devel/boost-libs \
+		cdio:${PORTSDIR}/sysutils/libcdio	\
+		curl:${PORTSDIR}/ftp/curl \
+		dbus-1:${PORTSDIR}/devel/dbus \
+		enca:${PORTSDIR}/converters/enca \
+		GLEW:${PORTSDIR}/graphics/glew \
+		avcodec:${PORTSDIR}/multimedia/ffmpeg	\
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
+		freetype:${PORTSDIR}/print/freetype2 \
+		fribidi:${PORTSDIR}/converters/fribidi \
+		lzo2:${PORTSDIR}/archivers/lzo2 \
+		jasper:${PORTSDIR}/graphics/jasper \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		faad:${PORTSDIR}/audio/faad \
 		mad:${PORTSDIR}/audio/libmad \
 		modplug:${PORTSDIR}/audio/libmodplug \
 		mpeg2:${PORTSDIR}/multimedia/libmpeg2 \
-		ogg.7:${PORTSDIR}/audio/libogg \
-		pcre.1:${PORTSDIR}/devel/pcre \
+		ogg:${PORTSDIR}/audio/libogg \
+		pcre:${PORTSDIR}/devel/pcre \
 		png15:${PORTSDIR}/graphics/png \
-		samplerate.1:${PORTSDIR}/audio/libsamplerate \
-		smbclient.0:${PORTSDIR}/net/samba-libsmbclient	\
-		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
-		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		ass.5:${PORTSDIR}/multimedia/libass \
-		wavpack.2:${PORTSDIR}/audio/wavpack \
+		samplerate:${PORTSDIR}/audio/libsamplerate \
+		smbclient:${PORTSDIR}/net/samba-libsmbclient	\
+		sqlite3:${PORTSDIR}/databases/sqlite3 \
+		vorbis:${PORTSDIR}/audio/libvorbis \
+		ass:${PORTSDIR}/multimedia/libass \
+		wavpack:${PORTSDIR}/audio/wavpack \
 		yajl:${PORTSDIR}/devel/yajl \
 		plist:${PORTSDIR}/devel/libplist \
 		iconv:${PORTSDIR}/converters/libiconv
@@ -87,19 +87,11 @@ CONFLICTS_INSTALL=	xbmc-[0-9]*
 
 PLIST_SUB+=	PYVER="${PYTHON_VERSION:S/python//:S/.//g}"
 
-OPTIONS=	AVAHI		"Enable Avahi support"			on \
-		LIBBLURAY	"Enable libbluray support"		on \
-		FAAC		"Enable FAAC support"			off \
-		HAL		"Enable HAL support"			on \
-		LIRC		"Enable lirc support"			off \
-		MMS		"Enable mms:// & mmsh:// support"	on \
-		NONFREE		"Enable non-free components (rar, ccx, ffmpeg)"	off \
-		PULSE		"Enable PulseAudio support"		off \
-		RTMP		"RTMP support via librtmp"		off \
-		VAAPI		"Enable VAAPI support"			off \
-		VDPAU		"Enable VDPAU support"			off \
-		XRANDR		"Enable xrandr support"			on \
-		WEBSERVER	"Build Internal Webserver"		off
+OPTIONS_DEFINE=	AVAHI LIBBLURAY FAAC HAL LIRC MMS NONFREE PULSEAUDIO RTMP \
+		VAAPI VDPAU XRANDR WEBSERVER
+MMS_DESC=	"Enable mms:// & mmsh:// support"
+NONFREE_DESC=	"Enable non-free components (rar, ccx, ffmpeg)"
+OPTIONS_DEFAULT=	AVAHI LIBBLURAY HAL MMS XRANDR
 
 DESKTOP_ENTRIES="XBMC" \
 		"${COMMENT}" \
@@ -127,46 +119,46 @@ PLIST_SUB+=	ARCH="x86"
 PLIST_SUB+=	ARCH="x86_64"
 .endif
 
-.if !defined(WITHOUT_AVAHI)
+.if ${PORT_OPTIONS:MAVAHI}
 CONFIGURE_ARGS+=	--enable-avahi
-LIB_DEPENDS+=	avahi-common.3:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS+=	avahi-common:${PORTSDIR}/net/avahi-app
 .else
 CONFIGURE_ARGS+=	--disable-avahi
 .endif
 
-.if !defined(WITHOUT_LIBBLURAY)
+.if ${PORT_OPTIONS:MLIBBLURAY}
 CONFIGURE_ARGS+=	--enable-libbluray
-LIB_DEPENDS+=	bluray.2:${PORTSDIR}/multimedia/libbluray
+LIB_DEPENDS+=	bluray:${PORTSDIR}/multimedia/libbluray
 .else
 CONFIGURE_ARGS+=	--disable-libbluray
 .endif
 
-.if defined(WITH_FAAC)
+.if ${PORT_OPTIONS:MFAAC}
 CONFIGURE_ARGS+=	--enable-faac
-LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
+LIB_DEPENDS+=	faac:${PORTSDIR}/audio/faac
 .else
 CONFIGURE_ARGS+=	--disable-faac
 .endif
 
-.if !defined(WITHOUT_HAL)
+.if ${PORT_OPTIONS:MHAL}
 CONFIGURE_ARGS+=	--enable-hal
-LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
+LIB_DEPENDS+=	hal:${PORTSDIR}/sysutils/hal
 .else
 CONFIGURE_ARGS+=	--disable-hal
 .endif
 
-.if defined(WITH_LIRC)
+.if ${PORT_OPTIONS:MLIRC}
 RUN_DEPENDS+=	lircd:${PORTSDIR}/comms/lirc
 .endif
 
-.if !defined(WITHOUT_MMS)
+.if ${PORT_OPTIONS:MMMS}
 CONFIGURE_ARGS+=	--enable-libmms
-LIB_DEPENDS+=	mms.0:${PORTSDIR}/net/libmms
+LIB_DEPENDS+=	mms:${PORTSDIR}/net/libmms
 .else
 CONFIGURE_ARGS+=	--disable-libmms
 .endif
 
-.if defined(WITH_NONFREE)
+.if ${PORT_OPTIONS:MNONFREE}
 CONFIGURE_ARGS+=	--enable-non-free
 NO_CDROM=	Restricted binary distribution
 NO_PACKAGE=	${NO_CDROM}
@@ -174,44 +166,44 @@ NO_PACKAGE=	${NO_CDROM}
 CONFIGURE_ARGS+=	--disable-non-free
 .endif
 
-.if defined(WITH_PULSE)
+.if ${PORT_OPTIONS:MPULSEAUDIO}
 CONFIGURE_ARGS+=	--enable-pulse
-LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
 .else
 CONFIGURE_ARGS+=	--disable-pulse
 .endif
 
-.if defined(WITH_RTMP)
+.if ${PORT_OPTIONS:MRTMP}
 CONFIGURE_ARGS+=	--enable-rtmp
-LIB_DEPENDS+=	rtmp.0:${PORTSDIR}/multimedia/rtmpdump
+LIB_DEPENDS+=	rtmp:${PORTSDIR}/multimedia/rtmpdump
 .else
 CONFIGURE_ARGS+=	--disable-rtmp
 .endif
 
-.if defined(WITH_VAAPI)
-LIB_DEPENDS+=	va.1:${PORTSDIR}/multimedia/libva
+.if ${PORT_OPTIONS:MVAAPI}
+LIB_DEPENDS+=	va:${PORTSDIR}/multimedia/libva
 CONFIGURE_ARGS+=	--enable-vaapi
 .else
 CONFIGURE_ARGS+=	--disable-vaapi
 .endif
 
-.if defined(WITH_VDPAU)
-LIB_DEPENDS+=	vdpau.1:${PORTSDIR}/multimedia/libvdpau
+.if ${PORT_OPTIONS:MVDPAU}
+LIB_DEPENDS+=	vdpau:${PORTSDIR}/multimedia/libvdpau
 CONFIGURE_ARGS+=	--enable-vdpau
 .else
 CONFIGURE_ARGS+=	--disable-vdpau
 .endif
 
-.if defined(WITH_WEBSERVER)
+.if ${PORT_OPTIONS:MWEBSERVER}
 CONFIGURE_ARGS+=	--enable-webserver
-LIB_DEPENDS+=	microhttpd.23:${PORTSDIR}/www/libmicrohttpd
+LIB_DEPENDS+=	microhttpd:${PORTSDIR}/www/libmicrohttpd
 PLIST_SUB+=	HTTPD=""
 .else
 CONFIGURE_ARGS+=	--disable-webserver
 PLIST_SUB+=	HTTPD="@comment "
 .endif
 
-.if defined(WITH_XRANDR)
+.if ${PORT_OPTIONS:MXRANDR}
 CONFIGURE_ARGS+=	--enable-xrandr
 USE_XORG+=	xrandr
 PLIST_SUB+=	XRANDR=""
