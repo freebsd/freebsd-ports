@@ -40,6 +40,12 @@
 %%PYTHON_SITELIBDIR%%/smb/securityblob.py
 %%PYTHON_SITELIBDIR%%/smb/securityblob.pyc
 %%PYTHON_SITELIBDIR%%/smb/securityblob.pyo
+%%PYTHON_SITELIBDIR%%/smb/smb2_constants.py
+%%PYTHON_SITELIBDIR%%/smb/smb2_constants.pyc
+%%PYTHON_SITELIBDIR%%/smb/smb2_constants.pyo
+%%PYTHON_SITELIBDIR%%/smb/smb2_structs.py
+%%PYTHON_SITELIBDIR%%/smb/smb2_structs.pyc
+%%PYTHON_SITELIBDIR%%/smb/smb2_structs.pyo
 %%PYTHON_SITELIBDIR%%/smb/smb_constants.py
 %%PYTHON_SITELIBDIR%%/smb/smb_constants.pyc
 %%PYTHON_SITELIBDIR%%/smb/smb_constants.pyo
@@ -58,6 +64,9 @@
 %%PYTHON_SITELIBDIR%%/smb/utils/pyDes.py
 %%PYTHON_SITELIBDIR%%/smb/utils/pyDes.pyc
 %%PYTHON_SITELIBDIR%%/smb/utils/pyDes.pyo
+%%PYTHON_SITELIBDIR%%/smb/utils/sha256.py
+%%PYTHON_SITELIBDIR%%/smb/utils/sha256.pyc
+%%PYTHON_SITELIBDIR%%/smb/utils/sha256.pyo
 %%PORTDOCS%%%%DOCSDIR%%/_modules/index.html
 %%PORTDOCS%%%%DOCSDIR%%/_modules/nmb/NetBIOS.html
 %%PORTDOCS%%%%DOCSDIR%%/_modules/nmb/NetBIOSProtocol.html
