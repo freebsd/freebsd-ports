@@ -22,6 +22,8 @@ MLINKS=		cdecl.1 c++decl.1
 PORTDOCS=	testset testset++
 PLIST_FILES=	bin/cdecl bin/c++decl
 
+CONFLICTS=	cutils-[0-9]*
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
