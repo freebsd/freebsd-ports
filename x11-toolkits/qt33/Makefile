@@ -42,6 +42,7 @@ CONFIGURE_ARGS+=-system-libpng -system-libjpeg -system-libmng	\
 		-qt-imgfmt-png -qt-imgfmt-jpeg -qt-imgfmt-mng	\
 		-system-zlib -sm -qt-gif -thread \
 		-fast -xinerama -no-g++-exceptions -stl -no-nis \
+		-I${LOCALBASE}/include/libpng15 \
 		${CUPS} -shared -prefix ${PREFIX} -datadir ${DATADIR} \
 		-verbose -docdir ${DOCSDIR} -tablet -ipv6 \
 		-DPNG_DEPSTRUCT= \
@@ -111,7 +112,7 @@ CONFIGURE_ARGS+=-disable-opengl
 .if ${PORT_OPTIONS:MCUPS}
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
 .elif defined(WITHOUT_CUPS)
-CUPS=	-cups -L${LOCALBASE}/lib -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
+CUPS=	-cups -L${LOCALBASE}/lib -I${LOCALBASE}/include
 .else
 CUPS=
 .endif
