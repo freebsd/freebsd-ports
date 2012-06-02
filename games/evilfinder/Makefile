@@ -7,7 +7,7 @@
 
 PORTNAME=	evilfinder
 PORTVERSION=	1.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://lcamtuf.coredump.cx/
 DISTNAME=	ef
@@ -18,7 +18,7 @@ COMMENT=	Numerologically determine the evilness of things
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS=	WRAPPER "Build with evilfinder wrapper" on
+OPTIONS=	WRAPPER "Evilfinder local wrapper" on
 
 .include <bsd.port.pre.mk>
 
@@ -29,19 +29,10 @@ PLIST_SUB+=	WRAPPER=""
 PLIST_SUB+=	WRAPPER="@comment "
 .endif
 
-pre-everything::
-.if !defined(WITHOUT_WRAPPER)
-	@${ECHO_MSG} "********************************************"
-	@${ECHO_MSG} "Define WITHOUT_WRAPPER to build without the"
-	@${ECHO_MSG} "\"evilfinder\" wrapper, which makes the port"
-	@${ECHO_MSG} "a web-oriented application."
-	@${ECHO_MSG} "********************************************"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '/^CFLAGS/d' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s|evilnumbers.dat|${DATADIR}/evilnumbers.dat|; \
-		s|./shuffle|${PREFIX}/bin/shuffle|" \
+		s|./shuffle|${PREFIX}/libexec/ef-shuffle|" \
 		${WRKSRC}/ef.c
 .if !defined(WITHOUT_WRAPPER)
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|; \
@@ -51,7 +42,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ef ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/shuffle ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/shuffle ${PREFIX}/libexec/ef-shuffle
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/evilnumbers.dat ${DATADIR}
 .if !defined(WITHOUT_WRAPPER)
