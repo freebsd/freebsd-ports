@@ -99,6 +99,7 @@ LIRC_DESC?=		Enable LIRC support
 LUA_DESC?=		Enable LUA support
 MAD_DESC?=		Enable Mad mp3 decoder support
 MAGICK_DESC?=		Enable ImageMagick Library
+MANPAGES_DESC?=		Build and install man pages
 MIKMOD_DESC?=		Support MOD audio format
 MIXER_DESC?=		Enable Mixer support
 MMKEYS_DESC?=		Enable multimedia keys support
