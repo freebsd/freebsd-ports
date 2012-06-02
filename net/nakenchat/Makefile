@@ -10,47 +10,49 @@ PORTVERSION=	2.12
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.mikekohn.net/nakenchat/
 
-MAINTAINER=	oleg.ginzburg@nevosoft.ru
+MAINTAINER=	olevole@olevole.ru
 COMMENT=	Small (under 50k) chat server with many features
 
 HAS_CONFIGURE=	yes
 USE_RC_SUBR=	nakenchat
 
-OPTIONS=	KEEPALIVEOFF "Disable socket keepalive option" off \
-		USERCHANLISTOFF "Disable userlist based on channel" off  \
-		DEBUG "Compile in debug code" off \
-		HIDDENCAVES "Enable hidden caves feature" off \
-		DOTQ "compile in .Q option" off \
-		FUSERLIST "support to save current userlist to a file" off \
-		ELITEFILTER "Enable the 3li73 filter" off
+OPTIONS_DEFINE=	KEEPALIVEOFF USERCHANLISTOFF DEBUG HIDDENCAVES DOTQ FUSERLIST ELITEFILTER
 
-.include <bsd.port.pre.mk>
+KEEPALIVEOFF_DESC=	Disable socket keepalive option
+USERCHANLISTOFF_DESC=	Disable userlist based on channel
+DEBUG_DESC=		Compile in debug code
+HIDDENCAVES_DESC=	Enable hidden caves feature
+DOTQ_DESC=		compile in .Q option
+FUSERLIST_DESC=	support to save current userlist to a file
+ELITEFILTER_DESC=	Enable the 3li73 filter
 
-.if defined(WITH_KEEPALIVEOFF)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MWITH_KEEPALIVEOFF}
 CONFIGURE_ARGS+=	--disable-keepalive
 .endif
 
-.if defined(WITH_USERCHANLISTOFF)
+.if ${PORT_OPTIONS:MWITH_USERCHANLISTOFF}
 CONFIGURE_ARGS+=	--disable-userchanlist
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MWITH_DEBUG}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-.if defined(WITH_HIDDENCAVES)
+.if ${PORT_OPTIONS:MWITH_HIDDENCAVES}
 CONFIGURE_ARGS+=	--enable-hidden-caves
 .endif
 
-.if defined(WITH_DOTQ)
+.if ${PORT_OPTIONS:MWITH_DOTQ}
 CONFIGURE_ARGS+=	--enable-dotQ
 .endif
 
-.if defined(WITH_FUSERLIST)
+.if ${PORT_OPTIONS:MWITH_FUSERLIST}
 CONFIGURE_ARGS+=	--enable-whofile
 .endif
 
-.if defined(WITH_ELITEFILTER)
+.if ${PORT_OPTIONS:MWITH_ELITEFILTER}
 CONFIGURE_ARGS+=	--enable-elite
 .endif
 
@@ -59,4 +61,4 @@ post-install:
 		${CP} -p ${PREFIX}/etc/nakenchat.conf.sample ${PREFIX}/etc/nakenchat.conf ; \
 	fi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
