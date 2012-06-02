@@ -111,10 +111,8 @@ CONFIGURE_ARGS+=-disable-opengl
 
 .if ${PORT_OPTIONS:MCUPS}
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
-.elif defined(WITHOUT_CUPS)
-CUPS=	-cups -L${LOCALBASE}/lib -I${LOCALBASE}/include
 .else
-CUPS=
+CUPS=	-cups -L${LOCALBASE}/lib -I${LOCALBASE}/include
 .endif
 
 .if ${PORT_OPTIONS:MNAS}
