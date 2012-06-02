@@ -24,13 +24,11 @@ USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 USE_PYTHON_BUILD=	yes
 
-OPTIONS=	PERL	"Enable Perl Bindings"		Off \
-		PHP5	"Enable PHP5 Bindings"		Off \
-		PYTHON	"Enable Python Bindings"	Off
+OPTIONS_DEFINE=	PERL PHP PYTHON
 
 .include <bsd.port.options.mk>
 
-.ifdef(WITH_PERL)
+.if !empty(PORT_OPTIONS:MPERL)
 CONFIGURE_ARGS+=	--enable-perl
 PLIST_SUB+=	WITH_PERL=""
 USE_PERL5=	yes
@@ -39,7 +37,7 @@ CONFIGURE_ARGS+=	--disable-perl
 PLIST_SUB+=	WITH_PERL="@comment "
 .endif
 
-.ifdef(WITH_PHP5)
+.if !empty(PORT_OPTIONS:MPHP)
 CONFIGURE_ARGS+=	--enable-php5 \
 		--with-php5-config="${LOCALBASE}/bin/php-config"
 IGNORE_WITH_PHP=	4
@@ -53,7 +51,7 @@ CONFIGURE_ARGS+=	--disable-php5
 PLIST_SUB+=	WITH_PHP5="@comment "
 .endif
 
-.ifdef(WITH_PYTHON)
+.if !empty(PORT_OPTIONS:MPYTHON)
 CONFIGURE_ARGS+=	--enable-python
 PLIST_SUB+=	WITH_PYTHON=""
 USE_PYTHON=	yes
