@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Error/Helper.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Error/Helper/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Error/Helper
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Error
+@dirrmtry %%SITE_PERL%%/Error
