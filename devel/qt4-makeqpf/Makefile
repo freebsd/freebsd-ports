@@ -45,6 +45,8 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
 
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} < 802502
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-tools__makeqpf__qpf2.cpp
 .endif
@@ -58,4 +60,4 @@ pre-configure:
 	${LN} -sf ${LOCALBASE}/bin/uic-qt4 ${WRKSRC}/bin/uic
 	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/bin/rcc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
