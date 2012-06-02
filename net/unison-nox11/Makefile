@@ -5,15 +5,15 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-nox11
 
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	A user-level file synchronization tool (without x11 stuff)
 
-CONFLICTS=	unison-[0-9]*, unison-devel-[0-9]*
+CONFLICTS=	unison-[0-9]* unison-devel-[0-9]*
 
-OPTIONS_EXCLUDE=	GTK2
+OPTIONS_EXCLUDE=	X11
 OPTIONS_DEFAULT=	DOCS
 MASTERDIR=	${.CURDIR}/../unison
 

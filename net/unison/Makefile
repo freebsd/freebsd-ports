@@ -7,15 +7,15 @@
 
 PORTNAME=	unison
 PORTVERSION=	2.40.63
-PORTREVISION=	1
+PORTREVISION?=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/releases/${DISTNAME}/
 DISTFILES=	${EXTRACT_ONLY} ${EXTRA_DOCS}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 
-MAINTAINER=	madpilot@FreeBSD.org
-COMMENT=	A user-level file synchronization tool
+MAINTAINER?=	madpilot@FreeBSD.org
+COMMENT?=	A user-level file synchronization tool
 
 LICENSE=	GPLv3
 
@@ -28,8 +28,8 @@ CONFLICTS?=	unison-devel-[0-9]* unison-nox11-[0-9]*
 MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	unison all
 
-OPTIONS_DEFINE= DOCS GTK2
-OPTIONS_DEFAULT?=        DOCS GTK2
+OPTIONS_DEFINE= DOCS X11
+OPTIONS_DEFAULT?=        DOCS X11
 
 .include <bsd.port.options.mk>
 
@@ -39,7 +39,7 @@ EXTRA_DOCS=	unison-${PORTVERSION}-manual.html \
 		unison-${PORTVERSION}-manual.pdf unison-${PORTVERSION}-manual.ps
 .endif
 
-.if ${PORT_OPTIONS:MGTK2}
+.if ${PORT_OPTIONS:MX11}
 MAKE_ARGS+=	UISTYLE=gtk2
 PLIST_SUB+=	TEXT=""
 BUILD_DEPENDS+=	ocamlc:${PORTSDIR}/lang/ocaml \
@@ -56,7 +56,7 @@ BUILD_DEPENDS+=	ocamlc:${PORTSDIR}/lang/ocaml-nox11
 PATCH_DEPENDS+=	${BUILD_DEPENDS}
 .endif
 
-.if ${PORT_OPTIONS:MGTK2}
+.if ${PORT_OPTIONS:MX11}
 post-build:
 	@${ECHO} Building text-only version
 	@${ECHO} ${WRKSRC}
@@ -72,7 +72,7 @@ post-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${EXTRA_DOCS} ${DOCSDIR}
 .endif
-.if ${PORT_OPTIONS:MGTK2}
+.if ${PORT_OPTIONS:MX11}
 	@${INSTALL_PROGRAM} ${WRKSRC}/unison-text ${PREFIX}/bin
 	@${MKDIR} ${DESKTOPDIR}
 	@${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.desktop ${DESKTOPDIR}
