@@ -17,4 +17,6 @@ COMMENT=	Convert HTML into clean plain ASCII text
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 
+CONFLICTS=	html2text-[0-9]*
+
 .include <bsd.port.mk>

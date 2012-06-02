@@ -22,4 +22,6 @@ PLIST_FILES=	bin/cdecl bin/chilight bin/cobfusc bin/cundecl bin/cunloop \
 		bin/yyextract bin/yyref
 MAKE_JOBS_UNSAFE=	yes
 
+CONFLICTS=	cdecl-[0-9]*
+
 .include <bsd.port.mk>
