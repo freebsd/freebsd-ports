@@ -13,8 +13,10 @@ MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/t/trayer
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Lightweight GTK2-based systray for UNIX desktop
+
+CONFLICTS_INSTALL=	trayer-srg-[0-9]*
 
 USE_GNOME=	gtk20 glib20 pango atk
 USE_ICONV=	yes
