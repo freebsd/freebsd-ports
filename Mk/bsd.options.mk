@@ -47,7 +47,7 @@ ALL_OPTIONS+=	${O}
 PORT_OPTIONS+=	${O}
 .    elif !defined(optdesc)
 optdesc:=	${opt}
-${optname}_DESC:=	${opt}
+${optname}_DESC:=	${opt:S|"||g}
 .    else
 .      if ${opt:L} == off
 .        if defined(PORT_OPTIONS) && defined(optname)
