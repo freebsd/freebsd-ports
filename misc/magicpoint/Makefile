@@ -14,25 +14,27 @@ MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An X11-based presentation tool
 
-LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png \
+XLIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png \
 		mng:${PORTSDIR}/graphics/libmng
 RUN_DEPENDS+=	pnmscale:${PORTSDIR}/graphics/netpbm
 
 USE_IMAKE=	yes
 USE_XORG=	x11 xext xmu xt sm ice xi xtst
+WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-vflib --enable-locale
 
-OPTIONS+=	FREETYPE	"With FreeType support" on \
-		XFT		"With Xft2 support" on \
-		GIF		"With gif image support" off \
+OPTIONS+=	FREETYPE	"With FreeType support"			on \
+		XFT		"With Xft2 support"			on \
+		GIF		"With gif image support"		off \
 		IMLIB		"With Imlib exclusive image processing" off
 
 MAN1=	mgp.1 mgp2ps.1 mgpembed.1 mgpnet.1 xwintoppm.1 xmindpath.1
 
 PORTDOCS=	${DOCS} sample emacs-lisp scripts
-DOCS=	COPYRIGHT COPYRIGHT.jp FAQ README README.fonts README.fonts.jp \
-	README.lang RELNOTES SYNTAX TODO.jp USAGE USAGE.jp
+DOCS=		COPYRIGHT COPYRIGHT.jp FAQ README README.fonts \
+		README.fonts.jp README.lang RELNOTES SYNTAX TODO.jp \
+		USAGE USAGE.jp
 SAMPLES=	README README.jp cloud.jpg dad.eps dad.jpg default.mgp \
 		embed-jp.mgp embed.mgp gradation-jp.mgp \
 		gradation.mgp mgp-old1.jpg mgp-old2.jpg mgp-old3.jpg \
@@ -47,7 +49,8 @@ SAMPLE_SCRIPTS=	eqn2eps.sh tex2eps.sh mgp2html.pl mgp2latex.pl
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_FREETYPE)
-LIB_DEPENDS+=		ttf.4:${PORTSDIR}/print/freetype
+# Only freetype 1.x is supported
+USE_FREETYPE=		yes
 CONFIGURE_ARGS+=	--enable-freetype \
 			--enable-freetype-charset16
 .else
@@ -55,7 +58,7 @@ CONFIGURE_ARGS+=	--disable-freetype
 .endif
 
 .if defined(WITH_XFT)
-LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+USE_XORG+=	xft
 CONFIGURE_ARGS+=	--enable-xft2
 .else
 CONFIGURE_ARGS+=	--disable-xft2
@@ -64,12 +67,13 @@ CONFIGURE_ARGS+=	--disable-xft2
 .if defined(WITH_GIF)
 LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
 CONFIGURE_ARGS+=	--enable-gif
+CFLAGS+=	-I${LOCALBASE}/include
 .else
 CONFIGURE_ARGS+=	--disable-gif
 .endif
 
 .if defined(WITH_IMLIB)
-LIB_DEPENDS+=	Imlib.5:${PORTSDIR}/graphics/imlib
+USE_GNOME=	imlib
 CONFIGURE_ARGS+=	--enable-imlib
 .else
 CONFIGURE_ARGS+=	--disable-imlib
