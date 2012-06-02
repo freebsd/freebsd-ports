@@ -26,27 +26,29 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--without-x
 
-OPTIONS= GNUTLS "Adds GnuTLS support" Off \
-	 OPENSSL "Adds OpenSSL support" on \
-	 GCRYPT "Adds Libgcrypt support" Off
+OPTIONS_DEFINE=	GNUTLS OPENSSL GCRYPT
+OPTIONS_DEFAULT=	OPENSSL
+GNUTLS_DESC=	Enable GnuTLS support
+OPENSSL_DESC=	Enable OpenSSL support
+GCRYPT_DESC=	Enable libgcrypt support
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GNUTLS)
+.if ${PORT_OPTIONS:MGNUTLS}
 LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-gnutls
 .else
 CONFIGURE_ARGS+=	--without-gnutls
 .endif
 
-.if defined(WITH_OPENSSL)
+.if ${PORT_OPTIONS:MOPENSSL}
 USE_OPENSSL=	yes
 CONFIGURE_ARGS=		--with-ssl
 .else
 CONFIGURE_ARGS+=	--without-crypto --without-ssl
 .endif
 
-.if defined(WITH_GCRYPT)
+.if ${PORT_OPTIONS:MGCRYPT}
 LIB_DEPENDS+=	gcrypt.18:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=	--with-gcrypt
 .else
