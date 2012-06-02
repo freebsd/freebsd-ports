@@ -7,6 +7,7 @@
 
 PORTNAME=	plplot
 PORTVERSION=	5.9.9
+PORTREVISION=	1
 CATEGORIES=	math science
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20Source
 
@@ -49,7 +50,7 @@ PKGNAMESUFFIX=	-nox11
 PLIST_SUB+=	X11="@comment "
 .else
 USE_XORG=	x11
-LIB_DEPENDS+=	LASi.0:${PORTSDIR}/devel/lasi
+LIB_DEPENDS+=	LASi.1:${PORTSDIR}/devel/lasi
 PLIST_SUB+=	X11=""
 .endif
 
