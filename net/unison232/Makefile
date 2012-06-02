@@ -7,7 +7,7 @@
 
 PORTNAME=	unison
 PORTVERSION=	2.32.52
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/releases/${DISTNAME}/
 PKGNAMESUFFIX=	232
@@ -28,8 +28,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 LICENCE=	GPLv3
 
-OPTIONS_DEFINE= DOCS GTK
-OPTIONS_DEFAULT=	DOCS GTK
+OPTIONS_DEFINE= DOCS X11
+OPTIONS_DEFAULT=	DOCS X11
 
 .include <bsd.port.options.mk>
 
@@ -40,7 +40,7 @@ EXTRA_DOCS=	${PORTNAME}-${PORTVERSION}-manual.html \
 		${PORTNAME}-${PORTVERSION}-manual.pdf ${PORTNAME}-${PORTVERSION}-manual.ps
 .endif
 
-.if ${PORT_OPTIONS:MGTK2}
+.if ${PORT_OPTIONS:MX11}
 MAKE_ARGS+=	UISTYLE=gtk2
 PLIST_SUB+=	TEXT=""
 BUILD_DEPENDS+=	ocamlc:${PORTSDIR}/lang/ocaml \
@@ -57,7 +57,7 @@ BUILD_DEPENDS+=	ocamlc:${PORTSDIR}/lang/ocaml-nox11
 PATCH_DEPENDS+=	${BUILD_DEPENDS}
 .endif
 
-.if ${PORT_OPTIONS:MGTK2}
+.if ${PORT_OPTIONS:MX11}
 post-build:
 	@${ECHO} Building text-only version
 	@${ECHO} ${WRKSRC}
@@ -73,7 +73,7 @@ post-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${EXTRA_DOCS} ${DOCSDIR}
 .endif
-.if ${PORT_OPTIONS:MGTK2}
+.if ${PORT_OPTIONS:MX11}
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-text ${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}-text
 	${MKDIR} ${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.desktop ${DESKTOPDIR}/${PORTNAME}${PKGNAMESUFFIX}.desktop
