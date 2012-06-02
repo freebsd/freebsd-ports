@@ -23,7 +23,7 @@ WANT_GSTREAMER=	yes
 OPTIONS_MULTI=	MP3
 OPTIONS_MULTI_MP3=	MAD FLUENDO
 OPTIONS_DEFAULT=	MAD
-FLUENDO_DESC=	Use Fluendo Mp3 decoded
+FLUENDO_DESC=	Use Fluendo Mp3 decoder
 
 .include <bsd.port.options.mk>
 
