@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20120512
+PORTVERSION=	20120601
 PORTEPOCH=	3
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://github.com/pkgtools/pkgtools/tarball/${GITVERSION}/ \
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
 CONFLICTS_INSTALL=	portupgrade-[0-9]*
 
 FETCH_ARGS=	-Fpr
-GITVERSION=	6b51331
+GITVERSION=	0529f13
 
 USE_RUBY=	yes
 USE_LDCONFIG=	${PREFIX}/lib/compat/pkg
@@ -49,9 +49,19 @@ MANCOMPRESSED=	maybe
 EXAMPLESDIR=	${PREFIX}/share/examples/pkgtools
 DOCSDIR=	${PREFIX}/share/doc/pkgtools
 
+.include <bsd.port.pre.mk>
+
 INSTALL_TARGET=		install
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 INSTALL_TARGET+=	install-doc
+.endif
+
+# Need to install working script(1)
+.if ${OSVERSION} < 801000
+PLIST_SUB+=	SCRIPT=""
+MAKE_ENV+=	NEED_COMPAT_SCRIPT=yes
+.else
+PLIST_SUB+=	SCRIPT="@comment "
 .endif
 
 post-patch:	.SILENT
@@ -64,4 +74,4 @@ post-install:
 	fi
 	${MKDIR} ${PREFIX}/lib/compat/pkg
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
