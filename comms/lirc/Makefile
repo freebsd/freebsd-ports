@@ -55,7 +55,7 @@ PLIST_SUB+=	SMODE2="@comment "
 
 .if empty(PORT_OPTIONS:MMINIMAL)
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libirman.a:${PORTSDIR}/comms/libirman
-LIB_DEPENDS+=		ftdi.19:${PORTSDIR}/devel/libftdi
+LIB_DEPENDS+=		ftdi:${PORTSDIR}/devel/libftdi
 CONFIGURE_ARGS+=	--with-driver=userspace
 .else
 CONFIGURE_ARGS+=	--with-driver=dvico

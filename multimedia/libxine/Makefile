@@ -23,7 +23,7 @@ LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
 		png15:${PORTSDIR}/graphics/png \
 		dvdread:${PORTSDIR}/multimedia/libdvdread \
 		freetype:${PORTSDIR}/print/freetype2 \
-		fame-0.9:${PORTSDIR}/multimedia/libfame \
+		fame-0:${PORTSDIR}/multimedia/libfame \
 		cdio:${PORTSDIR}/sysutils/libcdio \
 		modplug:${PORTSDIR}/audio/libmodplug \
 		vcdinfo:${PORTSDIR}/multimedia/vcdimager \
