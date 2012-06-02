@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xrdp
-PORTVERSION=    0.6.0.20110117
+PORTVERSION=	0.6.0.20110117
 CATEGORIES=	net
 MASTER_SITES=	http://www.club.kyutech.ac.jp/~meta/distfiles/ \
 		http://key2.jp/~meta/distfiles/
@@ -16,8 +16,11 @@ DIST_SUBDIR?=	${PORTNAME}
 PATCH_SITES=	http://www.club.kyutech.ac.jp/~meta/patches/xrdp/0.6.0/ \
 		http://key2.jp/~meta/patches/xrdp/0.6.0/
 
-MAINTAINER=	meta@club.kyutech.ac.jp
+MAINTAINER=	meta+ports@vmeta.jp
 COMMENT=	An open source Remote Desktop Protocol (RDP) server
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_XORG=	x11 xfixes
 USE_AUTOTOOLS=	autoconf:env automake:env libtool
@@ -28,12 +31,10 @@ CONFIGURE_ARGS=	--localstatedir=/var
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 RUN_DEPENDS+=	Xvnc:${PORTSDIR}/net/vnc
-LICENSE=		GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_LDCONFIG=	${PREFIX}/lib/xrdp
 
-OPTIONS=        DEBUG "Build with debugging symbols" off \
+OPTIONS=	DEBUG "Build with debugging symbols" off \
 		JP106 "Install Japanese JP106 Keymap" on
 
 .include <bsd.port.options.mk>
