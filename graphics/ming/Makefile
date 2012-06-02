@@ -14,8 +14,8 @@ MASTER_SITES=	SF/${PORTNAME}/Releases/
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Flash 4/5 movie output library with many languages support
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		gif.5:${PORTSDIR}/graphics/giflib \
+LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
+		gif:${PORTSDIR}/graphics/giflib \
 		png15:${PORTSDIR}/graphics/png
 
 CONFLICTS=	ja-ming-[0-9]*
@@ -35,12 +35,14 @@ DOCS=		HISTORY NEWS README TODO
 DOCS_UTIL=	README TIPS TODO swftoperl.html
 
 .if defined(SLAVEPORT)
-LIB_DEPENDS+=	ming.5:${PORTSDIR}/graphics/ming
+LIB_DEPENDS+=	ming:${PORTSDIR}/graphics/ming
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|ungif|gif|g' ${WRKSRC}/configure ${WRKSRC}/docs/man/Makefile \
 		${WRKSRC}/perl_ext/Makefile.PL ${WRKSRC}/py_ext/setup.py.in
+	@${REINPLACE_CMD} -e '/PrintGifError();/d' ${WRKSRC}/src/blocks/gifdbl.c \
+		${WRKSRC}/util/gif2dbl.c ${WRKSRC}/util/gif2mask.c
 # patch for graphics/p5-ming
 	@${REINPLACE_CMD} -e 's|\.3pm|.3|g' ${WRKSRC}/perl_ext/Makefile.PL ${WRKSRC}/perl_ext/mkdoc
 	@${REINPLACE_CMD} -e 's|GvCV(\(.*\)) = \(.*\);|GvCV_set(\1, \2);|' ${WRKSRC}/perl_ext/Exports.c
