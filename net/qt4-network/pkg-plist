@@ -15,6 +15,7 @@ include/qt4/Qt/qnetworkconfiguration.h
 include/qt4/Qt/qnetworkcookie.h
 include/qt4/Qt/qnetworkcookiejar.h
 include/qt4/Qt/qnetworkdiskcache.h
+include/qt4/Qt/qnetworkfunctions_wince.h
 include/qt4/Qt/qnetworkinterface.h
 include/qt4/Qt/qnetworkproxy.h
 include/qt4/Qt/qnetworkreply.h
@@ -90,6 +91,7 @@ include/qt4/QtNetwork/qnetworkconfiguration.h
 include/qt4/QtNetwork/qnetworkcookie.h
 include/qt4/QtNetwork/qnetworkcookiejar.h
 include/qt4/QtNetwork/qnetworkdiskcache.h
+include/qt4/QtNetwork/qnetworkfunctions_wince.h
 include/qt4/QtNetwork/qnetworkinterface.h
 include/qt4/QtNetwork/qnetworkproxy.h
 include/qt4/QtNetwork/qnetworkreply.h

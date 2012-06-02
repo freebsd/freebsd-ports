@@ -52,21 +52,22 @@ post-patch:
 		${WRKSRC}/../mkspecs/freebsd-*/qmake.conf
 	@${REINPLACE_CMD} -e 's|@QMAKE_QTOBJS@||g' ${WRKSRC}/Makefile.unix
 
-	# FIXME: This is ugly
+# FIXME: This is ugly
 	@${RM} ${WRKSRC}/../mkspecs/freebsd-g++/*.orig
-	@${RM} ${WRKSRC}/../mkspecs/freebsd-g++40/*.orig
+	@${RM} ${WRKSRC}/../mkspecs/freebsd-g++46/*.orig
 
 # Add mkspec for clang
-	@${CP} -PpR ${WRKSRC}/../mkspecs/freebsd-g++ ${WRKSRC}/../mkspecs/freebsd-clang
+	@${CP} -PpR ${WRKSRC}/../mkspecs/freebsd-g++46 ${WRKSRC}/../mkspecs/freebsd-clang
 	@${REINPLACE_CMD} -e 's|g++-unix.conf|clang.conf|g' \
+		-e 's|freebsd-g++|freebsd-clang|g' \
 		${WRKSRC}/../mkspecs/freebsd-clang/qmake.conf
+
 # Add mkspecs for the different GCC versions in the ports tree
-.for v in 42 44 46 47 48
-	@${CP} -PpR ${WRKSRC}/../mkspecs/freebsd-g++40 ${WRKSRC}/../mkspecs/freebsd-g++${v}
-	@${REINPLACE_CMD} -e 's|40|${v}|g' \
+.for v in 42 44 47 48
+	@${CP} -PpR ${WRKSRC}/../mkspecs/freebsd-g++46 ${WRKSRC}/../mkspecs/freebsd-g++${v}
+	@${REINPLACE_CMD} -e 's|46|${v}|g' \
 		${WRKSRC}/../mkspecs/freebsd-g++${v}/qmake.conf
 .endfor
-	@${RM} -r ${WRKSRC}/../mkspecs/freebsd-g++40
 
 do-configure:
 	${SED} -e 's|/usr/local|${PREFIX}|g' \
