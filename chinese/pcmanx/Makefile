@@ -24,22 +24,23 @@ USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	NLS		"Use Native Language Support"		on  \
-		DEBUG		"Build with debugging support"		off \
-		DOCKLET		"Docklet / system tray support"		on  \
-		NOTIFIER	"Popup notifier support"		on  \
-		LIBNOTIFY	"Popup notifier support by libnotify"	off \
-		NANCY		"Nancy bot support"			on  \
-		MOUSE		"Mouse click and wheel support"		on  \
-		EXTERNAL	"Eexternal SSH/Telnet support"		on  \
-		IPLOOKUP	"IP location lookup support"		off \
-		PROXY		"Proxy support"				off
+OPTIONS_DEFINE=	NLS DEBUG DOCKLET NOTIFIER LIBNOTIFY NANCY MOUSE EXTERNAL IPLOOKUP PROXY
+OPTIONS_DEFAULT=	DOCKLET NOTIFIER NANCY MOUSE EXTERNAL
+
+DOCKLET_DESC=	Docklet / system tray support
+NOTIFIER_DESC=	Popup notifier support
+LIBNOTIFY_DESC=	Popup notifier support by libnotify
+NANCY_DESC=	Nancy bot support
+MOUSE_DESC=	Mouse click and wheel support
+EXTERNAL_DESC=	External SSH/Telnet support
+IPLOOKUP_DESC=	IP location lookup support
+PROXY_DESC=	Proxy support
 
 MAN1=		pcmanx.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -49,40 +50,41 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--enable-debug
 .endif
 
-.if defined(WITHOUT_DOCKLET)
+.if empty(PORT_OPTIONS:MDOCKLET)
 CONFIGURE_ARGS+=--disable-docklet
 .endif
 
-.if defined(WITHOUT_NOTIFIER)
+.if empty(PORT_OPTIONS:MNOTIFIER)
 CONFIGURE_ARGS+=--disable-notifier
 .endif
 
-.if defined(WITH_LIBNOTIFY)
+.if ${PORT_OPTIONS:MLIBNOTIFY}
 CONFIGURE_ARGS+=--enable-libnotify
+BUILD_DEPENDS=	libnotify>0:${PORTSDIR}/devel/libnotify
 .endif
 
-.if defined(WITHOUT_NANCY)
+.if empty(PORT_OPTIONS:MNANCY)
 CONFIGURE_ARGS+=--disable-nancy
 .endif
 
-.if defined(WITHOUT_MOUSE)
+.if empty(PORT_OPTIONS:MMOUSE)
 CONFIGURE_ARGS+=--disable-mouse
 .endif
 
-.if defined(WITHOUT_EXTERNAL)
+.if empty(PORT_OPTIONS:MEXTERNAL)
 CONFIGURE_ARGS+=--disable-external
 .endif
 
-.if defined(WITH_IPLOOKUP)
+.if ${PORT_OPTIONS:MIPLOOKUP}
 CONFIGURE_ARGS+=--enable-iplookup
 .endif
 
-.if defined(WITH_PROXY)
+.if ${PORT_OPTIONS:MPROXY}
 CONFIGURE_ARGS+=--enable-proxy
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
