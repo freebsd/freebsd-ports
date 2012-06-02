@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	redis
-PORTVERSION=	2.4.9
+PORTVERSION=	2.4.13
 CATEGORIES=	databases python
 MASTER_SITES=	http://cloud.github.com/downloads/andymccurdy/redis-py/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +15,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Python client for Redis key-value store
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
