@@ -15,11 +15,11 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - softhddevice plugin
 
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
-		vdpau.1:${PORTSDIR}/multimedia/libvdpau \
-		xcb.2:${PORTSDIR}/x11/libxcb \
-		xcb-keysyms.1:${PORTSDIR}/x11/xcb-util-keysyms \
-		asound.2:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg \
+		vdpau:${PORTSDIR}/multimedia/libvdpau \
+		xcb:${PORTSDIR}/x11/libxcb \
+		xcb-keysyms:${PORTSDIR}/x11/xcb-util-keysyms \
+		asound:${PORTSDIR}/audio/alsa-lib
 
 USE_GNOME+=	pkgconfig
 USE_XORG+=	xv x11 xinerama
@@ -36,19 +36,20 @@ WRKSRC=		${WRKDIR}/${PLUGIN}-${PORTVERSION}
 
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
-OPTIONS=	VAAPI	"Enable vaapi support (experimental)"		off
+OPTIONS_DEFINE=	VAAPI
+VAAPI_DESC=	"Enable vaapi support (experimental)"
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_VAAPI)
-LIB_DEPENDS+=	va.1:${PORTSDIR}/multimedia/libva
+.if ${PORT_OPTIONS:MVAAPI}
+LIB_DEPENDS+=	va:${PORTSDIR}/multimedia/libva
 CONFIG+= 	-DUSE_VAAPI
 .endif
 
 post-patch: post-patch-plugin
 
 post-install: post-install-pluginlocales
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
 .endif
