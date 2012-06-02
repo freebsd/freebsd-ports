@@ -7,7 +7,7 @@
 
 PORTNAME=	evilfinder
 PORTVERSION=	1.00
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://lcamtuf.coredump.cx/
 DISTNAME=	ef
@@ -32,10 +32,12 @@ PLIST_SUB+=	WRAPPER="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e '/^CFLAGS/d' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s|evilnumbers.dat|${DATADIR}/evilnumbers.dat|; \
+		s|.tmp-%d-%u|/tmp/.tmp-%d-%u|; \
 		s|./shuffle|${PREFIX}/libexec/ef-shuffle|" \
 		${WRKSRC}/ef.c
 .if !defined(WITHOUT_WRAPPER)
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|; \
+		s|/dev/stdin|-stdin|; \
 		s|%%LOCALBASE%%|${LOCALBASE}|" \
 		${FILESDIR}/evilfinder > ${WRKSRC}/evilfinder
 .endif
