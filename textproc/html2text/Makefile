@@ -24,7 +24,7 @@ MAN5=		html2textrc.5
 PORTDOCS=	CHANGES CREDITS KNOWN_BUGS README TODO
 PLIST_FILES=	bin/html2text
 
-CONFLICTS=	py27-html2text-[0-9.]*
+CONFLICTS=	py27-html2text-[0-9]*
 
 post-patch:
 	@${REINPLACE_CMD} -e '/echo=/s/ -e//' ${WRKSRC}/configure
