@@ -15,17 +15,18 @@ DISTNAME=	${PORTNAME}.${PORTVERSION:S/p/dev/}
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	A seen-module for the eggdrop IRC bot
 
-USE_TCL=	85+
-
 EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/irc/eggdrop:extract
 BUILD_DEPENDS=	eggdrop:${PORTSDIR}/irc/eggdrop
 RUN_DEPENDS=	eggdrop:${PORTSDIR}/irc/eggdrop
+
+USE_TCL=	85+
 
 WRKSRC=		${WRKDIR}/eggdrop
 
 CONFIGURE_ARGS=	--with-tcllib=${LOCALBASE}/lib/libtcl${TCL_VER:S/.//}.so \
 		--with-tclinc=${TCL_INCLUDEDIR}/tcl.h
 
+MAKE_JOBS_UNSAFE=	yes
 GNU_CONGFIGURE=	yes
 
 do-extract:
