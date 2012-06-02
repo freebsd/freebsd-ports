@@ -935,6 +935,7 @@
     SUBDIR += uhexen2-extras
     SUBDIR += ultimatestunts
     SUBDIR += umark
+    SUBDIR += unknown-horizons
     SUBDIR += unnethack
     SUBDIR += untahris
     SUBDIR += uqm
