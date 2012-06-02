@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://move.kirishi.ru/soft/netherearth/
 
-MAINTAINER=	olevole@yandex.ru
+MAINTAINER=	olevole@olevole.ru
 COMMENT=	Remake of the very first real time strategy game on the SPECTRUM
 
 GNU_CONFIGURE=	yes
