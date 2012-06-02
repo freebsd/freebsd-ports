@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ajaxzip2
-PORTVERSION=	20120224
+PORTVERSION=	20120531
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kuriyama
@@ -48,5 +48,4 @@ fetch2:
 	m=`stat -f %m jigyosyo.lzh`; \
 	${MV} jigyosyo.lzh `date -r $${m} +jigyosyo-%Y%m%d.lzh`
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
