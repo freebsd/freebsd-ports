@@ -15,10 +15,10 @@ MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	Perl5 interface to the DNS resolver, and dynamic updates
 
 # Warnings during build are harmless, the port does not need these to build
-RUN_DEPENDS=	p5-Digest-HMAC:${PORTSDIR}/security/p5-Digest-HMAC
+RUN_DEPENDS=	p5-Digest-HMAC>0:${PORTSDIR}/security/p5-Digest-HMAC
 
-TEST_DEPENDS=	p5-Test-Pod:${PORTSDIR}/devel/p5-Test-Pod \
-		p5-Digest-BubbleBabble:${PORTSDIR}/security/p5-Digest-BubbleBabble
+TEST_DEPENDS=	p5-Test-Pod>0:${PORTSDIR}/devel/p5-Test-Pod \
+		p5-Digest-BubbleBabble>0:${PORTSDIR}/security/p5-Digest-BubbleBabble
 
 MAKE_JOBS_SAFE=	yes
 
@@ -62,11 +62,11 @@ RUN_DEPENDS+=	p5-Digest-SHA>=5.47:${PORTSDIR}/security/p5-Digest-SHA
 .endif
 
 .if !defined(WITHOUT_IPV6)
-RUN_DEPENDS+=	p5-IO-Socket-INET6:${PORTSDIR}/net/p5-IO-Socket-INET6
+RUN_DEPENDS+=	p5-IO-Socket-INET6>0:${PORTSDIR}/net/p5-IO-Socket-INET6
 .endif
 
 .if defined(WITH_IDN)
-RUN_DEPENDS+=	p5-Net-LibIDN:${PORTSDIR}/dns/p5-Net-LibIDN
+RUN_DEPENDS+=	p5-Net-LibIDN>0:${PORTSDIR}/dns/p5-Net-LibIDN
 .endif
 
 DOCSDIR=	${PREFIX}/share/doc/p5-Net-DNS

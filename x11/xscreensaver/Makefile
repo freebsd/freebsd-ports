@@ -21,7 +21,7 @@ LIB_DEPENDS=	gle.4:${PORTSDIR}/graphics/gle \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		glade-2.0.0:${PORTSDIR}/devel/libglade2
 
-RUN_DEPENDS=	p5-libwww:${PORTSDIR}/www/p5-libwww \
+RUN_DEPENDS=	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
 		giftopnm:${PORTSDIR}/graphics/netpbm
 
 MAKE_JOBS_SAFE=	yes
