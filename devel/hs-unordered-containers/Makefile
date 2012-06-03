@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unordered-containers
-PORTVERSION=	0.1.4.6
+PORTVERSION=	0.2.1.0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -15,7 +15,8 @@ COMMENT=	Efficient hashing-based container types
 LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
-USE_CABAL=	deepseq>=1.1.0 hashable>=1.0.1.1
+
+USE_CABAL=	hashable>=1.0.1.1
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
