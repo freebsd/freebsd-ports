@@ -11,12 +11,17 @@ PORTREVISION=	4
 CATEGORIES=	math cad parallel java
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/:scilab \
 		http://www.predatorlabs.net/dl/:jgraphx \
-		http://www.bayofrum.net/dist/jgraphx/:jgraphx
+		http://www.bayofrum.net/dist/jgraphx/:jgraphx \
+		SF/saxon/saxon6/${SAXON_VERSION}:saxon
 DISTFILES=	${DISTNAME}-src.tar.gz:scilab
 EXTRACT_ONLY=	${DISTNAME}-src.tar.gz
 
 MAINTAINER=	rfarmer@predatorlabs.net
 COMMENT=	Scientific software package for numerical computations
+
+SAXON_VERSION=	6.5.5
+SAXON_DISTFILE=	saxon${SAXON_VERSION:S/./-/g}.zip
+DISTFILES+=	${SAXON_DISTFILE}:saxon
 
 # A partial dependencies list can be found at:
 # http://wiki.scilab.org/Dependencies_of_Scilab_5.X
@@ -119,8 +124,7 @@ GUI_DEPENDS=	${JAVALIBDIR}/flexdock.jar:${PORTSDIR}/devel/flexdock \
 # Can't use USE_ANT because it overrides do-build target
 BUILD_DEPENDS+=	${GUI_DEPENDS} \
 		ant:${PORTSDIR}/devel/apache-ant \
-		swig:${PORTSDIR}/devel/swig13 \
-		${LOCALBASE}/share/examples/saxon/data/books.dtd:${PORTSDIR}/textproc/saxon
+		swig:${PORTSDIR}/devel/swig13
 
 RUN_DEPENDS+=	${GUI_DEPENDS}
 
@@ -213,6 +217,8 @@ post-patch:
 	@# Run fixes
 	@${REINPLACE_CMD} -e 's|%%JAVALIBDIR%%|${JAVALIBDIR}|' ${WRKSRC}/etc/librarypath.xml
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/etc/librarypath.xml
+	@${MKDIR} ${WRKSRC}/thirdparty
+	@${UNZIP_CMD} ${DISTDIR}/${SAXON_DISTFILE} saxon.jar -d ${WRKSRC}/thirdparty
 .if !defined(WITHOUT_GUI)
 	@# Configure fixes
 	@${REINPLACE_CMD} -e 's|/usr/lib/java|${JAVALIBDIR}|g' ${WRKSRC}/configure
@@ -222,7 +228,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$jardir/jeuclid-core*.jar|${LOCALBASE}/share/java/jeuclid/repo/jeuclid-core*.jar|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|jrosetta-API.jar|jrosetta-api.jar|' \
 		${WRKSRC}/configure
-	@${MKDIR} ${WRKSRC}/thirdparty
 	@${CP} ${DISTDIR}/${JGRAPHX_JAR} ${WRKSRC}/thirdparty/jgraphx.jar
 	@# Run fixes
 	@${REINPLACE_CMD} -e 's|%%JAVALIBDIR%%|${JAVALIBDIR}|' ${WRKSRC}/etc/librarypath.xml
