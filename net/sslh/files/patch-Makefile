@@ -1,20 +1,24 @@
---- Makefile.old	2011-12-02 10:16:46.000000000 +0000
-+++ Makefile	2011-12-02 10:18:04.000000000 +0000
-@@ -5,7 +5,7 @@
+--- ./Makefile.orig	2012-06-03 02:10:16.959537483 +0200
++++ ./Makefile	2012-06-03 02:10:20.312769958 +0200
+@@ -4,7 +4,7 @@
+ USELIBCONFIG=1	# Use libconfig? (necessary to use configuration files)
+ USELIBWRAP=	# Use libwrap?
  COV_TEST= 	# Perform test coverage?
- PREFIX=/usr/local
+-PREFIX=/usr/local
++PREFIX ?=/usr/local
  
--MAN=sslh.8.gz	# man page name
-+MAN=sslh.8	# man page name
+ MAN=sslh.8.gz	# man page name
  
- # End of configuration -- the rest should take care of
- # itself
-@@ -46,7 +46,7 @@
- 	$(CC) $(CFLAGS) -o echosrv echosrv.o common.o $(LIBS)
+@@ -15,10 +15,9 @@
+     CFLAGS_COV=-fprofile-arcs -ftest-coverage
+ endif
  
- $(MAN): sslh.pod Makefile
--	pod2man --section=8 --release=$(VERSION) --center=" " sslh.pod | gzip -9 - > $(MAN)
-+	pod2man --section=8 --release=$(VERSION) --center=" " sslh.pod > $(MAN)
+-CC = gcc
+-CFLAGS=-Wall -g $(CFLAGS_COV)
++CC ?= gcc
++CFLAGS ?=-Wall -g $(CFLAGS_COV)
  
- # generic install: install binary and man page
- install: sslh $(MAN)
+-LIBS=
+ OBJS=common.o sslh-main.o probe.o
+ 
+ ifneq ($(strip $(USELIBWRAP)),)
