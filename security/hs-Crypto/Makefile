@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Crypto
-PORTVERSION=	4.2.4
+PORTVERSION=	4.2.5
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -14,8 +14,8 @@ COMMENT=	Collects together existing Haskell cryptographic functions
 
 FILE_LICENSE=	ReadMe.tex
 
-USE_CABAL=	QuickCheck>=2.4.0.1 HUnit
 CABAL_SETUP=	Setup.hs
+USE_CABAL=	QuickCheck>=2.4.0.1 HUnit random
 
 EXECUTABLE=	HMACTest QuickTest RSATest SHA1Test SymmetricTest WordListTest
 
