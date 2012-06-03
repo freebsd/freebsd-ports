@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	enumerator
-PORTVERSION=	0.4.18
+PORTVERSION=	0.4.19
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
