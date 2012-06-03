@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	PDL
-PORTVERSION=	2.4.9
-PORTREVISION=	2
+PORTVERSION=	2.4.11
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN/${PORTNAME}:cpan \
 		SF/pdl/PDL/${PORTVERSION}:sf
@@ -18,10 +17,9 @@ COMMENT=	Perl Data Language
 
 BUILD_DEPENDS=	p5-Astro-FITS-Header>=0:${PORTSDIR}/astro/p5-Astro-FITS-Header \
 		p5-Convert-UU>=0:${PORTSDIR}/converters/p5-Convert-UU \
+		p5-File-Map>=0.47:${PORTSDIR}/devel/p5-File-Map \
 		p5-Inline>=0.43:${PORTSDIR}/devel/p5-Inline
-RUN_DEPENDS=	p5-Astro-FITS-Header>=0:${PORTSDIR}/astro/p5-Astro-FITS-Header \
-		p5-Convert-UU>=0:${PORTSDIR}/converters/p5-Convert-UU \
-		p5-Inline>=0.43:${PORTSDIR}/devel/p5-Inline
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -54,12 +52,12 @@ BUILD_DEPENDS+=	p5-PGPLOT>=0:${PORTSDIR}/graphics/p5-PGPLOT
 .endif
 
 .if ${PORT_OPTIONS:MPLPLOT}
-LIB_DEPENDS+=	plplotd.11:${PORTSDIR}/math/plplot
+LIB_DEPENDS+=	plplotd:${PORTSDIR}/math/plplot
 .endif
 
 .if ${PORT_OPTIONS:MOPENGL}
-BUILD_DEPENDS+=	p5-OpenGL>=0.60:${PORTSDIR}/graphics/p5-OpenGL
-RUN_DEPENDS+=	p5-OpenGL>=0.60:${PORTSDIR}/graphics/p5-OpenGL
+BUILD_DEPENDS+=	p5-OpenGL>=0.65:${PORTSDIR}/graphics/p5-OpenGL
+RUN_DEPENDS+=	p5-OpenGL>=0.65:${PORTSDIR}/graphics/p5-OpenGL
 USE_GL=		yes
 .endif
 
@@ -72,7 +70,7 @@ BUILD_DEPENDS+=	p5-ExtUtils-F77>=0:${PORTSDIR}/lang/p5-ExtUtils-F77
 .endif
 
 .if ${PORT_OPTIONS:MFFTW}
-LIB_DEPENDS+=	fftw.2:${PORTSDIR}/math/fftw
+LIB_DEPENDS+=	fftw:${PORTSDIR}/math/fftw
 .endif
 
 .if ${PORT_OPTIONS:MGSL}
@@ -100,10 +98,13 @@ RUN_DEPENDS+=	ppmtogif:${PORTSDIR}/graphics/netpbm \
 .endif
 
 post-patch:
-	@${GREP} -lR "/usr/local/bin/perl" ${WRKSRC} | ${XARGS} \
-		${PERL} -pi -e "s!/usr/local/bin/perl!${PERL}!"
-	@${GREP} -lR "x86_64" ${WRKSRC} | ${XARGS} \
-	    	${PERL} -pi -e "s!x86_64!amd64!"
+	@${GREP} -lR '#!/usr/local/bin/perl' ${WRKSRC}/ | ${XARGS} ${SED} -e 's|#!/usr/local/bin/perl|#!${PERL}|' -i ''
+	@${GREP} -lR 'x86_64' ${WRKSRC}/ | ${XARGS} ${SED} -e 's|x86_64|amd64|g' -i ''
+	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|' ${WRKSRC}/perldl.conf
+	@${REINPLACE_CMD} -e "/POSIX_THREADS_LIBS/ s|undef|'${PTHREAD_LIBS}'|" \
+		-e '/WITH_IO_BROWSER/ s|0|1|' -e '/WITH_DEVEL_REPL/ s|1|0|' ${WRKSRC}/perldl.conf
+	@${REINPLACE_CMD} -e '/^#include <nan.h>/d' ${WRKSRC}/Basic/Math/mconf.h
+	@${REINPLACE_CMD} -e '/^require PDL::Core::Dev;/d' ${WRKSRC}/IO/Browser/Makefile.PL
 
 test: build
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} make test
