@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-Socket-IP
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	net ipv6 perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,6 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Socket>=1.97:${PORTSDIR}/net/p5-Socket
 RUN_DEPENDS=	p5-Socket>=1.97:${PORTSDIR}/net/p5-Socket
-
 TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
 
 PERL_CONFIGURE=	yes
