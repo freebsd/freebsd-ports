@@ -68,6 +68,7 @@ convertible-text_port=		devel/hs-convertible-text
 cookie_port=			www/hs-cookie
 cpphs_port=			devel/hs-cpphs		# executable
 cprng-aes_port=			security/hs-cprng-aes
+cpu_port=			sysutils/hs-cpu
 criterion_port=			benchmarks/hs-criterion
 Crypto_port=			security/hs-Crypto
 crypto-api_port=		security/hs-crypto-api
