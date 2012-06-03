@@ -1,4 +1,3 @@
-bin/pkg_bupdate
 bin/pkg_findupdates
 %%SITE_PERL%%/FreeBSD/Pkgs/FindUpdates.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Pkgs/FindUpdates/.packlist
