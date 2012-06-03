@@ -1,8 +1,8 @@
---- ./evm/Makefile.orig	2011-11-10 23:02:39.000000000 +0100
-+++ ./evm/Makefile	2011-12-03 03:48:58.000000000 +0100
+--- ./evm/Makefile.orig	2012-02-28 00:44:29.000000000 +0100
++++ ./evm/Makefile	2012-04-08 10:41:14.000000000 +0200
 @@ -1,6 +1,4 @@
 -CC = gcc
--#CFLAGS = -Wall -g
+-#CFLAGS = -Wall -g -DUSE_BOEHM
 -CFLAGS = -Wall -O3 -DUSE_BOEHM
 +CFLAGS+= -Wall -DUSE_BOEHM -I%%LOCALBASE%%/include -L%%LOCALBASE%%/lib
  OBJS = closure.o stdfuns.o emalloc.o sparks.o
