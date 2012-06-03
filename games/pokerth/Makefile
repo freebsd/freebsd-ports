@@ -7,7 +7,7 @@
 
 PORTNAME=	pokerth
 PORTVERSION=	0.9.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 DISTNAME=	PokerTH-${PORTVERSION}-src
@@ -22,7 +22,7 @@ LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
 		mikmod:${PORTSDIR}/audio/libmikmod \
 		gnutls:${PORTSDIR}/security/gnutls \
 		curl:${PORTSDIR}/ftp/curl \
-		gsasl5:${PORTSDIR}/security/gsasl \
+		gsasl.16:${PORTSDIR}/security/gsasl \
 		tinyxml:${PORTSDIR}/textproc/tinyxml
 BUILD_DEPENDS=	${LOCALBASE}/include/libircclient.h:${PORTSDIR}/irc/libircclient
 
