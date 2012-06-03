@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	podlators
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Pod
@@ -15,7 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Modules to convert and parse POD (Plain Old Documentation)
 
-PERL_CONFIGURE= yes
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+PERL_CONFIGURE=	yes
 
 MAN1=		perlpodstyle.1
 MAN3=		Pod::Man.3 Pod::ParseLink.3 Pod::Text.3 Pod::Text::Color.3 \
