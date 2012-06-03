@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	yesod-json
-PORTVERSION=	0.2.3
+PORTVERSION=	1.0.0.1
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Generate content for Yesod using the aeson package
 
-LICENSE=	BSD
+LICENSE=	MIT
 
-USE_CABAL=	aeson>=0.3 attoparsec-enumerator>=0.3 blaze-builder \
-		shakespeare-js>=0.10 text>=0.8 transformers>=0.2.2 \
-		unordered-containers vector>=0.9 yesod-core>=0.9
+USE_CABAL=	aeson>=0.5 attoparsec-conduit>=0.4 blaze-builder \
+		conduit>=0.4 safe>=0.2 shakespeare-js>=1.0 text>=0.8 \
+		transformers>=0.2.2 vector>=0.9 wai>=1.2 wai-extra>=1.2 \
+		yesod-core>=1.0 yesod-routes>=1.0
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
