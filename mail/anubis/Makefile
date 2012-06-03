@@ -7,7 +7,7 @@
 
 PORTNAME=	anubis
 PORTVERSION=	4.1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -106,7 +106,7 @@ _REQUIRE+=	postgresql
 CONFIGURE_ARGS+=--without-gsasl
 PLIST_SUB+=	GSASL="@comment "
 .else
-LIB_DEPENDS+=	gsasl.15:${PORTSDIR}/security/gsasl
+LIB_DEPENDS+=	gsasl.16:${PORTSDIR}/security/gsasl
 PLIST_SUB+=	GSASL=""
 .endif
 
