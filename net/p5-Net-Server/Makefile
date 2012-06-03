@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Server
-PORTVERSION=	0.99
+PORTVERSION=	2.002
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,21 +22,23 @@ PERL_CONFIGURE=	yes
 OPTIONS_DEFINE=	IPV6
 
 MAN3=		Net::Server.3 \
-		Net::Server::Daemonize.3\
+		Net::Server::Daemonize.3 \
 		Net::Server::Fork.3 \
 		Net::Server::HTTP.3 \
 		Net::Server::INET.3 \
 		Net::Server::MultiType.3 \
 		Net::Server::Multiplex.3 \
+		Net::Server::PSGI.3 \
 		Net::Server::PreFork.3 \
-		Net::Server::PreForkSimple.3\
-		Net::Server::Proto.3\
-		Net::Server::Proto::SSL.3\
-		Net::Server::Proto::SSLEAY.3\
-		Net::Server::Proto::TCP.3\
-		Net::Server::Proto::UDP.3\
-		Net::Server::Proto::UNIX.3\
-		Net::Server::SIG.3\
+		Net::Server::PreForkSimple.3 \
+		Net::Server::Proto.3 \
+		Net::Server::Proto::SSL.3 \
+		Net::Server::Proto::SSLEAY.3 \
+		Net::Server::Proto::TCP.3 \
+		Net::Server::Proto::UDP.3 \
+		Net::Server::Proto::UNIX.3 \
+		Net::Server::Proto::UNIXDGRAM.3 \
+		Net::Server::SIG.3 \
 		Net::Server::Single.3
 
 .include <bsd.port.options.mk>
