@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	svgcairo
-PORTVERSION=	0.12.1
-PORTREVISION=	1
+PORTVERSION=	0.12.1.1
 CATEGORIES=	graphics haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Binding to the libsvg-cairo library
 
-LICENSE=	LGPL21
+LICENSE=	BSD
 FILE_LICENSE=	COPYING
 
 CABAL_SETUP=	Setup.hs
