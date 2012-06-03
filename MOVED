@@ -3435,3 +3435,22 @@ portuguese/koffice-kde4-l10n|portuguese/calligra-l10n|2012-05-31|Unmaintained up
 russian/koffice-kde4-l10n|russian/calligra-l10n|2012-05-31|Unmaintained upstream, use Calligra
 ukrainian/koffice-kde4-l10n|ukrainian/calligra-l10n|2012-05-31|Unmaintained upstream, use Calligra
 dns/drill||2012-05-31|drill tool is not part of ldns package
+devel/hs-binary||2012-06-03|Removed: this package became part of lang/ghc.
+devel/hs-convertible-text||2012-06-03|Removed: this package is obsolete.
+devel/hs-control-monad-attempt||2012-06-03|Removed: this package is obsolete.
+devel/hs-data-object||2012-06-03|Removed: this package is obsolete.
+devel/hs-data-object-yaml||2012-06-03|Removed: this package is obsolete.
+devel/hs-deepseq||2012-06-03|Removed: this package became part of lang/ghc.
+devel/hs-ghc-paths-docs||2012-06-03|Removed: not needed any more.
+devel/hs-haddock-docs||2012-06-03|Removed: not needed any more.
+devel/hs-mtl-docs||2012-06-03|Removed: not needed any more.
+devel/hs-pool||2012-06-03|Removed: this package is obsolete.
+devel/hs-transformers-docs||2012-06-03|Removed: not needed any more.
+print/hs-hscolour-docs||2012-06-03|Removed: not needed any more.
+textproc/hs-xhtml-docs||2012-06-03|Removed: not needed any more.
+textproc/hs-xml-enumerator||2012-06-03|Removed: this package is obsolete.
+www/hs-happstack-data||2012-06-03|Removed: this package is obsolete.
+www/hs-happstack-ixset||2012-06-03|Removed: this package is obsolete.
+www/hs-happstack-state||2012-06-03|Removed: this package is obsolete.
+www/hs-happstack-util||2012-06-03|Removed: this package is obsolete.
+www/hs-http-enumerator||2012-06-03|Removed: this package is obsolete.
