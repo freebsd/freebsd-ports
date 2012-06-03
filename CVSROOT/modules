@@ -12340,6 +12340,7 @@ p5-Env-PS1                      ports/devel/p5-Env-PS1
 p5-Env-Path                     ports/devel/p5-Env-Path
 p5-Errno                        ports/devel/p5-Errno
 p5-Error                        ports/lang/p5-Error
+p5-Error-Helper                 ports/devel/p5-Error-Helper
 p5-Eval-Closure                 ports/devel/p5-Eval-Closure
 p5-Eval-Context                 ports/devel/p5-Eval-Context
 p5-Eval-LineNumbers             ports/devel/p5-Eval-LineNumbers
@@ -12915,6 +12916,7 @@ p5-IO-Async                     ports/devel/p5-IO-Async
 p5-IO-Async-SSL                 ports/security/p5-IO-Async-SSL
 p5-IO-BufferedSelect            ports/devel/p5-IO-BufferedSelect
 p5-IO-CSVHeaderFile             ports/textproc/p5-IO-CSVHeaderFile
+p5-IO-Callback                  ports/devel/p5-IO-Callback
 p5-IO-Capture                   ports/devel/p5-IO-Capture
 p5-IO-CaptureOutput             ports/devel/p5-IO-CaptureOutput
 p5-IO-Compress                  ports/archivers/p5-IO-Compress
@@ -16859,6 +16861,7 @@ p5-env-ps1                      ports/devel/p5-Env-PS1
 p5-eperl                        ports/lang/p5-ePerl
 p5-errno                        ports/devel/p5-Errno
 p5-error                        ports/lang/p5-Error
+p5-error-helper                 ports/devel/p5-Error-Helper
 p5-ev                           ports/devel/p5-EV
 p5-eval-closure                 ports/devel/p5-Eval-Closure
 p5-eval-context                 ports/devel/p5-Eval-Context
@@ -17482,6 +17485,7 @@ p5-io-any                       ports/devel/p5-IO-Any
 p5-io-async                     ports/devel/p5-IO-Async
 p5-io-async-ssl                 ports/security/p5-IO-Async-SSL
 p5-io-bufferedselect            ports/devel/p5-IO-BufferedSelect
+p5-io-callback                  ports/devel/p5-IO-Callback
 p5-io-capture                   ports/devel/p5-IO-Capture
 p5-io-captureoutput             ports/devel/p5-IO-CaptureOutput
 p5-io-compress                  ports/archivers/p5-IO-Compress
@@ -27198,6 +27202,7 @@ unixbench                       ports/benchmarks/unixbench
 unixcw                          ports/comms/unixcw
 unixodbc                        ports/databases/unixODBC
 unixstat                        ports/math/unixstat
+unknown-horizons                ports/games/unknown-horizons
 unlzx                           ports/archivers/unlzx
 unmakeself                      ports/archivers/unmakeself
 unmass                          ports/archivers/unmass
