@@ -15,14 +15,16 @@ MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - development version
 
 BUILD_DEPENDS=  v4l_compat>=1.0.20120501:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS=    jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=    jpeg:${PORTSDIR}/graphics/jpeg
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig
 
-OPTIONS=	IPTVPATCH "Stops EIT scans on IPTV channels" On \
-		TTXPATCH "Support patches for teletext subtitle plugin" On \
-		DVBPATCH "DVB audio patch for some countries" Off \
-		STB0899_SIGNAL "STB0899 signal strength patch" Off
+OPTIONS_DEFINE=		IPTVPATCH TTXPATCH DVBPATCH STB0899_SIGNAL
+IPTVPATCH_DESC=		Stops EIT scans on IPTV channels
+TTXPATCH_DESC=		Support patches for teletext subtitle plugin
+DVBPATCH_DESC=		DVB audio patch for some countries
+STB0899_SIGNAL_DESC=	STB0899 signal strength patch
+OPTIONS_DEFAULT=	IPTVPATCH TTXPATCH
 
 DIST_SUBDIR=	vdr
 USE_BZIP2=	yes
@@ -62,20 +64,20 @@ PLIST_SUB+=	VDR_GROUP=${VDR_GROUP}
 .include <bsd.port.options.mk>
 
 EXTRA_PATCHES+=	${FILESDIR}/vdr-1.7.15-disable_ca_updates.patch
-.if defined(WITH_IPTVPATCH)
+.if ${PORT_OPTIONS:MIPTVPATCH}
 EXTRA_PATCHES+=	${FILESDIR}/vdr-1.7.15-disable_eitscan.patch
 .endif
-.if defined(WITH_DVBPATCH)
+.if ${PORT_OPTIONS:MDVBPATCH}
 EXTRA_PATCHES+=	${FILESDIR}/vdr-1.7.27-pat.diff
 .endif
 
-.if defined(WITH_TTXPATCH)
+.if ${PORT_OPTIONS:MTTXPATCH}
 PLIST_SUB+=	TTXPATCH=""
 .else
 PLIST_SUB+=	TTXPATCH="@comment "
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
@@ -89,11 +91,11 @@ post-patch:
 		${WRKSRC}/PLUGINS/src/*/Makefile
 	@[ ! -f ${WRKSRC}/s2apiwrapper.c ] || \
 		${REINPLACE_CMD} 's/__u32/uint32_t/' ${WRKSRC}/s2apiwrapper.c
-.if defined(WITH_TTXPATCH)
+.if ${PORT_OPTIONS:MTTXPATCH}
 	@${PATCH} -d ${WRKSRC} --quiet -p1 <${FILESDIR}/vdr-1.7.21-ttxtsubs.patch-1
 	@${PATCH} -d ${WRKSRC} --quiet -p1 <${FILESDIR}/vdr-1.7.21-ttxtsubs.patch-2
 .endif
-.if defined(WITH_STB0899_SIGNAL)
+.if ${PORT_OPTIONS:MSTB0899_SIGNAL}
 # This fixes signal strength display for e.g. pctv452e-based tuners.
 # (like TT S2-36?0.)
 	@${PATCH} -d ${WRKSRC} --quiet -p1 <${FILESDIR}/stb0899-signalstrength.patch
@@ -105,7 +107,7 @@ post-patch:
 	@${RM} -r ${WRKSRC}/PLUGINS/src/dvbhddevice
 
 post-install:
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} locale ${PREFIX}/share/)
 .endif
 	${MKDIR} ${CONFDIR}/plugins
@@ -121,7 +123,7 @@ post-install:
 		fi; \
 	done
 	${INSTALL_SCRIPT} ${WRKDIR}/vdr-waitdvb ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
 .endif
