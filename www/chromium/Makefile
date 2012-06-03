@@ -67,6 +67,7 @@ GYP_DEFINES+=	use_cups=1 \
 		use_system_ffmpeg=0 \
 		use_system_libevent=1 \
 		use_system_tcmalloc=1 \
+		linux_strip_binary=1 \
 		linux_use_tcmalloc=0 \
 		linux_use_heapchecker=0 \
 		disable_nacl=1 \
@@ -126,6 +127,7 @@ IGNORE=	conflicting options (CLANG and GCC46)
 
 .if defined(WITH_GCC46)
 USE_GCC?=	4.6+
+GYP_DEFINES+=	gcc_version=${CXX:S/g++//}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gcc
 .endif
 
