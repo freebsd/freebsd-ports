@@ -226,6 +226,7 @@ regex-compat_port=		textproc/hs-regex-compat
 regex-pcre-builtin_port=	textproc/hs-regex-pcre-builtin
 regex-posix_port=		textproc/hs-regex-posix
 resource-pool_port=		devel/hs-resource-pool
+resourcet_port=			devel/hs-resourcet
 RSA_port=			security/hs-RSA
 safe_port=			devel/hs-safe
 scgi_port=			www/hs-scgi
