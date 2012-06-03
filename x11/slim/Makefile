@@ -24,6 +24,7 @@ LICENSE=	GPLv2
 
 USE_CMAKE=	yes
 USE_XORG=	x11 xft xmu xorg-server xrender
+USE_GL=		glut
 USE_RC_SUBR=	slim.sh
 SUB_FILES=	pkg-message
 
