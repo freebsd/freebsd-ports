@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	urweb
-PORTVERSION=	20120512
+PORTVERSION=	20120519
 CATEGORIES=	lang www
 MASTER_SITES=	http://www.impredicative.com/ur/
 EXTRACT_SUFX=	.tgz
@@ -14,7 +14,6 @@ MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Ultimate host for embedded domain-specific languages
 
 LICENSE=	BSD
-LICENSE_FILE=	${WRKDIR}/${DISTNAME}/LICENSE
 
 BUILD_DEPENDS=	mlton:${PORTSDIR}/lang/mlton
 
