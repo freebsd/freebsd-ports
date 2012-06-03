@@ -6,19 +6,21 @@
 #
 
 PORTNAME=	yesod-form
-PORTVERSION=	0.3.4.2
+PORTVERSION=	1.0.0.4
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Form handling support for Yesod Web Framework
 
-LICENSE=	BSD
+LICENSE=	MIT
 
 USE_CABAL=	blaze-builder>=0.2.1.4 blaze-html>=0.4.1.3 data-default>=0.3 \
-		email-validate>=0.2.6 hamlet>=0.10 network>=2.2 \
-		persistent>=0.6 shakespeare-css>=0.10 shakespeare-js>=0.10 \
-		text>=0.9 transformers>=0.2.2 wai>=0.4 xss-sanitize>=0.3.0.1 \
-		yesod-core>=0.9 yesod-persistent>=0.2
+		email-validate>=0.2.6 hamlet>=1.0 network>=2.2 \
+		persistent>=0.9 shakespeare-css>=1.0 shakespeare-js>=1.0 \
+		text>=0.9 transformers>=0.2.2 wai>=1.2 xss-sanitize>=0.3.0.1 \
+		yesod-core>=1.0 yesod-persistent>=1.0
+
+CONFIGURE_ARGS+=	--flags="-blaze_html_0_5"
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
