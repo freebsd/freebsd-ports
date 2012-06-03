@@ -2,4 +2,4 @@ This library provides an easy way to define command line parsers. Most users
 will want to use the "System.Console.CmdArgs.Implicit" module, whose
 documentation contains an example.
 
-WWW: http://community.haskell.org/~ndm/cmdargs/
+WWW:	http://community.haskell.org/~ndm/cmdargs/
