@@ -1,3 +1,4 @@
-This package contains low-level bindigs to the zlib package.
+Provides necessary functions for producing a streaming interface. This
+is used for example by zlib-conduit and zlib-enum.
 
 WWW:	http://github.com/snoyberg/zlib-bindings
