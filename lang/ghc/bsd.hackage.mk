@@ -31,6 +31,7 @@ base16-bytestring_port=		devel/hs-base16-bytestring
 base64-bytestring_port=		devel/hs-base64-bytestring
 binary_port=			devel/hs-binary
 bio_port=			science/hs-bio
+bits-atomic_port=		devel/hs-bits-atomic
 blaze-builder_port=		devel/hs-blaze-builder
 blaze-builder-enumerator_port=	devel/hs-blaze-builder-enumerator
 blaze-html_port=		textproc/hs-blaze-html
