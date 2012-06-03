@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	network
-PORTVERSION=	2.3.0.5
+PORTVERSION=	2.3.0.13
 CATEGORIES=	net haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Networking-related facilities
+COMMENT=	Low-level networking interface
 
 LICENSE=	BSD
 

@@ -1,3 +1,3 @@
-Network related facilities.
+Low-level networking interface.
 
-WWW:	http://trac.haskell.org/network/
+WWW:	http://github.com/haskell/network
