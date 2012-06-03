@@ -1,0 +1,16 @@
+bin/image_to_j2k
+bin/j2k_dump
+bin/j2k_to_image
+include/openjpeg.h
+lib/libopenjpeg.so
+lib/libopenjpeg.so.1.5.0
+lib/libopenjpeg.so.2
+%%DOCSDIR%%/CHANGES
+%%DOCSDIR%%/LICENSE
+%%DATADIR%%/OpenJPEGConfig.cmake
+%%DATADIR%%/OpenJPEGTargets-%%CMAKE_BUILD_TYPE%%.cmake
+%%DATADIR%%/OpenJPEGTargets.cmake
+libdata/pkgconfig/libopenjpeg1.pc
+@dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%
+@dirrm include/openjpeg
