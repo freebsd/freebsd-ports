@@ -5,13 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	OpenGL
-PORTVERSION=	2.2.3.0
-PORTREVISION=	2
+PORTVERSION=	2.2.3.1
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	OpenGL bindings for Haskell programs
+COMMENT=	A binding for the OpenGL graphics system
 
 LICENSE=	BSD
 
