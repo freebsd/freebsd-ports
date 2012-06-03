@@ -14,10 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A manager for inverted index maps
 
-BUILD_DEPENDS=	${SITE_PERL}/Class/NamedParms.pm:${PORTSDIR}/devel/p5-Class-NamedParms \
-		${SITE_PERL}/Class/ParmList.pm:${PORTSDIR}/devel/p5-Class-ParmList \
-		${SITE_PERL}/Tie/DB_File/SplitHash.pm:${PORTSDIR}/devel/p5-Tie-DB_File-SplitHash \
-		${SITE_PERL}/Tie/FileLRUCache.pm:${PORTSDIR}/devel/p5-Tie-FileLRUCache
+BUILD_DEPENDS=	p5-Class-NamedParms>=0:${PORTSDIR}/devel/p5-Class-NamedParms \
+		p5-Class-ParmList>=0:${PORTSDIR}/devel/p5-Class-ParmList \
+		p5-Tie-DB_File-SplitHash>=0:${PORTSDIR}/devel/p5-Tie-DB_File-SplitHash \
+		p5-Tie-FileLRUCache>=0:${PORTSDIR}/devel/p5-Tie-FileLRUCache
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

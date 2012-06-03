@@ -16,8 +16,8 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Update Class::DBI data using CGI::Untaint
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI \
-		${SITE_PERL}/CGI/Untaint.pm:${PORTSDIR}/www/p5-CGI-Untaint
+RUN_DEPENDS=	p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI \
+		p5-CGI-Untaint>=0:${PORTSDIR}/www/p5-CGI-Untaint
 
 PERL_CONFIGURE=	yes
 

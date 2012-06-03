@@ -14,10 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Inflate HASH Object from Values in Database
 
-RUN_DEPENDS=	${SITE_PERL}/Devel/Messenger.pm:${PORTSDIR}/devel/p5-Devel-Messenger
+RUN_DEPENDS=	p5-Devel-Messenger>=0:${PORTSDIR}/devel/p5-Devel-Messenger
 BUILD_DEPENDS=	${RUN_DEPENDS}
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
-		${SITE_PERL}/Test/Debugger.pm:${PORTSDIR}/devel/p5-Test-Debugger
+BUILD_DEPENDS+=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-Test-Debugger>=0:${PORTSDIR}/devel/p5-Test-Debugger
 
 PERL_MODBUILD=	yes
 
