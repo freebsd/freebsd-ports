@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Modules that serialize data structures
 
-RUN_DEPENDS=	${SITE_PERL}/Crypt/CBC.pm:${PORTSDIR}/security/p5-Crypt-CBC \
-		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
+RUN_DEPENDS=	p5-Crypt-CBC>=0:${PORTSDIR}/security/p5-Crypt-CBC \
+		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 LICENSE_COMB=	dual

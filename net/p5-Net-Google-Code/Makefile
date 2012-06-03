@@ -14,23 +14,23 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Simple client library for Google code
 
-BUILD_DEPENDS=	${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp \
-		${SITE_PERL}/Test/MockModule.pm:${PORTSDIR}/devel/p5-Test-MockModule \
-		${SITE_PERL}/Test/Mock/LWP.pm:${PORTSDIR}/devel/p5-Test-Mock-LWP \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
-		${SITE_PERL}/Test/Mock/LWP.pm:${PORTSDIR}/devel/p5-Test-Mock-LWP \
-		${SITE_PERL}/Test/MockModule.pm:${PORTSDIR}/devel/p5-Test-MockModule \
-		${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp \
-		${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
-		${SITE_PERL}/Any/Moose.pm:${PORTSDIR}/devel/p5-Any-Moose \
-		${SITE_PERL}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic \
-		${SITE_PERL}/HTML/TreeBuilder.pm:${PORTSDIR}/www/p5-HTML-Tree \
-		${SITE_PERL}/JSON.pm:${PORTSDIR}/converters/p5-JSON \
-		${SITE_PERL}/MIME/Types.pm:${PORTSDIR}/mail/p5-MIME-Types \
-		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/WWW/Mechanize/Link.pm:${PORTSDIR}/www/p5-WWW-Mechanize \
-		${SITE_PERL}/XML/FeedPP.pm:${PORTSDIR}/textproc/p5-XML-FeedPP
+BUILD_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
+		p5-Test-MockModule>=0:${PORTSDIR}/devel/p5-Test-MockModule \
+		p5-Test-Mock-LWP>=0:${PORTSDIR}/devel/p5-Test-Mock-LWP \
+		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
+RUN_DEPENDS=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple \
+		p5-Test-Mock-LWP>=0:${PORTSDIR}/devel/p5-Test-Mock-LWP \
+		p5-Test-MockModule>=0:${PORTSDIR}/devel/p5-Test-MockModule \
+		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
+		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
+		p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
+		p5-File-MMagic>=0:${PORTSDIR}/devel/p5-File-MMagic \
+		p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
+		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
+		p5-MIME-Types>=0:${PORTSDIR}/mail/p5-MIME-Types \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize \
+		p5-XML-FeedPP>=0:${PORTSDIR}/textproc/p5-XML-FeedPP
 
 PERL_CONFIGURE=	yes
 
