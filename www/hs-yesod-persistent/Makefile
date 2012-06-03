@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	yesod-persistent
-PORTVERSION=	0.2.2
+PORTVERSION=	1.0.0.1
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Some helpers for using Persistent from Yesod
 
-LICENSE=	BSD
+LICENSE=	MIT
 
-USE_CABAL=	failure>=0.1 persistent>=0.6 persistent-template>=0.6 \
-		transformers>=0.2.2 yesod-core>=0.8
+USE_CABAL=	persistent>=0.9 persistent-template>=0.9 transformers>=0.2.2 \
+		yesod-core>=1.0
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
