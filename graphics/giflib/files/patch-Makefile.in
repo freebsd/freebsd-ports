@@ -1,0 +1,10 @@
+--- lib/Makefile.in.orig	2012-05-17 02:59:23.000000000 +0200
++++ lib/Makefile.in	2012-06-03 12:16:01.000000000 +0200
+@@ -234,6 +234,7 @@
+ 					gif_hash.h	\
+                     gifalloc.c  \
+                     gif_err.c   \
++                    quantize.c  \
+ 					gif_lib_private.h
+ 
+ libgif_la_LDFLAGS = -version-info @SHLIBVERSION@

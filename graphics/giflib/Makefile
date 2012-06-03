@@ -7,6 +7,7 @@
 
 PORTNAME=	giflib
 PORTVERSION=	4.2.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-4.x
 PKGNAMESUFFIX=	${NOX11SUFFIX}${PKGNAMESUFFIX2}
@@ -32,6 +33,9 @@ USE_XORG=	sm x11
 PLIST_SUB+=	X11=''
 CPPFLAGS+=	-I${LOCALBASE}/include
 .endif
+
+post_patch:
+	${CP} ${FILESDIR}/quantize.c ${WRKSRC}/lib/
 
 post-install:
 .if !defined(NOPORTDOCS)
