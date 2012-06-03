@@ -1,0 +1,6 @@
+Conduits are an approach to the streaming data problem.  It is meant as
+an alternative to enumerators/iterators, hoping to address the same
+issues with different trade-offs based on real-world experience with
+enumerators.
+
+WWW:	http://github.com/snoyberg/conduit
