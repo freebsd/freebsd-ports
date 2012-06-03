@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cryptocipher
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.4
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -15,8 +15,9 @@ COMMENT=	Symmetrical Block, Stream, and PubKey Ciphers
 LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
-USE_CABAL=	cereal crypto-api>=0.5 crypto-pubkey-types primitive tagged \
-		vector>=0.7
+
+USE_CABAL=	cereal cpu>=0.1 crypto-api>=0.5 crypto-pubkey-types>=0.1 \
+		primitive tagged vector>=0.7
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
