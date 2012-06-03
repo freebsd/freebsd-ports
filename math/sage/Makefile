@@ -30,6 +30,8 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 # precision.
 OPTIONS=	387	"Use 387 instead of SSE FPU"	Off
 
+.include <bsd.port.options.mk>
+
 PLIST_FILES=	bin/sage
 USE_FORTRAN=	yes
 USE_TK=		yes
@@ -50,8 +52,6 @@ run-autotools:
 do-configure:
 		@${DO_NADA}
 
-.include <bsd.port.pre.mk>
-
 # Optimization flags will be defined by the source
 CFLAGS:=	${CFLAGS:C/^-O.*$//}
 FFLAGS:=	${CFLAGS:C/^-O.*$//}
@@ -66,20 +66,6 @@ LATEST_LINK=	sage-math	# Conflicts with graphics/sage.
 
 # The following is needed for the lapack subpackage.
 MAKE_ARGS+=	ARCH="${AR}"
-
-.if ${OSVERSION} < 701106
-BROKEN=		POSIX semaphores are required, and the support only works in FreeBSD 7-STABLE and later
-.endif
-
-.if defined(WITH_387) && ${ARCH} == amd64
-FPM_FLAG=	-mfpmath=387
-.else
-FPM_FLAG=
-.endif
-
-.if !defined(DISABLE_MAKE_JOBS)
-MAKE_ENV+=	MAKE="make -j${MAKE_JOBS_NUMBER}"
-.endif
 
 post-patch:
 # Create the wrappers for the compiler invokations.
@@ -173,5 +159,21 @@ post-install:
 		${SED} -e 's#${PREFIX}/#@exec ${MKDIR} %D/#' >> ${TMPPLIST}
 	@${FIND} -s ${INSTALL_SAGE_DIR} -type d -depth | \
 		${SED} -e 's#${PREFIX}/#@dirrm #' >> ${TMPPLIST}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 701106
+BROKEN=		POSIX semaphores are required, and the support only works in FreeBSD 7-STABLE and later
+.endif
+
+.if defined(WITH_387) && ${ARCH} == amd64
+FPM_FLAG=	-mfpmath=387
+.else
+FPM_FLAG=
+.endif
+
+.if !defined(DISABLE_MAKE_JOBS)
+MAKE_ENV+=	MAKE="make -j${MAKE_JOBS_NUMBER}"
+.endif
 
 .include <bsd.port.post.mk>
