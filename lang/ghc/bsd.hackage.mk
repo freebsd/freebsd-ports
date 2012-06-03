@@ -181,6 +181,7 @@ MissingH_port=			devel/hs-MissingH
 mmap_port=			devel/hs-mmap
 monad-control_port=		devel/hs-monad-control
 monad-par_port=			devel/hs-monad-par
+monad-par-extras_port=		devel/hs-monad-par-extras
 MonadCatchIO-mtl_port=		devel/hs-MonadCatchIO-mtl
 MonadCatchIO-transformers_port=	devel/hs-MonadCatchIO-transformers
 mtl_port=			devel/hs-mtl
