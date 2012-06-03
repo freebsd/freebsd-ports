@@ -37,6 +37,7 @@ blaze-builder_port=		devel/hs-blaze-builder
 blaze-builder-conduit_port=	devel/hs-blaze-builder-conduit
 blaze-builder-enumerator_port=	devel/hs-blaze-builder-enumerator
 blaze-html_port=		textproc/hs-blaze-html
+blaze-markup_port=		textproc/hs-blaze-markup
 blaze-textual_port=		devel/hs-blaze-textual
 bloomfilter_port=		devel/hs-bloomfilter
 BNFC_port=			devel/hs-BNFC		# executable
