@@ -11,6 +11,7 @@
 
 # KEEP THE LIST ALPHABETICALLY SORTED!
 
+abstract-deque_port=		devel/hs-abstract-deque
 aeson_port=			converters/hs-aeson
 Agda_port=			math/hs-Agda		# executable
 Agda-executable_port=		math/hs-Agda-executable	# executable
