@@ -1,38 +1,29 @@
---- ./darcs.cabal.orig	2011-03-13 23:40:47.000000000 +0100
-+++ ./darcs.cabal	2011-12-10 15:26:09.000000000 +0100
-@@ -170,7 +170,7 @@
+--- ./darcs.cabal.orig	2012-05-14 13:10:13.000000000 +0200
++++ ./darcs.cabal	2012-05-15 15:33:40.000000000 +0200
+@@ -371,7 +371,7 @@
+                      haskeline    >= 0.6.3 && < 0.7,
+                      hashed-storage >= 0.5.6 && < 0.6,
+                      vector       >= 0.7,
+-                     tar          == 0.3.*
++                     tar          == 0.4.*
  
-     build-depends:   base          < 5,
-                      extensible-exceptions >= 0.1 && < 0.2,
--                     regex-compat >= 0.71 && < 0.94,
-+                     regex-compat >= 0.71,
-                      mtl          >= 1.0 && < 2.1,
-                      parsec       >= 2.0 && < 3.2,
-                      html         == 1.0.*,
-@@ -375,7 +375,7 @@
+     if !os(windows)
+       build-depends: unix >= 1.0 && < 2.6
+@@ -532,7 +532,7 @@
+                    haskeline    >= 0.6.3 && < 0.7,
+                    hashed-storage >= 0.5.6 && < 0.6,
+                    vector       >= 0.7,
+-                   tar          == 0.3.*
++                   tar          == 0.4.*
  
-     build-depends:   base          < 5,
-                      extensible-exceptions >= 0.1 && < 0.2,
--                     regex-compat >= 0.71 && < 0.94,
-+                     regex-compat >= 0.71,
-                      mtl          >= 1.0 && < 2.1,
-                      parsec       >= 2.0 && < 3.2,
-                      html         == 1.0.*,
-@@ -523,7 +523,7 @@
+   if !os(windows)
+     build-depends: unix >= 1.0 && < 2.6
+@@ -729,7 +729,7 @@
+                    array      >= 0.1 && < 0.5,
+                    hashed-storage >= 0.5.6 && < 0.6,
+                    vector       >= 0.7,
+-                   tar        == 0.3.*,
++                   tar        == 0.4.*,
+                    random     == 1.0.*
  
-   build-depends:   base          < 5,
-                    extensible-exceptions >= 0.1 && < 0.2,
--                   regex-compat >= 0.71 && < 0.94,
-+                   regex-compat >= 0.71,
-                    mtl          >= 1.0 && < 2.1,
-                    parsec       >= 2.0 && < 3.2,
-                    html         == 1.0.*,
-@@ -619,7 +619,7 @@
- 
-     build-depends:   base          < 5,
-                      extensible-exceptions >= 0.1 && < 0.2,
--                     regex-compat >= 0.71 && < 0.94,
-+                     regex-compat >= 0.71,
-                      mtl          >= 1.0 && < 2.1,
-                      parsec       >= 2.0 && < 3.2,
-                      html         == 1.0.*,
+     if flag(mmap) && !os(windows)

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	darcs
-PORTVERSION=	2.5.2
-PORTREVISION=	3
+PORTVERSION=	2.8.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -16,10 +15,10 @@ COMMENT=	A distributed, interactive, smart revision control system
 LICENSE=	GPLv2
 FILE_LICENSE=	COPYING
 
-USE_CABAL=	hashed-storage>=0.5.2 haskeline>=0.6.2.2 html>=1.0 HUnit>=1 \
-		mtl>=1 parsec>=2 QuickCheck>=2.1 regex-compat>=0.71 tar>=0.3 \
-		test-framework>=0.2.2 test-framework-hunit>=0.2.2 \
-		test-framework-quickcheck2>=0.2.2 text>=0.11 zlib>=0.5.1
+USE_CABAL=	hashed-storage>=0.5.6 haskeline>=0.6.3 html>=1.0 \
+		mtl>=1.0 parsec>=2.0 random>=1.0 regex-compat>=0.95.1 \
+		regex-posix>=0.95.1 tar>=0.4 text>=0.11.0.6 unix-compat>=0.1.2 \
+		vector>=0.7 zlib>=0.5.1.0
 
 EXECUTABLE=	darcs
 
@@ -30,15 +29,13 @@ OPTIONS=	CURL            "Use libcurl for HTTP support" on \
 		STATIC          "Build static binary" off \
 		TERMINFO        "Use the terminfo package" off \
 		THREADED        "Use threading and SMP support" on \
-		TYPE_WITNESSES  "Use GADT type witnesses" off \
 		COLOR           "Use ANSI color escapes" off \
-		MMAP            "Compile with mmap support" off \
-		TEST            "Compile unit tests" off
+		MMAP            "Compile with mmap support" off
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 .include <bsd.port.options.mk>
 
-CONFIGURE_ARGS+=	--flags="library"
+CONFIGURE_ARGS+=	--flags="library executable"
 
 .if defined(WITH_CURL)
 CONFIGURE_ARGS+=	--flags="curl"
@@ -49,7 +46,7 @@ CONFIGURE_ARGS+=	--flags="-curl"
 
 .if defined(WITH_HTTP)
 CONFIGURE_ARGS+=	--flags="http"
-USE_CABAL+=		HTTP>=3000.0 network>=2.2
+USE_CABAL+=		HTTP>=4000.0.8 network>=2.2
 .else
 CONFIGURE_ARGS+=	--flags="-http"
 .endif
@@ -77,13 +74,6 @@ CONFIGURE_ARGS+=	--flags="threaded"
 CONFIGURE_ARGS+=	--flags="-threaded"
 .endif
 
-.if defined(WITH_TYPE_WITNESSES)
-CONFIGURE_ARGS+=	--flags="type-witnesses"
-EXECUTABLE+=		witnesses
-.else
-CONFIGURE_ARGS+=	--flags="-type-witnesses"
-.endif
-
 .if defined(WITH_COLOR)
 CONFIGURE_ARGS+=	--flags="color"
 .else
@@ -95,13 +85,6 @@ CONFIGURE_ARGS+=	--flags="mmap"
 USE_CABAL+=		mmap>=0.5
 .else
 CONFIGURE_ARGS+=	--flags="-mmap"
-.endif
-
-.if defined(WITH_TEST)
-CONFIGURE_ARGS+=	--flags="test"
-EXECUTABLE+=		unit
-.else
-CONFIGURE_ARGS+=	--flags="-test"
 .endif
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
