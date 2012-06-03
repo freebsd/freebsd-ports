@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Archive files using LZSS and Huffman compression (.lzh files)
 
+CONFLICTS=	lha-ac-1*
+
 MAN1=		lha.1
 MANLANG=	ja
 PLIST_FILES=	bin/lha
