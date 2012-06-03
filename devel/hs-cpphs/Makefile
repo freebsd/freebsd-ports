@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	cpphs
-PORTVERSION=	1.13.2
+PORTVERSION=	1.13.3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A simplified re-implementation of cpp in Haskell
+COMMENT=	A liberalised re-implementation of cpp, the C pre-processor
 
 LICENSE=	LGPL21
 FILE_LICENSE=	LICENCE-LGPL
