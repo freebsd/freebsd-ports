@@ -1,8 +1,7 @@
-citeproc-hs is a library for automatically formatting bibliographic
-reference citations into a variety of styles using a macro language
-called Citation Style Language (CSL). More details on CSL can be found
-here: <http://xbiblio.sourceforge.net/>.
+citeproc-hs is a library for rendering bibliographic reference citations
+into a variety of styles using a macro language called Citation Style
+Language (CSL) [1].
 
-For the API documentation please see "Text.CSL".
+[1] http://xbiblio.sourceforge.net/
 
-WWW: http://code.haskell.org/citeproc-hs
+WWW:	http://gorgias.mine.nu/repos/citeproc-hs/
