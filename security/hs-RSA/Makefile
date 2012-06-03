@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	RSA
-PORTVERSION=	1.0.6.2
+PORTVERSION=	1.2.1.0
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -15,7 +15,7 @@ COMMENT=	Implementation of RSA, using the padding schemes of PKCS#1 v2.1
 LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
-USE_CABAL=	SHA
+USE_CABAL=	crypto-api>=0.10 crypto-pubkey-types monadcryptorandom SHA
 
 OPTIONS=	MD5	"Include support for using MD5"			on \
 		BINARY	"Use the binary package for serialization"	on
@@ -32,7 +32,6 @@ CONFIGURE_ARGS+=	--flags="-IncludeMD5"
 
 .if defined(WITH_BINARY)
 CONFIGURE_ARGS+=	--flags="UseBinary"
-USE_CABAL+=		binary
 .else
 CONFIGURE_ARGS+=	--flags="-UseBinary"
 .endif
