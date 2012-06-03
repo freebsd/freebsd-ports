@@ -15,6 +15,7 @@ COMMENT=	Logic-less templates for Python
 
 LICENSE=	MIT
 
+# Python3 ready
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 
