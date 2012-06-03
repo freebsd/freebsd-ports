@@ -26,16 +26,18 @@ FETCH_ARGS=	-pRr
 USE_GNOME=	desktopfileutils pygobject pygtk2
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
-USE_PYTHON=	2.6-2.7
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	yes
 
 MAN1=		gtg.1 gtg_new_task.1
 
-OPTIONS=	CHEETAH "Needed for export plugin to work" off
+OPTIONS_DEFINE=	CHEETAH
+CHEETAH_DESC=	Needed for export plugin to work
+OPTIONS_EXCLUDE=NLS DOCS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_CHEETAH)
+.if ${PORT_OPTIONS:MCHEETAH}
 RUN_DEPENDS+=	${LOCALBASE}/bin/cheetah:${PORTSDIR}/devel/py-cheetah
 .endif
 
@@ -48,4 +50,4 @@ post-patch:
 post-install:
 	@-update-desktop-database
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
