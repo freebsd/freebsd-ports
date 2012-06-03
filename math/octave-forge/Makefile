@@ -101,7 +101,7 @@ OPTIONS=	\
 	XRAYLIB "Install package: xraylib" On \
 	ZENITY "Install package: zenity" On
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_ACTUARIAL)
 RUN_DEPENDS+=	${TARBALLS_DIR}/actuarial.tar.gz:${PORTSDIR}/math/octave-forge-actuarial
@@ -361,4 +361,4 @@ do-build:
 do-install:
 	@${DO_NADA}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
