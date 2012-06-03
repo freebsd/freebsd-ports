@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	wai-extra
-PORTVERSION=	0.4.6
+PORTVERSION=	1.2.0.4
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Provides some basic WAI handlers and middleware
 
-LICENSE=	BSD
+LICENSE=	MIT
 
-USE_CABAL=	blaze-builder>=0.2.1.4 blaze-builder-enumerator>=0.2 \
-		case-insensitive>=0.2 data-default>=0.3 enumerator>=0.4.8 \
-		fast-logger>=0.0.1 http-types>=0.6 network>=2.2.1.5 text>=0.7 \
-		transformers>=0.2.2 wai>=0.4 zlib-bindings zlib-enum>=0.2.1
+USE_CABAL=	ansi-terminal blaze-builder>=0.2.1.4 blaze-builder-conduit>=0.4 \
+		case-insensitive>=0.2 conduit>=0.4 data-default>=0.3 \
+		fast-logger>=0.0.2 http-types>=0.6 network>=2.2.1.5 \
+		resourcet>=0.3 text>=0.7 transformers>=0.2.2 wai>=1.2 \
+		zlib-conduit>=0.4
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
