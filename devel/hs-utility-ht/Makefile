@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	utility-ht
-PORTVERSION=	0.0.7.1
+PORTVERSION=	0.0.8
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Various small Haskell helper functions for Lists, Maybes, Tuples, Functions
+COMMENT=	Various small helper functions
 
 LICENSE=	BSD
 
