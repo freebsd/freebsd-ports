@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	convertible
-PORTVERSION=	1.0.11.0
+PORTVERSION=	1.0.11.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Haskell type classes and instances for converting between types
+COMMENT=	Typeclasses and instances for converting between types
 
 LICENSE=	BSD
 
