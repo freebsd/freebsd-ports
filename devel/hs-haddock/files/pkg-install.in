@@ -1,6 +1,0 @@
-#!/bin/sh
-# $FreeBSD$
-
-[ "$2" = "POST-INSTALL" ] && /bin/ln -sf %%EXECUTABLE%% %%HADDOCK%%
-
-exit 0

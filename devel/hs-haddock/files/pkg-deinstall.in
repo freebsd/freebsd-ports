@@ -1,6 +1,0 @@
-#!/bin/sh
-# $FreeBSD$
-
-[ "$2" = "POST-DEINSTALL" ] && /bin/ln -sf %%GHC_HADDOCK_CMD%% %%HADDOCK%%
-
-exit 0
