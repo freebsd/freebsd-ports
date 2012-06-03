@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	FreeBSD-Pkgs-FindUpdates
-PORTVERSION=	0.2.1
-PORTREVISION=	2
+PORTVERSION=	0.3.0
 CATEGORIES=	ports-mgmt sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:VVELOX
@@ -16,10 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Finds updates for FreeBSD pkgs by checking the ports index
 
-RUN_DEPENDS=	${SITE_PERL}/FreeBSD/Ports/INDEXhash.pm:${PORTSDIR}/ports-mgmt/p5-FreeBSD-Ports-INDEXhash \
-		${SITE_PERL}/FreeBSD/Pkgs.pm:${PORTSDIR}/ports-mgmt/p5-FreeBSD-Pkgs \
-		${SITE_PERL}/Sort/Versions.pm:${PORTSDIR}/devel/p5-Sort-Versions \
-		${SITE_PERL}/FreeBSD/Ports.pm:${PORTSDIR}/ports-mgmt/p5-FreeBSD-Ports
+BUILD_DEPENDS=	p5-Error-Helper>=0:${PORTSDIR}/devel/p5-Error-Helper \
+		p5-FreeBSD-Pkgs>=0:${PORTSDIR}/ports-mgmt/p5-FreeBSD-Pkgs \
+		p5-FreeBSD-Ports-INDEXhash>=0:${PORTSDIR}/ports-mgmt/p5-FreeBSD-Ports-INDEXhash \
+		p5-Sort-Versions>=0:${PORTSDIR}/devel/p5-Sort-Versions
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
