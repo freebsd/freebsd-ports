@@ -208,6 +208,7 @@ persistent-template_port=	databases/hs-persistent-template
 polyparse_port=			textproc/hs-polyparse
 pointed_port=			math/hs-pointed
 pool_port=			devel/hs-pool
+pool-conduit_port=		devel/hs-pool-conduit
 porte_port=			ports-mgmt/hs-porte	# executable
 primitive_port=			devel/hs-primitive
 probability_port=		math/hs-probability
