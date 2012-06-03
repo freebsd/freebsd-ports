@@ -376,6 +376,7 @@
     SUBDIR += hoz
     SUBDIR += hpacucli
     SUBDIR += hploscripts
+    SUBDIR += hs-cpu
     SUBDIR += htop
     SUBDIR += httplog
     SUBDIR += hwstat

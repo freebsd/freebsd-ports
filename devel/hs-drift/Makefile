@@ -6,7 +6,7 @@
 
 PORTNAME=	drift
 PORTVERSION=	2.2.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://repetae.net/computer/haskell/DrIFT/drop/
 PKGNAMEPREFIX=	hs-
@@ -21,7 +21,8 @@ OPTIONS=	NHC98 "Build with nhc98" off \
 .include <bsd.port.pre.mk>
 
 .if !defined(WITH_NHC98)
-BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
+BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
+		hs-random>=0:${PORTSDIR}/devel/hs-random
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 .else
 BUILD_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98
@@ -46,6 +47,20 @@ pre-everything::
 	@${ECHO} " DrIFT will be build with ghc"
 	@${ECHO} " Define WITH_NHC98 to build with nhc98."
 	@${ECHO} ""
+
+.else
+post-patch:
+	@${REINPLACE_CMD} 's|import List|import Data.List| ; \
+		s|import Char|import Data.Char| ; \
+		s|import Monad|import Control.Monad| ; \
+		s|import IO|import System.IO.Error| ; \
+		s|import Directory|import System.Directory| ; \
+		s|import Maybe|import Data.Maybe| ; \
+		s|import Array|import Data.Array| ; \
+		s|import Time|import System.Time| ; \
+		s|import Random|import System.Random| ; \
+		s|import System[^\.]|import System.Exit|' \
+		`${FIND} ${WRKSRC} -name '*.*hs'`
 .endif
 
 .include <bsd.port.post.mk>

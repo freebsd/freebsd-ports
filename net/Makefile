@@ -226,9 +226,11 @@
     SUBDIR += hping-devel
     SUBDIR += hs-hostname
     SUBDIR += hs-network
+    SUBDIR += hs-network-conduit
     SUBDIR += hs-pcap
     SUBDIR += hs-sendfile
     SUBDIR += hs-simple-sendfile
+    SUBDIR += hs-socks
     SUBDIR += htpdate
     SUBDIR += http_ping
     SUBDIR += httping

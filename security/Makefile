@@ -198,6 +198,8 @@
     SUBDIR += hs-cryptohash
     SUBDIR += hs-digest
     SUBDIR += hs-entropy
+    SUBDIR += hs-monadcryptorandom
+    SUBDIR += hs-pem
     SUBDIR += hs-pureMD5
     SUBDIR += hs-pwstore-fast
     SUBDIR += hs-skein

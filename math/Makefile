@@ -154,6 +154,7 @@
     SUBDIR += hs-data-lens-template
     SUBDIR += hs-distributive
     SUBDIR += hs-erf
+    SUBDIR += hs-ieee754
     SUBDIR += hs-math-functions
     SUBDIR += hs-mwc-random
     SUBDIR += hs-pointed

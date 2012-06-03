@@ -1,10 +1,23 @@
---- CheckRDF.hs.orig	2007-03-02 19:13:07.000000000 +0100
-+++ CheckRDF.hs	2009-01-26 18:28:22.000000000 +0100
-@@ -24,9 +24,12 @@
- import Directory ( doesFileExist, getPermissions, readable, removeFile )
- import List ( partition, intersperse, groupBy, sortBy)
- import Time (getClockTime,toCalendarTime,calendarTimeToString)
-+import Char (toLower)
+--- ./CheckRDF.hs.orig	2007-03-02 19:13:07.000000000 +0100
++++ ./CheckRDF.hs	2012-05-13 13:10:24.395459549 +0200
+@@ -18,15 +18,20 @@
+ 
+ import RDFConfig
+ 
+-import System (getArgs, exitWith, ExitCode(..),system,getEnv)
+-import IO ( catch, openFile, IOMode(..), hIsEOF, hGetLine
++import System.Environment (getArgs, getEnv)
++import System.Process (system)
++import System.Exit (exitWith, ExitCode(..))
++import System.IO ( openFile, IOMode(..), hIsEOF, hGetLine
+           , hPutStr, hClose, hFlush, stdin, Handle, hPutStrLn, hGetContents)
+-import Directory ( doesFileExist, getPermissions, readable, removeFile )
+-import List ( partition, intersperse, groupBy, sortBy)
+-import Time (getClockTime,toCalendarTime,calendarTimeToString)
++import System.Directory ( doesFileExist, getPermissions, readable, removeFile )
++import Data.List ( partition, intersperse, groupBy, sortBy)
++import System.Time (getClockTime,toCalendarTime,calendarTimeToString)
++import Data.Char (toLower)
  
  import Text.XML.HaXml.Types
  import Text.XML.HaXml.Parse         (xmlParse)
@@ -13,7 +26,7 @@
  import Text.XML.HaXml.Xtract.Parse  (parseXtract)
  import Text.PrettyPrint.HughesPJ    (render, vcat)
  import Text.XML.HaXml.Pretty        (content)
-@@ -52,15 +55,15 @@
+@@ -52,15 +57,15 @@
  mkNewRDF :: RDFConfig -> FilePath -> String -> RDF
  mkNewRDF config filename contents =
       let elem = getElem $ xmlParse filename contents
@@ -35,7 +48,7 @@
                       )
                       $ map show [0..len1-1])
             else []
-@@ -69,7 +72,7 @@
+@@ -69,7 +74,7 @@
               ,clink  = cl
               ,citems = rdfitems
               }

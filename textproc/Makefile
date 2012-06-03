@@ -239,8 +239,10 @@
     SUBDIR += hs-HStringTemplate
     SUBDIR += hs-HaXml
     SUBDIR += hs-attoparsec
+    SUBDIR += hs-attoparsec-conduit
     SUBDIR += hs-attoparsec-enumerator
     SUBDIR += hs-blaze-html
+    SUBDIR += hs-blaze-markup
     SUBDIR += hs-bytestring-csv
     SUBDIR += hs-case-insensitive
     SUBDIR += hs-citeproc-hs
@@ -268,9 +270,8 @@
     SUBDIR += hs-tagsoup
     SUBDIR += hs-texmath
     SUBDIR += hs-xhtml
-    SUBDIR += hs-xhtml-docs
     SUBDIR += hs-xml
-    SUBDIR += hs-xml-enumerator
+    SUBDIR += hs-xml-conduit
     SUBDIR += hs-xml-types
     SUBDIR += hs-xmlhtml
     SUBDIR += hs-yaml

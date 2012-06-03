@@ -7,7 +7,7 @@
 
 PORTNAME=	BNFC
 PORTVERSION=	2.4.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	kaiw27@gmail.com
@@ -20,6 +20,8 @@ USE_CABAL=	mtl
 
 STANDALONE=	yes
 EXECUTABLE=	bnfc
+
+HASKELL98=	yes
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

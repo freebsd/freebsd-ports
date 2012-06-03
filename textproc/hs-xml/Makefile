@@ -7,6 +7,7 @@
 
 PORTNAME=	xml
 PORTVERSION=	1.3.12
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

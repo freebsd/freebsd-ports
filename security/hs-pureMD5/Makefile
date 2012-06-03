@@ -7,6 +7,7 @@
 
 PORTNAME=	pureMD5
 PORTVERSION=	2.1.0.3
+PORTREVISION=	1
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -14,7 +15,7 @@ COMMENT=	Haskell implementation of MD5 algorithm
 
 LICENSE=	BSD
 
-USE_CABAL=	binary>=0.4.0 cereal>=0.2 crypto-api tagged
+USE_CABAL=	cereal>=0.2 crypto-api tagged
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

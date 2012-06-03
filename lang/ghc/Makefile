@@ -5,12 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	ghc
-PORTVERSION=	7.0.4
+PORTVERSION=	7.4.1
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
-		${MASTER_SITE_LOCAL:S/$/:boot/} \
-		http://www.autistici.org/jacula/FreeBSD/:boot \
-#		http://haskell.org/ghc/dist/${PORTVERSION}/freebsd/:boot
+		${MASTER_SITE_LOCAL:S/$/:boot/}
 MASTER_SITE_SUBDIR=	pgj/:boot
 DISTFILES=	ghc-${PORTVERSION}-src${EXTRACT_SUFX}:source
 
@@ -20,14 +18,13 @@ COMMENT=	A Compiler for the functional language Haskell
 ONLY_FOR_ARCHS=	i386 amd64
 
 GHC_VERSION=	${PORTVERSION}
-BOOT_GHC_VERSION=	6.10.4
-HSCOLOUR_VERSION=	1.16
-GHCPATH_VERSION=	0.1.0.6
+BOOT_GHC_VERSION=	7.4.1
+HSCOLOUR_VERSION=	1.19
 
 DATADIR=	${PREFIX}/share/ghc-${GHC_VERSION}
 EXAMPLESDIR=	${PREFIX}/share/examples/ghc-${GHC_VERSION}
 
-CONFLICTS=	ghc-6.8.* ghc-6.10.* ghc-6.12.*
+CONFLICTS=	ghc-6.8.* ghc-6.10.* ghc-6.12.* ghc-7.0.* ghc-7.2.*
 
 USE_BZIP2=	yes
 LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
@@ -105,7 +102,7 @@ BOOT_HSC2HS=	${BOOT_DIR}/bin/hsc2hs
 HACKAGE_SITE?=		http://hackage.haskell.org/
 HACKAGE_ARCH?=		packages/archive/
 
-CONFIGURE_ARGS_BOOT=	--prefix=${BOOT_DIR})
+CONFIGURE_ARGS_BOOT=	--prefix=${BOOT_DIR} CC=${CC}
 CONFIGURE_ARGS+=	--with-ghc=${BOOT_GHC} --with-gcc=${CC} \
 			--with-gmp-includes=${LOCALBASE}/include \
 			--with-gmp-libraries=${LOCALBASE}/lib \
@@ -128,12 +125,10 @@ MAKE_ENV+=	TMPDIR=${TMPDIR}
 # you could view the output of: ${BOOT_GHC} describe hscolour
 .if defined(WITH_DOCS)
 
-MASTER_SITES+=	${HACKAGE_SITE}${HACKAGE_ARCH}hscolour/${HSCOLOUR_VERSION}/:docs \
-		${HACKAGE_SITE}${HACKAGE_ARCH}ghc-paths/${GHCPATH_VERSION}/:docs
-DISTFILES+=	hscolour-${HSCOLOUR_VERSION}.tar.gz:docs \
-		ghc-paths-${GHCPATH_VERSION}.tar.gz:docs
+MASTER_SITES+=	${HACKAGE_SITE}${HACKAGE_ARCH}hscolour/${HSCOLOUR_VERSION}/:docs
+DISTFILES+=	hscolour-${HSCOLOUR_VERSION}.tar.gz:docs
 
-EXTRACT_ONLY=	${_DISTFILES:C/ghc-paths.*$//g:C/hscolour.*$//g}
+EXTRACT_ONLY=	${_DISTFILES:C/hscolour.*$//g}
 
 MAN1=		ghc.1
 
@@ -179,7 +174,6 @@ post-extract:
 	@${ECHO} >> ${WRKSRC}/mk/build.mk "EXTRA_CABAL_CONFIGURE_FLAGS += --extra-lib-dirs=${LOCALBASE}/lib"
 #	@${ECHO} >> ${WRKSRC}/mk/build.mk "BIN_DIST_NAME = ghc-\$$(ProjectVersion)-boot"
 #	@${ECHO} >> ${WRKSRC}/mk/build.mk "BIN_DIST_TAR  = ghc-\$$(ProjectVersion)-amd64-ash0-freebsd8-boot.tar"
-	-@${RM} -f ${BOOT_DIR}/mk/build.mk
 
 post-install-script:
 	@${FIND} -ds ${GHC_LIBDIR} -type f -print | ${SED} -E -e \
@@ -227,44 +221,24 @@ post-patch:
 
 pre-configure:
 	@${MKDIR} ${TMPDIR}
-	@(cd ${BOOT_DIR} && ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS_BOOT}
+	@(cd ${BOOT_DIR} && ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS_BOOT})
 	@(cd ${BOOT_DIR} && PACKAGES='' ${GMAKE} install)
-#	@(${BOOT_GHC-PKG} unregister haddock-${BOOT_HADDOCK_VERSION})
-#	@(cd ${BOOT_DIR} && ${RM} -rf utils/haddock && ${RM} -f bin/haddock \
-#			 && ${RM} -f ${GHC_LIBDIR_REL}/haddock && ${RM} -rf ${GHC_LIBDIR_REL}/haddock-${BOOT_HADDOCK_VERSION})
 
 # Defining WITH_DOCS:
-# Defining "SLAVE" in devel/hs-ghc-paths devel/hs-haddock and
-# print/hs-hscolour flips the building process
+# Defining "SLAVE" in devel/hs-haddock and print/hs-hscolour flips the building process
 # functionally to this port.
 .if defined(WITH_DOCS)
 	@${ECHO_MSG} -e "\a"
 	@${ECHO_MSG} "======================================================================"
-	@${ECHO_MSG} "  WARNING: Now (Ghc-Paths, Haddock and) HsColour will be  "
-	@${ECHO_MSG} "           built, the respective ports won't be installed, but an     "
-	@${ECHO_MSG} "           in-place installation and registration of both takes place."
+	@${ECHO_MSG} "  WARNING: Now HsColour will be built, the respective port will not   "
+	@${ECHO_MSG} "           be installed, but an in-place installation and             "
+	@${ECHO_MSG} "           registration of both takes place.                          "
 	@${ECHO_MSG} "======================================================================"
 	@${ECHO_MSG} ""
 	@sleep 3
 
 	@${MKDIR} ${SLAVES_PREFIX}
 	@${MKDIR} ${SLAVES_WRKDIRPREFIX}
-
-	@(cd ${SLAVES_WRKDIRPREFIX} && \
-		${TAR} xvf ${DISTDIR}/ghc-paths-${GHCPATH_VERSION}.tar.gz && \
-		cd ghc-paths-${GHCPATH_VERSION} && \
-		${SLAVE_CMD} ghc --make -o Setup Setup.hs -package Cabal && \
-		${SLAVE_CMD} ./Setup configure --ghc --prefix=${SLAVES_PREFIX} && \
-		${SLAVE_CMD} ./Setup build && \
-		${SLAVE_CMD} ./Setup install)
-
-	# @(cd ${SLAVES_WRKDIRPREFIX} && \
-	# 	${TAR} xvf ${DISTDIR}/haddock-${HADDOCK_VERSION}.tar.gz && \
-	# 	cd haddock-${HADDOCK_VERSION} && \
-	# 	${SLAVE_CMD} ghc --make -o Setup Setup.lhs -package Cabal && \
-	# 	${SLAVE_CMD} ./Setup configure --ghc --prefix=${SLAVES_PREFIX} && \
-	# 	${SLAVE_CMD} ./Setup build && \
-	# 	${SLAVE_CMD} ./Setup install)
 
 	@(cd ${SLAVES_WRKDIRPREFIX} && \
 		${TAR} xvf ${DISTDIR}/hscolour-${HSCOLOUR_VERSION}.tar.gz && \
