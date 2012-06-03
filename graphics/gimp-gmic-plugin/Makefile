@@ -25,7 +25,9 @@ LIB_DEPENDS=	GraphicsMagick++.9:${PORTSDIR}/graphics/GraphicsMagick13 \
 		fftw3:${PORTSDIR}/math/fftw3 \
 		gimp-2.0:${PORTSDIR}/graphics/gimp-app
 
-OPTIONS=	BASH "Install programmable completions for Bash" off
+OPTIONS_DEFINE=	BASH
+BASH_DESC=	Install programmable completions for Bash
+OPTIONS_EXCLUDE=NLS DOCS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
@@ -46,7 +48,7 @@ MANCOMPRESSED=	yes
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_BASH)
+.if ${PORT_OPTIONS:MBASH}
 RUN_DEPENDS+=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 PLIST_SUB+=	BASH=""
 .else
@@ -63,7 +65,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gmic_gimp ${PREFIX}/${PLUGIN_DIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/gmic ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/../man/gmic.1.gz ${MAN1PREFIX}/man/man1
-.if defined(WITH_BASH)
+.if ${PORT_OPTIONS:MBASH}
 	${INSTALL_SCRIPT} ${WRKSRC}/gmic_bashcompletion.sh \
 		${PREFIX}/etc/bash_completion.d/gmic_bashcompletion.sh
 .endif
