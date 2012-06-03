@@ -1,5 +1,5 @@
 %%ATFUNCS%%bin/ad
-bin/add_netatalk_printer
+%%APPLETALK%%bin/add_netatalk_printer
 bin/adv1tov2
 %%APPLETALK%%bin/aecho
 bin/afpldaptest
@@ -33,7 +33,7 @@ bin/netatalk-config
 %%APPLETALK%%bin/pap
 %%APPLETALK%%bin/papstatus
 %%APPLETALK%%bin/psorder
-bin/showppd
+%%APPLETALK%%bin/showppd
 bin/uniconv
 @unexec if cmp -s %D/etc/AppleVolumes.default %D/etc/AppleVolumes.default.dist; then rm -f %D/etc/AppleVolumes.default; fi
 etc/AppleVolumes.default.dist
@@ -129,29 +129,29 @@ include/netatalk/endian.h
 include/netatalk/phase2.h
 lib/libatalk.a
 lib/libatalk.la
-libexec/etc2ps.sh
-libexec/ifmpap
-libexec/ifmpaprev
-libexec/ifpap
-libexec/ifpaprev
-libexec/ifwmpap
-libexec/ifwmpaprev
-libexec/ifwpap
-libexec/ifwpaprev
-libexec/ofmpap
-libexec/ofpap
-libexec/ofwmpap
-libexec/ofwpap
-libexec/psa
+%%APPLETALK%%libexec/etc2ps.sh
+%%APPLETALK%%libexec/ifmpap
+%%APPLETALK%%libexec/ifmpaprev
+%%APPLETALK%%libexec/ifpap
+%%APPLETALK%%libexec/ifpaprev
+%%APPLETALK%%libexec/ifwmpap
+%%APPLETALK%%libexec/ifwmpaprev
+%%APPLETALK%%libexec/ifwpap
+%%APPLETALK%%libexec/ifwpaprev
+%%APPLETALK%%libexec/ofmpap
+%%APPLETALK%%libexec/ofpap
+%%APPLETALK%%libexec/ofwmpap
+%%APPLETALK%%libexec/ofwpap
+%%APPLETALK%%libexec/psa
 %%APPLETALK%%libexec/psf
-libexec/tfmpap
-libexec/tfmpaprev
-libexec/tfpap
-libexec/tfpaprev
-libexec/tfwmpap
-libexec/tfwmpaprev
-libexec/tfwpap
-libexec/tfwpaprev
+%%APPLETALK%%libexec/tfmpap
+%%APPLETALK%%libexec/tfmpaprev
+%%APPLETALK%%libexec/tfpap
+%%APPLETALK%%libexec/tfpaprev
+%%APPLETALK%%libexec/tfwmpap
+%%APPLETALK%%libexec/tfwmpaprev
+%%APPLETALK%%libexec/tfwpap
+%%APPLETALK%%libexec/tfwpaprev
 sbin/afpd
 %%APPLETALK%%sbin/atalkd
 sbin/cnid_dbd
@@ -159,8 +159,8 @@ sbin/cnid_metad
 %%APPLETALK%%sbin/papd
 %%TIMELORD%%sbin/timelord
 share/aclocal/netatalk.m4
-%%DATADIR%%/pagecount.ps
-@dirrm share/netatalk
+%%APPLETALK%%%%DATADIR%%/pagecount.ps
+%%APPLETALK%%@dirrm share/netatalk
 @dirrm include/netatalk
 @dirrm include/atalk
 @dirrm libexec/netatalk-uams
