@@ -1,2 +1,4 @@
-SHA256 (slim-1.3.2.tar.gz) = f1560125005f253b9b88220598fed7a9575ef405716862c6ca3fcc72dbd482b8
-SIZE (slim-1.3.2.tar.gz) = 220592
+SHA256 (slim-1.3.3.tar.gz) = c15248d99c36cb45c66298b0797246d43cd851765536746a431a1533e48dbbb9
+SIZE (slim-1.3.3.tar.gz) = 226797
+SHA256 (slim-1.3.3.tar.gz.release.asc) = 14d2d9c1048ca624c8521bb815eb9bbd2802d03eea72069a5afd861ac970d430
+SIZE (slim-1.3.3.tar.gz.release.asc) = 1145
