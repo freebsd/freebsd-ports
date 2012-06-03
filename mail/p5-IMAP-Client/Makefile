@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Advanced manipulation of IMAP services w/ referral support
 
-RUN_DEPENDS=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/URI/imap.pm:${PORTSDIR}/mail/p5-URI-imap
+RUN_DEPENDS=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-URI-imap>=0:${PORTSDIR}/mail/p5-URI-imap
 
 PERL_CONFIGURE=	yes
 
