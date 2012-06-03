@@ -15,9 +15,9 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Perl extension for the DBus message system
 
 LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus
-RUN_DEPENDS=	${SITE_PERL}/XML/Twig.pm:${PORTSDIR}/textproc/p5-XML-Twig \
-		${SITE_PERL}/XML/Grove.pm:${PORTSDIR}/textproc/p5-XML-Grove \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+RUN_DEPENDS=	p5-XML-Twig>=0:${PORTSDIR}/textproc/p5-XML-Twig \
+		p5-XML-Grove>=0:${PORTSDIR}/textproc/p5-XML-Grove \
+		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
 
 USE_GNOME=	pkgconfig
 PERL_CONFIGURE=	yes
