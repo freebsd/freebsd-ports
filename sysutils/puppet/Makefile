@@ -7,6 +7,7 @@
 
 PORTNAME=	puppet
 PORTVERSION=	2.7.14
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 
@@ -22,15 +23,9 @@ USE_RUBY_FEATURES=	iconv
 USE_RC_SUBR=	puppet puppetmaster
 PORTDOCS=	CHANGELOG LICENSE README.md
 PORTEXAMPLES=	*
-PUPPET_USER:=	puppet
-PUPPET_GROUP:=	${PUPPET_USER}
-PUPPET_VARDIR:=	/var/${PORTNAME}
-PUPPET_RUNDIR:=	/var/run/${PORTNAME}
-SUB_FILES+=	pkg-install pkg-message pkg-deinstall
-SUB_LIST+=	PUPPET_USER="${PUPPET_USER}" \
-		PUPPET_GROUP="${PUPPET_GROUP}" \
-		PUPPET_VARDIR="${PUPPET_VARDIR}" \
-		PUPPET_RUNDIR="${PUPPET_RUNDIR}"
+USERS=		puppet
+GROUPS=		puppet
+SUB_FILES+=	pkg-message
 
 MANCOMPRESSED=	yes
 MAN5=	puppet.conf.5
@@ -77,26 +72,25 @@ post-patch:
 		${WRKSRC}/lib/puppet/reference/configuration.rb \
 		${WRKSRC}/lib/puppet/defaults.rb \
 		${WRKSRC}/lib/puppet/util/run_mode.rb
-	@${REINPLACE_CMD} -e "s|/var/lib/puppet|${PUPPET_VARDIR}|" \
+	@${REINPLACE_CMD} -e "s|/var/lib/puppet|/var/puppet|" \
 		${WRKSRC}/lib/puppet/reference/configuration.rb \
 		${WRKSRC}/lib/puppet/util/run_mode.rb
-	@${REINPLACE_CMD} -e "s|\$$vardir/run|${PUPPET_RUNDIR}|" \
+	@${REINPLACE_CMD} -e "s|\$$vardir/run|/var/run/puppet|" \
 		${WRKSRC}/lib/puppet/util/run_mode.rb
-	@${REINPLACE_CMD} -e "s|\$$confdir/ssl|${PUPPET_VARDIR}/ssl|" \
+	@${REINPLACE_CMD} -e "s|\$$confdir/ssl|/var/run/puppet/ssl|" \
 		${WRKSRC}/lib/puppet/defaults.rb
-
-pre-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
 	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} ${RUBY} ${WRKSRC}/install.rb --no-configs
 
 post-install:
 	${INSTALL} -d ${ETCDIR}
+	${INSTALL} -m 0755 -o puppet -g puppet -d /var/puppet
+	${INSTALL} -m 0755 -o puppet -g puppet -d /var/run/puppet
 	${INSTALL} -m 0644 ${WRKSRC}/conf/auth.conf ${ETCDIR}/auth.conf-dist
 	${RUBY} -I ${RUBY_SITELIBDIR} ${PREFIX}/bin/puppet --genconfig \
 		--confdir=${ETCDIR} \
-		--rundir=${PUPPET_RUNDIR} | \
+		--rundir=/var/run/puppet | \
 		${SED} -e 's/genconfig = true/# genconfig = false/' | \
 		${SED} -e 's/factdest =/# factdest =/' \
 		> ${ETCDIR}/puppet.conf-dist
@@ -108,7 +102,6 @@ post-install:
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${RUBY_SITELIBDIR}/${PORTNAME} -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if !defined(NOPORTDOCS)
 	${INSTALL} -d ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}

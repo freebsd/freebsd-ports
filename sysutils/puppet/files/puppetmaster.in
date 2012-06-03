@@ -19,7 +19,7 @@ rcvar=puppetmaster_enable
 load_rc_config "${name}"
 
 : ${puppetmaster_enable="NO"}
-: ${puppetmaster_rundir="%%PUPPET_RUNDIR%%"}
+: ${puppetmaster_rundir="/var/run/puppet"}
 : ${puppetmaster_flags="--rundir=${puppetmaster_rundir}"}
 
 command_interpreter="%%PREFIX%%/bin/ruby18"
