@@ -5,12 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	zlib
-PORTVERSION=	0.5.3.1
-PORTREVISION=	2
+PORTVERSION=	0.5.3.3
 CATEGORIES=	archivers haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Pure Haskell interface to the C zlib library
+COMMENT=	Compression and decompression in the gzip and zlib formats
 
 LICENSE=	BSD
 
