@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.kipple.pe.kr/win/unalz/ \
 		http://www.c-s.li/ports/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extracts AlZip archives
 
 LICENSE_FILE=	${WRKSRC}/readme.txt

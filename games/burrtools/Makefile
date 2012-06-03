@@ -13,7 +13,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A puzzle solver
 
 LICENSE=	GPLv3

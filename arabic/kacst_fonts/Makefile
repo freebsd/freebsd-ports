@@ -12,7 +12,7 @@ MASTER_SITES=	SF/arabeyes/${PORTNAME} \
 		http://www.c-s.li/ports/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Truetype Arabic fonts created by KACST
 
 LICENSE=	GPLv2
