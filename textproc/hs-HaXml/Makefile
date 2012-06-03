@@ -6,6 +6,7 @@
 
 PORTNAME=	HaXml
 PORTVERSION=	1.22.5
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -15,7 +16,7 @@ LICENSE=	LGPL21
 FILE_LICENSE=	COPYRIGHT
 
 CABAL_SETUP=	Setup.hs
-USE_CABAL=	polyparse>=1.5
+USE_CABAL=	polyparse>=1.5 random
 
 EXECUTABLE=	Canonicalise CanonicaliseLazy \
 		DtdToHaskell MkOneOf Validate \

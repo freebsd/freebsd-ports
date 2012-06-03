@@ -6,7 +6,7 @@
 
 PORTNAME=	hdoc
 PORTVERSION=	0.8.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://staff.fmi.uni-passau.de/~groessli/hdoc/
 PKGNAMEPREFIX=	hs-
@@ -38,5 +38,17 @@ post-install:
 	${MKDIR} ${DOCSDIR} && \
 	  cd ${WRKSRC}/docs && ${INSTALL_DATA} hdoc.pdf ${DOCSDIR}
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} 's|import List|import Data.List| ; \
+		s|import Char|import Data.Char| ; \
+		s|import Ratio|import Data.Ratio| ; \
+		s|import Monad|import Control.Monad| ; \
+		s|import IO|import System.IO.Error| ; \
+		s|import Directory|import System.Directory| ; \
+		s|import Maybe|import Data.Maybe| ; \
+		s|import Array|import Data.Array| ; \
+		s|import System[^\.]|import System.Exit|' \
+		`${FIND} ${WRKSRC} -name '*.*hs'`
 
 .include <bsd.port.mk>

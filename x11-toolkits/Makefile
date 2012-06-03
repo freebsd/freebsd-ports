@@ -90,6 +90,7 @@
     SUBDIR += hs-pango
     SUBDIR += hs-vte
     SUBDIR += hs-wx
+    SUBDIR += hs-wxc
     SUBDIR += hs-wxcore
     SUBDIR += hs-wxdirect
     SUBDIR += irrlicht

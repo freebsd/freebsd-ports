@@ -7,6 +7,7 @@
 
 PORTNAME=	ghc-events
 PORTVERSION=	0.4.0.0
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -14,7 +15,7 @@ COMMENT=	Library and tool for parsing .eventlog files from GHC
 
 LICENSE=	BSD
 
-USE_CABAL=	binary>=0.5 mtl>=1.1
+USE_CABAL=	mtl>=1.1
 
 EXECUTABLE=	ghc-events
 

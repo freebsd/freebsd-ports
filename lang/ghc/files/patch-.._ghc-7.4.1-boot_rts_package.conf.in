@@ -1,5 +1,5 @@
---- ../ghc-6.10.4-boot/rts/package.conf.in.orig	2009-07-14 19:10:52.000000000 +0200
-+++ ../ghc-6.10.4-boot/rts/package.conf.in	2009-08-13 22:09:35.000000000 +0200
+--- ../ghc-7.4.1-boot/rts/package.conf.in.orig	2009-07-14 19:10:52.000000000 +0200
++++ ../ghc-7.4.1-boot/rts/package.conf.in	2009-08-13 22:09:35.000000000 +0200
 @@ -156,6 +156,8 @@
  	 , "-u", "base_GHCziConc_ensureIOManagerIsRunning_closure"
  #endif

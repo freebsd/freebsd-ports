@@ -7,7 +7,8 @@
 
 PORTNAME=	reactive
 PORTVERSION=	0.11.5
-PORTREVISION=	4
+PORTREVISION=	5
+
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

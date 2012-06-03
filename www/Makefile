@@ -288,13 +288,9 @@
     SUBDIR += hs-hS3
     SUBDIR += hs-hamlet
     SUBDIR += hs-happstack
-    SUBDIR += hs-happstack-data
-    SUBDIR += hs-happstack-ixset
     SUBDIR += hs-happstack-server
-    SUBDIR += hs-happstack-state
-    SUBDIR += hs-happstack-util
     SUBDIR += hs-heist
-    SUBDIR += hs-http-enumerator
+    SUBDIR += hs-http-conduit
     SUBDIR += hs-http-server
     SUBDIR += hs-http-types
     SUBDIR += hs-oeis
@@ -322,6 +318,7 @@
     SUBDIR += hs-yesod-form
     SUBDIR += hs-yesod-json
     SUBDIR += hs-yesod-persistent
+    SUBDIR += hs-yesod-routes
     SUBDIR += htdump
     SUBDIR += html2hdml
     SUBDIR += html2wml

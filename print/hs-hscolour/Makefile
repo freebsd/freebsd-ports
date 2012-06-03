@@ -7,7 +7,7 @@
 
 PORTNAME=	hscolour
 PORTVERSION=	1.19
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	print haskell
 
@@ -20,6 +20,14 @@ FILE_LICENSE=	LICENCE-GPL
 CABAL_SETUP=	Setup.hs
 
 EXECUTABLE=	HsColour
+
+.if defined(WITH_HSCOLOUR_DOCS)
+pre-everything::
+	@${ECHO_MSG} "================================================================="
+	@${ECHO_MSG} " Please note that you will not be able to build HsColour-enabled "
+	@${ECHO_MSG} " documentation without installing HsColour without that first.   "
+	@${ECHO_MSG} "================================================================="
+.endif
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
