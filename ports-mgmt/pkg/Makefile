@@ -7,7 +7,7 @@
 
 PORTNAME=	pkg
 DISTVERSION=	1.0-beta15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/portmgr \
 		http://files.etoilebsd.net/pkg/
@@ -51,6 +51,7 @@ MAN8=	pkg.8 \
 	pkg-which.8
 MLINKS=	pkg-delete.8 pkg-remove.8
 MAN5=	pkg.conf.5
+MLINKS=	pkg-delete.8 pkg-remove.8
 
 .include <bsd.port.pre.mk>
 
