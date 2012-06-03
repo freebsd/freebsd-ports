@@ -15,10 +15,10 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Pager utility for Class::DBI
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI \
-		${SITE_PERL}/Exporter/Lite.pm:${PORTSDIR}/devel/p5-Exporter-Lite \
-		${SITE_PERL}/Data/Page.pm:${PORTSDIR}/databases/p5-Data-Page \
-		${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone
+RUN_DEPENDS=	p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI \
+		p5-Exporter-Lite>=0:${PORTSDIR}/devel/p5-Exporter-Lite \
+		p5-Data-Page>=0:${PORTSDIR}/databases/p5-Data-Page \
+		p5-Clone>=0:${PORTSDIR}/devel/p5-Clone
 
 PERL_CONFIGURE=	yes
 
