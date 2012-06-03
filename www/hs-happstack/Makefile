@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	happstack
-PORTVERSION=	6.0.6
+PORTVERSION=	7.0.0
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -17,10 +17,7 @@ FILE_LICENSE=	COPYING
 
 CABAL_SETUP=	Setup.hs
 
-USE_CABAL=	happstack-data>=6.0 happstack-ixset>=6.0 happstack-server>=6.0 \
-		happstack-state>=6.0 happstack-util>=6.0 syb
-
-EXECUTABLE=	happstack
+USE_CABAL=	happstack-server>=7.0
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
