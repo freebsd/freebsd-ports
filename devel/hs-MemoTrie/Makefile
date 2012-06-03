@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	MemoTrie
-PORTVERSION=	0.4.10
-PORTREVISION=	1
+PORTVERSION=	0.5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Trie-based memo functions for Haskell
+COMMENT=	Trie-based memo functions
 
 LICENSE=	BSD
 FILE_LICENSE=	COPYING
+
+USE_CABAL=	void
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
