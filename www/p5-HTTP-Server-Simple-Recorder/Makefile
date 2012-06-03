@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Mixin to record HTTP::Server::Simple's sockets
 
-BUILD_DEPENDS=	${SITE_PERL}/HTTP/Server/Simple.pm:${PORTSDIR}/www/p5-HTTP-Server-Simple \
-		${SITE_PERL}/Test/HTTP/Server/Simple.pm:${PORTSDIR}/www/p5-Test-HTTP-Server-Simple \
-		${SITE_PERL}/IO/Tee.pm:${PORTSDIR}/devel/p5-IO-Tee
+BUILD_DEPENDS=	p5-HTTP-Server-Simple>=0:${PORTSDIR}/www/p5-HTTP-Server-Simple \
+		p5-Test-HTTP-Server-Simple>=0:${PORTSDIR}/www/p5-Test-HTTP-Server-Simple \
+		p5-IO-Tee>=0:${PORTSDIR}/devel/p5-IO-Tee
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

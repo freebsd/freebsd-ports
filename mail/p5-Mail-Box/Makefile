@@ -16,9 +16,9 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Perl module implementing a modern mail folder management
 
 COMMON_DEPENDS=	\
-	${SITE_PERL}/MIME/Entity.pm:${PORTSDIR}/mail/p5-MIME-Tools \
-	${SITE_PERL}/MIME/Types.pm:${PORTSDIR}/mail/p5-MIME-Types \
-	${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
+	p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
+	p5-MIME-Types>=0:${PORTSDIR}/mail/p5-MIME-Types \
+	p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \
 	p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
 	p5-File-Remove>=0.20:${PORTSDIR}/devel/p5-File-Remove \
 	p5-HTML-Format>=2.01:${PORTSDIR}/textproc/p5-HTML-Format \

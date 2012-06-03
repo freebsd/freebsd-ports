@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Template::Plugin::DBI - Template interface to the DBI module
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
-		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
+BUILD_DEPENDS=	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-SQL-Statement>=1.28:${PORTSDIR}/databases/p5-SQL-Statement \
 		p5-MLDBM>=0:${PORTSDIR}/databases/p5-MLDBM
 RUN_DEPENDS:=	${BUILD_DEPENDS}

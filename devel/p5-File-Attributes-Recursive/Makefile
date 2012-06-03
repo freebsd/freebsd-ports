@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Inherit file attributes from parent directories
 
-BUILD_DEPENDS=	${SITE_PERL}/Directory/Scratch.pm:${PORTSDIR}/devel/p5-Directory-Scratch \
-		${SITE_PERL}/Path/Class.pm:${PORTSDIR}/devel/p5-Path-Class \
-		${SITE_PERL}/File/Attributes.pm:${PORTSDIR}/devel/p5-File-Attributes
+BUILD_DEPENDS=	p5-Directory-Scratch>=0:${PORTSDIR}/devel/p5-Directory-Scratch \
+		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
+		p5-File-Attributes>=0:${PORTSDIR}/devel/p5-File-Attributes
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

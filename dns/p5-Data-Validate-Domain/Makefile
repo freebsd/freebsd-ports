@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Data::Validate::Domain - domain validation methods
 
-BUILD_DEPENDS=	${SITE_PERL}/Net/Domain/TLD.pm:${PORTSDIR}/dns/p5-Net-Domain-TLD
+BUILD_DEPENDS=	p5-Net-Domain-TLD>=0:${PORTSDIR}/dns/p5-Net-Domain-TLD
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
