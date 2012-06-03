@@ -15,10 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to paged queries for CDBI
 
-BUILD_DEPENDS=	${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI \
-		${SITE_PERL}/SQL/Abstract.pm:${PORTSDIR}/databases/p5-SQL-Abstract \
-		${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-require \
-		${SITE_PERL}/Data/Page.pm:${PORTSDIR}/databases/p5-Data-Page \
+BUILD_DEPENDS=	p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI \
+		p5-SQL-Abstract>=0:${PORTSDIR}/databases/p5-SQL-Abstract \
+		p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require \
+		p5-Data-Page>=0:${PORTSDIR}/databases/p5-Data-Page \
 		p5-Class-DBI-Plugin-AbstractCount>=0:${PORTSDIR}/databases/p5-Class-DBI-Plugin-AbstractCount
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

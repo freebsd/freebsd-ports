@@ -16,9 +16,9 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Tests remote URLs or local web files
 
 BUILD_DEPENDS=	\
-	${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff \
-	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-	${SITE_PERL}/Test/MockObject.pm:${PORTSDIR}/devel/p5-Test-MockObject \
+	p5-Algorithm-Diff>=0:${PORTSDIR}/devel/p5-Algorithm-Diff \
+	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+	p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject \
 
 PERL_CONFIGURE=	yes
 INSTALL_TARGET=	pure_install

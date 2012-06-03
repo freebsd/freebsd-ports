@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl module to provide recursive FTP client class
 
-BUILD_DEPENDS=	${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
-RUN_DEPENDS=	${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
+BUILD_DEPENDS=	p5-Net>=0:${PORTSDIR}/net/p5-Net
+RUN_DEPENDS=	p5-Net>=0:${PORTSDIR}/net/p5-Net
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

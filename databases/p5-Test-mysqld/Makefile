@@ -16,7 +16,7 @@ COMMENT=	Perl extension for mysqld test runner
 
 RUN_DEPENDS=	\
 	p5-Class-Accessor-Lite>0:${PORTSDIR}/devel/p5-Class-Accessor-Lite \
-	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
+	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
 	p5-Test-SharedFork>=0.06:${PORTSDIR}/devel/p5-Test-SharedFork
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
