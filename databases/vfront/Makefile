@@ -22,6 +22,7 @@ USE_PHP=	yes
 
 OPTIONS_MULTI=	database
 OPTIONS_MULTI_database=	MYSQL PGSQL
+OPTIONS_DEFAULT=	MYSQL PGSQL
 
 .include <bsd.port.options.mk>
 
