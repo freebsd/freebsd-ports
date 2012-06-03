@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wxdirect
-PORTVERSION=	0.13.1.1
+PORTVERSION=	0.90.0.1
 CATEGORIES=	x11-toolkits haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -16,7 +16,7 @@ LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
 
-USE_CABAL=	parsec>=2.1.0 strict>=0.3
+USE_CABAL=	parsec>=2.1.0 strict
 
 EXECUTABLE=	wxdirect
 
