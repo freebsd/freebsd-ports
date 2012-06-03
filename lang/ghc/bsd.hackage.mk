@@ -262,6 +262,7 @@ system-filepath_port=		devel/hs-system-filepath
 tagged_port=			devel/hs-tagged
 tagsoup_port=			textproc/hs-tagsoup	# executable
 tar_port=			archivers/hs-tar
+temporary_port=			devel/hs-temporary
 Tensor_port=			devel/hs-Tensor
 terminfo_port=			devel/hs-terminfo
 test-framework_port=		devel/hs-test-framework
