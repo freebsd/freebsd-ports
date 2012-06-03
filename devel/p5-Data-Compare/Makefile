@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0*$//}
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Data::Compare - compare perl data structures
 
-BUILD_DEPENDS=	${SITE_PERL}/File/Find/Rule.pm:${PORTSDIR}/devel/p5-File-Find-Rule
+BUILD_DEPENDS=	p5-File-Find-Rule>=0:${PORTSDIR}/devel/p5-File-Find-Rule
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

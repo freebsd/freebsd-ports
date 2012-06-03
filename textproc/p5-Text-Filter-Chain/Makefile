@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Chains multiple Text::Filter objects and runs them in sequence
 
-BUILD_DEPENDS=	${SITE_PERL}/Text/Filter.pm:${PORTSDIR}/textproc/p5-Text-Filter
+BUILD_DEPENDS=	p5-Text-Filter>=0:${PORTSDIR}/textproc/p5-Text-Filter
 
 PERL_CONFIGURE=	yes
 

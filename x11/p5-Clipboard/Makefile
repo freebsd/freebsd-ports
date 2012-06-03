@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Access to X11 clipboard from Perl
 
-BUILD_DEPENDS=	${SITE_PERL}/Spiffy.pm:${PORTSDIR}/devel/p5-Spiffy
+BUILD_DEPENDS=	p5-Spiffy>=0:${PORTSDIR}/devel/p5-Spiffy
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		xclip:${PORTSDIR}/x11/xclip
 

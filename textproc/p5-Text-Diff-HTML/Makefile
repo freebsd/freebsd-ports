@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Text::Diff::HTML - XHTML format for Text::Diff::Unified
 
-BUILD_DEPENDS=	${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff \
-		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser
+BUILD_DEPENDS=	p5-Text-Diff>=0:${PORTSDIR}/textproc/p5-Text-Diff \
+		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes

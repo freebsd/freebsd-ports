@@ -15,20 +15,20 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Pure-Perl OpenPGP-compatible PGP implementation
 
 RUN_DEPENDS= \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/Blowfish.pm:${PORTSDIR}/security/p5-Crypt-Blowfish \
-		${SITE_PERL}/Crypt/CAST5_PP.pm:${PORTSDIR}/security/p5-Crypt-CAST5_PP \
-		${SITE_PERL}/Crypt/DES_EDE3.pm:${PORTSDIR}/security/p5-Crypt-DES_EDE3 \
-		${SITE_PERL}/Crypt/DSA.pm:${PORTSDIR}/security/p5-Crypt-DSA \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/IDEA.pm:${PORTSDIR}/security/p5-Crypt-IDEA \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/RIPEMD160.pm:${PORTSDIR}/security/p5-Crypt-RIPEMD160 \
-		${SITE_PERL}/Crypt/RSA.pm:${PORTSDIR}/security/p5-Crypt-RSA \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/Rijndael.pm:${PORTSDIR}/security/p5-Crypt-Rijndael \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/Twofish.pm:${PORTSDIR}/security/p5-Crypt-Twofish \
-		${SITE_PERL}/Data/Buffer.pm:${PORTSDIR}/misc/p5-Data-Buffer \
-		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
-		${SITE_PERL}/File/HomeDir.pm:${PORTSDIR}/devel/p5-File-HomeDir \
-		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI
+		p5-Crypt-Blowfish>=0:${PORTSDIR}/security/p5-Crypt-Blowfish \
+		p5-Crypt-CAST5_PP>=0:${PORTSDIR}/security/p5-Crypt-CAST5_PP \
+		p5-Crypt-DES_EDE3>=0:${PORTSDIR}/security/p5-Crypt-DES_EDE3 \
+		p5-Crypt-DSA>=0:${PORTSDIR}/security/p5-Crypt-DSA \
+		p5-Crypt-IDEA>=0:${PORTSDIR}/security/p5-Crypt-IDEA \
+		p5-Crypt-RIPEMD160>=0:${PORTSDIR}/security/p5-Crypt-RIPEMD160 \
+		p5-Crypt-RSA>=0:${PORTSDIR}/security/p5-Crypt-RSA \
+		p5-Crypt-Rijndael>=0:${PORTSDIR}/security/p5-Crypt-Rijndael \
+		p5-Crypt-Twofish>=0:${PORTSDIR}/security/p5-Crypt-Twofish \
+		p5-Data-Buffer>=0:${PORTSDIR}/misc/p5-Data-Buffer \
+		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
+		p5-File-HomeDir>=0:${PORTSDIR}/devel/p5-File-HomeDir \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
 PERL_CONFIGURE=	yes
 

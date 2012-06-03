@@ -16,14 +16,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Perl port of the Java Lucene search engine
 
-BUILD_DEPENDS=	${SITE_PERL}/Tie/Array/Sorted.pm:${PORTSDIR}/devel/p5-Tie-Array-Sorted \
-		${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp \
-		${SITE_PERL}/Class/Virtual.pm:${PORTSDIR}/devel/p5-Class-Virtual \
-		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
-		${SITE_PERL}/${PERL_ARCH}/Time/Piece.pm:${PORTSDIR}/devel/p5-Time-Piece \
-		${SITE_PERL}/Lingua/Stem/En.pm:${PORTSDIR}/textproc/p5-Lingua-Stem \
-		${SITE_PERL}/Bit/Vector/Minimal.pm:${PORTSDIR}/math/p5-Bit-Vector-Minimal \
-		${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy
+BUILD_DEPENDS=	p5-Tie-Array-Sorted>=0:${PORTSDIR}/devel/p5-Tie-Array-Sorted \
+		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
+		p5-Class-Virtual>=0:${PORTSDIR}/devel/p5-Class-Virtual \
+		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-Time-Piece>=0:${PORTSDIR}/devel/p5-Time-Piece \
+		p5-Lingua-Stem>=0:${PORTSDIR}/textproc/p5-Lingua-Stem \
+		p5-Bit-Vector-Minimal>=0:${PORTSDIR}/math/p5-Bit-Vector-Minimal \
+		p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
