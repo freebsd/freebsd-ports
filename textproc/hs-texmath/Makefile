@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	texmath
-PORTVERSION=	0.5.0.4
+PORTVERSION=	0.6.0.6
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Conversion of LaTeX math formulas to MathML for Haskell
+COMMENT=	Conversion of LaTeX math formulas to MathML or OMML
 
 LICENSE=	GPLv2
 
 CABAL_SETUP=	Setup.hs
 
-USE_CABAL=	parsec>=2 syb xml
+USE_CABAL=	parsec>=3 syb xml
 
 OPTIONS=	CGI	"Compile CGI executable"	off
 

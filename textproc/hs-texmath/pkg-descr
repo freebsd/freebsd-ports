@@ -1,5 +1,6 @@
-The texmathml Haskell library provides functions to convert LaTeX math
-formulas to presentation MathML. It supports basic LaTeX and AMS
-extensions, but not macros.
+The texmathml library provides functions to convert LaTeX math formulas
+to presentation MathML (which can be used in HTML) or OMML (Office Math
+Markup Language, used in Microsoft Office). It supports basic LaTeX and
+AMS extensions, and it can parse and apply LaTeX macros.
 
-WWW: http://hackage.haskell.org/package/texmath
+WWW:	http://github.com/jgm/texmath
