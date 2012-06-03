@@ -216,6 +216,7 @@ PSQueue_port=			devel/hs-PSQueue
 pureMD5_port=			security/hs-pureMD5
 pwstore-fast_port=		security/hs-pwstore-fast
 QuickCheck_port=		devel/hs-QuickCheck
+random_port=			devel/hs-random
 ranges_port=			devel/hs-ranges
 reactive_port=			devel/hs-reactive
 readline_port=			devel/hs-readline
