@@ -34,7 +34,7 @@ PORTDOCS=	ChangeLog PROGRAMMING README
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_IPV6)
-RUN_DEPENDS=	p5-IO-Socket-INET6:${PORTSDIR}/net/p5-IO-Socket-INET6
+RUN_DEPENDS=	p5-IO-Socket-INET6>0:${PORTSDIR}/net/p5-IO-Socket-INET6
 EXTRA_PATCHES=	${PATCHDIR}/dsirc-ipv6
 .else
 EXTRA_PATCHES=	${PATCHDIR}/dsirc-minimal

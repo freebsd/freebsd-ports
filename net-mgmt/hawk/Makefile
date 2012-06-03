@@ -13,10 +13,10 @@ MASTER_SITES=	SF/iphawk/iphawk/Hawk%20${PORTVERSION}/
 MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	Track uptime and DNS status for machines on your networks
 
-RUN_DEPENDS=	p5-Net-Netmask:${PORTSDIR}/net-mgmt/p5-Net-Netmask \
-		p5-Net-Ping-External:${PORTSDIR}/net/p5-Net-Ping-External \
-		p5-DBI:${PORTSDIR}/databases/p5-DBI \
-		p5-DBD-mysql:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS=	p5-Net-Netmask>0:${PORTSDIR}/net-mgmt/p5-Net-Netmask \
+		p5-Net-Ping-External>0:${PORTSDIR}/net/p5-Net-Ping-External \
+		p5-DBI>0:${PORTSDIR}/databases/p5-DBI \
+		p5-DBD-mysql>0:${PORTSDIR}/databases/p5-DBD-mysql
 
 USE_PERL5=	yes
 USE_MYSQL=	server
