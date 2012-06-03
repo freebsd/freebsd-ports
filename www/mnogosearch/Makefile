@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.mnogosearch.org/Download/ \
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Full featured SQL-based hypertext search engine
 
+CONFLICTS=	dpsearch-[0-9]* udmsearch-[0-9]* mguesser-[0-9]*
+
 MAN1=		indexer.1
 MAN5=		indexer.conf.5
 

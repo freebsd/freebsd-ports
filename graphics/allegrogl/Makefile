@@ -16,6 +16,8 @@ COMMENT=	OpenGL inteface for Allegro library
 
 LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro
 
+CONFLICTS=	allegro-devel-[0-9]*
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GL=		glu
