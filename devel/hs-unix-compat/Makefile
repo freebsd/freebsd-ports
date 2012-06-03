@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	unix-compat
-PORTVERSION=	0.2.2.1
-PORTREVISION=	1
+PORTVERSION=	0.3.0.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Portable POSIX-compatibility layer for Haskell
+COMMENT=	Portable POSIX-compatibility layer
 
 LICENSE=	BSD
 
