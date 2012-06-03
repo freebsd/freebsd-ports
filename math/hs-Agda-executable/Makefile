@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Agda-executable
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.0.1
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
