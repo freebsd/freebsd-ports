@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	A Perl implementation of a DHCP client API
 
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Net/RawIP.pm:${PORTSDIR}/net/p5-Net-RawIP
+RUN_DEPENDS+=	p5-Net-RawIP>=0:${PORTSDIR}/net/p5-Net-RawIP
 PERL_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
