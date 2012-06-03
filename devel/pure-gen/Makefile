@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pure-gen
-PORTVERSION=	0.12
-PORTREVISION=	1
+PORTVERSION=	0.15
 CATEGORIES=	devel
 
 MAINTAINER=	lichray@gmail.com
