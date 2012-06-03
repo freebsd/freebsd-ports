@@ -5,10 +5,4 @@ split off, so that other packages can use them without drawing in all of
 pandoc's dependencies, and pandoc itself can depend on packages (like
 citeproc-hs) that use them.
 
-Text.Pandoc.Builder provides functions for building up Pandoc structures
-programmatically.
-
-Text.Pandoc.Generic provides generic functions for manipulating Pandoc
-documents.
-
-WWW: http://johnmacfarlane.net/pandoc
+WWW:	http://johnmacfarlane.net/pandoc
