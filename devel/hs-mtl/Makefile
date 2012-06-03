@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mtl
-PORTVERSION=	2.0.1.0
-PORTREVISION=	2
+PORTVERSION=	2.1.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -16,7 +15,7 @@ COMMENT=	Monad transformer library
 LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
-USE_CABAL=	transformers>=0.2
+USE_CABAL=	transformers>=0.3
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
