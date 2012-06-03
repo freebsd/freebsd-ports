@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xhtml
-PORTVERSION=	3000.2.0.4
+PORTVERSION=	3000.2.1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
