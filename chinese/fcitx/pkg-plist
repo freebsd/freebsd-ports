@@ -64,6 +64,15 @@ lib/libfcitx-core.so.0.3
 lib/libfcitx-utils.so
 lib/libfcitx-utils.so.0
 lib/libfcitx-utils.so.0.1
+%%GTK2%%lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-fcitx.so
+%%GTK2%%@exec gtk-query-immodules-2.0 > %%LOCALBASE%%/etc/gtk-2.0/gtk.immodules
+%%GTK2%%@unexec gtk-query-immodules-2.0 > %%LOCALBASE%%/etc/gtk-2.0/gtk.immodules
+%%GTK3%%lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-fcitx.so
+%%GTK3%%@exec gtk-query-immodules-3.0 > %%LOCALBASE%%/lib/gtk-3.0/%%GTK3_VERSION%%/immodules.cache
+%%GTK3%%@unexec gtk-query-immodules-3.0 > %%LOCALBASE%%/lib/gtk-3.0/%%GTK3_VERSION%%/immodules.cache
+%%QT4%%lib/qt4/plugins/inputmethods/qtim-fcitx.so
+%%QT4%%@dirrmtry lib/qt4/plugins/inputmethods
+%%QT4%%@dirrmtry lib/qt4/plugins
 libdata/pkgconfig/fcitx-config.pc
 libdata/pkgconfig/fcitx-utils.pc
 libdata/pkgconfig/fcitx.pc
