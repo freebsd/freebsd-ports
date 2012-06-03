@@ -49,7 +49,7 @@ post-configure:
 	@${REINPLACE_CMD} -e 's/^program_transform_name/#/' \
 		${WRKSRC}/Makefile ${WRKSRC}/sysbench/Makefile
 
-.if ${PORT_OPTIONS:MDOCS}
+.if empty(PORT_OPTIONS:MDOCS)
 post-install:
 	${RM} ${DOCSDIR}/manual.html
 	${RMDIR} ${DOCSDIR}
