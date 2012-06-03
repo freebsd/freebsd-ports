@@ -1,8 +1,7 @@
-A library which exposes zero-copy sendfile functionality in a portable way.
-If a platform does not support sendfile, a fallback implementation in Haskell
-is provided.
+A library which exposes zero-copy sendfile functionality in a portable
+way. If a platform does not support sendfile, a fallback implementation
+in haskell is provided. Currently supported platforms: Windows 2000+
+(Native), Linux 2.6+ (Native), FreeBSD (Native), OS-X 10.5+ (Native),
+Everything else (Portable Haskell code).
 
-Currently supported platforms: Windows 2000+ (Native), Linux 2.6+ (Native),
-FreeBSD (Native), OS-X 10.5+ (Native), Everything else (Portable Haskell code).
-
-WWW: http://patch-tag.com/r/mae/sendfile
+WWW:	http://patch-tag.com/r/mae/sendfile
