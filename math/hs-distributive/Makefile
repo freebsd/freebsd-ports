@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	distributive
-PORTVERSION=	0.2.0.1
-PORTREVISION=	1
+PORTVERSION=	0.2.2
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Haskell 98 distributive functors
+COMMENT=	Haskell 98 distributive functors -- Dual to Traversable
 
 LICENSE=	BSD
 
