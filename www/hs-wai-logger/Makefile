@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wai-logger
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.4
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -15,6 +15,7 @@ COMMENT=	A logging system for WAI
 LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
+
 USE_CABAL=	blaze-builder byteorder case-insensitive fast-logger \
 		http-types network wai
 
