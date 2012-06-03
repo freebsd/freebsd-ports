@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	shakespeare-text
-PORTVERSION=	0.10.3
+PORTVERSION=	1.0.0.2
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Interpolation with quasi-quotation: put variables strings
 
-LICENSE=	BSD
+LICENSE=	MIT
 
-USE_CABAL=	shakespeare>=0.10 text>=0.7
+USE_CABAL=	shakespeare>=1.0 text>=0.7
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	shakespeare
-PORTVERSION=	0.10.2
+PORTVERSION=	1.0.0.2
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A toolkit for making compile-time interpolated templates
 
-LICENSE=	BSD
+LICENSE=	MIT
 
 USE_CABAL=	parsec>=2 text>=0.7
 
