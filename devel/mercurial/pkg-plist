@@ -69,6 +69,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/hgext/extdiff.py
 %%PYTHON_SITELIBDIR%%/hgext/extdiff.pyc
 %%PYTHON_SITELIBDIR%%/hgext/extdiff.pyo
+%%PYTHON_SITELIBDIR%%/hgext/factotum.py
+%%PYTHON_SITELIBDIR%%/hgext/factotum.pyc
+%%PYTHON_SITELIBDIR%%/hgext/factotum.pyo
 %%PYTHON_SITELIBDIR%%/hgext/fetch.py
 %%PYTHON_SITELIBDIR%%/hgext/fetch.pyc
 %%PYTHON_SITELIBDIR%%/hgext/fetch.pyo
@@ -264,6 +267,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/fileset.py
 %%PYTHON_SITELIBDIR%%/mercurial/fileset.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/fileset.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/formatter.py
+%%PYTHON_SITELIBDIR%%/mercurial/formatter.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/formatter.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/graphmod.py
 %%PYTHON_SITELIBDIR%%/mercurial/graphmod.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/graphmod.pyo
@@ -351,6 +357,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/phases.py
 %%PYTHON_SITELIBDIR%%/mercurial/phases.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/phases.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/pvec.py
+%%PYTHON_SITELIBDIR%%/mercurial/pvec.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/pvec.pyo
 %%NLS%%%%PYTHON_SITELIBDIR%%/mercurial/locale/da/LC_MESSAGES/hg.mo
 %%NLS%%%%PYTHON_SITELIBDIR%%/mercurial/locale/de/LC_MESSAGES/hg.mo
 %%NLS%%%%PYTHON_SITELIBDIR%%/mercurial/locale/el/LC_MESSAGES/hg.mo

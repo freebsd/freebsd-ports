@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	mercurial
-PORTVERSION=	2.1.2
+PORTVERSION=	2.2.2
 CATEGORIES=	devel python
 MASTER_SITES=	http://mercurial.selenic.com/release/
 
-MAINTAINER=	roberto@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	A fast, lightweight source control management system
+
+LICENSE=	GPLv2
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
