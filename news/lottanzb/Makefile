@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.lottanzb.org/releases/ \
 		http://launchpadlibrarian.net/64247317/ \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pyGTK usenet frontend for hellanzb
 
 RUN_DEPENDS=	SABnzbd.py:${PORTSDIR}/news/sabnzbdplus \

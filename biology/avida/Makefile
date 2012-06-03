@@ -11,7 +11,7 @@ CATEGORIES=	biology
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Avida is an auto-adaptive genetic system designed for ALife research
 
 LICENSE=	GPLv2

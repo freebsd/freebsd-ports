@@ -12,7 +12,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://evolution.gs.washington.edu/lamarc/download/
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A package of programs for computing population parameters
 
 LICENSE=	AL2
