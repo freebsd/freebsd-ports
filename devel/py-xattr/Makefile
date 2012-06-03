@@ -6,21 +6,19 @@
 #
 
 PORTNAME=	xattr
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
-MASTER_SITE_SUBDIR=	source/x/xattr
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	xattr-${PORTVERSION}
 
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Python wrapper for extended filesystem attributes
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	xattr
 PYEASYINSTALL_ARCHDEP=	yes
 
 .include <bsd.port.mk>
