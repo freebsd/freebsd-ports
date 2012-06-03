@@ -248,6 +248,7 @@ smallcheck_port=		devel/hs-smallcheck
 snap_port=			www/hs-snap
 snap-core_port=			www/hs-snap-core
 snap-server_port=		www/hs-snap-server	# lib_depends
+socks_port=			net/hs-socks
 soegtk_port=			graphics/hs-soegtk
 split_port=			devel/hs-split
 StateVar_port=			devel/hs-StateVar
