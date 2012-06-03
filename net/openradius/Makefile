@@ -17,7 +17,8 @@ COMMENT=	A RADIUS server with some actual documentation
 
 LOGFILE?=	/var/log/openradius.log
 
-CONFLICTS=	freeradius-0.* gnu-radius-1.* radiusd-cistron-1.*
+CONFLICTS=	freeradius-[0-9]* gnu-radius-[0-9]* radiusd-cistron-[0-9]* \
+		freeradius-mysql-[0-9]*
 
 CC?=		gcc
 CXX?=		g++

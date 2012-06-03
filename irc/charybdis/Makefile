@@ -17,11 +17,11 @@ COMMENT=	A powerful IRC daemon, based on ircd-ratbox
 
 LICENSE=	GPLv2
 
-CONFLICTS=	ircd-ratbox-[0-9]* \
-		ircd-ratbox-devel-[0-9]* \
-		nefarious-[0-9]* \
-		ircd-hybrid-[0-9]* \
-		ptlink-ircd-[0-9]*
+CONFLICTS=	ircd-ratbox-[0-9]* ircd-ratbox-devel-[0-9]* \
+		nefarious-[0-9]* ircd-hybrid-[0-9]* \
+		ptlink-ircd-[0-9]* bnc-[0-9]* \
+		expect-[0-9]* whois-[0-9]* undernet-ircu-[0-9]* \
+		ru-ircd-hybrid-[0-9]* \
 
 MAN8=		ircd.8
 
