@@ -14,7 +14,7 @@ they not crash during particular page generations, but they also may not:
   * Have mismatches between HTML forms and the fields expected by their
     handlers
   * Include client-side code that makes incorrect assumptions about the
-  * "AJAX"-style services that the remote web server provides
+    "AJAX"-style services that the remote web server provides
   * Attempt invalid SQL queries
   * Use improper marshaling or unmarshaling in communication with SQL databases
     or between browsers and web servers
