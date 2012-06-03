@@ -6,6 +6,7 @@
 %%SITE_PERL%%/Net/Server/INET.pm
 %%SITE_PERL%%/Net/Server/MultiType.pm
 %%SITE_PERL%%/Net/Server/Multiplex.pm
+%%SITE_PERL%%/Net/Server/PSGI.pm
 %%SITE_PERL%%/Net/Server/PreFork.pm
 %%SITE_PERL%%/Net/Server/PreForkSimple.pm
 %%SITE_PERL%%/Net/Server/Proto.pm
@@ -14,6 +15,7 @@
 %%SITE_PERL%%/Net/Server/Proto/TCP.pm
 %%SITE_PERL%%/Net/Server/Proto/UDP.pm
 %%SITE_PERL%%/Net/Server/Proto/UNIX.pm
+%%SITE_PERL%%/Net/Server/Proto/UNIXDGRAM.pm
 %%SITE_PERL%%/Net/Server/SIG.pm
 %%SITE_PERL%%/Net/Server/Single.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Server/.packlist
