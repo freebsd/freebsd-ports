@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gio
-PORTVERSION=	0.12.2
+PORTVERSION=	0.12.3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -16,6 +16,7 @@ LICENSE=	LGPL21
 FILE_LICENSE=	COPYING
 
 CABAL_SETUP=	Setup.hs
+
 USE_CABAL=	glib>=0.12.0 mtl
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
