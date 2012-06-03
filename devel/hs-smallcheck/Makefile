@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	smallcheck
-PORTVERSION=	0.6
+PORTVERSION=	0.6.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Another lightweight testing library in Haskell
+COMMENT=	A property-based testing library
 
 LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
+
+USE_CABAL=	dlist>=0.2
 
 INSTALL_PORTEXAMPLES=	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 

@@ -1,6 +1,5 @@
-SmallCheck is similar to QuickCheck (Claessen and Hughes 2000-) but
-instead of testing for a sample of randomly generated values, SmallCheck
-tests properties for all the finitely many values up to some depth,
-progressively increasing the depth used.
+SmallCheck is a testing library that allows to verify properties for all
+test cases up to some depth. The test cases are generated automatically
+by SmallCheck.
 
 WWW:	https://github.com/feuerbach/smallcheck
