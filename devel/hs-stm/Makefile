@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	stm
-PORTVERSION=	2.2.0.1
-PORTREVISION=	2
+PORTVERSION=	2.3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
