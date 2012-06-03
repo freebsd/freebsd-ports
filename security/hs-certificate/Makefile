@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	certificate
-PORTVERSION=	1.0.1
+PORTVERSION=	1.2.3
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -15,7 +15,8 @@ COMMENT=	Certificates and Key Reader/Writer
 LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
-USE_CABAL=	asn1-data>=0.6.1 base64-bytestring crypto-pubkey-types mtl
+
+USE_CABAL=	asn1-data>=0.6.1.3 crypto-pubkey-types>=0.1 mtl pem>=0.1
 
 OPTIONS=	EXECUTABLE	"Build the executable"	off
 
