@@ -7,7 +7,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	21.3
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU:C/\/gnu\//\/old-gnu\//g}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -29,7 +29,7 @@ CONFLICTS=	emacs-19.* emacs-22.* emacs-23.* emacs-24.* \
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		ungif.5:${PORTSDIR}/graphics/libungif \
+		gif.5:${PORTSDIR}/graphics/giflib \
 		png15:${PORTSDIR}/graphics/png
 USE_XORG=	xpm
 .endif
