@@ -1,3 +1,2 @@
 sbin/sslh-fork
 sbin/sslh-select
-@dirrmtry %%VARDIR%%/run/sslh
