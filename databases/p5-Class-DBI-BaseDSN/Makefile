@@ -16,7 +16,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	DSN sensitive base class
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI
+RUN_DEPENDS=	p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI
 
 PERL_MODBUILD=	yes
 

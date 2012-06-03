@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	POE interface to Round Robin Database Tools
 
-BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
+BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
 		${LOCALBASE}/bin/rrdtool:${PORTSDIR}/databases/rrdtool
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

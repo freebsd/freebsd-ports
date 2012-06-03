@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Pure Perl PostgreSQL driver for the DBI
 
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS+=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS+=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 
 PERL_CONFIGURE=	yes
 
