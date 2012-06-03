@@ -15,11 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Orthogonal Object Persistence in Relational Databases
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Set/Object.pm:${PORTSDIR}/devel/p5-Set-Object \
-		${SITE_PERL}/${PERL_ARCH}/Time/Piece.pm:${PORTSDIR}/devel/p5-Time-Piece \
-		${SITE_PERL}/${PERL_ARCH}/Class/Date.pm:${PORTSDIR}/devel/p5-Class-Date \
-		${SITE_PERL}/Data/Lazy.pm:${PORTSDIR}/devel/p5-Data-Lazy \
-		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS=	p5-Set-Object>=0:${PORTSDIR}/devel/p5-Set-Object \
+		p5-Time-Piece>=0:${PORTSDIR}/devel/p5-Time-Piece \
+		p5-Class-Date>=0:${PORTSDIR}/devel/p5-Class-Date \
+		p5-Data-Lazy>=0:${PORTSDIR}/devel/p5-Data-Lazy \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

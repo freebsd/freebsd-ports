@@ -15,10 +15,10 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Class::DBI Swiss Army Knife (SAK)
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-		${SITE_PERL}/mixin.pm:${PORTSDIR}/devel/p5-mixin
-RUN_DEPENDS=	${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI \
-		${SITE_PERL}/Class/DBI/AbstractSearch.pm:${PORTSDIR}/databases/p5-Class-DBI-AbstractSearch \
-		${SITE_PERL}/Class/DBI/Pager.pm:${PORTSDIR}/databases/p5-Class-DBI-Pager
+		p5-mixin>=0:${PORTSDIR}/devel/p5-mixin
+RUN_DEPENDS=	p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI \
+		p5-Class-DBI-AbstractSearch>=0:${PORTSDIR}/databases/p5-Class-DBI-AbstractSearch \
+		p5-Class-DBI-Pager>=0:${PORTSDIR}/databases/p5-Class-DBI-Pager
 
 PERL_MODBUILD=	yes
 

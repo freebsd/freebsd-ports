@@ -15,7 +15,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Client library for memcached using libmemcache
 
 LIB_DEPENDS=	memcache.4:${PORTSDIR}/databases/libmemcache
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
+BUILD_DEPENDS=	p5-Storable>=0:${PORTSDIR}/devel/p5-Storable
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
