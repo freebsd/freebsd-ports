@@ -307,4 +307,5 @@ yesod-persistent_port=		www/hs-yesod-persistent
 zip-archive_port=		archivers/hs-zip-archive
 zlib_port=			archivers/hs-zlib
 zlib-bindings_port=		archivers/hs-zlib-bindings
+zlib-conduit_port=		archivers/hs-zlib-conduit
 zlib-enum_port=			archivers/hs-zlib-enum
