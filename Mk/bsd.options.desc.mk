@@ -142,6 +142,7 @@ PYTHON_DESC?=		Enable Python binding/support
 QT4_DESC?=		Enable Qt4 gui toolkit support
 RADIUS_DESC?=		Enable RADIUS support
 RAW_DESC?=		Enable RAW support
+RESIN3_DESC?=		Enable Resin 3.x support
 RTMP_DESC?=		Enable RTMP support via librtmp
 RUBY_DESC?=		Enable Ruby binding/support
 SAMPLERATE_DESC?=	Support sample rate conversion
