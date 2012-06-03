@@ -40,6 +40,8 @@ post-patch:
 		 s|^PERL|#PERL|g ; \
 		 s|^INST|#INST|g ; \
 		 s|make |$$(MAKE) |g' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD}  -e \
+		's|SOL_TCP|IPPROTO_TCP|' ${WRKSRC}/sysdep.c
 
 do-configure:
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
