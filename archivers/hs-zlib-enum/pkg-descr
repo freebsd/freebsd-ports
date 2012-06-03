@@ -1,4 +1,4 @@
-The zlib-enum package is a stop-gap to provide enumeratees for zlib
-compression and decompression.
+zlib-enum is a stop-gap package to provide enumeratees for zlib
+compression/decompression.
 
 WWW:	http://github.com/maltem/zlib-enum
