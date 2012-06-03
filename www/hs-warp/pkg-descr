@@ -1,3 +1,3 @@
-A fast, light-weight web server for WAI applications.
+The premier WAI handler.
 
-WWW: http://github.com/snoyberg/warp
+WWW:	http://github.com/yesodweb/wai
