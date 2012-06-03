@@ -37,6 +37,7 @@ MAN8=		sslh.8
 USE_RC_SUBR=	sslh
 
 PORTEXAMPLES=	example.cfg
+MANCOMPRESSED=	yes
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/sslh-fork ${PREFIX}/sbin
@@ -44,7 +45,7 @@ do-install:
 	#@${MKDIR} ${VARDIR}/run/${PORTNAME}
 	#@${CHOWN} -R nobody:nobody ${VARDIR}/run/${PORTNAME}
 .if ${PORT_OPTIONS:MMANPAGES}
-	@${INSTALL_MAN} ${WRKSRC}/sslh.8 ${MANPREFIX}/man/man8
+	@${INSTALL_MAN} ${WRKSRC}/sslh.8.gz ${MANPREFIX}/man/man8
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
