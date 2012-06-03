@@ -310,6 +310,7 @@ wai-logger_port=		www/hs-wai-logger
 warp_port=			www/hs-warp
 webkit_port=			www/hs-webkit
 wx_port=			x11-toolkits/hs-wx
+wxc_port=			x11-toolkits/hs-wxc		# lib_depends
 wxcore_port=			x11-toolkits/hs-wxcore		# lib_depends
 wxdirect_port=			x11-toolkits/hs-wxdirect	# executable
 X11_port=			x11/hs-X11		# lib_depends
