@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120603:
+  AFFECTS: users of lang/ghc and */hs-*
+  AUTHOR: haskell@FreeBSD.org
+
+  Note that The Glorious Glasgow Haskell Compiler and the Haskell Platform
+  have been updated to versions 7.4.1 and 2012.2.0.0, respectively.  At the
+  same time, all Haskell ports have been updated to their latest working
+  versions.
+
+  To follow the changes, please issue one of the following commands
+  (depending on the tool used):
+
+  # portmaster -r ghc
+  or
+  # portupgrade -fr lang/ghc
+
+
 20120531:
   AFFECTS: users of graphics/png
   AUTHOR: dinoex@FreeBSD.org
