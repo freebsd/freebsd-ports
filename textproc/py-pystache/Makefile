@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pystache
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.2
 CATEGORIES=	textproc www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ COMMENT=	Logic-less templates for Python
 
 LICENSE=	MIT
 
-USE_PYTHON=	-2.7
-USE_PYDISTUTILS=	easy_install
+USE_PYTHON=	yes
+USE_PYDISTUTILS=easy_install
 
 .include <bsd.port.mk>
