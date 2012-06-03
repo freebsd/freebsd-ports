@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	shakespeare-css
-PORTVERSION=	0.10.6
+PORTVERSION=	1.0.1.2
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Stick your Haskell variables into CSS at compile time
 
-LICENSE=	BSD
+LICENSE=	MIT
 
-USE_CABAL=	parsec>=2 shakespeare>=0.10 text>=0.7
+USE_CABAL=	parsec>=2 shakespeare>=1.0 text>=0.11.1.1
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
