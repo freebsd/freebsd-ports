@@ -8,7 +8,7 @@
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
 DISTVERSION=	19.0.1084.52
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://download.goodking.org/downloads/ \
 		ftp://rene-ladan.nl/pub/distfiles/ \
@@ -151,10 +151,6 @@ MAKE_ENV+=	BUILDTYPE=${BUILDTYPE}
 MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 501400
-BUILD_DEPENDS+=	p5-Switch>=0:${PORTSDIR}/lang/p5-Switch
-.endif
 
 pre-everything::
 	@${ECHO_MSG}
