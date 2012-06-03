@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	polyparse
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Alternative parser combinator libraries for Haskell
+COMMENT=	A variety of alternative parser combinator libraries
 
 LICENSE=	LGPL21
 FILE_LICENSE=	COPYRIGHT
 
 CABAL_SETUP=	Setup.hs
+
 USE_CABAL=	text
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
