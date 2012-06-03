@@ -289,6 +289,7 @@ uuagc_port=			devel/hs-uuagc		# executable
 uuagc-bootstrap_port=		devel/hs-uuagc-bootstrap # executable
 uuagc-cabal_port=		devel/hs-uuagc-cabal
 uulib_port=			devel/hs-uulib
+vault_port=			devel/hs-vault
 vector_port=			devel/hs-vector
 vector-algorithms_port=		devel/hs-vector-algorithms
 vector-space_port=		math/hs-vector-space
