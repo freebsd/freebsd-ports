@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mueval
-PORTVERSION=	0.8.1
-PORTREVISION=	4
+PORTVERSION=	0.8.2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
