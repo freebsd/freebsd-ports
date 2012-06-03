@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	checkers
-PORTVERSION=	0.2.8
-PORTREVISION=	1
+PORTVERSION=	0.2.9
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Check properties on standard Haskell classes and data structures
+COMMENT=	Check properties on standard classes and data structures
 
 LICENSE=	BSD
 FILE_LICENSE=	COPYING
