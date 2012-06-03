@@ -2,7 +2,7 @@ lib/ADM_plugins/audioDecoder/libADM_ad_Mad.so
 lib/ADM_plugins/audioDecoder/libADM_ad_a52.so
 %%VORBIS%%lib/ADM_plugins/audioDecoder/libADM_ad_vorbis.so
 lib/ADM_plugins/audioDevices/libADM_av_oss.so
-lib/ADM_plugins/audioEncoders/libADM_ae_lame.so
+%%LAME%%lib/ADM_plugins/audioEncoders/libADM_ae_lame.so
 lib/ADM_plugins/audioEncoders/libADM_ae_lav_ac3.so
 lib/ADM_plugins/audioEncoders/libADM_ae_lav_mp2.so
 lib/ADM_plugins/audioEncoders/libADM_ae_pcm.so
