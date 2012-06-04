@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Super liberal XML parser that parses broken XML
 
-RUN_DEPENDS=	${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
+RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-HTML-Entities-Numbered>=0.04:${PORTSDIR}/textproc/p5-HTML-Entities-Numbered \
 		p5-Module-Pluggable-Fast>=0.16:${PORTSDIR}/devel/p5-Module-Pluggable-Fast \
 		p5-XML-LibXML>=1.58:${PORTSDIR}/textproc/p5-XML-LibXML
