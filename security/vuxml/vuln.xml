@@ -52,6 +52,57 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1ecc0d3f-ae8e-11e1-965b-0024e88a8c98">
+    <topic>dns/bind9* -- zero-length RDATA can cause named to terminate, reveal memory</topic>
+    <affects>
+      <package>
+	<name>bind99</name>
+	<range><lt>9.9.1.1</lt></range>
+      </package>
+      <package>
+	<name>bind98</name>
+	<range><lt>9.8.3.1</lt></range>
+      </package>
+      <package>
+	<name>bind99</name>
+	<range><lt>9.7.6.1</lt></range>
+      </package>
+      <package>
+	<name>bind99</name>
+	<range><lt>9.6.3.1.ESV.R7.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC reports:</p>
+	<blockquote cite="http://www.isc.org/software/bind/advisories/cve-2012-1667">
+	  <p>Processing of DNS resource records where the rdata field is zero length
+	  may cause various issues for the servers handling them.</p>
+	  <p>Processing of these records may lead to unexpected outcomes. Recursive
+	  servers may crash or disclose some portion of memory to the client.
+	  Secondary servers may crash on restart after transferring a zone
+	  containing these records. Master servers may corrupt zone data if the
+	  zone option "auto-dnssec" is set to "maintain". Other unexpected
+	  problems that are not listed here may also be encountered.</p>
+	  <p>Impact: This issue primarily affects recursive nameservers.
+	  Authoritative nameservers will only be impacted if an administrator
+	  configures experimental record types with no data. If the server is
+	  configured this way, then secondaries can crash on restart after
+	  transferring that zone. Zone data on the master can become corrupted if
+	  the zone with those records has named configured to manage the DNSSEC
+	  key rotation.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	 <cvename>CVE-2012-1667</cvename>
+    </references>
+    <dates>
+      <discovery>2012-06-04</discovery>
+      <entry>2012-06-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a8864f8f-aa9e-11e1-a284-0023ae8e59f0">
     <topic>databases/postgresql*-server -- crypt vulnerabilities</topic>
     <affects>
