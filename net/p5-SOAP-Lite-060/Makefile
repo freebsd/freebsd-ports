@@ -15,12 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	SOAP::Lite - Client and server side SOAP implementation
 
-RUN_DEPENDS=	${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite \
-		${SITE_PERL}/MIME/Tools.pm:${PORTSDIR}/mail/p5-MIME-Tools \
-		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay \
-		${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+RUN_DEPENDS=	p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \
+		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
+		p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
+		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFLICTS=	p5-SOAP-Lite-0.6[1-9]* p5-SOAP-Lite-0.[7-9]*
