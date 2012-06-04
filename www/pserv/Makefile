@@ -16,6 +16,8 @@ COMMENT=	A portable and small webserver written in C
 
 GNU_CONFIGURE=	yes
 
+CONFLICTS=	popular-[0-9]*
+
 OPTIONS=	LOG "Enable logging" on \
 		PHP "Enable PHP support" on
 
