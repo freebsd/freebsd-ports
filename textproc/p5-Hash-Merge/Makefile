@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Merges hashes
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone
+RUN_DEPENDS=	p5-Clone>=0:${PORTSDIR}/devel/p5-Clone
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAN3=		Hash::Merge.3

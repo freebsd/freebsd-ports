@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Regexp::Log::Common, a parser for the Common Log Format
 
-RUN_DEPENDS=	${SITE_PERL}/Regexp/Log.pm:${PORTSDIR}/textproc/p5-Regexp-Log
+RUN_DEPENDS=	p5-Regexp-Log>=0:${PORTSDIR}/textproc/p5-Regexp-Log
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
