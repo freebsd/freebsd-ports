@@ -21,12 +21,4 @@
  	    ;;
      *-netbsd*)
  	    if test "$ac_cv_have_dash_pthread" = "yes"; then
-@@ -6694,6 +6689,7 @@
-     config/nsprincl.mk
-     config/nsprincl.sh
-     config/nspr-config
-+    config/nspr.pc
-     lib/Makefile
-     lib/ds/Makefile
-     lib/libc/Makefile
 
