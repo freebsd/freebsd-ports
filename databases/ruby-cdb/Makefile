@@ -17,7 +17,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby interface to D. J. Bernstein's cdb (constant database) library
 
-BUILD_DEPENDS=	${NONEXISTENT}:${CDB_PORTDIR}:build
+FETCH_DEPENDS=	${NONEXISTENT}:${CDB_PORTDIR}:build
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
