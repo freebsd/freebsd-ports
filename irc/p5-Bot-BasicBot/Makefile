@@ -14,10 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Simple irc bot baseclass
 
-BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
-		${SITE_PERL}/POE/Component/IRC.pm:${PORTSDIR}/irc/p5-POE-Component-IRC
-RUN_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
-		${SITE_PERL}/POE/Component/IRC.pm:${PORTSDIR}/irc/p5-POE-Component-IRC
+BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
+		p5-POE-Component-IRC>=0:${PORTSDIR}/irc/p5-POE-Component-IRC
+RUN_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
+		p5-POE-Component-IRC>=0:${PORTSDIR}/irc/p5-POE-Component-IRC
 
 MAN3=	Bot::BasicBot.3
 
