@@ -24,9 +24,12 @@ IGNORE_WITH_PHP=5
 CONFIGURE_ARGS=	--enable-lzf
 WRKSRC=		${WRKDIR}/${DISTNAME:U}
 
-OPTIONS=	BETTER_COMPRESSION	"Better compression ratio"	off
+OPTIONS_DEFINE=		BETTER_COMPRESSION
+BETTER_COMPRESSION_DESC=	Better compression ratio
 
-.if defined(WITH_BETTER_COMPRESSION)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MBETTER_COMPRESSION}
 CONFIGURE_ARGS+=	--enable-lzf-better-compression
 	@${ECHO_MSG} "--enable-lzf-better-compression"
 .endif
