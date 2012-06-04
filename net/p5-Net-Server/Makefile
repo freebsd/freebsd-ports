@@ -51,9 +51,4 @@ BUILD_DEPENDS+=	p5-Socket6>=0.23:${PORTSDIR}/net/p5-Socket6
 RUN_DEPENDS+=	p5-Socket6>=0.23:${PORTSDIR}/net/p5-Socket6
 .endif
 
-post-patch:
-.if ${PORT_OPTIONS:MIPV6}
-	@cd ${WRKSRC}/ && ${FIND} . -name '*.orig' -delete
-.endif
-
 .include <bsd.port.mk>
