@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgresql
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases python
 PKGNAMESUFFIX=	-plpython
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	postgres:${PORTSDIR}/${POSTGRESQL_PORT}
 
 MASTERDIR=	${.CURDIR}/../postgresql${PGSQL_VER}-server
 
-DEFAULT_PGSQL_VER?=84
+DEFAULT_PGSQL_VER?=90
 
 # can't include <bsd.port.pre.mk> in a slave port
 # so set these instead:
