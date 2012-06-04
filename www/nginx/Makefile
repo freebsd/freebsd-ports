@@ -97,7 +97,8 @@ OPTIONS_DEFINE=	\
 	SUPERVISORD \
 	SYSLOG_SUPPORT \
 	UDPLOG \
-	XRID_HEADER
+	XRID_HEADER \
+	VIDEO
 
 OPTIONS_SINGLE=		VIDEO
 OPTIONS_SINGLE_VIDEO=	HTTP_MP4 HTTP_MP4_H264
@@ -180,6 +181,7 @@ SYSLOG_SUPPORT_DESC=		3rd party syslog support
 UDPLOG_DESC=			3rd party udplog (syslog) module
 XRID_HEADER_DESC=		3rd party x-rid header module
 XSS_DESC=			3rd party xss module
+VIDEO_DESC=			Video module support
 
 WANT_GNOME=	yes
 MAKE_JOBS_SAFE=	yes
