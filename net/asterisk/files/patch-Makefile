@@ -9,20 +9,6 @@
  
  # Asterisk.conf is located in ASTETCDIR or by using the -C flag
  # when starting Asterisk
-@@ -220,11 +220,13 @@
-   _ASTCFLAGS+=-isystem /usr/local/include
- endif
- 
-+ifneq ($(OSARCH),FreeBSD)
- ifeq ($(findstring -march,$(_ASTCFLAGS) $(ASTCFLAGS)),)
-   ifneq ($(PROC),ultrasparc)
-     _ASTCFLAGS+=$(shell if $(CC) -march=$(PROC) -S -o /dev/null -xc /dev/null >/dev/null 2>&1; then echo "-march=$(PROC)"; fi)
-   endif
- endif
-+endif
- 
- ifeq ($(PROC),ppc)
-   _ASTCFLAGS+=-fsigned-char
 @@ -235,7 +237,7 @@
      _ASTCFLAGS+=-march=i686
    endif
