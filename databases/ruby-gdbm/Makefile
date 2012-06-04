@@ -17,7 +17,7 @@ DISTFILES=	# none
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby extension to GDBM library
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${RUBY_PORT}:patch
+FETCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${RUBY_PORT}:patch
 LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
 
 PLIST_FILES=	%%RUBY_ARCHLIBDIR%%/gdbm.so
