@@ -1,6 +1,6 @@
---- ./setup.py.orig	2011-12-14 16:33:47.000000000 -0800
-+++ ./setup.py	2012-04-16 10:58:58.477390915 -0700
-@@ -17,67 +17,19 @@
+--- setup.py	2012-05-03 13:47:11.000000000 -0700
++++ setup.py	2012-06-01 11:40:31.000000000 -0700
+@@ -17,74 +17,19 @@
  
  ###################### DO NOT TOUCH THIS (HEAD TO THE SECOND PART) ######################
  
@@ -54,6 +54,13 @@
 -        DistUtilsExtra.auto.install_auto.run(self)
 -        update_data_path(self.prefix, previous_value)
 -
+-from distutils.cmd import Command    
+-class OverrideI18NCommand(Command):
+-	def initialize_options(self): pass
+-	def finalize_options(self): pass
+-	def run(self):
+-		self.distribution.data_files.append(('share/applications', ['pithos.desktop']))
+-
 -from DistUtilsExtra.command.build_extra import build_extra
 -from DistUtilsExtra.command.build_icons import build_icons
 -
@@ -63,18 +70,16 @@
      name='pithos',
 -    version='0.3',
 -    ext_modules=[],
--    license='GPL-3',
-+    version='0.3.14',
-+    description='Pandora.com client for the GNOME desktop',
++    version='0.3.17',
+     license='GPL-3',
      author='Kevin Mehall',
      author_email='km@kevinmehall.net',
--    description='Pandora.com client for the GNOME desktop',
+     description='Pandora.com client for the GNOME desktop',
 -    #long_description='Here a longer description',
      url='https://launchpad.net/pithos',
--    cmdclass={'install': InstallAndUpdateDataDirectory, 'build_icons':build_icons, 'build':build_extra}
+-    cmdclass={'install': InstallAndUpdateDataDirectory, 'build_icons':build_icons, 'build':build_extra, 'build_i18n':OverrideI18NCommand}
 -    )
 -
-+    license='GPL-3',
 +    packages=['pithos', 'pithos.pandora', 'pithos.plugins'],
 +    package_dir = {'pithos':'pithos'}
 +)

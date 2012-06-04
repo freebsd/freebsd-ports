@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pithos
-PORTVERSION=	0.3.14
-PORTREVISION=	2
+PORTVERSION=	0.3.17
 CATEGORIES=	audio
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -35,7 +34,7 @@ PYDISTUTILS_PKGNAME=	${PORTNAME}
 
 post-patch:
 	${REINPLACE_CMD} -e "s,../data/,${DATADIR}/," ${WRKSRC}/pithos/pithosconfig.py
-	${REINPLACE_CMD} -e "s,Icon=pithos,${DATADIR}/media/icon.png," ${WRKSRC}/pithos.desktop.in
+	${REINPLACE_CMD} -e "s,Icon=pithos,${DATADIR}/media/icon.png," ${WRKSRC}/pithos.desktop
 
 post-install:
 	@${INSTALL} -o ${BINOWN} -g ${BINGRP} -m 555 \
