@@ -32,35 +32,34 @@ INSTALLS_ICONS=	yes
 
 MAN1=		xfburn.1
 
-OPTIONS =	DBUS		"Enable dbus support"	on\
-		HAL		"Enable hal support"	on\
-		GSTREAMER	"Enable gstreamer for audio support"	off
+OPTIONS_DEFINE=	DBUS HAL GSTREAMER NLS
+OPTIONS_DEFAULT=	DBUS HAL
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 .else
 CONFIGURE_ARGS+=	--disable-nls
 .endif
 
-.if defined(WITH_DBUS)
+.if ${PORT_OPTIONS:MDBUS}
 LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
 .else
 CONFIGURE_ARGS+=	--disable-dbus
 .endif
 
-.if defined(WITH_HAL)
+.if ${PORT_OPTIONS:MHAL}
 LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
 .else
 CONFIGURE_ARGS+=	--disable-hal
 .endif
 
-.if defined(WITH_GSTREAMER)
+.if ${PORT_OPTIONS:MGSTREAMER}
 USE_GSTREAMER=	core
 CONFIGURE_ARGS+=	"LDFLAGS=-lgstpbutils-0.10"
 .else
 CONFIGURE_ARGS+=	--disable-gstreamer
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
