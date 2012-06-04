@@ -39,61 +39,94 @@ CMAKE_ARGS+=	-DCMAKE_INSTALL_BINDIR=${PREFIX}/bin \
 		-DLOG_DIR=/var/log/hiawatha \
 		-DPID_DIR=/var/run
 
-OPTIONS=	CACHE "Enable cache support" On \
-		CHROOT "Enable chroot support" Off \
-		COMMAND "Enable the Hiawatha CommandChannel" Off \
-		DEBUG "Enable debug information (for development only)" Off \
-		IPV6 "Enable IPv6 support" On \
-		MONITOR "Enable Hiawatha Monitor" Off \
-		RPROXY "Enable Reverse Proxy" On \
-		SSL "Enable SSL support" On \
-		TOOLKIT "Enable the URL toolkit" On \
-		XSLT "Enable XSLT support" On
+OPTIONS_DEFINE=	CACHE \
+		CHROOT \
+		COMMAND \
+		DEBUG \
+		DOCS \
+		IPV6 \
+		MONITOR \
+		RPROXY \
+		SSL \
+		TOOLKIT \
+		XSLT
+
+OPTIONS_DEFAULT=CACHE IPV6 RPROXY SSL TOOLKIT XSLT DOCS
+
+CACHE_DESC=	Enable cache support
+CHROOT_DESC=	Enable chroot support
+COMMAND_DESC=	Enable Hiawatha command channel
+MONITOR_DESC=	Enable Hiawatha Monitor
+RPROXY_DESC=	Enable reverse proxy
+TOOLKIT_DESC=	Enable URL toolkit
+XSLT_DESC=	Enable XSLT support
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MCACHE}
+CMAKE_ARGS+=	-DENABLE_CACHE=on
+.else
+CMAKE_ARGS+=	-DENABLE_CACHE=off
+.endif
+
+.if ${PORT_OPTIONS:MCHROOT}
+CMAKE_ARGS+=	-DENABLE_CHROOT=on
+.else
+CMAKE_ARGS+=	-DENABLE_CHROOT=off
+.endif
+
+.if ${PORT_OPTIONS:MCOMMAND}
+CMAKE_ARGS+=	-DENABLE_COMMAND=on
+.else
+CMAKE_ARGS+=	-DENABLE_COMMAND=off
+.endif
+
+.if ${PORT_OPTIONS:MDEBUG}
+CMAKE_ARGS+=	-DENABLE_DEBUG=on
+.else
+CMAKE_ARGS+=	-DENABLE_DEBUG=off
+.endif
+
+.if ${PORT_OPTIONS:MIPV6}
+CMAKE_ARGS+=	-DENABLE_IPV6=on
+.else
+CMAKE_ARGS+=	-DENABLE_IPV6=off
+.endif
+
+.if ${PORT_OPTIONS:MMONITOR}
+CMAKE_ARGS+=	-DENABLE_MONITOR=on
+.else
+CMAKE_ARGS+=	-DENABLE_MONITOR=off
+.endif
+
+.if ${PORT_OPTIONS:MRPROXY}
+CMAKE_ARGS+=	-DENABLE_RPROXY=on
+.else
+CMAKE_ARGS+=	-DENABLE_RPROXY=off
+.endif
+
+.if ${PORT_OPTIONS:MSSL}
+CMAKE_ARGS+=	-DENABLE_SSL=on
+.else
+CMAKE_ARGS+=	-DENABLE_SSL=off
+.endif
+
+.if ${PORT_OPTIONS:MTOOLKIT}
+CMAKE_ARGS+=	-DENABLE_TOOLKIT=on
+.else
+CMAKE_ARGS+=	-DENABLE_TOOLKIT=off
+.endif
+
+.if ${PORT_OPTIONS:MXSLT}
+USE_GNOME+=	libxslt
+CMAKE_ARGS+=	-DENABLE_XSLT=on
+.else
+CMAKE_ARGS+=	-DENABLE_XSLT=off
+.endif
 
 PLIST_SUB+=	ECHO_MSG=${ECHO_MSG}
 
 .include <bsd.port.pre.mk>
-
-.if !defined(WITH_CACHE)
-CMAKE_ARGS+=	-DENABLE_CACHE=off
-.endif
-
-.if defined(WITH_CHROOT)
-CMAKE_ARGS+=	-DENABLE_CHROOT=on
-.endif
-
-.if defined(WITH_COMMAND)
-CMAKE_ARGS+=	-DENABLE_COMMAND=on
-.endif
-
-.if defined(WITH_DEBUG)
-CMAKE_ARGS+=	-DENABLE_DEBUG=on
-.endif
-
-.if !defined(WITH_IPV6)
-CMAKE_ARGS+=	-DENABLE_IPV6=off
-.endif
-
-.if defined(WITH_MONITOR)
-CMAKE_ARGS+=	-DENABLE_MONITOR=on
-.endif
-
-.if !defined(WITH_RPROXY)
-CMAKE_ARGS+=	-DENABLE_RPROXY=off
-.endif
-
-.if !defined(WITH_SSL)
-CMAKE_ARGS+=	-DENABLE_SSL=off
-.endif
-
-.if !defined(WITH_TOOLKIT)
-CMAKE_ARGS+=	-DENABLE_TOOLKIT=off
-.endif
-
-.if defined(WITH_XSLT)
-CMAKE_ARGS+=	-DENABLE_XSLT=on
-USE_GNOME+=	libxslt
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g' \
@@ -106,7 +139,7 @@ post-patch:
 	${WRKSRC}/man/php-fcgi.1.in
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
