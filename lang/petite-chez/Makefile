@@ -23,7 +23,7 @@ NO_PACKAGE=	user must accept license terms before installation
 IGNORE=		user must accept license terms before installation
 .endif
 
-OPTIONS=	THREADS "Install threaded version" off
+OPTIONS_DEFINE=	THREADS
 
 WRKSRC=		${WRKDIR}/csv${PORTVERSION}/custom
 HAS_CONFIGURE=	yes
@@ -49,7 +49,7 @@ CHEZ_MACHTYPE=	i3fb
 CHEZ_MACHTYPE=	a6fb
 .endif
 
-.if defined(WITH_THREADS)
+.if ${PORT_OPTIONS:MTHREADS}
 CHEZ_MACHTYPE:=	t${CHEZ_MACHTYPE}
 .endif
 
