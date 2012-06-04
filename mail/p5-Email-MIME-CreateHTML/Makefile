@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Multipart HTML Email builder
 
-BUILD_DEPENDS=	${SITE_PERL}/File/Slurp/WithinPolicy.pm:${PORTSDIR}/devel/p5-File-Policy \
+BUILD_DEPENDS=	p5-File-Policy>=0:${PORTSDIR}/devel/p5-File-Policy \
 		p5-Data-Serializer>0:${PORTSDIR}/devel/p5-Data-Serializer \
 		p5-Email-MIME>0:${PORTSDIR}/mail/p5-Email-MIME \
 		p5-HTML-Tagset>0:${PORTSDIR}/www/p5-HTML-Tagset \

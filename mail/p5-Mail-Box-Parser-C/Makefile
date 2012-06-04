@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parsing folders for Mail::Box with C routines
 
-BUILD_DEPENDS=	${SITE_PERL}/Mail/Box.pm:${PORTSDIR}/mail/p5-Mail-Box
+BUILD_DEPENDS=	p5-Mail-Box>=0:${PORTSDIR}/mail/p5-Mail-Box
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
