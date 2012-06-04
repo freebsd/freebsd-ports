@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Web validation in a Perl object using tidy
 
-BUILD_DEPENDS=	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 LIB_DEPENDS=	tidyp:${PORTSDIR}/textproc/tidyp
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

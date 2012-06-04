@@ -15,9 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Make Petal go faster by compiling the expressions
 
-BUILD_DEPENDS=	${SITE_PERL}/Petal.pm:${PORTSDIR}/textproc/p5-Petal \
-		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent \
-		${SITE_PERL}/Code/Perl.pm:${PORTSDIR}/devel/p5-Code-Perl
+BUILD_DEPENDS=	p5-Petal>=0:${PORTSDIR}/textproc/p5-Petal \
+		p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent \
+		p5-Code-Perl>=0:${PORTSDIR}/devel/p5-Code-Perl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Petal::CodePerl.3 Petal::CodePerl::Expr.3 \

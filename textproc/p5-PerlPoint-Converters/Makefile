@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert PerlPoint docs into various formats
 
-BUILD_DEPENDS=	${SITE_PERL}/PerlPoint/Parser.pm:${PORTSDIR}/textproc/p5-PerlPoint-Package \
-		${SITE_PERL}/Getopt/ArgvFile.pm:${PORTSDIR}/devel/p5-Getopt-ArgvFile
+BUILD_DEPENDS=	p5-PerlPoint-Package>=0:${PORTSDIR}/textproc/p5-PerlPoint-Package \
+		p5-Getopt-ArgvFile>=0:${PORTSDIR}/devel/p5-Getopt-ArgvFile
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
