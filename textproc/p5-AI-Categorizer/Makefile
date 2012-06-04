@@ -15,14 +15,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatic Text Categorization
 
-BUILD_DEPENDS=	${SITE_PERL}/Class/Container.pm:${PORTSDIR}/devel/p5-Class-Container \
+BUILD_DEPENDS=	p5-Class-Container>=0:${PORTSDIR}/devel/p5-Class-Container \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
-		${SITE_PERL}/Statistics/Contingency.pm:${PORTSDIR}/math/p5-Statistics-Contingency \
-		${SITE_PERL}/Lingua/Stem.pm:${PORTSDIR}/textproc/p5-Lingua-Stem \
-		${SITE_PERL}/Time/Progress.pm:${PORTSDIR}/devel/p5-Time-Progress \
-		${SITE_PERL}/${PERL_ARCH}/Algorithm/SVM.pm:${PORTSDIR}/devel/p5-Algorithm-SVM \
-		${SITE_PERL}/${PERL_ARCH}/AI/DecisionTree.pm:${PORTSDIR}/math/p5-AI-DecisionTree \
-		${SITE_PERL}/Algorithm/NaiveBayes.pm:${PORTSDIR}/devel/p5-Algorithm-NaiveBayes
+		p5-Statistics-Contingency>=0:${PORTSDIR}/math/p5-Statistics-Contingency \
+		p5-Lingua-Stem>=0:${PORTSDIR}/textproc/p5-Lingua-Stem \
+		p5-Time-Progress>=0:${PORTSDIR}/devel/p5-Time-Progress \
+		p5-Algorithm-SVM>=0:${PORTSDIR}/devel/p5-Algorithm-SVM \
+		p5-AI-DecisionTree>=0:${PORTSDIR}/math/p5-AI-DecisionTree \
+		p5-Algorithm-NaiveBayes>=0:${PORTSDIR}/devel/p5-Algorithm-NaiveBayes
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	AI::Categorizer.3 \
