@@ -17,30 +17,30 @@ COMMENT=	Extended MVC framework built upon Catalyst
 
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7002:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Catalyst-Plugin-ConfigLoader>=0.19:${PORTSDIR}/www/p5-Catalyst-Plugin-ConfigLoader \
-		${SITE_PERL}/Catalyst/Plugin/Static/Simple.pm:${PORTSDIR}/www/p5-Catalyst-Plugin-Static-Simple \
-		${SITE_PERL}/Catalyst/Plugin/I18N.pm:${PORTSDIR}/www/p5-Catalyst-Plugin-I18N \
-		${SITE_PERL}/Catalyst/Model/DBIC/Schema.pm:${PORTSDIR}/www/p5-Catalyst-Model-DBIC-Schema \
+		p5-Catalyst-Plugin-Static-Simple>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Static-Simple \
+		p5-Catalyst-Plugin-I18N>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-I18N \
+		p5-Catalyst-Model-DBIC-Schema>=0:${PORTSDIR}/www/p5-Catalyst-Model-DBIC-Schema \
 		p5-Catalyst-View-TT>=0.23:${PORTSDIR}/www/p5-Catalyst-View-TT \
-		${SITE_PERL}/Catalyst/Component/ACCEPT_CONTEXT.pm:${PORTSDIR}/www/p5-Catalyst-Component-ACCEPT_CONTEXT \
-		${SITE_PERL}/Config/General.pm:${PORTSDIR}/devel/p5-Config-General \
-		${SITE_PERL}/Test/Class.pm:${PORTSDIR}/devel/p5-Test-Class \
-		${SITE_PERL}/Test/Memory/Cycle.pm:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
+		p5-Catalyst-Component-ACCEPT_CONTEXT>=0:${PORTSDIR}/www/p5-Catalyst-Component-ACCEPT_CONTEXT \
+		p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General \
+		p5-Test-Class>=0:${PORTSDIR}/devel/p5-Test-Class \
+		p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
 		p5-DBIx-Class>=0.07001:${PORTSDIR}/databases/p5-DBIx-Class \
 		p5-SQL-Translator>=0.08:${PORTSDIR}/databases/p5-SQL-Translator \
 		p5-Moose>=0.54:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Types>=0.04:${PORTSDIR}/devel/p5-MooseX-Types \
-		${SITE_PERL}/aliased.pm:${PORTSDIR}/devel/p5-aliased \
-		${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
-		${SITE_PERL}/DateTime/Span.pm:${PORTSDIR}/devel/p5-DateTime-Set \
-		${SITE_PERL}/DateTime/Event/Recurrence.pm:${PORTSDIR}/devel/p5-DateTime-Event-Recurrence \
-		${SITE_PERL}/DateTime/Format/MySQL.pm:${PORTSDIR}/devel/p5-DateTime-Format-MySQL \
-		${SITE_PERL}/Time/ParseDate.pm:${PORTSDIR}/devel/p5-Time-modules \
-		${SITE_PERL}/Email/Valid.pm:${PORTSDIR}/mail/p5-Email-Valid \
-		${SITE_PERL}/Email/Send.pm:${PORTSDIR}/mail/p5-Email-Send \
-		${SITE_PERL}/Email/MIME.pm:${PORTSDIR}/mail/p5-Email-MIME \
-		${SITE_PERL}/${PERL_ARCH}/Text/CSV_XS.pm:${PORTSDIR}/textproc/p5-Text-CSV_XS \
+		p5-aliased>=0:${PORTSDIR}/devel/p5-aliased \
+		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
+		p5-DateTime-Set>=0:${PORTSDIR}/devel/p5-DateTime-Set \
+		p5-DateTime-Event-Recurrence>=0:${PORTSDIR}/devel/p5-DateTime-Event-Recurrence \
+		p5-DateTime-Format-MySQL>=0:${PORTSDIR}/devel/p5-DateTime-Format-MySQL \
+		p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules \
+		p5-Email-Valid>=0:${PORTSDIR}/mail/p5-Email-Valid \
+		p5-Email-Send>=0:${PORTSDIR}/mail/p5-Email-Send \
+		p5-Email-MIME>=0:${PORTSDIR}/mail/p5-Email-MIME \
+		p5-Text-CSV_XS>=0:${PORTSDIR}/textproc/p5-Text-CSV_XS \
 		p5-File-ShareDir>=1.00:${PORTSDIR}/devel/p5-File-ShareDir \
-		${SITE_PERL}/${PERL_ARCH}/Devel/Declare.pm:${PORTSDIR}/devel/p5-Devel-Declare
+		p5-Devel-Declare>=0:${PORTSDIR}/devel/p5-Devel-Declare
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

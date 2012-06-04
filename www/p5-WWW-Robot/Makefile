@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	WWW::Robot - configurable web traversal engine
 
-BUILD_DEPENDS=	${SITE_PERL}/HTML/Element.pm:${PORTSDIR}/www/p5-HTML-Tree \
-		${SITE_PERL}/HTTP/Status.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/HTML/Tagset.pm:${PORTSDIR}/www/p5-HTML-Tagset
+BUILD_DEPENDS=	p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-HTML-Tagset>=0:${PORTSDIR}/www/p5-HTML-Tagset
 
 PERL_CONFIGURE=	yes
 
