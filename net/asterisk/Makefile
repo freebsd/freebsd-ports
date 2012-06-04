@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.8.12.2
-PORTREVISION=	1
+PORTVERSION=	1.8.13.0
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -45,7 +44,7 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		ASTCFLAGS="${CFLAGS}"
 MAN8=		asterisk.8 astgenkey.8 autosupport.8 safe_asterisk.8
 CONFLICTS_BUILD=	linuxthreads-*
-CONFLICTS_INSTALL=	asterisk*-1.2* asterisk*-1.4* asterisk*-1.6*
+CONFLICTS_INSTALL=	asterisk*-1.4* asterisk*-1.6* asterisk*-10*
 
 OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 		IODBC		"Enable iODBC support" off \
