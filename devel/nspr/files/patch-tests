@@ -148,24 +148,6 @@
 +            (long)retVal, (long)PR_GetError());
  	    exit(1);
          }
---- ../pr/tests/op_noacc.c	Sun Apr 25 11:01:02 2004
-+++ ../pr/tests/op_noacc.c	Tue Jul 12 01:40:22 2005
-@@ -82,5 +82,5 @@
-     PR_STDIO_INIT();
- 	err01 = PR_Open("err01.tmp", PR_CREATE_FILE | PR_RDWR, 0);
--	if (err01 == NULL) 
-+	if (err01 == NULL) {
- 		if (PR_GetError() == PR_NO_ACCESS_RIGHTS_ERROR) {
- 				printf ("error code is %d\n",PR_GetError());
-@@ -92,3 +92,7 @@
- 			return 1;
- 		}
--}			
-+	} else {
-+		perror("err01.tmp");
-+		return 2;
-+	}
-+}
 --- ../pr/tests/peek.c	Sun Apr 25 11:01:02 2004
 +++ ../pr/tests/peek.c	Tue Jul 12 01:41:44 2005
 @@ -168,5 +168,5 @@
@@ -1841,36 +1823,44 @@
 +                (void*)(intptr_t)PR_SecondsToInterval(secs), PR_PRIORITY_NORMAL,
                  threadScopes[i], PR_JOINABLE_THREAD, 0);
              if (threads[idx] == NULL) {
---- ../pr/tests/zerolen.c	Sun Apr 25 11:01:02 2004
-+++ ../pr/tests/zerolen.c	Mon Jul 25 23:04:19 2005
-@@ -78,5 +78,5 @@
+--- ../pr/tests/zerolen.c.orig	2012-03-06 14:14:33.000000000 +0100
++++ ../pr/tests/zerolen.c	2012-06-04 13:39:40.000000000 +0200
+@@ -45,7 +45,7 @@
+ {
      PRFileDesc *sock;
      PRNetAddr addr;
 -    PRUint16 port = (PRUint16) arg;
 +    PRUint16 port = (PRUint16)(uintptr_t)arg;
      char buf[1024];
      PRInt32 nbytes;
-@@ -157,5 +157,5 @@
+ 
+@@ -127,7 +127,7 @@
+      * First test PR_Writev.
       */
      clientThread = PR_CreateThread(PR_USER_THREAD,
 -            ClientThread, (void *) PR_ntohs(PR_NetAddrInetPort(&addr)),
 +            ClientThread, (void *)(uintptr_t)PR_ntohs(PR_NetAddrInetPort(&addr)),
              PR_PRIORITY_NORMAL, PR_GLOBAL_THREAD, PR_JOINABLE_THREAD, 0);
      if (NULL == clientThread) {
-@@ -198,5 +198,5 @@
+         fprintf(stderr, "PR_CreateThread failed\n");
+@@ -171,7 +171,7 @@
+      * Then test PR_Write.
       */
      clientThread = PR_CreateThread(PR_USER_THREAD,
 -            ClientThread, (void *) PR_ntohs(PR_NetAddrInetPort(&addr)),
 +            ClientThread, (void *)(uintptr_t)PR_ntohs(PR_NetAddrInetPort(&addr)),
              PR_PRIORITY_NORMAL, PR_GLOBAL_THREAD, PR_JOINABLE_THREAD, 0);
      if (NULL == clientThread) {
-@@ -237,5 +237,5 @@
+         fprintf(stderr, "PR_CreateThread failed\n");
+@@ -216,7 +216,7 @@
+      * Finally test PR_Send.
       */
      clientThread = PR_CreateThread(PR_USER_THREAD,
 -            ClientThread, (void *) PR_ntohs(PR_NetAddrInetPort(&addr)),
 +            ClientThread, (void *)(uintptr_t)PR_ntohs(PR_NetAddrInetPort(&addr)),
              PR_PRIORITY_NORMAL, PR_GLOBAL_THREAD, PR_JOINABLE_THREAD, 0);
      if (NULL == clientThread) {
+         fprintf(stderr, "PR_CreateThread failed\n");
 --- ../pr/tests/runtests.sh	Sun Apr 25 11:01:02 2004
 +++ ../pr/tests/runtests.sh	Tue Jul 26 00:01:35 2005
 @@ -85,7 +85,4 @@
