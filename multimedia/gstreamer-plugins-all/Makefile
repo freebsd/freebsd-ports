@@ -19,32 +19,32 @@ COMMENT=	Meta-port of all gstreamer plugins with options
 
 NO_BUILD=	yes
 USE_GSTREAMER=	yes
-OPTIONS=	# Hacky.. but it works the way it is set up...
+.include "${.CURDIR}/../../Mk/bsd.gstreamer.mk"
+
+.for all in ${_USE_GSTREAMER10_ALL}
+OPTIONS_DEFINE+=	${all:U}
+${all:U}_DESC=	${all} plugin
+OPTIONS_DEFAULT+=	${all:U}
+.endfor
 
 .include <bsd.port.pre.mk>
 
 # Weed out gst-plugins that can not be packaged. or are broken.
 .if defined(PACKAGE_BUILDING)
-WITHOUT_FAAC=	yes	# Mp4 Dolby license , no package
-WITHOUT_LAME=	yes	# MP3 License , no package
-WITHOUT_MPEG2ENC=	yes	# Broken
-WITHOUT_VDPAU=	yes	# Needs to be build agains running kernel
+PORT_OPTIONS:=	${PORT_OPTIONS:NFAAC} # Mp4 Dolby license , no package
+PORT_OPTIONS:=	${PORT_OPTIONS:NLAME} # MP3 License , no package
+PORT_OPTIONS:=	${PORT_OPTIONS:NPEG2ENC} # Broken
+PORT_OPTIONS:=	${PORT_OPTIONS:NVDPAU} # Needs to be build agains running kernel
 .endif
-.if ${ARCH}!="i386"
-WITHOUT_SPC=	yes	# i386 only
+
+.if ${ARCH} != "i386"
+PORT_OPTIONS:=	${PORT_OPTIONS:NSPC} # i386 only
 .endif
-WITHOUT_FLITE=	yes	# broken 
+PORT_OPTIONS:=	${PORT_OPTIONS:NFLITE} # broken
 
-# Remove core, yes
-PLUGS=	${_USE_GSTREAMER10_ALL}
-
-.for all in ${PLUGS}
-OPTIONS+=	${all:U} "${all} plugin " on
-.endfor
-
-.for f in ${PLUGS}
-.if !defined(WITHOUT_${f:U})
-USE_GSTREAMER+=	${f}
+.for f in ${OPTIONS_DEFINE}
+.if ${PORT_OPTIONS:M${f:U}}
+USE_GSTREAMER+=	${f:L}
 .endif
 .endfor
 
