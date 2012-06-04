@@ -20,6 +20,7 @@ BUILD_DEPENDS=	p5-Class-Container>=0.7:${PORTSDIR}/devel/p5-Class-Container \
 		p5-Exception-Class>=1.15:${PORTSDIR}/devel/p5-Exception-Class \
 		p5-Log-Any>=0.08:${PORTSDIR}/devel/p5-Log-Any \
 		p5-Cache-Cache>=1:${PORTSDIR}/devel/p5-Cache-Cache
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 
 PERL_MODBUILD=	yes
@@ -56,7 +57,8 @@ MAN3=		Bundle::HTML::Mason.3 \
 		HTML::Mason::Tools.3 \
 		HTML::Mason::Utils.3
 
-OPTIONS=	MOD_PERL "with mod_perl dependency" off
+OPTIONS_DEFINE=	MOD_PERL
+MOD_PERL_DESC= with mod_perl dependency
 
 post-build:
 	${MV} -f ${WRKSRC}/bin ${WRKSRC}/bin.orig
@@ -65,11 +67,11 @@ post-build:
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/blib/script.orig/mason.pl ${PREFIX}/bin
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MOD_PERL)
-USE_APACHE=	2.0+
+.if ${PORT_OPTIONS:MMOD_PERL}
+USE_APACHE=	20+
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
