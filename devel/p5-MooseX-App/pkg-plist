@@ -5,7 +5,6 @@
 %%SITE_PERL%%/MooseX/App/Message/Block.pm
 %%SITE_PERL%%/MooseX/App/Message/BlockColor.pm
 %%SITE_PERL%%/MooseX/App/Message/Envelope.pm
-%%SITE_PERL%%/MooseX/App/Meta/Role/Attribute/Base.pm
 %%SITE_PERL%%/MooseX/App/Meta/Role/Attribute/Option.pm
 %%SITE_PERL%%/MooseX/App/Meta/Role/Class/Base.pm
 %%SITE_PERL%%/MooseX/App/Meta/Role/Class/Command.pm
