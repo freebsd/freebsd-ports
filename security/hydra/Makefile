@@ -21,6 +21,8 @@ LIB_DEPENDS=	idn:${PORTSDIR}/dns/libidn \
 		pcre:${PORTSDIR}/devel/pcre \
 		sasl2:${PORTSDIR}/security/cyrus-sasl2
 
+CONFLICTS=	hydra-[0-9]*
+
 NO_LATEST_LINK=	yes
 PLIST_FILES=	bin/hydra bin/pw-inspector bin/dpl4hydra.sh
 GNU_CONFIGURE=	yes
