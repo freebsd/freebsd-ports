@@ -1,22 +1,22 @@
---- apps/pdfapp.c.orig	2011-04-29 14:06:09.000000000 -0500
-+++ apps/pdfapp.c	2011-05-16 19:58:55.650380651 -0500
-@@ -777,11 +777,15 @@ void pdfapp_onkey(pdfapp_t *app, int c)
+--- apps/pdfapp.c.orig	2012-03-29 05:46:53.000000000 -0500
++++ apps/pdfapp.c	2012-04-07 16:43:55.030462608 -0500
+@@ -774,11 +774,15 @@ void pdfapp_onkey(pdfapp_t *app, int c)
  		break;
  
  	case 'j':
-+		if (app->pany + app->image->h <= app->winh)
-+			goto pagedown;
- 		app->pany -= app->image->h / 10;
++ 		if (app->pany + fz_pixmap_height(app->ctx, app->image) <= app->winh)
++ 			goto pagedown;
+ 		app->pany -= fz_pixmap_height(app->ctx, app->image) / 10;
  		pdfapp_showpage(app, 0, 0, 1);
  		break;
  
  	case 'k':
-+		if (app->pany >= 0)
-+			goto pageup;
- 		app->pany += app->image->h / 10;
++ 		if (app->pany >= 0)
++ 			goto pageup;
+ 		app->pany += fz_pixmap_height(app->ctx, app->image) / 10;
  		pdfapp_showpage(app, 0, 0, 1);
  		break;
-@@ -843,6 +847,7 @@ void pdfapp_onkey(pdfapp_t *app, int c)
+@@ -842,6 +846,7 @@ void pdfapp_onkey(pdfapp_t *app, int c)
  	 */
  
  	case ',':
@@ -24,7 +24,7 @@
  		panto = PAN_TO_BOTTOM;
  		if (app->numberlen > 0)
  			app->pageno -= atoi(app->number);
-@@ -851,6 +856,7 @@ void pdfapp_onkey(pdfapp_t *app, int c)
+@@ -850,6 +855,7 @@ void pdfapp_onkey(pdfapp_t *app, int c)
  		break;
  
  	case '.':
@@ -32,11 +32,12 @@
  		panto = PAN_TO_TOP;
  		if (app->numberlen > 0)
  			app->pageno += atoi(app->number);
-@@ -1022,6 +1028,11 @@ void pdfapp_onmouse(pdfapp_t *app, int x
+@@ -1039,6 +1045,12 @@ void pdfapp_onmouse(pdfapp_t *app, int x
  				int isx = (modifiers & (1<<0));
  				int xstep = isx ? 20 * dir : 0;
  				int ystep = !isx ? 20 * dir : 0;
-+				if (!isx && dir < 0 && app->pany + app->image->h <= app->winh)
++				if (!isx && dir < 0 && app->pany +
++				    fz_pixmap_height(app->ctx, app->image) <= app->winh)
 +					pdfapp_onkey(app, 'j');
 +				else if (!isx && dir > 0 && app->pany >= 0)
 +					pdfapp_onkey(app, 'k');

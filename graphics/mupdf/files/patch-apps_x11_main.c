@@ -1,18 +1,7 @@
---- apps/x11_main.c.orig	2011-04-29 14:06:09.000000000 -0500
-+++ apps/x11_main.c	2011-06-11 02:15:12.203411543 -0500
-@@ -482,9 +482,7 @@ void winreloadfile(pdfapp_t *app)
- 
- void winopenuri(pdfapp_t *app, char *buf)
- {
--	char *browser = getenv("BROWSER");
--	if (!browser)
--		browser = "open";
-+	char browser[] = "xdg-open";
- 	if (fork() == 0)
- 		execlp(browser, browser, buf, (char*)0);
- }
-@@ -563,6 +561,24 @@ static void winresettmo(struct timeval *
- 	tmo_at->tv_usec = 0;
+--- apps/x11_main.c.orig	2012-03-29 05:46:53.000000000 -0500
++++ apps/x11_main.c	2012-04-07 14:37:40.754315181 -0500
+@@ -602,6 +602,24 @@ static void usage(void)
+ 	exit(1);
  }
  
 +/* reference:
@@ -36,12 +25,3 @@
  int main(int argc, char **argv)
  {
  	int c;
-@@ -571,7 +587,7 @@ int main(int argc, char **argv)
- 	KeySym keysym;
- 	int oldx = 0;
- 	int oldy = 0;
--	int resolution = 72;
-+	int resolution = get_dpi();
- 	int pageno = 1;
- 	int wasshowingpage;
- 	struct timeval tmo, tmo_at;
