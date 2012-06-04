@@ -18,9 +18,9 @@ COMMENT=	Module to check memcached via nagios
 
 PERL_CONFIGURE=	yes
 
-BUILD_DEPENDS+=	${SITE_PERL}/Nagios/Plugin.pm:${PORTSDIR}/net-mgmt/p5-Nagios-Plugin \
-		${SITE_PERL}/Cache/Memcached.pm:${PORTSDIR}/databases/p5-Cache-Memcached \
-		${SITE_PERL}/Carp/Clan.pm:${PORTSDIR}/devel/p5-Carp-Clan
+BUILD_DEPENDS+=	p5-Nagios-Plugin>=0:${PORTSDIR}/net-mgmt/p5-Nagios-Plugin \
+		p5-Cache-Memcached>=0:${PORTSDIR}/databases/p5-Cache-Memcached \
+		p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 MAKE_JOBS_SAFE=  yes

@@ -28,7 +28,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 OPTIONS	=	MODPERL "Enable Apache Support via mod_perl"	On
 
 .ifdef WITH_MODPERL
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
+RUN_DEPENDS+=	mod_perl2>=0:${PORTSDIR}/www/mod_perl2
 .endif
 
 MAKE_JOBS_SAFE=	yes
