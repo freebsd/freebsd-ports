@@ -14,10 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Smart matching for human names
 
-BUILD_DEPENDS=	${SITE_PERL}/Lingua/EN/NameParse.pm:${PORTSDIR}/textproc/p5-Lingua-EN-NameParse \
-		${SITE_PERL}/Lingua/EN/Nickname.pm:${PORTSDIR}/textproc/p5-Lingua-EN-Nickname \
-		${SITE_PERL}/${PERL_ARCH}/String/Approx.pm:${PORTSDIR}/devel/p5-String-Approx \
-		${SITE_PERL}/${PERL_ARCH}/Text/Metaphone.pm:${PORTSDIR}/textproc/p5-Text-Metaphone
+BUILD_DEPENDS=	p5-Lingua-EN-NameParse>=0:${PORTSDIR}/textproc/p5-Lingua-EN-NameParse \
+		p5-Lingua-EN-Nickname>=0:${PORTSDIR}/textproc/p5-Lingua-EN-Nickname \
+		p5-String-Approx>=0:${PORTSDIR}/devel/p5-String-Approx \
+		p5-Text-Metaphone>=0:${PORTSDIR}/textproc/p5-Text-Metaphone
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

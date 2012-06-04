@@ -15,11 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy tool to create social network maps
 
-BUILD_DEPENDS=	${SITE_PERL}/Spiffy.pm:${PORTSDIR}/devel/p5-Spiffy \
-		${SITE_PERL}/Graph.pm:${PORTSDIR}/math/p5-Graph \
-		${SITE_PERL}/Graph/Writer/GraphViz.pm:${PORTSDIR}/graphics/p5-Graph-Writer-GraphViz \
-		${SITE_PERL}/Quantum/Superpositions.pm:${PORTSDIR}/lang/p5-Quantum-Superpositions \
-		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
+BUILD_DEPENDS=	p5-Spiffy>=0:${PORTSDIR}/devel/p5-Spiffy \
+		p5-Graph>=0:${PORTSDIR}/math/p5-Graph \
+		p5-Graph-Writer-GraphViz>=0:${PORTSDIR}/graphics/p5-Graph-Writer-GraphViz \
+		p5-Quantum-Superpositions>=0:${PORTSDIR}/lang/p5-Quantum-Superpositions \
+		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Graph::SocialMap.3

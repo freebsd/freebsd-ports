@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Replace tags with text and geometry
 
-BUILD_DEPENDS=	${SITE_PERL}/CAD/Drawing.pm:${PORTSDIR}/graphics/p5-CAD-Drawing \
-		${SITE_PERL}/CAD/Calc.pm:${PORTSDIR}/math/p5-CAD-Calc
+BUILD_DEPENDS=	p5-CAD-Drawing>=0:${PORTSDIR}/graphics/p5-CAD-Drawing \
+		p5-CAD-Calc>=0:${PORTSDIR}/math/p5-CAD-Calc
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	CAD::Drawing::Template.3

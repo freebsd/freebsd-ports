@@ -15,12 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Methods to create, load, and save vector graphics
 
-RUN_DEPENDS=	${SITE_PERL}/Math/Vec.pm:${PORTSDIR}/math/p5-Math-Vec \
-		${SITE_PERL}/CAD/Calc.pm:${PORTSDIR}/math/p5-CAD-Calc \
-		${SITE_PERL}/Math/MatrixReal.pm:${PORTSDIR}/math/p5-MatrixReal \
-		${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick \
-		${SITE_PERL}/Stream/FileInputStream.pm:${PORTSDIR}/devel/p5-Stream \
-		${SITE_PERL}/Math/Geometry/Planar.pm:${PORTSDIR}/math/p5-Math-Geometry-Planar
+RUN_DEPENDS=	p5-Math-Vec>=0:${PORTSDIR}/math/p5-Math-Vec \
+		p5-CAD-Calc>=0:${PORTSDIR}/math/p5-CAD-Calc \
+		p5-MatrixReal>=0:${PORTSDIR}/math/p5-MatrixReal \
+		ImageMagick>=0:${PORTSDIR}/graphics/ImageMagick \
+		p5-Stream>=0:${PORTSDIR}/devel/p5-Stream \
+		p5-Math-Geometry-Planar>=0:${PORTSDIR}/math/p5-Math-Geometry-Planar
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAN3=	CAD::Drawing.3 \
