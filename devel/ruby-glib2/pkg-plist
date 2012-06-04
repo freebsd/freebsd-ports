@@ -1,7 +1,12 @@
 libdata/pkgconfig/ruby-glib2.pc
+%%RUBY_SITELIBDIR%%/glib2/deprecatable.rb
 %%RUBY_SITELIBDIR%%/glib-mkenums.rb
 %%RUBY_SITELIBDIR%%/glib2.rb
 %%RUBY_SITELIBDIR%%/gnome2-raketask.rb
+%%RUBY_SITEARCHLIBDIR%%/rbglib2conversions.h
+%%RUBY_SITEARCHLIBDIR%%/rbglibdeprecated.h
+%%RUBY_SITEARCHLIBDIR%%/rbgutil_list.h
+%%RUBY_SITEARCHLIBDIR%%/rbgutildeprecated.h
 %%RUBY_SITEARCHLIBDIR%%/glib2.so
 %%RUBY_SITEARCHLIBDIR%%/rbgcompat.h
 %%RUBY_SITEARCHLIBDIR%%/rbglib.h
@@ -10,7 +15,6 @@ libdata/pkgconfig/ruby-glib2.pc
 %%RUBY_SITEARCHLIBDIR%%/glib-enum-types.h
 %%RUBY_SITELIBDIR%%/mkmf-gnome2.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING.LIB
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/bookmarkfile.rb
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/completion.rb
@@ -29,3 +33,4 @@ libdata/pkgconfig/ruby-glib2.pc
 %%PORTEXAMPLES%%@dirrmtry %%RUBY_EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
 %%PORTDOCS%%@dirrmtry %%RUBY_DOCDIR%%
+@dirrmtry %%RUBY_SITELIBDIR%%/glib2

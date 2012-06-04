@@ -1,8 +1,9 @@
 libdata/pkgconfig/ruby-gdk-pixbuf2.pc
 %%RUBY_SITELIBDIR%%/gdk_pixbuf2.rb
 %%RUBY_SITEARCHLIBDIR%%/gdk_pixbuf2.so
+%%RUBY_SITEARCHLIBDIR%%/rbgdk-pixbuf.h
+%%RUBY_SITEARCHLIBDIR%%/rbgdk-pixbuf2conversions.h
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING.LIB
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/anim.rb
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/composite.rb

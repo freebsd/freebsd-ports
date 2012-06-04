@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--with-pkg-config-dir=${LOCALBASE}/libdata/pkgconfig
 WRKSRC=		${RUBY_GNOME_WRKSRC}/${PORTNAME}
 INSTALL_TARGET=	site-install install
 
-DOCS=		COPYING.LIB ChangeLog README
+DOCS=		COPYING.LIB README
 
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.bak' -delete

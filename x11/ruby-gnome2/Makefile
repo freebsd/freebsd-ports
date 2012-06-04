@@ -19,7 +19,7 @@ COMMENT=	The "meta-port" for Ruby/GNOME2
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gio2.so:${PORTSDIR}/devel/ruby-gio2 \
 		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/goocanvas.so:${PORTSDIR}/x11-toolkits/ruby-goocanvas \
-		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gst.so:${PORTSDIR}/x11-toolkits/ruby-gstreamer \
+		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gstreamer.so:${PORTSDIR}/x11-toolkits/ruby-gstreamer \
 		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gtksourceview2.so:${PORTSDIR}/x11-toolkits/ruby-gtksourceview2 \
 		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/poppler.so:${PORTSDIR}/x11-toolkits/ruby-poppler \
 		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/rsvg2.so:${PORTSDIR}/graphics/ruby-rsvg2 \

@@ -1,7 +1,6 @@
 libdata/pkgconfig/ruby-goocanvas.pc
 %%RUBY_SITELIBDIR%%/goocanvas.rb
 %%RUBY_SITEARCHLIBDIR%%/goocanvas.so
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/demo-arrowhead.rb
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/demo-fifteen.rb
