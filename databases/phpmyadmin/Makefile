@@ -27,25 +27,28 @@ USE_PHP=	ctype session filter mbstring json spl
 # want this, either turn off GD in the config dialog, or else turn off
 # FONTCONFIG in the graphics/gd port options.
 
-OPTIONS=	SUPHP	"suPHP support"			      off \
-		BZ2	"bzip2 library support" 	      on  \
-		GD	"GD library support (requires X11)"   on  \
-		MYSQL	"MySQL support via mysql client"      off \
-		MYSQLI	"Improved MySQL client support"	      on  \
-		OPENSSL	"OpenSSL support" 		      on  \
-		PDF	"PDFlib support" 		      on  \
-		ZLIB	"ZLIB support" 			      on  \
-		MCRYPT	"MCrypt library support" 	      on  \
-		ZIP	"Zip compression support" 	      on  \
-		APC	"APC (animated progress bar) support" on
+PHP_MODULE_OPTIONS=	APC BZ2 GD MCRYPT OPENSSL PDF ZIP ZLIB
+OPTIONS_DEFINE=		SUPHP ${PHP_MODULE_OPTIONS}
+OPTIONS_DEFAULT=	APC BZ2 GD MCRYPT MYSQLI OPENSSL PDF ZIP ZLIB
+
+OPTIONS_MULTI=		DB_connect
+OPTIONS_MULTI_DB_connect=	MYSQL MYSQLI
+
+APC_DESC=	PHP APC (animated progress bar) support
+BZ2_DESC=	PHP bzip2 library support
+GD_DESC=	PHP GD library support (requires X11)
+MCRYPT_DESC=	PHP MCrypt library support
+MYSQLI_DESC=	PHP Improved MySQL client support
+MYSQL_DESC=	PHP MySQL support via mysql client
+OPENSSL_DESC=	PHP OpenSSL support
+PDF_DESC=	PHP PDFlib support
+SUPHP_DESC=	suPHP support
+ZIP_DESC=	PHP Zip compression support
+ZLIB_DESC=	PHP ZLIB support
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITH_MYSQL) && !defined(WITH_MYSQLI)
-BROKEN=	${PKGNAME} needs at least one of WITH_MYSQL or WITH_MYSQLI in order to work
-.endif 
-
-.if defined(WITH_SUPHP) && !defined(WITHOUT_SUPHP)
+.if ${PORT_OPTIONS:MSUPHP}
 
 PKGNAMESUFFIX=	-suphp
 RUN_DEPENDS+=	${LOCALBASE}/sbin/suphp:${PORTSDIR}/www/suphp
@@ -57,14 +60,14 @@ WANT_PHP_WEB=	yes
 
 .endif
 
-# USERS is only used WITH_SUPHP
+# USERS is only used with the SUPHP option
 GROUPS?=	${WWWGRP}
 CFGFILE=	config.inc.php
 
 PLIST=		${WRKDIR}/plist
 PLIST_SUB+=	PMA_GRP=${GROUPS}
 
-.if defined(WITH_SUPHP) && !defined(WITHOUT_SUPHP)
+.if ${PORT_OPTIONS:MSUPHP}
 
 USERS?=		_pma
 
@@ -81,19 +84,12 @@ LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
 .if !defined(WITHOUT_PHP_DEPENDS)
 
-# Options that default to on:
-.for opt in BZ2 GD OPENSSL PDF ZLIB MCRYPT MBSTRING ZIP APC
-.    if !defined(WITHOUT_${opt}) || defined(WITH_${opt})
+.for opt in ${PHP_MODULE_OPTIONS} ${OPTIONS_MULTI_DB_connect}
+.    if ${PORT_OPTIONS:M${opt}}
 USE_PHP+=	${opt:L}
 .    endif
 .endfor
 
-# Options that default to off:
-.for opt in MYSQLI
-.    if defined(WITH_${opt}) && !defined(WITHOUT_${opt})
-USE_PHP+=	${opt:L}
-.    endif
-.endfor
 .endif
 
 .SILENT:
@@ -136,7 +132,7 @@ install-conf: install-app
 	fi
 
 post-install:
-.if defined(WITH_SUPHP)
+.if ${PORT_OPTIONS:MSUPHP}
 	${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 	${CAT} ${PKGMESSAGE}

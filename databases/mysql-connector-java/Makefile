@@ -35,12 +35,14 @@ JDCLASSPATH=	${SRCDIR}:${CLASSPATH}
 
 PLIST_FILES=	%%JAVAJARDIR%%/${DESTJARFILE}
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 .endif
 
 do-build:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${JAVADOCDIR} && (cd ${SRCDIR};               \
 	    ${JAVADOC} -quiet -breakiterator -encoding utf8     \
 	    -d ${JAVADOCDIR} -package -classpath ${JDCLASSPATH}	\
@@ -55,7 +57,7 @@ do-install-jar:
 	@${ECHO_MSG} " [ DONE ]"
 
 do-install-apidocs:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
 	@${MKDIR} ${APIDOCSDIR}
 	@cd ${JAVADOCDIR} && for src in $$( ${FIND} . ) ; do \

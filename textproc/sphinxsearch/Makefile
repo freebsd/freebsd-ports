@@ -25,14 +25,19 @@ LICENSE=	GPLv2
 # of turning this off.  So for consistency, make sure it's always on.
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 
-OPTIONS=	MYSQL		 "MySQL support"		    on	\
-		PGSQL		 "PostgreSQL support"		    off \
-		ICONV		 "Iconv support"		    on	\
-		OPTIMIZED_CFLAGS "Use compiler optimization (-O3)"  off \
-		ID64		 "use 64-bit document and word IDs" off \
-		UNIXODBC	 "unixODBC support"		    off \
-		SYSLOG		 "enable logging via syslog"	    on  \
-		LIBSTEMMER	 "compile with libstemmer support"  off
+OPTIONS_DEFINE=	ICONV ID64 LIBSTEMMER MYSQL OPTIMIZED_CFLAGS PGSQL \
+		SYSLOG UNIXODBC 
+
+#ICONV_DESC=		Iconv support
+ID64_DESC=		use 64-bit document and word IDs
+LIBSTEMMER_DESC=	compile with libstemmer support
+#MYSQL_DESC=		MySQL support
+#OPTIMIZED_CFLAGS_DESC=	Use compiler optimization (-O3)
+#PGSQL_DESC=		PostgreSQL support
+SYSLOG_DESC=		enable logging via syslog
+UNIXODBC_DESC=		unixODBC support
+
+OPTIONS_DEFAULT=	ICONV MYSQL SYSLOG
 
 CONFLICTS=	sphinxsearch-devel-[0-9]*
 
@@ -41,46 +46,46 @@ CONFLICTS=	sphinxsearch-devel-[0-9]*
 # The port will successfully compile with both PGSQL and MYSQL support
 # simultaneously.  Not sure how useful that is in practice though.
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 CONFIGURE_ARGS+=	--with-mysql
 USE_MYSQL=		yes
 .else
 CONFIGURE_ARGS+=	--without-mysql
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 CONFIGURE_ARGS+=	--with-pgsql
 USE_PGSQL=		yes
 .else
 CONFIGURE_ARGS+=	--without-pgsql
 .endif
 
-.if defined(WITH_ICONV)
+.if ${PORT_OPTIONS:MICONV}
 CONFIGURE_ARGS+=	--with-iconv
 USE_ICONV=		yes
 .else
 CONFIGURE_ARGS+=	--without-iconv
 .endif
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CXXFLAGS+=		-O3 -fomit-frame-pointer
 .endif
 
 # Changes document and word IDs to a 64bit type, useful if you have
 # more than about 4.2E9 such items to deal with.  Means corresponding
 # changes in DB schema.  Disabled by default.
-.if defined(WITH_ID64)
+.if ${PORT_OPTIONS:MID64}
 CONFIGURE_ARGS+=	--enable-id64
 .endif
 
-.if defined(WITH_UNIXODBC)
+.if ${PORT_OPTIONS:MUNIXODBC}
 CONFIGURE_ARGS+=	--with-unixodbc
 LIB_DEPENDS+=		odbc:${PORTSDIR}/databases/unixODBC
 .else
 CONFIGURE_ARGS+=	--without-unixodbc
 .endif
 
-.if defined(WITH_SYSLOG)
+.if ${PORT_OPTIONS:MSYSLOG}
 CONFIGURE_ARGS+=	--with-syslog
 .else
 CONFIGURE_ARGS+=	--without-syslog
@@ -100,14 +105,14 @@ CONFIGURE_ARGS+=	--without-syslog
 # Portuguese, Italian, Romanian, German, Dutch, Swedish, Norwegian,
 # Danish, Finnish, Hungarian.  Disabled by default.
 
-.if defined(WITH_LIBSTEMMER) || make(makesum) || defined(FETCH_ALL)
+.if ${PORT_OPTIONS:MLIBSTEMMER} || make(makesum) || defined(FETCH_ALL)
 MASTER_SITES+=	http://snowball.tartarus.org/dist/:libstemmer
 LIBSTEMMER_TGZ=	libstemmer_c.tgz
 DISTFILES+=	${LIBSTEMMER_TGZ}:libstemmer
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
-.if defined(WITH_LIBSTEMMER)
+.if ${PORT_OPTIONS:MLIBSTEMMER}
 CONFIGURE_ARGS+=	--with-libstemmer
 .else
 CONFIGURE_ARGS+=	--without-libstemmer
@@ -136,17 +141,17 @@ SUB_LIST+=	PORTNAME=${PORTNAME}	 \
 		SPHINX_LOG=${SPHINX_LOG}
 SUB_FILES+=	pkg-deinstall
 
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 EXAMPLES=	example.sql api
 PORTEXAMPLES=	*
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 DOCS=		doc/sphinx.css doc/sphinx.html doc/sphinx.txt doc/sphinx.xml
 .endif
 
 post-extract:
-.if defined(WITH_LIBSTEMMER)
+.if ${PORT_OPTIONS:MLIBSTEMMER}
 	@( cd ${WRKSRC} && \
 	    ${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${LIBSTEMMER_TGZ} \
 	    ${EXTRACT_AFTER_ARGS} )
@@ -171,7 +176,7 @@ install-bin:
 	${INSTALL_DATA}	   ${WRKSRC}/sphinx.conf.dist ${CFGFILE}.sample
 
 install-docs:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
@@ -179,7 +184,7 @@ install-docs:
 .endif
 
 install-examples:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 .for example in ${EXAMPLES}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${example} ${EXAMPLESDIR}

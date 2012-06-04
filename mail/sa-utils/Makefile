@@ -18,7 +18,8 @@ COMMENT=	SpamAssassin nightly periodic maintenance
 
 RUN_DEPENDS=	sa-update:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 
-OPTIONS=	SACOMPILE "Enable sa-compile support" off
+OPTIONS_DEFINE=	SACOMPILE
+SACOMPILE_DESC=	"Enable sa-compile support"
 
 NO_BUILD=	yes
 SUB_FILES=	sa-utils
@@ -30,8 +31,8 @@ PLIST_DIRS=	${PERIODIC_DAILY} ${PERIODIC_DAILY:H}
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_SACOMPILE)
-RUN_DEPENDS+=	re2c>=.12.0:${PORTSDIR}/devel/re2c
+.if ${PORT_OPTIONS:MSACOMPILE}
+RUN_DEPENDS+=	re2c>=0.12.0:${PORTSDIR}/devel/re2c
 SUB_LIST+=	SACOMPILE=YES
 .else
 SUB_LIST+=	SACOMPILE=NO

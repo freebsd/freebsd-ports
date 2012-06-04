@@ -40,6 +40,8 @@ DOCSLIST=	FONTLOG.txt GENTIUM-FAQ.txt OFL-FAQ.txt
 
 .SILENT:
 
+.include <bsd.port.options.mk>
+
 #
 # Install
 #
@@ -53,7 +55,7 @@ install-fonts:
 	${INSTALL_DATA} ${WRKSRC}/OFL.txt ${FONTSTGT}
 
 install-docs:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	@for doc in ${DOCSLIST} ; do \
 	  ${INSTALL_DATA} ${WRKSRC}/$$doc ${DOCSDIR} ; \

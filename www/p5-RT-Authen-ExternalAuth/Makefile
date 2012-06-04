@@ -25,11 +25,12 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-OPTIONS=	RT38	"Install for rt-3.8.x (default rt-4.0.x)" off
+OPTIONS_DEFINE=	RT38
+RT38_DESC=	Install for rt-3.8.x (default rt-4.0.x)
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_RT38)
+.if ${PORT_OPTIONS:MRT38}
 RT_VER=		38
 .else
 RT_VER=		40

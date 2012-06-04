@@ -4,12 +4,6 @@
 #
 # $FreeBSD$
 
-# TODO:
-# o GRANTS
-# o Schema
-# - Vhost Config
-#   o install a sample into etc/apache22/Includes
-
 PORTNAME=	rt
 PORTVERSION=	4.0.6
 CATEGORIES=	www
@@ -18,10 +12,6 @@ MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	RT is an industrial-grade ticketing system written in Perl
-
-.if defined(NOPORTDOCS)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-noportdocs-Makefile.in
-.endif
 
 CONFLICTS=	rt-3.8*
 LATEST_LINK=	rt40
@@ -38,19 +28,22 @@ LATEST_LINK=	rt40
 # mentioned in the docs is currently unsupported in the ports, but see
 # http://www.infracaninophile.co.uk/articles/sphinxse.html
 
-OPTIONS=	AP_MODPERL	"Deploy with apache and mod_perl"	on \
-		AP_MODFASTCGI	"Deploy with apache and mod_fastcgi"	off \
-		LIGHTTPD	"Deploy with lighttpd and mod_fastcgi"	off \
-		SPAWN_FCGI	"Deploy with spawn_fcgi"		off \
-		MYSQL 		"Enable MySQL backend" 			on  \
-		POSTGRESQL	"Enable PosgreSQL backend"		off \
-		ORACLE		"Enable Oracle backend"			off \
-		SQLITE		"Enable SQLite backend (dev only)"	off \
-		SSL_MAILGATE	"Enable HTTPS support for rt-mailgate"	off \
-		DEV 		"Configure for Developers"		off \
-		GPG		"Enable GnuPG support"			on \
-		GRAPHVIZ	"Enable GraphViz charts"		off \
-		GD		"Enable GD Graphs and Charts"		on
+OPTIONS_DEFINE=	DEV GD GPG GRAPHVIZ SSL_MAILGATE
+OPTIONS_SINGLE=		DB WEB
+OPTIONS_SINGLE_DB=	MYSQL ORACLE PGSQL SQLITE
+OPTIONS_SINGLE_WEB=	AP_MODFASTCGI AP_MODPERL LIGHTTPD SPAWN_FCGI BUILTIN
+
+OPTIONS_DEFAULT=	AP_MODPERL GD GPG MYSQL
+
+AP_MODFASTCGI_DESC=	Deploy with apache and mod_fastcgi
+AP_MODPERL_DESC=	Deploy with apache and mod_perl
+BUILTIN_DESC=		Deploy with built-in web server (not for production)
+DEV_DESC=		Configure for Developers
+GD_DESC=		Enable GD Graphs and Charts
+GPG_DESC=		Enable GnuPG support
+LIGHTTPD_DESC=		Deploy with lighttpd and mod_fastcgi
+SPAWN_FCGI_DESC=	Deploy with spawn_fcgi
+SSL_MAILGATE_DESC=	Enable HTTPS support for rt-mailgate
 
 GROUPS?=	rt
 
@@ -75,114 +68,95 @@ USE_AUTOTOOLS=	autoconf
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_AP_MODPERL)
-
-.if defined(WITH_AP_MODFASTCGI) || defined(WITH_LIGHTTPD) || \
-	defined(WITH_SPAWN_FCGI)
-IGNORE=	please select at most one of AP_MODPERL, AP_MODFASTCGI, LIGHTTPD or SPAWN_FCGI
+.if !${PORT_OPTIONS:MDOCS}
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-noportdocs-Makefile.in
 .endif
 
+.if !${PORT_OPTIONS:MAP_MODPERL} && !${PORT_OPTIONS:MAP_MODFASTCGI} && \
+	!${PORT_OPTIONS:MLIGHTTPD} && !${PORT_OPTIONS:MSPAWN_FCGI} && \
+	!${PORT_OPTIONS:MBUILTIN}
+IGNORE=	please select one of AP_MODPERL, AP_MODFASTCGI, LIGHTTPD, SPAWN_FCGI or BUILTIN
+.endif
+
+.if ${PORT_OPTIONS:MAP_MODPERL}
 BUILD_DEPENDS+=	${MODPERL2_DEPS}
 RUN_DEPENDS+=	${MODPERL2_DEPS}
-
-.elif defined(WITH_AP_MODFASTCGI)
-
-.if defined(WITH_LIGHTTPD) || defined(WITH_SPAWN_FCGI)
-IGNORE=	please select at most one of AP_MODPERL, AP_MODFASTCGI, LIGHTTPD or SPAWN_FCGI
 .endif
 
+.if ${PORT_OPTIONS:MAP_MODFASTCGI}
 USE_APACHE=	20+
 BUILD_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
 RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi \
 		${FASTCGI_DEPS}
-
-.elif defined(WITH_LIGHTTPD)
-
-.if defined(WITH_SPAWN_FCGI)
-IGNORE=	please select at most one of AP_MODPERL, AP_MODFASTCGI, LIGHTTPD or SPAWN_FCGI
 .endif
 
+.if ${PORT_OPTIONS:MLIGHTTPD}
 BUILD_DEPENDS+=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
 RUN_DEPENDS+=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
+.endif
 
-.elif defined(WITH_SPAWN_FCGI)
-
+.if ${PORT_OPTIONS:MSPAWN_FCGI}
 BUILD_DEPENDS+=	${LOCALBASE}/bin/spawn-fcgi:${PORTSDIR}/www/spawn-fcgi
 RUN_DEPENDS+=	${LOCALBASE}/bin/spawn-fcgi:${PORTSDIR}/www/spawn-fcgi
-
 .endif
 
-.if defined(WITH_MYSQL)
-
-.if defined(WITH_POSTGRESQL) || defined(WITH_ORACLE) || \
-	defined(WITH_SQLITE)
-IGNORE=	please select only one of MYSQL, POSTGRESQL, ORACLE or SQLITE
+.if !${PORT_OPTIONS:MMYSQL} && !${PORT_OPTIONS:MPGSQL} && \
+	! ${PORT_OPTIONS:MORACLE} && !${PORT_OPTIONS:MSQLITE}
+IGNORE=	please select one of MYSQL, PGSQL, ORACLE or SQLITE
 .endif
 
+.if ${PORT_OPTIONS:MMYSQL}
 DB_TYPE=	mysql
 USE_MYSQL=	yes
 BUILD_DEPENDS+=	${MYSQL_DEPS}
 RUN_DEPENDS+=	${MYSQL_DEPS}
-
-.elif defined(WITH_POSTGRESQL)
-
-.if defined(WITH_ORACLE) || defined(WITH_SQLITE)
-IGNORE=	please select only one of MYSQL, POSTGRESQL, ORACLE or SQLITE
 .endif
 
+.if ${PORT_OPTIONS:MPGSQL}
 DB_TYPE=	Pg
 USE_PGSQL=	yes
-BUILD_DEPENDS+=	${POSTGRESQL_DEPS}
-RUN_DEPENDS+=	${POSTGRESQL_DEPS}
-
-.elif defined(WITH_ORACLE)
-
-.if defined(WITH_SQLITE)
-IGNORE=	please select only one of MYSQL, POSTGRESQL, ORACLE or SQLITE
+BUILD_DEPENDS+=	${PGSQL_DEPS}
+RUN_DEPENDS+=	${PGSQL_DEPS}
 .endif
 
+.if ${PORT_OPTIONS:MORACLE}
 DB_TYPE=	Oracle
 BUILD_DEPENDS+=	${ORACLE_DEPS}
 RUN_DEPENDS+=	${ORACLE_DEPS}
+.endif
 
-.elif defined(WITH_SQLITE)
-
+.if ${PORT_OPTIONS:MSQLITE}
 DB_TYPE=	SQLite
 USE_SQLITE=	yes
 BUILD_DEPENDS+=	${SQLITE_DEPS}
 RUN_DEPENDS+=	${SQLITE_DEPS}
-
-.else
-
-IGNORE=	please select one of MYSQL, POSTGRESQL, ORACLE or SQLITE
-
 .endif
 
-.if defined(WITH_DEV)
+.if ${PORT_OPTIONS:MDEV}
 BUILD_DEPENDS+=	${DEV_DEPS}
 RUN_DEPENDS+=	${DEV_DEPS}
 CONFIGURE_ARGS+=	--enable-developer-mode
 .endif
 
-.if defined(WITH_SSL_MAILGATE)
+.if ${PORT_OPTIONS:MSSL_MAILGATE}
 BUILD_DEPENDS+=	${SSL_MAILGATE_DEPS}
 RUN_DEPENDS+=	${SSL_MAILGATE_DEPS}
 CONFIGURE_ARGS+=	--enable-ssl-mailgate
 .endif
 
-.if defined(WITH_GRAPHVIZ)
+.if ${PORT_OPTIONS:MGRAPHVIZ}
 BUILD_DEPENDS+=	${GRAPHVIZ_DEPS}
 RUN_DEPENDS+=	${GRAPHVIZ_DEPS}
 CONFIGURE_ARGS+=	--enable-graphviz
 .endif
 
-.if defined(WITH_GPG)
+.if ${PORT_OPTIONS:MGPG}
 BUILD_DEPENDS+=	${GPG_DEPS}
 RUN_DEPENDS+=	${GPG_DEPS}
 CONFIGURE_ARGS+=	--enable-gpg
 .endif
 
-.if defined(WITH_GD)
+.if ${PORT_OPTIONS:MGD}
 BUILD_DEPENDS+=	${GD_DEPS}
 RUN_DEPENDS+=	${GD_DEPS}
 configure_args+=	--enable-gd
@@ -235,7 +209,7 @@ pre-fetch:
 	@${ECHO} "      DB_DBA_PASSWORD=password        Password of database administrator"
 	@${ECHO} "      DB_USER=username                Name of database user for RT (rt_user)"
 	@${ECHO} "      DB_PASSWORD=password            Name of database password for RT (rt_pass)"
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 	@${ECHO} ""
 	@${ECHO} "SQLITE is not recommended for production use"
 .endif
@@ -252,7 +226,7 @@ pre-install:
 	@${RM} -f ${WRKSRC}/lib/RT.pm.in
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/upgrade
 	(cd ${WRKSRC}/etc && \
 	    ${COPYTREE_SHARE} upgrade ${DOCSDIR} "! -name *\.in")
