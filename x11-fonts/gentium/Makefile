@@ -41,6 +41,8 @@ DOCSLIST=	FONTLOG GENTIUM-FAQ Gentium-Greek-Specimen.pdf \
 		Gentium-RU-A3Proofs.pdf Gentium-RU-Specimen.pdf \
 		OFL-FAQ QUOTES README
 
+.include <bsd.port.options.mk>
+
 .SILENT:
 
 #
@@ -61,7 +63,7 @@ install-conf:
 		${PREFIX}/etc/fonts/conf.d/${FONTNAME}.conf
 
 install-docs:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	@for doc in ${DOCSLIST} ; do \
 	  ${INSTALL_DATA} ${WRKSRC}/$$doc ${DOCSDIR} ; \

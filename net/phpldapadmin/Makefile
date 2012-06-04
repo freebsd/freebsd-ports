@@ -22,11 +22,12 @@ USE_PHP=	gettext ldap openssl pcre session xml iconv hash
 DEFAULT_PHP_VER=	5
 IGNORE_WITH_PHP=	4
 
-OPTIONS=	SUPHP	"suPHP support" off
+OPTIONS_DEFINE=	SUPHP
+SUPHP_DESCR=	suPHP support
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_SUPHP) && !defined(WITHOUT_SUPHP)
+.if ${PORT_OPTIONS:MSUPHP}
 
 PKGNAMESUFFIX+=	-suphp
 RUN_DEPENDS+=	${LOCALBASE}/sbin/suphp:${PORTSDIR}/www/suphp
@@ -38,7 +39,7 @@ WANT_PHP_WEB=	yes
 
 .endif
 
-# USERS is only used WITH_SUPHP
+# USERS is only used when SUPHP option selected
 GROUPS?=	${WWWGRP}
 CFGDIR=		config
 CFGFILE=	config.php
@@ -46,7 +47,7 @@ CFGFILE=	config.php
 PLIST=		${WRKDIR}/plist
 PLIST_SUB+=	PLA_GRP=${GROUPS}
 
-.if defined(WITH_SUPHP) && !defined(WITHOUT_SUPHP)
+.if ${PORT_OPTIONS:MSUPHP}
 
 USERS?=		_pla
 
@@ -60,12 +61,6 @@ SUB_LIST+=	PKGNAME=${PKGNAME}
 SUB_FILES+=	pkg-message
 
 .SILENT:
-
-pre-everything::
-	${ECHO_MSG} ""
-	${ECHO_MSG} "This port is PHP5 specific. If you need PHP4 support,"
-	${ECHO_MSG} "please use the net/phpldapadmin098 port instead."
-	${ECHO_MSG} ""
 
 post-patch:
 	cd ${WRKSRC} ;							    \
@@ -101,7 +96,7 @@ install-conf:
 	fi
 
 post-install:
-.if defined(WITH_SUPHP)
+.if ${PORT_OPTIONS:MSUPHP}
 	${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 	${CAT} ${PKGMESSAGE}

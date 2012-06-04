@@ -15,11 +15,12 @@ MASTER_SITE_SUBDIR=	UNIX/misc
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	An automated password generator
 
-OPTIONS=	CRACKLIB "CrackLib support for password quality" off
+OPTIONS_DEFINE=	CRACKLIB
+CRACKLIB_DESCR=	CrackLib support for password quality
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_CRACKLIB)
+.if ${PORT_OPTIONS:MCRACKLIB}
 LIB_DEPENDS=	crack:${PORTSDIR}/security/cracklib
 MAKE_ARGS=	-DWITH_CRACKLIB
 .endif
@@ -41,7 +42,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/apg.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/man/apgbfm.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/man/apgd.8 ${MANPREFIX}/man/man8
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/doc/,} ${DOCSDIR}
 .endif

@@ -24,11 +24,12 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-OPTIONS=	RT38 "Install for rt-3.8.x (default rt-4.0.x)" off
+OPTIONS_DEFINE=	RT38
+RT38_DESC=	Install for rt-3.8.x (default rt-4.0.x)
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_RT38)
+.if ${PORT_OPTIONS:MRT38}
 RT_VER=		38
 .else
 RT_VER=		40
@@ -43,7 +44,7 @@ MAN3=		RT::Extension::LDAPImport.3
 PLIST_SUB+=	RTHOME=share/rt${RT_VER}
 
 # Note: You can install using an arbitrary $PREFIX but only if it
-# matches the $PREFIX used to install www/rt3{6,8}.  Hence ignore
+# matches the $PREFIX used to install www/rt{38,40}.  Hence ignore
 # $PREFIX in the environment and inherit settings from RT.pm
 do-configure:
 	@cd ${CONFIGURE_WRKSRC} && \
