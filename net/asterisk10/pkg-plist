@@ -36,8 +36,6 @@ etc/asterisk/queuerules.conf-dist
 etc/asterisk/res_ldap.conf-dist
 @unexec if cmp -s %D/etc/asterisk/unistim.conf %D/etc/asterisk/unistim.conf-dist; then rm -f %D/etc/asterisk/unistim.conf; fi
 etc/asterisk/unistim.conf-dist
-@unexec if cmp -s %D/etc/asterisk/usbradio.conf %D/etc/asterisk/usbradio.conf-dist; then rm -f %D/etc/asterisk/usbradio.conf; fi
-etc/asterisk/usbradio.conf-dist
 @unexec if cmp -s %D/etc/asterisk/adsi.conf %D/etc/asterisk/adsi.conf-dist; then rm -f %D/etc/asterisk/adsi.conf; fi
 etc/asterisk/adsi.conf-dist
 @unexec if cmp -s %D/etc/asterisk/agents.conf %D/etc/asterisk/agents.conf-dist; then rm -f %D/etc/asterisk/agents.conf; fi
@@ -134,8 +132,6 @@ etc/asterisk/res_pgsql.conf-dist
 etc/asterisk/res_pktccops.conf-dist
 @unexec if cmp -s %D/etc/asterisk/res_odbc.conf %D/etc/asterisk/res_odbc.conf-dist; then rm -f %D/etc/asterisk/res_odbc.conf; fi
 etc/asterisk/res_odbc.conf-dist
-@unexec if cmp -s %D/etc/asterisk/rpt.conf %D/etc/asterisk/rpt.conf-dist; then rm -f %D/etc/asterisk/rpt.conf; fi
-etc/asterisk/rpt.conf-dist
 @unexec if cmp -s %D/etc/asterisk/rtp.conf %D/etc/asterisk/rtp.conf-dist; then rm -f %D/etc/asterisk/rtp.conf; fi
 etc/asterisk/rtp.conf-dist
 @unexec if cmp -s %D/etc/asterisk/sip.conf %D/etc/asterisk/sip.conf-dist; then rm -f %D/etc/asterisk/sip.conf; fi
@@ -208,7 +204,6 @@ etc/asterisk/res_fax.conf-dist
 @exec if test ! -e %D/etc/asterisk/queuerules.conf; then cp -p %D/etc/asterisk/queuerules.conf-dist %D/etc/asterisk/queuerules.conf; fi
 @exec if test ! -e %D/etc/asterisk/res_ldap.conf; then cp -p %D/etc/asterisk/res_ldap.conf-dist %D/etc/asterisk/res_ldap.conf; fi
 @exec if test ! -e %D/etc/asterisk/unistim.conf; then cp -p %D/etc/asterisk/unistim.conf-dist %D/etc/asterisk/unistim.conf; fi
-@exec if test ! -e %D/etc/asterisk/usbradio.conf; then cp -p %D/etc/asterisk/usbradio.conf-dist %D/etc/asterisk/usbradio.conf; fi
 @exec if test ! -e %D/etc/asterisk/adsi.conf; then cp -p %D/etc/asterisk/adsi.conf-dist %D/etc/asterisk/adsi.conf; fi
 @exec if test ! -e %D/etc/asterisk/agents.conf; then cp -p %D/etc/asterisk/agents.conf-dist %D/etc/asterisk/agents.conf; fi
 @exec if test ! -e %D/etc/asterisk/alarmreceiver.conf; then cp -p %D/etc/asterisk/alarmreceiver.conf-dist %D/etc/asterisk/alarmreceiver.conf; fi
@@ -260,7 +255,6 @@ etc/asterisk/res_fax.conf-dist
 @exec if test ! -e %D/etc/asterisk/res_pktccops.conf; then cp -p %D/etc/asterisk/res_pktccops.conf-dist %D/etc/asterisk/res_pktccops.conf; fi
 @exec if test ! -e %D/etc/asterisk/res_pgsql.conf; then cp -p %D/etc/asterisk/res_pgsql.conf-dist %D/etc/asterisk/res_pgsql.conf; fi
 @exec if test ! -e %D/etc/asterisk/res_odbc.conf; then cp -p %D/etc/asterisk/res_odbc.conf-dist %D/etc/asterisk/res_odbc.conf; fi
-@exec if test ! -e %D/etc/asterisk/rpt.conf; then cp -p %D/etc/asterisk/rpt.conf-dist %D/etc/asterisk/rpt.conf; fi
 @exec if test ! -e %D/etc/asterisk/rtp.conf; then cp -p %D/etc/asterisk/rtp.conf-dist %D/etc/asterisk/rtp.conf; fi
 @exec if test ! -e %D/etc/asterisk/sip.conf; then cp -p %D/etc/asterisk/sip.conf-dist %D/etc/asterisk/sip.conf; fi
 @exec if test ! -e %D/etc/asterisk/sip_notify.conf; then cp -p %D/etc/asterisk/sip_notify.conf-dist %D/etc/asterisk/sip_notify.conf; fi
