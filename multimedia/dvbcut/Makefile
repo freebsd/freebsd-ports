@@ -14,28 +14,29 @@ MASTER_SITES=	http://www.mr511.de/dvbcut/
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Qt application for cutting of MPEG PS and MPEG TS streams (DVB)
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
-LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
-		ao.4:${PORTSDIR}/audio/libao \
-		mad.2:${PORTSDIR}/audio/libmad \
-		avutil.1:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS=	a52:${PORTSDIR}/audio/liba52 \
+		ao:${PORTSDIR}/audio/libao \
+		mad:${PORTSDIR}/audio/libmad \
+		avutil:${PORTSDIR}/multimedia/ffmpeg
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-LICENSE=	GPLv2
+OPTIONS_DEFINE=	QT4
+OPTIONS_DEFAULT=QT4
 
-OPTIONS=	QT3 "Use QT3 instead of QT4" off
+.include <bsd.port.options.mk>
 
-.if defined (WITH_QT3)
-PKGNAMESUFFIX=	-qt3
-USE_QT_VER=	3
+.if ${PORT_OPTIONS:MQT4}
+WITH_QT_VER=	4
 .else
-USE_QT_VER=	4
+PKGNAMESUFFIX=	-qt3
+WITH_QT_VER=	3
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if defined (WITH_QT3)
+.if ${WITH_QT_VER} == 3
 BUILD_DEPENDS+=	moc:${PORTSDIR}/x11-toolkits/qt33
 LIB_DEPENDS+=	qt-mt.3:${PORTSDIR}/x11-toolkits/qt33
 USE_GMAKE=	yes
@@ -56,7 +57,7 @@ CXXFLAGS+=	-I${PREFIX}/include \
 MAN1=		dvbcut.1
 PLIST_FILES=	bin/dvbcut
 
-.if defined(WITHOUT_QT3)
+.if ${WITH_QT_VER} == 4
 #post-extract:
 #		${RM} ${WRKSRC}/src/mplayererrorbase.h
 
@@ -68,4 +69,4 @@ do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/src/dvbcut ${PREFIX}/bin
 		${INSTALL_MAN} ${WRKSRC}/dvbcut.1 ${MANPREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
