@@ -85,7 +85,7 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if !defined(WITHOUT_ALC)
+.if ${PORT_OPTIONS:MALC}
 CONFIGURE_ARGS+=	--enable-alc
 PLIST_SUB+=		ALC=""
 .else
