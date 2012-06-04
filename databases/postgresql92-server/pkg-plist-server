@@ -232,6 +232,7 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/America/Coral_Harbour
 %%TZDATA%%share/postgresql/timezone/America/Cordoba
 %%TZDATA%%share/postgresql/timezone/America/Costa_Rica
+%%TZDATA%%share/postgresql/timezone/America/Creston
 %%TZDATA%%share/postgresql/timezone/America/Cuiaba
 %%TZDATA%%share/postgresql/timezone/America/Curacao
 %%TZDATA%%share/postgresql/timezone/America/Danmarkshavn
