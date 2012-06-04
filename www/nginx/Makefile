@@ -20,92 +20,173 @@ COMMENT=	Robust and small WWW server
 
 LICENSE=	BSD
 
-OPTIONS=	DEBUG			"Enable nginx debugging" off \
-		DEBUGLOG		"Enable debug log (--with-debug)" off \
-		FILE_AIO		"Enable file aio" off \
-		IPV6			"Enable IPv6" on \
-		GOOGLE_PERFTOOLS	"Enable google perftools module" off \
-		HTTP_MODULE		"Enable HTTP module" on \
-		HTTP_ADDITION_MODULE	"Enable http_addition module" off \
-		HTTP_CACHE_MODULE	"Enable http_cache module" on \
-		HTTP_DAV_MODULE		"Enable http_webdav module" off \
-		HTTP_FLV_MODULE		"Enable http_flv module" off \
-		HTTP_GEOIP_MODULE	"Enable http_geoip module" off \
-		HTTP_GZIP_STATIC_MODULE "Enable http_gzip_static module" off \
-		HTTP_IMAGE_FILTER_MODULE "Enable http_image_filter module" off \
-		HTTP_MP4_MODULE		"Enable http_mp4 module" off \
-		HTTP_PERL_MODULE	"Enable http_perl module" off \
-		HTTP_RANDOM_INDEX_MODULE "Enable http_random_index module" off \
-		HTTP_REALIP_MODULE	"Enable http_realip module" off \
-		HTTP_REWRITE_MODULE	"Enable http_rewrite module" on \
-		HTTP_SECURE_LINK_MODULE "Enable http_secure_link module" off \
-		HTTP_SSL_MODULE		"Enable http_ssl module" off \
-		HTTP_STATUS_MODULE	"Enable http_stub_status module" on \
-		HTTP_SUB_MODULE		"Enable http_sub module" off \
-		HTTP_XSLT_MODULE	"Enable http_xslt module" off \
-		MAIL_MODULE		"Enable IMAP4/POP3/SMTP proxy module" off \
-		MAIL_IMAP_MODULE	"Enable IMAP4 proxy module" off \
-		MAIL_POP3_MODULE	"Enable POP3 proxy module" off \
-		MAIL_SMTP_MODULE	"Enable SMTP proxy module" off \
-		MAIL_SSL_MODULE		"Enable mail_ssl module" off \
-		WWW			"Enable html sample files" on \
-		CACHE_PURGE_MODULE	"3rd party cache_purge module" off \
-		ECHO_MODULE		"3rd party echo module" off \
-		HEADERS_MORE_MODULE	"3rd party headers_more module" off \
-		HTTP_ACCEPT_LANGUAGE	"3rd party accept_language module" off \
-		HTTP_ACCESSKEY_MODULE	"3rd party http_accesskey module" off \
-		HTTP_AUTH_DIGEST_MODULE	"3rd party http_authdigest module" off \
-		HTTP_AUTH_PAM_MODULE	"3rd party http_auth_pam module" off \
-		HTTP_AUTH_REQ_MODULE	"3rd party http_auth_request module" off \
-		HTTP_DAV_EXT_MODULE	"3rd party webdav_ext module" off \
-		HTTP_EVAL_MODULE	"3rd party eval module" off \
-		HTTP_FANCYINDEX_MODULE	"3rd party http_fancyindex module" off \
-		HTTP_GUNZIP_FILTER	"3rd party http_gunzip_filter module" off \
-		HTTP_MOGILEFS_MODULE	"3rd party mogilefs module" off \
-		HTTP_MP4_H264_MODULE	"3rd party mp4/h264 module" off \
-		HTTP_NOTICE_MODULE	"3rd party notice module" off \
-		HTTP_PUSH_MODULE	"3rd party push module" off \
-		HTTP_REDIS_MODULE	"3rd party http_redis module" off \
-		HTTP_RESPONSE_MODULE	"3rd party http_response module" off \
-		HTTP_SUBS_FILTER_MODULE	"3rd party subs filter module" off \
-		HTTP_UPLOAD_MODULE	"3rd party upload module" off \
-		HTTP_UPLOAD_PROGRESS	"3rd party uploadprogress module" off \
-		HTTP_UPSTREAM_FAIR	"3rd party upstream fair module" off \
-		HTTP_UPSTREAM_HASH	"3rd party upstream hash module" off \
-		HTTP_UPSTREAM_STICKY	"3rd party upstream sticky module" off \
-		HTTP_ZIP_MODULE		"3rd party http_zip module" off \
-		ARRAYVAR_MODULE		"3rd party array_var module" off \
-		CHUNKIN_MODULE		"3rd party chunkin module" off \
-		DRIZZLE_MODULE		"3rd party drizzlie module" off \
-		ENCRYPTSESSION_MODULE	"3rd party encrypted_session module" off \
-		FORMINPUT_MODULE	"3rd party form_input module" off \
-		GRIDFS_MODULE		"3rd party gridfs module" off \
-		ICONV_MODULE		"3rd party iconv module" off \
-		LET_MODULE		"3rd party let module" off \
-		LUA_MODULE		"3rd party lua module" off \
-		MEMC_MODULE		"3rd party memc (memcached) module" off \
-		NAXSI_MODULE		"3rd party naxsi module" off \
-		PASSENGER_MODULE	"3rd party passenger module" off \
-		POSTGRES_MODULE		"3rd party postgresql module" off \
-		RDS_CSV_MODULE		"3rd party rds_csv module" off \
-		RDS_JSON_MODULE		"3rd party rds_json module" off \
-		REDIS2_MODULE		"3rd party redis2 module" off \
-		RTMP_MODULE		"3rd party rtmp module" off \
-		SET_MISC_MODULE		"3rd party set_misc module" off \
-		SLOWFS_CACHE_MODULE	"3rd party slowfs_cache module" off \
-		SRCACHE_MODULE		"3rd party srcache module" off \
-		SUPERVISORD_MODULE	"3rd party supervisord module" off \
-		SYSLOG_SUPPORT		"3rd party syslog support" off \
-		UDPLOG_MODULE		"3rd party udplog (syslog) module" off \
-		XRID_HEADER_MODULE	"3rd party x-rid header module" off \
-		XSS_MODULE		"3rd party xss module" off
+NO_OPTIONS_SORT=	yes
+OPTIONS_DEFINE=	\
+	DEBUG \
+	DEBUGLOG \
+	FILE_AIO \
+	IPV6 \
+	GOOGLE_PERFTOOLS \
+	HTTP \
+	HTTP_ADDITION \
+	HTTP_CACHE \
+	HTTP_DAV \
+	HTTP_FLV \
+	HTTP_GEOIP \
+	HTTP_GZIP_STATIC \
+	HTTP_IMAGE_FILTER \
+	HTTP_PERL \
+	HTTP_RANDOM_INDEX \
+	HTTP_REALIP \
+	HTTP_REWRITE \
+	HTTP_SECURE_LINK \
+	HTTP_SSL \
+	HTTP_STATUS \
+	HTTP_SUB \
+	HTTP_XSLT \
+	MAIL \
+	MAIL_IMAP \
+	MAIL_POP3 \
+	MAIL_SMTP \
+	MAIL_SSL \
+	WWW \
+	CACHE_PURGE \
+	ECHO \
+	HEADERS_MORE \
+	HTTP_ACCEPT_LANGUAGE \
+	HTTP_ACCESSKEY \
+	HTTP_AUTH_DIGEST \
+	HTTP_AUTH_PAM \
+	HTTP_AUTH_REQ \
+	HTTP_DAV_EXT \
+	HTTP_EVAL \
+	HTTP_FANCYINDEX \
+	HTTP_GUNZIP_FILTER \
+	HTTP_MOGILEFS \
+	HTTP_NOTICE \
+	HTTP_PUSH \
+	HTTP_REDIS \
+	HTTP_RESPONSE \
+	HTTP_SUBS_FILTER \
+	HTTP_UPLOAD \
+	HTTP_UPLOAD_PROGRESS \
+	HTTP_UPSTREAM_FAIR \
+	HTTP_UPSTREAM_HASH \
+	HTTP_UPSTREAM_STICKY \
+	HTTP_ZIP \
+	ARRAYVAR \
+	CHUNKIN \
+	DRIZZLE \
+	ENCRYPTSESSION \
+	FORMINPUT \
+	GRIDFS \
+	ICONV \
+	LET \
+	LUA \
+	MEMC \
+	NAXSI \
+	PASSENGER \
+	POSTGRES \
+	RDS_CSV \
+	RDS_JSON \
+	REDIS2 \
+	RTMP \
+	SET_MISC \
+	SLOWFS_CACHE \
+	SRCACHE \
+	SUPERVISORD \
+	SYSLOG_SUPPORT \
+	UDPLOG \
+	XRID_HEADER
+
+OPTIONS_SINGLE=		VIDEO
+OPTIONS_SINGLE_VIDEO=	HTTP_MP4 HTTP_MP4_H264
+OPTIONS_DEFAULT=	IPV6 HTTP HTTP_CACHE HTTP_REWRITE HTTP_STATUS WWW
+
+DEBUGLOG_DESC=			Enable debug log (--with-debug)
+FILE_AIO_DESC=			Enable file aio
+GOOGLE_PERFTOOLS_DESC=		Enable google perftools module
+HTTP_DESC=			Enable HTTP module
+HTTP_ADDITION_DESC=		Enable http_addition module
+HTTP_CACHE_DESC=		Enable http_cache module
+HTTP_DAV_DESC=			Enable http_webdav module
+HTTP_FLV_DESC=			Enable http_flv module
+HTTP_GEOIP_DESC=		Enable http_geoip module
+HTTP_GZIP_STATIC_DESC=		Enable http_gzip_static module
+HTTP_IMAGE_FILTER_DESC=		Enable http_image_filter module
+HTTP_MP4_DESC=			Enable http_mp4 module
+HTTP_PERL_DESC=			Enable http_perl module
+HTTP_RANDOM_INDEX_DESC=		Enable http_random_index module
+HTTP_REALIP_DESC=		Enable http_realip module
+HTTP_REWRITE_DESC=		Enable http_rewrite module
+HTTP_SECURE_LINK_DESC=		Enable http_secure_link module
+HTTP_SSL_DESC=			Enable http_ssl module
+HTTP_STATUS_DESC=		Enable http_stub_status module
+HTTP_SUB_DESC=			Enable http_sub module
+HTTP_XSLT_DESC=			Enable http_xslt module
+MAIL_DESC=			Enable IMAP4/POP3/SMTP proxy module
+MAIL_IMAP_DESC=			Enable IMAP4 proxy module
+MAIL_POP3_DESC=			Enable POP3 proxy module
+MAIL_SMTP_DESC=			Enable SMTP proxy module
+MAIL_SSL_DESC=			Enable mail_ssl module
+WWW_DESC=			Enable html sample files
+CACHE_PURGE_DESC=		3rd party cache_purge module
+ECHO_DESC=			3rd party echo module
+HEADERS_MORE_DESC=		3rd party headers_more module
+HTTP_ACCEPT_LANGUAGE_DESC=	3rd party accept_language module
+HTTP_ACCESSKEY_DESC=		3rd party http_accesskey module
+HTTP_AUTH_DIGEST_DESC=		3rd party http_authdigest module
+HTTP_AUTH_PAM_DESC=		3rd party http_auth_pam module
+HTTP_AUTH_REQ_DESC=		3rd party http_auth_request module
+HTTP_DAV_EXT_DESC=		3rd party webdav_ext module
+HTTP_EVAL_DESC=			3rd party eval module
+HTTP_FANCYINDEX_DESC=		3rd party http_fancyindex module
+HTTP_GUNZIP_FILTER_DESC=	3rd party http_gunzip_filter module
+HTTP_MOGILEFS_DESC=		3rd party mogilefs module
+HTTP_MP4_H264_DESC=		3rd party mp4/h264 module
+HTTP_NOTICE_DESC=		3rd party notice module
+HTTP_PUSH_DESC=			3rd party push module
+HTTP_REDIS_DESC=		3rd party http_redis module
+HTTP_RESPONSE_DESC=		3rd party http_response module
+HTTP_SUBS_FILTER_DESC=		3rd party subs filter module
+HTTP_UPLOAD_DESC=		3rd party upload module
+HTTP_UPLOAD_PROGRESS_DESC=	3rd party uploadprogress module
+HTTP_UPSTREAM_FAIR_DESC=	3rd party upstream fair module
+HTTP_UPSTREAM_HASH_DESC=	3rd party upstream hash module
+HTTP_UPSTREAM_STICKY_DESC=	3rd party upstream sticky module
+HTTP_ZIP_DESC=			3rd party http_zip module
+ARRAYVAR_DESC=			3rd party array_var module
+CHUNKIN_DESC=			3rd party chunkin module
+DRIZZLE_DESC=			3rd party drizzlie module
+ENCRYPTSESSION_DESC=		3rd party encrypted_session module
+FORMINPUT_DESC=			3rd party form_input module
+GRIDFS_DESC=			3rd party gridfs module
+ICONV_DESC=			3rd party iconv module
+LET_DESC=			3rd party let module
+LUA_DESC=			3rd party lua module
+MEMC_DESC=			3rd party memc (memcached) module
+NAXSI_DESC=			3rd party naxsi module
+PASSENGER_DESC=			3rd party passenger module
+POSTGRES_DESC=			3rd party postgresql module
+RDS_CSV_DESC=			3rd party rds_csv module
+RDS_JSON_DESC=			3rd party rds_json module
+REDIS2_DESC=			3rd party redis2 module
+RTMP_DESC=			3rd party rtmp module
+SET_MISC_DESC=			3rd party set_misc module
+SLOWFS_CACHE_DESC=		3rd party slowfs_cache module
+SRCACHE_DESC=			3rd party srcache module
+SUPERVISORD_DESC=		3rd party supervisord module
+SYSLOG_SUPPORT_DESC=		3rd party syslog support
+UDPLOG_DESC=			3rd party udplog (syslog) module
+XRID_HEADER_DESC=		3rd party x-rid header module
+XSS_DESC=			3rd party xss module
 
 WANT_GNOME=	yes
 MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PASSENGER_MODULE)
+.if ${PORT_OPTIONS:MPASSENGER}
 CATEGORIES+=	ruby
 USE_RUBY=	yes
 USE_RAKE=	yes
@@ -137,35 +218,35 @@ CONFIGURE_ARGS+=--prefix=${ETCDIR} \
 		--error-log-path=${NGINX_ERRORLOG} \
 		--user=${WWWOWN} --group=${WWWGRP}
 
-.if defined(WITHOUT_HTTP_MODULE) && defined(WITHOUT_MAIL_MODULE)
-IGNORE=		requires at least HTTP_MODULE or MAIL_MODULE to \
-		be defined.  Please 'make config' again
+.if empty(PORT_OPTIONS:MHTTP) && empty(PORT_OPTIONS:MMAIL)
+IGNORE=		requires at least HTTP or MAIL to \
+		be defined.  Please do 'make config' again
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CFLAGS+=	-g
 STRIP=		#do not strip if nginx with debug information
 .endif
 
-.if defined(WITH_DEBUGLOG)
+.if ${PORT_OPTIONS:MDEBUGLOG}
 CONFIGURE_ARGS+=--with-debug
 .endif
 
-.if defined(WITH_FILE_AIO)
+.if ${PORT_OPTIONS:MFILE_AIO}
 CONFIGURE_ARGS+=--with-file-aio
 .endif
 
-.if !defined(WITHOUT_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=--with-ipv6
 CATEGORIES+=	ipv6
 .endif
 
-.if defined(WITH_GOOGLE_PERFTOOLS)
+.if ${PORT_OPTIONS:MGOOGLE_PERFTOOLS}
 LIB_DEPENDS+=	profiler.1:${PORTSDIR}/devel/google-perftools
 CONFIGURE_ARGS+=--with-google_perftools_module
 .endif
 
-.if defined(WITH_HTTP_MODULE)
+.if ${PORT_OPTIONS:MHTTP}
 CONFIGURE_ARGS+=--http-client-body-temp-path=${NGINX_TMPDIR}/client_body_temp \
 		--http-fastcgi-temp-path=${NGINX_TMPDIR}/fastcgi_temp \
 		--http-proxy-temp-path=${NGINX_TMPDIR}/proxy_temp \
@@ -173,149 +254,145 @@ CONFIGURE_ARGS+=--http-client-body-temp-path=${NGINX_TMPDIR}/client_body_temp \
 		--http-uwsgi-temp-path=${NGINX_TMPDIR}/uwsgi_temp \
 		--http-log-path=${NGINX_ACCESSLOG}
 
-.if defined(WITH_HTTP_ACCEPT_LANGUAGE)
-GIT_ACCEPT_LANGUAGE_MODULE_VERSION=	02262ce
+.if ${PORT_OPTIONS:MHTTP_ACCEPT_LANGUAGE}
+GIT_ACCEPT_LANGUAGE_VERSION=	02262ce
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/giom/nginx_accept_language_module/tarball/master/:accept_language
-DISTFILES+=	giom-nginx_accept_language_module-${GIT_ACCEPT_LANGUAGE_MODULE_VERSION}.tar.gz:accept_language
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/giom-nginx_accept_language_module-${GIT_ACCEPT_LANGUAGE_MODULE_VERSION}
+DISTFILES+=	giom-nginx_accept_language_module-${GIT_ACCEPT_LANGUAGE_VERSION}.tar.gz:accept_language
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/giom-nginx_accept_language_module-${GIT_ACCEPT_LANGUAGE_VERSION}
 .endif
 
-.if defined(WITH_HTTP_ACCESSKEY_MODULE)
-NGINX_ACCESSKEY_MODULE_VERSION=	2.0.3
+.if ${PORT_OPTIONS:MHTTP_ACCESSKEY}
+NGINX_ACCESSKEY_VERSION=	2.0.3
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:accesskey/}
 MASTER_SITE_SUBDIR+=	osa/:accesskey
-DISTFILES+=	nginx-accesskey-${NGINX_ACCESSKEY_MODULE_VERSION}.tar.gz:accesskey
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-accesskey-${NGINX_ACCESSKEY_MODULE_VERSION}
+DISTFILES+=	nginx-accesskey-${NGINX_ACCESSKEY_VERSION}.tar.gz:accesskey
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-accesskey-${NGINX_ACCESSKEY_VERSION}
 .endif
 
-.if defined(WITH_HTTP_ADDITION_MODULE)
+.if ${PORT_OPTIONS:MHTTP_ADDITION}
 CONFIGURE_ARGS+=--with-http_addition_module
 .endif
 
-.if defined(WITH_HTTP_AUTH_DIGEST_MODULE)
-GIT_AUTH_DIGEST_MODULE_VERSION=	bd1c86a
+.if ${PORT_OPTIONS:MHTTP_AUTH_DIGEST}
+GIT_AUTH_DIGEST_VERSION=	bd1c86a
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/samizdatco/nginx-http-auth-digest/tarball/master/:auth_digest
-DISTFILES+=	samizdatco-nginx-http-auth-digest-${GIT_AUTH_DIGEST_MODULE_VERSION}.tar.gz:auth_digest
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/samizdatco-nginx-http-auth-digest-${GIT_AUTH_DIGEST_MODULE_VERSION}
+DISTFILES+=	samizdatco-nginx-http-auth-digest-${GIT_AUTH_DIGEST_VERSION}.tar.gz:auth_digest
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/samizdatco-nginx-http-auth-digest-${GIT_AUTH_DIGEST_VERSION}
 .endif
 
-.if defined(WITH_HTTP_AUTH_PAM_MODULE)
-NGINX_AUTH_PAM_MODULE_VERSION=	1.2
+.if ${PORT_OPTIONS:MHTTP_AUTH_PAM}
+NGINX_AUTH_PAM_VERSION=	1.2
 MASTER_SITES+=	http://web.iti.upv.es/~sto/nginx/:auth_pam
-DISTFILES+=	ngx_http_auth_pam_module-${NGINX_AUTH_PAM_MODULE_VERSION}.tar.gz:auth_pam
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_auth_pam_module-${NGINX_AUTH_PAM_MODULE_VERSION}
+DISTFILES+=	ngx_http_auth_pam_module-${NGINX_AUTH_PAM_VERSION}.tar.gz:auth_pam
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_auth_pam_module-${NGINX_AUTH_PAM_VERSION}
 .endif
 
-.if defined(WITH_HTTP_AUTH_REQ_MODULE)
-NGINX_AUTH_REQ_MODULE_VERSION=	0.2
+.if ${PORT_OPTIONS:MHTTP_AUTH_REQ}
+NGINX_AUTH_REQ_VERSION=	0.2
 MASTER_SITES+=	http://mdounin.ru/files/:auth_request
-DISTFILES+=	ngx_http_auth_request_module-${NGINX_AUTH_REQ_MODULE_VERSION}.tar.gz:auth_request
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_auth_request_module-${NGINX_AUTH_REQ_MODULE_VERSION}
+DISTFILES+=	ngx_http_auth_request_module-${NGINX_AUTH_REQ_VERSION}.tar.gz:auth_request
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_auth_request_module-${NGINX_AUTH_REQ_VERSION}
 .endif
 
-.if defined(WITHOUT_HTTP_CACHE_MODULE)
+.if ${PORT_OPTIONS:MHTTP_CACHE}
 CONFIGURE_ARGS+=--without-http-cache
 .endif
 
-.if defined(WITH_CACHE_PURGE_MODULE)
-NGINX_CACHE_PURGE_MODULE_VERSION=	1.5
+.if ${PORT_OPTIONS:MCACHE_PURGE}
+NGINX_CACHE_PURGE_VERSION=	1.5
 MASTER_SITES+=	http://labs.frickle.com/files/:cache_purge
-DISTFILES+=	ngx_cache_purge-${NGINX_CACHE_PURGE_MODULE_VERSION}.tar.gz:cache_purge
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_cache_purge-${NGINX_CACHE_PURGE_MODULE_VERSION}
+DISTFILES+=	ngx_cache_purge-${NGINX_CACHE_PURGE_VERSION}.tar.gz:cache_purge
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_cache_purge-${NGINX_CACHE_PURGE_VERSION}
 .endif
 
-.if defined(WITH_ECHO_MODULE)
-NGINX_ECHO_MODULE_VERSION=	0.38rc2
-GIT_ECHO_MODULE_VERSION=	0-g43c8843
+.if ${PORT_OPTIONS:MECHO}
+NGINX_ECHO_VERSION=	0.38rc2
+GIT_ECHO_VERSION=	0-g43c8843
 FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/agentzh/echo-nginx-module/tarball/v${NGINX_ECHO_MODULE_VERSION}/:echo
-DISTFILES+=	agentzh-echo-nginx-module-v${NGINX_ECHO_MODULE_VERSION}-${GIT_ECHO_MODULE_VERSION}.tar.gz:echo
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-echo-nginx-module-${GIT_ECHO_MODULE_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/agentzh/echo-nginx-module/tarball/v${NGINX_ECHO_VERSION}/:echo
+DISTFILES+=	agentzh-echo-nginx-module-v${NGINX_ECHO_VERSION}-${GIT_ECHO_VERSION}.tar.gz:echo
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-echo-nginx-module-${GIT_ECHO_VERSION:S/^0-g//}
 .endif
 
-.if defined(WITH_HEADERS_MORE_MODULE)
-NGINX_HEADERS_MORE_MODULE_VERSION=	0.17rc1
-GIT_HEADERS_MORE_MODULE_VERSION=	0-g3580526
+.if ${PORT_OPTIONS:MHEADERS_MORE}
+NGINX_HEADERS_MORE_VERSION=	0.17rc1
+GIT_HEADERS_MORE_VERSION=	0-g3580526
 FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/agentzh/headers-more-nginx-module/tarball/v${NGINX_HEADERS_MORE_MODULE_VERSION}/:headers_more
-DISTFILES+=	agentzh-headers-more-nginx-module-v${NGINX_HEADERS_MORE_MODULE_VERSION}-${GIT_HEADERS_MORE_MODULE_VERSION}.tar.gz:headers_more
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-headers-more-nginx-module-${GIT_HEADERS_MORE_MODULE_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/agentzh/headers-more-nginx-module/tarball/v${NGINX_HEADERS_MORE_VERSION}/:headers_more
+DISTFILES+=	agentzh-headers-more-nginx-module-v${NGINX_HEADERS_MORE_VERSION}-${GIT_HEADERS_MORE_VERSION}.tar.gz:headers_more
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-headers-more-nginx-module-${GIT_HEADERS_MORE_VERSION:S/^0-g//}
 .endif
 
-.if defined(WITH_HTTP_DAV_MODULE)
+.if ${PORT_OPTIONS:MHTTP_DAV}
 CONFIGURE_ARGS+=--with-http_dav_module
 .endif
 
-.if defined(WITH_HTTP_DAV_EXT_MODULE)
+.if ${PORT_OPTIONS:MHTTP_DAV_EXT}
 LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
-NGINX_DAV_EXT_MODULE_VERSION=	0.0.2
-GIT_DAV_EXT_MODULE_VERSION=	0-g0e07a3e
+NGINX_DAV_EXT_VERSION=	0.0.2
+GIT_DAV_EXT_VERSION=	0-g0e07a3e
 FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/arut/nginx-dav-ext-module/tarball/v${NGINX_DAV_EXT_MODULE_VERSION}/:dav_ext
-DISTFILES+=	arut-nginx-dav-ext-module-v${NGINX_DAV_EXT_MODULE_VERSION}-${GIT_DAV_EXT_MODULE_VERSION}.tar.gz:dav_ext
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/arut-nginx-dav-ext-module-${GIT_DAV_EXT_MODULE_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/arut/nginx-dav-ext-module/tarball/v${NGINX_DAV_EXT_VERSION}/:dav_ext
+DISTFILES+=	arut-nginx-dav-ext-module-v${NGINX_DAV_EXT_VERSION}-${GIT_DAV_EXT_VERSION}.tar.gz:dav_ext
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/arut-nginx-dav-ext-module-${GIT_DAV_EXT_VERSION:S/^0-g//}
 .endif
 
-.if defined(WITH_HTTP_EVAL_MODULE)
-NGINX_EVAL_MODULE_VERSION=	1.0.3
-GIT_EVAL_MODULE_VERSION=	0-g125fa2e
+.if ${PORT_OPTIONS:MHTTP_EVAL}
+NGINX_EVAL_VERSION=	1.0.3
+GIT_EVAL_VERSION=	0-g125fa2e
 FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/vkholodkov/nginx-eval-module/tarball/${NGINX_EVAL_MODULE_VERSION}/:eval
-DISTFILES+=	vkholodkov-nginx-eval-module-${NGINX_EVAL_MODULE_VERSION}-${GIT_EVAL_MODULE_VERSION}.tar.gz:eval
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/vkholodkov-nginx-eval-module-${GIT_EVAL_MODULE_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/vkholodkov/nginx-eval-module/tarball/${NGINX_EVAL_VERSION}/:eval
+DISTFILES+=	vkholodkov-nginx-eval-module-${NGINX_EVAL_VERSION}-${GIT_EVAL_VERSION}.tar.gz:eval
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/vkholodkov-nginx-eval-module-${GIT_EVAL_VERSION:S/^0-g//}
 .endif
 
-.if defined(WITH_HTTP_FANCYINDEX_MODULE)
-NGINX_FANCYINDEX_MODULE_VERSION=	0.3.1
+.if ${PORT_OPTIONS:MHTTP_FANCYINDEX}
+NGINX_FANCYINDEX_VERSION=	0.3.1
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:fancyindex/}
 MASTER_SITE_SUBDIR+=	osa/:fancyindex
-DISTFILES+=	ngx-fancyindex-${NGINX_FANCYINDEX_MODULE_VERSION}.tar.gz:fancyindex
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx-fancyindex-${NGINX_FANCYINDEX_MODULE_VERSION}
+DISTFILES+=	ngx-fancyindex-${NGINX_FANCYINDEX_VERSION}.tar.gz:fancyindex
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx-fancyindex-${NGINX_FANCYINDEX_VERSION}
 .endif
 
-.if defined(WITH_HTTP_GUNZIP_FILTER)
-NGINX_GUNZIP_FILTER_MODULE_VERSION=	0.4
+.if ${PORT_OPTIONS:MHTTP_GUNZIP_FILTER}
+NGINX_GUNZIP_FILTER_VERSION=	0.4
 MASTER_SITES+=	http://mdounin.ru/files/:gunzipfilter
-DISTFILES+=	ngx_http_gunzip_filter_module-${NGINX_GUNZIP_FILTER_MODULE_VERSION}.tar.gz:gunzipfilter
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_gunzip_filter_module-${NGINX_GUNZIP_FILTER_MODULE_VERSION}
+DISTFILES+=	ngx_http_gunzip_filter_module-${NGINX_GUNZIP_FILTER_VERSION}.tar.gz:gunzipfilter
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_gunzip_filter_module-${NGINX_GUNZIP_FILTER_VERSION}
 .endif
 
-.if defined(WITH_HTTP_FLV_MODULE)
+.if ${PORT_OPTIONS:MHTTP_FLV}
 CONFIGURE_ARGS+=--with-http_flv_module
 .endif
 
-.if defined(WITH_HTTP_GEOIP_MODULE)
+.if ${PORT_OPTIONS:MHTTP_GEOIP}
 CONFIGURE_ARGS+=--with-http_geoip_module
 LIB_DEPENDS+=	GeoIP.5:${PORTSDIR}/net/GeoIP
 .endif
 
-.if defined(WITH_HTTP_GZIP_STATIC_MODULE)
+.if ${PORT_OPTIONS:MHTTP_GZIP_STATIC}
 CONFIGURE_ARGS+=--with-http_gzip_static_module
 .endif
 
-.if defined(WITH_HTTP_IMAGE_FILTER_MODULE)
+.if ${PORT_OPTIONS:MHTTP_IMAGE_FILTER}
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 CONFIGURE_ARGS+=--with-http_image_filter_module
 .endif
 
-.if defined(WITH_HTTP_MP4_MODULE) && defined(WITH_HTTP_MP4_H264_MODULE)
-IGNORE=	http_mp4 and third-party http_mp4_h264 modules are incompatible. Please select one
-.endif
-
-.if defined(WITH_HTTP_MP4_MODULE)
+.if ${PORT_OPTIONS:MHTTP_MP4}
 CONFIGURE_ARGS+=--with-http_mp4_module
 .endif
 
-.if defined(WITH_HTTP_MOGILEFS_MODULE)
-NGINX_MOGILEFS_MODULE_VERSION=	1.0.4
+.if ${PORT_OPTIONS:MHTTP_MOGILEFS}
+NGINX_MOGILEFS_VERSION=	1.0.4
 MASTER_SITES+=	http://www.grid.net.ru/nginx/download/:mogilefs
-DISTFILES+=	nginx_mogilefs_module-${NGINX_MOGILEFS_MODULE_VERSION}.tar.gz:mogilefs
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_mogilefs_module-${NGINX_MOGILEFS_MODULE_VERSION}
+DISTFILES+=	nginx_mogilefs_module-${NGINX_MOGILEFS_VERSION}.tar.gz:mogilefs
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_mogilefs_module-${NGINX_MOGILEFS_VERSION}
 .endif
 
-.if defined(WITH_HTTP_MP4_H264_MODULE)
+.if ${PORT_OPTIONS:MHTTP_MP4_H264}
 NGINX_H264_MODULE_VERSION=	2.2.7
 MASTER_SITES+=	http://h264.code-shop.com/download/:mp4streaming
 DISTFILES+=	nginx_mod_h264_streaming-${NGINX_H264_MODULE_VERSION}.tar.gz:mp4streaming
@@ -323,89 +400,89 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_mod_h264_streaming-${NGINX_H264_MOD
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_streaming_module.c
 .endif
 
-.if defined(WITH_HTTP_NOTICE_MODULE)
-GIT_NOTICE_MODULE_VERSION=	0-g3c95966
+.if ${PORT_OPTIONS:MHTTP_NOTICE}
+GIT_NOTICE_VERSION=	0-g3c95966
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/kr/nginx-notice/tarball/master/:notice
-DISTFILES+=	kr-nginx-notice-${GIT_NOTICE_MODULE_VERSION}.tar.gz:notice
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/kr-nginx-notice-${GIT_NOTICE_MODULE_VERSION:S/^0-g//}
+DISTFILES+=	kr-nginx-notice-${GIT_NOTICE_VERSION}.tar.gz:notice
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/kr-nginx-notice-${GIT_NOTICE_VERSION:S/^0-g//}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_notice_module.c
 .endif
 
-.if defined(WITH_HTTP_PERL_MODULE)
+.if ${PORT_OPTIONS:MHTTP_PERL}
 CATEGORIES+=	perl5
 CONFIGURE_ARGS+=--with-http_perl_module
 USE_PERL5=	yes
 .endif
 
-.if defined(WITH_HTTP_PUSH_MODULE)
-NGINX_PUSH_MODULE_VERSION=	0.692
+.if ${PORT_OPTIONS:MHTTP_PUSH}
+NGINX_PUSH_VERSION=	0.692
 MASTER_SITES+=	http://pushmodule.slact.net/downloads/:push
-DISTFILES+=	nginx_http_push_module-${NGINX_PUSH_MODULE_VERSION}.tar.gz:push
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_http_push_module-${NGINX_PUSH_MODULE_VERSION}
+DISTFILES+=	nginx_http_push_module-${NGINX_PUSH_VERSION}.tar.gz:push
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_http_push_module-${NGINX_PUSH_VERSION}
 .endif
 
-.if defined(WITH_HTTP_RANDOM_INDEX_MODULE)
+.if ${PORT_OPTIONS:MHTTP_RANDOM_INDEX}
 CONFIGURE_ARGS+=--with-http_random_index_module
 .endif
 
-.if defined(WITH_HTTP_REALIP_MODULE)
+.if ${PORT_OPTIONS:MHTTP_REALIP}
 CONFIGURE_ARGS+=--with-http_realip_module
 .endif
 
-.if defined(WITH_HTTP_REDIS_MODULE)
-NGINX_REDIS_MODULE_VERSION=	0.3.6
+.if ${PORT_OPTIONS:MHTTP_REDIS}
+NGINX_REDIS_VERSION=	0.3.6
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:redis/}
 MASTER_SITE_SUBDIR+=	osa/:redis
-DISTFILES+=	ngx_http_redis-${NGINX_REDIS_MODULE_VERSION}.tar.gz:redis
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_redis-${NGINX_REDIS_MODULE_VERSION}
+DISTFILES+=	ngx_http_redis-${NGINX_REDIS_VERSION}.tar.gz:redis
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_redis-${NGINX_REDIS_VERSION}
 .endif
 
-.if defined(WITH_HTTP_RESPONSE_MODULE)
-NGINX_RESPONSE_MODULE_VERSION=	0.3
+.if ${PORT_OPTIONS:MHTTP_RESPONSE}
+NGINX_RESPONSE_VERSION=	0.3
 MASTER_SITES+=	http://catap.ru/downloads/nginx/:response
-DISTFILES+=	ngx_http_response-${NGINX_RESPONSE_MODULE_VERSION}.tar.gz:response
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_response-${NGINX_RESPONSE_MODULE_VERSION}
+DISTFILES+=	ngx_http_response-${NGINX_RESPONSE_VERSION}.tar.gz:response
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_response-${NGINX_RESPONSE_VERSION}
 .endif
 
-.if defined(WITH_HTTP_SUBS_FILTER_MODULE)
-NGINX_HTTP_SUBS_FILTER_MODULE_VERSION=	0.5.2.r53
+.if ${PORT_OPTIONS:MHTTP_SUBS_FILTER}
+NGINX_HTTP_SUBS_FILTER_VERSION=	0.5.2.r53
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:subs_filter/}
 MASTER_SITE_SUBDIR+=	osa/:subs_filter
-DISTFILES+=	ngx_http_subs_filter_module-${NGINX_HTTP_SUBS_FILTER_MODULE_VERSION}.tar.gz:subs_filter
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_subs_filter_module-${NGINX_HTTP_SUBS_FILTER_MODULE_VERSION}
+DISTFILES+=	ngx_http_subs_filter_module-${NGINX_HTTP_SUBS_FILTER_VERSION}.tar.gz:subs_filter
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_subs_filter_module-${NGINX_HTTP_SUBS_FILTER_VERSION}
 .endif
 
-.if defined(WITH_HTTP_SECURE_LINK_MODULE)
+.if ${PORT_OPTIONS:MHTTP_SECURE_LINK}
 CONFIGURE_ARGS+=--with-http_secure_link_module
 .endif
 
-.if defined(WITH_HTTP_STATUS_MODULE)
+.if ${PORT_OPTIONS:MHTTP_STATUS}
 CONFIGURE_ARGS+=--with-http_stub_status_module
 .endif
 
-.if defined(WITH_HTTP_SUB_MODULE)
+.if ${PORT_OPTIONS:MHTTP_SUB}
 CONFIGURE_ARGS+=--with-http_sub_module
 .endif
 
-.if defined(WITH_HTTP_UPLOAD_MODULE)
-NGINX_UPLOAD_MODULE_VERSION=	2.2.0
+.if ${PORT_OPTIONS:MHTTP_UPLOAD}
+NGINX_UPLOAD_VERSION=	2.2.0
 MASTER_SITES+=	http://www.grid.net.ru/nginx/download/:upload
-DISTFILES+=	nginx_upload_module-${NGINX_UPLOAD_MODULE_VERSION}.tar.gz:upload
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upload_module-${NGINX_UPLOAD_MODULE_VERSION}
+DISTFILES+=	nginx_upload_module-${NGINX_UPLOAD_VERSION}.tar.gz:upload
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upload_module-${NGINX_UPLOAD_VERSION}
 .endif
 
-.if defined(WITH_HTTP_UPLOAD_PROGRESS)
-NGINX_UPLOADPROGRESS_MODULE_VERSION=	0.8.3
-GIT_UPLOADPROGRESS_MODULE_VERSION=	0-gc7c663f
+.if ${PORT_OPTIONS:MHTTP_UPLOAD_PROGRESS}
+NGINX_UPLOADPROGRESS_VERSION=	0.8.3
+GIT_UPLOADPROGRESS_VERSION=	0-gc7c663f
 FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/masterzen/nginx-upload-progress-module/tarball/v${NGINX_UPLOADPROGRESS_MODULE_VERSION}/:uploadprogress
-DISTFILES+=	masterzen-nginx-upload-progress-module-v${NGINX_UPLOADPROGRESS_MODULE_VERSION}-${GIT_UPLOADPROGRESS_MODULE_VERSION}.tar.gz:uploadprogress
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/masterzen-nginx-upload-progress-module-${GIT_UPLOADPROGRESS_MODULE_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/masterzen/nginx-upload-progress-module/tarball/v${NGINX_UPLOADPROGRESS_VERSION}/:uploadprogress
+DISTFILES+=	masterzen-nginx-upload-progress-module-v${NGINX_UPLOADPROGRESS_VERSION}-${GIT_UPLOADPROGRESS_VERSION}.tar.gz:uploadprogress
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/masterzen-nginx-upload-progress-module-${GIT_UPLOADPROGRESS_VERSION:S/^0-g//}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_uploadprogress_module.c
 .endif
 
-.if defined(WITH_HTTP_UPSTREAM_FAIR) || defined(WITH_SUPERVISORD_MODULE)
+.if !empty(PORT_OPTIONS:MHTTP_UPSTREAM_FAIR) || !empty(PORT_OPTIONS:MSUPERVISORD)
 NGINX_UPSTREAM_FAIR_VERSION=	20090923
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:upstreamfair/}
 MASTER_SITE_SUBDIR+=	osa/:upstreamfair
@@ -413,7 +490,7 @@ DISTFILES+=	nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION}.tar.gz:upstreamfa
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION}
 .endif
 
-.if defined(WITH_HTTP_UPSTREAM_HASH)
+.if ${PORT_OPTIONS:MHTTP_UPSTREAM_HASH}
 NGINX_UPSTREAM_HASH_VERSION=	0.3.1
 MASTER_SITES+=	http://wiki.nginx.org/images/1/11/:upstreamhash
 DISTFILES+=	Nginx_upstream_hash-${NGINX_UPSTREAM_HASH_VERSION}.tar.gz:upstreamhash
@@ -421,239 +498,239 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upstream_hash-${NGINX_UPSTREAM_HASH
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_upstream.h
 .endif
 
-.if defined(WITH_HTTP_UPSTREAM_STICKY)
-USE_HTTP_SSL_MODULE=	yes
+.if ${PORT_OPTIONS:MHTTP_UPSTREAM_STICKY}
+USE_HTTP_SSL=	yes
 NGINX_UPSTREAM_STICKY_VERSION=	1.0
 MASTER_SITES+=	http://nginx-sticky-module.googlecode.com/files/:upstreamsticky
 DISTFILES+=	nginx-sticky-module-${NGINX_UPSTREAM_STICKY_VERSION}.tar.gz:upstreamsticky
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-sticky-module-${NGINX_UPSTREAM_STICKY_VERSION}
 .endif
 
-.if defined(WITH_HTTP_XSLT_MODULE)
+.if ${PORT_OPTIONS:MHTTP_XSLT}
 USE_GNOME=	libxml2 libxslt
 CONFIGURE_ARGS+=--with-http_xslt_module
 .endif
 
-.if defined(WITH_HTTP_ZIP_MODULE)
-NGINX_ZIP_MODULE_VERSION=	1.1.6
+.if ${PORT_OPTIONS:MHTTP_ZIP}
+NGINX_ZIP_VERSION=	1.1.6
 MASTER_SITES+=	http://mod-zip.googlecode.com/files/:zip
-DISTFILES+=	mod_zip-${NGINX_ZIP_MODULE_VERSION}.tar.gz:zip
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_MODULE_VERSION}
+DISTFILES+=	mod_zip-${NGINX_ZIP_VERSION}.tar.gz:zip
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_VERSION}
 .endif
 
-.if defined(WITH_CHUNKIN_MODULE)
-NGINX_CHUNKIN_MODULE_VERSION=	0.22rc1
-GIT_CHUNKIN_MODULE_VERSION=	0-gb0a3ee3
+.if ${PORT_OPTIONS:MCHUNKIN}
+NGINX_CHUNKIN_VERSION=	0.22rc1
+GIT_CHUNKIN_VERSION=	0-gb0a3ee3
 FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/agentzh/chunkin-nginx-module/tarball/v${NGINX_CHUNKIN_MODULE_VERSION}/:chunkin
-DISTFILES+=	agentzh-chunkin-nginx-module-v${NGINX_CHUNKIN_MODULE_VERSION}-${GIT_CHUNKIN_MODULE_VERSION}.tar.gz:chunkin
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-chunkin-nginx-module-${GIT_CHUNKIN_MODULE_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/agentzh/chunkin-nginx-module/tarball/v${NGINX_CHUNKIN_VERSION}/:chunkin
+DISTFILES+=	agentzh-chunkin-nginx-module-v${NGINX_CHUNKIN_VERSION}-${GIT_CHUNKIN_VERSION}.tar.gz:chunkin
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-chunkin-nginx-module-${GIT_CHUNKIN_VERSION:S/^0-g//}
 .endif
 
-.if defined(WITH_DRIZZLE_MODULE)
+.if ${PORT_OPTIONS:MDRIZZLE}
 LIB_DEPENDS+=	drizzle.0:${PORTSDIR}/databases/drizzle
-NGINX_DRIZZLE_MODULE_VERSION=	0.1.2rc6
-GIT_DRIZZLE_MODULE_VERSION=	0-ge05b5ff
+NGINX_DRIZZLE_VERSION=	0.1.2rc6
+GIT_DRIZZLE_VERSION=	0-ge05b5ff
 FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/chaoslawful/drizzle-nginx-module/tarball/v${NGINX_DRIZZLE_MODULE_VERSION}/:drizzle
-DISTFILES+=	chaoslawful-drizzle-nginx-module-v${NGINX_DRIZZLE_MODULE_VERSION}-${GIT_DRIZZLE_MODULE_VERSION}.tar.gz:drizzle
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/chaoslawful-drizzle-nginx-module-${GIT_DRIZZLE_MODULE_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/chaoslawful/drizzle-nginx-module/tarball/v${NGINX_DRIZZLE_VERSION}/:drizzle
+DISTFILES+=	chaoslawful-drizzle-nginx-module-v${NGINX_DRIZZLE_VERSION}-${GIT_DRIZZLE_VERSION}.tar.gz:drizzle
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/chaoslawful-drizzle-nginx-module-${GIT_DRIZZLE_VERSION:S/^0-g//}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-chaoslawful-drizzle-nginx-module::config
 .endif
 
-.if defined(WITH_ENCRYPTSESSION_MODULE)
+.if ${PORT_OPTIONS:MENCRYPTSESSION}
 USE_NGINX_DEVEL_KIT=	yes
-NGINX_ENCRYPTSESSION_MODULE_VERSION=	0.02
-GIT_ENCRYPTSESSION_MODULE_VERSION=	0-gc752861
+NGINX_ENCRYPTSESSION_VERSION=	0.02
+GIT_ENCRYPTSESSION_VERSION=	0-gc752861
 FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/agentzh/encrypted-session-nginx-module/tarball/v${NGINX_ENCRYPTSESSION_MODULE_VERSION}/:encryptsession
-DISTFILES+=	agentzh-encrypted-session-nginx-module-v${NGINX_ENCRYPTSESSION_MODULE_VERSION}-${GIT_ENCRYPTSESSION_MODULE_VERSION}.tar.gz:encryptsession
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-encrypted-session-nginx-module-${GIT_ENCRYPTSESSION_MODULE_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/agentzh/encrypted-session-nginx-module/tarball/v${NGINX_ENCRYPTSESSION_VERSION}/:encryptsession
+DISTFILES+=	agentzh-encrypted-session-nginx-module-v${NGINX_ENCRYPTSESSION_VERSION}-${GIT_ENCRYPTSESSION_VERSION}.tar.gz:encryptsession
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-encrypted-session-nginx-module-${GIT_ENCRYPTSESSION_VERSION:S/^0-g//}
 .endif
 
-.if defined(WITH_GRIDFS_MODULE)
-NGINX_GRIDFS_MODULE_VERSION=	0.8
-GIT_GRIDFS_MODULE_VERSION=	0-gb5f8113
+.if ${PORT_OPTIONS:MGRIDFS}
+NGINX_GRIDFS_VERSION=	0.8
+GIT_GRIDFS_VERSION=	0-gb5f8113
 MONGO_C_DRIVER_VERSION=		0.3.1
 GIT_MONGO_C_DRIVER_VERSION=	0-g9b4b232
 FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/mdirolf/nginx-gridfs/tarball/v${NGINX_GRIDFS_MODULE_VERSION}/:gridfs
+MASTER_SITES+=	https://github.com/mdirolf/nginx-gridfs/tarball/v${NGINX_GRIDFS_VERSION}/:gridfs
 MASTER_SITES+=	https://github.com/mongodb/mongo-c-driver/tarball/v${MONGO_C_DRIVER_VERSION}/:mongo_c
-DISTFILES+=	mdirolf-nginx-gridfs-v${NGINX_GRIDFS_MODULE_VERSION}-${GIT_GRIDFS_MODULE_VERSION}.tar.gz:gridfs
+DISTFILES+=	mdirolf-nginx-gridfs-v${NGINX_GRIDFS_VERSION}-${GIT_GRIDFS_VERSION}.tar.gz:gridfs
 DISTFILES+=	mongodb-mongo-c-driver-v${MONGO_C_DRIVER_VERSION}-${GIT_MONGO_C_DRIVER_VERSION}.tar.gz:mongo_c
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_MODULE_VERSION:S/^0-g//}
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_VERSION:S/^0-g//}
 .endif
 
-.if defined(WITH_LET_MODULE)
-NGINX_LET_MODULE_VERSION=	0.0.4
-GIT_LET_MODULE_VERSION=	0-ga5e1dc5
+.if ${PORT_OPTIONS:MLET}
+NGINX_LET_VERSION=	0.0.4
+GIT_LET_VERSION=	0-ga5e1dc5
 FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/arut/nginx-let-module/tarball/v${NGINX_LET_MODULE_VERSION}/:let
-DISTFILES+=	arut-nginx-let-module-v${NGINX_LET_MODULE_VERSION}-${GIT_LET_MODULE_VERSION}.tar.gz:let
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/arut-nginx-let-module-${GIT_LET_MODULE_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/arut/nginx-let-module/tarball/v${NGINX_LET_VERSION}/:let
+DISTFILES+=	arut-nginx-let-module-v${NGINX_LET_VERSION}-${GIT_LET_VERSION}.tar.gz:let
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/arut-nginx-let-module-${GIT_LET_VERSION:S/^0-g//}
 .endif
 
-.if defined(WITH_LUA_MODULE)
+.if ${PORT_OPTIONS:MLUA}
 LIB_DEPENDS+=	luajit-5.1.2:${PORTSDIR}/lang/luajit
 CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
 CONFIGURE_ENV+=	"LUAJIT_LIB=${LOCALBASE}/lib"
 USE_NGINX_DEVEL_KIT=	yes
-NGINX_LUA_MODULE_VERSION=	0.5.0rc28
-GIT_LUA_MODULE_VERSION=	0-g7a7ac79
+NGINX_LUA_VERSION=	0.5.0rc28
+GIT_LUA_VERSION=	0-g7a7ac79
 FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/chaoslawful/lua-nginx-module/tarball/v${NGINX_LUA_MODULE_VERSION}/:lua
-DISTFILES+=	chaoslawful-lua-nginx-module-v${NGINX_LUA_MODULE_VERSION}-${GIT_LUA_MODULE_VERSION}.tar.gz:lua
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/chaoslawful-lua-nginx-module-${GIT_LUA_MODULE_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/chaoslawful/lua-nginx-module/tarball/v${NGINX_LUA_VERSION}/:lua
+DISTFILES+=	chaoslawful-lua-nginx-module-v${NGINX_LUA_VERSION}-${GIT_LUA_VERSION}.tar.gz:lua
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/chaoslawful-lua-nginx-module-${GIT_LUA_VERSION:S/^0-g//}
 .endif
 
-.if defined(WITH_MEMC_MODULE)
-NGINX_MEMC_MODULE_VERSION=	0.13rc3
-GIT_MEMC_MODULE_VERSION=	0-g4007350
+.if ${PORT_OPTIONS:MMEMC}
+NGINX_MEMC_VERSION=	0.13rc3
+GIT_MEMC_VERSION=	0-g4007350
 FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/agentzh/memc-nginx-module/tarball/v${NGINX_MEMC_MODULE_VERSION}/:memc
-DISTFILES+=	agentzh-memc-nginx-module-v${NGINX_MEMC_MODULE_VERSION}-${GIT_MEMC_MODULE_VERSION}.tar.gz:memc
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-memc-nginx-module-${GIT_MEMC_MODULE_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/agentzh/memc-nginx-module/tarball/v${NGINX_MEMC_VERSION}/:memc
+DISTFILES+=	agentzh-memc-nginx-module-v${NGINX_MEMC_VERSION}-${GIT_MEMC_VERSION}.tar.gz:memc
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-memc-nginx-module-${GIT_MEMC_VERSION:S/^0-g//}
 .endif
 
-.if defined(WITH_NAXSI_MODULE)
-NGINX_NAXSI_MODULE_VERSION=	0.46-1
+.if ${PORT_OPTIONS:MNAXSI}
+NGINX_NAXSI_VERSION=	0.46-1
 MASTER_SITES+=	http://naxsi.googlecode.com/files/:naxsi
-DISTFILES+=	naxsi-${NGINX_NAXSI_MODULE_VERSION}.tgz:naxsi
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/naxsi-${NGINX_NAXSI_MODULE_VERSION}/naxsi_src
+DISTFILES+=	naxsi-${NGINX_NAXSI_VERSION}.tgz:naxsi
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/naxsi-${NGINX_NAXSI_VERSION}/naxsi_src
 .endif
 
-.if defined(WITHOUT_HTTP_REWRITE_MODULE) || defined(WITHOUT_PCRE)
+.if ${PORT_OPTIONS:MHTTP_REWRITE}
+LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+CONFIGURE_ARGS+=--with-pcre
+.else
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nopcre
 CONFIGURE_ARGS+=--without-http_rewrite_module \
 		--without-pcre
-.else
-LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
-CONFIGURE_ARGS+=--with-pcre
 .endif
 
-.if defined(WITH_PASSENGER_MODULE)
+.if ${PORT_OPTIONS:MPASSENGER}
 PASSENGER_VERSION=	3.0.12
 MASTER_SITES+=	RF/passenger/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-passenger::build::nginx.rb
-.if !defined(WITH_DEBUG)
+.if empty(PORT_OPTIONS:MDEBUG)
 CONFIGURE_ENV+=	OPTIMIZE="yes"
 CFLAGS+=	-DNDEBUG
 .endif
 .endif
 
-.if defined(WITH_POSTGRES_MODULE)
+.if ${PORT_OPTIONS:MPOSTGRES}
 USE_PGSQL=	yes
-NGINX_POSTGRES_MODULE_VERSION=	0.9
+NGINX_POSTGRES_VERSION=	0.9
 MASTER_SITES+=	http://labs.frickle.com/files/:postgres
-DISTFILES+=	ngx_postgres-${NGINX_POSTGRES_MODULE_VERSION}.tar.gz:postgres
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_postgres-${NGINX_POSTGRES_MODULE_VERSION}
+DISTFILES+=	ngx_postgres-${NGINX_POSTGRES_VERSION}.tar.gz:postgres
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_postgres-${NGINX_POSTGRES_VERSION}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_postgres::config
 .endif
 
-.if defined(WITH_RDS_CSV_MODULE)
-NGINX_RDS_CSV_MODULE_VERSION=	0.05rc2
-GIT_RDS_CSV_MODULE_VERSION=	0-gc15d3a4
+.if ${PORT_OPTIONS:MRDS_CSV}
+NGINX_RDS_CSV_VERSION=	0.05rc2
+GIT_RDS_CSV_VERSION=	0-gc15d3a4
 FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/agentzh/rds-csv-nginx-module/tarball/v${NGINX_RDS_CSV_MODULE_VERSION}/:rdscsv
-DISTFILES+=	agentzh-rds-csv-nginx-module-v${NGINX_RDS_CSV_MODULE_VERSION}-${GIT_RDS_CSV_MODULE_VERSION}.tar.gz:rdscsv
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-rds-csv-nginx-module-${GIT_RDS_CSV_MODULE_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/agentzh/rds-csv-nginx-module/tarball/v${NGINX_RDS_CSV_VERSION}/:rdscsv
+DISTFILES+=	agentzh-rds-csv-nginx-module-v${NGINX_RDS_CSV_VERSION}-${GIT_RDS_CSV_VERSION}.tar.gz:rdscsv
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-rds-csv-nginx-module-${GIT_RDS_CSV_VERSION:S/^0-g//}
 .endif
 
-.if defined(WITH_RDS_JSON_MODULE)
-NGINX_RDS_JSON_MODULE_VERSION=	0.12rc7
-GIT_RDS_JSON_MODULE_VERSION=	0-g253db2b
+.if ${PORT_OPTIONS:MRDS_JSON}
+NGINX_RDS_JSON_VERSION=	0.12rc7
+GIT_RDS_JSON_VERSION=	0-g253db2b
 FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/agentzh/rds-json-nginx-module/tarball/v${NGINX_RDS_JSON_MODULE_VERSION}/:rdsjson
-DISTFILES+=	agentzh-rds-json-nginx-module-v${NGINX_RDS_JSON_MODULE_VERSION}-${GIT_RDS_JSON_MODULE_VERSION}.tar.gz:rdsjson
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-rds-json-nginx-module-${GIT_RDS_JSON_MODULE_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/agentzh/rds-json-nginx-module/tarball/v${NGINX_RDS_JSON_VERSION}/:rdsjson
+DISTFILES+=	agentzh-rds-json-nginx-module-v${NGINX_RDS_JSON_VERSION}-${GIT_RDS_JSON_VERSION}.tar.gz:rdsjson
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-rds-json-nginx-module-${GIT_RDS_JSON_VERSION:S/^0-g//}
 .endif
 
-.if defined(WITH_REDIS2_MODULE)
-NGINX_REDIS2_MODULE_VERSION=	0.08rc4
-GIT_REDIS2_MODULE_VERSION=	0-g5044f16
+.if ${PORT_OPTIONS:MREDIS2}
+NGINX_REDIS2_VERSION=	0.08rc4
+GIT_REDIS2_VERSION=	0-g5044f16
 FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/agentzh/redis2-nginx-module/tarball/v${NGINX_REDIS2_MODULE_VERSION}/:redis2
-DISTFILES+=	agentzh-redis2-nginx-module-v${NGINX_REDIS2_MODULE_VERSION}-${GIT_REDIS2_MODULE_VERSION}.tar.gz:redis2
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-redis2-nginx-module-${GIT_REDIS2_MODULE_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/agentzh/redis2-nginx-module/tarball/v${NGINX_REDIS2_VERSION}/:redis2
+DISTFILES+=	agentzh-redis2-nginx-module-v${NGINX_REDIS2_VERSION}-${GIT_REDIS2_VERSION}.tar.gz:redis2
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-redis2-nginx-module-${GIT_REDIS2_VERSION:S/^0-g//}
 .endif
 
-.if defined(WITH_RTMP_MODULE)
-NGINX_RTMP_MODULE_VERSION=	0.1.5
-GIT_RTMP_MODULE_VERSION=	0-gd216f3d
+.if ${PORT_OPTIONS:MRTMP}
+NGINX_RTMP_VERSION=	0.1.5
+GIT_RTMP_VERSION=	0-gd216f3d
 FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/arut/nginx-rtmp-module/tarball/v${NGINX_RTMP_MODULE_VERSION}/:rtmp
-DISTFILES+=	arut-rtmp-nginx-module-v${NGINX_RTMP_MODULE_VERSION}-${GIT_RTMP_MODULE_VERSION}.tar.gz:rtmp
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/arut-nginx-rtmp-module-${GIT_RTMP_MODULE_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/arut/nginx-rtmp-module/tarball/v${NGINX_RTMP_VERSION}/:rtmp
+DISTFILES+=	arut-rtmp-nginx-module-v${NGINX_RTMP_VERSION}-${GIT_RTMP_VERSION}.tar.gz:rtmp
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/arut-nginx-rtmp-module-${GIT_RTMP_VERSION:S/^0-g//}
 .endif
 
-.if defined(WITH_SET_MISC_MODULE)
+.if ${PORT_OPTIONS:MSET_MISC}
 USE_NGINX_DEVEL_KIT=	yes
-NGINX_SET_MISC_MODULE_VERSION=	0.22rc8
+NGINX_SET_MISC_VERSION=	0.22rc8
 GIT_SET_MISC_VERSION=	0-g658c235
 FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/agentzh/set-misc-nginx-module/tarball/v${NGINX_SET_MISC_MODULE_VERSION}/:setmisc
-DISTFILES+=	agentzh-set-misc-nginx-module-v${NGINX_SET_MISC_MODULE_VERSION}-${GIT_SET_MISC_VERSION}.tar.gz:setmisc
+MASTER_SITES+=	https://github.com/agentzh/set-misc-nginx-module/tarball/v${NGINX_SET_MISC_VERSION}/:setmisc
+DISTFILES+=	agentzh-set-misc-nginx-module-v${NGINX_SET_MISC_VERSION}-${GIT_SET_MISC_VERSION}.tar.gz:setmisc
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-set-misc-nginx-module-${GIT_SET_MISC_VERSION:S/^0-g//}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-agentzh-set-misc-nginx-module::config
 .endif
 
-.if defined(WITH_SLOWFS_CACHE_MODULE)
-NGINX_SLOWFS_CACHE_MODULE_VERSION=	1.8
+.if ${PORT_OPTIONS:MSLOWFS_CACHE}
+NGINX_SLOWFS_CACHE_VERSION=	1.8
 MASTER_SITES+=	http://labs.frickle.com/files/:slowfs_cache
-DISTFILES+=	ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_MODULE_VERSION}.tar.gz:slowfs_cache
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_MODULE_VERSION}
+DISTFILES+=	ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_VERSION}.tar.gz:slowfs_cache
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_VERSION}
 .endif
 
-.if defined(WITH_SRCACHE_MODULE)
-NGINX_SRCACHE_MODULE_VERSION=	0.13rc8
-GIT_SRCACHE_MODULE_VERSION=	0-g5237f26
+.if ${PORT_OPTIONS:MSRCACHE}
+NGINX_SRCACHE_VERSION=	0.13rc8
+GIT_SRCACHE_VERSION=	0-g5237f26
 FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/agentzh/srcache-nginx-module/tarball/v${NGINX_SRCACHE_MODULE_VERSION}/:srcache
-DISTFILES+=	agentzh-srcache-nginx-module-v${NGINX_SRCACHE_MODULE_VERSION}-${GIT_SRCACHE_MODULE_VERSION}.tar.gz:srcache
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-srcache-nginx-module-${GIT_SRCACHE_MODULE_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/agentzh/srcache-nginx-module/tarball/v${NGINX_SRCACHE_VERSION}/:srcache
+DISTFILES+=	agentzh-srcache-nginx-module-v${NGINX_SRCACHE_VERSION}-${GIT_SRCACHE_VERSION}.tar.gz:srcache
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-srcache-nginx-module-${GIT_SRCACHE_VERSION:S/^0-g//}
 .endif
 
-.if defined(WITH_SUPERVISORD_MODULE)
-NGINX_SUPERVISORD_MODULE_VERSION=	1.4
+.if ${PORT_OPTIONS:MSUPERVISORD}
+NGINX_SUPERVISORD_VERSION=	1.4
 MASTER_SITES+=	http://labs.frickle.com/files/:supervisord
-DISTFILES+=	ngx_supervisord-${NGINX_SUPERVISORD_MODULE_VERSION}.tar.gz:supervisord
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_MODULE_VERSION}
+DISTFILES+=	ngx_supervisord-${NGINX_SUPERVISORD_VERSION}.tar.gz:supervisord
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_VERSION}
 .endif
 
-.if defined(WITH_SYSLOG_SUPPORT)
+.if ${PORT_OPTIONS:MSYSLOG_SUPPORT}
 NGINX_SYSLOG_SUPPORT_FACILITY?=	LOG_DAEMON
 CONFIGURE_ARGS+=--with-syslog --with-syslog-facility=${NGINX_SYSLOG_SUPPORT_FACILITY}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-syslog_support
 .endif
 
-.if defined(WITH_UDPLOG_MODULE)
-NGINX_UDPLOG_MODULE_VERSION=	1.0.0
+.if ${PORT_OPTIONS:MUDPLOG}
+NGINX_UDPLOG_VERSION=	1.0.0
 MASTER_SITES+=	http://www.grid.net.ru/nginx/download/:udplog
-DISTFILES+=	nginx_udplog_module-${NGINX_UDPLOG_MODULE_VERSION}.tar.gz:udplog
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_udplog_module-${NGINX_UDPLOG_MODULE_VERSION}
+DISTFILES+=	nginx_udplog_module-${NGINX_UDPLOG_VERSION}.tar.gz:udplog
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_udplog_module-${NGINX_UDPLOG_VERSION}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_udplog_module.c
 .endif
 
-.if defined(WITH_XRID_HEADER_MODULE)
-GIT_XRID_MODULE_VERSION=	0daa3cc
+.if ${PORT_OPTIONS:MXRID_HEADER}
+GIT_XRID_VERSION=	0daa3cc
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/gabor/nginx-x-rid-header/tarball/master/:xrid
-DISTFILES+=	gabor-nginx-x-rid-header-${GIT_XRID_MODULE_VERSION}.tar.gz:xrid
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/gabor-nginx-x-rid-header-${GIT_XRID_MODULE_VERSION}
+DISTFILES+=	gabor-nginx-x-rid-header-${GIT_XRID_VERSION}.tar.gz:xrid
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/gabor-nginx-x-rid-header-${GIT_XRID_VERSION}
 .endif
 
-.if defined(WITH_XSS_MODULE)
-NGINX_XSS_MODULE_VERSION=	0.03rc9
-GIT_XSS_MODULE_VERSION=	0-gbeddbe1
+.if ${PORT_OPTIONS:MXSS}
+NGINX_XSS_VERSION=	0.03rc9
+GIT_XSS_VERSION=	0-gbeddbe1
 FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/agentzh/xss-nginx-module/tarball/v${NGINX_XSS_MODULE_VERSION}/:xss
-DISTFILES+=	agentzh-xss-nginx-module-v${NGINX_XSS_MODULE_VERSION}-${GIT_XSS_MODULE_VERSION}.tar.gz:xss
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-xss-nginx-module-${GIT_XSS_MODULE_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/agentzh/xss-nginx-module/tarball/v${NGINX_XSS_VERSION}/:xss
+DISTFILES+=	agentzh-xss-nginx-module-v${NGINX_XSS_VERSION}-${GIT_XSS_VERSION}.tar.gz:xss
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-xss-nginx-module-${GIT_XSS_VERSION:S/^0-g//}
 .endif
 
-.if defined(WITH_WWW)
+.if ${PORT_OPTIONS:MWWW}
 PLIST_SUB+=	WWWDATA=""
 .else
 PLIST_SUB+=	WWWDATA="@comment "
@@ -662,68 +739,68 @@ PLIST_SUB+=	WWWDATA="@comment "
 .else
 CONFIGURE_ARGS+=--without-http
 PLIST_SUB+=	WWWDATA="@comment "
-.endif		# WITH_HTTP_MODULE
+.endif		# WITH_HTTP
 
-.if defined(WITH_MAIL_MODULE)
+.if ${PORT_OPTIONS:MMAIL}
 CONFIGURE_ARGS+=--with-mail
-.if defined(WITHOUT_MAIL_IMAP_MODULE)
+.if ${PORT_OPTIONS:NMAIL_IMAP}
 CONFIGURE_ARGS+=--without-mail_imap_module
 .endif
-.if defined(WITHOUT_MAIL_POP3_MODULE)
+.if ${PORT_OPTIONS:NMAIL_POP3}
 CONFIGURE_ARGS+=--without-mail_pop3_module
 .endif
-.if defined(WITHOUT_MAIL_SMTP_MODULE)
+.if ${PORT_OPTIONS:NMAIL_SMTP}
 CONFIGURE_ARGS+=--without-mail_smtp_module
 .endif
-.if defined(WITH_MAIL_SSL_MODULE)
+.if ${PORT_OPTIONS:MMAIL_SSL)
 NGINX_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-mail_ssl_module
 .endif
-.endif		# WITH_MAIL_MODULE
+.endif		# WITH_MAIL
 
-.if defined(WITH_HTTP_SSL_MODULE) || defined(USE_HTTP_SSL_MODULE)
+.if ${PORT_OPTIONS:MHTTP_SSL} || defined(USE_HTTP_SSL)
 NGINX_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-http_ssl_module
 .endif
 
 .if defined(USE_NGINX_DEVEL_KIT)
-NGINX_DEVEL_KIT_MODULE_VERSION=	0.2.17
-GIT_DEVEL_KIT_MODULE_VERSION=	0-gbc97eea
+NGINX_DEVEL_KIT_VERSION=	0.2.17
+GIT_DEVEL_KIT_VERSION=	0-gbc97eea
 FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/simpl/ngx_devel_kit/tarball/v${NGINX_DEVEL_KIT_MODULE_VERSION}/:devel_kit
-DISTFILES+=	simpl-ngx_devel_kit-v${NGINX_DEVEL_KIT_MODULE_VERSION}-${GIT_DEVEL_KIT_MODULE_VERSION}.tar.gz:devel_kit
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/simpl-ngx_devel_kit-${GIT_DEVEL_KIT_MODULE_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/simpl/ngx_devel_kit/tarball/v${NGINX_DEVEL_KIT_VERSION}/:devel_kit
+DISTFILES+=	simpl-ngx_devel_kit-v${NGINX_DEVEL_KIT_VERSION}-${GIT_DEVEL_KIT_VERSION}.tar.gz:devel_kit
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/simpl-ngx_devel_kit-${GIT_DEVEL_KIT_VERSION:S/^0-g//}
 .endif
 
-.if defined(WITH_ARRAYVAR_MODULE)
+.if ${PORT_OPTIONS:MARRAYVAR}
 USE_NGINX_DEVEL_KIT=	yes
-NGINX_ARRAYVAR_MODULE_VERSION=	0.03rc1
-GIT_ARRAYVAR_MODULE_VERSION=	0-gfed751a
+NGINX_ARRAYVAR_VERSION=	0.03rc1
+GIT_ARRAYVAR_VERSION=	0-gfed751a
 FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/agentzh/array-var-nginx-module/tarball/v${NGINX_ARRAYVAR_MODULE_VERSION}/:arrayvar
-DISTFILES+=	agentzh-array-var-nginx-module-v${NGINX_ARRAYVAR_MODULE_VERSION}-${GIT_ARRAYVAR_MODULE_VERSION}.tar.gz:arrayvar
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-array-var-nginx-module-${GIT_ARRAYVAR_MODULE_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/agentzh/array-var-nginx-module/tarball/v${NGINX_ARRAYVAR_VERSION}/:arrayvar
+DISTFILES+=	agentzh-array-var-nginx-module-v${NGINX_ARRAYVAR_VERSION}-${GIT_ARRAYVAR_VERSION}.tar.gz:arrayvar
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-array-var-nginx-module-${GIT_ARRAYVAR_VERSION:S/^0-g//}
 .endif
 
-.if defined(WITH_FORMINPUT_MODULE)
+.if ${PORT_OPTIONS:MFORMINPUT}
 USE_NGINX_DEVEL_KIT=	yes
-NGINX_FORMINPUT_MODULE_VERSION=	0.07rc5
-GIT_FORMINPUT_MODULE_VERSION=	0-gd41681d
+NGINX_FORMINPUT_VERSION=	0.07rc5
+GIT_FORMINPUT_VERSION=	0-gd41681d
 FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/calio/form-input-nginx-module/tarball/v${NGINX_FORMINPUT_MODULE_VERSION}/:forminput
-DISTFILES+=	calio-form-input-nginx-module-v${NGINX_FORMINPUT_MODULE_VERSION}-${GIT_FORMINPUT_MODULE_VERSION}.tar.gz:forminput
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/calio-form-input-nginx-module-${GIT_FORMINPUT_MODULE_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/calio/form-input-nginx-module/tarball/v${NGINX_FORMINPUT_VERSION}/:forminput
+DISTFILES+=	calio-form-input-nginx-module-v${NGINX_FORMINPUT_VERSION}-${GIT_FORMINPUT_VERSION}.tar.gz:forminput
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/calio-form-input-nginx-module-${GIT_FORMINPUT_VERSION:S/^0-g//}
 .endif
 
-.if defined(WITH_ICONV_MODULE)
+.if ${PORT_OPTIONS:MICONV}
 LIB_DEPENDS+=	iconv:${PORTSDIR}/converters/libiconv
 USE_NGINX_DEVEL_KIT=	yes
-NGINX_ICONV_MODULE_VERSION=	0.10rc7
-GIT_ICONV_MODULE_VERSION=	0-gabdac17
+NGINX_ICONV_VERSION=	0.10rc7
+GIT_ICONV_VERSION=	0-gabdac17
 FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/calio/iconv-nginx-module/tarball/v${NGINX_ICONV_MODULE_VERSION}/:iconv
-DISTFILES+=	calio-iconv-nginx-module-v${NGINX_ICONV_MODULE_VERSION}-${GIT_ICONV_MODULE_VERSION}.tar.gz:iconv
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/calio-iconv-nginx-module-${GIT_ICONV_MODULE_VERSION:S/^0-g//}
+MASTER_SITES+=	https://github.com/calio/iconv-nginx-module/tarball/v${NGINX_ICONV_VERSION}/:iconv
+DISTFILES+=	calio-iconv-nginx-module-v${NGINX_ICONV_VERSION}-${GIT_ICONV_VERSION}.tar.gz:iconv
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/calio-iconv-nginx-module-${GIT_ICONV_VERSION:S/^0-g//}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-calio-iconv-nginx-module::config
 .endif
 
@@ -740,49 +817,49 @@ USE_OPENSSL=	yes
 
 pre-everything::
 	@${ECHO_MSG}
-.if defined(WITH_HTTP_UPSTREAM_FAIR)
+.if ${PORT_OPTIONS:MHTTP_UPSTREAM_FAIR)
 	@${ECHO_MSG} "Enable http_ssl module to build upstream_fair with SSL support"
 .endif
-.if defined(WITH_PASSENGER_MODULE)
+.if ${PORT_OPTIONS:MPASSENGER}
 	@${ECHO_MSG} "This port install Passenger module only"
 .endif
 	@${ECHO_MSG}
 
 post-extract:
-.if defined(WITH_GRIDFS_MODULE)
-	@${RMDIR} ${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_MODULE_VERSION:S/^0-g//}/mongo-c-driver/
+.if ${PORT_OPTIONS:MGRIDFS}
+	@${RMDIR} ${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_VERSION:S/^0-g//}/mongo-c-driver/
 	@${MV} \
 	${WRKDIR}/mongodb-mongo-c-driver-${GIT_MONGO_C_DRIVER_VERSION:S/^0-g//}/ \
-	${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_MODULE_VERSION:S/^0-g//}/mongo-c-driver/
+	${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_VERSION:S/^0-g//}/mongo-c-driver/
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} 's!%%HTTP_PORT%%!${HTTP_PORT}!; \
 		s!%%PREFIX%%!${PREFIX}!' \
 		${WRKSRC}/conf/nginx.conf
-.if defined(WITH_HTTP_ACCESSKEY_MODULE)
+.if ${PORT_OPTIONS:MHTTP_ACCESSKEY}
 	@${REINPLACE_CMD} \
 		's!$$HTTP_ACCESSKEY_MODULE!ngx_http_accesskey_module!' \
-		${WRKDIR}/nginx-accesskey-${NGINX_ACCESSKEY_MODULE_VERSION}/config
+		${WRKDIR}/nginx-accesskey-${NGINX_ACCESSKEY_VERSION}/config
 .endif
 # linker error acquire if --std=c99 defined, add "static" to inline function
-.if defined(WITH_HTTP_ZIP_MODULE)
+.if ${PORT_OPTIONS:MHTTP_ZIP}
 	@${REINPLACE_CMD} \
 		's!^inline!static inline!' \
-		${WRKDIR}/mod_zip-${NGINX_ZIP_MODULE_VERSION}/ngx_http_zip_parsers.*
+		${WRKDIR}/mod_zip-${NGINX_ZIP_VERSION}/ngx_http_zip_parsers.*
 .endif
-.if defined(WITH_DRIZZLE_MODULE)
+.if ${PORT_OPTIONS:MDRIZZLE}
 	@${REINPLACE_CMD} \
 		's!%%PREFIX%%!${LOCALBASE}!g' \
-		${WRKDIR}/chaoslawful-drizzle-nginx-module-${GIT_DRIZZLE_MODULE_VERSION:S/^0-g//}/config
+		${WRKDIR}/chaoslawful-drizzle-nginx-module-${GIT_DRIZZLE_VERSION:S/^0-g//}/config
 .endif
 # Respect CFLAGS by remove needless --std=c99 flag
-.if defined(WITH_GRIDFS_MODULE)
+.if ${PORT_OPTIONS:MGRIDFS}
 	@${REINPLACE_CMD} \
 		's!--std=c99!-DMONGO_HAVE_STDINT!' \
-		${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_MODULE_VERSION:S/^0-g//}/config
+		${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_VERSION:S/^0-g//}/config
 .endif
-.if defined(WITH_PASSENGER_MODULE)
+.if ${PORT_OPTIONS:MPASSENGER}
 	@${REINPLACE_CMD} 's!-lpthread!${PTHREAD_LIBS}!g' \
 		${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx/config
 	@${REINPLACE_CMD} 's!-Wall!!g; \
@@ -798,23 +875,23 @@ post-patch:
 	@${REINPLACE_CMD} 's!-lpthread!${PTHREAD_LIBS}!g' \
 		${WRKDIR}/passenger-${PASSENGER_VERSION}/lib/phusion_passenger/platform_info/compiler.rb
 .endif
-.if defined(WITH_POSTGRES_MODULE)
+.if ${PORT_OPTIONS:MPOSTGRES}
 	@${REINPLACE_CMD} \
 		's!%%PREFIX%%!${LOCALBASE}!g' \
-		${WRKDIR}/ngx_postgres-${NGINX_POSTGRES_MODULE_VERSION}/config
+		${WRKDIR}/ngx_postgres-${NGINX_POSTGRES_VERSION}/config
 .endif
-.if defined(WITH_SUPERVISORD_MODULE)
+.if ${PORT_OPTIONS:MSUPERVISORD}
 	( cd ${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION} && \
 		${PATCH} -p0 < \
-			${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_MODULE_VERSION}/patches/ngx_http_upstream_fair_module.patch )
+			${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_VERSION}/patches/ngx_http_upstream_fair_module.patch )
 	( cd ${WRKSRC} && \
 		${PATCH} -p0 < \
-			${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_MODULE_VERSION}/patches/ngx_http_upstream_init_busy-0.8.17.patch )
+			${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_VERSION}/patches/ngx_http_upstream_init_busy-0.8.17.patch )
 .endif
-.if defined(WITH_ICONV_MODULE)
+.if ${PORT_OPTIONS:MICONV}
 	@${REINPLACE_CMD} \
 		's!%%PREFIX%%!${LOCALBASE}!g' \
-		${WRKDIR}/calio-iconv-nginx-module-${GIT_ICONV_MODULE_VERSION:S/^0-g//}/config
+		${WRKDIR}/calio-iconv-nginx-module-${GIT_ICONV_VERSION:S/^0-g//}/config
 .endif
 
 do-build:
@@ -832,7 +909,7 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/conf/${i} ${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${ETCDIR}/${i}-dist
 .endfor
-.if defined(WITH_HTTP_MODULE) && defined(WITH_WWW)
+.if !empty(PORT_OPTIONS:MHTTP) && !empty(PORT_OPTIONS:MWWW)
 	${MKDIR} ${PREFIX}/www/nginx-dist
 .for i in index.html 50x.html
 	${INSTALL_DATA} ${WRKSRC}/html/${i} ${PREFIX}/www/nginx-dist
@@ -842,7 +919,7 @@ do-install:
 		${LN} -sf ${PREFIX}/www/nginx-dist ${PREFIX}/www/nginx
 .endif
 
-.if defined(WITH_HTTP_MODULE) && defined(WITH_HTTP_PERL_MODULE)
+.if !empty(PORT_OPTIONS:MHTTP) && !empty(PORT_OPTIONS:MHTTP_PERL)
 	${MKDIR} ${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx
 	${INSTALL_PROGRAM} ${WRKSRC}/objs/src/http/modules/perl/blib/arch/auto/nginx/nginx.so \
 		${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx
@@ -852,14 +929,14 @@ do-install:
 		${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/
 .endif
 
-.if defined(WITH_NAXSI_MODULE)
+.if ${PORT_OPTIONS:MNAXSI}
 	${INSTALL_DATA} \
-	${WRKDIR}/naxsi-${NGINX_NAXSI_MODULE_VERSION}/naxsi_config/naxsi_core.rules \
+	${WRKDIR}/naxsi-${NGINX_NAXSI_VERSION}/naxsi_config/naxsi_core.rules \
 	${ETCDIR}
 .endif
 
 post-install:
-.if defined(WITH_HTTP_MODULE) && defined(WITH_HTTP_PERL_MODULE)
+.if !empty(PORT_OPTIONS:MHTTP) && !empty(PORT_OPTIONS:MHTTP_PERL)
 	${ECHO_CMD} ${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx/nginx.so >> ${TMPPLIST}
 	${ECHO_CMD} ${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx/nginx.bs >> ${TMPPLIST}
 	${ECHO_CMD} ${SITE_PERL_REL}/${PERL_ARCH}/nginx.pm >> ${TMPPLIST}
@@ -869,7 +946,7 @@ post-install:
 	@${INSTALL_MAN} ${WRKSRC}/objs/nginx.8 ${MAN8PREFIX}/man/man8
 .endif
 
-.if defined(WITH_NAXSI_MODULE)
+.if ${PORT_OPTIONS:MNAXSI}
 	${ECHO_CMD} etc/nginx/naxsi_core.rules >> ${TMPPLIST}
 .endif
 
