@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl modules that implement a cookie-based authentication system
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2 \
+BUILD_DEPENDS=	mod_perl2>=0:${PORTSDIR}/www/mod_perl2
+RUN_DEPENDS=	mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
 		p5-CGI.pm>=3.12:${PORTSDIR}/www/p5-CGI.pm \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \

@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Load Apache configuration files
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/FnMatch.pm:${PORTSDIR}/devel/p5-File-FnMatch \
-		${SITE_PERL}/Tree/DAG_Node.pm:${PORTSDIR}/devel/p5-Tree-DAG_Node
+BUILD_DEPENDS=	p5-File-FnMatch>=0:${PORTSDIR}/devel/p5-File-FnMatch \
+		p5-Tree-DAG_Node>=0:${PORTSDIR}/devel/p5-Tree-DAG_Node
 
 MAKE_JOBS_SAFE=  yes
 
