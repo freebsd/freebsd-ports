@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Tk::Date - a date/time widget for perl/Tk
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tk/FireButton.pm:${PORTSDIR}/x11-toolkits/p5-Tk-GBARR
+BUILD_DEPENDS=	p5-Tk-GBARR>=0:${PORTSDIR}/x11-toolkits/p5-Tk-GBARR
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

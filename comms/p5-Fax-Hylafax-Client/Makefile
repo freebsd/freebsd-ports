@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A simple Perl client for the HylaFAX fax server
 
-BUILD_DEPENDS=	${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
-RUN_DEPENDS=	${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
+BUILD_DEPENDS=	p5-Net>=0:${PORTSDIR}/net/p5-Net
+RUN_DEPENDS=	p5-Net>=0:${PORTSDIR}/net/p5-Net
 
 PERL_CONFIGURE=	yes
 
