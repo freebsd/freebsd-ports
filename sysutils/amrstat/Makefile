@@ -15,7 +15,7 @@ MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Utility for LSI Logic's MegaRAID RAID controllers
 
 OPTIONS_DEFINE=	MEGARC
-MEGARC_DESC=	"Install LSI megarc binary port"
+MEGARC_DESC=	Install LSI megarc binary port
 
 .include <bsd.port.options.mk>
 
