@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Chinese Tokenizer on steroids
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Lingua/ZH/TaBE.pm:${PORTSDIR}/chinese/p5-Lingua-ZH-TaBE
+BUILD_DEPENDS=	p5-Lingua-ZH-TaBE>=0:${PORTSDIR}/chinese/p5-Lingua-ZH-TaBE
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

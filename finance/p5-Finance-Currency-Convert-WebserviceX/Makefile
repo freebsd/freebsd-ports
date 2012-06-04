@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lightweight currency conversion using WebserviceX.NET
 
-BUILD_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
+BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-Module-Install>=0.65:${PORTSDIR}/devel/p5-Module-Install
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
