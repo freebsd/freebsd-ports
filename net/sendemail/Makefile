@@ -4,10 +4,10 @@
 #
 # $FreeBSD$
 #
-# $Tecnik: ports/net/sendemail/Makefile,v 1.1 2005/12/17 01:22:24 itetcu Exp $
 
 PORTNAME=	sendEmail
 PORTVERSION=	1.56
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://caspian.dotconf.net/menu/Software/SendEmail/ \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
