@@ -15,9 +15,9 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert MultiMarkdown syntax to (X)HTML
 
 BUILD_DEPENDS=	\
-	${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp \
-	${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-List-MoreUtils \
-	${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
+	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
+	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
+	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 	p5-Text-Markdown>=1.0.26:${PORTSDIR}/textproc/p5-Text-Markdown
 RUN_DEPENDS=	\
 	p5-Text-Markdown>=1.0.26:${PORTSDIR}/textproc/p5-Text-Markdown
