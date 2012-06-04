@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Retrieving information about books by ISBN number
 
-BUILD_DEPENDS=	${SITE_PERL}/WWW/Scraper/ISBN/Record.pm:${PORTSDIR}/www/p5-WWW-Scraper-ISBN-Record
+BUILD_DEPENDS=	p5-WWW-Scraper-ISBN-Record>=0:${PORTSDIR}/www/p5-WWW-Scraper-ISBN-Record
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
