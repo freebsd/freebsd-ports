@@ -110,9 +110,6 @@ PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
 .  endfor
 
 ## options files (from dialog)
-# unset the old WITH/WITHOUT
-.for opt in ${ALL_OPTIONS}
-.endfor
 .  if exists(${OPTIONSFILE}) && !make(rmconfig)
 .  include "${OPTIONSFILE}"
 .  endif
