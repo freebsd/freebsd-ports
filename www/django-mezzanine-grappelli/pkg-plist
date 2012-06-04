@@ -1,0 +1,678 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/admin.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/fields.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/settings.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/sites.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/urls.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/admin.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/fields.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/settings.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/sites.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/urls.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/extras/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/extras/BeautifulSoup.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/extras/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/extras/BeautifulSoup.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/extras/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/extras/BeautifulSoup.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/models/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/models/bookmarks.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/models/help.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/models/navigation.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/models/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/models/bookmarks.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/models/help.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/models/navigation.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/models/fixtures/grappelli_help.json
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/models/fixtures/grappelli_navigation.json
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/models/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/models/bookmarks.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/models/help.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/models/navigation.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templatetags/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templatetags/grp_csrf.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templatetags/grp_tags.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templatetags/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templatetags/grp_csrf.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templatetags/grp_tags.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templatetags/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templatetags/grp_csrf.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templatetags/grp_tags.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/views/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/views/bookmarks.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/views/generic.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/views/help.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/views/related.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/views/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/views/bookmarks.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/views/generic.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/views/help.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/views/related.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/views/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/views/bookmarks.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/views/generic.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/views/help.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/views/related.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/locale/de/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/locale/de/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/css/base.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/css/changelist.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/css/dashboard.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/css/documentation.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/css/forms.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/css/login.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/css/modules.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/css/reset.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/css/rtl.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/css/tables.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/css/typography.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/css/webkit-gradients.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/css/widgets.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/grappelli-icon.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icon_calendar.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icon_clock.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/arrow-down.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/arrow-up.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/changelist-bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/changelist-bg_rtl.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/chooser-bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/chooser_stacked-bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/default-bg-reverse.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/default-bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/deleted-overlay.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/icon-no.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/icon-unknown.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/icon-yes.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/icon_addlink.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/icon_alert.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/icon_calendar.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/icon_changelink.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/icon_clock.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/icon_deletelink.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/icon_error.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/icon_searchbox.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/icon_success.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/inline-delete-8bit.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/inline-delete.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/inline-restore-8bit.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/inline-restore.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/inline-splitter-bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/nav-bg-grabber.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/nav-bg-reverse.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/nav-bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/selector-add.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/selector-addall.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/selector-remove.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/selector-removeall.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/selector-search.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/selector_stacked-add.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/tool-left.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/selector_stacked-remove.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/tool-left_over.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/tool-right.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/tool-right_over.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/tooltag-add.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/tooltag-add_over.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/tooltag-arrowright.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin/tooltag-arrowright_over.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-actionlist_addlink-hover.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-actionlist_addlink.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-actionlist_changelink-hover.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-actionlist_changelink.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-actionlist_deletelink.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-actions_changelist.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-add_another-hover.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-add_another.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-addlink-hover.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-addlink.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-bookmark_add-hover.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-bookmark_add-inactive.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-bookmark_add.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-bookmark_manage-hover.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-bookmark_manage.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-bookmark_remove-hover.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-bookmark_remove-inactive.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-bookmark_remove.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-calendar-hover.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-calendar.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-calendarnav_next.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-calendarnav_previous.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-changelink-hover.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-changelink.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-clock-hover.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-clock.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-fb_show-hover.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-fb_show.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-inline_item_tools-addhandler-hover.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-inline_item_tools-addhandler.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-inline_item_tools-closehandler-hover.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-inline_item_tools-closehandler.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-inline_item_tools-deletelink-hover.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-inline_item_tools-deletelink.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-inline_item_tools-draghandler-hover.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-inline_item_tools-draghandler.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-inline_item_tools-openhandler-hover.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-inline_item_tools-openhandler.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-inline_item_tools-viewsitelink-hover.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-inline_item_tools-viewsitelink.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-menulist_external-hover.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-menulist_external.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-menulist_internal-hover.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-menulist_internal.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-no.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-related_lookup-hover.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-related_lookup.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-searchbox.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-selector_add-m2m_horizontal-hover.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-selector_add-m2m_horizontal.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-unknown.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-selector_add-m2m_vertical-hover.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-selector_add-m2m_vertical.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-selector_remove-m2m_horizontal-hover.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-selector_remove-m2m_horizontal.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-selector_remove-m2m_vertical-hover.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-selector_remove-m2m_vertical.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-th-ascending.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-th-descending.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon-yes.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon_fieldset_collapse-closed.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon_fieldset_collapse-open.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon_inline-item-tools_addhandler.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon_inline-item-tools_closehandler.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons/icon_inline-item-tools_openhandler.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/jquery/jquery-1.3.2.min.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/jquery/jquery-ui-1.7.1.custom.min.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js/LICENSE-JQUERY.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js/SelectBox.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js/SelectFilter2.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js/actions.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js/actions.min.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js/calendar.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js/collapse.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js/collapse.min.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js/core.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js/dateparse.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js/getElementsBySelector.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js/inlines.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js/inlines.min.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js/jquery.init.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js/jquery.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js/jquery.min.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js/prepopulate.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js/prepopulate.min.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js/timeparse.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js/urlify.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js/admin/Changelist.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js/admin/CollapsedFieldsets.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js/admin/CollapsedInlineFieldsets.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js/admin/CollapsibleGroup.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js/admin/DateTimeShortcuts.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js/admin/Inline.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js/admin/RelatedObjectLookups.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js/admin/ordering.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/.DS_Store
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/changelog.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/license.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/tiny_mce_popup.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/tiny_mce_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/langs/en.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advhr/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advhr/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advhr/rule.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advhr/css/advhr.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advhr/js/rule.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advhr/langs/en_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advimage/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advimage/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advimage/image.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advimage/css/advimage.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advimage/img/sample.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advimage/js/image.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advlink/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advlink/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advlink/link.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advlink/css/advlink.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advlink/js/advlink.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advlist/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advlist/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/autolink/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/autolink/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/autoresize/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/autoresize/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/autosave/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/autosave/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/autosave/langs/en.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/bbcode/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/bbcode/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/contextmenu/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/contextmenu/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/directionality/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/directionality/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/emotions/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/emotions/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/emotions/emotions.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-cool.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-cry.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-embarassed.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-foot-in-mouth.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-frown.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-innocent.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-kiss.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-laughing.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-money-mouth.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-sealed.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-smile.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-surprised.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-tongue-out.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-undecided.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-wink.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-yell.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/emotions/js/emotions.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/example/dialog.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/example/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/example/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/example/img/example.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/example/js/dialog.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/example/langs/en.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/example/langs/en_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/example_dependency/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/example_dependency/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/fullpage/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/fullpage/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/fullpage/fullpage.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/fullpage/css/fullpage.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/fullpage/js/fullpage.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/fullscreen/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/fullscreen/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/fullscreen/fullscreen.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/iespell/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/iespell/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/inlinepopups/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/inlinepopups/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/inlinepopups/template.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/window.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/alert.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/button.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/buttons.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/confirm.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/corners.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/horizontal.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/vertical.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/insertdatetime/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/insertdatetime/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/layer/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/layer/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/legacyoutput/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/legacyoutput/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/lists/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/lists/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/media/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/media/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/media/media.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/media/moxieplayer.swf
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/media/css/media.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/media/js/embed.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/media/js/media.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/media/langs/en_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/nonbreaking/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/nonbreaking/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/noneditable/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/noneditable/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/pagebreak/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/pagebreak/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/paste/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/paste/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/paste/pastetext.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/paste/pasteword.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/paste/js/pastetext.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/paste/js/pasteword.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/paste/langs/en_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/preview/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/preview/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/preview/example.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/preview/preview.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/preview/jscripts/embed.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/print/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/print/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/save/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/save/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/searchreplace/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/searchreplace/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/searchreplace/searchreplace.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/searchreplace/css/searchreplace.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/searchreplace/js/searchreplace.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/spellchecker/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/spellchecker/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/spellchecker/css/content.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/spellchecker/img/wline.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/style/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/style/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/style/props.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/style/css/props.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/style/js/props.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/style/langs/en_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/tabfocus/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/tabfocus/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/table/cell.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/table/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/table/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/table/merge_cells.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/table/row.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/table/table.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/table/css/cell.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/table/css/row.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/table/css/table.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/table/js/cell.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/table/js/merge_cells.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/table/js/row.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/table/js/table.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/table/langs/en_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/template/blank.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/template/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/template/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/template/template.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/template/css/template.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/template/js/template.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/template/langs/en_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/visualchars/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/visualchars/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/wordcount/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/wordcount/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/abbr.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/acronym.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/attributes.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/cite.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/del.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/editor_plugin.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/editor_plugin_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/ins.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/css/attributes.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/css/popup.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/js/abbr.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/js/acronym.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/js/attributes.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/js/cite.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/js/del.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/js/element_common.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/js/ins.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/about.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/anchor.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/charmap.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/color_picker.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/editor_template.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/editor_template_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/image.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/link.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/shortcuts.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/source_editor.htm
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/img/colorpicker.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/img/flash.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/img/icons.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/img/iframe.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/img/pagebreak.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/img/quicktime.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/img/realmedia.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/img/shockwave.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/img/trans.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/img/video.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/img/windowsmedia.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/js/about.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/js/anchor.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/js/charmap.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/js/color_picker.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/js/image.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/js/link.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/js/source_editor.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/langs/en.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/content.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/dialog.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/ui.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/img/buttons.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/img/items.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/img/menu_arrow.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/img/menu_check.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/img/progress.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/img/tabs.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/skins/highcontrast/content.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/skins/highcontrast/dialog.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/skins/highcontrast/ui.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/content.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/dialog.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/ui.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/ui_black.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/ui_silver.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/img/button_bg.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/img/button_bg_black.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/img/button_bg_silver.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/simple/editor_template.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/simple/editor_template_src.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/simple/img/icons.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/simple/langs/en.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/simple/skins/default/content.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/simple/skins/default/ui.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/simple/skins/o2k7/content.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/simple/skins/o2k7/ui.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/simple/skins/o2k7/img/button_bg.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/utils/editable_selects.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/utils/form_utils.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/utils/mctabs.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/utils/validate.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce_setup/tinymce_setup.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/404.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/500.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/actions.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/app_index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/base.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/base_site.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/change_form.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/change_list.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/change_list_results.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/date_hierarchy.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/delete_confirmation.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/delete_selected_confirmation.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/filter.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/index_collection.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/index_group.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/invalid_setup.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/login.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/object_history.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/pagination.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/prepopulated_fields_js.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/search_form.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/submit_line.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/template_validator.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/auth/user/add_form.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/auth/user/change_password.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/edit_inline/stacked.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/edit_inline/tabular.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/includes/fieldset.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/includes/fieldset_inline.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/includes_grappelli/bookmarks.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/includes_grappelli/header.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/includes_grappelli/help.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/includes_grappelli/messages.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/includes_grappelli/navigation.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin_doc/bookmarklets.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin_doc/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin_doc/missing_docutils.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin_doc/model_detail.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin_doc/model_index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin_doc/template_detail.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin_doc/template_filter_index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin_doc/template_tag_index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin_doc/view_detail.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin_doc/view_index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/grappelli/help/help.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/grappelli/help/help_detail.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/grappelli/widget/foreignkey_autocomplete.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/registration/logged_out.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/registration/password_change_done.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/registration/password_change_form.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/registration/password_reset_complete.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/registration/password_reset_confirm.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/registration/password_reset_done.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/registration/password_reset_email.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/registration/password_reset_form.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/admin.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/fields.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/settings.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/sites.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/urls.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/views
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templatetags
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/registration
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/grappelli/widget
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/grappelli/help
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/grappelli
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin_doc
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/includes_grappelli
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/includes
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/edit_inline
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/auth/user
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin/auth
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates/admin
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/templates
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce_setup
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/utils
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/simple/skins/o2k7/img
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/simple/skins/o2k7
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/simple/skins/default
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/simple/skins
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/simple/langs
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/simple/img
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/simple
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/img
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/skins/highcontrast
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/img
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/skins/default
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/skins
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/langs
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/js
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced/img
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes/advanced
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/themes
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/langs
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/js
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/css
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/wordcount
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/visualchars
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/template/langs
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/template/js
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/template/css
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/template
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/table/langs
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/table/js
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/table/css
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/table
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/tabfocus
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/style/langs
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/style/js
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/style/css
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/style
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/spellchecker/img
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/spellchecker/css
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/spellchecker
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/searchreplace/js
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/searchreplace/css
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/searchreplace
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/save
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/print
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/preview/jscripts
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/preview
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/paste/langs
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/paste/js
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/paste
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/pagebreak
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/noneditable
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/nonbreaking
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/media/langs
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/media/js
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/media/css
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/media
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/lists
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/legacyoutput
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/layer
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/insertdatetime
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/inlinepopups
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/iespell
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/fullscreen
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/fullpage/langs
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/fullpage/js
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/fullpage/css
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/fullpage
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/example_dependency
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/example/langs
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/example/js
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/example/img
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/example
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/emotions/langs
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/emotions/js
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/emotions/img
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/emotions
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/directionality
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/contextmenu
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/bbcode
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/autosave/langs
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/autosave
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/autoresize
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/autolink
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advlist
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advlink/langs
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advlink/js
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advlink/css
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advlink
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advimage/langs
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advimage/js
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advimage/img
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advimage/css
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advimage
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advhr/langs
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advhr/js
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advhr/css
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advhr
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/plugins
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce/langs
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts/tiny_mce
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce/jscripts
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/tinymce
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js/admin
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/js
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/jquery
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/icons
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img/admin
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/img
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli/css
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static/grappelli
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/static
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/models/fixtures
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/models
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/locale/de/LC_MESSAGES
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/locale/de
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/locale
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe/extras
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grappelli_safe
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
