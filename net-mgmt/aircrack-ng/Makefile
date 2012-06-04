@@ -32,22 +32,23 @@ PLIST_FILES=	bin/aircrack-ng bin/airdecap-ng bin/airdecloak-ng \
 		sbin/airserv-ng sbin/airtun-ng sbin/easside-ng \
 		sbin/tkiptun-ng sbin/wesside-ng
 
-OPTIONS=	SQLITE	"Use SQLite for storing pre-computed key tables" off
+OPTIONS_DEFINE=	SQLITE
+SQLITE_DESC=	Use SQLite for storing pre-computed key tables
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSQLITE}
+USE_SQLITE=	yes
+MAKE_ARGS+=	SQLITE=true
+MAN1+=		airolib-ng.1
+PLIST_FILES+=	bin/airolib-ng
+.endif
 
 .if ${ARCH} == "powerpc"
 BROKEN=		Does not compile on powerpc
 .endif
 .if ${ARCH} == "sparc64" && ${OSVERSION} > 900000
 BROKEN=		Does not compile on sparc64-9
-.endif
-
-.if defined(WITH_SQLITE)
-USE_SQLITE=	yes
-MAKE_ARGS+=	SQLITE=true
-MAN1+=		airolib-ng.1
-PLIST_FILES+=	bin/airolib-ng
 .endif
 
 post-patch:
@@ -74,4 +75,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
