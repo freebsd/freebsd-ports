@@ -22,7 +22,7 @@ RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm			\
 		gocr:${PORTSDIR}/graphics/gocr				\
 		gif2ps:${PORTSDIR}/graphics/giflib			\
 		spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin	\
-		${SITE_PERL}/${PERL_ARCH}/String/Approx.pm:${PORTSDIR}/devel/p5-String-Approx
+		p5-String-Approx>=0:${PORTSDIR}/devel/p5-String-Approx
 
 CONFLICTS=	p5-FuzzyOcr-devel-[0-9]*
 

@@ -14,10 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extends DBI with high-level operations
 
-BUILD_DEPENDS=	${SITE_PERL}/DBIx/AnyDBD.pm:${PORTSDIR}/databases/p5-DBIx-AnyDBD \
-		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/Class/MakeMethods.pm:${PORTSDIR}/devel/p5-Class-MakeMethods \
-		${SITE_PERL}/Class/MixinFactory.pm:${PORTSDIR}/devel/p5-Class-MixinFactory
+BUILD_DEPENDS=	p5-DBIx-AnyDBD>=0:${PORTSDIR}/databases/p5-DBIx-AnyDBD \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-Class-MakeMethods>=0:${PORTSDIR}/devel/p5-Class-MakeMethods \
+		p5-Class-MixinFactory>=0:${PORTSDIR}/devel/p5-Class-MixinFactory
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
