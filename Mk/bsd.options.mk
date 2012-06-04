@@ -17,7 +17,10 @@ OPTIONSFILE?=	${PORT_DBDIR}/${UNIQUENAME}/options
 .if !defined(NOPORTDOCS)
 PORT_OPTIONS+=	DOCS
 .endif
+
+.if !defined(WITHOUT_NLS)
 PORT_OPTIONS+=	NLS
+.endif
 
 # Set the default values for the global options, as defined by portmgr
 .if !defined(NOPORTEXAMPLES)
@@ -107,6 +110,9 @@ PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
 .  endfor
 
 ## options files (from dialog)
+# unset the old WITH/WITHOUT
+.for opt in ${ALL_OPTIONS}
+.endfor
 .  if exists(${OPTIONSFILE}) && !make(rmconfig)
 .  include "${OPTIONSFILE}"
 .  endif
@@ -114,20 +120,16 @@ PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
 .  include "${OPTIONSFILE}.local"
 .  endif
 
-# XXX(to be removed)
-.  if defined(OPTIONS)
-.    undef optname
-.    for O in ${OPTIONS:C/".*"//g}
-.      if defined(WITH_${O})
-PORT_OPTIONS+=	${O}
+### convert WITH and WITHOUT found in make.conf or reloaded from old optionsfile
+.for opt in ${ALL_OPTIONS}
+.if defined(WITH_${opt})
+PORT_OPTIONS+=	${opt}
 PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
-.      endif
-.      if defined(WITHOUT_${O})
-PORT_OPTIONS:=	${PORT_OPTIONS:N${O}}
-.      endif
-.    endfor
-.  endif
-# XXX(end to be removed)
+.endif
+.if defined(WITHOUT_${opt})
+PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
+.endif
+.endfor
 
 ## Finish by using the options set by the port config dialog, if any
 .  for opt in ${OPTIONS_FILE_SET}
