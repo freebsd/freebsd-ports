@@ -1,0 +1,13 @@
+--- src/dbmail.h.in.orig	2012-05-31 13:06:26.000000000 +0100
++++ src/dbmail.h.in	2012-05-31 13:07:01.000000000 +0100
+@@ -150,6 +150,10 @@
+ #include <endian.h>
+ #endif
+ 
++#ifdef HAVE_CONFIG_H
++#include "config.h"
++#endif
++
+ #define GETCONFIGVALUE(key, sect, var) \
+ 	config_get_value(key, sect, var); \
+ 	if (strlen(var) > 0) \

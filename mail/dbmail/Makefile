@@ -7,6 +7,7 @@
 
 PORTNAME=	dbmail
 PORTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/3.0/
 
@@ -20,14 +21,15 @@ BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xmlto:${PORTSDIR}/textproc/xmlto
 .endif
 LIB_DEPENDS=	gmime-2.4:${PORTSDIR}/mail/gmime24 \
-		zdb.8:${PORTSDIR}/databases/libzdb \
-		mhash.2:${PORTSDIR}/security/mhash \
-		event-1.4:${PORTSDIR}/devel/libevent
+		zdb:${PORTSDIR}/databases/libzdb \
+		mhash:${PORTSDIR}/security/mhash \
+		event:${PORTSDIR}/devel/libevent
 
 CONFLICTS=	dbmail-*-2.0.* dbmail-2.*
 
-OPTIONS=	SIEVE	"Build with support for Sieve mail sorting language" off \
-		LDAP	"Build with support for LDAP authentication" off
+OPTIONS_DEFINE=	LDAP SIEVE THREADS
+OPTIONS_DEFAULT=	THREADS
+SIEVE_DESC=	"Build with support for Sieve mail sorting language"
 
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
@@ -35,7 +37,8 @@ USE_LDCONFIG=	${PREFIX}/lib/dbmail
 USE_RC_SUBR=	dbmail-pop3d dbmail-lmtpd dbmail-imapd dbmail-timsieved
 USE_OPENSSL=	yes
 
-CFLAGS+=	-fPIC -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+CFLAGS+=	-fPIC ${PTHREAD_CFLAGS}
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ARGS+=	--with-zdb=${LOCALBASE} --sysconfdir=${LOCALBASE}/etc
 MAKE_ARGS+=	mandir=${MANPREFIX}/man
@@ -67,7 +70,7 @@ PLIST_SUB+=	PORTDOCS=""
 
 .if defined(WITH_SIEVE)
 CONFIGURE_ARGS+=--with-sieve=${LOCALBASE}
-LIB_DEPENDS+=	sieve.1:${PORTSDIR}/mail/libsieve
+LIB_DEPENDS+=	sieve:${PORTSDIR}/mail/libsieve
 PLIST_SUB+=	SIEVE=""
 .else
 PLIST_SUB+=	SIEVE="@comment "
@@ -79,6 +82,11 @@ USE_OPENLDAP=	yes
 PLIST_SUB+=	LDAP=""
 .else
 PLIST_SUB+=	LDAP="@comment "
+.endif
+
+.if defined(WITH_THREADS)
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-acinclude.m4
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure
 .endif
 
 .if !defined(NOPORTDOCS)
