@@ -16,16 +16,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Container class for currency conversion/formatting
 
-BUILD_DEPENDS=	${SITE_PERL}/Locale/Currency/Format.pm:${PORTSDIR}/finance/p5-Locale-Currency-Format \
-		${SITE_PERL}/Class/Accessor/Grouped.pm:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
-		${SITE_PERL}/Finance/Currency/Convert/WebserviceX.pm:${PORTSDIR}/finance/p5-Finance-Currency-Convert-WebserviceX \
-		${SITE_PERL}/Locale/Currency.pm:${PORTSDIR}/misc/p5-Locale-Codes \
-		${SITE_PERL}/Class/Inspector.pm:${PORTSDIR}/devel/p5-Class-Inspector
-RUN_DEPENDS=	${SITE_PERL}/Locale/Currency/Format.pm:${PORTSDIR}/finance/p5-Locale-Currency-Format \
-		${SITE_PERL}/Class/Accessor/Grouped.pm:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
-		${SITE_PERL}/Finance/Currency/Convert/WebserviceX.pm:${PORTSDIR}/finance/p5-Finance-Currency-Convert-WebserviceX \
-		${SITE_PERL}/Locale/Currency.pm:${PORTSDIR}/misc/p5-Locale-Codes \
-		${SITE_PERL}/Class/Inspector.pm:${PORTSDIR}/devel/p5-Class-Inspector
+BUILD_DEPENDS=	p5-Locale-Currency-Format>=0:${PORTSDIR}/finance/p5-Locale-Currency-Format \
+		p5-Class-Accessor-Grouped>=0:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
+		p5-Finance-Currency-Convert-WebserviceX>=0:${PORTSDIR}/finance/p5-Finance-Currency-Convert-WebserviceX \
+		p5-Locale-Codes>=0:${PORTSDIR}/misc/p5-Locale-Codes \
+		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector
+RUN_DEPENDS=	p5-Locale-Currency-Format>=0:${PORTSDIR}/finance/p5-Locale-Currency-Format \
+		p5-Class-Accessor-Grouped>=0:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
+		p5-Finance-Currency-Convert-WebserviceX>=0:${PORTSDIR}/finance/p5-Finance-Currency-Convert-WebserviceX \
+		p5-Locale-Codes>=0:${PORTSDIR}/misc/p5-Locale-Codes \
+		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector
 
 PERL_CONFIGURE=	yes
 

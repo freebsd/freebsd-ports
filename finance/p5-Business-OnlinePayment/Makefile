@@ -17,11 +17,11 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}_08
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A generic interface for processing online credit card payments
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
-		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay \
-		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash \
+		p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

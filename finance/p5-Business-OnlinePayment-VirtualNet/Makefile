@@ -15,12 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Business::OnlinePayment backend module for Vital VirtualNet
 
-BUILD_DEPENDS=	${SITE_PERL}/Business/CreditCard.pm:${PORTSDIR}/finance/p5-Business-CreditCard \
-		${SITE_PERL}/Business/OnlinePayment.pm:${PORTSDIR}/finance/p5-Business-OnlinePayment \
-		${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
-		${SITE_PERL}/File/CounterFile.pm:${PORTSDIR}/misc/p5-File-CounterFile \
-		${SITE_PERL}/String/Parity.pm:${PORTSDIR}/devel/p5-String-Parity \
-		${SITE_PERL}/${PERL_ARCH}/String/LRC.pm:${PORTSDIR}/devel/p5-String-LRC
+BUILD_DEPENDS=	p5-Business-CreditCard>=0:${PORTSDIR}/finance/p5-Business-CreditCard \
+		p5-Business-OnlinePayment>=0:${PORTSDIR}/finance/p5-Business-OnlinePayment \
+		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
+		p5-File-CounterFile>=0:${PORTSDIR}/misc/p5-File-CounterFile \
+		p5-String-Parity>=0:${PORTSDIR}/devel/p5-String-Parity \
+		p5-String-LRC>=0:${PORTSDIR}/devel/p5-String-LRC
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
