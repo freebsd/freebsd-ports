@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for parsing RTF files
 
-BUILD_DEPENDS=	${SITE_PERL}/RTF/Tokenizer.pm:${PORTSDIR}/textproc/p5-RTF-Tokenizer
+BUILD_DEPENDS=	p5-RTF-Tokenizer>=0:${PORTSDIR}/textproc/p5-RTF-Tokenizer
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
