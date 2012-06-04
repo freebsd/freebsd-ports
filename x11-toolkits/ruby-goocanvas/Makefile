@@ -33,7 +33,7 @@ CONFIGURE_ARGS=	--with-pkg-config-dir=${LOCALBASE}/libdata/pkgconfig
 WRKSRC=		${RUBY_GNOME_WRKSRC}/goocanvas
 INSTALL_TARGET=	site-install install
 
-DOCS=		ChangeLog README
+DOCS=		README
 
 post-install:
 .if !defined(NOPORTEXAMPLES)

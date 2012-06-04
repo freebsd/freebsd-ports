@@ -35,7 +35,7 @@ CONFIGURE_ARGS=	--with-pkg-config-dir=${LOCALBASE}/libdata/pkgconfig
 WRKSRC=		${RUBY_GNOME_WRKSRC}/gtk2
 INSTALL_TARGET=	site-install install
 
-DOCS=		COPYING.LIB ChangeLog README
+DOCS=		COPYING.LIB README
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${LOCALBASE}/share|g' \

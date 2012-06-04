@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	--with-pkg-config-dir=${LOCALBASE}/libdata/pkgconfig
 WRKSRC=		${RUBY_GNOME_WRKSRC}/gtksourceview2
 INSTALL_TARGET=	site-install install
 
-DOCS=		COPYING.LIB ChangeLog README
+DOCS=		COPYING.LIB README
 
 post-install:
 .if !defined(NOPORTEXAMPLES)

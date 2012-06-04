@@ -8,7 +8,6 @@ libdata/pkgconfig/ruby-gtk2.pc
 %%RUBY_SITEARCHLIBDIR%%/rbgtkconversions.h
 %%RUBY_SITEARCHLIBDIR%%/rbgtkmacros.h
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING.LIB
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/README
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/alphatest.png
@@ -111,6 +110,7 @@ libdata/pkgconfig/ruby-gtk2.pc
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/misc/helloworld.rb
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/misc/iconview.rb
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/misc/image.rb
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/misc/infobar.rb
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/misc/itemfactory.rb
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/misc/itemfactory2.rb
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/misc/keyboard_grab.rb

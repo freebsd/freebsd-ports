@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	--with-pkg-config-dir=${LOCALBASE}/libdata/pkgconfig
 WRKSRC=	${RUBY_GNOME_WRKSRC}/${PORTNAME}
 INSTALL_TARGET=	site-install install
 
-PORTDOCS=	ChangeLog README
+PORTDOCS=	README
 DOCSDIR=	${RUBY_MODDOCDIR}
 
 .if !defined(NOPORTDOCS)
