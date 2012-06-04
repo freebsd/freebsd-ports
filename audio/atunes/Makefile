@@ -21,42 +21,45 @@ SUB_FILES=	atunes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-SNAPSHOT
 
-OPTIONS=	MPLAYER "Engine:  Use Mplayer" on \
-		XINE "Engine:  Use Xine" off \
-		CDDA2WAV "Ripper:  Enable cdrtools support" on \
-		LAME "Encoder: Enable lame MP3 encoder" on \
-		VORBIS "Encoder: Enable vorbis OGG encoder" on \
-		FLAC "Encoder: Enable FLAC encoder" off
+OPTIONS_DEFINE=		CDDA2WAV
 
-.include <bsd.port.pre.mk>
+OPTIONS_MULTI=		ENCODER ENGINE
 
-pre-everything::
-.if !defined(WITH_MPLAYER) && !defined(WITH_XINE)
-	@${ECHO_MSG} "You need to select at least one engine, mplayer or xine!"
-	@${FALSE}
-.endif
+OPTIONS_MULTI_ENCODER=	LAME VORBIS FLAC
+OPTIONS_MULTI_ENGINE=	MPLAYER XINE
 
-.if defined(WITH_MPLAYER)
+OPTIONS_DEFAULT=	MPLAYER CDDA2WAV LAME VORBIS
+
+MPLAYER_DESC=		Engine:  Use Mplayer
+XINE_DESC=		Engine:  Use Xine
+CDDA2WAV_DESC=		Ripper:  Enable cdrtools support
+LAME_DESC=		Encoder: Enable lame MP3 encoder
+VORBIS_DESC=		Encoder: Enable vorbis OGG encoder
+FLAC_DESC=		Encoder: Enable FLAC encoder
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMPLAYER}
 RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 .endif
 
-.if defined(WITH_XINE)
+.if ${PORT_OPTIONS:MXINE}
 LIB_DEPENDS+=	xine.2:${PORTSDIR}/multimedia/libxine
 .endif
 
-.if defined(WITH_CDDA2WAV)
+.if ${PORT_OPTIONS:MCDDA2WAV}
 USE_CDRTOOLS=	yes
 .endif
 
-.if defined(WITH_LAME)
+.if ${PORT_OPTIONS:MLAME}
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 .endif
 
-.if defined(WITH_VORBIS)
+.if ${PORT_OPTIONS:MVORBIS}
 RUN_DEPENDS+=	ogg123:${PORTSDIR}/audio/vorbis-tools
 .endif
 
-.if defined(WITH_FLAC)
+.if ${PORT_OPTIONS:MFLAC}
 RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
 .endif
 
@@ -85,4 +88,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/pixmaps
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

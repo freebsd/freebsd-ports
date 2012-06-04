@@ -43,4 +43,3 @@ bin/atunes
 share/pixmaps/atunes.png
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
