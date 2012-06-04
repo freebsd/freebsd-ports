@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Regexp-Compare
-PORTVERSION=	0.17
+PORTVERSION=	0.18
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Partial ordering for regular expressions
 
-PERL_CONFIGURE=	yes
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+PERL_CONFIGURE=	5.12.0+
 
 MAN3=		Regexp::Compare.3
 
