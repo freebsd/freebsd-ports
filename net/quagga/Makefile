@@ -19,7 +19,7 @@ COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4, IS-IS route software
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS=	openbgpd-[0-9]* zebra-0*
+CONFLICTS=	openbgpd-[0-9]* openospfd-[0-9]* zebra-0* quagga-re-[0-9]*
 
 USE_AUTOTOOLS=	libtool autoheader aclocal
 ACLOCAL_ARGS=	-I${LOCALBASE}/share/aclocal
