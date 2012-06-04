@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Reformats whitespace for pretty printing XML
 
-RUN_DEPENDS=	${SITE_PERL}/XML/Filter/DetectWS.pm:${PORTSDIR}/textproc/p5-XML-Filter-DetectWS
+RUN_DEPENDS=	p5-XML-Filter-DetectWS>=0:${PORTSDIR}/textproc/p5-XML-Filter-DetectWS
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
