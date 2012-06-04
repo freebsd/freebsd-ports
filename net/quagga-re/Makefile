@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-re
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	A branch of popular quagga software pointed at stability
 
-CONFLICTS=	openbgpd-[0-9]* zebra-0* quagga-[0-9]
+CONFLICTS=	openbgpd-[0-9]* openospfd-[0-9]* zebra-0* quagga-[0-9]*
 
 USE_AUTOTOOLS=		libtool autoheader
 USE_GMAKE=		yes
