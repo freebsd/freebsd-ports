@@ -22,8 +22,8 @@ MAN3=	Subtitles.3
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SUBTITLES_SUBPLAY)
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Prima.pm:${PORTSDIR}/x11-toolkits/p5-Prima \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+RUN_DEPENDS=	p5-Prima>=0:${PORTSDIR}/x11-toolkits/p5-Prima \
+		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
 
 PLIST_SUB+=	SUBPLAY=""
 MAN1+=		subplay.1
