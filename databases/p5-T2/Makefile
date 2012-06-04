@@ -16,10 +16,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Object Relational mapping system
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Set/Object.pm:${PORTSDIR}/devel/p5-Set-Object \
-		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/Tangram.pm:${PORTSDIR}/databases/p5-Tangram \
-		${SITE_PERL}/Class/Tangram.pm:${PORTSDIR}/devel/p5-Class-Tangram
+BUILD_DEPENDS=	p5-Set-Object>=0:${PORTSDIR}/devel/p5-Set-Object \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-Tangram>=0:${PORTSDIR}/databases/p5-Tangram \
+		p5-Class-Tangram>=0:${PORTSDIR}/devel/p5-Class-Tangram
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
