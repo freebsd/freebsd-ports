@@ -11,11 +11,11 @@ CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The Dining Cryptographers' Protocol
 
-BUILD_DEPENDS=	${SITE_PERL}/Crypt/Random.pm:${PORTSDIR}/security/p5-Crypt-Random \
-		${SITE_PERL}/Net/Address/IPv4/Local.pm:${PORTSDIR}/net/p5-Net-Address-IPv4-Local
+BUILD_DEPENDS=	p5-Crypt-Random>=0:${PORTSDIR}/security/p5-Crypt-Random \
+		p5-Net-Address-IPv4-Local>=0:${PORTSDIR}/net/p5-Net-Address-IPv4-Local
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Crypt::Dining.3
