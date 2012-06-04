@@ -126,6 +126,7 @@
     SUBDIR += dillo-i18n
     SUBDIR += dillo2
     SUBDIR += django-mezzanine-filebrowser
+    SUBDIR += django-mezzanine-grappelli
     SUBDIR += docebo
     SUBDIR += dojo
     SUBDIR += dojo-shrinksafe
