@@ -11,11 +11,11 @@ CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple SMB authentication
 
-BUILD_DEPENDS=	${SITE_PERL}/Authen/Simple.pm:${PORTSDIR}/security/p5-Authen-Simple \
-		${SITE_PERL}/${PERL_ARCH}/Authen/Smb.pm:${PORTSDIR}/security/p5-Authen-Smb
+BUILD_DEPENDS=	p5-Authen-Simple>=0:${PORTSDIR}/security/p5-Authen-Simple \
+		p5-Authen-Smb>=0:${PORTSDIR}/security/p5-Authen-Smb
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Authen::Simple::SMB.3

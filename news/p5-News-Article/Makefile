@@ -12,11 +12,11 @@ CATEGORIES=	news perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Object for handling Usenet articles in mail or news form
 
-BUILD_DEPENDS=	${SITE_PERL}/Net/NNTP.pm:${PORTSDIR}/net/p5-Net
-RUN_DEPENDS=	${SITE_PERL}/Net/NNTP.pm:${PORTSDIR}/net/p5-Net
+BUILD_DEPENDS=	p5-Net>=0:${PORTSDIR}/net/p5-Net
+RUN_DEPENDS=	p5-Net>=0:${PORTSDIR}/net/p5-Net
 
 PERL_CONFIGURE=	yes
 
@@ -28,8 +28,8 @@ OPTIONS=	PGP_SIGN "PGP::Sign support for header signing" on
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_PGP_SIGN)
-BUILD_DEPENDS+=	${SITE_PERL}/PGP/Sign.pm:${PORTSDIR}/security/p5-PGP-Sign
-RUN_DEPENDS+=	${SITE_PERL}/PGP/Sign.pm:${PORTSDIR}/security/p5-PGP-Sign
+BUILD_DEPENDS+=	p5-PGP-Sign>=0:${PORTSDIR}/security/p5-PGP-Sign
+RUN_DEPENDS+=	p5-PGP-Sign>=0:${PORTSDIR}/security/p5-PGP-Sign
 .endif
 
 .include <bsd.port.post.mk>
