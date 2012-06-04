@@ -15,6 +15,8 @@ COMMENT?=	Utilities/libraries to make RAPI calls on WinCE devices
 
 LIB_DEPENDS+=	synce.0:${PORTSDIR}/palm/synce-libsynce
 
+CONFLICTS=	popular-[0-9]*
+
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
 USE_ICONV=	yes

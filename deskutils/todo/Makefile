@@ -17,6 +17,8 @@ COMMENT=	Todo.txt Manager
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
+CONFLICTS=	devtodo-[0-9]*
+
 OPTIONS_DEFINE=	BASH
 BASH_DESC=	Install programmable completions for Bash
 

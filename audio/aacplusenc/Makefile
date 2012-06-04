@@ -18,6 +18,8 @@ USE_GMAKE=	yes
 
 RESTRICTED=	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
 
+CONFLICTS=	libaacplus-[0-9]*
+
 PLIST_FILES=	bin/aacplusenc
 
 .if defined(WITHOUT_FFTW3)
