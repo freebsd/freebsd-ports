@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chinese Text Summarization
 
-BUILD_DEPENDS=	${SITE_PERL}/Lingua/ZH/Toke.pm:${PORTSDIR}/chinese/p5-Lingua-ZH-Toke \
-		${SITE_PERL}/Lingua/ZH/Wrap.pm:${PORTSDIR}/chinese/p5-Lingua-ZH-Wrap
+BUILD_DEPENDS=	p5-Lingua-ZH-Toke>=0:${PORTSDIR}/chinese/p5-Lingua-ZH-Toke \
+		p5-Lingua-ZH-Wrap>=0:${PORTSDIR}/chinese/p5-Lingua-ZH-Wrap
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
