@@ -14,15 +14,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Catalyst helper for Scaffolding
 
-BUILD_DEPENDS=	${SITE_PERL}/Catalyst.pm:${PORTSDIR}/www/p5-Catalyst-Runtime \
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=0:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Catalyst-Devel>=1.00:${PORTSDIR}/www/p5-Catalyst-Devel \
-		${SITE_PERL}/Catalyst/Plugin/FormValidator.pm:${PORTSDIR}/www/p5-Catalyst-Plugin-FormValidator \
-		${SITE_PERL}/Catalyst/View/TT.pm:${PORTSDIR}/www/p5-Catalyst-View-TT \
-		${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI \
-		${SITE_PERL}/Class/DBI/AsForm.pm:${PORTSDIR}/databases/p5-Class-DBI-AsForm \
-		${SITE_PERL}/Class/DBI/FromForm.pm:${PORTSDIR}/www/p5-Class-DBI-FromForm \
-		${SITE_PERL}/Path/Class.pm:${PORTSDIR}/devel/p5-Path-Class \
-		${SITE_PERL}/Template/Plugin/Class.pm:${PORTSDIR}/www/p5-Template-Plugin-Class
+		p5-Catalyst-Plugin-FormValidator>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-FormValidator \
+		p5-Catalyst-View-TT>=0:${PORTSDIR}/www/p5-Catalyst-View-TT \
+		p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI \
+		p5-Class-DBI-AsForm>=0:${PORTSDIR}/databases/p5-Class-DBI-AsForm \
+		p5-Class-DBI-FromForm>=0:${PORTSDIR}/www/p5-Class-DBI-FromForm \
+		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
+		p5-Template-Plugin-Class>=0:${PORTSDIR}/www/p5-Template-Plugin-Class
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Catalyst::View::GraphViz - GraphViz View Class
 
-BUILD_DEPENDS=	${SITE_PERL}/Catalyst/Plugin/SubRequest.pm:${PORTSDIR}/www/p5-Catalyst-Plugin-SubRequest \
-		${SITE_PERL}/GraphViz.pm:${PORTSDIR}/graphics/p5-GraphViz
+BUILD_DEPENDS=	p5-Catalyst-Plugin-SubRequest>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-SubRequest \
+		p5-GraphViz>=0:${PORTSDIR}/graphics/p5-GraphViz
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
