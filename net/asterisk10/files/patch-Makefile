@@ -9,18 +9,6 @@
  
  # Asterisk.conf is located in ASTETCDIR or by using the -C flag
  # when starting Asterisk
-@@ -226,9 +226,11 @@
-   ifneq ($(AST_MARCH_NATIVE),)
-     _ASTCFLAGS+=$(AST_MARCH_NATIVE)
-   else
-+    ifneq ($(OSARCH),FreeBSD)
-     ifneq ($(PROC),ultrasparc)
-       _ASTCFLAGS+=$(shell if $(CC) -march=$(PROC) -S -o /dev/null -xc /dev/null >/dev/null 2>&1; then echo "-march=$(PROC)"; fi)
-     endif
-+    endif
-   endif
- endif
- 
 @@ -243,7 +245,7 @@
      endif
    endif
