@@ -14,14 +14,15 @@ MASTER_SITE_SUBDIR=	jkim
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Utility for LSI Logic's MegaRAID RAID controllers
 
-OPTIONS=	MEGARC "Also install LSI megarc binary port.." off
+OPTIONS_DEFINE=	MEGARC
+MEGARC_DESC=	"Install LSI megarc binary port"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # We may want this for periodic script and to actually be able
 # to fix something in case amrstat reports degraded RAID.
-.if defined(WITH_MEGARC)
-RUN_DEPENDS=	${LOCALBASE}/sbin/megarc:${PORTSDIR}/sysutils/megarc
+.if ${PORT_OPTIONS:MMEGARC}
+RUN_DEPENDS+=	${LOCALBASE}/sbin/megarc:${PORTSDIR}/sysutils/megarc
 .endif
 
 ALL_TARGET=	${PORTNAME}
@@ -41,4 +42,4 @@ do-install:
 	${INSTALL_SCRIPT} -d ${PREFIX}/etc/periodic/daily
 	${INSTALL_SCRIPT} ${WRKDIR}/${PERIODICSCRIPT} ${PREFIX}/etc/periodic/daily
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

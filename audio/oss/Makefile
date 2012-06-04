@@ -55,17 +55,18 @@ PROTO_SBINDIR=	${PROTO_DIR}/usr/sbin
 PROTO_MANDIR=	${PROTO_DIR}/usr/share/man
 PROTO_OSSLIBDIR=${PROTO_DIR}${PREFIX}/lib/oss
 
-OPTIONS=	VORBIS	"OGG/Vorbis audio support"	on
-
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel source to be installed
 .endif
 
-.include <bsd.port.pre.mk>
+CONFIGURE_ENV=	HOSTCC="${CC}"
 
-CONFIGURE_ENV+=	HOSTCC="${CC}"
+OPTIONS_DEFINE=	VORBIS
+OPTIONS_DEFAULT=VORBIS
 
-.if !defined(WITHOUT_VORBIS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MVORBIS}
 LIB_DEPENDS+=	vorbisfile.6:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ENV+=	OGG_SUPPORT=YES
 .endif
@@ -124,4 +125,4 @@ do-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
