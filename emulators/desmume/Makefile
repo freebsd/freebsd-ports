@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	desmume
-PORTVERSION=	0.9.7
-PORTREVISION=	2
+PORTVERSION=	0.9.8
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -46,10 +45,11 @@ BROKEN=		Does not compile on ia64
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|mode_t|mode_t_|g' ${WRKSRC}/src/utils/libfat/libfat_pc.h
 # FreeBSD 7.x is missing strnlen(), adjusting this enables a builtin version of strnlen()
 .if ${OSVERSION} < 800000
-	@${REINPLACE_CMD} -e 's|#ifdef __APPLE__|#if 1|g' ${WRKSRC}/src/utils/libfat/directory.cpp
+	@${REINPLACE_CMD} -e 's|#ifdef __APPLE__|#if 1|g; \
+			/AvailabilityMacros\.h/d' \
+		${WRKSRC}/src/utils/libfat/directory.cpp
 .endif
 
 .include <bsd.port.post.mk>
