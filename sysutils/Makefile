@@ -203,6 +203,7 @@
     SUBDIR += dwatch
     SUBDIR += e2fsprogs
     SUBDIR += easypbi
+    SUBDIR += edid-decode
     SUBDIR += eiciel
     SUBDIR += eject
     SUBDIR += empower
