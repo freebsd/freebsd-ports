@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pqiv
-PORTVERSION=	0.11
-PORTREVISION=	1
+PORTVERSION=	0.12
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.pberndt.com/raw/Programme/Linux/pqiv/_download/
 EXTRACT_SUFX=	.tbz
@@ -17,45 +16,47 @@ COMMENT=	Pretty Quick Image Viewer
 
 LICENSE=	GPLv2
 
-OPTIONS=	SORTING		"Enable sorting of loaded files" on \
-		COMPOSITE	"Enable support for transparent windows" on \
-		FADING		"Enable support for fading images" on \
-		COMMANDS	"Enable support for external command execution" on \
-		CONFIG		"Enable support for a configuration file" on \
-		ANIMATIONS	"Enable support for animations" on
+OPTIONS_DEFINE=	SORTING COMPOSITE FADING COMMANDS CONFIG ANIMATIONS DOCS
+OPTIONS_DEFAULT=SORTING COMPOSITE FADING COMMANDS CONFIG ANIMATIONS
+SORTING_DESC=	Enable sorting of loaded files
+COMPOSITE_DESC=	Enable support for transparent windows
+FADING_DESC=	Enable support for fading images
+COMMANDS_DESC=	Enable support for external command execution
+CONFIG_DESC=	Enable support for a configuration file
+ANIMATIONS_DESC=Enable support for animations
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 CFLAGS+=	-DNO_INOTIFY -DBINARY_NAME=\"${PORTNAME}\"
 
 MAN1=		pqiv.1
-PORTDOCS=	README
+PORTDOCS=	README.markdown
 PLIST_FILES=	bin/pqiv
 
-CPPFLAGS+=	`${pkgconfig_DETECT} --cflags gtk+-2.0 gthread-2.0`
-LDFLAGS+=	`${pkgconfig_DETECT} --libs gtk+-2.0 gthread-2.0`
+CPPFLAGS+=	$$(${pkgconfig_DETECT} --cflags gtk+-2.0 gthread-2.0)
+LDFLAGS+=	$$(${pkgconfig_DETECT} --libs gtk+-2.0 gthread-2.0)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_SORTING)
+.if empty(PORT_OPTIONS:MSORTING)
 CFLAGS+=	-DNO_SORTING
 SORTFILE=	# Empty
 .else
 SORTFILE=	lib/strnatcmp.c
 .endif
-.if defined(WITHOUT_COMPOSITE)
+.if empty(PORT_OPTIONS:MCOMPOSITE)
 CFLAGS+=	-DNO_COMPOSITING
 .endif
-.if defined(WITHOUT_FADING)
+.if empty(PORT_OPTIONS:MFADING)
 CFLAGS+=	-DNO_FADING
 .endif
-.if defined(WITHOUT_COMMANDS)
+.if empty(PORT_OPTIONS:MCOMMANDS)
 CFLAGS+=	-DNO_COMMANDS
 .endif
-.if defined(WITHOUT_CONFIG)
+.if empty(PORT_OPTIONS:MCONFIG)
 CFLAGS+=	-DNO_CONFIG_FILE
 .endif
-.if defined(WITHOUT_ANIMATIONS)
+.if empty(PORT_OPTIONS:MANIMATIONS)
 CFLAGS+=	-DNO_ANIMATIONS
 .endif
 
@@ -70,9 +71,9 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pqiv ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/pqiv.1 ${MAN1PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.markdown ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
