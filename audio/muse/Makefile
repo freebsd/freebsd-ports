@@ -8,34 +8,38 @@
 
 PORTNAME=	MuSE
 PORTVERSION=	0.9.2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.dyne.org/muse/releases/ \
-		http://www.ljudmila.org/~jaromil/muse/releases/
+MASTER_SITES=	http://files.dyne.org/muse/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiple Streaming Engine
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 		ogg.7:${PORTSDIR}/audio/libogg
 
+OPTIONS_DEFINE=	X11 LAME SNDFILE DOCS
+OPTIONS_DEFAULT=X11
+
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug --disable-lubrify --disable-rpath
-CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT -DHAVE_SYS_UIO_H \
-		${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl
+MAKE_JOBS_SAFE=	yes
 
-OPTIONS_DEFINE=	X11 LAME SNDFILE
-OPTIONS_DEFAULT=	X11
+CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_SYS_UIO_H ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl ${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
+MAN1=		muse.1
+PORTDOCS=	AUTHORS ChangeLog NEWS KNOWN-BUGS README TODO USAGE
+PLIST_FILES=	bin/muse
+.for lang in es it
+PLIST_FILES+=	share/locale/${lang}/LC_MESSAGES/muse.mo
+.endfor
 
-.if ${OSVERSION} < 800501
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-broken-scandir
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
 USE_GNOME+=	gtk20
@@ -44,20 +48,30 @@ PKGNAMESUFFIX=	-nox11
 CONFIGURE_ARGS+=--without-x --with-rubik
 .endif
 
-.if ${PORT_OPTIONS:MMP3} || exists(${LOCALBASE}/lib/libmp3lame.so.0)
+.if ${PORT_OPTIONS:MLAME}
 LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
+.else
+CONFIGURE_ENV+=	ac_cv_header_lame_lame_h=no
 .endif
 
-.if ${PORT_OPTIONS:MSNDFILE} || exists(${LOCALBASE}/lib/libsndfile.so.1)
+.if ${PORT_OPTIONS:MSNDFILE}
 LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
 .endif
 
-MAN1=		muse.1
-
 post-patch:
-.if exists(/usr/include/sys/soundcard.h)
-	${REINPLACE_CMD} -e "s,machine/soundcard.h,sys/soundcard.h,g" \
+	@${REINPLACE_CMD} -e 's|machine/soundcard.h|sys/soundcard.h|' \
 		${WRKSRC}/src/portaudio/pa_unix_oss.c
+.if empty(PORT_OPTIONS:MSNDFILE)
+	@${REINPLACE_CMD} -e '/sndfile >=/s|$$PKG_CONFIG|${FALSE}|' \
+		${WRKSRC}/configure
 .endif
 
-.include <bsd.port.post.mk>
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.mk>
