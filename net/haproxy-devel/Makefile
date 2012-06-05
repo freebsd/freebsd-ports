@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://haproxy.1wt.eu/download/1.5/src/devel/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	freebsd@linepoint.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Reliable, High Performance TCP/HTTP Load Balancer
 
 LICENSE_COMB=	multi
