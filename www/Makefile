@@ -1489,6 +1489,7 @@
     SUBDIR += py-funkload
     SUBDIR += py-google-api-python-client
     SUBDIR += py-graphite-web
+    SUBDIR += py-grequests
     SUBDIR += py-gunicorn
     SUBDIR += py-html5lib
     SUBDIR += py-httplib2

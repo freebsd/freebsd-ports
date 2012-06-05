@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/grequests.py
+%%PYTHON_SITELIBDIR%%/grequests.pyc
+%%PYTHON_SITELIBDIR%%/grequests.pyo
