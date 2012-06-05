@@ -3,8 +3,4 @@ CPUs.  Unlike the GNU binutils in the base system (recent versions
 of which have 16-bit capability), these are for code written with
 Intel syntax.
 
-This port/package conflicts with devel/bcc.
-
-WWW: http://homepage.ntlworld.com/robert.debath/
-
-Trevor Johnson
+WWW: http://www.debath.co.uk/

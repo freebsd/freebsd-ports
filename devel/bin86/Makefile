@@ -6,22 +6,28 @@
 #
 
 PORTNAME=	bin86
-PORTVERSION=	0.16.17
+PORTVERSION=	0.16.18
 CATEGORIES=	devel
-MASTER_SITES=	http://homepage.ntlworld.com/robert.debath/dev86/ \
-		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
+MASTER_SITES=	http://www.debath.co.uk/dev86/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	16-bit assembler and loader (conflicts with devel/bcc)
+COMMENT=	16-bit assembler and loader
+
+MAKE_JOBS_SAFE=	yes
+
+MAN1=		as86.1 ld86.1
+PORTDOCS=	ChangeLog README README-0.4
+PLIST_FILES=	${BINS:C/..\//bin\//g}
+
+CONFLICTS=	bcc-[0-9]* dev86-[0-9]*
 
 BINS=		as/as86 ld/ld86 ld/objchop ld/catimage ld/objdump86
-CONFLICTS=	bcc-[0-9]* dev86-[0-9]*
-PORTDOCS=	ChangeLog README README-0.4
-MAN1=		as86.1 ld86.1
 
-ONLY_FOR_ARCHS=	i386 amd64
+.include <bsd.port.pre.mk>
 
-PLIST_FILES+=	${BINS:C/..\//bin\//g}
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ia64, powerpc, or sparc64
+.endif
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/*1 ${MAN1PREFIX}/man/man1
@@ -33,4 +39,4 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
