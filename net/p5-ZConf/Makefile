@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ZConf
-PORTVERSION=	5.1.0
+PORTVERSION=	6.1.0
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:VVELOX
@@ -15,16 +15,17 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	A configuration system allowing for either file or LDAP backed storage
 
-RUN_DEPENDS=	${SITE_PERL}/Net/LDAP/Entry.pm:${PORTSDIR}/net/p5-perl-ldap \
-		${SITE_PERL}/Net/LDAP/LDAPhash.pm:${PORTSDIR}/net/p5-Net-LDAP-LDAPhash \
-		${SITE_PERL}/Net/LDAP/Makepath.pm:${PORTSDIR}/net/p5-Net-LDAP-Makepath \
-		${SITE_PERL}/ZML.pm:${PORTSDIR}/devel/p5-ZML \
-		${SITE_PERL}/Chooser.pm:${PORTSDIR}/devel/p5-Chooser \
-		${SITE_PERL}/File/BaseDir.pm:${PORTSDIR}/devel/p5-File-BaseDir \
-		${SITE_PERL}/Net/LDAP/AutoDNs.pm:${PORTSDIR}/net/p5-Net-LDAP-AutoDNs \
-		${SITE_PERL}/Module/List.pm:${PORTSDIR}/devel/p5-Module-List \
-		${SITE_PERL}/Net/LDAP/AutoServer.pm:${PORTSDIR}/net/p5-Net-LDAP-AutoServer
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-Chooser>=0:${PORTSDIR}/devel/p5-Chooser \
+		p5-Error-Helper>=0:${PORTSDIR}/devel/p5-Error-Helper \
+		p5-File-BaseDir>=0:${PORTSDIR}/devel/p5-File-BaseDir \
+		p5-Module-List>=0:${PORTSDIR}/devel/p5-Module-List \
+		p5-Net-LDAP-AutoDNs>=0:${PORTSDIR}/net/p5-Net-LDAP-AutoDNs \
+		p5-Net-LDAP-AutoServer>=0:${PORTSDIR}/net/p5-Net-LDAP-AutoServer \
+		p5-Net-LDAP-LDAPhash>=0:${PORTSDIR}/net/p5-Net-LDAP-LDAPhash \
+		p5-Net-LDAP-Makepath>=0:${PORTSDIR}/net/p5-Net-LDAP-Makepath \
+		p5-ZML>=0:${PORTSDIR}/devel/p5-ZML \
+		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
