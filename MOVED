@@ -3454,4 +3454,4 @@ www/hs-happstack-ixset||2012-06-03|Removed: this package is obsolete.
 www/hs-happstack-state||2012-06-03|Removed: this package is obsolete.
 www/hs-happstack-util||2012-06-03|Removed: this package is obsolete.
 www/hs-http-enumerator||2012-06-03|Removed: this package is obsolete.
-graphics/libungif|graphics/giflib|Replaced by giflib
+graphics/libungif|graphics/giflib|2012-06-05|Replaced by giflib
