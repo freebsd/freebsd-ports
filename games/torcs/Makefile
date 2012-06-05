@@ -18,7 +18,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		vorbis.4:${PORTSDIR}/audio/libvorbis
+		vorbis:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_XORG=	xrender xmu ice xext x11 xxf86vm xrandr
@@ -58,7 +58,7 @@ DESKTOP_ENTRIES=	"TORCS" \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_FREEGLUT)
-LIB_DEPENDS+=	glut.12:${PORTSDIR}/graphics/freeglut
+LIB_DEPENDS+=	glut:${PORTSDIR}/graphics/freeglut
 .else
 USE_GL=		glut
 .endif
