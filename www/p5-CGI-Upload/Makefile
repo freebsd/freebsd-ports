@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CGI class for handling browser file uploads
 
-BUILD_DEPENDS=	${SITE_PERL}/HTTP/BrowserDetect.pm:${PORTSDIR}/www/p5-HTTP-BrowserDetect \
-		${SITE_PERL}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic \
-		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
+BUILD_DEPENDS=	p5-HTTP-BrowserDetect>=0:${PORTSDIR}/www/p5-HTTP-BrowserDetect \
+		p5-File-MMagic>=0:${PORTSDIR}/devel/p5-File-MMagic \
+		p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm
 
 PERL_CONFIGURE=	yes
 

@@ -16,10 +16,10 @@ DISTNAME=	Gtk-Perl-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Imlib module of Gtk-Perl
 
-BUILD_DEPENDS=	${SITE_PERL}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer \
-		${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk \
-		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
+BUILD_DEPENDS=	p5-XML-Writer>=0:${PORTSDIR}/textproc/p5-XML-Writer \
+		p5-Gtk>=0:${PORTSDIR}/x11-toolkits/p5-Gtk \
+		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
+RUN_DEPENDS=	p5-Gtk>=0:${PORTSDIR}/x11-toolkits/p5-Gtk
 
 MAKE_JOBS_UNSAFE=	yes
 
