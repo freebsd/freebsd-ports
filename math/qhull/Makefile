@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=	qhull.1 rbox.1
 
-CONFLICTS=	qhull-1.0*
+CONFLICTS=	qhull-1.0* afni-[0-9]*
 
 post-patch:
 .if !defined(NOPORTDOCS)
