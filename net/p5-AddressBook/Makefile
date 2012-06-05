@@ -16,8 +16,8 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module providing an LDAP addressbook interface
 
 USE_PERL5=	yes
-RUN_DEPENDS=	${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
-		${SITE_PERL}/XML/DOM.pm:${PORTSDIR}/textproc/p5-XML-DOM
+RUN_DEPENDS=	p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
+		p5-XML-DOM>=0:${PORTSDIR}/textproc/p5-XML-DOM
 
 NO_BUILD=	yes
 ALL_FILES=	AddressBook.pm AddressBook/Entry.pm AddressBook/Config.pm \
