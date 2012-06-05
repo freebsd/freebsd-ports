@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A mechanism for validating MARC records
 
-BUILD_DEPENDS=	${SITE_PERL}/MARC/Record.pm:${PORTSDIR}/textproc/p5-MARC-Record \
+BUILD_DEPENDS=	p5-MARC-Record>=0:${PORTSDIR}/textproc/p5-MARC-Record \
 		p5-Business-ISBN>=2.03:${PORTSDIR}/misc/p5-Business-ISBN
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

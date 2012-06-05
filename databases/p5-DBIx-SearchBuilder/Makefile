@@ -14,15 +14,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Perl extension for easy SQL SELECT Statement generation
 
-BUILD_DEPENDS=	${SITE_PERL}/Class/ReturnValue.pm:${PORTSDIR}/devel/p5-Class-ReturnValue \
-		${SITE_PERL}/Cache/Simple/TimedExpiry.pm:${PORTSDIR}/devel/p5-Cache-Simple-TimedExpiry \
-		${SITE_PERL}/${PERL_ARCH}/Want.pm:${PORTSDIR}/devel/p5-Want \
-		${SITE_PERL}/capitalization.pm:${PORTSDIR}/devel/p5-capitalization \
-		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/DBIx/DBSchema.pm:${PORTSDIR}/databases/p5-DBIx-DBSchema \
-		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
-		${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone \
-		${SITE_PERL}/${PERL_ARCH}/Encode.pm:${PORTSDIR}/converters/p5-Encode
+BUILD_DEPENDS=	p5-Class-ReturnValue>=0:${PORTSDIR}/devel/p5-Class-ReturnValue \
+		p5-Cache-Simple-TimedExpiry>=0:${PORTSDIR}/devel/p5-Cache-Simple-TimedExpiry \
+		p5-Want>=0:${PORTSDIR}/devel/p5-Want \
+		p5-capitalization>=0:${PORTSDIR}/devel/p5-capitalization \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-DBIx-DBSchema>=0:${PORTSDIR}/databases/p5-DBIx-DBSchema \
+		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-Clone>=0:${PORTSDIR}/devel/p5-Clone \
+		p5-Encode>=0:${PORTSDIR}/converters/p5-Encode
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 

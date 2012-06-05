@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A perl5 module to get information using the Whois protocol
 
-RUN_DEPENDS=	${SITE_PERL}/Locale/Country.pm:${PORTSDIR}/misc/p5-Locale-Codes
+RUN_DEPENDS=	p5-Locale-Codes>=0:${PORTSDIR}/misc/p5-Locale-Codes
 
 PERL_CONFIGURE=	YES
 
