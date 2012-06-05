@@ -16,8 +16,8 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides non-blocking access to a blocking object
 
 RUN_DEPENDS=	p5-POE>=0.31:${PORTSDIR}/devel/p5-POE \
-		${SITE_PERL}/Devel/Symdump.pm:${PORTSDIR}/devel/p5-Devel-Symdump \
-		${SITE_PERL}/${PERL_ARCH}/Net/SSH2.pm:${PORTSDIR}/net/p5-Net-SSH2
+		p5-Devel-Symdump>=0:${PORTSDIR}/devel/p5-Devel-Symdump \
+		p5-Net-SSH2>=0:${PORTSDIR}/net/p5-Net-SSH2
 
 PERL_CONFIGURE=	yes
 

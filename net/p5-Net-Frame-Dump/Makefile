@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Tcpdump like perl implementation
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Bit/Vector.pm:${PORTSDIR}/math/p5-Bit-Vector \
-		${SITE_PERL}/Net/Frame.pm:${PORTSDIR}/net/p5-Net-Frame \
+BUILD_DEPENDS=	p5-Bit-Vector>=0:${PORTSDIR}/math/p5-Bit-Vector \
+		p5-Net-Frame>=0:${PORTSDIR}/net/p5-Net-Frame \
     		p5-Net-Pcap>=0.12:${PORTSDIR}/net/p5-Net-Pcap \
     		p5-Class-Gomor>=1.00:${PORTSDIR}/devel/p5-Class-Gomor
 RUN_DEPENDS:=	${BUILD_DEPENDS}
