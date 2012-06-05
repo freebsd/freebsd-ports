@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	serviio
-PORTVERSION=	0.6.0.1
-PORTREVISION=	1
+PORTVERSION=	0.6.2
 CATEGORIES=	net multimedia java www
 MASTER_SITES=	http://download.serviio.org/releases/
 EXTRACT_SUFX=	-linux.tar.gz
@@ -26,7 +25,8 @@ SUB_FILES+=	pkg-message serviiod serviio-console
 USE_RC_SUBR=	serviio
 SUB_LIST+=	USER=${USERS}
 RESTRICTED=	License does not allow selling
-EXTRACT_AFTER_ARGS=|${TAR} -xpf - --exclude junit.jar
+EXTRACT_AFTER_ARGS=|${TAR} -xf - --exclude junit.jar	\
+	--exclude org.restlet.ext.net.jar
 
 USERS=	dlna
 GROUPS=	dlna
