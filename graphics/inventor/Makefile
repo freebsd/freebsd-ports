@@ -20,6 +20,8 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		GLU.1:${PORTSDIR}/graphics/libGLU
 
+CONFLICTS=	Coin-* SoXt-*
+
 USE_XORG=	x11 xi
 USE_GL=		glw
 USE_GMAKE=	yes
