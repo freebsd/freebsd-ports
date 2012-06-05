@@ -15,16 +15,15 @@ COMMENT=	Command line video extraction tool for YouTube and others
 
 LICENSE=	GPLv3
 
+TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
 BUILD_DEPENDS=	p5-Getopt-ArgvFile>=1.11:${PORTSDIR}/devel/p5-Getopt-ArgvFile \
 		p5-JSON-XS>=2.30:${PORTSDIR}/converters/p5-JSON-XS
 RUN_DEPENDS=	p5-Getopt-ArgvFile>=1.11:${PORTSDIR}/devel/p5-Getopt-ArgvFile \
 		p5-JSON-XS>=2.30:${PORTSDIR}/converters/p5-JSON-XS \
 		quvi>=0.2.16.1:${PORTSDIR}/multimedia/quvi
 
-TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
-
 # deskutils/ljclive, multimedia/clive1 (same executable/manpage/distfile name)
-CONFLICTS=	clive-[0-1]* ljclive-[0-9]*
+CONFLICTS=	py*-clive-[0-1]* ljclive-[0-9]*
 
 PERL_CONFIGURE=	yes
 
