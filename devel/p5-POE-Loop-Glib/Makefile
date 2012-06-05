@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:APOCAL
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	freebsd@beardz.net
+MAINTAINER=	jase@FreeBSD.org
 COMMENT=	A bridge that supports Glib event loop from POE
 
 LICENSE=	GPLv2
