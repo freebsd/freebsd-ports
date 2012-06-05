@@ -1,6 +1,5 @@
 %%DATADIR%%/graphite2-release.cmake
 %%DATADIR%%/graphite2.cmake
-bin/comparerenderer
 bin/gr2fonttest
 include/graphite2/Log.h
 include/graphite2/Font.h
