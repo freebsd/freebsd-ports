@@ -17,10 +17,10 @@ DISTNAME=	P2P-pDonkey-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl tools for eDonkey network
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD4.pm:${PORTSDIR}/security/p5-Digest-MD4 \
-		${SITE_PERL}/Data/Hexdumper.pm:${PORTSDIR}/devel/p5-Data-Hexdumper \
-		${SITE_PERL}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash \
-		${SITE_PERL}/Video/Info.pm:${PORTSDIR}/multimedia/p5-Video-Info
+BUILD_DEPENDS=	p5-Digest-MD4>=0:${PORTSDIR}/security/p5-Digest-MD4 \
+		p5-Data-Hexdumper>=0:${PORTSDIR}/devel/p5-Data-Hexdumper \
+		p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash \
+		p5-Video-Info>=0:${PORTSDIR}/multimedia/p5-Video-Info
 
 PERL_CONFIGURE=	yes
 

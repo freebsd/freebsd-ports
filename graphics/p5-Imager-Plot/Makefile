@@ -16,8 +16,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl extension for generating fancy graphic plots in color
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Imager.pm:${PORTSDIR}/graphics/p5-Imager
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Imager.pm:${PORTSDIR}/graphics/p5-Imager
+BUILD_DEPENDS=	p5-Imager>=0:${PORTSDIR}/graphics/p5-Imager
+RUN_DEPENDS=	p5-Imager>=0:${PORTSDIR}/graphics/p5-Imager
 
 PERL_CONFIGURE=	yes
 

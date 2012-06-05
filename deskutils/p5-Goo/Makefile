@@ -15,18 +15,18 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stick Things together with The Goo
 
-BUILD_DEPENDS=	${SITE_PERL}/Config/Auto.pm:${PORTSDIR}/devel/p5-Config-Auto \
-		${SITE_PERL}/Config/Tiny.pm:${PORTSDIR}/devel/p5-Config-Tiny \
-		${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
-		${SITE_PERL}/Devel/Symdump.pm:${PORTSDIR}/devel/p5-Devel-Symdump \
-		${SITE_PERL}/File/Grep.pm:${PORTSDIR}/devel/p5-File-Grep \
-		${SITE_PERL}/File/NCopy.pm:${PORTSDIR}/devel/p5-File-NCopy \
-		${SITE_PERL}/LWP/ConnCache.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Perl/Tidy.pm:${PORTSDIR}/devel/perltidy \
-		${SITE_PERL}/Term/ProgressBar.pm:${PORTSDIR}/devel/p5-Term-ProgressBar \
-		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
-		${SITE_PERL}/Text/FormatTable.pm:${PORTSDIR}/textproc/p5-Text-FormatTable
+BUILD_DEPENDS=	p5-Config-Auto>=0:${PORTSDIR}/devel/p5-Config-Auto \
+		p5-Config-Tiny>=0:${PORTSDIR}/devel/p5-Config-Tiny \
+		p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-Devel-Symdump>=0:${PORTSDIR}/devel/p5-Devel-Symdump \
+		p5-File-Grep>=0:${PORTSDIR}/devel/p5-File-Grep \
+		p5-File-NCopy>=0:${PORTSDIR}/devel/p5-File-NCopy \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		perltidy>=0:${PORTSDIR}/devel/perltidy \
+		p5-Term-ProgressBar>=0:${PORTSDIR}/devel/p5-Term-ProgressBar \
+		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
+		p5-Text-FormatTable>=0:${PORTSDIR}/textproc/p5-Text-FormatTable
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN1=	goo.1 goo.pl.1

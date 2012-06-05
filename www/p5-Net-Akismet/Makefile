@@ -18,7 +18,7 @@ BUILD_DEPENDS=	p5-libwww>=5.09:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	p5-libwww>=5.09:${PORTSDIR}/www/p5-libwww
 
 .if !defined(WITHOUT_TEST_POD_COVERAGE)
-BUILD_DEPENDS+=	${SITE_PERL}/Test/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Test-Pod-Coverage
+BUILD_DEPENDS+=	p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 .endif
 
 PERL_CONFIGURE=	yes
