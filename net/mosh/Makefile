@@ -17,7 +17,7 @@ COMMENT=	A mobile terminal that supports intermittant connectivity
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	protobuf.7:${PORTSDIR}/devel/protobuf
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/IO/Pty.pm:${PORTSDIR}/devel/p5-IO-Tty
+RUN_DEPENDS=	p5-IO-Tty>=0:${PORTSDIR}/devel/p5-IO-Tty
 
 USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
