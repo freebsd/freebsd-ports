@@ -47,6 +47,9 @@ opt:=	${O}
 .    if !defined(optname)
 optname:=	${O}
 ALL_OPTIONS+=	${O}
+.if !defined(OPTIONS_DEFINE) || empty(OPTIONS_DEFINE:M${O})
+OPTIONS_DEFINE+=	${O}
+.endif
 PORT_OPTIONS+=	${O}
 .    elif !defined(optdesc)
 optdesc:=	${opt}
