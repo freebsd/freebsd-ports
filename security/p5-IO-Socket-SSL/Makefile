@@ -23,8 +23,9 @@ INSTALL_TARGET=	pure_install
 
 MAN3=		IO::Socket::SSL.3
 
-OPTIONS=	IDN "International Domain Names (IDN) support" off \
-		IPV6 "IPv6 support" off
+OPTIONS_DEFINE=	IDN IPV6
+IDN_DESC=	International Domain Names (IDN) support
+IPV6_DESC=	IPv6 support
 
 .if !defined(NOPORTEXAMPLES)
 PORTEXAMPLES=	*
@@ -33,12 +34,14 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/example/* ${EXAMPLESDIR}
 .endif
 
-.if defined(WITH_IDN)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MIDN}
 RUN_DEPENDS+=	p5-Net-LibIDN>=0:${PORTSDIR}/dns/p5-Net-LibIDN
 .endif
 
-.if defined(WITH_IPV6)
-RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-Socket-INET6
+.if ${PORT_OPTIONS:MIPV6}
+RUN_DEPENDS+=	p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
 .endif
 
 regression-test:
