@@ -5,15 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	cuba
-PORTVERSION=	2.2.1
+PORTVERSION=	3.0.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Cuba is a microframework for web applications
 
-RUN_DEPENDS=	rubygem-rack>=0:${PORTSDIR}/www/rubygem-rack \
-		rubygem-tilt>=0:${PORTSDIR}/devel/rubygem-tilt
+RUN_DEPENDS=	rubygem-rack>=0:${PORTSDIR}/www/rubygem-rack
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
