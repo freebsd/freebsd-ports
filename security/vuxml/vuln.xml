@@ -52,6 +52,78 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bfecf7c1-af47-11e1-9580-4061862b8c22">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><gt>11.0,1</gt><lt>13.0,1</lt></range>
+	<range><lt>10.0.5,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>10.0.5,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.10</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>10.0.5</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.10</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><gt>11.0</gt><lt>13.0</lt></range>
+	<range><lt>10.0.5</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><gt>1.9.2.*</gt><lt>10.0.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2012-34 Miscellaneous memory safety hazards (rv:13.0/ rv:10.0.5)</p>
+	  <p>MFSA 2012-36 Content Security Policy inline-script bypass</p>
+	  <p>MFSA 2012-37 Information disclosure though Windows file shares and shortcut files</p>
+	  <p>MFSA 2012-38 Use-after-free while replacing/inserting a node in a document</p>
+	  <p>MFSA 2012-39 NSS parsing errors with zero length items</p>
+	  <p>MFSA 2012-40 Buffer overflow and use-after-free issues found using Address Sanitizer</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2011-3101</cvename>
+	<cvename>CVE-2012-0441</cvename>
+	<cvename>CVE-2012-1938</cvename>
+	<cvename>CVE-2012-1939</cvename>
+	<cvename>CVE-2012-1937</cvename>
+	<cvename>CVE-2012-1940</cvename>
+	<cvename>CVE-2012-1941</cvename>
+	<cvename>CVE-2012-1944</cvename>
+	<cvename>CVE-2012-1945</cvename>
+	<cvename>CVE-2012-1946</cvename>
+	<cvename>CVE-2012-1947</cvename>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-34.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-36.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-37.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-38.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-39.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-40.html</url>
+    </references>
+    <dates>
+      <discovery>2012-06-05</discovery>
+      <entry>2012-06-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1e14d46f-af1f-11e1-b242-00215af774f0">
     <topic>quagga -- BGP OPEN denial of service vulnerability</topic>
     <affects>
