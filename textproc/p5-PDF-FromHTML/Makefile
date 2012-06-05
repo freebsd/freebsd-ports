@@ -14,12 +14,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert HTML documents to PDF
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/HTML/Tidy.pm:${PORTSDIR}/textproc/p5-HTML-Tidy \
-		${SITE_PERL}/Graphics/ColorNames.pm:${PORTSDIR}/graphics/p5-Graphics-ColorNames \
-		${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
-		${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/PDF/API2.pm:${PORTSDIR}/textproc/p5-PDF-API2 \
-		${SITE_PERL}/XML/Twig.pm:${PORTSDIR}/textproc/p5-XML-Twig \
+BUILD_DEPENDS=	p5-HTML-Tidy>=0:${PORTSDIR}/textproc/p5-HTML-Tidy \
+		p5-Graphics-ColorNames>=0:${PORTSDIR}/graphics/p5-Graphics-ColorNames \
+		p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-PDF-API2>=0:${PORTSDIR}/textproc/p5-PDF-API2 \
+		p5-XML-Twig>=0:${PORTSDIR}/textproc/p5-XML-Twig \
 		p5-PDF-Writer>=0.05:${PORTSDIR}/textproc/p5-PDF-Writer
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
