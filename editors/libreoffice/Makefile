@@ -22,7 +22,7 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		bash:${PORTSDIR}/shells/bash \
 		dmake:${PORTSDIR}/devel/dmake \
-		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
+		p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
 		vigra-config:${PORTSDIR}/graphics/vigra
 
