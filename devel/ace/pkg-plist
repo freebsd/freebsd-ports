@@ -168,7 +168,6 @@ include/ace/Based_Pointer_T.inl
 include/ace/Basic_Stats.h
 include/ace/Basic_Stats.inl
 include/ace/Basic_Types.h
-include/ace/Basic_Types.inl
 include/ace/Bound_Ptr.h
 include/ace/Bound_Ptr.inl
 include/ace/CDR_Base.h
@@ -1113,8 +1112,6 @@ include/ace/config-sunos5.6.h
 include/ace/config-sunos5.7.h
 include/ace/config-sunos5.8.h
 include/ace/config-sunos5.9.h
-include/ace/config-tandem-nsk-mips-v2.h
-include/ace/config-tandem-nsk-mips-v3.h
 include/ace/config-vxworks.h
 include/ace/config-vxworks6.4.h
 include/ace/config-vxworks6.5.h
