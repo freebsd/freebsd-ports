@@ -6,24 +6,20 @@
 #
 
 PORTNAME=	duplicity
-PORTVERSION=	0.6.18
-PORTREVISION=	1
+PORTVERSION=	0.6.19
 CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpad.net/duplicity/0.6-series/${PORTVERSION}/+download/
 
-MAINTAINER=	freebsd@beardz.net
-COMMENT=	Backup tool that uses rsync and GnuPG
+MAINTAINER=	jase@FreeBSD.org
+COMMENT=	Backup tool that uses librsync and GnuPG
 
-LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync
+LIB_DEPENDS=	rsync:${PORTSDIR}/net/librsync
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
 		ncftp>=3.2.2:${PORTSDIR}/ftp/ncftp3 \
 		lftp>=3.7.15:${PORTSDIR}/ftp/lftp \
 		${PYTHON_PKGNAMEPREFIX}paramiko>=1.7.7.1:${PORTSDIR}/security/py-paramiko \
 		${PYTHON_PKGNAMEPREFIX}boto>=1.6b:${PORTSDIR}/devel/py-boto
 
-OPTIONS=	NLS "National Language Support" on
-
-# fetch claims "Moved temporarily" without this - why? (inspired by deskutils/gtg)
 FETCH_ARGS=	-pRr
 
 CONFLICTS=	duplicity-0.5.* duplicity-devel-[0-9]*
@@ -32,16 +28,18 @@ USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	NLS DOCS
+
 .include "bsd.port.options.mk"
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
 
 post-patch:
-	@${REINPLACE_CMD} -e '54,63d' \
+	@${REINPLACE_CMD} -e '54,62d' \
 		${WRKSRC}/setup.py
 .endif
 
@@ -56,7 +54,7 @@ DOCFILES=	COPYING \
 		CHANGELOG
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for file in ${DOCFILES}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}

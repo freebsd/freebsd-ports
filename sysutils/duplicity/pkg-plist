@@ -22,6 +22,12 @@ bin/rdiffdir
 %%PYTHON_SITELIBDIR%%/duplicity/backends/_boto_single.py
 %%PYTHON_SITELIBDIR%%/duplicity/backends/_boto_single.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/backends/_boto_single.pyo
+%%PYTHON_SITELIBDIR%%/duplicity/backends/_ssh_paramiko.py
+%%PYTHON_SITELIBDIR%%/duplicity/backends/_ssh_paramiko.pyc
+%%PYTHON_SITELIBDIR%%/duplicity/backends/_ssh_paramiko.pyo
+%%PYTHON_SITELIBDIR%%/duplicity/backends/_ssh_pexpect.py
+%%PYTHON_SITELIBDIR%%/duplicity/backends/_ssh_pexpect.pyc
+%%PYTHON_SITELIBDIR%%/duplicity/backends/_ssh_pexpect.pyo
 %%PYTHON_SITELIBDIR%%/duplicity/backends/botobackend.py
 %%PYTHON_SITELIBDIR%%/duplicity/backends/botobackend.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/backends/botobackend.pyo
@@ -121,6 +127,9 @@ bin/rdiffdir
 %%PYTHON_SITELIBDIR%%/duplicity/path.py
 %%PYTHON_SITELIBDIR%%/duplicity/path.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/path.pyo
+%%PYTHON_SITELIBDIR%%/duplicity/pexpect.py
+%%PYTHON_SITELIBDIR%%/duplicity/pexpect.pyc
+%%PYTHON_SITELIBDIR%%/duplicity/pexpect.pyo
 %%PYTHON_SITELIBDIR%%/duplicity/robust.py
 %%PYTHON_SITELIBDIR%%/duplicity/robust.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/robust.pyo
