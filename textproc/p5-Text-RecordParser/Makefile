@@ -14,8 +14,8 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Read record-oriented files
 
-BUILD_DEPENDS=	${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy \
-		${SITE_PERL}/Text/TabularDisplay.pm:${PORTSDIR}/textproc/p5-Text-TabularDisplay \
+BUILD_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
+		p5-Text-TabularDisplay>=0:${PORTSDIR}/textproc/p5-Text-TabularDisplay \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \

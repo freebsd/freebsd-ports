@@ -18,7 +18,7 @@ COMMENT=	Object oriented interface to SNMP
 
 BUILD_DEPENDS=	${ARCH_PERL}/Crypt/DES.pm:${PORTSDIR}/security/p5-Crypt-DES \
 		${ARCH_PERL}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
-		${SITE_PERL}/Digest/HMAC.pm:${PORTSDIR}/security/p5-Digest-HMAC
+		p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

@@ -15,10 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Serve static files with HTTP::Server::Simple
 
-RUN_DEPENDS=	${SITE_PERL}/HTTP/Server/Simple.pm:${PORTSDIR}/www/p5-HTTP-Server-Simple \
-		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/MIME/Types.pm:${PORTSDIR}/mail/p5-MIME-Types \
-		${SITE_PERL}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic
+RUN_DEPENDS=	p5-HTTP-Server-Simple>=0:${PORTSDIR}/www/p5-HTTP-Server-Simple \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-MIME-Types>=0:${PORTSDIR}/mail/p5-MIME-Types \
+		p5-File-MMagic>=0:${PORTSDIR}/devel/p5-File-MMagic
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
