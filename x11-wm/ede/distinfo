@@ -1,2 +1,4 @@
-SHA256 (ede-1.2.tar.gz) = 182186eab660993abaee459afc610ee5255347c9ed7b31c019844e73fe981a65
-SIZE (ede-1.2.tar.gz) = 1552952
+SHA256 (ede-2.0.tar.gz) = c788b101881a9640ca09febd0202b4ceef0e9e9ba2a0a590ac04cde46a6ed71a
+SIZE (ede-2.0.tar.gz) = 12839115
+SHA256 (edelib-2.0.tar.gz) = c31bc7e5156424fa7e2fe3e671e7d7d876cbe55f035029ac8569bfc946fc84ae
+SIZE (edelib-2.0.tar.gz) = 759985
