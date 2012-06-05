@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Information from the CIA World Factbook
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay \
-		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/MLDBM.pm:${PORTSDIR}/databases/p5-MLDBM
+RUN_DEPENDS=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-MLDBM>=0:${PORTSDIR}/databases/p5-MLDBM
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_ARGS=	</dev/null

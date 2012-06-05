@@ -53,7 +53,7 @@ PERL_CONFIGURE=	yes
 
 .if ${PORT_OPTIONS:MMODPERL2}
 USE_APACHE_RUN=	20+
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2
+BUILD_DEPENDS+=	p5-libapreq2>=0:${PORTSDIR}/www/p5-libapreq2
 .endif
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
