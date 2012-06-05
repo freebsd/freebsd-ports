@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module to access and use scp protocol
 
-BUILD_DEPENDS=	${SITE_PERL}/Net/SSH.pm:${PORTSDIR}/net/p5-Net-SSH \
-		${SITE_PERL}/String/ShellQuote.pm:${PORTSDIR}/textproc/p5-String-ShellQuote \
+BUILD_DEPENDS=	p5-Net-SSH>=0:${PORTSDIR}/net/p5-Net-SSH \
+		p5-String-ShellQuote>=0:${PORTSDIR}/textproc/p5-String-ShellQuote \
 		p5-IO>=0:${PORTSDIR}/devel/p5-IO
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

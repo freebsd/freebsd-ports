@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for fast IP address lookups
 
-RUN_DEPENDS=    ${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version \
-    		${SITE_PERL}/Net/CIDR/Lite.pm:${PORTSDIR}/net/p5-Net-CIDR-Lite \
-    		${SITE_PERL}/${PERL_ARCH}/Socket6.pm:${PORTSDIR}/net/p5-Socket6
+RUN_DEPENDS=    p5-version>=0:${PORTSDIR}/devel/p5-version \
+    		p5-Net-CIDR-Lite>=0:${PORTSDIR}/net/p5-Net-CIDR-Lite \
+    		p5-Socket6>=0:${PORTSDIR}/net/p5-Socket6
 
 PERL_CONFIGURE=	YES
 

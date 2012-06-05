@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Handle Spread communications in POE
 
-BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
-		${SITE_PERL}/${PERL_ARCH}/Spread.pm:${PORTSDIR}/net/spread
+BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
+		spread>=0:${PORTSDIR}/net/spread
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	YES
