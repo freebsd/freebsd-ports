@@ -10,6 +10,7 @@
 
 PORTNAME=	nec2c
 PORTVERSION=	.9
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://ftp-mirror.internap.com/pub/FreeBSD/distfiles/nec2c/ \
 		http://ftp.cerias.purdue.edu/pub/os/FreeBSD/distfiles/nec2c/
