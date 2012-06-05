@@ -38,7 +38,7 @@ PKGMESSAGE=	${WRKDIR}/message-bin
 
 MAN1=		ices0.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFLAC}
 LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac \
