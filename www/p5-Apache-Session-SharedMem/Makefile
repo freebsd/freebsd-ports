@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache::Session extension that store session in shared memory
 
-BUILD_DEPENDS=	${SITE_PERL}/IPC/Cache.pm:${PORTSDIR}/devel/p5-IPC-Cache \
-		${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session
+BUILD_DEPENDS=	p5-IPC-Cache>=0:${PORTSDIR}/devel/p5-IPC-Cache \
+		p5-Apache-Session>=0:${PORTSDIR}/www/p5-Apache-Session
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
