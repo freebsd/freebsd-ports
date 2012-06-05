@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	ZML
-PORTVERSION=	0.5.4
+PORTVERSION=	1.0.0
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:VVELOX
 PKGNAMEPREFIX=	p5-
-DISTNAME=	ZML-${PORTVERSION}
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	A simple, fast, and easy to read binary data storage format
+
+BUILD_DEPENDS=	${SITE_PERL}/Error/Helper.pm:${PORTSDIR}/devel/p5-Error-Helper
+RUN_DEPENDS=	${SITE_PERL}/Error/Helper.pm:${PORTSDIR}/devel/p5-Error-Helper
 
 PERL_CONFIGURE=	yes
 
