@@ -9,23 +9,29 @@ PORTNAME=	gwave
 PORTVERSION=	20080127
 PORTREVISION=	6
 CATEGORIES=	cad
-MASTER_SITES=	http://geda.seul.org/dist/
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Waveform viewer for analogue electronic simulation tools
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile \
 		guilegtk-1.2.0:${PORTSDIR}/x11-toolkits/guile-gtk
 
-USE_GNOME=	gtk12
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
-CPPFLAGS+=	-I${LOCALBASE}/include
-
-OPTIONS_DEFINE=	PLOTUTILS GNUPLOT EXAMPLES
-OPTIONS_DEFAULT=	GNUPLOT
+OPTIONS_DEFINE=	PLOTUTILS GNUPLOT DOCS EXAMPLES
+OPTIONS_DEFAULT=GNUPLOT
 PLOTUTILS_DESC=	Enable plotting using plotutils
+
+USE_GNOME=	gtk12
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+MAN1=		sp2sp.1
 
 DOCFILES=	Guile.notes \
 		gwave-concepts.txt \
@@ -35,8 +41,6 @@ DOCFILES=	Guile.notes \
 		hspice-output.txt \
 		hspice.txt \
 		spice3.txt
-
-MAN1=		sp2sp.1
 
 .include <bsd.port.options.mk>
 
@@ -52,16 +56,12 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCFILES}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${FILE} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${FILE} ${DOCSDIR}
 .endfor
 .endif
-
-.if ${PORT_OPTIONS:MEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
-PLIST_SUB+=	EXAMPLES=""
-.else
-PLIST_SUB+=	EXAMPLES="@comment "
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
