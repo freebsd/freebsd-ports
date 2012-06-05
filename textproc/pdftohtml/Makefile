@@ -15,6 +15,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	A command-line tool for converting pdf-files into html
 
+CONFLICTS=	poppler-utils-[0-9]*
+
 USE_GHOSTSCRIPT_RUN=	yes
 USE_GMAKE=	yes
 
