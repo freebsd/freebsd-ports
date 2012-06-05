@@ -5,14 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	authlogic
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A clean, simple, and unobtrusive Ruby authentication solution
 
-RUN_DEPENDS=	rubygem-activesupport>=0:${PORTSDIR}/devel/rubygem-activesupport \
+RUN_DEPENDS=	rubygem-activesupport>=3.0.7:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-activerecord>=3.0.7:${PORTSDIR}/databases/rubygem-activerecord
 
 USE_RUBY=	yes
