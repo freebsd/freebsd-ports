@@ -1,12 +1,13 @@
---- ld/x86_aout.h.orig	2008-07-14 15:03:10.000000000 -0500
-+++ ld/x86_aout.h	2008-07-14 15:04:55.000000000 -0500
-@@ -12,6 +12,9 @@
- #if defined(i386) || defined(__BCC__) || defined(MSDOS)
+--- ld/x86_aout.h.orig	2003-01-29 07:17:14.000000000 +0900
++++ ld/x86_aout.h	2012-05-30 05:49:38.000000000 +0900
+@@ -13,7 +13,9 @@
  typedef long Long;
  #define __OUT_OK 1
-+#elif __amd64__
-+typedef int Long;
-+#define __OUT_OK 1
  #else
- typedef char Long[4];
+-typedef char Long[4];
++#define __OUT_OK 1
++#include <sys/types.h>
++typedef int32_t Long;
  #endif
+ 
+ struct	exec {			/* a.out header */
