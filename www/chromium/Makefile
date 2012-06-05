@@ -30,16 +30,16 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		flock:${PORTSDIR}/sysutils/flock \
 		v4l_compat>=1.0.20110603:${PORTSDIR}/multimedia/v4l_compat
 
-LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
-		cairo.2:${PORTSDIR}/graphics/cairo \
-		dbus-1.3:${PORTSDIR}/devel/dbus \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		asound.2:${PORTSDIR}/audio/alsa-lib \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		nss3.1:${PORTSDIR}/security/nss \
-		gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring \
-		cups.2:${PORTSDIR}/print/cups-client \
-		event-1.4:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
+		cairo:${PORTSDIR}/graphics/cairo \
+		dbus-1:${PORTSDIR}/devel/dbus \
+		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
+		asound:${PORTSDIR}/audio/alsa-lib \
+		freetype:${PORTSDIR}/print/freetype2 \
+		nss3:${PORTSDIR}/security/nss \
+		gnome-keyring:${PORTSDIR}/security/libgnome-keyring \
+		cups:${PORTSDIR}/print/cups-client \
+		event-1:${PORTSDIR}/devel/libevent
 
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins \
 		${LOCALBASE}/lib/X11/fonts/Droid/fonts.dir:${PORTSDIR}/x11-fonts/droid-fonts-ttf \
@@ -77,22 +77,22 @@ GYP_DEFINES+=	use_cups=1 \
 		prefix_dir=${LOCALBASE} \
 		python_ver=${PYTHON_VER}
 
-OPTIONS=	CODECS	"Compile and enable patented codecs like H.264"	on \
-		GCONF	"Use GConf2 for preferences"			on \
-		PULSEAUDIO	"Enable Pulse Audio support"		off \
-		CLANG	"Build Chromium with Clang"			off \
-		GCC46	"Build Chromium with GCC 4.6+"			on \
-		DEBUG	"Compile with debug symbols and verbose output"	off
+OPTIONS_DEFINE=	CODECS GCONF PULSEAUDIO CLANG DEBUG
+
+CODECS_DESC=	Compile and enable patented codecs like H.264
+CLANG_DESC=	Build Chromium with Clang instead of GCC 4.6+
+
+OPTIONS_DEFAULT=	CODECS GCONF
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 900033 || defined(WITH_GCC46)
+.if ${OSVERSION} < 900033 || ! ${PORT_OPTIONS:MCLANG}
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
 
-.if defined(WITH_CODECS)
+.if ${PORT_OPTIONS:MCODECS}
 GYP_DEFINES+=	ffmpeg_branding=Chrome
 GYP_DEFINES+=	proprietary_codecs=1
 .else
@@ -100,14 +100,14 @@ GYP_DEFINES+=	ffmpeg_branding=Chromium
 GYP_DEFINES+=	proprietary_codecs=0
 .endif
 
-.if defined(WITH_GCONF)
+.if ${PORT_OPTIONS:MGCONF}
 USE_GNOME+=	gconf2
 .else
 GYP_DEFINES+=	use_gconf=0
 .endif
 
-.if !defined(WITHOUT_PULSEAUDIO) && defined(WITH_PULSEAUDIO)
-LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+.if ${PORT_OPTIONS:MPULSEAUDIO}
+LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
 GYP_DEFINES+=	use_pulseaudio=1
 .else
 GYP_DEFINES+=	use_pulseaudio=0
@@ -117,34 +117,24 @@ GYP_DEFINES+=	use_pulseaudio=0
 GYP_DEFINES+=	disable_sse2=1
 .endif
 
-.if !defined(WITH_GCC46) && !defined(WITH_CLANG)
-IGNORE=	does not compile with base gcc
-.endif
-
-.if defined(WITH_GCC46) && defined(WITH_CLANG)
-IGNORE=	conflicting options (CLANG and GCC46)
-.endif
-
-.if defined(WITH_GCC46)
-USE_GCC?=	4.6+
-GYP_DEFINES+=	gcc_version=${CXX:S/g++//}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gcc
-.endif
-
-.if defined(WITH_CLANG)
+.if ${PORT_OPTIONS:MCLANG}
 .if ${OSVERSION} < 900033
 BUILD_DEPENDS+=	clang:${PORTSDIR}/lang/clang
 .endif
 CC=		clang
 CXX=		clang++
 GYP_DEFINES+=	clang=1
+.else
+USE_GCC?=	4.6+
+GYP_DEFINES+=	gcc_version=${CXX:S/g++//}
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gcc
 .endif
 
-.if !defined(WITH_DEBUG)
-BUILDTYPE=	Release
-.else
+.if ${PORT_OPTIONS:MDEBUG}
 MAKE_ENV+=	V=1
 BUILDTYPE=	Debug
+.else
+BUILDTYPE=	Release
 .endif
 
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE}
@@ -155,7 +145,7 @@ MAKE_JOBS_SAFE=	yes
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "To build Chromium, you should have around 1 GB of memory"
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 	@${ECHO_MSG} "and lots of free diskspace (~ 8.5GB)."
 .else
 	@${ECHO_MSG} "and a fair amount of free diskspace (~ 1.8GB)."
