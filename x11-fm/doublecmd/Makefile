@@ -6,36 +6,53 @@
 #
 
 PORTNAME=	doublecmd
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.4
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/Double%20Commander%20Source
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
-DISTFILES=	${PORTNAME}-${PORTVERSION}-src.tar.gz ${PORTNAME}-help-${PORTVERSION}-src.tar.gz
+DISTFILES=	${PORTNAME}-${PORTVERSION}-src.tar.gz ${PORTNAME}-help-0.5.1-src.tar.gz
 
 MAINTAINER=	bbtruk@users.sourceforge.net
 COMMENT=	A Total Commander like file manager for the X Window System
 
-BUILD_DEPENDS=	lazbuild:${PORTSDIR}/editors/lazarus
-
-BROKEN=		does not build
+BUILD_DEPENDS=	lazbuild:${PORTSDIR}/editors/lazarus \
+		fpcres:${PORTSDIR}/lang/fpc-utils
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+MAN1=		${PORTNAME}.1
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(pas)
+USE_FPC=	yes
 USE_GNOME=	desktopfileutils
 PLIST=		${WRKDIR}/pkg-plist
 SUB_FILES=	pkg-message
 PROJECT_FILE=	src/doublecmd.lpi
 LAZBUILD_CMD=	${LOCALBASE}/bin/lazbuild
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-DOCSRC=		${WRKDIR}/${PORTNAME}-help-${PORTVERSION}
+DOCSRC=		${WRKDIR}/${PORTNAME}-help-0.5.1
+
+OPTIONS=	GTK2	"Use gtk20 interface" on \
+		QT4	"Use qt4 interface" off
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/bin/lazbuild) && exists(${LOCALBASE}/etc/lazbuild.cfg)
-.include "${LOCALBASE}/etc/lazbuild.cfg"
+.if (defined(WITH_GTK2) && defined(WITH_QT4)) || (!defined(WITH_GTK2) && !defined(WITH_QT4))
+IGNORE=		please select one option: QT4 or GTK2
+.endif
+
+.if defined(WITH_GTK2)
+USE_FPC+=	gtk2
+USE_GNOME=	gtk20 gdkpixbuf
+LCL_PLATFORM=	gtk2
+BUILD_DEPENDS+=	${LOCALBASE}/share/lazarus/lcl/units/${BUILDNAME}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
+.endif
+
+.if defined(WITH_QT4)
+LIB_DEPENDS+=	Qt4Pas.5:${PORTSDIR}/x11-toolkits/qt4pas
+LCL_PLATFORM=	qt
+BUILD_DEPENDS+=	${LOCALBASE}/share/lazarus/lcl/units/${BUILDNAME}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-qt
 .endif
 
 post-patch:
@@ -88,6 +105,7 @@ pre-install:
 
 	@${ECHO_CMD} "@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true" >> ${PLIST}
 	@${ECHO_CMD} "@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true" >> ${PLIST}
+	@${ECHO_CMD} "@dirrmtry share/applications" >> ${PLIST}
 
 do-install:
 .for DIRE in language pixmaps sdk
@@ -107,10 +125,12 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DATADIR}
 .endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/doublecmd ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/install/linux/doublecmd.desktop ${PREFIX}/share/applications/doublecmd.desktop
+	@${MKDIR} ${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/install/linux/${PORTNAME}.desktop ${DESKTOPDIR}/
 
 post-install:
 	-@update-desktop-database
+	${INSTALL_MAN} ${WRKSRC}/install/linux/${PORTNAME}.1 ${MAN1PREFIX}/man/man1/
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
