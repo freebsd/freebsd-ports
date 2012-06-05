@@ -495,7 +495,6 @@
     SUBDIR += libspiro
     SUBDIR += libsvg
     SUBDIR += libsvg-cairo
-    SUBDIR += libungif
     SUBDIR += libvisual
     SUBDIR += libvisual04
     SUBDIR += libvisual04-plugins
