@@ -27,7 +27,7 @@ TEXTDIFF_DESC=	"Text::Diff support for ptardiff"
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTEXTDIFF}
-RUN_DEPENDS+=	${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff
+RUN_DEPENDS+=	p5-Text-Diff>=0:${PORTSDIR}/textproc/p5-Text-Diff
 .endif
 
 .include <bsd.port.pre.mk>

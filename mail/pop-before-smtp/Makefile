@@ -13,9 +13,9 @@ MASTER_SITES=	SF/popbsmtp/Source%20tar/${PORTVERSION}
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A log parser to identify valid POP/IMAP logins for later smtp
 
-RUN_DEPENDS=	${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net-mgmt/p5-Net-Netmask \
-		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
-		${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate
+RUN_DEPENDS=	p5-Net-Netmask>=0:${PORTSDIR}/net-mgmt/p5-Net-Netmask \
+		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
+		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
