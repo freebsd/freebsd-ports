@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xcircuit
-PORTVERSION=	3.7.39
-PORTREVISION=	1
+PORTVERSION=	3.7.40
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/ \
@@ -19,6 +18,8 @@ COMMENT=	An X11 drawing program [especially for circuit schematics]
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
+OPTIONS_DEFINE=	EXAMPLES
 
 USE_XORG=	xpm xt
 USE_TCL=	85
@@ -33,27 +34,26 @@ CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
 		AUTOMAKE="${TRUE}"
 MAKE_JOBS_SAFE=	yes
-DESKTOP_ENTRIES="Xcircuit" "${COMMENT}" "${DATADIR}/pixmaps/xcircuit.gif" \
-		"${PORTNAME}" "" "false"
-
-CFLAGS+=	-fPIC
 
 MAN1=		xcircuit.1
+
+DESKTOP_ENTRIES="Xcircuit" "${COMMENT}" "${DATADIR}/pixmaps/xcircuit.gif" \
+		"${PORTNAME}" "" "false"
 
 # Restrict to stable (odd) versions, indicated by the second component.
 PORTSCOUT=	limitw:1,odd
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e '/test/s| == | = |g ; \
-		 s|-Wl,-Bshareable,-x|-shared -Wl,-x|g ; \
 		 s|TCL_LIB_NAME=.*$$|TCL_LIB_NAME="tcl${TCL_VER:S/.//}"|g ; \
 		 s|TK_LIB_NAME=.*$$|TK_LIB_NAME="tk${TK_VER:S/.//}"|g ; \
-		 s|wish |${WISH:T} |g' ${WRKSRC}/configure
+		 s|wish |${WISH:T} |g ; \
+		 s|-fpic|-fPIC|g' ${WRKSRC}/configure
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/.xcircuitrc ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.lgf ${EXAMPLESDIR}
@@ -62,4 +62,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/*.sim ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
