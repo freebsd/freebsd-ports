@@ -1,7 +1,10 @@
 #!/bin/sh
+#
+# $FreeBSD$
+#
 
 # PROVIDE: haproxy
-# REQUIRE: DAEMON
+# REQUIRE: DAEMON LOGIN
 # KEYWORD: shutdown
 
 #######
@@ -59,8 +62,7 @@ haproxy_reload()
 	# Check configuration file quietly first
 	${command} -q -c -f ${haproxy_config}
 	if [ $? -ne 0 ]; then
-		echo "Error found in ${haproxy_config} - not reloading current process!"
-		return 1
+		err 1 "Error found in ${haproxy_config} - not reloading current process!"
 	fi
 	rc_pid=$(check_pidfile ${haproxy_pidfile} ${command})
 	if [ $rc_pid ]; then
@@ -70,8 +72,7 @@ haproxy_reload()
 			${command} ${haproxy_flags} -sf ${rc_pid}
 		fi
 	else
-		echo "No process found.  Maybe $command isn't running?"
-		return 1
+		err 1 "No process found.  Maybe $command isn't running?"
 	fi
 }
 
