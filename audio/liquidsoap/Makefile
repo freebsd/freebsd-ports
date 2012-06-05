@@ -26,7 +26,7 @@ RUN_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/camomile/camomile.a:${PORTSDIR}/de
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 
 .if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	${SITE_PERL}/XML/DOM.pm:${PORTSDIR}/textproc/p5-XML-DOM
+BUILD_DEPENDS+=	p5-XML-DOM>=0:${PORTSDIR}/textproc/p5-XML-DOM
 .endif
 
 OPTIONS=	AACPLUS		"AAC+ encoding"	On	\
