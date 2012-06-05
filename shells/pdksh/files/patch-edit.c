@@ -8,3 +8,12 @@
  	cp += 2;
      }
  
+@@ -847,7 +847,7 @@ add_glob(str, slen)
+ 	for (s = toglob; *s; s++) {
+ 		if (*s == '\\' && s[1])
+ 			s++;
+-		else if (*s == '*' || *s == '[' || *s == '?' || *s == '$'
++		else if (*s == '*' || *s == '[' || *s == '?'
+ 			 || (s[1] == '(' /*)*/ && strchr("*+?@!", *s)))
+ 			break;
+ 		else if (ISDIRSEP(*s))
