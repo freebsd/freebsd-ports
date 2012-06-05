@@ -45,7 +45,7 @@ BOINC_CLIENT_HOME?=	/var/db/boinc
 .include <bsd.port.pre.mk>
 # stolen and adapted from bsd.port.mk
 .if (${OSVERSION} >= 900000 && ${OSVERSION} < 900012) || ${OSVERSION} < 800505
-BUILD_DEPENDS+=       ${LOCALBASE}/bin/xz:${PORTSDIR}/archivers/xz
+BUILD_DEPENDS+=	${LOCALBASE}/bin/xz:${PORTSDIR}/archivers/xz
 .endif
 
 # TODO fix upstream
@@ -54,8 +54,8 @@ BROKEN=Currently Astropulse requires X11 to build
 .endif
 
 .if !defined(WITHOUT_X11)
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		xcb.2:${PORTSDIR}/x11/libxcb
+LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
+		xcb:${PORTSDIR}/x11/libxcb
 USE_GL=		gl glu glut
 USE_XORG=	ice sm x11 xau xext xi xdamage xdmcp xfixes xmu xt xxf86vm
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libboinc_graphics2.a:${PORTSDIR}/net/boinc-client
