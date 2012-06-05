@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automated driving and testing of terminal-based programs
 
-BUILD_DEPENDS=	${SITE_PERL}/Class/Accessor/Chained/Fast.pm:${PORTSDIR}/devel/p5-Class-Accessor-Chained \
-		${SITE_PERL}/Expect/Simple.pm:${PORTSDIR}/devel/p5-Expect-Simple
+BUILD_DEPENDS=	p5-Class-Accessor-Chained>=0:${PORTSDIR}/devel/p5-Class-Accessor-Chained \
+		p5-Expect-Simple>=0:${PORTSDIR}/devel/p5-Expect-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Test::Expect.3

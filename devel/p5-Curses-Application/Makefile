@@ -16,7 +16,7 @@ DISTNAME=	CursesApplication-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses application development framework
 
-BUILD_DEPENDS=	${SITE_PERL}/Curses/Forms.pm:${PORTSDIR}/devel/p5-Curses-Forms
+BUILD_DEPENDS=	p5-Curses-Forms>=0:${PORTSDIR}/devel/p5-Curses-Forms
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

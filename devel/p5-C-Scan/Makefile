@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module to scan C language files for easily recognized constructs
 
-BUILD_DEPENDS=	${SITE_PERL}/Data/Flow.pm:${PORTSDIR}/devel/p5-Data-Flow
+BUILD_DEPENDS=	p5-Data-Flow>=0:${PORTSDIR}/devel/p5-Data-Flow
 
 PERL_CONFIGURE=	yes
 
