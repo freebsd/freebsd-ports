@@ -1,9 +1,7 @@
-
-DISTDIR = %%DISTDIR%%
-TOPDIR	= %%PREFIX%%
+# $FreeBSD$
 BINDIR	= $(TOPDIR)/bin
 LIBDIR	= $(TOPDIR)/etc
-MANDIR	= $(TOPDIR)/man/ja/man1
+MANDIR	= $(TOPDIR)/man/ja/man
 FONTDIR	= $(TOPDIR)/share/fonts/bdf
 CONFIG_NAME = kon.cfg
 CFLAGS  += -DCONFIG_NAME=\"$(LIBDIR)/$(CONFIG_NAME)\"
