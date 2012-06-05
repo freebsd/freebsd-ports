@@ -235,22 +235,22 @@ post-patch:	.SILENT
 		${WRKSRC}/configure
 	${FIND} ${WRKSRC} -name \*.pl -exec ${REINPLACE_CMD} \
 		's|/usr/bin/perl|${PERL}|' {} +
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	${REINPLACE_CMD} 's/install-data-am:.*/install-data-am:/' \
 		${WRKSRC}/docs/Makefile.in
 .endif
-.if !defined(WITHOUT_PLASMAMULE)
+.if ${PORT_OPTIONS:MPLASMAMULE}
 	${REINPLACE_CMD} -e 's|@prefix@|${KDE4_PREFIX}|' \
 		-e 's|LDFLAGS =|& -L${KDE4_PREFIX}/lib |' \
 		${WRKSRC}/src/utils/plasmamule/Makefile.in
 .endif
 
 post-install:
-.if !defined(WITHOUT_FILEVIEW)
+.if ${PORT_OPTIONS:MFILEVIEW}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/utils/fileview/mulefileview ${PREFIX}/bin
 .endif
 .if exists(${LOCALBASE}/bin/update-desktop-database)
-. if !defined(WITHOUT_PLASMAMULE)
+. if ${PORT_OPTIONS:MPLASMAMULE}
 	-update-desktop-database ${KDE4_PREFIX}/share/applications
 .  if exists(${LOCALBASE}/bin/update-mime-database)
 	-update-mime-database ${KDE4_PREFIX}/share/mime
