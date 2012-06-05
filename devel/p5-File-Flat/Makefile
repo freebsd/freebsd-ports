@@ -15,18 +15,18 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implements a flat filesystem
 
-RUN_DEPENDS=	${SITE_PERL}/Test/ClassAPI.pm:${PORTSDIR}/devel/p5-Test-ClassAPI \
-		${SITE_PERL}/File/NCopy.pm:${PORTSDIR}/devel/p5-File-NCopy \
-		${SITE_PERL}/File/Copy/Recursive.pm:${PORTSDIR}/devel/p5-File-Copy-Recursive \
-		${SITE_PERL}/File/Remove.pm:${PORTSDIR}/devel/p5-File-Remove \
-		${SITE_PERL}/Class/Autouse.pm:${PORTSDIR}/devel/p5-Class-Autouse \
-		${SITE_PERL}/prefork.pm:${PORTSDIR}/devel/p5-prefork
-BUILD_DEPENDS=	${SITE_PERL}/Test/ClassAPI.pm:${PORTSDIR}/devel/p5-Test-ClassAPI \
-		${SITE_PERL}/File/NCopy.pm:${PORTSDIR}/devel/p5-File-NCopy \
-		${SITE_PERL}/File/Copy/Recursive.pm:${PORTSDIR}/devel/p5-File-Copy-Recursive \
-		${SITE_PERL}/File/Remove.pm:${PORTSDIR}/devel/p5-File-Remove \
-		${SITE_PERL}/Class/Autouse.pm:${PORTSDIR}/devel/p5-Class-Autouse \
-		${SITE_PERL}/prefork.pm:${PORTSDIR}/devel/p5-prefork
+RUN_DEPENDS=	p5-Test-ClassAPI>=0:${PORTSDIR}/devel/p5-Test-ClassAPI \
+		p5-File-NCopy>=0:${PORTSDIR}/devel/p5-File-NCopy \
+		p5-File-Copy-Recursive>=0:${PORTSDIR}/devel/p5-File-Copy-Recursive \
+		p5-File-Remove>=0:${PORTSDIR}/devel/p5-File-Remove \
+		p5-Class-Autouse>=0:${PORTSDIR}/devel/p5-Class-Autouse \
+		p5-prefork>=0:${PORTSDIR}/devel/p5-prefork
+BUILD_DEPENDS=	p5-Test-ClassAPI>=0:${PORTSDIR}/devel/p5-Test-ClassAPI \
+		p5-File-NCopy>=0:${PORTSDIR}/devel/p5-File-NCopy \
+		p5-File-Copy-Recursive>=0:${PORTSDIR}/devel/p5-File-Copy-Recursive \
+		p5-File-Remove>=0:${PORTSDIR}/devel/p5-File-Remove \
+		p5-Class-Autouse>=0:${PORTSDIR}/devel/p5-Class-Autouse \
+		p5-prefork>=0:${PORTSDIR}/devel/p5-prefork
 
 PERL_CONFIGURE=	yes
 

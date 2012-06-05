@@ -17,8 +17,8 @@ COMMENT=	Lightweight workflow system
 BUILD_DEPENDS=	p5-Moose>=0.37:${PORTSDIR}/devel/p5-Moose \
 		p5-Set-Object>=1.19:${PORTSDIR}/devel/p5-Set-Object \
 		p5-MooseX-Clone>=0.04:${PORTSDIR}/devel/p5-MooseX-Clone \
-		${SITE_PERL}/Data/Compare.pm:${PORTSDIR}/devel/p5-Data-Compare \
-		${SITE_PERL}/${PERL_ARCH}/YAML/Syck.pm:${PORTSDIR}/textproc/p5-YAML-Syck
+		p5-Data-Compare>=0:${PORTSDIR}/devel/p5-Data-Compare \
+		p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

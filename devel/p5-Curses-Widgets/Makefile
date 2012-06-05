@@ -15,7 +15,7 @@ DISTNAME=	CursesWidgets-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses-based widgets and functions
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Curses.pm:${PORTSDIR}/devel/p5-Curses
+BUILD_DEPENDS=	p5-Curses>=0:${PORTSDIR}/devel/p5-Curses
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

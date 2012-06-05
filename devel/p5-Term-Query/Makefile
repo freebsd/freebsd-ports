@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive question-response user interface module
 
-RUN_DEPENDS=	${SITE_PERL}/Array/PrintCols.pm:${PORTSDIR}/misc/p5-Array-PrintCols
+RUN_DEPENDS=	p5-Array-PrintCols>=0:${PORTSDIR}/misc/p5-Array-PrintCols
 
 PERL_CONFIGURE=	YES
 
