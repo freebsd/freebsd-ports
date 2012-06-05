@@ -684,6 +684,7 @@
     SUBDIR += py-flask-sqlalchemy
     SUBDIR += py-forgetsql
     SUBDIR += py-gdbm
+    SUBDIR += py-hiredis
     SUBDIR += py-htsql
     SUBDIR += py-kyotocabinet
     SUBDIR += py-leveldb
