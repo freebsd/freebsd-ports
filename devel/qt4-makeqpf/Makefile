@@ -48,7 +48,7 @@ EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 802502
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-tools__makeqpf__qpf2.cpp
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch__tools__makeqpf__qpf2.cpp
 .endif
 
 pre-configure:
