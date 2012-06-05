@@ -10,7 +10,7 @@ PORTVERSION=	1.4.21
 CATEGORIES=	net www
 MASTER_SITES=	http://haproxy.1wt.eu/download/1.4/src/
 
-MAINTAINER=	freebsd@linepoint.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Reliable, High Performance TCP/HTTP Load Balancer
 
 LICENSE=	GPLv2 LGPL21
