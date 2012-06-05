@@ -18,6 +18,8 @@ RUN_DEPENDS=	wish8.5:${PORTSDIR}/x11-toolkits/tk85 \
 		${LOCALBASE}/lib/tls/pkgIndex.tcl:${PORTSDIR}/devel/tcltls \
 		${LOCALBASE}/lib/bwidget/pkgIndex.tcl:${PORTSDIR}/x11-toolkits/bwidget
 
+CONFLICTS=	tkabber-devel-*
+
 WRKSRC=		${WRKDIR}/${DISTNAME}
 NO_BUILD=	yes
 
