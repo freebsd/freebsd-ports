@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Module generate a HTML table from bidimensional array data
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/HTML/PullParser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/IO/Util.pm:${PORTSDIR}/devel/p5-IO-Util
+BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-IO-Util>=0:${PORTSDIR}/devel/p5-IO-Util
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

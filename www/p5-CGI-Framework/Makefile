@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A simple-to-use, lightweight web CGI framework
 
-BUILD_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
-		${SITE_PERL}/CGI/Session.pm:${PORTSDIR}/www/p5-CGI-Session \
-		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
+BUILD_DEPENDS=	p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
+		p5-CGI-Session>=0:${PORTSDIR}/www/p5-CGI-Session \
+		p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
