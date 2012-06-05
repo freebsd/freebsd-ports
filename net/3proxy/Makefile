@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Proxy servers set (support HTTP(S), FTP, SOCKS, POP3, TCP & UDP)
 
+CONFLICTS=	libproxy-[0-9]*
+
 USE_RC_SUBR=	3proxy.sh
 MAKEFILE=	Makefile.unix
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
