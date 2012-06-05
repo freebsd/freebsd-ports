@@ -12,7 +12,6 @@ PORTREVISION=	5
 CATEGORIES+=	japanese
 MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 PKGNAMESUFFIX=	-${KONFONT}
-DISTNAME=	kon2-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		k14.bdf 7x14rk.bdf \
 		jiskan16.bdf 8x16rk.bdf
@@ -22,15 +21,14 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Kanji On Console -- Display kanji characters on your own console
 
-BROKEN=		installs an unwanted file
-
 ONLY_FOR_ARCHS=	i386 amd64
 
 MAN1=		kon.1
 MANLANG=	ja
 
 PORTDOCS=	README README.FreeBSD
-DOCDIR=		${PREFIX}/share/doc/kon2
+SUB_LIST=	KON16FONT=${KON16FONT} \
+		KON14FONT=${KON14FONT}
 
 .include <bsd.port.pre.mk>
 
@@ -46,23 +44,33 @@ KON14FONT=Startup
 .endif
 
 post-extract:
-	@${CP} ${WRKSRC}/doc/kon.1 ${WRKSRC}/src/
+	cd ${WRKSRC} && \
+		${INSTALL_MAN} doc/kon.1 src/kon.1.in && \
+		${INSTALL_DATA} kon.cfg.FreeBSD kon.cfg.FreeBSD.in
 
-pre-build:
-	${SED} -e 's,%%PREFIX%%,${PREFIX},' \
-	  -e 's,%%DISTDIR%%,${DISTDIR},' \
-	  ${FILESDIR}/dotconfig > ${WRKSRC}/.config
-	@(cd ${WRKSRC}; ${MAKE} -f Makefile.FreeBSD config)
-	@for i in kon.cfg.FreeBSD doc/kon.1; do\
-		${MV} -f ${WRKSRC}/$${i} ${WRKSRC}/$${i}.in ;\
-		${SED} -e "s;@@PREFIX@@;${PREFIX};g" -e "s;@@KON16FONT@@;${KON16FONT};g" -e "s;@@KON14FONT@@;${KON14FONT};g" ${WRKSRC}/$${i}.in > ${WRKSRC}/$${i} ;\
-	done
+${WRKSRC}/.config::
+	(${ECHO_CMD} "DISTDIR = ${DISTDIR}"; \
+	 ${ECHO_CMD} "TOPDIR = ${PREFIX}"; \
+	 ${CAT} ${FILESDIR}/dotconfig; \
+	) > ${WRKSRC}/.config
+
+pre-configure: ${WRKSRC}/.config
+
+do-configure:
+	cd ${WRKSRC} && ${MAKE} -f Makefile.FreeBSD config
+
+post-configure:
+	cd ${WRKSRC} &&	\
+		for F in kon.cfg.FreeBSD src/kon.1; do \
+			${SED} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+			    < $${F}.in > $${F}; \
+		done
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/kon.1 ${PREFIX}/man/ja/man1
+	${INSTALL_MAN} ${WRKSRC}/src/kon.1 ${MANPREFIX}/man/ja/man1
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCDIR}
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCDIR}
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
