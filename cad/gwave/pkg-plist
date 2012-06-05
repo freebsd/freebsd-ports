@@ -11,25 +11,25 @@ bin/sweepsplit
 %%PORTDOCS%%%%DOCSDIR%%/hspice-output.txt
 %%PORTDOCS%%%%DOCSDIR%%/hspice.txt
 %%PORTDOCS%%%%DOCSDIR%%/spice3.txt
-%%EXAMPLES%%%%EXAMPLESDIR%%/Readme
-%%EXAMPLES%%%%EXAMPLESDIR%%/aoi.W
-%%EXAMPLES%%%%EXAMPLESDIR%%/aoi.W.tr0
-%%EXAMPLES%%%%EXAMPLESDIR%%/diffpair.braw
-%%EXAMPLES%%%%EXAMPLESDIR%%/diffpair.sp
-%%EXAMPLES%%%%EXAMPLESDIR%%/lpf.ac0
-%%EXAMPLES%%%%EXAMPLESDIR%%/lpf.sp
-%%EXAMPLES%%%%EXAMPLESDIR%%/nand.N.tr0
-%%EXAMPLES%%%%EXAMPLESDIR%%/nisrc.N.sw0
-%%EXAMPLES%%%%EXAMPLESDIR%%/pd1.N.tr0
-%%EXAMPLES%%%%EXAMPLESDIR%%/pd2.N
-%%EXAMPLES%%%%EXAMPLESDIR%%/quickAC.ac0
-%%EXAMPLES%%%%EXAMPLESDIR%%/quickINV.tr0
-%%EXAMPLES%%%%EXAMPLESDIR%%/quickTRAN.tr0
-%%EXAMPLES%%%%EXAMPLESDIR%%/rcsq.raw
-%%EXAMPLES%%%%EXAMPLESDIR%%/rcsq.sp
-%%EXAMPLES%%%%EXAMPLESDIR%%/test1.tr0.binary
-%%EXAMPLES%%%%EXAMPLESDIR%%/tlong.tr0.9601
-%%EXAMPLES%%%%EXAMPLESDIR%%/tpwl.acs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Readme
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/aoi.W
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/aoi.W.tr0
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/diffpair.braw
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/diffpair.sp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lpf.ac0
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lpf.sp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nand.N.tr0
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nisrc.N.sw0
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pd1.N.tr0
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pd2.N
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickAC.ac0
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickINV.tr0
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickTRAN.tr0
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rcsq.raw
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rcsq.sp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test1.tr0.binary
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tlong.tr0.9601
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tpwl.acs
 share/guile/app/gwave/cmds.scm
 share/guile/app/gwave/dynlink.scm
 share/guile/app/gwave/export-gnugraph.scm
@@ -50,5 +50,5 @@ share/guile/app/gwave/visiblewave-ops.scm
 @dirrm share/guile/app/gwave
 @dirrmtry share/guile/app
 @dirrmtry share/guile
-%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
