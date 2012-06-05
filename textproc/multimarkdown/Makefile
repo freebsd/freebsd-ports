@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	multimarkdown
-PORTVERSION=	3.5.1
+PORTVERSION=	3.6
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/${GH_DEVELOPER}/${GH_PORTNAME}/tarball/${DISTVERSION}/
 DISTNAME=	${GH_DEVELOPER}-${GH_PORTNAME}-${DISTVERSION}-0-g${GH_VERSION}
@@ -21,8 +21,8 @@ LICENSE=	MIT
 # Github makes this very confusing
 GH_PORTNAME=	peg-${PORTNAME}
 GH_DEVELOPER=	fletcher	#GH trees live under a username
-GH_VERSION=		d041103758 	#GH appends a commit hash to the filename
-GH_SRCDIR=		4ecb3b6		#GH appends something else (??) to the extracted pathname
+GH_VERSION=		23fba45421 	#GH appends a commit hash to the filename
+GH_SRCDIR=		e1d494e		#GH appends something else (??) to the extracted pathname
 WRKSRC=			${WRKDIR}/${GH_DEVELOPER}-${GH_PORTNAME}-${GH_SRCDIR}
 FETCH_ARGS=		-prR		#GH issues HTTP/302 errors for source tarballs
 
