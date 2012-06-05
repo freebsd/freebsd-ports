@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fhist
-PORTVERSION=	1.19
+PORTVERSION=	1.20
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
@@ -17,7 +17,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	explain.45:${PORTSDIR}/devel/libexplain
 
-OPTIONS=	NLS "Native language support" on
+OPTIONS_DEFINE=	NLS
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all-bin
@@ -31,7 +31,7 @@ PLIST_FILES=	bin/fcomp bin/fhist bin/fmerge
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 CONFIGURE_ENV+=	ac_cv_lib_intl_main=no
 .else
 USE_GETTEXT=	yes
@@ -40,13 +40,9 @@ PLIST_FILES+=	share/locale/en/LC_MESSAGES/${file}.mo
 .endfor
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|.a $$(LIBS)|.a $$(LDFLAGS) $$(LIBS)|' ${WRKSRC}/Makefile.in
-
 post-build:
 .for file in fcomp fhist fmerge
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	@(cd ${WRKSRC}/lib/en/LC_MESSAGES && ${LOCALBASE}/bin/msgfmt -o \
 		${file}.mo ${file}.po)
 .endif
@@ -56,7 +52,7 @@ do-install:
 .for file in fcomp fhist fmerge
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${file} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/lib/en/man1/${file}.1 ${MANPREFIX}/man/man1
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	@${MKDIR} ${PREFIX}/share/locale/en/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/lib/en/LC_MESSAGES/${file}.mo \
 		${PREFIX}/share/locale/en/LC_MESSAGES
