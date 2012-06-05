@@ -16,11 +16,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	This is xsh - an XML Editing Shell
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
-		${SITE_PERL}/${PERL_ARCH}/XML/LibXSLT.pm:${PORTSDIR}/textproc/p5-XML-LibXSLT \
-		${SITE_PERL}/XML/LibXML/Iterator.pm:${PORTSDIR}/textproc/p5-XML-LibXML-Iterator \
-		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent \
-		${SITE_PERL}/XML/XUpdate/LibXML.pm:${PORTSDIR}/textproc/p5-XML-XUpdate-LibXML
+BUILD_DEPENDS=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
+		p5-XML-LibXSLT>=0:${PORTSDIR}/textproc/p5-XML-LibXSLT \
+		p5-XML-LibXML-Iterator>=0:${PORTSDIR}/textproc/p5-XML-LibXML-Iterator \
+		p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent \
+		p5-XML-XUpdate-LibXML>=0:${PORTSDIR}/textproc/p5-XML-XUpdate-LibXML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
