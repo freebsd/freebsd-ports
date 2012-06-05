@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GIFF
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	freebsd@beardz.net
+MAINTAINER=	jase@FreeBSD.org
 COMMENT=	A Perl5 FTP client class with automatic reconnect on failure
 
 PERL_CONFIGURE=	yes

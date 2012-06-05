@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:STRZELEC
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	freebsd@beardz.net
+MAINTAINER=	jase@FreeBSD.org
 COMMENT=	A universal interface for FTP-like modules (FTP, SFTP, SCP)
 
 LICENSE=	ART10 GPLv1
