@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A loader class for phrasebook implementations using YAML
 
-BUILD_DEPENDS=	${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
-		${SITE_PERL}/Data/Phrasebook.pm:${PORTSDIR}/textproc/p5-Data-Phrasebook
+BUILD_DEPENDS=	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
+		p5-Data-Phrasebook>=0:${PORTSDIR}/textproc/p5-Data-Phrasebook
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

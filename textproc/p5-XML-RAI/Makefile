@@ -15,8 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.([0-9]+)$/\1/}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	RSS Abstraction Interface
 
-RUN_DEPENDS=	${SITE_PERL}/XML/RSS/Parser.pm:${PORTSDIR}/textproc/p5-XML-RSS-Parser \
-		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate
+RUN_DEPENDS=	p5-XML-RSS-Parser>=0:${PORTSDIR}/textproc/p5-XML-RSS-Parser \
+		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
