@@ -96,6 +96,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
 	 <cvename>CVE-2012-1667</cvename>
+	 <url>http://www.isc.org/software/bind/advisories/cve-2012-1667</url>
     </references>
     <dates>
       <discovery>2012-06-04</discovery>
