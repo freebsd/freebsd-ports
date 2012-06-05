@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	POE-Component-Resolver
-PORTVERSION=	0.918
+PORTVERSION=	0.920
 CATEGORIES=	dns devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RCAPUTO
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	freebsd@beardz.net
+MAINTAINER=	jase@FreeBSD.org
 COMMENT=	A non-blocking getaddrinfo() resolver
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-POE>=1.311:${PORTSDIR}/devel/p5-POE \
-		p5-Scalar-List-Utils>=1.23:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		p5-Socket-GetAddrInfo>=0.19:${PORTSDIR}/net/p5-Socket-GetAddrInfo
+		p5-Socket>=2.001:${PORTSDIR}/net/p5-Socket
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -31,14 +30,9 @@ MAN3=		POE::Component::Resolver.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400
+BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.23:${PORTSDIR}/lang/p5-Scalar-List-Utils
+RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.23:${PORTSDIR}/lang/p5-Scalar-List-Utils
 TEST_DEPENDS+=	p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
-.if ${PERL_LEVEL} < 501001
-BUILD_DEPENDS+=	p5-Storable>=2.18:${PORTSDIR}/devel/p5-Storable \
-		p5-Time-HiRes>=1.9711:${PORTSDIR}/devel/p5-Time-HiRes
-RUN_DEPENDS+=	p5-Storable>=2.18:${PORTSDIR}/devel/p5-Storable \
-		p5-Time-HiRes>=1.9711:${PORTSDIR}/devel/p5-Time-HiRes
 .endif
 
 .include <bsd.port.post.mk>
