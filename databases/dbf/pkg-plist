@@ -1,0 +1,10 @@
+bin/dbf
+include/libdbf/libdbf.h
+lib/libdbf.a
+lib/libdbf.la
+lib/libdbf.so
+lib/libdbf.so.0
+libdata/pkgconfig/libdbf.pc
+%%NLS%%share/locale/de/LC_MESSAGES/dbf.mo
+%%NLS%%share/locale/de/LC_MESSAGES/libdbf.mo
+@dirrm include/libdbf
