@@ -13,8 +13,8 @@ MASTER_SITES=	http://www.highprogrammer.com/alan/perl/
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Commandline tool for getting status of torrent
 
-RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
+RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
 
 USE_PERL5=	yes
 NO_BUILD=	yes
