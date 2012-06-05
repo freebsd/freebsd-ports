@@ -7,7 +7,7 @@
 
 PORTNAME=	giflib
 PORTVERSION=	4.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-4.x
 PKGNAMESUFFIX=	${NOX11SUFFIX}${PKGNAMESUFFIX2}
@@ -15,14 +15,18 @@ PKGNAMESUFFIX=	${NOX11SUFFIX}${PKGNAMESUFFIX2}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Tools and library routines for working with GIF images
 
-BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto
-
 CONFLICTS=	libungif-[0-9]*
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+.include <bsd.port.pre.mk>
+
+.if !defined(NOPORTDOCS)
+BUILD_DEPENDS+=	xmlto:${PORTSDIR}/textproc/xmlto
+.endif
 
 .if defined(WITHOUT_X11)
 PLIST_SUB+=	X11='@comment '
@@ -34,8 +38,14 @@ PLIST_SUB+=	X11=''
 CPPFLAGS+=	-I${LOCALBASE}/include
 .endif
 
-post_patch:
+post-patch:
 	${CP} ${FILESDIR}/quantize.c ${WRKSRC}/lib/
+	${REINPLACE_CMD} -e 's|xmlto |xmlto --skip-validation |' \
+		${WRKSRC}/doc/Makefile.in
+.if defined(NOPORTDOCS)
+	${REINPLACE_CMD} -e 's|SUBDIRS = lib util doc pic|SUBDIRS = lib util pic|' \
+		${WRKSRC}/Makefile.in
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -44,4 +54,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

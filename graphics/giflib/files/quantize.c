@@ -29,6 +29,8 @@
 
 #define ABS(x)    ((x) > 0 ? (x) : (-(x)))
 
+#define PROGRAM_NAME	"giflib"
+
 /* The colors are stripped to 5 bits per primary color if non MSDOS system
  * or to 4 (not enough memory...) if MSDOS as first step.
  */
