@@ -16,7 +16,7 @@ MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Append data to files using a temporary copy
 
 .if !defined(WITHOUT_TEST_POD_COVERAGE)
-BUILD_DEPENDS=	${SITE_PERL}/Test/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Test-Pod-Coverage
+BUILD_DEPENDS=	p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 .endif
 
 PERL_CONFIGURE=	yes
