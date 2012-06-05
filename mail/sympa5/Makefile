@@ -66,7 +66,7 @@ MAKE_ENV?=	PERL_EXTUTILS_AUTOINSTALL=--skip
 
 MAN8=		alias_manager.8 archived.8 bounced.8 sympa.8
 
-CONFLICTS=	sympa-4* sympa-5.[0-2]*
+CONFLICTS=	sympa-[0-46-9]*
 
 DB_TYPE?=mysql
 
@@ -82,21 +82,21 @@ PLIST_SUB+=	NLS=""
 
 .if !defined(WITHOUT_FASTCGI)
 BUILD_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/FCGI.pm:${PORTSDIR}/www/p5-FCGI
+BUILD_DEPENDS+=	p5-FCGI>=0:${PORTSDIR}/www/p5-FCGI
 SUB_LIST+=	WITH_FASTCGI=yes
 .endif
 
 .if ${DB_TYPE} == "Oracle"
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Oracle.pm:${PORTSDIR}/databases/p5-DBD-Oracle
+BUILD_DEPENDS+=	p5-DBD-Oracle>=0:${PORTSDIR}/databases/p5-DBD-Oracle
 .else
 .if ${DB_TYPE} == "Pg"
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+BUILD_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .else
 .if ${DB_TYPE} == "Sybase"
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Sybase.pm:${PORTSDIR}/databases/p5-DBD-Sybase
+BUILD_DEPENDS+=	p5-DBD-Sybase>=0:${PORTSDIR}/databases/p5-DBD-Sybase
 .else
 .if ${DB_TYPE} == "mysql"
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+BUILD_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 .endif
 .endif
