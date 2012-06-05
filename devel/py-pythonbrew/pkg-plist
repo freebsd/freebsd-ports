@@ -88,6 +88,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/all/common/patch-setup.py.diff
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/all/python24/patch-setup.py.diff
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/all/python25/patch-setup.py.diff
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/all/python26/patch-setup.py-for-2.6.5-and-earlier.diff
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/all/python30/patch-setup.py.diff
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/all/python32/patch-setup.py.diff
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/macosx/python24/patch-Include-pyport.h
@@ -144,6 +145,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/all/common
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/all/python24
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/all/python25
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/all/python26
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/all/python30
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/all/python32
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pythonbrew/patches/all
