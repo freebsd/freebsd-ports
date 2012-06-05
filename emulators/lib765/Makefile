@@ -18,21 +18,25 @@ LICENSE=	LGPL20
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
-OPTIONS=	LIBDSK "With LIBDSK support (recommended)" on
+OPTIONS_DEFINE=	LIBDSK
 
-.include <bsd.port.pre.mk>
+LIBDSK_DESC=	Include LibDSK support (recommended)
 
-.if defined(WITH_LIBDSK)
+OPTIONS_DEFAULT=	LIBDSK
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MLIBDSK}
 CONFIGURE_ARGS+=	--with-libdsk --with-libdsk-path=${LOCALBASE}
-LIB_DEPENDS+=		dsk.5:${PORTSDIR}/emulators/libdsk
+LIB_DEPENDS+=		dsk:${PORTSDIR}/emulators/libdsk
 .else
 CONFIGURE_ARGS+=	--without-libdsk
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ChangeLog doc/765.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
