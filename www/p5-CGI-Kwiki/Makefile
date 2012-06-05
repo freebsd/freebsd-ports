@@ -15,9 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Quickie Wiki Package that's not too Tricky
 
-BUILD_DEPENDS=	${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
+BUILD_DEPENDS=	p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
-		${SITE_PERL}/Locale/Maketext.pm:${PORTSDIR}/devel/p5-Locale-Maketext
+		p5-Locale-Maketext>=0:${PORTSDIR}/devel/p5-Locale-Maketext
 
 PERL_CONFIGURE=	yes
 

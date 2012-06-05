@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A web application data language processor
 
-RUN_DEPENDS=	${SITE_PERL}/Config/General.pm:${PORTSDIR}/devel/p5-Config-General \
-		${SITE_PERL}/IO/Prompt.pm:${PORTSDIR}/devel/p5-IO-Prompt \
-		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent \
+RUN_DEPENDS=	p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General \
+		p5-IO-Prompt>=0:${PORTSDIR}/devel/p5-IO-Prompt \
+		p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent \
 		p5-File-HomeDir>=0:${PORTSDIR}/devel/p5-File-HomeDir \
 		p5-DBIx-Class>=0:${PORTSDIR}/databases/p5-DBIx-Class \
 		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
