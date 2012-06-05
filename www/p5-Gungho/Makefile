@@ -16,29 +16,29 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Event Based High Performance Web Crawler Framework
 
-RUN_DEPENDS=	${SITE_PERL}/Best.pm:${PORTSDIR}/devel/p5-Best \
-		${SITE_PERL}/Class/Accessor/Fast.pm:${PORTSDIR}/devel/p5-Class-Accessor \
-		${SITE_PERL}/Class/C3/Componentised.pm:${PORTSDIR}/devel/p5-Class-C3-Componentised \
-		${SITE_PERL}/Class/Data/Inheritable.pm:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
-		${SITE_PERL}/Class/Inspector.pm:${PORTSDIR}/devel/p5-Class-Inspector \
-		${SITE_PERL}/Config/Any.pm:${PORTSDIR}/devel/p5-Config-Any \
-		${SITE_PERL}/Danga/Socket/Callback.pm:${PORTSDIR}/devel/p5-Danga-Socket-Callback \
-		${SITE_PERL}/Data/Throttler.pm:${PORTSDIR}/devel/p5-Data-Throttler \
-		${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
-		${SITE_PERL}/HTML/RobotsMETA.pm:${PORTSDIR}/www/p5-HTML-RobotsMETA \
-		${SITE_PERL}/HTTP/Parser.pm:${PORTSDIR}/www/p5-HTTP-Parser \
-		${SITE_PERL}/HTTP/Status.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/IO/Async.pm:${PORTSDIR}/devel/p5-IO-Async \
-		${SITE_PERL}/Log/Dispatch.pm:${PORTSDIR}/devel/p5-Log-Dispatch \
-		${SITE_PERL}/POE/Component/Client/DNS.pm:${PORTSDIR}/dns/p5-POE-Component-Client-DNS \
-		${SITE_PERL}/POE/Component/Client/Keepalive.pm:${PORTSDIR}/net/p5-POE-Component-Client-Keepalive \
-		${SITE_PERL}/Path/Class.pm:${PORTSDIR}/devel/p5-Path-Class \
-		${SITE_PERL}/Regexp/Common.pm:${PORTSDIR}/textproc/p5-Regexp-Common \
-		${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-require \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/WWW/RobotRules/Parser.pm:${PORTSDIR}/www/p5-WWW-RobotRules-Parser \
-		${SITE_PERL}/Web/Scraper/Config.pm:${PORTSDIR}/www/p5-Web-Scraper-Config \
-		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
+RUN_DEPENDS=	p5-Best>=0:${PORTSDIR}/devel/p5-Best \
+		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-Class-C3-Componentised>=0:${PORTSDIR}/devel/p5-Class-C3-Componentised \
+		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
+		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
+		p5-Config-Any>=0:${PORTSDIR}/devel/p5-Config-Any \
+		p5-Danga-Socket-Callback>=0:${PORTSDIR}/devel/p5-Danga-Socket-Callback \
+		p5-Data-Throttler>=0:${PORTSDIR}/devel/p5-Data-Throttler \
+		p5-Exception-Class>=0:${PORTSDIR}/devel/p5-Exception-Class \
+		p5-HTML-RobotsMETA>=0:${PORTSDIR}/www/p5-HTML-RobotsMETA \
+		p5-HTTP-Parser>=0:${PORTSDIR}/www/p5-HTTP-Parser \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-IO-Async>=0:${PORTSDIR}/devel/p5-IO-Async \
+		p5-Log-Dispatch>=0:${PORTSDIR}/devel/p5-Log-Dispatch \
+		p5-POE-Component-Client-DNS>=0:${PORTSDIR}/dns/p5-POE-Component-Client-DNS \
+		p5-POE-Component-Client-Keepalive>=0:${PORTSDIR}/net/p5-POE-Component-Client-Keepalive \
+		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
+		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common \
+		p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-WWW-RobotRules-Parser>=0:${PORTSDIR}/www/p5-WWW-RobotRules-Parser \
+		p5-Web-Scraper-Config>=0:${PORTSDIR}/www/p5-Web-Scraper-Config \
+		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
 		p5-Class-C3-XS>=0.02:${PORTSDIR}/devel/p5-Class-C3-XS \
 		p5-Class-C3>=0.16:${PORTSDIR}/devel/p5-Class-C3 \
 		p5-Danga-Socket>=1.57:${PORTSDIR}/devel/p5-Danga-Socket \
