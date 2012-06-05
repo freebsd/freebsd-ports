@@ -1,14 +1,17 @@
-[ excerpt from distfile's README with modifications ]
+This simple tool reads a source file with TASM syntax and converts it
+to AT&T syntax.
 
-This is the first version of TASM to AT&T converter (TA2AS). Frank
-van Dijk, member of SPiRiT!, wrote this utility. It reads in a
-source file with TASM syntax and tries(first version remember? :))
-to convert it to AT&T syntax.  It hasn't been tested very well. So
-email all your bugreports to one of the SPiRiT emailaddresses (see
-below). Also for wanted features!  But the sourcefile is included
-so why don't you try first :)
+The AT&T syntax is widely used by GNU tools, in particular the GAS(AS)
+interpreter and GCC compiler.
 
-This is one of the utilities we wrote, to make life easier when
-working with DJGPP! :)
+The TASM syntax is used by many commercial compilers and disassemblers,
+ie. NASM, MASM, Visual Studio or IDA Pro.
 
-WWW: http://udrecsuite.sourceforge.net/
+Ta2As can automate most of the conversion, but it still isn't perfect
+- some correction have to be made manually before the code compiles.
+
+This tool was originally written by Frank van Dijk and released by
+SPiRiT group; this is continuation of his work, although not much of
+the original code remains. 
+
+WWW: http://code.google.com/p/ta2as/

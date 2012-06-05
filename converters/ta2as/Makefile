@@ -6,48 +6,41 @@
 #
 
 PORTNAME=	ta2as
-PORTVERSION=	0.8
+PORTVERSION=	0.8.2
 CATEGORIES=	converters devel
-MASTER_SITES=	ftp://ftp.delorie.com/pub/djgpp/contrib/ \
-		ftp://x2ftp.oulu.fi/pub/msdos/programming/convert/
-DISTNAME=	ta2asv${PORTVERSION:S/.//}
+MASTER_SITES=	GOOGLE_CODE
+DISTNAME=	${PORTNAME}_v${PORTVERSION:S/./_/g}_src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TASM to AT&T asm syntax converter (GNU AS)
 
-USE_ZIP=	yes
+OPTIONS_DEFINE=	DOCS
+
 NO_WRKSUBDIR=	yes
 
-EXTRACT_BEFORE_ARGS=	-q -a -L
+USE_ZIP=	yes
 
+PORTDOCS=	*
 PLIST_FILES=	bin/${PORTNAME}
 
-.ifndef(NOPORTDOCS)
-PORTDOCS=	readme.doc
-.endif
+.include <bsd.port.options.mk>
 
 post-extract:
-	@${CP} ${FILESDIR}/strtolower.c ${WRKSRC}
+	@${CP} -f ${FILESDIR}/strtolower.c ${WRKSRC}
 
 post-patch:
-	@${REINPLACE_CMD} -E \
-		-e 's|stricmp|strcasecmp|' \
-		-e 's|strnicmp|strncasecmp|' \
-		-e 's|strlwr|strtolower|' \
-		${WRKSRC}/${PORTNAME}.c
+	@${REINPLACE_CMD} -e \
+		's|strlwr|strtolower|' ${WRKSRC}/${PORTNAME}.c
 
 do-build:
-	@cd ${WRKSRC} && \
-		${CC} ${CFLAGS} \
-		-s meen.c strtolower.c ta2as.c \
+	cd ${WRKSRC} && ${CC} ${CFLAGS} main.c strtolower.c ${PORTNAME}.c \
 		-o ${PORTNAME}
 
 do-install:
-.ifndef(NOPORTDOCS)
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme.doc ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
 .endif
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} \
-		${PREFIX}/bin
 
 .include <bsd.port.mk>
