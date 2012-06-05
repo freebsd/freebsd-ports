@@ -15,17 +15,17 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module implements both the SSH1 and SSH2 protocols
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/String/CRC32.pm:${PORTSDIR}/devel/p5-String-CRC32 \
-		${SITE_PERL}/${PERL_ARCH}/Math/GMP.pm:${PORTSDIR}/math/p5-Math-GMP \
-		${SITE_PERL}/Digest/HMAC_MD5.pm:${PORTSDIR}/security/p5-Digest-HMAC \
-		${SITE_PERL}/Digest/HMAC_SHA1.pm:${PORTSDIR}/security/p5-Digest-HMAC \
-		${SITE_PERL}/Crypt/DSA.pm:${PORTSDIR}/security/p5-Crypt-DSA \
-		${SITE_PERL}/Crypt/DH.pm:${PORTSDIR}/security/p5-Crypt-DH \
-		${SITE_PERL}/${PERL_ARCH}/Math/Pari.pm:${PORTSDIR}/math/p5-Math-Pari \
-		${SITE_PERL}/Convert/PEM.pm:${PORTSDIR}/converters/p5-Convert-PEM \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/IDEA.pm:${PORTSDIR}/security/p5-Crypt-IDEA \
-		${SITE_PERL}/Digest/BubbleBabble.pm:${PORTSDIR}/security/p5-Digest-BubbleBabble \
-		${SITE_PERL}/Crypt/RSA.pm:${PORTSDIR}/security/p5-Crypt-RSA
+BUILD_DEPENDS=	p5-String-CRC32>=0:${PORTSDIR}/devel/p5-String-CRC32 \
+		p5-Math-GMP>=0:${PORTSDIR}/math/p5-Math-GMP \
+		p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
+		p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
+		p5-Crypt-DSA>=0:${PORTSDIR}/security/p5-Crypt-DSA \
+		p5-Crypt-DH>=0:${PORTSDIR}/security/p5-Crypt-DH \
+		p5-Math-Pari>=0:${PORTSDIR}/math/p5-Math-Pari \
+		p5-Convert-PEM>=0:${PORTSDIR}/converters/p5-Convert-PEM \
+		p5-Crypt-IDEA>=0:${PORTSDIR}/security/p5-Crypt-IDEA \
+		p5-Digest-BubbleBabble>=0:${PORTSDIR}/security/p5-Digest-BubbleBabble \
+		p5-Crypt-RSA>=0:${PORTSDIR}/security/p5-Crypt-RSA
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Net::SSH::Perl.3 \
@@ -78,7 +78,7 @@ GMP_DESC=	Use the optimized Math::BigInt::GMP backend
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGMP}
-GMP_DEPEND=	${SITE_PERL}/${PERL_ARCH}/Math/BigInt/GMP.pm:${PORTSDIR}/math/p5-Math-BigInt-GMP
+GMP_DEPEND=	p5-Math-BigInt-GMP>=0:${PORTSDIR}/math/p5-Math-BigInt-GMP
 BUILD_DEPENDS+=	${GMP_DEPEND}
 RUN_DEPENDS+=	${GMP_DEPEND}
 .endif

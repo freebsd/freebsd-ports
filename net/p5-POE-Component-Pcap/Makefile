@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	POE component for non-blocking use of Net::Pcap
 
-BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
-		${SITE_PERL}/${PERL_ARCH}/Net/Pcap.pm:${PORTSDIR}/net/p5-Net-Pcap \
-		${SITE_PERL}/NetPacket/Ethernet.pm:${PORTSDIR}/net/p5-NetPacket
+BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
+		p5-Net-Pcap>=0:${PORTSDIR}/net/p5-Net-Pcap \
+		p5-NetPacket>=0:${PORTSDIR}/net/p5-NetPacket
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
