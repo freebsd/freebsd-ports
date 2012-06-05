@@ -4,6 +4,8 @@ bin/leo
 %%PYTHON_SITELIBDIR%%/leo/Icons/Leoapp.GIF
 %%PYTHON_SITELIBDIR%%/leo/Icons/Leosplash.GIF
 %%PYTHON_SITELIBDIR%%/leo/Icons/application-x-leo-outline.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/arrows.svg
+%%PYTHON_SITELIBDIR%%/leo/Icons/bubbles.svg
 %%PYTHON_SITELIBDIR%%/leo/Icons/box00.GIF
 %%PYTHON_SITELIBDIR%%/leo/Icons/box01.GIF
 %%PYTHON_SITELIBDIR%%/leo/Icons/box02.GIF
@@ -20,6 +22,65 @@ bin/leo
 %%PYTHON_SITELIBDIR%%/leo/Icons/box13.GIF
 %%PYTHON_SITELIBDIR%%/leo/Icons/box14.GIF
 %%PYTHON_SITELIBDIR%%/leo/Icons/box15.GIF
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/LeoTaskTab.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/bngblk.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/bullet.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/chkblk.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/chkboxblk.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/cleo_icons.svg
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/index.html
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/prg000.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/prg010.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/prg020.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/prg030.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/prg040.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/prg050.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/prg060.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/prg070.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/prg080.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/prg090.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/prg100.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/pri0.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/pri1.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/pri2.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/pri3.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/pri4.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/pri5.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/pri6.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/pri7.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/pri8.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/pri9.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/qryblk.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/small/bngblk.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/small/bullet.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/small/chkblk.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/small/chkboxblk.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/small/prg000.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/small/prg010.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/small/prg020.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/small/prg030.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/small/prg040.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/small/prg050.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/small/prg060.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/small/prg070.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/small/prg080.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/small/prg090.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/small/prg100.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/small/pri0.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/small/pri1.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/small/pri2.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/small/pri3.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/small/pri4.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/small/pri5.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/small/pri6.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/small/pri7.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/small/pri8.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/small/pri9.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/small/qryblk.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/small/xblk.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/small/xgry.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/xblk.png
+%%PYTHON_SITELIBDIR%%/leo/Icons/cleo/xgry.png
 %%PYTHON_SITELIBDIR%%/leo/Icons/leo.gif
 %%PYTHON_SITELIBDIR%%/leo/Icons/leoapp32.png
 %%PYTHON_SITELIBDIR%%/leo/Icons/lt_arrow_disabled.gif
@@ -719,5 +780,7 @@ bin/leo
 %%PORTDOCS%%@dirrm %%PYTHON_SITELIBDIR%%/leo/doc
 @dirrm %%PYTHON_SITELIBDIR%%/leo/core
 @dirrm %%PYTHON_SITELIBDIR%%/leo/config
+@dirrm %%PYTHON_SITELIBDIR%%/leo/Icons/cleo/small
+@dirrm %%PYTHON_SITELIBDIR%%/leo/Icons/cleo
 @dirrm %%PYTHON_SITELIBDIR%%/leo/Icons
 @dirrm %%PYTHON_SITELIBDIR%%/leo

@@ -7,7 +7,7 @@
 
 PORTNAME=	leo
 PORTVERSION=	4.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors python
 MASTER_SITES=	SF/${PORTNAME}/Leo/${PORTVERSION}%20final
 DISTNAME=	Leo-${PORTVERSION}-final
@@ -26,7 +26,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 
 		${PYTHON_PKGNAMEPREFIX}Pmw>=0:${PORTSDIR}/x11-toolkits/py-Pmw \
 		${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui
 
-OPTIONS=	PYENCHANT "Enable PyEnchant support " off
+OPTIONS_DEFINE=	PYENCHANT DOCS
+PYENCHANT_DESC=	Enable PyEnchant support
 
 WRKSRC=		${WRKDIR}/Leo-${PORTVERSION}-final
 
@@ -37,7 +38,7 @@ LEO_DIR=	${PYTHONPREFIX_SITELIBDIR}/leo
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PYENCHANT)
+.if ${PORT_OPTIONS:MPYENCHANT}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}enchant>=0:${PORTSDIR}/textproc/py-enchant
 .endif
 
@@ -56,10 +57,12 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/leo/Icons/*.GIF ${LEO_DIR}/Icons
 	${INSTALL_DATA} ${WRKSRC}/leo/Icons/*.gif ${LEO_DIR}/Icons
 	${INSTALL_DATA} ${WRKSRC}/leo/Icons/*.png ${LEO_DIR}/Icons
+	${INSTALL_DATA} ${WRKSRC}/leo/Icons/*.svg ${LEO_DIR}/Icons
+	@(cd ${WRKSRC}/leo/Icons && ${COPYTREE_SHARE} cleo ${LEO_DIR}/Icons)
 .for dir in config core external extensions modes plugins scripts test www
 	@(cd ${WRKSRC}/leo; ${COPYTREE_SHARE} ${dir} ${LEO_DIR})
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@(cd ${WRKSRC}/leo; ${COPYTREE_SHARE} doc ${LEO_DIR})
 .endif
 
