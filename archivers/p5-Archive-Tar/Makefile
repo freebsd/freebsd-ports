@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Archive-Tar
-PORTVERSION=	1.86
+PORTVERSION=	1.88
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BINGOS
@@ -21,13 +21,16 @@ PERL_CONFIGURE=	YES
 
 MAN3=		Archive::Tar.3 Archive::Tar::File.3
 
-OPTIONS=	TEXT_DIFF "Text::Diff support for ptardiff" off
+OPTIONS_DEFINE=	TEXTDIFF
+TEXTDIFF_DESC=	"Text::Diff support for ptardiff"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_TEXT_DIFF)
+.if ${PORT_OPTIONS:MTEXTDIFF}
 RUN_DEPENDS+=	${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff
 .endif
+
+.include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500904
 RUN_DEPENDS+=	p5-Package-Constants>=0:${PORTSDIR}/devel/p5-Package-Constants
