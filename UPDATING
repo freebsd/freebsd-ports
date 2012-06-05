@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120605:
+  AFFECTS: users of net/p5-ZConf
+  AUTHOR: vvelox@vvelox.net
+
+  Please append '.set' to all sets for the FS backend. This was done to prevent
+  collisions between config and set names. Previously the config
+  "someConfig/default" would collide with the set "default" for "someConfig".
+
 20120603:
   AFFECTS: users of lang/ghc and */hs-*
   AUTHOR: haskell@FreeBSD.org
