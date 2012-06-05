@@ -53,7 +53,7 @@ lib/csound/plugins64/libcellular.so
 lib/csound/plugins64/libcontrol.so
 lib/csound/plugins64/libcs_date.so
 lib/csound/plugins64/libdoppler.so
-%%LADSPA%%lib/csound/plugins64/libdssi4cs.so
+%%DSSI%%lib/csound/plugins64/libdssi4cs.so
 lib/csound/plugins64/libfareygen.so
 %%FLUIDSYNTH%%lib/csound/plugins64/libfluidOpcodes.so
 lib/csound/plugins64/libfractalnoise.so

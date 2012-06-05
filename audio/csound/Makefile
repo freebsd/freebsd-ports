@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	csound
-PORTVERSION=	5.17.6
-PORTREVISION=	1
+PORTVERSION=	5.17.11
 CATEGORIES=	audio lang
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}${PORTVERSION:R} \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}${PORTVERSION} \
 		SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}${PORTVERSION:R}/manual:manual
 DISTNAME=	${PORTNAME:S/c/C/}${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-DIST_SUBDIR=	csound
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sound synthesizer
@@ -22,16 +20,22 @@ COMMENT=	Sound synthesizer
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DIST_SUBDIR=	csound
 BUILD_DEPENDS=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13 \
 		${LOCALBASE}/include/gmm/gmm.h:${PORTSDIR}/math/gmm++ \
 		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
 
-OPTIONS_DEFINE=	ALSA LADSPA FLUIDSYNTH JACK OSC PORTAUDIO PULSEAUDIO FLTK
-OPTIONS_DEFAULT=	FLTK
-FLTK_DESC=		Build FLTK plugin and GUI
-OSC_DESC=		Build OSC opcodes
-FLUIDSYNTH_DESC=	Build FluidSynth opcodes
+OPTIONS_DEFINE=	ALSA DSSI FLUIDSYNTH JACK OSC PORTAUDIO PULSEAUDIO FLTK
+OPTIONS_DEFAULT=FLTK
+ALSA_DESC=	Build ALSA I/O module
+DSSI_DESC=	Build DSSI/LADSPA host opcodes
+FLUIDSYNTH_DESC=Building FluidSynth opcodes
+JACK_DESC=	Build Jack I/O module and opcodes
+OSC_DESC=	Build OSC opcodes
+PORTAUDIO_DESC=	Build the PortAudio I/O module
+PULSEAUDIO_DESC=Build the PulseAudio I/O module
+FLTK_DESC=	Build FLTK plugin and GUI
 
 CONFLICTS_INSTALL=	outguess-*
 
@@ -64,14 +68,14 @@ PLIST_SUB+=	ALSA="@comment "
 ALSA_H=		##alsa/asoundlib.h##
 .endif
 
-.if ${PORT_OPTIONS:MLADSPA}
+.if ${PORT_OPTIONS:MDSSI}
 BUILD_DEPENDS+=	dssi>=0:${PORTSDIR}/audio/dssi
 RUN_DEPENDS+=	dssi>=0:${PORTSDIR}/audio/dssi
-SCONS_ARGS+=	buildLADSPA=1
-PLIST_SUB+=	LADSPA=""
+SCONS_ARGS+=	buildDSSI=1
+PLIST_SUB+=	DSSI=""
 .else
-SCONS_ARGS+=	buildLADSPA=0
-PLIST_SUB+=	LADSPA="@comment "
+SCONS_ARGS+=	buildDSSI=0
+PLIST_SUB+=	DSSI="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFLUIDSYNTH}
@@ -185,12 +189,8 @@ post-patch:
 		s| pthread | |" ${WRKSRC}/SConstruct
 	@${REINPLACE_CMD} -e "s|<portaudio.h>|<portaudio2/portaudio.h>|" \
 		${WRKSRC}/InOut/rtpa.c
-	@${REINPLACE_CMD} -e "s|linux/if.h|sys/socket.h|" \
+	@${REINPLACE_CMD} -e "s|linux/if.h|sys/types.h|" \
 		${WRKSRC}/OOps/remote.c
-	@${REINPLACE_CMD} -e "s|values.h|limits.h|" \
-		${WRKSRC}/Opcodes/cpumeter.c
-	@${REINPLACE_CMD} -e "s|malloc.h|stdlib.h|" \
-		${WRKSRC}/frontends/CsoundAC/Counterpoint.hpp
 
 post-install:
 	@${LN} -sf libcsound64.so.5 ${PREFIX}/lib/libcsound64.so
