@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ace
-PORTVERSION=	6.1.1
+PORTVERSION=	6.1.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://download.dre.vanderbilt.edu/previous_versions/ \
 		http://download.dre.vanderbilt.edu/previous_versions/
@@ -15,12 +15,11 @@ DISTNAME=	ACE-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Adaptive Communication Environment for C++
 
-OPTIONS=	OPENSSL "Build with OpenSSL support " on \
-		TRIO "Build with trio support" off \
-		X11 "Build with X11 support" off \
-		FLTK "Build with FLTK support" off \
-		TK "Build with Tcl/Tk support" off \
-		QT "Build with Qt support" off \
+OPTIONS_DEFINE=	SSL TRIO X11 FLTK TK QT4
+OPTIONS_DEFAULT=SSL
+TRIO_DESC=	Enable trio support
+FLTK_DESC=	Enable FLTK support
+TK_DESC=	Enable Tcl/Tk support
 
 CONFLICTS=	ace+tao-5*
 
@@ -43,7 +42,7 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_OPENSSL)
+.if ${PORT_OPTIONS:MSSL}
 USE_OPENSSL=	yes
 MAKE_ENV+=	ssl=1
 PLIST_SUB+=	OPENSSL=""
@@ -51,12 +50,12 @@ PLIST_SUB+=	OPENSSL=""
 PLIST_SUB+=	OPENSSL="@comment "
 .endif
 
-.if defined(WITH_TRIO)
+.if ${PORT_OPTIONS:MTRIO}
 BUILD_DEPENDS+=	trio>=0:${PORTSDIR}/devel/trio
 MAKE_ENV+=	trio=1
 .endif
 
-.if defined(WITH_X11)
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=	xt
 MAKE_ENV+=	xt=1
 PLIST_SUB+=	X11=""
@@ -64,7 +63,7 @@ PLIST_SUB+=	X11=""
 PLIST_SUB+=	X11="@comment "
 .endif
 
-.if defined(WITH_FLTK)
+.if ${PORT_OPTIONS:MFLTK}
 LIB_DEPENDS+=	fltk:${PORTSDIR}/x11-toolkits/fltk
 MAKE_ENV+=	fl=1
 PLIST_SUB+=	FLTK=""
@@ -72,7 +71,7 @@ PLIST_SUB+=	FLTK=""
 PLIST_SUB+=	FLTK="@comment "
 .endif
 
-.if defined(WITH_TK)
+.if ${PORT_OPTIONS:MTK}
 USE_TK_BUILD=	yes
 USE_TK=		yes
 MAKE_ENV+=	tk=1
@@ -81,7 +80,7 @@ PLIST_SUB+=	TK=""
 PLIST_SUB+=	TK="@comment "
 .endif
 
-.if defined(WITH_QT)
+.if ${PORT_OPTIONS:MQT4}
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui moc_build
 MAKE_ENV+=	qt=1 qt4=1 QTDIR="${QT_PREFIX}"
