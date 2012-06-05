@@ -7,7 +7,7 @@
 
 PORTNAME=	pdksh
 PORTVERSION=	5.2.14p2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	shells
 MASTER_SITES=	http://gd.tuwien.ac.at/utils/shells/pdksh/ \
 		ftp://ftp.lip6.fr/pub/unix/shells/pdksh/ \
@@ -20,6 +20,7 @@ PATCH_DIST_STRIP=	-p2
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	The Public Domain Korn Shell
+LICENSE=	BSD
 
 GNU_CONFIGURE=	yes
 MAN1=		ksh.1
