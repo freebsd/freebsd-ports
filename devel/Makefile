@@ -3347,6 +3347,7 @@
     SUBDIR += py-pycallgraph
     SUBDIR += py-pycerberus
     SUBDIR += py-pydasm
+    SUBDIR += py-pyev
     SUBDIR += py-pygpx
     SUBDIR += py-pyke
     SUBDIR += py-pylib
