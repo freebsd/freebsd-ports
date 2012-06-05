@@ -38,13 +38,17 @@ BOINC_CLIENT_USER?=	boinc
 BOINC_CLIENT_GROUP?=	nobody
 BOINC_CLIENT_HOME?=	/var/db/boinc
 
-OPTIONS=	X11		"Build screensaver (requires net/boinc-client with X11)" off
+OPTIONS_DEFINE=	X11
 
-.include <bsd.port.pre.mk>
+X11_DESC=	Build screensaver (requires net/boinc-client with X11)
 
-.if !defined(WITHOUT_X11)
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		xcb.2:${PORTSDIR}/x11/libxcb
+OPTIONS_DEFAULT=
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MX11}
+LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
+		xcb:${PORTSDIR}/x11/libxcb
 USE_GL=		gl glu glut
 USE_XORG=	ice sm x11 xau xext xi xdamage xdmcp xfixes xmu xt xxf86vm
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libboinc_graphics2.a:${PORTSDIR}/net/boinc-client
@@ -102,7 +106,7 @@ do-install:
 	    ${BOINC_CLIENT_HOME}/projects/${SETI_SITE}
 	${INSTALL_PROGRAM} -o ${BOINC_CLIENT_USER} -g ${BOINC_CLIENT_GROUP} \
 	    ${WRKSRC}/client/${SETI_BINARY} ${BOINC_CLIENT_HOME}/projects/${SETI_SITE}/
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 	${INSTALL_PROGRAM} -o ${BOINC_CLIENT_USER} -g ${BOINC_CLIENT_GROUP} \
 	    ${WRKSRC}/client/seti_graphics ${BOINC_CLIENT_HOME}/projects/${SETI_SITE}/
 .endif
@@ -111,4 +115,4 @@ post-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

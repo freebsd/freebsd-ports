@@ -18,21 +18,23 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 MAKE_JOBS_SAFE=	yes
 
-LIB_DEPENDS=	spectrum.8:${PORTSDIR}/emulators/libspectrum
+LIB_DEPENDS=	spectrum:${PORTSDIR}/emulators/libspectrum
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libspectrum-prefix=${LOCALBASE} \
 		--with-local-prefix=${LOCALBASE}
 
 MAN1=	createhdf.1 fuse-utils.1 listbasic.1 raw2hdf.1 rzxcheck.1 rzxdump.1 rzxtool.1 scl2trd.1 snap2tzx.1 snapconv.1 tapeconv.1 tzxlist.1 profile2map.1
 
+OPTIONS_DEFINE=	AUDIOFILE
+
+AUDIOFILE_DESC=	Build audio <-> tape utilities
+
+OPTIONS_DEFAULT=	AUDIOFILE
+
 .include <bsd.port.options.mk>
 
-OPTIONS=	AUDIOFILE "Build audio <-> tape utilities" on
-
-.include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_AUDIOFILE)
-LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
+.if ${PORT_OPTIONS:MAUDIOFILE}
+LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile
 PLIST_SUB=	AUDIOFILE=""
 MAN1+=		audio2tape.1 tape2wav.1
 .else
@@ -40,10 +42,10 @@ CONFIGURE_ARGS+=--without-audiofile
 PLIST_SUB=	AUDIOFILE="@comment "
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS ChangeLog README ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
