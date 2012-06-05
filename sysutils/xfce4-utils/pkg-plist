@@ -1,6 +1,5 @@
 bin/startxfce4
 bin/xfbrowser4
-bin/xfce4-about
 bin/xfhelp4
 bin/xflock4
 bin/xfmountdev4
@@ -10,7 +9,6 @@ etc/xdg/autostart/xfconf-migration-4.6.desktop
 etc/xdg/xfce4/Xft.xrdb
 etc/xdg/xfce4/xinitrc
 lib/xfce4/xfconf-migration/xfconf-migration-4.6.pl
-share/applications/xfce4-about.desktop
 share/applications/xfhelp4.desktop
 share/applications/xfrun4.desktop
 %%WITH_DBUS%%share/dbus-1/services/org.xfce.RunDialog.service
@@ -98,7 +96,6 @@ share/applications/xfrun4.desktop
 %%DOCSDIR%%/html/zh_CN/index.html
 %%DOCSDIR%%/html/zh_CN/xfce-user-guide.html
 %%DOCSDIR%%/html/zh_CN/xfce-utils.html
-share/icons/hicolor/48x48/apps/xfce4-logo.png
 %%NLS%%share/locale/af/LC_MESSAGES/xfce-utils.mo
 %%NLS%%share/locale/am/LC_MESSAGES/xfce-utils.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/xfce-utils.mo
