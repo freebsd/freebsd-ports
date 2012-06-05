@@ -15,11 +15,11 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A set of Perl5 bindings for gstreamer
 
 BUILD_DEPENDS=	p5-Glib2>=1.101:${PORTSDIR}/devel/p5-Glib2 \
-		${SITE_PERL}/ExtUtils/Depends.pm:${PORTSDIR}/devel/p5-ExtUtils-Depends \
-		${SITE_PERL}/ExtUtils/PkgConfig.pm:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig
+		p5-ExtUtils-Depends>=0.205:${PORTSDIR}/devel/p5-ExtUtils-Depends \
+		p5-ExtUtils-PkgConfig>=1.07:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig
 RUN_DEPENDS=	p5-Glib2>=1.101:${PORTSDIR}/devel/p5-Glib2 \
-		${SITE_PERL}/ExtUtils/Depends.pm:${PORTSDIR}/devel/p5-ExtUtils-Depends \
-		${SITE_PERL}/ExtUtils/PkgConfig.pm:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig
+		p5-ExtUtils-Depends>=0.205:${PORTSDIR}/devel/p5-ExtUtils-Depends \
+		p5-ExtUtils-PkgConfig>=1.07:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig
 
 USE_GMAKE=	yes
 USE_GSTREAMER=	yes
