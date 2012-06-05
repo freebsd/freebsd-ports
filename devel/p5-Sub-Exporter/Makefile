@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Sub-Exporter
-PORTVERSION=	0.982
+PORTVERSION=	0.984
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,9 +21,15 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Sub::Exporter.3 \
-	Sub::Exporter::Cookbook.3 \
-	Sub::Exporter::Tutorial.3 \
-	Sub::Exporter::Util.3
+MAN3=		Sub::Exporter.3 \
+		Sub::Exporter::Cookbook.3 \
+		Sub::Exporter::Tutorial.3 \
+		Sub::Exporter::Util.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501400
+TEST_DEPENDS+=	p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
