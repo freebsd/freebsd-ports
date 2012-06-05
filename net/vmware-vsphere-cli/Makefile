@@ -14,18 +14,18 @@ DISTNAME=		VMware-vSphere-Perl-SDK-${PORTVERSION}-${DISTREL}.i386
 MAINTAINER=		zi@FreeBSD.org
 COMMENT=		VMware vSphere SDK for Perl with CLI tools
 
-BUILD_DEPENDS=		${SITE_PERL}/${PERL_ARCH}/Class/MethodMaker.pm:${PORTSDIR}/devel/p5-Class-MethodMaker \
-			${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay \
-			${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
-			${SITE_PERL}/${PERL_ARCH}/UUID.pm:${PORTSDIR}/devel/p5-UUID \
-			${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-			${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite
-RUN_DEPENDS=		${SITE_PERL}/${PERL_ARCH}/Class/MethodMaker.pm:${PORTSDIR}/devel/p5-Class-MethodMaker \
-			${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay \
-			${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
-			${SITE_PERL}/${PERL_ARCH}/UUID.pm:${PORTSDIR}/devel/p5-UUID \
-			${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-			${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite
+BUILD_DEPENDS=		p5-Class-MethodMaker>=0:${PORTSDIR}/devel/p5-Class-MethodMaker \
+			p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
+			p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
+			p5-UUID>=0:${PORTSDIR}/devel/p5-UUID \
+			p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
+			p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite
+RUN_DEPENDS=		p5-Class-MethodMaker>=0:${PORTSDIR}/devel/p5-Class-MethodMaker \
+			p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
+			p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
+			p5-UUID>=0:${PORTSDIR}/devel/p5-UUID \
+			p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
+			p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite
 
 PERL_CONFIGURE=		yes
 RESTRICTED=		Downloading requires acceptance of license agreement

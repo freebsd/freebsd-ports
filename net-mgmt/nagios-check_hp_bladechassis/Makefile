@@ -17,7 +17,7 @@ COMMENT=	Nagios Plugin to monitor your HP Blade Enclosure
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP
+RUN_DEPENDS=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
