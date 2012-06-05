@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	atunes
-PORTVERSION=	2.0.1
-PORTREVISION?=	2
+PORTVERSION=	2.1.0
 CATEGORIES=	audio java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/aTunes%20${PORTVERSION}
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	A full-featured audio player and manager developed in Java
