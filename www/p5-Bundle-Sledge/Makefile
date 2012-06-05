@@ -15,32 +15,30 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A bundle to install all modules used for Sledge
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2 \
-		${SITE_PERL}/Test/Inline.pm:${PORTSDIR}/devel/p5-Test-Inline \
-		${SITE_PERL}/Carp/Assert.pm:${PORTSDIR}/devel/p5-Carp-Assert \
-		${SITE_PERL}/Class/Fields.pm:${PORTSDIR}/devel/p5-Class-Fields \
-		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
-		${SITE_PERL}/Class/Data/Inheritable.pm:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
-		${SITE_PERL}/Class/Singleton.pm:${PORTSDIR}/devel/p5-Class-Singleton \
-		${SITE_PERL}/Class/Trigger.pm:${PORTSDIR}/devel/p5-Class-Trigger \
-		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
-		${SITE_PERL}/HTML/FillInForm.pm:${PORTSDIR}/www/p5-HTML-FillInForm \
-		${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
-		${SITE_PERL}/HTML/StickyQuery.pm:${PORTSDIR}/www/p5-HTML-StickyQuery \
-		${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
-		${JCODE}:${PORTSDIR}/japanese/p5-Jcode \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
-		${SITE_PERL}/Data/Properties.pm:${PORTSDIR}/devel/p5-Data-Properties \
-		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
-		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-libapreq2>=0:${PORTSDIR}/www/p5-libapreq2 \
+		p5-Test-Inline>=0:${PORTSDIR}/devel/p5-Test-Inline \
+		p5-Carp-Assert>=0:${PORTSDIR}/devel/p5-Carp-Assert \
+		p5-Class-Fields>=0:${PORTSDIR}/devel/p5-Class-Fields \
+		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
+		p5-Class-Singleton>=0:${PORTSDIR}/devel/p5-Class-Singleton \
+		p5-Class-Trigger>=0:${PORTSDIR}/devel/p5-Class-Trigger \
+		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
+		p5-HTML-FillInForm>=0:${PORTSDIR}/www/p5-HTML-FillInForm \
+		p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
+		p5-HTML-StickyQuery>=0:${PORTSDIR}/www/p5-HTML-StickyQuery \
+		p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
+		p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
+		p5-Data-Properties>=0:${PORTSDIR}/devel/p5-Data-Properties \
+		p5-Error>=0:${PORTSDIR}/lang/p5-Error \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_APACHE=	20+
 PERL_CONFIGURE=	yes
 
 MAN3=		Bundle::Sledge.3
-
-JCODE=	${SITE_PERL}/Jcode.pm
 
 .include <bsd.port.mk>

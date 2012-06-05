@@ -14,12 +14,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Maintain information about the state of links
 
-BUILD_DEPENDS=	${SITE_PERL}/HTTP/Response.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/HTML/Stream.pm:${PORTSDIR}/www/p5-HTML-Stream \
-		${SITE_PERL}/CGI/Form.pm:${PORTSDIR}/www/p5-CGI-modules \
-		${SITE_PERL}/Net/Telnet.pm:${PORTSDIR}/net/p5-Net-Telnet \
-		${SITE_PERL}/MLDBM.pm:${PORTSDIR}/databases/p5-MLDBM \
-		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long
+BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-HTML-Stream>=0:${PORTSDIR}/www/p5-HTML-Stream \
+		p5-CGI-modules>=0:${PORTSDIR}/www/p5-CGI-modules \
+		p5-Net-Telnet>=0:${PORTSDIR}/net/p5-Net-Telnet \
+		p5-MLDBM>=0:${PORTSDIR}/databases/p5-MLDBM \
+		p5-Getopt-Long>=0:${PORTSDIR}/devel/p5-Getopt-Long
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

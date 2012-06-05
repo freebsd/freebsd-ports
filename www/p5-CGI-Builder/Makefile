@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module intended to make it easier to create reusable web apps
 
-BUILD_DEPENDS=	${SITE_PERL}/IO/Util.pm:${PORTSDIR}/devel/p5-IO-Util \
-		${SITE_PERL}/Class/constr.pm:${PORTSDIR}/devel/p5-OOTools
+BUILD_DEPENDS=	p5-IO-Util>=0:${PORTSDIR}/devel/p5-IO-Util \
+		p5-OOTools>=0:${PORTSDIR}/devel/p5-OOTools
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
