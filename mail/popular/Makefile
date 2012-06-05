@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.remote.org/jochen/mail/popular/download/
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Suite of programs for setting up large POP3 server systems
 
-BUILD_DEPENDS=	${SITE_PERL}/XML/DOM.pm:${PORTSDIR}/textproc/p5-XML-DOM
+BUILD_DEPENDS=	p5-XML-DOM>=0:${PORTSDIR}/textproc/p5-XML-DOM
 
 CONFLICTS=	pserv-[0-9]* synce-librapi2-[0-9]*
 
