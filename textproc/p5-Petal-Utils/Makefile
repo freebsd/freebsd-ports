@@ -15,9 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Useful template modifiers for Petal
 
-RUN_DEPENDS=	${SITE_PERL}/Petal.pm:${PORTSDIR}/textproc/p5-Petal \
-		${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
-		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI
+RUN_DEPENDS=	p5-Petal>=0:${PORTSDIR}/textproc/p5-Petal \
+		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
 MAN3=	Petal::Utils.3
 
