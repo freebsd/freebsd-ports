@@ -3688,6 +3688,7 @@
     SUBDIR += rubygem-authlogic
     SUBDIR += rubygem-awesome_print
     SUBDIR += rubygem-backports
+    SUBDIR += rubygem-bacon
     SUBDIR += rubygem-benelux
     SUBDIR += rubygem-bioruby
     SUBDIR += rubygem-bson
