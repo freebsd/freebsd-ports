@@ -60,7 +60,7 @@ haproxy_reload()
 	${command} -q -c -f ${haproxy_config}
 	if [ $? -ne 0 ]; then
 		echo "Error found in ${haproxy_config} - not reloading current process!"
-		return
+		return 1
 	fi
 	rc_pid=$(check_pidfile ${haproxy_pidfile} ${command})
 	if [ $rc_pid ]; then
@@ -71,6 +71,7 @@ haproxy_reload()
 		fi
 	else
 		echo "No process found.  Maybe $command isn't running?"
+		return 1
 	fi
 }
 
