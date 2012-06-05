@@ -21,6 +21,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	xapian-core10>=1.0.22:${PORTSDIR}/databases/xapian-core10
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+CONFLICTS=	p5-Search-Xapian-1.[^0]*
+
 PERL_CONFIGURE=	yes
 CC=		${CXX}
 
