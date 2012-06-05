@@ -6,28 +6,40 @@
 #
 
 PORTNAME=	buici-clock
-PORTVERSION=	0.4.5
-PORTREVISION=	3
+PORTVERSION=	0.4.9.2
 CATEGORIES=	x11-clocks
-MASTER_SITES=	ftp://ftp.buici.com/pub/buici-clock/
+MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xlib implementation of an attractive, configurable clock
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+LICENSE=	GPLv2 # (or later)
 
+LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+USE_XORG=	x11 xext
+USE_GNOME=	pkgconfig
 USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_XORG=	x11 xau xdmcp xext ice sm
+MAKE_JOBS_UNSAFE=yes
 
-MAN1=	buici-clock.1
+MAN1=		buici-clock.1
 PLIST_FILES=	bin/buici-clock
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,_=,+=,' ${WRKSRC}/xo/Makefile.in
-	@${REINPLACE_CMD} -e 's|\./configure|./configure ${CONFIGURE_ARGS}|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|\./configure|./configure ${CONFIGURE_ARGS}|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|echo -e|echo| ; \
+		 s|-g | |' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|_=|+=| ; \
+		 s|-g | |' ${WRKSRC}/xo/Makefile.in
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/buici-clock ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/buici-clock.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
