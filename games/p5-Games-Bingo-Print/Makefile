@@ -15,12 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Games::Bingo::Print - PDF Generation Class
 
-BUILD_DEPENDS=	${SITE_PERL}/Games/Bingo.pm:${PORTSDIR}/games/p5-Games-Bingo \
-		${SITE_PERL}/PDFLib.pm:${PORTSDIR}/print/p5-PDFLib \
-		${SITE_PERL}/TAP/Harness.pm:${PORTSDIR}/devel/p5-Test-Harness \
-		${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod \
-		${SITE_PERL}/Test/Perl/Critic.pm:${PORTSDIR}/textproc/p5-Test-Perl-Critic \
-		${SITE_PERL}/Test/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Test-Pod-Coverage
+BUILD_DEPENDS=	p5-Games-Bingo>=0:${PORTSDIR}/games/p5-Games-Bingo \
+		p5-PDFLib>=0:${PORTSDIR}/print/p5-PDFLib \
+		p5-Test-Harness>=0:${PORTSDIR}/devel/p5-Test-Harness \
+		p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
+		p5-Test-Perl-Critic>=0:${PORTSDIR}/textproc/p5-Test-Perl-Critic \
+		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

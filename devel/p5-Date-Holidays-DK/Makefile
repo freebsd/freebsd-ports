@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Determine Danish public holidays
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Date/Simple.pm:${PORTSDIR}/devel/p5-Date-Simple \
-		${SITE_PERL}/Date/Easter.pm:${PORTSDIR}/devel/p5-Date-Easter
+BUILD_DEPENDS=	p5-Date-Simple>=0:${PORTSDIR}/devel/p5-Date-Simple \
+		p5-Date-Easter>=0:${PORTSDIR}/devel/p5-Date-Easter
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

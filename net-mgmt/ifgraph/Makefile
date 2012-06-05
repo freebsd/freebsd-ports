@@ -16,7 +16,7 @@ COMMENT=	Simple grapher of SNMP data with RRD
 
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool \
 		p5-Color-Rgb>0:${PORTSDIR}/graphics/p5-Color-Rgb \
-		${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP
+		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_PERL5=	yes

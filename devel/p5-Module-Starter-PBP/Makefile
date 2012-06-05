@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Create a module as recommended in "Perl Best Practices"
 
-BUILD_DEPENDS=	${SITE_PERL}/Module/Starter.pm:${PORTSDIR}/devel/p5-Module-Starter \
-		${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version
+BUILD_DEPENDS=	p5-Module-Starter>=0:${PORTSDIR}/devel/p5-Module-Starter \
+		p5-version>=0:${PORTSDIR}/devel/p5-version
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
