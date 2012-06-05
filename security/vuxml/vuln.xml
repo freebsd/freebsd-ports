@@ -52,6 +52,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1e14d46f-af1f-11e1-b242-00215af774f0">
+    <topic>quagga -- BGP OPEN denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>quagga</name>
+	<range><le>0.99.20.1</le></range>
+      </package>
+      <package>
+	<name>quagga-re</name>
+	<range><lt>0.99.17.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CERT reports:</p>
+	<blockquote cite="http://www.kb.cert.org/vuls/id/962587">
+	  <p>If a pre-configured BGP peer sends a specially-crafted OPEN
+	    message with a malformed ORF capability TLV, Quagga bgpd process
+	    will erroneously try to consume extra bytes from the input packet
+	    buffer. The process will detect a buffer overrun attempt before
+	    it happens and immediately terminate with an error message. All
+	    BGP sessions established by the attacked router will be closed
+	    and its BGP routing disrupted.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-1820</cvename>
+      <url>http://www.kb.cert.org/vuls/id/962587</url>
+    </references>
+    <dates>
+      <discovery>2012-06-04</discovery>
+      <entry>2012-06-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="de6d8290-aef7-11e1-898f-14dae938ec40">
     <topic>mail/sympa* -- Multiple vulnerabilities in Sympa archive management</topic>
     <affects>
