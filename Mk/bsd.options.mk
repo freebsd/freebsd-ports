@@ -41,6 +41,7 @@ ALL_OPTIONS:=	${ALL_OPTIONS:N${opt}}
 
 #XXX  to kill when old option framework won't be used anymore
 .if defined(OPTIONS)
+NO_OPTIONS_SORT=	yes
 .  undef optname
 .  for O in ${OPTIONS:S|\#|\\\#|g}
 opt:=	${O}
