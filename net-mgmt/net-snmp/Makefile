@@ -91,7 +91,7 @@ CONFIGURE_ARGS+=--with-dummy-values
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-local:Makefile.in
 PLIST_SUB+=	WITH_TKMIB="@comment "
 .else
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
+RUN_DEPENDS+=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk
 PLIST_SUB+=	WITH_TKMIB=""
 .endif
 
