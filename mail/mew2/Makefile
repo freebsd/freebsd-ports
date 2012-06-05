@@ -15,6 +15,9 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Message interface to Emacs Window (version 2) for emacs21
 
+DEPRECATED=	Development of this versions ceased, superseded by mail/mew
+EXPIRATION_DATE=2012-07-05
+
 USE_PERL5_BUILD=yes
 
 # Mew major version
