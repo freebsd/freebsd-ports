@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl SAX driver for the Sablotron XSLT
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Sablotron.pm:${PORTSDIR}/textproc/p5-XML-Sablotron \
-		${SITE_PERL}/XML/SAX/Base.pm:${PORTSDIR}/textproc/p5-XML-SAX
+BUILD_DEPENDS=	p5-XML-Sablotron>=0:${PORTSDIR}/textproc/p5-XML-Sablotron \
+		p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Dcumentation projects builder in HTML, PS and PDF formats
 
-BUILD_DEPENDS=	${SITE_PERL}/Pod/POM.pm:${PORTSDIR}/textproc/p5-Pod-POM \
-				${SITE_PERL}/${PERL_ARCH}/Template/Toolkit.pod:${PORTSDIR}/www/p5-Template-Toolkit
+BUILD_DEPENDS=	p5-Pod-POM>=0:${PORTSDIR}/textproc/p5-Pod-POM \
+				p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit
 
 MAKE_JOBS_SAFE=  yes
 
