@@ -15,20 +15,25 @@ MASTER_SITES=	SF/gnupdate/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transparently handles automatic compression and decompression of files
 
+LICENSE=	LGPL21
+
 #LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 
-GNU_CONFIGURE=	yes
+OPTIONS_DEFINE=	NLS
+
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack pkgconfig
+USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
-USE_LDCONFIG=	yes
-
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
-BROKEN=		Does not build without gettext
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif

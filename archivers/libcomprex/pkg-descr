@@ -4,4 +4,4 @@ functions, which provides a smooth transition to libcomprex. libcomprex
 can also open uncompressed files, making it a good replacement for the
 native file access functions.
 
-WWW: http://www.gnupdate.org/components/libcomprex/index.xml
+WWW: http://gnupdate.sourceforge.net/components/libcomprex/index.xml
