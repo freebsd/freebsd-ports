@@ -7,26 +7,24 @@
 
 PORTNAME=	nam
 PORTVERSION=	1.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://www.isi.edu/nsnam/dist/
 DISTNAME=	nam-src-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	masaki@club.kyutech.ac.jp
 COMMENT=	Animation tool for network simulation traces
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtclcl.a:${PORTSDIR}/devel/tclcl
 LIB_DEPENDS=	otcl.1:${PORTSDIR}/lang/otcl
 
-BROKEN=		does not configure
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_XORG=	xmu
 GNU_CONFIGURE=	yes
-CXXFLAGS+=	-I${LOCALBASE}/include/tclcl
-CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4
-MAKE_ARGS=	CCOPT="${CXXFLAGS}"
+CONFIGURE_ARGS=	--with-tcl-ver=${TCL_VER} --with-tk-ver=${TK_VER} --x-libraries=${LOCALBASE}/lib --x-includes=${LOCALBASE}/include
+USE_GMAKE=	yes
+USE_TK=		85+
 ALL_TARGET=	${PORTNAME}
 
 MAN1=		nam.1
