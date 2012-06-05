@@ -32,7 +32,7 @@ CONFDIR=	${PREFIX}/etc/${PORTNAME}
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500806
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Encode.pm:${PORTSDIR}/converters/p5-Encode
+RUN_DEPENDS+=	p5-Encode>=0:${PORTSDIR}/converters/p5-Encode
 .endif
 
 post-patch:
