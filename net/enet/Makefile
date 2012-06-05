@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	enet
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://enet.bespin.org/download/
@@ -14,24 +14,28 @@ MASTER_SITES=	http://enet.bespin.org/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple and robust communication library based on UDP
 
-GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake autoconf:env
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+OPTIONS_DEFINE=	DOCS
+
+USE_AUTOTOOLS=	aclocal automake autoconf libtool
+ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
-DOCS=		design.txt docs/FAQ.dox docs/design.dox docs/tutorial.dox
+PORTDOCS=	*
 
-
-AUTOTOOLSFILES=	aclocal.m4
+.include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|1.11.1|%%AUTOMAKE_APIVER%%|g' \
-			  -e 's|2.67|%%AUTOCONF_VERSION%%|g' \
-			  ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e '/^pkgconfigdir/s|$$(libdir)|$$(prefix)/libdata|' \
+		${WRKSRC}/Makefile.am
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+	@(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} html ${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
