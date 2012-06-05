@@ -32,6 +32,10 @@ BUILD_DEPENDS+=	\
 	${LOCALBASE}/bin/mhonarc:${PORTSDIR}/www/mhonarc
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+FORBIDDEN=	Multiple vulnerabilities have been discovered in Sympa archive management that allow to skip the scenario-based authorization mechanisms.  http://www.sympa.org/security_advisories#security_breaches_in_archives_management
+DEPRECATED=	Unsupported by upstream, ${FORBIDDEN}
+EXPIRATION_DATE=2012-07-05
+
 USERS=		sympa
 GROUPS=		sympa
 SUB_FILES=	pkg-install
