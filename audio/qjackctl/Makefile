@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qjackctl
-DISTVERSION=	0.3.8
-PORTREVISION=	2
+DISTVERSION=	0.3.9
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
@@ -38,9 +37,6 @@ MAN1=		qjackctl.1
 
 LUPDATE=	${LOCALBASE}/bin/lupdate-qt4
 LRELEASE=	${LOCALBASE}/bin/lrelease-qt4
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|share/man|man|g' ${WRKSRC}/Makefile.in
 
 post-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} -o ${PORTNAME}.mak \
