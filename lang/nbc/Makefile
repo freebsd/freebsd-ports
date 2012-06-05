@@ -7,7 +7,7 @@
 
 PORTNAME=		nbc
 PORTVERSION=		1.2.1.r4
-PORTREVISION=	4
+PORTREVISION=		4
 CATEGORIES=		lang
 MASTER_SITES=		SF
 MASTER_SITE_SUBDIR=	bricxcc/NBC_NXC/NBC%20release%20${PORTVERSION:S/.r/%20r/}
@@ -20,11 +20,15 @@ COMMENT=		NBC is a programming language for the LEGO MINDSTORMS NXT product
 MAKE_JOBS_UNSAFE=	yes
 MAKEFILE=		nbcunix.mak
 
-OPTIONS=	ROBOCTL	"Include roboctl to communicate with the NXT"	off
+OPTIONS_DEFINE=	ROBOCTL
 
-.include <bsd.port.pre.mk>
+ROBOCTL_DESC=	Include roboctl to communicate with the NXT
 
-.if !defined(WITHOUT_ROBOCTL)
+OPTIONS_DEFAULT=
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MROBOCTL}
 RUN_DEPENDS=		legoctl:${PORTSDIR}/devel/roboctl
 .endif
 
@@ -44,7 +48,7 @@ PLIST_FILES=		bin/nbc \
 			include/nbc/NXTDefs.h
 PLIST_DIRS=		include/nbc
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=		Changelog \
 			Readme
 .endif
@@ -57,10 +61,10 @@ do-install:
 	${MKDIR} ${PREFIX}/include/nbc
 	${INSTALL_PROGRAM} ${WRKSRC}/nbc ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/nbc
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/doc/Changelog ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/doc/Readme ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
