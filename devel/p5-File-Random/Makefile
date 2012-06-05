@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module for random selecting of a file
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Want.pm:${PORTSDIR}/devel/p5-Want \
+BUILD_DEPENDS=	p5-Want>=0:${PORTSDIR}/devel/p5-Want \
 		p5-Set-Scalar>0:${PORTSDIR}/devel/p5-Set-Scalar
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Class>=0.03:${PORTSDIR}/devel/p5-Test-Class \

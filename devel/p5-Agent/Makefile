@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module that provides a foundation for software agent developers
 
-BUILD_DEPENDS=	${SITE_PERL}/Class/Tom.pm:${PORTSDIR}/devel/p5-Class-Tom
+BUILD_DEPENDS=	p5-Class-Tom>=0:${PORTSDIR}/devel/p5-Class-Tom
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
