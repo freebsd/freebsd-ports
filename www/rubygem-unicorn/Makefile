@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unicorn
-PORTVERSION=	4.2.0
+PORTVERSION=	4.3.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -14,8 +14,8 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Unicorn is an HTTP server for Rack applications
 
 RUN_DEPENDS=	rubygem-rack>=0:${PORTSDIR}/www/rubygem-rack \
-		rubygem-kgio>=2.4:${PORTSDIR}/devel/rubygem-kgio \
-		rubygem-raindrops>=0.6:${PORTSDIR}/www/rubygem-raindrops
+		rubygem-kgio>=2.6:${PORTSDIR}/devel/rubygem-kgio \
+		rubygem-raindrops>=0.7:${PORTSDIR}/www/rubygem-raindrops
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
