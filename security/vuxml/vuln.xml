@@ -52,6 +52,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="de6d8290-aef7-11e1-898f-14dae938ec40">
+    <topic>mail/sympa* -- Multiple vulnerabilities in Sympa archive management</topic>
+    <affects>
+      <package>
+	<name>sympa</name>
+	<range><lt>6.0.7</lt></range>
+	<range><gt>6.1.*</gt><lt>6.1.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>David Verdin reports:</p>
+	<blockquote cite="http://www.sympa.org/security_advisories#security_breaches_in_archives_management">
+	  <p>Multiple vulnerabilities have been discovered in Sympa archive
+	    management that allow to skip the scenario-based authorization
+	    mechanisms.</p>
+	  <p>This breach allows to:</p>
+	  <ul>
+	    <li>display the archives management page ('arc_manage')</li>
+	    <li>download the list's archives</li>
+	    <li>delete the list's archives</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.sympa.org/security_advisories#security_breaches_in_archives_management</url>
+    </references>
+    <dates>
+      <discovery>2012-05-15</discovery>
+      <entry>2012-06-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1ecc0d3f-ae8e-11e1-965b-0024e88a8c98">
     <topic>dns/bind9* -- zero-length RDATA can cause named to terminate, reveal memory</topic>
     <affects>
