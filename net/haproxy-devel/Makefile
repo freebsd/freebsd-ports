@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	haproxy
-DISTVERSION=	1.5-dev6
-PORTREVISION=	1
+DISTVERSION=	1.5-dev11
 CATEGORIES=	net
 MASTER_SITES=	http://haproxy.1wt.eu/download/1.5/src/devel/
 PKGNAMESUFFIX=	-devel
