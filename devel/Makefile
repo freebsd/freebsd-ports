@@ -3770,6 +3770,7 @@
     SUBDIR += rubygem-logging
     SUBDIR += rubygem-loquacious
     SUBDIR += rubygem-main
+    SUBDIR += rubygem-map
     SUBDIR += rubygem-mash
     SUBDIR += rubygem-metaid
     SUBDIR += rubygem-method_source
