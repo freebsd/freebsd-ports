@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	recoll
-PORTVERSION=	1.17.2
-PORTREVISION=	1
+PORTVERSION=	1.17.3
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lesbonscomptes.com/recoll/
 
@@ -19,10 +18,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	xapian.26:${PORTSDIR}/databases/xapian-core
 
-OPTIONS=	QT "Enable Qt-based GUI support" on \
-		ASPELL "Enable ASpell support" on \
-		PYTHON "Enable Python module support" on \
-		X11MON "Enable X11 session monitoring support" on
+OPTIONS_DEFINE=	QT4 ASPELL PYTHON X11MON
+OPTIONS_DEFAULT=QT4 ASPELL PYTHON X11MON
+ASPELL_DESC=	Enable ASpell support
+X11MON_DESC=	Enable X11 session monitoring support
 
 USE_ICONV=	yes
 USE_GMAKE=	yes
@@ -37,10 +36,7 @@ MAN5=		recoll.conf.5
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_QT)
-CONFIGURE_ARGS+=--disable-qtgui
-PLIST_SUB+=	QT="@comment "
-.else
+.if ${PORT_OPTIONS:MQT4}
 USE_QT_VER=	4
 QT_COMPONENTS=	webkit moc_build qmake_build rcc_build uic_build
 QT_NONSTANDARD=	yes
@@ -48,30 +44,33 @@ CONFIGURE_ENV+=	QTDIR="${QT_PREFIX}" QMAKE="${QMAKE}"
 INSTALLS_ICONS=	yes
 PLIST_SUB+=	QT=""
 MAN1+=		recoll.1
+.else
+CONFIGURE_ARGS+=--disable-qtgui
+PLIST_SUB+=	QT="@comment "
 .endif
 
-.if defined(WITHOUT_ASPELL)
-CONFIGURE_ARGS+=--without-aspell
-.else
+.if ${PORT_OPTIONS:MASPELL}
 LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
+.else
+CONFIGURE_ARGS+=--without-aspell
 .endif
 
-.if defined(WITHOUT_PYTHON)
-CONFIGURE_ARGS+=--disable-python-module
-PLIST_SUB+=	PYTHON="@comment "
-.else
+.if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	yes
 INSTALLS_EGGINFO=	yes
 PYDISTUTILS_EGGINFO=	Recoll-1.0-py${PYTHON_VER}.egg-info
 PLIST_SUB+=	PYTHON=""
+.else
+CONFIGURE_ARGS+=--disable-python-module
+PLIST_SUB+=	PYTHON="@comment "
 .endif
 
-.if defined(WITHOUT_X11MON)
-CONFIGURE_ARGS+=--disable-x11mon
-.else
+.if ${PORT_OPTIONS:MX11MON}
 USE_XORG+=	ice sm x11
 USE_FAM=	yes
 CONFIGURE_ARGS+=--with-fam
+.else
+CONFIGURE_ARGS+=--disable-x11mon
 .endif
 
 post-patch:
@@ -80,14 +79,12 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/local/lib|${LOCALBASE}/lib|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
-		'/--prefix=/s|^|@NOPYTHON@|' ${WRKSRC}/recollinstall.in
-	@${REINPLACE_CMD} -e \
 		's|= -g -O2|=|' ${WRKSRC}/mk/localdefs.in
 	@${REINPLACE_CMD} -e \
 		's|-pthread|${PTHREAD_LIBS}|' ${WRKSRC}/mk/${OPSYS}
 
 post-configure:
-.if !defined(WITHOUT_QT)
+.if ${PORT_OPTIONS:MQT4}
 	@(cd ${WRKSRC}/qtgui && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS})
 .endif
 
