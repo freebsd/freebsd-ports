@@ -28,21 +28,28 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
 PORTDOCS=	armrc.sample
 
-OPTIONS=	TOR "Install tor locally" On
+OPTIONS_DEFINE=	TOR \
+		DOCS
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFAULT=TOR DOCS
 
-.if defined(WITH_TOR)
+TOR_DESC=	Enable local tor support
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MTOR}
 RUN_DEPENDS+=	lsof:${PORTSDIR}/sysutils/lsof \
 		tor:${PORTSDIR}/security/tor
 .endif
 
+.include <bsd.port.pre.mk>
+
 post-patch:
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's,/usr/share/doc/,${WRKSRC}/src,g' \
+.if ${PORT_OPTIONS:MDOCS}
+	@${REINPLACE_CMD} -e 's,/usr/share/doc,${PREFIX}/share/doc,g' \
 		${WRKSRC}/setup.py
 .else
-	@${REINPLACE_CMD} -e 's,/usr/share/doc,${PREFIX}/share/doc,g' \
+	@${REINPLACE_CMD} -e 's,/usr/share/doc/,${WRKSRC}/src,g' \
 		${WRKSRC}/setup.py
 .endif
 
