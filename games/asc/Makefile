@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	asc
-PORTVERSION=	2.4.0.0
-PORTREVISION=	2
+PORTVERSION=	2.5.0.0
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}-hq/ASC%20Source/${PORTVERSION:R} \
 		http://www.asc-hq.org/music/
@@ -18,6 +17,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A turn based, multiplayer strategic game with very nice graphics
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/lib/libloki.so:${PORTSDIR}/devel/loki
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
@@ -26,8 +27,8 @@ LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 		expat.6:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-OPTIONS=	MUSIC "Install extra music files" off \
-		XVID "Enable Xvid support" off
+OPTIONS_DEFINE=	MUSIC XVID
+MUSIC_DESC=	Install extra music files
 
 USE_BZIP2=	yes
 USE_SDL=	image mixer sound sdl
@@ -38,6 +39,7 @@ LUA_COMPS=	lua
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN6=		asc.6 asc_demount.6 asc_mapedit.6 asc_mount.6 \
 		asc_weaponguide.6
@@ -50,9 +52,9 @@ CFLAGS+=	-D_UNICODE_BROKEN_
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MUSIC)
+.if ${PORT_OPTIONS:MMUSIC}
 ASC_MUSICS=	frontiers.ogg time_to_strike.ogg machine_wars.ogg
 ASC_MUSICDIR=	%%DATADIR%%/music
 .for file in ${ASC_MUSICS}
@@ -63,14 +65,14 @@ PLIST_FILES+=	${ASC_MUSICDIR}/${file}
 .undef ASC_MUSICDIR
 .endif
 
-.if defined(WITH_XVID)
+.if ${PORT_OPTIONS:MXVID}
 LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
 .else
 CONFIGURE_ENV+=	ac_cv_lib_xvidcore_xvid_encore=no
 .endif
 
 post-extract:
-.if defined(WITH_MUSIC)
+.if ${PORT_OPTIONS:MMUSIC}
 .for file in ${ASC_MUSICS}
 	@${TAR} -C ${DISTDIR}/${DIST_SUBDIR} -cf - ${file} | \
 		${TAR} -C ${WRKSRC}/data/music --unlink -xf -
@@ -78,13 +80,9 @@ post-extract:
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "*.cpp" -print0 | ${XARGS} -0 \
-		${REINPLACE_CMD} -e \
-		's|<malloc\.h>|<stdlib.h>|g'
 	@${FIND} ${WRKSRC} -name "Makefile.in" -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e \
-		's|/games/|/|g ; \
-		 s|$$(srcdir)/asc_makegfx.6||g'
+		's|/games/|/|g'
 	@${REINPLACE_CMD} -e \
 		's|/games/|/|g ; \
 		 s|lua >=|lua-5.1 >=|g ; \
@@ -93,4 +91,4 @@ post-patch:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
