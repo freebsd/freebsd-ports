@@ -25,8 +25,6 @@ USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	XAWVER="${XAWVER}"
 
-OPTIONS=	NLS "Provide limited Natural Language Support via gettext" on
-
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_NLS)
