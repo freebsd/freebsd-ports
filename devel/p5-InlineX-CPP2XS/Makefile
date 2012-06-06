@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	InlineX-CPP2XS
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SISYPHUS
@@ -18,6 +18,7 @@ COMMENT=	Convert from Inline C++ code to XS
 BUILD_DEPENDS=	p5-Inline>=0.50:${PORTSDIR}/devel/p5-Inline \
 		p5-Inline-CPP>=0.39:${PORTSDIR}/devel/p5-Inline-CPP
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Warn>=0.24:${PORTSDIR}/devel/p5-Test-Warn
 
 PERL_CONFIGURE=	yes
 
