@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	OO wrapper to gpc library
 
-BUILD_DEPENDS=	${SITE_PERL}/Inline/MakeMaker.pm:${PORTSDIR}/devel/p5-Inline
-RUN_DEPENDS=	${SITE_PERL}/Inline/MakeMaker.pm:${PORTSDIR}/devel/p5-Inline
+BUILD_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline
+RUN_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline
 
 PERL_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
