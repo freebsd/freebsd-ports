@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	i3lock
-PORTVERSION=	2.4
-PORTREVISION=	1
+PORTVERSION=	2.4.1
 CATEGORIES=	x11
 MASTER_SITES=	http://i3wm.org/${PORTNAME}/ \
 		http://mirror.4bit.ws/ \
