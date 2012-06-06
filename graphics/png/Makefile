@@ -32,6 +32,10 @@ OPTIONS=	APNG "Animated PNG support" On
 
 .include <bsd.port.pre.mk>
 
+.if !defined(WITH_DEBUG)
+BROKEN=		Please remove WITH_DEBUG for this port
+.endif
+
 .if !defined(WITHOUT_APNG) || make(makesum) || defined(FETCH_ALL)
 MASTER_SITES+=	SF/lib${PORTNAME}-apng/libpng15/${PORTVERSION}:apng 
 DISTFILES+=	${DISTNAME}-apng.patch.gz:apng
