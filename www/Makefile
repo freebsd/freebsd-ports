@@ -1594,6 +1594,7 @@
     SUBDIR += py-scriptaculous
     SUBDIR += py-selenium
     SUBDIR += py-slimmer
+    SUBDIR += py-slumber
     SUBDIR += py-surl
     SUBDIR += py-textile
     SUBDIR += py-tgwebservices
