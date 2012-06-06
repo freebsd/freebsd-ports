@@ -1,0 +1,27 @@
+--- GIF/Makefile.PL	2012-03-18 15:35:09.000000000 +0400
++++ GIF/Makefile.PL	2012-06-06 14:14:57.076093500 +0400
+@@ -109,6 +109,11 @@
+ 
+ sub _gif_test_code {
+   return <<'CODE';
++  
++#ifndef GIF_LIB_VERSION
++#define GIF_LIB_VERSION " Version 4.2, "
++#endif
++  
+ /* TODO: test DGifOpen() and processing with callbacks */
+ GifFileType *gf;
+ const char vers[] = GIF_LIB_VERSION;
+--- GIF/imgif.c	2011-11-25 14:31:00.000000000 +0400
++++ GIF/imgif.c	2012-06-06 14:15:13.033980092 +0400
+@@ -10,6 +10,10 @@
+ #include <stdlib.h>
+ #include <stdio.h>
+ 
++#ifndef GIF_LIB_VERSION
++#define GIF_LIB_VERSION " Version 4.2, "
++#endif
++
+ /*
+ =head1 NAME
+ 
