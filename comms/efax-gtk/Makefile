@@ -29,6 +29,8 @@ GNU_CONFIGURE=	yes
 USE_GCC=	4.4+
 MAKE_JOBS_SAFE=	yes
 
+CONFLICTS=	efax-[0-9]*
+
 MAN1=		efax.1 efix.1 efax-gtk.1
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}

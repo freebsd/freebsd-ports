@@ -25,6 +25,8 @@ MAKE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 		INSTALL_DATA="${INSTALL_DATA}"
 
+CONFLICTS=	efax-gtk-*
+
 post-build:
 	${MV} ${WRKSRC}/fax ${WRKSRC}/fax.orig
 	${CAT} ${WRKSRC}/fax.orig | ${SED} -e s!%%PREFIX%%!${PREFIX}!g > \
