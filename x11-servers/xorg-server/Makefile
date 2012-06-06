@@ -74,15 +74,16 @@ MAN5+=		xorg.conf.d.5
 PLIST=		${.CURDIR}/pkg-plist
 .endif
 
-OPTIONS=	AIGLX	"Compile with Accelerated Indirect GLX support" on \
-		SUID	"Install the Xorg server with setuid bit set" on
+OPTIONS_DEFINE=	AIGLX SUID HAL
+AIGLX_DESC=	Compile with Accelerated Indirect GLX support
+SUID_DESC=	Install the Xorg server with setuid bit set
+HAL_DESC=	Compile with HAL config support
+OPTIONS_DEFAULT=	AIGLX SUID HAL
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == sparc64
-OPTIONS+=	HAL	"Compile with HAL config support" off
-.else
-OPTIONS+=	HAL	"Compile with HAL config support" on
+OPTIONS_DEFAULT:=	${OPTIONS_DEFAULT:NHAL}
 .endif
 
 
@@ -93,20 +94,20 @@ OPTIONS+=	HAL	"Compile with HAL config support" on
 CONFIGURE_ENV=	SHA1_LIB="-L/usr/lib -lcrypto" SHA1_CFLAGS="-I/usr/include"
 .endif
 
-.if !defined(WITHOUT_HAL)
+.if ${PORT_OPTIONS:MHAL}
 LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
 CONFIGURE_ARGS+=	--enable-config-hal=yes
 .else
 CONFIGURE_ARGS+=	--enable-config-hal=no
 .endif
 
-.if !defined(WITHOUT_AIGLX)
+.if ${PORT_OPTIONS:MAIGLX}
 CONFIGURE_ARGS+=	--enable-aiglx=yes
 .else
 CONFIGURE_ARGS+=	--enable-aiglx=no
 .endif
 
-.if !defined(WITHOUT_SUID) && (!defined(NO_SUID_XSERVER) || ${NO_SUID_XSERVER} == NO)
+.if ${PORT_OPTIONS:MSUID}
 CONFIGURE_ARGS+=--enable-install-setuid=yes
 .else
 CONFIGURE_ARGS+=--enable-install-setuid=no
@@ -140,14 +141,14 @@ PLIST_SUB+=	AMD64_I386_SPARC64=""
 PLIST_SUB+=	AMD64_I386_SPARC64="@comment "
 .endif
 
-.if !defined(WITHOUT_SUID) && (!defined(NO_SUID_XSERVER) || ${NO_SUID_XSERVER} == NO)
+.if ${PORT_OPTIONS:MSUID}
 pre-everything::
 	@${ECHO_MSG} "By default, the X Server installs as a set-user-id root binary. When run by"
 	@${ECHO_MSG} "a normal user, it checks arguments and environment as done in the x11/wrapper"
 	@${ECHO_MSG} "port before handling them normally.  If you are concerned about the security"
 	@${ECHO_MSG} "of this, but still want to run an X Server (for example using xdm/kdm/gdm,"
 	@${ECHO_MSG} "which will still run the server as root), you can cancel the build and set"
-	@${ECHO_MSG} "NO_SUID_XSERVER=YES in /etc/make.conf."
+	@${ECHO_MSG} "xorg-server_UNSET=SUID in /etc/make.conf."
 .endif
 
 .if defined(WITH_NEW_XORG)
