@@ -7,6 +7,9 @@
 %%SITE_PERL%%/SVG/XML.pm
 @dirrmtry %%SITE_PERL%%/SVG
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVG
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/01_circle.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/02_circle_with_color.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/03_circle_and_square.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/SVG_02_sample.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/attributeManip.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/image_sample.pl
