@@ -298,7 +298,7 @@ DISTFILES+=	ngx_http_auth_request_module-${NGINX_AUTH_REQ_VERSION}.tar.gz:auth_r
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_auth_request_module-${NGINX_AUTH_REQ_VERSION}
 .endif
 
-.if ${PORT_OPTIONS:MHTTP_CACHE}
+.if empty(PORT_OPTIONS:MHTTP_CACHE)
 CONFIGURE_ARGS+=--without-http-cache
 .endif
 
