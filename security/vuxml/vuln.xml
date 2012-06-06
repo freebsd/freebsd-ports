@@ -111,6 +111,7 @@ Note:  Please add new entries to the beginning of this file.
 	<cvename>CVE-2012-1945</cvename>
 	<cvename>CVE-2012-1946</cvename>
 	<cvename>CVE-2012-1947</cvename>
+	<url>http://www.mozilla.org/security/known-vulnerabilities/</url>
 	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-34.html</url>
 	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-36.html</url>
 	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-37.html</url>
@@ -176,7 +177,7 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>Multiple vulnerabilities have been discovered in Sympa archive
 	    management that allow to skip the scenario-based authorization
 	    mechanisms.</p>
-	  <p>This breach allows to:</p>
+	  <p>This vulnerability allows the attacker to:</p>
 	  <ul>
 	    <li>display the archives management page ('arc_manage')</li>
 	    <li>download the list's archives</li>
