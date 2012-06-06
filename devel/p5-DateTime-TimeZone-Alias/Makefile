@@ -15,8 +15,8 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create aliases for DateTime timezones
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	${SITE_PERL}/DateTime/TimeZone.pm:${PORTSDIR}/devel/p5-DateTime-TimeZone \
-		${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime
+RUN_DEPENDS=	p5-DateTime-TimeZone>=0:${PORTSDIR}/devel/p5-DateTime-TimeZone \
+		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime
 
 PERL_MODBUILD=	yes
 
