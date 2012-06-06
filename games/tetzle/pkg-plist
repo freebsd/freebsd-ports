@@ -6,10 +6,12 @@ share/icons/hicolor/22x22/apps/tetzle.png
 share/icons/hicolor/32x32/apps/tetzle.png
 share/icons/hicolor/48x48/apps/tetzle.png
 share/icons/hicolor/64x64/apps/tetzle.png
-share/pixmaps/tetzle.xpm
-%%DATADIR%%/translations/en.qm
-%%DATADIR%%/translations/uk.qm
-%%DATADIR%%/translations/uk_UA.qm
+share/pixmaps/tetzle_32.xpm
+%%DATADIR%%/translations/tetzle_de.qm
+%%DATADIR%%/translations/tetzle_en.qm
+%%DATADIR%%/translations/tetzle_ru.qm
+%%DATADIR%%/translations/tetzle_uk.qm
+%%DATADIR%%/translations/tetzle_uk_UA.qm
 @dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%
 @dirrmtry share/icons/hicolor/64x64/apps
