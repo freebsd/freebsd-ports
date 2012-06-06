@@ -44,11 +44,7 @@ CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 602000
-IGNORE=		needs zlib >= 1.2.3, it is available on FreeBSD >= 6.2
-.endif
+.include <bsd.port.options.mk>
 
 .if defined(WITH_DEBUGGER)
 CONFIGURE_ARGS+=	--enable-debugger
@@ -95,4 +91,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/zsnes ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/linux/zsnes.1 ${MANPREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
