@@ -32,7 +32,7 @@ OPTIONS=	APNG "Animated PNG support" On
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_DEBUG)
+.if defined(WITH_DEBUG)
 BROKEN=		Please remove WITH_DEBUG for this port
 .endif
 
