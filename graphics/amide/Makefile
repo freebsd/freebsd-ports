@@ -28,12 +28,15 @@ INSTALLS_OMF=	yes
 
 MAN1=		amide.1
 
-OPTIONS_DEFINE=	DCMTK FAME FFMPEG GSL VOLPACK XMEDCON
-OPTIONS_DEFAULT= DCMTK FFMPEG GSL VOLPACK XMEDCON
+OPTIONS_DEFINE=	CODEC DCMTK GSL VOLPACK XMEDCON
+OPTIONS_SINGLE=	CODEC
+OPTIONS_SINGLE_CODEC=	FFMPEG FAME
+OPTIONS_DEFAULT=	CODEC DCMTK FFMPEG GSL VOLPACK XMEDCON
 
+CODEC_DESC=	Enable codec support. Choose one of FAME or FFMPEG
 DCMTK_DESC=	Use dcmtk
-FAME_DESC=	Use libfame (mutually exclusive with ffmpeg)
-FFMPEG_DESC=	Use ffmpeg (mutually exclusive with libfame)
+FAME_DESC=	Use libfame
+FFMPEG_DESC=	Use ffmpeg
 GSL_DESC=	Use gsl
 VOLPACK_DESC=	Use volpack
 XMEDCON_DESC=	Use xmedcon
@@ -48,9 +51,6 @@ CONFIGURE_ARGS+=	--disable-libdcmdata
 .endif
 
 .if ${PORT_OPTIONS:MFAME}
-.  if${PORT_OPTIONS:MFFMPEG}
-IGNORE=		libfame and ffmpeg support are mutually exclusive, please check options
-.  endif
 LIB_DEPENDS+=	fame:${PORTSDIR}/multimedia/libfame
 CONFIGURE_ARGS+=	--enable-libfame
 .else
@@ -58,9 +58,6 @@ CONFIGURE_ARGS+=	--disable-libfame
 .endif
 
 .if ${PORT_OPTIONS:MFFMPEG}
-.  if${PORT_OPTIONS:MFAME}
-IGNORE=		libfame and ffmpeg support are mutually exclusive, please check options.
-.  endif
 LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
 CONFIGURE_ARGS+=	--enable-ffmpeg
 .else
