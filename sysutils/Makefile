@@ -468,7 +468,6 @@
     SUBDIR += lineakd
     SUBDIR += linrename
     SUBDIR += linux-afaapps
-    SUBDIR += linux-megacli
     SUBDIR += linux-megamgr
     SUBDIR += linux-nero
     SUBDIR += linux-procps
