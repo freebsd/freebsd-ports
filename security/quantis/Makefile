@@ -31,6 +31,7 @@ LICENSE_FILE=	${WRKSRC}/Quantis-${DISTVERSION}/License.txt
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-aqo
 USE_CMAKE=	yes
+USE_QT4=	yes
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/Quantis-${DISTVERSION}/Libs-Apps
