@@ -20,7 +20,7 @@ LICENSE=	GPLv2
 CONFLICTS=	avidemux2-2.[0-46-9].*
 
 USE_GNOME=	libxml2
-USE_QT4=	yes
+USE_QT4=	# empty
 
 USE_GMAKE=	yes
 USE_ICONV=	yes
