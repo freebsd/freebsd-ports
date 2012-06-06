@@ -7,7 +7,7 @@
 
 PORTNAME=	diffuse
 PORTVERSION=	0.4.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	SF
 
@@ -25,41 +25,49 @@ USE_BZIP2=	yes
 
 MAN1=		diffuse.1
 
-OPTIONS=	MENU	"Install a desktop menu entry"	on \
-		NLS	"Install translations (work in progress)"	on
+CONFLICTS=	tinker-[0-9]*
+
+NO_OPTIONS_SORT=	yes
+OPTIONS_DEFINE=	MENU DATA NLS DOCS
+MENU_DESC=	Enable a desktop program menu entry
+DATA_DESC=	Enable syntax highlighting support
+DOCS_DESC=	Install some documentation text files
+OPTIONS_DEFAULT=	MENU DATA NLS DOCS
 
 .include <bsd.port.options.mk>
 
-.ifndef (NOPORTDOCS)
-PORTDOCS=	AUTHORS COPYING ChangeLog ChangeLog_ru README README_ru
-.endif
-
-.ifndef (NOPORTDATA)
-PORTDATA=	syntax
-.endif
-
-.ifdef (WITH_MENU)
-PLIST_SUB+=	MENU=""
+.if ${PORT_OPTIONS:MMENU}
 USE_GNOME+=	desktopfileutils
+PLIST_SUB+=	MENU=""
 .else
 PLIST_SUB+=	MENU="@comment "
 .endif
 
-.ifndef (WITHOUT_NLS)
-PLIST_SUB+=	NLS=""
+.if ${PORT_OPTIONS:MDATA}
+PORTDATA=	syntax
+.endif
+
+.if ${PORT_OPTIONS:MNLS} && !defined(WITHOUT_NLS)
+# Both checks required. If option is selected, but WITHOUT_NLS is set
+# in make.conf, it breaks pkg-plist.
 USE_GETTEXT=	yes
 TRANSLATIONS=	de es it ja ko ru zh_CN
 MANLANG=	"" it ru
+PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MDOCS}
+PORTDOCS=	AUTHORS COPYING ChangeLog ChangeLog_ru README README_ru
+.endif
+
 post-patch:
-.ifndef (NOPORTDATA)
+.if ${PORT_OPTIONS:MDATA} && !defined(NOPORTDATA)
 	${REINPLACE_CMD} -e 's|../usr|${PREFIX}|g; s|/etc|${PREFIX}/etc|g' \
 		${WRKSRC}/src/etc/${PORTNAME}rc
 .else
-	${REINPLACE_CMD} -e 's|import ../usr|\#(Disabled by NOPORTDATA !) \
+	${REINPLACE_CMD} -e 's|import ../usr|\#(Option disabled!) \
 		import ${PREFIX}|g; s|/etc|${PREFIX}/etc|g' \
 		${WRKSRC}/src/etc/${PORTNAME}rc
 .endif
@@ -75,18 +83,21 @@ do-install:
 		${MANPREFIX}/man/man1/
 
 post-install:
-.ifndef (NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.if ${PORT_OPTIONS:MMENU}
+	${INSTALL_DATA} ${WRKSRC}/src/usr/share/pixmaps/${PORTNAME}.png \
+		${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${WRKSRC}/src/usr/share/applications/*.desktop \
+		${DESKTOPDIR}
+	${LOCALBASE}/bin/update-desktop-database -q
 .endif
 
-.ifndef (NOPORTDATA)
+.if ${PORT_OPTIONS:MDATA} && !defined(NOPORTDATA)
 	${MKDIR} ${DATADIR}/syntax
 	(cd ${WRKSRC}/src/usr/share/${PORTNAME} && \
 		${COPYTREE_SHARE} \* ${DATADIR})
 .endif
 
-.ifndef (WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS} && !defined(WITHOUT_NLS)
 	for x in ${TRANSLATIONS}; do \
 		${MKDIR} ${WRKSRC}/translations/$${x}; \
 		${LOCALBASE}/bin/msgfmt -c ${WRKSRC}/translations/$${x}.po \
@@ -101,12 +112,9 @@ post-install:
 	done
 .endif
 
-.ifdef (WITH_MENU)
-	${INSTALL_DATA} ${WRKSRC}/src/usr/share/pixmaps/${PORTNAME}.png \
-		${PREFIX}/share/pixmaps/
-	${INSTALL_DATA} ${WRKSRC}/src/usr/share/applications/*.desktop \
-		${DESKTOPDIR}
-	${LOCALBASE}/bin/update-desktop-database -q
+.if ${PORT_OPTIONS:MDOCS} && !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
