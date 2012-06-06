@@ -12,7 +12,7 @@ CATEGORIES=	x11-toolkits perl5 graphics
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dmitry@karasik.eu.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extensible Perl toolkit for multi-platform GUI development
 
 LIB_DEPENDS=	gif.5:${PORTSDIR}/graphics/giflib \
