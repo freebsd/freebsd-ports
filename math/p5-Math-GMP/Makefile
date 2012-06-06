@@ -15,7 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module that provides an interface to the GMP library
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
+LICENSE=	LGPL20 LGPL21 LGPL3
+LICENSE_COMB=	dual
+
+LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
 
 CONFIGURE_ARGS=	INC=-I${LOCALBASE}/include LIBS="-L${LOCALBASE}/lib -lgmp"
 PERL_CONFIGURE=	yes
