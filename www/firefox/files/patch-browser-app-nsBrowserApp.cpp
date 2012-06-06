@@ -1,13 +1,12 @@
---- browser/app/nsBrowserApp.cpp	2012-03-13 02:36:38.000000000 +0100
-+++ ../../../firefox-esr/work/mozilla-esr10/browser/app/nsBrowserApp.cpp	2012-03-15 10:17:09.000000000 +0100
-@@ -36,23 +36,14 @@
-  *
+--- browser/app/nsBrowserApp.cpp.orig	2012-05-23 20:56:32.000000000 +0200
++++ browser/app/nsBrowserApp.cpp	2012-05-27 18:11:50.000000000 +0200
+@@ -37,38 +37,28 @@
   * ***** END LICENSE BLOCK ***** */
  
+ #include "nsXULAppAPI.h"
 -#include "application.ini.h"
 -#include "nsXPCOMGlue.h"
 -#if defined(XP_WIN)
-+#include "nsXULAppAPI.h"
 +#ifdef XP_WIN
  #include <windows.h>
  #include <stdlib.h>
@@ -22,11 +21,13 @@
  
  #include <stdio.h>
  #include <stdarg.h>
--#include <string.h>
  
- #include "plstr.h"
- #include "prprf.h"
-@@ -63,16 +54,11 @@
++#include "plstr.h"
++#include "prprf.h"
++#include "prenv.h"
++
+ #include "nsCOMPtr.h"
+ #include "nsILocalFile.h"
  #include "nsStringGlue.h"
  
  #ifdef XP_WIN
@@ -45,7 +46,7 @@
  
  static void Output(const char *fmt, ... )
  {
-@@ -99,12 +85,12 @@
+@@ -95,12 +85,12 @@
    {
      if (*++arg == '-')
        ++arg;
@@ -60,7 +61,7 @@
  #endif
  
    return false;
-@@ -120,35 +106,22 @@
+@@ -116,35 +106,22 @@
    ~ScopedLogging() { NS_LogTerm(); }
  };
  
@@ -85,7 +86,7 @@
 -    { nsnull, nsnull }
 -};
 -
--static int do_main(const char *exePath, int argc, char* argv[])
+-static int do_main(int argc, char* argv[])
 +int main(int argc, char* argv[])
  {
 +  ScopedLogging log;
@@ -107,7 +108,7 @@
    if (appDataFile && *appDataFile) {
      rv = XRE_GetFileFromPath(appDataFile, getter_AddRefs(appini));
      if (NS_FAILED(rv)) {
-@@ -168,133 +141,23 @@
+@@ -164,119 +141,23 @@
        return 255;
      }
  
@@ -124,7 +125,6 @@
      argc -= 2;
    }
  
--  int result;
 -  if (appini) {
 -    nsXREAppData *appData;
 -    rv = XRE_CreateAppData(appini, &appData);
@@ -132,25 +132,12 @@
 -      Output("Couldn't read application.ini");
 -      return 255;
 -    }
--    result = XRE_main(argc, argv, appData);
+-    int result = XRE_main(argc, argv, appData);
 -    XRE_FreeAppData(appData);
--  } else {
--#ifdef XP_WIN
--    // exePath comes from mozilla::BinaryPath::Get, which returns a UTF-8
--    // encoded path, so it is safe to convert it
--    rv = NS_NewLocalFile(NS_ConvertUTF8toUTF16(exePath), PR_FALSE,
--                         getter_AddRefs(appini));
--#else
--    rv = NS_NewNativeLocalFile(nsDependentCString(exePath), PR_FALSE,
--                               getter_AddRefs(appini));
--#endif
--    if (NS_FAILED(rv)) {
--      return 255;
--    }
--    result = XRE_main(argc, argv, &sAppData);
+-    return result;
 -  }
 -
--  return result;
+-  return XRE_main(argc, argv, &sAppData);
 -}
 -
 -int main(int argc, char* argv[])
@@ -240,7 +227,7 @@
 -  int result;
 -  {
 -    ScopedLogging log;
--    result = do_main(exePath, argc, argv);
+-    result = do_main(argc, argv);
 -  }
 -
 -  XPCOMGlueShutdown();

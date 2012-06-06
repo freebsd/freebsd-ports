@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	firefox
-DISTVERSION=	12.0
-PORTREVISION=	1
+DISTVERSION=	13.0
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -17,7 +16,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}.source
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-BUILD_DEPENDS=	nspr>=4.8.8:${PORTSDIR}/devel/nspr \
+BUILD_DEPENDS=	nspr>=4.9:${PORTSDIR}/devel/nspr \
 		cairo>=1.10.2_1,1:${PORTSDIR}/graphics/cairo \
 		unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
@@ -58,6 +57,10 @@ OPTIONS=	DBUS "Enable D-BUS support" on \
 		PGO "Enable Profile-Guided Optimization" off
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 800000
+USE_GCC=	4.6+
+.endif
 
 WRKSRC:=	${WRKDIR}/mozilla-release
 
