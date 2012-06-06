@@ -386,8 +386,10 @@ USE_THUNDERBIRD=	${_THUNDERBIRD_DEFAULT_VERSION}
 .endif
 
 # Setting/finding Thunderbird version we want.
+.if exists(${LOCALBASE}/bin/thunderbird)
 _TMP_VER!=	${LOCALBASE}/bin/thunderbird --version 2>/dev/null | ${HEAD} -1 | ${SED} -e 's/ Thunderbird \([0-9]\{1,2\}\)\.\([0-9]*\).*/\1\2/'
 _THUNDERBIRD_VER:=	${_TMP_VER:C/([0-9][0-9]).*/\1/}
+.endif
 
 # Check if installed Thunderbird version matches the wanted one
 .if defined(_THUNDERBIRD_VER)
