@@ -15,8 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	QElectroTech is application to design electric diagrams
 
-USE_QT_VER=	4
-QT_COMPONENTS=	gui network svg xml \
+USE_QT4=	gui network svg xml \
 		moc_build qmake_build rcc_build uic_build
 INSTALLS_ICONS=	yes
 

@@ -24,8 +24,7 @@ LIB_DEPENDS=	clucene.0:${PORTSDIR}/textproc/clucene
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
 USE_CMAKE=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib dbus gui iconengines network phonon qtestlib script \
+USE_QT4=	corelib dbus gui iconengines network phonon qtestlib script \
 		svg webkit xml linguist_build moc_build qmake_build \
 		rcc_build uic_build
 

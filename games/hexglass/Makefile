@@ -14,8 +14,7 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Tetris-like puzzle game based on a hexagonal grid
 
-USE_QT_VER=	4
-QT_COMPONENTS=	gui qmake_build moc_build rcc_build
+USE_QT4=	gui qmake_build moc_build rcc_build
 HAS_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 

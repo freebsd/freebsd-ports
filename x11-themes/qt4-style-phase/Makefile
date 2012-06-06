@@ -20,8 +20,7 @@ COMMENT=	Widget style for Qt 4 and KDE 4
 LICENSE=	MIT
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui qmake_build moc_build
+USE_QT4=	corelib gui qmake_build moc_build
 MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

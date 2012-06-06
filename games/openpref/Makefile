@@ -14,8 +14,7 @@ MASTER_SITES=	SF/${PORTNAME}/OpenPref-Qt4/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	annulen@yandex.ru
 COMMENT=	Preferans game
 
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui qmake_build moc_build rcc_build uic_build
+USE_QT4=	corelib gui qmake_build moc_build rcc_build uic_build
 HAS_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 

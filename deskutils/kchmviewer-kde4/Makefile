@@ -20,8 +20,7 @@ LATEST_LINK=	${PORTNAME}-kde4
 
 USE_CMAKE=	yes
 USE_KDE4=	kdeprefix kdelibs automoc4
-USE_QT_VER=	4
-QT_COMPONENTS=	webkit qmake_build moc_build rcc_build uic_build
+USE_QT4=	webkit qmake_build moc_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 
 post-install:

@@ -27,11 +27,10 @@ CMAKE_ARGS=	-DNO_INSTALL_MANPAGES:BOOL=ON
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-QT_COMPONENTS=	gui qmake_build qtestlib moc_build rcc_build uic_build xml
+USE_QT4=	gui qmake_build qtestlib moc_build rcc_build uic_build xml
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
-USE_QT_VER=	4
 
 .include <bsd.port.mk>

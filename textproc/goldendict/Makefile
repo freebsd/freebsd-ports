@@ -24,8 +24,7 @@ USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 USE_GNOME=	pkgconfig
 USE_XORG=	xtst
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui webkit phonon \
+USE_QT4=	corelib gui webkit phonon \
 		qmake_build linguist_build moc_build rcc_build script_build uic_build
 
 WRKSRC=		${WRKDIR}

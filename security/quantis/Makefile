@@ -31,7 +31,6 @@ LICENSE_FILE=	${WRKSRC}/Quantis-${DISTVERSION}/License.txt
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-aqo
 USE_CMAKE=	yes
-USE_QT_VER=	4
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/Quantis-${DISTVERSION}/Libs-Apps
@@ -78,7 +77,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libboost_date_time.a:${PORTSDIR}/devel/boost-li
 CXXFLAGS+=	-I${LOCALBASE}/include
 
 . if defined(WITH_GUI)
-QT_COMPONENTS+=	gui moc_build uic_build rcc_build qmake_build
+USE_QT4+=	gui moc_build uic_build rcc_build qmake_build
 . else
 CMAKE_ARGS+=	-DDISABLE_EASYQUANTIS_GUI=1
 . endif

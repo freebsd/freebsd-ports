@@ -17,8 +17,7 @@ COMMENT=	Rule-based 3D structure generator
 
 USE_GL=		glu
 USE_ZIP=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build corelib gui opengl moc_build rcc_build xml script
+USE_QT4=	qmake_build corelib gui opengl moc_build rcc_build xml script
 MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/structure-synth
 

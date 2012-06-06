@@ -13,8 +13,7 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt4 low-level multimedia API
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build uic_build corelib gui
+USE_QT4=	qmake_build moc_build uic_build corelib gui
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 MAKE_JOBS_SAFE=	yes

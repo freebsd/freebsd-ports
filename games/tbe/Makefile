@@ -19,8 +19,7 @@ COMMENT=	The Butterfly Effect
 BUILD_DEPENDS=	${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 
 USE_GMAKE=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build corelib gui moc_build rcc_build svg uic_build xml
+USE_QT4=	qmake_build corelib gui moc_build rcc_build svg uic_build xml
 MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/TheButterflyEffect-m${PORTVERSION}
 

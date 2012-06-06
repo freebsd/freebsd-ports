@@ -22,8 +22,7 @@ USE_CMAKE=	yes
 USE_GETTEXT=	yes
 USE_GL=		glu
 USE_ICONV=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	moc_build rcc_build uic_build qmake_build \
+USE_QT4=	moc_build rcc_build uic_build qmake_build \
 		corelib gui network opengl script
 MAKE_JOBS_SAFE=	yes
 

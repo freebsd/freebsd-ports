@@ -17,8 +17,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Jigsaw puzzle with tetrominoes
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui moc_build opengl qmake_build rcc_build xml
+USE_QT4=	corelib gui moc_build opengl qmake_build rcc_build xml
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes

@@ -18,8 +18,7 @@ COMMENT=	GTK-QT Theme Engine allows GTK2 apps to use QT/KDE themes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20
-USE_QT_VER=	4
-QT_COMPONENTS=	gui moc_build rcc_build uic_build qmake_build
+USE_QT4=	gui moc_build rcc_build uic_build qmake_build
 USE_CMAKE=	yes
 USE_KDE4=	kdebase kdeprefix automoc4
 

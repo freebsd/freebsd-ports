@@ -20,8 +20,7 @@ OPTIONS=	CODECS "Enable support for CN, JP, KR, TW" off \
 		TOOLS "Install Qt tools (qmake, moc, etc.)" off \
 		DEMO "Install demonstration and example programs" off
 
-USE_QT_VER=	4
-QT_COMPONENTS=	accessible assistant clucene corelib \
+USE_QT4=	accessible assistant clucene corelib \
 		dbus declarative designer doc \
 		graphicssystems-opengl gui help \
 		iconengines imageformats inputmethods \
@@ -35,24 +34,24 @@ NO_BUILD=	yes
 .include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_NLS)
-QT_COMPONENTS+=	l10n
+USE_QT4+=	l10n
 .endif
 
 .if defined(WITH_TOOLS)
-QT_COMPONENTS+=	help-tools linguist makeqpf moc pixeltool \
+USE_QT4+=	help-tools linguist makeqpf moc pixeltool \
 		porting qmake rcc uic uic3 qdoc3
 .endif
 
 .if defined(WITH_CODECS)
-QT_COMPONENTS+=	codecs-cn codecs-jp codecs-kr codecs-tw
+USE_QT4+=	codecs-cn codecs-jp codecs-kr codecs-tw
 .endif
 
 .if defined(WITH_SQL_PLUGINS)
-QT_COMPONENTS+=	sql-mysql sql-odbc sql-pgsql sql-sqlite2 sql-sqlite3
+USE_QT4+=	sql-mysql sql-odbc sql-pgsql sql-sqlite2 sql-sqlite3
 .endif
 
 .if defined(WITH_DEMO)
-QT_COMPONENTS+=	demo
+USE_QT4+=	demo
 .endif
 
 do-patch:	#empty

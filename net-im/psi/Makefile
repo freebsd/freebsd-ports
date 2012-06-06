@@ -20,8 +20,7 @@ RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl \
 
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib dbus gui iconengines imageformats qt3support \
+USE_QT4=	corelib dbus gui iconengines imageformats qt3support \
 		inputmethods network script svg xml \
 		qmake_build moc_build rcc_build uic_build
 

@@ -17,8 +17,7 @@ LIB_DEPENDS=	proxy.1:${PORTSDIR}/net/libproxy
 MASTERDIR=	${.CURDIR}/../libproxy
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib moc_build qmake_build uic_build rcc_build
+USE_QT4=	corelib moc_build qmake_build uic_build rcc_build
 USE_KDE4=	automoc4 kdelibs
 
 LIBPROXY_SLAVE=	kde

@@ -15,8 +15,7 @@ COMMENT=	Qt MySQL database plugin
 
 DB=		mysql
 
-USE_QT_VER=	4
-QT_COMPONENTS=	moc_build sql
+USE_QT4=	moc_build sql
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 MAKE_JOBS_SAFE=	yes

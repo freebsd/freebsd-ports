@@ -20,8 +20,7 @@ COMMENT=	Kross Python scripting library
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
 USE_PYTHON=	2.5+
-USE_QT_VER=	4
-QT_COMPONENTS=	gui qmake_build moc_build uic_build rcc_build
+USE_QT4=	gui qmake_build moc_build uic_build rcc_build
 USE_XZ=	yes
 USE_CMAKE=	yes
 CMAKE_ARGS+=	-DBUILD_falcon:BOOL=FALSE \

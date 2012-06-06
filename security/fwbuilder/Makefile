@@ -35,8 +35,7 @@ LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt \
 		netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 
 PLIST_SUB=	BUILD_VERSION=${DISTVERSION}.${BUILD}
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib \
+USE_QT4=	corelib \
 		gui \
 		iconengines \
 		inputmethods \

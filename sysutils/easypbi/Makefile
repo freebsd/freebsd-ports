@@ -21,8 +21,7 @@ LIB_DEPENDS=	Imath.6:${PORTSDIR}/graphics/ilmbase \
 RUN_DEPENDS=	${LOCALBASE}/bin/gksu:${PORTSDIR}/sysutils/gksu \
 		${LOCALBASE}/sbin/pbid:${PORTSDIR}/ports-mgmt/pbi-manager
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build \
+USE_QT4=	qmake_build moc_build rcc_build uic_build \
 		linguist_build assistant_run qt3support \
 		dbus designer gui help-tools network script \
 		sql svg xml webkit

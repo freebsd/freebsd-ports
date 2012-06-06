@@ -19,9 +19,8 @@ LICENSE=	GPLv3
 
 USE_GL=		gl glu
 USE_XORG=	xtst
-USE_QT_VER=	4
 USE_GSTREAMER=	ffmpeg
-QT_COMPONENTS=	dbus gui network moc_build opengl phonon phonon-gst \
+USE_QT4=	dbus gui network moc_build opengl phonon phonon-gst \
 		qmake_build rcc_build uic_build webkit xml xmlpatterns
 QMAKEPRO=	${PORTNAME}.pro
 PLIST_FILES=	bin/${PORTNAME}

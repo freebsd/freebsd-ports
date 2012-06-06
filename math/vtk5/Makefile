@@ -118,8 +118,7 @@ PLIST_SUB+=	X11=""
 .endif
 
 .if defined(WITH_QT)
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib assistant assistantclient designer \
+USE_QT4=	corelib assistant assistantclient designer \
 		gui opengl qtestlib sql dbus \
 		qmake_build uic_build moc_build rcc_build
 CMAKE_ARGS+=	-DVTK_USE_GUISUPPORT:BOOL=ON \

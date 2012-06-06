@@ -30,8 +30,7 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_OPENSSL=	yes
 USE_PERL5_BUILD=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build \
+USE_QT4=	moc_build qmake_build rcc_build uic_build \
 		dbus gui network sql xml
 USE_CMAKE=	yes
 CMAKE_ARGS=	-DWITHOUT_ESD=yes -DWITHOUT_DOXYGEN=yes \
@@ -61,12 +60,12 @@ PLIST_SUB+=	VER="${PORTVERSION:R}"
 CMAKE_ARGS+=	-DWITHOUT_KDE4=yes
 PLIST_SUB+=	QT="" KDE="@comment "
 . if defined(WITH_PHONON)
-QT_COMPONENTS+=	phonon
+USE_QT4+=	phonon
 . else
 CMAKE_ARGS+=	-DWITHOUT_PHONON=yes
 . endif
 . if defined(WITH_WEBKIT)
-QT_COMPONENTS+=	webkit
+USE_QT4+=	webkit
 . else
 CMAKE_ARGS+=	-DWITHOUT_QTWEBKIT=yes
 . endif

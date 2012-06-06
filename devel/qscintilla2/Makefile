@@ -15,8 +15,7 @@ DISTNAME=	${QSCI2_DISTNAME}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt4 port of the Scintilla C++ editor class
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build gui xml designer
+USE_QT4=	qmake_build moc_build gui xml designer
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 

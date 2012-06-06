@@ -44,8 +44,7 @@ pre-everything::
 .if defined(WITH_WEBKIT_IMAGE)
 PLIST_FILES+=	bin/webkit-image
 
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui webkit moc_build
+USE_QT4=	corelib gui webkit moc_build
 
 do-build:
 	cd ${WRKSRC} && \

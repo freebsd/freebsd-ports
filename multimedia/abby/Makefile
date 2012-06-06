@@ -17,8 +17,7 @@ COMMENT=	Front-end for c/clive
 OPTIONS=	CCLIVE "Use cclive backend (instead of clive)" on
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui network xml moc_build qmake_build rcc_build uic_build
+USE_QT4=	gui network xml moc_build qmake_build rcc_build uic_build
 HAS_CONFIGURE=	yes
 QMAKE_ARGS=	-unix -recursive PREFIX=${PREFIX} ${QMAKE_PRO}
 QMAKE_PRO=	abby.pro

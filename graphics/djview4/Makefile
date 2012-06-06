@@ -20,8 +20,7 @@ LIB_DEPENDS=	djvulibre.24:${PORTSDIR}/graphics/djvulibre-nox11
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig
-USE_QT_VER=	4
-QT_COMPONENTS=	gui network rcc_build uic_build moc_build qmake_build
+USE_QT4=	gui network rcc_build uic_build moc_build qmake_build
 QT_NONSTANDARD=	yes
 CONFIGURE_ARGS=	--x-includes="${LOCALBASE}/include" \
 		--x-libraries="${LOCALBASE}/lib"

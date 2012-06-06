@@ -17,8 +17,7 @@ COMMENT=	Large file hex editor
 
 LICENSE=	GPLv2
 
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui moc_build qmake_build rcc_build
+USE_QT4=	corelib gui moc_build qmake_build rcc_build
 USE_BISON=	build
 MAKE_JOBS_SAFE=	yes
 

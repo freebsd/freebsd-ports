@@ -22,8 +22,7 @@ LIB_DEPENDS=	kdevplatforminterfaces.5:${PORTSDIR}/devel/kdevplatform
 USE_BZIP2=	yes
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
 KDE4_BUILDENV=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build
+USE_QT4=	moc_build qmake_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>

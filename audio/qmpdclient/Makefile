@@ -20,8 +20,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build \
+USE_QT4=	qmake_build moc_build rcc_build uic_build \
 		corelib gui network xml xmlpatterns
 MAKE_JOBS_SAFE=	yes
 INSTALLS_ICONS=	yes
@@ -39,12 +38,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 .if defined(WITHOUT_NLS)
 PLIST_SUB+=	NLS="@comment "
 .else
-QT_COMPONENTS+=	linguist_build
+USE_QT4+=	linguist_build
 PLIST_SUB+=	NLS=""
 .endif
 
 .if defined(WITH_DBUS) && !defined(WITHOUT_DBUS)
-QT_COMPONENTS+=	dbus
+USE_QT4+=	dbus
 QMAKEFLAGS+=	"CONFIG+=qdbus"
 .endif
 

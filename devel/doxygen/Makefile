@@ -64,8 +64,7 @@ MAKE_ARGS+=	HAVE_LATEX=yes
 .endif # !defined(NOPORTDOCS)
 
 .if !defined(WITHOUT_DOXYWIZARD)
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui xml qmake_build moc_build rcc_build
+USE_QT4=	corelib gui xml qmake_build moc_build rcc_build
 
 # Need this in env for build
 QTDIR?=		${QT_PREFIX}

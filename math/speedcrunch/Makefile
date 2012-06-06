@@ -14,8 +14,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A desktop calculator for power users
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build gui xml
+USE_QT4=	qmake_build moc_build rcc_build uic_build gui xml
 USE_CMAKE=	yes
 CMAKE_SOURCE_PATH=	src
 
@@ -25,7 +24,7 @@ LRELEASE_CMD=	${LOCALBASE}/bin/lrelease-qt4
 LRELEASE_ARGS=	-compress -silent
 
 .if !defined(WITHOUT_NLS)
-QT_COMPONENTS+=	linguist
+USE_QT4+=	linguist
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "

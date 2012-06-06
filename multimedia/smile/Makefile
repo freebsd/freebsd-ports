@@ -19,8 +19,7 @@ RUN_DEPENDS=	sox>=14.0:${PORTSDIR}/audio/sox \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
 		ImageMagick>=6.4:${PORTSDIR}/graphics/ImageMagick
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build gui corelib rcc_build moc_build uic_build \
+USE_QT4=	qmake_build gui corelib rcc_build moc_build uic_build \
 		opengl webkit
 
 MAKE_ENV+=	QTDIR=${QT_PREFIX}

@@ -21,8 +21,7 @@ MAKE_JOBS_SAFE=	yes
 
 CONFLICTS=	qbittorrent-2.[2345678].* qbittorrent-3.[0-9].*
 
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib network qmake_build moc_build rcc_build
+USE_QT4=	corelib network qmake_build moc_build rcc_build
 
 .if !defined(QB29_NOX_SLAVE)
 .if defined(WITHOUT_X11)
@@ -30,7 +29,7 @@ BROKEN=	Use net-p2p/${PORTNAME}-nox11 for the non-GUI version
 .endif
 LIB_DEPENDS+=	GeoIP.5:${PORTSDIR}/net/GeoIP
 OPTIONS=	DBUS "Enable dbus support" off
-QT_COMPONENTS+=	gui xml uic_build
+USE_QT4+=	gui xml uic_build
 INSTALLS_ICONS=	yes
 .else
 CONFIGURE_ARGS+=	--disable-gui
@@ -44,7 +43,7 @@ MAN1?=		qbittorrent.1
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_DBUS)
-QT_COMPONENTS+=		dbus
+USE_QT4+=		dbus
 .else
 CONFIGURE_ARGS+=	--disable-qt-dbus
 .endif

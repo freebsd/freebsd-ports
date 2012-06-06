@@ -32,8 +32,7 @@ FETCH_ARGS=	-pRr
 
 USE_LDCONFIG=		yes
 USE_CMAKE=		yes
-USE_QT_VER=		4
-QT_COMPONENTS=		corelib opengl qmake_build gui moc_build rcc_build
+USE_QT4=		corelib opengl qmake_build gui moc_build rcc_build
 HAS_CONFIGURE=		yes
 DOCSDIR=		${PREFIX}/share/doc/CGAL-3.4
 LDFLAGS+=		-L${LOCALBASE}/lib

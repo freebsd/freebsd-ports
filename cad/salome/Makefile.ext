@@ -170,10 +170,9 @@ BUILD_DEPENDS+=		${LOCALBASE}/lib/libboost_python.so:${PORTSDIR}/devel/boost-pyt
 
 #Dependency from qt4
 .if !${SAL_MODULE} == "kernel" && !${SAL_MODULE} == "randomizer"
-USE_QT_VER=			4
 CONFIGURE_ENV+=		QTDIR=${LOCALBASE}
 QTFLAGS+=		-I${LOCALBASE}/include/qt4 -L${LOCALBASE}/lib/qt4
-QT_COMPONENTS=		gui opengl svg xml qmake_build moc_build rcc_build uic_build linguist
+USE_QT4=		gui opengl svg xml qmake_build moc_build rcc_build uic_build linguist
 AUTOTOOLS_ENV+= 	QTDIR=${LOCALBASE}
 .endif
 

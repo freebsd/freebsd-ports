@@ -18,8 +18,7 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A tool for processing and editing 3D triangular meshes
 
 USE_GL=		glew glu
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake corelib gui xml opengl network moc uic rcc
+USE_QT4=	qmake corelib gui xml opengl network moc uic rcc
 
 USE_LDCONFIG=	yes
 

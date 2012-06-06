@@ -24,8 +24,7 @@ WRKSRC=		${WRKDIR}/KDAB-Charm-3151d25
 USE_CMAKE=	yes
 CMAKE_ARGS+=	-DCharm_VERSION:STRING=${PORTVERSION}
 USE_KDE4=	kdehier kdeprefix
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build corelib gui network \
+USE_QT4=	qmake_build moc_build rcc_build uic_build corelib gui network \
 		qtestlib sql sql-sqlite3 xml
 USE_XORG=	ice x11 xext xscrnsaver
 INSTALLS_ICONS=	yes

@@ -15,8 +15,7 @@ COMMENT=	Simple Qt4 based browser
 
 LICENSE=	GPLv3
 
-USE_QT_VER=	4
-QT_COMPONENTS=	network webkit qmake_build moc_build uic_build rcc_build \
+USE_QT4=	network webkit qmake_build moc_build uic_build rcc_build \
 		imageformats gui script sql
 HAS_CONFIGURE=	yes
 QMAKE_ARGS+=	-unix -recursive PREFIX=${PREFIX}
@@ -33,7 +32,7 @@ BROKEN=		core dump on application startup
 .if defined(WITHOUT_NLS)
 PLIST_SUB+=	NLS="@comment "
 .else
-QT_COMPONENTS+=	linguist_build
+USE_QT4+=	linguist_build
 PLIST_SUB+=	NLS=""
 .endif
 

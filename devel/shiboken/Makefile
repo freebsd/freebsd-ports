@@ -24,13 +24,12 @@ LIB_DEPENDS=	apiextractor.0:${PORTSDIR}/devel/apiextractor \
 PLIST_SUB=	PORTVERSION=${PORTVERSION} \
 		PYTHON_VERSION=${PYTHON_VERSION}
 
-QT_COMPONENTS=	corelib qmake_build moc_build uic_build rcc_build
+USE_QT4=	corelib qmake_build moc_build uic_build rcc_build
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
-USE_QT_VER=	4
 
 .if !defined(NO_INSTALL_MANPAGES)
 MAN1=	shiboken.1

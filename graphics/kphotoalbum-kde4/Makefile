@@ -22,8 +22,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 
 USE_BZIP2=	yes
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build
+USE_QT4=	qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 

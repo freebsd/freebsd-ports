@@ -18,8 +18,7 @@ COMMENT=	QT4 Client for MPD (the Music Player Daemon)
 
 LIB_DEPENDS=	mpdclient.2:${PORTSDIR}/audio/libmpdclient
 
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui network \
+USE_QT4=	corelib gui network \
 		qmake_build moc_build rcc_build uic_build
 QMAKE_ARGS=	PREFIX=${PREFIX}
 

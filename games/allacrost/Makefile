@@ -46,9 +46,8 @@ OPTIONS=	EDITOR "Enable editor" off
 .include <bsd.port.options.mk>
 
 .if defined(WITH_EDITOR)
-USE_QT_VER=	4
 QT_NONSTANDARD=	yes
-QT_COMPONENTS+=	corelib gui opengl moc_build qt3support
+USE_QT4+=	corelib gui opengl moc_build qt3support
 CONFIGURE_ARGS+=--enable-editor=yes
 PLIST_SUB=	EDITOR=""
 .else

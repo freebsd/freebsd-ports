@@ -20,8 +20,7 @@ LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib
 PROJECTHOST=	bangarangissuetracking
 USE_CMAKE=	yes
 USE_GETTEXT=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build
+USE_QT4=	qmake_build moc_build rcc_build uic_build
 USE_KDE4=	automoc4 kdelibs kdebase kdeprefix
 
 MAKE_JOBS_SAFE=	yes

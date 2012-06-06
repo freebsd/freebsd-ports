@@ -49,8 +49,7 @@ OPTIONS=	PODOFO	"PDF support via PoDoFo library" on
 
 USE_XZ=		yes
 USE_PYTHON=	2.7
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build
+USE_QT4=	qmake_build moc_build
 INSTALLS_ICONS=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 CFLAGS+=	"-I${LOCALBASE}/include"

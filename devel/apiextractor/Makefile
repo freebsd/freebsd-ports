@@ -22,12 +22,11 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-QT_COMPONENTS=	gui moc_build qmake_build qtestlib_build \
+USE_QT4=	gui moc_build qmake_build qtestlib_build \
 		rcc_build uic_build xml xmlpatterns
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
-USE_QT_VER=	4
 
 .include <bsd.port.mk>

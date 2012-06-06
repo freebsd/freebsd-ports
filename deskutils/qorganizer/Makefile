@@ -15,8 +15,7 @@ DISTNAME=	qOrganizer-${PORTVERSION}
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A general organizer that includes calendar with jurnal and schedule
 
-USE_QT_VER=	4
-QT_COMPONENTS=	gui network qmake_build moc_build rcc_build sql
+USE_QT4=	gui network qmake_build moc_build rcc_build sql
 WRKSRC=		${WRKDIR}/qOrganizer/src
 
 PLIST_FILES=	bin/qOrganizer share/pixmaps/qOrganizer.png

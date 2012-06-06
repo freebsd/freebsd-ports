@@ -20,8 +20,7 @@ LIB_DEPENDS=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2
 
 USE_ZIP=	yes
 USE_CMAKE=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build gui
+USE_QT4=	qmake_build moc_build rcc_build uic_build gui
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 DISTVERSIONSUFFIX=	-src

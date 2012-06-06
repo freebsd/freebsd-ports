@@ -20,8 +20,7 @@ COMMENT=	SVG themable style for Qt 4 and KDE
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui svg qmake_build rcc_build uic_build moc_build
+USE_QT4=	corelib gui svg qmake_build rcc_build uic_build moc_build
 MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/QuantumStyle

@@ -13,8 +13,7 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	QtHelp module provides QHelpEngine API and is used by Assistant
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build corelib clucene \
+USE_QT4=	qmake_build moc_build rcc_build corelib clucene \
 		gui sql sql-sqlite3_run xml network
 QT_NONSTANDARD=	yes
 QT_DIST=	yes

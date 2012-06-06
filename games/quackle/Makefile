@@ -22,8 +22,7 @@ LICENSE_COMB=	dual
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/quacker
 
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui moc_build qmake_build
+USE_QT4=	corelib gui moc_build qmake_build
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 

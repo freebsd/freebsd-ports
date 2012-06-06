@@ -40,8 +40,7 @@ MAN1=		dssi_analyse_plugin.1 dssi_list_plugins.1 dssi_osc_send.1 \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MQT4}
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui
+USE_QT4=	corelib gui
 QT_NONSTANDARD=	yes
 PLIST_SUB=	QT=""
 .else

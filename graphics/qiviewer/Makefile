@@ -17,8 +17,7 @@ COMMENT=	Fast and lightweight image viewer
 LICENSE=	GPLv2
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui xml dbus linguist_build qmake_build moc_build \
+USE_QT4=	gui xml dbus linguist_build qmake_build moc_build \
 		rcc_build uic_build
 QMAKEFLAGS+=	PREFIX="${PREFIX}"
 

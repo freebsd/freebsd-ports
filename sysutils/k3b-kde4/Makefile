@@ -26,8 +26,7 @@ CMAKE_ARGS=	-DK3B_BUILD_K3BSETUP:BOOL=OFF \
 		-DK3B_ENABLE_MUSICBRAINZ:BOOL=OFF
 USE_KDE4=	automoc4 kdeprefix kdelibs
 USE_CDRTOOLS=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui dbus network phonon qt3support sql svg webkit xml \
+USE_QT4=	gui dbus network phonon qt3support sql svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes

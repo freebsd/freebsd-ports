@@ -18,8 +18,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt documentation browser integration library
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build corelib gui network
+USE_QT4=	qmake_build moc_build rcc_build corelib gui network
 MAKE_JOBS_SAFE=	yes
 
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}

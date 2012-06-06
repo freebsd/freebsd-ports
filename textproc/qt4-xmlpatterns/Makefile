@@ -13,8 +13,7 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	XQuery 1.0 and XPath 2.0 support for Qt4
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build corelib network
+USE_QT4=	qmake_build moc_build rcc_build corelib network
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 MAKE_JOBS_SAFE=	yes

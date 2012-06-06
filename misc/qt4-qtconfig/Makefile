@@ -15,8 +15,7 @@ COMMENT=	Qt graphical configuration utility
 
 OPTIONS=	PHONON "Add support for Phonon (implies GStreamer)" on
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build qt3support corelib \
+USE_QT4=	qmake_build moc_build rcc_build uic_build qt3support corelib \
 		gui sql xml
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
@@ -43,7 +42,7 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 .include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_PHONON)
-QT_COMPONENTS+=	phonon phonon-gst
+USE_QT4+=	phonon phonon-gst
 USE_GSTREAMER=	yes
 .else
 CONFIGURE_ARGS+=	-no-phonon -no-gstreamer

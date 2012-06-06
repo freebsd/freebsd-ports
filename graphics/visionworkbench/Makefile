@@ -24,8 +24,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BROKEN=		does not compile
 
 GNU_CONFIGURE=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	moc_build qmake_build
+USE_QT4=	moc_build qmake_build
 USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	2.4+

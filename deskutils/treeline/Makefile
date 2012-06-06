@@ -30,7 +30,7 @@ OPTIONS=	ASPELL "install with aspell support" off \
 		HTTPLOAD "install httpLoad plugin" off
 
 WRKSRC=		${WRKDIR}/TreeLine
-USE_QT_VER=	4
+USE_QT4=		yes
 USE_PYTHON=	2.5+
 NO_BUILD=	yes
 

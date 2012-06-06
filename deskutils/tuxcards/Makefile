@@ -16,8 +16,7 @@ MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Tool for managing notes within a hierarchical tree
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_QT_VER=	4
-QT_COMPONENTS=	gui xml qmake_build moc_build uic_build rcc_build
+USE_QT4=	gui xml qmake_build moc_build uic_build rcc_build
 
 MAKE_ENV=	QTDIR="${QT_PREFIX}"
 PLIST_FILES=	bin/tuxcards

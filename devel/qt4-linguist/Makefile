@@ -14,8 +14,7 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt localisation tool
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build designer_build moc_build rcc_build uic_build \
+USE_QT4=	qmake_build designer_build moc_build rcc_build uic_build \
 		assistant_run gui network xml
 QT_NONSTANDARD=	yes
 QT_DIST=	yes

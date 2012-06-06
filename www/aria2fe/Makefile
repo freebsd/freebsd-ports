@@ -18,8 +18,7 @@ RUN_DEPENDS=	aria2c:${PORTSDIR}/www/aria2 \
 		xterm:${PORTSDIR}/x11/xterm
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui qmake_build uic_build moc_build rcc_build
+USE_QT4=	gui qmake_build uic_build moc_build rcc_build
 PLIST_FILES=	bin/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/src
 

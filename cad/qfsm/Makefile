@@ -18,8 +18,7 @@ COMMENT=	A graphical tool for designing finite state machines
 
 USE_BZIP2=	yes
 USE_XORG=	xi
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui qt3support svg xml \
+USE_QT4=	corelib gui qt3support svg xml \
 		moc_build porting_build qmake_build \
 		uic_build uic3_build rcc_build
 USE_GNOME=	desktopfileutils

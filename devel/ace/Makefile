@@ -81,8 +81,7 @@ PLIST_SUB+=	TK="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MQT4}
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui moc_build
+USE_QT4=	corelib gui moc_build
 MAKE_ENV+=	qt=1 qt4=1 QTDIR="${QT_PREFIX}"
 CPPFLAGS+=	-I${QT_INCDIR}
 LDFLAGS+=	-L${QT_LIBDIR}

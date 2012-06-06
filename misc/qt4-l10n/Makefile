@@ -13,8 +13,7 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt translations messages
 
-USE_QT_VER=	4
-QT_COMPONENTS=	linguist_build
+USE_QT4=	linguist_build
 QT_DIST=	yes
 QT_NONSTANDARD=	yes
 

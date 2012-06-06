@@ -18,8 +18,7 @@ COMMENT=	A barcode library for KDE
 LIB_DEPENDS=	dmtx.0:${PORTSDIR}/graphics/libdmtx \
 		qrencode.3:${PORTSDIR}/graphics/libqrencode
 
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui qmake_build moc_build rcc_build uic_build
+USE_QT4=	corelib gui qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes

@@ -18,8 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/spirit/core.hpp:${PORTSDIR}/devel/boos
 RUN_DEPENDS=	${LOCALBASE}/bin/xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USE_DOS2UNIX=	readme.lyx readme.txt
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build gui network
+USE_QT4=	qmake_build moc_build rcc_build uic_build gui network
 PORTDOCS=	*
 
 post-patch:

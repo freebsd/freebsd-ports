@@ -31,8 +31,7 @@ USE_OPENSSL=	yes
 BUILD_MOZC_LIST?=	mozc_server
 
 .if ${BUILD_MOZC_LIST:Mmozc_tool} == "mozc_tool"
-USE_QT_VER=	4
-QT_COMPONENTS=	gui dbus qmake_build moc_build uic_build rcc_build
+USE_QT4=	gui dbus qmake_build moc_build uic_build rcc_build
 .endif
 .if ${BUILD_MOZC_LIST:Mibus_mozc} == "ibus_mozc" || ${BUILD_MOZC_LIST:Mscim_mozc} == "scim_mozc"
 USE_GNOME=	pygtk2

@@ -20,8 +20,7 @@ PLIST_FILES=	bin/NagiosAgent \
 		share/pixmaps/NagiosAgent.png
 
 USE_ZIP=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui network corelib qmake_build uic_build rcc_build moc_build
+USE_QT4=	gui network corelib qmake_build uic_build rcc_build moc_build
 
 DESKTOP_ENTRIES=	"NagiosAgent" "GUI client for Nagios" \
 			"NagiosAgent.png" \

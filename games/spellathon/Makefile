@@ -14,8 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	girish.rao.dev@gmail.com
 COMMENT=	Word game to test your English vocabulary skills
 
-USE_QT_VER=	4
-QT_COMPONENTS=	gui moc_build qmake_build rcc_build uic_build
+USE_QT4=	gui moc_build qmake_build rcc_build uic_build
 
 post-patch:
 	@${REINPLACE_CMD} 's|qmake|qmake-qt4|' ${WRKSRC}/Makefile

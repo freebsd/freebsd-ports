@@ -25,8 +25,7 @@ PHONON_BRANCH=	stable
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_KDE4=	kdehier automoc4 kdeprefix
-USE_QT_VER=	4
-QT_COMPONENTS=	gui dbus xml phonon \
+USE_QT4=	gui dbus xml phonon \
 		qmake_build moc_build rcc_build uic_build
 
 PLIST_SUB+=	QT_PREFIX=${QT_PREFIX}

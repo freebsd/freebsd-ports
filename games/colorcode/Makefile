@@ -15,8 +15,7 @@ DISTNAME=	ColorCode-${PORTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A free advanced MasterMind game and solver
 
-USE_QT_VER=	4
-QT_COMPONENTS=	gui moc_build qmake_build rcc_build uic_build
+USE_QT4=	gui moc_build qmake_build rcc_build uic_build
 HAS_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/ColorCode-${PORTVERSION}
 

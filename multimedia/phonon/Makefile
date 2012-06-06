@@ -22,8 +22,7 @@ CONFLICTS=	qt4-phonon-4*
 PHONON_BRANCH=	stable
 
 USE_KDE4=	kdehier kdeprefix automoc4
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus gui \
+USE_QT4=	dbus gui \
 		qmake_build moc_build rcc_build uic_build
 USE_XZ=		yes
 USE_CMAKE=	yes
@@ -41,7 +40,7 @@ OPTIONS=	PULSEAUDIO	"Support playback via PulseAudio" off
 # circular dependency.
 .undef WITH_DESIGNER
 .ifdef(WITH_DESIGNER)
-QT_COMPONENTS+=	designer
+USE_QT4+=	designer
 CMAKE_ARGS+=	-DPHONON_BUILD_DESIGNER_PLUGIN:BOOL=ON
 PLIST_SUB+=	DESIGNER=""
 .else

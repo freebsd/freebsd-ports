@@ -149,8 +149,7 @@ PLIST_SUB+=	KDE="@comment "
 .if defined(WITH_KDE4)
 GNASH_GUIS+=	kde4
 PLIST_SUB+=	KDE4=""
-USE_QT_VER=	4
-QT_COMPONENTS=	moc_build
+USE_QT4=	moc_build
 QT_NONSTANDARD=	yes
 USE_KDE4=	kdehier kdelibs
 CONFIGURE_ENV+=	KDE4_CONFIG="${KDE4_PREFIX}/bin/kde4-config"

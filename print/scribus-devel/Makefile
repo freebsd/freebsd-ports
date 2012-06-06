@@ -34,8 +34,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinte
 
 USE_SVN=	yes
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui linguist_build moc_build qmake_build rcc_build uic_build xml network
+USE_QT4=	gui linguist_build moc_build qmake_build rcc_build uic_build xml network
 USE_GNOME=	desktopfileutils libartlgpl2 libxml2 pkgconfig
 USE_GHOSTSCRIPT_RUN=	yes
 USE_PYTHON=	yes

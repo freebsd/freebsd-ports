@@ -85,8 +85,7 @@ PLIST_SUB+=	GTK2="@comment "
 .endif
 
 .if defined(WITH_QT4)
-USE_QT_VER=	4
-QT_COMPONENTS=	gui moc_build
+USE_QT4=	gui moc_build
 CONFIGURE_ARGS+=	--with-qt=yes
 PLIST_SUB+=	QT4=""
 .else

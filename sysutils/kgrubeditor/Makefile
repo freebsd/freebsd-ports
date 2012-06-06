@@ -20,8 +20,7 @@ RUN_DEPENDS=	grub:${PORTSDIR}/sysutils/grub
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_KDE4=	automoc4 kdeprefix kdelibs
-USE_QT_VER=	4
-QT_COMPONENTS=	gui qmake_build moc_build rcc_build uic_build
+USE_QT4=	gui qmake_build moc_build rcc_build uic_build
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.mk>

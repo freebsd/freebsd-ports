@@ -24,8 +24,7 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 WRKSRC=	${WRKDIR}/${PORTNAME}${PORTVERSION}
 
 USE_GHOSTSCRIPT=yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui network xml moc_build qmake_build rcc_build \
+USE_QT4=	gui network xml moc_build qmake_build rcc_build \
 		uic_build qtestlib script
 HAS_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

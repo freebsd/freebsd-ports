@@ -26,8 +26,7 @@ USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/kde4
 USE_KDE4=	kdehier kdeprefix kdelibs automoc4 runtime
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui network opengl script svg webkit \
+USE_QT4=	corelib gui network opengl script svg webkit \
 		qmake_build moc_build rcc_build uic_build phonon
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/smb4k
 SUB_FILES=	pkg-message

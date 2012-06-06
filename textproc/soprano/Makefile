@@ -17,8 +17,7 @@ LIB_DEPENDS=	raptor2.0:${PORTSDIR}/textproc/raptor2 \
 		iodbc.3:${PORTSDIR}/databases/libiodbc
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib dbus qtestlib network \
+USE_QT4=	corelib dbus qtestlib network \
 		qmake_build moc_build uic_build rcc_build
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes

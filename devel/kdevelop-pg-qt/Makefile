@@ -24,8 +24,7 @@ USE_BZIP2=	yes
 USE_BISON=	build
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
 KDE4_BUILDENV=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib qmake_build moc_build uic_build rcc_build
+USE_QT4=	corelib qmake_build moc_build uic_build rcc_build
 MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>

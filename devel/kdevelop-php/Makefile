@@ -24,8 +24,7 @@ USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_GMAKE=	yes
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
-USE_QT_VER=	4
-QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build
+USE_QT4=	moc_build qmake_build rcc_build uic_build
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	DOCS	"Integrate with PHP.net online documentation" on

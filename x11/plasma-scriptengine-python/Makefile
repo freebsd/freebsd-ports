@@ -18,8 +18,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma scriptengine for Python
 
 USE_KDE4=	kdehier kdelibs kdeprefix pykde4 automoc4
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build uic_build rcc_build
+USE_QT4=	qmake_build moc_build uic_build rcc_build
 USE_PYTHON=	2.5+
 DISTINFO_FILE=	${PORTSDIR}/x11/kde4-workspace/distinfo
 USE_XZ=	yes

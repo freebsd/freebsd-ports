@@ -32,8 +32,7 @@ USE_KDE4=	kdehier kdelibs kdeprefix libkonq pimlibs sharedmime \
 		akonadi automoc4 qimageblitz_build strigi
 KDE4_BUILDENV=	yes
 USE_PERL5=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus designer gui qt3support \
+USE_QT4=	dbus designer gui qt3support \
 		script scripttools sql svg xml \
 		qmake_build moc_build rcc_build uic_build uic3_build
 USE_GMAKE=	yes

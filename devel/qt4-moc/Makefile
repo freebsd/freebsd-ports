@@ -14,8 +14,7 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt meta object compiler
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build
+USE_QT4=	qmake_build
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 MAKE_JOBS_SAFE=	yes

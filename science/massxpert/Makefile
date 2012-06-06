@@ -16,10 +16,9 @@ COMMENT=	The massXpert software for (bio)chemists
 
 LICENSE=	GPLv3
 
-USE_QT_VER=	4
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
-QT_COMPONENTS=	gui xml rcc_build qmake_build uic_build moc_build \
+USE_QT4=	gui xml rcc_build qmake_build uic_build moc_build \
 		svg
 MAN7=		massxpert-data.7
 MAN1=		massxpert.1

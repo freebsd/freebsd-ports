@@ -24,8 +24,7 @@ LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib network qtestlib dbus gui sql \
+USE_QT4=	corelib network qtestlib dbus gui sql \
 		qmake_build moc_build rcc_build uic_build
 USE_KDE4=	kdehier kdeprefix sharedmime automoc4 soprano
 KDE4_BUILDENV=	yes
@@ -44,7 +43,7 @@ OPTIONS=	MYSQL "Install MySQL plugin and server (recommended)" on \
 
 .ifndef(WITHOUT_MYSQL)
 USE_MYSQL=	server
-QT_COMPONENTS+=	sql-mysql_run
+USE_QT4+=	sql-mysql_run
 .endif
 
 .ifdef(WITH_PGSQL)
@@ -52,7 +51,7 @@ QT_COMPONENTS+=	sql-mysql_run
 # it over MySQL might like to use some advanced configuration like a
 # remote server.
 #USE_PGSQL=	server
-QT_COMPONENTS+=	sql-pgsql_run
+USE_QT4+=	sql-pgsql_run
 .endif
 
 .ifdef(WITH_SQLITE)

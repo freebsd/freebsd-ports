@@ -19,8 +19,7 @@ RUN_DEPENDS=	pbreg:${PORTSDIR}/sysutils/pbreg
 
 WRKSRC=		${WRKDIR}/warden
 
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui qmake_build moc_build rcc_build uic_build
+USE_QT4=	corelib gui qmake_build moc_build rcc_build uic_build
 HAS_CONFIGURE=	yes
 
 QMAKE_PRO=	warden.pro

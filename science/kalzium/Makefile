@@ -30,8 +30,7 @@ USE_KDE4=	kdehier kdelibs kdeprefix automoc4
 KDE4_BUILDENV=	yes
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus designer opengl script xml \
+USE_QT4=	dbus designer opengl script xml \
 		moc_build qmake_build rcc_build uic_build
 USE_XZ=	yes
 MAKE_JOBS_SAFE=	yes

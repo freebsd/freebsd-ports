@@ -20,8 +20,7 @@ RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl
 
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib qtestlib network qmake_build moc_build
+USE_QT4=	corelib qtestlib network qmake_build moc_build
 HAS_CONFIGURE=	yes
 USE_OPENSSL=	yes
 

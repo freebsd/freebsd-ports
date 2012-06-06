@@ -18,8 +18,7 @@ LIB_DEPENDS=	oil-0.3:${PORTSDIR}/devel/liboil
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui qmake_build moc_build uic_build
+USE_QT4=	gui qmake_build moc_build uic_build
 USE_GSTREAMER=	jpeg speex theora vorbis
 
 QT_NONSTANDARD=	yes

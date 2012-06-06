@@ -53,8 +53,7 @@ CONFIGURE_ARGS+=	--without-gtk
 .endif
 
 .if defined(WITH_QT4)
-USE_QT_VER+=	4
-QT_COMPONENTS=	corelib gui moc_build
+USE_QT4=	corelib gui moc_build
 QT_NONSTANDARD=	yes
 CONFIGURE_ENV+=	CPP="${CXX}" CCLINK="${CXX}"
 .else

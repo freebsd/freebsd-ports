@@ -21,8 +21,7 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 SUB_FILES=	pkg-install pkg-deinstall ${PORTNAME}.desktop
 USE_XORG=	x11 ice xext xt xaw xpm xi xproto xextproto
 USE_ZIP=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui network script qt3support imageformats \
+USE_QT4=	gui network script qt3support imageformats \
 		codecs-cn codecs-tw codecs-jp codecs-kr \
 		qmake_build moc_build rcc_build uic_build linguist_build
 

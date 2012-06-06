@@ -13,8 +13,7 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt4 framework for building highly dynamic user interfaces
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build corelib gui network \
+USE_QT4=	qmake_build moc_build rcc_build uic_build corelib gui network \
 		opengl script sql svg xml xmlpatterns
 QT_NONSTANDARD=	yes
 QT_DIST=	yes

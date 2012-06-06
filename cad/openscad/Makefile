@@ -27,8 +27,7 @@ LIB_DEPENDS=	GLU.1:${PORTSDIR}/graphics/libGLU \
 		opencsg:${PORTSDIR}/graphics/opencsg
 
 USE_GL=		glew
-USE_QT_VER=     4
-QT_COMPONENTS=  qmake corelib gui opengl moc uic rcc
+USE_QT4=  qmake corelib gui opengl moc uic rcc
 PLIST_SUB=      PORTVERSION=${PORTVERSION}
 #MAKE_JOBS_UNSAFE=yes
 QMAKE_ENV =		EIGEN2DIR=${LOCALBASE}/include/eigen2

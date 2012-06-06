@@ -17,8 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/smplayer:${PORTSDIR}/multimedia/smplayer
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	linguist_build moc_build qmake_build rcc_build uic_build \
+USE_QT4=	linguist_build moc_build qmake_build rcc_build uic_build \
 		corelib gui network xml
 INSTALLS_ICONS=	yes
 

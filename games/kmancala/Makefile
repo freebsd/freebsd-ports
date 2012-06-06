@@ -21,7 +21,6 @@ LIB_DEPENDS=	kdegames.5:${PORTSDIR}/games/kdegames4
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_KDE4=	kdelibs kdeprefix automoc4
-USE_QT_VER=	4
-QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build
+USE_QT4=	moc_build qmake_build rcc_build uic_build
 
 .include <bsd.port.mk>

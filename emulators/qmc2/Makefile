@@ -22,8 +22,7 @@ NO_WRKSUBDIR=	yes
 USE_BZIP2=	yes
 USE_XORG=	xmu
 USE_GL=		glu
-USE_QT_VER=	4
-QT_COMPONENTS=	gui opengl phonon qtestlib webkit xml \
+USE_QT4=	gui opengl phonon qtestlib webkit xml \
 		moc_build qmake_build rcc_build uic_build
 USE_SDL=	sdl
 USE_GMAKE=	yes

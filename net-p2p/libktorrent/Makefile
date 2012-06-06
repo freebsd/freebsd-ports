@@ -20,8 +20,7 @@ LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 
 USE_BZIP2=	yes
 USE_KDE4=	kdelibs kdehier kdeprefix automoc4
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build
+USE_QT4=	qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes

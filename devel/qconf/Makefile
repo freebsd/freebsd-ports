@@ -14,8 +14,7 @@ MAINTAINER=	andreevmaxim@gmail.com
 COMMENT=	Tool to create configure script for qmake-based project
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib xml moc_build qmake_build
+USE_QT4=	corelib xml moc_build qmake_build
 HAS_CONFIGURE=	yes
 QT_NONSTANDARD=	yes
 

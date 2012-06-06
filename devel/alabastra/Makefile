@@ -15,8 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ Editor writen with QT4
 
-USE_QT_VER=	4
-QT_COMPONENTS=	gui xml qmake_build moc_build uic_build rcc_build \
+USE_QT4=	gui xml qmake_build moc_build uic_build rcc_build \
 		iconengines
 USE_GMAKE=	yes
 ALL_TARGET=	Alabastra

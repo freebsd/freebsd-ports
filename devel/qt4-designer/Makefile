@@ -14,8 +14,7 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt ui editor
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build assistant_run \
+USE_QT4=	qmake_build moc_build rcc_build uic_build assistant_run \
 		qt3support corelib declarative gui network script sql xml \
 		webkit phonon
 QT_NONSTANDARD=	yes

@@ -34,8 +34,7 @@ USE_KDE4=	kdehier kdelibs kdeprefix pimlibs \
 		akonadi automoc4 ontologies soprano strigi
 KDE4_BUILDENV=	yes
 USE_OPENLDAP=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus designer gui network \
+USE_QT4=	dbus designer gui network \
 		qt3support script sql webkit xml \
 		qmake_build moc_build rcc_build uic_build
 USE_XORG=	x11 xscrnsaver

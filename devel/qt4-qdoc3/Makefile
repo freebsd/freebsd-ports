@@ -13,8 +13,7 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt documentation generator
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build corelib gui xml
+USE_QT4=	qmake_build corelib gui xml
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 

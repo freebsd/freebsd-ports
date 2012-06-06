@@ -22,8 +22,7 @@ LIB_DEPENDS=	asound.2:${PORTSDIR}/audio/alsa-lib
 RUN_DEPENDS=	${LOCALBASE}/include/linux/joystick.h:${PORTSDIR}/devel/linux-js
 
 USE_ZIP=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui opengl moc_build qmake_build uic_build
+USE_QT4=	corelib gui opengl moc_build qmake_build uic_build
 QMAKEFLAGS+=	TARGET=release
 
 PORTDOCS=	Readme.txt TODO.txt

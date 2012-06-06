@@ -16,8 +16,7 @@ COMMENT=	Simsu is a basic Sudoku game
 
 LICENSE=	GPLv3
 
-USE_QT_VER=	4
-QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build iconengines imageformats
+USE_QT4=	moc_build qmake_build rcc_build uic_build iconengines imageformats
 
 INSTALLS_ICONS=	yes
 HAS_CONFIGURE=	yes

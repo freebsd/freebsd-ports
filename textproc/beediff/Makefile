@@ -15,8 +15,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	QT4 based diff frontend
 
-USE_QT_VER=	4
-QT_COMPONENTS=	gui moc_build rcc_build qmake_build
+USE_QT4=	gui moc_build rcc_build qmake_build
 HAS_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 

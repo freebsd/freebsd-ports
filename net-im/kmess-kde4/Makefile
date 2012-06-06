@@ -24,8 +24,7 @@ MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	libxml2 libxslt
 USE_KDE4=	kdehier kdeprefix kdebase automoc4
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui network opengl script svg webkit \
+USE_QT4=	corelib gui network opengl script svg webkit \
 		qmake_build moc_build rcc_build uic_build phonon
 USE_CMAKE=	yes
 USE_GETTEXT=	yes

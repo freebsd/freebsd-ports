@@ -27,8 +27,7 @@ LIB_DEPENDS=	cdio.13:${PORTSDIR}/sysutils/libcdio \
 BUILD_DEPENDS=	mythfrontend:${PORTSDIR}/multimedia/mythtv
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	linguist_build moc_build qmake_build rcc_build uic_build
+USE_QT4=	linguist_build moc_build qmake_build rcc_build uic_build
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/mythtv/plugins
 

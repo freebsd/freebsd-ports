@@ -22,8 +22,7 @@ LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
 
 USE_RUBY=	yes
 USE_GMAKE=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib xml network sql gui qtestlib \
+USE_QT4=	corelib xml network sql gui qtestlib \
 		qmake_build moc_build rcc_build uic_build
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	-release --prefix ${PREFIX}

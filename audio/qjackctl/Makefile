@@ -18,8 +18,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	asound.2:${PORTSDIR}/audio/alsa-lib \
 		jack.0:${PORTSDIR}/audio/jack
 
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib dbus gui xml \
+USE_QT4=	corelib dbus gui xml \
 		linguist_build moc_build qmake_build rcc_build uic_build
 QT_NONSTANDARD=	yes
 USE_GMAKE=	yes

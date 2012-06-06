@@ -22,7 +22,6 @@ USE_GMAKE=	yes
 USE_GL=		gl glu glut
 USE_GNOME=	#
 USE_OPENAL=	soft
-USE_QT_VER=	4
 USE_SDL=	yes
 
 SUB_FILES=	pkg-message
@@ -33,7 +32,7 @@ OPTIONS=	QT4	"Build wit qt4 interface instead of gtk2 one"	on
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_QT4)
-QT_COMPONENTS=	corelib gui opengl
+USE_QT4=	corelib gui opengl
 CONFIGURE_ARGS+=	--with-port=qt
 .else
 USE_GNOME=	gtk20

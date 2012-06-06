@@ -29,8 +29,7 @@ LATEST_LINK=	${PORTNAME}-kde4
 MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
 USE_KDE4=	automoc4 kdehier kdeprefix kdelibs
-USE_QT_VER=	4
-QT_COMPONENTS=	gui dbus network qt3support sql svg xml \
+USE_QT4=	gui dbus network qt3support sql svg xml \
 		qmake_build moc_build rcc_build uic_build
 USE_GNOME=	pkgconfig
 USE_CMAKE=	yes

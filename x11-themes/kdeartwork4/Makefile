@@ -26,8 +26,7 @@ LATEST_LINK=	${PORTNAME}4
 USE_XZ=	yes
 USE_KDE4=	kdehier kdelibs kdeprefix libkexiv2 workspace automoc4
 KDE4_BUILDENV=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui opengl \
+USE_QT4=	gui opengl \
 		moc_build qmake_build rcc_build uic_build
 USE_XORG=	x11 xt
 MAKE_JOBS_SAFE=	yes

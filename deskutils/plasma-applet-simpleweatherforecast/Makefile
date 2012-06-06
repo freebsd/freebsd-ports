@@ -20,8 +20,7 @@ RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 USE_CMAKE=	yes
 USE_KDE4=	automoc4 kdeprefix kdelibs
-USE_QT_VER=	4
-QT_COMPONENTS=	gui dbus network opengl svg webkit xml \
+USE_QT4=	gui dbus network opengl svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
 
 WRKSRC=		${WRKDIR}/plasma-${PORTNAME}-${PORTVERSION}-kde-4.3.80

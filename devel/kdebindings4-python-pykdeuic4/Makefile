@@ -20,8 +20,7 @@ COMMENT=	An enhanced version of pyuic4
 
 USE_KDE4=	kdelibs automoc4 pykde4
 USE_PYTHON=	2.5+
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib qmake_build moc_build uic_build rcc_build
+USE_QT4=	corelib qmake_build moc_build uic_build rcc_build
 USE_XZ=	yes
 DISTINFO_FILE=	${PORTSDIR}/devel/kdebindings4-python-pykde4/distinfo
 USE_CMAKE=	yes

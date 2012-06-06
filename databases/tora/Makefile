@@ -24,8 +24,7 @@ OPTIONS=	ORACLE "Build with Oracle support (i386 only)" off \
 		MYSQL  "Build with MySQL support" on
 
 USE_AUTOTOOLS=	aclocal automake autoconf autoheader libtool
-USE_QT_VER=	4
-QT_COMPONENTS=	gui corelib sql xml network linguist moc_build uic_build rcc_build
+USE_QT4=	gui corelib sql xml network linguist moc_build uic_build rcc_build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

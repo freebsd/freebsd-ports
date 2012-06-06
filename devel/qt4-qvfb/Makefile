@@ -14,8 +14,7 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt virtual framebuffer utility
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build corelib gui opengl
+USE_QT4=	qmake_build moc_build rcc_build uic_build corelib gui opengl
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 USE_XORG=	xtst

@@ -22,8 +22,7 @@ LIB_DEPENDS=	poppler-qt4.3:${PORTSDIR}/graphics/poppler-qt4
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		unrar:${PORTSDIR}/archivers/unrar
 
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui moc_build qmake_build rcc_build uic_build \
+USE_QT4=	corelib gui moc_build qmake_build rcc_build uic_build \
 		xml
 USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes

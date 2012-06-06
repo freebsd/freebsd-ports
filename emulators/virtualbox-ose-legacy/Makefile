@@ -103,9 +103,8 @@ PLIST_SUB+=	X11="@comment "
 .endif
 
 .if !defined(WITHOUT_QT4)
-USE_QT_VER=	4
 QT_NONSTANDARD=	yes
-QT_COMPONENTS=	gui network moc_build uic_build rcc_build linguist
+USE_QT4=	gui network moc_build uic_build rcc_build linguist
 INSTALLS_ICONS=	yes
 VBOX_FRONTENDS+=VirtualBox VBoxTestOGL
 PLIST_SUB+=	QT4=""

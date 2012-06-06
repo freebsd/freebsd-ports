@@ -29,10 +29,9 @@ RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
 
 LICENSE=	GPLv2
 
-USE_QT_VER=	4
 USE_CDRTOOLS=	true
 USE_PERL5_RUN=	yes
-QT_COMPONENTS=	qmake_build gui corelib rcc_build moc_build uic_build \
+USE_QT4=	qmake_build gui corelib rcc_build moc_build uic_build \
 		webkit
 
 MAKE_ENV+=	QTDIR=${QT_PREFIX}

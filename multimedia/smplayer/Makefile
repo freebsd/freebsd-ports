@@ -17,8 +17,7 @@ COMMENT=	A complete front-end based on QT4 for mplayer
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 		${LOCALBASE}/share/smplayer/themes:${PORTSDIR}/multimedia/smplayer-themes
 
-USE_QT_VER=	4
-QT_COMPONENTS=	gui network xml qmake_build moc_build rcc_build uic_build \
+USE_QT4=	gui network xml qmake_build moc_build rcc_build uic_build \
 		uic3_build porting_build linguist_build
 
 ALL_TARGET=	src/smplayer

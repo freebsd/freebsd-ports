@@ -20,8 +20,7 @@ COMMENT=	Ruby bindings for Qt/KDE
 CONFLICTS=	ruby1[89]-kdebindings-4.[0-6].*
 
 USE_KDE4=	kdehier kdelibs kdeprefix pimlibs automoc4
-USE_QT_VER=	4
-QT_COMPONENTS=	gui qmake_build moc_build uic_build rcc_build
+USE_QT4=	gui qmake_build moc_build uic_build rcc_build
 USE_RUBY=	yes
 USE_XZ=	yes
 USE_CMAKE=	yes

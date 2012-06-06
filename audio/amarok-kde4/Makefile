@@ -32,8 +32,7 @@ LATEST_LINK=	${PORTNAME}-kde4
 USE_GETTEXT=	yes
 USE_KDE4=	kdehier kdeprefix kdelibs runtime automoc4
 USE_MYSQL=	embedded
-USE_QT_VER=	4
-QT_COMPONENTS=	gui network opengl phonon script svg webkit \
+USE_QT4=	gui network opengl phonon script svg webkit \
 		qmake_build moc_build rcc_build uic_build
 USE_BZIP2=	yes
 USE_CMAKE=	yes

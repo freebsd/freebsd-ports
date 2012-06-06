@@ -16,8 +16,7 @@ COMMENT=	Simple notes based on QT4
 
 LICENSE=	GPLv3
 
-USE_QT_VER=	4
-QT_COMPONENTS=	gui network xml qmake_build uic_build moc_build rcc_build \
+USE_QT4=	gui network xml qmake_build uic_build moc_build rcc_build \
 		linguist_build
 
 DESKTOP_ENTRIES="zNotes" "Simple notes" \

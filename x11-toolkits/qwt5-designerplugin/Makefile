@@ -17,8 +17,7 @@ COMMENT=	Qt Designer plugin for Qwt
 
 LIB_DEPENDS=	qwt.5:${PORTSDIR}/x11-toolkits/qwt5
 
-USE_QT_VER=	4
-QT_COMPONENTS=	designer moc_build qmake_build rcc_build
+USE_QT4=	designer moc_build qmake_build rcc_build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 QMAKE_ARGS+=	-unix -recursive CONFIG+=QwtDesigner \

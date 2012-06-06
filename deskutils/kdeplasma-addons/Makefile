@@ -28,8 +28,7 @@ USE_XZ=	yes
 USE_KDE4=	kdehier kdelibs kdeprefix libkexiv2 pimlibs workspace \
 		akonadi attica automoc4 qimageblitz sharedmime soprano
 KDE4_BUILDENV=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus gui network opengl script sql svg webkit xml \
+USE_QT4=	dbus gui network opengl script sql svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
 USE_XORG=	x11 xrender xtst
 MAKE_JOBS_SAFE=	yes

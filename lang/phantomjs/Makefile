@@ -16,10 +16,9 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Minimalistic, headless, WebKit-based, JavaScript-driven tool
 
 PROJECTHOST=	phantomjs
-USE_QT_VER=	4
 USE_GMAKE=	YES
 USE_DOS2UNIX=	YES
-QT_COMPONENTS=	moc qmake gui webkit rcc
+USE_QT4=	moc qmake gui webkit rcc
 PLIST_FILES=	bin/phantomjs
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

@@ -20,8 +20,7 @@ LIB_DEPENDS=	boost_program_options.4:${PORTSDIR}/devel/boost-libs
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GL=		glu
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui opengl \
+USE_QT4=	corelib gui opengl \
 		moc_build qmake_build
 QT_NONSTANDARD=	yes
 HAS_CONFIGURE=	yes

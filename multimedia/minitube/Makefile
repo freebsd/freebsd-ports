@@ -14,8 +14,7 @@ MASTER_SITES=	http://flavio.tordini.org/files/minitube/
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A native YouTube client
 
-USE_QT_VER=	4
-QT_COMPONENTS=	gui network xml dbus phonon phonon-gst \
+USE_QT4=	gui network xml dbus phonon phonon-gst \
 		qmake_build moc_build rcc_build imageformats_run
 USE_GSTREAMER=	ffmpeg
 HAS_CONFIGURE=	yes
@@ -30,7 +29,7 @@ LRELEASE=	${LOCALBASE}/bin/lrelease-qt4
 STRIP_FILES=	bin/minitube
 
 .if !defined(WITHOUT_NLS)
-QT_COMPONENTS+=	linguist_build
+USE_QT4+=	linguist_build
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "

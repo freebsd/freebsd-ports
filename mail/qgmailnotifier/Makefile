@@ -15,8 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	A portable QT4 based GMail notifier
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build uic_build gui network xml rcc_build
+USE_QT4=	qmake_build moc_build uic_build gui network xml rcc_build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

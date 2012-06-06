@@ -17,8 +17,7 @@ COMMENT=	A graphical font manager
 
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
-USE_QT_VER=	4
-QT_COMPONENTS=	gui svg network moc_build uic_build rcc_build qmake_build linguist_build
+USE_QT4=	gui svg network moc_build uic_build rcc_build qmake_build linguist_build
 INSTALLS_ICONS=	yes
 
 USE_CMAKE=	yes

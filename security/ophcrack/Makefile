@@ -31,8 +31,7 @@ OPTIONS=	GUI	"Build GUI frontend (Qt4 based)"	on \
 .include <bsd.port.options.mk>
 
 .if defined(WITH_GUI) || defined(WITH_GRAPH)
-USE_QT_VER=	4
-QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build corelib gui
+USE_QT4=	moc_build qmake_build rcc_build uic_build corelib gui
 .else
 CONFIGURE_ARGS+=	--disable-gui
 .endif

@@ -14,8 +14,7 @@ PKGNAMESUFFIX=	-gst
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt4 multimedia framework, gstreamer backend
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build corelib gui phonon opengl dbus
+USE_QT4=	qmake_build moc_build corelib gui phonon opengl dbus
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 

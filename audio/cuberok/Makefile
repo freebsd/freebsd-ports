@@ -21,9 +21,8 @@ LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		avutil.1:${PORTSDIR}/multimedia/ffmpeg \
 		tag.1:${PORTSDIR}/audio/taglib
 
-USE_QT_VER=	4
 USE_LDCONFIG=	yes
-QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build \
+USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build \
 		network phonon-gst sql
 USE_ICONV=	yes
 USE_GETTEXT=	yes

@@ -22,8 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/sqldrivers/libqsqlite2.so:${PORTSDIR}/
 		${LOCALBASE}/lib/qt4/plugins/sqldrivers/libqsqlite.so:${PORTSDIR}/databases/qt4-sqlite3-plugin
 
 USE_ZIP=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui sql corelib network script qtestlib \
+USE_QT4=	gui sql corelib network script qtestlib \
 		qmake_build rcc_build uic_build moc_build
 WRKSRC=		${WRKDIR}/tipp10_source_v2-1-0
 

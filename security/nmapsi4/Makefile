@@ -21,8 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap
 USE_CMAKE=	yes
 USE_BZIP2=	yes
 INSTALLS_ICONS=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build network \
+USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build network \
 		linguist webkit dbus
 
 pre-configure:

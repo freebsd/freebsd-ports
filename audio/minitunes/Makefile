@@ -16,8 +16,7 @@ COMMENT=	Minitunes is just another music player
 
 LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib
 
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus gui moc_build network phonon qmake_build rcc_build \
+USE_QT4=	dbus gui moc_build network phonon qmake_build rcc_build \
 		sql uic_build xml
 INSTALLS_ICONS=	yes
 

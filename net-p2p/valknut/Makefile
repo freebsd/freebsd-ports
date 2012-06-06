@@ -23,8 +23,7 @@ WRKSRC=	${WRKDIR}/${DISTNAME}
 
 MAN1=	valknut.1
 
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui network qt3support \
+USE_QT4=	corelib gui network qt3support \
 		moc_build uic_build rcc_build linguist_build
 USE_BZIP2=	yes
 USE_GMAKE=	yes

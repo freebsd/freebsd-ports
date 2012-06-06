@@ -22,8 +22,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		qscintilla2:${PORTSDIR}/devel/qscintilla2 \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib moc_build uic_build rcc_build gui opengl xml network qmake_build \
+USE_QT4=	corelib moc_build uic_build rcc_build gui opengl xml network qmake_build \
 		designer assistant assistantclient
 USE_GL=		glew glut
 USE_GNOME=	libxml2

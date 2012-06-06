@@ -21,8 +21,7 @@ CONFLICTS=	kdebindings-smoke-4.[0-6].*
 
 USE_KDE4=	kate kdehier kdelibs kdeprefix okular pimlibs \
 		smokegen smokeqt akonadi automoc4 soprano
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus designer gui network opengl qt3support sql svg xml \
+USE_QT4=	dbus designer gui network opengl qt3support sql svg xml \
 		qmake_build moc_build uic_build rcc_build
 USE_XZ=	yes
 USE_CMAKE=	yes

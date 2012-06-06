@@ -37,8 +37,7 @@ MAN5=		recoll.conf.5
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MQT4}
-USE_QT_VER=	4
-QT_COMPONENTS=	webkit moc_build qmake_build rcc_build uic_build
+USE_QT4=	webkit moc_build qmake_build rcc_build uic_build
 QT_NONSTANDARD=	yes
 CONFIGURE_ENV+=	QTDIR="${QT_PREFIX}" QMAKE="${QMAKE}"
 INSTALLS_ICONS=	yes

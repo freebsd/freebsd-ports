@@ -17,8 +17,7 @@ COMMENT=	Mesh Viewer
 WRKSRC=		${WRKDIR}/mview-${PORTVERSION}
 
 USE_GL=		glu
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui opengl moc_build
+USE_QT4=	corelib gui opengl moc_build
 USE_GMAKE=	yes
 CXXFLAGS+=	-I. -Imesh -Imathvector \
 		`pkg-config --cflags QtOpenGL glu`

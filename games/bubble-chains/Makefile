@@ -26,8 +26,7 @@ WRKSRC=		${WRKDIR}/chains-${PORTVERSION}-src
 USE_SDL=	sdl image mixer
 USE_GL=		glut glew glu
 USE_XORG=	xrandr
-USE_QT_VER=	4
-QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build iconengines imageformats \
+USE_QT4=	moc_build qmake_build rcc_build uic_build iconengines imageformats \
 		corelib svg xml opengl network
 
 MAKE_JOBS_SAFE=	yes

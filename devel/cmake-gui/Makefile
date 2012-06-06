@@ -17,8 +17,7 @@ COMMENT=	Qt4 GUI for cmake
 
 RUN_DEPENDS=	${CMAKE_BIN}:${CMAKE_PORT}
 
-USE_QT_VER=	4
-QT_COMPONENTS=	gui qmake_build moc_build uic_build rcc_build
+USE_QT4=	gui qmake_build moc_build uic_build rcc_build
 USE_CMAKE=	yes
 CMAKE_ARGS=	-DBUILD_QtDialog:bool=on \
 		-DCMAKE_DATA_DIR:STRING="/${DATADIR_REL}" \

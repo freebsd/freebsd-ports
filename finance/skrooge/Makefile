@@ -21,8 +21,7 @@ LIB_DEPENDS=	ofx.5:${PORTSDIR}/finance/libofx \
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build uic_build rcc_build \
+USE_QT4=	qmake_build moc_build uic_build rcc_build \
 		corelib dbus gui script xml sql sql-sqlite3_run
 USE_KDE4=	kdelibs kdeprefix automoc4
 USE_LDCONFIG=	yes

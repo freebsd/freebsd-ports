@@ -15,8 +15,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A StarDict clone written with using Qt4
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui network xml qmake_build uic_build moc_build rcc_build
+USE_QT4=	gui network xml qmake_build uic_build moc_build rcc_build
 QMAKE_ARGS+=	-recursive
 USE_DOS2UNIX=	qstardict.pri
 

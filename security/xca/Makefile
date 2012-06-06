@@ -20,8 +20,7 @@ RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui moc_build uic_build qmake_build rcc_build linguist_build
+USE_QT4=	gui moc_build uic_build qmake_build rcc_build linguist_build
 USE_AUTOTOOLS=	libltdl
 CC?=		gcc
 CXX?=		g++

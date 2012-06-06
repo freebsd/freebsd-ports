@@ -17,8 +17,7 @@ DB=		sqlite2
 
 LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite2
 
-USE_QT_VER=	4
-QT_COMPONENTS=	moc_build sql
+USE_QT4=	moc_build sql
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 MAKE_JOBS_SAFE=	yes

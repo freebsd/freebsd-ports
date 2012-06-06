@@ -19,9 +19,8 @@ LIB_DEPENDS=		tspi.2:${PORTSDIR}/security/trousers
 LICENSE=		GPLv2
 LICENSE_FILE=		${WRKSRC}/COPYING
 
-USE_QT_VER=		4
 QT_NONSTANDARD=		YES
-QT_COMPONENTS=		gui moc_build qmake_build rcc_build uic_build
+USE_QT4=		gui moc_build qmake_build rcc_build uic_build
 
 HAS_CONFIGURE=		YES
 MAKE_JOBS_SAFE=		YES

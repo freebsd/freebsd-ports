@@ -38,8 +38,7 @@ MAN1=		gcin.1 gcin-exit.1 gcin2tab.1 gcin-gb-toggle.1 gcin-kbm-toggle.1 \
 .include <bsd.port.options.mk>
 
 .if defined(WITH_QT_IM_MODULE)
-USE_QT_VER=	4
-QT_COMPONENTS=	inputmethods qmake_build moc_build corelib gui
+USE_QT4=	inputmethods qmake_build moc_build corelib gui
 LIB_DEPENDS+=	mng:${PORTSDIR}/graphics/libmng
 PLIST_SUB+=	QT_IM_MODULE=""
 .else

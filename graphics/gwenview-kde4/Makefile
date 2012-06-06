@@ -26,8 +26,7 @@ CONFLICTS=	kdegraphics-4.[0-6].*
 USE_KDE4=	kdehier kdelibs kdeprefix libkipi libkonq \
 		automoc4 soprano
 KDE4_BUILDENV=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus qmake_build moc_build uic_build rcc_build
+USE_QT4=	dbus qmake_build moc_build uic_build rcc_build
 USE_XZ=	yes
 MAKE_JOBS_SAFE=	yes
 

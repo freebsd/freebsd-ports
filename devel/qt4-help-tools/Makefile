@@ -15,8 +15,7 @@ PKGNAMESUFFIX=	-tools
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	QtHelp tools to generate and convert documentation
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build corelib \
+USE_QT4=	qmake_build moc_build rcc_build uic_build corelib \
 		gui sql xml doc help
 QT_NONSTANDARD=	yes
 QT_DIST=	yes

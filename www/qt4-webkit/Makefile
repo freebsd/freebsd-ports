@@ -15,8 +15,7 @@ COMMENT=	Qt4 WebKit engine
 
 USE_GNOME=	glib20
 USE_GSTREAMER=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib declarative gui network \
+USE_QT4=	corelib declarative gui network \
 		qmake_build moc_build rcc_build
 QT_NONSTANDARD=	yes
 QT_DIST=	yes

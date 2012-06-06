@@ -36,8 +36,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 USE_KDE4=	kdehier kdelibs kdeprefix okular pimlibs \
 		akonadi automoc4 soprano
 USE_PYTHON=	2.5+
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib qmake_build moc_build uic_build rcc_build
+USE_QT4=	corelib qmake_build moc_build uic_build rcc_build
 USE_XZ=	yes
 USE_CMAKE=	yes
 CMAKE_ARGS+=	-DWITH_PolkitQt:BOOL=FALSE

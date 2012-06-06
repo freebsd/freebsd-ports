@@ -36,8 +36,7 @@ WAVPACK_DESC=	Enable WavPack audio support plugin
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GL=		glu
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui network opengl script sql svg webkit xml \
+USE_QT4=	corelib gui network opengl script sql svg webkit xml \
 		xmlpatterns linguist_build moc_build qmake_build rcc_build \
 		uic_build
 USE_SCONS=	yes

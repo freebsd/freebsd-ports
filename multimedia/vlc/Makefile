@@ -176,8 +176,7 @@ CONFIGURE_ARGS+=--disable-debug
 .if defined(WITHOUT_QT4)
 CONFIGURE_ARGS+=--disable-qt4
 .else
-USE_QT_VER=	4
-QT_COMPONENTS=	gui corelib moc_build rcc_build uic_build
+USE_QT4=	gui corelib moc_build rcc_build uic_build
 CONFIGURE_ARGS+=--enable-qt4
 .endif
 

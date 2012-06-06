@@ -16,8 +16,7 @@ DISTNAME=	LayoutEditor-${PORTVERSION:S,^0.0.,,}-gpl-src
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	IC/MEMS layout editor
 
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui network moc_build sql uic_build \
+USE_QT4=	corelib gui network moc_build sql uic_build \
 		rcc_build qmake qt3support xml
 USE_ZIP=	yes
 USE_FREETYPE=	yes

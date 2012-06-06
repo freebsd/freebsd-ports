@@ -90,8 +90,7 @@ LIB_DEPENDS+=	packagekit-glib2.14:${PORTSDIR}/ports-mgmt/packagekit
 .if ${SLAVEPORT}=="qt4"
 CONFIGURE_ARGS+=--enable-qt
 LIB_DEPENDS+=	cppunit-1.12.1:${PORTSDIR}/devel/cppunit
-USE_QT_VER+=	4
-QT_COMPONENTS+=	dbus gui xml sql moc_build
+USE_QT4+=	dbus gui xml sql moc_build
 .include "${PORTSDIR}/Mk/bsd.qt.mk"
 .endif
 .else

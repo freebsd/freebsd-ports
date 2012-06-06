@@ -20,8 +20,7 @@ CONFLICTS=	kdebase-workspace-4.[0-6].*
 USE_XZ=	yes
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
 KDE4_BUILDENV=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build
+USE_QT4=	moc_build qmake_build rcc_build uic_build
 
 NO_BUILD=	yes
 

@@ -20,8 +20,7 @@ LATEST_LINK=	${PORTNAME}4
 USE_XZ=	yes
 USE_KDE4=	kdelibs pimlibs kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus moc_build qmake_build rcc_build uic_build
+USE_QT4=	dbus moc_build qmake_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 
 # Disable system-config-printer-kde, it comes with

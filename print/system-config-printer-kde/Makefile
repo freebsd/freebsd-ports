@@ -23,8 +23,7 @@ RUN_DEPENDS=	system-config-printer:${PORTSDIR}/print/system-config-printer \
 
 USE_KDE4=	kdehier kdelibs kdeprefix pykde4 pykdeuic4 automoc4
 USE_PYTHON=	2.5+
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build uic_build rcc_build
+USE_QT4=	qmake_build moc_build uic_build rcc_build
 DISTINFO_FILE=	${PORTSDIR}/sysutils/kdeadmin4/distinfo
 USE_XZ=	yes
 USE_CMAKE=	yes

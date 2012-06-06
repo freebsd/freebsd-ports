@@ -15,8 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	bfoz@bfoz.net
 COMMENT=	Cross-platform software for the DIY line of PIC programmers
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build gui network
+USE_QT4=	qmake_build moc_build gui network
 
 WRKSRC=		${WRKDIR}/QProg
 
