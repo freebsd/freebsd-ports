@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/slumber/__init__.py
+%%PYTHON_SITELIBDIR%%/slumber/__init__.pyc
+%%PYTHON_SITELIBDIR%%/slumber/__init__.pyo
+%%PYTHON_SITELIBDIR%%/slumber/exceptions.py
+%%PYTHON_SITELIBDIR%%/slumber/exceptions.pyc
+%%PYTHON_SITELIBDIR%%/slumber/exceptions.pyo
+%%PYTHON_SITELIBDIR%%/slumber/serialize.py
+%%PYTHON_SITELIBDIR%%/slumber/serialize.pyc
+%%PYTHON_SITELIBDIR%%/slumber/serialize.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/slumber
