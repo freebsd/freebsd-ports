@@ -103,13 +103,13 @@ PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
 .  endfor
 
 ## Set the options specified per-port (set by user in make.conf)
-.  for opt in ${${UNIQUENAME:U}_SET}
+.  for opt in ${${UNIQUENAME}_SET}
 PORT_OPTIONS+=	${opt}
 .  endfor
 PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 
 ## Unset the options excluded per-port (set by user in make.conf)
-.  for opt in ${${UNIQUENAME:U}_UNSET}
+.  for opt in ${${UNIQUENAME}_UNSET}
 PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
 .  endfor
 
