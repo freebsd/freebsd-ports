@@ -1,0 +1,10 @@
+Daemon::Control provides a library for creating init scripts in perl. Your perl
+script just needs to set the accessors for what and how you want something to
+run and the library takes care of the rest.
+
+You can launch programs through the shell (/usr/sbin/my_program) or launch Perl
+code itself into a daemon mode. Single and double fork methods are supported and
+in double-fork mode all the things you would expect like reopening
+STDOUT/STDERR, switching UID/GID are supported.
+
+WWW: http://search.cpan.org/dist/Daemon-Control/
