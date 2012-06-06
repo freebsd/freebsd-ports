@@ -4,17 +4,15 @@
 %%ETC%%
 A text-based browser, such as one of following
 
-lynx            www/lynx
-w3m             www/w3m
+	lynx:	www/lynx
+	w3a:	mwww/w3m
 
 is recommended to use the `help' command inside the
 interpreter. Check pure(1) for details.
-
-To enable the inline C/C++ code compilation, one of
-following is required:
-
-clang           lang/clang
-llvm-gcc4       lang/llvm-gcc4
-
-Install them as needed.
+%%NOCLANG%%
+%%NOCLANG%%To enable the inline C/C++ code compilation,
+%%NOCLANG%%
+%%NOCLANG%%	clang:	lang/clang
+%%NOCLANG%%
+%%NOCLANG%%is required.
 ====
