@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	dhcp
-DISTVERSION=	4.2.3
+DISTVERSION=	4.2.4
 PORTREVISION=	${DHCP_PORTREVISION}
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_ISC}
-MASTER_SITE_SUBDIR=	${PORTNAME}/${DISTVERSION}-${PATCHLEVEL}
+MASTER_SITE_SUBDIR=	${PORTNAME}/${DISTVERSION}
 PKGNAMEPREFIX=	isc-
 PKGNAMESUFFIX=	42-${SUBSYS}
-DISTNAME=	${PORTNAME}-${DISTVERSION}-${PATCHLEVEL}
+#DISTNAME=	${PORTNAME}-${DISTVERSION}-${PATCHLEVEL}
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT?=	The ISC Dynamic Host Configuration Protocol server
@@ -22,23 +22,25 @@ LICENSE=	ISCL
 
 USE_GMAKE=	yes
 
-PATCHLEVEL=	P2
-PORTREVISION_SERVER=	2
+#PATCHLEVEL=	P2
+PORTREVISION_SERVER=	0
 PORTREVISION_CLIENT=	0
-PORTREVISION_RELAY=	1
+PORTREVISION_RELAY=	0
 
 SUBSYS?=	server
 #WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}-${PATCHLEVEL}
 
 UNIQUENAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
-OPTIONS=	DHCP_IPV6 "Enable support for IPv6" on
+OPTIONS_DEFINE=	IPV6
+OPTIONS_DEFAULT=IPV6
 
 .if ${SUBSYS} == server
-OPTIONS+=	DHCP_PARANOIA "Enable support for chroot" on \
-		DHCP_LDAP "With LDAP support" off \
-		DHCP_LDAP_SSL "Support LDAP over SSL/TLS" on \
-		BIND_SYMBOLS "Enable BIND internal symbol table" off
+OPTIONS_DEFINE+=	PARANOIA LDAP LDAP_SSL BIND_SYMBOLS
+OPTIONS_DEFAULT+=	PARANOIA LDAP_SSL
+PARANOIA_DESC=		Enable support for chroot
+LDAP_SSL_DESC=		Support LDAP over SSL/TLS
+BIND_SYMBOLS_DESC=	Enable BIND internal symbol table
 .endif
 
 # PORTREVISION and CONFLICTS handling
@@ -70,14 +72,14 @@ MAN5+=		dhclient.conf.5 dhclient.leases.5
 MAN8+=		dhclient.8 dhclient-script.8
 CONF_FILE=	dhclient.conf
 .elif ${SUBSYS} == server
-CONFIGURE_ARGS+=	--localstatedir=/var
+CONFIGURE_ARGS+=--localstatedir=/var
 MAN5+=		dhcpd.conf.5 dhcpd.leases.5 dhcp-eval.5 dhcp-options.5
 MAN8+=		dhcpd.8
 MAN1=		omshell.1
 MAN3=		dhcpctl.3 omapi.3
 CFLAGS+=	-fPIC
 CONF_FILE=	dhcpd.conf
-.if defined(WITH_DHCP_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONF_FILE+=	dhcpd6.conf
 .endif
 .else
@@ -104,14 +106,14 @@ REINPLACE_SUB=	PREFIX="${PREFIX}"
 PKGMESSAGE_SUB=	PREFIX="${PREFIX}" MAN1PREFIX="${MAN1PREFIX}" \
 		DOCSDIR="${DOCSDIR}"
 
-.if defined(WITH_DHCP_PARANOIA)
+.if ${PORT_OPTIONS:MPARANOIA}
 CONFIGURE_ARGS+=--enable-paranoia --enable-early-chroot
 SUB_LIST+=	PARANOIA=yes
 .else
 SUB_LIST+=	PARANOIA=no
 .endif
 
-.if defined(WITH_DHCP_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 CONFIGURE_ARGS+=--with-ldap
 USE_OPENLDAP=	yes
 LDAP_SCRIPT=	${WRKSRC}/contrib/ldap/dhcpd-conf-to-ldap
@@ -123,14 +125,14 @@ PLIST_SUB+=	SCHEMA_DIR="${SCHEMA_DIR:S,^${PREFIX}/,,}" LDAP=""
 PLIST_SUB+=	LDAP="@comment "
 .endif
 
-.if defined(WITH_DHCP_LDAP_SSL) && defined(WITH_DHCP_LDAP)
+.if ${PORT_OPTIONS:MLDAP_SSL} && ${PORT_OPTIONS:MLDAP}
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-ldapcrypto
 CONFIGURE_ENV+=	LIBS="-lssl"
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 .endif
 
-.if defined(WITH_DHCP_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=--enable-dhcpv6
 PLIST_SUB+=	IPV6=""
 .else
@@ -138,7 +140,7 @@ CONFIGURE_ARGS+=--disable-dhcpv6
 PLIST_SUB+=	IPV6="@comment "
 .endif
 
-.if defined(WITH_BIND_SYMBOLS)
+.if ${PORT_OPTIONS:MBIND_SYMBOLS}
 USE_PERL5=	yes
 .else
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-bind__Makefile
@@ -161,16 +163,16 @@ do-install:
 	${MAKE} -C ${WRKSRC}/includes install
 	${MAKE} -C ${WRKSRC}/common install
 	${INSTALL_DATA} ${WRKSRC}/dhcpctl/dhcpctl.h ${PREFIX}/include
-.if defined(WITH_DHCP_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 	${INSTALL_DATA} ${WRKSRC}/doc/examples/dhcpd-dhcpv6.conf \
 		${PREFIX}/etc/dhcpd6.conf.sample
 .endif
-.if defined(WITH_DHCP_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 	@${MKDIR} ${SCHEMA_DIR}
 	${INSTALL_DATA} ${LDAP_SCHEMA} ${SCHEMA_DIR}
 	${INSTALL_SCRIPT} ${LDAP_SCRIPT} ${PREFIX}/bin
 .endif
-.if defined(WITH_DHCP_LDAP) && !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MLDAP} && !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/contrib/ldap/README.ldap ${DOCSDIR}
 .endif
@@ -187,11 +189,11 @@ post-install:
 .if ${SUBSYS} == client
 	${INSTALL_SCRIPT} ${WRKSRC}/client/scripts/freebsd ${PREFIX}/sbin/dhclient-script
 .elif ${SUBSYS} == server
-.if defined(WITH_DHCP_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 	@${LN} -sf isc-dhcpd ${PREFIX}/etc/rc.d/isc-dhcpd6
 .endif
 .elif ${SUBSYS} == relay
-.if defined(WITH_DHCP_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 	@${LN} -sf isc-dhcrelay ${PREFIX}/etc/rc.d/isc-dhcrelay6
 .endif
 .endif
