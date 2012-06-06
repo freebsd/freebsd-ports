@@ -7,16 +7,15 @@
 
 PORTNAME=	Test-YAML-Valid
 PORTVERSION=	0.04
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	Test
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Test for valid YAML
 
-RUN_DEPENDS=	p5-YAML>=0.60:${PORTSDIR}/textproc/p5-YAML \
-		p5-Test-Simple>0:${PORTSDIR}/devel/p5-Test-Simple
+RUN_DEPENDS=	p5-YAML>=0.60:${PORTSDIR}/textproc/p5-YAML
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -28,9 +27,11 @@ OPTIONS=	YAMLSYCK "Use YAML::Syck for testing" OFF
 post-patch:
 	${PERL} -pi -e '$$_="" if /auto_install/' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
+
 .if defined(WITH_YAMLSYCK)
 RUN_DEPENDS+=	p5-YAML-Syck>0:${PORTSDIR}/textproc/p5-YAML-Syck
 BUILD_DEPENDS+=	p5-YAML-Syck>0:${PORTSDIR}/textproc/p5-YAML-Syck
 .endif
-.include <bsd.port.post.mk>
+
+.include <bsd.port.mk>
