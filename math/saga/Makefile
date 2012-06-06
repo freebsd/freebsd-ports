@@ -17,13 +17,13 @@ COMMENT=	System for Automated Geoscientific Analyses
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	proj.7:${PORTSDIR}/graphics/proj \
-		gdal.17:${PORTSDIR}/graphics/gdal \
-		jasper.4:${PORTSDIR}/graphics/jasper \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		iodbc.3:${PORTSDIR}/databases/libiodbc \
-		las.1:${PORTSDIR}/devel/liblas \
-		opencv_legacy.2:${PORTSDIR}/graphics/opencv
+LIB_DEPENDS=	proj:${PORTSDIR}/graphics/proj \
+		gdal:${PORTSDIR}/graphics/gdal \
+		jasper:${PORTSDIR}/graphics/jasper \
+		tiff:${PORTSDIR}/graphics/tiff \
+		iodbc:${PORTSDIR}/databases/libiodbc \
+		las:${PORTSDIR}/devel/liblas \
+		opencv_legacy:${PORTSDIR}/graphics/opencv
 
 USE_WX=		2.8
 USE_LDCONFIG=	yes
@@ -38,24 +38,26 @@ MAN1=		saga_cmd.1 saga_gui.1
 DESKTOP_ENTRIES=	"SAGA GIS" "${COMMENT}" "${DATADIR}/saga_icon_32.xpm" \
 			"saga_gui" "Application;Math;" true
 
-OPTIONS=	UNICODE "Enable Unicode Support" On \
-		PYTHON "Enable Python bindings" On \
-		HARU "Enable Haru Free PDF Library (optional)" Off \
-		VIGRA "Enable 'Vision with Generic Algorithms' Library" Off
+OPTIONS_DEFINE=	UNICODE PYTHON HARU VIGRA
+OPTIONS_DEFAULT=	UNICODE PYTHON
+NO_OPTIONS_SORT=	yes
+UNICODE_DESC=	Enable Unicode Support
+HARU_DESC=	Enable Haru Free PDF Library
+VIGRA_DESC=	Enable 'Vision with Generic Algorithms' Library
 
 .include <bsd.port.options.mk>
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
-.if defined(WITH_UNICODE)
+.if ${PORT_OPTIONS:MUNICODE}
 WITH_UNICODE=	yes
 CONFIGURE_ARGS+=	--enable-unicode
 .else
 CONFIGURE_ARGS+=	--disable-unicode
 .endif
 
-.if defined(WITH_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 CONFIGURE_ARGS+=	--enable-python
 BUILD_DEPENDS+=	swig:${PORTSDIR}/devel/swig13
 USE_PYTHON=	2.6-2.7
@@ -65,7 +67,7 @@ CONFIGURE_ARGS+=	--disable-python
 PLIST_SUB+=	SAGA_PYTHON="@comment "
 .endif
 
-.if defined(WITH_HARU)
+.if ${PORT_OPTIONS:MHARU}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libhpdf.so:${PORTSDIR}/print/libharu
 RUN_DEPENDS+=	${LOCALBASE}/lib/libhpdf.so:${PORTSDIR}/print/libharu
 PLIST_SUB+=	HARU=""
@@ -73,7 +75,7 @@ PLIST_SUB+=	HARU=""
 PLIST_SUB+=	HARU="@comment "
 .endif
 
-.if defined(WITH_VIGRA)
+.if ${PORT_OPTIONS:MVIGRA}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libvigraimpex.so:${PORTSDIR}/graphics/vigra
 RUN_DEPENDS+=	${LOCALBASE}/lib/libvigraimpex.so:${PORTSDIR}/graphics/vigra
 PLIST_SUB+=	VIGRA=""
