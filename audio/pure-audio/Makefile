@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	pure-audio
-PORTVERSION=	0.4
-PORTREVISION=	2
+PORTVERSION=	0.5
 CATEGORIES=	audio
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	A digital audio interface for the Pure language
 
-LIB_DEPENDS=	portaudio.2:${PORTSDIR}/audio/portaudio2 \
-		samplerate.1:${PORTSDIR}/audio/libsamplerate \
-		sndfile.1:${PORTSDIR}/audio/libsndfile \
+LIB_DEPENDS=	portaudio:${PORTSDIR}/audio/portaudio2 \
+		samplerate:${PORTSDIR}/audio/libsamplerate \
+		sndfile:${PORTSDIR}/audio/libsndfile \
 		fftw3:${PORTSDIR}/math/fftw3
 
 USE_PURE=	yes
