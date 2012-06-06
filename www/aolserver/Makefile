@@ -7,17 +7,19 @@
 
 PORTNAME=	aolserver
 PORTVERSION=	4.5.1
-PORTREVISION=	1
 DISTVERSIONSUFFIX=	-src
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/AOLserver/${PORTVERSION}
 DIST_SUBDIR=	aolserver
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bryan@shatow.net
 COMMENT=	A multithreaded web server with embedded TCL interpreter
 
 LICENSE=	MPL
 LICENSE_FILE=	${WRKSRC}/license.terms
+
+MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 
@@ -45,9 +47,10 @@ INVALID_TCL_VER=	86
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-OPTIONS=	HTMLDOCS "Install HTML documentation" off \
-		MANPAGES "Install manpages" off \
-		TESTS "Install tests in examples directory" off
+OPTIONS_DEFINE=	HTMLDOCS MANPAGES TESTS
+HTMLDOCS_DESC=	Install HTML documentation
+MANPAGES_DESC=	Install manpages
+TESTS_DESC=	Install tests in example directory
 
 .include <bsd.port.pre.mk>
 
@@ -62,7 +65,7 @@ CONFIGURE_ENV+=		TCLSH="${TCLSH}"
 CONFIGURE_ARGS+=	--prefix="${PREFIX}/${AOLSERVERBASE}" \
 			--with-tcl="${TCL_LIBDIR}"
 
-.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_MANPAGES)
+.if !defined(NO_INSTALL_MANPAGES) && ${PORT_OPTIONS:MMANPAGES}
 INSTALL_TARGET=	install install-man
 MANCOMPRESSED=	no
 MAN1=		nsd.1
@@ -695,14 +698,14 @@ PLIST_SUB+=	MANPAGES="@comment "
 PORTDOCS=	ChangeLog README RELEASE license.terms
 .endif
 
-.if defined(WITH_HTMLDOCS)
+.if ${PORT_OPTIONS:MHTMLDOCS}
 INSTALL_TARGET+=	install install-html
 PLIST_SUB+=	HTMLDOCS=""
 .else
 PLIST_SUB+=	HTMLDOCS="@comment "
 .endif
 
-.if defined(WITH_TESTS)
+.if ${PORT_OPTIONS:MTESTS}
 PLIST_SUB+=	TESTS=""
 .else
 PLIST_SUB+=	TESTS="@comment "
@@ -712,7 +715,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's| _init| _ns_init|' ${WRKSRC}/include/ns.mak.in
 
 post-install:
-.if defined(WITH_TESTS)
+.if ${PORT_OPTIONS:MTESTS}
 	@ ${ECHO_MSG} "Installing tests"
 	@ ${MKDIR} ${EXAMPLESDIR}/tests
 	@ ${TAR} -C ${WRKSRC}/tests -c -f - . | ${TAR} -C ${EXAMPLESDIR}/tests -x -f -
