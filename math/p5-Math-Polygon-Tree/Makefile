@@ -15,10 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Class for fast check if point is inside polygon
 
-BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
-		${SITE_PERL}/${PERL_ARCH}/List/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-List-MoreUtils \
-		${SITE_PERL}/${PERL_ARCH}/Math/Geometry/Planar/GPC/Polygon.pm:${PORTSDIR}/math/p5-Math-Geometry-Planar-GPC-Polygon
+BUILD_DEPENDS=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple \
+		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
+		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-Math-Geometry-Planar-GPC-Polygon>=0:${PORTSDIR}/math/p5-Math-Geometry-Planar-GPC-Polygon
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

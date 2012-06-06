@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A perlio layer for Unidecode
 
-BUILD_DEPENDS=	${SITE_PERL}/Text/Unidecode.pm:${PORTSDIR}/converters/p5-Text-Unidecode
-RUN_DEPENDS=	${SITE_PERL}/Text/Unidecode.pm:${PORTSDIR}/converters/p5-Text-Unidecode
+BUILD_DEPENDS=	p5-Text-Unidecode>=0:${PORTSDIR}/converters/p5-Text-Unidecode
+RUN_DEPENDS=	p5-Text-Unidecode>=0:${PORTSDIR}/converters/p5-Text-Unidecode
 
 PERL_CONFIGURE=	yes
 

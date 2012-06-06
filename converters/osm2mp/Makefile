@@ -13,14 +13,14 @@ MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	OpenStreetMap data into Polish map format (MP) convertor
 
-RUN_DEPENDS=	${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
-		${SITE_PERL}/Encode/Locale.pm:${PORTSDIR}/converters/p5-Encode-Locale \
-		${SITE_PERL}/Math/Polygon.pm:${PORTSDIR}/math/p5-Math-Polygon \
-		${SITE_PERL}/Math/Polygon/Tree.pm:${PORTSDIR}/math/p5-Math-Polygon-Tree \
-		${SITE_PERL}/Tree/R.pm:${PORTSDIR}/devel/p5-Tree-R \
-		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
-		${SITE_PERL}/${PERL_ARCH}/Math/Geometry/Planar/GPC/Polygon.pm:${PORTSDIR}/math/p5-Math-Geometry-Planar-GPC-Polygon \
-		${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-List-MoreUtils
+RUN_DEPENDS=	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
+		p5-Encode-Locale>=0:${PORTSDIR}/converters/p5-Encode-Locale \
+		p5-Math-Polygon>=0:${PORTSDIR}/math/p5-Math-Polygon \
+		p5-Math-Polygon-Tree>=0:${PORTSDIR}/math/p5-Math-Polygon-Tree \
+		p5-Tree-R>=0:${PORTSDIR}/devel/p5-Tree-R \
+		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
+		p5-Math-Geometry-Planar-GPC-Polygon>=0:${PORTSDIR}/math/p5-Math-Geometry-Planar-GPC-Polygon \
+		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
 
 LICENSE=	GPLv2
 
