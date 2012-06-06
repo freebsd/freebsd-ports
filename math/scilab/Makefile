@@ -19,10 +19,7 @@ EXTRACT_ONLY=	${DISTNAME}-src.tar.gz
 MAINTAINER=	rfarmer@predatorlabs.net
 COMMENT=	Scientific software package for numerical computations
 
-SAXON_VERSION=	6.5.5
-SAXON_DISTFILE=	saxon${SAXON_VERSION:S/./-/g}.zip
-DISTFILES+=	${SAXON_DISTFILE}:saxon
-
+EXTRACT_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 # A partial dependencies list can be found at:
 # http://wiki.scilab.org/Dependencies_of_Scilab_5.X
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
@@ -83,6 +80,10 @@ CONFIGURE_ARGS+=	--with-tk-library=${LOCALBASE}/lib \
 			--with-tcl-library=${LOCALBASE}/lib \
 			--with-tcl-include=${TCL_INCLUDEDIR}
 .endif
+
+SAXON_VERSION=	6.5.5
+SAXON_DISTFILE=	saxon${SAXON_VERSION:S/./-/g}.zip
+DISTFILES+=	${SAXON_DISTFILE}:saxon
 
 .if defined(WITHOUT_GUI)
 CONFIGURE_ARGS+=	--without-gui \
@@ -195,6 +196,13 @@ PLIST_SUB+=	OCAML=""
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-NOPORTDOCS
 .endif
 
+post-extract:
+	@${MKDIR} ${WRKSRC}/thirdparty
+	@${UNZIP_CMD} ${DISTDIR}/${SAXON_DISTFILE} saxon.jar -d ${WRKSRC}/thirdparty
+.if !defined(WITHOUT_GUI)
+	@${CP} ${DISTDIR}/${JGRAPHX_JAR} ${WRKSRC}/thirdparty/jgraphx.jar
+.endif
+
 post-patch:
 	@# Configure fixes
 	@${REINPLACE_CMD} -e 's|-ldl | |' ${WRKSRC}/configure
@@ -217,8 +225,6 @@ post-patch:
 	@# Run fixes
 	@${REINPLACE_CMD} -e 's|%%JAVALIBDIR%%|${JAVALIBDIR}|' ${WRKSRC}/etc/librarypath.xml
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/etc/librarypath.xml
-	@${MKDIR} ${WRKSRC}/thirdparty
-	@${UNZIP_CMD} ${DISTDIR}/${SAXON_DISTFILE} saxon.jar -d ${WRKSRC}/thirdparty
 .if !defined(WITHOUT_GUI)
 	@# Configure fixes
 	@${REINPLACE_CMD} -e 's|/usr/lib/java|${JAVALIBDIR}|g' ${WRKSRC}/configure
@@ -228,7 +234,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$jardir/jeuclid-core*.jar|${LOCALBASE}/share/java/jeuclid/repo/jeuclid-core*.jar|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|jrosetta-API.jar|jrosetta-api.jar|' \
 		${WRKSRC}/configure
-	@${CP} ${DISTDIR}/${JGRAPHX_JAR} ${WRKSRC}/thirdparty/jgraphx.jar
 	@# Run fixes
 	@${REINPLACE_CMD} -e 's|%%JAVALIBDIR%%|${JAVALIBDIR}|' ${WRKSRC}/etc/librarypath.xml
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/etc/librarypath.xml
