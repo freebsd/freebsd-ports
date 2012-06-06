@@ -207,11 +207,11 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>9.8.3.1</lt></range>
       </package>
       <package>
-	<name>bind99</name>
+	<name>bind97</name>
 	<range><lt>9.7.6.1</lt></range>
       </package>
       <package>
-	<name>bind99</name>
+	<name>bind96</name>
 	<range><lt>9.6.3.1.ESV.R7.1</lt></range>
       </package>
     </affects>
@@ -244,6 +244,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2012-06-04</discovery>
       <entry>2012-06-04</entry>
+      <modified>2012-06-06</modified>
     </dates>
   </vuln>
 
