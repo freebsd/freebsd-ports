@@ -85,6 +85,7 @@
     SUBDIR += recombine
     SUBDIR += ruby-bio
     SUBDIR += seaview
+    SUBDIR += seqan
     SUBDIR += seqio
     SUBDIR += sim4
     SUBDIR += ssaha
