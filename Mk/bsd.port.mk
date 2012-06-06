@@ -6164,7 +6164,7 @@ showconfig-recursive:
 
 .if !target(rmconfig)
 rmconfig:
-.if defined(OPTIONS) && exists(${OPTIONSFILE})
+.if exists(${OPTIONSFILE})
 	-@${ECHO_MSG} "===> Removing user-configured options for ${PKGNAME}"; \
 	optionsdir=${OPTIONSFILE}; optionsdir=$${optionsdir%/*}; \
 	if [ ${UID} != 0 -a "x${INSTALL_AS_USER}" = "x" ]; then \
@@ -6174,7 +6174,7 @@ rmconfig:
 		${ECHO_MSG} "===> Returning to user credentials"; \
 	else \
 		${RM} -f ${OPTIONSFILE}; \
-		${RMDIR} $${optionsdir} || return 0; \
+		${RMDIR} $${optionsdir} 2>/dev/null || return 0; \
 	fi
 .else
 	@${ECHO_MSG} "===> No user-specified options configured for ${PKGNAME}"
