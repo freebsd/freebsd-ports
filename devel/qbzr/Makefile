@@ -26,7 +26,7 @@ RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_PYTHON=	yes
-USE_QT4=	yes
+USE_QT4=	# empty
 USE_PYDISTUTILS=	yes
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
