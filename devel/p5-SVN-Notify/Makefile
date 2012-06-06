@@ -17,9 +17,9 @@ COMMENT=	Subversion activity notification
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	${SITE_PERL}/Net/SMTP_auth.pm:${PORTSDIR}/mail/p5-Net-SMTP_auth \
+RUN_DEPENDS=	p5-Net-SMTP_auth>=0:${PORTSDIR}/mail/p5-Net-SMTP_auth \
 		p5-Text-Trac>=0.10:${PORTSDIR}/textproc/p5-Text-Trac \
-		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser
+		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
