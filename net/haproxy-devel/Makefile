@@ -14,8 +14,8 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	The Reliable, High Performance TCP/HTTP Load Balancer
 
-LICENSE_COMB=	multi
 LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
 
 CONFLICTS=	haproxy-[1234567890]\*
 USE_RC_SUBR=	haproxy
@@ -28,7 +28,8 @@ OPTIONS=	PCRE		"Use PCRE regex library"        On\
 
 .include <bsd.port.options.mk>
 
-MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS
+MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS \
+		CC="${CC}" CFLAGS="${CFLAGS}"
 
 .if defined(WITH_PCRE)
 LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
