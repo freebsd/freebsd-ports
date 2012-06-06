@@ -20,6 +20,7 @@ LIBTOOLFILES=	configure src/gatherer/curl/configure
 USE_LDCONFIG=	yes
 NO_MTREE=		yes
 CONFIGURE_ARGS?=	--prefix=${PREFIX}/${PORTNAME} --without-wish
+MAKE_JOBS_UNSAFE=	yes
 
 STRIP=		# none
 
