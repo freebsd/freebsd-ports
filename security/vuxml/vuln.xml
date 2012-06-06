@@ -303,7 +303,7 @@ Note:  Please add new entries to the beginning of this file.
 	<blockquote cite="http://trac.networkupstools.org/projects/nut/changeset/3633">
 	  <p>NUT server (upsd), from versions 2.4.0 to 2.6.3, are exposed to
 	     crashes when receiving random data from the network.</p>
-	     This issue is related to the way NUT parses characters, especially
+	  <p>This issue is related to the way NUT parses characters, especially
 	     from the network. Non printable characters were missed from strings
 	     operation (such as strlen), but still copied to the buffer, causing
 	     an overflow.</p>
