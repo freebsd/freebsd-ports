@@ -7,7 +7,7 @@
 
 PORTNAME=	bombono
 PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-dvd/1.2
 DISTNAME=	${PORTNAME}-dvd-${PORTVERSION}
@@ -16,12 +16,14 @@ MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	DVD authoring program
 
 BUILD_DEPENDS=	GraphicsMagick>=1.1.7:${PORTSDIR}/graphics/GraphicsMagick \
+		boost-libs>=1.48.0:${PORTSDIR}/devel/boost-libs \
 		mjpegtools>=1.9.0:${PORTSDIR}/multimedia/mjpegtools
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		xml++-2.6.2:${PORTSDIR}/textproc/libxml++26 \
 		lavfile:${PORTSDIR}/multimedia/mjpegtools \
 		dvdread:${PORTSDIR}/multimedia/libdvdread \
-		avcodec:${PORTSDIR}/multimedia/ffmpeg
+		avcodec:${PORTSDIR}/multimedia/ffmpeg \
+		boost_filesystem:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	GraphicsMagick>=1.1.7:${PORTSDIR}/graphics/GraphicsMagick \
 		dvda-author:${PORTSDIR}/audio/dvda-author \
 		enca:${PORTSDIR}/converters/enca \
