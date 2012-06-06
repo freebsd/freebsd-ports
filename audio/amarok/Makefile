@@ -105,8 +105,6 @@ CONFIGURE_ARGS+=--enable-debug=full
 STRIP=		# none
 .endif
 
-pre-extract:	check-options-version
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g;	\
 		s|LIBS="-ltunepimp  $$LIBS"|LIBS="-ltunepimp -liconv $$LIBS"|g; \
