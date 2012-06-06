@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libraw
-PORTVERSION=	0.14.5
-PORTREVISION=	2
+PORTVERSION=	0.14.6
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libraw.su/data/
 DISTNAME=	LibRaw-${PORTVERSION}
@@ -26,12 +25,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-examples --disable-jasper
 CFLAGS+=	-fPIC
 
-OPTIONS_DEFINE=	DEMOSAIC_PACK_GPL2 DEMOSAIC_PACK_GPL3 LCMS2 OPTIMIZED_CFLAGS
+OPTIONS_DEFINE=	DEMOSAIC_PACK_GPL2 DEMOSAIC_PACK_GPL3 LCMS2 OPTIMIZED_CFLAGS OPENMP
 OPTIONS_DEFAULT=	LCMS2
 
 DEMOSAIC_PACK_GPL2_DESC=	Enable GPLv2 demosaic pack
 DEMOSAIC_PACK_GPL3_DESC=	Enable GPLv3 demosaic pack
-OPTIMIZED_CFLAGS_DESC=	"Enable optimizations (on x86)"
+OPTIMIZED_CFLAGS_DESC=		Enable optimizations (on x86)
+OPENMP_DESC=		Enable openmp
 
 .include <bsd.port.options.mk>
 
@@ -39,6 +39,13 @@ OPTIMIZED_CFLAGS_DESC=	"Enable optimizations (on x86)"
 .if ${ARCH} == "i386"
 CFLAGS+=	-O3
 .endif
+.endif
+
+.if ${PORT_OPTIONS:MOPENMP}
+CONFIGURE_ARGS+=--enable-openmp
+USE_GCC=	4.6+
+.else
+CONFIGURE_ARGS+=--disable-openmp
 .endif
 
 .if ${PORT_OPTIONS:MLCMS2}
@@ -56,7 +63,7 @@ CONFIGURE_ARGS+=--enable-demosaic-pack-gpl2=../LibRaw-demosaic-pack-GPL2-${PORTV
 CONFIGURE_ARGS+=--disable-demosaic-pack-gpl2
 .endif
 
-.if ${PORT_OPTIONS:MDEMOSAIC_PACK_GPL3)
+.if ${PORT_OPTIONS:MDEMOSAIC_PACK_GPL3}
 LICENSE+=	GPLv3
 DISTFILES+=	LibRaw-demosaic-pack-GPL3-${PORTVERSION}.tar.gz
 CONFIGURE_ARGS+=--enable-demosaic-pack-gpl3=../LibRaw-demosaic-pack-GPL3-${PORTVERSION}
