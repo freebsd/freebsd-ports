@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Cryptographically Secure, True Random Number Generator
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Math/Pari.pm:${PORTSDIR}/math/p5-Math-Pari \
-		${SITE_PERL}/Class/Loader.pm:${PORTSDIR}/devel/p5-Class-Loader
+BUILD_DEPENDS=	p5-Math-Pari>=0:${PORTSDIR}/math/p5-Math-Pari \
+		p5-Class-Loader>=0:${PORTSDIR}/devel/p5-Class-Loader
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

@@ -21,7 +21,7 @@ MAN3=		Digest::MD5.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500803
-RUN_DEPENDS+=	${SITE_PERL}/Digest/base.pm:${PORTSDIR}/security/p5-Digest
+RUN_DEPENDS+=	p5-Digest>=0:${PORTSDIR}/security/p5-Digest
 .endif
 
 .include <bsd.port.post.mk>
