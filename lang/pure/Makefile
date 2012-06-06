@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	pure
-PORTVERSION=	0.54
+PORTVERSION=	0.55
 CATEGORIES=	lang
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz ${PORTNAME}-docs-${PORTVERSION}.tar.gz
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	A modern-style functional programming language
 
-LICENSE=	LGPL3
+LICENSE=	GPLv3 LGPL3
+LICENSE_COMB=	dual
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
-		mpfr.4:${PORTSDIR}/math/mpfr
+LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
+		mpfr:${PORTSDIR}/math/mpfr
 BUILD_DEPENDS=	llvm>=2.9:${PORTSDIR}/devel/llvm
 RUN_DEPENDS=	llvm>=2.9:${PORTSDIR}/devel/llvm
 
@@ -32,11 +33,13 @@ MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--with-libgmp-prefix=${LOCALBASE} --enable-release
 
-OPTIONS=	EMACS "Compile pure-mode.el with Emacs" off
+OPTIONS_DEFINE=	EMACS
+
+EMACS_DESC=	"Compile pure-mode.el with Emacs"
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_EMACS)
+.if ${PORT_OPTIONS:MEMACS}
 USE_EMACS=	yes
 MAKE_ARGS+=	emacs_prefix=${PREFIX}
 PLIST_SUB+=	ELC=""
@@ -68,6 +71,12 @@ SUB_LIST+=	ETC="@comment "
 PLIST_SUB+=	DOCS=""
 .else
 PLIST_SUB+=	DOCS="@comment "
+.endif
+
+.if ${OSVERSION} < 900014
+SUB_LIST+=	NOCLANG=""
+.else
+SUB_LIST+=	NOCLANG="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
