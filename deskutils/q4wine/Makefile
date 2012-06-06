@@ -20,8 +20,7 @@ RUN_DEPENDS=	sudo:${PORTSDIR}/security/sudo \
 		cabextract:${PORTSDIR}/archivers/cabextract \
 		icotool:${PORTSDIR}/graphics/icoutils
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build rcc_build moc_build uic_build \
+USE_QT4=	qmake_build rcc_build moc_build uic_build \
 		linguist_build corelib gui sql network
 
 ONLY_FOR_ARCHS=	i386
@@ -39,7 +38,7 @@ OPTIONS=	DBUS "Enable DBus notification support" on
 .if defined(WITHOUT_DBUS)
 CMAKE_ARGS+=	-DWITH_DBUS:BOOL=OFF
 .else
-QT_COMPONENTS+=	dbus
+USE_QT4+=	dbus
 .endif
 
 post-install:

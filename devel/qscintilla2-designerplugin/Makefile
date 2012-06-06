@@ -19,8 +19,7 @@ COMMENT=	Qt Designer plugin for QScintilla2 (Qt4)
 LIB_DEPENDS=	qscintilla2.8:${PORTSDIR}/devel/qscintilla2
 
 DISTINFO_FILE=	${QSCI2_DISTINFO_FILE}
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build gui xml designer
+USE_QT4=	qmake_build moc_build gui xml designer
 HAS_CONFIGURE=	yes
 
 QMAKE_ARGS=	-unix PREFIX=${PREFIX}

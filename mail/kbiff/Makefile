@@ -18,8 +18,7 @@ LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 USE_KDE4=	automoc4 kdehier kdeprefix kdelibs
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib dbus gui network svg xml \
+USE_QT4=	corelib dbus gui network svg xml \
 		qmake_build uic_build rcc_build
 USE_PERL5_BUILD=yes
 USE_GETTEXT=	yes

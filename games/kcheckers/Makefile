@@ -13,8 +13,7 @@ MASTER_SITES=	SF/qcheckers/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Qt version of the classic boardgame checkers
 
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui qmake_build moc_build rcc_build
+USE_QT4=	corelib gui qmake_build moc_build rcc_build
 MAKE_ENV=	QTDIR="${QT_PREFIX}"
 
 post-patch:

@@ -16,8 +16,7 @@ COMMENT=	Tool that generates Qt bindings for Qt Script
 
 OPTIONS=	PHONON	"Build Phonon support" on
 
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib declarative designer doc help help-tools gui \
+USE_QT4=	corelib declarative designer doc help help-tools gui \
 		iconengines imageformats inputmethods linguist network \
 		opengl pixeltool porting qdbusviewer \
 		qt3support qtestlib qvfb script scripttools \
@@ -30,7 +29,7 @@ USE_LDCONFIG=	yes
 .include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_PHONON)
-QT_COMPONENTS+=	phonon
+USE_QT4+=	phonon
 PLIST_SUB+=	PHONON=""
 .else
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-no_phonon

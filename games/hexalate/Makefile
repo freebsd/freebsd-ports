@@ -17,8 +17,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A color matching game
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui moc_build qmake_build rcc_build
+USE_QT4=	corelib gui moc_build qmake_build rcc_build
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes

@@ -18,8 +18,7 @@ LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
 		kcddb:${PORTSDIR}/multimedia/kdemultimedia4
 
 USE_CMAKE=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build
+USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_KDE4=	automoc4 kdehier kdeprefix kdelibs
 INSTALLS_ICONS=	yes
 

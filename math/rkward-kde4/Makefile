@@ -23,8 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R \
 
 CONFLICTS=	rkward-0.4.*
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build phonon
+USE_QT4=	qmake_build moc_build rcc_build uic_build phonon
 
 USE_KDE4=	kdehier kdeprefix automoc4 kdelibs
 USE_PHP=	yes

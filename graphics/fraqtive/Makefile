@@ -15,8 +15,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Draws Mandelbrot and Julia fractals
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui opengl qmake_build uic_build moc_build rcc_build
+USE_QT4=	gui opengl qmake_build uic_build moc_build rcc_build
 QT_NONSTANDARD=	yes
 USE_GL=		glu
 HAS_CONFIGURE=	yes

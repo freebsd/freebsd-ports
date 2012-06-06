@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Multiplatform C++ application framework
 
-USE_QT_VER=	4
+USE_QT4=	yes
 QT_DIST=	yes
 NO_BUILD=	yes
 

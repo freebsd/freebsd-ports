@@ -20,8 +20,7 @@ LIB_DEPENDS=	Coin.61:${PORTSDIR}/graphics/Coin
 
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib opengl moc_build
+USE_QT4=	corelib opengl moc_build
 USE_GMAKE=	yes
 CPPFLAGS+=	-I${QT_INCDIR} -I${QT_INCDIR}/Qt -I${LOCALBASE}/include
 LDFLAGS+=	-L${QT_LIBDIR} -L${LOCALBASE}/lib

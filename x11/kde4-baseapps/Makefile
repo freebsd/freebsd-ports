@@ -27,8 +27,7 @@ USE_GNOME=	glib20
 USE_KDE4=	kdehier kdelibs kdeprefix libkonq \
 		automoc4 soprano strigi
 KDE4_BUILDENV=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus gui qt3support script \
+USE_QT4=	dbus gui qt3support script \
 		moc_build qmake_build rcc_build uic_build
 USE_XORG=	x11 xt
 MAKE_JOBS_SAFE=	yes

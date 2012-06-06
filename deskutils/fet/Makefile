@@ -18,8 +18,7 @@ MAINTAINER=	salfrancl@yahoo.es
 COMMENT=	FET is free timetabling software
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui network qt3support xml \
+USE_QT4=	gui network qt3support xml \
 		moc_build qmake_build rcc_build uic_build
 HAS_CONFIGURE=	yes
 QMAKE_ARGS=	-unix PREFIX=${PREFIX} \

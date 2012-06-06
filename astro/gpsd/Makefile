@@ -240,8 +240,7 @@ SCONS_ARGS+=	oldstyle=no
 .endif
 
 .if defined(WITH_QTBIND)
-USE_QT_VER=	4
-QT_COMPONENTS=	network
+USE_QT4=	network
 SCONS_ARGS+=	libQgpsmm=yes
 PLIST_SUB+=	QTBIND=""
 .else

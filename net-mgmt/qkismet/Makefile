@@ -17,8 +17,7 @@ COMMENT=	This is graphical Kismet client writtent in Qt
 RUN_DEPENDS=	kismet:${PORTSDIR}/net-mgmt/kismet
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build network
+USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build network
 
 QMAKE_PRO=	${PORTNAME}.pro
 

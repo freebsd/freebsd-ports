@@ -21,8 +21,7 @@ LIB_DEPENDS=	hunspell-1.3:${PORTSDIR}/textproc/hunspell \
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 USE_SDL=	mixer
-USE_QT_VER=	4
-QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build corelib gui xml \
+USE_QT4=	moc_build qmake_build rcc_build uic_build corelib gui xml \
 		svg opengl qt3support
 QMAKE_ARGS=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE}
 HAS_CONFIGURE=	yes

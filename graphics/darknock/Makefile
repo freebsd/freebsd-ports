@@ -14,8 +14,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program that can detect edges in images
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build linguist_build gui
+USE_QT4=	qmake_build moc_build rcc_build uic_build linguist_build gui
 WRKSRC=		${WRKDIR}/${PORTNAME}
 LRELEASE=	${QT_PREFIX}/bin/lrelease-qt4
 MAKE_JOBS_SAFE=	yes

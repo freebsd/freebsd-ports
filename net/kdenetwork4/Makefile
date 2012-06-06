@@ -46,8 +46,7 @@ USE_KDE4=	kdehier kdelibs kdeprefix libkonq pimlibs workspace \
 		automoc4 ontologies qimageblitz soprano strigi
 KDE4_BUILDENV=	yes
 USE_OPENSSL=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus gui network qt3support sql xml \
+USE_QT4=	dbus gui network qt3support sql xml \
 		moc_build qmake_build rcc_build uic_build uic3_build
 USE_SQLITE=	yes
 USE_XORG=	x11 xdamage xext xscrnsaver xtst

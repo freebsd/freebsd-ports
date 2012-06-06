@@ -15,8 +15,7 @@ DISTNAME=	118297-qtResistors-201001102229
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Calculate resistance of resistor by the colors on the resistor
 
-USE_QT_VER=	4
-QT_COMPONENTS=	gui qmake_build uic_build moc_build
+USE_QT4=	gui qmake_build uic_build moc_build
 
 WRKSRC=		${WRKDIR}/qtResistors
 

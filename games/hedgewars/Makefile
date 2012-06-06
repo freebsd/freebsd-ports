@@ -23,9 +23,8 @@ USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_SDL=	sdl mixer image ttf net
 USE_FPC=	opengl
-USE_QT_VER=	4
 USE_LUA=	5.1+
-QT_COMPONENTS=	corelib gui moc_build network \
+USE_QT4=	corelib gui moc_build network \
 		qmake_build rcc_build svg xml \
 		uic_build linguist_build
 MAKE_JOBS_SAFE=	yes

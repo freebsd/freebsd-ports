@@ -14,8 +14,7 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt demonstration and example programs
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build corelib designer \
+USE_QT4=	qmake_build moc_build rcc_build uic_build corelib designer \
 		gui network opengl sql svg qtestlib xml imageformats_run dbus \
 		script webkit phonon help assistant_run phonon-gst scripttools \
 		xmlpatterns multimedia

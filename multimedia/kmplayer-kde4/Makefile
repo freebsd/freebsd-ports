@@ -24,8 +24,7 @@ USE_GNOME=	gtk20
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_KDE4=	automoc4 kdehier kdeprefix kdelibs
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib qmake_build moc_build rcc_build uic_build
+USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
 
 post-patch:
 #Fix build with kdelibs>=4.5.0

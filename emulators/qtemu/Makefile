@@ -15,8 +15,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A Qt4 front-end to Qemu
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui xml uic_build moc_build qmake_build rcc_build
+USE_QT4=	gui xml uic_build moc_build qmake_build rcc_build
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
 
@@ -26,7 +25,7 @@ DESKTOP_ENTRIES="QtEmu" "QEMU frontend" "" \
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_NLS)
-#QT_COMPONENTS+=	linguist
+#USE_QT4+=	linguist
 BUILD_DEPENDS+=	${LOCALBASE}/bin/lupdate-qt4:${PORTSDIR}/devel/qt4-linguist
 PLIST_SUB+=	NLS=""
 .else

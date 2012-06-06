@@ -21,8 +21,7 @@ COMMENT=	2d arcade-puzzle game like KDiamonds
 USE_ZIP=	yes
 USE_SDL=	sdl mixer
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build uic_build moc_build rcc_build \
+USE_QT4=	qmake_build uic_build moc_build rcc_build \
 		corelib svg xml opengl network
 MAKE_JOBS_SAFE=	yes
 

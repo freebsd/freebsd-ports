@@ -24,8 +24,7 @@ USE_GETTEXT=	yes
 USE_XORG=	x11 xext ice
 USE_LUA=	5.1
 LUA_COMPS=	lua
-USE_QT_VER=	4
-QT_COMPONENTS=	qtestlib qmake_build rcc_build uic_build moc_build gui xml
+USE_QT4=	qtestlib qmake_build rcc_build uic_build moc_build gui xml
 USE_PERL5=	yes
 
 USE_CMAKE=	yes
@@ -45,7 +44,7 @@ OPTIONS=	KYZIS "Build Kyzis and Yzis kpart" off \
 
 .if defined(WITH_KYZIS)
 USE_KDE4=	kdehier kdeprefix kdelibs automoc4
-QT_COMPONENTS+=	phonon
+USE_QT4+=	phonon
 .endif
 
 .include <bsd.port.pre.mk>

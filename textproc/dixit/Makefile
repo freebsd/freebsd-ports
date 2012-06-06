@@ -37,8 +37,7 @@ _DB=	${DB_DIR}/${_DB_F}
 HAS_CONFIGURE=	yes
 
 QT_VER=4
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui network moc_build qmake_build rcc_build
+USE_QT4=	corelib gui network moc_build qmake_build rcc_build
 #USE_GMAKE=	yes
 #MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS} QTDIR="${QT_PREFIX}"
 

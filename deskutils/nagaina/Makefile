@@ -15,8 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-sources
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A notes-taking application based QT4
 
-USE_QT_VER=	4
-QT_COMPONENTS=	gui xml qmake_build moc_build rcc_build uic_build
+USE_QT4=	gui xml qmake_build moc_build rcc_build uic_build
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_FILES=	bin/${PORTNAME} share/pixmaps/${PORTNAME}.png

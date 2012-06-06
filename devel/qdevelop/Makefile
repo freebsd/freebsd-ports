@@ -18,8 +18,7 @@ COMMENT=	A development environment entirely dedicated to Qt4
 RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags \
 		qt4-sqlite-plugin>=0:${PORTSDIR}/databases/qt4-sqlite3-plugin
 
-USE_QT_VER=	4
-QT_COMPONENTS=	gui sql network xml designer \
+USE_QT4=	gui sql network xml designer \
 		qmake_build moc_build uic_build rcc_build
 MAKE_JOBS_SAFE=	yes
 
@@ -40,14 +39,14 @@ OPTIONS=	TOOLS "Install Qt4 dev. tools (qmake, moc, etc.)" on
 
 .include <bsd.port.pre.mk>
 .if !defined(WITHOUT_NLS)
-QT_COMPONENTS+=	linguist_build
+USE_QT4+=	linguist_build
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if !defined(WITHOUT_TOOLS)
-QT_COMPONENTS+=	assistant_run linguist_run \
+USE_QT4+=	assistant_run linguist_run \
 		qmake_run moc_run uic_run rcc_run
 .endif
 

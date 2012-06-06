@@ -53,8 +53,7 @@ OPTIONS=	DEBUGGING	"Enable debug output on runtime"	on\
 .include <bsd.port.options.mk>
 
 .if defined(WITH_QT)
-USE_QT_VER=	4
-QT_COMPONENTS=	webkit opengl gui corelib script network moc_build
+USE_QT4=	webkit opengl gui corelib script network moc_build
 .endif
 
 .if defined(WITH_GTKWEBKIT)

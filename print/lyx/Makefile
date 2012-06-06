@@ -30,8 +30,7 @@ MINOR_VERSION=	3
 
 USE_XZ=		yes
 USE_GMAKE=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui moc_build uic_build rcc_build
+USE_QT4=	corelib gui moc_build uic_build rcc_build
 USE_GNOME=	desktopfileutils
 USE_PYTHON=	yes
 USE_PERL5=	yes

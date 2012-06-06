@@ -18,8 +18,7 @@ LIB_DEPENDS=	qca.2:${PORTSDIR}/devel/qca \
 		sasl2:${PORTSDIR}/security/cyrus-sasl2
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib qmake_build moc_build
+USE_QT4=	corelib qmake_build moc_build
 HAS_CONFIGURE=	yes
 QT_NONSTANDARD=	yes
 CONFIGURE_ARGS+=--plugins-path=${PREFIX}/${QT_PLUGINDIR_REL} \

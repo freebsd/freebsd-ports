@@ -25,8 +25,7 @@ LIB_DEPENDS=	exiv2.10:${PORTSDIR}/graphics/exiv2 \
 		fftw3f:${PORTSDIR}/math/fftw3-float \
 		gsl.16:${PORTSDIR}/math/gsl
 
-USE_QT_VER=	4
-QT_COMPONENTS=	gui xml webkit imageformats_run linguist_build \
+USE_QT4=	gui xml webkit imageformats_run linguist_build \
 		moc_build qmake_build rcc_build uic_build
 QMAKE_ARGS=	PREFIX=${PREFIX} DOCDIR=${DOCSDIR} I18NDIR=${DATADIR}/i18n
 MAKE_JOBS_SAFE=	yes

@@ -24,8 +24,7 @@ USE_XZ=	yes
 USE_GNOME=	libxml2 libxslt
 USE_KDE4=	kdelibs pimlibs kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus porting_build \
+USE_QT4=	dbus porting_build \
 		qmake_build moc_build rcc_build uic_build uic3_build
 MAKE_JOBS_SAFE=	yes
 

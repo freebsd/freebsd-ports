@@ -22,8 +22,7 @@ LIB_DEPENDS=	svn_client-1.0:${PORTSDIR}/devel/subversion \
 USE_BZIP2=	yes
 USE_KDE4=	kate_run kdehier kdelibs kdeprefix automoc4
 KDE4_BUILDENV=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib dbus gui network qtestlib \
+USE_QT4=	corelib dbus gui network qtestlib \
 		qmake_build moc_build uic_build rcc_build
 MAKE_JOBS_SAFE=	yes
 

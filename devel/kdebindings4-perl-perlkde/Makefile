@@ -21,8 +21,7 @@ USE_PERL5=	yes
 # Build fails with system gcc
 USE_GCC=	4.6+
 USE_KDE4=	kdehier kdeprefix perlqt smokekde automoc4
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build uic_build rcc_build
+USE_QT4=	qmake_build moc_build uic_build rcc_build
 USE_CMAKE=	yes
 
 MAKE_JOBS_SAFE=	yes

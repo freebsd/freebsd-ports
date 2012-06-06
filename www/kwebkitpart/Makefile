@@ -15,8 +15,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Web browser component for KDE SC based on QtWebKit
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
-USE_QT_VER=	4
-QT_COMPONENTS=	designer gui webkit \
+USE_QT4=	designer gui webkit \
 		moc_build qmake_build rcc_build uic_build
 USE_BZIP2=	yes
 USE_CMAKE=	yes

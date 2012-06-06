@@ -18,8 +18,7 @@ COMMENT=	Program to download videos from YouTube and etc
 LICENSE=	GPLv3
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui xml qmake_build uic_build moc_build \
+USE_QT4=	gui xml qmake_build uic_build moc_build \
 		rcc_build network dbus webkit
 
 PLIST_FILES=	bin/${PORTNAME} \

@@ -24,8 +24,7 @@ LIB_DEPENDS=	qjson.0:${PORTSDIR}/devel/qjson \
 
 USE_GETTEXT=	yes
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
-USE_QT_VER=	4
-QT_COMPONENTS=	gui imageformats_run network \
+USE_QT4=	gui imageformats_run network \
 		moc_build qmake_build rcc_build uic_build
 USE_BZIP2=	yes
 USE_CMAKE=	yes

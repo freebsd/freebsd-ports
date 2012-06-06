@@ -16,8 +16,7 @@ MASTER_SITES=	http://www.alinden.mynetcologne.de/qlwm/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt-based window manager
 
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui moc_build qmake_build
+USE_QT4=	corelib gui moc_build qmake_build
 
 MAN1=		qlwm.1
 PORTDOCS=	CHANGES README

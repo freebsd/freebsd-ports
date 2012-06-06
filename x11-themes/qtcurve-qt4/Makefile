@@ -19,8 +19,7 @@ COMMENT=	QtCurve Qt4 widget style
 USE_BZIP2=	yes
 USE_GCC=	4.2+
 USE_CMAKE=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus gui svg imageformats_run \
+USE_QT4=	dbus gui svg imageformats_run \
 		qmake_build uic_build moc_build rcc_build
 CFLAGS+=	-I${LOCALBASE}/include
 CMAKE_ARGS+=	-DQTC_QT_ONLY:BOOL=ON \

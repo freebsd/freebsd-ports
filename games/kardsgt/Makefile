@@ -14,8 +14,7 @@ MASTER_SITES=	SAVANNAH
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Card game suite
 
-USE_QT_VER=	4
-QT_COMPONENTS=	assistantclient corelib gui network \
+USE_QT4=	assistantclient corelib gui network \
 		moc_build qmake_build rcc_build uic_build
 ALL_TARGET=	qmake release
 MAKE_JOBS_UNSAFE=	yes

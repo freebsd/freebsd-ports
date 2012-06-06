@@ -30,8 +30,7 @@ MINOR_VERSION=	10
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui moc_build uic_build rcc_build
+USE_QT4=	gui moc_build uic_build rcc_build
 USE_PYTHON=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

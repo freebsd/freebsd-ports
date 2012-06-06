@@ -14,8 +14,7 @@ MASTER_SITES=	http://www.usermode.org/code/
 MAINTAINER=	david@usermode.org
 COMMENT=	A homebrewer's recipe calculator
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build uic_build rcc_build xml gui
+USE_QT4=	qmake_build moc_build uic_build rcc_build xml gui
 PORTDOCS=	*
 HAS_CONFIGURE=	yes
 

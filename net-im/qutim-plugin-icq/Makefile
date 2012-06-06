@@ -25,8 +25,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/qutim:${PORTSDIR}/net-im/qutim
 MAKE_JOBS_SAFE=yes
 
 USE_GMAKE=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui network xml moc_build qmake_build rcc_build uic_build
+USE_QT4=	gui network xml moc_build qmake_build rcc_build uic_build
 
 WRKSRC=		${WRKDIR}/icq
 

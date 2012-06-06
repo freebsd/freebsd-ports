@@ -23,8 +23,7 @@ CONFLICTS=	kdeedu-4.[0-6].*
 USE_GL=		glu
 USE_KDE4=	kdehier kdelibs kdeprefix libkdeedu automoc4
 KDE4_BUILDENV=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui opengl script scripttools xml \
+USE_QT4=	gui opengl script scripttools xml \
 		moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes
 MAKE_JOBS_SAFE=	yes

@@ -25,7 +25,7 @@ CMAKE_ARGS=	-DGL_H:FILEPATH="${LOCALBASE}/include/GL/gl.h" \
 		-DGL_INCLUDE_DIR:FILEPATH="${LOCALBASE}/include"
 
 # QT4_OPTIONS=QGTKSTYLE in /etc/make.conf removes some warnings
-QT_COMPONENTS=	declarative designer gui help qmake_build \
+USE_QT4=	declarative designer gui help qmake_build \
 		moc_build multimedia network opengl \
 		phonon rcc_build script scripttools \
 		svg uic_build webkit
@@ -37,7 +37,6 @@ USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	2.5-2.7
-USE_QT_VER=	4
 
 # API documentation requires graphics/graphviz and Qt4 src to build
 

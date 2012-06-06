@@ -23,8 +23,7 @@ BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
 USE_GNOME=	pkgconfig
 USE_PYTHON_BUILD=	2.5+
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus gui network qtestlib_build xml \
+USE_QT4=	dbus gui network qtestlib_build xml \
 		moc_build qmake_build rcc_build uic_build
 USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes

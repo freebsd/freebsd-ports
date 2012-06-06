@@ -17,8 +17,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib moc_build qmake_build rcc_build uic_build
+USE_QT4=	corelib moc_build qmake_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes

@@ -23,8 +23,7 @@ LIB_DEPENDS=	gsl.16:${PORTSDIR}/math/gsl \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui opengl svg qt3support network assistantclient \
+USE_QT4=	gui opengl svg qt3support network assistantclient \
 		moc_build qmake_build rcc_build
 USE_GL=		glu
 HAS_CONFIGURE=	yes
@@ -58,11 +57,11 @@ PLIST_SUB+=	PYTHON="@comment "
 
 .if !defined(WITHOUT_DOCS)
 RUN_DEPENDS+=	qtiplot-doc>=0:${PORTSDIR}/math/qtiplot-doc
-QT_COMPONENTS+=	assistant-adp_run
+USE_QT4+=	assistant-adp_run
 .endif
 
 .if !defined(WITHOUT_NLS)
-QT_COMPONENTS+=	linguist_build
+USE_QT4+=	linguist_build
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "

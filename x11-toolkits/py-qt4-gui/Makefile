@@ -22,8 +22,7 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}core>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-cor
 DISTINFO_FILE=	${PYQT4_DISTINFO_FILE}
 HAS_CONFIGURE=	yes
 USE_PYTHON=	2.5+
-USE_QT_VER=	4
-QT_COMPONENTS=	gui imageformats_run inputmethods_run iconengines_run \
+USE_QT4=	gui imageformats_run inputmethods_run iconengines_run \
 		qmake_build moc_build
 
 OPTIONS=	API		"Install QtGui API for QScintilla2" on \

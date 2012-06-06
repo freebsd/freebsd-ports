@@ -11,8 +11,7 @@ COMMENT=	Qt4 modules of uim input method
 
 LIB_DEPENDS=	uim.8:${PORTSDIR}/textproc/uim
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build qt3support uic
+USE_QT4=	qmake_build moc_build qt3support uic
 USE_AUTOTOOLS=	libtool
 USE_ICONV=	yes
 

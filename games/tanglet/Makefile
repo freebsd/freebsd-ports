@@ -17,8 +17,7 @@ COMMENT=	Tanglet is a single player word finding game based on Boggle
 LICENSE=	GPLv3
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	moc_build qmake_build rcc_build corelib gui iconengines imageformats
+USE_QT4=	moc_build qmake_build rcc_build corelib gui iconengines imageformats
 INSTALLS_ICONS=	yes
 
 MAKE_JOBS_SAFE=	yes

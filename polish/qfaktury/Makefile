@@ -14,8 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	meritus@innervision.pl
 COMMENT=	Polish invoicing desktop program
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build uic_build moc_build rcc_build corelib gui xml qt3support
+USE_QT4=	qmake_build uic_build moc_build rcc_build corelib gui xml qt3support
 
 PORTDOCS=	ChangeLog.txt ReadMe.txt ReleaseNotes.txt TODO.txt
 

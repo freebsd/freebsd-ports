@@ -19,8 +19,7 @@ USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_GNOME=	libxml2 libxslt
 USE_KDE4=	kdelibs kdeprefix automoc4 sharedmime
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build uic_build rcc_build \
+USE_QT4=	qmake_build moc_build uic_build rcc_build \
 		webkit
 MAKE_JOBS_SAFE=	yes
 

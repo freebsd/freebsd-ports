@@ -22,9 +22,8 @@ PROJECTHOST=	${PORTNAME}${PKGNAMESUFFIX}
 USE_XZ=	yes
 USE_CMAKE=	yes
 USE_XORG=	xscrnsaver
-USE_QT_VER=	4
 USE_LDCONFIG=	yes
-QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build \
+USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build \
 		network linguist_build webkit
 
 DESKTOP_ENTRIES="Vacuum-IM" "Modular, crossplatform Jabber client" \

@@ -19,8 +19,7 @@ LICENSE=	GPLv2
 LATEST_LINK=	${PORTNAME}-kde4
 
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
-USE_QT_VER=	4
-QT_COMPONENTS=	svg gui network dbus xml \
+USE_QT4=	svg gui network dbus xml \
 		qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
 # libchromaprint has not been ported yet

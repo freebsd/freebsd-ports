@@ -44,8 +44,7 @@ OPTIONS=	QT4	"Build Qt4 GUI executable"		on \
 .include <bsd.port.options.mk>
 
 .if defined(WITH_QT4)
-USE_QT_VER=	4
-QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build corelib gui
+USE_QT4=	moc_build qmake_build rcc_build uic_build corelib gui
 PLIST_FILES+=	bin/luxrender
 .endif
 

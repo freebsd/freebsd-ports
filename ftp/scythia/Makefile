@@ -16,8 +16,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}-2-src
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A small ftp client unpretentious based on QT4
 
-USE_QT_VER=	4
-QT_COMPONENTS=	gui network corelib qmake_build uic_build moc_build rcc_build
+USE_QT4=	gui network corelib qmake_build uic_build moc_build rcc_build
 INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

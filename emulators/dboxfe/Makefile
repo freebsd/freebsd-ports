@@ -18,8 +18,7 @@ COMMENT=	A Qt4 front-end to DOSBox
 RUN_DEPENDS=	dosbox:${PORTSDIR}/emulators/dosbox
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui network xml uic_build moc_build qmake_build rcc_build
+USE_QT4=	gui network xml uic_build moc_build qmake_build rcc_build
 HAS_CONFIGURE=	yes
 
 PLIST_FILES=	bin/dboxfe bin/dboxfetray

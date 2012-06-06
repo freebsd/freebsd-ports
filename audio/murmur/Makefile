@@ -20,8 +20,7 @@ LIB_DEPENDS=	protobuf.7:${PORTSDIR}/devel/protobuf
 
 USERS=		${PORTNAME}
 GROUPS=		${USERS}
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build corelib network xml sql sql-sqlite3_run
+USE_QT4=	qmake_build moc_build corelib network xml sql sql-sqlite3_run
 
 CONFIG=		no-client
 
@@ -41,7 +40,7 @@ CONFIG+=	no-ice
 .endif
 
 .if defined(WITH_DBUS)
-QT_COMPONENTS+=	dbus
+USE_QT4+=	dbus
 .else
 CONFIG+=	no-dbus
 .endif

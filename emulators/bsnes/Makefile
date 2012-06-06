@@ -40,8 +40,7 @@ OPTIONS=	GUI_GTK "Build with GTK+ GUI" on \
 .if defined(WITH_GUI_GTK)
 MAKE_ENV+=	phoenix="gtk"
 .else
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui
+USE_QT4=	corelib gui
 MAKE_ENV+=	phoenix="qt"
 .endif
 

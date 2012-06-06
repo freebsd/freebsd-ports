@@ -21,8 +21,7 @@ LICENSE=	GPLv2
 
 USE_XORG=	x11 xext ice xscrnsaver
 USE_CMAKE=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build linguist_build
+USE_QT4=	qmake_build moc_build rcc_build uic_build linguist_build
 
 .if defined(WITH_KDE)
 KDE_SUFFIX=	-kde
@@ -32,7 +31,7 @@ PLIST_SUB+=	GUI_NAME=kde4
 PLIST_SUB+=	WITH_KDE=""
 PLIST_SUB+=	WITH_QT="@comment "
 .else
-QT_COMPONENTS+=	xml gui
+USE_QT4+=	xml gui
 PLIST_SUB+=	GUI_NAME=qt4
 PLIST_SUB+=	WITH_KDE="@comment "
 PLIST_SUB+=	WITH_QT=""

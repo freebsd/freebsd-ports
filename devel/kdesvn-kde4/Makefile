@@ -25,8 +25,7 @@ CMAKE_ARGS+=	-DSUBVERSION_INCLUDE_DIR=${LOCALBASE}/include/subversion-1
 USE_GETTEXT=	yes
 USE_KDE4=	kdelibs kdeprefix automoc4
 USE_LDCONFIG=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui xml network dbus svg qt3support sql \
+USE_QT4=	corelib gui xml network dbus svg qt3support sql \
 		qmake_build moc_build rcc_build uic_build linguist_build
 MAKE_JOBS_SAFE=	yes
 

@@ -17,8 +17,7 @@ COMMENT=	A two window file-manager for KDE, like midnight or norton commander
 
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui network xml moc_build qmake_build \
+USE_QT4=	gui network xml moc_build qmake_build \
 		rcc_build uic_build
 USE_BZIP2=	yes
 USE_GETTEXT=	yes

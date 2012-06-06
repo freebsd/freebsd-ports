@@ -14,8 +14,7 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt documentation browser
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build qt3support corelib \
+USE_QT4=	qmake_build moc_build rcc_build uic_build qt3support corelib \
 		gui network sql xml doc help webkit
 QT_NONSTANDARD=	yes
 QT_DIST=	yes

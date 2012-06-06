@@ -16,8 +16,7 @@ COMMENT=	KDE SSDP/uPNP proxy
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_KDE4=	automoc4
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib network xml dbus \
+USE_QT4=	corelib network xml dbus \
 		qmake_build moc_build rcc_build uic_build
 
 .include <bsd.port.mk>

@@ -22,8 +22,7 @@ LIB_DEPENDS=	qjson.0:${PORTSDIR}/devel/qjson
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
 USE_KDE4=	kdehier kdelibs kdeprefix pimlibs automoc4
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus gui network webkit xml \
+USE_QT4=	dbus gui network webkit xml \
 		moc_build qmake_build rcc_build uic_build
 USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes

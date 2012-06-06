@@ -29,8 +29,7 @@ CONFLICTS=	mythtv-frontend-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui sql network script linguist_build l10n sql-mysql_run \
+USE_QT4=	gui sql network script linguist_build l10n sql-mysql_run \
 		moc_build qmake_build rcc_build uic_build imageformats
 QT_NONSTANDARD=	yes
 USE_MYSQL=	51
@@ -96,7 +95,7 @@ RUN_DEPENDS+=	mysqld_safe:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
 .endif
 
 .if defined(WITH_OPENGL)
-QT_COMPONENTS+=	opengl
+USE_QT4+=	opengl
 CONFIGURE_ARGS+=	--enable-opengl-video
 .else
 CONFIGURE_ARGS+=	--disable-opengl-video

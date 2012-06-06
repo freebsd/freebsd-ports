@@ -14,8 +14,7 @@ DISTNAME=	tiled-qt-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	General purpose tile map editor
 
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui opengl \
+USE_QT4=	corelib gui opengl \
 		linguist_build qmake_build moc_build uic_build rcc_build
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes

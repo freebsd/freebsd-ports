@@ -24,8 +24,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		py*-network>=4.4:${PORTSDIR}/net/py-qt4-network \
 		py*-webkit>=4.4:${PORTSDIR}/www/py-qt4-webkit
 
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui
+USE_QT4=	corelib gui
 PYDISTUTILS_PKGNAME=	ankiqt
 
 PORT_VERBS=	ankiqt

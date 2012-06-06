@@ -15,8 +15,7 @@ MASTER_SITE_SUBDIR=kris
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays a view of the Earth (like xearth) with a rendered photo map
 
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui qt3support moc_build
+USE_QT4=	corelib gui qt3support moc_build
 USE_GMAKE=	yes
 MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS} QT_PREFIX=${QT_PREFIX}
 

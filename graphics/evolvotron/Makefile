@@ -17,8 +17,7 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui moc_build qmake_build xml
+USE_QT4=	corelib gui moc_build qmake_build xml
 USE_PYTHON=	yes
 USE_XORG=	x11
 GNU_CONFIGURE=	yes

@@ -24,8 +24,7 @@ WRKSRC=			${WRKDIR}
 
 USE_SDL=		sdl mixer
 
-USE_QT_VER=		4
-QT_COMPONENTS= 		corelib gui network xml webkit moc_build qmake_build rcc_build uic_build
+USE_QT4= 		corelib gui network xml webkit moc_build qmake_build rcc_build uic_build
 
 USE_DOS2UNIX=		yes
 

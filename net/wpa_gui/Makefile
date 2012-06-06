@@ -17,8 +17,7 @@ COMMENT=	QT GUI for wpa_supplicant
 
 PLIST_FILES=	sbin/${PORTNAME}
 WRKSRC=		${WRKDIR}/${DISTNAME}/wpa_gui-qt4
-USE_QT_VER=	4
-QT_COMPONENTS=	gui qt3support qmake_build moc_build uic_build
+USE_QT4=	gui qt3support qmake_build moc_build uic_build
 
 HAS_CONFIGURE=	yes
 

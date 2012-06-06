@@ -20,8 +20,7 @@ LICENSE_COMB=	dual
 
 USE_GL=		glu
 USE_ZIP=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui opengl \
+USE_QT4=	corelib gui opengl \
 		moc_build qmake_build
 MAKE_JOBS_SAFE=	yes
 

@@ -39,8 +39,7 @@ USE_GETTEXT=	yes
 USE_KDE4=	kdehier kdelibs kdeprefix \
 		attica automoc4 ontologies sharedmime soprano strigi
 KDE4_BUILDENV=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus declarative designer gui phonon qt3support \
+USE_QT4=	dbus declarative designer gui phonon qt3support \
 		script svg webkit xml \
 		moc_build qmake_build rcc_build uic_build
 USE_XORG=	x11 xcursor

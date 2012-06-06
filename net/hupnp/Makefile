@@ -16,8 +16,7 @@ COMMENT=	A library for building UPnP devices and control points
 
 USE_ZIP=	yes
 USE_GMAKE=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib network xml dbus gui \
+USE_QT4=	corelib network xml dbus gui \
 		qmake_build moc_build rcc_build uic_build
 QMAKE_ARGS=	PREFIX=${PREFIX} herqq.pro
 

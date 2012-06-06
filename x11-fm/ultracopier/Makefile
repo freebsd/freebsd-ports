@@ -21,8 +21,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_BZIP2=	yes
 USE_GNOME=	desktopfileutils
 USE_KDE4=	automoc4 kdelibs
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib dbus gui moc_build network qmake_build rcc_build svg \
+USE_QT4=	corelib dbus gui moc_build network qmake_build rcc_build svg \
 		uic_build xml xmlpatterns
 
 USE_CMAKE=	yes

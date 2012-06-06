@@ -15,8 +15,7 @@ COMMENT=	Qt4 multimedia framework
 
 CONFLICTS=	phonon-4.*
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build corelib dbus gui xml
+USE_QT4=	qmake_build moc_build corelib dbus gui xml
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 

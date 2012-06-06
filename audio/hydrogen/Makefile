@@ -23,8 +23,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN=		does not install
 
 MAJORVERSION=	0.9.5
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui linguist_build moc_build network qt3support rcc_build sql uic_build xml
+USE_QT4=	corelib gui linguist_build moc_build network qt3support rcc_build sql uic_build xml
 USE_SCONS=	yes
 
 OPTIONS=	JACK "JACK support" on \

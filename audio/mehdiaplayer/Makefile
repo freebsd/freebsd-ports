@@ -15,8 +15,7 @@ MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	A simple media player using Qt/Phonon
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui xml qmake_build uic_build moc_build \
+USE_QT4=	gui xml qmake_build uic_build moc_build \
 		rcc_build phonon
 
 QMAKE_PRO=	${PORTNAME}.pro

@@ -51,8 +51,7 @@ CMAKE_ARGS+=	-DINSTALL_DOCS:BOOL=OFF
 
 .if defined(WITH_IMAGEVIEWER)
 USE_GL=		glew
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui opengl qmake_build moc_build rcc_build uic_build
+USE_QT4=	corelib gui opengl qmake_build moc_build rcc_build uic_build
 CMAKE_ARGS+=	-DUSE_QT:BOOL=ON -DUSE_OPENGL:BOOL=ON
 CMAKE_ENV+=	QTDIR=${QT_PREFIX} QT_INCLUDES=${QT_INCDIR}
 PLIST_SUB+=	IMAGEVIEWER=""

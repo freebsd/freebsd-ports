@@ -28,8 +28,7 @@ LIB_DEPENDS+=	lrdf.2:${PORTSDIR}/textproc/liblrdf \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui xml network corelib sql qt3support \
+USE_QT4=	gui xml network corelib sql qt3support \
 		rcc_build moc_build uic_build linguist_build
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include

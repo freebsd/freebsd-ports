@@ -21,8 +21,7 @@ LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex \
 		protoc:${PORTSDIR}/devel/protobuf
 
 USE_GMAKE=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui svg iconengines_run xml sql network l10n \
+USE_QT4=	gui svg iconengines_run xml sql network l10n \
 		linguist_build qmake_build moc_build rcc_build uic_build \
 		opengl sql-sqlite3_run
 
@@ -49,7 +48,7 @@ BROKEN=		does not compile on FreeBSD 7.x
 .if defined(WITHOUT_DBUS)
 CONFIG+=	no-dbus
 .else
-QT_COMPONENTS+=	dbus
+USE_QT4+=	dbus
 .endif
 
 .if defined(WITHOUT_SYSCELT)

@@ -22,8 +22,7 @@ PLIST=		${.CURDIR}/pkg-plist
 
 AVAHI_SLAVE=	qt4
 USE_GNOME=	gnomehack ltverhack intltool
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib moc_build
+USE_QT4=	corelib moc_build
 AVAHI_PKGCONFIG=	avahi-qt4.pc
 
 .include "${MASTERDIR}/Makefile"

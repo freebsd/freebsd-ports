@@ -16,8 +16,7 @@ COMMENT=	QCA OpenSLL plugin
 LIB_DEPENDS=	qca.2:${PORTSDIR}/devel/qca
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib qmake_build moc_build
+USE_QT4=	corelib qmake_build moc_build
 HAS_CONFIGURE=	yes
 QT_NONSTANDARD=	yes
 USE_OPENSSL=	yes

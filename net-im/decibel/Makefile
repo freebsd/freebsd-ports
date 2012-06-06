@@ -15,8 +15,7 @@ COMMENT=	Realtime communications framework
 
 LIB_DEPENDS=	QtTapioca.0:${PORTSDIR}/net-im/tapioca-qt
 
-USE_QT_VER=	4
-QT_COMPONENTS=	xml dbus gui qtestlib qmake_build moc_build uic_build rcc_build
+USE_QT4=	xml dbus gui qtestlib qmake_build moc_build uic_build rcc_build
 USE_LDCONFIG=	yes
 USE_CMAKE=	yes
 

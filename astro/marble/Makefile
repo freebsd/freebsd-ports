@@ -20,8 +20,7 @@ CONFLICTS=	kdeedu-4.4.[0-4]
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
 KDE4_BUILDENV=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus declarative gui network \
+USE_QT4=	dbus declarative gui network \
 		phonon script sql svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
 USE_XZ=	yes

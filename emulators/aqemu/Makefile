@@ -17,8 +17,7 @@ COMMENT=	Qt4 based Qemu frontend
 LIB_DEPENDS=	vncclient.0:${PORTSDIR}/net/libvncserver
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui qtestlib xml qmake_build uic_build moc_build rcc_build \
+USE_QT4=	gui qtestlib xml qmake_build uic_build moc_build rcc_build \
 		linguist_build
 USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes

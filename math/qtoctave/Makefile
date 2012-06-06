@@ -17,8 +17,7 @@ COMMENT=	Qt4 frontend for Octave
 RUN_DEPENDS=	octave:${PORTSDIR}/math/octave
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	designer gui network script svg xml \
+USE_QT4=	designer gui network script svg xml \
 		qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
 CMAKE_ARGS+=	-DWITH_UseRPMTools:Bool=Off

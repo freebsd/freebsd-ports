@@ -23,9 +23,8 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 USE_ZIP=	yes
 USE_CMAKE=	yes
 USE_DOS2UNIX=	CMakeLists.txt DirEnumerator.cpp ZipFile_stl.cpp ZipPlatform_lnx.cpp
-USE_QT_VER=	4
 NO_WRKSUBDIR=	yes
-QT_COMPONENTS=	qmake gui svg webkit xml moc uic rcc imageformats linguist
+USE_QT4=	qmake gui svg webkit xml moc uic rcc imageformats linguist
 
 DESKTOP_ENTRIES="Sigil Editor" \
 		"${COMMENT}" \

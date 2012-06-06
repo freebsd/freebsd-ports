@@ -18,8 +18,7 @@ COMMENT=	KDE4 Plasma applet, which monitors connections to ftp daemons
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_KDE4=	kdelibs kdeprefix automoc4
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build uic_build rcc_build
+USE_QT4=	qmake_build moc_build uic_build rcc_build
 MAKE_JOS_SAFE=	yes
 
 post-patch:

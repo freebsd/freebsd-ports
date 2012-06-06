@@ -18,8 +18,7 @@ LIB_DEPENDS=	fluidsynth:${PORTSDIR}/audio/fluidsynth
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui qmake_build moc_build uic_build rcc_build linguist_build
+USE_QT4=	gui qmake_build moc_build uic_build rcc_build linguist_build
 CFLAGS+=	-I${QT_INCDIR} ${PTHREAD_CFLAGS} ${PTHREAD_LIBS}
 LDFLAGS+=	-L${QT_LIBDIR}
 CONFIGURE_ARGS+=ac_cv_path_ac_moc=${MOC} ac_cv_path_ac_uic=${UIC} \

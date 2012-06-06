@@ -18,8 +18,7 @@ COMMENT=	QtCurve KDE4 widget style
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib qmake_build uic_build moc_build rcc_build
+USE_QT4=	corelib qmake_build uic_build moc_build rcc_build
 USE_KDE4=	kdelibs workspace kdehier kdeprefix automoc4
 
 .include <bsd.port.mk>

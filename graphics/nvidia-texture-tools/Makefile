@@ -36,9 +36,8 @@ OPTIONS=	COMPRESSUI "Build compressor UI (requires Qt4)" off
 .include <bsd.port.options.mk>
 
 .if defined(WITH_COMPRESSUI)
-USE_QT_VER=	4
 # *_build stuff is not really needed, but cmake's Qt finder won't work otherwise
-QT_COMPONENTS=	qmake_build moc_build uic_build rcc_build corelib gui opengl
+USE_QT4=	qmake_build moc_build uic_build rcc_build corelib gui opengl
 PLIST_SUB+=	COMPRESSUI=""
 .else
 PLIST_SUB+=	COMPRESSUI="@comment "

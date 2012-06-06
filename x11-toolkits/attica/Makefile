@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	stable/${PORTNAME}/
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Collaboration Services API library
 
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus network moc_build uic_build rcc_build qmake_build
+USE_QT4=	dbus network moc_build uic_build rcc_build qmake_build
 USE_BZIP2=	yes
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes

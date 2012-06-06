@@ -25,8 +25,7 @@ LIB_DEPENDS=	gpgme.19:${PORTSDIR}/security/gpgme \
 RUN_DEPENDS+=	pinentry-qt4:${PORTSDIR}/security/pinentry-qt4
 
 WRKSRC=		${WRKDIR}/trunk
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui network xml script designer_build uic_build \
+USE_QT4=	corelib gui network xml script designer_build uic_build \
 		qmake_build moc_build rcc_build
 HAS_CONFIGURE=	yes
 BINARY=		RetroShare

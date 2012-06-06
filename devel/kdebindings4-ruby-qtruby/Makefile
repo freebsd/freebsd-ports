@@ -24,8 +24,7 @@ CONFLICTS_INSTALL=	ruby1[89]-kdebindings-4.[0-6].* \
 			ruby1[89]-kdebindings-korundum-4.7.*
 
 USE_KDE4=	kdehier kdeprefix smokeqt
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus declarative designer gui network \
+USE_QT4=	dbus declarative designer gui network \
 		phonon qtestlib script webkit xml \
 		qmake_build moc_build uic_build rcc_build
 USE_RUBY=	yes

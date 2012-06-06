@@ -21,8 +21,7 @@ USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	moc_build opengl rcc_build
+USE_QT4=	moc_build opengl rcc_build
 
 # no port fow equalizer now, lirc detecting not working
 CONFIGURE_ARGS+=	--without-equalizer --without-liblircclient --docdir=${DOCSDIR}

@@ -14,8 +14,7 @@ MASTER_SITES=	http://www.tdr.wiwi.uni-due.de/fileadmin/fileupload/I-TDR/Reliable
 MAINTAINER=	dreibh@iem.uni-due.de
 COMMENT=	RSerPool Framework and Example Applications
 
-USE_QT_VER=	4
-QT_COMPONENTS=	gui xml moc_build
+USE_QT4=	gui xml moc_build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-maintainer-mode \

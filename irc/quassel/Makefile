@@ -18,8 +18,7 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build
+USE_QT4=	qmake_build moc_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	MONO "Quassel standalone client" on \
@@ -38,7 +37,7 @@ IGNORE=		needs at least one Quassel component. Please, rerun 'make config'
 .endif
 
 .if !defined(WITHOUT_NLS)
-QT_COMPONENTS+=	linguist_build
+USE_QT4+=	linguist_build
 .endif
 
 .if defined(WITHOUT_MONO) && defined(WITHOUT_CLIENT)
@@ -48,7 +47,7 @@ PLIST_SUB+=	MONO_OR_CLIENT=""
 .endif
 
 .if !defined(WITHOUT_MONO)
-QT_COMPONENTS+=	dbus gui network script sql xml webkit
+USE_QT4+=	dbus gui network script sql xml webkit
 QUASSEL_MONO=	ON
 PLIST_SUB+=	MONO=""
 .else
@@ -57,7 +56,7 @@ PLIST_SUB+=	MONO="@comment "
 .endif
 
 .if !defined(WITHOUT_CORE)
-QT_COMPONENTS+=	network script sql sql-sqlite3_run
+USE_QT4+=	network script sql sql-sqlite3_run
 QUASSEL_CORE=	ON
 PLIST_SUB+=	CORE=""
 
@@ -71,7 +70,7 @@ PLIST_SUB+=	CORE="@comment "
 .endif
 
 .if !defined(WITHOUT_CLIENT)
-QT_COMPONENTS+=	dbus gui network xml webkit
+USE_QT4+=	dbus gui network xml webkit
 QUASSEL_CLIENT=	ON
 PLIST_SUB+=	CLIENT=""
 .else

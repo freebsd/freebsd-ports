@@ -22,8 +22,7 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}gui>=${PYQT4_VERSION}:${PORTSDIR}/x11-toolkits/py-q
 DISTINFO_FILE=	${PYQT4_DISTINFO_FILE}
 HAS_CONFIGURE=	yes
 USE_PYTHON=	2.5+
-USE_QT_VER=	4
-QT_COMPONENTS=	help qmake_build
+USE_QT4=	help qmake_build
 
 OPTIONS=	API		"Install QtHelp API for QScintilla2" on \
 		DEBUG		"Enable debugging in generated code" off \

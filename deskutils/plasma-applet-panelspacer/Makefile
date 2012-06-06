@@ -18,8 +18,7 @@ COMMENT=	Panel spacer plasma applet for KDE4
 
 USE_CMAKE=	yes
 USE_KDE4=	automoc4 kdeprefix workspace
-USE_QT_VER=	4
-QT_COMPONENTS=	gui dbus network opengl svg webkit xml \
+USE_QT4=	gui dbus network opengl svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
 
 WRKSRC=		${WRKDIR}/Panelspacer_from_svn_pour_kdelook-tmp

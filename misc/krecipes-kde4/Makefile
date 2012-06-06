@@ -20,8 +20,7 @@ LATEST_LINK=	${PORTNAME}-kde4
 
 USE_CMAKE=	yes
 USE_GETTEXT=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build
+USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_KDE4=	automoc4 kdeprefix kdelibs sharedmime
 MAKE_JOBS_SAFE=	yes
 
@@ -38,17 +37,17 @@ OPTIONS=	SQLITE "Support for SQLite backend" on \
 CMAKE_ARGS+=	-DWITH_Sqlite:BOOL=OFF
 .else
 USE_SQLITE=	yes
-QT_COMPONENTS+=	sql-sqlite3_run
+USE_QT4+=	sql-sqlite3_run
 .endif
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
-QT_COMPONENTS+=	sql-mysql_run
+USE_QT4+=	sql-mysql_run
 .endif
 
 .if defined(WITH_POSTGRESQL)
 USE_PGSQL=	yes
-QT_COMPONENTS+=	sql-pgsql_run
+USE_QT4+=	sql-pgsql_run
 .endif
 
 pre-configure:

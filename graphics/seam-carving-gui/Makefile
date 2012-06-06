@@ -18,8 +18,7 @@ COMMENT=	The Seam Carving GUI is a GUI front end to CAIR
 HAS_CONFIGURE=	yes
 
 USE_GMAKE=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui imageformats_run moc_build qmake_build uic_build
+USE_QT4=	gui imageformats_run moc_build qmake_build uic_build
 
 WRKSRC=		${WRKDIR}/Src\ Seam\ Carving\ GUI\ ${PORTVERSION}
 

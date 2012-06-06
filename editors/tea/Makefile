@@ -18,8 +18,7 @@ COMMENT=	A simple and powerful Qt4-based text editor
 LICENSE=	GPLv3
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build gui xml
+USE_QT4=	qmake_build moc_build rcc_build gui xml
 
 PLIST_FILES=	bin/${PORTNAME}
 

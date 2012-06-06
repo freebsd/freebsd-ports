@@ -64,8 +64,7 @@ USE_ICONV=	yes
 USE_KDE4=	kdehier kdelibs kdeprefix oxygen pimlibs \
 		akonadi automoc4 ontologies qimageblitz soprano strigi
 KDE4_BUILDENV=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus declarative gui network opengl phonon \
+USE_QT4=	dbus declarative gui network opengl phonon \
 		qt3support qtestlib script sql webkit xml \
 		moc_build qmake_build rcc_build uic_build
 USE_XORG=	kbproto x11 xau xcomposite xcursor xdamage xdmcp xfixes \
@@ -110,7 +109,7 @@ PLIST_SUB+=	GPS="@comment "
 
 .if !defined(WITHOUT_PHONON_GSTREAMER)
 USE_GSTREAMER+=	core
-QT_COMPONENTS+=	phonon-gst_run
+USE_QT4+=	phonon-gst_run
 .endif
 
 .if defined(WITH_PHONON_VLC)

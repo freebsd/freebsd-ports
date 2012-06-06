@@ -21,8 +21,7 @@ CONFLICTS=	kports-0.[0-7]*
 
 USE_BZIP2=	yes
 
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui network qmake_build moc_build uic_build rcc_build
+USE_QT4=	corelib gui network qmake_build moc_build uic_build rcc_build
 QMAKE_ARGS+=	PREFIX=${PREFIX}
 MAKE_JOBS_SAFE=	yes
 

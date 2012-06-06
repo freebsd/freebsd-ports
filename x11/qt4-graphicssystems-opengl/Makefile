@@ -14,8 +14,7 @@ PKGNAMESUFFIX=	-opengl
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	OpenGL rendering engine (experimental)
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build opengl
+USE_QT4=	qmake_build opengl
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 MAKE_JOBS_SAFE=	yes

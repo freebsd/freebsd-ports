@@ -18,8 +18,7 @@ LIB_DEPENDS=	gsl.16:${PORTSDIR}/math/gsl
 LATEST_LINK=	kst2
 
 USE_CMAKE=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui xml designer svg opengl \
+USE_QT4=	gui xml designer svg opengl \
 		qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes

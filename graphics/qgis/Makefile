@@ -25,9 +25,8 @@ USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_BISON=	build
 USE_CMAKE=	yes
-USE_QT_VER=	4
 USE_SQLITE=	yes
-QT_COMPONENTS=	gui svg xml network sql designer linguist_build \
+USE_QT4=	gui svg xml network sql designer linguist_build \
 		qmake_build moc_build rcc_build uic_build
 
 USE_LDCONFIG=	yes

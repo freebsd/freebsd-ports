@@ -14,8 +14,7 @@ MASTER_SITES=	http://qt.osdn.org.ua/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Qt-version of the NetWalk game
 
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui qmake_build moc_build rcc_build
+USE_QT4=	corelib gui qmake_build moc_build rcc_build
 MAKE_JOBS_SAFE=	yes
 
 MAN6=		qnetwalk.6

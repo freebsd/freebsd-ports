@@ -35,9 +35,8 @@ USE_FORTRAN=		yes
 FFLAGS+=		-O2
 
 USE_GL=			yes
-USE_QT_VER=		4
 USE_CMAKE=		yes
-QT_COMPONENTS=		gui network opengl moc_build rcc_build uic_build \
+USE_QT4=		gui network opengl moc_build rcc_build uic_build \
 			qmake_build xml svg
 CPPFLAGS+=		${CXXFLAGS} -I${LOCALBASE}/include  ${AMDINC}
 

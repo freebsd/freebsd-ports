@@ -26,8 +26,7 @@ UI=		gtk
 USE_GNOME=	gtk20
 .else
 UI=		qt4
-USE_QT_VER=	4
-QT_COMPONENTS=	gui corelib imageformats network moc_build
+USE_QT4=	gui corelib imageformats network moc_build
 LDFLAGS+=	-L${QT_LIBDIR}
 .endif
 

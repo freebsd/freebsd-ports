@@ -25,8 +25,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
 USE_CMAKE=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build \
+USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build \
 		linguist_build
 MAKE_JOBS_SAFE=	yes
 

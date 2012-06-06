@@ -38,8 +38,7 @@ OPTIONS=	JACK       "Enable JACK support"       OFF \
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_XORG=	xft
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui xml moc_build uic_build rcc_build \
+USE_QT4=	corelib gui xml moc_build uic_build rcc_build \
 		qmake_build
 USE_CMAKE=	yes
 CMAKE_ARGS=	-DWANT_ALSA:BOOL=OFF \

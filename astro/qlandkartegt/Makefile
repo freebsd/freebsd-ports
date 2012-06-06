@@ -21,8 +21,7 @@ LIB_DEPENDS=	gdal:${PORTSDIR}/graphics/gdal \
 		gps.20:${PORTSDIR}/astro/gpsd
 
 USE_CMAKE=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus gui opengl network sql xml linguist_build \
+USE_QT4=	dbus gui opengl network sql xml linguist_build \
 		moc_build uic_build rcc_build qmake_build
 USE_GL=		glu
 MAKE_JOBS_SAFE=	yes

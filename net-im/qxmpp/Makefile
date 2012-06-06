@@ -16,8 +16,7 @@ COMMENT=	QXmpp is an xmpp client library based on Qt & C++
 
 LICENSE=	LGPL21
 
-USE_QT_VER=	4
-QT_COMPONENTS=	gui network xml qmake_build uic_build moc_build rcc_build
+USE_QT4=	gui network xml qmake_build uic_build moc_build rcc_build
 
 CONFLICTS=	${PORTNAME}-leechcraft-[0-9]*
 

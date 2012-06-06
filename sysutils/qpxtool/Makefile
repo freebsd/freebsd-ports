@@ -18,8 +18,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build linguist_build corelib gui network
+USE_QT4=	qmake_build moc_build rcc_build linguist_build corelib gui network
 QT_NONSTANDARD=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	PREFIX=${PREFIX}

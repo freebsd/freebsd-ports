@@ -16,8 +16,7 @@ COMMENT=	Graphical serial terminal
 
 RUN_DEPENDS=	lsz:${PORTSDIR}/comms/lrzsz
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qt3support qmake_build moc_build rcc_build uic_build
+USE_QT4=	qt3support qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
 
 MAN1=		cutecom.1

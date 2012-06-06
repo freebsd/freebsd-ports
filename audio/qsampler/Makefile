@@ -22,8 +22,7 @@ LIB_DEPENDS=	gig.10:${PORTSDIR}/audio/libgig \
 		lscp.6:${PORTSDIR}/audio/liblscp
 RUN_DEPENDS=	linuxsampler:${PORTSDIR}/audio/linuxsampler
 
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui \
+USE_QT4=	corelib gui \
 		linguist_build moc_build qmake_build rcc_build uic_build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

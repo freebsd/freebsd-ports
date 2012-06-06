@@ -24,7 +24,6 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GL=		glu
-USE_QT_VER=	4
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -67,7 +66,7 @@ PLIST_SUB+=	FFMPEG="@comment "
 .endif
 
 .if defined(WITH_QT4)
-QT_COMPONENTS=	moc_build corelib
+USE_QT4=	moc_build corelib
 MAKE_ARGS+=	QT4MOC=${LOCALBASE}/bin/moc-qt4
 PLIST_SUB+=	QT4=""
 .else

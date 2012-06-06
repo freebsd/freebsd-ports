@@ -31,7 +31,7 @@ MAN1=	pyside-lupdate.1 \
 CMAKE_ARGS=	-DNO_INSTALL_MANPAGES:BOOL=ON
 .endif
 
-QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build
+USE_QT4=	moc_build qmake_build rcc_build uic_build
 
 REINPLACE_ARGS=	-i.bak -e 's+/usr/bin/env python+&${PYTHON_VER}+' \
 		${WRKSRC}/pyside-uic ${WRKSRC}/pysideuic/icon_cache.py
@@ -39,7 +39,6 @@ REINPLACE_ARGS=	-i.bak -e 's+/usr/bin/env python+&${PYTHON_VER}+' \
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_PYTHON=	2.5-2.7
-USE_QT_VER=	4
 
 post-patch:
 	${REINPLACE_CMD}

@@ -15,8 +15,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Cross-platform crypto API for QT
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib qmake_build moc_build
+USE_QT4=	corelib qmake_build moc_build
 HAS_CONFIGURE=	yes
 QT_NONSTANDARD=	yes
 CONFIGURE_ARGS+=--prefix=${PREFIX}
@@ -31,7 +30,7 @@ CONFIGURE_ENV+=	QC_VERBOSE=Y
 .endif
 
 .if defined(MAINTAINER_MODE)
-QT_COMPONENTS+=	qtestlib
+USE_QT4+=	qtestlib
 .else
 CONFIGURE_ARGS+=--disable-tests
 .endif

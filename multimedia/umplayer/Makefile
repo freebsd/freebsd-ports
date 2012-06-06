@@ -16,8 +16,7 @@ COMMENT=	A modern front-end for mplayer (forked from smplayer)
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
-USE_QT_VER=	4
-QT_COMPONENTS=	gui network xml qmake_build moc_build rcc_build uic_build \
+USE_QT4=	gui network xml qmake_build moc_build rcc_build uic_build \
 		linguist_build
 
 ALL_TARGET=	src/umplayer

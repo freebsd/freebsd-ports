@@ -20,8 +20,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 FETCH_ARGS=	-Fpr
 USE_BZIP2=	yes
 USE_CMAKE=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus gui xml \
+USE_QT4=	dbus gui xml \
 		moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes
 

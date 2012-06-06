@@ -17,8 +17,7 @@ MAINTAINER=	sokolov@TrueBSD.org
 COMMENT=	A Qt4-based lightweight Twitter client
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui network xml qmake_build moc_build rcc_build \
+USE_QT4=	gui network xml qmake_build moc_build rcc_build \
 		uic
 
 PLIST_FILES=	bin/qwit-devel

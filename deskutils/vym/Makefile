@@ -15,8 +15,7 @@ MAINTAINER=	lichray@gmail.com
 COMMENT=	VYM is a tool to generate and manipulate mind maps
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build uic_build moc_build \
+USE_QT4=	qmake_build uic_build moc_build \
 		qt3support network xml dbus svg
 QMAKE_ARGS=	PREFIX=${PREFIX} \
 		DATADIR=${DATADIR:C,/vym$,,} \
@@ -34,7 +33,7 @@ DESKTOP_ENTRIES=	"VYM" \
 			false
 
 .if !defined(WITHOUT_NLS)
-QT_COMPONENTS+=	linguist_build
+USE_QT4+=	linguist_build
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "

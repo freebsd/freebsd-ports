@@ -45,8 +45,7 @@ OPTIONS=	ASPELL		"Build with aspell support" off \
 		SQLITE	"SQLite support (experimental)" off \
 		MINIUPNP	"UPnP support"	on
 
-USE_QT_VER=	4
-QT_COMPONENTS=	gui xml network qmake_build uic_build \
+USE_QT4=	gui xml network qmake_build uic_build \
 		moc_build rcc_build linguist_build
 CMAKE_ARGS+=	-DUSE_QT:BOOL=ON
 CMAKE_ARGS+=	-DUSE_GTK:BOOL=OFF
@@ -75,14 +74,14 @@ CMAKE_ARGS+=	-DFREE_SPACE_BAR_C:BOOL=OFF
 
 .if defined(WITH_DBUS_NOTIFY) && !defined(WITHOUT_DBUS)
 CMAKE_ARGS+=	-DDBUS_NOTIFY:BOOL=ON
-QT_COMPONENTS+=	dbus
+USE_QT4+=	dbus
 .else
 CMAKE_ARGS+=	-DDBUS_NOTIFY:BOOL=OFF
 .endif
 
 .if defined(WITH_QTSCRIPT)
 CMAKE_ARGS+=	-DUSE_JS:BOOL=ON
-QT_COMPONENTS+=	script
+USE_QT4+=	script
 RUN_DEPENDS+=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so:${PORTSDIR}/devel/qtscriptgenerator
 PLIST_SUB+=	QTSCRIPT=""
 .else
@@ -92,14 +91,14 @@ PLIST_SUB+=	QTSCRIPT="@comment "
 
 .if defined(WITH_QML)
 CMAKE_ARGS+=	-DUSE_QT_QML:BOOL=ON
-QT_COMPONENTS+=	declarative
+USE_QT4+=	declarative
 .else
 CMAKE_ARGS+=	-DUSE_QT_QML:BOOL=OFF
 .endif
 
 .if defined(WITH_SQLITE) && !defined(WITHOUT_SQLITE)
 CMAKE_ARGS+=	-DUSE_QT_SQLITE:BOOL=ON
-QT_COMPONENTS+=	sql-sqlite3
+USE_QT4+=	sql-sqlite3
 .else
 CMAKE_ARGS+=	-DUSE_QT_SQLITE:BOOL=OFF
 .endif

@@ -21,9 +21,8 @@ LIB_DEPENDS=	umidi20.1:${PORTSDIR}/audio/libumidi
 
 LICENSE=	BSD
 USE_BZIP2=	yes
-USE_QT_VER=	4
 
-QT_COMPONENTS=	gui qmake_build moc_build rcc_build
+USE_QT4=	gui qmake_build moc_build rcc_build
 
 MAKE_JOBS_SAFE=	yes
 

@@ -20,8 +20,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	GTLCore.0:${PORTSDIR}/graphics/opengtl
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui moc_build qmake_build rcc_build uic_build
+USE_QT4=	gui moc_build qmake_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes

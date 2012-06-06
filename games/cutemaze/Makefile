@@ -18,8 +18,7 @@ COMMENT=	Is a simple, top-down game in which mazes are randomly generated
 LICENSE=	GPLv3
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build iconengines imageformats
+USE_QT4=	moc_build qmake_build rcc_build uic_build iconengines imageformats
 INSTALLS_ICONS=	yes
 
 MAKE_JOBS_SAFE=	yes

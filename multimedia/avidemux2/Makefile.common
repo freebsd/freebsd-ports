@@ -20,8 +20,7 @@ LICENSE=	GPLv2
 CONFLICTS=	avidemux2-2.[0-46-9].*
 
 USE_GNOME=	libxml2
-USE_QT_VER=	4
-QT_COMPONENTS=
+USE_QT4=	yes
 
 USE_GMAKE=	yes
 USE_ICONV=	yes
@@ -71,7 +70,7 @@ PLIST_SUB+=	GTK="@comment "
 
 .if ${PORT_OPTIONS:MQT4}
 CMAKE_ARGS+=	-DLRELEASE_EXECUTABLE=${LOCALBASE}/bin/lrelease-qt4
-QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build linguist_build gui
+USE_QT4=	qmake_build moc_build rcc_build uic_build linguist_build gui
 PLIST_SUB+=	QT4=""
 .else
 CMAKE_ARGS+=	-DQT4:BOOL=OFF

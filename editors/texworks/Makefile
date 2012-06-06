@@ -20,8 +20,7 @@ LIB_DEPENDS=	poppler-qt4:${PORTSDIR}/graphics/poppler-qt4 \
 
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build gui corelib rcc_build moc_build uic_build \
+USE_QT4=	qmake_build gui corelib rcc_build moc_build uic_build \
 		dbus xml
 
 MAKE_ENV+=	QTDIR=${QT_PREFIX}

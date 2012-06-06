@@ -118,8 +118,7 @@ PLIST_SUB+=	KINO="@comment "
 
 .ifndef(WITHOUT_QT4)
 LIB_DEPENDS+=	exif.12:${PORTSDIR}/graphics/libexif
-USE_QT_VER=	4
-QT_COMPONENTS+=	gui svg xml
+USE_QT4+=	gui svg xml
 CONFIGURE_ARGS+=	--enable-qimage \
 			--qimage-includedir="${QT_INCDIR}" \
 			--qimage-libdir="${QT_LIBDIR}"

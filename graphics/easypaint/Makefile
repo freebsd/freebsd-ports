@@ -17,8 +17,7 @@ COMMENT=	Easy graphic editing program
 
 LICENSE=	GPLv3
 
-USE_QT_VER=	4
-QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build
+USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build
 QPROFILE=	easyPaint
 WRKSRC=		${WRKDIR}/${QPROFILE}
 

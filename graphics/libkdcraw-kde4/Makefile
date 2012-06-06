@@ -24,8 +24,7 @@ CONFLICTS=	kdegraphics-4.[0-6].*
 USE_XZ=	yes
 USE_KDE4=	automoc4 kdehier kdeprefix kdelibs
 KDE4_BUILDENV=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus gui xml \
+USE_QT4=	dbus gui xml \
 		moc_build qmake_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 

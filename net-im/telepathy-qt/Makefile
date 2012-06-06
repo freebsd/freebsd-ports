@@ -18,8 +18,7 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 
 USE_CMAKE=	yes
 CMAKE_SOURCE_PATH=	..
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib qmake_build uic_build moc_build rcc_build xml dbus
+USE_QT4=	corelib qmake_build uic_build moc_build rcc_build xml dbus
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/build

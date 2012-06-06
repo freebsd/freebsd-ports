@@ -16,8 +16,7 @@ COMMENT=	Qt4 bindings for the D-BUS messaging system
 
 LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build corelib xml
+USE_QT4=	qmake_build moc_build rcc_build corelib xml
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 MAKE_JOBS_UNSAFE=	yes

@@ -20,8 +20,7 @@ CONFLICTS=	kdeedu-4.[0-6].*
 
 USE_KDE4=	kdehier kdelibs kdeprefix libkdeedu automoc4
 KDE4_BUILDENV=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	xml moc_build qmake_build rcc_build uic_build
+USE_QT4=	xml moc_build qmake_build rcc_build uic_build
 USE_XZ=	yes
 MAKE_JOBS_SAFE=	yes
 

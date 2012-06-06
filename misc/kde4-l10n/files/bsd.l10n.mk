@@ -6,8 +6,7 @@ DISTNAME=	${PORTNAME}-${KDE4_L10N}-${PORTVERSION}
 DIST_SUBDIR?=	KDE/kde-l10n
 
 USE_XZ=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	uic_build moc_build qmake_build rcc_build xml
+USE_QT4=	uic_build moc_build qmake_build rcc_build xml
 USE_GETTEXT=	yes
 USE_KDE4=	kdelibs kdehier kdeprefix automoc4
 USE_CMAKE=	yes

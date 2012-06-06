@@ -18,9 +18,8 @@ COMMENT=	A Qt4-based multimedia player
 LICENSE=	GPLv2
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
 USE_CMAKE=	yes
-QT_COMPONENTS=	corelib gui network xml dbus \
+USE_QT4=	corelib gui network xml dbus \
 		qmake_build rcc_build uic_build moc_build linguist_build
 USE_LDCONFIG=	yes
 

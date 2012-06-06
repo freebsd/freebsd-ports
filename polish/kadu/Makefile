@@ -46,8 +46,7 @@ CMAKE_ARGS=	-DKADU_VERSION:STRING="${DISTVERSION}" -DWITH_ENCHANT=ON
 # Setting KADU_VERSION disables git invocation
 MAKE_JOBS_SAFE=	yes
 
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus gui network script scripttools webkit xml phonon \
+USE_QT4=	dbus gui network script scripttools webkit xml phonon \
 		linguist_build moc_build qmake_build rcc_build uic_build \
 		imageformats_run sql-sqlite3_run
 WANT_GNOME=	yes

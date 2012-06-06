@@ -21,8 +21,7 @@ WRKSRC=		${WRKDIR}/pcbsd-netmanager
 
 USE_KDE4=	automoc4 kdehier kdeprefix kdelibs workspace 
 USE_LDCONFIG=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib qmake_build moc_build rcc_build uic_build linguist
+USE_QT4=	corelib qmake_build moc_build rcc_build uic_build linguist
 HAS_CONFIGURE=	yes
 MAKE_ARGS=	INSTALL_ROOT=${DESTDIR}
 

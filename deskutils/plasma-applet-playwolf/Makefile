@@ -18,8 +18,7 @@ COMMENT=	Amarok 2.x plasma applet for KDE4
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_KDE4=	automoc4 kdeprefix kdelibs
-USE_QT_VER=	4
-QT_COMPONENTS=	gui dbus network opengl phonon svg webkit xml xmlpatterns \
+USE_QT4=	gui dbus network opengl phonon svg webkit xml xmlpatterns \
 		qmake_build moc_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 

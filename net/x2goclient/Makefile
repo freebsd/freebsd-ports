@@ -23,8 +23,7 @@ RUN_DEPENDS=	nxproxy:${PORTSDIR}/net/nxproxy \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:S,-5,,}
 
-USE_QT_VER=	4
-QT_COMPONENTS=	gui network svg qmake_build moc_build uic_build rcc_build
+USE_QT4=	gui network svg qmake_build moc_build uic_build rcc_build
 USE_OPENLDAP=	yes
 MAKE_JOBS_SAFE=	yes
 

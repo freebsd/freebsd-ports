@@ -25,8 +25,7 @@ INSTALL_WRKSRC=	${WRKSRC}/designer
 DISTINFO_FILE=	${PYQT4_DISTINFO_FILE}
 HAS_CONFIGURE=	yes
 USE_PYTHON=	2.5+
-USE_QT_VER=	4
-QT_COMPONENTS=	gui xml designer moc_build qmake_build
+USE_QT4=	gui xml designer moc_build qmake_build
 
 OPTIONS=	DEBUG		"Enable debugging in generated code" off \
 		TRACING		"Enable tracing in generated code" off

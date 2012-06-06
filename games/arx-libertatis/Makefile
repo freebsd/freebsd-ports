@@ -39,8 +39,7 @@ OPTIONS=	CRASHREPORTER "Build crash reporter (requires Qt4)" off
 .include <bsd.port.options.mk>
 
 .if defined(WITH_CRASHREPORTER)
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui network rcc_build moc_build uic_build qmake_build
+USE_QT4=	corelib gui network rcc_build moc_build uic_build qmake_build
 CMAKE_ARGS+=	-DBUILD_CRASHREPORTER=ON
 PLIST_SUB+=	CRASHREPORTER=""
 .else

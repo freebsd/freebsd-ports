@@ -183,8 +183,7 @@ CONFIGURE_ENV+=		ac_cv_path_KDE4_CONFIG=${KDE4_PREFIX}/bin/kde4-config \
 			UPDATE_MIME_DATABASE=/usr/bin/true
 CONFIGURE_ARGS+=	--enable-plasmamule
 USE_KDE4=		kdelibs
-USE_QT_VER=		4
-QT_COMPONENTS+=		dbus gui moc_build
+USE_QT4=		dbus gui moc_build
 PLIST_SUB+=		PLASMAMULE=""
 .else
 CONFIGURE_ARGS+=	--disable-plasmamule

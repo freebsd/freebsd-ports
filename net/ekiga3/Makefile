@@ -56,7 +56,7 @@ OPTIONS=	LDAP		"Enable LDAP support" off \
 BROKEN=		Please set WITH_DBUS or remove WITH_KDE4!
 .	endif
 USE_KDE4=		kdehier kdelibs
-USE_QT_VER=		4
+USE_QT4=		yes
 CONFIGURE_ARGS+=	--enable-kde
 .else
 CONFIGURE_ARGS+=	--disable-kde

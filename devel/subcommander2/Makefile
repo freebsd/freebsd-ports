@@ -29,8 +29,7 @@ USE_DOS2UNIX=	*.cpp *.h
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	qt3support gui network corelib moc_build uic_build rcc_build
+USE_QT4=	qt3support gui network corelib moc_build uic_build rcc_build
 CONFIGURE_ARGS+=	--with-boost=${LOCALBASE}/include --with-neon=${LOCALBASE} \
 			--with-subversion=${LOCALBASE} --with-qt=${LOCALBASE} \
 			--with-apr=${LOCALBASE}/bin/apr-1-config \

@@ -28,8 +28,7 @@ PROJECTHOST=	${PORTNAME}${PKGNAMESUFFIX}
 USE_CMAKE=	yes
 USE_ICONV=	yes
 USE_GL=		glew
-USE_QT_VER=	4
-QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build \
+USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build \
 		linguist_build network sql opengl dbus qtestlib corelib
 USE_GCC=	4.2+
 INSTALLS_ICONS=	yes

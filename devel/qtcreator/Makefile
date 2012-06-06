@@ -20,8 +20,7 @@ LIB_DEPENDS=	Imath.6:${PORTSDIR}/graphics/ilmbase \
 		jasper.4:${PORTSDIR}/graphics/jasper \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build \
+USE_QT4=	qmake_build moc_build rcc_build uic_build \
 		linguist_build assistant_run qt3support \
 		dbus designer gui help-tools_build network script \
 		sql svg xml webkit qdoc3_build

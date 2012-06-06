@@ -23,8 +23,7 @@ USE_GETTEXT=	yes
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4 sharedmime
 KDE4_BUILDENV=	yes
 USE_PERL5_BUILD=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus gui qt3support script sql xml \
+USE_QT4=	dbus gui qt3support script sql xml \
 		moc_build qmake_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 

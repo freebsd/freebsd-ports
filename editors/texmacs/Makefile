@@ -83,8 +83,7 @@ CONFIGURE_ARGS+=	--enable-pdf-renderer
 .endif
 
 .if !defined(WITHOUT_QT4)
-USE_QT_VER=	4
-QT_COMPONENTS=	gui moc_build qmake_build rcc uic_build
+USE_QT4=	gui moc_build qmake_build rcc uic_build
 CONFIGURE_ARGS+=	--with-qt --enable-qtpipes
 .else
 CONFIGURE_ARGS+=	--disable-qt

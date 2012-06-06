@@ -22,8 +22,7 @@ USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	pkgconfig
 INSTALLS_ICONS=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui imageformats linguist_build \
+USE_QT4=	corelib gui imageformats linguist_build \
 		moc_build qmake_build rcc_build uic_build
 
 CPPFLAGS+=	-I${LOCALBASE}/include

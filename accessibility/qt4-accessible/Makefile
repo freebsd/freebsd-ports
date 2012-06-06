@@ -14,8 +14,7 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt accessibility widgets
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build qt3support corelib gui network sql xml
+USE_QT4=	qmake_build moc_build qt3support corelib gui network sql xml
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 MAKE_JOBS_SAFE=	yes

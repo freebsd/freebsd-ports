@@ -94,8 +94,7 @@ PLIST_SUB+=	TCLTK="@comment "
 .if defined(WITH_QT)
 .undef WITHOUT_X11
 PKGNAMESUFFIX=	-qt
-USE_QT_VER=	4
-QT_COMPONENTS=	assistant assistantclient clucene corelib dbus	\
+USE_QT4=	assistant assistantclient clucene corelib dbus	\
 		designer doc gui help help-tools linguist moc	\
 		network opengl phonon qmake qt3support qtestlib	\
 		rcc script scripttools sql svg uic uic3 webkit	\

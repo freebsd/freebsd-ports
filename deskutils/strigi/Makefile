@@ -21,8 +21,7 @@ LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		exiv2.10:${PORTSDIR}/graphics/exiv2 \
 		boost_thread:${PORTSDIR}/devel/boost-libs
 
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui dbus moc_build uic_build qmake_build rcc_build
+USE_QT4=	corelib gui dbus moc_build uic_build qmake_build rcc_build
 USE_BZIP2=	yes
 USE_GNOME=	libxml2 pkgconfig
 USE_FAM=	yes

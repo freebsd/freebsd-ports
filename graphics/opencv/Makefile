@@ -118,8 +118,7 @@ CMAKE_ARGS+=	-DWITH_PNG:BOOL=Off
 .endif
 
 .if defined(WITH_QT4)
-USE_QT_VER= 	4
-QT_COMPONENTS+=	opengl moc_build qmake_build rcc_build uic_build
+USE_QT4+=	opengl moc_build qmake_build rcc_build uic_build
 CMAKE_ARGS+=	-DWITH_QT:BOOL=On -DWITH_QT_OPENGL:BOOL=On
 .else
 CMAKE_ARGS+=	-DWITH_QT:BOOL=Off

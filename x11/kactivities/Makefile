@@ -20,8 +20,7 @@ CONFLICTS_INSTALL=	kdelibs-4.7.* kde-runtime-4.7.*
 USE_XZ=	yes
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
 KDE4_BUILDENV=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build
+USE_QT4=	moc_build qmake_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 
 post-patch:

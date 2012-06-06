@@ -27,8 +27,7 @@ BUILD_DEPENDS=	rapper:${PORTSDIR}/textproc/raptor2 \
 
 USE_KDE4=	automoc4
 USE_PYTHON_BUILD=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus declarative qtestlib \
+USE_QT4=	dbus declarative qtestlib \
 		moc_build qmake_build rcc_build uic_build
 USE_BZIP2=	yes
 USE_CMAKE=	yes

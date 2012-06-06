@@ -19,8 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(h|cpp)
-USE_QT_VER=	4
-QT_COMPONENTS=	gui network qmake_build moc_build rcc_build \
+USE_QT4=	gui network qmake_build moc_build rcc_build \
 		imageformats_run
 
 # Override -A option:

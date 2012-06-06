@@ -26,8 +26,7 @@ PLIST_DIRS=	share/portrac
 
 USE_BZIP2=	yes
 
-USE_QT_VER=	4
-QT_COMPONENTS=	gui moc_build qmake_build
+USE_QT4=	gui moc_build qmake_build
 
 do-configure:
 		@cd ${WRKDIR}/${DISTNAME} && ${QMAKE} portrac.pro

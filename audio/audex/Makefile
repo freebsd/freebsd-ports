@@ -20,8 +20,7 @@ LIB_DEPENDS=	cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia \
 USE_XZ=		yes
 USE_CMAKE=	yes
 USE_KDE4=	automoc4 kdeprefix kdelibs
-USE_QT_VER=	4
-QT_COMPONENTS=	gui dbus network svg xml \
+USE_QT4=	gui dbus network svg xml \
 		qmake_build moc_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 

@@ -18,9 +18,8 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 USE_CMAKE=	yes
-USE_QT_VER=	4
 USE_LDCONFIG=	yes
-QT_COMPONENTS=	corelib gui script \
+USE_QT4=	corelib gui script \
 		qmake_build moc_build rcc_build uic_build qtestlib_build
 CMAKE_ARGS+=	-DBUILD_TESTS:BOOL=FALSE
 CMAKE_OUTSOURCE=	yes

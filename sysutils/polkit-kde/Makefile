@@ -24,8 +24,7 @@ LIB_DEPENDS=	polkit-qt-agent-1.1:${PORTSDIR}/sysutils/polkit-qt
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
-USE_QT_VER=	4
-QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build
+USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 

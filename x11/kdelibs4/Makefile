@@ -55,8 +55,7 @@ USE_KDE4=	kdehier kdeprefix oxygen \
 KDE4_BUILDENV=	yes
 USE_OPENSSL=	yes
 USE_PERL5=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus declarative designer gui imageformats_run \
+USE_QT4=	dbus declarative designer gui imageformats_run \
 		network opengl phonon qdbusviewer_run qt3support \
 		qtestlib script sql svg webkit xml \
 		moc_build qmake_build rcc_build uic_build

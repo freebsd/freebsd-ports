@@ -15,8 +15,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A Qt-based GDS2 Viewer
 
 USE_GMAKE=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui network moc_build sql uic_build \
+USE_QT4=	corelib gui network moc_build sql uic_build \
 		rcc_build qt3support xml
 PLIST_FILES=	bin/klayout \
 		bin/strm2cif \

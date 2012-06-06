@@ -23,8 +23,7 @@ OPTIONS_DEFINE=	OSS ALSA PORTAUDIO JACK
 OPTIONS_DEFAULT=	OSS JACK
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui opengl \
+USE_QT4=	corelib gui opengl \
 		linguist_build moc_build qmake_build rcc_build uic_build
 USE_GL=		glut
 USE_CMAKE=	yes

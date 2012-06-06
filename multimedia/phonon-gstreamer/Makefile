@@ -28,8 +28,7 @@ USE_GL=		gl
 USE_GNOME=	glib20 libxml2
 USE_GSTREAMER=	yes
 USE_KDE4=	kdehier kdeprefix automoc4
-USE_QT_VER=	4
-QT_COMPONENTS=	gui phonon xml \
+USE_QT4=	gui phonon xml \
 		qmake_build moc_build rcc_build uic_build
 USE_XORG=	x11
 USE_XZ=		yes

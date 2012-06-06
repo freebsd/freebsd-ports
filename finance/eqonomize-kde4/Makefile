@@ -16,8 +16,7 @@ MAINTAINER=	cm@therek.net
 COMMENT=	A personal accounting software
 
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib dbus gui network svg xml qmake_build moc_build uic_build rcc_build
+USE_QT4=	corelib dbus gui network svg xml qmake_build moc_build uic_build rcc_build
 USE_CMAKE=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes

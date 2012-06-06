@@ -31,8 +31,7 @@ LATEST_LINK=	${PORTNAME}4
 
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
 KDE4_BUILDENV=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus qt3support svg xml \
+USE_QT4=	dbus qt3support svg xml \
 		moc_build qmake_build rcc_build uic_build
 USE_XZ=	yes
 MAKE_JOBS_SAFE=	yes

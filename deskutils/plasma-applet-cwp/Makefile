@@ -22,8 +22,7 @@ USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_KDE4=	automoc4 kdeprefix kdelibs
-USE_QT_VER=	4
-QT_COMPONENTS=	gui dbus network opengl svg phonon webkit xml \
+USE_QT4=	gui dbus network opengl svg phonon webkit xml \
 		qmake_build moc_build rcc_build uic_build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

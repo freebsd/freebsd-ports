@@ -22,8 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so:${PORTSDIR}
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui network svg xml script scripttools designer webkit \
+USE_QT4=	corelib gui network svg xml script scripttools designer webkit \
 		qmake_build moc_build uic_build linguist_build rcc_build
 MAKE_JOBS_SAFE=	yes
 

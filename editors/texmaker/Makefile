@@ -24,8 +24,7 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 
 USE_BZIP2=	yes
 USE_GHOSTSCRIPT=yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui network xml webkit \
+USE_QT4=	gui network xml webkit \
 		moc_build qmake_build rcc_build uic_build
 HAS_CONFIGURE=	yes
 QMAKE_ARGS=	PREFIX=${PREFIX} ICONDIR=${PREFIX}/share/pixmaps \

@@ -23,8 +23,7 @@ USE_KDE4=	kdehier kdelibs kdeprefix
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=	yes
 USE_PYTHON_BUILD=	2.5+
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui linguist svg webkit xml \
+USE_QT4=	corelib gui linguist svg webkit xml \
 		moc_build qmake_build uic_build
 MAKE_JOBS_SAFE=	yes
 CONFIGURE_ENV=	PATH="${KDE4_PREFIX}/bin:$$PATH" WAF_HOME="${WRKSRC}"

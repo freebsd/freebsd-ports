@@ -18,8 +18,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
 
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui network qmake_build moc_build uic_build rcc_build
+USE_QT4=	corelib gui network qmake_build moc_build uic_build rcc_build
 USE_KDE4=	kdehier
 QMAKE_ARGS=	PREFIX=${PREFIX} KDE4_PREFIX=${KDE4_PREFIX}
 MAKE_JOBS_SAFE=	yes

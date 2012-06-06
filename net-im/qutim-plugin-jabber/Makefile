@@ -23,8 +23,7 @@ LIB_DEPENDS=	idn.17:${PORTSDIR}/dns/libidn
 BUILD_DEPENDS=	${LOCALBASE}/bin/qutim:${PORTSDIR}/net-im/qutim
 RUN_DEPENDS=	${LOCALBASE}/bin/qutim:${PORTSDIR}/net-im/qutim
 
-USE_QT_VER=	4
-QT_COMPONENTS=	gui		\
+USE_QT4=	gui		\
 		moc_build	\
 		network		\
 		qmake_build	\

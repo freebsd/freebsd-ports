@@ -24,8 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.8:${PORTSDIR}/devel/py-dbus \
 DISTINFO_FILE=	${PYQT4_DISTINFO_FILE}
 HAS_CONFIGURE=	yes
 USE_PYTHON=	2.5+
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib qmake_build moc_build
+USE_QT4=	corelib qmake_build moc_build
 USE_XORG=	x11 xext
 
 BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}

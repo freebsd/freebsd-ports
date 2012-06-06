@@ -23,8 +23,7 @@ LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
 
 USE_BZIP2=	yes
 USE_XORG=	x11 xext sm ice xxf86vm
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui qt3support assistantclient linguist_build qmake_build moc_build uic_build rcc_build
+USE_QT4=	corelib gui qt3support assistantclient linguist_build qmake_build moc_build uic_build rcc_build
 USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 

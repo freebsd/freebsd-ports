@@ -13,8 +13,7 @@ COMMENT=	The network backup solution (GUI)
 
 LIB_DEPENDS+=	qwt.5:${PORTSDIR}/x11-toolkits/qwt5
 
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build uic_build moc_build rcc_build
+USE_QT4=	qmake_build uic_build moc_build rcc_build
 WITH_BAT=	yes
 
 MAN1=		bat.1

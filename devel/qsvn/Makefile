@@ -17,8 +17,7 @@ COMMENT=	Qt based GUI frontend for Subversion
 
 LIB_DEPENDS+=	svn_client-1:${PORTSDIR}/devel/subversion
 
-USE_QT_VER=	4
-QT_COMPONENTS=	gui sql moc_build uic_build rcc_build qmake_build
+USE_QT4=	gui sql moc_build uic_build rcc_build qmake_build
 USE_LDCONFIG=	yes
 USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes

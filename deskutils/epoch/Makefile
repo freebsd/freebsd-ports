@@ -19,8 +19,7 @@ LINCENSE=	GPLv3
 PROJECTHOST=	gepoch
 
 USE_ZIP=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui qmake_build moc_build rcc_build
+USE_QT4=	gui qmake_build moc_build rcc_build
 
 PLIST_FILES=	bin/${PORTNAME} share/pixmaps/${PORTNAME}.png
 
