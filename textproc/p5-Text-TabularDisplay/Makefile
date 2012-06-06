@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Text-TabularDisplay
-PORTVERSION=	1.28
+PORTVERSION=	1.30
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,5 +16,8 @@ COMMENT=	Display text in formatted table output
 PERL_CONFIGURE=	yes
 
 MAN3=		Text::TabularDisplay.3
+
+regression-test: build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test
 
 .include <bsd.port.mk>
