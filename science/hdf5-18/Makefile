@@ -6,9 +6,12 @@
 #
 
 PORTNAME=	hdf5
-PORTVERSION=	1.8.8
+PORTVERSION=	1.8.9
 CATEGORIES=	science archivers graphics
-MASTER_SITES=	ftp://ftp.hdfgroup.org/HDF5/prev-releases/hdf5-${PORTVERSION}/src/
+MASTER_SITES=	http://www.hdfgroup.org/ftp/HDF5/current/src/ \
+		ftp://ftp.hdfgroup.org/HDF5/current/src/ \
+		http://www.hdfgroup.org/ftp/HDF5/releases/${PORTNAME}-${PORTVERSION}/src/ \
+		ftp://ftp.hdfgroup.org/HDF5/releases/${PORTNAME}-${PORTVERSION}/src/
 #DISTNAME=	${PORTNAME}-${PORTVERSION}-patch1
 
 MAINTAINER=	koziol@hdfgroup.org
@@ -46,7 +49,7 @@ PLIST_SUB+=	FORTRAN="@comment "
 .endif
 
 .if defined(WITH_SZIP)
-LIB_DEPENDS+=	sz.2:${PORTSDIR}/science/szip
+LIB_DEPENDS+=	sz:${PORTSDIR}/science/szip
 CONFIGURE_ARGS+=--with-szlib=${LOCALBASE}
 .endif
 
