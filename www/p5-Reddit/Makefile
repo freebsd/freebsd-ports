@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Module for interacting with Reddit
 
-BUILD_DEPENDS=	${SITE_PERL}/Module/Install.pm:${PORTSDIR}/devel/p5-Module-Install \
+BUILD_DEPENDS=	p5-Module-Install>=0:${PORTSDIR}/devel/p5-Module-Install \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-ExtUtils-MakeMaker>=6.42:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker \
 		p5-common-sense>=3.2:${PORTSDIR}/devel/p5-common-sense

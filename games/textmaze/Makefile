@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Generates mazes on a text terminal and lets you traverse them
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Curses.pm:${PORTSDIR}/devel/p5-Curses
+RUN_DEPENDS=	p5-Curses>=0:${PORTSDIR}/devel/p5-Curses
 
 USE_PERL5=	yes
 NO_BUILD=	yes

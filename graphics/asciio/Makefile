@@ -16,25 +16,25 @@ DISTNAME=	App-Asciio-${PORTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A Perl/GTK application that lets you draw ASCII charts using a GUI
 
-BUILD_DEPENDS=	${SITE_PERL}/Directory/Scratch.pm:${PORTSDIR}/devel/p5-Directory-Scratch \
-		${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
-		${SITE_PERL}/${PERL_ARCH}/Compress/Bzip2.pm:${PORTSDIR}/archivers/p5-Compress-Bzip2 \
-		${SITE_PERL}/Test/Block.pm:${PORTSDIR}/devel/p5-Test-Block \
-		${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod \
-		${SITE_PERL}/Test/Distribution.pm:${PORTSDIR}/devel/p5-Test-Distribution \
-		${SITE_PERL}/Test/NoWarnings.pm:${PORTSDIR}/devel/p5-Test-NoWarnings \
-		${SITE_PERL}/Test/Warn.pm:${PORTSDIR}/devel/p5-Test-Warn \
-		${SITE_PERL}/Test/Strict.pm:${PORTSDIR}/devel/p5-Test-Strict \
-		${SITE_PERL}/Test/Dependencies.pm:${PORTSDIR}/devel/p5-Test-Dependencies \
-		${SITE_PERL}/Test/Spelling.pm:${PORTSDIR}/devel/p5-Test-Spelling \
-		${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version \
-		${SITE_PERL}/Data/TreeDumper/Renderer/GTK.pm:${PORTSDIR}/devel/p5-Data-TreeDumper-Renderer-GTK \
-		${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff \
-		${SITE_PERL}/Data/Compare.pm:${PORTSDIR}/devel/p5-Data-Compare \
-		${SITE_PERL}/Module/Util.pm:${PORTSDIR}/devel/p5-Module-Util \
-		${SITE_PERL}/Sub/Exporter.pm:${PORTSDIR}/devel/p5-Sub-Exporter \
-		${SITE_PERL}/Eval/Context.pm:${PORTSDIR}/devel/p5-Eval-Context \
-		${SITE_PERL}/Check/ISA.pm:${PORTSDIR}/devel/p5-Check-ISA
+BUILD_DEPENDS=	p5-Directory-Scratch>=0:${PORTSDIR}/devel/p5-Directory-Scratch \
+		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
+		p5-Compress-Bzip2>=0:${PORTSDIR}/archivers/p5-Compress-Bzip2 \
+		p5-Test-Block>=0:${PORTSDIR}/devel/p5-Test-Block \
+		p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
+		p5-Test-Distribution>=0:${PORTSDIR}/devel/p5-Test-Distribution \
+		p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings \
+		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn \
+		p5-Test-Strict>=0:${PORTSDIR}/devel/p5-Test-Strict \
+		p5-Test-Dependencies>=0:${PORTSDIR}/devel/p5-Test-Dependencies \
+		p5-Test-Spelling>=0:${PORTSDIR}/devel/p5-Test-Spelling \
+		p5-version>=0:${PORTSDIR}/devel/p5-version \
+		p5-Data-TreeDumper-Renderer-GTK>=0:${PORTSDIR}/devel/p5-Data-TreeDumper-Renderer-GTK \
+		p5-Algorithm-Diff>=0:${PORTSDIR}/devel/p5-Algorithm-Diff \
+		p5-Data-Compare>=0:${PORTSDIR}/devel/p5-Data-Compare \
+		p5-Module-Util>=0:${PORTSDIR}/devel/p5-Module-Util \
+		p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \
+		p5-Eval-Context>=0:${PORTSDIR}/devel/p5-Eval-Context \
+		p5-Check-ISA>=0:${PORTSDIR}/devel/p5-Check-ISA
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
