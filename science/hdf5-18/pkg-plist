@@ -146,6 +146,7 @@ lib/libhdf5_hl_cpp.so.7
 %%FORTRAN%%lib/libhdf5hl_fortran.la
 %%FORTRAN%%lib/libhdf5hl_fortran.so
 %%FORTRAN%%lib/libhdf5hl_fortran.so.7
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/chunks.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/compound.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/create.cpp
