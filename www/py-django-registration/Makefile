@@ -6,30 +6,22 @@
 #
 
 PORTNAME=	django-registration
-PORTVERSION=	0.7
-PORTREVISION=	1
+PORTVERSION=	0.8
 CATEGORIES=	www python
-MASTER_SITES=	http://bitbucket.org/ubernostrum/django-registration/get/
+MASTER_SITES=	http://www.caomhin.org/ports/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	v${PORTVERSION}
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@caomhin.org
 COMMENT=	A user-registration application for Django
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django
+LICENSE=	BSD
 
-WRKSRC=	${WRKDIR}/${PORTNAME}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.3:${PORTSDIR}/www/py-django
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_GETTEXT=	yes
 
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
-.endif
+CONFLICTS_INSTALL=	pootle-*
 
 .include <bsd.port.mk>
