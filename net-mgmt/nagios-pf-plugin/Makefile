@@ -23,12 +23,6 @@ PLIST_DIRS=	${NAGIOS_PLUGIN_DIR}
 SUB_FILES=	pkg-message
 SUB_LIST=	NAGIOS_PLUGIN_DIR=${NAGIOS_PLUGIN_DIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 601000
-IGNORE=		requires FreeBSD 6.1 or later
-.endif
-
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You can redefine the following additional variables:"
@@ -45,10 +39,10 @@ post-patch:
 	    "s,/usr/local/libexec/nagios,${PREFIX}/${NAGIOS_PLUGIN_DIR}," \
 	    ${WRKSRC}/Makefile
 
-pre-install:
+pre-su-install:
 	@${MKDIR} ${PREFIX}/${NAGIOS_PLUGIN_DIR}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
