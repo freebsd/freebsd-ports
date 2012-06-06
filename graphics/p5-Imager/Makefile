@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Imager
-PORTVERSION=	0.90
-PORTREVISION=	1
+PORTVERSION=	0.91
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,19 +17,20 @@ COMMENT=	A Perl module for manipulating gray, color and rgba format images
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		gif.5:${PORTSDIR}/graphics/giflib \
+BUILD_DEPENDS=	p5-Devel-CheckLib>=0:${PORTSDIR}/devel/p5-Devel-CheckLib
+LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
+		gif:${PORTSDIR}/graphics/giflib \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
 		t1:${PORTSDIR}/devel/t1lib \
 		tiff:${PORTSDIR}/graphics/tiff
-
 TEST_DEPENDS=	p5-CPAN-Meta>=0:${PORTSDIR}/devel/p5-CPAN-Meta \
 		p5-Inline>=0:${PORTSDIR}/devel/p5-Inline
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ENV=	IM_LIBPATH="${LOCALBASE}/lib" \
-		IM_CFLAGS="-I${LOCALBASE}/include ${CFLAGS}"
+CONFIGURE_ENV=	IM_CFLAGS="${CFLAGS}" \
+		IM_INCPATH=${LOCALBASE}/include \
+		IM_LIBPATH=${LOCALBASE}/lib
 
 MAN3=		Imager.3 \
 		Imager::API.3 \
@@ -74,6 +74,7 @@ MAN3=		Imager.3 \
 		Imager::Preprocess.3 \
 		Imager::Probe.3 \
 		Imager::Regops.3 \
+		Imager::Security.3 \
 		Imager::Test.3 \
 		Imager::Transform.3 \
 		Imager::Transformations.3 \
