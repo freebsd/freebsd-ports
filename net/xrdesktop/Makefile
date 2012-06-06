@@ -15,7 +15,7 @@ MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	A p5-Gtk frontend to rdesktop
 
 RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop \
-		${SITE_PERL}/${PERL_ARCH}/Gtk:${PORTSDIR}/x11-toolkits/p5-Gtk
+		p5-Gtk>=0:${PORTSDIR}/x11-toolkits/p5-Gtk
 
 NO_BUILD=	yes
 USE_PERL5=	yes

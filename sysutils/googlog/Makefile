@@ -16,8 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	GoogLog is a simple tool to search inside your syslog files
 
-RUN_DEPENDS=	${SITE_PERL}/Config/Tiny.pm:${PORTSDIR}/devel/p5-Config-Tiny \
-		${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template
+RUN_DEPENDS=	p5-Config-Tiny>=0:${PORTSDIR}/devel/p5-Config-Tiny \
+		p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template
 
 NO_BUILD=	yes
 USE_PERL5=	yes
