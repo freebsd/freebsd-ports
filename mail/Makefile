@@ -212,7 +212,6 @@
     SUBDIR += jamlib
     SUBDIR += jmba
     SUBDIR += junkfilter
-    SUBDIR += kavmilter
     SUBDIR += kbiff
     SUBDIR += kcheckgmail
     SUBDIR += kshowmail
