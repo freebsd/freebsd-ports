@@ -18,7 +18,8 @@ EXTRACT_ONLY=
 MAINTAINER=	freebsd@rakor-net.de
 COMMENT=	Client for the block building game
 
-OPTIONS=	NATIVE_LIBS "Enable native libs support" off
+OPTIONS_DEFINE=		NATIVE_LIBS
+NATIVE_LIBS_DESC=	Enable native libs support
 
 .include <bsd.port.options.mk>
 
@@ -28,7 +29,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6
 DESKTOP_ENTRIES=	"Minecraft" "Block building game" "${DATADIR}/Grass.png" "minecraft-client" "Application;Game;" false
 
-.if defined(WITH_NATIVE_LIBS)
+.if ${PORT_OPTIONS:MNATIVE_LIBS}
 USE_OPENAL=	soft
 BUILD_DEPENDS+=	${JAVALIBDIR}/lwjgl/lwjgl_util.jar:${PORTSDIR}/games/lwjgl
 RUN_DEPENDS+=	${JAVALIBDIR}/lwjgl/lwjgl_util.jar:${PORTSDIR}/games/lwjgl
@@ -42,7 +43,7 @@ JAVA_VENDOR=	sun
 do-install:
 	${ECHO_CMD} "#!/bin/sh" >  ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "export JAVA_HOME=${JAVA_HOME}" >>  ${WRKDIR}/minecraft-client
-.if defined(WITH_NATIVE_LIBS) 
+.if ${PORT_OPTIONS:MNATIVE_LIBS}
 	${ECHO_CMD} "${ECHO_MSG} \"Note:\""                                     >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "${ECHO_MSG} \"\""                                          >> ${WRKDIR}/minecraft-client
 	${ECHO_CMD} "${ECHO_MSG} \"  Please restart this script after inital\"" >> ${WRKDIR}/minecraft-client
