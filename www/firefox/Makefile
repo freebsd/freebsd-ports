@@ -58,7 +58,7 @@ OPTIONS=	DBUS "Enable D-BUS support" on \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 900000
+.if empty(CXX:M*clang++*) && ${OSVERSION} > 900000
 USE_GCC=	4.6+
 .endif
 
