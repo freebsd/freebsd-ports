@@ -7,7 +7,7 @@
 
 PORTNAME=	linux-ut
 PORTVERSION=	${UTVERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://liflg.holarse.net/files/final/:p436 \
@@ -27,6 +27,8 @@ NO_PACKAGE=	Distribution is 340MB; set FORCE_PACKAGE if you really want\
 		to build this package
 RESTRICTED=	Redistribution is limited, see license
 WRKSRC=		${WRKDIR}/${PKGNAME}
+
+CONFLICTS_INSTALL=	exult-[0-9]* ucc-[0-9]*
 
 # Patch files.
 PATCH436FILES=	unreal.tournament_436-multilanguage.run:p436 \
