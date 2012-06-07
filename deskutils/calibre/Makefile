@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	calibre
-PORTVERSION=	0.8.50
-PORTREVISION=	2
+PORTVERSION=	0.8.52
 CATEGORIES=	deskutils python
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
@@ -24,7 +23,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:${PORTSDIR}/devel/py-setupto
 		${PYTHON_PKGNAMEPREFIX}sip>=0:${PORTSDIR}/devel/py-sip \
 		${PYTHON_PKGNAMEPREFIX}qt4-core>=0:${PORTSDIR}/devel/py-qt4-core \
 		${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui \
-		${PYTHON_PKGNAMEPREFIX}cssutils>=0:${PORTSDIR}/www/py-cssutils \
+		${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.9:${PORTSDIR}/www/py-cssutils \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:${PORTSDIR}/devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:${PORTSDIR}/devel/py-lxml
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
@@ -58,20 +57,6 @@ MAKE_ENV+=	FC_INC_DIR="${LOCALBASE}/include/fontconfig" \
 		FC_LIB_DIR="${LOCALBASE}/lib" \
 		OVERRIDE_CFLAGS="${CFLAGS}" \
 		OVERRIDE_LDFLAGS="${LDFLAGS}"
-
-MAN1=		calibre-customize.1 \
-		calibre-debug.1 \
-		calibre-server.1 \
-		calibre-smtp.1 \
-		calibredb.1 \
-		ebook-convert.1 \
-		ebook-meta.1 \
-		epub-fix.1 \
-		fetch-ebook-metadata.1 \
-		lrf2lrs.1 \
-		lrs2lrf.1 \
-		pdfmanipulate.1 \
-		web2disk.1
 
 .include <bsd.port.pre.mk>
 
