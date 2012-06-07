@@ -890,11 +890,6 @@ share/pixmaps/ptb.xpm
 @dirrm %%DATADIR%%/animation/effect
 @dirrm %%DATADIR%%/animation
 @dirrm %%DATADIR%%
-@dirrm share/locale/nn/LC_MESSAGES
-@dirrm share/locale/nn
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale
 @dirrmtry share/icons/hicolor/64x64/apps
 @dirrmtry share/icons/hicolor/64x64
 @dirrmtry share/icons/hicolor/48x48/apps
