@@ -14,6 +14,7 @@ MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Fast, distributed, in-memory workqueue service
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_RC_SUBR=	beanstalkd
 USE_GMAKE=	yes
