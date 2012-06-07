@@ -18,6 +18,12 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A webmail system which accesses mail over IMAP
 
+FORBIDDEN=	Based on a vulnerable version of mail/squirrelmail
+DEPRECATED=	Use  mail/squirrelmail for similar functionality
+EXPIRATION_DATE=2012-07-01
+
+CONFLICTS=	squirrelmail-1*
+
 USE_PHP=	session mhash gettext mbstring pcre openssl xml
 WANT_PHP_WEB=	yes
 USE_GETTEXT=	yes
