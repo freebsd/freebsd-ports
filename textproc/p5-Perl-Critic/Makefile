@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:	Perl::Critic
 # Date created:			Nov 26, 2005
 # Whom:				ijliao
@@ -7,37 +6,35 @@
 #
 
 PORTNAME=	Perl-Critic
-PORTVERSION=	1.11.6
+PORTVERSION=	1.11.7
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:ELLIOTJS
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Critique Perl source for style and standards
 
-RUN_DEPENDS=	p5-B-Keywords>=1.05:${PORTSDIR}/devel/p5-B-Keywords \
+BUILD_DEPENDS=	p5-B-Keywords>=1.05:${PORTSDIR}/devel/p5-B-Keywords \
 		p5-Config-Tiny>=2:${PORTSDIR}/devel/p5-Config-Tiny \
 		p5-Email-Address>=1.88.9:${PORTSDIR}/mail/p5-Email-Address \
 		p5-Exception-Class>=1.23:${PORTSDIR}/devel/p5-Exception-Class \
-		p5-File-HomeDir>0:${PORTSDIR}/devel/p5-File-HomeDir \
+		p5-File-HomeDir>=0:${PORTSDIR}/devel/p5-File-HomeDir \
 		p5-File-Which>=0:${PORTSDIR}/sysutils/p5-File-Which \
 		p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
 		p5-List-MoreUtils>=0.19:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-Pod-Spell>0:${PORTSDIR}/textproc/p5-Pod-Spell \
-		p5-PPI>=1.208:${PORTSDIR}/textproc/p5-PPI \
-		p5-PPIx-Regexp>=0.008:${PORTSDIR}/textproc/p5-PPIx-Regexp \
-		p5-PPIx-Utilities>=1.000:${PORTSDIR}/textproc/p5-PPIx-Utilities \
+		p5-Pod-Spell>=0:${PORTSDIR}/textproc/p5-Pod-Spell \
+		p5-PPI>=1.215:${PORTSDIR}/textproc/p5-PPI \
+		p5-PPIx-Regexp>=0.022:${PORTSDIR}/textproc/p5-PPIx-Regexp \
+		p5-PPIx-Utilities>=1.001:${PORTSDIR}/textproc/p5-PPIx-Utilities \
 		p5-Readonly>=1.03:${PORTSDIR}/devel/p5-Readonly \
 		p5-String-Format>=1.13:${PORTSDIR}/textproc/p5-String-Format \
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
 		p5-Term-ANSIColor>=2.02:${PORTSDIR}/devel/p5-Term-ANSIColor \
-		p5-version>=0:${PORTSDIR}/devel/p5-version \
-		p5-PPIx-Utilities>=1.000:${PORTSDIR}/textproc/p5-PPIx-Utilities \
 		perltidy:${PORTSDIR}/devel/perltidy
-BUILD_DEPENDS=	${RUN_DEPENDS}
-TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
+		p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle
 
 PERL_MODBUILD=	yes
 
@@ -196,6 +193,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::RequireNumberSeparators.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::RequireQuotedHeredocTerminator.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::RequireUpperCaseHeredocTerminator.3 \
+	Perl::Critic::Policy::Variables::ProhibitAugmentedAssignmentInDeclaration.3 \
 	Perl::Critic::Policy::Variables::ProhibitConditionalDeclarations.3 \
 	Perl::Critic::Policy::Variables::ProhibitEvilVariables.3 \
 	Perl::Critic::Policy::Variables::ProhibitLocalVars.3 \
@@ -238,4 +236,11 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Violation.3 \
 	Test::Perl::Critic::Policy.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-version>=0.77:${PORTSDIR}/devel/p5-version
+RUN_DEPENDS+=	p5-version>=0.77:${PORTSDIR}/devel/p5-version
+.endif
+
+.include <bsd.port.post.mk>
