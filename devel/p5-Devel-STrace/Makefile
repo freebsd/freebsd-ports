@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	strace(1)-like runtime call trace for Perl applications
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Devel/RingBuffer.pm:${PORTSDIR}/devel/p5-Devel-RingBuffer \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+RUN_DEPENDS=	p5-Devel-RingBuffer>=0:${PORTSDIR}/devel/p5-Devel-RingBuffer \
+		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
