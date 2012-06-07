@@ -1,16 +1,17 @@
---- ./configure.orig	2011-02-16 09:03:29.000000000 +0100
-+++ ./configure	2011-08-19 16:59:46.000000000 +0200
-@@ -10433,13 +10433,6 @@
+--- configure.orig	2012-06-07 20:32:46.000000000 +0400
++++ configure	2012-06-07 20:33:03.000000000 +0400
+@@ -3810,14 +3810,6 @@
+ fi
  
- # Only expand once:
  
 -
--
--if test "x$GCC" = xyes ; then
--  CFLAGS="-O3 $CFLAGS"
+-if test -z "$orig_CFLAGS"; then
+-  if test x$GCC = xyes; then
+-    CFLAGS="-g -O3"
+-  fi
 -fi
 -
 -
- for ac_header in sys/inotify.h sys/epoll.h sys/event.h port.h poll.h sys/select.h sys/eventfd.h sys/signalfd.h
- do :
-   as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ case `pwd` in
+   *\ * | *\	*)
+     { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Libtool does not cope well with whitespace in \`pwd\`" >&5
