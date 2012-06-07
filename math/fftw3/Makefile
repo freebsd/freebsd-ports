@@ -6,7 +6,7 @@
 #    $MCom: ports-experimental/math/fftw3/Makefile,v 1.1 2006/03/28 00:08:57 ahze Exp $
 
 PORTNAME=	fftw3
-PORTVERSION=	3.3.1
+PORTVERSION=	3.3.2
 PORTREVISION?=	0
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ \
@@ -40,13 +40,16 @@ MAN1=	fftw${FFTW3_SUFX}-wisdom.1
 INSTALL_TARGET=	install-pkgconfigDATA install-libLTLIBRARIES install-exec
 .endif
 
-OPTIONS=	G77_WRAPPERS "Alter Fortran wrappers for use with g77" off \
-		OPENMP "Build OpenMP multithreaded libraries" off \
-		OPTIMIZED_CFLAGS "Enable optimized CFLAGS" on
+OPTIONS_DEFINE =	G77_WRAPPERS OPENMP OPTIMIZED_CFLAGS
+
+G77_WRAPPERS_DESC=	Alter Fortran wrappers for use with g77
+OPENMP_DESC=		Build OpenMP multithreaded libraries
+
+OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_OPENMP)
+.if ${PORT_OPTIONS:MOPENMP}
 CONFIGURE_ARGS+=	--enable-openmp
 PLIST_SUB+=	OPENMP=""
 .else
@@ -54,7 +57,7 @@ CONFIGURE_ARGS+=	--disable-openmp
 PLIST_SUB+=	OPENMP="@comment "
 .endif
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-O3 -ffast-math -fstrict-aliasing
 .  if !defined(WITH_DEBUG)
 CFLAGS+=	-fomit-frame-pointer
@@ -63,7 +66,7 @@ CFLAGS+=	-fomit-frame-pointer
 CFLAGS+=	-malign-double
 .  endif
 WITHOUT_NO_STRICT_ALIASING=	yes
-.endif # end WITH_OPTIMIZED_CFLAGS
+.endif # end OPTIMIZED_CFLAGS
 
 #Users must add altivec and avx to MACHINE_CPU when desired:
 #this is not currently done in bsd.cpu.mk
@@ -87,7 +90,7 @@ CONFIGURE_ARGS+=--enable-altivec
 .elif ${FFTW3_FLAVOR} == "long"
 .  if ${OSVERSION} < 800000
 ONLY_FOR_ARCHS =	i386 sparc64
-LIB_DEPENDS+=	ml.0:${PORTSDIR}/math/ldouble
+LIB_DEPENDS+=	ml:${PORTSDIR}/math/ldouble
 .  endif
 FFTW3_SUFX=	l
 FFTW3_PKGNAMESUFFIX=	-long
@@ -141,7 +144,7 @@ post-configure:
 	@${ECHO_CMD} "#define F77_FUNC(name,NAME) name ## _" >> ${WRKSRC}/config.h
 	@${ECHO_CMD} "#define F77_FUNC_(name,NAME) name ## _" >> ${WRKSRC}/config.h
 	@${ECHO_CMD} "#define F77_FUNC_EQUIV 1" >> ${WRKSRC}/config.h
-.if defined(WITH_G77_WRAPPERS)
+.if ${PORT_OPTIONS:MG77_WRAPPERS}
 	@${ECHO_CMD} "#define WITH_G77_WRAPPERS 1" >> ${WRKSRC}/config.h
 .endif
 
