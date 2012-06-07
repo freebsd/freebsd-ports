@@ -153,6 +153,7 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/RequireNumberSeparators.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/RequireQuotedHeredocTerminator.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/RequireUpperCaseHeredocTerminator.pm
+%%SITE_PERL%%/Perl/Critic/Policy/Variables/ProhibitAugmentedAssignmentInDeclaration.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Variables/ProhibitConditionalDeclarations.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Variables/ProhibitEvilVariables.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Variables/ProhibitLocalVars.pm
