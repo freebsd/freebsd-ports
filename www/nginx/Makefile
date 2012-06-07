@@ -579,8 +579,8 @@ LIB_DEPENDS+=	luajit-5.1.2:${PORTSDIR}/lang/luajit
 CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
 CONFIGURE_ENV+=	"LUAJIT_LIB=${LOCALBASE}/lib"
 USE_NGINX_DEVEL_KIT=	yes
-NGINX_LUA_VERSION=	0.5.0rc28
-GIT_LUA_VERSION=	0-g7a7ac79
+NGINX_LUA_VERSION=	0.5.0rc30
+GIT_LUA_VERSION=	0-g3b1e9aa
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/chaoslawful/lua-nginx-module/tarball/v${NGINX_LUA_VERSION}/:lua
 DISTFILES+=	chaoslawful-lua-nginx-module-v${NGINX_LUA_VERSION}-${GIT_LUA_VERSION}.tar.gz:lua
@@ -643,8 +643,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-rds-csv-nginx-module-${GIT_RDS_CS
 .endif
 
 .if ${PORT_OPTIONS:MRDS_JSON}
-NGINX_RDS_JSON_VERSION=	0.12rc7
-GIT_RDS_JSON_VERSION=	0-g253db2b
+NGINX_RDS_JSON_VERSION=	0.12rc10
+GIT_RDS_JSON_VERSION=	0-g74c21b3
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/agentzh/rds-json-nginx-module/tarball/v${NGINX_RDS_JSON_VERSION}/:rdsjson
 DISTFILES+=	agentzh-rds-json-nginx-module-v${NGINX_RDS_JSON_VERSION}-${GIT_RDS_JSON_VERSION}.tar.gz:rdsjson
