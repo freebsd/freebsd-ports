@@ -1,0 +1,11 @@
+--- src/intel_driver.c.orig	2012-05-17 16:13:46.000000000 +0200
++++ src/intel_driver.c	2012-05-17 16:14:46.000000000 +0200
+@@ -334,7 +334,7 @@
+ 	snprintf(busid, sizeof(busid), "pci:%04x:%02x:%02x.%d",
+ 		 dev->domain, dev->bus, dev->dev, dev->func);
+ 
+-	intel->drmSubFD = drmOpen("i915", busid);
++	intel->drmSubFD = drmOpen("i915kms", busid);
+ 	if (intel->drmSubFD == -1) {
+ 		xf86DrvMsg(scrn->scrnIndex, X_ERROR,
+ 			   "[drm] Failed to open DRM device for %s: %s\n",
