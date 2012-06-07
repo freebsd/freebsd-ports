@@ -6,24 +6,26 @@
 #
 
 PORTNAME=	libclaw
-PORTVERSION=	1.5.3
-PORTREVISION=	5
+PORTVERSION=	1.7.0
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	C++ Library Absolutely Wonderful
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png
-
-USE_BZIP2=	yes
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/bind.hpp:${PORTSDIR}/devel/boost-libs
 
 USE_CMAKE=	yes
-CMAKE_ARGS=	-DCLAW_CMAKE_MODULES_INSTALL_PATH="${PREFIX}/lib/claw"
+CMAKE_ARGS=	-DCLAW_CMAKE_MODULES_INSTALL_PATH="${DATADIR}/cmake"
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
+USE_GETTEXT=	yes
+USE_GCC=	4.6+
 
 post-patch:
-	@${REINPLACE_CMD} -e '/INSTALL.*COPYING/ d' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e '/subdirs/ s|doc||' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e '/install.*COPYING/ d' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
