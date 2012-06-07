@@ -1,23 +1,20 @@
-# New ports collection makefile for:	pwgen
-# Date created:		22 July 2000
-# Whom:			Oddbjorn Steffensen <oddbjorn@tricknology.org>
+# New ports collection makefile for:	pwgen2
+# Date created:		27 Aug 2005
+# Whom:			Andrew Khlebutin <andrey@hm.perm.ru>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	pwgen
-PORTVERSION=	1.15
-PORTREVISION=	1
-PORTEPOCH=	1
+PORTVERSION=	2.06
 CATEGORIES=	sysutils
-MASTER_SITES=	http://people.rit.edu/rpsfa/distfiles/ \
-		http://ns.ael.ru/ports/distfiles/ \
-		http://www.gnu-darwin.org/distfiles/
+MASTER_SITES=	SF
 
-MAINTAINER=	oddbjorn@tricknology.org
-COMMENT=	A simple password generator
+MAINTAINER=	andrey@hm.perm.ru
+COMMENT=	A small, powerful, GPL'ed password generator
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-1
+GNU_CONFIGURE=	yes
+USE_PERL5_BUILD=yes
 
 MAN1=		pwgen.1
 PLIST_FILES=	bin/pwgen

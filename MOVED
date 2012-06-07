@@ -3458,3 +3458,4 @@ graphics/libungif|graphics/giflib|2012-06-05|Replaced by giflib
 mail/kavmilter||2012-06-06|Removed: security package unmaintained upstream.
 sysutils/linux-megacli|sysutils/megacli|2012-06-06|Removed: native version available.
 ftp/wu-ftpd+ipv6||2012-06-07|Removed: Upstream disappeared and distfile is no longer available
+sysutils/pwgen2|sysutils/pwgen|2012-06-07|pwgen2 is a continuation of pwgen that fixes several serious bugs
