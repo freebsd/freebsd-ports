@@ -30,6 +30,7 @@ bin/darktable-cltest
 %%DATADIR%%/pixmaps/plugins/darkroom/colorzones.png
 %%DATADIR%%/pixmaps/plugins/darkroom/demosaic.png
 %%DATADIR%%/pixmaps/plugins/darkroom/exposure.png
+%%DATADIR%%/pixmaps/plugins/darkroom/flip.png
 %%DATADIR%%/pixmaps/plugins/darkroom/graduatednd.png
 %%DATADIR%%/pixmaps/plugins/darkroom/grain.png
 %%DATADIR%%/pixmaps/plugins/darkroom/highlights.png
