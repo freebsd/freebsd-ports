@@ -214,6 +214,7 @@
     SUBDIR += flat-frog
     SUBDIR += flickcurl
     SUBDIR += flood
+    SUBDIR += flot
     SUBDIR += fluxbb
     SUBDIR += fluxcms
     SUBDIR += fnord
