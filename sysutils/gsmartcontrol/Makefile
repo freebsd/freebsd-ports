@@ -29,8 +29,10 @@ MAN1=		gsmartcontrol.1
 
 CONFIGURE_ARGS=	--disable-libglade
 
+.include <bsd.port.options.mk>
+
 post-patch:
-.if defined(NOPORTDOCS)
+.if !${PORT_OPTIONS:MDOCS}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-Makefile.in
 .endif
 

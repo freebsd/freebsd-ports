@@ -38,7 +38,9 @@ CONFIGURE_ARGS+=--with-admindir=${DPKGDIR} --libdir=${PREFIX}/libexec \
 		--disable-compiler-warnings
 CONFIGURE_ENV+=	PERL_LIBDIR="${PREFIX}/${SITE_PERL_REL}"
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 MANLANG=	"" de fr hu ja pl sv
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""

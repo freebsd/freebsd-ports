@@ -24,14 +24,17 @@ MAKE_ARGS=	prefix=${PREFIX}
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 
-OPTIONS=	PYGNOMEDESKTOP "Code syntax hilighting (many dependencies)" off
+OPTIONS_DEFINE=		PYGNOMEDESKTOP
+PYGNOMEDESKTOP_DESC=	Code syntax hilighting (many dependencies)
 
-.if defined(WITHOUT_NLS)
-EXTRA_PATCHES=	${FILESDIR}/extra-Makefile-without_nls
-PLIST_SUB+=	NLS="@comment "
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
+.else
+EXTRA_PATCHES=	${FILESDIR}/extra-Makefile-without_nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
@@ -48,9 +51,7 @@ post-patch:
 		 s|$$(LANG)|$$(LANG_)|g' ${WRKSRC}/${file}
 .endfor
 
-.include <bsd.port.options.mk>
-
-.if defined(WITH_PYGNOMEDESKTOP)
+.if ${PORT_OPTIONS:MPYGNOMEDESKTOP}
 USE_GNOME+=	pygnomedesktop
 .endif
 

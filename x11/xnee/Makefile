@@ -15,9 +15,6 @@ COMMENT=	X events recorder and player
 
 LICENSE=	GPLv3
 
-OPTIONS=	GNEE "Build the GUI frontend" off \
-		PNEE "Build the Gnome Panel frontend" off
-
 USE_XORG=	xtst
 USE_GNOME=	gnomehack
 USE_GMAKE=	yes
@@ -29,9 +26,13 @@ CONFIGURE_ARGS=	--enable-cli --disable-doc --disable-xinput2
 MAN1=		cnee.1 xnee.1
 INFO=		xnee
 
+OPTIONS_DEFINE=	GNEE PNEE
+GNEE_DESC=	Build the GUI frontend
+PNEE_DESC=	Build the Gnome Panel frontend
+
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GNEE)
+.if ${PORT_OPTIONS:MGNEE}
 USE_GNOME+=	gtk20 libgnomeui
 MAN1+=		gnee.1
 PLIST_SUB+=	GNEE=""
@@ -42,7 +43,7 @@ CONFIGURE_ARGS+=--disable-gui
 PLIST_SUB+=	GNEE="@comment "
 .endif
 
-.if defined(WITH_PNEE)
+.if ${PORT_OPTIONS:MPNEE}
 USE_GNOME+=	gnomepanel
 MAN1+=		pnee.1
 PLIST_SUB+=	PNEE=""

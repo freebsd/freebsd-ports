@@ -73,7 +73,7 @@ MAN8_EN=	dpkg-divert.8 \
 		start-stop-daemon.8 \
 		update-alternatives.8
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 MAN1_DE=	dpkg-architecture.1 \
 		dpkg-buildpackage.1 \
 		dpkg-checkbuilddeps.1 \

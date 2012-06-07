@@ -27,7 +27,11 @@ USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CONFIGURE_ARGS+=--docdir=${DOCSDIR}
 
-.if defined(WITH_DEBUG)
+OPTIONS_DEFINE=	DEBUG
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--enable-debug
 .endif
 

@@ -17,8 +17,6 @@ COMMENT=	Manage your personal accounts at home
 LICENSE=	GPLv2
 LICENSE_FILE_GPLv2=${WRKSRC}/COPYING
 
-OPTIONS=	OFX "Enable libOFX support" on
-
 USE_GNOME=	desktopfileutils gnomehier gtk20
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -28,20 +26,24 @@ INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	OFX
+OFX_DESC=	Enable libOFX support
+OPTIONS_DEFAULT=OFX
 
-.if defined(WITHOUT_OFX)
-CONFIGURE_ARGS+=--without-ofx
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MOFX}
 LIB_DEPENDS+=	ofx.5:${PORTSDIR}/finance/libofx
 CONFIGURE_ARGS+=--with-ofx
+.else
+CONFIGURE_ARGS+=--without-ofx
 .endif
 
 post-extract:
 	@${CHMOD} ${BINMODE} ${WRKSRC}/install-sh
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in AUTHORS ChangeLog NEWS README
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
@@ -50,4 +52,4 @@ post-install:
 	@-update-desktop-database
 	@-update-mime-database ${PREFIX}/share/mime
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

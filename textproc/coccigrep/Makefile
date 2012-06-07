@@ -23,13 +23,15 @@ MANCOMPRESSED=	no
 
 MAN1=		coccigrep.1
 
+.include <bsd.port.options.mk>
+
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/coccigrep.1 ${MANPREFIX}/man/man1
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/editors/cocci-grep.el ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/editors/cocci-grep.vim ${DATADIR}
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.rst ${DOCSDIR}

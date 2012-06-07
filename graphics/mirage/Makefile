@@ -37,7 +37,7 @@ post-patch:
 		's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/setup.py
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in CHANGELOG README TODO TRANSLATORS
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
