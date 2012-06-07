@@ -182,10 +182,10 @@ lib/inspircd/modules/m_silence.so
 lib/inspircd/modules/m_spanningtree.so
 lib/inspircd/modules/m_sqlauth.so
 lib/inspircd/modules/m_sqloper.so
-%%LDAPAUTH%%lib/inspircd/modules/m_ldapauth.so
+%%LDAP%%lib/inspircd/modules/m_ldapauth.so
 %%MYSQL%%lib/inspircd/modules/m_mysql.so
 %%PGSQL%%lib/inspircd/modules/m_pgsql.so
-%%SQLITE3%%lib/inspircd/modules/m_sqlite3.so
+%%SQLITE%%lib/inspircd/modules/m_sqlite3.so
 %%GNUTLS%%lib/inspircd/modules/m_ssl_gnutls.so
 %%OPENSSL%%lib/inspircd/modules/m_ssl_openssl.so
 lib/inspircd/modules/m_sslinfo.so

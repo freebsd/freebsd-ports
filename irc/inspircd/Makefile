@@ -7,6 +7,7 @@
 
 PORTNAME=	inspircd
 PORTVERSION=	2.0.5
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://cloud.github.com/downloads/inspircd/inspircd/
 DISTNAME=	InspIRCd-${PORTVERSION}
@@ -48,27 +49,31 @@ CONFIGURE_ARGS=	--with-cc=${CXX} --config-dir=${ETCDIR} \
 		--enable-kqueue --enable-ipv6 --disable-interactive \
 		--uid=${INSPIRCD_UID}
 
-OPTIONS=	LDAPAUTH    "Build m_ldapauth module"          off \
-		MYSQL       "Build m_mysql module"             off \
-		PGSQL       "Build m_pgsql module"             off \
-		SQLITE3     "Build m_sqlite3 module"           off \
-		GNUTLS	    "Build m_ssl_gnutls module"        off \
-		OPENSSL     "Build m_ssl_openssl module"       off
+PORTDOCS=	docs/* extras/*
+
+OPTIONS_DEFINE=	MYSQL PGSQL SQLITE LDAP GNUTLS OPENSSL
+
+GNUTLS_DESC=	Build m_ssl_gnutls module
+LDAP_DESC=	Build m_ldapauth module
+MYSQL_DESC=	Build m_mysql module
+OPENSSL_DESC=	Build m_ssl_openssl module
+PGSQL_DESC=	Build m_pgsql module
+SQLITE_DESC=	Build m_sqlite3 module
 
 .include <bsd.port.options.mk>
 
 post-extract:
 	@(cd ${WRKDIR} && ${MV} ${PORTNAME} ${DISTNAME})
 
-.if defined(WITH_LDAPAUTH) && !defined(WITHOUT_LDAPAUTH)
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	yes
 EXTRAS:=${EXTRAS},m_ldapauth.cpp
-PLIST_SUB+=	LDAPAUTH=""
+PLIST_SUB+=	LDAP=""
 .else
-PLIST_SUB+=	LDAPAUTH="@comment "
+PLIST_SUB+=	LDAP="@comment "
 .endif
 
-.if defined(WITH_MYSQL) && !defined(WITHOUT_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 EXTRAS:=${EXTRAS},m_mysql.cpp
 PLIST_SUB+=	MYSQL=""
@@ -76,7 +81,7 @@ PLIST_SUB+=	MYSQL=""
 PLIST_SUB+=	MYSQL="@comment "
 .endif
 
-.if defined(WITH_PGSQL) && !defined(WITHOUT_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 EXTRAS:=${EXTRAS},m_pgsql.cpp
 PLIST_SUB+=	PGSQL=""
@@ -84,15 +89,15 @@ PLIST_SUB+=	PGSQL=""
 PLIST_SUB+=	PGSQL="@comment "
 .endif
 
-.if defined(WITH_SQLITE3) && !defined(WITHOUT_SQLITE3)
+.if ${PORT_OPTIONS:MSQLITE}
 USE_SQLITE=	3
 EXTRAS:=${EXTRAS},m_sqlite3.cpp
-PLIST_SUB+=	SQLITE3=""
+PLIST_SUB+=	SQLITE=""
 .else
-PLIST_SUB+=	SQLITE3="@comment "
+PLIST_SUB+=	SQLITE="@comment "
 .endif
 
-.if defined(WITH_GNUTLS) && !defined(WITHOUT_GNUTLS)
+.if ${PORT_OPTIONS:MGNUTLS}
 LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls \
 		gcrypt.18:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=	--enable-gnutls
@@ -101,7 +106,7 @@ PLIST_SUB+=	GNUTLS=""
 PLIST_SUB+=	GNUTLS="@comment "
 .endif
 
-.if defined(WITH_OPENSSL) && !defined(WITHOUT_OPENSSL)
+.if ${PORT_OPTIONS:MOPENSSL}
 USE_OPENSSL=yes
 CONFIGURE_ARGS+=	--enable-openssl
 PLIST_SUB+=	OPENSSL=""
