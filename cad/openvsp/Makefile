@@ -8,8 +8,7 @@ PORTNAME=	openvsp
 PORTVERSION=	2.0
 PORTREVISION=	1
 CATEGORIES=	cad
-MASTER_SITES=	https://nodeload.github.com/OpenVSP/OpenVSP/tarball/
-DISTNAME=	OpenVSP_${PORTVERSION}_Community
+MASTER_SITES=	https://nodeload.github.com/OpenVSP/OpenVSP/tarball/OpenVSP_${PORTVERSION}_Community
 
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Create a 3D model of an aircraft defined by engineering parameters
@@ -35,7 +34,9 @@ PLIST_FILES=	bin/vsp
 CFLAGS+=	-I${LOCALBASE}/include/openNURBS
 
 do-fetch:
-	${FETCH_BINARY} -o ${DISTDIR}/${DISTNAME}.tar.gz ${MASTER_SITES}${DISTNAME}
+	if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
+		${FETCH_BINARY} -o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${MASTER_SITES}; \
+	fi
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/vsp/vsp ${PREFIX}/bin
