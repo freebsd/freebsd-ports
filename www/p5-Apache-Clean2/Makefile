@@ -17,7 +17,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}_7
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A mod_perl interface into HTML::Clean
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2 \
+BUILD_DEPENDS=	mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
 		p5-HTML-Clean>=0.8:${PORTSDIR}/www/p5-HTML-Clean
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}2

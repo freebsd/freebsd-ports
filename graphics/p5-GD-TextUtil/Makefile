@@ -16,7 +16,7 @@ DISTNAME=	GDTextUtil-${PORTVERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Text utilities for use with GD drawing package
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
+RUN_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
 
 MAKE_JOBS_SAFE=  yes
 
