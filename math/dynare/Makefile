@@ -36,7 +36,9 @@ BUILD_DEPENDS+=		octave:${PORTSDIR}/math/octave
 .endif
 
 do-fetch:
-	fetch -o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} http://www.dynare.org/download/dynare-4.2/source/${DISTNAME}${EXTRACT_SUFX}/at_download/file
+	if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
+		${FETCH_BINARY} -o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} http://www.dynare.org/download/dynare-4.2/source/${DISTNAME}${EXTRACT_SUFX}/at_download/file ;\
+	fi
 
 post-configure:
 	@${ECHO_MSG} ""
