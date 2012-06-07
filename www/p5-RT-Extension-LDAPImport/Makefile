@@ -18,8 +18,8 @@ COMMENT=	RT extension to import users from an LDAP store
 LICENSE_COMB=	dual
 LICENSE=	ART10 GPLv1
 
-BUILD_DEPENDS=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
-		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor
+BUILD_DEPENDS=	p5-perl-ldap>0:${PORTSDIR}/net/p5-perl-ldap \
+		p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -35,8 +35,8 @@ RT_VER=		38
 RT_VER=		40
 .endif
 
-BUILD_DEPENDS+=	${SITE_PERL}/RT.pm:${PORTSDIR}/www/rt${RT_VER}
-RUN_DEPENDS+=	${SITE_PERL}/RT.pm:${PORTSDIR}/www/rt${RT_VER}
+BUILD_DEPENDS+=	${LOCALBASE}/bin/rt:${PORTSDIR}/www/rt${RT_VER}
+RUN_DEPENDS+=	${LOCALBASE}/bin/rt:${PORTSDIR}/www/rt${RT_VER}
 
 MAN3PREFIX=	${PREFIX}
 

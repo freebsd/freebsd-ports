@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	RT is an industrial-grade ticketing system written in Perl
 
-CONFLICTS=	rt-3.8*
+CONFLICTS=	rt-3.8* brlcad-[0-9]*
 LATEST_LINK=	rt40
 
 # See doc/web_deployment.pod for info on the choices of webserver /
