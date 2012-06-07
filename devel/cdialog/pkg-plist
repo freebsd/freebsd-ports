@@ -197,7 +197,7 @@ lib/libcdialog.so.10
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yesno2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yesno3
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yesno4
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/install
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/copifuncs
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/install
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/copifuncs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm include/cdialog
