@@ -15,7 +15,7 @@ PATCH_SITES=	http://www.lavrsen.dk/twiki/pub/Motion/FreeBSDPatch/
 PATCHFILES=	motion-3.2.11.1.port-freebsd.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	ack@telefonica.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A motion detection application
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
