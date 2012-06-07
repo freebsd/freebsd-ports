@@ -9,10 +9,13 @@
 %%RUBY_SITELIBDIR%%/cairo/context/path.rb
 %%RUBY_SITELIBDIR%%/cairo/context/rectangle.rb
 %%RUBY_SITELIBDIR%%/cairo/context/triangle.rb
+%%RUBY_SITELIBDIR%%/cairo/device.rb
 %%RUBY_SITELIBDIR%%/cairo/paper.rb
 %%RUBY_SITELIBDIR%%/cairo/papers.rb
 %%RUBY_SITELIBDIR%%/cairo/path.rb
+%%RUBY_SITELIBDIR%%/cairo/pattern.rb
 %%RUBY_SITELIBDIR%%/cairo/point.rb
+%%RUBY_SITELIBDIR%%/cairo/surface.rb
 %%RUBY_SITEARCHLIBDIR%%/cairo.so
 %%RUBY_SITEARCHLIBDIR%%/rb_cairo.h
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/AUTHORS
