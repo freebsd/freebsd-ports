@@ -7,7 +7,7 @@
 
 PORTNAME=	blackshadeselite
 PORTVERSION=	0.0.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/blackshadeselite/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -28,6 +28,9 @@ MAKE_ARGS=	CC=${CC} CXX=${CXX}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PORTDOCS=	Readme Readme.elite
+
+post-extract:
+	@${FIND} ${WRKSRC}/Data -name '._*' -delete
 
 post-patch:
 	@${REINPLACE_CMD} -e '/InitGL/ s|.*|chdir("${DATADIR}"); &|' ${WRKSRC}/Source/Main.cpp

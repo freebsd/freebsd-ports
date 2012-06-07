@@ -7,7 +7,7 @@
 
 PORTNAME=	flare
 DISTVERSION=	015_1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://cloud.github.com/downloads/clintbellanger/flare/ \
 		http://mirror.amdmi3.ru/files/
@@ -29,6 +29,9 @@ CMAKE_ARGS=	-DBINDIR="bin" -DDATADIR="share/flare"
 LATEST_LINK=	flare-rpg
 
 PORTDOCS=	*
+
+post-extract:
+	@${FIND} ${WRKSRC} -name '._*' -delete
 
 post-install:
 .if !defined(NOPORTDOCS)

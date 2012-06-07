@@ -51,7 +51,6 @@ bin/flobopuyo
 %%DATADIR%%/gfx/v3acd.png
 %%DATADIR%%/gfx/v3bcd.png
 %%DATADIR%%/gfx/v4abcd.png
-%%DATADIR%%/sfx/._bi
 %%DATADIR%%/sfx/applose.wav
 %%DATADIR%%/sfx/bam1.wav
 %%DATADIR%%/sfx/bim1.wav
@@ -80,7 +79,7 @@ bin/flobopuyo
 %%DATADIR%%/sfx/woo.wav
 %%DATADIR%%/sfx/yahoohoo.wav
 %%DATADIR%%/story/intro.txt
-@dirrm %%DATADIR%%/gfx
-@dirrm %%DATADIR%%/sfx
 @dirrm %%DATADIR%%/story
+@dirrm %%DATADIR%%/sfx
+@dirrm %%DATADIR%%/gfx
 @dirrm %%DATADIR%%
