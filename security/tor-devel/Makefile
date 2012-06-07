@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.3.15-alpha
-PORTREVISION=	1
+DISTVERSION=	0.2.3.16-alpha
 CATEGORIES=	security net ipv6
 MASTER_SITES=	https://www.torproject.org/dist/ \
 		ftp://ftp.bit.nl/mirror/tor/ \
@@ -70,15 +69,19 @@ CONFIGURE_ENV=	TOR_CPPFLAGS_libevent="-I${LOCALBASE}/include/event2 -I${LOCALBAS
 		TOR_LDFLAGS_libevent="-L${LOCALBASE}/lib/event2" \
 		TOR_LIBEVENT_LIBS="${TOR_LIBEVENT_LIBS}"
 
-OPTIONS=	BUFFEREVENTS "use libevent's buffered IO" off \
-		BUFFREELISTS "freelists for buffer RAM" on \
-		GMAKE "parallel build safety via GNU make" off \
-		INSTR_DOWNLOADS "instrument downloads for analysis" off \
-		STATIC_TOR "build a static tor" off \
-		TCMALLOC "use the tcmalloc memory allocation library" off \
-		THREADS "multi-threading support" on \
-		TOR2WEB "faster but non-anonymous hidden services" off \
-		TRANSPARENT "transparent proxy support" on
+OPTIONS_DEFINE=	BUFFEREVENTS BUFFREELISTS GMAKE INSTR_DOWNLOADS \
+		STATIC_TOR TCMALLOC THREADS TOR2WEB TRANSPARENT
+
+BUFFEREVENTS_DESC=	use libevent's buffered IO
+BUFFREELISTS_DESC=	freelists for buffer RAM
+GMAKE_DESC=		parallel build safety via GNU make
+INSTR_DOWNLOADS_DESC=	instrument downloads for analysis
+STATIC_TOR_DESC=	build a static tor
+TCMALLOC_DESC=		use the tcmalloc memory allocation library
+TOR2WEB_DESC=		faster but non-anonymous hidden services
+TRANSPARENT_DESC=	transparent proxy support
+
+OPTIONS_DEFAULT=	BUFFREELISTS THREADS TRANSPARENT
 
 USE_OPENSSL=	yes
 
@@ -95,7 +98,7 @@ MAN1=		tor.1 tor-resolve.1 torify.1 tor-gencert.1
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GMAKE)
+.if ${PORT_OPTIONS:MGMAKE}
 USE_GMAKE=	yes
 .else
 MAKE_JOBS_UNSAFE=	yes
@@ -104,7 +107,7 @@ MAKE_JOBS_UNSAFE=	yes
 .if ( (${OSVERSION} >= 703100 && ${OSVERSION} < 800000) || \
 (${OSVERSION} >= 800500 && ${OSVERSION} < 900000) || \
 (${OSVERSION} >= 900003) ) && !defined(USE_GCC) && empty(CC:M*gcc4*) && \
-!defined(WITH_STATIC_TOR)
+empty(PORT_OPTIONS:MSTATIC_TOR)
 CONFIGURE_ARGS+=	--enable-gcc-hardening
 .endif
 
@@ -114,62 +117,62 @@ CONFIGURE_ARGS+=	--enable-gcc-hardening
 WITH_OPENSSL_PORT=	yes
 .endif
 
-.if defined(WITH_BUFFEREVENTS)
+.if ${PORT_OPTIONS:MBUFFEREVENTS}
 CONFIGURE_ARGS+=	--enable-bufferevents
 .else
 CONFIGURE_ARGS+=	--disable-bufferevents
 .endif
 
-.if defined(WITH_BUFFREELISTS)
+.if ${PORT_OPTIONS:MBUFFREELISTS}
 CONFIGURE_ARGS+=	--enable-buf-freelists
 .else
 CONFIGURE_ARGS+=	--disable-buf-freelists
 .endif
 
-.if defined(WITH_INSTR_DOWNLOADS)
+.if ${PORT_OPTIONS:MINSTR_DOWNLOADS}
 CONFIGURE_ARGS+=	--enable-instrument-downloads
 .else
 CONFIGURE_ARGS+=	--disable-instrument-downloads
 .endif
 
-.if defined(WITH_STATIC_TOR)
+.if ${PORT_OPTIONS:MSTATIC_TOR}
 BUILD_DEPENDS +=	${LOCALBASE}/lib/event2/libevent.a:${PORTSDIR}/devel/libevent2
 CONFIGURE_ARGS+=	--enable-static-tor --with-libevent-dir=${LOCALBASE}/lib/event2 \
 			--with-zlib-dir=/usr/lib
 TOR_LIBEVENT_LIBS=	${LOCALBASE}/lib/event2/libevent.a
-.if defined(WITH_BUFFEREVENTS)
+.if ${PORT_OPTIONS:MBUFFEREVENTS}
 TOR_LIBEVENT_LIBS:=	${LOCALBASE}/lib/event2/libevent_openssl.a ${TOR_LIBEVENT_LIBS}
 .endif
 .else
 CONFIGURE_ARGS+=	--enable-linker-hardening
 LIB_DEPENDS+=		event-2.0:${PORTSDIR}/devel/libevent2
 TOR_LIBEVENT_LIBS=	-levent-2.0
-.if defined(WITH_BUFFEREVENTS)
+.if ${PORT_OPTIONS:MBUFFEREVENTS}
 TOR_LIBEVENT_LIBS:=	-levent_openssl-2.0 ${TOR_LIBEVENT_LIBS}
 .endif
 .endif
 
-.if defined(WITH_TCMALLOC)
+.if ${PORT_OPTIONS:MTCMALLOC}
 CONFIGURE_ARGS+=	--with-tcmalloc
-.if defined(WITH_STATIC_TOR)
+.if ${PORT_OPTIONS:MSTATIC_TOR}
 BUILD_DEPENDS +=	${LOCALBASE}/lib/libtcmalloc.so:${PORTSDIR}/devel/google-perftools
 .else
 LIB_DEPENDS+=		tcmalloc:${PORTSDIR}/devel/google-perftools
 .endif
 .endif
 
-.if defined(WITH_THREADS)
+.if ${PORT_OPTIONS:MTHREADS}
 CONFIGURE_ARGS+=	--enable-threads
 CFLAGS+=		${PTHREAD_CFLAGS}
 .else
 CONFIGURE_ARGS+=	--disable-threads
 .endif
 
-.if defined(WITH_TOR2WEB)
+.if ${PORT_OPTIONS:MTOR2WEB}
 CONFIGURE_ARGS+=	--enable-tor2web-mode
 .endif
 
-.if defined(WITH_TRANSPARENT)
+.if ${PORT_OPTIONS:MTRANSPARENT}
 CONFIGURE_ARGS+=	--enable-transparent
 .else
 CONFIGURE_ARGS+=	--disable-transparent
@@ -201,7 +204,7 @@ post-install:
 	${CHMOD} -R 700 /var/db/tor
 	${CAT} ${PKGMESSAGE}
 
-.if !defined(WITH_TOR2WEB)
+.if empty(PORT_OPTIONS:MTOR2WEB)
 check regression-test test: build
 	@( cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} \
 	${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check )
