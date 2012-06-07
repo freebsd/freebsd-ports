@@ -15,10 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX output for Number::WithError
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Params/Util.pm:${PORTSDIR}/devel/p5-Params-Util \
-		${SITE_PERL}/prefork.pm:${PORTSDIR}/devel/p5-prefork \
-		${SITE_PERL}/Number/WithError.pm:${PORTSDIR}/math/p5-Number-WithError \
-		${SITE_PERL}/TeX/Encode.pm:${PORTSDIR}/textproc/p5-TeX-Encode
+BUILD_DEPENDS=	p5-Params-Util>=0:${PORTSDIR}/devel/p5-Params-Util \
+		p5-prefork>=0:${PORTSDIR}/devel/p5-prefork \
+		p5-Number-WithError>=0:${PORTSDIR}/math/p5-Number-WithError \
+		p5-TeX-Encode>=0:${PORTSDIR}/textproc/p5-TeX-Encode
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-LectroTest>=0:${PORTSDIR}/devel/p5-Test-LectroTest
 
