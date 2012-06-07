@@ -91,6 +91,7 @@ OPTIONS_DEFINE=	\
 	REDIS2 \
 	RTMP \
 	SET_MISC \
+	SFLOW \
 	SLOWFS_CACHE \
 	SRCACHE \
 	SUPERVISORD \
@@ -174,6 +175,7 @@ RDS_JSON_DESC=			3rd party rds_json module
 REDIS2_DESC=			3rd party redis2 module
 RTMP_DESC=			3rd party rtmp module
 SET_MISC_DESC=			3rd party set_misc module
+SFLOW_DESC=			3rd party sflow module
 SLOWFS_CACHE_DESC=		3rd party slowfs_cache module
 SRCACHE_DESC=			3rd party srcache module
 SUPERVISORD_DESC=		3rd party supervisord module
@@ -678,6 +680,14 @@ MASTER_SITES+=	https://github.com/agentzh/set-misc-nginx-module/tarball/v${NGINX
 DISTFILES+=	agentzh-set-misc-nginx-module-v${NGINX_SET_MISC_VERSION}-${GIT_SET_MISC_VERSION}.tar.gz:setmisc
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-set-misc-nginx-module-${GIT_SET_MISC_VERSION:S/^0-g//}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-agentzh-set-misc-nginx-module::config
+.endif
+
+.if ${PORT_OPTIONS:MSFLOW}
+NGINX_SFLOW_VERSION=	0.9.6
+MASTER_SITES+=	http://nginx-sflow-module.googlecode.com/files/:sflow
+DISTFILES+=	nginx-sflow-module-${NGINX_SFLOW_VERSION}.tar.gz:sflow
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-sflow-module-${NGINX_SFLOW_VERSION}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_sflow_config.c
 .endif
 
 .if ${PORT_OPTIONS:MSLOWFS_CACHE}
