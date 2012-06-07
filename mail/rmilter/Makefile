@@ -31,14 +31,8 @@ CONFIGURE_ARGS+=	--enable-debug
 CONFIGURE_ARGS+=	--enable-sendmail
 .endif
 
-LIB_DEPENDS+=		pcre.1:${PORTSDIR}/devel/pcre
-
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} < 502102
-IGNORE=				using libspf2 requires a thread safe resolver
-.else
-LIB_DEPENDS+=		spf2.3:${PORTSDIR}/mail/libspf2
-.endif
+LIB_DEPENDS+=		pcre.1:${PORTSDIR}/devel/pcre \
+			spf2.3:${PORTSDIR}/mail/libspf2
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 LIBS+=		${PTHREAD_LIBS}
@@ -53,4 +47,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/rmilter.conf.sample ${PREFIX}/etc/
 	${INSTALL_MAN} ${WRKSRC}/rmilter.8 ${MAN8PREFIX}/man/man8/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
