@@ -67,9 +67,6 @@ share/icons/hicolor/24x24/apps/audacity.png
 share/icons/hicolor/32x32/apps/audacity.png
 share/icons/hicolor/48x48/apps/audacity.png
 share/icons/hicolor/scalable/apps/audacity.svg
-share/licenses/audacity-2.0.0/GPLv2
-share/licenses/audacity-2.0.0/LICENSE
-share/licenses/audacity-2.0.0/catalog.mk
 share/locale/af/LC_MESSAGES/audacity.mo
 share/locale/ar/LC_MESSAGES/audacity.mo
 share/locale/be/LC_MESSAGES/audacity.mo
