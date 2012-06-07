@@ -7,10 +7,10 @@
 -#if defined nginx_version && (nginx_version > 1001011)
 +#if defined nginx_version && (nginx_version >= 1003001)
 +      (tmp_idx < len && 
-+       (match = pcre_exec(rl->br->rx->regex, 0, 
++       (match = pcre_exec(rl->br->rx->regex->code, 0, 
 +			  (const char *) str->data, str->len, tmp_idx, 0, 
 +			  captures, 6)) >= 0)
-+#elif nginx_version > 1001011 && nginx_version < 1003001
++#elif (nginx_version > 1001011) && (nginx_version < 1003001)
        (tmp_idx < len && 
         (match = pcre_exec(rl->br->rx->regex->pcre, 0, 
  			  (const char *) str->data, str->len, tmp_idx, 0, 

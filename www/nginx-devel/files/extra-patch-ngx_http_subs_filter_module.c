@@ -5,9 +5,9 @@
      n = 0;
  
 -#if defined(nginx_version) && nginx_version >= 1001012
-+#if defined(nginx_version) && nginx_version >= 1003001
-+    rc = pcre_fullinfo(re, NULL, PCRE_INFO_CAPTURECOUNT, &n);
-+#elif nginx_version >= 1001012 && nginx_version < 1003001
++#if defined(nginx_version) && (nginx_version >= 1003001)
++    rc = pcre_fullinfo(re->code, NULL, PCRE_INFO_CAPTURECOUNT, &n);
++#elif (nginx_version >= 1001012) && (nginx_version < 1003001)
      rc = pcre_fullinfo(re->pcre, NULL, PCRE_INFO_CAPTURECOUNT, &n);
  #else
      rc = pcre_fullinfo(re, NULL, PCRE_INFO_CAPTURECOUNT, &n);
