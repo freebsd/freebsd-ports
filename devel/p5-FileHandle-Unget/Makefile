@@ -21,7 +21,7 @@ MAN3=		FileHandle::Unget.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500805
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
+BUILD_DEPENDS=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 .endif
 

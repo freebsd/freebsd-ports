@@ -35,8 +35,8 @@ MAN3=           Cvs.3 Cvs::Command::Base.3 Cvs::Command::Checkout.3 \
 		Cvs::Result::Tag.3 Cvs::Result::Update.3 \
 		Cvs::Command::Rtag.3
 
-RUN_DEPENDS+=    ${SITE_PERL}/${PERL_ARCH}/IO/Tty.pm:${PORTSDIR}/devel/p5-IO-Tty
-RUN_DEPENDS+=   ${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor
-RUN_DEPENDS+=   ${SITE_PERL}/IPC/Run.pm:${PORTSDIR}/devel/p5-IPC-Run
+RUN_DEPENDS+=    p5-IO-Tty>=0:${PORTSDIR}/devel/p5-IO-Tty
+RUN_DEPENDS+=   p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
+RUN_DEPENDS+=   p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run
 
 .include <bsd.port.mk>

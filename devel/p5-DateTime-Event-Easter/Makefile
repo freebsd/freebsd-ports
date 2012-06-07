@@ -15,9 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Returns Easter events for DateTime objects
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
-		${SITE_PERL}/DateTime/Calendar/Julian.pm:${PORTSDIR}/devel/p5-DateTime-Calendar-Julian \
-		${SITE_PERL}/DateTime/Set.pm:${PORTSDIR}/devel/p5-DateTime-Set \
+BUILD_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
+		p5-DateTime-Calendar-Julian>=0:${PORTSDIR}/devel/p5-DateTime-Calendar-Julian \
+		p5-DateTime-Set>=0:${PORTSDIR}/devel/p5-DateTime-Set \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
