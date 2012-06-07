@@ -9,7 +9,7 @@ PORTNAME=	vorbis
 PORTVERSION=	1.4
 PORTREVISION=	3
 CATEGORIES=	audio python
-MASTER_SITES=	http://www.andrewchatham.com/pyogg/download/
+MASTER_SITES=	http://ekyo.nerim.net/software/pyogg/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyvorbis-${PORTVERSION}
 
