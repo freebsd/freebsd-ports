@@ -18,9 +18,9 @@ COMMENT=	Calendar extension module for the RT ticketing system
 LICENSE_COMB=   dual
 LICENSE=        ART10 GPLv1
 
-BUILD_DEPENDS=	${SITE_PERL}/Date/ICal.pm:${PORTSDIR}/devel/p5-Date-ICal      \
-		${SITE_PERL}/Data/ICal.pm:${PORTSDIR}/deskutils/p5-Data-ICal  \
-		${SITE_PERL}/DateTime/Set.pm:${PORTSDIR}/devel/p5-DateTime-Set
+BUILD_DEPENDS=	p5-Date-ICal>0:${PORTSDIR}/devel/p5-Date-ICal      \
+		p5-Data-ICal>0:${PORTSDIR}/deskutils/p5-Data-ICal  \
+		p5-DateTime-Set>0:${PORTSDIR}/devel/p5-DateTime-Set
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -36,8 +36,8 @@ RT_VER=		38
 RT_VER=		40
 .endif
 
-BUILD_DEPENDS+=	${SITE_PERL}/RT.pm:${PORTSDIR}/www/rt${RT_VER}
-RUN_DEPENDS+=	${SITE_PERL}/RT.pm:${PORTSDIR}/www/rt${RT_VER}
+BUILD_DEPENDS+=	${LOCALBASE}/bin/rt:${PORTSDIR}/www/rt${RT_VER}
+RUN_DEPENDS+=	${LOCALBASE}/bin/rt:${PORTSDIR}/www/rt${RT_VER}
 
 MAN3PREFIX=	${PREFIX}
 

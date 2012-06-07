@@ -17,7 +17,7 @@ COMMENT=	RT extension to automate due dates using service levels
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${SITE_PERL}/Business/Hours.pm:${PORTSDIR}/misc/p5-Business-Hours
+BUILD_DEPENDS=	p5-Business-Hours>0:${PORTSDIR}/misc/p5-Business-Hours
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LICENSE=	GPLv2
@@ -35,8 +35,8 @@ RT_VER=		38
 RT_VER=		40
 .endif
 
-BUILD_DEPENDS+=	${SITE_PERL}/RT.pm:${PORTSDIR}/www/rt${RT_VER}
-RUN_DEPENDS+=	${SITE_PERL}/RT.pm:${PORTSDIR}/www/rt${RT_VER}
+BUILD_DEPENDS+=	${LOCALBASE}/bin/rt:${PORTSDIR}/www/rt${RT_VER}
+RUN_DEPENDS+=	${LOCALBASE}/bin/rt:${PORTSDIR}/www/rt${RT_VER}
 
 MAN3PREFIX=	${PREFIX}
 

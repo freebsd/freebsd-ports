@@ -39,7 +39,8 @@ UNIXODBC_DESC=		unixODBC support
 
 OPTIONS_DEFAULT=	ICONV MYSQL SYSLOG
 
-CONFLICTS=	sphinxsearch-devel-[0-9]*
+CONFLICTS=	sphinxsearch-devel-[0-9]* dpsearch-[0-9]* rdb-2.6d \
+		swish++-[0-9]* xaira-[0-9]*
 
 .include <bsd.port.options.mk>
 
