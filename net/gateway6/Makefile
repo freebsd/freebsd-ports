@@ -16,6 +16,8 @@ DISTNAME=	gw6c-6_0-RELEASE-src
 MAINTAINER=	mike@fth-devel.net
 COMMENT=	Gateway6 Tunnel Setup Protocol Client - Free IPv6 tunnel
 
+CONFLICTS=	freenet6-[0-9]*
+
 USE_RC_SUBR=	gateway6.sh
 WRKSRC=		${WRKDIR}/gw6c-6_0_1
 ETCDIR=		${PREFIX}/etc
