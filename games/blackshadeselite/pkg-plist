@@ -111,36 +111,10 @@ bin/blackshades
 %%DATADIR%%/Data/Sounds/sniperrifle.ogg
 %%DATADIR%%/Data/Sounds/underwater.ogg
 %%DATADIR%%/Data/Sounds/zombiesong.ogg
-%%DATADIR%%/Data/Textures/._Blood
-%%DATADIR%%/Data/Textures/._Blood.tga
-%%DATADIR%%/Data/Textures/._Blood.tga copy
-%%DATADIR%%/Data/Textures/._BulletHole.tga
-%%DATADIR%%/Data/Textures/._Crater.tga
-%%DATADIR%%/Data/Textures/._Deadpersonsprite.tga
-%%DATADIR%%/Data/Textures/._Flare.tga
-%%DATADIR%%/Data/Textures/._Font.tga
-%%DATADIR%%/Data/Textures/._HitFlash.tga
-%%DATADIR%%/Data/Textures/._MuzzleFlash.tga
-%%DATADIR%%/Data/Textures/._Personsprite.tga
-%%DATADIR%%/Data/Textures/._Scope.tga
-%%DATADIR%%/Data/Textures/._Smoke.tga
-%%DATADIR%%/Data/Textures/._rain.tga
-%%DATADIR%%/Data/Textures/._snow.tga
 %%DATADIR%%/Data/Textures/Blood.png
 %%DATADIR%%/Data/Textures/Blood.png copy
 %%DATADIR%%/Data/Textures/Blood.tga
 %%DATADIR%%/Data/Textures/Blood.tga copy
-%%DATADIR%%/Data/Textures/Blood/._Blood1.tga
-%%DATADIR%%/Data/Textures/Blood/._Blood10.tga
-%%DATADIR%%/Data/Textures/Blood/._Blood11.tga
-%%DATADIR%%/Data/Textures/Blood/._Blood2.tga
-%%DATADIR%%/Data/Textures/Blood/._Blood3.tga
-%%DATADIR%%/Data/Textures/Blood/._Blood4.tga
-%%DATADIR%%/Data/Textures/Blood/._Blood5.tga
-%%DATADIR%%/Data/Textures/Blood/._Blood6.tga
-%%DATADIR%%/Data/Textures/Blood/._Blood7.tga
-%%DATADIR%%/Data/Textures/Blood/._Blood8.tga
-%%DATADIR%%/Data/Textures/Blood/._Blood9.tga
 %%DATADIR%%/Data/Textures/Blood/Blood1.png
 %%DATADIR%%/Data/Textures/Blood/Blood1.tga
 %%DATADIR%%/Data/Textures/Blood/Blood10.png

@@ -7,7 +7,7 @@
 
 PORTNAME=	flobopuyo
 PORTVERSION=	0.20
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	http://www.ios-software.com/flobopuyo/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -27,6 +27,9 @@ DESKTOP_ENTRIES="FloboPuyo" \
 		"flobopuyo" \
 		"Game;BlocksGame;" \
 		false
+
+post-extract:
+	@${FIND} ${WRKSRC} -name '._*' -delete
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/Makefile
