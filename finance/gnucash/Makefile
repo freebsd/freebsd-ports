@@ -28,12 +28,13 @@ RUN_DEPENDS=	guile>=1.8.6:${PORTSDIR}/lang/guile \
 		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
 		${SITE_PERL}/Finance/Quote.pm:${PORTSDIR}/finance/p5-Finance-Quote
 
-OPTIONS=	AQBANKING	"AqBanking support (HBCI/OpenHBCI)"	off \
-		OFX		"OFX support"				off \
-		DATABASE	"Enable SQL database backends"		off \
-		LOCALE_TAX	"Enable localized tax categories"	off \
-		WEBKIT		"Use webkit instead of gtkhtml for the HTML engine" off \
-		PYTHON		"Install Python bindings"		off
+OPTIONS_DEFINE=	AQBANKING OFX DATABASE LOCALE_TAX WEBKIT PYTHON
+
+AQBANKING_DESC=	AqBanking support (HBCI/OpenHBCI)
+OFX_DESC=	OFX support
+DATABASE_DESC=	Enable SQL database backends
+LOCALE_TAX_DESC=	Enable localized tax categories
+WEBKIT_DESC=	Use webkit instead of gtkhtml for the HTML engine
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -69,7 +70,7 @@ GCONF_SCHEMAS=	apps_gnucash_dialog_business_common.schemas \
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_AQBANKING)
+.if ${PORT_OPTIONS:MAQBANKING}
 LIB_DEPENDS+=	aqbanking.33:${PORTSDIR}/finance/aqbanking \
 		gwengui-gtk2.0:${PORTSDIR}/devel/gwenhywfar \
 		ktoblzcheck.6:${PORTSDIR}/finance/ktoblzcheck
@@ -81,7 +82,7 @@ CONFIGURE_ARGS+=--disable-aqbanking
 PLIST_SUB+=	AQBANKING="@comment "
 .endif
 
-.if defined(WITH_OFX)
+.if ${PORT_OPTIONS:MOFX}
 CONFIGURE_ARGS+=--enable-ofx
 LIB_DEPENDS+=	ofx.5:${PORTSDIR}/finance/libofx
 PLIST_SUB+=	OFX=""
@@ -90,7 +91,7 @@ CONFIGURE_ARGS+=--disable-ofx
 PLIST_SUB+=	OFX="@comment "
 .endif
 
-.if defined(WITH_DATABASE)
+.if ${PORT_OPTIONS:MDATABASE}
 CONFIGURE_ARGS+=--enable-dbi
 LIB_DEPENDS+=	dbi.1:${PORTSDIR}/databases/libdbi
 PLIST_SUB+=	DATABASE=""
@@ -99,18 +100,18 @@ CONFIGURE_ARGS+=--disable-dbi
 PLIST_SUB+=	DATABASE="@comment "
 .endif
 
-.if defined(WITH_LOCALE_TAX)
+.if ${PORT_OPTIONS:MLOCALE_TAX)
 CONFIGURE_ARGS+=--enable-locale-specific-tax
 .endif
 
-.if defined(WITH_WEBKIT)
+.if ${PORT_OPTIONS:MWEBKIT}
 CONFIGURE_ARGS+=--with-html-engine=webkit
 LIB_DEPENDS+=	webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2
 .else
 USE_GNOME+=	gtkhtml3
 .endif
 
-.if defined(WITH_PYTHON)
+.if${PORT_OPTIONS:MPYTHON}
 CONFIGURE_ARGS+=--enable-python-bindings
 USE_PYTHON=	yes
 PLIST_SUB+=	PYTHON=""
@@ -119,8 +120,8 @@ PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 pre-configure:
-.if !defined(PACKAGE_BUILDING) && defined(WITH_AQBANKING) && !exists(${LOCALBASE}/lib/libgwengui-gtk2.so.0)
-BROKEN=	Please rebuild devel/gwenhywfar with the WITH_GTK2 option set
+.if !defined(PACKAGE_BUILDING) && ${PORT_OPTIONS:MAQBANKING} && !exists(${LOCALBASE}/lib/libgwengui-gtk2.so.0)
+BROKEN=	Please rebuild devel/gwenhywfar with the GTK2 option set
 .endif
 
 post-install:
