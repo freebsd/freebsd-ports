@@ -5,7 +5,7 @@
 
 * To use this from Postfix SMTPD, use in %%PREFIX%%/etc/postfix/main.cf
 
-smtpd_recipient_restrictions = 
+smtpd_recipient_restrictions =
 	...
 	permit_mynetworks
 	...
@@ -14,22 +14,13 @@ smtpd_recipient_restrictions =
 	check_policy_service inet:127.0.0.1:12525
 	...
 
-* NOTE: specify check_policy_service AFTER reject_unauth_destination
-* or else your system can become an open relay.
+* NOTE:
+*   specify check_policy_service AFTER reject_unauth_destination
+*   else your system can become an open relay.
 *
 * CONFIGURATION:
 *
-* edit %%PREFIX%%/etc/policyd-weight.conf
-* An example is provided in %%PREFIX%%/etc/policyd-weight.conf.sample
+*   edit %%PREFIX%%/etc/policyd-weight.conf
+*   An example is provided in %%PREFIX%%/etc/policyd-weight.conf.sample
 *
-*
-* Notes:
-*
-* Since version 0.1.14 beta the master.cf mode is deprecated. Use the daemon
-* mode instead. More info in man 8 policyd-weight.
-*
-* Since version 0.1.14.5 beta the policyd-weight executable is located in
-* %%PREFIX%%/bin. Please remove older versions in %%PREFIX%%/libexec/postfix/
-* manually.
-* 
 *************
