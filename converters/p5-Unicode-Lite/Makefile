@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module for easy conversion between encodings
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unicode/String.pm:${PORTSDIR}/converters/p5-Unicode-String \
-		${SITE_PERL}/${PERL_ARCH}/Unicode/Map.pm:${PORTSDIR}/converters/p5-Unicode-Map \
-		${SITE_PERL}/enum.pm:${PORTSDIR}/devel/p5-enum
+BUILD_DEPENDS=	p5-Unicode-String>=0:${PORTSDIR}/converters/p5-Unicode-String \
+		p5-Unicode-Map>=0:${PORTSDIR}/converters/p5-Unicode-Map \
+		p5-enum>=0:${PORTSDIR}/devel/p5-enum
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

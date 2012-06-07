@@ -13,16 +13,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl class that implements conversion between arbitrary charsets
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unicode/Map.pm:${PORTSDIR}/converters/p5-Unicode-Map \
-		${SITE_PERL}/${PERL_ARCH}/Unicode/String.pm:${PORTSDIR}/converters/p5-Unicode-String \
-		${SITE_PERL}/${PERL_ARCH}/Unicode/Map8.pm:${PORTSDIR}/converters/p5-Unicode-Map8 \
-		${JCODE}:${PORTSDIR}/japanese/p5-Jcode
+BUILD_DEPENDS=	p5-Unicode-Map>=0:${PORTSDIR}/converters/p5-Unicode-Map \
+		p5-Unicode-String>=0:${PORTSDIR}/converters/p5-Unicode-String \
+		p5-Unicode-Map8>=0:${PORTSDIR}/converters/p5-Unicode-Map8 \
+		p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Unicode::MapUTF8.3
-
-JCODE=	${SITE_PERL}/Jcode.pm
 
 .include <bsd.port.mk>

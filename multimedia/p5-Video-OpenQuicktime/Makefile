@@ -15,9 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interface to the OpenQuicktime library
 
-BUILD_DEPENDS=	${SITE_PERL}/Inline-API.pod:${PORTSDIR}/devel/p5-Inline
+BUILD_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline
 LIB_DEPENDS=	openquicktime.0:${PORTSDIR}/multimedia/openquicktime
-RUN_DEPENDS=	${SITE_PERL}/Inline-API.pod:${PORTSDIR}/devel/p5-Inline
+RUN_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline
 
 MAKE_JOBS_UNSAFE=	yes
 
