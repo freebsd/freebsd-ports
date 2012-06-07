@@ -17,14 +17,14 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-snapshot-${PORTVERSION:C/\.([^.]*)$/-\1/}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A tool for copying files between various SCM repositories
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
-		${SITE_PERL}/XML/ValidWriter.pm:${PORTSDIR}/textproc/p5-XML-AutoWriter \
-		${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff \
-		${SITE_PERL}/IPC/Run3.pm:${PORTSDIR}/devel/p5-IPC-Run3 \
-		${SITE_PERL}/Pod/Links.pm:${PORTSDIR}/www/p5-PodToHTML \
-		${SITE_PERL}/Regexp/Shellish.pm:${PORTSDIR}/devel/p5-Regexp-Shellish \
-		${SITE_PERL}/BFD.pm:${PORTSDIR}/devel/p5-BFD \
-		${SITE_PERL}/Text/Table.pm:${PORTSDIR}/textproc/p5-Text-Table
+BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
+		p5-XML-AutoWriter>=0:${PORTSDIR}/textproc/p5-XML-AutoWriter \
+		p5-Text-Diff>=0:${PORTSDIR}/textproc/p5-Text-Diff \
+		p5-IPC-Run3>=0:${PORTSDIR}/devel/p5-IPC-Run3 \
+		p5-PodToHTML>=0:${PORTSDIR}/www/p5-PodToHTML \
+		p5-Regexp-Shellish>=0:${PORTSDIR}/devel/p5-Regexp-Shellish \
+		p5-BFD>=0:${PORTSDIR}/devel/p5-BFD \
+		p5-Text-Table>=0:${PORTSDIR}/textproc/p5-Text-Table
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes

@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Write Perl subroutines in Tcl
 
-BUILD_DEPENDS=	${SITE_PERL}/Inline.pm:${PORTSDIR}/devel/p5-Inline
+BUILD_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline
 LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

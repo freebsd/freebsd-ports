@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0+$//}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	POE component to manage queues and worker pools
 
-BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE
+BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

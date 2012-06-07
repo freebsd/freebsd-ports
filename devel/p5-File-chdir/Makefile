@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A more sensible way to change directories
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Cwd.pm:${PORTSDIR}/devel/p5-PathTools
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Cwd.pm:${PORTSDIR}/devel/p5-PathTools
+BUILD_DEPENDS=	p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools
+RUN_DEPENDS=	p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools
 
 PERL_CONFIGURE=	yes
 
