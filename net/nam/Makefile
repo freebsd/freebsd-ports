@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	nam
-PORTVERSION=	1.12
-PORTREVISION=	4
+PORTVERSION=	1.15
 CATEGORIES=	net
-MASTER_SITES=	http://www.isi.edu/nsnam/dist/
-DISTNAME=	nam-src-${PORTVERSION}
+MASTER_SITES=	SF/ns${PORTNAME}/${PORTNAME}-1/${PORTVERSION}
+DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	masaki@club.kyutech.ac.jp
 COMMENT=	Animation tool for network simulation traces
@@ -30,9 +29,8 @@ ALL_TARGET=	${PORTNAME}
 MAN1=		nam.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/src/local/Tcl-1.0|${LOCALBASE}/include/tclcl|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|const = NULL|const = 0|g' ${WRKSRC}/agent.h
-	@${REINPLACE_CMD} -e 's|friend Queue|friend class Queue|g' ${WRKSRC}/queue.h
+	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" \
+		${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nam ${PREFIX}/bin
