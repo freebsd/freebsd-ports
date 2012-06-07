@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gretl
-PORTVERSION=	1.9.8
-PORTREVISION=	1
+PORTVERSION=	1.9.9
 CATEGORIES=	math finance
 MASTER_SITES=	SF
 
@@ -32,27 +31,31 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ENV=	LAPACK_LIBS="${LAPACK} ${BLAS}"
 
 MAN1=		gretl.1
-OPTIONS=	ATLAS "Use Atlas for BLAS and LAPACK" off \
-		GUI "Build the graphical user interface and plugins" on \
-		NLS "Build with Natural Language Support" on \
-		OPENMP "Use multithreading via OpenMP" on \
-		ODBC "Build with unixODBC database support" off \
-		R "Build with libR support" off
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE =	ATLAS GUI ODBC OPENMP R
 
-.if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+ATLAS_DESC =	Use ATLAS for BLAS and LAPACK
+GUI_DESC=	Build the graphical user interface and plugins
+ODBC_DESC=	Build with unixODBC database support
+OPENMP_DESC=	Use multithreading via OpenMP
+R_DESC=		Build with libR support
+
+OPTIONS_DEFAULT=	GUI OPENMP
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MATLAS}
+LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
 BLAS=		-lf77blas
 LAPACK=		-lalapack -lcblas
 .else
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas \
-		lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	blas:${PORTSDIR}/math/blas \
+		lapack:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
 .endif
 
-.if defined(WITH_GUI)
+.if ${PORT_OPTIONS:MGUI}
 CONFIGURE_ARGS+=	--enable-gui=yes
 USE_GNOME=		gnomehier gtksourceview2
 BUILD_DEPENDS+=		gnuplot:${PORTSDIR}/math/gnuplot
@@ -63,7 +66,7 @@ CONFIGURE_ARGS+=	--enable-gui=no
 PLIST_SUB+=		GUI="@comment "
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=	--enable-nls=yes
 USE_GETTEXT=		yes
 PLIST_SUB+=		NLS=""
@@ -72,7 +75,7 @@ CONFIGURE_ARGS+=	--enable-nls=no
 PLIST_SUB+=		NLS="@comment "
 .endif
 
-.if defined(WITH_ODBC)
+.if ${PORT_OPTIONS:MODBC}
 CONFIGURE_ARGS+=	--with-odbc
 LIB_DEPENDS+=		odbc.2:${PORTSDIR}/databases/unixODBC
 PLIST_SUB+=		ODBC=""
@@ -81,13 +84,13 @@ CONFIGURE_ARGS+=	--without-odbc
 PLIST_SUB+=		ODBC="@comment "
 .endif
 
-.if defined(WITH_OPENMP)
+.if ${PORT_OPTIONS:MOPENMP}
 CONFIGURE_ARGS+=	--enable-openmp
 .endif
 
-.if defined(WITH_R)
+.if ${PORT_OPTIONS:MR}
 CONFIGURE_ARGS+=	--with-libR
-LIB_DEPENDS+=		R.0:${PORTSDIR}/math/R
+LIB_DEPENDS+=		R:${PORTSDIR}/math/R
 .else
 CONFIGURE_ARGS+=	--without-libR
 .endif
@@ -110,7 +113,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|@gnome_prefix@|@prefix@|g' \
 		${WRKSRC}/gnome/gretl.keys.in
 
-.if defined(WITH_GUI)
+.if ${PORT_OPTIONS:MGUI}
 post-install:
 	@${MKDIR} ${PREFIX}/share/applications
 .for _file in gretl.desktop
@@ -139,4 +142,4 @@ regression-test test check: build
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} \
 		${MAKE_ARGS} check)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
