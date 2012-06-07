@@ -6,34 +6,27 @@
 #
 
 PORTNAME=	plee-the-bear
-PORTVERSION=	0.3.1
-PORTREVISION=	6
+PORTVERSION=	0.6.0
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/Plee%20the%20Bear/0.3
-DISTNAME=	${PORTNAME}-${PORTVERSION}-light
+MASTER_SITES=	SF/${PORTNAME}/Plee%20the%20Bear/${PORTVERSION:R}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	2D platform jump and run game
 
-LIB_DEPENDS=	boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
-		claw_application.1:${PORTSDIR}/devel/libclaw
+LIB_DEPENDS=	boost_filesystem:${PORTSDIR}/devel/boost-libs \
+		claw_application:${PORTSDIR}/devel/libclaw
 
-BROKEN=		does not build with boost-1.48.0
-
-USE_BZIP2=	yes
 USE_SDL=	sdl mixer
 USE_GL=		gl glu
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
+USE_GETTEXT=	yes
+MAKE_JOBS_SAFE=	yes
+USE_GCC=	4.4+
 
 USE_CMAKE=	yes
-CMAKE_ARGS=	-DCMAKE_MODULE_PATH="${LOCALBASE}/lib/claw/"
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|"stats.dat"|get_custom_game_file(&).c_str()| ' \
-		${WRKSRC}/dev/bear_engine/src/core/engine/code/game.cpp
+CMAKE_ARGS=	-Dlibclaw_DIR="${LOCALBASE}/share/libclaw/cmake" \
+		-DBEAR_NO_EDITOR=YES
 
 .include <bsd.port.mk>
