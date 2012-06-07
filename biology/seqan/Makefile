@@ -10,7 +10,7 @@ PORTVERSION=	1.3.1
 CATEGORIES=	biology
 MASTER_SITES=	http://ftp.seqan.de/releases/
 
-MAINTAINER=	h2+fsbdports@fsfe.org
+MAINTAINER=	h2+fbsdports@fsfe.org
 COMMENT=	C++ Sequence Analysis Library
 
 LICENSE=	BSD GPLv3
