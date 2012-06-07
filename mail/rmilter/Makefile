@@ -39,6 +39,7 @@ LIBS+=		${PTHREAD_LIBS}
 
 MAN8=		rmilter.8
 
+.include <bsd.port.pre.mk>
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
 do-install:
@@ -47,4 +48,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/rmilter.conf.sample ${PREFIX}/etc/
 	${INSTALL_MAN} ${WRKSRC}/rmilter.8 ${MAN8PREFIX}/man/man8/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
