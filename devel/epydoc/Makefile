@@ -16,16 +16,20 @@ COMMENT=	Python API documentation generation tool
 
 LICENSE=	MIT
 
-OPTIONS=	UTF8 "Use UTF-8 instead of iso-8859-1 in HTMLs" off
+OPTIONS_DEFINE=	UTF8
+
+UTF8_DESC=	Use UTF-8 instead of iso-8859-1 in HTMLs
+
+OPTIONS_DEFAULT=
+
+.include <bsd.port.options.mk>
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 MAN1=		epydoc.1 epydocgui.1
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_UTF8)
+.if ${PORT_OPTIONS:MUTF8}
 HTMLENCODING?=	utf-8
 .endif
 
@@ -37,9 +41,9 @@ post-patch:
 
 post-install:
 	cd ${WRKSRC}/man && ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
