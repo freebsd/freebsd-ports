@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	wiimms
-PORTVERSION=	2.00
-PORTREVISION=	1
+DISTVERSION=	2.05b
 CATEGORIES=	sysutils
 MASTER_SITES=	http://gugus69.free.fr/wiimms/ \
 		LOCAL/martymac
-DISTNAME=	wit-${PORTVERSION}
+DISTNAME=	wit-${DISTVERSION}
 
 MAINTAINER=	olivier@cochard.me
 COMMENT=	Wiimms ISO Tools
@@ -21,6 +20,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
+WRKSRC=	${WRKDIR}/wiimms-iso-tools
 USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
