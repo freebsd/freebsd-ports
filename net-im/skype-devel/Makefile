@@ -7,6 +7,7 @@
 
 PORTNAME=	skype
 PORTVERSION=	2.2.0.35
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://download.skype.com/linux/
 PKGNAMESUFFIX=	-devel
@@ -14,6 +15,8 @@ DISTNAME=	skype_static-${DISTVERSION}
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	P2P VoIP software, development version
+
+CONFLICTS=	skype-[0-9]*
 
 OPTIONS=	VIDEO	"[broken] Video sending support via multimedia/webcamd"	on \
 		NVIDIA_GL "Use libGL provided by NVidia binary drivers" off
