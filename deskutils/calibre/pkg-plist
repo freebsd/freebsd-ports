@@ -347,13 +347,16 @@ lib/calibre/calibre/ebooks/odt/__init__.py
 lib/calibre/calibre/ebooks/odt/input.py
 lib/calibre/calibre/ebooks/oeb/__init__.py
 lib/calibre/calibre/ebooks/oeb/base.py
-lib/calibre/calibre/ebooks/oeb/iterator.py
 lib/calibre/calibre/ebooks/oeb/parse_utils.py
 lib/calibre/calibre/ebooks/oeb/reader.py
 lib/calibre/calibre/ebooks/oeb/stylizer.py
 lib/calibre/calibre/ebooks/oeb/display/__init__.py
 lib/calibre/calibre/ebooks/oeb/display/webview.py
 lib/calibre/calibre/ebooks/oeb/display/test-cfi/run.py
+lib/calibre/calibre/ebooks/oeb/iterator/book.py
+lib/calibre/calibre/ebooks/oeb/iterator/bookmarks.py
+lib/calibre/calibre/ebooks/oeb/iterator/__init__.py
+lib/calibre/calibre/ebooks/oeb/iterator/spine.py
 lib/calibre/calibre/ebooks/oeb/transforms/__init__.py
 lib/calibre/calibre/ebooks/oeb/transforms/cover.py
 lib/calibre/calibre/ebooks/oeb/transforms/filenames.py
@@ -883,6 +886,7 @@ lib/calibre/calibre/gui2/viewer/main.py
 lib/calibre/calibre/gui2/viewer/main_ui.py
 lib/calibre/calibre/gui2/viewer/position.py
 lib/calibre/calibre/gui2/viewer/printing.py
+lib/calibre/calibre/gui2/viewer/toc.py
 lib/calibre/calibre/gui2/widgets.py
 lib/calibre/calibre/gui2/wizard/__init__.py
 lib/calibre/calibre/gui2/wizard/device_ui.py
@@ -981,7 +985,6 @@ lib/calibre/calibre/utils/filenames.py
 lib/calibre/calibre/utils/fonts/__init__.py
 lib/calibre/calibre/utils/formatter.py
 lib/calibre/calibre/utils/formatter_functions.py
-lib/calibre/calibre/utils/help2man.py
 lib/calibre/calibre/utils/html2text.py
 lib/calibre/calibre/utils/html5_entities.py
 lib/calibre/calibre/utils/icu.py
@@ -1245,6 +1248,7 @@ share/gnome/apps/calibre-ebook-viewer.desktop
 %%DATADIR%%/catalog/section_list_templates.py
 %%DATADIR%%/catalog/stylesheet.css
 %%DATADIR%%/catalog/template.xhtml
+%%DATADIR%%/compiled_coffeescript.zip
 %%DATADIR%%/content_server/av.jpg
 %%DATADIR%%/content_server/bg_search_box.png
 %%DATADIR%%/content_server/browse/browse.css
@@ -1294,7 +1298,6 @@ share/gnome/apps/calibre-ebook-viewer.desktop
 %%DATADIR%%/content_server/star-off.png
 %%DATADIR%%/content_server/star-on.png
 %%DATADIR%%/default_tweaks.py
-%%DATADIR%%/display/cfi.js
 %%DATADIR%%/ebook-convert-complete.pickle
 %%DATADIR%%/fonts/liberation/LiberationMono-Bold.ttf
 %%DATADIR%%/fonts/liberation/LiberationMono-BoldItalic.ttf
@@ -1523,7 +1526,6 @@ share/gnome/apps/calibre-ebook-viewer.desktop
 @dirrm %%DATADIR%%/fonts/prs500
 @dirrm %%DATADIR%%/fonts/liberation
 @dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%/display
 @dirrm %%DATADIR%%/content_server/read
 @dirrm %%DATADIR%%/content_server/jquery_ui/js
 @dirrm %%DATADIR%%/content_server/jquery_ui/css/humanity-custom/images
@@ -1612,6 +1614,7 @@ share/gnome/apps/calibre-ebook-viewer.desktop
 @dirrm lib/calibre/calibre/ebooks/pdb
 @dirrm lib/calibre/calibre/ebooks/oeb/display/test-cfi
 @dirrm lib/calibre/calibre/ebooks/oeb/display
+@dirrm lib/calibre/calibre/ebooks/oeb/iterator
 @dirrm lib/calibre/calibre/ebooks/oeb/transforms
 @dirrm lib/calibre/calibre/ebooks/oeb
 @dirrm lib/calibre/calibre/ebooks/odt
