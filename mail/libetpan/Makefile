@@ -29,21 +29,29 @@ MAKE_JOBS_SAFE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-OPTIONS=	GNUTLS	"Enable gnuTLS support" off \
-		IPV6	"Enable ipv6 support." on
+OPTIONS_DEFINE=		IPV6
+OPTIONS_SINGLE=		CRYPTO
+OPTIONS_SINGLE_CRYPTO=	GNUTLS OPENSSL 
+GNUTLS_DESC=		Enable GNUTLS support
+OPENSSL_DESC=		Enable OpenSSL support
+OPTIONS_DEFAULT=	IPV6 OPENSSL
 
-.if defined(WITH_GNUTLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGNUTLS}
 LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--without-openssl --with-gnutls
-.else
+.endif
+
+.if ${PORT_OPTIONS:MOPENSSL}
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--without-gnutls
 .endif
 
-.if defined(WITHOUT_IPV6)
-CONFIGURE_ARGS+=	--disable-ipv6
-.else
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-ipv6
+.else
+CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 AUTOTOOLSFILES=	aclocal.m4

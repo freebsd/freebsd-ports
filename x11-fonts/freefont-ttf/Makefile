@@ -22,12 +22,14 @@ LICENSE=		GPLv3
 WRKSRC=			${WRKDIR}/freefont-${PORTVERSION}
 INSTALLDIR=		${PREFIX}/lib/X11/fonts/${PORTNAME}
 
+.include <bsd.port.options.mk>
+
 do-build:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/mkfontscale
 	cd ${WRKSRC} && ${LOCALBASE}/bin/mkfontdir
 
 do-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}

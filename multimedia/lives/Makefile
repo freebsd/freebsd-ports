@@ -41,9 +41,6 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 		x264:${PORTSDIR}/multimedia/x264 \
 		xmms:${PORTSDIR}/multimedia/xmms
 
-OPTIONS=	DOXYGEN	"Build Doxygen documentation"	off \
-		FREI0R	"Enable frei0r support"		off
-
 WRKSRC=		${WRKDIR}/${DISTNAME:L}
 
 USE_BZIP2=	yes
@@ -71,16 +68,20 @@ DOC_FILES=	AUTHORS BUGS ChangeLog FEATURES GETTING.STARTED README \
 
 PORT_VERBS=	lives LiVES _encoder.py midistart midistop smogrify sendOSC
 
+OPTIONS_DEFINE=	DOXYGEN FREI0R
+DOXYGEN_DESC=	Build Doxygen documentation
+FREI0R_DESC=	Enable frei0r support
+
 .include <bsd.port.options.mk>
 
-.if !defined(NOPORTDOCS) && defined(WITH_DOXYGEN)
+.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
 BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 PORTDOCS=	html
 .else
 CONFIGURE_ARGS+=--disable-doxygen
 .endif
 
-.if defined(WITH_FREI0R)
+.if ${PORT_OPTIONS:MFREI0R}
 BUILD_DEPENDS+=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
 RUN_DEPENDS+=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
 PLIST_SUB+=	FREI0R=""
@@ -89,12 +90,12 @@ CONFIGURE_ENV+=	ac_cv_header_frei0r_h=no
 PLIST_SUB+=	FREI0R="@comment "
 .endif
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
@@ -129,7 +130,7 @@ pre-build:
 		${MAKEFILE} update-po
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOC_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}

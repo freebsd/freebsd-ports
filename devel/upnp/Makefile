@@ -26,14 +26,18 @@ MAKE_JOBS_SAFE=	yes
 CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-.if defined(NOPORTDOCS)
-CONFIGURE_ARGS+=	--without-documentation
-.else
+OPTIONS_DEFINE=	DEBUG
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=	--with-documentation=${DOCSDIR}
 PORTDOCS=	*
+.else
+CONFIGURE_ARGS+=	--without-documentation
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 

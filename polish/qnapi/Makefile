@@ -29,6 +29,8 @@ MANCOMPRESSED=	yes
 PORTDOCS=	ChangeLog changelog.gz README README.pl LICENSE \
 		LICENSE.pl COPYRIGHT
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@cd ${WRKSRC} && ${REINPLACE_CMD} -e 's|@PREFIX@|${PREFIX}|g' \
 		doc/qnapi.desktop doc/qnapi-download.desktop
@@ -39,7 +41,7 @@ pre-build:
 	@cd ${WRKSRC} && ${QMAKE} -spec ${QMAKESPEC} ${QMAKEFLAGS} ${QMAKE_ARGS}
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}

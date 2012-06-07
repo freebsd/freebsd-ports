@@ -48,6 +48,8 @@ CSS_DISTNAME=		libcss-0.1.2-src
 NSBMP_DISTNAME=		libnsbmp-0.0.3-src
 NSGIF_DISTNAME=		libnsgif-0.0.3-src
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's| -O2 | |' ${WRKSRC}/Makefile.defaults
@@ -85,7 +87,7 @@ do-install:
 	@${FIND} ${DATADIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
 	@${FIND} ${DATADIR} -type d | ${XARGS} ${CHMOD} a+rx
 	@${FIND} ${DATADIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}

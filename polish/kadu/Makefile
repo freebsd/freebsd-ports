@@ -52,11 +52,12 @@ USE_QT4=	dbus gui network script scripttools webkit xml phonon \
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 
-OPTIONS=	GG_EMOTS	"Install GG-compatible emoticons"	off
+OPTIONS_DEFINE=	GG_EMOTS
+GG_EMOTS_DESC=	Install GG-compatible emoticons
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GG_EMOTS)
+.if ${PORT_OPTIONS:MGG_EMOTS}
 PLIST_SUB+=	GG_EMOTS=""
 DISTFILES+=	${GG6_EMOTS_DISTFILE}:additions \
 		${GG7_EMOTS_DISTFILE}:additions
@@ -72,7 +73,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -exec ${GREP} -q "#!/bin/bash" {} \; \
 		-exec ${REINPLACE_CMD} -e 's|#!/bin/bash|#!/usr/bin/env bash|g' {} \;
 
-.if defined(WITH_GG_EMOTS)
+.if ${PORT_OPTIONS:MGG_EMOTS}
 	@cd ${WRKSRC}/varia/themes/emoticons && \
 	${TAR} -zxf ${_DISTDIR}/${GG6_EMOTS_DISTFILE} && \
 	${MV} kompatybilne_z_GG6 gg6_compatible && \

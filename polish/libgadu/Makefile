@@ -25,17 +25,19 @@ CONFIGURE_ARGS=	--enable-shared --disable-static --with-pthread \
 
 USE_LDCONFIG=	yes
 
-OPTIONS=	OPENSSL "Build with OpenSSL support" on
-
 PLIST_FILES=	include/libgadu.h \
 		lib/libgadu.la \
 		lib/libgadu.so \
 		lib/libgadu.so.3 \
 		libdata/pkgconfig/libgadu.pc
 
+OPTIONS_DEFINE=	OPENSSL
+OPENSSL_DESC=	Build with OpenSSL support
+OPTIONS_DEFAULT=OPENSSL
+
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_OPENSSL)
+.if ${PORT_OPTIONS:MOPENSSL}
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 .else
 CONFIGURE_ARGS+=	--without-openssl
@@ -46,7 +48,7 @@ post-patch:
 
 pre-install:
 # OpenSSL from base system lacks .pc file for pkgconfig
-.if defined(WITH_OPENSSL)
+.if ${PORT_OPTIONS:MOPENSSL}
 	@${REINPLACE_CMD} -e 's|openssl| |g' ${WRKSRC}/pkgconfig/libgadu.pc
 .endif
 

@@ -27,19 +27,23 @@ MAN1=		${PORTNAME}.1
 
 TERMIT_ETC=	${PREFIX}/etc/xdg/${PORTNAME}
 
-.if defined(WITH_DEBUG)
+OPTIONS_DEFINE=	DEBUG
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDEBUG}
 CMAKE_ARGS+=	-DDEBUG:BOOL=YES
 .endif
 
-.if defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
+PLIST_SUB+=	NLS=""
+.else
 CMAKE_ARGS+=	-DENABLE_NLS:BOOL=NO
 PLIST_SUB+=	NLS="@comment "
-.else
-PLIST_SUB+=	NLS=""
 .endif
 
 post-patch:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} 's|../COPYING||' ${WRKSRC}/doc/CMakeLists.txt
 .else
 	@${REINPLACE_CMD} '/TERMIT_DOCS/s|^|#|' ${WRKSRC}/doc/CMakeLists.txt

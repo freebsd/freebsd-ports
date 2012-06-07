@@ -24,16 +24,18 @@ USE_PERL5=	5.8.0+
 
 MAN1=		clawsker.1
 
-.if defined(WITHOUT_NLS)
-EXTRA_PATCHES=	${FILESDIR}/extra-Makefile-without_nls
-PLIST_SUB+=	NLS="@comment "
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
+.else
+EXTRA_PATCHES=	${FILESDIR}/extra-Makefile-without_nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}

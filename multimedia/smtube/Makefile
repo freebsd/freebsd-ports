@@ -21,6 +21,8 @@ USE_QT4=	linguist_build moc_build qmake_build rcc_build uic_build \
 		corelib gui network xml
 INSTALLS_ICONS=	yes
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|qmake|${QMAKE}|g' \
 		-e 's|lrelease|${QT_PREFIX}/bin/lrelease-qt4|g' \
@@ -28,7 +30,7 @@ post-patch:
 		-e 's|$$(PREFIX)/share/smtube|${DATADIR}|g' \
 		${WRKSRC}/Makefile
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's|$$(PREFIX)/share/doc/smtube|${DOCSDIR}|' \
 		${WRKSRC}/Makefile
 PORTDOCS=	*
