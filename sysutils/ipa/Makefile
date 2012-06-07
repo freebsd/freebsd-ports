@@ -19,36 +19,39 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	ipa
 
-OPTIONS=	AUTORULES "Enable dynamic rules support" on \
-		RULES "Enable static rules support" on \
-		LIMITS "Enable limits support" on \
-		SUBLIMITS "Enable sublimits support" on \
-		THRESHOLDS "Enable thresholds support" on \
-		CTL_CREDS "Enable ipactl's messages credentials" off
+NO_OPTIONS_SORT=	yes
+OPTIONS_DEFINE=		AUTORULES RULES LIMITS SUBLIMITS THRESHOLDS CTL_CREDS
+OPTIONS_DEFAULT=	AUTORULES RULES LIMITS SUBLIMITS THRESHOLDS
+AUTORULES_DESC=		Enable dynamic rules support
+RULES_DESC=		Enable static rules support
+LIMITS_DESC=		Enable limits support
+SUBLIMITS_DESC=		Enable sublimits support
+THRESHOLDS_DESC=	Enable thresholds support
+CTL_CREDS_DESC=		Enable ipactl's messages credentials
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_AUTORULES)
+.if empty(PORT_OPTIONS:MAUTORULES)
 CONFIGURE_ARGS+=	--disable-autorules
 .endif
 
-.if defined(WITHOUT_RULES)
+.if empty(PORT_OPTIONS:MRULES)
 CONFIGURE_ARGS+=	--disable-rules
 .endif
 
-.if defined(WITHOUT_LIMITS)
+.if empty(PORT_OPTIONS:MLIMITS)
 CONFIGURE_ARGS+=	--disable-limits
 .endif
 
-.if defined(WITHOUT_SUBLIMITS)
+.if empty(PORT_OPTIONS:MSUBLIMITS)
 CONFIGURE_ARGS+=	--disable-sublimits
 .endif
 
-.if defined(WITHOUT_THRESHOLDS)
+.if empty(PORT_OPTIONS:MTHRESHOLDS)
 CONFIGURE_ARGS+=	--disable-thresholds
 .endif
 
-.if defined(WITH_CTL_CREDS)
+.if ${PORT_OPTIONS:MCTL_CREDS}
 CONFIGURE_ARGS+=	--enable-ctl-creds
 .endif
 
