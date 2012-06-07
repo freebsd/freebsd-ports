@@ -46,6 +46,8 @@ SUB_LIST=	SQUIRRELDIR=${SQUIRRELDIR}
 
 PORTDOCS=	*
 
+CONFLICTS=	squirreloutlook-[0-9]*
+
 pre-everything::
 	@${ECHO_CMD} "SquirrelMail is installed into ${SQUIRRELDIR}"
 	@${ECHO_CMD} "To use the old location ${PREFIX}/${PORTNAME} define"
