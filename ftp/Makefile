@@ -110,7 +110,6 @@
     SUBDIR += wget
     SUBDIR += wmget
     SUBDIR += wput
-    SUBDIR += wu-ftpd+ipv6
     SUBDIR += wxdfast
     SUBDIR += wzdftpd
     SUBDIR += yafc
