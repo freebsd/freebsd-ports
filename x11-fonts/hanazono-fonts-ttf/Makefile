@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	hanazono-fonts-ttf
-PORTVERSION=	20120202
+PORTVERSION=	20120421
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://kage.sourceforge.jp/hanazono/
+MASTER_SITES=	SFJP
+MASTER_SITE_SUBDIR=	hanazono-font/55644
 DISTNAME=	${PORTNAME:C/-.*//}-${PORTVERSION}
 
 MAINTAINER=	lichray@gmail.com
