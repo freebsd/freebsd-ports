@@ -14,46 +14,37 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Recipe database for KDE4
 
-LIB_DEPENDS=	qimageblitz.4:${PORTSDIR}/x11/qimageblitz
+LICENSE=	GPLv2
 
 LATEST_LINK=	${PORTNAME}-kde4
+
+OPTIONS_MULTI=		DB
+OPTIONS_MULTI_DB=	SQLITE MYSQL PGSQL
+OPTIONS_DEFAULT=	SQLITE
 
 USE_CMAKE=	yes
 USE_GETTEXT=	yes
 USE_QT4=	moc_build qmake_build rcc_build uic_build
-USE_KDE4=	automoc4 kdeprefix kdelibs sharedmime
+USE_KDE4=	automoc4 kdeprefix kdelibs qimageblitz sharedmime
 MAKE_JOBS_SAFE=	yes
-
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
-
-OPTIONS=	SQLITE "Support for SQLite backend" on \
-		MYSQL "Support for MySQL backend" off \
-		POSTGRESQL "Support for PostgreSQL backend" off
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_SQLITE)
-CMAKE_ARGS+=	-DWITH_Sqlite:BOOL=OFF
-.else
+.if ${PORT_OPTIONS:MSQLITE}
 USE_SQLITE=	yes
 USE_QT4+=	sql-sqlite3_run
+.else
+CMAKE_ARGS+=	-DWITH_Sqlite:BOOL=OFF
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 USE_QT4+=	sql-mysql_run
 .endif
 
-.if defined(WITH_POSTGRESQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 USE_QT4+=	sql-pgsql_run
-.endif
-
-pre-configure:
-
-.if defined(WITHOUT_SQLITE) && !defined(WITH_MYSQL) && !defined(WITH_POSTGRESQL)
-IGNORE=	at least one database backend must be selected, run 'make config' and select a database
 .endif
 
 .include <bsd.port.mk>
