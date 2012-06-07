@@ -21,7 +21,7 @@ MAN3=		Data::Dumper::Simple.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500805
-BUILD_DEPENDS+=	${SITE_PERL}/Filter/Simple.pm:${PORTSDIR}/textproc/p5-Filter-Simple
+BUILD_DEPENDS+=	p5-Filter-Simple>=0:${PORTSDIR}/textproc/p5-Filter-Simple
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 .endif
 

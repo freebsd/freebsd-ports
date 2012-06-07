@@ -16,7 +16,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The Mayan Long Count, Haab, and Tzolkin calendars
 
 RUN_DEPENDS=	p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
-		${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime
+		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes

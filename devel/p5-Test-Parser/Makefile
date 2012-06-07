@@ -15,9 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parsing log files from test runs, and displays in an XML syntax
 
-RUN_DEPENDS=	${SITE_PERL}/Chart/Graph/Gnuplot.pm:${PORTSDIR}/graphics/p5-Chart-Graph \
-		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
-		${SITE_PERL}/XML/Twig.pm:${PORTSDIR}/textproc/p5-XML-Twig
+RUN_DEPENDS=	p5-Chart-Graph>=0:${PORTSDIR}/graphics/p5-Chart-Graph \
+		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
+		p5-XML-Twig>=0:${PORTSDIR}/textproc/p5-XML-Twig
 
 PERL_CONFIGURE=	yes
 

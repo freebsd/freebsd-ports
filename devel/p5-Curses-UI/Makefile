@@ -17,8 +17,8 @@ COMMENT=	A curses based OO user interface framework
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Curses.pm:${PORTSDIR}/devel/p5-Curses \
-		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey
+BUILD_DEPENDS=	p5-Curses>=0:${PORTSDIR}/devel/p5-Curses \
+		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
