@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF/mscore/mscore/MuseScore-${PORTVERSION}
 DISTNAME=	mscore-${PORTVERSION}
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free music composition & notation software
 
 LIB_DEPENDS=	asound.2:${PORTSDIR}/audio/alsa-lib \
@@ -24,7 +24,7 @@ USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_QT4=	corelib gui network svg xml script scripttools designer webkit \
 		qmake_build moc_build uic_build linguist_build rcc_build
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/mscore
 CMAKE_OUTSOURCE=	yes
