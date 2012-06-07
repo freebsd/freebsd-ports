@@ -710,7 +710,6 @@
     SUBDIR += pwd_unmkdb
     SUBDIR += pwg
     SUBDIR += pwgen
-    SUBDIR += pwgen2
     SUBDIR += pwsafe
     SUBDIR += py-XenAPI
     SUBDIR += py-bcfg2
