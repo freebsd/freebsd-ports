@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	net security
 MASTER_SITES=	http://www.rtfm.com/ssldump/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	arved@FreeBSD.org
 COMMENT=	SSLv3/TLS network protocol analyzer
 
 USE_OPENSSL=	yes
@@ -20,15 +20,16 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE} \
 		--sbindir=${PREFIX}/bin
 
-OPTIONS=	AES "Enable AES support from CVS (EXPERIMENTAL)" off
+OPTIONS_DEFINE=	AES
+AES_DESC=	Enable AES support from CVS (EXPERIMENTAL)
 
 MAN1=		ssldump.1
 PLIST_FILES=	bin/ssldump
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_AES)
+.if ${PORT_OPTIONS:MAES}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-aes
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
