@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	valgrind
-PORTVERSION=	3.6.1
-PORTREVISION=	4
+PORTVERSION=	3.7.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
-DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}-2
+DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}-3
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A (memory) debugging and profiling tool
@@ -20,15 +19,26 @@ CONFLICTS=	valgrind-snapshot-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+OPTIONS_DEFINE=	MPI
+MPI_DESC=	Enable build of MPI wrappers
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig
-USE_PERL5_BUILD=	yes
+USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-OPTIONS=	MPI "Enable build of MPI wrappers" off
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMPI}
+LIB_DEPENDS+=	mpich.2:${PORTSDIR}/net/mpich2
+PLIST_SUB+=	MPI=""
+.else
+PLIST_SUB+=	MPI="@comment "
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
@@ -37,13 +47,6 @@ post-install:
 
 .if ${OSVERSION} < 700104
 IGNORE=	your FreeBSD version is not supported
-.endif
-
-.if defined(WITH_MPI) || exists(${LOCALBASE}/bin/mpicc)
-LIB_DEPENDS+=	mpich.2:${PORTSDIR}/net/mpich2
-PLIST_SUB+=	MPI=""
-.else
-PLIST_SUB+=	MPI="@comment "
 .endif
 
 .if ${ARCH} == "amd64"
