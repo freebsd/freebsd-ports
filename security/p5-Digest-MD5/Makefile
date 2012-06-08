@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Digest-MD5
-PORTVERSION=	2.51
+PORTVERSION=	2.52
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,10 +18,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Digest::MD5.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500803
-RUN_DEPENDS+=	p5-Digest>=0:${PORTSDIR}/security/p5-Digest
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
