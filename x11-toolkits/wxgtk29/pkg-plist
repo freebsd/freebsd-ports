@@ -750,12 +750,12 @@ share/bakefile/presets/wx29_presets.py
 share/bakefile/presets/wx29_unix.bkl
 share/bakefile/presets/wx29_win32.bkl
 share/bakefile/presets/wx29_xrc.bkl
-@dirrm share/bakefile/presets
-@dirrm share/bakefile
+@dirrmtry share/bakefile/presets
+@dirrmtry share/bakefile
 @dirrm lib/wx/include/gtk2-unicode-2.9/wx
 @dirrm lib/wx/include/gtk2-unicode-2.9
-@dirrm lib/wx/include
-@dirrm lib/wx
+@dirrmtry lib/wx/include
+@dirrmtry lib/wx
 @dirrm include/wx-2.9/wx/xrc
 @dirrm include/wx-2.9/wx/xml
 @dirrm include/wx-2.9/wx/unix
