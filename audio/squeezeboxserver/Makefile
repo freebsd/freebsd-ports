@@ -27,21 +27,21 @@ RESTRICTED=	Contains non-redistributable firmware, documentation, and images
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-32171-noCPAN
 
-RUN_DEPENDS+=	${SITE_PERL}/DBIx/Class.pm:${PORTSDIR}/databases/p5-DBIx-Class \
-		${SITE_PERL}/File/Which.pm:${PORTSDIR}/sysutils/p5-File-Which \
-		${SITE_PERL}/URI/Find.pm:${PORTSDIR}/textproc/p5-URI-Find \
-		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql50 \
-		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
-		${SITE_PERL}/${PERL_ARCH}/Encode/Detect.pm:${PORTSDIR}/converters/p5-Encode-Detect \
-		${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
-		${SITE_PERL}/${PERL_ARCH}/JSON/XS.pm:${PORTSDIR}/converters/p5-JSON-XS \
-		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
-		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
-		${SITE_PERL}/${PERL_ARCH}/YAML/Syck.pm:${PORTSDIR}/textproc/p5-YAML-Syck \
-		${SITE_PERL}/${PERL_ARCH}/EV.pm:${PORTSDIR}/devel/p5-EV \
+RUN_DEPENDS+=	p5-DBIx-Class>=0:${PORTSDIR}/databases/p5-DBIx-Class \
+		p5-File-Which>=0:${PORTSDIR}/sysutils/p5-File-Which \
+		p5-URI-Find>=0:${PORTSDIR}/textproc/p5-URI-Find \
+		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
+		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
+		p5-Encode-Detect>=0:${PORTSDIR}/converters/p5-Encode-Detect \
+		p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
+		p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS \
+		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
+		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
+		p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck \
+		p5-EV>=0:${PORTSDIR}/devel/p5-EV \
 		p5-Audio-Scan>=0.87:${PORTSDIR}/audio/p5-Audio-Scan \
-		${SITE_PERL}/${PERL_ARCH}/Class/XSAccessor.pm:${PORTSDIR}/devel/p5-Class-XSAccessor
+		p5-Class-XSAccessor>=0:${PORTSDIR}/devel/p5-Class-XSAccessor
 
 # Work around a bug in p5-Package-Stash port
 RUN_DEPENDS+=	p5-Package-DeprecationManager>=0.10:${PORTSDIR}/devel/p5-Package-DeprecationManager
