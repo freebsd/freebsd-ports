@@ -19,7 +19,8 @@ COMMENT?=	The wxWidgets GUI toolkit with GTK+ bindings
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png\
 		jpeg.11:${PORTSDIR}/graphics/jpeg\
 		tiff.4:${PORTSDIR}/graphics/tiff\
-		expat.6:${PORTSDIR}/textproc/expat2
+		expat.6:${PORTSDIR}/textproc/expat2\
+		inotify.0:${PORTSDIR}/devel/libinotify
 
 USE_BZIP2=	yes
 USE_XORG=	x11 sm xxf86vm xinerama 
@@ -40,7 +41,7 @@ CONFIGURE_ARGS=	--with-libpng=sys\
 		--enable-mediactrl\
 		--disable-backtrace\
 		--enable-graphics_ctx
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"\
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} -linotify"\
 		PTHREAD_LIBS="${PTHREAD_LIBS}"\
 		X11BASE="${LOCALBASE}"
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
