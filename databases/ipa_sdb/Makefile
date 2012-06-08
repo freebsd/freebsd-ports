@@ -19,26 +19,29 @@ USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-OPTIONS=	AUTORULES "Enable dynamic rules support" on \
-		RULES "Enable static rules support" on \
-		LIMITS "Enable limits support" on \
-		THRESHOLDS "Enable thresholds support" on
+NO_OPTIONS_SORT=	yes
+OPTIONS_DEFINE=		AUTORULES RULES LIMITS THRESHOLDS
+OPTIONS_DEFAULT=	AUTORULES RULES LIMITS THRESHOLDS
+AUTORULES_DESC=		Enable dynamic rules support
+RULES_DESC=		Enable static rules support
+LIMITS_DESC=		Enable limits support
+THRESHOLDS_DESC=	Enable thresholds support
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_AUTORULES)
+.if empty(PORT_OPTIONS:MAUTORULES)
 CONFIGURE_ARGS+=	--disable-autorules
 .endif
 
-.if defined(WITHOUT_RULES)
+.if empty(PORT_OPTIONS:MRULES)
 CONFIGURE_ARGS+=	--disable-rules
 .endif
 
-.if defined(WITHOUT_LIMITS)
+.if empty(PORT_OPTIONS:MLIMITS)
 CONFIGURE_ARGS+=	--disable-limits
 .endif
 
-.if defined(WITHOUT_THRESHOLDS)
+.if empty(PORT_OPTIONS:MTHRESHOLDS)
 CONFIGURE_ARGS+=	--disable-thresholds
 .endif
 
