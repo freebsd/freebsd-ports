@@ -4,7 +4,9 @@
 %%WWWDIR%%/config/global.ini.php
 %%WWWDIR%%/config/manifest.inc.php
 %%WWWDIR%%/core/API/DataTableGenericFilter.php
-%%WWWDIR%%/core/API/DataTableLabelFilter.php
+%%WWWDIR%%/core/API/DataTableManipulator/LabelFilter.php
+%%WWWDIR%%/core/API/DataTableManipulator/Flattener.php
+%%WWWDIR%%/core/API/DataTableManipulator.php
 %%WWWDIR%%/core/API/DocumentationGenerator.php
 %%WWWDIR%%/core/API/Proxy.php
 %%WWWDIR%%/core/API/Request.php
@@ -23,7 +25,7 @@
 %%WWWDIR%%/core/CacheFile.php
 %%WWWDIR%%/core/Common.php
 %%WWWDIR%%/core/Config.php
-%%WWWDIR%%/core/Config/Ini.php
+%%WWWDIR%%/core/Config/Compat.php
 %%WWWDIR%%/core/Controller.php
 %%WWWDIR%%/core/Controller/Admin.php
 %%WWWDIR%%/core/Cookie.php
@@ -41,6 +43,7 @@
 %%WWWDIR%%/core/DataTable/Filter/AddSummaryRow.php
 %%WWWDIR%%/core/DataTable/Filter/BeautifyRangeLabels.php
 %%WWWDIR%%/core/DataTable/Filter/BeautifyTimeRangeLabels.php
+%%WWWDIR%%/core/DataTable/Filter/ColumnCallbackAddColumn.php
 %%WWWDIR%%/core/DataTable/Filter/ColumnCallbackAddColumnPercentage.php
 %%WWWDIR%%/core/DataTable/Filter/ColumnCallbackAddColumnQuotient.php
 %%WWWDIR%%/core/DataTable/Filter/ColumnCallbackAddMetadata.php
@@ -48,12 +51,14 @@
 %%WWWDIR%%/core/DataTable/Filter/ColumnCallbackReplace.php
 %%WWWDIR%%/core/DataTable/Filter/ColumnDelete.php
 %%WWWDIR%%/core/DataTable/Filter/ExcludeLowPopulation.php
+%%WWWDIR%%/core/DataTable/Filter/GroupBy.php
 %%WWWDIR%%/core/DataTable/Filter/Limit.php
 %%WWWDIR%%/core/DataTable/Filter/MetadataCallbackAddMetadata.php
 %%WWWDIR%%/core/DataTable/Filter/MetadataCallbackReplace.php
 %%WWWDIR%%/core/DataTable/Filter/Null.php
 %%WWWDIR%%/core/DataTable/Filter/Pattern.php
 %%WWWDIR%%/core/DataTable/Filter/PatternRecursive.php
+%%WWWDIR%%/core/DataTable/Filter/RangeCheck.php
 %%WWWDIR%%/core/DataTable/Filter/ReplaceColumnNames.php
 %%WWWDIR%%/core/DataTable/Filter/ReplaceSummaryRowLabel.php
 %%WWWDIR%%/core/DataTable/Filter/SafeDecodeLabel.php
@@ -74,11 +79,13 @@
 %%WWWDIR%%/core/DataTable/Simple.php
 %%WWWDIR%%/core/Date.php
 %%WWWDIR%%/core/Db/Adapter.php
+%%WWWDIR%%/core/Db/Adapter/Interface.php
 %%WWWDIR%%/core/Db/Adapter/Mysqli.php
 %%WWWDIR%%/core/Db/Adapter/Pdo/Mssql.php
 %%WWWDIR%%/core/Db/Adapter/Pdo/Mysql.php
 %%WWWDIR%%/core/Db/Adapter/Pdo/Pgsql.php
 %%WWWDIR%%/core/Db/Schema.php
+%%WWWDIR%%/core/Db/Schema/Interface.php
 %%WWWDIR%%/core/Db/Schema/Myisam.php
 %%WWWDIR%%/core/ErrorHandler.php
 %%WWWDIR%%/core/ExceptionHandler.php
@@ -214,10 +221,13 @@
 %%WWWDIR%%/core/Updates/1.6-b1.php
 %%WWWDIR%%/core/Updates/1.6-rc1.php
 %%WWWDIR%%/core/Updates/1.7-b1.php
+%%WWWDIR%%/core/Updates/1.7.2-rc5.php
+%%WWWDIR%%/core/Updates/1.7.2-rc7.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/Version.php
 %%WWWDIR%%/core/View.php
 %%WWWDIR%%/core/View/Interface.php
+%%WWWDIR%%/core/View/OneClickDone.php
 %%WWWDIR%%/core/ViewDataTable.php
 %%WWWDIR%%/core/ViewDataTable/Cloud.php
 %%WWWDIR%%/core/ViewDataTable/GenerateGraphData.php
@@ -991,6 +1001,8 @@
 %%WWWDIR%%/misc/gpl-3.0.txt
 %%WWWDIR%%/misc/iframeWidget.htm
 %%WWWDIR%%/misc/iframeWidget_localhost.php
+%%WWWDIR%%/misc/log-analytics/README
+%%WWWDIR%%/misc/log-analytics/import_logs.py
 %%WWWDIR%%/misc/phpdoc-config.ini
 %%WWWDIR%%/misc/proxy-hide-piwik-url/piwik.php
 %%WWWDIR%%/misc/stress.sh
@@ -998,6 +1010,7 @@
 %%WWWDIR%%/misc/test_cookies_GenerateHundredsWebsitesAndVisits.php
 %%WWWDIR%%/misc/test_generateLotsVisitsWebsites.php
 %%WWWDIR%%/misc/tracker_simpleImageTracker.php
+%%WWWDIR%%/misc/uninstall-delete-piwik-directory.php
 %%WWWDIR%%/misc/widget_example_lastvisits.html
 %%WWWDIR%%/piwik.js
 %%WWWDIR%%/piwik.php
@@ -1022,8 +1035,10 @@
 %%WWWDIR%%/plugins/CoreAdminHome/templates/styles.css
 %%WWWDIR%%/plugins/CoreHome/Controller.php
 %%WWWDIR%%/plugins/CoreHome/CoreHome.php
-%%WWWDIR%%/plugins/CoreHome/DataTableAction/MultiRowEvolution.php
-%%WWWDIR%%/plugins/CoreHome/DataTableAction/RowEvolution.php
+%%WWWDIR%%/plugins/CoreHome/DataTableRowAction/RowEvolution.php
+%%WWWDIR%%/plugins/CoreHome/DataTableRowAction/MultiRowEvolution.php
+%%WWWDIR%%/plugins/CoreHome/templates/popover_rowevolution.tpl
+%%WWWDIR%%/plugins/CoreHome/templates/popover_multirowevolution.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/autocomplete.js
 %%WWWDIR%%/plugins/CoreHome/templates/broadcast.js
 %%WWWDIR%%/plugins/CoreHome/templates/calendar.js
@@ -1089,7 +1104,7 @@
 %%WWWDIR%%/plugins/CoreUpdater/templates/header.tpl
 %%WWWDIR%%/plugins/CoreUpdater/templates/update_database_done.tpl
 %%WWWDIR%%/plugins/CoreUpdater/templates/update_new_version_available.tpl
-%%WWWDIR%%/plugins/CoreUpdater/templates/update_one_click_done.tpl
+%%WWWDIR%%/plugins/CoreUpdater/templates/update_one_click_results.tpl
 %%WWWDIR%%/plugins/CoreUpdater/templates/update_welcome.tpl
 %%WWWDIR%%/plugins/CustomVariables/API.php
 %%WWWDIR%%/plugins/CustomVariables/Controller.php
@@ -1097,15 +1112,19 @@
 %%WWWDIR%%/plugins/DBStats/API.php
 %%WWWDIR%%/plugins/DBStats/Controller.php
 %%WWWDIR%%/plugins/DBStats/DBStats.php
-%%WWWDIR%%/plugins/DBStats/templates/DBStats.tpl
+%%WWWDIR%%/plugins/DBStats/templates/index.tpl
+%%WWWDIR%%/plugins/DBStats/MySQLMetadataProvider.php
 %%WWWDIR%%/plugins/Dashboard/Controller.php
 %%WWWDIR%%/plugins/Dashboard/Dashboard.php
-%%WWWDIR%%/plugins/Dashboard/templates/Dashboard.js
 %%WWWDIR%%/plugins/Dashboard/templates/dashboard.css
+%%WWWDIR%%/plugins/Dashboard/templates/dashboard.js
+%%WWWDIR%%/plugins/Dashboard/templates/dashboardWidget.js
+%%WWWDIR%%/plugins/Dashboard/templates/dashboardObject.js
 %%WWWDIR%%/plugins/Dashboard/templates/header.tpl
 %%WWWDIR%%/plugins/Dashboard/templates/index.tpl
 %%WWWDIR%%/plugins/Dashboard/templates/standalone.tpl
 %%WWWDIR%%/plugins/Dashboard/templates/widgetMenu.js
+%%WWWDIR%%/plugins/DoNotTrack/DoNotTrack.php
 %%WWWDIR%%/plugins/ExampleAPI/API.php
 %%WWWDIR%%/plugins/ExampleAPI/ExampleAPI.php
 %%WWWDIR%%/plugins/ExampleFeedburner/ExampleFeedburner.php
@@ -1180,6 +1199,8 @@
 %%WWWDIR%%/plugins/Installation/templates/firstWebsiteSetup.tpl
 %%WWWDIR%%/plugins/Installation/templates/generalSetup.tpl
 %%WWWDIR%%/plugins/Installation/templates/integrityDetails.tpl
+%%WWWDIR%%/plugins/Installation/templates/systemCheck_legend.tpl
+%%WWWDIR%%/plugins/Installation/templates/install.css
 %%WWWDIR%%/plugins/Installation/templates/structure.tpl
 %%WWWDIR%%/plugins/Installation/templates/systemCheck.tpl
 %%WWWDIR%%/plugins/Installation/templates/tablesCreation.tpl
@@ -1239,6 +1260,9 @@
 %%WWWDIR%%/plugins/MultiSites/images/link.gif
 %%WWWDIR%%/plugins/MultiSites/images/loading-blue.gif
 %%WWWDIR%%/plugins/MultiSites/images/stop.png
+%%WWWDIR%%/plugins/MultiSites/images/arrow_down_green.png
+%%WWWDIR%%/plugins/MultiSites/images/arrow_up_red.png
+%%WWWDIR%%/plugins/MultiSites/templates/standalone.tpl
 %%WWWDIR%%/plugins/MultiSites/templates/common.js
 %%WWWDIR%%/plugins/MultiSites/templates/index.tpl
 %%WWWDIR%%/plugins/MultiSites/templates/row.tpl
@@ -1253,6 +1277,9 @@
 %%WWWDIR%%/plugins/PDFReports/templates/pdf.js
 %%WWWDIR%%/plugins/PrivacyManager/Controller.php
 %%WWWDIR%%/plugins/PrivacyManager/PrivacyManager.php
+%%WWWDIR%%/plugins/PrivacyManager/LogDataPurger.php
+%%WWWDIR%%/plugins/PrivacyManager/ReportsPurger.php
+%%WWWDIR%%/plugins/PrivacyManager/templates/databaseSize.tpl
 %%WWWDIR%%/plugins/PrivacyManager/templates/privacySettings.js
 %%WWWDIR%%/plugins/PrivacyManager/templates/privacySettings.tpl
 %%WWWDIR%%/plugins/Provider/API.php
@@ -1829,6 +1856,7 @@
 %%WWWDIR%%/plugins/UserSettings/images/browsers/BP.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/BX.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/CA.gif
+%%WWWDIR%%/plugins/UserSettings/images/browsers/CF.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/CH.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/CO.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/CS.gif
@@ -1931,6 +1959,7 @@
 %%WWWDIR%%/plugins/UserSettings/images/screens/dual.gif
 %%WWWDIR%%/plugins/UserSettings/images/screens/mobile.gif
 %%WWWDIR%%/plugins/UserSettings/images/screens/normal.gif
+%%WWWDIR%%/plugins/UserSettings/images/screens/unknown.gif
 %%WWWDIR%%/plugins/UserSettings/images/screens/wide.gif
 %%WWWDIR%%/plugins/UserSettings/templates/index.tpl
 %%WWWDIR%%/plugins/UsersManager/API.php
@@ -1968,6 +1997,7 @@
 %%WWWDIR%%/plugins/VisitsSummary/templates/sparklines.tpl
 %%WWWDIR%%/plugins/Widgetize/Controller.php
 %%WWWDIR%%/plugins/Widgetize/Widgetize.php
+%%WWWDIR%%/plugins/Widgetize/templates/empty.tpl
 %%WWWDIR%%/plugins/Widgetize/templates/iframe.tpl
 %%WWWDIR%%/plugins/Widgetize/templates/index.tpl
 %%WWWDIR%%/plugins/Widgetize/templates/js.tpl
@@ -1988,6 +2018,8 @@
 %%WWWDIR%%/themes/default/images/chart_pie.png
 %%WWWDIR%%/themes/default/images/close.png
 %%WWWDIR%%/themes/default/images/collapsed_arrows.gif
+%%WWWDIR%%/themes/default/images/configure.png
+%%WWWDIR%%/themes/default/images/configure-highlight.png
 %%WWWDIR%%/themes/default/images/dashboard_h_bg.png
 %%WWWDIR%%/themes/default/images/dashboard_h_bg_hover.png
 %%WWWDIR%%/themes/default/images/data_table_footer_active_item.png
@@ -2025,10 +2057,12 @@
 %%WWWDIR%%/themes/default/images/ok.png
 %%WWWDIR%%/themes/default/images/page_border_grad.png
 %%WWWDIR%%/themes/default/images/plus.png
+%%WWWDIR%%/themes/default/images/row_evolution.png
 %%WWWDIR%%/themes/default/images/search_bg.png
 %%WWWDIR%%/themes/default/images/search_ico.png
 %%WWWDIR%%/themes/default/images/sites_selection.png
 %%WWWDIR%%/themes/default/images/sort_subtable_asc.png
+%%WWWDIR%%/themes/default/images/sort_subtable_asc_light.png
 %%WWWDIR%%/themes/default/images/sort_subtable_desc.png
 %%WWWDIR%%/themes/default/images/sort_subtable_desc_light.png
 %%WWWDIR%%/themes/default/images/sortasc.png
@@ -2139,6 +2173,7 @@
 @dirrm %%WWWDIR%%/plugins/ExampleFeedburner/templates
 @dirrm %%WWWDIR%%/plugins/ExampleFeedburner
 @dirrm %%WWWDIR%%/plugins/ExampleAPI
+@dirrm %%WWWDIR%%/plugins/DoNotTrack
 @dirrm %%WWWDIR%%/plugins/Dashboard/templates
 @dirrm %%WWWDIR%%/plugins/Dashboard
 @dirrm %%WWWDIR%%/plugins/DBStats/templates
@@ -2149,6 +2184,7 @@
 @dirrm %%WWWDIR%%/plugins/CorePluginsAdmin/templates
 @dirrm %%WWWDIR%%/plugins/CorePluginsAdmin
 @dirrm %%WWWDIR%%/plugins/CoreHome/DataTableAction
+@dirrm %%WWWDIR%%/plugins/CoreHome/DataTableRowAction
 @dirrm %%WWWDIR%%/plugins/CoreHome/templates/images
 @dirrm %%WWWDIR%%/plugins/CoreHome/templates
 @dirrm %%WWWDIR%%/plugins/CoreHome
@@ -2162,6 +2198,7 @@
 @dirrm %%WWWDIR%%/plugins
 @dirrm %%WWWDIR%%/misc/proxy-hide-piwik-url
 @dirrm %%WWWDIR%%/misc/cron
+@dirrm %%WWWDIR%%/misc/log-analytics
 @dirrm %%WWWDIR%%/misc
 @dirrm %%WWWDIR%%/libs/upgradephp
 @dirrm %%WWWDIR%%/libs/tcpdf/fonts
@@ -2367,6 +2404,7 @@
 @dirrm %%WWWDIR%%/core/ArchiveProcessing
 @dirrm %%WWWDIR%%/core/Archive/Array
 @dirrm %%WWWDIR%%/core/Archive
+@dirrm %%WWWDIR%%/core/API/DataTableManipulator
 @dirrm %%WWWDIR%%/core/API
 @dirrm %%WWWDIR%%/core
 @dirrm %%WWWDIR%%/config
