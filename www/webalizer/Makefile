@@ -7,7 +7,7 @@
 
 PORTNAME=	webalizer
 PORTVERSION=	2.23.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/:main \
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/geodb/:geodb \
@@ -48,6 +48,9 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/${GD_PORT}
 .endif
 .if defined(WITH_GEOIP)
 LIB_DEPENDS+=	GeoIP.5:${PORTSDIR}/net/GeoIP
+.endif
+.if defined(WITH_GEODB)
+USE_BDB=		yes
 .endif
 
 .if defined(WITH_GEODB)
