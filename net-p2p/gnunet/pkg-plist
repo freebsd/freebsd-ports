@@ -1,19 +1,23 @@
 bin/gnunet-arm
-bin/gnunet-core-list-connections
+bin/gnunet-core
 bin/gnunet-daemon-hostlist
 bin/gnunet-daemon-topology
 bin/gnunet-dht-get
+bin/gnunet-dht-monitor
 bin/gnunet-dht-put
 bin/gnunet-directory
 bin/gnunet-download
 bin/gnunet-download-manager.scm
 bin/gnunet-fs
+bin/gnunet-gns-import.sh
 bin/gnunet-helper-fs-publish
+bin/gnunet-namestore
 bin/gnunet-nat-server
 bin/gnunet-peerinfo
 bin/gnunet-pseudonym
 bin/gnunet-publish
 bin/gnunet-resolver
+bin/gnunet-rsa
 bin/gnunet-search
 bin/gnunet-service-arm
 bin/gnunet-service-ats
@@ -21,6 +25,7 @@ bin/gnunet-service-core
 bin/gnunet-service-datastore
 bin/gnunet-service-dht
 bin/gnunet-service-fs
+bin/gnunet-service-lockmanager
 bin/gnunet-service-mesh
 bin/gnunet-service-namestore
 bin/gnunet-service-nse
@@ -37,7 +42,7 @@ bin/gnunet-transport-certificate-creation
 bin/gnunet-unindex
 bin/mockup-service
 bin/timeout_watchdog
-@unexec cd %D/etc ; if cmp -s gnunet.conf.sample gnunet.conf ; then rm -f gnunet.conf ; fi
+@unexec if [ -f %D/etc/gnunet.conf ] ; then cd %D/etc ; cmp -s gnunet.conf.sample gnunet.conf && rm -f gnunet.conf ; fi
 etc/gnunet.conf.sample
 @exec if [ ! -f %B/gnunet.conf ] ; then cp -p %D/%F %B/gnunet.conf ; fi
 include/gnunet/block_dns.h
@@ -79,7 +84,9 @@ include/gnunet/gnunet_gns_service.h
 include/gnunet/gnunet_hello_lib.h
 include/gnunet/gnunet_helper_lib.h
 include/gnunet/gnunet_load_lib.h
+include/gnunet/gnunet_lockmanager_service.h
 include/gnunet/gnunet_mesh_service.h
+include/gnunet/gnunet_mysql_lib.h
 include/gnunet/gnunet_namestore_plugin.h
 include/gnunet/gnunet_namestore_service.h
 include/gnunet/gnunet_nat_lib.h
@@ -89,9 +96,11 @@ include/gnunet/gnunet_os_lib.h
 include/gnunet/gnunet_peer_lib.h
 include/gnunet/gnunet_peerinfo_service.h
 include/gnunet/gnunet_plugin_lib.h
+include/gnunet/gnunet_postgres_lib.h
 include/gnunet/gnunet_program_lib.h
 include/gnunet/gnunet_protocols.h
 include/gnunet/gnunet_pseudonym_lib.h
+include/gnunet/gnunet_regex_lib.h
 include/gnunet/gnunet_resolver_service.h
 include/gnunet/gnunet_scheduler_lib.h
 include/gnunet/gnunet_server_lib.h
@@ -101,6 +110,8 @@ include/gnunet/gnunet_signatures.h
 include/gnunet/gnunet_statistics_service.h
 include/gnunet/gnunet_stream_lib.h
 include/gnunet/gnunet_strings_lib.h
+include/gnunet/gnunet_testbed_service.h
+include/gnunet/gnunet_testing_lib-new.h
 include/gnunet/gnunet_testing_lib.h
 include/gnunet/gnunet_time_lib.h
 include/gnunet/gnunet_transport_plugin.h
@@ -177,7 +188,7 @@ lib/libgnunetarm.so.1
 lib/libgnunetats.a
 lib/libgnunetats.la
 lib/libgnunetats.so
-lib/libgnunetats.so.1
+lib/libgnunetats.so.2
 lib/libgnunetblock.a
 lib/libgnunetblock.la
 lib/libgnunetblock.so
@@ -201,7 +212,7 @@ lib/libgnunetdht.so.1
 lib/libgnunetfragmentation.a
 lib/libgnunetfragmentation.la
 lib/libgnunetfragmentation.so
-lib/libgnunetfragmentation.so.0
+lib/libgnunetfragmentation.so.1
 lib/libgnunetfs.a
 lib/libgnunetfs.la
 lib/libgnunetfs.so
@@ -210,10 +221,18 @@ lib/libgnunethello.a
 lib/libgnunethello.la
 lib/libgnunethello.so
 lib/libgnunethello.so.0
+lib/libgnunetlockmanager.a
+lib/libgnunetlockmanager.la
+lib/libgnunetlockmanager.so
+lib/libgnunetlockmanager.so.0
 lib/libgnunetmesh.a
 lib/libgnunetmesh.la
 lib/libgnunetmesh.so
-lib/libgnunetmesh.so.0
+lib/libgnunetmesh.so.1
+%%MYSQL%%lib/libgnunetmysql.a
+%%MYSQL%%lib/libgnunetmysql.la
+%%MYSQL%%lib/libgnunetmysql.so
+%%MYSQL%%lib/libgnunetmysql.so.0
 lib/libgnunetnamestore.a
 lib/libgnunetnamestore.la
 lib/libgnunetnamestore.so
@@ -230,18 +249,30 @@ lib/libgnunetpeerinfo.a
 lib/libgnunetpeerinfo.la
 lib/libgnunetpeerinfo.so
 lib/libgnunetpeerinfo.so.0
+%%PGSQL%%lib/libgnunetpostgres.a
+%%PGSQL%%lib/libgnunetpostgres.la
+%%PGSQL%%lib/libgnunetpostgres.so
+%%PGSQL%%lib/libgnunetpostgres.so.0
 lib/libgnunetstatistics.a
 lib/libgnunetstatistics.la
 lib/libgnunetstatistics.so
 lib/libgnunetstatistics.so.1
+lib/libgnunettestbed.a
+lib/libgnunettestbed.la
+lib/libgnunettestbed.so
+lib/libgnunettestbed.so.0
 lib/libgnunettesting.a
 lib/libgnunettesting.la
 lib/libgnunettesting.so
 lib/libgnunettesting.so.0
+lib/libgnunettesting_new.a
+lib/libgnunettesting_new.la
+lib/libgnunettesting_new.so
+lib/libgnunettesting_new.so.0
 lib/libgnunettransport.a
 lib/libgnunettransport.la
 lib/libgnunettransport.so
-lib/libgnunettransport.so.0
+lib/libgnunettransport.so.1
 lib/libgnunettransporttesting.a
 lib/libgnunettransporttesting.la
 lib/libgnunettransporttesting.so
@@ -253,7 +284,7 @@ lib/libgnunettun.so.0
 lib/libgnunetutil.a
 lib/libgnunetutil.la
 lib/libgnunetutil.so
-lib/libgnunetutil.so.7
+lib/libgnunetutil.so.8
 libdata/pkgconfig/gnunetarm.pc
 libdata/pkgconfig/gnunetblock.pc
 libdata/pkgconfig/gnunetcore.pc
@@ -272,33 +303,51 @@ libdata/pkgconfig/gnunetstatistics.pc
 libdata/pkgconfig/gnunettesting.pc
 libdata/pkgconfig/gnunettransport.pc
 libdata/pkgconfig/gnunetutil.pc
-%%DATADIR%%/config.d/arm.conf
-%%DATADIR%%/config.d/ats.conf
-%%DATADIR%%/config.d/core.conf
-%%DATADIR%%/config.d/datacache.conf
-%%DATADIR%%/config.d/datastore.conf
-%%DATADIR%%/config.d/dht.conf
-%%DATADIR%%/config.d/fs.conf
-%%DATADIR%%/config.d/hostlist.conf
-%%DATADIR%%/config.d/mesh.conf
-%%DATADIR%%/config.d/nat.conf
-%%DATADIR%%/config.d/nse.conf
-%%DATADIR%%/config.d/peerinfo.conf
-%%DATADIR%%/config.d/resolver.conf
-%%DATADIR%%/config.d/statistics.conf
-%%DATADIR%%/config.d/template.conf
-%%DATADIR%%/config.d/testing.conf
-%%DATADIR%%/config.d/topology.conf
-%%DATADIR%%/config.d/transport.conf
-%%DATADIR%%/config.d/util.conf
-%%DATADIR%%/gnunet-logo-color.png
+share/gnunet/config.d/arm.conf
+share/gnunet/config.d/ats.conf
+share/gnunet/config.d/core.conf
+share/gnunet/config.d/datacache.conf
+share/gnunet/config.d/datastore.conf
+share/gnunet/config.d/dht.conf
+share/gnunet/config.d/fs.conf
+share/gnunet/config.d/hostlist.conf
+share/gnunet/config.d/lockmanager.conf
+share/gnunet/config.d/mesh.conf
+share/gnunet/config.d/namestore.conf
+share/gnunet/config.d/nat.conf
+share/gnunet/config.d/nse.conf
+share/gnunet/config.d/peerinfo.conf
+share/gnunet/config.d/resolver.conf
+share/gnunet/config.d/statistics.conf
+share/gnunet/config.d/template.conf
+share/gnunet/config.d/testbed.conf
+share/gnunet/config.d/testing.conf
+share/gnunet/config.d/topology.conf
+share/gnunet/config.d/transport.conf
+share/gnunet/config.d/util.conf
+share/gnunet/gnunet-logo-color.png
+share/gnunet/hellos/02UK
+share/gnunet/hellos/1G1M
+share/gnunet/hellos/7RAV
+share/gnunet/hellos/8B4T
+share/gnunet/hellos/94CH
+share/gnunet/hellos/ATF4
+share/gnunet/hellos/F1GT
+share/gnunet/hellos/KD9V
+share/gnunet/hellos/KUPL
+share/gnunet/hellos/LJR8
+share/gnunet/hellos/R69Q
+share/gnunet/hellos/R6OV
+share/gnunet/hellos/RL7P
+share/gnunet/testing_hostkeys.dat
 %%NLS%%share/locale/de/LC_MESSAGES/gnunet.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gnunet.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gnunet.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/gnunet.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gnunet.mo
-@dirrm %%DATADIR%%/config.d
-@dirrm %%DATADIR%%
+@dirrm share/gnunet/hellos
+@dirrm share/gnunet/config.d
+@dirrm share/gnunet
 @dirrm lib/gnunet
 @dirrm include/gnunet
 @exec if [ ! -d %%GNUNET_DAEMON_DIR%% ] ; then install -d -o gnunet -g gnunet -m 700 %%GNUNET_DAEMON_DIR%% ; fi
