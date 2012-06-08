@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	owncloud
-PORTVERSION=	3.0.2
+PORTVERSION=	4.0.1
 CATEGORIES=	www
 MASTER_SITES=	http://owncloud.org/releases/
 
@@ -17,11 +17,10 @@ BUILD_DEPENDS=	mp3info:${PORTSDIR}/audio/mp3info
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
-USE_PHP=	ctype curl gd hash json mbstring mysql pdo session \
-		simplexml sqlite xml zip
+USE_PHP=	ctype curl gd hash json mbstring mysql pdo pdo_sqlite \
+		session simplexml sqlite3 xml zip
 WANT_PHP_WEB=	yes
-DEFAULT_PHP_VER=53
-IGNORE_WITH_PHP=5
+DEFAULT_PHP_VER=5
 
 WWWDOCROOT?=	www
 
