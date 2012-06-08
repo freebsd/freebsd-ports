@@ -722,9 +722,9 @@ lib/libwx_gtk2u_gl-2.9.so.3.0.0
 lib/libwx_gtk2u_html-2.9.so
 lib/libwx_gtk2u_html-2.9.so.3
 lib/libwx_gtk2u_html-2.9.so.3.0.0
-lib/libwx_gtk2u_media-2.9.so
-lib/libwx_gtk2u_media-2.9.so.3
-lib/libwx_gtk2u_media-2.9.so.3.0.0
+%%GSTREAMER%%lib/libwx_gtk2u_media-2.9.so
+%%GSTREAMER%%lib/libwx_gtk2u_media-2.9.so.3
+%%GSTREAMER%%lib/libwx_gtk2u_media-2.9.so.3.0.0
 lib/libwx_gtk2u_propgrid-2.9.so
 lib/libwx_gtk2u_propgrid-2.9.so.3
 lib/libwx_gtk2u_propgrid-2.9.so.3.0.0
