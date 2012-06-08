@@ -930,7 +930,9 @@ MASTER_SITE_PERL_CPAN_BY+= \
 	http://backpan.perl.org/%CPANSORT%/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/languages/perl/CPAN/%CPANSORT%/%SUBDIR%/ \
 	http://cpan.nctu.edu.tw/%CPANSORT%/%SUBDIR%/ \
-	http://ftp.twaren.net/Unix/Lang/CPAN/%CPANSORT%/%SUBDIR%/
+	http://ftp.twaren.net/Unix/Lang/CPAN/%CPANSORT%/%SUBDIR%/ \
+	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%SUBDIR%/ \
+	http://www.cpan.dk/modules/by-module/%SUBDIR%/
 
 _PERL_CPAN_FLAG=${MASTER_SITE_SUBDIR:C/(CPAN):.*$/\1/}
 _PERL_CPAN_ID=	${MASTER_SITE_SUBDIR:C/^CPAN:(.)(.)(.*)$/\1\/\1\2\/\1\2\3/}
