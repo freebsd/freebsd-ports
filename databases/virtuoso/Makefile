@@ -30,6 +30,7 @@ CONFIGURE_ARGS=	--with-readline\
 		--without-jdk4\
 		--with-iodbc=${LOCALBASE}\
 		--enable-bpel-vad\
+		--with-layout=freebsd\
 		--datadir="${PREFIX}"\
 		--localstatedir="${PREFIX}"
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}

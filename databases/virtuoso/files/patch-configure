@@ -1,6 +1,6 @@
---- configure.orig	2009-03-15 21:10:10.000000000 +0600
-+++ configure	2009-03-15 21:10:54.000000000 +0600
-@@ -2888,9 +2888,9 @@
+--- configure.orig	2011-10-29 06:28:32.000000000 +0700
++++ configure	2012-06-08 12:59:49.000000000 +0700
+@@ -3784,9 +3784,9 @@
  	docdir=$datadir/virtuoso/doc
  	htmldocdir=$datadir/virtuoso/doc/html
  	pdfdocdir=$datadir/virtuoso/doc/pdf
