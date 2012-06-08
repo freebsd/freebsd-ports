@@ -44,8 +44,10 @@ post-patch:
 		${WRKSRC}/doc/dahdi_cfg.8 ${WRKSRC}/doc/fxotune.8
 
 post-install:
+	@${ECHO_CMD} "==> Installing dahdi-kmod userland includes"
 	@${MKDIR} ${PREFIX}/include/dahdi/compat
 	@for i in `${MAKE} -C ${WRKSRC}/../freebsd/freebsd/dahdi -V INCS`; do\
+		${ECHO_CMD} "Installing $$i";\
 		${INSTALL_DATA} ${WRKSRC}/../freebsd/include/dahdi/$$i ${PREFIX}/include/dahdi/$$i;\
 	done
 
