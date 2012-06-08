@@ -306,7 +306,6 @@
     SUBDIR += wxgtk29
     SUBDIR += xbae
     SUBDIR += xforms
-    SUBDIR += xforms-i18n
     SUBDIR += xmhtml
     SUBDIR += xscoop
     SUBDIR += xview
