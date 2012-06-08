@@ -2,3 +2,5 @@ SHA256 (pty.lua?rev=1.2) = 18f1a623b727a3172b6e16142c057659a76614741a65533a97470
 SIZE (pty.lua?rev=1.2) = 1077
 SHA256 (pty.c?rev=1.25) = f8ce982883ba917abeab623ca63e07aafb05d2820fe35e5d8563caf579240af1
 SIZE (pty.c?rev=1.25) = 9264
+SHA256 (compat-5.1r5.tar.gz) = 93262ad793552c338b825e6b67c903063aa07625952ef643d126ae60949c8ab6
+SIZE (compat-5.1r5.tar.gz) = 2977

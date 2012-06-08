@@ -8,7 +8,8 @@
 PORTNAME=	pty
 PORTVERSION=	1.25
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://files.luaforge.net/releases/compat/Compat-5.1/Compat-5.1release5/:compat
 MASTER_SITE_SUBDIR= philip
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 DISTFILES=	pty.lua?rev=1.2 pty.c?rev=1.25
@@ -23,6 +24,7 @@ LUA_COMPS=	compat51 lua
 BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/devel/lua50-compat51:extract
 COMPAT_SRC=	`(cd ${PORTSDIR}/devel/lua50-compat51 && ${MAKE} -V WRKSRC)`
 MAKE_ENV=	COMPATDIR="${COMPAT_SRC}"
+DISTFILES+=	compat-5.1r5.tar.gz:compat
 .endif
 
 PLIST_FILES=	%%LUA_MODSHAREDIR%%/pty.lua \
