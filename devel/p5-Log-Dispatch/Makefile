@@ -56,23 +56,23 @@ USE_APACHE=	20+
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MAPACHELOG}
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
+RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2
 .endif
 
 .if ${PORT_OPTIONS:MEMAIL_MIMELITE}
-RUN_DEPENDS+=	${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite
+RUN_DEPENDS+=	p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite
 .endif
 
 .if ${PORT_OPTIONS:MEMAIL_MAILSEND}
-RUN_DEPENDS+=	${SITE_PERL}/Mail/Send.pm:${PORTSDIR}/mail/p5-Mail-Tools
+RUN_DEPENDS+=	p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools
 .endif
 
 .if ${PORT_OPTIONS:MEMAIL_MAILSENDMAIL}
-RUN_DEPENDS+=	${SITE_PERL}/Mail/Sendmail.pm:${PORTSDIR}/mail/p5-Mail-Sendmail
+RUN_DEPENDS+=	p5-Mail-Sendmail>=0:${PORTSDIR}/mail/p5-Mail-Sendmail
 .endif
 
 .if ${PORT_OPTIONS:MMAIL_SENDER}
-RUN_DEPENDS+=	${SITE_PERL}/Mail/Sender.pm:${PORTSDIR}/mail/p5-Mail-Sender
+RUN_DEPENDS+=	p5-Mail-Sender>=0:${PORTSDIR}/mail/p5-Mail-Sender
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}

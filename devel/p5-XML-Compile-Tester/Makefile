@@ -16,7 +16,7 @@ COMMENT=	Support XML::Compile Related Regression Testing
 
 RUN_DEPENDS=	p5-Log-Report>=0.17:${PORTSDIR}/devel/p5-Log-Report \
 		p5-Test-Deep>=0.103:${PORTSDIR}/devel/p5-Test-Deep \
-		${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple
+		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
