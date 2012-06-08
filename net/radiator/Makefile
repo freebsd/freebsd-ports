@@ -16,7 +16,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Radiator Radius Server by Open System Consultants
 
-OPTIONS=	MYSQL "MySQL Support" off
+OPTIONS_DEFINE=	MYSQL
+MYSQL_DESC=	MySQL support
 
 PERL_CONFIGURE=	yes
 
@@ -39,7 +40,7 @@ IGNORE=		will not be automatically fetched due to licensing\
 		same directory as well)
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
