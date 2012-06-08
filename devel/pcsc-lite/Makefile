@@ -38,11 +38,17 @@ MAN8=		pcscd.8
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_USB) && ${OSVERSION} >= 800069
-CONFIGURE_ENV+=	LIBUSB_LIBS="-lusb"
+.if ${OSVERSION} >= 800069
+OPTIONS_DEFINE=	USB
+OPTIONS_DEFAULT=USB
+
+USB_DESC=	Support for USB-reader
+
+.if $(PORT_OPTIONS:MUSB)
+CONFIGURE_ENV+= LIBUSB_LIBS="-lusb"
 CONFIGURE_ARGS+=--enable-libusb=/usr
-.else
-BROKEN=		FreeBSD 7.x does not ship with a supported libusb
+.endif
+
 .endif
 
 post-patch:
@@ -54,14 +60,6 @@ post-patch:
 	${REINPLACE_CMD} -e "s,-ldl,," ${WRKSRC}/src/spy/Makefile.in
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e '/^install-data-am: / s|install-docDATA||' ${WRKSRC}/doc/Makefile.in
-.endif
-
-pre-everything::
-.if !defined(WITHOUT_USB) && ${OSVERSION} >= 800069
-	@${ECHO_MSG}
-	@${ECHO_MSG} "pcsc-lite has the following option(s):"
-	@${ECHO_MSG} "  WITHOUT_USB=yes            Disable USB support"
-	@${ECHO_MSG}
 .endif
 
 post-install:
