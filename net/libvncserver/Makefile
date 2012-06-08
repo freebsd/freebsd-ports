@@ -8,7 +8,7 @@
 
 PORTNAME=	libvncserver
 PORTVERSION=	0.9.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net devel
 MASTER_SITES=	SF
 DISTNAME=	LibVNCServer-${PORTVERSION}
@@ -18,7 +18,8 @@ COMMENT=	Provide an easy API to write one's own vnc server
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
+		pnt:${POrTSIDR}/graphics/png
 
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
