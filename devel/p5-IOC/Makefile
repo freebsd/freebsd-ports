@@ -16,11 +16,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lightweight IOC (Inversion of Control) framework
 
-BUILD_DEPENDS=	${SITE_PERL}/Class/Throwable.pm:${PORTSDIR}/devel/p5-Class-Throwable \
-		${SITE_PERL}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX \
-		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
-		${SITE_PERL}/Class/StrongSingleton.pm:${PORTSDIR}/devel/p5-Class-StrongSingleton \
-		${SITE_PERL}/Class/Interfaces.pm:${PORTSDIR}/devel/p5-Class-Interfaces
+BUILD_DEPENDS=	p5-Class-Throwable>=0:${PORTSDIR}/devel/p5-Class-Throwable \
+		p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX \
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Class-StrongSingleton>=0:${PORTSDIR}/devel/p5-Class-StrongSingleton \
+		p5-Class-Interfaces>=0:${PORTSDIR}/devel/p5-Class-Interfaces
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
