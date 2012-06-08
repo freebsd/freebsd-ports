@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bmeps
-PORTVERSION=	2.2.22
-PORTREVISION=	2
+PORTVERSION=	2.2.24
 CATEGORIES=	graphics perl5
 MASTER_SITES=	SF/dktools/dktools/dktools-${PORTVERSION}
 DISTNAME=	dktools-${PORTVERSION}
@@ -27,6 +26,7 @@ USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 
 MAKE_ARGS=	bmeps
+MAKE_JOBS_UNSAFE=yes
 
 CFLAGS+=	-I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib
