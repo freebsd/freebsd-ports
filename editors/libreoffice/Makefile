@@ -7,7 +7,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	4
+PORTREVISION=	5
 
 MASTER_SITE_SUBDIR=	src/${PORTVERSION}/
 MASTER_SITES+=	http://dev-www.libreoffice.org/src/:ext \

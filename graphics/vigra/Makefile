@@ -10,8 +10,7 @@
 # The hugin port is a gui interface to interact with panorama tools.
 
 PORTNAME=	vigra
-PORTVERSION=	1.7.1
-PORTREVISION=	4
+PORTVERSION=	1.8.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://hci.iwr.uni-heidelberg.de/vigra/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -55,8 +54,20 @@ LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3
 .endif
 
+.if !defined(WITHOUT_VIGRA_FFTWF)
+LIB_DEPENDS+=	fftw3f:${PORTSDIR}/math/fftw3-float
+.endif
+
 .if !defined(WITHOUT_VIGRA_HDF5)
 LIB_DEPENDS+=	hdf5.7:${PORTSDIR}/science/hdf5-18
 .endif
+
+.if !defined(WITHOUT_VIGRA_OPENEXR)
+LIB_DEPENDS+=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR
+.endif
+
+post-patch:
+# FIXME: This is ugly
+	@${RM} ${WRKSRC}/include/vigra/*.orig
 
 .include <bsd.port.mk>
