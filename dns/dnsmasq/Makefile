@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dnsmasq
-DISTVERSION=	2.61
+DISTVERSION=	2.62
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \
@@ -31,20 +31,20 @@ MAKE_JOBS_SAFE=	yes
 CFLAGS+=	-Wall -Wno-unused-value
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${PREFIX}" COPTS="${CFLAGS}" LIBS="${LDFLAGS}" RPM_OPT_FLAGS="${CPPFLAGS}"
 
-OPTIONS=	IPV6 "IPv6 support" on
-OPTIONS+=	DBUS "DBUS support" off
-OPTIONS+=	NLS  "National Language Support (NLS, enables IDN)" on
-OPTIONS+=	IDN  "International Domain Names (IDN) WITHOUT NLS" off
-# unfortunately, NLS always enables IDN in dnsmasq 2.57
-OPTIONS+=	LUA  "Support lease-change scripts in LUA" off
+OPTIONS_DEFINE=		IPV6 DBUS NLS IDN LUA
+OPTIONS_DEFAULT=	IPV6 NLS
+OPTIONS_EXCLUDE+=	EXAMPLES
+NLS_DESC=	National Language Support (NLS, enables IDN)
+IDN_DESC=	International Domain Names (IDN) WITHOUT NLS
+LUA_DESC=	Support lease-change scripts in LUA
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_IPV6)
+.if empty(PORT_OPTIONS:MIPV6)
 CFLAGS+=	-DNO_IPV6
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS+=	idn:${PORTSDIR}/dns/libidn
 PLIST_SUB+=	NLS=""
@@ -53,19 +53,19 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 .else
 PLIST_SUB+=	NLS="@comment "
-.if defined(WITH_IDN)
+.if ${PORT_OPTIONS:MIDN}
 CFLAGS+=	-DHAVE_IDN
 LIB_DEPENDS+=	idn:${PORTSDIR}/dns/libidn
 .endif
 .endif
 
-.if defined(WITH_DBUS)
+.if ${PORT_OPTIONS:MDBUS}
 LIB_DEPENDS+=	dbus-1:${PORTSDIR}/devel/dbus
 BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
 CFLAGS+=	-DHAVE_DBUS
 .endif
 
-.if defined(WITH_LUA)
+.if ${PORT_OPTIONS:MLUA}
 CFLAGS+=	-DHAVE_LUASCRIPT
 USE_LUA=	5.1
 .endif
@@ -79,8 +79,8 @@ post-patch:
 
 pre-configure:
 	@:
-.if defined(WITH_IDN)
-.if defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MIDN}
+.if empty(PORT_OPTIONS:MNLS)
 	@if ${OBJDUMP} -p ${LOCALBASE}/lib/libidn.so \
 		| ${EGREP} -q "NEEDED[[:space:]]+lib(intl|iconv)\.so" ; \
 	then ${ECHO} ; ${ECHO} 'WARNING: dns/libidn was compiled with NLS support!' ; \
@@ -95,11 +95,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/dnsmasq ${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/dnsmasq.conf.example ${PREFIX}/etc
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.8 ${PREFIX}/man/man8
-.if !defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 .for i in de es fi fr id it no pl pt_BR ro
 	${MKDIR} ${PREFIX}/share/locale/${i}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/src/${i}.mo \
