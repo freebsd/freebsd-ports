@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hiawatha
-PORTVERSION=	8.3.2
+PORTVERSION=	8.4
 CATEGORIES=	www
 MASTER_SITES=	http://www.hiawatha-webserver.org/files/ \
 		http://www.c-s.li/ports/
