@@ -56,8 +56,10 @@ OPTIONS=	GSTREAMER "media support" on\
 CONFIGURE_ARGS+=--enable-mediactrl
 USE_GNOME+=	gconf2
 USE_GSTREAMER=	yes
+PLIST_SUB+=     GSTREAMER=""
 .else
 CONFIGURE_ARGS+=--disable-mediactrl
+PLIST_SUB+=     GSTREAMER="@comment "
 .endif
 
 .if defined(WITH_MSPACK)
