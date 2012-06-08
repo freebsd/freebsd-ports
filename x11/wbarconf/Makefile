@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	wbarconf
-PORTVERSION=	0.7.2.1
-PORTREVISION=	2
+PORTVERSION=	0.7.2.2
 CATEGORIES=	x11
-MASTER_SITES=	http://www.ihku.biz/wbarconf/
+MASTER_SITES=	http://koti.kapsi.fi/ighea/wbarconf/
 DISTNAME=	wbarconf-${PORTVERSION}
 
 MAINTAINER=	olivier@cochard.me

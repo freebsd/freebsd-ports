@@ -4,6 +4,8 @@ share/locale/de/LC_MESSAGES/wbarconf.mo
 share/locale/de/LC_MESSAGES/wbarconf.po
 share/locale/fi/LC_MESSAGES/wbarconf.mo
 share/locale/fi/LC_MESSAGES/wbarconf.po
+share/locale/zh_TW/LC_MESSAGES/wbarconf.mo
+share/locale/zh_TW/LC_MESSAGES/wbarconf.po
 share/pixmaps/wbarconf.png
 %%DATADIR%%/messages.pot
 %%DATADIR%%/wbarbacks/README
