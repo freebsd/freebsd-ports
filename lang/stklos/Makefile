@@ -52,7 +52,7 @@ post-patch:
 		${WRKSRC}/doc/Makefile.in ${WRKSRC}/doc/Makefile.am \
 		${WRKSRC}/lib/Makefile.in ${WRKSRC}/lib/Makefile.am
 
-.if defined(NOPORTDOCS)
+.if !${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -E -e 's/^(install-data-am:).*/\1 install-man install-schemeDATA/' \
 		-e '/install-docpdfDATA install-man install-schemeDATA/d' \
 		${WRKSRC}/doc/Makefile.in
