@@ -71,6 +71,25 @@ GNUstep/System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/General/General.igsdoc
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/General/OpenStepCompliance.html
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/General/dependencies
+%%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual/AppKit.html
+%%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual/AppKit_1.html
+%%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual/AppKit_10.html
+%%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual/AppKit_11.html
+%%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual/AppKit_12.html
+%%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual/AppKit_13.html
+%%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual/AppKit_14.html
+%%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual/AppKit_15.html
+%%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual/AppKit_16.html
+%%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual/AppKit_2.html
+%%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual/AppKit_3.html
+%%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual/AppKit_4.html
+%%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual/AppKit_5.html
+%%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual/AppKit_6.html
+%%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual/AppKit_7.html
+%%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual/AppKit_8.html
+%%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual/AppKit_9.html
+%%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual/AppKit_abt.html
+%%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual/AppKit_fot.html
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/Reference/ClassesTOC.gsdoc
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/Reference/ClassesTOC.html
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/Reference/ConstantsTOC.gsdoc
@@ -857,6 +876,5 @@ GNUstep/System/Tools/set_show_service
 @dirrm GNUstep/System/Library/Bundles/GSPrinting
 %%GNUSTEP_DEVEL%%@dirrm GNUstep/System/Library/Bundles/AudioOutput.nssound/Resources
 %%GNUSTEP_DEVEL%%@dirrm GNUstep/System/Library/Bundles/AudioOutput.nssound
-%%PORTDOCS%%@exec mkdir -p %D/GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual
 %%GNUSTEP_DEVEL%%@dirrm GNUstep/System/Applications/GSSpeechServer.app/Resources
 %%GNUSTEP_DEVEL%%@dirrm GNUstep/System/Applications/GSSpeechServer.app
