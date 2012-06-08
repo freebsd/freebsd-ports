@@ -531,6 +531,7 @@
     SUBDIR += pg_rman
     SUBDIR += pgaccess
     SUBDIR += pgadmin3
+    SUBDIR += pgagent
     SUBDIR += pgbouncer
     SUBDIR += pgdbf
     SUBDIR += pgfouine
