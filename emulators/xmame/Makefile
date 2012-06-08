@@ -37,14 +37,13 @@ MAMEMESS?=	mame
 SUB_FILES=	pkg-message
 MAN6=		x${MAMEMESS}.6
 
-OPTIONS=	SDL		"Use the SDL driver" on \
-		OPENGL		"Use the OpenGL driver" off \
-		X11		"Use the X11 driver" off \
-		SVGALIB		"Use the Svgalib driver" off \
-		ASM68K		"Enable the speedier but buggy 68k emulator" off \
-		OPTIMIZATION	"Enable maximum C compiler optimization" off \
-		ESOUND		"Enable esound support" off \
-		NETWORK		"Include support for network play (**BROKEN**)" off
+OPTIONS_DEFINE=	ASM68K DOCS ESOUND NETWORK OPENGL OPTIMIZATION SDL SVGALIB X11
+OPTIONS_DEFAULT=	SDL
+
+SVGALIB_DESC=	Enable Svgalib support
+ASM68K_DESC=	Enable the speedier but buggy 68k emulator
+OPTIMIZATION_DESC=	Enable maximum C compiler optimization
+NETWORK_DESC=	Include support for network play (**BROKEN**)
 
 XMAMEVERSION?=	${PORTVERSION}
 
@@ -113,14 +112,14 @@ ALLDOCS=	${GENERALDOCS} ${XMESSDOCS}
 BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
-.if defined(WITH_ASM68K)
+.if ${PORT_OPTIONS:MASM68K}
 ASM_COMMENT=
 .else
 ASM_COMMENT=\#
 .endif
 
 # Option WITH_OPTIMIZATION
-.if defined(WITH_OPTIMIZATION)
+.if ${PORT_OPTIONS:MOPTIMIZATION}
 CFLAGS+=	-O3 -Wall -Wno-unused -funroll-loops \
 		-fstrength-reduce -fomit-frame-pointer -ffast-math \
 		-falign-functions=4 -falign-jumps=4 -falign-loops=4
@@ -129,14 +128,14 @@ CFLAGS+=	-O3 -Wall -Wno-unused -funroll-loops \
 SDLSOUNDCOMMENT=	\#
 
 # Option DISPLAY_TARGET
-.if defined(WITH_SDL) || !defined(WITHOUT_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	sdl
 DISPLAY_TARGET=	sdl
 DISPLAY_METHOD=	SDL
 SDLSOUNDCOMMENT=
 .endif
 
-.if defined(WITH_OPENGL)
+.if ${PORT_OPTIONS:MOPENGL}
 USE_XORG+=	x11
 DISPLAY_TARGET=	opengl
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
@@ -148,20 +147,20 @@ ALL_DOCS+=	${GLDOCS}
 PLIST_SUB+=	OPENGL="@comment "
 .endif
 
-.if defined(WITH_SVGALIB)
+.if ${PORT_OPTIONS:MSVGALIB}
 DISPLAY_TARGET=	svgalib
 LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 USE_XORG+=	xpm
 DISPLAY_METHOD=	svgalib
 .endif
 
-.if defined(WITH_X11)
+.if ${PORT_OPTIONS:MX11}
 DISPLAY_METHOD=	x11
 USE_XORG+=	x11
 .endif
 
 # Option WITH_ESOUND
-.if defined(WITH_ESOUND)
+.if ${PORT_OPTIONS:MESOUND}
 ESOUNDCOMMENT=
 USE_GNOME=	esound
 .else
@@ -170,7 +169,7 @@ ESOUNDCOMMENT=\#
 
 # XXX Network support is *broken* in 0.85+, leave commented out for now
 # Option WITH_NETWORK
-.if defined(WITH_NETWORK)
+.if ${PORT_OPTIONS:MNETWORK}
 BROKEN=	Networking support is currently broken
 NETWORK=
 .else
@@ -204,11 +203,11 @@ do-configure:
 	${REINPLACE_CMD} -e "s@# JOY_USB@JOY_USB@g" ${WRKSRC}/makefile.unix
 .endif
 
-.if defined(WITH_SDL) || !defined(WITHOUT_SDL)
+.if ${PORT_OPTIONS:MSDL}
 		${REINPLACE_CMD} -e "s@# JOY_SDL = 1@JOY_SDL = 1@g" ${WRKSRC}/makefile.unix
 .endif
 
-.if defined(WITH_OPENGL)
+.if ${PORT_OPTIONS:MOPENGL}
 		${REINPLACE_CMD} -e "s@# X11_OPENGL = 1@X11_OPENGL = 1@g" ${WRKSRC}/makefile.unix
 .endif
 
@@ -256,7 +255,7 @@ post-install:
 				${PREFIX}/etc/x${MAMEMESS}rc.sample
 	${LN} -sf ${PREFIX}/etc/x${MAMEMESS}rc \
 				${DATADIR}/x${MAMEMESS}rc
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/img
 .for f in ${ALLDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}

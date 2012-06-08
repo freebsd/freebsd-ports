@@ -18,53 +18,63 @@ COMMENT=	An IA-32 (x86) PC emulator that runs DOS, Win 95, and more
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS=	A20_PIN "Enable support for A20 pin" on \
-		ALIGN_CHECK "Enable alignment check support" on \
-		ASSERT_CHECK "Enable BX_ASSERT checks" off \
-		CDROM "Enable CDROM support" on \
-		CHAINING "Enable handlers-chaining emulation speedups" off \
-		CLGD54XX "Enable Cirrus Logic GD54xx video card" off \
-		CONF_MSRS "Enable configurable MSR registers support" on \
-		CPP_SUFX "Use .cpp as C++ suffix" off \
-		DEBUGGER "Enable debugger support" off \
-		DEBUGGER_X86 "Enable x86 hardware debugger" off \
-		DISASM "Enable disassemler support" on \
-		ES1370 "Enable ES1370 soundcard support" off \
-		FAST_FUNCCALL "Enable fast function calls support (x86 only)" off \
-		FPU "Enable FPU emulator" on \
-		GAMEPORT "Enable standard PC gameport support" off \
-		GDB_STUB "Enable GDB stub support" off \
-		IDLE_HACK "Keep Bochs from using all CPU time" off \
-		INSTRUMENT "Enable support for instrumentation" off \
-		IODEBUG "Enable I/O interface to debugger" off \
-		LARGE_RAMFILE "Enable large ramfile support" off \
-		LOGGING "Enable logging" on \
-		LONG_PHY_ADDR "Enable support for physical address >= 32bit" off \
-		MISALIGNEDSSE "Enable misaligned SSE support" off \
-		MWAIT "Enable experimental MONITOR/MWAIT support" off \
-		NE2000 "Enable limited ne2000 support" on \
-		OPTIMIZATIONS "Enable all safe speeed optimizations" on \
-		PCI "Enable limited i440FX PCI support" on \
-		PLUGINS "Enable building dynamic loadable plugins" off \
-		PNIC "Enable PCI pseudo NIC (network card) support" off \
-		RAW_SERIAL "Use raw serial port access" off \
-		READLINE "Enable readline support in debugger" off \
-		REPEAT_SPEED "Enable repeated IO and mem copy speedups" off \
-		RFB "Enable VNC server support in display" off \
-		SB16 "Enable Sound Blaster 16 emulation" on \
-		SDL "Enable SDL display interface" off \
-		SHOW_IPS "Enable logging of measured IPS" off \
-		SMP "Enable SMP simulation support (CPU level 6)" off \
-		SVGA "Enable SVGAlib support" off \
-		TERM "Use text only, console based interface" off \
-		USB "Enable limited USB UHCI support" off \
-		USB_OHCI "Enable limited USB OHCI support" off \
-		USB_XHCI "Enable limited USB xHCI support" off \
-		VMX "Enable Virtialization extensions" off \
-		WX "Use WxWidgets display interface" off \
-		X11 "Use X11 display interface" on \
-		X86_64 "Enable AMD x86-64 support" off \
-		XPM "Enable XPM library support" off
+OPTIONS_DEFINE=	A20_PIN ALIGN_CHECK ASSERT_CHECK CDROM CHAINING CLGD54XX CONF_MSRS CPP_SUFX \
+		DEBUG DEBUGGER_X86 DISASM DOCS ES1370 FAST_FUNCCALL FPU GAMEPORT IDLE_HACK \
+		INSTRUMENT IODEBUG LARGE_RAMFILE LOGGING LONG_PHY_ADDR MISALIGNEDSSE MWAIT NE2000 \
+		OPTIMIZATIONS PCI PLUGINS PNIC RAW_SERIAL READLINE REPEAT_SPEED RFB SB16 SDL \
+		SHOW_IPS SMP SVGA TERM USB USB_OHCI USB_XHCI VMX WX X11 X86_64 XPM
+OPTIONS_SINGLE=	DEBUG
+OPTIONS_SINGLE_DEBUG=	DEBUGGER GDB_STUB
+OPTIONS_DEFAULT=	A20_PIN ALIGN_CHECK CDROM CONF_MSRS DISASM FPU LOGGING NE2000 \
+			OPTIMIZATIONS SB16 X11
+
+A20_PIN_DESC=	Enable support for A20 pin
+ALIGN_CHECK_DESC=	Enable alignment check support
+ASSERT_CHECK_DESC=	Enable BX_ASSERT checks
+CDROM_DESC=	Enable CDROM support
+CHAINING_DESC=	Enable handlers-chaining emulation speedups
+CLGD54XX_DESC=	Enable Cirrus Logic GD54xx video card
+CONF_MSRS_DESC=	Enable configurable MSR registers support
+CPP_SUFX_DESC=	Use .cpp as C++ suffix
+DEBUG_DESCR=	Enable Debugging, select this and one of DEBUGGER or GDB_STUB (or none)
+DEBUGGER_DESC=	Enable debugger support
+DEBUGGER_X86_DESC=	Enable x86 hardware debugger
+DISASM_DESC=	Enable disassemler support
+ES1370_DESC=	Enable ES1370 soundcard support
+FAST_FUNCCALL_DESC=	Enable fast function calls support (x86 only)
+FPU_DESC=	Enable FPU emulator
+GAMEPORT_DESC=	Enable standard PC gameport support
+GDB_STUB_DESC=	Enable GDB stub support
+IDLE_HACK_DESC=	Keep Bochs from using all CPU time
+INSTRUMENT_DESC=	Enable support for instrumentation
+IODEBUG_DESC=	Enable I/O interface to debugger
+LARGE_RAMFILE_DESC=	Enable large ramfile support
+LOGGING_DESC=	Enable logging
+LONG_PHY_ADDR_DESC=	Enable support for physical address >= 32bit
+MISALIGNEDSSE_DESC=	Enable misaligned SSE support
+MWAIT_DESC=	Enable experimental MONITOR/MWAIT support
+NE2000_DESC=	Enable limited ne2000 support
+OPTIMIZATIONS_DESC=	Enable all safe speed optimizations
+PCI_DESC=	Enable limited i440FX PCI support
+PLUGINS_DESC=	Enable building dynamic loadable plugins
+PNIC_DESC=	Enable PCI pseudo NIC (network card) support
+RAW_SERIAL_DESC=	Use raw serial port access
+READLINE_DESC=	Enable readline support in debugger
+REPEAT_SPEED_DESC=	Enable repeated IO and mem copy speedups
+RFB_DESC=	Enable VNC server support in display
+SB16_DESC=	Enable Sound Blaster 16 emulation
+SDL_DESC=	Enable SDL display interface
+SHOW_IPS_DESC=	Enable logging of measured IPS
+SMP_DESC=	Enable SMP simulation support (CPU level 6)
+SVGA_DESC=	Enable SVGAlib support
+TERM_DESC=	Use text only, console based interface
+USB_DESC=	Enable limited USB UHCI support
+USB_OHCI_DESC=	Enable limited USB OHCI support
+USB_XHCI_DESC=	Enable limited USB xHCI support
+VMX_DESC=	Enable Virtialization extensions
+WX_DESC=	Use WxWidgets display interface
+X86_64_DESC=	Enable AMD x86-64 support
+XPM_DESC=	Enable XPM library support
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
@@ -84,258 +94,258 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_TERM) && defined(WITHOUT_WX) && defined(WITHOUT_X11)
+.if !${PORT_OPTIONS:MTERM} && !${PORT_OPTIONS:MWX} && ${PORT_OPTIONS:MX!!}
 CONFIGURE_ARGS+=--with-nogui
 .endif
 
-.if !defined(WITH_A20_PIN)
-CONFIGURE_ARGS+=--disable-a20-pin
-.else
+.if ${PORT_OPTIONS:MA20_PIN}
 CONFIGURE_ARGS+=--enable-a20-pin
-.endif
-
-.if !defined(WITH_ALIGN_CHECK)
-CONFIGURE_ARGS+=--disable-alignment-check
 .else
-CONFIGURE_ARGS+=--enable-alignment-check
+CONFIGURE_ARGS+=--disable-a20-pin
 .endif
 
-.if defined(WITH_ASSERT_CHECK)
+.if ${PORT_OPTIONS:MALIGN_CHECK}
+CONFIGURE_ARGS+=--enable-alignment-check
+.else
+CONFIGURE_ARGS+=--disable-alignment-check
+.endif
+
+.if ${PORT_OPTIONS:MASSERT_CHECK}
 CONFIGURE_ARGS+=--enable-assert-checks
 .else
 CONFIGURE_ARGS+=--disable-assert-checks
 .endif
 
-.if !defined(WITH_CDROM)
-CONFIGURE_ARGS+=--disable-cdrom
-.else
+.if ${PORT_OPTIONS:MCDROM}
 CONFIGURE_ARGS+=--enable-cdrom
+.else
+CONFIGURE_ARGS+=--disable-cdrom
 .endif
 
-.if defined(WITH_CHAINING)
+.if ${PORT_OPTIONS:MCHAINING}
 CONFIGURE_ARGS+=--enable-handlers-chaining
 .else
 CONFIGURE_ARGS+=--disable-handlers-chaining
 .endif
 
-.if defined(WITH_CLGD54XX)
+.if ${PORT_OPTIONS:MCLGD54XX}
 CONFIGURE_ARGS+=--enable-clgd54xx
 .else
 CONFIGURE_ARGS+=--disable-clgd54xx
 .endif
 
-.if !defined(WITH_CONF_MSRS)
-CONFIGURE_ARGS+=--disable-configurable-msrs
-.else
+.if ${PORT_OPTIONS:MCONF_MSRS}
 CONFIGURE_ARGS+=--enable-configurable-msrs
+.else
+CONFIGURE_ARGS+=--disable-configurable-msrs
 .endif
 
-.if defined(WITH_CPP_SUFX)
+.if ${PORT_OPTIONS:MCPP_SUFX}
 CONFIGURE_ARGS+=--enable-cpp
 .else
 CONFIGURE_ARGS+=--disable-cpp
 .endif
 
-.if defined(WITH_DEBUGGER)
+.if ${PORT_OPTIONS:MDEBUGGER}
 CONFIGURE_ARGS+=--enable-debugger
 .else
 CONFIGURE_ARGS+=--disable-debugger
 .endif
 
-.if defined(WITH_DEBUGGER_X86)
+.if ${PORT_OPTIONS:MDEBUGGER_X86}
 CONFIGURE_ARGS+=--enable-x86-debugger
 .else
 CONFIGURE_ARGS+=--disable-x86-debugger
 .endif
 
-.if !defined(WITH_DISASM)
-CONFIGURE_ARGS+=--disable-disasm
-.else
+.if ${PORT_OPTIONS:MDISASM}
 CONFIGURE_ARGS+=--enable-disasm
+.else
+CONFIGURE_ARGS+=--disable-disasm
 .endif
 
-.if defined(WITH_FAST_FUNCCALL)
+.if ${PORT_OPTIONS:MFAST_FUNCCALL}
 CONFIGURE_ARGS+=--enable-fast-function-calls
 .else
 CONFIGURE_ARGS+=--disable-fast-function-calls
 .endif
 
-.if !defined(WITH_FPU)
-CONFIGURE_ARGS+=--disable-fpu
-.else
+.if ${PORT_OPTIONS:MFPU}
 CONFIGURE_ARGS+=--enable-fpu
+.else
+CONFIGURE_ARGS+=--disable-fpu
 .endif
 
-.if defined(WITH_GAMEPORT)
+.if ${PORT_OPTIONS:MGAMEPORT}
 CONFIGURE_ARGS+=--enable-gameport
 .else
 CONFIGURE_ARGS+=--disable-gameport
 .endif
 
-.if defined(WITH_GDB_STUB)
+.if ${PORT_OPTIONS:MGDB_STUB}
 CONFIGURE_ARGS+=--enable-gdb-stub
 .else
 CONFIGURE_ARGS+=--disable-gdb-stub
 .endif
 
-.if defined(WITH_IDLE_HACK)
+.if ${PORT_OPTIONS:MIDLE_HACK}
 CONFIGURE_ARGS+=--enable-idle-hack
 .else
 CONFIGURE_ARGS+=--disable-idle-hack
 .endif
 
-.if defined(WITH_INSTRUMENT)
+.if ${PORT_OPTIONS:MINSTRUMENT}
 BROKEN=		currently unbuildable
 CONFIGURE_ARGS+=--enable-instrumentation
 .else
 CONFIGURE_ARGS+=--disable-instrumentation
 .endif
 
-.if defined(WITH_IODEBUG)
+.if ${PORT_OPTIONS:MIODEBUG}
 CONFIGURE_ARGS+=--enable-iodebug
 .else
 CONFIGURE_ARGS+=--disable-iodebug
 .endif
 
-.if defined(WITH_LARGE_RAMFILE)
+.if ${PORT_OPTIONS:MLARGE_RAMFILE}
 CONFIGURE_ARGS+=--enable-large-ramfile
 .else
 CONFIGURE_ARGS+=--disable-large-ramfile
 .endif
 
-.if !defined(WITH_LOGGING)
-CONFIGURE_ARGS+=--disable-logging
-.else
+.if ${PORT_OPTIONS:MLOGGING}
 CONFIGURE_ARGS+=--enable-logging
+.else
+CONFIGURE_ARGS+=--disable-logging
 .endif
 
-.if defined(WITH_LONG_PHY_ADDR)
+.if ${PORT_OPTIONS:MLONG_PHY_ADDR}
 CONFIGURE_ARGS+=--enable-long-phy-address
 .else
 CONFIGURE_ARGS+=--disable-long-phy-address
 .endif
 
-.if defined(WITH_MISALIGNEDSSE)
+.if ${PORT_OPTIONS:MMISALIGNEDSSE}
 CONFIGURE_ARGS+=--enable-misaligned-sse
 .else
 CONFIGURE_ARGS+=--disable-misaligned-sse
 .endif
 
-.if defined(WITH_MWAIT)
+.if ${PORT_OPTIONS:MMWAIT}
 CONFIGURE_ARGS+=--enable-monitor-mwait
 .else
 CONFIGURE_ARGS+=--disable-monitor-mwait
 .endif
 
-.if defined(WITH_NE2000)
+.if ${PORT_OPTIONS:MNE2000}
 CONFIGURE_ARGS+=--enable-ne2000
 .else
 CONFIGURE_ARGS+=--disable-ne2000
 .endif
 
-.if defined(WITH_OPTIMIZATIONS)
+.if ${PORT_OPTIONS:MOPTIMIZATIONS}
 CONFIGURE_ARGS+=--enable-all-optimizations
 .else
 CONFIGURE_ARGS+=--disable-all-optimizations
 .endif
 
-.if defined(WITH_PCI)
+.if ${PORT_OPTIONS:MPCI}
 CONFIGURE_ARGS+=--enable-pci
 .else
 CONFIGURE_ARGS+=--disable-pci
 .endif
 
-.if defined(WITH_PLUGINS)
+.if ${PORT_OPTIONS:MPLUGINS}
 CONFIGURE_ARGS+=--enable-plugins
 .else
 CONFIGURE_ARGS+=--disable-plugins
 .endif
 
-.if defined(WITH_PNIC)
+.if ${PORT_OPTIONS:MPNIC}
 CONFIGURE_ARGS+=--enable-pnic
 .else
 CONFIGURE_ARGS+=--disable-pnic
 .endif
 
-.if defined(WITH_RAW_SERIAL)
+.if ${PORT_OPTIONS:MRAW_SERIAL}
 CONFIGURE_ARGS+=--enable-raw-serial
 .else
 CONFIGURE_ARGS+=--disable-raw-serial
 .endif
 
-.if defined(WITH_READLINE)
+.if ${PORT_OPTIONS:MREADLINE}
 CONFIGURE_ARGS+=--enable-readline
 .else
 CONFIGURE_ARGS+=--disable-readline
 .endif
 
-.if defined(WITH_REPEAT_SPEED)
+.if ${PORT_OPTIONS:MREPEAT_SPEED}
 CONFIGURE_ARGS+=--enable-repeat-speedups
 .else
 CONFIGURE_ARGS+=--disable-repeat-speedups
 .endif
 
-.if defined(WITH_RFB)
+.if ${PORT_OPTIONS:MRFB}
 CONFIGURE_ARGS+=--with-rfb
 .else
 CONFIGURE_ARGS+=--without-rfb
 .endif
 
-.if defined(WITH_SB16)
+.if ${PORT_OPTIONS:MSB16}
 CONFIGURE_ARGS+=--enable-sb16
 .endif
 
-.if defined(WITH_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	sdl
 CONFIGURE_ARGS+=--with-sdl
 .endif
 
-.if defined(WITH_SHOW_IPS)
+.if ${PORT_OPTIONS:MSHOW_IPS}
 CONFIGURE_ARGS+=--enable-show-ips
 .else
 CONFIGURE_ARGS+=--disable-show-ips
 .endif
 
-.if defined(WITH_SMP)
+.if ${PORT_OPTIONS:MSMP}
 CONFIGURE_ARGS+=--enable-smp
 WITH_CPU_LEVEL=	6
 .endif
 
-.if defined(WITH_SVGA)
+.if ${PORT_OPTIONS:MSVGA}
 LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 CONFIGURE_ARGS+=--with-svga
 .endif
 
-.if defined(WITH_TERM)
+.if ${PORT_OPTIONS:MTERM}
 CONFIGURE_ARGS+=--with-term
 .endif
 
-.if defined(WITH_USB)
+.if ${PORT_OPTIONS:MUSB}
 CONFIGURE_ARGS+=--enable-usb
 .else
 CONFIGURE_ARGS+=--disable-usb
 .endif
 
-.if defined(WITH_USB_OHCI)
+.if ${PORT_OPTIONS:MUSB_OHCI}
 CONFIGURE_ARGS+=--enable-usb-ohci
 .else
 CONFIGURE_ARGS+=--disable-usb-ohci
 .endif
 
-.if defined(WITH_USB_XHCI)
+.if ${PORT_OPTIONS:MUSB_XHCI}
 CONFIGURE_ARGS+=--enable-usb-xhci
 .else
 CONFIGURE_ARGS+=--disable-usb-xhci
 .endif
 
-.if defined(WITH_VMX)
+.if ${PORT_OPTIONS:MVMX}
 CONFIGURE_ARGS+=--enable-vmx
 WITH_CPU_LEVEL=	6
 .else
 CONFIGURE_ARGS+=--disable-vmx
 .endif
 
-.if defined(WITH_WX)
+.if ${PORT_OPTIONS:MWX}
 USE_WX=		2.4+
 CONFIGURE_ENV=	WX_CONFIG="${WX_CONFIG}"
 CONFIGURE_ARGS+=--with-wx
@@ -343,18 +353,18 @@ CONFIGURE_ARGS+=--with-wx
 CONFIGURE_ARGS+=--disable-debugger-gui
 .endif
 
-.if defined(WITH_X11)
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=	xrandr
 CONFIGURE_ARGS+=--with-x11
 .endif
 
-.if defined(WITH_X86_64)
+.if ${PORT_OPTIONS:MX86_64}
 CONFIGURE_ARGS+=--enable-x86-64
 .else
 CONFIGURE_ARGS+=--disable-x86-64
 .endif
 
-.if defined(WITH_XPM) && defined(WITH_X11)
+.if ${PORT_OPTIONS:MXPM} && ${PORT_OPTIONS:MX11}
 USE_XORG+=	xpm
 CONFIGURE_ARGS+=--enable-xpm
 .else
@@ -368,16 +378,12 @@ IGNORE=		can not install: WITH_CPU_LEVEL must be an integer value between 3 and 
 CONFIGURE_ARGS+=--enable-cpu-level=${WITH_CPU_LEVEL}
 .endif
 
-.if defined(WITH_SB16) || defined(WITH_ES1370)
+.if ${PORT_OPTIONS:MSB16} || ${PORT_OPTIONS:MES1370}
 LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
 CONFIGURE_ENV+=	SOUND_LINK_OPTS="-L${LOCALBASE}/lib"
 .endif
 
-.if defined(WITH_DEBUGGER) && defined(WITH_GDB_STUB)
-IGNORE=		DEBUGGER and GDB_STUB are mutialy exclusive
-.endif
-
-.if defined(WITH_GDB_STUB) && defined(WITH_SMP)
+.if ${PORT_OPTIONS:MGDB_STUB} && ${PORT_OPTIONS:MSMP}
 IGNORE=		GDB_STUB is incompatible with multiprocessor
 .endif
 
@@ -413,13 +419,13 @@ post-patch:
 		 ${WRKSRC}/gui/Makefile.in
 
 post-install:
-.if defined(WITH_PLUGINS)
+.if ${PORT_OPTIONS:MPLUGINS}
 	@${FIND} ${PREFIX}/lib/bochs ! -type d | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${PREFIX}/lib/bochs -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}/CHANGES
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
