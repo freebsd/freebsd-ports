@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.42.2
+PORTVERSION=	1.42.3
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/v${PORTVERSION}
@@ -24,9 +24,11 @@ CONFIGURE_ARGS+=--disable-fsck --disable-e2initrd-helper \
 CPPFLAGS+=	-I${WRKSRC}/lib -I${LOCALBASE}/include # -D_EXT2_USE_C_VERSIONS
 MAKE_ARGS+=	LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib'
 
-OPTIONS?=	NLS "Enable national language support" on
-
 .if !defined(MASTERDIR)
+OPTIONS_DEFINE=		DOCS NLS
+OPTIONS_DEFAULT=	NLS
+OPTIONS_EXCLUDE+=	EXAMPLES
+
 MAN1=		chattr.1 lsattr.1
 MAN5=		e2fsck.conf.5 mke2fs.conf.5
 MAN8=		badblocks.8 debugfs.8 dumpe2fs.8 e2fsck.8 e2image.8 e2label.8 \
@@ -52,14 +54,14 @@ MAKE_ARGS+=	V=1
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB=	NLS="@comment "
-libintl=
-.else
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB=	NLS=""
 libintl=	"${LOCALBASE}/lib/libintl.a ${LOCALBASE}/lib/libiconv.a"
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB=	NLS="@comment "
+libintl=
 .endif
 
 post-patch::
@@ -70,6 +72,7 @@ post-patch::
 	@${REINPLACE_CMD} -e 's/ install-doc-libs$$//' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -E -e 's/md5sum ([^ ]*)/printf "%s  %s\\n" $$(md5 -q \1) \1/' \
 	    -e "s/ == 0/ = 0/" ${WRKSRC}/tests/[a-t]_*/script
+	@${REINPLACE_CMD} -e 's/<malloc\.h>/<stdlib.h>/' ${WRKSRC}/*/*.c
 # disable f_mmp_garbage, fails on FreeBSD
 .for i in f_mmp_garbage m_bigjournal
 	@${MV} ${WRKSRC}/tests/${i} ${WRKSRC}/tests/disabled_test-${i}
@@ -98,7 +101,7 @@ post-build:
 	if test "x$$a" = "x" ; then echo 'PASS' ; else \
 	    echo 'FAIL' ; echo '===>  e2fsck depends on:' ; echo "$$a" ; exit 1 ; fi
 # Update translation binary files
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	cd ${WRKSRC}/po && ${GMAKE} update-gmo
 .endif
 # Build fsck(8) wrapper
@@ -118,7 +121,7 @@ post-build:
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fsck_ext2fs ${PREFIX}/sbin/
 	${INSTALL_MAN} ${FILESDIR}/fsck_ext2fs.8 ${PREFIX}/man/man8/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
