@@ -24,7 +24,7 @@ LICENSE=	AL2
 
 NO_LATEST_LINK=	yes
 
-USE_GNOME=	desktopfileutils gtk20 libxslt libidl gconf2 gnomevfs2 glib20
+USE_GNOME=	desktopfileutils gtk20 libxslt libidl glib20
 USE_XORG=	x11 ice xaw xau xext xrender xrandr \
 		xi xt xcursor xdamage xcomposite xfixes
 USE_GL=		gl glu
@@ -37,12 +37,28 @@ USE_BZIP2=	yes
 WITHOUT_CPU_CFLAGS=	true
 MAKE_JOBS_SAFE=	yes
 
+OPTIONS_DEFINE=	GCONF GNOMEVFS
+OPTIONS_DEFAULT=GCONF GNOMEVFS
+GNOMEVFS_DESC=	Enable GNOME Virtual File System
+
 .include <bsd.port.pre.mk>
 
 USE_JAVA=	yes
 JAVA_BUILD=	jdk
 JAVA_VENDOR=	freebsd bsdjava openjdk
 JAVA_VERSION=	1.5 1.6
+
+.if !defined(WITHOUT_GCONF)
+USE_GNOME+=	gconf2
+.else
+CONFIGURE_ARGS+=--disable-gconf
+.endif
+
+.if !defined(WITHOUT_GNOMEVFS)
+USE_GNOME+=	gnomevfs2
+.else
+CONFIGURE_ARGS+=--disable-gnome-vfs
+.endif
 
 .include <${FILESDIR}/Makefile.localized>
 
