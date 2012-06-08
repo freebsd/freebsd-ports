@@ -7,7 +7,7 @@
 
 PORTNAME=	maia
 DISTVERSION=	1.0.3-${SVNREVISION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.purplehat.org/downloads/maia/
 
@@ -100,7 +100,7 @@ USE_APACHE=	20+
 .if defined(WITH_WEBHOST)
 USE_PHP=	bcmath ctype dom gettext hash iconv imap json mbstring \
 		mcrypt pdo pdo_sqlite posix session simplexml sockets \
-		sqlite tokenizer xml wddx xmlreader xmlwriter xmlrpc
+		sqlite3 tokenizer xml wddx xmlreader xmlwriter xmlrpc
 .endif
 
 .if defined(WITH_MYSQL)
