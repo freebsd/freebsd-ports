@@ -27,6 +27,7 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-dahdi=../freebsd --sysconfdir=${PREFIX}/etc --with-newt=${LOCALBASE}
 CONFIGURE_ENV=	WGET=/usr/bin/fetch
 WRKSRC=		${WRKDIR}/${DISTNAME}/tools
+PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 USE_LDCONFIG=	yes
 
 CONFLICTS=	zaptel-[0-9]*
@@ -46,7 +47,7 @@ post-patch:
 post-install:
 	@${ECHO_CMD} "==> Installing dahdi-kmod userland includes"
 	@${MKDIR} ${PREFIX}/include/dahdi/compat
-	@for i in `${MAKE} -C ${WRKSRC}/../freebsd/freebsd/dahdi -V INCS`; do\
+	@for i in `${MAKE} -C ${WRKSRC}/../freebsd/freebsd/dahdi -DPRINT_INCS -V INCS`; do\
 		${ECHO_CMD} "Installing $$i";\
 		${INSTALL_DATA} ${WRKSRC}/../freebsd/include/dahdi/$$i ${PREFIX}/include/dahdi/$$i;\
 	done

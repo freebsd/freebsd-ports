@@ -1,0 +1,10 @@
+--- freebsd/freebsd/dahdi/Makefile.orig	2012-06-08 16:19:22.000000000 +0700
++++ freebsd/freebsd/dahdi/Makefile	2012-06-08 16:19:09.000000000 +0700
+@@ -20,5 +20,7 @@
+ 	${INSTALL_DATA} ${INCLUDEDIR}/dahdi/${_h} ${PREFIX}/include/dahdi/${_h:H}
+ .endfor
+ 
++.if !defined(PRINT_INCS)
+ .include <bsd.kmod.mk>
++.endif
+ .include <bsd.own.mk>
