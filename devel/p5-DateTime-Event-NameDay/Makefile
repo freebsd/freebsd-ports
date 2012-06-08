@@ -15,9 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl DateTime extension to work with namedays from various countries
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
-		${SITE_PERL}/DateTime/Set.pm:${PORTSDIR}/devel/p5-DateTime-Set \
-		${SITE_PERL}/DateTime/Calendar/Christian.pm:${PORTSDIR}/devel/p5-DateTime-Calendar-Christian \
+RUN_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
+		p5-DateTime-Set>=0:${PORTSDIR}/devel/p5-DateTime-Set \
+		p5-DateTime-Calendar-Christian>=0:${PORTSDIR}/devel/p5-DateTime-Calendar-Christian \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
 BUILD_DEPENDS=	${RUN_DEPENDS}
 

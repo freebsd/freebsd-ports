@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Object-oriented delegation
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version
+BUILD_DEPENDS=	p5-version>=0:${PORTSDIR}/devel/p5-version
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
