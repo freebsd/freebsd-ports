@@ -29,43 +29,38 @@ USE_GMAKE=	yes
 CONFIGURE_ENV=	FLTK_CONFIG="${LOCALBASE}/bin/fltk-config"
 MAN1=		fldigi.1
 
-OPTIONS=	NATIVE_OPT	"Enable Native Optimizations"		off \
-		NLS		"Use NLS"				off \
-		FLARQ		"Compile flarq"				on \
-		XMLRPC		"Support XMLrpc (fldigi-shell)"		off \
-		OSS		"Support OSS"				on \
-		SNDFILE		"Support for libsndfile"		off \
-		PORTAUDIO	"PortAudio support"			off \
-		PULSEAUDIO	"PulseAudio support"			off \
-		HAMLIB		"Support rig control via hamlib"	on \
+OPTIONS_DEFINE=	NATIVE_OPT FLARQ XMLRPC OSS SNDFILE PORTAUDIO PULSEAUDIO HAMLIB
+
+NATIVE_OPT_DESC=	Enable Native Optimizations
+FLARQ_DESC=		Compile flarq
+XMLRPC_DESC=		Support XMLrpc (fldigi-shell)
+OSS_DESC=		Support OSS
+SNDFILE_DESC=		Support for libsndfile
+PORTAUDIO_DESC=		PortAudio support
+PULSEAUDIO_DESC=	PulseAudio support
+HAMLIB_DESC=		Support rig control via hamlib
+
+OPTIONS_DEFAULT=	OPTFLARQ OPTOSS HAMLIB
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Fails to install
 .endif
-.if defined(WITH_NATIVE_OPT)
+.if ${PORT_OPTIONS:MNATIVE_OPT}
 CONFIGURE_ARGS+=--enable-optimizations=native
 .else
 CONFIGURE_ARGS+=--enable-optimizations=none
 .endif
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
-CONFIGURE_ARGS+=--enable-nls
-PLIST_SUB+=	NLS=""
-USE_GETTEXT=	yes
-.endif
-.if defined(WITHOUT_FLARQ)
-CONFIGURE_ARGS+=--disable-flarq
-PLIST_SUB+=	FLARQ="@comment "
-.else
+.if ${PORT_OPTIONS:MFLARQ}
 CONFIGURE_ARGS+=--enable-flarq
 MAN1+=		flarq.1
 PLIST_SUB+=	FLARQ=""
+.else
+CONFIGURE_ARGS+=--disable-flarq
+PLIST_SUB+=	FLARQ="@comment "
 .endif
-.if defined(WITH_XMLRPC)
+.if ${PORT_OPTIONS:MXMLRPC}
 CONFIGURE_ARGS+=--with-xmlrpc
 LIB_DEPENDS+=	xmlrpc:${PORTSDIR}/net/xmlrpc-c
 PLIST_SUB+=	XMLRPC=""
@@ -74,35 +69,43 @@ MAN1+=		fldigi-shell.1
 CONFIGURE_ARGS+=--without-xmlrpc
 PLIST_SUB+=	XMLRPC="@comment "
 .endif
-.if defined(WITH_OSS)
+.if ${PORT_OPTIONS:MOSS}
 CONFIGURE_ARGS+=--enable-oss
 .else
 CONFIGURE_ARGS+=--disable-oss
 .endif
-.if defined(WITH_SNDFILE)
+.if ${PORT_OPTIONS:MSNDFILE}
 CONFIGURE_ARGS+=--with-sndfile
 LIB_DEPENDS+=	sndfile:${PORTSDIR}/audio/libsndfile
 .else
 CONFIGURE_ARGS+=--without-sndfile
 .endif
-.if defined(WITH_PORTAUDIO)
+.if ${PORT_OPTIONS:MPORTAUDIO}
 CONFIGURE_ARGS+=--with-portaudio
 BUILD_DEPENDS+=	${LOCALBASE}/lib/portaudio2/libportaudio.so:${PORTSDIR}/audio/portaudio2
 RUN_DEPENDS+=	${LOCALBASE}/lib/portaudio2/libportaudio.so:${PORTSDIR}/audio/portaudio2
 .else
 CONFIGURE_ARGS+=--without-portaudio
 .endif
-.if defined(WITH_PULSEAUDIO)
+.if ${PORT_OPTIONS:MPULSEAUDIO}
 CONFIGURE_ARGS+=--with-pulseaudio
 LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
 .else
 CONFIGURE_ARGS+=--without-pulseaudio
 .endif
-.if defined(WITH_HAMLIB)
+.if ${PORT_OPTIONS:MHAMLIB}
 CONFIGURE_ARGS+=--with-hamlib
 LIB_DEPENDS+=	hamlib:${PORTSDIR}/comms/hamlib
 .else
 CONFIGURE_ARGS+=--without-hamlib
+.endif
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+CONFIGURE_ARGS+=--enable-nls
+PLIST_SUB+=	NLS=""
+USE_GETTEXT=	yes
 .endif
 .if	!defined(NOPORTDOCS)
 CONFIGURE_ARGS+=--with-asciidoc
