@@ -14,7 +14,7 @@ MASTER_SITES=	http://qosient.com/argus/src/ \
 MAINTAINER=	support@spectrum.ru
 COMMENT=	A generic IP network transaction auditing tool
 
-CONFLICTS=	argus-2* argus-sasl-2*
+CONFLICTS=	argus-2* argus-sasl-2* argus-clients-2*
 
 OPTIONS+=	SASL "SASL authentication support" on
 
