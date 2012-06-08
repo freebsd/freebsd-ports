@@ -80,7 +80,6 @@ MAN3=		Config::Model.3 \
 		Config::Model::ListId.3 \
 		Config::Model::Lister.3 \
 		Config::Model::Loader.3 \
-		Config::Model::Manual::DataMigration.3 \
 		Config::Model::Manual::ModelCreationAdvanced.3 \
 		Config::Model::Manual::ModelCreationIntroduction.3 \
 		Config::Model::Node.3 \
