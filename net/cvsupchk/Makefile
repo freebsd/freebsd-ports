@@ -15,6 +15,7 @@ MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Check a CVSup directory hierarchy against the checkouts file
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/cvsup-without-gui:extract
+FETCH_DEPENDS:=	${EXTRACT_DEPENDS}
 
 PLIST_FILES=	bin/cvsupchk
 PORTDOCS=	*
