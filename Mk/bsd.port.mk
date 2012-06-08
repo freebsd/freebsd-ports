@@ -3270,7 +3270,8 @@ DEPENDS_ARGS+=	NOCLEANDEPENDS=yes
 # target or not.
 #
 ################################################################
-.if (!defined(OPTIONS) || defined(CONFIG_DONE_${UNIQUENAME:U}) || \
+.if ((!defined(OPTIONS_DEFINE) && !defined(OPTIONS_SINGLE) && !defined(OPTIONS_MULTI)) \
+	|| defined(CONFIG_DONE_${UNIQUENAME:U}) || \
 	defined(PACKAGE_BUILDING) || defined(BATCH))
 _OPTIONS_OK=yes
 .endif
@@ -6093,7 +6094,7 @@ config-recursive:
 .if !target(config-conditional)
 config-conditional: pre-config
 .if defined(_COMPLETE_OPTIONS_LIST) && !defined(NO_DIALOG)
-.  if ${_COMPLETE_OPTIONS_LIST} != "${_FILE_COMPLETE_OPTIONS_LIST}"
+.  if ${_COMPLETE_OPTIONS_LIST:O} != ${_FILE_COMPLETE_OPTIONS_LIST:O}
 	@cd ${.CURDIR} && ${MAKE} config;
 .  endif
 .endif
