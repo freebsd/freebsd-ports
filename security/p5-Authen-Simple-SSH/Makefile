@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple SSH authentication
 
-BUILD_DEPENDS=	${SITE_PERL}/Authen/Simple.pm:${PORTSDIR}/security/p5-Authen-Simple \
-		${SITE_PERL}/Net/SSH/Perl.pm:${PORTSDIR}/net/p5-Net-SSH-Perl
+BUILD_DEPENDS=	p5-Authen-Simple>=0:${PORTSDIR}/security/p5-Authen-Simple \
+		p5-Net-SSH-Perl>=0:${PORTSDIR}/net/p5-Net-SSH-Perl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAKE_JOBS_SAFE=  yes

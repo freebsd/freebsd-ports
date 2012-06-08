@@ -14,8 +14,8 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=		perl@FreeBSD.org
 COMMENT=		Attribute::Persistent - Really lazy persistence
 
-BUILD_DEPENDS=		${SITE_PERL}/Attribute/Handlers/Prospective.pm:${PORTSDIR}/devel/p5-Attribute-Handlers-Prospective \
-			${SITE_PERL}/MLDBM.pm:${PORTSDIR}/databases/p5-MLDBM
+BUILD_DEPENDS=		p5-Attribute-Handlers-Prospective>=0:${PORTSDIR}/devel/p5-Attribute-Handlers-Prospective \
+			p5-MLDBM>=0:${PORTSDIR}/databases/p5-MLDBM
 
 PERL_CONFIGURE=		yes
 

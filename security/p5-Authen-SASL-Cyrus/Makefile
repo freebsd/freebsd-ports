@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	XS SASL Authentication
 
-BUILD_DEPENDS=	${SITE_PERL}/Authen/SASL.pm:${PORTSDIR}/security/p5-Authen-SASL
+BUILD_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL
 LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
