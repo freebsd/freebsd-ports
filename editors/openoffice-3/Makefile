@@ -7,7 +7,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	3.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors java
 MASTER_SITES=	http://people.apache.org/~jsc/aoo34-rc/rc1/src/ ${MASTER_SITE_LOCAL}:extsrc
 MASTER_SITE_SUBDIR=	maho/openoffice:extsrc
