@@ -23,16 +23,19 @@ MAN1=		ypsilon.1
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-post-patch:
+.include <bsd.port.pre.mk>
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
 	@${MKDIR} ${DATADIR}
 	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "sitelib stdlib" ${DATADIR})
-.ifndef (NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/example/*.scm ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+regression-test: build
+	cd ${WRKSRC} && ${GMAKE} check
+
+.include <bsd.port.post.mk>
