@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	compat
-PORTVERSION=	${CVER}.${CREV}
+DISTVERSION=	${CVER}${CREV}
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://luaforge.net/frs/download.php/1410/
+MASTER_SITES=	http://files.luaforge.net/releases/compat/Compat-5.1/Compat-5.1release5/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
