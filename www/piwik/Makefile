@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	piwik
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8.1
 CATEGORIES=	www
 MASTER_SITES=	http://builds.piwik.org/
 
@@ -20,6 +20,9 @@ NO_BUILD=	yes
 SUB_FILES=	pkg-message
 USE_PHP=	dom gd iconv json mysql pdo pdo_mysql session xml zlib
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+post-patch:
+	@cd $(WRKSRC)/misc/log-analytics && $(RM) -rf import_logs.py.orig
 
 pre-install:
 	@if [ ! -f ${LOCALBASE}/bin/php ]; then \
