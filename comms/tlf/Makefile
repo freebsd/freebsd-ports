@@ -23,13 +23,16 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
 		--libdir="${LOCALBASE}/lib"
 LDFLAGS+=	${PTHREAD_LIBS}
-OPTIONS=	HAMLIB "Use hamlib" ON
+
+OPTIONS_DEFINE=	HAMLIB
+HAMLIB_DESC=	Use hamlib
+OPTION_DEFAULT=	HAMLIB
 
 MAN1=		tlf.1
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_HAMLIB)
+.if ${PORT_OPTIONS:MHAMLIB}
 LIB_DEPENDS+=	hamlib:${PORTSDIR}/comms/hamlib
 CONFIGURE_ARGS+=	--enable-hamlib
 .else
