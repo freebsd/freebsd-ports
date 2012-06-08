@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	file-tail
-PORTVERSION=	1.0.8
+PORTVERSION=	1.0.10
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	freebsdports@chillibear.com
 COMMENT=	This is a small Ruby library that allows Ruby to 'tail' files
 
-RUN_DEPENDS=	rubygem-tins>=0.3:${PORTSDIR}/devel/rubygem-tins
+RUN_DEPENDS=	rubygem-tins>=0.4.3:${PORTSDIR}/devel/rubygem-tins
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
