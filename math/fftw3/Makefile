@@ -34,8 +34,8 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 MAN1=	fftw-wisdom-to-conf.1 fftw-wisdom.1
 INFO=	fftw3
 .else
-#For non-default flavors, only build and install the flavor-dependent components,
-#so that these flavors may coexist with the default flavor
+#For non-default flavors, build and install the flavor-dependent components
+#only, so that these flavors may coexist with the default flavor
 MAN1=	fftw${FFTW3_SUFX}-wisdom.1
 INSTALL_TARGET=	install-pkgconfigDATA install-libLTLIBRARIES install-exec
 .endif
@@ -50,6 +50,10 @@ OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MOPENMP}
+.if !empty(CC:T:M*clang*)
+IGNORE =	: clang does not support OpenMP. Disable the OPENMP option or\
+use another compiler
+.endif
 CONFIGURE_ARGS+=	--enable-openmp
 PLIST_SUB+=	OPENMP=""
 .else
