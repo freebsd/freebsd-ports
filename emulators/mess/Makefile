@@ -19,7 +19,9 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	liberation-fonts-ttf>=0:${PORTSDIR}/x11-fonts/liberation-fonts-ttf
 
-OPTIONS=	BUILTIN_DEBUGGER "Enable builtin debugger support" off
+OPTIONS_DEFINE=	BUILTIN_DEBUGGER DOCS
+
+BUILTIN_DEBUGGER_DESCR=	Enable builtin debugger support
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -41,7 +43,7 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_BUILTIN_DEBUGGER)
+.if ${PORT_OPTIONS:MBUILTIN_DEBUGGER}
 USE_GNOME=	gtk20 gconf2
 MAKE_ENV+=	GTK_INCPATH="$$(pkg-config --cflags-only-I gtk+-2.0 gconf-2.0)" \
 		GTK_CCOMFLAGS="$$(pkg-config --cflags-only-other gtk+-2.0 gconf-2.0)" \
@@ -86,12 +88,12 @@ do-install:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} artwork ${DATADIR})
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} hash ${DATADIR})
 	@(cd ${WRKSRC}/src/osd/sdl && ${COPYTREE_SHARE} keymaps ${DATADIR})
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${DOCSDIR})
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${FILESDIR}/mess.ini ${EXAMPLESDIR}
 .endif
