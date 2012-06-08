@@ -19,7 +19,7 @@ COMMENT=	Provide an easy API to write one's own vnc server
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png:${PORTSDIR}/graphics/png
+		png15:${PORTSDIR}/graphics/png
 
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
