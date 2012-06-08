@@ -20,7 +20,7 @@ COMMENT=	Plugin for SpamAssassin which scans image attachments for spam
 RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm			\
 		import:${PORTSDIR}/graphics/ImageMagick			\
 		gocr:${PORTSDIR}/graphics/gocr				\
-		gif2ps:${PORTSDIR}/graphics/giflib			\
+		gifasm:${PORTSDIR}/graphics/giflib			\
 		spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin	\
 		p5-String-Approx>=0:${PORTSDIR}/devel/p5-String-Approx
 
