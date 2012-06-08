@@ -102,11 +102,7 @@ RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .elif ${DB_TYPE:Msybase}
 RUN_DEPENDS+=	p5-DBD-Sybase>=0:${PORTSDIR}/databases/p5-DBD-Sybase
 .elif ${DB_TYPE:Mmysql}
-. if exists (${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER}/Makefile)
-RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER}
-. else
-IGNORE=	Your MySQL installation is at ${MYSQL_VER}, and there is no p5-DBD-mysql${MYSQL_VER} port
-. endif
+RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
 pre-fetch:
