@@ -266,6 +266,7 @@
     SUBDIR += freqsdwn
     SUBDIR += froxlor
     SUBDIR += fsbackup
+    SUBDIR += fsc
     SUBDIR += fstyp
     SUBDIR += ftwin
     SUBDIR += fusefs-afuse
