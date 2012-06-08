@@ -28,7 +28,7 @@ BUILD_DEPENDS=	p5-libapreq2>=0:${PORTSDIR}/www/p5-libapreq2 \
 		p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
 		p5-HTML-StickyQuery>=0:${PORTSDIR}/www/p5-HTML-StickyQuery \
 		p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
-		p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode \
+		ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-Data-Properties>=0:${PORTSDIR}/devel/p5-Data-Properties \

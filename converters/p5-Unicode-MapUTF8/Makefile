@@ -16,7 +16,7 @@ COMMENT=	Perl class that implements conversion between arbitrary charsets
 BUILD_DEPENDS=	p5-Unicode-Map>=0:${PORTSDIR}/converters/p5-Unicode-Map \
 		p5-Unicode-String>=0:${PORTSDIR}/converters/p5-Unicode-String \
 		p5-Unicode-Map8>=0:${PORTSDIR}/converters/p5-Unicode-Map8 \
-		p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode
+		ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
