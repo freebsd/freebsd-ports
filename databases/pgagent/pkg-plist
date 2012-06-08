@@ -1,0 +1,6 @@
+bin/pgagent
+%%DATADIR%%/LICENSE
+%%DATADIR%%/README
+%%DATADIR%%/pgagent.sql
+%%DATADIR%%/pgagent_upgrade.sql
+@dirrm %%DATADIR%%
