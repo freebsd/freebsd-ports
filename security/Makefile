@@ -211,7 +211,6 @@
     SUBDIR += iaikpkcs11wrapper
     SUBDIR += idea
     SUBDIR += identify
-    SUBDIR += ifd-devkit
     SUBDIR += ifd-slb_rf60
     SUBDIR += ike
     SUBDIR += ike-scan
