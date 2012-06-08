@@ -1,4 +1,5 @@
 bin/gnunet-fs-gtk
+bin/gnunet-gns-gtk
 bin/gnunet-peerinfo-gtk
 bin/gnunet-setup
 bin/gnunet-statistics-gtk
@@ -9,6 +10,7 @@ lib/libgnunetgtk.so
 lib/libgnunetgtk.so.2
 share/applications/gnunet-fs-gtk.desktop
 share/applications/gnunet-setup.desktop
+share/gnunet-gtk/config.d/gnunet-fs-gtk.conf
 share/gnunet-gtk/flags/ad.png
 share/gnunet-gtk/flags/ae.png
 share/gnunet-gtk/flags/af.png
@@ -255,6 +257,7 @@ share/gnunet-gtk/gnunet_fs_gtk_create_namespace_dialog.glade
 share/gnunet-gtk/gnunet_fs_gtk_download_as_dialog.glade
 share/gnunet-gtk/gnunet_fs_gtk_edit_publication.glade
 share/gnunet-gtk/gnunet_fs_gtk_main_window.glade
+share/gnunet-gtk/gnunet_fs_gtk_namespace_manager.glade
 share/gnunet-gtk/gnunet_fs_gtk_open_directory_dialog.glade
 share/gnunet-gtk/gnunet_fs_gtk_open_url_dialog.glade
 share/gnunet-gtk/gnunet_fs_gtk_progress_dialog.glade
@@ -264,6 +267,10 @@ share/gnunet-gtk/gnunet_fs_gtk_publish_file_dialog.glade
 share/gnunet-gtk/gnunet_fs_gtk_publish_tab.glade
 share/gnunet-gtk/gnunet_fs_gtk_search_tab.glade
 share/gnunet-gtk/gnunet_fs_gtk_select_pseudonym_dialog.glade
+share/gnunet-gtk/gnunet_fs_gtk_unindex.glade
+share/gnunet-gtk/gnunet_gns_gtk_about_window.glade
+share/gnunet-gtk/gnunet_gns_gtk_main_window.glade
+share/gnunet-gtk/gnunet_gns_gtk_zone_open.glade
 share/gnunet-gtk/gnunet_gtk_status_bar_menu.glade
 share/gnunet-gtk/gnunet_logo.png
 share/gnunet-gtk/gnunet_peerinfo_gtk_about_window.glade
@@ -275,7 +282,6 @@ share/icons/hicolor/16x16/apps/gnunet-fs-gtk.png
 share/icons/hicolor/22x22/apps/gnunet-fs-gtk.png
 share/icons/hicolor/24x24/apps/gnunet-fs-gtk.png
 share/icons/hicolor/32x32/apps/gnunet-fs-gtk.png
-share/icons/hicolor/icon-theme.cache
 share/icons/hicolor/scalable/apps/gnunet-fs-gtk.svg
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
@@ -290,6 +296,7 @@ share/icons/hicolor/scalable/apps/gnunet-fs-gtk.svg
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 @dirrm share/gnunet-gtk/flags
+@dirrm share/gnunet-gtk/config.d
 @dirrm share/gnunet-gtk
 @dirrmtry share/applications
 @dirrm include/gnunet-gtk

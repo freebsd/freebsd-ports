@@ -7,7 +7,7 @@
 #
 
 PORTNAME=		gnunet-gtk
-DISTVERSION=		0.9.2
+DISTVERSION=		0.9.3
 CATEGORIES=		net-p2p ipv6 security
 MASTER_SITES=		GNU
 MASTER_SITE_SUBDIR=	gnunet
