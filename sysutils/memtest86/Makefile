@@ -14,6 +14,8 @@ DISTFILES=	${DISTNAME:S,b,s,}${EXTRACT_SUFX} ${DISTNAME:S,b,s,}.iso.zip
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Stand alone memory test for x86 architecture computers
 
+EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+
 ONLY_FOR_ARCHS=	i386
 
 NO_BUILD=	yes
@@ -26,13 +28,13 @@ PLIST_DIRS=	%%DATADIR%%
 SUB_FILES=	pkg-message
 
 post-extract:
-	@${UNZIP_CMD} -qo ${DISTDIR}/${DISTNAME}.iso.zip -d ${WRKSRC}
+	@${UNZIP_CMD} -qo ${DISTDIR}/${DISTNAME:S,b,s,}.iso.zip -d ${WRKSRC}
 
 do-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC:S,b,s,}/precomp.bin ${DATADIR}/floppy.bin
 	${INSTALL_DATA} ${WRKSRC}/Memtest86_${PORTVERSION:S,b,s,}.iso \
-			${DATADIR}/Memtest86_${PORTVERSION:S,b,s,}.iso
+			${DATADIR}/Memtest86_${PORTVERSION:S,b,,}.iso
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
