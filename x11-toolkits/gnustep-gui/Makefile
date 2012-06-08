@@ -19,6 +19,9 @@ MASTER_SITE_SUBDIR=	core
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep GUI library
 
+.if !defined(NOPORTDOCS)
+BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
+.endif
 LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
