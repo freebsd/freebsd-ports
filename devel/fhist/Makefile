@@ -32,12 +32,12 @@ PLIST_FILES=	bin/fcomp bin/fhist bin/fmerge
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-CONFIGURE_ENV+=	ac_cv_lib_intl_main=no
-.else
 USE_GETTEXT=	yes
 .for file in fcomp fhist fmerge
 PLIST_FILES+=	share/locale/en/LC_MESSAGES/${file}.mo
 .endfor
+.else
+CONFIGURE_ENV+=	ac_cv_lib_intl_main=no
 .endif
 
 post-build:
