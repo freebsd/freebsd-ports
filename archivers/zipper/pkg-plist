@@ -1,10 +1,15 @@
 GNUstep/Local/Applications/Zipper.app/Resources/FileIcon.tiff
 GNUstep/Local/Applications/Zipper.app/Resources/Info-gnustep.plist
-GNUstep/Local/Applications/Zipper.app/Resources/MainMenu-GNUstep.gsmarkup
-GNUstep/Local/Applications/Zipper.app/Resources/Preferences.gsmarkup
+GNUstep/Local/Applications/Zipper.app/Resources/MainMenu.gorm/data.classes
+GNUstep/Local/Applications/Zipper.app/Resources/MainMenu.gorm/data.info
+GNUstep/Local/Applications/Zipper.app/Resources/MainMenu.gorm/objects.gorm
+GNUstep/Local/Applications/Zipper.app/Resources/Preferences.gorm/data.classes
+GNUstep/Local/Applications/Zipper.app/Resources/Preferences.gorm/data.info
+GNUstep/Local/Applications/Zipper.app/Resources/Preferences.gorm/objects.gorm
 GNUstep/Local/Applications/Zipper.app/Resources/Zipper.desktop
-GNUstep/Local/Applications/Zipper.app/Resources/Zipper.gsmarkup
-GNUstep/Local/Applications/Zipper.app/Resources/ZipperInfo.plist
+GNUstep/Local/Applications/Zipper.app/Resources/ZipperDocument.gorm/data.classes
+GNUstep/Local/Applications/Zipper.app/Resources/ZipperDocument.gorm/data.info
+GNUstep/Local/Applications/Zipper.app/Resources/ZipperDocument.gorm/objects.gorm
 GNUstep/Local/Applications/Zipper.app/Resources/no_order.tiff
 GNUstep/Local/Applications/Zipper.app/Resources/sort_ascending.tiff
 GNUstep/Local/Applications/Zipper.app/Resources/sort_descending.tiff
@@ -12,5 +17,8 @@ GNUstep/Local/Applications/Zipper.app/Resources/zipper.tiff
 GNUstep/Local/Applications/Zipper.app/Zipper
 GNUstep/Local/Applications/Zipper.app/stamp.make
 GNUstep/Local/Tools/Zipper
+@dirrm GNUstep/Local/Applications/Zipper.app/Resources/ZipperDocument.gorm
+@dirrm GNUstep/Local/Applications/Zipper.app/Resources/Preferences.gorm
+@dirrm GNUstep/Local/Applications/Zipper.app/Resources/MainMenu.gorm
 @dirrm GNUstep/Local/Applications/Zipper.app/Resources
 @dirrm GNUstep/Local/Applications/Zipper.app

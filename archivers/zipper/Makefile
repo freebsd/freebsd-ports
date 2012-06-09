@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	zipper
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.4
 CATEGORIES=	archivers gnustep
-MASTER_SITES=	http://xanthippe.dyndns.org/Zipper/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	gap
 DISTNAME=	Zipper-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -19,10 +19,8 @@ USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-USE_GNUSTEP_SYSTEM_LIBS+=	Renaissance:${RENAISSANCE_PORT}
 
-WRKSRC=		${WRKDIR}/Zipper
-
-RENAISSANCE_PORT?=	x11-toolkits/renaissance
+post-patch:
+	cd ${WRKSRC} && ${FIND} . -name "*#*" -exec ${RM} -f -v "{}" ";"
 
 .include <bsd.port.mk>
