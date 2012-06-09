@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	execjs
-PORTVERSION=	1.2.13
+PORTVERSION=	1.4.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
