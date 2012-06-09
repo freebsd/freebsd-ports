@@ -47,16 +47,16 @@ MAN8=		gnokiid.8 mgnokiidev.8
 
 CONFLICTS=	smstools-[0-9]* sendsms-[0-9]*
 
-OPTIONS_DEFINE=	DOCS ICAL MYSQL PCSC PGSQL SMSD SQLITE USB X11
+OPTIONS_DEFINE=	DOCS ICAL PCSC SMSD SMSDDB USB X11
+OPTIONS_MULTI=	SMSDDB
+OPTIONS_MULTI_SMSDDB=	MYSQL PGSQL SQLITE
 OPTIONS_DEFAULT=	X11
 
 ICAL_DESC=	Build with IETF iCal support
 USB_DESC=	Build with libusb support
 PCSC_DESC=	Build with PC/SC-Lite support
-SMSD_DESC=	Enable smsd daemon
-MYSQL_DESC=	Enable MySQL backend for smsd
-PGSQL_DESC=	Enable PostgreSQL backend for smsd
-SQLITE_DESC=	Enable SQLite backend in smsd
+SMSD_DESC=	Enable smsd daemon (includes "file" backend)
+SMSDDB_DESC=	Enable database support in smsd (select one or more)
 X11_DESC=	Build graphical version (xgnokii)
 
 .include <bsd.port.options.mk>
@@ -81,7 +81,7 @@ LIB_DEPENDS+=		pcsclite:${PORTSDIR}/devel/pcsc-lite
 CONFIGURE_ARGS+=	--disable-libpcsclite
 .endif
 
-.if !${PORT_OPTIONS:MSMSD}
+.if empty(PORT_OPTIONS:MSMSD)
 PLIST_SUB+=	SMSD='@comment ' MSM='@comment ' PGM='@comment ' SQLT='@comment '
 CONFIGURE_ARGS+=	--disable-smsd
 .else
