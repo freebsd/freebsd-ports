@@ -30,10 +30,12 @@ PLIST_SUB+=	INCLUDEDIR="include/${PORTNAME}" LIBDIR="lib/${PORTNAME}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS_DEFINE=	AIRPLAY AO APE AVCODEC CDDA CURL ET FAAD FAM FLAC \
-		GME GVFS ICES JACK MAD MDNS_APPLE MDNS_AVAHI MMS \
+		GME GVFS ICES JACK MAD MDNS MMS \
 		MODPLUG MPG123 MUSEPACK OFA PULSEAUDIO SAMBA SID \
 		SNDFILE SPEEX TREMOR VISUAL VOCODER VORBIS WAVPACK XML
-OPTIONS_DEFAULT=	CURL FAAD FLAC MAD MDNS_APPLE VORBIS
+OPTIONS_SINGLE=	MDNS
+OPTIONS_SINGLE_MDNS=	MDNS_APPLE MDNS_AVAHI
+OPTIONS_DEFAULT=	CURL FAAD FLAC MAD MDNS MDNS_APPLE VORBIS
 
 AIRPLAY_DESC=	Support output via Airport Express
 APE_DESC=	Support to playback Monkey's Audio files
@@ -47,8 +49,9 @@ GME_DESC=	Support to playback video game music files
 GVFS_DESC=	Support to playback files via GVFS
 ICES_DESC=	Support to playback files to an icecast server
 MAD_DESC=	Support to playback MP3 files
-MDNS_APPLE_DESC=	Support to announce XMMS2d via mDNS (Apple)
-MDNS_AVAHI_DESC=	Support to announce XMMS2d via mDNS (Avahi)
+MDNS_DESC=	Support to announce XMMS2d via mDNS (Choose implementation)
+MDNS_APPLE_DESC=	Use Apple mDNS implementation
+MDNS_AVAHI_DESC=	Use Avahi mDNS implementation
 MMS_DESC=	Support to playback streams via MMS
 MPG123_DESC=	Support to playback MP3 files
 OFA_DESC=	Support to collect MusicDNS fingerprints
@@ -208,9 +211,7 @@ EXCLUDE+=	--without-plugins="mad"
 PLIST_SUB+=	MAD="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MMDNS_APPLE} && ${PORT_OPTIONS:MMDNS_AVAHI}
-IGNORE=		you may choose either MDNS_APPLE or MDNS_AVAHI, but not both
-.elif !${PORT_OPTIONS:MMDNS_APPLE} && !${PORT_OPTIONS:MMDNS_AVAHI}
+.if empty(PORT_OPTIONS:MMDNS)
 EXCLUDE+=	--without-optionals="mdns"
 .endif
 
