@@ -12,6 +12,7 @@ etc/rspamd.xml.sample
 %%ETCDIR%%/plugins/lua/multimap.lua
 %%ETCDIR%%/plugins/lua/once_received.lua
 %%ETCDIR%%/plugins/lua/received_rbl.lua
+%%ETCDIR%%/plugins/lua/ratelimit.lua
 %%ETCDIR%%/plugins/lua/whitelist.lua
 %%ETCDIR%%/plugins/lua/phishing.lua
 %%ETCDIR%%/plugins/lua/trie.lua
@@ -23,12 +24,26 @@ etc/rspamd.xml.sample
 %%ETCDIR%%/lua/regexp/lotto.lua
 %%ETCDIR%%/lua/rspamd.lua
 %%ETCDIR%%/lua/rspamd.classifiers.lua
-lib/librspamdclient.so.%%RSPAMDVERSION%%
-lib/librspamdclient.so
-lib/librspamdclient_static.a
-include/librspamdclient.h
+lib/rspamd/librspamdclient.so.%%RSPAMDVERSION%%
+lib/rspamd/librspamdclient.so
+lib/rspamd/librspamdclient_static.a
+lib/rspamd/librspamd-util.so.%%RSPAMDVERSION%%
+lib/rspamd/librspamd-util.so
+lib/rspamd/librspamd-server.so.%%RSPAMDVERSION%%
+lib/rspamd/librspamd-server.so
+lib/rspamd/librspamd-lua.so.%%RSPAMDVERSION%%
+lib/rspamd/librspamd-lua.so
+lib/rspamd/librspamd-cdb.so.%%RSPAMDVERSION%%
+lib/rspamd/librspamd-cdb.so
+lib/rspamd/librspamd-json.so.%%RSPAMDVERSION%%
+lib/rspamd/librspamd-json.so
+lib/rspamd/librspamd-mime.so.%%RSPAMDVERSION%%
+lib/rspamd/librspamd-mime.so
+include/rspamd/librspamdclient.h
 @dirrmtry %%ETCDIR%%/plugins/lua
 @dirrmtry %%ETCDIR%%/plugins/
 @dirrmtry %%ETCDIR%%/lua/regexp
 @dirrmtry %%ETCDIR%%/lua/
 @dirrmtry %%ETCDIR%%
+@dirrmtry lib/rspamd
+@dirrmtry include/rspamd

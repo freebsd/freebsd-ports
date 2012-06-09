@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	rspamd
-PORTVERSION=	0.4.6
-PORTREVISION=	3
+PORTVERSION=	0.5.0
 CATEGORIES=	mail
 MASTER_SITES=	http://highsecure.ru/
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Fast spam filtering system
+
+LICENSE=	BSD
 
 LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre \
 		gmime-2.0:${PORTSDIR}/mail/gmime2 \
@@ -24,8 +25,6 @@ OPTIONS=	RSPAMD_GPERF "Enable google perf-tools profiling" off \
 
 USE_RC_SUBR=	rspamd
 
-LICENSE=	BSD
-
 PLIST_SUB+=	ETCDIR=etc/rspamd \
 		RSPAMDVERSION=${PORTVERSION}
 CMAKE_ARGS+=	-DETC_PREFIX=${PREFIX}/etc -DPREFIX=${PREFIX} \
@@ -36,6 +35,10 @@ USE_LDCONFIG=	yes
 
 USE_GNOME=	glib20
 USE_LUA=	5.1-
+USE_SQLITE=	yes
+USE_ICONV=	yes
+USE_GETTEXT=	yes
+USE_OPENSSL=	yes
 
 MAN8=	rspamd.8
 MAN1=	rspamc.1
