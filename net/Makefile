@@ -314,6 +314,7 @@
     SUBDIR += libfixbuf
     SUBDIR += libgnetwork
     SUBDIR += libgweather
+    SUBDIR += libkvkontakte
     SUBDIR += libmms
     SUBDIR += libmxp
     SUBDIR += libnatpmp
