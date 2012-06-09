@@ -20,8 +20,6 @@ LIB_DEPENDS=	gif.5:${PORTSDIR}/graphics/giflib \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-BROKEN=		does not build
-
 MAN1=	gencls.1.gz VB.1.gz cfgmaint.1.gz
 MAN3=	Prima::Image::AnimateGIF.3.gz Prima::Clipboard.3.gz Prima::CurvedText.3.gz \
 	Prima::Drawable.3.gz Prima::File.3.gz Prima::Image.3.gz \
