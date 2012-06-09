@@ -6,13 +6,7 @@
 #
 
 PORTNAME=	gnustep-base
-.if defined(WITH_GNUSTEP_DEVEL)
-PORTVERSION=	1.22.0
-PORTREvISION=	1
-.else
-PORTVERSION=	1.19.3
-PORTREVISION=	5
-.endif
+PORTVERSION=	1.24.0
 CATEGORIES=	lang devel gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
@@ -52,9 +46,6 @@ ETCDIR=		${LOCALBASE}/etc
 
 .if !defined(WITHOUT_GNUSTEP_FAKEMAIN)
 CONFIGURE_ARGS+=	--enable-fake-main
-.endif
-.if !defined(WITH_GNUSTEP_DEVEL)
-EXTRA_PATCHES+=	${FILESDIR}/config.objc.m.patch
 .endif
 
 PLIST_SUB+=	BASEVERSION=${PORTVERSION:C/[.][0-9]*$//1}
