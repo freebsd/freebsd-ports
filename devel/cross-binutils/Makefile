@@ -86,6 +86,7 @@ PATCHFILES+=	${PORTNAME}-${PORTVERSION}-rtems4.11-20110107.diff
 .endif
 
 .if !defined(TGTARCH) || !defined(TGTABI)
+PKGNAMEPREFIX=	cross-
 IGNORE=		you should define TGTARCH and TGTABI to build port
 .endif
 .if defined(TGTARCH) && (${TGTABI} == "elf" && ${TGTARCH} == "powerpc")
