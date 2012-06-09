@@ -2412,6 +2412,42 @@
 %%SERENDIPITY%%/sql/db_update_1.5-alpha1_1.5-alpha2_mysql.sql
 %%SERENDIPITY%%/sql/db_update_1.5-alpha1_1.5-alpha2_postgres.sql
 %%SERENDIPITY%%/sql/db_update_1.5-alpha1_1.5-alpha2_sqlite.sql
+%%SERENDIPITY%%/templates/2k11/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/templates/2k11/UTF-8/lang_cz.inc.php
+%%SERENDIPITY%%/templates/2k11/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/templates/2k11/UTF-8/lang_en.inc.php
+%%SERENDIPITY%%/templates/2k11/commentform.tpl
+%%SERENDIPITY%%/templates/2k11/comments.tpl
+%%SERENDIPITY%%/templates/2k11/config.inc.php
+%%SERENDIPITY%%/templates/2k11/content.tpl
+%%SERENDIPITY%%/templates/2k11/entries.tpl
+%%SERENDIPITY%%/templates/2k11/entries_archives.tpl
+%%SERENDIPITY%%/templates/2k11/entries_summary.tpl
+%%SERENDIPITY%%/templates/2k11/img/gradient-dblue.png
+%%SERENDIPITY%%/templates/2k11/img/gradient-lblue.png
+%%SERENDIPITY%%/templates/2k11/img/xml.gif
+%%SERENDIPITY%%/templates/2k11/index.tpl
+%%SERENDIPITY%%/templates/2k11/info.txt
+%%SERENDIPITY%%/templates/2k11/js/2k11.min.js
+%%SERENDIPITY%%/templates/2k11/js/modernizr-2.5.3.min.js
+%%SERENDIPITY%%/templates/2k11/lang_cs.inc.php
+%%SERENDIPITY%%/templates/2k11/lang_cz.inc.php
+%%SERENDIPITY%%/templates/2k11/lang_de.inc.php
+%%SERENDIPITY%%/templates/2k11/lang_en.inc.php
+%%SERENDIPITY%%/templates/2k11/plugin_calendar.tpl
+%%SERENDIPITY%%/templates/2k11/plugin_categories.tpl
+%%SERENDIPITY%%/templates/2k11/plugin_commentsearch_searchresults.tpl
+%%SERENDIPITY%%/templates/2k11/plugin_contactform.tpl
+%%SERENDIPITY%%/templates/2k11/plugin_findmore.tpl
+%%SERENDIPITY%%/templates/2k11/plugin_staticpage.tpl
+%%SERENDIPITY%%/templates/2k11/plugin_staticpage_searchresults.tpl
+%%SERENDIPITY%%/templates/2k11/plugin_staticpage_sidebar.tpl
+%%SERENDIPITY%%/templates/2k11/preview.png
+%%SERENDIPITY%%/templates/2k11/preview_fullsize.jpg
+%%SERENDIPITY%%/templates/2k11/preview_iframe.tpl
+%%SERENDIPITY%%/templates/2k11/sidebar.tpl
+%%SERENDIPITY%%/templates/2k11/style.css
+%%SERENDIPITY%%/templates/2k11/trackbacks.tpl
 %%SERENDIPITY%%/templates/HOWTO
 %%SERENDIPITY%%/templates/blue/htmlarea.css
 %%SERENDIPITY%%/templates/blue/info.txt
@@ -2932,6 +2968,10 @@
 @dirrm %%SERENDIPITY%%/templates/bulletproof/UTF-8
 @dirrm %%SERENDIPITY%%/templates/bulletproof
 @dirrm %%SERENDIPITY%%/templates/blue
+@dirrm %%SERENDIPITY%%/templates/2k11/js
+@dirrm %%SERENDIPITY%%/templates/2k11/img
+@dirrm %%SERENDIPITY%%/templates/2k11/UTF-8
+@dirrm %%SERENDIPITY%%/templates/2k11
 @dirrm %%SERENDIPITY%%/templates
 @dirrm %%SERENDIPITY%%/sql
 @dirrm %%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/UTF-8
