@@ -1,15 +1,15 @@
 --- a/configure
 +++ a/configure
-@@ -285,7 +285,7 @@ bigendian="no"
+@@ -154,7 +154,7 @@ bigendian="no"
  mingw32="no"
  EXESUF=""
  prefix="/usr/local"
 -mandir="\${prefix}/share/man"
 +mandir="\${prefix}/man"
- datadir="\${prefix}/share/qemu"
- docdir="\${prefix}/share/doc/qemu"
+ datadir="\${prefix}/share"
+ qemu_docdir="\${prefix}/share/doc/qemu"
  bindir="\${prefix}/bin"
-@@ -1964,15 +1964,18 @@ if compile_prog "" "" ; then
+@@ -2511,15 +2511,18 @@ if compile_prog "" "" ; then
  fi
  
  # Check if tools are available to build documentation.

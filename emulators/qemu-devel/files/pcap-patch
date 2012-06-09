@@ -1,16 +1,16 @@
 --- configure.orig	2010-01-29 14:36:00.000000000 -0500
 +++ configure	2010-01-29 14:36:00.000000000 -0500
-@@ -185,6 +185,9 @@ opengl=""
- zlib="yes"
+@@ -194,6 +194,9 @@ zlib="yes"
  guest_agent="yes"
  libiscsi=""
+ coroutine=""
 +pcap="no"
 +pcap_create="no"
 +bpf="no"
  
  # parse CC options first
  for opt do
-@@ -638,6 +641,8 @@ for opt do
+@@ -670,6 +673,8 @@ for opt do
    ;;
    --enable-vnc-thread) vnc_thread="yes"
    ;;
@@ -19,7 +19,7 @@
    --disable-slirp) slirp="no"
    ;;
    --disable-uuid) uuid="no"
-@@ -1529,6 +1534,49 @@ EOF
+@@ -1619,6 +1624,49 @@ EOF
  fi
  
  ##########################################
@@ -69,7 +69,7 @@
  # VNC TLS detection
  if test "$vnc" = "yes" -a "$vnc_tls" != "no" ; then
    cat > $TMPC <<EOF
-@@ -2950,6 +2998,15 @@ fi
+@@ -3117,6 +3165,15 @@ fi
  if test "$profiler" = "yes" ; then
    echo "CONFIG_PROFILER=y" >> $config_host_mak
  fi
