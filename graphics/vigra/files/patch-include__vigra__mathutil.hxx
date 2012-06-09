@@ -5,7 +5,7 @@
  VIGRA_DEFINE_MISSING_ABS(signed short)
  
 -#if defined(_MSC_VER) && _MSC_VER < 1600
-+#if defined(_MSC_VER) && _MSC_VER < 1600 || defined(__GNUC__) && (__GNUC__ < 4 || __GNUC__ == 4 && __GNUC_MINOR__ < 2) || defined(__clang__)
++#if defined(_MSC_VER) && _MSC_VER < 1600 || defined(__GNUC__) && (__GNUC__ < 4 || __GNUC__ == 4 && __GNUC_MINOR__ < 3) || defined(__clang__)
  VIGRA_DEFINE_MISSING_ABS(signed long long)
  #endif
  
