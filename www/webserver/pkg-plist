@@ -5,7 +5,7 @@ GNUstep/Local/Library/Documentation/WebServer/WebServerBundles.gsdoc
 GNUstep/Local/Library/Documentation/WebServer/WebServerBundles.html
 GNUstep/Local/Library/Documentation/WebServer/WebServerHTML.gsdoc
 GNUstep/Local/Library/Documentation/WebServer/WebServerHTML.html
-%%GNUSTEP_DEVEL%%GNUstep/Local/Library/Documentation/WebServer/OrderedSymbolDeclarations.plist
+GNUstep/Local/Library/Documentation/WebServer/OrderedSymbolDeclarations.plist
 GNUstep/Local/Library/Documentation/WebServer/dependencies
 GNUstep/Local/Library/Headers/WebServer/WebServer.h
 GNUstep/Local/Library/Headers/WebServer/WebServerBundles.h
