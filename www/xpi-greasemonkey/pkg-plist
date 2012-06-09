@@ -16,6 +16,7 @@
 %%XPI_XPIDIR%%/modules/remoteScript.js
 %%XPI_XPIDIR%%/modules/runScript.js
 %%XPI_XPIDIR%%/modules/script.js
+%%XPI_XPIDIR%%/modules/scriptDependency.js
 %%XPI_XPIDIR%%/modules/scriptIcon.js
 %%XPI_XPIDIR%%/modules/scriptRequire.js
 %%XPI_XPIDIR%%/modules/scriptResource.js
