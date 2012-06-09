@@ -7,7 +7,7 @@
 
 PORTNAME=	knutclient
 PORTVERSION=	0.9.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils kde
 MASTER_SITES=	ftp://ftp.buzuluk.cz/pub/alo/knutclient/stable/ \
 		http://www.vg.kernel.org/pub/mirrors/gentoo/source/distfiles/
@@ -17,7 +17,9 @@ COMMENT=	A visual client for UPS system NUT
 
 MAKE_JOBS_UNSAFE=	yes
 
-USE_KDELIBS_VER=3
+CONFLICTS=      knutclient-1.*
+USE_KDELIBS_VER=	3
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool automake:env aclocal:env
 CONFIGURE_ARGS=	--disable-fast-perl --enable-mt --program-transform-name=''
