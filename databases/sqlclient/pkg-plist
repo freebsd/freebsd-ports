@@ -25,7 +25,7 @@ GNUstep/Local/Library/Bundles/SQLClient/SQLite_libs.bundle/stamp.make
 GNUstep/Local/Library/Documentation/SQLClient/SQLClient.gsdoc
 GNUstep/Local/Library/Documentation/SQLClient/SQLClient.html
 GNUstep/Local/Library/Documentation/SQLClient/SQLClient.igsdoc
-%%GNUSTEP_DEVEL%%GNUstep/Local/Library/Documentation/SQLClient/OrderedSymbolDeclarations.plist
+GNUstep/Local/Library/Documentation/SQLClient/OrderedSymbolDeclarations.plist
 GNUstep/Local/Library/Documentation/SQLClient/dependencies
 GNUstep/Local/Library/Headers/SQLClient/SQLClient.h
 GNUstep/Local/Library/Libraries/libSQLClient.so
