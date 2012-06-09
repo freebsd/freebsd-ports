@@ -24,29 +24,28 @@ HAS_CONFIGURE=	yes
 USE_PYTHON=	2.5+
 USE_QT4=	declarative qmake_build moc_build
 
-OPTIONS=	API		"Install QtDeclarative API for QScintilla2" on \
-		DEBUG		"Enable debugging in generated code" off \
-		SIPFILES	"Install the QtDeclarative SIP files" on \
-		TRACING		"Enable tracing in generated code" off
+OPTIONS=	API	"Install QtDeclarative API for QScintilla2" on
 
 PATCHDIR=	${PORTSDIR}/devel/py-qt4-core/files
 OPTIONSFILE?=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
 SIPDIR=		${PREFIX}/share/py-sip
 QSCIDIR=	${PREFIX}/share/qt4/qsci
 CONFIGURE_ENV+=	PYQT4_COMPONENT="${PORTNAME}"
-ARGS=		-b ${PREFIX}/bin\
-		-d ${PYTHONPREFIX_SITELIBDIR}\
-		-p ${PREFIX}/${QT_PLUGINDIR_REL}\
-		-q ${QMAKE}\
-		--confirm-license\
+ARGS=		-b ${PREFIX}/bin \
+		-d ${PYTHONPREFIX_SITELIBDIR} \
+		-p ${PREFIX}/${QT_PLUGINDIR_REL} \
+		-q ${QMAKE} \
+		--confirm-license \
+		--sipdir ${SIPDIR} \
 		--enable QtDeclarative
+
+.if defined(WITH_DEBUG)
+ARGS+=		--debug --trace
+.endif
 
 .include "../py-sip/files/bsd.pyqt.mk"
 .include <bsd.port.options.mk>
 
-.if defined(WITH_DEBUG)
-ARGS+=		--debug
-.endif
 .if defined(WITHOUT_API)
 ARGS+=		--no-qsci-api
 PLIST_SUB+=	API="@comment "
@@ -54,16 +53,6 @@ PLIST_SUB+=	API="@comment "
 LIB_DEPENDS+=	qscintilla2.8:${PORTSDIR}/devel/qscintilla2
 ARGS+=		--qsci-api --qsci-api-destdir=${QSCIDIR}
 PLIST_SUB+=	API=""
-.endif
-.if defined(WITHOUT_SIPFILES)
-ARGS+=		--no-sip-files
-PLIST_SUB+=	SIP="@comment "
-.else
-ARGS+=		--sipdir ${SIPDIR}
-PLIST_SUB+=	SIP=""
-.endif
-.if defined(WITH_TRACING)
-ARGS+=		--trace
 .endif
 
 do-configure:

@@ -17,22 +17,19 @@ COMMENT=	Python to C and C++ bindings generator
 
 USE_PYTHON=	2.5+
 
-OPTIONS=	DEBUG "Build with debugging symbols" off
-
 DATADIR=	${PREFIX}/share/py-${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 ARGS=		-b ${PREFIX}/bin -d ${PYTHONPREFIX_SITELIBDIR}\
 		-e ${PYTHONPREFIX_INCLUDEDIR} -v ${DATADIR}
 
-PORTDOCS=	*
-
-.include "files/bsd.pyqt.mk"
-.include <bsd.port.options.mk>
-
 .if defined(WITH_DEBUG)
 ARGS+=		-u
 .endif
+
+PORTDOCS=	*
+
+.include "files/bsd.pyqt.mk"
 
 do-configure:
 	cd ${WRKSRC} && ${PYTHON_CMD} configure.py ${ARGS}

@@ -27,42 +27,30 @@ HAS_CONFIGURE=	yes
 USE_PYTHON=	2.5+
 USE_QT4=	gui
 
-OPTIONS=	API		"Install binding API for QScintilla2" on \
-		DEBUG		"Enable debugging in generated code" off \
-		SIPFILES	"Install the Qscintilla SIP files" on \
-		TRACING		"Enable tracing in generated code" off
+OPTIONS=	API	"Install binding API for QScintilla2" on
 
 OPTIONSFILE?=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
 SIPDIR=		${PREFIX}/share/py-sip
 QSCIDIR=	${PREFIX}/share/qt4/qsci
-ARGS=		-p 4 -d ${PYTHONPREFIX_SITELIBDIR}/PyQt4
+ARGS=		-p 4 -d ${PYTHONPREFIX_SITELIBDIR}/PyQt4 -v ${SIPDIR}
 WRKSRC=		${WRKDIR}/${DISTNAME}/Python
 ALL_TARGET=	#empty
+
+.if defined(WITH_DEBUG)
+ARGS+=		-u -r
+.endif
 
 .include "../py-sip/files/bsd.pyqt.mk"
 .include <bsd.port.options.mk>
 
 PYVER=		${PYTHON_VER}
 
-.if defined(WITH_DEBUG)
-ARGS+=		-u
-.endif
 .if defined(WITHOUT_API)
 ARGS+=		-a /dev/null
 PLIST_SUB+=	API="@comment "
 .else
 ARGS+=		-a ${QSCIDIR}
 PLIST_SUB+=	API=""
-.endif
-.if defined(WITHOUT_SIPFILES)
-ARGS+=		-v /dev/null
-PLIST_SUB+=	SIP="@comment "
-.else
-ARGS+=		-v ${SIPDIR}
-PLIST_SUB+=	SIP=""
-.endif
-.if defined(WITH_TRACING)
-ARGS+=		-r
 .endif
 
 do-configure:
