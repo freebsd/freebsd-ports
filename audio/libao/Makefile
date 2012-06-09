@@ -21,56 +21,53 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
-.if defined(NOPORTDOCS)
-MAKE_ENV=	DOC=""
-.else
-MAKE_ENV=	DOC=doc
-.endif
-
 MAN5=		libao.conf.5
 
-OPTIONS=	ARTS "Enable the aRts module" off \
-		ESOUND "Enable the EsounD module" off \
-		NAS "Enable the Network Audio System module" off \
-		PULSEAUDIO "Enable the PulseAudio module" off
+OPTIONS_DEFINE=	DOCS ARTS ESOUND NAS PULSEAUDIO
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_ARTS)
+.if ${PORT_OPTIONS:MDOCS}
+MAKE_ENV=	DOC=doc
+.else
+MAKE_ENV=	DOC=""
+.endif
+
+.if ${PORT_OPTIONS:MARTS}
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
+PLIST_SUB+=	ARTS=""
 .else
 CONFIGURE_ARGS+=--disable-arts
+PLIST_SUB+=	ARTS="@comment "
 .endif
 
-.if defined(WITH_ESOUND)
+.if ${PORT_OPTIONS:MESOUND}
 USE_GNOME+=	esound
+PLIST_SUB+=	ESOUND=""
 .else
 CONFIGURE_ARGS+=--disable-esd
+PLIST_SUB+=	ESOUND="@comment "
 .endif
 
-.if defined(WITH_NAS)
+.if ${PORT_OPTIONS:MNAS}
 LIB_DEPENDS+=	audio.2:${PORTSDIR}/audio/nas
+PLIST_SUB+=	NAS=""
 .else
 CONFIGURE_ARGS+=--disable-nas
+PLIST_SUB+=	NAS="@comment "
 .endif
 
-.if defined(WITH_PULSEAUDIO)
+.if ${PORT_OPTIONS:MPULSEAUDIO}
 LIB_DEPENDS+=	pulse-simple.0:${PORTSDIR}/audio/pulseaudio
+PLIST_SUB+=	PULSEAUDIO=""
 .else
 CONFIGURE_ARGS+=--disable-pulse
+PLIST_SUB+=	PULSEAUDIO="@comment "
 .endif
-
-.for m in ARTS ESOUND NAS PULSEAUDIO
-.   if defined(WITH_$m)
-PLIST_SUB+=	$m=""
-.   else
-PLIST_SUB+=	$m="@comment "
-.   endif
-.endfor
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/libao.conf|${PREFIX}&|' \
 		${WRKSRC}/libao.conf.5 ${WRKSRC}/include/ao/ao_private.h \
 		${WRKSRC}/doc/config.html
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
