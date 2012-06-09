@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tea
-DISTVERSION=	33.0.0
-PORTREVISION=	1
+DISTVERSION=	33.1.0
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}-editor/${PORTNAME}-editor/${PORTVERSION} \
 		http://semiletov.ho.ua/${PORTNAME}-releases/
@@ -27,7 +26,7 @@ OPTIONS=	ASPELL	"Build with GNU Aspell support"	on
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_ASPELL)
-LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 QMAKEFLAGS=	USE_ASPELL=true
 .else
 QMAKEFLAGS=	USE_ASPELL=false
