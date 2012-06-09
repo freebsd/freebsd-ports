@@ -53,6 +53,7 @@ GCONF_DESC?=		Enable gconf backend
 GDM_DESC?=		Build GDM login manager
 GEOS_DESC?=		Enable GEOS support
 GEOTIFF_DESC?=		Enable GeoTIFF support
+GEOIP_DESC?=		Enable GeoIP support
 GIF_DESC?=		Enable GIF support
 GLADE_DESC?=		Enable Glade interface support
 GNOME_DESC?=		Enable GNOME Desktop support
