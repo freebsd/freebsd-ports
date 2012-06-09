@@ -1,13 +1,14 @@
---- ./expoblending/manager/actionthread.cpp.orig	2010-02-01 01:17:40.000000000 +1000
-+++ ./expoblending/manager/actionthread.cpp	2010-02-03 01:12:30.759423612 +1000
-@@ -53,6 +53,10 @@
- #include "kpwriteimage.h"
- #include "pluginsversion.h"
+--- ./expoblending/manager/actionthread.cpp.orig	2012-01-02 19:31:39.000000000 -0500
++++ ./expoblending/manager/actionthread.cpp	2012-05-13 07:52:49.000000000 -0400
+@@ -32,6 +32,11 @@
+ #define log2f(x) (logf(x)*1.4426950408889634f)
+ #endif
  
-+#if defined(__FreeBSD__)
-+#define log2f(x) (logf((x)) / logf(2))
++#include <sys/param.h>
++#if __FreeBSD_version < 802502 || (__FreeBSD_version >= 900000 && __FreeBSD_version < 900027)
++#define log2f(x) (logf(x) / logf(2))
 +#endif
 +
- namespace KIPIExpoBlendingPlugin
- {
+ // Qt includes
  
+ #include <QMutex>
