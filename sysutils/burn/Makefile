@@ -39,6 +39,12 @@ CDPLAYER_PORT?=		audio/gnustep-cdplayer
 PREFERENCES_PORT?=	deskutils/preferences.app
 GWORKSPACE_PORT?=	deskutils/gworkspace
 
+post-patch:
+	${REINPLACE_CMD} \
+		-e 's|CDPlayer/AudioCDProtocol|AudioCD/AudioCDProtocol|' \
+		${WRKSRC}/Functions.m \
+		${WRKSRC}/GrabAudioCDHelper.m
+
 post-install:
 	${MKDIR} ${GNUSTEP_PREFIX}/Local/Library/Headers/Burn
 .for i in ${HEADERS}

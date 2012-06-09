@@ -26,4 +26,14 @@ USE_GNUSTEP_INSTALL=	yes
 WRKSRC=		${WRKDIR}/CodeEditor
 MAKE_ENV+=	GNUSTEP_INSTALLATION_DIR=${GNUSTEP_LOCAL_ROOT}
 
+post-patch:
+	${REINPLACE_CMD} -e 's| bool| mybool|' -e 's|(bool|(mybool|' \
+		${WRKSRC}/CodeEditorView/CodeEditorViewPreference.h \
+		${WRKSRC}/CodeEditorView/CodeEditorViewPreference.m \
+		${WRKSRC}/CodeEditorView/BlockHandler.h \
+		${WRKSRC}/CodeEditorView/CodeEditorView.h \
+		${WRKSRC}/CodeEditorView/CodeEditorView.m \
+		${WRKSRC}/CodeEditor/DocumentController.m \
+		${WRKSRC}/LanguageHandler/ObjCHandler/ObjCBlockHandler.m
+
 .include <bsd.port.mk>
