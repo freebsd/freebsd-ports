@@ -18,6 +18,8 @@ COMMENT=	Etoile Project EtoileFoundation framework
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/Frameworks/EtoileFoundation/COPYING
 
+IGNORE=		does not build with gcc runtime
+
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
