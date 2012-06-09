@@ -5981,17 +5981,38 @@ OPTIONS_WRONG_MULTI+=	${multi}
 .undef opt
 .endif #pre-check-config
 
-.if !target(check-config)
-check-config: pre-check-config
+.if !target(_check-config)
+_check-config: pre-check-config
 .for multi in ${OPTIONS_WRONG_MULTI}
 	@${ECHO_MSG} "====> You must check at least one option in the ${multi} multi"
-	@exit 1
 .endfor
 .for single in ${OPTIONS_WRONG_SINGLE}
 	@${ECHO_MSG} "====> You must select one and only one option from the ${single} single"
-	@exit 1
 .endfor
+.if !empty(OPTIONS_WRONG_MULTI) || !empty(OPTIONS_WRONG_SINGLE)
+_CHECK_CONFIG_ERROR=	true
+.endif
+.endif # _check-config
+
+.if !target(check-config)
+check-config: _check-config
+.if !empty(_CHECK_CONFIG_ERROR)
+	@exit 1
+.endif
 .endif # check-config
+
+.if !target(sanity-config)
+sanity-config: _check-config
+.if !empty(_CHECK_CONFIG_ERROR)
+	@echo -n "Config is invalid. Re-edit? [Y/N] "; \
+	read answer; \
+	case $$answer in \
+	[Nn]|[Nn][Oo]) \
+		exit 0; \
+	esac; \
+	${MAKE} config
+.endif
+.endif # sanity-config
 
 .if !target(pre-config)
 pre-config:
@@ -6080,6 +6101,7 @@ config: pre-config
 		${CAT} $${TMPOPTIONSFILE} > ${OPTIONSFILE}; \
 	fi; \
 	${RM} -f $${TMPOPTIONSFILE}
+	@${MAKE} sanity-config
 .endif
 .endif # config
 
