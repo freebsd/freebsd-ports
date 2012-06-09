@@ -30,4 +30,8 @@ USE_GNOME=	gnomeprefix gnomehack gtk20
 WRKSRC=	${WRKDIR}/Etoile-0.4.1
 USE_GNUSTEP_MAKE_DIRS+=	Frameworks/PopplerKit
 
+post-patch:
+	${REINPLACE_CMD} -e 's| hash| myhash|' \
+		${WRKSRC}/Frameworks/PopplerKit/PopplerCachingRenderer.m
+
 .include <bsd.port.mk>
