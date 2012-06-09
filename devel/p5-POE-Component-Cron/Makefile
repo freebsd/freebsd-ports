@@ -14,15 +14,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Schedule POE Events using a cron spec
 
-BUILD_DEPENDS=	${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple \
-		${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
-		${SITE_PERL}/POE/Component/Schedule.pm:${PORTSDIR}/devel/p5-POE-Component-Schedule \
-		${SITE_PERL}/DateTime/Event/Random.pm:${PORTSDIR}/devel/p5-DateTime-Event-Random \
-		${SITE_PERL}/DateTime/Event/Cron.pm:${PORTSDIR}/devel/p5-DateTime-Event-Cron
-RUN_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
-		${SITE_PERL}/POE/Component/Schedule.pm:${PORTSDIR}/devel/p5-POE-Component-Schedule \
-		${SITE_PERL}/DateTime/Event/Random.pm:${PORTSDIR}/devel/p5-DateTime-Event-Random \
-		${SITE_PERL}/DateTime/Event/Cron.pm:${PORTSDIR}/devel/p5-DateTime-Event-Cron
+BUILD_DEPENDS=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple \
+		p5-POE>=0:${PORTSDIR}/devel/p5-POE \
+		p5-POE-Component-Schedule>=0:${PORTSDIR}/devel/p5-POE-Component-Schedule \
+		p5-DateTime-Event-Random>=0:${PORTSDIR}/devel/p5-DateTime-Event-Random \
+		p5-DateTime-Event-Cron>=0:${PORTSDIR}/devel/p5-DateTime-Event-Cron
+RUN_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
+		p5-POE-Component-Schedule>=0:${PORTSDIR}/devel/p5-POE-Component-Schedule \
+		p5-DateTime-Event-Random>=0:${PORTSDIR}/devel/p5-DateTime-Event-Random \
+		p5-DateTime-Event-Cron>=0:${PORTSDIR}/devel/p5-DateTime-Event-Cron
 
 PERL_CONFIGURE=	yes
 

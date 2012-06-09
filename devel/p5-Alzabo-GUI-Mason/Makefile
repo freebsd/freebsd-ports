@@ -15,9 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A GUI for Alzabo using Mason
 
-BUILD_DEPENDS=	${SITE_PERL}/Alzabo.pm:${PORTSDIR}/devel/p5-Alzabo \
-		${SITE_PERL}/HTML/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason \
-		${SITE_PERL}/HTTP/BrowserDetect.pm:${PORTSDIR}/www/p5-HTTP-BrowserDetect
+BUILD_DEPENDS=	p5-Alzabo>=0:${PORTSDIR}/devel/p5-Alzabo \
+		p5-HTML-Mason>=0:${PORTSDIR}/www/p5-HTML-Mason \
+		p5-HTTP-BrowserDetect>=0:${PORTSDIR}/www/p5-HTTP-BrowserDetect
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes

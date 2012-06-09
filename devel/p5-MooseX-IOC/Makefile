@@ -15,11 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Moose attributes with IOC integration
 
-BUILD_DEPENDS=	${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
-		${SITE_PERL}/IOC.pm:${PORTSDIR}/devel/p5-IOC \
-		${SITE_PERL}/${PERL_ARCH}/Moose.pm:${PORTSDIR}/devel/p5-Moose
-RUN_DEPENDS=	${SITE_PERL}/IOC.pm:${PORTSDIR}/devel/p5-IOC \
-		${SITE_PERL}/${PERL_ARCH}/Moose.pm:${PORTSDIR}/devel/p5-Moose
+BUILD_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-IOC>=0:${PORTSDIR}/devel/p5-IOC \
+		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose
+RUN_DEPENDS=	p5-IOC>=0:${PORTSDIR}/devel/p5-IOC \
+		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose
 
 PERL_CONFIGURE=	yes
 
