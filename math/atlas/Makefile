@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/math/lapack:checksum
 USE_BZIP2=	yes
 USE_FORTRAN=	yes
 
-CONFLICTS=	atlas-devel-[0-9]*
+CONFLICTS=	atlas-devel-[0-9]* cblas-[0-9]*
 MANUAL_PACKAGE_BUILD=	Optimizes for the local machine.
 
 OPTIONS=	ARCHDEF		"Use a specified architectural default" off \

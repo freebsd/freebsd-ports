@@ -14,9 +14,9 @@ MASTER_SITE_SUBDIR=	glpk
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A GNU Linear Programming Kit
 
-LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
-
 LICENSE=	GPLv3
+
+LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
 
 OPTIONS=	IODBC	"Enable MathProg iodbc support" Off \
 		MYSQL	"Enable MathProg mysql support" Off
@@ -28,6 +28,7 @@ CFLAGS+=	-trigraphs
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-gmp
+CONFLICTS=	goblin-[0-9]*
 
 .include <bsd.port.pre.mk>
 
