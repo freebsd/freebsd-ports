@@ -80,6 +80,7 @@
     SUBDIR += freefont-ttf
     SUBDIR += freefonts
     SUBDIR += fslsfonts
+    SUBDIR += gbdfed
     SUBDIR += geminifonts
     SUBDIR += gentium
     SUBDIR += gentium-basic
