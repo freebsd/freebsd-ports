@@ -15,7 +15,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://hci.iwr.uni-heidelberg.de/vigra/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	vd@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	VIGRA stands for "Vision with Generic Algorithms"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -52,9 +52,6 @@ LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 
 .if !defined(WITHOUT_VIGRA_FFTW)
 LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3
-.endif
-
-.if !defined(WITHOUT_VIGRA_FFTWF)
 LIB_DEPENDS+=	fftw3f:${PORTSDIR}/math/fftw3-float
 .endif
 
