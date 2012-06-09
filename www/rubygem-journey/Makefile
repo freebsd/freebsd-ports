@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	journey
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
