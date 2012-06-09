@@ -1,4 +1,2 @@
-SHA256 (gorm-1.2.10.tar.gz) = 652979354a31d5adf30d21bfaa652a7db67624cd3020931d5b3323a55f60afcc
-SIZE (gorm-1.2.10.tar.gz) = 669568
-SHA256 (gorm-1.2.12.tar.gz) = ce797dc757235e77b8065680a990207fd77a4e86ad282a44b8cf68bd23a5374b
-SIZE (gorm-1.2.12.tar.gz) = 676832
+SHA256 (gorm-1.2.16.tar.gz) = 81461eece7410cd2d1f7f90faf8c9bc1be149ef7acbfbcc6a7a5ed1f54c07430
+SIZE (gorm-1.2.16.tar.gz) = 820986

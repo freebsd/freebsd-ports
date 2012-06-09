@@ -245,6 +245,9 @@ GNUstep/System/Applications/Gorm.app/Resources/Nib.plugin/stamp.make
 GNUstep/System/Applications/Gorm.app/Resources/RightArr.tiff
 GNUstep/System/Applications/Gorm.app/Resources/Sunday_seurat.tiff
 GNUstep/System/Applications/Gorm.app/Resources/VersionProfiles.plist
+GNUstep/System/Applications/Gorm.app/Resources/Xib.plugin/Resources/Info-gnustep.plist
+GNUstep/System/Applications/Gorm.app/Resources/Xib.plugin/Xib
+GNUstep/System/Applications/Gorm.app/Resources/Xib.plugin/stamp.make
 GNUstep/System/Applications/Gorm.app/Resources/bezel_nib.tiff
 GNUstep/System/Applications/Gorm.app/Resources/browserView.tiff
 GNUstep/System/Applications/Gorm.app/Resources/button_nib.tiff
@@ -303,9 +306,9 @@ GNUstep/System/Library/Headers/GormCore/GormImageInspector.h
 GNUstep/System/Library/Headers/GormCore/GormInspectorsManager.h
 GNUstep/System/Library/Headers/GormCore/GormInternalViewEditor.h
 GNUstep/System/Library/Headers/GormCore/GormMatrixEditor.h
-%%GNUSTEP_DEVEL%%GNUstep/System/Library/Headers/GormCore/GormNSPanel.h
+GNUstep/System/Library/Headers/GormCore/GormNSPanel.h
 GNUstep/System/Library/Headers/GormCore/GormNSSplitViewInspector.h
-%%GNUSTEP_DEVEL%%GNUstep/System/Library/Headers/GormCore/GormNSWindow.h
+GNUstep/System/Library/Headers/GormCore/GormNSWindow.h
 GNUstep/System/Library/Headers/GormCore/GormObjectEditor.h
 GNUstep/System/Library/Headers/GormCore/GormObjectInspector.h
 GNUstep/System/Library/Headers/GormCore/GormOpenGLView.h
@@ -320,14 +323,14 @@ GNUstep/System/Library/Headers/GormCore/GormResource.h
 GNUstep/System/Library/Headers/GormCore/GormResourceEditor.h
 GNUstep/System/Library/Headers/GormCore/GormResourceManager.h
 GNUstep/System/Library/Headers/GormCore/GormScrollViewAttributesInspector.h
-%%GNUSTEP_DEVEL%%GNUstep/System/Library/Headers/GormCore/GormServer.h
+GNUstep/System/Library/Headers/GormCore/GormServer.h
 GNUstep/System/Library/Headers/GormCore/GormSetNameController.h
 GNUstep/System/Library/Headers/GormCore/GormSound.h
 GNUstep/System/Library/Headers/GormCore/GormSoundEditor.h
 GNUstep/System/Library/Headers/GormCore/GormSoundInspector.h
 GNUstep/System/Library/Headers/GormCore/GormSoundView.h
 GNUstep/System/Library/Headers/GormCore/GormSplitViewEditor.h
-%%GNUSTEP_DEVEL%%GNUstep/System/Library/Headers/GormCore/GormStandaloneViewEditor.h
+GNUstep/System/Library/Headers/GormCore/GormStandaloneViewEditor.h
 GNUstep/System/Library/Headers/GormCore/GormViewEditor.h
 GNUstep/System/Library/Headers/GormCore/GormViewKnobs.h
 GNUstep/System/Library/Headers/GormCore/GormViewSizeInspector.h
@@ -335,6 +338,7 @@ GNUstep/System/Library/Headers/GormCore/GormViewWindow.h
 GNUstep/System/Library/Headers/GormCore/GormViewWithContentViewEditor.h
 GNUstep/System/Library/Headers/GormCore/GormViewWithSubviewsEditor.h
 GNUstep/System/Library/Headers/GormCore/GormWindowEditor.h
+GNUstep/System/Library/Headers/GormCore/GormWindowTemplate.h
 GNUstep/System/Library/Headers/GormCore/GormWrapperBuilder.h
 GNUstep/System/Library/Headers/GormCore/GormWrapperLoader.h
 GNUstep/System/Library/Headers/GormCore/NSCell+GormAdditions.h
@@ -395,6 +399,8 @@ GNUstep/System/Tools/Gorm
 @dirrm GNUstep/System/Library/Headers/GormPrefs
 @dirrm GNUstep/System/Library/Headers/GormObjCHeaderParser
 @dirrm GNUstep/System/Library/Headers/GormCore
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/Xib.plugin/Resources
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/Xib.plugin
 @dirrm GNUstep/System/Applications/Gorm.app/Resources/Nib.plugin/Resources
 @dirrm GNUstep/System/Applications/Gorm.app/Resources/Nib.plugin
 @dirrm GNUstep/System/Applications/Gorm.app/Resources/Gorm.plugin/Resources
