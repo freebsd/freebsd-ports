@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.7.7-0
-PORTREVISION=	1
+DISTVERSION=	6.7.7-6
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		http://image_magick.veidrodis.com/image_magick/ \
@@ -48,6 +47,7 @@ OPTIONS=\
 	IMAGEMAGICK_FONTCONFIG	"Fontconfig support" on \
 	IMAGEMAGICK_FPX		"FPX format support" on \
 	IMAGEMAGICK_GSLIB	"libgs (Postscript SHLIB) support" off \
+	IMAGEMAGICK_HDRI	"High dynamic range images support" on \
 	IMAGEMAGICK_JBIG	"JBIG format support" on \
 	IMAGEMAGICK_JPEG	"JPG format support" on \
 	IMAGEMAGICK_JPEG2000	"JPEG2000 format support" on \
@@ -76,13 +76,11 @@ OPTIONS=\
 IGNORE=		support for the PDF format requires ghostscript 8 and higher
 .endif
 
-#.if defined(WITH_IMAGEMAGICK_HDRI)
-#BROKEN=			hdri support broken, disable in options
-#CONFIGURE_ARGS+=	--enable-hdri
-#_NO_IMAGEMAGICK_TESTS=yes
-#.else
+.if defined(WITH_IMAGEMAGICK_HDRI)
+CONFIGURE_ARGS+=	--enable-hdri
+.else
 CONFIGURE_ARGS+=	--disable-hdri
-#.endif
+.endif
 
 .if defined(WITH_THREADS)
 _IMAGEMAGICK_THREADS=yes

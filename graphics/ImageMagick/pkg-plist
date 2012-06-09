@@ -22,7 +22,6 @@ etc/ImageMagick/magic.xml
 etc/ImageMagick/mime.xml
 etc/ImageMagick/policy.xml
 etc/ImageMagick/quantization-table.xml
-etc/ImageMagick/sRGB.icc
 etc/ImageMagick/thresholds.xml
 etc/ImageMagick/type.xml
 etc/ImageMagick/type-dejavu.xml
