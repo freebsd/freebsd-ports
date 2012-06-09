@@ -34,6 +34,7 @@ LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 .if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS=	${OURTARGET}-as:${PORTSDIR}/devel/${OURTARGET}-binutils
 RUN_DEPENDS=	${OURTARGET}-as:${PORTSDIR}/devel/${OURTARGET}-binutils
+BROKEN=		plist build broken with tinderbox/cluster
 .else
 BUILD_DEPENDS=	${OURTARGET}-as:${PORTSDIR}/devel/cross-binutils
 RUN_DEPENDS=	${OURTARGET}-as:${PORTSDIR}/devel/cross-binutils
@@ -145,7 +146,7 @@ FIXREFS=	${SH} -c '${REINPLACE_CMD} -E \
 .if !defined(TGTARCH) || !defined(TGTABI)
 PKGNAMEPREFIX=	cross-
 OURTARGET=	cross	# to generate a correct index line
-IGNORE=		you should select ARCH and ABI to build port
+IGNORE=		you should select TGTARCH and TGTABI to build port
 .endif
 
 OPTIONS=	CXX	"Enable C++ language support" on \
@@ -211,6 +212,10 @@ post-patch:
 	@${MV} ${WRKSRC}/gcc/doc/${FILE}.texi \
 		${WRKSRC}/gcc/doc/${OURTARGET}-${FILE}.texi
 .endfor
+
+# pr ports/159001
+	@${MKDIR} ${WRKSRC}/include/sys
+	@${INSTALL_DATA} /usr/include/sys/sysctl.h ${WRKSRC}/include/sys
 
 #
 # Do not install manpages
