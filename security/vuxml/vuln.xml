@@ -52,6 +52,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="38195f00-b215-11e1-8132-003067b2972c">
+    <topic>linux-flashpluyin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>11.2r202.236</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="http://www.adobe.com/support/security/bulletins/apsb12-14.html">
+	  <p>These vulnerabilities could cause a crash and potentially allow an attacker to take control of the affected system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-2034</cvename>
+      <cvename>CVE-2012-2035</cvename>
+      <cvename>CVE-2012-2036</cvename>
+      <cvename>CVE-2012-2037</cvename>
+      <cvename>CVE-2012-2038</cvename>
+      <cvename>CVE-2012-2039</cvename>
+      <cvename>CVE-2012-2040</cvename>
+      <url>http://www.adobe.com/support/security/bulletins/apsb12-14.html</url>
+    </references>
+    <dates>
+      <discovery>2012-06-08</discovery>
+      <entry>2012-06-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bfecf7c1-af47-11e1-9580-4061862b8c22">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
