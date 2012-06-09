@@ -315,6 +315,7 @@
     SUBDIR += libgnetwork
     SUBDIR += libgweather
     SUBDIR += libkvkontakte
+    SUBDIR += libmediawiki
     SUBDIR += libmms
     SUBDIR += libmxp
     SUBDIR += libnatpmp
