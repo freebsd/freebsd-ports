@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	thunderbird
-DISTVERSION=	12.0.1
-PORTREVISION=	1
+DISTVERSION=	13.0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
@@ -16,7 +15,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}.source
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
 
-BUILD_DEPENDS=	nspr>=4.8.7:${PORTSDIR}/devel/nspr \
+BUILD_DEPENDS=	nspr>=4.9:${PORTSDIR}/devel/nspr \
 		cairo>=1.10.2_1,1:${PORTSDIR}/graphics/cairo \
 		unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
@@ -61,6 +60,10 @@ MOZ_PIS_SCRIPTS=moz_pis_S50cleanhome
 OPTIONS=	LIGHTNING	"Enable calendar extension" off
 
 .include <bsd.port.pre.mk>
+
+.if empty(CXX:M*clang++*) && ${OSVERSION} > 900000
+USE_GCC=	4.6+
+.endif
 
 WRKSRC=		${WRKDIR}/comm-release
 MOZSRC:=	${WRKSRC}/mozilla
