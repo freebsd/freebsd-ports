@@ -7,7 +7,7 @@
 
 PORTNAME=	asterisk-stat
 PORTVERSION=	2.0.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	www
 MASTER_SITES=	http://www.areski.net/${SITE_SUBDIR}/
 DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}
 MAINTAINER=	jfkimura@yahoo.co.jp
 COMMENT=	ASTERISK Call Detail Records Analizer
 
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.[4-9]:${PORTSDIR}/graphics/gd
 
 NO_BUILD=	yes
 USE_PHP=	session gd pcre
@@ -32,6 +32,7 @@ OPTIONS=	PGSQL "Use PostgreSQL instead of MySQL" off
 
 .if defined(WITH_PGSQL)
 ASTERISKSTATDB=	pgsql
+EXTRA_PATCHES+=	${FILESDIR}/pgsql__patch-call.log.php
 .else
 ASTERISKSTATDB=	mysql
 RUN_DEPENDS+=	${LOCALBASE}/lib/asterisk/modules/cdr_addon_mysql.so:${PORTSDIR}/net/asterisk16-addons
