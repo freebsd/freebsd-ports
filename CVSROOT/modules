@@ -2521,6 +2521,8 @@ dits                            ports/devel/dits
 diveintopython                  ports/lang/diveintopython
 divxcalc                        ports/graphics/divxcalc
 dixit                           ports/textproc/dixit
+django-mezzanine-filebrowser    ports/www/django-mezzanine-filebrowser
+django-mezzanine-grappelli      ports/www/django-mezzanine-grappelli
 djbdns                          ports/dns/djbdns
 djbdns-tools                    ports/dns/djbdns-tools
 djbfft                          ports/math/djbfft
@@ -2975,6 +2977,7 @@ edb                             ports/databases/edb
 ede                             ports/x11-wm/ede
 edenmath                        ports/math/edenmath
 edge                            ports/games/edge
+edid-decode                     ports/sysutils/edid-decode
 edith                           ports/editors/edith
 editres                         ports/x11/editres
 editss                          ports/games/editss
@@ -3619,6 +3622,7 @@ flog                            ports/sysutils/flog
 flood                           ports/www/flood
 flops                           ports/benchmarks/flops
 florence                        ports/x11/florence
+flot                            ports/www/flot
 flounder                        ports/science/flounder
 flow-extract                    ports/net-mgmt/flow-extract
 flow-tools                      ports/net-mgmt/flow-tools
@@ -4026,6 +4030,7 @@ froxlor                         ports/sysutils/froxlor
 frozenbubble                    ports/games/frozenbubble
 fruity                          ports/net-mgmt/fruity
 fsbackup                        ports/sysutils/fsbackup
+fsc                             ports/sysutils/fsc
 fsh                             ports/security/fsh
 fsharp                          ports/lang/fsharp
 fslsfonts                       ports/x11-fonts/fslsfonts
@@ -5520,6 +5525,8 @@ hs-HTTP                         ports/www/hs-HTTP
 hs-HUnit                        ports/devel/hs-HUnit
 hs-HaXml                        ports/textproc/hs-HaXml
 hs-HsOpenSSL                    ports/security/hs-HsOpenSSL
+hs-IORefCAS                     ports/devel/hs-IORefCAS
+hs-IfElse                       ports/devel/hs-IfElse
 hs-MaybeT                       ports/devel/hs-MaybeT
 hs-MemoTrie                     ports/devel/hs-MemoTrie
 hs-MissingH                     ports/devel/hs-MissingH
@@ -5539,6 +5546,8 @@ hs-Tensor                       ports/devel/hs-Tensor
 hs-TypeCompose                  ports/devel/hs-TypeCompose
 hs-X11                          ports/x11/hs-X11
 hs-X11-xft                      ports/x11/hs-X11-xft
+hs-abstract-deque               ports/devel/hs-abstract-deque
+hs-abstract-par                 ports/devel/hs-abstract-par
 hs-aeson                        ports/converters/hs-aeson
 hs-agda                         ports/math/hs-Agda
 hs-agda-executable              ports/math/hs-Agda-executable
@@ -5550,17 +5559,21 @@ hs-arrows                       ports/devel/hs-arrows
 hs-asn1-data                    ports/devel/hs-asn1-data
 hs-attempt                      ports/devel/hs-attempt
 hs-attoparsec                   ports/textproc/hs-attoparsec
+hs-attoparsec-conduit           ports/textproc/hs-attoparsec-conduit
 hs-attoparsec-enumerator        ports/textproc/hs-attoparsec-enumerator
 hs-authenticate                 ports/www/hs-authenticate
 hs-base-unicode-symbols         ports/devel/hs-base-unicode-symbols
 hs-base16-bytestring            ports/devel/hs-base16-bytestring
 hs-base64-bytestring            ports/devel/hs-base64-bytestring
-hs-binary                       ports/devel/hs-binary
 hs-bio                          ports/science/hs-bio
+hs-bits-atomic                  ports/devel/hs-bits-atomic
 hs-blaze-builder                ports/devel/hs-blaze-builder
+hs-blaze-builder-conduit        ports/devel/hs-blaze-builder-conduit
 hs-blaze-builder-enumerator     ports/devel/hs-blaze-builder-enumerator
 hs-blaze-html                   ports/textproc/hs-blaze-html
+hs-blaze-markup                 ports/textproc/hs-blaze-markup
 hs-blaze-textual                ports/devel/hs-blaze-textual
+hs-bloomfilter                  ports/devel/hs-bloomfilter
 hs-bnfc                         ports/devel/hs-BNFC
 hs-boolean                      ports/devel/hs-Boolean
 hs-brainfuck                    ports/lang/hs-brainfuck
@@ -5582,15 +5595,15 @@ hs-clientsession                ports/security/hs-clientsession
 hs-cmdargs                      ports/devel/hs-cmdargs
 hs-comonad                      ports/math/hs-comonad
 hs-comonad-transformers         ports/math/hs-comonad-transformers
+hs-conduit                      ports/devel/hs-conduit
 hs-configfile                   ports/devel/hs-ConfigFile
 hs-configurator                 ports/devel/hs-configurator
 hs-contravariant                ports/math/hs-contravariant
-hs-control-monad-attempt        ports/devel/hs-control-monad-attempt
 hs-convertible                  ports/devel/hs-convertible
-hs-convertible-text             ports/devel/hs-convertible-text
 hs-cookie                       ports/www/hs-cookie
 hs-cpphs                        ports/devel/hs-cpphs
 hs-cprng-aes                    ports/security/hs-cprng-aes
+hs-cpu                          ports/sysutils/hs-cpu
 hs-criterion                    ports/benchmarks/hs-criterion
 hs-crypto                       ports/security/hs-Crypto
 hs-crypto-api                   ports/security/hs-crypto-api
@@ -5604,12 +5617,9 @@ hs-darcs                        ports/devel/hs-darcs
 hs-data-default                 ports/devel/hs-data-default
 hs-data-lens                    ports/math/hs-data-lens
 hs-data-lens-template           ports/math/hs-data-lens-template
-hs-data-object                  ports/devel/hs-data-object
-hs-data-object-yaml             ports/devel/hs-data-object-yaml
 hs-dataenc                      ports/converters/hs-dataenc
 hs-datetime                     ports/devel/hs-datetime
 hs-deeparrow                    ports/devel/hs-DeepArrow
-hs-deepseq                      ports/devel/hs-deepseq
 hs-diff                         ports/textproc/hs-Diff
 hs-digest                       ports/security/hs-digest
 hs-directory-tree               ports/devel/hs-directory-tree
@@ -5617,6 +5627,7 @@ hs-distributive                 ports/math/hs-distributive
 hs-dlist                        ports/devel/hs-dlist
 hs-double-conversion            ports/textproc/hs-double-conversion
 hs-drift                        ports/devel/hs-drift
+hs-edit-distance                ports/devel/hs-edit-distance
 hs-email-validate               ports/mail/hs-email-validate
 hs-entropy                      ports/security/hs-entropy
 hs-enumerator                   ports/devel/hs-enumerator
@@ -5634,7 +5645,6 @@ hs-gconf                        ports/devel/hs-gconf
 hs-ghc-events                   ports/devel/hs-ghc-events
 hs-ghc-mtl                      ports/devel/hs-ghc-mtl
 hs-ghc-paths                    ports/devel/hs-ghc-paths
-hs-ghc-paths-docs               ports/devel/hs-ghc-paths-docs
 hs-gio                          ports/devel/hs-gio
 hs-git-annex                    ports/devel/hs-git-annex
 hs-gitit                        ports/www/hs-gitit
@@ -5649,14 +5659,9 @@ hs-gtkglext                     ports/x11-toolkits/hs-gtkglext
 hs-gtksourceview2               ports/x11-toolkits/hs-gtksourceview2
 hs-hS3                          ports/www/hs-hS3
 hs-haddock                      ports/devel/hs-haddock
-hs-haddock-docs                 ports/devel/hs-haddock-docs
 hs-hamlet                       ports/www/hs-hamlet
 hs-happstack                    ports/www/hs-happstack
-hs-happstack-data               ports/www/hs-happstack-data
-hs-happstack-ixset              ports/www/hs-happstack-ixset
 hs-happstack-server             ports/www/hs-happstack-server
-hs-happstack-state              ports/www/hs-happstack-state
-hs-happstack-util               ports/www/hs-happstack-util
 hs-happy                        ports/devel/hs-happy
 hs-hashable                     ports/devel/hs-hashable
 hs-hashed-storage               ports/devel/hs-hashed-storage
@@ -5679,13 +5684,12 @@ hs-hostname                     ports/net/hs-hostname
 hs-hs-bibutils                  ports/textproc/hs-hs-bibutils
 hs-hs3                          ports/www/hs-hS3
 hs-hscolour                     ports/print/hs-hscolour
-hs-hscolour-docs                ports/print/hs-hscolour-docs
 hs-hslogger                     ports/devel/hs-hslogger
 hs-hsopenssl                    ports/security/hs-HsOpenSSL
 hs-hstringtemplate              ports/textproc/hs-HStringTemplate
 hs-html                         ports/textproc/hs-html
 hs-http                         ports/www/hs-HTTP
-hs-http-enumerator              ports/www/hs-http-enumerator
+hs-http-conduit                 ports/www/hs-http-conduit
 hs-http-server                  ports/www/hs-http-server
 hs-http-types                   ports/www/hs-http-types
 hs-hunit                        ports/devel/hs-HUnit
@@ -5694,6 +5698,9 @@ hs-hxt-charproperties           ports/textproc/hs-hxt-charproperties
 hs-hxt-regex-xmlschema          ports/textproc/hs-hxt-regex-xmlschema
 hs-hxt-unicode                  ports/textproc/hs-hxt-unicode
 hs-idoc                         ports/devel/hs-idoc
+hs-ieee754                      ports/math/hs-ieee754
+hs-ifelse                       ports/devel/hs-IfElse
+hs-iorefcas                     ports/devel/hs-IORefCAS
 hs-json                         ports/converters/hs-json
 hs-language-c                   ports/devel/hs-language-c
 hs-largeword                    ports/devel/hs-largeword
@@ -5712,15 +5719,17 @@ hs-missingh                     ports/devel/hs-MissingH
 hs-mmap                         ports/devel/hs-mmap
 hs-monad-control                ports/devel/hs-monad-control
 hs-monad-par                    ports/devel/hs-monad-par
+hs-monad-par-extras             ports/devel/hs-monad-par-extras
 hs-monadcatchio-mtl             ports/devel/hs-MonadCatchIO-mtl
 hs-monadcatchio-transformers    ports/devel/hs-MonadCatchIO-transformers
+hs-monadcryptorandom            ports/security/hs-monadcryptorandom
 hs-mtl                          ports/devel/hs-mtl
-hs-mtl-docs                     ports/devel/hs-mtl-docs
 hs-mueval                       ports/devel/hs-mueval
 hs-murmur-hash                  ports/devel/hs-murmur-hash
 hs-mwc-random                   ports/math/hs-mwc-random
 hs-mysql                        ports/databases/hs-mysql
 hs-network                      ports/net/hs-network
+hs-network-conduit              ports/net/hs-network-conduit
 hs-numinstances                 ports/math/hs-NumInstances
 hs-objectname                   ports/devel/hs-ObjectName
 hs-oeis                         ports/www/hs-oeis
@@ -5734,11 +5743,12 @@ hs-parsec                       ports/textproc/hs-parsec
 hs-path-pieces                  ports/www/hs-path-pieces
 hs-pcap                         ports/net/hs-pcap
 hs-pcre-light                   ports/devel/hs-pcre-light
+hs-pem                          ports/security/hs-pem
 hs-persistent                   ports/databases/hs-persistent
 hs-persistent-template          ports/databases/hs-persistent-template
 hs-pointed                      ports/math/hs-pointed
 hs-polyparse                    ports/textproc/hs-polyparse
-hs-pool                         ports/devel/hs-pool
+hs-pool-conduit                 ports/devel/hs-pool-conduit
 hs-porte                        ports/ports-mgmt/hs-porte
 hs-primitive                    ports/devel/hs-primitive
 hs-probability                  ports/math/hs-probability
@@ -5747,6 +5757,7 @@ hs-pureMD5                      ports/security/hs-pureMD5
 hs-puremd5                      ports/security/hs-pureMD5
 hs-pwstore-fast                 ports/security/hs-pwstore-fast
 hs-quickcheck                   ports/devel/hs-QuickCheck
+hs-random                       ports/devel/hs-random
 hs-ranges                       ports/devel/hs-ranges
 hs-reactive                     ports/devel/hs-reactive
 hs-readline                     ports/devel/hs-readline
@@ -5755,6 +5766,8 @@ hs-regex-base                   ports/textproc/hs-regex-base
 hs-regex-compat                 ports/textproc/hs-regex-compat
 hs-regex-pcre-builtin           ports/textproc/hs-regex-pcre-builtin
 hs-regex-posix                  ports/textproc/hs-regex-posix
+hs-resource-pool                ports/devel/hs-resource-pool
+hs-resourcet                    ports/devel/hs-resourcet
 hs-rsa                          ports/security/hs-RSA
 hs-safe                         ports/devel/hs-safe
 hs-scgi                         ports/www/hs-scgi
@@ -5774,6 +5787,7 @@ hs-smallcheck                   ports/devel/hs-smallcheck
 hs-snap                         ports/www/hs-snap
 hs-snap-core                    ports/www/hs-snap-core
 hs-snap-server                  ports/www/hs-snap-server
+hs-socks                        ports/net/hs-socks
 hs-soegtk                       ports/graphics/hs-soegtk
 hs-split                        ports/devel/hs-split
 hs-statevar                     ports/devel/hs-StateVar
@@ -5786,9 +5800,11 @@ hs-svgcairo                     ports/graphics/hs-svgcairo
 hs-syb                          ports/devel/hs-syb
 hs-syb-with-class               ports/devel/hs-syb-with-class
 hs-syb-with-class-instances-text  ports/devel/hs-syb-with-class-instances-text
+hs-system-filepath              ports/devel/hs-system-filepath
 hs-tagged                       ports/devel/hs-tagged
 hs-tagsoup                      ports/textproc/hs-tagsoup
 hs-tar                          ports/archivers/hs-tar
+hs-temporary                    ports/devel/hs-temporary
 hs-tensor                       ports/devel/hs-Tensor
 hs-terminfo                     ports/devel/hs-terminfo
 hs-test-framework               ports/devel/hs-test-framework
@@ -5802,7 +5818,6 @@ hs-tls                          ports/security/hs-tls
 hs-tls-extra                    ports/security/hs-tls-extra
 hs-transformers                 ports/devel/hs-transformers
 hs-transformers-base            ports/devel/hs-transformers-base
-hs-transformers-docs            ports/devel/hs-transformers-docs
 hs-typecompose                  ports/devel/hs-TypeCompose
 hs-unamb                        ports/devel/hs-unamb
 hs-uniplate                     ports/devel/hs-uniplate
@@ -5816,6 +5831,7 @@ hs-uuagc                        ports/devel/hs-uuagc
 hs-uuagc-bootstrap              ports/devel/hs-uuagc-bootstrap
 hs-uuagc-cabal                  ports/devel/hs-uuagc-cabal
 hs-uulib                        ports/devel/hs-uulib
+hs-vault                        ports/devel/hs-vault
 hs-vector                       ports/devel/hs-vector
 hs-vector-algorithms            ports/devel/hs-vector-algorithms
 hs-vector-space                 ports/math/hs-vector-space
@@ -5827,14 +5843,14 @@ hs-wai-logger                   ports/www/hs-wai-logger
 hs-warp                         ports/www/hs-warp
 hs-webkit                       ports/www/hs-webkit
 hs-wx                           ports/x11-toolkits/hs-wx
+hs-wxc                          ports/x11-toolkits/hs-wxc
 hs-wxcore                       ports/x11-toolkits/hs-wxcore
 hs-wxdirect                     ports/x11-toolkits/hs-wxdirect
 hs-x11                          ports/x11/hs-X11
 hs-x11-xft                      ports/x11/hs-X11-xft
 hs-xhtml                        ports/textproc/hs-xhtml
-hs-xhtml-docs                   ports/textproc/hs-xhtml-docs
 hs-xml                          ports/textproc/hs-xml
-hs-xml-enumerator               ports/textproc/hs-xml-enumerator
+hs-xml-conduit                  ports/textproc/hs-xml-conduit
 hs-xml-types                    ports/textproc/hs-xml-types
 hs-xmlhtml                      ports/textproc/hs-xmlhtml
 hs-xmobar                       ports/x11/hs-xmobar
@@ -5848,9 +5864,11 @@ hs-yesod-core                   ports/www/hs-yesod-core
 hs-yesod-form                   ports/www/hs-yesod-form
 hs-yesod-json                   ports/www/hs-yesod-json
 hs-yesod-persistent             ports/www/hs-yesod-persistent
+hs-yesod-routes                 ports/www/hs-yesod-routes
 hs-zip-archive                  ports/archivers/hs-zip-archive
 hs-zlib                         ports/archivers/hs-zlib
 hs-zlib-bindings                ports/archivers/hs-zlib-bindings
+hs-zlib-conduit                 ports/archivers/hs-zlib-conduit
 hs-zlib-enum                    ports/archivers/hs-zlib-enum
 hsb-aspell                      ports/textproc/hsb-aspell
 hsetroot                        ports/graphics/hsetroot
@@ -6043,7 +6061,6 @@ iec16022                        ports/graphics/iec16022
 iet                             ports/net/iet
 iextract                        ports/sysutils/iextract
 ifc                             ports/lang/ifc
-ifd-devkit                      ports/security/ifd-devkit
 ifd-slb_rf60                    ports/security/ifd-slb_rf60
 ifd-test                        ports/devel/ifd-test
 ifdepd                          ports/net/ifdepd
@@ -7041,7 +7058,6 @@ katapult                        ports/deskutils/katapult
 kate                            ports/editors/kate
 kate-plugins                    ports/editors/kate-plugins
 kaudiocreator                   ports/audio/kaudiocreator
-kavmilter                       ports/mail/kavmilter
 kawa                            ports/lang/kawa
 kazehakase                      ports/www/kazehakase
 kb                              ports/comms/kb
@@ -8522,7 +8538,6 @@ libudbc                         ports/databases/libudbc
 libukcprog                      ports/devel/libukcprog
 libumberlog                     ports/sysutils/libumberlog
 libumidi                        ports/audio/libumidi
-libungif                        ports/graphics/libungif
 libunicode                      ports/devel/libunicode
 libuninameslist                 ports/textproc/libuninameslist
 libuninum                       ports/devel/libuninum
@@ -8836,7 +8851,6 @@ linux-libxml                    ports/textproc/linux-libxml
 linux-libxml2                   ports/textproc/linux-libxml2
 linux-majesty-demo              ports/games/linux-majesty-demo
 linux-mbrola                    ports/audio/linux-mbrola
-linux-megacli                   ports/sysutils/linux-megacli
 linux-megamgr                   ports/sysutils/linux-megamgr
 linux-mikmod                    ports/audio/linux-mikmod
 linux-mplayer-plugin            ports/www/linux-mplayer-plugin
@@ -11981,6 +11995,7 @@ p5-DNS-EasyDNS                  ports/dns/p5-DNS-EasyDNS
 p5-DNS-Zone                     ports/dns/p5-DNS-Zone
 p5-DNS-ZoneParse                ports/dns/p5-DNS-ZoneParse
 p5-DWH_File                     ports/databases/p5-DWH_File
+p5-Daemon-Control               ports/devel/p5-Daemon-Control
 p5-Daemon-Generic               ports/net/p5-Daemon-Generic
 p5-Dancer                       ports/www/p5-Dancer
 p5-Dancer-Debug                 ports/devel/p5-Dancer-Debug
@@ -16388,6 +16403,7 @@ p5-curses-ui                    ports/devel/p5-Curses-UI
 p5-curses-widgets               ports/devel/p5-Curses-Widgets
 p5-cvs                          ports/devel/p5-Cvs
 p5-dTemplate                    ports/textproc/p5-dTemplate
+p5-daemon-control               ports/devel/p5-Daemon-Control
 p5-daemon-generic               ports/net/p5-Daemon-Generic
 p5-dancer                       ports/www/p5-Dancer
 p5-dancer-debug                 ports/devel/p5-Dancer-Debug
@@ -21128,6 +21144,7 @@ pg_reorg                        ports/databases/pg_reorg
 pg_rman                         ports/databases/pg_rman
 pgaccess                        ports/databases/pgaccess
 pgadmin3                        ports/databases/pgadmin3
+pgagent                         ports/databases/pgagent
 pgbouncer                       ports/databases/pgbouncer
 pgcalc                          ports/math/pgcalc
 pgdbf                           ports/databases/pgdbf
@@ -22203,7 +22220,6 @@ pwd_unmkdb                      ports/sysutils/pwd_unmkdb
 pwebstats                       ports/www/pwebstats
 pwg                             ports/sysutils/pwg
 pwgen                           ports/sysutils/pwgen
-pwgen2                          ports/sysutils/pwgen2
 pwlib                           ports/devel/pwlib
 pwm                             ports/x11-wm/pwm
 pwman                           ports/security/pwman
@@ -22607,6 +22623,7 @@ py-graphtool                    ports/math/py-graphtool
 py-graphviz                     ports/graphics/py-graphviz
 py-graphy                       ports/graphics/py-graphy
 py-greenlet                     ports/devel/py-greenlet
+py-grequests                    ports/www/py-grequests
 py-grizzled                     ports/devel/py-grizzled
 py-grouch                       ports/devel/py-grouch
 py-gsl                          ports/math/py-gsl
@@ -22624,6 +22641,7 @@ py-hashring                     ports/devel/py-hashring
 py-hcluster                     ports/science/py-hcluster
 py-hghooks                      ports/devel/py-hghooks
 py-hgsubversion                 ports/devel/py-hgsubversion
+py-hiredis                      ports/databases/py-hiredis
 py-html2text                    ports/textproc/py-html2text
 py-html5lib                     ports/www/py-html5lib
 py-htmlgen                      ports/www/py-HTMLgen
@@ -23019,6 +23037,7 @@ py-pycryptopp                   ports/security/py-pycryptopp
 py-pydasm                       ports/devel/py-pydasm
 py-pydicom                      ports/science/py-pydicom
 py-pydot                        ports/graphics/py-pydot
+py-pyev                         ports/devel/py-pyev
 py-pyfits                       ports/astro/py-pyfits
 py-pyftpdlib                    ports/ftp/py-pyftpdlib
 py-pyglet                       ports/graphics/py-pyglet
@@ -23165,6 +23184,7 @@ py-sip                          ports/devel/py-sip
 py-six                          ports/devel/py-six
 py-ski                          ports/games/py-ski
 py-slimmer                      ports/www/py-slimmer
+py-slumber                      ports/www/py-slumber
 py-smb                          ports/net/py-smb
 py-smbpasswd                    ports/net/py-smbpasswd
 py-smmap                        ports/devel/py-smmap
@@ -24659,6 +24679,7 @@ rubygem-authlogic               ports/devel/rubygem-authlogic
 rubygem-awesome_print           ports/devel/rubygem-awesome_print
 rubygem-backports               ports/devel/rubygem-backports
 rubygem-backup                  ports/sysutils/rubygem-backup
+rubygem-bacon                   ports/devel/rubygem-bacon
 rubygem-bcrypt-ruby             ports/security/rubygem-bcrypt-ruby
 rubygem-benelux                 ports/devel/rubygem-benelux
 rubygem-bigrecord               ports/databases/rubygem-bigrecord
@@ -24861,6 +24882,7 @@ rubygem-macaddr                 ports/net/rubygem-macaddr
 rubygem-mail                    ports/mail/rubygem-mail
 rubygem-mailfactory             ports/mail/rubygem-mailfactory
 rubygem-main                    ports/devel/rubygem-main
+rubygem-map                     ports/devel/rubygem-map
 rubygem-markaby                 ports/textproc/rubygem-markaby
 rubygem-maruku                  ports/www/rubygem-maruku
 rubygem-mash                    ports/devel/rubygem-mash
@@ -24999,6 +25021,7 @@ rubygem-rightslicehost          ports/net/rubygem-rightslicehost
 rubygem-rjb                     ports/java/rubygem-rjb
 rubygem-rmail                   ports/mail/rubygem-rmail
 rubygem-roauth                  ports/security/rubygem-roauth
+rubygem-robotex                 ports/www/rubygem-robotex
 rubygem-robots                  ports/www/rubygem-robots
 rubygem-rparsec                 ports/devel/rubygem-rparsec
 rubygem-rr                      ports/devel/rubygem-rr
@@ -25432,6 +25455,7 @@ sentinel                        ports/mail/sentinel
 seom                            ports/graphics/seom
 separate                        ports/graphics/separate
 seq2                            ports/misc/seq2
+seqan                           ports/biology/seqan
 seqio                           ports/biology/seqio
 ser                             ports/net/ser
 ser2net                         ports/comms/ser2net
@@ -27855,7 +27879,6 @@ wtail                           ports/sysutils/wtail
 wterm                           ports/x11/wterm
 wtf                             ports/games/wtf
 wtmp-tools                      ports/sysutils/wtmp-tools
-wu-ftpd+ipv6                    ports/ftp/wu-ftpd+ipv6
 wuzzah                          ports/sysutils/wuzzah
 wv                              ports/textproc/wv
 wv2                             ports/textproc/wv2
@@ -28227,7 +28250,6 @@ xfmail                          ports/mail/xfmail
 xfmpc                           ports/audio/xfmpc
 xfontsel                        ports/x11-fonts/xfontsel
 xforms                          ports/x11-toolkits/xforms
-xforms-i18n                     ports/x11-toolkits/xforms-i18n
 xforward                        ports/x11/xforward
 xfpovray                        ports/graphics/xfpovray
 xfractint                       ports/graphics/xfractint
