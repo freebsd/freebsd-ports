@@ -19,6 +19,8 @@ PROJECTHOST=	gatherit
 
 USE_PERL5=	yes
 
+CONFLICTS_INSTALL=	harvest-[0-9]*
+
 DATADIR=	/var/db/gather
 MAKE_ENV+=	CONFDIR=${PREFIX}/etc/gather DATADIR=${DATADIR}
 
