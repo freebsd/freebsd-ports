@@ -17,7 +17,7 @@ COMMENT=	Lynx-like text WWW browser
 
 LICENSE=	GPLv2
 
-CONFLICTS=	links-0*
+CONFLICTS=	links-0* links-hacked-[0-9]*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-ssl --without-pmshell --without-atheos \
@@ -38,20 +38,20 @@ OPTIONS=	SVGALIB "non-X11 graphics support" off \
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
-LIB_DEPENDS+=	lzma.5:${PORTSDIR}/archivers/xz
+LIB_DEPENDS+=	lzma:${PORTSDIR}/archivers/xz
 .endif
 
 .ifdef(WITH_SVGALIB) || defined(WITH_X11) || defined(WITH_DIRECTFB)
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		tiff:${PORTSDIR}/graphics/tiff
 CONFIGURE_ARGS+=	--enable-graphics
 .else
 CONFIGURE_ARGS+=	--disable-graphics --without-libjpeg --without-libtiff
 .endif
 
 .ifdef(WITH_SVGALIB)
-LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
+LIB_DEPENDS+=	vga:${PORTSDIR}/graphics/svgalib
 CONFIGURE_ARGS+=	--with-svgalib
 .else
 CONFIGURE_ARGS+=	--without-svgalib

@@ -29,6 +29,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 CFLAGS+=	-fPIC
 PLIST_SUB=	PORTNAME="${PORTNAME}"
+CONFLICTS=	emboss-[0-9]*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
