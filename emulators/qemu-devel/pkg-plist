@@ -66,6 +66,9 @@ etc/qemu/target-x86_64.conf.sample
 %%DATADIR%%/sgabios.bin
 %%DATADIR%%/petalogix-s3adsp1800.dtb
 %%DATADIR%%/bamboo.dtb
+%%DATADIR%%/cpus-x86_64.conf
+%%DATADIR%%/kvmvapic.bin
+%%DATADIR%%/qemu-icon.bmp
 %%DATADIR%%/keymaps/ar
 %%DATADIR%%/keymaps/common
 %%DATADIR%%/keymaps/da

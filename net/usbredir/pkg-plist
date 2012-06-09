@@ -1,10 +1,15 @@
+include/usbredirfilter.h
 include/usbredirhost.h
 include/usbredirproto.h
 include/usbredirparser.h
+lib/libusbredirparser.a
+lib/libusbredirparser.la
 lib/libusbredirparser.so
 lib/libusbredirparser.so.0
+lib/libusbredirhost.a
+lib/libusbredirhost.la
 lib/libusbredirhost.so
-lib/libusbredirhost.so.0
+lib/libusbredirhost.so.1
 libdata/pkgconfig/libusbredirparser.pc
 libdata/pkgconfig/libusbredirhost.pc
 sbin/usbredirserver

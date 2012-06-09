@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTVERSION=	1.1.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/:release \
 		LOCAL/nox:snapshot
@@ -19,6 +18,7 @@ MAINTAINER=	nox@FreeBSD.org
 COMMENT=	QEMU CPU Emulator - development version
 
 HAS_CONFIGURE=	yes
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
 USE_PYTHON_BUILD=	yes
@@ -32,7 +32,7 @@ CONFLICTS_INSTALL=	qemu-[0-9]*
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	SAMBA SDL OPENGL GNUTLS SASL JPEG PNG CURL CDROM_DMA PCAP \
-		SEABIOS_GIT USBREDIR GNS3 ADD_AUDIO ALL_TARGETS
+		USBREDIR GNS3 ADD_AUDIO ALL_TARGETS
 SAMBA_DESC=		"samba dependency (for -smb)"
 GNUTLS_DESC=		"gnutls dependency (vnc encryption)"
 SASL_DESC=		"cyrus-sasl dependency (vnc encryption)"
@@ -46,8 +46,7 @@ USBREDIR_DESC=		"usb device network redirection (experimental!)"
 GNS3_DESC=		"gns3 patches (udp, promiscuous multicast)"
 ADD_AUDIO_DESC=		"Emulate more audio hardware (experimental!)"
 ALL_TARGETS_DESC=	"Also build bsd-user targets (for testing)"
-OPTIONS_DEFAULT=SDL OPENGL GNUTLS SASL JPEG PNG CURL CDROM_DMA PCAP \
-		SEABIOS_GIT
+OPTIONS_DEFAULT=SDL OPENGL GNUTLS SASL JPEG PNG CURL CDROM_DMA PCAP
 
 .include <bsd.port.options.mk>
 
@@ -78,7 +77,7 @@ WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC} --enable-docs \
 	--disable-linux-user --disable-linux-aio \
-	--disable-darwin-user --disable-kvm --disable-xen \
+	--disable-kvm --disable-xen \
 	--smbd=${LOCALBASE}/sbin/smbd \
 	--extra-cflags=-I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"${PREFIX}\\\"
 
@@ -127,7 +126,8 @@ USE_GL=		yes
 .if empty(PORT_OPTIONS:MUSBREDIR)
 CONFIGURE_ARGS+=	--disable-usb-redir
 .else
-LIB_DEPENDS+=	usbredirparser:${PORTSDIR}/net/usbredir
+BUILD_DEPENDS+=	usbredir>=0.4.3:${PORTSDIR}/net/usbredir
+RUN_DEPENDS+=	usbredir>=0.4.3:${PORTSDIR}/net/usbredir
 .endif
 
 .if ${PORT_OPTIONS:MPCAP}

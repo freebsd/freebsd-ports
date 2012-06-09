@@ -1,6 +1,6 @@
 Index: qemu/Makefile
-@@ -29,7 +29,11 @@ $(call set-vpath, $(SRC_PATH):$(SRC_PATH
- LIBS+=-lz $(LIBS_TOOLS)
+@@ -40,7 +40,11 @@ LIBS+=-lz $(LIBS_TOOLS)
+ HELPERS-$(CONFIG_LINUX) = qemu-bridge-helper$(EXESUF)
  
  ifdef BUILD_DOCS
 +ifdef NOPORTDOCS
@@ -8,29 +8,30 @@ Index: qemu/Makefile
 +else
  DOCS=qemu-doc.html qemu-tech.html qemu.1 qemu-img.1 qemu-nbd.8 QMP/qmp-commands.txt
 +endif
- else
- DOCS=
+ ifdef CONFIG_VIRTFS
+ DOCS+=fsdev/virtfs-proxy-helper.1
  endif
-@@ -169,8 +173,10 @@ BLOBS=
+@@ -269,8 +273,10 @@ BLOBS=
  endif
  
  install-doc: $(DOCS)
 +ifndef NOPORTDOCS
- 	$(INSTALL_DIR) "$(DESTDIR)$(docdir)"
- 	$(INSTALL_DATA) qemu-doc.html  qemu-tech.html "$(DESTDIR)$(docdir)"
+ 	$(INSTALL_DIR) "$(DESTDIR)$(qemu_docdir)"
+ 	$(INSTALL_DATA) qemu-doc.html  qemu-tech.html "$(DESTDIR)$(qemu_docdir)"
 +endif
  ifdef CONFIG_POSIX
  	$(INSTALL_DIR) "$(DESTDIR)$(mandir)/man1"
  	$(INSTALL_DATA) qemu.1 qemu-img.1 "$(DESTDIR)$(mandir)/man1"
-@@ -180,7 +186,10 @@ endif
+@@ -289,8 +295,11 @@ install-confdir:
+ 	$(INSTALL_DIR) "$(DESTDIR)$(qemu_confdir)"
  
- install-sysconfig:
- 	$(INSTALL_DIR) "$(DESTDIR)$(sysconfdir)/qemu"
--	$(INSTALL_DATA) $(SRC_PATH)/sysconfigs/target/target-x86_64.conf "$(DESTDIR)$(sysconfdir)/qemu"
-+	$(INSTALL_DATA) $(SRC_PATH)/sysconfigs/target/target-x86_64.conf "$(DESTDIR)$(sysconfdir)/qemu/target-x86_64.conf.sample"
-+	if [ ! -f "$(sysconfdir)/qemu/target-x86_64.conf" ]; then \
-+	    $(INSTALL_DATA) $(SRC_PATH)/sysconfigs/target/target-x86_64.conf "$(sysconfdir)/qemu"; \
+ install-sysconfig: install-datadir install-confdir
+-	$(INSTALL_DATA) $(SRC_PATH)/sysconfigs/target/target-x86_64.conf "$(DESTDIR)$(qemu_confdir)"
++	$(INSTALL_DATA) $(SRC_PATH)/sysconfigs/target/target-x86_64.conf "$(DESTDIR)$(qemu_confdir)/target-x86_64.conf.sample"
++	if [ ! -f "$(qemu_confdir)/target-x86_64.conf" ]; then \
++	    $(INSTALL_DATA) $(SRC_PATH)/sysconfigs/target/target-x86_64.conf "$(qemu_confdir)"; \
 +	fi
+ 	$(INSTALL_DATA) $(SRC_PATH)/sysconfigs/target/cpus-x86_64.conf "$(DESTDIR)$(qemu_datadir)"
  
- install: all $(if $(BUILD_DOCS),install-doc) install-sysconfig
+ install: all $(if $(BUILD_DOCS),install-doc) install-sysconfig install-datadir
  	$(INSTALL_DIR) "$(DESTDIR)$(bindir)"
