@@ -14,7 +14,7 @@ GNUstep/Local/Library/Documentation/Performance/GSThroughput.gsdoc
 GNUstep/Local/Library/Documentation/Performance/GSThroughput.html
 GNUstep/Local/Library/Documentation/Performance/GSTicker.gsdoc
 GNUstep/Local/Library/Documentation/Performance/GSTicker.html
-%%GNUSTEP_DEVEL%%GNUstep/Local/Library/Documentation/Performance/OrderedSymbolDeclarations.plist
+GNUstep/Local/Library/Documentation/Performance/OrderedSymbolDeclarations.plist
 GNUstep/Local/Library/Documentation/Performance/Performance.igsdoc
 GNUstep/Local/Library/Documentation/Performance/dependencies
 GNUstep/Local/Library/Headers/Performance/GSCache.h
