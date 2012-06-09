@@ -1,13 +1,14 @@
-TilEm is an emulator for the Z80 series of Texas Instruments graphing
-calculators.  It currently features:
+TilEm is Gtk+ based emulator for the Z80 series of Texas Instruments graphing
+calculators.  It currently features and supports:
 
-    * All Z80 TI calculators (73, 82, 83, 83+, 83+ SE, 84+, 84+ SE, 85,
-      and 86) except the TI-81, and all known ROM/OS versions
-    * Automatic certificate patching for dumped 73/83+/84+ ROMs
-    * Flash writing and erasing
-    * Application and OS loading
-    * Built-in debugger
-    * Flexible keyboard handling
-    * Much more!
+  - All Z80 TI calculators (73, 76, 81, 82, 83/+/+SE, 84/+/+SE, 85, and 86)
+    with all known ROM/OS versions, and attempts to reproduce the behavior
+    of the original calculator hardware as faithfully as possible
+  - Grabbing screenshots and recording GIFs (w/animations)
+  - Built-in fully featured debugger
+  - Virtual linking (through libticables)
+  - Flash writing and erasing
+  - Application and OS loading
+  - Scripting using macros
 
 WWW: http://lpg.ticalc.org/prj_tilem/
