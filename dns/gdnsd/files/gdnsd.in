@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: gdnsd
+# REQUIRE: DAEMON
+# REQUIRE: LOGIN
+# KEYWORD: FreeBSD shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# gdnsd_enable (bool):	Set to NO by default.
+#				Set it to YES to enable gdnsd.
+# gdnsd_config (path):	Set to %%PREFIX%%/etc/gdnsd/config
+#				by default.
+
+. /etc/rc.subr
+
+name="gdnsd"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/sbin/gdnsd"
+
+# set defaults
+load_rc_config $name
+: ${gdnsd_enable:="NO"}
+: ${gdnsd_config="%%PREFIX%%/etc/gdnsd/config"}
+: ${gdnsd_pidfile="%%PREFIX%%/var/run/gdnsd.pid"}
+
+required_files=${gdnsd_config}
+command_args="-c ${gdnsd_config} start"
+procname=${command}
+extra_commands="checkconf"
+checkconf_cmd="gdnsd_checkconf"
+
+stop_postcmd=stop_postcmd
+
+stop_postcmd()
+{
+  rm -f ${gdnsd_pidfile}
+}
+
+gdnsd_checkconf()
+{
+  ${command} -c ${gdnsd_config} checkconf
+}
+
+run_rc_command "$1"
+
