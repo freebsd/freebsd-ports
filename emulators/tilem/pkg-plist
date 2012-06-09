@@ -1,67 +1,68 @@
-bin/neosign
-bin/tcc
-bin/tilem
-%%DATADIR%%/data/x2syms
-%%DATADIR%%/data/x3keys
-%%DATADIR%%/data/x3syms
-%%DATADIR%%/data/x5syms
-%%DATADIR%%/data/x6keys
-%%DATADIR%%/data/x6syms
-%%DATADIR%%/data/x7keys
-%%DATADIR%%/data/x7syms
-%%DATADIR%%/data/xpsyms
-@dirrm %%DATADIR%%/data
-%%DATADIR%%/pixmaps/bpx.xpm
-%%DATADIR%%/pixmaps/clear.xpm
-%%DATADIR%%/pixmaps/norm.xpm
-%%DATADIR%%/pixmaps/pc.xpm
-%%DATADIR%%/pixmaps/pc_ignored.xpm
-%%DATADIR%%/pixmaps/pc_taken.xpm
-%%DATADIR%%/pixmaps/pcbpx.xpm
-%%DATADIR%%/pixmaps/pcx_i.xpm
-%%DATADIR%%/pixmaps/pcx_t.xpm
-%%DATADIR%%/pixmaps/run.xpm
-%%DATADIR%%/pixmaps/setbpx.xpm
-%%DATADIR%%/pixmaps/step.xpm
-%%DATADIR%%/pixmaps/stepovr.xpm
-%%DATADIR%%/pixmaps/tilem.bin
-%%DATADIR%%/pixmaps/tracebk.xpm
-%%DATADIR%%/pixmaps/tracefwd.xpm
-%%DATADIR%%/pixmaps/x2_bot.jpg
-%%DATADIR%%/pixmaps/x2_left.jpg
-%%DATADIR%%/pixmaps/x2_right.jpg
-%%DATADIR%%/pixmaps/x2_top.jpg
-%%DATADIR%%/pixmaps/x3_bot.jpg
-%%DATADIR%%/pixmaps/x3_left.jpg
-%%DATADIR%%/pixmaps/x3_right.jpg
-%%DATADIR%%/pixmaps/x3_top.jpg
-%%DATADIR%%/pixmaps/x4_bot.jpg
-%%DATADIR%%/pixmaps/x4_left.jpg
-%%DATADIR%%/pixmaps/x4_right.jpg
-%%DATADIR%%/pixmaps/x4_top.jpg
-%%DATADIR%%/pixmaps/x5_bot.jpg
-%%DATADIR%%/pixmaps/x5_left.jpg
-%%DATADIR%%/pixmaps/x5_right.jpg
-%%DATADIR%%/pixmaps/x5_top.jpg
-%%DATADIR%%/pixmaps/x6_bot.jpg
-%%DATADIR%%/pixmaps/x6_left.jpg
-%%DATADIR%%/pixmaps/x6_right.jpg
-%%DATADIR%%/pixmaps/x6_top.jpg
-%%DATADIR%%/pixmaps/x7_bot.jpg
-%%DATADIR%%/pixmaps/x7_left.jpg
-%%DATADIR%%/pixmaps/x7_right.jpg
-%%DATADIR%%/pixmaps/x7_top.jpg
-%%DATADIR%%/pixmaps/xp_bot.jpg
-%%DATADIR%%/pixmaps/xp_left.jpg
-%%DATADIR%%/pixmaps/xp_right.jpg
-%%DATADIR%%/pixmaps/xp_top.jpg
-%%DATADIR%%/pixmaps/xs_bot.jpg
-%%DATADIR%%/pixmaps/xs_left.jpg
-%%DATADIR%%/pixmaps/xs_right.jpg
-%%DATADIR%%/pixmaps/xs_top.jpg
-%%DATADIR%%/pixmaps/xz_bot.jpg
-%%DATADIR%%/pixmaps/xz_left.jpg
-%%DATADIR%%/pixmaps/xz_right.jpg
-%%DATADIR%%/pixmaps/xz_top.jpg
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%
+bin/tilem2
+share/applications/tilem2.desktop
+share/icons/hicolor/16x16/apps/tilem.png
+share/icons/hicolor/22x22/apps/tilem.png
+share/icons/hicolor/24x24/apps/tilem.png
+share/icons/hicolor/32x32/apps/tilem.png
+share/icons/hicolor/48x48/apps/tilem.png
+share/mime/application/x-ti73-app.xml
+share/mime/application/x-ti73-backup.xml
+share/mime/application/x-ti73-os.xml
+share/mime/application/x-ti73-program.xml
+share/mime/application/x-ti73-variables.xml
+share/mime/application/x-ti81-program.xml
+share/mime/application/x-ti82-backup.xml
+share/mime/application/x-ti82-program.xml
+share/mime/application/x-ti82-variables.xml
+share/mime/application/x-ti83-backup.xml
+share/mime/application/x-ti83-program.xml
+share/mime/application/x-ti83-variables.xml
+share/mime/application/x-ti83plus-app.xml
+share/mime/application/x-ti83plus-os.xml
+share/mime/application/x-ti83plus-program.xml
+share/mime/application/x-ti83plus-variables.xml
+share/mime/application/x-ti85-backup.xml
+share/mime/application/x-ti85-program.xml
+share/mime/application/x-ti85-variables.xml
+share/mime/application/x-ti86-backup.xml
+share/mime/application/x-ti86-program.xml
+share/mime/application/x-ti86-variables.xml
+share/mime/application/x-tigroup.xml
+share/mime/packages/tilem2.xml
+share/tilem2/icons/hicolor/16x16/actions/tilem-db-finish.png
+share/tilem2/icons/hicolor/16x16/actions/tilem-db-step-over.png
+share/tilem2/icons/hicolor/16x16/actions/tilem-db-step.png
+share/tilem2/icons/hicolor/16x16/status/tilem-disasm-break-pc.png
+share/tilem2/icons/hicolor/16x16/status/tilem-disasm-break.png
+share/tilem2/icons/hicolor/16x16/status/tilem-disasm-pc.png
+share/tilem2/icons/hicolor/24x24/actions/tilem-db-finish.png
+share/tilem2/icons/hicolor/24x24/actions/tilem-db-step-over.png
+share/tilem2/icons/hicolor/24x24/actions/tilem-db-step.png
+share/tilem2/icons/hicolor/index.theme
+share/tilem2/keybindings.ini
+share/tilem2/skins/ti76.skn
+share/tilem2/skins/ti81.skn
+share/tilem2/skins/ti82.skn
+share/tilem2/skins/ti82stats.skn
+share/tilem2/skins/ti83.skn
+share/tilem2/skins/ti83p.skn
+share/tilem2/skins/ti83pfr.skn
+share/tilem2/skins/ti84p.skn
+share/tilem2/skins/ti84p2.skn
+share/tilem2/skins/ti86.skn
+share/tilem2/symbols/ti82.sym
+share/tilem2/symbols/ti83.sym
+share/tilem2/symbols/ti83p.sym
+share/tilem2/symbols/ti85.sym
+share/tilem2/symbols/ti86.sym
+@dirrm share/tilem2/symbols
+@dirrm share/tilem2/skins
+@dirrm share/tilem2/icons/hicolor/24x24/actions
+@dirrm share/tilem2/icons/hicolor/24x24
+@dirrm share/tilem2/icons/hicolor/16x16/status
+@dirrm share/tilem2/icons/hicolor/16x16/actions
+@dirrm share/tilem2/icons/hicolor/16x16
+@dirrm share/tilem2/icons/hicolor
+@dirrm share/tilem2/icons
+@dirrm share/tilem2
+@dirrmtry share/applications
