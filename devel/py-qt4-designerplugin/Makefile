@@ -27,28 +27,21 @@ HAS_CONFIGURE=	yes
 USE_PYTHON=	2.5+
 USE_QT4=	gui xml designer moc_build qmake_build
 
-OPTIONS=	DEBUG		"Enable debugging in generated code" off \
-		TRACING		"Enable tracing in generated code" off
-
 PATCHDIR=	${PORTSDIR}/devel/py-qt4-core/files
 OPTIONSFILE?=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
 CONFIGURE_ENV+=	PYQT4_COMPONENT="${PORTNAME}"
-ARGS=		-b ${PREFIX}/bin\
-		-d ${PYTHONPREFIX_SITELIBDIR}\
-		-p ${PREFIX}/${QT_PLUGINDIR_REL}\
-		-q ${QMAKE}\
-		--confirm-license\
+ARGS=		-b ${PREFIX}/bin \
+		-d ${PYTHONPREFIX_SITELIBDIR} \
+		-p ${PREFIX}/${QT_PLUGINDIR_REL} \
+		-q ${QMAKE} \
+		--confirm-license \
 		--enable QtDesigner
 
-.include "../py-sip/files/bsd.pyqt.mk"
-.include <bsd.port.options.mk>
-
 .if defined(WITH_DEBUG)
-ARGS+=		--debug
+ARGS+=		--debug --trace
 .endif
-.if defined(WITH_TRACING)
-ARGS+=		--trace
-.endif
+
+.include "../py-sip/files/bsd.pyqt.mk"
 
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV}\
