@@ -1,0 +1,24 @@
+include/libkface/database.h
+include/libkface/face.h
+include/libkface/facedetector.h
+include/libkface/image.h
+include/libkface/libkface_export.h
+include/libkface/recognitiondatabase.h
+include/libkface/version.h
+lib/libkface.so
+lib/libkface.so.1
+lib/libkface.so.1.0.0
+libdata/pkgconfig/libkface.pc
+share/apps/cmake/modules/FindKface.cmake
+share/apps/libkface/haarcascades/haarcascade_frontalface_alt.xml
+share/apps/libkface/haarcascades/haarcascade_frontalface_alt2.xml
+share/apps/libkface/haarcascades/haarcascade_frontalface_alt_tree.xml
+share/apps/libkface/haarcascades/haarcascade_frontalface_default.xml
+share/apps/libkface/haarcascades/haarcascade_mcs_lefteye.xml
+share/apps/libkface/haarcascades/haarcascade_mcs_mouth.xml
+share/apps/libkface/haarcascades/haarcascade_mcs_nose.xml
+share/apps/libkface/haarcascades/haarcascade_mcs_righteye.xml
+share/apps/libkface/haarcascades/haarcascade_profileface.xml
+@dirrm share/apps/libkface/haarcascades
+@dirrm share/apps/libkface
+@dirrm include/libkface
