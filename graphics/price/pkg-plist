@@ -10,6 +10,9 @@ GNUstep/Local/Applications/PRICE.app/Resources/Crop.gorm/data.info
 GNUstep/Local/Applications/PRICE.app/Resources/Crop.gorm/objects.gorm
 GNUstep/Local/Applications/PRICE.app/Resources/CumulHistogram.gorm/data.classes
 GNUstep/Local/Applications/PRICE.app/Resources/CumulHistogram.gorm/objects.gorm
+GNUstep/Local/Applications/PRICE.app/Resources/Curves.gorm/data.classes
+GNUstep/Local/Applications/PRICE.app/Resources/Curves.gorm/data.info
+GNUstep/Local/Applications/PRICE.app/Resources/Curves.gorm/objects.gorm
 GNUstep/Local/Applications/PRICE.app/Resources/CustTraceEdges.gorm/data.classes
 GNUstep/Local/Applications/PRICE.app/Resources/CustTraceEdges.gorm/data.info
 GNUstep/Local/Applications/PRICE.app/Resources/CustTraceEdges.gorm/objects.gorm
@@ -64,6 +67,7 @@ GNUstep/Local/Tools/PRICE
 @dirrm GNUstep/Local/Applications/PRICE.app/Resources/DFTLowPass.gorm
 @dirrm GNUstep/Local/Applications/PRICE.app/Resources/DFTHighPass.gorm
 @dirrm GNUstep/Local/Applications/PRICE.app/Resources/CustTraceEdges.gorm
+@dirrm GNUstep/Local/Applications/PRICE.app/Resources/Curves.gorm
 @dirrm GNUstep/Local/Applications/PRICE.app/Resources/CumulHistogram.gorm
 @dirrm GNUstep/Local/Applications/PRICE.app/Resources/Crop.gorm
 @dirrm GNUstep/Local/Applications/PRICE.app/Resources/Convolve55.gorm
