@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pyzmq
-PORTVERSION=	2.1.11
+PORTVERSION=	2.2.0
 CATEGORIES=	devel net
 MASTER_SITES=	http://cloud.github.com/downloads/zeromq/pyzmq/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
