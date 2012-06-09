@@ -53,7 +53,7 @@ ${lang}_DESC=		${${lang}_NAME} localization data
 .include <bsd.port.options.mk>
 
 .for lang in ${LO_LANG_ALL}
-.if defined(WITH_ALL) || defined(WITH_${${lang}_OPTION})
+.if ${PORT_OPTIONS:MALL} || ${PORT_OPTIONS:M${lang}}
 RUN_DEPENDS+=	${${lang}_DETECT}:${PORTSDIR}/${${lang}_PORT}
 .endif
 .endfor
