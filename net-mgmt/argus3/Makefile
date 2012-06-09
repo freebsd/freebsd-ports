@@ -16,7 +16,8 @@ COMMENT=	A generic IP network transaction auditing tool
 
 CONFLICTS=	argus-2* argus-sasl-2* argus-clients-2*
 
-OPTIONS+=	SASL "SASL authentication support" on
+OPTIONS_DEFINE=		SASL
+OPTIONS_DEFAULT=	SASL
 
 USE_RC_SUBR=	argus
 
@@ -25,7 +26,7 @@ USE_RC_SUBR=	argus
 USE_BISON=	build
 GNU_CONFIGURE=	true
 
-.if defined(WITH_SASL)
+.if ${PORT_OPTIONS:MSASL}
 PKGNAMESUFFIX=	-sasl
 LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
