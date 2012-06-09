@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	digikam
-DISTVERSION=	1.9.0
-PORTREVISION=	3
+DISTVERSION=	2.6.0
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	SF
@@ -15,65 +14,74 @@ MASTER_SITES=	SF
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	An advanced digital photo management application for KDE4
 
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
-		lcms.1:${PORTSDIR}/graphics/lcms \
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
+		lcms:${PORTSDIR}/graphics/lcms \
 		png15:${PORTSDIR}/graphics/png \
-		jasper.4:${PORTSDIR}/graphics/jasper \
-		lqr-1.3:${PORTSDIR}/graphics/liblqr-1 \
-		kipi.8:${PORTSDIR}/graphics/libkipi-kde4 \
-		kexiv2.10:${PORTSDIR}/graphics/libkexiv2-kde4 \
-		kdcraw.20:${PORTSDIR}/graphics/libkdcraw-kde4
+		jasper:${PORTSDIR}/graphics/jasper \
+		lensfun:${PORTSDIR}/graphics/lensfun \
+		lqr-1:${PORTSDIR}/graphics/liblqr-1 \
+		kface:${PORTSDIR}/graphics/libkface \
+		kgeomap:${PORTSDIR}/astro/libkgeomap
 
 LATEST_LINK=	${PORTNAME}-kde4
 
+OPTIONS_DEFINE=		NLS GPHOTO2 PIMLIBS MYSQL
+OPTIONS_DEFAULT=	GPHOTO2 PIMLIBS
+
+GPHOTO2_DESC=		Enable gphoto2 camera support
+PIMLIBS_DESC=		Enable address book support
+
 MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
-USE_KDE4=	automoc4 kdehier kdeprefix kdelibs
-USE_QT4=	gui dbus network qt3support sql svg xml \
+USE_KDE4=	automoc4 kdehier kdeprefix kdelibs libkdcraw libkexiv2 libkipi
+USE_QT4=	sql-sqlite3_run \
 		qmake_build moc_build rcc_build uic_build
-USE_GNOME=	pkgconfig
 USE_CMAKE=	yes
-USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 
 MAN1=		digitaglinktree.1 \
 		cleanup_digikamdb.1
 
-OPTIONS=	GPHOTO2 "Compile with gphoto2 support" on \
-		LENSFUN "Compile lens auto-correction image editor plugin" off \
-		MARBLE "Geolocation support (requires astro/marble, broken)" off \
-		PIMLIBS "Address book support" on
+WRKSRC=		${WRKDIR}/${DISTNAME}/core
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_GPHOTO2)
-CMAKE_ARGS+=	-DENABLE_GPHOTO2:BOOL=OFF
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
 .else
-LIB_DEPENDS+=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2
+CMAKE_ARGS+=	-DWITH_NLS:BOOL=OFF
+PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITH_LENSFUN)
-LIB_DEPENDS+=	lensfun.2:${PORTSDIR}/graphics/lensfun
+.if ${PORT_OPTIONS:MGPHOTO2}
+LIB_DEPENDS+=	gphoto2:${PORTSDIR}/graphics/libgphoto2
 .else
-CMAKE_ARGS+=	-DWITH_LensFun:BOOL=OFF
+CMAKE_ARGS+=	-DWITH_Gphoto2:BOOL=OFF
 .endif
 
-#.if defined(WITH_MARBLE)
-#LIB_DEPENDS+=	marblewidget.12:${PORTSDIR}/astro/marble
-#PLIST_SUB+=		MARBLE=""
-#.else
-CMAKE_ARGS+=	-DWITH_MarbleWidget:BOOL=OFF
-PLIST_SUB+=		MARBLE="@comment "
-#.endif
-
-.if defined(WITHOUT_PIMLIBS)
-CMAKE_ARGS+=	-DWITH_KdepimLibs:BOOL=OFF
-.else
+.if ${PORT_OPTIONS:MPIMLIBS}
 USE_KDE4+=	pimlibs
+.else
+CMAKE_ARGS+=	-DWITH_KdepimLibs:BOOL=OFF
+.endif
+
+.if ${PORT_OPTIONS:MMYSQL}
+USE_MYSQL=	server
+USE_QT4+=	sql-mysql_run
+CMAKE_ARGS+=	-DMYSQLD_PATH:PATH=${LOCALBASE}/libexec \
+		-DMYSQL_TOOLS_PATH:PATH=${LOCALBASE}/bin
+PLIST_SUB+=	MYSQL=""
+.else
+CMAKE_ARGS+=	-DENABLE_INTERNALMYSQL:BOOL=OFF
+PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 post-patch:
-	${GREP} -H -r "#include <q" ${WRKSRC} | ${CUT} -d: -f1 | uniq | \
-		${XARGS} ${REINPLACE_CMD} -f ${FILESDIR}/qt3to4headers.txt
+	${LN} -s ../doc ${WRKSRC}/doc
+	${LN} -s ../po ${WRKSRC}/po
+	${RM} ${WRKSRC}/po/*/libkgeomap.po ${WRKSRC}/po/*/kipi*
 
 .include <bsd.port.mk>
