@@ -51,6 +51,7 @@
     SUBDIR += fastresolve
     SUBDIR += firedns
     SUBDIR += fpdns
+    SUBDIR += gdnsd
     SUBDIR += geta
     SUBDIR += ghtool
     SUBDIR += gresolver
