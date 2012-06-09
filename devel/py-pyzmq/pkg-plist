@@ -4,6 +4,8 @@
 %%PYTHON_SITELIBDIR%%/zmq/core/__init__.py
 %%PYTHON_SITELIBDIR%%/zmq/core/__init__.pyc
 %%PYTHON_SITELIBDIR%%/zmq/core/__init__.pyo
+%%PYTHON_SITELIBDIR%%/zmq/core/_poll.so
+%%PYTHON_SITELIBDIR%%/zmq/core/_version.so
 %%PYTHON_SITELIBDIR%%/zmq/core/constants.so
 %%PYTHON_SITELIBDIR%%/zmq/core/context.pxd
 %%PYTHON_SITELIBDIR%%/zmq/core/context.so
@@ -12,12 +14,19 @@
 %%PYTHON_SITELIBDIR%%/zmq/core/libzmq.pxd
 %%PYTHON_SITELIBDIR%%/zmq/core/message.pxd
 %%PYTHON_SITELIBDIR%%/zmq/core/message.so
-%%PYTHON_SITELIBDIR%%/zmq/core/poll.so
+%%PYTHON_SITELIBDIR%%/zmq/core/poll.py
+%%PYTHON_SITELIBDIR%%/zmq/core/poll.pyc
+%%PYTHON_SITELIBDIR%%/zmq/core/poll.pyo
+%%PYTHON_SITELIBDIR%%/zmq/core/pysocket.py
+%%PYTHON_SITELIBDIR%%/zmq/core/pysocket.pyc
+%%PYTHON_SITELIBDIR%%/zmq/core/pysocket.pyo
 %%PYTHON_SITELIBDIR%%/zmq/core/socket.pxd
 %%PYTHON_SITELIBDIR%%/zmq/core/socket.so
 %%PYTHON_SITELIBDIR%%/zmq/core/stopwatch.pxd
 %%PYTHON_SITELIBDIR%%/zmq/core/stopwatch.so
-%%PYTHON_SITELIBDIR%%/zmq/core/version.so
+%%PYTHON_SITELIBDIR%%/zmq/core/version.py
+%%PYTHON_SITELIBDIR%%/zmq/core/version.pyc
+%%PYTHON_SITELIBDIR%%/zmq/core/version.pyo
 %%PYTHON_SITELIBDIR%%/zmq/devices/__init__.py
 %%PYTHON_SITELIBDIR%%/zmq/devices/__init__.pyc
 %%PYTHON_SITELIBDIR%%/zmq/devices/__init__.pyo
@@ -119,6 +128,9 @@
 %%PYTHON_SITELIBDIR%%/zmq/tests/test_version.py
 %%PYTHON_SITELIBDIR%%/zmq/tests/test_version.pyc
 %%PYTHON_SITELIBDIR%%/zmq/tests/test_version.pyo
+%%PYTHON_SITELIBDIR%%/zmq/tests/test_web.py
+%%PYTHON_SITELIBDIR%%/zmq/tests/test_web.pyc
+%%PYTHON_SITELIBDIR%%/zmq/tests/test_web.pyo
 %%PYTHON_SITELIBDIR%%/zmq/tests/test_zmqstream.py
 %%PYTHON_SITELIBDIR%%/zmq/tests/test_zmqstream.pyc
 %%PYTHON_SITELIBDIR%%/zmq/tests/test_zmqstream.pyo
@@ -137,6 +149,15 @@
 %%PYTHON_SITELIBDIR%%/zmq/utils/strtypes.pyc
 %%PYTHON_SITELIBDIR%%/zmq/utils/strtypes.pyo
 %%PYTHON_SITELIBDIR%%/zmq/utils/zmq_compat.h
+%%PYTHON_SITELIBDIR%%/zmq/web/__init__.py
+%%PYTHON_SITELIBDIR%%/zmq/web/__init__.pyc
+%%PYTHON_SITELIBDIR%%/zmq/web/__init__.pyo
+%%PYTHON_SITELIBDIR%%/zmq/web/proxy.py
+%%PYTHON_SITELIBDIR%%/zmq/web/proxy.pyc
+%%PYTHON_SITELIBDIR%%/zmq/web/proxy.pyo
+%%PYTHON_SITELIBDIR%%/zmq/web/zmqweb.py
+%%PYTHON_SITELIBDIR%%/zmq/web/zmqweb.pyc
+%%PYTHON_SITELIBDIR%%/zmq/web/zmqweb.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/zmq/core
 @dirrm %%PYTHON_SITELIBDIR%%/zmq/devices
 @dirrm %%PYTHON_SITELIBDIR%%/zmq/eventloop/platform
@@ -145,4 +166,5 @@
 @dirrm %%PYTHON_SITELIBDIR%%/zmq/ssh
 @dirrm %%PYTHON_SITELIBDIR%%/zmq/tests
 @dirrm %%PYTHON_SITELIBDIR%%/zmq/utils
+@dirrm %%PYTHON_SITELIBDIR%%/zmq/web
 @dirrm %%PYTHON_SITELIBDIR%%/zmq
