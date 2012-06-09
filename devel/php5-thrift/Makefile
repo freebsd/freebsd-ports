@@ -7,6 +7,7 @@
 
 PORTNAME=	thrift
 PORTVERSION=	${THRIFT_PORTVERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	php5-
 DISTFILES=	# empty
@@ -20,8 +21,6 @@ USE_PHP=	yes
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	thrift_protocol
-DEFAULT_PHP_VER=53
-IGNORE_WITH_PHP=5
 
 WRKSRC=		${WRKDIR}/php/src/ext/thrift_protocol
 
