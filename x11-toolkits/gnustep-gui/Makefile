@@ -6,12 +6,7 @@
 #
 
 PORTNAME=	gnustep-gui
-.if defined(WITH_GNUSTEP_DEVEL)
-PORTVERSION=	0.20.0
-.else
-PORTVERSION=	0.17.1
-PORTREVISION=	3
-.endif
+PORTVERSION=	0.22.0
 CATEGORIES=	x11-toolkits gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
@@ -26,13 +21,9 @@ LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
-.if defined(WITH_GNUSTEP_DEVEL)
 LIB_DEPENDS+=	sndfile:${PORTSDIR}/audio/libsndfile
 LIB_DEPENDS+=	ao.4:${PORTSDIR}/audio/libao
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libflite.a:${PORTSDIR}/audio/flite
-.else
-LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile
-.endif
 
 LICENSE_COMB=	multi
 LICENSE=	GPLv3 LGPL3
@@ -53,7 +44,8 @@ USE_GNUSTEP_BASE=	yes
 USE_GNUSTEP_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
 USE_XORG=	x11 xt
 
-EXTRA_PATCHES+=		${FILESDIR}/GNUmakefile.patch
+EXTRA_PATCHES+=	${FILESDIR}/GNUmakefile.patch
+EXTRA_PATCHES+=	${FILESDIR}/AudioOutputSink.m.patch
 MAKE_FLAGS+=	OPTFLAG="${CFLAGS}"
 MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
 BREAKS_IF_PEDANTIC=	yes
@@ -61,26 +53,10 @@ PLIST_SUB+=	BASEVERSION=${PORTVERSION:C/[.][0-9]*$//1}
 
 ADDITIONAL_INCLUDE_DIRS+=	-I${LOCALBASE}/include/libpng15
 
-.if defined(WITH_GNUSTEP_DEVEL)
-EXTRA_PATCHES+=	${FILESDIR}/AudioOutputSink.m.patch
-.endif
-
 .if defined(WITHOUT_GNUSTEP_FAKEMAIN)
 .if !exists(/proc/curproc)
 IGNORE=		requires procfs mounted to build or run, for details see procfs(5)
 .endif
-.endif
-
-.if !defined(WITHOUT_PORTAUDIO2) && !defined(WITHOUT_PORTAUDIO) && !defined(WITH_GNUSTEP_DEVEL)
-LIB_DEPENDS+=	portaudio:${PORTSDIR}/audio/portaudio2
-CPPFLAGS+=	-I${LOCALBASE}/include/portaudio2 ${PTHREAD_CFLAGS}
-CFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib/portaudio2 ${PTHREAD_LIBS}
-ADDITIONAL_INCLUDE_DIRS+=	-I${LOCALBASE}/include/portaudio2
-ADDITIONAL_LDFLAGS+=	-L${LOCALBASE}/lib/portaudio2
-PLIST_SUB+=	WITH_PORTAUDIO=""
-.else
-PLIST_SUB+=	WITH_PORTAUDIO="@comment "
 .endif
 
 .if !defined(WITHOUT_CUPS)
