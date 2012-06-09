@@ -7,6 +7,7 @@
 
 PORTNAME=	lzf
 PORTVERSION=	1.5.2
+PORTREVISION=	1
 CATEGORIES=	archivers pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -18,8 +19,6 @@ COMMENT=	Handles LZF de/compression
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
-DEFAULT_PHP_VER=53
-IGNORE_WITH_PHP=5
 
 CONFIGURE_ARGS=	--enable-lzf
 WRKSRC=		${WRKDIR}/${DISTNAME:U}
