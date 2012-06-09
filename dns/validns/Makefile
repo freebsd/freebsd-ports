@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	validns
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	dns security
 MASTER_SITES=	http://www.validns.net/download/
 
