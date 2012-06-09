@@ -23,16 +23,10 @@ FETCH_ARGS+=		-a
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-source-${PORTVERSION}
 
-.if !defined(WITH_GNUSTEP_DEVEL)
-IGNORE=			need gnustep version >= 1.22 (built with "WITH_GNUSTEP_DEVEL=yes")
-.endif
-
 BUILD_DEPENDS+=		zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS+=		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS+=		espeak:${PORTSDIR}/audio/espeak
 LIB_DEPENDS+=		nspr4:${PORTSDIR}/devel/nspr
-# explicit dependency to enforce GNUstep version requirement
-BUILD_DEPENDS+=		gnustep-base-devel>=1.22:${PORTSDIR}/${GNUSTEP_BASE_PORT}
 
 USE_BZIP2=		yes
 USE_GL=			yes

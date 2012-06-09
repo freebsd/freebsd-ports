@@ -1,5 +1,5 @@
 --- ExtProgressIndicator.m.orig	2005-05-12 17:58:49.000000000 +0200
-+++ ExtProgressIndicator.m	2009-11-14 23:42:55.000000000 +0100
++++ ExtProgressIndicator.m	2012-06-09 13:03:54.000000000 +0200
 @@ -21,6 +21,8 @@
   *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
   */
@@ -30,3 +30,12 @@
  		origRect = NSInsetRect(_bounds, borderSize.width, borderSize.height);
  	} else
  		origRect = _bounds;
+@@ -96,7 +103,7 @@
+             if (value > _maxValue)
+                 value = _maxValue;
+ 
+-            if (_isVertical){
++            if ([self isVertical]){
+                 fillRect.size.height = 1;
+                 fillRect.origin.y += NSHeight(origRect) * (value / (_maxValue - _minValue));
+             } else {
