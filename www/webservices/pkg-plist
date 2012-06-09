@@ -23,6 +23,7 @@ GNUstep/Local/Library/Documentation/WebServices/GWSService.html
 GNUstep/Local/Library/Documentation/WebServices/GWSType.gsdoc
 GNUstep/Local/Library/Documentation/WebServices/GWSType.html
 GNUstep/Local/Library/Documentation/WebServices/MainIndex.html
+GNUstep/Local/Library/Documentation/WebServices/OrderedSymbolDeclarations.plist
 GNUstep/Local/Library/Documentation/WebServices/TypesAndConstants.gsdoc
 GNUstep/Local/Library/Documentation/WebServices/TypesAndConstants.html
 GNUstep/Local/Library/Documentation/WebServices/WSSUsernameToken.gsdoc
@@ -46,6 +47,6 @@ GNUstep/Local/Library/Headers/WebServices/WSSUsernameToken.h
 GNUstep/Local/Library/Headers/WebServices/WebServices.h
 GNUstep/Local/Library/Libraries/libWebServices.so
 GNUstep/Local/Library/Libraries/libWebServices.so.%%LIBVERSION%%
-GNUstep/Local/Library/Libraries/libWebServices.so.%%VERSION%%
+GNUstep/Local/Library/Libraries/libWebServices.so.%%LIBVERSION2%%
 @dirrm GNUstep/Local/Library/Headers/WebServices
 @dirrm GNUstep/Local/Library/Documentation/WebServices
