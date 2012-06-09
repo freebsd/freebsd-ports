@@ -159,7 +159,7 @@ GNUstep/Local/Library/Libraries/libEOAccess.so
 GNUstep/Local/Library/Libraries/libEOAccess.so.%%MAJORVERSION%%
 GNUstep/Local/Library/Libraries/libEOAccess.so.%%VERSION%%
 GNUstep/Local/Library/Libraries/libEOControl.so
-GNUstep/Local/Library/Libraries/libEOControl.so.%%MAJORVERSION%%
+GNUstep/Local/Library/Libraries/libEOControl.so.%%MAJORVERSION%%d
 GNUstep/Local/Library/Libraries/libEOControl.so.%%VERSION%%
 GNUstep/Local/Library/Libraries/libEOInterface.so
 GNUstep/Local/Library/Libraries/libEOInterface.so.%%MAJORVERSION%%
