@@ -14,7 +14,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Coffee Script adapter for the Rails asset pipeline.
 
 RUN_DEPENDS=	rubygem-coffee-script>=2.2.0:${PORTSDIR}/devel/rubygem-coffee-script \
-		rubygem-railties>=${PORTVERSION}:${PORTSDIR}/www/rubygem-railties
+		rubygem-railties>=3.2.0:${PORTSDIR}/www/rubygem-railties
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
