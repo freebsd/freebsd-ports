@@ -7,7 +7,7 @@
 
 PORTNAME=	dico
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -50,7 +50,7 @@ PLIST_SUB+=	GUILE="@comment "
 .endif
 
 .if defined(WITH_GSASL)
-LIB_DEPENDS+=	gsasl.13:${PORTSDIR}/security/gsasl
+LIB_DEPENDS+=	gsasl.16:${PORTSDIR}/security/gsasl
 CONFIGURE_ARGS+=--with-gsasl
 .else
 CONFIGURE_ARGS+=--without-gsasl
