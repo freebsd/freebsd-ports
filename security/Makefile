@@ -309,6 +309,7 @@
     SUBDIR += mindterm-binary
     SUBDIR += monkeysphere
     SUBDIR += mosref
+    SUBDIR += munge
     SUBDIR += mussh
     SUBDIR += nacl
     SUBDIR += nbaudit

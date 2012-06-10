@@ -1,0 +1,11 @@
+--- configure.orig	2012-03-18 03:31:24.960241537 +0600
++++ configure	2012-03-18 03:31:41.879241019 +0600
+@@ -952,7 +952,7 @@
+ datadir='${datarootdir}'
+ sysconfdir='${prefix}/etc'
+ sharedstatedir='${prefix}/com'
+-localstatedir='${prefix}/var'
++localstatedir='/var'
+ includedir='${prefix}/include'
+ oldincludedir='/usr/include'
+ docdir='${datarootdir}/doc/${PACKAGE}'

@@ -1,0 +1,14 @@
+@stopdaemon munged
+include/munge.h
+bin/remunge
+bin/unmunge
+bin/munge
+lib/libmunge.la
+lib/libmunge.so.2
+lib/libmunge.a
+lib/libmunge.so
+sbin/munged
+@cwd /
+@exec rm /var/run/${PORTNAME}
+@exec rm /var/log/${PORTNAME}
+@exec rm /var/lib/${PORTNAME}

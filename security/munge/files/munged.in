@@ -1,0 +1,45 @@
+#!/bin/sh
+#
+#
+
+# PROVIDE: munged
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable mysql:
+# munged_enable (bool):	Set to "NO" by default.
+#			Set it to "YES" to enable munged.
+# munged_keyfile (str):	Default to "/usr/local/etc/munge/munge.key"
+#			Default munge key.
+# munged_pidfile (str):	Custum PID file path and name.
+#			Default to "/var/run/munged.pid".
+#
+
+. /etc/rc.subr
+
+name="munged"
+rcvar=munged_enable
+stop_cmd="munged_stop"
+
+load_rc_config $name
+
+: ${munged_enable="NO"}
+
+munged_user=root
+munged_keyfile="%%PREFIX%%/etc/munge/munge.key"
+pidfile="/var/run/munge/${name}.pid"
+command="%%PREFIX%%/sbin/${name}"
+command_args="--key-file=${munged_keyfile}"
+
+munged_stop()
+{
+	if [ -f "${pidfile}" ]; then
+		kill -9 `cat ${pidfile}`
+		sleep 1 # wait a little bit
+		rm -f /var/run/munge/*
+	fi
+
+}
+
+run_rc_command "$1"
