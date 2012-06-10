@@ -12,10 +12,13 @@ CATEGORIES=	editors gnustep
 MASTER_SITES=	SF/emacs-app/emacs-app/${PORTVERSION}-pre3
 DISTNAME=	emacs-23.0.0_NS-${PORTVERSION}pre3b
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNU Emacs editor on GNUstep
 
 LICENSE=	GPLv2
+
+DEPRECATED=	API no longer supported
+EXPIRATION_DATE=	2012-07-20
 
 USE_GNUSTEP=	yes
 USE_GNUSTEP_CONFIGURE=	yes
