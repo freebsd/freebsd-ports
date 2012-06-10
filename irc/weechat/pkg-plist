@@ -20,6 +20,7 @@ libdata/pkgconfig/weechat.pc
 %%DOCUMENTATION%%share/doc/weechat/weechat_faq.en.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_faq.fr.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_faq.it.html
+%%DOCUMENTATION%%share/doc/weechat/weechat_faq.ja.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_faq.pl.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_plugin_api.en.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_plugin_api.fr.html
