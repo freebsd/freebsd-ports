@@ -1,0 +1,22 @@
+--- src/CMakeLists.txt~
++++ src/CMakeLists.txt
+@@ -123,7 +123,7 @@ set(tools-external-libs
+ )
+ 
+ if(ENABLE_FRIBIDI AND FRIBIDI_LIBRARIES)
+-	include_directories( ${FRIBIDI_INCLUDE_DIR} )
++	include_directories( ${FRIBIDI_INCLUDE_DIRS} )
+ 	set(game-external-libs ${game-external-libs} ${FRIBIDI_LIBRARIES})
+ endif(ENABLE_FRIBIDI AND FRIBIDI_LIBRARIES)
+ 
+@@ -826,7 +833,9 @@ if(ENABLE_TESTS)
+ 		boost_unit_test_framework
+ 	)
+ 	set_target_properties(test
+-		PROPERTIES OUTPUT_NAME ${BINARY_PREFIX}test${BINARY_SUFFIX}
++		PROPERTIES OUTPUT_NAME ${BINARY_PREFIX}wesnoth_test${BINARY_SUFFIX}
+ 	)
++
++	install(TARGETS test DESTINATION ${BINDIR})
+ endif(ENABLE_TESTS)
+ 

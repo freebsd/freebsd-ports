@@ -1,0 +1,7 @@
+--- doc/CMakeLists.txt~
++++ doc/CMakeLists.txt
+@@ -1,2 +1,4 @@
+ add_subdirectory(man)
++if(NOT DOCDIR STREQUAL "none")
+ add_subdirectory(manual)
++endif(NOT DOCDIR STREQUAL "none")
