@@ -55,7 +55,9 @@ CONFIGURE_ARGS+=--enable-gallium-llvm=no --without-gallium-drivers \
 .if defined(WITH_NEW_XORG)
 EXTRA_PATCHES+=	${PATCHDIR}/extra-mach64_context.h \
 		${PATCHDIR}/extra-sis_context.h \
-		${PATCHDIR}/extra-src-glsl_ir_constant_expression.cpp
+		${PATCHDIR}/extra-src-glsl_ir_constant_expression.cpp \
+		${PATCHDIR}/extra-src__mesa__drivers__dri__nouveau__nouveau_array.c \
+		${PATCHDIR}/extra-src__mesa__drivers__dri__nouveau__nouveau_render_t.c
 .else
 EXTRA_PATCHES+=	${PATCHDIR}/extra-src__mesa__x86-64__glapi_x86-64.S \
 		${PATCHDIR}/extra-src__mesa__x86-64__xform4.S \
