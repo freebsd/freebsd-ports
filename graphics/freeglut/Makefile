@@ -11,7 +11,7 @@ PORTVERSION=	2.8.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	graudeejs@gmail.com
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	An alternative to the OpenGL Utility Toolkit (GLUT) library
 
 LICENSE=	MIT
