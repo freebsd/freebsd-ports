@@ -47,6 +47,8 @@ USB_DESC=	Support for USB-reader
 .if $(PORT_OPTIONS:MUSB)
 CONFIGURE_ENV+= LIBUSB_LIBS="-lusb"
 CONFIGURE_ARGS+=--enable-libusb=/usr
+.else
+CONFIGURE_ARGS+=--disable-libusb
 .endif
 
 .endif
