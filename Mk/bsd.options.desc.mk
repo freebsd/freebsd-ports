@@ -127,6 +127,7 @@ OPENGL_DESC?=		Enable OpenGL support
 OPTIMIZED_CFLAGS_DESC?=	Enable compilation optimizations
 ORACLE_DESC?=		Enable Oracle support
 OSS_DESC?=		Enable Open Sound System support
+PAM_DESC?=		Enable PAM support
 PCRE_DESC?=		Enable regular expressions using libpcre
 PERL_DESC?=		Enable Perl scripting language support
 PGSQL_DESC?=		Enable PostgreSQL backend
