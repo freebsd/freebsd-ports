@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 MAN1=		istgt.1
 MANCOMPRESSED=	yes
 
+ETCDIR=		${PREFIX}/etc/istgt
 PLIST_FILES=	bin/istgt \
 		bin/istgtcontrol \
 		etc/rc.d/openistgt \
