@@ -6,7 +6,7 @@
 
 PORTNAME?=	scrobbler
 PORTVERSION=	0.3.8.1
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	audio
 MASTER_SITES=	http://static.audioscrobbler.com/plugins/ \
 		http://www.pipian.com/stuffforchat/
@@ -15,8 +15,7 @@ DISTNAME=	xmms-scrobbler-${PORTVERSION}
 MAINTAINER?=	novel@FreeBSD.org
 COMMENT?=	XMMS/BMP plugin for Audioscrobbler.com
 
-LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
-		curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
 CONFLICTS=	bmp-scrobbler-[0-9]* \
 		xmms-scrobbler-[0-9]*
