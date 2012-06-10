@@ -4205,6 +4205,7 @@ gavl                            ports/multimedia/gavl
 gawk                            ports/lang/gawk
 gazpacho                        ports/devel/gazpacho
 gbase                           ports/converters/gbase
+gbdfed                          ports/x11-fonts/gbdfed
 gbe                             ports/emulators/gbe
 gbemol                          ports/audio/gbemol
 gbirthday                       ports/deskutils/gbirthday
@@ -4278,6 +4279,7 @@ gdl                             ports/x11-toolkits/gdl
 gdl2                            ports/databases/gdl2
 gdm                             ports/x11/gdm
 gdmap                           ports/sysutils/gdmap
+gdnsd                           ports/dns/gdnsd
 gdome2                          ports/textproc/gdome2
 gdsreader                       ports/cad/gdsreader
 gdt                             ports/cad/gdt
@@ -8143,6 +8145,8 @@ libkdeedu                       ports/misc/libkdeedu
 libkexif                        ports/graphics/libkexif
 libkexiv2                       ports/graphics/libkexiv2
 libkexiv2-kde4                  ports/graphics/libkexiv2-kde4
+libkface                        ports/graphics/libkface
+libkgeomap                      ports/astro/libkgeomap
 libkipi                         ports/graphics/libkipi
 libkipi-kde4                    ports/graphics/libkipi-kde4
 libkmfl                         ports/textproc/libkmfl
@@ -8152,6 +8156,7 @@ libkpass                        ports/security/libkpass
 libksane                        ports/graphics/libksane
 libksba                         ports/security/libksba
 libktorrent                     ports/net-p2p/libktorrent
+libkvkontakte                   ports/net/libkvkontakte
 liblas                          ports/devel/liblas
 liblastfm                       ports/audio/liblastfm
 liblbfgs                        ports/math/liblbfgs
@@ -8181,6 +8186,7 @@ libmba                          ports/devel/libmba
 libmcal                         ports/misc/libmcal
 libmcrypt                       ports/security/libmcrypt
 libmcs                          ports/devel/libmcs
+libmediawiki                    ports/net/libmediawiki
 libmemcache                     ports/databases/libmemcache
 libmemcached                    ports/databases/libmemcached
 libmetalink                     ports/misc/libmetalink
