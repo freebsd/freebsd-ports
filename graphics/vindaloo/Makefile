@@ -12,10 +12,13 @@ CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://download.gna.org/etoile/
 DISTNAME=	etoile-0.4.1
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PDF Reader for GNUstep
 
 LICENSE=	GPLv2
+
+DEPRECATED=	API no longer supported
+EXPIRATION_DATE=	2012-07-20
 
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes

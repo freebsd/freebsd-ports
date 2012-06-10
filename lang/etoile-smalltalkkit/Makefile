@@ -12,12 +12,15 @@ MASTER_SITES=	http://download.gna.org/etoile/
 PKGNAMEPREFIX=	etoile-
 DISTNAME=	etoile-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Etoile Project SmalltalkKit framework
 
 BUILD_DEPENDS=	lemon:${PORTSDIR}/devel/lemon
 
 LICENSE=	BSD
+
+DEPRECATED=	API no longer supported
+EXPIRATION_DATE=	2012-07-20
 
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes

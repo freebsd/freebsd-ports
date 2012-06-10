@@ -13,12 +13,15 @@ MASTER_SITES=	http://download.gna.org/etoile/
 PKGNAMEPREFIX=	etoile-
 DISTNAME=	etoile-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Etoile Project IconKit framework
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 LICENSE=	BSD
+
+DEPRECATED=	API no longer supported
+EXPIRATION_DATE=	2012-07-20
 
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes

@@ -14,8 +14,11 @@ MASTER_SITE_SUBDIR=	dinoex
 PKGNAMEPREFIX=	etoile-
 DISTNAME=	Etoile-${SNAPSHOT}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Etoile Project Hardware application
+
+DEPRECATED=	API no longer supported
+EXPIRATION_DATE=	2012-07-20
 
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes

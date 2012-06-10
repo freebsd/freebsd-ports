@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
 PKGNAMESUFFIX=	-etoile${PKGNAMESUFFIX2}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Low Level Virtual Machine
 
 .if defined(PACKAGE_BUILDING) || defined(MAINTAINER_MODE)
@@ -24,6 +24,8 @@ BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 
 CONFLICTS=	llvm-devel-[23]* llvm-[23]*
 NOT_FOR_ARCHS=	sparc64
+DEPRECATED=	API no longer supported
+EXPIRATION_DATE=	2012-07-20
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

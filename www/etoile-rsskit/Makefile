@@ -13,8 +13,11 @@ MASTER_SITE_SUBDIR=	gap
 PKGNAMEPREFIX=	etoile-
 DISTNAME=	RSSKit-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Etoile Project RSSKit framework
+
+DEPRECATED=	API no longer supported
+EXPIRATION_DATE=	2012-07-20
 
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes

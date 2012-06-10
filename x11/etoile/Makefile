@@ -13,8 +13,11 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Metaport for Etoile desktop
+
+DEPRECATED=	API no longer supported
+EXPIRATION_DATE=	2012-07-20
 
 NO_BUILD=	yes
 NO_INSTALL=	yes
@@ -104,6 +107,7 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	ScriptServices:deskutils/etoile-scriptservices \
 	Melodie:audio/etoile-melodie \
 	StepChat:net-im/etoile-stepchat \
+	Grr:www/etoile-Grr \
 
 #	Mantella:www/etoile-mantella \
 
