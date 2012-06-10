@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Devel-Cover
-PORTVERSION=	0.87
+PORTVERSION=	0.88
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -48,6 +48,7 @@ MAN3=		Devel::Cover.3 \
 		Devel::Cover::DB::IO::Storable.3 \
 		Devel::Cover::DB::Structure.3 \
 		Devel::Cover::Dumper.3 \
+		Devel::Cover::Html_Common.3 \
 		Devel::Cover::Op.3 \
 		Devel::Cover::Pod.3 \
 		Devel::Cover::Report::Compilation.3 \
