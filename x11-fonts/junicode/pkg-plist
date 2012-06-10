@@ -1,9 +1,13 @@
 %%FONTSDIR%%/Junicode-Bold.ttf
 %%FONTSDIR%%/Junicode-BoldItalic.ttf
 %%FONTSDIR%%/Junicode-Italic.ttf
-%%FONTSDIR%%/Junicode-Regular.ttf
+%%FONTSDIR%%/Junicode.ttf
 %%PORTDOCS%%%%DOCSDIR%%/Junicode.pdf
 %%PORTDOCS%%%%DOCSDIR%%/Junicode.tex
+%%PORTDOCS%%%%DOCSDIR%%/aelfric_job.pdf
+%%PORTDOCS%%%%DOCSDIR%%/aelfric_job.tex
+%%PORTDOCS%%%%DOCSDIR%%/homer_sample.pdf
+%%PORTDOCS%%%%DOCSDIR%%/homer_sample.tex
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec %%LOCALBASE%%/bin/fc-cache -f -v %%FONTSDIR%% || /usr/bin/true
 @unexec /bin/rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
