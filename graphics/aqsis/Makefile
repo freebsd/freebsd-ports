@@ -39,8 +39,8 @@ INSTALLS_ICONS=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile on 6.X
+.if ${OSVERSION} < 800000
+BROKEN=		does not compile on FreeBSD 7.X
 .endif
 
 .include <bsd.port.post.mk>
