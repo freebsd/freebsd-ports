@@ -22,6 +22,8 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		zinnia.0:${PORTSDIR}/japanese/zinnia
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
+BROKEN=		does not build
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
