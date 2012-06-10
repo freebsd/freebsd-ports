@@ -41,6 +41,7 @@ CONFIGURE_ARGS+=--disable-mtpz
 .if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
 CONFIGURE_ENV+=	ac_cv_lib_openusb_openusb_init=no
+BROKEN=		does not link on FreeBSD 7.X
 .else
 CONFIGURE_ENV+=	LIBUSB_CFLAGS="-I/usr/include" LIBUSB_LIBS="-lusb" LIBS="-lusb"
 .endif
