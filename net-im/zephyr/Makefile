@@ -25,11 +25,12 @@ USE_ICONV=	yes
 MAN1=	zephyr.1 zaway.1 zctl.1 zleave.1 zlocate.1 znol.1 zwrite.1 zwgc.1
 MAN8=	zhm.8 zephyrd.8 zstat.8 zshutdown_notify.8
 
-OPTIONS=	HEIMDAL	"Use Heimdal Kerberos for ss/com_err"	no
+OPTIONS=	HEIMDAL	"Use Heimdal Kerberos for ss/com_err"	off
 
 .include <bsd.port.options.mk>
 
 .if defined(WITH_HEIMDAL)
+BROKEN=		bad depobj
 LIB_DEPENDS+=	ss.1:${PORTSDIR}/security/heimdal
 .if defined(HEIMDAL_HOME)
 KRB5_DIR?=	${HEIMDAL_HOME}
