@@ -1,9 +1,12 @@
+bin/net-server
 %%SITE_PERL%%/Net/Server.pm
 %%SITE_PERL%%/Net/Server.pod
 %%SITE_PERL%%/Net/Server/Daemonize.pm
 %%SITE_PERL%%/Net/Server/Fork.pm
 %%SITE_PERL%%/Net/Server/HTTP.pm
 %%SITE_PERL%%/Net/Server/INET.pm
+%%SITE_PERL%%/Net/Server/Log/Log/Log4perl.pm
+%%SITE_PERL%%/Net/Server/Log/Sys/Syslog.pm
 %%SITE_PERL%%/Net/Server/MultiType.pm
 %%SITE_PERL%%/Net/Server/Multiplex.pm
 %%SITE_PERL%%/Net/Server/PSGI.pm
@@ -22,5 +25,8 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Server
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrmtry %%SITE_PERL%%/Net/Server/Proto
+@dirrmtry %%SITE_PERL%%/Net/Server/Log/Sys
+@dirrmtry %%SITE_PERL%%/Net/Server/Log/Log
+@dirrmtry %%SITE_PERL%%/Net/Server/Log
 @dirrmtry %%SITE_PERL%%/Net/Server
 @dirrmtry %%SITE_PERL%%/Net
