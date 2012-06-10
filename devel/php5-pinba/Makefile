@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pinba
-PORTVERSION=	2011.08.18
+PORTVERSION=	2012.03.20
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/tony2001/pinba_extension/tarball/${GITVERSION}/
 PKGNAMEPREFIX=	php5-
