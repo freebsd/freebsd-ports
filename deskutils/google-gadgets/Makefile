@@ -30,6 +30,8 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 RUN_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
+BROKEN=		does not link
+
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
