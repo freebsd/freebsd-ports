@@ -14,13 +14,15 @@ MASTER_SITE_SUBDIR=	libs
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	rigs-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby interface to the GNUstep development environment
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
 BROKEN=		does not build with gnustep-base 1.24.0
+DEPRECATED=	API no longer supported
+EXPIRATION_DATE=	2012-07-20
 
 USE_RUBY=	yes
 USE_GNUSTEP=	yes
