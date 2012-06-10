@@ -14,14 +14,15 @@ MASTER_SITES=	http://ivo.palli.nl/prog/linux/htdump/bin/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool to retrieve WWW data
 
-OPTIONS=	SSL "SSL support" on
+OPTIONS_DEFINE=	SSL
+OPTIONS_DEFAULT=SSL
 
 CFLAGS+=	${CPPFLAGS}
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LFLAGS="-s ${LDFLAGS}"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_SSL)
+.if ${PORT_OPTIONS:MSSL}
 USE_OPENSSL=	yes
 ALL_TARGET=	ssl
 .endif
@@ -31,4 +32,4 @@ PLIST_FILES=	bin/htdump
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/htdump ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
