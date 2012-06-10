@@ -1,0 +1,11 @@
+--- uuid.pc.in.orig	2012-06-10 21:06:03.000000000 +0300
++++ uuid.pc.in	2012-06-10 21:06:18.000000000 +0300
+@@ -29,7 +29,7 @@
+ 
+ prefix=@prefix@
+ exec_prefix=${prefix}
+-includedir=${prefix}/include
++includedir=@includedir@
+ libdir=${exec_prefix}/lib
+ 
+ Name: OSSP uuid

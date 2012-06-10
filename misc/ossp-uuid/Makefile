@@ -7,7 +7,7 @@
 
 PORTNAME=	uuid
 PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc devel
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
@@ -20,7 +20,8 @@ CONFLICTS=	e2fsprogs-libuuid-[0-9]*
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-shared --enable-static --with-cxx
+CONFIGURE_ARGS=	--disable-shared --enable-static --with-cxx \
+		--includedir=${PREFIX}/include/ossp
 
 MAN1=	uuid-config.1 uuid.1
 MAN3=	uuid.3 uuid++.3
