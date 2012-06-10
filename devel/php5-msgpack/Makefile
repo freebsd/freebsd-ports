@@ -18,6 +18,7 @@ COMMENT=	PHP extension for interfacing with MessagePack
 WRKSRC=		${WRKDIR}/php-msgpack
 
 USE_PHP=	session
+USE_PHP_BUILD=	yes
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	msgpack
