@@ -14,7 +14,8 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Utility to format PostgreSQL heap, index, etc into human-readable form
 
-FETCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/databases/postgresql84-client:patch
+FETCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/databases/postgresql84-client:patch
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/databases/postgresql84-client:patch
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-8.4.0
 
