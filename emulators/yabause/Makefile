@@ -29,7 +29,7 @@ MAN1=	yabause.1
 
 OPTIONS=	QT4	"Build wit qt4 interface instead of gtk2 one"	on
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_QT4)
 USE_QT4=	corelib gui opengl
@@ -38,6 +38,8 @@ CONFIGURE_ARGS+=	--with-port=qt
 USE_GNOME=	gtk20
 CONFIGURE_ARGS+=	--with-port=gtk
 .endif
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%ACLOCAL%%|${ACLOCAL}|g" -e "s|%%AUTOCONF%%|${AUTOCONF}|g" \
