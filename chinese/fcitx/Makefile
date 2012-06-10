@@ -7,7 +7,7 @@
 
 PORTNAME=	fcitx
 PORTVERSION=	4.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	chinese x11
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pinyin.tar.gz table.tar.gz
@@ -38,11 +38,11 @@ INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	GTK2 GTK3 QT4 OPENCC TPUNC
 
-GTK2_DESC=	"Enable Gtk2 IM module"
-GTK3_DESC=	"Enable Gtk3 IM module"
-QT4_DESC=	"Enable Qt4 IM module"
-OPENCC_DESC=	"Enable OpenCC for Chinese Transform"
-TPUNC_DESC=	"Use traditional quotation marks"
+GTK2_DESC=	Enable Gtk2 IM module
+GTK3_DESC=	Enable Gtk3 IM module
+QT4_DESC=	Enable Qt4 IM module
+OPENCC_DESC=	Enable OpenCC for Chinese Transform
+TPUNC_DESC=	Use traditional quotation marks
 
 .include <bsd.port.options.mk>
 
