@@ -17,7 +17,7 @@ COMMENT=	XML Toolkit
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/${DISTNAME}/COPYING
 
-OPTIONS=	OPTIMIZED_CFLAGS "Extra optimizations" off
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/XML
 
@@ -29,7 +29,7 @@ MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-Wuninitialized -ffast-math -finline-functions -fomit-frame-pointer -fexpensive-optimizations -O3
 .endif
 
