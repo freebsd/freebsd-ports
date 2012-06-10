@@ -107,7 +107,6 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	ScriptServices:deskutils/etoile-scriptservices \
 	Melodie:audio/etoile-melodie \
 	StepChat:net-im/etoile-stepchat \
-	Grr:www/etoile-Grr \
 
 #	Mantella:www/etoile-mantella \
 
