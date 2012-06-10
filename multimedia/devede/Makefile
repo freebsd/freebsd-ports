@@ -7,6 +7,7 @@
 
 PORTNAME=	devede
 DISTVERSION=	3.22.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.rastersoft.com/descargas/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
@@ -15,7 +16,6 @@ MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Create video DVDs, VCDs, sVCDs or CVDs from any number of video files
 
 RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
-		ibus-daemon:${PORTSDIR}/textproc/ibus \
 		mencoder:${PORTSDIR}/multimedia/mencoder \
 		spumux:${PORTSDIR}/multimedia/dvdauthor \
 		vcdimager:${PORTSDIR}/multimedia/vcdimager
@@ -27,7 +27,8 @@ USE_PYTHON=	yes
 USE_CDRTOOLS=	yes
 NO_BUILD=	yes
 
-OPTIONS=	PSYCO "Enable devel/py-psyco optimization support" off
+OPTIONS=	IBUS "Enable iBus support" on \
+		PSYCO "Enable devel/py-psyco optimization support" off
 
 DEJAVU_FONTSDIR=	${LOCALBASE}/lib/X11/fonts/dejavu
 DEJAVU_FONTFILE=	${DEJAVU_FONTSDIR}/DejaVuSans.ttf
@@ -38,6 +39,10 @@ DEJAVU_FONTFILE=	${DEJAVU_FONTSDIR}/DejaVuSans.ttf
 .undef WITH_PSYCO
 
 WITHOUT_PSYCO=	yes
+.endif
+
+.if !defined(WITHOUT_IBUS)
+RUN_DEPENDS+=	ibus-daemon:${PORTSDIR}/textproc/ibus
 .endif
 
 .if defined(WITHOUT_NLS)
