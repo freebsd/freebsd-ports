@@ -222,6 +222,16 @@ LIB_DEPENDS+=	cue:${PORTSDIR}/textproc/libcue
 CONFIGURE_ARGS+=--disable-cue
 .endif
 
+.if ${MPDCONF} != musicpd.conf
+pre-everything::
+	@${ECHO_MSG} "Looks as though you're using a non-default value for MPDCONF."
+	@${ECHO_MSG} "This is deprecated, and some time in the near future the only value permissible"
+	@${ECHO_MSG} "for MPDCONF will be the default; musicpd.conf."
+	@${ECHO_MSG} -n "Continuing in "
+	@for s in 5 4 3 2 1 ; do ${ECHO_MSG} -n "$$s... " && sleep 1 ; done
+	@${ECHO_MSG} ""
+.endif
+
 post-patch:
 # Replace ~/ with MPDDIR and make musicpd run as mpd by default
 	@${REINPLACE_CMD} -e 's,^#\([^"]*"\)~/,\1${MPDDIR}/,g' \
