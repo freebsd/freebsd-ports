@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	weechat
-PORTVERSION=	20120522
+PORTVERSION=	20120610
 CATEGORIES=	irc
 MASTER_SITES=	http://perturb.me.uk/distfiles/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	weechat-devel-${GITREV}
 
-MAINTAINER=	freebsd@beardz.net
+MAINTAINER=	jase@FreeBSD.org
 COMMENT=	A lightweight and user friendly ncurses based IRC client
 
 LICENSE=	GPLv3
@@ -29,45 +29,44 @@ WANT_PERL=	yes
 
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 
+GITREV=	9c5116b
+WRKSRC=	${WRKDIR}/${PORTNAME}-${GITREV}
+
 # Please note: the DEBUG option is *NOT* empty, it is utilised by
 # bsd.cmake.mk to set the cmake build type to Debug instead of
 # Release.
 
-OPTIONS=	RUBY		"Ruby scripting support"	Off	\
-		PYTHON		"Python scripting support"	Off	\
-		PERL		"Perl scripting support"	Off	\
-		TCL		"TCL scripting support"		Off	\
-		LUA		"Lua scripting support"		Off	\
-		GUILE		"Guile scripting support"	Off	\
-		CHARSET		"Charset support"		On	\
-		BACKTRACE	"Backtraces"			On	\
-		DEBUG		"Debugging"			On	\
-		ASPELL		"Spell checking"		Off	\
-		GNUTLS		"GNU TLS"			Off	\
-		NLS		"NLS support"			On	\
-		DOCUMENTATION	"Build documentation"		Off
+OPTIONS_DEFINE=	RUBY PYTHON PERL TCL LUA GUILE CHARSET BACKTRACE DEBUG ASPELL GNUTLS NLS DOCUMENTATION
+OPTIONS_DEFAULT=CHARSET BACKTRACE DEBUG
 
-GITREV=	6f5a20e
-WRKSRC=	${WRKDIR}/${PORTNAME}-${GITREV}
+BACKTRACE_DESC=	Enable crash backtraces
+CHARSET_DESC=	Enable charset conversion support
+DOCUMENTATION_DESC=	Build and install documentation
+GUILE_DESC=	Enable Guile scripting support
+LUA_DESC=	Enable Lua scripting support
+PERL_DESC=	Enable Perl scripting support
+PYTHON_DESC=	Enable Python scripting support
+RUBY_DESC=	Enable Ruby scripting support
+TCL_DESC=	Enable Tcl scripting support
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_CHARSET)
+.if ${PORT_OPTIONS:MCHARSET}
+PLIST_SUB+=	CHARSET=""
+.else
 CMAKE_ARGS+=	-DENABLE_CHARSET=no
 PLIST_SUB+=	CHARSET="@comment "
-.else
-PLIST_SUB+=	CHARSET=""
 .endif
 
-.if defined(WITHOUT_NLS)
-CMAKE_ARGS+=	-DENABLE_NLS=no
-PLIST_SUB+=	NLS="@comment "
-.else
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
+.else
+CMAKE_ARGS+=	-DENABLE_NLS=no
+PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITH_ASPELL)
+.if ${PORT_OPTIONS:MASPELL}
 BUILD_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
 PLIST_SUB+=	ASPELL=""
 .else
@@ -75,7 +74,7 @@ CMAKE_ARGS+=	-DENABLE_ASPELL=no
 PLIST_SUB+=	ASPELL="@comment "
 .endif
 
-.if defined(WITH_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	-2.7
 CMAKE_ARGS+=	-DBSD_PYTHON_CMD=${PYTHON_CMD} \
 		-DBSD_PYTHON_VER=${PYTHON_VERSION}
@@ -85,7 +84,7 @@ CMAKE_ARGS+=	-DENABLE_PYTHON=no
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
-.if defined(WITH_RUBY)
+.if ${PORT_OPTIONS:MRUBY}
 USE_RUBY=	yes
 CMAKE_ARGS+=	-DBSD_RUBY_CMD=${RUBY} \
 		-DBSD_RUBY_VER=${RUBY_NAME}
@@ -95,13 +94,13 @@ CMAKE_ARGS+=	-DENABLE_RUBY=no
 PLIST_SUB+=	RUBY="@comment "
 .endif
 
-.if defined(WITH_GNUTLS)
+.if ${PORT_OPTIONS:MGNUTLS}
 LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 .else
 CMAKE_ARGS+=	-DENABLE_GNUTLS=no
 .endif
 
-.if defined(WITH_PERL)
+.if ${PORT_OPTIONS:MPERL}
 USE_PERL5=	yes
 PLIST_SUB+=	PERL=""
 .else
@@ -109,7 +108,7 @@ CMAKE_ARGS+=	-DENABLE_PERL=no
 PLIST_SUB+=	PERL="@comment "
 .endif
 
-.if defined(WITH_TCL)
+.if ${PORT_OPTIONS:MTCL}
 USE_TCL=	83+
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
 CMAKE_ARGS+=	-DBSD_TCL_VER=${TCL_VER} \
@@ -121,7 +120,7 @@ CMAKE_ARGS+=	-DENABLE_TCL=no
 PLIST_SUB+=	TCL="@comment "
 .endif
 
-.if defined(WITH_LUA)
+.if ${PORT_OPTIONS:MLUA}
 USE_LUA=	5.0+
 CMAKE_ARGS+=	-DBSD_LUA_VER=${LUA_VER} \
 		-DBSD_LUA_LIBDIR=${LUA_LIBDIR} \
@@ -132,7 +131,7 @@ CMAKE_ARGS+=	-DENABLE_LUA=no
 PLIST_SUB+=	LUA="@comment "
 .endif
 
-.if defined(WITH_GUILE)
+.if ${PORT_OPTIONS:MGUILE}
 IGNORE=		guile support currently causes a segfault on exit. Please re-run 'make config' and disable GUILE
 LIB_DEPENDS+=	guile:${PORTSDIR}/lang/guile
 PLIST_SUB+=	GUILE=""
@@ -141,7 +140,7 @@ CMAKE_ARGS+=	-DENABLE_GUILE=no
 PLIST_SUB+=	GUILE="@comment "
 .endif
 
-.if defined(WITH_DOCUMENTATION)
+.if ${PORT_OPTIONS:MDOCUMENTATION}
 BUILD_DEPENDS+=	asciidoc:${PORTSDIR}/textproc/asciidoc
 BUILD_DEPENDS+=	source-highlight>=3.1.5:${PORTSDIR}/textproc/source-highlight
 PLIST_SUB+=	DOCUMENTATION=""
@@ -150,7 +149,7 @@ CMAKE_ARGS+=	-DENABLE_DOC=no
 PLIST_SUB+=	DOCUMENTATION="@comment "
 .endif
 
-.if defined(WITH_BACKTRACE)
+.if ${PORT_OPTIONS:MBACKTRACE}
 LIB_DEPENDS+=	execinfo:${PORTSDIR}/devel/libexecinfo
 .endif
 
@@ -162,7 +161,7 @@ post-patch:
 .for f in src/CMakeLists.txt src/core/CMakeLists.txt cmake/*.cmake
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/${f}
 .endfor
-.if defined(WITHOUT_BACKTRACE)
+.if empty(PORT_OPTIONS:MBACKTRACE)
 	@${REINPLACE_CMD} -e '/IF.*FreeBSD/,/ENDIF.*FreeBSD/d' ${WRKSRC}/src/core/CMakeLists.txt
 .endif
 
