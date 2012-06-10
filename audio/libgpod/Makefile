@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libgpod
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTVERSION=	0.8.2
 CATEGORIES=	audio
 MASTER_SITES=	SF/gtkpod/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
@@ -20,6 +19,8 @@ LIB_DEPENDS=	plist.1:${PORTSDIR}/devel/libplist \
 		tag.1:${PORTSDIR}/audio/taglib \
 		sgutils2.2:${PORTSDIR}/sysutils/sg3_utils
 
+USE_CSTD=	gnu89
+USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
@@ -28,7 +29,8 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--without-hal --with-html-dir="${PREFIX}/share/doc"
+CONFIGURE_ARGS=	--disable-udev --without-hal \
+		--with-html-dir="${PREFIX}/share/doc"
 
 OPTIONS=	IMOBILE	"Support Apple iPhone/iPod Touch" on \
 		PYTHON	"Enable Python bindings"	  off \
