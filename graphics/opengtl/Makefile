@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	opengtl
-PORTVERSION=	0.9.16
-PORTREVISION=	1
+PORTVERSION=	0.9.17
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://download.${PORTNAME}.org/
 DISTNAME=	OpenGTL-${PORTVERSION}
@@ -30,6 +29,8 @@ MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 OPTIONS=	SHIVA	"Install filters and generators" on
+
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.options.mk>
 
