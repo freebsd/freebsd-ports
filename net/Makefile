@@ -1092,6 +1092,7 @@
     SUBDIR += ssmping
     SUBDIR += ssspl
     SUBDIR += ssvnc
+    SUBDIR += stf-6rd-kmod
     SUBDIR += stone
     SUBDIR += stund
     SUBDIR += subnetcalc
