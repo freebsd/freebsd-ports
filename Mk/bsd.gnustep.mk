@@ -207,12 +207,19 @@ GNUSTEP_WITH_GCC42=yes
 .endif
 
 .if defined(GNUSTEP_WITH_CLANG)
+.if defined(CC) && ${CC:T:Mclang}
+# all done
+.else
 .if !exists(${DESTDIR}/usr/bin/clang)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/clang:${PORTSDIR}/lang/clang
 CC=	clang
 CXX=	clang++
 .else
 # use clang in base
+CC=	clang
+CXX=	clang++
+.endif
+# ignore gcc ports
 GNUSTEP_WITH_BASE_GCC=yes
 .endif
 LIB_DEPENDS+=	objc:${PORTSDIR}/lang/libobjc2
