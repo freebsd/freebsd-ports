@@ -27,11 +27,13 @@ USE_GMAKE=	yes
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-OPTIONS=	ADDONS "Install the helper scripts and manpages" on
+OPTIONS_DEFINE=	ADDONS
+OPTIONS_DEFAULT=ADDONS
+ADDONS_DESC=	Install the helper scripts and manpages
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_ADDONS)
+.if ${PORT_OPTIONS:MADDONS}
 RUN_DEPENDS+=	wmanager-loop:${PORTSDIR}/x11-wm/wmanager-addons
 .endif
 
