@@ -23,6 +23,10 @@ RUN_DEPENDS+=	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
 		${LOCALBASE}/bin/gmake:${PORTSDIR}/devel/gmake \
 		${LOCALBASE}/bin/makepatch:${PORTSDIR}/textproc/makepatch
 
+BROKEN=		pkg_add broken in 9.0 amd64, make broken in 7.4 i386
+DEPRECATED=	was a dependency for net/globus4, which was removed 2008-12-07, unmaintained upstream since 2004
+EXPIRATION_DATE=2012-08-10
+
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
