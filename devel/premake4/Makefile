@@ -32,7 +32,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|debug|release|' ${WRKSRC}/tests/test
 
 do-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
