@@ -1,6 +1,6 @@
 # New ports collection makefile for:	py-anki
-# Date created:		12 February 2008
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
+# Date created:				12 February 2008
+# Whom:					Andrew Pantyukhin <infofarmer@FreeBSD.org>
 #
 # $FreeBSD$
 #

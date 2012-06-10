@@ -1,6 +1,6 @@
 # New ports collection makefile for:	anki
-# Date created:		9 August 2007
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
+# Date created:				9 August 2007
+# Whom:					Andrew Pantyukhin <infofarmer@FreeBSD.org>
 #
 # $FreeBSD$
 #
