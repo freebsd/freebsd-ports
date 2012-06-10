@@ -367,7 +367,6 @@
     SUBDIR += jtoolkit
     SUBDIR += junkbuster
     SUBDIR += kannel
-    SUBDIR += kazehakase
     SUBDIR += kdewebdev
     SUBDIR += kdewebdev4
     SUBDIR += khtml2png
