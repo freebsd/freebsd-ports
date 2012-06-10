@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Net-Server
-PORTVERSION=	2.002
-PORTREVISION=	1
+PORTVERSION=	2.004
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,17 +17,18 @@ COMMENT=	A configurable base class for writing internet servers in Perl
 BUILD_DEPENDS=	p5-IO-Multiplex>=1.01:${PORTSDIR}/devel/p5-IO-Multiplex
 RUN_DEPENDS=	p5-IO-Multiplex>=1.01:${PORTSDIR}/devel/p5-IO-Multiplex
 
-PERL_CONFIGURE=	yes
-
-MAKE_JOBS_UNSAFE=	yes
-
 OPTIONS_DEFINE=	IPV6
 
+PERL_CONFIGURE=	yes
+
+MAN1=		net-server.1
 MAN3=		Net::Server.3 \
 		Net::Server::Daemonize.3 \
 		Net::Server::Fork.3 \
 		Net::Server::HTTP.3 \
 		Net::Server::INET.3 \
+		Net::Server::Log::Log::Log4perl.3 \
+		Net::Server::Log::Sys::Syslog.3 \
 		Net::Server::MultiType.3 \
 		Net::Server::Multiplex.3 \
 		Net::Server::PSGI.3 \
