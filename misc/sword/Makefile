@@ -33,17 +33,19 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-.if defined(WITHOUT_CURL)
-CONFIGURE_ARGS+=	--without-curl
-.else
+OPTIONS_DEFINE=	CURL
+OPTIONS_DEFAULT=CURL
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MCURL}
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-curl
+.else
+CONFIGURE_ARGS+=	--without-curl
+.endif
 
 run-autotools::	run-autotools-aclocal
-
-pre-everything::
-	@${ECHO_CMD} "Define WITHOUT_CURL to disable remote fetch (curl) support in the installmanager"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
