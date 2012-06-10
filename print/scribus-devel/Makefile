@@ -32,6 +32,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinte
 		${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging \
 		update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
+BROKEN=		incorrect plist
+
 USE_SVN=	yes
 USE_BZIP2=	yes
 USE_QT4=	gui linguist_build moc_build qmake_build rcc_build uic_build xml network
