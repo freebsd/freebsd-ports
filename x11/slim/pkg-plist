@@ -8,3 +8,6 @@ bin/slim
 @unexec if cmp -s %D/etc/slim.conf.sample %D/etc/slim.conf; then rm -f %D/etc/slim.conf; fi
 etc/slim.conf.sample
 @exec if [ ! -f %D/etc/slim.conf ] ; then cp -p %D/%F %B/slim.conf; fi
+@exec /bin/rm -f %D/share/man/man1/slim.1
+@exec rmdir "%D/share/man/man1" 2>/dev/null || true
+@exec rmdir "%D/share/man" 2>/dev/null || true

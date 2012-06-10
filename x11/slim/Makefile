@@ -6,6 +6,7 @@
 
 PORTNAME=	slim
 PORTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://slim.berlios.de/releases/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.release.asc
@@ -41,9 +42,16 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/${PORTNAME}.conf
 	@${REINPLACE_CMD} -e 's|"/etc"|"${PREFIX}/etc"|' \
 	    -e 's|slim.conf|slim.conf.sample|' \
+	    -e 's|set(MANDIR "$${CMAKE_INSTALL_PREFIX}/share/man")|set(MANDIR "${PREFIX}/man")|' \
 	    ${WRKSRC}/CMakeLists.txt
 	@${MV} ${WRKSRC}/slim.conf ${WRKSRC}/slim.conf.sample
 	@${REINPLACE_CMD} -e 's|std::snprintf|snprintf|' ${WRKSRC}/Ck.cpp
+
+# Fix a previous bad install
+pre-install:
+	@/bin/rm -f ${LOCALBASE}/share/man/man1/slim.1
+	@/bin/rmdir ${LOCALBASE}/share/man/man1 2>/dev/null
+	@/bin/rmdir ${LOCALBASE}/share/man 2>/dev/null
 
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
