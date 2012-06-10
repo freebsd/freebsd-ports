@@ -1,45 +1,63 @@
 #!/bin/sh
 
-# PROVIDE: postfwd 
+# $FreeBSD$
+#
+# PROVIDE: postfwd
 # REQUIRE: LOGIN cleanvar
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
 #
-# postfwd_enable (bool):   
+# postfwd_enable (bool):
 #	Set to "NO" by default.
-#               Set it to "YES" to enable postfwd.
-# postfwd_config (path):   Set to %%PREFIX%%/etc/postfwd.conf
-#               by default.
-#
+#       Set it to "YES" to enable postfwd.
+# postfwd_config (path):
+#	Set to %%PREFIX%%/etc/postfwd.conf
+#	by default.
 
 . /etc/rc.subr
 
 name=postfwd
 rcvar=postfwd_enable
 
+load_rc_config $name
+
+: ${postfwd_enable:="NO"}
+: ${postfwd_flags="--shortlog --summary=600 --cache=600 --cache-rbl-timeout=3600 --cleanup-requests=1200 --cleanup-rbls=1800 --cleanup-rates=1200"}
+
+pidfile=${postfwd_pidfile:="/var/run/${name}.pid"}
+required_files=${postfwd_config:="%%PREFIX%%/etc/${name}.conf"}
+
 command=%%PREFIX%%/bin/${name}
-required_files=%%PREFIX%%/etc/${name}.conf
-pidfile="/var/run/${name}.pid"
+command_args="--daemon --file=${required_files} --pidfile=${pidfile} --interface=127.0.0.1 --port=10040 --user=nobody --group=nobody"
 
-stop_postcmd=stop_postcmd
+start_precmd="${name}_check"
+status_cmd="${name}_status"
+stop_cmd="${command} -k --pidfile=${pidfile}"
+stop_postcmd="rm -f ${pidfile}"
+extra_commands="reload"
+reload_cmd="${name}_reload"
 
-stop_postcmd()
-{
-  rm -f $pidfile
+postfwd_check() {
+	if [ -f "${postfwd_pidfile}" ]; then
+		err 1 "${name} is already running."
+	fi
 }
 
-load_rc_config "$name"
+postfwd_status() {
+	postfwd_pid=`cat ${pidfile} 2>/dev/null`
+	postfwd_run=`ps -U nobody | grep -m 1 ${postfwd_pid} 2>/dev/null`
+	if [ -n "${postfwd_pid}" -a -n "${postfwd_run}" ]; then
+		echo "$name is running as ${postfwd_pid}"
+	else
+		echo "$name is not running"
+	fi
+}
 
-case "$postfwd_enable" in
-    [Yy][Ee][Ss] | 1 | [Oo][Nn] | [Tt][Rr][Uu][Ee]) ;;
-    *) echo "To make use of $name you must first set $rcvar=\"YES\" in /etc/rc.conf" ;;
-esac
+postfwd_reload() {
 
-: ${postfwd_enable="NO"}
-: ${postfwd_config="%%PREFIX%%/etc/${name}.conf"}
-
-command_args="--shortlog --summary=600 --cache=600 --cache-rbl-timeout=3600 --cleanup-requests=1200 --cleanup-rbls=1800 --cleanup-rates=1200 -d -f ${required_files} -i 127.0.0.1 -p 10040 -u nobody -g nobody"
+	kill -HUP `cat $pidfile`
+}
 
 run_rc_command "$1"

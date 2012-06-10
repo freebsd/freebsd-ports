@@ -7,6 +7,7 @@
 
 PORTNAME=	postfwd
 PORTVERSION=	1.32
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.${PORTNAME}.org/old/
 PKGNAMEPREFIX=	postfix-
@@ -21,37 +22,42 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
 		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 
-PORTDOCS=	arch.html ${PORTNAME}.CHANGELOG ${PORTNAME}.html \
-		${PORTNAME}.txt quick.html versions.html
-
+PORTDOCS=	*
 PORTEXAMPLES=	request.sample postfwd.plugins.sample
-PLIST_FILES=	bin/${PORTNAME} etc/${PORTNAME}.conf.sample
 
+PLIST_FILES=	bin/${PORTNAME} etc/${PORTNAME}.conf.sample
 SUB_FILES=	pkg-message
 
 USE_RC_SUBR=	${PORTNAME}
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 
-MAN8=		${PORTNAME}.8
+MAN8=		${PORTNAME}.8 ${PORTNAME}2.8
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	EXAMPLES DOCS POSTFWD2
+POSTFWD2_DESC=	Install postfwd v2 rather than v1
+
+.include <bsd.port.options.mk>
 
 do-install:
+.if ${PORT_OPTIONS:MPOSTFWD2}
+	@${INSTALL_SCRIPT} ${WRKSRC}/sbin/${PORTNAME}2 ${PREFIX}/bin/${PORTNAME}
+.else
 	@${INSTALL_SCRIPT} ${WRKSRC}/sbin/${PORTNAME} ${PREFIX}/bin/
+.endif
 	@${INSTALL_DATA} ${WRKSRC}/etc/${PORTNAME}.cf.sample ${PREFIX}/etc/${PORTNAME}.conf.sample
-	@${INSTALL_MAN} ${WRKSRC}/man/man8/${MAN8} ${MANPREFIX}/man/man8/
+	@${INSTALL_MAN} ${WRKSRC}/man/man8/* ${MANPREFIX}/man/man8/
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if !empty(PORT_OPTIONS:MDOCS)
 	@${INSTALL} -o ${DOCOWN} -g ${DOCGRP} -m 555 -d ${DOCSDIR}
 	@cd ${WRKSRC}/doc/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if !empty(PORT_OPTIONS:MEXAMPLES)
 	@${INSTALL} -o ${SHAREOWN} -g ${SHAREGRP} -m 555 -d ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/tools/request.sample ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/plugins/postfwd.plugins.sample ${EXAMPLESDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
