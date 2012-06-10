@@ -3349,6 +3349,7 @@
     SUBDIR += py-pycerberus
     SUBDIR += py-pydasm
     SUBDIR += py-pyev
+    SUBDIR += py-pygithub
     SUBDIR += py-pygpx
     SUBDIR += py-pyke
     SUBDIR += py-pylib
