@@ -6,22 +6,22 @@
 #
 
 PORTNAME=	hf
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ee.lbl.gov/ \
 		ftp://ftp.tux.org/sites/ftp.ee.lbl.gov/ \
 		ftp://ftp.xemacs.org/sites/ftp.ee.lbl.gov/ \
 		http://ftp.riken.go.jp/pub/net/lbl/
+PKGNAMEPREFIX=	lbl-
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-PKGNAMEPREFIX=	lbl-
 
 MAINTAINER=	leres@ee.lbl.gov
 COMMENT=	Address to hostname filter
 
 MAKE_JOBS_UNSAFE=	yes
 
-CONFLICTS=	comms/hf-0.* security/bro-1.*
+CONFLICTS=	hf-[0-9]* bro-1.[0-9]*
 
 PLIST_FILES=	bin/hf
 
