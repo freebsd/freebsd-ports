@@ -50,8 +50,8 @@ post-patch:
 # Fix a previous bad install
 pre-install:
 	@/bin/rm -f ${LOCALBASE}/share/man/man1/slim.1
-	@/bin/rmdir ${LOCALBASE}/share/man/man1 2>/dev/null
-	@/bin/rmdir ${LOCALBASE}/share/man 2>/dev/null
+	@/bin/rmdir ${LOCALBASE}/share/man/man1 2>/dev/null || true
+	@/bin/rmdir ${LOCALBASE}/share/man 2>/dev/null || true
 
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
