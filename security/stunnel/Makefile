@@ -15,7 +15,8 @@ MASTER_SITES=	ftp://ftp.stunnel.org/stunnel/%SUBDIR%/ \
 		http://ftp.nluug.nl/pub/networking/stunnel/%SUBDIR%/ \
 		ftp://ftp.surfnet.nl/pub/networking/stunnel/%SUBDIR%/ \
 		http://ftp.surfnet.nl/pub/networking/stunnel/%SUBDIR%/ \
-		http://mirrors.zerg.biz/stunnel/%SUBDIR%/
+		http://mirrors.zerg.biz/stunnel/%SUBDIR%/ \
+		http://mirrors.rit.edu/zi/
 MASTER_SITE_SUBDIR=	. obsolete/4.x
 
 MAINTAINER=	zi@FreeBSD.org
@@ -37,12 +38,15 @@ CONFIGURE_ARGS=	--localstatedir=/var/tmp \
 MAN8=		stunnel.8 stunnel.fr.8 stunnel.pl.8
 .endif
 
-OPTIONS=	FORK	"Ese the fork(3) threading model" off \
-		PTHREAD	"Ese the pthread(3) threading model (default)" on \
-		UCONTEXT	"Ese the ucontext(3) threading model" off \
-		IPV6	"Enable IPv6 support" off \
-		LIBWRAP	"Use TCP wrappers" on \
-		SSL_PORT	"Use OpenSSL from the Ports Collection" off
+OPTIONS_DEFINE=		IPV6 LIBWRAP SSL_PORT
+OPTIONS_SINGLE=		THREAD
+OPTIONS_SINGLE_THREAD=	FORK PTHREAD UCONTEXT
+OPTIONS_DEFAULT=	PTHREAD
+
+SSL_PORT_DESC=	Use OpenSSL from the ports collection
+FORK_DESC=	Use the fork(3) threading model
+PTHREAD_DESC=	Use the pthread(3) threading model
+UCONTEXT_DESC=	Use the ucontext(3) threading model
 
 .include <bsd.port.options.mk>
 
@@ -52,8 +56,8 @@ STUNNEL_GROUP?=	stunnel
 USERS=		${STUNNEL_USER}
 GROUPS=		${STUNNEL_GROUP}
 
-.if defined(WITH_SSL_PORT)
-USE_OPENSSL=	YES
+.if ${PORT_OPTIONS:MSSL_PORT}
+USE_OPENSSL=		YES
 WITH_OPENSSL_PORT=	yes
 CONFIGURE_ARGS+=	--with-ssl="${OPENSSLBASE}"
 .else
@@ -62,28 +66,24 @@ CONFIGURE_ARGS+=	--with-ssl=/usr
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-.if defined(WITH_LIBWRAP)
+.if ${PORT_OPTIONS:MLIBWRAP}
 CONFIGURE_ARGS+=	--enable-libwrap
 LDFLAGS+=		-lwrap
 .else
 CONFIGURE_ARGS+=	--disable-libwrap
 .endif
 
-.if defined(WITH_UCONTEXT) && defined(WITH_FORK) || defined(WITH_UCONTEXT) && defined(WITH_PTHREAD) || defined(WITH_FORK) && defined(WITH_PTHREAD)
-BROKEN=	'The WITH_UCONTEXT, WITH_FORK and WITH_PTHREAD options are mutually exclusive - please specify at most one of them, the default is WITH_PTHREAD'
-.endif
-
-.if defined(WITH_UCONTEXT)
+.if ${PORT_OPTIONS:MUCONTEXT}
 CONFIGURE_ARGS+=--with-threads=ucontext
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
-.elif defined(WITH_FORK)
+.elif ${PORT_OPTIONS:MFORK}
 CONFIGURE_ARGS+=--with-threads=fork
 .else
 CONFIGURE_ARGS+=--with-threads=pthread
