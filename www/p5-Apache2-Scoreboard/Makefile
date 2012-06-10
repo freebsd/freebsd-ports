@@ -20,6 +20,8 @@ COMMENT=	Perl interface to the Apache scoreboard structure
 BUILD_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_perl2>=2.0.0:${PORTSDIR}/www/mod_perl2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+BROKEN=		does not configure
+
 PERL_CONFIGURE=	yes
 USE_APACHE=	20+
 USE_LDCONFIG=	yes
