@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-HTTP-Server-Simple>=0:${PORTSDIR}/www/p5-HTTP-Server-Simple \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-MIME-Types>=0:${PORTSDIR}/mail/p5-MIME-Types \
 		p5-File-MMagic>=0:${PORTSDIR}/devel/p5-File-MMagic
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 

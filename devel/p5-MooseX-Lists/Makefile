@@ -14,7 +14,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Treat arrays and hashes as lists
 
 RUN_DEPENDS=	p5-Moose>=0.93:${PORTSDIR}/devel/p5-Moose
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	YES
 MAN3=	MooseX::Lists.3

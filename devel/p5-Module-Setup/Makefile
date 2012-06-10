@@ -25,7 +25,7 @@ RUN_DEPENDS=	\
 	p5-YAML>0:${PORTSDIR}/textproc/p5-YAML \
 	p5-Module-Install-AuthorTests>0:${PORTSDIR}/devel/p5-Module-Install-AuthorTests \
 	p5-Text-Patch>0:${PORTSDIR}/textproc/p5-Text-Patch
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

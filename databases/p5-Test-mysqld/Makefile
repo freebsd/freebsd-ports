@@ -18,7 +18,7 @@ RUN_DEPENDS=	\
 	p5-Class-Accessor-Lite>0:${PORTSDIR}/devel/p5-Class-Accessor-Lite \
 	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
 	p5-Test-SharedFork>=0.06:${PORTSDIR}/devel/p5-Test-SharedFork
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -16,7 +16,7 @@ COMMENT=	Gregorian calendar date calculations
 
 RUN_DEPENDS=	p5-Bit-Vector>=7.1:${PORTSDIR}/math/p5-Bit-Vector \
 		p5-Carp-Clan>=5.3:${PORTSDIR}/devel/p5-Carp-Clan
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

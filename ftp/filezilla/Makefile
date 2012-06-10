@@ -19,7 +19,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt \
 		gnutls.47:${PORTSDIR}/security/gnutls \
 		idn.17:${PORTSDIR}/dns/libidn \

@@ -17,7 +17,7 @@ COMMENT=	Perl extension of DBIx::DBHResolver mixin for DBIx::Skinny
 RUN_DEPENDS=	\
 	p5-DBIx-DBHResolver>0:${PORTSDIR}/databases/p5-DBIx-DBHResolver \
 	p5-DBIx-Skinny>0:${PORTSDIR}/databases/p5-DBIx-Skinny
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

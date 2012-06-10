@@ -17,7 +17,7 @@ COMMENT=	Display a stack trace on the debug screen
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Devel-StackTrace>=0:${PORTSDIR}/devel/p5-Devel-StackTrace \
 		p5-MRO-Compat>=0.10:${PORTSDIR}/devel/p5-MRO-Compat
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

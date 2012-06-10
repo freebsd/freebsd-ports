@@ -22,7 +22,7 @@ BUILD_DEPENDS=	p5-XML-NamespaceSupport>=0:${PORTSDIR}/textproc/p5-XML-NamespaceS
 		sdocbook-xml>=0:${PORTSDIR}/textproc/sdocbook-xml \
 		dsssl-docbook-modular>=0:${PORTSDIR}/textproc/dsssl-docbook-modular \
 		OpenSP>=0:${PORTSDIR}/textproc/opensp
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	docbook-utils-*
 

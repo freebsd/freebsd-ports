@@ -16,7 +16,7 @@ MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	Structured Tags datastructures
 
 RUN_DEPENDS=	${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

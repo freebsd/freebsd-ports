@@ -17,7 +17,7 @@ COMMENT=	An interface to open and send raw frames to the network
 BUILD_DEPENDS=	p5-Class-Gomor>=1.00:${PORTSDIR}/devel/p5-Class-Gomor \
 		p5-Socket6>=0.19:${PORTSDIR}/net/p5-Socket6 \
 		p5-Net-Pcap>=0.14:${PORTSDIR}/net/p5-Net-Pcap
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

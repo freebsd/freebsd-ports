@@ -20,7 +20,7 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	gpg2:${PORTSDIR}/security/gnupg \
 		p5-Any-Moose>0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-Class-MethodMaker>=1.00:${PORTSDIR}/devel/p5-Class-MethodMaker
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

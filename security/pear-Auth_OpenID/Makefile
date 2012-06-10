@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP OpenID library v2 for PEAR
 
 RUN_DEPENDS=	pear:${PORTSDIR}/devel/pear
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 CONFLICTS=	php-Auth_OpenID-1.*
 

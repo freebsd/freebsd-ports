@@ -23,7 +23,7 @@ RUN_DEPENDS=	p5-DateTime>=0.03:${PORTSDIR}/devel/p5-DateTime \
 		p5-namespace-clean>=0.05:${PORTSDIR}/devel/p5-namespace-clean \
 		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-More>=0.88:${PORTSDIR}/devel/p5-Test-More
 

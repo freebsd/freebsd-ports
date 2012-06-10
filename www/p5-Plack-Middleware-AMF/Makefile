@@ -18,7 +18,7 @@ RUN_DEPENDS=	\
 	p5-Data-AMF>=0.03:${PORTSDIR}/converters/p5-Data-AMF \
 	p5-Plack>0:${PORTSDIR}/www/p5-Plack \
 	p5-UNIVERSAL-require>0:${PORTSDIR}/devel/p5-UNIVERSAL-require
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

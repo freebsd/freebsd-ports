@@ -19,7 +19,7 @@ COMMENT=	Asynchronous client module for Gearman for Danga::Socket applications
 RUN_DEPENDS=	\
 	p5-Danga-Socket>=0:${PORTSDIR}/devel/p5-Danga-Socket \
 	p5-Gearman>=0:${PORTSDIR}/devel/p5-Gearman
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Gearman-Server>=0:${PORTSDIR}/devel/p5-Gearman-Server
 
 PERL_CONFIGURE=	yes

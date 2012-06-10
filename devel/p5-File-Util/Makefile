@@ -17,7 +17,7 @@ COMMENT=	Perl5 module for easy, versatile, portable file handling
 
 RUN_DEPENDS=	p5-Class-OOorNO>=0.01:${PORTSDIR}/devel/p5-Class-OOorNO \
 		p5-Exception-Handler>=1:${PORTSDIR}/devel/p5-Exception-Handler
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	YES
 

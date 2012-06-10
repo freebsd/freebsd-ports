@@ -24,7 +24,7 @@ RUN_DEPENDS=	p5-Algorithm-Dependency>=1.02:${PORTSDIR}/devel/p5-Algorithm-Depend
 		p5-File-chmod>=0.31:${PORTSDIR}/devel/p5-File-chmod \
 		p5-Params-Util>=0.21:${PORTSDIR}/devel/p5-Params-Util \
 		p5-Pod-Tests>=0.18:${PORTSDIR}/devel/p5-Pod-Tests
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	p5-Test-ClassAPI>=1.02:${PORTSDIR}/devel/p5-Test-ClassAPI \
 		p5-Test-Script>=1.02:${PORTSDIR}/devel/p5-Test-Script
 

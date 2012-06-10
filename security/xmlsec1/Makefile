@@ -18,7 +18,7 @@ MAINTAINER=	johans@FreeBSD.org
 COMMENT=	XML Security Library
 
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 OPTIONS=	GNUTLS	"Enable GNUTLS support"	off	\
 		NSS	"Enable Mozilla's NSS support"	off

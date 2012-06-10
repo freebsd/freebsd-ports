@@ -19,7 +19,7 @@ RUN_DEPENDS=	\
 	p5-List-MoreUtils>0:${PORTSDIR}/lang/p5-List-MoreUtils \
 	p5-Proc-Wait3>0:${PORTSDIR}/devel/p5-Proc-Wait3 \
 	p5-Scope-Guard>0:${PORTSDIR}/devel/p5-Scope-Guard
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-SharedFork>0:${PORTSDIR}/devel/p5-Test-SharedFork
 
 PERL_CONFIGURE=	yes

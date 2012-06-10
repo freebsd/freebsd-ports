@@ -17,7 +17,7 @@ COMMENT=	Perl extension to allow compile time traits for classes/roles
 RUN_DEPENDS=	\
 	p5-Moose>0:${PORTSDIR}/devel/p5-Moose \
 	p5-MooseX-Declare>0:${PORTSDIR}/devel/p5-MooseX-Declare
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -18,7 +18,7 @@ BROKEN=		Does not build
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/smartirc4net.pc:${PORTSDIR}/irc/smartirc4net \
 		${LOCALBASE}/libdata/pkgconfig/nini-1.1.pc:${PORTSDIR}/devel/nini \
 		${LOCALBASE}/libdata/pkgconfig/log4net.pc:${PORTSDIR}/devel/log4net
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

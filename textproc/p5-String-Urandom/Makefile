@@ -16,7 +16,7 @@ COMMENT=	Perl extension to convert /dev/urandom to 8-bit chars
 
 RUN_DEPENDS=	\
 	p5-Params-Validate>0:${PORTSDIR}/devel/p5-Params-Validate
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

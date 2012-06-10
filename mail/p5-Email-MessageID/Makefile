@@ -15,7 +15,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate world unique message-ids
 
 RUN_DEPENDS=	p5-Email-Address>=1.80:${PORTSDIR}/mail/p5-Email-Address
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -19,7 +19,7 @@ COMMENT=	Retrieve TV information from http://www.atmovies.com.tw/
 RUN_DEPENDS=	p5-HTML-TableExtract>=2.1:${PORTSDIR}/www/p5-HTML-TableExtract \
 		p5-Moose>=0.55:${PORTSDIR}/devel/p5-Moose \
 		p5-WWW-Mechanize>=1.34:${PORTSDIR}/www/p5-WWW-Mechanize
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

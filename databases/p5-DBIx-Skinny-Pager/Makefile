@@ -18,7 +18,7 @@ RUN_DEPENDS=	\
 	p5-DBIx-Skinny>=0.0729:${PORTSDIR}/databases/p5-DBIx-Skinny \
 	p5-Data-Page>0:${PORTSDIR}/databases/p5-Data-Page \
 	p5-Class-Accessor-Lite>0:${PORTSDIR}/devel/p5-Class-Accessor-Lite
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
 		p5-Test-UseAllModules>=0:${PORTSDIR}/devel/p5-Test-UseAllModules \
 		p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep \

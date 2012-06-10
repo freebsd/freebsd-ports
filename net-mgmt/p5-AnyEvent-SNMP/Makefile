@@ -17,7 +17,7 @@ COMMENT=	Adaptor to integrate Net::SNMP into AnyEvent
 RUN_DEPENDS=	p5-AnyEvent>=5.23:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-Net-SNMP>=6.0.1:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
 		p5-common-sense>=3.4:${PORTSDIR}/devel/p5-common-sense
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	YES
 

@@ -15,7 +15,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Compact many CSS files into one big file
 
 RUN_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	p5-Test-LongString>=0:${PORTSDIR}/devel/p5-Test-LongString
 
 MAKE_JOBS_SAFE=	yes

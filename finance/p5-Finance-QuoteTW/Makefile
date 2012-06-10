@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-Data-TreeDumper>=0:${PORTSDIR}/devel/p5-Data-TreeDumper \
 		p5-Spiffy>=0.3:${PORTSDIR}/devel/p5-Spiffy \
 		p5-WWW-Mechanize>=1.34:${PORTSDIR}/www/p5-WWW-Mechanize \
 		p5-version>=0.76:${PORTSDIR}/devel/p5-version
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

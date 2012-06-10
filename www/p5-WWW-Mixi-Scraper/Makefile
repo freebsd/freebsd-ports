@@ -23,7 +23,7 @@ RUN_DEPENDS=	p5-Module-Find>=0:${PORTSDIR}/devel/p5-Module-Find \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-Web-Scraper>=0.17:${PORTSDIR}/www/p5-Web-Scraper \
 		p5-WWW-Mechanize>=1.50:${PORTSDIR}/www/p5-WWW-Mechanize
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 USE_DOS2UNIX=	yes

@@ -18,7 +18,7 @@ RUN_DEPENDS=	\
 	p5-Plack>=0.9901:${PORTSDIR}/www/p5-Plack \
 	p5-SCGI>0:${PORTSDIR}/www/p5-SCGI \
 	p5-Try-Tiny>=0.04:${PORTSDIR}/lang/p5-Try-Tiny
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

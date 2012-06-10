@@ -18,7 +18,7 @@ COMMENT=	Perl extension of PSGI engine for Catalyst
 RUN_DEPENDS=	\
 	p5-Catalyst-Runtime>=5.80007:${PORTSDIR}/www/p5-Catalyst-Runtime \
 	p5-Catalyst-Action-RenderView>0:${PORTSDIR}/www/p5-Catalyst-Action-RenderView
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

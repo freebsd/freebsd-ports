@@ -15,7 +15,7 @@ MAINTAINER=	ruben@verweg.com
 COMMENT=	Cancel (i.e., kill) threads
 
 RUN_DEPENDS=	p5-threads>=1.34:${PORTSDIR}/devel/p5-threads
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

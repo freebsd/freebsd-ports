@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SCIM IMEngine module for fcitx
 
 RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

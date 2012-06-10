@@ -20,7 +20,7 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-Dancer>0:${PORTSDIR}/www/p5-Dancer \
 		p5-Text-Xslate>0:${PORTSDIR}/textproc/p5-Text-Xslate
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 

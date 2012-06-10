@@ -20,7 +20,7 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	p5-Proc-ProcessTable>=0.40:${PORTSDIR}/devel/p5-Proc-ProcessTable \
 		p5-Unix-Processors>=2.02:${PORTSDIR}/sysutils/p5-Unix-Processors \
 		p5-IPC-Locker>=1.41:${PORTSDIR}/devel/p5-IPC-Locker
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 MAKE_JOBS_UNSAFE=	yes
 

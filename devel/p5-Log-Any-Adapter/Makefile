@@ -18,7 +18,7 @@ RUN_DEPENDS=	\
 	p5-Log-Any>=0.10:${PORTSDIR}/devel/p5-Log-Any \
 	p5-Guard>0:${PORTSDIR}/devel/p5-Guard \
 	p5-Devel-GlobalDestruction>0:${PORTSDIR}/devel/p5-Devel-GlobalDestruction
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

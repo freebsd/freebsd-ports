@@ -16,7 +16,7 @@ COMMENT=	Extract text contained within an HTML document
 
 RUN_DEPENDS=	p5-HTML-Tree>=3.13:${PORTSDIR}/www/p5-HTML-Tree			\
 		p5-HTML-TableExtract>=2.10:${PORTSDIR}/www/p5-HTML-TableExtract
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

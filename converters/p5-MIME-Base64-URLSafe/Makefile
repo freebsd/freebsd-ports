@@ -15,7 +15,7 @@ MAINTAINER=	citric@cubicone.tmetic.com
 COMMENT=	Perl version of Python's URL-safe base64 codec
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/00//}
 

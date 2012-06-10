@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-Crypt-OpenSSL-Bignum>=0.03:${PORTSDIR}/security/p5-Crypt-OpenSSL
 		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
 		p5-MIME-Base32>=0:${PORTSDIR}/converters/p5-MIME-Base32 \
 		p5-Net-DNS>=0.64:${PORTSDIR}/dns/p5-Net-DNS
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

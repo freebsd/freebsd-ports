@@ -16,7 +16,7 @@ COMMENT=	A command-line script to check the availability of a ports distfiles
 
 RUN_DEPENDS=	p5-URI>=1.56:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	5.10.1+
 

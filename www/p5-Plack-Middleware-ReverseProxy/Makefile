@@ -17,7 +17,7 @@ COMMENT=	Perl extension to support app to run as a reverse proxy backend
 RUN_DEPENDS=	\
 	p5-Plack>=0.9988:${PORTSDIR}/www/p5-Plack \
 	p5-YAML>0:${PORTSDIR}/textproc/p5-YAML
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Base>0:${PORTSDIR}/devel/p5-Test-Base
 
 PERL_CONFIGURE=	yes

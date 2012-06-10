@@ -17,7 +17,7 @@ COMMENT=	Perl extension of PSGI Adapter for CGI::Application
 RUN_DEPENDS=	\
 	p5-CGI-Application>0:${PORTSDIR}/www/p5-CGI-Application \
 	p5-CGI-PSGI>0:${PORTSDIR}/www/p5-CGI-PSGI
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

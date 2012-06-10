@@ -16,7 +16,7 @@ COMMENT=	Perl extension to port Apache2 AddDefaultCharset for Plack
 
 RUN_DEPENDS=	\
 	p5-Plack>=0.9925:${PORTSDIR}/www/p5-Plack
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

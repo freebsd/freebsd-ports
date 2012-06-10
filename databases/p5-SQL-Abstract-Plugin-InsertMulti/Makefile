@@ -17,7 +17,7 @@ COMMENT=	Perl extension to add bulk insert for SQL::Abstract
 RUN_DEPENDS=	\
 	p5-SQL-Abstract>=1.6:${PORTSDIR}/databases/p5-SQL-Abstract \
 	p5-Sub-Exporter>0:${PORTSDIR}/devel/p5-Sub-Exporter
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

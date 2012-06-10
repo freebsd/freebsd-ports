@@ -17,7 +17,7 @@ RUN_DEPENDS=	p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools \
 		p5-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Pod-Coverage \
 		p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 MAN3=	Test::Pod::Coverage::Permissive.3

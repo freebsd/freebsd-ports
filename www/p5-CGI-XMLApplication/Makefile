@@ -16,7 +16,7 @@ COMMENT=	Object Oriented Interface for CGI Script Applications
 
 RUN_DEPENDS=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
 		p5-XML-LibXSLT>=0:${PORTSDIR}/textproc/p5-XML-LibXSLT
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

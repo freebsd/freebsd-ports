@@ -20,7 +20,7 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	p5-Net-SMTP_auth>=0:${PORTSDIR}/mail/p5-Net-SMTP_auth \
 		p5-Text-Trac>=0.10:${PORTSDIR}/textproc/p5-Text-Trac \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 

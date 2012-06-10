@@ -18,7 +18,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		sudo:${PORTSDIR}/security/sudo \
 		greadlink:${PORTSDIR}/sysutils/coreutils \
 		wget:${PORTSDIR}/ftp/wget
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 GNU_CONFIGURE=	yes
 

@@ -22,7 +22,7 @@ RUN_DEPENDS=	\
 	p5-Module-Metadata>0:${PORTSDIR}/devel/p5-Module-Metadata \
 	p5-Try-Tiny>0:${PORTSDIR}/lang/p5-Try-Tiny \
 	p5-YAML>0:${PORTSDIR}/textproc/p5-YAML
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

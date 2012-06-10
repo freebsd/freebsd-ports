@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
     		p5-Class-Data-Inheritable>0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		p5-URI>=1.35:${PORTSDIR}/net/p5-URI \
 		p5-JSON-Any>=1.16:${PORTSDIR}/converters/p5-JSON-Any
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USE_PERL5=	5.6.1+
 PERL_MODBUILD=	yes

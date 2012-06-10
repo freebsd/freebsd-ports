@@ -24,7 +24,7 @@ RUN_DEPENDS=	${SITE_PERL}/Class/Std.pm:${PORTSDIR}/devel/p5-Class-Std \
 		${SITE_PERL}/Sys/Hostname/Long.pm:${PORTSDIR}/sysutils/p5-Sys-Hostname-Long \
 		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
 		${SITE_PERL}/What/MTA.pm:${PORTSDIR}/net/p5-What
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

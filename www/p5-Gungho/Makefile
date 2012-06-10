@@ -47,7 +47,7 @@ RUN_DEPENDS=	p5-Best>=0:${PORTSDIR}/devel/p5-Best \
 		p5-POE-Component-Client-HTTP>=0.81:${PORTSDIR}/www/p5-POE-Component-Client-HTTP \
 		p5-POE>=0.9999:${PORTSDIR}/devel/p5-POE \
 		p5-UNIVERSAL-isa>=0.06:${PORTSDIR}/devel/p5-UNIVERSAL-isa
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

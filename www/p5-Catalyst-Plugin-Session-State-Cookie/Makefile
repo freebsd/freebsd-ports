@@ -20,7 +20,7 @@ RUN_DEPENDS=	\
 	p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
 	p5-Moose>0:${PORTSDIR}/devel/p5-Moose \
 	p5-namespace-autoclean>0:${PORTSDIR}/devel/p5-namespace-autoclean
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -16,7 +16,7 @@ MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Manage Cisco IOS Devices
 
 RUN_DEPENDS=	${SITE_PERL}/Net/Telnet/Cisco.pm:${PORTSDIR}/net-mgmt/p5-Telnet-Cisco
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

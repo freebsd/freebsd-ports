@@ -20,7 +20,7 @@ RUN_DEPENDS=	\
 	p5-Test-Differences>=0.61:${PORTSDIR}/devel/p5-Test-Differences \
 	p5-Test-Exception>=0.31:${PORTSDIR}/devel/p5-Test-Exception \
 	p5-Test-Warn>=0.23:${PORTSDIR}/devel/p5-Test-Warn
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

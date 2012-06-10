@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-Error>=0:${PORTSDIR}/lang/p5-Error \
 		p5-Params-Util>=0:${PORTSDIR}/devel/p5-Params-Util
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

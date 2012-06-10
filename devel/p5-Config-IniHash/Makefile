@@ -18,7 +18,7 @@ COMMENT=	Perl extension for reading and writing INI files
 RUN_DEPENDS=	p5-Hash-Case>=0:${PORTSDIR}/devel/p5-Hash-Case \
 		p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
 		p5-Hash-WithDefaults>=0.04:${PORTSDIR}/devel/p5-Hash-WithDefaults
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 USE_DOS2UNIX=	yes

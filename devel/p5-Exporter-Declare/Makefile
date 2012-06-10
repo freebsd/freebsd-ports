@@ -18,7 +18,7 @@ COMMENT=	Perl extension for exporting done right
 RUN_DEPENDS=	\
 	p5-Meta-Builder>=0.003:${PORTSDIR}/devel/p5-Meta-Builder \
 	p5-aliased>0:${PORTSDIR}/devel/p5-aliased
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Fennec-Lite>=0:${PORTSDIR}/devel/p5-Fennec-Lite \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 

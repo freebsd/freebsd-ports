@@ -19,7 +19,7 @@ RUN_DEPENDS=	${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Application 
 		${SITE_PERL}/Syntax/Highlight/Perl/Improved.pm:${PORTSDIR}/textproc/p5-Syntax-Highlight-Perl-Improved \
 		${SITE_PERL}/Pod/Xhtml.pm:${PORTSDIR}/textproc/p5-Pod-Xhtml \
 		${SITE_PERL}/Test/LongString.pm:${PORTSDIR}/devel/p5-Test-LongString
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 

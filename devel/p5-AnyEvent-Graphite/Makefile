@@ -16,7 +16,7 @@ COMMENT=	A non-blocking Graphite client
 
 RUN_DEPENDS=	p5-AnyEvent>=4.15:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-AnyEvent-SNMP>=1.0:${PORTSDIR}/net-mgmt/p5-AnyEvent-SNMP
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	YES
 

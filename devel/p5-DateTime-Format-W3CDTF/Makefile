@@ -15,7 +15,7 @@ MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Parse and format W3CDTF datetime strings
 
 RUN_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

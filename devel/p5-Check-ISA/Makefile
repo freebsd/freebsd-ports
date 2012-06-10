@@ -17,7 +17,7 @@ COMMENT=	DWIM, correct checking of an object's class
 
 RUN_DEPENDS=	p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok \
 		p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

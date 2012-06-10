@@ -17,7 +17,7 @@ COMMENT=	Access Yahoo's GeoPlanet location service
 RUN_DEPENDS=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \
 		p5-URI>=1.35:${PORTSDIR}/net/p5-URI \
 		p5-Test-Simple>=0.74:${PORTSDIR}/devel/p5-Test-Simple
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

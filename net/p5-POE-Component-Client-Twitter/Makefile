@@ -23,7 +23,7 @@ BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
 		p5-Test-Base>=0:${PORTSDIR}/devel/p5-Test-Base \
 		p5-Module-Install>=0:${PORTSDIR}/devel/p5-Module-Install
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

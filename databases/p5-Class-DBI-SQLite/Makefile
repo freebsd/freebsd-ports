@@ -20,7 +20,7 @@ RUN_DEPENDS=	p5-Ima-DBI>=0:${PORTSDIR}/databases/p5-Ima-DBI \
 		p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-SQL-Statement>=0:${PORTSDIR}/databases/p5-SQL-Statement \
 		p5-Clone>=0:${PORTSDIR}/devel/p5-Clone
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

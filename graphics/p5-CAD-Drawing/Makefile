@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-Math-Vec>=0:${PORTSDIR}/math/p5-Math-Vec \
 		ImageMagick>=0:${PORTSDIR}/graphics/ImageMagick \
 		p5-Stream>=0:${PORTSDIR}/devel/p5-Stream \
 		p5-Math-Geometry-Planar>=0:${PORTSDIR}/math/p5-Math-Geometry-Planar
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 MAN3=	CAD::Drawing.3 \
 	CAD::Drawing::Calculate.3 \

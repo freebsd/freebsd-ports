@@ -16,7 +16,7 @@ COMMENT=	Perl extension for faster implementation of HTTP::Headers
 
 RUN_DEPENDS=	\
 	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires
 
 PERL_MODBUILD=	yes

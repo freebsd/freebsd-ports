@@ -17,7 +17,7 @@ COMMENT=	Read all the messages from a folder as Email::Simple objects
 
 RUN_DEPENDS=	p5-Email-Simple>0:${PORTSDIR}/mail/p5-Email-Simple \
 		p5-Email-FolderType>=0.6:${PORTSDIR}/mail/p5-Email-FolderType
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

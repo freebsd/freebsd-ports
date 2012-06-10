@@ -18,7 +18,7 @@ COMMENT=	Perl extension for PSGI web server on Perlbal
 RUN_DEPENDS=	\
 	p5-Perlbal>0:${PORTSDIR}/www/perlbal \
 	p5-Plack>0:${PORTSDIR}/www/p5-Plack
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
 		p5-Test-TCP>=0:${PORTSDIR}/devel/p5-Test-TCP
 

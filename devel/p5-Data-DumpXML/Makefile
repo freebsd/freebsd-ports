@@ -17,7 +17,7 @@ COMMENT=	Dump arbitrary data structures as XML
 
 RUN_DEPENDS=	p5-Array-RefElem>=0.01:${PORTSDIR}/misc/p5-Array-RefElem \
 		p5-XML-Parser>=2:${PORTSDIR}/textproc/p5-XML-Parser
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

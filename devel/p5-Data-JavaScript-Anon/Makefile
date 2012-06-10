@@ -17,7 +17,7 @@ COMMENT=	Dump big dumb Perl structs to anonymous JavaScript structs
 
 RUN_DEPENDS=	p5-Class-Default>=1.51:${PORTSDIR}/devel/p5-Class-Default \
 		p5-Params-Util>=0.01:${PORTSDIR}/devel/p5-Params-Util
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 MAN3=	Data::JavaScript::Anon.3

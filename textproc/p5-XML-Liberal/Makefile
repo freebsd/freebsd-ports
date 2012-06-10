@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-HTML-Entities-Numbered>=0.04:${PORTSDIR}/textproc/p5-HTML-Entities-Numbered \
 		p5-Module-Pluggable-Fast>=0.16:${PORTSDIR}/devel/p5-Module-Pluggable-Fast \
 		p5-XML-LibXML>=1.58:${PORTSDIR}/textproc/p5-XML-LibXML
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hcchien@hcchien.org
 COMMENT=	A simple interface for Yahoo! Taiwan Lifestyle open APIs
 
-BUILD_DEPENDS=	${RUN_DEPENDS} \
+BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS=	p5-Yahoo-BBAuth>=0:${PORTSDIR}/security/p5-Yahoo-BBAuth \
 		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \

@@ -22,7 +22,7 @@ RUN_DEPENDS=	\
 	p5-Try-Tiny>0:${PORTSDIR}/lang/p5-Try-Tiny \
 	p5-DBIx-TransactionManager>=1.07:${PORTSDIR}/databases/p5-DBIx-TransactionManager \
 	p5-Class-Load>0:${PORTSDIR}/devel/p5-Class-Load
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

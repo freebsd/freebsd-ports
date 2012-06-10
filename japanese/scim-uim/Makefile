@@ -18,7 +18,7 @@ COMMENT=	SCIM IMEngine module using UIM input method library
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 LIB_DEPENDS=	uim:${PORTSDIR}/textproc/uim
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GNOME=	lthack
 USE_ICONV=	yes

@@ -15,7 +15,7 @@ MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	Perl extension to serialize your RSS as JavaScript
 
 RUN_DEPENDS=	p5-XML-RSS>=1.31:${PORTSDIR}/textproc/p5-XML-RSS
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

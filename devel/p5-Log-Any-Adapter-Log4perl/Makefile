@@ -17,7 +17,7 @@ COMMENT=	Log::Any adapter for Log4perl
 RUN_DEPENDS=	p5-File-Temp>=0.20:${PORTSDIR}/devel/p5-File-Temp \
 		p5-Log-Any-Adapter>0:${PORTSDIR}/devel/p5-Log-Any-Adapter \
 		p5-Log-Log4perl>0:${PORTSDIR}/devel/p5-Log-Log4perl
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

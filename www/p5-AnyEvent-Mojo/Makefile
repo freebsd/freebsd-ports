@@ -21,7 +21,7 @@ RUN_DEPENDS=	\
 	p5-Mojolicious>=0.991251:${PORTSDIR}/www/p5-Mojolicious
 #	p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep \
 #	p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

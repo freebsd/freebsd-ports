@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-Time-Piece>=0:${PORTSDIR}/devel/p5-Time-Piece \
 		p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
 		p5-SOAP-MySOAP>=0:${PORTSDIR}/net/p5-SOAP-MySOAP \
 		p5-XML-MyXML>=0:${PORTSDIR}/textproc/p5-XML-MyXML
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

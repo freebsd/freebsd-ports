@@ -17,7 +17,7 @@ MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Perl script to colorize the terminal ouput of GCC
 
 RUN_DEPENDS=	${SITE_PERL}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/examples/${PORTNAME}/${PORTNAME}rc

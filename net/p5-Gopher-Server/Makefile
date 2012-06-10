@@ -18,7 +18,7 @@ COMMENT=	Backend for Gopher Servers
 RUN_DEPENDS=	${SITE_PERL}/Net/Gopher.pm:${PORTSDIR}/net/p5-Net-Gopher \
 				${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy \
 				${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 

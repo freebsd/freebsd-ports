@@ -19,7 +19,7 @@ COMMENT=	DBI driver for CSV files
 RUN_DEPENDS=	p5-DBI>=1.614:${PORTSDIR}/databases/p5-DBI \
 		p5-SQL-Statement>=1.33:${PORTSDIR}/databases/p5-SQL-Statement \
 		p5-Text-CSV_XS>=0.71:${PORTSDIR}/textproc/p5-Text-CSV_XS
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

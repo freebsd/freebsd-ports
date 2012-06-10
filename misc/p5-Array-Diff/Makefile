@@ -16,7 +16,7 @@ COMMENT=	Diff two arrays
 
 RUN_DEPENDS=	p5-Algorithm-Diff>=1.19:${PORTSDIR}/devel/p5-Algorithm-Diff \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

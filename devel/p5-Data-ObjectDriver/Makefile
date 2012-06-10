@@ -20,7 +20,7 @@ RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-Class-Trigger>=0:${PORTSDIR}/devel/p5-Class-Trigger \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Text-SimpleTable>=0:${PORTSDIR}/textproc/p5-Text-SimpleTable
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

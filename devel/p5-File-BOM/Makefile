@@ -18,7 +18,7 @@ COMMENT=	Perl module to handle unicode byte order marks
 RUN_DEPENDS=	p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Readonly>0:${PORTSDIR}/devel/p5-Readonly \
 		p5-Module-Build>=0.3607:${PORTSDIR}/devel/p5-Module-Build
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

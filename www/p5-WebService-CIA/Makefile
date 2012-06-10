@@ -17,7 +17,7 @@ COMMENT=	Information from the CIA World Factbook
 RUN_DEPENDS=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-MLDBM>=0:${PORTSDIR}/databases/p5-MLDBM
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 CONFIGURE_ARGS=	</dev/null
 PERL_MODBUILD=	yes

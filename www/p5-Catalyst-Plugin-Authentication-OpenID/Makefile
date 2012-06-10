@@ -18,7 +18,7 @@ COMMENT=	OpenID Authentication
 RUN_DEPENDS=	${SITE_PERL}/Catalyst.pm:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		${SITE_PERL}/LWPx/ParanoidAgent.pm:${PORTSDIR}/www/p5-LWPx-ParanoidAgent \
 		${SITE_PERL}/Net/OpenID/Consumer.pm:${PORTSDIR}/net/p5-Net-OpenID-Consumer
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

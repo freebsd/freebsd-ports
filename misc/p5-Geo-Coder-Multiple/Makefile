@@ -16,7 +16,7 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Perl module to tie together multiple Geo::Coder modules
 
 RUN_DEPENDS=	p5-List-Util-WeightedRoundRobin>=0:${PORTSDIR}/misc/p5-List-Util-WeightedRoundRobin
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

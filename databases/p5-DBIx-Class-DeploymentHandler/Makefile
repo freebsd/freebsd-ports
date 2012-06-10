@@ -29,7 +29,7 @@ RUN_DEPENDS=	\
 	p5-aliased>0:${PORTSDIR}/devel/p5-aliased \
 	p5-namespace-autoclean>0:${PORTSDIR}/devel/p5-namespace-autoclean \
 	p5-parent>=0.225:${PORTSDIR}/devel/p5-parent
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 	p5-Test-Requires>=0.06:${PORTSDIR}/devel/p5-Test-Requires \
 	p5-Test-Simple>0:${PORTSDIR}/devel/p5-Test-Simple

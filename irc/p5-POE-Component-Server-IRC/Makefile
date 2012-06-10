@@ -29,7 +29,7 @@ RUN_DEPENDS=	p5-Crypt-PasswdMD5>=1.3:${PORTSDIR}/security/p5-Crypt-PasswdMD5 \
 		p5-POE-Component-SSLify>=0:${PORTSDIR}/security/p5-POE-Component-SSLify \
 		p5-POE-Filter-IRCD>=2.2:${PORTSDIR}/irc/p5-POE-Filter-IRCD \
 		p5-POE-Filter-Zlib>0:${PORTSDIR}/archivers/p5-POE-Filter-Zlib
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

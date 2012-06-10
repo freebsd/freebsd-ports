@@ -16,7 +16,7 @@ COMMENT=	Alternative interface to File::Find
 
 RUN_DEPENDS=	p5-Number-Compare>=0:${PORTSDIR}/math/p5-Number-Compare \
 		p5-Text-Glob>=0.07:${PORTSDIR}/textproc/p5-Text-Glob
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

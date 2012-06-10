@@ -17,7 +17,7 @@ COMMENT=	SCIM IMEngine module using PRIME
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim \
 		prime:${PORTSDIR}/japanese/prime
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GNOME=	lthack
 USE_ICONV=	yes

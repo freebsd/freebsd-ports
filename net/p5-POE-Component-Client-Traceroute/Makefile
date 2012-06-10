@@ -15,7 +15,7 @@ MAINTAINER=	tjs@cdpa.nsysu.edu.tw
 COMMENT=	A non-blocking traceroute client
 
 RUN_DEPENDS=	p5-POE>=0.11:${PORTSDIR}/devel/p5-POE
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

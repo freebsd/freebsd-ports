@@ -44,7 +44,7 @@ RUN_DEPENDS=	p5-Email-Find>=0:${PORTSDIR}/mail/p5-Email-Find \
 		p5-XML-RSS-SimpleGen>=0:${PORTSDIR}/textproc/p5-XML-RSS-SimpleGen \
 		p5-XML-XPath>=0:${PORTSDIR}/textproc/p5-XML-XPath \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

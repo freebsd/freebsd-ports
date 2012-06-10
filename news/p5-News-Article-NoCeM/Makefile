@@ -16,7 +16,7 @@ COMMENT=	A module to generate accurate NoCeM notices
 
 RUN_DEPENDS=	${SITE_PERL}/News/Article.pm:${PORTSDIR}/news/p5-News-Article \
 		${SITE_PERL}/PGP/Sign.pm:${PORTSDIR}/security/p5-PGP-Sign
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

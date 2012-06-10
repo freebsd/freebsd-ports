@@ -16,7 +16,7 @@ COMMENT=	Plugin/filter interface to Number::Format
 
 RUN_DEPENDS=	p5-Number-Format>0:${PORTSDIR}/textproc/p5-Number-Format \
 		p5-Template-Toolkit>=2.07:${PORTSDIR}/www/p5-Template-Toolkit
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

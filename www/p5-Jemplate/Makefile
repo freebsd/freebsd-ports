@@ -17,7 +17,7 @@ COMMENT=	JavaScript Templating with Template Toolkit
 
 RUN_DEPENDS=	p5-File-Find-Rule>=0.30:${PORTSDIR}/devel/p5-File-Find-Rule \
 		p5-Template-Toolkit>=2.19:${PORTSDIR}/www/p5-Template-Toolkit
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

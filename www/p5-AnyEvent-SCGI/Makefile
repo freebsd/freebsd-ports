@@ -16,7 +16,7 @@ COMMENT=	Perl extension for Event based SCGI server
 
 RUN_DEPENDS=	\
 	p5-AnyEvent>=5.2:${PORTSDIR}/devel/p5-AnyEvent
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

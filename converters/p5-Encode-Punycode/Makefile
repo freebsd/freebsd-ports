@@ -15,7 +15,7 @@ MAINTAINER=	timur@FreeBSD.org
 COMMENT=	Encode plugin for Punycode
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/IDN/Encode.pm:${PORTSDIR}/textproc/p5-Net-IDN-Encode
-BUILD_DEPENDS=	${RUN_DEPENDS} \
+BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		${SITE_PERL}/Test/NoWarnings.pm:${PORTSDIR}/devel/p5-Test-NoWarnings
 
 PERL_MODBUILD=	yes

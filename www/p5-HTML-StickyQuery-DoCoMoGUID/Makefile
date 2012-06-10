@@ -17,7 +17,7 @@ COMMENT=	Perl extension to add guid in query for DoCoMo imode
 
 RUN_DEPENDS=	\
 	p5-HTML-StickyQuery>0:${PORTSDIR}/www/p5-HTML-StickyQuery
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

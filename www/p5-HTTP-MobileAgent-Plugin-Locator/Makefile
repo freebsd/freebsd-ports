@@ -20,7 +20,7 @@ RUN_DEPENDS=	\
 	p5-HTTP-MobileAgent>=0.31:${PORTSDIR}/www/p5-HTTP-MobileAgent \
 	p5-UNIVERSAL-can>0:${PORTSDIR}/devel/p5-UNIVERSAL-can \
 	p5-UNIVERSAL-require>0:${PORTSDIR}/devel/p5-UNIVERSAL-require
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
 PERL_CONFIGURE=	yes

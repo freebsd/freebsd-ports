@@ -17,7 +17,7 @@ COMMENT=	Class based CSV parser/writer
 
 RUN_DEPENDS=	p5-Text-CSV_XS>=0.23:${PORTSDIR}/textproc/p5-Text-CSV_XS \
 		p5-Class-Accessor>=0.18:${PORTSDIR}/devel/p5-Class-Accessor
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

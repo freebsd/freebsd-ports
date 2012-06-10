@@ -18,7 +18,7 @@ RUN_DEPENDS=	\
 	p5-Class-Accessor-Lite>=0.05:${PORTSDIR}/devel/p5-Class-Accessor-Lite \
 	p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser \
 	p5-JSON>0:${PORTSDIR}/converters/p5-JSON
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

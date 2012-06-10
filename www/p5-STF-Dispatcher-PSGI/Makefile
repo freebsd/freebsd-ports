@@ -20,7 +20,7 @@ RUN_DEPENDS=	\
 	p5-HTTP-Date>0:${PORTSDIR}/www/p5-HTTP-Date \
 	p5-Plack>0:${PORTSDIR}/www/p5-Plack \
 	p5-Plack-Middleware-Header>0:${PORTSDIR}/www/p5-Plack-Middleware-Header
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

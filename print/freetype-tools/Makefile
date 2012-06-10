@@ -23,7 +23,7 @@ COMMENT=	Tools for FreeType 1
 LIB_DEPENDS=	ttf.4:${PORTSDIR}/print/freetype
 RUN_DEPENDS=	${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX-base \
 		t1asm:${PORTSDIR}/print/t1utils
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool

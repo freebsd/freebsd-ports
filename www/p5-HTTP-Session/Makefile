@@ -24,7 +24,7 @@ RUN_DEPENDS=	\
 	p5-libwww>=5.818:${PORTSDIR}/www/p5-libwww \
 	p5-Module-Runtime>=0.011:${PORTSDIR}/devel/p5-Module-Runtime \
 	p5-URI>=1.38:${PORTSDIR}/net/p5-URI
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires
 
 PERL_CONFIGURE=	yes

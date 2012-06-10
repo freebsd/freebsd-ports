@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-Set>=0:${PORTSDIR}/devel/p5-DateTime-Set \
 		p5-DateTime-Calendar-Christian>=0:${PORTSDIR}/devel/p5-DateTime-Calendar-Christian \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 

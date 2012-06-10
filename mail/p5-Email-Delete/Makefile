@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-Email-Folder>=0.84:${PORTSDIR}/mail/p5-Email-Folder \
 		p5-Email-LocalDelivery>=0.21.3:${PORTSDIR}/mail/p5-Email-LocalDelivery \
 		p5-Email-Simple>=1.92:${PORTSDIR}/mail/p5-Email-Simple \
 		p5-File-Find-Rule>=0.28:${PORTSDIR}/devel/p5-File-Find-Rule
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

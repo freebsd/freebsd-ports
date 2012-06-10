@@ -24,7 +24,7 @@ RUN_DEPENDS=	p5-IPC-Cmd>=0:${PORTSDIR}/devel/p5-IPC-Cmd \
 		p5-Net-Telnet>=0:${PORTSDIR}/net/p5-Net-Telnet \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Clone>=0:${PORTSDIR}/devel/p5-Clone
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 

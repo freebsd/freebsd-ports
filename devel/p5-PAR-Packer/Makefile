@@ -23,7 +23,7 @@ RUN_DEPENDS=	p5-Archive-Zip>=1.00:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-PAR-Dist>=0.22:${PORTSDIR}/devel/p5-PAR-Dist \
 		p5-PAR>=1.00.5:${PORTSDIR}/devel/p5-PAR \
 		${SITE_PERL}/B/Deobfuscate.pm:${PORTSDIR}/devel/p5-B-Deobfuscate
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 CONFLICTS=	sketchy-*
 

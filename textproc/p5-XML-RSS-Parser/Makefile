@@ -18,7 +18,7 @@ COMMENT=	A liberal object-oriented parser for RSS feeds
 RUN_DEPENDS=	${SITE_PERL}/XML/Elemental.pm:${PORTSDIR}/textproc/p5-XML-Elemental \
 		${SITE_PERL}/Class/XPath.pm:${PORTSDIR}/devel/p5-Class-XPath \
 		${SITE_PERL}/Class/ErrorHandler.pm:${PORTSDIR}/devel/p5-Class-ErrorHandler
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.0//}

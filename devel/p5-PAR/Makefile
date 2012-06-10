@@ -18,7 +18,7 @@ COMMENT=	Perl Archive Toolkit
 RUN_DEPENDS=	p5-Archive-Zip>=1.00:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-AutoLoader>=5.67:${PORTSDIR}/devel/p5-AutoLoader \
 		p5-PAR-Dist>=0.32:${PORTSDIR}/devel/p5-PAR-Dist
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

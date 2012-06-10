@@ -17,7 +17,7 @@ COMMENT=	Modules/CLI to determine semantic relatedness using the WordNet
 RUN_DEPENDS=	p5-WordNet-QueryData>=0:${PORTSDIR}/textproc/p5-WordNet-QueryData \
 		p5-Text-Similarity>=0:${PORTSDIR}/textproc/p5-Text-Similarity \
 		p5-Digest-SHA1>=2.10:${PORTSDIR}/security/p5-Digest-SHA1
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 WNHOME?=	${LOCALBASE}/share/WordNet
 

@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-Cache-Cache>=0:${PORTSDIR}/devel/p5-Cache-Cache \
 		p5-HTML-Parser>=2.28:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-Text-Unidecode>=0:${PORTSDIR}/converters/p5-Text-Unidecode \
 		p5-libwww>=1.41:${PORTSDIR}/www/p5-libwww
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -18,7 +18,7 @@ RUN_DEPENDS=	\
 	p5-Any-Moose>=0.13:${PORTSDIR}/devel/p5-Any-Moose \
 	p5-AnyEvent>=5.261:${PORTSDIR}/devel/p5-AnyEvent \
 	p5-Data-MessagePack>=0.34:${PORTSDIR}/devel/p5-Data-MessagePack
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-TCP>=0:${PORTSDIR}/devel/p5-Test-TCP
 
 PERL_CONFIGURE=	yes

@@ -18,7 +18,7 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
 RUN_DEPENDS=	m4>=1.4.11:${PORTSDIR}/devel/m4 \
 		${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:${PORTSDIR}/devel/dbus
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf

@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-0.54
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for unified cache interface
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-Carp-Assert>=0.20:${PORTSDIR}/devel/p5-Carp-Assert \
 	p5-Data-UUID>0:${PORTSDIR}/devel/p5-Data-UUID \

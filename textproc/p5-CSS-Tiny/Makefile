@@ -15,7 +15,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Read/Write .css files with as little code as possible
 
 RUN_DEPENDS=	p5-Clone>=0:${PORTSDIR}/devel/p5-Clone
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

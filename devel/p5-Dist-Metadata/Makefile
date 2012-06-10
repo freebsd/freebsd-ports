@@ -22,7 +22,7 @@ RUN_DEPENDS=	\
 	p5-Module-Metadata>0:${PORTSDIR}/devel/p5-Module-Metadata \
 	p5-Path-Class>=0.24:${PORTSDIR}/devel/p5-Path-Class \
 	p5-Try-Tiny>=0.09:${PORTSDIR}/lang/p5-Try-Tiny
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-Test-Fatal>0:${PORTSDIR}/devel/p5-Test-Fatal \
 	p5-Test-MockObject>0:${PORTSDIR}/devel/p5-Test-MockObject \

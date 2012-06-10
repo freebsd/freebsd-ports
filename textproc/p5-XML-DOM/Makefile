@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		p5-libxml>=0:${PORTSDIR}/textproc/p5-libxml \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-XML-RegExp>=0:${PORTSDIR}/textproc/p5-XML-RegExp
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -15,7 +15,7 @@ MAINTAINER=	hartzell@alerce.com
 COMMENT=	Add pre- and post-execution wrappers
 
 RUN_DEPENDS=	${SITE_PERL}/Hook/LexWrap.pm:${PORTSDIR}/devel/p5-Hook-LexWrap
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

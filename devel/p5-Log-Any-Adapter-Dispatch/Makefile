@@ -17,7 +17,7 @@ COMMENT=	Perl extension for adapter to use Log::Dispatch with Log::Any
 RUN_DEPENDS=	\
 	p5-Log-Any-Adapter>0:${PORTSDIR}/devel/p5-Log-Any-Adapter \
 	p5-Log-Dispatch>=2.26:${PORTSDIR}/devel/p5-Log-Dispatch
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

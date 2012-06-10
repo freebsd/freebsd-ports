@@ -21,7 +21,7 @@ COMMENT=	Subtitles searching module
 LICENSE=	LGPL3
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=3.2.0:${PORTSDIR}/www/py-beautifulsoup
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USE_GNOME=	desktopfileutils
 USE_PYTHON=	2.6+

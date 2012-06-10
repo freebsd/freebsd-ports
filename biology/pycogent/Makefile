@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${PYNUMPY} \
 		${LOCALBASE}/bin/cython:${PORTSDIR}/lang/cython \
 		${LOCALBASE}/bin/sphinx-build:${PORTSDIR}/textproc/py-sphinx \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy06>=0.5:${PORTSDIR}/databases/py-sqlalchemy06
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes

@@ -17,7 +17,7 @@ COMMENT=	Perl extension to extend your attribute interfaces
 
 RUN_DEPENDS=	\
 	p5-Mouse>=0.40:${PORTSDIR}/devel/p5-Mouse
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-UseAllModules>=0:${PORTSDIR}/devel/p5-Test-UseAllModules \

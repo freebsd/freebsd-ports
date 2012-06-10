@@ -17,7 +17,7 @@ COMMENT=	Perl module to manipulate geographical addresses
 RUN_DEPENDS=	p5-Lingua-EN-NameParse>=0:${PORTSDIR}/textproc/p5-Lingua-EN-NameParse \
 		p5-Locale-SubCountry>=0:${PORTSDIR}/misc/p5-Locale-SubCountry \
 		p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

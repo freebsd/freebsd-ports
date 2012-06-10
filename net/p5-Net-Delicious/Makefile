@@ -25,7 +25,7 @@ RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-TimeDate>=2.27:${PORTSDIR}/devel/p5-TimeDate \
 		p5-Config-Simple>=2:${PORTSDIR}/devel/p5-Config-Simple \
 		p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 

@@ -18,7 +18,7 @@ COMMENT=	Enterprise scalable realtime graphing platform
 RUN_DEPENDS= ${PYTHON_PKGNAMEPREFIX}cairo>=1.8.10:${PORTSDIR}/graphics/py-cairo \
 	     ${PYTHON_PKGNAMEPREFIX}django>=1.3.1:${PORTSDIR}/www/py-django \
 	     ${PYTHON_PKGNAMEPREFIX}carbon>=0.9.9:${PORTSDIR}/databases/py-carbon
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USE_PYTHON= 2.6+
 USE_PYDISTUTILS= yes

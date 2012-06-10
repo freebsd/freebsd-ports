@@ -25,7 +25,7 @@ RUN_DEPENDS=	p5-Moose>=0.60:${PORTSDIR}/devel/p5-Moose \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-parent>=0:${PORTSDIR}/devel/p5-parent \
 		p5-CAM-PDF>=0:${PORTSDIR}/textproc/p5-CAM-PDF
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 TEST_DEPENDS=	p5-LWP-Online>=1.07:${PORTSDIR}/www/p5-LWP-Online \
 		p5-Test-Base>0:${PORTSDIR}/devel/p5-Test-Base

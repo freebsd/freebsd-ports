@@ -18,7 +18,7 @@ COMMENT=	Perl module that provides the DOM Level 2 Core API for XML documents
 LIB_DEPENDS=	gdome.8:${PORTSDIR}/textproc/gdome2
 RUN_DEPENDS=	p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX \
 		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

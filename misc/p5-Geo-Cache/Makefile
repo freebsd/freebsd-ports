@@ -16,7 +16,7 @@ COMMENT=	Object interface for GPS waypoints
 
 RUN_DEPENDS=	p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules \
 		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

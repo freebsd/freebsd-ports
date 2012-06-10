@@ -15,7 +15,7 @@ MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Daemon Process Control Library and Tools for Unix-bases Systems
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/zconfig:${PORTSDIR}/devel/py-zconfig
-RUN_DEPENDS=	${BUILDS_DEPENDS}
+RUN_DEPENDS:=	${BUILDS_DEPENDS}
 
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	easy_install
