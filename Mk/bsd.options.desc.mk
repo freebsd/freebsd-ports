@@ -97,6 +97,7 @@ LCMS2_DESC?=		Enable LCMS2 support
 LDAP_DESC?=		Enable LDAP support
 LIBBLURAY_DESC?=	Enable libbluray support
 LIBEXTRACTOR_DESC?=	Enable libextractor support
+LIBWRAP_DESC?=		Enable TCP wrapper support
 LIRC_DESC?=		Enable LIRC support
 LUA_DESC?=		Enable LUA support
 MAD_DESC?=		Enable Mad mp3 decoder support
