@@ -19,6 +19,9 @@ COMMENT=	Optimizing incremental native-code compiler for R6RS Scheme
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
+# Both install bin/scheme-script
+CONFLICTS=	petite-chez-*
+
 FETCH_ARGS=	-Fpr
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -27,11 +30,13 @@ CONFIGURE_ARGS+=\
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 ONLY_FOR_ARCHS=	i386
+.if defined(PACKAGE_BUILDING)
 NO_PACKAGE=	Pointyhat cluster CPUs do not support required SSE instruction set
+.endif
 
 .include <bsd.port.pre.mk>
 
-.if defined(NOPORTDOCS)
+.if !${PORT_OPTIONS:MDOCS}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Makefile.in \
 		${FILESDIR}/extra-patch-doc__Makefile.in
 .endif
