@@ -30,7 +30,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-32171-noCPAN
 RUN_DEPENDS+=	p5-DBIx-Class>=0:${PORTSDIR}/databases/p5-DBIx-Class \
 		p5-File-Which>=0:${PORTSDIR}/sysutils/p5-File-Which \
 		p5-URI-Find>=0:${PORTSDIR}/textproc/p5-URI-Find \
-		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
+		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql50 \
 		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
 		p5-Encode-Detect>=0:${PORTSDIR}/converters/p5-Encode-Detect \
 		p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
