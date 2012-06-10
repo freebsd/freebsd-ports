@@ -15,7 +15,7 @@ MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Perl module to send and receive multicast messages
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/IO/Interface.pm:${PORTSDIR}/net/p5-IO-Interface
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 MAN3=		IO::Socket::Multicast.3
 

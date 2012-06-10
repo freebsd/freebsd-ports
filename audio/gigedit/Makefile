@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-X
 LIB_DEPENDS=	gig.10:${PORTSDIR}/audio/libgig \
 		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24
 RUN_DEPENDS=	${LOCALBASE}/lib/linuxsampler/liblinuxsampler.so.3:${PORTSDIR}/audio/linuxsampler
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

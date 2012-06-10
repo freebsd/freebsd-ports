@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-File-Sync>=0:${PORTSDIR}/devel/p5-File-Sync \
 		p5-IO-stringy>=1.126:${PORTSDIR}/devel/p5-IO-stringy
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 MAKE_ENV+=	NOCONF=1
 PERL_CONFIGURE=	yes

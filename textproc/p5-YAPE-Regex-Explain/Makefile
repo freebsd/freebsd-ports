@@ -16,7 +16,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Explanation of a Regular Expression
 
 RUN_DEPENDS=	p5-YAPE-Regex>=0:${PORTSDIR}/textproc/p5-YAPE-Regex
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

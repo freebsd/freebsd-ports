@@ -18,7 +18,7 @@ COMMENT=	Create a static syntax tree for a POD
 RUN_DEPENDS=	p5-HTML-Stream>=1.49:${PORTSDIR}/www/p5-HTML-Stream \
 		p5-IO-String>=1:${PORTSDIR}/devel/p5-IO-String \
 		p5-Text-Template>=1:${PORTSDIR}/textproc/p5-Text-Template
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -17,7 +17,7 @@ COMMENT=	Gopher protocol implementation for Apache2
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2 \
 		${SITE_PERL}/Gopher/Server/ParseRequest.pm:${PORTSDIR}/net/p5-Gopher-Server
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 

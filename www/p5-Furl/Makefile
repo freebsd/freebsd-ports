@@ -17,7 +17,7 @@ COMMENT=	Perl extension of lightning-fast URL fetcher
 
 RUN_DEPENDS=	\
 	p5-HTTP-Parser-XS>=0.11:${PORTSDIR}/www/p5-HTTP-Parser-XS
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
 		p5-Test-TCP>=0:${PORTSDIR}/devel/p5-Test-TCP
 

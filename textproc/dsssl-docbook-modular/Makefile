@@ -22,7 +22,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	DSSSL stylesheets for the DocBook DTD by Norman Walsh
 
 BUILD_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_MTREE=	yes
 

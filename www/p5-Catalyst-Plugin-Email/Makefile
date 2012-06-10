@@ -18,7 +18,7 @@ COMMENT=	Send emails with Catalyst
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Email-Send>=0:${PORTSDIR}/mail/p5-Email-Send \
 		p5-Email-MIME>=0:${PORTSDIR}/mail/p5-Email-MIME
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

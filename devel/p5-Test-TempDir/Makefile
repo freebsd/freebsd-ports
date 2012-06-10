@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok \
 		p5-MooseX-Types-Path-Class>=0:${PORTSDIR}/devel/p5-MooseX-Types-Path-Class \
 		p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \
 		p5-namespace-clean>=0.08:${PORTSDIR}/devel/p5-namespace-clean
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

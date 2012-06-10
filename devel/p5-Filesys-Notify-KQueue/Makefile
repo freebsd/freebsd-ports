@@ -16,7 +16,7 @@ COMMENT=	Perl extension to wrap IO::KQueue for watching file system
 
 RUN_DEPENDS=	\
 	p5-IO-KQueue>0:${PORTSDIR}/devel/p5-IO-KQueue
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-SharedFork>=0.19:${PORTSDIR}/devel/p5-Test-SharedFork
 
 PERL_CONFIGURE=	yes

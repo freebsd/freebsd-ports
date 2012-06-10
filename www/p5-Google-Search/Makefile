@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww \
 		p5-Try-Tiny>=0.07:${PORTSDIR}/lang/p5-Try-Tiny
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

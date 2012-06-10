@@ -18,7 +18,7 @@ COMMENT=	Perl extension for TLS/SSL tunnel
 RUN_DEPENDS=	\
 	p5-AnyEvent>=5.34:${PORTSDIR}/devel/p5-AnyEvent \
 	p5-Net-SSLeay>0:${PORTSDIR}/security/p5-Net-SSLeay
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-TCP>0:${PORTSDIR}/devel/p5-Test-TCP
 
 PERL_CONFIGURE=	yes

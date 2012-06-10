@@ -18,7 +18,7 @@ RUN_DEPENDS=	\
 	p5-Coro>0:${PORTSDIR}/devel/p5-Coro \
 	p5-EV>0:${PORTSDIR}/devel/p5-EV \
 	p5-Net-Server>0:${PORTSDIR}/net/p5-Net-Server
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

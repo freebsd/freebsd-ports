@@ -18,7 +18,7 @@ COMMENT=	Create hyperlinks to cvsweb from cvs[up] output or FreeBSD commitlogs
 RUN_DEPENDS=	${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/Config/IniFiles.pm:${PORTSDIR}/devel/p5-Config-IniFiles \
 		${SITE_PERL}/Time/ParseDate.pm:${PORTSDIR}/devel/p5-Time-modules
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 NO_BUILD=	yes
 USE_BZIP2=	yes

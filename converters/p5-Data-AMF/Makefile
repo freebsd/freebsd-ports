@@ -19,7 +19,7 @@ RUN_DEPENDS=	\
 	p5-Any-Moose>0:${PORTSDIR}/devel/p5-Any-Moose \
 	p5-UNIVERSAL-require>0:${PORTSDIR}/devel/p5-UNIVERSAL-require \
 	p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

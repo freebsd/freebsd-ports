@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-Forest>=0.06:${PORTSDIR}/devel/p5-Forest \
 		p5-Moose>=0.90:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Clone>=0.04:${PORTSDIR}/devel/p5-MooseX-Clone \
 		p5-MooseX-Storage>=0.17:${PORTSDIR}/devel/p5-MooseX-Storage
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	YES
 

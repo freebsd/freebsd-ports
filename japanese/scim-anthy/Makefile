@@ -17,7 +17,7 @@ COMMENT=	SCIM IMEngine module using Anthy
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 LIB_DEPENDS=	anthy.1:${PORTSDIR}/japanese/anthy
-RUN_DEPENDS=	${BUILD_DEPENDS} \
+RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		kasumi:${PORTSDIR}/japanese/kasumi
 
 USE_GNOME=	lthack

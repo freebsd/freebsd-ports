@@ -16,7 +16,7 @@ COMMENT=	Perl extension to designate tests only run by module authors
 
 RUN_DEPENDS=	\
 	p5-Module-Install>0:${PORTSDIR}/devel/p5-Module-Install
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

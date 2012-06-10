@@ -18,7 +18,7 @@ COMMENT=	Tie interface to p5-Net-DNS
 
 RUN_DEPENDS=	p5-Net-DNS>=0.12:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-Tie-Cache>=0.01:${PORTSDIR}/devel/p5-Tie-Cache
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

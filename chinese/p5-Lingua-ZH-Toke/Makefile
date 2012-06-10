@@ -15,7 +15,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Chinese Tokenizer on steroids
 
 BUILD_DEPENDS=	p5-Lingua-ZH-TaBE>=0:${PORTSDIR}/chinese/p5-Lingua-ZH-TaBE
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

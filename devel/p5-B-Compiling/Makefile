@@ -16,7 +16,7 @@ COMMENT=	Perl extension to expose PL_compiling to perl
 
 RUN_DEPENDS=	\
 	p5-Sub-Exporter>0:${PORTSDIR}/devel/p5-Sub-Exporter
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

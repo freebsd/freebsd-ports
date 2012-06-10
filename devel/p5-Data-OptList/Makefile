@@ -16,7 +16,7 @@ COMMENT=	Parse and validate simple name/value option pairs
 
 RUN_DEPENDS=	p5-Params-Util>=0.14:${PORTSDIR}/devel/p5-Params-Util \
 		p5-Sub-Install>=0.92:${PORTSDIR}/devel/p5-Sub-Install
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

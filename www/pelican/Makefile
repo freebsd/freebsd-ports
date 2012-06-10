@@ -18,7 +18,7 @@ RUN_DEPENDS=	rst2html:${PORTSDIR}/textproc/py-docutils \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.5:${PORTSDIR}/devel/py-Jinja2 \
 		${PYTHON_PKGNAMEPREFIX}pygments>=1.4:${PORTSDIR}/textproc/py-pygments \
 		${PYTHON_SITELIBDIR}/feedgenerator.py:${PORTSDIR}/www/py-feedgenerator
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USE_PYTHON=	2.7+
 USE_PYDISTUTILS=easy_install

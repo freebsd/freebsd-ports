@@ -22,7 +22,7 @@ RUN_DEPENDS=	\
 	p5-POEx-Role-SessionInstantiation>=0:${PORTSDIR}/devel/p5-POEx-Role-SessionInstantiation \
 	p5-POEx-Types>0:${PORTSDIR}/devel/p5-POEx-Types \
 	p5-aliased>0:${PORTSDIR}/devel/p5-aliased
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

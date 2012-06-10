@@ -22,7 +22,7 @@ RUN_DEPENDS=	\
 	p5-JSON-Any>0:${PORTSDIR}/converters/p5-JSON-Any \
 	p5-Plack>0:${PORTSDIR}/www/p5-Plack \
 	p5-Readonly>0:${PORTSDIR}/devel/p5-Readonly
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 

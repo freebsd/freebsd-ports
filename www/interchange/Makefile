@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-Safe-Hole>=0.10:${PORTSDIR}/security/p5-Safe-Hole \
 		p5-libwww>=5.810:${PORTSDIR}/www/p5-libwww \
 		p5-Set-Crontab>=1.00:${PORTSDIR}/devel/p5-Set-Crontab \
 		p5-Digest-SHA1>=2.11:${PORTSDIR}/security/p5-Digest-SHA1
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USE_BZIP2=	yes
 PERL_CONFIGURE=	yes

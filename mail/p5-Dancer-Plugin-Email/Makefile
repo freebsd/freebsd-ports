@@ -26,7 +26,7 @@ RUN_DEPENDS=	p5-Dancer>=1.2:${PORTSDIR}/www/p5-Dancer \
 		p5-Net-SMTP-SSL>=0:${PORTSDIR}/mail/p5-Net-SMTP-SSL \
 		p5-Net-SMTP-TLS>=0:${PORTSDIR}/mail/p5-Net-SMTP-TLS \
 		p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

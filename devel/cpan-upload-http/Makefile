@@ -18,7 +18,7 @@ RUN_DEPENDS=	\
 	p5-AppConfig-Std>=1.05:${PORTSDIR}/devel/p5-AppConfig-Std \
 	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
 	p5-Term-ReadKey>0:${PORTSDIR}/devel/p5-Term-ReadKey
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

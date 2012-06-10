@@ -16,7 +16,7 @@ MAINTAINER=	kaoru@kaisei.org
 COMMENT=	Template plugin to specify encoding
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

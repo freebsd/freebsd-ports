@@ -17,7 +17,7 @@ COMMENT=	Software typesetting package
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/gs:${PORTSDIR}/print/ghostscript8 \
 		${LOCALBASE}/bin/psselect:${PORTSDIR}/print/psutils-letter
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LICENSE=	GPLv3
 

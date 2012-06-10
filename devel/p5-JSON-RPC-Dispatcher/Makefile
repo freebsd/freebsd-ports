@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-JSON>=2.16:${PORTSDIR}/converters/p5-JSON \
 		p5-Log-Any>=0.11:${PORTSDIR}/devel/p5-Log-Any \
 		p5-Moose>=0.93:${PORTSDIR}/devel/p5-Moose \
 		p5-Plack>=0.9913:${PORTSDIR}/www/p5-Plack
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

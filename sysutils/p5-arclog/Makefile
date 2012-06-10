@@ -20,7 +20,7 @@ RUN_DEPENDS=	p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
 		p5-Compress-Bzip2>=0:${PORTSDIR}/archivers/p5-Compress-Bzip2 \
 		p5-File-MMagic>=0:${PORTSDIR}/devel/p5-File-MMagic \
 		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 MAN1=		arclog.1

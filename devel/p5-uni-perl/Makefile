@@ -18,7 +18,7 @@ COMMENT=	Modern perl with unicode
 
 RUN_DEPENDS=	p5-Encode>=2.37:${PORTSDIR}/converters/p5-Encode \
 		p5-lib-abs>=0.90:${PORTSDIR}/devel/p5-lib-abs
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
 
 PERL_CONFIGURE=	5.10.0+

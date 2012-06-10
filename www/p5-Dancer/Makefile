@@ -25,7 +25,7 @@ RUN_DEPENDS=	\
 	p5-MIME-Types>0:${PORTSDIR}/mail/p5-MIME-Types \
 	p5-URI>=1.59:${PORTSDIR}/net/p5-URI \
 	p5-Try-Tiny>=0.09:${PORTSDIR}/lang/p5-Try-Tiny
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 OPTIONS=	YAML "Enable YAML implementation in Perl" On
 

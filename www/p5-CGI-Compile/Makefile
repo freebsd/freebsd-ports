@@ -17,7 +17,7 @@ COMMENT=	Perl extension to compile .cgi scripts to a code reference
 
 RUN_DEPENDS=	\
 	p5-File-pushd>0:${PORTSDIR}/devel/p5-File-pushd
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-Test-NoWarnings>0:${PORTSDIR}/devel/p5-Test-NoWarnings \
 	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires

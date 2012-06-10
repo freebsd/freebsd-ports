@@ -15,7 +15,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Sensible default end action
 
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.2000:${PORTSDIR}/www/p5-Catalyst-Runtime
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 

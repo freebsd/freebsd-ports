@@ -15,7 +15,7 @@ COMMENT=	Return zodiac for a given date
 RUN_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-Util-Astro>=0:${PORTSDIR}/devel/p5-DateTime-Util-Astro \
 		p5-Exporter-Lite>=0:${PORTSDIR}/devel/p5-Exporter-Lite
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 

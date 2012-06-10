@@ -17,7 +17,7 @@ COMMENT=	Perl extension to throw HTTP-Errors as (Exception::Class-) Exceptions
 RUN_DEPENDS=	\
 	p5-Exception-Class>=1.29:${PORTSDIR}/devel/p5-Exception-Class \
 	p5-libwww>=5.817:${PORTSDIR}/www/p5-libwww
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0.29:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes

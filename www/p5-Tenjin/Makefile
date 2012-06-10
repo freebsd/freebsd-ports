@@ -15,7 +15,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for fast templating engine with support for embedded
 
 RUN_DEPENDS=	p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Try-Tiny>0:${PORTSDIR}/lang/p5-Try-Tiny
 
 PERL_CONFIGURE=	yes

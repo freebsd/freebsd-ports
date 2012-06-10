@@ -18,7 +18,7 @@ COMMENT=	OOP MediaWiki engine client
 RUN_DEPENDS=	p5-Config-IniHash>=0:${PORTSDIR}/devel/p5-Config-IniHash \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

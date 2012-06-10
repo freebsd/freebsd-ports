@@ -16,7 +16,7 @@ COMMENT=	A perl5 module for SQL parsing and processing
 
 RUN_DEPENDS=	p5-Clone>=0.30:${PORTSDIR}/devel/p5-Clone \
 		p5-Params-Util>=1.00:${PORTSDIR}/devel/p5-Params-Util
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

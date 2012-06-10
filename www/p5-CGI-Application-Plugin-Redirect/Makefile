@@ -15,7 +15,7 @@ MAINTAINER=	hartzell@alerce.com
 COMMENT=	Easy external redirects in CGI::Application
 
 RUN_DEPENDS=	${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Application
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 

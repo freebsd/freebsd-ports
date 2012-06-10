@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-libwww>=5.829:${PORTSDIR}/www/p5-libwww \
 		p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize \
 		p5-HTML-DOM>=0:${PORTSDIR}/www/p5-HTML-DOM \
 		p5-CSS-DOM>=0:${PORTSDIR}/www/p5-CSS-DOM
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

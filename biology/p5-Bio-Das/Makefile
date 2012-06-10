@@ -18,7 +18,7 @@ COMMENT=	Client-side library for Distributed Genome Annotation System
 RUN_DEPENDS=	p5-HTML-Parser>=3:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-bioperl>=0:${PORTSDIR}/biology/p5-bioperl \
 		p5-libwww>=5:${PORTSDIR}/www/p5-libwww
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	YES
 

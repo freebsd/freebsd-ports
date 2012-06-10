@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-Format-W3CDTF>=0:${PORTSDIR}/devel/p5-DateTime-Format-W3CDTF \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-XML-Parser>=2.23:${PORTSDIR}/textproc/p5-XML-Parser
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	p5-Test-Manifest>=0.9:${PORTSDIR}/devel/p5-Test-Manifest
 
 PERL_CONFIGURE=	yes

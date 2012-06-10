@@ -24,7 +24,7 @@ RUN_DEPENDS=	p5-Catalyst-Plugin-Session>=0.27:${PORTSDIR}/www/p5-Catalyst-Plugin
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-URI-Find>=0:${PORTSDIR}/textproc/p5-URI-Find \
 		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	p5-Test-MockObject>=1.01:${PORTSDIR}/devel/p5-Test-MockObject
 
 PERL_CONFIGURE=	yes

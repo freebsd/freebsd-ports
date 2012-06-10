@@ -16,7 +16,7 @@ COMMENT=	Perl extension to compress Regular Expression
 
 RUN_DEPENDS=	\
 	p5-Regexp-Assemble>0:${PORTSDIR}/devel/p5-Regexp-Assemble
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

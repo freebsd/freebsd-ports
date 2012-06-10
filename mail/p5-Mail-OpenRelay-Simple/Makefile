@@ -16,7 +16,7 @@ COMMENT=	Check if a mail server runs as an open relay
 
 RUN_DEPENDS=	p5-Class-Accessor>=0.25:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Net-Telnet>=3.03:${PORTSDIR}/net/p5-Net-Telnet
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

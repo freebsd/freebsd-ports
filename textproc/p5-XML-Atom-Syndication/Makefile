@@ -19,7 +19,7 @@ COMMENT=	Simple lightweight client for consuming Atom syndication feeds
 RUN_DEPENDS=	p5-Class-ErrorHandler>=0:${PORTSDIR}/devel/p5-Class-ErrorHandler \
 		p5-XML-Elemental>=2:${PORTSDIR}/textproc/p5-XML-Elemental \
 		p5-XML-Writer>=0.6:${PORTSDIR}/textproc/p5-XML-Writer
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

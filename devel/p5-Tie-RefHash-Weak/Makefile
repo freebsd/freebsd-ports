@@ -17,7 +17,7 @@ COMMENT=	A Tie::RefHash subclass with weakened references in the keys
 RUN_DEPENDS=	p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
 		p5-Tie-RefHash>=1.34:${PORTSDIR}/devel/p5-Tie-RefHash \
 		p5-Variable-Magic>=0:${PORTSDIR}/devel/p5-Variable-Magic
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

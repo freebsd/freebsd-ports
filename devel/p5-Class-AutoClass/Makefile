@@ -18,7 +18,7 @@ MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	Automatically define simple get and set methods in an inheritance structure
 
 RUN_DEPENDS=	${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy
-BUILD_DEPENDS=	${RUN_DEPENDS} \
+BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		${SITE_PERL}/Test/Deep.pm:${PORTSDIR}/devel/p5-Test-Deep
 
 PERL_CONFIGURE=	yes

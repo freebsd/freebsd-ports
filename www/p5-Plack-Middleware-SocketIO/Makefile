@@ -20,7 +20,7 @@ RUN_DEPENDS=	\
 	p5-Plack>0:${PORTSDIR}/www/p5-Plack \
 	p5-Protocol-WebSocket>=0.00901:${PORTSDIR}/www/p5-Protocol-WebSocket \
 	p5-Try-Tiny>0:${PORTSDIR}/lang/p5-Try-Tiny
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -24,7 +24,7 @@ RUN_DEPENDS=	p5-Catalyst-Plugin-Authentication>=0:${PORTSDIR}/www/p5-Catalyst-Pl
 		p5-Tree-Simple>=0:${PORTSDIR}/devel/p5-Tree-Simple \
 		p5-Tree-Simple-VisitorFactory>=0:${PORTSDIR}/devel/p5-Tree-Simple-VisitorFactory \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	p5-Catalyst-Plugin-Session>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Session \
 		p5-Catalyst-Plugin-Session-State-Cookie>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Session-State-Cookie \
 		p5-Test-WWW-Mechanize-Catalyst>=0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize-Catalyst

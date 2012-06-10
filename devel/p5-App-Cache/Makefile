@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-Class-Accessor-Chained>=0:${PORTSDIR}/devel/p5-Class-Accessor-Ch
 		p5-File-HomeDir>=0:${PORTSDIR}/devel/p5-File-HomeDir \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

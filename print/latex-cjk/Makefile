@@ -20,7 +20,7 @@ COMMENT=	A LaTeX2e macro package which enables the use of CJK scripts
 RUN_DEPENDS=	zh-arphicttf>=0:${PORTSDIR}/chinese/arphicttf \
 		teTeX>=0:${PORTSDIR}/print/teTeX \
 		ttf2pk:${PORTSDIR}/print/freetype-tools
-BUILD_DEPENDS=	${RUN_DEPENDS} \
+BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		${LOCALBASE}/share/ttf2pt1/maps/cugb.map:${PORTSDIR}/chinese/ttf2pt1 \
 		ttf2pt1:${PORTSDIR}/print/ttf2pt1
 

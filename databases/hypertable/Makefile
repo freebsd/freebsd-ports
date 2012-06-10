@@ -24,7 +24,7 @@ LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 		rrd:${PORTSDIR}/databases/rrdtool \
 		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl \
 		sigar:${PORTSDIR}/sysutils/hyperic-sigar
-BUILD_DEPENDS=	${RUN_DEPENDS} \
+BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		ant:${PORTSDIR}/devel/apache-ant
 
 DEPRECATED=	BROKEN for more than 6 month

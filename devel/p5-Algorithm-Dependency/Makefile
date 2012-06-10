@@ -15,7 +15,7 @@ MAINTAINER=	wenheping@gmail.com
 COMMENT=	Base class for implementing various dependency trees
 
 RUN_DEPENDS=	p5-Params-Util>=0.31:${PORTSDIR}/devel/p5-Params-Util
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	p5-Test-ClassAPI>=0.6:${PORTSDIR}/devel/p5-Test-ClassAPI
 
 MAN3=	Algorithm::Dependency.3 \

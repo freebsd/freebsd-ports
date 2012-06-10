@@ -20,7 +20,7 @@ RUN_DEPENDS=	p5-libwww>=5.65:${PORTSDIR}/www/p5-libwww \
 		p5-Date-Manip>=5.40:${PORTSDIR}/devel/p5-Date-Manip \
 		p5-Digest-HMAC>=1.01:${PORTSDIR}/security/p5-Digest-HMAC \
 		p5-XML-Writer>=0.6:${PORTSDIR}/textproc/p5-XML-Writer
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 MAN3=	Google::Checkout::Command::AddMerchantOrderNumber.3 \
 		Google::Checkout::Command::AddTrackingData.3 \

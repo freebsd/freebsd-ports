@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dictionary API to a binary tree
 
 RUN_DEPENDS=	p5-Tree-Binary>=0:${PORTSDIR}/devel/p5-Tree-Binary
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 MAN3=		Tree::Binary::Dictionary.3
 

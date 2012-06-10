@@ -18,7 +18,7 @@ COMMENT=	A TeX/LaTeX package to generate the arabic writing
 
 BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX \
 		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

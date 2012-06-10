@@ -17,7 +17,7 @@ COMMENT=	A bible interface utilizing the sword framework
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	${LOCALBASE}/lib/libsword-1.6.2.so:${PORTSDIR}/misc/sword
-BUILD_DEPENDS=	${RUN_DEPENDS} \
+BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		docbook2html:${PORTSDIR}/textproc/docbook-utils \
 		gnome-doc-tool:${PORTSDIR}/textproc/gnome-doc-utils \
 		nspr>=4.8:${PORTSDIR}/devel/nspr

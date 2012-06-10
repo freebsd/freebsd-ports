@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-Email-FolderType-Net>=0:${PORTSDIR}/mail/p5-Email-FolderType-Net
 		p5-Email-Folder>=0:${PORTSDIR}/mail/p5-Email-Folder \
 		p5-Net-IMAP-Simple>=0.95:${PORTSDIR}/mail/p5-Net-IMAP-Simple \
 		p5-URI-imap>=0:${PORTSDIR}/mail/p5-URI-imap
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

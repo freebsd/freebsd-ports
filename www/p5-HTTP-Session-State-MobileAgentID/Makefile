@@ -19,7 +19,7 @@ RUN_DEPENDS=	\
 	p5-HTTP-MobileAgent>=0.28:${PORTSDIR}/www/p5-HTTP-MobileAgent \
 	p5-HTTP-Session>=0.38:${PORTSDIR}/www/p5-HTTP-Session \
 	p5-Net-CIDR-MobileJP>=0.20:${PORTSDIR}/net/p5-Net-CIDR-MobileJP
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes

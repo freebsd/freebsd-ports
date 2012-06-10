@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \
 		p5-XML-Parser>=2.23:${PORTSDIR}/textproc/p5-XML-Parser \
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
 		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 TEST_DEPENDS=	p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject
 

@@ -22,7 +22,7 @@ RUN_DEPENDS=	\
 	p5-Plack>0:${PORTSDIR}/www/p5-Plack \
 	p5-Text-MicroTemplate>=0.15:${PORTSDIR}/textproc/p5-Text-MicroTemplate \
 	p5-Module-Versions>=0.01:${PORTSDIR}/devel/p5-Module-Versions
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires
 
 PERL_CONFIGURE=	yes

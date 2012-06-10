@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM Chinese Smart Pinyin input method
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GNOME=	gnomehack lthack
 USE_ICONV=	yes

@@ -15,7 +15,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to convert to JSON (JavaScript Object Notation)
 
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 CONFLICTS=	p5-JSON-2.*
 PERL_CONFIGURE=	yes

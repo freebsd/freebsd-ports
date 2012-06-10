@@ -18,7 +18,7 @@ COMMENT=	Perl extension to create and use a local lib/ with PERL5LIB
 RUN_DEPENDS=	\
 	p5-Module-Build>=0.36:${PORTSDIR}/devel/p5-Module-Build \
 	p5-ExtUtils-Install>=1.43:${PORTSDIR}/devel/p5-ExtUtils-Install
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

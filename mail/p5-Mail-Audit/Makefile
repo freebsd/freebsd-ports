@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-File-HomeDir>=0.61:${PORTSDIR}/devel/p5-File-HomeDir \
 		p5-File-Tempdir>=0:${PORTSDIR}/devel/p5-File-Tempdir \
 		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
 		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

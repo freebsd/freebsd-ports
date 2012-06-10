@@ -15,7 +15,7 @@ MAINTAINER=	vovkasm@gmail.com
 COMMENT=	Use dynamic subclassing with DBIx::Class
 
 RUN_DEPENDS=	p5-DBIx-Class>=0.07003:${PORTSDIR}/databases/p5-DBIx-Class
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

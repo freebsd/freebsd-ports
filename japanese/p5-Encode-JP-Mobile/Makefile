@@ -16,7 +16,7 @@ COMMENT=	Perl extension for encoding for mobile phones in Japan
 RUN_DEPENDS=	\
 	p5-File-ShareDir>=0.05:${PORTSDIR}/devel/p5-File-ShareDir \
 	p5-MIME-Tools>=5.428:${PORTSDIR}/mail/p5-MIME-Tools
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-YAML>0:${PORTSDIR}/textproc/p5-YAML
 

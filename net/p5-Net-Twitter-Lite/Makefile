@@ -19,7 +19,7 @@ BUILD_DEPENDS=	p5-JSON-Any>=1.21:${PORTSDIR}/converters/p5-JSON-Any \
 		p5-URI>=1.4:${PORTSDIR}/net/p5-URI \
 		p5-Net-OAuth>=0.25:${PORTSDIR}/net/p5-Net-OAuth \
 		p5-Crypt-SSLeay>=0.5:${PORTSDIR}/security/p5-Crypt-SSLeay
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 MAN3=		Net::Twitter::Lite.3 Net::Twitter::Lite::Error.3

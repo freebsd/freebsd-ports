@@ -20,7 +20,7 @@ RUN_DEPENDS=	p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
 		p5-Moose>=0.38:${PORTSDIR}/devel/p5-Moose \
 		p5-XML-Simple>=2.18:${PORTSDIR}/textproc/p5-XML-Simple \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

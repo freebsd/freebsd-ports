@@ -17,7 +17,7 @@ COMMENT=	Pure-Perl ECMAScript (JavaScript) Engine
 
 RUN_DEPENDS=	p5-TimeDate>0:${PORTSDIR}/devel/p5-TimeDate \
 		p5-Tie-RefHash-Weak>0:${PORTSDIR}/devel/p5-Tie-RefHash-Weak
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -18,7 +18,7 @@ RUN_DEPENDS=	\
 	p5-AnyEvent>0:${PORTSDIR}/devel/p5-AnyEvent \
 	p5-AnyEvent-ReverseHTTP>0:${PORTSDIR}/www/p5-AnyEvent-ReverseHTTP \
 	p5-Plack>=0.99:${PORTSDIR}/www/p5-Plack
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

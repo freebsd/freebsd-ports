@@ -17,7 +17,7 @@ COMMENT=	Perl extension to write logs to Firebug or Webkit Inspector
 RUN_DEPENDS=	\
 	p5-Plack>=0.99:${PORTSDIR}/www/p5-Plack \
 	p5-JavaScript-Value-Escape>0:${PORTSDIR}/lang/p5-JavaScript-Value-Escape
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

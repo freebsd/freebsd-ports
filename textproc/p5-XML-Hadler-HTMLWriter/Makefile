@@ -15,7 +15,7 @@ COMMENT=	PerlSAX handlers for outputting HTML
 
 RUN_DEPENDS=	p5-XML-SAX-Writer>=0:${PORTSDIR}/textproc/p5-XML-SAX-Writer \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

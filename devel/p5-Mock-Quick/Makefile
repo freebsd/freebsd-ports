@@ -16,7 +16,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Quickly mock objects and classes
 
 RUN_DEPENDS=	p5-Exporter-Declare>=0:${PORTSDIR}/devel/p5-Exporter-Declare
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Fennec-Lite>=0:${PORTSDIR}/devel/p5-Fennec-Lite \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 

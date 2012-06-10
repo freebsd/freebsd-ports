@@ -17,7 +17,7 @@ COMMENT=	A module that allows you to declare real exception classes in Perl
 
 RUN_DEPENDS=	p5-Class-Data-Inheritable>=0.02:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		p5-Devel-StackTrace>=1.20:${PORTSDIR}/devel/p5-Devel-StackTrace
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

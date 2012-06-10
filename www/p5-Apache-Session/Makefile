@@ -17,7 +17,7 @@ COMMENT=	A persistence framework for session data
 MAKE_JOBS_SAFE=	yes
 
 RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	p5-Test-Deep>=0.082:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Exception>=0.15:${PORTSDIR}/devel/p5-Test-Exception
 

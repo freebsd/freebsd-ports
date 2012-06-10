@@ -18,7 +18,7 @@ COMMENT=	A collection of n-ary tree related modules
 RUN_DEPENDS=	p5-Moose>=0.90:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-AttributeHelpers>=0.17:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers \
 		p5-MooseX-Clone>=0.05:${PORTSDIR}/devel/p5-MooseX-Clone
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 

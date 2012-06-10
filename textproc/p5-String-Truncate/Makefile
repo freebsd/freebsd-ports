@@ -16,7 +16,7 @@ COMMENT=	A module for when strings are too long to be displayed in...
 
 RUN_DEPENDS=	p5-Sub-Exporter>=0.953:${PORTSDIR}/devel/p5-Sub-Exporter \
 		p5-Sub-Install>=0.03:${PORTSDIR}/devel/p5-Sub-Install
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -19,7 +19,7 @@ RUN_DEPENDS=	\
 	p5-PPI>=1.205:${PORTSDIR}/textproc/p5-PPI \
 	p5-Readonly>=1.03:${PORTSDIR}/devel/p5-Readonly \
 	p5-Text-ASCIITable>0:${PORTSDIR}/textproc/p5-Text-ASCIITable
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

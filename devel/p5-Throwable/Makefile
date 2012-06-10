@@ -17,7 +17,7 @@ COMMENT=	An easy-to-use class for error objects
 
 RUN_DEPENDS=	p5-Devel-StackTrace>=1.21:${PORTSDIR}/devel/p5-Devel-StackTrace \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

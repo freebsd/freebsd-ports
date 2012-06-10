@@ -17,7 +17,7 @@ COMMENT=	AnyEvent::DBI + SQL::Abstract
 RUN_DEPENDS=	p5-AnyEvent-DBI>=0:${PORTSDIR}/devel/p5-AnyEvent-DBI \
 		p5-SQL-Abstract>=0:${PORTSDIR}/databases/p5-SQL-Abstract \
 		p5-parent>=0:${PORTSDIR}/devel/p5-parent
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

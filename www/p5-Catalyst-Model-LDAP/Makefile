@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-MRO-Compat>0:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-Data-Page>0:${PORTSDIR}/databases/p5-Data-Page \
 		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

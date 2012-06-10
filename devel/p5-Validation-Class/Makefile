@@ -19,7 +19,7 @@ RUN_DEPENDS=	\
 	p5-Hash-Flatten>0:${PORTSDIR}/devel/p5-Hash-Flatten \
 	p5-Hash-Merge>0:${PORTSDIR}/textproc/p5-Hash-Merge \
 	p5-Module-Find>0:${PORTSDIR}/devel/p5-Module-Find
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

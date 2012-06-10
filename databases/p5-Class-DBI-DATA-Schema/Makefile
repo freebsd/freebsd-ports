@@ -15,7 +15,7 @@ MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Execute Class::DBI SQL from DATA sections
 
 RUN_DEPENDS=	p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	yes

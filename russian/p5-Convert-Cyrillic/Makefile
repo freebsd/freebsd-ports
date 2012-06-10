@@ -16,7 +16,7 @@ MAINTAINER=	pluknet@gmail.com
 COMMENT=	Routines for converting from one cyrillic charset to another
 
 BUILD_DEPENDS=	p5-Unicode-Map8>=0:${PORTSDIR}/converters/p5-Unicode-Map8
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

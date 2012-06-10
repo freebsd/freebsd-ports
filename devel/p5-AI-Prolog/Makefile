@@ -23,7 +23,7 @@ RUN_DEPENDS=	p5-aliased>=0.11:${PORTSDIR}/devel/p5-aliased \
 		p5-Regexp-Common>=2.119:${PORTSDIR}/textproc/p5-Regexp-Common \
 		p5-Text-Quote>=0.03:${PORTSDIR}/textproc/p5-Text-Quote \
 		p5-Term-ReadKey>=2.21:${PORTSDIR}/devel/p5-Term-ReadKey
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=</dev/null

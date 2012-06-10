@@ -16,7 +16,7 @@ COMMENT=	Perl extension for matching URLs by parts
 
 RUN_DEPENDS=	\
 	p5-URI>0:${PORTSDIR}/net/p5-URI
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

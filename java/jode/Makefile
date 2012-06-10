@@ -15,7 +15,7 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	A java package containing a decompiler and an optimizer for java
 
 BUILD_DEPENDS=	${GETOPT_JAR}:${PORTSDIR}/java/java-getopt
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 VENDOR_VERSION=	1.1.2-pre1
 USE_JAVA=	yes

@@ -16,7 +16,7 @@ MAINTAINER=	lth@FreeBSD.org
 COMMENT=	A simple set of building blocks for both unit and runtime testing
 
 RUN_DEPENDS=	p5-Log-Trace>0:${PORTSDIR}/devel/p5-Log-Trace
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

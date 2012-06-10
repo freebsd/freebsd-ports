@@ -16,7 +16,7 @@ COMMENT=	Perl extension for color space conversions and named lookups
 
 RUN_DEPENDS=	\
 	p5-List-UtilsBy>0:${PORTSDIR}/devel/p5-List-UtilsBy
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

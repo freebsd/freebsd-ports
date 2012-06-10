@@ -18,7 +18,7 @@ RUN_DEPENDS=	\
 	p5-Class-Accessor-Lvalue>0:${PORTSDIR}/devel/p5-Class-Accessor-Lvalue \
 	p5-Exporter-Lite>0:${PORTSDIR}/devel/p5-Exporter-Lite \
 	p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

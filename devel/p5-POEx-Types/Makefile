@@ -19,7 +19,7 @@ RUN_DEPENDS=	\
 	p5-MooseX-Types>0:${PORTSDIR}/devel/p5-MooseX-Types \
 	p5-MooseX-Types-Structured>0:${PORTSDIR}/devel/p5-MooseX-Types-Structured \
 	p5-POE>0:${PORTSDIR}/devel/p5-POE
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes

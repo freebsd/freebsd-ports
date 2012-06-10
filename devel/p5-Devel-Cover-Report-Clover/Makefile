@@ -19,7 +19,7 @@ RUN_DEPENDS=	\
 	p5-Devel-Cover>0:${PORTSDIR}/devel/p5-Devel-Cover \
 	p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser \
 	p5-Template-Toolkit>0:${PORTSDIR}/www/p5-Template-Toolkit
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS= \
 	p5-File-Path>=2.06:${PORTSDIR}/devel/p5-File-Path \
 	p5-File-Which>=1.08:${PORTSDIR}/sysutils/p5-File-Which \

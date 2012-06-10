@@ -16,7 +16,7 @@ MAINTAINER=	gslin@gslin.org
 COMMENT=	PHP OpenID library
 
 RUN_DEPENDS=	pear:${PORTSDIR}/devel/pear
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 CONFLICTS=	pear-Auth_OpenID-2.*
 

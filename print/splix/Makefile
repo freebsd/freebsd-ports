@@ -16,7 +16,7 @@ COMMENT=	A set of CUPS printer drivers for Samsung Printer Language printers
 
 LIB_DEPENDS=
 BUILD_DEPENDS=	cups-config:${PORTSDIR}/print/cups-base
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes

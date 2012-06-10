@@ -15,7 +15,7 @@ MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Multiplayer clone of the famous Bubble Bobble game
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USE_PYTHON=	yes
 USE_BZIP2=	yes

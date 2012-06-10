@@ -16,7 +16,7 @@ COMMENT=	Perl extension to read/write MySQL-style configuration files
 
 RUN_DEPENDS=	\
 	p5-Config-INI>0:${PORTSDIR}/devel/p5-Config-INI
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

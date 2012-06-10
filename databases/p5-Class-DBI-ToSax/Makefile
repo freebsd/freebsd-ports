@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-Ima-DBI>=0:${PORTSDIR}/databases/p5-Ima-DBI \
 		p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI \
 		p5-XML-SAX-Writer>=0:${PORTSDIR}/textproc/p5-XML-SAX-Writer \
 		p5-NEXT>=0:${PORTSDIR}/devel/p5-NEXT
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

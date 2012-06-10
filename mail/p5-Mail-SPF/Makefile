@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-Net-DNS-Resolver-Programmable>=0.002.1:${PORTSDIR}/dns/p5-Net-DN
 		p5-Error>0:${PORTSDIR}/lang/p5-Error \
 		p5-NetAddr-IP>=4:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
 		p5-URI>=1.13:${PORTSDIR}/net/p5-URI
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 CONFLICTS=	p5-Mail-SPF-Query-[0-9]*
 

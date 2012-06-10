@@ -15,7 +15,7 @@ MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Log4j implementation for Perl
 
 RUN_DEPENDS+=	p5-Storable>0:${PORTSDIR}/devel/p5-Storable
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

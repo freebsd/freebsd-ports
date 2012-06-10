@@ -18,7 +18,7 @@ RUN_DEPENDS=	\
 	p5-Lingua-EN-Inflect>=1.89.1:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect \
 	p5-Lingua-EN-Inflect-Number>=1.1:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect-Number \
 	p5-Lingua-EN-Tagger>=0.15:${PORTSDIR}/textproc/p5-Lingua-EN-Tagger
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

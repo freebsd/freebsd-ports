@@ -17,7 +17,7 @@ COMMENT=	AnyEvent::DBI - asynchronous DBI access
 RUN_DEPENDS=	p5-DBI>=1.0:${PORTSDIR}/databases/p5-DBI \
 		p5-AnyEvent>=4.15:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-common-sense>=3.3:${PORTSDIR}/devel/p5-common-sense
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

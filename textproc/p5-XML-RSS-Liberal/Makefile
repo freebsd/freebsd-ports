@@ -16,7 +16,7 @@ COMMENT=	XML::RSS With A Liberal Parser
 
 RUN_DEPENDS=	p5-XML-Liberal>=0:${PORTSDIR}/textproc/p5-XML-Liberal	\
 		p5-XML-RSS-LibXML>=0:${PORTSDIR}/textproc/p5-XML-RSS-LibXML
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

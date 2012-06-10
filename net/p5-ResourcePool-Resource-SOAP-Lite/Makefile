@@ -18,7 +18,7 @@ COMMENT=	A ResourcePool wrapper for SOAP::Lite
 
 RUN_DEPENDS=	p5-ResourcePool>=1.0100:${PORTSDIR}/devel/p5-ResourcePool \
 		p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite-060
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

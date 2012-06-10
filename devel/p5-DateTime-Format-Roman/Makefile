@@ -16,7 +16,7 @@ COMMENT=	Roman day numbering for DateTime objects
 
 RUN_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-Roman>=0:${PORTSDIR}/math/p5-Roman
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

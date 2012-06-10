@@ -20,7 +20,7 @@ RUN_DEPENDS=	\
 	p5-Parallel-Scoreboard>=0.02:${PORTSDIR}/devel/p5-Parallel-Scoreboard \
 	p5-Plack>0:${PORTSDIR}/www/p5-Plack \
 	p5-Try-Tiny>=0.09:${PORTSDIR}/lang/p5-Try-Tiny
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 # Tests will fail if not root or 80/tcp is used.
 TEST_DEPENDS=	\
 	p5-Starlet>0:${PORTSDIR}/www/p5-Starlet \

@@ -40,7 +40,7 @@ BUILD_DEPENDS=	p5-Class-MethodMaker>=0:${PORTSDIR}/devel/p5-Class-MethodMaker \
 		p5-OurNet-BBSAgent>=0:${PORTSDIR}/net/p5-OurNet-BBSAgent \
 		p5-PlRPC>=0:${PORTSDIR}/net/p5-PlRPC \
 		p5-enum>=0:${PORTSDIR}/devel/p5-enum
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PORTSCOUT=	skipv:1.67
 

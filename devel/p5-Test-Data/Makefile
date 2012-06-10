@@ -16,7 +16,7 @@ MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Test functions for particular variable types
 
 RUN_DEPENDS=	p5-Scalar-List-Utils>0:${PORTSDIR}/lang/p5-Scalar-List-Utils
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

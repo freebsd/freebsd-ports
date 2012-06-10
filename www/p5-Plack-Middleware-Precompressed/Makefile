@@ -17,7 +17,7 @@ COMMENT=	Perl extension to serve pre-gzipped content to capable clients
 
 RUN_DEPENDS=	\
 	p5-Plack>0:${PORTSDIR}/www/p5-Plack
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

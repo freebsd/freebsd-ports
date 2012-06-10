@@ -17,7 +17,7 @@ COMMENT=	Network control port for POE applications
 RUN_DEPENDS=	p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
 		p5-Authen-Libwrap>=0:${PORTSDIR}/security/p5-Authen-Libwrap \
 		p5-POE>=0:${PORTSDIR}/devel/p5-POE
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	yes

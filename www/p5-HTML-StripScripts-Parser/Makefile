@@ -16,7 +16,7 @@ COMMENT=	XSS filter using HTML::Parser
 
 RUN_DEPENDS=	p5-HTML-Parser>=3.56:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-HTML-StripScripts>=1.05:${PORTSDIR}/www/p5-HTML-StripScripts
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

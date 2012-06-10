@@ -15,7 +15,7 @@ MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Sends test results to cpan-testers@perl.org
 
 RUN_DEPENDS=	p5-Net>0:${PORTSDIR}/net/p5-Net
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

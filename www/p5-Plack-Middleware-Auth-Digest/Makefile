@@ -17,7 +17,7 @@ COMMENT=	Plack extension for digest authentication
 RUN_DEPENDS=	\
 	p5-Digest-HMAC>0:${PORTSDIR}/security/p5-Digest-HMAC \
 	p5-Plack>0:${PORTSDIR}/www/p5-Plack
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-TCP>=0:${PORTSDIR}/devel/p5-Test-TCP
 
 PERL_CONFIGURE=	yes

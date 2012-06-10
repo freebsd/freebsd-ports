@@ -34,7 +34,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/p5-subversi
 		p5-Template-Plugin-Subst>=0:${PORTSDIR}/www/p5-Template-Plugin-Subst \
 		p5-Text-Diff-HTML>=0:${PORTSDIR}/textproc/p5-Text-Diff-HTML \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
-BUILD_DEPENDS=	${RUN_DEPENDS} \
+BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		${SITE_PERL}/Test/Benchmark.pm:${PORTSDIR}/devel/p5-Test-Benchmark \
 		${SITE_PERL}/Test/HTML/Tidy.pm:${PORTSDIR}/devel/p5-Test-HTML-Tidy \
 		${SITE_PERL}/Test/WWW/Mechanize.pm:${PORTSDIR}/devel/p5-Test-WWW-Mechanize

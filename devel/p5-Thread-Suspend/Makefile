@@ -17,7 +17,7 @@ COMMENT=	Suspend and resume operations for threads
 
 RUN_DEPENDS=	p5-threads>=1.39:${PORTSDIR}/devel/p5-threads \
 		p5-threads-shared>=1.01:${PORTSDIR}/devel/p5-threads-shared
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

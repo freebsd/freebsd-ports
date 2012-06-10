@@ -18,7 +18,7 @@ COMMENT=	Smart URI fetching/caching
 RUN_DEPENDS=	p5-Class-ErrorHandler>=0:${PORTSDIR}/devel/p5-Class-ErrorHandler \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 OPTIONS_DEFINE=	ZLIB CACHE
 OPTIONS_DEFAULT=	ZLIB

@@ -16,7 +16,7 @@ COMMENT=	Plugin that adds Config::Auto support to CGI::Application
 
 RUN_DEPENDS=	p5-CGI-Application>=0:${PORTSDIR}/www/p5-CGI-Application \
 		p5-Config-Auto>=0:${PORTSDIR}/devel/p5-Config-Auto
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 

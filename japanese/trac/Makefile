@@ -17,7 +17,7 @@ COMMENT=	An enhanced wiki and issue tracking system for software projects
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Genshi>=0.5:${PORTSDIR}/textproc/py-genshi \
 		${PYTHON_PKGNAMEPREFIX}Babel>=0.9:${PORTSDIR}/devel/py-babel
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS=	SILVERCITY "Use Silvercity for syntax highlighting" On \
 		DOCUTILS   "Allow additional text markup" On \

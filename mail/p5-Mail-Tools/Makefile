@@ -16,7 +16,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl5 modules for dealing with Internet e-mail messages
 
 RUN_DEPENDS=	p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

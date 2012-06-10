@@ -18,7 +18,7 @@ COMMENT=	A POE component that provides non-blocking access to Net::Telnet
 BUILD_DEPENDS=	p5-POE>=0.31:${PORTSDIR}/devel/p5-POE \
 		${SITE_PERL}/Net/Telnet.pm:${PORTSDIR}/net/p5-Net-Telnet \
 		${SITE_PERL}/Devel/Symdump.pm:${PORTSDIR}/devel/p5-Devel-Symdump
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

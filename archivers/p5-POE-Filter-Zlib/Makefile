@@ -17,7 +17,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A POE filter wrapped around Compress::Zlib
 
 RUN_DEPENDS=	p5-POE>=0.38:${PORTSDIR}/devel/p5-POE
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

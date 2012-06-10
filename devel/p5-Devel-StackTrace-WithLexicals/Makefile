@@ -17,7 +17,7 @@ COMMENT=	Perl extension for Devel::StackTrace + PadWalker
 RUN_DEPENDS=	\
 	p5-Devel-StackTrace>=1.25:${PORTSDIR}/devel/p5-Devel-StackTrace \
 	p5-PadWalker>=1.92:${PORTSDIR}/devel/p5-PadWalker
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

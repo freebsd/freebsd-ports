@@ -20,7 +20,7 @@ RUN_DEPENDS=	\
 	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
 	p5-Plack>=0.99:${PORTSDIR}/www/p5-Plack \
 	p5-Try-Tiny>0:${PORTSDIR}/lang/p5-Try-Tiny
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
 	p5-Test-TCP>0:${PORTSDIR}/devel/p5-Test-TCP

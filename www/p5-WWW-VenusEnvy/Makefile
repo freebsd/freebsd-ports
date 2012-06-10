@@ -17,7 +17,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	VenusEnvy comic strip archive and retrieval module
 
 RUN_DEPENDS=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 

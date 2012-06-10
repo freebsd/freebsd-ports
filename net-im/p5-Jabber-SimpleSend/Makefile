@@ -16,7 +16,7 @@ COMMENT=	Send a Jabber message simply
 
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-Net-Jabber>=0:${PORTSDIR}/net-im/p5-Net-Jabber
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

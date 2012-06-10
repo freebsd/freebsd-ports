@@ -18,7 +18,7 @@ COMMENT=	Jemplate files server
 RUN_DEPENDS=	p5-File-Find-Rule>0:${PORTSDIR}/devel/p5-File-Find-Rule \
 		p5-Catalyst-Runtime>=5.50:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Jemplate>=0.19:${PORTSDIR}/www/p5-Jemplate
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Filesys-Virtual>=0:${PORTSDIR}/devel/p5-Filesys-Virtual \
 		p5-Filesys-Virtual-Plain>=0:${PORTSDIR}/devel/p5-Filesys-Virtual-Plain \
 		p5-Net-DAAP-Client>=0:${PORTSDIR}/audio/p5-Net-DAAP-Client
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 

@@ -18,7 +18,7 @@ COMMENT=	Perl extension for alternate data localization API
 RUN_DEPENDS=	\
 	p5-Any-Moose>0:${PORTSDIR}/devel/p5-Any-Moose \
 	p5-MooseX-AttributeHelpers>0:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

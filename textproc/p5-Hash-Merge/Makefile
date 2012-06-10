@@ -14,7 +14,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Merges hashes
 
 RUN_DEPENDS=	p5-Clone>=0:${PORTSDIR}/devel/p5-Clone
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 MAN3=		Hash::Merge.3
 

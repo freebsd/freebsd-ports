@@ -17,7 +17,7 @@ COMMENT=	Perl extension for simple logging interface with a contextual log
 RUN_DEPENDS=	\
 	p5-Data-Dumper-Concise>0:${PORTSDIR}/devel/p5-Data-Dumper-Concise \
 	p5-Exporter-Declare>=0.105:${PORTSDIR}/devel/p5-Exporter-Declare
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

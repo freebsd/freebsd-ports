@@ -19,7 +19,7 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-HTML-Tree>=3.23:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-Object-Destroyer>=2:${PORTSDIR}/devel/p5-Object-Destroyer
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 TEST_DEPENDS=	p5-File-Slurp>=9999.12:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-HTML-Format>=2.04:${PORTSDIR}/textproc/p5-HTML-Format

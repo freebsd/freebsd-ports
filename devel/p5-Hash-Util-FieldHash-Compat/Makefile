@@ -17,7 +17,7 @@ COMMENT=	Use Hash::Util::FieldHash or ties, depending on availability
 RUN_DEPENDS=	p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok \
 		p5-Tie-RefHash>=0:${PORTSDIR}/devel/p5-Tie-RefHash \
 		p5-Tie-RefHash-Weak>=0:${PORTSDIR}/devel/p5-Tie-RefHash-Weak
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

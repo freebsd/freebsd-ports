@@ -18,7 +18,7 @@ COMMENT=	Recognize folder types for network based message protocols
 
 RUN_DEPENDS=	p5-URI>=1.35:${PORTSDIR}/net/p5-URI \
 		p5-Email-FolderType>=0.8:${PORTSDIR}/mail/p5-Email-FolderType
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

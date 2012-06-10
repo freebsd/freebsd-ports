@@ -24,7 +24,7 @@ RUN_DEPENDS=	\
 	p5-Module-Metadata>=1.000003:${PORTSDIR}/devel/p5-Module-Metadata \
 	p5-Try-Tiny>=0.09:${PORTSDIR}/lang/p5-Try-Tiny \
 	p5-local-lib>=1.008:${PORTSDIR}/devel/p5-local-lib
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

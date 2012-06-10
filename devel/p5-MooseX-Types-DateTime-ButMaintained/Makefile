@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-DateTime>=0.43:${PORTSDIR}/devel/p5-DateTime \
 		p5-MooseX-Types>=0.04:${PORTSDIR}/devel/p5-MooseX-Types \
 		p5-Olson-Abbreviations>=0:${PORTSDIR}/devel/p5-Olson-Abbreviations \
 		p5-namespace-clean>=0.08:${PORTSDIR}/devel/p5-namespace-clean
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok
 

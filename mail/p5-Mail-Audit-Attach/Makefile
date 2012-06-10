@@ -16,7 +16,7 @@ COMMENT=	Mail::Audit plugin for attachment handling
 
 RUN_DEPENDS=	p5-Mail-Audit>=2:${PORTSDIR}/mail/p5-Mail-Audit \
 		p5-Mail-Tools>=1:${PORTSDIR}/mail/p5-Mail-Tools
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 MAKE_JOBS_SAFE=  yes
 

@@ -15,7 +15,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Load class configuration data from a number of file formats
 
 RUN_DEPENDS=	p5-version>=0:${PORTSDIR}/devel/p5-version
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

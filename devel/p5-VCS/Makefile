@@ -15,7 +15,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Library for generic Version Control System access in Perl
 
 RUN_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

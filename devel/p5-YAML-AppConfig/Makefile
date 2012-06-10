@@ -18,7 +18,7 @@ COMMENT=	Perl extension to manage configuration files with YAML
 RUN_DEPENDS=	\
 	p5-YAML>=0.38:${PORTSDIR}/textproc/p5-YAML \
 	p5-YAML-Syck>0:${PORTSDIR}/textproc/p5-YAML-Syck
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

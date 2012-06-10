@@ -15,7 +15,7 @@ MAINTAINER=	timur@FreeBSD.org
 COMMENT=	Internationalizing Domain Names in Applications (RFC 3490)
 
 RUN_DEPENDS=	${SITE_PERL}/Net/IDN/Nameprep.pm:${PORTSDIR}/converters/p5-Net-IDN-Nameprep
-BUILD_DEPENDS=	${RUN_DEPENDS} \
+BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		${SITE_PERL}/Test/NoWarnings.pm:${PORTSDIR}/devel/p5-Test-NoWarnings
 
 PERL_MODBUILD=	yes

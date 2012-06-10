@@ -17,7 +17,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Clamd - Connect to a local clamd service and send commands
 
 RUN_DEPENDS=	clamd:${PORTSDIR}/security/clamav
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 MAKE_JOBS_SAFE=  yes
 

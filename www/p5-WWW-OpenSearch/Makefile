@@ -20,7 +20,7 @@ RUN_DEPENDS=	${SITE_PERL}/URI/Template.pm:${PORTSDIR}/net/p5-URI-Template \
 		p5-XML-Feed>=0.08:${PORTSDIR}/textproc/p5-XML-Feed \
 		p5-libwww>=5.60:${PORTSDIR}/www/p5-libwww \
 		p5-XML-LibXML>=1.58:${PORTSDIR}/textproc/p5-XML-LibXML
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

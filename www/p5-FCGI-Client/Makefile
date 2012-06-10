@@ -18,7 +18,7 @@ COMMENT=	Perl extension for fastcgi protocol client library
 RUN_DEPENDS=	\
 	p5-Any-Moose>=0.1:${PORTSDIR}/devel/p5-Any-Moose \
 	p5-Try-Tiny>0:${PORTSDIR}/lang/p5-Try-Tiny
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

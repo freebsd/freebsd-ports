@@ -17,7 +17,7 @@ COMMENT=	Provides easy access to Apache::* modules for CGI::Application
 RUN_DEPENDS=	p5-CGI-Application>=3.22:${PORTSDIR}/www/p5-CGI-Application \
 		p5-HTML-GenerateUtil>=0:${PORTSDIR}/www/p5-HTML-GenerateUtil \
 		p5-libapreq2>=0:${PORTSDIR}/www/p5-libapreq2
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 LICENSE_COMB=	dual
 LICENSE=	ART10 GPLv1

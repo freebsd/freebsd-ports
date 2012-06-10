@@ -20,7 +20,7 @@ RUN_DEPENDS=	p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-URI>0:${PORTSDIR}/net/p5-URI \
 		p5-XML-Simple>0:${PORTSDIR}/textproc/p5-XML-Simple \
 		p5-version>0:${PORTSDIR}/devel/p5-version
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

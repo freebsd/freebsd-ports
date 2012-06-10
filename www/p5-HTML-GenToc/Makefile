@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-HTML-LinkList>=0.1501:${PORTSDIR}/www/p5-HTML-LinkList \
 		p5-HTML-SimpleParse>=0.10:${PORTSDIR}/www/p5-HTML-SimpleParse \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-Getopt-ArgvFile>=1.09:${PORTSDIR}/devel/p5-Getopt-ArgvFile
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 

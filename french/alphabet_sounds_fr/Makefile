@@ -14,7 +14,7 @@ MAINTAINER=	bruno@tinkerbox.org
 COMMENT=	Educative games for children. Alphabet sounds package (french)
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/childsplay:${PORTSDIR}/games/childsplay
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
 

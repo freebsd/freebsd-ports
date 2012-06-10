@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \
 		p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
 		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 CONFLICTS=	p5-SOAP-Lite-0.6[1-9]* p5-SOAP-Lite-0.[7-9]*
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}-060

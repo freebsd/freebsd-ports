@@ -19,7 +19,7 @@ RUN_DEPENDS=	\
 	p5-Path-Class>0:${PORTSDIR}/devel/p5-Path-Class \
 	p5-URI>0:${PORTSDIR}/net/p5-URI \
 	p5-Exporter-Lite>0:${PORTSDIR}/devel/p5-Exporter-Lite
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -15,7 +15,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Three-way merge and diff
 
 RUN_DEPENDS=	p5-Algorithm-Diff>=1.15:${PORTSDIR}/devel/p5-Algorithm-Diff
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
