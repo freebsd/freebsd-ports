@@ -15,11 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nginx embeded perl module to read and evaluate a request body
 
-OPTIONS=	NGINX_DEVEL	"Use nginx-devel" off
+OPTIONS_DEFINE=	NGINX_DEVEL
+NGINX_DEVEL_DESC=	Use nginx-devel
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_NGINX_DEVEL)
+.if ${PORT_OPTIONS:MNGINX_DEVEL}
 RUN_DEPENDS+=	nginx:${PORTSDIR}/www/nginx-devel
 .else
 RUN_DEPENDS+=	nginx:${PORTSDIR}/www/nginx
