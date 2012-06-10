@@ -13,11 +13,14 @@ MASTER_SITES=	http://download.gna.org/etoile/
 PKGNAMEPREFIX=	etoile-
 DISTNAME=	etoile-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Etoile Project music player
 
 LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib \
 		mp4v2.10:${PORTSDIR}/multimedia/mp4v2
+
+DEPRECATED=	API no longer supported
+EXPIRATION_DATE=	2012-07-20
 
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes

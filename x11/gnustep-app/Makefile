@@ -13,8 +13,11 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Metaport for GNUstep applications
+
+DEPRECATED=	API no longer supported
+EXPIRATION_DATE=	2012-07-20
 
 NO_BUILD=	yes
 NO_INSTALL=	yes

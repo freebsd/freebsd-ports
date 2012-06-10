@@ -15,11 +15,14 @@ DISTNAME=	etoile-${PORTVERSION}
 
 PORTSCOUT=	limit:^0\.2
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Etoile Project System Tool
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus
+
+DEPRECATED=	API no longer supported
+EXPIRATION_DATE=	2012-07-20
 
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes

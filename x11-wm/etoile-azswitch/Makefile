@@ -13,10 +13,12 @@ MASTER_SITES=	http://download.gna.org/etoile/
 PKGNAMEPREFIX=	etoile-
 DISTNAME=	etoile-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Etoile Project window switching
 
 PORTSCOUT=	limit:^0\.2
+DEPRECATED=	API no longer supported
+EXPIRATION_DATE=	2012-07-20
 
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes

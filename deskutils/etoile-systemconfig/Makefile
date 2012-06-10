@@ -12,10 +12,13 @@ MASTER_SITES=	http://download.gna.org/etoile/
 PKGNAMEPREFIX=	etoile-
 DISTNAME=	etoile-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework which provides a way to set system preferences
 
 LICENSE=	LGPL21
+
+DEPRECATED=	API no longer supported
+EXPIRATION_DATE=	2012-07-20
 
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes
