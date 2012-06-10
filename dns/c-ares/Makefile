@@ -17,32 +17,37 @@ COMMENT=	An asynchronous DNS resolver library
 
 LICENSE=	MIT
 
-OPTIONS=	CONFIG_INFO	"Add the ares_config_info patch" on \
-		DEBUG		"Build with debug information" off \
-		HIDE_SYMBOLS	"Hide internal library symbols" on \
-		OPTIMIZED_CFLAGS	"Build with compiler optimizations" off
+OPTIONS_DEFINE=		CONFIG_INFO DEBUG HIDE_SYMBOLS OPTIMIZED_CFLAGS
+OPTIONS_DEFAULT=	CONFIG_INFO HIDE_SYMBOLS
 
-CONFLICTS=	ares-1.*
+CONFIG_INFO_DESC=	Add the ares_config_info patch
+HIDE_SYMBOLS_DESC=	Hide internal library symbols
+OPTIMIZED_CFLAGS_DESC=	Build with compiler optimizations
+
+CONFLICTS=		ares-1.*
 
 MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_CONFIG_INFO)
+.if ${PORT_OPTIONS:MCONFIG_INFO}
 EXTRA_PATCHES+=	${FILESDIR}/ares-config-info.patch
 PKGNAMESUFFIX=	-config
 .endif
-.if defined(WITH_DEBUG)
+
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--enable-debug
 .else
 CONFIGURE_ARGS+=--disable-debug
 .endif
-.if defined(WITH_HIDE_SYMBOLS)
+
+.if ${PORT_OPTIONS:MHIDE_SYMBOLS}
 CONFIGURE_ARGS+=--enable-symbol-hiding
 .else
 CONFIGURE_ARGS+=--disable-symbol-hiding
 .endif
-.if defined(WITH_OPTIMIZED_CFLAGS)
+
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CONFIGURE_ARGS+=--enable-optimize
 .else
 CONFIGURE_ARGS+=--disable-optimize
