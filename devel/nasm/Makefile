@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nasm
-PORTVERSION=	2.09.10
+PORTVERSION=	2.10.01
 PORTEPOCH=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://www.nasm.us/pub/nasm/releasebuilds/${PORTVERSION}/
