@@ -798,6 +798,7 @@
     SUBDIR += razorback-scriptNugget
     SUBDIR += razorback-swfScanner
     SUBDIR += razorback-syslogNugget
+    SUBDIR += razorback-virusTotal
     SUBDIR += razorback-yaraNugget
     SUBDIR += rdigest
     SUBDIR += retranslator
