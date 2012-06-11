@@ -787,6 +787,7 @@
     SUBDIR += ratproxy
     SUBDIR += rats
     SUBDIR += razorback-api
+    SUBDIR += razorback-dispatcher
     SUBDIR += razorback-fileInject
     SUBDIR += razorback-fsMonitor
     SUBDIR += razorback-fsWalk
