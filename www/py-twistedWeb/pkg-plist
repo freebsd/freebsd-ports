@@ -46,6 +46,7 @@
 %%PYTHON_SITELIBDIR%%/twisted/web/error.py
 %%PYTHON_SITELIBDIR%%/twisted/web/error.pyc
 %%PYTHON_SITELIBDIR%%/twisted/web/error.pyo
+%%PYTHON_SITELIBDIR%%/twisted/web/failure.xhtml
 %%PYTHON_SITELIBDIR%%/twisted/web/google.py
 %%PYTHON_SITELIBDIR%%/twisted/web/google.pyc
 %%PYTHON_SITELIBDIR%%/twisted/web/google.pyo
