@@ -35,11 +35,12 @@ PLIST_SUB=	TK_VER=${TK_VER} SHORT_TK_VER=${SHORT_TK_VER}
 TCL82_PORT?=	lang/tcl82
 MANCOMPRESSED=	no
 
-OPTIONS=	TK82_MAN "Install tk 8.2 manpages" off
+OPTIONS_DEFINE=	TK82_MAN
+TK82_MAN_DESC=	Install tk 8.2 manpages
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TK82_MAN)
+.if !defined(NO_INSTALL_MANPAGES) && ${PORT_OPTIONS:MTK82_MAN}
 
 MAN1=	wish.1
 MAN3=	3DBorder.3 BindTable.3 CanvPsY.3 CanvTkwin.3 CanvTxtInfo.3 \
@@ -321,11 +322,11 @@ post-configure:
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${PREFIX}/lib/tk${TK_VER}/
-.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TK82_MAN)
+.if !defined(NO_INSTALL_MANPAGES) && ${PORT_OPTIONS:MTK82_MAN}
 	@cd ${WRKSRC} && ${MAKE} -f Makefile install-doc
 .endif
 
 test:
 	cd ${WRKSRC}; make test
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

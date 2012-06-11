@@ -28,11 +28,12 @@ MAKE_ENV=	SHORT_TCL_VER=82
 NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
 PLIST_SUB=	TCL_VER=8.2 SHORT_TCL_VER=82
 
-OPTIONS=	TCL82_MAN "Install tcl 8.2 manpages" off
+OPTIONS_DEFINE=	TCL82_MAN
+TCL82_MAN_DESC=	Install tcl 8.2 manpages
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TCL82_MAN)
+.if !defined(NO_INSTALL_MANPAGES) && ${PORT_OPTIONS:MTCL82_MAN}
 
 MAN1=	tclsh.1
 
@@ -388,11 +389,11 @@ post-configure:
 		${WRKSRC}/tclConfig.sh
 
 post-install:
-.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TCL82_MAN)
+.if !defined(NO_INSTALL_MANPAGES) && ${PORT_OPTIONS:MTCL82_MAN}
 	@cd ${WRKSRC} && ${MAKE} -f Makefile install-doc
 .endif
 
 test:
 	cd ${WRKSRC} && ${MAKE} test
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -29,11 +29,12 @@ TCL_VER=	8.3
 NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
 PLIST_SUB=	TCL_VER=${TCL_VER} SHORT_TCL_VER=83
 
-OPTIONS=	TCL83_MAN "Install tcl 8.3 manpages" off
+OPTIONS_DEFINE=	TCL83_MAN
+TCL83_MAN_DESC=	Install tcl 8.3 manpages
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TCL83_MAN)
+.if !defined(NO_INSTALL_MANPAGES) && ${PORT_OPTIONS:MTCL83_MAN}
 
 MAN1=	tclsh.1
 
@@ -437,11 +438,11 @@ post-configure:
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/koi8-u.enc \
 		${PREFIX}/lib/tcl${TCL_VER}/encoding/
-.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TCL83_MAN)
+.if !defined(NO_INSTALL_MANPAGES) && ${PORT_OPTIONS:MTCL83_MAN}
 	@cd ${WRKSRC} && ${MAKE} -f Makefile install-doc
 .endif
 
 test:
 	cd ${WRKSRC} && ${MAKE} test
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
