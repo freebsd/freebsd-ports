@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Glib2
-PORTVERSION=	1.250
-PORTREVISION=	1
+PORTVERSION=	1.260
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN/Glib SF/gtk2-perl/Glib/${PORTVERSION}
 PKGNAMEPREFIX=	p5-
@@ -16,8 +15,10 @@ DISTNAME=	Glib-${PORTVERSION}
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	This module provides access to Glib and GObject libraries
 
-BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/PkgConfig.pm:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
-		${SITE_PERL}/ExtUtils/Depends.pm:${PORTSDIR}/devel/p5-ExtUtils-Depends
+LICENSE=	LGPL21
+
+BUILD_DEPENDS=	p5-ExtUtils-Depends>=0.300:${PORTSDIR}/devel/p5-ExtUtils-Depends \
+		p5-ExtUtils-PkgConfig>=1:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig
 
 USE_GNOME=	glib20
 PERL_CONFIGURE=	yes
