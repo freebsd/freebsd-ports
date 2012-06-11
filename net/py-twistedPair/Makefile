@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twistedPair
-PORTVERSION=	12.0.0
+PORTVERSION=	12.1.0
 CATEGORIES=	net devel python
 MASTER_SITES=	http://twistedmatrix.com/Releases/Pair/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ COMMENT=	Twisted Pair can do low level TCP work
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedCore>=${PORTVERSION}:${PORTSDIR}/devel/py-twistedCore
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/TwistedPair-${PORTVERSION}
@@ -26,6 +26,6 @@ WRKSRC=		${WRKDIR}/TwistedPair-${PORTVERSION}
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	Twisted_Pair
+PYDISTUTILS_PKGNAME=	${PORTNAME:S/twisted/Twisted_/}
 
 .include <bsd.port.mk>
