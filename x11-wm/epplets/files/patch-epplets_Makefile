@@ -1,0 +1,33 @@
+--- epplets/Makefile.in.orig	2012-06-11 09:51:10.000000000 +0200
++++ epplets/Makefile.in	2012-06-11 09:51:31.000000000 +0200
+@@ -554,11 +554,11 @@
+ E_Biff_epplet_LDFLAGS = -rpath $(libdir)
+ E_MemWatch_epplet_SOURCES = E-MemWatch.c
+ E_MemWatch_epplet_DEPENDENCIES = $(top_builddir)/api/libepplet.la
+-E_MemWatch_epplet_LDFLAGS = -rpath $(libdir)
++E_MemWatch_epplet_LDFLAGS = -rpath $(libdir) -lkvm
+ E_MemWatch_epplet_LDADD = $(LDADD) $(GTLIBS)
+ E_Disk_epplet_SOURCES = E-Disk.c
+ E_Disk_epplet_DEPENDENCIES = $(top_builddir)/api/libepplet.la
+-E_Disk_epplet_LDFLAGS = -rpath $(libdir)
++E_Disk_epplet_LDFLAGS = -rpath $(libdir) -ldevstat
+ E_Sys_epplet_SOURCES = E-Sys.c
+ E_Sys_epplet_DEPENDENCIES = $(top_builddir)/api/libepplet.la
+ E_Sys_epplet_LDFLAGS = -rpath $(libdir)
+--- epplets/Makefile.am.orig	2012-06-11 09:51:16.000000000 +0200
++++ epplets/Makefile.am	2012-06-11 09:51:44.000000000 +0200
+@@ -122,12 +122,12 @@
+ 
+ E_MemWatch_epplet_SOURCES = E-MemWatch.c
+ E_MemWatch_epplet_DEPENDENCIES = $(top_builddir)/api/libepplet.la
+-E_MemWatch_epplet_LDFLAGS = -rpath $(libdir)
++E_MemWatch_epplet_LDFLAGS = -rpath $(libdir) -lkvm
+ E_MemWatch_epplet_LDADD = $(LDADD) $(GTLIBS)
+ 
+ E_Disk_epplet_SOURCES = E-Disk.c
+ E_Disk_epplet_DEPENDENCIES = $(top_builddir)/api/libepplet.la
+-E_Disk_epplet_LDFLAGS = -rpath $(libdir)
++E_Disk_epplet_LDFLAGS = -rpath $(libdir) -ldevstat
+ 
+ E_Sys_epplet_SOURCES = E-Sys.c
+ E_Sys_epplet_DEPENDENCIES = $(top_builddir)/api/libepplet.la
