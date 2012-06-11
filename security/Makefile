@@ -791,6 +791,7 @@
     SUBDIR += razorback-fileInject
     SUBDIR += razorback-fsMonitor
     SUBDIR += razorback-fsWalk
+    SUBDIR += razorback-masterNugget
     SUBDIR += rdigest
     SUBDIR += retranslator
     SUBDIR += revelation
