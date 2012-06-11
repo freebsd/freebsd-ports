@@ -17,7 +17,7 @@ COMMENT=	Set of tools to record/playback/edit videos in MPEG format
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 
 OPTIONS_DEFINE=	GTK2 SDL PNG DV QUICKTIME SIMD DOCS
-OPTIONS_DEFAULT=	GTK2 SDL PNG
+OPTIONS_DEFAULT=	SDL PNG
 QUICKTIME_DESC=		Enable libQuickTime support
 
 CONFLICTS=	mplex-[0-9]*
@@ -59,6 +59,8 @@ BROKEN=		Does not build on powerpc-9
 .endif
 
 .if ${PORT_OPTIONS:MGTK2}
+
+BROKEN=		glav is not built
 
 .if empty(PORT_OPTIONS:MSDL)
 IGNORE=		GTK+2 player needs SDL
