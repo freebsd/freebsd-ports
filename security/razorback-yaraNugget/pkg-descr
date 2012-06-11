@@ -1,0 +1,8 @@
+Razorback is a framework for an intelligence driven security solution.
+It consists of a Dispatcher at the core of the system, surrounded by
+Nuggets of varying types.
+
+The Yara nugget allows modified Yara rules to dictate which flags are
+set when they alert.
+
+WWW: http://razorbacktm.sourceforge.net/
