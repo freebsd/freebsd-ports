@@ -7,7 +7,7 @@
 
 PORTNAME=	dvdvideo
 PORTVERSION=	20120126
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils multimedia
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
@@ -23,13 +23,10 @@ USE_PYTHON=	3.1+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_EGGINFO=	python_dvdvideo-0.1-py${PYTHON_VER}.egg-info
 
-.if defined(PACKAGE_BUILDING)
-DVDCSS_OPTION=	off
-.else
-DVDCSS_OPTION=	on
+OPTIONS_DEFINE=	DVDCSS
+.if !defined(PACKAGE_BUILDING)
+OPTIONS_DEFAULT=	DVDCSS
 .endif
-
-OPTIONS=	DVDCSS "Include libdvdcss support" ${DVDCSS_OPTION}
 
 # DVDCSS version hardcoded in dvdvideo/libdvdcss.py
 DVDCSS_LIBVERSION=	3
@@ -40,8 +37,8 @@ DVDCSS_LIBVERSION=	3
 BROKEN=	bad plist with latest python
 .endif
 
-.if defined(WITH_DVDCSS)
-LIB_DEPENDS+=	dvdcss.${DVDCSS_LIBVERSION}:${PORTSDIR}/multimedia/libdvdcss
+.if ${PORT_OPTIONS:MDVDCSS}
+LIB_DEPENDS+=	dvdcss:${PORTSDIR}/multimedia/libdvdcss
 .endif
 
 post-patch:
