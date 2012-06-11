@@ -28,9 +28,11 @@ CONFIGURE_ARGS=	--enable-plugins --enable-pam \
 		EXTRA_LDFLAGS="-L${LOCALBASE}/lib"
 USE_CSTD=	gnu99
 
-OPTIONS=	ROOTPWD "Enable unlock using root password" on \
-		VLOCKSCRIPTS "Install sample hook scripts" off \
-		CACASAVER "Enable libcaca screensaver" off
+OPTIONS_DEFINE=	ROOTPWD VLOCKSCRIPTS CACASAVER
+OPTIONS_DEFAULT=	ROOTPWD
+ROOTPWD_DESC=	Enable unlock using root password
+VLOCKSCRIPTS_DESC=	Install sample hook scripts
+CACASAVER_DESC=	Enable libcaca screensaver
 
 MANLANG=	""
 MAN1=		vlock.1
@@ -49,20 +51,20 @@ PORTDOCS=	ChangeLog PLUGINS README README.X11 SECURITY TODO
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_ROOTPWD)
+.if ${PORT_OPTIONS:MROOTPWD}
 CONFIGURE_ARGS+=	--enable-root-password
 .else
 CONFIGURE_ARGS+=	--disable-root-password
 .endif
 
-.if !defined(WITHOUT_VLOCKSCRIPTS)
+.if ${PORT_OPTIONS:MVLOCKSCRIPTS}
 VLOCKSCRIPTS+=	amarok.sh example_script.sh mplayer.sh
 PLIST_SUB+=	PL_VLOCKSCRIPTS=""
 .else
 PLIST_SUB+=	PL_VLOCKSCRIPTS="@comment "
 .endif
 
-.if !defined(WITHOUT_CACASAVER)
+.if ${PORT_OPTIONS:MCACASAVER}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcaca.a:${PORTSDIR}/graphics/libcaca
 VLOCKMODULES+=	caca.so
 PLIST_SUB+=	PL_CACASAVER=""
@@ -77,7 +79,7 @@ pre-install:
 	if ! pw groupshow ${VLOCKGRP}; then pw groupadd ${VLOCKGRP} -g ${VLOCKGID}; fi
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
