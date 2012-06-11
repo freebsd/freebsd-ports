@@ -127,11 +127,9 @@
     SUBDIR += stardict-dict-zh_CN
     SUBDIR += stardict-dict-zh_TW
     SUBDIR += sunpinyin
-    SUBDIR += tcl83
     SUBDIR += telnet
     SUBDIR += tin
     SUBDIR += tintin++
-    SUBDIR += tk83
     SUBDIR += ttf2pt1
     SUBDIR += ttfm
     SUBDIR += unrar
