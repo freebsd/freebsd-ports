@@ -1,3 +1,4 @@
+%%SITE_PERL%%/MooseX/Role/Reactive.pm
 %%SITE_PERL%%/Reflex.pm
 %%SITE_PERL%%/Reflex/Acceptor.pm
 %%SITE_PERL%%/Reflex/Base.pm
@@ -100,6 +101,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/RunnerRole.pm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ZmqMessage.pm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ZmqSocket.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench-event.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench-re-emit.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-02-encoding.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-04-inheritance.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-05-composition.pl
@@ -180,6 +183,8 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/intro
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Reflex
+@dirrmtry %%SITE_PERL%%/MooseX/Role
+@dirrmtry %%SITE_PERL%%/MooseX
 @dirrm %%SITE_PERL%%/Reflex/Trait
 @dirrm %%SITE_PERL%%/Reflex/Role/Decoding
 @dirrm %%SITE_PERL%%/Reflex/Role
