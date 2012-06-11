@@ -7,6 +7,7 @@
 
 PORTNAME=	sms1xxx
 PORTVERSION=	20120113
+PORTREVISION=	1
 CATEGORIES=	multimedia kld
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-siano/
 PKGNAMESUFFIX=	-kmod
@@ -23,10 +24,14 @@ WRKSRC=	${WRKDIR}/siano-${PORTVERSION}
 
 NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
 
-OPTIONS=	RC5WATCH "Build rc5watch utility" on \
-		STELLAR "Build Stellar firmware" off \
-		NOVA "Build Nova firmware" off \
-		DEBUG "Build with debug symbols" off
+NO_OPTIONS_SORT=	yes
+OPTIONS_DEFINE=	RC5WATCH DEBUG
+OPTIONS_MULTI=	FIRMWARE
+OPTIONS_MULTI_FIRMWARE=	STELLAR NOVA
+OPTIONS_DEFAULT=	RC5WATCH NOVA
+RC5WATCH_DESC=	Build rc5watch IR utility
+STELLAR_DESC=	Build Terratec Cinergy Piranha FW
+NOVA_DESC=	Build Hauppauge WinTV MiniStick FW
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -53,17 +58,17 @@ IGNORE=		requires kernel source files
 IGNORE=		requires FreeBSD 8.0 or superior
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 ALL_TARGET=	debug
 .endif
 
-.if defined(WITH_RC5WATCH)
+.if ${PORT_OPTIONS:MRC5WATCH}
 PLIST_SUB+=	PL_RC5WATCH=""
 .else
 PLIST_SUB+=	PL_RC5WATCH="@comment "
 .endif
 
-.if defined(WITH_STELLAR)
+.if ${PORT_OPTIONS:MSTELLAR}
 BUILD_FWS+=	${STELLAR_FW}
 PLIST_SUB+=	PL_STELLAR=""
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${STELLAR_FW}.fw)
@@ -84,7 +89,7 @@ DISTFILE_INSTRUCTIONS+=	\
 PLIST_SUB+=	PL_STELLAR="@comment "
 .endif
 
-.if defined(WITH_NOVA)
+.if ${PORT_OPTIONS:MNOVA}
 BUILD_FWS+=	${NOVA_FW}
 PLIST_SUB+=	PL_NOVA=""
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${NOVA_FW}.fw)
@@ -117,23 +122,23 @@ post-patch:
 		${WRKSRC}/firmwares/Makefile
 
 pre-build:
-.if defined(WITH_STELLAR)
+.if ${PORT_OPTIONS:MSTELLAR}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${STELLAR_FW}.fw ${WRKSRC}/firmwares/${STELLAR_FW}/
 .endif
-.if defined(WITH_NOVA)
+.if ${PORT_OPTIONS:MNOVA}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${NOVA_FW}.fw ${WRKSRC}/firmwares/${NOVA_FW}/
 .endif
 
 post-build:
-.if defined(WITH_RC5WATCH)
+.if ${PORT_OPTIONS:MRC5WATCH}
 	 @cd ${WRKSRC}/apps/rc5watch/ && ${MAKE} all
 .endif
 
 post-install:
-.if defined(WITH_RC5WATCH)
+.if ${PORT_OPTIONS:MRC5WATCH}
 	${INSTALL_PROGRAM} ${WRKSRC}/apps/rc5watch/rc5watch ${PREFIX}/bin/rc5watch
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
