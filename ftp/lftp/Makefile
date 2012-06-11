@@ -7,6 +7,7 @@
 
 PORTNAME=	lftp
 PORTVERSION=	4.3.6
+PORTREVISION=	1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://ftp.yars.free.net/pub/source/lftp/ \
 		http://ftp.yars.free.net/pub/source/lftp/old/ \
@@ -22,7 +23,7 @@ COMMENT=	Shell-like command line ftp client
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 
 USE_ICONV=	yes
 
@@ -38,27 +39,28 @@ PORTDOCS=	AUTHORS BUGS ChangeLog FAQ FEATURES INSTALL \
 		MIRRORS NEWS README README.debug-levels README.modules \
 		THANKS TODO
 
-OPTIONS=	OPENSSL "With OpenSSL support" on \
-		GNUTLS "With GnutTLS support" off \
-		NLS "With i18n support" on
+OPTIONS_DEFINE=	SSL NLS
+OPTIONS_SINGLE=	SSL
+OPTIONS_SINGLE_SSL=	OPENSSL GNUTLS
+OPTIONS_DEFAULT=	SSL OPENSSL NLS
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_OPENSSL)
+.if ${PORT_OPTIONS:MOPENSSL}
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS+=	--with-openssl
 .else
 CONFIGURE_ARGS+=	--without-openssl
 .endif
 
-.if defined(WITH_GNUTLS)
+.if ${PORT_OPTIONS:MGNUTLS}
 LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-gnutls
 .else
 CONFIGURE_ARGS+=	--without-gnutls
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB+=	NLS=""
@@ -70,20 +72,12 @@ PLIST_SUB+=	NLS="@comment "
 MAN1=		lftp.1 lftpget.1
 MAN5=		lftp.conf.5
 
-pre-configure:
-.if !defined(WITHOUT_OPENSSL) && defined(WITH_GNUTLS)
-	@${ECHO_MSG} "========"
-	@${ECHO_MSG} "WARNING: both OPENSSL and GNUTLS have been selected, OPENSSL will be used"
-	@${ECHO_MSG} "========"
-.endif
-
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/lftp.conf ${PREFIX}/etc/lftp.conf.sample
 .if !exists(${PREFIX}/etc/lftp.conf)
 	${CP} -p ${PREFIX}/etc/lftp.conf.sample ${PREFIX}/etc/lftp.conf
 .endif
-
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}

@@ -131,6 +131,7 @@ NOTIFY_DESC?=		Enable startup notification support
 ODBC_DESC?=		Enable ODBC backend
 ODF_DESC?=		Enable ODF support
 OPENGL_DESC?=		Enable OpenGL support
+OPENSSL_DESC?=		Enable SSL support via OpenSSL
 OPTIMIZED_CFLAGS_DESC?=	Enable compilation optimizations
 ORACLE_DESC?=		Enable Oracle support
 OSS_DESC?=		Enable Open Sound System support
