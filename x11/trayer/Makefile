@@ -6,39 +6,34 @@
 #
 
 PORTNAME=	trayer
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.1.5
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_DEBIAN}
-MASTER_SITE_SUBDIR=	pool/main/t/trayer
-DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
+MASTER_SITES=	http://github.com/sargon/${PORTNAME}-srg/tarball/${PORTNAME}-${PORTVERSION}/
+DISTNAME=	sargon-${PORTNAME}-srg-${PORTNAME}-${PORTVERSION}-${GITVERSION}
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Lightweight GTK2-based systray for UNIX desktop
 
-CONFLICTS_INSTALL=	trayer-srg-[0-9]*
-
+GITVERSION=	0-g5353f80
+FETCH_ARGS=	-pRr
 USE_GNOME=	gtk20 glib20 pango atk
 USE_ICONV=	yes
 USE_XORG=	xmu
 USE_GMAKE=	yes
 MAKE_ARGS=	"PREFIX=${PREFIX}"
-MAKE_JOBS_UNSAFE=	yes
-#WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-WRKSRC=		${WRKDIR}/sargon-${PORTNAME}-srg-82d5d05/
+MAKE_JOBS_SAFE=	yes
+WRKSRC=		${WRKDIR}/sargon-${PORTNAME}-srg-${GITVERSION:S/^0-g//}
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	README CREDITS CHANGELOG
-.endif
+MAN1=		trayer.1
 
 PLIST_FILES=	bin/trayer
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \
-		${WRKSRC}/Makefile.common
+.include <bsd.port.options.mk>
 
 post-install:
-.if !defined(NOPORTDOCS)
+	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
