@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Reflex
-PORTVERSION=	0.097
+PORTVERSION=	0.098
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RCAPUTO
@@ -25,7 +25,10 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Reflex.3 \
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+MAN3=		MooseX::Role::Reactive.3 \
+		Reflex.3 \
 		Reflex::Acceptor.3 \
 		Reflex::Base.3 \
 		Reflex::Callback.3 \
@@ -101,13 +104,15 @@ MAN3=		Reflex.3 \
 		Reflex::UdpPeer.3 \
 		Reflex::Wakeup.3
 
+.include <bsd.port.pre.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/
 	cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} \* ${DOCSDIR}/
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}"
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}/proto/ ${EXAMPLESDIR}/ttl/
 	${INSTALL_SCRIPT} ${WRKSRC}/eg/*.pl ${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/eg/*.pm ${EXAMPLESDIR}/
@@ -115,8 +120,6 @@ post-install:
 	cd ${WRKSRC}/eg/ttl/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/ttl/
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}"
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400
 BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.23:${PORTSDIR}/lang/p5-Scalar-List-Utils
