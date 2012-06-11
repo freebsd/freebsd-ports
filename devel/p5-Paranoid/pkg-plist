@@ -13,6 +13,8 @@
 %%SITE_PERL%%/Paranoid/BerkeleyDB.pm
 %%SITE_PERL%%/Paranoid/Module.pm
 %%SITE_PERL%%/Paranoid/Network.pm
+%%SITE_PERL%%/Paranoid/Network/IPv4.pm
+%%SITE_PERL%%/Paranoid/Network/IPv6.pm
 %%SITE_PERL%%/Paranoid/Network/Socket.pm
 %%SITE_PERL%%/Paranoid/Debug.pm
 %%SITE_PERL%%/Paranoid.pm
