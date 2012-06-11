@@ -12,11 +12,7 @@ libexec/aox/installer
 sbin/archiveopteryx
 sbin/logd
 sbin/recorder
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/README
-%%DOCSDIR%%/bsd.txt
 @dirrm libexec/aox/contrib
 @dirrm libexec/aox
 @dirrm libdata/aox
 @dirrm %%ETCDIR%%
-@dirrm %%DOCSDIR%%
