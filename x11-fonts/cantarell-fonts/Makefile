@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cantarell-fonts
-PORTVERSION=	0.0.8
+PORTVERSION=	0.0.9
 CATEGORIES=	x11-fonts gnome
 MASTER_SITES=	GNOME
 
