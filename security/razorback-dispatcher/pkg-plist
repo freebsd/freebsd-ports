@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+bin/dispatcher
+bin/dispatcher_safed
+@unexec if cmp -s %D/etc/razorback/dispatcher.conf %D/etc/razorback/dispatcher.conf.sample; then rm -f %D/etc/razorback/dispatcher.conf; fi
+etc/razorback/dispatcher.conf.sample
+@exec if [ ! -f %D/etc/razorback/dispatcher.conf ]; then cp -p %D/%F %B/dispatcher.conf; fi
+@dirrmtry etc/razorback
+share/razorback/razorback.sql
+share/razorback/razorback-data.sql
+share/razorback/truncate.sql
+@dirrmtry share/razorback
