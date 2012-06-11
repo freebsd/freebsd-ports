@@ -16,6 +16,9 @@ COMMENT=	Kernel module that provides access to i386 MSRs and cpuid info
 
 RUN_DEPENDS=	${STAMPFILE}:${PORTSDIR}/sysutils/devcpu-data
 
+DEPRECATED=	Already included in base system
+EXPIRATION_DATE=2012-07-01
+
 USE_BZIP2=	yes
 USE_RC_SUBR=	devcpu
 USE_RUBY=	yes
