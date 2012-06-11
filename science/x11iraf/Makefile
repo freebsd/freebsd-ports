@@ -6,13 +6,15 @@
 
 PORTNAME=	x11iraf
 PORTVERSION=	1.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science astro
 MASTER_SITES=	ftp://iraf.noao.edu/iraf/x11iraf/
 DISTNAME=	x11iraf-v${PORTVERSION}-bin.freebsd
 
 MAINTAINER=	dsyphers@u.washington.edu
 COMMENT=	Provides graphical tools to work with IRAF
+
+CONFLICTS=	xterm-[0-9]*
 
 LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 

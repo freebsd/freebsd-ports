@@ -7,6 +7,7 @@
 
 PORTNAME=	xterm
 PORTVERSION=	279
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://invisible-island.net/xterm/ \
 		CRITICAL
@@ -14,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Terminal emulator for the X Window System
+
+CONFLICTS=	x11iraf-[0-9]*
 
 USE_XORG=	xaw xft
 WANT_GNOME=	desktopfileutils
