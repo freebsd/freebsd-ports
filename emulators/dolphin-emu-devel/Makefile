@@ -7,7 +7,7 @@
 
 PORTNAME=	dolphin-emu
 PORTVERSION=	3.0.r${REVDATE}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
@@ -19,11 +19,11 @@ COMMENT=	Gamecube and Wii Emulator
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	avformat.1:${PORTSDIR}/multimedia/ffmpeg \
-		execinfo.1:${PORTSDIR}/devel/libexecinfo \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		lzo2.2:${PORTSDIR}/archivers/lzo2 \
-		sfml-network.1:${PORTSDIR}/devel/sfml
+LIB_DEPENDS=	avformat:${PORTSDIR}/multimedia/ffmpeg \
+		execinfo:${PORTSDIR}/devel/libexecinfo \
+		freetype:${PORTSDIR}/print/freetype2 \
+		lzo2:${PORTSDIR}/archivers/lzo2 \
+		sfml-network:${PORTSDIR}/devel/sfml
 
 REVDATE=	20120307
 
@@ -48,21 +48,16 @@ CMAKE_ARGS+=	-DDISABLE_AO:BOOL=ON \
 		-DDISABLE_BLUEZ:BOOL=ON \
 		-DCMAKE_INSTALL_RPATH_USE_LINK_PATH:BOOL=ON
 
-.if defined(WITH_DEBUG)
-CMAKE_ARGS+=	-DFASTLOG:BOOL=ON
-INSTALL_TARGET=	install
-CFLAGS+=	-ggdb
-CXXFLAGS+=	-ggdb
-MAKE_ENV+=	VERBOSE=yes
-.endif
-
 SUB_FILES=	pkg-message
 SUB_LIST+=	MAINTAINER=${MAINTAINER}
 
-OPTIONS=	PULSEAUDIO "Build PulseAudio sound backend" off \
-		PORTAUDIO "Enable portaudio (mic) support" on
+OPTIONS_DEFINE=	PULSEAUDIO PORTAUDIO DEBUG
+PORTAUDIO_DESC=	Enable PortAudio (mic) support
+OPTIONS_DEFAULT=	PORTAUDIO
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
@@ -70,7 +65,13 @@ CMAKE_ARGS+=	-DDISABLE_NLS:BOOL=ON
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
+.if ${PORT_OPTIONS:MDEBUG}
+CMAKE_ARGS+=	-DFASTLOG:BOOL=ON
+INSTALL_TARGET=	install
+CFLAGS+=	-ggdb
+CXXFLAGS+=	-ggdb
+MAKE_ENV+=	VERBOSE=yes
+.endif
 
 # XXX Needs spawn.h header to build
 .if ${OSVERSION} < 800041
@@ -80,14 +81,14 @@ BROKEN=	requires FreeBSD 8.0 or newer
 BROKEN=		Does not compile on powerpc: uses i386-specific option
 .endif
 
-.if defined(WITH_PULSEAUDIO)
-LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+.if ${PORT_OPTIONS:MPULSEAUDIO}
+LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
 .else
 CMAKE_ARGS+=	-DDISABLE_PULSEAUDIO:BOOL=ON
 .endif
 
-.if !defined(WITHOUT_PORTAUDIO)
-LIB_DEPENDS+=	portaudio.2:${PORTSDIR}/audio/portaudio2
+.if ${PORT_OPTIONS:MPORTAUDIO}
+LIB_DEPENDS+=	portaudio:${PORTSDIR}/audio/portaudio2
 .else
 CMAKE_ARGS+=	-DDISABLE_PORTAUDIO:BOOL=ON
 .endif
