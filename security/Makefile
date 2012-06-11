@@ -788,6 +788,7 @@
     SUBDIR += rats
     SUBDIR += razorback-api
     SUBDIR += razorback-archiveInflate
+    SUBDIR += razorback-clamavNugget
     SUBDIR += razorback-dispatcher
     SUBDIR += razorback-fileInject
     SUBDIR += razorback-fsMonitor
