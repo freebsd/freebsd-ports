@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvs2cl
-PORTVERSION=	2.72
+PORTVERSION=	2.73
 CATEGORIES=	devel
 MASTER_SITES=	http://www.red-bean.com/cvs2cl/ \
 		http://www.sysfault.org/freebsd/${DIST_SUBDIR}/
@@ -22,7 +22,6 @@ USE_PERL5=	yes
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-MANCOMPRESSED=	no
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME}
 
@@ -33,13 +32,12 @@ do-extract:
 post-patch:
 	@${REINPLACE_CMD} -e "s|exec perl -w -x|exec ${PERL} -w -x|" \
 		-e "s|#!perl -w|#!${PERL} -w|" ${WRKSRC}/${PORTNAME}
-	@${REINPLACE_CMD} -e \
-		"s|=item, B<--group-within-date>|=item B<--group-within-date>|" \
-		${WRKSRC}/${PORTNAME}
 
 do-install:
-	@pod2man ${WRKSRC}/${PORTNAME} > ${WRKSRC}/${PORTNAME}.1
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+.if !defined(NO_INSTALL_MANPAGES)
+	@pod2man ${WRKSRC}/${PORTNAME} > ${WRKSRC}/${PORTNAME}.1
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1/
+.endif
 
 .include <bsd.port.mk>
