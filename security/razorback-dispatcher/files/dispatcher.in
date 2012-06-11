@@ -38,11 +38,11 @@ dispatcher_precmd-local()
 
 	install -d -o $dispatcher_user -g $dispatcher_user -m 755 $_piddir
 	iter=0
-	while [ `sockstat -l | egrep -c '^activemq.*tcp.*'` -lt 3 ]; do
-		if [ ${iter} -eq 60 ]; then
+	while [ `sockstat -l | egrep -c '^activemq.*tcp.*'` -lt 4 ]; do
+		if [ ${iter} -eq 30 ]; then
 			err 1 "Failed to detect a functional activemq.  Please check your configuration"
 		fi
-		sleep 1
+		sleep 2
 		iter=$(( ${iter} + 1))
 	done
 }
