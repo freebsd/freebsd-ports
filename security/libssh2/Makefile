@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libssh2
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 PORTEPOCH=	2
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.libssh2.org/download/ \
