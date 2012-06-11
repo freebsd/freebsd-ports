@@ -98,6 +98,7 @@ LASH_DESC?=		Enable LDASH audio support
 LASTFM_DESC?=		Support Last.FM stream input
 LCMS2_DESC?=		Enable LCMS2 support
 LDAP_DESC?=		Enable LDAP support
+LFS_DESC?=		Enable Large Files Support
 LIBBLURAY_DESC?=	Enable libbluray support
 LIBEXTRACTOR_DESC?=	Enable libextractor support
 LIBPAPER_DESC?=		Enable libpaper support
