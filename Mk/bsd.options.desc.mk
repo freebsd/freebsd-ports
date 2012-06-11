@@ -34,6 +34,7 @@ DAGRAB_DESC?=		Enable dagrab CD ripper
 DBM_DESC?=		Enable DBM support
 DBUS_DESC?=		Enable D-Bus support
 DEBUG_DESC?=		Enable debug flags
+DEVD_DESC?=		Install devd files
 DOCS_DESC?=		Build and install the documentation
 DV_DESC?=		Enable libDV support
 ECW_DESC?=		Enable ECW support

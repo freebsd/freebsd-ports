@@ -7,7 +7,7 @@
 
 PORTNAME=	hso
 PORTVERSION=	20081023
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms kld
 MASTER_SITES=	http://www.shapeshifter.se/pub/hso/
 PKGNAMESUFFIX=	-kmod
@@ -22,9 +22,10 @@ CONFLICTS=	uhso-kmod-[0-9]*
 
 NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
 
-OPTIONS=	HSOCTL "Build hsoctl tool" on \
-		DEVD "Install devd files" on \
-		DEBUG "Build with debug symbols" on
+OPTIONS_DEFINE=	HSOCTL DEVD DEBUG
+OPTIONS_DEFAULT=	HSOCTL DEVD
+
+HSOCTL_DESC=	Build hsoctl tool
 
 SUB_FILES=	pkg-message
 KMODDIR?=	/boot/modules
@@ -39,7 +40,7 @@ MAN4=	hso.4
 BROKEN=	does not build with USB2, please try comms/uhso-kmod instead
 .endif
 
-.if !defined(WITHOUT_HSOCTL)
+.if ${PORT_OPTIONS:MHSOCTL}
 HSOCTL_VERSION=	20081023
 DISTFILES+=	hsoctl-${HSOCTL_VERSION}${EXTRACT_SUFX}
 WRKSRC_HSOCTL=	${WRKDIR}/hsoctl-${HSOCTL_VERSION}
@@ -48,13 +49,13 @@ MAN1=	hsoctl.1
 .else
 PLIST_SUB+=	PL_HSOCTL="@comment "
 .endif
-.if !defined(WITHOUT_DEVD)
+.if ${PORT_OPTIONS:MDEVD}
 PLIST_SUB+=	PL_DEVD=""
 .else
 PLIST_SUB+=	PL_DEVD="@comment "
 .endif
-.if defined(WITHOUT_DEBUG)
-EXTRA_PATCHES+=	${PATCHDIR}/HSO-DEBUG-patch-Makefile
+.if empty(${PORT_OPTIONS:MDEBUG})
+EXTRA_PATCHES+=	${PATCHDIR}/HSO-NODEBUG-patch-Makefile
 .endif
 
 .if !exists(${SRC_BASE}/sys/Makefile)
@@ -64,23 +65,23 @@ IGNORE=	requires FreeBSD 7.0 or superior
 .endif
 
 post-patch:
-.if !defined(WITHOUT_HSOCTL) && defined(WITHOUT_DEBUG)
-	@${PATCH} -d ${WRKSRC_HSOCTL} < ${PATCHDIR}/HSOCTL-DEBUG-patch-Makefile
+.if !empty(${PORT_OPTIONS:MHSOCTL}) && empty(${PORT_OPTIONS:MDEBUG})
+	@${PATCH} -d ${WRKSRC_HSOCTL} < ${PATCHDIR}/HSOCTL-NODEBUG-patch-Makefile
 .endif
 
 post-build:
-.if !defined(WITHOUT_HSOCTL)
+.if ${PORT_OPTIONS:MHSOCTL}
 	@cd ${WRKSRC_HSOCTL} && ${SETENV} NO_MANCOMPRESS= ${MAKE} all
 .endif
 
 post-install:
 	${INSTALL_MAN} ${MAN4:S|^|${WRKSRC}/|} ${PREFIX}/man/man4
-.if !defined(WITHOUT_HSOCTL)
+.if ${PORT_OPTIONS:MHSOCTL}
 	@cd ${WRKSRC_HSOCTL} && \
 		${SETENV} DESTDIR=${PREFIX}/ BINDIR=bin MANDIR=man/man NO_MANCOMPRESS= \
 		${MAKE} install
 .endif
-.if !defined(WITHOUT_DEVD)
+.if ${PORT_OPTIONS:MDEVD}
 	${MKDIR} ${PREFIX}/etc/devd
 	${INSTALL_DATA} ${FILESDIR}/option-icon.conf.sample ${PREFIX}/etc/devd/
 	@if [ ! -f ${PREFIX}/etc/devd/option-icon.conf ]; then \
