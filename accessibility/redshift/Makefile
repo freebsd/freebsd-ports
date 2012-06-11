@@ -22,38 +22,41 @@ INSTALLS_ICONS=	yes
 MAN1=		redshift.1
 MANCOMPRESSED=	no
 
-CONFIGURE_ARGS+=--disable-wingdi --disable-gnome-clock --disable-gui
+CONFIGURE_ARGS+=	--disable-wingdi
 
-.if !defined(WITHOUT_NLS)
+OPTIONS_DEFINE=	GUI NLS RANDR VIDMODE
+OPTIONS_DEFAULT=	RANDR
+
+GUI_DESC=	Tray icon and location via Gnome clock
+RANDR_DESC=	Support RANDR for changing colors
+VIDMODE_DESC=	Support VIDMODE for changing colors (NVIDIA)
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS)
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=--with-libiconv-prefix=${LOCALBASE} \
-		--with-libintl-prefix=${LOCALBASE}
+                --with-libintl-prefix=${LOCALBASE}
 PLIST_SUB=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB=	NLS="@comment "
 .endif
 
-OPTIONS=	GUI	"Tray icon & location via Gnome clock" off \
-		RANDR	"Support RANDR for changing colors" on \
-		VIDMODE	"Support VIDMODE for changing colors (NVIDIA)" off
-
-.include <bsd.port.options.mk>
-
-.if defined(WITH_RANDR)
+.if ${PORT_OPTIONS:MRANDR}
 CONFIGURE_ARGS+=--enable-randr
 USE_XORG=	xrandr
 .else
 CONFIGURE_ARGS+=--disable-randr
 .endif
 
-.if defined(WITH_VIDMODE)
+.if ${PORT_OPTIONS:MVIDMODE}
 CONFIGURE_ARGS+=--enable-vidmode
 .else
 CONFIGURE_ARGS+=--disable-vidmode
 .endif
 
-.if defined(WITH_GUI)
+.if ${PORT_OPTIONS:MGUI}
 CONFIGURE_ARGS+=--enable-gui --enable-gnome-clock
 RUN_DEPENDS+=	py-gtk2:${PORTSDIR}/x11-toolkits/py-gtk2 \
 		py-xdg:${PORTSDIR}/devel/py-xdg
