@@ -41,20 +41,6 @@ CONFIGURE_ARGS+=	--localstatedir=/var			\
 			--with-pam-module="unix"		\
 			--enable-ssl
 
-OPTIONS?=	GNUTLS		"Build with GNUTLS instead of OpenSSL" off \
-		PHP		"Build PHP support" off \
-		PYTHON		"Build PYTHON support" off \
-		LIBPAPER	"Build with libpaper support" off \
-		AVAHI		"Build with avahi support" off \
-		MDNSRESPONDER	"Build with mDNSResponder support" off \
-		PAM		"Build with PAM support" off \
-		LDAP		"Build with LDAP support" off \
-		DBUS		"Build with DBUS support" off \
-		LIBUSB		"Build with USB support" off \
-		GHOSTSCRIPT	"Build pdftops with GHOSTSCRIPT" on \
-		XPDF		"Build pdftops with XPDF" off \
-		XDG_OPEN	"Build with XDG_OPEN as browser" off
-
 CUPS_ETCDIR=	${PREFIX}/etc/cups
 CUPS_CACHEDIR?=	/var/db/cups
 CUPS_SPOOLDIR=	/var/spool/cups
@@ -74,17 +60,30 @@ CUPSSYSGRP=	wheel
 PORTREVISION=	2
 LICENSE=	LGPL21
 CUPS_SUFFIX=	-client
+OPTIONS_DEFINE=	GNUTLS
 .elif defined(CUPS_IMAGE)
 PORTREVISION=	1
 CUPS_SUFFIX=	-image
 LICENSE=	LGPL21
+OPTIONS_DEFINE=	GNUTLS
 .else
 PORTREVISION=	1
 CUPS_SUFFIX=	-base
 CONFLICTS+=	cupsddk-*
+OPTIONS_DEFINE=	GNUTLS LIBPAPER PHP PYTHON PAM LDAP DBUS LIBUSB XDG_OPEN PDFTOPS ZEROCONF
+OPTIONS_SINGLE=	PDFTOPS ZEROCONF
+OPTIONS_SINGLE_PDFTOPS=	GHOSTSCRIPT XPDF
+OPTIONS_SINGLE_ZEROCONF=AVAHI MDNSRESPONDER
+OPTIONS_DEFAULT?=	GHOSTSCRIPT
+NO_OPTIONS_SORT=	yes
 .endif
 
-.include <bsd.port.pre.mk>
+LIBUSB_DESC=		Enable USB support
+GHOSTSCRIPT_DESC=	Build pdftops with GHOSTSCRIPT
+XPDF_DESC=		Build pdftops with XPDF
+XDG_OPEN=		Build with XDG_OPEN as browser
+
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 800000
 # the openssl in base of FreeBSD 7.x is too old
@@ -134,8 +133,8 @@ CONFIGURE_ARGS+=	--with-printcap=/etc/printcap
 PLIST_SUB+=		OVERWRITE="@comment "
 CONFIGURE_ARGS+=	--with-printcap=${PREFIX}/etc/printcap
 .endif
-
-.if defined(WITH_GNUTLS)
+ 
+.if ${PORT_OPTIONS:MGNUTLS}
 CONFIGURE_ARGS+=	--disable-openssl --enable-gnutls
 CONFIGURE_ENV+=		PKGCONFIG="${LOCALBASE}/bin/pkg-config"
 LIB_DEPENDS+=		gcrypt.18:${PORTSDIR}/security/libgcrypt
@@ -146,7 +145,7 @@ CONFIGURE_ARGS+=	--disable-gnutls --enable-openssl
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 .endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_PHP)
+.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MPHP}
 CONFIGURE_ARGS+=	--with-php
 USE_PHP=		yes
 USE_PHP_BUILD=		yes
@@ -156,14 +155,11 @@ CONFIGURE_ARGS+=	--without-php
 PLIST_SUB+=		PHP="@comment "
 .endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && !defined(WITHOUT_GHOSTSCRIPT)
-.if defined(WITH_XPDF)
-IGNORE=			pick ghostscript or xpdf, not both
-.endif
+.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MGHOSTSCRIPT}
 USE_GHOSTSCRIPT=	yes
 CONFIGURE_ARGS+=	--enable-pdftops --with-pdftops=${LOCALBASE}/bin/gs
 PLIST_SUB+=		WITH_PDFTOPS=""
-.elif !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_XPDF)
+.elif !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MXPDF}
 BUILD_DEPENDS+=		pdftops:${PORTSDIR}/graphics/xpdf
 RUN_DEPENDS+=		pdftops:${PORTSDIR}/graphics/xpdf
 CONFIGURE_ARGS+=	--enable-pdftops --with-pdftops=${LOCALBASE}/bin/pdftops
@@ -172,38 +168,33 @@ PLIST_SUB+=		WITH_PDFTOPS=""
 PLIST_SUB+=		WITH_PDFTOPS="@comment "
 .endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_PYTHON)
+.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MPYTHON)}
 CONFIGURE_ARGS+=	--with-python
 USE_PYTHON=		yes
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 .endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_LIBPAPER)
+.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MLIBPAPER}
 CONFIGURE_ARGS+=	--enable-libpaper
 LIB_DEPENDS+=		paper.2:${PORTSDIR}/print/libpaper
 .endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ( defined(WITH_AVAHI) || defined(WITH_MDNSRESPONDER) )
-CONFIGURE_ARGS+=	--enable-dnssd \
-			--with-dnssd-libs=${LOCALBASE}/lib/
-.if defined(WITH_MDNSRESPONDER)
+.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MMDNSRESPONDER}
 LIB_DEPENDS+=		dns_sd:${PORTSDIR}/net/mDNSResponder
 CONFIGURE_ARGS+=	--with-dnssd-includes=${LOCALBASE}/include
 PLIST_SUB+=		WITH_MDNSRESPONDER=""
-.if defined(WITH_AVAHI)
-IGNORE=			You can only have one dns_sd provider: AHAVI or MDNSRESPONDER
-.endif
-.else
+.elif !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MAVAHI}
+CONFIGURE_ARGS+=	--enable-dnssd \
+			--with-dnssd-libs=${LOCALBASE}/lib/
 LIB_DEPENDS+=		dns_sd:${PORTSDIR}/net/avahi-libdns
 CONFIGURE_ARGS+=	--with-dnssd-includes=${LOCALBASE}/include/avahi-compat-libdns_sd/
 BROKEN=			missing function, see http://www.avahi.org/ticket/303
-.endif
 .else
 CONFIGURE_ARGS+=	--disable-dnssd
 PLIST_SUB+=		WITH_MDNSRESPONDER="@comment "
 .endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_PAM)
+.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MPAM}
 CONFIGURE_ARGS+=	--enable-pam
 PLIST_SUB+=		WITH_PAMD=""
 .else
@@ -211,14 +202,14 @@ CONFIGURE_ARGS+=	--disable-pam
 PLIST_SUB+=		WITH_PAMD="@comment "
 .endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_LDAP)
+.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--enable-ldap
 .else
 CONFIGURE_ARGS+=	--disable-ldap
 .endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_DBUS)
+.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MDBUS}
 LIB_DEPENDS+=		dbus-1.3:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+=	--enable-dbus
 PLIST_SUB+=		WITH_DBUS=""
@@ -227,14 +218,14 @@ CONFIGURE_ARGS+=	--disable-dbus
 PLIST_SUB+=		WITH_DBUS="@comment "
 .endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_XDG_OPEN)
+.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MXDG_OPEN}
 RUN_DEPENDS+=		xdg-open:${PORTSDIR}/devel/xdg-utils
 .endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_LIBUSB) && ${OSVERSION}>800062
+.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MLIBUSB} && ${OSVERSION}>800062
 CPPFLAGS+=		-I/usr/include
 LDFLAGS+=		-L/usr/lib
-.elif !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_LIBUSB) && ${OSVERSION}<800063
+.elif !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MLIBUSB} && ${OSVERSION}<800063
 LIB_DEPENDS+=		usb:${PORTSDIR}/devel/libusb
 .else
 CONFIGURE_ARGS+=	--disable-libusb
@@ -301,12 +292,10 @@ SUB_FILES+=	ulpt-cupsd.conf ulpt-cupsd.sh
 .endif
 
 post-patch:
-.if (${OSVERSION} >= 700000) || defined(WITH_PIEAMD64)
-.if ${ARCH} == "amd64" || defined(WITH_PIEAMD64)
+.if ${ARCH} == "amd64"
 	@${REINPLACE_CMD} -e 's|@PIEFLAGS@||' ${WRKSRC}/Makedefs.in
 .endif
-.endif
-.if defined(WITH_XDG_OPEN)
+.if  ${PORT_OPTIONS:MXDG_OPEN}
 	@${REINPLACE_CMD} -e 's|htmlview|xdg-open|' ${WRKSRC}/desktop/cups.desktop.in
 .endif
 	@${REINPLACE_CMD} -e '/SILENT/d' ${WRKSRC}/Makedefs.in
@@ -398,7 +387,7 @@ post-install:
 .elif defined(CUPS_IMAGE)
 	${INSTALL_DATA} ${WRKSRC}/cups/raster.h ${PREFIX}/include/cups/
 .else
-.if !defined(WITHOUT_GHOSTSCRIPT) || defined(WITH_XPDF)
+.if  ${PORT_OPTIONS:MGHOSTSCRIPT} || ${PORT_OPTIONS:MXPDF}
 	${INSTALL_PROGRAM} ${WRKSRC}/filter/pdftops ${PREFIX}/libexec/cups/filter/
 .endif
 	${LN} -s ${PREFIX}/bin/lpr ${PREFIX}/bin/lpr-cups
@@ -408,7 +397,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/conf/${f} ${CUPS_ETCDIR}/${f}.N
 	cd ${CUPS_ETCDIR}/; if test ! -f ${f}; then ${CP} -p ${f}.N ${f}; fi
 .endfor
-.if defined(WITH_PAM)
+.if  ${PORT_OPTIONS:MPAM}
 	@if [ ! -f ${PREFIX}/etc/pam.d/cups ]; then \
 		${CP} -p ${PREFIX}/etc/pam.d/cups.default \
 		${PREFIX}/etc/pam.d/cups ; \
@@ -423,4 +412,4 @@ post-install:
 	${INSTALL} -d -m 775 -g ${CUPSGRP} ${CUPS_CACHEDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

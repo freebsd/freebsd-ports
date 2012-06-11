@@ -12,8 +12,6 @@ MASTERDIR?=	${.CURDIR}/../cups-base
  
 CUPS_IMAGE=	yes
 
-OPTIONS=	GNUTLS		"Build with GNUTLS instead of OpenSSL" off
-
 .if exists(${.CURDIR}/Makefile.local)
 .include "${.CURDIR}/Makefile.local"
 .endif
