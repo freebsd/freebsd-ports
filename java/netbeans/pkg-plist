@@ -655,7 +655,7 @@ netbeans-%%PORTVERSION%%/enterprise/modules/ext/rest/oauth-client-1.8.jar
 netbeans-%%PORTVERSION%%/enterprise/modules/ext/rest/oauth-server-1.8.jar
 netbeans-%%PORTVERSION%%/enterprise/modules/ext/rest/oauth-signature-1.8.jar
 netbeans-%%PORTVERSION%%/enterprise/modules/ext/servlet3.0-jsp2.2-api.jar
-netbeans-%%PORTVERSION%%/enterprise/modules/ext/spring/spring-webmvc-2.5.6.SEC01.jar
+netbeans-%%PORTVERSION%%/enterprise/modules/ext/spring/spring-webmvc-2.5.6.SEC03.jar
 netbeans-%%PORTVERSION%%/enterprise/modules/ext/standard.jar
 netbeans-%%PORTVERSION%%/enterprise/modules/ext/struts/antlr-2.7.2.jar
 netbeans-%%PORTVERSION%%/enterprise/modules/ext/struts/bsf-2.3.0.jar
@@ -3468,7 +3468,7 @@ netbeans-%%PORTVERSION%%/java/modules/ext/spring-3.0/spring-tx-3.0.6.RELEASE.jar
 netbeans-%%PORTVERSION%%/java/modules/ext/spring-3.0/spring-web-3.0.6.RELEASE.jar
 netbeans-%%PORTVERSION%%/java/modules/ext/spring-3.0/spring-webmvc-3.0.6.RELEASE.jar
 netbeans-%%PORTVERSION%%/java/modules/ext/spring-3.0/spring-webmvc-portlet-3.0.6.RELEASE.jar
-netbeans-%%PORTVERSION%%/java/modules/ext/spring/spring-2.5.6.SEC01.jar
+netbeans-%%PORTVERSION%%/java/modules/ext/spring/spring-2.5.6.SEC03.jar
 netbeans-%%PORTVERSION%%/java/modules/ext/toplink/3RD-PARTY-LICENSE.txt
 netbeans-%%PORTVERSION%%/java/modules/ext/toplink/LICENSE.txt
 netbeans-%%PORTVERSION%%/java/modules/ext/toplink/README
