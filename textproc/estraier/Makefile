@@ -16,9 +16,11 @@ COMMENT=	A full-text search system for personal use
 
 LIB_DEPENDS=	qdbm.14:${PORTSDIR}/databases/qdbm
 
-OPTIONS=	CHASEN "Japanese Morphological Analysis Support" Off \
-		MECAB "Part-of-Speech and Morphological Analyzer" Off \
-		KAKASI "Language processing filter/converter" On
+OPTIONS_DEFINE=	CHASEN MECAB KAKASI
+OPTIONS_DEFAULT=	KAKASI
+CHASEN_DESC=	Japanese Morphological Analysis Support
+MECAB_DESC=	Part-of-Speech and Morphological Analyzer
+KAKASI_DESC=	Language processing filter/converter
 
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
@@ -30,17 +32,17 @@ LDFLAGS+=	-L${LOCALBASE}/include ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_CHASEN)
+.if ${PORT_OPTIONS:MCHASEN}
 LIB_DEPENDS+=	chasen.2:${PORTSDIR}/japanese/chasen-base
 CONFIGURE_ARGS+=	--enable-chasen
 .endif
 
-.if defined(WITH_MECAB) && ${ARCH} == "i386"
+.if ${PORT_OPTIONS:MMECAB} && ${ARCH} == "i386"
 LIB_DEPENDS+=	mecab.1:${PORTSDIR}/japanese/mecab
 CONFIGURE_ARGS+=	--enable-mecab
 .endif
 
-.if !defined(WITHOUT_KAKASI)
+.if ${PORT_OPTIONS:MKAKASI}
 LIB_DEPENDS+=	kakasi.3:${PORTSDIR}/japanese/kakasi
 CONFIGURE_ARGS+=	--enable-kakasi
 .endif
