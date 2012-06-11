@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twisted
-PORTVERSION=	12.0.0
+PORTVERSION=	12.1.0
 CATEGORIES=	devel net python
 MASTER_SITES=	# empty
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,66 +15,67 @@ DISTFILES=	# none
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Metaport of Twisted, an event-driven networking engine
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedCore>=${PORTVERSION}:${PORTSDIR}/devel/py-twistedCore
 
 NO_BUILD=	yes
 USE_PYTHON=	yes
 PYDISTUTILS_NOEGGINFO=	yes
-
 WRKSRC=		${WRKDIR}/Twisted-${PORTVERSION}
 
-OPTIONS=	CONCH	"SSH and SFTP protocol" on \
-		LORE	"Documentation generator" on \
-		MAIL	"SMTP, IMAP and POP protocol" on \
-		NAMES	"DNS protocol" on \
-		PAIR	"Twisted Pair can do low level TCP work" on \
-		NEWS	"NNTP protocol" on \
-		RUNNER	"Process management" on \
-		WEB	"HTTP protocol" on \
-		WORDS	"Chat and Instant Messaging" on
+OPTIONS_DEFINE=	CONCH LORE MAIL NAMES NEWS PAIR RUNNER WEB WORDS
+OPTIONS_DEFAULT=CONCH LORE MAIL NAMES NEWS PAIR RUNNER WEB WORDS
+CONCH_DESC=	SSH and SFTP protocol
+LORE_DESC=	Documentation generator
+MAIL_DESC=	SMTP, IMAP and POP protocol
+NAMES_DESC=	DNS protocol
+NEWS_DESC=	NNTP protocol
+PAIR_DESC=	Twisted Pair can do low level TCP work
+RUNNER_DESC=	Process management
+WEB_DESC=	HTTP protocol
+WORDS_DESC=	Chat and Instant Messaging
 
 # bypass infrastructure bug
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 do-install:
-	${DO_NADA}
+	@${DO_NADA}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_CONCH)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/conch/__init__.py:${PORTSDIR}/security/py-twistedConch
+.if ${PORT_OPTIONS:MCONCH}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}twistedConch>=${PORTVERSION}:${PORTSDIR}/security/py-twistedConch
 .endif
 
-.if !defined(WITHOUT_LORE)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/lore/__init__.py:${PORTSDIR}/textproc/py-twistedLore
+.if ${PORT_OPTIONS:MLORE}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}twistedLore>=${PORTVERSION}:${PORTSDIR}/textproc/py-twistedLore
 .endif
 
-.if !defined(WITHOUT_MAIL)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/mail/__init__.py:${PORTSDIR}/mail/py-twistedMail
+.if ${PORT_OPTIONS:MMAIL}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}twistedMail>=${PORTVERSION}:${PORTSDIR}/mail/py-twistedMail
 .endif
 
-.if !defined(WITHOUT_NAMES)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/names/__init__.py:${PORTSDIR}/dns/py-twistedNames
+.if ${PORT_OPTIONS:MNAMES}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}twistedNames>=${PORTVERSION}:${PORTSDIR}/dns/py-twistedNames
 .endif
 
-.if !defined(WITHOUT_NEWS)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/news/__init__.py:${PORTSDIR}/news/py-twistedNews
+.if ${PORT_OPTIONS:MNEWS}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}twistedNews>=${PORTVERSION}:${PORTSDIR}/news/py-twistedNews
 .endif
 
-.if !defined(WITHOUT_PAIR)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/pair/__init__.py:${PORTSDIR}/net/py-twistedPair
+.if ${PORT_OPTIONS:MPAIR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}twistedPair>=${PORTVERSION}:${PORTSDIR}/net/py-twistedPair
 .endif
 
-.if !defined(WITHOUT_RUNNER)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/runner/__init__.py:${PORTSDIR}/devel/py-twistedRunner
+.if ${PORT_OPTIONS:MRUNNER}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}twistedRunner>=${PORTVERSION}:${PORTSDIR}/devel/py-twistedRunner
 .endif
 
-.if !defined(WITHOUT_WEB)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/web/__init__.py:${PORTSDIR}/www/py-twistedWeb
+.if ${PORT_OPTIONS:MWEB}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}twistedWeb>=${PORTVERSION}:${PORTSDIR}/www/py-twistedWeb
 .endif
 
-.if !defined(WITHOUT_WORDS)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/words/__init__.py:${PORTSDIR}/net-im/py-twistedWords
+.if ${PORT_OPTIONS:MWORDS}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}twistedWords>=${PORTVERSION}:${PORTSDIR}/net-im/py-twistedWords
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
