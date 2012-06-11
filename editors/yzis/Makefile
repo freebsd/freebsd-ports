@@ -16,8 +16,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a.1/-alpha1/}
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Vi-like editor
 
-LICENSE_COMB=	multi
 LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -37,19 +37,21 @@ CMAKE_ARGS+=	-DLOCALBASE:STRING="${LOCALBASE}" \
 
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-OPTIONS=	KYZIS "Build Kyzis and Yzis kpart" off \
-		NYZIS "Build nyzis (ncurses frontend)" off
+
+OPTIONS_DEFINE=	KYZIS NYZIS
+KYZIS_DESC=	Build kyzis and Yzis kpart
+NYZIS_DESC=	Build nyzis (ncurses frontend)
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_KYZIS)
+.if ${PORT_OPTIONS:MKYZIS}
 USE_KDE4=	kdehier kdeprefix kdelibs automoc4
 USE_QT4+=	phonon
 .endif
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_NYZIS)
+.if ${PORT_OPTIONS:MNYZIS}
 CPPFLAGS+=	-D_XOPEN_SOURCE_EXTENDED # ncurses/widec support
 CMAKE_ARGS+=	-DENABLE_NYZIS:BOOL=ON
 PLIST_SUB+=	PL_NYZIS=""
@@ -58,7 +60,7 @@ CMAKE_ARGS+=	-DENABLE_NYZIS:BOOL=OFF
 PLIST_SUB+=	PL_NYZIS="@comment "
 .endif
 
-.if defined(WITH_KYZIS)
+.if ${PORT_OPTIONS:MKYZIS}
 CMAKE_ARGS+=	-DENABLE_KYZIS:BOOL=ON \
 		-DENABLE_KPART_YZIS:BOOL=ON
 PLIST_SUB+=	PL_KYZIS=""
@@ -70,7 +72,7 @@ PLIST_SUB+=	PL_KYZIS="@comment "
 PLIST_SUB+=	PL_QYZIS=""
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz \
 		doxygen:${PORTSDIR}/devel/doxygen
 CMAKE_ARGS+=	-DENABLE_DOCUMENTATION:BOOL=ON
