@@ -11,7 +11,7 @@ CATEGORIES=	textproc java
 MASTER_SITES=	http://jing-trang.googlecode.com/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Multi-format schema converter based on RELAX NG
 
 USE_ZIP=	yes
