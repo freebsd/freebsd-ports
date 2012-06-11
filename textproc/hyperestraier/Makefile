@@ -25,20 +25,21 @@ CONFIGURE_ARGS=	--enable-bzip2 --disable-zlib
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-OPTIONS=	LZO "Enable lzo support" off \
-		MECAB "Enable mecab support" off
+OPTIONS_DEFINE=	LZO MECAB
+LZO_DESC=	Enable lzo support
+MECAB_DESC=	Enable mecab support
 
 MAN1=		estcall.1 estcmd.1 estconfig.1 estmaster.1 estwaver.1
 MAN3=		estnode.3 estraier.3
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_LZO)
+.if ${PORT_OPTIONS:MLZO}
 CONFIGURE_ARGS+=	--enable-lzo
 LIB_DEPENDS+=	lzo2:${PORTSDIR}/archivers/lzo2
 .endif
 
-.if defined(WITH_MECAB)
+.if ${PORT_OPTIONS:MMECAB}
 CONFIGURE_ARGS+=	--enable-mecab
 LIB_DEPENDS+=	mecab:${PORTSDIR}/japanese/mecab
 RUN_DEPENDS+=	${LOCALBASE}/lib/mecab/dic/ipadic/matrix.bin:${PORTSDIR}/japanese/mecab-ipadic
