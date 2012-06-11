@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twistedCore
-PORTVERSION=	12.0.0
+PORTVERSION=	12.1.0
 CATEGORIES=	devel net python
 MASTER_SITES=	http://twistedmatrix.com/Releases/Core/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,7 +29,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	Twisted_Core
+PYDISTUTILS_PKGNAME=	${PORTNAME:S/twisted/Twisted_/}
 
 MAN1=		manhole.1 pyhtmlizer.1 tap2deb.1 tap2rpm.1 tapconvert.1 trial.1 twistd.1
 
