@@ -16,6 +16,8 @@ COMMENT=	Grassroots DICOM library
 LIB_DEPENDS=	openjpeg.2:${PORTSDIR}/graphics/openjpeg \
    		expat.6:${PORTSDIR}/textproc/expat2
 
+BROKEN=		does not compile
+
 OPTIONS=	VTK "Build the VTK bindings" off
 
 USE_BZIP2=	yes
@@ -72,14 +74,8 @@ post-install:
 CMAKE_ARGS+=	-DGDCM_DOCUMENTATION:BOOL=NO
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} <= 701000
-MANUAL_PACKAGE_BUILD=	hangs on pointyhat
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's| NAMELINK_SKIP||; s| NAMELINK_ONLY||' ${WRKSRC}/CMakeLists.txt
 	${REINPLACE_CMD} -e 's|share/man|man|g;' ${WRKSRC}/CMakeLists.txt
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
