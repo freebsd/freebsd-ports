@@ -117,7 +117,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${TOUCH}
 
 post-install:
-.if !empty(PORT_OPTIONS:MMTP) || !empty${PORT_OPTIONS:MNJB} || !empty(PORT_OPTIONS:MGPOD)
+.if !empty(PORT_OPTIONS:MMTP) || !empty(PORT_OPTIONS:MNJB) || !empty(PORT_OPTIONS:MGPOD)
 	@${CAT} ${PKGMESSAGE}
 .endif
 
