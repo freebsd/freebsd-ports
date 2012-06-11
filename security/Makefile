@@ -796,6 +796,7 @@
     SUBDIR += razorback-masterNugget
     SUBDIR += razorback-scriptNugget
     SUBDIR += razorback-swfScanner
+    SUBDIR += razorback-syslogNugget
     SUBDIR += rdigest
     SUBDIR += retranslator
     SUBDIR += revelation
