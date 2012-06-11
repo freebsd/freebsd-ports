@@ -323,8 +323,12 @@ CONFIGURE_ARGS+=	--enable-php
 PLIST_SUB+=		WITH_PHP=""
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
+.include "${PORTSDIR}/Mk/bsd.php.mk"
 CPPFLAGS+=		-I${LOCALBASE}/include/php/Zend
 MAN3+=			gv.3php
+.if ${PHP_VER} == 5
+BROKEN=			swig is to old to build for php 5.4
+.endif
 .else
 CONFIGURE_ARGS+=	--disable-php
 PLIST_SUB+=		WITH_PHP="@comment "
