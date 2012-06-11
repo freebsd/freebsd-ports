@@ -73,6 +73,7 @@ PC_FALSE+=	cfitsio
 LIB_DEPENDS+=	gimp-2.0.0:${PORTSDIR}/graphics/gimp-app
 PLIST_SUB+=	GIMP=""
 .else
+CONFIGURE_ARGS+=--without-gimp
 PC_FALSE+=	gimp
 PLIST_SUB+=	GIMP="@comment "
 .endif
@@ -80,6 +81,8 @@ PLIST_SUB+=	GIMP="@comment "
 .if defined(WITH_GTK)
 LIB_DEPENDS+=	gtkimageview.0:${PORTSDIR}/x11-toolkits/gtkimageview
 PLIST_FILES+=	bin/ufraw
+.else
+CONFIGURE_ARGS+=--without-gtk
 .endif
 
 .if defined(WITH_GNOME)
