@@ -283,7 +283,6 @@
     SUBDIR += tkXwin
     SUBDIR += trapproto
     SUBDIR += trayer
-    SUBDIR += trayer-srg
     SUBDIR += tycoon
     SUBDIR += vdesk
     SUBDIR += videoproto
