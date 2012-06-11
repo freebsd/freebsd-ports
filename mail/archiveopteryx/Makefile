@@ -7,7 +7,7 @@
 
 PORTNAME=	archiveopteryx
 PORTVERSION=	3.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://archiveopteryx.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	download
@@ -15,19 +15,21 @@ MASTER_SITE_SUBDIR=	download
 MAINTAINER=	feld@feld.me
 COMMENT=	An advanced PostgreSQL-based IMAP/POP server
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/bsd.txt
+
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 
 USE_BZIP2=	yes
 USE_PERL5_BUILD=	5.8+
-
-LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/bsd.txt
 
 MAKE_JOBS_SAFE=	yes
 
 MAN5=	aoxsuper.conf.5 archiveopteryx.conf.5
 MAN8=	aox.8 aoximport.8 archiveopteryx.8 deliver.8 installer.8 logd.8 \
 	recorder.8 tlsproxy.8
+
+PORTDOCS=	COPYING README bsd.txt
 
 SUB_FILES=	pkg-message
 
