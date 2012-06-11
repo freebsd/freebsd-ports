@@ -7,6 +7,7 @@
 
 PORTNAME=	libdvdread
 PORTVERSION=	4.2.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 # Svn repository URL : svn://svn.mplayerhq.hu/dvdnav/trunk/libdvdread
 MASTER_SITES=	http://dvdnav.mplayerhq.hu/releases/ \
@@ -32,21 +33,18 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}" \
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-.if defined(PACKAGE_BUILDING)
-DVDCSS_OPTION=	off
-.else
-DVDCSS_OPTION=	on
+OPTIONS_DEFINE=	DVDCSS
+.if !defined(PACKAGE_BUILDING)
+OPTIONS_DEFAULT=	DVDCSS
 .endif
-
-OPTIONS=	DVDCSS "Include libdvdcss support" ${DVDCSS_OPTION}
 
 # DVDCSS version hardcoded in src/dvd_input.c (dlopen'ed)
 DVDCSS_LIBVERSION=	3
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_DVDCSS)
-LIB_DEPENDS+=	dvdcss.${DVDCSS_LIBVERSION}:${PORTSDIR}/multimedia/libdvdcss
+.if ${PORT_OPTIONS:MDVDCSS}
+LIB_DEPENDS+=	dvdcss:${PORTSDIR}/multimedia/libdvdcss
 .endif
 
 post-patch:
