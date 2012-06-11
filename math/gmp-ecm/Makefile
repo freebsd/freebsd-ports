@@ -7,6 +7,7 @@
 
 PORTNAME=	gmp-ecm
 PORTVERSION=	6.3
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://gforge.inria.fr/frs/download.php/26838/
 DISTNAME=	ecm-${PORTVERSION}
@@ -18,6 +19,8 @@ LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
+
+CONFLICTS=	ecm-[0-9]*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_prog_XSLTPROC=no \
