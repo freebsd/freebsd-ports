@@ -69,6 +69,7 @@ _make_jobs=	-j${MAKE_JOBS_NUMBER}
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/local/share|${LOCALBASE}/share| ; \
+		 /OPTIM_FLAGS=/s|-O2|-fPIC| ; \
 		 s|_daylight=yes|_daylight=no|' ${EDELIB_WRKSRC}/configure
 
 pre-configure:
