@@ -22,8 +22,10 @@ CONFLICTS=	hso-kmod-[0-9]*
 
 NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
 
-OPTIONS=	UHSOCTL "Build uhsoctl tool" on \
-		DEBUG "Build with debug symbols" off
+OPTIONS_DEFINE=	UHSOCTL DEBUG
+OPTIONS_DEFAULT=	UHSOCTL
+
+UHSOCTL_DESC=	Build uhsoctl tool
 
 SUB_FILES=	pkg-message
 KMODDIR?=	/boot/modules
@@ -42,7 +44,7 @@ IGNORE=		requires FreeBSD 8.0 or later, please try comms/hso-kmod instead
 IGNORE=	the uhso driver is already available in the base system
 .endif
 
-.if !defined(WITHOUT_UHSOCTL)
+.if ${PORT_OPTIONS:MUHSOCTL}
 UHSOCTL_VERSION=	20100416
 DISTFILES+=	uhsoctl-${UHSOCTL_VERSION}${EXTRACT_SUFX}
 WRKSRC_UHSOCTL=	${WRKDIR}/uhsoctl-${UHSOCTL_VERSION}
@@ -52,25 +54,23 @@ MAN1=	uhsoctl.1
 PLIST_SUB+=	PL_UHSOCTL="@comment "
 .endif
 
-.if !defined(WITH_DEBUG)
+.if empty(${PORT_OPTIONS:MDEBUG})
 EXTRA_PATCHES+=	${PATCHDIR}/UHSO-NODEBUG-patch-Makefile
 .endif
 
 post-patch:
-.if !defined(WITHOUT_UHSOCTL)
-.if defined(WITH_DEBUG)
+.if !empty(${PORT_OPTIONS:MUHSOCTL}) && !empty(${PORT_OPTIONS:MDEBUG})
 	@${PATCH} -d ${WRKSRC_UHSOCTL} < ${PATCHDIR}/UHSOCTL-DEBUG-patch-Makefile
-.endif
 .endif
 
 post-build:
-.if !defined(WITHOUT_UHSOCTL)
+.if ${PORT_OPTIONS:MUHSOCTL}
 	@cd ${WRKSRC_UHSOCTL} && ${SETENV} NO_MANCOMPRESS= ${MAKE} all
 .endif
 
 post-install:
 	${INSTALL_MAN} ${MAN4:S|^|${WRKSRC}/|} ${PREFIX}/man/man4
-.if !defined(WITHOUT_UHSOCTL)
+.if ${PORT_OPTIONS:MUHSOCTL}
 	@cd ${WRKSRC_UHSOCTL} && \
 		${SETENV} DESTDIR=${PREFIX}/ BINDIR=bin MANDIR=man/man NO_MANCOMPRESS= \
 		${MAKE} install
