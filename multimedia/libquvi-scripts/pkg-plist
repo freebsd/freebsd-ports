@@ -5,6 +5,7 @@ libdata/pkgconfig/libquvi-scripts.pc
 %%DATADIR%%/lua/util/trim.lua
 %%DATADIR%%/lua/website/README
 %%DATADIR%%/lua/website/101greatgoals.lua
+%%DATADIR%%/lua/website/1tvru.lua
 %%DATADIR%%/lua/website/academicearth.lua
 %%DATADIR%%/lua/website/arte.lua
 %%DATADIR%%/lua/website/audioboo.lua
@@ -34,6 +35,7 @@ libdata/pkgconfig/libquvi-scripts.pc
 %%DATADIR%%/lua/website/quvi/util.lua
 %%NSFW%%%%DATADIR%%/lua/website/redtube.lua
 %%DATADIR%%/lua/website/sapo.lua
+%%DATADIR%%/lua/website/senat.lua
 %%DATADIR%%/lua/website/sevenload.lua
 %%DATADIR%%/lua/website/soundcloud.lua
 %%NSFW%%%%DATADIR%%/lua/website/spankwire.lua
@@ -46,6 +48,7 @@ libdata/pkgconfig/libquvi-scripts.pc
 %%NSFW%%%%DATADIR%%/lua/website/tnaflix.lua
 %%NSFW%%%%DATADIR%%/lua/website/totallynsfw.lua
 %%DATADIR%%/lua/website/tvlux.lua
+%%DATADIR%%/lua/website/tvrain.lua
 %%DATADIR%%/lua/website/videa.lua
 %%DATADIR%%/lua/website/videobash.lua
 %%DATADIR%%/lua/website/vimeo.lua

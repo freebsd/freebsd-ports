@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libquvi-scripts
-PORTVERSION=	0.4.5
+PORTVERSION=	0.4.6
 CATEGORIES=	multimedia devel
 MASTER_SITES=	SF/quvi/${PORTVERSION:R}/${PORTNAME}/ \
 		GOOGLE_CODE
@@ -14,7 +14,8 @@ MASTER_SITES=	SF/quvi/${PORTVERSION:R}/${PORTNAME}/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Embedded lua scripts for libquvi and utility scripts
 
-OPTIONS=	NSFW "Enable adult website support" off
+OPTIONS_DEFINE=	NSFW
+NSFW_DESC=	Enable adult website support
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig
@@ -26,7 +27,7 @@ PROJECTHOST=	quvi
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_NSFW)
+.if ${PORT_OPTIONS:MNSFW}
 CONFIGURE_ARGS+=--with-nsfw
 PLIST_SUB+=	NSFW=""
 .else
