@@ -7,7 +7,7 @@
 
 PORTNAME=	heimdal
 PORTVERSION=	1.5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://www.h5l.org/dist/src/ \
 		http://ftp.pdc.kth.se/pub/heimdal/src/ \
@@ -39,7 +39,8 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=	--with-libintl=${LOCALBASE} \
 			--with-readline=${DESTDIR}/usr \
 			--enable-pthread-support \
-			--with-hdbdir=/var/db/${PORTNAME}
+			--with-hdbdir=/var/db/${PORTNAME} \
+			--sysconfdir=${PREFIX}/etc
 MAKE_ENV+=	INSTALL_CATPAGES=no
 
 INFO=		heimdal hx509
