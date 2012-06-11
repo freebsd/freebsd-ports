@@ -37,6 +37,7 @@ DEBUG_DESC?=		Enable debug flags
 DEVD_DESC?=		Install devd files
 DOCS_DESC?=		Build and install the documentation
 DV_DESC?=		Enable libDV support
+DVDCSS_DESC?=		Enable libdvdcss support
 ECW_DESC?=		Enable ECW support
 ESOUND_DESC?=		Enable Esound sound server support
 EXAMPLES_DESC?=		Build and install the examples
