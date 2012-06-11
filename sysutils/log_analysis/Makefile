@@ -15,7 +15,8 @@ COMMENT=	A utility that extracts a summary of useful data from logs
 
 LICENSE=	GPLv3
 
-OPTIONS=	TK "Enable Tcl/Tk GUI support" off
+OPTIONS_DEFINE=	TK
+TK_DESC=	Enable Tcl/Tk GUI support
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
@@ -32,7 +33,7 @@ PLIST_DIRS=	%%DATADIR%%/Tk \
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_TK)
+.if ${PORT_OPTIONS:MTK}
 RUN_DEPENDS+=	p5-Tk>0:${PORTSDIR}/x11-toolkits/p5-Tk
 .endif
 
