@@ -3,6 +3,12 @@ bin/test_cog.py
 %%PYTHON_SITELIBDIR%%/cogapp/__init__.py
 %%PYTHON_SITELIBDIR%%/cogapp/__init__.pyc
 %%PYTHON_SITELIBDIR%%/cogapp/__init__.pyo
+%%PYTHON_SITELIBDIR%%/cogapp/__main__.py
+%%PYTHON_SITELIBDIR%%/cogapp/__main__.pyc
+%%PYTHON_SITELIBDIR%%/cogapp/__main__.pyo
+%%PYTHON_SITELIBDIR%%/cogapp/backward.py
+%%PYTHON_SITELIBDIR%%/cogapp/backward.pyc
+%%PYTHON_SITELIBDIR%%/cogapp/backward.pyo
 %%PYTHON_SITELIBDIR%%/cogapp/cogapp.py
 %%PYTHON_SITELIBDIR%%/cogapp/cogapp.pyc
 %%PYTHON_SITELIBDIR%%/cogapp/cogapp.pyo
