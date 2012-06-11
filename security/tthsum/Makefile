@@ -7,6 +7,7 @@
 
 PORTNAME=	tthsum
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://tthsum.devs.nu/pkg/ \
 		CRITICAL
@@ -15,6 +16,8 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command-line utility for generating and checking TTH message digests
 
 LICENSE=	GPLv3
+
+CONFLICTS=	microdc2-[0-9]*
 
 USE_GMAKE=	yes
 MANCOMPRESSED=	yes
