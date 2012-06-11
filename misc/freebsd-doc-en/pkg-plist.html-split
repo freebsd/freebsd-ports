@@ -324,6 +324,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/anatomy.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/build-maintenance.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/customizing.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/disk-failure.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/errors.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/expbuilds.html
@@ -359,6 +360,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/pxe/custom-postinst-package.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pxe/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pxe/install-setup.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/introduction.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pxe/server-config.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/index.html
@@ -796,6 +798,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-rcd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-starting-services.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-sysctl.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-syslog.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-virtual-hosts.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/consoles.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/creating-cds.html
@@ -1177,4 +1180,4 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-x11.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-xfce.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/why-port.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/x5755.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/x5776.html
