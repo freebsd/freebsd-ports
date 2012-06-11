@@ -36,11 +36,12 @@ NOPRECIOUSMAKEVARS=	Too many _MLINKS for README.html
 TCL83_PORT?=	lang/tcl83
 MANCOMPRESSED=	no
 
-OPTIONS=	TK83_MAN "Install tk 8.3 manpages" off
+OPTIONS_DEFINE=	TK83_MAN
+TK82_MAN_DESC=	Install tk 8.3 manpages
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TK83_MAN)
+.if !defined(NO_INSTALL_MANPAGES) && ${PORT_OPTIONS:MTK83_MAN}
 
 MAN1=	wish.1
 MAN3=	3DBorder.3 AddOption.3 BindTable.3 CanvPsY.3 CanvTkwin.3 \
@@ -338,11 +339,11 @@ post-configure:
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${PREFIX}/lib/tk${TK_VER}/
-.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TK83_MAN)
+.if !defined(NO_INSTALL_MANPAGES) && ${PORT_OPTIONS:MTK83_MAN}
 	@cd ${WRKSRC} && ${MAKE} -f Makefile install-doc
 .endif
 
 test:
 	cd ${WRKSRC}; make test
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
