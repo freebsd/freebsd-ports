@@ -637,6 +637,7 @@ lib/libofstd.so.%%SHLIBVER%%
 @dirrm %%DATADIR%%/wlistqry
 @dirrm %%DATADIR%%/wlistdb
 @dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%/html
 @dirrm %%DOCSDIR%%
 @dirrm etc/dcmtk
 @dirrm bin/dcmtk

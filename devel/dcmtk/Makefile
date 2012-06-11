@@ -36,6 +36,9 @@ PLIST_SUB=	SHLIBVER=${SHLIBVER}
 CFLAGS+=	-fPIC
 .endif
 
+post-patch:
+	${FIND} ${WRKSRC} -name "*.h.orig" -delete
+
 post-install:
 .for shlib in ${SHLIBS}
 	@${MV} ${PREFIX}/lib/lib${shlib}.so ${PREFIX}/lib/lib${shlib}.so.${SHLIBVER}
