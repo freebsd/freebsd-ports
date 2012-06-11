@@ -814,6 +814,7 @@
     SUBDIR += rubygem-net-ssh-gateway
     SUBDIR += rubygem-net-ssh-multi
     SUBDIR += rubygem-nmap-parser
+    SUBDIR += rubygem-razorback-scriptNugget
     SUBDIR += rubygem-roauth
     SUBDIR += rubygem-twitter_oauth
     SUBDIR += saferpay
