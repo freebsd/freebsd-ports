@@ -7,6 +7,7 @@
 
 PORTNAME=	dnsmasq
 DISTVERSION=	2.62
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \
@@ -95,7 +96,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/dnsmasq ${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/dnsmasq.conf.example ${PREFIX}/etc
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.8 ${PREFIX}/man/man8
-.if empty(PORT_OPTIONS:MDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
