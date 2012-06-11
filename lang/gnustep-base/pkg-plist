@@ -166,10 +166,10 @@ GNUstep/System/Library/Headers/GNUstepBase/NSTask+GNUstepBase.h
 GNUstep/System/Library/Headers/GNUstepBase/NSThread+GNUstepBase.h
 GNUstep/System/Library/Headers/GNUstepBase/NSURL+GNUstepBase.h
 GNUstep/System/Library/Headers/GNUstepBase/Unicode.h
-GNUstep/System/Library/Headers/ObjectiveC2/objc/Availability.h
-GNUstep/System/Library/Headers/ObjectiveC2/objc/blocks_runtime.h
-GNUstep/System/Library/Headers/ObjectiveC2/objc/capabilities.h
-GNUstep/System/Library/Headers/ObjectiveC2/objc/runtime.h
+%%WITH_LIB1%%GNUstep/System/Library/Headers/ObjectiveC2/objc/Availability.h
+%%WITH_LIB1%%GNUstep/System/Library/Headers/ObjectiveC2/objc/blocks_runtime.h
+%%WITH_LIB1%%GNUstep/System/Library/Headers/ObjectiveC2/objc/capabilities.h
+%%WITH_LIB1%%GNUstep/System/Library/Headers/ObjectiveC2/objc/runtime.h
 GNUstep/System/Library/Headers/gnustep/unicode/caseconv.h
 GNUstep/System/Library/Headers/gnustep/unicode/cop.h
 GNUstep/System/Library/Headers/gnustep/unicode/cyrillic.h
@@ -880,8 +880,8 @@ etc/rc.d/GNUstep.sh
 @dirrm GNUstep/System/Library/Headers/gnustep/unicode
 @dirrm GNUstep/System/Library/Headers/gnustep/base
 @dirrm GNUstep/System/Library/Headers/gnustep
-@dirrm GNUstep/System/Library/Headers/ObjectiveC2/objc
-@dirrm GNUstep/System/Library/Headers/ObjectiveC2
+%%WITH_LIB1%%@dirrm GNUstep/System/Library/Headers/ObjectiveC2/objc
+%%WITH_LIB1%%@dirrm GNUstep/System/Library/Headers/ObjectiveC2
 @dirrm GNUstep/System/Library/Headers/GNUstepBase/unicode
 @dirrm GNUstep/System/Library/Headers/GNUstepBase
 @dirrm GNUstep/System/Library/Headers/Foundation

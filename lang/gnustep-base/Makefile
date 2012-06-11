@@ -53,15 +53,23 @@ EXTRA_PATCHES+=	${FILESDIR}/NSFileManager.m.patch
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900036
+.if !defined(GNUSTEP_WITH_CLANG)
 .if defined(GNUSTEP_WITH_BASE_GCC)
+.if ${OSVERSION} < 800000
+IGNORE=		does not build on FreeBSD 7
+.endif
+.if ${OSVERSION} >= 900036
 IGNORE=		needs an objective C compiler
+.endif
 .endif
 .endif
 
 .if defined(GNUSTEP_WITH_LIBOBJC2) || defined(GNUSTEP_WITH_CLANG)
 LIB_DEPENDS+=	objc:${PORTSDIR}/${PKGCATEGORY}/libobjc2
 CFLAGS+=	-I${LOCALBASE}/include -DOBJC2RUNTIME=1
+PLIST_SUB+=	WITH_LIB1="@comment "
+.else
+PLIST_SUB+=	WITH_LIB1=""
 .endif
 
 PATH:=	${PREFIX}/System/Tools:${PATH}
