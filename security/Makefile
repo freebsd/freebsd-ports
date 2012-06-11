@@ -794,6 +794,7 @@
     SUBDIR += razorback-fsMonitor
     SUBDIR += razorback-fsWalk
     SUBDIR += razorback-masterNugget
+    SUBDIR += razorback-pdfFox
     SUBDIR += razorback-scriptNugget
     SUBDIR += razorback-swfScanner
     SUBDIR += razorback-syslogNugget
