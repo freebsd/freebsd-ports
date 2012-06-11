@@ -9931,6 +9931,7 @@ mumble                          ports/audio/mumble
 mummer                          ports/biology/mummer
 mumps                           ports/math/mumps
 mumps-mpich                     ports/math/mumps-mpich
+munge                           ports/security/munge
 munger                          ports/lang/munger
 munin-common                    ports/sysutils/munin-common
 munin-master                    ports/sysutils/munin-master
@@ -23046,6 +23047,7 @@ py-pydot                        ports/graphics/py-pydot
 py-pyev                         ports/devel/py-pyev
 py-pyfits                       ports/astro/py-pyfits
 py-pyftpdlib                    ports/ftp/py-pyftpdlib
+py-pygithub                     ports/devel/py-pygithub
 py-pyglet                       ports/graphics/py-pyglet
 py-pygments                     ports/textproc/py-pygments
 py-pygooglechart                ports/graphics/py-pygooglechart
@@ -23158,6 +23160,7 @@ py-ruledispatch                 ports/devel/py-ruledispatch
 py-rxp                          ports/textproc/py-rxp
 py-s3cmd                        ports/net/py-s3cmd
 py-sane                         ports/graphics/py-sane
+py-sanetime                     ports/devel/py-sanetime
 py-satchmo                      ports/www/py-satchmo
 py-scgi                         ports/www/py-scgi
 py-scientific                   ports/math/py-scientific
@@ -26112,6 +26115,7 @@ stepmania-devel                 ports/games/stepmania-devel
 steptalk                        ports/lang/steptalk
 stepulator                      ports/math/stepulator
 sterm                           ports/x11/sterm
+stf-6rd-kmod                    ports/net/stf-6rd-kmod
 stfl                            ports/devel/stfl
 stix-fonts                      ports/x11-fonts/stix-fonts
 stjerm                          ports/x11/stjerm
