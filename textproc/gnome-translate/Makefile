@@ -26,11 +26,13 @@ GNU_CONFIGURE=		yes
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib -Wl,-export-dynamic
 
-OPTIONS=		LANGUAGE_DETECTION "language detection" on
+OPTIONS_DEFINE=		LANGUAGE_DETECTION
+LANGUAGE_DETECTION_DESC=	language detection
+OPTIONS_DEFAULT=	LANGUAGE_DETECTION
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_LANGUAGE_DETECTION)
+.if ${PORT_OPTIONS:MLANGUAGE_DETECTION}
 CONFIGURE_ARGS+=	--disable-language-detection
 .else
 LIB_DEPENDS+=		aspell:${PORTSDIR}/textproc/aspell
