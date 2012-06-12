@@ -42,33 +42,35 @@ CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	AUTOCREATE	"Use autocreate INBOX patch (UoA)"	off \
-		AUTOSIEVE	"Use autosievefolder patch (UoA)"	off \
-		BDB		"Use Berkeley DB"			on \
-		DRAC		"Enable DRAC support"			off \
-		IDLED		"Enable IMAP idled support"		off \
-		LDAP_PTLOADER	"Enable LDAP ptloader"			off \
-		LISTEXT		"Enable IMAP List extensions"		off \
-		MURDER		"Enable IMAP Murder support"		off \
-		MYSQL		"Use MySQL (experimental)"		off \
-		NETSCAPEHACK	"Enable X-NETSCAPE extensions"		off \
-		NNTP		"Enable NNTP support"			off \
-		PGSQL		"Use PostgreSQL (experimental)"		off \
-		REPLICATION	"Enable replication"			off \
-		SQLITE		"Use SQLite (experimental)"		off \
-		SNMP_5		"Enable SNMP support"			off
+OPTIONS_DEFINE=		AUTOCREATE AUTOSIEVE BDB DRAC IDLED LDAP_PTLOADER \
+			LISTEXT MURDER MYSQL NETSCAPEHACK NNTP PGSQL \
+			REPLICATION SNMP_5 SQLITE
+OPTIONS_DEFAULT=	BDB
+AUTOCREATE_DESC=	Use autocreate INBOX patch (UoA)
+AUTOSIEVE_DESC=		Use autosievefolder patch (UoA)
+DRAC_DESC=		Enable DRAC support
+IDLED_DESC=		Enable IMAP idled support
+LDAP_PTLOADER_DESC=	Enable LDAP ptloader
+LISTEXT_DESC=		Enable IMAP List extensions
+MURDER_DESC=		Enable IMAP Murder support
+NETSCAPEHACK_DESC=	Enable X-NETSCAPE extensions
+NNTP_DESC=		Enable NNTP support
+PGSQL_DESC=		Enable PostgreSQL backend (experimental)
+REPLICATION_DESC=	Enable replication
+SNMP_5_DESC=		Enable SNMP support
+SQLITE_DESC=		Enable SQLite backend (experimental)
 
 .include <bsd.port.pre.mk>
 
 # Autocreate Inbox and Autosieve patches from UoA
 # WWW: http://email.uoa.gr/projects/cyrus/
 
-.if defined(WITH_AUTOCREATE) || defined(WITH_AUTOSIEVE)
+.if ${PORT_OPTIONS:MAUTOCREATE} || ${PORT_OPTIONS:MAUTOSIEVE}
 PATCH_DIST_STRIP=	-p1
 PATCH_SITES+=	http://email.uoa.gr/download/cyrus/${PORTNAME}-2.3.16/
 .endif
 
-.if defined(WITH_AUTOCREATE)
+.if ${PORT_OPTIONS:MAUTOCREATE}
 AUTOCREATE_VERSION=	0.10-0
 PATCHFILES+=	${PORTNAME}-2.3.16-autocreate-${AUTOCREATE_VERSION}.diff
 PLIST_SUB+=	AUTOCREATE=""
@@ -76,28 +78,28 @@ PLIST_SUB+=	AUTOCREATE=""
 PLIST_SUB+=	AUTOCREATE="@comment "
 .endif
 
-.if defined(WITH_AUTOSIEVE)
+.if ${PORT_OPTIONS:MAUTOSIEVE}
 AUTOSIEVE_VERSION=	0.6.0
 PATCHFILES+=	${PORTNAME}-2.3.16-autosieve-${AUTOSIEVE_VERSION}.diff
 .endif
 
-.if defined(WITHOUT_BDB)
-BDB_LIB_NAME=	no
-.else
+.if ${PORT_OPTIONS:MBDB}
 USE_BDB=	yes
 INVALID_BDB_VER=2
 CONFIGURE_ARGS+=--with-bdb-incdir=${BDB_INCLUDE_DIR} \
 		--with-bdb-libdir=${LOCALBASE}/lib
+.else
+BDB_LIB_NAME=	no
 .endif
 
-.if defined(WITH_NNTP)
+.if ${PORT_OPTIONS:MNNTP}
 CONFIGURE_ARGS+=--enable-nntp
 PLIST_SUB+=	NNTP=""
 .else
 PLIST_SUB+=	NNTP="@comment "
 .endif
 
-.if defined(WITH_MURDER)
+.if ${PORT_OPTIONS:MMURDER}
 CONFIGURE_ARGS+=--enable-murder
 CFLAGS+=	${PTHREAD_CFLAGS}
 MAKE_ENV+=	PTHREAD_LIBS=${PTHREAD_LIBS}
@@ -106,46 +108,46 @@ PLIST_SUB+=	MURDER=""
 PLIST_SUB+=	MURDER="@comment "
 .endif
 
-.if defined(WITH_IDLED)
+.if ${PORT_OPTIONS:MIDLED}
 CONFIGURE_ARGS+=--enable-idled
 PLIST_SUB+=	IDLED=""
 .else
 PLIST_SUB+=	IDLED="@comment "
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-mysql=yes \
 		--with-mysql-libdir=${LOCALBASE}/lib/mysql \
 		--with-mysql-incdir=${LOCALBASE}/include/mysql
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}
 .endif
 
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 USE_SQLITE=	yes
 CONFIGURE_ARGS+=--with-sqlite=${LOCALBASE}
 .endif
 
-.if defined(WITH_REPLICATION)
+.if ${PORT_OPTIONS:MREPLICATION}
 CONFIGURE_ARGS+=--enable-replication
 PLIST_SUB+=	REPLICATION=""
 .else
 PLIST_SUB+=	REPLICATION="@comment "
 .endif
 
-.if defined(WITH_LISTEXT)
+.if ${PORT_OPTIONS:MLISTEXT}
 CONFIGURE_ARGS+=--enable-listext
 .endif
 
-.if defined(WITH_NETSCAPEHACK)
+.if ${PORT_OPTIONS:MNETSCAPEHACK}
 CONFIGURE_ARGS+=--enable-netscapehack
 .endif
 
-.if defined(WITH_DRAC)
+.if ${PORT_OPTIONS:MDRAC}
 EXTRA_PATCHES+=	${WRKSRC}/contrib/drac_auth.patch
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure.in \
 		${FILESDIR}/extra-patch-cmulocal::ucdsnmp.m4
@@ -157,14 +159,14 @@ CONFIGURE_ARGS+=--with-drac=${LOCALBASE}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 .endif
 
-.if defined(WITH_SNMP_5)
+.if ${PORT_OPTIONS:MSNMP_5}
 LIB_DEPENDS+=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=--with-snmp=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-snmp=no
 .endif
 
-.if defined(WITH_LDAP_PTLOADER)
+.if ${PORT_OPTIONS:MLDAP_PTLOADER}
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 PLIST_SUB+=	LDAP_PTLOADER=""
@@ -231,7 +233,7 @@ post-patch:
 			${WRKSRC}/tools/masssievec
 		@${REINPLACE_CMD} -e "s|-lpthread|\$$(PTHREAD_LIBS)|g" \
 			${WRKSRC}/imap/Makefile.in
-.if defined(WITH_DRAC)
+.if ${PORT_OPTIONS:MDRAC}
 		@${RM} -rf ${WRKSRC}/autom4te.cache
 .endif
 
@@ -248,7 +250,7 @@ post-install:
 		@${ECHO_CMD} "@dirrm cyrus/man/man8" >>${TMPPLIST}
 		@${ECHO_CMD} "@dirrm cyrus/man" >>${TMPPLIST}
 		@${ECHO_CMD} "@dirrm cyrus" >>${TMPPLIST}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 		@${MKDIR} ${DOCSDIR}/man
 		@${MKDIR} ${DOCSDIR}/text
 .for f in ${DOCS}
