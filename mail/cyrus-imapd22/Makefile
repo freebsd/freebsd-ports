@@ -40,27 +40,30 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-openssl=${OPENSSLBASE} \
 		--with-perl=${PERL5}
 
-OPTIONS=	DRAC		"Enable DRAC support"			off \
-		IDLE_IDLED	"Enable IMAP IDLE method idled"		off \
-		IDLE_POLL	"Enable IMAP IDLE method idle-polling"	on \
-		LDAP_PTLOADER	"Enable LDAP ptloader (experimantal)"	off \
-		LISTEXT		"Enable IMAP List extensions"		off \
-		MURDER		"Enable IMAP Murder support"		off \
-		NETSCAPEHACK	"Enable X-NETSCAPE extensions"		off \
-		NNTP		"Enable NNTP support"			off \
-		SNMP_5		"Enable SNMP support"			off \
-		PASS8BITHACK	"Add pass8bit option (not recommended)"	off
+OPTIONS_DEFINE=		DRAC IDLE_IDLED IDLE_POLL LDAP_PTLOADER LISTEXT \
+			MURDER NETSCAPEHACK NNTP SNMP_5 PASS8BITHACK
+OPTIONS_DEFAULT=	IDLE_POLL
+DRAC_DESC=		Enable DRAC support
+IDLE_IDLED_DESC=	Enable IMAP IDLE method idled
+IDLE_POLL_DESC=		Enable IMAP IDLE method idle-polling
+LDAP_PTLOADER_DESC=	Enable LDAP ptloader (experimantal)
+LISTEXT_DESC=		Enable IMAP List extensions
+MURDER_DESC=		Enable IMAP Murder support
+NETSCAPEHACK_DESC=	Enable X-NETSCAPE extensions
+NNTP_DESC=		Enable NNTP support
+SNMP_5_DESC=		Enable SNMP support
+PASS8BITHACK_DESC=	Add pass8bit option (not recommended)
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_NNTP)
+.if ${PORT_OPTIONS:MNNTP}
 CONFIGURE_ARGS+=--enable-nntp
 PLIST_SUB+=	NNTP=""
 .else
 PLIST_SUB+=	NNTP="@comment "
 .endif
 
-.if defined(WITH_MURDER)
+.if ${PORT_OPTIONS:MMURDER}
 CONFIGURE_ARGS+=--enable-murder
 CFLAGS+=	${PTHREAD_CFLAGS}
 MAKE_ENV+=	PTHREAD_LIBS=${PTHREAD_LIBS}
@@ -69,31 +72,31 @@ PLIST_SUB+=	MURDER=""
 PLIST_SUB+=	MURDER="@comment "
 .endif
 
-.if defined(WITH_IDLE_IDLED) && defined(WITH_IDLE_POLL)
+.if ${PORT_OPTIONS:MIDLE_IDLED} && ${PORT_OPTIONS:MIDLE_POLL}
 BROKEN=		Multiple IDLE methods selected.  Run 'make config' again!
 .endif
-.if defined(WITH_IDLE_IDLED)
+.if ${PORT_OPTIONS:MIDLE_IDLED}
 CONFIGURE_ARGS+=--with-idle=idled
 PLIST_SUB+=	IDLED=""
-.elif defined(WITH_IDLE_POLL)
+.elif ${PORT_OPTIONS:MIDLE_POLL}
 CONFIGURE_ARGS+=--with-idle=poll
 PLIST_SUB+=	IDLED="@comment "
-.elif defined(WITHOUT_IDLE_IDLED) && defined(WITHOUT_IDLE_POLL)
+.elif !${PORT_OPTIONS:MIDLE_IDLED} && !${PORT_OPTIONS:MIDLE_POLL}
 CONFIGURE_ARGS+=--with-idle=no
 PLIST_SUB+=	IDLED="@comment "
 .else
 PLIST_SUB+=	IDLED="@comment "
 .endif
 
-.if defined(WITH_LISTEXT)
+.if ${PORT_OPTIONS:MLISTEXT}
 CONFIGURE_ARGS+=--enable-listext
 .endif
 
-.if defined(WITH_NETSCAPEHACK)
+.if ${PORT_OPTIONS:MNETSCAPEHACK}
 CONFIGURE_ARGS+=--enable-netscapehack
 .endif
 
-.if defined(WITH_DRAC)
+.if ${PORT_OPTIONS:MDRAC}
 #EXTRA_PATCHES+=	${WRKSRC}/contrib/drac_auth.patch
 EXTRA_PATCHES+=	${FILESDIR}/drac_auth.patch
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cmulocal::berkdb.m4 \
@@ -104,14 +107,14 @@ CONFIGURE_ARGS+=--with-drac=${LOCALBASE}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 .endif
 
-.if defined(WITH_SNMP_5)
+.if ${PORT_OPTIONS:MSNMP_5}
 LIB_DEPENDS+=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=--with-snmp=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-snmp=no
 .endif
 
-.if defined(WITH_LDAP_PTLOADER)
+.if ${PORT_OPTIONS:MLDAP_PTLOADER}
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 PLIST_SUB+=	LDAP_PTLOADER=""
@@ -119,7 +122,7 @@ PLIST_SUB+=	LDAP_PTLOADER=""
 PLIST_SUB+=	LDAP_PTLOADER="@comment "
 .endif
 
-.if defined(WITH_PASS8BITHACK)
+.if ${PORT_OPTIONS:MPASS8BITHACK}
 EXTRA_PATCHES+=	${FILESDIR}/pass8bit.diff
 .endif
 
@@ -173,7 +176,7 @@ post-patch:
 		@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|g" \
 				  -e "s|/usr/sieve|/var/imap/sieve|g" \
 			${WRKSRC}/tools/masssievec
-.if defined(WITH_DRAC)
+.if ${PORT_OPTIONS:MDRAC}
 		@${RM} -rf ${WRKSRC}/autom4te.cache
 .endif
 
@@ -190,7 +193,7 @@ post-install:
 		@${ECHO_CMD} "@dirrm cyrus/man/man8" >>${TMPPLIST}
 		@${ECHO_CMD} "@dirrm cyrus/man" >>${TMPPLIST}
 		@${ECHO_CMD} "@dirrm cyrus" >>${TMPPLIST}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 		@${MKDIR} ${DOCSDIR}/man
 		@${MKDIR} ${DOCSDIR}/text
 .for f in ${DOCS}
