@@ -52,16 +52,17 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 PORTDATA=	*
 
-OPTIONS=	MIMETEX "Run with mimetex" off \
-		TWITTER "Run with Twitter" off
+OPTIONS_DEFAULT=	MIMETEX TWITTER
+MIMETEX_DESC=		Run with mimetex
+TWITTER_DESC=		Run with Twitter
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_MIMETEX)
+.if ${PORT_OPTIONS:MMIMETEX}
 RUN_DEPENDS+=	${LOCALBASE}/www/mimetex/cgi-bin/mimetex.cgi:${PORTSDIR}/www/mimetex
 .endif
 
-.if defined(WITH_TWITTER)
+.if ${PORT_OPTIONS:MTWITTER}
 RUN_DEPENDS+=	rubygem-twitter_oauth>=0:${PORTSDIR}/security/rubygem-twitter_oauth \
 		rubygem-twitter-stream>=0:${PORTSDIR}/net/rubygem-twitter-stream
 .endif
@@ -73,7 +74,7 @@ post-patch:
 	${RUBY} -i -pe 'sub %r|(require "hikidoc")|, %Q|require "rubygems"\n\\1|' ${WRKSRC}/lib/rabbit/parser/wiki.rb
 	${RUBY} -i -pe "sub %r|((\s*)require 'twitter_oauth')|, %Q|\\\2require 'rubygems'\n\\\1|" ${WRKSRC}/lib/rabbit/twitter.rb
 	${RUBY} -i -pe "sub %r|(require 'coderay')|, %Q|require 'rubygems'\n\\\1|" ${WRKSRC}/lib/rabbit/parser/ext/coderay.rb
-.if defined(WITH_MIMETEX)
+.if ${PORT_OPTIONS:MMIMETEX}
 	${REINPLACE_CMD} -e 's|"mimetex.cgi"|"${PREFIX}/www/mimetex/cgi-bin/mimetex.cgi"|' \
 		${WRKSRC}/lib/rabbit/parser/ext/tex.rb
 .endif

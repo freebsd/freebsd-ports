@@ -45,17 +45,20 @@ SUB_LIST=	RUBY_SITELIBDIR=${RUBY_SITELIBDIR}
 PORTDOCS=	README
 PORTSCOUT=	limit:^0\.0\.3\.[0-9]*
 
-OPTIONS=	NOTIFY "notify-send support" on \
-		HTTPCLIENT "httpclient support" on
+OPTIONS_DEFINE=		HTTPCLIENT NOTIFY
+HTTPCLIENT_DESC=	httpclient support
+NOTIFY_DESC=		notify-send support
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
-.if defined(WITH_NOTIFY)
-RUN_DEPENDS+=	notify-send:${PORTSDIR}/devel/libnotify
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MHTTPCLIENT}
+RUN_DEPENDS+=	rubygem-httpclient>=0:${PORTSDIR}/www/rubygem-httpclient
 .endif
 
-.if defined(WITH_HTTPCLIENT)
-RUN_DEPENDS+=	rubygem-httpclient>=0:${PORTSDIR}/www/rubygem-httpclient
+.if ${PORT_OPTIONS:MNOTIFY}
+RUN_DEPENDS+=	notify-send:${PORTSDIR}/devel/libnotify
 .endif
 
 post-patch:
@@ -89,4 +92,4 @@ x-generate-plist:
 	${ECHO} @exec ${MKDIR:S|/bin/||} %D/%%RUBY_SITELIBDIR%%/mikutter/core/hatsunelisp >> pkg-plist.new
 	${FIND} ${RUBY_SITELIBDIR}/mikutter -type d -depth | ${SORT} -r | ${SED} -e 's,${RUBY_SITELIBDIR},@dirrm %%RUBY_SITELIBDIR%%,' >> pkg-plist.new
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

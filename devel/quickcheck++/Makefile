@@ -26,11 +26,12 @@ NO_BUILD=	yes
 PORTDOCS=	COPYRIGHT README
 PORTEXAMPLES=	examples.cc
 
-OPTIONS=	DOXYGEN "Build documentation with doxygen" off
+OPTIONS_DEFINE=	DOXYGEN
+DOXYGEN_DESC=	Build documentation with doxygen
 
 .include <bsd.port.options.mk>
 
-.if !defined(NOPORTDOCS) && defined(WITH_DOXYGEN)
+.if !defined(NOPORTDOCS) && ${PORT_OPTIONS:MDOXYGEN}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 PORTDOCS+=	html
 
