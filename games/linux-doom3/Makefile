@@ -24,14 +24,15 @@ NO_CDROM=	Redistribution is limited, see license
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-OPTIONS=	NO_CDKEY "Use older version which doesn't require cd key" off
+OPTIONS_DEFINE=	NO_CDKEY
+NO_CDKEY_DESC=	Use older version which doesn't require cd key
 
 DATADIR=	${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}
 SUB_FILES=	doom3 doom3-ded pkg-message
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_NO_CDKEY)
+.if ${PORT_OPTIONS:MNO_CDKEY}
 MASTER_SITE_SUBDIR=	doom3/linux/old
 PORTVERSION=	1.1.1286
 PORTEPOCH=	0
@@ -45,7 +46,7 @@ do-extract:
 	@cd ${WRKDIR} && ${TAIL} +374 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
 		${TAR} zxf -
 
-.if !defined(WITH_NO_CDKEY)
+.if empty(PORT_OPTIONS:MNO_CDKEY)
 post-extract:
 	@${RM} ${WRKSRC}/pb/PB_EULA.txt
 .endif
@@ -56,7 +57,7 @@ do-install:
 		${INSTALL_DATA} game01.pk4 pak*.pk4 ${DATADIR}/base
 	cd ${WRKSRC}/bin/Linux/x86 && \
 		${INSTALL_PROGRAM} doom.x86 doomded.x86 ${DATADIR}
-.if !defined(WITH_NO_CDKEY)
+.if empty(PORT_OPTIONS:MNO_CDKEY)
 	${MKDIR} ${DATADIR}/d3xp
 	cd ${WRKSRC}/d3xp && \
 		${INSTALL_DATA} game01.pk4 pak*.pk4 ${DATADIR}/d3xp
@@ -73,4 +74,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

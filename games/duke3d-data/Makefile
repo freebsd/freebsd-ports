@@ -26,15 +26,16 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-OPTIONS=	SHAREWARE "Install shareware game data version 1.3" off
+OPTIONS_DEFINE=	SHAREWARE
+SHAREWARE_DESC=	Install shareware game data version 1.3
 
 DATADIR=	${DN3DDIR}
 
 .include "Makefile.include"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_SHAREWARE)
+.if ${PORT_OPTIONS:MSHAREWARE}
 DISTFILES+=	3dduke13.zip
 PLIST_SUB+=	SHAREWARE=""
 .else
@@ -42,14 +43,14 @@ PLIST_SUB+=	SHAREWARE="@comment "
 SUB_FILES+=	pkg-message
 .endif
 
-.if defined(WITH_SHAREWARE)
+.if ${PORT_OPTIONS:MSHAREWARE}
 post-extract:
 	@cd ${WRKSRC} && ${UNZIP_CMD} -qo DN3DSW13.SHR
 .endif
 
 do-install:
 	${MKDIR} ${DATADIR}
-.if defined(WITH_SHAREWARE)
+.if ${PORT_OPTIONS:MSHAREWARE}
 	${INSTALL_DATA} ${WRKSRC}/DUKE3D.GRP ${DATADIR}/duke3d.grp
 .else
 
@@ -59,4 +60,4 @@ post-install:
 	@${ECHO_CMD}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

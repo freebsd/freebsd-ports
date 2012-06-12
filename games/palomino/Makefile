@@ -36,27 +36,30 @@ TERRAIN_VER=	20080206
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS=	JOYSTICK "Enable joystick support through linux-js" off \
-		SDL	"SDL support for input and sound" on \
-		PLIB	"Enable sound support through plib" off \
-		GUI	"Enable FLTK GUI" on
+OPTIONS_DEFINE=	JOYSTICK SDL PLIB GUI
+OPTIONS_DEFAULT=	SDL GUI
 
-.include <bsd.port.pre.mk>
+JOYSTICK_DESC=	Enable joystick support through linux-js
+SDL_DESC=	SDL support for input and sound
+PLIB_DESC=	Enable sound support through plib
+GUI_DESC=	Enable FLTK GUI
 
-.if defined(WITH_JOYSTICK)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MJOYSTICK}
 BUILD_DEPENDS+=	${LOCALBASE}/include/linux/joystick.h:${PORTSDIR}/devel/linux-js
 RUN_DEPENDS+=	${LOCALBASE}/include/linux/joystick.h:${PORTSDIR}/devel/linux-js
 .endif
 
-.if !defined(WITHOUT_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL+=	sdl mixer
 .endif
 
-.if defined(WITHOUT_PLIB)
+.if ${PORT_OPTIONS:MPLIB}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 .endif
 
-.if !defined(WITHOUT_GUI)
+.if ${PORT_OPTIONS:MGUI}
 LIB_DEPENDS+=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 .endif
 
@@ -81,16 +84,16 @@ post-patch:
 	@${REINPLACE_CMD} -e '/FIND_PACKAGE(/ s|)| REQUIRED)|' \
 		${WRKSRC}/CMakeModules/libraries.cmake
 	@${REINPLACE_CMD} -e '/COMPILE_WITH_OSSIM/ d' ${WRKSRC}/CMakeLists.txt
-.if !defined(WITH_JOYSTICK)
+.if empty(PORT_OPTIONS:MJOYSTICK)
 	@${REINPLACE_CMD} -e '/COMPILE_WITH_LINUX_JOYSTICK/ d' ${WRKSRC}/CMakeLists.txt
 .endif
-.if defined(WITHOUT_SDL)
+.if empty(PORT_OPTIONS:MSDL)
 	@${REINPLACE_CMD} -e '/COMPILE_WITH_SDL/ d' ${WRKSRC}/CMakeLists.txt
 .endif
-.if !defined(WITH_PLIB)
+.if empty(PORT_OPTIONS:MPLIB)
 	@${REINPLACE_CMD} -e '/COMPILE_WITH_PLIB/ d' ${WRKSRC}/CMakeLists.txt
 .endif
-.if defined(WITHOUT_GUI)
+.if empty(PORT_OPTIONS:MGUI)
 	@${REINPLACE_CMD} -e '/COMPILE_WITH_FLTK/ d' ${WRKSRC}/CMakeLists.txt
 .endif
 	@${REINPLACE_CMD} -e 's|string sDataDir|&="${DATADIR}/data/"|'\
@@ -106,4 +109,4 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} "*" ${DOCSDIR}/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

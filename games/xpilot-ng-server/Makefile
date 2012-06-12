@@ -48,8 +48,9 @@ MAN6=		xpilot-ng-replay.6 \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-I${LOCALBASE}/include
 
-OPTIONS=	SDL "SDL/OpenGL client" on \
-		SOUND "Sound" off
+OPTIONS_DEFINE=	SDL SOUND
+OPTIONS_DEFAULT=	SDL
+SOUND_DESC=	Enable sound support
 
 DESKTOP_ENTRIES=	"Xpilot-ng X11" "Xpilot game client program" \
 			"" "xpilot-ng-x11" "Game;ArcadeGame;" false \
@@ -57,7 +58,7 @@ DESKTOP_ENTRIES=	"Xpilot-ng X11" "Xpilot game client program" \
 			"" "xpilot-ng-xp-mapedit" "Game;ArcadeGame;" false
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PKGNAMESUFFIX} == "-server"
 post-patch:
@@ -70,7 +71,7 @@ post-patch:
 		's| fonts||; s| textures||; s| shipshapes\.txt||' \
 		${WRKSRC}/lib/Makefile.in
 .else		# client
-.if defined(WITH_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	image sdl ttf
 USE_GL=		yes
 PLIST_SUB+=	SDL=""
@@ -82,7 +83,7 @@ CONFIGURE_ARGS+=--disable-sdl-client
 PLIST_SUB+=	SDL="@comment "
 .endif
 
-.if defined(WITH_SOUND)
+.if ${PORT_OPTIONS:MSOUND}
 USE_OPENAL=	al alut
 CONFIGURE_ARGS+=--enable-sound
 CPPFLAGS+=	${PTHREAD_CFLAGS}
@@ -100,10 +101,10 @@ post-patch:
 		's| maps||; s|defaults\.txt password\.txt robots\.txt||' \
 		${WRKSRC}/lib/Makefile.in
 	@${REINPLACE_CMD} -e 's| server||' ${WRKSRC}/src/Makefile.in
-.if defined(WITHOUT_SDL)
+.if empty(PORT_OPTIONS:MSDL)
 	@${REINPLACE_CMD} -e 's|xpilot-ng-sdl\.man||' \
 		${WRKSRC}/doc/man/Makefile.in
 .endif
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

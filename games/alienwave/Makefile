@@ -23,38 +23,35 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="-c ${CFLAGS}"
 PLIST_FILES=	bin/alienwave
 PORTDOCS=	README STORY TO_DO
 
-OPTIONS=	RANDOM_LEVELS	"Enable random waves" off \
-		LEVEL_EASY	"Killing Xzarna: easy (default: medium)" off \
-		LEVEL_HARD	"Killing Xzarna: hard (default: medium)" off
+OPTIONS_DEFINE=	RANDOM_LEVELS LEVEL DOCS
+OPTIONS_SINGLE=	LEVEL
+OPTIONS_SINGLE_LEVEL=	LEVEL_EASY LEVEL_HARD
+RANDOM_LEVELS_DESC=	Enable random waves
+LEVEL_DESC=	Choose a level different from medium
+LEVEL_EASY_DESC=	Killing Xzarna: easy
+LEVEL_HARD_DESC=	Killing Xzarna: hard
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_LEVEL_EASY)
+.if ${PORT_OPTIONS:MLEVEL_EASY}
 CFLAGS+=	-DLEV_EASY
 .endif
 
-.if defined(WITH_LEVEL_HARD)
+.if ${PORT_OPTIONS:MLEVEL_HARD}
 CFLAGS+=	-DLEV_HARD
 .endif
 
-.if defined(WITH_RANDOM_LEVELS)
+.if ${PORT_OPTIONS:MRANDOM_LEVELS}
 CFLAGS+=	-DRANDOM_LEVELS
-.endif
-
-.if defined(WITH_LEVEL_EASY) && defined(WITH_LEVEL_HARD)
-pre-everything::
-	@${ECHO_CMD} "The LEVEL_EASY and LEVEL_HARD options are mutually exclusive."
-	@${ECHO_CMD} "Please run 'make config' again."
-	@${FALSE}
 .endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/alienwave ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .  for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .  endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

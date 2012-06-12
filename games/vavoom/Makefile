@@ -20,50 +20,40 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 
-OPTIONS=	ALLEGRO "Use Allegro for hardware API" off \
-		FLAC "Enable FLAC support" off \
-		LAUNCHER "Build GUI launcher" on \
-		LIBMAD "Enable MP3 support" off \
-		MIKMOD "Enable MikMod support" off \
-		OPENAL "Enable OpenAL support" off \
-		OPENGL "Enable OpenGL support" on \
-		OPTIMIZED_CFLAGS "Enable compilation optimizations" off \
-		VORBIS "Enable Ogg Vorbis support" off \
-		SDL "Use SDL for hardware API" on \
-		WXUNICODE "Enable Unicode support" on
+OPTIONS_SINGLE=	HWAPI
+OPTIONS_SINGLE_HWAPI=	ALLEGRO SDL
+OPTIONS_DEFINE=	ALLEGRO FLAC LAUNCHER MAD MIKMOD OPENAL OPENGL OPTIMIZED_CFLAGS VORBIS SDL WXUNICODE DOCS
+OPTIONS_DEFAULT=	OPENGL SDL WXUNICODE
+ALLEGRO_DESC=	Use Allegro for hardware API
+LAUNCHER_DESC=	Build GUI launcher
+OPENAL_DESC=	Enable OpenAL support
+SDL_DESC=	Use SDL for hardware API
+WXUNICODE_DESC=	Enable Unicode support
 
 SUB_FILES=	pkg-message
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # The `-fno-strict-aliasing' flag (default on FreeBSD 6.0+) produces
 # non-working code for `vcc', so we remove it here if present.
 CFLAGS:=	${CFLAGS:N-fno-strict-aliasing}
 CXXFLAGS:=	${CFLAGS:N-fno-strict-aliasing}
 
-.if !defined(WITH_ALLEGRO) && !defined(WITH_SDL)
-IGNORE=		needs ALLEGRO or SDL for hardware API
-.endif
-
-.if defined(WITH_ALLEGRO) && defined(WITH_SDL)
-IGNORE=		selected conflicting options ALLEGRO and SDL
-.endif
-
-.if defined(WITH_ALLEGRO)
+.if ${PORT_OPTIONS:MALLEGRO}
 LIB_DEPENDS+=	alleg.42:${PORTSDIR}/devel/allegro
 CMAKE_ARGS+=	-DWITH_ALLEGRO=Y
 .else
 CMAKE_ARGS+=	-DWITH_ALLEGRO=N
 .endif
 
-.if defined(WITH_FLAC)
+.if ${PORT_OPTIONS:MFLAC}
 LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
 CMAKE_ARGS+=	-DWITH_FLAC=Y
 .else
 CMAKE_ARGS+=	-DWITH_FLAC=N
 .endif
 
-.if defined(WITH_LAUNCHER)
+.if ${PORT_OPTIONS:MLAUNCHER}
 USE_WX=		2.4+
 CMAKE_ARGS+=	-DENABLE_LAUNCHER=Y \
 		-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}"
@@ -73,30 +63,30 @@ CMAKE_ARGS+=	-DENABLE_LAUNCHER=N
 PLIST_SUB+=	LAUNCHER="@comment "
 .endif
 
-.if defined(WITH_LIBMAD)
+.if ${PORT_OPTIONS:MMAD}
 LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
 CMAKE_ARGS+=	-DWITH_LIBMAD=Y
 .else
 CMAKE_ARGS+=	-DWITH_LIBMAD=N
 .endif
 
-.if defined(WITH_MIKMOD)
+.if ${PORT_OPTIONS:MMIKMOD}
 LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
 CMAKE_ARGS+=	-DWITH_MIKMOD=Y
 .else
 CMAKE_ARGS+=	-DWITH_MIKMOD=N
 .endif
 
-.if defined(WITH_OPENAL)
+.if ${PORT_OPTIONS:MOPENAL}
 USE_OPENAL=	al
 CMAKE_ARGS+=	-DWITH_OPENAL=Y
 .else
 CMAKE_ARGS+=	-DWITH_OPENAL=N
 .endif
 
-.if defined(WITH_OPENGL)
+.if ${PORT_OPTIONS:MOPENGL}
 USE_GL=		yes
-. if defined(WITH_ALLEGRO)
+. if ${PORT_OPTIONS:MALLEGRO}
 LIB_DEPENDS+=	agl.0:${PORTSDIR}/graphics/allegrogl
 BROKEN=		please use SDL instead of ALLEGRO, for OPENGL support
 . endif
@@ -105,25 +95,25 @@ CMAKE_ARGS+=	-DWITH_OPENGL=Y
 CMAKE_ARGS+=	-DWITH_OPENGL=N
 .endif
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 .endif
 
-.if defined(WITH_VORBIS)
+.if ${PORT_OPTIONS:MVORBIS}
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 CMAKE_ARGS+=	-DWITH_VORBIS=Y
 .else
 CMAKE_ARGS+=	-DWITH_VORBIS=N
 .endif
 
-.if defined(WITH_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	mixer sdl
 CMAKE_ARGS+=	-DWITH_SDL=Y
 .else
 CMAKE_ARGS+=	-DWITH_SDL=N
 .endif
 
-.if !defined(WITHOUT_WXUNICODE)
+.if ${PORT_OPTIONS:MWXUNICODE}
 WX_UNICODE=yes
 .endif
 
@@ -137,14 +127,14 @@ post-patch:
 		${WRKSRC}/utils/acc/strlist.c
 
 post-configure:
-.if defined(WITH_LAUNCHER)
+.if ${PORT_OPTIONS:MLAUNCHER}
 	@${REINPLACE_CMD} -e 's/-pthread;-D_THREAD_SAFE //; \
 			s/-isystem /-I/g' \
 		${WRKSRC}/utils/vlaunch/CMakeFiles/vlaunch.dir/flags.make
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/vavoom.txt ${DOCSDIR}
 .endif
@@ -154,4 +144,4 @@ post-install:
 
 .include "${PORTSDIR}/games/doom-data/Makefile.include"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -25,11 +25,13 @@ USE_SDL=	image mixer
 PORTDOCS=	AUTHORS Changelog README.txt TODO
 PROJECTHOST=	${PKGNAMEPREFIX}${PORTNAME}
 
-OPTIONS=	MUSIC "Install original music pack" on
+OPTIONS_DEFINE=	MUSIC DOCS
+OPTIONS_DEFAULT=	MUSIC
+MUSIC_DESC=	Install original music pack
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_MUSIC)
+.if ${PORT_OPTIONS:MMUSIC}
 RUN_DEPENDS+=	endgame-singularity-music>=006:${PORTSDIR}/games/endgame-singularity-music
 .endif
 
@@ -70,9 +72,9 @@ post-build:
 post-install:
 	@cd ${WRKSRC}/data/&&${COPYTREE_SHARE} . ${DATADIR}/
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.py ${PREFIX}/bin/${PORTNAME}
-.ifndef NOPORTDOCS
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -d ${DOCSDIR}/
 	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -31,19 +31,22 @@ USE_XORG=	xxf86dga
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/KMQuake2_${PORTVERSION:S/.//}_src_unix
 
-OPTIONS=	3ZB2 "Build 3zb2 modification (bots)" off \
-		CLIENT "Build client" on \
-		CTF "Build CTF (Capture The Flag) modification" off \
-		DEDICATED "Build dedicated server" on \
-		GAME "Build a main game .so file (required)" on \
-		HYBRID "Build Rogue-Xatrix hybrid modification" off \
-		LIGHTS "Build Lights modification with bots" off \
-		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		PAX "Build Pax Imperia modification" off \
-		ROGUE "Build Ground Zero (Rogue) mission pack" off \
-		SDL "Build SDL client" on \
-		XATRIX "Build The Reckoning (Xatrix) mission pack" off \
-		ZAERO "Build Zaero mission pack" off
+OPTIONS_MULTI=	EXE
+OPTIONS_MULTI_EXE=	CLIENT DEDICATED SDL
+OPTIONS_DEFINE=	3ZB2 CFT GAME HYBRID LIGHTS OPTIMIZED_CFLAGS PAX ROGUE XMATRIX ZAERO DOCS
+OPTIONS_DEFAULT=	CLIENT DEDICATED OPTIMIZED_CFLAGS SDL GAME
+CLIENT_DESC=	Build client
+CFT_DESC=	Build CTF (Capture The Flag) modification
+3ZB2_DESC=	Build 3zb2 modification (bots)
+CTF_DESC=	Build CTF (Capture The Flag) modification
+DEDICATED_DESC=	Build dedicated server
+GAME_DESC=	Build a main game .so file (required)
+HYBRID_DESC=	Build Rogue-Xatrix hybrid modification
+LIGHTS_DESC=	Build Lights modification with bots
+PAX_DESC=	Build Pax Imperia modification
+ROGUE_DESC=	Build Ground Zero (Rogue) mission pack
+XMATRIX_DESC=	Build The Reckoning (Xatrix) mission pack
+ZAERO_DESC=	Build Zaero mission pack
 
 ALL_TARGET=	release
 
@@ -62,15 +65,10 @@ MOD_LIST=	3ZB2 CTF HYBRID LIGHTS PAX ROGUE XATRIX ZAERO
 
 .include "${.CURDIR}/../quake2-data/Makefile.include"
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED) && \
-    defined(WITHOUT_SDL)
-IGNORE=		needs at least one executable (CLIENT, DEDICATED and SDL)
-.endif
+.include <bsd.port.options.mk>
 
 .for mod in ${MOD_LIST}
-.   if defined(WITH_${mod})
+.   if ${PORT_OPTIONS:M${mod}}
 MOD_REQUESTED+=	${mod:L}
 MAKE_ENV+=	BUILD_${mod}=YES
 PLIST_SUB+=	${mod}=""
@@ -86,7 +84,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-addons__Makefile
 MAKE_ENV+=	KMQ2_ADDONS="${KMQ2_ADDONS:S/-1${EXTRACT_SUFX}//}"
 .endif
 
-.if !defined(WITHOUT_CLIENT) || !defined(WITHOUT_SDL)
+.if ${PORT_OPTIONS:MCLIENT} || !empty(PORT_OPTIONS:MSDL)
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
@@ -94,7 +92,7 @@ USE_OPENAL=	al
 USE_GL=		yes
 .endif
 
-.if !defined(WITHOUT_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 MAKE_ENV+=	BUILD_KMQUAKE2=YES
 PLIST_SUB+=	CLIENT=""
 Q2BIN+=		${PORTNAME}
@@ -102,7 +100,7 @@ Q2BIN+=		${PORTNAME}
 PLIST_SUB+=	CLIENT="@comment "
 .endif
 
-.if !defined(WITHOUT_DEDICATED)
+.if ${PORT_OPTIONS:MDEDICATED}
 MAKE_ENV+=	BUILD_KMQUAKE2_DEDICATED=YES
 PLIST_SUB+=	DEDICATED=""
 Q2BIN+=		${PORTNAME}-ded
@@ -110,18 +108,18 @@ Q2BIN+=		${PORTNAME}-ded
 PLIST_SUB+=	DEDICATED="@comment "
 .endif
 
-.if !defined(WITHOUT_GAME)
+.if ${PORT_OPTIONS:MGAME}
 MAKE_ENV+=	BUILD_GAME=YES
 PLIST_SUB+=	GAME=""
 .else
 PLIST_SUB+=	GAME="@comment "
 .endif
 
-.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 MAKE_ENV+=	OPTIMIZED_CFLAGS=YES
 .endif
 
-.if defined(WITH_PAX)
+.if ${PORT_OPTIONS:MPAX}
 DISTFILES+=	${PAX_DATA}:pax \
 		${PAX_PATCH}:paxpatch
 PLIST_SUB+=	PAX=""
@@ -129,7 +127,7 @@ PLIST_SUB+=	PAX=""
 PLIST_SUB+=	PAX="@comment "
 .endif
 
-.if !defined(WITHOUT_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	sdl
 MAKE_ENV+=	BUILD_KMQUAKE2_SDL=YES
 PLIST_SUB+=	SDL=""
@@ -155,7 +153,7 @@ post-extract:
 		baseq2/kmquake2.pk3 -d ${WRKSRC}/quake2
 	@${TAR} xf ${DISTDIR}/${DIST_SUBDIR}/${KMQ2_FLARES} -C ${WRKSRC}
 	@${CHMOD} go-w ${WRKSRC}/quake2/baseq2/kmquake2.pk3
-.if defined(WITH_PAX)
+.if ${PORT_OPTIONS:MPAX}
 	@${UNZIP_CMD} -qo ${DISTDIR}/${DIST_SUBDIR}/${PAX_DATA} \
 		-x "*.dll" "*.bat" -d ${WRKSRC}/quake2/pax
 	@${UNZIP_CMD} -qo ${DISTDIR}/${DIST_SUBDIR}/${PAX_PATCH} \
@@ -167,19 +165,19 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/quake2/${bin} ${PREFIX}/bin
 .endfor
 	${MKDIR} ${LIBDIR}/baseq2
-.if !defined(WITHOUT_GAME)
+.if ${PORT_OPTIONS:MGAME}
 	${CP} -Rp ${WRKSRC}/quake2/baseq2/* ${LIBDIR}/baseq2
 .endif
 .if defined(MOD_REQUESTED)
 	${CP} -Rp ${WRKDIR}/${KMQ2_ADDONS:S/-1${EXTRACT_SUFX}//}/quake2/* \
 		${LIBDIR}
 .endif
-.if defined(WITH_PAX)
+.if ${PORT_OPTIONS:MPAX}
 	${CP} -R ${WRKSRC}/quake2/pax ${LIBDIR}
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} Readme.unix kmquake2.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

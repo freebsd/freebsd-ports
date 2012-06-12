@@ -19,11 +19,12 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS=	VISITOOL "Buil GUI tool for displaying evolution" off
+OPTIONS_DEFINE=	VISITOOL
+VISITOOL_DESC=	Buil GUI tool for displaying evolution
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_VISITOOL)
+.if ${PORT_OPTIONS:MVISITOOL}
 USE_WX=		2.4
 ALL_TARGET=	all visitool
 PLIST_SUB+=	VISITOOL=""
@@ -36,9 +37,9 @@ do-install:
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} koen.* species.ini *.rc ${DATADIR}
 	cd ${WRKSRC} && ${CP} -r bench evolver_hill wilfiz ${DATADIR}
-.if defined(WITH_VISITOOL)
+.if ${PORT_OPTIONS:MVISITOOL}
 	${INSTALL_PROGRAM} ${WRKSRC}/visitool \
 		${PREFIX}/bin/${PORTNAME}-visitool
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

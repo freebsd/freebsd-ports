@@ -25,7 +25,7 @@ LIB_DEPENDS=	GLEW.1:${PORTSDIR}/graphics/glew \
 		fftw3f.6:${PORTSDIR}/math/fftw3-float \
 		expat.6:${PORTSDIR}/textproc/expat2
 
-OPTIONS=	MYSQL "Enable MySQL support" off
+OPTIONS_DEFINE=	MYSQL
 
 WRKSRC=		${WRKDIR}/scorched
 
@@ -51,7 +51,7 @@ SCORCH_REVISION=	# none
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql
 .endif

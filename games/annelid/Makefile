@@ -26,7 +26,8 @@ USE_SDL=	sdl
 USE_GL=		gl
 NO_WRKSUBDIR=	yes
 
-OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
+OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
 
 SUB_FILES=	${PORTNAME}-sh
 
@@ -35,7 +36,7 @@ DATAFILES=	annelid.dat apple.tga apple.wav backd.tga backn.tga font.dat \
 		score.wav segment.tga shrink.wav slow.wav speed.wav title.tga \
 		vortex.wav
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-patch:
 # Fix Makefile.
@@ -49,7 +50,7 @@ post-patch:
 		${WRKSRC}/*.cpp ${WRKSRC}/*.h
 
 # Enable/disable compilation optimizations.
-.if defined(WITHOUT_OPTIMIZED_CFLAGS)
+.if empty(PORT_OPTIONS:MOPTIMIZED_CFLAGS)
 	@${REINPLACE_CMD} -e 's|$$(OPT)||' ${WRKSRC}/${MAKEFILE}
 .endif
 
@@ -66,4 +67,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

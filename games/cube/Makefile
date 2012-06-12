@@ -26,22 +26,21 @@ CFLAGS+=	-fsigned-char
 ALL_TARGET=	#empty
 MALE_JOBS_SAFE=	yes
 
-OPTIONS=	CLIENT		"Build client"			on \
-		DEDICATED	"Build dedicated server"	on \
-		OPT		"Optimized CFLAGS"		off
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS DOCS
+OPTIONS_MULTI=	TYPE
+OPTIONS_MULTI_TYPE=	CLIENT DEDICATED
+OPTIONS_DEFAULT=	CLIENT DEDICATED
+CLIENT_DESC=	Build client
+DEDICATED_DESC=	Build dedicated server
 
 SUB_FILES=	cube_client cube_server
 
 CUBE_DATA=	${PORTNAME}_${PORTVERSION:S/./_/g}_unix.tar.gz
 CUBE_SRC=	${PORTNAME}_${PORTVERSION:S/./_/g}_src.zip
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED)
-IGNORE=		needs at least one executable (CLIENT and DEDICATED)
-.endif
-
-.if !defined(WITHOUT_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 USE_GL=		yes
 USE_SDL=	image mixer sdl
 ALL_TARGET+=	client
@@ -51,7 +50,7 @@ CUBE_BIN+=	client
 PLIST_SUB+=	CLIENT="@comment "
 .endif
 
-.if !defined(WITHOUT_DEDICATED)
+.if ${PORT_OPTIONS:MDEDICATED}
 ALL_TARGET+=	server
 PLIST_SUB+=	DEDICATED=""
 CUBE_BIN+=	server
@@ -59,7 +58,7 @@ CUBE_BIN+=	server
 PLIST_SUB+=	DEDICATED="@comment "
 .endif
 
-.if defined(WITH_OPT)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-O3 -fomit-frame-pointer
 .endif
 
@@ -74,10 +73,10 @@ do-install:
 	${MKDIR} ${DATADIR}
 	@(cd ${WRKDIR}/cube && ${COPYTREE_SHARE} "data packages" ${DATADIR}/)
 	${INSTALL_DATA} ${WRKDIR}/cube/autoexec.cfg ${DATADIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/cube/readme.html ${DOCSDIR}
 	@(cd ${WRKDIR}/cube/docs && ${COPYTREE_SHARE} \* ${DOCSDIR}/)
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

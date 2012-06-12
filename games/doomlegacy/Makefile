@@ -26,7 +26,9 @@ MAKE_ENV=	FREEBSD=1 FBSD_SDL=1 PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 WRKSRC=		${WRKDIR}/doomlegacy_${PORTVERSION}_src
 
-OPTIONS=	X86_ASM "Enable use of x86 assembly code" on
+OPTIONS_DEFINE=	X86_ASM DOCS
+OPTIONS_DEFAULT=	X86_ASM
+X86_ASM_DESC=	Enable use of x86 assembly code
 
 DATADIR=	${PREFIX}/lib/${PORTNAME}
 SUB_FILES=	legacy
@@ -37,7 +39,7 @@ WADFILE=	legacy_dat.zip
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_X86_ASM) && ${ARCH} == "i386"
+.if ${PORT_OPTIONS:MX86_ASM} && ${ARCH} == "i386"
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 MAKE_ARGS+=	USEASM=1
 .endif
@@ -66,7 +68,7 @@ do-install:
 		${DATADIR}
 	${INSTALL_DATA} ${WRKDIR}/bin/legacy.dat ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/legacy ${PREFIX}/bin/${PORTNAME}
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 . for f in *.html *.txt *.cfg README_SDL copying
 	${INSTALL_DATA} ${WRKSRC}/_doc/${f} ${DOCSDIR}

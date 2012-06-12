@@ -29,21 +29,24 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-OPTIONS=	EMR "Install Excalibur: Morgana's Revenge data" off \
-		ETERNAL "Install Eternal X data" off \
-		EVIL "Install Marathon Evil data" on \
-		RED "Install Marathon Red data" on \
-		RUBICON "Install Rubicon X data" off \
-		TI "Install Tempus Irae data" off \
-		GRAY "Install The gray incident data" off
+OPTIONS_MULTI=	PACKS
+OPTIONS_MULTI_PACKS=	EMR ETERNAL EVIL RED RUBICON TI GRAY
+OPTIONS_DEFAULT=	EMR ETERNAL EVIL RED RUBICON TI GRAY
+EMR_DESC=	Install Excalibur: Morgana's Revenge data
+ETERNAL_DESC=	Install Eternal X data
+EVIL_DESC=	Install Marathon Evil data
+RED_DESC=	Install Marathon Red data
+RUBICON_DESC=	Install Rubicon X data
+TI_DESC=	Install Tempus Irae data
+GRAY_DESC=	Install The gray incident data
 
 SUB_FILES=	wrapper
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 DATADIR!=	cd ${PORTSDIR}/games/alephone && ${MAKE} -V DATADIR
 
-.if defined(WITH_EMR)
+.if ${PORT_OPTIONS:MEMR}
 FETCH_ARGS=	-Fpr
 EMR_FILE=	emr-3.0-0602.tgz
 DISTFILES+=	${EMR_FILE}:emr
@@ -55,7 +58,7 @@ DESKTOP_ENTRIES+="Excalibur: Morgana's Revenge" "" "" "alephone-emr" \
 PLIST_SUB+=	EMR="@comment "
 .endif
 
-.if defined(WITH_ETERNAL)
+.if ${PORT_OPTIONS:METERNAL}
 DISTFILES+=	EternalXv103Full${EXTRACT_SUFX}:eternal
 EXTRACT_ONLY+=	EternalXv103Full${EXTRACT_SUFX}
 PLIST_SUB+=	ETERNAL=""
@@ -66,7 +69,7 @@ DESKTOP_ENTRIES+="Eternal X" "" "" "alephone-eternal" \
 PLIST_SUB+=	ETERNAL="@comment "
 .endif
 
-.if !defined(WITHOUT_EVIL)
+.if ${PORT_OPTIONS:MEVIL}
 DISTFILES+=	MarathonEvil${EXTRACT_SUFX}:bungie
 EXTRACT_ONLY+=	MarathonEvil${EXTRACT_SUFX}
 PLIST_SUB+=	EVIL=""
@@ -77,7 +80,7 @@ DESKTOP_ENTRIES+="Evil" "" "" "alephone-evil" \
 PLIST_SUB+=	EVIL="@comment "
 .endif
 
-.if !defined(WITHOUT_RED)
+.if ${PORT_OPTIONS:MRED}
 DISTFILES+=	MarathonRED${EXTRACT_SUFX}:bungie
 EXTRACT_ONLY+=	MarathonRED${EXTRACT_SUFX}
 PLIST_SUB+=	RED=""
@@ -88,7 +91,7 @@ DESKTOP_ENTRIES+="Marathon Red" "" "" "alephone-red" \
 PLIST_SUB+=	RED="@comment "
 .endif
 
-.if defined(WITH_RUBICON)
+.if ${PORT_OPTIONS:MRUBICON}
 DISTFILES+=	marathonRubiconX${EXTRACT_SUFX}:rubicon
 EXTRACT_ONLY+=	marathonRubiconX${EXTRACT_SUFX}
 PLIST_SUB+=	RUBICON=""
@@ -99,7 +102,7 @@ DESKTOP_ENTRIES+="Rubicon X" "" "" "alephone-rubicon" \
 PLIST_SUB+=	RUBICON="@comment "
 .endif
 
-.if defined(WITH_TI)
+.if ${PORT_OPTIONS:MTI}
 DISTFILES+=	Tempus_Irae${EXTRACT_SUFX}:nardofiles
 EXTRACT_ONLY+=	Tempus_Irae${EXTRACT_SUFX}
 PLIST_SUB+=	TI=""
@@ -110,7 +113,7 @@ DESKTOP_ENTRIES+="Tempus Irae" "" "" "alephone-tempus_irae" \
 PLIST_SUB+=	TI="@comment "
 .endif
 
-.if defined(WITH_GRAY)
+.if ${PORT_OPTIONS:MGRAY}
 DISTFILES+=	tgi${EXTRACT_SUFX}:gray
 EXTRACT_ONLY+=	tgi${EXTRACT_SUFX}
 PLIST_SUB+=	GRAY=""
@@ -121,12 +124,8 @@ DESKTOP_ENTRIES+="The Gray Incident" "" "" "alephone-gray" \
 PLIST_SUB+=	GRAY="@comment "
 .endif
 
-.if empty(AO_PACKS)
-IGNORE=		needs at least one option
-.endif
-
 post-extract:
-.if defined(WITH_EMR)
+.if ${PORT_OPTIONS:MEMR}
 	@${TAR} zxf ${DISTDIR}/${DIST_SUBDIR}/${EMR_FILE} -C ${WRKDIR}
 	@${MKDIR} ${WRKSRC}/emr
 	@cd ${WRKSRC}/${EMR_FILE:S/-0602.tgz//} && \
@@ -134,28 +133,28 @@ post-extract:
 		${MV} share-doc-emr ../emr/docs && \
 		${MV} README ../emr/docs
 .endif
-.if defined(WITH_ETERNAL)
+.if ${PORT_OPTIONS:METERNAL}
 	@cd ${WRKSRC} && ${MV} "Eternal X 1.0.3" eternal
 	@cd ${WRKSRC}/eternal && \
 		${FIND} . -type d -print0 | ${XARGS} -0 ${CHMOD} 755 && \
 		${FIND} . -type f -print0 | ${XARGS} -0 ${CHMOD} 644
 .endif
-.if !defined(WITHOUT_EVIL)
+.if ${PORT_OPTIONS:MEVIL}
 	@cd ${WRKSRC} && ${MV} "Marathon EVIL" evil
 .endif
-.if !defined(WITHOUT_RED)
+.if ${PORT_OPTIONS:MRED}
 	@cd ${WRKSRC} && ${MV} "Marathon RED" red
 .endif
-.if defined(WITH_RUBICON)
+.if ${PORT_OPTIONS:MRUBICON}
 	@cd ${WRKSRC} && ${MV} "Rubicon X "?? rubicon
 .endif
-.if defined(WITH_TI)
+.if ${PORT_OPTIONS:MTI}
 	@cd ${WRKSRC} && ${MV} Tempus_Irae tempus_irae
 	@cd ${WRKSRC}/tempus_irae && \
 		${FIND} . -type d -print0 | ${XARGS} -0 ${CHMOD} 755 && \
 		${FIND} . -type f -print0 | ${XARGS} -0 ${CHMOD} 644
 .endif
-.if defined(WITH_GRAY)
+.if ${PORT_OPTIONS:MGRAY}
 	@cd ${WRKSRC} && ${MV} "The Gray Incident" gray
 .endif
 
@@ -172,7 +171,7 @@ do-install:
 		${FIND} . -type d -print0 | ${XARGS} -0 ${CHMOD} ${BINMODE} && \
 		${FIND} . -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
 .endfor
-.if defined(WITH_RUBICON)
+.if ${PORT_OPTIONS:MRUBICON}
 	@${LN} -s ${DATADIR}/[A-Z]* ${DATADIR}/rubicon
 .endif
 
@@ -181,4 +180,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

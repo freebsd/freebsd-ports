@@ -24,20 +24,21 @@ CPPFLAGS+=	`${SDL_CONFIG} --cflags`
 LDFLAGS+=	`${SDL_CONFIG} --libs`
 CONFIGURE_ARGS=	--program-transform-name=
 
-OPTIONS=	EDITOR "Enable building of the map editor" on \
-		LAUNCHER "Enable building of the GTK2 launcher" on \
-		OPTIMIZED_CFLAGS "Enable compilation optimizations" on
+OPTIONS_DEFINE=	EDITOR LAUNCHER OPTIMIZED_CFLAGS
+OPTIONS_DEFAULT=	EDITOR LAUNCHER OPTIMIZED_CFLAGS
+EDITOR_DESC=	Enable building of the map editor
+LAUNCHER_DESC=	Enable building of the GTK2 launcher
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_EDITOR)
+.if ${PORT_OPTIONS:MEDITOR}
 PLIST_SUB+=	EDITOR=""
 .else
 CONFIGURE_ARGS+=--disable-editor
 PLIST_SUB+=	EDITOR="@comment "
 .endif
 
-.if !defined(WITHOUT_LAUNCHER)
+.if ${PORT_OPTIONS:MLAUNCHER}
 USE_GNOME=	gtk20
 PLIST_SUB+=	LAUNCHER=""
 .else
@@ -61,8 +62,8 @@ post-patch:
 .endfor
 
 # Enable/disable compilation optimizations.
-.if defined(WITHOUT_OPTIMIZED_CFLAGS)
+.if empty(PORT_OPTIONS:MOPTIMIZED_CFLAGS)
 	@${REINPLACE_CMD} -e 's|-O2||' ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

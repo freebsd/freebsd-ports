@@ -17,7 +17,8 @@ COMMENT=	Memory Array Redcode Simulator, just like exhaust and pMARS
 REINPLACE_ARGS=	-i ''
 ALL_TARGET=	${PORTNAME}
 
-OPTIONS=	OPTIMIZED_CFLAGS "Enable compilaton optimizations (>= 5.X)" on
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
+OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
 
 do-install:
 # Program.
@@ -54,7 +55,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|\($${OPT}\)|${CFLAGS} \1|' ${WRKSRC}/${MAKEFILE}
 
 # Enable/disable compilation optimizations.
-.if defined(WITHOUT_OPTIMIZED_CFLAGS)
+.if empty(PORT_OPTIONS:MOPTIMIZED_CFLAGS)
 	@${REINPLACE_CMD} -e 's|$${OPT}||' ${WRKSRC}/${MAKEFILE}
 .endif
 

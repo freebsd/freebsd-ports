@@ -18,10 +18,9 @@ COMMENT=	Free cross-platform real-time strategy gaming engine
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
-OPTIONS=	MIKMOD "Enable Mikmod support" off \
-		MNG "Enable MNG support" off \
-		THEORA "Enable Theora support" off \
-		VORBIS "Enable Ogg Vorbis support" on
+OPTIONS_DEFINE=	MIKMOD MNG THEORA VORBIS DOCS
+OPTIONS_DEFAULT=	VORBIS
+MNG_DESC=	Enable MNG support
 
 LICENSE=	GPLv2
 USE_GCC=	4.4+
@@ -41,30 +40,30 @@ MAKE_JOBS_UNSAFE=	yes
 PORTDOCS=	*
 PLIST_FILES=	bin/stratagus
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MIKMOD)
+.if ${PORT_OPTIONS:MMIKMOD}
 LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
 CONFIGURE_ARGS+=--with-mikmod
 .else
 CONFIGURE_ARGS+=--without-mikmod
 .endif
 
-.if defined(WITH_MNG)
+.if ${PORT_OPTIONS:MMNG}
 LIB_DEPENDS+=	mng.1:${PORTSDIR}/graphics/libmng
 CONFIGURE_ARGS+=--with-mng
 .else
 CONFIGURE_ARGS+=--without-mng
 .endif
 
-.if defined(WITH_THEORA)
+.if ${PORT_OPTIONS:MTHEORA}
 LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
 CONFIGURE_ARGS+=--with-theora
 .else
 CONFIGURE_ARGS+=--without-theora
 .endif
 
-.if defined(WITH_VORBIS)
+.if ${PORT_OPTIONS:MVORBIS}
 LIB_DEPENDS+=	vorbisfile.6:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--with-vorbis
 .else
@@ -76,7 +75,7 @@ pre-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/stratagus ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC}/doc; ${COPYTREE_SHARE} . ${DOCSDIR})
 .endif
@@ -84,4 +83,4 @@ do-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

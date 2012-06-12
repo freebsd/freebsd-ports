@@ -30,39 +30,36 @@ USE_XORG=	x11 xxf86dga
 USE_GMAKE=	yes
 ALL_TARGET=	release
 
-OPTIONS=	GLX "Build OpenGL X11 client" on \
-		GOODIES "Extra graphics, DM maps and models" off \
-		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		SDL "Build SDL client" on \
-		TEXTURES "Collection of extra textures" off
+OPTIONS_MULTI=	OUTPUT
+OPTIONS_MULTI_OUTPUT=	OPENGL SDL
+OPTIONS_DEFINE=	GOODIES	OPTIMIZED_CFLAGS TEXTURES
+OPTIONS_DEFAULT=	OPENGL OPTIMIZED_CFLAGS
+GOODIES_DESC=	Extra graphics, DM maps and models
+TEXTURES_DESC=	Collection of extra textures
 
 .include "${.CURDIR}/../quake-data/Makefile.include"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_GLX) && defined(WITHOUT_SDL)
-IGNORE=		needs at least one executable (GLX and SDL)
-.endif
-
-.if !defined(WITHOUT_GLX)
+.if ${PORT_OPTIONS:MOPENGL}
 MAKE_ENV+=	BUILD_TREMOR=YES
 PLIST_SUB+=	GLX=""
 .else
 PLIST_SUB+=	GLX="@comment "
 .endif
 
-.if defined(WITH_GOODIES)
+.if ${PORT_OPTIONS:MGOODIES}
 DISTFILES+=	tremor_goodies.zip:data
 PLIST_SUB+=	GOODIES=""
 .else
 PLIST_SUB+=	GOODIES="@comment "
 .endif
 
-.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 MAKE_ENV+=	OPTIMIZE=YES
 .endif
 
-.if !defined(WITHOUT_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	sdl
 MAKE_ENV+=	BUILD_TREMOR_SDL=YES
 PLIST_SUB+=	SDL=""
@@ -70,7 +67,7 @@ PLIST_SUB+=	SDL=""
 PLIST_SUB+=	SDL="@comment "
 .endif
 
-.if defined(WITH_TEXTURES)
+.if ${PORT_OPTIONS:MTEXTURES}
 DISTFILES+=	tremor_texture_packX.zip:data
 PLIST_SUB+=	TEXTURES=""
 .else
@@ -82,23 +79,23 @@ post-extract:
 		base/*.cfg.bak base/tremor0.pak "base/textures/*" -d ${WRKDIR}
 	@cd ${WRKDIR}/base && ${MV} config.cfg.bak config.cfg && \
 		${MV} autoexec.cfg.bak autoexec.cfg
-.if defined(WITH_GOODIES)
+.if ${PORT_OPTIONS:MGOODIES}
 	@${UNZIP_CMD} -qL ${DISTDIR}/${DIST_SUBDIR}/tremor_goodies.zip \
 		-d ${WRKDIR}
 .endif
-.if defined(WITH_TEXTURES)
+.if ${PORT_OPTIONS:MTEXTURES}
 	@${UNZIP_CMD} -q ${DISTDIR}/${DIST_SUBDIR}/tremor_texture_packX.zip \
 		-d ${WRKDIR}
 .endif
 
 do-install:
-.if !defined(WITHOUT_GLX)
+.if ${PORT_OPTIONS:MOPENGL}
 	${INSTALL_PROGRAM} ${WRKSRC}/quake/${PORTNAME}-glx ${PREFIX}/bin
 .endif
-.if !defined(WITHOUT_SDL)
+.if ${PORT_OPTIONS:MSDL}
 	${INSTALL_PROGRAM} ${WRKSRC}/quake/${PORTNAME}-sdl ${PREFIX}/bin
 .endif
 	${MKDIR} ${Q1DIR}/${PORTNAME}
 	${CP} -R ${WRKDIR}/base/* ${Q1DIR}/${PORTNAME}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

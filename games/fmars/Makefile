@@ -23,7 +23,8 @@ USE_GMAKE=	yes
 
 ALL_TARGET=	x${PORTNAME}
 
-OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS DOCS
+OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
 
 .include <bsd.port.pre.mk>
 
@@ -34,7 +35,7 @@ post-patch:
 		${WRKSRC}/${MAKEFILE}
 
 # Enable/disable compilation optimizations.
-.if defined(WITHOUT_OPTIMIZED_CFLAGS)
+.if empty(PORT_OPTIONS:MOPTIMIZED_CFLAGS)
 	@${REINPLACE_CMD} -e 's|$$(OPT)||' ${WRKSRC}/${MAKEFILE}
 .endif
 
@@ -49,7 +50,7 @@ do-install:
 .endfor
 
 # Documentation (optional).
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif

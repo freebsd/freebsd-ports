@@ -25,15 +25,15 @@ CFLAGS+=	${PTHREAD_CFLAGS}
 
 MAN6=	freesci-tools.6 freesci.6
 
-OPTIONS=	CONSOLE		 "With console support"			off \
-		SDL		 "With SDL support"			off \
-		GGI		 "With GGI support"			off \
-		DIRECTFB	 "With DirectFB support"		off \
-		OPTIMIZED_CFLAGS "Build with code optimizations"	off
+OPTIONS_DEFINE=	CONSOLE SDL GGI DIRECTFB OPTIMIZED_CFLAGS
+
+CONSOLE_DESC=	With console support
+GGI_DESC=	With GGI support
+DIRECTFB_DESC=	With DirectFB support
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=		-O3 -fexpensive-optimizations -fomit-frame-pointer -funroll-loops \
 		-fstrict-aliasing
 .if ${ARCH} != "alpha"
@@ -42,24 +42,24 @@ CFLAGS+=	-ffast-math
 .endif
 
 .if ${HAVE_SDL:Msdl}!=""
-WITH_SDL=	yes
+PORT_OPTIONS+=	SDL
 .endif
 .if exists(${LOCALBASE}/lib/libggi.so.2)
-WITH_GGI=	yes
+PORT_OPTIONS+=	GGI
 .endif
 
-.if defined(WITH_CONSOLE)
+.if ${PORT_OPTIONS:MCONSOLE}
 CONFIGURE_ARGS+=	--with-console
 .endif
 
-.if defined(WITH_SDL) && !defined(WITHOUT_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	yes
 CONFIGURE_ARGS=		--with-sdl-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-sdl
 .endif
 
-.if defined(WITH_DIRECTFB) && !defined(WITHOUT_DIRECTFB)
+.if ${PORT_OPTIONS:MDIRECTFB}
 LIB_DEPENDS+=	directfb-1.4.5:${PORTSDIR}/devel/directfb
 CONFIGURE_ARGS+=	--with-directfb-include=${LOCALBASE}/include/directfb \
 			--with-directfb-libraries=${LOCALBASE}/lib
@@ -67,7 +67,7 @@ CONFIGURE_ARGS+=	--with-directfb-include=${LOCALBASE}/include/directfb \
 CONFIGURE_ARGS+=	--without-directfb
 .endif
 
-.if defined(WITH_GGI) && !defined(WITHOUT_GGI)
+.if ${PORT_OPTIONS:MGGI}
 LIB_DEPENDS+=	ggi.2:${PORTSDIR}/graphics/libggi
 CONFIGURE_ARGS+=	--with-ggi-dir=${LOCALBASE}
 .else
@@ -78,7 +78,7 @@ pre-configure:
 	@${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/g' ${WRKSRC}/configure
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${PREFIX}/share/games/freesci
 	@${INSTALL_DATA} ${WRKSRC}/doc/sci.sgml ${WRKSRC}/doc/freesci.sgml \
 		${WRKSRC}/doc/game-list.sgml ${WRKSRC}/doc/sci-kernel.sgml \

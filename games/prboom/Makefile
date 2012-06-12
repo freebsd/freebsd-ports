@@ -23,6 +23,8 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+OPTIONS_DEFINE=	OPENGL
+OPTIONS_DEFAULT=	OPENGL
 OPTIONS=	GL "Enable OpenGL support" on
 
 MAN5=		boom.cfg.5
@@ -33,12 +35,12 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .include "${.CURDIR}/../doom-data/Makefile.include"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GL)
+.if ${PORT_OPTIONS:MOPENGL}
 USE_GL=		yes
 .else
 CONFIGURE_ARGS+=--disable-gl
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

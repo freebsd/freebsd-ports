@@ -18,12 +18,14 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl mixer
 
-OPTIONS=	LAUNCHER "Enable GUI launcher program" off \
-		MIDI	 "Enable MIDI support (timidity)" off
+OPTIONS_DEFINE= LAUNCHER MIDI
 
-.include <bsd.port.pre.mk>
+LAUNCHER_DESC=	Enable GUI launcher program
+MIDI_DESC=	Enable MIDI support (timidity)
 
-.if defined(WITH_LAUNCHER)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MLAUNCHER}
 USE_WX=		2.6+
 MAKE_ENV+=	WXRC_CMD="${WXRC_CMD}" WITH_LAUNCHER=yes
 PLIST_SUB+=	LAUNCHER=""
@@ -31,7 +33,7 @@ PLIST_SUB+=	LAUNCHER=""
 PLIST_SUB+=	LAUNCHER="@comment "
 .endif
 
-.if defined(WITH_MIDI)
+.if ${PORT_OPTIONS:MMIDI}
 RUN_DEPENDS+=	timidity:${PORTSDIR}/audio/timidity
 .endif
 
@@ -41,7 +43,7 @@ post-patch:
 		${WRKSRC}/client/src/d_main.cpp \
 		${WRKSRC}/server/src/d_main.cpp
 
-.if defined(WITH_LAUNCHER)
+.if ${PORT_OPTIONS:MLAUNCHER}
 	@${REINPLACE_CMD} -e 's|\./odamex|odamex|' \
 		${WRKSRC}/odalaunch/src/misc.cpp
 .endif
@@ -50,16 +52,16 @@ do-install:
 .for f in odamex odasrv
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
 .endfor
-.if defined(WITH_LAUNCHER)
+.if ${PORT_OPTIONS:MLAUNCHER}
 	${INSTALL_PROGRAM} ${WRKSRC}/odalaunch/odalaunch ${PREFIX}/bin
 .endif
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/odamex.wad ${DATADIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include "${.CURDIR}/../doom-data/Makefile.include"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

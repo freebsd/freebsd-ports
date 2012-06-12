@@ -22,26 +22,26 @@ USE_GL=		gl
 USE_XORG=	xxf86dga
 USE_GMAKE=	yes
 
-OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		SDL "Build SDL client" on \
-		X86_ASM "Enable x86 assembly code" on
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS SDL X86_ASM
+OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS SDL X86_ASM
+X86_ASM_DESC=	Enable x86 assembly code
 
 ALL_TARGET=	release
 SUB_FILES=	pkg-message
 
 .include "${.CURDIR}/../quake-data/Makefile.include"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .for f in OPTIMIZED_CFLAGS X86_ASM
-.   if !defined(WITHOUT_${f})
+.   if ${PORT_OPTIONS:M${f}}
 MAKE_ENV+=	USE_${f}=YES
 .   else
 MAKE_ENV+=	USE_${f}=NO
 .   endif
 .endfor
 
-.if !defined(WITHOUT_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	sdl
 MAKE_ENV+=	BUILD_SDL=YES
 PLIST_SUB+=	SDL=""
@@ -51,7 +51,7 @@ PLIST_SUB+=	SDL="@comment "
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/release/nehahra ${PREFIX}/bin
-.if !defined(WITHOUT_SDL)
+.if ${PORT_OPTIONS:MSDL}
 	${INSTALL_PROGRAM} ${WRKSRC}/release/nehahra-sdl ${PREFIX}/bin
 .endif
 	${MKDIR} ${Q1DIR}/nehahra
@@ -61,4 +61,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

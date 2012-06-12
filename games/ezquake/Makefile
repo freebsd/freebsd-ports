@@ -35,9 +35,10 @@ MAKE_ENV+=	${v}="${${v}}"
 .endfor
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/.//}_stable_sources
 
-OPTIONS=	GLX "Build GLX client" on \
-		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		X11 "Build X11 client" on
+OPTIONS_MULTI=	OUTPUT
+OPTIONS_MULTI_OUTPUT=	X11 OPENGL
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
+OPTIONS_DEFAULT=	OPENGL X11 OPTIMIZED_CFLAGS
 
 .include "${.CURDIR}/../quake-data/Makefile.include"
 
@@ -47,11 +48,7 @@ OPTIONS=	GLX "Build GLX client" on \
 BROKEN=		Does not install on powerpc: signal 2
 .endif
 
-.if defined(WITHOUT_GLX) && defined(WITHOUT_X11)
-IGNORE=		needs at least one interface (GLX or X11)
-.endif
-
-.if !defined(WITHOUT_GLX)
+.if ${PORT_OPTIONS:MOPENGL}
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 USE_GL=		yes
 ALL_TARGET+=	glx
@@ -60,7 +57,7 @@ PLIST_SUB+=	GLX=""
 PLIST_SUB+=	GLX="@comment "
 .endif
 
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=	xxf86dga
 ALL_TARGET+=	x11
 PLIST_SUB+=	X11=""
@@ -68,7 +65,7 @@ PLIST_SUB+=	X11=""
 PLIST_SUB+=	X11="@comment "
 .endif
 
-.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 MAKE_ENV+=	USE_OPTIMIZED_CFLAGS=YES
 .else
 MAKE_ENV+=	USE_OPTIMIZED_CFLAGS=NO
@@ -91,11 +88,11 @@ do-install:
 	${MKDIR} ${DATADIR}/${dir}
 	${CP} -r ${WRKDIR}/${dir}/* ${DATADIR}/${dir}
 .endfor
-.if !defined(WITHOUT_GLX)
+.if ${PORT_OPTIONS:MOPENGL}
 	${INSTALL_PROGRAM} ${WRKSRC}/release/ezquake-gl.glx \
 		${PREFIX}/bin/ezquake-glx
 .endif
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 	${INSTALL_PROGRAM} ${WRKSRC}/release/ezquake.x11 \
 		${PREFIX}/bin/ezquake-x11
 .endif

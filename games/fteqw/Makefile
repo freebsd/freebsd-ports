@@ -19,48 +19,45 @@ USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
 NO_WRKSUBDIR=	yes
 
-OPTIONS=	DEDICATED "Build dedicated server" on \
-		GL "Build OpenGL (hardware) client" on \
-		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		SDL "Build SDL (software) client" on
+OPTIONS_MULTI=	EXE
+OPTIONS_EXE=	DEDICATED OPENGL SDL
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
+OPTIONS_DEFAULT=	DEDICATED OPENGL OPTIMIZED_CFLAGS SDL
+DEDICATED_DESC=	Build dedicated server
 
 SUB_FILES=	pkg-message
 
 .include "${.CURDIR}/../quake-data/Makefile.include"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_DEDICATED) && defined(WITHOUT_GL) && defined(WITHOUT_SDL)
-IGNORE=		needs at least one executable (DEDICATED, GL or SDL)
-.endif
-
-.if !defined(WITHOUT_DEDICATED)
+.if ${PORT_OPTIONS:MDEDICATED}
 ALL_TARGET+=	sv-rel
 PLIST_FILES+=	bin/fteqw-sv
 FTE_TARGETS+=	fteqw.sv
 .endif
 
-.if !defined(WITHOUT_GL) || !defined(WITHOUT_SDL)
+.if ${PORT_OPTIONS:MGL} || !empty(PORT_OPTIONS:MSDL)
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 CFLAGS+=	-I${LOCALBASE}/include/libpng15
 .endif
 
-.if !defined(WITHOUT_GL)
+.if ${PORT_OPTIONS:MGL}
 USE_GL=		yes
 ALL_TARGET+=	gl-rel
 PLIST_FILES+=	bin/fteqw-gl
 FTE_TARGETS+=	fteqw.gl
 .endif
 
-.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 MAKE_ENV+=	OPTIMIZED_CFLAGS=true
 .endif
 
 # SDL is used instead of the native X11 software version as it reports a
 # memory allocation error at startup. It also fails with USEASM=true.
-.if !defined(WITHOUT_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	sdl
 ALL_TARGET+=	sw-rel
 PLIST_FILES+=	bin/fteqw-sdl
@@ -83,4 +80,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
