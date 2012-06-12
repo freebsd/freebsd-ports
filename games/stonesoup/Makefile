@@ -34,9 +34,11 @@ WRKSRC=		${WRKDIR}/stone_soup-${PORTVERSION}/source/
 SUB_FILES=	README.FreeBSD
 PLIST_SUB=	SAVEDIR="${SAVEDIR}"
 
-OPTIONS=	SOUND		"Sound support"			off \
-		WIZARD		"Wizard mode"			off \
-		LUA_BINDINGS	"Bindings for LUA user scripts"	off
+OPTIONS_DEFINE=	SOUND WIZARD LUA_BINDINGS DOCS EXAMPLES
+
+SOUND_DESC=	Sound support
+WIZARD_DESC=	Wizard mode
+LUA_BINDINGS_DESC=	Bindings for LUA user scripts
 
 MAKE_ARGS=	prefix=${PREFIX} \
 		DATADIR=${DATADIR} \
@@ -60,11 +62,11 @@ MAKE_ARGS+=	NO_INLINE_DEPGEN=1
 MAKE_ARGS+=	V=yes
 .endif
 
-.if defined(WITHOUT_WIZARD)
+.if empty(PORT_OPTIONS:MWIZARD)
 MAKE_ARGS+=	NOWIZARD=y
 .endif
 
-.if defined(WITH_SDL)
+.if ${PORT_OPTIONS:MSDL}
 CONFLICTS+=	${PORTNAME}-[0-9]*
 MAKE_ARGS+=	TILES=y
 PLIST_SUB+=	SDL=""
@@ -79,16 +81,16 @@ CONFLICTS+=	${PORTNAME}-sdl-[0-9]*
 PLIST_SUB+=	SDL="@comment "
 .endif
 
-.if defined(WITH_SOUND)
+.if ${PORT_OPTIONS:MSOUND}
 RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox
 .endif
 
-.if defined(WITHOUT_LUA_BINDINGS)
+.if empty(PORT_OPTIONS:MLUA_BINDINGS)
 MAKE_ARGS+=	NO_LUA_BINDINGS=yes
 .endif
 
 post-patch:
-.if defined(WITH_SOUND)
+.if ${PORT_OPTIONS:MSOUND}
 	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}," ${WRKSRC}/AppHdr.h
 	@${REINPLACE_CMD} -e "s,%%SOUND%%,," ${WRKSRC}/AppHdr.h
 .else
@@ -96,11 +98,11 @@ post-patch:
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/README.FreeBSD ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${DATADIR}/settings/init.txt ${EXAMPLESDIR}/sample.crawlrc
 .endif
