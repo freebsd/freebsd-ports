@@ -6,8 +6,8 @@
 # $FreeBSD$
 
 PORTNAME=	qmake
-PORTREVISION=	2
 DISTVERSION=	${QT4_VERSION}
+PORTREVISION=	3
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt4-
 
@@ -54,7 +54,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|@QMAKE_QTOBJS@||g' ${WRKSRC}/Makefile.unix
 
 # FIXME: This is ugly
-	@${RM} ${WRKSRC}/../mkspecs/common/*.orig
 	@${RM} ${WRKSRC}/../mkspecs/freebsd-g++/*.orig
 	@${RM} ${WRKSRC}/../mkspecs/freebsd-g++46/*.orig
 
