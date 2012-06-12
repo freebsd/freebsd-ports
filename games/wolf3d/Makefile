@@ -20,9 +20,10 @@ COMMENT=	"Wolfenstein 3D Linux" by Steven Fuller (1992)
 
 USE_SDL=	sdl
 
-OPTIONS=	WOLF_SW "Install shareware data for Wolfenstein 3D" on \
-		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		SPEAR_SW "Install shareware data for Spear of Destiny" off
+OPTIONS_DEFINE=	WOLF_SW OPTIMIZED_CFLAGS SPEAR_SW DOCS
+OPTIONS_DEFAULT=	WOLF_SW OPTIMIZED_CFLAGS
+WOLF_SW_DESC=	Install shareware data for Wolfenstein 3D
+SPEAR_SW_DESC=	Install shareware data for Spear of Destiny
 
 SUB_FILES=	pkg-message wolf3d
 
@@ -34,20 +35,20 @@ WS_CF=		-DWMODE=0
 SF_CF=		-DWMODE=3
 SS_CF=		-DWMODE=2
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_WOLF_SW)
+.if ${PORT_OPTIONS:MWOLF_SW}
 DISTFILES+=	wolfdata${EXTRACT_SUFX}:sw
 PLIST_SUB+=	WOLF_SW=""
 .else
 PLIST_SUB+=	WOLF_SW="@comment "
 .endif
 
-.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 MAKE_ENV+=	OPT_CF="-O2 -fomit-frame-pointer -ffast-math -funroll-loops"
 .endif
 
-.if defined(WITH_SPEAR_SW)
+.if ${PORT_OPTIONS:MSPEAR_SW}
 DISTFILES+=	speardata${EXTRACT_SUFX}:sw
 PLIST_SUB+=	SPEAR_SW=""
 .else
@@ -55,7 +56,7 @@ PLIST_SUB+=	SPEAR_SW="@comment "
 .endif
 
 post-extract:
-.if defined(WITH_SPEAR_SW)
+.if ${PORT_OPTIONS:MSPEAR_SW}
 	@${MV} ${WRKDIR}/audit.sdm ${WRKDIR}/audiot.sdm
 .endif
 
@@ -74,14 +75,14 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/wolf3d ${PREFIX}/bin/wolf3d
 
 	${MKDIR} ${DATADIR}
-.if !defined(WITHOUT_WOLF_SW)
+.if ${PORT_OPTIONS:MWOLF_SW}
 	${INSTALL_DATA} ${WRKDIR}/wolfdata/* ${DATADIR}
 .endif
-.if defined(WITH_SPEAR_SW)
+.if ${PORT_OPTIONS:MSPEAR_SW}
 	${INSTALL_DATA} ${WRKDIR}/*.sdm ${DATADIR}
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${MKDIR} ${DOCSDIR}/docs
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}/docs
@@ -95,4 +96,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

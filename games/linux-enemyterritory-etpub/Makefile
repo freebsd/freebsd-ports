@@ -23,7 +23,8 @@ RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 USE_ZIP=	yes
 USE_LINUX=	yes
 
-OPTIONS=	OMNIBOT "Install Omni-Bot for bot support" off
+OPTIONS_DEFINE=	OMNIBOT DOCS
+OMNIBOT_DESC=	Install Omni-Bot for bot support
 
 DATADIR=	${PREFIX}/lib/enemyterritory/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/enemyterritory-${PORTNAME}
@@ -31,9 +32,9 @@ DOCSDIR=	${PREFIX}/share/doc/enemyterritory-${PORTNAME}
 CLIENT_PK3=	${PORTNAME}_client-20070801.pk3
 PLIST_SUB=	CLIENT_PK3="${CLIENT_PK3}"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_OMNIBOT)
+.if ${PORT_OPTIONS:MOMNIBOT}
 RUN_DEPENDS+=	et-omni-bot:${PORTSDIR}/games/linux-enemyterritory-omni-bot
 .endif
 
@@ -60,7 +61,7 @@ do-install:
 .for f in PHP etadmin_mod
 	${CP} -R ${WRKSRC}/extra/${f} ${DATADIR}/extra
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .   for f in ChangeLog.txt Install.txt Upgrade-0.8.txt
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
@@ -68,4 +69,4 @@ do-install:
 	${CP} -R ${WRKSRC}/docs ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

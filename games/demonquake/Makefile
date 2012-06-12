@@ -26,9 +26,9 @@ USE_GL=		gl
 USE_XORG=	xpm xxf86dga
 USE_BZIP2=	yes
 
-OPTIONS=	GLX "Build OpenGL client" on \
-		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		SDL "Build SDL client" on
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
+OPTIONS_MULTI=	CLIENT
+OPTIONS_MULTI_CLIENT=	OPENGL SDL
 
 ALL_TARGET=	release
 
@@ -37,36 +37,32 @@ PLIST_DIRS=	%%Q1DIR%%/${PORTNAME}
 
 .include "${.CURDIR}/../quake-data/Makefile.include"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_GLX) && defined(WITHOUT_SDL)
-IGNORE=		needs at least one binary (GLX and SDL)
-.endif
-
-.if !defined(WITHOUT_GLX)
+.if ${PORT_OPTIONS:MOPENGL}
 MAKE_ENV+=	BUILD_DEMONQUAKE=YES
 PLIST_FILES+=	bin/${PORTNAME}-glx
 .endif
 
-.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 MAKE_ENV+=	OPTIMIZE=YES
 .endif
 
-.if !defined(WITHOUT_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	sdl
 MAKE_ENV+=	BUILD_DEMONQUAKE_SDL=YES
 PLIST_FILES+=	bin/${PORTNAME}-sdl
 .endif
 
 do-install:
-.if !defined(WITHOUT_GLX)
+.if ${PORT_OPTIONS:MOPENGL}
 	${INSTALL_PROGRAM} ${WRKSRC}/quake/${PORTNAME}-glx ${PREFIX}/bin
 .endif
-.if !defined(WITHOUT_SDL)
+.if ${PORT_OPTIONS:MSDL}
 	${INSTALL_PROGRAM} ${WRKSRC}/quake/${PORTNAME}-sdl ${PREFIX}/bin
 .endif
 	${MKDIR} ${Q1DIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKDIR}/DemonQuake-data/${PORTNAME}/pak0.pak \
 		${Q1DIR}/${PORTNAME}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

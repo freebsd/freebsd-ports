@@ -17,7 +17,8 @@ COMMENT=	A program that automatically solves games of Freecell
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-OPTIONS=	TCMALLOC "Use Google's TCMalloc" off
+OPTIONS_DEFINE=	TCMALLOC DOCS EXAMPLES
+TCMALLOC_DESC=	Use Google's TCMalloc
 
 USE_BZIP2=	yes
 USE_PERL5_BUILD=yes
@@ -35,7 +36,7 @@ MAN6=		fc-solve-board_gen.6 fc-solve.6 \
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_TCMALLOC)
+.if ${PORT_OPTIONS:MTCMALLOC}
 LIB_DEPENDS+=	tcmalloc.2:${PORTSDIR}/devel/google-perftools
 .else
 CMAKE_ARGS+=	-DFCS_AVOID_TCMALLOC:BOOL=ON
@@ -50,14 +51,14 @@ post-patch:
 .endfor
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for f in AUTHORS.txt HACKING.txt INSTALL.txt NEWS.txt README.txt \
 	README.win32.txt TODO.txt USAGE.txt
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 .for f in ctypes-test.py
 	${INSTALL_DATA} ${WRKSRC}/examples/${f} ${EXAMPLESDIR}

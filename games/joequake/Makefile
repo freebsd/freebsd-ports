@@ -27,22 +27,19 @@ USE_ZIP=	yes
 
 MAKEFILE=	Makefile.linux
 
-OPTIONS=	GLX "Build GLX client" on \
-		HUD "High quality HUD images (for OpenGL)" off \
-		HUD_SA "Same for Scourge of Armagon (hipnotic)" off \
-		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		X11 "Build X11 client" on \
-		X86_ASM "Enable x86 assembly code" on
+OPTIONS_MULTI=	UI
+OPTIONS_MULTI_UI=	OPENGL X11
+OPTIONS_DEFINE=	HUD HUD_SA OPTIMIZED_CFLAGS X86_ASM
+OPTIONS_DEFAULT=	OPENGL OPTIMIZED_CFLAGS X11 X86_ASM
+HUD_DESC=	High quality HUD images (for OpenGL)
+HUD_SA_DESC=	Same for Scourge of Armagon (hipnotic)
+X86_ASM_DESC= Enable x86 assembly code
 
 .include "${.CURDIR}/../quake-data/Makefile.include"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_GLX) && defined(WITHOUT_X11)
-IGNORE=		needs at least one interface (GLX or X11)
-.endif
-
-.if !defined(WITHOUT_GLX)
+.if ${PORT_OPTIONS:MOPENGL}
 USE_GL=		yes
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 ALL_TARGET+=	glx
@@ -51,35 +48,35 @@ PLIST_SUB+=	GLX=""
 PLIST_SUB+=	GLX="@comment "
 .endif
 
-.if defined(WITH_HUD)
+.if ${PORT_OPTIONS:MHUD}
 DISTFILES+=	joequake_wad${EXTRACT_SUFX}
 PLIST_SUB+=	HUD=""
 .else
 PLIST_SUB+=	HUD="@comment "
 .endif
 
-.if defined(WITH_HUD_SA)
+.if ${PORT_OPTIONS:MHUD_SA}
 DISTFILES+=	hipnotic_wad${EXTRACT_SUFX}
 PLIST_SUB+=	HUD_SA=""
 .else
 PLIST_SUB+=	HUD_SA="@comment "
 .endif
 
-.if defined(WITH_HUD) || defined(WITH_HUD_SA)
+.if ${PORT_OPTIONS:MHUD} || !empty(PORT_OPTIONS:MHUD_SA)
 PLIST_SUB+=	HUD_DIR=""
 .else
 PLIST_SUB+=	HUD_DIR="@comment "
 .endif
 
 .for f in OPTIMIZED_CFLAGS X86_ASM
-.   if !defined(WITHOUT_${f})
+.   if ${PORT_OPTIONS:M${f}}
 MAKE_ENV+=	USE_${f}=YES
 .   else
 MAKE_ENV+=	USE_${f}=NO
 .   endif
 .endfor
 
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=	xxf86dga
 ALL_TARGET+=	x11
 PLIST_SUB+=	X11=""
@@ -90,19 +87,19 @@ PLIST_SUB+=	X11="@comment "
 do-install:
 	${MKDIR} ${Q1DIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/pak0.pak ${Q1DIR}/${PORTNAME}
-.if !defined(WITHOUT_GLX)
+.if ${PORT_OPTIONS:MOPENGL}
 	${INSTALL_PROGRAM} ${WRKSRC}/release_glx/joequake-gl.glx \
 		${PREFIX}/bin/joequake-glx
 .endif
-.if defined(WITH_HUD) || defined(WITH_HUD_SA)
+.if ${PORT_OPTIONS:MHUD} || !empty(PORT_OPTIONS:MHUD_SA)
 	${MKDIR} ${Q1DIR}/${PORTNAME}/textures/wad
 	${INSTALL_DATA} ${WRKDIR}/wad/* ${Q1DIR}/${PORTNAME}/textures/wad
 .endif
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 	${INSTALL_PROGRAM} ${WRKSRC}/release_x11/joequake.x11 \
 		${PREFIX}/bin/joequake-x11
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/doc/*.txt ${DOCSDIR}
 .endif
@@ -112,4 +109,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

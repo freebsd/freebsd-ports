@@ -19,9 +19,11 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
-OPTIONS=	CLIENT "Build client" on \
-		DEDICATED "Build dedicated server" on \
-		GAME "Build a main game .so file" off
+OPTIONS_DEFINE=	CLIENT DEDICATED GAME
+OPTIONS_DEFAULT=	CLIENT DEDICATED
+CLIENT_DESC=	Build client
+DEDICATED_DESC=	Build dedicated server
+GAME_DESC=	Build a main game .so file
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 MAKE_ENV=	LIBDIR="${LIBDIR}"
@@ -29,9 +31,9 @@ PLIST_SUB=	LIBDIR=${LIBDIR:S/${PREFIX}\///}
 
 .include "${.CURDIR}/../quake2-data/Makefile.include"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png
 USE_GL=		yes
@@ -43,14 +45,14 @@ PLIST_SUB+=	CLIENT=""
 PLIST_SUB+=	CLIENT="@comment "
 .endif
 
-.if defined(WITH_DEDICATED)
+.if ${PORT_OPTIONS:MDEDICATED}
 MAKE_ENV+=	BUILD_DEDICATED=YES
 PLIST_SUB+=	DEDICATED=""
 .else
 PLIST_SUB+=	DEDICATED="@comment "
 .endif
 
-.if defined(WITH_GAME)
+.if ${PORT_OPTIONS:MGAME}
 MAKE_ENV+=	BUILD_GAME=YES
 PLIST_SUB+=	GAME=""
 .else
@@ -59,14 +61,14 @@ PLIST_SUB+=	GAME="@comment "
 
 do-install:
 	${MKDIR} ${LIBDIR}/baseq2
-.if defined(WITH_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 	${INSTALL_PROGRAM} ${WRKSRC}/quake2 ${PREFIX}/bin/${PORTNAME}
 	${INSTALL_PROGRAM} ${WRKSRC}/ref_sdlgl.so ${LIBDIR}
 .endif
-.if defined(WITH_DEDICATED)
+.if ${PORT_OPTIONS:MDEDICATED}
 	${INSTALL_PROGRAM} ${WRKSRC}/q2ded ${PREFIX}/bin/${PORTNAME}-ded
 .endif
-.if defined(WITH_GAME)
+.if ${PORT_OPTIONS:MGAME}
 	${INSTALL_PROGRAM} ${WRKSRC}/baseq2/game.so ${LIBDIR}/baseq2
 .endif
 
@@ -75,4 +77,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

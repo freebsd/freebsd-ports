@@ -21,8 +21,8 @@ LICENSE=	GPLv3 # (or later)
 
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
-OPTIONS=	NLS "Enable Native Language Support" on \
-		RSVG "Enable libRSVG support" on
+OPTIONS_DEFINE=	NLS SVG DOCS
+OPTIONS_DEFAULT=	SVG
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_w_fonts-${PORTVERSION}
 
@@ -48,17 +48,17 @@ T4K_WRKSRC=	${WRKDIR}/${T4K_NAME}-${T4K_VERSION}
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
+PLIST_SUB+=	NLS=""
+.else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
-.else
-PLIST_SUB+=	NLS=""
 .endif
 
-.if defined(WITHOUT_RSVG)
-CONFIGURE_ARGS+=--without-rsvg
-.else
+.if ${PORT_OPTIONS:MSVG}
 USE_GNOME+=	librsvg2
+.else
+CONFIGURE_ARGS+=--without-rsvg
 .endif
 
 # use multiple make jobs for T4K_WRKSRC
@@ -97,7 +97,7 @@ pre-build:
 
 post-install:
 	@${ECHO_CMD} -n > ${ETCDIR}/.keep_me
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in AUTHORS ChangeLog OFL README TODO
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}

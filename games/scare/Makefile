@@ -22,7 +22,8 @@ COMMENT=	ADRIFT-compatible interactive games interpreter
 
 LICENSE=	GPLv2
 
-OPTIONS=	XGLK "Use the xglk graphics library" off
+OPTIONS_DEFINE=	XGLK
+XGLK_DESC=	Use the xglk graphics library
 
 USE_ZIP=	yes
 MAKE_JOBS_SAFE=yes
@@ -31,7 +32,7 @@ PLIST_FILES=	bin/scare
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_XGLK)
+.if ${PORT_OPTIONS:MXGLK}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libxglk.a:${PORTSDIR}/games/xglk
 RUN_DEPENDS+=	${LOCALBASE}/lib/libxglk.a:${PORTSDIR}/games/xglk
 ALL_TARGET=	scare glkscare
@@ -50,7 +51,7 @@ post-patch:
 
 do-configure:
 	@${MKDIR} ${WRKDIR}/xglk
-.if defined(WITH_XGLK)
+.if ${PORT_OPTIONS:MXGLK}
 	@${LN} -sf ${LOCALBASE}/include/xglk/*.h ${WRKDIR}/xglk
 	@${LN} -sf ${LOCALBASE}/share/xglk/Make.xglk ${WRKDIR}/xglk
 .else
@@ -59,7 +60,7 @@ do-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/source/scare ${PREFIX}/bin
-.if defined(WITH_XGLK)
+.if ${PORT_OPTIONS:MXGLK}
 	${INSTALL_PROGRAM} ${WRKSRC}/source/glkscare ${PREFIX}/bin
 .endif
 

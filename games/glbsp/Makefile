@@ -18,22 +18,23 @@ COMMENT=	BSP node builder for OpenGL ports of the DOOM game engine
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/[[:alpha:]]//}
 
-OPTIONS=	GUI "Build FLTK based GUI" off \
-		PLUGIN "Build plugin used in DOOM engines" off
+OPTIONS_DEFINE=	GUI PLUGIN DOCS
+GUI_DESC=	Build FLTK based GUI
+PLUGIN_DESC=	Build plugin used in DOOM engines
 
 MAN1=		glbsp.1
 PORTDOCS=	README.txt USAGE.txt
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.ifdef (WITH_GUI)
+.if ${PORT_OPTIONS:MGUI}
 LIB_DEPENDS+=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 PLIST_SUB=	GUI_VERSION=""
 .else
 PLIST_SUB=	GUI_VERSION="@comment "
 .endif
 
-.ifdef (WITH_PLUGIN)
+.if ${PORT_OPTIONS:MPLUGIN}
 PLIST_SUB+=	PLUGIN=""
 .else
 PLIST_SUB+=	PLUGIN="@comment "
@@ -44,26 +45,26 @@ post-patch:
 		${WRKSRC}/Makefile ${WRKSRC}/Plugin_unx.mak
 
 post-build:
-.ifdef (WITH_GUI)
+.if ${PORT_OPTIONS:MGUI}
 	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKSRC} -f GUI_unx.mak all
 .endif
-.ifdef (WITH_PLUGIN)
+.if ${PORT_OPTIONS:MPLUGIN}
 	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKSRC} -f Plugin_unx.mak all
 .endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/glbsp ${PREFIX}/bin
-.ifdef (WITH_GUI)
+.if ${PORT_OPTIONS:MGUI}
 	${INSTALL_PROGRAM} ${WRKSRC}/glBSPX ${PREFIX}/bin
 .endif
-.ifdef (WITH_PLUGIN)
+.if ${PORT_OPTIONS:MPLUGIN}
 	${INSTALL_DATA} ${WRKSRC}/libglbsp.a ${PREFIX}/lib
 .endif
 
 	${INSTALL_MAN} ${MAN1:S|^|${WRKSRC}/|} ${MANPREFIX}/man/man1
-.ifndef (NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

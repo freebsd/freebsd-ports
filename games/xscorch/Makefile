@@ -17,7 +17,8 @@ COMMENT=	Multiplayer tank shoot-em-up
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS=	MIKMOD "Enable libmikmod support" on
+OPTIONS_DEFINE=	MIKMOD
+OPTIONS_DEFAULT=	MIKMOD
 
 USE_GNOME=	gtk20
 USE_PERL5=	yes
@@ -29,11 +30,11 @@ MAN6=		xscorch.6
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_MIKMOD)
-CONFIGURE_ARGS+=--disable-sound
-.else
+.if ${PORT_OPTIONS:MMIKMOD}
 LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
 CONFIGURE_ARGS+=--with-libmikmod-prefix=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--disable-sound
 .endif
 
 .include <bsd.port.mk>

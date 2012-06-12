@@ -17,7 +17,8 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
-OPTIONS=	VORBIS "Enable Ogg/Vorbis support" on
+OPTIONS_DEFINE=	VORBIS
+OPTIONS_DEFAULT=	VORBIS
 
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
@@ -28,12 +29,12 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_VORBIS)
-CONFIGURE_ARGS+=--disable-sound
-PLIST_SUB+=	VORBIS="@comment "
-.else
+.if ${PORT_OPTIONS:MVORBIS}
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 PLIST_SUB+=	VORBIS=""
+.else
+CONFIGURE_ARGS+=--disable-sound
+PLIST_SUB+=	VORBIS="@comment "
 .endif
 
 post-patch:

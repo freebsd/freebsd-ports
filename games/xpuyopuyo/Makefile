@@ -22,13 +22,13 @@ WANT_GNOME=	yes
 
 MAN6=		xpuyopuyo.6
 
-OPTIONS=	MIKMOD "libmikmod support" off \
-		ROTATE_FIXED "Fix position of one blob during rotation"	off \
-		AIBREED "Allow AI breeding" off
+OPTIONS_DEFINE=	MIKMOD ROTATE_FIXED AIBREED
+ROTATE_FIXED_DESC=	Fix position of one blob during rotation
+AIBREED_DESC=	Allow AI breeding
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MIKMOD) || exists(${LOCALBASE}/lib/libmikmod.a)
+.if ${PORT_OPTIONS:MMIKMOD} || exists(${LOCALBASE}/lib/libmikmod.a)
 LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
 CONFIGURE_ARGS+=--with-libmikmod-prefix=${LOCALBASE}
 .endif
@@ -40,10 +40,10 @@ PKGNAMESUFFIX=	-gnome
 CONFIGURE_ARGS+=	--without-gnome
 .endif
 
-.if defined(WITH_ROTATE_FIXED)
+.if ${PORT_OPTIONS:MROTATE_FIXED}
 CONFIGURE_ARGS+=--enable-rotate-fixed
 .endif
-.if defined(WITH_AIBREED)
+.if ${PORT_OPTIONS:MAIBREED}
 CONFIGURE_ARGS+=--enable-aibreed
 .endif
 

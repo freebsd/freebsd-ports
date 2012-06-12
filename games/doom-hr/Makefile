@@ -26,8 +26,10 @@ USE_CRLF=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-OPTIONS=	DEMO_NM "Install demos with -nomonsters" on \
-		DEMO_UV "Install Ultra-Violence demos" on
+OPTIONS_DEFINE=	DEMO_NM DEMO_UV DOCS
+OPTIONS_DEFAULT=	DEMO_NM DEMO_UV
+DEMO_NM_DESC=	Install demos with -nomonsters
+DEMO_UV_DESC=	Install Ultra-Violence demos
 
 DATADIR=	${DMDIR}/${PORTNAME}
 
@@ -36,16 +38,16 @@ post-extract:
 
 .include "${.CURDIR}/../doom-data/Makefile.include"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_DEMO_NM)
+.if ${PORT_OPTIONS:MDEMO_NM}
 DISTFILES+=	hrhelp${EXTRACT_SUFX}
 PLIST_SUB+=	DEMO_NM=""
 .else
 PLIST_SUB+=	DEMO_NM="@comment "
 .endif
 
-.if !defined(WITHOUT_DEMO_UV)
+.if ${PORT_OPTIONS:MDEMO_UV}
 DISTFILES+=	hruvlmp2${EXTRACT_SUFX}
 PLIST_SUB+=	DEMO_UV=""
 .else
@@ -55,12 +57,12 @@ PLIST_SUB+=	DEMO_UV="@comment "
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.wad ${DATADIR}
-.if !defined(WITHOUT_DEMO_NM) || !defined(WITHOUT_DEMO_UV)
+.if ${PORT_OPTIONS:MDEMO_NM} || !empty(PORT_OPTIONS:MDEMO_UV)
 	${INSTALL_DATA} ${WRKSRC}/*.lmp ${DATADIR}
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

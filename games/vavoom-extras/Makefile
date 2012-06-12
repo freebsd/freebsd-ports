@@ -30,18 +30,17 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 NO_PACKAGE=	package could be up to 661MB; set FORCE_PACKAGE if you really want it
 
-OPTIONS=	MODELS "Install 3D models (17MB)" on \
-		SOUNDTRACKS "Install enhanced soundtracks (482MB)" on \
-		TEXTURES "Install high resolution textures (157MB)" on \
-		DHTP "Prefer Doom Hires Texture Pack (87MB)" off
+OPTIONS_MULTI=	EXTRA
+OPTIONS_MULTI_EXTRA=	MODELS SOUNDTRACKS TEXTURES DHTP
 
-.include <bsd.port.pre.mk>
+MODELS_DESC=	Install 3D models (17MB)
+SOUNDTRACKS_DESC=	Install enhanced soundtracks (482MB)
+TEXTURES_DESC=	Install high resolution textures (157MB)
+DHTP_DESC=	Prefer Doom Hires Texture Pack (87MB)
 
-.if !defined(WITH_MODELS) && !defined(WITH_SOUNDTRACKS) && !defined(WITH_TEXTURES) && !defined(WITH_DHTP)
-IGNORE=		needs at least one option selected
-.endif
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MODELS)
+.if ${PORT_OPTIONS:MMODELS}
 DISTFILES+=	vmodels-doom-1.4.3.zip:vmd
 DISTFILES+=	vmodels-heretic-1.4.3.zip:vmhr
 DISTFILES+=	vmodels-hexen-1.4.3.zip:vmhx
@@ -51,14 +50,14 @@ PLIST_SUB+=	MODELS=""
 PLIST_SUB+=	MODELS="@comment "
 .endif
 
-.if defined(WITH_DHTP)
+.if ${PORT_OPTIONS:MDHTP}
 DISTFILES+=	vv-dhtp-20080808.pk3:dt
 PLIST_SUB+=	DHTP=""
 .else
 PLIST_SUB+=	DHTP="@comment "
 .endif
 
-.if defined(WITH_TEXTURES)
+.if ${PORT_OPTIONS:MTEXTURES}
 . for f in heretic hexen strife
 DISTFILES+=	vtextures-${f}-1.0${EXTRACT_SUFX}:vt10
 . endfor
@@ -67,7 +66,7 @@ PLIST_SUB+=	TEXTURES=""
 PLIST_SUB+=	TEXTURES="@comment "
 .endif
 
-.if defined(WITH_TEXTURES) && !defined(WITH_DHTP)
+.if ${PORT_OPTIONS:MTEXTURES} && empty(PORT_OPTIONS:MDHTP)
 . for f in plutonia tnt
 DISTFILES+=	vtextures-${f}-1.0${EXTRACT_SUFX}:vt10
 . endfor
@@ -79,7 +78,7 @@ PLIST_SUB+=	NODHTP=""
 PLIST_SUB+=	NODHTP="@comment "
 .endif
 
-.if defined(WITH_SOUNDTRACKS)
+.if ${PORT_OPTIONS:MSOUNDTRACKS}
 . for f in doom1 doom2 tnt plutonia heretic hexen
 DISTFILES+=	vmusic-${f}-1.0${EXTRACT_SUFX}:vmu
 . endfor
@@ -95,4 +94,4 @@ do-install:
 	cd ${WRKSRC} && ${FIND} basev -type f \
 		-exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

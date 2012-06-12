@@ -20,8 +20,9 @@ LICENSE=	GPLv2
 
 CONFLICTS=	lgeneral-data-[0-9]*
 
-OPTIONS=	SOUND "Enable sound support" on \
-		NLS "Enable native language support" on
+OPTIONS_DEFINE=	SOUND NLS DOCS
+OPTIONS_DEFAULT=	SOUND
+SOUND_DESC=	Enable sound support
 
 USE_SDL=	sdl
 USE_GMAKE=	yes
@@ -36,19 +37,19 @@ MAN6=		lgeneral.6
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_SOUND)
-CONFIGURE_ARGS+=--disable-sound
-.else
+.if ${PORT_OPTIONS:MSOUND}
 USE_SDL+=	mixer
+.else
+CONFIGURE_ARGS+=--disable-sound
 .endif
 
-.if defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
 CONFIGURE_ENV+=	am_cv_func_iconv=no
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
-.else
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
 .endif
 
 .include <bsd.port.pre.mk>
@@ -65,7 +66,7 @@ post-install:
 	@${FIND} ${DATADIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
 	@${FIND} ${DATADIR} -type d | ${XARGS} ${CHMOD} a+rx
 	@${FIND} ${DATADIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.* ${DOCSDIR}
 .endif

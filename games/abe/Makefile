@@ -25,8 +25,9 @@ CONFIGURE_ARGS=	--with-data-dir=${DATADIR}
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
-OPTIONS=	GOD_MODE "Enable God Mode (toggle with 'g')" off \
-		OPTIMIZED_CFLAGS "Enable compilation optimizations" on
+OPTIONS_DEFINE=	GOD_MODE OPTIMIZED_CFLAGS
+OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
+GOD_MODE_DESC=	Enable God Mode (toggle with 'g')
 
 post-install:
 	@${MKDIR} ${DATADIR}
@@ -34,15 +35,15 @@ post-install:
 	@${CP} -R ${WRKSRC}/${d} ${DATADIR}
 .endfor
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GOD_MODE) || defined(WITHOUT_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MGOD_MODE} || !empty{PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 post-patch:
-.   if defined(WITH_GOD_MODE)
+.   if ${PORT_OPTIONS:MGOD_MODE}
 	@${REINPLACE_CMD} -e 's|\(#define GOD_MODE\) 0|\1 1|' \
 		${WRKSRC}/src/Game.h
 .   endif
-.   if defined(WITHOUT_OPTIMIZED_CFLAGS)
+.   if empty(PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 	@${REINPLACE_CMD} -e 's|-O2||g ; \
 		s|-fomit-frame-pointer||g ; \
 		s|-ffast-math||g ; \
@@ -51,4 +52,4 @@ post-patch:
 .   endif
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

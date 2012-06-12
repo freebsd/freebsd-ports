@@ -22,10 +22,15 @@ USE_ZIP=	yes
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
 
-OPTIONS=	CLIENT "Install client" on \
-		DEDICATED "Install dedicated server" on \
-		PUNKBUSTER "Install PunkBuster" on \
-		SMP "Install SMP (threaded) client" on
+OPTIONS_MULTI=	TYPE
+OPTIONS_MULTI_TYPE=	CLIENT DEDICATED SMP
+OPTIONS_DEFINE=	PUNKBUSTER DOCS
+OPTIONS_DEFAULT=	CLIENT DEDICATED PUNKBUSTER SMP
+
+CLIENT_DESC=	Install client
+DEDICATED_DESC=	Install dedicated server
+PUNKBUSTER_DESC=	Install PunkBuster
+SMP_DESC=	Install SMP (threaded) client
 
 PLIST_SUB+=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}
@@ -48,34 +53,29 @@ post-extract:
 
 .include "${.CURDIR}/../quake3-data/Makefile.include"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED) && \
-    defined(WITHOUT_SMP)
-IGNORE=		needs at least one of the CLIENT, DEDICATED and SMP options
-.endif
-
-.if !defined(WITHOUT_DEDICATED)
+.if ${PORT_OPTIONS:MDEDICATED}
 PROGS+=		q3ded
 PLIST_SUB+=	DEDICATED=""
 .else
 PLIST_SUB+=	DEDICATED="@comment "
 .endif
 
-.if !defined(WITHOUT_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 PROGS+=		quake3.x86
 PLIST_SUB+=	CLIENT=""
 .else
 PLIST_SUB+=	CLIENT="@comment "
 .endif
 
-.if !defined(WITHOUT_PUNKBUSTER)
+.if ${PORT_OPTIONS:MPUNKBUSTER}
 PLIST_SUB+=	PUNKBUSTER=""
 .else
 PLIST_SUB+=	PUNKBUSTER="@comment "
 .endif
 
-.if !defined(WITHOUT_SMP)
+.if ${PORT_OPTIONS:MSMP}
 PROGS+=		quake3-smp.x86
 PLIST_SUB+=	SMP=""
 .else
@@ -95,18 +95,18 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/Linux/x86/${f} ${LIBDIR}/${f:R}
 	@${INSTALL_SCRIPT} ${WRKDIR}/${f:R} ${PREFIX}/bin/linux-${f:R}
 .endfor
-.if !defined(WITHOUT_PUNKBUSTER)
+.if ${PORT_OPTIONS:MPUNKBUSTER}
 	@${CP} -Rp ${WRKSRC}/pb ${DATADIR}
 	@${RM} ${DATADIR}/pb/PB_EULA.txt
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README-linux.txt ${DOCSDIR}
 	@${CP} -Rp ${WRKSRC}/Docs/LinuxFAQ ${DOCSDIR}
-.   if !defined(WITHOUT_PUNKBUSTER)
+.   if ${PORT_OPTIONS:MPUNKBUSTER}
 	@${CP} -Rp ${WRKSRC}/Docs/PunkBuster ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/pb/PB_EULA.txt ${DOCSDIR}/PunkBuster
 .   endif
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

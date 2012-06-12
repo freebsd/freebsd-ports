@@ -20,10 +20,11 @@ USE_SDL=	sdl
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-OPTIONS=	ICWS94 "Enable ICWS'94 support" on \
-		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		PERMUTATE "Enable the -P switch" on \
-		SMALLMEM "Use 16-bit addresses (smaller)" off
+OPTIONS_DEFINE=	ICWS94 OPTIMIZED_CFLAGS PERMUTATE SMALLMEM
+OPTIONS_DEFAULT=	ICWS94 OPTIMIZED_CFLAGS PERMUTATE
+ICWS94_DESC=	Enable ICWS'94 support
+PERMUTATE_DESC=	Enable the -P switch
+SMALLMEM_DESC=	Use 16-bit addresses (smaller)
 
 MAKE_ARGS+=	CFLAGS+="${CFLAGS}" \
 		CFLAGS+="-fno-builtin" \
@@ -33,21 +34,21 @@ MAKE_ARGS+=	CFLAGS+="${CFLAGS}" \
 
 PLIST_FILES=	bin/${PORTNAME}${PKGNAMESUFFIX}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_ICWS94)
+.if ${PORT_OPTIONS:MICWS94}
 MAKE_ARGS+=	CFLAGS+="-DEXT94"
 .endif
 
-.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 MAKE_ARGS+=	CFLAGS+="-O3 -fomit-frame-pointer"
 .endif
 
-.if !defined(WITHOUT_PERMUTATE)
+.if ${PORT_OPTIONS:MPERMUTATE}
 MAKE_ARGS+=	CFLAGS+="-DPERMUTATE"
 .endif
 
-.if defined(WITH_SMALLMEM)
+.if ${PORT_OPTIONS:MSMALLMEM}
 MAKE_ARGS+=	CFLAGS+="-DSMALLMEM"
 .endif
 
@@ -55,4 +56,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} \
 		${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

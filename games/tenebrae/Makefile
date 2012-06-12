@@ -25,16 +25,18 @@ USE_XORG=	xxf86dga
 USE_GL=		gl
 USE_SDL=	yes
 
-OPTIONS=	X86_ASM "Enable use of x86 assembly code" on
+OPTIONS_DEFINE=	X86_ASM DOCS
+OPTIONS_DEFAULT=	X86_ASM
+X86_ASM_DESC=	Enable use of x86 assembly code
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_0
 BUILD_WRKSRC=	${WRKSRC}/linux
 MAKEFILE=	Makefile.i386linux
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_X86_ASM)
+.if ${PORT_OPTIONS:MX86_ASM}
 MAKE_ENV+=	USE_ASM=1
 .endif
 
@@ -50,7 +52,7 @@ do-install:
 		${PREFIX}/bin
 	@${MKDIR} ${Q1DIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/Pak0.pak ${Q1DIR}/${PORTNAME}
-.ifndef (NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${TR} -d '\r' <${WRKDIR}/Tenebrae_Readme.txt \
 		>${DOCSDIR}/Tenebrae_Readme.txt
@@ -63,4 +65,4 @@ post-install:
 
 .include "${.CURDIR}/../quake-data/Makefile.include"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
