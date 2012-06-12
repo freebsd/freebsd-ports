@@ -33,12 +33,6 @@ MAKE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 
 WRKSRC=		${WRKDIR}/djview4-${PORTVERSION}
 
-.if defined(CXX) && ${CXX:M*icc}
-QMAKESPEC?=	freebsd-icc
-.else
-QMAKESPEC?=	freebsd-g++
-.endif
-
 MAN1=	djview4.1 nsdejavu.1
 MLINKS=	djview4.1 djview.1
 
