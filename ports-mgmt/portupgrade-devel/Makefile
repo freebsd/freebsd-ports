@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20120601
+PORTVERSION=	20120611
 PORTEPOCH=	3
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://github.com/pkgtools/pkgtools/tarball/${GITVERSION}/ \
@@ -24,11 +24,13 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
 CONFLICTS_INSTALL=	portupgrade-[0-9]*
 
 FETCH_ARGS=	-Fpr
-GITVERSION=	0529f13
+GITVERSION=	b0761c8
 
+DIST_SUBDIR=	${PORTNAME}
 USE_RUBY=	yes
 USE_LDCONFIG=	${PREFIX}/lib/compat/pkg
-MAKE_ARGS=	PREFIX="${PREFIX}" RUBY="${RUBY}"
+USE_STAGE=	yes
+MAKE_ARGS=	PREFIX="${PREFIX}" RUBY="${RUBY}" RUBY_SITELIBDIR="${RUBY_SITELIBDIR}" MKDIR="${MKDIR}"
 MAN1=		pkg_deinstall.1 \
 		pkg_fetch.1 \
 		pkg_glob.1 \
@@ -63,6 +65,9 @@ MAKE_ENV+=	NEED_COMPAT_SCRIPT=yes
 .else
 PLIST_SUB+=	SCRIPT="@comment "
 .endif
+
+regression-test: patch
+	cd ${WRKSRC} && ${MAKE} test
 
 post-patch:	.SILENT
 	REVISION=`readlink "${_DISTDIR}/portupgrade/latest" | ${SED} -E -e 's,.*pkgtools-(.*).tar.gz,\1,g'` && ${SED} -E -e "s,%%DATE%%,${PORTVERSION},g;s,%%REVISION%%,$${REVISION},g" \
