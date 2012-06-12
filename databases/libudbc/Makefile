@@ -25,7 +25,8 @@ USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386
 
 RESTRICTED=	'Downloading and redistribution terms are unclear'
-BROKEN=		does not fetch
+DEPRECATED=	Does not fetch and no vendor support anymore
+EXPIRATION_DATE=	2012-08-12
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKDIR}/udbcsdk/examples/udbctest ${PREFIX}/bin
