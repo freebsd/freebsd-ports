@@ -7,4 +7,13 @@ If you want start it when the system boot, please add this line
 to your /etc/rc.conf:
     openerpd_enable="YES"
 
+If postgresql is not configured, openerp-server will not start.
+You can try something like this :
+
+[root]  # su - <PGSQL>
+[PGSQL] $ openerp_dbuser=db_user #look in %%PREFIX%%/etc/openerp-server.conf
+[PGSQL] $ openerp_dbname=db_name #look in %%PREFIX%%/etc/openerp-server.conf
+[PGSQL] $ createuser $openerp_dbuser
+[PGSQL] $ createdb --owner=${openerp_dbuser} --encoding=UTF-8 --locale=en_EN.UTF-8 ${openerp_dbname} "OpenERP initial database"
+
 ************************************************************************

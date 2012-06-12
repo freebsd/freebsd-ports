@@ -2,6 +2,8 @@
 #
 # This is an example configuration file, just copy it
 # to openerp-server.conf and edit it to suit your needs.
+#
+# Patch submitted by (c) Franck Porcher, Ph.D, to smooth some default values
 
 [options]
 # Basic daemon configuration options ##################
@@ -18,7 +20,7 @@ xmlrpc = True
 netrpc = True
 secure = False
 cache_timeout = 100000
-pidfile = /var/run/openerp-server/openerp-server.pid
+pidfile = /var/run/openerp/openerp-server.pid   
 reportgz = False
 admin_passwd = admin
 login_message = False
@@ -27,15 +29,15 @@ csv_internal_sep = ,
 translate_modules = ['all']
 
 # Logging options #####################################
-syslog = False
+syslog = True
 log_level = info
-logfile = /var/log/openerp-server.log
+logfile = /var/log/openerp/openerp-server.log
 assert_exit_level = warn
 
 # Database options ####################################
-db_name = openerp-server
-db_user = openerp-server
-db_password = openerp-server
+db_name = openerp
+db_user = openerp
+db_password = openerp
 db_host = localhost
 db_maxconn = 64
 pg_path = /usr/local/bin
@@ -52,4 +54,3 @@ email_from = False
 # Use demo files? #####################################
 # without_demo = True
 # demo = {}
-
