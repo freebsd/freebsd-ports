@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-WITHOUT_X11=	yes
+OPTIONS_UNSET=  X11
 
 MASTERDIR=	${.CURDIR}/../ghostscript8
 

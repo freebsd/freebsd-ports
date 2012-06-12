@@ -5,23 +5,25 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ghostscript8
+PORTNAME=	ghostscript
 PORTVERSION=	8.71
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	print
 MASTER_SITES=	http://downloads.ghostscript.com/public/:gs_srcs \
 		SF/ghostscript/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/GPL/gs${PORTVERSION:S/.//}/:gs_srcs \
 		http://www.humblesoft.com/pub/:epag
 MASTER_SITE_SUBDIR=	ghostscript/:gs_srcs
-DISTNAME=	${PORTNAME:S,8$,,}-${PORTVERSION}
+PKGNAMESUFFIX=	8
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:gs_srcs ${EPAG_SRCS}:epag
-DIST_SUBDIR=	${PORTNAME:S,8$,,}
+DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_AFTER_ARGS=	| ${TAR} -xpf - ${EXCLUDE_DIRS:S/^/--exclude /}
 
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	Ghostscript 8.x PostScript interpreter
+
+LICENSE=	GPLv3
 
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 		jasper:${PORTSDIR}/graphics/jasper \
@@ -29,7 +31,7 @@ LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
 		tiff:${PORTSDIR}/graphics/tiff
-RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME:S,8,,}/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
+RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 
 CONFLICTS_INSTALL=	gambc-[0-9]* ghostscript[79]-[0-9]* \
 			ghostscript[79]-*-[0-9]*
@@ -40,8 +42,8 @@ WANT_GNOME=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
-MAKE_JOBS_UNSAFE=	yes
 
+MAKE_JOBS_SAFE=	yes
 MAKE_ENV=	CFLAGS_STANDARD="${CFLAGS}" \
 		XCFLAGS="${XCFLAGS}" XLDFLAGS="${XLDFLAGS}" \
 		EXTRALIBS="${EXTRALIBS}" \
@@ -66,14 +68,13 @@ PLIST_SUB=	GS_VERSION="${PORTVERSION}" \
 SUB_FILES=	pkg-message
 SUB_LIST=	DATADIR=${DATADIR} PORTVERSION=${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/pkg-message
-DATADIR=	${PREFIX}/share/${PORTNAME:S,8$,,}
 
-OPTIONS=	A4SIZE	"Set A4 (not Letter) as a default paper size"	off \
-		CUPS	"Enable CUPS support"	on \
-		FONTCONFIG	"fontconfig support"	on \
-		FT_BRIDGE	"FreeType bridge"	off \
-		GTK	"GTK frontend"	off \
-		X11	"X11 support"	on
+OPTIONS_DEFINE=	A4SIZE CAIRO CUPS FONTCONFIG FT_BRIDGE LIBPAPER GTK2 X11
+OPTIONS_DEFAULT=       CAIRO CUPS FONTCONFIG           LIBPAPER      X11
+A4SIZE_DESC=	Set A4 (not Letter) as the default paper size
+FONTCONFIG_DESC=Enable fontconfig support
+FT_BRIDGE_DESC=	Enable FreeType Bridge support
+NO_OPTIONS_SORT=yes
 
 MAN1=		dvipdf.1 font2c.1 gs.1 gslp.1 gsnd.1 \
 		pdf2dsc.1 pdf2ps.1 pdfopt.1 pf2afm.1 pfbtopfa.1 printafm.1 \
@@ -93,29 +94,39 @@ EXCLUDE_DIRS=	jbig2dec jpeg expat jasper libpng tiff zlib
 .include <bsd.port.pre.mk>
 .include "${FILESDIR}/Makefile.drivers_post"
 
-.for D in ${OPTIONS:MGS_*:S/^GS_//}
-.if !defined(WITHOUT_GS_${D})
+.for D in ${OPTIONS_DEFINE:MGS_*:S/^GS_//}
+.if ${PORT_OPTIONS:MGS_${D}}
 PLIST_SUB+=	GS_${D}=""
 .else
 PLIST_SUB+=	GS_${D}="@comment "
 .endif
 .endfor
 
-.if !defined(WITH_LETTERSIZE)
-.if defined(A4) || defined(WITH_A4SIZE)
+.if ${PORT_OPTIONS:MA4SIZE}
+DEFAULTPAPERSIZE?=	a4
 XCFLAGS+=	-DA4
 MSG_PAPERSIZE=	"NOTE: Default paper size will be A4."
 .endif
+DEFAULTPAPERSIZE?=	letter
+
+.if ${PORT_OPTIONS:MLIBPAPER}
+LIB_DEPENDS+=	paper:${PORTSDIR}/print/libpaper
+CONFIGURE_ARGS+=	--with-libpaper
+.if ${DEFAULTPAPERSIZE:L} == a4
+RUN_DEPENDS+=	${LOCALBASE}/etc/papersize:${PORTSDIR}/print/papersize-default-a4
+.endif
+.else
+CONFIGURE_ARGS+=	--without-libpaper
 .endif
 
-.if !defined(WITHOUT_FONTCONFIG)
+.if ${PORT_OPTIONS:MFONTCONFIG}
 LIB_DEPENDS+=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 CONFIGURE_ARGS+=	--enable-fontconfig
 .else
 CONFIGURE_ARGS+=	--disable-fontconfig
 .endif
 
-.if !defined(WITHOUT_FT_BRIDGE)
+.if ${PORT_OPTIONS:MFT_BRIDGE}
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 MAKE_ENV+=	FT_BRIDGE=1 FT_ROOT="${WRKSRC}/freetype" FT_LIB_EXT=".so"
 CPPFLAGS+=	-I${LOCALBASE}/include/freetype2
@@ -157,9 +168,9 @@ pre-build-drivers.mak:
 .for N in ${DEVS_LIST}
 	@${ECHO_CMD} 'DEVICE_${N}=' >> ${WRKSRC}/base/drivers.mak
 .endfor
-.for D in ${OPTIONS:MGS_*:S/^GS_//}
+.for D in ${OPTIONS_DEFINE:MGS_*:S/^GS_//}
 .for N in ${DEVS_LIST}
-.if defined(WITH_GS_${D})
+.if ${PORT_OPTIONS:MGS_${D}}
 .for X in ${DEVICE_${N}:M${D}.dev}
 	@${ECHO_CMD} 'DEVICE_${N}+= $$(DD)${D}.dev'  >> ${WRKSRC}/base/drivers.mak
 .endfor
