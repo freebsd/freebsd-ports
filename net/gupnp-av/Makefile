@@ -6,18 +6,25 @@
 #
 
 PORTNAME=	gupnp-av
-PORTVERSION=	0.5.4
-PORTREVISION=	2
+PORTVERSION=	0.10.2
 CATEGORIES=	net
-MASTER_SITES=	http://www.gupnp.org/sites/all/files/sources/
+MASTER_SITES=	GNOME
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Helpers for audio/video applications using GUPnP
 
-LIB_DEPENDS=	gupnp-1.0:${PORTSDIR}/net/gupnp
+LICENSE=	LGPL20
 
+BUILD_DEPENDS=	gobject-introspection>=0.9.5:${PORTSDIR}/devel/gobject-introspection \
+		gupnp>=0.17.0:${PORTSDIR}/net/gupnp
+LIB_DEPENDS=	gupnp-1.0:${PORTSDIR}/net/gupnp
+RUN_DEPENDS=	gupnp>=0.17.0:${PORTSDIR}/net/gupnp
+
+CONFIGURE_ARGS=	--enable-introspection=yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack intlhack glib20
+USE_GMAKE=	yes
+USE_GNOME=	glib20 gnomehack
 USE_LDCONFIG=	yes
+USE_XZ=		yes
 
 .include <bsd.port.mk>
