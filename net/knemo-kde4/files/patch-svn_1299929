@@ -1,0 +1,11 @@
+--- ./src/common/utils.cpp	2012/06/12 02:22:52	1299928
++++ ./src/common/utils.cpp	2012/06/12 02:22:55	1299929
+@@ -211,7 +211,7 @@
+                     ifname = tempname;
+                 }
+ 
+-                cp += sizeof( struct sockaddr );
++                cp += SA_SIZE( sa );
+             }
+     }
+     else

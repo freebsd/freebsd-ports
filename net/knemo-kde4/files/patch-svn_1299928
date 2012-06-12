@@ -1,0 +1,19 @@
+--- ./src/knemod/backends/bsdbackend.cpp	2012/06/12 02:19:11	1299927
++++ ./src/knemod/backends/bsdbackend.cpp	2012/06/12 02:22:52	1299928
+@@ -429,14 +429,9 @@
+         data->prevAccessPoint = data->accessPoint;
+     }
+ 
+-    if ( get80211val( ifName, IEEE80211_IOC_AUTHMODE, &val) >= 0 )
++    if ( get80211val( ifName, IEEE80211_IOC_PRIVACY, &val ) >= 0 )
+     {
+-        if ( val == IEEE80211_AUTH_WPA )
+-            data->isEncrypted = true;
+-    }
+-    else if ( get80211val( ifName, IEEE80211_IOC_WEP, &val ) >= 0 && val != IEEE80211_WEP_NOSUP )
+-    {
+-        if ( val == IEEE80211_WEP_ON )
++        if ( val > 0 )
+             data->isEncrypted = true;
+     }
+ 

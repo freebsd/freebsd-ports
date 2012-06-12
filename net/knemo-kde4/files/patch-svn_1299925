@@ -1,0 +1,78 @@
+--- ./src/knemod/backends/bsdbackend.cpp	2012/06/12 02:18:00	1299924
++++ ./src/knemod/backends/bsdbackend.cpp	2012/06/12 02:18:03	1299925
+@@ -108,6 +108,8 @@
+         interface->outgoingBytes = 0;
+         interface->prevRxPackets = interface->rxPackets;
+         interface->prevTxPackets = interface->txPackets;
++        interface->rxPackets = 0;
++        interface->txPackets = 0;
+         interface->addrData.clear();
+         interface->ip4DefaultGateway = ip4DefGw;
+         interface->ip6DefaultGateway = ip6DefGw;
+@@ -281,6 +283,7 @@
+ void BSDBackend::updateIfaceData( const QString& ifName, BackendData* data )
+ {
+     struct ifaddrs *ifa;
++    unsigned long rx_bytes = 0, tx_bytes = 0;
+     for (ifa = ifaddr; ifa != NULL; ifa = ifa->ifa_next)
+     {
+         bool allUp = false;
+@@ -294,22 +297,12 @@
+             data->status |= KNemoIface::Up;
+ 
+         // stats
++        struct if_data * stats;
+         if ( ifa->ifa_data )
+         {
+-            unsigned long rx_bytes = 0, tx_bytes = 0;
+-            struct if_data * stats = static_cast<if_data *>(ifa->ifa_data);
+-            data->rxPackets = stats->ifi_ipackets;
+-            data->txPackets = stats->ifi_opackets;
+-            rx_bytes = stats->ifi_ibytes;
+-            tx_bytes = stats->ifi_obytes;
+-            if ( IFT_PPP == stats->ifi_type )
+-                data->interfaceType == KNemoIface::PPP;
+-            incBytes( data->interfaceType, rx_bytes, data->incomingBytes, data->prevRxBytes, data->rxBytes );
+-            data->rxString = KIO::convertSize( data->rxBytes );
+-
+-            incBytes( data->interfaceType, tx_bytes, data->outgoingBytes, data->prevTxBytes, data->txBytes );
+-            data->txString = KIO::convertSize( data->txBytes );
+-
++            stats = static_cast<if_data *>(ifa->ifa_data);
++            if ( stats->ifi_type == IFT_PPP )
++                data->interfaceType = KNemoIface::PPP;
+             if ( stats->ifi_link_state == LINK_STATE_UP && ifa->ifa_flags & IFF_UP )
+                 allUp = true;
+         }
+@@ -350,6 +343,16 @@
+ 
+                 if ( !addrKey.isEmpty() )
+                     data->addrData.insert( addrKey, addrVal );
++
++                if ( stats )
++                {
++                    // Sum the numbers of all network-level interfaces
++                    // (e.g., when several IP addresses are assigned)
++                    data->rxPackets += stats->ifi_ipackets;
++                    data->txPackets += stats->ifi_opackets;
++                    rx_bytes += stats->ifi_ibytes;
++                    tx_bytes += stats->ifi_obytes;
++                }
+             }
+         }
+ 
+@@ -359,6 +362,14 @@
+                 data->status |= KNemoIface::Connected;
+         }
+     }
++
++    // Traffic stats. No check needed: if there were no stats,
++    // values are and always were 0
++    incBytes( data->interfaceType, rx_bytes, data->incomingBytes, data->prevRxBytes, data->rxBytes );
++    data->rxString = KIO::convertSize( data->rxBytes );
++    incBytes( data->interfaceType, tx_bytes, data->outgoingBytes, data->prevTxBytes, data->txBytes );
++    data->txString = KIO::convertSize( data->txBytes );
++
+     if ( data->status < KNemoIface::Available )
+         data->status = KNemoIface::Unavailable;
+ }

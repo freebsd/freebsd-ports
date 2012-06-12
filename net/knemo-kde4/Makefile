@@ -6,13 +6,13 @@
 
 PORTNAME=	knemo
 PORTVERSION=	0.7.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net kde
 MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
 DISTNAME=	12956-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
-COMMENT=	Network monitor for KDE
+COMMENT=	KDE network monitor
 
 LATEST_LINK=	${PORTNAME}-kde4
 
