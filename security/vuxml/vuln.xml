@@ -52,6 +52,32 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="55587adb-b49d-11e1-8df1-0004aca374af">
+    <topic>mantis -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mantis</name>
+	<range><lt>1.2.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mantis reports:</p>
+	<blockquote cite="http://sourceforge.net/mailarchive/forum.php?thread_name=1339229952.28538.22%40d.hx.id.au&amp;forum_name=mantisbt-dev">
+	  <p>These vulnerabilities can allow arbitrary users to modify the
+	    database without authority.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist>http://sourceforge.net/mailarchive/forum.php?thread_name=1339229952.28538.22%40d.hx.id.au&amp;forum_name=mantisbt-dev</mlist>
+    </references>
+    <dates>
+      <discovery>2012-06-09</discovery>
+      <entry>2012-06-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="38195f00-b215-11e1-8132-003067b2972c">
     <topic>linux-flashpluyin -- multiple vulnerabilities</topic>
     <affects>
