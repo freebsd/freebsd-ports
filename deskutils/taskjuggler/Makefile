@@ -22,8 +22,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Class/MethodMaker.pm:${PORTSDIR}/devel/
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-OPTIONS=	DOCS "Build documentation" on \
-		KDE "Build KDE frontend" on
+OPTIONS_DEFINE=	DOCS KDE3
+OPTIONS_DEFAULT=	KDE3
 
 USE_BZIP2=	yes
 USE_QT_VER=	3
@@ -38,19 +38,15 @@ USE_LDCONFIG=	yes
 
 AUTOTOOLSFILES=	admin/cvs.sh
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_DOCS)
-NOPORTDOCS=	true
-.endif
-
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt
 .else
 CONFIGURE_ARGS+=--disable-docs
 .endif
 
-.if !defined(WITHOUT_KDE)
+.if ${PORT_OPTIONS:MKDE3}
 LIB_DEPENDS+=	kimproxy:${PORTSDIR}/x11/kdelibs3 \
 		kcal.2:${PORTSDIR}/deskutils/kdepim3
 PLIST_SUB+=	KDE=""
@@ -92,4 +88,4 @@ regression-test:
 	@(cd ${BUILD_WRKSRC}/TestSuite;	\
 	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
