@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	adstudio
-PORTVERSION=	10.0.7
+PORTVERSION=	10.0.11
 CATEGORIES=	databases devel java
-MASTER_SITES=	http://dd1.aquafold.com/download/v${PORTVERSION:R}.0/java/
-DISTNAME=	ads-java-novm-${PORTVERSION}
+MASTER_SITES=	http://dd1.aquafold.com/download/v${PORTVERSION:R}.0/java/ \
+		http://dd1.aquafold.com/download/v${PORTVERSION:R}.0/:patch
+DISTFILES=	ads-java-novm-10.0.10${EXTRACT_SUFX} ads-${PORTVERSION}-patch.zip:patch
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A database query and administration tool
@@ -21,8 +22,6 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper	\
 		${LOCALBASE}/lib/libjogl.so:${PORTSDIR}/graphics/jogl
-
-BROKEN=		does not fetch
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -36,6 +35,7 @@ INSTFILES=	changelog.txt datastudio-*.png datastudio.gif	\
 		datastudio.ico lib license
 INSTSCRIPTS=	datastudio runscript
 INSTLICENSE=	License.txt
+EXTRACT_ONLY=	${_DISTFILES:M*tar.gz}
 EXTRACT_AFTER_ARGS=|${TAR} -xpf - ${INSTSCRIPTS:S|^|./datastudio/|:S|$|.sh|} ${INSTLICENSE:S|^|./datastudio/|}
 
 pre-configure:
@@ -45,8 +45,11 @@ pre-configure:
 
 do-install:
 	${MKDIR} ${DATADIR}
-	${TAR} -C ${DATADIR} -xpf ${DISTDIR}/${_DISTFILES}	\
+	# Extracting the base version:
+	${TAR} -C ${DATADIR} -xpf ${DISTDIR}/${EXTRACT_ONLY}	\
 		${INSTFILES:S|^|./datastudio/|}
+	# Patching:
+	${TAR} -C ${DATADIR}/datastudio/ -xpf ${DISTDIR}/${_DISTFILES:M*zip}
 	${MV} ${DATADIR}/datastudio/* ${DATADIR}
 	${RMDIR} ${DATADIR}/datastudio
 	${INSTALL_SCRIPT} ${INSTSCRIPTS:S|^|${WRKSRC}/|:S|$|.sh|} ${PREFIX}/bin
