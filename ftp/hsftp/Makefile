@@ -21,11 +21,12 @@ MAKEFILE=	makefile
 MAN1=		hsftp.1
 PLIST_FILES=	bin/hsftp
 
-OPTIONS=	OPENSSH "Build with OpenSSH support" off
+OPTIONS_DEFINE=	OPENSSH
+OPENSSH_DESC=	Build with OpenSSH support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_OPENSSH)
+.if ${PORT_OPTIONS:MOPENSSH}
 RUN_DEPENDS+=	ssh:${PORTSDIR}/security/openssh
 CONFIGURE_ARGS+=	--with-openssh
 .endif
@@ -37,4 +38,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hsftp ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/hsftp.1 ${MANPREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

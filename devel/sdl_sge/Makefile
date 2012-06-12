@@ -19,38 +19,29 @@ COMMENT=	A graphic library for the Simple DirectMedia Layer (SDL)
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 
-OPTIONS=	SDL_IMAGE "Enable support for SDL_image" On \
-		FREETYPE "Enable FreeType support" On \
-		DOCS "Install documentation" On \
-		EXAMPLES "Install examples" On
+OPTIONS_DEFINE=	SDL FREETYPE DOCS EXAMPLES
+OPTIONS_DEFAULT=	SDL FREETYPE
+SDL_dESC=	Enable support for SDL_image
 
 USE_SDL=	sdl
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_FREETYPE)
-MAKE_ARGS+=	USE_FT=n
-.else
+.if ${PORT_OPTIONS:MFREETYPE}
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 MAKE_ARGS+=	USE_FT=y
+.else
+MAKE_ARGS+=	USE_FT=n
 .endif
 
-.if defined(WITHOUT_SDL_IMAGE)
-MAKE_ARGS+=	USE_IMG=n
-.else
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL+=	image
 MAKE_ARGS+=	USE_IMG=y
-.endif
-
-.if !defined(WITH_DOCS)
-NOPORTDOCS=	yes
-.endif
-
-.if !defined(WITH_EXAMPLES)
-NOPORTEXAMPLES=	yes
+.else
+MAKE_ARGS+=	USE_IMG=n
 .endif
 
 post-patch:
@@ -60,13 +51,13 @@ post-patch:
 		 s|sdl-config|${SDL_CONFIG}|g' ${WRKSRC}/Makefile.conf
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

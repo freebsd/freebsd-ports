@@ -34,11 +34,13 @@ ALL_TARGET=	sub-src
 
 SUB_FILES=	pkg-message
 
-OPTIONS=	IDE "Enable the QSA Workbench (embedded scripting IDE)" on
+OPTIONS_DEFINE=	IDE
+OPTIONS_DEFAULT=	IDE
+IDE_DESC=	Enable the QSA Workbench (embedded scripting IDE)
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_IDE)
+.if empty(PORT_OPTIONS:MIDE)
 CONFIGURE_ARGS+=-no-ide
 .endif
 

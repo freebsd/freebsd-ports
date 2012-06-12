@@ -23,7 +23,7 @@ LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre \
 		paper.2:${PORTSDIR}/print/libpaper
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 
-OPTIONS=	GTK "Use Gtk+ user intarface" off
+OPTIONS_DEFINE=	GTK2 DOCS
 
 WRKSRC=		${WRKDIR}/Ted-${PORTVERSION}
 
@@ -49,7 +49,7 @@ INDDIR=		${DATADIR}/dfa
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GTK)
+.if ${PORT_OPTIONS:MGTK2}
 USE_GNOME=	gtk20
 CONFIGURE_ARGS+=--with-GTK
 .else
@@ -81,7 +81,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/tedPackage/Ted/afm/*.afm ${AFMDIR}
 	@${MKDIR} ${INDDIR}
 	${INSTALL_DATA} ${WRKSRC}/tedPackage/Ted/dfa/*.dfa ${INDDIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/tedPackage/Ted/TedDocument-en_US.rtf ${DOCSDIR}
 .endif

@@ -14,7 +14,8 @@ MASTER_SITES=	http://pages.cs.wisc.edu/~larus/SPIM/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIPS32 Simulator
 
-OPTIONS=	GUI "Graphical user interface" on
+OPTIONS_DEFINE=	GUI DOCS
+OPTIONS_DEFAULT=	GUI
 
 BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
 INSTALL_WRKSRC=	${WRKSRC}/${PORTNAME}
@@ -26,9 +27,9 @@ PORTDOCS=	cycle.ps.gz spim.ps.gz SPIM.html
 PLIST_FILES=	bin/spim %%DATADIR%%/exceptions.s
 PLIST_DIRS=	%%DATADIR%%
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_GUI)
+.if ${PORT_OPTIONS:MGUI}
 USE_XORG=	x11 xaw
 BUILD_DEPENDS+=			imake:${PORTSDIR}/devel/imake
 PLIST_FILES+=	bin/xspim
@@ -36,7 +37,7 @@ MAN1+=		xspim.1
 .endif
 
 post-build:
-.if !defined(WITHOUT_GUI)
+.if ${PORT_OPTIONS:MGUI}
 	@(cd ${WRKSRC}/xspim && ${XMKMF} && \
 		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE})
 .endif
@@ -46,11 +47,11 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/Documentation/spim.man ${MANPREFIX}/man/man1/spim.1
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/CPU/exceptions.s ${DATADIR}/exceptions.s
-.if !defined(WITHOUT_GUI)
+.if ${PORT_OPTIONS:MGUI}
 	${INSTALL_PROGRAM} ${WRKSRC}/xspim/xspim ${PREFIX}/bin/xspim
 	${INSTALL_MAN} ${WRKSRC}/Documentation/xspim.man ${MANPREFIX}/man/man1/xspim.1
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Documentation/TeX/cycle.ps ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Documentation/TeX/spim.ps ${DOCSDIR}
@@ -58,4 +59,4 @@ do-install:
 	${GZIP_CMD} ${DOCSDIR}/cycle.ps ${DOCSDIR}/spim.ps
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

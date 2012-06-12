@@ -25,9 +25,9 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk12
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		RAZE "Use RAZE z80 emulation (only for i386)" on \
-		SDL_AUDIO "Use SDL for audio" off
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS RAZE SDL
+RAZE_DESC=	Use RAZE z80 emulation (only for i386)
+SDL_DESC=	Use SDL for audio
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name=s/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/
@@ -41,18 +41,18 @@ LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_OPTIMIZED_CFLAGS)
+.if empty(PORT_OPTIONS:MOPTIIMIZED_CFLAGS)
 CONFIGURE_ARGS+=	--without-gcc
 .endif
 
-.if !defined(WITHOUT_RAZE) && ${ARCH} == "i386"
+.if ${PORT_OPTIONS:MRAZE} && ${ARCH} == "i386"
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 CONFIGURE_ARGS+=--with-raze
 .else
 CONFIGURE_ARGS+=--with-cmz80
 .endif
 
-.if defined(WITH_SDL_AUDIO)
+.if ${PORT_OPTIONS:MSDL}
 CONFIGURE_ARGS+=--with-sdl-audio
 .endif
 

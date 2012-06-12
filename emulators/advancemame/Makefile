@@ -23,8 +23,8 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-idirafter ${LOCALBASE}/include
 
-OPTIONS=	FREETYPE "Enable FreeType2 support" off \
-		SLANG "Enable sLang support (for video driver)" off
+OPTIONS_DEFINE=	FREETYPE SLANG DOCS
+SLANG_DESC=	Enable sLang support (for video driver)
 
 MAN1=		advdev.1 advj.1 advk.1 advm.1 advmame.1 advs.1
 
@@ -37,13 +37,13 @@ BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 BROKEN=		Does not compile on powerpc
 .endif
 
-.if defined(WITH_FREETYPE)
+.if ${PORT_OPTIONS:MFREETYPE}
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 .else
 CONFIGURE_ARGS+=--disable-freetype
 .endif
 
-.if defined(WITH_SLANG)
+.if ${PORT_OPTIONS:MSLANG}
 LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
 .else
 CONFIGURE_ARGS+=--disable-slang
@@ -52,7 +52,7 @@ CONFIGURE_ARGS+=--disable-slang
 post-patch:
 	@${REINPLACE_CMD} -Ee 's|^(pkg.*)/advance|\1/${PORTNAME}|' \
 		${WRKSRC}/advance/advance.mak
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/pkgdocdir/d' ${WRKSRC}/advance/advance.mak
 .endif
 

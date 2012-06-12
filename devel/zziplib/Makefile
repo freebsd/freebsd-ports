@@ -18,7 +18,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-OPTIONS=	SDL "Enable SDL support" off
+OPTIONS_DEFINE=	SDL
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack pkgconfig
@@ -58,7 +58,7 @@ PORTSCOUT=	limit:^0\.
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	sdl
 CONFIGURE_ARGS+=--enable-sdl
 PLIST_SUB+=	SDL=""

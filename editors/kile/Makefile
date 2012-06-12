@@ -25,16 +25,18 @@ USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 
-OPTIONS=	KPDF "Use KPDF and KDVI for viewing" on
+OPTIONS_DEFINE=	KPDF
+OPTIONS_DEFAULT=	KPDF
+KPDF_DESC=	Use KPDF and KDVI for viewing
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's| syntax||g' ${WRKSRC}/src/kile/Makefile.in
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_KPDF)
+.if ${PORT_OPTIONS:MKPDF}
 RUN_DEPENDS+=	kpdf:${PORTSDIR}/graphics/kdegraphics3
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

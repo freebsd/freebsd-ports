@@ -16,10 +16,10 @@ COMMENT=	A programming text editor
 LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS=	NLS	"Native language support"	on \
-		GTK2	"Build with GTK2 support"	off \
-		QT4	"Build with QT4 support"	off \
-		PCRE	"Build with PCRE support"	on
+OPTIONS_DEFINE=	NLS GUI PCRE DOCS
+OPTIONS_SINGLE=	GUI
+OPTIONS_SINGLE_GUI=	GTK2 QT4
+OPTIONS_DEFAULT=	PCRE
 
 WANT_GNOME=	yes
 USE_NCURSES=	yes
@@ -34,25 +34,21 @@ DATADIR=	${PREFIX}/share/mp-5
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GTK2) && defined(WITH_QT4)
-IGNORE=	GTK2 and QT4 GUIs are mutually exclusive. Please rerun 'make config' and disable one of these
-.endif
-
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--without-gettext
-PLIST_SUB+=	NLS="@comment "
-.else
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--without-gettext
+PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITH_GTK2)
+.if ${PORT_OPTIONS:MGTK2}
 USE_GNOME+=	gtk20
 .else
 CONFIGURE_ARGS+=	--without-gtk
 .endif
 
-.if defined(WITH_QT4)
+.if ${PORT_OPTIONS:MQT4}
 USE_QT4=	corelib gui moc_build
 QT_NONSTANDARD=	yes
 CONFIGURE_ENV+=	CPP="${CXX}" CCLINK="${CXX}"
@@ -60,7 +56,7 @@ CONFIGURE_ENV+=	CPP="${CXX}" CCLINK="${CXX}"
 CONFIGURE_ARGS+=	--without-qt4
 .endif
 
-.if !defined(WITHOUT_PCRE)
+.if ${PORT_OPTIONS:MPCRE}
 LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=	--with-pcre
 .endif
@@ -87,14 +83,14 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/mp_*.mpsl ${DATADIR}
 	@${MKDIR} ${DATADIR}/lang
 	${INSTALL_DATA} ${WRKSRC}/lang/*.mpsl ${DATADIR}/lang
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 .for lang in de es it nl ru sv
 	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/po/${lang}.mo \
 		${PREFIX}/share/locale/${lang}/LC_MESSAGES/minimum-profit.mo
 .endfor
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in AUTHORS README RELEASE_NOTES mp_templates.sample doc/*.*
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}

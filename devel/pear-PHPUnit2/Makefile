@@ -28,7 +28,8 @@ PEAR_AUTOINSTALL=	yes
 
 LATEST_LINK=	pear-PHPUnit2
 
-OPTIONS=	PEAR_LOG "PEAR::Log support" off
+OPTIONS_DEFINE=	PEAR_LOG
+PEAR_LOG_DESC=	PEAR::Log support
 
 USE_PHP=	dom pcre
 
@@ -37,7 +38,7 @@ IGNORE_WITH_PHP=4
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_PEAR_LOG)
+.if ${PORT_OPTIONS:MPEAR_LOG}
 RUN_DEPENDS+=	${PEARDIR}/Log/null.php:${PORTSDIR}/sysutils/pear-Log
 .endif
 

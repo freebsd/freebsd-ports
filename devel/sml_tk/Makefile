@@ -18,25 +18,28 @@ COMMENT=	Typed and abstract Standard ML interface to Tcl/Tk
 USE_TK_WRAPPER=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS=	SMLNJDEVEL	"Build with and stabilize for SML/NJ." on \
-		POLYML		"Build and save state for Poly/ML"     on
+OPTIONS_DEFINE=	SMLNJDEVEL POLYML
+OPTIONS_DEFAULT=	SMLNJDEVEL POLYML
+
+SMLNJDEVEL_DESC=	Build with and stabilize for SML/NJ
+POLYML_DESC=	Build and save state for Poly/ML
 
 ALL_TARGET=	smltk
 SUB_FILES=	sml_tk.1
 MAN1=		sml_tk.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_SMLNJDEVEL)
+.if ${PORT_OPTIONS:MSMLNJDEVEL}
 BUILD_DEPENDS+=	smlnj-devel>=65:${PORTSDIR}/lang/sml-nj-devel
 .endif
-.if defined(WITH_POLYML)
+.if ${PORT_OPTIONS:MPOLYML}
 BUILD_DEPENDS+=	poly:${PORTSDIR}/lang/polyml
 .endif
 
 MAKE_ENV+=	WRKSRC=${WRKSRC} WISH=${WISH}
 
-.if defined(WITH_SMLNJDEVEL)
+.if ${PORT_OPTIONS:MSMLNJDEVEL}
 MAKE_ENV+=	STABILIZE=yes SMLNJDEVEL=yes
 PLIST_SUB+=	STABLE="" SMLNJBIN=""
 .else
@@ -44,7 +47,7 @@ MAKE_ENV+=	STABILIZE=no SMLNJDEVEL=no
 PLIST_SUB+=	STABLE="@comment " SMLNJBIN="@comment "
 .endif
 
-.if defined(WITH_POLYML)
+.if ${PORT_OPTIONS:MPOLYML}
 MAKE_ENV+=	POLYML=yes
 PLIST_SUB+=	POLYSTATE=""
 .else
@@ -66,7 +69,7 @@ post-extract:
 	@${CHMOD} 0644 ${WRKSRC}/lib/images/info.gif
 
 post-build:
-.if defined(WITH_SMLNJDEVEL)
+.if ${PORT_OPTIONS:MSMLNJDEVEL}
 	SMLNJ_DEVEL=yes heap2exec \
 		${WRKSRC}/bin/sml_tk.heap.x86-bsd ${WRKSRC}/bin/sml_tk
 .endif
@@ -91,7 +94,7 @@ do-install:
 	 done)
 	@${LN} -s ${PREFIX}/lib/${PORTNAME}/smltk.cm \
 		  ${PREFIX}/lib/${PORTNAME}/sml_tk.cm
-.if defined(WITH_SMLNJDEVEL)
+.if ${PORT_OPTIONS:MSMLNJDEVEL}
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/sml_tk ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/lib/${PORTNAME}/.cm
 	@${MKDIR} ${PREFIX}/lib/${PORTNAME}/.cm/x86-unix
@@ -100,11 +103,11 @@ do-install:
 	@${LN} -s ${PREFIX}/lib/${PORTNAME}/.cm/x86-unix/sources.cm \
 	          ${PREFIX}/lib/${PORTNAME}/.cm/x86-unix/sml_tk.cm
 .endif
-.if defined(WITH_POLYML)
+.if ${PORT_OPTIONS:MPOLYML}
 	@${INSTALL_DATA} ${WRKSRC}/bin/sml_tk.poly \
 			${PREFIX}/lib/${PORTNAME}/sml_tk.poly
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_MAN} ${WRKSRC}/doc/manual.html ${DOCSDIR}/manual.html
 	@${MKDIR} ${DOCSDIR}/images
@@ -114,4 +117,4 @@ do-install:
 .endif
 	@${INSTALL_MAN} ${WRKDIR}/sml_tk.1 ${MANPREFIX}/man/man1/sml_tk.1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
