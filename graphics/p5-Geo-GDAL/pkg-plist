@@ -1,0 +1,28 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Geo/GDAL.dox
+%%SITE_PERL%%/%%PERL_ARCH%%/Geo/GDAL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Geo/GDAL/Const.dox
+%%SITE_PERL%%/%%PERL_ARCH%%/Geo/GDAL/Const.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Geo/OGR.dox
+%%SITE_PERL%%/%%PERL_ARCH%%/Geo/OGR.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Geo/OSR.dox
+%%SITE_PERL%%/%%PERL_ARCH%%/Geo/OSR.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Geo/check_dox.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/GDAL/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/GDAL/Const/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/GDAL/Const/Const.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/GDAL/Const/Const.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/GDAL/GDAL.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/GDAL/GDAL.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/OGR/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/OGR/OGR.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/OGR/OGR.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/OSR/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/OSR/OSR.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/OSR/OSR.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/OSR
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/OGR
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/GDAL/Const
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/GDAL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Geo/GDAL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Geo
