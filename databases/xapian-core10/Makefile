@@ -19,7 +19,8 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	SSE2 "Use SSE2 for floating point" Off
+OPTIONS_DEFINE=	SSE2
+SSE2_DESC=	Use SSE2 for floating point
 
 MAN1=		quartzcheck.1 quartzcompact.1 quartzdump.1 \
 		xapian-check.1 xapian-compact.1 xapian-config.1 \
@@ -27,7 +28,9 @@ MAN1=		quartzcheck.1 quartzcompact.1 quartzdump.1 \
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/10$//}
 
-.if defined(WITHOUT_SSE2)
+.include <bsd.port.options.mk>
+
+.if empty(PORT_OPTIONS:MSSE2)
 CONFIGURE_ARGS+=	--disable-sse
 .endif
 
@@ -35,7 +38,7 @@ post-install:
 .for file in delve quest copydatabase
 	${INSTALL_PROGRAM} ${WRKSRC}/examples/.libs/${file} ${PREFIX}/bin/xapian-${file}
 .endfor
-.ifdef(NOPORTDOCS)
+.if	empty(PORT_OPTIONS:MDOCS)
 	${RM} -rf ${DOCSDIR}
 .endif
 
