@@ -1,2 +1,4 @@
-SHA256 (ads-java-novm-10.0.7.tar.gz) = f6ff4421b85ec1c8a3d79575fa079974a6ef5d8a981a1291c7dd9e1f7861f5b5
-SIZE (ads-java-novm-10.0.7.tar.gz) = 146561121
+SHA256 (ads-java-novm-10.0.10.tar.gz) = 9e36feee3eec7246dcd56b13353f8f94a7590782b788d8f5b28faaf4492bcbbb
+SIZE (ads-java-novm-10.0.10.tar.gz) = 146337174
+SHA256 (ads-10.0.11-patch.zip) = 34a6a04fb54120ef07e6b07d421f2c350dcb0216d38764d445b005cf72f6501e
+SIZE (ads-10.0.11-patch.zip) = 70239315
