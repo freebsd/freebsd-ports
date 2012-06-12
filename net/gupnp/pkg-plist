@@ -15,11 +15,13 @@ include/gupnp-1.0/libgupnp/gupnp-service.h
 include/gupnp-1.0/libgupnp/gupnp-types.h
 include/gupnp-1.0/libgupnp/gupnp-xml-doc.h
 include/gupnp-1.0/libgupnp/gupnp.h
+lib/girepository-1.0/GUPnP-1.0.typelib
 lib/libgupnp-1.0.a
 lib/libgupnp-1.0.la
 lib/libgupnp-1.0.so
-lib/libgupnp-1.0.so.3
+lib/libgupnp-1.0.so.4
 libdata/pkgconfig/gupnp-1.0.pc
+share/gir-1.0/GUPnP-1.0.gir
 share/gtk-doc/html/gupnp/GUPnPContext.html
 share/gtk-doc/html/gupnp/GUPnPContextManager.html
 share/gtk-doc/html/gupnp/GUPnPControlPoint.html
@@ -30,9 +32,9 @@ share/gtk-doc/html/gupnp/GUPnPResourceFactory.html
 share/gtk-doc/html/gupnp/GUPnPRootDevice.html
 share/gtk-doc/html/gupnp/GUPnPService.html
 share/gtk-doc/html/gupnp/GUPnPServiceInfo.html
-share/gtk-doc/html/gupnp/GUPnPServiceIntrospection.html
 share/gtk-doc/html/gupnp/GUPnPServiceProxy.html
 share/gtk-doc/html/gupnp/GUPnPXMLDoc.html
+share/gtk-doc/html/gupnp/annotation-glossary.html
 share/gtk-doc/html/gupnp/api-device-control.html
 share/gtk-doc/html/gupnp/api-device-impl.html
 share/gtk-doc/html/gupnp/api-device-info.html
@@ -44,7 +46,7 @@ share/gtk-doc/html/gupnp/glossary.html
 share/gtk-doc/html/gupnp/gupnp-Error-codes.html
 share/gtk-doc/html/gupnp/gupnp-Special-UPnP-types.html
 share/gtk-doc/html/gupnp/gupnp-binding-tool.html
-share/gtk-doc/html/gupnp/gupnp.devhelp
+share/gtk-doc/html/gupnp/gupnp-gupnp-service-introspection.html
 share/gtk-doc/html/gupnp/gupnp.devhelp2
 share/gtk-doc/html/gupnp/home.png
 share/gtk-doc/html/gupnp/index.html
@@ -63,5 +65,7 @@ share/gtk-doc/html/gupnp/up.png
 @dirrmtry share/gtk-doc/html/gupnp
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
+@dirrmtry share/gir-1.0
+@dirrmtry lib/girepository-1.0
 @dirrmtry include/gupnp-1.0/libgupnp
 @dirrmtry include/gupnp-1.0
