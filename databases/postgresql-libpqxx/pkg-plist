@@ -17,19 +17,24 @@ include/pqxx/cursor
 include/pqxx/cursor.hxx
 include/pqxx/dbtransaction
 include/pqxx/dbtransaction.hxx
+include/pqxx/errorhandler
+include/pqxx/errorhandler.hxx
 include/pqxx/except
 include/pqxx/except.hxx
+include/pqxx/field
+include/pqxx/field.hxx
 include/pqxx/internal/callgate.hxx
 include/pqxx/internal/gates/connection-dbtransaction.hxx
+include/pqxx/internal/gates/connection-errorhandler.hxx
 include/pqxx/internal/gates/connection-largeobject.hxx
-include/pqxx/internal/gates/connection-notify-listener.hxx
+include/pqxx/internal/gates/connection-notification_receiver.hxx
 include/pqxx/internal/gates/connection-parameterized_invocation.hxx
 include/pqxx/internal/gates/connection-pipeline.hxx
-include/pqxx/internal/gates/connection-prepare-declaration.hxx
 include/pqxx/internal/gates/connection-prepare-invocation.hxx
 include/pqxx/internal/gates/connection-reactivation_avoidance_exemption.hxx
 include/pqxx/internal/gates/connection-sql_cursor.hxx
 include/pqxx/internal/gates/connection-transaction.hxx
+include/pqxx/internal/gates/errorhandler-connection.hxx
 include/pqxx/internal/gates/icursor_iterator-icursorstream.hxx
 include/pqxx/internal/gates/icursorstream-icursor_iterator.hxx
 include/pqxx/internal/gates/result-connection.hxx
@@ -39,14 +44,17 @@ include/pqxx/internal/gates/transaction-subtransaction.hxx
 include/pqxx/internal/gates/transaction-tablereader.hxx
 include/pqxx/internal/gates/transaction-tablewriter.hxx
 include/pqxx/internal/gates/transaction-transactionfocus.hxx
+include/pqxx/internal/libpq-forward.hxx
+include/pqxx/internal/result_data.hxx
 include/pqxx/internal/statement_parameters.hxx
 include/pqxx/isolation
 include/pqxx/isolation.hxx
 include/pqxx/largeobject
 include/pqxx/largeobject.hxx
-include/pqxx/libpq-forward.hxx
 include/pqxx/nontransaction
 include/pqxx/nontransaction.hxx
+include/pqxx/notification
+include/pqxx/notification.hxx
 include/pqxx/notify-listen
 include/pqxx/notify-listen.hxx
 include/pqxx/performance.hxx
@@ -77,6 +85,8 @@ include/pqxx/transactor
 include/pqxx/transactor.hxx
 include/pqxx/trigger
 include/pqxx/trigger.hxx
+include/pqxx/tuple
+include/pqxx/tuple.hxx
 include/pqxx/util
 include/pqxx/util.hxx
 include/pqxx/version
@@ -85,6 +95,7 @@ lib/libpqxx-%%PORTVERSION%%.so
 lib/libpqxx.a
 lib/libpqxx.la
 lib/libpqxx.so
+lib/libpqxx.so.%%SOVERSION%%
 libdata/pkgconfig/libpqxx.pc
 @dirrm include/pqxx/internal/gates
 @dirrm include/pqxx/internal
