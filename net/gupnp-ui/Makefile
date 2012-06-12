@@ -7,19 +7,23 @@
 
 PORTNAME=	gupnp-ui
 PORTVERSION=	0.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
-MASTER_SITES=	http://www.gupnp.org/sites/all/files/sources/
+MASTER_SITES=	GNOME
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Framework for UPnP devices
 
-LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup \
-		gupnp-1.0:${PORTSDIR}/net/gupnp
+LICENSE=	LGPL20
 
-USE_PYTHON=	yes
+BUILD_DEPENDS=	gupnp>=0.3:${PORTSDIR}/net/gupnp
+LIB_DEPENDS=	gupnp-1.0:${PORTSDIR}/net/gupnp \
+		soup-2.4:${PORTSDIR}/devel/libsoup
+RUN_DEPENDS=	gupnp>=0.3:${PORTSDIR}/net/gupnp
+
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack intlhack libglade2 gtk20
+USE_GNOME=	gnomehack gtk20
 USE_LDCONFIG=	yes
+USE_PYTHON=	yes
 
 .include <bsd.port.mk>
