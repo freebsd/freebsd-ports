@@ -27,11 +27,12 @@ LDFLAGS+=	-Wl,-Bsymbolic -L${LOCALBASE}/lib
 
 PLIST_SUB=	VERSION=${PORTVERSION:R}
 
-OPTIONS=	PULSEAUDIO "Enable the PulseAudio sound module" off
+OPTIONS_DEFINE=	PULSEAUDIO
+PULSEAUDIO_DESC="Enable the PulseAudio sound module"
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_PULSEAUDIO)
+.if ${PORT_OPTIONS:MPULSEAUDIO}
 LIB_DEPENDS+=		pulse.0:${PORTSDIR}/audio/pulseaudio
 CONFIGURE_ARGS+=	--with-audio=pulse
 .else

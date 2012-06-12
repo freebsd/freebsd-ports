@@ -36,26 +36,23 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-samba=${LOCALBASE}
 
-OPTIONS=	BOOST "Enable libmapi++ (needs boost)" yes \
-		DOXYGEN "Enble building documentation" no
+OPTIONS_DEFINE=	BOOST DOXYGEN
+OPTIONS_DEFAULT=	BOOST
+BOOST_DESC=	Enable libmapi++ (needs boost)
 
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=	--disable-swig-perl
 CONFIGURE_ARGS+=	--disable-pymapi
 
-.if exists(${LOCALBASE}/lib/libboost_thread.so)
-WITH_BOOST=yes
-.endif
-
-.if defined(WITH_BOOST)
+.if ${PORT_OPTIONS:MBOOST} || exists(${LOCALBASE}/lib/libboost_thread.so)
 LIB_DEPENDS+=	boost_thread.4:${PORTSDIR}/devel/boost-libs
 PLIST_SUB+=	BOOST=""
 .else
 PLIST_SUB+=	BOOST="@comment "
 .endif
 
-.if defined(WITH_DOXYGEN) || exists(${LOCALBASE}/bin/doxygen)
+.if ${PORT_OPTIONS:MDOXYGEN} || exists(${LOCALBASE}/bin/doxygen)
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 PLIST_SUB+=	DOXYGEN=""
 .else
