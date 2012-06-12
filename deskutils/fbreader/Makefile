@@ -7,7 +7,7 @@
 
 PORTNAME=	fbreader
 PORTVERSION=	0.12.10
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	sources-
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.fbreader.org/
@@ -53,7 +53,7 @@ MAKE_ARGS+=	MAKE=${GMAKE} LIBDIR=${PREFIX}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^CFLAGS/s,-pipe.*$$,${CFLAGS} -DDO_ICONV_CAST -DLIBICONV_PLUG,' \
-		-e '/^CC/d;/^LD/d;/QTINCLUDE/s,-I.*$$,-I${QT_INCDIR},;s,libpng ,libpng14 ,' \
+		-e '/^CC/d;/^LD/d;/QTINCLUDE/s,-I.*$$,-I${QT_INCDIR},;s,libpng ,libpng15 ,' \
 		${WRKSRC}/makefiles/arch/desktop.mk
 	@${REINPLACE_CMD} -e 's,-O3,,;s,-ldl,-liconv,' \
 		${WRKSRC}/makefiles/config.mk ${WRKSRC}/zlibrary/core/Makefile
