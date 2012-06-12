@@ -1157,7 +1157,6 @@ MASTER_SITE_SOURCEFORGE_JP+= \
 
 .if !defined(IGNORE_MASTER_SITE_SOURCEWARE)
 MASTER_SITE_SOURCEWARE+= \
-	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/sources.redhat.com/%SUBDIR%/ \
 	http://mirrors.kernel.org/sources.redhat.com/%SUBDIR%/ \
 	http://gd.tuwien.ac.at/gnu/sourceware/%SUBDIR%/ \
 	http://sources-redhat.mirrors.airband.net/%SUBDIR%/ \
