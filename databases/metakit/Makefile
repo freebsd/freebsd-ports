@@ -24,12 +24,12 @@ CONFIGURE_SCRIPT=	../unix/configure
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386 alpha amd64
 
-OPTIONS=	PYTHON	"Enable Python support"	on \
-		TCL	"Enable Tcl support" off
+OPTIONS_DEFINE=	PYTHON TCL DOCS
+OPTIONS_DEFAULT=	PYTHON
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	yes
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 CONFIGURE_ARGS+=	--with-python=${LOCALBASE}
@@ -39,11 +39,12 @@ PLIST_SUB+=	WITH_PYTHON=""
 PLIST_SUB+=	WITH_PYTHON="@comment "
 .endif
 
-.if defined(WITH_TCL)
+.if ${PORT_OPTIONS:MTCL}
 CATEGORIES+=	tcl
 USE_TCL=	83+
-.include "${PORTSDIR}/Mk/bsd.tcl.mk"
 .endif
+
+.include <bsd.port.pre.mk>
 
 .if defined(USE_TCL)
 CONFIGURE_ARGS+=	--with-tcl=${TCL_INCLUDEDIR}
@@ -60,13 +61,13 @@ pre-patch:
 	${REINPLACE_CMD} -e "s/= tclsh/=tclsh${TCL_VER}/" \
 		${WRKSRC}/../unix/Makefile.in
 .endif
-.if !defined(WITHOUT_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 	${REINPLACE_CMD} -e "s=python2.[0-9]=${PYTHON_VERSION}=" \
 		${WRKSRC}/../unix/Makefile.in ${WRKSRC}/../unix/configure
 .endif
 
 post-build:
-.if !defined(WITHOUT_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
 		${WRKSRC}/../python
 	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
@@ -77,7 +78,7 @@ post-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/libmk4.so \
 		${PREFIX}/lib/libmk4.so.0
 	@${LN} -sf libmk4.so.0 ${PREFIX}/lib/libmk4.so
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${TAR} -C ${WRKSRC}/../doc --exclude "*CVS" -cf - . | \
 		${TAR} -C ${DOCSDIR} --unlink -xf -

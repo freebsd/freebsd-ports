@@ -26,7 +26,7 @@ LIB_DEPENDS+=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
 
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	PYTHON	"Enable Python scripting and modules" off
+OPTIONS_DEFINE=	PYTHON
 
 USE_AUTOTOOLS=	autoheader autoconf automake aclocal libtool
 AUTOMAKE_ARGS=	--add-missing --foreign
@@ -61,9 +61,8 @@ USE_MYSQL=	client
 DEFAULT_MYSQL_VER=	51
 IGNORE_WITH_MYSQL=	41 55
 
-.if defined(WITH_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 CONFIGURE_ARGS+=	--enable-python-modules
-WITH_PYTHON=	yes
 .endif
 
 run-autotools-aclocal:
