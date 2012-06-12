@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120612:
+  AFFECTS: users of graphics/gdal
+  AUTHOR: sunpoet@FreeBSD.org
+
+  Language bindings (Perl, PHP, Python and Ruby) have been moved to separate
+  ports. Please install them if required. The new ports are:
+    Perl binding:   graphics/p5-Geo-GDAL
+    PHP binding:    graphics/php-gdal
+    Python binding: graphics/py-gdal
+    Ruby binding:   graphics/ruby-gdal
+
 20120605:
   AFFECTS: users of net/p5-ZConf
   AUTHOR: vvelox@vvelox.net
