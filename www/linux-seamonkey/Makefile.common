@@ -54,6 +54,8 @@ do-install:
 	@${CP} -pR ${WRKSRC}/ ${FDIR}/
 	@${CHOWN} -R ${BINOWN}:${BINGRP} ${FDIR}/
 	@${ECHO_CMD} '#!/bin/sh' > ${WRKDIR}/${APP_NAME}-run
+	@${ECHO_CMD} 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/linux-seamonkey' \
+		>> ${WRKDIR}/${APP_NAME}-run
 	@${ECHO_CMD} 'exec ${FDIR}/${BIN_NAME} "$$@"' >> ${WRKDIR}/${APP_NAME}-run
 	@${INSTALL_SCRIPT} ${WRKDIR}/${APP_NAME}-run ${PREFIX}/bin/${APP_NAME}
 	@${CP} -R ${LOCALBASE}/lib/npapi/symlinks/${APP_NAME}/ \
