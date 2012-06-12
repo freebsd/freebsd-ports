@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	saxon
-PORTVERSION=	9.1.0.7
+PORTVERSION=	9.1.0.8
 PORTEPOCH=	1
 CATEGORIES=	textproc java
-MASTER_SITES=	SF/${PORTNAME}/Saxon-B/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/Saxon-B/${PORTVERSION}:binary	\
+		SF/${PORTNAME}/Saxon-B/9.1.0.7:resources
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}b${PORTVERSION:S,.,-,g}j.zip \
-		${PORTNAME}-resources9-1-0-1
+DISTFILES=	${PORTNAME}b${PORTVERSION:S,.,-,g}j.zip:binary	\
+		${PORTNAME}-resources9-1-0-1.zip:resources
 
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	An XSLT 2.0 / XPath 2.0 / XQuery 1.0 processor for Java
