@@ -25,30 +25,31 @@ PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-OPTIONS=	MYSQL	"MySQL back-end (use mysql PHP extension)" on \
-		PGSQL	"PostgreSQL back-end (use pgsql PHP extension)" off \
-		OPENLDAP	"Enable OpenLDAP support" off \
-		EXTJS	"Enable Ext JS support" on
+OPTIONS_DEFINE=		OPENLDAP EXTJS
+OPTIONS_MULTI=		BACKEND
+OPTIONS_MULTI_BACKEND=	MYSQL PGSQL
+MYSQL_DESC=		back-end (use mysql PHP extension)
+PGSQL_DESC=		back-end (use pgsql PHP extension)
+OPENLDAP_DESC=		Enable OpenLDAP support
+EXTJS_DESC=		Enable Ext JS support
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFAULT=	MYSQL EXTJS
 
-.if defined(WITHOUT_MYSQL) && !defined(WITH_PGSQL)
-IGNORE=	needs at least one database back-end
-.endif
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	mysql
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pgsql
 .endif
 
-.if defined(WITH_OPENLDAP)
+.if ${PORT_OPTIONS:MOPENLDAP}
 USE_PHP+=	ldap
 .endif
 
-.if defined(WITH_EXTJS)
+.if ${PORT_OPTIONS:MEXTJS}
 USE_PHP+=	json
 .endif
 
@@ -87,4 +88,4 @@ x-generate-plist:
 .endfor
 	${ECHO} '@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%' >> pkg-plist.new
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

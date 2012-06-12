@@ -69,46 +69,37 @@ PORTDOCS=	ACKNOWLEDGMENTS BUGS FAQ INSTALL NEWS NEWS.japan.utf-8 \
 		mailman-member.txt \
 		FreeBSD-post-install-notes
 
-OPTIONS=	SENDMAIL "for use with sendmail" off \
-		EXIM3 "for use with exim3" off \
-		EXIM4 "for use with exim4" off \
-		POSTFIX "for use with postfix" off \
-		COURIER "for use with courier" off \
-		INTEGRATION "integrating postfix and mailman" off \
-		NAMAZU2 "make private archives searchable with namazu2" off
+OPTIONS_DEFINE=		INTEGRATION NAMAZU2
+
+OPTIONS_SINGLE=		MTA
+OPTIONS_SINGLE_MTA=	SENDMAIL EXIM3 EXIM4 POSTFIX COURIER
+
+INTEGRATION_DESC=	integrating postfix and mailman
+NAMAZU2_DESC=		make private archives searchable with namazu2
+SENDMAIL_DESC=		for use with sendmail
+EXIM3_DESC=		for use with exim3
+EXIM4_DESC=		for use with exim4
+POSTFIX_DESC=		for use with postfix
+COURIER_DESC=		for use with courier
+
+OPTIONS_DEFAULT=	SENDMAIL
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_SENDMAIL)
-.if defined(WITH_EXIM3) || defined(WITH_EXIM4) || defined(WITH_POSTFIX) || \
-defined(WITH_COURIER)
-IGNORE=	can only have one MTA selected to integrate with
-.endif
+.if ${PORT_OPTIONS:MSENDMAIL}
 MAIL_GID?=	mailnull
 .endif
 
-.if defined(WITH_EXIM3)
-.if defined(WITH_SENDMAIL) || defined(WITH_EXIM4) || defined(WITH_POSTFIX) || \
-defined(WITH_COURIER)
-IGNORE=	can only have one MTA selected to integrate with
-.endif
+.if ${PORT_OPTIONS:MEXIM3}
 MAIL_GID?=	nobody
 .endif
 
-.if defined(WITH_EXIM4)
-.if defined(WITH_SENDMAIL) || defined(WITH_EXIM3) || defined(WITH_POSTFIX) || \
-defined(WITH_COURIER)
-IGNORE=	can only have one MTA selected to integrate with
-.endif
+.if ${PORT_OPTIONS:MEXIM4}
 MAIL_GID?=	mail
 .endif
 
-.if defined(WITH_POSTFIX)
-.if defined(WITH_SENDMAIL) || defined(WITH_EXIM3) || defined(WITH_EXIM4) || \
-defined(WITH_COURIER)
-IGNORE=	can only have one MTA selected to integrate with
-.endif
-.if defined(WITH_INTEGRATION)
+.if ${PORT_OPTIONS:MPOSTFIX}
+.if ${PORT_OPTIONS:MINTEGRATION}
 MAIL_GID?=	mailman
 .else
 MAIL_GID?=	nobody
@@ -116,15 +107,11 @@ MAIL_GID?=	nobody
 EXTRA_PATCHES+=	${FILESDIR}/postfix-verp.diff
 .endif
 
-.if defined(WITH_COURIER)
-.if defined(WITH_SENDMAIL) || defined(WITH_EXIM3) || defined(WITH_EXIM4) || \
-defined(WITH_POSTFIX)
-IGNORE=	can only have one MTA selected to integrate with
-.endif
+.if ${PORT_OPTIONS:MCOURIER}
 MAIL_GID?=	courier
 .endif
 
-.if defined(WITH_NAMAZU2)
+.if ${PORT_OPTIONS:MNAMAZU2}
 RUN_DEPENDS+=	mknmz:${PORTSDIR}/japanese/namazu2
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Mailman-Cgi-private.py
 .endif
@@ -149,7 +136,7 @@ post-patch:
 pre-configure:
 	@${ECHO} "DEFAULT_SERVER_LANGUAGE = 'ja'" >> ${WRKSRC}/Mailman/mm_cfg.py.dist.in
 	@${ECHO} "GLOBAL_PIPELINE.insert(1, 'iso2022jpfix')" >> ${WRKSRC}/Mailman/mm_cfg.py.dist.in
-.if defined(WITH_POSTFIX) && defined(WITH_INTEGRATION)
+.if ${PORT_OPTIONS:MPOSTFIX} && ${PORT_OPTIONS:MINTEGRATION}
 	@${ECHO} "MTA = 'Postfix'" >> ${WRKSRC}/Mailman/mm_cfg.py.dist.in
 .endif
 
@@ -175,7 +162,7 @@ post-install:
 .endif
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
-.if defined(WITH_POSTFIX)
+.if ${PORT_OPTIONS:MPOSTFIX}
 	@if [ "x`${LOCALBASE}/sbin/postconf -h myhostname`" != "xlocalhost" ]; then \
 		${ECHO_CMD} ""; \
 		${ECHO_CMD} "Your Postfix hostname is non-default."; \
