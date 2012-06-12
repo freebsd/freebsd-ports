@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime
-PORTVERSION=	0.74
+PORTVERSION=	0.75
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DROLSKY
@@ -15,13 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A date and time object
 
+# Do not add p5-DateTime-Format-Strptime>=1.20.00 to TEST_DEPENDS to avoid cyclic dependency in tinderbox
 BUILD_DEPENDS=	p5-DateTime-Locale>=0.41:${PORTSDIR}/devel/p5-DateTime-Locale \
 		p5-DateTime-TimeZone>=1.09:${PORTSDIR}/devel/p5-DateTime-TimeZone \
 		p5-Math-Round>=0:${PORTSDIR}/math/p5-Math-Round \
 		p5-Params-Validate>=0.76:${PORTSDIR}/devel/p5-Params-Validate
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-# Do not add p5-DateTime-Format-Strptime>=1.20.00 to avoid cyclic dependency in tinderbox
 TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
 PERL_MODBUILD=	yes
