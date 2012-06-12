@@ -874,6 +874,7 @@ lib/calibre/calibre/gui2/tools.py
 lib/calibre/calibre/gui2/ui.py
 lib/calibre/calibre/gui2/update.py
 lib/calibre/calibre/gui2/viewer/__init__.py
+lib/calibre/calibre/gui2/viewer/config.py
 lib/calibre/calibre/gui2/viewer/bookmarkmanager.py
 lib/calibre/calibre/gui2/viewer/bookmarkmanager_ui.py
 lib/calibre/calibre/gui2/viewer/config_ui.py
@@ -935,16 +936,6 @@ lib/calibre/calibre/libunrar.py
 lib/calibre/calibre/libunzip.py
 lib/calibre/calibre/libwand.py
 lib/calibre/calibre/linux.py
-lib/calibre/calibre/manual/conf.py
-lib/calibre/calibre/manual/custom.py
-lib/calibre/calibre/manual/epub.py
-lib/calibre/calibre/manual/qthelp.py
-lib/calibre/calibre/manual/template_ref_generate.py
-lib/calibre/calibre/manual/plugin_examples/helloworld/__init__.py
-lib/calibre/calibre/manual/plugin_examples/interface_demo/__init__.py
-lib/calibre/calibre/manual/plugin_examples/interface_demo/main.py
-lib/calibre/calibre/manual/plugin_examples/interface_demo/ui.py
-lib/calibre/calibre/manual/plugin_examples/interface_demo/config.py
 lib/calibre/calibre/plugins/cPalmdoc.so
 lib/calibre/calibre/plugins/chm_extra.so
 lib/calibre/calibre/plugins/chmlib.so
@@ -953,7 +944,6 @@ lib/calibre/calibre/plugins/icu.so
 lib/calibre/calibre/plugins/lzx.so
 lib/calibre/calibre/plugins/magick.so
 lib/calibre/calibre/plugins/msdes.so
-lib/calibre/calibre/plugins/pdfreflow.so
 lib/calibre/calibre/plugins/pictureflow.so
 %%PODOFO%%lib/calibre/calibre/plugins/podofo.so
 lib/calibre/calibre/plugins/progress_indicator.so
@@ -1563,10 +1553,6 @@ share/gnome/apps/calibre-ebook-viewer.desktop
 @dirrm lib/calibre/calibre/translations
 @dirrm lib/calibre/calibre/trac
 @dirrm lib/calibre/calibre/plugins
-@dirrm lib/calibre/calibre/manual/plugin_examples/helloworld
-@dirrm lib/calibre/calibre/manual/plugin_examples/interface_demo
-@dirrm lib/calibre/calibre/manual/plugin_examples
-@dirrm lib/calibre/calibre/manual
 @dirrm lib/calibre/calibre/library/server
 @dirrm lib/calibre/calibre/library/catalogs
 @dirrm lib/calibre/calibre/library
