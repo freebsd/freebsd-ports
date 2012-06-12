@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.kvaleberg.org/pub/
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A program to fetch news from and post news to a remote NNTP server
 
+LICENSE=	GPLv2
+
 .if defined(WITH_CNEWS)
 BUILD_DEPENDS=	${LOCALBASE}/news/lib/libcnews.a:${PORTSDIR}/news/cnews
 .elif !defined(WITHOUT_INN_2-X)
@@ -26,7 +28,7 @@ IGNORE=		a configured INN is required
 
 GNU_CONFIGURE=	yes
 
-CONFLICTS=	leafnode-1.9.*
+CONFLICTS=	leafnode-1.*
 
 .if !defined(WITH_CNEWS)
 .if !defined(WITHOUT_INN_2-X)
