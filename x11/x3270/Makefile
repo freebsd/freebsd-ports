@@ -18,16 +18,11 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
-DEPRECATED=	BROKEN for more than 6 month
-EXPIRATION_DATE=	2012-06-30
-
-BROKEN=		does not package
-
 USE_IMAKE=	yes
 USE_ICONV=	yes
 USE_XORG=	ice sm x11 xaw xext xmu xt
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--without-pr3287 --with-fontdir=local --disable-dbcs
+CONFIGURE_ARGS+=	--with-fontdir=${PREFIX}/lib/X11/fonts/local --disable-dbcs
 CONFIGURE_ENV=	LIBS="-L${PREFIX}/lib"
 CPPFLAGS+=	-I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib
