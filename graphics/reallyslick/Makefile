@@ -18,8 +18,9 @@ COMMENT=	OpenGL screensaver collection
 LIB_DEPENDS=	MagickWand.5:${PORTSDIR}/graphics/ImageMagick \
 		GLC.0:${PORTSDIR}/graphics/quesoglc
 
-OPTIONS=	FREEALUT "Enable freealut support" off \
-		GLEW "Enable GLEW support" off
+OPTIONS_DEFINE=	FREEALUT GLEW
+FREEALUT_DESC=	Enable freealut support
+GLEW_DESC=	Enable GLEW support
 
 USE_BZIP2=	yes
 USE_GL=		glut
@@ -36,18 +37,18 @@ MAN1=		biof.1 busyspheres.1 colorfire.1 cyclone.1 drempels.1 \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_FREEALUT)
+.if ${PORT_OPTIONS:MFREEALUT}
 USE_OPENAL=	alut
 .else
 CONFIGURE_ARGS+=	--disable-sound
 .endif
 
-.if defined(WITH_GLEW)
+.if ${PORT_OPTIONS:MGLEW}
 USE_GL+=	glew
 .else
 CONFIGURE_ENV+=	ac_cv_header_GL_glew_h=no
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

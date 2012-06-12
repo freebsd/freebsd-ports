@@ -20,7 +20,9 @@ BUILD_DEPENDS=	${PYNUMPY} \
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
 
-OPTIONS=	TKINTER "Build with tkinter for X support" On
+OPTIONS_DEFINE=	TKINTER
+OPTIONS_DEFAULT=	TKINTER
+TKINTER_DESC=	Build with tkinter for X support
 OPTIONSFILE?=	${PORT_DBDIR}/${PORTNAME}/options
 
 USE_GL=		glut
@@ -33,7 +35,7 @@ USE_DOS2UNIX=	yes
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_TKINTER)
+.if ${PORT_OPTIONS:MTKINTER}
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 .endif

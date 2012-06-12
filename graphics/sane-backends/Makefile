@@ -22,13 +22,12 @@ LICENSE_COMB=	dual
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-OPTIONS=	USB "USB support" on \
-		NLS "NLS support" on \
-		GPHOTO2 "gPhoto2 support" off \
-		SNMP "SNMP support" off \
-		AVAHI "Avahi support" off \
-		IEEE1284 "libieee1284 support" off \
-		IPV6 "IPV6 support" off
+OPTIONS_DEFINE=	USB NLS GPHOTO2 SNMP AVAHI IEEE1284 IPV6 DOCS
+OPTIONS_DEFAULT=	USB
+
+USB_DESC=	USB support
+GPHOTO2_DESC=	gPhoto2 support
+IEEE1284_DESC=	libieee1284 support
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -51,31 +50,31 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .include "Makefile.man"
 .include <bsd.port.pre.mk>
 
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 MAKE_ENV+=	NOPORTDOCS=1
 .endif
 
-.if defined(WITHOUT_USB)
-CONFIGURE_ARGS+=	--disable-libusb
-.else
+.if ${PORT_OPTIONS:MUSB}
 .if ${OSVERSION} < 800069
 LIB_DEPENDS+=		usb-0.1.8:${PORTSDIR}/devel/libusb
 .endif
+.else
+CONFIGURE_ARGS+=	--disable-libusb
 .endif
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-translations
-PLIST_SUB+=		NLS="@comment "
-.else
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=		yes
 PLIST_SUB+=		NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-translations
+PLIST_SUB+=		NLS="@comment "
 .endif
 
-.if defined(WITHOUT_IPV6)
+.if empty(PORT_OPTIONS:MIPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-.if defined(WITH_GPHOTO2)
+.if ${PORT_OPTIONS:MGPHOTO2}
 LIB_DEPENDS+=		gphoto2.2:${PORTSDIR}/graphics/libgphoto2
 MAN5+=			sane-gphoto2.5
 PLIST_SUB+=		GPHOTO2=""
@@ -84,18 +83,18 @@ CONFIGURE_ARGS+=	--with-gphoto2=no
 PLIST_SUB+=		GPHOTO2="@comment "
 .endif
 
-.if defined(WITH_SNMP)
+.if ${PORT_OPTIONS:MSNMP}
 LIB_DEPENDS+=		netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 .else
 CONFIGURE_ARGS+=	--without-snmp
 .endif
 
-.if defined(WITH_AVAHI)
+.if ${PORT_OPTIONS:MAVAHI}
 LIB_DEPENDS+=		avahi-client.3:${PORTSDIR}/net/avahi-app
 CONFIGURE_ARGS+=	--enable-avahi
 .endif
 
-.if defined(WITH_IEEE1284)
+.if ${PORT_OPTIONS:MIEEE1284}
 LIB_DEPENDS+=		ieee1284.5:${PORTSDIR}/sysutils/libieee1284
 PLIST_SUB+=		IEEE1284=""
 .else

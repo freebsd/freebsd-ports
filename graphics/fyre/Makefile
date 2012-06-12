@@ -14,9 +14,10 @@ MASTER_SITES=	http://releases.navi.cx/fyre/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chaos map rendering system with GTK+-2 interface
 
-OPTIONS=	OPT_CFLAGS "Enable additional optimizations (x86 only)" off \
-		OPENEXR "Enable OpenEXR suport" on \
-		GNET "Enable GNet support" on
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS OPENEXR GNET DOCS
+OPTIONS_DEFAULT=	OPENEXR GNET
+OPENEXR_DESC=	Enable OpenEXR suport
+GNET_DESC=	Enable GNet support
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
@@ -30,27 +31,27 @@ MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386" && defined(WITH_OPT_CFLAGS)
+.if ${ARCH} == "i386" && !empty(PORT_OPTIONS:MOPT_CFLAGS)
 CFLAGS+=	-march=native -O3 -ffast-math -fomit-frame-pointer
 .endif
 
-.if defined(WITHOUT_OPENEXR)
-CONFIGURE_ARGS+=--disable-openexr
-.else
+.if ${PORT_OPTIONS:MOPENEXR}
 LIB_DEPENDS+=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR
+.else
+CONFIGURE_ARGS+=--disable-openexr
 .endif
 
-.if defined(WITHOUT_GNET)
-CONFIGURE_ARGS+=--disable-gnet
-.else
+.if ${PORT_OPTIONS:MGNET}
 LIB_DEPENDS+=	gnet-2.0.0:${PORTSDIR}/net/gnet2
+.else
+CONFIGURE_ARGS+=--disable-gnet
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/-O3/s|^|#|g' ${WRKSRC}/configure
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif

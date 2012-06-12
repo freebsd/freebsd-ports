@@ -20,10 +20,9 @@ LICENSE_COMB=	multi
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
-OPTIONS=	JPEG "Enable JPEG support" on \
-		TIFF "Enable TIFF support" on \
-		PNG "Enable PNG support" on \
-		IMPOSE "Build impose tool (needs Lua)" off
+OPTIONS_DEFINE=	JPEG TIFF PNG IMPOSE
+OPTIONS_DEFAULT=	JPEG TIFF PNG
+IMPOSE_DESC=	Build impose tool (needs Lua)
 
 USE_CMAKE=	yes
 CMAKE_ARGS=	-DPODOFO_BUILD_SHARED:BOOL=TRUE \
@@ -39,22 +38,22 @@ MAN1=		podofobox.1 podofocountpages.1 podofocrop.1 \
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_JPEG)
+.if ${PORT_OPTIONS:MJPEG}
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 CMAKE_ARGS+=	-DWANT_LIBJPEG:BOOL=TRUE
 .endif
 
-.if !defined(WITHOUT_TIFF)
+.if ${PORT_OPTIONS:MTIFF}
 LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 CMAKE_ARGS+=	-DWANT_TIFF:BOOL=TRUE
 .endif
 
-.if !defined(WITHOUT_PNG)
+.if ${PORT_OPTIONS:MPNG}
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 CMAKE_ARGS+=	-DWANT_PNG:BOOL=TRUE
 .endif
 
-.if defined(WITH_IMPOSE)
+.if ${PORT_OPTIONS:MIMPOSE}
 USE_LUA=	5.1
 CMAKE_ARGS+=	-DWANT_LUA:BOOL=TRUE
 CPPFLAGS+=	-I${LUA_INCDIR}

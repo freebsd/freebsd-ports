@@ -26,19 +26,16 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 ALL_TARGET=	libs
 INSTALL_TARGET=	install install-bin install-fonts install-info
 
-OPTIONS=	BGI "Enable BGI support" on \
-		BMP "Enable BMP support" on \
-		JPEG "Enable JPEG support" off \
-		PNG "Enable PNG support" on \
-		PRINT "Enable printing support" on \
-		TIFF "Enable TIFF support" off \
-		ZLIB "Enable zlib support" on
+OPTIONS_DEFINE=	BGI BMP JPEG PNG PRINT TIFF ZLIB
+OPTIONS_DEFAULT=	ZLIB BGI BMP PNG PRINT
+BGI_DESC=	Enable BGI support
+BMP_DESC=	Enable BMP support
 
 INFO=		grx
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_BGI)
+.if ${PORT_OPTIONS:MBGI}
 CONFIGURE_ARGS+=--enable-bgi
 PLIST_SUB+=	BGI=""
 .else
@@ -46,27 +43,27 @@ CONFIGURE_ARGS+=--disable-bgi
 PLIST_SUB+=	BGI="@comment "
 .endif
 
-.if defined(WITH_BMP)
+.if ${PORT_OPTIONS:MBMP}
 CONFIGURE_ARGS+=--enable-bmp
 .else
 CONFIGURE_ARGS+=--disable-bmp
 .endif
 
-.if defined(WITH_JPEG)
+.if ${PORT_OPTIONS:MJPEG}
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 CONFIGURE_ARGS+=--enable-jpeg
 .else
 CONFIGURE_ARGS+=--disable-jpeg
 .endif
 
-.if defined(WITH_PNG)
+.if ${PORT_OPTIONS:MPNG}
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=--enable-png
 .else
 CONFIGURE_ARGS+=--disable-png
 .endif
 
-.if defined(WITH_PRINT)
+.if ${PORT_OPTIONS:MPRINT}
 CONFIGURE_ARGS+=--enable-print
 PLIST_SUB+=	PRINT=""
 .else
@@ -74,14 +71,14 @@ CONFIGURE_ARGS+=--disable-print
 PLIST_SUB+=	PRINT="@comment "
 .endif
 
-.if defined(WITH_TIFF)
+.if ${PORT_OPTIONS:MTIFF}
 LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 CONFIGURE_ARGS+=--enable-tiff
 .else
 CONFIGURE_ARGS+=--disable-tiff
 .endif
 
-.if defined(WITH_ZLIB) || defined(WITH_PNG)
+.if ${PORT_OPTIONS:MZLIB} || !empty(PORT_OPTIONS:MPNG)
 CONFIGURE_ARGS+=--enable-zlib
 .else
 CONFIGURE_ARGS+=--disable-zlib
@@ -108,4 +105,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|' -e 's|lib64|lib|' \
 		 ${WRKSRC}/src/makefile.[lx]*
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

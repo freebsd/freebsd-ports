@@ -42,26 +42,27 @@ MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 DO_NOT_COMPILE+=kooka kuickshow libkscan
 
-OPTIONS=	IMLIB "Build Kuickshow, a fast and versatile image viewer" off \
-		GPHOTO2 "Enable support for digital cameras" off \
-		SANE "Build Kooka, a SANE scanner frontend for KDE" off
+OPTIONS_DEFINE=	IMLIB2 GPHOTO2 SANE
+IMLIB2_DESC=	Build Kuickshow, a fast and versatile image viewer
+GPHOTO2_DESC=	Enable support for digital cameras
+SANE_DESC=	Build Kooka, a SANE scanner frontend for KDE
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_IMLIB)
+.if ${PORT_OPTIONS:MIMLIB}
 RUN_DEPENDS+=	kuickshow:${PORTSDIR}/graphics/kuickshow
-.elif defined(WITHOUT_IMLIB)
+.else
 CONFIGURE_ARGS+=--without-imlib-config
 .endif
 
-.if defined(WITH_GPHOTO2)
+.if ${PORT_OPTIONS:MGPHOTO2}
 RUN_DEPENDS+=	${LOCALBASE}/lib/kde3/kcm_kamera.la:${PORTSDIR}/graphics/kamera
-.elif defined(WITHOUT_GPHOTO2)
+.else
 CONFIGURE_ARGS+=--without-kamera
 .endif
 
-.if defined(WITH_SANE)
+.if ${PORT_OPTIONS:MSANE}
 RUN_DEPENDS+=	kooka:${PORTSDIR}/graphics/kooka
 .endif
 

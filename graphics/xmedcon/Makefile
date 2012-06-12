@@ -19,18 +19,17 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LIB
 
-OPTIONS=	X11 "With X11" on \
-		GLIB "With Glib" on \
-		ACR_NEMA "With Acr/Nema 2.0" on \
-		ANALYZE "With Analyze (SPM)" on \
-		CONCORDE "With Concorde __ET" on \
-		DICOM "With DICOM 3.0" on \
-		DICOM_LJPEG "With DICOM 3.0 Lossless JPEG" on \
-		ECAT "With CTI ECAT 6/7" on \
-		GIF "With GIF87a/89a" on \
-		INTERFILE "With InterFile 3.3" on \
-		INW "With INW (RUG)" on \
-		PNG "With PNG" on
+OPTIONS_DEFINE=	X11 GLIB ACR_NEMA ANALYZE CONCORDE DICOM DICOM_LJPEG ECAT GIF INTERFILE INW PNG
+OPTIONS_DEFAULT=	X11 GLIB ACR_NEMA ANALYZE CONCORDE DICOM DICOM_LJPEG ECAT GIF INTERFILE INW PNG
+GLIB_DESC=	With Glib
+ACR_NEMA_DESC=	With Acr/Nema 2.0
+ANALYZE_DESC=	With Analyze (SPM)
+CONCORDE_DESC=	With Concorde __ET
+DICOM_DESC=	With DICOM 3.0
+DICOM_LJPEG_DESC=	With DICOM 3.0 Lossless JPEG
+ECAT_DESC=	With CTI ECAT 6/7
+INTERFILE_DESC=	With InterFile 3.3
+INW_DESC=	With INW (RUG)
 
 WANT_GNOME=	yes
 USE_SUBMAKE=	yes
@@ -47,61 +46,61 @@ MAN4=	m-acr.4 m-anlz.4 m-ecat.4 m-gif.4 m-intf.4 m-inw.4
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=	--disable-gui
-PLIST_SUB+=	X11="@comment "
-.else
+.if ${PORT_OPTIONS:MX11}
 USE_GNOME+=	gtk20
 PLIST_SUB+=	X11=""
 MAN1+=		xmedcon.1
-.endif
-
-.if defined(WITHOUT_GLIB)
-CONFIGURE_ARGS+=	--disable-glib
 .else
-USE_GNOME+=	glib20
+CONFIGURE_ARGS+=	--disable-gui
+PLIST_SUB+=	X11="@comment "
 .endif
 
-.if defined(WITHOUT_ACR_NEMA) || defined(WITHOUT_DICOM)
+.if ${PORT_OPTIONS:MGLIB}
+USE_GNOME+=	glib20
+.else
+CONFIGURE_ARGS+=	--disable-glib
+.endif
+
+.if empty(PORT_OPTIONS:MACR_NEMA) || empty(PORT_OPTIONS:MDICOM)
 CONFIGURE_ARGS+=	--disable-acr
 .endif
 
-.if defined(WITHOUT_GIF)
+.if empty(PORT_OPTIONS:MGIF)
 CONFIGURE_ARGS+=	--disable-gif
 .endif
 
-.if defined(WITHOUT_INW)
+.if empty(PORT_OPTIONS:MINW)
 CONFIGURE_ARGS+=	--disable-inw
 .endif
 
-.if defined(WITHOUT_ANALYZE)
+.if empty(PORT_OPTIONS:MANALYZE)
 CONFIGURE_ARGS+=	--disable-anlz
 .endif
 
-.if defined(WITHOUT_CONCORDE)
+.if empty(PORT_OPTIONS:MCONCORDE)
 CONFIGURE_ARGS+=	--disable-conc
 .endif
 
-.if defined(WITHOUT_ECAT)
+.if empty(PORT_OPTIONS:MECAT)
 CONFIGURE_ARGS+=	--disable-ecat
 .endif
 
-.if defined(WITHOUT_INTERFILE)
+.if empty(PORT_OPTIONS:MINTERFILE)
 CONFIGURE_ARGS+=	--disable-intf
 .endif
 
-.if defined(WITHOUT_DICOM) || defined(WITHOUT_DICOM_LJPEG)
+.if empty(PORT_OPTIONS:MDICOM) || empty(PORT_OPTIONS:MDICOM_LJPEG)
 CONFIGURE_ARGS+=	--disable-dicom
 .endif
 
-.if defined(WITHOUT_DICOM_LJPEG)
+.if empty(PORT_OPTIONS:MDICOM_LJPEG)
 CONFIGURE_ARGS+=	--disable-ljpg
 .endif
 
-.if defined(WITHOUT_PNG)
-CONFIGURE_ARGS+=	--disable-png
-.else
+.if ${PORT_OPTIONS:MPNG}
 LIB_DEPENDS+=		png15:${PORTSDIR}/graphics/png
+.else
+CONFIGURE_ARGS+=	--disable-png
 .endif
 
 post-patch:
@@ -113,7 +112,7 @@ post-patch:
 		${WRKSRC}/man/Makefile.in
 
 post-install:
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 .for file in xmedcon.png xmedconrc xmedconrc.linux
 	${INSTALL_DATA} ${WRKSRC}/etc/${file} ${PREFIX}/etc
 .endfor

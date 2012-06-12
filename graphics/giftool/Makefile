@@ -21,24 +21,26 @@ NO_WRKSUBDIR=	yes
 ALL_TARGET=	giftool
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
-OPTIONS=	RETVALUE "Return value patch" on \
-		MALLOCSIZE "Improve malloc size" on
+OPTIONS_DEFINE=	RETVALUE MALLOCSIZE DOCS
+OPTIONS_DEFAULT=	RETVALUE MALLOCSIZE
+RETVALUE_DESC=	Return value patch
+MALLOCSIZE_DESC=	Improve malloc size
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	COPYRIGHT README
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_RETVALUE)
+.if ${PORT_OPTIONS:MRETVALUE}
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-aa
 .endif
-.if defined(WITH_MALLOCSIZE)
+.if ${PORT_OPTIONS:MMALLOCSIZE}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ab
 .endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/giftool ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
 .endif
@@ -46,4 +48,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

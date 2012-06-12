@@ -35,14 +35,16 @@ PLIST_SUB=	VER=${PORTVERSION}-1
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-1
 
-OPTIONS=	OPENEXR "Use OpenEXR" on
+OPTIONS_DEFINE=	OPENEXR
+OPTIONS_DEFAULT=	OPENEXR
+OPENEXR_DESC=	Use OpenEXR
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_OPENEXR)
+.if ${PORT_OPTIONS:MOPENEXR}
 LIB_DEPENDS+=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
     		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 CONFIGURE_ARGS+=	--with-openexr-prefix=${LOCALBASE}
@@ -71,4 +73,4 @@ post-patch:
 	   ${REINPLACE_CMD} -e '/^#include <FL/s|.h>$$|.H>|; /^#include "FL/s|.h"$$|.H"|; \
 	   s|fl_file_chooser.H|Fl_File_Chooser.H|g; s|#include <Fl|#include <FL|g; s|<FL/gl.H>|<FL/gl.h>|'
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

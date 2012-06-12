@@ -25,17 +25,19 @@ CPPFLAGS+=	-I${LOCALBASE}/include/libpng15
 
 MAN1=		autotrace.1
 
-OPTIONS=	MING "Enable swf interface" off \
-		PSTOEDIT "Convert postscript to other formats" on
+OPTIONS_DEFINE=	MING PSTOEDIT
+OPTIONS_DEFAULT=	PSTOEDIT
+MING_DESC=	Enable swf interface
+PSTOEDIT_DESC=	Convert postscript to other formats
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined (WITHOUT_MING)
+.if ${PORT_OPTIONS:MSETUIDMING}
 LIB_DEPENDS+=	ming.5:${PORTSDIR}/graphics/ming
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/ming
 .endif
 
-.if !defined (WITHOUT_PSTOEDIT)
+.if ${PORT_OPTIONS:MPSTOEDIT}
 LIB_DEPENDS+=	pstoedit.0:${PORTSDIR}/graphics/pstoedit
 .endif
 
@@ -44,10 +46,10 @@ post-patch:
 		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
 
-.if defined (WITH_PSTOEDIT)
+.if ${PORT_OPTIONS:MPSTOEDIT}
 	@${REINPLACE_CMD} -e '/$$PSTOEDIT_CONFIG/  s|--version|--modversion| ; \
 		s|$$PSTOEDIT_CONFIG $$pstoedit_args|pkg-config pstoedit| ; \
 		/^PSTOEDIT_CONFIG=/ s|=.*$$|=pkg-config| ' ${WRKSRC}/configure
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
