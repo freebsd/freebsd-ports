@@ -16,9 +16,11 @@ MASTER_SITE_SUBDIR=	libs
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A public ELF file access library similar to libelf(3) in Solaris
 
-OPTIONS=	EXTENDED	"ELF format extensions" on \
-		NLS		"Native Language Support" on \
-		SANITY		"Avoid loading invalid ELF files" on
+OPTIONS_DEFINE=	EXTENDED NLS SANITY
+OPTIONS_DEFAULT=	EXTENDED SANITY
+
+EXTENDED_DESC=	ELF format extensions
+SANITY_DESC=	Avoid loading invalid ELF files
 
 .include <bsd.port.options.mk>
 
@@ -28,7 +30,7 @@ USE_LDCONFIG=	yes
 
 NOMAN=		defined
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 CONFIGURE_ARGS+=	--enable-nls
@@ -39,13 +41,13 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	GETTEXT="@comment "
 .endif
 
-.if !defined(WITHOUT_EXTENDED)
+.if ${PORT_OPTIONS:MEXTENDED}
 CONFIGURE_ARGS+=	--enable-extended-format
 .else
 CONFIGURE_ARGS+=	--disable-extended-format
 .endif
 
-.if !defined(WITHOUT_SANITY)
+.if ${PORT_OPTIONS:MSANITY}
 CONFIGURE_ARGS+=	--enable-sanity-checks
 .else
 CONFIGURE_ARGS+=	--disable-sanity-checks

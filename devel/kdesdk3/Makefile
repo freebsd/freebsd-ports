@@ -41,12 +41,13 @@ CONFIGURE_ARGS+=--mandir=${MANPREFIX}/man \
 
 MAN1=		cervisia.1 cvsblame.1 cvscheck.1 cvsversion.1 includemocs.1 kde-build.1 kdesvn-build.1 noncvslist.1
 
-OPTIONS=	VALGRIND "Install devel/valgrind" off
+OPTIONS_DEFINE=	VALGRIND
+VALGRIND_DESC=	Install devel/valgrind
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_VALGRIND)
+.if ${PORT_OPTIONS:MVALGRIND}
 RUN_DEPENDS+=	valgrind:${PORTSDIR}/devel/valgrind
 .endif
 
@@ -55,4 +56,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|<\(fnmatch.h\)>|"/usr/include/\1"|' \
 		${WRKSRC}/cervisia/stringmatcher.cpp
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

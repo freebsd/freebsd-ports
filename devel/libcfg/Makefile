@@ -34,12 +34,11 @@ INSTALL_TARGET+=	install-man
 
 PORTDOCS=	*
 
-OPTIONS=	EXAMPLES "Install examples" off \
-		HTMLDOCS "Install html documentation" off
+OPTIONS_DEFINE=	EXAMPLES DOCS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_EXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 PLIST_SUB+=	EXAMPLES=""
 .else
 PLIST_SUB+=	EXAMPLES="@comment "
@@ -50,21 +49,19 @@ CFLAGS+=	-fPIC
 .endif
 
 post-install:
-.if defined(WITH_EXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/examples/example.* ${EXAMPLESDIR}
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for FILE in AUTHORS README TODO
 	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
-.if defined(WITH_HTMLDOCS)
 	@${MKDIR} ${DOCSDIR}/html
 	@for FILE in ${WRKSRC}/doc/html/*; do \
 		${INSTALL_DATA} $${FILE} ${DOCSDIR}/html; \
 	done
 .endif
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

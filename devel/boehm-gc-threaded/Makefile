@@ -28,8 +28,8 @@ INSTLIBS=	cord gc gccpp
 GC_VARIANT=	threaded
 SOVER=	1
 
-OPTIONS=	PARALLEL_MARK "Parallel-thread marking (faster for SMP)" off \
-		FULLDEBUG "Debugging support (see documentation)" off
+OPTIONS_DEFINE=	PARALLEL_MARK DEBUG
+PARALLEL_MARK_DESC=	Parallel-thread marking (faster for SMP)
 
 PLIST_FILES=	${INSTLIBS:S,^,lib/lib,g:S,$,-${GC_VARIANT}.so.${SOVER},g} \
 		${INSTLIBS:S,^,lib/lib,g:S,$,-${GC_VARIANT}.so,g} \
@@ -41,11 +41,11 @@ PLIST_FILES=	${INSTLIBS:S,^,lib/lib,g:S,$,-${GC_VARIANT}.so.${SOVER},g} \
 BROKEN=	Does not compile on ia64
 .endif
 
-.if defined(WITH_PARALLEL_MARK)
+.if ${PORT_OPTIONS:MPARALLEL_MARK}
 CONFIGURE_ARGS+=	--enable-parallel-mark
 .endif
 
-.if defined(WITH_FULLDEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-gc-debug
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}+fulldebug
 .endif

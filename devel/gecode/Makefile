@@ -15,7 +15,8 @@ COMMENT=	Generic Constraint Development Environment
 
 LICENSE=	MIT
 
-OPTIONS=	GIST "Interactive Search Tool (requires Qt)" Off
+OPTIONS_DEFINE=	GIST
+GIST_DESC=	Interactive Search Tool (requires Qt)
 
 USE_PERL5_BUILD=yes
 USE_BISON=	build
@@ -38,7 +39,7 @@ MAKE_JOBS_UNSAFE=yes
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GIST)
+.if ${PORT_OPTIONS:MGIST}
 USE_QT4=	corelib gui moc_build qmake_build
 CONFIGURE_ARGS+=--enable-gist --enable-qt
 PLIST_SUB+=	GIST=""
