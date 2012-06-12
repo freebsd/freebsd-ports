@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ghostscript9
+PORTNAME=	ghostscript
 PORTVERSION=	9.05
 PORTREVISION=	5
 CATEGORIES=	print
@@ -14,9 +14,9 @@ MASTER_SITES=	http://downloads.ghostscript.com/public/:gs_srcs \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/GPL/gs${PORTVERSION:S/.//}/:gs_srcs \
 		http://www.humblesoft.com/pub/:epag
 MASTER_SITE_SUBDIR=	ghostscript/:gs_srcs
-DISTNAME=	${PORTNAME:S,9$,,}-${PORTVERSION}
+PKGNAMESUFFIX=	9
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:gs_srcs ${EPAG_SRCS}:epag
-DIST_SUBDIR=	${PORTNAME:S,9$,,}
+DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_AFTER_ARGS=	| ${TAR} -xpf - ${EXCLUDE_DIRS:S/^/--exclude /}
 
@@ -31,11 +31,9 @@ LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
 		tiff:${PORTSDIR}/graphics/tiff
-
 # XXX: lcms shared lib support is broken
 #		lcms:${PORTSDIR}/graphics/lcms
-
-RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME:S,9$,,}/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
+RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 
 CONFLICTS_INSTALL=	gambc-[0-9]* ghostscript[78]-[0-9]* \
 			ghostscript[78]-*-[0-9]*
@@ -75,7 +73,6 @@ PLIST_SUB=	GS_VERSION="${PORTVERSION}" \
 SUB_FILES=	pkg-message
 SUB_LIST=	DATADIR=${DATADIR} PORTVERSION=${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/pkg-message
-DATADIR=	${PREFIX}/share/${PORTNAME:S,9$,,}
 
 OPTIONS_DEFINE=	A4SIZE CUPS FONTCONFIG ICONV LIBPAPER GTK2 X11
 OPTIONS_DEFAULT=       CUPS FONTCONFIG ICONV LIBPAPER      X11
