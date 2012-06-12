@@ -6,21 +6,23 @@
 #
 
 PORTNAME=	watchmen
-PORTVERSION=	0.05
-PORTREVISION=	1
+PORTVERSION=	0.07
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	proler@gmail.com
 COMMENT=	Watch and restart daemons
 
-OPTIONS=	MYSQL "Want test mysql queries" off \
-		PGSQL "Want test postgresql queries" off \
-		EMAIL "report problems by email" off
+LICENSE=	GPLv3
 
-RUN_DEPENDS+=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS+=	p5-libwww>=6.04:${PORTSDIR}/www/p5-libwww
 
 PERL_CONFIGURE=	yes
+
+OPTIONS_DEFINE=	MYSQL PGSQL EMAIL
+MYSQL_DESC=	Want test mysql queries
+PGSQL_DESC=	Want test postgresql queries
+EMAIL_DESC=	report problems by email
 
 USE_PERL5_RUN=	yes
 POD2MAN?=	pod2man
@@ -29,8 +31,9 @@ MAN1=		${PORTNAME}.1
 PLIST_FILES=	\
 	bin/${PORTNAME}  \
 	etc/${PORTNAME}.conf.dist  \
-	%%SITE_PERL%%/%%PERL_ARCH%%/auto/watchmen/.packlist
-PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/watchmen
+	%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/watchmen/.packlist
+PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/watchmen \
+		%%SITE_PERL%%/%%PERL_ARCH%%/auto/App
 
 .include <bsd.port.pre.mk>
 
@@ -38,18 +41,18 @@ PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/watchmen
 RUN_DEPENDS+=	p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER}
+RUN_DEPENDS+=	p5-DBD-mysql${MYSQL_VER}>=0:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER}
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+RUN_DEPENDS+=	p5-DBD-Pg>=2.19.2:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
-.if defined(WITH_EMAIL)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Email/Send.pm:${PORTSDIR}/mail/p5-Email-Send
+.if ${PORT_OPTIONS:MEMAIL}
+RUN_DEPENDS+=	p5-Email-Send>=2.198:${PORTSDIR}/mail/p5-Email-Send
 .endif
 
 post-install:
