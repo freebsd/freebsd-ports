@@ -6,6 +6,7 @@
 # $FreeBSD$
 
 PORTNAME=	qmake
+PORTREVISION=	1
 DISTVERSION=	${QT4_VERSION}
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt4-
@@ -60,6 +61,8 @@ post-patch:
 	@${CP} -PpR ${WRKSRC}/../mkspecs/freebsd-g++46 ${WRKSRC}/../mkspecs/freebsd-clang
 	@${REINPLACE_CMD} -e 's|g++-unix.conf|clang.conf|g' \
 		-e 's|freebsd-g++|freebsd-clang|g' \
+		-e 's|gcc46|clang|g' \
+		-e 's|g++46|clang++|g' \
 		${WRKSRC}/../mkspecs/freebsd-clang/qmake.conf
 
 # Add mkspecs for the different GCC versions in the ports tree
