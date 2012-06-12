@@ -244,7 +244,6 @@
     SUBDIR += flare
     SUBDIR += flightgear
     SUBDIR += flightgear-aircraft
-    SUBDIR += flightgear-atlas
     SUBDIR += flightgear-data
     SUBDIR += flightgear-mb339-pan
     SUBDIR += flobopuyo
