@@ -5,7 +5,7 @@
 -prefix=@prefix@
  
  case $1 in
-@@ -9,6 +8,7 @@
+@@ -9,6 +8,6 @@
  esac
    
 +# This will only set CP if CLASSPATH is non-empty:
@@ -14,5 +14,4 @@
 -CP=`echo $CLASSPATH | sed s/:/,/`
 -CLASSPATH=@datadir@/jode-@VERSION@.jar:@CLASSPATH@ \
 -@JAVA@ $CLAZZ --classpath $CP $*
-+JAVA_VERSION="%%JAVA_VERSION%%" exec @prefix@/bin/java -cp @datadir@/jode-@VERSION@.jar:@datadir@/getopt.jar \
-+	$CLAZZ $CP "$@"
++exec @prefix@/bin/java -cp @datadir@/jode-@VERSION@.jar:@datadir@/getopt.jar $CLAZZ $CP "$@"
