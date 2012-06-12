@@ -795,6 +795,7 @@
     SUBDIR += py-freeimagepy
     SUBDIR += py-gchartwrapper
     SUBDIR += py-gd
+    SUBDIR += py-gdal
     SUBDIR += py-gimp
     SUBDIR += py-glewpy
     SUBDIR += py-goocanvas
