@@ -25,19 +25,19 @@ PKGMESSAGE=	${WRKDIR}/${PORTNAME}/pkg-message
 SUB_FILES=	pkg-message
 PLIST_DIRSTRY=	%%WWWDIR%%
 
-OPTIONS=	POSTGRE "Use PostgreSQL Database" off \
-		APACHE "Use Apache webserver" on \
-		LIGHTTPD "Use Lighttpd webserver" off
+OPTIONS_DEFINE=	PGSQL APACHE LIGHTTPD
+OPTIONS_DEFAULT=	APACHE
+LIGHTTPD_DESC=	Use Lighttpd webserver
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_POSTGRE)
+.if ${PORT_OPTIONS:MPOSTGRE}
 USE_PHP+=	pgsql
 .endif
-.if defined(WITH_APACHE)
+.if ${PORT_OPTIONS:MAPACHE}
 USE_APACHE=	22
 .endif
-.if defined(WITH_LIGHTTPD)
+.if ${PORT_OPTIONS:MLIGHTTPD}
 RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
 .endif
 
