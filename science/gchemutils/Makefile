@@ -47,11 +47,12 @@ MAN1=		gchem3d.1 gchemcalc.1 gchempaint.1 gchemtable.1 gcrystal.1 \
 
 PLIST_SUB=	VER=0.12 GOFFICE=0.8.17 GNUMERIC_VER=1.10.17
 
-OPTIONS=	XUL "Build browser plugin (requires Xulrunner)" off
+OPTIONS_DEFINE=	XUL
+XUL_DESC=	Build browser plugin (requires Xulrunner)
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_XUL)
+.if ${PORT_OPTIONS:MXUL}
 USE_GECKO=	libxul
 CONFIGURE_ARGS+=--enable-mozilla-plugin
 PLIST_SUB+=	XUL=""
