@@ -35,4 +35,8 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR_RACC}/doc.ja/*.html ${RUBY_MODDOCDIR}/ja/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${RUBY_VER} == 1.9
+BROKEN=	Builds but does not work with ruby 1.9
+.endif
+.include <bsd.port.post.mk>
