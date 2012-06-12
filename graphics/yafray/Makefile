@@ -25,4 +25,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 pre-patch:
 	@${MV} ${WRKSRC}/linux-settings.py ${WRKSRC}/freebsd-settings.py
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1000000
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
