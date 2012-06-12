@@ -3464,3 +3464,11 @@ security/ifd-devkit||2012-06-08|Conflicts with dependency, not useful
 www/kazehakase||2012-06-10|Has expired: BROKEN for more than 6 month
 x11/trayer-srg|x11/trayer|2012-06-11|Merged into x11/trayer
 games/flightgear-atlas||2012-06-12|Unmaintained upstream
+deskutils/sciplore-mindmapping||2012-06-12|Has expired: Discontinued, use deskutils/docear instead
+devel/libtool-fixed||2012-06-12|Has expired: libtool has been fixed, no more need of this version
+devel/p5-Devel-ObjectTracker||2012-06-12|Has expired: removed from CPAN
+devel/rubygem-vmc||2012-06-12|Has expired: BROKEN for more than 6 month
+games/antrix||2012-06-12|Has expired: no more public distfiles, abandoned upstream
+games/sfbol||2012-06-12|Has expired: BROKEN for more than 6 month
+java/eclipseme||2012-06-12|Has expired: depends on java/sun-wtk
+mail/lmtpd||2012-06-12|Has expired: BROKEN for more than 6 month

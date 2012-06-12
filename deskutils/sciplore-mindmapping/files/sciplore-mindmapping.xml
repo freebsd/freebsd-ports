@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<mime-info xmlns='http://www.freedesktop.org/standards/shared-mime-info'>
-    <mime-type type="text/x-freemind">
-	<comment>Freemind or SciPlore MindMapping mind map file</comment>
-	<glob pattern="*.mm"/>
-	<sub-class-of type="application/xml"/>
-    </mime-type>
-</mime-info>

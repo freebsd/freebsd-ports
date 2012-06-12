@@ -984,7 +984,6 @@
     SUBDIR += libtifiles
     SUBDIR += libtifiles2
     SUBDIR += libtool
-    SUBDIR += libtool-fixed
     SUBDIR += libtpl
     SUBDIR += libublio
     SUBDIR += libukcprog
@@ -1710,7 +1709,6 @@
     SUBDIR += p5-Devel-Messenger
     SUBDIR += p5-Devel-Modlist
     SUBDIR += p5-Devel-NYTProf
-    SUBDIR += p5-Devel-ObjectTracker
     SUBDIR += p5-Devel-PPPort
     SUBDIR += p5-Devel-PackagePath
     SUBDIR += p5-Devel-PartialDump
@@ -3882,7 +3880,6 @@
     SUBDIR += rubygem-uuid
     SUBDIR += rubygem-uuidtools
     SUBDIR += rubygem-validatable
-    SUBDIR += rubygem-vmc
     SUBDIR += rubygem-warbler
     SUBDIR += rubygem-warden
     SUBDIR += rubygem-webby

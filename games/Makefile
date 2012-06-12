@@ -40,7 +40,6 @@
     SUBDIR += anki
     SUBDIR += annelid
     SUBDIR += antipolix
-    SUBDIR += antrix
     SUBDIR += aop
     SUBDIR += apoolGL
     SUBDIR += apricots
@@ -817,7 +816,6 @@
     SUBDIR += senken
     SUBDIR += sets
     SUBDIR += sex
-    SUBDIR += sfbol
     SUBDIR += shaaft
     SUBDIR += shootingstar
     SUBDIR += simplevaders
