@@ -1,5 +1,5 @@
---- build/myocamlbuild_prefix.ml.orig	2012-04-26 21:03:23.000000000 -0500
-+++ build/myocamlbuild_prefix.ml	2012-04-26 21:03:35.000000000 -0500
+--- build/myocamlbuild_prefix.ml.orig	2012-06-11 16:17:49.000000000 -0500
++++ build/myocamlbuild_prefix.ml	2012-06-11 16:25:48.000000000 -0500
 @@ -325,7 +325,13 @@
             let sedexpr =
               Printf.sprintf "s/^\\?HAS_(%s)://; /HAS_.*:/d" tags
@@ -15,3 +15,19 @@
  
        (* Windows specific : redefinition of an existing rule in Ocaml_specific.ml,
           Louis please have a look to avoid the two copies at the end
+@@ -549,9 +555,14 @@
+         flag ["ocaml"; "native"; "link"; tag] (S[A"-ccopt";A("-L"^dir);A"-cclib";A("-l"^name)]);
+       in
+ 
+-      (* In the memory.c in FreeBSD part that uses kvm_getprocs() required link with -lkvm. *)
+       if is_fbsd then
++        (* In the memory.c in FreeBSD part that uses kvm_getprocs() required
++	    link with -lkvm. *)
+         flag ["use_stubs"; "link"] (S[A "-cclib";A "-lkvm"]);
++        (* Build with converters/libiconv port, which it installs in the
++           /usr/local by default *)
++        flag ["iconv"; "compile"] (S[A"-I";A "/usr/local/include"]);
++        flag ["iconv"; "link"] (S[A"-ccopt";A "-L/usr/local/lib";A "-cclib";A "-liconv"]);
+ 
+ (* -- Don't forget that the rest of the "mlstate build stdlib" is in --
+    -- myocamlbuild_suffix.ml. The rest comes from the build_rules*.ml in each repo -- *)
