@@ -27,8 +27,10 @@ ALL_TARGET=	all html
 
 MAN1=		the.1
 
-OPTIONS=	XAW3D "Enable Xaw3D" off \
-		XCURSES "Build XCurses (X11) version" off
+OPTIONS_DEFINE=	XAW3D XCURSES REXX_REGINA DOCS
+XAW3D_DESC=	Enable Xaw3D
+XCURSES_DESC=	Build XCurses (X11) version
+REXX_REGINA_DESC=	Enable Rexx interpreter
 
 .include <bsd.port.pre.mk>
 
@@ -36,12 +38,12 @@ OPTIONS=	XAW3D "Enable Xaw3D" off \
 BROKEN=		Does not configure on powerpc
 .endif
 
-.if defined(WITH_XAW3D)
+.if ${PORT_OPTIONS:MXAW3D}
 CONFIGURE_ARGS+=--with-xaw3d
 LIB_DEPENDS+=	Xaw3d.8:${PORTSDIR}/x11-toolkits/Xaw3d
 .endif
 
-.if defined(WITH_XCURSES)
+.if ${PORT_OPTIONS:MXCURSES}
 CONFIGURE_ARGS+=--with-xcurses \
 		--with-cursesincdir=${LOCALBASE}/include \
 		--with-curseslibdir=${LOCALBASE}/lib
@@ -52,7 +54,7 @@ PLIST_SUB=	XCURSES="" NCURSES="@comment "
 PLIST_SUB=	XCURSES="@comment " NCURSES=""
 .endif
 
-.if defined(WITH_REXX_REGINA)
+.if ${PORT_OPTIONS:MREXX_REGINA}
 BUILD_DEPENDS+=	regina:${PORTSDIR}/lang/rexx-regina
 RUN_DEPENDS+=	regina:${PORTSDIR}/lang/rexx-regina
 CONFIGURE_ARGS+=	--with-rexx=regina
@@ -63,12 +65,12 @@ CONFIGURE_ARGS+=	--with-rexx=rexximc
 .endif
 
 post-install:
-.if defined(WITH_XCURSES)
+.if ${PORT_OPTIONS:MXCURSES}
 	@${LN} -sf xthe ${PREFIX}/bin/the
 .else
 	@${LN} -sf nthe ${PREFIX}/bin/the
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${PREFIX}/share/doc/THE
 	${INSTALL_DATA} ${WRKSRC}/*.html ${PREFIX}/share/doc/THE
 .endif

@@ -23,8 +23,8 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-idirafter ${LOCALBASE}/include
 
-OPTIONS=	FREETYPE "Enable FreeType2 support" off \
-		SLANG "Enable sLang support (for video driver)" off
+OPTIONS_DEFINE=	FREETYPE SLANG
+SLANG_DESC=	Enable sLang support (for video driver)
 
 MAN1=		advmess.1
 
@@ -34,13 +34,13 @@ MAN1=		advmess.1
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 .endif
 
-.if defined(WITH_FREETYPE)
+.if ${PORT_OPTIONS:MFREETYPE}
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 .else
 CONFIGURE_ARGS+=--disable-freetype
 .endif
 
-.if defined(WITH_SLANG)
+.if ${PORT_OPTIONS:MSLANG}
 LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
 .else
 CONFIGURE_ARGS+=--disable-slang

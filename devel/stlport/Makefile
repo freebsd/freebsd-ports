@@ -34,26 +34,28 @@ CONFIGURE_ARGS=	--with-lib-motif=${COMPILER}
 USE_LDCONFIG=	yes
 PORTDOCS=	*
 
-OPTIONS=	SHORT_STRING_OPTIM "Enable short string optimization." on 	\
-		PTR_SPECIALIZATIONS "Use pointer types specializations." off 	\
-		TEMPLATE_EXPRESSION "Use template expressions for string." off 	\
-		BOOST_SUPPORT "Use Boost type traits." off
+OPTIONS_DEFINE=	SHORT_STRING_OPTIM PTR_SPECIALIZATIONS TEMPLATE_EXPRESSION BOOST DOCS
+OPTIONS_DEFAULT=	SHORT_STRING_OPTIM
+SHORT_STRING_OPTIM_DESC=	Enable short string optimization
+PTR_SPECIALIZATIONS_DESC=	Use pointer types specializations
+TEMPLATE_EXPRESSION_DESC=	Use template expressions for string
+BOOST_DESC=	Use Boost type traits
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_SHORT_STRING_OPTIM)
+.if empty(PORT_OPTIONS:MSHORT_STRING_OPTIM)
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-no-short-string-optim-user_config.h.diff
 .endif
 
-.if defined(WITH_PTR_SPECIALIZATIONS)
+.if ${PORT_OPTIONS:MPTR_SPECIALIZATIONS}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ptr_spec-user_config.h.diff
 .endif
 
-.if defined(WITH_TEMPLATE_EXPRESSION)
+.if ${PORT_OPTIONS:MTEMPLATE_EXPRESSION}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-templ-expr-user_config.h.diff
 .endif
 
-.if defined(WITH_BOOST_SUPPORT)
+.if ${PORT_OPTIONS:MBOOST}
 EXTRA_PATCHES+= ${PATCHDIR}/extra-patch-boost-support-user_config.h.diff
 MAKE_ENV+= STLP_BUILD_BOOST_PATH=${LOCALBASE}/include
 BUILD_DEPENDS+= ${LOCALBASE}/include/boost/config/stdlib/stlport.hpp:${PORTSDIR}/devel/boost-libs
@@ -81,7 +83,7 @@ do-install:
 	(cd ${PATCH_WRKSRC}/lib; ${TAR} cf - *) | (cd ${PREFIX}/lib; ${TAR} xf -)
 	${CHOWN} -h ${BINOWN}:${BINGRP} ${PREFIX}/lib/libstlport*
 	${FIND} ${PREFIX}/include/stlport -name \*.orig -delete
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PATCH_WRKSRC}/doc/* ${DOCSDIR}
 .endif

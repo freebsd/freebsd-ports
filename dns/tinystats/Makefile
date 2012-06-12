@@ -16,7 +16,7 @@ COMMENT=	DJB's tinydns statistics generator
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=
 
-OPTIONS=	IPV6 "Enable IPv6 support" off
+OPTIONS_DEFINE=	IPV6 DOCS
 
 PLIST_FILES=	bin/tinystats \
 		%%EXAMPLESDIR%%/tinydns.log.run.sample \
@@ -27,9 +27,9 @@ PLIST_FILES=	bin/tinystats \
 PLIST_DIRS=	%%EXAMPLESDIR%%
 PORTDOCS=	README LICENSE THANKS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 MAKE_ARGS+=	-DWITH_IPV6
 .endif
 
@@ -38,9 +38,9 @@ do-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/tinydns.sh.sample ${WRKSRC}/tinydns.log.run.sample \
 			${WRKSRC}/update_slave.sh.sample ${WRKSRC}/start_slave.sh.sample ${WRKSRC}/Makefile.sample ${EXAMPLESDIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/LICENSE ${WRKSRC}/THANKS ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

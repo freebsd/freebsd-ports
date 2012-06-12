@@ -15,8 +15,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Testoob is an advanced unit testing framework for PyUnit
 
-OPTIONS=	TWISTED "enable running in threads" off \
-		HTML "enable HTML output" off
+OPTIONS_DEFINE=	TWISTED HTML
+TWISTED_DESC=	enable running in threads
+HTML_DESC=	enable HTML output
+
 # bypass infrastructure bug (taken from www/py-django)
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
@@ -29,11 +31,11 @@ PYDISTUTILS_NOEGGINFO=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_TWISTED)
+.if ${PORT_OPTIONS:MTWISTED}
 USE_TWISTED=	yes
 .endif
 
-.if defined(WITH_HTML)
+.if ${PORT_OPTIONS:MHTML}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Ft/Xml/__init__.py:${PORTSDIR}/textproc/py-4suite-xml
 .endif
 

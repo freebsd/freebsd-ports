@@ -34,13 +34,15 @@ MANN=		thread.n tpool.n tsv.n ttrace.n
 INSTALL_TARGET+=	install-doc
 .endif
 
-OPTIONS=		GDBM	"include GDBM support"	on
+OPTIONS_DEFINE=	GDBM DOCS
+OPTIONS_DEFAULT=	GDBM
+GDBM_DESC=	include GDBM support
 
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=	--with-tcl="${TCL_LIBDIR}"
 
-.if defined(WITH_GDBM)
+.if ${PORT_OPTIONS:MGDBM}
 LIB_DEPENDS+=		gdbm.4:${PORTSDIR}/databases/gdbm
 CONFIGURE_ARGS+=	--with-gdbm
 CONFIGURE_ENV+=		gincdir="${LOCALBASE}/include" glibdir="${LOCALBASE}/lib"
@@ -51,7 +53,7 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/html
 .for FILE in ChangeLog README license.terms
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
