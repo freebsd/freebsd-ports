@@ -1,5 +1,5 @@
---- build/myocamlbuild_prefix.ml.orig	2012-06-11 16:17:49.000000000 -0500
-+++ build/myocamlbuild_prefix.ml	2012-06-11 16:25:48.000000000 -0500
+--- build/myocamlbuild_prefix.ml.orig	2012-06-12 12:21:51.000000000 -0500
++++ build/myocamlbuild_prefix.ml	2012-06-12 12:25:27.000000000 -0500
 @@ -325,7 +325,13 @@
             let sedexpr =
               Printf.sprintf "s/^\\?HAS_(%s)://; /HAS_.*:/d" tags
@@ -21,9 +21,10 @@
  
 -      (* In the memory.c in FreeBSD part that uses kvm_getprocs() required link with -lkvm. *)
        if is_fbsd then
+-        flag ["use_stubs"; "link"] (S[A "-cclib";A "-lkvm"]);
 +        (* In the memory.c in FreeBSD part that uses kvm_getprocs() required
-+	    link with -lkvm. *)
-         flag ["use_stubs"; "link"] (S[A "-cclib";A "-lkvm"]);
++           link with -lkvm. The stubs needs to be compiled with -liconv too. *)
++        flag ["use_stubs"; "link"] (S[A "-cclib";A "-lkvm";A"-ccopt";A "-L/usr/local/lib";A "-cclib";A "-liconv"]);
 +        (* Build with converters/libiconv port, which it installs in the
 +           /usr/local by default *)
 +        flag ["iconv"; "compile"] (S[A"-I";A "/usr/local/include"]);
