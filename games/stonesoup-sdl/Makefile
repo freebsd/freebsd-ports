@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-WITH_SDL=	yes
+PORT_OPTIONS+=	SDL
 
 MASTERDIR=	${.CURDIR}/../stonesoup
 
