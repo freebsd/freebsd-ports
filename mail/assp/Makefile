@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	assp
-PORTVERSION=	1.9.3.5
+PORTVERSION=	1.9.3.6
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ringofsaturn.com/distfiles/
@@ -36,97 +36,100 @@ SUB_LIST=	ASSP_USER="${ASSP_USER}" ASSP_GROUP="${ASSP_GROUP}" \
 		DATADIR="${DATADIR}" PERL="${PERL}"
 
 USE_RC_SUBR=	${PORTNAME}
-RC_SCRIPT=	${PREFIX}/etc/rc.d/${PORTNAME}
 
-OPTIONS=	EMVALID	"RFC822 recipient address validator" on \
-		LDAP	"LDAP validation of recipient addresses" off \
-		SPF	"SPF validation of client IP" on \
-		SRS	"Sender Rewriting Scheme" on \
-		SEND	"Resending .eml files" on \
-		FBACKW	"File Reading Backwards" on \
-		ZLIB	"HTTP Header Compression on Admin Interface" on \
-		CLAMAV	"ClamAV virus scanner" on \
-		DNSBL	"DNS block list checking" on \
-		MYSQL	"Use MySQL db to store white/red/delaylists" off \
-		MATCHRE	"Match IP ranges and CIDR blocks in lists" on \
-		SENDERB	"Country Code checks" on \
-		MIMEMOD	"Multiple Attachement detection" on \
-		SSL	"SSL secure sockets support" on \
-		IPV6	"IPv6 sockets support" on
+OPTIONS_DEFINE=	EMVALID LDAP SPF SRS SEND FBACKW ZLIB CLAMAV DNSBL MYSQL \
+		MATCHRE SENDERB MIMEMOD SSL IPV6
+
+EMVALID_DESC=	RFC822 recipient address validator
+LDAP_DESC=	LDAP validation of recipient addresses
+SPF_DESC=	SPF validation of client IP
+SRS_DESC=	Sender Rewriting Scheme
+SEND_DESC=	Resending .eml files
+FBACKW_DESC=	File Reading Backwards
+ZLIB_DESC=	HTTP Header Compression on Admin Interface
+CLAMAV_DESC=	ClamAV virus scanner
+DNSBL_DESC=	DNS block list checking
+MYSQL_DESC=	Use MySQL db to store white/red/delaylists
+MATCHRE_DESC=	Match IP ranges and CIDR blocks in lists
+SENDERB_DESC=	Country Code checks
+MIMEMOD_DESC=	Multiple Attachement detection
+SSL_DESC=	SSL secure sockets support
+IPV6_DESC=	IPv6 sockets support
+
+OPTIONS_DEFAULT=	EMVALID SPF SRS SEND FBACKW ZLIB CLAMAV DNSBL MATCHRE SENDERB MIMEMOD SSL IPV6
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${DISTNAME}/${PORTNAME:U}
 
 .include <bsd.port.pre.mk>
 
-SUB_LIST+=	RC_SCRIPT=${RC_SCRIPT}
 
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
-RUN_DEPENDS+=	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser
+RUN_DEPENDS+=	p5-Net-DNS>=0.68:${PORTSDIR}/dns/p5-Net-DNS
+RUN_DEPENDS+=	p5-libwww>=6.04:${PORTSDIR}/www/p5-libwww \
+		p5-HTML-Parser>=3.69:${PORTSDIR}/www/p5-HTML-Parser
 
-.if !defined(WITHOUT_EMVALID)
-RUN_DEPENDS+=	${SITE_PERL}/Email/Valid.pm:${PORTSDIR}/mail/p5-Email-Valid
+.if ${PORT_OPTIONS:MEMVALID}
+RUN_DEPENDS+=	p5-Email-Valid>=0.190:${PORTSDIR}/mail/p5-Email-Valid
 .endif
 
-.if !defined(WITHOUT_LDAP)
-RUN_DEPENDS+=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
+.if ${PORT_OPTIONS:MLDAP}
+RUN_DEPENDS+=	p5-perl-ldap>=0.4400:${PORTSDIR}/net/p5-perl-ldap
 .endif
 
-.if !defined(WITHOUT_SPF)
-RUN_DEPENDS+=	${SITE_PERL}/Mail/SPF.pm:${PORTSDIR}/mail/p5-Mail-SPF
+.if ${PORT_OPTIONS:MSPF}
+RUN_DEPENDS+=	p5-Mail-SPF>=2.007:${PORTSDIR}/mail/p5-Mail-SPF
 .endif
 
-.if !defined(WITHOUT_SRS)
-RUN_DEPENDS+=	${SITE_PERL}/Mail/SRS.pm:${PORTSDIR}/mail/p5-Mail-SRS
+.if ${PORT_OPTIONS:MSRS}
+RUN_DEPENDS+=	p5-Mail-SRS>=0.31:${PORTSDIR}/mail/p5-Mail-SRS
 .endif
 
-.if !defined(WITHOUT_SEND)
-RUN_DEPENDS+=	${SITE_PERL}/Email/Send.pm:${PORTSDIR}/mail/p5-Email-Send
+.if ${PORT_OPTIONS:MSEND}
+RUN_DEPENDS+=	p5-Email-Send>=2.198:${PORTSDIR}/mail/p5-Email-Send
 .endif
 
-.if !defined(WITHOUT_FBACKW)
-RUN_DEPENDS+=	${SITE_PERL}/File/ReadBackwards.pm:${PORTSDIR}/devel/p5-File-ReadBackwards
+.if ${PORT_OPTIONS:MFBACKW}
+RUN_DEPENDS+=	p5-File-ReadBackwards>=1.05:${PORTSDIR}/devel/p5-File-ReadBackwards
 .endif
 
-.if !defined(WITHOUT_ZLIB)
+.if ${PORT_OPTIONS:MZLIB}
 . if ${PERL_LEVEL} < 500903
-RUN_DEPENDS+=	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-IO-Compress
-.endif
+RUN_DEPENDS+=	p5-IO-Compress>=2.052:${PORTSDIR}/archivers/p5-IO-Compress
+. endif
 .endif
 
-.if !defined(WITHOUT_CLAMAV)
-RUN_DEPENDS+=	${SITE_PERL}/File/Scan/ClamAV.pm:${PORTSDIR}/security/p5-File-Scan-ClamAV
+.if ${PORT_OPTIONS:MCLAMAV}
+RUN_DEPENDS+=	p5-File-Scan-ClamAV>=1.9.1:${PORTSDIR}/security/p5-File-Scan-ClamAV
 PLIST_SUB+=	ASSP_CLAMAV=""
 .else
 PLIST_SUB+=	ASSP_CLAMAV="@comment "
 .endif
 
-.if !defined(WITHOUT_DNSBL)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
+.if ${PORT_OPTIONS:MDNSBL}
+RUN_DEPENDS+=	p5-Net-DNS>=0.68:${PORTSDIR}/dns/p5-Net-DNS
 .endif
 
-.if !defined(WITHOUT_MYSQL)
-RUN_DEPENDS+=	${SITE_PERL}/Tie/RDBM.pm:${PORTSDIR}/databases/p5-Tie-DBI
+.if ${PORT_OPTIONS:MMYSQL}
+RUN_DEPENDS+=	p5-Tie-DBI>=1.05:${PORTSDIR}/databases/p5-Tie-DBI
 .endif
 
-.if !defined(WITHOUT_MATCHRE)
-RUN_DEPENDS+=	${SITE_PERL}/Net/IP/Match/Regexp.pm:${PORTSDIR}/net-mgmt/p5-Net-IP-Match-Regexp
+.if ${PORT_OPTIONS:MMATCHRE}
+RUN_DEPENDS+=	p5-Net-IP-Match-Regexp>=1.01:${PORTSDIR}/net-mgmt/p5-Net-IP-Match-Regexp
 .endif
 
-.if !defined(WITHOUT_SENDERB)
-RUN_DEPENDS+=	${SITE_PERL}/Net/SenderBase.pm:${PORTSDIR}/mail/p5-Net-SenderBase
+.if ${PORT_OPTIONS:MSENDERB}
+RUN_DEPENDS+=	p5-Net-SenderBase>=1.02:${PORTSDIR}/mail/p5-Net-SenderBase
 .endif
 
-.if !defined(WITHOUT_MIMEMOD)
-RUN_DEPENDS+=	${SITE_PERL}/Email/MIME/Modifier.pm:${PORTSDIR}/mail/p5-Email-MIME
+.if ${PORT_OPTIONS:MMIMEMOD}
+RUN_DEPENDS+=	p5-Email-MIME>=1.910:${PORTSDIR}/mail/p5-Email-MIME
 .endif
 
-.if !defined(WITHOUT_SSL)
-RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
+.if ${PORT_OPTIONS:MSSL}
+RUN_DEPENDS+=	p5-IO-Socket-SSL>=1.74:${PORTSDIR}/security/p5-IO-Socket-SSL
 .endif
 
-.if !defined(WITHOUT_IPV6)
-RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-Socket-INET6
+.if ${PORT_OPTIONS:MIPV6}
+RUN_DEPENDS+=	p5-IO-Socket-INET6>=2.69:${PORTSDIR}/net/p5-IO-Socket-INET6
 .endif
 
 EXTRACT_AFTER_ARGS=	-d ${PORTNAME}-${PORTVERSION}
@@ -151,7 +154,7 @@ do-install:
 	${MKDIR} ${PREFIX}/etc/periodic/daily
 	${INSTALL_SCRIPT} ${WRKDIR}/510.assp ${PREFIX}/etc/periodic/daily/
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.htm ${DOCSDIR}
 .endif
