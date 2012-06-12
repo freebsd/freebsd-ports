@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Inlined Math::Symbolic functions
 
-BUILD_DEPENDS=	${SITE_PERL}/Math/Symbolic.pm:${PORTSDIR}/math/p5-Math-Symbolic \
-		${SITE_PERL}/Math/Symbolic/Custom/Contains.pm:${PORTSDIR}/math/p5-Math-Symbolic-Custom-Contains
+BUILD_DEPENDS=	p5-Math-Symbolic>=0:${PORTSDIR}/math/p5-Math-Symbolic \
+		p5-Math-Symbolic-Custom-Contains>=0:${PORTSDIR}/math/p5-Math-Symbolic-Custom-Contains
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Math::SymbolicX::Inline.3
