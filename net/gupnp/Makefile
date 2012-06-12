@@ -6,25 +6,30 @@
 #
 
 PORTNAME=	gupnp
-PORTVERSION=	0.13.2
-PORTREVISION=	3
+PORTVERSION=	0.18.3
 CATEGORIES=	net
-MASTER_SITES=	http://www.gupnp.org/sites/all/files/sources/
+MASTER_SITES=	GNOME
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Framework for UPnP devices
 
-LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup \
-		gssdp-1.0:${PORTSDIR}/net/gssdp \
-		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid
+LICENSE=	LGPL20
 
-USE_PYTHON=	yes
+BUILD_DEPENDS=	gobject-introspection>=0.6.4:${PORTSDIR}/devel/gobject-introspection
+LIB_DEPENDS=	gssdp-1.0:${PORTSDIR}/net/gssdp \
+		soup-2.4:${PORTSDIR}/devel/libsoup \
+		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
+
+CONFIGURE_ARGS=	--enable-introspection=yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack intlhack libglade2 glib20
+USE_GMAKE=	yes
+USE_GNOME=	glib20 gnomehack
 USE_LDCONFIG=	yes
+USE_PYTHON=	yes
+USE_XZ=		yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/python|/usr/bin/env python|' \
-		 ${WRKSRC}/tools/gupnp-binding-tool
+	@${REINPLACE_CMD} -e 's|/usr/bin/python|${PYTHON_CMD}|' \
+		${WRKSRC}/tools/gupnp-binding-tool
 
 .include <bsd.port.mk>
