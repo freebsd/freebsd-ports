@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gdal
-PORTVERSION=	1.9.0
-PORTREVISION=	1
+PORTVERSION=	1.9.1
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/gdal/ \
 		ftp://ftp.remotesensing.org/pub/gdal/ \
@@ -16,7 +15,9 @@ MASTER_SITES=	http://download.osgeo.org/gdal/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A translator library for geospatial data formats
 
-CONFIGURE_ARGS=	--datadir=${DATADIR} --with-libz=/usr
+CFLAGS+=	-fPIC ${PTHREAD_CFLAGS}
+CONFIGURE_ARGS=	--datadir=${DATADIR} \
+		--with-libz=/usr --with-liblzma=yes --with-threads=yes
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}
 MAKEFILE=	GNUmakefile
@@ -27,29 +28,25 @@ USE_LDCONFIG=	yes
 
 OPTIONS=	CFITSIO	"FITS support"			off \
 		CURL	"Curl support"			off \
-		ECW	"ECW & JPEG2000 support (THREAD required)"	off \
+		ECW	"ECW & JPEG 2000 support"	off \
 		EXPAT	"Expat support"			off \
 		GEOS	"GEOS support"			off \
 		GEOTIFF	"GeoTIFF support"		on \
 		GIF	"GIF support"			on \
-		GRASS	"GRASS support"			off \
 		HDF4	"HDF4 support"			off \
 		HDF5	"HDF5 support"			off \
 		JASPER	"JPEG 2000 support via jasper"	on \
 		JPEG	"JPEG support"			on \
+		KML	"KML support"			off \
 		MYSQL	"MySQL support"			off \
 		NETCDF	"NetCDF support"		off \
 		ODBC	"ODBC support"			off \
-		PERL	"Perl support"			off \
 		PGSQL	"PostgreSQL support"		off \
-		PHP	"PHP support"			off \
 		PNG	"PNG support"			on \
 		PROJ	"Projection support via proj"	off \
-		PYTHON	"Python support"		off \
-		RUBY	"Ruby support"			off \
 		SQLITE	"SQLite support"		off \
-		THREAD	"Thread support"		off \
 		TIFF	"External libtiff"		off \
+		WEBP	"WebP support"			off \
 		XERCES	"Xerces support"		off
 
 HDF5_VER?=	18
@@ -58,68 +55,65 @@ XERCES_PORT?=	textproc/xerces-c3
 
 .include <bsd.port.options.mk>
 
-.if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
-.endif
-
 .if defined(WITH_NETCDF) && (${NETCDF_VER} == "4")
 WITH_HDF5=	yes
 HDF5_VER=	18
 .endif
 
 .if defined(WITH_CFITSIO)
-LIB_DEPENDS+=	cfitsio.0:${PORTSDIR}/astro/cfitsio
+LIB_DEPENDS+=	cfitsio:${PORTSDIR}/astro/cfitsio
 CONFIGURE_ARGS+=--with-cfitsio=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-cfitsio=no
 .endif
 
 .if defined(WITH_CURL)
-LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=--with-curl=${LOCALBASE}/bin/curl-config
 .else
 CONFIGURE_ARGS+=--with-curl=no
 .endif
 
+.if defined(WITH_ECW)
+LIB_DEPENDS+=	NCSEcw:${PORTSDIR}/graphics/libecwj2
+CONFIGURE_ARGS+=--with-ecw=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--with-ecw=no
+.endif
+
 .if defined(WITH_EXPAT)
-LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
-CONFIGURE_ARGS+=--with-expat=${LOCALBASE} \
-		--with-expat-inc=${LOCALBASE}/include \
-		--with-expat-lib=-lexpat
+LIB_DEPENDS+=	expat:${PORTSDIR}/textproc/expat2
+CONFIGURE_ARGS+=--with-expat=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-expat=no
 .endif
 
 .if defined(WITH_GEOS)
-LIB_DEPENDS+=	geos.0:${PORTSDIR}/graphics/geos
+LIB_DEPENDS+=	geos:${PORTSDIR}/graphics/geos
 CONFIGURE_ARGS+=--with-geos=${LOCALBASE}/bin/geos-config
 .else
 CONFIGURE_ARGS+=--with-geos=no
 .endif
 
 .if !defined(WITHOUT_GEOTIFF)
-LIB_DEPENDS+=	geotiff.3:${PORTSDIR}/graphics/libgeotiff
+LIB_DEPENDS+=	geotiff:${PORTSDIR}/graphics/libgeotiff
 CONFIGURE_ARGS+=--with-geotiff=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--with-geotiff=internal
 .endif
 
 .if !defined(WITHOUT_GIF)
-LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
+LIB_DEPENDS+=	gif:${PORTSDIR}/graphics/giflib
 CONFIGURE_ARGS+=--with-gif=${LOCALBASE}
-.endif
-
-.if defined(WITH_GRASS)
-GRASS_INST_DIR?=grass
-BUILD_DEPENDS+=	grass>=0:${PORTSDIR}/databases/grass
-RUN_DEPENDS+=	grass>=0:${PORTSDIR}/databases/grass
-CONFIGURE_ARGS+=--with-grass=${LOCALBASE}/${GRASS_INST_DIR} \
-		--with-grasslib=${LOCALBASE}/${GRASS_INST_DIR}/lib
 .else
-CONFIGURE_ARGS+=--with-grass=no
+CONFIGURE_ARGS+=--with-gif=internal
 .endif
 
 .if defined(WITH_HDF4)
-LIB_DEPENDS+=	mfhdf.3:${PORTSDIR}/science/hdf
+LIB_DEPENDS+=	mfhdf:${PORTSDIR}/science/hdf
 CONFIGURE_ARGS+=--with-hdf4=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--with-hdf4=no
 .endif
 
 .if defined(WITH_HDF5)
@@ -129,16 +123,36 @@ LIB_DEPENDS+=	hdf5.7:${PORTSDIR}/science/hdf5-18
 LIB_DEPENDS+=	hdf5.0:${PORTSDIR}/science/hdf5
 .endif
 CONFIGURE_ARGS+=--with-hdf5=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--with-hdf5=no
+.endif
+
+.if defined(WITH_ICONV)
+CONFIGURE_ARGS+=--with-libiconv-prefix=${LOCALBASE}
+USE_ICONV=	yes
+.else
+CONFIGURE_ARGS+=--with-libiconv-prefix=no
 .endif
 
 .if !defined(WITHOUT_JASPER)
-LIB_DEPENDS+=	jasper.4:${PORTSDIR}/graphics/jasper
+LIB_DEPENDS+=	jasper:${PORTSDIR}/graphics/jasper
 CONFIGURE_ARGS+=--with-jasper=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--with-jasper=no
 .endif
 
 .if !defined(WITHOUT_JPEG)
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
 CONFIGURE_ARGS+=--with-jpeg=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--with-jpeg=internal
+.endif
+
+.if defined(WITH_KML)
+LIB_DEPENDS+=	kmlbase:${PORTSDIR}/science/libkml
+CONFIGURE_ARGS+=--with-libkml=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--with-libkml=no
 .endif
 
 .if defined(WITH_MYSQL)
@@ -160,15 +174,10 @@ CONFIGURE_ARGS+=--with-netcdf=no
 .endif
 
 .if defined(WITH_ODBC)
-LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=--with-odbc=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-odbc=no
-.endif
-
-.if defined(WITH_PERL)
-USE_PERL5=	yes
-CONFIGURE_ARGS+=--with-perl
 .endif
 
 .if defined(WITH_PGSQL)
@@ -178,112 +187,56 @@ CONFIGURE_ARGS+=--with-pg=${LOCALBASE}/bin/pg_config
 CONFIGURE_ARGS+=--with-pg=no
 .endif
 
-.if defined(WITH_PHP)
-USE_PHP=	yes
-CONFIGURE_ARGS+=--with-php
-.endif
-
 .if !defined(WITHOUT_PNG)
-LIB_DEPENDS+=		png15:${PORTSDIR}/graphics/png
-CONFIGURE_ARGS+=	--with-png=${LOCALBASE}
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
+CONFIGURE_ARGS+=--with-png=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--with-png=internal
 .endif
 
 .if defined(WITH_PROJ)
-LIB_DEPENDS+=	proj.7:${PORTSDIR}/graphics/proj
+LIB_DEPENDS+=	proj:${PORTSDIR}/graphics/proj
 CONFIGURE_ARGS+=--with-static-proj4=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-static-proj4=no
 .endif
 
-.if !defined(WITHOUT_PYTHON)
-USE_PYTHON=		yes
-CONFIGURE_ARGS+=	--with-python
-
-BUILD_DEPENDS+=	${PYEASYINSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS+=	${PYEASYINSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
-
-# We can not use USE_PYDISTUTILS, so copy these from bsd.python.mk.
-PYEASYINSTALL_CMD=	${LOCALBASE}/bin/easy_install-${PYTHON_VER}
-PYDISTUTILS_PKGNAME=	${PORTNAME:U}
-PYDISTUTILS_PKGVERSION=	${PORTVERSION}
-_OSRELEASE!=		${UNAME} -r
-PYEASYINSTALL_OSARCH=	-${OPSYS:L}-${_OSRELEASE}-${ARCH}
-PYEASYINSTALL_EGG=	${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}-${PYTHON_VERSION:S/thon//}${PYEASYINSTALL_OSARCH}.egg
-PYEASYINSTALL_BINDIR=	${PREFIX}/bin
-PYEASYINSTALL_SITELIBDIR=	${PYTHONPREFIX_SITELIBDIR}
-
-PLIST_SUB+=		PYEASYINSTALL_EGG=${PYEASYINSTALL_EGG} PYTHON=""
-.else
-PLIST_SUB+=		PYTHON="@comment "
-.endif
-
-.if defined(WITH_RUBY)
-USE_RUBY=		yes
-CONFIGURE_ARGS+=	--with-ruby
-.endif
-
 .if defined(WITH_SQLITE)
-USE_SQLITE=		yes
-CONFIGURE_ARGS+=	--with-sqlite3=${LOCALBASE}
+USE_SQLITE=	yes
+CONFIGURE_ARGS+=--with-sqlite3=${LOCALBASE}
 .else
-CONFIGURE_ARGS+=	--with-sqlite3=no
-.endif
-
-.if !defined(WITHOUT_THREAD)
-CFLAGS+=		${PTHREAD_CFLAGS}
-CONFIGURE_ARGS+=	--with-threads=yes
-.if defined(WITH_ECW)
-LIB_DEPENDS+=		NCSEcw.0:${PORTSDIR}/graphics/libecwj2
-CONFIGURE_ARGS+=	--with-ecw=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--with-ecw=no
-.endif
-.else
-CONFIGURE_ARGS+=	--with-threads=no
-.if defined(WITH_ECW)
-IGNORE=			requires THREAD option. Please 'make config' again
-.endif
+CONFIGURE_ARGS+=--with-sqlite3=no
 .endif
 
 .if !defined(WITHOUT_TIFF)
-LIB_DEPENDS+=		tiff.4:${PORTSDIR}/graphics/tiff
-CONFIGURE_ARGS+=	--with-libtiff=${LOCALBASE}
+LIB_DEPENDS+=	tiff:${PORTSDIR}/graphics/tiff
+CONFIGURE_ARGS+=--with-libtiff=${LOCALBASE}
 .else
-CONFIGURE_ARGS+=	--with-libtiff=internal
+CONFIGURE_ARGS+=--with-libtiff=internal
+.endif
+
+.if defined(WITH_WEBP)
+LIB_DEPENDS+=	webp:${PORTSDIR}/graphics/webp
+CONFIGURE_ARGS+=--with-webp=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--with-webp=no
 .endif
 
 .if defined(WITH_XERCES)
-LIB_DEPENDS+=		xerces-c:${PORTSDIR}/${XERCES_PORT}
-CONFIGURE_ARGS+=	--with-xerces=${LOCALBASE} \
-			--with-xerces-inc=${LOCALBASE}/include \
-			--with-xerces-lib=-lxerces-c
+LIB_DEPENDS+=	xerces-c:${PORTSDIR}/${XERCES_PORT}
+CONFIGURE_ARGS+=--with-xerces=${LOCALBASE}
 .else
-CONFIGURE_ARGS+=	--with-xerces=no
+CONFIGURE_ARGS+=--with-xerces=no
 .endif
 
 .if defined(WITH_HDF4) && defined(WITH_HDF5)
-IGNORE=			you cannot use HDF4 with HDF5
+IGNORE=		you cannot use HDF4 with HDF5
 .endif
 
 post-patch:
-.if defined(WITH_PYTHON)
-	@${REINPLACE_CMD} \
-		-e 's|%%MAKE_ENV%%|${MAKE_ENV}|' \
-		-e 's|%%PYTHON_SITELIBDIR%%|${PYTHON_SITELIBDIR}|' \
-		-e 's|%%PYEASYINSTALL_BINDIR%%|${PYEASYINSTALL_BINDIR}|' \
-		-e 's|%%PYEASYINSTALL_SITELIBDIR%%|${PYEASYINSTALL_SITELIBDIR}|' \
-		-e 's|%%PYEASYINSTALL_EGG%%|${PYEASYINSTALL_EGG}|' \
-		-e 's|%%WRKSRC%%|${WRKSRC}|' \
-			${WRKSRC}/swig/python/GNUmakefile
-.endif
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
-post-build:
-.if defined(WITH_PYTHON)
-	@cd ${BUILD_WRKSRC}/swig/python/ && \
-		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} setopt -c build -o build-platlib -s lib.${PYEASYINSTALL_OSARCH:S/^-//} && \
-		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} setopt -c build -o build-temp -s temp.${PYEASYINSTALL_OSARCH:S/^-//}-${PYTHON_VER} && \
-		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} setopt -c bdist_egg -o plat-name -s ${PYEASYINSTALL_OSARCH:S/^-//} && \
-		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} setopt -c bdist -o plat-name -s ${PYEASYINSTALL_OSARCH:S/^-//}
-.endif
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/GDALmake.opt ${DATADIR}/
 
 .include <bsd.port.mk>
