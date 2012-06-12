@@ -21,9 +21,12 @@ MAN4=		linux_js.4
 PORTDOCS=	joystick-api.txt
 USE_RCORDER=	jscal.sh linux_js.sh
 
-OPTIONS=	LINUX "Linux mode support (i386/amd64 only)" on \
-		JOY "PC joystick support" on \
-		UHID "USB joystick support" on
+OPTIONS_DEFINE=	LINUX JOY UHID DOCS
+OPTIONS_DEFAULT=	LINUX JOY UHID
+
+LINUX_DESC=	Linux mode support (i386/amd64 only)
+JOY_DESC=	PC joystick support
+UHID_DESC=	USB joystick support
 
 MAKE_ENV=	WITHOUT_DEBUG=yes
 
@@ -37,15 +40,15 @@ BROKEN=	does not build
 IGNORE=		requires kernel source files
 .endif
 
-.if defined(WITHOUT_LINUX)
+.if empty(PORT_OPTIONS:MLINUX)
 MAKE_ENV+=	WITHOUT_LINUX=yes
 .endif
 
-.if defined(WITHOUT_JOY)
+.if empty(PORT_OPTIONS:MJOY)
 MAKE_ENV+=	WITHOUT_JOY=yes
 .endif
 
-.if defined(WITHOUT_UHID)
+.if empty(PORT_OPTIONS:MUHID)
 MAKE_ENV+=	WITHOUT_UHID=yes
 .endif
 
@@ -61,7 +64,7 @@ post-install:
 .for s in 1 4
 	${INSTALL_MAN} ${MAN${s}:S|^|${WRKSRC}/|} ${PREFIX}/man/man${s}
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/joystick-api.txt ${DOCSDIR}
 .endif

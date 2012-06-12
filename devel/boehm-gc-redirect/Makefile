@@ -27,7 +27,7 @@ INSTLIBS=	cord gc gccpp
 GC_VARIANT=	redirect
 SOVER=	1
 
-OPTIONS=	FULLDEBUG "Debugging support (see documentation)" off
+OPTIONS_DEFINE=	DEBUG
 
 PLIST_FILES=	${INSTLIBS:S,^,lib/lib,g:S,$,-${GC_VARIANT}.so.${SOVER},g} \
 		${INSTLIBS:S,^,lib/lib,g:S,$,-${GC_VARIANT}.so,g}
@@ -38,7 +38,7 @@ PLIST_FILES=	${INSTLIBS:S,^,lib/lib,g:S,$,-${GC_VARIANT}.so.${SOVER},g} \
 BROKEN=	Does not compile on ia64
 .endif
 
-.if defined(WITH_FULLDEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-gc-debug
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}+fulldebug
 .endif

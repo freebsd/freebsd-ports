@@ -14,7 +14,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-0.1%20%28LEGACY%29/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library giving userland programs access to USB devices
 
-OPTIONS=	SGML "Install developer guide from SGML" off
+OPTIONS_DEFINE=	SGML
+SGML_DESC=	Install developer guide from SGML
 
 .include <bsd.port.pre.mk>
 
@@ -22,7 +23,7 @@ OPTIONS=	SGML "Install developer guide from SGML" off
 IGNORE=		has been already included into base system
 .endif
 
-.if defined(WITH_SGML)
+.if ${PORT_OPTIONS:MSGML}
 BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/jade/catalog:${PORTSDIR}/textproc/jade \
 		${LOCALBASE}/share/sgml/docbook/dsssl/modular/catalog:${PORTSDIR}/textproc/dsssl-docbook-modular \
 		${LOCALBASE}/share/sgml/docbook/4.2/catalog:${PORTSDIR}/textproc/docbook-420
@@ -42,9 +43,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|<stdint.h>|<inttypes.h>|' ${WRKSRC}/descriptors.c
 
 post-install:
-.if defined(WITH_SGML)
+.if ${PORT_OPTIONS:MSGML}
 	@${MKDIR} ${DOCSDIR}/html
 	@${INSTALL_DATA} ${WRKSRC}/doc/html/* ${DOCSDIR}/html
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

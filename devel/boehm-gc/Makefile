@@ -20,11 +20,11 @@ USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-cplusplus --disable-static --disable-threads
 MAKE_JOBS_UNSAFE=	yes
-OPTIONS=	FULLDEBUG "Debugging support (see documentation)" off
+OPTIONS_DEFINE=	DEBUG
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_FULLDEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-gc-debug
 PKGNAMESUFFIX:=		${PKGNAMESUFFIX}+fulldebug
 .endif

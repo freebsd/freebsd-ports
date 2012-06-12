@@ -21,25 +21,25 @@ USE_XORG=	x11 xext sm ice xt xaw
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes
 
-OPTIONS=	DEBUG "Enable debugging support" off \
-		LATIN1 "Enable support for Latin1 keys" off \
-		NEXTAW "Link with NeXtaw" off \
-		XAW3D "Link with Xaw3d" off
+OPTONS_DEFINE=	DEBUG LATIN1 NEXTAW XAW3D
+LATIN1_DESC=	Enable support for Latin1 keys
+NEXTAW_DESC=	Link with NeXtaw
+XAW3D_DESC=	Link with Xaw3d
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .for opt in DEBUG LATIN1
-.   if defined(WITH_${opt})
+.   if ${PORT_OPTIONS:M${opt}}
 CONFIGURE_ARGS+=--enable-${opt:L}
 .   endif
 .endfor
 
-.if defined(WITH_NEXTAW)
+.if ${PORT_OPTIONS:MNEXTAW}
 LIB_DEPENDS+=	neXtaw.${XAWVER}:${PORTSDIR}/x11-toolkits/neXtaw
 CONFIGURE_ARGS+=--with-nextaw
 .endif
 
-.if defined(WITH_XAW3D)
+.if ${PORT_OPTIONS:MXAW3D}
 LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 CONFIGURE_ARGS+=--with-xaw3d
 .endif
@@ -52,4 +52,4 @@ post-patch:
 post-install:
 	@cd ${PREFIX}/lib && ${LN} -sf libXCurses.so.2 libXCurses.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

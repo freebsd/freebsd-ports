@@ -34,11 +34,12 @@ MLINKS=		ml-doc.1 extract-sig.1 ml-doc.1 extract-info.1 \
 		ml-doc.1 latex-gen.1 ml-doc.1 proof-latex.1 \
 		ml-doc.1 filter-index.1 ml-doc.1 mk-mldoc-makefile.1
 
-OPTIONS=	LATEX "Install LaTeX if necessary (needed for pdf output)" OFF
+OPTIONS_DEFINE=	LATEX
+LATEX_DESC=	Install LaTeX if necessary (needed for pdf output)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_LATEX)
+.if ${PORT_OPTIONS:MLATEX}
 RUN_DEPENDS+=	latex:${PORTSDIR}/print/teTeX
 .endif
 
@@ -49,4 +50,4 @@ post-install:
 	@${INSTALL_MAN} ${WRKDIR}/ml-doc.1 ${MAN1PREFIX}/man/man1
 	@${INSTALL_MAN} ${WRKDIR}/mkdoc.1 ${MAN1PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

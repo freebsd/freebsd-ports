@@ -24,13 +24,13 @@ USE_AUTOTOOLS=	aclocal automake autoconf libtool
 AUTOMAKE_ARGS=	-c -a
 ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
 
-OPTIONS=	EXAMPLES "Install sample programms" on
+OPTIONE_DEFINE=	EXAMPLES DOCS
 
 PORTDOCS=	*
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_EXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 PLIST_SUB+=	EXAMPLES=""
 .else
 PLIST_SUB+=	EXAMPLES="@comment "
@@ -45,7 +45,7 @@ pre-configure:
 		${LIBTOOLIZE} --force --copy --automake)
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in AUTHORS ChangeLog README
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
@@ -54,10 +54,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
 .endfor
 .endif
-.if !defined(WITHOUT_EXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@${FIND} ${WRKSRC}/Examples/ -name "*.cpp" -exec ${INSTALL_DATA} {} \
 		${EXAMPLESDIR}/ \;
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

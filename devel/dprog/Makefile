@@ -21,20 +21,22 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	EMACS "Install emacs syntax files" on
+OPTIONS_DEFINE=	EMACS
+OPTIONS_DEFAULT=	EMACS
+EMACS_DESC=	Install emacs syntax files
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_EMACS)
+.if ${PORT_OPTIONS:MEMACS}
 PLIST_SUB+=	EMACS=""
 .else
 PLIST_SUB+=	EMACS="@comment "
 .endif
 
 post-install:
-.if !defined(WITHOUT_EMACS)
+.if ${PORT_OPTIONS:MEMACS}
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/elisp/*.el ${DATADIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

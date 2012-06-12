@@ -20,11 +20,12 @@ USE_AUTOTOOLS=	libtool
 WANT_GNOME=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	GTK	"Build with legacy Gtk+/GNOME stroke support"	off
+OPTIONS_DEFINE=	GTK1
+GTK1_DESC=	Build with legacy Gtk+/GNOME stroke support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GTK) || ${HAVE_GNOME:Mgtk12}
+.if ${PORT_OPTIONS:MGTK1} || !empty(HAVE_GNOME:Mgtk12)
 USE_GNOME+=	gtk12
 PLIST_SUB+=	GS=""
 .else
@@ -36,4 +37,4 @@ post-patch:
 		's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
 			${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

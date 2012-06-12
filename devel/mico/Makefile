@@ -25,12 +25,12 @@ USE_GMAKE=		yes
 USE_AUTOTOOLS=		autoconf
 CONFIGURE_ENV+=		EGREP=`which egrep`
 
-OPTIONS=	NOSERVICES "Without services, plain ORB" off \
-		SSL "Build with SSL" on \
-		X11 "Build with X11 support" off \
-		QT "Build with QT support" off \
-		GTK "Build with GTK support" off \
-		DEBUG "Build debug version" off
+OPTIONS_DEFINE=	SERVICES SSL X11 QT3 GTK1 DEBUG TCL DOCS
+OPTIONS_DEFAULT=	SSL SERVICES
+SERVICES_DESC=	With services, plain ORB
+QT3_DESC=	Build with QT3 support
+GTK1_DESC=	Build with GTK1 support
+TCL_DESC=	Build with TCL support
 
 .include <bsd.port.options.mk>
 
@@ -38,10 +38,10 @@ NOT_FOR_ARCHS=		sparc64
 
 CONFIGURE_ARGS=		--enable-cd --disable-mini-stl --enable-threads
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
-.if !defined(WITH_NOSERVICES)
+.if ${PORT_OPTIONS:MSERVICES}
 CONFIGURE_ARGS+=	--enable-ccm
 .else
 CONFIGURE_ARGS+=	--disable-coss
@@ -50,27 +50,27 @@ MICO_SERVICE=		"@comment "
 
 CXXFLAGS+=		${CPPFLAGS} -Wno-unused
 
-.if defined(WITH_X11)
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=		x11
 CONFIGURE_ARGS+=	--with-x
 .else
 CONFIGURE_ARGS+=	--without-x
 MICO_X11=		"@comment "
 .endif
-.if defined(WITH_QT)
+.if ${PORT_OPTIONS:MQT3}
 USE_QT_VER=			3
 CONFIGURE_ARGS+=	--with-qt=${LOCALBASE}
 QTCPPFLAGS+=		${CPPFLAGS}
 .else
 MICO_QT=		"@comment "
 .endif
-.if defined(WITH_GTK)
+.if ${PORT_OPTIONS:MGTK1}
 USE_GNOME=		gtk12
 CONFIGURE_ARGS+=	--with-gtk=${LOCALBASE}
 .else
 MICO_GTK=		"@comment "
 .endif
-.if defined(WITH_TCL)
+.if ${PORT_OPTIONS:MTCL}
 LIB_DEPENDS=		tcl83:${PORTSDIR}/lang/tcl83
 CONFIGURE_ARGS+=	--with-tcl
 CPPFLAGS+=		-I${LOCALBASE}/include/tcl8.3
@@ -78,7 +78,7 @@ CPPFLAGS+=		-I${LOCALBASE}/include/tcl8.3
 MICO_TCL=		"@comment "
 .endif
 
-.if defined(WITHOUT_SSL) || defined(WITH_NOSERVICES)
+.if empty(PORT_OPTIONS:MSSL) || empty(PORT_OPTIONS:MSERVICES)
 MICO_SSL=		"@comment "
 .else
 USE_OPENSSL=		yes
@@ -111,7 +111,7 @@ post-install:
 	for i in `${GREP} ^bin/ ${TMPPLIST}`; do \
 		(${STRIP_CMD} ${PREFIX}/$$i || ${TRUE}) 2> /dev/null; \
 	done
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${GMAKE} -C ${WRKSRC} install-doc
 .endif
 
