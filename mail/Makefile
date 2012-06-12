@@ -235,7 +235,6 @@
     SUBDIR += listadmin
     SUBDIR += listmanager
     SUBDIR += lmtp2nntp
-    SUBDIR += lmtpd
     SUBDIR += lookout
     SUBDIR += lurker
     SUBDIR += mahogany
