@@ -27,12 +27,12 @@
 %%SITE_PERL%%/Bio/Phylo/Matrices/Matrix.pm
 %%SITE_PERL%%/Bio/Phylo/Matrices/TypeSafeData.pm
 %%SITE_PERL%%/Bio/Phylo/Mediators/TaxaMediator.pm
-%%SITE_PERL%%/Bio/Phylo/Models/Substitution/Dna/K80.pm
+%%SITE_PERL%%/Bio/Phylo/Models/Substitution/Dna.pm
+%%SITE_PERL%%/Bio/Phylo/Models/Substitution/Dna/F81.pm
 %%SITE_PERL%%/Bio/Phylo/Models/Substitution/Dna/GTR.pm
 %%SITE_PERL%%/Bio/Phylo/Models/Substitution/Dna/HKY85.pm
-%%SITE_PERL%%/Bio/Phylo/Models/Substitution/Dna/F81.pm
 %%SITE_PERL%%/Bio/Phylo/Models/Substitution/Dna/JC69.pm
-%%SITE_PERL%%/Bio/Phylo/Models/Substitution/Dna.pm
+%%SITE_PERL%%/Bio/Phylo/Models/Substitution/Dna/K80.pm
 %%SITE_PERL%%/Bio/Phylo/NeXML/DOM.pm
 %%SITE_PERL%%/Bio/Phylo/NeXML/DOM/Document.pm
 %%SITE_PERL%%/Bio/Phylo/NeXML/DOM/Document/Libxml.pm
@@ -40,10 +40,12 @@
 %%SITE_PERL%%/Bio/Phylo/NeXML/DOM/Element.pm
 %%SITE_PERL%%/Bio/Phylo/NeXML/DOM/Element/Libxml.pm
 %%SITE_PERL%%/Bio/Phylo/NeXML/DOM/Element/Twig.pm
+%%SITE_PERL%%/Bio/Phylo/NeXML/Entities.pm
 %%SITE_PERL%%/Bio/Phylo/NeXML/Meta.pm
 %%SITE_PERL%%/Bio/Phylo/NeXML/Meta/XMLLiteral.pm
 %%SITE_PERL%%/Bio/Phylo/NeXML/Writable.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Abstract.pm
+%%SITE_PERL%%/Bio/Phylo/Parsers/Adjacency.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Fasta.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Json.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Newick.pm
@@ -53,7 +55,20 @@
 %%SITE_PERL%%/Bio/Phylo/Parsers/Phyloxml.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Table.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Taxlist.pm
+%%SITE_PERL%%/Bio/Phylo/Parsers/Tnrs.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Tolweb.pm
+%%SITE_PERL%%/Bio/Phylo/Parsers/Ubiocbmeta.pm
+%%SITE_PERL%%/Bio/Phylo/Parsers/Ubiometa.pm
+%%SITE_PERL%%/Bio/Phylo/Parsers/Ubiosearch.pm
+%%SITE_PERL%%/Bio/Phylo/PhyloWS.pm
+%%SITE_PERL%%/Bio/Phylo/PhyloWS/Client.pm
+%%SITE_PERL%%/Bio/Phylo/PhyloWS/Resource.pm
+%%SITE_PERL%%/Bio/Phylo/PhyloWS/Resource/Description.pm
+%%SITE_PERL%%/Bio/Phylo/PhyloWS/Service.pm
+%%SITE_PERL%%/Bio/Phylo/PhyloWS/Service/Timetree.pm
+%%SITE_PERL%%/Bio/Phylo/PhyloWS/Service/Tolweb.pm
+%%SITE_PERL%%/Bio/Phylo/PhyloWS/Service/UbioClassificationBank.pm
+%%SITE_PERL%%/Bio/Phylo/PhyloWS/Service/UbioNameBank.pm
 %%SITE_PERL%%/Bio/Phylo/Project.pm
 %%SITE_PERL%%/Bio/Phylo/Set.pm
 %%SITE_PERL%%/Bio/Phylo/Taxa.pm
@@ -71,9 +86,11 @@
 %%SITE_PERL%%/Bio/Phylo/Treedrawer/Svg.pm
 %%SITE_PERL%%/Bio/Phylo/Treedrawer/Swf.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Abstract.pm
+%%SITE_PERL%%/Bio/Phylo/Unparsers/Adjacency.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Cdao.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Fasta.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Hennig86.pm
+%%SITE_PERL%%/Bio/Phylo/Unparsers/Html.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Json.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Mrp.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Newick.pm
@@ -82,6 +99,8 @@
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Pagel.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Phylip.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Phyloxml.pm
+%%SITE_PERL%%/Bio/Phylo/Unparsers/Rss1.pm
+%%SITE_PERL%%/Bio/Phylo/Unparsers/Taxlist.pm
 %%SITE_PERL%%/Bio/Phylo/Util/CONSTANT.pm
 %%SITE_PERL%%/Bio/Phylo/Util/Dependency.pm
 %%SITE_PERL%%/Bio/Phylo/Util/Exceptions.pm
@@ -89,22 +108,9 @@
 %%SITE_PERL%%/Bio/Phylo/Util/Logger.pm
 %%SITE_PERL%%/Bio/Phylo/Util/OptionalInterface.pm
 %%SITE_PERL%%/Bio/Phylo/Util/StackTrace.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio-Phylo/.packlist
-%%SITE_PERL%%/Bio/Phylo/PhyloWS.pm
-%%SITE_PERL%%/Bio/Phylo/NeXML/Entities.pm
-%%SITE_PERL%%/Bio/Phylo/Unparsers/Rss1.pm
-%%SITE_PERL%%/Bio/Phylo/Parsers/Ubiocbmeta.pm
-%%SITE_PERL%%/Bio/Phylo/Parsers/Ubiosearch.pm
-%%SITE_PERL%%/Bio/Phylo/Parsers/Ubiometa.pm
-%%SITE_PERL%%/Bio/Phylo/PhyloWS/Service.pm
-%%SITE_PERL%%/Bio/Phylo/PhyloWS/Client.pm
-%%SITE_PERL%%/Bio/Phylo/PhyloWS/Service/Timetree.pm
-%%SITE_PERL%%/Bio/Phylo/PhyloWS/Service/UbioClassificationBank.pm
-%%SITE_PERL%%/Bio/Phylo/PhyloWS/Service/UbioNameBank.pm
-%%SITE_PERL%%/Bio/Phylo/PhyloWS/Service/Tolweb.pm
-%%SITE_PERL%%/Bio/Phylo/PhyloWS/Resource.pm
-%%SITE_PERL%%/Bio/Phylo/PhyloWS/Resource/Description.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio-Phylo
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/Phylo/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/Phylo
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio
 @dirrm %%SITE_PERL%%/Bio/Phylo/Util
 @dirrm %%SITE_PERL%%/Bio/Phylo/Unparsers
 @dirrm %%SITE_PERL%%/Bio/Phylo/Treedrawer

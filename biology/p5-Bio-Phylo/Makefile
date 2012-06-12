@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Bio-Phylo
-PORTVERSION=	0.49
+PORTVERSION=	0.50
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,6 +29,7 @@ BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
 		p5-bioperl>=0:${PORTSDIR}/biology/p5-bioperl \
 		p5-libxml>=0:${PORTSDIR}/textproc/p5-libxml
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON
 
 PERL_CONFIGURE=	yes
 
@@ -73,6 +74,7 @@ MAN3=		Bio::Phylo.3 \
 		Bio::Phylo::NeXML::Meta::XMLLiteral.3 \
 		Bio::Phylo::NeXML::Writable.3 \
 		Bio::Phylo::Parsers::Abstract.3 \
+		Bio::Phylo::Parsers::Adjacency.3 \
 		Bio::Phylo::Parsers::Fasta.3 \
 		Bio::Phylo::Parsers::Json.3 \
 		Bio::Phylo::Parsers::Newick.3 \
@@ -82,6 +84,7 @@ MAN3=		Bio::Phylo.3 \
 		Bio::Phylo::Parsers::Phyloxml.3 \
 		Bio::Phylo::Parsers::Table.3 \
 		Bio::Phylo::Parsers::Taxlist.3 \
+		Bio::Phylo::Parsers::Tnrs.3 \
 		Bio::Phylo::Parsers::Tolweb.3 \
 		Bio::Phylo::Parsers::Ubiocbmeta.3 \
 		Bio::Phylo::Parsers::Ubiometa.3 \
@@ -112,9 +115,11 @@ MAN3=		Bio::Phylo.3 \
 		Bio::Phylo::Treedrawer::Svg.3 \
 		Bio::Phylo::Treedrawer::Swf.3 \
 		Bio::Phylo::Unparsers::Abstract.3 \
+		Bio::Phylo::Unparsers::Adjacency.3 \
 		Bio::Phylo::Unparsers::Cdao.3 \
 		Bio::Phylo::Unparsers::Fasta.3 \
 		Bio::Phylo::Unparsers::Hennig86.3 \
+		Bio::Phylo::Unparsers::Html.3 \
 		Bio::Phylo::Unparsers::Json.3 \
 		Bio::Phylo::Unparsers::Mrp.3 \
 		Bio::Phylo::Unparsers::Newick.3 \
@@ -124,6 +129,7 @@ MAN3=		Bio::Phylo.3 \
 		Bio::Phylo::Unparsers::Phylip.3 \
 		Bio::Phylo::Unparsers::Phyloxml.3 \
 		Bio::Phylo::Unparsers::Rss1.3 \
+		Bio::Phylo::Unparsers::Taxlist.3 \
 		Bio::Phylo::Util::CONSTANT.3 \
 		Bio::Phylo::Util::Dependency.3 \
 		Bio::Phylo::Util::Exceptions.3 \
@@ -131,5 +137,8 @@ MAN3=		Bio::Phylo.3 \
 		Bio::Phylo::Util::Logger.3 \
 		Bio::Phylo::Util::OptionalInterface.3 \
 		Bio::Phylo::Util::StackTrace.3
+
+post-patch:
+	@${REINPLACE_CMD} -e '/NAME/ s|Bio-Phylo|Bio::Phylo|' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
