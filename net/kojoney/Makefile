@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	kojoney
-PORTVERSION=	0.0.4.1
-PORTREVISION=	3
+PORTVERSION=	0.0.4.2
 CATEGORIES=	net
-MASTER_SITES=	SF/${PORTNAME}/Kojoney%20New%20Way/Kojoney%20${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	systemoperator@gmail.com
 COMMENT=	A low level interaction honeypot that emulates an SSH server
