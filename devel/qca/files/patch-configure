@@ -1,5 +1,14 @@
 --- ./configure.orig	2008-07-21 21:27:13.000000000 +0400
 +++ ./configure	2009-03-15 18:24:58.000000000 +0300
+@@ -382,7 +382,7 @@
+ 	echo makespec is $defmakespec
+ fi
+ 
+-qm_spec=""
++qm_spec="$defmakespec"
+ # if the makespec is macx-xcode, force macx-g++
+ if [ "$defmakespec" = "macx-xcode" ]; then
+ 	qm_spec=macx-g++
 @@ -799,10 +799,10 @@
  		}
  
