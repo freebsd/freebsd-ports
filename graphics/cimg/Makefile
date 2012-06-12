@@ -18,17 +18,17 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	The C++ Template Image Processing Library
 
-ONLY_FOR_ARCHS=	i386 amd64
-ONLY_FOR_ARCHS_REASON=	"invokes i386 asm"
-
 LICENSE=	CeCILL_C CeCILL
-LICENSE_PERMS_CeCILL_C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-LICENSE_PERMS_CeCILL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_COMB=	dual
 LICENSE_NAME_CeCILL_C=	CeCILL-C
 LICENSE_NAME_CeCILL=	CeCILL
 LICENSE_FILE_CeCILL_C=	${WRKSRC}/Licence_CeCILL-C_V1-en.txt
 LICENSE_FILE_CeCILL=	${WRKSRC}/Licence_CeCILL_V2-en.txt
-LICENSE_COMB=	dual
+LICENSE_PERMS_CeCILL_C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS_CeCILL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS_REASON=	"invokes i386 asm"
 
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:C/_/-/}
@@ -44,6 +44,8 @@ REINPLACE_ARGS=	-i ""
 LIB_DEPENDS+=	board.0:${PORTSDIR}/graphics/libboard
 
 USE_FORTRAN=	yes
+
+CONFLICTS=	gimp-gmic-plugin-1.*
 
 . if !defined(WITH_DEBUG)
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png		\
