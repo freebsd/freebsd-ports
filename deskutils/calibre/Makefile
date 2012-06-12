@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	calibre
-PORTVERSION=	0.8.52
+PORTVERSION=	0.8.54
 CATEGORIES=	deskutils python
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
@@ -44,7 +44,9 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
 		pdftohtml:${PORTSDIR}/graphics/poppler-utils \
 		lshal:${PORTSDIR}/sysutils/hal
 
-OPTIONS=	PODOFO	"PDF support via PoDoFo library" on
+OPTIONS_DEFINE=	PODOFO
+PODOFO_DESC=	PDF support via PoDoFo library
+OPTIONS_DEFAULT=PODOFO
 
 USE_XZ=		yes
 USE_PYTHON=	2.7
