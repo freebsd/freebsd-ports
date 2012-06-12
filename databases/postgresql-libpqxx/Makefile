@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libpqxx
-PORTVERSION=	3.1
+PORTVERSION=	4.0
 CATEGORIES=	databases
 MASTER_SITES=	http://pqxx.org/download/software/libpqxx/
 PKGNAMEPREFIX=	postgresql-
@@ -22,10 +22,16 @@ USE_PGSQL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
+SOVERSION=	4
+PLIST_SUB=	PORTVERSION=${PORTVERSION} \
+		SOVERSION=${SOVERSION}
 
-CONFIGURE_ARGS=	--with-postgres=${LOCALBASE} \
-		--enable-shared \
-		--with-postgres-include=${LOCALBASE}/include/postgresql
+CONFIGURE_ARGS=	--enable-shared \
+		--disable-dependency-tracking
+
+post-install:
+#	This is needed for ldconfig
+	${LN} -s ${PREFIX}/lib/libpqxx-${PORTVERSION}.so \
+		${PREFIX}/lib/libpqxx.so.${SOVERSION}
 
 .include <bsd.port.mk>

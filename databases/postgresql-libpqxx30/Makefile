@@ -15,7 +15,7 @@ DIST_SUBDIR=	postgresql
 MAINTAINER=	20080111.freebsd.org@ab.ote.we.lv
 COMMENT=	A new C++ interface for PostgreSQL
 
-CONFLICTS=	postgresql-libpqxx-2.*
+CONFLICTS=	postgresql-libpqxx-[2-4].*
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}30
 
 USE_PGSQL=	yes

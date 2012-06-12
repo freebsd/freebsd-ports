@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20120612:
+  AFFECTS: users of databases/postgresql-libpqxx
+  AUTHOR: avilla@FreeBSD.org
+
+  postgresql-libpqxx has been updated to 4.0. If you want to stick
+  with version 3, install postgresql-libpqxx30:
+
+  # portmaster -o databases/postgresql-libpqxx30 postgresql-libpqxx
+
+20120612:
   AFFECTS: users of graphics/gdal
   AUTHOR: sunpoet@FreeBSD.org
 
