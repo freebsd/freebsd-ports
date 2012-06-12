@@ -17,10 +17,8 @@ DISTNAME=	Canna${PORTVERSION:S/.//g}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A Kana-to-Kanji conversion system, library part
 
-# XXX: USE_IMAKE implies USE_XLIB which is not needed for this port
-BUILD_DEPENDS=	imake:${X_IMAKE_PORT}
-
 USE_BZIP2=	yes
+USE_IMAKE=	yes
 USE_LDCONFIG=	yes
 NO_INSTALL_MANPAGES=yes
 MAKE_JOBS_UNSAFE=	yes

@@ -17,12 +17,11 @@ DISTNAME=	Canna${PORTVERSION:S/.//g}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A Kana-to-Kanji conversion system, binary part
 
-# XXX: USE_IMAKE implies USE_XLIB which is not needed for this port
-BUILD_DEPENDS=	imake:${X_IMAKE_PORT}
 LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/canna-lib
 
 USE_RC_SUBR=	canna.sh
 USE_BZIP2=	yes
+USE_IMAKE=	yes
 ALL_TARGET=	canna
 INSTALL_TARGET=	instserver instclient
 PLIST_SUB=	METAFILE="${METAFILE}" \
