@@ -7,7 +7,7 @@
 
 PORTNAME=	liblastfm
 PORTVERSION=	0.3.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	swills
@@ -20,6 +20,7 @@ LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		fftw3:${PORTSDIR}/math/fftw3 \
 		fftw3f:${PORTSDIR}/math/fftw3-float
 
+USE_CSTD=	gnu89
 USE_RUBY=	yes
 USE_GMAKE=	yes
 USE_QT4=	corelib xml network sql gui qtestlib \
