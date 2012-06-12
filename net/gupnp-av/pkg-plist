@@ -12,11 +12,13 @@ include/gupnp-av-1.0/libgupnp-av/gupnp-dlna.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-last-change-parser.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-protocol-info.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-search-criteria-parser.h
+lib/girepository-1.0/GUPnPAV-1.0.typelib
 lib/libgupnp-av-1.0.a
 lib/libgupnp-av-1.0.la
 lib/libgupnp-av-1.0.so
 lib/libgupnp-av-1.0.so.2
 libdata/pkgconfig/gupnp-av-1.0.pc
+share/gir-1.0/GUPnPAV-1.0.gir
 share/gtk-doc/html/gupnp-av/GUPnPDIDLLiteContainer.html
 share/gtk-doc/html/gupnp-av/GUPnPDIDLLiteContributor.html
 share/gtk-doc/html/gupnp-av/GUPnPDIDLLiteDescriptor.html
@@ -44,5 +46,7 @@ share/gtk-doc/html/gupnp-av/up.png
 @dirrmtry share/gtk-doc/html/gupnp-av
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
+@dirrmtry share/gir-1.0
+@dirrmtry lib/girepository-1.0
 @dirrmtry include/gupnp-av-1.0/libgupnp-av
 @dirrmtry include/gupnp-av-1.0
