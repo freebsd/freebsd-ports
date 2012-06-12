@@ -20,7 +20,8 @@ LICENSE=	ART20
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-OPTIONS=	IMAGEMAGICK "ImageMagick graphics support" on
+OPTIONS_DEFINE=	MAGICK DOCS EXAMPLES
+OPTIONS_DEFAULT=	MAGICK
 
 USE_FORTRAN=	yes
 MAKE_ARGS=	INCDIRS="-I${LOCALBASE}/include" LIBDIRS="-L${LOCALBASE}/lib" \
@@ -41,12 +42,12 @@ FFLAGS+=	-fno-range-check -ffixed-line-length-132
 BROKEN=		Does not compile with GCC 4.2: internal compiler error
 .endif
 
-.if defined(WITHOUT_IMAGEMAGICK)
-PLIST_SUB+=	IMAGEMAGICK="@comment "
-.else
+.if ${PORT_OPTIONS:MMAGiCK}
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 CFLAGS+=	-DIMAGEPIPE
 PLIST_SUB+=	IMAGEMAGICK=""
+.else
+PLIST_SUB+=	IMAGEMAGICK="@comment "
 .endif
 
 do-install:
@@ -56,7 +57,7 @@ do-install:
 .for file in worms
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${file} ${PREFIX}/bin
 .endfor
-.if !defined(WITHOUT_IMAGEMAGICK)
+.if ${PORT_OPTIONS:MIMAGEMAGICK}
 .for file in label3d stereo3d
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${file} ${PREFIX}/bin
 .endfor
@@ -64,13 +65,13 @@ do-install:
 	cd ${WRKSRC}/doc && ${INSTALL_MAN} ${MANL} ${MANLPREFIX}/man/manl
 	@${MKDIR} ${DATADIR}/materials
 	cd ${WRKSRC}/materials && ${INSTALL_DATA} * ${DATADIR}/materials
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} R3D_manual.pdf ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/html
 	cd ${WRKSRC}/html && ${INSTALL_DATA} * ${DOCSDIR}/html
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@(cd ${WRKSRC}/examples && ${TAR} --exclude "CVS" -cf - . | \
 		${TAR} -C ${EXAMPLESDIR} --unlink -xf -)

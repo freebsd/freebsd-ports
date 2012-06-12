@@ -15,9 +15,9 @@ MASTER_SITES=	http://auricle.dyndns.org/ALE/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Anti-Lamenessing Engine
 
-OPTIONS=	DOUBLE "64bit Data Precision Support" off \
-		FFTW3 "FFTW3 Support" on \
-		IMAGEMAGICK "ImageMagick Support" on
+OPTIONS_DEFINE=	DOUBLE FFTW3 MAGICK
+OPTIONS_DEFAULT=	FFTW3 MAGICK
+DOUBLE_DESC=	64bit Data Precision Support
 
 USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
@@ -38,20 +38,20 @@ PORTSCOUT=	limitw:1,even
 BROKEN=		Does not build on alpha
 .endif
 
-.if defined(WITH_DOUBLE)
+.if ${PORT_OPTIONS:MDOUBLE}
 CONFIGURE_ARGS+=	--with-colors=double --with-coords=double
 .endif
 
-.if defined(WITHOUT_FFTW3)
-CONFIGURE_ARGS+=	--without-fftw3
-.else
+.if ${PORT_OPTIONS:MFFTW3}
 LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3
+.else
+CONFIGURE_ARGS+=	--without-fftw3
 .endif
 
-.if defined(WITHOUT_IMAGEMAGICK)
-CONFIGURE_ARGS+=	--without-imagemagick
-.else
+.if ${PORT_OPTIONS:MMAGICK}
 LIB_DEPENDS+=	MagickWand.5:${PORTSDIR}/graphics/ImageMagick
+.else
+CONFIGURE_ARGS+=	--without-imagemagick
 .endif
 
 .include <bsd.port.post.mk>

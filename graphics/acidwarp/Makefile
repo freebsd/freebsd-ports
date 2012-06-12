@@ -23,11 +23,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/acidwarp
 PORTDOCS=	README TODO Thanks
 
-OPTION=		SETUID "Install with setuid bit set" on
+OPTIONS_DEFINE=	SETUID DOCS
+OPTIONS_DEFAULT=	SETUID
+SETUID_DESC=	Install with setuid bit set
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_SETUID)
+.if ${PORT_OPTIONS:MSETUID}
 BINMODE=	4555
 .endif
 
@@ -36,11 +38,11 @@ post-extract:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/acidwarp ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -47,13 +47,14 @@ INSTALLS_ICONS=	yes
 
 RTDIR=		${PREFIX}/libdata/${PORTNAME}
 
-OPTIONS=	OPTIMIZED_CFLAGS "Use optimized CFLAGS" on \
-		OPENMP "Enable multicore processing using OpenMP" on
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS OPENMP
+OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS OPENMP
+OPENMP_DESC=	Enable multicore processing using OpenMP
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"
-.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-O3 -ffast-math -fexpensive-optimizations \
 		-funroll-loops -msse
 CXXFLAGS+=	-O3 -ffast-math -fexpensive-optimizations \
@@ -65,7 +66,7 @@ CXXFLAGS+=	-O3 -ffast-math -fexpensive-optimizations \
 #BROKEN=		Does not compile on ia64, powerpc, or sparc64
 #.endif
 
-.if !defined(WITHOUT_OPENMP)
+.if ${PORT_OPTIONS:MOPENMP}
 CMAKE_ARGS+=	-DOPTION_OMP:BOOL=ON
 .else
 CMAKE_ARGS+=	-DOPTION_OMP:BOOL=OFF

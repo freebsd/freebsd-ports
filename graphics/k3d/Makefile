@@ -43,11 +43,11 @@ WANT_GNOME=	yes
 USE_LDCONFIG=	yes
 MAN1=		k3d.1
 
-OPTIONS=	GNOME "Build for Gnome" off
+OPTIONS_DEFINE=	GNOME
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GNOME)
+.if ${PORT_OPTIONS:MGNOME}
 USE_GNOME+=	libgnome
 CONFIGURE_ARGS+=--with-gnome
 PKGNAMESUFFIX=	-gnome
@@ -62,4 +62,4 @@ post-patch:
 		-e 's,/usr/local/lib,${LOCALBASE}/lib,' \
 		${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

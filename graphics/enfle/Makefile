@@ -24,8 +24,8 @@ LIB_DEPENDS=	arc.1:${PORTSDIR}/archivers/libarc \
 		theora.0:${PORTSDIR}/multimedia/libtheora
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-OPTIONS=	SIMD "Enable x86 SIMD (MMX/SSE)" off \
-		AVCODEC "Enable libavcodec support" off
+OPTIONS_DEFINE=	SIMD AVCODEC
+AVCODEC_DESC=	Enable libavcodec support
 
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
@@ -49,7 +49,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if ${ARCH} == "i386"
 CONFIGURE_ARGS+=	--enable-spi --enable-dmo
-.if !defined(WITH_SIMD)
+.if empty(PORT_OPTIONS:MSIMD)
 CONFIGURE_ARGS+=	--disable-mmx --disable-sse
 .endif
 .endif
@@ -58,7 +58,7 @@ CONFIGURE_ARGS+=	--disable-mmx --disable-sse
 BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
-.if defined(WITH_AVCODEC)
+.if ${PORT_OPTIONS:MAVCODEC}
 LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
 PLIST_SUB+=	AVCODEC=""
 .else

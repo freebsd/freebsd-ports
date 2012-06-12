@@ -31,50 +31,50 @@ USE_XORG=	x11 xaw xmu xt
 PORTDOCS=	*
 PORTDATA=	*
 
-OPTIONS=	SHARED "Build shared (dynamic) libraries" on \
-		EPS "defaults .eps, otherwise .ps" off \
-		DEBUG "Compile for debugging code" off \
-		DEVDEBUG "Extra debugging for developers" off \
-		IMPERIAL "Choose Imperial (inch) units over metric (cm)" off \
-		GDAL "Compile in experimental GDAL support" on \
-		NETCDF "With netCDF (7) support" on \
-		OCTAVE "With OCTAVE support" off
+OPTIONS_DEFINE=	SHARED EPS DEBUG IMPERIAL GDAL NETCDF OCTAVE
+OPTIONS_DEFAULT=	SHARED GDAL NETCDF
+SHARED_DESC=	Build shared (dynamic) libraries
+EPS_DESC=	defaults .eps, otherwise .ps
+IMPERIAL_DESC=	Choose Imperial (inch) units over metric (cm)
+GDAL_DESC=	Compile in experimental GDAL support
+NETCDF_DESC=	With netCDF (7) support
+OCTAVE_DESC=	With OCTAVE support
 
 .include "Makefile.man"
 .include <bsd.port.options.mk>
 
-.if defined(WITH_NETCDF)
+.if ${PORT_OPTIONS:MNETCDF}
 LIB_DEPENDS+=		netcdf:${PORTSDIR}/science/netcdf4
 CONFIGURE_ARGS+=	--enable-netcdf
 .endif
 
-.if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=	--enable-debug
+.if ${PORT_OPTIONS:MDEBUG}
+CONFIGURE_ARGS+=	--enable-debug --enable-devdebug
 .endif
 
-.if defined(WITH_DEVDEBUG)
+.if ${PORT_OPTIONS:MDEVDEBUG}
 CONFIGURE_ARGS+=	--enable-devdebug
 .endif
 
-.if defined(WITH_SHARED)
+.if ${PORT_OPTIONS:MSHARED}
 USE_LDCONFIG=		yes
 CONFIGURE_ARGS+=	--enable-shared
 .endif
 
-.if defined(WITH_IMPERIAL)
+.if ${PORT_OPTIONS:MIMPERIAL}
 CONFIGURE_ARGS+=	--enable-US
 .endif
 
-.if defined(WITH_EPS)
+.if ${PORT_OPTIONS:MEPS}
 CONFIGURE_ARGS+=	--enable-eps
 .endif
 
-.if defined(WITH_GDAL)
+.if ${PORT_OPTIONS:MGDAL}
 LIB_DEPENDS+=		gdal.17:${PORTSDIR}/graphics/gdal
 CONFIGURE_ARGS+=	--enable-gdal
 .endif
 
-.if defined(WITH_OCTAVE)
+.if ${PORT_OPTIONS:MOCTAVE}
 RUN_DEPENDS+=		octave:${PORTSDIR}/math/octave
 CONFIGURE_ARGS+=	--enable-octave
 CONFIGURE_ARGS+=	--enable-mex

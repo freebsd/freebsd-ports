@@ -20,9 +20,9 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
-OPTIONS=	OPTIMIZED_CFLAGS "Additional optimization" off \
-		OPENMP "Enable OpenMP support" off \
-		SSE2 "Enable x86 SSE2 optimization" off
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS OPENMP SSE2 DEBUG DOCS
+OPENMP_DESC=	Enable OpenMP support
+SSE2_DESC=	Enable x86 SSE2 optimization
 
 NO_WRKSUBDIR=	yes
 
@@ -40,30 +40,30 @@ PLIST_FILES=	bin/pngquant
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_DEBUG)
+.if empty(PORT_OPTIONS:MDEBUG)
 CFLAGS+=	-DNDEBUG
 .endif
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-O3 -fearly-inlining -fstrict-aliasing -ffast-math \
 		-funroll-loops -fomit-frame-pointer -fexpensive-optimizations \
 		-ffinite-math-only -funsafe-loop-optimizations -ftree-vectorize
 .endif
 
-.if defined(WITH_OPENMP)
+.if ${PORT_OPTIONS:MOPENMP}
 CFLAGS+=	${PTHREAD_CFLAGS} -fopenmp
 LDFLAGS+=	${PTHREAD_LIBS} -lgomp
 .endif
 
 # SSE2 support is always enabled on amd64
-.if defined(WITH_SSE2) && ${ARCH} == "i386"
+.if ${PORT_OPTIONS:MSSE2} && ${ARCH} == "i386"
 CFLAGS+=	-DUSE_SSE=1 -msse2
 .endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pngquant ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/pngquant.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${DOCSDIR}

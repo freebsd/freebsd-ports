@@ -34,7 +34,8 @@ ONLY_FOR_ARCHS=		i386
 # Glide3 DOES NOT work with CFLAGS greater than -O2
 CFLAGS+=	-O
 
-OPTIONS=	VOODOO3 "Enable this if you have a Voodoo3 or Banshee card" off
+OPTIONS_DEFINE=	VOODOO3
+VOODOO3_DESC=	Enable this if you have a Voodoo3 or Banshee card
 
 .include <bsd.port.pre.mk>
 
@@ -42,7 +43,7 @@ OPTIONS=	VOODOO3 "Enable this if you have a Voodoo3 or Banshee card" off
 BROKEN=		Does not compile on recent FreeBSD-9
 .endif
 
-.if defined(WITH_VOODOO3)
+.if ${PORT_OPTIONS:MVOODOO3}
 PKGNAMESUFFIX=	-v3
 CONFIGURE_ARGS+=	--enable-fx-glide-hw=h3
 .else

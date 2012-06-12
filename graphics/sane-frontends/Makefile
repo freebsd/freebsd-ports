@@ -31,23 +31,19 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		scanadf.1 xcam.1 xscanimage.1
 SUB_FILES=	pkg-message
 
-OPTIONS=	GTK1 "GTK1 support (Default is GTK2)" off \
-		GIMP "also build xscanimage as a GIMP plug-in" off
+OPTIONS_DEFINE=	GTK1 GIMP
+GTK1_DESC=	GTK1 support (Default is GTK2)
+GIMP_DESC=	also build xscanimage as a GIMP plug-in
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GTK1)
+.if ${PORT_OPTIONS:MGTK1}
 USE_GNOME+=	gtk12
 CONFIGURE_ARGS+=	--disable-gtk2
-.if defined(WITH_GIMP)
-LIB_DEPENDS+=	gimp:${PORTSDIR}/graphics/gimp1
-CONFIGURE_ARGS+=	--enable-gimp12
-.else
 CONFIGURE_ARGS+=	--disable-gimp
-.endif
 .else
 USE_GNOME+=	gtk20
-.if defined(WITH_GIMP)
+.if ${PORT_OPTIONS:MGIMP}
 LIB_DEPENDS+=	gimp-2.0:${PORTSDIR}/graphics/gimp
 CONFIGURE_ARGS+=	--enable-gimp
 .else
@@ -58,4 +54,4 @@ CONFIGURE_ARGS+=	--disable-gimp
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

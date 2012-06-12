@@ -17,7 +17,8 @@ COMMENT=	An interactive viewer for 3- and 4-D geometric objects
 NOT_FOR_ARCHS=	amd64
 NOT_FOR_ARCHS_REASON=	Segfaults on amd64
 
-OPTIONS=	MOTION_AVG "Use experimental motion averaging code" off
+OPTIONS_DEFINE=	MOTION_AVG DOCS EXAMPLES
+MOTION_AVG_DESC=	Use experimental motion averaging code
 
 USE_BZIP2=	yes
 USE_MOTIF=	yes
@@ -41,9 +42,9 @@ INFO=		geomview
 # Allow user to specify "make install MAPLE_LIB=foo" as geomview wants
 MAKE_ENV=	CPU=FreeBSD MAPLE_LIB=${MAPLE_LIB}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MOTION_AVG)
+.if ${PORT_OPTIONS:MMOTION_AVG}
 CONFIGURE_ARGS+=	--enable-motion-averaging
 .endif
 
@@ -63,7 +64,7 @@ post-install:
 	cd ${WRKSRC}/doc && ${INSTALL_MAN} *.3gv ${MAN3PREFIX}/man/man3
 	cd ${WRKSRC}/doc && ${INSTALL_MAN} *.5gv ${MAN5PREFIX}/man/man5
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} *.info ${PREFIX}/${INFO_PATH}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in OOGL.m.txt README README.gvplot geomview.pdf geomview-pt_BR.pdf \
 	oogltour oogltour-pt_BR
@@ -80,10 +81,10 @@ post-install:
 		&& ${INSTALL_DATA} *.html ${DOCSDIR}/html/pt_BR
 	cd ${DOCSDIR}/html/pt_BR && ${LN} -sf ../figs .
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} *.c ${EXAMPLESDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} *.tcl ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
