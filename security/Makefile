@@ -611,7 +611,6 @@
     SUBDIR += pam_smb
     SUBDIR += pam_ssh_agent_auth
     SUBDIR += pamtester
-    SUBDIR += pantera
     SUBDIR += paperkey
     SUBDIR += parano
     SUBDIR += pbc

@@ -39,7 +39,6 @@
     SUBDIR += cups-bjnp
     SUBDIR += cups-client
     SUBDIR += cups-image
-    SUBDIR += cups-magicolor
     SUBDIR += cups-pdf
     SUBDIR += cups-pk-helper
     SUBDIR += cups-pstoraster
