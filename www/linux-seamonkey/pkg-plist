@@ -124,6 +124,9 @@ lib/%%APP_NAME%%/updater.ini
 @unexec /usr/bin/find %D/lib/%%APP_NAME%%/plugins/  -depth 1 -type l -delete 2>/dev/null || true
 @unexec /usr/bin/find %D/lib/%%APP_NAME%%/extensions/  -depth 1 -type l -delete 2>/dev/null || true
 @dirrm lib/%%APP_NAME%%/searchplugins
+@dirrm lib/%%APP_NAME%%/jssubloader/185/resource
+@dirrm lib/%%APP_NAME%%/jssubloader/185
+@dirrm lib/%%APP_NAME%%/jssubloader
 @dirrm lib/%%APP_NAME%%/jsloader/resource
 @dirrm lib/%%APP_NAME%%/jsloader
 @dirrm lib/%%APP_NAME%%/isp
