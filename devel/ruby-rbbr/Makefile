@@ -40,12 +40,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} == 1.9
-PLIST_SUB+=	R19="@comment "
-.else
-PLIST_SUB+=	R19=""
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

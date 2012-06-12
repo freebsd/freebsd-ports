@@ -30,15 +30,15 @@ bin/rbbr
 @dirrm %%RUBY_SITELIBDIR%%/rbbr/ui
 @dirrm %%RUBY_SITELIBDIR%%/rbbr/doc
 @dirrm %%RUBY_SITELIBDIR%%/rbbr
-%%R19%%share/locale/fr/LC_MESSAGES/rbbr.mo
-%%R19%%share/locale/cy/LC_MESSAGES/rbbr.mo
-%%R19%%share/locale/ja/LC_MESSAGES/rbbr.mo
-%%R19%%share/locale/be/LC_MESSAGES/rbbr.mo
-%%R19%%share/locale/de/LC_MESSAGES/rbbr.mo
-%%R19%%share/locale/es/LC_MESSAGES/rbbr.mo
-%%R19%%share/locale/it/LC_MESSAGES/rbbr.mo
-%%R19%%share/locale/ko/LC_MESSAGES/rbbr.mo
-%%R19%%share/locale/pt_BR/LC_MESSAGES/rbbr.mo
+share/locale/fr/LC_MESSAGES/rbbr.mo
+share/locale/cy/LC_MESSAGES/rbbr.mo
+share/locale/ja/LC_MESSAGES/rbbr.mo
+share/locale/be/LC_MESSAGES/rbbr.mo
+share/locale/de/LC_MESSAGES/rbbr.mo
+share/locale/es/LC_MESSAGES/rbbr.mo
+share/locale/it/LC_MESSAGES/rbbr.mo
+share/locale/ko/LC_MESSAGES/rbbr.mo
+share/locale/pt_BR/LC_MESSAGES/rbbr.mo
 %%DATADIR%%/icon.png
 %%DATADIR%%/rd/README
 @dirrm %%DATADIR%%/rd
