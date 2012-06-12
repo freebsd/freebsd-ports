@@ -1,40 +1,13 @@
 # $FreeBSD$
 # pre/postprocessing driver variables
 
-# define defaults which depend on WITHOUT_*/WITH_*
-.for D in X11 SVGALIB ICONV
-.if !defined(WITHOUT_${D})
-OPTIONS_${D}_DEFAULT=	on
-.else
-OPTIONS_${D}_DEFAULT=	off
-.endif
-.endfor
-.for D in SVGALIB CUPS GTK
-.if !defined(WITH_${D})
-OPTIONS_${D}_DEFAULT=	off
-.else
-OPTIONS_${D}_DEFAULT=	on
-.endif
-.endfor
-
-# makesum needs lowest common multiple
-.if make(makesum)
-OPTIONS_X11_DEFAULT=	on
-OPTIONS_GTK_DEFAULT=	on
-OPTIONS_SVGALIB_DEFAULT=on
-OPTIONS_ICONV_DEFAULT=	on
-OPTIONS_CUPS_DEFAULT=	on
-OPTIONS_GS_DEFAULT_ON=	on
-OPTIONS_GS_DEFAULT_OFF=	on
-.endif
-
 # dmprt specific
-.if !defined(WITHOUT_GS_dmprt)
+.if ${PORT_OPTIONS:MGS_dmprt}
 .include "${FILESDIR}/Makefile.dmprt"
 .endif
 
 # epag specific
-.if !defined(WITHOUT_GS_epag)
+.if ${PORT_OPTIONS:MGS_epag}
 .include "${FILESDIR}/Makefile.epag"
 .endif
 
@@ -50,7 +23,7 @@ post-extract-epag:
 post-extract: post-extract-epag
 
 # pcl3 specific
-.if !defined(WITHOUT_GS_pcl3)
+.if ${PORT_OPTIONS:MGS_pcl3}
 .include "${FILESDIR}/Makefile.pcl3"
 .endif
 
@@ -59,13 +32,10 @@ CUPS_DEVS= cups
 .undef _CUPS_DEVS
 
 .for D in ${CUPS_DEVS}
-.if defined(WITHOUT_CUPS) || defined(WITHOUT_GS_${D})
-.undef WITH_GS_${D}
-.elif defined(WITH_GS_${D})
+.if ${PORT_OPTIONS:MCUPS} && ${PORT_OPTIONS:MGS_${D}}
 _CUPS_DEVS+= ${D}
-.elif ${OPTIONS_CUPS_DEFAULT} == "on"
-_CUPS_DEVS+= ${D}
-WITH_GS_${D}=yes
+.else
+PORT_OPTIONS:=	${PORT_OPTIONS:NGS_${D}}
 .endif
 .endfor
 
@@ -81,13 +51,8 @@ VGA_DEVS= lvga256 vgalib
 .undef _VGA_DEVS
 
 .for D in ${VGA_DEVS}
-.if defined(WITHOUT_SVGALIB) || defined(WITHOUT_GS_${D})
-.undef WITH_GS_${D}
-.elif defined(WITH_GS_${D})
+.if ${PORT_OPTIONS:MGS_${D}}
 _VGA_DEVS+= ${D}
-.elif ${OPTIONS_SVGALIB_DEFAULT} == "on"
-_VGA_DEVS+= ${D}
-WITH_GS_${D}=yes
 .endif
 .endfor
 
@@ -101,13 +66,10 @@ X11_DEVS= x11 x11alpha x11cmyk x11cmyk2 x11cmyk4 x11cmyk8  x11gray2 x11gray4 \
 .undef _X11_DEVS
 
 .for D in ${X11_DEVS}
-.if defined(WITHOUT_X11) || defined(WITHOUT_GS_${D})
-. undef WITH_GS_${D}
-.elif defined(WITH_GS_${D})
+.if ${PORT_OPTIONS:MX11} && ${PORT_OPTIONS:MGS_${D}}
 _X11_DEVS+= ${D}
-.elif ${OPTIONS_X11_DEFAULT} == "on"
-_X11_DEVS+= ${D}
-WITH_GS_${D}=yes
+.else
+PORT_OPTIONS:=	${PORT_OPTIONS:NGS_${D}}
 .endif
 .endfor
 
@@ -118,7 +80,7 @@ CONFIGURE_ARGS+=--with-x \
 		--x-includes=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib
 CONFLICTS_INSTALL+=	ghostscript9-nox11-[0-9]*
-.if defined(WITH_GTK)
+.if ${PORT_OPTIONS:MGTK2}
 USE_GNOME=	atk gdkpixbuf2 glib20 gtk20
 CONFIGURE_ARGS+=--enable-gtk
 .else
@@ -136,13 +98,10 @@ ICONV_DEVS= oprp opvp
 .undef _ICONV_DEVS
 
 .for D in ${ICONV_DEVS}
-.if defined(WITHOUT_ICONV) || defined(WITHOUT_GS_${D})
-.undef WITH_GS_${D}
-.elif defined(WITH_GS_${D})
+.if ${PORT_OPTIONS:MICONV} && ${PORT_OPTIONS:MGS_${D}}
 _ICONV_DEVS+= ${D}
-.elif ${OPTIONS_ICONV_DEFAULT} == "on"
-_ICONV_DEVS+= ${D}
-WITH_GS_${D}=yes
+.else
+PORT_OPTIONS:=	${PORT_OPTIONS:NGS_${D}}
 .endif
 .endfor
 

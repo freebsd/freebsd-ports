@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript9
 PORTVERSION=	9.05
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	http://downloads.ghostscript.com/public/:gs_srcs \
 		SF/ghostscript/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
@@ -22,6 +22,8 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xpf - ${EXCLUDE_DIRS:S/^/--exclude /}
 
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	Ghostscript 9.x PostScript interpreter
+
+LICENSE=	GPLv3
 
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 		idn:${PORTSDIR}/dns/libidn \
@@ -44,8 +46,8 @@ WANT_GNOME=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
-MAKE_JOBS_UNSAFE=	yes
 
+MAKE_JOBS_SAFE=	yes
 MAKE_ENV=	CFLAGS_STANDARD="${CFLAGS}" \
 		XCFLAGS="${XCFLAGS}" XLDFLAGS="${XLDFLAGS}" \
 		EXTRALIBS="${EXTRALIBS}" \
@@ -75,12 +77,11 @@ SUB_LIST=	DATADIR=${DATADIR} PORTVERSION=${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 DATADIR=	${PREFIX}/share/${PORTNAME:S,9$,,}
 
-OPTIONS=	A4SIZE	"Set A4 (not Letter) as the default paper size"	off \
-		CUPS	"Enable CUPS support"	on \
-		FONTCONFIG	"fontconfig support"	on \
-		LIBPAPER	"libpaper support"	on \
-		GTK	"GTK frontend"	off \
-		X11	"X11 support"	on
+OPTIONS_DEFINE=	A4SIZE CUPS FONTCONFIG ICONV LIBPAPER GTK2 X11
+OPTIONS_DEFAULT=       CUPS FONTCONFIG ICONV LIBPAPER      X11
+A4SIZE_DESC=	Set A4 (not Letter) as the default paper size
+FONTCONFIG_DESC=Enable fontconfig support
+NO_OPTIONS_SORT=yes
 
 MAN1=		dvipdf.1 font2c.1 gs.1 gslp.1 gsnd.1 \
 		pdf2dsc.1 pdf2ps.1 pdfopt.1 pf2afm.1 pfbtopfa.1 printafm.1 \
@@ -101,24 +102,22 @@ EXCLUDE_DIRS=	freetype jbig2dec jpeg expat jasper libpng tiff zlib
 .include <bsd.port.pre.mk>
 .include "${FILESDIR}/Makefile.drivers_post"
 
-.for D in ${OPTIONS:MGS_*:S/^GS_//}
-.if !defined(WITHOUT_GS_${D})
+.for D in ${OPTIONS_DEFINE:MGS_*:S/^GS_//}
+.if ${PORT_OPTIONS:MGS_${D}}
 PLIST_SUB+=	GS_${D}=""
 .else
 PLIST_SUB+=	GS_${D}="@comment "
 .endif
 .endfor
 
-.if !defined(WITH_LETTERSIZE)
-.if defined(A4) || defined(WITH_A4SIZE)
+.if ${PORT_OPTIONS:MA4SIZE}
 DEFAULTPAPERSIZE?=	a4
 XCFLAGS+=	-DA4
 MSG_PAPERSIZE=	"NOTE: Default paper size will be A4."
 .endif
-.endif
 DEFAULTPAPERSIZE?=	letter
 
-.if !defined(WITHOUT_LIBPAPER)
+.if ${PORT_OPTIONS:MLIBPAPER}
 LIB_DEPENDS+=	paper:${PORTSDIR}/print/libpaper
 CONFIGURE_ARGS+=	--with-libpaper
 .if ${DEFAULTPAPERSIZE:L} == a4
@@ -128,7 +127,7 @@ RUN_DEPENDS+=	${LOCALBASE}/etc/papersize:${PORTSDIR}/print/papersize-default-a4
 CONFIGURE_ARGS+=	--without-libpaper
 .endif
 
-.if !defined(WITHOUT_FONTCONFIG)
+.if ${PORT_OPTIONS:MFONTCONFIG}
 LIB_DEPENDS+=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 CONFIGURE_ARGS+=	--enable-fontconfig
 .else
@@ -173,9 +172,9 @@ pre-build-drivers.mak:
 .for N in ${DEVS_LIST}
 	@${ECHO_CMD} '${N:S/^/DEVICE_/:S/^DEVICE_DISPLAY_DEV/DISPLAY_DEV/}=' >> ${WRKSRC}/base/drivers.mak
 .endfor
-.for D in ${OPTIONS:MGS_*:S/^GS_//}
+.for D in ${OPTIONS_DEFINE:MGS_*:S/^GS_//}
 .for N in ${DEVS_LIST}
-.if defined(WITH_GS_${D})
+.if ${PORT_OPTIONS:MGS_${D}}
 .for X in ${${N:S/^/DEVICE_/:S/^DEVICE_DISPLAY_DEV/DISPLAY_DEV/}:M${D}.dev}
 	@${ECHO_CMD} '${N:S/^/DEVICE_/:S/^DEVICE_DISPLAY_DEV/DISPLAY_DEV/}+= $$(DD)${D}.dev'  >> ${WRKSRC}/base/drivers.mak
 .endfor
