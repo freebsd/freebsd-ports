@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	opa
-PORTVERSION=	0.9.2.${GITVER}
-PORTREVISION=	1
+PORTVERSION=	0.9.3.${GITVER}
 CATEGORIES=	lang
 MASTER_SITES=	http://download.opalang.org/tar-gz/
 DISTNAME=	${PORTNAME}_v${GITVER}
@@ -27,10 +26,11 @@ RUN_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/ssl/ssl.a:${PORTSDIR}/security/oca
 		${LOCALBASE}/${OCAML_LIBDIR}/ocamlgraph/graph.a:${PORTSDIR}/math/ocaml-ocamlgraph \
 		${LOCALBASE}/${OCAML_SITELIBDIR}/ulex/ulexing.a:${PORTSDIR}/devel/ocaml-ulex
 
-GITVER=		1635
+GITVER=		1869
 USE_JAVA=	yes
 JAVA_BUILD=	yes
 USE_GMAKE=	yes
+USE_ICONV=	yes
 USE_OCAML=	yes
 
 HAS_CONFIGURE=	yes
@@ -57,5 +57,7 @@ post-patch:
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|_git_version = .*"|_git_version = ${GITVER}"|g' \
 		${WRKSRC}/buildinfos/generate_buildinfos.sh
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+		${WRKSRC}/build/myocamlbuild_prefix.ml
 
 .include <bsd.port.mk>
