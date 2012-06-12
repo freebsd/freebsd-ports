@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	termit
-PORTVERSION=	2.9.3
-PORTREVISION=	1
+PORTVERSION=	2.9.4
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	http://cloud.github.com/downloads/nonstop/termit/
 
@@ -19,9 +18,10 @@ LICENSE=	GPLv2
 USE_BZIP2=	yes
 USE_GNOME=	vte
 USE_LUA=	yes
-USE_GETTEXT=	yes
 USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes
+
+CFLAGS+=	-I${LUA_INCDIR}
 
 MAN1=		${PORTNAME}.1
 
@@ -37,6 +37,7 @@ CMAKE_ARGS+=	-DDEBUG:BOOL=YES
 
 .if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
+USE_GETTEXT=	yes
 .else
 CMAKE_ARGS+=	-DENABLE_NLS:BOOL=NO
 PLIST_SUB+=	NLS="@comment "
@@ -51,6 +52,8 @@ post-patch:
 	@${REINPLACE_CMD} 's|share/man|man|' ${WRKSRC}/doc/CMakeLists.txt
 	@${REINPLACE_CMD} 's|ADD_SUBDIRECTORY(etc)||' ${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} 's|/etc|${PREFIX}/etc|' ${WRKSRC}/src/lua_conf.c
+	@${REINPLACE_CMD} -e 's|/usr/lib/liblua.a|${LUA_LIBDIR}/liblua.a|' \
+		-e 's|-ldl||' ${WRKSRC}/src/CMakeLists.txt
 
 post-install:
 	${MKDIR} ${TERMIT_ETC}

@@ -18,6 +18,7 @@ share/applications/termit.desktop
 %%NLS%%share/locale/hu/LC_MESSAGES/termit.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/termit.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/termit.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/termit.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/termit.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/termit.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
