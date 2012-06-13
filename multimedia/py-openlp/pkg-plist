@@ -148,6 +148,12 @@ bin/openlp.pyw
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/openlp/core/ui/media/phononplayer.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/openlp/core/ui/media/phononplayer.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/openlp/core/ui/media/phononplayer.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/openlp/core/ui/media/vlc.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/openlp/core/ui/media/vlc.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/openlp/core/ui/media/vlc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/openlp/core/ui/media/vlcplayer.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/openlp/core/ui/media/vlcplayer.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/openlp/core/ui/media/vlcplayer.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/openlp/core/ui/media/webkitplayer.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/openlp/core/ui/media/webkitplayer.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/openlp/core/ui/media/webkitplayer.pyo
@@ -525,9 +531,9 @@ bin/openlp.pyw
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/openlp/plugins/songs/lib/db.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/openlp/plugins/songs/lib/db.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/openlp/plugins/songs/lib/db.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/openlp/plugins/songs/lib/easislidesimport.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/openlp/plugins/songs/lib/easislidesimport.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/openlp/plugins/songs/lib/easislidesimport.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/openlp/plugins/songs/lib/easyslidesimport.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/openlp/plugins/songs/lib/easyslidesimport.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/openlp/plugins/songs/lib/easyslidesimport.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/openlp/plugins/songs/lib/ewimport.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/openlp/plugins/songs/lib/ewimport.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/openlp/plugins/songs/lib/ewimport.pyo
