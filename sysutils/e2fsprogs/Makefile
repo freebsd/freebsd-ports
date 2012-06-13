@@ -115,7 +115,7 @@ post-build:
 # There have been subtle failures induced by Linux-isms in the past.
 # -- Matthias Andree, package maintainer, 2007-09-18
 	@${ECHO_CMD} '===>  Running e2fsprogs self-test suite'
-	cd ${WRKSRC}/tests && ${GMAKE} check \
+	cd ${WRKSRC}/tests && ${GMAKE} -j${MAKE_JOBS_NUMBER} check \
 	    || { head -n30000 ${WRKSRC}/tests/*.failed 2>/dev/null ; exit 1 ; }
 
 post-install:
