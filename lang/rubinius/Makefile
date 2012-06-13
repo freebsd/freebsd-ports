@@ -37,7 +37,9 @@ USE_PERL5_BUILD=	yes
 USE_GMAKE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	GDBM	"Enable GDBM support"	on
+OPTIONS_DEFINE=	GDBM
+OPTIONS_DEFAULT=	GDBM
+GDBM_DESC=	Enable GDBM support
 
 .include <bsd.port.pre.mk>
 
@@ -49,7 +51,7 @@ MANUAL_PACKAGE_BUILD=	hangs on pointyhat
 BROKEN=		Does not compile on sparc64
 .endif
 
-.if !defined(WITHOUT_GDBM) || exists(${LOCALBASE}/include/gdbm.h)
+.if ${PORT_OPTIONS:MGDBM} || exists(${LOCALBASE}/include/gdbm.h)
 LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
 PLIST_SUB+=	GDBM=""
 .else

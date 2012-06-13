@@ -13,8 +13,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of services for ircu P10 protocol networks
 
-OPTIONS=	PROTOCOL_BAHAMUT "Enables Bahamut protocol (P10 is default)" "on" \
-		DEBUG "Enables debug mode" "off"
+OPTIONS_DEFINE=	PROTOCOL_BAHAMUT DEBUG
+OPTIONS_DEFAULT=	PROTOCOL_BAHAMUT
+PROTOCOL_BAHAMUT_DESC=	Enables Bahamut protocol (P10 is default)
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-getopt
@@ -35,13 +36,13 @@ PLIST_FILES=	bin/srvx 			\
 		etc/srvx.conf.example		\
 		etc/sockcheck.conf.example
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-.if defined(WITH_PROTOCOL_BAHAMUT)
+.if ${PORT_OPTIONS:MPROTOCOL_BAHAMUT}
 CONFIGURE_ARGS+=	--with-protocol=bahamut
 .endif
 
@@ -52,10 +53,10 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/srvx ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/*.conf.example ${PREFIX}/etc
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/src/*.help ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -22,23 +22,24 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 IS_INTERACTIVE=	yes
 
-OPTIONS=	IPV6 "Enable IPv6 support" off \
-		CRYPT "Enable Encryption" on
+OPTIONS_DEFINe=	IPV6 CRYPT
+OPTIONS_DEFAULT=	CRYPT
+CRYPT_DESC=	Enable Encryption
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-.if defined(WITHOUT_CRYPT)
-CONFIGURE_ARGS+=	--disable-crypt
-.else
+.if ${PORT_OPTIONS:MCRYPT}
 CONFIGURE_ARGS+=	--enable-crypt
+.else
+CONFIGURE_ARGS+=	--disable-crypt
 .endif
 
 PLIST_FILES=	bin/evangeline
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

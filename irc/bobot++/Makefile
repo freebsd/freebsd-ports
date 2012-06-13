@@ -17,7 +17,9 @@ COMMENT=	An IRC bot written in C++
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-OPTIONS=	GUILE "Use Guile scripts" on
+OPTIONS_DEFINE=	GUILE
+OPTIONS_DEFAULT=	GUILE
+GUILE_DESC=	Use Guile scripts
 
 GNU_CONFIGURE=	yes
 
@@ -29,11 +31,9 @@ PLIST_FILES=	bin/${PORTNAME}
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_GUILE)
-CONFIGURE_ARGS+=	--disable-scripting
-.else
+.if ${PORT_OPTIONS:MGUILE}
 LIB_DEPENDS+=	guile.21:${PORTSDIR}/lang/guile
 CONFIGURE_ARGS+=	--enable-scripting
 PLIST_FILES+=	share/guile/site/bobotpp/bot.scm \
@@ -42,6 +42,8 @@ PLIST_DIRS+=	%%DATADIR%%/scripts \
 		%%DATADIR%% \
 		share/guile/site/bobotpp
 PLIST_DIRSTRY+=	share/guile/site
+.else
+CONFIGURE_ARGS+=	--disable-scripting
 .endif
 
 post-patch:
@@ -49,13 +51,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|std::snprintf|snprintf|g' ${WRKSRC}/source/Bot.C
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC}/documentation && ${INSTALL_DATA} *.html ${DOCSDIR})
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

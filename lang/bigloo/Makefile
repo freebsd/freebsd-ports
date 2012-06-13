@@ -21,12 +21,9 @@ LICENSE_COMB=	multi
 LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc \
 		gmp.10:${PORTSDIR}/math/gmp
 
-OPTIONS=	ALSA "Enable ALSA support" off \
-		FLAC "Enable FLAC support" off \
-		GSTREAMER "Enable Gstreamer support" off \
-		MPG123 "Enable MPG123 support" off \
-		SQLITE "Enable SQLite support" off \
-		OPENSSL "Enable OpenSSL support" on
+OPTIONS_DEFINE=	ALSA FLAC GSTREAMER MPG123 SQLITE OPENSSL DOCS
+OPTIONS_DEFAULT=	OPENSSL
+MPG123_DESC=	Enable MPG123 support
 
 WANT_GSTREAMER=	yes
 USE_GCC=	4.6+
@@ -51,7 +48,7 @@ INFO=		bigloo
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_ALSA)
+.if ${PORT_OPTIONS:MALSA}
 LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
 PLIST_SUB+=	ALSA=""
 .else
@@ -59,7 +56,7 @@ CONFIGURE_ARGS+=--disable-alsa
 PLIST_SUB+=	ALSA="@comment "
 .endif
 
-.if defined(WITH_FLAC)
+.if ${PORT_OPTIONS:MFLAC}
 LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
 PLIST_SUB+=	FLAC=""
 .else
@@ -67,7 +64,7 @@ CONFIGURE_ARGS+=--disable-flac
 PLIST_SUB+=	FLAC="@comment "
 .endif
 
-.if defined(WITH_GSTREAMER)
+.if ${PORT_OPTIONS:MGSTREAMER}
 USE_GSTREAMER=	yes
 PLIST_SUB+=	GSTREAMER=""
 .else
@@ -75,7 +72,7 @@ CONFIGURE_ARGS+=--disable-gstreamer
 PLIST_SUB+=	GSTREAMER="@comment "
 .endif
 
-.if defined(WITH_MPG123)
+.if ${PORT_OPTIONS:MMPG123}
 LIB_DEPENDS+=	mpg123.0:${PORTSDIR}/audio/mpg123
 PLIST_SUB+=	MPG123=""
 .else
@@ -83,7 +80,7 @@ CONFIGURE_ARGS+=--disable-mpg123
 PLIST_SUB+=	MPG123="@comment "
 .endif
 
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 USE_SQLITE=	yes
 PLIST_SUB+=	SQLITE=""
 .else
@@ -91,7 +88,7 @@ CONFIGURE_ARGS+=--disable-pkglib --disable-sqlite
 PLIST_SUB+=	SQLITE="@comment "
 .endif
 
-.if defined(WITH_OPENSSL)
+.if ${PORT_OPTIONS:MOPENSSL}
 USE_OPENSSL=	yes
 PLIST_SUB+=	OPENSSL=""
 .else
@@ -129,7 +126,7 @@ post-configure:
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/manuals/bigloo.man ${MANPREFIX}/man/man1/${MAN1}
 	${INSTALL_DATA} ${WRKSRC}/manuals/bigloo.info ${PREFIX}/${INFO_PATH}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/manuals/*.html ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/manuals/*.sui ${DOCSDIR}
