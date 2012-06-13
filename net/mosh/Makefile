@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mosh
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	net
 MASTER_SITES=	http://cloud.github.com/downloads/keithw/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -16,7 +16,7 @@ COMMENT=	A mobile terminal that supports intermittant connectivity
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	protobuf.7:${PORTSDIR}/devel/protobuf
+LIB_DEPENDS=	protobuf:${PORTSDIR}/devel/protobuf
 RUN_DEPENDS=	p5-IO-Tty>=0:${PORTSDIR}/devel/p5-IO-Tty
 
 USE_PERL5_RUN=	yes
@@ -34,7 +34,7 @@ MAN1=		mosh-client.1 mosh-server.1 mosh.1
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900004
-LIB_DEPENDS+=	utempter.0:${PORTSDIR}/sysutils/libutempter
+LIB_DEPENDS+=	utempter:${PORTSDIR}/sysutils/libutempter
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
