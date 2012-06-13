@@ -3474,3 +3474,4 @@ java/eclipseme||2012-06-12|Has expired: depends on java/sun-wtk
 mail/lmtpd||2012-06-12|Has expired: BROKEN for more than 6 month
 print/cups-magicolor||2012-06-12|Has expired: BROKEN for more than 6 month
 security/pantera||2012-06-12|Has expired: BROKEN for more than 6 month
+graphics/djvulibre-nox11|graphics/djvulibre|2012-06-13|Merged back into graphics/djvulibre

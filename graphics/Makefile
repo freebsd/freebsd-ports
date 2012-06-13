@@ -126,7 +126,6 @@
     SUBDIR += divxcalc
     SUBDIR += djview4
     SUBDIR += djvulibre
-    SUBDIR += djvulibre-nox11
     SUBDIR += dmtx-utils
     SUBDIR += dri
     SUBDIR += driconf

@@ -7,7 +7,7 @@
 
 PORTNAME=	djview
 PORTVERSION=	4.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/djvu/DjView/${PORTVERSION}
 
@@ -16,7 +16,7 @@ COMMENT=	Standalone Djvu viewer and plugin based on Qt4 toolkit
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	djvulibre.24:${PORTSDIR}/graphics/djvulibre-nox11
+LIB_DEPENDS=	djvulibre:${PORTSDIR}/graphics/djvulibre
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig

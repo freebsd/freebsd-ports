@@ -173,7 +173,7 @@ PLIST_SUB+=		OPENEXR="@comment "
 . if ${_IMAGEMAGICK_THREADS} == "no"
 IGNORE=DjVu requires threads${_IMAGEMAGICK_THREADS_IGNORE_MSG}
 . endif
-LIB_DEPENDS+=		djvulibre:${PORTSDIR}/graphics/djvulibre-nox11
+LIB_DEPENDS+=		djvulibre:${PORTSDIR}/graphics/djvulibre
 PLIST_SUB+=		DJVU=""
 .else
 CONFIGURE_ARGS+=	--without-djvu
