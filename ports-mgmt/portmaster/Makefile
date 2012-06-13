@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	portmaster
-PORTVERSION=	3.11
+PORTVERSION=	3.12
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://dougbarton.us/Downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
@@ -24,7 +24,6 @@ MAN8=		portmaster.8
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_BASH)
-PORTREVISION=	2
 PLIST_FILES+=	etc/bash_completion.d/portmaster.sh
 PLIST_DIRSTRY+=	etc/bash_completion.d
 .endif
