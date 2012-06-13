@@ -54,6 +54,10 @@
 #   Set to "" by default.
 #   Java VM args to use.
 #
+# tomcat7_wait (int):
+#   Set to "30" by default.
+#   Set the wait time (in seconds) for Tomcat process startup
+#
 # You may symlink this script with other names to run multiple
 # instances of tomcat7 with different configurations.
 #
@@ -89,6 +93,7 @@ eval "_tomcat_logging_manager=\${${name}_logging_manager:-'org.apache.juli.Class
 eval "_tomcat_logging_config=\${${name}_logging_config:-'${_tomcat_catalina_base}/conf/logging.properties'}"
 eval "_tomcat_classpath=\${${name}_classpath:-''}"
 eval "_tomcat_java_opts=\${${name}_java_opts:-''}"
+eval "_tomcat_wait=\${${name}_wait:-'30'}"
 
 pidfile="/var/run/${name}.pid"
 
@@ -102,7 +107,7 @@ command_args="-java-home '${_tomcat_java_home}' \
 	-server \
 	-user ${_tomcat_catalina_user} \
 	-pidfile '${pidfile}' \
-	-wait 10 \
+	-wait ${_tomcat_wait} \
 	-outfile '${_tomcat_stdout}' \
 	-errfile '${_tomcat_stderr}' \
 	-classpath '%%TOMCAT_HOME%%/bin/bootstrap.jar:%%LOCALBASE%%/share/java/classes/commons-daemon.jar:%%TOMCAT_HOME%%/bin/tomcat-juli.jar${_tomcat_classpath}' \
