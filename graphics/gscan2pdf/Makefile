@@ -50,7 +50,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 RUN_DEPENDS=	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
 		p5-Locale-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
 		p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General \
-		cjb2:${PORTSDIR}/graphics/djvulibre-nox11 \
+		cjb2:${PORTSDIR}/graphics/djvulibre \
 		gocr:${PORTSDIR}/graphics/gocr \
 		p5-Sane>=0:${PORTSDIR}/graphics/p5-Sane \
 		scanimage:${PORTSDIR}/graphics/sane-backends \
