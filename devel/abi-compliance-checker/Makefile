@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	abi-compliance-checker
-PORTVERSION=	1.97.7
+PORTVERSION=	1.97.8
 CATEGORIES=	devel perl5
-MASTER_SITES=	http://forge.ispras.ru/attachments/download/2009/ \
+MASTER_SITES=	http://forge.ispras.ru/attachments/download/2147/ \
 		http://cloud.github.com/downloads/lvc/abi-compliance-checker/ \
 		LOCAL/bf
 
@@ -29,7 +29,7 @@ PLIST_FILES=	bin/${PORTNAME}.pl
 
 .include <bsd.port.pre.mk>
 
-.if !empty(CC:M*clang*)
+.if !empty(CC:T:M*clang*)
 IGNORE =	: this port requires CC to be a version of gcc
 .endif
 
