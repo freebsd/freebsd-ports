@@ -21,6 +21,8 @@ LICENSE=	GPLv3 # (or later)
 
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
+BROKEN=		does not compile
+
 OPTIONS_DEFINE=	NLS SVG DOCS
 OPTIONS_DEFAULT=	SVG
 

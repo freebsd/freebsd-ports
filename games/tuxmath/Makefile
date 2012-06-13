@@ -20,6 +20,8 @@ COMMENT=	Educational arcade game starring Tux
 
 LICENSE=	GPLv3 # (or later)
 
+BROKEN=		does not compile
+
 OPTIONS_DEFINE=	NLS SVG DOCS
 OPTIONS_DEFAULT=	SVG
 
