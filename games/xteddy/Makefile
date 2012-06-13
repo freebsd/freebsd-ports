@@ -16,6 +16,8 @@ COMMENT=	A cuddlesome teddy for the X desktop
 
 NO_CDROM=	Can only be distributed for free
 
+BROKEN=		does not compile
+
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

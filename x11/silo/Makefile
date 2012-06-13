@@ -17,6 +17,8 @@ COMMENT=	A simple X11 launcher extensible in any programming language
 USE_BZIP2=	yes
 USE_XORG=	xpm x11
 
+BROKEN=		does not compile
+
 pre-everything::
 .if defined(WITHOUT_IMLIB)
 	@${ECHO_CMD} "Disabling Imlib support; only XPM images are supported"

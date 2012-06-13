@@ -20,6 +20,8 @@ COMMENT=	KDE image viewer
 
 CONFLICTS=	kdegraphics-3.1.* kdegraphics-3.2.[0-3]
 
+BROKEN=		does not compile
+
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
 
