@@ -7,22 +7,19 @@
 
 PORTNAME=	pdflib
 PORTVERSION=	7.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print perl5 java
 MASTER_SITES=	http://www.pdflib.com/binaries/PDFlib/${PORTVERSION:S/.//g}/
-DISTNAME=	PDFlib-Lite-${PORTVERSION}
+DISTNAME=	PDFlib-Lite-${PORTVERSION}p3
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A C library for dynamically generating PDF
 
 RESTRICTED=	many odd restrictions on usage and distribution
 
-.if defined(WITH_PERL)
-OPTIONS=	PERL "Build perl bindings" on
-.else
-OPTIONS=	PERL "Build perl bindings" off
-.endif
-OPTIONS+=	JAVA "Build Java bindings" off
+OPTIONS_DEFINE=	PERL JAVA
+PERL_DESC=	Build perl bindings
+JAVA_DESC=	Build Java bindings
 
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
@@ -37,7 +34,7 @@ PORTDOCS=	*
 CONFIGURE_ARGS+=--enable-64bit
 .endif
 
-.if defined(WITH_PERL)
+.if ${PORT_OPTIONS:MPERL}
 USE_PERL5=	yes
 PLIST_SUB=	PERL=""
 CONFIGURE_ARGS+=--with-perl=${PERL}
@@ -46,7 +43,7 @@ CONFIGURE_ARGS+=--with-perl=no
 PLIST_SUB=	PERL="@comment "
 .endif
 
-.if defined(WITH_JAVA)
+.if ${PORT_OPTIONS:MJAVA}
 USE_JAVA=	yes
 JAVA_BUILD=	yes
 JAVA_RUN=	yes
@@ -60,10 +57,10 @@ PLIST_SUB+=	JAVA="@comment "
 post-install:
 	${MKDIR} ${DATADIR}/fonts
 	${INSTALL_DATA} ${WRKSRC}/fonts/* ${DATADIR}/fonts
-.if defined(WITH_JAVA)
+.if ${PORT_OPTIONS:MJAVA}
 	${INSTALL_DATA} ${WRKSRC}/bind/pdflib/java/pdflib.jar ${JAVAJARDIR}/pdflib.jar
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/pdflib/* ${DOCSDIR}
 .endif
