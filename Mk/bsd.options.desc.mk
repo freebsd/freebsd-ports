@@ -61,6 +61,7 @@ GEOTIFF_DESC?=		Enable GeoTIFF support
 GEOIP_DESC?=		Enable GeoIP support
 GIF_DESC?=		Enable GIF support
 GLADE_DESC?=		Enable Glade interface support
+GMP_DESC?=		Enable GMP support
 GNOME_DESC?=		Enable GNOME Desktop support
 GNOMEVFS2_DESC?=	Enable GnomeVFS2 support
 GNUPG_DESC?=		Enable GNU Privacy Guard support
