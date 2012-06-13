@@ -268,6 +268,8 @@ bin/rabrick
 %%RUBY_SITELIBDIR%%/rabbit/theme/edge-info-toolkit/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/emphasize-keyword/emphasize-keyword.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/emphasize-keyword/property.rb
+%%RUBY_SITELIBDIR%%/rabbit/theme/enishi-green/enishi-green.rb
+%%RUBY_SITELIBDIR%%/rabbit/theme/enishi-green/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/entry.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/footer-comment/footer-comment.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/footer-comment/property.rb
@@ -475,6 +477,7 @@ bin/rabrick
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/green-circle
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/footer-logo
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/footer-comment
+@dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/enishi-green
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/emphasize-keyword
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/edge-info-toolkit
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/default-title-text
