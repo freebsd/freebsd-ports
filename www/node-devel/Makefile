@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	node
-PORTVERSION=	0.7.9
+PORTVERSION=	0.7.10
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	-devel
