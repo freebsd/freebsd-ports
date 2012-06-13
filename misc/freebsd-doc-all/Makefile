@@ -7,6 +7,7 @@
 
 PORTNAME=	freebsd-doc-all
 PORTVERSION=	39016
+PORTEPOCH=	1
 CATEGORIES=	misc docs
 MASTER_SITES=	#empty
 DISTFILES=	#empty
