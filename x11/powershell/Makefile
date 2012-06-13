@@ -14,6 +14,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A terminal emulator for the X11
 
+BROKEN=		does not configure
+
 USE_GNOME=	gnomelibs gnomehier
 USE_AUTOTOOLS=	autoconf
 CPPFLAGS+=	-I${LOCALBASE}/include  `${IMLIB_CONFIG} --cflags`
