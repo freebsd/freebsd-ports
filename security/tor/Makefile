@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.2.36
+DISTVERSION=	0.2.2.37
 CATEGORIES=	security net ipv6
 MASTER_SITES=	https://www.torproject.org/dist/ \
 		ftp://ftp.bit.nl/mirror/tor/ \
@@ -71,12 +71,15 @@ CONFIGURE_ENV=	TOR_CPPFLAGS_libevent="-I${LOCALBASE}/include/event2 -I${LOCALBAS
 		TOR_LDFLAGS_libevent="-L${LOCALBASE}/lib/event2" \
 		TOR_LIBEVENT_LIBS="-levent-2.0"
 
-OPTIONS=	BUFFREELISTS "freelists for buffer RAM" on \
-		GMAKE "parallel build safety via GNU make" off \
-		INSTR_DOWNLOADS "instrument downloads for analysis" off \
-		TCMALLOC "use the tcmalloc memory allocation library" off \
-		THREADS "multi-threading support" on \
-		TRANSPARENT "transparent proxy support" on
+OPTIONS_DEFINE= BUFFREELISTS GMAKE INSTR_DOWNLOADS TCMALLOC THREADS TRANSPARENT
+
+BUFFREELISTS_DESC=	Freelists for buffer RAM
+GMAKE_DESC=		Parallel build safety via GNU make
+INSTR_DOWNLOADS_DESC=	Instrument downloads for analysis
+TCMALLOC_DESC=		Use the tcmalloc memory allocation library
+TRANSPARENT_DESC=	Transparent proxy support
+
+OPTIONS_DEFAULT=	BUFFREELISTS THREADS TRANSPARENT
 
 USE_OPENSSL=	yes
 
@@ -93,15 +96,15 @@ MAN1=		tor.1 tor-resolve.1 torify.1 tor-gencert.1
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GMAKE)
-USE_GMAKE=	yes
+.if ${PORT_OPTIONS:MGMAKE}
+USE_GMAKE=		yes
 .else
 MAKE_JOBS_UNSAFE=	yes
 .endif
 
 .if ( (${OSVERSION} >= 703100 && ${OSVERSION} < 800000) || \
 (${OSVERSION} >= 800500 && ${OSVERSION} < 900000) || \
-(${OSVERSION} >= 900003) ) && !defined(USE_GCC) && empty(CC:M*gcc4*)
+(${OSVERSION} >= 900003) ) && !defined(USE_GCC) && empty(CC:T:M*gcc4*)
 CONFIGURE_ARGS+=	--enable-gcc-hardening
 .endif
 
@@ -111,31 +114,31 @@ CONFIGURE_ARGS+=	--enable-gcc-hardening
 WITH_OPENSSL_PORT=	yes
 .endif
 
-.if defined(WITH_BUFFREELISTS)
+.if ${PORT_OPTIONS:MBUFFREELISTS}
 CONFIGURE_ARGS+=	--enable-buf-freelists
 .else
 CONFIGURE_ARGS+=	--disable-buf-freelists
 .endif
 
-.if defined(WITH_INSTR_DOWNLOADS)
+.if ${PORT_OPTIONS:MINSTR_DOWNLOADS}
 CONFIGURE_ARGS+=	--enable-instrument-downloads
 .else
 CONFIGURE_ARGS+=	--disable-instrument-downloads
 .endif
 
-.if defined(WITH_TCMALLOC)
+.if ${PORT_OPTIONS:MTCMALLOC}
 CONFIGURE_ARGS+=	--with-tcmalloc
 LIB_DEPENDS+=		tcmalloc:${PORTSDIR}/devel/google-perftools
 .endif
 
-.if defined(WITH_THREADS)
+.if ${PORT_OPTIONS:MTHREADS}
 CONFIGURE_ARGS+=	--enable-threads
 CFLAGS+=		${PTHREAD_CFLAGS}
 .else
 CONFIGURE_ARGS+=	--disable-threads
 .endif
 
-.if defined(WITH_TRANSPARENT)
+.if ${PORT_OPTIONS:MTRANSPARENT}
 CONFIGURE_ARGS+=	--enable-transparent
 .else
 CONFIGURE_ARGS+=	--disable-transparent
