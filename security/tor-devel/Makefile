@@ -72,14 +72,14 @@ CONFIGURE_ENV=	TOR_CPPFLAGS_libevent="-I${LOCALBASE}/include/event2 -I${LOCALBAS
 OPTIONS_DEFINE=	BUFFEREVENTS BUFFREELISTS GMAKE INSTR_DOWNLOADS \
 		STATIC_TOR TCMALLOC THREADS TOR2WEB TRANSPARENT
 
-BUFFEREVENTS_DESC=	use libevent's buffered IO
-BUFFREELISTS_DESC=	freelists for buffer RAM
-GMAKE_DESC=		parallel build safety via GNU make
-INSTR_DOWNLOADS_DESC=	instrument downloads for analysis
-STATIC_TOR_DESC=	build a static tor
-TCMALLOC_DESC=		use the tcmalloc memory allocation library
-TOR2WEB_DESC=		faster but non-anonymous hidden services
-TRANSPARENT_DESC=	transparent proxy support
+BUFFEREVENTS_DESC=	Use libevent's buffered IO
+BUFFREELISTS_DESC=	Freelists for buffer RAM
+GMAKE_DESC=		Parallel build safety via GNU make
+INSTR_DOWNLOADS_DESC=	Instrument downloads for analysis
+STATIC_TOR_DESC=	Build a static tor
+TCMALLOC_DESC=		Use the tcmalloc memory allocation library
+TOR2WEB_DESC=		Faster but non-anonymous hidden services
+TRANSPARENT_DESC=	Transparent proxy support
 
 OPTIONS_DEFAULT=	BUFFREELISTS THREADS TRANSPARENT
 
@@ -91,7 +91,7 @@ SUB_FILES=	pkg-message
 GROUPS =	_tor
 USERS=		_tor
 
-CONFLICTS=		tor-[0-9]*
+CONFLICTS=	tor-[0-9]*
 
 MANCOMPRESSED=	no
 MAN1=		tor.1 tor-resolve.1 torify.1 tor-gencert.1
@@ -99,14 +99,14 @@ MAN1=		tor.1 tor-resolve.1 torify.1 tor-gencert.1
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGMAKE}
-USE_GMAKE=	yes
+USE_GMAKE=		yes
 .else
 MAKE_JOBS_UNSAFE=	yes
 .endif
 
 .if ( (${OSVERSION} >= 703100 && ${OSVERSION} < 800000) || \
 (${OSVERSION} >= 800500 && ${OSVERSION} < 900000) || \
-(${OSVERSION} >= 900003) ) && !defined(USE_GCC) && empty(CC:M*gcc4*) && \
+(${OSVERSION} >= 900003) ) && !defined(USE_GCC) && empty(CC:T:M*gcc4*) && \
 empty(PORT_OPTIONS:MSTATIC_TOR)
 CONFIGURE_ARGS+=	--enable-gcc-hardening
 .endif
