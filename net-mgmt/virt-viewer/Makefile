@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	virt-viewer
-PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTVERSION=	0.5.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://virt-manager.org/download/sources/${PORTNAME}/
 
@@ -24,6 +23,6 @@ CONFIGURE_ENV+=	DATADIRNAME=share
 USE_GMAKE=	yes
 PLIST_SUB=	NLS=""
 
-MAN1=		virt-viewer.1
+MAN1=		remote-viewer.1 virt-viewer.1
 
 .include <bsd.port.mk>

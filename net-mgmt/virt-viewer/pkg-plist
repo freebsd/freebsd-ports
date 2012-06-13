@@ -1,25 +1,48 @@
 bin/virt-viewer
+bin/remote-viewer
+share/applications/remote-viewer.desktop
+share/icons/hicolor/16x16/apps/virt-viewer.png
+share/icons/hicolor/22x22/apps/virt-viewer.png
+share/icons/hicolor/24x24/apps/virt-viewer.png
+share/icons/hicolor/32x32/apps/virt-viewer.png
+share/icons/hicolor/48x48/apps/virt-viewer.png
+share/icons/hicolor/256x256/apps/virt-viewer.png
+%%NLS%%share/locale/ar/LC_MESSAGES/virt-viewer.mo
 %%NLS%%share/locale/as/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/bn/LC_MESSAGES/virt-viewer.mo
 %%NLS%%share/locale/bn_IN/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/virt-viewer.mo
 %%NLS%%share/locale/de/LC_MESSAGES/virt-viewer.mo
 %%NLS%%share/locale/es/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/virt-viewer.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/virt-viewer.mo
 %%NLS%%share/locale/gu/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/he/LC_MESSAGES/virt-viewer.mo
 %%NLS%%share/locale/hi/LC_MESSAGES/virt-viewer.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/id/LC_MESSAGES/virt-viewer.mo
 %%NLS%%share/locale/it/LC_MESSAGES/virt-viewer.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/virt-viewer.mo
 %%NLS%%share/locale/kn/LC_MESSAGES/virt-viewer.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/virt-viewer.mo
 %%NLS%%share/locale/ml/LC_MESSAGES/virt-viewer.mo
 %%NLS%%share/locale/mr/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/virt-viewer.mo
 %%NLS%%share/locale/or/LC_MESSAGES/virt-viewer.mo
 %%NLS%%share/locale/pa/LC_MESSAGES/virt-viewer.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/virt-viewer.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/virt-viewer.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/si/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/virt-viewer.mo
 %%NLS%%share/locale/ta/LC_MESSAGES/virt-viewer.mo
 %%NLS%%share/locale/te/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/virt-viewer.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/virt-viewer.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/virt-viewer.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/virt-viewer.mo
@@ -28,3 +51,5 @@ bin/virt-viewer
 %%DATADIR%%/ui/virt-viewer.xml
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%
+@dirrm share/applications
+@dirrm share
