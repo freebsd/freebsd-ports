@@ -18,6 +18,8 @@ COMMENT=	X11 terminal emulator based on rxvt/xterm that supports korean
 
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/local/hmm12.pcf.gz:${PORTSDIR}/korean/hanyangfonts
 
+BROKEN=		does not compile
+
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_XORG=	x11 xext ice sm xt
