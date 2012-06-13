@@ -15,8 +15,6 @@ LIB_DEPENDS=	vtkCommon.${LIBVER}:${PORTSDIR}/math/vtk \
 		tcl84:${PORTSDIR}/lang/tcl84 \
 		tk84:${PORTSDIR}/x11-toolkits/tk84
 
-BROKEN=		does not build
-
 MASTERDIR=	${.CURDIR}/../vtk
 
 WRAP=		Python
@@ -41,8 +39,9 @@ CMAKE_DEFS=	-DVTK_WRAP_PYTHON:BOOL=ON \
 		-DZLIB_INCLUDE_DIR:PATH=/usr/include \
 		-DJPEG_LIBRARY:PATH=${LOCALBASE}/lib/libjpeg.so \
 		-DJPEG_INCLUDE_DIR:PATH=${LOCALBASE}/include \
-		-DPNG_LIBRARY:PATH=${LOCALBASE}/lib/libpng.so \
+		-DPNG_LIBRARY:PATH=${LOCALBASE}/lib/libpng15.so \
 		-DPNG_INCLUDE_DIR:PATH=${LOCALBASE}/include/libpng15 \
+		-DPNG_PNG_INCLUDE_DIR:PATH=${LOCALBASE}/include/libpng15 \
 		-DTIFF_LIBRARY:PATH=${LOCALBASE}/lib/libtiff.so \
 		-DTIFF_INCLUDE_DIR:PATH=${LOCALBASE}/include \
 		-DTCL_INCLUDE_PATH:PATH=${TCL_INCLUDE_DIR} \
