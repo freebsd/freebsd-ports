@@ -3607,7 +3607,6 @@ flickcurl                       ports/www/flickcurl
 flickrnet                       ports/devel/flickrnet
 flightgear                      ports/games/flightgear
 flightgear-aircraft             ports/games/flightgear-aircraft
-flightgear-atlas                ports/games/flightgear-atlas
 flightgear-data                 ports/games/flightgear-data
 flightgear-mb339-pan            ports/games/flightgear-mb339-pan
 flim                            ports/editors/flim
@@ -12632,6 +12631,7 @@ p5-Geo-Coordinates-UTM          ports/math/p5-Geo-Coordinates-UTM
 p5-Geo-Distance                 ports/math/p5-Geo-Distance
 p5-Geo-Distance-XS              ports/math/p5-Geo-Distance-XS
 p5-Geo-EOP                      ports/graphics/p5-Geo-EOP
+p5-Geo-GDAL                     ports/graphics/p5-Geo-GDAL
 p5-Geo-GML                      ports/graphics/p5-Geo-GML
 p5-Geo-Gpx                      ports/graphics/p5-Geo-Gpx
 p5-Geo-IP                       ports/net/p5-Geo-IP
@@ -17147,6 +17147,7 @@ p5-geo-coordinates-utm          ports/math/p5-Geo-Coordinates-UTM
 p5-geo-distance                 ports/math/p5-Geo-Distance
 p5-geo-distance-xs              ports/math/p5-Geo-Distance-XS
 p5-geo-eop                      ports/graphics/p5-Geo-EOP
+p5-geo-gdal                     ports/graphics/p5-Geo-GDAL
 p5-geo-gml                      ports/graphics/p5-Geo-GML
 p5-geo-gpx                      ports/graphics/p5-Geo-Gpx
 p5-geo-ip                       ports/net/p5-Geo-IP
@@ -21026,6 +21027,7 @@ pecl-gearman                    ports/devel/pecl-gearman
 pecl-geoip                      ports/net/pecl-geoip
 pecl-gmagick                    ports/graphics/pecl-gmagick
 pecl-gnupg                      ports/security/pecl-gnupg
+pecl-gupnp                      ports/net/pecl-gupnp
 pecl-handlersocket              ports/databases/pecl-handlersocket
 pecl-haru                       ports/print/pecl-haru
 pecl-hidef                      ports/devel/pecl-hidef
@@ -21213,6 +21215,7 @@ php-adodb-ext                   ports/databases/php-adodb-ext
 php-auth_openid                 ports/security/php-Auth_OpenID
 php-auth_openid2                ports/security/php-Auth_OpenID2
 php-facedetect                  ports/graphics/php-facedetect
+php-gdal                        ports/graphics/php-gdal
 php-java-bridge                 ports/devel/php-java-bridge
 php-libawl                      ports/devel/php-libawl
 php-libpuzzle                   ports/graphics/php-libpuzzle
@@ -22591,6 +22594,7 @@ py-gamin                        ports/devel/py-gamin
 py-gato                         ports/math/py-gato
 py-gchartwrapper                ports/graphics/py-gchartwrapper
 py-gd                           ports/graphics/py-gd
+py-gdal                         ports/graphics/py-gdal
 py-gdata                        ports/devel/py-gdata
 py-gdbm                         ports/databases/py-gdbm
 py-gearman                      ports/devel/py-gearman
@@ -24079,6 +24083,8 @@ razorback-fsmonitor             ports/security/razorback-fsMonitor
 razorback-fswalk                ports/security/razorback-fsWalk
 razorback-masterNugget          ports/security/razorback-masterNugget
 razorback-masternugget          ports/security/razorback-masterNugget
+razorback-officeCat             ports/security/razorback-officeCat
+razorback-officecat             ports/security/razorback-officeCat
 razorback-pdfFox                ports/security/razorback-pdfFox
 razorback-pdffox                ports/security/razorback-pdfFox
 razorback-scriptNugget          ports/security/razorback-scriptNugget
@@ -24529,6 +24535,7 @@ ruby-fox16                      ports/x11-toolkits/ruby-fox16
 ruby-freedb                     ports/audio/ruby-freedb
 ruby-frontbase                  ports/databases/ruby-frontbase
 ruby-gd                         ports/graphics/ruby-gd
+ruby-gdal                       ports/graphics/ruby-gdal
 ruby-gdbm                       ports/databases/ruby-gdbm
 ruby-gdk_pixbuf2                ports/graphics/ruby-gdk_pixbuf2
 ruby-gemfinder                  ports/devel/ruby-gemfinder
@@ -24745,6 +24752,7 @@ rubygem-colortools              ports/print/rubygem-colortools
 rubygem-columnize               ports/devel/rubygem-columnize
 rubygem-compass                 ports/textproc/rubygem-compass
 rubygem-configuration           ports/devel/rubygem-configuration
+rubygem-cookiejar               ports/www/rubygem-cookiejar
 rubygem-couchrest               ports/databases/rubygem-couchrest
 rubygem-crack                   ports/devel/rubygem-crack
 rubygem-cri                     ports/devel/rubygem-cri
@@ -26922,7 +26930,6 @@ transproxy                      ports/www/transproxy
 transset-df                     ports/x11-wm/transset-df
 trapproto                       ports/x11/trapproto
 trayer                          ports/x11/trayer
-trayer-srg                      ports/x11/trayer-srg
 tree                            ports/sysutils/tree
 tree-widget                     ports/editors/tree-widget
 treecc                          ports/lang/treecc
