@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.goron.de/~froese/alevt/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 teletext decoding and display program
 
+DEPRECATED=	No more upstream
+EXPIRATION_DATE=	2012-07-13
+
 OPTIONS=	PNG		"Export pages as PNG image"	on \
 		SMALLFONT	"Use a smaller and thiner font"	off
 
