@@ -14,6 +14,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/v${PORTVERSION}
 MAINTAINER?=	mandree@FreeBSD.org
 COMMENT?=	Utilities & library to manipulate ext2/3/4 filesystems
 
+LICENSE=	GPLv2
+
 PATCH_STRIP=	-p1
 USE_GMAKE=	yes
 USE_CSTD=	gnu89
