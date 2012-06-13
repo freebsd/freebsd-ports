@@ -1,23 +1,24 @@
---- desktopfiles/Makefile.in.orig	2012-05-07 22:56:53.000000000 -0400
-+++ desktopfiles/Makefile.in	2012-06-09 21:00:25.000000000 -0400
-@@ -30,9 +30,10 @@
+--- desktopfiles/Makefile.in.orig	2012-06-13 09:31:40.000000000 -0400
++++ desktopfiles/Makefile.in	2012-06-13 09:34:37.000000000 -0400
+@@ -30,6 +30,7 @@
  
  INSTALL = @INSTALL@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
 +INSTALL_SCRIPT = @INSTALL_SCRIPT@
  INSTALL_DATA = @INSTALL_DATA@
  CONVERT = @CONVERT@
--INKSCAPE = @INKSCAPE@
-+INKSCAPE = false
- RSVG = @RSVG@
- XDG_MIME = @XDG_MIME@
- XDG_ICON_RESOURCE = @XDG_ICON_RESOURCE@
-@@ -58,10 +59,10 @@
-           || ${CONVERT} -geometry $${s}x$${s} -depth 8 -background none $< $@ \
- 	  || ${INKSCAPE} --without-gui --export-width=$${s} \
-                          --export-height=$${s} --export-png=$@ $< \
+ INKSCAPE = @INKSCAPE@
+@@ -53,15 +54,10 @@
+ icons: ${PNGICONS} hi-djvu.svgz 
+ 
+ ${PNGICONS}: djvu.svg
+-	s=`echo $@ | sed -e 's/[a-z]*\([0-9]*\).*/\1/'`; \
+-	  ${RSVG} -w $${s} -h $${s} -o $@ $< \
+-          || ${CONVERT} -geometry $${s}x$${s} -depth 8 -background none $< $@ \
+-	  || ${INKSCAPE} --without-gui --export-width=$${s} \
+-                         --export-height=$${s} --export-png=$@ $< \
 -	  || cp ${srcdir}/prebuilt-$@ $@
-+	  || if test -f ${srcdir}/prebuilt-$@ ; then cp ${srcdir}/prebuilt-$@ $@ ; fi
++	if test -f ${srcdir}/prebuilt-$@ ; then cp ${srcdir}/prebuilt-$@ $@ ; fi
  
  hi-djvu.svgz: djvu.svg
 -	cat $< | gzip >$@
@@ -25,7 +26,7 @@
  
  register-djvu-mime: register-djvu-mime.in
  	sed < ${srcdir}/register-djvu-mime.in > register-djvu-mime \
-@@ -80,7 +81,7 @@
+@@ -80,7 +76,7 @@
  
  install-djvu-files: FORCE
  	${INSTALL} -d ${DESTDIR}${datadir_djvu}
