@@ -118,7 +118,7 @@ CFLAGS+=		-DCHROOT
 .endif
 
 .if defined(WITH_HPN)
-PATCH_SITES+=		http://www.psc.edu/networking/projects/hpn-ssh/
+PATCH_SITES+=		http://www.shatow.net/freebsd/
 PATCHFILES+=		${PORTNAME}-5.8p1-hpn13v11.diff.gz
 PATCH_DIST_STRIP=
 .endif
