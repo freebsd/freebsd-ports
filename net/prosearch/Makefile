@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	prosearch
-PORTVERSION=	0.19.1
-PORTREVISION=	1
+PORTVERSION=	0.19.2
+#PORTREVISION=	1
 CATEGORIES=	net www
 MASTER_SITES=	http://pro.setun.net/search/download/ SF/pro-search/pro-search/${PORTVERSION}
 
@@ -54,13 +54,15 @@ ${SITE_PERL}/lib/abs.pm:${PORTSDIR}/devel/p5-lib-abs
 .if defined(WITH_CRAWLER)
 RUN_DEPENDS+=\
 ${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
+${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
+${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 ${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser \
 nmap:${PORTSDIR}/security/nmap \
 ${SITE_PERL}/Net/DirectConnect.pm:${PORTSDIR}/net-p2p/p5-Net-DirectConnect
 .endif
 
 .if defined(WITH_SAMBA)
-RUN_DEPENDS+=	smbclient:${PORTSDIR}/${SAMBA_PORT}
+RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba-smbclient
 .endif
 
 .if defined(WITH_RSYNC)
@@ -110,7 +112,12 @@ USE_MYSQL=	server
 .if defined(WITH_MARIA)
 RUN_DEPENDS+=\
 ${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
-${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mariadb
+${LOCALBASE}bin/mysql:${PORTSDIR}/databases/mariadb-client
+.endif
+
+.if defined(WITH_DB) && defined(WITH_MARIA)
+RUN_DEPENDS+=\
+${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mariadb-server
 .endif
 
 .if defined(WITH_PGSQL)
@@ -125,6 +132,7 @@ ${SITE_PERL}/DBD/PgPP.pm:${PORTSDIR}/databases/p5-DBD-PgPP
 .endif
 
 .if (defined(WITH_PGSQL) || defined(WITH_PGPP)) && defined(WITH_DB)
+USE_PGSQL=	yes
 RUN_DEPENDS+=\
 ${LOCALBASE}/bin/postgres:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 .endif

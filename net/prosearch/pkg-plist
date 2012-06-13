@@ -4,13 +4,14 @@
 %%SEARCHDIR%%/tools/prosearch/Makefile
 %%SEARCHDIR%%/tools/tidy.pl
 %%SEARCHDIR%%/tools/test
-%%SEARCHDIR%%/tools/onebyte
+%%SEARCHDIR%%/tools/rsync_password
 %%SEARCHDIR%%/tools/test.zip
 %%SEARCHDIR%%/tools/size.sh
 %%SEARCHDIR%%/tools/grant.sql
 %%SEARCHDIR%%/tools/search.conf
 %%SEARCHDIR%%/tools/sphinx.conf
 %%SEARCHDIR%%/tools/cp_auto_gen.pl
+%%SEARCHDIR%%/tools/nginx-fastcgi.conf
 %%SEARCHDIR%%/doc/html2txt.pl
 %%SEARCHDIR%%/doc/cuted.old
 %%SEARCHDIR%%/doc/doc.txt
@@ -22,10 +23,12 @@
 %%SEARCHDIR%%/lib/lib.js
 %%SEARCHDIR%%/lib/search1.js
 %%SEARCHDIR%%/lib/player.js
+%%SEARCHDIR%%/lib/jquery-1.7.1.min.js
 %%SEARCHDIR%%/lib/psmisc.pm
 %%SEARCHDIR%%/lib/psweb.pm
 %%SEARCHDIR%%/lib/lib.css
 %%SEARCHDIR%%/lib/pssql.pm
+%%SEARCHDIR%%/t/json.t
 %%SEARCHDIR%%/WHATSNEW
 %%SEARCHDIR%%/search.sh.dist
 %%SEARCHDIR%%/config.pl.dist
@@ -77,6 +80,7 @@
 %%SEARCHDIR%%/web/lib/lib.js
 %%SEARCHDIR%%/web/lib/search1.js
 %%SEARCHDIR%%/web/lib/player.js
+%%SEARCHDIR%%/web/lib/jquery-1.7.1.min.js
 %%SEARCHDIR%%/web/lib/psmisc.pm
 %%SEARCHDIR%%/web/lib/psweb.pm
 %%SEARCHDIR%%/web/lib/lib.css
@@ -111,6 +115,7 @@
 @dirrm %%SEARCHDIR%%/doc
 @dirrm %%SEARCHDIR%%/example
 @dirrm %%SEARCHDIR%%/lib
+@dirrm %%SEARCHDIR%%/t
 @dirrmtry %%SEARCHDIR%%/tmp
 @dirrmtry %%SEARCHDIR%%/var
 @dirrmtry %%SEARCHDIR%%/web
