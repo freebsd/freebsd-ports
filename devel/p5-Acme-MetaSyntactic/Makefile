@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Acme-MetaSyntactic
-PORTVERSION=	1.002
+PORTVERSION=	1.003
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -33,4 +33,10 @@ MAN3=		Acme::MetaSyntactic.3 \
 		Test::MetaSyntactic.3 \
 		eta.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501400
+TEST_DEPENDS+=	p5-Test-Simple>=0.94:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
