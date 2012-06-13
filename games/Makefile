@@ -959,7 +959,6 @@
     SUBDIR += warsow-data
     SUBDIR += warzone2100
     SUBDIR += wesnoth
-    SUBDIR += wesnoth-devel
     SUBDIR += whichwayisup
     SUBDIR += widelands
     SUBDIR += windstille
