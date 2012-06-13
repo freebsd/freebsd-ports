@@ -7,7 +7,7 @@
 
 PORTNAME=	asterisk-stat
 PORTVERSION=	2.0.1
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	www
 MASTER_SITES=	http://www.areski.net/${SITE_SUBDIR}/
 DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}
@@ -35,7 +35,6 @@ ASTERISKSTATDB=	pgsql
 EXTRA_PATCHES+=	${FILESDIR}/pgsql__patch-call.log.php
 .else
 ASTERISKSTATDB=	mysql
-RUN_DEPENDS+=	${LOCALBASE}/lib/asterisk/modules/cdr_addon_mysql.so:${PORTSDIR}/net/asterisk16-addons
 .endif
 
 USE_PHP+=	${ASTERISKSTATDB}
