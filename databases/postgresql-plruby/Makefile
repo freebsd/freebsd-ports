@@ -43,7 +43,7 @@ DOCS=		Changes plruby.html plruby.rd
 
 PKGMESSAGE=	${WRKDIR}/createlang.sql
 
-pre-configure:
+pre-patch:
 	cd ${PGSQL_PORTDIR} && ${MAKE} -DBATCH patch
 
 post-build:
