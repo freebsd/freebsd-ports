@@ -48,13 +48,13 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-saslauthd=${SASLAUTHD_RUNPATH} \
 		--disable-krb4
 
-OPTIONS=	BDB		"Use Berkeley DB"			off \
-		OPENLDAP	"Use OpenLDAP"				off \
-		HTTPFORM	"Enable HTTP form authentication"	off
+OPTIONS_DEFINE=		BDB OPENLDAP HTTPFORM
+OPENLDAP_DESC=		Use OpenLDAP
+HTTPFORM_DESC=		Enable HTTP form authentication
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_BDB)
+.if ${PORT_OPTIONS:MBDB}
 USE_BDB=	yes
 INVALID_BDB_VER=2
 CONFIGURE_ARGS+=--with-dblib=berkeley \
@@ -65,7 +65,7 @@ CONFIGURE_ARGS+=--with-dblib=berkeley \
 CONFIGURE_ARGS+=--with-dblib=ndbm
 .endif
 
-.if defined(WITH_OPENLDAP)
+.if ${PORT_OPTIONS:MOPENLDAP}
 .if defined(WITH_OPENLDAP_VER)
 WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 .endif
@@ -73,7 +73,7 @@ USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 .endif
 
-.if defined(WITH_HTTPFORM)
+.if ${PORT_OPTIONS:MHTTPFORM}
 CONFIGURE_ARGS+=--enable-httpform
 .endif
 
@@ -129,7 +129,7 @@ post-install:
 	${MKDIR} -m 770 ${SASLAUTHD_RUNPATH}
 	${CHOWN} ${CYRUS_USER}:mail ${SASLAUTHD_RUNPATH}
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/saslauthd
 .for file in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/saslauthd/${file} ${DOCSDIR}/saslauthd

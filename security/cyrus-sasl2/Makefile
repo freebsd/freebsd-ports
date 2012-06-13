@@ -55,27 +55,30 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-saslauthd=${SASLAUTHD_RUNPATH} \
 		--disable-krb4
 
-OPTIONS=	BDB		"Use Berkeley DB"			off \
-		MYSQL		"Use MySQL"				off \
-		PGSQL		"Use PostgreSQL"			off \
-		SQLITE		"Use SQLite"				off \
-		SQLITE3		"Use SQLite3"				off \
-		DEV_URANDOM	"Use /dev/urandom"			off \
-		ALWAYSTRUE	"Enable the alwaystrue password verifier" off \
-		KEEP_DB_OPEN	"Keep handle to Berkeley DB open"	off \
-		OBSOLETE_CRAM_ATTR "Enable cmusaslsecretCRAM-MD5 property" on \
-		AUTHDAEMOND	"Enable use of authdaemon"		on \
-		LOGIN		"Enable LOGIN authentication"		on \
-		PLAIN		"Enable PLAIN authentication"		on \
-		CRAM		"Enable CRAM-MD5 authentication"	on \
-		DIGEST		"Enable DIGEST-MD5 authentication"	on \
-		NTLM		"Enable NTLM authentication"		on \
-		OTP		"Enable OTP authentication"		on \
-		SCRAM		"Enable SCRAM authentication"		on
+OPTIONS_DEFINE=		BDB MYSQL PGSQL SQLITE SQLITE3 ALWAYSTRUE AUTHDAEMOND \
+			DEV_URANDOM KEEP_DB_OPEN OBSOLETE_CRAM_ATTR CRAM \
+			DIGEST LOGIN NTLM OTP PLAIN SCRAM
+OPTIONS_DEFAULT=	AUTHDAEMOND OBSOLETE_CRAM_ATTR CRAM DIGEST LOGIN NTLM \
+			OTP PLAIN SCRAM
+NO_OPTIONS_SORT=	yes
+SQLITE_DESC=		Enable SQLite2 backend
+SQLITE3_DESC=		Enable SQLite3 backend
+ALWAYSTRUE_DESC=	Enable the alwaystrue password verifier
+AUTHDAEMOND_DESC=	Enable use of authdaemon
+DEV_URANDOM_DESC=	Use /dev/urandom
+KEEP_DB_OPEN_DESC=	Keep handle to Berkeley DB open
+OBSOLETE_CRAM_ATTR_DESC=Enable cmusaslsecretCRAM-MD5 property
+CRAM_DESC=		Enable CRAM-MD5 authentication
+DIGEST_DESC=		Enable DIGEST-MD5 authentication
+LOGIN_DESC=		Enable LOGIN authentication
+NTLM_DESC=		Enable NTLM authentication
+OTP_DESC=		Enable OTP authentication
+PLAIN_DESC=		Enable PLAIN authentication
+SCRAM_DESC=		Enable SCRAM authentication
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_BDB)
+.if ${PORT_OPTIONS:MBDB}
 USE_BDB=	yes
 INVALID_BDB_VER=2
 CONFIGURE_ARGS+=--with-dblib=berkeley \
@@ -88,101 +91,101 @@ CONFIGURE_ARGS+=--with-dblib=ndbm
 SASLDB_NAME=	sasldb2.db
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--without-mysql
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--without-pgsql
 .endif
 
-.if defined(WITH_SQLITE) && defined(WITH_SQLITE3)
+.if ${PORT_OPTIONS:MSQLITE} && ${PORT_OPTIONS:MSQLITE3}
 BROKEN=		SQLITE and SQLITE3 are mutually exclusive.
 .endif
 
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 USE_SQLITE=	2
 CONFIGURE_ARGS+=--with-sqlite=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--without-sqlite
 .endif
 
-.if defined(WITH_SQLITE3)
+.if ${PORT_OPTIONS:MSQLITE3}
 USE_SQLITE=	3
 CONFIGURE_ARGS+=--with-sqlite3=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--without-sqlite3
 .endif
 
-.if defined(WITH_MYSQL) || defined(WITH_PGSQL) || defined(WITH_SQLITE) || \
-    defined(WITH_SQLITE3)
+.if ${PORT_OPTIONS:MMYSQL} || ${PORT_OPTIONS:MPGSQL} || \
+    ${PORT_OPTIONS:MSQLITE} || ${PORT_OPTIONS:MSQLITE3}
 CONFIGURE_ARGS+=--enable-sql
 .else
 SQL=	"@comment "
 .endif
 
-.if defined(WITH_DEV_URANDOM)
+.if ${PORT_OPTIONS:MDEV_URANDOM}
 CONFIGURE_ARGS+=--with-devrandom=/dev/urandom
 .endif
 
-.if defined(WITH_ALWAYSTRUE)
+.if ${PORT_OPTIONS:MALWAYSTRUE}
 CONFIGURE_ARGS+=--enable-alwaystrue
 .endif
 
-.if defined(WITH_KEEP_DB_OPEN)
+.if ${PORT_OPTIONS:MKEEP_DB_OPEN}
 CONFIGURE_ARGS+=--enable-keep-db-open
 .endif
 
-.if defined(WITHOUT_OBSOLETE_CRAM_ATTR)
+.if !${PORT_OPTIONS:MOBSOLETE_CRAM_ATTR}
 CONFIGURE_ARGS+=--enable-obsolete_cram_attr=no
 .endif
 
-.if defined(WITHOUT_AUTHDAEMOND)
-CONFIGURE_ARGS+=--with-authdaemond=no
-.else
+.if ${PORT_OPTIONS:MAUTHDAEMOND}
 CONFIGURE_ARGS+=--with-authdaemond=/var/run/authdaemond/socket
-.endif
-
-.if defined(WITHOUT_LOGIN)
-LOGIN=	"@comment "
 .else
-CONFIGURE_ARGS+=--enable-login
+CONFIGURE_ARGS+=--with-authdaemond=no
 .endif
 
-.if defined(WITHOUT_PLAIN)
+.if ${PORT_OPTIONS:MLOGIN}
+CONFIGURE_ARGS+=--enable-login
+.else
+LOGIN=	"@comment "
+.endif
+
+.if !${PORT_OPTIONS:MPLAIN}
 CONFIGURE_ARGS+=--disable-plain
 PLAIN=	"@comment "
 .endif
 
-.if defined(WITHOUT_OTP)
+.if !${PORT_OPTIONS:MOTP}
 CONFIGURE_ARGS+=--disable-otp
 OTP=	"@comment "
 .endif
 
-.if defined(WITHOUT_CRAM)
+.if !${PORT_OPTIONS:MCRAM}
 CONFIGURE_ARGS+=--disable-cram
 CRAM=	"@comment "
 .endif
 
-.if defined(WITHOUT_DIGEST)
+.if !${PORT_OPTIONS:MDIGEST}
 CONFIGURE_ARGS+=--disable-digest
 DIGEST=	"@comment "
 .endif
 
-.if defined(WITHOUT_NTLM)
+.if ${PORT_OPTIONS:MNTLM}
+CONFIGURE_ARGS+=--enable-ntlm
+.else
 CONFIGURE_ARGS+=--disable-ntlm
 NTLM=	"@comment "
-.else
-CONFIGURE_ARGS+=--enable-ntlm
 .endif
 
-.if defined(WITHOUT_SCRAM)
+.if !${PORT_OPTIONS:MSCRAM}
 CONFIGURE_ARGS+=--disable-scram
 SCRAM=	"@comment "
 .endif
@@ -263,7 +266,7 @@ pre-su-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/html
 .for f in ${DOCS}
