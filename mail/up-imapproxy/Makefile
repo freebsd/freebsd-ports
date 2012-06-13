@@ -27,11 +27,12 @@ SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 
-OPTIONS=	DOVECOT "Use with dovecot2" off
+OPTIONS_DEFINE=	DOVECOT DOCS
+DOVECOT_DESC=	Use with dovecot2
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_DOVECOT)
+.if ${PORT_OPTIONS:MDOVECOT}
 SUB_LIST+=	DOVECOT="dovecot"
 RUN_DEPENDS+=	dovecot>=1.0:${PORTSDIR}/mail/dovecot2
 .else
@@ -39,7 +40,7 @@ SUB_LIST+=	DOVECOT=""
 .endif
 
 do-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
@@ -47,4 +48,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/scripts/imapproxy.conf ${PREFIX}/etc/imapproxyd.conf.sample
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

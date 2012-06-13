@@ -23,21 +23,21 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	*
 
-OPTIONS=	RFC_RECURSION	"Change SPF recursion to 20 (as per RFC)"	off \
-		LOGFILE_STATS	"Enables logfile stats"				off \
-		DEBUG		"Enables debug option"				off
+OPTIONS_DEFINE=	RFC_RECURSION LOGFILE_STATS DEBUG DOCS
+RFC_RECURSION_DESC=	Change SPF recursion to 20 (as per RFC)
+LOGFILE_STATS_DESC=	Enables logfile stats
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_RFC_RECURSION)
+.if ${PORT_OPTIONS:MRFC_RECURSION}
 CONFIGURE_ARGS+=	--enable-rfc-recursion
 .endif
 
-.if defined(WITH_LOGFILE_STATS)
+.if ${PORT_OPTIONS:MLOGFILE_STATS}
 CONFIGURE_ARGS+=	--enable-logfile-stats
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
@@ -46,7 +46,7 @@ post-patch:
 		${WRKSRC}/src/libspf/Makefile.in ${WRKSRC}/src/spfqtool/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${FIND} ${WRKSRC}/docs -type d -name CVS | ${XARGS} ${RM} -rf
 .for i in docs docs/API docs/API/doxygen docs/API/doxygen/html docs/RFC docs/qmail \
@@ -78,4 +78,4 @@ post-install:
 	done
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -25,11 +25,13 @@ MAN8=	mixminiond.8
 
 PORTDOCS=	statusfd.txt tutorial.txt
 
-OPTIONS=	SERVER "Also install the server" on
+OPTIONS_DEFINE=	SERVER DOCS
+OPTIONS_DEFAULT=	SERVER
+SERVER_DESC=	Also install the server
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_SERVER)
+.if ${PORT_OPTIONS:MSERVER}
 USE_RC_SUBR+=	mixminiond
 SUB_FILES+=	pkg-message
 PLIST_SUB+=	SERVER=""
@@ -43,7 +45,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|share/man|man|g" ${WRKSRC}/setup.py
 
 post-install:
-.if !defined(WITHOUT_SERVER)
+.if ${PORT_OPTIONS:MSERVER}
 	@${INSTALL_DATA} ${WRKSRC}/etc/mixminiond.conf \
 		${PREFIX}/etc/mixminiond.conf.sample
 	@${INSTALL_DATA} ${WRKSRC}/etc/blacklist.conf \
@@ -59,11 +61,11 @@ post-install:
 	@${CHMOD} 0700 /var/log/mixminion
 	@${CAT} ${PKGMESSAGE}
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

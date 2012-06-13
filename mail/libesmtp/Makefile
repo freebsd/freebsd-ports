@@ -17,8 +17,8 @@ COMMENT=	A library for posting electronic mail
 
 LICENSE=	LGPL21
 
-OPTIONS=	OPENSSL	"Enable TLS support"	on \
-		DEBUG	"Enables debugging support"	off
+OPTIONS_DEFINE=	OPENSSL DEBUG DOCS EXAMPLES
+OPTIONS_DEFAULT=	OPENSSL
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -35,7 +35,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_OPENSSL)
+.if ${PORT_OPTIONS:MOPENSSL}
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 PLIST_SUB+=		NEED_OPENSSL=""
 .else
@@ -43,18 +43,18 @@ CONFIGURE_ARGS+=	--without-openssl
 PLIST_SUB+=		NEED_OPENSSL="@comment "
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for f in AUTHORS ChangeLog NEWS Notes README TODO
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif

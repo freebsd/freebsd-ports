@@ -24,8 +24,9 @@ RESTRICTED=	Unsure of DJB license
 
 ALL_TARGET=	it
 
-OPTIONS=	AUTH "Add CRAM-MD5, PLAIN and LOGIN authentication" OFF \
-		UCSPI_SSL "Add ucspi-ssl SMTP SSL transport layer support" OFF
+OPTIONS_DEFINE=	AUTH UCSPI_SSL
+AUTH_DESC=	Add CRAM-MD5, PLAIN and LOGIN authentication
+UCSPI_SSL_DESC=	Add ucspi-ssl SMTP SSL transport layer support
 
 PROGRAMS=	serialqmtp serialsmtp maildirserial setlock
 SCRIPTS=	maildirqmtp maildirsmtp
@@ -33,15 +34,15 @@ MAN1=		maildirqmtp.1 maildirserial.1 maildirsmtp.1 serialqmtp.1 \
 		serialsmtp.1 setlock.1
 DOCS=		AUTOTURN BLURB CHANGES FROMISP README TODO TOISP THANKS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_AUTH)
+.if ${PORT_OPTIONS:MAUTH}
 PATCH_SITES=	http://www.ingorohloff.de/soft/
 PATCHFILES=	serialmail-auth.patch
 PATCH_DIST_STRIP=	-p1
 .endif
 
-.if defined(WITH_UCSPI_SSL)
+.if ${PORT_OPTIONS:MUCSPI_SSL}
 RUN_DEPENDS+=	sslclient:${PORTSDIR}/sysutils/ucspi-ssl
 
 PLIST_FILES+=	bin/maildirsmtps
@@ -49,7 +50,7 @@ MLINKS+=	maildirsmtp.1 maildirsmtps.1
 .endif
 
 post-patch:
-.if defined(WITH_UCSPI_SSL)
+.if ${PORT_OPTIONS:MUCSPI_SSL}
 	@${SED} -E \
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		-e 's|%%PREFIX%%|${PREFIX}|' \
@@ -69,12 +70,12 @@ do-install:
 		${INSTALL_PROGRAM} ${PROGRAMS} ${PREFIX}/bin && \
 		${INSTALL_SCRIPT} ${SCRIPTS} ${PREFIX}/bin && \
 		${INSTALL_MAN} ${MAN1} ${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
-.if defined(WITH_UCSPI_SSL)
+.if ${PORT_OPTIONS:MUCSPI_SSL}
 	@${INSTALL_SCRIPT} ${WRKDIR}/maildirsmtps ${PREFIX}/bin
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

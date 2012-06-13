@@ -23,9 +23,10 @@ GNU_CONFIGURE=	yes
 
 ALL_TARGET=	spamdyke
 
-OPTIONS=	TLS "Enable TLS support" On \
-		DEBUG "Enable debugging output" Off \
-		DEBUG_EXCESSIVE "Enable excessive debugging output" Off
+OPTIONS_DEFINE=	TLS DEBUG DEBUG_EXCESSIVE DOCS
+OPTIONS_DEFAULT=	TLS
+TLS_DESC=	Enable TLS support
+DEBUG_DESC=	Enable debugging output
 
 .include <bsd.port.pre.mk>
 
@@ -33,25 +34,25 @@ OPTIONS=	TLS "Enable TLS support" On \
 IGNORE=	uses nested functions, not supported by clang
 .endif
 
-.if defined(WITHOUT_TLS)
-CONFIGURE_ARGS+=	--disable-tls
-.else
+.if ${PORT_OPTIONS:MTLS}
 CONFIGURE_ARGS+=	--enable-tls
+.else
+CONFIGURE_ARGS+=	--disable-tls
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--with-debug-output
 .else
 CONFIGURE_ARGS+=	--without-debug-output
 .endif
 
-.if defined(WITH_DEBUG_EXCESSIVE)
+.if ${PORT_OPTIONS:MDEBUG_EXCESSIVE}
 CONFIGURE_ARGS+=	--with-excessive-output
 .else
 CONFIGURE_ARGS+=	--without-excessive-output
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	Changelog.txt FAQ.html GNUGPL.txt INSTALL.txt \
 		README.html README_ip_file_format.html \
 		README_rdns_directory_format.html README_rdns_file_format.html \
@@ -59,7 +60,7 @@ PORTDOCS=	Changelog.txt FAQ.html GNUGPL.txt INSTALL.txt \
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKDIR}/${DISTNAME}/documentation && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
