@@ -21,6 +21,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		exif.12:${PORTSDIR}/graphics/libexif
 
+BROKEN=		does not compile
+
 OPTIONS_DEFINE=	GIF PCF PNG SANE TIFF WEBP DOCS
 OPTIONS_DEFAULT=	GIF PNG TIFF
 PCD_DESC=	Enable PhotoCD support
