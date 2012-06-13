@@ -15,10 +15,11 @@ COMMENT=	Proxy for SMTP sessions with virus and spam scan
 
 LICENSE=	GPLv2
 
-OPTIONS=	NAT "NAT transparent proxy code" On \
-		CHUNKING "Enable support for SMTP CHUNKING extension" Off \
-		ECONNRESET "Be quiet about Connection reset by peer message" Off \
-		PCRE "Enable support for PCRE" On
+OPTIONS_DEFINE=	NAT CHUNKING ECONNRESET PCRE
+OPTIONS_DEFAULT=	NAT PCRE
+NAT_DESC=	NAT transparent proxy code
+CHUNKING_DESC=	Enable support for SMTP CHUNKING extension
+ECONNRESET_DESC=	Be quiet about Connection reset by peer message
 
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
@@ -32,21 +33,21 @@ PLIST_FILES=	sbin/smtp-gated
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_NAT)
+.if ${PORT_OPTIONS:MNAT}
 CONFIGURE_ARGS+=	--enable-nat
 .else
 CONFIGURE_ARGS+=	--disable-nat
 .endif
 
-.if defined(WITH_CHUNKING)
+.if ${PORT_OPTIONS:MCHUNKING}
 CONFIGURE_ARGS+=	--enable-chunking
 .endif
 
-.if defined(WITH_ECONNRESET)
+.if ${PORT_OPTIONS:MECONNRESET}
 CONFIGURE_ARGS+=	--enable-silent-econnreset
 .endif
 
-.if defined(WITH_PCRE)
+.if ${PORT_OPTIONS:MPCRE}
 LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 .else
 CONFIGURE_ARGS+=	--disable-pcre

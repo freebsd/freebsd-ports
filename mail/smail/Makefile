@@ -39,23 +39,23 @@ CYRUS_USER?=	cyrus
 CYRUS_GROUP?=	cyrus
 CYRUS_DELIVER_PATH?=	${LOCALBASE}/cyrus/bin/deliver
 
-OPTIONS=	CYRUS22 "Use mail/cyrus-imapd22 as local transport" off \
-		CYRUS23 "Use mail/cyrus-imapd23 as local transport" off \
-		REPLACE_CONF "Replace /etc/mail/mailer.conf" off
+OPTIONS_SINGLE=	CYRUS
+OPTIONS_SINGLE_CYRUS=	CYRUS22 CYRUS23
+OPTIONS_DEFINE=	CYRUS REPLACE_CONF
+CYRUS_DESC=	Use cyrus as local transport
+CYRUS22_DESC=	Use mail/cyrus-imapd22 as local transport
+CYRUS23_DESC=	Use mail/cyrus-imapd23 as local transport
+REPLACE_CONF_DESC=	Replace /etc/mail/mailer.conf
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_CYRUS22) && defined(WITH_CYRUS23)
-IGNORE=		WITH_CYRUS22 and WITH_CYRUS23 are mutually exclusive. Please run make options again
-.endif
-
-.if defined(WITH_CYRUS22)
+.if ${PORT_OPTIONS:MCYRUS22}
 CYRUS_PORT=	${PORTSDIR}/mail/cyrus-imapd22
 .else
 CYRUS_PORT=	${PORTSDIR}/mail/cyrus-imapd23
 .endif
 
-.if defined(WITH_CYRUS22) || defined(WITH_CYRUS23)
+.if ${PORT_OPTIONS:MCYRUS}
 RUN_DEPENDS+=	cyrus/bin/deliver:${CYRUS_PORT}
 CYRUS_IMAPD=	USE_CYRUS_IMAPD
 PLIST_SUB+=	CYRUS_DELIVER=""
@@ -94,11 +94,11 @@ pre-install:
 	@${MKDIR} ${PREFIX}/etc/smail
 
 post-install:
-.if defined(WITH_REPLACE_CONF)
+.if ${PORT_OPTIONS:MREPLACE_CONF}
 	@make replace
 .endif
 
-.if defined(WITH_CYRUS22) || defined(WITH_CYRUS23)
+.if ${PORT_OPTIONS:MCYRUS}
 	@cd ${WRKSRC}/util && make install-cyrus-bins
 .endif
 

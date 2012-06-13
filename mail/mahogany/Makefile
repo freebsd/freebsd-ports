@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--without-dspam --with-python=none
 ALL_TARGET=	all locales
 INSTALL_TARGET=	install_bin install_locale
 
-OPTIONS=	NLS "Enable Native Language Support" on
+OPTIONS_DEFINE=	NLS
 
 MAN1=		M.1 mahogany.1
 
@@ -33,7 +33,7 @@ MAN1=		M.1 mahogany.1
 BROKEN=		Does not compile with GCC 4.2
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else

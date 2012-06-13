@@ -24,25 +24,28 @@ NO_BUILD=	yes
 # highest select version number.  If no Cyrus IMAPd versions are
 # selected, use some generic IMAP modules
 
-OPTIONS=	CYRUS_IMAPD_21	"With Cyrus IMAPd version 2.1.x" off \
-		CYRUS_IMAPD_22	"With Cyrus IMAPd version 2.2.x" off \
-		CYRUS_IMAPD_23	"With Cyrus IMAPd version 2.3.x" on  \
-		CYRUS_IMAPD_24	"With Cyrus IMAPd version 2.4.x" off
+OPTIONS_DEFINE=	CYRUS_IMAPD_21 CYRUS_IMAPD_22 CYRUS_IMAPD_23 CYRUS_IMAPD_24
+OPTIONS_DEFAULT=	CYRUS_IMAPD_23
 
-.include <bsd.port.pre.mk>
+CYRUS_IMAPD_21_DESC=	With Cyrus IMAPd version 2.1.x
+CYRUS_IMAPD_22_DESC=	With Cyrus IMAPd version 2.2.x
+CYRUS_IMAPD_23_DESC=	With Cyrus IMAPd version 2.3.x
+CYRUS_IMAPD_24_DESC=	With Cyrus IMAPd version 2.4.x
+
+.include <bsd.port.options.mk>
 
 CYRUS_IMAP_PM=	${SITE_PERL}/${PERL_ARCH}/Cyrus/IMAP/Admin.pm
 
-.if defined(WITH_CYRUS_IMAPD_24)
+.if ${PORT_OPTIONS:MCYRUS_IMAPD_24}
 RUN_DEPENDS+=	${CYRUS_IMAP_PM}:${PORTSDIR}/mail/cyrus-imapd24
 FUNCLIB_PL=	funclib.cyrus
-.elif defined(WITH_CYRUS_IMAPD_23)
+.elif ${PORT_OPTIONS:MCYRUS_IMAPD_23}
 RUN_DEPENDS+=	${CYRUS_IMAP_PM}:${PORTSDIR}/mail/cyrus-imapd23
 FUNCLIB_PL=	funclib.cyrus
-.elif defined(WITH_CYRUS_IMAPD_22)
+.elif ${PORT_OPTIONS:MCYRUS_IMAPD_22}
 RUN_DEPENDS+=	${CYRUS_IMAP_PM}:${PORTSDIR}/mail/cyrus-imapd22
 FUNCLIB_PL=	funclib.cyrus
-.elif defined(WITH_CYRUS_IMAPD_21)
+.elif ${PORT_OPTIONS:MCYRUS_IMAPD_21}
 RUN_DEPENDS+=	${CYRUS_IMAP_PM}:${PORTSDIR}/mail/cyrus-imapd2
 FUNCLIB_PL=	funclib.cyrus
 .else
@@ -67,4 +70,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

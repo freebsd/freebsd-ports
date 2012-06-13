@@ -45,13 +45,14 @@ USE_PERL5_BUILD=	yes
 USE_PHP=		yes
 WANT_PHP_WEB=		yes
 
-OPTIONS=	SQL	 "use SQL backend" off
+OPTIONS_DEFINE=	SQL
+SQL_DESC=	use SQL backend
 
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_SQL) || defined(WITH_SQL)
+.if ${PORT_OPTIONS:MSQL}
 RUN_DEPENDS+=		${SQUIRRELDIR}/plugins/calendar_sql_backend:${PORTSDIR}/mail/squirrelmail-calendar_sql_backend-plugin
 .else
 RUN_DEPENDS+=		${SQUIRRELDIR}/plugins/calendar_file_backend:${PORTSDIR}/mail/squirrelmail-calendar_file_backend-plugin

@@ -66,54 +66,42 @@ PORTDOCS=	ACKNOWLEDGMENTS BUGS FAQ INSTALL NEWS README README-I18N.en \
 		mailman-member.txt \
 		FreeBSD-post-install-notes
 
-OPTIONS=	SENDMAIL "for use with sendmail" off \
-		EXIM3 "for use with exim3" off \
-		EXIM4 "for use with exim4" off \
-		POSTFIX "for use with postfix" off \
-		COURIER "for use with courier" off \
-		HTDIG "htdig integration patches" off \
-		INTEGRATION "integrating postfix and mailman" off \
-		NAMAZU2 "make private archives searchable with namazu2" off
+OPTIONS_SINGLE=	MTA
+OPTIONS_SINGLE_MTA=	SENDMAIL EXIM3 EXIM4 POSTFIX COURIER
+OPTIONS_DEFINE=	MTA HTDIG INTEGRATION NAMAZU2 NLS DOCS
+SENDMAIL_DESC=	for use with sendmail
+EXIM3_DESC=	for use with exim3
+EXIM4_DESC=	for use with exim4
+POSTFIX_DESC=	for use with postfix
+COURIER_DESC=	fr use with courier
+HTDIG_DESC=	htdig integration patches
+INTEGRATION_DESC=	integrating postfix and mailman
+NAMAZU2_DESC=	make private archives searchable with namazu2
+MTA_DESC=	integrate with a MTA
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_NLS)
-PLIST_SUB+=	NLS="@comment "
-.else
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITH_SENDMAIL)
-.if defined(WITH_EXIM3) || defined(WITH_EXIM4) || defined(WITH_POSTFIX) || \
-defined(WITH_COURIER)
-IGNORE=	can only have one MTA selected to integrate with
-.endif
+.if ${PORT_OPTIONS:MSENDMAIL}
 MAIL_GID?=	mailnull
 .endif
 
-.if defined(WITH_EXIM3)
-.if defined(WITH_SENDMAIL) || defined(WITH_EXIM4) || defined(WITH_POSTFIX) || \
-defined(WITH_COURIER)
-IGNORE=	can only have one MTA selected to integrate with
-.endif
+.if ${PORT_OPTIONS:MEXIM3}
 MAIL_GID?=	nobody
 .endif
 
-.if defined(WITH_EXIM4)
-.if defined(WITH_SENDMAIL) || defined(WITH_EXIM3) || defined(WITH_POSTFIX) || \
-defined(WITH_COURIER)
-IGNORE=	can only have one MTA selected to integrate with
-.endif
+.if ${PORT_OPTIONS:MEXIM4}
 MAIL_GID?=	mail
 .endif
 
-.if defined(WITH_POSTFIX)
-.if defined(WITH_SENDMAIL) || defined(WITH_EXIM3) || defined(WITH_EXIM4) || \
-defined(WITH_COURIER)
-IGNORE=	can only have one MTA selected to integrate with
-.endif
-.if defined(WITH_INTEGRATION)
+.if ${PORT_OPTIONS:MPOSTFIX}
+.if ${PORT_OPTIONS:MINTEGRATION}
 MAIL_GID?=	mailman
 .else
 MAIL_GID?=	nobody
@@ -121,15 +109,11 @@ MAIL_GID?=	nobody
 EXTRA_PATCHES+=	${FILESDIR}/postfix-verp.diff
 .endif
 
-.if defined(WITH_COURIER)
-.if defined(WITH_SENDMAIL) || defined(WITH_EXIM3) || defined(WITH_EXIM4) || \
-defined(WITH_POSTFIX)
-IGNORE=	can only have one MTA selected to integrate with
-.endif
+.if ${PORT_OPTIONS:MCOURIER}
 MAIL_GID?=	courier
 .endif
 
-.if defined(WITH_HTDIG)
+.if ${PORT_OPTIONS:MHTDIG}
 BROKEN=	the HTDIG option is currently broken
 PATCH_SITES+=	http://www.openinfo.co.uk/mm/patches/444879/:patch1 \
 		http://www.openinfo.co.uk/mm/patches/444884/:patch2
@@ -143,7 +127,7 @@ PLIST_SUB+=	SUB_HTDIG=""
 PLIST_SUB+=	SUB_HTDIG="@comment "
 .endif
 
-.if defined(WITH_NAMAZU2)
+.if ${PORT_OPTIONS:MNAMAZU2}
 RUN_DEPENDS+=	mknmz:${PORTSDIR}/databases/namazu2
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Mailman-Cgi-private.py
 .endif
@@ -164,12 +148,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#%%LOCALBASE%%#${LOCALBASE}#g' \
 	  ${WRKSRC}/Mailman/Defaults.py.in
 	@${REINPLACE_CMD} -e 's/^0,5,10/#&/' ${WRKSRC}/cron/crontab.in.in
-.if defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e 's/messages//' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's/templates//' ${WRKSRC}/Makefile.in
 .endif
 
-.if defined(WITH_POSTFIX) && defined(WITH_INTEGRATION)
+.if ${PORT_OPTIONS:MPOSTFIX} && !empty(PORT_OPTIONS:MINTEGRATION)
 pre-configure:
 	@${ECHO} "MTA = 'Postfix'" >> ${WRKSRC}/Mailman/mm_cfg.py.dist.in
 .endif
@@ -186,7 +170,7 @@ post-install:
 .endfor
 	@uudecode -p ${FILESDIR}/powerlogo.gif.uue > \
 	  ${PREFIX}/${IMGDIR}/powerlogo.gif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${CP} -R ${WRKSRC}/doc/* ${WRKSRC}/
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${FILESDIR}/FreeBSD-post-install-notes ${DOCSDIR}
@@ -196,7 +180,7 @@ post-install:
 .endif
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
-.if defined(WITH_POSTFIX)
+.if ${PORT_OPTIONS:MPOSTFIX}
 	@if [ "x`${LOCALBASE}/sbin/postconf -h myhostname`" != "xlocalhost" ]; then \
 		${ECHO_CMD} ""; \
 		${ECHO_CMD} "Your Postfix hostname is non-default."; \

@@ -17,7 +17,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of MIME, the Multipurpose Internet Mail Extensions
 
-OPTIONS=	X11 "X11 hebrew font support" on
+OPTIONS_DEFINE=	X11
+OPTIONS_DEFAULT=	X11
+X11_DESC=	X11 hebrew font support
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAN1=		audiocompose.1 audiosend.1 extcompose.1 \
@@ -28,9 +30,9 @@ MAN1=		audiocompose.1 audiosend.1 extcompose.1 \
 		showpicture.1 splitmail.1
 MAN4=		mailcap.4
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 BUILD_DEPENDS+=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 RUN_DEPENDS+=	xloadimage:${PORTSDIR}/x11/xloadimage \
@@ -42,9 +44,9 @@ PLIST_SUB+=	X11="@comment "
 .endif
 
 post-patch:
-.if defined(WITHOUT_X11)
+.if empty(PORT_OPTIONS:MX11)
 	@${REINPLACE_CMD} -e '/fonts/d' ${WRKSRC}/Makefile
 .endif
 	@${RM} ${WRKSRC}/bin/*.orig
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

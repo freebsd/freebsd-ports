@@ -27,86 +27,86 @@ PATCH_WRKSRC=	${WRKSRC}/cgi-bin/openwebmail
 PATCH_STRIP=	-p1
 PLIST=		${WRKDIR}/.PLIST.${PKGNAME}
 
-OPTIONS=	ANTIWORD "AntiWord" off \
-		IMAGEMAGICK "ImageMagicK" off \
-		ISPELL "ISpell" off \
-		LEARNSPAM "Learn HAM/SPAM" off \
-		LSOF "lsof" off \
-		PAM "PAM" off \
-		POP3_OVER_SSL "POP3 Over SSL" off \
-		QUOTA "Quota" off \
-		SPAMCHECK "Spam check (Mail::SpamAssassin)" off \
-		SPAMCHECK_ALL "Spam check for all (default: pop3)" off \
-		SPEEDYCGI "SpeedyCGI" off \
-		TNEF "tnef" off \
-		VIRUSCHECK "Virus check (Clam AntiVirus)" off \
-		VIRUSCHECK_ALL "Virus check for all (default: pop3)" off \
-		WGET "wget" off \
-		ZLIB "ZLib" off
+OPTIONS_DEFINE=	ANTIWORD MAGICK ISPELL LEARNSPAM LSOF PAM POP3_OVER_SSL QUOTA \
+		SPAMCHECK SPAMCHECK_ALL SPEEDYCGI TNEF VIRUSCHECK VIRUSCHECK_ALL \
+		WGET ZLIB
+
+ANTIWORD_DESC=	AntiWord
+ISPELL_DESC=	ISpell
+LEARNSPAM_DESC=	Learn HAM/SPAM
+LSOF_DESC=	lsof
+PAM_DESC=	PAM
+POP3_OVER_SSL_DESC=	POP3 Over SSL
+QUOTA_DESC=	Quota
+SPAMCHECK_DESC=	Spam check (Mail::SpamAssassin)
+SPAMCHECK_ALL_DESC=	Spam check for all (default: pop3)
+SPEEDYCGI_DESC=	SpeedyCGI
+TNEF_DESC=	tnef
+VIRUSCHECK_DESC=	Virus check (Clam AntiVirus)
+VIRUSCHECK_ALL_DESC=	Virus check for all (default: pop3)
+WGET_DESC=	wget
+ZLIB_DESC=	ZLib
 
 .include <bsd.port.pre.mk>
 
 # WITH_SPEEDYCGI needs suidperl enabled under perl 5.8.4 or above,
 # so, disable it first, and enable it again if perl exists and enabled suidperl
-.if ${PERL_LEVEL} >= 500804 && defined(WITH_SPEEDYCGI)
+.if ${PERL_LEVEL} >= 500804 && !empty(PORT_OPTIONS:MSPEEDYCGI)
 DISABLE_SPEEDYCGI=yes
-WITHOUT_SPEEDYCGI=yes
-.undef WITH_SPEEDYCGI
+PORT_OPTIONS:=	${PORT_OPTIONS:NSPEEDYCGI}
 .if exists(${PERL})
 PERL_V!=	${PERL} -V
 .if ${PERL_V:M*dosuid*} != ""
 .undef DISABLE_SPEEDYCGI
-.undef WITHOUT_SPEEDYCGI
-WITH_SPEEDYCGI=	yes
 .endif # dosuid
 .endif # exists(${PERL})
 .endif # perl5.8
 
-.if defined(WITH_LEARNSPAM) || defined(WITH_SPAMCHECK_ALL)
-WITH_SPAMCHECK=	true
+.if ${PORT_OPTIONS:MLEARNSPAM} || !empty(PORT_OPTIONS:MSPAMCHECK_ALL)
+PORT_OPTIONS+=	SPAMCHECK
 .endif
 
-.if defined(WITH_VIRUSCHECK_ALL)
-WITH_VIRUSCHECK=true
+.if ${PORT_OPTIONS:MVIRUSCHECK_ALL}
+PORT_OPTIONS+=	VIRUSCHECK
 .endif
 
-.if defined(WITH_ANTIWORD)
+.if ${PORT_OPTIONS:MANTIWORD}
 RUN_DEPENDS+=	antiword:${PORTSDIR}/textproc/antiword
 .endif
 
-.if defined(WITH_IMAGEMAGICK)
+.if ${PORT_OPTIONS:MMAGICK}
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 
-.if defined(WITH_ISPELL)
+.if ${PORT_OPTIONS:MISPELL}
 RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 .endif
 
-.if defined(WITH_LSOF)
+.if ${PORT_OPTIONS:MLSOF}
 RUN_DEPENDS+	${LOCALBASE}/sbin/lsof:${PORTSDIR}/sysutils/lsof
 .endif
 
-.if defined(WITH_PAM)
+.if ${PORT_OPTIONS:MPAM}
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Authen/PAM.pm:${PORTSDIR}/security/p5-Authen-PAM
 .endif
 
-.if defined(WITH_POP3_OVER_SSL)
+.if ${PORT_OPTIONS:MPOP3_OVER_SSL}
 RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
 .endif
 
-.if defined(WITH_QUOTA)
+.if ${PORT_OPTIONS:MQUOTA}
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Quota.pm:${PORTSDIR}/sysutils/p5-Quota
 .endif
 
-.if defined(WITH_TNEF)
+.if ${PORT_OPTIONS:MTNEF}
 RUN_DEPENDS+=	${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef
 .endif
 
-.if defined(WITH_SPAMCHECK)
+.if ${PORT_OPTIONS:MSPAMCHECK}
 RUN_DEPENDS+=	${SITE_PERL}/Mail/SpamAssassin.pm:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 .endif
 
-.if defined(WITH_SPEEDYCGI)
+.if ${PORT_OPTIONS:MSPEEDYCGI}
 RUN_DEPENDS+=	speedy_suidperl:${PORTSDIR}/www/p5-CGI-SpeedyCGI
 .if ${PERL_LEVEL} < 500804
 EXTRA_PATCHES+=	${PATCH_WRKSRC}/misc/patches/suidperl2speedy_suidperl.patch
@@ -115,15 +115,15 @@ EXTRA_PATCHES+=	${PATCH_WRKSRC}/misc/patches/suidperl2speedy_suidperl.notmp.patc
 .endif
 .endif
 
-.if defined(WITH_VIRUSCHECK)
+.if ${PORT_OPTIONS:MVIRUSCHECK}
 RUN_DEPENDS+=	clamdscan:${PORTSDIR}/security/clamav
 .endif
 
-.if defined(WITH_WGET)
+.if ${PORT_OPTIONS:MWGET}
 RUN_DEPENDS+=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 .endif
 
-.if defined(WITH_ZLIB)
+.if ${PORT_OPTIONS:MZLIB}
 . if ${PERL_LEVEL} < 500903
 RUN_DEPENDS+=	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-IO-Compress
 . endif
@@ -149,23 +149,23 @@ post-patch:
 	@${MV} ${PATCH_WRKSRC}/etc/openwebmail.conf ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
 	@${PERL} -pi.bak -e 's,${LOCALBASE}/www/cgi-bin/openwebmail,${OWCGIDIR},g' ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
 	@${PERL} -pi.bak -e 's,${LOCALBASE}/www/data/openwebmail,${OWDATADIR},g' ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
-.if defined(WITH_LEARNSPAM)
+.if ${PORT_OPTIONS:MLEARNSPAM}
 	@${PERL} -pi.bak -e 's,enable_learnspam	no,enable_learnspam	yes,g' ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
 .endif
-.if defined(WITH_SPAMCHECK)
+.if ${PORT_OPTIONS:MSPAMCHECK}
 	@${PERL} -pi.bak -e 's,enable_spamcheck	no,enable_spamcheck	yes,g' ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
 	@${ECHO} "enable_saprefs	yes" >> ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
 .endif
-.if defined(WITH_SPAMCHECK_ALL)
+.if ${PORT_OPTIONS:MSPAMCHECK_ALL}
 	@${ECHO} "spamcheck_source_allowed	all" >> ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
 .endif
-.if defined(WITH_VIRUSCHECK)
+.if ${PORT_OPTIONS:MVIRUSCHECK}
 	@${PERL} -pi.bak -e 's,enable_viruscheck	no,enable_viruscheck	yes,g' ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
 .endif
-.if defined(WITH_VIRUSCHECK_ALL)
+.if ${PORT_OPTIONS:MVIRUSCHECK_ALL}
 	@${ECHO} "viruscheck_source_allowed	all" >> ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
 .endif
-.if defined(WITH_SPEEDYCGI)
+.if ${PORT_OPTIONS:MSPEEDYCGI}
 	@${ECHO} "has_savedsuid_support	no" >> ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
 .else
 	@${PERL} -pi.bak -e 's,/usr/bin/suidperl,${PERL},g' ${PATCH_WRKSRC}/openwebmail*pl
@@ -182,7 +182,7 @@ pre-install:
 .for f in b2g g2b lunar
 	@${ECHO} "www/cgi-bin/openwebmail/etc/maps/${f}.db" >> ${PLIST}
 .endfor
-.if defined(WITHOUT_SPEEDYCGI)
+.if empty(PORT_OPTIONS:MSPEEDYCGI)
 	@${FIND} ${WRKSRC}/*/openwebmail -name "openwebmail*pl" | \
 		${SED} -e 's,${WRKSRC},www,g' \
 		-e 's,openwebmail/openwebmail,openwebmail/.openwebmail,g' \
@@ -207,7 +207,7 @@ do-install:
 .endif
 	@${PERL} ${OWCGIDIR}/misc/test/dbmtest.pl | ${GREP} "^dbm" > ${OWCGIDIR}/etc/dbm.conf
 	@${CHMOD} 4755 ${OWCGIDIR}/openwebmail*pl
-.if defined(WITHOUT_SPEEDYCGI)
+.if empty(PORT_OPTIONS:MSPEEDYCGI)
 	@${PERL} ${OWCGIDIR}/misc/tools/wrapsuid/wrapsuid.pl ${OWCGIDIR} 2>/dev/null
 .endif
 
