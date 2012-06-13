@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	${ATS_CTRBPREFIX}
 ATS_CTRBPREFIX=	ats-contrib-
 ATS_CTRBEXAMPLEDIR=	${PREFIX}/share/examples/${ATS_CTRBPREFIX}${PORTNAME}
 
-BUILD_DEPENDS+=	${LOCALBASE}/bin/atscc:${PORTSDIR}/lang/ats \
-		${NONEXISTENT}:${PORTSDIR}/lang/ats:patch
+FETCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/lang/ats:patch
+BUILD_DEPENDS+=	${LOCALBASE}/bin/atscc:${PORTSDIR}/lang/ats
 
 USE_GMAKE=	yes
 MAKE_ENV+=	ATSHOME=${LOCALBASE}
@@ -32,17 +32,14 @@ pre-build:
 	${LN} -sf ${BUILD_WRKSRC}/contrib ${BUILD_WRKSRC}/contrib/${ATS_CTRB}/
 
 do-install:
-	cd ${INSTALL_WRKSRC}/contrib; \
-	${FIND} -d ${ATS_CTRB} -type d \
-	    -exec ${INSTALL} -d ${ATS_LIBDIR}/contrib/{} \; ; \
-	${FIND} ${ATS_CTRB} -type f \
-	    -exec ${INSTALL_DATA} {} ${ATS_LIBDIR}/contrib/{} \;
+	${MKDIR} ${ATS_LIBDIR}/contrib
+	cd ${INSTALL_WRKSRC}/contrib && \
+	${RM} -f ${ATS_CTRB}/contrib && \
+	${COPYTREE_SHARE} ${ATS_CTRB} ${ATS_LIBDIR}/contrib
 .if !defined(NOPORTEXAMPLES) && defined(ATS_CTRBEXAMPLE)
-	cd ${INSTALL_WRKSRC}/doc/EXAMPLE/${ATS_CTRBEXAMPLE}; \
-	${FIND} -d . -type d \
-	    -exec ${INSTALL} -d ${ATS_CTRBEXAMPLEDIR}/{} \; ; \
-	${FIND} . -type f \
-	    -exec ${INSTALL_DATA} {} ${ATS_CTRBEXAMPLEDIR}/{} \;
+	${MKDIR} ${ATS_CTRBEXAMPLEDIR}
+	cd ${INSTALL_WRKSRC}/doc/EXAMPLE/${ATS_CTRBEXAMPLE} && \
+	${COPYTREE_SHARE} . ${ATS_CTRBEXAMPLEDIR}
 	${FIND} ${ATS_CTRBEXAMPLEDIR} -name Makefile \
 	    -exec ${SED} -i '' \
 	                 -e 's|^ATSUSRQ=.*|ATSUSRQ="${LOCALBASE}"|' \

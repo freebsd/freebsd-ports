@@ -16,9 +16,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jyyou@cs.nctu.edu.tw
 COMMENT=	A language with a type system rooted in the Applied Type System
 
-OPTIONS=	GMP	"Build with GMP support" on \
-		PCRE	"Build with PCRE support" on
-
 ONLY_FOR_ARCHS=	i386 amd64
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -28,6 +25,9 @@ CFLAGS+=	-I${LOCALBASE}/include \
 PORTDOCS=	FAQ.txt BOOK
 PORTEXAMPLES=	AUP INTRO KernighanRitchie MISC MULTICORE TEST
 
+OPTIONS_DEFINE=		GMP PCRE
+OPTIONS_DEFAULT=	GMP PCRE
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64
@@ -36,12 +36,12 @@ PLIST_SUB+=	LIBDIR="lib64"
 PLIST_SUB+=	LIBDIR="lib"
 .endif
 
-.if !defined(WITHOUT_GMP)
-LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
+.if ${PORT_OPTIONS:MGMP}
+LIB_DEPENDS+=	gmp:${PORTSDIR}/math/gmp
 .endif
 
-.if !defined(WITHOUT_PCRE)
-LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+.if ${PORT_OPTIONS:MPCRE}
+LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 .endif
 
 post-patch:
@@ -55,35 +55,23 @@ post-patch:
 	    ${WRKSRC}/utils/scripts/atslib.dats
 
 post-configure:
-.if defined(WITHOUT_GMP)
+.if !${PORT_OPTIONS:MGMP}
 	${SED} -i '' -e '/HAVE_GMP_H/d' ${WRKSRC}/config.h
 .endif
-.if defined(WITHOUT_PCRE)
+.if !${PORT_OPTIONS:MPCRE}
 	${SED} -i '' -e '/HAVE_PCRE_H/d' ${WRKSRC}/config.h
 .endif
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for x in ${PORTDOCS}
-	cd ${WRKSRC}/doc; \
-	${FIND} ${x} -type d -exec ${INSTALL} -d ${DOCSDIR}/{} \;
-.endfor
-.for x in ${PORTDOCS}
-	cd ${WRKSRC}/doc; \
-	${FIND} ${x} -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
-.endfor
+	cd ${WRKSRC}/doc && \
+	${COPYTREE_SHARE} "${PORTDOCS}" ${DOCSDIR}
 .endif
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
-.for x in ${PORTEXAMPLES}
-	cd ${WRKSRC}/doc/EXAMPLE; \
-	${FIND} ${x} -type d -exec ${INSTALL} -d ${EXAMPLESDIR}/{} \;
-.endfor
-.for x in ${PORTEXAMPLES}
-	cd ${WRKSRC}/doc/EXAMPLE; \
-	${FIND} ${x} -type f -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} \;
-.endfor
+	cd ${WRKSRC}/doc/EXAMPLE && \
+	${COPYTREE_SHARE} "${PORTEXAMPLES}" ${EXAMPLESDIR}
 	${FIND} ${EXAMPLESDIR} -name Makefile \
 	    -exec ${SED} -i '' -e 's|^ATSUSRQ=.*|ATSUSRQ="${PREFIX}"|' {} \;
 .endif
