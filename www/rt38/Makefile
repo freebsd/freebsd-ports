@@ -20,7 +20,7 @@ MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	RT is an industrial-grade ticketing system written in Perl
 
-CONFLICTS=	rt-4.0*
+CONFLICTS=	rt-4.0* brlcad-[0-9]*
 LATEST_LINK=	rt38
 
 OPTIONS_DEFINE=	APACHE DEV DOCS FASTCGI GRAPHVIZ MODPERL STANDALONE
@@ -82,31 +82,31 @@ WITH_APACHE=	yes
 
 .include "${.CURDIR}/../../Mk/bsd.apache.mk"
 
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2 \
-	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2 \
-	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI
+BUILD_DEPENDS+=	p5-libapreq2>=0:${PORTSDIR}/www/p5-libapreq2 \
+	p5-Apache-DBI>=0:${PORTSDIR}/www/p5-Apache-DBI
+RUN_DEPENDS+=	p5-libapreq2>=0:${PORTSDIR}/www/p5-libapreq2 \
+	p5-Apache-DBI>=0:${PORTSDIR}/www/p5-Apache-DBI
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
 DB_TYPE=	mysql
 USE_MYSQL=	yes
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+BUILD_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .elif ${PORT_OPTIONS:MPGSQL}
 DB_TYPE=	Pg
 USE_PGSQL=	yes
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+BUILD_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
+RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .elif ${PORT_OPTIONS:MQLITE}
 DB_TYPE=	SQLite
 USE_SQLITE=	yes
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
+BUILD_DEPENDS+=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
+RUN_DEPENDS+=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 .elif ${PORT_OPTIONS:MORACLE}
 DB_TYPE=	Oracle
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Oracle.pm:${PORTSDIR}/databases/p5-DBD-Oracle
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Oracle.pm:${PORTSDIR}/databases/p5-DBD-Oracle
+BUILD_DEPENDS+=	p5-DBD-Oracle>=0:${PORTSDIR}/databases/p5-DBD-Oracle
+RUN_DEPENDS+=	p5-DBD-Oracle>=0:${PORTSDIR}/databases/p5-DBD-Oracle
 .endif
 
 RT_ETC_PATH?=	${PREFIX}/etc/${PORTNAME}38
