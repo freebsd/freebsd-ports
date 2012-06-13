@@ -14,6 +14,8 @@ MASTER_SITES=	SF/enlightenment/OldFiles
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fonts and font libraries necessary for Enlightenment
 
+BROKEN=		does not configure
+
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_GNOME=	imlib
