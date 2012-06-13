@@ -63,18 +63,34 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Mantis reports:</p>
-	<blockquote cite="http://sourceforge.net/mailarchive/forum.php?thread_name=1339229952.28538.22%40d.hx.id.au&amp;forum_name=mantisbt-dev">
-	  <p>These vulnerabilities can allow arbitrary users to modify the
-	    database without authority.</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2012/06/09/1">
+	  <p>Roland Becker and Damien Regad (MantisBT developers) found that
+	    any user able to report issues via the SOAP interface could also
+	    modify any bugnotes (comments) created by other users. In a
+	    default/typical MantisBT installation, SOAP API is enabled and any
+	    user can sign up to report new issues. This vulnerability therefore
+	    impacts upon many public facing MantisBT installations.</p>
+	  <p>Roland Becker (MantisBT developer) found that the
+	    delete_attachments_threshold permission was not being checked when
+	    a user attempted to delete an attachment from an issue. The more
+	    generic update_bug_threshold permission was being checked instead.
+	    MantisBT administrators may have been under the false impression
+	    that their configuration of the delete_attachments_threshold was
+	    successfully preventing unwanted users from deleting
+	    attachments.</p>
 	</blockquote>
       </body>
     </description>
     <references>
+      <cvename>CVE-2012-2691</cvename>
+      <cvename>CVE-2012-2692</cvename>
+      <mlist>http://www.openwall.com/lists/oss-security/2012/06/09/1</mlist>
       <mlist>http://sourceforge.net/mailarchive/forum.php?thread_name=1339229952.28538.22%40d.hx.id.au&amp;forum_name=mantisbt-dev</mlist>
     </references>
     <dates>
       <discovery>2012-06-09</discovery>
       <entry>2012-06-12</entry>
+      <modified>2012-06-13</modified>
     </dates>
   </vuln>
 
