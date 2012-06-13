@@ -11,6 +11,6 @@ MAINTAINER=	ale@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../pdflib
 
-WITH_PERL=	yes
+OPTIONS_DEFAULT=PERL
 
 .include "${MASTERDIR}/Makefile"
