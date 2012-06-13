@@ -34,23 +34,24 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 PORTDOCS=	*
 
 # right now WITH_PLUGINS installs prpl-coincoin and prpl-gayattitude
-OPTIONS=	CACA "Buddy icon display using libcaca" On \
-		GNUTLS "Compile with GnuTLS support" Off \
-		VIDEO "Webcam display using libcaca (depends on CACA)" Off \
-		PLUGINS "Compile additional libpurple-plugins" Off
+OPTIONS_DEFINE=	CACA GNUTLS VIDEO PLUGINS DOCS
+OPTIONS_DEFAULT=	CACA
+CACA_DESC=	Buddy icon display using libcaca
+VIDEO_DESC=	Webcam display using libcaca (depends on CACA)
+PLUGINS_DESC=	Compile additional libpurple-plugins
 
 SUB_LIST+=	USERS=${USERS}
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_CACA)
+.if ${PORT_OPTIONS:MCACA}
 LIB_DEPENDS+=	caca.0:${PORTSDIR}/graphics/libcaca
 CMAKE_ARGS+=	-DENABLE_CACA:BOOL=ON
 .else
 CMAKE_ARGS+=	-DENABLE_CACA:BOOL=OFF
 .endif
 
-.if defined(WITH_VIDEO) && defined(WITH_CACA)
+.if ${PORT_OPTIONS:MVIDEO} && !empty(PORT_OPTIONS:MCACA)
 USE_GSTREAMER+=	core good
 LIB_DEPENDS+=	gstfarsight-0.10.0:${PORTSDIR}/net-im/farsight2
 CMAKE_ARGS+=	-DENABLE_VIDEO:BOOL=ON
@@ -58,12 +59,12 @@ CMAKE_ARGS+=	-DENABLE_VIDEO:BOOL=ON
 CMAKE_ARGS+=	-DENABLE_VIDEO:BOOL=OFF
 .endif
 
-.if defined(WITH_VIDEO) && !defined(WITH_CACA)
+.if ${PORT_OPTIONS:MVIDEO} && empty(PORT_OPTIONS:MCACA)
 IGNORE=		if you want to enable webcam support, you must \
 		also enable CACA.
 .endif
 
-.if defined(WITH_PLUGINS)
+.if ${PORT_OPTIONS:MPLUGINS}
 CMAKE_ARGS+=	-DENABLE_PLUGIN:BOOL=ON
 PLIST_FILES+=	lib/purple-2/libcoincoin.so \
 		lib/purple-2/libgayattitude.so
@@ -71,7 +72,7 @@ PLIST_FILES+=	lib/purple-2/libcoincoin.so \
 CMAKE_ARGS+=	-DENABLE_PLUGIN:BOOL=OFF
 .endif
 
-.if defined(WITH_GNUTLS)
+.if ${PORT_OPTIONS:MGNUTLS}
 LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
 CMAKE_ARGS+=	-DENABLE_GNUTLS:BOOL=ON
 .endif
@@ -82,11 +83,11 @@ do-install:
 	${MKDIR} ${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/minbif.conf ${ETCDIR}/minbif.conf-dist
 	${INSTALL_DATA} ${WRKSRC}/minbif.motd ${ETCDIR}/minbif.motd-dist
-.if defined(WITH_PLUGINS)
+.if ${PORT_OPTIONS:MPLUGINS}
 	${INSTALL_PROGRAM} ${WRKSRC}/plugins/coincoin/libcoincoin.so ${PREFIX}/lib/purple-2
 	${INSTALL_PROGRAM} ${WRKSRC}/plugins/gayattitude/libgayattitude.so ${PREFIX}/lib/purple-2
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}

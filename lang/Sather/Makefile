@@ -37,7 +37,8 @@ SAT_CFLAGS=	${CFLAGS} -I. \
 SAT_LIBS=	-L${LOCALBASE}/lib -lgc-redirect -lm
 SAT_LIBDIR=	${PREFIX}/lib/sather
 
-OPTIONS=	EMACS "Install Emacs syntax files" off
+OPTIONS_DEFINE=	EMACS DOCS
+EMACS_DESC=	Install Emacs syntax files
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
@@ -168,13 +169,13 @@ do-install:
 .for file in ${INFO}
 	${INSTALL_DATA} ${WRKSRC}/Emacs/${file}.info ${PREFIX}/info
 .endfor
-.if defined(WITH_EMACS)
+.if ${PORT_OPTIONS:MEMACS}
 . for file in hl319.el sather-lib.el sather-module.el sather.el
 	${INSTALL_DATA} ${WRKSRC}/Emacs/${file} ${PREFIX}/share/emacs/site-lisp
 	@${ECHO_CMD} "share/emacs/site-lisp/${file}" >> ${TMPPLIST}
 . endfor
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC}/Doc && ${COPYTREE_SHARE} "*" ${DOCSDIR} \
 		"! -regex .*man.* ! -regex .*GPL ! -regex .*\.bak")

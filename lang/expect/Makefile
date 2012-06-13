@@ -27,23 +27,24 @@ GNU_CONFIGURE=	yes
 PLIST_SUB+=	EXPECT_VER="${EXPECT_VER}"
 PLIST_SUB+=	LIBEXPECT_VER="${LIBEXPECT_VER}"
 
-OPTIONS=	X11 "Enable X11 support" on
+OPTIONS_DEFINE=	X11
+OPTIONS_DEFAULT=	X11
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 LIB_DEPENDS?=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 .else
 LIB_DEPENDS?=	tcl84.1:${PORTSDIR}/lang/tcl84
 .endif
 
-.if defined(WITHOUT_X11)
-TK_CONFIG_ARGS=
-PLIST_SUB+=	XFILES="@comment "
-.else
+.if ${PORT_OPTIONS:MX11}
 TK_CONFIG_ARGS=	--with-tkconfig=${LOCALBASE}/lib/tk8.4 \
 		--with-tkinclude=${LOCALBASE}/include/tk8.4
 PLIST_SUB+=	XFILES=""
+.else
+TK_CONFIG_ARGS=
+PLIST_SUB+=	XFILES="@comment "
 .endif
 
 CONFIGURE_ARGS?=--enable-shared \
@@ -55,7 +56,7 @@ CONFIGURE_ARGS?=--enable-shared \
 MAN1=		autoexpect.1 cryptdir.1 decryptdir.1 dislocate.1 \
 		expect.1 kibitz.1 mkpasswd.1 multixterm.1 passmass.1 \
 		tknewsbiff.1 unbuffer.1 xkibitz.1
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 MAN1+=		expectk.1
 .endif
 MAN3=		libexpect.3

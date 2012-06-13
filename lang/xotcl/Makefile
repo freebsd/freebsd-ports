@@ -32,8 +32,10 @@ USE_LDCONFIG=	${PREFIX}/lib/xotcl${PORTVERSION}
 GNU_CONFIGURE=	yes
 PORTDOCS=	*
 
-OPTIONS=	ACTIWEB		"Include actiweb"		on \
-		TUTORIAL	"Install XOTcl tutorial" 	off
+OPTIONS_DEFINE=	ACTIWEB TUTORIAL DOCS
+OPTIONS_DEFAULT=	ACTIWEB
+ACTIWEB_DESC=	Include actiweb
+TUTORIAL_DESC=	Install XOTcl tutorial
 
 LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 CONFIGURE_ARGS+=	--with-expat=${LOCALBASE}/include,${LOCALBASE}/lib
@@ -41,7 +43,7 @@ CONFIGURE_ARGS+=	--with-expat=${LOCALBASE}/include,${LOCALBASE}/lib
 AOLSERVERBASE?=	aolserver
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(AOLSERVER_XOTCL)
 RUN_DEPENDS+=		${LOCALBASE}/aolserver/bin/init.tcl:${PORTSDIR}/www/aolserver \
@@ -52,7 +54,7 @@ LATEST_LINK=		aolserver-xotcl
 NO_BUILD=		yes
 .endif
 
-.if defined(WITH_ACTIWEB)
+.if ${PORT_OPTIONS:MACTIWEB}
 CONFIGURE_ARGS+=	--with-actiweb --with-gdbm=${LOCALBASE}/include,${LOCALBASE}/lib
 LIB_DEPENDS+=		gdbm.4:${PORTSDIR}/databases/gdbm
 PLIST_SUB+=	ACTIWEB=""
@@ -60,7 +62,7 @@ PLIST_SUB+=	ACTIWEB=""
 PLIST_SUB+=	ACTIWEB="@comment "
 .endif
 
-.if defined(WITH_TUTORIAL)
+.if ${PORT_OPTIONS:MTUTORIAL}
 PLIST_SUB+=	TUTORIAL=""
 .else
 PLIST_SUB+=	TUTORIAL="@comment "
@@ -96,7 +98,7 @@ do-install:
 
 .if !defined(AOLSERVER_XOTCL) # Aolserver module has no post-install
 post-install:
-.if defined(WITH_TUTORIAL)
+.if ${PORT_OPTIONS:MTUTORIAL}
 	${MKDIR} ${EXAMPLESDIR}/tutorial/html ${EXAMPLESDIR}/tutorial/pdf
 .for FILE in langRef-xotcl.pdf tutorial.pdf
 	${INSTALL_DATA} ${WRKSRC}/doc/${FILE} ${EXAMPLESDIR}/tutorial/pdf
@@ -104,7 +106,7 @@ post-install:
 	@cd ${WRKSRC}; ${FIND} doc/ -type f \( -name '*.html' -or -name '*.css' -or -name '*.gif' \) \
 	-exec ${INSTALL_DATA} ${WRKSRC}/{} ${EXAMPLESDIR}/tutorial/html \;
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for FILE in ChangeLog README README.aol
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
@@ -114,4 +116,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/xotclsh.1 ${PREFIX}/man/man1/
 .endif
 .endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
