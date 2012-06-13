@@ -1430,7 +1430,7 @@ emulators/win4bsd||2010-12-31|Has expired: Development has ceased and distfile i
 french/mozilla-flp||2010-12-31|Has expired: www/seamonkey port is deprecated. Consider using the www/firefox-i18n
 french/xtel||2010-12-31|Has expired: Minitel services will be discontinued at the end of 2010
 ftp/ftpq||2010-12-31|Has expired: upstream has disappeared
-graphics/paintlib||2010-12-31|Has expired: does not compile with new tiff and no more maintained upstream
+graphics/paintlib||2010-12-31|Has expired: does not compile with new tiff and no longer maintained upstream
 graphics/g3dviewer||2010-12-31|Has expired: does not build with gcc 4.2, upstream disappeared
 lang/scriba||2010-12-31|Has expired: Does not compile with gcc 4.2+, looks like abandonware
 math/rascal||2010-12-31|Has expired: Broken on every arch since 2008, looks like abandonware
@@ -2377,8 +2377,8 @@ misc/gkrellmfmonitor2||2011-08-01|Has expired: Looks like abandonware, no more p
 misc/gkx86info||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
 multimedia/goggles||2011-08-01|Has expired: Abandonware, see: http://www.fifthplanet.net/2010/01/dead-projects-goggles-dvd-player.html
 multimedia/ldvd||2011-08-01|Has expired: Abandonware
-multimedia/linux-divx4linux||2011-08-01|Has expired: No more needed
-multimedia/linux-divx4linux4||2011-08-01|Has expired: No more needed
+multimedia/linux-divx4linux||2011-08-01|Has expired: No longer needed
+multimedia/linux-divx4linux4||2011-08-01|Has expired: No longer needed
 multimedia/ogle||2011-08-01|Has expired: Abandonware
 multimedia/ogle-gui||2011-08-01|Has expired: Abandonware
 multimedia/okle||2011-08-01|Has expired: Abandonware
@@ -2641,7 +2641,7 @@ net-im/jabber-users-agent||2011-09-23|Has expired: No more public distfiles
 games/cchess||2011-09-23|Has expired: No more public distfiles
 devel/git-annex|devel/hs-git-annex|2011-09-26|It has become a Cabal transcript
 devel/py-zopetesting|devel/py-zope.testing|2011-09-27|Removed: please use devel/py-zope.testing instead
-astro/boinc-milkyway||2011-09-27|No more useful
+astro/boinc-milkyway||2011-09-27|No longer useful
 www/linux-firefox-devel|www/linux-firefox|2011-09-27|Older than www/linux-firefox
 graphics/pgperl|graphics/p5-PGPLOT|2011-09-28|Move to a better place via repocopy
 devel/py-zopeInterface|devel/py-zope.interface|2011-09-29|Removed: please use devel/py-zope.interface instead
@@ -3022,10 +3022,10 @@ databases/fireprofile||2011-12-28|Has expired
 audio/gnowavcut||2011-12-28|Has expired: Abandonware
 mail/demime||2011-12-28|Has expired: No upstream development since 2007
 x11/wmmsg||2011-12-28|Has expired: No more public distfiles
-x11-toolkits/libgtkeditor||2011-12-28|Has expired: No more supported upstream, not depend on anymore.
+x11-toolkits/libgtkeditor||2011-12-28|Has expired: No longer supported upstream, not depended upon anymore.
 misc/demoniac||2011-12-28|Has expired: No more upstream, no more public distfiles
 cad/gtkwave||2011-12-28|Has expired: No more public distfiles, no more upstream
-databases/clip||2011-12-28|Has expired: No develop anymore for long
+databases/clip||2011-12-28|Has expired: No upstream development for a long time
 x11-toolkits/gtkextra||2011-12-28|Has expired: no longer supported upstream, no more depend on
 www/xpi-mousegestures||2011-12-28|Has expired: Development has been ceased and not compatible with Firefox > 2.
 www/xpi-mozex||2011-12-28|Has expired: Development has been ceased and not compatible with Firefox > 3.
@@ -3180,10 +3180,10 @@ www/zope3||2012-01-06|End of life is reached
 x11-drivers/xf86-input-citron||2012-01-07|Removed
 x11-drivers/xf86-input-fpit||2012-01-07|Removed
 multimedia/avifile||2012-01-08|Has expired: Broken for an extended period, superseded by other multimedia players
-devel/bonobo-conf||2012-01-08|Has expired: No more supported upstream, not depend on anymore.
+devel/bonobo-conf||2012-01-08|Has expired: No longer supported upstream, not depended upon anymore.
 www/typo343||2012-01-08|Has expired: Support will end in the near future, see http://typo3.org/download/packages/ for details
-devel/gnome-crash||2012-01-08|Has expired: No more supported upstream, not depend on anymore.
-x11-toolkits/gob||2012-01-08|Has expired: No more supported upstream, not depend on anymore.
+devel/gnome-crash||2012-01-08|Has expired: No longer supported upstream, not depended upon anymore.
+x11-toolkits/gob||2012-01-08|Has expired: No longer supported upstream, not depended upon anymore.
 www/rubygem-htauth||2012-01-08|Has expired: broke for ~12 months
 www/instiki||2012-01-08|Has expired: has been marked ignore since 2010/09/16
 mail/msmtpqueue||2012-01-08|Has expired: These scripts now come with mail/msmtp
@@ -3277,9 +3277,9 @@ www/pivot-weblog||2012-04-15|Has expired: unsupported upstream, consider www/piv
 java/jbootstrap||2012-04-16|Has expired: bootstrap for an ancient version of Java
 lang/python-doc-postscript-a4||2012-04-17|This port was broken for a long time, deprecated upstream
 lang/python-doc-postscript-letter||2012-04-17|This port was broken for a long time, deprecated upstream
-mail/dbmail20||2012-04-18|Has expired: No more supported upstream. No ports depend on this
-mail/dbmail21||2012-04-18|Has expired: No more supported upstream. No ports depend on this
-mail/dbmail23||2012-04-18|Has expired: No more supported upstream. No ports depend on this
+mail/dbmail20||2012-04-18|Has expired: No longer supported upstream. No ports depend on this
+mail/dbmail21||2012-04-18|Has expired: No longer supported upstream. No ports depend on this
+mail/dbmail23||2012-04-18|Has expired: No longer supported upstream. No ports depend on this
 math/octave-forge-times||2012-04-18|Depreciated upstream
 www/fpc-httpd13||2012-04-19|Obsolete freepascal unit. Use www/fpc-httpd22 instead of it
 www/fpc-httpd20||2012-04-19|Obsolete freepascal unit. Use www/fpc-httpd22 instead of it
@@ -3373,30 +3373,30 @@ mail/thunderbird3|mail/thunderbird-esr|2012-05-12|Upstream support dropped
 mail/thunderbird3-i18n|mail/thunderbird-esr-i18n|2012-05-12|Upstream support dropped
 databases/php5-sqlite||2012-05-16|Removed from core php
 www/py-django-css|www/py-django_compressor|2012-05-16|Upstream development stopped. Use www/py-django_compressor instead
-net-p2p/py-bittorrent-core||2012-05-16|BROKEN for more than 6 month, there is no upstream distfiles anymore
-net-p2p/py-bittorrent||2012-05-16|BROKEN for more than 6 month, there is no upstream distfiles anymore
+net-p2p/py-bittorrent-core||2012-05-16|BROKEN for more than 6 months, there are no upstream distfiles anymore
+net-p2p/py-bittorrent||2012-05-16|BROKEN for more than 6 months, there are no upstream distfiles anymore
 astro/boinc-einsteinathome||2012-05-16|Not usable with current project
-x11/avant-window-navigator-xfce4||2012-05-18|Has expired: BROKEN for more than 6 month
-deskutils/xfce4-volstatus-icon||2012-05-18|Has expired: BROKEN for more than 6 month
-multimedia/xfmedia-remote-plugin||2012-05-18|Has expired: BROKEN for more than 6 month
-sysutils/thunar-volman-plugin||2012-05-18|Has expired: BROKEN for more than 6 month
-databases/sqlite34||2012-05-18|Has expired: No more supported, please use databases/sqlite3 instead
-graphics/long-exposure-tools||2012-05-18|Has expired: BROKEN for more than 6 month
-misc/kde3-i18n-hsb||2012-05-18|Has expired: BROKEN for more than 6 month
-misc/kde3-i18n-mt||2012-05-18|Has expired: BROKEN for more than 6 month
-misc/kde3-i18n-nso||2012-05-18|Has expired: BROKEN for more than 6 month
-net-im/pino||2012-05-18|Has expired: BROKEN for more than 6 month
-print/perlftlib||2012-05-18|Has expired: No more upstream, no more used in the ports tree
+x11/avant-window-navigator-xfce4||2012-05-18|Has expired: BROKEN for more than 6 months
+deskutils/xfce4-volstatus-icon||2012-05-18|Has expired: BROKEN for more than 6 months
+multimedia/xfmedia-remote-plugin||2012-05-18|Has expired: BROKEN for more than 6 months
+sysutils/thunar-volman-plugin||2012-05-18|Has expired: BROKEN for more than 6 months
+databases/sqlite34||2012-05-18|Has expired: No longer supported, please use databases/sqlite3 instead
+graphics/long-exposure-tools||2012-05-18|Has expired: BROKEN for more than 6 months
+misc/kde3-i18n-hsb||2012-05-18|Has expired: BROKEN for more than 6 months
+misc/kde3-i18n-mt||2012-05-18|Has expired: BROKEN for more than 6 months
+misc/kde3-i18n-nso||2012-05-18|Has expired: BROKEN for more than 6 months
+net-im/pino||2012-05-18|Has expired: BROKEN for more than 6 months
+print/perlftlib||2012-05-18|Has expired: No more upstream, no longer used in the ports tree
 editors/libreoffice-legacy||2012-05-18|Has expired: not supported upstream, maintaining 2 version of libreoffice is really painful
 devel/p5-POE-Exceptions||2012-05-18|Has expired: included in devel/p5-POE and not needed according to configure message
 net/p5-Net-Services||2012-05-18|Has expired: Removed from CPAN
-net/perldap||2012-05-18|Has expired: BROKEN for more than 6 month
+net/perldap||2012-05-18|Has expired: BROKEN for more than 6 months
 security/p5-Crypt-Cryptix||2012-05-18|Has expired: Gone from CPAN, project site says project is dead
 www/p5-HTML-Sanitizer||2012-05-18|Has expired: no longer in CPAN
 www/p5-IMDB-Movie||2012-05-18|Has expired: Removed from CPAN
 net/ng_car||2012-05-19|In base for all supported versions of FreeBSD
-palm/coldsync||2012-05-19|BROKEN for more than 6 month, does not compile
-graphics/linux-ac3d||2012-05-19|Has expired: BROKEN for more than 6 month
+palm/coldsync||2012-05-19|BROKEN for more than 6 months, does not compile
+graphics/linux-ac3d||2012-05-19|Has expired: BROKEN for more than 6 months
 archivers/pecl-bz2|archivers/php5-bz2|2012-05-20|bz2 is included in core php
 misc/freshmeat-submit|misc/freecode-submit|2012-05-20|Project renamed
 devel/kdebindings4-kross-interpreters||2012-05-25|kdebindings4 ports have been refactored
@@ -3459,19 +3459,19 @@ mail/kavmilter||2012-06-06|Removed: security package unmaintained upstream.
 sysutils/linux-megacli|sysutils/megacli|2012-06-06|Removed: native version available.
 ftp/wu-ftpd+ipv6||2012-06-07|Removed: Upstream disappeared and distfile is no longer available
 sysutils/pwgen2|sysutils/pwgen|2012-06-07|pwgen2 is a continuation of pwgen that fixes several serious bugs
-x11-toolkits/xforms-i18n||2012-06-08|Has expired: BROKEN for more than 6 month
+x11-toolkits/xforms-i18n||2012-06-08|Has expired: BROKEN for more than 6 months
 security/ifd-devkit||2012-06-08|Conflicts with dependency, not useful
-www/kazehakase||2012-06-10|Has expired: BROKEN for more than 6 month
+www/kazehakase||2012-06-10|Has expired: BROKEN for more than 6 months
 x11/trayer-srg|x11/trayer|2012-06-11|Merged into x11/trayer
 games/flightgear-atlas||2012-06-12|Unmaintained upstream
 deskutils/sciplore-mindmapping||2012-06-12|Has expired: Discontinued, use deskutils/docear instead
 devel/libtool-fixed||2012-06-12|Has expired: libtool has been fixed, no more need of this version
 devel/p5-Devel-ObjectTracker||2012-06-12|Has expired: removed from CPAN
-devel/rubygem-vmc||2012-06-12|Has expired: BROKEN for more than 6 month
+devel/rubygem-vmc||2012-06-12|Has expired: BROKEN for more than 6 months
 games/antrix||2012-06-12|Has expired: no more public distfiles, abandoned upstream
-games/sfbol||2012-06-12|Has expired: BROKEN for more than 6 month
+games/sfbol||2012-06-12|Has expired: BROKEN for more than 6 months
 java/eclipseme||2012-06-12|Has expired: depends on java/sun-wtk
-mail/lmtpd||2012-06-12|Has expired: BROKEN for more than 6 month
-print/cups-magicolor||2012-06-12|Has expired: BROKEN for more than 6 month
-security/pantera||2012-06-12|Has expired: BROKEN for more than 6 month
+mail/lmtpd||2012-06-12|Has expired: BROKEN for more than 6 months
+print/cups-magicolor||2012-06-12|Has expired: BROKEN for more than 6 months
+security/pantera||2012-06-12|Has expired: BROKEN for more than 6 months
 graphics/djvulibre-nox11|graphics/djvulibre|2012-06-13|Merged back into graphics/djvulibre
