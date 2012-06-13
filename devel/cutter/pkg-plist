@@ -225,6 +225,8 @@ share/aclocal/cutter.m4
 %%DOCSDIR%%/index-1-1-6.html
 %%DOCSDIR%%/index-1-1-7.html
 %%DOCSDIR%%/index-1-1-8.html
+%%DOCSDIR%%/index-1-1-9.html
+%%DOCSDIR%%/index-1-2-0.html
 %%DOCSDIR%%/index-all.html
 %%DOCSDIR%%/index-deprecated.html
 %%DOCSDIR%%/index.html
@@ -263,6 +265,7 @@ share/aclocal/cutter.m4
 %%DOCSDIR%%/ja/api-index-1.1.4.xml
 %%DOCSDIR%%/ja/api-index-1.1.5.xml
 %%DOCSDIR%%/ja/api-index-1.1.6.xml
+%%DOCSDIR%%/ja/api-index-1.2.0.xml
 %%DOCSDIR%%/ja/api-index-deprecated.xml
 %%DOCSDIR%%/ja/api-index-full.xml
 %%DOCSDIR%%/ja/colorized-diff.png
@@ -374,6 +377,8 @@ share/aclocal/cutter.m4
 %%DOCSDIR%%/ja/index-1-1-6.html
 %%DOCSDIR%%/ja/index-1-1-7.html
 %%DOCSDIR%%/ja/index-1-1-8.html
+%%DOCSDIR%%/ja/index-1-1-9.html
+%%DOCSDIR%%/ja/index-1-2-0.html
 %%DOCSDIR%%/ja/index-all.html
 %%DOCSDIR%%/ja/index-deprecated.html
 %%DOCSDIR%%/ja/index.html
