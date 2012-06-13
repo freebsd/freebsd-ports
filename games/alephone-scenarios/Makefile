@@ -7,7 +7,7 @@
 
 PORTNAME=	scenarios
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://files3.bungie.org/trilogy/:bungie \
 		http://files5.bungie.org/marathon/:rubicon \
@@ -31,7 +31,7 @@ NO_WRKSUBDIR=	yes
 
 OPTIONS_MULTI=	PACKS
 OPTIONS_MULTI_PACKS=	EMR ETERNAL EVIL RED RUBICON TI GRAY
-OPTIONS_DEFAULT=	EMR ETERNAL EVIL RED RUBICON TI GRAY
+OPTIONS_DEFAULT=	EVIL RED
 EMR_DESC=	Install Excalibur: Morgana's Revenge data
 ETERNAL_DESC=	Install Eternal X data
 EVIL_DESC=	Install Marathon Evil data
