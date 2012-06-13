@@ -99,7 +99,7 @@ PLIST_SUB+=		IMPRESS="@comment "
 .endif
 
 .if defined(WITH_DJVU)
-LIB_DEPENDS+=		djvulibre.24:${PORTSDIR}/graphics/djvulibre-nox11
+LIB_DEPENDS+=		djvulibre:${PORTSDIR}/graphics/djvulibre
 CONFIGURE_ARGS+=	--enable-djvu
 GCONF_SCHEMAS+=		evince-thumbnailer-djvu.schemas
 PLIST_SUB+=		DJVU=""

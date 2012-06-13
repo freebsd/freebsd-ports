@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120613:
+  AFFECTS: users of graphics/djvulibre and graphics/djvulibre-nox11
+  AUTHOR: bf@FreeBSD.org
+
+  DjVuLibre been updated to 3.5.25.3.  The QT3 GUI that was in
+  graphics/djvulibre has been removed (users of this GUI should consider
+  switching to the new QT4 GUI in graphics/djview4), and
+  graphics/djvulibre-nox11 has been merged back into graphics/djvulibre.
+  To update DjVuLibre, you can use:
+
+  # pkg_delete djvulibre-\?.\*
+  # portmaster -o graphics/djvulibre djvulibre-nox11
+
 20120612:
   AFFECTS: users of databases/postgresql-libpqxx
   AUTHOR: avilla@FreeBSD.org

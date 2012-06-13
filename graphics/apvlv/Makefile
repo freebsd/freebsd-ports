@@ -37,7 +37,7 @@ OPTIONS=	DJVU	"Enable DJVU support"	off
 CMAKE_ARGS+=	-DAPVLV_WITH_DJVU=OFF
 .else
 CMAKE_ARGS+=	-DAPVLV_WITH_DJVU=ON
-LIB_DEPENDS+=	djvulibre.24:${PORTSDIR}/graphics/djvulibre-nox11
+LIB_DEPENDS+=	djvulibre:${PORTSDIR}/graphics/djvulibre
 .endif
 
 .include <bsd.port.mk>

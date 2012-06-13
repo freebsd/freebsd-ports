@@ -7,7 +7,7 @@
 
 PORTNAME=	okular
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -16,7 +16,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE 4 universal document viewer
 
-LIB_DEPENDS=	djvulibre.24:${PORTSDIR}/graphics/djvulibre-nox11 \
+LIB_DEPENDS=	djvulibre:${PORTSDIR}/graphics/djvulibre \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		qca.2:${PORTSDIR}/devel/qca \
 		tiff.4:${PORTSDIR}/graphics/tiff \
