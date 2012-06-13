@@ -19,6 +19,8 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
 		gif.5:${PORTSDIR}/graphics/giflib
 
+BROKEN=		does not compile
+
 USE_XORG=	x11 xt
 USE_GNOME=	imlib
 CFLAGS:=	${CFLAGS} -I${LOCALBASE}/include
