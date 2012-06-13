@@ -25,4 +25,10 @@ do-extract:
 	zcat ${DISTDIR}/${DISTFILES} |(cd ${WRKDIR}; \
 	${AWK} '{if (/^#!/) x++} {if(x) print $$0'}| ${SH})
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1000000
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
