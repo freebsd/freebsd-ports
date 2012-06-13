@@ -1,6 +1,35 @@
 --- native/jsvc-unix.c.orig	2012-02-24 00:24:02.000000000 +0100
-+++ native/jsvc-unix.c	2012-03-26 14:14:26.000000000 +0200
-@@ -801,11 +801,11 @@ static int child(arg_data *args, home_da
++++ native/jsvc-unix.c	2012-06-13 12:40:54.000000000 +0200
+@@ -621,18 +621,13 @@
+  */
+ static int wait_child(arg_data *args, int pid)
+ {
+-    int count = 10;
++    int count = args->wait;
+     bool havejvm = false;
+     int fd;
+     char buff[80];
+-    int i, status, waittime;
++    int i, status;
+ 
+     log_debug("wait_child %d", pid);
+-    waittime = args->wait / 10;
+-    if (waittime > 10) {
+-        count = waittime;
+-        waittime = 10;
+-    }
+     while (count > 0) {
+         sleep(1);
+         /* check if the controler is still running */
+@@ -671,7 +666,6 @@
+                 }
+             }
+         }
+-        sleep(waittime);
+         count--;
+     }
+     /* It takes more than the wait time to start,
+@@ -801,11 +795,11 @@
      create_tmp_file(args);
      while (!stopping) {
  #if defined(OSD_POSIX)
@@ -14,7 +43,7 @@
  #endif
          if(doreopen) {
              doreopen = false;
-@@ -824,7 +824,7 @@ static int child(arg_data *args, home_da
+@@ -824,7 +818,7 @@
          return 6;
  
      if (doreload == true)
@@ -23,7 +52,7 @@
      else
          ret = 0;
  
-@@ -1212,12 +1212,12 @@ static int run_controller(arg_data *args
+@@ -1212,12 +1206,12 @@
              if (args->vers != true && args->chck != true && status != 122)
                  unlink(args->pidf);
  
