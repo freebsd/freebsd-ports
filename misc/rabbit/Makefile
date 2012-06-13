@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rabbit
-PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTVERSION=	1.0.7
 CATEGORIES=	misc ruby
 MASTER_SITES=	http://rabbit-shockers.org/download/ \
 		LOCAL
@@ -69,7 +68,6 @@ RUN_DEPENDS+=	rubygem-twitter_oauth>=0:${PORTSDIR}/security/rubygem-twitter_oaut
 
 post-patch:
 	${RM} ${WRKSRC}/bin/rabwii
-	${RMDIR} ${WRKSRC}/lib/rt
 	${RUBY} -i -pe 'sub %r|((\s*)require "rack")|, %Q|\\2require "rubygems"\n\\1|' ${WRKSRC}/bin/rabbirack
 	${RUBY} -i -pe 'sub %r|(require "hikidoc")|, %Q|require "rubygems"\n\\1|' ${WRKSRC}/lib/rabbit/parser/wiki.rb
 	${RUBY} -i -pe "sub %r|((\s*)require 'twitter_oauth')|, %Q|\\\2require 'rubygems'\n\\\1|" ${WRKSRC}/lib/rabbit/twitter.rb
