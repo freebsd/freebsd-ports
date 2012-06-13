@@ -1,0 +1,2106 @@
+--- corba/src/share/classes/com/sun/corba/se/impl/interceptors/ClientRequestInfoImpl.java.orig	2012-05-01 17:14:05.000000000 -0400
++++ corba/src/share/classes/com/sun/corba/se/impl/interceptors/ClientRequestInfoImpl.java	2012-06-13 12:52:46.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2000, 2003, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2000, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -215,7 +215,7 @@
+ 
+     // ClientRequestInfo validity table (see ptc/00-08-06 table 21-1).
+     // Note: These must be in the same order as specified in contants.
+-    protected static final boolean validCall[][] = {
++    private static final boolean validCall[][] = {
+         // LEGEND:
+         // s_req = send_request     r_rep = receive_reply
+         // s_pol = send_poll        r_exc = receive_exception
+--- corba/src/share/classes/com/sun/corba/se/impl/interceptors/ServerRequestInfoImpl.java.orig	2012-05-01 17:14:05.000000000 -0400
++++ corba/src/share/classes/com/sun/corba/se/impl/interceptors/ServerRequestInfoImpl.java	2012-06-13 12:52:46.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2000, 2003, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2000, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -195,7 +195,7 @@
+ 
+     // ServerRequestInfo validity table (see ptc/00-08-06 table 21-2).
+     // Note: These must be in the same order as specified in contants.
+-    protected static final boolean validCall[][] = {
++    private static final boolean validCall[][] = {
+         // LEGEND:
+         // r_rsc = receive_request_service_contexts
+         // r_req = receive_request
+--- corba/src/share/classes/com/sun/corba/se/impl/javax/rmi/CORBA/Util.java.orig	2012-05-01 17:14:05.000000000 -0400
++++ corba/src/share/classes/com/sun/corba/se/impl/javax/rmi/CORBA/Util.java	2012-06-13 12:52:46.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1999, 2004, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1999, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -130,10 +130,23 @@
+     private UtilSystemException utilWrapper = UtilSystemException.get(
+                                                   CORBALogDomains.RPC_ENCODING);
+ 
+-    public static Util instance = null;
++    private static Util instance = null;
+ 
+     public Util() {
+-        instance = this;
++        setInstance(this);
++    }
++
++    private static void setInstance( Util util ) {
++        assert instance == null : "Instance already defined";
++        instance = util;
++    }
++
++    public static Util getInstance() {
++        return instance;
++    }
++
++    public static boolean isInstanceDefined() {
++        return instance != null;
+     }
+ 
+     // Used by TOAFactory.shutdown to unexport all targets for this
+--- corba/src/share/classes/com/sun/corba/se/impl/oa/poa/POAPolicyMediatorBase_R.java.orig	2012-05-01 17:14:05.000000000 -0400
++++ corba/src/share/classes/com/sun/corba/se/impl/oa/poa/POAPolicyMediatorBase_R.java	2012-06-13 12:52:46.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2002, 2004, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2002, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -93,7 +93,7 @@
+ 
+         activeObjectMap.putServant( servant, entry ) ;
+ 
+-        if (Util.instance != null) {
++        if (Util.isInstanceDefined()) {
+             POAManagerImpl pm = (POAManagerImpl)poa.the_POAManager() ;
+             POAFactory factory = pm.getFactory() ;
+             factory.registerPOAForServant(poa, servant);
+@@ -133,7 +133,7 @@
+ 
+         activeObjectMap.remove(key);
+ 
+-        if (Util.instance != null) {
++        if (Util.isInstanceDefined()) {
+             POAManagerImpl pm = (POAManagerImpl)poa.the_POAManager() ;
+             POAFactory factory = pm.getFactory() ;
+             factory.unregisterPOAForServant(poa, s);
+--- corba/src/share/classes/com/sun/corba/se/impl/oa/toa/TOAFactory.java.orig	2012-05-01 17:14:05.000000000 -0400
++++ corba/src/share/classes/com/sun/corba/se/impl/oa/toa/TOAFactory.java	2012-06-13 12:52:46.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2002, 2003, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2002, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -78,8 +78,8 @@
+ 
+     public void shutdown( boolean waitForCompletion )
+     {
+-        if (Util.instance != null) {
+-            Util.instance.unregisterTargetsForORB(orb);
++        if (Util.isInstanceDefined()) {
++            Util.getInstance().unregisterTargetsForORB(orb);
+         }
+     }
+ 
+--- corba/src/share/classes/com/sun/corba/se/impl/orb/ParserTable.java.orig	2012-05-01 17:14:05.000000000 -0400
++++ corba/src/share/classes/com/sun/corba/se/impl/orb/ParserTable.java	2012-06-13 12:52:46.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2002, 2006, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2002, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -106,7 +106,9 @@
+ 
+     public ParserData[] getParserData()
+     {
+-        return parserData ;
++        ParserData[] parserArray = new ParserData[parserData.length];
++        System.arraycopy(parserData, 0, parserArray, 0, parserData.length);
++        return parserArray;
+     }
+ 
+     private ParserTable() {
+--- corba/src/share/classes/com/sun/corba/se/impl/orbutil/RepositoryId_1_3.java.orig	2012-05-01 17:14:05.000000000 -0400
++++ corba/src/share/classes/com/sun/corba/se/impl/orbutil/RepositoryId_1_3.java	2012-06-13 12:52:46.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2000, 2002, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2000, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -62,7 +62,7 @@
+     // legal use of '.' in a Java name.
+ 
+     public static final RepositoryIdCache_1_3 cache = new RepositoryIdCache_1_3();
+-    public static final byte[] IDL_IDENTIFIER_CHARS = {
++    private static final byte[] IDL_IDENTIFIER_CHARS = {
+ 
+         // 0 1 2 3  4 5 6 7  8 9 a b  c d e f
+         0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, // 00-0f
+@@ -180,7 +180,7 @@
+     public static final String kRemoteTypeStr = "";
+     public static final String kRemoteValueRepID = "";
+ 
+-    public static final Hashtable kSpecialArrayTypeStrings = new Hashtable();
++    private static final Hashtable kSpecialArrayTypeStrings = new Hashtable();
+ 
+     static {
+         kSpecialArrayTypeStrings.put("CORBA.WStringValue", new StringBuffer(java.lang.String.class.getName()));
+@@ -189,7 +189,7 @@
+ 
+     }
+ 
+-    public static final Hashtable kSpecialCasesRepIDs = new Hashtable();
++    private static final Hashtable kSpecialCasesRepIDs = new Hashtable();
+ 
+     static {
+         kSpecialCasesRepIDs.put(java.lang.String.class, kWStringValueRepID);
+@@ -197,7 +197,7 @@
+         kSpecialCasesRepIDs.put(java.rmi.Remote.class, kRemoteValueRepID);
+     }
+ 
+-    public static final Hashtable kSpecialCasesStubValues = new Hashtable();
++    private static final Hashtable kSpecialCasesStubValues = new Hashtable();
+ 
+     static {
+         kSpecialCasesStubValues.put(java.lang.String.class, kWStringStubValue);
+@@ -209,7 +209,7 @@
+     }
+ 
+ 
+-    public static final Hashtable kSpecialCasesVersions = new Hashtable();
++    private static final Hashtable kSpecialCasesVersions = new Hashtable();
+ 
+     static {
+         kSpecialCasesVersions.put(java.lang.String.class, kWStringValueHash);
+@@ -220,7 +220,7 @@
+         kSpecialCasesVersions.put(java.rmi.Remote.class, kRemoteValueHash);
+     }
+ 
+-    public static final Hashtable kSpecialCasesClasses = new Hashtable();
++    private static final Hashtable kSpecialCasesClasses = new Hashtable();
+ 
+     static {
+         kSpecialCasesClasses.put(kWStringTypeStr, java.lang.String.class);
+@@ -232,7 +232,7 @@
+         //kSpecialCasesClasses.put(kRemoteTypeStr, java.rmi.Remote.class);
+     }
+ 
+-    public static final Hashtable kSpecialCasesArrayPrefix = new Hashtable();
++    private static final Hashtable kSpecialCasesArrayPrefix = new Hashtable();
+ 
+     static {
+         kSpecialCasesArrayPrefix.put(java.lang.String.class, kValuePrefix + kSequencePrefix + kCORBAPrefix);
+@@ -243,7 +243,7 @@
+         kSpecialCasesArrayPrefix.put(java.rmi.Remote.class, kValuePrefix + kSequencePrefix + kCORBAPrefix);
+     }
+ 
+-    public static final Hashtable kSpecialPrimitives = new Hashtable();
++    private static final Hashtable kSpecialPrimitives = new Hashtable();
+ 
+     static {
+         kSpecialPrimitives.put("int","long");
+--- corba/src/share/classes/com/sun/corba/se/impl/orbutil/RepositoryId_1_3_1.java.orig	2012-05-01 17:14:05.000000000 -0400
++++ corba/src/share/classes/com/sun/corba/se/impl/orbutil/RepositoryId_1_3_1.java	2012-06-13 12:52:46.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2001, 2002, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2001, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -63,7 +63,7 @@
+     // uniformly, and is safe because that is the only
+     // legal use of '.' in a Java name.
+ 
+-    public static final byte[] IDL_IDENTIFIER_CHARS = {
++    private static final byte[] IDL_IDENTIFIER_CHARS = {
+ 
+         // 0 1 2 3  4 5 6 7  8 9 a b  c d e f
+         0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, // 00-0f
+@@ -198,7 +198,7 @@
+     public static final String kRemoteTypeStr = "";
+     public static final String kRemoteValueRepID = "";
+ 
+-    public static final Hashtable kSpecialArrayTypeStrings = new Hashtable();
++    private static final Hashtable kSpecialArrayTypeStrings = new Hashtable();
+ 
+     static {
+         kSpecialArrayTypeStrings.put("CORBA.WStringValue", new StringBuffer(java.lang.String.class.getName()));
+@@ -207,7 +207,7 @@
+ 
+     }
+ 
+-    public static final Hashtable kSpecialCasesRepIDs = new Hashtable();
++    private static final Hashtable kSpecialCasesRepIDs = new Hashtable();
+ 
+     static {
+         kSpecialCasesRepIDs.put(java.lang.String.class, kWStringValueRepID);
+@@ -215,7 +215,7 @@
+         kSpecialCasesRepIDs.put(java.rmi.Remote.class, kRemoteValueRepID);
+     }
+ 
+-    public static final Hashtable kSpecialCasesStubValues = new Hashtable();
++    private static final Hashtable kSpecialCasesStubValues = new Hashtable();
+ 
+     static {
+         kSpecialCasesStubValues.put(java.lang.String.class, kWStringStubValue);
+@@ -227,7 +227,7 @@
+     }
+ 
+ 
+-    public static final Hashtable kSpecialCasesVersions = new Hashtable();
++    private static final Hashtable kSpecialCasesVersions = new Hashtable();
+ 
+     static {
+         kSpecialCasesVersions.put(java.lang.String.class, kWStringValueHash);
+@@ -238,7 +238,7 @@
+         kSpecialCasesVersions.put(java.rmi.Remote.class, kRemoteValueHash);
+     }
+ 
+-    public static final Hashtable kSpecialCasesClasses = new Hashtable();
++    private static final Hashtable kSpecialCasesClasses = new Hashtable();
+ 
+     static {
+         kSpecialCasesClasses.put(kWStringTypeStr, java.lang.String.class);
+@@ -250,7 +250,7 @@
+         //kSpecialCasesClasses.put(kRemoteTypeStr, java.rmi.Remote.class);
+     }
+ 
+-    public static final Hashtable kSpecialCasesArrayPrefix = new Hashtable();
++    private static final Hashtable kSpecialCasesArrayPrefix = new Hashtable();
+ 
+     static {
+         kSpecialCasesArrayPrefix.put(java.lang.String.class, kValuePrefix + kSequencePrefix + kCORBAPrefix);
+@@ -261,7 +261,7 @@
+         kSpecialCasesArrayPrefix.put(java.rmi.Remote.class, kValuePrefix + kSequencePrefix + kCORBAPrefix);
+     }
+ 
+-    public static final Hashtable kSpecialPrimitives = new Hashtable();
++    private static final Hashtable kSpecialPrimitives = new Hashtable();
+ 
+     static {
+         kSpecialPrimitives.put("int","long");
+--- corba/src/share/classes/com/sun/corba/se/impl/protocol/LocalClientRequestDispatcherBase.java.orig	2012-05-01 17:14:05.000000000 -0400
++++ corba/src/share/classes/com/sun/corba/se/impl/protocol/LocalClientRequestDispatcherBase.java	2012-06-13 12:52:46.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2002, 2003, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2002, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -52,7 +52,7 @@
+ 
+     // If isNextIsLocalValid.get() == Boolean.TRUE,
+     // the next call to isLocal should be valid
+-    protected static ThreadLocal isNextCallValid = new ThreadLocal() {
++    private static final ThreadLocal isNextCallValid = new ThreadLocal() {
+             protected synchronized Object initialValue() {
+                 return Boolean.TRUE;
+             }
+--- corba/src/share/classes/com/sun/corba/se/impl/util/RepositoryId.java.orig	2012-05-01 17:14:05.000000000 -0400
++++ corba/src/share/classes/com/sun/corba/se/impl/util/RepositoryId.java	2012-06-13 12:52:46.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1998, 2004, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1998, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -57,7 +57,7 @@
+     // uniformly, and is safe because that is the only
+     // legal use of '.' in a Java name.
+ 
+-    public static final byte[] IDL_IDENTIFIER_CHARS = {
++    private static final byte[] IDL_IDENTIFIER_CHARS = {
+ 
+         // 0 1 2 3  4 5 6 7  8 9 a b  c d e f
+         0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, // 00-0f
+@@ -95,7 +95,7 @@
+     private static IdentityHashtable classIDLToRepStr = new IdentityHashtable();
+     private static IdentityHashtable classSeqToRepStr = new IdentityHashtable();
+ 
+-    private static IdentityHashtable repStrToByteArray = new IdentityHashtable();
++    private static final IdentityHashtable repStrToByteArray = new IdentityHashtable();
+     private static Hashtable repStrToClass = new Hashtable();
+ 
+     private String repId = null;
+@@ -192,7 +192,7 @@
+     public static final String kRemoteTypeStr = "";
+     public static final String kRemoteValueRepID = "";
+ 
+-    public static final Hashtable kSpecialArrayTypeStrings = new Hashtable();
++    private static final Hashtable kSpecialArrayTypeStrings = new Hashtable();
+ 
+     static {
+         kSpecialArrayTypeStrings.put("CORBA.WStringValue", new StringBuffer(java.lang.String.class.getName()));
+@@ -201,7 +201,7 @@
+ 
+     }
+ 
+-    public static final Hashtable kSpecialCasesRepIDs = new Hashtable();
++    private static final Hashtable kSpecialCasesRepIDs = new Hashtable();
+ 
+     static {
+         kSpecialCasesRepIDs.put(java.lang.String.class, kWStringValueRepID);
+@@ -209,7 +209,7 @@
+         kSpecialCasesRepIDs.put(java.rmi.Remote.class, kRemoteValueRepID);
+     }
+ 
+-    public static final Hashtable kSpecialCasesStubValues = new Hashtable();
++    private static final Hashtable kSpecialCasesStubValues = new Hashtable();
+ 
+     static {
+         kSpecialCasesStubValues.put(java.lang.String.class, kWStringStubValue);
+@@ -221,7 +221,7 @@
+     }
+ 
+ 
+-    public static final Hashtable kSpecialCasesVersions = new Hashtable();
++    private static final Hashtable kSpecialCasesVersions = new Hashtable();
+ 
+     static {
+         kSpecialCasesVersions.put(java.lang.String.class, kWStringValueHash);
+@@ -232,7 +232,7 @@
+         kSpecialCasesVersions.put(java.rmi.Remote.class, kRemoteValueHash);
+     }
+ 
+-    public static final Hashtable kSpecialCasesClasses = new Hashtable();
++    private static final Hashtable kSpecialCasesClasses = new Hashtable();
+ 
+     static {
+         kSpecialCasesClasses.put(kWStringTypeStr, java.lang.String.class);
+@@ -244,7 +244,7 @@
+         //kSpecialCasesClasses.put(kRemoteTypeStr, java.rmi.Remote.class);
+     }
+ 
+-    public static final Hashtable kSpecialCasesArrayPrefix = new Hashtable();
++    private static final Hashtable kSpecialCasesArrayPrefix = new Hashtable();
+ 
+     static {
+         kSpecialCasesArrayPrefix.put(java.lang.String.class, kValuePrefix + kSequencePrefix + kCORBAPrefix);
+@@ -255,7 +255,7 @@
+         kSpecialCasesArrayPrefix.put(java.rmi.Remote.class, kValuePrefix + kSequencePrefix + kCORBAPrefix);
+     }
+ 
+-    public static final Hashtable kSpecialPrimitives = new Hashtable();
++    private static final Hashtable kSpecialPrimitives = new Hashtable();
+ 
+     static {
+         kSpecialPrimitives.put("int","long");
+--- corba/src/share/classes/com/sun/corba/se/spi/logging/CORBALogDomains.java.orig	2012-05-01 17:14:06.000000000 -0400
++++ corba/src/share/classes/com/sun/corba/se/spi/logging/CORBALogDomains.java	2012-06-13 12:52:46.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2003, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2003, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -58,7 +58,7 @@
+     private CORBALogDomains() {}
+ 
+     // Top level log domain for CORBA
+-    public static String TOP_LEVEL_DOMAIN  = "javax.enterprise.resource.corba";
++    public static final String TOP_LEVEL_DOMAIN  = "javax.enterprise.resource.corba";
+ 
+     public static final String RPC              = "rpc" ;
+ 
+--- corba/src/share/classes/sun/rmi/rmic/iiop/IDLNames.java.orig	2012-05-01 17:14:07.000000000 -0400
++++ corba/src/share/classes/sun/rmi/rmic/iiop/IDLNames.java	2012-06-13 12:52:46.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1998, 2007, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1998, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -71,6 +71,34 @@
+         (byte)'F',
+     };
+ 
++    // Legal IDL Identifier characters (1 = legal). Note
++    // that '.' (2E) is marked as legal even though it is
++    // not legal in IDL. This allows us to treat a fully
++    // qualified Java name with '.' package separators
++    // uniformly, and is safe because that is the only
++    // legal use of '.' in a Java name.
++
++    private static final byte[] IDL_IDENTIFIER_CHARS = {
++
++        // 0 1 2 3  4 5 6 7  8 9 a b  c d e f
++        0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, // 00-0f
++        0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, // 10-1f
++        0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,1,0, // 20-2f
++        1,1,1,1, 1,1,1,1, 1,1,0,0, 0,0,0,0, // 30-3f
++        0,1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1, // 40-4f
++        1,1,1,1, 1,1,1,1, 1,1,1,0, 0,0,0,1, // 50-5f
++        0,1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1, // 60-6f
++        1,1,1,1, 1,1,1,1, 1,1,1,0, 0,0,0,0, // 70-7f
++        0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, // 80-8f
++        0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, // 90-9f
++        0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, // a0-af
++        0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, // b0-bf
++        1,1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1, // c0-cf
++        0,1,1,1, 1,1,1,0, 1,1,1,1, 1,0,0,1, // d0-df
++        1,1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1, // e0-ef
++        0,1,1,1, 1,1,1,0, 1,1,1,1, 1,0,0,1, // f0-ff
++    };
++
+     //_____________________________________________________________________
+     // Public Interfaces
+     //_____________________________________________________________________
+@@ -139,7 +167,7 @@
+         result = replace(result,"x\\U","U");
+ 
+         // Now see if we have any remaining illegal characters (see
+-        // RepositoryId.IDL_IDENTIFIER_CHARS array)...
++        // IDL_IDENTIFIER_CHARS array)...
+ 
+         int length = result.length();
+         StringBuffer buffer = null;
+@@ -148,7 +176,7 @@
+ 
+             char c = result.charAt(i);
+ 
+-            if (c > 255 || RepositoryId.IDL_IDENTIFIER_CHARS[c] == 0) {
++            if (c > 255 || IDL_IDENTIFIER_CHARS[c] == 0) {
+ 
+                 // We gotta convert. Have we already started?
+ 
+--- corba/src/share/classes/sun/rmi/rmic/iiop/StubGenerator.java.orig	2012-05-01 17:14:07.000000000 -0400
++++ corba/src/share/classes/sun/rmi/rmic/iiop/StubGenerator.java	2012-06-13 12:53:31.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1998, 2007, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1998, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -425,7 +425,7 @@
+         // Write the _ids() method...
+ 
+         p.plnI("public String[] _ids() { ");
+-        p.pln("return _type_ids;");
++        p.pln("return (String[]) _type_ids.clone();");
+         p.pOln("}");
+ 
+         // Get all the methods and write each stub method...
+@@ -1860,11 +1860,11 @@
+     {
+         if(POATie){
+         p.plnI("public String[] _all_interfaces(org.omg.PortableServer.POA poa, byte[] objectId){");
+-        p.pln("return _type_ids;");
++        p.pln("return (String[]) _type_ids.clone();");
+         p.pOln("}");
+         } else {
+         p.plnI("public String[] _ids() { ");
+-        p.pln("return _type_ids;");
++        p.pln("return (String[]) _type_ids.clone();");
+         p.pOln("}");
+         }
+     }
+--- hotspot/src/share/vm/ci/ciField.cpp.orig	2012-05-01 17:15:10.000000000 -0400
++++ hotspot/src/share/vm/ci/ciField.cpp	2012-06-13 12:55:31.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1999, 2010, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1999, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -67,7 +67,7 @@
+ 
+ // ------------------------------------------------------------------
+ // ciField::ciField
+-ciField::ciField(ciInstanceKlass* klass, int index): _known_to_link_with(NULL) {
++ciField::ciField(ciInstanceKlass* klass, int index): _known_to_link_with_put(NULL), _known_to_link_with_get(NULL) {
+   ASSERT_IN_VM;
+   CompilerThread *thread = CompilerThread::current();
+ 
+@@ -143,7 +143,7 @@
+   initialize_from(&field_desc);
+ }
+ 
+-ciField::ciField(fieldDescriptor *fd): _known_to_link_with(NULL) {
++ciField::ciField(fieldDescriptor *fd): _known_to_link_with_put(NULL), _known_to_link_with_get(NULL) {
+   ASSERT_IN_VM;
+ 
+   _cp_index = -1;
+@@ -312,6 +312,10 @@
+ bool ciField::will_link(ciInstanceKlass* accessing_klass,
+                         Bytecodes::Code bc) {
+   VM_ENTRY_MARK;
++  assert(bc == Bytecodes::_getstatic || bc == Bytecodes::_putstatic ||
++         bc == Bytecodes::_getfield  || bc == Bytecodes::_putfield,
++         "unexpected bytecode");
++
+   if (_offset == -1) {
+     // at creation we couldn't link to our holder so we need to
+     // maintain that stance, otherwise there's no safe way to use this
+@@ -319,8 +323,22 @@
+     return false;
+   }
+ 
+-  if (_known_to_link_with == accessing_klass) {
+-    return true;
++  // Check for static/nonstatic mismatch
++  bool is_static = (bc == Bytecodes::_getstatic || bc == Bytecodes::_putstatic);
++  if (is_static != this->is_static()) {
++    return false;
++  }
++
++  // Get and put can have different accessibility rules
++  bool is_put    = (bc == Bytecodes::_putfield  || bc == Bytecodes::_putstatic);
++  if (is_put) {
++    if (_known_to_link_with_put == accessing_klass) {
++      return true;
++    }
++  } else {
++    if (_known_to_link_with_get == accessing_klass) {
++      return true;
++    }
+   }
+ 
+   FieldAccessInfo result;
+@@ -331,8 +349,13 @@
+                               true, false, KILL_COMPILE_ON_FATAL_(false));
+ 
+   // update the hit-cache, unless there is a problem with memory scoping:
+-  if (accessing_klass->is_shared() || !is_shared())
+-    _known_to_link_with = accessing_klass;
++  if (accessing_klass->is_shared() || !is_shared()) {
++    if (is_put) {
++      _known_to_link_with_put = accessing_klass;
++    } else {
++      _known_to_link_with_get = accessing_klass;
++    }
++  }
+ 
+   return true;
+ }
+--- hotspot/src/share/vm/ci/ciField.hpp.orig	2012-05-01 17:15:10.000000000 -0400
++++ hotspot/src/share/vm/ci/ciField.hpp	2012-06-13 12:54:48.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1999, 2010, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1999, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -49,7 +49,8 @@
+   ciType*          _type;
+   int              _offset;
+   bool             _is_constant;
+-  ciInstanceKlass* _known_to_link_with;
++  ciInstanceKlass* _known_to_link_with_put;
++  ciInstanceKlass* _known_to_link_with_get;
+   ciConstant       _constant_value;
+ 
+   // Used for will_link
+--- hotspot/src/share/vm/classfile/verifier.cpp.orig	2012-05-01 17:15:10.000000000 -0400
++++ hotspot/src/share/vm/classfile/verifier.cpp	2012-06-13 12:55:56.000000000 -0400
+@@ -1871,10 +1871,10 @@
+   VerificationType type = current_frame->pop_stack(
+     VerificationType::reference_check(), CHECK_VERIFY(this));
+   if (type == VerificationType::uninitialized_this_type()) {
+-    // The method must be an <init> method of either this class, or one of its
+-    // superclasses
++    // The method must be an <init> method of this class or its superclass
++    klassOop superk = current_class()->super();
+     if (ref_class_type.name() != current_class()->name() &&
+-        !name_in_supers(ref_class_type.name(), current_class())) {
++        ref_class_type.name() != superk->klass_part()->name()) {
+       verify_error(bci, "Bad <init> method call");
+       return;
+     }
+--- hotspot/src/share/vm/compiler/compilerOracle.cpp.orig	2012-05-01 17:15:10.000000000 -0400
++++ hotspot/src/share/vm/compiler/compilerOracle.cpp	2012-06-13 12:52:55.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1998, 2010, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1998, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -551,13 +551,22 @@
+ }
+ 
+ static const char* cc_file() {
+-  if (CompileCommandFile == NULL)
++#ifdef ASSERT
++  if (CompileCommandFile == NULL) {
+     return ".hotspot_compiler";
++  }
++#endif
+   return CompileCommandFile;
+ }
++
++bool CompilerOracle::has_command_file() {
++  return cc_file() != NULL;
++}
++
+ bool CompilerOracle::_quiet = false;
+ 
+ void CompilerOracle::parse_from_file() {
++  assert(has_command_file(), "command file must be specified");
+   FILE* stream = fopen(cc_file(), "rt");
+   if (stream == NULL) return;
+ 
+@@ -600,6 +609,7 @@
+ }
+ 
+ void CompilerOracle::append_comment_to_file(const char* message) {
++  assert(has_command_file(), "command file must be specified");
+   fileStream stream(fopen(cc_file(), "at"));
+   stream.print("# ");
+   for (int index = 0; message[index] != '\0'; index++) {
+@@ -610,6 +620,7 @@
+ }
+ 
+ void CompilerOracle::append_exclude_to_file(methodHandle method) {
++  assert(has_command_file(), "command file must be specified");
+   fileStream stream(fopen(cc_file(), "at"));
+   stream.print("exclude ");
+   Klass::cast(method->method_holder())->name()->print_symbol_on(&stream);
+@@ -624,7 +635,9 @@
+ void compilerOracle_init() {
+   CompilerOracle::parse_from_string(CompileCommand, CompilerOracle::parse_from_line);
+   CompilerOracle::parse_from_string(CompileOnly, CompilerOracle::parse_compile_only);
+-  CompilerOracle::parse_from_file();
++  if (CompilerOracle::has_command_file()) {
++    CompilerOracle::parse_from_file();
++  }
+   if (lists[PrintCommand] != NULL) {
+     if (PrintAssembly) {
+       warning("CompileCommand and/or .hotspot_compiler file contains 'print' commands, but PrintAssembly is also enabled");
+--- hotspot/src/share/vm/compiler/compilerOracle.hpp.orig	2012-05-01 17:15:10.000000000 -0400
++++ hotspot/src/share/vm/compiler/compilerOracle.hpp	2012-06-13 12:52:55.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1998, 2010, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1998, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -38,6 +38,10 @@
+   static bool _quiet;
+ 
+  public:
++
++  // True if the command file has been specified or is implicit
++  static bool has_command_file();
++
+   // Reads from file and adds to lists
+   static void parse_from_file();
+ 
+--- hotspot/src/share/vm/opto/runtime.cpp.orig	2012-05-01 17:15:13.000000000 -0400
++++ hotspot/src/share/vm/opto/runtime.cpp	2012-06-13 12:52:55.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1998, 2010, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1998, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -804,7 +804,8 @@
+       methodOop method = ((nmethod*)n)->method();
+       tty->print_cr("# Method where it happened %s.%s ", Klass::cast(method->method_holder())->name()->as_C_string(), method->name()->as_C_string());
+       tty->print_cr("#");
+-      if (ShowMessageBoxOnError && UpdateHotSpotCompilerFileOnError) {
++      if (ShowMessageBoxOnError && UpdateHotSpotCompilerFileOnError &&
++          CompilerOracle::has_command_file()) {
+         const char* title    = "HotSpot Runtime Error";
+         const char* question = "Do you want to exclude compilation of this method in future runs?";
+         if (os::message_box(title, question)) {
+--- hotspot/src/share/vm/runtime/arguments.cpp.orig	2012-05-01 17:15:13.000000000 -0400
++++ hotspot/src/share/vm/runtime/arguments.cpp	2012-06-13 12:52:55.000000000 -0400
+@@ -2956,12 +2956,14 @@
+     }
+   }
+ 
++#ifdef ASSERT
+   // Parse default .hotspotrc settings file
+   if (!settings_file_specified) {
+     if (!process_settings_file(".hotspotrc", false, args->ignoreUnrecognized)) {
+       return JNI_EINVAL;
+     }
+   }
++#endif
+ 
+   if (PrintVMOptions) {
+     for (index = 0; index < args->nOptions; index++) {
+--- jaxp/build.properties.orig	2012-05-01 17:15:26.000000000 -0400
++++ jaxp/build.properties	2012-06-13 12:55:23.000000000 -0400
+@@ -77,6 +77,9 @@
+ # Where patches to drop bundle sources live
+ patches.dir=patches
+ 
++# Patches to apply
++jaxp_src.patch.list=7157609.patch
++
+ # Sanity information
+ sanity.info= Sanity Settings:${line.separator}\
+   ant.home=${ant.home}${line.separator}\
+--- jaxp/patches/jaxp_src/7157609.patch.orig	2012-06-13 12:55:23.000000000 -0400
++++ jaxp/patches/jaxp_src/7157609.patch	2012-06-13 12:55:23.000000000 -0400
+@@ -0,0 +1,38 @@
++# HG changeset patch
++# User joehw
++# Date 1333729977 25200
++# Node ID abc9f6855a61c74ca11183ec49fcbbb9e4fa29b1
++# Parent  3f8b55667a6f9d093fcaf4a70c784c426b00685b
++7157609: Issues with loop
++Reviewed-by: hawtin, lancea
++
++diff --git a/src/com/sun/org/apache/xerces/internal/impl/XMLScanner.java b/src/com/sun/org/apache/xerces/internal/impl/XMLScanner.java
++--- src/com/sun/org/apache/xerces/internal/impl/XMLScanner.java
+++++ src/com/sun/org/apache/xerces/internal/impl/XMLScanner.java
++@@ -402,6 +402,16 @@ public abstract class XMLScanner
++ 
++         boolean dataFoundForTarget = false;
++         boolean sawSpace = fEntityScanner.skipSpaces();
+++        // since pseudoattributes are *not* attributes,
+++        // their quotes don't need to be preserved in external parameter entities.
+++        // the XMLEntityScanner#scanLiteral method will continue to
+++        // emit -1 in such cases when it finds a quote; this is
+++        // fine for other methods that parse scanned entities,
+++        // but not for the scanning of pseudoattributes.  So,
+++        // temporarily, we must mark the current entity as not being "literal"
+++        Entity.ScannedEntity currEnt = fEntityManager.getCurrentEntity();
+++        boolean currLiteral = currEnt.literal;
+++        currEnt.literal = false;
++         while (fEntityScanner.peekChar() != '?') {
++             dataFoundForTarget = true;
++             String name = scanPseudoAttribute(scanningTextDecl, fString);
++@@ -499,6 +509,9 @@ public abstract class XMLScanner
++             }
++             sawSpace = fEntityScanner.skipSpaces();
++         }
+++        // restore original literal value
+++        if(currLiteral)
+++            currEnt.literal = true;
++         // REVISIT: should we remove this error reporting?
++         if (scanningTextDecl && state != STATE_DONE) {
++             reportFatalError("MorePseudoAttributes", null);
+--- jdk/make/com/sun/jmx/Makefile.orig	2012-05-01 17:17:59.000000000 -0400
++++ jdk/make/com/sun/jmx/Makefile	2012-06-13 12:53:31.000000000 -0400
+@@ -1,5 +1,5 @@
+ #
+-# Copyright (c) 2003, 2010, Oracle and/or its affiliates. All rights reserved.
++# Copyright (c) 2003, 2012, Oracle and/or its affiliates. All rights reserved.
+ # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ #
+ # This code is free software; you can redistribute it and/or modify it
+@@ -98,6 +98,21 @@
+ # so that *_tie classes are generated in package without the prefix
+ # org.omg.stub (6375696)
+ # 
++# To ensure the latest stub generator files are picked up from corba repo
++# when available, we need to run with latest rmic version available. rmic 
++# launch tool not built at this stage but we can invoke via rmi class.
++
++RMIC_JAVA = $(OUTPUTDIR)/bin/java
++# need to treat 64bit solaris differently
++ifeq ($(PLATFORM)-$(LIBARCH), solaris-amd64)
++RMIC_JAVA = $(OUTPUTDIR)/bin/amd64/java
++endif
++ifeq ($(PLATFORM)-$(LIBARCH), solaris-sparcv9)
++RMIC_JAVA = $(OUTPUTDIR)/bin/sparcv9/java
++endif
++
++RMIC = $(RMIC_JAVA) $(JAVA_TOOLS_FLAGS) -cp $(OUTPUTDIR)/classes sun.rmi.rmic.Main
++
+ $(CLASSDESTDIR)/%_Stub.class: $(CLASSDESTDIR)/%.class
+ 	$(prep-target)
+ 	$(RMIC) -classpath "$(CLASSDESTDIR)"    \
+--- jdk/src/share/classes/com/sun/java/util/jar/pack/Driver.java.orig	2012-05-01 17:18:04.000000000 -0400
++++ jdk/src/share/classes/com/sun/java/util/jar/pack/Driver.java	2012-06-13 12:53:06.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2003, 2005, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2003, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -354,8 +354,7 @@
+             where = new File(".").getAbsoluteFile();
+ 
+ 
+-        File f = File.createTempFile(prefix, suffix, where);
+-        return f;
++        return sun.misc.IOUtils.createTempFile(prefix, suffix, where);
+     }
+ 
+     static private
+--- jdk/src/share/classes/java/awt/Font.java.orig	2012-05-01 17:18:08.000000000 -0400
++++ jdk/src/share/classes/java/awt/Font.java	2012-06-13 12:53:06.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1995, 2010, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1995, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -809,7 +809,7 @@
+         File f = null;
+         boolean hasPerm = false;
+         try {
+-            f = File.createTempFile("+~JT", ".tmp", null);
++            f = sun.misc.IOUtils.createTempFile("+~JT", ".tmp", null);
+             f.delete();
+             f = null;
+             hasPerm = true;
+@@ -860,7 +860,7 @@
+             final File tFile = AccessController.doPrivileged(
+                 new PrivilegedExceptionAction<File>() {
+                     public File run() throws IOException {
+-                        return File.createTempFile("+~JF", ".tmp", null);
++                        return sun.misc.IOUtils.createTempFile("+~JF", ".tmp", null);
+                     }
+                 }
+             );
+--- jdk/src/share/classes/java/io/File.java.orig	2012-05-01 17:18:09.000000000 -0400
++++ jdk/src/share/classes/java/io/File.java	2012-06-13 12:53:06.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1994, 2007, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1994, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -897,7 +897,7 @@
+     public boolean createNewFile() throws IOException {
+         SecurityManager security = System.getSecurityManager();
+         if (security != null) security.checkWrite(path);
+-        return fs.createFileExclusively(path);
++        return fs.createFileExclusively(path, false);
+     }
+ 
+     /**
+@@ -1700,7 +1700,8 @@
+         return new File(dir, prefix + Long.toString(n) + suffix);
+     }
+ 
+-    private static boolean checkAndCreate(String filename, SecurityManager sm)
++    private static boolean checkAndCreate(String filename, SecurityManager sm,
++                                          boolean restrictive)
+         throws IOException
+     {
+         if (sm != null) {
+@@ -1713,7 +1714,29 @@
+                 throw new SecurityException("Unable to create temporary file");
+             }
+         }
+-        return fs.createFileExclusively(filename);
++        return fs.createFileExclusively(filename, restrictive);
++    }
++    
++    // The resulting temporary file may have more restrictive access permission
++    // on some platforms, if restrictive is true.
++    private static File createTempFile0(String prefix, String suffix,
++                                        File directory, boolean restrictive)
++        throws IOException
++    {
++        if (prefix == null) throw new NullPointerException();
++        if (prefix.length() < 3)
++            throw new IllegalArgumentException("Prefix string too short");
++        String s = (suffix == null) ? ".tmp" : suffix;
++        if (directory == null) {
++            String tmpDir = LazyInitialization.temporaryDirectory();
++            directory = new File(tmpDir, fs.prefixLength(tmpDir));
++        }
++        SecurityManager sm = System.getSecurityManager();
++        File f;
++        do {
++            f = generateFile(prefix, s, directory);
++        } while (!checkAndCreate(f.getPath(), sm, restrictive));
++        return f;
+     }
+ 
+     /**
+@@ -1789,20 +1812,7 @@
+                                       File directory)
+         throws IOException
+     {
+-        if (prefix == null) throw new NullPointerException();
+-        if (prefix.length() < 3)
+-            throw new IllegalArgumentException("Prefix string too short");
+-        String s = (suffix == null) ? ".tmp" : suffix;
+-        if (directory == null) {
+-            String tmpDir = LazyInitialization.temporaryDirectory();
+-            directory = new File(tmpDir, fs.prefixLength(tmpDir));
+-        }
+-        SecurityManager sm = System.getSecurityManager();
+-        File f;
+-        do {
+-            f = generateFile(prefix, s, directory);
+-        } while (!checkAndCreate(f.getPath(), sm));
+-        return f;
++        return createTempFile0(prefix, suffix, directory, false);
+     }
+ 
+     /**
+@@ -1837,7 +1847,7 @@
+     public static File createTempFile(String prefix, String suffix)
+         throws IOException
+     {
+-        return createTempFile(prefix, suffix, null);
++        return createTempFile0(prefix, suffix, null, false);
+     }
+ 
+ 
+@@ -1959,6 +1969,15 @@
+             }
+         );
+     }
+-
+-
++    
++    // Set up JavaIOAccess in SharedSecrets
++    static {
++        sun.misc.SharedSecrets.setJavaIOFileAccess(new sun.misc.JavaIOFileAccess() {
++            public File createTempFile(String prefix, String suffix, File directory)
++                throws IOException
++            {
++                return createTempFile0(prefix, suffix, directory, true);
++            }
++        });
++    }
+ }
+--- jdk/src/share/classes/java/io/FileSystem.java.orig	2012-05-01 17:18:09.000000000 -0400
++++ jdk/src/share/classes/java/io/FileSystem.java	2012-06-13 12:53:06.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1998, 2005, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1998, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -157,8 +157,13 @@
+      * <code>true</code> if the file was created and <code>false</code> if a
+      * file or directory with the given pathname already exists.  Throw an
+      * IOException if an I/O error occurs.
++     *
++     * <p>
++     * The resulting file may have more restrictive access permission
++     * on some platforms, if restrictive is true. 
+      */
+-    public abstract boolean createFileExclusively(String pathname)
++    public abstract boolean createFileExclusively(String pathname,
++                                                  boolean restrictive)
+         throws IOException;
+ 
+     /**
+--- jdk/src/share/classes/javax/imageio/stream/FileCacheImageInputStream.java.orig	2012-05-01 17:18:13.000000000 -0400
++++ jdk/src/share/classes/javax/imageio/stream/FileCacheImageInputStream.java	2012-06-13 12:53:06.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2000, 2007, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2000, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -98,7 +98,7 @@
+         }
+         this.stream = stream;
+         this.cacheFile =
+-            File.createTempFile("imageio", ".tmp", cacheDir);
++            sun.misc.IOUtils.createTempFile("imageio", ".tmp", cacheDir);
+         this.cache = new RandomAccessFile(cacheFile, "rw");
+ 
+         this.closeAction = StreamCloser.createCloseAction(this);
+--- jdk/src/share/classes/javax/imageio/stream/FileCacheImageOutputStream.java.orig	2012-05-01 17:18:13.000000000 -0400
++++ jdk/src/share/classes/javax/imageio/stream/FileCacheImageOutputStream.java	2012-06-13 12:53:06.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2000, 2007, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2000, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -84,7 +84,7 @@
+         }
+         this.stream = stream;
+         this.cacheFile =
+-            File.createTempFile("imageio", ".tmp", cacheDir);
++            sun.misc.IOUtils.createTempFile("imageio", ".tmp", cacheDir);
+         this.cache = new RandomAccessFile(cacheFile, "rw");
+ 
+         this.closeAction = StreamCloser.createCloseAction(this);
+--- jdk/src/share/classes/javax/management/loading/MLet.java.orig	2012-05-01 17:18:13.000000000 -0400
++++ jdk/src/share/classes/javax/management/loading/MLet.java	2012-06-13 12:53:06.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1999, 2007, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1999, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -1152,7 +1152,7 @@
+              if (is != null) {
+                  File directory = new File(libraryDirectory);
+                  directory.mkdirs();
+-                 File file = File.createTempFile(libname + ".", null, directory);
++                 File file = sun.misc.IOUtils.createTempFile(libname + ".", null, directory);
+                  file.deleteOnExit();
+                  FileOutputStream fileOutput = new FileOutputStream(file);
+                  int c;
+--- jdk/src/share/classes/javax/swing/plaf/synth/SynthButtonUI.java.orig	2012-05-01 17:18:17.000000000 -0400
++++ jdk/src/share/classes/javax/swing/plaf/synth/SynthButtonUI.java	2012-06-13 12:53:13.000000000 -0400
+@@ -135,8 +135,8 @@
+         if (!c.isEnabled()) {
+             state = DISABLED;
+         }
+-        if (SynthLookAndFeel.selectedUI == this) {
+-            return SynthLookAndFeel.selectedUIState | SynthConstants.ENABLED;
++        if (SynthLookAndFeel.getSelectedUI() == this) {
++            return SynthLookAndFeel.getSelectedUIState() | SynthConstants.ENABLED;
+         }
+         AbstractButton button = (AbstractButton) c;
+         ButtonModel model = button.getModel();
+--- jdk/src/share/classes/javax/swing/plaf/synth/SynthLabelUI.java.orig	2012-05-01 17:18:17.000000000 -0400
++++ jdk/src/share/classes/javax/swing/plaf/synth/SynthLabelUI.java	2012-06-13 12:53:13.000000000 -0400
+@@ -94,9 +94,9 @@
+ 
+     private int getComponentState(JComponent c) {
+         int state = SynthLookAndFeel.getComponentState(c);
+-        if (SynthLookAndFeel.selectedUI == this &&
++        if (SynthLookAndFeel.getSelectedUI() == this &&
+                         state == SynthConstants.ENABLED) {
+-            state = SynthLookAndFeel.selectedUIState | SynthConstants.ENABLED;
++            state = SynthLookAndFeel.getSelectedUIState() | SynthConstants.ENABLED;
+         }
+         return state;
+     }
+--- jdk/src/share/classes/javax/swing/plaf/synth/SynthLookAndFeel.java.orig	2012-05-01 17:18:17.000000000 -0400
++++ jdk/src/share/classes/javax/swing/plaf/synth/SynthLookAndFeel.java	2012-06-13 12:53:13.000000000 -0400
+@@ -78,27 +78,25 @@
+     private static final Object STYLE_FACTORY_KEY = new Object(); // com.sun.java.swing.plaf.gtk.StyleCache
+ 
+     /**
++     * AppContext key to get selectedUI.
++     */
++    private static final Object SELECTED_UI_KEY = new StringBuilder("selectedUI");
++
++    /**
++     * AppContext key to get selectedUIState.
++     */
++    private static final Object SELECTED_UI_STATE_KEY = new StringBuilder("selectedUIState");
++
++    /**
+      * The last SynthStyleFactory that was asked for from AppContext
+      * <code>lastContext</code>.
+      */
+     private static SynthStyleFactory lastFactory;
+     /**
+-     * If this is true it indicates there is more than one AppContext active
+-     * and that we need to make sure in getStyleCache the requesting
+-     * AppContext matches that of <code>lastContext</code> before returning
+-     * it.
+-     */
+-    private static boolean multipleApps;
+-    /**
+      * AppContext lastLAF came from.
+      */
+     private static AppContext lastContext;
+ 
+-    // Refer to setSelectedUI
+-    static ComponentUI selectedUI;
+-    // Refer to setSelectedUI
+-    static int selectedUIState;
+-
+     /**
+      * SynthStyleFactory for the this SynthLookAndFeel.
+      */
+@@ -112,6 +110,10 @@
+ 
+     private Handler _handler;
+ 
++    static ComponentUI getSelectedUI() {
++        return (ComponentUI) AppContext.getAppContext().get(SELECTED_UI_KEY);
++    }
++
+     /**
+      * Used by the renderers. For the most part the renderers are implemented
+      * as Labels, which is problematic in so far as they are never selected.
+@@ -123,8 +125,8 @@
+     static void setSelectedUI(ComponentUI uix, boolean selected,
+                               boolean focused, boolean enabled,
+                               boolean rollover) {
+-        selectedUI = uix;
+-        selectedUIState = 0;
++        int selectedUIState = 0;
++
+         if (selected) {
+             selectedUIState = SynthConstants.SELECTED;
+             if (focused) {
+@@ -141,19 +143,32 @@
+         else {
+             if (enabled) {
+                 selectedUIState |= SynthConstants.ENABLED;
+-                selectedUIState = SynthConstants.FOCUSED;
++                if (focused) {
++                    selectedUIState |= SynthConstants.FOCUSED;
++                }
+             }
+             else {
+                 selectedUIState |= SynthConstants.DISABLED;
+             }
+         }
++
++        AppContext context = AppContext.getAppContext();
++
++        context.put(SELECTED_UI_KEY, uix);
++        context.put(SELECTED_UI_STATE_KEY, Integer.valueOf(selectedUIState));
++    }
++
++    static int getSelectedUIState() {
++        Integer result = (Integer) AppContext.getAppContext().get(SELECTED_UI_STATE_KEY);
++
++        return result == null ? 0 : result.intValue();
+     }
+ 
+     /**
+      * Clears out the selected UI that was last set in setSelectedUI.
+      */
+     static void resetSelectedUI() {
+-        selectedUI = null;
++        AppContext.getAppContext().remove(SELECTED_UI_KEY);
+     }
+ 
+ 
+@@ -168,10 +183,6 @@
+         // for a particular AppContext.
+         synchronized(SynthLookAndFeel.class) {
+             AppContext context = AppContext.getAppContext();
+-            if (!multipleApps && context != lastContext &&
+-                                 lastContext != null) {
+-                multipleApps = true;
+-            }
+             lastFactory = cache;
+             lastContext = context;
+             context.put(STYLE_FACTORY_KEY, cache);
+@@ -185,17 +196,13 @@
+      */
+     public static SynthStyleFactory getStyleFactory() {
+         synchronized(SynthLookAndFeel.class) {
+-            if (!multipleApps) {
+-                return lastFactory;
+-            }
+             AppContext context = AppContext.getAppContext();
+ 
+             if (lastContext == context) {
+                 return lastFactory;
+             }
+             lastContext = context;
+-            lastFactory = (SynthStyleFactory)AppContext.getAppContext().get
+-                                           (STYLE_FACTORY_KEY);
++            lastFactory = (SynthStyleFactory) context.get(STYLE_FACTORY_KEY);
+             return lastFactory;
+         }
+     }
+--- jdk/src/share/classes/sun/misc/IOUtils.java.orig	2012-05-01 17:18:21.000000000 -0400
++++ jdk/src/share/classes/sun/misc/IOUtils.java	2012-06-13 12:53:06.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2009, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2009, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -30,6 +30,7 @@
+ package sun.misc;
+ 
+ import java.io.EOFException;
++import java.io.File;
+ import java.io.IOException;
+ import java.io.InputStream;
+ import java.util.Arrays;
+@@ -77,4 +78,37 @@
+         }
+         return output;
+     }
++    
++    /*
++     * <p> Creates a new empty file in the specified directory, using the
++     * given prefix and suffix strings to generate its name. The resulting
++     * temporary file may have more restrictive access permission on some
++     * platforms.
++     *
++     * @param  prefix     The prefix string to be used in generating the file's
++     *                    name; must be at least three characters long
++     *
++     * @param  suffix     The suffix string to be used in generating the file's
++     *                    name; may be <code>null</code>, in which case the
++     *                    suffix <code>".tmp"</code> will be used
++     *
++     * @param  directory  The directory in which the file is to be created, or
++     *                    <code>null</code> if the default temporary-file
++     *                    directory is to be used
++     *
++     * @return  An abstract pathname denoting a newly-created empty file
++     *
++     * @see java.io.File#createTempFile(String,String,java.io.File)
++     */
++    public static File createTempFile(String prefix, String suffix, File directory)
++        throws IOException
++    {
++        return SharedSecrets.getJavaIOFileAccess().createTempFile(prefix, suffix, directory);
++    }
++
++    public static File createTempFile(String prefix, String suffix)
++        throws IOException
++    {
++        return SharedSecrets.getJavaIOFileAccess().createTempFile(prefix, suffix, null);
++    }
+ }
+--- jdk/src/share/classes/sun/misc/JavaIOFileAccess.java.orig	2012-06-13 12:53:06.000000000 -0400
++++ jdk/src/share/classes/sun/misc/JavaIOFileAccess.java	2012-06-13 12:53:06.000000000 -0400
+@@ -0,0 +1,35 @@
++/*
++ * Copyright (c) 2012, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Oracle designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Oracle in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ */
++
++package sun.misc;
++
++import java.io.File;
++import java.io.IOException;
++
++public interface JavaIOFileAccess {
++    public File createTempFile(String prefix, String suffix, File directory)
++        throws IOException;
++}
++
+--- jdk/src/share/classes/sun/misc/SharedSecrets.java.orig	2012-05-01 17:18:21.000000000 -0400
++++ jdk/src/share/classes/sun/misc/SharedSecrets.java	2012-06-13 12:53:06.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2002, 2011, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2002, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -53,6 +53,7 @@
+     private static JavaSecurityProtectionDomainAccess javaSecurityProtectionDomainAccess;
+     private static JavaSecurityAccess javaSecurityAccess;
+     private static JavaAWTAccess javaAWTAccess;
++    private static JavaIOFileAccess javaIOFileAccess;
+ 
+     public static JavaUtilJarAccess javaUtilJarAccess() {
+         if (javaUtilJarAccess == null) {
+@@ -149,4 +150,12 @@
+         // provision for.
+         return javaAWTAccess;
+     }
++    
++    public static void setJavaIOFileAccess(JavaIOFileAccess access) {
++        javaIOFileAccess = access;
++    }
++
++    public static JavaIOFileAccess getJavaIOFileAccess() {
++        return javaIOFileAccess;
++    }
+ }
+--- jdk/src/share/classes/sun/net/www/protocol/jar/URLJarFile.java.orig	2012-05-01 17:18:22.000000000 -0400
++++ jdk/src/share/classes/sun/net/www/protocol/jar/URLJarFile.java	2012-06-13 12:53:06.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2001, 2006, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2001, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -219,7 +219,7 @@
+                             OutputStream out = null;
+                             File tmpFile = null;
+                             try {
+-                                tmpFile = File.createTempFile("jar_cache", null);
++                                tmpFile = sun.misc.IOUtils.createTempFile("jar_cache", null);
+                                 tmpFile.deleteOnExit();
+                                 out  = new FileOutputStream(tmpFile);
+                                 int read = 0;
+--- jdk/src/share/classes/sun/print/PSPrinterJob.java.orig	2012-05-01 17:18:24.000000000 -0400
++++ jdk/src/share/classes/sun/print/PSPrinterJob.java	2012-06-13 12:53:06.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1998, 2007, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1998, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -652,7 +652,7 @@
+                      * is not removed for some reason, request that it is
+                      * removed when the VM exits.
+                      */
+-                    spoolFile = File.createTempFile("javaprint", ".ps", null);
++                    spoolFile = sun.misc.IOUtils.createTempFile("javaprint", ".ps", null);
+                     spoolFile.deleteOnExit();
+ 
+                 result = new FileOutputStream(spoolFile);
+--- jdk/src/share/classes/sun/rmi/server/Activation.java.orig	2012-05-01 17:18:25.000000000 -0400
++++ jdk/src/share/classes/sun/rmi/server/Activation.java	2012-06-13 12:53:06.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1997, 2006, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1997, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -1916,7 +1916,7 @@
+                     new PrivilegedExceptionAction<Void>() {
+                         public Void run() throws IOException {
+                             File file =
+-                                File.createTempFile("rmid-err", null, null);
++                                sun.misc.IOUtils.createTempFile("rmid-err", null, null);
+                             PrintStream errStream =
+                                 new PrintStream(new FileOutputStream(file));
+                             System.setErr(errStream);
+--- jdk/src/share/classes/sun/security/x509/CRLExtensions.java.orig	2012-05-01 17:18:27.000000000 -0400
++++ jdk/src/share/classes/sun/security/x509/CRLExtensions.java	2012-06-13 12:53:40.000000000 -0400
+@@ -32,8 +32,10 @@
+ import java.security.cert.CRLException;
+ import java.security.cert.CertificateException;
+ import java.util.Collection;
++import java.util.Collections;
+ import java.util.Enumeration;
+-import java.util.Hashtable;
++import java.util.Map;
++import java.util.TreeMap;
+ 
+ import sun.security.util.*;
+ import sun.misc.HexDumpEncoder;
+@@ -62,7 +64,8 @@
+  */
+ public class CRLExtensions {
+ 
+-    private Hashtable<String,Extension> map = new Hashtable<String,Extension>();
++    private Map<String,Extension> map = Collections.synchronizedMap(
++            new TreeMap<String,Extension>());
+     private boolean unsupportedCritExt = false;
+ 
+     /**
+@@ -215,7 +218,7 @@
+      * @return an enumeration of the extensions in this CRL.
+      */
+     public Enumeration<Extension> getElements() {
+-        return map.elements();
++        return Collections.enumeration(map.values());
+     }
+ 
+     /**
+--- jdk/src/share/classes/sun/security/x509/CertificateExtensions.java.orig	2012-05-01 17:18:27.000000000 -0400
++++ jdk/src/share/classes/sun/security/x509/CertificateExtensions.java	2012-06-13 12:53:40.000000000 -0400
+@@ -57,7 +57,8 @@
+ 
+     private static final Debug debug = Debug.getInstance("x509");
+ 
+-    private Hashtable<String,Extension> map = new Hashtable<String,Extension>();
++    private Map<String,Extension> map = Collections.synchronizedMap(
++            new TreeMap<String,Extension>());
+     private boolean unsupportedCritExt = false;
+ 
+     private Map<String,Extension> unparseableExtensions;
+@@ -117,7 +118,7 @@
+             if (ext.isCritical() == false) {
+                 // ignore errors parsing non-critical extensions
+                 if (unparseableExtensions == null) {
+-                    unparseableExtensions = new HashMap<String,Extension>();
++                    unparseableExtensions = new TreeMap<String,Extension>();
+                 }
+                 unparseableExtensions.put(ext.getExtensionId().toString(),
+                         new UnparseableExtension(ext, e));
+@@ -218,6 +219,12 @@
+         return (obj);
+     }
+ 
++    // Similar to get(String), but throw no exception, might return null.
++    // Used in X509CertImpl::getExtension(OID).
++    Extension getExtension(String name) {
++        return map.get(name);
++    }
++
+     /**
+      * Delete the attribute value.
+      * @param name the extension name used in the lookup.
+@@ -236,7 +243,7 @@
+      * attribute.
+      */
+     public Enumeration<Extension> getElements() {
+-        return map.elements();
++        return Collections.enumeration(map.values());
+     }
+ 
+     /**
+--- jdk/src/share/classes/sun/security/x509/X509CRLEntryImpl.java.orig	2012-05-01 17:18:27.000000000 -0400
++++ jdk/src/share/classes/sun/security/x509/X509CRLEntryImpl.java	2012-06-13 12:53:40.000000000 -0400
+@@ -31,11 +31,7 @@
+ import java.security.cert.CertificateException;
+ import java.security.cert.X509CRLEntry;
+ import java.math.BigInteger;
+-import java.util.Collection;
+-import java.util.Date;
+-import java.util.Enumeration;
+-import java.util.Set;
+-import java.util.HashSet;
++import java.util.*;
+ 
+ import javax.security.auth.x500.X500Principal;
+ 
+@@ -72,7 +68,8 @@
+  * @author Hemma Prafullchandra
+  */
+ 
+-public class X509CRLEntryImpl extends X509CRLEntry {
++public class X509CRLEntryImpl extends X509CRLEntry
++        implements Comparable<X509CRLEntryImpl> {
+ 
+     private SerialNumber serialNumber = null;
+     private Date revocationDate = null;
+@@ -193,9 +190,14 @@
+      * @exception CRLException if an encoding error occurs.
+      */
+     public byte[] getEncoded() throws CRLException {
++        return getEncoded0().clone();
++    }
++
++    // Called internally to avoid clone
++    private byte[] getEncoded0() throws CRLException {
+         if (revokedCert == null)
+             this.encode(new DerOutputStream());
+-        return revokedCert.clone();
++        return revokedCert;
+     }
+ 
+     @Override
+@@ -313,7 +315,7 @@
+         if (extensions == null) {
+             return null;
+         }
+-        Set<String> extSet = new HashSet<String>();
++        Set<String> extSet = new TreeSet<String>();
+         for (Extension ex : extensions.getAllExtensions()) {
+             if (ex.isCritical()) {
+                 extSet.add(ex.getExtensionId().toString());
+@@ -334,7 +336,7 @@
+         if (extensions == null) {
+             return null;
+         }
+-        Set<String> extSet = new HashSet<String>();
++        Set<String> extSet = new TreeSet<String>();
+         for (Extension ex : extensions.getAllExtensions()) {
+             if (!ex.isCritical()) {
+                 extSet.add(ex.getExtensionId().toString());
+@@ -461,4 +463,24 @@
+         return (CertificateIssuerExtension)
+             getExtension(PKIXExtensions.CertificateIssuer_Id);
+     }
++
++    @Override
++    public int compareTo(X509CRLEntryImpl that) {
++        int compSerial = getSerialNumber().compareTo(that.getSerialNumber());
++        if (compSerial != 0) {
++            return compSerial;
++        }
++        try {
++            byte[] thisEncoded = this.getEncoded0();
++            byte[] thatEncoded = that.getEncoded0();
++            for (int i=0; i<thisEncoded.length && i<thatEncoded.length; i++) {
++                int a = thisEncoded[i] & 0xff;
++                int b = thatEncoded[i] & 0xff;
++                if (a != b) return a-b;
++            }
++            return thisEncoded.length -thatEncoded.length;
++        } catch (CRLException ce) {
++            return -1;
++        }
++    }
+ }
+--- jdk/src/share/classes/sun/security/x509/X509CRLImpl.java.orig	2012-05-01 17:18:27.000000000 -0400
++++ jdk/src/share/classes/sun/security/x509/X509CRLImpl.java	2012-06-13 12:53:40.000000000 -0400
+@@ -53,7 +53,7 @@
+ 
+ /**
+  * <p>
+- * An implmentation for X509 CRL (Certificate Revocation List).
++ * An implementation for X509 CRL (Certificate Revocation List).
+  * <p>
+  * The X.509 v2 CRL format is described below in ASN.1:
+  * <pre>
+@@ -104,7 +104,8 @@
+     private X500Principal    issuerPrincipal = null;
+     private Date             thisUpdate = null;
+     private Date             nextUpdate = null;
+-    private Map<X509IssuerSerial,X509CRLEntry> revokedCerts = new LinkedHashMap<X509IssuerSerial,X509CRLEntry>();
++    private Map<X509IssuerSerial,X509CRLEntry> revokedMap = new TreeMap<X509IssuerSerial,X509CRLEntry>();
++    private List<X509CRLEntry> revokedList = new LinkedList<X509CRLEntry>();
+     private CRLExtensions    extensions = null;
+     private final static boolean isExplicit = true;
+     private static final long YR_2050 = 2524636800000L;
+@@ -223,7 +224,8 @@
+                 badCert.setCertificateIssuer(crlIssuer, badCertIssuer);
+                 X509IssuerSerial issuerSerial = new X509IssuerSerial
+                     (badCertIssuer, badCert.getSerialNumber());
+-                this.revokedCerts.put(issuerSerial, badCert);
++                this.revokedMap.put(issuerSerial, badCert);
++                this.revokedList.add(badCert);
+                 if (badCert.hasExtensions()) {
+                     this.version = 1;
+                 }
+@@ -305,8 +307,8 @@
+                     tmp.putGeneralizedTime(nextUpdate);
+             }
+ 
+-            if (!revokedCerts.isEmpty()) {
+-                for (X509CRLEntry entry : revokedCerts.values()) {
++            if (!revokedList.isEmpty()) {
++                for (X509CRLEntry entry : revokedList) {
+                     ((X509CRLEntryImpl)entry).encode(rCerts);
+                 }
+                 tmp.write(DerValue.tag_Sequence, rCerts);
+@@ -490,14 +492,14 @@
+             sb.append("\nThis Update: " + thisUpdate.toString() + "\n");
+         if (nextUpdate != null)
+             sb.append("Next Update: " + nextUpdate.toString() + "\n");
+-        if (revokedCerts.isEmpty())
++        if (revokedList.isEmpty())
+             sb.append("\nNO certificates have been revoked\n");
+         else {
+-            sb.append("\nRevoked Certificates: " + revokedCerts.size());
++            sb.append("\nRevoked Certificates: " + revokedList.size());
+             int i = 1;
+-            for (Iterator<X509CRLEntry> iter = revokedCerts.values().iterator();
+-                                             iter.hasNext(); i++)
+-                sb.append("\n[" + i + "] " + iter.next().toString());
++            for (X509CRLEntry entry: revokedList) {
++                sb.append("\n[" + i++ + "] " + entry.toString());
++            }
+         }
+         if (extensions != null) {
+             Collection<Extension> allExts = extensions.getAllExtensions();
+@@ -543,12 +545,12 @@
+      * false otherwise.
+      */
+     public boolean isRevoked(Certificate cert) {
+-        if (revokedCerts.isEmpty() || (!(cert instanceof X509Certificate))) {
++        if (revokedMap.isEmpty() || (!(cert instanceof X509Certificate))) {
+             return false;
+         }
+         X509Certificate xcert = (X509Certificate) cert;
+         X509IssuerSerial issuerSerial = new X509IssuerSerial(xcert);
+-        return revokedCerts.containsKey(issuerSerial);
++        return revokedMap.containsKey(issuerSerial);
+     }
+ 
+     /**
+@@ -638,24 +640,24 @@
+      * @see X509CRLEntry
+      */
+     public X509CRLEntry getRevokedCertificate(BigInteger serialNumber) {
+-        if (revokedCerts.isEmpty()) {
++        if (revokedMap.isEmpty()) {
+             return null;
+         }
+         // assume this is a direct CRL entry (cert and CRL issuer are the same)
+         X509IssuerSerial issuerSerial = new X509IssuerSerial
+             (getIssuerX500Principal(), serialNumber);
+-        return revokedCerts.get(issuerSerial);
++        return revokedMap.get(issuerSerial);
+     }
+ 
+     /**
+      * Gets the CRL entry for the given certificate.
+      */
+     public X509CRLEntry getRevokedCertificate(X509Certificate cert) {
+-        if (revokedCerts.isEmpty()) {
++        if (revokedMap.isEmpty()) {
+             return null;
+         }
+         X509IssuerSerial issuerSerial = new X509IssuerSerial(cert);
+-        return revokedCerts.get(issuerSerial);
++        return revokedMap.get(issuerSerial);
+     }
+ 
+     /**
+@@ -667,10 +669,10 @@
+      * @see X509CRLEntry
+      */
+     public Set<X509CRLEntry> getRevokedCertificates() {
+-        if (revokedCerts.isEmpty()) {
++        if (revokedList.isEmpty()) {
+             return null;
+         } else {
+-            return new HashSet<X509CRLEntry>(revokedCerts.values());
++            return new TreeSet<X509CRLEntry>(revokedList);
+         }
+     }
+ 
+@@ -896,7 +898,7 @@
+         if (extensions == null) {
+             return null;
+         }
+-        Set<String> extSet = new HashSet<String>();
++        Set<String> extSet = new TreeSet<String>();
+         for (Extension ex : extensions.getAllExtensions()) {
+             if (ex.isCritical()) {
+                 extSet.add(ex.getExtensionId().toString());
+@@ -917,7 +919,7 @@
+         if (extensions == null) {
+             return null;
+         }
+-        Set<String> extSet = new HashSet<String>();
++        Set<String> extSet = new TreeSet<String>();
+         for (Extension ex : extensions.getAllExtensions()) {
+             if (!ex.isCritical()) {
+                 extSet.add(ex.getExtensionId().toString());
+@@ -1094,7 +1096,8 @@
+                 entry.setCertificateIssuer(crlIssuer, badCertIssuer);
+                 X509IssuerSerial issuerSerial = new X509IssuerSerial
+                     (badCertIssuer, entry.getSerialNumber());
+-                revokedCerts.put(issuerSerial, entry);
++                revokedMap.put(issuerSerial, entry);
++                revokedList.add(entry);
+             }
+         }
+ 
+@@ -1192,7 +1195,8 @@
+     /**
+      * Immutable X.509 Certificate Issuer DN and serial number pair
+      */
+-    private final static class X509IssuerSerial {
++    private final static class X509IssuerSerial
++            implements Comparable<X509IssuerSerial> {
+         final X500Principal issuer;
+         final BigInteger serial;
+         volatile int hashcode = 0;
+@@ -1271,5 +1275,13 @@
+             }
+             return hashcode;
+         }
++
++        @Override
++        public int compareTo(X509IssuerSerial another) {
++            int cissuer = issuer.toString()
++                    .compareTo(another.issuer.toString());
++            if (cissuer != 0) return cissuer;
++            return this.serial.compareTo(another.serial);
++        }
+     }
+ }
+--- jdk/src/share/classes/sun/security/x509/X509CertImpl.java.orig	2012-05-01 17:18:27.000000000 -0400
++++ jdk/src/share/classes/sun/security/x509/X509CertImpl.java	2012-06-13 12:53:40.000000000 -0400
+@@ -1214,7 +1214,7 @@
+             if (exts == null) {
+                 return null;
+             }
+-            Set<String> extSet = new HashSet<String>();
++            Set<String> extSet = new TreeSet<String>();
+             for (Extension ex : exts.getAllExtensions()) {
+                 if (ex.isCritical()) {
+                     extSet.add(ex.getExtensionId().toString());
+@@ -1244,7 +1244,7 @@
+             if (exts == null) {
+                 return null;
+             }
+-            Set<String> extSet = new HashSet<String>();
++            Set<String> extSet = new TreeSet<String>();
+             for (Extension ex : exts.getAllExtensions()) {
+                 if (!ex.isCritical()) {
+                     extSet.add(ex.getExtensionId().toString());
+@@ -1278,10 +1278,14 @@
+             if (extensions == null) {
+                 return null;
+             } else {
+-                for (Extension ex : extensions.getAllExtensions()) {
+-                    if (ex.getExtensionId().equals(oid)) {
++                Extension ex = extensions.getExtension(oid.toString());
++                if (ex != null) {
++                    return ex;
++                }
++                for (Extension ex2: extensions.getAllExtensions()) {
++                    if (ex2.getExtensionId().equals((Object)oid)) {
+                         //XXXX May want to consider cloning this
+-                        return ex;
++                        return ex2;
+                     }
+                 }
+                 /* no such extension in this certificate */
+@@ -1480,7 +1484,7 @@
+         if (names.isEmpty()) {
+             return Collections.<List<?>>emptySet();
+         }
+-        Set<List<?>> newNames = new HashSet<List<?>>();
++        List<List<?>> newNames = new ArrayList<List<?>>();
+         for (GeneralName gname : names.names()) {
+             GeneralNameInterface name = gname.getName();
+             List<Object> nameEntry = new ArrayList<Object>(2);
+@@ -1541,7 +1545,7 @@
+             }
+         }
+         if (mustClone) {
+-            Set<List<?>> namesCopy = new HashSet<List<?>>();
++            List<List<?>> namesCopy = new ArrayList<List<?>>();
+             for (List<?> nameEntry : altNames) {
+                 Object nameObject = nameEntry.get(1);
+                 if (nameObject instanceof byte[]) {
+--- jdk/src/share/classes/sun/tools/jar/Main.java.orig	2012-05-01 17:18:28.000000000 -0400
++++ jdk/src/share/classes/sun/tools/jar/Main.java	2012-06-13 12:53:06.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1996, 2007, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1996, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -127,14 +127,14 @@
+ 
+     /**
+      * Creates a new empty temporary file in the same directory as the
+-     * specified file.  A variant of File.createTempFile.
++     * specified file.  A variant of sun.misc.IOUtils.createTempFile.
+      */
+     private static File createTempFileInSameDirectoryAs(File file)
+         throws IOException {
+         File dir = file.getParentFile();
+         if (dir == null)
+             dir = new File(".");
+-        return File.createTempFile("jartmp", null, dir);
++        return sun.misc.IOUtils.createTempFile("jartmp", null, dir);
+     }
+ 
+     private boolean ok;
+--- jdk/src/share/classes/sun/tools/native2ascii/Main.java.orig	2012-05-01 17:18:28.000000000 -0400
++++ jdk/src/share/classes/sun/tools/native2ascii/Main.java	2012-06-13 12:53:06.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1996, 2007, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1996, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -237,9 +237,7 @@
+             if (tempDir == null)
+                 tempDir = new File(System.getProperty("user.dir"));
+ 
+-            tempFile = File.createTempFile("_N2A",
+-                                           ".TMP",
+-                                            tempDir);
++            tempFile = sun.misc.IOUtils.createTempFile("_N2A", ".TMP", tempDir);
+             tempFile.deleteOnExit();
+ 
+             try {
+--- jdk/src/share/lib/security/java.security-solaris.orig	2012-05-01 17:18:31.000000000 -0400
++++ jdk/src/share/lib/security/java.security-solaris	2012-06-13 12:54:10.000000000 -0400
+@@ -137,10 +137,10 @@
+ # corresponding RuntimePermission ("defineClassInPackage."+package) has
+ # been granted.
+ #
+-# by default, no packages are restricted for definition, and none of
+-# the class loaders supplied with the JDK call checkPackageDefinition.
++# by default, none of the class loaders supplied with the JDK call
++# checkPackageDefinition.
+ #
+-#package.definition=
++package.definition=sun.,com.sun.xml.internal.ws.,com.sun.xml.internal.bind.,com.sun.imageio.,com.sun.org.apache.xerces.internal.utils.,com.sun.org.apache.xalan.internal.utils.
+ 
+ #
+ # Determines whether this properties file can be appended to
+--- jdk/src/share/lib/security/java.security-windows.orig	2012-05-01 17:18:31.000000000 -0400
++++ jdk/src/share/lib/security/java.security-windows	2012-06-13 12:54:10.000000000 -0400
+@@ -137,10 +137,10 @@
+ # corresponding RuntimePermission ("defineClassInPackage."+package) has
+ # been granted.
+ #
+-# by default, no packages are restricted for definition, and none of
+-# the class loaders supplied with the JDK call checkPackageDefinition.
++# by default, none of the class loaders supplied with the JDK call
++# checkPackageDefinition.
+ #
+-#package.definition=
++package.definition=sun.,com.sun.xml.internal.ws.,com.sun.xml.internal.bind.,com.sun.imageio.,com.sun.org.apache.xerces.internal.utils.,com.sun.org.apache.xalan.internal.utils.
+ 
+ #
+ # Determines whether this properties file can be appended to
+--- jdk/src/share/lib/security/java.security.orig	2012-05-01 17:18:31.000000000 -0400
++++ jdk/src/share/lib/security/java.security	2012-06-13 12:54:10.000000000 -0400
+@@ -127,7 +127,7 @@
+ # passed to checkPackageAccess unless the
+ # corresponding RuntimePermission ("accessClassInPackage."+package) has
+ # been granted.
+-package.access=sun.,com.sun.xml.internal.ws.,com.sun.xml.internal.bind.,com.sun.imageio.
++package.access=sun.,com.sun.xml.internal.ws.,com.sun.xml.internal.bind.,com.sun.imageio.,com.sun.org.apache.xerces.internal.utils.,com.sun.org.apache.xalan.internal.utils.
+ 
+ #
+ # List of comma-separated packages that start with or equal this string
+@@ -136,10 +136,10 @@
+ # corresponding RuntimePermission ("defineClassInPackage."+package) has
+ # been granted.
+ #
+-# by default, no packages are restricted for definition, and none of
+-# the class loaders supplied with the JDK call checkPackageDefinition.
++# by default, none of the class loaders supplied with the JDK call
++# checkPackageDefinition.
+ #
+-#package.definition=
++package.definition=sun.,com.sun.xml.internal.ws.,com.sun.xml.internal.bind.,com.sun.imageio.,com.sun.org.apache.xerces.internal.utils.,com.sun.org.apache.xalan.internal.utils.
+ 
+ #
+ # Determines whether this properties file can be appended to
+--- jdk/src/share/native/sun/font/layout/LookupProcessor.cpp.orig	2012-05-01 17:18:33.000000000 -0400
++++ jdk/src/share/native/sun/font/layout/LookupProcessor.cpp	2012-06-13 12:53:16.000000000 -0400
+@@ -86,6 +86,10 @@
+ 
+         if (selectMask != 0) {
+             const LookupTable *lookupTable = lookupListTable->getLookupTable(lookup);
++
++            if (!lookupTable)
++                continue;
++
+             le_uint16 lookupFlags = SWAPW(lookupTable->lookupFlags);
+ 
+             glyphIterator.reset(lookupFlags, selectMask);
+@@ -124,6 +128,9 @@
+     for (le_uint16 lookup = 0; lookup < lookupCount; lookup += 1) {
+         le_uint16 lookupListIndex = SWAPW(featureTable->lookupListIndexArray[lookup]);
+ 
++        if (lookupListIndex >= lookupSelectCount)
++            continue;
++
+         lookupSelectArray[lookupListIndex] |= featureMask;
+         lookupOrderArray[store++] = lookupListIndex;
+     }
+@@ -135,7 +142,7 @@
+         Offset scriptListOffset, Offset featureListOffset, Offset lookupListOffset,
+         LETag scriptTag, LETag languageTag, const FeatureMap *featureMap,
+         le_int32 featureMapCount, le_bool orderFeatures)
+-    : lookupListTable(NULL), featureListTable(NULL), lookupSelectArray(NULL),
++    : lookupListTable(NULL), featureListTable(NULL), lookupSelectArray(NULL), lookupSelectCount(0),
+       lookupOrderArray(NULL), lookupOrderCount(0)
+ {
+     const ScriptListTable *scriptListTable = NULL;
+@@ -175,6 +182,8 @@
+         lookupSelectArray[i] = 0;
+     }
+ 
++    lookupSelectCount = lookupListCount;
++
+     le_int32 count, order = 0;
+     le_int32 featureReferences = 0;
+     const FeatureTable *featureTable = NULL;
+@@ -191,6 +200,10 @@
+         le_uint16 featureIndex = SWAPW(langSysTable->featureIndexArray[feature]);
+ 
+         featureTable = featureListTable->getFeatureTable(featureIndex, &featureTag);
++
++        if (!featureTable)
++            continue;
++
+         featureReferences += SWAPW(featureTable->lookupCount);
+     }
+ 
+--- jdk/src/share/native/sun/font/layout/LookupProcessor.h.orig	2012-05-01 17:18:33.000000000 -0400
++++ jdk/src/share/native/sun/font/layout/LookupProcessor.h	2012-06-13 12:53:16.000000000 -0400
+@@ -77,6 +77,7 @@
+     const FeatureListTable  *featureListTable;
+ 
+     FeatureMask             *lookupSelectArray;
++    le_uint32              lookupSelectCount;
+ 
+     le_uint16               *lookupOrderArray;
+     le_uint32               lookupOrderCount;
+--- jdk/src/solaris/classes/java/io/UnixFileSystem.java.orig	2012-05-01 17:18:34.000000000 -0400
++++ jdk/src/solaris/classes/java/io/UnixFileSystem.java	2012-06-13 12:53:06.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1998, 2005, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1998, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -253,7 +253,7 @@
+ 
+     /* -- File operations -- */
+ 
+-    public native boolean createFileExclusively(String path)
++    public native boolean createFileExclusively(String path, boolean restrictive)
+         throws IOException;
+     public boolean delete(File f) {
+         // Keep canonicalization caches in sync after file deletion
+--- jdk/src/solaris/classes/sun/print/UnixPrintJob.java.orig	2012-05-01 17:18:35.000000000 -0400
++++ jdk/src/solaris/classes/sun/print/UnixPrintJob.java	2012-06-13 12:53:06.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2000, 2004, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2000, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -937,7 +937,7 @@
+                      * is not removed for some reason, request that it is
+                      * removed when the VM exits.
+                      */
+-                    spoolFile = File.createTempFile("javaprint", ".ps", null);
++                    spoolFile = sun.misc.IOUtils.createTempFile("javaprint", ".ps", null);
+                     spoolFile.deleteOnExit();
+                 }
+                 result = new FileOutputStream(spoolFile);
+--- jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java.orig	2012-05-01 17:18:35.000000000 -0400
++++ jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java	2012-06-13 12:53:06.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2000, 2006, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2000, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -712,7 +712,7 @@
+ 
+                         Process proc;
+                         BufferedReader bufferedReader = null;
+-                        File f = File.createTempFile("prn","xc");
++                        File f = sun.misc.IOUtils.createTempFile("prn","xc");
+                         cmd[2] = cmd[2]+">"+f.getAbsolutePath();
+ 
+                         proc = Runtime.getRuntime().exec(cmd);
+--- jdk/src/solaris/native/java/io/UnixFileSystem_md.c.orig	2012-05-01 17:18:35.000000000 -0400
++++ jdk/src/solaris/native/java/io/UnixFileSystem_md.c	2012-06-13 12:53:06.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1998, 2006, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1998, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -310,7 +310,8 @@
+ 
+ JNIEXPORT jboolean JNICALL
+ Java_java_io_UnixFileSystem_createFileExclusively(JNIEnv *env, jclass cls,
+-                                                  jstring pathname)
++                                                  jstring pathname,
++                                                  jboolean restrictive)
+ {
+     jboolean rv = JNI_FALSE;
+ 
+@@ -319,7 +320,8 @@
+         if (!strcmp (path, "/")) {
+             fd = JVM_EEXIST;    /* The root directory always exists */
+         } else {
+-            fd = JVM_Open(path, JVM_O_RDWR | JVM_O_CREAT | JVM_O_EXCL, 0666);
++            jint mode = (restrictive == JNI_TRUE) ? 0600 : 0666;
++            fd = JVM_Open(path, JVM_O_RDWR | JVM_O_CREAT | JVM_O_EXCL, mode);
+         }
+         if (fd < 0) {
+             if (fd != JVM_EEXIST) {
+--- jdk/src/windows/classes/java/io/Win32FileSystem.java.orig	2012-05-01 17:18:37.000000000 -0400
++++ jdk/src/windows/classes/java/io/Win32FileSystem.java	2012-06-13 12:53:06.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1998, 2005, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1998, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -510,7 +510,7 @@
+ 
+     /* -- File operations -- */
+ 
+-    public native boolean createFileExclusively(String path)
++    public native boolean createFileExclusively(String path, boolean restrictive)
+         throws IOException;
+     public boolean delete(File f) {
+         // Keep canonicalization caches in sync after file deletion
+--- jdk/src/windows/classes/java/io/WinNTFileSystem.java.orig	2012-05-01 17:18:37.000000000 -0400
++++ jdk/src/windows/classes/java/io/WinNTFileSystem.java	2012-06-13 12:53:06.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2001, 2006, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2001, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -61,7 +61,7 @@
+ 
+     /* -- File operations -- */
+ 
+-    public native boolean createFileExclusively(String path)
++    public native boolean createFileExclusively(String path, boolean restrictive)
+                                                throws IOException;
+     protected native boolean delete0(File f);
+     public native String[] list(File f);
+--- jdk/src/windows/native/java/io/Win32FileSystem_md.c.orig	2012-05-01 17:18:37.000000000 -0400
++++ jdk/src/windows/native/java/io/Win32FileSystem_md.c	2012-06-13 12:53:06.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1998, 2006, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1998, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -262,7 +262,8 @@
+ 
+ JNIEXPORT jboolean JNICALL
+ Java_java_io_Win32FileSystem_createFileExclusively(JNIEnv *env, jclass cls,
+-                                                   jstring pathname)
++                                                   jstring pathname,
++                                                   jboolean restrictive)
+ {
+     jboolean rv = JNI_FALSE;
+     DWORD a;
+--- jdk/src/windows/native/java/io/WinNTFileSystem_md.c.orig	2012-05-01 17:18:37.000000000 -0400
++++ jdk/src/windows/native/java/io/WinNTFileSystem_md.c	2012-06-13 12:53:06.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2001, 2006, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2001, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -349,7 +349,8 @@
+ 
+ JNIEXPORT jboolean JNICALL
+ Java_java_io_WinNTFileSystem_createFileExclusively(JNIEnv *env, jclass cls,
+-                                                   jstring path)
++                                                   jstring path,
++                                                   jboolean restrictive)
+ {
+     HANDLE h = NULL;
+     WCHAR *pathbuf = pathToNTPath(env, path, JNI_FALSE);

@@ -7,6 +7,7 @@
 
 PORTNAME=	openjdk6
 PORTVERSION=	b25
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
 		http://download.java.net/jaxp/openjdk/jdk6/:jaxp \
@@ -34,20 +35,23 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${LOCALBASE}/bin/zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip \
 		${LOCALBASE}/include/cups/cups.h:${PORTSDIR}/print/cups-client
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
 
 OPENJDK_BUILDDATE=	01_may_2012
 
-OPTIONS=	DEBUG "Enable legacy debugging support" off \
-		FASTDEBUG "Include fastdebug build" off \
-		ICEDTEA "Apply additional patches from IcedTea" on \
-		IPV6 "Enable IPv6 support" off \
-		POLICY "Install the Unlimited Strength Policy Files" off \
-		SOUND "Enable sound support" off \
-		TEST "Add support for running regression test" off \
-		TZUPDATE "Update the time zone data" on
+.include <bsd.port.options.mk>
+
+OPTIONS_DEFINE=	DEBUG FASTDEBUG ICEDTEA IPV6 POLICY SOUND TEST TZUPDATE
+OPTIONS_DEFAULT=ICEDTEA TZUPDATE
+DEBUG_DESC=	Enable legacy debugging support
+FASTDEBUG_DESC=	Include fastdebug build
+ICEDTEA_DESC=	Apply additional patches from IcedTea
+POLICY_DESC=	Install the Unlimited Strength Policy Files
+SOUND_DESC=	Enable sound support
+TEST_DESC=	Add support for running regression test
+TZUPDATE_DESC=	Update the time zone data
 
 # java extracts directly to the cwd
 WRKSRC=		${WRKDIR}
@@ -78,11 +82,11 @@ EXTRACT_BEFORE_ARGS=
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CATEGORIES+=	ipv6
 .endif
 
-.if defined(WITH_TZUPDATE)
+.if ${PORT_OPTIONS:MTZUPDATE}
 RUN_DEPENDS+=  ${LOCALBASE}/share/java/zi:${PORTSDIR}/java/java-zoneinfo
 .endif
 
@@ -130,7 +134,7 @@ MAKE_ENV=	LANG=C LC_ALL=C \
 		MILESTONE=fcs \
 		JDK_UPDATE_VERSION=${UPDATE_VERSION}
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 ALL_TARGET=	debug_build
 OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}-debug
 .else
@@ -138,31 +142,31 @@ OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}
 .endif
 
 # disable FASTDEBUG_BUILD by default to improve compile time.
-.if defined(WITH_FASTDEBUG)
+.if ${PORT_OPTIONS:MFASTDEBUG}
 MAKE_ENV+=	SKIP_FASTDEBUG_BUILD=false
 .else
 MAKE_ENV+=	SKIP_FASTDEBUG_BUILD=true
 .endif
 
-.if defined(WITH_ICEDTEA)
+.if ${PORT_OPTIONS:MICEDTEA}
 EXTRA_PATCHES+=	${FILESDIR}/icedtea/7032388-work_without_cmov_instruction.patch \
 		${FILESDIR}/icedtea/applet_hole.patch \
 		${FILESDIR}/icedtea/jpegclasses.patch
 .endif
 
-.if !defined(WITH_IPV6)
+.if empty(PORT_OPTIONS:MIPV6)
 MAKE_ENV+=	DONT_ENABLE_IPV6="YES"
 .endif
 
-.if defined(WITH_SOUND)
+.if ${PORT_OPTIONS:MSOUND}
 EXTRA_PATCHES+=	${FILESDIR}/alsa-enable.patch
-LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
 RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
 .else
 EXTRA_PATCHES+=	${FILESDIR}/alsa-disable.patch
 .endif
 
-.if defined(WITH_TEST)
+.if ${PORT_OPTIONS:MTEST}
 DISTFILES+=	${JTREGFILE}:jtreg
 EXTRACT_ONLY+=	${JTREGFILE}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
@@ -237,19 +241,19 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} "s|/lib:/usr/lib|/lib:/usr/lib:${LOCALBASE}/lib|" \
 		${WRKDIR}/hotspot/src/os/bsd/vm/os_bsd.cpp
-.if defined(WITH_POLICY)
+.if ${PORT_OPTIONS:MPOLICY}
 	@${REINPLACE_CMD} 's|build-policy install-limited|build-policy install-unlimited|' \
 		${WRKSRC}/jdk/make/javax/crypto/Makefile
 .endif
 
 post-build:
-.if defined(WITH_TZUPDATE)
+.if ${PORT_OPTIONS:MTZUPDATE}
 	@# Update time zones
 	@${RM} -rf ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/jre/lib/zi
 	@${LN} -s -f ${LOCALBASE}/share/java/zi \
 		${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/jre/lib
 .endif
-.if defined(WITH_TEST)
+.if ${PORT_OPTIONS:MTEST}
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Run \"make test\" to execute regression test (it could take a few hours to complete)."
 .if defined(DISPLAY)
@@ -275,7 +279,7 @@ do-install:
 	@${MKDIR} ${PREFIX}/openjdk6/
 	@${CP} -Rp ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/ ${PREFIX}/openjdk6/
 	@${INSTALL_DATA} ${WRKSRC}/build/${OPENJDK_OSARCH}/btjars/compilefontconfig.jar ${WRKSRC}/build/${OPENJDK_OSARCH}/btjars/javazic.jar ${PREFIX}/openjdk6/jre/lib/
-.if defined(WITH_FASTDEBUG)
+.if ${PORT_OPTIONS:MFASTDEBUG}
 	@${MKDIR} ${PREFIX}/openjdk6-fastdebug/
 	@${CP} -Rp ${WRKSRC}/build/${OPENJDK_OSARCH}-fastdebug/j2sdk-image/ ${PREFIX}/openjdk6-fastdebug/
 .endif
@@ -286,7 +290,7 @@ do-install:
 	@${FIND} ${PREFIX}/openjdk6 -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 	@${ECHO_MSG} "@exec ${LOCALBASE}/bin/registervm '${PREFIX}/openjdk6/bin/java # OpenJDK6'" >> ${TMPPLIST}
-.if defined(WITH_FASTDEBUG)
+.if ${PORT_OPTIONS:MFASTDEBUG}
 	@${ECHO_MSG} "@unexec ${LOCALBASE}/bin/unregistervm ${PREFIX}/openjdk6-fastdebug/bin/java" >> ${TMPPLIST}
 	@${FIND} -s ${PREFIX}/openjdk6-fastdebug -not -type d | \
 		${SED} -e 's#^${PREFIX}/##' >> ${TMPPLIST}
@@ -299,7 +303,7 @@ do-install:
 post-install:
 	@# Register the VM
 	@"${LOCALBASE}/bin/registervm" "${PREFIX}/openjdk6/bin/java # OpenJDK6"
-.if defined(WITH_FASTDEBUG)
+.if ${PORT_OPTIONS:MFASTDEBUG}
 	@"${LOCALBASE}/bin/registervm" "${PREFIX}/openjdk6-fastdebug/bin/java # OpenJDK6"
 .endif
 	@${CAT} ${PKGMESSAGE}
