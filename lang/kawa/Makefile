@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kawa
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	lang scheme java
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	kawa
@@ -31,6 +31,6 @@ pre-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} \
 		-e '/^JAR =/s|[a-zA-Z]*$$|${JAR}|g;'
 	@${REINPLACE_CMD} -e 's|{JAVAC-javac}|{JAVAC-${JAVAC}}|g;' \
-		-e 's|{JAVA-java}|{JAVA-${JAVA}}|g; 4555d;' ${WRKSRC}/configure
+		-e 's|{JAVA-java}|{JAVA-${JAVA}}|g;' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
