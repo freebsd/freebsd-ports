@@ -1938,6 +1938,7 @@
     SUBDIR += p5-IO-Capture
     SUBDIR += p5-IO-CaptureOutput
     SUBDIR += p5-IO-Digest
+    SUBDIR += p5-IO-HTML
     SUBDIR += p5-IO-Handle-Util
     SUBDIR += p5-IO-Interactive
     SUBDIR += p5-IO-KQueue
