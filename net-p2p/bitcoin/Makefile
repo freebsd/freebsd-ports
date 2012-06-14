@@ -13,7 +13,7 @@ MASTER_SITES=	https://nodeload.github.com/${PORTNAME}/${PORTNAME}/tarball/	\
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 DISTFILES=	v${PORTVERSION}
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual Peer-to-Peer Currency Client
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/graph/parallel/algorithm.hpp:${PORTSDIR}/devel/boost-libs # 1.40+
