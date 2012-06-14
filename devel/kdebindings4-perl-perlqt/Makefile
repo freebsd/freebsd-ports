@@ -21,8 +21,6 @@ LIB_DEPENDS=	qscintilla2:${PORTSDIR}/devel/qscintilla2 \
 
 USE_XZ=	yes
 USE_PERL5=	yes
-# Build fails with system gcc
-USE_GCC=	4.6+
 USE_KDE4=	kdehier kdeprefix smokeqt qimageblitz
 USE_QT4=	qmake_build moc_build uic_build rcc_build
 USE_CMAKE=	yes

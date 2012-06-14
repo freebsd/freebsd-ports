@@ -648,6 +648,11 @@ share/doc/HTML/uk/kcontrol/joystick/index.docbook
 share/doc/HTML/uk/kcontrol/kamera/common
 share/doc/HTML/uk/kcontrol/kamera/index.cache.bz2
 share/doc/HTML/uk/kcontrol/kamera/index.docbook
+share/doc/HTML/uk/kcontrol/kcm_ssl/common
+share/doc/HTML/uk/kcontrol/kcm_ssl/details.png
+share/doc/HTML/uk/kcontrol/kcm_ssl/index.cache.bz2
+share/doc/HTML/uk/kcontrol/kcm_ssl/index.docbook
+share/doc/HTML/uk/kcontrol/kcm_ssl/module.png
 share/doc/HTML/uk/kcontrol/kcmaccess/common
 share/doc/HTML/uk/kcontrol/kcmaccess/index.cache.bz2
 share/doc/HTML/uk/kcontrol/kcmaccess/index.docbook
@@ -681,6 +686,9 @@ share/doc/HTML/uk/kcontrol/keys/index.docbook
 share/doc/HTML/uk/kcontrol/kgamma/common
 share/doc/HTML/uk/kcontrol/kgamma/index.cache.bz2
 share/doc/HTML/uk/kcontrol/kgamma/index.docbook
+share/doc/HTML/uk/kcontrol/khotkeys/common
+share/doc/HTML/uk/kcontrol/khotkeys/index.cache.bz2
+share/doc/HTML/uk/kcontrol/khotkeys/index.docbook
 share/doc/HTML/uk/kcontrol/khtml-adblock/common
 share/doc/HTML/uk/kcontrol/khtml-adblock/index.cache.bz2
 share/doc/HTML/uk/kcontrol/khtml-adblock/index.docbook
@@ -720,6 +728,10 @@ share/doc/HTML/uk/kcontrol/language/index.docbook
 share/doc/HTML/uk/kcontrol/mouse/common
 share/doc/HTML/uk/kcontrol/mouse/index.cache.bz2
 share/doc/HTML/uk/kcontrol/mouse/index.docbook
+share/doc/HTML/uk/kcontrol/multiplemonitors/common
+share/doc/HTML/uk/kcontrol/multiplemonitors/index.cache.bz2
+share/doc/HTML/uk/kcontrol/multiplemonitors/index.docbook
+share/doc/HTML/uk/kcontrol/multiplemonitors/multiplemonitors-error.png
 share/doc/HTML/uk/kcontrol/nepomuk/common
 share/doc/HTML/uk/kcontrol/nepomuk/index.cache.bz2
 share/doc/HTML/uk/kcontrol/nepomuk/index.docbook
@@ -774,6 +786,7 @@ share/doc/HTML/uk/kcontrol/windowbehaviour/index.docbook
 share/doc/HTML/uk/kcontrol/windowspecific/common
 share/doc/HTML/uk/kcontrol/windowspecific/index.cache.bz2
 share/doc/HTML/uk/kcontrol/windowspecific/index.docbook
+share/doc/HTML/uk/kcontrol/windowspecific/kwin-rules-ordering.png
 share/doc/HTML/uk/kcontrol/workspaceoptions/common
 share/doc/HTML/uk/kcontrol/workspaceoptions/index.cache.bz2
 share/doc/HTML/uk/kcontrol/workspaceoptions/index.docbook
@@ -1662,6 +1675,20 @@ share/doc/HTML/uk/sweeper/common
 share/doc/HTML/uk/sweeper/index.cache.bz2
 share/doc/HTML/uk/sweeper/index.docbook
 share/doc/HTML/uk/sweeper/sweeper.png
+share/doc/HTML/uk/system-config-printer-kde/common
+share/doc/HTML/uk/system-config-printer-kde/index.cache.bz2
+share/doc/HTML/uk/system-config-printer-kde/index.docbook
+share/doc/HTML/uk/system-config-printer-kde/new-class.png
+share/doc/HTML/uk/system-config-printer-kde/new-details.png
+share/doc/HTML/uk/system-config-printer-kde/new-driver.png
+share/doc/HTML/uk/system-config-printer-kde/new-manufacturer.png
+share/doc/HTML/uk/system-config-printer-kde/new-uri.png
+share/doc/HTML/uk/system-config-printer-kde/new.png
+share/doc/HTML/uk/system-config-printer-kde/printer-job-options.png
+share/doc/HTML/uk/system-config-printer-kde/printer-options.png
+share/doc/HTML/uk/system-config-printer-kde/printer-policies.png
+share/doc/HTML/uk/system-config-printer-kde/printer-settings.png
+share/doc/HTML/uk/system-config-printer-kde/server.png
 share/doc/HTML/uk/systemsettings/common
 share/doc/HTML/uk/systemsettings/index.cache.bz2
 share/doc/HTML/uk/systemsettings/index.docbook
@@ -2428,6 +2455,7 @@ share/locale/uk/entry.desktop
 @dirrm share/locale/uk/LC_SCRIPTS
 @dirrm share/doc/HTML/uk/umbrello
 @dirrm share/doc/HTML/uk/systemsettings
+@dirrm share/doc/HTML/uk/system-config-printer-kde
 @dirrm share/doc/HTML/uk/sweeper
 @dirrm share/doc/HTML/uk/step
 @dirrm share/doc/HTML/uk/sonnet
@@ -2587,6 +2615,7 @@ share/locale/uk/entry.desktop
 @dirrm share/doc/HTML/uk/kcontrol/paths
 @dirrm share/doc/HTML/uk/kcontrol/netpref
 @dirrm share/doc/HTML/uk/kcontrol/nepomuk
+@dirrm share/doc/HTML/uk/kcontrol/multiplemonitors
 @dirrm share/doc/HTML/uk/kcontrol/mouse
 @dirrm share/doc/HTML/uk/kcontrol/language
 @dirrm share/doc/HTML/uk/kcontrol/kwintabbox
@@ -2600,6 +2629,7 @@ share/locale/uk/entry.desktop
 @dirrm share/doc/HTML/uk/kcontrol/khtml-general
 @dirrm share/doc/HTML/uk/kcontrol/khtml-behavior
 @dirrm share/doc/HTML/uk/kcontrol/khtml-adblock
+@dirrm share/doc/HTML/uk/kcontrol/khotkeys
 @dirrm share/doc/HTML/uk/kcontrol/kgamma
 @dirrm share/doc/HTML/uk/kcontrol/keys
 @dirrm share/doc/HTML/uk/kcontrol/keyboard
@@ -2611,6 +2641,7 @@ share/locale/uk/entry.desktop
 @dirrm share/doc/HTML/uk/kcontrol/kcmcss
 @dirrm share/doc/HTML/uk/kcontrol/kcmcgi
 @dirrm share/doc/HTML/uk/kcontrol/kcmaccess
+@dirrm share/doc/HTML/uk/kcontrol/kcm_ssl
 @dirrm share/doc/HTML/uk/kcontrol/kamera
 @dirrm share/doc/HTML/uk/kcontrol/joystick
 @dirrm share/doc/HTML/uk/kcontrol/icons

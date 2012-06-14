@@ -340,11 +340,17 @@ share/doc/HTML/en/kate/configdialog01.png
 share/doc/HTML/en/kate/configuring-part.docbook
 share/doc/HTML/en/kate/configuring.docbook
 share/doc/HTML/en/kate/fundamentals.docbook
+share/doc/HTML/en/kate/gdb-call-stack.png
+share/doc/HTML/en/kate/gdb-io.png
+share/doc/HTML/en/kate/gdb-locals.png
+share/doc/HTML/en/kate/gdb-output.png
+share/doc/HTML/en/kate/gdb-settings.png
 share/doc/HTML/en/kate/highlighted.png
 share/doc/HTML/en/kate/highlighting.docbook
 share/doc/HTML/en/kate/index.cache.bz2
 share/doc/HTML/en/kate/index.docbook
 share/doc/HTML/en/kate/kate.png
+share/doc/HTML/en/kate/line-modification-system.png
 share/doc/HTML/en/kate/man-kate.1.docbook
 share/doc/HTML/en/kate/mdi.docbook
 share/doc/HTML/en/kate/menus.docbook

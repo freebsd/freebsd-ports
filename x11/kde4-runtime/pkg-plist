@@ -577,6 +577,11 @@ share/doc/HTML/en/kcontrol/icons/install-theme.png
 share/doc/HTML/en/kcontrol/icons/main.png
 share/doc/HTML/en/kcontrol/icons/size.png
 share/doc/HTML/en/kcontrol/icons/use-of-icons.png
+share/doc/HTML/en/kcontrol/kcm_ssl/common
+share/doc/HTML/en/kcontrol/kcm_ssl/details.png
+share/doc/HTML/en/kcontrol/kcm_ssl/index.cache.bz2
+share/doc/HTML/en/kcontrol/kcm_ssl/index.docbook
+share/doc/HTML/en/kcontrol/kcm_ssl/module.png
 share/doc/HTML/en/kcontrol/kcmcgi/common
 share/doc/HTML/en/kcontrol/kcmcgi/index.cache.bz2
 share/doc/HTML/en/kcontrol/kcmcgi/index.docbook
@@ -2159,6 +2164,7 @@ share/sounds/KDE-Window-Shade-Up.ogg
 @dirrm share/doc/HTML/en/kcontrol/kcmlaunch
 @dirrm share/doc/HTML/en/kcontrol/kcmcss
 @dirrm share/doc/HTML/en/kcontrol/kcmcgi
+@dirrm share/doc/HTML/en/kcontrol/kcm_ssl
 @dirrm share/doc/HTML/en/kcontrol/icons
 @dirrm share/doc/HTML/en/kcontrol/history
 @dirrm share/doc/HTML/en/kcontrol/filetypes

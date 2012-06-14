@@ -389,6 +389,9 @@ share/locale/tr/LC_MESSAGES/krunner.mo
 share/locale/tr/LC_MESSAGES/ksaneplugin.mo
 share/locale/tr/LC_MESSAGES/kscd.mo
 share/locale/tr/LC_MESSAGES/kscreensaver.mo
+share/locale/tr/LC_MESSAGES/ksecrets_kio.mo
+share/locale/tr/LC_MESSAGES/ksecrets_ksecrets.mo
+share/locale/tr/LC_MESSAGES/ksecretsync.mo
 share/locale/tr/LC_MESSAGES/ksendemail.mo
 share/locale/tr/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/tr/LC_MESSAGES/kshisen.mo
@@ -437,6 +440,7 @@ share/locale/tr/LC_MESSAGES/kwin_clients.mo
 share/locale/tr/LC_MESSAGES/kwin_effects.mo
 share/locale/tr/LC_MESSAGES/kwinshutdown.mo
 share/locale/tr/LC_MESSAGES/kwinstartmenu.mo
+share/locale/tr/LC_MESSAGES/kwl2kss.mo
 share/locale/tr/LC_MESSAGES/kwordquiz.mo
 share/locale/tr/LC_MESSAGES/kwrite.mo
 share/locale/tr/LC_MESSAGES/kwriteconfig.mo
@@ -616,6 +620,7 @@ share/locale/tr/LC_MESSAGES/plasma_applet_rtm.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_sal.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_saverdesktop.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_searchbox.mo
+share/locale/tr/LC_MESSAGES/plasma_applet_showactivitymanager.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_showdashboard.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_showdesktop.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_skapplet.mo
@@ -698,6 +703,7 @@ share/locale/tr/LC_MESSAGES/plasmapkg.mo
 share/locale/tr/LC_MESSAGES/plasmawallpaperviewer.mo
 share/locale/tr/LC_MESSAGES/plasmoidviewer.mo
 share/locale/tr/LC_MESSAGES/powerdevil.mo
+share/locale/tr/LC_MESSAGES/powerdevilactivitiesconfig.mo
 share/locale/tr/LC_MESSAGES/powerdevilglobalconfig.mo
 share/locale/tr/LC_MESSAGES/powerdevilprofilesconfig.mo
 share/locale/tr/LC_MESSAGES/printer-applet.mo
@@ -705,6 +711,7 @@ share/locale/tr/LC_MESSAGES/processcore.mo
 share/locale/tr/LC_MESSAGES/processui.mo
 share/locale/tr/LC_MESSAGES/randrmonitor.mo
 share/locale/tr/LC_MESSAGES/rellinks.mo
+share/locale/tr/LC_MESSAGES/remote-widgets-browser.mo
 share/locale/tr/LC_MESSAGES/rocs.mo
 share/locale/tr/LC_MESSAGES/searchbarplugin.mo
 share/locale/tr/LC_MESSAGES/solid-hardware.mo

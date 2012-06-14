@@ -77,7 +77,7 @@ Kde_Pre_Include=	bsd.kde4.mk
 #				  ${LOCALBASE}/kde4, but this could change in the future.
 #
 
-KDE4_VERSION?=			4.8.3
+KDE4_VERSION?=			4.8.4
 KDE4_BRANCH?=			stable
 CALLIGRA_VERSION?=		2.4.2
 CALLIGRA_BRANCH?=		stable

@@ -351,6 +351,9 @@ share/doc/HTML/sv/kcontrol/joystick/index.docbook
 share/doc/HTML/sv/kcontrol/kamera/common
 share/doc/HTML/sv/kcontrol/kamera/index.cache.bz2
 share/doc/HTML/sv/kcontrol/kamera/index.docbook
+share/doc/HTML/sv/kcontrol/kcm_ssl/common
+share/doc/HTML/sv/kcontrol/kcm_ssl/index.cache.bz2
+share/doc/HTML/sv/kcontrol/kcm_ssl/index.docbook
 share/doc/HTML/sv/kcontrol/kcmaccess/common
 share/doc/HTML/sv/kcontrol/kcmaccess/index.cache.bz2
 share/doc/HTML/sv/kcontrol/kcmaccess/index.docbook
@@ -384,6 +387,9 @@ share/doc/HTML/sv/kcontrol/keys/index.docbook
 share/doc/HTML/sv/kcontrol/kgamma/common
 share/doc/HTML/sv/kcontrol/kgamma/index.cache.bz2
 share/doc/HTML/sv/kcontrol/kgamma/index.docbook
+share/doc/HTML/sv/kcontrol/khotkeys/common
+share/doc/HTML/sv/kcontrol/khotkeys/index.cache.bz2
+share/doc/HTML/sv/kcontrol/khotkeys/index.docbook
 share/doc/HTML/sv/kcontrol/khtml-adblock/common
 share/doc/HTML/sv/kcontrol/khtml-adblock/index.cache.bz2
 share/doc/HTML/sv/kcontrol/khtml-adblock/index.docbook
@@ -423,6 +429,9 @@ share/doc/HTML/sv/kcontrol/language/index.docbook
 share/doc/HTML/sv/kcontrol/mouse/common
 share/doc/HTML/sv/kcontrol/mouse/index.cache.bz2
 share/doc/HTML/sv/kcontrol/mouse/index.docbook
+share/doc/HTML/sv/kcontrol/multiplemonitors/common
+share/doc/HTML/sv/kcontrol/multiplemonitors/index.cache.bz2
+share/doc/HTML/sv/kcontrol/multiplemonitors/index.docbook
 share/doc/HTML/sv/kcontrol/nepomuk/common
 share/doc/HTML/sv/kcontrol/nepomuk/index.cache.bz2
 share/doc/HTML/sv/kcontrol/nepomuk/index.docbook
@@ -2308,6 +2317,7 @@ share/locale/sv/entry.desktop
 @dirrm share/doc/HTML/sv/kcontrol/paths
 @dirrm share/doc/HTML/sv/kcontrol/netpref
 @dirrm share/doc/HTML/sv/kcontrol/nepomuk
+@dirrm share/doc/HTML/sv/kcontrol/multiplemonitors
 @dirrm share/doc/HTML/sv/kcontrol/mouse
 @dirrm share/doc/HTML/sv/kcontrol/language
 @dirrm share/doc/HTML/sv/kcontrol/kwintabbox
@@ -2321,6 +2331,7 @@ share/locale/sv/entry.desktop
 @dirrm share/doc/HTML/sv/kcontrol/khtml-general
 @dirrm share/doc/HTML/sv/kcontrol/khtml-behavior
 @dirrm share/doc/HTML/sv/kcontrol/khtml-adblock
+@dirrm share/doc/HTML/sv/kcontrol/khotkeys
 @dirrm share/doc/HTML/sv/kcontrol/kgamma
 @dirrm share/doc/HTML/sv/kcontrol/keys
 @dirrm share/doc/HTML/sv/kcontrol/keyboard
@@ -2332,6 +2343,7 @@ share/locale/sv/entry.desktop
 @dirrm share/doc/HTML/sv/kcontrol/kcmcss
 @dirrm share/doc/HTML/sv/kcontrol/kcmcgi
 @dirrm share/doc/HTML/sv/kcontrol/kcmaccess
+@dirrm share/doc/HTML/sv/kcontrol/kcm_ssl
 @dirrm share/doc/HTML/sv/kcontrol/kamera
 @dirrm share/doc/HTML/sv/kcontrol/joystick
 @dirrm share/doc/HTML/sv/kcontrol/icons

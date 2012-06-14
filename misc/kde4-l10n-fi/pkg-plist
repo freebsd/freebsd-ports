@@ -61,6 +61,7 @@ share/locale/fi/LC_MESSAGES/akonaditray.mo
 share/locale/fi/LC_MESSAGES/akregator.mo
 share/locale/fi/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/fi/LC_MESSAGES/amor.mo
+share/locale/fi/LC_MESSAGES/analitza.mo
 share/locale/fi/LC_MESSAGES/ark.mo
 share/locale/fi/LC_MESSAGES/attica_kde.mo
 share/locale/fi/LC_MESSAGES/audiocd_encoder_lame.mo
@@ -397,11 +398,17 @@ share/locale/fi/LC_MESSAGES/krunner.mo
 share/locale/fi/LC_MESSAGES/ksaneplugin.mo
 share/locale/fi/LC_MESSAGES/kscd.mo
 share/locale/fi/LC_MESSAGES/kscreensaver.mo
+share/locale/fi/LC_MESSAGES/ksecrets_kio.mo
+share/locale/fi/LC_MESSAGES/ksecrets_ksecrets.mo
+share/locale/fi/LC_MESSAGES/ksecretsservice_api.mo
+share/locale/fi/LC_MESSAGES/ksecretsserviced.mo
+share/locale/fi/LC_MESSAGES/ksecretsync.mo
 share/locale/fi/LC_MESSAGES/ksendemail.mo
 share/locale/fi/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/fi/LC_MESSAGES/kshisen.mo
 share/locale/fi/LC_MESSAGES/kshorturifilter.mo
 share/locale/fi/LC_MESSAGES/ksirk.mo
+share/locale/fi/LC_MESSAGES/ksirkskineditor.mo
 share/locale/fi/LC_MESSAGES/ksmserver.mo
 share/locale/fi/LC_MESSAGES/ksnapshot.mo
 share/locale/fi/LC_MESSAGES/kspaceduel.mo
@@ -445,6 +452,7 @@ share/locale/fi/LC_MESSAGES/kwin_clients.mo
 share/locale/fi/LC_MESSAGES/kwin_effects.mo
 share/locale/fi/LC_MESSAGES/kwinshutdown.mo
 share/locale/fi/LC_MESSAGES/kwinstartmenu.mo
+share/locale/fi/LC_MESSAGES/kwl2kss.mo
 share/locale/fi/LC_MESSAGES/kwordquiz.mo
 share/locale/fi/LC_MESSAGES/kwrite.mo
 share/locale/fi/LC_MESSAGES/kwriteconfig.mo
@@ -529,6 +537,7 @@ share/locale/fi/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/fi/LC_MESSAGES/nepomukserver.mo
 share/locale/fi/LC_MESSAGES/nepomukservicestub.mo
 share/locale/fi/LC_MESSAGES/nepomukstorage.mo
+share/locale/fi/LC_MESSAGES/newmailnotifieragent.mo
 share/locale/fi/LC_MESSAGES/notes-mobile.mo
 share/locale/fi/LC_MESSAGES/nsplugin.mo
 share/locale/fi/LC_MESSAGES/okteta-mobile.mo

@@ -1327,7 +1327,9 @@ share/locale/fr/LC_MESSAGES/dragonplayer.mo
 share/locale/fr/LC_MESSAGES/drkonqi.mo
 share/locale/fr/LC_MESSAGES/filelight.mo
 share/locale/fr/LC_MESSAGES/filetypes.mo
+share/locale/fr/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/fr/LC_MESSAGES/fileviewgitplugin.mo
+share/locale/fr/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/fr/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/fr/LC_MESSAGES/freespacenotifier.mo
 share/locale/fr/LC_MESSAGES/fsview.mo
