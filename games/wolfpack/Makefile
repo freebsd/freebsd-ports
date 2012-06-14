@@ -24,6 +24,8 @@ BINDIR=		${PREFIX}/lib/${PORTNAME}
 VARDIR=		${PREFIX}/var/${PORTNAME}
 CONFIGURE_ARGS+=	--bindir=${BINDIR} --sbindir=${BINDIR}
 
+CONFLICTS_INSTALL=	empire-[0-9]*
+
 USERS=		wolfpack
 GROUPS=		wolfpack
 
