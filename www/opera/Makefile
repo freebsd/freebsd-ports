@@ -26,41 +26,42 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 BUILD_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 RUN_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
-OPERA_VER?=	11.64
-OPERA_BUILD?=	1403
+OPERA_VER?=	12.00
+OPERA_BUILD?=	1467
 MASTER_SITES_VER_PATH=	unix/${OPERA_VER:S/.//}
 
 USE_XZ=		yes
 USE_XORG=	x11 xext sm ice xft xrender
 USE_GNOME=	desktopfileutils
+INSTALLS_ICONS=	yes
 
-MAN1=		opera.1 opera-widget-manager.1
+MAN1=		opera.1
 MANCOMPRESSED=	yes
 
 NO_BUILD=	yes
 EXPLICIT_PACKAGE_DEPENDS=	yes
 
-OPTIONS=	CUPS	"Enable support for printing (requires CUPS)"		on \
-		VIDEO	"Enable support for HTML5 video (requires GStreamer)"	on \
-		GTK	"Use GTK backend"	off \
-		KDE4	"Use KDE4 backend"	off
+OPTIONS_DEFINE=	CUPS VIDEO GTK2 KDE4
+OPTIONS_DEFAULT=	CUPS VIDEO
+
+CUPS_DESC=	Enable support for printing (requires CUPS)
+VIDEO_DESC=	Enable support for HTML5 video (requires GStreamer)
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_CUPS)
+.if ${PORT_OPTIONS:MCUPS)
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
 .endif
 
-.if !defined(WITHOUT_VIDEO)
+.if ${PORT_OPTIONS:MVIDEO)
 USE_GSTREAMER+=	vorbis ogg theora vp8 good
 .endif
 
-.if defined(WITH_GTK)
+.if ${PORT_OPTIONS:MGTK2)
 USE_GNOME+=	gtk20
-INSTALLS_ICONS=	yes
 .endif
 
-.if defined(WITH_KDE4)
+.if ${PORT_OPTIONS:MKDE4)
 USE_KDE4+=	kdelibs
 .endif
 
@@ -79,15 +80,12 @@ post-extract:
 
 do-install:
 	@${INSTALL_MAN} ${WRKSRC}/man/man1/${PORTNAME}.1.gz ${MANPREFIX}/man/man1/
-	@${INSTALL_MAN} ${WRKSRC}/man/man1/${PORTNAME}-widget-manager.1.gz ${MANPREFIX}/man/man1/
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/install
 	@${REINPLACE_CMD} -e 's|share/man|man|g' ${WRKSRC}/install
 	@(cd ${WRKSRC} && ./install --text --system --unattended)
 	@${REINPLACE_CMD} -e 's|/usr/X11R6/lib/browser_plugins|${LOCALBASE}/lib/browser_plugins/symlinks/opera|g' \
 		${DATADIR}/defaults/pluginpath.ini
 	@${RM} ${DATADIR}/defaults/pluginpath.ini.bak
-	@${CP} ${LOCALBASE}/lib/opera/operapluginwrapper ${LOCALBASE}/lib/opera/operapluginwrapper.freebsd
-	@${INSTALL_SCRIPT} ${PATCHDIR}/operapluginwrapper ${LOCALBASE}/lib/opera/
 	-${LOCALBASE}/bin/update-desktop-database
 	-${LOCALBASE}/bin/update-mime-database ${LOCALBASE}/share/mime
 
