@@ -55,6 +55,7 @@
     SUBDIR += eclipse-vep-examples
     SUBDIR += eclipse-viplugin
     SUBDIR += eclipse-webtools
+    SUBDIR += eclipse-windowbuilder
     SUBDIR += icedtea-web
     SUBDIR += icedtea6-stubs
     SUBDIR += infobus
