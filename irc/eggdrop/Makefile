@@ -1,22 +1,16 @@
 # New ports collection makefile for:	eggdrop
 # Date created:				18.01.2003
-# Whom:					Ulrich Spoerlein <q@uni.de>
-#
-# Last updated by:      Kristian Kræmmer Nielsen <freebsd.ports@com.jkkn.dk>
-# Date: January 7th, 2011
+# Whom:						Ulrich Spoerlein <q@uni.de>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	eggdrop
-PORTVERSION=	1.6.20
-PORTREVISION=	1
+PORTVERSION=	1.6.21
 CATEGORIES=	irc
-MASTER_SITES=	ftp://ftp.eggheads.org/pub/eggdrop/source/1.6/ \
-	http://www.egghelp.org/files/patches/:ssl
+MASTER_SITES=	ftp://ftp.eggheads.org/pub/eggdrop/source/1.6/
 DISTNAME=	${PORTNAME}${PORTVERSION}
-DISTFILES=	${PORTNAME}${PORTVERSION}.tar.bz2 \
-	${PORTNAME}-${PORTVERSION}-ssl.zip:ssl
+DISTFILES=	${PORTNAME}${PORTVERSION}.tar.bz2
 
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	The most popular open source Internet Relay Chat bot
@@ -25,27 +19,13 @@ LICENSE=        GPLv2
 
 USE_TCL=	85+
 GNU_CONFIGURE=	yes
-#CONFIGURE_ARGS=	--with-tcllib=${LOCALBASE}/lib/libtcl${TCL_VER:S/.//}.so \
-#		--with-tclinc=${TCL_INCLUDEDIR}/tcl.h
 MAKE_JOBS_UNSAFE=	yes
-
-OPTIONS=	SSL "Use SSL" on
 
 MAN1=		eggdrop.1
 
 SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_SSL)
-. if ${ARCH} == "amd64"
-BROKEN=		ssl support is broken on amd64
-. endif
-EXTRA_PATCHES=	${WRKDIR}/eggdrop-1.6.20-ssl.patch
-
-CFLAGS+=	-DHAVE_OPENSSL
-#CONFIGURE_ARGS+=	--with-ssl
-.endif
 
 post-patch:
 	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' ${WRKSRC}/eggdrop.conf \
