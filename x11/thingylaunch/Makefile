@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thingylaunch
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	x11
 MASTER_SITES=	http://www.gahr.ch/${PORTNAME}/	\
    		${MASTER_SITE_LOCAL}/gahr/ \
