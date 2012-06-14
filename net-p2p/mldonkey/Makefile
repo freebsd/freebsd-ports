@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	3.1.1
-PORTREVISION=	1
+PORTVERSION=	3.1.2
 CATEGORIES+=	net-p2p
 MASTER_SITES=	SF
 
@@ -76,7 +75,7 @@ PLIST_SUB+=	CORE="@comment " GUI="" GUICORE="@comment "
 
 .if !defined(WITHOUT_GUI)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/ocaml/lablgtk2/lablrsvg.cma:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
-LIB_DEPENDS+=	rsvg-2.2:${PORTSDIR}/graphics/librsvg2
+LIB_DEPENDS+=	rsvg-2:${PORTSDIR}/graphics/librsvg2
 
 CONFIGURE_ARGS+=--enable-gui=newgui2
 # we don't need lablgtk as RUN dependency, but we need gtk+glib
@@ -88,7 +87,7 @@ USE_RC_SUBR=	mlnet
 SUB_LIST+=	SH=${SH:Q}
 
 . if !defined(WITHOUT_GD)
-LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
 . else
 CONFIGURE_ARGS+=--disable-gd
 . endif
