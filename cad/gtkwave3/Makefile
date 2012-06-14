@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtkwave3
-PORTVERSION=	3.3.35
-PORTREVISION=	1
+PORTVERSION=	3.3.37
 CATEGORIES=	cad
 MASTER_SITES=	http://gtkwave.sourceforge.net/
 DISTNAME=	gtkwave-${PORTVERSION}
@@ -20,13 +19,14 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20 desktopfileutils
 INSTALLS_ICONS=	yes
 
-OPTIONS=	TCL "Enable support for TCL/TK" off
+OPTIONS_DEFINE=	TCL
+TCL_DESC=	Enable support for TCL/TK
 
 PORTDOCS=	gtkwave.odt
 
 .include	<bsd.port.options.mk>
 
-.if defined(WITH_TCL)
+.if ${PORT_OPTIONS:MTCL}
 USE_TCL=	84+
 USE_TK=		84+
 CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR} \
