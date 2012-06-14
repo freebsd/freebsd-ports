@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Candy/.packlist
+%%SITE_PERL%%/DBIx/Class/Candy.pm
+%%SITE_PERL%%/DBIx/Class/Candy/Exports.pm
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Candy
+@dirrmtry %%SITE_PERL%%/DBIx/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Candy
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
