@@ -7,7 +7,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -916,8 +916,7 @@ do-build:
 	@cd ${WRKSRC} && ${MAKE}
 
 do-install:
-	${MKDIR} ${ETCDIR} ${NGINX_TMPDIR}
-	${CHOWN} ${WWWOWN}:${WWWGRP} ${NGINX_TMPDIR}
+	${MKDIR} ${ETCDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/objs/nginx ${PREFIX}/sbin
 .for i in koi-utf koi-win win-utf
 	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${ETCDIR}
