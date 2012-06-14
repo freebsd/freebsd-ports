@@ -8,13 +8,14 @@
 
 PORTNAME=	uic3
 DISTVERSION=	${QT4_VERSION}
+PORTREVISION=	1
 CATEGORIES?=	devel
 PKGNAMEPREFIX=	qt4-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt backwards-compatible user interface compiler
 
-USE_QT4=	qmake_build qt3support corelib gui network sql xml
+USE_QT4=	qmake_build qt3support corelib gui network sql xml porting
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 MAKE_JOBS_SAFE=	yes
