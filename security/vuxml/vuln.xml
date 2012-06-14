@@ -52,6 +52,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5140dc69-b65e-11e1-9425-001b21614864">
+    <topic>ImageMagick -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ImageMagick</name>
+	<range><lt>6.7.6.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ImageMagick reports:</p>
+	<blockquote cite="http://www.cert.fi/en/reports/2012/vulnerability635606.html">
+	  <p>Three vulnerabilities have been identified in ImageMagick's
+             handling of JPEG and TIFF files. With these vulnerabilities, it is
+             possible to cause a denial of service situation in the target
+             system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-0259</cvename>
+      <cvename>CVE-2012-0260</cvename>
+      <cvename>CVE-2012-1798</cvename>
+      <url>http://www.imagemagick.org/discourse-server/viewtopic.php?f=4&amp;t=20629</url>
+      <url>http://www.cert.fi/en/reports/2012/vulnerability635606.html</url>
+    </references>
+    <dates>
+      <discovery>2012-03-28</discovery>
+      <entry>2012-06-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="55587adb-b49d-11e1-8df1-0004aca374af">
     <topic>mantis -- multiple vulnerabilities</topic>
     <affects>
