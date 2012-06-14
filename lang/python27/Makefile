@@ -146,6 +146,12 @@ CONFIGURE_ARGS+=	--disable-ipv6
 CONFIGURE_ARGS+=	--with-fpectl
 .endif
 
+post-extract:
+# The distribution tarball for python 2.7 has permission bits for 'others'
+# set to 0. Later during install, we copy Tools and Demo to the installed
+# prefix, so set them right here.
+	${CHMOD} -R og=u-w ${PYTHON_WRKSRC}/Tools ${PYTHON_WRKSRC}/Demo
+
 pre-patch:
 	${CP} -r ${PATCH_WRKSRC}/Lib/plat-freebsd8 \
 		${PATCH_WRKSRC}/Lib/plat-freebsd9
@@ -267,12 +273,12 @@ post-install:
 .if !defined(NOPORTDATA)
 	@${MKDIR} ${DATADIR}
 	@cd ${PYTHON_WRKSRC}; ${TAR} -cf - Tools | \
-		(cd ${DATADIR}; ${TAR} -xf -)
+		(cd ${DATADIR}; ${TAR} --no-same-owner -xf -)
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@cd ${PYTHON_WRKSRC}/Demo; ${TAR} -cf - * | \
-		(cd ${EXAMPLESDIR}; ${TAR} -xf -)
+		(cd ${EXAMPLESDIR}; ${TAR} --no-same-owner -xf -)
 .endif
 
 	@${CAT} ${PKGMESSAGE}
