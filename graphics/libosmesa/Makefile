@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libosmesa
-PORTVERSION=	8.0.2
+PORTVERSION=	8.0.3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/${PORTVERSION}/
 DISTNAME=	MesaLib-${PORTVERSION}
