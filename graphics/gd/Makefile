@@ -36,15 +36,29 @@ FEATURES=	GD_JPEG GD_FREETYPE GD_PNG GD_GIF GD_GIFANIM GD_OPENPOLYGON
 USE_LDCONFIG=	yes
 WANT_PERL=	yes
 
-OPTIONS=	X11 "X11 support" off \
-		XPM "XPM color bitmap loading support (requires X11)" off \
-		FONTCONFIG "fontconfig library support (requires X11)" on \
-		ICONV "iconv support" off
+OPTIONS_DEFINE=	FONTCONFIG ICONV XPM
+OPTIONS_DEFAULT=FONTCONFIG
+NO_OPTIONS_SORT=yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:M_FONTCONFIG}
+LIB_DEPENDS+=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_LIBFONTCONFIG -DHAVE_PTHREAD ${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib -lfontconfig
+LDFLAGS2+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
+FEATURES+=	GD_FONTCONFIG
+.endif
+
+.if ${PORT_OPTIONS:MICONV}
+USE_ICONV=	yes
+CPPFLAGS+=	-DHAVE_ICONV -DHAVE_ICONV_H -DHAVE_ICONV_T_DEF
+LDFLAGS+=	-L${LOCALBASE}/lib -liconv
+.endif
+
+# honor global WITHOUT_X11
 .if !defined(WITHOUT_X11)
-.if defined(WITH_XPM)
+.if ${PORT_OPTIONS:MXPM}
 USE_XORG=	xpm x11
 CPPFLAGS+=	-I${LOCALBASE}/include/X11 -I${LOCALBASE}/include -DHAVE_LIBXPM
 LDFLAGS+=	-L${LOCALBASE}/lib -lXpm -lX11
@@ -53,26 +67,13 @@ FEATURES+=	GD_XPM
 .endif
 .endif
 
-.if !defined(WITHOUT_FONTCONFIG)
-LIB_DEPENDS+=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
-CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_LIBFONTCONFIG -DHAVE_PTHREAD ${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib -lfontconfig
-LDFLAGS2+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
-FEATURES+=	GD_FONTCONFIG
-.endif
+FONTBASE=	${LOCALBASE}/lib/X11/fonts
 
-.if defined(WITH_ICONV)
-USE_ICONV=	yes
-CPPFLAGS+=	-DHAVE_ICONV -DHAVE_ICONV_H -DHAVE_ICONV_T_DEF
-LDFLAGS+=	-L${LOCALBASE}/lib -liconv
-.endif
-
+# supprt for bitmap fonts
 .if defined(GD_FONTS)
 USE_PERL5_BUILD=	yes
 SCRIPTS_ENV+=	GD_FONTS="${GD_FONTS}"
 .endif
-
-FONTBASE=	${LOCALBASE}/lib/X11/fonts
 
 pre-extract::
 	@${ECHO_MSG} ""
@@ -105,4 +106,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/index.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
