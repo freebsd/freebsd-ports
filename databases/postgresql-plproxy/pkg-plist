@@ -1,5 +1,9 @@
 lib/postgresql/plproxy.so
-share/postgresql/contrib/plproxy.sql
+%%NEW_CONTRIB_DIR%%share/postgresql/extension/plproxy--unpackaged--2.3.0.sql
+%%NEW_CONTRIB_DIR%%share/postgresql/extension/plproxy--2.4.0.sql
+%%NEW_CONTRIB_DIR%%share/postgresql/extension/plproxy.control
+%%OLD_CONTRIB_DIR%%share/postgresql/contrib/plproxy.sql
 @dirrmtry lib/postgresql
-@dirrmtry share/postgresql/contrib
+%%NEW_CONTRIB_DIR%%@dirrmtry share/postgresql/extension
+%%OLD_CONTRIB_DIR%%@dirrmtry share/postgresql/contrib
 @dirrmtry share/postgresql
