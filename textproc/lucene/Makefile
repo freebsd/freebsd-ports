@@ -7,11 +7,10 @@
 # Please don't forget to bump the version in py-lucene if this changes!
 
 PORTNAME=	lucene
-PORTVERSION=	3.5.0
+PORTVERSION=	3.6.0
 CATEGORIES=	textproc java devel
 MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	${PORTNAME}/java/${PORTVERSION}/
-DISTNAME=	lucene-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gerrit.beine@gmx.de
@@ -20,12 +19,11 @@ COMMENT=	A full-text search engine for Java
 LICENSE=	AL2
 
 USE_JAVA=	yes
-USE_ANT=	yes
+NO_BUILD=	yes
 JAVA_VERSION=	1.5+
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-OPTIONS=	DOCS    "Install docs & examples" on \
-		CONTRIB "Install contribs" off
+OPTIONS_DEFINE=	CONTRIB
+CONTRIB_DESC=	Install contribs
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}-core-${PORTVERSION}.jar
 
@@ -41,6 +39,7 @@ CONTRIBS=	benchmark \
 		join	\
 		memory \
 		misc \
+		pruning \
 		queries \
 		queryparser	\
 		remote	\
@@ -48,20 +47,17 @@ CONTRIBS=	benchmark \
 		spellchecker \
 		xml-query-parser
 
-EXTRA_CONTRIBS_BUILD=	analyzers
+EXTRA_CONTRIBS_BASE=	analyzers
 
-EXTRA_CONTRIBS_DIRS=	smartcn \
+EXTRA_CONTRIBS_DIRS=	kuromoji \
+		phonetic \
+		smartcn \
 		stempel
 
-.if defined(WITH_CONTRIB)
-.for f in ${EXTRA_CONTRIBS_BUILD} ${CONTRIBS} ${EXTRA_CONTRIBS_DIRS}
+.if ${PORT_OPTIONS:MCONTRIB}
+.for f in ${EXTRA_CONTRIBS_BASE} ${CONTRIBS} ${EXTRA_CONTRIBS_DIRS}
 PLIST_FILES+=%%JAVAJARDIR%%/${PORTNAME}-${f}-${PORTVERSION}.jar
 .endfor
-.endif
-
-.if defined(WITHOUT_DOCS) || !defined(WITH_DOCS)
-NOPORTDOCS=	yes
-NOPORTEXAMPLES=	yes
 .endif
 
 PORTDOCS=	*
@@ -69,41 +65,29 @@ PORTEXAMPLES=	*
 
 DEMODIR=	contrib/demo
 
-.if defined(WITH_CONTRIB)
-post-build:
-.for i in ${EXTRA_CONTRIBS_BUILD} ${CONTRIBS}
-	cd ${WRKSRC}/contrib/${i} && ${ANT}
-.endfor
-.endif
-
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/build/${PORTNAME}-core-${PORTVERSION:R}-SNAPSHOT.jar \
-		${JAVAJARDIR}/${PORTNAME}-core-${PORTVERSION}.jar
-.if defined(WITH_CONTRIB)
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-core-${PORTVERSION}.jar ${JAVAJARDIR}
+.if ${PORT_OPTIONS:MCONTRIB}
 . for f in ${CONTRIBS}
-	@${INSTALL_DATA} \
-	    ${WRKSRC}/build/contrib/${f}/${PORTNAME}-${f}-${PORTVERSION:R}-SNAPSHOT.jar \
-	    ${JAVAJARDIR}/${PORTNAME}-${f}-${PORTVERSION}.jar
+	${INSTALL_DATA} ${WRKSRC}/contrib/${f}/${PORTNAME}-${f}-${PORTVERSION}.jar ${JAVAJARDIR}
 . endfor
 . for d in ${EXTRA_CONTRIBS_DIRS}
-	@${INSTALL_DATA} \
-	    ${WRKSRC}/build/contrib/${EXTRA_CONTRIBS_BUILD}/${d}/${PORTNAME}-${d}-${PORTVERSION:R}-SNAPSHOT.jar \
-	    ${JAVAJARDIR}/${PORTNAME}-${d}-${PORTVERSION}.jar
+	${INSTALL_DATA} ${WRKSRC}/contrib/${EXTRA_CONTRIBS_BASE}/${d}/${PORTNAME}-${d}-${PORTVERSION}.jar ${JAVAJARDIR}
 . endfor
-	@${INSTALL_DATA} \
-	    ${WRKSRC}/build/contrib/${EXTRA_CONTRIBS_BUILD}/common/${PORTNAME}-${EXTRA_CONTRIBS_BUILD}-${PORTVERSION:R}-SNAPSHOT.jar \
-	    ${JAVAJARDIR}/${PORTNAME}-${EXTRA_CONTRIBS_BUILD}-${PORTVERSION}.jar
+	${INSTALL_DATA} ${WRKSRC}/contrib/${EXTRA_CONTRIBS_BASE}/common/${PORTNAME}-${EXTRA_CONTRIBS_BASE}-${PORTVERSION}.jar ${JAVAJARDIR}
 .endif
-.if !defined(NOPORTDOCS)
+
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in CHANGES.txt LICENSE.txt NOTICE.txt README.txt
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
-	@(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \* ${DOCSDIR})
+	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \* ${DOCSDIR})
 .endif
-.if !defined(NOPORTEXAMPLES)
+
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/${DEMODIR} && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+	(cd ${WRKSRC}/${DEMODIR} && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>
