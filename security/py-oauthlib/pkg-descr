@@ -1,0 +1,5 @@
+OAuthLib is a generic Python module which implements the logic of OAuth without
+assuming a specific HTTP request object. Use it to graft OAuth support onto
+your favorite HTTP library.
+
+WWW:	https://github.com/idangazit/oauthlib

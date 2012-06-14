@@ -732,6 +732,7 @@
     SUBDIR += py-m2crypto
     SUBDIR += py-mcrypt
     SUBDIR += py-mhash
+    SUBDIR += py-oauthlib
     SUBDIR += py-openid
     SUBDIR += py-openssl
     SUBDIR += py-otr
