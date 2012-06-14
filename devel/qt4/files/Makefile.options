@@ -5,10 +5,7 @@
 # without making qt4-corelib depend on useless stuff. Both qt4-corelib
 # and qt4-gui must be recompiled when changing options.
 QT4_OPTIONS_ALL=CUPS NAS QGTKSTYLE
-QT4_OPTIONS?=
-.if defined(PACKAGE_BUILDING)
-QT4_OPTIONS+=	CUPS
-.endif
+QT4_OPTIONS?=	CUPS
 
 .for opt in ${QT4_OPTIONS_ALL}
 ${opt}_REPLACE=

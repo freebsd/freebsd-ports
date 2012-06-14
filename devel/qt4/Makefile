@@ -39,7 +39,7 @@ USE_QT4+=	l10n
 
 .if defined(WITH_TOOLS)
 USE_QT4+=	help-tools linguist makeqpf moc pixeltool \
-		porting qmake rcc uic uic3 qdoc3
+		porting qmake qmlviewer rcc uic uic3 qdoc3
 .endif
 
 .if defined(WITH_CODECS)
