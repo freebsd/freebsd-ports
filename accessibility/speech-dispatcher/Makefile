@@ -6,7 +6,7 @@
 
 PORTNAME=	speech-dispatcher
 PORTVERSION=	0.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	accessibility audio
 MASTER_SITES=	http://www.freebsoft.org/pub/projects/speechd/
 
@@ -128,6 +128,8 @@ post-patch:
 		${WRKSRC}/src/c/clients/spdsend/Makefile.in \
 		${WRKSRC}/src/modules/Makefile.in \
 		${WRKSRC}/src/server/Makefile.in
+	${REINPLACE_CMD} -e '/SUBDIRS/ s/tests//' \
+		${WRKSRC}/src/Makefile.in
 
 post-install:
 .for f in ${ETCFILES}

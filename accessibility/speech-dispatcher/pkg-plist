@@ -1,8 +1,3 @@
-bin/clibrary
-bin/clibrary2
-bin/connection_recovery
-bin/long_message
-bin/run_test
 %%PYTHON%%bin/spd-conf
 bin/spd-say
 bin/spdsend
