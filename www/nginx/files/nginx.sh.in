@@ -82,8 +82,7 @@ fi
 nginx_checktmpdir()
 {
 	if [ ! -d ${_tmpprefix} ] ; then
-		mkdir -p ${_tmpprefix}
-		chown %%WWWOWN%%:%%WWWGRP%% ${_tmpprefix}
+		install -d -o %%WWWOWN%% -g %%WWWGRP%% -m 755 ${_tmpprefix}
 	fi
 }
 
