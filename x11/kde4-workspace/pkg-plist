@@ -1034,6 +1034,16 @@ share/doc/HTML/en/kcontrol/keyboard/index.docbook
 share/doc/HTML/en/kcontrol/keys/common
 share/doc/HTML/en/kcontrol/keys/index.cache.bz2
 share/doc/HTML/en/kcontrol/keys/index.docbook
+share/doc/HTML/en/kcontrol/khotkeys/common
+share/doc/HTML/en/kcontrol/khotkeys/groups-comment.png
+share/doc/HTML/en/kcontrol/khotkeys/index.cache.bz2
+share/doc/HTML/en/kcontrol/khotkeys/index.docbook
+share/doc/HTML/en/kcontrol/khotkeys/manage-export.png
+share/doc/HTML/en/kcontrol/khotkeys/settings.png
+share/doc/HTML/en/kcontrol/khotkeys/shortcuts-action-command.png
+share/doc/HTML/en/kcontrol/khotkeys/shortcuts-action-keyboard.png
+share/doc/HTML/en/kcontrol/khotkeys/shortcuts-trigger-keyboard.png
+share/doc/HTML/en/kcontrol/khotkeys/shortcuts-trigger-mouse.png
 share/doc/HTML/en/kcontrol/kwincompositing/common
 share/doc/HTML/en/kcontrol/kwincompositing/index.cache.bz2
 share/doc/HTML/en/kcontrol/kwincompositing/index.docbook
@@ -1052,6 +1062,11 @@ share/doc/HTML/en/kcontrol/kwintabbox/index.docbook
 share/doc/HTML/en/kcontrol/mouse/common
 share/doc/HTML/en/kcontrol/mouse/index.cache.bz2
 share/doc/HTML/en/kcontrol/mouse/index.docbook
+share/doc/HTML/en/kcontrol/multiplemonitors/common
+share/doc/HTML/en/kcontrol/multiplemonitors/index.cache.bz2
+share/doc/HTML/en/kcontrol/multiplemonitors/index.docbook
+share/doc/HTML/en/kcontrol/multiplemonitors/multiplemonitors-error.png
+share/doc/HTML/en/kcontrol/multiplemonitors/multiplemonitors.png
 share/doc/HTML/en/kcontrol/paths/common
 share/doc/HTML/en/kcontrol/paths/index.cache.bz2
 share/doc/HTML/en/kcontrol/paths/index.docbook
@@ -1079,9 +1094,47 @@ share/doc/HTML/en/kcontrol/splashscreen/splash-main.png
 share/doc/HTML/en/kcontrol/windowbehaviour/common
 share/doc/HTML/en/kcontrol/windowbehaviour/index.cache.bz2
 share/doc/HTML/en/kcontrol/windowbehaviour/index.docbook
+share/doc/HTML/en/kcontrol/windowspecific/Face-smile.png
+share/doc/HTML/en/kcontrol/windowspecific/akgregator-info.png
+share/doc/HTML/en/kcontrol/windowspecific/akregator-attributes.png
+share/doc/HTML/en/kcontrol/windowspecific/akregator-fav.png
 share/doc/HTML/en/kcontrol/windowspecific/common
+share/doc/HTML/en/kcontrol/windowspecific/config-win-behavior.png
+share/doc/HTML/en/kcontrol/windowspecific/emacs-attribute.png
+share/doc/HTML/en/kcontrol/windowspecific/emacs-info.png
+share/doc/HTML/en/kcontrol/windowspecific/focus-stealing-pop2top-attribute.png
 share/doc/HTML/en/kcontrol/windowspecific/index.cache.bz2
 share/doc/HTML/en/kcontrol/windowspecific/index.docbook
+share/doc/HTML/en/kcontrol/windowspecific/knotes-attribute.png
+share/doc/HTML/en/kcontrol/windowspecific/knotes-info.png
+share/doc/HTML/en/kcontrol/windowspecific/kopete-attribute-2.png
+share/doc/HTML/en/kcontrol/windowspecific/kopete-chat-attribute.png
+share/doc/HTML/en/kcontrol/windowspecific/kopete-chat-info.png
+share/doc/HTML/en/kcontrol/windowspecific/kopete-info.png
+share/doc/HTML/en/kcontrol/windowspecific/kwin-detect-window.png
+share/doc/HTML/en/kcontrol/windowspecific/kwin-kopete-rules.png
+share/doc/HTML/en/kcontrol/windowspecific/kwin-rule-editor.png
+share/doc/HTML/en/kcontrol/windowspecific/kwin-rules-main-n-akregator.png
+share/doc/HTML/en/kcontrol/windowspecific/kwin-rules-main.png
+share/doc/HTML/en/kcontrol/windowspecific/kwin-rules-ordering.png
+share/doc/HTML/en/kcontrol/windowspecific/kwin-window-attributes.png
+share/doc/HTML/en/kcontrol/windowspecific/kwin-window-matching.png
+share/doc/HTML/en/kcontrol/windowspecific/pager-4-desktops.png
+share/doc/HTML/en/kcontrol/windowspecific/tbird-compose-attribute.png
+share/doc/HTML/en/kcontrol/windowspecific/tbird-compose-info.png
+share/doc/HTML/en/kcontrol/windowspecific/tbird-main-attribute.png
+share/doc/HTML/en/kcontrol/windowspecific/tbird-main-info.png
+share/doc/HTML/en/kcontrol/windowspecific/tbird-reminder-attribute-2.png
+share/doc/HTML/en/kcontrol/windowspecific/tbird-reminder-info.png
+share/doc/HTML/en/kcontrol/windowspecific/window-matching-emacs.png
+share/doc/HTML/en/kcontrol/windowspecific/window-matching-init.png
+share/doc/HTML/en/kcontrol/windowspecific/window-matching-knotes.png
+share/doc/HTML/en/kcontrol/windowspecific/window-matching-kopete-chat.png
+share/doc/HTML/en/kcontrol/windowspecific/window-matching-kopete.png
+share/doc/HTML/en/kcontrol/windowspecific/window-matching-ready-akregator.png
+share/doc/HTML/en/kcontrol/windowspecific/window-matching-tbird-compose.png
+share/doc/HTML/en/kcontrol/windowspecific/window-matching-tbird-main.png
+share/doc/HTML/en/kcontrol/windowspecific/window-matching-tbird-reminder.png
 share/doc/HTML/en/kcontrol/workspaceoptions/common
 share/doc/HTML/en/kcontrol/workspaceoptions/index.cache.bz2
 share/doc/HTML/en/kcontrol/workspaceoptions/index.docbook
@@ -1946,11 +1999,13 @@ share/wallpapers/stripes.png.desktop
 @dirrm share/doc/HTML/en/kcontrol/screensaver
 @dirrm share/doc/HTML/en/kcontrol/powerdevil
 @dirrm share/doc/HTML/en/kcontrol/paths
+@dirrm share/doc/HTML/en/kcontrol/multiplemonitors
 @dirrm share/doc/HTML/en/kcontrol/mouse
 @dirrm share/doc/HTML/en/kcontrol/kwintabbox
 @dirrm share/doc/HTML/en/kcontrol/kwinscreenedges
 @dirrm share/doc/HTML/en/kcontrol/kwindecoration
 @dirrm share/doc/HTML/en/kcontrol/kwincompositing
+@dirrm share/doc/HTML/en/kcontrol/khotkeys
 @dirrm share/doc/HTML/en/kcontrol/keys
 @dirrm share/doc/HTML/en/kcontrol/keyboard
 @dirrm share/doc/HTML/en/kcontrol/kcmstyle

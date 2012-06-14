@@ -222,6 +222,7 @@ share/dbus-1/interfaces/org.kde.nsplugins.instance.xml
 share/dbus-1/interfaces/org.kde.nsplugins.viewer.xml
 share/doc/HTML/en/dolphin/common
 share/doc/HTML/en/dolphin/default-ui.png
+share/doc/HTML/en/dolphin/grouping-view.png
 share/doc/HTML/en/dolphin/index.cache.bz2
 share/doc/HTML/en/dolphin/index.docbook
 share/doc/HTML/en/dolphin/locationbar-breadcrumb.png

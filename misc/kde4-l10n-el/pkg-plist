@@ -241,6 +241,7 @@ share/locale/el/LC_MESSAGES/kabcformat_binary.mo
 share/locale/el/LC_MESSAGES/kaccess.mo
 share/locale/el/LC_MESSAGES/kaccessibleapp.mo
 share/locale/el/LC_MESSAGES/kactivitymanagerd.mo
+share/locale/el/LC_MESSAGES/kaddressbook-mobile.mo
 share/locale/el/LC_MESSAGES/kaddressbook.mo
 share/locale/el/LC_MESSAGES/kaddressbookmigrator.mo
 share/locale/el/LC_MESSAGES/kajongg.mo
@@ -699,6 +700,7 @@ share/locale/el/LC_MESSAGES/plasma_applet_groupingpanel.mo
 share/locale/el/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/el/LC_MESSAGES/plasma_applet_icontasks.mo
 share/locale/el/LC_MESSAGES/plasma_applet_incomingmsg.mo
+share/locale/el/LC_MESSAGES/plasma_applet_kalgebra.mo
 share/locale/el/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/el/LC_MESSAGES/plasma_applet_katesession.mo
 share/locale/el/LC_MESSAGES/plasma_applet_kdeobservatory.mo

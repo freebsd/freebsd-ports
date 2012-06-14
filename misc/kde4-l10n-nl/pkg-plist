@@ -352,6 +352,9 @@ share/doc/HTML/nl/kcontrol/joystick/index.docbook
 share/doc/HTML/nl/kcontrol/kamera/common
 share/doc/HTML/nl/kcontrol/kamera/index.cache.bz2
 share/doc/HTML/nl/kcontrol/kamera/index.docbook
+share/doc/HTML/nl/kcontrol/kcm_ssl/common
+share/doc/HTML/nl/kcontrol/kcm_ssl/index.cache.bz2
+share/doc/HTML/nl/kcontrol/kcm_ssl/index.docbook
 share/doc/HTML/nl/kcontrol/kcmaccess/common
 share/doc/HTML/nl/kcontrol/kcmaccess/index.cache.bz2
 share/doc/HTML/nl/kcontrol/kcmaccess/index.docbook
@@ -385,6 +388,9 @@ share/doc/HTML/nl/kcontrol/keys/index.docbook
 share/doc/HTML/nl/kcontrol/kgamma/common
 share/doc/HTML/nl/kcontrol/kgamma/index.cache.bz2
 share/doc/HTML/nl/kcontrol/kgamma/index.docbook
+share/doc/HTML/nl/kcontrol/khotkeys/common
+share/doc/HTML/nl/kcontrol/khotkeys/index.cache.bz2
+share/doc/HTML/nl/kcontrol/khotkeys/index.docbook
 share/doc/HTML/nl/kcontrol/khtml-adblock/common
 share/doc/HTML/nl/kcontrol/khtml-adblock/index.cache.bz2
 share/doc/HTML/nl/kcontrol/khtml-adblock/index.docbook
@@ -426,6 +432,9 @@ share/doc/HTML/nl/kcontrol/language/index.docbook
 share/doc/HTML/nl/kcontrol/mouse/common
 share/doc/HTML/nl/kcontrol/mouse/index.cache.bz2
 share/doc/HTML/nl/kcontrol/mouse/index.docbook
+share/doc/HTML/nl/kcontrol/multiplemonitors/common
+share/doc/HTML/nl/kcontrol/multiplemonitors/index.cache.bz2
+share/doc/HTML/nl/kcontrol/multiplemonitors/index.docbook
 share/doc/HTML/nl/kcontrol/nepomuk/common
 share/doc/HTML/nl/kcontrol/nepomuk/index.cache.bz2
 share/doc/HTML/nl/kcontrol/nepomuk/index.docbook
@@ -1183,6 +1192,9 @@ share/doc/HTML/nl/step/tutorials.docbook
 share/doc/HTML/nl/sweeper/common
 share/doc/HTML/nl/sweeper/index.cache.bz2
 share/doc/HTML/nl/sweeper/index.docbook
+share/doc/HTML/nl/system-config-printer-kde/common
+share/doc/HTML/nl/system-config-printer-kde/index.cache.bz2
+share/doc/HTML/nl/system-config-printer-kde/index.docbook
 share/doc/HTML/nl/systemsettings/common
 share/doc/HTML/nl/systemsettings/index.cache.bz2
 share/doc/HTML/nl/systemsettings/index.docbook
@@ -1946,6 +1958,7 @@ share/locale/nl/entry.desktop
 @dirrm share/locale/nl/LC_SCRIPTS
 @dirrm share/doc/HTML/nl/umbrello
 @dirrm share/doc/HTML/nl/systemsettings
+@dirrm share/doc/HTML/nl/system-config-printer-kde
 @dirrm share/doc/HTML/nl/sweeper
 @dirrm share/doc/HTML/nl/step
 @dirrm share/doc/HTML/nl/sonnet
@@ -2104,6 +2117,7 @@ share/locale/nl/entry.desktop
 @dirrm share/doc/HTML/nl/kcontrol/paths
 @dirrm share/doc/HTML/nl/kcontrol/netpref
 @dirrm share/doc/HTML/nl/kcontrol/nepomuk
+@dirrm share/doc/HTML/nl/kcontrol/multiplemonitors
 @dirrm share/doc/HTML/nl/kcontrol/mouse
 @dirrm share/doc/HTML/nl/kcontrol/language
 @dirrm share/doc/HTML/nl/kcontrol/kwintabbox
@@ -2117,6 +2131,7 @@ share/locale/nl/entry.desktop
 @dirrm share/doc/HTML/nl/kcontrol/khtml-general
 @dirrm share/doc/HTML/nl/kcontrol/khtml-behavior
 @dirrm share/doc/HTML/nl/kcontrol/khtml-adblock
+@dirrm share/doc/HTML/nl/kcontrol/khotkeys
 @dirrm share/doc/HTML/nl/kcontrol/kgamma
 @dirrm share/doc/HTML/nl/kcontrol/keys
 @dirrm share/doc/HTML/nl/kcontrol/keyboard
@@ -2128,6 +2143,7 @@ share/locale/nl/entry.desktop
 @dirrm share/doc/HTML/nl/kcontrol/kcmcss
 @dirrm share/doc/HTML/nl/kcontrol/kcmcgi
 @dirrm share/doc/HTML/nl/kcontrol/kcmaccess
+@dirrm share/doc/HTML/nl/kcontrol/kcm_ssl
 @dirrm share/doc/HTML/nl/kcontrol/kamera
 @dirrm share/doc/HTML/nl/kcontrol/joystick
 @dirrm share/doc/HTML/nl/kcontrol/icons
