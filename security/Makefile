@@ -749,6 +749,7 @@
     SUBDIR += py-pylibacl
     SUBDIR += py-pyme
     SUBDIR += py-rijndael
+    SUBDIR += py-rsa
     SUBDIR += py-ssh
     SUBDIR += py-sslstrip
     SUBDIR += py-tlslite
