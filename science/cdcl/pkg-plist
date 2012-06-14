@@ -50,375 +50,76 @@ lib/cdcldbase/colormap_11.x11
 lib/cdcldbase/colormap_12.x11
 lib/cdcldbase/colormap_13.x11
 lib/cdcldbase/colormap_14.x11
+lib/cdcldbase/colormap_15.x11
+lib/cdcldbase/colormap_16.x11
+lib/cdcldbase/colormap_17.x11
+lib/cdcldbase/colormap_18.x11
+lib/cdcldbase/colormap_19.x11
+lib/cdcldbase/colormap_20.x11
+lib/cdcldbase/colormap_21.x11
+lib/cdcldbase/colormap_22.x11
+lib/cdcldbase/colormap_23.x11
+lib/cdcldbase/colormap_24.x11
+lib/cdcldbase/colormap_25.x11
+lib/cdcldbase/colormap_26.x11
+lib/cdcldbase/colormap_27.x11
+lib/cdcldbase/colormap_28.x11
+lib/cdcldbase/colormap_29.x11
+lib/cdcldbase/colormap_30.x11
+lib/cdcldbase/colormap_31.x11
+lib/cdcldbase/colormap_32.x11
+lib/cdcldbase/colormap_33.x11
+lib/cdcldbase/colormap_34.x11
+lib/cdcldbase/colormap_35.x11
+lib/cdcldbase/colormap_36.x11
+lib/cdcldbase/colormap_37.x11
+lib/cdcldbase/colormap_38.x11
+lib/cdcldbase/colormap_39.x11
+lib/cdcldbase/colormap_40.x11
+lib/cdcldbase/colormap_41.x11
+lib/cdcldbase/colormap_42.x11
+lib/cdcldbase/colormap_43.x11
+lib/cdcldbase/colormap_44.x11
+lib/cdcldbase/colormap_45.x11
+lib/cdcldbase/colormap_46.x11
+lib/cdcldbase/colormap_47.x11
+lib/cdcldbase/colormap_48.x11
+lib/cdcldbase/colormap_49.x11
+lib/cdcldbase/colormap_50.x11
+lib/cdcldbase/colormap_51.x11
+lib/cdcldbase/colormap_52.x11
+lib/cdcldbase/colormap_53.x11
+lib/cdcldbase/colormap_54.x11
+lib/cdcldbase/colormap_55.x11
+lib/cdcldbase/colormap_56.x11
+lib/cdcldbase/colormap_57.x11
+lib/cdcldbase/colormap_58.x11
+lib/cdcldbase/colormap_59.x11
+lib/cdcldbase/colormap_60.x11
+lib/cdcldbase/colormap_61.x11
+lib/cdcldbase/colormap_62.x11
+lib/cdcldbase/colormap_63.x11
+lib/cdcldbase/colormap_64.x11
+lib/cdcldbase/colormap_65.x11
+lib/cdcldbase/colormap_66.x11
+lib/cdcldbase/colormap_67.x11
+lib/cdcldbase/colormap_68.x11
+lib/cdcldbase/colormap_69.x11
+lib/cdcldbase/colormap_70.x11
+lib/cdcldbase/colormap_71.x11
+lib/cdcldbase/colormap_72.x11
+lib/cdcldbase/colormap_73.x11
+lib/cdcldbase/colormap_74.x11
+lib/cdcldbase/colormap_75.x11
+lib/cdcldbase/colormap_76.x11
+lib/cdcldbase/colormap_77.x11
+lib/cdcldbase/colormap_78.x11
 lib/cdcldbase/font1u
 lib/cdcldbase/font2u
 lib/cdcldbase/plate_world
 lib/cdcldbase/pref_japan
 lib/cdcldbase/state_usa
 lib/libcdcl.a
+lib/libcdcl.so
 lib/libf2c4dcl.a
-%%PORTDOCS%%%%DOCSDIR%%/CHECK
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/HISTORY
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README_clrmap
-%%PORTDOCS%%%%DOCSDIR%%/README_gt2dlib
-%%PORTDOCS%%%%DOCSDIR%%/README_itr51
-%%PORTDOCS%%%%DOCSDIR%%/README_pslib
-%%PORTDOCS%%%%DOCSDIR%%/README_umfmap
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gokuraku/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gokuraku/hop/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gokuraku/hop/hop.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gokuraku/jump/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gokuraku/jump/jump1.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gokuraku/jump/jump2.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gokuraku/layout/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gokuraku/layout/lay1.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gokuraku/layout/lay2.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gokuraku/step/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gokuraku/step/step1.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gokuraku/step/step2.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gokuraku/u1d/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gokuraku/u1d/u1d1.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gokuraku/u1d/u1d2.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gokuraku/u2d/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gokuraku/u2d/u2d1.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gokuraku/u2d/u2d2.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gokuraku/u2d/u2d3.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gokuraku/u2d/u2d4.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/scpack/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/scpack/scpkt1.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/scpack/scpkt2.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/scpack/scpkt3.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/scpack/scpkt4.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/scpack/scpkt5.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/scpack/scpkt6.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/scpack/scpkt7.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/scpack/scpkt8.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/scpack/t810630.dat
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/scpack/t811231.dat
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/sgpack/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/sgpack/sgfont.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/sgpack/sgfonz.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/sgpack/sgksx1.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/sgpack/sgksx2.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/sgpack/sgksx3.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/sgpack/sglidx.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/sgpack/sgltyp.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/sgpack/sgpk01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/sgpack/sgpk02.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/sgpack/sgpk03.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/sgpack/sgpk04.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/sgpack/sgpk05.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/sgpack/sgpk06.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/sgpack/sgpk07.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/sgpack/sgpk08.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/sgpack/sgpk09.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/sgpack/sgpk10.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/sgpack/sgtclr.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/sgpack/sgtcls.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/sgpack/sgtone.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/sgpack/sgtonz.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/slpack/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/slpack/slpk01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/slpack/slpk02.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/slpack/slpk03.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph1/slpack/slpk04.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/grpack/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/grpack/grpk01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/g2pack/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/g2pack/g2pk01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/g2pack/g2pk02.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/ucpack/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/ucpack/ucpk01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/ucpack/ucpk02.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/udegpk/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/udegpk/u2df01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/udegpk/u2df02.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/udegpk/u2df03.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/udegpk/u2df04.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/udegpk/u2df05.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/udegpk/u2df06.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/udegpk/u2df07.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/udegpk/u2df08.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/ulpack/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/ulpack/ulpk01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/ulpack/ulpk01n.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/ulpack/ulpk02.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/ulpack/ulpk02n.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/umpack/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/umpack/t811231.dat
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/umpack/test01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/umpack/test02.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/umpack/test03.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/umpack/test04.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/umpack/test05.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/umpack/test06.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/umpack/test07.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/umpack/test08.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/umpack/test09.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/umpack/umpk01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/umpack/umpk02.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/umpack/umpk03.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/umpack/umpk04.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/umpack/umpk05.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uspack/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uspack/uspk01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uspack/uspk02.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uspack/uspk03.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uspack/uspk04.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uspack/uspk05.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uspack/uspk06.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uspack/uspk07.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uspack/uspk08.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uspack/uspk09.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uspack/uspk10.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uspack/uspk11.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uspack/uspk12.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uupack/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uupack/uupk01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uupack/uupk02.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uupack/uupk03.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uupack/uupk04.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uupack/uupk05.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uupack/uupk06.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uupack/uupk07.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uxyzpk/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uxyzpk/uxyz01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uxyzpk/uxyz02.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uxyzpk/uxyz03.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uxyzpk/uxyz04.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uxyzpk/uxyz05.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uxyzpk/uxyz06.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uxyzpk/uxyz07.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uxyzpk/uxyz08.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uxyzpk/uxyz09.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/uxyzpk/uxyz10.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/ximage/MEMO
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/ximage/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/ximage/tomsclm.dat
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grph2/ximage/ximg01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/blklib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/blklib/blkl01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/chrlib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/chrlib/chrl01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/fnclib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/fnclib/fncl01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/gnmlib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/gnmlib/gnml01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/gt2dlib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/gt2dlib/gt2d01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/ifalib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/ifalib/ifal01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/indxlib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/indxlib/indx01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/indxlib/indx02.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/intlib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/intlib/intl01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/lrllib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/lrllib/lrll01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/lrllib/lrll02.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/oslib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/oslib/oslb01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/oslib/oslb02.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/rfalib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/rfalib/rfal01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/rfblib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/rfblib/rfbl01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/sublib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/sublib/subl01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/syslib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/syslib/sysl01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/syslib/sysl02.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/vialib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/vialib/vial01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/vialib/vial02.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/viblib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/viblib/vibl01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/vralib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/vralib/vral01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/vralib/vral02.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/vrblib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math1/vrblib/vrbl01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math2/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math2/fftlib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math2/fftlib/fftl01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math2/fftlib/fftl02.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math2/intrlib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math2/intrlib/intr01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math2/rnmlib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math2/rnmlib/rnml01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math2/vstlib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math2/vstlib/vstl01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math2/vstlib/vstl02.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc1/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc1/bitlib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc1/bitlib/bitl01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc1/chglib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc1/chglib/chgl01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc1/chklib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc1/chklib/chkl01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc1/chnlib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc1/chnlib/chnl01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc1/chnlib/chnl02.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc1/chnlib/chnl03.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc1/clcklib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc1/clcklib/clck01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc1/datelib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc1/datelib/date01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc1/datelib/date02.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc1/datelib/date03.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc1/datelib/date04.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc1/fmtlib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc1/fmtlib/fmtl01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc1/hexlib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc1/hexlib/hexl01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc1/misclib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc1/misclib/fncl01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc1/randlib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc1/randlib/rand01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc1/timelib/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc1/timelib/time01.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc1/timelib/time02.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc2/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/color/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/color/color1.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/color/color2.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/color/color3.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/color/colormap1.x11
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/color/colormap2.x11
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/color/colormap3.x11
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/color/colormap4.x11
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/kihon/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/kihon/kihon1.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/kihon/kihon2.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/kihon/kihon3.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/kihon/kihon4.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/kihon/kihon5.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/kihon/kihon6.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/kihon/kihon7.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/kihon/kihon8.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/kihon/kihon9.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/kihon/kihona.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/kihon/kihonb.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/kihon/kihonc.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/layout/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/layout/lay1.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/layout/lay2.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/layout/lay3.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/map3d/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/map3d/map3d1.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/map3d/map3d2.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/map3d/map3d3.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/map3d/map3d4.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/map3d/map3d5.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/map3d/map3d6.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/miss/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/miss/miss1.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/miss/miss2.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/quick/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/quick/quick1+.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/quick/quick1.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/quick/quick2.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/quick/quick3.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/quick/quick4.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/quick/quick5.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/u2d/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/u2d/u2d1.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/u2d/u2d2.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/u2d/u2d3.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/u2d/u2d4.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/u2d/u2d5.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/u2d/u2d6.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/u2d/u2d7.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/uspack/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/uspack/uspac1.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/uspack/uspac2.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/uspack/uspac3.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/uspack/uspac4.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/uxyz/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/uxyz/uxyz1.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/uxyz/uxyz2.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/uxyz/uxyz3.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/uxyz/uxyz4.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/uxyz/uxyz5.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/uxyz/uxyz6.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/uxyz/uxyz7.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rakuraku/uxyz/uxyz8.c
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gokuraku/hop
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gokuraku/jump
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gokuraku/layout
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gokuraku/step
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gokuraku/u1d
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gokuraku/u2d
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gokuraku/
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/grph1/scpack
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/grph1/sgpack
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/grph1/slpack
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/grph1
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/grph2/grpack
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/grph2/g2pack
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/grph2/ucpack
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/grph2/udegpk
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/grph2/ulpack
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/grph2/umpack
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/grph2/uspack
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/grph2/uupack
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/grph2/uxyzpk
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/grph2/ximage
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/grph2
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/math1/blklib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/math1/chrlib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/math1/fnclib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/math1/gnmlib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/math1/gt2dlib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/math1/ifalib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/math1/indxlib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/math1/intlib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/math1/lrllib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/math1/oslib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/math1/rfalib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/math1/rfblib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/math1/sublib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/math1/syslib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/math1/vialib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/math1/viblib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/math1/vralib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/math1/vrblib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/math1
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/math2/fftlib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/math2/intrlib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/math2/rnmlib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/math2/vstlib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/math2
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/misc1/bitlib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/misc1/chglib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/misc1/chklib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/misc1/chnlib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/misc1/clcklib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/misc1/datelib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/misc1/fmtlib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/misc1/hexlib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/misc1/misclib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/misc1/randlib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/misc1/timelib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/misc1
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/misc2
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rakuraku/color
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rakuraku/kihon
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rakuraku/layout
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rakuraku/map3d
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rakuraku/miss
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rakuraku/quick
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rakuraku/u2d
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rakuraku/uspack
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rakuraku/uxyz
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rakuraku
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm lib/cdcldbase
