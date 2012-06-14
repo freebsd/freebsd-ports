@@ -16,16 +16,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple Perl Object Persistence with Security
 
-BUILD_DEPENDS=	${SITE_PERL}/Class/ISA.pm:${PORTSDIR}/devel/p5-Class-ISA \
-		${SITE_PERL}/${PERL_ARCH}/Class/Date.pm:${PORTSDIR}/devel/p5-Class-Date \
-		${SITE_PERL}/Carp/Assert.pm:${PORTSDIR}/devel/p5-Carp-Assert \
-		${SITE_PERL}/Class/Fields.pm:${PORTSDIR}/devel/p5-Class-Fields \
-		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
-		${SITE_PERL}/Class/Factory.pm:${PORTSDIR}/devel/p5-Class-Factory \
-		${SITE_PERL}/Devel/StackTrace.pm:${PORTSDIR}/devel/p5-Devel-StackTrace \
-		${SITE_PERL}/Log/Dispatch.pm:${PORTSDIR}/devel/p5-Log-Dispatch \
-		${SITE_PERL}/Log/Log4perl.pm:${PORTSDIR}/devel/p5-Log-Log4perl \
-		${SITE_PERL}/${PERL_ARCH}/Time/Piece.pm:${PORTSDIR}/devel/p5-Time-Piece
+BUILD_DEPENDS=	p5-Class-ISA>=0:${PORTSDIR}/devel/p5-Class-ISA \
+		p5-Class-Date>=0:${PORTSDIR}/devel/p5-Class-Date \
+		p5-Carp-Assert>=0:${PORTSDIR}/devel/p5-Carp-Assert \
+		p5-Class-Fields>=0:${PORTSDIR}/devel/p5-Class-Fields \
+		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-Class-Factory>=0:${PORTSDIR}/devel/p5-Class-Factory \
+		p5-Devel-StackTrace>=0:${PORTSDIR}/devel/p5-Devel-StackTrace \
+		p5-Log-Dispatch>=0:${PORTSDIR}/devel/p5-Log-Dispatch \
+		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
+		p5-Time-Piece>=0:${PORTSDIR}/devel/p5-Time-Piece
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
