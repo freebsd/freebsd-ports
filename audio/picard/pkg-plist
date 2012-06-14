@@ -94,6 +94,9 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/plugins/__init__.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/__init__.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__init__.pyo
+%%PYTHON_SITELIBDIR%%/picard/plugins/addrelease.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/addrelease.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/addrelease.pyo
 %%PYTHON_SITELIBDIR%%/picard/plugins/classicdiscnumber.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/classicdiscnumber.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/classicdiscnumber.pyo
@@ -175,9 +178,15 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/ui/coverartbox.py
 %%PYTHON_SITELIBDIR%%/picard/ui/coverartbox.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/coverartbox.pyo
+%%PYTHON_SITELIBDIR%%/picard/ui/edittagdialog.py
+%%PYTHON_SITELIBDIR%%/picard/ui/edittagdialog.pyc
+%%PYTHON_SITELIBDIR%%/picard/ui/edittagdialog.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/filebrowser.py
 %%PYTHON_SITELIBDIR%%/picard/ui/filebrowser.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/filebrowser.pyo
+%%PYTHON_SITELIBDIR%%/picard/ui/infodialog.py
+%%PYTHON_SITELIBDIR%%/picard/ui/infodialog.pyc
+%%PYTHON_SITELIBDIR%%/picard/ui/infodialog.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/item.py
 %%PYTHON_SITELIBDIR%%/picard/ui/item.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/item.pyo
@@ -229,9 +238,6 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/ui/options/metadata.py
 %%PYTHON_SITELIBDIR%%/picard/ui/options/metadata.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/options/metadata.pyo
-%%PYTHON_SITELIBDIR%%/picard/ui/options/moving.py
-%%PYTHON_SITELIBDIR%%/picard/ui/options/moving.pyc
-%%PYTHON_SITELIBDIR%%/picard/ui/options/moving.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/options/plugins.py
 %%PYTHON_SITELIBDIR%%/picard/ui/options/plugins.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/options/plugins.pyo
@@ -262,9 +268,6 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/ui/ratingwidget.py
 %%PYTHON_SITELIBDIR%%/picard/ui/ratingwidget.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/ratingwidget.pyo
-%%PYTHON_SITELIBDIR%%/picard/ui/tageditor.py
-%%PYTHON_SITELIBDIR%%/picard/ui/tageditor.pyc
-%%PYTHON_SITELIBDIR%%/picard/ui/tageditor.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/tagsfromfilenames.py
 %%PYTHON_SITELIBDIR%%/picard/ui/tagsfromfilenames.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/tagsfromfilenames.pyo
@@ -274,9 +277,9 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_edittagdialog.py
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_edittagdialog.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_edittagdialog.pyo
-%%PYTHON_SITELIBDIR%%/picard/ui/ui_metadata.py
-%%PYTHON_SITELIBDIR%%/picard/ui/ui_metadata.pyc
-%%PYTHON_SITELIBDIR%%/picard/ui/ui_metadata.pyo
+%%PYTHON_SITELIBDIR%%/picard/ui/ui_infodialog.py
+%%PYTHON_SITELIBDIR%%/picard/ui/ui_infodialog.pyc
+%%PYTHON_SITELIBDIR%%/picard/ui/ui_infodialog.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options.py
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options.pyo
@@ -310,9 +313,6 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_metadata.py
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_metadata.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_metadata.pyo
-%%PYTHON_SITELIBDIR%%/picard/ui/ui_options_moving.py
-%%PYTHON_SITELIBDIR%%/picard/ui/ui_options_moving.pyc
-%%PYTHON_SITELIBDIR%%/picard/ui/ui_options_moving.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_plugins.py
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_plugins.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_plugins.pyo
@@ -340,9 +340,6 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_puidsubmit.py
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_puidsubmit.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_puidsubmit.pyo
-%%PYTHON_SITELIBDIR%%/picard/ui/ui_tageditor.py
-%%PYTHON_SITELIBDIR%%/picard/ui/ui_tageditor.pyc
-%%PYTHON_SITELIBDIR%%/picard/ui/ui_tageditor.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_tagsfromfilenames.py
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_tagsfromfilenames.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_tagsfromfilenames.pyo
@@ -384,71 +381,19 @@ share/icons/hicolor/24x24/apps/picard.png
 share/icons/hicolor/256x256/apps/picard.png
 share/icons/hicolor/32x32/apps/picard.png
 share/icons/hicolor/48x48/apps/picard.png
-share/locale/af/LC_MESSAGES/picard.mo
-share/locale/ar/LC_MESSAGES/picard.mo
-share/locale/ast/LC_MESSAGES/picard.mo
-share/locale/bg/LC_MESSAGES/picard.mo
-share/locale/ca/LC_MESSAGES/picard.mo
-share/locale/cs/LC_MESSAGES/picard.mo
-share/locale/cy/LC_MESSAGES/picard.mo
-share/locale/da/LC_MESSAGES/picard.mo
 share/locale/de/LC_MESSAGES/picard.mo
-share/locale/el/LC_MESSAGES/picard.mo
 share/locale/en/LC_MESSAGES/picard.mo
 share/locale/en_CA/LC_MESSAGES/picard.mo
 share/locale/en_GB/LC_MESSAGES/picard.mo
-share/locale/eo/LC_MESSAGES/picard.mo
 share/locale/es/LC_MESSAGES/picard.mo
 share/locale/et/LC_MESSAGES/picard.mo
-share/locale/fa/LC_MESSAGES/picard.mo
 share/locale/fi/LC_MESSAGES/picard.mo
-share/locale/fo/LC_MESSAGES/picard.mo
 share/locale/fr/LC_MESSAGES/picard.mo
-share/locale/fr_CA/LC_MESSAGES/picard.mo
-share/locale/fy/LC_MESSAGES/picard.mo
-share/locale/gl/LC_MESSAGES/picard.mo
-share/locale/he/LC_MESSAGES/picard.mo
-share/locale/hi/LC_MESSAGES/picard.mo
-share/locale/hu/LC_MESSAGES/picard.mo
-share/locale/id/LC_MESSAGES/picard.mo
-share/locale/is/LC_MESSAGES/picard.mo
 share/locale/it/LC_MESSAGES/picard.mo
-share/locale/ja/LC_MESSAGES/picard.mo
-share/locale/kn/LC_MESSAGES/picard.mo
-share/locale/ko/LC_MESSAGES/picard.mo
-share/locale/lt/LC_MESSAGES/picard.mo
-share/locale/nb/LC_MESSAGES/picard.mo
-share/locale/nds/LC_MESSAGES/picard.mo
 share/locale/nl/LC_MESSAGES/picard.mo
-share/locale/oc/LC_MESSAGES/picard.mo
 share/locale/pl/LC_MESSAGES/picard.mo
-share/locale/pt/LC_MESSAGES/picard.mo
 share/locale/pt_BR/LC_MESSAGES/picard.mo
-share/locale/ro/LC_MESSAGES/picard.mo
-share/locale/ru/LC_MESSAGES/picard.mo
-share/locale/sco/LC_MESSAGES/picard.mo
-share/locale/sk/LC_MESSAGES/picard.mo
-share/locale/sl/LC_MESSAGES/picard.mo
-share/locale/sr/LC_MESSAGES/picard.mo
 share/locale/sv/LC_MESSAGES/picard.mo
-share/locale/ta/LC_MESSAGES/picard.mo
-share/locale/tr/LC_MESSAGES/picard.mo
-share/locale/uk/LC_MESSAGES/picard.mo
-share/locale/zh_CN/LC_MESSAGES/picard.mo
-@dirrmtry share/locale/sco/LC_MESSAGES
-@dirrmtry share/locale/sco
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/fy/LC_MESSAGES
-@dirrmtry share/locale/fy
-@dirrmtry share/locale/fr_CA/LC_MESSAGES
-@dirrmtry share/locale/fr_CA
-@dirrmtry share/locale/fo/LC_MESSAGES
-@dirrmtry share/locale/fo
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
 @dirrmtry share/icons/hicolor/48x48/apps
 @dirrmtry share/icons/hicolor/48x48
 @dirrmtry share/icons/hicolor/32x32/apps
