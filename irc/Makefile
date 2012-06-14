@@ -20,6 +20,7 @@
     SUBDIR += dircproxy
     SUBDIR += eggcreator
     SUBDIR += eggdrop
+    SUBDIR += eggdrop-devel
     SUBDIR += epic4
     SUBDIR += epic5
     SUBDIR += evangeline
