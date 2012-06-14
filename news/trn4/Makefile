@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/-test/}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Version 4.0 of the threaded readnews newsreader
 
+CONFLICTS_INSTALL=trn-3.[0-9]* inn-[0-9]* cnews-* s-news-[0-9]*
+
 NO_LATEST_LINK=	yes
 MAN1=		trn.1 Pnews.1 Rnmail.1
 
@@ -21,13 +23,13 @@ MAN1=		trn.1 Pnews.1 Rnmail.1
 
 pre-configure:
 	@${ECHO_MSG} "===>  Running pre-configure target for ${DISTNAME}"
-	@${SED} -e "s:__CC__:$(CC):" -e "s:__CFLAGS__:$(CFLAGS):" \
-		-e "s:/PREFIX:$(PREFIX):"  ${SCRIPTDIR}/preconf > \
+	@${SED} -e "s:__CC__:${CC}:" -e "s:__CFLAGS__:${CFLAGS}:" \
+		-e "s:/PREFIX:${PREFIX}:"  ${SCRIPTDIR}/preconf > \
 		${WRKDIR}/preconf.new
 .ifdef BATCH
-	@echo 3 | sh ${WRKDIR}/preconf.new ${PORTSDIR} ${.CURDIR} ${WRKSRC}
+	@${ECHO_CMD} 3 | ${SH} ${WRKDIR}/preconf.new ${PORTSDIR} ${.CURDIR} ${WRKSRC}
 .else
-	@sh ${WRKDIR}/preconf.new ${PORTSDIR} ${.CURDIR} ${WRKSRC}
+	@${SH} ${WRKDIR}/preconf.new ${PORTSDIR} ${.CURDIR} ${WRKSRC}
 .endif
 
 .include <bsd.port.post.mk>

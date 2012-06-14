@@ -16,6 +16,8 @@ COMMENT=	Threaded Read News newsreader
 
 RUN_DEPENDS=	munpack:${PORTSDIR}/converters/mpack
 
+CONFLICTS_INSTALL=trn-4.[0-9]*
+
 WRKSRC=		${WRKDIR}/trn-3.6
 MAN1=		trn.1 Pnews.1 Rnmail.1 newsetup.1 newsgroups.1
 
