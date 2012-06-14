@@ -205,7 +205,7 @@ check-install-conflicts:
 		${ECHO_MSG}; \
 		${ECHO_MSG} "===>  ${PKGNAME} conflicts with installed package(s): "; \
 		for entry in $${conflicts_with}; do \
-			${ECHO_MSG} "      $${found}"; \
+			${ECHO_MSG} "      $${entry}"; \
 		done; \
 		${ECHO_MSG}; \
 		${ECHO_MSG} "      They install files into the same place."; \
