@@ -1,11 +1,14 @@
 bin/hi
 lib/seed7/COPYING
 lib/seed7/LGPL
+lib/seed7/array.s7i
 lib/seed7/bigfile.s7i
 lib/seed7/bigint.s7i
 lib/seed7/bigrat.s7i
 lib/seed7/binary.s7i
 lib/seed7/bitmapfont.s7i
+lib/seed7/bitset.s7i
+lib/seed7/bitsetof.s7i
 lib/seed7/boolean.s7i
 lib/seed7/cards.s7i
 lib/seed7/cgi.s7i
@@ -15,6 +18,8 @@ lib/seed7/chartype.s7i
 lib/seed7/color.s7i
 lib/seed7/complex.s7i
 lib/seed7/console.s7i
+lib/seed7/cronos16.s7i
+lib/seed7/cronos27.s7i
 lib/seed7/dialog.s7i
 lib/seed7/dir.s7i
 lib/seed7/draw.s7i
@@ -35,8 +40,11 @@ lib/seed7/graph.s7i
 lib/seed7/graph_file.s7i
 lib/seed7/gtkserver.s7i
 lib/seed7/gzip.s7i
+lib/seed7/hash.s7i
+lib/seed7/hashsetof.s7i
 lib/seed7/html.s7i
 lib/seed7/html_ent.s7i
+lib/seed7/idxarray.s7i
 lib/seed7/inifile.s7i
 lib/seed7/integer.s7i
 lib/seed7/keybd.s7i
@@ -45,6 +53,7 @@ lib/seed7/listener.s7i
 lib/seed7/lower.s7i
 lib/seed7/mahjng32.s7i
 lib/seed7/math.s7i
+lib/seed7/modern27.s7i
 lib/seed7/more.s7i
 lib/seed7/multiscr.s7i
 lib/seed7/null_file.s7i
@@ -65,6 +74,7 @@ lib/seed7/scanfile.s7i
 lib/seed7/scanstri.s7i
 lib/seed7/seed7_05.a
 lib/seed7/seed7_05.s7i
+lib/seed7/set.s7i
 lib/seed7/shell.s7i
 lib/seed7/sockbase.s7i
 lib/seed7/socket.s7i
@@ -75,11 +85,13 @@ lib/seed7/stdfont12.s7i
 lib/seed7/stdfont14.s7i
 lib/seed7/stdfont16.s7i
 lib/seed7/stdfont18.s7i
+lib/seed7/stdfont20.s7i
 lib/seed7/stdfont24.s7i
 lib/seed7/stdio.s7i
 lib/seed7/strifile.s7i
 lib/seed7/string.s7i
 lib/seed7/stritext.s7i
+lib/seed7/struct.s7i
 lib/seed7/syntax.s7i
 lib/seed7/tar.s7i
 lib/seed7/tee.s7i
@@ -88,6 +100,8 @@ lib/seed7/time.s7i
 lib/seed7/upper.s7i
 lib/seed7/utf16.s7i
 lib/seed7/utf8.s7i
+lib/seed7/vecfont18.s7i
+lib/seed7/vectorfont.s7i
 lib/seed7/window.s7i
 lib/seed7/wrinum.s7i
 lib/seed7/xml_ent.s7i
