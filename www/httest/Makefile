@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	httest
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.6
 CATEGORIES=	www
 MASTER_SITES=	SF/htt/htt${PORTVERSION:R}/${PORTNAME}-${PORTVERSION}
 
@@ -15,33 +15,29 @@ COMMENT=	HTTP Test Tool
 
 LICENSE=	AL2
 
-LIB_DEPENDS=	apr-1.4:${PORTSDIR}/devel/apr1 \
-		pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr1 \
+		pcre:${PORTSDIR}/devel/pcre
 
+CONFIGURE_ARGS=	--enable-lua-module \
+		--with-apr="${LOCALBASE}/bin" \
+		--with-apr-util="${LOCALBASE}/bin" \
+		--with-lua="${LUA_LIBDIR}" \
+		--with-pcre="${LOCALBASE}/bin" \
+		--with-ssl="${OPENSSLLIB}"
+CPPFLAGS+=	-I${LUA_INCDIR}
+GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
+USE_ICONV=	yes
 USE_LUA=	yes
 USE_OPENSSL=	yes
-USE_ICONV=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-apr="${LOCALBASE}/bin" \
-		--with-apr-util="${LOCALBASE}/bin" \
-		--with-pcre="${LOCALBASE}/bin" \
-		--with-ssl="${OPENSSLLIB}" \
-		--with-lua="${LUA_LIBDIR}" \
-		--enable-lua-module
-MAKE_JOBS_SAFE=	yes
-
-CPPFLAGS+=	-I${LUA_INCDIR}
 
 MAN1=		htntlm.1 htproxy.1 htremote.1 httest.1 hturlext.1 htx2b.1
-PLIST_FILES=	bin/htntlm bin/htproxy bin/htremote bin/httest bin/hturlext \
-		bin/htx2b
+PLIST_FILES=	bin/htntlm bin/htproxy bin/htremote bin/httest bin/hturlext bin/htx2b
 PORTEXAMPLES=	*
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|`$$APR_CONFIG --cflags`||' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
-		's|/bin/bash|/bin/sh|' ${WRKSRC}/generate_modules_c.sh
+	@${REINPLACE_CMD} -e 's|`$$APR_CONFIG --cflags`||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|' ${WRKSRC}/generate_modules_c.sh
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
