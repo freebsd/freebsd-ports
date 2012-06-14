@@ -537,8 +537,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-chunkin-nginx-module-${GIT_CHUNKI
 
 .if ${PORT_OPTIONS:MDRIZZLE}
 LIB_DEPENDS+=	drizzle.0:${PORTSDIR}/databases/drizzle
-NGINX_DRIZZLE_VERSION=	0.1.2rc6
-GIT_DRIZZLE_VERSION=	0-ge05b5ff
+NGINX_DRIZZLE_VERSION=	0.1.2rc7
+GIT_DRIZZLE_VERSION=	0-g272cabf
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/chaoslawful/drizzle-nginx-module/tarball/v${NGINX_DRIZZLE_VERSION}/:drizzle
 DISTFILES+=	chaoslawful-drizzle-nginx-module-v${NGINX_DRIZZLE_VERSION}-${GIT_DRIZZLE_VERSION}.tar.gz:drizzle
@@ -665,12 +665,13 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-redis2-nginx-module-${GIT_REDIS2_
 .endif
 
 .if ${PORT_OPTIONS:MRTMP}
-NGINX_RTMP_VERSION=	0.1.5
-GIT_RTMP_VERSION=	0-gd216f3d
+NGINX_RTMP_VERSION=	0.1.10
+GIT_RTMP_VERSION=	0-g80db4c4
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/arut/nginx-rtmp-module/tarball/v${NGINX_RTMP_VERSION}/:rtmp
 DISTFILES+=	arut-rtmp-nginx-module-v${NGINX_RTMP_VERSION}-${GIT_RTMP_VERSION}.tar.gz:rtmp
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/arut-nginx-rtmp-module-${GIT_RTMP_VERSION:S/^0-g//}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_rtmp_exec_module.c
 .endif
 
 .if ${PORT_OPTIONS:MSET_MISC}
