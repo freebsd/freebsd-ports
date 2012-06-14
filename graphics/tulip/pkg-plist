@@ -268,6 +268,7 @@ include/tulip/TextEditDialog.h
 include/tulip/TextEditDialogData.h
 include/tulip/TextRenderer.h
 include/tulip/ThreadedComputeProperty.h
+include/tulip/TlpNetworkAccess.h
 include/tulip/TlpQtTools.h
 include/tulip/TlpTools.h
 include/tulip/TreeTest.h
@@ -394,7 +395,9 @@ lib/tlp/libTreeRadial-%%TULIP_VERSION%%.so
 lib/tlp/libTreeReingoldAndTilforExtended-%%TULIP_VERSION%%.so
 lib/tlp/libTutte-%%TULIP_VERSION%%.so
 lib/tlp/libWebImport-%%TULIP_VERSION%%.so
-lib/tlp/libdelaunay-%%TULIP_VERSION%%.so
+lib/tlp/libDelaunay-%%TULIP_VERSION%%.so
+lib/tlp/libVoronoi-%%TULIP_VERSION%%.so
+lib/tlp/libGEXFImport-%%TULIP_VERSION%%.so
 lib/tlp/libftgl.so
 lib/tlp/libgzstream.so
 lib/tlp/libogdfballoon-%%TULIP_VERSION%%.so
@@ -420,10 +423,12 @@ lib/tlp/libtulip-%%TULIP_VERS%%.so
 lib/tlp/libtulip-ogdf-%%TULIP_VERS%%.so
 lib/tlp/libtulip-ogl-%%TULIP_VERS%%.so
 lib/tlp/libtulip-qt4-%%TULIP_VERS%%.so
-lib/tlp/sip.so
-lib/tlp/stl.so
-lib/tlp/tulip.so
-lib/tlp/tulipplugins.py
+lib/tlp/python/sip.so
+lib/tlp/python/stl.so
+lib/tlp/python/tulip.so
+lib/tlp/python/tulipplugins.py
+lib/tlp/python/tulipogl.so
+lib/tlp/python/tulipgui.so
 lib/tlp/view/libSpreadSheet-%%TULIP_VERSION%%.so
 lib/tlp/view/libpythonscriptview-%%TULIP_VERSION%%.so
 %%DATADIR%%/FindGLEW.cmake
@@ -434,6 +439,10 @@ lib/tlp/view/libpythonscriptview-%%TULIP_VERSION%%.so
 %%DATADIR%%/apiFiles/Python-2.6.api
 %%DATADIR%%/apiFiles/Python-2.7.api
 %%DATADIR%%/apiFiles/Python-3.1.api
+%%DATADIR%%/apiFiles/Python-3.2.api
+%%DATADIR%%/apiFiles/PyQt4.api
+%%DATADIR%%/apiFiles/tulipgui.api
+%%DATADIR%%/apiFiles/tulipogl.api
 %%DATADIR%%/apiFiles/tulip.api
 %%DATADIR%%/bitmaps/arrowSprite.png
 %%DATADIR%%/bitmaps/candiSprite.png
@@ -471,8 +480,8 @@ lib/tlp/view/libpythonscriptview-%%TULIP_VERSION%%.so
 %%DATADIR%%/bitmaps/tex_back.png
 %%DATADIR%%/bitmaps/titlebarGradient.png
 %%DATADIR%%/bitmaps/welcomelogo.bmp
-%%DATADIR%%/tulip370.qch
-%%DATADIR%%/tulip370.qhc
+%%DATADIR%%/tulip380.qch
+%%DATADIR%%/tulip380.qhc
 @dirrm %%DATADIR%%/bitmaps/colorscales
 @dirrm %%DATADIR%%/bitmaps
 @dirrm %%DATADIR%%/apiFiles
@@ -480,6 +489,7 @@ lib/tlp/view/libpythonscriptview-%%TULIP_VERSION%%.so
 @dirrm lib/tlp/view
 @dirrm lib/tlp/interactors
 @dirrm lib/tlp/glyphs
+@dirrm lib/tlp/python
 @dirrm lib/tlp
 @dirrm include/tulip/cxx
 @dirrm include/tulip
