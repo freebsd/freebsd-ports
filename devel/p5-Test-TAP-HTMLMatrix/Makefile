@@ -14,10 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Creates colorful matrix of Test::Harness test run results
 
-BUILD_DEPENDS=	${SITE_PERL}/Test/TAP/Model.pm:${PORTSDIR}/devel/p5-Test-TAP-Model \
-		${SITE_PERL}/Petal.pm:${PORTSDIR}/textproc/p5-Petal \
-		${SITE_PERL}/Petal/Utils.pm:${PORTSDIR}/textproc/p5-Petal-Utils \
-		${SITE_PERL}/URI/file.pm:${PORTSDIR}/net/p5-URI
+BUILD_DEPENDS=	p5-Test-TAP-Model>=0:${PORTSDIR}/devel/p5-Test-TAP-Model \
+		p5-Petal>=0:${PORTSDIR}/textproc/p5-Petal \
+		p5-Petal-Utils>=0:${PORTSDIR}/textproc/p5-Petal-Utils \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

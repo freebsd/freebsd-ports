@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	An optimized template builder base class with lookup capability
 
-RUN_DEPENDS=	${SITE_PERL}/Class/ObjectTemplate.pm:${PORTSDIR}/devel/p5-Class-ObjectTemplate
+RUN_DEPENDS=	p5-Class-ObjectTemplate>=0:${PORTSDIR}/devel/p5-Class-ObjectTemplate
 
 PERL_CONFIGURE=	yes
 
