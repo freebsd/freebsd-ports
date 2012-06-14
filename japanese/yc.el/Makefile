@@ -27,11 +27,12 @@ PLIST_FILES=	%%EMACS_VERSION_SITE_LISPDIR%%/yc/yc.el \
 		%%EMACS_VERSION_SITE_LISPDIR%%/yc/yc.elc
 PLIST_DIRS=	%%EMACS_VERSION_SITE_LISPDIR%%/yc
 
-OPTIONS=	ICANNA	"Enable icanna support"	off
+OPTIONS_DEFINE=	ICANNA
+ICANNA_DESC=	Enable icanna support
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_ICANNA)
+.if ${PORT_OPTIONS:MICANNA}
 RUN_DEPENDS+=	icanna:${PORTSDIR}/japanese/icanna
 .endif
 
