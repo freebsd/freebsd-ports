@@ -1,6 +1,6 @@
---- thirdparty/OGDF/src/basic/System.cpp.orig	2011-08-02 14:18:48.000000000 +0200
-+++ thirdparty/OGDF/src/basic/System.cpp	2011-08-02 14:41:15.000000000 +0200
-@@ -61,6 +61,12 @@
+--- thirdparty/OGDF/src/basic/System.cpp.orig	2012-06-11 09:46:14.000000000 +0200
++++ thirdparty/OGDF/src/basic/System.cpp	2012-06-13 09:51:21.000000000 +0200
+@@ -51,6 +51,12 @@
  #include <mach/vm_statistics.h>
  #include <mach/mach.h>
  #include <mach/machine.h>
@@ -13,7 +13,7 @@
  #elif defined(OGDF_SYSTEM_UNIX)
  #include <malloc.h>
  #endif
-@@ -317,6 +323,47 @@
+@@ -310,6 +316,47 @@
  	return 0;
  }
  
@@ -61,7 +61,7 @@
  #else
  // LINUX, NOT MAC OS
  long long System::physicalMemory()
-@@ -403,6 +450,19 @@
+@@ -396,6 +443,19 @@
  {
  	return mstats().chunks_free;
  }
