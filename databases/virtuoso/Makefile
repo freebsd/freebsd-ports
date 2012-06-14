@@ -19,7 +19,9 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk\
-		htmldoc:${PORTSDIR}/textproc/htmldoc
+		htmldoc:${PORTSDIR}/textproc/htmldoc\
+		flex>2.5.4:${PORTSDIR}/textproc/flex\
+ 		gperf>=3.0.3:${PORTSDIR}/devel/gperf
 LIB_DEPENDS=	iodbc.3:${PORTSDIR}/databases/libiodbc\
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
@@ -33,8 +35,9 @@ CONFIGURE_ARGS=	--with-readline\
 		--with-layout=freebsd\
 		--datadir="${PREFIX}"\
 		--localstatedir="${PREFIX}"
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+CPPFLAGS+=	-std=gnu89 -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_ENV=	PATH=${LOCALBASE}/bin:${PATH}
 USE_RC_SUBR=	virtuoso.sh
 ONLY_FOR_ARCHS=	i386 amd64
 USERS=		virtuoso
