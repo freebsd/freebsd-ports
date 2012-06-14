@@ -1,6 +1,5 @@
 bin/solfege
 etc/solfege
-man/man1/solfege.1.gz
 share/applications/solfege.desktop
 share/locale/cs/LC_MESSAGES/solfege.mo
 share/locale/da/LC_MESSAGES/solfege.mo
@@ -45,6 +44,7 @@ share/pixmaps/solfege.svg
 %%DATADIR%%/exercises/standard/lesson-files/chord-m9-9
 %%DATADIR%%/exercises/standard/lesson-files/chord-m9-9-7b9-maj79
 %%DATADIR%%/exercises/standard/lesson-files/chord-maj7-m7b5-dim7
+%%DATADIR%%/exercises/standard/lesson-files/chord-all-root
 %%DATADIR%%/exercises/standard/lesson-files/chord-min-major
 %%DATADIR%%/exercises/standard/lesson-files/chord-min-major-7
 %%DATADIR%%/exercises/standard/lesson-files/chord-min-major-close-open
