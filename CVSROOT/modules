@@ -562,7 +562,6 @@ antiwm                          ports/x11-wm/antiwm
 antiword                        ports/textproc/antiword
 antlr                           ports/devel/antlr
 antlrworks                      ports/devel/antlrworks
-antrix                          ports/games/antrix
 anubis                          ports/mail/anubis
 anyremote                       ports/comms/anyremote
 anyremote2html                  ports/www/anyremote2html
@@ -2088,7 +2087,6 @@ cups-base                       ports/print/cups-base
 cups-bjnp                       ports/print/cups-bjnp
 cups-client                     ports/print/cups-client
 cups-image                      ports/print/cups-image
-cups-magicolor                  ports/print/cups-magicolor
 cups-pdf                        ports/print/cups-pdf
 cups-pk-helper                  ports/print/cups-pk-helper
 cups-pstoraster                 ports/print/cups-pstoraster
@@ -2532,7 +2530,6 @@ djgpp-crx                       ports/devel/djgpp-crx
 djmount                         ports/sysutils/djmount
 djview4                         ports/graphics/djview4
 djvulibre                       ports/graphics/djvulibre
-djvulibre-nox11                 ports/graphics/djvulibre-nox11
 dk-acroread8                    ports/print/dk-acroread8
 dk-milter                       ports/mail/dk-milter
 dkfilter                        ports/mail/dkfilter
@@ -2953,7 +2950,6 @@ eclipse-vep                     ports/java/eclipse-vep
 eclipse-vep-examples            ports/java/eclipse-vep-examples
 eclipse-viplugin                ports/java/eclipse-viplugin
 eclipse-webtools                ports/java/eclipse-webtools
-eclipseme                       ports/java/eclipseme
 ecm                             ports/archivers/ecm
 ecofont                         ports/x11-fonts/ecofont
 ecore                           ports/devel/ecore
@@ -8520,7 +8516,6 @@ libtnl                          ports/net/libtnl
 libtomcrypt                     ports/security/libtomcrypt
 libtommath                      ports/math/libtommath
 libtool                         ports/devel/libtool
-libtool-fixed                   ports/devel/libtool-fixed
 libtorrent                      ports/net-p2p/libtorrent
 libtorrent-devel                ports/net-p2p/libtorrent-devel
 libtorrent-rasterbar-14         ports/net-p2p/libtorrent-rasterbar-14
@@ -8999,7 +8994,6 @@ lmms                            ports/audio/lmms
 lmon                            ports/sysutils/lmon
 lmpc                            ports/games/lmpc
 lmtp2nntp                       ports/mail/lmtp2nntp
-lmtpd                           ports/mail/lmtpd
 lndir                           ports/devel/lndir
 localedata                      ports/misc/localedata
 localize                        ports/textproc/localize
@@ -12231,7 +12225,6 @@ p5-Devel-Mallinfo               ports/devel/p5-Devel-Mallinfo
 p5-Devel-Messenger              ports/devel/p5-Devel-Messenger
 p5-Devel-Modlist                ports/devel/p5-Devel-Modlist
 p5-Devel-NYTProf                ports/devel/p5-Devel-NYTProf
-p5-Devel-ObjectTracker          ports/devel/p5-Devel-ObjectTracker
 p5-Devel-PPPort                 ports/devel/p5-Devel-PPPort
 p5-Devel-PackagePath            ports/devel/p5-Devel-PackagePath
 p5-Devel-PartialDump            ports/devel/p5-Devel-PartialDump
@@ -16743,7 +16736,6 @@ p5-devel-mallinfo               ports/devel/p5-Devel-Mallinfo
 p5-devel-messenger              ports/devel/p5-Devel-Messenger
 p5-devel-modlist                ports/devel/p5-Devel-Modlist
 p5-devel-nytprof                ports/devel/p5-Devel-NYTProf
-p5-devel-objecttracker          ports/devel/p5-Devel-ObjectTracker
 p5-devel-packagepath            ports/devel/p5-Devel-PackagePath
 p5-devel-partialdump            ports/devel/p5-Devel-PartialDump
 p5-devel-patchperl              ports/devel/p5-Devel-PatchPerl
@@ -20107,7 +20099,6 @@ pangoxsl                        ports/x11-toolkits/pangoxsl
 panoglview                      ports/graphics/panoglview
 panomatic                       ports/graphics/panomatic
 panoptis                        ports/net/panoptis
-pantera                         ports/security/pantera
 pantomime                       ports/mail/pantomime
 pantry                          ports/misc/pantry
 papercut                        ports/news/papercut
@@ -25178,7 +25169,6 @@ rubygem-uuidtools               ports/devel/rubygem-uuidtools
 rubygem-validatable             ports/devel/rubygem-validatable
 rubygem-visage-app              ports/net-mgmt/rubygem-visage-app
 rubygem-vmail                   ports/mail/rubygem-vmail
-rubygem-vmc                     ports/devel/rubygem-vmc
 rubygem-warbler                 ports/devel/rubygem-warbler
 rubygem-warden                  ports/devel/rubygem-warden
 rubygem-webby                   ports/devel/rubygem-webby
@@ -25358,7 +25348,6 @@ scim-table-imengine             ports/textproc/scim-table-imengine
 scimark2                        ports/benchmarks/scimark2
 scimark2c                       ports/benchmarks/scimark2c
 scintilla                       ports/x11-toolkits/scintilla
-sciplore-mindmapping            ports/deskutils/sciplore-mindmapping
 sciplot                         ports/graphics/SciPlot
 scite                           ports/editors/scite
 scli                            ports/net-mgmt/scli
@@ -25519,7 +25508,6 @@ setxkbmap                       ports/x11/setxkbmap
 sex                             ports/games/sex
 sextractor                      ports/astro/sextractor
 seyon                           ports/comms/seyon
-sfbol                           ports/games/sfbol
 sfio                            ports/devel/sfio
 sflowtool                       ports/net/sflowtool
 sfml                            ports/devel/sfml
@@ -27732,7 +27720,6 @@ weex                            ports/ftp/weex
 weka                            ports/textproc/weka
 weplab                          ports/net-mgmt/weplab
 wesnoth                         ports/games/wesnoth
-wesnoth-devel                   ports/games/wesnoth-devel
 westhawksnmp                    ports/java/westhawksnmp
 wfb2sql                         ports/databases/wfb2sql
 wfmath                          ports/math/wfmath
