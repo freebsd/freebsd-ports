@@ -1872,7 +1872,6 @@
     SUBDIR += trac-spam-filter
     SUBDIR += trac-tags
     SUBDIR += trac-themeengine
-    SUBDIR += trac-ticketdelete
     SUBDIR += trac-ticketimport
     SUBDIR += trac-tickettemplate
     SUBDIR += trac-timingandestimation
