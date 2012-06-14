@@ -52,6 +52,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3c8d1e5b-b673-11e1-be25-14dae9ebcf89">
+    <topic>asterisk -- remote crash vulnerability</topic>
+    <affects>
+      <package>
+	<name>asterisk10</name>
+	<range><gt>10.*</gt><lt>10.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Asterisk project reports:</p>
+	<blockquote cite="https://www.asterisk.org/security">
+	  <p>Skinny Channel Driver Remote Crash Vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-3553</cvename>
+      <url>http://downloads.digium.com/pub/security/AST-2012-009.html</url>
+      <url>https://www.asterisk.org/security</url>
+    </references>
+    <dates>
+      <discovery>2012-06-14</discovery>
+      <entry>2012-06-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5140dc69-b65e-11e1-9425-001b21614864">
     <topic>ImageMagick -- multiple vulnerabilities</topic>
     <affects>
