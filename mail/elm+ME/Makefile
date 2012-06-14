@@ -29,7 +29,7 @@ COMMENT=	Modern branch of an old mail user agent
 # Global variables
 #
 
-CONFLICTS=	elm-[0-9]*
+CONFLICTS_INSTALL=	elm-[0-9]* newmail-[0-9]* mailutils-[0-9]*
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-//:S/ME+/.ME+./}
 
 HAS_CONFIGURE=	yes
@@ -67,15 +67,12 @@ MAN1=		answer.1 checkalias.1 elm.1 elmalias.1 elmbindata.1 \
 		printmail.1 prlong.1 readmsg.1
 MLINKS=		frm.1 nfrm.1	newmail.1 wnewmail.1
 
-.if !defined(ELM_USER_SHLIBS)
-OPTIONS=	ELM_ICONV "libiconv support" on \
-		ELM_SMTP "SMTP submission protocol (RFC2746) support" on \
-		ELM_TLS "POP STLS and IMAP STARTTLS support" on \
-		OPENSSL_BASE "use the base system OpenSSL (required by TLS)" on \
-		OPENSSL_PORT "use OpenSSL from ports (requires by TLS)" off
-.endif
+OPTIONS_DEFINE=	ICONV SMTP TLS
+OPTIONS_DEFAULT=ICONV SMTP TLS
+SMTP_DESC=	Enable SMTP submission protocol (RFC2746) support
+TLS_DESC=	Enable POP STLS and IMAP STARTTLS support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # Local variables
 #
@@ -95,43 +92,17 @@ ELM_PATCHDONE=	true
 . endif
 .endfor
 
-ELM_SYSTEM_SHLIBS=	iconv smtp tls
-
-.if !defined(ELM_USER_SHLIBS)
-. for shlib in ${ELM_SYSTEM_SHLIBS}
-.  if !defined(${shlib:U:S/^/WITHOUT_ELM_/})
-ELM_USER_SHLIBS+=${shlib}
-.  endif
-. endfor
-.endif
-
-ELM_USER_SHLIBS?=	${ELM_SYSTEM_SHLIBS} # or none
-
-ELM_SHLIBS=
-.if ${ELM_USER_SHLIBS} == none
-ELM_UNSHLIBS=	${ELM_SYSTEM_SHLIBS}
-.else
-ELM_UNSHLIBS=
-. for shlib1 in ${ELM_SYSTEM_SHLIBS}
-_shlib1=${shlib1}
-_define=	false
-.  for shlib2 in ${ELM_USER_SHLIBS}
-_shlib2=${shlib2}
-.   if ${_shlib1} == ${_shlib2}
-_define=	true
-.   endif
-.  endfor
-.  if ${_define} == true
-ELM_SHLIBS+=	${shlib1}
-.  else
-ELM_UNSHLIBS+=	${shlib1}
-.  endif
-. endfor
-.endif
-
-.if ${ELM_SHLIBS:Miconv} == iconv
+.if ${PORT_OPTIONS:MICONV}
 USE_ICONV=	yes
 .endif
+
+.for shlib in iconv smtp tls
+.if ${PORT_OPTIONS:M${shlib:U}}
+ELM_SHLIBS+=	${shlib}
+.else
+ELM_UNSHLIBS+=	${shlib}
+.endif
+.endfor
 
 # evaluation should be protected 'til extraction to avoid noisy messages.
 SO_REV=		$$([ -f ${WRKSRC}/hdrs/patchlevel.h ] && \
@@ -318,4 +289,4 @@ HOSTIPADDR=	${IFCONFIG} | ${AWK} '/inet /{print $$2; exit}'
 FTP_PASSWORD?=	${USER}@`${HOSTIPADDR}`
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
