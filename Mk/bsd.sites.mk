@@ -824,7 +824,7 @@ MASTER_SITE_NETLIB+= \
 	http://artfiles.org/netlib.org/%SUBDIR%/ \
 	http://netlib.amss.ac.cn/%SUBDIR%/ \
 	http://netlib.caspur.it/%SUBDIR%/ \
-	http://netlib.linux-mirror.org/%SUBDIR%/ \
+	http://netlib.sandia.gov/%SUBDIR%/ \
 	http://phase.hpcc.jp/mirrors/netlib/%SUBDIR%/
 .endif
 
