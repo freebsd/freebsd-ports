@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	plproxy
-PORTVERSION=	2.2
+PORTVERSION=	2.4
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/2949/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/3274/
 PKGNAMEPREFIX=	postgresql-
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	PL/Proxy is database partitioning system
-
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 
 USE_PGSQL=	yes
 USE_GMAKE=	yes
@@ -22,8 +20,24 @@ USE_BISON=	build
 
 PORTSCOUT=	site:http://pgfoundry.org/frs/?group_id=1000207
 
-post-patch:
-	@${REINPLACE_CMD} -e 's= flex= ${LOCALBASE}/bin/flex=g' \
-		${WRKSRC}/Makefile
+MAKE_ARGS+=	CFLAGS+=-DSYS_SOCKET_H
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/bin/postmaster)
+PGSQL_VER!=	${LOCALBASE}/bin/postmaster -V | \
+		${SED} -En 's/.*PostgreSQL[^0-9]*([0-9]+)\.([0-9]+)\..*/\1\2/p'
+.elif exists(${LOCALBASE}/bin/pg_config)
+PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | \
+		${SED} -n 's/PostgreSQL[^0-9]*\([0-9][0-9]*\)\.\([0-9][0-9]*\)[^0-9].*/\1\2/p'
+.else
+PGSQL_VER=	${DEFAULT_PGSQL_VER}
+.endif
+
+.if ${PGSQL_VER} > 91
+PLIST_SUB+=	NEW_CONTRIB_DIR=""  OLD_CONTRIB_DIR="@comment "
+.else
+PLIST_SUB+=	NEW_CONTRIB_DIR="@comment "  OLD_CONTRIB_DIR=""
+.endif
+
+.include <bsd.port.post.mk>
