@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	pike78
-PORTVERSION=	7.8.352
-PORTREVISION=	8
+PORTVERSION=	7.8.686
 CATEGORIES=	lang
-MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
-		http://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
+MASTER_SITES=	http://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 		ftp://pike.ida.liu.se/pub/pike/beta/${PORTVERSION}/ \
 		http://pike.ida.liu.se/pub/pike/beta/${PORTVERSION}/ \
 		ftp://ftp.caudium.net/pike/official_releases/${PORTVERSION}/
@@ -19,19 +17,19 @@ DISTNAME=	Pike-v${PORTVERSION}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A dynamic programming language with a syntax similar to C++
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		gdbm.4:${PORTSDIR}/databases/gdbm \
-		pcre.1:${PORTSDIR}/devel/pcre \
-		mird.1:${PORTSDIR}/databases/mird \
-		gmp.10:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
+		tiff:${PORTSDIR}/graphics/tiff \
+		gdbm:${PORTSDIR}/databases/gdbm \
+		pcre:${PORTSDIR}/devel/pcre \
+		mird:${PORTSDIR}/databases/mird \
+		gmp:${PORTSDIR}/math/gmp
 
 CONFLICTS=	pike7[26]-[0-9]*
 
-OPTIONS=	TTF "Add FreeType 1 support" on \
-		FREETYPE "Add FreeType 2 support" on \
-		MYSQL "Add MySQL support" on \
-		POSTGRESQL "Add Postgres SQL support" off
+OPTIONS_DEFINE=	TTF FREETYPE MYSQL PGSQL
+OPTIONS_DEFAULT=TTF FREETYPE MYSQL
+NO_OPTIONS_SORT=yes
+TTF_DESC?=	Enable FreeType 1 (libttf) font rendering engine
 
 MAN1=		pike.1
 
@@ -91,15 +89,7 @@ PLIST_FILES=	bin/pike bin/pike78 bin/hilfe
 
 .include <bsd.port.pre.mk>
 
-ONLY_FOR_ARCHS=	i386 amd64 sparc64
-
-.if ${OSVERSION} < 800000 && ${ARCH} == "amd64"
-BROKEN=		segfaults during build
-.endif
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not link on sparc64
-.endif
+ONLY_FOR_ARCHS=	i386 amd64
 
 .ifdef(WITHOUT_RELOCATABLE_DUMPED_MODULES)
 CONFIGURE_ARGS+=	--without-relocatable-dumped-modules
@@ -107,28 +97,28 @@ CONFIGURE_ARGS+=	--without-relocatable-dumped-modules
 CONFIGURE_ARGS+=	--with-relocatable-dumped-modules
 .endif
 
-.ifdef(WITH_TTF)
-LIB_DEPENDS+=	ttf.4:${PORTSDIR}/print/freetype
+.if ${PORT_OPTIONS:MTTF}
+LIB_DEPENDS+=	ttf:${PORTSDIR}/print/freetype
 CONFIGURE_ARGS+=	--with-ttflib
 .else
 CONFIGURE_ARGS+=	--without-ttflib
 .endif
 
-.ifdef(WITH_FREETYPE)
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+.if ${PORT_OPTIONS:MFREETYPE}
+LIB_DEPENDS+=	freetype:${PORTSDIR}/print/freetype2
 CONFIGURE_ARGS+=	--with-freetype
 .else
 CONFIGURE_ARGS+=	--without-freetype
 .endif
 
-.ifdef(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql=${PREFIX}
 .else
 CONFIGURE_ARGS+=	--without-mysql
 .endif
 
-.ifdef(WITH_POSTGRESQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=	--with-pgsql=${PREFIX}
 .else
