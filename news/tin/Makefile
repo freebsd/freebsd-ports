@@ -25,8 +25,8 @@ MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v${PORTVERSION:R}/ \
 MAINTAINER?=	johans@FreeBSD.org
 COMMENT=	Easy-to-use threaded newsreader with NOV/NNTP support
 
-LIB_DEPENDS=	uu.3:${PORTSDIR}/converters/uulib \
-		pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	uu:${PORTSDIR}/converters/uulib \
+		pcre:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 USE_BZIP2=	yes
@@ -36,13 +36,12 @@ GNU_CONFIGURE=	yes
 TIN_EDITOR?=	/usr/bin/ee
 TIN_SCREEN?=	ncursesw
 
-OPTIONS=	GNUPG	"Enable message signing via GnuPG" On \
-		ISPELL	"Enable spell checking via ispell" On \
-		METAMAIL  "Enable MIME support via metamail" On \
-		CANLOCK	  "Enable Cancel-Lock key support via libcanlock" Off \
-		NNTP_ONLY "Only read news via NNTP (no spool dir support)" Off
+OPTIONS_DEFINE=	GNUPG ISPELL METAMAIL CANLOCK NNTP_ONLY
+OPTIONS_DEFAULT=GNUPG ISPELL METAMAIL
+CANLOCK_DESC=	Enable Cancel-Lock key support via libcanlock
+NNTP_ONLY=	Only read news via NNTP (no spool dir support)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # --with-mime-default-charset=US-ASCII needed to build tin in the non-ascii
 # national environment.
@@ -66,11 +65,11 @@ MAN1=		tin.1 w2r.pl.1 opt-case.pl.1 tinews.pl.1 tinurl_handler.pl.1
 MAN5=		tin.5 tin_mbox.5 tin_mmdf.5
 MLINKS=		tin.1 rtin.1
 
-.ifdef	WITH_NNTP_ONLY
+.if ${PORT_OPTIONS:MNNTP_ONLY}
 CONFIGURE_ARGS+=	--enable-nntp-only
 .endif
 
-.ifdef	WITH_GNUPG
+.if ${PORT_OPTIONS:MGNUPG}
 RUN_DEPENDS+=		gpg:${PORTSDIR}/security/gnupg
 CONFIGURE_ARGS+=	--with-gpg=${PREFIX}/bin/gpg \
 		 	--without-pgp --without-pgpk
@@ -78,27 +77,27 @@ CONFIGURE_ARGS+=	--with-gpg=${PREFIX}/bin/gpg \
 CONFIGURE_ARGS+=	--disable-pgp-gpg
 .endif
 
-.ifdef	WITH_ISPELL
+.if ${PORT_OPTIONS:MISPELL}
 RUN_DEPENDS+=		ispell:${PORTSDIR}/textproc/ispell
 CONFIGURE_ARGS+=	--with-ispell=${PREFIX}/bin/ispell
 .endif
 
-.ifdef	WITH_METAMAIL
+.if ${PORT_OPTIONS:MMETAMAIL}
 RUN_DEPENDS+=		metamail:${PORTSDIR}/mail/metamail
 CONFIGURE_ARGS+=	--with-metamail=${PREFIX}/bin/metamail
 .endif
 
-.ifdef	WITH_CANLOCK
+.if ${PORT_OPTIONS:MCANLOCK}
 CONFIGURE_ARGS+=	--enable-cancel-locks
 .endif
 
-.ifdef	WITHOUT_NLS
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=		NLS="@comment "
-.else
+.if ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=	--enable-nls
 USE_GETTEXT=		yes
 PLIST_SUB+=		NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		NLS="@comment "
 .endif
 
 post-patch:
@@ -130,4 +129,4 @@ post-install:
 		${CP} ${PREFIX}/etc/tin.defaults.dist ${PREFIX}/etc/tin.defaults; \
 	fi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
