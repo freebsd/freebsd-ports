@@ -155,7 +155,7 @@ _USE_QT4_ALL=	accessible assistant assistant-adp assistantclient \
 			iconengines imageformats inputmethods \
 			linguist l10n makeqpf moc multimedia network opengl \
 			pixeltool porting phonon phonon-gst \
-			qdbusviewer qdoc3 qmake qt3support qtconfig qtestlib \
+			qdbusviewer qmlviewer qdoc3 qmake qt3support qtconfig qtestlib \
 			qvfb rcc script scripttools sql sql-ibase sql-mysql \
 			sql-odbc sql-pgsql sql-sqlite2 sql-sqlite3 svg uic uic3 \
 			webkit xml xmlpatterns xmlpatterns-tool
@@ -269,6 +269,9 @@ porting_DEPENDS=	${QT_PREFIX}/bin/qt3to4
 
 qdbusviewer_PORT=	devel/qt4-qdbusviewer
 qdbusviewer_DEPENDS=	${QT_PREFIX}/bin/qdbusviewer
+
+qmlviewer_PORT=	devel/qt4-qmlviewer
+qmlviewer_DEPENDS=	${QT_PREFIX}/bin/qmlviewer
 
 qdoc3_PORT=	devel/qt4-qdoc3
 qdoc3_DEPENDS=	${QT_PREFIX}/bin/qdoc3
