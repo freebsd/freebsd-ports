@@ -6,7 +6,7 @@
 
 PORTNAME=	akonadi
 PORTVERSION=	1.7.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/src/
@@ -77,9 +77,10 @@ post-patch:
 		${PATCH_WRKSRC}/server/CMakeLists.txt
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${PATCH_WRKSRC}/server/src/storage/dbconfigmysql.cpp
-	# MySQL seems to have this limit on FreeBSD (same of Windows
-	# but undocumented and unstable).
-	${REINPLACE_CMD} -e '/wait_timeout/ s|31536000|2147483|' \
+	# To avoid overflow, MySQL settings need to be lower than
+	# INT_MAX / kern.hz. This setting assumes kern.hz=2000, and
+	# it's nothing but a temporary hack.
+	${REINPLACE_CMD} -e '/wait_timeout/ s|31536000|1073741|' \
 		${PATCH_WRKSRC}/server/src/storage/*.conf
 	# Prevent updating MIME during build.
 	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/ d; /SharedMimeInfo/ d' \
