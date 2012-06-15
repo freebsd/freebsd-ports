@@ -7,7 +7,7 @@
 
 PORTNAME=	burgerspace
 PORTVERSION=	1.9.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/ \
 		LOCAL/martymac
@@ -15,9 +15,9 @@ MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/ \
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	A BurgerTime clone
 
-LIB_DEPENDS=	flatzebra-0.1.2:${PORTSDIR}/devel/flatzebra
-
 LICENSE=	GPLv2
+
+LIB_DEPENDS=	flatzebra:${PORTSDIR}/devel/flatzebra
 
 USE_SDL=	mixer sdl
 GNU_CONFIGURE=	yes
@@ -27,12 +27,14 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN6=		burgerspace.6 burgerspace-server.6
 PORTDOCS=	AUTHORS COPYING INSTALL NEWS README THANKS TODO
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^pkgsounddir =.*|pkgsounddir = ${DATADIR}/sounds|' \
 		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|docdir = .*|docdir = ${DOCSDIR}|' \
 		${WRKSRC}/Makefile.in
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e '/^install-data-am/s|install-docDATA||' \
 		${WRKSRC}/Makefile.in
 .endif

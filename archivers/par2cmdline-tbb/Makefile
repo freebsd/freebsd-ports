@@ -7,7 +7,7 @@
 
 PORTNAME=	par2cmdline-tbb
 PORTVERSION=	20100203
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	archivers
 MASTER_SITES=	http://chuchusoft.com/par2_tbb/
 DISTNAME=	par2cmdline-0.4-tbb-${PORTVERSION}
@@ -15,9 +15,9 @@ DISTNAME=	par2cmdline-0.4-tbb-${PORTVERSION}
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Tools for using Parity v2 Archive files (tbb version)
 
-LIB_DEPENDS=	tbb.4:${PORTSDIR}/devel/tbb
-
 LICENSE=	GPLv2
+
+LIB_DEPENDS=	tbb:${PORTSDIR}/devel/tbb
 
 ONLY_FOR_ARCHS=	i386 amd64 ia64
 GNU_CONFIGURE=	yes
@@ -33,8 +33,10 @@ PLIST_FILES=	bin/par2 bin/par2create bin/par2repair bin/par2verify
 post-extract:
 	@${CHMOD} u+x ${WRKSRC}/install-sh
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
