@@ -4728,12 +4728,12 @@ fetch-url-list-int:
 
 .if !target(fetch-urlall-list)
 fetch-urlall-list:
-	@LISTALL=yes ${MAKE} fetch-url-list-int
+	@cd ${.CURDIR} && LISTALL=yes ${MAKE} fetch-url-list-int
 .endif
 
 .if !target(fetch-url-list)
 fetch-url-list:
-	@${MAKE} fetch-url-list-int
+	@cd ${.CURDIR} && ${MAKE} fetch-url-list-int
 .endif
 
 # Generates patches.
@@ -6010,7 +6010,7 @@ sanity-config: _check-config
 	[Nn]|[Nn][Oo]) \
 		exit 0; \
 	esac; \
-	${MAKE} config
+	cd ${.CURDIR} && ${MAKE} config
 .endif
 .endif # sanity-config
 
@@ -6101,7 +6101,7 @@ config: pre-config
 		${CAT} $${TMPOPTIONSFILE} > ${OPTIONSFILE}; \
 	fi; \
 	${RM} -f $${TMPOPTIONSFILE}
-	@${MAKE} sanity-config
+	@cd ${.CURDIR} && ${MAKE} sanity-config
 .endif
 .endif # config
 
