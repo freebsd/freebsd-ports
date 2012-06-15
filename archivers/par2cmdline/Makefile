@@ -22,8 +22,10 @@ PORTDOCS=	README
 CONFLICTS=	par2cmdline-tbb-[0-9]*
 PLIST_FILES=	bin/par2 bin/par2create bin/par2repair bin/par2verify
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}/
 .endif

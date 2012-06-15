@@ -69,7 +69,7 @@ do-install:
 	@${LN} ${PREFIX}/lib/libraknet.so.0 ${PREFIX}/lib/libraknet.so
 	@${INSTALL_LIB} ${WRKSRC}/Lib/LibStatic/libRakNetStatic.a \
 		${PREFIX}/lib/libraknet.a
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/Help
 	@(cd ${WRKSRC}/Help/ && ${COPYTREE_SHARE} \* ${DOCSDIR}/Help)
 	@${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}/

@@ -23,7 +23,9 @@ USE_GETTEXT=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	help.ncd
 INSTALL_TARGET=	install docinstall
 .endif
