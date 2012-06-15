@@ -34,12 +34,13 @@ MASTER_SITE_IMAGEMAGICK=	\
 	ftp://ftp.imagemagick.org/pub/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/&,}
 
-OPTIONS=	OPENGL	"OpenGL support" off \
-		UUID	"UUID support (required by GDAL)" off
+OPTIONS_DEFINE= OPENGL UUID
+OPTIONS_DEFAULT=
+UUID_DESC=	UUID support (required by GDAL)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_OPENGL)
+.if ${PORT_OPTIONS:MOPENGL}
 USE_GL=	glut
 CONFIGURE_ARGS+=--enable-opengl
 PLIST_SUB+=	OPENGL=""
@@ -48,7 +49,7 @@ CONFIGURE_ARGS+=--disable-opengl
 PLIST_SUB+=	OPENGL="@comment "
 .endif
 
-.if defined(WITH_UUID)
+.if ${PORT_OPTIONS:MUUID}
 EXTRA_PATCHES+=	${FILESDIR}/uuid.patch
 .endif
 
@@ -65,4 +66,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
