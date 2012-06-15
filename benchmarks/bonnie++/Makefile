@@ -25,12 +25,14 @@ MAN8=	bonnie++.8 getc_putc.8 zcav.8
 
 PORTDOCS=	readme.html
 
+.include <bsd.port.options.mk>
+
 pre-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/share/|${PREFIX}/share/|g' ${WRKSRC}/bonnie++.8
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/readme.html ${DOCSDIR}
 .endif

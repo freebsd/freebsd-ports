@@ -38,6 +38,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
 PLIST_FILES=	bin/pencil
 PORTDOCS=	README TODO
 
+.include <bsd.port.options.mk>
+
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		${QMAKE} -unix PREFIX=${PREFIX} \
@@ -51,7 +53,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Pencil ${PREFIX}/bin/pencil
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
