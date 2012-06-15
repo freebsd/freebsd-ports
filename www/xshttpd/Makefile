@@ -19,7 +19,7 @@ COMMENT=	A webserver with CGI as own user and SSL suport
 RUN_DEPENDS=	run-mailcap:${PORTSDIR}/misc/mime-support \
 		ppmtogif:${PORTSDIR}/graphics/netpbm
 
-CONFLICTS+=	xshttpd-devel-[0-9]*
+CONFLICTS_INSTALL+=	xshttpd-devel-[0-9]* publicfile-[0-9]*
 
 MAN1=		clearxs.1 gfxcount.1 httpd.1 httpdc.1 imagemap.1 \
 		readxs.1 xschpass.1 xsindex.1 xspasswd.1
@@ -30,21 +30,19 @@ USE_RC_SUBR=	xshttpd.sh
 
 GNU_CONFIGURE=	yes
 
-OPTIONS=	SSL "Enable https support" On \
-		PCRE "Enable pcre rewriting support" On \
-		LDAP "Enable ldap support" Off \
-		CURL "Enable curl (proxy) support" Off \
-		M4_CONFIG "Enable m4 configuration preprocessor" Off \
-		PERSISTENT_PERL "Enable persistent perl interpreter" Off
+OPTIONS_DEFINE=	SSL PCRE LDAP CURL M4_CONFIG PERSISTENT_PERL
+OPTIONS_DEFAULT=SSL PCRE
+M4_CONFIG_DESC=	Enable m4 configuration preprocessor
+PERSISTENT_PERL_DESC=	Enable persistent perl interpreter
 
 PORTDOCS=	README COPYING ChangeLog
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 # By default XS-HTTPD stores its data in ${PREFIX}/lib/httpd
 WWWDIR?=	${PREFIX}/www/${PORTNAME}
 CONFIGURE_ARGS+=--with-rootdir=${WWWDIR}
 
-.if !defined(WITHOUT_SSL)
+.if ${PORT_OPTIONS:MSSL}
 .include <${PORTSDIR}/Mk/bsd.openssl.mk>
 #USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-ssl
@@ -52,34 +50,34 @@ CONFIGURE_ARGS+=--with-ssl
 CONFIGURE_ARGS+=--without-ssl
 .endif
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--without-ldap
 .endif
 
-.if defined(WITH_M4_CONFIG)
+.if ${PORT_OPTIONS:MM4_CONFIG}
 CONFIGURE_ARGS+=--with-preprocessor
 .else
 CONFIGURE_ARGS+=--without-preprocessor
 .endif
 
-.if defined(WITH_PERSISTENT_PERL)
+.if ${PORT_OPTIONS:MPERSISTENT_PERL}
 USE_PERL5=	yes
 CONFIGURE_ARGS+=--with-perl
 .else
 CONFIGURE_ARGS+=--without-perl
 .endif
 
-.if defined(WITH_PCRE)
-LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+.if ${PORT_OPTIONS:MPCRE}
+LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=--with-pcre=yes
 .else
 CONFIGURE_ARGS+=--with-pcre=no
 .endif
 
-.if defined(WITH_CURL)
+.if ${PORT_OPTIONS:MCURL}
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=--with-curl=yes
 .else
@@ -110,4 +108,4 @@ post-install:
 . endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
