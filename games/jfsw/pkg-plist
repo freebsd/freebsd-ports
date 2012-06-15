@@ -1,6 +1,3 @@
 bin/jfsw
 bin/jfsw-build
 @dirrmtry %%DATADIR%%
-%%PORTDOCS%%%%DOCSDIR%%/readme.txt
-%%PORTDOCS%%%%DOCSDIR%%/releasenotes.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

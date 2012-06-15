@@ -29,6 +29,10 @@ PATCH_WRKSRC=	${WRKDIR}
 
 SUB_FILES=	pkg-message
 
+PORTDOCS=	readme.txt releasenotes.html
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -Ee \
 		's|^(EROOT=)../build/|\1../jfbuild_src_${PORTVERSION}/|; \
@@ -47,10 +51,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sw ${PREFIX}/bin/${PORTNAME}
 	${INSTALL_PROGRAM} ${WRKSRC}/build ${PREFIX}/bin/${PORTNAME}-build
 	${MKDIR} ${DATADIR}
-.if !defined(NOPORTDOCS)
-.for f in readme.txt releasenotes.html
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 	@${CAT} ${PKGMESSAGE}
 .endif
