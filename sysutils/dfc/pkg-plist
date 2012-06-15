@@ -1,0 +1,16 @@
+etc/xdg/dfc/dfcrc
+etc/xdg/dfc/fr/dfcrc
+bin/dfc
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/HACKING
+%%DOCSDIR%%/LICENSE
+%%DOCSDIR%%/README
+%%DOCSDIR%%/TRANSLATORS
+%%NLS%%	share/locale/fr/LC_MESSAGES/dfc.mo
+@dirrmtry %%DOCSDIR%%/
+@dirrmtry man/fr/man1
+@dirrmtry man/fr
+@dirrmtry etc/xdg/dfc/fr
+@dirrmtry etc/xdg/dfc
+@dirrmtry etc/xdg
+
