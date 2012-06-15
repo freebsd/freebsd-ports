@@ -5,19 +5,20 @@
 # $FreeBSD$
 
 PORTNAME=	rpm
-PORTVERSION=	4.9.1.3
+PORTVERSION=	4.10.0
 CATEGORIES=	archivers
-MASTER_SITES=	http://rpm.org/releases/rpm-${PORTVERSION:R:R}.x/ \
+MASTER_SITES=	http://rpm.org/releases/rpm-${PORTVERSION:R}.x/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-${PORTVERSION:E}.x/
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	The RPM Package Manager
 
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
+LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt \
 		nss3:${PORTSDIR}/security/nss
 BUILD_DEPENDS=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 
-OPTIONS=	PYTHON "Build Python rpm module" On
+OPTIONS_DEFINE=	PYTHON
+OPTIONS_DEFAULT=PYTHON
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
@@ -28,7 +29,7 @@ INVALID_BDB_VER=51
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 LATEST_LINK=	rpm4
-CONFLICTS=	rpm-3.*
+CONFLICTS_INSTALL=	rpm-[35].*
 
 CPPFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/nspr -I${LOCALBASE}/include/nss/nss \
@@ -48,10 +49,10 @@ PLIST_SUB+=	VERSION=${PORTVERSION}
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
-LIB_DEPENDS+=	lzma.5:${PORTSDIR}/archivers/xz
+LIB_DEPENDS+=	lzma:${PORTSDIR}/archivers/xz
 .endif
 
-.ifndef	WITHOUT_PYTHON
+.if ${PORT_OPTIONS:MPYTHON}
 CONFIGURE_ARGS+=--enable-python
 USE_PYTHON=	2.6+
 PLIST_SUB+=	PYTHON=""
@@ -62,13 +63,13 @@ CONFIGURE_ARGS+=--disable-python
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
-.ifdef	WITHOUT_NLS
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 MANLANG=	"" ja fr pl ru ko sk
