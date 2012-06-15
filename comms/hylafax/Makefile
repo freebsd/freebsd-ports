@@ -57,9 +57,10 @@ MAN8=	choptest.8c cqtest.8c dialtest.8c faxabort.8c faxaddmodem.8c \
 SUID_EXES=	${PREFIX}/sbin/faxgetty ${PREFIX}/sbin/faxq \
 		${PREFIX}/bin/faxrm ${PREFIX}/bin/faxalter
 
-OPTIONS=	PAM "Include pam support" ON \
-		NLS "Native Language Support" ON \
-		GAWK "Use gawk for scripts" OFF \
+OPTIONS_DEFINE=	PAM NLS GAWK
+OPTIONS_DEFAULT=PAM NLS
+NO_OPTIONS_SORT=yes
+GAWK_DESC=	Use gawk for scripts
 
 .include <bsd.port.pre.mk>
 
@@ -69,7 +70,7 @@ CONFIGURE_ARGS+=--with-PAGESIZE="${PAGESIZE}"
 .endif
 
 # Want PAM?
-.if defined(WITHOUT_PAM)
+.if empty(PORT_OPTIONS:MPAM)
 CONFIGURE_ARGS+=--disable-pam
 .endif
 
@@ -92,12 +93,12 @@ PLIST_SUB+=	HYLAFAX_SPOOL=${HYLAFAX_SPOOL}
 CONFIGURE_ARGS+=--nointeractive
 .endif
 
-.if defined(WITH_GAWK)
+.if ${PORT_OPTIONS:MGAWK}
 BUILD_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
 RUN_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
 CONFIGURE_ARGS+=--with-AWK="${LOCALBASE}/bin/gawk"
 .endif
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	WITH_NLS=""
 .else
