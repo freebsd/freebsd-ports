@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	codeigniter
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.codeigniter.com/reactor/ \
 	http://www.codeigniter.org.tw/download_files/
@@ -66,18 +66,20 @@ STD_BITS=	${CI_CONF_DIR}/index.html \
 		${CI_SYS_DIR}/language \
 		${CI_SYS_DIR}/libraries
 
-OPTIONS=	APACHE "Configure for Apache-2.x" off \
-	PROD "Install for production server (see: make confighelp)" Off \
-	MSSQL "Install MSSQL support for PHP" Off \
-	MYSQL "Install MySQL support for PHP" Off \
-	MYSQLI "Install MySQLi support for PHP" Off \
-	ODBC "Install ODBC support for PHP" Off \
-	PGSQL "Install PostgreSQL support for PHP" Off \
-	SQLITE "Install SQLite support for PHP" Off
+OPTIONS_DEFINE=	APACHE PROD MSSQL MYSQL MYSQLI ODBC PGSQL SQLITE
+
+APACHE_DESC=	Configure for Apache-2.x
+PROD_DESC=	Install for production server (see: make confighelp)
+MSSQL_DESC=	Install MSSQL support for PHP
+MYSQL_DESC=	Install MySQL support for PHP
+MYSQLI_DESC=	Install MySQLi support for PHP
+ODBC=	Install ODBC support for PHP
+PGSQL_DESC=	Install PostgreSQL support for PHP
+SQLITE_DESC=	Install SQLite support for PHP
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_APACHE)
+.if ${PORT_OPTIONS:MAPACHE}
 USE_APACHE=	20+
 
 PLIST_SUB+=	NOAPACHE="" CONFDIR=${CONFDIR_REL}
@@ -105,37 +107,37 @@ DEFAULT_PHP_VER=5
 
 SUB_LIST+=	PHPCGI=${WITH_PHP_CGI}
 
-.if defined(WITH_PROD)
+.if ${PORT_OPTIONS:MPROD}
 PROD=		production
 .else
 PROD=		development
 .endif
 
-.if defined(WITH_MSSQL)
+.if ${PORT_OPTIONS:MMSSQL}
 USE_PHP+=	mssql
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	mysql
 .endif
 
-.if defined(WITH_MYSQLI)
+.if ${PORT_OPTIONS:MMYSQLI}
 USE_PHP+=	mysqli
 .endif
 
-.if defined(WITH_ODBC)
+.if ${PORT_OPTIONS:MODBC}
 USE_PHP+=	odbc
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pgsql
 .endif
 
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 USE_PHP+=	sqlite
 .endif
 
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 SUB_LIST+=	HASHMARK=\#
 .else
 SUB_LIST+=	HASHMARK=
@@ -185,7 +187,7 @@ post-install:
 			fi; \
 		fi; \
 	done
-.if defined(WITH_APACHE)
+.if ${PORT_OPTIONS:MAPACHE}
 	@if [ -d "${CONFDIR}" ]; then \
 	  ${CP} ${WRKDIR}/${CONF} ${CONFDIR}/codeigniter.conf; \
 	else \
@@ -197,7 +199,7 @@ post-install:
 	  ${FALSE} ; \
 	fi
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@cd ${WRKSRC}/user_guide && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 
