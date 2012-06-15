@@ -18,7 +18,7 @@ COMMENT=	A non-graphical, text-based World-Wide Web client
 LIB_DEPENDS=	idn:${PORTSDIR}/dns/libidn
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
-CONFLICTS=	lynx-2.8.[0-7].* ja-lynx-[0-9]*
+CONFLICTS_INSTALL=	lynx-2.8.[0-7].* ja-lynx-[0-9]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}2-8-8
 USE_BZIP2=	yes
