@@ -56,6 +56,7 @@ otrs/bin/otrs.RebuildConfig.pl
 otrs/bin/otrs.RebuildEscalationIndex.pl
 otrs/bin/otrs.RebuildFulltextIndex.pl
 otrs/bin/otrs.RebuildTicketIndex.pl
+otrs/bin/otrs.RefreshSMIMEKeys.pl
 otrs/bin/otrs.Scheduler.pl
 otrs/bin/otrs.Scheduler4win.pl
 otrs/bin/otrs.Scheduler4winInstaller.pl
@@ -276,625 +277,850 @@ otrs/var/httpd/htdocs/js/test/JSUnitTest.html
 otrs/var/httpd/htdocs/js/test/sample/Core.AJAX.ContentUpdate1.html
 otrs/var/httpd/htdocs/js/test/sample/Core.AJAX.EmptyResponse.html
 otrs/var/httpd/htdocs/js/test/sample/Core.AJAX.FunctionCall1.html
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/.htaccess
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/CHANGES.html
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/INSTALL.html
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/LICENSE.html
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/OTRS-PATCHES.txt
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/adapters/jquery.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/_bootstrap.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/ckeditor.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/ckeditor_base.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/ckeditor_basic.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/command.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/commanddefinition.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/config.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/dataprocessor.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/dom.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/dom/comment.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/dom/document.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/dom/documentfragment.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/dom/domobject.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/dom/element.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/dom/elementpath.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/dom/event.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/dom/node.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/dom/nodelist.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/dom/range.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/dom/rangelist.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/dom/text.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/dom/walker.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/dom/window.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/dtd.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/editor.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/editor_basic.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/env.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/event.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/eventInfo.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/focusmanager.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/htmlparser.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/htmlparser/basicwriter.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/htmlparser/cdata.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/htmlparser/comment.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/htmlparser/element.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/htmlparser/filter.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/htmlparser/fragment.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/htmlparser/text.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/lang.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/loader.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/plugindefinition.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/plugins.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/resourcemanager.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/scriptloader.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/skins.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/themes.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/tools.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/ui.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/_languages.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/_translationstatus.txt
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/af.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/ar.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/bg.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/bn.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/bs.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/ca.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/cs.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/cy.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/da.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/de.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/el.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/en-au.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/en-ca.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/en-gb.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/en.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/eo.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/es.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/et.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/eu.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/fa.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/fi.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/fo.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/fr-ca.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/fr.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/gl.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/gu.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/he.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/hi.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/hr.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/hu.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/is.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/it.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/ja.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/ka.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/km.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/ko.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/lt.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/lv.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/mn.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/ms.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/nb.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/nl.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/no.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/pl.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/pt-br.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/pt.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/ro.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/ru.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/sk.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/sl.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/sr-latn.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/sr.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/sv.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/th.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/tr.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/uk.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/vi.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/zh-cn.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang/zh.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/a11yhelp/dialogs/a11yhelp.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/a11yhelp/lang/en.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/a11yhelp/lang/he.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/a11yhelp/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/about/dialogs/about.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/about/dialogs/logo_ckeditor.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/about/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/adobeair/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/ajax/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/aspell/aspell.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/aspell/dialogs/aspell.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/aspell/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/aspell/spellerpages/blank.html
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/aspell/spellerpages/controlWindow.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/aspell/spellerpages/controls.html
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/aspell/spellerpages/spellChecker.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/aspell/spellerpages/spellchecker.html
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/aspell/spellerpages/spellerStyle.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/aspell/spellerpages/wordWindow.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/autogrow/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/basicstyles/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/bbcode/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/bidi/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/blockquote/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/button/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/clipboard/dialogs/paste.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/clipboard/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/colorbutton/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/colordialog/dialogs/colordialog.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/colordialog/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/contextmenu/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/devtools/lang/en.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/devtools/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/dialog/dialogDefinition.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/dialog/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/dialogadvtab/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/dialogui/2010-10-28-dialogui.patch
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/dialogui/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/div/dialogs/div.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/div/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/docprops/dialogs/docprops.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/docprops/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/domiterator/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/editingblock/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/elementspath/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/enterkey/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/entities/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/fakeobjects/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/filebrowser/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/find/dialogs/find.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/find/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/flash/dialogs/flash.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/flash/images/placeholder.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/flash/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/floatpanel/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/font/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/format/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/forms/dialogs/button.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/forms/dialogs/checkbox.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/forms/dialogs/form.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/forms/dialogs/hiddenfield.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/forms/dialogs/radio.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/forms/dialogs/select.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/forms/dialogs/textarea.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/forms/dialogs/textfield.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/forms/images/hiddenfield.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/forms/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/horizontalrule/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/htmldataprocessor/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/htmlwriter/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/iframe/dialogs/iframe.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/iframe/images/placeholder.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/iframe/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/iframedialog/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/image/dialogs/2010-10-28-image-dialog.patch
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/image/dialogs/image.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/image/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/indent/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/justify/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/keystrokes/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/link/dialogs/anchor.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/link/dialogs/link.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/link/images/anchor.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/link/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/list/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/listblock/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/liststyle/dialogs/liststyle.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/liststyle/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/maximize/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/menu/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/menubutton/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/newpage/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/pagebreak/images/pagebreak.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/pagebreak/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/panel/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/panelbutton/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/pastefromword/filter/default.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/pastefromword/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/pastetext/dialogs/pastetext.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/pastetext/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/placeholder/dialogs/placeholder.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/placeholder/lang/en.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/placeholder/lang/he.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/placeholder/placeholder.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/placeholder/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/popup/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/preview/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/print/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/removeformat/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/resize/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/richcombo/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/save/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/scayt/dialogs/options.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/scayt/dialogs/toolbar.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/scayt/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/selection/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/showblocks/images/block_address.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/showblocks/images/block_blockquote.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/showblocks/images/block_div.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/showblocks/images/block_h1.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/showblocks/images/block_h2.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/showblocks/images/block_h3.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/showblocks/images/block_h4.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/showblocks/images/block_h5.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/showblocks/images/block_h6.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/showblocks/images/block_p.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/showblocks/images/block_pre.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/showblocks/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/showborders/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/smiley/dialogs/smiley.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/smiley/images/angel_smile.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/smiley/images/angry_smile.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/smiley/images/broken_heart.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/smiley/images/confused_smile.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/smiley/images/cry_smile.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/smiley/images/devil_smile.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/smiley/images/embaressed_smile.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/smiley/images/envelope.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/smiley/images/heart.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/smiley/images/kiss.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/smiley/images/lightbulb.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/smiley/images/omg_smile.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/smiley/images/regular_smile.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/smiley/images/sad_smile.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/smiley/images/shades_smile.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/smiley/images/teeth_smile.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/smiley/images/thumbs_down.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/smiley/images/thumbs_up.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/smiley/images/tounge_smile.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/smiley/images/whatchutalkingabout_smile.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/smiley/images/wink_smile.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/smiley/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/sourcearea/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/specialchar/dialogs/specialchar.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/specialchar/lang/en.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/specialchar/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/styles/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/styles/styles/default.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/stylescombo/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/stylesheetparser/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/tab/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/table/dialogs/table.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/table/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/tableresize/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/tabletools/dialogs/tableCell.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/tabletools/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/templates/dialogs/templates.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/templates/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/templates/templates/default.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/templates/templates/images/template1.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/templates/templates/images/template2.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/templates/templates/images/template3.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/toolbar/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/uicolor/dialogs/uicolor.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/uicolor/lang/en.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/uicolor/lang/he.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/uicolor/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/uicolor/uicolor.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/uicolor/yui/assets/hue_bg.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/uicolor/yui/assets/hue_thumb.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/uicolor/yui/assets/picker_mask.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/uicolor/yui/assets/picker_thumb.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/uicolor/yui/assets/yui.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/uicolor/yui/yui.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/undo/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/wsc/dialogs/ciframe.html
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/wsc/dialogs/tmpFrameset.html
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/wsc/dialogs/wsc.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/wsc/dialogs/wsc.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/wsc/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/wysiwygarea/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/xml/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/kama/dialog.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/kama/editor.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/kama/elementspath.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/kama/icons.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/kama/icons.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/kama/icons_rtl.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/kama/images/dialog_sides.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/kama/images/dialog_sides.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/kama/images/dialog_sides_rtl.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/kama/images/mini.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/kama/images/noimage.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/kama/images/sprites.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/kama/images/sprites_ie6.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/kama/images/toolbar_start.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/kama/mainui.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/kama/menu.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/kama/panel.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/kama/presets.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/kama/reset.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/kama/richcombo.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/kama/skin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/kama/templates.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/kama/toolbar.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/office2003/dialog.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/office2003/editor.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/office2003/elementspath.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/office2003/icons.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/office2003/icons.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/office2003/icons_rtl.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/office2003/images/dialog_sides.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/office2003/images/dialog_sides.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/office2003/images/dialog_sides_rtl.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/office2003/images/mini.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/office2003/images/noimage.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/office2003/images/sprites.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/office2003/images/sprites_ie6.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/office2003/mainui.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/office2003/menu.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/office2003/panel.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/office2003/presets.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/office2003/reset.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/office2003/richcombo.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/office2003/skin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/office2003/templates.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/office2003/toolbar.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/v2/dialog.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/v2/editor.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/v2/elementspath.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/v2/icons.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/v2/icons.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/v2/icons_rtl.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/v2/images/dialog_sides.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/v2/images/dialog_sides.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/v2/images/dialog_sides_rtl.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/v2/images/mini.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/v2/images/noimage.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/v2/images/sprites.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/v2/images/sprites_ie6.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/v2/images/toolbar_start.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/v2/mainui.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/v2/menu.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/v2/panel.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/v2/presets.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/v2/reset.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/v2/richcombo.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/v2/skin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/v2/templates.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/v2/toolbar.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/themes/default/theme.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/adapters/jquery.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/ckeditor.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/ckeditor.pack
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/ckeditor_basic.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/ckeditor_basic_source.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/ckeditor_source.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/config.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/contents.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/images/spacer.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/_languages.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/_translationstatus.txt
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/af.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/ar.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/bg.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/bn.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/bs.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/ca.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/cs.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/cy.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/da.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/de.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/el.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/en-au.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/en-ca.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/en-gb.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/en.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/eo.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/es.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/et.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/eu.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/fa.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/fi.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/fo.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/fr-ca.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/fr.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/gl.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/gu.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/he.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/hi.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/hr.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/hu.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/is.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/it.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/ja.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/ka.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/km.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/ko.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/lt.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/lv.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/mn.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/ms.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/nb.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/nl.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/no.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/pl.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/pt-br.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/pt.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/ro.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/ru.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/sk.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/sl.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/sr-latn.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/sr.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/sv.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/th.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/tr.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/uk.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/vi.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/zh-cn.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang/zh.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/a11yhelp/dialogs/a11yhelp.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/a11yhelp/lang/en.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/a11yhelp/lang/he.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/about/dialogs/about.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/about/dialogs/logo_ckeditor.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/adobeair/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/ajax/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/aspell/aspell.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/aspell/dialogs/aspell.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/aspell/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/aspell/spellerpages/blank.html
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/aspell/spellerpages/controlWindow.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/aspell/spellerpages/controls.html
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/aspell/spellerpages/spellChecker.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/aspell/spellerpages/spellchecker.html
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/aspell/spellerpages/spellerStyle.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/aspell/spellerpages/wordWindow.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/autogrow/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/bbcode/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/clipboard/dialogs/paste.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/colordialog/dialogs/colordialog.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/devtools/lang/en.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/devtools/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/dialog/dialogDefinition.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/div/dialogs/div.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/docprops/dialogs/docprops.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/docprops/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/find/dialogs/find.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/flash/dialogs/flash.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/flash/images/placeholder.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/forms/dialogs/button.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/forms/dialogs/checkbox.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/forms/dialogs/form.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/forms/dialogs/hiddenfield.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/forms/dialogs/radio.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/forms/dialogs/select.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/forms/dialogs/textarea.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/forms/dialogs/textfield.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/forms/images/hiddenfield.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/iframe/dialogs/iframe.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/iframe/images/placeholder.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/iframedialog/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/image/dialogs/image.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/link/dialogs/anchor.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/link/dialogs/link.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/link/images/anchor.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/liststyle/dialogs/liststyle.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/pagebreak/images/pagebreak.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/pastefromword/filter/default.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/pastetext/dialogs/pastetext.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/placeholder/dialogs/placeholder.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/placeholder/lang/en.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/placeholder/lang/he.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/placeholder/placeholder.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/placeholder/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/scayt/dialogs/options.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/scayt/dialogs/toolbar.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/showblocks/images/block_address.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/showblocks/images/block_blockquote.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/showblocks/images/block_div.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/showblocks/images/block_h1.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/showblocks/images/block_h2.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/showblocks/images/block_h3.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/showblocks/images/block_h4.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/showblocks/images/block_h5.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/showblocks/images/block_h6.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/showblocks/images/block_p.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/showblocks/images/block_pre.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/smiley/dialogs/smiley.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/smiley/images/angel_smile.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/smiley/images/angry_smile.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/smiley/images/broken_heart.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/smiley/images/confused_smile.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/smiley/images/cry_smile.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/smiley/images/devil_smile.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/smiley/images/embaressed_smile.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/smiley/images/envelope.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/smiley/images/heart.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/smiley/images/kiss.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/smiley/images/lightbulb.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/smiley/images/omg_smile.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/smiley/images/regular_smile.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/smiley/images/sad_smile.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/smiley/images/shades_smile.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/smiley/images/teeth_smile.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/smiley/images/thumbs_down.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/smiley/images/thumbs_up.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/smiley/images/tounge_smile.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/smiley/images/whatchutalkingabout_smile.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/smiley/images/wink_smile.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/specialchar/dialogs/specialchar.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/specialchar/lang/en.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/styles/styles/default.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/stylesheetparser/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/table/dialogs/table.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/tableresize/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/tabletools/dialogs/tableCell.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/templates/dialogs/templates.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/templates/templates/default.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/templates/templates/images/template1.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/templates/templates/images/template2.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/templates/templates/images/template3.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/uicolor/dialogs/uicolor.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/uicolor/lang/en.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/uicolor/lang/he.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/uicolor/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/uicolor/uicolor.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/uicolor/yui/assets/hue_bg.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/uicolor/yui/assets/hue_thumb.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/uicolor/yui/assets/picker_mask.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/uicolor/yui/assets/picker_thumb.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/uicolor/yui/assets/yui.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/uicolor/yui/yui.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/wsc/dialogs/ciframe.html
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/wsc/dialogs/tmpFrameset.html
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/wsc/dialogs/wsc.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/wsc/dialogs/wsc.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/xml/plugin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/default/dialog.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/default/editor.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/default/icons.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/default/images/dialog_sides.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/default/images/dialog_sides.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/default/images/dialog_sides_rtl.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/default/images/mini.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/default/images/noimage.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/default/images/sprites.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/default/images/sprites_ie6.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/default/images/toolbar_start.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/default/skin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/default/templates.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/kama/dialog.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/kama/editor.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/kama/icons.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/kama/icons_rtl.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/kama/images/dialog_sides.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/kama/images/dialog_sides.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/kama/images/dialog_sides_rtl.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/kama/images/mini.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/kama/images/noimage.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/kama/images/sprites.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/kama/images/sprites_ie6.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/kama/images/toolbar_start.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/kama/skin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/kama/templates.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/office2003/dialog.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/office2003/editor.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/office2003/icons.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/office2003/icons_rtl.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/office2003/images/dialog_sides.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/office2003/images/dialog_sides.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/office2003/images/dialog_sides_rtl.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/office2003/images/mini.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/office2003/images/noimage.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/office2003/images/sprites.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/office2003/images/sprites_ie6.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/office2003/skin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/office2003/templates.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/v2/dialog.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/v2/editor.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/v2/icons.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/v2/icons_rtl.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/v2/images/dialog_sides.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/v2/images/dialog_sides.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/v2/images/dialog_sides_rtl.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/v2/images/mini.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/v2/images/noimage.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/v2/images/sprites.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/v2/images/sprites_ie6.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/v2/images/toolbar_start.gif
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/v2/skin.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/v2/templates.css
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/themes/default/theme.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/.htaccess
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/CHANGES.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/INSTALL.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/LICENSE.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/OTRS-PATCHES.txt
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/adapters/jquery.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/_bootstrap.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/ckeditor.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/ckeditor_base.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/ckeditor_basic.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/command.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/commanddefinition.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/config.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/dataprocessor.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/dom.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/dom/comment.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/dom/document.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/dom/documentfragment.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/dom/domobject.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/dom/element.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/dom/elementpath.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/dom/event.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/dom/node.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/dom/nodelist.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/dom/range.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/dom/rangelist.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/dom/text.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/dom/walker.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/dom/window.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/dtd.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/editor.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/editor_basic.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/env.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/event.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/eventInfo.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/focusmanager.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/htmlparser.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/htmlparser/basicwriter.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/htmlparser/cdata.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/htmlparser/comment.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/htmlparser/element.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/htmlparser/filter.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/htmlparser/fragment.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/htmlparser/text.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/lang.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/loader.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/plugindefinition.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/plugins.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/resourcemanager.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/scriptloader.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/skins.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/themes.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/tools.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/ui.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/_languages.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/_translationstatus.txt
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/af.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/ar.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/bg.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/bn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/bs.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/ca.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/cs.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/cy.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/da.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/de.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/el.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/en-au.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/en-ca.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/en-gb.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/en.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/eo.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/es.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/et.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/eu.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/fa.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/fi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/fo.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/fr-ca.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/fr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/gl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/gu.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/he.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/hi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/hr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/hu.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/is.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/it.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/ja.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/ka.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/km.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/ko.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/lt.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/lv.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/mk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/mn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/ms.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/nb.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/nl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/no.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/pl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/pt-br.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/pt.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/ro.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/ru.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/sk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/sl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/sr-latn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/sr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/sv.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/th.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/tr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/ug.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/uk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/vi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/zh-cn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang/zh.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/a11yhelp/dialogs/a11yhelp.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/a11yhelp/lang/_translationstatus.txt
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/a11yhelp/lang/cs.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/a11yhelp/lang/cy.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/a11yhelp/lang/da.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/a11yhelp/lang/de.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/a11yhelp/lang/el.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/a11yhelp/lang/en.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/a11yhelp/lang/eo.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/a11yhelp/lang/fa.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/a11yhelp/lang/fi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/a11yhelp/lang/fr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/a11yhelp/lang/gu.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/a11yhelp/lang/he.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/a11yhelp/lang/it.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/a11yhelp/lang/mk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/a11yhelp/lang/nb.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/a11yhelp/lang/nl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/a11yhelp/lang/no.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/a11yhelp/lang/tr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/a11yhelp/lang/ug.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/a11yhelp/lang/vi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/a11yhelp/lang/zh-cn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/a11yhelp/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/about/dialogs/about.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/about/dialogs/logo_ckeditor.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/about/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/adobeair/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/ajax/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/aspell/aspell.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/aspell/dialogs/aspell.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/aspell/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/aspell/spellerpages/blank.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/aspell/spellerpages/controlWindow.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/aspell/spellerpages/controls.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/aspell/spellerpages/spellChecker.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/aspell/spellerpages/spellchecker.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/aspell/spellerpages/spellerStyle.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/aspell/spellerpages/wordWindow.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/autogrow/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/basicstyles/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/bbcode/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/bidi/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/blockquote/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/button/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/clipboard/dialogs/paste.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/clipboard/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/colorbutton/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/colordialog/dialogs/colordialog.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/colordialog/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/contextmenu/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/devtools/lang/_translationstatus.txt
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/devtools/lang/bg.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/devtools/lang/cs.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/devtools/lang/cy.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/devtools/lang/da.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/devtools/lang/de.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/devtools/lang/el.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/devtools/lang/en.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/devtools/lang/eo.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/devtools/lang/et.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/devtools/lang/fa.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/devtools/lang/fi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/devtools/lang/fr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/devtools/lang/gu.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/devtools/lang/he.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/devtools/lang/hr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/devtools/lang/it.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/devtools/lang/nb.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/devtools/lang/nl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/devtools/lang/no.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/devtools/lang/pl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/devtools/lang/tr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/devtools/lang/ug.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/devtools/lang/uk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/devtools/lang/vi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/devtools/lang/zh-cn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/devtools/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/dialog/dialogDefinition.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/dialog/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/dialogadvtab/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/dialogui/2010-10-28-dialogui.patch
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/dialogui/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/div/dialogs/div.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/div/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/docprops/dialogs/docprops.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/docprops/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/domiterator/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/editingblock/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/elementspath/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/enterkey/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/entities/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/fakeobjects/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/filebrowser/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/find/dialogs/find.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/find/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/flash/dialogs/flash.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/flash/images/placeholder.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/flash/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/floatpanel/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/font/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/format/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/forms/dialogs/button.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/forms/dialogs/checkbox.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/forms/dialogs/form.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/forms/dialogs/hiddenfield.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/forms/dialogs/radio.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/forms/dialogs/select.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/forms/dialogs/textarea.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/forms/dialogs/textfield.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/forms/images/hiddenfield.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/forms/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/horizontalrule/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/htmldataprocessor/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/htmlwriter/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/iframe/dialogs/iframe.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/iframe/images/placeholder.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/iframe/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/iframedialog/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/image/dialogs/image.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/image/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/indent/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/justify/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/keystrokes/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/link/dialogs/anchor.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/link/dialogs/link.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/link/images/anchor.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/link/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/list/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/listblock/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/liststyle/dialogs/liststyle.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/liststyle/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/maximize/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/menu/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/menubutton/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/newpage/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/pagebreak/images/pagebreak.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/pagebreak/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/panel/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/panelbutton/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/pastefromword/filter/default.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/pastefromword/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/pastetext/dialogs/pastetext.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/pastetext/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/dialogs/placeholder.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/lang/_translationstatus.txt
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/lang/bg.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/lang/cs.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/lang/cy.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/lang/da.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/lang/de.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/lang/el.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/lang/en.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/lang/eo.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/lang/et.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/lang/fa.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/lang/fi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/lang/fr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/lang/he.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/lang/hr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/lang/it.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/lang/nb.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/lang/nl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/lang/no.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/lang/pl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/lang/tr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/lang/ug.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/lang/uk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/lang/vi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/lang/zh-cn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/placeholder.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/popup/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/preview/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/print/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/removeformat/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/resize/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/richcombo/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/save/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/scayt/dialogs/options.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/scayt/dialogs/toolbar.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/scayt/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/selection/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/showblocks/images/block_address.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/showblocks/images/block_blockquote.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/showblocks/images/block_div.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/showblocks/images/block_h1.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/showblocks/images/block_h2.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/showblocks/images/block_h3.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/showblocks/images/block_h4.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/showblocks/images/block_h5.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/showblocks/images/block_h6.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/showblocks/images/block_p.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/showblocks/images/block_pre.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/showblocks/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/showborders/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/smiley/dialogs/smiley.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/smiley/images/angel_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/smiley/images/angry_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/smiley/images/broken_heart.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/smiley/images/confused_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/smiley/images/cry_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/smiley/images/devil_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/smiley/images/embaressed_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/smiley/images/envelope.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/smiley/images/heart.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/smiley/images/kiss.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/smiley/images/lightbulb.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/smiley/images/omg_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/smiley/images/regular_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/smiley/images/sad_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/smiley/images/shades_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/smiley/images/teeth_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/smiley/images/thumbs_down.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/smiley/images/thumbs_up.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/smiley/images/tounge_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/smiley/images/whatchutalkingabout_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/smiley/images/wink_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/smiley/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/sourcearea/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/specialchar/dialogs/specialchar.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/specialchar/lang/_translationstatus.txt
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/specialchar/lang/cs.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/specialchar/lang/cy.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/specialchar/lang/de.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/specialchar/lang/en.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/specialchar/lang/eo.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/specialchar/lang/et.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/specialchar/lang/fa.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/specialchar/lang/fi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/specialchar/lang/fr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/specialchar/lang/hr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/specialchar/lang/it.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/specialchar/lang/nb.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/specialchar/lang/nl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/specialchar/lang/no.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/specialchar/lang/tr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/specialchar/lang/ug.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/specialchar/lang/zh-cn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/specialchar/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/styles/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/styles/styles/default.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/stylescombo/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/stylesheetparser/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/tab/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/table/dialogs/table.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/table/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/tableresize/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/tabletools/dialogs/tableCell.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/tabletools/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/templates/dialogs/templates.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/templates/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/templates/templates/default.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/templates/templates/images/template1.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/templates/templates/images/template2.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/templates/templates/images/template3.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/toolbar/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/dialogs/uicolor.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/lang/_translationstatus.txt
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/lang/bg.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/lang/cs.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/lang/cy.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/lang/da.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/lang/de.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/lang/el.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/lang/en.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/lang/eo.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/lang/et.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/lang/fa.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/lang/fi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/lang/fr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/lang/he.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/lang/hr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/lang/it.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/lang/mk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/lang/nb.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/lang/nl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/lang/no.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/lang/pl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/lang/tr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/lang/ug.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/lang/uk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/lang/vi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/lang/zh-cn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/uicolor.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/yui/assets/hue_bg.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/yui/assets/hue_thumb.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/yui/assets/picker_mask.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/yui/assets/picker_thumb.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/yui/assets/yui.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/yui/yui.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/undo/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/wsc/dialogs/ciframe.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/wsc/dialogs/tmpFrameset.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/wsc/dialogs/wsc.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/wsc/dialogs/wsc.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/wsc/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/wysiwygarea/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/xml/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/kama/dialog.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/kama/editor.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/kama/elementspath.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/kama/icons.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/kama/icons.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/kama/icons_rtl.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/kama/images/dialog_sides.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/kama/images/dialog_sides.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/kama/images/dialog_sides_rtl.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/kama/images/mini.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/kama/images/noimage.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/kama/images/sprites.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/kama/images/sprites_ie6.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/kama/images/toolbar_start.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/kama/mainui.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/kama/menu.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/kama/panel.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/kama/presets.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/kama/reset.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/kama/richcombo.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/kama/skin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/kama/templates.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/kama/toolbar.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/office2003/dialog.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/office2003/editor.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/office2003/elementspath.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/office2003/icons.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/office2003/icons.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/office2003/icons_rtl.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/office2003/images/dialog_sides.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/office2003/images/dialog_sides.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/office2003/images/dialog_sides_rtl.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/office2003/images/mini.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/office2003/images/noimage.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/office2003/images/sprites.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/office2003/images/sprites_ie6.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/office2003/mainui.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/office2003/menu.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/office2003/panel.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/office2003/presets.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/office2003/reset.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/office2003/richcombo.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/office2003/skin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/office2003/templates.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/office2003/toolbar.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/v2/dialog.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/v2/editor.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/v2/elementspath.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/v2/icons.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/v2/icons.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/v2/icons_rtl.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/v2/images/dialog_sides.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/v2/images/dialog_sides.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/v2/images/dialog_sides_rtl.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/v2/images/mini.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/v2/images/noimage.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/v2/images/sprites.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/v2/images/sprites_ie6.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/v2/images/toolbar_start.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/v2/mainui.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/v2/menu.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/v2/panel.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/v2/presets.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/v2/reset.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/v2/richcombo.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/v2/skin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/v2/templates.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/v2/toolbar.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/themes/default/theme.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/adapters/jquery.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/ckeditor.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/ckeditor.pack
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/ckeditor_basic.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/ckeditor_basic_source.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/ckeditor_source.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/config.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/contents.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/images/spacer.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/_languages.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/_translationstatus.txt
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/af.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/ar.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/bg.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/bn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/bs.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/ca.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/cs.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/cy.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/da.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/de.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/el.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/en-au.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/en-ca.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/en-gb.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/en.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/eo.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/es.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/et.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/eu.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/fa.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/fi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/fo.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/fr-ca.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/fr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/gl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/gu.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/he.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/hi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/hr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/hu.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/is.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/it.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/ja.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/ka.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/km.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/ko.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/lt.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/lv.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/mk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/mn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/ms.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/nb.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/nl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/no.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/pl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/pt-br.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/pt.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/ro.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/ru.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/sk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/sl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/sr-latn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/sr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/sv.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/th.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/tr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/ug.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/uk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/vi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/zh-cn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/zh.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/a11yhelp.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/lang/_translationstatus.txt
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/lang/cs.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/lang/cy.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/lang/da.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/lang/de.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/lang/el.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/lang/en.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/lang/eo.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/lang/fa.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/lang/fi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/lang/fr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/lang/gu.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/lang/he.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/lang/it.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/lang/mk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/lang/nb.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/lang/nl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/lang/no.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/lang/tr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/lang/ug.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/lang/vi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/lang/zh-cn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/about/dialogs/about.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/about/dialogs/logo_ckeditor.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/adobeair/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/ajax/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/aspell/aspell.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/aspell/dialogs/aspell.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/aspell/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/aspell/spellerpages/blank.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/aspell/spellerpages/controlWindow.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/aspell/spellerpages/controls.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/aspell/spellerpages/spellChecker.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/aspell/spellerpages/spellchecker.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/aspell/spellerpages/spellerStyle.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/aspell/spellerpages/wordWindow.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/autogrow/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/bbcode/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/clipboard/dialogs/paste.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/colordialog/dialogs/colordialog.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/_translationstatus.txt
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/bg.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/cs.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/cy.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/da.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/de.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/el.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/en.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/eo.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/et.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/fa.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/fi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/fr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/gu.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/he.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/hr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/it.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/nb.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/nl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/no.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/pl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/tr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/ug.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/uk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/vi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/zh-cn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/dialog/dialogDefinition.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/div/dialogs/div.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/dialogs/docprops.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/find/dialogs/find.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/flash/dialogs/flash.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/flash/images/placeholder.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/forms/dialogs/button.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/forms/dialogs/checkbox.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/forms/dialogs/form.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/forms/dialogs/hiddenfield.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/forms/dialogs/radio.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/forms/dialogs/select.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/forms/dialogs/textarea.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/forms/dialogs/textfield.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/forms/images/hiddenfield.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/iframe/dialogs/iframe.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/iframe/images/placeholder.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/iframedialog/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image/dialogs/2010-10-28-image-dialog.patch
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image/dialogs/image.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/link/dialogs/anchor.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/link/dialogs/link.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/link/images/anchor.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/liststyle/dialogs/liststyle.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/onchange/docs/install.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/onchange/docs/styles.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/onchange/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/pagebreak/images/pagebreak.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/pastefromword/filter/default.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/pastetext/dialogs/pastetext.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/dialogs/placeholder.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/_translationstatus.txt
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/bg.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/cs.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/cy.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/da.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/de.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/el.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/en.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/eo.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/et.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/fa.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/fi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/fr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/he.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/hr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/it.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/nb.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/nl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/no.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/pl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/tr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/ug.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/uk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/vi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/zh-cn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/placeholder.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/scayt/dialogs/options.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/scayt/dialogs/toolbar.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/showblocks/images/block_address.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/showblocks/images/block_blockquote.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/showblocks/images/block_div.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/showblocks/images/block_h1.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/showblocks/images/block_h2.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/showblocks/images/block_h3.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/showblocks/images/block_h4.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/showblocks/images/block_h5.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/showblocks/images/block_h6.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/showblocks/images/block_p.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/showblocks/images/block_pre.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/dialogs/smiley.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/angel_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/angry_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/broken_heart.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/confused_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/cry_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/devil_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/embaressed_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/envelope.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/heart.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/kiss.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/lightbulb.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/omg_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/regular_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/sad_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/shades_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/teeth_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/thumbs_down.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/thumbs_up.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/tounge_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/whatchutalkingabout_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/wink_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/specialchar.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/lang/_translationstatus.txt
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/lang/cs.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/lang/cy.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/lang/de.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/lang/en.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/lang/eo.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/lang/et.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/lang/fa.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/lang/fi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/lang/fr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/lang/hr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/lang/it.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/lang/nb.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/lang/nl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/lang/no.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/lang/tr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/lang/ug.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/lang/zh-cn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/styles/styles/default.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/stylesheetparser/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/table/dialogs/table.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/tableresize/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/tabletools/dialogs/tableCell.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/templates/dialogs/templates.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/templates/templates/default.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/templates/templates/images/template1.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/templates/templates/images/template2.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/templates/templates/images/template3.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/dialogs/uicolor.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/_translationstatus.txt
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/bg.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/cs.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/cy.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/da.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/de.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/el.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/en.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/eo.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/et.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/fa.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/fi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/fr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/he.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/hr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/it.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/mk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/nb.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/nl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/no.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/pl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/tr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/ug.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/uk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/vi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/zh-cn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/uicolor.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/yui/assets/hue_bg.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/yui/assets/hue_thumb.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/yui/assets/picker_mask.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/yui/assets/picker_thumb.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/yui/assets/yui.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/yui/yui.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/wsc/dialogs/ciframe.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/wsc/dialogs/tmpFrameset.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/wsc/dialogs/wsc.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/wsc/dialogs/wsc.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/xml/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/default/dialog.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/default/editor.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/default/icons.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/default/images/dialog_sides.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/default/images/dialog_sides.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/default/images/dialog_sides_rtl.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/default/images/mini.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/default/images/noimage.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/default/images/sprites.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/default/images/sprites_ie6.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/default/images/toolbar_start.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/default/skin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/default/templates.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/kama/dialog.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/kama/editor.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/kama/icons.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/kama/icons_rtl.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/kama/images/dialog_sides.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/kama/images/dialog_sides.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/kama/images/dialog_sides_rtl.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/kama/images/mini.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/kama/images/noimage.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/kama/images/sprites.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/kama/images/sprites_ie6.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/kama/images/toolbar_start.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/kama/skin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/kama/templates.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/office2003/dialog.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/office2003/editor.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/office2003/icons.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/office2003/icons_rtl.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/office2003/images/dialog_sides.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/office2003/images/dialog_sides.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/office2003/images/dialog_sides_rtl.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/office2003/images/mini.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/office2003/images/noimage.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/office2003/images/sprites.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/office2003/images/sprites_ie6.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/office2003/skin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/office2003/templates.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/v2/dialog.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/v2/editor.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/v2/icons.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/v2/icons_rtl.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/v2/images/dialog_sides.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/v2/images/dialog_sides.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/v2/images/dialog_sides_rtl.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/v2/images/mini.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/v2/images/noimage.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/v2/images/sprites.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/v2/images/sprites_ie6.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/v2/images/toolbar_start.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/v2/skin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/v2/templates.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/themes/default/theme.js
 otrs/var/httpd/htdocs/js/thirdparty/flot-0.7/excanvas.js
 otrs/var/httpd/htdocs/js/thirdparty/flot-0.7/jquery.flot.js
 otrs/var/httpd/htdocs/js/thirdparty/jquery-1.6.4/jquery.js
@@ -1977,247 +2203,249 @@ otrs/Kernel/System/XMLMaster.pm
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/jquery-tablesorter-2.0.5
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/jquery-1.6.4
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/flot-0.7
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/themes/default
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/themes
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/v2/images
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/v2
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/office2003/images
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/office2003
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/kama/images
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/kama
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/default/images
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins/default
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/skins
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/xml
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/wsc/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/wsc
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/uicolor/yui/assets
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/uicolor/yui
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/uicolor/lang
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/uicolor/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/uicolor
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/templates/templates/images
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/templates/templates
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/templates/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/templates
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/tabletools/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/tabletools
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/tableresize
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/table/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/table
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/stylesheetparser
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/styles/styles
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/styles
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/specialchar/lang
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/specialchar/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/specialchar
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/smiley/images
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/smiley/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/smiley
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/showblocks/images
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/showblocks
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/scayt/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/scayt
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/placeholder/lang
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/placeholder/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/placeholder
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/pastetext/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/pastetext
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/pastefromword/filter
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/pastefromword
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/pagebreak/images
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/pagebreak
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/liststyle/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/liststyle
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/link/images
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/link/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/link
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/image/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/image
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/iframedialog
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/iframe/images
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/iframe/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/iframe
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/forms/images
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/forms/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/forms
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/flash/images
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/flash/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/flash
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/find/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/find
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/docprops/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/docprops
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/div/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/div
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/dialog
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/devtools/lang
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/devtools
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/colordialog/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/colordialog
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/clipboard/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/clipboard
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/bbcode
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/autogrow
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/aspell/spellerpages
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/aspell/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/aspell
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/ajax
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/adobeair
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/about/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/about
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/a11yhelp/lang
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/a11yhelp/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins/a11yhelp
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/plugins
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/lang
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/images
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/adapters
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/themes/default
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/themes
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/v2/images
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/v2
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/office2003/images
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/office2003
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/kama/images
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins/kama
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/skins
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/xml
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/wysiwygarea
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/wsc/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/wsc
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/undo
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/uicolor/yui/assets
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/uicolor/yui
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/uicolor/lang
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/uicolor/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/uicolor
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/toolbar
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/templates/templates/images
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/templates/templates
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/templates/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/templates
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/tabletools/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/tabletools
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/tableresize
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/table/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/table
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/tab
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/stylesheetparser
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/stylescombo
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/styles/styles
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/styles
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/specialchar/lang
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/specialchar/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/specialchar
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/sourcearea
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/smiley/images
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/smiley/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/smiley
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/showborders
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/showblocks/images
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/showblocks
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/selection
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/scayt/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/scayt
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/save
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/richcombo
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/resize
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/removeformat
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/print
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/preview
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/popup
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/placeholder/lang
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/placeholder/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/placeholder
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/pastetext/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/pastetext
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/pastefromword/filter
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/pastefromword
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/panelbutton
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/panel
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/pagebreak/images
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/pagebreak
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/newpage
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/menubutton
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/menu
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/maximize
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/liststyle/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/liststyle
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/listblock
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/list
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/link/images
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/link/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/link
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/keystrokes
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/justify
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/indent
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/image/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/image
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/iframedialog
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/iframe/images
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/iframe/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/iframe
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/htmlwriter
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/htmldataprocessor
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/horizontalrule
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/forms/images
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/forms/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/forms
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/format
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/font
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/floatpanel
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/flash/images
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/flash/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/flash
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/find/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/find
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/filebrowser
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/fakeobjects
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/entities
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/enterkey
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/elementspath
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/editingblock
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/domiterator
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/docprops/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/docprops
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/div/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/div
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/dialogui
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/dialogadvtab
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/dialog
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/devtools/lang
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/devtools
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/contextmenu
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/colordialog/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/colordialog
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/colorbutton
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/clipboard/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/clipboard
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/button
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/blockquote
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/bidi
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/bbcode
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/basicstyles
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/autogrow
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/aspell/spellerpages
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/aspell/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/aspell
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/ajax
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/adobeair
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/about/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/about
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/a11yhelp/lang
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/a11yhelp/dialogs
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins/a11yhelp
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/plugins
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/lang
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/htmlparser
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core/dom
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/core
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source/adapters
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2/_source
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.6.2
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/themes/default
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/themes
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/v2/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/v2
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/office2003/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/office2003
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/kama/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/kama
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/default/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/default
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/xml
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/wsc/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/wsc
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/yui/assets
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/yui
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/templates/templates/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/templates/templates
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/templates/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/templates
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/tabletools/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/tabletools
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/tableresize
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/table/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/table
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/stylesheetparser
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/styles/styles
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/styles
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/lang
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/showblocks/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/showblocks
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/scayt/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/scayt
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/pastetext/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/pastetext
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/pastefromword/filter
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/pastefromword
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/pagebreak/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/pagebreak
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/onchange/docs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/onchange
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/liststyle/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/liststyle
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/link/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/link/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/link
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/iframedialog
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/iframe/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/iframe/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/iframe
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/forms/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/forms/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/forms
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/flash/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/flash/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/flash
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/find/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/find
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/div/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/div
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/dialog
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/colordialog/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/colordialog
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/clipboard/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/clipboard
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/bbcode
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/autogrow
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/aspell/spellerpages
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/aspell/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/aspell
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/ajax
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/adobeair
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/about/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/about
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/lang
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/adapters
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/themes/default
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/themes
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/v2/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/v2
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/office2003/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/office2003
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/kama/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins/kama
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/skins
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/xml
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/wysiwygarea
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/wsc/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/wsc
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/undo
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/yui/assets
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/yui
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/lang
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/uicolor
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/toolbar
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/templates/templates/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/templates/templates
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/templates/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/templates
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/tabletools/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/tabletools
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/tableresize
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/table/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/table
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/tab
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/stylesheetparser
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/stylescombo
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/styles/styles
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/styles
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/specialchar/lang
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/specialchar/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/specialchar
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/sourcearea
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/smiley/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/smiley/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/smiley
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/showborders
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/showblocks/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/showblocks
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/selection
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/scayt/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/scayt
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/save
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/richcombo
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/resize
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/removeformat
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/print
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/preview
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/popup
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/lang
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/placeholder
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/pastetext/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/pastetext
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/pastefromword/filter
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/pastefromword
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/panelbutton
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/panel
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/pagebreak/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/pagebreak
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/newpage
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/menubutton
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/menu
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/maximize
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/liststyle/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/liststyle
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/listblock
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/list
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/link/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/link/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/link
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/keystrokes
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/justify
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/indent
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/image/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/image
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/iframedialog
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/iframe/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/iframe/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/iframe
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/htmlwriter
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/htmldataprocessor
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/horizontalrule
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/forms/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/forms/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/forms
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/format
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/font
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/floatpanel
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/flash/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/flash/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/flash
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/find/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/find
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/filebrowser
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/fakeobjects
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/entities
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/enterkey
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/elementspath
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/editingblock
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/domiterator
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/docprops/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/docprops
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/div/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/div
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/dialogui
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/dialogadvtab
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/dialog
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/devtools/lang
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/devtools
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/contextmenu
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/colordialog/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/colordialog
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/colorbutton
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/clipboard/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/clipboard
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/button
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/blockquote
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/bidi
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/bbcode
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/basicstyles
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/autogrow
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/aspell/spellerpages
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/aspell/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/aspell
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/ajax
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/adobeair
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/about/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/about
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/a11yhelp/lang
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/a11yhelp/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins/a11yhelp
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/plugins
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/lang
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/htmlparser
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core/dom
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/core
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source/adapters
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/_source
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%
 @dirrm otrs/var/httpd/htdocs/js/thirdparty
 @dirrm otrs/var/httpd/htdocs/js/test/sample
 @dirrm otrs/var/httpd/htdocs/js/test
