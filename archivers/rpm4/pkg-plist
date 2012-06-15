@@ -10,6 +10,7 @@ bin/rpmsign
 bin/rpmspec
 bin/rpmverify
 include/rpm/argv.h
+include/rpm/rpmbase64.h
 include/rpm/rpmio.h
 include/rpm/rpmurl.h
 include/rpm/rpmmacro.h
@@ -45,19 +46,19 @@ include/rpm/rpmspec.h
 lib/librpm.a
 lib/librpm.la
 lib/librpm.so
-lib/librpm.so.2
+lib/librpm.so.3
 lib/librpmbuild.a
 lib/librpmbuild.la
 lib/librpmbuild.so
-lib/librpmbuild.so.2
+lib/librpmbuild.so.3
 lib/librpmio.a
 lib/librpmio.la
 lib/librpmio.so
-lib/librpmio.so.2
+lib/librpmio.so.3
 lib/librpmsign.a
 lib/librpmsign.la
 lib/librpmsign.so
-lib/librpmsign.so.0
+lib/librpmsign.so.1
 lib/rpm/rpm.daily
 lib/rpm/rpm.log
 lib/rpm/macros.perl
@@ -106,7 +107,6 @@ lib/rpm/fileattrs/python.attr
 lib/rpm/fileattrs/ocaml.attr
 lib/rpm/fileattrs/script.attr
 lib/rpm/fileattrs/mono.attr
-lib/rpm/javadeps
 lib/rpm/rpmdeps
 lib/rpm/rpmrc
 lib/rpm/macros
@@ -116,17 +116,71 @@ lib/rpm/find-requires
 lib/rpm/mkinstalldirs
 lib/rpm/config.guess
 lib/rpm/config.sub
+lib/rpm/platform/noarch-freebsd/macros
+lib/rpm/platform/athlon-freebsd/macros
+lib/rpm/platform/geode-freebsd/macros
+lib/rpm/platform/pentium4-freebsd/macros
+lib/rpm/platform/pentium3-freebsd/macros
+lib/rpm/platform/i686-freebsd/macros
+lib/rpm/platform/i586-freebsd/macros
+lib/rpm/platform/i486-freebsd/macros
+lib/rpm/platform/i386-freebsd/macros
+lib/rpm/platform/x86_64-freebsd/macros
+lib/rpm/platform/amd64-freebsd/macros
+lib/rpm/platform/ia32e-freebsd/macros
+lib/rpm/platform/alpha-freebsd/macros
+lib/rpm/platform/alphaev5-freebsd/macros
+lib/rpm/platform/alphaev56-freebsd/macros
+lib/rpm/platform/alphapca56-freebsd/macros
+lib/rpm/platform/alphaev6-freebsd/macros
+lib/rpm/platform/alphaev67-freebsd/macros
+lib/rpm/platform/sparc64-freebsd/macros
+lib/rpm/platform/sparc64v-freebsd/macros
+lib/rpm/platform/sparc-freebsd/macros
+lib/rpm/platform/sparcv8-freebsd/macros
+lib/rpm/platform/sparcv9-freebsd/macros
+lib/rpm/platform/sparcv9v-freebsd/macros
+lib/rpm/platform/ppc-freebsd/macros
+lib/rpm/platform/ppc8260-freebsd/macros
+lib/rpm/platform/ppc8560-freebsd/macros
+lib/rpm/platform/ppc32dy4-freebsd/macros
+lib/rpm/platform/ppciseries-freebsd/macros
+lib/rpm/platform/ppcpseries-freebsd/macros
+lib/rpm/platform/ia64-freebsd/macros
+lib/rpm/platform/armv3l-freebsd/macros
+lib/rpm/platform/armv4b-freebsd/macros
+lib/rpm/platform/armv4l-freebsd/macros
+lib/rpm/platform/armv5tel-freebsd/macros
+lib/rpm/platform/armv5tejl-freebsd/macros
+lib/rpm/platform/armv6l-freebsd/macros
+lib/rpm/platform/armv7l-freebsd/macros
+lib/rpm/platform/s390-freebsd/macros
+lib/rpm/platform/s390x-freebsd/macros
+lib/rpm/platform/ppc64-freebsd/macros
+lib/rpm/platform/ppc64pseries-freebsd/macros
+lib/rpm/platform/ppc64iseries-freebsd/macros
+lib/rpm/platform/ppc64p7-freebsd/macros
+lib/rpm/platform/sh-freebsd/macros
+lib/rpm/platform/sh3-freebsd/macros
+lib/rpm/platform/sh4-freebsd/macros
+lib/rpm/platform/sh4a-freebsd/macros
 lib/rpm-plugins/exec.so
 lib/rpm-plugins/exec.la
 lib/rpm-plugins/sepolicy.so
 lib/rpm-plugins/sepolicy.la
+%%NLS%%share/locale/bn_IN/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/cs_CZ/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/da/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/de/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/el/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/es/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/gu/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/id/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/is/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/it/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/rpm.mo
@@ -143,7 +197,9 @@ lib/rpm-plugins/sepolicy.la
 %%NLS%%share/locale/sr/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/te/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/rpm.mo
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/_rpmmodule.la
@@ -155,8 +211,57 @@ lib/rpm-plugins/sepolicy.la
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/transaction.py
 libdata/pkgconfig/rpm.pc
 @dirrm lib/rpm/fileattrs
-@dirrm lib/rpm
 @dirrm lib/rpm-plugins
+@dirrm lib/rpm/platform/noarch-freebsd
+@dirrm lib/rpm/platform/athlon-freebsd
+@dirrm lib/rpm/platform/geode-freebsd
+@dirrm lib/rpm/platform/pentium4-freebsd
+@dirrm lib/rpm/platform/pentium3-freebsd
+@dirrm lib/rpm/platform/i686-freebsd
+@dirrm lib/rpm/platform/i586-freebsd
+@dirrm lib/rpm/platform/i486-freebsd
+@dirrm lib/rpm/platform/i386-freebsd
+@dirrm lib/rpm/platform/x86_64-freebsd
+@dirrm lib/rpm/platform/amd64-freebsd
+@dirrm lib/rpm/platform/ia32e-freebsd
+@dirrm lib/rpm/platform/alpha-freebsd
+@dirrm lib/rpm/platform/alphaev5-freebsd
+@dirrm lib/rpm/platform/alphaev56-freebsd
+@dirrm lib/rpm/platform/alphapca56-freebsd
+@dirrm lib/rpm/platform/alphaev6-freebsd
+@dirrm lib/rpm/platform/alphaev67-freebsd
+@dirrm lib/rpm/platform/sparc64-freebsd
+@dirrm lib/rpm/platform/sparc64v-freebsd
+@dirrm lib/rpm/platform/sparc-freebsd
+@dirrm lib/rpm/platform/sparcv8-freebsd
+@dirrm lib/rpm/platform/sparcv9-freebsd
+@dirrm lib/rpm/platform/sparcv9v-freebsd
+@dirrm lib/rpm/platform/ppc-freebsd
+@dirrm lib/rpm/platform/ppc8260-freebsd
+@dirrm lib/rpm/platform/ppc8560-freebsd
+@dirrm lib/rpm/platform/ppc32dy4-freebsd
+@dirrm lib/rpm/platform/ppciseries-freebsd
+@dirrm lib/rpm/platform/ppcpseries-freebsd
+@dirrm lib/rpm/platform/ia64-freebsd
+@dirrm lib/rpm/platform/armv3l-freebsd
+@dirrm lib/rpm/platform/armv4b-freebsd
+@dirrm lib/rpm/platform/armv4l-freebsd
+@dirrm lib/rpm/platform/armv5tel-freebsd
+@dirrm lib/rpm/platform/armv5tejl-freebsd
+@dirrm lib/rpm/platform/armv6l-freebsd
+@dirrm lib/rpm/platform/armv7l-freebsd
+@dirrm lib/rpm/platform/s390-freebsd
+@dirrm lib/rpm/platform/s390x-freebsd
+@dirrm lib/rpm/platform/ppc64-freebsd
+@dirrm lib/rpm/platform/ppc64pseries-freebsd
+@dirrm lib/rpm/platform/ppc64iseries-freebsd
+@dirrm lib/rpm/platform/ppc64p7-freebsd
+@dirrm lib/rpm/platform/sh-freebsd
+@dirrm lib/rpm/platform/sh3-freebsd
+@dirrm lib/rpm/platform/sh4-freebsd
+@dirrm lib/rpm/platform/sh4a-freebsd
+@dirrm lib/rpm/platform
+@dirrm lib/rpm
 @dirrm include/rpm
 @dirrmtry src/portbld/SRPMS
 @dirrmtry src/portbld/SPECS
@@ -183,4 +288,10 @@ libdata/pkgconfig/rpm.pc
 @dirrmtry src
 %%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sr@latin
+%%NLS%%@dirrmtry share/locale/bn_IN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/bn_IN
+%%NLS%%@dirrmtry share/locale/cs_CZ/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cs_CZ
+%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/te
 %%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/rpm
