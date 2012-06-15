@@ -47,6 +47,11 @@ you update your ports collection, before attempting any port upgrades.
   # pkg_delete djvulibre-\?.\*
   # portmaster -o graphics/djvulibre djvulibre-nox11
 
+  You should then update any installed ports that link to the djvulibre shared
+  library: converters/pdf2djvu, graphics/djview4, graphics/okular, and --
+  if optional djvulibre support was enabled -- graphics/ImageMagick,
+  graphics/apvlv, and graphics/evince.
+
 20120612:
   AFFECTS: users of databases/postgresql-libpqxx
   AUTHOR: avilla@FreeBSD.org
