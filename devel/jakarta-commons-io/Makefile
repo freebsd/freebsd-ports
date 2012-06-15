@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	commons-io
-PORTVERSION=	2.1
+PORTVERSION=	2.3
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_SOURCE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S,commons-,,}
@@ -16,37 +16,37 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of I/O utilities for Java
 
-BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
-
 LICENSE=	AL2
 
-USE_JAVA=	yes
-JAVA_VERSION=	1.5+
-USE_ANT=	yes
+BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
 
-MAKE_ARGS=	-cp ${JAVALIBDIR}/junit.jar
+OPTIONS_DEFINE=	DOCS
+
 ALL_TARGET=	dist
-PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
+JAVA_VERSION=	1.6+
+MAKE_ARGS=	-cp ${JAVALIBDIR}/junit.jar
+USE_ANT=	yes
+USE_JAVA=	yes
 
-.if !defined(NOPORTDOCS)
+PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 PORTDOCS=	LICENSE.txt NOTICE.txt RELEASE-NOTES.txt apidocs
+
+JAR_VERSION=	${PORTNAME}-2.2-SNAPSHOT
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 ALL_TARGET+=	javadoc
 .endif
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
-	@${INSTALL_DATA} ${WRKSRC}/target/${PORTNAME}-${PORTVERSION}.jar \
-		${JAVAJARDIR}/${PORTNAME}.jar
-
+	${INSTALL_DATA} ${WRKSRC}/target/${JAR_VERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
 	@${ECHO_MSG} " [DONE]"
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -n ">> Installing documentation..."
-	@cd ${WRKSRC}/target/ \
-	  && ${FIND} apidocs -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
-	  && ${FIND} apidocs -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
-	@${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/NOTICE.txt ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/RELEASE-NOTES.txt ${DOCSDIR}/
+	cd ${WRKSRC}/target/ && ${COPYTREE_SHARE} apidocs ${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} LICENSE.txt NOTICE.txt RELEASE-NOTES.txt ${DOCSDIR}/
 	@${ECHO_MSG} " [DONE]"
 .endif
 
