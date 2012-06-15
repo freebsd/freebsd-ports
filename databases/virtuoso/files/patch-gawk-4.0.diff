@@ -1,0 +1,37 @@
+Index: binsrc/cached_resources/res_to_c.awk
+diff -u binsrc/cached_resources/res_to_c.awk:1.2.4.1 binsrc/cached_resources/res_to_c.awk:1.2.4.2
+--- binsrc/cached_resources/res_to_c.awk:1.2.4.1	Thu Sep  8 16:13:20 2011
++++ binsrc/cached_resources/res_to_c.awk	Thu Mar  8 15:09:50 2012
+@@ -30,13 +30,7 @@
+ 	}
+ 	{
+ 	  fun = $0
+-	  # was: gsub ( /\\/, "\\\\", fun)
+-	  q = "\\\\"
+-	  if (PROCINFO["version"] ~ /^4/)
+-	    gsub ( q, q q, fun)
+-	  else
+-	    gsub ( q, q, fun)
+-
++          gsub ( "\\\\", "&&", fun)
+ 	  gsub ( /"/, "\\\"", fun)
+ 	  gsub ( /\$/, "\\044", fun)
+ 	  gsub ( /.*/, "\"&\\n\",", fun)
+Index: libsrc/Wi/sql_to_c.awk
+diff -u libsrc/Wi/sql_to_c.awk:1.51.2.9 libsrc/Wi/sql_to_c.awk:1.51.2.10
+--- libsrc/Wi/sql_to_c.awk:1.51.2.9	Mon Sep 12 16:29:43 2011
++++ libsrc/Wi/sql_to_c.awk	Thu Mar  8 15:09:50 2012
+es escape the symbols
+                fun = $0
+-               q = "\\\\"
+-               if (PROCINFO["version"] ~ /^4/)
+-                   gsub ( q, q q, fun)
+-               else
+-                   gsub ( q, q, fun)
+-
+-               #WAS: gsub ( /\\/, "\\\\", fun)
++               gsub ("\\\\", '&&', fun)
+
+                # remove whitespace except when there is just a semicolon
+                if ((in_xsl_mode == 0) && (in_xsd_mode == 0))
+
