@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sage
-PORTVERSION=	5.0
-PORTREVISION=	1
+PORTVERSION=	5.0.1
 CATEGORIES=	math
 MASTER_SITES=	http://boxen.math.washington.edu/home/sagemath/sage-mirror/src/ \
 		http://mirrors.xmission.com/sage/src/ \
@@ -60,7 +59,8 @@ MAKE_ENV+=	SAGE_PORT=yes \
 		SAGE_FORTRAN=${LOCALBASE}/bin/${FC} \
 		SAGE_FORTRAN_LIB=${LOCALBASE}/lib/gcc${GCC_DEFAULT_V}/libgfortran.so \
 		SAGE_ATLAS_LIB=${LOCALBASE}/lib \
-		DOT_SAGE=${WRKSRC}/tmp/.sage
+		DOT_SAGE=${WRKSRC}/tmp/.sage \
+		SAGE_FAT_BINARY=yes
 
 LATEST_LINK=	sage-math	# Conflicts with graphics/sage.
 
@@ -89,40 +89,44 @@ post-patch:
 
 # Apply the patches to the appropriate xz'ed tarballs contained in
 # ${WRKSRC}/spkg/standard.  The names of the patches are
-# spkg-${NAME_OF_TARBALL}_-_${NAME_OF_PATCH}.
+# spkg-${ORIGINAL_NAME_OF_TARBALL}_-_${NAME_OF_PATCH}.
+# The actual name of the tarball will be deduced from the second line of the
+# patch.
+# ORIGINAL_NAME_OF_TARBALL is there for historical reasons (because renaming
+# the patch will ruin the CVS history).  It might be renamed to
+# GENERIC_NAME_OF_TARBALL when ports moves to SVN.
 
 	@${MKDIR} ${WRKSRC}/tmp
 	@${RM} -rf ${WRKSRC}/tmp/*
 	@for p in ${FILESDIR}/spkg-patch-*; do \
-		q=$${p#*/spkg-patch-}; t=$${q%_-_*}; \
-       		if ! [ -e ${WRKSRC}/spkg/standard/$$t.spkg ]; then \
-			${ECHO_MSG} "$$t not found."; \
+		q=$${p#*/spkg-patch-}; \
+		original_name=$${q%_-_*}; \
+		actual_name=`cat $$p | ${HEAD} -2 | ${TAIL} -1 | ${SED} -e 's/+++ //' -e 's|/.*||'`; \
+       		if ! [ -e ${WRKSRC}/spkg/standard/$$actual_name.spkg ]; then \
+			${ECHO_MSG} "$$actual_name not found."; \
 			exit 1; \
 		fi; \
-		tarballs="$$tarballs $$t"; \
+		tarballs="$$tarballs $$original_name|$$actual_name"; \
 	done ;\
 	tarballs=`${PRINTF} "%s\n" $$tarballs | ${SORT} -u`; \
 	\
 	cd ${WRKSRC}/tmp || exit 1; \
 	for t in $$tarballs; do \
-		f=${WRKSRC}/spkg/standard/$$t.spkg; \
+		original_name=$${t%|*}; actual_name=$${t#*|}; \
+		f=${WRKSRC}/spkg/standard/$$actual_name.spkg; \
 		if [ -e $$f-orig ]; then \
 			${MV} $$f-orig $$f; \
 		fi; \
 		${TAR} -xf $$f; \
-		${ECHO_MSG} "Patching $$t:"; \
-		for p in ${FILESDIR}/spkg-patch-$${t}_-_*; do \
+		${ECHO_MSG} "Patching $$actual_name:"; \
+		for p in ${FILESDIR}/spkg-patch-$${original_name}_-_*; do \
 			${ECHO_MSG} "	applying $${p#*_-_}" ; \
 			${PATCH} < $$p 2>/dev/null || exit 1; \
 		done; \
 		${MV} $$f $$f-orig; \
-		${TAR} -cyf $$f $$t; \
-		${RM} -rf $$t; \
+		${TAR} -cyf $$f $$actual_name; \
+		${RM} -rf $$actual_name; \
 	done
-
-# Here we check dependencies of the optional packages on ports, and on other
-# optional packages.  If you find any dependencies not listed here, please
-# contact the maintainer.
 
 post-build:
 	${RM} -rf ${WRKSRC}/tmp/.sage
