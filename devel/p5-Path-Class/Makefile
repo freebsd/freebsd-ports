@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Path-Class
-PORTVERSION=	0.25
+PORTVERSION=	0.26
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KWILLIAMS
@@ -18,19 +18,22 @@ COMMENT=	Cross-platform path specification manipulation
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+OPTIONS_DEFINE=	DOCS
+
 PERL_MODBUILD=	yes
 
 MAN3=		Path::Class.3 \
-		Path::Class::File.3 \
+		Path::Class::Dir.3 \
 		Path::Class::Entity.3 \
-		Path::Class::Dir.3
-
-.if !defined(NOPORTDOCS)
+		Path::Class::File.3
 PORTDOCS=	Changes README
 
+.include <bsd.port.options.mk>
+
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
