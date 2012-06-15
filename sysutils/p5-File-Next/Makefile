@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File-Next
-PORTVERSION=	1.08
+PORTVERSION=	1.10
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,6 +19,6 @@ LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
 
-MAN3=	File::Next.3
+MAN3=		File::Next.3
 
 .include <bsd.port.mk>
