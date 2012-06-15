@@ -1,18 +1,5 @@
 --- configure.orig	2011-03-18 09:50:30.000000000 -0400
 +++ configure	2011-07-23 14:50:23.436294372 -0400
-@@ -9373,9 +9373,9 @@
-     { $as_echo "$as_me:${as_lineno-$LINENO}: checking ffmpeg version" >&5
- $as_echo_n "checking ffmpeg version... " >&6; }
- 
--    ffmpeg_major_version=`$EGREP "define LIBAVCODEC_VERSION_MAJOR " ${avcodec_h} | sed -e "s%[^0-9]%%g"`
--    ffmpeg_minor_version=`$EGREP "define LIBAVCODEC_VERSION_MINOR " ${avcodec_h} | sed -e "s%[^0-9]%%g"`
--    ffmpeg_micro_version=`$EGREP "define LIBAVCODEC_VERSION_MICRO " ${avcodec_h} | sed -e "s%[^0-9]%%g"`
-+    ffmpeg_major_version=`$EGREP "define LIBAVCODEC_VERSION_MAJOR " ${ffmpeg_top_incl}/libavcodec/version.h | sed -e "s%[^0-9]%%g"`
-+    ffmpeg_minor_version=`$EGREP "define LIBAVCODEC_VERSION_MINOR " ${ffmpeg_top_incl}/libavcodec/version.h | sed -e "s%[^0-9]%%g"`
-+    ffmpeg_micro_version=`$EGREP "define LIBAVCODEC_VERSION_MICRO " ${ffmpeg_top_incl}/libavcodec/version.h | sed -e "s%[^0-9]%%g"`
- 
-     if test x"${ffmpeg_major_version}" != x ; then
- 
 @@ -27778,6 +27778,11 @@
        esac
      fi

@@ -61,7 +61,6 @@ include/gnash/Point_as.h
 include/gnash/RTMP.h
 include/gnash/Range2d.h
 include/gnash/Rectangle_as.h
-include/gnash/Renderer.h
 include/gnash/SWFCtype.h
 include/gnash/SharedMem.h
 include/gnash/SimpleBuffer.h
@@ -145,6 +144,7 @@ include/gnash/asobj/TextFormat_as.h
 include/gnash/asobj/TextSnapshot_as.h
 include/gnash/asobj/UserFunction.h
 include/gnash/asobj/Video.h
+include/gnash/asobj/Video_as.h
 include/gnash/asobj/XMLNode_as.h
 include/gnash/asobj/XMLSocket_as.h
 include/gnash/asobj/XML_as.h
@@ -165,7 +165,10 @@ include/gnash/geom_pkg.h
 include/gnash/getclocktime.hpp
 include/gnash/gettext.h
 include/gnash/gmemory.h
-include/gnash/jemtree.h
+include/gnash/jemalloc.h
+include/gnash/jemalloc_gnash.h
+include/gnash/jemalloc_rb.h
+include/gnash/jemalloc_types.h
 include/gnash/log.h
 include/gnash/net_pkg.h
 include/gnash/noseek_fd_adapter.h
@@ -173,7 +176,6 @@ include/gnash/parser/movie_definition.h
 include/gnash/rc.h
 include/gnash/ref_counted.h
 include/gnash/sharedlib.h
-include/gnash/smart_ptr.h
 include/gnash/snappingrange.h
 include/gnash/string_table.h
 include/gnash/text_pkg.h
@@ -189,11 +191,11 @@ include/gnash/vm/SafeStack.h
 include/gnash/vm/VM.h
 include/gnash/vm/fn_call.h
 include/gnash/zlib_adapter.h
-%%KPARTS%%share/apps/klash/pluginsinfo
-%%KPARTS%%share/apps/klash/klashpartui.rc
-%%KPARTS%%share/services/klash_part.desktop
-%%KPARTS%%lib/kde3/libklashpart.la
-%%KPARTS%%lib/kde3/libklashpart.so
+%%KPARTS3%%share/apps/klash/pluginsinfo
+%%KPARTS3%%share/apps/klash/klashpartui.rc
+%%KPARTS3%%share/services/klash_part.desktop
+%%KPARTS3%%lib/kde3/libklashpart.la
+%%KPARTS3%%lib/kde3/libklashpart.so
 %%KPARTS4%%kde4/share/apps/klash/pluginsinfo
 %%KPARTS4%%kde4/share/apps/klash/klashpartui.rc
 %%KPARTS4%%kde4/share/kde4/services/klash_part.desktop
@@ -206,6 +208,9 @@ lib/gnash/libgnashbase-%%GNASHVER%%.so
 lib/gnash/libgnashbase.so
 lib/gnash/libgnashcore-%%GNASHVER%%.so
 lib/gnash/libgnashcore.so
+lib/gnash/libgnashdevice-%%GNASHVER%%.so
+lib/gnash/libgnashdevice.la
+lib/gnash/libgnashdevice.so
 lib/gnash/libgnashmedia-%%GNASHVER%%.so
 lib/gnash/libgnashmedia.so
 %%CYGNAL%%lib/gnash/libgnashnet-%%GNASHVER%%.so
@@ -214,35 +219,37 @@ lib/gnash/libgnashrender-%%GNASHVER%%.so
 lib/gnash/libgnashrender.so
 lib/gnash/libgnashsound-%%GNASHVER%%.so
 lib/gnash/libgnashsound.so
-%%VAAPI%%lib/gnash/libgnashvaapi-%%GNASHVER%%.so
-%%VAAPI%%lib/gnash/libgnashvaapi.la
-%%VAAPI%%lib/gnash/libgnashvaapi.so
 libdata/pkgconfig/gnash.pc
 %%GTK%%share/applications/gnash.desktop
 %%KDE4%%share/applications/klash.desktop
-%%DATADIR%%/doc/gnash/C/gnashref.html
-%%DATADIR%%/doc/gnash/C/gnashuser.html
-%%DATADIR%%/doc/gnash/C/images/rtmp.png
 %%DATADIR%%/GnashG.png
 %%DATADIR%%/gnash-splash.swf
 %%DATADIR%%/gnash_128_96.ico
+%%DOCSDIR%%/gnashref.html
+%%DOCSDIR%%/gnashuser.html
+%%DOCSDIR%%/images/rtmp.png
 %%GTK%%share/icons/hicolor/32x32/apps/gnash.xpm
 %%KDE4%%share/icons/hicolor/32x32/apps/klash.xpm
 share/locale/cs/LC_MESSAGES/gnash.mo
+share/locale/da/LC_MESSAGES/gnash.mo
 share/locale/de/LC_MESSAGES/gnash.mo
+share/locale/en_GB/LC_MESSAGES/gnash.mo
+share/locale/el/LC_MESSAGES/gnash.mo
 share/locale/es/LC_MESSAGES/gnash.mo
 share/locale/fi/LC_MESSAGES/gnash.mo
 share/locale/fr/LC_MESSAGES/gnash.mo
 share/locale/it/LC_MESSAGES/gnash.mo
 share/locale/ja/LC_MESSAGES/gnash.mo
+share/locale/km/LC_MESSAGES/gnash.mo
+share/locale/ne/LC_MESSAGES/gnash.mo
+share/locale/ru/LC_MESSAGES/gnash.mo
+share/locale/zh_TW/LC_MESSAGES/gnash.mo
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
 @dirrmtry share/icons/hicolor/32x32/apps
 @dirrmtry share/icons/hicolor/32x32
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrm %%DATADIR%%/doc/gnash/C/images
-@dirrm %%DATADIR%%/doc/gnash/C
-@dirrm %%DATADIR%%/doc/gnash
-@dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrm lib/gnash
@@ -252,6 +259,6 @@ share/locale/ja/LC_MESSAGES/gnash.mo
 @dirrm include/gnash/parser
 @dirrm include/gnash/asobj
 @dirrm include/gnash
-%%KPARTS%%@dirrm share/apps/klash
+%%KPARTS3%%@dirrm share/apps/klash
 %%KPARTS4%%@dirrm kde4/share/apps/klash
 %%NPAPI%%@dirrmtry %%WEBPLUGINS_DIR%%
