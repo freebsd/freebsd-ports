@@ -7,16 +7,15 @@
 
 PORTNAME=	cacti
 PORTVERSION=	0.8.8a${PATCHLEVEL}
-PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://www.cacti.net/downloads/
 DISTFILES=	${PORTNAME}-${SITEDISTVERSION}${EXTRACT_SUFX}
 
 # Vendor's patches
 PATCH_SITES=	http://www.cacti.net/downloads/patches/${SITEDISTVERSION}/
-#PATCHFILES=
+PATCHFILES=	snmpv3_priv_proto_none.patch
 PATCH_DIST_STRIP=	-p1
-#PATCHLEVEL=
+PATCHLEVEL=	1
 
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Web-driven graphing interface for RRDTool
