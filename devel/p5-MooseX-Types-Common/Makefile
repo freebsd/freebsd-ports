@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	MooseX-Types-Common
-PORTVERSION=	0.001007
+PORTVERSION=	0.001008
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:ARCANEZ
+MASTER_SITE_SUBDIR=	CPAN:ETHER
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -21,7 +21,6 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Moose>=0.39:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Types>=0.04:${PORTSDIR}/devel/p5-MooseX-Types
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 TEST_DEPENDS=	p5-Capture-Tiny>=0:${PORTSDIR}/devel/p5-Capture-Tiny \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
