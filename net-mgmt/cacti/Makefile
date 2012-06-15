@@ -45,15 +45,6 @@ PLIST_SUB+=	CACTIDIR=${CACTIDIR}
 SUB_LIST+=	CACTIDIR=${CACTIDIR} CACTIUSER=${CACTIUSER} \
 		CACTIGROUP=${CACTIGROUP}
 
-.if defined(WITH_PLUGIN_ARCH)
-post-extract:
-	@${ECHO_CMD} "*************************************************************"
-	@${ECHO_CMD} "WARNING! Plugin support is dropped!"
-	@${ECHO_CMD} "Remove ${PORT_DBDIR}/${PORTNAME}/options file and try again"
-	@${ECHO_CMD} "*************************************************************"
-	@exit 1
-.endif
-
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -delete; \
 	${MV} ${WRKSRC}/include/config.php ${WRKSRC}/include/config.php.orig
