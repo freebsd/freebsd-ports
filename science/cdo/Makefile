@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	cdo
-PORTVERSION=	1.5.4
+PORTVERSION=	1.5.5
 CATEGORIES=	science
-MASTER_SITES=	https://code.zmaw.de/attachments/download/2372/ \
+MASTER_SITES=	https://code.zmaw.de/attachments/download/2879/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -71,12 +71,12 @@ PLIST_SUB=	NETCDF="@comment "
 
 .if !defined(WITHOUT_PROJ)
 CONFIGURE_ARGS+=--with-proj=${LOCALBASE}
-LIB_DEPENDS+=	proj.7:${PORTSDIR}/graphics/proj
+LIB_DEPENDS+=	proj:${PORTSDIR}/graphics/proj
 .endif
 
 .if !defined(WITHOUT_SZIP)
 CONFIGURE_ARGS+=--with-szlib=${LOCALBASE}
-LIB_DEPENDS+=	sz.2:${PORTSDIR}/science/szip
+LIB_DEPENDS+=	sz:${PORTSDIR}/science/szip
 .endif
 
 .include <bsd.port.pre.mk>
