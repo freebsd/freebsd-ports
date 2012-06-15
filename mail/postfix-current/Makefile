@@ -22,7 +22,7 @@ MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.* postfix-base-2.* \
-		sendmail-8.* sendmail+*-8.* smail-3.* zmailer-2.*
+		sendmail-8.* sendmail+*-8.* smail-3.* zmailer-2.* opensmtpd-[0-9]*
 
 USERS=		postfix
 GROUPS=		mail maildrop postfix

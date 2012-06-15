@@ -23,7 +23,7 @@ MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-46-9].* postfix-current-2.* \
-		sendmail-8.* sendmail+*-8.* smail-3.* zmailer-2.*
+		sendmail-8.* sendmail+*-8.* smail-3.* zmailer-2.* opensmtpd-[0-9]*
 
 DEPRECATED=	no longer supported upstream; please consider upgrading
 EXPIRATION_DATE=2012-06-22

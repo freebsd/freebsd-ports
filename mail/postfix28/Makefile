@@ -23,7 +23,7 @@ COMMENT=	A secure alternative to widely-used Sendmail
 VDAVERSION=	2.8.9
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-79].* postfix-base-2.[0-79].* \
 		postfix-current-2.* postfix-current-base-2.* sendmail-8.* \
-		sendmail+*-8.* smail-3.* zmailer-2.*
+		sendmail+*-8.* smail-3.* zmailer-2.* opensmtpd-[0-9]*
 
 NO_LATEST_LINK=	yes
 
