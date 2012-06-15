@@ -7,7 +7,7 @@
 
 PORTNAME=	pcsxr
 PORTVERSION=	1.9.92.r76026
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
@@ -19,8 +19,8 @@ COMMENT=	Playstation (PSX) emulator
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
-LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
-		cdio.13:${PORTSDIR}/sysutils/libcdio
+LIB_DEPENDS=	vorbis:${PORTSDIR}/audio/libvorbis \
+		cdio:${PORTSDIR}/sysutils/libcdio
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -56,7 +56,7 @@ DEFAULT_DVD_DEVICE?=	/dev/cd0
 CONFIGURE_ARGS+=	--enable-dynarec=x86_64
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB+=	NLS=""
@@ -76,7 +76,7 @@ pre-configure:
 	@(cd ${WRKSRC} && ${AUTORECONF} -fi)
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
