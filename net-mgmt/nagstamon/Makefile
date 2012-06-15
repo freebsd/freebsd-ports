@@ -7,7 +7,7 @@
 
 PORTNAME=	nagstamon
 PORTVERSION=	0.9.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION} \
 		CRITICAL/.
@@ -18,11 +18,9 @@ COMMENT=	Nagios status monitor for your desktop
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	py*-setuptools>=0:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
-		py*-setuptools>=0:${PORTSDIR}/devel/py-setuptools
+RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
 USE_GNOME=	pygtk2 librsvg2
 
