@@ -2950,6 +2950,7 @@ eclipse-vep                     ports/java/eclipse-vep
 eclipse-vep-examples            ports/java/eclipse-vep-examples
 eclipse-viplugin                ports/java/eclipse-viplugin
 eclipse-webtools                ports/java/eclipse-webtools
+eclipse-windowbuilder           ports/java/eclipse-windowbuilder
 ecm                             ports/archivers/ecm
 ecofont                         ports/x11-fonts/ecofont
 ecore                           ports/devel/ecore
@@ -11922,6 +11923,7 @@ p5-DBIx-AnyDBD                  ports/databases/p5-DBIx-AnyDBD
 p5-DBIx-Browse                  ports/databases/p5-DBIx-Browse
 p5-DBIx-Class                   ports/databases/p5-DBIx-Class
 p5-DBIx-Class-AsFdat            ports/databases/p5-DBIx-Class-AsFdat
+p5-DBIx-Class-Candy             ports/databases/p5-DBIx-Class-Candy
 p5-DBIx-Class-Cursor-Cached     ports/databases/p5-DBIx-Class-Cursor-Cached
 p5-DBIx-Class-DateTime-Epoch    ports/databases/p5-DBIx-Class-DateTime-Epoch
 p5-DBIx-Class-DeploymentHandler  ports/databases/p5-DBIx-Class-DeploymentHandler
@@ -12938,6 +12940,7 @@ p5-IO-Compress-Lzf              ports/archivers/p5-IO-Compress-Lzf
 p5-IO-Compress-Lzma             ports/archivers/p5-IO-Compress-Lzma
 p5-IO-Compress-Lzop             ports/archivers/p5-IO-Compress-Lzop
 p5-IO-Digest                    ports/devel/p5-IO-Digest
+p5-IO-HTML                      ports/devel/p5-IO-HTML
 p5-IO-Handle-Util               ports/devel/p5-IO-Handle-Util
 p5-IO-Interactive               ports/devel/p5-IO-Interactive
 p5-IO-Interface                 ports/net/p5-IO-Interface
@@ -16629,6 +16632,7 @@ p5-dbix-anydbd                  ports/databases/p5-DBIx-AnyDBD
 p5-dbix-browse                  ports/databases/p5-DBIx-Browse
 p5-dbix-class                   ports/databases/p5-DBIx-Class
 p5-dbix-class-asfdat            ports/databases/p5-DBIx-Class-AsFdat
+p5-dbix-class-candy             ports/databases/p5-DBIx-Class-Candy
 p5-dbix-class-cursor-cached     ports/databases/p5-DBIx-Class-Cursor-Cached
 p5-dbix-class-datetime-epoch    ports/databases/p5-DBIx-Class-DateTime-Epoch
 p5-dbix-class-deploymenthandler  ports/databases/p5-DBIx-Class-DeploymentHandler
@@ -17510,6 +17514,7 @@ p5-io-compress-lzop             ports/archivers/p5-IO-Compress-Lzop
 p5-io-csvheaderfile             ports/textproc/p5-IO-CSVHeaderFile
 p5-io-digest                    ports/devel/p5-IO-Digest
 p5-io-handle-util               ports/devel/p5-IO-Handle-Util
+p5-io-html                      ports/devel/p5-IO-HTML
 p5-io-interactive               ports/devel/p5-IO-Interactive
 p5-io-interface                 ports/net/p5-IO-Interface
 p5-io-kqueue                    ports/devel/p5-IO-KQueue
@@ -22806,6 +22811,7 @@ py-nwdiag                       ports/graphics/py-nwdiag
 py-nzmath                       ports/math/py-nzmath
 py-oauth                        ports/net/py-oauth
 py-oauth2                       ports/net/py-oauth2
+py-oauthlib                     ports/security/py-oauthlib
 py-obspy-core                   ports/science/py-obspy-core
 py-obspy.db                     ports/science/py-obspy.db
 py-obspy.gse2                   ports/science/py-obspy.gse2
@@ -23146,6 +23152,7 @@ py-routes                       ports/www/py-routes
 py-roxlib                       ports/devel/py-roxlib
 py-rpyc                         ports/devel/py-RPyC
 py-rrdtool_lgpl                 ports/databases/py-rrdtool_lgpl
+py-rsa                          ports/security/py-rsa
 py-rss2gen                      ports/textproc/py-rss2gen
 py-rstyoutube                   ports/textproc/py-rstyoutube
 py-rtf                          ports/print/py-rtf
@@ -23778,6 +23785,7 @@ qt4-pixeltool                   ports/graphics/qt4-pixeltool
 qt4-porting                     ports/devel/qt4-porting
 qt4-qdbusviewer                 ports/devel/qt4-qdbusviewer
 qt4-qdoc3                       ports/devel/qt4-qdoc3
+qt4-qmlviewer                   ports/devel/qt4-qmlviewer
 qt4-qt3support                  ports/devel/qt4-qt3support
 qt4-qtconfig                    ports/misc/qt4-qtconfig
 qt4-qtdemo                      ports/misc/qt4-qtdemo
@@ -26870,7 +26878,6 @@ trac-simpleticket               ports/www/trac-simpleticket
 trac-spam-filter                ports/www/trac-spam-filter
 trac-tags                       ports/www/trac-tags
 trac-themeengine                ports/www/trac-themeengine
-trac-ticketdelete               ports/www/trac-ticketdelete
 trac-ticketimport               ports/www/trac-ticketimport
 trac-tickettemplate             ports/www/trac-tickettemplate
 trac-timingandestimation        ports/www/trac-timingandestimation
