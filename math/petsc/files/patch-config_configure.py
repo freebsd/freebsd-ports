@@ -5,7 +5,7 @@
      print '             ***** That should be reserved for installation *****'
      print '================================================================================='
 -    sys.exit(3)
-+    %%PACKAGE%%sys.exit(3)
++    #sys.exit(3)
  
    # Check for broken cygwin
    if chkcygwin():

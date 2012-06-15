@@ -18,11 +18,6 @@ COMMENT=	Portable, Extensible Toolkit for Scientific computation
 RUN_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh	\
 		qsub:${PORTSDIR}/sysutils/torque
 
-DEPRECATED=	BROKEN for more than 6 month
-EXPIRATION_DATE=	2012-06-14
-
-BROKEN=		does not configure
-
 SLAVEDIRS=	math/petsc-mpich
 
 HAS_CONFIGURE=		yes
@@ -56,9 +51,11 @@ TARGET=		${OPSYS:L}
 PLIST_SUB=	PFX=${PFX} TARGET=${TARGET}
 
 .if !defined(WITHOUT_UMFPACK)
+UMFPACK_LIBS=	umfpack.so,cholmod.so,colamd.so,amd.so
+L=${LOCALBASE}/lib/lib
 LIB_DEPENDS+=		umfpack.1:${PORTSDIR}/math/suitesparse
 CONFIGURE_ARGS+=	--with-umfpack-include="${LOCALBASE}/include/suitesparse"	\
-			--with-umfpack-lib=[${LOCALBASE}/lib/libumfpack.so,${LOCALBASE}/lib/libamd.so]
+			--with-umfpack-lib="[${UMFPACK_LIBS:C/^/${L}/:C/,/, ${L}/g}]"
 .endif
 
 .if !defined(NOPORTDOCS)
@@ -270,14 +267,6 @@ pre-configure:
 . endfor
 	${REINPLACE_CMD} -e "s|libpmpich|libmpl|"	\
 		${WRKSRC}/python/BuildSystem/config/packages/MPI.py
-.endif
-.if defined(PACKAGE_BUILDING)
-	${REINPLACE_CMD} -e "s|%%PACKAGE%%exit 1; ||"		\
-		-e "s|%%PACKAGE%%sys.exit(3)||"			\
-		${WRKSRC}/makefile ${WRKSRC}/config/configure.py
-.else
-	${REINPLACE_CMD} -e "s|%%PACKAGE%%||"			\
-		${WRKSRC}/makefile ${WRKSRC}/config/configure.py
 .endif
 
 post-install:
