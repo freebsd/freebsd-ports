@@ -5,14 +5,13 @@ lib/opera/gstreamer/plugins/libgstoperavp8.so
 lib/opera/liboperagtk2.so
 lib/opera/liboperakde4.so
 lib/opera/opera
+lib/opera/plugins/README
 lib/opera/pluginwrapper/operapluginwrapper
 lib/opera/pluginwrapper/operapluginwrapper-native
-lib/opera/plugins/README
+share/applications/opera-browser.desktop
 %%DOCSDIR%%/LGPL-2
 %%DOCSDIR%%/LICENSE
 %%DOCSDIR%%/README.gstreamer
-share/applications/opera-browser.desktop
-share/icons/hicolor/256x256/apps/opera-browser.png
 share/icons/hicolor/128x128/apps/opera-browser.png
 share/icons/hicolor/128x128/mimetypes/opera-extension.png
 share/icons/hicolor/16x16/apps/opera-browser.png
@@ -21,11 +20,14 @@ share/icons/hicolor/22x22/apps/opera-browser.png
 share/icons/hicolor/22x22/mimetypes/opera-extension.png
 share/icons/hicolor/24x24/apps/opera-browser.png
 share/icons/hicolor/24x24/mimetypes/opera-extension.png
+share/icons/hicolor/256x256/apps/opera-browser.png
 share/icons/hicolor/32x32/apps/opera-browser.png
 share/icons/hicolor/32x32/mimetypes/opera-extension.png
 share/icons/hicolor/48x48/apps/opera-browser.png
 share/icons/hicolor/48x48/mimetypes/opera-extension.png
+share/icons/hicolor/icon-theme.cache
 share/icons/hicolor/scalable/mimetypes/opera-extension.svg
+share/mime/application/x-opera-extension.xml
 share/mime/packages/opera-extension.xml
 %%DATADIR%%/defaults/bookmarks.adr
 %%DATADIR%%/defaults/dictionaries.xml
@@ -44,7 +46,6 @@ share/mime/packages/opera-extension.xml
 %%DATADIR%%/defaults/webmailproviders.ini
 %%DATADIR%%/defaults/xmlentities.ini
 %%DATADIR%%/encoding.bin
-%%DATADIR%%/extra/unix-opengl.blocklist.json
 %%DATADIR%%/extra/missingplugin.svg
 %%DATADIR%%/extra/missingpluginhover.svg
 %%DATADIR%%/extra/svg-mo.dat
@@ -53,6 +54,7 @@ share/mime/packages/opera-extension.xml
 %%DATADIR%%/extra/svg-sabd.dat
 %%DATADIR%%/extra/svg-se.dat
 %%DATADIR%%/extra/svg-sebd.dat
+%%DATADIR%%/extra/unix-opengl.blocklist.json
 %%DATADIR%%/files.sig
 %%DATADIR%%/files_old.sig
 %%DATADIR%%/html40_entities.dtd
@@ -210,11 +212,11 @@ share/mime/packages/opera-extension.xml
 %%DATADIR%%/region/middle_east/standard_speeddial.ini
 %%DATADIR%%/region/ng/bookmarks.adr
 %%DATADIR%%/region/ng/standard_speeddial.ini
-%%DATADIR%%/region/region.ini
 %%DATADIR%%/region/ph/bookmarks.adr
 %%DATADIR%%/region/ph/standard_speeddial.ini
 %%DATADIR%%/region/pk/bookmarks.adr
 %%DATADIR%%/region/pk/standard_speeddial.ini
+%%DATADIR%%/region/region.ini
 %%DATADIR%%/region/tw/browser.js
 %%DATADIR%%/region/tw/turbosettings.xml
 %%DATADIR%%/region/ua/ru/bookmarks.adr
@@ -305,7 +307,6 @@ share/mime/packages/opera-extension.xml
 %%DATADIR%%/styles/wml.css
 %%DATADIR%%/ui/dialog.ini
 %%DATADIR%%/ui/dialogs.yml
-%%DATADIR%%/ui/widgets.yml
 %%DATADIR%%/ui/fastforward.ini
 %%DATADIR%%/ui/standard_keyboard.ini
 %%DATADIR%%/ui/standard_keyboard_compat.ini
@@ -313,6 +314,7 @@ share/mime/packages/opera-extension.xml
 %%DATADIR%%/ui/standard_mouse.ini
 %%DATADIR%%/ui/standard_toolbar.ini
 %%DATADIR%%/ui/unix_keyboard.ini
+%%DATADIR%%/ui/widgets.yml
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/styles/user
 @dirrm %%DATADIR%%/styles/images
@@ -403,9 +405,9 @@ share/mime/packages/opera-extension.xml
 @dirrm %%DATADIR%%/defaults
 @dirrm %%DATADIR%%
 @dirrmtry share/mime/packages
+@dirrmtry share/mime/application
 @dirrmtry share/mime
 @dirrmtry share/icons/hicolor/scalable/mimetypes
-@dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor/48x48/mimetypes
 @dirrmtry share/icons/hicolor/48x48/apps
@@ -413,6 +415,8 @@ share/mime/packages/opera-extension.xml
 @dirrmtry share/icons/hicolor/32x32/mimetypes
 @dirrmtry share/icons/hicolor/32x32/apps
 @dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/256x256/apps
+@dirrmtry share/icons/hicolor/256x256
 @dirrmtry share/icons/hicolor/24x24/mimetypes
 @dirrmtry share/icons/hicolor/24x24/apps
 @dirrmtry share/icons/hicolor/24x24
@@ -429,8 +433,8 @@ share/mime/packages/opera-extension.xml
 @dirrmtry share/icons
 @dirrm %%DOCSDIR%%
 @dirrmtry share/applications
-@dirrm lib/opera/plugins
 @dirrm lib/opera/pluginwrapper
+@dirrm lib/opera/plugins
 @dirrm lib/opera/gstreamer/plugins
 @dirrm lib/opera/gstreamer
 @dirrm lib/opera
