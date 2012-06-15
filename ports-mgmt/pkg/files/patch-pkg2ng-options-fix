@@ -1,0 +1,43 @@
+--- ports/pkg2ng.orig	2012-06-03 16:28:53.000000000 +0200
++++ ports/pkg2ng	2012-06-15 12:45:08.133722432 +0200
+@@ -9,6 +9,7 @@
+ fi
+ 
+ ARCH=$( uname -m )
++failed_pkgs=""
+ 
+ for PKG in $( pkg_info -Ea )
+ do
+@@ -27,7 +28,7 @@
+ 		CATEGORIES=$( make -C ${PORTSDIR}/${ORIGIN} -V CATEGORIES | sed -e "s/ /,/g")
+ 		LICENSES=$( make -C ${PORTSDIR}/${ORIGIN} -V LICENSE | sed -e "s/ /,/g")
+ 		LICLOGIC=$(make -C ${PORTSDIR}/${ORIGIN} -V LICENSE_COMB )
+-		OPTIONS=$(make -C ${PORTSDIR}/${ORIGIN} showconfig | awk 'BEGIN{ line=""; }!/^=/ { gsub(/=/,": ",$1); line=line" "$1","; } END{print line}')
++		OPTIONS=$(make -C ${PORTSDIR}/${ORIGIN} showconfig | awk 'BEGIN{ line=""; }!/^=/ { gsub(/=/,": ",$1); gsub(/:$/,"",$1); line=line" "$1","; } END{print line}')
+ 		USERS=$(make -C ${PORTSDIR}/${ORIGIN} -V USERS | sed -e "s/ /,/g")
+ 		GROUPS=$(make -C ${PORTSDIR}/${ORIGIN} -V GROUPS | sed -e "s/ /,/g")
+ 	else
+@@ -66,8 +67,9 @@
+ 
+ 	pkg register -l -m ${MDIR} -f ${PLIST} ${CMD_ARGS}
+ 	if [ $? -ne 0 ]; then
+-		echo "Registration of ${PKG} failed."
++		echo "Registration of ${PKG} failed." >&2
+ 		cat ${MANIFEST}
++		failed_pkgs="${failed_pkgs} ${PKG}"
+ 	else
+ 		rm -rf ${MANIFEST}
+ 	fi
+@@ -75,5 +77,12 @@
+ 	rm -rf ${MDIR}
+ done
+ 
++
++if [ -n "${failed_pkgs}" ]; then
++	echo "" >&2
++	echo "!!! Some packages failed to register !!!" >&2
++	echo "Failed packages: ${failed_pkgs}" >&2
++fi
++
+ # Delete the portupgrade pkgdb to avoid discrepencies. It will be auto recreated.
+ rm -f /var/db/pkg/pkgdb.db > /dev/null 2>&1
