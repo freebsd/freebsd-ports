@@ -25,14 +25,20 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 .error You have `USE_OPENSSL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
-OPTIONS=	I386	"Use optimized assembler for 80386" off \
-		SSE2	"Use runtime SSE2 detection" on \
-		ASM	"Build with optimized Assembler" on \
-		ZLIB	"Build with zlib compression" on \
-		SCTP	"include SCTP support" on \
-		MD2	"Build with MD2 hash (obsolete)" on \
-		RC5	"Build with RC5 chipher (patented)" off \
-		RFC3779	"Build with RFC3779 support" off
+OPTIONS_DEFINE=	SHARED THREADS I386 SSE2 ASM PADLOCK ZLIB SCTP MD2 RC5 RFC3779 GMP
+OPTIONS_DEFAULT=SHARED THREADS SSE2 ASM ZLIB SCTP MD2
+NO_OPTIONS_SORT=yes
+I386_DESC?=	Use optimized assembler for x86
+SSE2_DESC?=	Enable runtime SSE2 detection
+ASM_DESC?=	Enable optimized Assembler code
+PADLOCK_DESC?=	Enable VIA Padlock support
+SHARED_DESC?=	Enable build of shared libs
+ZLIB_DESC?=	Enable zlib compression support
+SCTP_DESC?=	Enable SCTP protocol support
+MD2_DESC?=	Enable MD2 hash (obsolete)
+RC5_DESC?=	Enable C5 chipher (patented)
+RFC3779_DESC?=	Enable RFC3779 support
+GMP_DESC?=	Enable gmp support (LGPLv3)
 
 MAKE_JOBS_UNSAFE=	yes
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for fetch
@@ -1043,46 +1049,46 @@ OPENSSL_SHLIBVER_BASE=	${OPENSSL_BASE_SONAME:E}
 OPENSSL_BASE_SOPATH=	${OPENSSL_BASE_SONAME:H}
 OPENSSL_SHLIBVER?=	8
 
-.if defined(WITH_I386)
+.if ${PORT_OPTIONS:MI386}
 .if ${ARCH} == "i386"
 EXTRACONFIGURE+=	386
 .endif
 .endif
 
-.if defined(WITHOUT_SSE2)
+.if empty(PORT_OPTIONS:MSSE2)
 # disable runtime SSE2 detection
 EXTRACONFIGURE+=	no-sse2
 .endif
 
-.if !defined(WITHOUT_ASM)
-EXTRACONFIGURE+=	enable-asm
-.else
+.if ${PORT_OPTIONS:MASM}
 EXTRACONFIGURE+=	no-asm
+.else
+EXTRACONFIGURE+=	enable-asm
 .endif
 
-.if defined(NOSHARED)
-PLIST_SUB+=	SHARED="@comment "
-.else
+.if ${PORT_OPTIONS:MSHARED}
 PLIST_SUB+=	SHARED=""
 EXTRACONFIGURE+=	shared
 MAKE_ENV+=	SHLIBVER=${OPENSSL_SHLIBVER}
 PLIST_SUB+=	SHLIBVER=${OPENSSL_SHLIBVER}
 USE_LDCONFIG=	yes
-.endif
-
-.if !defined(WITHOUT_ZLIB)
-EXTRACONFIGURE+=	zlib zlib-dynamic
 .else
-EXTRACONFIGURE+=	no-zlib no-zlib-dynamic
+PLIST_SUB+=	SHARED="@comment "
 .endif
 
-.if !defined(WITHOUT_SCTP)
+.if ${PORT_OPTIONS:MZLIB}
+EXTRACONFIGURE+=	no-zlib no-zlib-dynamic
+.else
+EXTRACONFIGURE+=	zlib zlib-dynamic
+.endif
+
+.if ${PORT_OPTIONS:MSCTP}
 EXTRACONFIGURE+=	sctp
 .else
 EXTRACONFIGURE+=	no-sctp
 .endif
 
-.if defined(WITH_MD2)
+.if ${PORT_OPTIONS:MMD2}
 EXTRACONFIGURE+=	enable-md2
 PLIST_SUB+=	WITH_MD2=""
 .else
@@ -1090,7 +1096,7 @@ EXTRACONFIGURE+=	no-md2
 PLIST_SUB+=	WITH_MD2="@comment "
 .endif
 
-.if defined(WITH_RC5)
+.if ${PORT_OPTIONS:MRC5}
 EXTRACONFIGURE+=	enable-rc5
 PLIST_SUB+=	WITH_RC5=""
 .else
@@ -1098,14 +1104,23 @@ EXTRACONFIGURE+=	no-rc5
 PLIST_SUB+=	WITH_RC5="@comment "
 .endif
 
-.if defined(WITH_GMP)
+.if ${PORT_OPTIONS:MPADLOCK}
+PATCH_DIST_STRIP= -p1
+PATCH_SITES+= http://git.alpinelinux.org/cgit/aports/plain/main/openssl/:padlock
+PATCHFILES+= 0001-crypto-hmac-support-EVP_MD_CTX_FLAG_ONESHOT-and-set-.patch:padlock \
+0003-engines-e_padlock-backport-cvs-head-changes.patch:padlock \
+0004-engines-e_padlock-implement-sha1-sha224-sha256-accel.patch:padlock \
+0005-crypto-engine-autoload-padlock-dynamic-engine.patch:padlock
+.endif
+
+.if ${PORT_OPTIONS:MGMP}
 EXTRACONFIGURE+=	enable-gmp
 IGNORE=		GMP is LGPLv3 an can not be linked.
 .else
 EXTRACONFIGURE+=	no-gmp
 .endif
 
-.if defined(WITH_RFC3779)
+.if ${PORT_OPTIONS:MRFC3779}
 EXTRACONFIGURE+=	enable-rfc3779
 .else
 EXTRACONFIGURE+=	no-rfc3779
@@ -1131,15 +1146,15 @@ post-patch:
 do-configure:
 	@${REINPLACE_CMD} -e "s|options 386|options|" \
 		${WRKSRC}/config
-.if defined(WITH_OPENSSL_THREADS)
+.if ${PORT_OPTIONS:MTHREADS}
 	cd ${WRKSRC} \
 	&& ${SETENV} CC="${CC}" FREEBSDCC="${CC}" CFLAGS="${CFLAGS}" PERL="${PERL}" \
-		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS} \
 	./config --prefix=${PREFIX} --openssldir=${OPENSSLDIR} \
 		-L${PREFIX}/lib ${EXTRACONFIGURE}
 .else
 	cd ${WRKSRC} \
 	&& ${SETENV} CC="${CC}" FREEBSDCC="${CC}" CFLAGS="${CFLAGS}" PERL="${PERL}" \
+		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS} \
 	./config --prefix=${PREFIX} --openssldir=${OPENSSLDIR} \
 		-L${PREFIX}/lib ${EXTRACONFIGURE}
 .endif
@@ -1150,7 +1165,7 @@ do-configure:
 		${WRKSRC}/Makefile
 
 post-install:
-.if !defined(NOSHARED)
+.if ${PORT_OPTIONS:MSHARED}
 .for i in libcrypto libssl
 	@${INSTALL_DATA} ${WRKSRC}/$i.so.${OPENSSL_SHLIBVER} ${PREFIX}/lib
 	@${LN} -sf $i.so.${OPENSSL_SHLIBVER} ${PREFIX}/lib/$i.so
