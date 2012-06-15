@@ -7,7 +7,7 @@
 
 PORTNAME=	signing-party
 PORTVERSION=	1.1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/signing-party/ \
 		${MASTER_SITE_DEBIAN}
@@ -28,6 +28,8 @@ RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/:S/.orig//}
 
+CONFLICTS_INSTALL=sig2dot-[0-9]* springgraph-[0-9]*
+
 REINPLACE_ARGS=	-i ''
 USE_GMAKE=	yes
 USE_PERL5=	yes
@@ -38,7 +40,7 @@ SCRIPTS=	caff/caff caff/pgp-clean caff/pgp-fixkey gpglist/gpglist \
 		sig2dot/sig2dot springgraph/springgraph \
 		gpgparticipants/gpgparticipants \
 		keyanalyze/keyanalyze keyanalyze/process_keys \
-		keyanalyze/pgpring/pgpring
+		keyanalyze/pgpring/pgppubring
 MANUALS1=	${SCRIPTS:S/$/.1/}
 EXAMPLES=	caff/caffrc.sample gpg-mailkeys/example.gpg-mailkeysrc
 
@@ -53,8 +55,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/pinentry-gtk-2|${LOCALBASE}/bin/pinentry-gtk-2|' \
 		${WRKSRC}/caff/README.gpg-agent
 	@${REINPLACE_CMD} -e 's|make|${GMAKE}|' \
+			-e 's|make pgpring|make|' \
 		${WRKSRC}/gpgwrap/Makefile \
 		${WRKSRC}/keyanalyze/Makefile
+	# Rename pgpring to pgppubring to avoid conflict with mail/mutt
+	@${REINPLACE_CMD} -e 's|pgpring|pgppubring|g' \
+		${WRKSRC}/keyanalyze/pgpring/Makefile.in
+	@cd ${WRKSRC}/keyanalyze/pgpring && ${MV} pgpring.1 pgppubring.1
 
 do-install:
 	${INSTALL_SCRIPT} ${SCRIPTS:S|^|${WRKSRC}/|} ${PREFIX}/bin
