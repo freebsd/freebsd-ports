@@ -19,6 +19,8 @@ COMMENT=	Render graph described in a .dot file
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
 
+CONFLICTS_INSTALL=signing-party-[0-9]*
+
 PLIST_FILES=	bin/springgraph
 USE_PERL5=	yes
 EXTRACT_CMD=	${CP}

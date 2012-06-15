@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.pl
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GPG/PGP Keyring Graph Generator
 
+CONFLICTS_INSTALL=signing-party-[0-9]*
+
 PLIST_FILES=	bin/sig2dot
 USE_PERL5=	yes
 EXTRACT_CMD=	${CP}
