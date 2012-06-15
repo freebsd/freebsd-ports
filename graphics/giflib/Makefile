@@ -25,7 +25,8 @@ USE_LDCONFIG=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	xmlto:${PORTSDIR}/textproc/xmlto
+BUILD_DEPENDS+=	xmlto:${PORTSDIR}/textproc/xmlto \
+		${LOCALBASE}/share/xml/docbook/4.1.2:${PORTSDIR}/textproc/docbook-sk
 .endif
 
 .if defined(WITHOUT_X11)
@@ -40,8 +41,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 post-patch:
 	${CP} ${FILESDIR}/quantize.c ${WRKSRC}/lib/
-	${REINPLACE_CMD} -e 's|xmlto |xmlto --skip-validation |' \
-		${WRKSRC}/doc/Makefile.in
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e 's|SUBDIRS = lib util doc pic|SUBDIRS = lib util pic|' \
 		${WRKSRC}/Makefile.in
