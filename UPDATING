@@ -5,6 +5,35 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120615:
+  AFFECTS: users of databases/akonadi
+  AUTHOR: kde@FreeBSD.org
+
+  The latest Akonadi update includes critical bug fixes. Manual
+  intervention is required for people using local MySQL database (the
+  default configuration) as backend:
+
+  $ akonadictl stop
+
+  Wait a bit, and make sure that akonadiserver and akonadi_control are
+  not running. Kill them if needed. Then, you have two alternatives:
+
+  $ mysql_install_db --force \
+    --defaults-file=~/.local/share/akonadi/mysql.conf \
+    --datadir=~/.local/share/akonadi/db_data \
+    --basedir=$(dirname `dirname $(which mysql_install_db)`)
+  $ rm ~/.local/share/akonadi/mysql.conf
+
+  ...or...
+
+  $ rm -r ~/.local/share/akonadi
+
+  In the latter case, Akonadi will have to recache your personal data
+  (might take a while). Akonadi is only a cache, no data will be lost.
+  Then:
+
+  $ akonadictl start
+
 20120613:
   AFFECTS: users of graphics/djvulibre and graphics/djvulibre-nox11
   AUTHOR: bf@FreeBSD.org
