@@ -805,7 +805,6 @@ GNUstep/System/Tools/say
 GNUstep/System/Tools/set_show_service
 @exec mkdir -p %D/GNUstep/System/Library/Themes
 @dirrm GNUstep/System/Library/Themes
-@dirrm GNUstep/System/Library/Sounds
 @dirrm GNUstep/System/Library/Services/GSspell.service/Resources
 @dirrm GNUstep/System/Library/Services/GSspell.service
 @dirrm GNUstep/System/Library/PostScript/PPD/English.lproj
