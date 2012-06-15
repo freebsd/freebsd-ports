@@ -44,26 +44,24 @@ IROFFER_EXAMPLES= iroffer.cron \
 IROFFER_HTDOCS=	iroffer-state.css robots.txt \
 		info.txt.rb md5.txt.rb sfv.txt.rb
 
-OPTIONS=	CURL	"build ftp/http support"	on \
-		RUBY	"build RUBY script support"	on \
-		UPNP	"build UPNP support"		on \
-		GEOIP	"build GEOIP support"		on \
+OPTIONS_DEFINE=	CURL RUBY UPNP GEOIP
+OPTIONS_DEFAULT=CURL RUBY UPNP GEOIP
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_CURL)
+.if ${PORT_OPTIONS:MCURL}
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	-curl
 .endif
-.if !defined(WITHOUT_GEOIP)
+.if ${PORT_OPTIONS:MGEOIP}
 LIB_DEPENDS+=	GeoIP:${PORTSDIR}/net/GeoIP
 CONFIGURE_ARGS+=	-geoip
 .endif
-.if !defined(WITHOUT_UPNP)
+.if ${PORT_OPTIONS:MUPNP}
 LIB_DEPENDS+=	miniupnpc:${PORTSDIR}/net/miniupnpc
 CONFIGURE_ARGS+=	-upnp
 .endif
-.if !defined(WITHOUT_RUBY)
+.if ${PORT_OPTIONS:MRUBY}
 USE_RUBY=	yes
 CONFIGURE_ARGS+=	-ruby
 .include "${PORTSDIR}/Mk/bsd.ruby.mk"
@@ -92,4 +90,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/iroffer.1 ${PREFIX}/man/man1/
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
