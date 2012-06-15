@@ -15,12 +15,12 @@ MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/ \
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	A clone of the Intellivision(TM) game Astrosmash(TM)
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	flatzebra:${PORTSDIR}/devel/flatzebra \
 		aa:${PORTSDIR}/graphics/aalib \
 		mikmod:${PORTSDIR}/audio/libmikmod \
 		audiofile:${PORTSDIR}/audio/libaudiofile
-
-LICENSE=	GPLv2
 
 USE_SDL=	sdl image mixer
 USE_XORG=	x11 xau xdmcp
@@ -32,12 +32,14 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} `${SDL_CONFIG} --libs`
 
 MAN6=	cosmosmash.6
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} 's|^pkgsounddir = .*|pkgsounddir = ${DATADIR}/sounds|' \
 		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} 's|^docdir = .*|docdir = ${DOCSDIR}|' \
 		${WRKSRC}/Makefile.in
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} 's|^install-data-am: .*|install-data-am: install-man|' \
 		${WRKSRC}/Makefile.in
 .endif

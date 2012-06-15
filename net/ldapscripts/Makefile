@@ -15,14 +15,14 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Scripts to manage posix accounts in an OpenLDAP directory
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	ldapadd:${PORTSDIR}/net/openldap${OPENLDAP_VER}-client \
 		ldapsearch:${PORTSDIR}/net/openldap${OPENLDAP_VER}-client \
 		ldapdelete:${PORTSDIR}/net/openldap${OPENLDAP_VER}-client \
 		ldapmodify:${PORTSDIR}/net/openldap${OPENLDAP_VER}-client \
 		ldapmodrdn:${PORTSDIR}/net/openldap${OPENLDAP_VER}-client \
 		ldappasswd:${PORTSDIR}/net/openldap${OPENLDAP_VER}-client
-
-LICENSE=	GPLv2
 
 USE_OPENLDAP=	yes
 USE_ICONV=	yes
@@ -41,6 +41,8 @@ MAN5=	ldapscripts.5
 
 PORTDOCS=	README CHANGELOG VERSION TODO
 
+.include <bsd.port.options.mk>
+
 # Unset 'all' target set by default to 'help'
 # and set paths to OpenLDAP binaries
 post-patch:
@@ -58,7 +60,7 @@ post-patch:
 
 # Install remaining stuff
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
