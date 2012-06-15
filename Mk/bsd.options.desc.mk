@@ -180,6 +180,7 @@ SSL_DESC?=		Enable SSL support
 STATIC_DESC?=		Build static executable/libraries
 SVG_DESC?=		Enable SVG image support
 SVN_DESC?=		Enable Subversion support
+SZIP_DESC?=		Enable Szip support
 TCL_DESC?=		Enable TCL scripting language support
 THREADS_DESC?=		Enable thread support
 TIDY_DESC?=		Enable tidy html cleaner support
