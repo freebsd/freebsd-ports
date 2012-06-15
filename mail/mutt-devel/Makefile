@@ -407,6 +407,9 @@ CONFIGURE_ARGS+=	--disable-gpgme
 .if exists(${LOCALBASE}/bin/krb5-config)
 LIB_DEPENDS+=		gssapi_krb5:${PORTSDIR}/security/krb5
 CONFIGURE_ARGS+=	--with-gss=${LOCALBASE}
+.elif exists(${KRB5_HOME}/bin/krb5-config)
+LIB_DEPENDS+=		gssapi_krb5:${PORTSDIR}/security/krb5
+CONFIGURE_ARGS+=	--with-gss=${KRB5_HOME}
 .elif (defined(MAKE_KERBEROS5)) || exists(/usr/lib/libkrb5.a)
 CONFIGURE_ARGS+=	--with-gss
 USE_KRB5_SYS=YES
