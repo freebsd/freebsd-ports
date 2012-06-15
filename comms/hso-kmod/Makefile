@@ -7,7 +7,7 @@
 
 PORTNAME=	hso
 PORTVERSION=	20081023
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms kld
 MASTER_SITES=	http://www.shapeshifter.se/pub/hso/
 PKGNAMESUFFIX=	-kmod
@@ -54,7 +54,7 @@ PLIST_SUB+=	PL_DEVD=""
 .else
 PLIST_SUB+=	PL_DEVD="@comment "
 .endif
-.if empty(${PORT_OPTIONS:MDEBUG})
+.if empty(PORT_OPTIONS:MDEBUG)
 EXTRA_PATCHES+=	${PATCHDIR}/HSO-NODEBUG-patch-Makefile
 .endif
 
@@ -65,7 +65,7 @@ IGNORE=	requires FreeBSD 7.0 or superior
 .endif
 
 post-patch:
-.if !empty(${PORT_OPTIONS:MHSOCTL}) && empty(${PORT_OPTIONS:MDEBUG})
+.if !empty(PORT_OPTIONS:MHSOCTL) && empty(PORT_OPTIONS:MDEBUG)
 	@${PATCH} -d ${WRKSRC_HSOCTL} < ${PATCHDIR}/HSOCTL-NODEBUG-patch-Makefile
 .endif
 

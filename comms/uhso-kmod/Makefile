@@ -7,7 +7,7 @@
 
 PORTNAME=	uhso
 PORTVERSION=	20100416
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms kld
 MASTER_SITES=	http://www.shapeshifter.se/pub/hso/
 PKGNAMESUFFIX=	-kmod
@@ -54,12 +54,12 @@ MAN1=	uhsoctl.1
 PLIST_SUB+=	PL_UHSOCTL="@comment "
 .endif
 
-.if empty(${PORT_OPTIONS:MDEBUG})
+.if empty(PORT_OPTIONS:MDEBUG)
 EXTRA_PATCHES+=	${PATCHDIR}/UHSO-NODEBUG-patch-Makefile
 .endif
 
 post-patch:
-.if !empty(${PORT_OPTIONS:MUHSOCTL}) && !empty(${PORT_OPTIONS:MDEBUG})
+.if !empty(PORT_OPTIONS:MUHSOCTL) && !empty(PORT_OPTIONS:MDEBUG)
 	@${PATCH} -d ${WRKSRC_UHSOCTL} < ${PATCHDIR}/UHSOCTL-DEBUG-patch-Makefile
 .endif
 
