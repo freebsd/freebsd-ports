@@ -6,25 +6,25 @@
 #
 
 PORTNAME=	gnash
-PORTVERSION=	0.8.9
-PORTREVISION=	4
+PORTVERSION=	0.8.10
 CATEGORIES=	graphics
-MASTER_SITES=	GNU/${PORTNAME}/${PORTVERSION}/ \
-		http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	GNU/${PORTNAME}/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNU Flash movie player
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		curl.6:${PORTSDIR}/ftp/curl \
 		gif.5:${PORTSDIR}/graphics/giflib \
-		speex.1:${PORTSDIR}/audio/speex
+		speex.1:${PORTSDIR}/audio/speex \
+		nspr4:${PORTSDIR}/devel/nspr
 
 CONFLICTS=	gnash-devel-[0-9]*
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 WANT_SDL=	yes
 WANT_GNOME=	yes
@@ -58,22 +58,27 @@ MAN1=		cygnal.1 findmicrophones.1 findwebcams.1 \
 		flvdumper.1 gnash.1 gprocessor.1 \
 		rtmpget.1 soldumper.1
 
-OPTIONS=	PLUGIN		"Enable browser plugin" on \
-		CYGNAL		"Enable Cygnal media server" off \
-		GTK		"GUI: GTK (required for Mozilla/Firefox plugin)" on \
-		KDE		"GUI: KDE 3.x (required for Konqueror 3.x plugin)" off \
-		KDE4		"GUI: KDE 4.x (required for Konqueror 4.x plugin)" off \
-		AGG		"Renderer: AGG" on \
-		OPENGL		"Renderer: OpenGL (broken)" off \
-		CAIRO		"Renderer: Cairo (experimental)" off \
-		VAAPI		"Enable VAAPI support (requires FFMPEG)" off \
-		FFMPEG		"Media handler: ffmpeg (+SDL sound output)" on \
-		GSTREAMER	"Media handler: GStreamer" off
+OPTIONS_DEFINE=	PLUGIN CYGNAL VAAPI FFMPEG GSTREAMER
+OPTIONS_SINGLE=	GUI RENDERER
+OPTIONS_SINGLE_GUI=	GTK2 KDE3 KDE4
+OPTIONS_SINGLE_RENDERER=AGG OPENGL CAIRO
+#OPTIONS_SINGLE_MEDIA=	FFMPEG GSTREAMER
+OPTIONS_DEFAULT=GTK2 PLUGIN AGG FFMPEG VAAPI
+
+NO_OPTIONS_SORT=yes
+PLUGIN_DESC=	Enable browser plugin
+CYGNAL_DESC=	Enable Cygnal media server
+AGG_DESC=	Enable AGG renderer
+OPENGL_DESC=	Enable OpenGL renderer (broken)
+CAIRO_DESC=	Enable Cairo renderer (experimental)
+FFMPEG_DESC=	Enable ffmpeg media handler
+GSTREAMER_DESC=	Enable GStreamer media handler
+VAAPI_DESC=	Enable VAAPI support (requires FFMPEG)
 
 .include <bsd.port.options.mk>
 
 # Cygnal option processing
-.if defined(WITH_CYGNAL)
+.if ${PORT_OPTIONS:MCYGNAL}
 PLIST_SUB+=	CYGNAL=""
 CONFIGURE_ARGS+=	--enable-cygnal
 CONFIG_FILES+=	cygnalrc
@@ -83,7 +88,7 @@ CONFIGURE_ARGS+=	--disable-cygnal
 .endif
 
 # NLS option processing (not sure if --disable-nls actually has any effect)
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
@@ -94,7 +99,7 @@ PLIST_SUB+=	NLS="@comment "
 #
 # Plugin configuration
 #
-.if !defined(WITHOUT_GTK) && !defined(WITHOUT_PLUGIN)
+.if ${PORT_OPTIONS:MGTK2} && ${PORT_OPTIONS:MPLUGIN}
 USE_WEBPLUGINS=		native
 WEBPLUGINS_FILES=	libgnashplugin.so
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
@@ -107,15 +112,15 @@ PLIST_SUB+=	NPAPI="@comment "
 CONFIGURE_ARGS+=	--disable-npapi
 .endif
 
-.if defined(WITH_KDE) && !defined(WITHOUT_PLUGIN)
-PLIST_SUB+=	KPARTS=""
+.if ${PORT_OPTIONS:MKDE3} && ${PORT_OPTIONS:MPLUGIN}
+PLIST_SUB+=	KPARTS3=""
 USE_LDCONFIG+=	${PREFIX}/lib/kde3
 .else
-PLIST_SUB+=	KPARTS="@comment "
+PLIST_SUB+=	KPARTS3="@comment "
 CONFIGURE_ARGS+=	--disable-kparts3
 .endif
 
-.if defined(WITH_KDE4) && !defined(WITHOUT_PLUGIN)
+.if ${PORT_OPTIONS:MKDE4} && ${PORT_OPTIONS:MPLUGIN}
 PLIST_SUB+=	KPARTS4=""
 USE_LDCONFIG+=	${KDE4_PREFIX}/lib/kde4
 CONFIGURE_ARGS+=	--with-kde4_prefix=${PREFIX}/kde4
@@ -129,8 +134,8 @@ CONFIGURE_ARGS+=	--disable-kparts4
 #
 GNASH_GUIS=
 
-.if !defined(WITHOUT_GTK)
-USE_GNOME=	gtk20
+.if ${PORT_OPTIONS:MGTK2}
+USE_GNOME=	gtk20 atk gconf2
 GNASH_GUIS+=	gtk
 PLIST_SUB+=	GTK=""
 MAN1+=		gnash-gtk-launcher.1 gtk-gnash.1
@@ -138,7 +143,7 @@ MAN1+=		gnash-gtk-launcher.1 gtk-gnash.1
 PLIST_SUB+=	GTK="@comment "
 .endif
 
-.if defined(WITH_KDE)
+.if ${PORT_OPTIONS:MKDE3} 
 GNASH_GUIS+=	kde3
 PLIST_SUB+=	KDE=""
 USE_KDELIBS_VER=3
@@ -146,23 +151,23 @@ USE_KDELIBS_VER=3
 PLIST_SUB+=	KDE="@comment "
 .endif
 
-.if defined(WITH_KDE4)
+.if ${PORT_OPTIONS:MKDE4}
 GNASH_GUIS+=	kde4
 PLIST_SUB+=	KDE4=""
 USE_QT4=	moc_build
 QT_NONSTANDARD=	yes
 USE_KDE4=	kdehier kdelibs
 CONFIGURE_ENV+=	KDE4_CONFIG="${KDE4_PREFIX}/bin/kde4-config"
-.	if exists(${LOCALBASE}/lib/libkdeui.so)
+.if exists(${LOCALBASE}/lib/libkdeui.so)
 IGNORE=		KDE4 GUI can't be built when KDE3 is installed. Please rerun 'make config' and disable KDE4 GUI or deinstall kdelibs-3
-.	endif
+.endif
 MAN1+=		gnash-qt-launcher.1 kde4-gnash.1
 .else
 PLIST_SUB+=	KDE4="@comment "
 .endif
 
-.if defined(WITH_KDE) && defined defined(WITH_KDE4)
-IGNORE=		KDE and KDE4 GUIs are mutually exclusive. Please rerun 'make config' and disable one of these
+.if ${PORT_OPTIONS:MKDE3} && ${PORT_OPTIONS:MKDE4}
+IGNORE=		KDE3 and KDE4 GUIs are mutually exclusive. Please rerun 'make config' and disable one of these
 .endif
 
 .if ${GNASH_GUIS} == ""
@@ -176,23 +181,23 @@ CONFIGURE_ARGS+=--enable-gui=`${ECHO} ${GNASH_GUIS} | ${TR} ' ' ,`
 #
 GNASH_RENDERERS=
 
-.if defined(WITH_AGG)
+.if ${PORT_OPTIONS:MAGG} 
 LIB_DEPENDS+=		agg.2:${PORTSDIR}/graphics/agg
 GNASH_RENDERERS+=	agg
 .endif
 
-.if defined(WITH_OPENGL)
+.if ${PORT_OPTIONS:MOPENGL} 
 USE_GL=			yes
 GNASH_RENDERERS+=	ogl
-.	if !defined(WITHOUT_GTK)
+.if ${PORT_OPTIONS:MGTK2}
 LIB_DEPENDS+=		gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
-.	endif
+.endif
 .endif
 
-.if defined(WITH_CAIRO)
-.	if defined(WITH_KDE) || defined(WITH_KDE4)
+.if ${PORT_OPTIONS:MCAIRO}
+.if ${PORT_OPTIONS:MKDE3} || ${PORT_OPTIONS:MKDE4}
 IGNORE=			doesn't support Cairo renderer with KDE/KDE4 gui. Please rerun 'make config' and select different renderer or disable KDE/KDE4 GUIs
-.	endif
+.endif
 LIB_DEPENDS+=		cairo.2:${PORTSDIR}/graphics/cairo
 GNASH_RENDERERS+=	cairo
 .endif
@@ -206,10 +211,10 @@ CONFIGURE_ARGS+=	--enable-renderer=`${ECHO} ${GNASH_RENDERERS} | ${TR} ' ' ,`
 #
 # Hardware acceleration options processing
 #
-.if defined(WITH_VAAPI)
-.	if !defined(WITH_FFMPEG)
+.if ${PORT_OPTIONS:MVAAPI}
+.if empty(PORT_OPTIONS:MFFMPEG)
 IGNORE=			VAAPI currently works only with FFMPEG. Please rerun 'make config' and enable FFMPEG.
-.	endif
+.endif
 LIB_DEPENDS+=		va.1:${PORTSDIR}/multimedia/libva
 PLIST_SUB+=		VAAPI=""
 .else
@@ -220,21 +225,20 @@ PLIST_SUB+=		VAAPI="@comment "
 #
 # Media handler options processing
 #
-.if defined(WITH_FFMPEG) && !defined(WITH_GSTREAMER)
+.if ${PORT_OPTIONS:MFFMPEG} && empty(PORT_OPTIONS:MGSTREAMER) 
 LIB_DEPENDS+=		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 CONFIGURE_ARGS+=	--enable-media=ffmpeg
 USE_SDL+=		sdl
-.elif !defined(WITH_FFMPEG) && defined(WITH_GSTREAMER)
+.elif empty(PORT_OPTIONS:MFFMPEG) && ${PORT_OPTIONS:MGSTREAMER}
 USE_GSTREAMER=		yes
 CONFIGURE_ARGS+=	--enable-media=gst
 USE_SDL+=		sdl
-.elif !defined(WITH_FFMPEG) && !defined(WITH_GSTREAMER)
+.elif empty(PORT_OPTIONS:MFFMPEG) && empty(PORT_OPTIONS:MGSTREAMER)
 CONFIGURE_ARGS+=	--enable-media=none
-.else
 IGNORE=			can't be built with multiple media handlers enabled. Please rerun 'make config' and leave one or none of them (ffmpeg|gstreamer)
 .endif
 
-.if defined(WITH_GSTREAMER)
+.if ${PORT_OPTIONS:MGSTREAMER}
 PLIST_SUB+=		GSTREAMER=""
 .else
 PLIST_SUB+=		GSTREAMER="@comment "
@@ -243,7 +247,7 @@ PLIST_SUB+=		GSTREAMER="@comment "
 .include <bsd.port.pre.mk>
 
 pre-everything::
-.if defined(WITH_OPENGL)
+.if ${PORT_OPTIONS:MOPENGL}
 	@${ECHO_CMD} "OpenGL support is currently broken (Gnash hangs using 100% CPU). Use at your own risk"
 	@sleep 3
 .endif
@@ -270,18 +274,17 @@ post-install:
 			${PREFIX}/etc/${conf}; \
 	fi
 .endfor
-
-.if !defined(WITHOUT_PLUGIN)
-.if !defined(WITHOUT_GTK)
+.if ${PORT_OPTIONS:MPLUGIN}
+.if ${PORT_OPTIONS:MGTK2}
 	${MKDIR} ${WEBPLUGINS_DIR}
 	@cd ${INSTALL_WRKSRC}/plugin && \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install-plugin
 .endif
-.if defined(WITH_KDE)
+.if ${PORT_OPTIONS:MKDE3}
 	@cd ${INSTALL_WRKSRC}/plugin/klash && \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install-plugin
 .endif
-.if defined(WITH_KDE4)
+.if ${PORT_OPTIONS:MKDE4}
 	@cd ${INSTALL_WRKSRC}/plugin/klash4 && \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install-plugin
 .endif
