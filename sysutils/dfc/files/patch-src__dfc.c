@@ -1,15 +1,11 @@
---- ./src/dfc.c.orig	2012-04-03 23:38:18.000000000 +0200
-+++ ./src/dfc.c	2012-04-13 00:05:00.488294758 +0200
-@@ -713,10 +713,12 @@
-                if (strlcat(buffer, ",acls", bufsize) >= bufsize)
-                        goto truncated;
- 			/* NOTREACHED */
-+#if __FreeBSD__version > 800000
-        if (flags & MNT_NFS4ACLS)
-                if (strlcat(buffer, ",nfsv4acls", bufsize) >= bufsize)
- 		       goto truncated;
- 			/* NOTREACHED */
-+#endif
- 
-        return buffer;
-        /* NOTREACHED */
+--- ./src/dfc.c.orig	2012-05-31 00:25:46.000000000 +0200
++++ ./src/dfc.c	2012-06-15 23:39:58.405538089 +0200
+@@ -853,7 +853,7 @@
+ #if defined(__FreeBSD__) || defined(__APPLE__)
+ 	{ MNT_MULTILABEL,         "multilabel"         },
+ #endif
+-#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) && __FreeBSD__version > 800000
+ 	{ MNT_NFS4ACLS,           "nfs4acls"           },
+ #endif
+ #if defined(__DragonFly__) || defined(__FreeBSD__) || defined(__NetBSD__) \
