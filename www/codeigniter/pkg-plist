@@ -116,7 +116,11 @@
 %%WWWDIR%%/system/database/drivers/odbc/odbc_forge.php
 %%WWWDIR%%/system/database/drivers/odbc/odbc_result.php
 %%WWWDIR%%/system/database/drivers/odbc/odbc_utility.php
+%%WWWDIR%%/system/database/drivers/pdo/index.html
 %%WWWDIR%%/system/database/drivers/pdo/pdo_driver.php
+%%WWWDIR%%/system/database/drivers/pdo/pdo_forge.php
+%%WWWDIR%%/system/database/drivers/pdo/pdo_result.php
+%%WWWDIR%%/system/database/drivers/pdo/pdo_utility.php
 %%WWWDIR%%/system/database/drivers/postgre/index.html
 %%WWWDIR%%/system/database/drivers/postgre/postgre_driver.php
 %%WWWDIR%%/system/database/drivers/postgre/postgre_forge.php
@@ -214,8 +218,8 @@
 @dirrm %%WWWDIR%%/system/database/drivers/sqlsrv
 @dirrm %%WWWDIR%%/system/database/drivers/sqlite
 @dirrm %%WWWDIR%%/system/database/drivers/postgre
-@dirrm %%WWWDIR%%/system/database/drivers/pdo
 @dirrm %%WWWDIR%%/system/database/drivers/odbc
+@dirrm %%WWWDIR%%/system/database/drivers/pdo
 @dirrm %%WWWDIR%%/system/database/drivers/oci8
 @dirrm %%WWWDIR%%/system/database/drivers/mysqli
 @dirrm %%WWWDIR%%/system/database/drivers/mysql
