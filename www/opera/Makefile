@@ -49,19 +49,19 @@ VIDEO_DESC=	Enable support for HTML5 video (requires GStreamer)
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MCUPS)
+.if ${PORT_OPTIONS:MCUPS}
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
 .endif
 
-.if ${PORT_OPTIONS:MVIDEO)
+.if ${PORT_OPTIONS:MVIDEO}
 USE_GSTREAMER+=	vorbis ogg theora vp8 good
 .endif
 
-.if ${PORT_OPTIONS:MGTK2)
+.if ${PORT_OPTIONS:MGTK2}
 USE_GNOME+=	gtk20
 .endif
 
-.if ${PORT_OPTIONS:MKDE4)
+.if ${PORT_OPTIONS:MKDE4}
 USE_KDE4+=	kdelibs
 .endif
 
