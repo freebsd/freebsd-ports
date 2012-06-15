@@ -19,9 +19,9 @@ COMMENT=	A webserver with CGI as own user and SSL suport
 
 RUN_DEPENDS=	run-mailcap:${PORTSDIR}/misc/mime-support \
 		ppmtogif:${PORTSDIR}/graphics/netpbm
-LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
-CONFLICTS+=	xshttpd-[0-9]*
+CONFLICTS_INSTALL+=	xshttpd-[0-9]* publicfile-[0-9]*
 
 MAN1=		clearxs.1 gfxcount.1 httpd.1 httpdc.1 imagemap.1 \
 		readxs.1 xschpass.1 xsindex.1 xspasswd.1
@@ -34,18 +34,17 @@ USE_RC_SUBR=	xshttpd.sh
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-hier=bsd
 
-OPTIONS=	LDAP "Enable ldap support" Off \
-		CURL "Enable curl (proxy) support" Off \
-		M4_CONFIG "Enable m4 configuration preprocessor" Off \
-		PERSISTENT_PERL "Enable persistent perl interpreter" Off
+OPTIONS_DEFINE=	LDAP CURL M4_CONFIG PERSISTENT_PERL
+M4_CONFIG_DESC=	Enable m4 configuration preprocessor
+PERSISTENT_PERL_DESC=	Enable persistent perl interpreter
 
 PORTDOCS=	README COPYING ChangeLog
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 # By default XS-HTTPD stores its data in ${PREFIX}/lib/httpd
 WWWDIR?=	${PREFIX}/www/${PORTNAME}
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 PLIST_SUB+=	LDAP=""
@@ -54,13 +53,13 @@ CONFIGURE_ARGS+=--without-ldap
 PLIST_SUB+=	LDAP="@comment "
 .endif
 
-.if defined(WITH_M4_CONFIG)
+.if ${PORT_OPTIONS:MM4_CONFIG}
 CONFIGURE_ARGS+=--with-preprocessor
 .else
 CONFIGURE_ARGS+=--without-preprocessor
 .endif
 
-.if defined(WITH_PERSISTENT_PERL)
+.if ${PORT_OPTIONS:MPERSISTENT_PERL}
 USE_PERL5=	yes
 CONFIGURE_ARGS+=--with-perl
 PLIST_SUB+=	PERL=""
@@ -69,7 +68,7 @@ CONFIGURE_ARGS+=--without-perl
 PLIST_SUB+=	PERL="@comment "
 .endif
 
-.if defined(WITH_CURL)
+.if ${PORT_OPTIONS:MCURL}
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=--with-curl
 .else
@@ -94,4 +93,4 @@ post-install:
 . endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -84,4 +84,4 @@ libexec/xshttpd/mod_rpaf.so
 @dirrmtry %%WWWDIR%%
 @dirrmtry %%ETCDIR%%
 @dirrmtry libexec/xshttpd
-@dirrmtry /var/log/xshttpd
+@unexec rmdir /var/log/xshttpd 2>/dev/null || true
