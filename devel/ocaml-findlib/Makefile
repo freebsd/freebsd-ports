@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	findlib
-PORTVERSION=	1.2.7
+PORTVERSION=	1.3.2
 CATEGORIES=	devel
 MASTER_SITES=	http://download.camlcity.org/download/
 PKGNAMEPREFIX=	ocaml-
@@ -51,14 +51,14 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if !exists(${LOCALBASE}/lib/ocaml/labltk)
-WITHOUT_TK=     yes
+WITHOUT_TK=	yes
 .endif
 
 .if defined(WITHOUT_TK)
-PLIST_SUB+=     TK="@comment "
+PLIST_SUB+=	TK="@comment "
 .else
 CONFIGURE_ARGS+=-with-toolbox
-PLIST_SUB+=     TK=""
+PLIST_SUB+=	TK=""
 .endif
 
 post-install:
