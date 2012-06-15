@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	puppet
-PORTVERSION=	2.7.14
-PORTREVISION=	1
+PORTVERSION=	2.7.16
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 
@@ -29,17 +28,19 @@ SUB_FILES+=	pkg-message
 
 MANCOMPRESSED=	yes
 MAN5=	puppet.conf.5
-MAN8=	filebucket.8 pi.8 puppet.8 puppetca.8 puppetd.8 \
-	puppetdoc.8 puppetmasterd.8 puppetrun.8 ralsh.8 puppetqd.8 \
-	puppet-agent.8 puppet-apply.8 puppet-catalog.8 puppet-cert.8 \
-	puppet-certificate.8 puppet-certificate_request.8 \
-	puppet-certificate_revocation_list.8 puppet-config.8 \
-	puppet-describe.8 puppet-device.8 puppet-doc.8 puppet-facts.8 \
-	puppet-file.8 puppet-filebucket.8 puppet-help.8 puppet-inspect.8 \
+MAN8=	filebucket.8 pi.8 puppet-agent.8 puppet-apply.8 puppet-ca.8 \
+	puppet-catalog.8 puppet-cert.8 puppet-certificate.8 \
+	puppet-certificate_request.8 puppet-certificate_revocation_list.8 \
+	puppet-config.8 puppet-describe.8 puppet-device.8 puppet-doc.8 \
+	puppet-facts.8 puppet-file.8 puppet-filebucket.8 puppet-help.8 \
+	puppet-inspect.8 puppet-instrumentation_data.8 \
+	puppet-instrumentation_listener.8 puppet-instrumentation_probe.8 \
 	puppet-key.8 puppet-kick.8 puppet-man.8 puppet-master.8 \
-	puppet-node.8 puppet-parser.8 puppet-plugin.8 puppet-queue.8 \
-	puppet-report.8 puppet-resource.8 puppet-resource_type.8 \
-	puppet-secret_agent.8 puppet-status.8
+	puppet-module.8 puppet-node.8 puppet-parser.8 puppet-plugin.8 \
+	puppet-queue.8 puppet-report.8 puppet-resource.8 \
+	puppet-resource_type.8 puppet-secret_agent.8 puppet-status.8 \
+	puppet.8 puppetca.8 puppetd.8 puppetdoc.8 puppetmasterd.8 \
+	puppetqd.8 puppetrun.8 ralsh.8
 
 OPTIONS=	MONGREL		"Run puppet server as a mongrel service"	Off \
 		PACKAGE_ORIGIN	"Use port origin as package name"		On \
@@ -77,7 +78,7 @@ post-patch:
 		${WRKSRC}/lib/puppet/util/run_mode.rb
 	@${REINPLACE_CMD} -e "s|\$$vardir/run|/var/run/puppet|" \
 		${WRKSRC}/lib/puppet/util/run_mode.rb
-	@${REINPLACE_CMD} -e "s|\$$confdir/ssl|/var/run/puppet/ssl|" \
+	@${REINPLACE_CMD} -e "s|\$$confdir/ssl|/var/puppet/ssl|" \
 		${WRKSRC}/lib/puppet/defaults.rb
 
 do-install:
