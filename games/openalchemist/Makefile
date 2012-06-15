@@ -7,7 +7,7 @@
 
 PORTNAME=	openalchemist
 PORTVERSION=	0.3
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -22,8 +22,8 @@ LICENSE_FILE_CCbySA=	${WRKSRC}/GRAPHICS-LICENSE
 LICENSE_PERMS_CCbySA=	${_LICENSE_PERMS_DEFAULT}
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	clanCore-0.8:${PORTSDIR}/devel/clanlib \
-	jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	clanCore:${PORTSDIR}/devel/clanlib \
+	jpeg:${PORTSDIR}/graphics/jpeg \
 	png15:${PORTSDIR}/graphics/png
 
 USE_AUTOTOOLS=	aclocal automake autoconf
@@ -40,16 +40,18 @@ USE_ICONV=	yes
 
 PORTDOCS=	AUTHORS ChangeLog README TODO
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|^%|#|g' ${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -E -e 's|^dist_pkgdata_DATA =.*|dist_pkgdata_DATA = data/* skins/aqua.zip skins/brushed.zip skins/vectoriel.zip|g' ${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -E -e 's|^#!/usr/bin/python|#!${LOCALBASE}/bin/python|g' ${WRKSRC}/openalchemist-config
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .endif
 

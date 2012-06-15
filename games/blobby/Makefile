@@ -7,7 +7,7 @@
 
 PORTNAME=	blobby
 PORTVERSION=	0.9c
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Blobby%20Volley%202%20%28Linux%29/Beta%20${PORTVERSION}
 DISTNAME=	blobby2-linux-${PORTVERSION}
@@ -17,7 +17,7 @@ COMMENT=	Official continuation of the famous Blobby Volley 1.x game
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	physfs.1:${PORTSDIR}/devel/physfs \
+LIB_DEPENDS=	physfs:${PORTSDIR}/devel/physfs \
 		drm:${PORTSDIR}/graphics/libdrm
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/include/boost/crc.hpp:${PORTSDIR}/devel/boost-libs
@@ -34,8 +34,10 @@ DOS2UNIX_REGEX=	.*\.(c|h|cpp)
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README TODO
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}

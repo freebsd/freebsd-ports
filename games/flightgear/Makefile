@@ -7,7 +7,7 @@
 
 PORTNAME=	flightgear
 PORTVERSION=	2.6.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 # see http://www.flightgear.org/templates.js
 MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/Source/ \
@@ -21,10 +21,10 @@ COMMENT=	The FlightGear flight simulator
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		boost_thread.4:${PORTSDIR}/devel/boost-libs \
-		fltk.1:${PORTSDIR}/x11-toolkits/fltk \
-		osg.80:${PORTSDIR}/graphics/osg
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
+		boost_thread:${PORTSDIR}/devel/boost-libs \
+		fltk:${PORTSDIR}/x11-toolkits/fltk \
+		osg:${PORTSDIR}/graphics/osg
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
@@ -43,11 +43,13 @@ CMAKE_ARGS+=	-DJPEG_FACTORY:BOOL=ON \
 
 PORTDOCS=	README README.OSG README.OpenAL README.SimGear README.plib
 
-.if defined(NOPORTDOCS)
+MAN1=	js_demo.1 fgjs.1 gl-info.1 fgfs.1 fgpanel.1 terrasync.1
+
+.include <bsd.port.options.mk>
+
+.if empty(PORT_OPTIONS:MDOCS)
 CMAKE_ARGS+=	-DNOPORTDOCS:BOOL=ON
 .endif
-
-MAN1=	js_demo.1 fgjs.1 gl-info.1 fgfs.1 fgpanel.1 terrasync.1
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/utils/js_server/js_server ${PREFIX}/bin
