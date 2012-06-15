@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	otrs
-PORTVERSION=	3.1.4
-PORTREVISION=	1
+PORTVERSION=	3.1.6
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -77,6 +76,8 @@ CLEAN_FILES=	scripts/suse* scripts/redhat* \
 
 USE_APACHE=	20+
 USE_PERL5=	yes
+
+PLIST_SUB+=	VER_CKEDITOR="3.6.3"
 
 .include <bsd.port.pre.mk>
 
