@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	teamocil
-PORTVERSION=	0.3.5
+PORTVERSION=	0.3.6
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
