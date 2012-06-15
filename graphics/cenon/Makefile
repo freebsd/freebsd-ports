@@ -28,11 +28,12 @@ MAINVERSION=	3.9.5
 FULLVERSION=	3.9.4
 CENON_LIB_DIR=	${GNUSTEP_LOCAL_ROOT}/Library/Cenon
 
-OPTIONS=	FULL_LIBRARY	"Install complete Cenon Library" off
+OPTIONS_DEFINE=	FULL_LIBRARY
+FULL_LIBRARY_DESC= Install complete Cenon Library
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_FULL_LIBRARY) || make(makesum) || defined(FETCH_ALL)
+.if ${PORT_OPTIONS:MFULL_LIBRARY} || make(makesum) || defined(FETCH_ALL)
 DISTFILES+=	CenonLibrary-${FULLVERSION}-1${EXTRACT_SUFX}
 PLIST_SUB+=	FULL=""
 PLIST_SUB+=	LITE="@comment "
@@ -47,7 +48,7 @@ post-extract:
 	@${FIND} ${WRKSRC}/Library -name COPYING -delete
 
 post-install:
-.if defined(WITH_FULL_LIBRARY)
+.if ${PORT_OPTIONS:MFULL_LIBRARY}
 	${TAR} xyvf ${_DISTDIR}/CenonLibrary-${FULLVERSION}-1${EXTRACT_SUFX} \
 		-C ${GNUSTEP_LOCAL_ROOT}/Library/ --exclude COPYING
 	@${CHOWN} -R root:wheel ${CENON_LIB_DIR}
@@ -58,4 +59,4 @@ post-install:
 .endif
 	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${CENON_LIB_DIR}/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
