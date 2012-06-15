@@ -1098,7 +1098,6 @@ bin/buildbot
 @dirrm %%PYTHON_SITELIBDIR%%/buildbot/process/users
 @dirrm %%PYTHON_SITELIBDIR%%/buildbot/process
 @dirrm %%PYTHON_SITELIBDIR%%/buildbot/monkeypatches
-@dirrm %%PYTHON_SITELIBDIR%%/buildbot/db/schema
 @dirrm %%PYTHON_SITELIBDIR%%/buildbot/db/migrate/versions
 @dirrm %%PYTHON_SITELIBDIR%%/buildbot/db/migrate
 @dirrm %%PYTHON_SITELIBDIR%%/buildbot/db
