@@ -36,8 +36,13 @@ lib/ocaml/site-lib/threads/META
 lib/ocaml/site-lib/unix/META
 lib/ocaml/topfind
 %%PORTDOCS%%%%DOCSDIR%%/DOCINFO
+%%PORTDOCS%%%%DOCSDIR%%/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/QUICKSTART
+%%PORTDOCS%%%%DOCSDIR%%/QUICKSTART.xml
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.xml
+%%PORTDOCS%%%%DOCSDIR%%/common.xml
+%%PORTDOCS%%%%DOCSDIR%%/config.xml
 %%PORTDOCS%%%%DOCSDIR%%/guide-html/TIMESTAMP
 %%PORTDOCS%%%%DOCSDIR%%/guide-html/c157.html
 %%PORTDOCS%%%%DOCSDIR%%/guide-html/c188.html
@@ -70,8 +75,8 @@ lib/ocaml/topfind
 %%PORTDOCS%%%%DOCSDIR%%/guide-html/x468.html
 %%PORTDOCS%%%%DOCSDIR%%/guide-html/x81.html
 %%PORTDOCS%%%%DOCSDIR%%/guide-html/x89.html
+%%PORTDOCS%%%%DOCSDIR%%/readme.dtd
 %%PORTDOCS%%%%DOCSDIR%%/ref-html/TIMESTAMP
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/c990.html
 %%PORTDOCS%%%%DOCSDIR%%/ref-html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/Findlib.html
 %%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/Fl_metascanner.html
@@ -92,16 +97,30 @@ lib/ocaml/topfind
 %%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/type_Fl_metascanner.html
 %%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/type_Fl_package_base.html
 %%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/type_Topfind.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/c1024.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/p1022.html
 %%PORTDOCS%%%%DOCSDIR%%/ref-html/p15.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/p645.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/p988.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/p679.html
 %%PORTDOCS%%%%DOCSDIR%%/ref-html/r17.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/r647.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/r741.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/r930.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/r681.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/r775.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/r964.html
+%%PORTDOCS%%%%DOCSDIR%%/src/findlib.dsl
+%%PORTDOCS%%%%DOCSDIR%%/src/findlib.sgml
+%%PORTDOCS%%%%DOCSDIR%%/src/findlib_conf.mod
+%%PORTDOCS%%%%DOCSDIR%%/src/findlib_meta.mod
+%%PORTDOCS%%%%DOCSDIR%%/src/findlib_mli.mod
+%%PORTDOCS%%%%DOCSDIR%%/src/findlib_ocamlfind.mod
+%%PORTDOCS%%%%DOCSDIR%%/src/findlib_ref.dsl
+%%PORTDOCS%%%%DOCSDIR%%/src/findlib_ref.sgml
+%%PORTDOCS%%%%DOCSDIR%%/src/findlib_reference.sgml
+%%PORTDOCS%%%%DOCSDIR%%/src/findlib_reference.xml
+%%PORTDOCS%%%%DOCSDIR%%/src/findlib_sitelib.mod
+%%PORTDOCS%%%%DOCSDIR%%/src/findlib_topfind.mod
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ref-html/lib
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ref-html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guide-html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/src
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrmtry share/doc/ocaml
 @dirrm lib/ocaml/site-lib/unix
