@@ -18,14 +18,15 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	SLang-based newsreader
 
-LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
+LIB_DEPENDS=	slang:${PORTSDIR}/devel/libslang2
+
+CONFLICTS_INSTALL=	ja-slrn-[0-9]*
 
 USE_GMAKE=	yes
 USE_ICONV=	yes
 
-OPTIONS=	NLS "Native Language Support via gettext utilities" on \
-		SSL "Adds support for SSL (Secure Socket Layer)" on \
-		DEVIEW "Enable uulib for multiple de-/encoding" off
+OPTIONS_DEFINE=	SSL DEVIEW
+OPTIONS_DEFAULT=SSL
 
 .include <bsd.port.options.mk>
 
@@ -41,17 +42,17 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-ipv6 --disable-inews --with-slrnpull \
 			--with-libiconv-prefix=${LOCALBASE}
 
-.if !defined(WITHOUT_SSL)
+.if ${PORT_OPTIONS:MSSL}
 USE_OPENSSL=	YES
 CONFIGURE_ARGS+=	--with-ssl
 .endif
 
-.if defined(WITH_DEVIEW)
-LIB_DEPENDS+=	uu.3:${PORTSDIR}/converters/uulib
+.if ${PORT_OPTIONS:MDEVIEW}
+LIB_DEPENDS+=	uu:${PORTSDIR}/converters/uulib
 CONFIGURE_ARGS+=	--with-uulib
 .endif
 
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 # Use dummy target rather than rewriting makefile
 CONFIGURE_ARGS+=	--with-docdir=${WRKSRC}/dummy
 .endif
