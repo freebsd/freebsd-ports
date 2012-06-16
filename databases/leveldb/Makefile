@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	leveldb
-PORTVERSION=	1.2.20120315
+PORTVERSION=	1.5.0
 CATEGORIES=	databases
-MASTER_SITES=	LOCAL/sunpoet
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A fast and lightweight key/value database library by Google
@@ -16,11 +16,18 @@ COMMENT=	A fast and lightweight key/value database library by Google
 OPTIONS=	PERFTOOLS	"Build with Google perftools" off \
 		SNAPPY		"Build with snappy" on
 
-CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_XZ=		yes
+
+PLIST_SUB=	SHLIB_MAJOR=${SHLIB_MAJOR} \
+		SHLIB_MINOR=${SHLIB_MINOR}
+
+NOT_FOR_ARCHS=	powerpc
+NOT_FOR_ARCHS_REASON=	not yet ported to this platform
+
+SHLIB_MAJOR=	${PORTVERSION:R:R}
+SHLIB_MINOR=	${PORTVERSION:R:E}
 
 .include <bsd.port.options.mk>
 
@@ -30,25 +37,31 @@ LIB_DEPENDS+=	tcmalloc:${PORTSDIR}/devel/google-perftools
 
 .if !defined(WITHOUT_SNAPPY)
 LIB_DEPENDS+=	snappy:${PORTSDIR}/archivers/snappy
+SNAPPY=		1
+.else
+SNAPPY=		0
 .endif
-
-NOT_FOR_ARCHS=		powerpc
-NOT_FOR_ARCHS_REASON=	not yet ported to this platform
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/build_detect_platform
 .if !defined(WITH_PERFTOOLS)
-	@${REINPLACE_CMD} -e '/^GOOGLE_PERFTOOLS_LDFLAGS=/ s|=.*|=|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's| -ltcmalloc||' ${WRKSRC}/build_detect_platform
 .endif
 .if defined(WITHOUT_SNAPPY)
-	@${REINPLACE_CMD} -e '/^SNAPPY_LDFLAGS=/ s|=.*|=|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's| -DSNAPPY||; s| -lsnappy||' ${WRKSRC}/build_detect_platform
 .endif
 
 do-install:
 	${MKDIR} ${PREFIX}/include/leveldb/ ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/include/leveldb/* ${PREFIX}/include/leveldb/
-	${INSTALL_LIB} ${WRKSRC}/libleveldb.* ${PREFIX}/lib/
+	${INSTALL_LIB} ${WRKSRC}/libleveldb.a ${PREFIX}/lib/
+	${INSTALL_LIB} ${WRKSRC}/libleveldb.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${PREFIX}/lib/
+# backward compatibility
+	${ECHO} "SNAPPY=${SNAPPY}" >> ${WRKSRC}/build_config.mk
+	${GREP} '^PLATFORM_CXXFLAGS=' ${WRKSRC}/build_config.mk | ${SED} 's|PLATFORM_CXXFLAGS|PORT_CFLAGS|' >> ${WRKSRC}/build_config.mk
+	${GREP} '^PLATFORM_CXXFLAGS=' ${WRKSRC}/build_config.mk | ${SED} 's|PLATFORM_CXXFLAGS|PLATFORM_CFLAGS|' >> ${WRKSRC}/build_config.mk
 	${INSTALL_DATA} ${WRKSRC}/build_config.mk ${DATADIR}/
-	${LN} -s libleveldb.so.0 ${PREFIX}/lib/libleveldb.so
+	${LN} -s libleveldb.so.${SHLIB_MAJOR} ${PREFIX}/lib/libleveldb.so
+	${LN} -s libleveldb.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${PREFIX}/lib/libleveldb.so.${SHLIB_MAJOR}
 
 .include <bsd.port.mk>
