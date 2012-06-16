@@ -10,7 +10,7 @@
 
 dicod_enable=${dicod_enable-"NO"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=dicod
 rcvar=dicod_enable
