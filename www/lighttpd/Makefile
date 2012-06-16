@@ -60,7 +60,8 @@ OPTIONS=	BZIP2		"Enable Bzip2 support" off \
 		OPENSSL		"Enable SSL support" on \
 		SPAWNFCGI	"Depend on spawn-fcgi utility" off \
 		VALGRIND	"Enable valgrind support" off \
-		WEBDAV		"Enable WebDAV support"	off
+		WEBDAV		"Enable WebDAV support"	off \
+		REMOTEUSER	"Add remote-user to conditionals" off
 
 .if !defined(NOPORTDOCS)
 DOCS=		AUTHORS COPYING INSTALL NEWS README
@@ -185,6 +186,11 @@ USE_GNOME+=		libxml2
 LIB_DEPENDS+=		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid \
 			sqlite3.8:${PORTSDIR}/databases/sqlite3
 CONFIGURE_ARGS+=	--with-webdav-props --with-webdav-locks
+.endif
+
+# 3rd party remoteuser patch (lighttpd feature request #2415)
+.if defined(WITH_REMOTEUSER)
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-remoteuser
 .endif
 
 SUB_LIST+=		REQUIRE="${_REQUIRE}"
