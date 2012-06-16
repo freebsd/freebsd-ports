@@ -43,33 +43,34 @@ OSVERSION!=	${SYSCTL} -n kern.osreldate
 .endif
 .endif
 
-OPTIONS=DICT_RUBY	"Enable Ruby based dictionary module"		off \
-	EST		"Enable Hyper Estraier dictionary module"	off \
-	MYSQL		"Enable MySQL dictionary module"		off \
-	PYTHON		"Enable Python module"				on
-.if ${ARCH} == "sparc64" || ${OSVERSION} >= 700042
-OPTIONS+=UNIHAN		"Enable Unihan database dictionary module"	off
-.else
-OPTIONS+=UNIHAN		"Enable Unihan database dictionary module"	on
+OPTIONS_DEFINE=		DICT_RUBY EST MYSQL PYTHON UNIHAN
+OPTIONS_DEFAULT=	PYTHON
+.if ${ARCH} != "sparc64" && ${OSVERSION} < 700042
+OPTIONS_DEFAULT+=	UNIHAN
 .endif
+DICT_RUBY_DESC=		Enable Ruby based dictionary module
+EST_DESC=		Enable Hyper Estraier dictionary module
+MYSQL_DESC=		Enable MySQL dictionary module
+PYTHON_DESC=		Enable Python module
+UNIHAN_DESC=		Enable Unihan database dictionary module
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_DICT_RUBY)
+.if ${PORT_OPTIONS:MDICT_RUBY}
 CONFIGURE_ARGS+=--enable-dict-ruby
 PLIST_SUB+=	DICT_RUBY=""
 .else
 PLIST_SUB+=	DICT_RUBY="@comment "
 .endif
 
-.if defined(WITH_EST)
+.if ${PORT_OPTIONS:MEST}
 CONFIGURE_ARGS+=--with-est
 PLIST_SUB+=	EST=""
 .else
 PLIST_SUB+=	EST="@comment "
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-mysql
 PLIST_SUB+=	MYSQL=""
@@ -77,17 +78,17 @@ PLIST_SUB+=	MYSQL=""
 PLIST_SUB+=	MYSQL="@comment "
 .endif
 
-.if defined(WITHOUT_PYTHON)
-CONFIGURE_ARGS+=--with-python=no
-PLIST_SUB+=	PYTHON="@comment "
-.else
+.if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	yes
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 USE_GNOME+=	pygtk2
 PLIST_SUB+=	PYTHON=""
+.else
+CONFIGURE_ARGS+=--with-python=no
+PLIST_SUB+=	PYTHON="@comment "
 .endif
 
-.if defined(WITH_UNIHAN)
+.if ${PORT_OPTIONS:MUNIHAN}
 .if ${OSVERSION} >= 700042
 BROKEN=		Broken with Unihan with gcc 4.2
 .endif
@@ -113,7 +114,7 @@ CFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/ruby-${RUBY_VER} \
 		-I${LOCALBASE}/include/ruby-${RUBY_VER}/${RUBY_ARCH}
 
-.if defined(WITH_UNIHAN)
+.if ${PORT_OPTIONS:MUNIHAN}
 post-extract:
 	cd ${WRKSRC}/module/dict && \
 		${UNZIP_CMD} -qo ${DISTDIR}/Unihan.zip -d ${WRKSRC}/module/dict
