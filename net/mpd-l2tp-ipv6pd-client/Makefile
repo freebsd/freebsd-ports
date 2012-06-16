@@ -20,16 +20,15 @@ MANUAL_PACKAGE_BUILD=yes
 NO_PACKAGE=	yes
 USE_RC_SUBR=	yes
 
-OPTIONS=	MPD4		"Use mpd4"			off \
-		MPD5		"Use mpd5"			on
+OPTIONS_SINGLE=		MPD
+OPTIONS_SINGLE_MPD=	MPD4 MPD5
+OPTIONS_DEFAULT=	MPD5
+MPD4_DESC=		Use mpd4
+MPD5_DESC=		Use mpd5
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MPD5) && defined(WITH_MPD4)
-BROKEN=		Multiple mpd versions selected.  Run 'make config' again!
-.endif
-
-.if defined(WITH_MPD4)
+.if ${PORT_OPTIONS:MMPD4}
 MPD_NAME=	mpd4
 MPD4=		""
 .else
@@ -82,7 +81,7 @@ do-install:
 		exit 1; \
 	fi
 	@${MKDIR} ${PREFIX}/${CONF_DIR}
-.if defined(WITH_MPD4)
+.if ${PORT_OPTIONS:MMPD4}
 	@${INSTALL_DATA} ${WRKDIR}/mpd.conf ${PREFIX}/${CONF_DIR}/mpd.conf
 	@${INSTALL_DATA} ${WRKDIR}/mpd.links ${PREFIX}/${CONF_DIR}/mpd.links
 .else
@@ -101,4 +100,4 @@ do-install:
 .endfor
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
