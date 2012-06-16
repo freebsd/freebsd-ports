@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	3.3.2
+PORTVERSION=	3.4
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://wordpress.org/
@@ -14,7 +14,7 @@ MASTER_SITES=	http://wordpress.org/
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	A state-of-the-art semantic personal publishing platform
 
-CONFLICTS_INSTALL=	de-wordpress-de-3.* ja-wordpress-ja-3.*
+CONFLICTS_INSTALL=	de-wordpress-3.* ja-wordpress-3.* ru-wordpress-3.*
 
 NO_BUILD=	yes
 USE_PHP=	curl gd mysql pcre tokenizer xml zip
