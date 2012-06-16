@@ -37,7 +37,7 @@ WRKSRC=		${WRKDIR}/${PLUGIN}-${PORTVERSION}
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 OPTIONS_DEFINE=	VAAPI
-VAAPI_DESC=	"Enable vaapi support (experimental)"
+VAAPI_DESC=	Enable vaapi support (experimental)
 
 .include <bsd.port.options.mk>
 

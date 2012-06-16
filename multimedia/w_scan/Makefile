@@ -16,7 +16,7 @@ COMMENT=	Perform frequency scans for DVB and ATSC transmissions
 BUILD_DEPENDS=  v4l_compat>=1.0.20120501:${PORTSDIR}/multimedia/v4l_compat
 
 OPTIONS_DEFINE=	LINUX
-LINUX_DESC=	"Install Linux binary too (linux-w_scan)"
+LINUX_DESC=	Install Linux binary too (linux-w_scan)
 
 .include <bsd.port.options.mk>
 
