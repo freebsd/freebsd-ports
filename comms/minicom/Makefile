@@ -7,28 +7,16 @@
 #
 
 PORTNAME=	minicom
-PORTVERSION=	2.6
+PORTVERSION=	2.6.1
 CATEGORIES=	comms
-MASTER_SITES=	http://alioth.debian.org/frs/download.php/3689/
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/3700/
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	An MS-DOS Telix serial communication program "workalike"
 
-OPTIONS=	LRZSZ	"Install X/Y/ZMODEM protocol handlers"	on
-
-.include <bsd.port.options.mk>
-
-.if defined(WITH_LRZSZ)
-RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz
-.endif
-
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.endif
+OPTIONS_DEFINE=	LRZSZ
+OPTIONS_DEFAULT=LRZSZ
+LRZSZ_DESC=	Install X/Y/ZMODEM protocol handlers
 
 USE_ICONV=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -42,6 +30,20 @@ CONFIGURE_ARGS+=	--enable-dfl-baud=57600 \
 MAKE_ARGS+=	LIBS+="-liconv -lcurses"
 
 MAN1=		minicom.1 runscript.1 ascii-xfr.1 xminicom.1
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MLRZSZ}
+RUN_DEPENDS+=	lrz:${PORTSDIR}/comms/lrzsz
+.endif
+
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .include <bsd.port.pre.mk>
 
