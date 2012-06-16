@@ -17,6 +17,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	The "Internet Relay Chat" Server
 
+CONFLICTS_INSTALL=	charybdis-[0-9]* ircd-hybrid-[0-9]* Nefarious-[0-9]* \
+			ru-ircd-hybrid-[0-9]* ircd-ru-[0-9]*
+
 USE_RC_SUBR=	ircd.sh
 MAN5=		iauth.conf.5
 MAN8=		ircd.8 iauth.8 ircdwatch.8
@@ -26,12 +29,13 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/ircd
 BUILD_WRKSRC=	${WRKSRC}/${MACHINE_ARCH}-unknown-freebsd${OSREL}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-OPTIONS=	IPV6	"Enable IPv6 support"	on
+OPTIONS_DEFINE=	IPV6
+OPTIONS_DEFAULT=IPV6
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
