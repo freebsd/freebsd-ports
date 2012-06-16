@@ -35,7 +35,6 @@ MASTER_SITE_IMAGEMAGICK=	\
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/&,}
 
 OPTIONS_DEFINE= OPENGL UUID
-OPTIONS_DEFAULT=
 UUID_DESC=	UUID support (required by GDAL)
 
 .include <bsd.port.options.mk>
