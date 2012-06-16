@@ -16,75 +16,75 @@ MASTER_SITE_SUBDIR=	ume
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	A GTK based system monitor
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_RC_SUBR=	gkrellmd.sh
 WANT_GNOME=	yes
 USE_OPENSSL=	yes		# cannot set after bsd.port.pre.mk
 
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
+OPTIONS_DEFINE=		GKRELLM_CLIENT GNUTLS NLS NTLM OPENSSL
+OPTIONS_DEFAULT=	GKRELLM_CLIENT NLS NTLM OPENSSL
+GKRELLM_CLIENT_DESC=	Enable GKrellM Client
+NTLM_DESC=		Enable NTLM support
 
-OPTIONS=	GKRELLM_CLIENT	"Enable GKrellM Client"			on  \
-		GNUTLS		"Use GnuTLS"				off \
-		NLS		"Enable NLS support"			on  \
-		NTLM		"Enable NTLM support"			on  \
-		OPENSSL		"Use OpenSSL"				on
+.include <bsd.port.options.mk>
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_GKRELLM_CLIENT)
+.if ${PORT_OPTIONS:MGKRELLM_CLIENT}
 CONFLICTS=	gkrellm-1.*
 .endif
 
-.if defined(WITH_GNUTLS) && defined(WITH_OPENSSL)
+.if ${PORT_OPTIONS:MGNUTLS} && ${PORT_OPTIONS:MOPENSSL}
 BROKEN=		GnuTLS and OpenSSL is mutually exclusive.
 .endif
 
-.if !defined(WITH_GKRELLM_CLIENT)
-BUILD_WRKSRC=	${WRKSRC}/server
-INSTALL_WRKSRC=	${WRKSRC}/server
-USE_GNOME=	glib20
-.else
+.if ${PORT_OPTIONS:MGKRELLM_CLIENT}
 USE_GNOME=	gtk20
-.if defined(WITHOUT_NLS)
-MAKE_ENV+=	enable_nls=0
-.else
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
+.else
+MAKE_ENV+=	enable_nls=0
 .endif
 USE_XORG=	x11 sm
-.if defined(WITH_GNUTLS)
+.if ${PORT_OPTIONS:MGNUTLS}
 LIB_DEPENDS+=	gnutls-openssl.27:${PORTSDIR}/security/gnutls
 MAKE_ENV+=	GNUTLSINC=${LOCALBASE}/include GNUTLSLIB=${LOCALBASE}/lib \
 		without-ssl=1
-.elif defined(WITH_OPENSSL)
+.elif ${PORT_OPTIONS:MOPENSSL}
 USE_OPENSSL=	yes
 MAKE_ENV+=	without-gnutls=1
 .else
 MAKE_ENV+=	without-gnutls=1 without-ssl=1
 .endif
+.else
+BUILD_WRKSRC=	${WRKSRC}/server
+INSTALL_WRKSRC=	${WRKSRC}/server
+USE_GNOME=	glib20
 .endif
-.if defined(WITH_NTLM)
+
+.if ${PORT_OPTIONS:MNTLM}
 LIB_DEPENDS+=	ntlm.0:${PORTSDIR}/security/libntlm
 .else
 MAKE_ENV+=	without-ntlm=1
 .endif
 
 PLIST_SUB=	PREFIX=${PREFIX}
-.if !defined(WITH_GKRELLM_CLIENT)
-PLIST_SUB+=	CLIENT="@comment " NLS="@comment "
-.else
+.if ${PORT_OPTIONS:MGKRELLM_CLIENT}
 PLIST_SUB+=	CLIENT=""
-.if defined(WITHOUT_NLS)
-PLIST_SUB+=	NLS="@comment "
-.else
+.if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
 .endif
 #MAN1=		gkrellm.1
+.else
+PLIST_SUB+=	CLIENT="@comment " NLS="@comment "
 .endif
 MAN8=		gkrellmd.8
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	COPYRIGHT CREDITS README Themes.html
 .endif
 
@@ -109,7 +109,7 @@ post-patch:
 			  ${WRKSRC}/server/Makefile
 
 post-install:
-.if defined(WITH_GKRELLM_CLIENT)
+.if ${PORT_OPTIONS:MGKRELLM_CLIENT}
 	@${MKDIR} ${LOCALBASE}/libexec/gkrellm2/plugins
 	@${MKDIR} ${LOCALBASE}/share/gkrellm2/themes
 	@${GZIP_CMD} ${MAN1PREFIX}/man/man1/gkrellm.1
@@ -122,11 +122,11 @@ post-install:
 		${CP} -p ${EXAMPLESDIR}/gkrellmd.conf \
 			${PREFIX}/etc/gkrellmd.conf; \
 	fi
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
