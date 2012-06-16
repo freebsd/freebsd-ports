@@ -36,3 +36,11 @@
    INSTALL( CODE "EXECUTE_PROCESS(COMMAND ${CMAKE_COMMAND} -E create_symlink
    \"libopenjpeg1.pc\"
    \"\$ENV{DESTDIR}${OPENJPEG_INSTALL_LIB_DIR}/pkgconfig/libopenjpeg.pc\")")
+@@ -244,6 +241,7 @@ ENDIF(BUILD_TESTING)
+ #-----------------------------------------------------------------------------
+ # install all targets referenced as OPENJPEGTargets
+ INSTALL(EXPORT OpenJPEGTargets DESTINATION ${OPENJPEG_INSTALL_PACKAGE_DIR})
++SET(OPENJPEG_LIBRARIES "${CMAKE_INSTALL_PREFIX}/${OPENJPEG_INSTALL_LIB_DIR}/lib${OPENJPEG_LIBRARY_NAME}.so")
+ CONFIGURE_FILE( ${OPENJPEG_SOURCE_DIR}/CMake/OpenJPEGConfig.cmake.in
+   ${OPENJPEG_BINARY_DIR}/OpenJPEGConfig.cmake
+   @ONLY

@@ -13,4 +13,3 @@ lib/libopenjpeg.so.2
 libdata/pkgconfig/libopenjpeg1.pc
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
-@dirrm include/openjpeg
