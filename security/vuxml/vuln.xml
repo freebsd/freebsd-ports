@@ -52,6 +52,59 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="eb12ebee-b7af-11e1-b5e0-000c299b62e1">
+    <topic>clamav -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><lt>0.97.5</lt></range>
+      </package>
+      <package>
+	<name>clamav-devel</name>
+	<range><lt>20120612</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MITRE Advisories report:</p>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-1419">
+	  <p>The TAR parser allows remote attackers to bypass malware detection
+	     via a POSIX TAR file with an initial [aliases] character sequence.</p>
+	</blockquote>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-1457">
+	  <p>The TAR parser allows remote attackers to bypass malware detection
+	     via a TAR archive entry with a length field that exceeds the total
+	     TAR file size.</p>
+	</blockquote>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-1458">
+	  <p>The Microsoft CHM file parser allows remote attackers to bypass
+	     malware detection via a crafted reset interval in the LZXC header
+	     of a CHM file.</p>
+	</blockquote>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-1459">
+	  <p>The TAR file parser allows remote attackers to bypass malware
+	     detection via a TAR archive entry with a length field
+	     corresponding to that entire entry, plus part of the header ofxi
+	     the next entry.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-1419</cvename>
+      <cvename>CVE-2012-1457</cvename>
+      <cvename>CVE-2012-1458</cvename>
+      <cvename>CVE-2012-1459</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-1419</url>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-1457</url>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-1458</url>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-1459</url>
+    </references>
+    <dates>
+      <discovery>2012-03-19</discovery>
+      <entry>2012-06-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3c8d1e5b-b673-11e1-be25-14dae9ebcf89">
     <topic>asterisk -- remote crash vulnerability</topic>
     <affects>
