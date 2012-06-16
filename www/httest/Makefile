@@ -18,6 +18,8 @@ LICENSE=	AL2
 LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr1 \
 		pcre:${PORTSDIR}/devel/pcre
 
+OPTIONS_DEFINE=	EXAMPLES
+
 CONFIGURE_ARGS=	--enable-lua-module \
 		--with-apr="${LOCALBASE}/bin" \
 		--with-apr-util="${LOCALBASE}/bin" \
@@ -39,10 +41,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|`$$APR_CONFIG --cflags`||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|' ${WRKSRC}/generate_modules_c.sh
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/*.htt ${EXAMPLESDIR}
+.if ${PORT_OPTIONS:MEXAMPLES}
+	${MKDIR} ${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/examples/*.htt ${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>
