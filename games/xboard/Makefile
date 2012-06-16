@@ -15,12 +15,14 @@ MASTER_SITE_SUBDIR=	xboard
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	X frontend for Crafty, GNUChess, Chess Servers, or e-mail chess
 
-OPTIONS=	XAW3D		"Use Xaw3d widgets (instead of Xaw)"	On \
-		CRAFTY		"Install crafty engine"			Off \
-		FAIRYMAX	"Install fairymax engine"		Off \
-		GNUCHESS	"Install GnuChess engine"		Off \
-		KNIGHTCAP	"Install KnightCap engine"		Off \
-		PHALANX		"Install phalanx engine"		Off
+OPTIONS_DEFINE=	XAW3D CRAFTY FAIRYMAX GNUCHESS KNIGHTCAP PHALANX
+OPTIONS_DEFAULT=XAW3D
+XAW3D_DESC=	Use Xaw3d widgets (instead of Xaw)
+CRAFTY_DESC=	Install crafty engine
+FAIRYMAX_DESC=	Install fairymax engine
+GNUCHESS_DESC=	Install GnuChess engine
+KNIGHTCAP_DESC=	Install KnightCap engine
+PHALANX_DESC=	Install phalanx engine
 
 USE_XORG=	xt xpm xaw
 GNU_CONFIGURE=	yes
@@ -33,36 +35,37 @@ INSTALLS_ICONS=	yes
 
 .include <bsd.port.options.mk>
 
-.ifdef	WITH_XAW3D
+.if ${PORT_OPTIONS:MXAW3D}
 CONFIGURE_ARGS+=	"--with-Xaw3d"
 LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 .endif
 
-.ifdef WITH_CRAFTY
+.if ${PORT_OPTIONS:MCRAFTY}
 RUN_DEPENDS+=	crafty:${PORTSDIR}/games/crafty
 .endif
 
-.ifdef WITH_FAIRYMAX
+.if ${PORT_OPTIONS:MFAIRYMAX}
 RUN_DEPENDS+=	fairymax:${PORTSDIR}/games/fairymax
 .endif
 
-.ifdef WITH_GNUCHESS
+.if ${PORT_OPTIONS:MGNUCHESS}
 RUN_DEPENDS+=	gnuchess:${PORTSDIR}/games/gnuchess
 .endif
 
-.ifdef WITH_KNIGHTCAP
+.if ${PORT_OPTIONS:MKNIGHTCAP}
 RUN_DEPENDS+=	KnightCap:${PORTSDIR}/games/KnightCap
 .endif
 
-.ifdef WITH_PHALANX
+.if ${PORT_OPTIONS:MPHALANX}
 RUN_DEPENDS+=	phalanx:${PORTSDIR}/games/phalanx
 .endif
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
+
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 .include <bsd.port.pre.mk>

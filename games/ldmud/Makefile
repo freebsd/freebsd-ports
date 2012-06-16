@@ -34,23 +34,21 @@ MAKE_JOBS_UNSAFE=	yes
 USERS=		mud
 GROUPS=		mud
 
-OPTIONS=	MYSQL "Enable MySQL database support" On \
-		PGSQL "Enable PostgreSQL database support" On \
-		SQLITE "Enable SQLite database support" On \
-		IPV6  "Enable IPv6 support" On \
-		LPMUD "Install default mudlib (LP-245)" On
+OPTIONS_DEFINE=	MYSQL PGSQL SQLITE IPV6 LPMUD
+OPTIONS_DEFAULT=MYSQL PGSQL SQLITE IPV6 LPMUD
+LPMUD_DESC=	Install default mudlib (LP-245)
 
 PORTSCOUT=	skipv:3.4
 
 .include <bsd.port.options.mk>
 
-.ifdef	WITH_IPV6
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=--enable-use-ipv6
 .else
 CONFIGURE_ARGS+=--disable-use-ipv6
 .endif
 
-.ifdef	WITH_MYSQL
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib/mysql
 CONFIGURE_ARGS+=--enable-use-mysql
@@ -58,21 +56,21 @@ CONFIGURE_ARGS+=--enable-use-mysql
 CONFIGURE_ARGS+=--disable-use-mysql
 .endif
 
-.ifdef	WITH_PGSQL
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=--enable-use-pgsql
 .else
 CONFIGURE_ARGS+=--disable-use-pgsql
 .endif
 
-.ifdef	WITH_SQLITE
+.if ${PORT_OPTIONS:MSQLITE}
 USE_SQLITE=	yes
 CONFIGURE_ARGS+=--enable-use-sqlite
 .else
 CONFIGURE_ARGS+=--disable-use-sqlite
 .endif
 
-.ifdef	WITH_LPMUD
+.if ${PORT_OPTIONS:MLPMUD}
 PLIST_SUB+=	LPMUD="" DEMOLIB="@comment "
 .else
 PLIST_SUB+=	LPMUD="@comment " DEMOLIB=""
