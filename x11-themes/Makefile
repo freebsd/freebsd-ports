@@ -94,7 +94,6 @@
     SUBDIR += gtk-nodoka-engine
     SUBDIR += gtk-oxygen-engine
     SUBDIR += gtk-qnxtheme
-    SUBDIR += gtk-qt-engine
     SUBDIR += gtk-qt4-engine
     SUBDIR += gtk-xfce-engine
     SUBDIR += gtk3-oxygen-engine
