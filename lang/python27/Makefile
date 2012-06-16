@@ -81,10 +81,10 @@ PLIST_SUB+=	IF_DEFAULT="@comment "
 .if ${PORT_OPTIONS:MTHREADS}
 PLIST_SUB+=	THREADS=""
 .if ${PORT_OPTIONS:MPTH}
-BROKEN=			does not build with PTH enabled
-CONFIGURE_ARGS+=	--with-pth
+CONFIGURE_ARGS+=	--with-pth --with-system-ffi
 EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-configure-pth
-LIB_DEPENDS+=		pth:${PORTSDIR}/devel/pth
+LIB_DEPENDS+=		pth:${PORTSDIR}/devel/pth \
+			ffi.5:${PORTSDIR}/devel/libffi
 _PTH_CPPFLAGS=		"-I${LOCALBASE}/include/pth"
 _PTH_LDFLAGS=		"-L${LOCALBASE}/lib/pth"
 CPPFLAGS:=		${_PTH_CPPFLAGS} ${CPPFLAGS}
