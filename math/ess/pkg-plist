@@ -1,5 +1,6 @@
 %%EMACS_LIBDIR%%/etc/ess/BACKBUG5.BAT
 %%EMACS_LIBDIR%%/etc/ess/BACKBUGS.BAT
+%%EMACS_LIBDIR%%/etc/ess/SVN-REVISION
 %%EMACS_LIBDIR%%/etc/ess/backbug5
 %%EMACS_LIBDIR%%/etc/ess/backbugs
 %%EMACS_LIBDIR%%/etc/ess/config.guess
