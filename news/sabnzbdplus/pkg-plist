@@ -14,6 +14,7 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/downloader.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/emailer.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/encoding.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/growler.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/interface.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/lang.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/misc.py
@@ -27,6 +28,7 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/postproc.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/powersup.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/rss.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/sabtray.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/scheduler.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/skintext.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/trylist.py
@@ -39,12 +41,12 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/json.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/kronos.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/listquote.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/osx.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/pathbrowser.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/rarfile.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/rsslib.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/servertests.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/ssmtplib.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/utils/systrayiconthread.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/upload.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/version.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/wizard.py
@@ -93,16 +95,15 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/Classic/README.TXT
 %%DATADIR%%/interfaces/Classic/templates/config.tmpl
 %%DATADIR%%/interfaces/Classic/templates/config_cat.tmpl
-%%DATADIR%%/interfaces/Classic/templates/config_directories.tmpl
-%%DATADIR%%/interfaces/Classic/templates/config_email.tmpl
+%%DATADIR%%/interfaces/Classic/templates/config_folders.tmpl
 %%DATADIR%%/interfaces/Classic/templates/config_general.tmpl
-%%DATADIR%%/interfaces/Classic/templates/config_newzbin.tmpl
+%%DATADIR%%/interfaces/Classic/templates/config_indexers.tmpl
+%%DATADIR%%/interfaces/Classic/templates/config_notify.tmpl
 %%DATADIR%%/interfaces/Classic/templates/config_rss.tmpl
 %%DATADIR%%/interfaces/Classic/templates/config_scheduling.tmpl
 %%DATADIR%%/interfaces/Classic/templates/config_server.tmpl
 %%DATADIR%%/interfaces/Classic/templates/config_sorting.tmpl
 %%DATADIR%%/interfaces/Classic/templates/config_switches.tmpl
-%%DATADIR%%/interfaces/Classic/templates/connection_info.tmpl
 %%DATADIR%%/interfaces/Classic/templates/history.tmpl
 %%DATADIR%%/interfaces/Classic/templates/inc_bottom.tmpl
 %%DATADIR%%/interfaces/Classic/templates/inc_cmenu.tmpl
@@ -122,6 +123,53 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/Classic/templates/static/stylesheets/colorschemes/white-black.css
 %%DATADIR%%/interfaces/Classic/templates/static/stylesheets/default.css
 %%DATADIR%%/interfaces/Classic/templates/static/stylesheets/defaultcolors.css
+%%DATADIR%%/interfaces/Classic/templates/status.tmpl
+%%DATADIR%%/interfaces/Config/README.txt
+%%DATADIR%%/interfaces/Config/templates/_inc_footer_uc.tmpl
+%%DATADIR%%/interfaces/Config/templates/_inc_header_uc.tmpl
+%%DATADIR%%/interfaces/Config/templates/config.tmpl
+%%DATADIR%%/interfaces/Config/templates/config_cat.tmpl
+%%DATADIR%%/interfaces/Config/templates/config_folders.tmpl
+%%DATADIR%%/interfaces/Config/templates/config_general.tmpl
+%%DATADIR%%/interfaces/Config/templates/config_indexers.tmpl
+%%DATADIR%%/interfaces/Config/templates/config_notify.tmpl
+%%DATADIR%%/interfaces/Config/templates/config_rss.tmpl
+%%DATADIR%%/interfaces/Config/templates/config_scheduling.tmpl
+%%DATADIR%%/interfaces/Config/templates/config_server.tmpl
+%%DATADIR%%/interfaces/Config/templates/config_sorting.tmpl
+%%DATADIR%%/interfaces/Config/templates/config_special.tmpl
+%%DATADIR%%/interfaces/Config/templates/config_switches.tmpl
+%%DATADIR%%/interfaces/Config/templates/main.tmpl
+%%DATADIR%%/interfaces/Config/templates/staticcfg/css/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%DATADIR%%/interfaces/Config/templates/staticcfg/css/images/ui-bg_flat_0_eeeeee_40x100.png
+%%DATADIR%%/interfaces/Config/templates/staticcfg/css/images/ui-bg_flat_0_ffffff_40x100.png
+%%DATADIR%%/interfaces/Config/templates/staticcfg/css/images/ui-bg_glass_55_fbf9ee_1x400.png
+%%DATADIR%%/interfaces/Config/templates/staticcfg/css/images/ui-bg_glass_95_fef1ec_1x400.png
+%%DATADIR%%/interfaces/Config/templates/staticcfg/css/images/ui-bg_highlight-soft_75_dcdcdc_1x100.png
+%%DATADIR%%/interfaces/Config/templates/staticcfg/css/images/ui-bg_highlight-soft_75_dddddd_1x100.png
+%%DATADIR%%/interfaces/Config/templates/staticcfg/css/images/ui-bg_highlight-soft_75_efefef_1x100.png
+%%DATADIR%%/interfaces/Config/templates/staticcfg/css/images/ui-bg_inset-soft_75_dfdfdf_1x100.png
+%%DATADIR%%/interfaces/Config/templates/staticcfg/css/images/ui-icons_222222_256x240.png
+%%DATADIR%%/interfaces/Config/templates/staticcfg/css/images/ui-icons_2e83ff_256x240.png
+%%DATADIR%%/interfaces/Config/templates/staticcfg/css/images/ui-icons_8c291d_256x240.png
+%%DATADIR%%/interfaces/Config/templates/staticcfg/css/images/ui-icons_cd0a0a_256x240.png
+%%DATADIR%%/interfaces/Config/templates/staticcfg/css/style.css
+%%DATADIR%%/interfaces/Config/templates/staticcfg/ico/apple-touch-icon-114x114-precomposed.png
+%%DATADIR%%/interfaces/Config/templates/staticcfg/ico/apple-touch-icon-144x144-precomposed.png
+%%DATADIR%%/interfaces/Config/templates/staticcfg/ico/apple-touch-icon-57x57-precomposed.png
+%%DATADIR%%/interfaces/Config/templates/staticcfg/ico/apple-touch-icon-72x72-precomposed.png
+%%DATADIR%%/interfaces/Config/templates/staticcfg/ico/apple-touch-icon-precomposed.png
+%%DATADIR%%/interfaces/Config/templates/staticcfg/ico/favicon.ico
+%%DATADIR%%/interfaces/Config/templates/staticcfg/images/button.png
+%%DATADIR%%/interfaces/Config/templates/staticcfg/images/loading-bar.gif
+%%DATADIR%%/interfaces/Config/templates/staticcfg/images/loading16.gif
+%%DATADIR%%/interfaces/Config/templates/staticcfg/images/logo.png
+%%DATADIR%%/interfaces/Config/templates/staticcfg/images/mini-left.gif
+%%DATADIR%%/interfaces/Config/templates/staticcfg/images/mini-right.gif
+%%DATADIR%%/interfaces/Config/templates/staticcfg/images/no16.png
+%%DATADIR%%/interfaces/Config/templates/staticcfg/images/select_arrow.gif
+%%DATADIR%%/interfaces/Config/templates/staticcfg/images/yes16.png
+%%DATADIR%%/interfaces/Config/templates/staticcfg/js/script.js
 %%DATADIR%%/interfaces/Mobile/README.txt
 %%DATADIR%%/interfaces/Mobile/licenses/LICENSE-BSD.txt
 %%DATADIR%%/interfaces/Mobile/licenses/LICENSE-CC.txt
@@ -177,16 +225,16 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/Plush/templates/_inc_modals.tmpl
 %%DATADIR%%/interfaces/Plush/templates/config.tmpl
 %%DATADIR%%/interfaces/Plush/templates/config_cat.tmpl
-%%DATADIR%%/interfaces/Plush/templates/config_directories.tmpl
-%%DATADIR%%/interfaces/Plush/templates/config_email.tmpl
+%%DATADIR%%/interfaces/Plush/templates/config_folders.tmpl
 %%DATADIR%%/interfaces/Plush/templates/config_general.tmpl
-%%DATADIR%%/interfaces/Plush/templates/config_newzbin.tmpl
+%%DATADIR%%/interfaces/Plush/templates/config_indexers.tmpl
+%%DATADIR%%/interfaces/Plush/templates/config_notify.tmpl
 %%DATADIR%%/interfaces/Plush/templates/config_rss.tmpl
 %%DATADIR%%/interfaces/Plush/templates/config_scheduling.tmpl
 %%DATADIR%%/interfaces/Plush/templates/config_server.tmpl
 %%DATADIR%%/interfaces/Plush/templates/config_sorting.tmpl
+%%DATADIR%%/interfaces/Plush/templates/config_special.tmpl
 %%DATADIR%%/interfaces/Plush/templates/config_switches.tmpl
-%%DATADIR%%/interfaces/Plush/templates/connection_info.tmpl
 %%DATADIR%%/interfaces/Plush/templates/history.tmpl
 %%DATADIR%%/interfaces/Plush/templates/main.tmpl
 %%DATADIR%%/interfaces/Plush/templates/nzo.tmpl
@@ -234,6 +282,7 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-icons_999999_256x240.png
 %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-icons_fbc856_256x240.png
 %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/jquery-ui-1.8.15.custom.css
+%%DATADIR%%/interfaces/Plush/templates/status.tmpl
 %%DATADIR%%/interfaces/smpl/CreativeCommons2-5.txt
 %%DATADIR%%/interfaces/smpl/CreativeCommons3-0.txt
 %%DATADIR%%/interfaces/smpl/GPL2.txt
@@ -248,16 +297,15 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/smpl/README.txt
 %%DATADIR%%/interfaces/smpl/templates/config.tmpl
 %%DATADIR%%/interfaces/smpl/templates/config_cat.tmpl
-%%DATADIR%%/interfaces/smpl/templates/config_directories.tmpl
-%%DATADIR%%/interfaces/smpl/templates/config_email.tmpl
+%%DATADIR%%/interfaces/smpl/templates/config_folders.tmpl
 %%DATADIR%%/interfaces/smpl/templates/config_general.tmpl
-%%DATADIR%%/interfaces/smpl/templates/config_newzbin.tmpl
+%%DATADIR%%/interfaces/smpl/templates/config_indexers.tmpl
+%%DATADIR%%/interfaces/smpl/templates/config_notify.tmpl
 %%DATADIR%%/interfaces/smpl/templates/config_rss.tmpl
 %%DATADIR%%/interfaces/smpl/templates/config_scheduling.tmpl
 %%DATADIR%%/interfaces/smpl/templates/config_server.tmpl
 %%DATADIR%%/interfaces/smpl/templates/config_sorting.tmpl
 %%DATADIR%%/interfaces/smpl/templates/config_switches.tmpl
-%%DATADIR%%/interfaces/smpl/templates/connection_info.tmpl
 %%DATADIR%%/interfaces/smpl/templates/history.tmpl
 %%DATADIR%%/interfaces/smpl/templates/main.tmpl
 %%DATADIR%%/interfaces/smpl/templates/nzo.tmpl
@@ -284,6 +332,7 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/smpl/templates/static/stylesheets/colorschemes/black.css
 %%DATADIR%%/interfaces/smpl/templates/static/stylesheets/colorschemes/white.css
 %%DATADIR%%/interfaces/smpl/templates/static/stylesheets/smpl.css
+%%DATADIR%%/interfaces/smpl/templates/status.tmpl
 %%DATADIR%%/interfaces/wizard/README.TXT
 %%DATADIR%%/interfaces/wizard/four.html
 %%DATADIR%%/interfaces/wizard/inc_bottom.tmpl
@@ -293,14 +342,6 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/wizard/static/images/classic-th.png
 %%DATADIR%%/interfaces/wizard/static/images/classic.png
 %%DATADIR%%/interfaces/wizard/static/images/favicon.ico
-%%DATADIR%%/interfaces/wizard/static/images/flags/da.png
-%%DATADIR%%/interfaces/wizard/static/images/flags/de.png
-%%DATADIR%%/interfaces/wizard/static/images/flags/en.png
-%%DATADIR%%/interfaces/wizard/static/images/flags/fr.png
-%%DATADIR%%/interfaces/wizard/static/images/flags/nb.png
-%%DATADIR%%/interfaces/wizard/static/images/flags/nl.png
-%%DATADIR%%/interfaces/wizard/static/images/flags/ro.png
-%%DATADIR%%/interfaces/wizard/static/images/flags/sv.png
 %%DATADIR%%/interfaces/wizard/static/images/icon_sab.png
 %%DATADIR%%/interfaces/wizard/static/images/plush-th.png
 %%DATADIR%%/interfaces/wizard/static/images/plush.png
@@ -315,36 +356,51 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/wizard/two.html
 %%DATADIR%%/locale/da/LC_MESSAGES/SABnzbd.mo
 %%DATADIR%%/locale/de/LC_MESSAGES/SABnzbd.mo
+%%DATADIR%%/locale/es/LC_MESSAGES/SABnzbd.mo
 %%DATADIR%%/locale/fr/LC_MESSAGES/SABnzbd.mo
 %%DATADIR%%/locale/nb/LC_MESSAGES/SABnzbd.mo
 %%DATADIR%%/locale/nl/LC_MESSAGES/SABnzbd.mo
+%%DATADIR%%/locale/pl/LC_MESSAGES/SABnzbd.mo
+%%DATADIR%%/locale/pt_BR/LC_MESSAGES/SABnzbd.mo
 %%DATADIR%%/locale/ro/LC_MESSAGES/SABnzbd.mo
 %%DATADIR%%/locale/sv/LC_MESSAGES/SABnzbd.mo
 %%DATADIR%%/po/email/SABemail.pot
 %%DATADIR%%/po/email/da.po
 %%DATADIR%%/po/email/de.po
 %%DATADIR%%/po/email/en.po
+%%DATADIR%%/po/email/es.po
 %%DATADIR%%/po/email/fr.po
 %%DATADIR%%/po/email/nb.po
 %%DATADIR%%/po/email/nl.po
+%%DATADIR%%/po/email/pl.po
+%%DATADIR%%/po/email/pl.px
+%%DATADIR%%/po/email/pt_BR.po
 %%DATADIR%%/po/email/ro.po
 %%DATADIR%%/po/email/ro.px
 %%DATADIR%%/po/email/sv.po
 %%DATADIR%%/po/main/SABnzbd.pot
 %%DATADIR%%/po/main/da.po
 %%DATADIR%%/po/main/de.po
+%%DATADIR%%/po/main/es.po
 %%DATADIR%%/po/main/fr.po
 %%DATADIR%%/po/main/nb.po
 %%DATADIR%%/po/main/nl.po
+%%DATADIR%%/po/main/pl.po
+%%DATADIR%%/po/main/pl.px
+%%DATADIR%%/po/main/pt_BR.po
 %%DATADIR%%/po/main/ro.po
 %%DATADIR%%/po/main/ro.px
 %%DATADIR%%/po/main/sv.po
 %%DATADIR%%/po/nsis/SABnsis.pot
 %%DATADIR%%/po/nsis/da.po
 %%DATADIR%%/po/nsis/de.po
+%%DATADIR%%/po/nsis/es.po
 %%DATADIR%%/po/nsis/fr.po
 %%DATADIR%%/po/nsis/nb.po
 %%DATADIR%%/po/nsis/nl.po
+%%DATADIR%%/po/nsis/pl.po
+%%DATADIR%%/po/nsis/pl.px
+%%DATADIR%%/po/nsis/pt_BR.po
 %%DATADIR%%/po/nsis/ro.po
 %%DATADIR%%/po/nsis/ro.px
 %%DATADIR%%/po/nsis/sv.po
@@ -363,19 +419,24 @@ bin/SABnzbd.py
 @dirrm %%DATADIR%%/locale/sv
 @dirrm %%DATADIR%%/locale/ro/LC_MESSAGES
 @dirrm %%DATADIR%%/locale/ro
+@dirrm %%DATADIR%%/locale/pt_BR/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/pt_BR
+@dirrm %%DATADIR%%/locale/pl/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/pl
 @dirrm %%DATADIR%%/locale/nl/LC_MESSAGES
 @dirrm %%DATADIR%%/locale/nl
 @dirrm %%DATADIR%%/locale/nb/LC_MESSAGES
 @dirrm %%DATADIR%%/locale/nb
 @dirrm %%DATADIR%%/locale/fr/LC_MESSAGES
 @dirrm %%DATADIR%%/locale/fr
+@dirrm %%DATADIR%%/locale/es/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/es
 @dirrm %%DATADIR%%/locale/de/LC_MESSAGES
 @dirrm %%DATADIR%%/locale/de
 @dirrm %%DATADIR%%/locale/da/LC_MESSAGES
 @dirrm %%DATADIR%%/locale/da
 @dirrm %%DATADIR%%/locale
 @dirrm %%DATADIR%%/interfaces/wizard/static/javascript
-@dirrm %%DATADIR%%/interfaces/wizard/static/images/flags
 @dirrm %%DATADIR%%/interfaces/wizard/static/images
 @dirrm %%DATADIR%%/interfaces/wizard/static
 @dirrm %%DATADIR%%/interfaces/wizard
@@ -412,6 +473,14 @@ bin/SABnzbd.py
 @dirrm %%DATADIR%%/interfaces/Mobile/templates
 @dirrm %%DATADIR%%/interfaces/Mobile/licenses
 @dirrm %%DATADIR%%/interfaces/Mobile
+@dirrm %%DATADIR%%/interfaces/Config/templates/staticcfg/js
+@dirrm %%DATADIR%%/interfaces/Config/templates/staticcfg/images
+@dirrm %%DATADIR%%/interfaces/Config/templates/staticcfg/ico
+@dirrm %%DATADIR%%/interfaces/Config/templates/staticcfg/css/images
+@dirrm %%DATADIR%%/interfaces/Config/templates/staticcfg/css
+@dirrm %%DATADIR%%/interfaces/Config/templates/staticcfg
+@dirrm %%DATADIR%%/interfaces/Config/templates
+@dirrm %%DATADIR%%/interfaces/Config
 @dirrm %%DATADIR%%/interfaces/Classic/templates/static/stylesheets/colorschemes
 @dirrm %%DATADIR%%/interfaces/Classic/templates/static/stylesheets
 @dirrm %%DATADIR%%/interfaces/Classic/templates/static/javascript
