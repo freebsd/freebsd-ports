@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120616:
+  AFFECTS: users of www/lighttpd
+  AUTHOR: mm@FreeBSD.org
+
+  The lighttpd startup script has been changed and is now compatible to the
+  apache startup script. The "reload" subcommand now sends a SIGHUP to the
+  process and triggers cycling of log files. The new command "graceful"
+  performs a graceful restart (similiar to former "reload") and "gracefulstop"
+  performs a graceful stop. The "check" command has been replaced with 
+  the "configtest" command.
+
 20120615:
   AFFECTS: users of databases/akonadi
   AUTHOR: kde@FreeBSD.org

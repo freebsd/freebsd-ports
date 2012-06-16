@@ -49,17 +49,16 @@ fi
 
 command=%%PREFIX%%/sbin/lighttpd
 stop_postcmd=stop_postcmd
-restart_precmd="checkconfig"
-reload_precmd=reload_precmd
-reload_postcmd=reload_postcmd
-sig_reload="INT"
-check_cmd="checkconfig"
-extra_commands="reload check"
+restart_precmd="lighttpd_checkconfig"
+graceful_cmd="lighttpd_graceful"
+gracefulstop_cmd="lighttpd_gracefulstop"
+configtest_cmd="lighttpd_checkconfig"
+extra_commands="reload graceful gracefulstop configtest"
 command_args="-f ${lighttpd_conf}"
 pidfile=${lighttpd_pidfile}
 required_files=${lighttpd_conf}
 
-check_deprecated()
+lighttpd_check_deprecated()
 {
 	if [ -n "${deprecated_conf}" ]; then
 		echo ""
@@ -70,33 +69,27 @@ check_deprecated()
 	fi
 }
 
-checkconfig()
+lighttpd_checkconfig()
 {
 	echo "Performing sanity check on ${name} configuration:"
 	eval "${command} ${command_args} -t"
 }
 
-stop_postcmd()
+lighttpd_gracefulstop()
 {
-	rm -f ${pidfile}
+	echo "Stopping ${name} gracefully."
+	sig_reload="INT"
+	run_rc_command reload
 }
 
-reload_precmd()
+lighttpd_graceful()
 {
-	if checkconfig; then
-		echo "Performing a graceful restart"
-	else
-		return 1
-	fi
-}
-
-reload_postcmd()
-{
+	lighttpd_gracefulstop
 	rm -f ${pidfile}
 	run_rc_command start
 }
 
-run_instance()
+lighttpd_run_instance()
 {
 	_i="$1"
 	_rcmd="$2"
@@ -108,6 +101,11 @@ run_instance()
 	pidfile=${lighttpd_pidfile}
 	required_files=${lighttpd_conf}
 	run_rc_command ${_rcmd}
+}
+
+stop_postcmd()
+{
+	rm -f ${pidfile}
 }
 
 if [ -n "${lighttpd_instances}" ]; then
@@ -131,9 +129,9 @@ if [ -n "${lighttpd_instances}" ]; then
 		_runlist="${lighttpd_instances}"
 	fi
 	for _in in ${_runlist}; do
-		run_instance $_in $_run_cmd
+		lighttpd_run_instance $_in $_run_cmd
 	done
 else
-	start_precmd="check_deprecated"
+	start_precmd="lighttpd_check_deprecated"
 	run_rc_command "$1"
 fi
