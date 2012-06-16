@@ -1140,8 +1140,7 @@ MASTER_SITE_SAVANNAH+= \
 
 .if !defined(IGNORE_MASTER_SITE_SOURCEFORGE)
 .for mirror in heanet sunet iweb switch surfnet kent freefr \
-		voxel jaist osdn nchc ncu transact softlayer \
-		internode ufpr waix
+		voxel jaist osdn nchc ncu internode ufpr waix
 #		garr dfn ovh (redirect as of 2009-Sep-02)
 MASTER_SITE_SOURCEFORGE+= \
 	http://${mirror}.dl.sourceforge.net/project/%SUBDIR%/
@@ -1202,7 +1201,6 @@ MASTER_SITE_SUNSITE+= \
 	http://www.gtlib.gatech.edu/pub/Linux/%SUBDIR%/ \
 	ftp://ftp.cs.tu-berlin.de/pub/linux/Mirrors/sunsite.unc.edu/%SUBDIR%/ \
 	ftp://ftp.physics.auth.gr/pub/mirrors/ibiblio/Linux/%SUBDIR%/ \
-	ftp://ftp.edisontel.com/pub/Sunsite_Mirror/%SUBDIR%/ \
 	ftp://ftp.nluug.nl/pub/metalab/%SUBDIR%/ \
 	ftp://ftp.nvg.ntnu.no/pub/mirrors/metalab.unc.edu/%SUBDIR%/ \
 	ftp://ftp.icm.edu.pl/pub/Linux/sunsite/%SUBDIR%/ \
