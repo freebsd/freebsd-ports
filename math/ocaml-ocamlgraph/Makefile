@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ocamlgraph
-PORTVERSION=	1.8.1
-PORTREVISION=	1
+PORTVERSION=	1.8.2
 CATEGORIES=	math
 MASTER_SITES=	http://ocamlgraph.lri.fr/download/
 PKGNAMEPREFIX=	ocaml-
@@ -15,7 +14,9 @@ PKGNAMEPREFIX=	ocaml-
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Graph manipulation library for OCaml
 
-OPTIONS=	GUI "Include user programs: viewer and editor" on
+OPTIONS_DEFINE=	GUI
+OPTIONS_DEFAULT=GUI
+GUI_DESC=	Include GUI user programs: viewer and editor
 
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
@@ -29,9 +30,11 @@ PLIST_SUB+=	OCAMLGRAPHDIR="${OCAML_LIBDIR}/${PORTNAME}"
 ALL_TARGET=	all
 INSTALL_TARGET=	install install-findlib
 
-.include <bsd.port.pre.mk>
+PORTSCOUT=	skipv:1.81
 
-.ifdef WITH_GUI
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGUI}
 BUILD_DEPENDS+=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 RUN_DEPENDS+=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 PLIST_SUB+=	GUI=""
@@ -40,16 +43,20 @@ CONFIGURE_ARGS+=	LABLGTK2=no
 PLIST_SUB+=		GUI="@comment "
 .endif
 
-.ifndef NOPORTDOCS
+.if ${PORT_OPTIONS:MDOCS}
 ALL_TARGET+=	doc
 PORTDOCS=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e '/VIEWER_DIR. doc/d' ${WRKSRC}/Makefile.in
+.if empty(PORT_OPTIONS:MGUI)
+	# Override auto-detection
+	@${REINPLACE_CMD} -Ee 's/(LABLGTK2)=yes/\1=no/' ${WRKSRC}/configure
+.endif
 
 post-install:
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc; ${INSTALL_DATA} * ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

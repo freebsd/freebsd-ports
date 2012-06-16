@@ -9,6 +9,7 @@
 %%OCAMLGRAPHDIR%%/cliquetree.mli
 %%OCAMLGRAPHDIR%%/coloring.mli
 %%OCAMLGRAPHDIR%%/components.mli
+%%OCAMLGRAPHDIR%%/contraction.mli
 %%OCAMLGRAPHDIR%%/delaunay.mli
 %%OCAMLGRAPHDIR%%/dot.mli
 %%OCAMLGRAPHDIR%%/dot_ast.mli
@@ -26,9 +27,11 @@
 %%OCAMLGRAPHDIR%%/graphviz.mli
 %%OCAMLGRAPHDIR%%/imperative.mli
 %%OCAMLGRAPHDIR%%/kruskal.mli
+%%OCAMLGRAPHDIR%%/leaderlist.mli
 %%OCAMLGRAPHDIR%%/mcs_m.mli
 %%OCAMLGRAPHDIR%%/md.mli
 %%OCAMLGRAPHDIR%%/minsep.mli
+%%OCAMLGRAPHDIR%%/nonnegative.mli
 %%OCAMLGRAPHDIR%%/oper.mli
 %%OCAMLGRAPHDIR%%/pack.mli
 %%OCAMLGRAPHDIR%%/path.mli
