@@ -7,17 +7,18 @@
 
 PORTNAME=	openjpeg
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An open-source JPEG 2000 codec
 
-LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
-		png15:${PORTSDIR}/graphics/png
-
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
+		png15:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 USE_CMAKE=	yes
