@@ -33,24 +33,19 @@ MAKE_ENV+=	PLUGIN_DIR=${PREFIX}/libexec/gkrellm2/plugins \
 		LOCALEDIR=${PREFIX}/share/locale \
 		enable_nls=1
 
-OPTIONS=	BEEP_MEDIA_PLAYER	"Use beep"	off \
-		XMMS			"Use XMMS"	on
+OPTIONS_SINGLE=		PLAYER
+OPTIONS_SINGLE_PLAYER=	BMP XMMS
+OPTIONS_DEFAULT=	XMMS
+BMP_DESC=		Use Beep Media Player
+XMMS_DESC=		Use XMMS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITH_BEEP_MEDIA_PLAYER) && !defined(WITH_XMMS)
-.if defined(WITHOUT_BEEP_MEDIA_PLAYER) && defined(WITHOUT_XMMS)
-BROKEN=		You need to select beep or XMMS.  Run 'make config' again!
-.endif
-WITH_XMMS=	yes
-.elif defined(WITH_BEEP_MEDIA_PLAYER) && defined(WITH_XMMS)
-BROKEN=		beep and XMMS are mutually exclusive.  Run 'make config' again!
-.endif
-.if defined(WITH_BEEP_MEDIA_PLAYER)
+.if ${PORT_OPTIONS:MBMP}
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player
 MAKE_ENV+=	USE_BMP=yes
-.elif defined(WITH_XMMS)
+.elif ${PORT_OPTIONS:MXMMS}
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
