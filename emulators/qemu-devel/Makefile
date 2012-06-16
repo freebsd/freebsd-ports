@@ -33,19 +33,19 @@ MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	SAMBA SDL OPENGL GNUTLS SASL JPEG PNG CURL CDROM_DMA PCAP \
 		USBREDIR GNS3 ADD_AUDIO ALL_TARGETS
-SAMBA_DESC=		"samba dependency (for -smb)"
-GNUTLS_DESC=		"gnutls dependency (vnc encryption)"
-SASL_DESC=		"cyrus-sasl dependency (vnc encryption)"
-JPEG_DESC=		"jpeg dependency (vnc lossy compression)"
-PNG_DESC=		"png dependency (vnc compression)"
-CURL_DESC=		"libcurl dependency (remote images)"
+SAMBA_DESC=		samba dependency (for -smb)
+GNUTLS_DESC=		gnutls dependency (vnc encryption)
+SASL_DESC=		cyrus-sasl dependency (vnc encryption)
+JPEG_DESC=		jpeg dependency (vnc lossy compression)
+PNG_DESC=		png dependency (vnc compression)
+CURL_DESC=		libcurl dependency (remote images)
 CDROM_DMA_DESC=		IDE CDROM DMA
-PCAP_DESC=		"pcap dependency (networking with bpf)"
-SEABIOS_GIT_DESC=	"add seabios snapshot (-bios bios.bin-1.6.3.1)"
-USBREDIR_DESC=		"usb device network redirection (experimental!)"
-GNS3_DESC=		"gns3 patches (udp, promiscuous multicast)"
-ADD_AUDIO_DESC=		"Emulate more audio hardware (experimental!)"
-ALL_TARGETS_DESC=	"Also build bsd-user targets (for testing)"
+PCAP_DESC=		pcap dependency (networking with bpf)
+SEABIOS_GIT_DESC=	add seabios snapshot (-bios bios.bin-1.6.3.1)
+USBREDIR_DESC=		usb device network redirection (experimental!)
+GNS3_DESC=		gns3 patches (udp, promiscuous multicast)
+ADD_AUDIO_DESC=		Emulate more audio hardware (experimental!)
+ALL_TARGETS_DESC=	Also build bsd-user targets (for testing)
 OPTIONS_DEFAULT=SDL OPENGL GNUTLS SASL JPEG PNG CURL CDROM_DMA PCAP
 
 .include <bsd.port.options.mk>

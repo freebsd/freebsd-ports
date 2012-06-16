@@ -89,8 +89,8 @@ PLIST_SUB+=	PYVER="${PYTHON_VERSION:S/python//:S/.//g}"
 
 OPTIONS_DEFINE=	AVAHI LIBBLURAY FAAC HAL LIRC MMS NONFREE PULSEAUDIO RTMP \
 		VAAPI VDPAU XRANDR WEBSERVER
-MMS_DESC=	"Enable mms:// & mmsh:// support"
-NONFREE_DESC=	"Enable non-free components (rar, ccx, ffmpeg)"
+MMS_DESC=	Enable mms:// & mmsh:// support
+NONFREE_DESC=	Enable non-free components (rar, ccx, ffmpeg)
 OPTIONS_DEFAULT=	AVAHI LIBBLURAY HAL MMS XRANDR
 
 DESKTOP_ENTRIES="XBMC" \
