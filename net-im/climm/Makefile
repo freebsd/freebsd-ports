@@ -24,48 +24,49 @@ MAN1=		climm.1
 MAN5=		climmrc.5
 MAN7=		climmcmds.7
 
-OPTIONS=	LIBICONV "Iconv character set conversion" on \
-		P2P "Peer2peer connection support" on \
-		TCL "TCL scripting support" on \
-		OTR "OTR encryption support" on \
-		REMOTE "Remote control fifo support" on \
-		XMPP "XMPP Jabber support" off
+OPTIONS_DEFINE=	ICONV P2P TCL OTR REMOTE XMPP
+OPTIONS_DEFAULT=ICONV P2P TCL OTR REMOTE
+P2P_DESC=	Enable Peer2peer connection support
+OTR_DESC=	Enable OTR encryption support
+REMOTE_DESC=	Enable Remote control fifo support
+XMPP_DESC=	Enable XMPP Jabber support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_OTR)
-CONFIGURE_ARGS+=	--disable-otr
-.else
+.if ${PORT_OPTIONS:MOTR}
 CPPFLAGS+=		-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-otr
 LIB_DEPENDS+=		otr:${PORTSDIR}/security/libotr
-.endif
-
-.if defined(WITHOUT_LIBICONV)
-CONFIGURE_ARGS+=	--disable-iconv
 .else
-USE_ICONV=		yes
+CONFIGURE_ARGS+=	--disable-otr
 .endif
 
-.if defined(WITHOUT_P2P)
+.if ${PORT_OPTIONS:MICONV}
+USE_ICONV=		yes
+.else
+CONFIGURE_ARGS+=	--disable-iconv
+.endif
+
+.if ${PORT_OPTIONS:MOTR}
+CONFIGURE_ARGS+=	--enable-peer2peer
+.else
 CONFIGURE_ARGS+=	--disable-peer2peer
 .endif
 
-.if defined(WITHOUT_TCL)
-CONFIGURE_ARGS+=	--disable-tcl
-.else
+.if ${PORT_OPTIONS:MTCL}
 USE_TCL=		yes
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
+.else
+CONFIGURE_ARGS+=	--disable-tcl
 .endif
 
-.if defined(WITHOUT_REMOTE)
+.if ${PORT_OPTIONS:MREMOTE}
+CONFIGURE_ARGS+=	--enable-remote
+.else
 CONFIGURE_ARGS+=	--disable-remote
 .endif
 
-.if defined(WITHOUT_XMPP)
-USE_OPENSSL=		yes
-CONFIGURE_ARGS+=	--disable-xmpp --enable-ssl=openssl
-.else
+.if ${PORT_OPTIONS:MXMPP}
 CFLAGS+=		-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-xmpp --enable-ssl=gnutls \
 			--with-libgcrypt-prefix=${LOCALBASE}
@@ -75,6 +76,9 @@ LIB_DEPENDS+=		iksemel:${PORTSDIR}/textproc/iksemel \
 			gnutls:${PORTSDIR}/security/gnutls \
 			gcrypt:${PORTSDIR}/security/libgcrypt \
 			gpg-error:${PORTSDIR}/security/libgpg-error
+.else
+USE_OPENSSL=		yes
+CONFIGURE_ARGS+=	--disable-xmpp --enable-ssl=openssl
 .endif
 
 post-patch:
@@ -95,4 +99,4 @@ post-install:
 . endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
