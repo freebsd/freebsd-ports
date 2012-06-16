@@ -41,6 +41,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		odbc:${PORTSDIR}/databases/unixODBC
 
 CONFLICTS=	freeswitch-core-[0-9]*
+LATEST_LINK=	${PKGBASE}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
