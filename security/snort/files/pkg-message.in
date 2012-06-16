@@ -3,4 +3,11 @@ Snort uses rcNG startup script and must be enabled via /etc/rc.conf
 Please see %%PREFIX%%/etc/rc.d/snort
 for list of available variables and their description.
 Configuration files are located in %%PREFIX%%/etc/snort directory.
+
+Please note that, by default, snort will truncate packets larger than the
+default snaplen of 15158 bytes.  Additionally, LRO may cause issues with
+Stream5 target-based reassembly.  It is recommended to disable LRO, if
+your card supports it.
+
+This can be done by appending '-lro' to your ifconfig_ line in rc.conf.
 =========================================================================
