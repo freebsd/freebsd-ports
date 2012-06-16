@@ -1707,27 +1707,6 @@
  
  ifeq ($(HAVE_ALTZONE),true)
  OTHER_CPPFLAGS += -DHAVE_ALTZONE
---- jdk/make/java/java/genlocales.gmk	2012-05-26 23:29:12.000000000 -0700
-+++ jdk/make/java/java/genlocales.gmk	2012-05-20 10:37:13.000000000 -0700
-@@ -82,10 +82,14 @@
- $(LocaleDataMetaInfo_Dest):$(LocaleDataMetaInfo_Src) $(LOCALEGEN_SH)
- 	@$(RM) $@.tmp.euro $@.tmp.noneuro;
- 	@$(prep-target) 
--	@$(ECHO) $(Euro_Resources_properties) | $(NAWK) 'gsub(/.properties/,"\n") {print}'  > $@.tmp.euro;
--	@$(ECHO) $(Euro_Resources_java) | $(NAWK) 'gsub(/.java/,"\n") {print}' >> $@.tmp.euro;
--	@$(ECHO) $(NonEuro_Resources_properties) | $(NAWK) 'gsub(/.properties/,"\n") {print}' > $@.tmp.noneuro;
--	@$(ECHO) $(NonEuro_Resources_java) | $(NAWK) 'gsub(/.java/,"\n") {print}' >> $@.tmp.noneuro;
-+	@$(ECHO) $(Euro_Resources_properties) | $(SED) -e s@.properties@'\
-+'@g > $@.tmp.euro;
-+	@$(ECHO) $(Euro_Resources_java) | $(SED) -e s@.java@'\
-+'@g >> $@.tmp.euro;
-+	@$(ECHO) $(NonEuro_Resources_properties) | $(SED) -e s@.properties@'\
-+'@g > $@.tmp.noneuro;
-+	@$(ECHO) $(NonEuro_Resources_java) | $(SED) -e s@.java@'\
-+'@g >> $@.tmp.noneuro;
- 	NAWK="$(NAWK)" SED="$(SED)" SORT="$(SORT)" \
- 	     $(SH) $(LOCALEGEN_SH) $(RESOURCE_NAMES) $@.tmp.euro \
- 		$@.tmp.noneuro $< $@
 --- jdk/make/java/jli/Makefile	2012-05-26 23:29:12.000000000 -0700
 +++ jdk/make/java/jli/Makefile	2012-05-17 16:18:00.000000000 -0700
 @@ -116,9 +116,9 @@
