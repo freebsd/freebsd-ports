@@ -1,0 +1,59 @@
+
+Automatic installation of database files
+---------------------------------------------
+Since v0.4 phpipam can automatically install database files for you.
+Point browser to phpipam directory and set MySQL login details (root 
+username and password).
+
+Finished! Launch browser, go to website and if something is missing / not 
+configured properly the error will appear.
+
+Manual installation of database files
+------------------------------------------
+Optional method to be used instead of automatic configuration.
+
+MySQL schema file is available under db folder.
+First you must create new database, and then import SCHEMA file into 
+database. Instructions below are for command-line import with local mysql 
+installation.
+------
+mysql -u root -p 
+create database phpipam;
+exit
+------
+
+Import database SCHEME.sql file:
+------
+mysql -u root -p phpipam < db/SCHEMA.sql
+------
+
+Create user for database interaction from website and grant permissions to 
+ipam tables. Please change the username and password (ipv6, ipv6admin) 
+according to your needs - you must also replace default ones in config file.
+------
+mysql -u root -p
+grant ALL on phpipam.* to ipv6@localhost identified by "ipv6admin";
+exit
+------
+
+%%DISTNAME%% has been installed into:
+
+    %%WWWDIR%%
+
+Example Apache config:
+
+    Alias /phpipam/ "%%WWWDIR%%/"
+
+    <Directory "%%WWWDIR%%/">
+        Options none
+        AllowOverride Limit
+
+        Order Deny,Allow
+        Deny from all
+        Allow from 127.0.0.1 .example.com
+    </Directory>
+
+config.php is where site configuration and database details are configured.
+
+Default user/password is Admin/ipamadmin
+
