@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Deep
-PORTVERSION=	0.109
+PORTVERSION=	0.110
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,6 +24,6 @@ REINPLACE_ARGS=	-i ''
 MAN3=		Test::Deep.3 Test::Deep::NoTest.3
 
 post-patch:
-	${REINPLACE_CMD} -e '/return (/s/;/);/' ${WRKSRC}/lib/Test/Deep/RegexpOnly.pm
+	@${REINPLACE_CMD} -e '/return (/s/;/);/' ${WRKSRC}/lib/Test/Deep/RegexpOnly.pm
 
 .include <bsd.port.mk>
