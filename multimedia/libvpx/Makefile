@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libvpx
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	multimedia
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -14,8 +14,8 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	VP8 Codec SDK
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
-		${LOCALBASE}/bin/yasm:${PORTSDIR}/devel/yasm
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
+		yasm:${PORTSDIR}/devel/yasm
 
 USE_BZIP2=	yes
 PROJECTHOST=	webm
@@ -83,7 +83,7 @@ post-patch:
 	@${REINPLACE_CMD} 's|\(link_with_cc\)=gcc|\1=$${CC}|' \
 		${WRKSRC}/build/make/configure.sh
 	@${GREP} -Rl '^#!/bin/bash' ${WRKSRC} |${XARGS} ${REINPLACE_CMD} \
-		-e 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,g'
+		-e 's,#!/bin/bash,#!/usr/bin/env bash,g'
 .if ${OSVERSION} < 700000
 	@${GREP} -Rl 'LIBVPX_SO.*extralibs' ${WRKSRC} |${XARGS} ${REINPLACE_CMD} \
 		-e 's/\(LIBVPX_SO.*extralibs[[:space:]]*+=[[:space:]]*\)/\1-lc /g'
