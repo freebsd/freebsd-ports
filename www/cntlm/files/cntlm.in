@@ -20,7 +20,7 @@ rcvar=cntlm_enable
 load_rc_config $name
 
 : ${cntlm_enable="NO"}
-: ${cntlm_config="%%{PREFIX}/etc/cntlm.conf"}
+: ${cntlm_config="%%PREFIX%%/etc/cntlm.conf"}
 : ${cntlm_user="nobody"}
 
 pidfile=/var/run/${name}.pid
