@@ -37,15 +37,14 @@ share/themes/Clearlooks-Olive/gtk-2.0/gtkrc
 share/themes/Clearlooks-Quicksilver/gtk-2.0/gtkrc
 %%ENGINE%%share/themes/Clearlooks/gtk-2.0/gtkrc
 share/themes/Clearlooks/index.theme
-@dirrm share/themes/Clearlooks/gtk-2.0
+@dirrmtry share/themes/Clearlooks/gtk-2.0
 @dirrm share/themes/Clearlooks-Quicksilver/gtk-2.0
 @dirrm share/themes/Clearlooks-Quicksilver
 @dirrm share/themes/Clearlooks-Olive/gtk-2.0
-@dirrm share/themes/Clearlooks-Olive
+@dirrmtry share/themes/Clearlooks-Olive
 @dirrm share/themes/Clearlooks-DeepSky/gtk-2.0
 @dirrm share/themes/Clearlooks-DeepSky
-@dirrm share/themes/Clearlooks
-@dirrm share/themes/Clearlooks
+@dirrmtry share/themes/Clearlooks
 @dirrmtry share/themes
 @dirrm share/icons/Clearlooks/24x24/gtk
 @dirrm share/icons/Clearlooks/24x24
