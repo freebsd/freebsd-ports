@@ -122,7 +122,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.21
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -160,7 +160,6 @@ DIST_SUBDIR=	mutt
 DOCSDIR?=	${PREFIX}/share/doc/mutt
 EXAMPLESDIR?=	${PREFIX}/share/examples/mutt
 DATADIR?=	${PREFIX}/share/mutt
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--disable-fcntl --with-ssl=${OPENSSLBASE} \
 		--with-docdir=${DOCSDIR} --sysconfdir=${PREFIX}/etc \
@@ -410,11 +409,17 @@ CONFIGURE_ARGS+=	--with-gss=${LOCALBASE}
 .elif exists(${KRB5_HOME}/bin/krb5-config)
 LIB_DEPENDS+=		gssapi_krb5:${PORTSDIR}/security/krb5
 CONFIGURE_ARGS+=	--with-gss=${KRB5_HOME}
+LDFLAGS+=		-L ${KRB5_HOME}/lib
+.elif exists(${HEIMDAL_HOME}/bin/krb5-config)
+LIB_DEPENDS+=		gssapi_krb5:${PORTSDIR}/security/krb5
+CONFIGURE_ARGS+=	--with-gss=${KRB5_HOME}
+LDFLAGS+=		-L ${HEIMDAL_HOME}/lib
 .elif (defined(MAKE_KERBEROS5)) || exists(/usr/lib/libkrb5.a)
 CONFIGURE_ARGS+=	--with-gss
 USE_KRB5_SYS=YES
 .endif
 .endif
+LDFLAGS+=		-L${LOCALBASE}/lib
 .if defined(WITH_MUTT_SMTP)
 CONFIGURE_ARGS+=	--enable-smtp
 .else
