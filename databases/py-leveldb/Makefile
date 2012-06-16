@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	leveldb
-PORTVERSION=	0.1.20111024
-PORTREVISION=	1
+PORTVERSION=	0.1.20120612
 CATEGORIES=	databases python
 MASTER_SITES=	LOCAL/sunpoet
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +17,7 @@ COMMENT=	Thread-safe Python binding for LevelDB
 
 LIB_DEPENDS=	leveldb:${PORTSDIR}/databases/leveldb
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_XZ=		yes
 
