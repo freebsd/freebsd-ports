@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dico
-PORTVERSION=	2.1
-PORTREVISION=	2
+PORTVERSION=	2.2
 CATEGORIES=	net textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,7 +27,9 @@ CONFIGURE_ARGS=	--localstatedir=/var
 
 OPTIONS=	PYTHON	"With PYTHON support" on \
 		GUILE	"With GUILE support" on \
+		PCRE	"With PCRE support" on \
 		GSASL	"With GSASL support" off \
+		PAM	"With PAM support" off \
 		LDAP	"With LDAP support" off
 
 .include <bsd.port.options.mk>
@@ -49,11 +50,27 @@ CONFIGURE_ARGS+=--without-guile
 PLIST_SUB+=	GUILE="@comment "
 .endif
 
+.if defined(WITH_PCRE)
+LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+PLIST_SUB+=	PCRE=""
+.else
+CONFIGURE_ARGS+=--without-pcre
+PLIST_SUB+=	PCRE="@comment "
+.endif
+
 .if defined(WITH_GSASL)
 LIB_DEPENDS+=	gsasl.16:${PORTSDIR}/security/gsasl
 CONFIGURE_ARGS+=--with-gsasl
 .else
 CONFIGURE_ARGS+=--without-gsasl
+.endif
+
+.if defined(WITH_PAM)
+PLIST_SUB+=	PAM=""
+CONFIGURE_ARGS+=--enable-pam
+.else
+PLIST_SUB+=	PAM="@comment "
+CONFIGURE_ARGS+=--disable-pam
 .endif
 
 .if defined(WITH_LDAP)
@@ -79,7 +96,6 @@ SUB_FILES+=	pkg-message
 USE_RC_SUBR=	dicod.sh
 
 post-patch:
-	@${REINPLACE_CMD} 's/ENODATA/EIO/' ${WRKSRC}/lib/utf8.c
 	@${REINPLACE_CMD} 's/@bindir@/@sbindir@/' ${WRKSRC}/dicod/Makefile.in
 	@${REINPLACE_CMD} 's/(bindir)..dir/&\/gdico/' ${WRKSRC}/dico/Makefile.in
 	@${REINPLACE_CMD} '/INSTALL.*charset/d' ${WRKSRC}/gnu/Makefile.in
