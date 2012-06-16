@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	3.3.2
+PORTVERSION=	3.4
 CATEGORIES=	russian www
 MASTER_SITES=	http://ru.wordpress.org/
-PKGNAMESUFFIX=	-ru
-DISTNAME=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}_RU
+DISTNAME=	${PORTNAME}-${PORTVERSION}-ru_RU
 
 MAINTAINER=	9267096@gmail.com
 COMMENT=	A state-of-the-art semantic personal publishing platform
@@ -19,9 +18,10 @@ COMMENT=	A state-of-the-art semantic personal publishing platform
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-CONFLICTS_INSTALL=	wordpress-3.* de-wordpress-de-3.* ja-wordpress-ja-3.*
+CONFLICTS_INSTALL=	wordpress-3.* de-wordpress-3.* ja-wordpress-3.*
 
 NO_BUILD=	yes
+USE_ZIP=	yes
 USE_PHP=	curl gd mysql pcre tokenizer xml zip
 WANT_PHP_WEB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
