@@ -28,7 +28,7 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 VERSIONSTRING=	${PORTVERSION:C/([0-9]+\.[0-9]+).*\.([0-9]+)/\1-\2/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
 LATEST_LINK=	gcc${SUFFIX}${PKGNAMESUFFIX}
-ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64
+ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 sparc64
 USE_BINUTILS=	yes
 USE_BISON=	build
 USE_BZIP2=	yes
@@ -52,6 +52,10 @@ WITHOUT_JAVA=	yes
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .else
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
+.endif
+
+.if ${ARCH} == powerpc64
+CONFIGURE_ENV+= UNAME_m="powerpc64"
 .endif
 
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
