@@ -1,12 +1,12 @@
 # New ports collection makefile for:	ess
 # Date created:				06 March 2010
-# Whom:					Christopher J.s Ruwe
+# Whom:					Christopher J. Ruwe
 #
 # $FreeBSD$
 #
 
 PORTNAME=	ess
-DISTVERSION=	12.04-2
+DISTVERSION=	12.04-4
 PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://ess.r-project.org/downloads/ess/
@@ -18,6 +18,8 @@ COMMENT=	R support for Emacsen
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	R:${PORTSDIR}/math/R
+
+CONFLICTS=	noweb-[0-9]*
 
 USE_EMACS=	yes
 USE_GMAKE=	yes
