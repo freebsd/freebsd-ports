@@ -2993,6 +2993,7 @@ efront                          ports/www/efront
 eggcreator                      ports/irc/eggcreator
 eggdbus                         ports/devel/eggdbus
 eggdrop                         ports/irc/eggdrop
+eggdrop-devel                   ports/irc/eggdrop-devel
 egl                             ports/games/egl
 egoboo                          ports/games/egoboo
 egroupware                      ports/deskutils/egroupware
