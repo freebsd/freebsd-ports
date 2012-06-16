@@ -14,9 +14,11 @@ MASTER_SITES=	http://www.kotnet.org/~skimo/nvi/devel/
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Development snapshot of the world-renown nvi editor
 
-CONFLICTS=	nvi-m17n-[0-9]*
+CONFLICTS_INSTALL=	nvi-m17n-[0-9]* xnview-[0-9]*
 
-OPTIONS=	WIDECHAR "Enable wide-character support (UTF-8)" On
+OPTIONS_DEFINE=	WIDECHAR
+OPTIONS_DEFAULT=WIDECHAR
+WIDECHAR_DESC=	Enable wide-character support (UTF-8)
 
 USE_BZIP2=		yes
 WRKSRC=			${WRKDIR}/${DISTNAME}/build.unix
@@ -31,7 +33,7 @@ MAN1=			nex.1 nvi.1 nview.1
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_WIDECHAR)
+.if ${PORT_OPTIONS:MWIDECHAR}
 CONFIGURE_ARGS+=	--enable-widechar
 .endif
 

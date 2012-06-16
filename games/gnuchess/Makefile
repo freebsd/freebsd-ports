@@ -21,13 +21,15 @@ PLIST_FILES=	bin/gnuchess bin/gnuchessu bin/gnuchessx
 PORTDOCS=	*
 PORTDATA=	*
 
-OPTIONS=	OPENING_BOOK "Install opening book (25 MB download)" On
+OPTIONS_DEFINE=		OPENING_BOOK
+OPTIONS_DEFAULT=	OPENING_BOOK
+OPENING_BOOK_DESC=	Install opening book (25 MB download)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_OPENING_BOOK)
+.if ${PORT_OPTIONS:MOPENING_BOOK}
 DISTFILES+=	book_1.02.pgn.gz
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+EXTRACT_ONLY+=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 .endif
 
 GNU_CONFIGURE=	yes
@@ -38,7 +40,7 @@ post-patch:
 		 s|-pthread ||g' ${WRKSRC}/configure
 
 post-build:
-.if defined(WITH_OPENING_BOOK)
+.if ${PORT_OPTIONS:MOPENING_BOOK}
 	zcat ${DISTDIR}/book_1.02.pgn.gz > ${WRKSRC}/src/book.pgn
 	cd ${WRKSRC}/src && ./gnuchess --addbook book.pgn
 	@${REINPLACE_CMD} -e '/Book =/s/false/true/' ${WRKSRC}/src/gnuchess.ini
@@ -51,4 +53,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/NEWS ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -20,28 +20,26 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 
-.if defined(WITH_CHANGEWORD)
-CONFIGURE_ARGS+=	--enable-changeword
-.endif
-
 INFO=	m4
 MAN1=	gm4.1
 
 EXAMPLESDIR=	share/examples/gm4
 
-OPTIONS=	LIBSIGSEGV "Use libsigsegv for better diagnostics" Off
+OPTIONS_DEFINE=		LIBSIGSEGV
+OPTIONS_DEFAULT=	LIBSIGSEGV
+LIBSIGSEGV_DESC=	Use libsigsegv for better diagnostics
 
 post-install:
 	@${MKDIR} ${PREFIX}/${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.m4 ${PREFIX}/${EXAMPLESDIR}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_LIBSIGSEGV)
-LIB_DEPENDS+=	sigsegv:${PORTSDIR}/devel/libsigsegv
+.if ${PORT_OPTIONS:MLIBSIGSEGV}
+LIB_DEPENDS+=		sigsegv:${PORTSDIR}/devel/libsigsegv
 CONFIGURE_ARGS+=	--with-libsigsegv-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-libsigsegv-prefix
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
