@@ -25,6 +25,9 @@
 name="sabnzbd"
 rcvar=sabnzbd_enable
 
+# Required, for some reason, to find all our binaries when starting via service.
+PATH="%%PREFIX%%/bin:$PATH"
+
 load_rc_config ${name}
 
 : ${sabnzbd_enable:="NO"}

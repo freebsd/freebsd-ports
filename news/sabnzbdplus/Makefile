@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	sabnzbdplus
-PORTVERSION=	0.6.15
+PORTVERSION=	0.7.0
 CATEGORIES=	news
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/sabnzbd-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	SABnzbd-${PORTVERSION}-src
 
 MAINTAINER=	dab@rj45.org
@@ -16,6 +16,10 @@ COMMENT=	A web-interface based binary newsgrabber in python, with nzb support
 
 LICENSE=	GPLv2 GPLv3 PSFL CHERRYPY CONFIGOBJ FEEDPARSER GNTP JSON KRONOS LISTQUOTE MSGFMT PYNEWSLEECHER RARFILE RSSLIB SSMTPLIB
 LICENSE_COMB=	multi
+
+RUN_DEPENDS=	cheetah:${PORTSDIR}/devel/py-cheetah \
+		${PYTHON_SITELIBDIR}/pythonutils/configobj.py:${PORTSDIR}/devel/py-utils \
+		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 
 LICENSE_NAME_CHERRYPY=	CherryPy License
 LICENSE_FILE_CHERRYPY=	${WRKSRC}/licenses/License-CherryPy.txt
@@ -65,10 +69,6 @@ LICENSE_NAME_SSMTPLIB=	ssmtplib License
 LICENSE_FILE_SSMTPLIB=	${WRKSRC}/licenses/License-ssmtplib.txt
 LICENSE_PERMS_SSMTPLIB=	auto-accept
 
-RUN_DEPENDS=	cheetah:${PORTSDIR}/devel/py-cheetah \
-		${PYTHON_SITELIBDIR}/pythonutils/configobj.py:${PORTSDIR}/devel/py-utils \
-		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
-
 USE_PYTHON=	2.5+
 USE_GETTEXT=	yes
 
@@ -95,7 +95,6 @@ OPTIONS=	PAR2CMDLINE "Required for postprocessing of par files." on \
 		FEEDPARSER "rss-feed support." on \
 		YENC "yenc support." on \
 		OPENSSL "SSL support" on
-
 
 .include <bsd.port.pre.mk>
 
