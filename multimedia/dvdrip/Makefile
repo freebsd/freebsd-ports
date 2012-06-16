@@ -16,6 +16,13 @@ MASTER_SITE_SUBDIR=	CPAN:JRED
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Perl Gtk+ based dvd-ripper
 
+BUILD_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
+		p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
+		p5-Event-ExecFlow>=0:${PORTSDIR}/devel/p5-Event-ExecFlow \
+		p5-Gtk2-Ex-FormFactory>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2-Ex-FormFactory \
+		p5-Event-RPC>=0:${PORTSDIR}/devel/p5-Event-RPC \
+		p5-Locale-libintl>=0:${PORTSDIR}/devel/p5-Locale-libintl
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		convert:${PORTSDIR}/graphics/ImageMagick \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
@@ -23,14 +30,7 @@ RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		transcode:${PORTSDIR}/multimedia/transcode \
 		vcdimager:${PORTSDIR}/multimedia/vcdimager \
 		rar:${PORTSDIR}/archivers/rar \
-		${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping \
-		${BUILD_DEPENDS}
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
-		${SITE_PERL}/${PERL_ARCH}/AnyEvent.pm:${PORTSDIR}/devel/p5-AnyEvent \
-		${SITE_PERL}/Event/ExecFlow.pm:${PORTSDIR}/devel/p5-Event-ExecFlow \
-		${SITE_PERL}/Gtk2/Ex/FormFactory.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2-Ex-FormFactory \
-		${SITE_PERL}/Event/RPC.pm:${PORTSDIR}/devel/p5-Event-RPC \
-		${SITE_PERL}/Locale/Messages.pm:${PORTSDIR}/devel/p5-Locale-libintl
+		${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping
 
 OPTIONS_DEFINE=	VORBIS SUBTITLE
 OPTIONS_DEFAULT=	VORBIS SUBTITLE
