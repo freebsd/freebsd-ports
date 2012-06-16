@@ -1,0 +1,21 @@
+phpipam is an open-source web IP address management application. 
+Its goal is to provide light and simple IP address management 
+application. It is ajax-based using jQuery libraries, it uses php 
+scripts and javascript and some HTML5/CSS3 features, so some modern 
+browser is preferred to be able to display javascript quickly and 
+correctly...
+
+Features and tools:
+- Section / Subnet separation
+- Subnet nesting;
+- IPv4/IPv6 support
+- Displays free range and number of clients
+- Subnet statistics
+- User management
+- E-Mail notification with IP details
+- Import IP addresses from XLS / CSV file
+- Export IP database to XLS file
+- IPv4/IPv6 calculator
+- Search IP database
+- IP request module
+- Custom IP address fields

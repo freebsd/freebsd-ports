@@ -244,6 +244,7 @@
     SUBDIR += php52-snmp
     SUBDIR += php53-snmp
     SUBDIR += phpip
+    SUBDIR += phpipam
     SUBDIR += phpweathermap
     SUBDIR += pixilate
     SUBDIR += pmacct
