@@ -7,7 +7,7 @@
 
 PORTNAME=	bzr-grep
 PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpadlibrarian.net/49936719/ \
 		http://www.c-s.li/ports/
@@ -15,8 +15,8 @@ MASTER_SITES=	http://launchpadlibrarian.net/49936719/ \
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Bazaar plugin to grep files
 
-BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng
-RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng
+BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
+RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
 
 LICENSE=	GPLv2
 

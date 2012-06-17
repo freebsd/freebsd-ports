@@ -7,13 +7,14 @@
 
 PORTNAME=	bzrtools
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://launchpadlibrarian.net/90479443/
 
 MAINTAINER=	fullermd@over-yonder.net
-COMMENT=	Extensions to devel/bazaar-ng
+COMMENT=	Extensions to devel/bzr
 
-RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng
+RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
 
 OPTIONS=	GRAPHVIZ "Enable graphviz for graph-ancestry" off \
 		RSYNC    "Enable rsync for rspush" on

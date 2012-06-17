@@ -7,7 +7,7 @@
 
 PORTNAME=	qbzr
 PORTVERSION=	0.22.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpadlibrarian.net/93533531/ \
 		http://www.c-s.li/ports/
@@ -17,11 +17,11 @@ COMMENT=	Qt interface for bzr
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng \
+BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bzr \
 		${PYTHON_PKGNAMEPREFIX}qt4-core>=0:${PORTSDIR}/devel/py-qt4 \
 		${PYTHON_PKGNAMEPREFIX}pygments>=0:${PORTSDIR}/textproc/py-pygments \
 		${PYTHON_PKGNAMEPREFIX}enchant>=0:${PORTSDIR}/textproc/py-enchant
-RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng
+RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

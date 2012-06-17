@@ -7,7 +7,7 @@
 
 PORTNAME=		kicad
 DISTVERSION=    r${BZR_SRC_REV}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		cad
 DIST_SUBDIR=		${PORTNAME}
 MASTER_SITES=   ${MASTER_SITE_LOCAL}
@@ -85,7 +85,7 @@ BZR_DOC_REV!=        bzr revno lp:~kicad-developers/kicad/doc
 # pkg_add /usr/ports/pkg_amd64/All/kicad-devel*
 
 FETCH_DEPENDS+= svn:${PORTSDIR}/devel/subversion
-FETCH_DEPENDS+= bzr:${PORTSDIR}/devel/bazaar-ng
+FETCH_DEPENDS+= bzr:${PORTSDIR}/devel/bzr
 
 do-fetch:
 	${MKDIR} ${WRKDIR}

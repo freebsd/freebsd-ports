@@ -7,6 +7,7 @@
 
 PORTNAME=	bzr
 PORTVERSION=	20110228
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://home.tiscali.cz/~cz210552/bsdports/tarballs/
 PKGNAMEPREFIX=	trac-
@@ -18,7 +19,7 @@ COMMENT=	Bazaar-NG plugin for Trac
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac bzr:${PORTSDIR}/devel/bazaar-ng
+RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac bzr:${PORTSDIR}/devel/bzr
 
 USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	yes

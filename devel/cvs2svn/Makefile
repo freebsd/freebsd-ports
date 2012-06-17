@@ -6,7 +6,7 @@
 
 PORTNAME=	cvs2svn
 PORTVERSION=	2.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
 		LOCAL/glarkin
@@ -41,7 +41,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/git:${PORTSDIR}/devel/git
 .endif
 
 .if defined(WITH_BAZAAR)
-RUN_DEPENDS+=	${LOCALBASE}/bin/bzr:${PORTSDIR}/devel/bazaar-ng
+RUN_DEPENDS+=	${LOCALBASE}/bin/bzr:${PORTSDIR}/devel/bzr
 .endif
 
 MAN1=		cvs2svn.1 \
