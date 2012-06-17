@@ -19,6 +19,8 @@ COMMENT=	LGPL'ed Flash 4/5 movie output library with Japanese languages support
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		gif.5:${PORTSDIR}/graphics/giflib
 
+BROKEN=		does not compile
+
 CONFLICTS=	ming-*
 
 WRKSRC=		${WRKDIR}/jaming-${PORTVERSION}/src
