@@ -1,11 +1,11 @@
-# Ports collection makefile for:	bazaar-ng
+# Ports collection makefile for:	bzr
 # Date created:		10 October 2005
 # Whom:			Ulf Lilleengen
 #
 # $FreeBSD$
 #
 
-PORTNAME=	bazaar-ng
+PORTNAME=	bzr
 PORTVERSION=	2.5.1
 CATEGORIES=	devel
 MASTER_SITES=	https://launchpadlibrarian.net/106470036/
