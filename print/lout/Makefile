@@ -8,23 +8,28 @@
 PORTNAME=	lout
 PORTVERSION=	3.39
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
-		ftp://ftp.it.usyd.edu.au/jeff/lout/
-MASTER_SITE_SUBDIR=	support/lout
+MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX like document creation system with PostScript/PDF output
 
+LICENSE=	GPLv3 # (or later)
+
+OPTIONS_DEFINE=	DOCS
+
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	lout prg2lout
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		lout.1 prg2lout.1
 
-.if defined(NOPORTDOCS)
-INSTALL_TARGET=	install installman
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 INSTALL_TARGET=	install installman installdoc
+.else
+INSTALL_TARGET=	install installman
 .endif
 
 .include <bsd.port.mk>
