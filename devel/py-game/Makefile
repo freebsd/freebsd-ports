@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	game
-PORTVERSION=	1.8.1
-PORTREVISION=	8
+PORTVERSION=	1.9.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://pygame.seul.org/ftp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,14 +15,15 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}release
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	A module designed to write games in Python
 
-LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg
+LIB_DEPENDS=	smpeg:${PORTSDIR}/multimedia/smpeg
+RUN_DEPENDS=	${PYNUMPY}
 
 USE_SDL=	ttf image mixer sdl
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
 PYDISTUTILS_PKGNAME=	pygame
-PYDISTUTILS_PKGVERSION=	1.8.1release
+PYDISTUTILS_PKGVERSION=	${PORTVERSION}release
 
 SDLNOX11=	sdl-nox11-[0-9]*
 
@@ -31,8 +31,10 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 post-patch:
-	@${FIND} ${WRKSRC} -type d | xargs ${CHMOD} a+rx
-	@${FIND} ${WRKSRC} -type f | xargs ${CHMOD} a+r
+	@${REINPLACE_CMD} -e 's|^_camera|#_camera|' \
+		-e 's|^pypm|#pypm|' ${WRKSRC}/Setup.in
+	@${REINPLACE_CMD} -e "s|Dependency('PORT|#Dependency('PORT|" \
+		${WRKSRC}/config_unix.py
 
 pre-configure:
 	@invalid=`${PKG_INFO} -I ${SDLNOX11:C/.+/'&'/} 2>/dev/null | ${AWK} '{print $$1}'`
@@ -42,7 +44,7 @@ pre-configure:
 	fi
 
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} config.py
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} config.py -auto
 
 .if !defined(NOPORTDOCS)
 post-install:
