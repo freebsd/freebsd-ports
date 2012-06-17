@@ -52,7 +52,7 @@ CONFIGURE_ARGS+=--disable-slang
 post-patch:
 	@${REINPLACE_CMD} -Ee 's|^(pkg.*)/advance|\1/${PORTNAME}|' \
 		${WRKSRC}/advance/advance.mak
-.if ${PORT_OPTIONS:MDOCS}
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e '/pkgdocdir/d' ${WRKSRC}/advance/advance.mak
 .endif
 
