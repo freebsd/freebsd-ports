@@ -21,6 +21,8 @@ EXTRACT_ONLY=	install_flash_player_9.tar.gz
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Adobe Flash Player NPAPI Plugin
 
+BROKEN=		unfetchable
+
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
 USE_LINUX_APPS=	openssl gtk2
