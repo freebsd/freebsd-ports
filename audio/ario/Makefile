@@ -32,19 +32,20 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20 gnomehack
 INSTALLS_ICONS=	yes
 
-OPTIONS=	AVAHI "Zeroconf support (Avahi)" Off \
-		NLS "NLS support" On
+OPTIONS_DEFINE=	AVAHI
+AVAHI_DESC=	Zeroconf support (Avahi)
+OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_AVAHI)
+.if ${PORT_OPTIONS:MAVAHI}
 LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi-app
 CONFIGURE_ARGS+=	--enable-avahi
 .else
 CONFIGURE_ARGS+=	--disable-avahi
 .endif
 
-.if ! defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=	--enable-nls
 .else
