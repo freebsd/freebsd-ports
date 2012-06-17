@@ -34,6 +34,8 @@ include/libecasound/audiofx_compressor.h
 include/libecasound/audiofx_envelope_modulation.h
 include/libecasound/audiofx_filter.h
 include/libecasound/audiofx_ladspa.h
+include/libecasound/audiofx_lv2.h
+include/libecasound/audiofx_lv2_world.h
 include/libecasound/audiofx_misc.h
 include/libecasound/audiofx_mixing.h
 include/libecasound/audiofx_rcfilter.h
@@ -155,6 +157,9 @@ lib/libecasoundc.a
 lib/libecasoundc.la
 lib/libkvutils.a
 lib/libkvutils.la
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/ecacontrol.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/eci.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyeca.py
 %%DATADIR%%/ecasound.el
 %%DATADIR%%/ecasoundrc
 %%DATADIR%%/effect_presets
