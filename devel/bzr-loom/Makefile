@@ -7,6 +7,7 @@
 
 PORTNAME=	bzr-loom
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpadlibrarian.net/94514373/ \
 		http://www.c-s.li/ports/
@@ -16,8 +17,8 @@ COMMENT=	Bazaar plugin to assist in developing focused patches
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng
-RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng
+BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
+RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

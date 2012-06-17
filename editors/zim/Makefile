@@ -7,7 +7,7 @@
 
 PORTNAME=	zim
 PORTVERSION=	0.56
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors python
 MASTER_SITES=	http://www.zim-wiki.org/downloads/
 
@@ -56,7 +56,7 @@ RUN_DEPENDS+=	scrot:${PORTSDIR}/graphics/scrot
 RUN_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
 .endif
 .if defined(WITH_BZR)
-RUN_DEPENDS+=	bzr:${PORTSDIR}/devel/bazaar-ng
+RUN_DEPENDS+=	bzr:${PORTSDIR}/devel/bzr
 .endif
 .if defined(WITH_GIT)
 RUN_DEPENDS+=	git:${PORTSDIR}/devel/git

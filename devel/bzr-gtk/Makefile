@@ -7,7 +7,7 @@
 
 PORTNAME=	bzr-gtk
 PORTVERSION=	0.100.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpadlibrarian.net/65442805/ \
 		http://www.c-s.li/ports/
@@ -15,8 +15,8 @@ MASTER_SITES=	http://launchpadlibrarian.net/65442805/ \
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	GTK interface to Bazaar-NG VCS
 
-BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng
-RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng \
+BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
+RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bzr \
 		${PYTHON_SITELIBDIR}/cairo:${PORTSDIR}/graphics/py-cairo
 
 LICENSE=	GPLv2
