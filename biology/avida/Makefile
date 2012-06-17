@@ -6,38 +6,74 @@
 #
 
 PORTNAME=	avida
-PORTVERSION=	2.10.0
+PORTVERSION=	2.12.3
+DISTVERSIONSUFFIX=	-src
 CATEGORIES=	biology
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Avida is an auto-adaptive genetic system designed for ALife research
+COMMENT=	An auto-adaptive genetic system designed for ALife research
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3
 
+OPTIONS_DEFINE=	DOCS
+
+NO_WRKSUBDIR=	yes
+
+USE_NCURSES=	yes
 USE_CMAKE=	yes
-USE_GCC=	4.2+
+CMAKE_OUTSOURCE=yes
 MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
+PLIST_FILES=	${BIN_FILES:S|^|bin/|} \
+		${BIN_FILES:S|^|lib/${PORTNAME}/|} \
+		${DATA_FILES:S|^|lib/${PORTNAME}/|}
+PLIST_DIRS=	lib/${PORTNAME}
 
-post-extract:
-	@${RM} -f ${WRKSRC}/documentation/.[D_]*
-
-post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/work/avida ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/work/*.cfg ${WRKSRC}/work/*.org ${DATADIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/documentation && ${COPYTREE_SHARE} . ${DOCSDIR}
-.endif
+BIN_FILES=	avida avida-viewer
+DATA_FILES=	analyze.cfg avida.cfg default-gx.org \
+		default-heads-sex.org default-heads.org default-smt.org \
+		default-transsmt.org environment.cfg events.cfg \
+		experimental.org instset-experimental.cfg instset-gx.cfg \
+		instset-heads-sex.cfg instset-heads.cfg instset-smt.cfg \
+		instset-transsmt.cfg
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile: invokes i386 asm
+.endif
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "CMakeLists.txt" | ${XARGS} \
+		${REINPLACE_CMD} -e \
+		's|-O[0-9]|| ; \
+		 s| pthread| ${PTHREAD_LIBS}|'
+	@${REINPLACE_CMD} -e '/long long int/s|std::abs|llabs|' \
+		${WRKSRC}/avida-core/source/main/cPopulationInterface.cc
+
+pre-build:
+.for exec in ${BIN_FILES}
+	@(cd ${WRKSRC} && ${ECHO_CMD} \
+		'cd ${PREFIX}/lib/${PORTNAME} && ./${exec} $$@' > ${exec}.sh)
+.endfor
+
+do-install:
+	@${MKDIR} ${PREFIX}/lib/${PORTNAME}
+.for exec in ${BIN_FILES}
+	(cd ${WRKSRC} \
+		&& ${INSTALL_SCRIPT} ${exec}.sh ${PREFIX}/bin/${exec})
+	(cd ${BUILD_WRKSRC}/bin \
+		&& ${INSTALL_PROGRAM} ${exec} ${PREFIX}/lib/${PORTNAME})
+.endfor
+	(cd ${WRKSRC}/avida-core/support/config \
+		&& ${INSTALL_DATA} *.cfg ${PREFIX}/lib/${PORTNAME} \
+		&& ${INSTALL_DATA} *.org ${PREFIX}/lib/${PORTNAME})
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	@(cd ${WRKSRC}/avida-core/documentation \
+		&& ${COPYTREE_SHARE} . ${DOCSDIR})
 .endif
 
 .include <bsd.port.post.mk>
