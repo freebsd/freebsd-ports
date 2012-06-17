@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	musescore
-PORTVERSION=	1.1
-PORTREVISION=	2
+PORTVERSION=	1.2
 CATEGORIES=	audio
 MASTER_SITES=	SF/mscore/mscore/MuseScore-${PORTVERSION}
 DISTNAME=	mscore-${PORTVERSION}
@@ -15,56 +14,53 @@ DISTNAME=	mscore-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free music composition & notation software
 
-LIB_DEPENDS=	asound.2:${PORTSDIR}/audio/alsa-lib \
-		sndfile.1:${PORTSDIR}/audio/libsndfile
-BUILD_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so:${PORTSDIR}/devel/qtscriptgenerator
-RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so:${PORTSDIR}/devel/qtscriptgenerator
+LICENSE=	GPLv2
 
+BUILD_DEPENDS=	qtscriptgenerator>0:${PORTSDIR}/devel/qtscriptgenerator
+LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile
+RUN_DEPENDS=	qtscriptgenerator>0:${PORTSDIR}/devel/qtscriptgenerator
+
+OPTIONS_DEFINE=	JACK PORTAUDIO
+OPTIONS_DEFAULT=PORTAUDIO
+
+USE_LDCONFIG=	yes
 USE_BZIP2=	yes
+USE_QT4=	corelib designer gui network script scripttools svg webkit xml \
+		linguist_build moc_build qmake_build rcc_build uic_build
 USE_CMAKE=	yes
-USE_QT4=	corelib gui network svg xml script scripttools designer webkit \
-		qmake_build moc_build uic_build linguist_build rcc_build
-MAKE_JOBS_UNSAFE=	yes
-
-CMAKE_SOURCE_PATH=	${WRKSRC}/mscore
 CMAKE_OUTSOURCE=	yes
-
+CMAKE_SOURCE_PATH=	${WRKSRC}/mscore
+CMAKE_ARGS=	-DBUILD_ALSA:BOOL=OFF
 ALL_TARGET=	lrelease all
+MAKE_JOBS_UNSAFE=	yes
 
 DATADIR=	${PREFIX}/share/mscore-${PORTVERSION}
 
-# Couldn't get portaudio to work, so disable it by default
-OPTIONS=	JACK "Jack support" on \
-		PORTAUDIO "Portaudio support" off
-
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 802502 || ( ${OSVERSION} >= 900000 && ${OSVERSION} < 900027 )
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-log2
-.endif
-
-.if !defined(WITHOUT_JACK)
+.if ${PORT_OPTIONS:MJACK}
+LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
 CMAKE_ARGS+=	-DBUILD_JACK:BOOL=ON
-LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 .else
 CMAKE_ARGS+=	-DBUILD_JACK:BOOL=OFF
 .endif
 
-.if !defined(WITHOUT_PORTAUDIO)
-LIB_DEPENDS+=	portaudio.2:${PORTSDIR}/audio/portaudio2
+.if ${PORT_OPTIONS:MPORTAUDIO}
+BUILD_DEPENDS+=	portaudio>=19:${PORTSDIR}/audio/portaudio2
+RUN_DEPENDS+=	portaudio>=19:${PORTSDIR}/audio/portaudio2
+CMAKE_ARGS+=	-DBUILD_PORTAUDIO:BOOL=ON
+.else
+CMAKE_ARGS+=	-DBUILD_PORTAUDIO:BOOL=OFF
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/include/freetype2|${LOCALBASE}/include/freetype2|; \
-		s|-lfreetype|${LOCALBASE}/lib/libfreetype.so|' \
-		${WRKSRC}/mscore/mscore/CMakeLists.txt
-	@${FIND} ${WRKSRC} -name CMakeLists.txt -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e \
-		'/set(CMAKE_CXX_FLAGS/ { s|-g||; /$${CMAKE_CXX_FLAGS}/ ! s|"|&$${CMAKE_CXX_FLAGS} |; }'
-.if defined(WITHOUT_PORTAUDIO)
-	@${REINPLACE_CMD} -e '/PKGCONFIG.*portaudio/ d' ${WRKSRC}/mscore/CMakeLists.txt
-.endif
-
-post-install:
-	@${ECHO}; ${CAT} ${PKGMESSAGE}; ${ECHO}
+	@${FIND} ${WRKSRC} -name "CMakeLists.txt" -print0 | ${XARGS} -0 \
+		${REINPLACE_CMD} -e \
+		's|%%LOCALBASE%%|${LOCALBASE}|g ; \
+		 s|-g -Wall|-Wall|g'
+# add newline
+.for file in mscore.cpp updatechecker.h webpage.cpp
+	@${ECHO_CMD} >> ${WRKSRC}/mscore/mscore/${file}
+.endfor
 
 .include <bsd.port.mk>

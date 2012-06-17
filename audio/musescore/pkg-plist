@@ -1,8 +1,10 @@
 bin/mscore
+%%QT_PLUGINDIR_REL%%/designer/libawlplugin.so
 share/applications/mscore.desktop
 %%DATADIR%%/demos/All_Dudes.mscz
 %%DATADIR%%/demos/Estudio-No1-Tarrega.mscx
 %%DATADIR%%/demos/PlanxtyCarolan.mscx
+%%DATADIR%%/demos/Reunion.mscz
 %%DATADIR%%/demos/Triumph.mscz
 %%DATADIR%%/demos/adeste.mscx
 %%DATADIR%%/demos/bach-bc2.mscx
@@ -26,6 +28,7 @@ share/applications/mscore.desktop
 %%DATADIR%%/locale/mscore_af.qm
 %%DATADIR%%/locale/mscore_ar.qm
 %%DATADIR%%/locale/mscore_ast.qm
+%%DATADIR%%/locale/mscore_be.qm
 %%DATADIR%%/locale/mscore_bg.qm
 %%DATADIR%%/locale/mscore_ca.qm
 %%DATADIR%%/locale/mscore_cs.qm
@@ -36,6 +39,7 @@ share/applications/mscore.desktop
 %%DATADIR%%/locale/mscore_en_US.qm
 %%DATADIR%%/locale/mscore_eo.qm
 %%DATADIR%%/locale/mscore_es.qm
+%%DATADIR%%/locale/mscore_et.qm
 %%DATADIR%%/locale/mscore_eu.qm
 %%DATADIR%%/locale/mscore_fa.qm
 %%DATADIR%%/locale/mscore_fi.qm
@@ -125,6 +129,9 @@ share/applications/mscore.desktop
 %%DATADIR%%/plugins/musescore.com/README.txt
 %%DATADIR%%/plugins/musescore.com/icons/filesaveonline.svg
 %%DATADIR%%/plugins/musescore.com/musescore.com.js
+%%DATADIR%%/plugins/musescore.com/translations/locale_de.qm
+%%DATADIR%%/plugins/musescore.com/translations/locale_es.qm
+%%DATADIR%%/plugins/musescore.com/translations/locale_fr.qm
 %%DATADIR%%/plugins/musescore.com/ui/authorize_dialog.ui
 %%DATADIR%%/plugins/musescore.com/ui/musescore_dialog.ui
 %%DATADIR%%/plugins/musescore.com/ui/musescore_progress.ui
@@ -148,9 +155,16 @@ share/applications/mscore.desktop
 %%DATADIR%%/templates/Choir SATB.mscx
 %%DATADIR%%/templates/Concert Band.mscx
 %%DATADIR%%/templates/Hymn.mscz
+%%DATADIR%%/templates/Jazz Big Band.mscz
+%%DATADIR%%/templates/Jazz Combo.mscz
 %%DATADIR%%/templates/Jazz Lead Sheet.mscz
 %%DATADIR%%/templates/Lead Sheet.mscx
 %%DATADIR%%/templates/Piano.mscx
+%%DATADIR%%/templates/SA Festival Series.mscz
+%%DATADIR%%/templates/SA General Series.mscz
+%%DATADIR%%/templates/SA Triumph Series.mscz
+%%DATADIR%%/templates/UK Brass Band.mscz
+%%DATADIR%%/templates/drumset_fr.drm
 %%DATADIR%%/templates/instruments.xml
 %%DATADIR%%/templates/instruments_ca.xml
 %%DATADIR%%/templates/instruments_de.xml
@@ -174,12 +188,12 @@ share/applications/mscore.desktop
 %%DATADIR%%/wallpaper/paper5.png
 share/pixmaps/mscore.png
 share/pixmaps/mscore.xpm
-%%QT_PLUGINDIR_REL%%/designer/libawlplugin.so
 @dirrm %%DATADIR%%/wallpaper
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/styles
 @dirrm %%DATADIR%%/sound
 @dirrm %%DATADIR%%/plugins/musescore.com/ui
+@dirrm %%DATADIR%%/plugins/musescore.com/translations
 @dirrm %%DATADIR%%/plugins/musescore.com/icons
 @dirrm %%DATADIR%%/plugins/musescore.com
 @dirrm %%DATADIR%%/plugins/break
