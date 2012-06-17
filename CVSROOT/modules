@@ -5160,7 +5160,6 @@ gtk-murrine-themes              ports/x11-themes/gtk-murrine-themes
 gtk-nodoka-engine               ports/x11-themes/gtk-nodoka-engine
 gtk-oxygen-engine               ports/x11-themes/gtk-oxygen-engine
 gtk-qnxtheme                    ports/x11-themes/gtk-qnxtheme
-gtk-qt-engine                   ports/x11-themes/gtk-qt-engine
 gtk-qt4-engine                  ports/x11-themes/gtk-qt4-engine
 gtk-recordmydesktop             ports/multimedia/gtk-recordmydesktop
 gtk-send-pr                     ports/sysutils/gtk-send-pr
@@ -21457,6 +21456,7 @@ phpgedview                      ports/www/phpgedview
 phpgroupware                    ports/deskutils/phpgroupware
 phpicalendar                    ports/deskutils/phpicalendar
 phpip                           ports/net-mgmt/phpip
+phpipam                         ports/net-mgmt/phpipam
 phpldapadmin                    ports/net/phpldapadmin
 phplist                         ports/mail/phplist
 phplot                          ports/graphics/phplot
