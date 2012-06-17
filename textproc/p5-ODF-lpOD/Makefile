@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	ODF-lpOD
-PORTVERSION=	1.120
+PORTVERSION=	1.121
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	An OpenDocument management interface
 
 BUILD_DEPENDS=	p5-Archive-Zip>=1.30:${PORTSDIR}/archivers/p5-Archive-Zip \
@@ -24,6 +24,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
+MAN1=		lpod_test.1
 MAN3=		ODF::lpOD.3 \
 		ODF::lpOD::Common.3 \
 		ODF::lpOD::Document.3 \
