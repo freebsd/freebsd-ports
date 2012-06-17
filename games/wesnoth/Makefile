@@ -7,6 +7,7 @@
 
 PORTNAME=	wesnoth
 PORTVERSION=	1.10.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTNAME}-${PORTVERSION} \
 		http://files.wesnoth.org/
@@ -19,11 +20,9 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-BUILD_DEPENDS=	${WRKSRC}/fonts/Junicode-Regular.ttf:${PORTSDIR}/x11-fonts/junicode:extract
+BUILD_DEPENDS=	${LOCALBASE}/lib/X11/fonts/junicode/Junicode.ttf:${PORTSDIR}/x11-fonts/junicode
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		png15:${PORTSDIR}/graphics/png
-
-CONFLICTS=	wesnoth-devel-[0-9]*
 
 USE_SDL=	image mixer net ttf
 USE_GNOME=	pango desktopfileutils
@@ -162,9 +161,8 @@ CMAKE_ARGS+=	-DDOCDIR=none
 .endif
 
 pre-build:
-	${INSTALL_DATA} $$(${MAKE} -V WRKSRC \
-		-C ${PORTSDIR}/x11-fonts/junicode)/fonts/Junicode-Regular.ttf \
-		${WRKSRC}/fonts
+	${CP} ${LOCALBASE}/lib/X11/fonts/junicode/Junicode.ttf \
+		${WRKSRC}/fonts/Junicode-Regular.ttf
 
 post-install:
 	-@update-desktop-database ${PREFIX}/share/applications
