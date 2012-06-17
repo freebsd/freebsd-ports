@@ -30,6 +30,8 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 USE_EMACS=		yes
 EMACS_PORT_NAME=	emacs21
 
+BROKEN=		does not compile
+
 CONFLICTS=	emacs-19.* emacs-20.* emacs-22.* \
 		ja-emcws-20.* \
 		xemacs-[0-9]* xemacs-devel-[0-9]* \
