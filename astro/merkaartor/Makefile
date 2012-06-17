@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	merkaartor
-PORTVERSION=	0.18.a
-PORTREVISION=	3
+PORTVERSION=	0.18.1
 CATEGORIES=	astro
-MASTER_SITES=	https://secure.ohos.nl/downloads/
+MASTER_SITES=	http://merkaartor.be/attachments/download/301/ \
+		https://secure.ohos.nl/downloads/
 
 MAINTAINER=	dev2@heesakkers.info
 COMMENT=	An openstreetmap mapping program
@@ -32,27 +32,28 @@ INSTALLS_ICONS=	yes
 
 QMAKEFLAGS=	PREFIX=${PREFIX}
 
-OPTIONS=	GEOIMAGE "Enable geotagged images (needs exiv2)" on\
-		ZBAR     "Read barcodes from walking papers" off\
-		DEBUG    "Enable debugging and verbose logging" off
+OPTIONS_DEFINE=	GEOIMAGE ZBAR DEBUG
+GEOIMAGE_DESC=	Enable geotagged images (needs exiv2)
+ZBAR_DESC=	Read barcodes from walking papers
+OPTIONS_DEFAULT=	GEOIMAGE
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_GEOIMAGE)
+.if ${PORT_OPTIONS:MGEOIMAGE}
 QMAKEFLAGS+=	GEOIMAGE=1
-LIB_DEPENDS+=	exiv2.10:${PORTSDIR}/graphics/exiv2
+LIB_DEPENDS+=	exiv2:${PORTSDIR}/graphics/exiv2
 .endif
 
-.if defined(WITH_ZBAR)
+.if ${PORT_OPTIONS:MZBAR}
 QMAKEFLAGS+=	ZBAR=1
 LIB_DEPENDS+=	zbar:${PORTSDIR}/graphics/zbar
 .endif
 
-.if !defined(WITH_DEBUG)
-QMAKEFLAGS+=	NODEBUG=1
+.if empty(PORT_OPTIONS:MDEBUG)
+QMAKEFLAGS+=	NODEBUG=1 RELEASE=1
 .endif
 
-.if defined(WITHOUT_NLS)
+.if empty(PORT_OPTIONS:MNLS)
 PLIST_SUB+=	NLS="@comment "
 .else
 PLIST_SUB+=	NLS=""

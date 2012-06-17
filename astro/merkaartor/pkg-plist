@@ -1,7 +1,5 @@
 bin/merkaartor
 lib/merkaartor/plugins/background/libMWalkingPapersBackgroundPlugin.so
-lib/merkaartor/plugins/background/libMYahooBackgroundPlugin.so
-lib/merkaartor/plugins/background/libMYahooTiledBackgroundPlugin.so
 lib/merkaartor/plugins/background/libMCadastreFranceBackgroundPlugin.so
 lib/merkaartor/plugins/background/libMMsBingMapBackgroundPlugin.so
 lib/merkaartor/plugins/background/libMGdalBackgroundPlugin.so
