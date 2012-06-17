@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ncmpc
-PORTVERSION=	0.18
+PORTVERSION=	0.20
 CATEGORIES=	audio
 MASTER_SITES=	SF/musicpd/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	hrkfdn@gmail.com
+MAINTAINER=	henrik@affekt.org
 COMMENT=	Ncurses client for the musicpd
 
 LIB_DEPENDS=	mpdclient:${PORTSDIR}/audio/libmpdclient
@@ -36,7 +36,7 @@ PLIST_DIRS=%%EXAMPLESDIR%%
 CONFIGURE_ARGS+=--disable-nls
 .else
 USE_GETTEXT=	yes
-LANGUAGES=cs da de eo es fi fr gl he hu it ko nb nl pt_BR ru sk sv uk zh_CN
+LANGUAGES=cs da de eo es fi fr gl he hu it ko nb nl pl pt_BR ru sk sv uk zh_CN
 .for language in ${LANGUAGES}
 PLIST_FILES+=share/locale/${language}/LC_MESSAGES/ncmpc.mo
 .endfor
