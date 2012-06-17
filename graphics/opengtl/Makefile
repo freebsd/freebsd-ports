@@ -16,6 +16,8 @@ COMMENT=	Graphics Transformation Languages
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		does not compile
+
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libLLVM-3.0.so:${PORTSDIR}/devel/llvm
