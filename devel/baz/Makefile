@@ -1,11 +1,11 @@
-# Ports collection makefile for:	bazaar
+# Ports collection makefile for:	baz
 # Date created:		11 October 2005
 # Whom:			Ulf Lilleengen
 #
 # $FreeBSD$
 #
 
-PORTNAME=	bazaar
+PORTNAME=	baz
 PORTVERSION=	1.4.2
 PORTREVISION=	12
 CATEGORIES=	devel

@@ -7,7 +7,7 @@
 
 PORTNAME=	pybaz
 PORTVERSION=	1.5.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://code.aaronbentley.com/pybaz/releases/
 
@@ -19,6 +19,6 @@ USE_PYDISTUTILS=	yes
 
 PLIST_SUB+=	PYTHON_SITELIB=${PYTHON_SITELIBDIR:S|^${LOCALBASE}/||}
 
-RUN_DEPENDS=	baz:${PORTSDIR}/devel/bazaar
+RUN_DEPENDS=	baz:${PORTSDIR}/devel/baz
 
 .include <bsd.port.mk>
