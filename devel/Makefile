@@ -97,7 +97,6 @@
     SUBDIR += avra
     SUBDIR += avrdude
     SUBDIR += baz
-    SUBDIR += bazaar-ng
     SUBDIR += bcc
     SUBDIR += bcpp
     SUBDIR += beautifyphp
@@ -145,6 +144,7 @@
     SUBDIR += bunny
     SUBDIR += byaccj
     SUBDIR += bzapi
+    SUBDIR += bzr
     SUBDIR += bzr-builder
     SUBDIR += bzr-colo
     SUBDIR += bzr-explorer
