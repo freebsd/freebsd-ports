@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	piwik
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 CATEGORIES=	www
 MASTER_SITES=	http://builds.piwik.org/
 
@@ -18,11 +18,26 @@ LICENSE_FILE=	${WRKSRC}/misc/gpl-3.0.txt
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
-USE_PHP=	dom gd iconv json mysql pdo pdo_mysql session xml zlib
+USE_PHP=	dom gd iconv json session xml zlib
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+OPTIONS_DEFINE=	PHPPDOMYSQL PHPMYSQLI
+PHPPDOMYSQL_DESC=	Use pdo_mysql php module
+PHPMYSQLI_DESC=	Use mysqli php module
+
+OPTIONS_DEFAULT=	PHPPDOMYSQL
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MPHPMYSQLI}
+USE_PHP+=	mysqli
+.endif
+.if ${PORT_OPTIONS:MPHPPDOMYSQL}
+USE_PHP+=	pdo_mysql
+.endif
+
 post-patch:
-	@cd $(WRKSRC)/misc/log-analytics && $(RM) -rf import_logs.py.orig
+	@cd ${WRKSRC}/misc/log-analytics && ${RM} -rf import_logs.py.orig
 
 pre-install:
 	@if [ ! -f ${LOCALBASE}/bin/php ]; then \
