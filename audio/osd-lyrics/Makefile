@@ -21,6 +21,8 @@ LIB_DEPENDS=	notify.4:${PORTSDIR}/devel/libnotify \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		curl.6:${PORTSDIR}/ftp/curl
 
+BROKEN=		does not compile
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	DATADIRNAME=share
 # Cannot enable -Werror yet: Clang does not like the code `printf(_("..."))',
