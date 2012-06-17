@@ -17,6 +17,8 @@ lib/bigloo/%%BIGLOO_VERSION%%/Makefile.config
 lib/bigloo/%%BIGLOO_VERSION%%/Makefile.misc
 %%ALSA%%lib/bigloo/%%BIGLOO_VERSION%%/alsa.heap
 %%ALSA%%lib/bigloo/%%BIGLOO_VERSION%%/alsa.init
+%%AVAHI%%lib/bigloo/%%BIGLOO_VERSION%%/avahi.heap
+%%AVAHI%%lib/bigloo/%%BIGLOO_VERSION%%/avahi.init
 lib/bigloo/%%BIGLOO_VERSION%%/bdl.heap
 lib/bigloo/%%BIGLOO_VERSION%%/bdl.init
 lib/bigloo/%%BIGLOO_VERSION%%/bigloo.h
@@ -30,6 +32,8 @@ lib/bigloo/%%BIGLOO_VERSION%%/calendar.heap
 lib/bigloo/%%BIGLOO_VERSION%%/calendar.init
 lib/bigloo/%%BIGLOO_VERSION%%/crypto.heap
 lib/bigloo/%%BIGLOO_VERSION%%/crypto.init
+lib/bigloo/%%BIGLOO_VERSION%%/csv.heap
+lib/bigloo/%%BIGLOO_VERSION%%/csv.init
 %%FLAC%%lib/bigloo/%%BIGLOO_VERSION%%/flac.heap
 %%FLAC%%lib/bigloo/%%BIGLOO_VERSION%%/flac.init
 lib/bigloo/%%BIGLOO_VERSION%%/fthread.heap
@@ -48,6 +52,14 @@ lib/bigloo/%%BIGLOO_VERSION%%/libbigloo_u-%%BIGLOO_VERSION%%.so
 %%ALSA%%lib/bigloo/%%BIGLOO_VERSION%%/libbiglooalsa_s-%%BIGLOO_VERSION%%.so
 %%ALSA%%lib/bigloo/%%BIGLOO_VERSION%%/libbiglooalsa_u-%%BIGLOO_VERSION%%.a
 %%ALSA%%lib/bigloo/%%BIGLOO_VERSION%%/libbiglooalsa_u-%%BIGLOO_VERSION%%.so
+%%AVAHI%%lib/bigloo/%%BIGLOO_VERSION%%/libbiglooavahi_es-%%BIGLOO_VERSION%%.a
+%%AVAHI%%lib/bigloo/%%BIGLOO_VERSION%%/libbiglooavahi_es-%%BIGLOO_VERSION%%.so
+%%AVAHI%%lib/bigloo/%%BIGLOO_VERSION%%/libbiglooavahi_eu-%%BIGLOO_VERSION%%.a
+%%AVAHI%%lib/bigloo/%%BIGLOO_VERSION%%/libbiglooavahi_eu-%%BIGLOO_VERSION%%.so
+%%AVAHI%%lib/bigloo/%%BIGLOO_VERSION%%/libbiglooavahi_s-%%BIGLOO_VERSION%%.a
+%%AVAHI%%lib/bigloo/%%BIGLOO_VERSION%%/libbiglooavahi_s-%%BIGLOO_VERSION%%.so
+%%AVAHI%%lib/bigloo/%%BIGLOO_VERSION%%/libbiglooavahi_u-%%BIGLOO_VERSION%%.a
+%%AVAHI%%lib/bigloo/%%BIGLOO_VERSION%%/libbiglooavahi_u-%%BIGLOO_VERSION%%.so
 lib/bigloo/%%BIGLOO_VERSION%%/libbigloobdl_es-%%BIGLOO_VERSION%%.a
 lib/bigloo/%%BIGLOO_VERSION%%/libbigloobdl_es-%%BIGLOO_VERSION%%.so
 lib/bigloo/%%BIGLOO_VERSION%%/libbigloobdl_eu-%%BIGLOO_VERSION%%.a
@@ -72,6 +84,14 @@ lib/bigloo/%%BIGLOO_VERSION%%/libbigloocrypto_s-%%BIGLOO_VERSION%%.a
 lib/bigloo/%%BIGLOO_VERSION%%/libbigloocrypto_s-%%BIGLOO_VERSION%%.so
 lib/bigloo/%%BIGLOO_VERSION%%/libbigloocrypto_u-%%BIGLOO_VERSION%%.a
 lib/bigloo/%%BIGLOO_VERSION%%/libbigloocrypto_u-%%BIGLOO_VERSION%%.so
+lib/bigloo/%%BIGLOO_VERSION%%/libbigloocsv_es-%%BIGLOO_VERSION%%.a
+lib/bigloo/%%BIGLOO_VERSION%%/libbigloocsv_es-%%BIGLOO_VERSION%%.so
+lib/bigloo/%%BIGLOO_VERSION%%/libbigloocsv_eu-%%BIGLOO_VERSION%%.a
+lib/bigloo/%%BIGLOO_VERSION%%/libbigloocsv_eu-%%BIGLOO_VERSION%%.so
+lib/bigloo/%%BIGLOO_VERSION%%/libbigloocsv_s-%%BIGLOO_VERSION%%.a
+lib/bigloo/%%BIGLOO_VERSION%%/libbigloocsv_s-%%BIGLOO_VERSION%%.so
+lib/bigloo/%%BIGLOO_VERSION%%/libbigloocsv_u-%%BIGLOO_VERSION%%.a
+lib/bigloo/%%BIGLOO_VERSION%%/libbigloocsv_u-%%BIGLOO_VERSION%%.so
 %%FLAC%%lib/bigloo/%%BIGLOO_VERSION%%/libbiglooflac_es-%%BIGLOO_VERSION%%.a
 %%FLAC%%lib/bigloo/%%BIGLOO_VERSION%%/libbiglooflac_es-%%BIGLOO_VERSION%%.so
 %%FLAC%%lib/bigloo/%%BIGLOO_VERSION%%/libbiglooflac_eu-%%BIGLOO_VERSION%%.a
@@ -88,6 +108,10 @@ lib/bigloo/%%BIGLOO_VERSION%%/libbigloofthread_s-%%BIGLOO_VERSION%%.a
 lib/bigloo/%%BIGLOO_VERSION%%/libbigloofthread_s-%%BIGLOO_VERSION%%.so
 lib/bigloo/%%BIGLOO_VERSION%%/libbigloofthread_u-%%BIGLOO_VERSION%%.a
 lib/bigloo/%%BIGLOO_VERSION%%/libbigloofthread_u-%%BIGLOO_VERSION%%.so
+lib/bigloo/%%BIGLOO_VERSION%%/libbigloogc-%%BIGLOO_VERSION%%.a
+lib/bigloo/%%BIGLOO_VERSION%%/libbigloogc-%%BIGLOO_VERSION%%.so
+lib/bigloo/%%BIGLOO_VERSION%%/libbigloogc_fth-%%BIGLOO_VERSION%%.a
+lib/bigloo/%%BIGLOO_VERSION%%/libbigloogc_fth-%%BIGLOO_VERSION%%.so
 %%GSTREAMER%%lib/bigloo/%%BIGLOO_VERSION%%/libbigloogstreamer_es-%%BIGLOO_VERSION%%.a
 %%GSTREAMER%%lib/bigloo/%%BIGLOO_VERSION%%/libbigloogstreamer_es-%%BIGLOO_VERSION%%.so
 %%GSTREAMER%%lib/bigloo/%%BIGLOO_VERSION%%/libbigloogstreamer_eu-%%BIGLOO_VERSION%%.a
@@ -256,6 +280,10 @@ lib/libbigloo_u-%%BIGLOO_VERSION%%.so
 %%ALSA%%lib/libbiglooalsa_eu-%%BIGLOO_VERSION%%.so
 %%ALSA%%lib/libbiglooalsa_s-%%BIGLOO_VERSION%%.so
 %%ALSA%%lib/libbiglooalsa_u-%%BIGLOO_VERSION%%.so
+%%AVAHI%%lib/libbiglooavahi_es-%%BIGLOO_VERSION%%.so
+%%AVAHI%%lib/libbiglooavahi_eu-%%BIGLOO_VERSION%%.so
+%%AVAHI%%lib/libbiglooavahi_s-%%BIGLOO_VERSION%%.so
+%%AVAHI%%lib/libbiglooavahi_u-%%BIGLOO_VERSION%%.so
 lib/libbigloobdl_es-%%BIGLOO_VERSION%%.so
 lib/libbigloobdl_eu-%%BIGLOO_VERSION%%.so
 lib/libbigloobdl_s-%%BIGLOO_VERSION%%.so
@@ -268,6 +296,10 @@ lib/libbigloocrypto_es-%%BIGLOO_VERSION%%.so
 lib/libbigloocrypto_eu-%%BIGLOO_VERSION%%.so
 lib/libbigloocrypto_s-%%BIGLOO_VERSION%%.so
 lib/libbigloocrypto_u-%%BIGLOO_VERSION%%.so
+lib/libbigloocsv_es-%%BIGLOO_VERSION%%.so
+lib/libbigloocsv_eu-%%BIGLOO_VERSION%%.so
+lib/libbigloocsv_s-%%BIGLOO_VERSION%%.so
+lib/libbigloocsv_u-%%BIGLOO_VERSION%%.so
 %%FLAC%%lib/libbiglooflac_es-%%BIGLOO_VERSION%%.so
 %%FLAC%%lib/libbiglooflac_eu-%%BIGLOO_VERSION%%.so
 %%FLAC%%lib/libbiglooflac_s-%%BIGLOO_VERSION%%.so
@@ -276,6 +308,8 @@ lib/libbigloofthread_es-%%BIGLOO_VERSION%%.so
 lib/libbigloofthread_eu-%%BIGLOO_VERSION%%.so
 lib/libbigloofthread_s-%%BIGLOO_VERSION%%.so
 lib/libbigloofthread_u-%%BIGLOO_VERSION%%.so
+lib/libbigloogc-%%BIGLOO_VERSION%%.so
+lib/libbigloogc_fth-%%BIGLOO_VERSION%%.so
 %%GSTREAMER%%lib/libbigloogstreamer_es-%%BIGLOO_VERSION%%.so
 %%GSTREAMER%%lib/libbigloogstreamer_eu-%%BIGLOO_VERSION%%.so
 %%GSTREAMER%%lib/libbigloogstreamer_s-%%BIGLOO_VERSION%%.so
@@ -384,6 +418,7 @@ lib/libbiglooweb_u-%%BIGLOO_VERSION%%.so
 %%PORTDOCS%%%%DOCSDIR%%/bigloo-36.html
 %%PORTDOCS%%%%DOCSDIR%%/bigloo-37.html
 %%PORTDOCS%%%%DOCSDIR%%/bigloo-38.html
+%%PORTDOCS%%%%DOCSDIR%%/bigloo-39.html
 %%PORTDOCS%%%%DOCSDIR%%/bigloo-4.html
 %%PORTDOCS%%%%DOCSDIR%%/bigloo-5.html
 %%PORTDOCS%%%%DOCSDIR%%/bigloo-6.html

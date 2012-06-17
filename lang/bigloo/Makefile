@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	bigloo
-PORTVERSION=	3.7a.2
-PORTREVISION=	2
+PORTVERSION=	3.8c
 CATEGORIES=	lang scheme
 MASTER_SITES=	ftp://ftp-sop.inria.fr/indes/fp/Bigloo/
-DISTNAME=	${PORTNAME}${PORTVERSION:R}-${PORTVERSION:E}
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Scheme interpreter and native code compiler
@@ -18,14 +17,13 @@ COMMENT=	A Scheme interpreter and native code compiler
 LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc \
-		gmp.10:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre \
+		gmp:${PORTSDIR}/math/gmp
 
-OPTIONS_DEFINE=	ALSA FLAC GSTREAMER MPG123 SQLITE OPENSSL DOCS
-OPTIONS_DEFAULT=	OPENSSL
+OPTIONS_DEFINE=	AVAHI ALSA FLAC GSTREAMER MPG123 SQLITE OPENSSL DOCS
+OPTIONS_DEFAULT=OPENSSL
 MPG123_DESC=	Enable MPG123 support
 
-WANT_GSTREAMER=	yes
 USE_GCC=	4.6+
 USE_EMACS=	yes
 USE_GMAKE=	yes
@@ -33,14 +31,12 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--docdir=${WRKDIR}/fakeroot \
 		--lispdir=${LOCALBASE}/${EMACS_SITE_LISPDIR}/bigloo \
-		--customgc=no \
-		--gclibdir=${LOCALBASE}/lib \
-		--gcincdir=${LOCALBASE}/include \
-		--emacs=${EMACS_NAME}
+		--emacs=${EMACS_NAME} \
+		--disable-phidget
 ALL_TARGET=	build compile-bee
 INSTALL_TARGET=	install-progs install-bee
-USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/bigloo/${PORTVERSION:R}
-PLIST_SUB=	BIGLOO_VERSION="${PORTVERSION:R}"
+USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/bigloo/${PORTVERSION}
+PLIST_SUB=	BIGLOO_VERSION="${PORTVERSION}"
 MAKE_JOBS_UNSAFE=yes
 
 MAN1=		bigloo.1
@@ -48,8 +44,16 @@ INFO=		bigloo
 
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MAVAHI}
+LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi-app
+PLIST_SUB+=	AVAHI=""
+.else
+CONFIGURE_ARGS+=--disable-avahi
+PLIST_SUB+=	AVAHI="@comment "
+.endif
+
 .if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
 PLIST_SUB+=	ALSA=""
 .else
 CONFIGURE_ARGS+=--disable-alsa
@@ -57,7 +61,10 @@ PLIST_SUB+=	ALSA="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
+.if empty(PORT_OPTIONS:MALSA)
+IGNORE=		FLAC support requires ALSA
+.endif
+LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
 PLIST_SUB+=	FLAC=""
 .else
 CONFIGURE_ARGS+=--disable-flac
@@ -73,7 +80,10 @@ PLIST_SUB+=	GSTREAMER="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMPG123}
-LIB_DEPENDS+=	mpg123.0:${PORTSDIR}/audio/mpg123
+.if empty(PORT_OPTIONS:MALSA)
+IGNORE=		MPG123 support requires ALSA
+.endif
+LIB_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123
 PLIST_SUB+=	MPG123=""
 .else
 CONFIGURE_ARGS+=--disable-mpg123
@@ -114,6 +124,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^coflags=|#coflags=|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|"-lthr"|"${PTHREAD_LIBS}"|g' \
 		${WRKSRC}/autoconf/pthread
+	@${REINPLACE_CMD} -e '/LDFLAGS=/s|export|true|g' \
+		${WRKSRC}/gc/configure-gc-7.3alpha1-20120316
 .for i in autoconf/mixer api/multimedia/src/Unix/bglmixer.c
 	@${REINPLACE_CMD} -e 's|machine/soundcard|sys/soundcard|g' \
 		${WRKSRC}/${i}
