@@ -148,7 +148,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#%%LOCALBASE%%#${LOCALBASE}#g' \
 	  ${WRKSRC}/Mailman/Defaults.py.in
 	@${REINPLACE_CMD} -e 's/^0,5,10/#&/' ${WRKSRC}/cron/crontab.in.in
-.if ${PORT_OPTIONS:MNLS}
+.if empty(PORT_OPTIONS:MNLS)
 	@${REINPLACE_CMD} -e 's/messages//' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's/templates//' ${WRKSRC}/Makefile.in
 .endif
