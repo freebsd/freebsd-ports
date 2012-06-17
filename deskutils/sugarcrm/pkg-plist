@@ -424,6 +424,16 @@
 %%WWWDIR%%/cache/feeds/index.html
 %%WWWDIR%%/cache/images/index.html
 %%WWWDIR%%/cache/import/index.html
+%%WWWDIR%%/cache/include/javascript/sugar_field_grp.js
+%%WWWDIR%%/cache/include/javascript/sugar_grp1.js
+%%WWWDIR%%/cache/include/javascript/sugar_grp1_jquery.js
+%%WWWDIR%%/cache/include/javascript/sugar_grp1_yui.js
+%%WWWDIR%%/cache/include/javascript/sugar_grp_emails.js
+%%WWWDIR%%/cache/include/javascript/sugar_grp_jsolait.js
+%%WWWDIR%%/cache/include/javascript/sugar_grp_quickcomp.js
+%%WWWDIR%%/cache/include/javascript/sugar_grp_yui2.js
+%%WWWDIR%%/cache/include/javascript/sugar_grp_yui_widgets.css
+%%WWWDIR%%/cache/include/javascript/sugar_grp_yui_widgets.js
 %%WWWDIR%%/cache/index.html
 %%WWWDIR%%/cache/layout/index.html
 %%WWWDIR%%/cache/pdf/index.html
@@ -431,6 +441,7 @@
 %%WWWDIR%%/campaign_tracker.php
 %%WWWDIR%%/campaign_trackerv2.php
 %%WWWDIR%%/config.php
+%%WWWDIR%%/config_override.php
 %%WWWDIR%%/cron.php
 %%WWWDIR%%/crossdomain.xml
 %%WWWDIR%%/custom/index.html
@@ -459,6 +470,7 @@
 %%WWWDIR%%/examples/SoapTestPortal2.php
 %%WWWDIR%%/export.php
 %%WWWDIR%%/files.md5
+%%WWWDIR%%/ical_server.php
 %%WWWDIR%%/image.php
 %%WWWDIR%%/include/Dashlets/Dashlet.php
 %%WWWDIR%%/include/Dashlets/DashletCacheBuilder.php
@@ -487,6 +499,146 @@
 %%WWWDIR%%/include/EditView/footer.tpl
 %%WWWDIR%%/include/EditView/header.tpl
 %%WWWDIR%%/include/GroupedTabs/GroupedTabStructure.php
+%%WWWDIR%%/include/HTMLPurifier/CREDITS
+%%WWWDIR%%/include/HTMLPurifier/HTMLPurifier.autoload.php
+%%WWWDIR%%/include/HTMLPurifier/HTMLPurifier.standalone.php
+%%WWWDIR%%/include/HTMLPurifier/LICENSE
+%%WWWDIR%%/include/HTMLPurifier/VERSION
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/Builder/ConfigSchema.php
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/Builder/Xml.php
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/Exception.php
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/Interchange/Directive.php
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/Interchange/Id.php
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/Interchange.php
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/InterchangeBuilder.php
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/Validator.php
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/ValidatorAtom.php
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.AllowedClasses.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.AllowedFrameTargets.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.AllowedRel.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.AllowedRev.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.ClassUseCDATA.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.DefaultImageAlt.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.DefaultInvalidImage.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.DefaultInvalidImageAlt.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.DefaultTextDir.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.EnableID.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.ForbiddenClasses.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklist.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklistRegexp.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefix.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefixLocal.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.AutoParagraph.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.Custom.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.DisplayLinkURI.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.Linkify.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.PurifierLinkify.DocURL.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.PurifierLinkify.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.RemoveNbsp.Exceptions.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.RemoveNbsp.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveSpansWithoutAttributes.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowImportant.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowTricky.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowedFonts.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowedProperties.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.DefinitionRev.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.ForbiddenProperties.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.MaxImgLength.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.Proprietary.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.Trusted.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Cache.DefinitionImpl.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPath.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPermissions.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.AggressivelyFixLt.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.CollectErrors.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.ColorKeywords.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.ConvertDocumentToFragment.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.DirectLexLineNumberSyncInterval.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.Encoding.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidChildren.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidTags.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.EscapeNonASCIICharacters.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.HiddenElements.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.Language.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.LexerImpl.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.MaintainLineNumbers.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.NormalizeNewlines.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.RemoveInvalidImg.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.RemoveProcessingInstructions.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.RemoveScriptContents.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Filter.Custom.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.Escaping.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.Scope.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.TidyImpl.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Filter.YouTube.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Allowed.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedAttributes.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedElements.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedModules.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Attr.Name.UseCDATA.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.BlockWrapper.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.CoreModules.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.CustomDoctype.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.DefinitionID.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.DefinitionRev.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Doctype.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.FlashAllowFullScreen.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.ForbiddenAttributes.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.ForbiddenElements.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.MaxImgLength.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Nofollow.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Parent.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Proprietary.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.SafeEmbed.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.SafeObject.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Strict.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TidyAdd.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TidyLevel.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TidyRemove.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Trusted.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.XHTML.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Output.CommentScriptContents.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Output.FixInnerHTML.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Output.FlashCompat.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Output.Newline.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Output.SortAttr.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Output.TidyFormat.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/Test.ForceNoIconv.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.AllowedSchemes.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.Base.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.DefaultScheme.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.DefinitionID.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.DefinitionRev.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.Disable.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.DisableExternal.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.DisableExternalResources.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.DisableResources.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.Host.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.HostBlacklist.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.MakeAbsolute.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.Munge.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.MungeResources.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.MungeSecretKey.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.OverrideAllowedSchemes.txt
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema/info.ini
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema.ser
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/EntityLookup/entities.ser
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Filter/ExtractStyleBlocks.php
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Filter/YouTube.php
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Language/classes/en-x-test.php
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Language/messages/en-x-test.php
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Language/messages/en-x-testmini.php
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Language/messages/en.php
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Lexer/PEARSax3.php
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Lexer/PH5P.php
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Printer/CSSDefinition.php
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Printer/ConfigForm.css
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Printer/ConfigForm.js
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Printer/ConfigForm.php
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Printer/HTMLDefinition.php
+%%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Printer.php
 %%WWWDIR%%/include/HTTP_WebDAV_Server/README
 %%WWWDIR%%/include/HTTP_WebDAV_Server/Server.php
 %%WWWDIR%%/include/HTTP_WebDAV_Server/Tools/_parse_lockinfo.php
@@ -517,6 +669,7 @@
 %%WWWDIR%%/include/MVC/View/SugarView.php
 %%WWWDIR%%/include/MVC/View/ViewFactory.php
 %%WWWDIR%%/include/MVC/View/tpls/Importvcard.tpl
+%%WWWDIR%%/include/MVC/View/tpls/favorites.tpl
 %%WWWDIR%%/include/MVC/View/tpls/gsdetail.tpl
 %%WWWDIR%%/include/MVC/View/tpls/modulelistmenu.tpl
 %%WWWDIR%%/include/MVC/View/tpls/xsrf.tpl
@@ -528,6 +681,7 @@
 %%WWWDIR%%/include/MVC/View/views/view.detail.config.php
 %%WWWDIR%%/include/MVC/View/views/view.detail.php
 %%WWWDIR%%/include/MVC/View/views/view.edit.php
+%%WWWDIR%%/include/MVC/View/views/view.favorites.php
 %%WWWDIR%%/include/MVC/View/views/view.gs.php
 %%WWWDIR%%/include/MVC/View/views/view.html.php
 %%WWWDIR%%/include/MVC/View/views/view.importvcard.php
@@ -547,6 +701,7 @@
 %%WWWDIR%%/include/MVC/View/views/view.sugarpdf.php
 %%WWWDIR%%/include/MVC/View/views/view.vcard.php
 %%WWWDIR%%/include/MVC/View/views/view.xml.php
+%%WWWDIR%%/include/MVC/preDispatch.php
 %%WWWDIR%%/include/MassUpdate.php
 %%WWWDIR%%/include/MySugar/DashletsDialog/DashletsDialog.php
 %%WWWDIR%%/include/MySugar/MySugar.php
@@ -561,8 +716,6 @@
 %%WWWDIR%%/include/Pear/Crypt_Blowfish/Blowfish/DefaultKey.php
 %%WWWDIR%%/include/Pear/Crypt_Blowfish/Blowfish.php
 %%WWWDIR%%/include/Pear/Crypt_Blowfish/license.txt
-%%WWWDIR%%/include/Pear/HTML_Safe/Safe.php
-%%WWWDIR%%/include/Pear/HTML_Safe/license.txt
 %%WWWDIR%%/include/Pear/XML_HTMLSax3/HTMLSax3/Decorators.php
 %%WWWDIR%%/include/Pear/XML_HTMLSax3/HTMLSax3/States.php
 %%WWWDIR%%/include/Pear/XML_HTMLSax3/HTMLSax3.php
@@ -612,6 +765,7 @@
 %%WWWDIR%%/include/Smarty/internals/core.write_file.php
 %%WWWDIR%%/include/Smarty/plugins/block.nocache.php
 %%WWWDIR%%/include/Smarty/plugins/block.textformat.php
+%%WWWDIR%%/include/Smarty/plugins/compiler.append.php
 %%WWWDIR%%/include/Smarty/plugins/compiler.assign.php
 %%WWWDIR%%/include/Smarty/plugins/function.assign_debug_info.php
 %%WWWDIR%%/include/Smarty/plugins/function.config_load.php
@@ -631,9 +785,10 @@
 %%WWWDIR%%/include/Smarty/plugins/function.mailto.php
 %%WWWDIR%%/include/Smarty/plugins/function.math.php
 %%WWWDIR%%/include/Smarty/plugins/function.multienum_to_array.php
-%%WWWDIR%%/include/Smarty/plugins/function.overlib_includes.php
 %%WWWDIR%%/include/Smarty/plugins/function.popup.php
 %%WWWDIR%%/include/Smarty/plugins/function.popup_init.php
+%%WWWDIR%%/include/Smarty/plugins/function.sugar_action_menu.php
+%%WWWDIR%%/include/Smarty/plugins/function.sugar_actions_link.php
 %%WWWDIR%%/include/Smarty/plugins/function.sugar_ajax_url.php
 %%WWWDIR%%/include/Smarty/plugins/function.sugar_button.php
 %%WWWDIR%%/include/Smarty/plugins/function.sugar_button_slider.php
@@ -654,6 +809,7 @@
 %%WWWDIR%%/include/Smarty/plugins/function.sugar_image.php
 %%WWWDIR%%/include/Smarty/plugins/function.sugar_include.php
 %%WWWDIR%%/include/Smarty/plugins/function.sugar_link.php
+%%WWWDIR%%/include/Smarty/plugins/function.sugar_menu.php
 %%WWWDIR%%/include/Smarty/plugins/function.sugar_number_format.php
 %%WWWDIR%%/include/Smarty/plugins/function.sugar_phone.php
 %%WWWDIR%%/include/Smarty/plugins/function.sugar_replace_vars.php
@@ -856,6 +1012,9 @@
 %%WWWDIR%%/include/SugarFields/Fields/Text/DetailView.tpl
 %%WWWDIR%%/include/SugarFields/Fields/Text/EditView.tpl
 %%WWWDIR%%/include/SugarFields/Fields/Text/SugarFieldText.php
+%%WWWDIR%%/include/SugarFields/Fields/Time/EditView.tpl
+%%WWWDIR%%/include/SugarFields/Fields/Time/SugarFieldTime.php
+%%WWWDIR%%/include/SugarFields/Fields/Time/Time.js
 %%WWWDIR%%/include/SugarFields/Fields/URL/DetailView.tpl
 %%WWWDIR%%/include/SugarFields/Fields/URL/EditView.tpl
 %%WWWDIR%%/include/SugarFields/Fields/URL/ListView.tpl
@@ -890,6 +1049,8 @@
 %%WWWDIR%%/include/SugarFields/Parsers/SearchFormMetaParser.php
 %%WWWDIR%%/include/SugarFields/SugarFieldHandler.php
 %%WWWDIR%%/include/SugarFolders/SugarFolders.php
+%%WWWDIR%%/include/SugarHtml/SugarHtml.php
+%%WWWDIR%%/include/SugarHttpClient.php
 %%WWWDIR%%/include/SugarLogger/LoggerManager.php
 %%WWWDIR%%/include/SugarLogger/LoggerTemplate.php
 %%WWWDIR%%/include/SugarLogger/SugarLogger.php
@@ -1018,6 +1179,9 @@
 %%WWWDIR%%/include/SugarObjects/templates/sale/metadata/subpanels/default.php
 %%WWWDIR%%/include/SugarObjects/templates/sale/vardefs.php
 %%WWWDIR%%/include/SugarPHPMailer.php
+%%WWWDIR%%/include/SugarQueue/SugarCronJobs.php
+%%WWWDIR%%/include/SugarQueue/SugarCronRemoteJobs.php
+%%WWWDIR%%/include/SugarQueue/SugarJobQueue.php
 %%WWWDIR%%/include/SugarSQLValidate.php
 %%WWWDIR%%/include/SugarTheme/SugarSprites.php
 %%WWWDIR%%/include/SugarTheme/SugarTheme.php
@@ -1037,6 +1201,7 @@
 %%WWWDIR%%/include/VarDefHandler/VarDefHandler.php
 %%WWWDIR%%/include/VarDefHandler/listvardefoverride.php
 %%WWWDIR%%/include/VarDefHandler/vardef_meta_arrays.php
+%%WWWDIR%%/include/clean.php
 %%WWWDIR%%/include/connectors/ConnectorFactory.php
 %%WWWDIR%%/include/connectors/component.php
 %%WWWDIR%%/include/connectors/filters/FilterFactory.php
@@ -1080,6 +1245,7 @@
 %%WWWDIR%%/include/externalAPI/Base/WebFeed.php
 %%WWWDIR%%/include/externalAPI/Base/WebMeeting.php
 %%WWWDIR%%/include/externalAPI/ExternalAPIFactory.php
+%%WWWDIR%%/include/externalAPI/cmis_repository_wrapper.php
 %%WWWDIR%%/include/fonts/Courier-Bold.afm
 %%WWWDIR%%/include/fonts/Courier-BoldOblique.afm
 %%WWWDIR%%/include/fonts/Courier-Oblique.afm
@@ -1171,6 +1337,7 @@
 %%WWWDIR%%/include/images/configure.png
 %%WWWDIR%%/include/images/create_users.png
 %%WWWDIR%%/include/images/cube_bg.gif
+%%WWWDIR%%/include/images/default-profile.png
 %%WWWDIR%%/include/images/default_user_feed_picture.png
 %%WWWDIR%%/include/images/docs.png
 %%WWWDIR%%/include/images/forums.png
@@ -1183,6 +1350,7 @@
 %%WWWDIR%%/include/images/options_up.gif
 %%WWWDIR%%/include/images/powered_by_sugarcrm.gif
 %%WWWDIR%%/include/images/poweredby_sugarcrm.png
+%%WWWDIR%%/include/images/poweredby_sugarcrm_65.png
 %%WWWDIR%%/include/images/rss_xml.gif
 %%WWWDIR%%/include/images/seed_chris_id.gif
 %%WWWDIR%%/include/images/seed_jim_id.gif
@@ -1211,14 +1379,73 @@
 %%WWWDIR%%/include/javascript/include.js
 %%WWWDIR%%/include/javascript/iscroll.js
 %%WWWDIR%%/include/javascript/javascript.php
+%%WWWDIR%%/include/javascript/jquery/jquery-min.js
+%%WWWDIR%%/include/javascript/jquery/jquery-ui-min.js
+%%WWWDIR%%/include/javascript/jquery/jquery.elementReady.js
+%%WWWDIR%%/include/javascript/jquery/jquery.highLight.js
+%%WWWDIR%%/include/javascript/jquery/jquery.hotkeys.js
+%%WWWDIR%%/include/javascript/jquery/jquery.hoverIntent.js
+%%WWWDIR%%/include/javascript/jquery/jquery.hoverscroll.js
+%%WWWDIR%%/include/javascript/jquery/jquery.js
+%%WWWDIR%%/include/javascript/jquery/jquery.json-2.3.js
+%%WWWDIR%%/include/javascript/jquery/jquery.showLoading.js
+%%WWWDIR%%/include/javascript/jquery/jquery.sugarMenu.js
+%%WWWDIR%%/include/javascript/jquery/jquery.superfish.js
+%%WWWDIR%%/include/javascript/jquery/jquery.tipTip.js
+%%WWWDIR%%/include/javascript/jquery/markitup/jquery.markitup.js
+%%WWWDIR%%/include/javascript/jquery/markitup/sets/default/images/bold.png
+%%WWWDIR%%/include/javascript/jquery/markitup/sets/default/images/clean.png
+%%WWWDIR%%/include/javascript/jquery/markitup/sets/default/images/image.png
+%%WWWDIR%%/include/javascript/jquery/markitup/sets/default/images/italic.png
+%%WWWDIR%%/include/javascript/jquery/markitup/sets/default/images/link.png
+%%WWWDIR%%/include/javascript/jquery/markitup/sets/default/images/list-bullet.png
+%%WWWDIR%%/include/javascript/jquery/markitup/sets/default/images/list-numeric.png
+%%WWWDIR%%/include/javascript/jquery/markitup/sets/default/images/picture.png
+%%WWWDIR%%/include/javascript/jquery/markitup/sets/default/images/preview.png
+%%WWWDIR%%/include/javascript/jquery/markitup/sets/default/images/stroke.png
+%%WWWDIR%%/include/javascript/jquery/markitup/sets/default/set.js
+%%WWWDIR%%/include/javascript/jquery/markitup/sets/default/style.css
+%%WWWDIR%%/include/javascript/jquery/markitup/skins/simple/images/handle.png
+%%WWWDIR%%/include/javascript/jquery/markitup/skins/simple/images/menu.png
+%%WWWDIR%%/include/javascript/jquery/markitup/skins/simple/images/submenu.png
+%%WWWDIR%%/include/javascript/jquery/markitup/skins/simple/style.css
+%%WWWDIR%%/include/javascript/jquery/markitup/templates/preview.css
+%%WWWDIR%%/include/javascript/jquery/markitup/templates/preview.html
+%%WWWDIR%%/include/javascript/jquery/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%WWWDIR%%/include/javascript/jquery/themes/base/images/ui-bg_flat_75_ffffff_40x100.png
+%%WWWDIR%%/include/javascript/jquery/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png
+%%WWWDIR%%/include/javascript/jquery/themes/base/images/ui-bg_glass_65_ffffff_1x400.png
+%%WWWDIR%%/include/javascript/jquery/themes/base/images/ui-bg_glass_75_dadada_1x400.png
+%%WWWDIR%%/include/javascript/jquery/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png
+%%WWWDIR%%/include/javascript/jquery/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png
+%%WWWDIR%%/include/javascript/jquery/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+%%WWWDIR%%/include/javascript/jquery/themes/base/images/ui-icons_222222_256x240.png
+%%WWWDIR%%/include/javascript/jquery/themes/base/images/ui-icons_2e83ff_256x240.png
+%%WWWDIR%%/include/javascript/jquery/themes/base/images/ui-icons_454545_256x240.png
+%%WWWDIR%%/include/javascript/jquery/themes/base/images/ui-icons_888888_256x240.png
+%%WWWDIR%%/include/javascript/jquery/themes/base/images/ui-icons_cd0a0a_256x240.png
+%%WWWDIR%%/include/javascript/jquery/themes/base/jquery.ui.accordion.css
+%%WWWDIR%%/include/javascript/jquery/themes/base/jquery.ui.all.css
+%%WWWDIR%%/include/javascript/jquery/themes/base/jquery.ui.autocomplete.css
+%%WWWDIR%%/include/javascript/jquery/themes/base/jquery.ui.base.css
+%%WWWDIR%%/include/javascript/jquery/themes/base/jquery.ui.button.css
+%%WWWDIR%%/include/javascript/jquery/themes/base/jquery.ui.core.css
+%%WWWDIR%%/include/javascript/jquery/themes/base/jquery.ui.datepicker.css
+%%WWWDIR%%/include/javascript/jquery/themes/base/jquery.ui.dialog.css
+%%WWWDIR%%/include/javascript/jquery/themes/base/jquery.ui.progressbar.css
+%%WWWDIR%%/include/javascript/jquery/themes/base/jquery.ui.resizable.css
+%%WWWDIR%%/include/javascript/jquery/themes/base/jquery.ui.selectable.css
+%%WWWDIR%%/include/javascript/jquery/themes/base/jquery.ui.slider.css
+%%WWWDIR%%/include/javascript/jquery/themes/base/jquery.ui.tabs.css
+%%WWWDIR%%/include/javascript/jquery/themes/base/jquery.ui.theme.css
+%%WWWDIR%%/include/javascript/jquery.js
 %%WWWDIR%%/include/javascript/jsAlerts.php
 %%WWWDIR%%/include/javascript/jsclass_async.js
 %%WWWDIR%%/include/javascript/jsclass_base.js
 %%WWWDIR%%/include/javascript/menu.js
-%%WWWDIR%%/include/javascript/overlibmws.js
-%%WWWDIR%%/include/javascript/overlibmws_iframe.js
 %%WWWDIR%%/include/javascript/phpjs/get_html_translation_table.js
 %%WWWDIR%%/include/javascript/phpjs/html_entity_decode.js
+%%WWWDIR%%/include/javascript/phpjs/htmlentities.js
 %%WWWDIR%%/include/javascript/phpjs/license.js
 %%WWWDIR%%/include/javascript/popup_helper.js
 %%WWWDIR%%/include/javascript/popup_parent_helper.js
@@ -1230,7 +1457,6 @@
 %%WWWDIR%%/include/javascript/sugar_yui_overrides.js
 %%WWWDIR%%/include/javascript/sugarwidgets/SugarYUILoader.js
 %%WWWDIR%%/include/javascript/sugarwidgets/SugarYUIWidgets.js
-%%WWWDIR%%/include/javascript/swfobject.js
 %%WWWDIR%%/include/javascript/tiny_mce/classes/AddOnManager.js
 %%WWWDIR%%/include/javascript/tiny_mce/classes/ControlManager.js
 %%WWWDIR%%/include/javascript/tiny_mce/classes/Editor.js
@@ -3130,9 +3356,11 @@
 %%WWWDIR%%/install.php
 %%WWWDIR%%/json_server.php
 %%WWWDIR%%/jssource/JSGroupings.php
+%%WWWDIR%%/jssource/Minifier.php
 %%WWWDIR%%/jssource/jsmin.php
 %%WWWDIR%%/jssource/minify.php
 %%WWWDIR%%/jssource/minify_utils.php
+%%WWWDIR%%/jssource/src_files/include/HTMLPurifier/standalone/HTMLPurifier/Printer/ConfigForm.js
 %%WWWDIR%%/jssource/src_files/include/MySugar/javascript/MySugar.js
 %%WWWDIR%%/jssource/src_files/include/SubPanel/SubPanelTiles.js
 %%WWWDIR%%/jssource/src_files/include/SugarCharts/Jit/FlashCanvas/canvas2png.js
@@ -3146,6 +3374,7 @@
 %%WWWDIR%%/jssource/src_files/include/SugarFields/Fields/Collection/SugarFieldCollection.js
 %%WWWDIR%%/jssource/src_files/include/SugarFields/Fields/Datetimecombo/Datetimecombo.js
 %%WWWDIR%%/jssource/src_files/include/SugarFields/Fields/File/SugarFieldFile.js
+%%WWWDIR%%/jssource/src_files/include/SugarFields/Fields/Time/Time.js
 %%WWWDIR%%/jssource/src_files/include/connectors/formatters/default/company_detail.js
 %%WWWDIR%%/jssource/src_files/include/javascript/ajaxUI.js
 %%WWWDIR%%/jssource/src_files/include/javascript/calendar.js
@@ -3154,13 +3383,13 @@
 %%WWWDIR%%/jssource/src_files/include/javascript/importWizard.js
 %%WWWDIR%%/jssource/src_files/include/javascript/include.js
 %%WWWDIR%%/jssource/src_files/include/javascript/iscroll.js
+%%WWWDIR%%/jssource/src_files/include/javascript/jquery.js
 %%WWWDIR%%/jssource/src_files/include/javascript/jsclass_async.js
 %%WWWDIR%%/jssource/src_files/include/javascript/jsclass_base.js
 %%WWWDIR%%/jssource/src_files/include/javascript/menu.js
-%%WWWDIR%%/jssource/src_files/include/javascript/overlibmws.js
-%%WWWDIR%%/jssource/src_files/include/javascript/overlibmws_iframe.js
 %%WWWDIR%%/jssource/src_files/include/javascript/phpjs/get_html_translation_table.js
 %%WWWDIR%%/jssource/src_files/include/javascript/phpjs/html_entity_decode.js
+%%WWWDIR%%/jssource/src_files/include/javascript/phpjs/htmlentities.js
 %%WWWDIR%%/jssource/src_files/include/javascript/phpjs/license.js
 %%WWWDIR%%/jssource/src_files/include/javascript/popup_helper.js
 %%WWWDIR%%/jssource/src_files/include/javascript/popup_parent_helper.js
@@ -3172,7 +3401,6 @@
 %%WWWDIR%%/jssource/src_files/include/javascript/sugar_yui_overrides.js
 %%WWWDIR%%/jssource/src_files/include/javascript/sugarwidgets/SugarYUILoader.js
 %%WWWDIR%%/jssource/src_files/include/javascript/sugarwidgets/SugarYUIWidgets.js
-%%WWWDIR%%/jssource/src_files/include/javascript/swfobject.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/assets/dpSyntaxHighlighter.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/assets/syntax.js
 %%WWWDIR%%/jssource/src_files/include/javascript/yui3/build/anim/anim-base-min.js
@@ -3969,10 +4197,12 @@
 %%WWWDIR%%/jssource/src_files/modules/Home/about.js
 %%WWWDIR%%/jssource/src_files/modules/InboundEmail/InboundEmail.js
 %%WWWDIR%%/jssource/src_files/modules/Leads/Lead.js
+%%WWWDIR%%/jssource/src_files/modules/Meetings/duration_dependency.js
 %%WWWDIR%%/jssource/src_files/modules/Meetings/jsclass_scheduler.js
 %%WWWDIR%%/jssource/src_files/modules/MergeRecords/Merge.js
 %%WWWDIR%%/jssource/src_files/modules/Project/Project.js
 %%WWWDIR%%/jssource/src_files/modules/ProjectTask/ProjectTask.js
+%%WWWDIR%%/jssource/src_files/modules/Schedulers/Schedulers.js
 %%WWWDIR%%/jssource/src_files/modules/Studio/JSTransaction.js
 %%WWWDIR%%/jssource/src_files/modules/Studio/studio.js
 %%WWWDIR%%/jssource/src_files/modules/Studio/studiodd.js
@@ -4136,6 +4366,7 @@
 %%WWWDIR%%/modules/Accounts/views/view.detail.php
 %%WWWDIR%%/modules/Accounts/views/view.edit.php
 %%WWWDIR%%/modules/Accounts/views/view.list.php
+%%WWWDIR%%/modules/Activities/EmailReminder.php
 %%WWWDIR%%/modules/Activities/Forms.php
 %%WWWDIR%%/modules/Activities/Menu.php
 %%WWWDIR%%/modules/Activities/OpenListView.php
@@ -4287,21 +4518,23 @@
 %%WWWDIR%%/modules/Calendar/Dashlets/CalendarDashlet/CalendarDashletOptions.tpl
 %%WWWDIR%%/modules/Calendar/Menu.php
 %%WWWDIR%%/modules/Calendar/action_view_map.php
+%%WWWDIR%%/modules/Calendar/controller.php
 %%WWWDIR%%/modules/Calendar/index.php
 %%WWWDIR%%/modules/Calendar/language/en_us.lang.php
+%%WWWDIR%%/modules/Calendar/tpls/editHeader.tpl
 %%WWWDIR%%/modules/Calendar/tpls/empty.tpl
 %%WWWDIR%%/modules/Calendar/tpls/footer.tpl
 %%WWWDIR%%/modules/Calendar/tpls/form.tpl
 %%WWWDIR%%/modules/Calendar/tpls/header.tpl
 %%WWWDIR%%/modules/Calendar/tpls/main.tpl
+%%WWWDIR%%/modules/Calendar/tpls/repeat.tpl
 %%WWWDIR%%/modules/Calendar/tpls/settings.tpl
 %%WWWDIR%%/modules/Calendar/tpls/shared_users.tpl
+%%WWWDIR%%/modules/Calendar/views/view.createinvitee.php
 %%WWWDIR%%/modules/Calendar/views/view.getgr.php
 %%WWWDIR%%/modules/Calendar/views/view.getgrusers.php
+%%WWWDIR%%/modules/Calendar/views/view.json.php
 %%WWWDIR%%/modules/Calendar/views/view.quickedit.php
-%%WWWDIR%%/modules/Calendar/views/view.remove.php
-%%WWWDIR%%/modules/Calendar/views/view.reschedule.php
-%%WWWDIR%%/modules/Calendar/views/view.saveactivity.php
 %%WWWDIR%%/modules/Calendar/views/view.savesettings.php
 %%WWWDIR%%/modules/Calls/Call.php
 %%WWWDIR%%/modules/Calls/CallFormBase.php
@@ -4329,9 +4562,11 @@
 %%WWWDIR%%/modules/Calls/metadata/subpanels/ForHistory.php
 %%WWWDIR%%/modules/Calls/metadata/subpanels/default.php
 %%WWWDIR%%/modules/Calls/tpls/QuickCreate.tpl
+%%WWWDIR%%/modules/Calls/tpls/detailHeader.tpl
 %%WWWDIR%%/modules/Calls/tpls/footer.tpl
 %%WWWDIR%%/modules/Calls/vardefs.php
 %%WWWDIR%%/modules/Calls/views/view.edit.php
+%%WWWDIR%%/modules/Calls/views/view.list.php
 %%WWWDIR%%/modules/CampaignLog/CampaignLog.php
 %%WWWDIR%%/modules/CampaignLog/Menu.php
 %%WWWDIR%%/modules/CampaignLog/Popup_picker.html
@@ -5189,6 +5424,7 @@
 %%WWWDIR%%/modules/Leads/tpls/ShowDuplicates.tpl
 %%WWWDIR%%/modules/Leads/vardefs.php
 %%WWWDIR%%/modules/Leads/views/view.convertlead.php
+%%WWWDIR%%/modules/Leads/views/view.detail.php
 %%WWWDIR%%/modules/Leads/views/view.edit.php
 %%WWWDIR%%/modules/Leads/views/view.list.php
 %%WWWDIR%%/modules/Leads/views/view.showduplicates.php
@@ -5226,6 +5462,7 @@
 %%WWWDIR%%/modules/Meetings/SubPanelViewInvitees.html
 %%WWWDIR%%/modules/Meetings/SubPanelViewInvitees.php
 %%WWWDIR%%/modules/Meetings/action_view_map.php
+%%WWWDIR%%/modules/Meetings/duration_dependency.js
 %%WWWDIR%%/modules/Meetings/field_arrays.php
 %%WWWDIR%%/modules/Meetings/jsclass_scheduler.js
 %%WWWDIR%%/modules/Meetings/language/en_us.lang.php
@@ -5242,12 +5479,15 @@
 %%WWWDIR%%/modules/Meetings/metadata/subpanels/ForHistory.php
 %%WWWDIR%%/modules/Meetings/metadata/subpanels/default.php
 %%WWWDIR%%/modules/Meetings/tpls/QuickCreate.tpl
+%%WWWDIR%%/modules/Meetings/tpls/detailHeader.tpl
 %%WWWDIR%%/modules/Meetings/tpls/extMeetingNoStart.tpl
 %%WWWDIR%%/modules/Meetings/tpls/extMeetingNotInvited.tpl
 %%WWWDIR%%/modules/Meetings/tpls/footer.tpl
 %%WWWDIR%%/modules/Meetings/tpls/header.tpl
+%%WWWDIR%%/modules/Meetings/tpls/reminders.tpl
 %%WWWDIR%%/modules/Meetings/vardefs.php
 %%WWWDIR%%/modules/Meetings/views/view.edit.php
+%%WWWDIR%%/modules/Meetings/views/view.list.php
 %%WWWDIR%%/modules/Meetings/views/view.listbytype.php
 %%WWWDIR%%/modules/MergeRecords/Menu.php
 %%WWWDIR%%/modules/MergeRecords/Merge.js
@@ -5426,7 +5666,6 @@
 %%WWWDIR%%/modules/Notes/metadata/subpanels/ForMeetings.php
 %%WWWDIR%%/modules/Notes/metadata/subpanels/ForTasks.php
 %%WWWDIR%%/modules/Notes/metadata/subpanels/default.php
-%%WWWDIR%%/modules/Notes/tpls/EditViewHeader.tpl
 %%WWWDIR%%/modules/Notes/tpls/QuickCreate.tpl
 %%WWWDIR%%/modules/Notes/vardefs.php
 %%WWWDIR%%/modules/OAuthKeys/OAuthKey.php
@@ -5662,28 +5901,28 @@
 %%WWWDIR%%/modules/SavedSearch/language/en_us.lang.php
 %%WWWDIR%%/modules/SavedSearch/metadata/listviewdefs.php
 %%WWWDIR%%/modules/SavedSearch/vardefs.php
-%%WWWDIR%%/modules/Schedulers/Delete.php
-%%WWWDIR%%/modules/Schedulers/DeleteScheduled.php
-%%WWWDIR%%/modules/Schedulers/DetailView.html
-%%WWWDIR%%/modules/Schedulers/DetailView.php
 %%WWWDIR%%/modules/Schedulers/EditView.html
 %%WWWDIR%%/modules/Schedulers/EditView.php
 %%WWWDIR%%/modules/Schedulers/JobThread.php
-%%WWWDIR%%/modules/Schedulers/ListView.html
-%%WWWDIR%%/modules/Schedulers/ListView.php
 %%WWWDIR%%/modules/Schedulers/Menu.php
 %%WWWDIR%%/modules/Schedulers/Save.php
-%%WWWDIR%%/modules/Schedulers/Scheduled.html
-%%WWWDIR%%/modules/Schedulers/Scheduled.php
 %%WWWDIR%%/modules/Schedulers/Scheduler.php
 %%WWWDIR%%/modules/Schedulers/SchedulerDaemon.php
+%%WWWDIR%%/modules/Schedulers/Schedulers.js
 %%WWWDIR%%/modules/Schedulers/_AddJobsHere.php
 %%WWWDIR%%/modules/Schedulers/field_arrays.php
-%%WWWDIR%%/modules/Schedulers/index.php
 %%WWWDIR%%/modules/Schedulers/language/en_us.lang.php
+%%WWWDIR%%/modules/Schedulers/metadata/SearchFields.php
+%%WWWDIR%%/modules/Schedulers/metadata/detailviewdefs.php
+%%WWWDIR%%/modules/Schedulers/metadata/editviewdefs.php
+%%WWWDIR%%/modules/Schedulers/metadata/listviewdefs.php
+%%WWWDIR%%/modules/Schedulers/metadata/searchdefs.php
 %%WWWDIR%%/modules/Schedulers/metadata/subpaneldefs.php
 %%WWWDIR%%/modules/Schedulers/metadata/subpanels/default.php
 %%WWWDIR%%/modules/Schedulers/vardefs.php
+%%WWWDIR%%/modules/Schedulers/views/view.detail.php
+%%WWWDIR%%/modules/Schedulers/views/view.edit.php
+%%WWWDIR%%/modules/Schedulers/views/view.list.php
 %%WWWDIR%%/modules/SchedulersJobs/SchedulersJob.php
 %%WWWDIR%%/modules/SchedulersJobs/field_arrays.php
 %%WWWDIR%%/modules/SchedulersJobs/language/en_us.lang.php
@@ -5929,6 +6168,9 @@
 %%WWWDIR%%/modules/Versions/index.html
 %%WWWDIR%%/modules/Versions/language/en_us.lang.php
 %%WWWDIR%%/modules/Versions/vardefs.php
+%%WWWDIR%%/modules/iCals/HTTP_WebDAV_Server_iCal.php
+%%WWWDIR%%/modules/iCals/Server.php
+%%WWWDIR%%/modules/iCals/iCal.php
 %%WWWDIR%%/modules/vCals/HTTP_WebDAV_Server_vCal.php
 %%WWWDIR%%/modules/vCals/Server.php
 %%WWWDIR%%/modules/vCals/field_arrays.php
@@ -5937,6 +6179,7 @@
 %%WWWDIR%%/pdf.php
 %%WWWDIR%%/removeme.php
 %%WWWDIR%%/robots.txt
+%%WWWDIR%%/run_job.php
 %%WWWDIR%%/service/core/NusoapSoap.php
 %%WWWDIR%%/service/core/PHP5Soap.php
 %%WWWDIR%%/service/core/REST/SugarRest.php
@@ -6112,7 +6355,6 @@
 %%WWWDIR%%/themes/Sugar5/images/ForecastReports.gif
 %%WWWDIR%%/themes/Sugar5/images/ForecastWorksheet.gif
 %%WWWDIR%%/themes/Sugar5/images/Forecasts.gif
-%%WWWDIR%%/themes/Sugar5/images/Forecasts_favico.png
 %%WWWDIR%%/themes/Sugar5/images/Holidays.gif
 %%WWWDIR%%/themes/Sugar5/images/Import.gif
 %%WWWDIR%%/themes/Sugar5/images/ImportCustomFields.gif
@@ -6120,7 +6362,6 @@
 %%WWWDIR%%/themes/Sugar5/images/KB.gif
 %%WWWDIR%%/themes/Sugar5/images/KBArticle.gif
 %%WWWDIR%%/themes/Sugar5/images/KBDocuments.gif
-%%WWWDIR%%/themes/Sugar5/images/KBDocuments_favico.png
 %%WWWDIR%%/themes/Sugar5/images/LanguagePacks.gif
 %%WWWDIR%%/themes/Sugar5/images/Layout.gif
 %%WWWDIR%%/themes/Sugar5/images/LeadReports.gif
@@ -6184,7 +6425,6 @@
 %%WWWDIR%%/themes/Sugar5/images/QueryBuilder.gif
 %%WWWDIR%%/themes/Sugar5/images/QuoteReports.gif
 %%WWWDIR%%/themes/Sugar5/images/Quotes.gif
-%%WWWDIR%%/themes/Sugar5/images/Quotes_favico.png
 %%WWWDIR%%/themes/Sugar5/images/RSS.gif
 %%WWWDIR%%/themes/Sugar5/images/ReassignRecords.gif
 %%WWWDIR%%/themes/Sugar5/images/Rebuild.gif
@@ -6195,7 +6435,6 @@
 %%WWWDIR%%/themes/Sugar5/images/Repair.gif
 %%WWWDIR%%/themes/Sugar5/images/ReportMaker.gif
 %%WWWDIR%%/themes/Sugar5/images/Reports.gif
-%%WWWDIR%%/themes/Sugar5/images/Reports_favico.png
 %%WWWDIR%%/themes/Sugar5/images/Roles.gif
 %%WWWDIR%%/themes/Sugar5/images/RowsAndColumns.gif
 %%WWWDIR%%/themes/Sugar5/images/RowsAndColumnsOver.gif
@@ -6216,7 +6455,6 @@
 %%WWWDIR%%/themes/Sugar5/images/Tasks_favico.png
 %%WWWDIR%%/themes/Sugar5/images/TaxRates.gif
 %%WWWDIR%%/themes/Sugar5/images/Teams.gif
-%%WWWDIR%%/themes/Sugar5/images/Teams_favico.png
 %%WWWDIR%%/themes/Sugar5/images/Themes.gif
 %%WWWDIR%%/themes/Sugar5/images/TimePeriods.gif
 %%WWWDIR%%/themes/Sugar5/images/Trackers.gif
@@ -6251,6 +6489,7 @@
 %%WWWDIR%%/themes/Sugar5/images/bgRed.gif
 %%WWWDIR%%/themes/Sugar5/images/blank.gif
 %%WWWDIR%%/themes/Sugar5/images/calendarHeaderBg.gif
+%%WWWDIR%%/themes/Sugar5/images/calendar_info.png
 %%WWWDIR%%/themes/Sugar5/images/calendar_next.gif
 %%WWWDIR%%/themes/Sugar5/images/calendar_previous.gif
 %%WWWDIR%%/themes/Sugar5/images/check_inline.gif
@@ -6759,6 +6998,8 @@
 %%WWWDIR%%/themes/default/images/SugarLogic/icon_enum_16.png
 %%WWWDIR%%/themes/default/images/SugarLogic/icon_generic_16.png
 %%WWWDIR%%/themes/default/images/SugarLogic/icon_num_16.png
+%%WWWDIR%%/themes/default/images/SugarLogic/icon_rel_field_16.png
+%%WWWDIR%%/themes/default/images/SugarLogic/icon_rollup_16.png
 %%WWWDIR%%/themes/default/images/SugarLogic/icon_string_16.png
 %%WWWDIR%%/themes/default/images/SugarPortal.gif
 %%WWWDIR%%/themes/default/images/Summation.gif
@@ -6776,6 +7017,7 @@
 %%WWWDIR%%/themes/default/images/WorkFlow.gif
 %%WWWDIR%%/themes/default/images/_blank.png
 %%WWWDIR%%/themes/default/images/accept_inline.gif
+%%WWWDIR%%/themes/default/images/actionMenuArrow.png
 %%WWWDIR%%/themes/default/images/advanced_search.gif
 %%WWWDIR%%/themes/default/images/arrow.gif
 %%WWWDIR%%/themes/default/images/arrow_down.gif
@@ -6799,6 +7041,7 @@
 %%WWWDIR%%/themes/default/images/bgRed.gif
 %%WWWDIR%%/themes/default/images/blank.gif
 %%WWWDIR%%/themes/default/images/calendarHeaderBg.gif
+%%WWWDIR%%/themes/default/images/calendar_info.png
 %%WWWDIR%%/themes/default/images/calendar_next.gif
 %%WWWDIR%%/themes/default/images/calendar_previous.gif
 %%WWWDIR%%/themes/default/images/chartBg.png
@@ -6872,6 +7115,7 @@
 %%WWWDIR%%/themes/default/images/dp-tr-menu.png
 %%WWWDIR%%/themes/default/images/dp-tr-plain.png
 %%WWWDIR%%/themes/default/images/dp-tr.png
+%%WWWDIR%%/themes/default/images/dropdown_menu_toggle_more.gif
 %%WWWDIR%%/themes/default/images/edit_inline.gif
 %%WWWDIR%%/themes/default/images/edit_wizard.gif
 %%WWWDIR%%/themes/default/images/editfields.gif
@@ -7089,6 +7333,7 @@
 %%WWWDIR%%/themes/default/images/img_close_search.gif
 %%WWWDIR%%/themes/default/images/img_left_arrow.jpg
 %%WWWDIR%%/themes/default/images/img_loading.gif
+%%WWWDIR%%/themes/default/images/img_loading_54.gif
 %%WWWDIR%%/themes/default/images/img_right_arrow.jpg
 %%WWWDIR%%/themes/default/images/info-add.gif
 %%WWWDIR%%/themes/default/images/info-help.gif
@@ -7097,6 +7342,7 @@
 %%WWWDIR%%/themes/default/images/join_imeeting.gif
 %%WWWDIR%%/themes/default/images/join_meeting_inline.png
 %%WWWDIR%%/themes/default/images/jscalendar.gif
+%%WWWDIR%%/themes/default/images/layout_sprite.png
 %%WWWDIR%%/themes/default/images/leftarrow.gif
 %%WWWDIR%%/themes/default/images/leftarrow_big.gif
 %%WWWDIR%%/themes/default/images/line.gif
@@ -7137,11 +7383,13 @@
 %%WWWDIR%%/themes/default/images/plug-in_Word.gif
 %%WWWDIR%%/themes/default/images/plus.gif
 %%WWWDIR%%/themes/default/images/plus_inline.gif
+%%WWWDIR%%/themes/default/images/poweredby_sugarcrm_65.png
 %%WWWDIR%%/themes/default/images/ppt_image_inline.gif
 %%WWWDIR%%/themes/default/images/previous.gif
 %%WWWDIR%%/themes/default/images/previous_off.gif
 %%WWWDIR%%/themes/default/images/print.gif
 %%WWWDIR%%/themes/default/images/publish_inline.gif
+%%WWWDIR%%/themes/default/images/quick-create.png
 %%WWWDIR%%/themes/default/images/red_camp.gif
 %%WWWDIR%%/themes/default/images/rightarrow.gif
 %%WWWDIR%%/themes/default/images/rightarrow_big.gif
@@ -7255,6 +7503,8 @@
 @dirrm %%WWWDIR%%/cache/feeds
 @dirrm %%WWWDIR%%/cache/images
 @dirrm %%WWWDIR%%/cache/import
+@dirrm %%WWWDIR%%/cache/include/javascript
+@dirrm %%WWWDIR%%/cache/include
 @dirrm %%WWWDIR%%/cache/layout
 @dirrm %%WWWDIR%%/cache/pdf
 @dirrm %%WWWDIR%%/cache/xml
@@ -7267,6 +7517,20 @@
 @dirrm %%WWWDIR%%/include/DetailView
 @dirrm %%WWWDIR%%/include/EditView
 @dirrm %%WWWDIR%%/include/GroupedTabs
+@dirrm %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/Builder
+@dirrm %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/Interchange
+@dirrm %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema/schema
+@dirrm %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/ConfigSchema
+@dirrm %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/EntityLookup
+@dirrm %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Filter
+@dirrm %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Language/classes
+@dirrm %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Language/messages
+@dirrm %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Language
+@dirrm %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Lexer
+@dirrm %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier/Printer
+@dirrm %%WWWDIR%%/include/HTMLPurifier/standalone/HTMLPurifier
+@dirrm %%WWWDIR%%/include/HTMLPurifier/standalone
+@dirrm %%WWWDIR%%/include/HTMLPurifier
 @dirrm %%WWWDIR%%/include/HTTP_WebDAV_Server/Tools
 @dirrm %%WWWDIR%%/include/HTTP_WebDAV_Server
 @dirrm %%WWWDIR%%/include/ListView
@@ -7283,7 +7547,6 @@
 @dirrm %%WWWDIR%%/include/OutboundEmail
 @dirrm %%WWWDIR%%/include/Pear/Crypt_Blowfish/Blowfish
 @dirrm %%WWWDIR%%/include/Pear/Crypt_Blowfish
-@dirrm %%WWWDIR%%/include/Pear/HTML_Safe
 @dirrm %%WWWDIR%%/include/Pear/XML_HTMLSax3/HTMLSax3
 @dirrm %%WWWDIR%%/include/Pear/XML_HTMLSax3
 @dirrm %%WWWDIR%%/include/Pear
@@ -7336,6 +7599,7 @@
 @dirrm %%WWWDIR%%/include/SugarFields/Fields/Readonly
 @dirrm %%WWWDIR%%/include/SugarFields/Fields/Relate
 @dirrm %%WWWDIR%%/include/SugarFields/Fields/Text
+@dirrm %%WWWDIR%%/include/SugarFields/Fields/Time
 @dirrm %%WWWDIR%%/include/SugarFields/Fields/URL
 @dirrm %%WWWDIR%%/include/SugarFields/Fields/Username
 @dirrm %%WWWDIR%%/include/SugarFields/Fields
@@ -7343,6 +7607,7 @@
 @dirrm %%WWWDIR%%/include/SugarFields/Parsers
 @dirrm %%WWWDIR%%/include/SugarFields
 @dirrm %%WWWDIR%%/include/SugarFolders
+@dirrm %%WWWDIR%%/include/SugarHtml
 @dirrm %%WWWDIR%%/include/SugarLogger
 @dirrm %%WWWDIR%%/include/SugarObjects/forms
 @dirrm %%WWWDIR%%/include/SugarObjects/implements/assignable/language
@@ -7389,6 +7654,7 @@
 @dirrm %%WWWDIR%%/include/SugarObjects/templates/sale
 @dirrm %%WWWDIR%%/include/SugarObjects/templates
 @dirrm %%WWWDIR%%/include/SugarObjects
+@dirrm %%WWWDIR%%/include/SugarQueue
 @dirrm %%WWWDIR%%/include/SugarTheme
 @dirrm %%WWWDIR%%/include/Sugarpdf/sugarpdf
 @dirrm %%WWWDIR%%/include/Sugarpdf
@@ -7422,6 +7688,18 @@
 @dirrm %%WWWDIR%%/include/generic/SugarWidgets
 @dirrm %%WWWDIR%%/include/generic
 @dirrm %%WWWDIR%%/include/images
+@dirrm %%WWWDIR%%/include/javascript/jquery/markitup/sets/default/images
+@dirrm %%WWWDIR%%/include/javascript/jquery/markitup/sets/default
+@dirrm %%WWWDIR%%/include/javascript/jquery/markitup/sets
+@dirrm %%WWWDIR%%/include/javascript/jquery/markitup/skins/simple/images
+@dirrm %%WWWDIR%%/include/javascript/jquery/markitup/skins/simple
+@dirrm %%WWWDIR%%/include/javascript/jquery/markitup/skins
+@dirrm %%WWWDIR%%/include/javascript/jquery/markitup/templates
+@dirrm %%WWWDIR%%/include/javascript/jquery/markitup
+@dirrm %%WWWDIR%%/include/javascript/jquery/themes/base/images
+@dirrm %%WWWDIR%%/include/javascript/jquery/themes/base
+@dirrm %%WWWDIR%%/include/javascript/jquery/themes
+@dirrm %%WWWDIR%%/include/javascript/jquery
 @dirrm %%WWWDIR%%/include/javascript/phpjs
 @dirrm %%WWWDIR%%/include/javascript/sugarwidgets
 @dirrm %%WWWDIR%%/include/javascript/tiny_mce/classes/adapter/jquery
@@ -7838,6 +8116,10 @@
 @dirrm %%WWWDIR%%/install/language
 @dirrm %%WWWDIR%%/install/seed_data
 @dirrm %%WWWDIR%%/install
+@dirrm %%WWWDIR%%/jssource/src_files/include/HTMLPurifier/standalone/HTMLPurifier/Printer
+@dirrm %%WWWDIR%%/jssource/src_files/include/HTMLPurifier/standalone/HTMLPurifier
+@dirrm %%WWWDIR%%/jssource/src_files/include/HTMLPurifier/standalone
+@dirrm %%WWWDIR%%/jssource/src_files/include/HTMLPurifier
 @dirrm %%WWWDIR%%/jssource/src_files/include/MySugar/javascript
 @dirrm %%WWWDIR%%/jssource/src_files/include/MySugar
 @dirrm %%WWWDIR%%/jssource/src_files/include/SubPanel
@@ -7853,6 +8135,7 @@
 @dirrm %%WWWDIR%%/jssource/src_files/include/SugarFields/Fields/Collection
 @dirrm %%WWWDIR%%/jssource/src_files/include/SugarFields/Fields/Datetimecombo
 @dirrm %%WWWDIR%%/jssource/src_files/include/SugarFields/Fields/File
+@dirrm %%WWWDIR%%/jssource/src_files/include/SugarFields/Fields/Time
 @dirrm %%WWWDIR%%/jssource/src_files/include/SugarFields/Fields
 @dirrm %%WWWDIR%%/jssource/src_files/include/SugarFields
 @dirrm %%WWWDIR%%/jssource/src_files/include/connectors/formatters/default
@@ -7960,6 +8243,7 @@
 @dirrm %%WWWDIR%%/jssource/src_files/modules/MergeRecords
 @dirrm %%WWWDIR%%/jssource/src_files/modules/Project
 @dirrm %%WWWDIR%%/jssource/src_files/modules/ProjectTask
+@dirrm %%WWWDIR%%/jssource/src_files/modules/Schedulers
 @dirrm %%WWWDIR%%/jssource/src_files/modules/Studio
 @dirrm %%WWWDIR%%/jssource/src_files/modules/UpgradeWizard
 @dirrm %%WWWDIR%%/jssource/src_files/modules/Users
@@ -8290,6 +8574,7 @@
 @dirrm %%WWWDIR%%/modules/Schedulers/language
 @dirrm %%WWWDIR%%/modules/Schedulers/metadata/subpanels
 @dirrm %%WWWDIR%%/modules/Schedulers/metadata
+@dirrm %%WWWDIR%%/modules/Schedulers/views
 @dirrm %%WWWDIR%%/modules/Schedulers
 @dirrm %%WWWDIR%%/modules/SchedulersJobs/language
 @dirrm %%WWWDIR%%/modules/SchedulersJobs/metadata/subpanels
@@ -8345,6 +8630,7 @@
 @dirrm %%WWWDIR%%/modules/Users
 @dirrm %%WWWDIR%%/modules/Versions/language
 @dirrm %%WWWDIR%%/modules/Versions
+@dirrm %%WWWDIR%%/modules/iCals
 @dirrm %%WWWDIR%%/modules/vCals
 @dirrm %%WWWDIR%%/modules
 @dirrm %%WWWDIR%%/service/core/REST
