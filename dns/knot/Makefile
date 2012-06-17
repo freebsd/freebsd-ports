@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	knot
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://public.nic.cz/files/knot-dns/ \
 		http://www.dns-lab.com/downloads/knot-dns/
@@ -30,6 +30,8 @@ MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	libtool
 USE_OPENSSL=	yes
 
+.include <bsd.port.pre.mk>
+
 SUB_FILES=	pkg-message
 
 USE_RC_SUBR=	${PORTNAME}d
@@ -43,10 +45,10 @@ post-install:
 	@${MKDIR} ${ETCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/samples/knot.min.conf ${ETCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/samples/knot.full.conf ${ETCDIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 	@${CAT} ${WRKDIR}/pkg-message
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
