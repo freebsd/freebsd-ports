@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.18.3
+PORTVERSION=	1.18.4
 CATEGORIES=	www
 MASTER_SITES=	http://dumps.wikimedia.org/mediawiki/${PORTVERSION:R}/
 
@@ -21,10 +21,10 @@ USE_PHP=	ctype iconv mbstring pcre session xml zlib readline dom
 IGNORE_WITH_PHP=	4
 WANT_PHP_WEB=	yes
 MEDIAWIKIDIR?=	www/mediawiki
+NO_BUILD=	yes
 
 OPTIONS=	PGSQL "Use PostgreSQL (instead of MySQL)" off \
 		LDAP "Use LDAP authentication" off \
-		TEXVC "Use built-in TeX rendering" off \
 		APC "Use pecl-APC" on \
 		EACCEL "Use eAccelerator (instead of pecl-APC)" off \
 		IMAGICK "Use ImageMagick" off
@@ -42,15 +42,6 @@ USE_PHP+=	mysql
 USE_PHP+=	ldap
 .endif
 
-.if defined(WITH_TEXVC)
-IGNORE=		not build currently
-RUN_DEPENDS+=	latex:${PORTSDIR}/print/latex
-BUILD_DEPENDS+=	ocaml:${PORTSDIR}/lang/ocaml
-
-USE_GMAKE=yes
-WITH_IMAGICK=yes
-.endif
-
 .if defined(WITH_IMAGICK)
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:${PORTSDIR}/graphics/pecl-imagick
 .endif
@@ -61,11 +52,6 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/eaccelerator.so:${PORTSDIR}/ww
 .else
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/apc.so:${PORTSDIR}/www/pecl-APC
 .endif
-.endif
-
-do-build:
-.if defined(WITH_TEXVC)
-	@(cd ${WRKSRC}/math && ${GMAKE})
 .endif
 
 do-install:
