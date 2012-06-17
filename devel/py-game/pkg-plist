@@ -1,8 +1,12 @@
 %%PYTHON_INCLUDEDIR%%/pygame/bitmask.h
+%%PYTHON_INCLUDEDIR%%/pygame/camera.h
 %%PYTHON_INCLUDEDIR%%/pygame/fastevents.h
 %%PYTHON_INCLUDEDIR%%/pygame/ffmovie.h
 %%PYTHON_INCLUDEDIR%%/pygame/font.h
+%%PYTHON_INCLUDEDIR%%/pygame/mask.h
 %%PYTHON_INCLUDEDIR%%/pygame/mixer.h
+%%PYTHON_INCLUDEDIR%%/pygame/pgarrinter.h
+%%PYTHON_INCLUDEDIR%%/pygame/pgcompat.h
 %%PYTHON_INCLUDEDIR%%/pygame/pgopengl.h
 %%PYTHON_INCLUDEDIR%%/pygame/pygame.h
 %%PYTHON_INCLUDEDIR%%/pygame/pygamedocs.h
@@ -26,6 +30,13 @@
 %%PYTHON_SITELIBDIR%%/pygame/__init__.py
 %%PYTHON_SITELIBDIR%%/pygame/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pygame/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pygame/_arraysurfarray.so
+%%PYTHON_SITELIBDIR%%/pygame/_camera_opencv_highgui.py
+%%PYTHON_SITELIBDIR%%/pygame/_camera_opencv_highgui.pyc
+%%PYTHON_SITELIBDIR%%/pygame/_camera_opencv_highgui.pyo
+%%PYTHON_SITELIBDIR%%/pygame/_camera_vidcapture.py
+%%PYTHON_SITELIBDIR%%/pygame/_camera_vidcapture.pyc
+%%PYTHON_SITELIBDIR%%/pygame/_camera_vidcapture.pyo
 %%PYTHON_SITELIBDIR%%/pygame/_numericsndarray.so
 %%PYTHON_SITELIBDIR%%/pygame/_numericsurfarray.so
 %%PYTHON_SITELIBDIR%%/pygame/_numpysurfarray.py
@@ -36,11 +47,17 @@
 %%PYTHON_SITELIBDIR%%/pygame/_numpysndarray.pyo
 %%PYTHON_SITELIBDIR%%/pygame/base.so
 %%PYTHON_SITELIBDIR%%/pygame/bufferproxy.so
+%%PYTHON_SITELIBDIR%%/pygame/camera.py
+%%PYTHON_SITELIBDIR%%/pygame/camera.pyc
+%%PYTHON_SITELIBDIR%%/pygame/camera.pyo
 %%PYTHON_SITELIBDIR%%/pygame/cdrom.so
 %%PYTHON_SITELIBDIR%%/pygame/color.so
 %%PYTHON_SITELIBDIR%%/pygame/colordict.py
 %%PYTHON_SITELIBDIR%%/pygame/colordict.pyc
 %%PYTHON_SITELIBDIR%%/pygame/colordict.pyo
+%%PYTHON_SITELIBDIR%%/pygame/compat.py
+%%PYTHON_SITELIBDIR%%/pygame/compat.pyc
+%%PYTHON_SITELIBDIR%%/pygame/compat.pyo
 %%PYTHON_SITELIBDIR%%/pygame/constants.so
 %%PYTHON_SITELIBDIR%%/pygame/cursors.py
 %%PYTHON_SITELIBDIR%%/pygame/cursors.pyc
@@ -51,6 +68,7 @@
 %%PYTHON_SITELIBDIR%%/pygame/fastevent.so
 %%PYTHON_SITELIBDIR%%/pygame/font.so
 %%PYTHON_SITELIBDIR%%/pygame/freesansbold.ttf
+%%PYTHON_SITELIBDIR%%/pygame/gfxdraw.so
 %%PYTHON_SITELIBDIR%%/pygame/image.so
 %%PYTHON_SITELIBDIR%%/pygame/imageext.so
 %%PYTHON_SITELIBDIR%%/pygame/joystick.so
@@ -65,6 +83,9 @@
 %%PYTHON_SITELIBDIR%%/pygame/macosx.pyc
 %%PYTHON_SITELIBDIR%%/pygame/macosx.pyo
 %%PYTHON_SITELIBDIR%%/pygame/mask.so
+%%PYTHON_SITELIBDIR%%/pygame/midi.py
+%%PYTHON_SITELIBDIR%%/pygame/midi.pyc
+%%PYTHON_SITELIBDIR%%/pygame/midi.pyo
 %%PYTHON_SITELIBDIR%%/pygame/mixer.so
 %%PYTHON_SITELIBDIR%%/pygame/mixer_music.so
 %%PYTHON_SITELIBDIR%%/pygame/mouse.so
@@ -77,6 +98,7 @@
 %%PYTHON_SITELIBDIR%%/pygame/pygame.ico
 %%PYTHON_SITELIBDIR%%/pygame/pygame_icon.bmp
 %%PYTHON_SITELIBDIR%%/pygame/pygame_icon.icns
+%%PYTHON_SITELIBDIR%%/pygame/pygame_icon.svg
 %%PYTHON_SITELIBDIR%%/pygame/pygame_icon.tiff
 %%PYTHON_SITELIBDIR%%/pygame/rect.so
 %%PYTHON_SITELIBDIR%%/pygame/rwobject.so
@@ -101,6 +123,8 @@
 %%PYTHON_SITELIBDIR%%/pygame/version.pyc
 %%PYTHON_SITELIBDIR%%/pygame/version.pyo
 %%PORTDOCS%%%%DOCSDIR%%/LGPL
+%%PORTDOCS%%%%DOCSDIR%%/__init__.py
+%%PORTDOCS%%%%DOCSDIR%%/__main__.py
 %%PORTDOCS%%%%DOCSDIR%%/howto_release_pygame.txt
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/logos.html
@@ -108,18 +132,23 @@
 %%PORTDOCS%%%%DOCSDIR%%/pygame_powered.gif
 %%PORTDOCS%%%%DOCSDIR%%/pygame_small.gif
 %%PORTDOCS%%%%DOCSDIR%%/pygame_tiny.gif
+%%PORTDOCS%%%%DOCSDIR%%/ref/camera.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/cdrom.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/color.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/cursors.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/display.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/draw.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/event.html
+%%PORTDOCS%%%%DOCSDIR%%/ref/examples.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/font.html
+%%PORTDOCS%%%%DOCSDIR%%/ref/gfxdraw.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/image.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/index.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/joystick.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/key.html
+%%PORTDOCS%%%%DOCSDIR%%/ref/locals.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/mask.html
+%%PORTDOCS%%%%DOCSDIR%%/ref/midi.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/mixer.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/mouse.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/movie.html
@@ -134,12 +163,23 @@
 %%PORTDOCS%%%%DOCSDIR%%/ref/sprite.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/surface.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/surfarray.html
+%%PORTDOCS%%%%DOCSDIR%%/ref/tests.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/time.html
 %%PORTDOCS%%%%DOCSDIR%%/ref/transform.html
 %%PORTDOCS%%%%DOCSDIR%%/tut/DisplayModes.html
 %%PORTDOCS%%%%DOCSDIR%%/tut/ImportInit.html
 %%PORTDOCS%%%%DOCSDIR%%/tut/MoveIt.html
 %%PORTDOCS%%%%DOCSDIR%%/tut/SpriteIntro.html
+%%PORTDOCS%%%%DOCSDIR%%/tut/camera/average.jpg
+%%PORTDOCS%%%%DOCSDIR%%/tut/camera/background.jpg
+%%PORTDOCS%%%%DOCSDIR%%/tut/camera/CameraIntro.html
+%%PORTDOCS%%%%DOCSDIR%%/tut/camera/green.jpg
+%%PORTDOCS%%%%DOCSDIR%%/tut/camera/hsv.jpg
+%%PORTDOCS%%%%DOCSDIR%%/tut/camera/mask.jpg
+%%PORTDOCS%%%%DOCSDIR%%/tut/camera/rgb.jpg
+%%PORTDOCS%%%%DOCSDIR%%/tut/camera/thresh.jpg
+%%PORTDOCS%%%%DOCSDIR%%/tut/camera/thresholded.jpg
+%%PORTDOCS%%%%DOCSDIR%%/tut/camera/yuv.jpg
 %%PORTDOCS%%%%DOCSDIR%%/tut/chimp/ChimpLineByLine.html
 %%PORTDOCS%%%%DOCSDIR%%/tut/chimp/chimp.py.html
 %%PORTDOCS%%%%DOCSDIR%%/tut/chimp/chimpshot.gif
@@ -168,10 +208,13 @@
 %%PORTDOCS%%%%DOCSDIR%%/tut/tom/games5.html
 %%PORTDOCS%%%%DOCSDIR%%/tut/tom/games6.html
 %%PORTDOCS%%%%DOCSDIR%%/tut/tom/radians.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/aacircle.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/aliens.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arraydemo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/blend_fill.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/blit_blends.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/camera.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/chimp.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cursors.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/alien1.gif
@@ -196,6 +239,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/house_lo.mp3
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/house_lo.ogg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/liquid.bmp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/midikeys.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/oldplayer.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/player1.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/punch.wav
@@ -210,6 +254,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fonty.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/glcube.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/liquid.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/midi.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj/MainMenu.nib/JavaCompiling.plist
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj/MainMenu.nib/_MainMenu_EOArchive_English.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj/MainMenu.nib/classes.nib
@@ -218,17 +263,18 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/macosx/aliens_app_example/English.lproj/aliens.icns
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/macosx/aliens_app_example/README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/macosx/aliens_app_example/aliens.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/macosx/aliens_app_example/aliens_bootstrap.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/macosx/aliens_app_example/setup.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/macosx/macfont.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mask.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/moveit.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/movieplayer.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/oldalien.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/overlay.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pixelarray.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scaletest.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scrap_clipboard.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scroll.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sound.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sound_array_demos.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stars.py
@@ -244,6 +290,7 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tut/surfarray
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tut/intro
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tut/chimp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tut/camera
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tut
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ref
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
