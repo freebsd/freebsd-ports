@@ -18,8 +18,6 @@ COMMENT=	Desktop Screenshot plugin for Xfce
 
 LIB_DEPENDS=	soup-2:${PORTSDIR}/devel/libsoup
 
-OPTIONS=	NLS "Enable Native Language Support" on
-
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -28,9 +26,9 @@ USE_GNOME=	glib20 gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv panel libutil libgui
 MAN1=		xfce4-screenshooter.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
@@ -41,4 +39,4 @@ PLIST_SUB+=	NLS="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PORTNAME%%|${PORTNAME}|g' ${WRKSRC}/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
