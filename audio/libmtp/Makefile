@@ -7,6 +7,7 @@
 
 PORTNAME=	libmtp
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -19,7 +20,7 @@ OPTIONS_DEFINE=	MTPZ
 OPTIONS_DEFAULT=	MTPZ
 MTPZ_DESC=	Enable functionality to connect to MTPZ devices
 
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack pkgconfig
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -31,7 +32,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMTPZ}
-LIB_DEPENDS+=	gcrypt.18:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
 .else
 CONFIGURE_ARGS+=--disable-mtpz
 .endif
@@ -41,7 +42,6 @@ CONFIGURE_ARGS+=--disable-mtpz
 .if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
 CONFIGURE_ENV+=	ac_cv_lib_openusb_openusb_init=no
-BROKEN=		does not link on FreeBSD 7.X
 .else
 CONFIGURE_ENV+=	LIBUSB_CFLAGS="-I/usr/include" LIBUSB_LIBS="-lusb" LIBS="-lusb"
 .endif
@@ -50,7 +50,8 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^SUBDIRS/s|doc||' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
-		'/LIBUSB_REQUIRES/s|libusb-1.0||' ${WRKSRC}/configure
+		'/if test/s|==|=| ; \
+		 /LIBUSB_REQUIRES/s|libusb-1.0||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		's|<libusb-1.0/|<|' ${WRKSRC}/src/libusb-glue.h
 
