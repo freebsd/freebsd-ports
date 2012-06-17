@@ -10,7 +10,7 @@ PORTNAME=	ipadic
 PORTVERSION=	2.7.0
 PORTREVISION=	1
 CATEGORIES=	japanese textproc
-MASTER_SITES=	http://chasen.aist-nara.ac.jp/stable/ipadic/
+MASTER_SITES=	SFJP/${PORTNAME}/24435
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese Morphological Dictionary for ChaSen
