@@ -90,7 +90,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LATEST_LINK=	squid31
 
-SQUID_STABLE_VER=	19
+SQUID_STABLE_VER=	20
 
 CONFLICTS_INSTALL=	squid-2.[0-9].* squid-3.[^1].* cacheboy-[0-9]* lusca-head-[0-9]*
 GNU_CONFIGURE=	yes
@@ -162,7 +162,9 @@ icon_files=	anthony-binhex.gif anthony-bomb.gif anthony-box.gif \
 		anthony-tar.gif anthony-tex.gif anthony-text.gif \
 		anthony-unknown.gif anthony-xbm.gif anthony-xpm.gif
 
-error_files=	ERR_ACCESS_DENIED ERR_CACHE_ACCESS_DENIED \
+error_files=	ERR_ACCESS_DENIED ERR_ACL_TIME_QUOTA_EXCEEDED \
+		ERR_AGENT_CONFIGURE ERR_AGENT_WPAD \
+		ERR_CACHE_ACCESS_DENIED \
 		ERR_CACHE_MGR_ACCESS_DENIED ERR_CANNOT_FORWARD \
 		ERR_CONNECT_FAIL ERR_DIR_LISTING ERR_DNS_FAIL \
 		ERR_ESI ERR_FORWARDING_DENIED \
@@ -176,10 +178,12 @@ error_files=	ERR_ACCESS_DENIED ERR_CACHE_ACCESS_DENIED \
 		ERR_READ_ERROR ERR_READ_TIMEOUT \
 		ERR_SECURE_CONNECT_FAIL ERR_SHUTTING_DOWN ERR_SOCKET_FAILURE \
 		ERR_TOO_BIG ERR_UNSUP_REQ ERR_UNSUP_HTTPVERSION \
-		ERR_URN_RESOLVE ERR_WRITE_ERROR ERR_ZERO_SIZE_OBJECT
+		ERR_URN_RESOLVE ERR_WRITE_ERROR ERR_ZERO_SIZE_OBJECT \
+		error-details.txt
 
 error_dirs=	af ar az bg ca cs da de el en es et fa fi fr he hu hy id it \
-		ja ko lt lv ms nl oc pl pt pt-br ro ru sk sr-cyrl sr-latn sv \
+		ja ko lt lv ms nl oc pl pt pt-br ro ru sk sl sr-cyrl sr-latn \
+		sv \
 		th tr uk uz \
 		vi zh-cn zh-tw \
 		templates
@@ -199,8 +203,8 @@ error_dir_links=	ar-ae ar-bh ar-dz ar-eg ar-iq ar-jo ar-kw ar-lb \
 			fr-be fr-ca fr-ch fr-fr fr-lu fr-mc \
 			he-il hu-hu hy-am hy-armn id-id it-ch it-it \
 			ja-jp ko-kp ko-kr lt-lt lv-lv ms-my nl-nl \
-			pl-pl pt-pt ro-md ro-ro ru-ru sk-sk \
-			sr sr-latn-cs sr-sp sv-fi sv-se \
+			pl-pl pt-pt ro-md ro-ro ru-ru \
+			sk-sk sl-si sr sr-latn-cs sr-sp sv-fi sv-se \
 			th-th tr-tr uk-ua vi-vn zh-hk zh-mo zh-sg
 
 libexec=	cachemgr.cgi digest_pw_auth diskd ip_user_check \
