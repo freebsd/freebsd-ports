@@ -6,76 +6,94 @@
 #
 
 PORTNAME=	ecasound
-PORTVERSION=	2.8.1
+PORTVERSION=	2.9.0
 CATEGORIES=	audio
-MASTER_SITES=	http://ecasound.seul.org/download/
+MASTER_SITES=	http://ecasound.seul.org/download/ \
+		http://eca.cx/download/ \
+		http://ecawave.sourceforge.net/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multitrack audio processing software
 
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 
-OPTIONS_DEFINE=	ARTS AUDIOFILE JACK LO OIL SAMPLERATE
+OPTIONS_DEFINE=	ALSA ARTS AUDIOFILE JACK LO OIL PYTHON SAMPLERATE
+OPTIONS_DEFAULT=PYTHON
 AUDIOFILE_DESC=	Enable libaudiofile support
 LO_DESC=	Enable liblo support
 OIL_DESC=	Enable liboil support
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
-
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ARGS=	--disable-pyecasound \
+CONFIGURE_ARGS=	--disable-liblilv \
 		--disable-rubyecasound \
 		--enable-sys-readline
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 MAN1=		ecaconvert.1 ecafixdc.1 ecalength.1 ecamonitor.1 \
 		ecanormalize.1 ecaplay.1 ecasignalview.1 ecasound.1 \
 		ecasound-iam.1 ecatools.1
 MAN5=		ecasoundrc.5
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-
 .include <bsd.port.options.mk>
 
-.if exists(${LOCALBASE}/lib/libreadline.so.6)
-LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
+.if exists(${LOCALBASE}/lib/libreadline.so)
+LIB_DEPENDS+=	readline:${PORTSDIR}/devel/readline
+.endif
+
+.if ${PORT_OPTIONS:MALSA}
+LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
+.else
+CONFIGURE_ARGS+=	--disable-alsa
 .endif
 
 .if ${PORT_OPTIONS:MARTS}
-LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
+LIB_DEPENDS+=	artsc:${PORTSDIR}/audio/arts
 .else
 CONFIGURE_ARGS+=	--disable-arts
 .endif
 
 .if ${PORT_OPTIONS:MAUDIOFILE}
-LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
+LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile
 .else
 CONFIGURE_ARGS+=	--disable-audiofile
 .endif
 
 .if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
 .else
 CONFIGURE_ARGS+=	--disable-jack
 .endif
 
 .if ${PORT_OPTIONS:MLO}
-LIB_DEPENDS+=	lo.7:${PORTSDIR}/audio/liblo
+LIB_DEPENDS+=	lo:${PORTSDIR}/audio/liblo
 .else
 CONFIGURE_ARGS+=	--disable-liblo
 .endif
 
 .if ${PORT_OPTIONS:MOIL}
-LIB_DEPENDS+=	oil-0.3.0:${PORTSDIR}/devel/liboil
+LIB_DEPENDS+=	oil-0.3:${PORTSDIR}/devel/liboil
 .else
 CONFIGURE_ARGS+=	--disable-liboil
 .endif
 
+.if ${PORT_OPTIONS:MPYTHON}
+USE_PYTHON=	yes
+CONFIGURE_ARGS+=	--enable-pyecasound
+PLIST_SUB+=	PYTHON=""
+.else
+PLIST_SUB+=	PYTHON="@comment "
+.endif
+
 .if ${PORT_OPTIONS:MSAMPLERATE}
-LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
+LIB_DEPENDS+=	samplerate:${PORTSDIR}/audio/libsamplerate
 .else
 CONFIGURE_ARGS+=	--disable-libsamplerate --disable-sndfile
 .endif
