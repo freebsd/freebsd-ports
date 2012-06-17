@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freexl
-DISTVERSION=	1.0.0b
-#PORTVERSION=	1.0.0b
+DISTVERSION=	1.0.0c
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 
