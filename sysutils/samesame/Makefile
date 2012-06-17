@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	samesame
-PORTVERSION=	1.9
+PORTVERSION=	1.10
 CATEGORIES=	sysutils
 MASTER_SITES=	http://samesame.kruijff.org/ \
 		${MASTER_SITE_LOCAL}
@@ -40,6 +40,10 @@ OPTIONS=	DEBUG "Enables debugging support" Off \
 		TEST "Run quality assurance test" Off
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1000000
+BROKEN=		does not build
+.endif
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
