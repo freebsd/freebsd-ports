@@ -27,7 +27,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION:S,.a,-alpha,}
 LATEST_LINK=	xfig-devel
 USE_IMAKE=	yes
 USE_XORG=	ice sm x11 xaw xext xi xmu xpm xt
-USE_GETETEXT=	yes
+USE_GETTEXT=	yes
 MAN1=		xfig.1
 
 MAKE_ENV+=	DOCSDIR=${DOCSDIR}
