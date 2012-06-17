@@ -12,7 +12,7 @@ libexec/mame/unidasm
 %%PORTDOCS%%%%DOCSDIR%%/docs/mame.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/newvideo.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows.txt
-%%PORTDOCS%%%%DOCSDIR%%/whatsnew_0145.txt
+%%PORTDOCS%%%%DOCSDIR%%/whatsnew.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mame.ini
 %%DATADIR%%/artwork/aperture.png
 %%DATADIR%%/artwork/white.png
