@@ -7,31 +7,33 @@
 
 PORTNAME=	mjpegtools
 PORTVERSION=	2.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME:S/tools//}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Set of tools to record/playback/edit videos in MPEG format
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
 OPTIONS_DEFINE=	GTK2 SDL PNG DV QUICKTIME SIMD DOCS
-OPTIONS_DEFAULT=	SDL PNG
+OPTIONS_DEFAULT=GTK2 SDL PNG
 QUICKTIME_DESC=		Enable libQuickTime support
 
 CONFLICTS=	mplex-[0-9]*
 
-USE_GNOME=	gnomehack
-WANT_GNOME=	yes
-WANT_SDL=	yes
+USE_GNOME=	pkgconfig
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool
+USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
+LIBTOOLIZE_ARGS=--force
+ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
+AUTOMAKEL_ARGS=	--add-missing --foreign
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		ac_cv_lib_Xxf86dga_XF86DGAQueryExtension=no
 CONFIGURE_ARGS=	--without-x
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		jpeg2yuv.1 lav2mpeg.1 lav2wav.1 lav2yuv.1 lavpipe.1 lavplay.1 \
 		lavrec.1 lavtrans.1 mjpegtools.1 mp2enc.1 mpeg2enc.1 mplex.1 \
@@ -49,18 +51,9 @@ DOC_FILES=	AUTHORS BUGS CHANGES ChangeLog HINTS NEWS PLANS README \
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386"
-CFLAGS=	-O0
-.endif
-.if ${ARCH} == "powerpc" && ${OSVERSION} > 900000
-BROKEN=		Does not build on powerpc-9
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
-
-BROKEN=		glav is not built
 
 .if empty(PORT_OPTIONS:MSDL)
 IGNORE=		GTK+2 player needs SDL
@@ -70,7 +63,7 @@ USE_GNOME+=	gtk20
 PLIST_SUB+=	GTK2:=""
 .else
 PLIST_SUB+=	GTK2:="@comment "
-_HAVE_GTK=	false
+CONFIGURE_ARGS+=--without-gtk
 .endif # GTK2
 
 .if ${PORT_OPTIONS:MSDL}
@@ -79,7 +72,7 @@ PLIST_SUB+=	SDL:=""
 .else
 CONFIGURE_ENV+=	ac_cv_path_SDL_CONFIG=no
 PLIST_SUB+=	SDL:="@comment "
-CONFIGURE_ARGS+=	--without-libsdl
+CONFIGURE_ARGS+=--without-libsdl
 .endif # SDL
 
 .if ${PORT_OPTIONS:MPNG}
@@ -92,7 +85,7 @@ PLIST_SUB+=	PNG:="@comment "
 .endif # PNG
 
 .if ${PORT_OPTIONS:MDV}
-LIB_DEPENDS+=	dv.4:${PORTSDIR}/multimedia/libdv
+LIB_DEPENDS+=	dv:${PORTSDIR}/multimedia/libdv
 CONFIGURE_ARGS+=--with-libdv
 .else
 CONFIGURE_ARGS+=--without-libdv
@@ -100,7 +93,7 @@ CONFIGURE_ARGS+=--without-libdv
 
 .if ${PORT_OPTIONS:MQUICKTIME}
 PLIST_SUB+=	QUICKTIME=""
-LIB_DEPENDS+=	quicktime.0:${PORTSDIR}/multimedia/libquicktime
+LIB_DEPENDS+=	quicktime:${PORTSDIR}/multimedia/libquicktime
 CONFIGURE_ARGS+=--with-libquicktime
 .else
 PLIST_SUB+=	QUICKTIME="@comment "
@@ -113,10 +106,21 @@ CONFIGURE_ARGS+=--enable-simd-accel
 CONFIGURE_ARGS+=--disable-simd-accel
 .endif # SIMD
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+CFLAGS:=	${CFLAGS:N-O*:N-fno-strict*}
+.endif
+
+.if ${ARCH} == "powerpc" && ${OSVERSION} > 900000
+BROKEN=		Does not build on powerpc-9
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|have_gtk="true"|have_gtk="${_HAVE_GTK}"|g ; \
-		 /^CFLAGS=/s|$$ARCHFLAGS||g ; \
-		 /^CXXFLAGS=/s|$$ARCHFLAGS||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		'/ARCHFLAGS=/s|^|#|g' ${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e \
+		'/^pkgconfigdir/s|$$(libdir)|$$(prefix)/libdata|g' ${WRKSRC}/Makefile.am
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
