@@ -1,35 +1,35 @@
-%%WITH_AALIB%%bin/aaxine
-%%WITH_CACA%%bin/cacaxine
+%%AALIB%%bin/aaxine
+%%CACA%%bin/cacaxine
 bin/fbxine
 bin/xine
 bin/xine-bugreport
 bin/xine-check
 bin/xine-remote
 share/applications/xine.desktop
-%%DOCSDIR%%/README.config_en
-%%DOCSDIR%%/README.cs.0.Introduction
-%%DOCSDIR%%/README.cs.10.Remote_control
-%%DOCSDIR%%/README.cs.15.MRLs
-%%DOCSDIR%%/README.cs.5.xine-ui
-%%DOCSDIR%%/README.en.0.Introduction
-%%DOCSDIR%%/README.en.10.Remote_control
-%%DOCSDIR%%/README.en.15.MRLs
-%%DOCSDIR%%/README.en.20.DVD
-%%DOCSDIR%%/README.en.25.VideoCD
-%%DOCSDIR%%/README.en.30.Advanced
-%%DOCSDIR%%/README.en.32.Window_managers
-%%DOCSDIR%%/README.en.35.Legal_issues
-%%DOCSDIR%%/README.en.5.xine-ui
-%%DOCSDIR%%/README_cs
-%%DOCSDIR%%/README_de
-%%DOCSDIR%%/README_en
-%%DOCSDIR%%/README_es
-%%DOCSDIR%%/README_fi
-%%DOCSDIR%%/README_fr
-%%DOCSDIR%%/README_it
-%%DOCSDIR%%/README_pl
-%%DOCSDIR%%/README_uk
-share/doc/xitk/README
+%%PORTDOCS%%%%DOCSDIR%%/README.config_en
+%%PORTDOCS%%%%DOCSDIR%%/README.cs.0.Introduction
+%%PORTDOCS%%%%DOCSDIR%%/README.cs.10.Remote_control
+%%PORTDOCS%%%%DOCSDIR%%/README.cs.15.MRLs
+%%PORTDOCS%%%%DOCSDIR%%/README.cs.5.xine-ui
+%%PORTDOCS%%%%DOCSDIR%%/README.en.0.Introduction
+%%PORTDOCS%%%%DOCSDIR%%/README.en.10.Remote_control
+%%PORTDOCS%%%%DOCSDIR%%/README.en.15.MRLs
+%%PORTDOCS%%%%DOCSDIR%%/README.en.20.DVD
+%%PORTDOCS%%%%DOCSDIR%%/README.en.25.VideoCD
+%%PORTDOCS%%%%DOCSDIR%%/README.en.30.Advanced
+%%PORTDOCS%%%%DOCSDIR%%/README.en.32.Window_managers
+%%PORTDOCS%%%%DOCSDIR%%/README.en.35.Legal_issues
+%%PORTDOCS%%%%DOCSDIR%%/README.en.5.xine-ui
+%%PORTDOCS%%%%DOCSDIR%%/README_cs
+%%PORTDOCS%%%%DOCSDIR%%/README_de
+%%PORTDOCS%%%%DOCSDIR%%/README_en
+%%PORTDOCS%%%%DOCSDIR%%/README_es
+%%PORTDOCS%%%%DOCSDIR%%/README_fi
+%%PORTDOCS%%%%DOCSDIR%%/README_fr
+%%PORTDOCS%%%%DOCSDIR%%/README_it
+%%PORTDOCS%%%%DOCSDIR%%/README_pl
+%%PORTDOCS%%%%DOCSDIR%%/README_uk
+%%PORTDOCS%%share/doc/xitk/README
 share/icons/hicolor/16x16/apps/xine.png
 share/icons/hicolor/22x22/apps/xine.png
 share/icons/hicolor/32x32/apps/xine.png
@@ -62,11 +62,10 @@ share/icons/hicolor/48x48/apps/xine.png
 %%NLS%%share/locale/uk/LC_MESSAGES/xine-ui.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/xitk.mo
 share/mime/packages/xine-ui.xml
-share/mime/text/x-xine.xml
 share/pixmaps/xine.xpm
 %%DATADIR%%/oxine/mainmenu
 %%DATADIR%%/oxine/mediamarks
-%%DATADIR%%/skins/xine-ui_logo.mpv
+%%DATADIR%%/skins/xine-ui_logo.png
 %%DATADIR%%/skins/xine_splash.png
 %%DATADIR%%/skins/xinetic/BigArrowDown.png
 %%DATADIR%%/skins/xinetic/BigArrowLeft.png
@@ -130,7 +129,7 @@ share/pixmaps/xine.xpm
 %%DATADIR%%/skins/xinetic/SmallArrowDown.png
 %%DATADIR%%/skins/xinetic/SmallArrowUp.png
 %%DATADIR%%/skins/xinetic/skinconfig
-%%DATADIR%%/visuals/default.avi
+%%DATADIR%%/visuals/default.mpv
 @dirrm %%DATADIR%%/visuals
 @dirrm %%DATADIR%%/skins/xinetic
 @dirrm %%DATADIR%%/skins
@@ -146,8 +145,8 @@ share/pixmaps/xine.xpm
 @dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrmtry share/doc/xitk
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrmtry share/doc/xitk
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
 @dirrmtry man/pl/man1
 @dirrmtry man/pl
