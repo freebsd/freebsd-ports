@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.19.0
-PORTREVISION=	1
+PORTVERSION=	1.19.1
 CATEGORIES=	www
 MASTER_SITES=	http://dumps.wikimedia.org/mediawiki/${PORTVERSION:R}/
 
@@ -24,10 +23,11 @@ IGNORE_WITH_PHP=	4
 WANT_PHP_WEB=	yes
 MEDIAWIKIDIR?=	www/mediawiki
 
+NO_BUILD=	yes
+
 OPTIONS=	PGSQL "Use PostgreSQL (instead of MySQL)" off \
 		SQLITE "Use SQLite (instead of MySQL)" off \
 		LDAP "Use LDAP authentication" off \
-		TEXVC "Use built-in TeX rendering" off \
 		MEMCACHED "Use memcached" off \
 		APC "Use pecl-APC(Mediawiki recommended)" on \
 		EACCEL "Use eAccelerator (instead of pecl-APC)" off \
@@ -48,15 +48,6 @@ USE_PHP+=	mysql
 USE_PHP+=	ldap
 .endif
 
-.if defined(WITH_TEXVC)
-IGNORE=		not build currently
-RUN_DEPENDS+=	latex:${PORTSDIR}/print/latex
-BUILD_DEPENDS+=	ocaml:${PORTSDIR}/lang/ocaml
-
-USE_GMAKE=yes
-WITH_IMAGICK=yes
-.endif
-
 .if defined(WITH_MEMCACHED)
 RUN_DEPENDS=	memcached:${PORTSDIR}/databases/memcached
 .endif
@@ -73,11 +64,6 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xcache.so:${PORTSDIR}/www/xcac
 .else
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/apc.so:${PORTSDIR}/www/pecl-APC
 .endif
-.endif
-
-do-build:
-.if defined(WITH_TEXVC)
-	@(cd ${WRKSRC}/math && ${GMAKE})
 .endif
 
 do-install:
