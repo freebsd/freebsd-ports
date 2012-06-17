@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qmc2
-PORTVERSION=	0.35
-PORTREVISION=	1
+PORTVERSION=	0.36
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -16,6 +15,8 @@ COMMENT=	Qt 4 based UNIX MAME/MESS frontend
 
 RUN_DEPENDS=	mame:${PORTSDIR}/emulators/mame \
 		mess:${PORTSDIR}/emulators/mess
+
+OPTIONS_DEFINE=	DOCS
 
 NO_WRKSUBDIR=	yes
 
@@ -31,6 +32,8 @@ MAKE_ARGS=	QTDIR="${QT_PREFIX}" QMAKE="${QMAKE}" \
 		CC_FLAGS="${CFLAGS}" CXX_FLAGS="${CXXFLAGS}" \
 		CC="${CC}" CXX="${CXX}" LINK="${CXX}"
 MAKE_JOBS_UNSAFE=yes
+
+.include <bsd.port.options.mk>
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/qmc2-sdlmess
@@ -53,7 +56,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/qmc2/data/lng/qmc2_*.qm ${DATADIR}/lng
 	@${MKDIR} ${DATADIR}/opt
 	@(cd ${WRKSRC}/qmc2/data/opt; ${COPYTREE_SHARE} . ${DATADIR}/opt)
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/html
 	@(cd ${WRKSRC}/qmc2/data/doc/html; ${COPYTREE_SHARE} . ${DOCSDIR}/html)
 .endif

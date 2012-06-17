@@ -9,6 +9,22 @@ bin/qmc2-sdlmess
 %%PORTDOCS%%%%DOCSDIR%%/html/de/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/de/readme.html
 %%PORTDOCS%%%%DOCSDIR%%/html/de/todo.html
+%%PORTDOCS%%%%DOCSDIR%%/html/el/changes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/el/copying.html
+%%PORTDOCS%%%%DOCSDIR%%/html/el/credits.html
+%%PORTDOCS%%%%DOCSDIR%%/html/el/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/html/el/img
+%%PORTDOCS%%%%DOCSDIR%%/html/el/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/el/readme.html
+%%PORTDOCS%%%%DOCSDIR%%/html/el/todo.html
+%%PORTDOCS%%%%DOCSDIR%%/html/es/changes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/es/copying.html
+%%PORTDOCS%%%%DOCSDIR%%/html/es/credits.html
+%%PORTDOCS%%%%DOCSDIR%%/html/es/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/html/es/img
+%%PORTDOCS%%%%DOCSDIR%%/html/es/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/es/readme.html
+%%PORTDOCS%%%%DOCSDIR%%/html/es/todo.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fr/changes.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fr/copying.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fr/credits.html
@@ -17,6 +33,14 @@ bin/qmc2-sdlmess
 %%PORTDOCS%%%%DOCSDIR%%/html/fr/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fr/readme.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fr/todo.html
+%%PORTDOCS%%%%DOCSDIR%%/html/it/changes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/it/copying.html
+%%PORTDOCS%%%%DOCSDIR%%/html/it/credits.html
+%%PORTDOCS%%%%DOCSDIR%%/html/it/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/html/it/img
+%%PORTDOCS%%%%DOCSDIR%%/html/it/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/it/readme.html
+%%PORTDOCS%%%%DOCSDIR%%/html/it/todo.html
 %%PORTDOCS%%%%DOCSDIR%%/html/pl/changes.html
 %%PORTDOCS%%%%DOCSDIR%%/html/pl/copying.html
 %%PORTDOCS%%%%DOCSDIR%%/html/pl/credits.html
@@ -33,6 +57,22 @@ bin/qmc2-sdlmess
 %%PORTDOCS%%%%DOCSDIR%%/html/pt/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/pt/readme.html
 %%PORTDOCS%%%%DOCSDIR%%/html/pt/todo.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ro/changes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ro/copying.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ro/credits.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ro/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ro/img
+%%PORTDOCS%%%%DOCSDIR%%/html/ro/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ro/readme.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ro/todo.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sv/changes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sv/copying.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sv/credits.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sv/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sv/img
+%%PORTDOCS%%%%DOCSDIR%%/html/sv/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sv/readme.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sv/todo.html
 %%PORTDOCS%%%%DOCSDIR%%/html/us/changes.html
 %%PORTDOCS%%%%DOCSDIR%%/html/us/copying.html
 %%PORTDOCS%%%%DOCSDIR%%/html/us/credits.html
@@ -163,6 +203,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/circles/launch_multiple.png
 %%DATADIR%%/img/circles/led_off.png
 %%DATADIR%%/img/circles/led_on.png
+%%DATADIR%%/img/circles/lifebelt.png
 %%DATADIR%%/img/circles/locale.png
 %%DATADIR%%/img/circles/lock.png
 %%DATADIR%%/img/circles/mame.icns
@@ -217,12 +258,14 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/circles/reload_small.png
 %%DATADIR%%/img/circles/remove.png
 %%DATADIR%%/img/circles/remove_from_favorites.png
+%%DATADIR%%/img/circles/rename.png
 %%DATADIR%%/img/circles/rom.png
 %%DATADIR%%/img/circles/rom_multiple.png
 %%DATADIR%%/img/circles/search.png
 %%DATADIR%%/img/circles/search_multiple.png
 %%DATADIR%%/img/circles/sleep.png
 %%DATADIR%%/img/circles/slot.png
+%%DATADIR%%/img/circles/sort.png
 %%DATADIR%%/img/circles/sound.png
 %%DATADIR%%/img/circles/south.png
 %%DATADIR%%/img/circles/speaker.png
@@ -256,6 +299,9 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/circles/trafficlight_off.png
 %%DATADIR%%/img/circles/trafficlight_red.png
 %%DATADIR%%/img/circles/trafficlight_yellow.png
+%%DATADIR%%/img/circles/ume.icns
+%%DATADIR%%/img/circles/ume.ico
+%%DATADIR%%/img/circles/ume.png
 %%DATADIR%%/img/circles/undo.png
 %%DATADIR%%/img/circles/unknown.png
 %%DATADIR%%/img/circles/unlock.png
@@ -370,6 +416,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/classic/launch_multiple.png
 %%DATADIR%%/img/classic/led_off.png
 %%DATADIR%%/img/classic/led_on.png
+%%DATADIR%%/img/classic/lifebelt.png
 %%DATADIR%%/img/classic/locale.png
 %%DATADIR%%/img/classic/lock.png
 %%DATADIR%%/img/classic/mame.icns
@@ -424,12 +471,14 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/classic/reload_small.png
 %%DATADIR%%/img/classic/remove.png
 %%DATADIR%%/img/classic/remove_from_favorites.png
+%%DATADIR%%/img/classic/rename.png
 %%DATADIR%%/img/classic/rom.png
 %%DATADIR%%/img/classic/rom_multiple.png
 %%DATADIR%%/img/classic/search.png
 %%DATADIR%%/img/classic/search_multiple.png
 %%DATADIR%%/img/classic/sleep.png
 %%DATADIR%%/img/classic/slot.png
+%%DATADIR%%/img/classic/sort.png
 %%DATADIR%%/img/classic/sound.png
 %%DATADIR%%/img/classic/south.png
 %%DATADIR%%/img/classic/speaker.png
@@ -463,6 +512,9 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/classic/trafficlight_off.png
 %%DATADIR%%/img/classic/trafficlight_red.png
 %%DATADIR%%/img/classic/trafficlight_yellow.png
+%%DATADIR%%/img/classic/ume.icns
+%%DATADIR%%/img/classic/ume.ico
+%%DATADIR%%/img/classic/ume.png
 %%DATADIR%%/img/classic/undo.png
 %%DATADIR%%/img/classic/unknown.png
 %%DATADIR%%/img/classic/unlock.png
@@ -582,6 +634,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy/launch_multiple.png
 %%DATADIR%%/img/crazy/led_off.png
 %%DATADIR%%/img/crazy/led_on.png
+%%DATADIR%%/img/crazy/lifebelt.png
 %%DATADIR%%/img/crazy/locale.png
 %%DATADIR%%/img/crazy/lock.png
 %%DATADIR%%/img/crazy/mame.icns
@@ -636,12 +689,14 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy/reload_small.png
 %%DATADIR%%/img/crazy/remove.png
 %%DATADIR%%/img/crazy/remove_from_favorites.png
+%%DATADIR%%/img/crazy/rename.png
 %%DATADIR%%/img/crazy/rom.png
 %%DATADIR%%/img/crazy/rom_multiple.png
 %%DATADIR%%/img/crazy/search.png
 %%DATADIR%%/img/crazy/search_multiple.png
 %%DATADIR%%/img/crazy/sleep.png
 %%DATADIR%%/img/crazy/slot.png
+%%DATADIR%%/img/crazy/sort.png
 %%DATADIR%%/img/crazy/sound.png
 %%DATADIR%%/img/crazy/south.png
 %%DATADIR%%/img/crazy/speaker.png
@@ -675,6 +730,9 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy/trafficlight_off.png
 %%DATADIR%%/img/crazy/trafficlight_red.png
 %%DATADIR%%/img/crazy/trafficlight_yellow.png
+%%DATADIR%%/img/crazy/ume.icns
+%%DATADIR%%/img/crazy/ume.ico
+%%DATADIR%%/img/crazy/ume.png
 %%DATADIR%%/img/crazy/undo.png
 %%DATADIR%%/img/crazy/unknown.png
 %%DATADIR%%/img/crazy/unlock.png
@@ -788,6 +846,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy-black/launch_multiple.png
 %%DATADIR%%/img/crazy-black/led_off.png
 %%DATADIR%%/img/crazy-black/led_on.png
+%%DATADIR%%/img/crazy-black/lifebelt.png
 %%DATADIR%%/img/crazy-black/locale.png
 %%DATADIR%%/img/crazy-black/lock.png
 %%DATADIR%%/img/crazy-black/mame.icns
@@ -842,12 +901,14 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy-black/reload_small.png
 %%DATADIR%%/img/crazy-black/remove.png
 %%DATADIR%%/img/crazy-black/remove_from_favorites.png
+%%DATADIR%%/img/crazy-black/rename.png
 %%DATADIR%%/img/crazy-black/rom.png
 %%DATADIR%%/img/crazy-black/rom_multiple.png
 %%DATADIR%%/img/crazy-black/search.png
 %%DATADIR%%/img/crazy-black/search_multiple.png
 %%DATADIR%%/img/crazy-black/sleep.png
 %%DATADIR%%/img/crazy-black/slot.png
+%%DATADIR%%/img/crazy-black/sort.png
 %%DATADIR%%/img/crazy-black/sound.png
 %%DATADIR%%/img/crazy-black/south.png
 %%DATADIR%%/img/crazy-black/speaker.png
@@ -881,6 +942,9 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy-black/trafficlight_off.png
 %%DATADIR%%/img/crazy-black/trafficlight_red.png
 %%DATADIR%%/img/crazy-black/trafficlight_yellow.png
+%%DATADIR%%/img/crazy-black/ume.icns
+%%DATADIR%%/img/crazy-black/ume.ico
+%%DATADIR%%/img/crazy-black/ume.png
 %%DATADIR%%/img/crazy-black/undo.png
 %%DATADIR%%/img/crazy-black/unknown.png
 %%DATADIR%%/img/crazy-black/unlock.png
@@ -994,6 +1058,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/cubes/launch_multiple.png
 %%DATADIR%%/img/cubes/led_off.png
 %%DATADIR%%/img/cubes/led_on.png
+%%DATADIR%%/img/cubes/lifebelt.png
 %%DATADIR%%/img/cubes/locale.png
 %%DATADIR%%/img/cubes/lock.png
 %%DATADIR%%/img/cubes/mame.icns
@@ -1048,12 +1113,14 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/cubes/reload_small.png
 %%DATADIR%%/img/cubes/remove.png
 %%DATADIR%%/img/cubes/remove_from_favorites.png
+%%DATADIR%%/img/cubes/rename.png
 %%DATADIR%%/img/cubes/rom.png
 %%DATADIR%%/img/cubes/rom_multiple.png
 %%DATADIR%%/img/cubes/search.png
 %%DATADIR%%/img/cubes/search_multiple.png
 %%DATADIR%%/img/cubes/sleep.png
 %%DATADIR%%/img/cubes/slot.png
+%%DATADIR%%/img/cubes/sort.png
 %%DATADIR%%/img/cubes/sound.png
 %%DATADIR%%/img/cubes/south.png
 %%DATADIR%%/img/cubes/speaker.png
@@ -1087,6 +1154,9 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/cubes/trafficlight_off.png
 %%DATADIR%%/img/cubes/trafficlight_red.png
 %%DATADIR%%/img/cubes/trafficlight_yellow.png
+%%DATADIR%%/img/cubes/ume.icns
+%%DATADIR%%/img/cubes/ume.ico
+%%DATADIR%%/img/cubes/ume.png
 %%DATADIR%%/img/cubes/undo.png
 %%DATADIR%%/img/cubes/unknown.png
 %%DATADIR%%/img/cubes/unlock.png
@@ -1179,6 +1249,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/launch_multiple.png
 %%DATADIR%%/img/led_off.png
 %%DATADIR%%/img/led_on.png
+%%DATADIR%%/img/lifebelt.png
 %%DATADIR%%/img/locale.png
 %%DATADIR%%/img/lock.png
 %%DATADIR%%/img/mame.icns
@@ -1233,12 +1304,14 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/reload_small.png
 %%DATADIR%%/img/remove.png
 %%DATADIR%%/img/remove_from_favorites.png
+%%DATADIR%%/img/rename.png
 %%DATADIR%%/img/rom.png
 %%DATADIR%%/img/rom_multiple.png
 %%DATADIR%%/img/search.png
 %%DATADIR%%/img/search_multiple.png
 %%DATADIR%%/img/sleep.png
 %%DATADIR%%/img/slot.png
+%%DATADIR%%/img/sort.png
 %%DATADIR%%/img/sound.png
 %%DATADIR%%/img/south.png
 %%DATADIR%%/img/speaker.png
@@ -1272,6 +1345,9 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/trafficlight_off.png
 %%DATADIR%%/img/trafficlight_red.png
 %%DATADIR%%/img/trafficlight_yellow.png
+%%DATADIR%%/img/ume.icns
+%%DATADIR%%/img/ume.ico
+%%DATADIR%%/img/ume.png
 %%DATADIR%%/img/undo.png
 %%DATADIR%%/img/unknown.png
 %%DATADIR%%/img/unlock.png
@@ -1295,9 +1371,14 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/youtube.png
 %%DATADIR%%/img/zip.png
 %%DATADIR%%/lng/qmc2_de.qm
+%%DATADIR%%/lng/qmc2_el.qm
+%%DATADIR%%/lng/qmc2_es.qm
 %%DATADIR%%/lng/qmc2_fr.qm
+%%DATADIR%%/lng/qmc2_it.qm
 %%DATADIR%%/lng/qmc2_pl.qm
 %%DATADIR%%/lng/qmc2_pt.qm
+%%DATADIR%%/lng/qmc2_ro.qm
+%%DATADIR%%/lng/qmc2_sv.qm
 %%DATADIR%%/lng/qmc2_us.qm
 %%DATADIR%%/opt/MAME/template.xml
 %%DATADIR%%/opt/MAMEUIFX32/template.xml
@@ -1321,9 +1402,14 @@ bin/qmc2-sdlmess
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/us/img
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/us
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/sv
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/ro
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/pt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/pl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/it
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/fr
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/es
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/el
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/de
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
