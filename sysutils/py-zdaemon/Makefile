@@ -1,12 +1,12 @@
 # New ports collection makefile for:	zdaemon
-# Date created:		22 Nov, 2008
-# Whom:			Wen Heping <wenheping@gmail.com>
+# Date created:				22 Nov, 2008
+# Whom:					Wen Heping <wenheping@gmail.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	zdaemon
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.7
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,10 +14,11 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Daemon Process Control Library and Tools for Unix-bases Systems
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/zconfig:${PORTSDIR}/devel/py-zconfig
-RUN_DEPENDS:=	${BUILDS_DEPENDS}
+LICENSE=	ZPL21
 
-USE_PYTHON=	2.4+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zconfig>0:${PORTSDIR}/devel/py-zconfig
+
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
 
 .include <bsd.port.mk>
