@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.3.16-alpha
+DISTVERSION=	0.2.3.17-beta
 CATEGORIES=	security net ipv6
 MASTER_SITES=	https://www.torproject.org/dist/ \
 		ftp://ftp.bit.nl/mirror/tor/ \
@@ -109,6 +109,8 @@ MAKE_JOBS_UNSAFE=	yes
 (${OSVERSION} >= 900003) ) && !defined(USE_GCC) && empty(CC:T:M*gcc4*) && \
 empty(PORT_OPTIONS:MSTATIC_TOR)
 CONFIGURE_ARGS+=	--enable-gcc-hardening
+.else
+CONFIGURE_ARGS+=	--disable-gcc-hardening
 .endif
 
 .if  ( ${OSVERSION} < 704000 || \
@@ -138,7 +140,7 @@ CONFIGURE_ARGS+=	--disable-instrument-downloads
 .if ${PORT_OPTIONS:MSTATIC_TOR}
 BUILD_DEPENDS +=	${LOCALBASE}/lib/event2/libevent.a:${PORTSDIR}/devel/libevent2
 CONFIGURE_ARGS+=	--enable-static-tor --with-libevent-dir=${LOCALBASE}/lib/event2 \
-			--with-zlib-dir=/usr/lib
+			--with-zlib-dir=/usr/lib --disable-linker-hardening
 TOR_LIBEVENT_LIBS=	${LOCALBASE}/lib/event2/libevent.a
 .if ${PORT_OPTIONS:MBUFFEREVENTS}
 TOR_LIBEVENT_LIBS:=	${LOCALBASE}/lib/event2/libevent_openssl.a ${TOR_LIBEVENT_LIBS}
@@ -185,7 +187,8 @@ post-patch:
 		${WRKSRC}/contrib/Makefile.in
 	@${REINPLACE_CMD} -e '\|^install-data-am:|s|install-docDATA||' \
 		${WRKSRC}/doc/Makefile.in
-	@${REINPLACE_CMD} -e "s|-ltcmalloc|${LOCALBASE}/lib/libtcmalloc.so|" \
+	@${REINPLACE_CMD} -E -e "s@-ltcmalloc@${LOCALBASE}/lib/libtcmalloc.so@" \
+		-e "s@(-z) (relro|now)@-Wl,\1,\2@g" \
 		${WRKSRC}/configure
 
 post-configure:

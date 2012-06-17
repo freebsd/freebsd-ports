@@ -1,15 +1,6 @@
---- configure.orig	2011-11-22 18:30:03.000000000 -0500
-+++ configure	2011-11-25 23:40:34.000000000 -0500
-@@ -3334,7 +3334,7 @@
- # Check whether --enable-linker-hardening was given.
- if test "${enable_linker_hardening+set}" = set; then :
-   enableval=$enable_linker_hardening; if test x$enableval = xyes; then
--    LDFLAGS="$LDFLAGS -z relro -z now"
-+    LDFLAGS="$LDFLAGS -Wl,-z,relro -Wl,-z,now"
- fi
- fi
- 
-@@ -6286,6 +6286,7 @@
+--- configure.orig	2012-06-15 03:10:31.000000000 -0400
++++ configure	2012-06-17 08:46:34.000000000 -0400
+@@ -6319,6 +6319,7 @@
  fi
  
  
@@ -17,7 +8,7 @@
  trylibeventdir=""
  
  # Check whether --with-libevent-dir was given.
-@@ -6612,6 +6613,7 @@
+@@ -6645,6 +6646,7 @@
  LIBS="$tor_saved_LIBS"
  LDFLAGS="$tor_saved_LDFLAGS"
  CPPFLAGS="$tor_saved_CPPFLAGS"
@@ -25,7 +16,7 @@
  
  
  
-@@ -6674,6 +6676,7 @@
+@@ -6707,6 +6709,7 @@
  fi
  
  
@@ -33,7 +24,7 @@
  if test "$enable_static_libevent" = "yes"; then
     if test "$tor_cv_library_libevent_dir" = "(system)"; then
       as_fn_error $? "\"You must specify an explicit --with-libevent-dir=x option when using --enable-static-libevent\"" "$LINENO" 5
-@@ -6683,6 +6686,7 @@
+@@ -6716,6 +6719,7 @@
  else
       TOR_LIBEVENT_LIBS="-levent"
  fi
@@ -41,7 +32,7 @@
  
  if test "$enable_bufferevents" = "yes" ; then
    if test "$ac_cv_header_event2_bufferevent_ssl_h" != "yes" ; then
-@@ -6761,12 +6765,14 @@
+@@ -6794,12 +6798,14 @@
  
  $as_echo "#define USE_BUFFEREVENTS 1" >>confdefs.h
  
