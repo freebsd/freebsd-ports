@@ -3479,3 +3479,4 @@ games/wesnoth-devel||2012-06-13|Has expired: BROKEN for more than 6 month
 www/trac-ticketdelete||2012-06-14|Has expired: Functionality of this plugin has been incorporated into Trac 0.12
 x11-themes/gtk-qt-engine||2012-06-16|Has expired: BROKEN for more than 6 month
 devel/bazaar||2012-06-17|Project renamed
+devel/bazaar-ng||2012-06-17|Removed
