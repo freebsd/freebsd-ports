@@ -3374,6 +3374,7 @@
     SUBDIR += py-qt4-script
     SUBDIR += py-qt4-scripttools
     SUBDIR += py-qt4-test
+    SUBDIR += py-rauth
     SUBDIR += py-repl
     SUBDIR += py-repoze.lru
     SUBDIR += py-repoze.tm2
