@@ -826,8 +826,6 @@ PLIST_SUB+=	NGINX_TMPDIR=${NGINX_TMPDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 USERS?=	${WWWOWN}
 GROUPS?=${WWWGRP}
 
-.include <bsd.port.pre.mk>
-
 .if defined(NGINX_OPENSSL)
 USE_OPENSSL=	yes
 .endif
@@ -966,4 +964,4 @@ post-install:
 	${ECHO_CMD} etc/nginx/naxsi_core.rules >> ${TMPPLIST}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
