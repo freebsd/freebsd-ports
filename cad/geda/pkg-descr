@@ -1,3 +1,14 @@
-the meta port of gEDA.
+The GPL Electronic Design Automation (gEDA) project has produced and
+continues working on a full GPL'd suite and toolkit of Electronic
+Design Automation tools. These tools are used for electrical circuit
+design, schematic capture, simulation, prototyping, and production.
+Currently, the gEDA project offers a mature suite of free software
+applications for electronics design, including schematic capture,
+attribute management, bill of materials (BOM) generation, netlisting
+into over 20 netlist formats, analog and digital simulation, and
+printed circuit board (PCB) layout.
 
-WWW: http://www.geda.seul.org
+The gEDA/gaf suite provides schematic capture, netlisting, bill of
+materials generation, and many other features.
+
+WWW: http://www.gpleda.org/
