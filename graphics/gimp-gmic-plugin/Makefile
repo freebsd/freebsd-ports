@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gmic
-PORTVERSION=	1.5.1.0
-PORTREVISION=	2
+PORTVERSION=	1.5.1.5
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME} \
 		SF/${PORTNAME}/old
@@ -59,7 +58,6 @@ PLIST_SUB+=	BASH="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#/usr/X11R6#${PREFIX}#g' \
-		-e 's/-lcv -lhighgui/-lopencv_legacy/g' \
 		${WRKSRC}/Makefile
 
 do-install:
