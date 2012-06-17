@@ -1,8 +1,8 @@
---- rpmio/rpmsq.c.orig	2010-07-02 12:27:50.000000000 +0200
-+++ rpmio/rpmsq.c	2010-07-02 12:27:53.000000000 +0200
-@@ -75,6 +75,25 @@ static struct rpmsqElem rpmsqRock;
- 
- static rpmsq rpmsqQueue = &rpmsqRock;
+--- rpmio/rpmsq.c.orig	2012-06-17 22:38:37.000000000 +0200
++++ rpmio/rpmsq.c	2012-06-17 22:38:29.000000000 +0200
+@@ -39,6 +39,25 @@
+     { -1,	NULL },
+ };
  
 +int
 +sighold(int sig)
@@ -23,6 +23,6 @@
 +	return (_sigprocmask(SIG_UNBLOCK, &set, NULL));
 +}
 +
- /** \ingroup rpmsq
-  * Insert node into from queue.
-  * @param elem          node to link
+ int rpmsqIsCaught(int signum)
+ {
+     return sigismember(&rpmsqCaught, signum);
