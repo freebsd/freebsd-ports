@@ -6,7 +6,7 @@
 
 PORTNAME=	prelude-lml
 PORTVERSION=	0.9.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-technologies.com/download/releases/${PORTNAME}/
 
