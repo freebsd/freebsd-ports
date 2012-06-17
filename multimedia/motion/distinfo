@@ -1,4 +1,2 @@
-SHA256 (motion-3.2.11.1.tar.gz) = 73973e723c39c05cbfc5c2a90357c5dea3078c3162dfc41f303fbf40cda9e403
-SIZE (motion-3.2.11.1.tar.gz) = 417246
-SHA256 (motion-3.2.11.1.port-freebsd.diff.gz) = bf494af5525c45d8582e381816429890878c0493342c242be74014b663c089b2
-SIZE (motion-3.2.11.1.port-freebsd.diff.gz) = 3238
+SHA256 (motion-3.2.12.tar.gz) = a597f8d7ec0bf3c5fb62722c4eead59717fe01c2ae0d256c642027cea74b2f0a
+SIZE (motion-3.2.12.tar.gz) = 425729
