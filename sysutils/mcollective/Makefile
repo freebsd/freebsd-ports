@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mcollective
-PORTVERSION=	1.3.2
+PORTVERSION=	2.1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
@@ -27,7 +27,7 @@ SCRIPTS=	mco mc-call-agent
 
 do-patch:
 	@${REINPLACE_CMD} -e "s|/etc/mcollective|${ETCDIR}|" \
-	    ${WRKSRC}/mcollectived.rb \
+	    ${WRKSRC}/bin/mcollectived \
 		${WRKSRC}/etc/server.cfg.dist \
 		${WRKSRC}/etc/client.cfg.dist \
 		${WRKSRC}/lib/mcollective/config.rb \
@@ -43,9 +43,9 @@ do-install:
 	@(cd ${WRKSRC}/plugins/mcollective && ${COPYTREE_SHARE} \* ${DATADIR})
 
 .for script in ${SCRIPTS}
-	${INSTALL_SCRIPT} ${WRKSRC}/${script} ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${script} ${PREFIX}/bin/
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/mcollectived.rb ${PREFIX}/sbin/mcollectived
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/mcollectived ${PREFIX}/sbin/mcollectived
 
 	${MKDIR} ${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/etc/client.cfg.dist ${ETCDIR}
