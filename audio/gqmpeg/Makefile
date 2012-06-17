@@ -28,7 +28,7 @@ RUN_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123
 USE_GNOME=	gdkpixbuf
 USE_GETTEXT=	yes
 WANT_GNOME=	yes
-USE_GETTETX=	yes
+USE_GETEXT=	yes
 USE_AUTOTOOLS=	autoconf213 libtool
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
