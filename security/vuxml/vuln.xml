@@ -94,10 +94,6 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2012-1457</cvename>
       <cvename>CVE-2012-1458</cvename>
       <cvename>CVE-2012-1459</cvename>
-      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-1419</url>
-      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-1457</url>
-      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-1458</url>
-      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-1459</url>
     </references>
     <dates>
       <discovery>2012-03-19</discovery>
