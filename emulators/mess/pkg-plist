@@ -129,6 +129,7 @@ libexec/mess/unidasm
 %%DATADIR%%/hash/gmaster.xml
 %%DATADIR%%/hash/gx4000.xml
 %%DATADIR%%/hash/ibm5140.xml
+%%DATADIR%%/hash/ibm5150.xml
 %%DATADIR%%/hash/ibm5170.xml
 %%DATADIR%%/hash/ibmpcjr_cart.xml
 %%DATADIR%%/hash/ibmpcjr_flop.xml
@@ -148,6 +149,7 @@ libexec/mess/unidasm
 %%DATADIR%%/hash/m5.xml
 %%DATADIR%%/hash/mac_flop.xml
 %%DATADIR%%/hash/mac_hdd.xml
+%%DATADIR%%/hash/mbc55x.xml
 %%DATADIR%%/hash/megacd.xml
 %%DATADIR%%/hash/megacdj.xml
 %%DATADIR%%/hash/megadriv.xml
@@ -214,10 +216,12 @@ libexec/mess/unidasm
 %%DATADIR%%/hash/tandy200.xml
 %%DATADIR%%/hash/tdv2324.xml
 %%DATADIR%%/hash/tg16.xml
+%%DATADIR%%/hash/ti99_cart.xml
 %%DATADIR%%/hash/tiki100.xml
 %%DATADIR%%/hash/trs80m2.xml
 %%DATADIR%%/hash/trsm100.xml
 %%DATADIR%%/hash/tutor.xml
+%%DATADIR%%/hash/tvc_cart.xml
 %%DATADIR%%/hash/uzebox.xml
 %%DATADIR%%/hash/v1050.xml
 %%DATADIR%%/hash/vboy.xml
@@ -233,6 +237,7 @@ libexec/mess/unidasm
 %%DATADIR%%/hash/vsmile.xml
 %%DATADIR%%/hash/wscolor.xml
 %%DATADIR%%/hash/wswan.xml
+%%DATADIR%%/hash/x07_card.xml
 %%DATADIR%%/hash/x1_cass.xml
 %%DATADIR%%/hash/x1_flop.xml
 %%DATADIR%%/hash/x68k_flop.xml
