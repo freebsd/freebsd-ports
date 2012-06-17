@@ -1,27 +1,163 @@
 @comment $FreeBSD$
 bin/%%PROGRAM_PREFIX%%texi2html
-%%PORTDOCS%%%%DOCSDIR%%/texi2html.html
-%%DATADIR%%/bib-example.texi
-%%DATADIR%%/book.init
-%%DATADIR%%/chm.init
-%%DATADIR%%/docbook.init
-%%DATADIR%%/enable_encoding.init
-%%DATADIR%%/glossary.texi
-%%DATADIR%%/html32.init
-%%DATADIR%%/i18n/de
-%%DATADIR%%/i18n/en
-%%DATADIR%%/i18n/es
-%%DATADIR%%/i18n/fr
-%%DATADIR%%/i18n/ja
-%%DATADIR%%/i18n/nl
-%%DATADIR%%/i18n/no
-%%DATADIR%%/i18n/pt
-%%DATADIR%%/i18n/pt_BR
-%%DATADIR%%/images/COPYING
-%%DATADIR%%/images/COPYING.Attribution-ShareAlike
-%%DATADIR%%/images/GPL
-%%DATADIR%%/images/Mybg.png
-%%DATADIR%%/images/README
+%%DATADIR%%/i18n/de.thl
+%%DATADIR%%/i18n/en.thl
+%%DATADIR%%/i18n/es.thl
+%%DATADIR%%/i18n/fr.thl
+%%DATADIR%%/i18n/hu.thl
+%%DATADIR%%/i18n/it.thl
+%%DATADIR%%/i18n/ja.thl
+%%DATADIR%%/i18n/nl.thl
+%%DATADIR%%/i18n/no.thl
+%%DATADIR%%/i18n/pt.thl
+%%DATADIR%%/i18n/pt_BR.thl
+%%DATADIR%%/lib/libintl-perl/lib/Locale/Recode/_Aliases.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/Recode/_Conversions.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/ASMO_449.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/ATARI_ST.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/ATARI_ST_EURO.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/CP10007.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/CP1250.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/CP1251.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/CP1252.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/CP1253.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/CP1254.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/CP1256.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/CP1257.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/CSN_369103.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/CWI.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/DEC_MCS.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/EBCDIC_AT_DE.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/EBCDIC_AT_DE_A.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/EBCDIC_CA_FR.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/EBCDIC_DK_NO.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/EBCDIC_DK_NO_A.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/EBCDIC_ES.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/EBCDIC_ES_A.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/EBCDIC_ES_S.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/EBCDIC_FI_SE.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/EBCDIC_FI_SE_A.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/EBCDIC_FR.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/EBCDIC_IS_FRISS.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/EBCDIC_IT.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/EBCDIC_PT.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/EBCDIC_UK.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/EBCDIC_US.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/ECMA_CYRILLIC.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/GEORGIAN_ACADEMY.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/GEORGIAN_PS.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/GOST_19768_74.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/GREEK7.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/GREEK7_OLD.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/GREEK_CCITT.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/HP_ROMAN8.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM037.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM038.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM1004.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM1026.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM1047.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM256.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM273.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM274.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM275.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM277.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM278.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM280.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM281.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM284.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM285.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM290.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM297.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM420.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM423.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM424.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM437.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM500.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM850.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM851.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM852.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM855.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM857.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM860.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM861.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM862.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM863.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM864.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM865.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM866.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM868.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM869.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM870.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM871.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM874.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM875.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM880.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM891.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM903.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM904.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM905.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IBM918.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/IEC_P27_1.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/INIS.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/INIS_8.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/INIS_CYRILLIC.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/ISO_10367_BOX.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/ISO_2033_1983.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/ISO_5427.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/ISO_5427_EXT.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/ISO_5428.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/ISO_8859_1.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/ISO_8859_10.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/ISO_8859_11.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/ISO_8859_13.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/ISO_8859_14.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/ISO_8859_15.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/ISO_8859_16.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/ISO_8859_2.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/ISO_8859_3.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/ISO_8859_4.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/ISO_8859_5.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/ISO_8859_6.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/ISO_8859_7.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/ISO_8859_8.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/ISO_8859_9.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/KOI8_R.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/KOI8_RU.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/KOI8_T.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/KOI8_U.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/KOI_8.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/LATIN_GREEK.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/LATIN_GREEK_1.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/MACARABIC.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/MACCROATIAN.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/MACCYRILLIC.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/MACGREEK.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/MACHEBREW.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/MACICELAND.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/MACINTOSH.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/MACROMANIA.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/MACTHAI.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/MACTURKISH.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/MACUKRAINE.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/MAC_IS.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/MAC_SAMI.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/MAC_UK.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/NATS_DANO.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/NATS_SEFI.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/NEXTSTEP.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/SAMI_WS2.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/TIS_620.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/US_ASCII.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/UTF_8.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/VISCII.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData/_Encode.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/Messages.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/Recode.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/TextDomain.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/Util.pm
+%%DATADIR%%/lib/libintl-perl/lib/Locale/gettext_pp.pm
+%%DATADIR%%/lib/Unicode-EastAsianWidth/lib/Unicode/EastAsianWidth.pm
 %%DATADIR%%/images/a_begin.png
 %%DATADIR%%/images/a_begin_na.png
 %%DATADIR%%/images/a_document.png
@@ -33,27 +169,27 @@ bin/%%PROGRAM_PREFIX%%texi2html
 %%DATADIR%%/images/a_help_na.png
 %%DATADIR%%/images/a_index.png
 %%DATADIR%%/images/a_index_na.png
-%%DATADIR%%/images/a_left.png
-%%DATADIR%%/images/a_left_na.png
 %%DATADIR%%/images/a_leftdouble.png
 %%DATADIR%%/images/a_leftdouble_na.png
+%%DATADIR%%/images/a_left.png
+%%DATADIR%%/images/a_left_na.png
 %%DATADIR%%/images/a_page.png
 %%DATADIR%%/images/a_page_na.png
-%%DATADIR%%/images/a_right.png
-%%DATADIR%%/images/a_right_na.png
 %%DATADIR%%/images/a_rightdouble.png
 %%DATADIR%%/images/a_rightdouble_na.png
-%%DATADIR%%/images/a_search.png
-%%DATADIR%%/images/a_search_na.png
+%%DATADIR%%/images/a_right.png
+%%DATADIR%%/images/bg.jpg
+%%DATADIR%%/images/a_right_na.png
 %%DATADIR%%/images/a_searchdoc.png
 %%DATADIR%%/images/a_searchdoc_na.png
+%%DATADIR%%/images/a_search.png
+%%DATADIR%%/images/a_search_na.png
 %%DATADIR%%/images/a_tableofcon.png
 %%DATADIR%%/images/a_tableofcon_na.png
 %%DATADIR%%/images/a_top.png
 %%DATADIR%%/images/a_top_na.png
 %%DATADIR%%/images/a_up.png
 %%DATADIR%%/images/a_up_na.png
-%%DATADIR%%/images/bg.jpg
 %%DATADIR%%/images/bg_left.png
 %%DATADIR%%/images/bg_right.png
 %%DATADIR%%/images/blue_dir.png
@@ -64,12 +200,17 @@ bin/%%PROGRAM_PREFIX%%texi2html
 %%DATADIR%%/images/blue_nnext.png
 %%DATADIR%%/images/blue_pprev.png
 %%DATADIR%%/images/blue_prev.png
+%%DATADIR%%/images/GPL
 %%DATADIR%%/images/blue_readme.png
 %%DATADIR%%/images/blue_top.png
 %%DATADIR%%/images/blue_up.png
 %%DATADIR%%/images/blue_uup.png
 %%DATADIR%%/images/contents_motif.png
+%%DATADIR%%/images/COPYING
+%%DATADIR%%/images/COPYING.Attribution-ShareAlike
+%%DATADIR%%/images/README
 %%DATADIR%%/images/index_motif.png
+%%DATADIR%%/images/Mybg.png
 %%DATADIR%%/images/next_motif.png
 %%DATADIR%%/images/next_motif_gr.png
 %%DATADIR%%/images/previous_motif.png
@@ -80,25 +221,81 @@ bin/%%PROGRAM_PREFIX%%texi2html
 %%DATADIR%%/images/xy_next.png
 %%DATADIR%%/images/xy_next_gr.png
 %%DATADIR%%/images/xy_nextsection.png
-%%DATADIR%%/images/xy_nextsection_gr.png
 %%DATADIR%%/images/xy_previous.png
+%%DATADIR%%/images/xy_nextsection_gr.png
 %%DATADIR%%/images/xy_previous_gr.png
 %%DATADIR%%/images/xy_previoussection.png
 %%DATADIR%%/images/xy_previoussection_gr.png
 %%DATADIR%%/images/xy_up.png
 %%DATADIR%%/images/xy_up_gr.png
-%%DATADIR%%/inlinestyle.init
-%%DATADIR%%/l2h.init
-%%DATADIR%%/makeinfo.init
-%%DATADIR%%/mediawiki.init
-%%DATADIR%%/my-bib-macros.texi
-%%DATADIR%%/noheaders.init
-%%DATADIR%%/roff.init
-%%DATADIR%%/tex4ht.init
-%%DATADIR%%/utf8.init
-%%DATADIR%%/xhtml.init
-%%DATADIR%%/xml.init
+%%TEXINFODIR%%/init/book.init
+%%TEXINFODIR%%/init/chm.init
+%%TEXINFODIR%%/init/tex4ht.init
+%%TEXINFODIR%%/init/html32.init
+%%TEXINFODIR%%/init/mediawiki.init
+%%NLS%%share/locale/cs/LC_MESSAGES/texi2html.mo
+%%NLS%%share/locale/da/LC_MESSAGES/texi2html.mo
+%%NLS%%share/locale/de/LC_MESSAGES/texi2html.mo
+%%NLS%%share/locale/de.us-ascii/LC_MESSAGES/texi2html_document.mo
+%%NLS%%share/locale/de_AT/LC_MESSAGES/texi2html.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/texi2html.mo
+%%NLS%%share/locale/es/LC_MESSAGES/texi2html.mo
+%%NLS%%share/locale/es.us-ascii/LC_MESSAGES/texi2html_document.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/texi2html.mo
+%%NLS%%share/locale/fr.us-ascii/LC_MESSAGES/texi2html_document.mo
+%%NLS%%share/locale/he/LC_MESSAGES/texi2html.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/texi2html.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/texi2html.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/texi2html_document.mo
+%%NLS%%share/locale/id/LC_MESSAGES/texi2html.mo
+%%NLS%%share/locale/it/LC_MESSAGES/texi2html.mo
+%%NLS%%share/locale/it/LC_MESSAGES/texi2html_document.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/texi2html.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/texi2html_document.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/texi2html.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/texi2html.mo
+%%NLS%%share/locale/nl.us-ascii/LC_MESSAGES/texi2html_document.mo
+%%NLS%%share/locale/no.us-ascii/LC_MESSAGES/texi2html_document.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/texi2html.mo
+%%NLS%%share/locale/pt.us-ascii/LC_MESSAGES/texi2html_document.mo
+%%NLS%%share/locale/pt_BR.us-ascii/LC_MESSAGES/texi2html_document.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/texi2html.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/texi2html.mo
+%%NLS%%share/locale/rw/LC_MESSAGES/texi2html.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/texi2html.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/texi2html.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/texi2html.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/texi2html.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/texi2html.mo
+%%PORTDOCS%%%%DOCSDIR%%/texi2html.html
+@dirrm %%DATADIR%%/lib/libintl-perl/lib/Locale/Recode
+@dirrm %%DATADIR%%/lib/libintl-perl/lib/Locale/RecodeData
+@dirrm %%DATADIR%%/lib/libintl-perl/lib/Locale
+@dirrm %%DATADIR%%/lib/libintl-perl/lib
+@dirrm %%DATADIR%%/lib/libintl-perl
+@dirrm %%DATADIR%%/lib/Unicode-EastAsianWidth/lib/Unicode
+@dirrm %%DATADIR%%/lib/Unicode-EastAsianWidth/lib
+@dirrm %%DATADIR%%/lib/Unicode-EastAsianWidth
+@dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/i18n
 @dirrm %%DATADIR%%
+@dirrmtry %%TEXINFODIR%%/init
+@dirrmtry %%TEXINFODIR%%
+%%NLS%%@dirrm share/locale/de.us-ascii/LC_MESSAGES
+%%NLS%%@dirrm share/locale/de.us-ascii
+%%NLS%%@dirrm share/locale/es.us-ascii/LC_MESSAGES
+%%NLS%%@dirrm share/locale/es.us-ascii
+%%NLS%%@dirrm share/locale/fr.us-ascii/LC_MESSAGES
+%%NLS%%@dirrm share/locale/fr.us-ascii
+%%NLS%%@dirrm share/locale/nl.us-ascii/LC_MESSAGES
+%%NLS%%@dirrm share/locale/nl.us-ascii
+%%NLS%%@dirrm share/locale/no.us-ascii/LC_MESSAGES
+%%NLS%%@dirrm share/locale/no.us-ascii
+%%NLS%%@dirrm share/locale/pt.us-ascii/LC_MESSAGES
+%%NLS%%@dirrm share/locale/pt.us-ascii
+%%NLS%%@dirrm share/locale/pt_BR.us-ascii/LC_MESSAGES
+%%NLS%%@dirrm share/locale/pt_BR.us-ascii
+%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/rw
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
