@@ -1036,6 +1036,7 @@ lib/wine/fakedlls/ipconfig.exe
 lib/wine/fakedlls/iphlpapi.dll
 lib/wine/fakedlls/itircl.dll
 lib/wine/fakedlls/itss.dll
+lib/wine/fakedlls/joy.cpl
 lib/wine/fakedlls/jscript.dll
 lib/wine/fakedlls/kernel32.dll
 lib/wine/fakedlls/keyboard.drv16
@@ -1389,6 +1390,7 @@ lib/wine/ipconfig.exe.so
 lib/wine/iphlpapi.dll.so
 lib/wine/itircl.dll.so
 lib/wine/itss.dll.so
+lib/wine/joy.cpl.so
 lib/wine/jscript.dll.so
 lib/wine/kernel32.dll.so
 lib/wine/keyboard.drv16.so
