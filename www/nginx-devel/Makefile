@@ -49,6 +49,7 @@ OPTIONS_DEFINE=	\
 	MAIL_POP3 \
 	MAIL_SMTP \
 	MAIL_SSL \
+	SPDY \
 	WWW \
 	CACHE_PURGE \
 	ECHO \
@@ -132,6 +133,7 @@ MAIL_IMAP_DESC=			Enable IMAP4 proxy module
 MAIL_POP3_DESC=			Enable POP3 proxy module
 MAIL_SMTP_DESC=			Enable SMTP proxy module
 MAIL_SSL_DESC=			Enable mail_ssl module
+SPDY_DESC=			Enable SPDY protocol support (SSL req.)
 WWW_DESC=			Enable html sample files
 CACHE_PURGE_DESC=		3rd party cache_purge module
 ECHO_DESC=			3rd party echo module
@@ -747,6 +749,14 @@ FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/agentzh/xss-nginx-module/tarball/v${NGINX_XSS_VERSION}/:xss
 DISTFILES+=	agentzh-xss-nginx-module-v${NGINX_XSS_VERSION}-${GIT_XSS_VERSION}.tar.gz:xss
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-xss-nginx-module-${GIT_XSS_VERSION:S/^0-g//}
+.endif
+
+.if ${PORT_OPTIONS:MSPDY}
+USE_OPENSSL_PORT=	yes
+USE_HTTP_SSL=	yes
+NGINX_SPDY_VERSION=	36
+PATCH_SITES=	http://nginx.org/patches/spdy/:spdy
+PATCHFILES=	patch.spdy-${NGINX_SPDY_VERSION}.txt:spdy
 .endif
 
 .if ${PORT_OPTIONS:MWWW}
