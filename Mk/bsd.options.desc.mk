@@ -115,6 +115,7 @@ LIBRSVG2_DESC?=		Enable librsvg-2 support
 LIBWMF_DESC?=		Enable libwmf support
 LIBWRAP_DESC?=		Enable TCP wrapper support
 LIBXINE_DESC?=		Enable linxine support
+LIGHTTPD_DESC?=		Enable Lighttpd server
 LIRC_DESC?=		Enable LIRC support
 LUA_DESC?=		Enable LUA support
 MAD_DESC?=		Enable Mad mp3 decoder support
