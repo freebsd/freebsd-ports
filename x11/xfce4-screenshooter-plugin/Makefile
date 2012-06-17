@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	xfce4-screenshooter-plugin
-PORTVERSION=	1.8.0
-PORTREVISION=	2
+PORTVERSION=	1.8.1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=/src/apps/xfce4-screenshooter/${PORTVERSION:R}
-DIST_SUBDIR=	xfce4
 DISTNAME=	xfce4-screenshooter-${PORTVERSION}
+DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Desktop Screenshot plugin for Xfce
 
-LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS=	soup-2:${PORTSDIR}/devel/libsoup
 
 OPTIONS=	NLS "Enable Native Language Support" on
 
