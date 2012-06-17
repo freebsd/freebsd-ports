@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	A GUI backend chooser
 
-RUN_DEPENDS=	${SITE_PERL}/ZConf.pm:${PORTSDIR}/net/p5-ZConf \
+RUN_DEPENDS=	p5-ZConf>=6.1.0:${PORTSDIR}/net/p5-ZConf \
 		${LOCALBASE}/bin/xhost:${PORTSDIR}/x11/xhost
 
 PERL_CONFIGURE=	yes
