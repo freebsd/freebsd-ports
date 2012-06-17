@@ -36,6 +36,7 @@ bin/re.pl
 %%SITE_PERL%%/Devel/REPL/Plugin/Turtles.pm
 %%SITE_PERL%%/Devel/REPL/Profile.pm
 %%SITE_PERL%%/Devel/REPL/Profile/Default.pm
+%%SITE_PERL%%/Devel/REPL/Profile/Minimal.pm
 %%SITE_PERL%%/Devel/REPL/Script.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/REPL/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/REPL
