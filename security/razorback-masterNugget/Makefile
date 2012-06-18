@@ -34,6 +34,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USERS?=		razorback
 GROUPS?=	razorback
 
+.if ${OSVERSION} <= 800000
+BROKEN=		does not currently build under 7.x
+.endif
+
 .if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--enable-debug
 .endif
