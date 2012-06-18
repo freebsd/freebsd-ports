@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	db5
-PORTVERSION=	5.2.42.0
-PORTREVISION=	0
+PORTVERSION=	5.3.21.0
 CATEGORIES=	databases java
 MASTER_SITES=	http://download.oracle.com/berkeley-db/
 PKGNAMEPREFIX?=
@@ -16,7 +15,7 @@ DISTNAME=	db-${PORTVERSION:R}
 DIST_SUBDIR=	bdb
 
 MAINTAINER=	mandree@FreeBSD.org
-COMMENT=	The Oracle Berkeley DB, revision 5.2
+COMMENT=	The Oracle Berkeley DB, revision ${BDBVER}
 
 BDBVER=		${PORTVERSION:R:R}
 BDBMAJ=		${BDBVER:R}
@@ -33,20 +32,22 @@ INSTALL_TARGET=	install_include install_lib install_utilities
 LIBTOOLFILES=	${CONFIGURE_SCRIPT}
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 USE_LDCONFIG=	yes
+PLIST_SUB=	BDBMAJ=${BDBMAJ} BDBVER=${BDBVER}
 
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET+=	install_docs docdir=${DOCSDIR}
 PORTDOCS=		*
 .endif
 
-OPTIONS=	CRYPTO "Cryptography support" ON \
-		L10N "Localization support" OFF \
-		SQL "SQL API (EXPERIMENTAL)" OFF \
-		JAVA "JAVA API (EXPERIMENTAL)" OFF
+OPTIONS_DEFINE=	CRYPTO L10N SQL JAVA
+OPTIONS_DEFAULT=CRYPTO
+CRYPTO_DESC=	Cryptography support
+L10N_DESC=	Localization support (EXPERIMENTAL)
+SQL_DESC=	Enable SQL API (EXPERIMENTAL)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_SQL)
+.if ${PORT_OPTIONS:MSQL}
 CONFIGURE_ARGS+=	--enable-sql_codegen --enable-sql
 PLIST_SUB+=	SQL=""
 libdb_sql=	libdb_sql
@@ -55,7 +56,7 @@ PLIST_SUB+=	SQL="@comment "
 libdb_sql=
 .endif
 
-.if defined(WITH_JAVA)
+.if ${PORT_OPTIONS:MJAVA}
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 CONFIGURE_ARGS+=	--enable-java
@@ -68,17 +69,17 @@ PLIST_SUB+=	JAVA="@comment "
 libdb_java=
 .endif
 
-.if defined(WITH_CRYPTO)
+.if ${PORT_OPTIONS:MCRYPTO}
 CONFIGURE_ARGS+=	--with-cryptography=yes
 .else
 CONFIGURE_ARGS+=	--with-cryptography=no
 .endif
 
-.if defined(WITH_L10N)
+.if ${PORT_OPTIONS:ML10N}
 CONFIGURE_ARGS+=	--enable-localization
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug --enable-umrw
 .endif
 
@@ -99,19 +100,19 @@ post-install:
 	cd ${PREFIX}/bin/${PORTNAME}; \
 	for i in *; do ${LN} -s -f ${PORTNAME}/$$i ../$$i-${BDBVER} ; \
 		       ${LN} -s -f ${PORTNAME}/$$i ../$$i-${BDBMAJ} ; done
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 .for i in api_reference/TCL
 	${RM} -r -f ${DOCSDIR}/${i}
 .endfor
-.if !defined(WITH_JAVA)
+.if empty(PORT_OPTIONS:MJAVA)
 	${RM} -r -f ${DOCSDIR}/java
 .for i in gsg gsg_db_rep gsg_txn
 	${RM} -r -f ${DOCSDIR}/${i}/JAVA
 .endfor
 .endif
-.if !defined(WITH_SQL)
+.if empty(PORT_OPTIONS:MSQL)
 	${RM} -r -f ${DOCSDIR}/bdb-sql
 .endif
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

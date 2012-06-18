@@ -5,6 +5,29 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120618:
+  AFFECTS: users of databases/db5
+  AUTHOR:  mandree@FreeBSD.org
+
+  The databases/db5 port has been upgraded to BerkeleyDB 5.3.  This
+  entails a shared library bump.
+
+  Before upgrading this port, check if your applications use
+  transactional data bases, and if they do, prepare them for a log file
+  format upgrade.  YOU MUST DO THIS BEFORE YOU UPGRADE THE DB5 PORT!  See:
+  http://docs.oracle.com/cd/E17076_02/html/upgrading/upgrade_process.html
+
+  All packages that depend on db5 need to be rebuilt due to the shared
+  library version change.  The full changelog is at
+  http://download.oracle.com/otndocs/products/berkeleydb/html/changelog_5_3.html
+
+  To upgrade the packages that need Berkeley DB 5, please
+  issue one of the following commands (depending on your preferred tool):
+
+    # portmaster -r db5-5
+  or
+    # portupgrade -fr databases/db5
+
 20120616:
   AFFECTS: users of www/lighttpd
   AUTHOR: mm@FreeBSD.org
