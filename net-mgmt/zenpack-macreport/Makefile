@@ -14,6 +14,9 @@ DISTNAME=	zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
 MAINTAINER=	zenoss@experts-exchange.com
 COMMENT=	Lists MAC address and the Device and Interface associated info
 
+PLIST_FILES=	zenoss/ZenPack/${ZPACK}
+PLIST_DIRS=	zenoss/ZenPack
+
 USE_ZIP=	yes
 ZPACKGROUP=	community
 WRKSRC=	${WRKDIR}/zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}

@@ -14,6 +14,9 @@ DISTNAME=       zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
 MAINTAINER=	zenoss@experts-exchange.com
 COMMENT=	Provides a link that graphs all network interfaces for a device
 
+PLIST_FILES=	zenoss/ZenPack/${ZPACK}
+PLIST_DIRS=	zenoss/ZenPack
+
 ZPACKGROUP=	community
 ZPACKPREFIX=	ZenPacks.community.
 WRKSRC=  ${WRKDIR}/zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}

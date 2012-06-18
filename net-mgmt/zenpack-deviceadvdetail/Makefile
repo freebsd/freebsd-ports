@@ -14,6 +14,9 @@ DISTNAME=	epuzanov-${ZPACKPREFIX}${PORTNAME}-deviceadvdetail-2.7-0-g4cc7c48
 MAINTAINER=	zenoss@experts-exchange.com
 COMMENT=	Provides additional hardware details for Zenoss
 
+PLIST_FILES=	zenoss/ZenPack/${ZPACK}
+PLIST_DIRS=	zenoss/ZenPack
+
 ZPACKGROUP=	community
 WRKSRC=	${WRKDIR}/epuzanov-${ZPACKPREFIX}${PORTNAME}-cfbd596
 

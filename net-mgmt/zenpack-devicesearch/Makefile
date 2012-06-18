@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.glenbarber.us/ports/net-mgmt/zenpack-${PORTNAME}/
 MAINTAINER=	zenoss@experts-exchange.com
 COMMENT=	Provides the ability to quickly search for devices in Zenoss
 
+PLIST_FILES=	zenoss/ZenPack/${ZPACK}
+PLIST_DIRS=	zenoss/ZenPack
+
 ZPACKGROUP=	core
 
 .include <bsd.port.pre.mk>
