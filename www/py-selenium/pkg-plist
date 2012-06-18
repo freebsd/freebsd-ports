@@ -76,6 +76,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/ie/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/ie/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/ie/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/ie/service.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/ie/service.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/ie/service.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/ie/webdriver.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/ie/webdriver.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/selenium/webdriver/ie/webdriver.pyo

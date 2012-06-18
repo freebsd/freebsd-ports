@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	selenium
-PORTVERSION=	2.21.3
+PORTVERSION=	2.23.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DIST_SUBDIR=	py-${PORTNAME}
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Python bindings for Selenium
@@ -24,11 +23,12 @@ LATEST_LINK=	py-${PORTNAME}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
-OPTIONS=	FIREFOX	"Install Firefox"	Off
+OPTIONS_DEFINE=	FIREFOX
+FIREFOX_DESC=	Install Firefox
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_FIREFOX)
+.if ${PORT_OPTIONS:MFIREFOX}
 USE_FIREFOX=	10+
 .endif
 
