@@ -23,21 +23,16 @@ USE_XORG=	xext
 USE_GNOME=	esound
 USE_GL=		glut
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool autoconf
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-auto-respawn
 
-.include <bsd.port.pre.mk>
-
-AUTOTOOLSFILES=	aclocal.m4
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|2.63|%%AUTOCONF_VERSION%%|g' ${WRKSRC}/aclocal.m4
 	@${REINPLACE_CMD} -e 's|<machine/soundcard\.h>|<sys/soundcard.h>|g' \
 		${WRKSRC}/epplets/Emix.c
 	@${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' \
 		${WRKSRC}/epplets/mbox.c
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

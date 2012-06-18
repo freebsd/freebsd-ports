@@ -11,6 +11,7 @@ bin/E-Magic.epplet
 bin/E-MemWatch.epplet
 bin/E-Mixer.epplet
 bin/E-MoonClock.epplet
+bin/E-Mountbox.epplet
 bin/E-Net.epplet
 bin/E-NetFlame.epplet
 bin/E-NetGraph.epplet
@@ -28,6 +29,7 @@ bin/E-Time.epplet
 bin/E-Toolbox.epplet
 bin/E-UrlWatch.epplet
 bin/E-Wireless.epplet
+bin/E-Xss.epplet
 bin/Emix.epplet
 include/epplet.h
 lib/libepplet_glx.a
@@ -48,6 +50,7 @@ share/e16/epplet_icons/E-Magic.icon
 share/e16/epplet_icons/E-MemWatch.icon
 share/e16/epplet_icons/E-Mixer.icon
 share/e16/epplet_icons/E-MoonClock.icon
+share/e16/epplet_icons/E-Mountbox.icon
 share/e16/epplet_icons/E-Net.icon
 share/e16/epplet_icons/E-NetFlame.icon
 share/e16/epplet_icons/E-OpenGL-Demo.icon
@@ -63,6 +66,7 @@ share/e16/epplet_icons/E-Sys.icon
 share/e16/epplet_icons/E-Time.icon
 share/e16/epplet_icons/E-UrlWatch.icon
 share/e16/epplet_icons/E-Wireless.icon
+share/e16/epplet_icons/E-Xss.icon
 share/e16/epplet_icons/Emix.icon
 share/e16/epplet_data/E-Biff/7of9.png
 share/e16/epplet_data/E-Biff/newmail.png
@@ -137,6 +141,16 @@ share/e16/epplet_data/E-MoonClock/E-MoonClock-57.png
 share/e16/epplet_data/E-MoonClock/E-MoonClock-58.png
 share/e16/epplet_data/E-MoonClock/E-MoonClock-59.png
 share/e16/epplet_data/E-MoonClock/E-MoonClock-60.png
+share/e16/epplet_data/E-Mountbox/E-Mountbox-bg.png
+share/e16/epplet_data/E-Mountbox/E-Mountbox-blockdev.png
+share/e16/epplet_data/E-Mountbox/E-Mountbox-cd.png
+share/e16/epplet_data/E-Mountbox/E-Mountbox-floppy.png
+share/e16/epplet_data/E-Mountbox/E-Mountbox-jazz.png
+share/e16/epplet_data/E-Mountbox/E-Mountbox-zip.png
+share/e16/epplet_data/E-Mountbox/ABOUT/MAIN
+share/e16/epplet_data/E-Mountbox/ABOUT/dialog.png
+share/e16/epplet_data/E-Mountbox/ABOUT/shot.png
+share/e16/epplet_data/E-Mountbox/ABOUT/shot_unmounted.png
 share/e16/epplet_data/E-NetFlame/ABOUT/MAIN
 share/e16/epplet_data/E-OpenGL-Demo/ABOUT/MAIN
 share/e16/epplet_data/E-OpenGL-Demo/cube_texture.RGB
@@ -216,6 +230,8 @@ share/e16/epplet_data/Emix/Emix.TODO
 @dirrm share/e16/epplet_data/E-OpenGL-Demo
 @dirrm share/e16/epplet_data/E-NetFlame/ABOUT
 @dirrm share/e16/epplet_data/E-NetFlame
+@dirrm share/e16/epplet_data/E-Mountbox/ABOUT
+@dirrm share/e16/epplet_data/E-Mountbox
 @dirrm share/e16/epplet_data/E-MoonClock/ABOUT
 @dirrm share/e16/epplet_data/E-MoonClock
 @dirrm share/e16/epplet_data/E-Mixer/ABOUT
@@ -227,3 +243,4 @@ share/e16/epplet_data/Emix/Emix.TODO
 @dirrm share/e16/epplet_data/E-Clock
 @dirrm share/e16/epplet_data/E-Biff
 @dirrm share/e16/epplet_data
+@dirrm share/e16/epplet_icons
