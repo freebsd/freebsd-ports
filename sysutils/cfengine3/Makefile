@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cfengine
-PORTVERSION=	3.3.0
+PORTVERSION=	3.3.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cfengine.com/source-code/download?file=
 
@@ -36,7 +36,8 @@ LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 OPTIONS=	TOKYOCABINET	"Enable TokyoCabinet support"		on \
 		QDBM	"Enable QDBM support"				off \
 		PGSQL	"Enable PostgreSQL connector"			off \
-		MYSQL	"Enable MySQL connector"			off
+		MYSQL	"Enable MySQL connector"			off \
+		LIBVIRT	"Enable libvirt compatibility"			off
 
 .include <bsd.port.pre.mk>
 
@@ -59,17 +60,22 @@ LIB_DEPENDS+=	qdbm.14:${PORTSDIR}/databases/qdbm
 .endif
 
 .if defined(WITH_PGSQL)
+USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-postgresql=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--with-postgresql=no
+LIB_DEPENDS+=		pq:${PORTSDIR}/databases/postgresql${PGSQL_VER}-client
 .endif
 
 .if defined(WITH_MYSQL)
+USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--with-mysql=no
+LIB_DEPENDS+=		mysqlclient:${PORTSDIR}/${_MYSQL_CLIENT}
+LDFLAGS+=		-L${LOCALBASE}/lib/mysql
 .endif
 
+.if defined(WITH_LIBVIRT)
+CONFIGURE_ARGS+=	--with-libvirt=${LOCALBASE}
+LIB_DEPENDS+=		virt:${PORTSDIR}/devel/libvirt
+.endif
 
 MAN8=	cf-agent.8	cf-key.8	cf-monitord.8	\
 	cf-report.8	cf-serverd.8	cf-execd.8	\
