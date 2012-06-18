@@ -14,11 +14,8 @@ MASTER_SITES=	https://code.zmaw.de/attachments/download/2879/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Climate Data Operators
 
-OPTIONS=	HDF5	"HDF5 support"		on \
-		JASPER	"Japser support"	off \
-		NETCDF	"NetCDF support"	on \
-		PROJ	"PROJ support"		on \
-		SZIP	"SZIP support"		on
+OPTIONS_DEFINE=	HDF5 JASPER NETCDF PROJ SZIP
+OPTIONS_DEFAULT=HDF5 NETCDF PROJ SZIP
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -33,16 +30,16 @@ NETCDF_VER?=	4
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NETCDF) && !defined(WITHOUT_HDF5) && ${NETCDF_VER} == 4 && ${HDF5_VER} == 16
+.if ${PORT_OPTIONS:MNETCDF} && ${PORT_OPTIONS:MHDF5} && ${NETCDF_VER} == 4 && ${HDF5_VER} == 16
 IGNORE=		netCDF 4 requires HDF5 1.8
 .endif
 
-.if !defined(WITHOUT_NETCDF) && (${NETCDF_VER} == 4)
+.if ${PORT_OPTIONS:MNETCDF} && (${NETCDF_VER} == 4)
 HDF5_VER=	18
 WITH_HDF5=	yes
 .endif
 
-.if !defined(WITHOUT_HDF5)
+.if ${PORT_OPTIONS:MHDF5}
 CONFIGURE_ARGS+=--with-hdf5=${LOCALBASE}
 WITH_SZIP=	yes
 .if (${HDF5_VER} == 18)
@@ -52,12 +49,12 @@ LIB_DEPENDS+=	hdf5.0:${PORTSDIR}/science/hdf5
 .endif
 .endif
 
-.if defined(WITH_JASPER)
+.if ${PORT_OPTIONS:MJASPER}
 CONFIGURE_ARGS+=--with-jasper=${LOCALBASE}
 LIB_DEPENDS+=	jasper:${PORTSDIR}/graphics/jasper
 .endif
 
-.if !defined(WITHOUT_NETCDF)
+.if ${PORT_OPTIONS:MNETCDF}
 CONFIGURE_ARGS+=--with-netcdf=${LOCALBASE}
 .if (${NETCDF_VER} == 4)
 LIB_DEPENDS+=	netcdf.7:${PORTSDIR}/science/netcdf4
@@ -69,12 +66,12 @@ PLIST_SUB=	NETCDF=""
 PLIST_SUB=	NETCDF="@comment "
 .endif
 
-.if !defined(WITHOUT_PROJ)
+.if ${PORT_OPTIONS:MPROJ}
 CONFIGURE_ARGS+=--with-proj=${LOCALBASE}
 LIB_DEPENDS+=	proj:${PORTSDIR}/graphics/proj
 .endif
 
-.if !defined(WITHOUT_SZIP)
+.if ${PORT_OPTIONS:MSZIP}
 CONFIGURE_ARGS+=--with-szlib=${LOCALBASE}
 LIB_DEPENDS+=	sz:${PORTSDIR}/science/szip
 .endif
@@ -86,7 +83,7 @@ CFLAGS+=	-DPTHREAD_MUTEXATTR_CONDATTR
 .endif
 
 post-patch:
-.if !defined(WITHOUT_NETCDF)
+.if ${PORT_OPTIONS:MNETCDF}
 	@${REINPLACE_CMD} \
 		-e '/bin_PROGRAMS = / s|$$| cdotest|' \
 		-e '/noinst_PROGRAMS = / s| cdotest||' \
@@ -94,7 +91,7 @@ post-patch:
 .endif
 
 post-build:
-.if !defined(WITHOUT_NETCDF)
+.if ${PORT_OPTIONS:MNETCDF}
 	@cd ${WRKSRC}/src/ && ${SETENV} CDO_PATH=${WRKSRC}/src/cdo ${WRKSRC}/src/cdotest
 .endif
 
