@@ -20,7 +20,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb \
 		${PYTHON_PKGNAMEPREFIX}dns>=2.0:${PORTSDIR}/dns/py-dns \
 		${PYTHON_PKGNAMEPREFIX}lockfile>=0.2:${PORTSDIR}/devel/py-lockfile
 
-USE_PYTHON=	2.6+
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=easy_install
 USE_RC_SUBR=	pyspamd
 
