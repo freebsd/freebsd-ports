@@ -61,10 +61,6 @@ MANPREFIX?=	${ZENHOME}/share
 .include "${.CURDIR}/Makefile.man"
 BUILD_ENV=	PYTHONDONTWRITEBYTECODE=yes
 
-.if !defined(PACKAGE_BUILDING)
-.SHELL:	path="${LOCALBASE}/bin/bash" unsetenv=true
-.endif
-
 .if (${ARCH} == amd64)
 PLIST_SUB+=	32BIT_ONLY="@comment "
 .else
@@ -95,6 +91,9 @@ do-build:
 	@${DO_NADA}
 
 do-install:
+.if !defined(PACKAGE_BUILDING)
+.SHELL:	path="${LOCALBASE}/bin/bash" unsetenv=true
+.endif
 # Integrated dependencies insist on using lib/pkgconfig -- instead of huge
 # patches, we'll symlink it temporarily
 	@${MKDIR} ${ZENHOME}/lib \
