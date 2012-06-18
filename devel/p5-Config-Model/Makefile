@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Config-Model
-PORTVERSION=	2.019
+PORTVERSION=	2.020
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DDUMONT
@@ -24,6 +24,7 @@ BUILD_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-File-HomeDir>=0:${PORTSDIR}/devel/p5-File-HomeDir \
 		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-Hash-Merge>=0.12:${PORTSDIR}/textproc/p5-Hash-Merge \
+		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Log-Log4perl>=1.11:${PORTSDIR}/devel/p5-Log-Log4perl \
 		p5-Mouse>=0:${PORTSDIR}/devel/p5-Mouse \
 		p5-MouseX-NativeTraits>=0:${PORTSDIR}/devel/p5-MouseX-NativeTraits \
