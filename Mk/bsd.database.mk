@@ -274,7 +274,7 @@ db44_DEPENDS=	db-4.4.0:${PORTSDIR}/databases/db44
 db46_DEPENDS=	db-4.6.0:${PORTSDIR}/databases/db46
 db47_DEPENDS=	db-4.7.0:${PORTSDIR}/databases/db47
 db48_DEPENDS=	db-4.8.0:${PORTSDIR}/databases/db48
-db5_DEPENDS=	db-5.2.0:${PORTSDIR}/databases/db5
+db5_DEPENDS=	db-5.3.0:${PORTSDIR}/databases/db5
 # Detect db versions by finding some files
 db40_FIND=	${LOCALBASE}/include/db4/db.h
 db41_FIND=	${LOCALBASE}/include/db41/db.h
@@ -431,8 +431,8 @@ BDB_LIB_NAME=		db-4.8
 BDB_LIB_CXX_NAME=	db_cxx-4.8
 BDB_LIB_DIR=		${LOCALBASE}/lib/db48
 .  elif ${_BDB_VER} == 5
-BDB_LIB_NAME=		db-5.2
-BDB_LIB_CXX_NAME=	db_cxx-5.2
+BDB_LIB_NAME=		db-5.3
+BDB_LIB_CXX_NAME=	db_cxx-5.3
 BDB_LIB_DIR=		${LOCALBASE}/lib/db5
 .  endif
 BDB_LIB_NAME?=		db${_BDB_VER}
