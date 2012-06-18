@@ -15,15 +15,18 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generating safely-quoted html text from python code
 
+OPTIONS_DEFINE=	DOCS
+
 MAKE_ENV=	USE_DISTUTILS=yes
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/
-	@cd ${WRKSRC} && \
-		${INSTALL_DATA} CHANGES.txt LICENSE.txt README.txt ${DOCSDIR}/
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} CHANGES.txt LICENSE.txt README.txt ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
