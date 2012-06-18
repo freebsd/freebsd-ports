@@ -101,12 +101,12 @@ bin/search_person.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/imdb/_logging.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/imdb/_logging.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/imdb/_logging.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/imdb/articles.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/imdb/articles.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/imdb/articles.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/imdb/helpers.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/imdb/helpers.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/imdb/helpers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/imdb/linguistics.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/imdb/linguistics.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/imdb/linguistics.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/imdb/locale/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/imdb/locale/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/imdb/locale/__init__.pyo
@@ -258,7 +258,6 @@ bin/search_person.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/search_keyword.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/search_movie.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/search_person.py
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/goodies
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
