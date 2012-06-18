@@ -65,13 +65,10 @@ bin/soapui.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/restexample/NewsSearchService/V1/search_files/yschx_nws_20050610a.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/sample-soapui-project.xml
 share/java/soapui/bin/ext/readme.txt
-share/java/soapui/bin/jniwrap.lic
-share/java/soapui/bin/jxbrowser.lic
-share/java/soapui/bin/libjniwrap.jnilib
-share/java/soapui/bin/libjniwrap.so
 share/java/soapui/bin/loadtestrunner.sh
 share/java/soapui/bin/mockservicerunner.sh
-share/java/soapui/bin/soapui-3.5.jar
+share/java/soapui/bin/securitytestrunner.sh
+share/java/soapui/bin/soapui-4.5.0.jar
 share/java/soapui/bin/soapui-log4j.xml
 share/java/soapui/bin/soapui.sh
 share/java/soapui/bin/soapui.sh.orig
@@ -79,11 +76,12 @@ share/java/soapui/bin/soapui32.png
 share/java/soapui/bin/starter-page.html
 share/java/soapui/bin/testrunner.sh
 share/java/soapui/bin/toolrunner.sh
-share/java/soapui/lib/MozillaGlue-jxbrowser-1.4.jar
-share/java/soapui/lib/MozillaInterfaces-jxbrowser-1.4.jar
+share/java/soapui/bin/wargenerator.sh
+share/java/soapui/lib/MozillaInterfaces-3.0.jar
 share/java/soapui/lib/activation-1.1.jar
 share/java/soapui/lib/bcprov-jdk15-144.jar
 share/java/soapui/lib/binding-2.0.1.jar
+share/java/soapui/lib/cajo-1.142.jar
 share/java/soapui/lib/commons-beanutils-1.7.0.jar
 share/java/soapui/lib/commons-cli-1.0.jar
 share/java/soapui/lib/commons-codec-1.3.jar
@@ -92,6 +90,10 @@ share/java/soapui/lib/commons-httpclient-3.1.jar
 share/java/soapui/lib/commons-io-1.3.2.jar
 share/java/soapui/lib/commons-lang-2.4.jar
 share/java/soapui/lib/commons-logging-1.1.1.jar
+share/java/soapui/lib/cssparser-0.9.5.jar
+share/java/soapui/lib/engine-gecko-3.0.jar
+share/java/soapui/lib/engine-ie-3.0.jar
+share/java/soapui/lib/engine-webkit-3.0.jar
 share/java/soapui/lib/ext-xmlbeans-1.2.jar
 share/java/soapui/lib/ezmorph-1.0.5.jar
 share/java/soapui/lib/flex-messaging-common-1.0.jar
@@ -100,62 +102,82 @@ share/java/soapui/lib/flex-messaging-opt-1.0.jar
 share/java/soapui/lib/flex-messaging-proxy-1.0.jar
 share/java/soapui/lib/flex-messaging-remoting-1.0.jar
 share/java/soapui/lib/forms-1.0.7.jar
-share/java/soapui/lib/groovy-all-1.7.1.jar
+share/java/soapui/lib/groovy-all-1.8.0.jar
+share/java/soapui/lib/guava-11.0.jar
 share/java/soapui/lib/hermes-1.14.jar
+share/java/soapui/lib/htmlunit-2.7.jar
+share/java/soapui/lib/htmlunit-core-js-2.7.jar
+share/java/soapui/lib/httpclient-4.1.1.jar
+share/java/soapui/lib/httpclient-cache-4.1.1.jar
+share/java/soapui/lib/httpcore-4.1.1.jar
+share/java/soapui/lib/httpcore-nio-4.1.1.jar
+share/java/soapui/lib/httpmime-4.1.1.jar
 share/java/soapui/lib/j2ee-xmlbeans-1.4.jar
 share/java/soapui/lib/javamail-1.4.jar
-share/java/soapui/lib/jaxb-impl-1.5.jar
-share/java/soapui/lib/jetty-6.1.22.jar
-share/java/soapui/lib/jetty-util-6.1.22.jar
+share/java/soapui/lib/jcifs-1.2.9.jar
+share/java/soapui/lib/jetty-6.1.26.jar
+share/java/soapui/lib/jetty-util-6.1.26.jar
 share/java/soapui/lib/jms-1.1.jar
-share/java/soapui/lib/jniwrap-3.7.3.jar
+share/java/soapui/lib/joda-time-1.6.2.jar
 share/java/soapui/lib/js-1.7R2.jar
 share/java/soapui/lib/json-lib-2.2.2-jdk15.jar
 share/java/soapui/lib/jsr173_1.0_api-xmlbeans-2.4.0.jar
 share/java/soapui/lib/jtidy-r872-jdk15.jar
-share/java/soapui/lib/junit-4.4.jar
-share/java/soapui/lib/jxbrowser-1.4.jar
+share/java/soapui/lib/junit-4.8.2.jar
+share/java/soapui/lib/jxbrowser-3.0.jar
 share/java/soapui/lib/l2fprod-common-directorychooser-7.3.jar
 share/java/soapui/lib/l2fprod-common-fontchooser-7.3.jar
 share/java/soapui/lib/log4j-1.2.14.jar
 share/java/soapui/lib/looks-2.2.0.jar
+share/java/soapui/lib/mockito-all-1.8.5.jar
+share/java/soapui/lib/nekohtml-1.9.14.jar
 share/java/soapui/lib/not-yet-commons-ssl-0.3.11.jar
-share/java/soapui/lib/opensaml-1.1.jar
+share/java/soapui/lib/opensaml-2.5.1.jar
+share/java/soapui/lib/openws-1.4.2-1.jar
 share/java/soapui/lib/policy-xmlbeans-1.5.jar
-share/java/soapui/lib/rsyntaxtextarea-1.3.4.jar
+share/java/soapui/lib/rsyntaxtextarea-2.0.1.jar
+share/java/soapui/lib/sac-1.3.jar
 share/java/soapui/lib/saxon-9.1.0.8j.jar
 share/java/soapui/lib/saxon-dom-9.1.0.8j.jar
 share/java/soapui/lib/serializer-2.7.1.jar
 share/java/soapui/lib/servlet-api-2.5-20081211.jar
+share/java/soapui/lib/slf4j-api-1.5.8.jar
+share/java/soapui/lib/slf4j-log4j12-1.5.8.jar
 share/java/soapui/lib/soap-xmlbeans-1.2.jar
-share/java/soapui/lib/soapui-xmlbeans-3.5.jar
+share/java/soapui/lib/soapui-xmlbeans-4.5.0.jar
 share/java/soapui/lib/swingx-soapui.jar
-share/java/soapui/lib/tuxpack-0.2.jar
 share/java/soapui/lib/wadl-xmlbeans-1.1.jar
-share/java/soapui/lib/winpack-3.7.1.jar
+share/java/soapui/lib/winpack-3.8.2.jar
+share/java/soapui/lib/ws-commons-util-1.0.2.jar
 share/java/soapui/lib/wsdl4j-1.6.2-fixed.jar
-share/java/soapui/lib/wss4j-1.5.8.jar
+share/java/soapui/lib/wss4j-1.6.2.jar
 share/java/soapui/lib/xalan-2.7.1.jar
 share/java/soapui/lib/xbean-fixed-2.4.0.jar
 share/java/soapui/lib/xbean_xpath-2.4.0.jar
 share/java/soapui/lib/xercesImpl-2.9.1.jar
 share/java/soapui/lib/xml-apis-2.9.1.jar
 share/java/soapui/lib/xmlpublic-2.4.0.jar
-share/java/soapui/lib/xmlsec-1.4.3.jar
+share/java/soapui/lib/xmlsec-1.4.5.jar
+share/java/soapui/lib/xmltooling-1.3.1.jar
 share/java/soapui/lib/xmlunit-1.2.jar
 share/java/soapui/lib/xom-1.1.jar
 share/java/soapui/lib/xstream-1.3.1.jar
+share/java/soapui/lib/xulrunner-linux-3.0.jar
+share/java/soapui/lib/xulrunner-linux64-3.0.jar
+share/java/soapui/lib/xulrunner-mac-3.0.jar
+share/java/soapui/lib/xulrunner-windows-3.0.jar
 @dirrm share/java/soapui/lib
 @dirrm share/java/soapui/bin/listeners
 @dirrm share/java/soapui/bin/ext
 @dirrm share/java/soapui/bin/actions
 @dirrm share/java/soapui/bin
 @dirrm share/java/soapui
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Tutorials/restexample/NewsSearchService/V1/search_files
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Tutorials/restexample/NewsSearchService/V1
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Tutorials/restexample/NewsSearchService
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Tutorials/restexample
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Tutorials/WSDL-WADL
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Tutorials
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/licenses
+@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/restexample/NewsSearchService/V1/search_files
+@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/restexample/NewsSearchService/V1
+@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/restexample/NewsSearchService
+@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/restexample
+@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials/WSDL-WADL
+@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tutorials
+@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%
+@dirrm share/doc/soapui/licenses
+@dirrm share/doc/soapui
