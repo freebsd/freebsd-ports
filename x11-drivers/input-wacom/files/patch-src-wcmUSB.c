@@ -1,5 +1,5 @@
---- xf86-input-wacom-0.11.1/src/wcmUSB.c.orig
-+++ xf86-input-wacom-0.11.1/src/wcmUSB.c
+--- src/wcmUSB.c.orig
++++ src/wcmUSB.c
 @@ -23,10 +23,17 @@
  
  #include "xf86Wacom.h"

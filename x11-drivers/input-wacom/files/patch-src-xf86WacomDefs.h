@@ -1,9 +1,9 @@
---- xf86-input-wacom-0.11.1/src/xf86WacomDefs.h.orig
-+++ xf86-input-wacom-0.11.1/src/xf86WacomDefs.h
-@@ -23,7 +23,9 @@
- /*****************************************************************************
+--- src/xf86WacomDefs.h.orig
++++ src/xf86WacomDefs.h
+@@ -24,7 +24,9 @@
   * General Defines
   ****************************************************************************/
+ #include <wacom-util.h>
 +#ifndef __FreeBSD__
  #include <asm/types.h>
 +#endif

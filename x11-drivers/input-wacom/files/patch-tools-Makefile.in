@@ -1,6 +1,6 @@
---- xf86-input-wacom-0.11.1/tools/Makefile.in.orig
-+++ xf86-input-wacom-0.11.1/tools/Makefile.in
-@@ -54,7 +54,7 @@ PRE_UNINSTALL = :
+--- tools/Makefile.in.orig
++++ tools/Makefile.in
+@@ -54,6 +54,6 @@ PRE_UNINSTALL = :
  POST_UNINSTALL = :
  build_triplet = @build@
  host_triplet = @host@

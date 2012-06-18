@@ -44,8 +44,9 @@ USE_XORG=	xi xrandr
 
 LINUXWACOM=	xf86-input-wacom-${WACOM_VERSION}
 BSDWACOM=	bsdwacom-${KLD_VERSION}
-WACOM_VERSION=	0.11.1
+WACOM_VERSION=	0.15.0
 KLD_VERSION=	40
+PATCH_WRKSRC=	${WRKDIR}/${LINUXWACOM}
 CONFIGURE_WRKSRC=	${WRKDIR}/${LINUXWACOM}
 USE_AUTOTOOLS=	autoconf
 MAKE_ARGS+=	UDEV_CFLAGS=""
@@ -85,7 +86,7 @@ do-install:
 .endif
 	@${MKDIR} ${PREFIX}/${XINPUTMODDIR} ${PREFIX}/${MAN4DIR}
 	@cd ${WRKDIR}/${LINUXWACOM}/tools/ \
-		&& ${SETENV} ${MAKE_ENV} ${GMAKE} install
+		&& ${SETENV} ${MAKE_ENV} ${GMAKE} ${INSTALL}
 	@${INSTALL} ${WRKDIR}/${LINUXWACOM}/src/.libs/wacom_drv.so \
 		${PREFIX}/${XINPUTMODDIR}/
 	@${INSTALL_MAN} ${WRKDIR}/${LINUXWACOM}/man/wacom.4x \
@@ -101,7 +102,7 @@ plist: clean configure
 		&& ${SETENV} ${MAKE_ENV} PREFIX=${WRKDIR}/plist ./run_configure
 	@${MKDIR} ${WRKDIR}/plist
 	@cd ${WRKDIR}/linuxwacom/${LINUXWACOM}/src/util \
-		&& ${SETENV} ${MAKE_ENV} ${GMAKE} install
+		&& ${SETENV} ${MAKE_ENV} ${GMAKE} ${INSTALL}
 	@cd ${WRKDIR}/linuxwacom \
 		&& ${SETENV} ${MAKE_ENV} ./run_configure
 	@${FIND} ${WRKDIR}/plist/ -not -type d \

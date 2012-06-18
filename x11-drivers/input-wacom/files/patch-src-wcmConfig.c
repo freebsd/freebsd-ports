@@ -1,5 +1,5 @@
---- xf86-input-wacom-0.11.1/src/wcmConfig.c.orig
-+++ xf86-input-wacom-0.11.1/src/wcmConfig.c
+--- src/wcmConfig.c.orig
++++ src/wcmConfig.c
 @@ -373,9 +373,12 @@ wcmDetectDeviceClass(const InputInfoPtr 
  		return TRUE;
  
