@@ -41,10 +41,6 @@ OPTIONS=	DEBUG "Enables debugging support" Off \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 1000000
-BROKEN=		does not build
-.endif
-
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
 .endif
