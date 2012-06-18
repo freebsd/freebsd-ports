@@ -23,7 +23,9 @@ MAN1=		hardlink.1
 PLIST_FILES=	bin/hardlink
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 
-OPTIONS=	PCRE "Use PCRE for regular expressions" On
+OPTIONS_DEFINE=	PCRE
+
+OPTIONS_DEFAULT=PCRE
 
 PORTSCOUT=	limit:(?<!~rc[0-9])$$
 
@@ -32,7 +34,7 @@ PORTSCOUT=	limit:(?<!~rc[0-9])$$
 .if defined(WITHOUT_PCRE)
 MAKE_ENV+=	ENABLE=
 .else
-LIB_DEPENDS+=	pcreposix.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcreposix:${PORTSDIR}/devel/pcre
 .endif
 
 do-install:
