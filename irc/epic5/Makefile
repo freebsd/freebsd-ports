@@ -83,7 +83,7 @@ CONFIGURE_ARGS+=	--with-iconv=${LOCALBASE}
 LIB_DEPENDS+=		iconv:${PORTSDIR}/converters/libiconv
 
 post-extract:
-	@${FIND} ${WRKDIR} -type d -name CVS -delete
+	@${FIND} ${WRKDIR} -type d -name CVS | ${XARGS} ${RM} -rf
 
 post-install:
 .if !defined(NOPORTDOCS)
