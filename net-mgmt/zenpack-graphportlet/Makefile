@@ -14,6 +14,9 @@ DISTNAME=       zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
 MAINTAINER=	zenoss@experts-exchange.com
 COMMENT=	Enables users to show any graph/multi graph reports on their dashboard
 
+PLIST_FILES=	zenoss/ZenPack/${ZPACK}
+PLIST_DIRS=	zenoss/ZenPack
+
 ZPACKGROUP=	community
 ZPACKPREFIX=	ZenPacks.SCC.
 WRKSRC=         ${WRKDIR}/zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}

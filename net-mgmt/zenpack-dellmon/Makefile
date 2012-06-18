@@ -15,6 +15,9 @@ DISTNAME=	epuzanov-${ZPACKPREFIX}${PORTNAME}-dellmon-2.4-0-g9697659
 MAINTAINER=	zenoss@experts-exchange.com
 COMMENT=	Provides additional monitoring options for Dell machines
 
+PLIST_FILES=	zenoss/ZenPack/${ZPACK}
+PLIST_DIRS=	zenoss/ZenPack
+
 ZPACKGROUP=	community
 WRKSRC=		${WRKDIR}/epuzanov-${ZPACKPREFIX}${PORTNAME}-a4ae347
 ZPACKPREFIX=    ZenPacks.community.

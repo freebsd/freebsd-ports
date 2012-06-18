@@ -13,6 +13,10 @@ DISTFILES=	${ZPACKPREFIX}${PORTNAME}?old_path=%2F\&format=zip
 
 MAINTAINER=	zenoss@experts-exchange.com
 COMMENT=	Provides performance monitoring of the Apache HTTP Server
+
+PLIST_FILES=	zenoss/ZenPack/${ZPACK}
+PLIST_DIRS=	zenoss/ZenPack
+
 USE_ZIP=	yes
 ZPACKGROUP=	core
 WRKSRC=		${WRKDIR}/tags/zenoss-3.1.0/zenpacks/${ZPACKPREFIX}${PORTNAME}/

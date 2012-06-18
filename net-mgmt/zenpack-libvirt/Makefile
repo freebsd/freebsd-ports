@@ -18,6 +18,9 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	libvirt>=0.9.1:${PORTSDIR}/devel/libvirt
 
+PLIST_FILES=	zenoss/ZenPack/${ZPACK}
+PLIST_DIRS=	zenoss/ZenPack
+
 ZPACKPREFIX=	ZenPacks.community.
 ZPACKGROUP=	community
 WRKSRC=  ${WRKDIR}/zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
