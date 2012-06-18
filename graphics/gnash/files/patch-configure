@@ -1,6 +1,6 @@
---- configure.orig	2011-03-18 09:50:30.000000000 -0400
-+++ configure	2011-07-23 14:50:23.436294372 -0400
-@@ -27778,6 +27778,11 @@
+--- configure.orig	2012-01-19 20:19:29.000000000 +0100
++++ configure	2012-06-18 07:47:13.000000000 +0200
+@@ -30836,6 +30836,11 @@
        esac
      fi
  
@@ -12,3 +12,30 @@
      if test x"${with_kde4_plugindir}" != x ; then
        KDE4_PLUGINDIR="${with_kde4_plugindir}"
      else
+@@ -49394,7 +49399,7 @@
+ 
+ if test x$build_agg = xyes; then # {
+   echo "        AGG Pixel format is: $pixelformat"
+-  if test x"$AGG_LIBS" != x -a x"${agg25}" == xyes; then # {
++  if test x"$AGG_LIBS" != x -a x"${agg25}" = xyes; then # {
+     if test x"$AGG_CFLAGS" != x; then # {
+       echo "        AGG flags are: $AGG_CFLAGS"
+     else # }{
+@@ -50044,7 +50049,7 @@
+   else
+ 
+   pkg_out_fd=3
+-  echo "          ERROR: `echo "No SSL development package is installed, but it's enabled."" | fold -s -w 62 | sed 's/^/                 /' | tr '\n' '#' | cut -b 18- | tr '#' '\n'`" >&$pkg_out_fd
++  echo "          ERROR: `echo "No SSL development package is installed, but it's enabled." | fold -s -w 62 | sed 's/^/                 /' | tr '\n' '#' | cut -b 18- | tr '#' '\n'`" >&$pkg_out_fd
+   deb_dest="$deb_err"
+   rpm_dest="$rpm_err"
+   yast_dest="$yast_err"
+@@ -50063,7 +50068,7 @@
+   else
+ 
+   pkg_out_fd=3
+-  echo "          ERROR: `echo "No SSH development package is installed, but it's enabled."" | fold -s -w 62 | sed 's/^/                 /' | tr '\n' '#' | cut -b 18- | tr '#' '\n'`" >&$pkg_out_fd
++  echo "          ERROR: `echo "No SSH development package is installed, but it's enabled." | fold -s -w 62 | sed 's/^/                 /' | tr '\n' '#' | cut -b 18- | tr '#' '\n'`" >&$pkg_out_fd
+   deb_dest="$deb_err"
+   rpm_dest="$rpm_err"
+   yast_dest="$yast_err"
