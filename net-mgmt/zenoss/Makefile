@@ -15,16 +15,22 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz:source1 \
 		JSBuilder2.zip:source2
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 
-MAINTAINER=	pphillips@experts-exchange.com
+MAINTAINER=	zenoss@experts-exchange.com
 COMMENT=	Application, server, and network management platform
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS+=	swig>=1.3:${PORTSDIR}/devel/swig13 \
 		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
-RUN_DEPENDS+=	bash>=4.1:${PORTSDIR}/shells/bash \
-		net-snmp>=5.5:${PORTSDIR}/net-mgmt/net-snmp \
+
+RUN_DEPENDS+=	net-snmp>=5.5:${PORTSDIR}/net-mgmt/net-snmp \
 		liberation-fonts-ttf>=1.05:${PORTSDIR}/x11-fonts/liberation-fonts-ttf
 
-LICENSE=	GPLv2
+OPTIONS_SINGLE=	SHELL
+OPTIONS_SINGLE_SHELL=	BASH BASH_STATIC
+BASH_DESC=	Use Bash shell
+BASH_STATIC_DESC=	Use Bash Static shell
+OPTIONS_DEFAULT=	BASH
 
 USE_RC_SUBR=	zenoss
 USE_MYSQL=	client
@@ -34,6 +40,14 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_BUILD=	yes
 USE_AUTOTOOLS=	autoconf:env
+
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MBASH}
+RUN_DEPENDS+=	bash>=4.1:${PORTSDIR}/shells/bash
+.else
+RUN_DEPENDS+=	bash-static>=4.1:${PORTSDIR}/shells/bash-static
+.endif
 
 USERS=		zenoss
 GROUPS=		zenoss
@@ -47,7 +61,9 @@ MANPREFIX?=	${ZENHOME}/share
 .include "${.CURDIR}/Makefile.man"
 BUILD_ENV=	PYTHONDONTWRITEBYTECODE=yes
 
-.include <bsd.port.pre.mk>
+.if !defined(PACKAGE_BUILDING)
+.SHELL:	path="${LOCALBASE}/bin/bash" unsetenv=true
+.endif
 
 .if (${ARCH} == amd64)
 PLIST_SUB+=	32BIT_ONLY="@comment "
@@ -85,11 +101,11 @@ do-install:
 		&& ${LN} -sF ${ZENHOME}/libdata/pkgconfig \
 		${ZENHOME}/lib/pkgconfig
 
-	@cd ${WRKSRC} && ${ENV} ${BUILD_ENV} bash ./build.sh 2>/dev/null
+	@cd ${WRKSRC} && ${ENV} ${BUILD_ENV} SVNVERSION=${FALSE} bash ./build.sh 2>/dev/null
 
 	@${RM} ${ZENHOME}/lib/pkgconfig
 
-	@${MKDIR} ${ZENHOME}/fonts
+	@${MKDIR} ${ZENHOME}/etc/fonts
 	${INSTALL_DATA} ${WRKDIR}/local.conf ${ZENHOME}/etc/fonts
 	@${MKDIR} ${ZENHOME}/init
 	${INSTALL_DATA} ${WRKSRC}/zenhome ${ZENHOME}/init
@@ -98,9 +114,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/shared-functions.sh ${ZENHOME}/init
 	${INSTALL_SCRIPT} ${WRKSRC}/init.sh ${ZENHOME}/init
 	${INSTALL_DATA} ${WRKDIR}/profile ${ZENHOME}/.profile
+	@${MKDIR} ${ZENHOME}/Products/ZenModel
 	${INSTALL_DATA} ${WRKSRC}/libzenoss/Products/ZenModel/ZenossInfo.py ${ZENHOME}/Products/ZenModel
 
 	@${FIND} ${ZENHOME} -type f -exec ${CHOWN} ${USERS}:${GROUPS} \{\} \;
+	@${MKDIR} ${ZENHOME}/fonts
 	@${LN} -fs ${PREFIX}/lib/X11/fonts/Liberation ${ZENHOME}/fonts
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
