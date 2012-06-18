@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	capistrano
-PORTVERSION=	2.9.0
+PORTVERSION=	2.12.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A utility for executing commands in parallel on multiple machines
 
-RUN_DEPENDS=	rubygem-net-ssh-gateway>=1.1.0:${PORTSDIR}/security/rubygem-net-ssh-gateway \
-  	rubygem-net-sftp>=2.0.0:${PORTSDIR}/security/rubygem-net-sftp \
-	rubygem-net-scp>=1.0.0:${PORTSDIR}/security/rubygem-net-scp \
-	rubygem-highline>=0:${PORTSDIR}/devel/rubygem-highline \
-	rubygem-echoe>0:${PORTSDIR}/devel/rubygem-echoe
+RUN_DEPENDS= 	rubygem-highline>=0:${PORTSDIR}/devel/rubygem-highline \
+		rubygem-net-scp>=1.0.0:${PORTSDIR}/security/rubygem-net-scp \
+	  	rubygem-net-sftp>=2.0.0:${PORTSDIR}/security/rubygem-net-sftp \
+		rubygem-net-ssh>=2.0.14:${PORTSDIR}/security/rubygem-net-ssh \
+		rubygem-net-ssh-gateway>=1.1.0:${PORTSDIR}/security/rubygem-net-ssh-gateway
 
 USE_RUBY=	yes
 USE_RAKE=	yes
