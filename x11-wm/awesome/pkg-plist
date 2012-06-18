@@ -106,12 +106,14 @@ etc/xdg/awesome/rc.lua
 %%DATADIR%%/themes/default/titlebar/sticky_normal_active.png
 %%DATADIR%%/themes/default/titlebar/sticky_normal_inactive.png
 %%DATADIR%%/themes/sky/awesome-icon.png
+%%DATADIR%%/themes/sky/layouts/dwindle.png
 %%DATADIR%%/themes/sky/layouts/fairh.png
 %%DATADIR%%/themes/sky/layouts/fairv.png
 %%DATADIR%%/themes/sky/layouts/floating.png
 %%DATADIR%%/themes/sky/layouts/fullscreen.png
 %%DATADIR%%/themes/sky/layouts/magnifier.png
 %%DATADIR%%/themes/sky/layouts/max.png
+%%DATADIR%%/themes/sky/layouts/spiral.png
 %%DATADIR%%/themes/sky/layouts/tile.png
 %%DATADIR%%/themes/sky/layouts/tilebottom.png
 %%DATADIR%%/themes/sky/layouts/tileleft.png
