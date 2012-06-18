@@ -250,6 +250,7 @@ share/locale/zh_TW/LC_MESSAGES/gnash.mo
 @dirrmtry share/icons/hicolor/32x32
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
+@dirrm %%DOCSDIR%%/images
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrm lib/gnash

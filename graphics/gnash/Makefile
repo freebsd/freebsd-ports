@@ -7,6 +7,7 @@
 
 PORTNAME=	gnash
 PORTVERSION=	0.8.10
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GNU/${PORTNAME}/${PORTVERSION}/
 
@@ -37,10 +38,9 @@ MAKE_JOBS_SAFE=	yes
 INSTALLS_ICONS=	yes
 
 # jemalloc leads to infinite recursion on FreeBSD
-# --enable-avm2 doesn't build (but consider for future)
 CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \
 		--with-boost-lib="${LOCALBASE}/lib" \
-		--disable-testsuite --disable-avm2 \
+		--disable-testsuite \
 		--with-plugins-install=prefix \
 		--sysconfdir="${WRKDIR}/etc" \
 		--disable-jemalloc \
@@ -254,13 +254,11 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^PTHREAD_[LC][IF]*=/ d; s|-lpthread|${PTHREAD_LIBS}|' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g; \
+		-e '/KDE4_APPSDATADIR=/ s|share/kde4|share|' \
+		-e 's|/usr/local|${LOCALBASE}|g; \
 		s|/lib64|/lib|g; \
 		s|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/configure \
 		${WRKSRC}/macros/libslist ${WRKSRC}/macros/incllist
-	@${REINPLACE_CMD} -e '/KDE4_APPSDATADIR=/ s|share/kde4|share|' \
-		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^pkgconfigdir =/ s|libdir)|exec_prefix)/libdata|' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e '/^man1dir =/ s|=.*|= ${MAN1PREFIX}/man/man1|' \
