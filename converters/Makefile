@@ -9,6 +9,7 @@
     SUBDIR += ascii2binary
     SUBDIR += asr10
     SUBDIR += base64
+    SUBDIR += bibtexconv
     SUBDIR += bsdconv
     SUBDIR += btoa
     SUBDIR += chmview
