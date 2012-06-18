@@ -17,7 +17,3 @@
 %%PYTHON_SITELIBDIR%%/asterisk/manager.pyc
 %%PYTHON_SITELIBDIR%%/asterisk/manager.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/asterisk
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.html
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
