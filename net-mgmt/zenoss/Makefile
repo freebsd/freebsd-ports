@@ -45,8 +45,10 @@ USE_AUTOTOOLS=	autoconf:env
 
 .if ${PORT_OPTIONS:MBASH}
 RUN_DEPENDS+=	bash>=4.1:${PORTSDIR}/shells/bash
+BUILD_DEPENDS+=	bash>=4.1:${PORTSDIR}/shells/bash
 .else
 RUN_DEPENDS+=	bash-static>=4.1:${PORTSDIR}/shells/bash-static
+BUILD_DEPENDS+=	bash-static>=4.1:${PORTSDIR}/shells/bash-static
 .endif
 
 USERS=		zenoss
