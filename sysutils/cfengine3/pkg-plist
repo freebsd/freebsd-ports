@@ -24,6 +24,7 @@ share/cfengine/CoreBase/promises.cf
 %%DOCSDIR%%/examples/app_baseline.cf
 %%DOCSDIR%%/examples/guest_environment_kvm.cf
 %%DOCSDIR%%/examples/hostswithclass.cf
+%%DOCSDIR%%/examples/package_windows_feature.cf
 %%DOCSDIR%%/examples/promise_knowledge.cf
 %%DOCSDIR%%/examples/unit_abort.cf
 %%DOCSDIR%%/examples/unit_accessed_before.cf
