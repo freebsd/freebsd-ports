@@ -21,22 +21,24 @@ COMMENT?=	The ISC Dynamic Host Configuration Protocol server
 
 LICENSE=	ISCL
 
-PATCHLEVEL=	R4
-PORTREVISION_SERVER=	3
-PORTREVISION_CLIENT=	0
-PORTREVISION_RELAY=	3
+PATCHLEVEL=	R5
+PORTREVISION_SERVER=	4
+PORTREVISION_CLIENT=	1
+PORTREVISION_RELAY=	4
 
 SUBSYS?=	server
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}-${PATCHLEVEL}
 
 UNIQUENAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
-OPTIONS=	DHCP_IPV6 "Enable support for IPv6" on
+OPTIONS_DEFINE=	IPV6
+OPTIONS_DEFAULT=IPV6
 
 .if ${SUBSYS} == server
-OPTIONS+=	DHCP_PARANOIA "Enable support for chroot" on \
-		DHCP_LDAP "Experimental LDAP backend support" off \
-		DHCP_LDAP_SSL "Support LDAP connection over SSL/TLS" on
+OPTIONS_DEFINE+=	PARANOIA LDAP LDAP_SSL
+OPTIONS_DEFAULT+=	PARANOIA LDAP_SSL
+PARANOIA_DESC=	Enable support for chroot
+LDAP_SSL_DESC=	Support LDAP over SSL/TLS
 .endif
 
 # PORTREVISION and CONFLICTS handling
@@ -75,7 +77,7 @@ MAN1=		omshell.1
 MAN3=		dhcpctl.3 omapi.3
 CFLAGS+=	-fPIC
 CONF_FILE=	dhcpd.conf
-.if defined(WITH_DHCP_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONF_FILE+=	dhcpd6.conf
 .endif
 .else
@@ -103,7 +105,7 @@ PKGMESSAGE_SUB=	PREFIX="${PREFIX}" MAN1PREFIX="${MAN1PREFIX}" \
 		DOCSDIR="${DOCSDIR}"
 
 # XXX: Have to hardcode 4.1.1 here as there is no release for 4.1.2 or later.
-.if defined(WITH_DHCP_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 MASTER_SITES+=		http://cloud.github.com/downloads/dcantrell/ldap-for-dhcp/:ldap
 LDAPPATCHRELEASE=	2
 LDAPPATCHDIST=		ldap-for-dhcp-4.1.1-${LDAPPATCHRELEASE}
@@ -125,7 +127,7 @@ PLIST_SUB+=	LDAP="@comment "
 .endif
 
 # WITH_DHCP_LDAP_SSL without WITH_DHCP_LDAP is silly.
-.if defined(WITH_DHCP_LDAP_SSL) && defined (WITH_DHCP_LDAP)
+.if ${PORT_OPTIONS:MLDAP_SSL} && ${PORT_OPTIONS:MLDAP}
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-ldapcrypto
 CONFIGURE_ENV+=	LIBS="-lssl"
@@ -133,14 +135,14 @@ CONFIGURE_ENV+=	LIBS="-lssl"
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 .endif
 
-.if defined(WITH_DHCP_PARANOIA)
+.if ${PORT_OPTIONS:MPARANOIA}
 CONFIGURE_ARGS+=	--enable-paranoia --enable-early-chroot
 SUB_LIST+=	PARANOIA=yes
 .else
 SUB_LIST+=	PARANOIA=no
 .endif
 
-.if defined(WITH_DHCP_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-dhcpv6
 PLIST_SUB+=		IPV6=""
 .else
@@ -149,7 +151,7 @@ PLIST_SUB+=		IPV6="@comment "
 .endif
 
 pre-patch:
-.if ${SUBSYS} == server && defined(WITH_DHCP_LDAP)
+.if ${SUBSYS} == server && ${PORT_OPTIONS:MLDAP}
 	@${PATCH} ${WRKDIR}/${LDAPPATCHDIST}/${LDAPPATCHFILE} ${FILESDIR}/extra-patch-${LDAPPATCHFILE}
 	@cd ${WRKSRC} && ${PATCH} -p1 < ${WRKDIR}/${LDAPPATCHDIST}/${LDAPPATCHFILE}
 .endif
@@ -169,17 +171,17 @@ do-install:
 	${MAKE} -C ${WRKSRC}/includes install
 	${MAKE} -C ${WRKSRC}/common install
 	${INSTALL_DATA} ${WRKSRC}/dhcpctl/dhcpctl.h ${PREFIX}/include
-.if defined(WITH_DHCP_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 	${INSTALL_DATA} ${WRKSRC}/doc/examples/dhcpd-dhcpv6.conf \
 		${PREFIX}/etc/dhcpd6.conf.sample
 .endif
 .endif
-.if defined(WITH_DHCP_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 	@${MKDIR} ${SCHEMA_DIR}
 	${INSTALL_DATA} ${LDAP_SCHEMA} ${SCHEMA_DIR}
 	${INSTALL_SCRIPT} ${LDAP_SCRIPT} ${PREFIX}/bin
 .endif
-.if defined(WITH_DHCP_LDAP) && !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MLDAP} && !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKDIR}/${LDAPPATCHDIST}/README.ldap   ${DOCSDIR}
 	${INSTALL_MAN} ${WRKDIR}/${LDAPPATCHDIST}/LICENSE.ldap  ${DOCSDIR}
@@ -196,17 +198,17 @@ post-install:
 .if ${SUBSYS} == client
 	${INSTALL_SCRIPT} ${WRKSRC}/client/scripts/freebsd ${PREFIX}/sbin/dhclient-script
 .elif ${SUBSYS} == server
-.if defined(WITH_DHCP_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 	@${LN} -sf isc-dhcpd ${PREFIX}/etc/rc.d/isc-dhcpd6
 .endif
 .elif ${SUBSYS} == relay
-.if defined(WITH_DHCP_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 	@${LN} -sf isc-dhcrelay ${PREFIX}/etc/rc.d/isc-dhcrelay6
 .endif
 .endif
 	@${SED} ${PKGMESSAGE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${MSG_FILE} > ${PKGMESSAGE}
-.if defined(WITH_DHCP_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 	@${REINPLACE_CMD} -e 's|^%%LDAP%%||g' ${PKGMESSAGE}
 .else
 	@${REINPLACE_CMD} -e '/^%%LDAP%%/d' ${PKGMESSAGE}
