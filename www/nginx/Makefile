@@ -454,7 +454,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_response-${NGINX_RESPONSE_VERSIO
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_SUBS_FILTER}
-NGINX_HTTP_SUBS_FILTER_VERSION=	0.5.2.r53
+USE_HTTP_REWRITE=	yes
+NGINX_HTTP_SUBS_FILTER_VERSION=	0.5.2.r59
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:subs_filter/}
 MASTER_SITE_SUBDIR+=	osa/:subs_filter
 DISTFILES+=	ngx_http_subs_filter_module-${NGINX_HTTP_SUBS_FILTER_VERSION}.tar.gz:subs_filter
@@ -607,7 +608,7 @@ DISTFILES+=	naxsi-${NGINX_NAXSI_VERSION}.tgz:naxsi
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/naxsi-${NGINX_NAXSI_VERSION}/naxsi_src
 .endif
 
-.if ${PORT_OPTIONS:MHTTP_REWRITE}
+.if ${PORT_OPTIONS:MHTTP_REWRITE} || defined(USE_HTTP_REWRITE)
 LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=--with-pcre
 .else
