@@ -8,7 +8,7 @@ PORTNAME=	dynare
 PORTVERSION=	4.2.5
 PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	http://www.dynare.org/download/dynare-4.2/source/${DISTNAME}.tar.gz/at_download/file
+MASTER_SITES=	http://www.dynare.org/download/oldies/dynare-4.2/source/${DISTNAME}.tar.gz/at_download/file
 
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Software platform for handling a wide class of economic models
@@ -37,7 +37,7 @@ BUILD_DEPENDS+=		octave:${PORTSDIR}/math/octave
 
 do-fetch:
 	if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
-		${FETCH_BINARY} -o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} http://www.dynare.org/download/dynare-4.2/source/${DISTNAME}${EXTRACT_SUFX}/at_download/file ;\
+		${FETCH_BINARY} -o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} http://www.dynare.org/download/oldies/dynare-4.2/source/${DISTNAME}${EXTRACT_SUFX}/at_download/file ;\
 	fi
 
 post-configure:
