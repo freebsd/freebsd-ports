@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	keyring
-PORTVERSION=	0.9
+PORTVERSION=	0.9.1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,17 +22,23 @@ USE_ZIP=	yes
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 
-OPTIONS=	GNOME_KEYRING "GNOME Keyring backend" Off \
-		KDE_KWALLET "KDE KWallet backend" Off
+OPTIONS_DEFINE=		CRYPT_FILE GNOME_KEYRING KDE_KWALLET
+GNOME_KEYRING_DESC=	GNOME Keyring backend
+KDE_KWALLET_DESC=	KDE KWallet backend
+CRYPT_FILE_DESC=	Crypt(ed) File backend
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GNOME_KEYRING)
+.if ${PORT_OPTIONS:MGNOME_KEYRING}
 USE_GNOME+=	pygnomedesktop
 .endif
 
-.if defined(WITH_KDE_KWALLET)
+.if ${PORT_OPTIONS:MKDE_KWALLET}
 USE_KDE4+=	pykde4
+.endif
+
+.if ${PORT_OPTIONS:MCRYPT_FILE}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pycrypto>=2.5:${PORTSDIR}/security/py-pycrypto
 .endif
 
 .include <bsd.port.mk>
