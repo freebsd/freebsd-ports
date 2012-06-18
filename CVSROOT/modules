@@ -978,7 +978,7 @@ battray                         ports/sysutils/battray
 batv-milter                     ports/mail/batv-milter
 baudline                        ports/audio/baudline
 bayespam                        ports/mail/bayespam
-bazaar                          ports/devel/bazaar
+baz                             ports/devel/baz
 bazaar-ng                       ports/devel/bazaar-ng
 bb                              ports/misc/bb
 bbapm                           ports/sysutils/bbapm
@@ -23118,7 +23118,9 @@ py-qt4-webkit                   ports/www/py-qt4-webkit
 py-qt4-xml                      ports/textproc/py-qt4-xml
 py-qt4-xmlpatterns              ports/textproc/py-qt4-xmlpatterns
 py-rabbyt                       ports/graphics/py-rabbyt
+py-rackspace-monitoring         ports/www/py-rackspace-monitoring
 py-radix                        ports/net/py-radix
+py-rauth                        ports/devel/py-rauth
 py-rdflib                       ports/textproc/py-rdflib
 py-recaptcha                    ports/www/py-recaptcha
 py-record                       ports/devel/py-Record
