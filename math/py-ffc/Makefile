@@ -23,4 +23,7 @@ FETCH_ARGS=	-Fpr
 MAN1=		ffc.1
 MANCOMPRESSED=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|"usr")|"usr", "local")|g' ${WRKSRC}/test/regression/test.py
+
 .include <bsd.port.mk>
