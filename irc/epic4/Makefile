@@ -84,7 +84,7 @@ CONFIGURE_ARGS+=	--with-termcap
 .endif
 
 post-extract:
-	@${FIND} ${WRKDIR} -type d -name CVS -delete
+	@${FIND} ${WRKDIR} -type d -name CVS | ${XARGS} ${RM} -rf
 
 post-patch:
 	@${RM} ${WRKDIR}/help/Makefile
