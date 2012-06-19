@@ -31,6 +31,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/http.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/http.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/http.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/py25compat.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/py25compat.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/py25compat.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/tests/__init__.pyo
