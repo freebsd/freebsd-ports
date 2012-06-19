@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ExtUtils-ParseXS
-PORTVERSION=	3.07
+PORTVERSION=	3.15
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SMUELLER
@@ -21,6 +21,7 @@ MAN3=		ExtUtils::ParseXS.3 \
 		ExtUtils::ParseXS::Constants.3 \
 		ExtUtils::ParseXS::Utilities.3 \
 		ExtUtils::Typemaps.3 \
+		ExtUtils::Typemaps::Cmd.3 \
 		ExtUtils::Typemaps::InputMap.3 \
 		ExtUtils::Typemaps::OutputMap.3 \
 		ExtUtils::Typemaps::Type.3

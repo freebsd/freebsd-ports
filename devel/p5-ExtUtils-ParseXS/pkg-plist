@@ -5,6 +5,7 @@
 %%SITE_PERL%%/ExtUtils/ParseXS/CountLines.pm
 %%SITE_PERL%%/ExtUtils/ParseXS/Utilities.pm
 %%SITE_PERL%%/ExtUtils/Typemaps.pm
+%%SITE_PERL%%/ExtUtils/Typemaps/Cmd.pm
 %%SITE_PERL%%/ExtUtils/Typemaps/InputMap.pm
 %%SITE_PERL%%/ExtUtils/Typemaps/OutputMap.pm
 %%SITE_PERL%%/ExtUtils/Typemaps/Type.pm
