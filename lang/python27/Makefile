@@ -50,11 +50,13 @@ BINLINKS_SUB=	-e 's,smtpd,smtpd${PYTHON_VER},' \
 		-e 's,2to3,2to3-${PYTHON_VER},' \
 		-e 's,(idle|pydoc|python-shared|python),\1${PYTHON_VER},'
 
-OPTIONS_DEFINE=		THREADS SEM PTH PYMALLOC IPV6 FPECTL EXAMPLES
+OPTIONS_DEFINE=		THREADS SEM PTH PYMALLOC IPV6 FPECTL EXAMPLES NLS
 OPTIONS_DEFAULT=	THREADS UCS4 PYMALLOC IPV6
 
 OPTIONS_SINGLE=	UCS
 OPTIONS_SINGLE_UCS=	UCS2 UCS4
+
+NLS_DESC=	Enable Gettext support for the locale module
 
 .include <bsd.port.pre.mk>
 
@@ -76,6 +78,14 @@ MLINKS=		${PYTHON_VERSION}.1 python.1
 PLIST_SUB+=	IF_DEFAULT=""
 .else
 PLIST_SUB+=	IF_DEFAULT="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+LDFLAGS+=	"-L${LOCALBASE}/lib"
+CFLAGS+=	"-I${LOCALBASE}/include"
+.else
+CONFIGURE_ENV+=	ac_cv_lib_intl_textdomain=no ac_cv_header_libintl_h=no
 .endif
 
 .if ${PORT_OPTIONS:MTHREADS}
