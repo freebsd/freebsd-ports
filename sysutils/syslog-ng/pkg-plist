@@ -1,9 +1,9 @@
 @unexec %D/etc/rc.d/syslog-ng.sh stop > /dev/null 2>&1 || true
 etc/modules.conf
 etc/scl.conf
-@exec test -f %D/etc/syslog-ng.conf || cp -p %D/etc/syslog-ng.conf.sample %D/etc/syslog-ng.conf
 @unexec if cmp -s %D/etc/syslog-ng.conf %D/etc/syslog-ng.conf.dist; then rm -f %D/etc/syslog-ng.conf; fi
 etc/syslog-ng.conf.dist
+@exec test -f %B/syslog-ng.conf || cp -p %B/%f %B/syslog-ng.conf
 etc/syslog-ng.conf.sample
 bin/loggen
 bin/pdbtool
@@ -120,9 +120,7 @@ share/xsd/patterndb-3.xsd
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/sgml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm etc/patterndb.d
 @dirrm include/syslog-ng
 @dirrm lib/syslog-ng
 @dirrm share/include/scl/system
@@ -132,3 +130,5 @@ share/xsd/patterndb-3.xsd
 @dirrm share/include
 @dirrmtry share/tools
 @dirrm share/xsd
+@exec mkdir %D/etc/patterndb.d
+@dirrmtry etc/patterndb.d
