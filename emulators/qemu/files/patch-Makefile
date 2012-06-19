@@ -36,3 +36,12 @@ Index: qemu/Makefile
  endif
  
  install: all $(if $(BUILD_DOCS),install-doc)
+@@ -321,7 +321,7 @@ cscope:
+ 
+ # documentation
+ %.html: %.texi
+-	$(call quiet-command,texi2html -I=. -monolithic -number $<,"  GEN   $@")
++	$(call quiet-command,texi2html -I=. -monolithic --number-sections $<,"  GEN   $@")
+ 
+ %.info: %.texi
+ 	$(call quiet-command,makeinfo -I . $< -o $@,"  GEN   $@")
