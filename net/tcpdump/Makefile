@@ -6,59 +6,64 @@
 #
 
 PORTNAME=	tcpdump
-PORTVERSION=	4.2.1
+PORTVERSION=	4.3.0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tcpdump.org/release/
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Ubiquitous network traffic analysis tool
 
-LIB_DEPENDS=	pcap.1:${PORTSDIR}/net/libpcap
+LIB_DEPENDS=	pcap:${PORTSDIR}/net/libpcap
 
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	CRYPTO "Support IPSEC and TCPMD5" On \
-		IPV6 "Support IPV6" On \
-		SMB "Support SMB printer" On \
-		SMI "Allow MIBs to be loaded on the fly" On \
-		USER "Drop privileges to nobody" Off \
-		CHROOT "Chroot support" Off
-
 UNPRIV_USER?=	nobody
 CHROOTDIR?=	/var/run/tcpdump
+
+OPTIONS_DEFINE=	CRYPTO IPV6 SMB SMI USER CHROOT
+OPTIONS_DEFAULT=	CRYPTO IPV6 SMB SMI
+
+CRYPTO_DESC=	Support IPSEC and TCPMD5
+# This one is intentionally worded this way because the default
+# description implies that tcpdump would not capture SMB, which
+# is not true. It will just not print it if this option is off.
+SMB_DESC=	Support printing SMB information
+SMI_DESC=	Allow MIBs to be loaded on the fly
+USER_DESC=	Drop privileges to nobody
+CHROOT_DESC=	Chroot to /var/run/tcpdump (set CHROOTDIR to change)
 
 .include <bsd.port.options.mk>
 # The --without-crypto flag needs to be explicitly specified. The
 # configure script gets confused if you specify --with-crypto and
 # thinks this means you *don't* want crypto.
 #
-.if defined(WITHOUT_CRYPTO)
-CONFIGURE_ARGS+=	--without-crypto
-.else
+.if ${PORT_OPTIONS:MCRYPTO}
 USE_OPENSSL=	yes
+.else
+CONFIGURE_ARGS+=	--without-crypto
 .endif
 
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
-.if defined(WITHOUT_SMB)
+.if empty(PORT_OPTIONS:MSMB)
 CONFIGURE_ARGS+=	--disable-smb
 .endif
 
-.if defined(WITHOUT_SMI)
-CONFIGURE_ARGS+=	--disable-smi
+.if ${PORT_OPTIONS:MSMI}
+LIB_DEPENDS+=		smi:${PORTSDIR}/net-mgmt/libsmi
 .else
-LIB_DEPENDS+=		smi.2:${PORTSDIR}/net-mgmt/libsmi
+CONFIGURE_ARGS+=	--disable-smi
 .endif
 
-.if defined(WITH_USER)
+.if ${PORT_OPTIONS:MUSER}
 CONFIGURE_ARGS+=	--with-user=${UNPRIV_USER}
 .endif
 
-.if defined(WITH_CHROOT)
+.if ${PORT_OPTIONS:MCHROOT}
 CONFIGURE_ARGS+=	--with-chroot=${CHROOTDIR}
 .endif
 
