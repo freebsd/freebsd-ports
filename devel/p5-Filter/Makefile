@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Filter
-PORTVERSION=	1.43
+PORTVERSION=	1.44
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,6 +18,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
+
+MAKE_JOBS_UNSAFE=	yes
 
 MAN3=		Filter::Util::Call.3 \
 		Filter::Util::Exec.3 \
