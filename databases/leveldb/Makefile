@@ -13,8 +13,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A fast and lightweight key/value database library by Google
 
-OPTIONS=	PERFTOOLS	"Build with Google perftools" off \
-		SNAPPY		"Build with snappy" on
+OPTIONS_DEFINE=	GPERFTOOLS SNAPPY
+OPTIONS_DEFAULT=SNAPPY
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GMAKE=	yes
@@ -31,11 +31,11 @@ SHLIB_MINOR=	${PORTVERSION:R:E}
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PERFTOOLS)
+.if ${PORT_OPTIONS:MGPERFTOOLS}
 LIB_DEPENDS+=	tcmalloc:${PORTSDIR}/devel/google-perftools
 .endif
 
-.if !defined(WITHOUT_SNAPPY)
+.if ${PORT_OPTIONS:MSNAPPY}
 LIB_DEPENDS+=	snappy:${PORTSDIR}/archivers/snappy
 SNAPPY=		1
 .else
@@ -44,10 +44,10 @@ SNAPPY=		0
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/build_detect_platform
-.if !defined(WITH_PERFTOOLS)
+.if empty(PORT_OPTIONS:MGPERFTOOLS)
 	@${REINPLACE_CMD} -e 's| -ltcmalloc||' ${WRKSRC}/build_detect_platform
 .endif
-.if defined(WITHOUT_SNAPPY)
+.if empty(PORT_OPTIONS:MSNAPPY)
 	@${REINPLACE_CMD} -e 's| -DSNAPPY||; s| -lsnappy||' ${WRKSRC}/build_detect_platform
 .endif
 
