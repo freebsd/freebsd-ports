@@ -47,6 +47,7 @@ BINLINKS_SUB=	-e 's,smtpd,smtpd${PYTHON_VER},' \
 
 OPTIONS=	THREADS "Enable thread support" on \
 		UCS4 "Use UCS4 for unicode support" on \
+		NLS "Enable Gettext support for the locale module" on \
 		PYMALLOC "Use python's internal malloc" on \
 		IPV6 "Enable IPv6 support" on \
 		FPECTL "Enable floating point exception handling" off
@@ -58,6 +59,14 @@ MLINKS=		${PYTHON_VERSION}.1 python.1
 PLIST_SUB+=	IF_DEFAULT=""
 .else
 PLIST_SUB+=	IF_DEFAULT="@comment "
+.endif
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+LDFLAGS+=	"-L${LOCALBASE}/lib"
+CFLAGS+=	"-I${LOCALBASE}/include"
+.else
+CONFIGURE_ENV+=	ac_cv_lib_intl_textdomain=no ac_cv_header_libintl_h=no
 .endif
 
 .if !defined(WITHOUT_THREADS)

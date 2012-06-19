@@ -51,8 +51,10 @@ BIN_FILES=	python python-shared python-config python-shared-config \
 BINLINKS_SUB=	-e 's,(2to3|idle3|pydoc3),\1-${PYTHON_VER},' \
 		-e 's,(python-shared|python),\1${PYTHON_VER},'
 
-OPTIONS_DEFINE=	THREADS UCS4 PYMALLOC IPV6 FPECTL EXAMPLES
+OPTIONS_DEFINE=	THREADS UCS4 PYMALLOC IPV6 FPECTL EXAMPLES NLS
 OPTIONS_DEFAULT=	THREADS UCS4 PYMALLOC IPV6
+
+NLS_DESC=	Enable Gettext support for the locale module
 
 .include <bsd.port.pre.mk>
 
@@ -61,6 +63,14 @@ MLINKS=		${PYTHON_VERSION}.1 python.1
 PLIST_SUB+=	IF_DEFAULT=""
 .else
 PLIST_SUB+=	IF_DEFAULT="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+LDFLAGS+=	"-L${LOCALBASE}/lib"
+CFLAGS+=	"-I${LOCALBASE}/include"
+.else
+CONFIGURE_ENV+=	ac_cv_lib_intl_textdomain=no ac_cv_header_libintl_h=no
 .endif
 
 .if ${PORT_OPTIONS:MTHREADS}
