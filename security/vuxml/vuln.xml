@@ -52,6 +52,31 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f46c4c6a-ba25-11e1-806a-001143cd36d8">
+    <topic>joomla -- Privilege Escalation</topic>
+    <affects>
+      <package>
+	<name>joomla25</name>
+	<range><lt>2.5.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Joomla! reported a Core Privilege Escalation::</p>
+	<blockquote cite="http://developer.joomla.org/security/news/470-20120601-core-privilege-escalation.html">
+	  <p>Inadequate checking leads to possible user privilege escalation..</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+     <url>http://developer.joomla.org/security/news/470-20120601-core-privilege-escalation.html</url>
+    </references>
+    <dates>
+      <discovery>2012-04-29</discovery>
+      <entry>2012-06-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="eb12ebee-b7af-11e1-b5e0-000c299b62e1">
     <topic>clamav -- multiple vulnerabilities</topic>
     <affects>
