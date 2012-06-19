@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libwps
-PORTVERSION=	0.2.6
-PORTREVISION=	1
+PORTVERSION=	0.2.7
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -16,16 +15,16 @@ COMMENT=	A Microsoft file word processor format import filter library
 
 LICENSE=	LGPL21
 
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	wpd-0.9:${PORTSDIR}/textproc/libwpd
+
 OPTIONS_DEFINE=	DOCS
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	wpd-0.9.9:${PORTSDIR}/textproc/libwpd
-
+CONFIGURE_ARGS=	--disable-werror
+CPPFLAGS+=	-I${LOCALBASE}/include
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack gnomeprefix ltverhack
 USE_LDCONFIG=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ARGS+=	--disable-werror
 
 PORTDOCS=	*
 
@@ -34,7 +33,7 @@ PORTDOCS=	*
 .if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 .else
-CONFIGURE_ARGS+=	--without-docs
+CONFIGURE_ARGS+=--without-docs
 .endif
 
 .include <bsd.port.mk>
