@@ -20,3 +20,6 @@ POST-INSTALL CONFIGURATION FOR Joomla
    setting up Joomla, creating an admin account, etc.
 
 ====================================================
+
+3) As of 2.5.5, php5-mysqli and php5-zip are installed.
+   Use of mysqli for mysql is recommended over mysql
