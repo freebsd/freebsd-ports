@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	offlineimap
-DISTVERSION=	6.5.2.1
+DISTVERSION=	6.5.4
 CATEGORIES=	mail python
 MASTER_SITES=	http://cloud.github.com/downloads/spaetz/offlineimap/ \
 		http://dist.codelabs.ru/fbsd/offlineimap/
@@ -22,24 +22,36 @@ LICENSE_FILE_GPLv2=${WRKSRC}/COPYING
 
 OPTIONS=	HTMLDOCS "Generate HTML documentation" Off
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${GITHUB_USER}-${PORTNAME}-${GITHUB_HASH}
 SUB_FILES=	pkg-message
 PATCH_STRIP=	-p1
+
+GITHUB_USER=	spaetz
+GITHUB_HASH=	c9e9690
 
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	yes
 
-DOCS=		Changelog.rst README.rst SubmittingPatches.rst \
-		docs/FAQ.rst docs/INSTALL.rst docs/MANUAL.rst docs/UPGRADE.rst
-EXAMPLES=	offlineimap.conf offlineimap.conf.minimal
-PORTDOCS=	${DOCS:T}
-PORTEXAMPLES=	${EXAMPLES}
+DOC_FILES=	Changelog.maint.rst Changelog.rst \
+		docs/INSTALL.rst docs/MANUAL.rst \
+		docs/doc-src/API.rst docs/doc-src/FAQ.rst \
+		docs/doc-src/HACKING.rst docs/doc-src/INSTALL.rst \
+		docs/doc-src/MANUAL.rst docs/doc-src/advanced_config.rst \
+		docs/doc-src/features.rst docs/doc-src/index.rst \
+		docs/doc-src/nametrans.rst docs/doc-src/offlineimap.rst \
+		docs/doc-src/repository.rst docs/doc-src/ui.rst
+PORTDOCS=	docs ${DOC_FILES:N*/*}
+EXAMPLE_FILES=	offlineimap.conf offlineimap.conf.minimal
+PORTEXAMPLES=	${EXAMPLE_FILES:N*/*}
+
+DOC_DIRS=	${DOC_FILES:H:O:u:N.}
+EXAMPLE_DIRS=	${EXAMPLE_FILES:H:O:u:N.}
 
 .include <bsd.port.options.mk>
 
 .if !defined(NOPORTDOCS) && defined(WITH_HTMLDOCS)
 BUILD_DEPENDS+=	rst2html:${PORTSDIR}/textproc/py-docutils
-DOCS:=		${DOCS} ${DOCS:M*.rst:S/.rst$/.html/}
+DOC_FILES:=	${DOC_FILES} ${DOC_FILES:M*.rst:S/.rst$/.html/}
 .endif
 
 # This is needed for pkg-message.in
@@ -51,19 +63,32 @@ SUB_LIST+=	PORTEXAMPLES=""
 
 post-build:
 .if !defined(NOPORTDOCS) && defined(WITH_HTMLDOCS)
-.for r in ${DOCS:M*.rst}
-	rst2html ${WRKSRC}/${r} ${WRKSRC}/${r:R}.html
+.for r in ${DOC_FILES:M*.rst}
+	@${ECHO} "Translating ${r} to HTML..."
+	@rst2html ${WRKSRC}/${r} ${WRKSRC}/${r:R}.html
 .endfor
 .endif
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	@for i in ${DOC_DIRS}; do \
+	  ${MKDIR} ${DOCSDIR}/$$i; \
+	  done
+	@cd ${WRKSRC} && for i in ${DOC_FILES}; do \
+	  ${ECHO} "Installing ${DOCSDIR}/$$i"; \
+	  ${INSTALL_DATA} $$i ${DOCSDIR}/$$i; \
+	  done
 .endif
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
+	@for i in ${EXAMPLE_DIRS}; do \
+	  ${MKDIR} ${EXAMPLESDIR}/$$i; \
+	  done
+	@cd ${WRKSRC} && for i in ${EXAMPLE_FILES}; do \
+	  ${ECHO} "Installing ${EXAMPLESDIR}/$$i"; \
+	  ${INSTALL_DATA} $$i ${EXAMPLESDIR}/$$i; \
+	  done
 .endif
 	@${CAT} ${PKGMESSAGE}
 
