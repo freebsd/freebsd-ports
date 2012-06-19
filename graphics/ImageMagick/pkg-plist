@@ -1429,11 +1429,11 @@ libdata/pkgconfig/Wand.pc
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick
 %%WITH_PERL%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
 %%WITH_PERL%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Image
-@dirrm lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/filters
-@dirrm lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders
-@dirrm lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%
-@dirrm lib/ImageMagick-%%PORTVERSION%%/config
-@dirrm lib/ImageMagick-%%PORTVERSION%%
+@dirrmtry lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/filters
+@dirrmtry lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders
+@dirrmtry lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%
+@dirrmtry lib/ImageMagick-%%PORTVERSION%%/config
+@dirrmtry lib/ImageMagick-%%PORTVERSION%%
 @dirrm include/ImageMagick/wand
 @dirrm include/ImageMagick/magick
 @dirrm include/ImageMagick/Magick++
