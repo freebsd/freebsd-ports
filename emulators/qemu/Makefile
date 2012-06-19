@@ -29,16 +29,16 @@ MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	KQEMU RTL8139_TIMER SAMBA SDL GNUTLS CURL PCAP GNS3 \
 		CDROM_DMA ADD_AUDIO ALL_TARGETS
-KQEMU_DESC=		"Build with (alpha!) accelerator module"
-RTL8139_TIMER_DESC=	"allow use of re(4) nic with FreeBSD guests"
-SAMBA_DESC=		"samba dependency (for -smb)"
-SDL_DESC=		"SDL/X dependency (graphical output)"
-GNUTLS_DESC=		"gnutls dependency (vnc encryption)"
-CURL_DESC=		"libcurl dependency (remote images)"
-PCAP_DESC=		"pcap dependency (networking with bpf)"
-GNS3_DESC=		"gns3 patches (udp, promiscuous multicast)"
+KQEMU_DESC=		Build with (alpha!) accelerator module
+RTL8139_TIMER_DESC=	allow use of re(4) nic with FreeBSD guests
+SAMBA_DESC=		samba dependency (for -smb)
+SDL_DESC=		SDL/X dependency (graphical output)
+GNUTLS_DESC=		gnutls dependency (vnc encryption)
+CURL_DESC=		libcurl dependency (remote images)
+PCAP_DESC=		pcap dependency (networking with bpf)
+GNS3_DESC=		gns3 patches (udp, promiscuous multicast)
 CDROM_DMA_DESC=		IDE CDROM DMA
-ADD_AUDIO_DESC=		"Emulate more audio hardware (experimental!)"
+ADD_AUDIO_DESC=		Emulate more audio hardware (experimental!)
 ALL_TARGETS_DESC=	Also build non-x86 targets
 OPTIONS_DEFAULT=	SDL GNUTLS CURL PCAP GNS3 CDROM_DMA ALL_TARGETS
 
