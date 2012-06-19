@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		ftp://ftp.sunet.se/pub/multimedia/graphics/ImageMagick/ \
 		ftp://ftp.nluug.nl/pub/ImageMagick/
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image processing tools
 
 USE_XZ=		yes
