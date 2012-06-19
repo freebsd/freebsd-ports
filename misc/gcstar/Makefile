@@ -28,6 +28,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		${SITE_PERL}/${PERL_ARCH}/Gtk2/Spell.pm:${PORTSDIR}/devel/p5-Gtk2-Spell \
 		${SITE_PERL}/DateTime/Format/Strptime.pm:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
 		${SITE_PERL}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
+		p5-Switch>0:${PORTSDIR}/lang/p5-Switch \
 		${SITE_PERL}/${PERL_ARCH}/Gnome2/VFS.pm:${PORTSDIR}/x11-toolkits/p5-Gnome2-VFS \
 		${SITE_PERL}/${PERL_ARCH}/Net/FreeDB.pm:${PORTSDIR}/audio/p5-Net-FreeDB \
 		${SITE_PERL}/Sort/Naturally.pm:${PORTSDIR}/textproc/p5-Sort-Naturally \
