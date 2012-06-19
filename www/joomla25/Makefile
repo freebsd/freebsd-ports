@@ -10,7 +10,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://downloads.joomlacode.org/frsrelease/7/3/5/73507/
 DISTNAME=	Joomla_${PORTVERSION}-Stable-Full_Package
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	scheidell@FreeBSD.org
 COMMENT=	A dynamic web content management system (CMS)
 
 CONFLICTS=	joomla-1.*.*
