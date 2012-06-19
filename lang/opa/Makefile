@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	opa
-PORTVERSION=	0.9.3.${GITVER}
-PORTREVISION=	1
+PORTVERSION=	0.9.4.${GITVER}
 CATEGORIES=	lang
 MASTER_SITES=	http://download.opalang.org/tar-gz/
 DISTNAME=	${PORTNAME}_v${GITVER}
@@ -27,7 +26,7 @@ RUN_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/ssl/ssl.a:${PORTSDIR}/security/oca
 		${LOCALBASE}/${OCAML_LIBDIR}/ocamlgraph/graph.a:${PORTSDIR}/math/ocaml-ocamlgraph \
 		${LOCALBASE}/${OCAML_SITELIBDIR}/ulex/ulexing.a:${PORTSDIR}/devel/ocaml-ulex
 
-GITVER=		1869
+GITVER=		1903
 USE_JAVA=	yes
 JAVA_BUILD=	yes
 USE_GMAKE=	yes

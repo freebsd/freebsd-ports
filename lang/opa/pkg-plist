@@ -14,6 +14,7 @@ bin/odeplink
 bin/ofile
 bin/opa
 bin/opa-cloud
+bin/opa-create
 bin/opa-db-server
 bin/opa-db-tool
 bin/opa-plugin-browser
@@ -1354,6 +1355,46 @@ lib/opa/stdlib/stdlib.apis.gmaps.opx/renaming_exp
 lib/opa/stdlib/stdlib.apis.gmaps.opx/renaming_opamaptoident
 lib/opa/stdlib/stdlib.apis.gmaps.opx/renaming_type
 lib/opa/stdlib/stdlib.apis.gmaps.opx/undot
+lib/opa/stdlib/stdlib.apis.gravatar.opx/BslLoading
+lib/opa/stdlib/stdlib.apis.gravatar.opx/CheckOptionsConsistency
+lib/opa/stdlib/stdlib.apis.gravatar.opx/JavascriptCompilation
+lib/opa/stdlib/stdlib.apis.gravatar.opx/OcamlSplitCode
+lib/opa/stdlib/stdlib.apis.gravatar.opx/ResolveRemoteCalls
+lib/opa/stdlib/stdlib.apis.gravatar.opx/_build/bsl_init_stdlib_2eapis_2egravatar.cmi
+lib/opa/stdlib/stdlib.apis.gravatar.opx/_build/cstdlib_2eapis_2egravatar.a
+lib/opa/stdlib/stdlib.apis.gravatar.opx/_build/cstdlib_2eapis_2egravatar.cmxa
+lib/opa/stdlib/stdlib.apis.gravatar.opx/_build/opa_stdlib_2eapis_2egravatar_001.cmi
+lib/opa/stdlib/stdlib.apis.gravatar.opx/_build/opa_stdlib_2eapis_2egravatar_002.cmi
+lib/opa/stdlib/stdlib.apis.gravatar.opx/check_server_entry_point
+lib/opa/stdlib/stdlib.apis.gravatar.opx/consistency_check
+lib/opa/stdlib/stdlib.apis.gravatar.opx/funactionlifting
+lib/opa/stdlib/stdlib.apis.gravatar.opx/opa_InsertRemote_explicit_map_client
+lib/opa/stdlib/stdlib.apis.gravatar.opx/opa_InsertRemote_explicit_map_server
+lib/opa/stdlib/stdlib.apis.gravatar.opx/pass_CodingDirectives
+lib/opa/stdlib/stdlib.apis.gravatar.opx/pass_DbSchemaGeneration
+lib/opa/stdlib/stdlib.apis.gravatar.opx/pass_EarlyLambdaLifting_server
+lib/opa/stdlib/stdlib.apis.gravatar.opx/pass_ExplicitInstantiation
+lib/opa/stdlib/stdlib.apis.gravatar.opx/pass_ExplicitInstantiation_gamma
+lib/opa/stdlib/stdlib.apis.gravatar.opx/pass_ExplicitInstantiation_lifting_client
+lib/opa/stdlib/stdlib.apis.gravatar.opx/pass_ExplicitInstantiation_lifting_server
+lib/opa/stdlib/stdlib.apis.gravatar.opx/pass_GenerateServerAst
+lib/opa/stdlib/stdlib.apis.gravatar.opx/pass_JavascriptCompilation_imp_Inlining
+lib/opa/stdlib/stdlib.apis.gravatar.opx/pass_LambdaLifting_client
+lib/opa/stdlib/stdlib.apis.gravatar.opx/pass_LambdaLifting_server
+lib/opa/stdlib/stdlib.apis.gravatar.opx/pass_MacroExpansion
+lib/opa/stdlib/stdlib.apis.gravatar.opx/pass_SimplifyEquality
+lib/opa/stdlib/stdlib.apis.gravatar.opx/pass_SimplifyMagic
+lib/opa/stdlib/stdlib.apis.gravatar.opx/pass_Slicing
+lib/opa/stdlib/stdlib.apis.gravatar.opx/pass_TypeDefinition
+lib/opa/stdlib/stdlib.apis.gravatar.opx/pass_Typing
+lib/opa/stdlib/stdlib.apis.gravatar.opx/pass_TypingExceptions
+lib/opa/stdlib/stdlib.apis.gravatar.opx/qmlCpsRewriter_server
+lib/opa/stdlib/stdlib.apis.gravatar.opx/qmlSimpleSlicerEffect
+lib/opa/stdlib/stdlib.apis.gravatar.opx/qmlUncurry_server
+lib/opa/stdlib/stdlib.apis.gravatar.opx/renaming_exp
+lib/opa/stdlib/stdlib.apis.gravatar.opx/renaming_opamaptoident
+lib/opa/stdlib/stdlib.apis.gravatar.opx/renaming_type
+lib/opa/stdlib/stdlib.apis.gravatar.opx/undot
 lib/opa/stdlib/stdlib.apis.irc.opx/BslLoading
 lib/opa/stdlib/stdlib.apis.irc.opx/CheckOptionsConsistency
 lib/opa/stdlib/stdlib.apis.irc.opx/JavascriptCompilation
@@ -1444,6 +1485,7 @@ lib/opa/stdlib/stdlib.apis.mongo.opx/_build/opa_stdlib_2eapis_2emongo_040.cmi
 lib/opa/stdlib/stdlib.apis.mongo.opx/_build/opa_stdlib_2eapis_2emongo_041.cmi
 lib/opa/stdlib/stdlib.apis.mongo.opx/_build/opa_stdlib_2eapis_2emongo_042.cmi
 lib/opa/stdlib/stdlib.apis.mongo.opx/_build/opa_stdlib_2eapis_2emongo_043.cmi
+lib/opa/stdlib/stdlib.apis.mongo.opx/_build/opa_stdlib_2eapis_2emongo_044.cmi
 lib/opa/stdlib/stdlib.apis.mongo.opx/check_server_entry_point
 lib/opa/stdlib/stdlib.apis.mongo.opx/consistency_check
 lib/opa/stdlib/stdlib.apis.mongo.opx/funactionlifting
@@ -2667,6 +2709,7 @@ lib/opa/stdlib/stdlib.core.opx/_build/opa_stdlib_2ecore_022.cmi
 lib/opa/stdlib/stdlib.core.opx/_build/opa_stdlib_2ecore_023.cmi
 lib/opa/stdlib/stdlib.core.opx/_build/opa_stdlib_2ecore_024.cmi
 lib/opa/stdlib/stdlib.core.opx/_build/opa_stdlib_2ecore_025.cmi
+lib/opa/stdlib/stdlib.core.opx/_build/opa_stdlib_2ecore_026.cmi
 lib/opa/stdlib/stdlib.core.opx/check_server_entry_point
 lib/opa/stdlib/stdlib.core.opx/consistency_check
 lib/opa/stdlib/stdlib.core.opx/funactionlifting
@@ -6755,6 +6798,8 @@ lib/opa/stdlib/unix.opp/unixMLRuntime.o
 @dirrm lib/opa/stdlib/stdlib.apis.mongo.opx
 @dirrm lib/opa/stdlib/stdlib.apis.irc.opx/_build
 @dirrm lib/opa/stdlib/stdlib.apis.irc.opx
+@dirrm lib/opa/stdlib/stdlib.apis.gravatar.opx/_build
+@dirrm lib/opa/stdlib/stdlib.apis.gravatar.opx
 @dirrm lib/opa/stdlib/stdlib.apis.gmaps.opx/_build
 @dirrm lib/opa/stdlib/stdlib.apis.gmaps.opx
 @dirrm lib/opa/stdlib/stdlib.apis.github.user.opx/_build
