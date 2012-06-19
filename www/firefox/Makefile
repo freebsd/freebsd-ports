@@ -36,7 +36,7 @@ MAKE_JOBS_SAFE=	yes
 WANT_GNOME=	yes
 ALL_TARGET=	default
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
-EXTRA_CFLAGS=	-O2
+EXTRA_CFLAGS=	-O0
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -57,10 +57,6 @@ OPTIONS=	DBUS "Enable D-BUS support" on \
 		PGO "Enable Profile-Guided Optimization" off
 
 .include <bsd.port.pre.mk>
-
-.if empty(CXX:M*clang++*) && ${OSVERSION} > 900000
-USE_GCC=	4.6+
-.endif
 
 WRKSRC:=	${WRKDIR}/mozilla-release
 
