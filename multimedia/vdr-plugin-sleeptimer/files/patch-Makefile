@@ -1,14 +1,5 @@
 --- a/Makefile
 +++ b/Makefile
-@@ -50,7 +50,7 @@ DEFINES += -D_GNU_SOURCE -DPLUGIN_NAME_I
- 
- ### The object files (add further files here):
- 
--OBJS = $(PLUGIN).o i18n.o
-+OBJS = $(PLUGIN).o
- 
- ### Implicit rules:
- 
 @@ -110,3 +110,6 @@ dist: clean
  clean:
  	@-rm -f $(PODIR)/*.mo $(PODIR)/*.pot

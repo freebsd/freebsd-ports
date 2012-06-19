@@ -7,6 +7,7 @@
 
 PORTNAME=	vdr-plugin-epgsearch
 PORTVERSION=	1.0.1s20120322
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://winni.vdr-developer.org/epgsearch/downloads/beta/:beta \
 		LOCAL/nox/:snapshot
@@ -20,7 +21,7 @@ LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre \
 
 USE_BZIP2=	yes
 PATCH_STRIP=	-p1
-PORTDOCS=	COPYING HISTORY
+PORTDOCS=	COPYING README HISTORY
 MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/vdr-plugin-${PLUGIN}
 MAKE_ARGS+=	INCLUDES="-I$(LOCALBASE)/include -I$(LOCALBASE)/include/vdr -I${WRKSRC}"

@@ -7,6 +7,7 @@
 
 PORTNAME=	vdr-plugin-femon
 PORTVERSION=	1.7.17
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.saunalahti.fi/~rahrenbe/vdr/femon/files/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
@@ -17,7 +18,7 @@ COMMENT=	Video Disk Recorder - frontend monitor plugin
 
 PATCH_STRIP=	-p1
 HAVE_CONFIGURE=	yes
-PORTDOCS=	COPYING README
+PORTDOCS=	COPYING README HISTORY
 MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PLUGIN}-${DISTVERSION}
 

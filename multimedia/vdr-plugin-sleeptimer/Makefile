@@ -7,7 +7,7 @@
 
 PORTNAME=	vdr-plugin-sleeptimer
 PORTVERSION=	0.8.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/652/
 EXTRACT_SUFX=	.tgz
@@ -17,7 +17,7 @@ COMMENT=	Video Disk Recorder - sleep timer plugin
 
 PATCH_STRIP=	-p1
 HAVE_CONFIGURE=	yes
-PORTDOCS=	COPYING README
+PORTDOCS=	COPYING README HISTORY
 MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PLUGIN}-${PORTVERSION}
 

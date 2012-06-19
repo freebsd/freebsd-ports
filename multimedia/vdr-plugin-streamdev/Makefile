@@ -7,6 +7,7 @@
 
 PORTNAME=	vdr-plugin-streamdev
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/953/:release \
 		LOCAL:snapshot
@@ -19,7 +20,7 @@ COMMENT=	Video Disk Recorder - stream device plugin
 
 RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 
-PORTDOCS=	COPYING README
+PORTDOCS=	COPYING README HISTORY
 HAVE_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 WRKSRC=		${WRKDIR}/${PLUGIN}-${PORTVERSION}

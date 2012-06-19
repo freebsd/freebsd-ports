@@ -852,7 +852,7 @@ Index: tools.h
  typedef unsigned char uchar;
  
  extern int SysLogLevel;
-@@ -227,9 +233,17 @@ bool SpinUpDisk(const char *FileName);
+@@ -227,12 +233,20 @@ bool SpinUpDisk(const char *FileName);
  void TouchFile(const char *FileName);
  time_t LastModifiedTime(const char *FileName);
  off_t FileSize(const char *FileName); ///< returns the size of the given file, or -1 in case of an error (e.g. if the file doesn't exist)
@@ -861,15 +861,18 @@ Index: tools.h
 +#else
  cString WeekDayName(int WeekDay);
 +#endif
+     ///< Converts the given WeekDay (0=Sunday, 1=Monday, ...) to a three letter
+     ///< day name.
  cString WeekDayName(time_t t);
+     ///< Converts the week day of the given time to a three letter day name.
 +#ifdef __FreeBSD__
 +cString WeekDayNameFullReal(int WeekDay);
 +#else
  cString WeekDayNameFull(int WeekDay);
 +#endif
+     ///< Converts the given WeekDay (0=Sunday, 1=Monday, ...) to a full
+     ///< day name.
  cString WeekDayNameFull(time_t t);
- cString DayDateTime(time_t t = 0);
- cString TimeToString(time_t t);
 Index: vdr.c
 --- vdr.c
 +++ vdr.c

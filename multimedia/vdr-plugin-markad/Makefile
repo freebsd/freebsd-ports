@@ -7,7 +7,7 @@
 
 PORTNAME=	vdr-plugin-markad
 PORTVERSION=	0.1.2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	multimedia
 MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/578/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
@@ -17,11 +17,11 @@ MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - MarkAd plugin
 
 LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg \
-		execinfo.1:${PORTSDIR}/devel/libexecinfo
+		execinfo:${PORTSDIR}/devel/libexecinfo
 
 PATCH_STRIP=	-p1
 HAVE_CONFIGURE=	yes
-PORTDOCS=	COPYING README
+PORTDOCS=	COPYING README HISTORY
 PORTDATA=	logos
 MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PLUGIN}-${DISTVERSION}

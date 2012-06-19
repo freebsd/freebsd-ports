@@ -6,21 +6,22 @@
 #
 
 PORTNAME=	vdr-plugin-skinenigmang
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.2s20120606
 CATEGORIES=	multimedia
-MASTER_SITES=	http://andreas.vdr-developer.org/enigmang/download/
-DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
-DISTFILES=	${DISTNAME}.tgz \
-		skinenigmang-logos-xpm-hi-20070702.tgz
+MASTER_SITES=	http://andreas.vdr-developer.org/enigmang/download/:release \
+		LOCAL/nox:snapshot
+DISTNAME=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
+DISTFILES=	${DISTNAME}.tar.bz2:snapshot \
+		skinenigmang-logos-xpm-hi-20070702.tgz:release
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - Enigma-NG skin plugin
 
 PATCH_STRIP=	-p1
 HAVE_CONFIGURE=	yes
-PORTDOCS=	COPYING README
+PORTDOCS=	COPYING README HISTORY
 MAKE_JOBS_SAFE=	yes
-WRKSRC=		${WRKDIR}/${PLUGIN}-${DISTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
