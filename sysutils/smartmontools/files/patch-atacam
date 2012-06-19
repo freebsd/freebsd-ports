@@ -1,0 +1,25 @@
+--- os_freebsd.cpp	2012-05-31 17:43:19.000000000 +0400
++++ os_freebsd.cpp	2012-05-31 17:45:44.000000000 +0400
+@@ -1749,8 +1769,7 @@
+       if (ccb.cdm.matches[i].type == DEV_MATCH_BUS) {
+         bus_result = &ccb.cdm.matches[i].result.bus_result;
+ 
+-        if (strcmp(bus_result->dev_name,"ata") == 0 /* ATAPICAM devices will be probed as ATA devices, skip'em there */
+-          || strcmp(bus_result->dev_name,"xpt") == 0) /* skip XPT bus at all */
++        if (strcmp(bus_result->dev_name,"xpt") == 0) /* skip XPT bus at all */
+         skip_bus = 1;
+         else
+           skip_bus = 0;
+@@ -1773,8 +1792,10 @@
+         * We are searching for latest name
+         */
+         periph_result =  &ccb.cdm.matches[i].result.periph_result;
+-        devname = strprintf("%s%s%d", _PATH_DEV, periph_result->periph_name, periph_result->unit_number);
+-        changed = 0;
++	if (strcmp(periph_result->periph_name, "pass")) {
++          devname = strprintf("%s%s%d", _PATH_DEV, periph_result->periph_name, periph_result->unit_number);
++          changed = 0;
++	}
+       };
+       if ((changed == 1 || show_all) && !devname.empty()) {
+         names.push_back(devname);
