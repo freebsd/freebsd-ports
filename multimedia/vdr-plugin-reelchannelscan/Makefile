@@ -7,7 +7,7 @@
 
 PORTNAME=	vdr-plugin-reelchannelscan
 PORTVERSION=	0.6.1b1.7.15
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/nox \
 		http://ppa.launchpad.net/yavdr/stable-vdr/ubuntu/pool/main/v/vdr-plugin-reelchannelscan/
@@ -19,7 +19,7 @@ COMMENT=	Video Disk Recorder - Reelchannelscan plugin
 
 PATCH_STRIP=	-p1
 HAVE_CONFIGURE=	yes
-PORTDOCS=	COPYING README
+PORTDOCS=	COPYING README HISTORY
 MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:S/b1.7.15//}
 

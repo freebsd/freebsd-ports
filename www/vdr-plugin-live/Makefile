@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vdr-plugin-live
-PORTVERSION=	0.2.0s20110303
-PORTREVISION=	8
+PORTVERSION=	0.2.0s20120325
 CATEGORIES=	www multimedia
 MASTER_SITES=	http://live.vdr-developer.org/downloads/:release \
 		LOCAL/nox/:snapshot
@@ -22,7 +21,7 @@ LIB_DEPENDS+=	tntnet:${PORTSDIR}/www/tntnet \
 
 USE_BZIP2=	yes
 PATCH_STRIP=	-p1
-PORTDOCS=	COPYING README
+PORTDOCS=	COPYING README HISTORY
 MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/vdr-plugin-${PLUGIN}
 VDR_PLUGIN_MAKEFILES=	${WRKSRC}/httpd/Makefile ${WRKSRC}/pages/Makefile
@@ -31,6 +30,7 @@ MAKE_ARGS+=	INCLUDES="-I$(LOCALBASE)/include -I${WRKSRC}"
 .include	"${.CURDIR}/../../multimedia/vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin
+	${CP} ${FILESDIR}/gen_version_suffix.h ${WRKSRC}
 
 post-install: post-install-pluginlocales
 	(cd ${WRKSRC}/${PLUGIN} && \

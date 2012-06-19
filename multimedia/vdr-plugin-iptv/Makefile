@@ -7,6 +7,7 @@
 
 PORTNAME=	vdr-plugin-iptv
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.saunalahti.fi/~rahrenbe/vdr/iptv/files/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
@@ -17,7 +18,7 @@ COMMENT=	Video Disk Recorder - IP television plugin
 
 PATCH_STRIP=	-p1
 HAVE_CONFIGURE=	yes
-PORTDOCS=	COPYING README
+PORTDOCS=	COPYING README HISTORY
 PORTEXAMPLES=	channels.conf.iptv
 MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PLUGIN}-${DISTVERSION}

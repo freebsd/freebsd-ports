@@ -7,7 +7,7 @@
 
 PORTNAME=	vdr-plugin-vnsiserver
 PORTVERSION=	0.0.2s20100808.0952
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ppa.launchpad.net/yavdr/testing-vdr/ubuntu/pool/main/v/vdr-plugin-vnsiserver/ \
 		LOCAL/nox/
@@ -18,7 +18,7 @@ COMMENT=	Video Disk Recorder - VNSI server plugin
 
 PATCH_STRIP=	-p1
 HAVE_CONFIGURE=	yes
-PORTDOCS=	COPYING README
+PORTDOCS=	COPYING README HISTORY
 MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION:S/s20/+svn20/}${DISTVERSIONSUFFIX}
 

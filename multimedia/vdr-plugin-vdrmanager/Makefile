@@ -7,7 +7,7 @@
 
 PORTNAME=	vdr-plugin-vdrmanager
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/828/
 DISTNAME=	${PORTNAME:S/-plugin//}-${PORTVERSION}
@@ -16,7 +16,7 @@ MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - VDR-Manager server plugin
 
 PATCH_STRIP=	-p1
-PORTDOCS=	COPYING README
+PORTDOCS=	COPYING README HISTORY
 MAKE_JOBS_SAFE=	yes
 
 .include	"${.CURDIR}/../vdr/Makefile.plugins"

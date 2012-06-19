@@ -1,6 +1,13 @@
 --- a/Makefile
 +++ b/Makefile
-@@ -151,7 +151,11 @@ $(VERSIONSUFFIX): FORCE
+@@ -155,12 +155,16 @@ $(SUBDIRS):
+ PAGES:
+ 	@$(MAKE) -C pages PLUGINFEATURES="$(PLUGINFEATURES)" .dependencies
+ 
+-$(VERSIONSUFFIX): FORCE
+-	./buildutil/version-util $(VERSIONSUFFIX) || ./buildutil/version-util -F $(VERSIONSUFFIX)
++#$(VERSIONSUFFIX): FORCE
++#	./buildutil/version-util $(VERSIONSUFFIX) || ./buildutil/version-util -F $(VERSIONSUFFIX)
  
  libvdr-$(PLUGIN).so: $(VERSIONSUFFIX) $(SUBDIRS) $(PLUGINOBJS)
  	$(CXX) $(LDFLAGS) -shared -o $@	 $(PLUGINOBJS) -Wl,--whole-archive $(WEBLIBS) -Wl,--no-whole-archive $(LIBS)
@@ -12,7 +19,7 @@
  
  ifneq ($(TNTVERS7),yes)
  	@echo ""
-@@ -189,6 +193,9 @@ clean: $(SUBDIRS)
+@@ -198,6 +202,9 @@ clean: $(SUBDIRS)
  	@-rm -f $(PLUGINOBJS) $(DEPFILE) *.so *.tgz core* *~
  	@-rm -f $(VERSIONSUFFIX)
  

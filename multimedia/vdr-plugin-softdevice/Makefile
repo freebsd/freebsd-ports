@@ -7,7 +7,7 @@
 
 PORTNAME=	vdr-plugin-softdevice
 PORTVERSION=	0.5.0p20100414
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL
 MASTER_SITE_SUBDIR=	nox/
@@ -16,14 +16,14 @@ DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERS
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - softdevice plugin
 
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
 
 USE_BZIP2=	yes
 USE_GNOME+=	pkgconfig
 USE_XORG+=	xv x11 xinerama
 PATCH_STRIP=	-p1
 HAVE_CONFIGURE=	yes
-PORTDOCS=	COPYING README
+PORTDOCS=	COPYING README HISTORY
 MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PLUGIN}
 CONFIGURE_ARGS+=	--disable-vidix --disable-fb --disable-dfb --disable-cle266 --disable-alsa #--disable-yaepg

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vdr
-PORTVERSION=	1.7.27
-PORTREVISION=	3
+PORTVERSION=	1.7.28
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.tvdr.de/vdr/Developer/
 
@@ -19,7 +18,7 @@ LIB_DEPENDS=    jpeg:${PORTSDIR}/graphics/jpeg
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig
 
-OPTIONS_DEFINE=		IPTVPATCH TTXPATCH DVBPATCH STB0899_SIGNAL
+OPTIONS_DEFINE=		IPTVPATCH TTXPATCH STB0899_SIGNAL
 IPTVPATCH_DESC=		Stops EIT scans on IPTV channels
 TTXPATCH_DESC=		Support patches for teletext subtitle plugin
 DVBPATCH_DESC=		DVB audio patch for some countries
