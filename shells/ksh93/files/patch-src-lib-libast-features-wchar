@@ -1,0 +1,10 @@
+--- src/lib/libast/features/wchar.orig	2012-01-12 15:40:22.000000000 +0800
++++ src/lib/libast/features/wchar	2012-06-12 10:05:37.278869903 +0800
+@@ -51,6 +51,7 @@
+ run{
+ cat <<!
+ 	#if _hdr_wchar && defined(_nxt_wchar)
++	#define _STDFILE_DECLARED
+ 	#include ${_nxt_wchar-_nxt_wchar}	/* the native wchar.h */
+ 	#endif
+ 
