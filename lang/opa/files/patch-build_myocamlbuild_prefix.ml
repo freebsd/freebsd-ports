@@ -15,20 +15,3 @@
  
        (* Windows specific : redefinition of an existing rule in Ocaml_specific.ml,
           Louis please have a look to avoid the two copies at the end
-@@ -549,9 +555,14 @@
-         flag ["ocaml"; "native"; "link"; tag] (S[A"-ccopt";A("-L"^dir);A"-cclib";A("-l"^name)]);
-       in
- 
--      (* In the memory.c in FreeBSD part that uses kvm_getprocs() required link with -lkvm. *)
-       if is_fbsd then
--        flag ["use_stubs"; "link"] (S[A "-cclib";A "-lkvm"]);
-+        (* In the memory.c in FreeBSD part that uses kvm_getprocs() required
-+           link with -lkvm. The stubs needs to be compiled with -liconv too. *)
-+        flag ["use_stubs"; "link"] (S[A "-cclib";A "-lkvm";A"-ccopt";A "-L/usr/local/lib";A "-cclib";A "-liconv"]);
-+        (* Build with converters/libiconv port, which it installs in the
-+           /usr/local by default *)
-+        flag ["iconv"; "compile"] (S[A"-I";A "/usr/local/include"]);
-+        flag ["iconv"; "link"] (S[A"-ccopt";A "-L/usr/local/lib";A "-cclib";A "-liconv"]);
- 
- (* -- Don't forget that the rest of the "mlstate build stdlib" is in --
-    -- myocamlbuild_suffix.ml. The rest comes from the build_rules*.ml in each repo -- *)
