@@ -979,7 +979,6 @@ batv-milter                     ports/mail/batv-milter
 baudline                        ports/audio/baudline
 bayespam                        ports/mail/bayespam
 baz                             ports/devel/baz
-bazaar-ng                       ports/devel/bazaar-ng
 bb                              ports/misc/bb
 bbapm                           ports/sysutils/bbapm
 bbappconf                       ports/x11/bbappconf
@@ -1361,6 +1360,7 @@ byobu                           ports/sysutils/byobu
 bzapi                           ports/devel/bzapi
 bzflag                          ports/games/bzflag
 bzip                            ports/archivers/bzip
+bzr                             ports/devel/bzr
 bzr-builder                     ports/devel/bzr-builder
 bzr-colo                        ports/devel/bzr-colo
 bzr-explorer                    ports/devel/bzr-explorer
@@ -9350,6 +9350,7 @@ mediainfo                       ports/multimedia/mediainfo
 mediaproxy                      ports/net/mediaproxy
 mediatomb                       ports/net/mediatomb
 mediawiki                       ports/www/mediawiki
+mediawiki118                    ports/www/mediawiki118
 medit                           ports/science/medit
 mednafen                        ports/emulators/mednafen
 medusa                          ports/security/medusa
