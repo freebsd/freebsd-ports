@@ -851,7 +851,6 @@ misc/tmux|sysutils/tmux|2009-10-14|Moved to sysutils category
 audio/xmms-uade|audio/uade|2009-10-18|Decoupled from xmms port
 net-p2p/mute-net-gui|net-p2p/mute-net|2009-10-19|Broken for extensive period of time and unmaintained
 net-p2p/mute-net-text|net-p2p/mute-net|2009-10-19|Broken for extensive period of time and unmaintained
-archivers/zlib||2009-10-19|Removed
 graphics/libwpcg||2009-10-25|Unmaintained upstream, depends on an old version of GCC, lacks a maintainer, and not used by anything else
 databases/ruby-dbd_msql||2009-10-29|Has expired: no longer under development
 databases/ruby-dbd_proxy||2009-10-29|Has expired: no longer under development
@@ -3405,6 +3404,54 @@ devel/kdebindings4-ruby||2012-05-25|kdebindings4 ports have been refactored
 devel/kdebindings4-smoke||2012-05-25|kdebindings4 ports have been refactored
 deskutils/plasma-applet-icontasks||2012-05-25|Integrated to KDE SC 4.8
 audio/audacity-devel|audio/audacity|2012-05-30|Removed in favor of stable
+editors/koffice-i18n||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-af||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-bg||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-br||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-bs||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-ca||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-cs||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-cy||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-da||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-el||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-en_GB||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-eo||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-es||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-et||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-eu||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-fa||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-fi||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-ga||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-gl||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-hi||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-hsb||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-is||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-it||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-km||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-lo||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-lt||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-lv||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-mk||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-ms||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-mt||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-nb||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-nl||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-nn||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-ro||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-se||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-sk||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-sl||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-sr||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-sr_Latn||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-sv||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-ta||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-tg||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-th||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-tr||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-uz||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-ven||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-xh||2012-05-31|Depends on editors/koffice-kde3, which is deleted
+editors/koffice-i18n-zu||2012-05-31|Depends on editors/koffice-kde3, which is deleted
 chinese/koffice-kde4-l10n-zh_CN|chinese/calligra-l10n-zh_CN|2012-05-31|Unmaintained upstream, use Calligra
 chinese/koffice-kde4-l10n-zh_TW|chinese/calligra-l10n-zh_TW|2012-05-31|Unmaintained upstream, use Calligra
 editors/koffice-kde4-l10n-ca_valencia|editors/calligra-l10n-ca_valencia|2012-05-31|Unmaintained upstream, use Calligra
