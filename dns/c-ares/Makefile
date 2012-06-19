@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	c-ares
-PORTVERSION=	1.8.0
+PORTVERSION=	1.9.1
 CATEGORIES=	dns
 MASTER_SITES=	http://c-ares.haxx.se/download/ \
 		http://obsd.isc.org/pub/OpenBSD/distfiles/ \
@@ -76,7 +76,7 @@ MAN3=	ares_cancel.3 \
 	ares_mkquery.3 \
 	ares_parse_a_reply.3 ares_parse_aaaa_reply.3 \
 	ares_parse_mx_reply.3 \
-	ares_parse_ptr_reply.3 \
+	ares_parse_ptr_reply.3 ares_parse_soa_reply.3 \
 	ares_parse_srv_reply.3 ares_parse_txt_reply.3 \
 	ares_process.3 \
 	ares_query.3 \
