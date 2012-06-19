@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thunderbird
-DISTVERSION=	13.0
+DISTVERSION=	13.0.1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
@@ -34,6 +34,7 @@ WANT_GNOME=	yes
 ALL_TARGET=	default
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 MAKE_ENV=	PTHREAD_LDFLAGS="${PTHREAD_LIBS}"
+EXTRA_CFLAGS=	-O0
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -60,10 +61,6 @@ MOZ_PIS_SCRIPTS=moz_pis_S50cleanhome
 OPTIONS=	LIGHTNING	"Enable calendar extension" off
 
 .include <bsd.port.pre.mk>
-
-.if empty(CXX:M*clang++*) && ${OSVERSION} > 900000
-USE_GCC=	4.6+
-.endif
 
 WRKSRC=		${WRKDIR}/comm-release
 MOZSRC:=	${WRKSRC}/mozilla
