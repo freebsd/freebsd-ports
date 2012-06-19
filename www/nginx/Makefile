@@ -250,7 +250,7 @@ CATEGORIES+=	ipv6
 .endif
 
 .if ${PORT_OPTIONS:MGOOGLE_PERFTOOLS}
-LIB_DEPENDS+=	profiler.1:${PORTSDIR}/devel/google-perftools
+LIB_DEPENDS+=	profiler:${PORTSDIR}/devel/google-perftools
 CONFIGURE_ARGS+=--with-google_perftools_module
 .endif
 
@@ -338,7 +338,7 @@ CONFIGURE_ARGS+=--with-http_dav_module
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_DAV_EXT}
-LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=	expat:${PORTSDIR}/textproc/expat2
 NGINX_DAV_EXT_VERSION=	0.0.2
 GIT_DAV_EXT_VERSION=	0-g0e07a3e
 FETCH_ARGS=	-pRr
@@ -377,7 +377,7 @@ CONFIGURE_ARGS+=--with-http_flv_module
 
 .if ${PORT_OPTIONS:MHTTP_GEOIP}
 CONFIGURE_ARGS+=--with-http_geoip_module
-LIB_DEPENDS+=	GeoIP.5:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS+=	GeoIP:${PORTSDIR}/net/GeoIP
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_GZIP_STATIC}
@@ -385,7 +385,7 @@ CONFIGURE_ARGS+=--with-http_gzip_static_module
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_IMAGE_FILTER}
-LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
 CONFIGURE_ARGS+=--with-http_image_filter_module
 .endif
 
@@ -537,7 +537,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-chunkin-nginx-module-${GIT_CHUNKI
 .endif
 
 .if ${PORT_OPTIONS:MDRIZZLE}
-LIB_DEPENDS+=	drizzle.0:${PORTSDIR}/databases/drizzle
+LIB_DEPENDS+=	drizzle:${PORTSDIR}/databases/drizzle
 NGINX_DRIZZLE_VERSION=	0.1.2rc7
 GIT_DRIZZLE_VERSION=	0-g272cabf
 FETCH_ARGS=	-pRr
@@ -580,7 +580,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/arut-nginx-let-module-${GIT_LET_VERSION:S
 .endif
 
 .if ${PORT_OPTIONS:MLUA}
-LIB_DEPENDS+=	luajit-5.1.2:${PORTSDIR}/lang/luajit
+LIB_DEPENDS+=	luajit-5.1:${PORTSDIR}/lang/luajit
 CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
 CONFIGURE_ENV+=	"LUAJIT_LIB=${LOCALBASE}/lib"
 USE_NGINX_DEVEL_KIT=	yes
@@ -609,7 +609,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/naxsi-${NGINX_NAXSI_VERSION}/naxsi_src
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_REWRITE} || defined(USE_HTTP_REWRITE)
-LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=--with-pcre
 .else
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nopcre
