@@ -335,6 +335,7 @@
     SUBDIR += vdr-plugin-control
     SUBDIR += vdr-plugin-eepg
     SUBDIR += vdr-plugin-epgsearch
+    SUBDIR += vdr-plugin-extrecmenu
     SUBDIR += vdr-plugin-femon
     SUBDIR += vdr-plugin-infosatepg
     SUBDIR += vdr-plugin-iptv
