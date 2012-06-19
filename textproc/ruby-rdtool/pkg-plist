@@ -7,6 +7,7 @@ bin/rdswap
 %%RUBY_SITELIBDIR%%/rd/dot.rd2rc
 %%RUBY_SITELIBDIR%%/rd/element.rb
 %%RUBY_SITELIBDIR%%/rd/filter.rb
+%%RUBY_SITELIBDIR%%/rd/head-filter.rb
 %%RUBY_SITELIBDIR%%/rd/inline-element.rb
 %%RUBY_SITELIBDIR%%/rd/labeled-element.rb
 %%RUBY_SITELIBDIR%%/rd/list.rb
@@ -18,6 +19,8 @@ bin/rdswap
 %%RUBY_SITELIBDIR%%/rd/rbl-file.rb
 %%RUBY_SITELIBDIR%%/rd/rbl-suite.rb
 %%RUBY_SITELIBDIR%%/rd/rd-struct.rb
+%%RUBY_SITELIBDIR%%/rd/rd2html-ext-lib.rb
+%%RUBY_SITELIBDIR%%/rd/rd2html-ext-opt.rb
 %%RUBY_SITELIBDIR%%/rd/rd2html-lib.rb
 %%RUBY_SITELIBDIR%%/rd/rd2html-opt.rb
 %%RUBY_SITELIBDIR%%/rd/rd2man-lib.rb
