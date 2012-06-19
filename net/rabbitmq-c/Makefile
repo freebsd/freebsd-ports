@@ -19,6 +19,9 @@ DIST_SUBDIR=	rabbitmq
 MAINTAINER=	rabbitmq@geoffgarside.co.uk
 COMMENT=	RabbitMQ C AMQP client library
 
+LICENSE=		GPLv2 MPL
+LICENSE_COMB=		dual
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:${PORTSDIR}/devel/py-simplejson
 
 CONFLICTS=	rabbitmq-c-devel-[0-9]*
@@ -32,23 +35,19 @@ USE_AUTOTOOLS=	aclocal autoconf automake autoheader libtool
 AUTOMAKE_ARGS=	-i --add-missing
 ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
 
-LICENSE=		GPLv2 MPL
-LICENSE_COMB=		dual
-LICENSE_FILE_MPL=	${WRKSRC}/LICENSE-GPL-2.0
-LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE-MPL-RabbitMQ
-
-OPTIONS=	64BIT "Produce 64-bit library" Off \
-		POPT  "Popt support in tools" Off
+OPTIONS_DEFINE=	64BIT POPT
+64BIT_DESC=	Produce 64-bit library
+POPT_DESC=	Popt support in tools
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_64BIT)
+.if ${PORT_OPTIONS:M64BIT}
 ONLY_FOR_ARCHS=		amd64 sparc64 powerpc
-ONLY_FOR_ARCHS_REASON=	WITH_64BIT is set
+ONLY_FOR_ARCHS_REASON=	64BIT option is set
 CONFIGURE_ARGS+=	--enable-64-bit
 .endif
 
-.if defined(WITH_POPT)
+.if ${PORT_OPTIONS:MPOPT}
 LIB_DEPENDS+=	popt.0:${PORTSDIR}/devel/popt
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
