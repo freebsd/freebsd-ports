@@ -26,7 +26,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
 
 USE_IMAKE=	yes
 USE_XORG=	ice sm x11 xaw xext xi xmu xpm xt
-USE_GETTEXT=	yes
 MAN1=		xfig.1
 MANCOMPRESSED=	yes
 
@@ -52,7 +51,7 @@ PLIST_SUB=	JPORTDOCS=""
 .endif
 
 .if !defined(WITHOUT_I18N)
-USE_GETETEXT=	yes
+USE_GETTEXT=	yes
 .endif
 
 post-extract:
