@@ -1,16 +1,17 @@
---- Runtime/codelite_xterm.orig	2011-09-24 06:10:58.000000000 +0200
-+++ Runtime/codelite_xterm	2012-02-24 15:33:29.000000000 +0100
+--- Runtime/codelite_xterm.orig	2012-06-18 14:05:30.000000000 +0200
++++ Runtime/codelite_xterm	2012-06-18 14:05:45.000000000 +0200
 @@ -1,4 +1,4 @@
 -#!/bin/bash 
-+#!/bin/sh
++#!/bin/sh 
  
  ## A wrapper script around the xterm utility 
  ## which allows codelite to export LD_LIBRARY_PATH into the exterm
-@@ -14,6 +14,6 @@
- 	## Run xterm without the bash wrapper
- 	xterm -T "$program_title" -e $2 2> /dev/null
- else
--	xterm -T "$program_title" -e /bin/bash -c 'export LD_LIBRARY_PATH=$0;shift;$@' $LD_LIBRARY_PATH "$@" 2> /dev/null
-+	xterm -T "$program_title" -e /bin/sh -c 'export LD_LIBRARY_PATH=$0;shift;$@' $LD_LIBRARY_PATH "$@" 2> /dev/null
+@@ -17,7 +17,7 @@
+ 		## Run xterm without the bash wrapper
+ 		xterm -T "$program_title" -e $2 2> /dev/null
+ 	else
+-		xterm -T "$program_title" -e /bin/bash -c 'export LD_LIBRARY_PATH=$0;shift;$@' $LD_LIBRARY_PATH "$@" 2> /dev/null
++		xterm -T "$program_title" -e /bin/sh -c 'export LD_LIBRARY_PATH=$0;shift;$@' $LD_LIBRARY_PATH "$@" 2> /dev/null
+ 	fi
  fi
  

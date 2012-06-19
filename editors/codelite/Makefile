@@ -1,4 +1,4 @@
-# New ports collection makefile for: 	codelite
+# New ports collection Makefile for:	codelite
 # Date created:				7 May 2008
 # Whom:					gahr
 #
@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	codelite
-DISTVERSION=	3.5.${SVN_REVISION}
-PORTREVISION=	1
+DISTVERSION=	4.0.${SVN_REVISION}
 CATEGORIES=	editors devel
 MASTER_SITES=	SF/${PORTNAME}/Releases/${PORTNAME}-${PORTVERSION:R}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-gtk.src
@@ -15,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-gtk.src
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	An Open Source IDE for C/C++
 
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm
 
 OPTIONS=	CSCOPE	"Enable CScope integration" OFF \
@@ -33,7 +32,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-SVN_REVISION=	5375
+SVN_REVISION=	5589
 
 .if defined(WITH_CSCOPE)
 RUN_DEPENDS+=	cscope:${PORTSDIR}/devel/cscope

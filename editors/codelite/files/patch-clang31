@@ -1,0 +1,22 @@
+--- LiteEditor/clang_pch_maker_thread.cpp.orig	2012-06-18 14:58:00.000000000 +0200
++++ LiteEditor/clang_pch_maker_thread.cpp	2012-06-18 14:58:08.000000000 +0200
+@@ -385,7 +385,6 @@
+ 		        | CXTranslationUnit_CXXChainedPCH;
+ 	} else {
+ 		flags = CXTranslationUnit_Incomplete
+-		        | CXTranslationUnit_SkipFunctionBodies
+ 		        | CXTranslationUnit_DetailedPreprocessingRecord;
+ 	}
+ 
+--- codelite_clang/clang.cpp.orig	2012-06-18 14:44:20.000000000 +0200
++++ codelite_clang/clang.cpp	2012-06-18 14:44:27.000000000 +0200
+@@ -204,8 +204,7 @@
+ 	                       | CXTranslationUnit_PrecompiledPreamble
+ 	                       | CXTranslationUnit_Incomplete
+ 	                       | CXTranslationUnit_DetailedPreprocessingRecord
+-	                       | CXTranslationUnit_CXXChainedPCH
+-	                       | CXTranslationUnit_SkipFunctionBodies);
++	                       | CXTranslationUnit_CXXChainedPCH);
+ 	if(TU) {
+ 
+ 		//ClangUtils::printDiagnosticsToLog(TU);
