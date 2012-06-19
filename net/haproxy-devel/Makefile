@@ -23,22 +23,27 @@ USE_GMAKE=	YES
 SUB_FILES=	pkg-message
 MAN1=		haproxy.1
 
-OPTIONS=	PCRE		"Use PCRE regex library"        On\
-		STATIC_PCRE	"Use static PCRE regex library" Off
+OPTIONS_DEFINE=		PCRE
+OPTIONS_SINGLE=		PCRE
+OPTIONS_SINGLE_PCRE=	DPCRE SPCRE
+DPCRE_DESC=	Link dynamically
+SPCRE_DESC=	Link statically
+OPTIONS_DEFAULT=PCRE DPCRE
 
 .include <bsd.port.options.mk>
 
 MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS \
 		CC="${CC}" CFLAGS="${CFLAGS}"
 
-.if defined(WITH_PCRE)
+.if ${PORT_OPTIONS:MPCRE}
 LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+
+.if ${PORT_OPTIONS:MDPCRE}
 MAKE_ARGS+=	"USE_PCRE=1"
 .endif
-
-.if defined(WITH_STATIC_PCRE)
-LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+.if ${PORT_OPTIONS:MSPCRE}
 MAKE_ARGS+=	"USE_STATIC_PCRE=1"
+.endif
 .endif
 
 do-install:
