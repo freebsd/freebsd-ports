@@ -29,19 +29,30 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-long-otp-prompt \
 		--with-pam
 
-OPTIONS=	LDAP "With LDAP support" off \
-		INSULTS "With all insults" off \
-		DISABLE_ROOT_SUDO "Disable root sudo" off \
-		DISABLE_AUTH "Disable authentication" off \
-		NOARGS_SHELL "Enable no arguments shell" off \
-		AUDIT "Enable BSM audit support" on
+OPTIONS_DEFINE=	LDAP INSULTS DISABLE_ROOT_SUDO DISABLE_AUTH NOARGS_SHELL \
+		AUDIT OPIE NLS
+OPTIONS_DEFAULT=	AUDIT NLS
+
+INSULT_DESC=	Enable insults on failures
+DISABLE_ROOT_SUDO_DESC=	Do not allow root to run sudo
+DISABLE_AUTH_DESC=	Do not require authentication by default
+NOARGS_SHELL_DESC=	Run a shell if no arguments are given
+AUDIT_DESC=	Enable BSM audit support
+OPIE_DESC=	Enable one-time passwords
 
 LOGFAC?=	local2
 CONFIGURE_ARGS+=	--with-logfac=${LOGFAC}
 
+# This is intentionally not an option.
+# SUDO_SECURE_PATH is a PATH string that will override the user's PATH.
+# ex: make SUDO_SECURE_PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin"
+.if defined(SUDO_SECURE_PATH)
+CONFIGURE_ARGS+=	--with-secure-path="${SUDO_SECURE_PATH}"
+.endif
+
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 CFLAGS+=	-I${LOCALBASE}/include
@@ -51,18 +62,12 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-# SUDO_SECURE_PATH is a PATH string that will override the user's PATH.
-# ex: make SUDO_SECURE_PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin"
-.if defined(SUDO_SECURE_PATH)
-CONFIGURE_ARGS+=	--with-secure-path="${SUDO_SECURE_PATH}"
-.endif
-
-.if defined(WITH_INSULTS)
+.if ${PORT_OPTIONS:MINSULTS}
 CONFIGURE_ARGS+=	--with-insults
 CONFIGURE_ARGS+=	--with-all-insults
 .endif
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=	--with-ldap=${PREFIX}
 SUDO_LDAP_CONF?=	ldap.conf
@@ -73,20 +78,24 @@ MAN5+=	sudoers.ldap.5
 PLIST_SUB+=	LDAP="@comment "
 .endif
 
-.if defined(WITH_DISABLE_ROOT_SUDO)
+.if ${PORT_OPTIONS:MDISABLE_ROOT_SUDO}
 CONFIGURE_ARGS+=--disable-root-sudo
 .endif
 
-.if defined(WITH_DISABLE_AUTH)
+.if ${PORT_OPTIONS:MDISABLE_AUTH}
 CONFIGURE_ARGS+=--disable-authentication
 .endif
 
-.if defined(WITH_NOARGS_SHELL)
+.if ${PORT_OPTIONS:MNOARGS_SHELL}
 CONFIGURE_ARGS+=--enable-noargs-shell
 .endif
 
-.if defined(WITH_AUDIT)
+.if ${PORT_OPTIONS:MAUDIT}
 CONFIGURE_ARGS+=--with-bsm-audit
+.endif
+
+.if ${PORT_OPTIONS:MOPIE}
+CONFIGURE_ARGS+=--with-opie
 .endif
 
 MAN5+=		sudoers.5
