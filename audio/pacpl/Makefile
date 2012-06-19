@@ -74,6 +74,10 @@ PLIST_SUB+=	AMAROK="@comment "
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_LEVEL} >= 501400
+BUILD_DEPENDS+= p5-Switch>0:${PORTSDIR}/lang/p5-Switch
+.endif
+
 .if ${PORT_OPTIONS:MBONK}
 RUN_DEPENDS+=	bonk:${PORTSDIR}/audio/bonk
 .endif
