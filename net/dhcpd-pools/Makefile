@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dhcpd-pools
-PORTVERSION=	2.17
+PORTVERSION=	2.18
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -20,8 +20,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:${PORTSDIR}/devel/uthash
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-dhcpd-conf=${LOCALBASE}/etc/dhcpd.conf \
-		--with-dhcpd-leases=/var/db/dhcpd/dhcpd.leases
-CFLAGS+=	-I/usr/include -I${LOCALBASE}/include
+		--with-dhcpd-leases=/var/db/dhcpd/dhcpd.leases \
+		--with-uthash=${LOCALBASE}/include
 
 PLIST_FILES=	bin/dhcpd-pools
 PORTDATA=	dhcpd-pools.cgi snmptest.pl
