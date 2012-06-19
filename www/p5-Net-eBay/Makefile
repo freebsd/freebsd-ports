@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-eBay
-PORTVERSION=	0.55
+PORTVERSION=	0.61
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,9 +27,13 @@ BUILD_DEPENDS=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+OPTIONS_DEFINE=	EXAMPLES
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Net::eBay.3
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${MKDIR} ${WRKSRC}/examples/
@@ -37,7 +41,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '1 s|/usr/bin/perl|${PERL}|' ${WRKSRC}/examples/*.pl
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}/
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.pl ${EXAMPLESDIR}/
 .endif
