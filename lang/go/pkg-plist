@@ -7,7 +7,9 @@ go/LICENSE
 go/PATENTS
 go/README
 go/VERSION
+go/api/README
 go/api/go1.txt
+go/api/next.txt
 go/bin/go
 go/bin/godoc
 go/bin/gofmt
@@ -1385,6 +1387,7 @@ go/src/pkg/fmt/scan.go
 go/src/pkg/fmt/scan_test.go
 go/src/pkg/fmt/stringer_test.go
 go/src/pkg/go/ast/ast.go
+go/src/pkg/go/ast/ast_test.go
 go/src/pkg/go/ast/example_test.go
 go/src/pkg/go/ast/filter.go
 go/src/pkg/go/ast/import.go
@@ -2419,6 +2422,7 @@ go/src/pkg/syscall/syscall_unix.go
 go/src/pkg/syscall/syscall_windows.go
 go/src/pkg/syscall/syscall_windows_386.go
 go/src/pkg/syscall/syscall_windows_amd64.go
+go/src/pkg/syscall/syscall_windows_test.go
 go/src/pkg/syscall/types_darwin.go
 go/src/pkg/syscall/types_freebsd.go
 go/src/pkg/syscall/types_linux.go
@@ -3172,6 +3176,10 @@ go/test/fixedbugs/bug426.go
 go/test/fixedbugs/bug427.go
 go/test/fixedbugs/bug428.go
 go/test/fixedbugs/bug429.go
+go/test/fixedbugs/bug441.go
+go/test/fixedbugs/bug442.go
+go/test/fixedbugs/bug443.go
+go/test/fixedbugs/bug444.go
 go/test/float_lit.go
 go/test/floatcmp.go
 go/test/for.go
