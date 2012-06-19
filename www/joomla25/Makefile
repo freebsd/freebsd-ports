@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	joomla
-PORTVERSION=	2.5.4
+PORTVERSION=	2.5.5
 CATEGORIES=	www
-MASTER_SITES=	http://downloads.joomlacode.org/frsrelease/7/3/5/73507/
+MASTER_SITES=	http://downloads.joomlacode.org/frsrelease/7/4/6/74604/
 DISTNAME=	Joomla_${PORTVERSION}-Stable-Full_Package
 
 MAINTAINER=	scheidell@FreeBSD.org
@@ -19,7 +19,7 @@ LATEST_LINK=	joomla25
 NO_BUILD=	yes
 USE_MYSQL=	yes
 USE_PHP=	mysql pcre xml zlib session gd pdf json mbstring \
-		simplexml
+		simplexml zip mysqli
 WANT_PHP_WEB=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
@@ -36,6 +36,11 @@ do-install:
 	@cd ${WRKSRC} && \
 		${FIND} . \! -type d -exec ${INSTALL_DATA} {} ${WWWDIR}/{} \; \
 			-exec ${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}/{} \;
+
+# maintainer, run after make patch
+plist: patch
+	${FIND} ${WRKSRC} -type f | ${SORT} | ${SED} -e 's|^${WRKSRC}|%%WWWDIR%%|' > ./pkg-plist
+	${FIND} ${WRKSRC} -type d | ${SORT} -fr | ${SED} -e 's|^${WRKSRC}|@dirrm %%WWWDIR%%|' >> ./pkg-plist
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
