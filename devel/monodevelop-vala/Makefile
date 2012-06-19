@@ -20,6 +20,8 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/monodevelop.pc:${PORTSDIR}/devel/mon
 		valac:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	afrodite-0.12:${PORTSDIR}/devel/vtg
 
+BROKEN=		does not build
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
