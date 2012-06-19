@@ -30,7 +30,11 @@ ACTUAL-PACKAGE-DEPENDS?= \
 .if !target(fake-pkg)
 fake-pkg:
 .if !defined(NO_PKG_REGISTER)
+.if defined(INSTALLS_DEPENDS)
+	@${ECHO_MSG} "===>   Registering installation for ${PKGNAME} as automatic"
+.else
 	@${ECHO_MSG} "===>   Registering installation for ${PKGNAME}"
+.endif
 	@${MKDIR} ${METADIR}
 	@${ECHO_CMD} "name: ${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}" > ${MANIFESTF} 
 	@${ECHO_CMD} "version: ${PKGVERSION}" >> ${MANIFESTF} 
