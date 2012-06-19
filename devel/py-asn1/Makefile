@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asn1
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
@@ -18,7 +18,6 @@ MAINTAINER=	mhjacks@swbell.net
 COMMENT=	ASN.1 toolkit for Python
 
 LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # Python3 ready
 USE_PYTHON=		yes
@@ -33,8 +32,10 @@ BASEDOCS=	CHANGES \
 
 DOCDOCS=	pyasn1-tutorial.html
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for f in ${BASEDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
