@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libpcap
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tcpdump.org/release/
 
@@ -113,16 +113,25 @@ PLIST_FILES+=	bin/pcap-config \
 		lib/libpcap.so
 PLIST_DIRS+=	include/pcap
 
-.if !defined(WITHOUT_IPV6)
+OPTIONS_DEFINE=	DAG IPV6
+
+DAG_DESC=	Support for Endace DAG hardware
+
+OPTIONS_DEFAULT=	IPV6
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
-.if !defined(WITH_DAG)
-CONFIGURE_ARGS+=	--without-dag
-.else
+.if ${PORT_OPTIONS:MDAG}
 LDFLAGS+=	-L${LOCALBASE}/lib
+.else
+CONFIGURE_ARGS+=	--without-dag
 .endif
 
+# Maybe make this into an OPTION?
 .if defined(LIBPCAP_OVERWRITE_BASE)
 post-install:
 	${CAT} ${PKGMESSAGE}
