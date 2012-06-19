@@ -7,6 +7,7 @@
 
 PORTNAME=	ImageMagick
 DISTVERSION=	6.7.7-7
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		http://image_magick.veidrodis.com/image_magick/ \
@@ -47,7 +48,7 @@ OPTIONS=\
 	IMAGEMAGICK_FONTCONFIG	"Fontconfig support" on \
 	IMAGEMAGICK_FPX		"FPX format support" on \
 	IMAGEMAGICK_GSLIB	"libgs (Postscript SHLIB) support" off \
-	IMAGEMAGICK_HDRI	"High dynamic range images support" on \
+	IMAGEMAGICK_HDRI	"High dynamic range images support" off \
 	IMAGEMAGICK_JBIG	"JBIG format support" on \
 	IMAGEMAGICK_JPEG	"JPG format support" on \
 	IMAGEMAGICK_JPEG2000	"JPEG2000 format support" on \
