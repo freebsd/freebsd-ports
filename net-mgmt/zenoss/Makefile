@@ -45,10 +45,8 @@ USE_AUTOTOOLS=	autoconf:env
 
 .if ${PORT_OPTIONS:MBASH}
 RUN_DEPENDS+=	bash>=4.1:${PORTSDIR}/shells/bash
-BUILD_DEPENDS+=	bash>=4.1:${PORTSDIR}/shells/bash
 .else
 RUN_DEPENDS+=	bash-static>=4.1:${PORTSDIR}/shells/bash-static
-BUILD_DEPENDS+=	bash-static>=4.1:${PORTSDIR}/shells/bash-static
 .endif
 
 USERS=		zenoss
@@ -93,9 +91,6 @@ do-build:
 	@${DO_NADA}
 
 do-install:
-.if !defined(PACKAGE_BUILDING)
-.SHELL:	path="${LOCALBASE}/bin/bash" unsetenv=true
-.endif
 # Integrated dependencies insist on using lib/pkgconfig -- instead of huge
 # patches, we'll symlink it temporarily
 	@${MKDIR} ${ZENHOME}/lib \
