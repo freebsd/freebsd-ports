@@ -20,17 +20,26 @@ LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
 
-MAN1=		perlpodstyle.1
 MAN3=		Pod::Man.3 Pod::ParseLink.3 Pod::Text.3 Pod::Text::Color.3 \
 		Pod::Text::Overstrike.3 Pod::Text::Termcap.3
 
 post-patch:
-	${REINPLACE_CMD} -e '/pod2text/d;s/man1pod.*pod2man.*//' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501001
 RUN_DEPENDS+=	p5-Pod-Simple>=3.06:${PORTSDIR}/textproc/p5-Pod-Simple
+.endif
+
+.if ${PERL_LEVEL} < 501400
+MAN1=		perlpodstyle.1
+.endif
+
+post-patch:
+.if ${PERL_LEVEL} < 501400
+	${REINPLACE_CMD} -e '/pod2text/d;s/man1pod.*pod2man.*//' ${WRKSRC}/Makefile.PL
+.else
+	${REINPLACE_CMD} -e "/man1pod (/d;/EXE_FILES/d" ${WRKSRC}/Makefile.PL
 .endif
 
 .include <bsd.port.post.mk>
