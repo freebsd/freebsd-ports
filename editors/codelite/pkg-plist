@@ -1,12 +1,15 @@
 bin/codelite
+%%CLANG%%bin/codelite-clang
 bin/codelite_cppcheck
 bin/codelite_exec
 bin/codelite_fix_files
 bin/codelite_indexer
 bin/codelite_kill_children
 bin/codelite_xterm
+%%DATADIR%%/LICENSE
 %%DATADIR%%/astyle.sample
 %%DATADIR%%/codelite-icons.zip
+%%DATADIR%%/codelite-icons-fresh-farm.zip
 %%DATADIR%%/config/accelerators.conf.default
 %%DATADIR%%/config/build_settings.xml.default
 %%DATADIR%%/config/codelite.xml.default
@@ -23,6 +26,7 @@ bin/codelite_xterm
 %%DATADIR%%/index.html
 %%DATADIR%%/lexers/lexers_black.xml
 %%DATADIR%%/lexers/lexers_default.xml
+%%DATADIR%%/plugins/CallGraph.so
 %%DATADIR%%/plugins/CodeFormatter.so
 %%DATADIR%%/plugins/ContinuousBuild.so
 %%DATADIR%%/plugins/Copyright.so
