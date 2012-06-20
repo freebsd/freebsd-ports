@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+bin/lcfg
+include/lcfg/lcfg.h
+include/lcfgx/lcfgx_tree.h
+lib/liblcfg.so.1
+lib/liblcfg.so
+lib/liblcfg.la
+lib/liblcfg.a
+@dirrm include/lcfgx
+@dirrm include/lcfg
