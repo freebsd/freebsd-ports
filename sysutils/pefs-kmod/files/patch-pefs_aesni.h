@@ -9,9 +9,9 @@
  #include <crypto/aesni/aesni.h>
  
  struct pefs_aesni_ctx {
-@@ -41,3 +43,5 @@ struct pefs_aesni_ses {
+@@ -41,3 +43,5 @@
+ 	u_int			fpu_cpuid;
+ 	int			fpu_saved;
  };
- 
- algop_init_t	pefs_aesni_init;
 +
 +#endif
