@@ -119,6 +119,8 @@
 # conflicts with other ports which installed these:
 #  WITHOUT_MUTT_MAILBOX_MANPAGES
 #
+# Use CFLAGS_ADD and LDFLAGS_ADD to append additional CLFAGS and LDFLAGS.
+#
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.21
@@ -421,6 +423,8 @@ USE_KRB5_SYS=YES
 .endif
 .endif
 LDFLAGS+=		-L${LOCALBASE}/lib -rpath=${LOCALBASE}/lib:/usr/lib
+CFLAGS+=		${CFLAGS_ADD}
+LDFLAGS+=		${LDFLAGS_ADD}
 .if defined(WITH_MUTT_SMTP)
 CONFIGURE_ARGS+=	--enable-smtp
 .else
