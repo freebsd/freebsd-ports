@@ -50,7 +50,7 @@ USE_LDCONFIG=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} >= 501400
-IGNORE=         does not build with Perl 5.14+
+IGNORE=		does not build with Perl 5.14+
 .endif
 
 .if !defined(DISABLE_MAKE_JOBS)
