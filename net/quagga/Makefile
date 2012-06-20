@@ -149,7 +149,8 @@ pre-everything::
 	@${ECHO} "LOCALSTATE_DIR    Specify directory for Quagga runtime files"
 
 post-install:
-	@${MKDIR} ${LOCALSTATE_DIR}
+	@${MKDIR} -p ${LOCALSTATE_DIR}
+	@${MKDIR} -p ${SYSCONF_DIR}
 	@${CHOWN} -R ${ENABLE_USER}:${ENABLE_GROUP} ${LOCALSTATE_DIR} \
 		${SYSCONF_DIR}
 	@${CAT} ${PKGMESSAGE}
