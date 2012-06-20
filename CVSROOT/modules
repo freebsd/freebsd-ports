@@ -185,7 +185,6 @@ Hermes                          ports/graphics/Hermes
 HeroesOfMightAndMagic           ports/games/HeroesOfMightAndMagic
 IMHear                          ports/security/IMHear
 IPA                             ports/graphics/IPA
-IglooFTP                        ports/ftp/IglooFTP
 ImageMagick                     ports/graphics/ImageMagick
 ImageMagick-nox11               ports/graphics/ImageMagick-nox11
 InsightToolkit                  ports/science/InsightToolkit
@@ -1058,6 +1057,7 @@ bibletime                       ports/misc/bibletime
 biblical-curse                  ports/misc/biblical-curse
 biblio-py                       ports/print/biblio-py
 bibtex2html                     ports/textproc/bibtex2html
+bibtexconv                      ports/converters/bibtexconv
 bibtool                         ports/textproc/bibtool
 bibutils                        ports/textproc/bibutils
 bibview                         ports/print/bibview
@@ -6075,7 +6075,6 @@ ifxetex                         ports/print/ifxetex
 igal                            ports/www/igal
 igal2                           ports/www/igal2
 igbinary                        ports/converters/igbinary
-iglooftp                        ports/ftp/IglooFTP
 igmpproxy                       ports/net/igmpproxy
 igor                            ports/textproc/igor
 igraph                          ports/math/igraph
@@ -27404,6 +27403,7 @@ vdr                             ports/multimedia/vdr
 vdr-plugin-control              ports/multimedia/vdr-plugin-control
 vdr-plugin-eepg                 ports/multimedia/vdr-plugin-eepg
 vdr-plugin-epgsearch            ports/multimedia/vdr-plugin-epgsearch
+vdr-plugin-extrecmenu           ports/multimedia/vdr-plugin-extrecmenu
 vdr-plugin-femon                ports/multimedia/vdr-plugin-femon
 vdr-plugin-infosatepg           ports/multimedia/vdr-plugin-infosatepg
 vdr-plugin-iptv                 ports/multimedia/vdr-plugin-iptv
