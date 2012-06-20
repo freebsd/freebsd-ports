@@ -23,7 +23,6 @@ RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
-USE_LIBTOOL=	yes
 
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
