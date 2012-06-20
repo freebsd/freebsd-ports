@@ -15,7 +15,7 @@ MASTER_SITES=	http://ftp.fox-toolkit.org/pub/ \
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Fast and extensive C++ GUI toolkit -- devel version
 
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+LIB_DEPENDS=	Xft:${PORTSDIR}/x11-fonts/libXft
 
 CONFLICTS=	fox-1.4.* fox-1.6.*
 
@@ -30,6 +30,7 @@ MAJORVER=	${PORTVERSION:R}
 PLIST_SUB+=	MAJORVER=${MAJORVER}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${MAJORVER}
 
+USE_GCC=	4.4+
 USE_GL=		glut
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
@@ -52,7 +53,7 @@ BROKEN=		does not build
 .if defined(WITHOUT_JPEG)
 CONFIGURE_ARGS+=--disable-jpeg
 .else
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
 .endif
 
 .if defined(WITHOUT_PNG)
@@ -64,18 +65,15 @@ LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 .if defined(WITHOUT_TIFF)
 CONFIGURE_ARGS+=--disable-tiff
 .else
-LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS+=	tiff:${PORTSDIR}/graphics/tiff
 .endif
 
 .if defined(WITHOUT_WEBP)
 CONFIGURE_ARGS+=--disable-webp
 .else
-LIB_DEPENDS+=	webp.2:${PORTSDIR}/graphics/webp
+LIB_DEPENDS+=	webp:${PORTSDIR}/graphics/webp
 .endif
 
-.if ${ARCH} == "amd64" && ${OSVERSION} < 900000
-BROKEN=		does not build on amd64
-.endif
 .if ${ARCH} == "powerpc"
 BROKEN=		Does not link on powerpc
 .endif
