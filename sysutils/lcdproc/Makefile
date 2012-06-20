@@ -33,9 +33,12 @@ MAN1=		lcdexec.1 lcdproc.1
 MAN5=		lcdproc-config.5
 MAN8=		LCDd.8
 
-OPTIONS=	USB "Enable USB support" off \
-		LIBFTDI "Enable libftdi support (requires USB)" off \
-		LIBHID "Enable libhid support (requires USB)" off
+OPTIONS_DEFINE=	USB FTDI HID
+USB_DESC=	Enable USB support
+FTDI_DESC=	Enable libftdi support (requires USB)
+HID_DESC=	Enable libhid support (requires USB)
+OPTIONS_DEFAULT=USB
+NO_OPTIONS_SORT=yes
 
 # Empty args to aclocal required!
 ACLOCAL_ARGS=
@@ -73,7 +76,7 @@ LCDPROC_DRIVERS=bayrad \
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_USB)
+.if ${PORT_OPTIONS:MUSB}
 . if ${OSVERSION} < 800069
 LIB_DEPENDS+=		usb-0.1.8:${PORTSDIR}/devel/libusb
 CONFIGURE_ARGS+=	--with-libusb
@@ -85,7 +88,7 @@ LCDPROC_DRIVERS+=IOWarrior \
 		picolcd \
 		shuttleVFD
 
-. if defined(WITH_LIBFTDI)
+. if ${PORT_OPTIONS:MFTDI}
 LIB_DEPENDS+=		ftdi.19:${PORTSDIR}/devel/libftdi
 CONFIGURE_ARGS+=	--enable-libftdi
 PLIST_SUB+=		FTDI=""
@@ -97,7 +100,7 @@ CONFIGURE_ARGS+=	--disable-libftdi
 PLIST_SUB+=		FTDI="@comment "
 . endif
 
-. if defined(WITH_LIBHID)
+. if ${PORT_OPTIONS:MHID}
 LIB_DEPENDS+=		hid:${PORTSDIR}/devel/libhid
 CONFIGURE_ARGS+=	--enable-libhid
 PLIST_SUB+=		HID=""
