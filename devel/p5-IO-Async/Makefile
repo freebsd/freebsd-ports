@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-Async
-PORTVERSION=	0.49
+PORTVERSION=	0.50
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PEVANS
@@ -20,10 +20,8 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Async-MergePoint>=0.03:${PORTSDIR}/devel/p5-Async-MergePoint \
 		p5-CPS>=0:${PORTSDIR}/devel/p5-CPS \
-		p5-Heap>=0.80:${PORTSDIR}/devel/p5-Heap \
 		p5-Socket>=1.95:${PORTSDIR}/net/p5-Socket
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Identity>=0:${PORTSDIR}/devel/p5-Test-Identity \
 		p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod \
@@ -37,6 +35,7 @@ MAN3=		IO::Async.3 \
 		IO::Async::ChildManager.3 \
 		IO::Async::Connector.3 \
 		IO::Async::DetachedCode.3 \
+		IO::Async::File.3 \
 		IO::Async::FileStream.3 \
 		IO::Async::Function.3 \
 		IO::Async::Handle.3 \

@@ -3,6 +3,7 @@
 %%SITE_PERL%%/IO/Async/ChildManager.pm
 %%SITE_PERL%%/IO/Async/Connector.pm
 %%SITE_PERL%%/IO/Async/DetachedCode.pm
+%%SITE_PERL%%/IO/Async/File.pm
 %%SITE_PERL%%/IO/Async/FileStream.pm
 %%SITE_PERL%%/IO/Async/Function.pm
 %%SITE_PERL%%/IO/Async/Handle.pm
