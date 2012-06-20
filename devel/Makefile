@@ -910,6 +910,7 @@
     SUBDIR += libjson++
     SUBDIR += libk8055
     SUBDIR += liblas
+    SUBDIR += liblcfg
     SUBDIR += libleaftag
     SUBDIR += liblogging
     SUBDIR += liblouis
