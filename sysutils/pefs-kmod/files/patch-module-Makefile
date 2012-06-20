@@ -1,6 +1,6 @@
 --- sys/modules/pefs/Makefile.orig
 +++ sys/modules/pefs/Makefile
-@@ -8,12 +8,12 @@
+@@ -8,7 +8,7 @@
  	pefs_dircache.c \
  	pefs_xts.c vmac.c
  
@@ -9,9 +9,3 @@
  SRCS+=	pefs_aesni.c
  CFLAGS+= -DPEFS_AESNI
  .endif
- 
--DEBUG_FLAGS+= -g
-+#DEBUG_FLAGS+= -g
- #DEBUG_FLAGS+= -DPEFS_DEBUG
- #DEBUG_FLAGS+= -DPEFS_DEBUG_EXTRA
- 
