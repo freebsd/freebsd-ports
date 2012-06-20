@@ -1,13 +1,7 @@
---- scripts/makefile.freebsd.orig	2011-01-06 14:02:38.000000000 +0100
-+++ scripts/makefile.freebsd	2011-01-07 11:16:17.000000000 +0100
-@@ -11,17 +11,17 @@
- LIB=		png
- SHLIB_MAJOR=	${SHLIB_VER}
- SHLIB_MINOR=	0
--NOPROFILE=	YES
--NOOBJ=          YES
-+NO_PROFILE=	YES
-+NO_OBJ=		YES
+--- scripts/makefile.freebsd.orig	2012-06-14 13:28:01.000000000 +0200
++++ scripts/makefile.freebsd	2012-06-20 21:11:47.000000000 +0200
+@@ -15,13 +15,13 @@
+ NO_OBJ=          YES
  
  # where make install puts libpng.a and png.h
 -DESTDIR=	${PREFIX}
@@ -24,7 +18,7 @@
  SYMLINKS=       libpng/png.h ${INCSDIR}/../png.h \
  		libpng/pngconf.h ${INCSDIR}/../pngconf.h \
  		libpng/pnglibconf.h ${INCSDIR}/../pnglibconf.h
-@@ -50,4 +50,22 @@
+@@ -53,4 +53,22 @@
  writelock:
  	chmod a-w *.[ch35] $(DOCS) scripts/*
  

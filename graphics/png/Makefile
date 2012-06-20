@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	png
-PORTVERSION=	1.5.10
+PORTVERSION=	1.5.11
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lib${PORTNAME}/lib${PORTNAME}15/${PORTVERSION}
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
@@ -79,6 +79,6 @@ post-install:
 	${RM} ${PREFIX}/libdata/pkgconfig/libpng.pc
 	${LN} -sf libpng15.pc ${PREFIX}/libdata/pkgconfig/libpng.pc
 	${RM} ${PREFIX}/lib/libpng15.so.15
-	${MV} ${PREFIX}/lib/libpng15.so.15.10 ${PREFIX}/lib/libpng15.so.15
+	${MV} ${PREFIX}/lib/libpng15.so.15.11 ${PREFIX}/lib/libpng15.so.15
 
 .include <bsd.port.post.mk>
