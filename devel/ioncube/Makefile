@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ioncube
-DISTVERSION=	4.2.0
+DISTVERSION=	4.2.1
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads2.ioncube.com/loader_downloads/ \
 		http://ls.fvds.ru/ioncube/${DISTVERSION}/
