@@ -1,5 +1,5 @@
 # New ports collection makefile for:	syslog-ng
-# Date created:		10 november 1006
+# Date created:		10 November 2006
 # Whom:			Ivan Lago <ivan.lago@ifom-ieo-campus.it>
 #
 # $FreeBSD$
@@ -7,7 +7,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.4.0a2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 DISTVERSION=	$(PORTVERSION:S/a/alpha/)
@@ -40,6 +40,7 @@ MAN1=		loggen.1 pdbtool.1 syslog-ng-ctl.1
 MAN5=		syslog-ng.conf.5
 MAN8=		syslog-ng.8
 
+USE_LDCONFIG=	yes
 USE_RC_SUBR=	syslog-ng.sh
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -47,27 +48,25 @@ USE_GNOME=	glib20 gnomehack
 SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
-		--enable-dynamic-linking --with-libnet=${LOCALBASE}/bin \
+		--enable-dynamic-linking
 		--enable-debug
-CFLAGS+=	`${LIBNET_CONFIG} --cflags` -I${LOCALBASE}/include
-LDFLAGS+=	`${LIBNET_CONFIG} --libs`
 
 .if defined(WITH_SYS_SSL) && defined(WITH_PORTS_SSL)
 BROKEN=		SYS_SSL and PORTS_SSL are mutually exclusive
 .endif
 
 .if defined(WITH_SYS_SSL) || defined(WITH_PORTS_SSL)
-USE_OPENSSL=            yes
-CONFIGURE_ARGS+=        --enable-ssl
-CONFIGURE_ENV+=         OPENSSL_CFLAGS="${OPENSSL_CFLAGS}" \
+USE_OPENSSL=		yes
+CONFIGURE_ARGS+=	--enable-ssl
+CONFIGURE_ENV+=		OPENSSL_CFLAGS="${OPENSSL_CFLAGS}" \
 			OPENSSL_LIBS="${OPENSSL_LDFLAGS} -lcrypto -lssl"
-PLIST_FILES+=           lib/syslog-ng/libafsocket-tls.la lib/syslog-ng/libafsocket-tls.so
+PLIST_FILES+=		lib/syslog-ng/libafsocket-tls.la lib/syslog-ng/libafsocket-tls.so
 .else
-CONFIGURE_ARGS+=        --disable-ssl
+CONFIGURE_ARGS+=	--disable-ssl
 .endif
 
 .if defined(WITH_PORTS_SSL)
-WITH_OPENSSL_PORT=      yes
+WITH_OPENSSL_PORT=	yes
 .endif
 
 .include <bsd.port.pre.mk>
@@ -81,7 +80,9 @@ CONFIGURE_ARGS+=	--disable-tcp-wrapper
 .if defined(WITH_SPOOF)
 BUILD_DEPENDS=		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet-devel
 LIBNET_CONFIG?=		${LOCALBASE}/bin/libnet115-config
-CONFIGURE_ARGS+=	--enable-spoof-source
+CONFIGURE_ARGS+=	--enable-spoof-source --with-libnet=${LOCALBASE}/bin \
+CFLAGS+=		`${LIBNET_CONFIG} --cflags` -I${LOCALBASE}/include
+LDFLAGS+=		`${LIBNET_CONFIG} --libs`
 .else
 CONFIGURE_ARGS+=	--disable-spoof-source
 .endif
@@ -122,11 +123,11 @@ BROKEN=		JSON_C and JSON_GLIB are mutually exclusive
 
 .if defined(WITH_JSON_GLIB)
 LIB_DEPENDS+=		json-glib-1.0.0:${PORTSDIR}/devel/json-glib
-CONFIGURE_ARGS+=        --with-json=json-glib
+CONFIGURE_ARGS+=	--with-json=json-glib
 PLIST_FILES+=		lib/syslog-ng/libtfjson.la lib/syslog-ng/libtfjson.so
 .elif defined(WITH_JSON_C)
 LIB_DEPENDS+=		json.0:${PORTSDIR}/devel/json-c
-CONFIGURE_ARGS+=        --with-json=json-c
+CONFIGURE_ARGS+=	--with-json=json-c
 PLIST_FILES+=		lib/syslog-ng/libtfjson.la lib/syslog-ng/libtfjson.so
 PLIST_FILES+= 		lib/syslog-ng/libjsonparser.so lib/syslog-ng/libjsonparser.la
 .else
@@ -152,7 +153,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} \
 			${PREFIX}/share/doc/syslog-ng \
-			${PREFIX}/share/doc/syslog-ng/sgml
+			${PREFIX}/share/doc/syslog-ng
 	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${PREFIX}/share/doc/syslog-ng
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/syslog-ng
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${PREFIX}/share/doc/syslog-ng
