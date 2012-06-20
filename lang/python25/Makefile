@@ -70,8 +70,9 @@ PLIST_SUB+=	IF_DEFAULT="@comment "
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
-LDFLAGS+=	"-L${LOCALBASE}/lib"
-CFLAGS+=	"-I${LOCALBASE}/include"
+# XXX do not set any LDFLAGS or CFLAGS - this causes pyexpat to fail building
+#LDFLAGS+=	"-L${LOCALBASE}/lib"
+#CFLAGS+=	"-I${LOCALBASE}/include"
 .else
 CONFIGURE_ENV+=	ac_cv_lib_intl_textdomain=no ac_cv_header_libintl_h=no
 .endif
