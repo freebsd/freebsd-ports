@@ -10,7 +10,7 @@ PORTVERSION=	2.33
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}nam/${PORTNAME}-2/${PORTVERSION}
 
-MAINTAINER=	lstewart@FreeBSD.org
+MAINTAINER=	masaki@club.kyutech.ac.jp
 COMMENT=	Discrete event simulator for networking research
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtclcl.a:${PORTSDIR}/devel/tclcl
