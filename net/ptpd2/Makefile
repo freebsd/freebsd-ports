@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	ptpd
-DISTVERSION=	2.2.0
+DISTVERSION=	2.2.2
 CATEGORIES=	net
 MASTER_SITES=	SF
-CONFLICTS=	ptpd-2.r.*
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Implementation of the precision time protocol IEEE 1588-2008
 
 LICENSE=	BSD
+
+CONFLICTS=	ptpd-2.r.*
 
 WRKSRC=		${WRKDIR}/ptpd-${DISTVERSION}/src
 
