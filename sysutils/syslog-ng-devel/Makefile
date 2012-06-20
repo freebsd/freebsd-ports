@@ -48,7 +48,7 @@ USE_GNOME=	glib20 gnomehack
 SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
-		--enable-dynamic-linking
+		--enable-dynamic-linking \
 		--enable-debug
 
 .if defined(WITH_SYS_SSL) && defined(WITH_PORTS_SSL)
