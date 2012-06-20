@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	klayout
-PORTVERSION=	0.21.11
-PORTREVISION=	1
+PORTVERSION=	0.21.19
 CATEGORIES=	cad
 MASTER_SITES=	http://www.klayout.de/
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A Qt-based GDS2 Viewer
+
+LICENSE=	GPLv2
 
 USE_GMAKE=	yes
 USE_QT4=	corelib gui network moc_build sql uic_build \
@@ -38,7 +39,7 @@ do-build:
 
 do-install:
 	cd ${WRKSRC}/bin.${PLATFORMKEYWORD} && \
-		${INSTALL_PROGRAM} ${PLIST_FILES:S,^bin/,,} \
+		${INSTALL_PROGRAM} ${PLIST_FILES:Mbin/*:S,^bin/,,} \
 		${PREFIX}/bin
 
 .include <bsd.port.pre.mk>
