@@ -391,8 +391,6 @@
     SUBDIR += libsmf
     SUBDIR += libsndfile
     SUBDIR += libtremor
-    SUBDIR += libtunepimp
-    SUBDIR += libtunepimp-old
     SUBDIR += libumidi
     SUBDIR += libvorbis
     SUBDIR += libworkman
