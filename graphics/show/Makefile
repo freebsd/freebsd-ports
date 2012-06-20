@@ -21,8 +21,6 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg	\
 		gif.5:${PORTSDIR}/graphics/giflib	\
 		Imlib.5:${PORTSDIR}/graphics/imlib
 
-BROKEN=		does not compile
-
 PLIST_FILES=	bin/show
 
 post-extract:
