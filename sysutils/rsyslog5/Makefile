@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsyslog
-PORTVERSION=	5.8.6
+PORTVERSION=	5.8.12
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 .ifdef MNAME
@@ -27,16 +27,17 @@ LATEST_LINK=	rsyslog5
 PORTSCOUT=	limit:^5.6
 
 .ifdef WITH_MYSQL_MICROSECONDS
-EXTRA_PATCHES+= ${FILESDIR}/extra-patch-mysql-microseconds
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-mysql-microseconds
 .endif
 
 .ifdef WITH_SANE_HOSTNAME
-EXTRA_PATCHES+= ${FILESDIR}/extra-patch-sane-hostname
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-sane-hostname
 .endif
 
 CONFLICTS=	rsyslog-[!5].[!5].[0-9]*
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+USE_LDCONFIG=	${PREFIX}/lib/rsyslog
 GNU_CONFIGURE=	yes
 
 OPTIONS=	DEBUG	"Enable debugging"	off
