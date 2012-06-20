@@ -17,19 +17,23 @@ COMMENT=	A small, fast Emacs-like editor
 MAN1=	mg.1
 MANCOMPRESSED=	no
 
+PLIST_FILES=	bin/mg
+PORTDOCS=	README tutorial
+
 HAS_CONFIGURE=	yes
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|-Wno-error=unused-but-set-variable||g' \
+		-e '/^CC=/d' -e 's|-g -Wall|-Wall|' -e 's|/usr/local|${PREFIX}|' \
 		${WRKSRC}/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN}  ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN}  ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for FILE in README tutorial
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
