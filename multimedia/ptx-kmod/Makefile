@@ -17,6 +17,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Device driver for PT1/PT2 ISDB-S/T tuner cards
 
 LICENSE=	GPLv3
+
 ONLY_FOR_ARCHS=	amd64 i386
 BUILD_WRKSRC=	${WRKSRC}/dev/ptx
 MAKE_ENV=	KMODDIR=${PREFIX}/${KMODDIR} SYSDIR=${SYSDIR}
@@ -26,10 +27,11 @@ SUB_LIST=	KMODDIR=${KMODDIR}
 USE_RC_SUBR=	ptx.sh
 PORTDOCS=	README
 
+.include <bsd.port.pre.mk>
+
 KMODDIR=	libexec/${PORTNAME}
 SYSDIR?=	${SRC_BASE}/sys
 
-.include <bsd.port.pre.mk>
 KERNCONF?=	GENERIC
 
 # Use the first component of ${KERNCONF}.
