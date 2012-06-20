@@ -20,7 +20,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 PLIST_FILES=	bin/acroread8 bin/acroread9 bin/acroread \
 		${KMODDIR}/linux_adobe.ko
 PLIST_DIRS=	${KMODDIR}
-SUB_FILES=	acroread 
+SUB_FILES=	acroread
 SUB_LIST=	ACROBASE8=${ACROBASE8} \
 		ACROBASE9=${ACROBASE9} \
 		ADOBE_LANG=${ADOBE_LANG:U} \
@@ -30,6 +30,9 @@ SUB_LIST=	ACROBASE8=${ACROBASE8} \
 		PLUGINDIR=${PLUGINDIR} \
 		KMODDIR=${KMODDIR}
 USE_RC_SUBR=	linux_adobe.sh
+
+.include <bsd.port.pre.mk>
+
 MAKE_ENV=	KMODDIR=${KMODDIR} SYSDIR=${SRC_BASE}/sys DESTDIR=${PREFIX}/
 
 ADOBEBASE=	Adobe
@@ -38,7 +41,6 @@ ACROBASE9=	${ADOBEBASE}/Reader9
 PLUGINDIR=	lib/npapi/linux-acroread
 KMODDIR=	libexec/linux_adobe
 
-.include <bsd.port.pre.mk>
 KERNCONF?=	GENERIC
 
 # Use the first component of ${KERNCONF}.
