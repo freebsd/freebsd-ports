@@ -17,8 +17,6 @@ DIST_SUBDIR=	KDE/extragear
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE image viewer
 
-BROKEN=		does not compile
-
 USE_BZIP2=	yes
 USE_GNOME=	imlib
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
