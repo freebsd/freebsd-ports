@@ -79,6 +79,10 @@ PLIST_SUB+=	MURDER="@comment "
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_LEVEL} >= 501400
+IGNORE=		does not build with Perl 5.14+, use mail/cyrus-imapd23 instead
+.endif
+
 CYRUS_USER?=	cyrus
 CYRUS_GROUP?=	cyrus
 

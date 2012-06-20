@@ -56,6 +56,10 @@ PASS8BITHACK_DESC=	Add pass8bit option (not recommended)
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_LEVEL} >= 501400
+IGNORE=		does not build with Perl 5.14+, use mail/cyrus-imapd23 instead 
+.endif
+
 .if ${PORT_OPTIONS:MNNTP}
 CONFIGURE_ARGS+=--enable-nntp
 PLIST_SUB+=	NNTP=""
