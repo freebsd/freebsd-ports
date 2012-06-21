@@ -68,7 +68,7 @@ LATEST_LINK=	sage-math	# Conflicts with graphics/sage.
 MAKE_ARGS+=	ARCH="${AR}"
 
 post-patch:
-# Create the wrappers for the compiler invokations.
+# Create the wrappers for the compiler invocations.
 	@${MKDIR} ${WRKSRC}/local/bin
 	@${LN} -s -f ${LOCALBASE}/bin/gmake ${WRKSRC}/local/bin/make
 	@${LN} -s -f ${LOCALBASE}/bin/bash ${WRKSRC}/local/bin/sh
