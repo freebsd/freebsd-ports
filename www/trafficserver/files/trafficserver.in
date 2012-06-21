@@ -9,13 +9,34 @@
 
 . /etc/rc.subr
 
+rcvar=trafficserver_enable
 name="trafficserver"
-pidfile="/var/run/${name}.pid"
-command="/usr/sbin/daemon -p ${pidfile} %%PREFIX%%/bin/traffic_server"
-procname="%%PREFIX%%/bin/traffic_server"
+trafficserver_enable=${trafficserver_enable:-"NO"}
+trafficserver_tm_pidfile=${trafficserver_tm_pidfile:-"/usr/local/var/trafficserver/manager.lock"}
+trafficserver_ts_pidfile=${trafficserver_ts_pidfile:-"/usr/local/var/trafficserver/server.lock"}
+pidfile="/var/run/traffic_cop.lock"
+stop_cmd="trafficserver_stop"
+command=/usr/sbin/daemon
+command_args="-p ${pidfile} %%PREFIX%%/bin/traffic_cop"
+procname="%%PREFIX%%/bin/traffic_cop"
+
+trafficserver_stop()
+{
+	if [ -f ${pidfile} ]; then
+		kill `cat ${pidfile}`
+		rm -f ${pidfile}
+	fi
+
+	if [ -f ${trafficserver_tm_pidfile} ]; then
+		kill `cat ${trafficserver_tm_pidfile}`
+		rm -f ${trafficserver_tm_pidfile}
+	fi
+
+	if [ -f ${trafficserver_ts_pidfile} ]; then
+		kill `cat ${trafficserver_ts_pidfile}`
+		rm -f ${trafficserver_ts_pidfile}
+	fi
+}
 
 load_rc_config "$name"
-
-: ${trafficserver_enable="NO"}
-
 run_rc_command "$1"
