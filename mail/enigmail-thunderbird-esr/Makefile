@@ -10,9 +10,6 @@ PKGNAMEPREFIX=	${GECKO}-esr-
 
 COMMENT=	A GnuPG extension for the Thunderbird mail client
 
-EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip \
-		yasm:${PORTSDIR}/devel/yasm
-
 MASTERDIR=	${.CURDIR}/../enigmail
 
 GECKO=		thunderbird

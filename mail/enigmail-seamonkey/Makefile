@@ -7,9 +7,6 @@
 
 COMMENT=	A GnuPG extension for the Seamonkey mail client
 
-EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip \
-		yasm:${PORTSDIR}/devel/yasm
-
 MASTERDIR=	${.CURDIR}/../enigmail
 
 GECKO=		seamonkey
