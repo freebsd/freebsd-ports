@@ -33,7 +33,7 @@ OPTIONS_DEFINE=	LDAP INSULTS DISABLE_ROOT_SUDO DISABLE_AUTH NOARGS_SHELL \
 		AUDIT OPIE NLS
 OPTIONS_DEFAULT=	AUDIT NLS
 
-INSULT_DESC=	Enable insults on failures
+INSULTS_DESC=	Enable insults on failures
 DISABLE_ROOT_SUDO_DESC=	Do not allow root to run sudo
 DISABLE_AUTH_DESC=	Do not require authentication by default
 NOARGS_SHELL_DESC=	Run a shell if no arguments are given
