@@ -16,7 +16,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Metaport for Etoile desktop
 
-DEPRECATED=	API no longer supported
+DEPRECATED=	Update to a new release is required
 EXPIRATION_DATE=	2012-07-20
 
 NO_BUILD=	yes
