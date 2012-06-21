@@ -19,10 +19,9 @@ COMMENT=	SMB/CIFS library written in Python
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1>=0:${PORTSDIR}/devel/py-asn1
 
-# It's actually python3 ready since 1.1.1, but there is package list problem
-# that I'm not sure how to solve right now. So let it stay stricted to 2.x.
-USE_PYTHON=	-2.7
-USE_PYDISTUTILS=	yes
+# Python3 ready
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	py${PORTNAME}
 
 DOCSDIR=	${PREFIX}/share/doc/py-smb
