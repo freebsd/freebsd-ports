@@ -636,9 +636,6 @@ bin/taskadmin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/sdb/db/manager/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/sdb/db/manager/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/sdb/db/manager/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/sdb/db/manager/pgmanager.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/sdb/db/manager/pgmanager.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/sdb/db/manager/pgmanager.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/sdb/db/manager/sdbmanager.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/sdb/db/manager/sdbmanager.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/sdb/db/manager/sdbmanager.pyo
