@@ -5,14 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	dlv
-PORTVERSION=	20071011
+PORTVERSION=	20111221
 CATEGORIES=	lang
-MASTER_SITES=	http://www.dbai.tuwien.ac.at/research/project/dlv/ \
-		http://www.dbai.tuwien.ac.at/proj/dlv/
+MASTER_SITES=	http://www.dlvsystem.com/dlvsystem/files/
 DISTNAME=	dlv.i386-linux-elf-static.bin
 EXTRACT_SUFX=
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Disjunctive Datalog System
 
 NO_BUILD=	yes
@@ -25,7 +24,7 @@ do-extract:
 	${MKDIR} ${WRKDIR}
 
 do-install:
-	${INSTALL_PROGRAM} ${DISTDIR}/${DISTNAME} ${PREFIX}/bin/dlv
+	${INSTALL_SCRIPT} ${DISTDIR}/${DISTNAME} ${PREFIX}/bin/dlv
 	${BRANDELF} -t Linux ${PREFIX}/bin/dlv
 
 .include <bsd.port.mk>
