@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	node
-PORTVERSION=	0.7.10
+PORTVERSION=	0.7.12
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	-devel
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	linpct@gmail.com
 COMMENT=	V8 javascript for client and server
 
-LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 
 MAN1=		node.1
 
@@ -30,14 +30,16 @@ ONLY_FOR_ARCHS=	i386 amd64
 MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} --without-npm
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
+REINPLACE_ARGS=	-i ''
 
 post-patch:
 	@${RM} ${WRKSRC}/tools/wafadmin/Node.py.orig
+	@${REINPLACE_CMD} -e 's|share/man/man1/|man/man1|' ${WRKSRC}/tools/installer.js
 
 post-install:
 	${MKDIR} ${PREFIX}/lib/node_modules/
 	${TOUCH} ${PREFIX}/lib/node_modules/.keepme
-	${INSTALL_MAN} ${WRKSRC}/doc/node.1 ${MANPREFIX}/man/man1/
+	${CHMOD} ${MANMODE} ${PREFIX}/man/man1/node.1
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Note: If you need npm (Node Package Manager), please install www/npm."
 	@${ECHO_MSG}
