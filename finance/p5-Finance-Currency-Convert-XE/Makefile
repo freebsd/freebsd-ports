@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Finance-Currency-Convert-XE
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,16 +20,19 @@ RUN_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-WWW-Mechanize>=1.60:${PORTSDIR}/www/p5-WWW-Mechanize
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
+OPTIONS_DEFINE=	DOCS
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Finance::Currency::Convert::XE.3
-
-.if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README
 
+.include <bsd.port.options.mk>
+
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
