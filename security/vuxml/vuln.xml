@@ -1125,7 +1125,7 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>The release of PHP 5.4.13 and 5.4.3 complete a fix for the
 	     vulnerability in CGI-based setups as originally described in
 	     CVE-2012-1823.  (CVE-2012-2311)</p>
-	  <p>Note: mod_php and php-fqm are not vulnerable to this attack.</p>
+	  <p>Note: mod_php and php-fpm are not vulnerable to this attack.</p>
 	  <p>PHP 5.4.3 fixes a buffer overflow vulnerability in the
 	     apache_request_headers() (CVE-2012-2329).</p>
 	</blockquote>
