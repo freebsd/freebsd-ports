@@ -1278,6 +1278,7 @@ bsdar                           ports/archivers/bsdar
 bsdbktr_tvtune                  ports/multimedia/bsdbktr_tvtune
 bsdbuild                        ports/devel/bsdbuild
 bsdcflow                        ports/devel/bsdcflow
+bsdconfig                       ports/sysutils/bsdconfig
 bsdconv                         ports/converters/bsdconv
 bsdcrashtar                     ports/sysutils/bsdcrashtar
 bsddiff                         ports/textproc/bsddiff
@@ -8154,6 +8155,7 @@ libkvkontakte                   ports/net/libkvkontakte
 liblas                          ports/devel/liblas
 liblastfm                       ports/audio/liblastfm
 liblbfgs                        ports/math/liblbfgs
+liblcfg                         ports/devel/liblcfg
 libleaftag                      ports/devel/libleaftag
 liblinear                       ports/science/liblinear
 liblinebreak                    ports/textproc/liblinebreak
@@ -8529,8 +8531,6 @@ libtranslate                    ports/textproc/libtranslate
 libtre                          ports/textproc/libtre
 libtremor                       ports/audio/libtremor
 libtsnnls                       ports/math/libtsnnls
-libtunepimp                     ports/audio/libtunepimp
-libtunepimp-old                 ports/audio/libtunepimp-old
 libtuner                        ports/multimedia/libtuner
 libublio                        ports/devel/libublio
 libudbc                         ports/databases/libudbc
@@ -10598,6 +10598,7 @@ octave-forge-informationtheory  ports/math/octave-forge-informationtheory
 octave-forge-integration        ports/math/octave-forge-integration
 octave-forge-io                 ports/math/octave-forge-io
 octave-forge-irsa               ports/math/octave-forge-irsa
+octave-forge-java               ports/math/octave-forge-java
 octave-forge-linear-algebra     ports/math/octave-forge-linear-algebra
 octave-forge-mapping            ports/math/octave-forge-mapping
 octave-forge-mechanics          ports/math/octave-forge-mechanics
@@ -26657,6 +26658,7 @@ timidity++-xskin                ports/audio/timidity++-xskin
 tin                             ports/news/tin
 tinc                            ports/security/tinc
 tinderbox-devel                 ports/ports-mgmt/tinderbox-devel
+tine20                          ports/deskutils/tine20
 tinker                          ports/biology/tinker
 tint                            ports/x11/tint
 tintfu                          ports/graphics/tintfu
