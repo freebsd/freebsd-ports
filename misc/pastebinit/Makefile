@@ -20,18 +20,20 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/pastebinit
 
-OPTIONS=	PASTEBINS	"Install default pastebins" on
+OPTIONS_DEFINE=	PASTEBINS
+PASTEBINS_DESC=	Install default pastebins
+OPTIONS_DEFAULT=	PASTEBINS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PASTEBINS)
+.if ${PORT_OPTIONS:MPASTEBINS}
 PORTDATA=	pastebin.d
 .endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-.if defined(WITH_PASTEBINS)
+.if ${PORT_OPTIONS:MPASTEBINS}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} pastebin.d ${DATADIR})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
