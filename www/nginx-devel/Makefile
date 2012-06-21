@@ -98,6 +98,7 @@ OPTIONS_DEFINE=	\
 	SRCACHE \
 	SUPERVISORD \
 	SYSLOG_SUPPORT \
+	TCP_PROXY \
 	UDPLOG \
 	XRID_HEADER \
 	XSS \
@@ -183,6 +184,7 @@ SLOWFS_CACHE_DESC=		3rd party slowfs_cache module
 SRCACHE_DESC=			3rd party srcache module
 SUPERVISORD_DESC=		3rd party supervisord module
 SYSLOG_SUPPORT_DESC=		3rd party syslog support
+TCP_PROXY_DESC=			3rd party tcp_proxy module
 UDPLOG_DESC=			3rd party udplog (syslog) module
 XRID_HEADER_DESC=		3rd party x-rid header module
 XSS_DESC=			3rd party xss module
@@ -726,6 +728,15 @@ CONFIGURE_ARGS+=--with-syslog --with-syslog-facility=${NGINX_SYSLOG_SUPPORT_FACI
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-syslog_support
 .endif
 
+.if ${PORT_OPTIONS:MTCP_PROXY}
+NGINX_TCP_PROXY_VERSION=	0.26
+GIT_TCP_PROXY_VERSION=	0-gb83e5a6
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/yaoweibin/nginx_tcp_proxy_module/tarball/v${NGINX_TCP_PROXY_VERSION}/:tcp_proxy
+DISTFILES+=	yaoweibin-nginx_tcp_proxy_module-v${NGINX_TCP_PROXY_VERSION}-${GIT_TCP_PROXY_VERSION}.tar.gz:tcp_proxy
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/yaoweibin-nginx_tcp_proxy_module-${GIT_TCP_PROXY_VERSION:S/^0-g//}
+.endif
+
 .if ${PORT_OPTIONS:MUDPLOG}
 NGINX_UDPLOG_VERSION=	1.0.0
 MASTER_SITES+=	http://www.grid.net.ru/nginx/download/:udplog
@@ -914,6 +925,11 @@ post-patch:
 	( cd ${WRKSRC} && \
 		${PATCH} -p0 < \
 			${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_VERSION}/patches/ngx_http_upstream_init_busy-0.8.17.patch )
+.endif
+.if ${PORT_OPTIONS:MTCP_PROXY}
+	( cd ${WRKSRC} && \
+		${PATCH} -p1 < \
+			${WRKDIR}/yaoweibin-nginx_tcp_proxy_module-${GIT_TCP_PROXY_VERSION:S/^0-g//}/tcp.patch )
 .endif
 .if ${PORT_OPTIONS:MICONV}
 	@${REINPLACE_CMD} \
