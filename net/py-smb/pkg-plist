@@ -1,72 +1,4 @@
-%%PYTHON_SITELIBDIR%%/nmb/NetBIOS.py
-%%PYTHON_SITELIBDIR%%/nmb/NetBIOS.pyc
-%%PYTHON_SITELIBDIR%%/nmb/NetBIOS.pyo
-%%PYTHON_SITELIBDIR%%/nmb/NetBIOSProtocol.py
-%%PYTHON_SITELIBDIR%%/nmb/NetBIOSProtocol.pyc
-%%PYTHON_SITELIBDIR%%/nmb/NetBIOSProtocol.pyo
-%%PYTHON_SITELIBDIR%%/nmb/__init__.py
-%%PYTHON_SITELIBDIR%%/nmb/__init__.pyc
-%%PYTHON_SITELIBDIR%%/nmb/__init__.pyo
-%%PYTHON_SITELIBDIR%%/nmb/base.py
-%%PYTHON_SITELIBDIR%%/nmb/base.pyc
-%%PYTHON_SITELIBDIR%%/nmb/base.pyo
-%%PYTHON_SITELIBDIR%%/nmb/nmb_constants.py
-%%PYTHON_SITELIBDIR%%/nmb/nmb_constants.pyc
-%%PYTHON_SITELIBDIR%%/nmb/nmb_constants.pyo
-%%PYTHON_SITELIBDIR%%/nmb/nmb_structs.py
-%%PYTHON_SITELIBDIR%%/nmb/nmb_structs.pyc
-%%PYTHON_SITELIBDIR%%/nmb/nmb_structs.pyo
-%%PYTHON_SITELIBDIR%%/nmb/utils.py
-%%PYTHON_SITELIBDIR%%/nmb/utils.pyc
-%%PYTHON_SITELIBDIR%%/nmb/utils.pyo
-%%PYTHON_SITELIBDIR%%/smb/SMBConnection.py
-%%PYTHON_SITELIBDIR%%/smb/SMBConnection.pyc
-%%PYTHON_SITELIBDIR%%/smb/SMBConnection.pyo
-%%PYTHON_SITELIBDIR%%/smb/SMBHandler.py
-%%PYTHON_SITELIBDIR%%/smb/SMBHandler.pyc
-%%PYTHON_SITELIBDIR%%/smb/SMBHandler.pyo
-%%PYTHON_SITELIBDIR%%/smb/SMBProtocol.py
-%%PYTHON_SITELIBDIR%%/smb/SMBProtocol.pyc
-%%PYTHON_SITELIBDIR%%/smb/SMBProtocol.pyo
-%%PYTHON_SITELIBDIR%%/smb/__init__.py
-%%PYTHON_SITELIBDIR%%/smb/__init__.pyc
-%%PYTHON_SITELIBDIR%%/smb/__init__.pyo
-%%PYTHON_SITELIBDIR%%/smb/base.py
-%%PYTHON_SITELIBDIR%%/smb/base.pyc
-%%PYTHON_SITELIBDIR%%/smb/base.pyo
-%%PYTHON_SITELIBDIR%%/smb/ntlm.py
-%%PYTHON_SITELIBDIR%%/smb/ntlm.pyc
-%%PYTHON_SITELIBDIR%%/smb/ntlm.pyo
-%%PYTHON_SITELIBDIR%%/smb/securityblob.py
-%%PYTHON_SITELIBDIR%%/smb/securityblob.pyc
-%%PYTHON_SITELIBDIR%%/smb/securityblob.pyo
-%%PYTHON_SITELIBDIR%%/smb/smb2_constants.py
-%%PYTHON_SITELIBDIR%%/smb/smb2_constants.pyc
-%%PYTHON_SITELIBDIR%%/smb/smb2_constants.pyo
-%%PYTHON_SITELIBDIR%%/smb/smb2_structs.py
-%%PYTHON_SITELIBDIR%%/smb/smb2_structs.pyc
-%%PYTHON_SITELIBDIR%%/smb/smb2_structs.pyo
-%%PYTHON_SITELIBDIR%%/smb/smb_constants.py
-%%PYTHON_SITELIBDIR%%/smb/smb_constants.pyc
-%%PYTHON_SITELIBDIR%%/smb/smb_constants.pyo
-%%PYTHON_SITELIBDIR%%/smb/smb_structs.py
-%%PYTHON_SITELIBDIR%%/smb/smb_structs.pyc
-%%PYTHON_SITELIBDIR%%/smb/smb_structs.pyo
-%%PYTHON_SITELIBDIR%%/smb/utils/U32.py
-%%PYTHON_SITELIBDIR%%/smb/utils/U32.pyc
-%%PYTHON_SITELIBDIR%%/smb/utils/U32.pyo
-%%PYTHON_SITELIBDIR%%/smb/utils/__init__.py
-%%PYTHON_SITELIBDIR%%/smb/utils/__init__.pyc
-%%PYTHON_SITELIBDIR%%/smb/utils/__init__.pyo
-%%PYTHON_SITELIBDIR%%/smb/utils/md4.py
-%%PYTHON_SITELIBDIR%%/smb/utils/md4.pyc
-%%PYTHON_SITELIBDIR%%/smb/utils/md4.pyo
-%%PYTHON_SITELIBDIR%%/smb/utils/pyDes.py
-%%PYTHON_SITELIBDIR%%/smb/utils/pyDes.pyc
-%%PYTHON_SITELIBDIR%%/smb/utils/pyDes.pyo
-%%PYTHON_SITELIBDIR%%/smb/utils/sha256.py
-%%PYTHON_SITELIBDIR%%/smb/utils/sha256.pyc
-%%PYTHON_SITELIBDIR%%/smb/utils/sha256.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 %%PORTDOCS%%%%DOCSDIR%%/_modules/index.html
 %%PORTDOCS%%%%DOCSDIR%%/_modules/nmb/NetBIOS.html
 %%PORTDOCS%%%%DOCSDIR%%/_modules/nmb/NetBIOSProtocol.html
@@ -114,6 +46,3 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/_modules/nmb
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/_modules
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/smb/utils
-@dirrm %%PYTHON_SITELIBDIR%%/smb
-@dirrm %%PYTHON_SITELIBDIR%%/nmb
