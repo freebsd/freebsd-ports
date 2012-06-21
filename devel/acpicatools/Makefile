@@ -16,6 +16,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:g1,g2 \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Some utilities for Intel ACPICA (Debugger, ASL Compiler and etc.)
 
+DEPRECATED=	It's quite obsolete and is already in base system for a long time
+EXPIRATION_DATE=2012-07-21
+
 NO_WRKSUBDIR=	yes
 
 MAN8=		acpidump.8
