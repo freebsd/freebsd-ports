@@ -17,11 +17,9 @@ COMMENT=	On-screen lyrics display program for various media players
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	notify.4:${PORTSDIR}/devel/libnotify \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		curl.6:${PORTSDIR}/ftp/curl
-
-BROKEN=		does not compile
+LIB_DEPENDS=	notify:${PORTSDIR}/devel/libnotify \
+		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
+		curl:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	DATADIRNAME=share
@@ -42,13 +40,13 @@ OPTIONS=	MPD	"Enable MPD support"		off \
 .include <bsd.port.options.mk>
 
 .if defined(WITH_MPD)
-LIB_DEPENDS+=	mpd.4:${PORTSDIR}/audio/libmpd
+LIB_DEPENDS+=	mpd:${PORTSDIR}/audio/libmpd
 .else
 CONFIGURE_ARGS+=	--disable-mpd
 .endif
 
 .if defined(WITH_XMMS2)
-LIB_DEPENDS+=	xmmsclient.6:${PORTSDIR}/audio/xmms2
+LIB_DEPENDS+=	xmmsclient:${PORTSDIR}/audio/xmms2
 .else
 CONFIGURE_ARGS+=	--disable-xmms2
 .endif
