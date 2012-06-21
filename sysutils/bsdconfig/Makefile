@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	bsdconfig
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://druidbsd.sourceforge.net/download/bsdconfig/
-DISTNAME=	${PORTNAME}.120619
+DISTNAME=	${PORTNAME}.120620
 EXTRACT_SUFX=	.txz
 
 PATCH_SITES=	${MASTER_SITES}
