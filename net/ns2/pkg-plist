@@ -1,7 +1,9 @@
 bin/ns
 %%EXAMPLESDIR%%/agent-gen-script.tcl
 %%EXAMPLESDIR%%/agent-gen.tcl
+%%EXAMPLESDIR%%/aomdv.tcl
 %%EXAMPLESDIR%%/callback_demo.tcl
+%%EXAMPLESDIR%%/dccp.tcl
 %%EXAMPLESDIR%%/diffusion-prob-run.tcl
 %%EXAMPLESDIR%%/diffusion-rate-run.tcl
 %%EXAMPLESDIR%%/dumbbell.tcl
@@ -31,6 +33,7 @@ bin/ns
 %%EXAMPLESDIR%%/nam-simplexlink.tcl
 %%EXAMPLESDIR%%/omni-run.tcl
 %%EXAMPLESDIR%%/pkts.tcl
+%%EXAMPLESDIR%%/puma.tcl
 %%EXAMPLESDIR%%/ranvar.tcl
 %%EXAMPLESDIR%%/rbp_demo.tcl
 %%EXAMPLESDIR%%/rc.tcl
