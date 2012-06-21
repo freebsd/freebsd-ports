@@ -15,15 +15,10 @@ PKGNAMEPREFIX?=	${GECKO}-
 MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	A GnuPG extension for the Mozilla mail clients
 
-FETCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/${GECKO_PORTDIR}:${GECKO_TARGET} \
-		${GECKO}:${PORTSDIR}/${GECKO_PORTDIR} \
-
-EXTRACT_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/${GECKO_PORTDIR}:${GECKO_TARGET} \
-		${GECKO}:${PORTSDIR}/${GECKO_PORTDIR} \
-		autoconf-2.13:${PORTSDIR}/devel/autoconf213 \
-		gmake:${PORTSDIR}/devel/gmake \
-		intltool-extract:${PORTSDIR}/textproc/intltool \
-		${LOCALBASE}/libdata/pkgconfig/printproto.pc:${PORTSDIR}/x11/printproto
+.if defined(PACKAGE_BUILDING)
+FETCH_DEPENDS=	${GECKO_DEPENDS}
+.endif
+EXTRACT_DEPENDS=${GECKO_DEPENDS}
 BUILD_DEPENDS=	${GECKO}:${PORTSDIR}/${GECKO_PORTDIR}
 RUN_DEPENDS=	${GECKO}:${PORTSDIR}/${GECKO_PORTDIR} \
 		gpg:${PORTSDIR}/security/gnupg
@@ -34,10 +29,19 @@ GECKO_PORTDIR=	www/${GECKO}
 IGNORE=		is an abstract port: use one of the slave ports
 .endif
 
+GECKO_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${GECKO_PORTDIR}:${GECKO_TARGET} \
+		${GECKO}:${PORTSDIR}/${GECKO_PORTDIR} \
+		autoconf-2.13:${PORTSDIR}/devel/autoconf213 \
+		gmake:${PORTSDIR}/devel/gmake \
+		intltool-extract:${PORTSDIR}/textproc/intltool \
+		${LOCALBASE}/libdata/pkgconfig/printproto.pc:${PORTSDIR}/x11/printproto
+
 .if ${PORTVERSION} == "1.1.2"
 GECKO_TARGET=	configure
 .else
 GECKO_TARGET=	build
+GECKO_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip \
+		yasm:${PORTSDIR}/devel/yasm
 .endif
 
 .if defined(GECKO_EXTDIR)
