@@ -7,6 +7,7 @@
 
 PORTNAME=	Products.CMFPlone
 PORTVERSION=	4.1.5
+PORTREVISION=	1
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -71,6 +72,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Acquisition>=0:${PORTSDIR}/devel/py-Acquisit
 		${PYTHON_PKGNAMEPREFIX}plone.app.portlets>=0:${PORTSDIR}/www/py-plone.app.portlets \
 		${PYTHON_PKGNAMEPREFIX}plone.app.redirector>=0:${PORTSDIR}/www/py-plone.app.redirector \
 		${PYTHON_PKGNAMEPREFIX}plone.app.registry>=0:${PORTSDIR}/www/py-plone.app.registry \
+		${PYTHON_PKGNAMEPREFIX}plone.app.search>0:${PORTSDIR}/www/py-plone.app.search \
 		${PYTHON_PKGNAMEPREFIX}plone.app.users>=0:${PORTSDIR}/www/py-plone.app.users \
 		${PYTHON_PKGNAMEPREFIX}plone.app.upgrade>=0:${PORTSDIR}/www/py-plone.app.upgrade \
 		${PYTHON_PKGNAMEPREFIX}plone.app.uuid>=0:${PORTSDIR}/www/py-plone.app.uuid \
