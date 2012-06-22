@@ -1,6 +1,6 @@
 --- /dev/null	2008-06-11 11:33:00.000000000 +0400
 +++ setup.py	2008-06-11 11:38:41.000000000 +0400
-@@ -0,0 +1,22 @@
+@@ -0,0 +1,21 @@
 +#!/usr/bin/env python
 +
 +"""Setup script for the dynagen module distribution."""
@@ -16,9 +16,8 @@
 +    author_email = "dynagen@gmail.com",
 +    url = "http://sourceforge.net/projects/dyna-gen",
 +
-+    py_modules = ['confConsole','configobj','console','dynamips_lib',
-+	'pemu_lib', 'pemubin', 'pemuwrapper',
-+	'validate']
++    py_modules = ['confConsole','console','dynamips_lib',
++	'pemu_lib', 'pemubin', 'pemuwrapper']
 +)
 +
 +print "If you have installed the modules, copy dynagen to some "
