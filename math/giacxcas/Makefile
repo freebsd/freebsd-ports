@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	giacxcas
-PORTVERSION=	0.9.5
-PORTREVISION=	1
+PORTVERSION=	0.9.8
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp-fourier.ujf-grenoble.fr/linux/xcas/freebsd/ \
+MASTER_SITES=	http://www-fourier.ujf-grenoble.fr/~parisse/giac/freebsd/ \
 		http://people.math.jussieu.fr/~han/xcas/sources/
 DISTFILES=	fltkdev.tgz CoCoALib.tgz giac-${PORTVERSION}.tar.gz
 DIST_SUBDIR=	${PORTNAME}
