@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	audacious
-PORTVERSION=	3.2.2
-PORTREVISION=	1
+PORTVERSION=	3.2.3
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A media player based on BMP and XMMS
+
+USE_GCC=	4.6
 
 LIB_DEPENDS=	mcs.1:${PORTSDIR}/devel/libmcs \
 		mowgli.2:${PORTSDIR}/devel/libmowgli \
