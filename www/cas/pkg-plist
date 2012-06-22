@@ -85,7 +85,7 @@
 %%CAS_DATA%%share/cas/xt/ConfigureLibrary.cmake
 %%CAS_DATA%%share/cas/xt/ConfigurePackage.cmake
 %%CAS_DATA%%share/cas/xt/RenameModule.cmake
-%%EXAMPLE_MODULES%%lib/libexampleclass.so.3.5.2
+%%EXAMPLE_MODULES%%lib/libexampleclass.so.3.5.5
 %%EXAMPLE_MODULES%%lib/libexampleclass.so.3
 %%EXAMPLE_MODULES%%lib/libexampleclass.so
 %%EXAMPLE_MODULES%%libexec/cas/mod_example_handler.so
