@@ -32,9 +32,8 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20 gnomehack
 INSTALLS_ICONS=	yes
 
-OPTIONS_DEFINE=	AVAHI
+OPTIONS_DEFINE=	AVAHI NLS
 AVAHI_DESC=	Zeroconf support (Avahi)
-OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 
