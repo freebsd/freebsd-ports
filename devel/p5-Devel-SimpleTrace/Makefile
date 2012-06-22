@@ -16,8 +16,8 @@ COMMENT=	Perl module for better stack traces on interpretter-generated warn/die
 
 PERL_CONFIGURE=	yes
 
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Data/Dumper.pm:${PORTSDIR}/devel/p5-Data-Dumper
-RUN_DEPENDS+=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	p5-Data-Dumper>=0:${PORTSDIR}/devel/p5-Data-Dumper
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=		Devel::SimpleTrace.3
 
