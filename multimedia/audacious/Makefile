@@ -13,8 +13,6 @@ MASTER_SITES=	http://distfiles.audacious-media-player.org/
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A media player based on BMP and XMMS
 
-USE_GCC=	4.6
-
 LIB_DEPENDS=	mcs.1:${PORTSDIR}/devel/libmcs \
 		mowgli.2:${PORTSDIR}/devel/libmowgli \
 		xml2.5:${PORTSDIR}/textproc/libxml2
