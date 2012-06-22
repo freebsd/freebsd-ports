@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	joomla
-PORTVERSION=	2.5.5
+PORTVERSION=	2.5.6
 CATEGORIES=	www
-MASTER_SITES=	http://downloads.joomlacode.org/frsrelease/7/4/6/74604/
+MASTER_SITES=	http://downloads.joomlacode.org/frsrelease/7/4/7/74756/
 DISTNAME=	Joomla_${PORTVERSION}-Stable-Full_Package
 
 MAINTAINER=	scheidell@FreeBSD.org
@@ -16,6 +16,7 @@ COMMENT=	A dynamic web content management system (CMS)
 CONFLICTS=	joomla-1.*.*
 LATEST_LINK=	joomla25
 
+USE_BZIP2=	yes
 NO_BUILD=	yes
 USE_MYSQL=	yes
 USE_PHP=	mysql pcre xml zlib session gd pdf json mbstring \
@@ -38,7 +39,7 @@ do-install:
 			-exec ${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}/{} \;
 
 # maintainer, run after make patch
-plist: patch
+plist: patch clean
 	${FIND} ${WRKSRC} -type f | ${SORT} | ${SED} -e 's|^${WRKSRC}|%%WWWDIR%%|' > ./pkg-plist
 	${FIND} ${WRKSRC} -type d | ${SORT} -fr | ${SED} -e 's|^${WRKSRC}|@dirrm %%WWWDIR%%|' >> ./pkg-plist
 
