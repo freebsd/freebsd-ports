@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Role-Tiny
-PORTVERSION=	1.001.002
+PORTVERSION=	1.001.003
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MSTROUT
@@ -21,8 +21,8 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Class-Method-Modifiers>=0:${PORTSDIR}/devel/p5-Class-Method-Modifiers
 RUN_DEPENDS=	p5-Class-Method-Modifiers>=0:${PORTSDIR}/devel/p5-Class-Method-Modifiers
-
-TEST_DEPENDS=	p5-Test-Fatal>=0.003:${PORTSDIR}/devel/p5-Test-Fatal
+TEST_DEPENDS=	p5-Test-Fatal>=0.003:${PORTSDIR}/devel/p5-Test-Fatal \
+		p5-strictures>=0:${PORTSDIR}/devel/p5-strictures
 
 PERL_CONFIGURE=	yes
 
