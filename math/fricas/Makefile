@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	fricas
-PORTVERSION=	1.1.6
-PORTREVISION=	2
+PORTVERSION=	1.1.7
+DISTVERSIONSUFFIX=	-full
 CATEGORIES=	math
 MASTER_SITES=	SF
-DISTVERSIONSUFFIX=	-full
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	A computer algebra system, forked from axiom
 
 LICENSE=	BSD
