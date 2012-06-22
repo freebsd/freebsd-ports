@@ -392,6 +392,7 @@
     SUBDIR += p5-Math-FixedPrecision
     SUBDIR += p5-Math-GMP
     SUBDIR += p5-Math-GMPf
+    SUBDIR += p5-Math-GMPq
     SUBDIR += p5-Math-GSL
     SUBDIR += p5-Math-Geometry
     SUBDIR += p5-Math-Geometry-Planar
