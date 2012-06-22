@@ -9,9 +9,9 @@ include/ctpp2/CTPP2BitIndex.hpp
 include/ctpp2/CTPP2CharIterator.hpp
 include/ctpp2/CTPP2Compiler.hpp
 include/ctpp2/CTPP2DTOA.hpp
+include/ctpp2/CTPP2Exception.hpp
 include/ctpp2/CTPP2Error.hpp
 include/ctpp2/CTPP2ErrorCodes.h
-include/ctpp2/CTPP2Exception.hpp
 include/ctpp2/CTPP2FileLogger.hpp
 include/ctpp2/CTPP2FileOutputCollector.hpp
 include/ctpp2/CTPP2FileSourceLoader.hpp
