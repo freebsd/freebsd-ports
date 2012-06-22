@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Lingua-EN-Numbers
-PORTVERSION=	1.03
+PORTVERSION=	1.04
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,6 @@ COMMENT=	Converts numeric values into their English string equivalents
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Lingua::EN::Numbers.3
+MAN3=		Lingua::EN::Numbers.3
 
 .include <bsd.port.mk>
