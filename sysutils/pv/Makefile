@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	pv
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTVERSION=	1.3.1
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
-		SF/${PROJECTHOST}/${PROJECTHOST}/${PORTVERSION}
+MASTER_SITES=	http://www.ivarch.com/programs/sources/
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	A pipe throughput monitor
