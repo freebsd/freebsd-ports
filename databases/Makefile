@@ -524,6 +524,7 @@
     SUBDIR += pecl-mongo
     SUBDIR += pecl-mysqlnd_ms
     SUBDIR += pecl-mysqlnd_qc
+    SUBDIR += pecl-pdo_user
     SUBDIR += pecl-rrd
     SUBDIR += pecl-tokyo_tyrant
     SUBDIR += percona-toolkit
