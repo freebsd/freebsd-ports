@@ -23,6 +23,8 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper	\
 		${LOCALBASE}/lib/libjogl.so:${PORTSDIR}/graphics/jogl
 
+BROKEN=		incomplete plist
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
