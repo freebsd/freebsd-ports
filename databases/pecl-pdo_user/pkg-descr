@@ -1,0 +1,3 @@
+pdo_user provides a Userspace interface for PDO drivers.
+
+WWW: http://pecl.php.net/package/pdo_user
