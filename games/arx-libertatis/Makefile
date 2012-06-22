@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	arx-libertatis
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	games
 MASTER_SITES=	http://cloud.github.com/downloads/arx/ArxLibertatis/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -34,6 +34,8 @@ SUB_FILES=	pkg-message
 MAN1=		arxsavetool.1 arxunpak.1
 MAN6=		arx.6
 
+PORTDOCS=	AUTHORS CHANGELOG README.md
+
 OPTIONS=	CRASHREPORTER "Build crash reporter (requires Qt4)" off
 
 .include <bsd.port.options.mk>
@@ -46,8 +48,6 @@ PLIST_SUB+=	CRASHREPORTER=""
 CMAKE_ARGS+=	-DBUILD_CRASHREPORTER=OFF
 PLIST_SUB+=	CRASHREPORTER="@comment "
 .endif
-
-PORTDOCS=	AUTHORS CHANGELOG README.md
 
 post-install:
 .if !defined(NOPORTDOCS)
