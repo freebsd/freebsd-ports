@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Math-MPFR
-PORTVERSION=	3.12
+PORTVERSION=	3.13
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SISYPHUS
@@ -15,8 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A perl interface to MPFR Library
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
-		mpfr.4:${PORTSDIR}/math/mpfr
+LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
+		mpfr:${PORTSDIR}/math/mpfr
+TEST_DEPENDS=	p5-Math-GMP>=0:${PORTSDIR}/math/p5-Math-GMP \
+		p5-Math-GMPf>=0:${PORTSDIR}/math/p5-Math-GMPf \
+		p5-Math-GMPq>=0:${PORTSDIR}/math/p5-Math-GMPq \
+		p5-Math-GMPz>=0:${PORTSDIR}/math/p5-Math-GMPz
 
 PERL_CONFIGURE=	yes
 MAKE_ENV=	INC="-I${LOCALBASE}/include"
