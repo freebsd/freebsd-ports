@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MogileFS-Server
-PORTVERSION=	2.63
+PORTVERSION=	2.64
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DORMANDO
@@ -16,6 +16,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	MogileFS (distributed filesystem) server
 
 BUILD_DEPENDS=	p5-Danga-Socket>=1.56:${PORTSDIR}/devel/p5-Danga-Socket \
+		p5-DBD-SQLite>=1.13:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-IO-AIO>=0:${PORTSDIR}/devel/p5-IO-AIO \
@@ -25,6 +26,8 @@ BUILD_DEPENDS=	p5-Danga-Socket>=1.56:${PORTSDIR}/devel/p5-Danga-Socket \
 		p5-Sys-Syscall>=0.22:${PORTSDIR}/devel/p5-Sys-Syscall \
 		p5-Sys-Syslog>=0:${PORTSDIR}/sysutils/p5-Sys-Syslog
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+OPTIONS_DEFINE=	DOCS
 
 PERL_CONFIGURE=	yes
 REINPLACE_ARGS=	-i ''
@@ -54,8 +57,10 @@ MAN3=		MogileFS::Checksum.3 \
 		MogileFS::Worker::Query.3 \
 		MogileFS::Worker::Replicate.3
 
+.include <bsd.port.options.mk>
+
 post-install:
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}/
 .endif
