@@ -82,6 +82,7 @@
     SUBDIR += bsdconfig
     SUBDIR += bsdcrashtar
     SUBDIR += bsdhwmon
+    SUBDIR += bsdinfo
     SUBDIR += bsdmoted
     SUBDIR += bsdsar
     SUBDIR += bsdstats
