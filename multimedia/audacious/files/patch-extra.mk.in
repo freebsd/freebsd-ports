@@ -1,0 +1,8 @@
+--- extra.mk.in.orig        2012-05-07 10:02:17.638673570 +0300
++++ extra.mk.in        2012-05-07 10:02:36.142671894 +0300
+@@ -35,3 +35,5 @@ REGEX_CFLAGS ?= @REGEX_CFLAGS@
+ REGEX_LIBS ?= @REGEX_LIBS@
+ SM_CFLAGS ?= @SM_CFLAGS@
+ SM_LIBS ?= @SM_LIBS@
++
++LIBINTL ?= @LIBINTL@

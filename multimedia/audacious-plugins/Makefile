@@ -1,4 +1,3 @@
-
 # New ports collection makefile for:	audacious
 # Date created:			2006-01-01
 # Whom:				Zastupov Stepan [RedChrom] <redchrom@mail.ru>
@@ -7,8 +6,7 @@
 #
 
 PORTNAME=	audacious-plugins
-PORTVERSION=	3.2.2
-PORTREVISION=	2
+PORTVERSION=	3.2.3
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
