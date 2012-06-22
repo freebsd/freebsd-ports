@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Ubic
-PORTVERSION=	1.37
+PORTVERSION=	1.44
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MMCLERIC
@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dmitry@yashin.su
 COMMENT=	Flexible perl-based service manager
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Config-Tiny>=0:${PORTSDIR}/devel/p5-Config-Tiny \
@@ -23,13 +26,8 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 TEST_DEPENDS=	p5-Test-Class>=0:${PORTSDIR}/devel/p5-Test-Class \
-		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
-		p5-Test-TCP>=0:${PORTSDIR}/devel/p5-Test-TCP \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-
-LICENSE_FILES=	${WRKSRC}/LICENSE
+		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
 PERL_CONFIGURE=	yes
 REINPLACE_ARGS=	-i ''
@@ -82,6 +80,7 @@ MAN3=		Ubic.3 \
 		Ubic::ServiceLoader::Base.3 \
 		Ubic::ServiceLoader::Default.3 \
 		Ubic::ServiceLoader::Ext::ini.3 \
+		Ubic::ServiceLoader::Ext::json.3 \
 		Ubic::Settings.3 \
 		Ubic::Settings::ConfigFile.3 \
 		Ubic::SingletonLock.3 \

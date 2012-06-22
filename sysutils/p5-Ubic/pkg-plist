@@ -46,6 +46,7 @@ bin/ubic-watchdog
 %%SITE_PERL%%/Ubic/ServiceLoader/Base.pm
 %%SITE_PERL%%/Ubic/ServiceLoader/Default.pm
 %%SITE_PERL%%/Ubic/ServiceLoader/Ext/ini.pm
+%%SITE_PERL%%/Ubic/ServiceLoader/Ext/json.pm
 %%SITE_PERL%%/Ubic/Settings.pm
 %%SITE_PERL%%/Ubic/Settings/ConfigFile.pm
 %%SITE_PERL%%/Ubic/SingletonLock.pm
