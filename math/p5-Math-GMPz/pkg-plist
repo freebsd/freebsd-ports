@@ -1,0 +1,16 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Math/GMPz.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Math/GMPz/Random.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Math/GMPz/V.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GMPz/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GMPz/GMPz.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GMPz/GMPz.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GMPz/Random/Random.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GMPz/Random/Random.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GMPz/V/V.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GMPz/V/V.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GMPz/V
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GMPz/Random
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/GMPz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Math/GMPz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Math
