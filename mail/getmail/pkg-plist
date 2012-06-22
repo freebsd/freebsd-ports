@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/getmail
 bin/getmail_fetch
 bin/getmail_maildir
@@ -30,6 +29,9 @@ bin/getmail_mbox
 %%PYTHON_SITELIBDIR%%/getmailcore/filters.py
 %%PYTHON_SITELIBDIR%%/getmailcore/filters.pyc
 %%PYTHON_SITELIBDIR%%/getmailcore/filters.pyo
+%%PYTHON_SITELIBDIR%%/getmailcore/imap_utf7.py
+%%PYTHON_SITELIBDIR%%/getmailcore/imap_utf7.pyc
+%%PYTHON_SITELIBDIR%%/getmailcore/imap_utf7.pyo
 %%PYTHON_SITELIBDIR%%/getmailcore/logging.py
 %%PYTHON_SITELIBDIR%%/getmailcore/logging.pyc
 %%PYTHON_SITELIBDIR%%/getmailcore/logging.pyo
@@ -42,6 +44,6 @@ bin/getmail_mbox
 %%PYTHON_SITELIBDIR%%/getmailcore/utilities.py
 %%PYTHON_SITELIBDIR%%/getmailcore/utilities.pyc
 %%PYTHON_SITELIBDIR%%/getmailcore/utilities.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/getmailcore
 %%EXAMPLESDIR%%/getmailrc-examples
 @dirrm %%EXAMPLESDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/getmailcore
