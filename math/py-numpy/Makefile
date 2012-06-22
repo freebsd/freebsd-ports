@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	numpy
-PORTVERSION=	1.6.1
-PORTREVISION=	1
+PORTVERSION=	1.6.2
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://docs.scipy.org/doc/${DISTNAME:C/\..$/.0/}/:doc \
@@ -20,6 +19,8 @@ EXTRACT_ONLY=	numpy-${PORTVERSION:S/r/rc/}${EXTRACT_SUFX}
 
 MAINTAINER=	llwang@infor.org
 COMMENT=	The New Numeric Extension to Python
+
+LICENSE=	BSD
 
 RUN_DEPENDS=	nosetests:${PORTSDIR}/devel/py-nose
 

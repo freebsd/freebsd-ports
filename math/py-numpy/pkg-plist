@@ -919,6 +919,7 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/polynomial/tests/test_legendre.py
 %%PYTHON_SITELIBDIR%%/numpy/polynomial/tests/test_polynomial.py
 %%PYTHON_SITELIBDIR%%/numpy/polynomial/tests/test_polyutils.py
+%%PYTHON_SITELIBDIR%%/numpy/polynomial/tests/test_printing.py
 %%PYTHON_SITELIBDIR%%/numpy/random/__init__.py
 %%PYTHON_SITELIBDIR%%/numpy/random/__init__.pyc
 %%PYTHON_SITELIBDIR%%/numpy/random/__init__.pyo
