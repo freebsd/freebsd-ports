@@ -1,12 +1,12 @@
-# New ports collection makefile for:   cas
-# Date created:         24 Nov 2011
-# Whom:                 Alexander Lunkov <lunkov@gmail.com>
+# New ports collection makefile for:	cas
+# Date created:				24 Nov 2011
+# Whom:					Alexander Lunkov <lunkov@gmail.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	cas
-PORTVERSION=	3.5.3
+PORTVERSION=	3.5.5
 CATEGORIES=	www devel
 MASTER_SITES=	http://cas.havoc.ru/download/
 
