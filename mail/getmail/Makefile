@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	getmail
-PORTVERSION=	4.25.0
+PORTVERSION=	4.30.0
 CATEGORIES=	mail python
-MASTER_SITES=	http://pyropus.ca/software/getmail/%SUBDIR%/ \
+MASTER_SITES=	http://pyropus.ca/software/getmail/old-versions/ \
 		http://mirrors.closedsrc.org/getmail/
-MASTER_SITE_SUBDIR=	old-versions
 
 MAINTAINER=	question+fbsdports@closedsrc.org
 COMMENT=	POP3/IMAP4 mail retriever with Maildir and command delivery
@@ -22,14 +21,6 @@ USE_PYDISTUTILS=	yes
 
 MAN1=		getmail.1 getmail_fetch.1 getmail_maildir.1 getmail_mbox.1
 PORTDOCS=	README BUGS CHANGELOG THANKS TODO *.txt *.html *.css
-
-OPTIONS=	NOTSEEN "Do not mark IMAP-retrieved mail \\Seen" OFF
-
-.include <bsd.port.pre.mk>
-
-.ifdef WITH_NOTSEEN
-EXTRA_PATCHES+=	${FILESDIR}/diff-getmailcore___retrieverbases.py
-.endif
 
 post-install:
 	@${CHMOD} -R 644 ${PYTHON_SITELIBDIR}/getmailcore/*
@@ -44,4 +35,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
