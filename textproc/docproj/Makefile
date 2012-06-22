@@ -7,7 +7,7 @@
 
 PORTNAME=	docproj
 PORTVERSION=	1.17
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -29,6 +29,7 @@ RUN_DEPENDS=	fixrtf:${PORTSDIR}/textproc/fixrtf \
 		tidy:${PORTSDIR}/www/tidy-lib \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		peps:${PORTSDIR}/graphics/peps \
+		svn:${PORTSDIR}/devel/subversion \
 		${LOCALBASE}/share/sgml/docbook/dsssl/modular:${PORTSDIR}/textproc/dsssl-docbook-modular \
 		${LOCALBASE}/share/sgml/html/catalog:${PORTSDIR}/textproc/html \
 		${LOCALBASE}/share/sgml/linuxdoc:${PORTSDIR}/textproc/linuxdoc \
@@ -38,7 +39,7 @@ RUN_DEPENDS=	fixrtf:${PORTSDIR}/textproc/fixrtf \
 		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
 		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml \
 		${LOCALBASE}/share/xml/xmlcharent/catalog:${PORTSDIR}/textproc/xmlcharent \
-		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+		p5-XML-Parser>=2.41:${PORTSDIR}/textproc/p5-XML-Parser
 
 .include <bsd.port.pre.mk>
 
@@ -74,7 +75,7 @@ RUN_DEPENDS+=	html2text:${PORTSDIR}/textproc/html2text
 .endif
 
 .if ${PERL_LEVEL} < 500804
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
+RUN_DEPENDS+=	p5-Digest-MD5>=2.51:${PORTSDIR}/security/p5-Digest-MD5
 .endif
 
 NO_BUILD=		yes
