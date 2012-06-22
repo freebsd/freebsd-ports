@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Catalyst-Runtime
-PORTVERSION=	5.90012
+PORTVERSION=	5.90013
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:BOBTFISH
+MASTER_SITE_SUBDIR=	CPAN:JJNAPIORK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -18,6 +18,7 @@ COMMENT=	The Elegant MVC Web Application Framework (Runtime)
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+# Do not add p5-Catalyst-Engine-PSGI and p5-CatalystX-LeakChecker to TEST_DEPENDS to avoid cyclic dependencies in tinderbox
 BUILD_DEPENDS=	p5-CGI-Simple>=1.109:${PORTSDIR}/www/p5-CGI-Simple \
 		p5-Class-C3-Adopt-NEXT>=0.07:${PORTSDIR}/devel/p5-Class-C3-Adopt-NEXT \
 		p5-Class-Load>=0.12:${PORTSDIR}/devel/p5-Class-Load \
@@ -53,8 +54,6 @@ BUILD_DEPENDS=	p5-CGI-Simple>=1.109:${PORTSDIR}/www/p5-CGI-Simple \
 		p5-namespace-autoclean>=0.09:${PORTSDIR}/devel/p5-namespace-autoclean \
 		p5-namespace-clean>=0.23:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-# Do not add p5-Catalyst-Engine-PSGI and p5-CatalystX-LeakChecker to TEST_DEPENDS to avoid cyclic dependencies in tinderbox
 TEST_DEPENDS=	p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Without-Module>=0:${PORTSDIR}/devel/p5-Test-Without-Module
