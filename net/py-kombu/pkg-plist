@@ -100,39 +100,54 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_simple.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_simple.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_simple.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_transport.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_transport.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_transport.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_transport_amqplib.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_transport_amqplib.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_transport_amqplib.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_transport_base.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_transport_base.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_transport_base.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_transport_memory.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_transport_memory.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_transport_memory.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_transport_redis.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_transport_redis.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_transport_redis.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_transport_virtual.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_transport_virtual.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_transport_virtual.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_utils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_utils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_utils.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_utils_encoding.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_utils_encoding.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_utils_encoding.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_utils_functional.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_utils_functional.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_utils_functional.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_virtual_exchange.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_virtual_exchange.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_virtual_exchange.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_virtual_scheduling.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_virtual_scheduling.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/test_virtual_scheduling.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/test_amqplib.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/test_amqplib.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/test_amqplib.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/test_base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/test_base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/test_base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/test_memory.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/test_memory.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/test_memory.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/test_mongodb.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/test_mongodb.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/test_mongodb.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/test_redis.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/test_redis.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/test_redis.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/test_sqlalchemy.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/test_sqlalchemy.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/test_sqlalchemy.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/test_transport.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/test_transport.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/test_transport.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/virtual/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/virtual/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/virtual/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/virtual/test_base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/virtual/test_base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/virtual/test_base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/virtual/test_exchange.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/virtual/test_exchange.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/virtual/test_exchange.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/virtual/test_scheduling.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/virtual/test_scheduling.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/virtual/test_scheduling.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/utilities/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/utilities/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/utilities/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/utilities/test_encoding.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/utilities/test_encoding.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/utilities/test_encoding.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/utilities/test_functional.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/utilities/test_functional.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/utilities/test_functional.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/utils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/utils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/utils.pyo
@@ -169,6 +184,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/transport/django/managers.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/transport/django/managers.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/transport/django/managers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/transport/django/migrations/0001_initial.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/transport/django/migrations/0001_initial.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/transport/django/migrations/0001_initial.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/transport/django/migrations/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/transport/django/migrations/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/transport/django/migrations/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/transport/django/models.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/transport/django/models.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/transport/django/models.pyo
@@ -205,9 +226,15 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/transport/virtual/scheduling.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/transport/virtual/scheduling.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/transport/virtual/scheduling.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/transport/zookeeper.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/transport/zookeeper.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/transport/zookeeper.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/utils/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/utils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/utils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/utils/amq_manager.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/utils/amq_manager.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/utils/amq_manager.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/utils/compat.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/utils/compat.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/utils/compat.pyo
@@ -229,13 +256,20 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/utils/limits.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/utils/limits.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/utils/limits.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/utils/url.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/utils/url.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/utils/url.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/utils
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/transport/virtual
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/transport/sqlalchemy
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/transport/django/migrations
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/transport/django/management/commands
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/transport/django/management
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/transport/django
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/transport
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/utilities
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport/virtual
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests/transport
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/kombu
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
