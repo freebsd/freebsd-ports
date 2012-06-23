@@ -2,7 +2,7 @@
 #
 # $FreeBSD$
 
-# Copyright 2010 Matthew Seaman. All rights reserved.
+# Copyright 2010,2012 Matthew Seaman. All rights reserved.
 # 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -280,13 +280,7 @@ CONF_FILE=${WANTEDPORTSCFG:-/var/db/%%PORTNAME%%.conf}
 
 # The currently installed version of %%PKGNAME%% -- accounting for any
 # dynamic updates to PORTREVISION
-INSTALLED_PKG=$( pkg_info -Ex %%PKGNAME%% )
-
-if [ -z $INSTALLED_PKG ] ; then
-    echo "${ME}: FATAL -- the package providing this script seems " \
-	"not to be installed" >&2
-    exit 1
-fi
+INSTALLED_PKG="%%PKGNAME%%"
 
 #
 # Handle Options -- Main Code Loop
