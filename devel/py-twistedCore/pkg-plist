@@ -1412,7 +1412,6 @@ bin/twistd
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/protocols
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/persisted/test
-@dirrm %%PYTHON_SITELIBDIR%%/twisted/persisted/journal
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/persisted
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/manhole/ui/test
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/manhole/ui
