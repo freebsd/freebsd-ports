@@ -149,6 +149,60 @@ share/pixmaps/pokerth.png
 %%DATADIR%%/data/gfx/cards/default/flipside.png
 %%DATADIR%%/data/gfx/cards/default/flipside_tux.png
 %%DATADIR%%/data/gfx/cards/default/preview.png
+%%DATADIR%%/data/gfx/cards/default_800x480/0.png
+%%DATADIR%%/data/gfx/cards/default_800x480/1.png
+%%DATADIR%%/data/gfx/cards/default_800x480/10.png
+%%DATADIR%%/data/gfx/cards/default_800x480/11.png
+%%DATADIR%%/data/gfx/cards/default_800x480/12.png
+%%DATADIR%%/data/gfx/cards/default_800x480/13.png
+%%DATADIR%%/data/gfx/cards/default_800x480/14.png
+%%DATADIR%%/data/gfx/cards/default_800x480/15.png
+%%DATADIR%%/data/gfx/cards/default_800x480/16.png
+%%DATADIR%%/data/gfx/cards/default_800x480/17.png
+%%DATADIR%%/data/gfx/cards/default_800x480/18.png
+%%DATADIR%%/data/gfx/cards/default_800x480/19.png
+%%DATADIR%%/data/gfx/cards/default_800x480/2.png
+%%DATADIR%%/data/gfx/cards/default_800x480/20.png
+%%DATADIR%%/data/gfx/cards/default_800x480/21.png
+%%DATADIR%%/data/gfx/cards/default_800x480/22.png
+%%DATADIR%%/data/gfx/cards/default_800x480/23.png
+%%DATADIR%%/data/gfx/cards/default_800x480/24.png
+%%DATADIR%%/data/gfx/cards/default_800x480/25.png
+%%DATADIR%%/data/gfx/cards/default_800x480/26.png
+%%DATADIR%%/data/gfx/cards/default_800x480/27.png
+%%DATADIR%%/data/gfx/cards/default_800x480/28.png
+%%DATADIR%%/data/gfx/cards/default_800x480/29.png
+%%DATADIR%%/data/gfx/cards/default_800x480/3.png
+%%DATADIR%%/data/gfx/cards/default_800x480/30.png
+%%DATADIR%%/data/gfx/cards/default_800x480/31.png
+%%DATADIR%%/data/gfx/cards/default_800x480/32.png
+%%DATADIR%%/data/gfx/cards/default_800x480/33.png
+%%DATADIR%%/data/gfx/cards/default_800x480/34.png
+%%DATADIR%%/data/gfx/cards/default_800x480/35.png
+%%DATADIR%%/data/gfx/cards/default_800x480/36.png
+%%DATADIR%%/data/gfx/cards/default_800x480/37.png
+%%DATADIR%%/data/gfx/cards/default_800x480/38.png
+%%DATADIR%%/data/gfx/cards/default_800x480/39.png
+%%DATADIR%%/data/gfx/cards/default_800x480/4.png
+%%DATADIR%%/data/gfx/cards/default_800x480/40.png
+%%DATADIR%%/data/gfx/cards/default_800x480/41.png
+%%DATADIR%%/data/gfx/cards/default_800x480/42.png
+%%DATADIR%%/data/gfx/cards/default_800x480/43.png
+%%DATADIR%%/data/gfx/cards/default_800x480/44.png
+%%DATADIR%%/data/gfx/cards/default_800x480/45.png
+%%DATADIR%%/data/gfx/cards/default_800x480/46.png
+%%DATADIR%%/data/gfx/cards/default_800x480/47.png
+%%DATADIR%%/data/gfx/cards/default_800x480/48.png
+%%DATADIR%%/data/gfx/cards/default_800x480/49.png
+%%DATADIR%%/data/gfx/cards/default_800x480/5.png
+%%DATADIR%%/data/gfx/cards/default_800x480/50.png
+%%DATADIR%%/data/gfx/cards/default_800x480/51.png
+%%DATADIR%%/data/gfx/cards/default_800x480/6.png
+%%DATADIR%%/data/gfx/cards/default_800x480/7.png
+%%DATADIR%%/data/gfx/cards/default_800x480/8.png
+%%DATADIR%%/data/gfx/cards/default_800x480/9.png
+%%DATADIR%%/data/gfx/cards/default_800x480/defaultdeckstyle_800x480.xml
+%%DATADIR%%/data/gfx/cards/default_800x480/flipside.png
 %%DATADIR%%/data/gfx/cards/default4c/0.png
 %%DATADIR%%/data/gfx/cards/default4c/1.png
 %%DATADIR%%/data/gfx/cards/default4c/10.png
@@ -216,8 +270,10 @@ share/pixmaps/pokerth.png
 %%DATADIR%%/data/gfx/gui/misc/fileopen16.png
 %%DATADIR%%/data/gfx/gui/misc/rating.png
 %%DATADIR%%/data/gfx/gui/misc/startwindowbg.png
+%%DATADIR%%/data/gfx/gui/misc/startwindowbg_old.png
 %%DATADIR%%/data/gfx/gui/misc/startwindowbg_800x480.png
 %%DATADIR%%/data/gfx/gui/misc/welcomepokerth.png
+%%DATADIR%%/data/gfx/gui/misc/welcomepokerth_old.png
 %%DATADIR%%/data/gfx/gui/misc/windowicon.png
 %%DATADIR%%/data/gfx/gui/table/danuxi1/bigblindPuck.png
 %%DATADIR%%/data/gfx/gui/table/danuxi1/cardholder_flop.png
@@ -295,6 +351,7 @@ share/pixmaps/pokerth.png
 %%DATADIR%%/data/gfx/gui/table/default/smallblindPuck.png
 %%DATADIR%%/data/gfx/gui/table/default/table.png
 %%DATADIR%%/data/gfx/gui/table/default/toolboxbg.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/android_tablestyle_800x480.xml
 %%DATADIR%%/data/gfx/gui/table/default_800x480/bigblindPuck.png
 %%DATADIR%%/data/gfx/gui/table/default_800x480/cardholder_flop.png
 %%DATADIR%%/data/gfx/gui/table/default_800x480/cardholder_river.png
@@ -305,7 +362,14 @@ share/pixmaps/pokerth.png
 %%DATADIR%%/data/gfx/gui/table/default_800x480/handranking.png
 %%DATADIR%%/data/gfx/gui/table/default_800x480/handranking_template.xcf
 %%DATADIR%%/data/gfx/gui/table/default_800x480/playerSeatActive.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/playerSeatActiveBottom.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/playerSeatActiveTop.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/playerSeatActive_old.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/playerSeatActive_old_old.png
 %%DATADIR%%/data/gfx/gui/table/default_800x480/playerSeatInactive.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/playerSeatInactiveBottom.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/playerSeatInactiveTop.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/playerSeatInactive_old.png
 %%DATADIR%%/data/gfx/gui/table/default_800x480/playeraction_blue.png
 %%DATADIR%%/data/gfx/gui/table/default_800x480/playeraction_blue_checked.png
 %%DATADIR%%/data/gfx/gui/table/default_800x480/playeraction_blue_checked_hover.png
@@ -332,6 +396,7 @@ share/pixmaps/pokerth.png
 %%DATADIR%%/data/gfx/gui/table/default_800x480/radiobutton_unchecked_hover.png
 %%DATADIR%%/data/gfx/gui/table/default_800x480/smallblindPuck.png
 %%DATADIR%%/data/gfx/gui/table/default_800x480/table.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/table_dark.png
 %%DATADIR%%/data/gfx/gui/table/default_800x480/toolboxbg.png
 %%DATADIR%%/data/misc/agpl.html
 %%DATADIR%%/data/sounds/default/allin.wav
@@ -373,16 +438,26 @@ share/pixmaps/pokerth.png
 %%DATADIR%%/data/translations/pokerth_tr.qm
 %%DATADIR%%/data/translations/pokerth_jp.qm
 %%DATADIR%%/data/translations/pokerth_zhcn.qm
+%%DATADIR%%/data/translations/qt_ar.qm
+%%DATADIR%%/data/translations/qt_cs.qm
+%%DATADIR%%/data/translations/qt_da.qm
 %%DATADIR%%/data/translations/qt_de.qm
 %%DATADIR%%/data/translations/qt_es.qm
 %%DATADIR%%/data/translations/qt_fr.qm
+%%DATADIR%%/data/translations/qt_gl.qm
+%%DATADIR%%/data/translations/qt_he.qm
+%%DATADIR%%/data/translations/qt_hu.qm
+%%DATADIR%%/data/translations/qt_ja.qm
 %%DATADIR%%/data/translations/qt_nl.qm
 %%DATADIR%%/data/translations/qt_pl.qm
 %%DATADIR%%/data/translations/qt_pt.qm
 %%DATADIR%%/data/translations/qt_ru.qm
 %%DATADIR%%/data/translations/qt_sk.qm
+%%DATADIR%%/data/translations/qt_sl.qm
 %%DATADIR%%/data/translations/qt_sv.qm
+%%DATADIR%%/data/translations/qt_uk.qm
 %%DATADIR%%/data/translations/qt_zh_CN.qm
+%%DATADIR%%/data/translations/qt_zh_TW.qm
 @dirrm %%DATADIR%%/data/translations
 @dirrm %%DATADIR%%/data/sounds/default
 @dirrm %%DATADIR%%/data/sounds
@@ -395,6 +470,7 @@ share/pixmaps/pokerth.png
 @dirrm %%DATADIR%%/data/gfx/gui/misc
 @dirrm %%DATADIR%%/data/gfx/gui
 @dirrm %%DATADIR%%/data/gfx/cards/default4c
+@dirrm %%DATADIR%%/data/gfx/cards/default_800x480
 @dirrm %%DATADIR%%/data/gfx/cards/default
 @dirrm %%DATADIR%%/data/gfx/cards
 @dirrm %%DATADIR%%/data/gfx/avatars/default/people
