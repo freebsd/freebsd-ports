@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgadu
-DISTVERSION=	1.11.1
+DISTVERSION=	1.11.2
 PORTEPOCH=	1
 CATEGORIES=	polish net
 MASTER_SITES=	http://toxygen.net/libgadu/files/
@@ -32,7 +32,6 @@ PLIST_FILES=	include/libgadu.h \
 		libdata/pkgconfig/libgadu.pc
 
 OPTIONS_DEFINE=	OPENSSL
-OPENSSL_DESC=	Build with OpenSSL support
 OPTIONS_DEFAULT=OPENSSL
 
 .include <bsd.port.pre.mk>
