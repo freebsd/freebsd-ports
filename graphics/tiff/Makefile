@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	tiff
-PORTVERSION=	4.0.1
-PORTREVISION=	1
+PORTVERSION=	4.0.2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
 		http://download.osgeo.org/libtiff/
