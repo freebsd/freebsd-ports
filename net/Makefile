@@ -902,6 +902,7 @@
     SUBDIR += py-pcap
     SUBDIR += py-pcapy
     SUBDIR += py-pcs
+    SUBDIR += py-port-for
     SUBDIR += py-pypcap
     SUBDIR += py-qt4-network
     SUBDIR += py-radix
