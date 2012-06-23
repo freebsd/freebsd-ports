@@ -1136,6 +1136,7 @@
     SUBDIR += py-markdown2
     SUBDIR += py-paragrep
     SUBDIR += py-pss
+    SUBDIR += py-pyctpp2
     SUBDIR += py-pygments
     SUBDIR += py-pystache
     SUBDIR += py-pyx12
