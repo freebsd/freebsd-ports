@@ -16,6 +16,8 @@ COMMENT=	Kernel module for calling ACPI methods from userspace
 
 LICENSE=	BSD
 
+.include <bsd.port.pre.mk>
+
 KMODDIR?=	/boot/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR} \
 		PORTNAME=${PORTNAME}
@@ -34,4 +36,4 @@ do-install:
 	@${INSTALL_KLD} ${WRKSRC}/${PORTNAME}.ko ${KMODDIR}
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
