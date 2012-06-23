@@ -8,7 +8,7 @@
 
 PORTNAME=	emotion
 PORTVERSION=	0.2.0.56361
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	multimedia enlightenment
 MASTER_SITES=	http://files.roorback.net/e17/2011-01-29/extra/

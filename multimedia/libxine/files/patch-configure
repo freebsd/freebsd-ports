@@ -1,5 +1,14 @@
 --- configure.orig
 +++ configure
+@@ -20349,7 +20349,7 @@ $as_echo "#define ARCH_SPARC /**/" >>con
+ 
+         ;;
+ 
+-    x86_64-*)
++    x86_64-*|amd64-*)
+         arch_x86=64
+ 
+ $as_echo "#define ARCH_X86_64 /**/" >>confdefs.h
 @@ -26197,7 +26197,7 @@ fi
  
      if test x"$enable_dvb" != x"no"; then
