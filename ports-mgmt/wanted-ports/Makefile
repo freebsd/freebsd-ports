@@ -7,7 +7,7 @@
 # port is self-contained in the files directory.
 
 PORTNAME=	wanted-ports
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 #PORTREVISION is set from ${CFGFILE}
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
