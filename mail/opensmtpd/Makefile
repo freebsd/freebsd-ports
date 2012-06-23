@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opensmtpd
-PORTVERSION=	201206161848
+PORTVERSION=	201206212223
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/
 
