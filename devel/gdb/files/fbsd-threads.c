@@ -1,4 +1,4 @@
-/* $FreeBSD: /tmp/pcvs/ports/devel/gdb/files/fbsd-threads.c,v 1.3 2012-01-27 09:38:15 scheidell Exp $ */
+/* $FreeBSD: /tmp/pcvs/ports/devel/gdb/files/fbsd-threads.c,v 1.4 2012-06-23 09:12:05 scheidell Exp $ */
 /* FreeBSD libthread_db assisted debugging support.
    Copyright 1999, 2000, 2001 Free Software Foundation, Inc.
 
@@ -437,6 +437,10 @@ check_for_thread_db (void)
   td_err_e err;
 
   if (td_ta_new_p == NULL)
+    return;
+
+  /* Don't try to attach to a dead target if there is no core file. */
+  if (!target_has_execution && core_bfd == NULL)
     return;
 
   /* Nothing to do.  The thread library was already detected and the
