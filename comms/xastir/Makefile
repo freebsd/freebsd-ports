@@ -7,7 +7,7 @@
 
 PORTNAME=	xastir
 PORTVERSION=	2.0.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTNAME}-${PORTVERSION}
 
@@ -32,94 +32,87 @@ MAN1=		xastir.1 \
 
 SUB_FILES=	pkg-message
 
-OPTIONS=	SHAPELIB "Include Shapelib support" On \
-		DBFAWK "Include DBFAWK Support" On \
-		MAGICK "Include [Image|Graphics]Magick Support" On \
-		GRAPHICK "Use GraphicsMagick instead of ImageMagick" Off \
-		CURL "Include CURL Internet Image support" On \
-		GEOTIFF "Include GeoTIFF Support" Off \
-		GDAL "Include GDAL Support" Off \
-		GPSMAN "Include GPSMAN Support" Off \
-		FESTIVAL "Include Festival Voice Synthesis Support" Off \
-		RTREE "Enable spatial indexing of shapefiles" On \
-		ERRORPOP "Send error popups to stderr" Off \
-		BDB "Tiger Map Caching using Berkeley DB" On \
-		OPTCFLAGS "Use optimized CFLAGS (-O2 -pipe)" Off
+OPTIONS_DEFINE=	SHAPELIB DBFAWK MAGICK CURL GEOTIFF GDAL GPSMAN FESTIVAL \
+		    RTREE ERRORPOP BDB OPTCFLAGS
+
+SHAPELIB_DESC=	Include Shapelib support
+DBFAWK_DESC=	Include DBFAWK Support
+MAGICK_DESC=	Include GraphicsMagick Support
+CURL_DESC=	Include CURL Internet Image support
+GEOTIFF_DESC=	Include GeoTIFF Support
+GDAL_DESC=	Include GDAL Support
+GPSMAN_DESC=	Include GPSMAN Support
+FESTIVAL_DESC=	Include Festival Voice Synthesis Support
+RTREE_DESC=	Enable spatial indexing of shapefiles
+ERRORPOP_DESC=	Send error popups to stderr
+BDB_DESC=	Tiger Map Caching using Berkeley DB
+OPTCFLAGS_DESC=	Use optimized CFLAGS (-O2 -pipe)
+
+OPTIONS_DEFAULT=	SHAPELIB DBFAWK MAGICK CURL RTREE BDB
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_SHAPELIB)
+.if ${PORT_OPTIONS:MSHAPELIB}
 LIB_DEPENDS+=	shp.1:${PORTSDIR}/devel/shapelib
 .else
 CONFIGURE_ARGS+=	--without-shapelib
 .endif
 
-.if defined(WITHOUT_MAGICK)
-CONFIGURE_ARGS+=	--without-imagemagick --without-graphicsmagick
-.else
-.if defined(WITH_GRAPHICK)
+.if ${PORT_OPTIONS:MMAGICK}
 LIB_DEPENDS+=	GraphicsMagickWand.7:${PORTSDIR}/graphics/GraphicsMagick13
 .else
-LIB_DEPENDS+=	MagickWand.5:${PORTSDIR}/graphics/ImageMagick
-CONFIGURE_ARGS+=	--without-graphicsmagick
-.endif
+CONFIGURE_ARGS+=	--without-imagemagick --without-graphicsmagick
 .endif
 
-.if defined(WITHOUT_DBFAWK)
-CONFIGURE_ARGS+=	--without-dbfawk
-.else
+.if ${PORT_OPTIONS:MDBFAWK}
 LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+.else
+CONFIGURE_ARGS+=	--without-dbfawk
 .endif
 
-.if !defined(WITHOUT_CURL)
+.if ${PORT_OPTIONS:MCURL}
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 .endif
 
-.if defined(WITH_GEOTIFF)
+.if ${PORT_OPTIONS:MGEOTIFF}
 LIB_DEPENDS+=	geotiff:${PORTSDIR}/graphics/libgeotiff
 .endif
 
-.if defined(WITH_GDAL)
+.if ${PORT_OPTIONS:MGDAL}
 LIB_DEPENDS+=	gdal:${PORTSDIR}/graphics/gdal
 .else
 CONFIGURE_ARGS+=	--without-gdal
 .endif
 
-.if defined(WITH_GPSMAN)
+.if ${PORT_OPTIONS:MGPSMAN}
 BUILD_DEPENDS+=	${LOCALBASE}/share/doc/gpsmanshp/GPSManSHP.pdf:${PORTSDIR}/graphics/gpsmanshp
-WITH_SHAPELIB=	true
-.undef WITHOUT_SHAPELIB
+SHAPELIB=	true
 .else
 CONFIGURE_ARGS+=	--without-gpsman
 .endif
 
-.if defined(WITH_FESTIVAL)
+.if ${PORT_OPTIONS:MFESTIVAL}
 BUILD_DEPENDS+=	festival:${PORTSDIR}/audio/festival
 .else
 CONFIGURE_ARGS+=	--without-festival
 .endif
 
-.if defined(WITH_RTREE)
+.if ${PORT_OPTIONS:MRTREE}
 CONFIGURE_ARGS+=	--with-rtree
 .endif
 
-.if defined(WITH_ERRORPOP)
+.if ${PORT_OPTIONS:MERRORPOP}
 CONFIGURE_ARGS+=	--with-errorpopups
 .endif
 
-.if defined(WITH_BDB)
+.if ${PORT_OPTIONS:MBDB}
 USE_BDB=		41+
 WITH_BDB_HIGHEST=	${TRUE}
 INVALID_BDB_VER=	2 3 40
 CONFIGURE_ARGS+=	--with-bdb-incdir=${BDB_INCLUDE_DIR} --with-bdb-libdir=${BDB_LIB_DIR}
 .endif
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
-WITH_OPTCFLAGS=	true
-.endif
-
-# OPTIMIZED_CFLAGS is too big for the OPTIONS variable to draw on the screen.
-.if defined(WITH_OPTCFLAGS)
+.if ${PORT_OPTIONS:MOPTCFLAGS}
 CFLAGS+=	-O2 -pipe
 .endif
 
