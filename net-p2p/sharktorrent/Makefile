@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-beta-src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	C++ Bittorrent client using wxWidgets, libtorrent and boost
 
+DEPRECATED=	Depends on net-p2p/libtorrent-rasterbar-14, which is DEPRECATED
+EXPIRATION_DATE=	2012-06-30
+
 LIB_DEPENDS=	boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
 		torrent-rasterbar.5:${PORTSDIR}/net-p2p/libtorrent-rasterbar-14
 

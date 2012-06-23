@@ -14,6 +14,9 @@ MASTER_SITES=	http://50hz.ws/hrktorrent/
 MAINTAINER=	hrkfdn@gmail.com
 COMMENT=	A light console torrent client using rasterbar's libtorrent
 
+DEPRECATED=	Depends on net-p2p/libtorrent-rasterbar-14, which is DEPRECATED
+EXPIRATION_DATE=	2012-06-30
+
 LIB_DEPENDS=	torrent-rasterbar.5:${PORTSDIR}/net-p2p/libtorrent-rasterbar-14
 
 USE_GNOME=	pkgconfig
