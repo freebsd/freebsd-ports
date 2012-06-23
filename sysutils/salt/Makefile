@@ -1,12 +1,12 @@
-# New ports collection makefile for: salt
-# Date created:		2011-12-26
-# Whom:			Christer Edwards <christer.edwards@gmail.com>
+# New ports collection makefile for:	salt
+# Date created:				2011-12-26
+# Whom:					Christer Edwards <christer.edwards@gmail.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	salt
-PORTVERSION=	0.9.9.1
+PORTVERSION=	0.10.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	https://github.com/downloads/saltstack/salt/
 
@@ -16,17 +16,16 @@ COMMENT=	Distributed, remote execution and configuration management system
 LICENSE=	AL2
 
 LIB_DEPENDS=	zmq.1:${PORTSDIR}/devel/zmq
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}pyzmq>=2.1.9:${PORTSDIR}/devel/py-pyzmq \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>=0:${PORTSDIR}/security/py-pycrypto \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:${PORTSDIR}/devel/py-Jinja2 \
 		${PYTHON_PKGNAMEPREFIX}msgpack>=0.1.9:${PORTSDIR}/devel/py-msgpack \
 		${PYTHON_PKGNAMEPREFIX}m2crypto>=0:${PORTSDIR}/security/py-m2crypto
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 FETCH_ARGS=	-pRr
-USE_PYTHON=	2.6-2.7
-USE_PYDISTUTILS=yes
+USE_PYTHON=	-2.7
+USE_PYDISTUTILS=easy_install
 
 USE_RC_SUBR=	salt_master \
 		salt_minion \
@@ -56,12 +55,15 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/salt|${PREFIX}/etc/salt|' \
 	    -e 's|/srv/salt|${PREFIX}/etc/salt/states|' ${WRKSRC}/${file}
 .endfor
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e "s|'install_requires|'data_files': [],'install_requires|" \
+		${WRKSRC}/setup.py
 
 post-install:
 	${MKDIR} ${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/conf/master.template ${PREFIX}/etc/salt/master.sample
 	${INSTALL_DATA} ${WRKSRC}/conf/minion.template ${PREFIX}/etc/salt/minion.sample
+	@${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/doc/man/,} ${MANPREFIX}/man/man1/
+	@${INSTALL_MAN} ${WRKSRC}/doc/man/${MAN7} ${MANPREFIX}/man/man7/
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
