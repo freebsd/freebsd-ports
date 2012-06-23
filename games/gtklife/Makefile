@@ -36,11 +36,12 @@ DESKTOP_ENTRIES="GtkLife" \
 		"Application;Game;Simulation;" \
 		${STARTUP_NOTIFY}
 
-OPTIONS=	GTK2 "use GTK+ 2.0 (beta)" off
+OPTIONS_DEFINE=	GTK2
+GTK2_DESC=	GTK2 gui toolkit support (beta)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GTK2)
+.if ${PORT_OPTIONS:MGTK2}
 USE_GNOME+=	gtk20
 MAKE_ARGS+=	gtk2=yes
 STARTUP_NOTIFY=	true
@@ -81,4 +82,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
