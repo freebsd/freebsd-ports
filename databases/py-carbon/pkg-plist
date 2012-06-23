@@ -9,6 +9,9 @@ etc/carbon/carbon.conf.example
 etc/carbon/aggregation-rules.conf.example
 etc/carbon/relay-rules.conf.example
 etc/carbon/storage-schemas.conf.example
+etc/carbon/blacklist.conf.example
+etc/carbon/storage-aggregation.conf.example
+etc/carbon/whitelist.conf.example
 %%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_aggregator_plugin.py
 %%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_relay_plugin.py
 %%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_cache_plugin.py
@@ -94,6 +97,9 @@ etc/carbon/storage-schemas.conf.example
 %%PYTHON_SITELIBDIR%%/carbon/state.pyo
 %%PYTHON_SITELIBDIR%%/carbon/service.pyo
 %%PYTHON_SITELIBDIR%%/carbon/protocols.pyo
+%%PYTHON_SITELIBDIR%%/carbon/regexlist.py
+%%PYTHON_SITELIBDIR%%/carbon/regexlist.pyc
+%%PYTHON_SITELIBDIR%%/carbon/regexlist.pyo
 @dirrm etc/carbon
 @dirrm %%PYTHON_SITELIBDIR%%/carbon/aggregator
 @dirrm %%PYTHON_SITELIBDIR%%/carbon
