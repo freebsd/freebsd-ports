@@ -7,6 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	0.99.7
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-ui/${PORTVERSION}
 DISTNAME=	${PORTNAME}-ui-${PORTVERSION}
@@ -50,7 +51,7 @@ MAN1_FR=	xine.1
 MAN1_PL=	aaxine.1 xine-remote.1 xine.1
 
 DOCSDIR=	${PREFIX}/share/doc/xine-ui
-XINE_PLUGINSDIR=	lib/xine/plugins/2.1
+XINE_PLUGINSDIR=	lib/xine/plugins/2.2
 
 .include <bsd.port.pre.mk>
 

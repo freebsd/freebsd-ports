@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.2.2
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-lib/${PORTVERSION}
 PKGNAMEPREFIX=	lib
@@ -77,7 +76,7 @@ MAN1=	xine-config.1 xine-list-1.2.1
 MAN5=	xine.5
 
 DOCSDIR=	${PREFIX}/share/doc/xine-lib
-PLIST_SUB=	PLUGINSDIR="lib/xine/plugins/2.1"
+PLIST_SUB=	PLUGINSDIR="lib/xine/plugins/2.2"
 
 # DVDCSS version hardcoded in src/input/input_dvd.c misc/cdda_server.c
 # and src/input/libdvdnav/dvd_input.c (dlopen'ed)
@@ -230,7 +229,7 @@ CONFIGURE_ARGS+=	--disable-vidix
 
 post-patch:
 .if ${PORT_OPTIONS:MVAAPI}
-	${PATCH} ${PATCH_DIST_ARGS} <${FILESDIR}/ffmpeg-vaapi_xine-lib-1.2.1-defaultoff.diff
+	@${PATCH} ${PATCH_DIST_ARGS} <${FILESDIR}/ffmpeg-vaapi_xine-lib-1.2.2-defaultoff.diff
 .endif
 .for f in libtool ltmain.sh
 	@${REINPLACE_CMD} -e \
