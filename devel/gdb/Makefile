@@ -8,6 +8,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	7.4.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:S,$,:gdb,}
 MASTER_SITE_SUBDIR=gdb/:gdb
@@ -45,38 +46,36 @@ LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
 CFLAGS+=	-isystem ${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	DEBUG "Build with debugging symbols" off \
-		EXPAT "Enable XML parsing for metadata" off \
-		PYTHON "Enable Python support" off \
-		THREAD "Enable Thread support" on \
-		GDB_LINK "Create the gdb link" on
+OPTIONS_DEFINE=	DEBUG EXPAT PYTHON THREADS GDB_LINK
+GDB_LINK_DESC=	Create the gdb link
+OPTIONS_DEFAULT=	THREADS GDB_LINK
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GDB_LINK)
+.if ${PORT_OPTIONS:MGDB_LINK)
 PLIST_SUB+=	GDB_LINK=""
 .else
 PLIST_SUB+=	GDB_LINK="@comment "
 .endif
 
-.if defined(WITH_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	2.5-2.7
 .endif
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CFLAGS+=	-g
 .endif
 
-.if defined(WITH_EXPAT)
+.if ${PORT_OPTIONS:MEXPAT}
 LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 CONFIGURE_ARGS+=	--with-expat=yes
 .else
 CONFIGURE_ARGS+=	--without-expat
 .endif
 
-.if defined(WITH_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 CONFIGURE_ARGS+=	--with-python=${PYTHON_CMD}
 PLIST_SUB+=		PYTHON=""
 .else
@@ -91,7 +90,7 @@ CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 post-patch:
 	@${REINPLACE_CMD} -e 's/$$/ [GDB v${PORTVERSION} for FreeBSD]/' \
 		${WRKSRC}/gdb/version.in
-.if !defined(WITHOUT_THREAD)
+.if empty(PORT_OPTIONS:MTHREADS)
 	@${CP} ${FILESDIR}/fbsd-threads.c ${WRKSRC}/gdb/
 .endif
 	@${CP} ${FILESDIR}/amd64bsd-nat.h ${WRKSRC}/gdb
@@ -100,10 +99,12 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb ${PREFIX}/bin/gdb${VER}
 	${LN} ${PREFIX}/bin/gdb${VER} ${PREFIX}/bin/gdbtui${VER}
 	${INSTALL_MAN} ${WRKSRC}/gdb/gdb.1 ${MAN1PREFIX}/man/man1/gdb${VER}.1
-.if defined(WITH_GDB_LINK)
+#.if defined(WITH_GDB_LINK)
+.if ${PORT_OPTIONS:MGDB_LINK)
 	${LN} -sf gdb${VER} ${PREFIX}/bin/gdb
 .endif
-.if defined(WITH_PYTHON)
+#.if defined(WITH_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 	(cd ${WRKSRC}/gdb; ${GMAKE} install-python )
 	(cd ${WRKSRC}/gdb/data-directory; ${GMAKE} install-python )
 .endif
