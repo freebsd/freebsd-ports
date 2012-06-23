@@ -6,20 +6,22 @@
 #
 
 PORTNAME=	riak
-PORTVERSION=	1.1.1
+PORTVERSION=	1.4.1
 CATEGORIES=	databases python
-MASTER_SITES=	http://github.com/downloads/tee-jay/riak-python-client/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-python-client-${PORTVERSION}
 
 MAINTAINER=	tj@harperdog.com
 COMMENT=	Python API for Riak, a Dynamo-inspired key/value store
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>0:${PORTSDIR}/devel/py-protobuf
+LICENSE=	AL2
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>=2.4.0:${PORTSDIR}/devel/py-protobuf
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 
-FETCH_ARGS=	-pRr
+post-patch:
+	@${REINPLACE_CMD} -e 's|zip_safe=True|zip_safe=False|' ${WRKSRC}/${PYSETUP}
 
 .include <bsd.port.mk>
