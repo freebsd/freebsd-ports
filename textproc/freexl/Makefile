@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	freexl
-DISTVERSION=	1.0.0c
+DISTVERSION=	1.0.0d
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
+MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/freexl-sources/
 
 MAINTAINER=	coder@tuxfamily.org
 COMMENT=	Library to extract valid data from within an Excel (.xls) spreadsheet
