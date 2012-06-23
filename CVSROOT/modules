@@ -1286,6 +1286,7 @@ bsdftpd-ssl                     ports/ftp/bsdftpd-ssl
 bsdgames                        ports/games/bsdgames
 bsdgrep                         ports/textproc/bsdgrep
 bsdhwmon                        ports/sysutils/bsdhwmon
+bsdinfo                         ports/sysutils/bsdinfo
 bsdlibdwarf                     ports/devel/bsdlibdwarf
 bsdmoted                        ports/sysutils/bsdmoted
 bsdproxy                        ports/net/bsdproxy
@@ -21054,6 +21055,7 @@ pecl-operator                   ports/devel/pecl-operator
 pecl-pam                        ports/security/pecl-pam
 pecl-params                     ports/devel/pecl-params
 pecl-pdflib                     ports/print/pecl-pdflib
+pecl-pdo_user                   ports/databases/pecl-pdo_user
 pecl-perl                       ports/lang/pecl-perl
 pecl-phk                        ports/archivers/pecl-phk
 pecl-pop3                       ports/mail/pecl-pop3
