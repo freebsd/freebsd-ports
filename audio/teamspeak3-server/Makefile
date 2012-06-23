@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	teamspeak3-server
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.5
 PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://teamspeak.gameserver.gamed.de/ts3/releases/${PORTVERSION}/ \
