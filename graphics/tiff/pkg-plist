@@ -166,6 +166,8 @@ libdata/pkgconfig/libtiff-4.pc
 %%PORTDOCS%%%%DOCSDIR%%/v3.9.1.html
 %%PORTDOCS%%%%DOCSDIR%%/v3.9.2.html
 %%PORTDOCS%%%%DOCSDIR%%/v4.0.0.html
+%%PORTDOCS%%%%DOCSDIR%%/v4.0.1.html
+%%PORTDOCS%%%%DOCSDIR%%/v4.0.2.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/man
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
