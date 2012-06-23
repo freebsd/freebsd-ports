@@ -33325,9 +33325,12 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>wordpress</name>
+	<range><lt>2.2.3,1</lt></range>
+      </package>
+      <package>
 	<name>de-wordpress</name>
 	<name>zh-wordpress</name>
-	<range><lt>2.2.3,1</lt></range>
+	<range><lt>2.2.3</lt></range>
       </package>
       <package>
 	<name>wordpress-mu</name>
