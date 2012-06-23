@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xppaut
-PORTVERSION=	5.99
+PORTVERSION=	6.11b
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.math.pitt.edu/~bard/bardware/
-DISTNAME=	${PORTNAME}_latest
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Graphical tool for solving differential equations, etc
@@ -18,16 +18,13 @@ MAN1=		xppaut.1
 USE_XORG=	xbitmaps x11 xproto
 CFLAGS+=	-w -Wno-return-type
 WRKSRC=		${WRKDIR}
+ALL_TARGET=	xppaut
 
-post-build:
-	${CHMOD} a+r ${WRKSRC}/xppaut.1
-
-pre-configure:
-.if !defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e "s|# PORTDOCS||" ${WRKSRC}/Makefile
+.ifdef NOPORTDOCS
+MAKE_ENV+=	NOPORTDOCS=yes
 .endif
-
-post-patch:
-	@(cd ${WRKSRC} && ${REINPLACE_CMD} -e "s|gcc|${CC}|" -e "s|CFLAGS=|CFLAGS= ${CFLAGS}|" Makefile libI77/Makefile cvodesrc/Makefile mkavi/Makefile)
+.ifdef NOPORTEXAMPLES
+MAKE_ENV+=	NOPORTEXAMPLES=yes
+.endif
 
 .include <bsd.port.mk>
