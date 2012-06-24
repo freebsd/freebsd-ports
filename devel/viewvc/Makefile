@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	viewvc
-PORTVERSION=	1.1.14
+PORTVERSION=	1.1.15
 #PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.viewvc.org/ \
