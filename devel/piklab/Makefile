@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	piklab
-PORTVERSION=	0.15.10
-PORTREVISION=	2
+PORTVERSION=	0.16.0
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME}/newest%20release/${PORTVERSION}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE IDE for microcontroller development
@@ -18,7 +17,9 @@ LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=	yes
-USE_KDELIBS_VER=3
+USE_QT4=	corelib gui qt3support qtestlib xml \
+		moc_build qmake_build rcc_build uic_build
+USE_KDE4=	automoc4 kdehier kdelibs kdeprefix sharedmime
 USE_GETTEXT=	yes
 USE_CMAKE=	yes
 INSTALLS_ICONS=	yes
@@ -39,6 +40,9 @@ LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/install/s|^|#|' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e \
+		'/CMAKE_BUILD_TYPE/s|^|#| ; \
+		 /KDE4/s|INCLUDE_DIRS|INCLUDES|' ${WRKSRC}/cmake/Piklab.cmake
 	@${REINPLACE_CMD} -e \
 		'/install/s|share/man|man|' ${WRKSRC}/man/CMakeLists.txt
 
