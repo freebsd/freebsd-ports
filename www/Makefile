@@ -295,6 +295,7 @@
     SUBDIR += hs-heist
     SUBDIR += hs-hjsmin
     SUBDIR += hs-http-conduit
+    SUBDIR += hs-http-date
     SUBDIR += hs-http-server
     SUBDIR += hs-http-types
     SUBDIR += hs-oeis
