@@ -50,9 +50,17 @@ LIBDRM_REVISION=1
 PLIST_SUB+=	OLD="" NEW="@comment "
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "i386" || ${ARCH} == "ia64"
+PLIST_SUB+=	X86=""
+.else
+PLIST_SUB+=	X86="@comment "
+.endif
+
 pre-patch:
 	@${REINPLACE_CMD} 's|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|g; \
 			   12661s/x86_/amd/g' \
 		${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
