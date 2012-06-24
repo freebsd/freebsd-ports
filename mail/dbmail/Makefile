@@ -7,7 +7,7 @@
 
 PORTNAME=	dbmail
 PORTVERSION=	3.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/3.0/
 
@@ -30,6 +30,8 @@ CONFLICTS=	dbmail-*-2.0.* dbmail-2.*
 OPTIONS_DEFINE=	LDAP SIEVE THREADS
 OPTIONS_DEFAULT=	THREADS
 SIEVE_DESC=	"Build with support for Sieve mail sorting language"
+
+.include <bsd.port.options.mk>
 
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
@@ -66,25 +68,25 @@ PLIST_SUB+=	PORTDOCS="@comment "
 PLIST_SUB+=	PORTDOCS=""
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_SIEVE)
+.if ${PORT_OPTIONS:MSIEVE}
 CONFIGURE_ARGS+=--with-sieve=${LOCALBASE}
 LIB_DEPENDS+=	sieve:${PORTSDIR}/mail/libsieve
 PLIST_SUB+=	SIEVE=""
 .else
+CONFIGURE_ARGS+=--without-sieve
 PLIST_SUB+=	SIEVE="@comment "
 .endif
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 USE_OPENLDAP=	yes
 PLIST_SUB+=	LDAP=""
 .else
+CONFIGURE_ARGS+=--without-ldap
 PLIST_SUB+=	LDAP="@comment "
 .endif
 
-.if defined(WITH_THREADS)
+.if ${PORT_OPTIONS:MTHREADS}
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-acinclude.m4
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure
 .endif
@@ -113,4 +115,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
