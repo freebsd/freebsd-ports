@@ -20,9 +20,9 @@ PLIST=		${WRKDIR}/plist
 NO_WRKSUBDIR=	yes
 SHAREOWN=	${PORTNAME}
 SHAREGRP=	${SHAREOWN}
-
 USERS=		${PORTNAME}
 GROUPS=		${USERS}
+LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
 OPTIONS=	DOWNLOAD	"Don't resample, download all." off \
 		8K		"Compile sounds for 8K" on \
