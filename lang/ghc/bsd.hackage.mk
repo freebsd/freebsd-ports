@@ -18,6 +18,7 @@ Agda_port=			math/hs-Agda		# executable
 Agda-executable_port=		math/hs-Agda-executable	# executable
 alex_port=			devel/hs-alex		# executable
 ALUT_port=			audio/hs-ALUT
+angel_port=			sysutils/hs-angel
 ansi-terminal_port=		devel/hs-ansi-terminal
 ansi-wl-pprint_port=		devel/hs-ansi-wl-pprint
 arrows_port=			devel/hs-arrows
