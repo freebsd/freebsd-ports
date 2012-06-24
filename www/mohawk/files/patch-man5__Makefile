@@ -1,0 +1,7 @@
+--- ./man5/Makefile.orig	2012-05-28 13:26:48.000000000 +0200
++++ ./man5/Makefile	2012-05-28 13:27:02.000000000 +0200
+@@ -1,3 +1,4 @@
++SHAREDIR=	${PREFIX}
+ MAN= mohawk.conf.5
+ 
+ .include <bsd.prog.mk>
