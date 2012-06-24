@@ -285,6 +285,7 @@ unix-compat_port=		devel/hs-unix-compat
 unlambda_port=			lang/hs-unlambda	# executable
 unordered-containers_port=	devel/hs-unordered-containers
 url_port=			www/hs-url
+utf8-light_port=		devel/hs-utf8-light
 utf8-string_port=		devel/hs-utf8-string
 utility-ht_port=		devel/hs-utility-ht
 uuagc_port=			devel/hs-uuagc		# executable
