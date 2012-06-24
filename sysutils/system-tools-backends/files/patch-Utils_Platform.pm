@@ -5,7 +5,7 @@
    "freebsd-7"       => [ "FreeBSD", "7", "" ],
    "freebsd-8"       => [ "FreeBSD", "8", "" ],
 +  "freebsd-9"       => [ "FreeBSD", "9", "" ],
-+  "freebsd-10"      => [ "FreeBSD", "10" "" ],
++  "freebsd-10"      => [ "FreeBSD", "10", "" ],
    "gentoo"          => [ "Gentoo Linux", "", "" ],
    "vlos-1.2"        => [ "Vida Linux OS", "1.2" ],
    "archlinux"       => [ "Arch Linux", "", "" ],
