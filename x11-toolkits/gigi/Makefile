@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gigi
-PORTVERSION=	0.8.0.1048
-PORTREVISION=	4
+PORTVERSION=	0.8.0.1074
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -69,7 +68,7 @@ maint-gen-distfile:
 		${ECHO_CMD} "ERROR: the distfile already exists."; \
 		${FALSE}; \
 	fi
-	svn export -r 1048 https://${PORTNAME}.svn.sourceforge.net/svnroot/${PORTNAME}/trunk ${PORTNAME}
+	svn export -r 1074 https://${PORTNAME}.svn.sourceforge.net/svnroot/${PORTNAME}/trunk ${PORTNAME}
 	tar cjf ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}
 	${RM} -rf ${PORTNAME}
 
