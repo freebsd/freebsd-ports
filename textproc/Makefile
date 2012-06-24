@@ -268,6 +268,7 @@
     SUBDIR += hs-regex-posix
     SUBDIR += hs-stringsearch
     SUBDIR += hs-tagsoup
+    SUBDIR += hs-tagstream-conduit
     SUBDIR += hs-texmath
     SUBDIR += hs-xhtml
     SUBDIR += hs-xml

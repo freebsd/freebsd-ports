@@ -267,6 +267,7 @@ system-fileio_port=		devel/hs-system-fileio
 system-filepath_port=		devel/hs-system-filepath
 tagged_port=			devel/hs-tagged
 tagsoup_port=			textproc/hs-tagsoup	# executable
+tagstream-conduit_port=		textproc/hs-tagstream-conduit
 tar_port=			archivers/hs-tar
 temporary_port=			devel/hs-temporary
 Tensor_port=			devel/hs-Tensor
