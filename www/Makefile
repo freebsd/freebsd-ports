@@ -312,6 +312,7 @@
     SUBDIR += hs-snap-server
     SUBDIR += hs-url
     SUBDIR += hs-wai
+    SUBDIR += hs-wai-app-static
     SUBDIR += hs-wai-extra
     SUBDIR += hs-wai-logger
     SUBDIR += hs-warp
