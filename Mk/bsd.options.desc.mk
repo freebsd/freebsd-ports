@@ -3,9 +3,16 @@
 # READ BEFORE EDITING:
 # - Please keep descriptions sorted alphabetically by variable name.
 #
+# - Please respect these limits or the dialog options wrap or get cutoff
+#  - OPTNAME_DESC?= must be 19 characters or less
+#  - OPTION description text must be 43 characters or less
+#
 
 Options_Desc_MAINTAINER=	ports@FreeBSD.org
 
+# OPTION_DESC:		 Description:
+#  Length         |	|                   Length                |
+#
 AAC_DESC?=		Enable support for aac/mp4
 AALIB_DESC?=		Enable aalib support
 ALSA_DESC?=		Enable alsa audio support
@@ -86,7 +93,7 @@ ICONS_DESC?=		Enable Icons theme
 ICONV_DESC?=		Enable ICONV support
 ID3_DESC?=		Enable support for id3 tags
 ID3TAG_DESC?=		Support ID3 v1/v2 tags
-IDN_DESC?=		Enable IDN (International Domain Names) support
+IDN_DESC?=		Enable International Domain Names support
 IMLIB_DESC?=		Enable imlib image library support
 IMLIB2_DESC?=		Enable imlib2 image library support
 IPV6_DESC?=		Enable IPv6 support
@@ -142,7 +149,7 @@ MUSEPACK_DESC?=		Support MPC audio format
 MYSQL_DESC?=		Enable MySQL backend
 NAS_DESC?=		Enable Network Audio System support
 NETCDF_DESC?=		Enable NetCDF support
-NLS_DESC?=		Native Language Support via gettext utilities
+NLS_DESC?=		Native Language Support via gettext
 NOTIFY_DESC?=		Enable startup notification support
 ODBC_DESC?=		Enable ODBC backend
 ODF_DESC?=		Enable ODF support
@@ -152,7 +159,7 @@ OPTIMIZED_CFLAGS_DESC?=	Enable compilation optimizations
 ORACLE_DESC?=		Enable Oracle support
 OSS_DESC?=		Enable Open Sound System support
 PAM_DESC?=		Enable PAM support
-PCRE_DESC?=		Use Perl Compatible Regular Expressions library
+PCRE_DESC?=		Use Perl Compatible Regular Expressions
 PERL_DESC?=		Enable Perl scripting language support
 PGSQL_DESC?=		Enable PostgreSQL backend
 PHP_DESC?=		Enable PHP binding/support
@@ -163,7 +170,7 @@ PORTAUDIO_DESC?=	Enable PortAudio support
 POSTGIS_DESC?=		Enable postgis support
 PRINT_DESC?=		Enable Printer support
 PROJ_DESC?=		Enable PROJ.4 support 
-PTH_DESC?=		Enable GNU Pth for threading/multiprocessing
+PTH_DESC?=		Use GNU Pth for threading/multiprocessing
 PULSEAUDIO_DESC?=	Support PulseAudio sound server
 PYMALLOC_DESC?=		Enable python's internal malloc
 PYTHON_DESC?=		Enable Python binding/support
