@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	courier-authlib
-PORTVERSION=	0.63.0
-PORTREVISION=	3
+PORTVERSION=	0.64.0
 CATEGORIES?=	security mail
 .if defined(PKGNAMESUFFIX)
 MASTER_SITES=	SF/courier/authlib/${PORTVERSION}
