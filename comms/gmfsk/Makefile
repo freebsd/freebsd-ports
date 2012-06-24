@@ -9,7 +9,9 @@ PORTNAME=	gmfsk
 PORTVERSION=	0.6
 PORTREVISION=	10
 CATEGORIES=	comms audio hamradio
-MASTER_SITES=	http://gmfsk.connect.fi/
+MASTER_SITES=	http://gmfsk.connect.fi/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	db
 
 MAINTAINER=	carl@stagecraft.cx
 COMMENT=	The Gnome MFSK terminal program
@@ -27,18 +29,23 @@ INSTALLS_OMF=	yes
 
 GCONF_SCHEMAS=	gmfsk.schemas
 
-OPTIONS=	HAMLIB "Enable HAMLIB Support" On
+OPTIONS_DEFINE=	HAMLIB
+HAMLIB_DESC=	Enable HAMLIB Support
+OPTIONS_DEFAULT=	HAMLIB
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_HAMLIB)
+.if ${PORT_OPTIONS:MHAMLIB}
 LIB_DEPENDS+=	hamlib:${PORTSDIR}/comms/hamlib
 CONFIGURE_ARGS+=	--enable-hamlib
 CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lib/pkgconfig
+.else
+CONFIGURE_ARGS+=	--disable-hamlib
 .endif
 
 .if ( ${OSVERSION} >= 802502 && ${OSVERSION} < 900000 ) || ${OSVERSION} >= 900027
-BROKEN=		does not build after log2 addition
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-misc_misc.c
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-misc_misc.h
 .endif
 
 post-patch:
