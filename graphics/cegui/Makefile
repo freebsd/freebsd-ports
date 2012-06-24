@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	cegui
-PORTVERSION=	0.7.5
-PORTREVISION=	5
+PORTVERSION=	0.7.6
 CATEGORIES=	graphics devel
-MASTER_SITES=	SF/crayzedsgui/CEGUI%20Mk-2/0.7.5
+MASTER_SITES=	SF/crayzedsgui/CEGUI%20Mk-2/0.7.6
 DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 
 MAINTAINER=	oliver@FreeBSD.org
@@ -25,7 +24,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/2b/2/}
 CONFIGURE_ARGS=	--disable-toluacegui --disable-irrlicht-renderer \
 		--disable-corona --enable-devil --disable-freeimage --disable-silly \
 		--disable-libxml --disable-xerces-c --disable-expat --disable-samples \
-		--enable-null-renderer
+		--enable-null-renderer --disable-external-tinyxml
 
 CONFIGURE_ENV+=	Lua_LIBS="-L${LUA_LIBDIR} -llua -lm" \
 		Lua_CFLAGS="-I${LUA_INCDIR}"

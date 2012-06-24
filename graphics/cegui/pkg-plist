@@ -285,48 +285,48 @@ include/CEGUI/falagard/CEGUIFalWidgetComponent.h
 include/CEGUI/falagard/CEGUIFalWidgetLookFeel.h
 include/CEGUI/falagard/CEGUIFalWidgetLookManager.h
 include/CEGUI/falagard/CEGUIFalXMLEnumHelper.h
-lib/libCEGUIBase-0.7.5.so.0
-lib/libCEGUIBase-0.7.5.so
+lib/libCEGUIBase-0.7.6.so.0
+lib/libCEGUIBase-0.7.6.so
 lib/libCEGUIBase.la
 lib/libCEGUIBase.so
-lib/libCEGUIDevILImageCodec-0.7.5.so.0
-lib/libCEGUIDevILImageCodec-0.7.5.so
+lib/libCEGUIDevILImageCodec-0.7.6.so.0
+lib/libCEGUIDevILImageCodec-0.7.6.so
 lib/libCEGUIDevILImageCodec.la
 lib/libCEGUIDevILImageCodec.so
-lib/libCEGUIFalagardWRBase-0.7.5.so.0
-lib/libCEGUIFalagardWRBase-0.7.5.so
+lib/libCEGUIFalagardWRBase-0.7.6.so.0
+lib/libCEGUIFalagardWRBase-0.7.6.so
 lib/libCEGUIFalagardWRBase.la
 lib/libCEGUIFalagardWRBase.so
-lib/libCEGUILuaScriptModule-0.7.5.so.0
-lib/libCEGUILuaScriptModule-0.7.5.so
+lib/libCEGUILuaScriptModule-0.7.6.so.0
+lib/libCEGUILuaScriptModule-0.7.6.so
 lib/libCEGUILuaScriptModule.la
 lib/libCEGUILuaScriptModule.so
-lib/libCEGUINullRenderer-0.7.5.so.0
-lib/libCEGUINullRenderer-0.7.5.so
+lib/libCEGUINullRenderer-0.7.6.so.0
+lib/libCEGUINullRenderer-0.7.6.so
 lib/libCEGUINullRenderer.la
 lib/libCEGUINullRenderer.so
-%%WITH_OGRE%%lib/libCEGUIOgreRenderer-0.7.5.so.0
-%%WITH_OGRE%%lib/libCEGUIOgreRenderer-0.7.5.so
+%%WITH_OGRE%%lib/libCEGUIOgreRenderer-0.7.6.so.0
+%%WITH_OGRE%%lib/libCEGUIOgreRenderer-0.7.6.so
 %%WITH_OGRE%%lib/libCEGUIOgreRenderer.la
 %%WITH_OGRE%%lib/libCEGUIOgreRenderer.so
-lib/libCEGUIOpenGLRenderer-0.7.5.so.0
-lib/libCEGUIOpenGLRenderer-0.7.5.so
+lib/libCEGUIOpenGLRenderer-0.7.6.so.0
+lib/libCEGUIOpenGLRenderer-0.7.6.so
 lib/libCEGUIOpenGLRenderer.la
 lib/libCEGUIOpenGLRenderer.so
-lib/libCEGUISTBImageCodec-0.7.5.so.0
-lib/libCEGUISTBImageCodec-0.7.5.so
+lib/libCEGUISTBImageCodec-0.7.6.so.0
+lib/libCEGUISTBImageCodec-0.7.6.so
 lib/libCEGUISTBImageCodec.la
 lib/libCEGUISTBImageCodec.so
-lib/libCEGUITGAImageCodec-0.7.5.so.0
-lib/libCEGUITGAImageCodec-0.7.5.so
+lib/libCEGUITGAImageCodec-0.7.6.so.0
+lib/libCEGUITGAImageCodec-0.7.6.so
 lib/libCEGUITGAImageCodec.la
 lib/libCEGUITGAImageCodec.so
-lib/libCEGUITinyXMLParser-0.7.5.so.0
-lib/libCEGUITinyXMLParser-0.7.5.so
+lib/libCEGUITinyXMLParser-0.7.6.so.0
+lib/libCEGUITinyXMLParser-0.7.6.so
 lib/libCEGUITinyXMLParser.la
 lib/libCEGUITinyXMLParser.so
-@comment lib/libCEGUItoluapp-0.7.5.so.0
-@comment lib/libCEGUItoluapp-0.7.5.so
+@comment lib/libCEGUItoluapp-0.7.6.so.0
+@comment lib/libCEGUItoluapp-0.7.6.so
 @comment lib/libCEGUItoluapp.la
 @comment lib/libCEGUItoluapp.so
 %%WITH_OGRE%%libdata/pkgconfig/CEGUI-OGRE.pc
@@ -370,6 +370,7 @@ share/CEGUI/layouts/TextDemo.layout
 share/CEGUI/layouts/TreeDemoTaharez.layout
 share/CEGUI/layouts/VanillaConsole.layout
 share/CEGUI/layouts/VanillaWindows.layout
+share/CEGUI/looknfeel/InventoryComponents.looknfeel
 share/CEGUI/looknfeel/OgreTray.looknfeel
 share/CEGUI/looknfeel/TaharezLook.looknfeel
 share/CEGUI/looknfeel/Vanilla.looknfeel
