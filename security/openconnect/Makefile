@@ -42,9 +42,6 @@ GNUTLS_DESC=	Use GnuTLS instead of OpenSSL(EXPERIMENTAL)
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUTLS}
-.if ${OSVERSION} < 900007
-BROKEN=		GnuTLS support currently requires FreeBSD 9.x or above
-.endif
 LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=--with-gnutls
 .endif
