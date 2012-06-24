@@ -20,3 +20,5 @@
 %%WITH_32K%%@dirrm %%DATADIR%%/sounds/music/32000
 %%WITH_48K%%@dirrm %%DATADIR%%/sounds/music/48000
 @dirrm %%DATADIR%%/sounds/music
+@dirrmtry %%DATADIR%%/sounds
+@dirrmtry %%DATADIR%%
