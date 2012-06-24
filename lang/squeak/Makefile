@@ -36,7 +36,7 @@ LIB_DEPENDS=		audio:${PORTSDIR}/audio/nas \
 
 ##################################################
 VM_VERSION=		${PORTVERSION}.${SVNVERSION}
-SVNVERSION=		2375
+SVNVERSION=		2383
 IMAGEVERSION=		4.3
 SQUEAK_LIB_DIR=		${PORTVERSION}-${SVNVERSION}
 
@@ -44,7 +44,7 @@ SQUEAK_LIB_DIR=		${PORTVERSION}-${SVNVERSION}
 
 ##################################################
 DIST_SUBDIR=		squeak
-ONLY_FOR_ARCHS=		i386
+ONLY_FOR_ARCHS=		i386 amd64
 MAN1=			squeak.1
 USE_GMAKE=		yes
 USE_GL=			gl
@@ -93,7 +93,7 @@ pre-configure:
 
 ##################################################
 post-install:
-	(cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} SqueakV41.sources ${PREFIX}/lib/squeak/)
+	(cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} SqueakV41.sources ${PREFIX}/lib/squeak/${SQUEAK_LIB_DIR}/)
 	(cd ${DISTDIR}/${DIST_SUBDIR} && ${UNZIP_CMD} -u Squeak${IMAGEVERSION}.zip -d ${WRKDIR})
 .for f in ${IMAGES}
 	(cd ${WRKDIR} && ${INSTALL_DATA} ${f} ${PREFIX}/lib/squeak/)
