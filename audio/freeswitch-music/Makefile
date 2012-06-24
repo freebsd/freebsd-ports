@@ -16,12 +16,13 @@ DIST_SUBDIR=	freeswitch
 MAINTAINER=	r.neese@gmail.com
 COMMENT=	FreeSwitch Music - All Bitrates
 
-RUN_DEPENDS=	${LOCALBASE}/bin/freeswitch:${PORTSDIR}/net/freeswitch-core
-
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-SHAREOWN=	${PORTNAME}
+USERS=		${PORTNAME}
+GROUPS=		${USERS}
+SHAREOWN=	${USERS}
 SHAREGRP=	${SHAREOWN}
+LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
 OPTIONS=	8K           "Install 8000Hz Music" on \
 		16K          "Install 16000Hz Music" on \
