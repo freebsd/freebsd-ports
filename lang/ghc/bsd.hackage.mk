@@ -322,6 +322,7 @@ xhtml_port=			textproc/hs-xhtml
 xml_port=			textproc/hs-xml
 xml-conduit_port=		textproc/hs-xml-conduit
 xml-types_port=			textproc/hs-xml-types
+xml2html_port=			textproc/hs-xml2html
 xmlhtml_port=			textproc/hs-xmlhtml
 xmobar_port=			x11/hs-xmobar		# executable
 xmonad_port=			x11-wm/hs-xmonad	# executable
