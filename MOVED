@@ -3531,3 +3531,4 @@ ftp/IglooFTP||2012-06-18|Has expired: No longer supported
 audio/libtunepimp||2012-06-20|MusicBrainz RDF webservice no longer functions
 audio/libtunepimp-old||2012-06-20|MusicBrainz RDF webservice no longer functions
 sysutils/xfce4-utils||2012-06-23|No longer relevant, see UPDATING
+devel/py-sendfile|net/py-pysendfile|2012-06-24|Domain lapsed, forked
