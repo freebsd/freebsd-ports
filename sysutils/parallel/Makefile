@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	parallel
-PORTVERSION=	20120522
+PORTVERSION=	20120622
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
@@ -14,6 +14,8 @@ MAINTAINER=	howeyc@gmail.com
 COMMENT=	GNU parallel is a shell tool for executing jobs in parallel
 
 LICENSE=	GPLv3
+
+OPTIONS_DEFINE=	DOCS
 
 CONFLICTS=	moreutils-parallel-[0-9]*
 
@@ -27,9 +29,11 @@ PLIST_FILES=	bin/parallel bin/sem bin/sql bin/niceload
 PORTDOCS=	parallel.html sem.html sql.html niceload.html \
 		parallel.texi sem.texi sql.texi niceload.texi
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e '1 s|/usr/bin/perl|${PERL}|' ${WRKSRC}/src/parallel
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-docDATA||' ${WRKSRC}/src/Makefile.in
 .endif
 
