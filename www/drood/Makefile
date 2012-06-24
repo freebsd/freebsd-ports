@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	drood
-PORTVERSION=	3.2
+PORTVERSION=	3.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.mammothcheese.ca/
 
 MAINTAINER=	jimmy@mammothcheese.ca
 COMMENT=	Lightweight kqueue-based http/1.1 server
-
-SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN8=		drood.8 plunger.8
 
