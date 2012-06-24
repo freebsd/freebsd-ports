@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openconnect
-PORTVERSION=	3.20
+PORTVERSION=	4.00
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/ \
 		http://mirrors.rit.edu/zi/
@@ -17,42 +17,43 @@ COMMENT=	A client for Cisco's AnyConnect SSL VPN
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LGPL
 
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
 RUN_DEPENDS=	vpnc-script:${PORTSDIR}/sysutils/vpnc-scripts
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-nls --with-vpnc-script=${LOCALBASE}/sbin/vpnc-script
+CONFIGURE_ARGS=	--disable-nls --with-vpnc-script=${LOCALBASE}/sbin/vpnc-script \
+		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 USE_AUTOTOOLS=	aclocal autoconf libtool
 USE_GNOME=	gnomehack pkgconfig
 USE_GMAKE=	yes
+USE_OPENSSL=	yes
 MAKE_JOBS_SAFE=	yes
 ACLOCAL_ARGS=	-I .
-USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 PORTDOCS=	*
 
 MAN8=		openconnect.8
 
-OPTIONS=	PROXY "Enable automatic proxy configuratio via libproxy" off \
-		OPENSSLPORT "Use OpenSSL from ports" off
+OPTIONS_DEFINE=	PROXY GNUTLS
+
+PROXY_DESC=	Enable automatic proxy configuratio via libproxy
+GNUTLS_DESC=	Use GnuTLS instead of OpenSSL(EXPERIMENTAL)
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_OPENSSLPORT)
-WITH_OPENSSL_PORT=	yes
-.else
-WITH_OPENSSL_BASE=	yes
+.if ${PORT_OPTIONS:MGNUTLS}
+.if ${OSVERSION} < 900007
+BROKEN=		GnuTLS support currently requires FreeBSD 9.x or above
+.endif
+LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+CONFIGURE_ARGS+=--with-gnutls
 .endif
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_PROXY)
-LIB_DEPENDS+=	proxy.1:${PORTSDIR}/net/libproxy
+.if ${PORT_OPTIONS:MPROXY}
+LIB_DEPENDS+=	proxy:${PORTSDIR}/net/libproxy
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.am
 
 post-install:
 .if !defined(NOPORTDOCS)
