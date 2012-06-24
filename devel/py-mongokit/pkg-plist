@@ -16,18 +16,27 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/connection.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/connection.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/connection.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/cursor.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/cursor.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/cursor.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/database.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/database.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/database.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/document.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/document.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/document.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/generators.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/generators.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/generators.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/grid.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/grid.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/grid.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/helpers.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/helpers.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/helpers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/master_slave_connection.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/master_slave_connection.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/master_slave_connection.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/migration.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/migration.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/migration.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/mongo_exceptions.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/mongo_exceptions.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/mongo_exceptions.pyo
@@ -40,6 +49,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/versioned_document.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/versioned_document.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit/versioned_document.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongokit
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
