@@ -332,6 +332,7 @@ yaml_port=			textproc/hs-yaml
 yesod_port=			www/hs-yesod
 yesod-auth_port=		www/hs-yesod-auth
 yesod-core_port=		www/hs-yesod-core
+yesod-default_port=		www/hs-yesod-default
 yesod-form_port=		www/hs-yesod-form
 yesod-json_port=		www/hs-yesod-json
 yesod-persistent_port=		www/hs-yesod-persistent
