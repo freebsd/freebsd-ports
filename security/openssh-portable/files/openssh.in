@@ -79,7 +79,7 @@ openssh_keygen()
 				"in %%ETCSSH%%/ssh_host_ecdsa_key"
 			echo "Skipping protocol version 2 Elliptic Curve DSA Key Generation"
 		else
-			%%PREFIX%%/bin/ssh-keygen -t dsa \
+			%%PREFIX%%/bin/ssh-keygen -t ecdsa \
 				-f %%ETCSSH%%/ssh_host_ecdsa_key -N ''
 		fi
 	fi
