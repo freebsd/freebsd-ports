@@ -336,6 +336,7 @@ yesod-default_port=		www/hs-yesod-default
 yesod-form_port=		www/hs-yesod-form
 yesod-json_port=		www/hs-yesod-json
 yesod-persistent_port=		www/hs-yesod-persistent
+yesod-platform_port=		www/hs-yesod-platform
 yesod-routes_port=		www/hs-yesod-routes
 yesod-static_port=		www/hs-yesod-static
 yesod-test_port=		www/hs-yesod-test
