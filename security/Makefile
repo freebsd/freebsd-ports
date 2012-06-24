@@ -193,6 +193,7 @@
     SUBDIR += hs-clientsession
     SUBDIR += hs-cprng-aes
     SUBDIR += hs-crypto-api
+    SUBDIR += hs-crypto-conduit
     SUBDIR += hs-crypto-pubkey-types
     SUBDIR += hs-cryptocipher
     SUBDIR += hs-cryptohash
