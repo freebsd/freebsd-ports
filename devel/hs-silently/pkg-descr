@@ -1,0 +1,3 @@
+Prevent or capture writing to stdout and other handles.
+
+WWW:	https://github.com/trystan/silently
