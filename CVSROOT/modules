@@ -13338,6 +13338,9 @@ p5-Math-FFT                     ports/math/p5-Math-FFT
 p5-Math-Financial               ports/finance/p5-Math-Financial
 p5-Math-FixedPrecision          ports/math/p5-Math-FixedPrecision
 p5-Math-GMP                     ports/math/p5-Math-GMP
+p5-Math-GMPf                    ports/math/p5-Math-GMPf
+p5-Math-GMPq                    ports/math/p5-Math-GMPq
+p5-Math-GMPz                    ports/math/p5-Math-GMPz
 p5-Math-GSL                     ports/math/p5-Math-GSL
 p5-Math-Geometry                ports/math/p5-Math-Geometry
 p5-Math-Geometry-Planar         ports/math/p5-Math-Geometry-Planar
@@ -17858,6 +17861,9 @@ p5-math-geometry-planar-gpc-polygon  ports/math/p5-Math-Geometry-Planar-GPC-Poly
 p5-math-geometry-planar-offset  ports/math/p5-Math-Geometry-Planar-Offset
 p5-math-geometry-voronoi        ports/math/p5-Math-Geometry-Voronoi
 p5-math-gmp                     ports/math/p5-Math-GMP
+p5-math-gmpf                    ports/math/p5-Math-GMPf
+p5-math-gmpq                    ports/math/p5-Math-GMPq
+p5-math-gmpz                    ports/math/p5-Math-GMPz
 p5-math-gradient                ports/math/p5-Math-Gradient
 p5-math-gsl                     ports/math/p5-Math-GSL
 p5-math-int64                   ports/math/p5-Math-Int64
@@ -22954,6 +22960,7 @@ py-png                          ports/graphics/py-png
 py-poker-eval                   ports/games/py-poker-eval
 py-polib                        ports/devel/py-polib
 py-poppler                      ports/graphics/py-poppler
+py-port-for                     ports/net/py-port-for
 py-posix1e                      ports/security/py-posix1e
 py-poster                       ports/www/py-poster
 py-postgresql                   ports/databases/py-postgresql
@@ -24131,6 +24138,7 @@ re_graph                        ports/textproc/re_graph
 readline                        ports/devel/readline
 readlink                        ports/sysutils/readlink
 reallyslick                     ports/graphics/reallyslick
+rebar                           ports/devel/rebar
 rebot3                          ports/audio/rebot3
 recmpeg                         ports/multimedia/recmpeg
 recode                          ports/converters/recode
@@ -28265,7 +28273,6 @@ xfce4-taskmanager               ports/x11/xfce4-taskmanager
 xfce4-timer-out-plugin          ports/x11-clocks/xfce4-timer-out-plugin
 xfce4-timer-plugin              ports/x11-clocks/xfce4-timer-plugin
 xfce4-tumbler                   ports/deskutils/xfce4-tumbler
-xfce4-utils                     ports/sysutils/xfce4-utils
 xfce4-verve-plugin              ports/x11/xfce4-verve-plugin
 xfce4-wavelan-plugin            ports/sysutils/xfce4-wavelan-plugin
 xfce4-weather-plugin            ports/misc/xfce4-weather-plugin
