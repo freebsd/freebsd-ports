@@ -48,7 +48,7 @@ pre-fetch:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-		-e 's|/usr/X11R6|${X11BASE}|g' \
+		-e 's|/usr/X11R6|${LOCALBASE}|g' \
 		${WRKSRC}/Makefile
 	@${FIND} ${WRKSRC}/../.. -name Makefile -type f | \
 		${XARGS} ${REINPLACE_CMD} -e 's|CC =|CC?=|g ; \

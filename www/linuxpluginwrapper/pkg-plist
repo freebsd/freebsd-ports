@@ -12,11 +12,11 @@ lib/pluginwrapper/realplayer.so
 %%EXAMPLESDIR%%/libmap.conf-FreeBSD5-stable
 %%EXAMPLESDIR%%/libmap.conf-FreeBSD5-current
 %%EXAMPLESDIR%%/libmap.conf-FreeBSD4.x
-@unexec	/bin/rm -f    %%X11BASE%%/lib/browser_linux_plugins/nphelix.so
-@unexec	/bin/rm -f    %%X11BASE%%/lib/browser_linux_plugins/nphelix.xpt
-@unexec /bin/rmdir    %%X11BASE%%/lib/browser_linux_plugins 2>/dev/null || true
-@exec   /bin/mkdir -p %%X11BASE%%/lib/browser_linux_plugins 2>/dev/null || true
-@exec	/bin/ln -sf %%LOCALBASE%%/lib/linux-mozilla/plugins/nphelix.so                   %%X11BASE%%/lib/browser_linux_plugins/
-@exec	/bin/ln -sf %%LOCALBASE%%/lib/linux-mozilla/plugins/nphelix.xpt                  %%X11BASE%%/lib/browser_linux_plugins/
+@unexec	/bin/rm -f    %%LOCALBASE%%/lib/browser_linux_plugins/nphelix.so
+@unexec	/bin/rm -f    %%LOCALBASE%%/lib/browser_linux_plugins/nphelix.xpt
+@unexec /bin/rmdir    %%LOCALBASE%%/lib/browser_linux_plugins 2>/dev/null || true
+@exec   /bin/mkdir -p %%LOCALBASE%%/lib/browser_linux_plugins 2>/dev/null || true
+@exec	/bin/ln -sf %%LOCALBASE%%/lib/linux-mozilla/plugins/nphelix.so                   %%LOCALBASE%%/lib/browser_linux_plugins/
+@exec	/bin/ln -sf %%LOCALBASE%%/lib/linux-mozilla/plugins/nphelix.xpt                  %%LOCALBASE%%/lib/browser_linux_plugins/
 @dirrm lib/pluginwrapper
 @dirrm %%EXAMPLESDIR%%

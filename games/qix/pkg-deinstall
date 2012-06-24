@@ -3,7 +3,7 @@
 if [ "$2" != "POST-DEINSTALL" ]; then
     exit 0
 fi
-X11BASE=/usr/X11R6
+X11BASE=/usr/local
 FONTDIR=$X11BASE/lib/X11/fonts/local
 ALIAS=$FONTDIR/fonts.alias
 

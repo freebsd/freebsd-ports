@@ -102,7 +102,7 @@ sub writemk {
 				"gtk12.2:\${PORTSDIR}/x11-toolkits/gtk12");
 
 			$tmp{"GTK_CONFIG"} =
-				"\${X11BASE}/bin/gtk12-config";
+				"\${LOCALBASE}/bin/gtk12-config";
 
 			appendvar("CONFIGURE_ENV",
 					"GTK_CONFIG=\"\${GTK_CONFIG}\"");

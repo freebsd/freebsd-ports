@@ -129,9 +129,7 @@ USE_NPAPI_EXP+=	${_TEMP_APP__}
 .endfor
 
 NPAPI_APPS?=	${USE_NPAPI_EXP:S.^.${LOCALBASE}/lib/.:S.$./plugins.:N*opera*} \
-				${USE_NPAPI_EXP:S.^.${X11BASE}/lib/.:S.$./plugins.:N*opera*} \
-				${USE_NPAPI_EXP:S.^.${LOCALBASE}/share/.:S.$./plugins.:M*/opera*} \
-				${USE_NPAPI_EXP:S.^.${X11BASE}/share/.:S.$./plugins.:M*/opera*}
+				${USE_NPAPI_EXP:S.^.${LOCALBASE}/share/.:S.$./plugins.:M*/opera*}
 NPAPI_SLDIRS_ALL=	${NPAPI_APPS_ALL:S.^.${NPAPI_SLDIR}/.}
 NPAPI_SLDIRS=		${USE_NPAPI_EXP:S.^.${NPAPI_SLDIR}/.}
 NPAPI_LINKFARMS=	${NPAPI_APPS} ${NPAPI_SLDIRS}

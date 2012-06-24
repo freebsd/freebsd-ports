@@ -101,7 +101,7 @@ EMPTY_DIRS=	plan9/log \
 post-patch:
 	@${FIND} ${WRKSRC}/man -type f -regex ".*\.[0-9?]$\" \
 		| ${XARGS} ${REINPLACE_CMD} -e 's|\\\*9|${PLAN9}|'
-	@${REINPLACE_CMD} -e 's|X11=/usr/X11R6|X11=${X11BASE}|' \
+	@${REINPLACE_CMD} -e 's|X11=/usr/X11R6|X11=${LOCALBASE}|' \
 		${WRKSRC}/bin/9l ${WRKSRC}/src/cmd/devdraw/mkwsysrules.sh
 	@${REINPLACE_CMD} -e 's|/lib/font/bit|${PLAN9}/font|' \
 		${WRKSRC}/src/cmd/acme/acme.c

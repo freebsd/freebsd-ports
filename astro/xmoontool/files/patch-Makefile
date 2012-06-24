@@ -2,7 +2,7 @@
 +++ ./Makefile	Fri Mar 24 10:55:01 2006
 @@ -8,9 +8,9 @@
  LOCALBASE?=	/usr/local
- X11BASE?= 	/usr/X11R6
+ X11BASE?= 	/usr/local
  
 -CC= 		gcc
 -CFLAGS= 	-O2 -Wall
