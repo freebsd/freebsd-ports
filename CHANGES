@@ -10,6 +10,17 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20120529:
+AUTHOR: crees@FreeBSD.org
+
+  * OPTIONS has been updated with many changes and improvements.
+
+    Old-style OPTIONS declarations will continue to work for a while,
+    but do not introduce any into existing or new ports.
+
+    For further information, see the Porter's Handbook section on
+    Makefile Options.
+
 20110923:
 AUTHOR: amdmi3@FreeBSD.org
 
