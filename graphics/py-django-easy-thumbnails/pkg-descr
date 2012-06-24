@@ -1,0 +1,9 @@
+The primary function of easy-thumbnails is to dynamically create thumbnails
+based on a source image.  So whenever a thumbnail does not exist or if the
+source was modified more recently than the existing thumbnail, a new thumbnail
+is generated (and saved).  Thumbnail aliases can be defined, providing
+predefined thumbnail options.  This also allows for generation of thumbnails
+when the source image is uploaded.
+
+WWW: http://pypi.python.org/pypi/easy-thumbnails/
+WWW: https://github.com/SmileyChris/easy-thumbnails
