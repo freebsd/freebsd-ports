@@ -7,7 +7,7 @@
 
 PORTNAME=	secretmaryochronicles
 PORTVERSION=	1.10.git20120512
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 #		SF/smclone/Secret%20Maryo%20Chronicles/${PORTVERSION}
@@ -16,7 +16,7 @@ DISTNAME=	smc-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Secret Maryo Chronicles two-dimensional platform game
 
-LIB_DEPENDS=	CEGUIBase-0.7.6.0:${PORTSDIR}/graphics/cegui \
+LIB_DEPENDS=	CEGUIBase-0.7.7.0:${PORTSDIR}/graphics/cegui \
 		boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
 		png15:${PORTSDIR}/graphics/png
 
