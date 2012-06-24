@@ -665,6 +665,7 @@
     SUBDIR += hs-hlibev
     SUBDIR += hs-hoogle
     SUBDIR += hs-hslogger
+    SUBDIR += hs-hspec
     SUBDIR += hs-idoc
     SUBDIR += hs-language-c
     SUBDIR += hs-language-javascript
