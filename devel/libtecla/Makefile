@@ -7,12 +7,14 @@
 #
 
 PORTNAME=	libtecla
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.astro.caltech.edu/~mcs/tecla/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mike@fth-devel.net
 COMMENT=	Interactive command line editing facilities
+
+LICENSE=	MIT
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
