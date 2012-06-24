@@ -31,9 +31,12 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/addons/add_mesh_extra_objects/add_mesh_extra_objects.py
 %%DATADIR%%/scripts/addons/add_mesh_extra_objects/add_mesh_gears.py
 %%DATADIR%%/scripts/addons/add_mesh_extra_objects/add_mesh_gemstones.py
+%%DATADIR%%/scripts/addons/add_mesh_extra_objects/add_mesh_honeycomb.py
 %%DATADIR%%/scripts/addons/add_mesh_extra_objects/add_mesh_polysphere.py
 %%DATADIR%%/scripts/addons/add_mesh_extra_objects/add_mesh_pyramid.py
 %%DATADIR%%/scripts/addons/add_mesh_extra_objects/add_mesh_supertoroid.py
+%%DATADIR%%/scripts/addons/add_mesh_extra_objects/add_mesh_teapot.py
+%%DATADIR%%/scripts/addons/add_mesh_extra_objects/add_mesh_torusknot.py
 %%DATADIR%%/scripts/addons/add_mesh_extra_objects/add_mesh_twisted_torus.py
 %%DATADIR%%/scripts/addons/add_mesh_pipe_joint.py
 %%DATADIR%%/scripts/addons/add_mesh_solid.py
@@ -465,6 +468,7 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/presets/tracking_camera/Red_One_4K.py
 %%DATADIR%%/scripts/presets/tracking_camera/Sony_A55.py
 %%DATADIR%%/scripts/presets/tracking_settings/blurry_footage.py
+%%DATADIR%%/scripts/presets/tracking_settings/blurry_movie.py
 %%DATADIR%%/scripts/presets/tracking_settings/default.py
 %%DATADIR%%/scripts/presets/tracking_settings/fast_motion.py
 %%DATADIR%%/scripts/presets/tracking_track_color/default.py

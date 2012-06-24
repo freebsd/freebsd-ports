@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	blender
-PORTVERSION=	2.63
-PORTREVISION=	1
+PORTVERSION=	2.63a
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -35,70 +34,72 @@ MAN1=		blender.1
 
 OUTDIR=		${INSTALL_WRKSRC}/bin/2.63
 
-LANG=		ar bg ca cs de el es es_ES fa fi fr hr id it ja ky ne pl pt \
-        ru sr sr@latin sv tr uk zh_CN zh_TW
+LANG=	ar bg ca cs de el es es_ES fa fi fr hr id it ja ky ne pl pt \
+	ru sr sr@latin sv tr uk zh_CN zh_TW
 
-OPTIONS=	BULLET		"Enable bullet physics engine" on \
-		CARVE		"Carve boolean library" on \
-		CINEON		"CINEON and DPX graphics format support" on \
-		CAMERATRACK	"Camera tracking" on \
-		CYCLES		"Cycles render engine" on \
-		DDS		"DDS graphics format support" on \
-		FFMPEG		"Audio and video support using ffmpeg" on \
-		FFTW3		"Floating point support using fftw" on \
-		GAMEENGINE	"Enable game engine" on \
-		HDR		"Generic high dynamic-range (HDR) support" on \
-		HEADLESS	"Disable user interface" off \
-		JACK		"Audio support using JackAudio" off \
-		NLS		"Native language support" on \
-		MENU		"Install desktop menu" on \
-		OCEANSIM	"Ocean sim support" on \
-		OPENAL		"3D sound support using OpenAL" on \
-		OPENEXR		"High dynamic-range (HDR) support using OpenEXR" on \
-		OPENJPEG	"Enhanced JPEG graphics support using OpenJPEG" on \
-		OPENMP		"Parallel processing support" on \
-		PLAYER		"Enable blender player" off \
-		REDCODE		"RedCode graphics format support" off \
-		SAMPLERATE	"Enable samplerate conversion" on \
-		SDL		"Audio and Joystick support using SDL" on \
-		SNDFILE		"Audio support using libsndfile" off \
-		TIFF		"Tiff graphics format support using LibTiff" on \
-		XINPUT		"Enable X11 Xinput (tablet) support" on
+OPTIONS_DEFINE=	BULLET CARVE CINEON CAMERATRACK CYCLES DDS FFMPEG FFTW3 \
+		GAMEENGINE HDR HEADLESS JACK NLS MENU OCEANSIM OPENAL OPENEXR \
+		OPENJPEG OPENMP PLAYER REDCODE SAMPLERATE SDL SNDFILE TIFF \
+		XINPUT
+OPTIONS_DEFAULT=	BULLET CARVE CINEON CAMERATRACK CYCLES DDS FFMPEG \
+			FFTW3 GAMEENGINE HDR MENU OCEANSIM OPENAL OPENEXR \
+			OPENJPEG OPENMP SAMPLERATE SDL TIFF XINPUT
+BULLET_DESC=		Enable bullet physics engine
+CARVE_DESC=		Carve boolean library support
+CINEON_DESC=		CINEON and DPX graphics format support
+CAMERATRACK_DESC=	Camera tracking support
+CYCLES_DESC=		Cycles render engine support
+DDS_DESC=		DDS graphics format support
+FFTW3_DESC=		Floating point support using fftw
+GAMEENGINE_DESC=	Enable the game engine
+HDR_DESC=		Generic high dynamic-range (HDR) support
+HEADLESS_DESC=		Disable user interface
+MENU_DESC=		Install desktop menu
+OCEANSIM_DESC=		Ocean simulation support
+PLAYER_DESC=		Enable blender player
+REDCODE_DESC=		RedCode graphics format support
+SDL_DESC=		Audio and Joystick support using SDL
+XINPUT_DESC=		Enable X11 Xinput (tablet) support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_BULLET)
-CMAKE_ARGS+=	-DWITH_BULLET:BOOL=OFF
-.else
+.if ${PORT_OPTIONS:MBULLET}
 CMAKE_ARGS+=	-DWITH_BULLET:BOOL=ON
+.else
+CMAKE_ARGS+=	-DWITH_BULLET:BOOL=OFF
 .endif
 
-.if defined(WITHOUT_CARVE)
-CMAKE_ARGS+=	-DWITH_CARVE:BOOL=OFF
-.else
+.if ${PORT_OPTIONS:MCARVE}
 CMAKE_ARGS+=	-DWITH_CARVE:BOOL=ON
 LIB_DEPENDS+=	boost_thread.4:${PORTSDIR}/devel/boost-libs
+.else
+CMAKE_ARGS+=	-DWITH_CARVE:BOOL=OFF
 .endif
 
-.if defined(WITHOUT_CINEON)
-CMAKE_ARGS+=	-DWITH_IMAGE_CINEON:BOOL=OFF
-.else
+.if ${PORT_OPTIONS:MCINEON}
 CMAKE_ARGS+=	-DWITH_IMAGE_CINEON:BOOL=ON
+.else
+CMAKE_ARGS+=	-DWITH_IMAGE_CINEON:BOOL=OFF
 .endif
 
-.if defined(WITHOUT_CAMERATRACK)
-CMAKE_ARGS+=	-DWITH_LIBMV:BOOL=OFF
-.else
+.if ${PORT_OPTIONS:MCAMERATRACK}
 CMAKE_ARGS+=	-DWITH_LIBMV:BOOL=ON
 LIB_DEPENDS+=	unwind:${PORTSDIR}/devel/libunwind
+.else
+CMAKE_ARGS+=	-DWITH_LIBMV:BOOL=OFF
 .endif
 
 # openimageio to enable cycles requires 8.0 or higher
-.if defined(WITH_CYCLES) && ${OSVERSION} >= 800000
+.if ${PORT_OPTIONS:MCYCLES}
+.if ${OSVERSION} < 800000
+IGNORE=	cycles render engine only works in FreeBSD 8 or later
+.else
 CMAKE_ARGS+=	-DWITH_CYCLES:BOOL=ON
 .if ${ARCH} == "i386" || ${OSVERSION} < 803000
 # this is needed for linking with openimageio
+USE_GCC=	4.6+
 LDFLAGS+=	-L${LOCALBASE}/lib/gcc46 -rpath ${LOCALBASE}/lib/gcc46
+.endif
 .endif
 LIB_DEPENDS+=	OpenImageIO:${PORTSDIR}/graphics/openimageio
 PLIST_SUB+=	CYCLES=""
@@ -107,171 +108,172 @@ CMAKE_ARGS+=	-DWITH_CYCLES:BOOL=OFF
 PLIST_SUB+=	CYCLES="@comment "
 .endif
 
-.if defined(WITHOUT_DDS)
-CMAKE_ARGS+=	-DWITH_IMAGE_DDS:BOOL=OFF
-.else
+.if ${PORT_OPTIONS:MDDS}
 CMAKE_ARGS+=	-DWITH_IMAGE_DDS:BOOL=ON
-.endif
-
-.if defined(WITHOUT_FFMPEG)
-CMAKE_ARGS+=	-DWITH_CODEC_FFMPEG:BOOL=OFF
 .else
-LIB_DEPENDS+=	avutil.1:${PORTSDIR}/multimedia/ffmpeg
-CMAKE_ARGS+=	-DWITH_CODEC_FFMPEG:BOOL=ON
+CMAKE_ARGS+=	-DWITH_IMAGE_DDS:BOOL=OFF
 .endif
 
-.if defined(WITH_FFTW3)
+.if ${PORT_OPTIONS:MFFMPEG}
+CMAKE_ARGS+=	-DWITH_CODEC_FFMPEG:BOOL=ON
+LIB_DEPENDS+=	avutil.1:${PORTSDIR}/multimedia/ffmpeg
+.else
+CMAKE_ARGS+=	-DWITH_CODEC_FFMPEG:BOOL=OFF
+.endif
+
+.if ${PORT_OPTIONS:MFFTW3}
 LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3
 CMAKE_ARGS+=	-DWITH_FFTW3:BOOL=ON
 .else
 CMAKE_ARGS+=	-DWITH_FFTW3:BOOL=OFF
 .endif
 
-.if defined(WITHOUT_GAMEENGINE)
-CMAKE_ARGS+=	-DWITH_GAMEENGINE:BOOL=OFF
-.else
+.if ${PORT_OPTIONS:MGAMEENGINE}
 CMAKE_ARGS+=	-DWITH_GAMEENGINE:BOOL=ON
-.endif
-
-.if defined(WITHOUT_HDR)
-CMAKE_ARGS+=	-DWITH_IMAGE_HDR:BOOL=OFF
 .else
-CMAKE_ARGS+=	-DWITH_IMAGE_HDR:BOOL=ON
+CMAKE_ARGS+=	-DWITH_GAMEENGINE:BOOL=OFF
 .endif
 
-.if defined(WITH_HEADLESS)
+.if ${PORT_OPTIONS:MHDR}
+CMAKE_ARGS+=	-DWITH_IMAGE_HDR:BOOL=ON
+.else
+CMAKE_ARGS+=	-DWITH_IMAGE_HDR:BOOL=OFF
+.endif
+
+.if ${PORT_OPTIONS:MHEADLESS}
 CMAKE_ARGS+=	-DWITH_HEADLESS:BOOL=ON
 .else
 CMAKE_ARGS+=	-DWITH_HEADLESS:BOOL=OFF
 .endif
 
-.if defined(WITH_JACK)
-.if defined(WITHOUT_SAMPLERATE)
-BROKEN=		WITH_JACK requires WITH_SAMPLERATE
-.endif
+.if ${PORT_OPTIONS:MJACK}
+.if ${PORT_OPTIONS:MSAMPLERATE}
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 CMAKE_ARGS+=	-DWITH_JACK:BOOL=ON
+.else
+BROKEN=		JACK requires SAMPLERATE
+.endif
 .else
 CMAKE_ARGS+=	-DWITH_JACK:BOOL=OFF
 .endif
 
-.if defined(WITHOUT_MENU)
-PLIST_SUB+=	MENU="@comment "
-.else
+.if ${PORT_OPTIONS:MMENU}
 USE_GNOME=	desktopfileutils
 PLIST_SUB+=	MENU=""
+.else
+PLIST_SUB+=	MENU="@comment "
 .endif
 
-.if defined(WITHOUT_NLS)
-PLIST_SUB+=	NLS="@comment "
-CMAKE_ARGS+=	-DWITH_INTERNATIONAL:BOOL=OFF
-.else
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 PLIST_SUB+=	NLS=""
 CMAKE_ARGS+=	-DWITH_INTERNATIONAL:BOOL=ON
+.else
+PLIST_SUB+=	NLS="@comment "
+CMAKE_ARGS+=	-DWITH_INTERNATIONAL:BOOL=OFF
 .endif
 
-.if defined(WITHOUT_OCEANSIM)
-CMAKE_ARGS+=	-DWITH_MOD_OCEANSIM:BOOL=OFF
-.else
-.if defined(WITHOUT_FFTW3)
-BROKEN=		WITH_OCEANSIM requires WITH_FFTW3
-.endif
+.if ${PORT_OPTIONS:MOCEANSIM}
+.if ${PORT_OPTIONS:MFFTW3}
 CMAKE_ARGS+=	-DWITH_MOD_OCEANSIM:BOOL=ON
+.else
+BROKEN=		OCEANSIM requires FFTW3
+.endif
+.else
+CMAKE_ARGS+=	-DWITH_MOD_OCEANSIM:BOOL=OFF
 .endif
 
-.if defined(WITHOUT_OPENAL)
-CMAKE_ARGS+=	-DWITH_OPENAL:BOOL=OFF
-.else
-.if defined(WITHOUT_SAMPLERATE)
-BROKEN=		WITH_OPENAL requires WITH_SAMPLERATE
-.endif
+.if ${PORT_OPTIONS:MOPENAL)
+.if ${PORT_OPTIONS:MSAMPLERATE}
 USE_OPENAL=	al alut
 CMAKE_ARGS+=	-DWITH_OPENAL:BOOL=ON
+.else
+BROKEN=		OPENAL requires SAMPLERATE
+.endif
+.else
+CMAKE_ARGS+=	-DWITH_OPENAL:BOOL=OFF
 .endif
 
-.if defined(WITHOUT_OPENEXR)
-CMAKGE_ARGS+=	-DWITH_IMAGE_OPENEXR:BOOL=OFF
-.else
+.if ${PORT_OPTIONS:MOPENEXR}
 LIB_DEPENDS+=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR
 CMAKGE_ARGS+=	-DWITH_IMAGE_OPENEXR:BOOL=ON
+.else
+CMAKGE_ARGS+=	-DWITH_IMAGE_OPENEXR:BOOL=OFF
 .endif
 
-.if defined(WITHOUT_OPENJPEG)
-CMAKE_ARGS+=	-DWITH_IMAGE_OPENJPEG:BOOL=OFF
-.else
+.if ${PORT_OPTIONS:MOPENJPEG}
 LIB_DEPENDS+=	openjpeg.2:${PORTSDIR}/graphics/openjpeg
 CMAKE_ARGS+=	-DWITH_IMAGE_OPENJPEG:BOOL=ON
-.endif
-
-.if defined(WITHOUT_OPENMP)
-CMAKE_ARGS+=	-DWITH_OPENMP:BOOL=OFF
 .else
-CMAKE_ARGS+=	-DWITH_OPENMP:BOOL=ON
+CMAKE_ARGS+=	-DWITH_IMAGE_OPENJPEG:BOOL=OFF
 .endif
 
-.if defined(WITH_PLAYER)
-.if defined(WITHOUT_GAMEENGINE)
-BROKEN=		WITH_PLAYER requires WITH_GAMEENGINE
+.if ${PORT_OPTIONS:MOPENMP}
+CMAKE_ARGS+=	-DWITH_OPENMP:BOOL=ON
+.else
+CMAKE_ARGS+=	-DWITH_OPENMP:BOOL=OFF
 .endif
+
+.if ${PORT_OPTIONS:MPLAYER}
+.if ${PORT_OPTIONS:MGAMEENGINE}
 PLIST_SUB+=	PLAYER=""
 CMAKE_ARGS+=	-DWITH_PLAYER:BOOL=ON
+.else
+BROKEN=		PLAYER requires GAMEENGINE
+.endif
 .else
 PLIST_SUB+=	PLAYER="@comment "
 CMAKE_ARGS+=	-DWITH_PLAYER:BOOL=OFF
 .endif
 
-.if defined(WITH_REDCODE)
-.if defined(WITHOUT_OPENJPEG)
-BROKEN=		WITH_REDCODE requires WITH_OPENJPEG
-.endif
+.if ${PORT_OPTIONS:MREDCODE}
+.if ${PORT_OPTIONS:MOPENJPEG}
 CMAKE_ARGS+=	-DWITH_IMAGE_REDCODE:BOOL=ON
+.else
+BROKEN=		REDCODE requires OPENJPEG
+.endif
 .else
 CMAKE_ARGS+=	-DWITH_IMAGE_REDCODE:BOOL=OFF
 .endif
 
-.if defined(WITHOUT_SAMPLERATE)
-CMAKE_ARGS+=	-DWITH_SAMPLERATE:BOOL=OFF
-.else
+.if ${PORT_OPTIONS:MSAMPLERATE}
 LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
 CMAKE_ARGS+=	-DWITH_SAMPLERATE:BOOL=ON
+.else
+CMAKE_ARGS+=	-DWITH_SAMPLERATE:BOOL=OFF
 .endif
 
-.if defined(WITHOUT_SDL)
-CMAKE_ARGS+=	-DWITH_SDL:BOOL=OFF
-.else
-.if defined(WITHOUT_SAMPLERATE)
-BROKEN=		WITH_SDL requires WITH_SAMPLERATE
-.endif
+.if ${PORT_OPTIONS:MSDL}
+.if ${PORT_OPTIONS:MSAMPLERATE}
 USE_SDL=	sdl
 CMAKE_ARGS+=	-DWITH_SDL:BOOL=ON
+.else
+BROKEN=		SDL requires SAMPLERATE
+.endif
+.else
+CMAKE_ARGS+=	-DWITH_SDL:BOOL=OFF
 .endif
 
-.if defined(WITH_SNDFILE)
+.if ${PORT_OPTIONS:MSNDFILE}
 LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
 CMAKE_ARGS+=	-DWITH_CODEC_SNDFILE:BOOL=ON
 .else
 CMAKE_ARGS+=	-DWITH_CODEC_SNDFILE:BOOL=OFF
 .endif
 
-.if defined(WITHOUT_TIFF)
-CMAKE_ARGS+=	-DWITH_IMAGE_TIFF:BOOL=OFF
-.else
+.if ${PORT_OPTIONS:MTIFF}
 LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 CMAKE_ARGS+=	-DWITH_IMAGE_TIFF:BOOL=ON
+.else
+CMAKE_ARGS+=	-DWITH_IMAGE_TIFF:BOOL=OFF
 .endif
 
-.if defined(WITHOUT_XINPUT)
-CMAKE_ARGS+=	-DWITH_X11_XINPUT:BOOL=OFF
-.else
+.if ${PORT_OPTIONS:MXINPUT}
 USE_XORG+=	xi
 CMAKE_ARGS+=	-DWITH_X11_XINPUT:BOOL=ON
-.endif
-
-post-configure:
-.if defined(WITH_CYCLES) && ${OSVERSION} < 800000
-	@${ECHO_MSG} "Cycles render engine is only available in 8.0 or higher."
+.else
+CMAKE_ARGS+=	-DWITH_X11_XINPUT:BOOL=OFF
 .endif
 
 post-install:
@@ -282,7 +284,7 @@ post-install:
 	@${INSTALL_SCRIPT} ${INSTALL_WRKSRC}/bin/blender-thumbnailer.py \
 		${PREFIX}/bin/blender-thumbnailer.py
 
-.if defined(WITH_PLAYER)
+.if ${PORT_OPTIONS:MPLAYER}
 	@${INSTALL_SCRIPT} ${WRKDIR}/blenderplayer ${PREFIX}/bin/blenderplayer
 	@${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/bin/blenderplayer \
 		${PREFIX}/bin/blenderplayer-bin
@@ -292,7 +294,7 @@ post-install:
 	@${INSTALL_DATA} ${INSTALL_WRKSRC}/bin/${PORTNAME}.svg \
 		${PREFIX}/share/pixmaps/${PORTNAME}.svg
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:NLS}
 .for ii in ${LANG}
 	@${MKDIR} ${DATADIR}/datafiles/locale/${ii}/LC_MESSAGES
 	@${INSTALL_DATA} \
@@ -306,11 +308,11 @@ post-install:
 		${MAN1PREFIX}/man/man1
 .endif
 
-.if !defined(WITHOUT_MENU)
+.if ${PORT_OPTIONS:MMENU}
 	@${MKDIR} ${DESKTOPDIR}
 	@${INSTALL_DATA} ${INSTALL_WRKSRC}/bin/${PORTNAME}.desktop \
 		${DESKTOPDIR}
 	@-update-desktop-database -q
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
