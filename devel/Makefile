@@ -903,6 +903,7 @@
     SUBDIR += libgpc
     SUBDIR += libgsf
     SUBDIR += libgsf-gnome
+    SUBDIR += libgta
     SUBDIR += libgtop
     SUBDIR += libgutenfetch
     SUBDIR += libhash
