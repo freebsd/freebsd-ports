@@ -7,7 +7,7 @@
 
 PORTNAME=	rigsofrods
 PORTVERSION=	0.36.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX} \
@@ -19,7 +19,7 @@ COMMENT=	Truck, car, airplane and boat simulator with advanced physics
 
 LIB_DEPENDS=	zzip.13:${PORTSDIR}/devel/zziplib \
 		freetype.9:${PORTSDIR}/print/freetype2 \
-		CEGUIBase-0.7.5:${PORTSDIR}/graphics/cegui \
+		CEGUIBase-0.7.6.0:${PORTSDIR}/graphics/cegui \
 		freeimage.3:${PORTSDIR}/graphics/freeimage
 BUILD_DEPENDS=	${LOCALBASE}/lib/libOIS.so:${PORTSDIR}/devel/ois \
 		unzip:${PORTSDIR}/archivers/unzip
