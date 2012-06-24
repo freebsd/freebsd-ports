@@ -789,6 +789,7 @@
     SUBDIR += py-chart
     SUBDIR += py-clutter
     SUBDIR += py-clutter-gtk
+    SUBDIR += py-django-easy-thumbnails
     SUBDIR += py-editobj
     SUBDIR += py-exif
     SUBDIR += py-exiv2
