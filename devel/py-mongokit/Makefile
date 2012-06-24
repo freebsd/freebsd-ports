@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mongokit
-PORTVERSION=	0.5.3
+PORTVERSION=	0.8
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,10 +14,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	mail@derzinn.de
 COMMENT=	Python ORM-like layer on top of pymongo
 
-RUN_DEPENDS=	pymongo>=1.3:${PORTSDIR}/databases/pymongo \
-		${PYTHON_PKGNAMEPREFIX}anyjson>=0.2.3:${PORTSDIR}/devel/py-anyjson
+RUN_DEPENDS=	pymongo>=2.0.1:${PORTSDIR}/databases/pymongo
 
-USE_PYTHON=		yes
+USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	easy_install
 
 .include <bsd.port.mk>
