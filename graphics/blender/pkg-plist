@@ -617,7 +617,6 @@ share/pixmaps/blender.svg
 @dirrm %%DATADIR%%/scripts/modules/bpy_extras
 @dirrm %%DATADIR%%/scripts/modules/bpy
 @dirrm %%DATADIR%%/scripts/modules
-@dirrm %%DATADIR%%/scripts/addons_contrib
 @dirrm %%DATADIR%%/scripts/addons/system_demo_mode
 @dirrm %%DATADIR%%/scripts/addons/space_view3d_math_vis
 @dirrm %%DATADIR%%/scripts/addons/rigify/rigs/misc
