@@ -1,5 +1,4 @@
 %%SKINNEDUI%%bin/qmmp
-%%SKINNEDUI%%libexec/qmmp
 include/qmmp/abstractengine.h
 include/qmmp/audioparameters.h
 include/qmmp/buffer.h
