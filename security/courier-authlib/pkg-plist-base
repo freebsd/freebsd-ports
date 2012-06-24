@@ -11,6 +11,7 @@ include/courierauth.h
 include/courierauthdebug.h
 include/courierauthsasl.h
 include/courierauthsaslclient.h
+include/courierauthstaticlist.h
 lib/courier-authlib/libcourierauth.a
 lib/courier-authlib/libcourierauth.la
 lib/courier-authlib/libcourierauth.so

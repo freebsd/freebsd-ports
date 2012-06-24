@@ -18,7 +18,7 @@
 +#include	<unistd.h>
 +#endif
 +#include	"auth.h"
-+#include	"authstaticlist.h"
++#include	"courierauthstaticlist.h"
 +#include	"courierauthdebug.h"
 +#include	"vpopmail_config.h"
 +#include	<vpopmail.h>
@@ -485,44 +485,6 @@
 +
 +	return ((*callback)(&auth, arg));
 +}
---- userdb/Makefile.in.orig	2009-06-27 17:55:52.000000000 +0200
-+++ userdb/Makefile.in	2009-07-02 09:57:06.000000000 +0200
-@@ -50,7 +50,7 @@
- 	$(srcdir)/../missing $(srcdir)/Makefile.am \
- 	$(srcdir)/Makefile.in $(srcdir)/makeuserdb.in \
- 	$(srcdir)/pw2userdb.in $(srcdir)/userdb.pl.in \
--	$(top_srcdir)/configure
-+	$(srcdir)/vchkpw2userdb.in $(top_srcdir)/configure
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- am__aclocal_m4_deps = $(top_srcdir)/configure.in
- am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
-@@ -58,7 +58,7 @@
- am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
-  configure.lineno config.status.lineno
- mkinstalldirs = $(install_sh) -d
--CONFIG_CLEAN_FILES = userdb.pl makeuserdb pw2userdb
-+CONFIG_CLEAN_FILES = userdb.pl makeuserdb pw2userdb vchkpw2userdb
- CONFIG_CLEAN_VPATH_FILES =
- LTLIBRARIES = $(noinst_LTLIBRARIES)
- libuserdb_la_LIBADD =
-@@ -252,7 +252,7 @@
- 		userdb.html.in userdb.8.in \
- 		userdbpw.html.in userdbpw.8.in
- 
--noinst_SCRIPTS = makeuserdb pw2userdb dummy
-+noinst_SCRIPTS = makeuserdb pw2userdb vchkpw2userdb dummy
- noinst_DATA = makeuserdb.html userdb.html userdbpw.html
- userdbpw_SOURCES = userdbpw.c
- userdbpw_LDADD = libuserdb.la @HMACLIB@ @MD5LIB@ @SHA1LIB@ @CRYPTLIBS@
-@@ -306,6 +306,8 @@
- 	cd $(top_builddir) && $(SHELL) ./config.status $@
- pw2userdb: $(top_builddir)/config.status $(srcdir)/pw2userdb.in
- 	cd $(top_builddir) && $(SHELL) ./config.status $@
-+vchkpw2userdb: $(top_builddir)/config.status $(srcdir)/vchkpw2userdb.in
-+	cd $(top_builddir) && $(SHELL) ./config.status $@
- 
- clean-noinstLTLIBRARIES:
- 	-test -z "$(noinst_LTLIBRARIES)" || rm -f $(noinst_LTLIBRARIES)
 --- userdb/configure.orig	2009-06-27 17:55:53.000000000 +0200
 +++ userdb/configure	2009-07-02 09:56:41.000000000 +0200
 @@ -12452,7 +12452,7 @@
@@ -625,3 +587,41 @@
 +	close(DIR);
 +}
 +
+--- userdb/Makefile.in.orig	2011-11-13 02:14:49.000000000 +0100
++++ userdb/Makefile.in	2012-06-24 12:12:52.000000000 +0200
+@@ -49,7 +49,7 @@
+ 	$(srcdir)/../missing $(srcdir)/Makefile.am \
+ 	$(srcdir)/Makefile.in $(srcdir)/config.h.in \
+ 	$(srcdir)/makeuserdb.in $(srcdir)/pw2userdb.in \
+-	$(srcdir)/userdb.pl.in $(top_srcdir)/configure
++	$(srcdir)/userdb.pl.in $(srcdir)/vchkpw2userdb.in $(top_srcdir)/configure
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/configure.in
+ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
+@@ -58,7 +58,7 @@
+  configure.lineno config.status.lineno
+ mkinstalldirs = $(install_sh) -d
+ CONFIG_HEADER = config.h
+-CONFIG_CLEAN_FILES = userdb.pl makeuserdb pw2userdb
++CONFIG_CLEAN_FILES = userdb.pl makeuserdb pw2userdb vchkpw2userdb
+ CONFIG_CLEAN_VPATH_FILES =
+ LTLIBRARIES = $(noinst_LTLIBRARIES)
+ libuserdb_la_LIBADD =
+@@ -255,7 +255,7 @@
+ 		userdb.html.in userdb.8.in \
+ 		userdbpw.html.in userdbpw.8.in
+ 
+-noinst_SCRIPTS = makeuserdb pw2userdb dummy
++noinst_SCRIPTS = makeuserdb pw2userdb vchkpw2userdb dummy
+ noinst_DATA = makeuserdb.html userdb.html userdbpw.html
+ userdbpw_SOURCES = userdbpw.c
+ userdbpw_LDADD = libuserdb.la @HMACLIB@ @MD5LIB@ @SHA1LIB@ @CRYPTLIBS@
+@@ -326,6 +326,8 @@
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
+ pw2userdb: $(top_builddir)/config.status $(srcdir)/pw2userdb.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
++vchkpw2userdb: $(top_builddir)/config.status $(srcdir)/vchkpw2userdb.in
++	cd $(top_builddir) && $(SHELL) ./config.status $@
+ 
+ clean-noinstLTLIBRARIES:
+ 	-test -z "$(noinst_LTLIBRARIES)" || rm -f $(noinst_LTLIBRARIES)
