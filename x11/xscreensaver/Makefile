@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xscreensaver
-PORTVERSION=	5.15
-PORTREVISION=	1
+PORTVERSION=	5.17
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/ \
 		http://dougbarton.us/Downloads/
@@ -25,6 +24,8 @@ RUN_DEPENDS=	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
 		giftopnm:${PORTSDIR}/graphics/netpbm
 
 MAKE_JOBS_SAFE=	yes
+
+CONFLICTS=    xscreensaver-gnome-[0-9]* xscreensaver-gnome-hacks-[0-9]*
 
 USE_XORG=	xpm
 USE_GL=		yes
@@ -68,7 +69,7 @@ CONFIGURE_ARGS+=	--with-setuid-hacks
 .endif
 
 .if defined(WITH_FIREF)
-RUN_DEPENDS+=	${X11BASE}/bin/xscreensaver-hacks/fireflies:${PORTSDIR}/x11/fireflies
+RUN_DEPENDS+=	${LOCALBASE}/bin/xscreensaver-hacks/fireflies:${PORTSDIR}/x11/fireflies
 .endif
 .if defined(WITH_XAOS1)
 RUN_DEPENDS+=	xaos:${PORTSDIR}/graphics/xaos
@@ -143,9 +144,11 @@ post-patch:
 		-e 's#malloc.h#stdlib.h#g' \
 		-e 's#/usr/X11R6#${LOCALBASE}#g' \
 		${WRKSRC}/configure.Patched > ${WRKSRC}/configure
-	@ ${CP} ${WRKSRC}/hacks/vidwhacker ${WRKSRC}/hacks/vidwhacker.presed
-	@ ${SED} -e '329s#.*#      $$fn = "$$imagedir/$$fn";#' \
-	    ${WRKSRC}/hacks/vidwhacker.presed > ${WRKSRC}/hacks/vidwhacker
+	@ ${CP} ${WRKSRC}/hacks/glx/Makefile.in \
+		${WRKSRC}/hacks/glx/Makefile.in.presed
+	@ ${SED} -e 's#lament.xpm#lament512.xpm#g' \
+		${WRKSRC}/hacks/glx/Makefile.in.presed > \
+		${WRKSRC}/hacks/glx/Makefile.in
 .if defined(WITH_PAM)
 .for f in driver/passwd-pam.c driver/xscreensaver.man
 	@ ${CP} ${WRKSRC}/${f} ${WRKSRC}/${f}.presed
