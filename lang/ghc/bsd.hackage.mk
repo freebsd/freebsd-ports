@@ -210,6 +210,7 @@ pcap_port=			net/hs-pcap
 pcre-light_port=		devel/hs-pcre-light	# lib_depends
 pem_port=			security/hs-pem
 persistent_port=		databases/hs-persistent
+persistent-sqlite_port=		databases/hs-persistent-sqlite
 persistent-template_port=	databases/hs-persistent-template
 polyparse_port=			textproc/hs-polyparse
 pointed_port=			math/hs-pointed
