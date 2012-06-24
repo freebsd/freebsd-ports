@@ -691,6 +691,7 @@
     SUBDIR += hs-resourcet
     SUBDIR += hs-safe
     SUBDIR += hs-show
+    SUBDIR += hs-silently
     SUBDIR += hs-smallcheck
     SUBDIR += hs-split
     SUBDIR += hs-stm
