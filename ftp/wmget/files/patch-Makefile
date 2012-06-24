@@ -4,7 +4,7 @@
  # To specify a different prefix, you can override this on the command line
  #	make PREFIX=/opt/dockapps install
 -PREFIX=		/usr/local
-+X11BASE?=	/usr/X11R6
++X11BASE?=	${LOCALBASE}
 +PREFIX?=	${LOCALBASE}
  
  INSTALLDIR=	install -d -m 755

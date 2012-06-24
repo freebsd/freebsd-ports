@@ -29,7 +29,7 @@ IGNORE=		doesn't support ELF symbol versioning, yet.
 
 # I will remove WITH_PLUGINS knob.
 .if		defined(WITH_REALPLAYER)
-RUN_DEPENDS+=	${X11BASE}/lib/linux-mozilla/plugins/nphelix.so:${PORTSDIR}/multimedia/linux-realplayer
+RUN_DEPENDS+=	${LOCALBASE}/lib/linux-mozilla/plugins/nphelix.so:${PORTSDIR}/multimedia/linux-realplayer
 WITH_PLUGINS=	1
 .endif
 
@@ -53,7 +53,7 @@ CFLAGS+=	-DDEBUG=1
 post-build:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},' \
 		-e 's,%%LOCALBASE%%,${LOCALBASE},' \
-		-e 's,%%X11BASE%%,${X11BASE},' \
+		-e 's,%%X11BASE%%,${LOCALBASE},' \
 		-e 's,%%LTHREADSHMAJOR%%,${LTHREADSHMAJOR},' \
 		-e 's,%%LIBMAPCONF%%,${LIBMAPCONF},' \
 		< ${.CURDIR}/pkg-message > ${PKGMESSAGE}
@@ -63,12 +63,12 @@ post-build:
 
 .if		defined(WITH_PLUGINS)
 pre-install:
-	@${MKDIR} ${X11BASE}/lib/browser_linux_plugins
+	@${MKDIR} ${LOCALBASE}/lib/browser_linux_plugins
 .if		defined(WITH_REALPLAYER)
-	@${LN} -sf ${X11BASE}/lib/linux-mozilla/plugins/nphelix.so \
-		${X11BASE}/lib/browser_linux_plugins/
-	@${LN} -sf ${X11BASE}/lib/linux-mozilla/plugins/nphelix.xpt \
-		${X11BASE}/lib/browser_linux_plugins/
+	@${LN} -sf ${LOCALBASE}/lib/linux-mozilla/plugins/nphelix.so \
+		${LOCALBASE}/lib/browser_linux_plugins/
+	@${LN} -sf ${LOCALBASE}/lib/linux-mozilla/plugins/nphelix.xpt \
+		${LOCALBASE}/lib/browser_linux_plugins/
 .endif
 .endif
 

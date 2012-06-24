@@ -76,7 +76,7 @@
  ifeq ($(strip $(STRIP)),YES)
 @@ -102,12 +90,11 @@
  
- X_LDFLAGS=-L$(X11BASE)/lib$(ARCH_LIBDIR) \
+ X_LDFLAGS=-L$(LOCALBASE)/lib$(ARCH_LIBDIR) \
            -lX11 -lXext -lXxf86vm -lXxf86dga
 -GLX_LDFLAGS=-L$(X11BASE)/lib$(ARCH_LIBDIR) \
 -            -L$(LOCALBASE)/lib$(ARCH_LIBDIR) \

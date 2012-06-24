@@ -39,7 +39,7 @@ SUB_FILES=	pkg-message
 post-patch:
 	@${REINPLACE_CMD} -e 's|^install-data-am: install-kmflcompdocDATA|install-data-am:|' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|-L/usr/X11R6/lib|-L${X11BASE}/lib|' \
+	@${REINPLACE_CMD} -e 's|-L/usr/X11R6/lib|-L${LOCALBASE}/lib|' \
 		${WRKSRC}/kmfl_compiler/Makefile.in
 	@${REINPLACE_CMD} -E 's,(VERSION= *)"0\.9\.7",\1"0.9.9",' \
 		${WRKSRC}/kmfl_compiler/kmfl_compiler.c

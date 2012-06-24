@@ -77,8 +77,8 @@ PORT_OPTIONS:=	${PORT_OPTIONS:NGS_${D}}
 USE_XORG=	xt xext
 X11BITS=	""
 CONFIGURE_ARGS+=--with-x \
-		--x-includes=${X11BASE}/include \
-		--x-libraries=${X11BASE}/lib
+		--x-includes=${LOCALBASE}/include \
+		--x-libraries=${LOCALBASE}/lib
 CONFLICTS_INSTALL+=	ghostscript9-nox11-[0-9]*
 .if ${PORT_OPTIONS:MGTK2}
 USE_GNOME=	atk gdkpixbuf2 glib20 gtk20

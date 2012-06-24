@@ -139,7 +139,7 @@
 -LOCALBASE= /usr/local
 -GAMEBASE= /usr/local
 -SYSBINDIR=$(LOCALBASE)/bin
-+X11BASE?=   /usr/X11R6
++X11BASE?=   /usr/local
 +LOCALBASE?= /usr/local
 +GAMEBASE?=  $(PREFIX)
 +SYSBINDIR?= $(PREFIX)/bin

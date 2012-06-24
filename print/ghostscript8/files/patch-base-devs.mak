@@ -18,7 +18,7 @@
  
  $(GLOBJ)X11.so : $(x11alt_) $(x11_)
 -	$(CCLD) $(LDFLAGS) -shared -o $(GLOBJ)X11.so $(x11alt_) $(x11_) -L/usr/X11R6/lib -lXt -lSM -lICE -lXext -lX11 $(XLIBDIRS)
-+	$(CCLD) $(LDFLAGS) -shared -o $(GLOBJ)X11.so $(x11alt_) $(x11_) -L$(X11BASE)/lib -lXt -lSM -lICE -lXext -lX11 $(XLIBDIRS)
++	$(CCLD) $(LDFLAGS) -shared -o $(GLOBJ)X11.so $(x11alt_) $(x11_) -L$(LOCALBASE)/lib -lXt -lSM -lICE -lXext -lX11 $(XLIBDIRS)
  
  ###### --------------- Memory-buffered printer devices --------------- ######
  

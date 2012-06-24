@@ -6,7 +6,7 @@
  #
 -DEST_DIR=/usr/local
 +LOCALBASE?=/usr/local
-+X11BASE?=/usr/X11R6
++X11BASE?=/usr/local
 +PREFIX?=${LOCALBASE}
 +DEST_DIR=${PREFIX}
  #

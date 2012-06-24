@@ -47,7 +47,7 @@
 -GAMEBASE= /usr/local
 -X11BASE=/usr/X11R6
 +LOCALBASE?=/usr/local
-+X11BASE?=/usr/X11R6
++X11BASE?=/usr/local
  SYSBINDIR=$(LOCALBASE)/bin
 -DATADIR= $(GAMEBASE)/games/quake
 -

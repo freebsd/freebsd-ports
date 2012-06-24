@@ -54,7 +54,7 @@
 -        -L$(MOTIFLIB) -lXm  \
 -        -L/usr/X11R6/lib -lXmu -lXt -lX11 -lm
 +        $(MOTIFLIB) \
-+        -L$(X11BASE)/lib -lXmu -lXt -lX11 -lm
++        -L$(LOCALBASE)/lib -lXmu -lXt -lX11 -lm
          
  unrooted : $(OBJUNROOTED)
  	$(CC) -g -o unrooted $(OBJUNROOTED) \

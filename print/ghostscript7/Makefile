@@ -128,8 +128,8 @@ LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 . endif
 USE_XORG=	xt xext
 CONFIGURE_ARGS+=--with-x \
-		--x-includes=${X11BASE}/include \
-		--x-libraries=${X11BASE}/lib
+		--x-includes=${LOCALBASE}/include \
+		--x-libraries=${LOCALBASE}/lib
 CONFLICTS_INSTALL+=	ghostscript7-nox11-[0-9]*
 .else
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nox11
