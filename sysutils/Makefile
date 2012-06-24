@@ -380,6 +380,7 @@
     SUBDIR += hoz
     SUBDIR += hpacucli
     SUBDIR += hploscripts
+    SUBDIR += hs-angel
     SUBDIR += hs-cpu
     SUBDIR += htop
     SUBDIR += httplog
