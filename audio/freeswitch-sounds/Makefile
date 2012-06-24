@@ -16,12 +16,13 @@ DIST_SUBDIR=	freeswitch-sounds
 MAINTAINER=	r.neese@gmail.com
 COMMENT=	FreeSwitch Sounds (All Bitrates)
 
-RUN_DEPENDS=    freeswitch:${PORTSDIR}/net/freeswitch-core
-
 PLIST=		${WRKDIR}/plist
 NO_WRKSUBDIR=	yes
 SHAREOWN=	${PORTNAME}
 SHAREGRP=	${SHAREOWN}
+
+USERS=		${PORTNAME}
+GROUPS=		${USERS}
 
 OPTIONS=	DOWNLOAD	"Don't resample, download all." off \
 		8K		"Compile sounds for 8K" on \
@@ -176,12 +177,15 @@ do-build:
 pre-install:
 	@${RM} ${PLIST}
 	@cd ${WRKDIR}/tmp && ${FIND} * ! -type d | ${SORT} >> ${PLIST}; \
-	${ECHO} .${PORTNAME}${PKGNAMESUFFIX} >> ${PLIST}; \
+	${ECHO_CMD} .${PORTNAME}${PKGNAMESUFFIX} >> ${PLIST}; \
 	${REINPLACE_CMD} -e "s:^:${DATADIR_REL}/sounds/:" ${PLIST}; \
 	${FIND} * -type d ! -empty | ${SORT} -r | ${SED} -e "s:^:@dirrm ${DATADIR_REL}/sounds/:" | ${GREP} / >> ${PLIST}
+	@${ECHO_CMD} "@dirrmtry ${DATADIR_REL}/sounds" >> ${PLIST}
+	@${ECHO_CMD} "@dirrmtry ${DATADIR_REL}" >> ${PLIST}
 
 do-install:
 	@${ECHO_MSG} "Installing files..."
+	${MKDIR} ${DATADIR}/sounds
 	${TOUCH} ${DATADIR}/sounds/.freeswitch-sounds
 	(cd ${WRKDIR}/tmp/ && ${COPYTREE_SHARE} \* ${DATADIR}/sounds/)
 
