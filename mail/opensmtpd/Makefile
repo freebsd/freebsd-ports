@@ -7,8 +7,10 @@
 
 PORTNAME=	opensmtpd
 PORTVERSION=	201206212223
+PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://www.opensmtpd.org/archives/
+MASTER_SITES=	http://www.opensmtpd.org/archives/ \
+		http://distfiles.pirateparty.in/ashish/
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	OpenSMTPD is a free MTA
@@ -33,6 +35,15 @@ MAN5=		smtpd.conf.5
 
 USERS=		_smtpd
 GROUPS=		_smtpd
+
+.include <bsd.port.options.mk>
+
+USE_OPENSSL=	yes
+
+# FreeBSD 7.3 and earlier need to use OpenSSL from ports
+.if ${OSVERSION} < 704000
+WITH_OPENSSL_PORT=	yes
+.endif
 
 pre-configure:
 		@cd ${WRKSRC} && ./bootstrap
