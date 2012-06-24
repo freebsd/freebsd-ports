@@ -636,6 +636,7 @@
     SUBDIR += hs-failure
     SUBDIR += hs-fast-logger
     SUBDIR += hs-fgl
+    SUBDIR += hs-file-embed
     SUBDIR += hs-filemanip
     SUBDIR += hs-filestore
     SUBDIR += hs-gconf
