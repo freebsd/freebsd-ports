@@ -639,6 +639,7 @@
     SUBDIR += hs-file-embed
     SUBDIR += hs-filemanip
     SUBDIR += hs-filestore
+    SUBDIR += hs-filesystem-conduit
     SUBDIR += hs-gconf
     SUBDIR += hs-ghc-events
     SUBDIR += hs-ghc-mtl
