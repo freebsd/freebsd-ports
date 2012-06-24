@@ -696,6 +696,7 @@
     SUBDIR += hs-syb
     SUBDIR += hs-syb-with-class
     SUBDIR += hs-syb-with-class-instances-text
+    SUBDIR += hs-system-fileio
     SUBDIR += hs-system-filepath
     SUBDIR += hs-tagged
     SUBDIR += hs-temporary
