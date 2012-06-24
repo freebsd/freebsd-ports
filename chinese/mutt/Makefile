@@ -23,8 +23,8 @@ CONFLICTS=	ja-mutt-[0-9]* ja-mutt-devel-[0-9]* mutt-[0-9]* mutt-devel-[0-9]* mut
 
 LIB_DEPENDS+=	hz.0:${PORTSDIR}/chinese/autoconvert
 
-CFLAGS+=	-D_DONT_USE_CTYPE_INLINE_
-LDFLAGS+=	-lhz
+CFLAGS_ADD+=	-D_DONT_USE_CTYPE_INLINE_
+LDFLAGS_ADD+=	-lhz
 
 WITH_MUTT_LOCALES_FIX=	yes
 WITH_MUTT_NCURSES=	yes
