@@ -315,6 +315,7 @@
     SUBDIR += hs-wai-app-static
     SUBDIR += hs-wai-extra
     SUBDIR += hs-wai-logger
+    SUBDIR += hs-wai-test
     SUBDIR += hs-warp
     SUBDIR += hs-webkit
     SUBDIR += hs-xss-sanitize
