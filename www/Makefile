@@ -327,6 +327,7 @@
     SUBDIR += hs-yesod-json
     SUBDIR += hs-yesod-persistent
     SUBDIR += hs-yesod-routes
+    SUBDIR += hs-yesod-static
     SUBDIR += htdump
     SUBDIR += html2hdml
     SUBDIR += html2wml
