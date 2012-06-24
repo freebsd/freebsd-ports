@@ -9,21 +9,21 @@
 #
 # imspector_enable (bool):   Set to NO by default.
 #               Set it to YES to enable imspector.
-# imspector_config (path):   Set to %%PREFIX%%/etc/imspector/imspector.conf
+# imspector_config (path):   Set to %%ETCDIR%%/imspector.conf
 #               by default.
 #
 
 . /etc/rc.subr
 
 name="imspector"
-rcvar=imspector_enable
+rcvar=${name}_enable
 
 command=%%PREFIX%%/sbin/${name}
 
 load_rc_config $name
 
 : ${imspector_enable="NO"}
-: ${imspector_config="%%PREFIX%%/etc/imspector/imspector.conf"}
+: ${imspector_config="%%ETCDIR%%/imspector.conf"}
 
 command_args="-c $imspector_config"
 
