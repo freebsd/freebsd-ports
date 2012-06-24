@@ -58,7 +58,11 @@ post-patch:
 	@${REINPLACE_CMD} -e '\
 		s,defined(__x86_64__),& || defined(__powerpc__) || defined(__ia64__) || defined(__sparc64__) || defined(__alpha__) || defined(__amd64__),' \
 		${WRKSRC}/OgreMain/include/OgrePlatform.h
-
+	@${REINPLACE_CMD} -e 's|tinyxml.h|../include/tinyxml.h|' \
+		${WRKSRC}/Tools/XMLConverter/src/tinyxml.cpp \
+		${WRKSRC}/Tools/XMLConverter/src/tinyxmlerror.cpp \
+		${WRKSRC}/Tools/XMLConverter/src/tinyxmlparser.cpp \
+		${WRKSRC}/Tools/XMLConverter/include/OgreXMLPrerequisites.h
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
