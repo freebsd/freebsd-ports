@@ -32,15 +32,13 @@ MAN1=		audacious.1 audtool.1
 
 PORTDOCS=	README AUTHORS
 
-# no ports for:
-#		CHARSET	"Build with automatic charset detection"	off \
-
 OPTIONS=	DBUS	"Build with dbus support"			on  \
 		GNOME	"Build with gconf support"			off \
-		ICONV	"Build with iconv support"			on \
+		ICONV	"Build with iconv support"			on  \
 		NLS	"Native Language Support"			on  \
 		EXECINFO "Build with libexecinfo support"		on  \
-		SSE2	"Build with SSE2 instruction set"		on
+		SSE2	"Build with SSE2 instruction set"		on  \
+		CHARSET	"Build with automatic charset detection"	on
 
 .include <bsd.port.pre.mk>
 
@@ -77,6 +75,13 @@ PLIST_SUB+=	NLS="@comment "
 
 .if defined(WITHOUT_SSE2)
 CONFIGURE_ARGS+=--disable-sse2
+.endif
+
+.if defined(WITH_CHARSET)
+LIB_DEPENDS+=	guess.1:${PORTSDIR}/textproc/libguess
+CONFIGURE_ARGS+=--enable-chardet
+.else
+CONFIGURE_ARGS+=--disable-chardet
 .endif
 
 post-patch:
