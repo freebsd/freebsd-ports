@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smbftpd
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/SmbFTPD/${PORTVERSION}	\
 		http://www.twbsd.org/download/download.php?file=smbftpd/
@@ -14,10 +14,11 @@ MASTER_SITES=	SF/${PORTNAME}/SmbFTPD/${PORTVERSION}	\
 MAINTAINER=	jnlin@csie.nctu.edu.tw
 COMMENT=	FTP daemon using Samba-like share management mechanism
 
-OPTIONS=	MYSQL "Users database is a MySQL database" off \
-		PGSQL "Users database is a PostgreSQL database" off \
-		SSL "Enable SSL/TLS support" off \
-		ICONV "Enable codepage to unicode conversion for UTF-8 FTP" off
+OPTIONS_DEFINE=	MYSQL PGSQL SSL ICONV
+MYSQL_DESC=	Users database is a MySQL database
+PGSQL_DESC=	Users database is a PostgreSQL database
+SSL_DESC=	Enable SSL/TLS support
+ICONV_DESC=	Enable codepage to unicode conversion for UTF-8 FTP
 
 HAS_CONFIGURE=	yes
 MAKE_ENV=	OSTYPE=FreeBSD
@@ -29,27 +30,23 @@ USE_RC_SUBR=	${PORTNAME}.sh
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	"--with-mysql"
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=	"--with-pgsql"
 .endif
 
-.if defined(WITH_ICONV)
+.if ${PORT_OPTIONS:MICONV}
 USE_ICONV=	yes
 CONFIGURE_ARGS+=	"--with-iconv"
 .endif
 
-.if defined(WITH_SSL)
+.if ${PORT_OPTIONS:MSSL}
 CONFIGURE_ARGS+=	"--with-ssl"
-.endif
-
-.if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
 .endif
 
 post-patch:
