@@ -322,6 +322,7 @@
     SUBDIR += hs-yesod
     SUBDIR += hs-yesod-auth
     SUBDIR += hs-yesod-core
+    SUBDIR += hs-yesod-default
     SUBDIR += hs-yesod-form
     SUBDIR += hs-yesod-json
     SUBDIR += hs-yesod-persistent
