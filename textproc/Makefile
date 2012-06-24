@@ -275,6 +275,7 @@
     SUBDIR += hs-xml
     SUBDIR += hs-xml-conduit
     SUBDIR += hs-xml-types
+    SUBDIR += hs-xml2html
     SUBDIR += hs-xmlhtml
     SUBDIR += hs-yaml
     SUBDIR += hsb-aspell
