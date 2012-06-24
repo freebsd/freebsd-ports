@@ -252,6 +252,7 @@
     SUBDIR += hs-highlighting-kate
     SUBDIR += hs-hs-bibutils
     SUBDIR += hs-html
+    SUBDIR += hs-html-conduit
     SUBDIR += hs-hxt
     SUBDIR += hs-hxt-charproperties
     SUBDIR += hs-hxt-regex-xmlschema
