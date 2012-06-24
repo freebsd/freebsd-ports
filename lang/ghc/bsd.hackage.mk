@@ -163,6 +163,7 @@ IfElse_port=			devel/hs-IfElse
 IORefCAS_port=			devel/hs-IORefCAS
 json_port=			converters/hs-json
 language-c_port=		devel/hs-language-c
+language-javascript_port=	devel/hs-language-javascript
 largeword_port=			devel/hs-largeword
 lazysmallcheck_port=		devel/hs-lazysmallcheck
 lhs2tex_port=			textproc/hs-lhs2tex

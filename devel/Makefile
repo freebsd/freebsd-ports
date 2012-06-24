@@ -667,6 +667,7 @@
     SUBDIR += hs-hslogger
     SUBDIR += hs-idoc
     SUBDIR += hs-language-c
+    SUBDIR += hs-language-javascript
     SUBDIR += hs-largeword
     SUBDIR += hs-lazysmallcheck
     SUBDIR += hs-lifted-base
