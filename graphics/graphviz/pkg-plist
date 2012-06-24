@@ -79,6 +79,8 @@ include/graphviz/usershape.h
 include/graphviz/vis.h
 include/graphviz/vispath.h
 include/graphviz/xdot.h
+%%WITH_MING%%lib/graphviz/Bitstream_Vera_Sans.fdb
+%%WITH_MING%%lib/graphviz/Bitstream_Vera_Serif.fdb
 lib/graphviz/config6
 lib/graphviz/libcdt.so
 lib/graphviz/libcdt.so.5
@@ -120,6 +122,10 @@ lib/graphviz/libgvplugin_gd.a
 %%WITH_GTK%%lib/graphviz/libgvplugin_gtk.la
 %%WITH_GTK%%lib/graphviz/libgvplugin_gtk.so
 %%WITH_GTK%%lib/graphviz/libgvplugin_gtk.so.6
+%%WITH_MING%%lib/graphviz/libgvplugin_ming.a
+%%WITH_MING%%lib/graphviz/libgvplugin_ming.la
+%%WITH_MING%%lib/graphviz/libgvplugin_ming.so
+%%WITH_MING%%lib/graphviz/libgvplugin_ming.so.6
 %%WITH_PIXBUF%%lib/graphviz/libgvplugin_gdk_pixbuf.a
 %%WITH_PIXBUF%%lib/graphviz/libgvplugin_gdk_pixbuf.la
 %%WITH_PIXBUF%%lib/graphviz/libgvplugin_gdk_pixbuf.so
