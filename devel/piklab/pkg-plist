@@ -2,70 +2,25 @@ bin/piklab
 bin/piklab-coff
 bin/piklab-hex
 bin/piklab-prog
-share/applications/kde/piklab.desktop
+share/applications/kde4/piklab.desktop
 share/apps/katepart/syntax/asm-pic.xml
 share/apps/katepart/syntax/coff-c-pic.xml
 share/apps/katepart/syntax/coff-pic.xml
 share/apps/katepart/syntax/jal-pic.xml
 share/apps/piklab/hexeditorpartui.rc
+share/apps/piklab/katepartui.rc
+share/apps/piklab/pics/breakpoint_active.png
+share/apps/piklab/pics/breakpoint_disabled.png
+share/apps/piklab/pics/breakpoint_invalid.png
+share/apps/piklab/pics/breakpoint_reached.png
+share/apps/piklab/pics/program_counter.png
+share/apps/piklab/pics/program_counter_disabled.png
 share/apps/piklab/piklabui.rc
-%%DOCSDIR%%/HTML/en/index.docbook
-share/icons/hicolor/16x16/actions/piklab_addcurrentfile.png
-share/icons/hicolor/16x16/actions/piklab_addfile.png
-share/icons/hicolor/16x16/actions/piklab_blankcheck.png
-share/icons/hicolor/16x16/actions/piklab_burnchip.png
-share/icons/hicolor/16x16/actions/piklab_chip.png
-share/icons/hicolor/16x16/actions/piklab_closeproject.png
-share/icons/hicolor/16x16/actions/piklab_compile.png
-share/icons/hicolor/16x16/actions/piklab_createproject.png
-share/icons/hicolor/16x16/actions/piklab_decompile.png
-share/icons/hicolor/16x16/actions/piklab_editproject.png
-share/icons/hicolor/16x16/actions/piklab_erasechip.png
-share/icons/hicolor/16x16/actions/piklab_find_next.png
-share/icons/hicolor/16x16/actions/piklab_find_previous.png
-share/icons/hicolor/16x16/actions/piklab_likeback_bug.png
-share/icons/hicolor/16x16/actions/piklab_likeback_dislike.png
-share/icons/hicolor/16x16/actions/piklab_likeback_like.png
-share/icons/hicolor/16x16/actions/piklab_openproject.png
-share/icons/hicolor/16x16/actions/piklab_readchip.png
-share/icons/hicolor/16x16/actions/piklab_verifychip.png
+share/doc/HTML/en/piklab/index.docbook
 share/icons/hicolor/16x16/apps/piklab.png
-share/icons/hicolor/22x22/actions/piklab_addcurrentfile.png
-share/icons/hicolor/22x22/actions/piklab_addfile.png
-share/icons/hicolor/22x22/actions/piklab_blankcheck.png
-share/icons/hicolor/22x22/actions/piklab_breakpoint_active.png
-share/icons/hicolor/22x22/actions/piklab_breakpoint_disabled.png
-share/icons/hicolor/22x22/actions/piklab_breakpoint_invalid.png
-share/icons/hicolor/22x22/actions/piklab_breakpoint_reached.png
-share/icons/hicolor/22x22/actions/piklab_burnchip.png
-share/icons/hicolor/22x22/actions/piklab_chip.png
-share/icons/hicolor/22x22/actions/piklab_closeproject.png
-share/icons/hicolor/22x22/actions/piklab_compile.png
-share/icons/hicolor/22x22/actions/piklab_createproject.png
-share/icons/hicolor/22x22/actions/piklab_debug_step.png
-share/icons/hicolor/22x22/actions/piklab_debug_stepin.png
-share/icons/hicolor/22x22/actions/piklab_debug_stepout.png
-share/icons/hicolor/22x22/actions/piklab_debug_stepover.png
-share/icons/hicolor/22x22/actions/piklab_debughalt.png
-share/icons/hicolor/22x22/actions/piklab_decompile.png
-share/icons/hicolor/22x22/actions/piklab_editproject.png
-share/icons/hicolor/22x22/actions/piklab_erasechip.png
-share/icons/hicolor/22x22/actions/piklab_find_next.png
-share/icons/hicolor/22x22/actions/piklab_find_previous.png
-share/icons/hicolor/22x22/actions/piklab_openproject.png
-share/icons/hicolor/22x22/actions/piklab_power.png
-share/icons/hicolor/22x22/actions/piklab_program_counter.png
-share/icons/hicolor/22x22/actions/piklab_program_counter_disabled.png
-share/icons/hicolor/22x22/actions/piklab_readchip.png
-share/icons/hicolor/22x22/actions/piklab_restart.png
-share/icons/hicolor/22x22/actions/piklab_run.png
-share/icons/hicolor/22x22/actions/piklab_stop.png
-share/icons/hicolor/22x22/actions/piklab_verifychip.png
-share/icons/hicolor/32x32/actions/piklab_config_assembler.png
-share/icons/hicolor/32x32/actions/piklab_config_disassembler.png
-share/icons/hicolor/32x32/actions/piklab_config_programmer.png
 share/icons/hicolor/32x32/apps/piklab.png
 share/icons/hicolor/32x32/mimetypes/piklab_project.png
+share/icons/hicolor/48x48/apps/piklab.png
 share/icons/hicolor/64x64/apps/piklab.png
 share/locale/cs/LC_MESSAGES/piklab.mo
 share/locale/de/LC_MESSAGES/piklab.mo
@@ -73,11 +28,9 @@ share/locale/es/LC_MESSAGES/piklab.mo
 share/locale/fr/LC_MESSAGES/piklab.mo
 share/locale/hu/LC_MESSAGES/piklab.mo
 share/locale/it/LC_MESSAGES/piklab.mo
-share/mimelnk/application/x-piklab.desktop
-@dirrmtry %%DOCSDIR%%/HTML/en
-@dirrmtry %%DOCSDIR%%/HTML
-@dirrmtry %%DOCSDIR%%
+share/mime/packages/piklab.xml
+@dirrm share/doc/HTML/en/piklab
+@dirrm share/apps/piklab/pics
 @dirrm share/apps/piklab
-@dirrmtry share/apps/katepart/syntax
-@dirrmtry share/apps/katepart
-@dirrmtry share/apps
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

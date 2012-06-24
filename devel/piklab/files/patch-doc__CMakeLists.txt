@@ -1,6 +1,0 @@
---- ./doc/CMakeLists.txt.orig	2011-09-04 14:24:24.000000000 +0200
-+++ ./doc/CMakeLists.txt	2011-09-04 14:26:07.000000000 +0200
-@@ -1,2 +1,2 @@
- 
--install(FILES index.docbook DESTINATION share/doc/HTML/en/piklab)
-+install(FILES index.docbook DESTINATION share/doc/piklab/HTML/en)
