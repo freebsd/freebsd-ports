@@ -17,13 +17,20 @@ GNU_CONFIGURE=	YES
 USE_BZIP2=	YES
 USE_GMAKE=	YES
 
-OPTIONS=	STATIC  "Build statically"  off
-
 USE_RC_SUBR=	${PORTNAME}
 
-.include <bsd.port.pre.mk>
+PLIST_FILES=	bin/dbclient \
+		bin/dropbearkey \
+		bin/dropbearconvert \
+		sbin/dropbear
 
-.if defined(WITH_STATIC)
+PLIST_DIRSTRY=	etc/dropbear
+
+OPTIONS_DEFINE=	STATIC
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSTATIC}
 LDFLAGS+=	-static
 .endif
 
@@ -36,6 +43,5 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/dropbear
-	@${ECHO_MSG} ""
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
