@@ -55,7 +55,7 @@ OPTIONS_DEFAULT=	SAMPLE_BL
 
 SAMPLE_BL_DESC=	Install sample blacklists
 DNS_BL_DESC=	Enable DNS based blacklists
-QUOTE_STRING=	Add quoted string patch
+QUOTE_STRING_DESC=	Add quoted string patch
 
 .include <bsd.port.options.mk>
 
