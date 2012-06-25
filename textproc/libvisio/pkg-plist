@@ -1,3 +1,4 @@
+bin/vsd2text
 bin/vsd2raw
 bin/vsd2xhtml
 include/libvisio-0.0/libvisio/VSDStringVector.h
