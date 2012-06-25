@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libtorrent-rasterbar
-PORTVERSION=	0.16.0
+PORTVERSION=	0.16.1
 CATEGORIES?=	net-p2p ipv6
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	libtorrent
@@ -52,6 +52,11 @@ CONFIGURE_ARGS+=	--disable-python-binding
 
 .if defined(SLAVE_PORT) && ${SLAVE_PORT:L}=="yes"
 post-patch: slave-post-patch
+.else
+post-patch:
+	${CP} ${WRKSRC}/Jamfile ${WRKSRC}/Jamfile.presed
+	${SED} -e 's#<include>/usr/local/include#<include>${LOCALBASE}/include#' \
+		${WRKSRC}/Jamfile.presed > ${WRKSRC}/Jamfile
 .endif
 
 .if defined(SLAVE_PORT) && ${SLAVE_PORT:L}=="yes"

@@ -110,6 +110,7 @@ include/libtorrent/ssl_stream.hpp
 include/libtorrent/stat.hpp
 include/libtorrent/storage.hpp
 include/libtorrent/storage_defs.hpp
+include/libtorrent/struct_debug.hpp
 include/libtorrent/thread.hpp
 include/libtorrent/time.hpp
 include/libtorrent/timestamp_history.hpp
