@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yaws
-PORTVERSION=	1.92
+PORTVERSION=	1.93
 CATEGORIES=	www
 MASTER_SITES=	http://yaws.hyber.org/download/
 
@@ -32,6 +32,8 @@ APPDIR=${PREFIX}/lib/erlang/lib/yaws-${PORTVERSION}
 
 SUB_FILES=      pkg-message
 
+CONFIGURE_ARGS+=--prefix=${PREFIX} --localstatedir=/var
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SENDFILE)
@@ -55,16 +57,22 @@ do-install:
 	@${MKDIR} ${ETCDIR}
 	@${INSTALL_DATA} ${FILESDIR}/yaws.conf.sample ${ETCDIR}
 	@${MKDIR} ${APPDIR}/ebin
+	@${MKDIR} ${APPDIR}/examples
+	@${MKDIR} ${APPDIR}/examples/ebin
+	@${MKDIR} ${APPDIR}/examples/src
 	@${MKDIR} ${APPDIR}/include
 	@${MKDIR} ${APPDIR}/priv
 	@${MKDIR} ${APPDIR}/priv/lib
 	@${MKDIR} ${APPDIR}/src
 	@${MKDIR} ${PREFIX}/www/yaws
 	@${INSTALL_DATA} ${WRKSRC}/ebin/* ${APPDIR}/ebin
-.for FILE in envelope.xsd mime.types soap.xsd wsdl.xsd epam
+	@${INSTALL_DATA} ${WRKSRC}/examples/ebin/* ${APPDIR}/examples/ebin
+	@${INSTALL_DATA} ${WRKSRC}/examples/src/* ${APPDIR}/examples/src
+.for FILE in envelope.xsd mime.types soap.xsd wsdl.xsd soap-envelope.xsd wsdl11soap12.xsd xml.xsd
 	@${INSTALL_DATA} ${WRKSRC}/priv/${FILE} ${APPDIR}/priv
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/priv/lib/* ${APPDIR}/priv/lib
+	@${INSTALL_PROGRAM} ${WRKSRC}/priv/epam ${APPDIR}/priv
+	@${INSTALL_LIB} ${WRKSRC}/priv/lib/* ${APPDIR}/priv/lib
 	@${INSTALL_DATA} ${WRKSRC}/include/* ${APPDIR}/include
 	@${INSTALL_DATA} ${WRKSRC}/src/*.?rl ${APPDIR}/src
 	@cd ${WRKSRC}/www && (${FIND} * | ${CPIO} -pu ${WWWDIR})
