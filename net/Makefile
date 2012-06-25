@@ -965,6 +965,7 @@
     SUBDIR += remmina-plugins
     SUBDIR += remotedesk
     SUBDIR += repeater
+    SUBDIR += reposado
     SUBDIR += rexx-sock
     SUBDIR += rfbproxy
     SUBDIR += rinetd
