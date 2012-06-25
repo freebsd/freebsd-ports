@@ -52,6 +52,46 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f45c0049-be72-11e1-a284-0023ae8e59f0">
+    <topic>pycrypto -- vulnerable ElGamal key generation</topic>
+    <affects>
+      <package>
+	<name>py-pycrypto</name>
+	<range><ge>2.5</ge><lt>2.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Dwayne C. Litzenberger of PyCrypto reports:</p>
+	<blockquote cite="http://lists.dlitz.net/pipermail/pycrypto/2012q2/000587.html">
+	  <p>In the ElGamal schemes (for both encryption and signatures), g is
+	     supposed to be the generator of the entire Z^*_p group.  However, in
+	     PyCrypto 2.5 and earlier, g is more simply the generator of a random
+	     sub-group of Z^*_p.</p>
+	  <p>The result is that the signature space (when the key is used for
+	     signing) or the public key space (when the key is used for encryption)
+	     may be greatly reduced from its expected size of log(p) bits, possibly
+	     down to 1 bit (the worst case if the order of g is 2).</p>
+	  <p>While it has not been confirmed, it has also been suggested that an
+	     attacker might be able to use this fact to determine the private key.</p>
+	  <p>Anyone using ElGamal keys should generate new keys as soon as
+	     practical.</p>
+	  <p>Any additional information about this bug will be tracked at
+	     https://bugs.launchpad.net/pycrypto/+bug/985164</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-2417</cvename>
+      <url>http://lists.dlitz.net/pipermail/pycrypto/2012q2/000587.html</url>
+      <url>https://bugs.launchpad.net/pycrypto/+bug/985164</url>
+    </references>
+    <dates>
+      <discovery>2012-05-24</discovery>
+      <entry>2012-06-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f46c4c6a-ba25-11e1-806a-001143cd36d8">
     <topic>joomla -- Privilege Escalation</topic>
     <affects>
