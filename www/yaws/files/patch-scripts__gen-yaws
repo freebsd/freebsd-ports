@@ -1,0 +1,20 @@
+--- scripts/gen-yaws.ORIG	2012-06-24 15:27:11.000000000 +0900
++++ scripts/gen-yaws	2012-06-24 15:33:26.000000000 +0900
+@@ -1,13 +1,15 @@
+ #!/bin/sh
+ 
++# CAUTION: Modified for FreeBSD Port installation
++# referring yawsdir in the installed yaws library
++
+ # Used by scripts/Makefile and scripts/rebar-pre-script to generate
+ # the yaws execution script
+ 
+ set -e
+ 
+-topdir=`cd .. && pwd`
+ cat yaws.template | \
+-    ./Subst %yawsdir% "${topdir}" | \
++    ./Subst %yawsdir% "/usr/local/lib/erlang/lib/yaws" | \
+     ./Subst %vardir% "${VARDIR}" | \
+     ./Subst %run_erl% "${ERLBINDIR}/run_erl" | \
+     ./Subst %to_erl% "${ERLBINDIR}/to_erl" | \
