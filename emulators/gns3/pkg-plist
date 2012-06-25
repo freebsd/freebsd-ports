@@ -1,5 +1,9 @@
 bin/gns3
 bin/qemuwrapper.py
+libexec/gns3/qemuwrapper.py
+libexec/gns3/vboxcontroller_4_1.py
+libexec/gns3/vboxwrapper.py
+%%EXAMPLESDIR%%/baseconfig.txt
 %%PYTHON_SITELIBDIR%%/GNS3/Annotation.py
 %%PYTHON_SITELIBDIR%%/GNS3/Annotation.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Annotation.pyo
@@ -30,6 +34,9 @@ bin/qemuwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/Defaults/AnyEmuDefaults.py
 %%PYTHON_SITELIBDIR%%/GNS3/Defaults/AnyEmuDefaults.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Defaults/AnyEmuDefaults.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Defaults/AnyVBoxEmuDefaults.py
+%%PYTHON_SITELIBDIR%%/GNS3/Defaults/AnyVBoxEmuDefaults.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Defaults/AnyVBoxEmuDefaults.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Defaults/IOSRouter1700Defaults.py
 %%PYTHON_SITELIBDIR%%/GNS3/Defaults/IOSRouter1700Defaults.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Defaults/IOSRouter1700Defaults.pyo
@@ -67,6 +74,9 @@ bin/qemuwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/Dynagen/dynagen.py
 %%PYTHON_SITELIBDIR%%/GNS3/Dynagen/dynagen.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Dynagen/dynagen.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Dynagen/dynagen_vbox_lib.py
+%%PYTHON_SITELIBDIR%%/GNS3/Dynagen/dynagen_vbox_lib.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Dynagen/dynagen_vbox_lib.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Dynagen/dynamips_lib.py
 %%PYTHON_SITELIBDIR%%/GNS3/Dynagen/dynamips_lib.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Dynagen/dynamips_lib.pyo
@@ -144,7 +154,6 @@ bin/qemuwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/Langs/qt_pt_br.qm
 %%PYTHON_SITELIBDIR%%/GNS3/Langs/qt_ru.qm
 %%PYTHON_SITELIBDIR%%/GNS3/Langs/qt_sk.qm
-%%PYTHON_SITELIBDIR%%/GNS3/Langs/qt_sl.qm
 %%PYTHON_SITELIBDIR%%/GNS3/Langs/qt_sr.qm
 %%PYTHON_SITELIBDIR%%/GNS3/Langs/qt_sv.qm
 %%PYTHON_SITELIBDIR%%/GNS3/Langs/qt_uk.qm
@@ -181,6 +190,9 @@ bin/qemuwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/Node/AnyEmuDevice.py
 %%PYTHON_SITELIBDIR%%/GNS3/Node/AnyEmuDevice.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Node/AnyEmuDevice.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Node/AnyVBoxEmuDevice.py
+%%PYTHON_SITELIBDIR%%/GNS3/Node/AnyVBoxEmuDevice.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Node/AnyVBoxEmuDevice.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Node/Cloud.py
 %%PYTHON_SITELIBDIR%%/GNS3/Node/Cloud.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Node/Cloud.pyo
@@ -280,18 +292,21 @@ bin/qemuwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_FRSWPage.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_FRSWPage.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_FRSWPage.pyo
-%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_FWPage.py
-%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_FWPage.pyc
-%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_FWPage.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_IDSPage.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_IDSPage.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_IDSPage.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_IOSDialog.py
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_IOSDialog.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_IOSDialog.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_IOSRouterPage.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_IOSRouterPage.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_IOSRouterPage.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_JunOSPage.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_JunOSPage.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_JunOSPage.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_PIXPage.py
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_PIXPage.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_PIXPage.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_PreferencesCapture.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_PreferencesCapture.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_PreferencesCapture.pyo
@@ -304,9 +319,15 @@ bin/qemuwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_PreferencesQemu.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_PreferencesQemu.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_PreferencesQemu.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_PreferencesVirtualBox.py
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_PreferencesVirtualBox.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_PreferencesVirtualBox.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_QemuPage.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_QemuPage.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_QemuPage.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_VirtualBoxPage.py
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_VirtualBoxPage.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Form_VirtualBoxPage.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_ASA.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_ASA.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_ASA.pyo
@@ -328,9 +349,6 @@ bin/qemuwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_FRSW.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_FRSW.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_FRSW.pyo
-%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_FW.py
-%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_FW.pyc
-%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_FW.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_IDS.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_IDS.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_IDS.pyo
@@ -340,6 +358,9 @@ bin/qemuwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_JunOS.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_JunOS.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_JunOS.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_PIX.py
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_PIX.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_PIX.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_PreferencesCapture.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_PreferencesCapture.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_PreferencesCapture.pyo
@@ -352,9 +373,15 @@ bin/qemuwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_PreferencesQemu.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_PreferencesQemu.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_PreferencesQemu.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_PreferencesVirtualBox.py
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_PreferencesVirtualBox.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_PreferencesVirtualBox.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_Qemu.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_Qemu.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_Qemu.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_VirtualBox.py
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_VirtualBox.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/Page_VirtualBox.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/__init__.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/__init__.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages/__init__.pyo
@@ -415,12 +442,21 @@ bin/qemuwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/svg_resources_rc.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/svg_resources_rc.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/svg_resources_rc.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Uncompress.py
+%%PYTHON_SITELIBDIR%%/GNS3/Uncompress.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Uncompress.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/UndoFramework.py
 %%PYTHON_SITELIBDIR%%/GNS3/UndoFramework.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/UndoFramework.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Utils.py
 %%PYTHON_SITELIBDIR%%/GNS3/Utils.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Utils.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/VBoxManager.py
+%%PYTHON_SITELIBDIR%%/GNS3/VBoxManager.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/VBoxManager.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/WindowManipulator.py
+%%PYTHON_SITELIBDIR%%/GNS3/WindowManipulator.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/WindowManipulator.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Wizard.py
 %%PYTHON_SITELIBDIR%%/GNS3/Wizard.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Wizard.pyo
@@ -430,6 +466,7 @@ bin/qemuwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/__init__.py
 %%PYTHON_SITELIBDIR%%/GNS3/__init__.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/__init__.pyo
+@dirrm libexec/gns3
 @dirrm %%PYTHON_SITELIBDIR%%/GNS3/Ui/ConfigurationPages
 @dirrm %%PYTHON_SITELIBDIR%%/GNS3/Ui
 @dirrm %%PYTHON_SITELIBDIR%%/GNS3/Node
@@ -441,3 +478,4 @@ bin/qemuwrapper.py
 @dirrm %%PYTHON_SITELIBDIR%%/GNS3/Defaults
 @dirrm %%PYTHON_SITELIBDIR%%/GNS3/Config
 @dirrm %%PYTHON_SITELIBDIR%%/GNS3
+@dirrm %%EXAMPLESDIR%%
