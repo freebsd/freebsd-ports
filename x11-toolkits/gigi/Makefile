@@ -55,7 +55,7 @@ post-build:
 
 do-install:
 	${MKDIR} ${PREFIX}/include/GG
-	cd ${WRKSRC}/GG && ${FIND} . -name "*.h" -depth | ${CPIO} -pdmv ${PREFIX}/include/GG
+	cd ${WRKSRC}/GG && ${FIND} . -name "*.h" -o -name "*.hpp" -depth | ${CPIO} -pdmv ${PREFIX}/include/GG
 .for lib in ${GIGI_LIBS}
 	${INSTALL_PROGRAM} ${WRKSRC}/lib${lib}.so \
 		${PREFIX}/lib/lib${lib}.so.${SHLIB_VER}
