@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	whisper
-PORTVERSION=	0.9.9
+PORTVERSION=	0.9.10
 CATEGORIES=	databases python
 MASTER_SITES=	http://launchpad.net/graphite/0.9/${PORTVERSION}/+download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
