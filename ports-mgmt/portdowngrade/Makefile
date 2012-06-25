@@ -7,14 +7,14 @@
 
 PORTNAME=	portdowngrade
 PORTVERSION=	0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sets a port back to a previous version
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libpopt.a:${PORTSDIR}/devel/popt
+LIB_DEPENDS=    popt.0:${PORTSDIR}/devel/popt
 
 CONFIGURE_ENV=	LIBS="-lpopt -L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
