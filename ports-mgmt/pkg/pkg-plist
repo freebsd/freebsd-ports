@@ -6,6 +6,8 @@ include/pkg.h
 lib/libpkg.so.0
 lib/libpkg.so
 lib/libpkg.a
+etc/periodic/daily/411.pkg-backup
 etc/periodic/security/410.pkg-audit
+@dirrmtry etc/periodic/daily
 @dirrmtry etc/periodic/security
 @dirrmtry etc/periodic
