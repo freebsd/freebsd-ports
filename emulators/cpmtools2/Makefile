@@ -13,9 +13,9 @@ MASTER_SITES=	http://www.moria.de/~michael/cpmtools/
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Tools to access CP/M disks and disk images
 
-LATEST_LINK=	cpmtools2
-
 LICENSE=	GPLv3
+
+LATEST_LINK=	cpmtools2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--bindir=${PREFIX}/sbin \
@@ -24,12 +24,14 @@ CONFIGURE_ARGS+=--bindir=${PREFIX}/sbin \
 MAN1=	cpmls.1 cpmcp.1 cpmrm.1 cpmchmod.1 cpmchattr.1 mkfs.cpm.1 fsck.cpm.1 fsed.cpm.1
 MAN5=	cpm.5
 
-OPTIONS=	LIBDSK "With LIBDSK support" off
+OPTIONS_DEFINE=	LIBDSK
 
-.include <bsd.port.pre.mk>
+LIBDSK_DESC=	Access to disks and disk images support
 
-.if defined(WITH_LIBDSK)
-LIB_DEPENDS+=	dsk.5:${PORTSDIR}/emulators/libdsk
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MLIBDISK}
+LIB_DEPENDS+=	dsk:${PORTSDIR}/emulators/libdsk
 CONFIGURE_ARGS+=--with-libdsk=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-libdsk=''
@@ -46,4 +48,4 @@ post-patch:
 pre-install:
 	@${MKDIR} ${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

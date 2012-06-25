@@ -17,37 +17,41 @@ COMMENT=	Perl Bindings for SDL
 
 BUILD_DEPENDS=	p5-YAML>=0.62:${PORTSDIR}/textproc/p5-YAML
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		jpeg.11:${PORTSDIR}/graphics/jpeg
+		jpeg:${PORTSDIR}/graphics/jpeg
 
 USE_SDL=	sdl
 PERL_MODBUILD=	yes
 
-OPTIONS=	SDL_TTF "Enable TTF support" on \
-		SDL_NET "Enable NET support" on \
-		SDL_GFX "Enable GFX support" on \
-		SDL_IMAGE "Enable IMAGE support" on \
-		SDL_MIXER "Enable MIXER support" on
+OPTIONS_DEFINE=	GFX IMAGE MIXER NET TTF
+
+GFX_DESC=	Enable GFX support
+IMAGE_DESC=	Enable IMAGE support
+MIXER_DESC=	Enable MIXER support
+NET_DESC=	Enable NET support
+TTF_DESC=	Enable TTF support
+
+OPTIONS_DEFAULT=	GFX IMAGE MIXER NET TTF
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_SDL_TTF)
-USE_SDL+=	ttf
-.endif
-
-.if !defined(WITHOUT_SDL_NET)
-USE_SDL+=	net
-.endif
-
-.if !defined(WITHOUT_SDL_GFX)
+.if ${PORT_OPTIONS:MGFX}
 USE_SDL+=	gfx
 .endif
 
-.if !defined(WITHOUT_SDL_IMAGE)
+.if ${PORT_OPTIONS:MIMAGE}
 USE_SDL+=	image
 .endif
 
-.if !defined(WITHOUT_SDL_MIXER)
+.if ${PORT_OPTIONS:MMIXER}
 USE_SDL+=	mixer
+.endif
+
+.if ${PORT_OPTIONS:MNET}
+USE_SDL+=	net
+.endif
+
+.if ${PORT_OPTIONS:MTTF}
+USE_SDL+=	ttf
 .endif
 
 USE_LDCONFIG=	yes

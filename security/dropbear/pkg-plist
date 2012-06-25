@@ -1,5 +1,0 @@
-bin/dbclient
-bin/dropbearkey
-bin/dropbearconvert
-sbin/dropbear
-@dirrmtry etc/dropbear

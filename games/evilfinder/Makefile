@@ -18,11 +18,15 @@ COMMENT=	Numerologically determine the evilness of things
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS=	WRAPPER "Evilfinder local wrapper" on
+OPTIONS_DEFINE=	WRAPPER
 
-.include <bsd.port.pre.mk>
+WRAPPER_DESC=	Evilfinder local wrapper
 
-.if !defined(WITHOUT_WRAPPER)
+OPTIONS_DEFAULT=	WRAPPER
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MWRAPPER}
 RUN_DEPENDS+=	lynx:${PORTSDIR}/www/lynx
 PLIST_SUB+=	WRAPPER=""
 .else
@@ -55,4 +59,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
