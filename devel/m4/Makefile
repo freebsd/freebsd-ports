@@ -26,7 +26,6 @@ MAN1=	gm4.1
 EXAMPLESDIR=	share/examples/gm4
 
 OPTIONS_DEFINE=		LIBSIGSEGV
-OPTIONS_DEFAULT=	LIBSIGSEGV
 LIBSIGSEGV_DESC=	Use libsigsegv for better diagnostics
 
 post-install:
