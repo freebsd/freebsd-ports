@@ -25,7 +25,9 @@ RUN_DEPENDS+=	\
 	${PYTHON_PKGNAMEPREFIX}httplib2>=0.6.0:${PORTSDIR}/www/py-httplib2 \
 	${PYTHON_PKGNAMEPREFIX}simplejson>=2.1.6:${PORTSDIR}/devel/py-simplejson
 
-.if !defined(WITHOUT_X11)
+.include <bsd.port.options.mk>
+
+.if empty(PORT_OPTIONS:MX11)
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tkinter>=2.7.1:${PORTSDIR}/x11-toolkits/py-tkinter
 .endif
 
@@ -45,7 +47,7 @@ post-patch:
 		${WRKSRC}/libnamebench/util.py
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -o ${DOCOWN} -g ${DOCGRP} -m 555 -d ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif

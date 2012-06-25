@@ -20,36 +20,28 @@ USE_ZIP=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 
-OPTIONS=		TOMCAT5 "Enable Tomcat 5.x support"     off \
-			TOMCAT6 "Enable Tomcat 6.x support"     on \
-			TOMCAT7 "Enable Tomcat 7.x support"     off
+OPTIONS_SINGLE=	AS
+OPTIONS_SINGLE_AS=	TOMCAT5 TOMCAT6 TOMCAT7
+OPTIONS_DEFAULT=	TOMCAT6
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_TOMCAT5)
+.if ${PORT_OPTIONS:MTOMCAT5}
 APPHOME=	${LOCALBASE}/tomcat5.5
 BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat55
 RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat55
 .endif
 
-.if defined(WITH_TOMCAT6)
+.if ${PORT_OPTIONS:MTOMCAT6}
 APPHOME=	${LOCALBASE}/apache-tomcat-6.0
 BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
 RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
 .endif
 
-.if defined(WITH_TOMCAT7)
+.if ${PORT_OPTIONS:MTOMCAT7}
 APPHOME=	${LOCALBASE}/apache-tomcat-7.0
 BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat7
 RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat7
-.endif
-
-.if ( defined(WITH_TOMCAT5) && defined(WITH_TOMCAT6) || defined(WITH_TOMCAT7) )
-IGNORE=	you can only define one application server
-.elif ( defined(WITH_TOMCAT6) && defined(WITH_TOMCAT7) )
-IGNORE=	you can only define one application server
-.elif !defined(APPHOME)
-IGNORE=	you need at least one application server
 .endif
 
 USE_JAVA=	yes
@@ -60,9 +52,7 @@ PLIST_SUB+=	APPHOME=${APPHOME:S|^${PREFIX}/||} \
 		CONF_EXT=${CONF_EXT}
 CONF_EXT=	sample
 
-.if !defined(NOPORTEXAMPLES)
 PORTEXAMPLES=	*
-.endif
 
 do-install:
 	( ${MKDIR} ${APPHOME}/webapps/${PORTNAME}/WEB-INF/lib && cd ${WRKSRC}/lib && ${COPYTREE_SHARE} \* ${APPHOME}/webapps/${PORTNAME}/WEB-INF/lib)
@@ -90,7 +80,7 @@ do-install:
 		${ECHO_MSG} "	Preserving local configuration file: ${APPHOME}/webapps/${PORTNAME}/WEB-INF/web.xml"; \
 	fi;
 		${INSTALL_DATA} ${WRKSRC}/webapp/WEB-INF/web.xml.${CONF_EXT} ${APPHOME}/webapps/${PORTNAME}/WEB-INF
-.if !defined(NOPORTEXAMPLES)
+.if $(PORT_OPTIONS:MEXAMPLES}
 	cd ${WRKSRC}/samples && ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} \;
 	cd ${WRKSRC}/samples && ${FIND} . -type f -not -name '*.class' -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} \;
 .endif
