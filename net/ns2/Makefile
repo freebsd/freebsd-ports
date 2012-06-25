@@ -5,11 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ns
+PORTNAME=	ns2
 PORTVERSION=	2.35
 CATEGORIES=	net
-MASTER_SITES=	SF/${PORTNAME}nam/${PORTNAME}-2/${PORTVERSION}
-DISTFILES=	${PORTNAME}-src-${PORTVERSION}.tar.gz
+MASTER_SITES=	SF/nsnam/ns-2/${PORTVERSION}
+DISTNAME=	ns-src-${PORTVERSION}
 
 MAINTAINER=	masaki@club.kyutech.ac.jp
 COMMENT=	Discrete event simulator for networking research
@@ -23,6 +23,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	 --with-tcl-ver=${TCL_VER} --with-tk-ver=${TK_VER} --x-libraries=${LOCALBASE}/lib --x-includes=${LOCALBASE}/include
 USE_GMAKE=	yes
 USE_TK=		85+
+
+WRKSRC=	${WRKDIR}/ns-${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" \
