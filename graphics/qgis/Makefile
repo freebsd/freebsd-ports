@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qgis
-PORTVERSION=	1.7.4
-PORTREVISION=	6
+PORTVERSION=	1.8.0
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://qgis.org/downloads/ \
 		http://download.osgeo.org/qgis/src/
@@ -19,7 +18,9 @@ LIB_DEPENDS=	geos:${PORTSDIR}/graphics/geos \
 		proj.7:${PORTSDIR}/graphics/proj \
 		gsl.16:${PORTSDIR}/math/gsl \
 		qwt.5:${PORTSDIR}/x11-toolkits/qwt5 \
-		gdal:${PORTSDIR}/graphics/gdal
+		gdal:${PORTSDIR}/graphics/gdal \
+		spatialite.4:${PORTSDIR}/databases/spatialite \
+		spatialindex.2:${PORTSDIR}/devel/spatialindex
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
@@ -33,25 +34,22 @@ USE_LDCONFIG=	yes
 
 MAN1=		qgis.1
 
-OPTIONS=	GRASS "Enable GRASS support" Off \
-		POSTGIS "Enable PostGIS support" Off \
-		MAPSERVER "Enable MapServer support" off \
-		PYTHON "Enable Python support" On
+OPTIONS_DEFINE=		GRASS POSTGIS MAPSERVER PYTHON
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 800000
 BROKEN=		does not compile on 7.X
 .endif
 
-.if defined(WITH_GRASS)
+.if ${PORT_OPTIONS:MGRASS}
 CMAKE_ARGS+=	-DWITH_GRASS:BOOL=TRUE -DGRASS_PREFIX=${LOCALBASE}/grass-6.4.2
 RUN_DEPENDS+=	${LOCALBASE}/lib/gdalplugins/gdal_GRASS.so:${PORTSDIR}/graphics/gdal-grass
 .else
 CMAKE_ARGS+=	-DWITH_GRASS:BOOL=FALSE
 .endif
 
-.if defined(WITH_POSTGIS)
+.if ${PORT_OPTIONS:MPOSTGIS}
 USE_PGSQL=	YES
 CMAKE_ARGS+=	-DWITH_POSTGRESQL:BOOL=TRUE
 PLIST_SUB+=	PGSQL=""
@@ -60,7 +58,7 @@ CMAKE_ARGS+=	-DWITH_POSTGRESQL:BOOL=FALSE
 PLIST_SUB+=	PGSQL="@comment "
 .endif
 
-.if defined(WITH_MAPSERVER)
+.if ${PORT_OPTIONS:MMAPSERVER}
 CMAKE_ARGS+=	-DWITH_MAPSERVER:BOOL=TRUE
 PLIST_SUB+=	QGIS_FCGI=""
 LIB_DEPENDS+=	fcgi.0:${PORTSDIR}/www/fcgi
@@ -69,10 +67,7 @@ CMAKE_ARGS+=	-DWITH_MAPSERVER:BOOL=FALSE
 PLIST_SUB+=	QGIS_FCGI="@comment "
 .endif
 
-.if defined(WITHOUT_PYTHON)
-CMAKE_ARGS+=	-DWITH_BINDINGS:BOOL=FALSE
-PLIST_SUB+=	QGIS_PYTHON="@comment "
-.else
+.if ${PORT_OPTIONS:MPYTHON}
 CMAKE_ARGS+=	-DWITH_BINDINGS:BOOL=TRUE
 PLIST_SUB+=	QGIS_PYTHON=""
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sip>=4.8.2:${PORTSDIR}/devel/py-sip \
@@ -82,6 +77,9 @@ BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sip>=4.8.2:${PORTSDIR}/devel/py-sip \
 		${PYTHON_PKGNAMEPREFIX}qt4-xml>=4.5.4:${PORTSDIR}/textproc/py-qt4-xml \
 		${PYTHON_PKGNAMEPREFIX}qt4-core>=4.5.4:${PORTSDIR}/devel/py-qt4-core \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=2.6.5:${PORTSDIR}/databases/py-sqlite3
+.else
+CMAKE_ARGS+=	-DWITH_BINDINGS:BOOL=FALSE
+PLIST_SUB+=	QGIS_PYTHON="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
