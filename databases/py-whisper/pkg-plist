@@ -9,3 +9,5 @@ bin/whisper-update.py
 bin/whisper-resize.py
 bin/whisper-create.py
 bin/whisper-set-aggregation-method.py
+bin/whisper-dump.py
+bin/whisper-merge.py
