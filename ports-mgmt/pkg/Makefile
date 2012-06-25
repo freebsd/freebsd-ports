@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pkg
-DISTVERSION=	1.0-beta15
-PORTREVISION=	3
+DISTVERSION=	1.0-beta16
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/portmgr \
 		http://files.etoilebsd.net/pkg/
@@ -23,6 +22,7 @@ USE_LDCONFIG=	yes
 MANCOMPRESSED=	yes
 
 MAKE_ENV+=	WITHOUT_PROFILE=yes
+USE_STAGE=	yes
 
 MAN8=	pkg.8 \
 	pkg-add.8 \
@@ -44,14 +44,15 @@ MAN8=	pkg.8 \
 	pkg-set.8 \
 	pkg-shell.8 \
 	pkg-shlib.8 \
+	pkg-stats.8 \
 	pkg-update.8 \
 	pkg-updating.8 \
 	pkg-upgrade.8 \
 	pkg-version.8 \
 	pkg-which.8
-MLINKS=	pkg-delete.8 pkg-remove.8
 MAN5=	pkg.conf.5
-MLINKS=	pkg-delete.8 pkg-remove.8
+MLINKS=	pkg-delete.8 pkg-remove.8 \
+	pkg.8 pkg-static.8
 
 .include <bsd.port.pre.mk>
 
@@ -71,7 +72,9 @@ IGNORE=		not supported on 7.x or early 8.0
 post-install:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/scripts/periodic/410.pkg-audit
 	@${MKDIR} ${PREFIX}/etc/periodic/security
+	@${MKDIR} ${PREFIX}/etc/periodic/daily
 	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/periodic/410.pkg-audit ${PREFIX}/etc/periodic/security
+	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/periodic/411.pkg-backup ${PREFIX}/etc/periodic/daily
 	@${INSTALL_SCRIPT} ${WRKSRC}/ports/pkg2ng ${PREFIX}/sbin
 	@${INSTALL_DATA} ${WRKSRC}/pkg/pkg.conf.sample ${PREFIX}/etc
 	@${CAT} ${PKGMESSAGE}
