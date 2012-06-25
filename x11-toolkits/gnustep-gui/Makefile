@@ -16,6 +16,7 @@ COMMENT=	GNUstep GUI library
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
+BUILD_DEPENDS+=	texi2pdf:${PORTSDIR}/print/texinfo
 .endif
 LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
