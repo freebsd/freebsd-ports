@@ -124,6 +124,7 @@
     SUBDIR += qpage
     SUBDIR += qrq
     SUBDIR += qsstv
+    SUBDIR += qtel
     SUBDIR += remserial
     SUBDIR += rubygem-callsign
     SUBDIR += rubygem-ruby-termios
