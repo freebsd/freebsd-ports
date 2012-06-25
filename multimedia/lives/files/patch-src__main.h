@@ -1,7 +1,7 @@
---- ./src/main.h.orig	Mon Dec 18 04:51:33 2006
-+++ ./src/main.h	Fri Jan 26 12:48:23 2007
-@@ -57,6 +57,7 @@
- #include <gdk/gdkkeysyms.h>
+--- ./src/main.h.orig	2012-06-24 16:20:15.000000000 +0200
++++ ./src/main.h	2012-06-25 19:43:27.000000000 +0200
+@@ -98,6 +98,7 @@
+ #endif // GUI_GTK
  
  #include <stdlib.h>
 +#include <sys/stat.h>

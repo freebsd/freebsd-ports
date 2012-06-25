@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lives
-PORTVERSION=	1.6.1
-PORTREVISION=	2
+PORTVERSION=	1.6.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://salsaman.home.xs4all.nl/lives/current/
 DISTNAME=	LiVES-${PORTVERSION}
@@ -69,7 +68,6 @@ DOC_FILES=	AUTHORS BUGS ChangeLog FEATURES GETTING.STARTED README \
 PORT_VERBS=	lives LiVES _encoder.py midistart midistop smogrify sendOSC
 
 OPTIONS_DEFINE=	DOXYGEN FREI0R
-DOXYGEN_DESC=	Build Doxygen documentation
 FREI0R_DESC=	Enable frei0r support
 
 .include <bsd.port.options.mk>

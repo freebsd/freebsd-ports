@@ -47,8 +47,16 @@ lib/libweed.so.0
 lib/libweed_slice.la
 lib/libweed_slice.so
 lib/libweed_slice.so.0
+lib/lives/plugins/decoders/asf_decoder.la
+lib/lives/plugins/decoders/asf_decoder.so
 lib/lives/plugins/decoders/dv_decoder.la
 lib/lives/plugins/decoders/dv_decoder.so
+lib/lives/plugins/decoders/flv_decoder.la
+lib/lives/plugins/decoders/flv_decoder.so
+lib/lives/plugins/decoders/mkv_decoder.la
+lib/lives/plugins/decoders/mkv_decoder.so
+lib/lives/plugins/decoders/mpegts_decoder.la
+lib/lives/plugins/decoders/mpegts_decoder.so
 lib/lives/plugins/decoders/ogg_decoder.la
 lib/lives/plugins/decoders/ogg_decoder.so
 lib/lives/plugins/effects/realtime/weed/RGBdelay.la
@@ -59,6 +67,8 @@ lib/lives/plugins/effects/realtime/weed/audio_transition.la
 lib/lives/plugins/effects/realtime/weed/audio_transition.so
 lib/lives/plugins/effects/realtime/weed/audio_volume.la
 lib/lives/plugins/effects/realtime/weed/audio_volume.so
+lib/lives/plugins/effects/realtime/weed/blank_frame_detector.la
+lib/lives/plugins/effects/realtime/weed/blank_frame_detector.so
 lib/lives/plugins/effects/realtime/weed/blurzoom.la
 lib/lives/plugins/effects/realtime/weed/blurzoom.so
 lib/lives/plugins/effects/realtime/weed/bump2d.la
@@ -83,6 +93,8 @@ lib/lives/plugins/effects/realtime/weed/fireTV.so
 %%FREI0R%%lib/lives/plugins/effects/realtime/weed/frei0r/frei0r.so
 lib/lives/plugins/effects/realtime/weed/gdk_fast_resize.la
 lib/lives/plugins/effects/realtime/weed/gdk_fast_resize.so
+lib/lives/plugins/effects/realtime/weed/haar_analyser.la
+lib/lives/plugins/effects/realtime/weed/haar_analyser.so
 lib/lives/plugins/effects/realtime/weed/haip.la
 lib/lives/plugins/effects/realtime/weed/haip.so
 lib/lives/plugins/effects/realtime/weed/layout_blends.la
@@ -129,6 +141,8 @@ lib/lives/plugins/effects/realtime/weed/targeted_zoom.la
 lib/lives/plugins/effects/realtime/weed/targeted_zoom.so
 lib/lives/plugins/effects/realtime/weed/textfun.la
 lib/lives/plugins/effects/realtime/weed/textfun.so
+lib/lives/plugins/effects/realtime/weed/tone_gen.la
+lib/lives/plugins/effects/realtime/weed/tone_gen.so
 lib/lives/plugins/effects/realtime/weed/tvpic.la
 lib/lives/plugins/effects/realtime/weed/tvpic.so
 lib/lives/plugins/effects/realtime/weed/vertigo.la
