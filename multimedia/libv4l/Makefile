@@ -7,6 +7,7 @@
 
 PORTNAME=	libv4l
 PORTVERSION=	0.8.8
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://linuxtv.org/downloads/v4l-utils/
 DISTNAME=	v4l-utils-${PORTVERSION}
@@ -29,13 +30,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/lib
 .include <bsd.port.pre.mk>
 
 post-patch:
-.if ${OSVERSION} < 700000
-	@${REINPLACE_CMD} -e 's|-fvisibility=hidden||g' -e 's|-lrt||g'  \
-		${WRKSRC}/libv4l1/Makefile \
-		${WRKSRC}/libv4l2/Makefile \
-		${WRKSRC}/libv4lconvert/Makefile
-.endif
 	@${REINPLACE_CMD} -e 's|$$(LIBDIR)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
+		-e 's|-lrt||g' \
 		${WRKSRC}/libv4l1/Makefile \
 		${WRKSRC}/libv4l2/Makefile \
 		${WRKSRC}/libv4lconvert/Makefile
