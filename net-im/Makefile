@@ -61,6 +61,7 @@
     SUBDIR += kopete
     SUBDIR += kpopup
     SUBDIR += libjingle
+    SUBDIR += libjreen
     SUBDIR += libmsn
     SUBDIR += libnice
     SUBDIR += libpurple
