@@ -25,6 +25,10 @@ CONFIGURE_ENV+=	INSTALL_PROGRAM="${INSTALL} -c" INSTALL_DATA="${INSTALL} -c"
 CONFIGURE_ARGS+=	--with-thread-lib="${PTHREAD_LIBS}"
 CONFIGURE_ARGS+=	--with-config-file=${GNUSTEP_PREFIX}/GNUstep.conf
 CONFIGURE_ARGS+=	--with-layout=gnustep
+.if defined(GNUSTEP_WITH_LIBOBJC2) || defined(GNUSTEP_WITH_CLANG)
+CONFIGURE_ARGS+=	--with-objc-lib-flag=-l:libobjc.so.16
+LDFLAGS+=	-L${LOCALBASE}/lib
+.endif
 GNU_CONFIGURE_PREFIX=	${GNUSTEP_PREFIX}
 
 post-patch:
