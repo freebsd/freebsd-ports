@@ -21,33 +21,33 @@ LICENSE_NAME=	public domain
 LICENSE_TEXT=	The daemontools-0.76.tar.gz archive is in the public domain as of 2007.12.28.
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-OPTIONS=	MAN	"Install Gerrit Pape's manual pages" on \
-		S_EARLY	"Start early, before the normal daemons" off \
-		S_NORMAL	"Start normally in the usual boot sequence" on \
-		SIGQ12	"Add svc support for QUIT, USR1, and USR2 signals" off \
-		TESTS	"Run the test suite, fails on NFS-mounted workdir" on
+OPTIONS_DEFINE=	MAN SIGQ12 TESTS
+MAN_DESC=	Install Gerrit Pape's manual pages
+S_EARLY_DESC=	Start early, before the normal daemons
+S_NORMAL_DESC= Start normally in the usual boot sequence
+SIGQ12_DESC=	Add svc support for QUIT, USR1, and USR2 signals
+TESTS_DESC=	Run the test suite, fails on NFS-mounted workdir
+
+OPTIONS_SINGLE=	SEQ
+OPTIONS_SINGLE_SEQ=	S_EARLY S_NORMAL
+
+OPTIONS_DEFAULT=	MAN S_NORMAL TESTS
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_S_EARLY)
-. if defined(WITH_S_NORMAL)
-IGNORE=		needs exactly one of S_EARLY and S_NORMAL to be specified
-. else
+. if ${PORT_OPTIONS:MS_EARLY}
 SVSCAN_REQUIRE?=	SERVERS
 SVSCAN_BEFORE?=		DAEMON
 . endif
-.else
-. if defined(WITH_S_NORMAL)
+
+. if ${PORT_OPTIONS:MS_NORMAL}
 SVSCAN_REQUIRE?=	LOGIN
 SVSCAN_BEFORE?=
-. else
-IGNORE=		needs either S_EARLY or S_NORMAL to be specified
 . endif
-.endif
 
 SUB_LIST+=	SVSCAN_REQUIRE=${SVSCAN_REQUIRE} SVSCAN_BEFORE=${SVSCAN_BEFORE}
 
-.if !defined(WITHOUT_MAN)
+.if ${PORT_OPTIONS:MMAN}
 MANDATE=	-20010714
 MASTER_SITES+=	http://smarden.org/pape/djb/manpages/:1
 DISTFILES+=	${DISTNAME}-man${MANDATE}.tar.gz:1
@@ -59,7 +59,7 @@ MAN8=		envdir.8 envuidgid.8 fghack.8 multilog.8 pgrphack.8 \
 MANCOMPRESSED=	no
 .endif
 
-.if defined(WITH_SIGQ12)
+.if ${PORT_OPTIONS:MSIGQ12}
 #PATCH_SITES+=	http://thedjbway.org/patches/:sigq12
 PATCH_SITES+=	${MASTER_SITE_LOCAL:S/%SUBDIR%\//jgh\/sysutils\/daemontools\/:sigq12/} \
 		http://people.FreeBSD.org/~jgh/ports/sysutils/daemontools/:sigq12
@@ -74,7 +74,7 @@ WRKSRC=		${WRKDIR}/admin/${DISTNAME}/src
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
 
-.if defined(WITHOUT_TESTS)
+.if ${PORT_OPTIONS:MTESTS}
 EXTRA_PATCHES+=	${FILESDIR}/rts-skip.patch
 .endif
 
@@ -92,8 +92,8 @@ do-install:
 	done) < ${WRKSRC}/../package/commands
 
 post-install:
-.if !defined(WITHOUT_MAN)
-	@${INSTALL_MAN} ${WRKDIR}/daemontools-man/*.8 ${MAN8PREFIX}/man/man8/
+.if ${PORT_OPTIONS:MMAN}
+	${INSTALL_MAN} ${WRKDIR}/daemontools-man/*.8 ${MAN8PREFIX}/man/man8/
 .endif
 
 .include <bsd.port.post.mk>

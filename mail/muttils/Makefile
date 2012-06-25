@@ -21,8 +21,14 @@ USE_PYTHON_BUILD=	yes
 USE_PYTHON_RUN=		yes
 USE_PYDISTUTILS=	yes
 
+PORTEXAMPLES=	*
+
+.include <bsd.port.options.mk>
+
 post-install:
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 	( cd ${WRKSRC}/contrib && ${INSTALL_DATA} \example-* ${EXAMPLESDIR} )
+.endif
 
 .include <bsd.port.mk>

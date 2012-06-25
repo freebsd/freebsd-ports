@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Captures a VNC desktop session and saves as a flv
 
-.if !defined(WITHOUT_X11)
+.if empty(PORT_OPTIONS:MX11)
 RUN_DEPENDS+=	x11vnc:${PORTSDIR}/net/x11vnc
 .endif
 
