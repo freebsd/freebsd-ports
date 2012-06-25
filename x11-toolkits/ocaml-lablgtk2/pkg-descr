@@ -8,4 +8,4 @@ which allows for interactive use of the library.
 Please see ${PREFIX}/share/doc/ocaml/${PORTNAME}/README for further
 information.
 
-WWW: http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/lablgtk.html
+WWW: http://lablgtk.forge.ocamlcore.org/
