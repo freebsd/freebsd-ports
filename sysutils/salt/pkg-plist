@@ -90,6 +90,9 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/salt/modules/archive.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/salt/modules/archive.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/salt/modules/archive.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/salt/modules/augeas_cfg.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/salt/modules/augeas_cfg.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/salt/modules/augeas_cfg.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/salt/modules/brew.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/salt/modules/brew.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/salt/modules/brew.pyo
