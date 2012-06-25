@@ -16,10 +16,8 @@ COMMENT=	Sets a port back to a previous version
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
-POPT_INCLUDE=	`pkg_info -xL ^popt | ${GREP} popt.h | ${SED} -e 's?/popt.h??'`
-POPT_LIB=	`pkg_info -xL ^popt | ${GREP} libpopt.a | ${SED} -e 's?/libpopt.a??'`
-CONFIGURE_ENV=	LIBS="-lpopt -L${POPT_LIB}"
-CPPFLAGS+=	-I${POPT_INCLUDE}
+CONFIGURE_ENV=	LIBS="-lpopt -L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 .if defined(DEFAULT_CVS_SERVER)
 CONFIGURE_ARGS+=	--enable-default-server=${DEFAULT_CVS_SERVER}
 .endif
