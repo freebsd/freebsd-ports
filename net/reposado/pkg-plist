@@ -1,0 +1,18 @@
+bin/repo_sync
+bin/repoutil
+%%PYTHON_SITELIBDIR%%/reposadolib/__init__.py
+%%PYTHON_SITELIBDIR%%/reposadolib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/reposadolib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/reposadolib/reposadocommon.py
+%%PYTHON_SITELIBDIR%%/reposadolib/reposadocommon.pyc
+%%PYTHON_SITELIBDIR%%/reposadolib/reposadocommon.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/reposadolib
+%%PORTDOCS%%%%DOCSDIR%%/client_configuration.txt
+%%PORTDOCS%%%%DOCSDIR%%/getting_started.txt
+%%PORTDOCS%%%%DOCSDIR%%/reference.txt
+%%PORTDOCS%%%%DOCSDIR%%/reposado_metadata.txt
+%%PORTDOCS%%%%DOCSDIR%%/reposado_operation.txt
+%%PORTDOCS%%%%DOCSDIR%%/reposado_preferences.txt
+%%PORTDOCS%%%%DOCSDIR%%/reposado_py2exe.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
