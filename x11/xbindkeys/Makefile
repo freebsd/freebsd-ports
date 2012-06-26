@@ -14,8 +14,8 @@ MASTER_SITES=	http://hocwp.free.fr/xbindkeys/
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Allows you to launch shell commands under X with your keyboard
 
-OPTIONS=	GUILE "Guile support" off \
-		TCLTK "Tcl/Tk support" off
+OPTIONS_DEFINE=	GUILE TCLTK
+TCLTK_DESC=	Tcl Scripting Support
 
 USE_XORG=	x11 xi
 GNU_CONFIGURE=	yes
@@ -30,13 +30,13 @@ WISH=		${LOCALBASE}/bin/wish8.4
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_GUILE)
+.if ${PORT_OPTIONS:MGUILE}
 LIB_DEPENDS+=	guile:${PORTSDIR}/lang/guile
 .else
 CONFIGURE_ARGS+=	--disable-guile
 .endif
 
-.if defined(WITH_TCLTK)
+.if ${PORT_OPTIONS:MTCLTK}
 RUN_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 MAN1+=		xbindkeys_show.1
 PLIST_FILES+=	bin/xbindkeys_show
