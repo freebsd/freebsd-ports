@@ -24,10 +24,19 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Products.CMFPlacefulWorkflow>=0:${PORTSDIR}/
 		${PYTHON_PKGNAMEPREFIX}plone.app.openid>=0:${PORTSDIR}/security/py-plone.app.openid \
 		${PYTHON_PKGNAMEPREFIX}wicked>=0:${PORTSDIR}/textproc/py-wicked
 
+OPTIONS_DEFINE=	LDAP
+OPTIONS_EXCLUDE=NLS DOCS
+
 DIST_SUBDIR=	zope
 PYDISTUTILS_PKGNAME=	Plone
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 USE_ZIP=	yes
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MLDAP}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}plone.app.ldap>=1.2.6:${PORTSDIR}/www/py-plone.app.ldap
+.endif
 
 .include <bsd.port.mk>
