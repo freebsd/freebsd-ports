@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	libs
 DISTNAME=	WebServices-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Classes for building web services
 
 LICENSE=	LGPL21

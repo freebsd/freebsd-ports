@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	gap
 PKGNAMEPREFIX=	gnustep-
 DISTNAME=	Sudoku-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sudoku solver and generator
 
 LICENSE=	GPLv2
