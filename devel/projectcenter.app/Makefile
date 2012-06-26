@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	dev-apps
 DISTNAME=	ProjectCenter-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A development environment for GNUstep
 
 LICENSE=	GPLv2

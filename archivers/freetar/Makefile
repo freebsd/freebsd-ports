@@ -12,7 +12,7 @@ CATEGORIES=	archivers gnustep
 MASTER_SITES=	http://download.gna.org/freetar/
 DISTNAME=	FreeTar-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TAR archiver for GNUstep
 
 LICENSE=	GPLv2

@@ -10,7 +10,7 @@ PORTVERSION=	1.6
 CATEGORIES=	lang devel gnustep
 MASTER_SITES=	http://download.gna.org/gnustep/
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Replacement Objective-C runtime supporting Obj-C 2 features
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils

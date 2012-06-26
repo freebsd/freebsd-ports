@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	gap
 DISTNAME=	Terminal-${PORTVERSION}
 
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Terminal Emulator for GNUstep
 
 USE_GNUSTEP=	yes

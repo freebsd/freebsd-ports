@@ -12,7 +12,7 @@ CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://download.gna.org/gsimageapps/
 DISTNAME=	CameraKit-20041011
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework that allows to access digital cameras
 
 LIB_DEPENDS=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2

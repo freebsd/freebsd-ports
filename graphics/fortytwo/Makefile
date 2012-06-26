@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/FT%20%2842%29/${PORTVERSION}
 DISTFILES=	FT-${PORTVERSION}-src.tgz \
 		FT-${PORTVERSION}-api-ref.tgz
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graph management system for GNUstep
 
 LICENSE=	LGPL21

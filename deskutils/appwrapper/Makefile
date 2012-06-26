@@ -12,7 +12,7 @@ CATEGORIES=	deskutils gnustep
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/AppWrapper%20${PORTVERSION}
 DISTNAME=	AppWrapper.${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep application wrapper
 
 LICENSE=	GPLv2

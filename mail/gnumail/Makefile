@@ -12,7 +12,7 @@ CATEGORIES=	mail gnustep
 MASTER_SITES=	http://download.gna.org/gnustep-nonfsf/
 DISTNAME=	GNUMail-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep mail client
 
 LICENSE=	GPLv2

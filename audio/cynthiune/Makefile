@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/c/cynthiune.app
 DISTNAME=	cynthiune.app_${PORTVERSION}.orig
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Romantic music player for GNUstep
 
 LICENSE=	GPLv2

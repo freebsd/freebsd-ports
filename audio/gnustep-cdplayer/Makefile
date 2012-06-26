@@ -11,7 +11,7 @@ CATEGORIES=	audio gnustep
 MASTER_SITES=	SF/gsburn/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	gnustep-
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep CD player with CDDB support
 
 LIB_DEPENDS+=	cdaudio.1:${PORTSDIR}/audio/libcdaudio

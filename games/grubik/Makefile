@@ -13,7 +13,7 @@ MASTER_SITES=	http://debian.uni-essen.de/misc/GNUstep/Apps/Recreational/
 DISTNAME=	GRubik
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual 3D Rubiks cube for GNUstep
 
 LICENSE=	GPLv2

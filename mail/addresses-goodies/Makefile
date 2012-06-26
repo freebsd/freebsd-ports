@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=     gap
 PKGNAMESUFFIX=	-goodies${PKGNAMESUFFIX2}
 DISTNAME=	Addresses-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Goodies for addressbook for GNUstep
 
 LICENSE=	LGPL21

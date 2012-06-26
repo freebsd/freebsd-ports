@@ -12,7 +12,7 @@ CATEGORIES=	deskutils gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	usr-apps
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep workspace manager
 
 LICENSE=	GPLv2

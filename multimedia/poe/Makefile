@@ -12,7 +12,7 @@ CATEGORIES=	multimedia gnustep
 MASTER_SITES=	http://www.eskimo.com/~pburns/Poe/files/
 DISTNAME=	Poe-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A vorbis comment editor for GNUstep
 
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis

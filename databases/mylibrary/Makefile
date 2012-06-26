@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=dinoex
 DISTNAME=	MyLibrary-${PORTVERSION}g
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wiki-style data management application for GNUstep
 
 LICENSE=	GPLv2

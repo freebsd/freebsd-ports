@@ -12,7 +12,7 @@ CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://gnu.ethz.ch/debian/svgviewer/
 DISTNAME=	SVGViewer-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SVG Viewer for GNUstep
 
 LIB_DEPENDS+=	svg.1:${PORTSDIR}/graphics/libsvg

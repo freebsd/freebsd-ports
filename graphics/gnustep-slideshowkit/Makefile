@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.gna.org/gsimageapps/
 PKGNAMEPREFIX=	gnustep-
 DISTNAME=	SlideShowKit-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SlideShow Framework
 
 USE_GNUSTEP=	yes

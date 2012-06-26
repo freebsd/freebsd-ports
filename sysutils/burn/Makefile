@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	sysutils gnustep
 MASTER_SITES=	SF/gs${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep based CD burning program
 
 LIB_DEPENDS+=	cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia

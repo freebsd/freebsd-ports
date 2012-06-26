@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/g/gnuwash.app
 DISTNAME=	${PORTNAME}.app_${PORTVERSION}.orig
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configurable GNUstep timer application
 
 LICENSE=	GPLv2

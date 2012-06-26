@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	contrib
 DISTNAME=	MathArray-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Class library for mathematical manipulation of matrices
 
 LICENSE=	LGPL20

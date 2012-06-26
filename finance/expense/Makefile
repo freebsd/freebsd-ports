@@ -12,7 +12,7 @@ CATEGORIES=	finance gnustep
 MASTER_SITES=	http://www.eskimo.com/~pburns/Expense/files/
 DISTNAME=	Expense-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application to track your expense under GNUstep
 
 LICENSE=	GPLv2

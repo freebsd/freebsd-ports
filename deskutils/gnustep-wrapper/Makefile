@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	dinoex
 PKGNAMEPREFIX=	gnustep-
 DISTNAME=	GNUstepWrapper-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create GNUstep app-wrappers of non-GNUstep applications
 
 LICENSE=	GPLv2

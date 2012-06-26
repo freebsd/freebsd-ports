@@ -11,7 +11,7 @@ CATEGORIES=	games gnustep
 MASTER_SITES=	http://www.gnustep.it/nicola/Applications/Gomoku/
 DISTNAME=	Gomoku-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep Gomoku game
 
 LICENSE=	GPLv2

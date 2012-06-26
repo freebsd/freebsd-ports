@@ -12,7 +12,7 @@ CATEGORIES=	mail gnustep
 MASTER_SITES=	http://download.gna.org/gnustep-nonfsf/
 DISTNAME=	Pantomime-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mail/MIME handling library for GNUstep
 
 LICENSE=	LGPL21

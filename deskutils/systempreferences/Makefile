@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=usr-apps
 DISTNAME=	SystemPreferences-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System Preferences application for GNUstep
 
 LICENSE=	GPLv2

@@ -14,7 +14,7 @@ MASTER_SITES=	http://gnu.ethz.ch/linuks.mine.nu/stepulator/ \
 DISTNAME=	${PORTNAME}-gs-${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scientific calculator implementing RPN notation for GNUstep
 
 LICENSE=	BSD

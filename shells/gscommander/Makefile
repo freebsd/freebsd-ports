@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.nice.ch/~phip/ \
 MASTER_SITE_SUBDIR=	dinoex
 DISTNAME=	GSCommander-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep simple unix command monitor
 
 LICENSE=	GPLv2

@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	fortytwo-
 DISTFILES=	Encore-${PORTVERSION}-src.tgz \
 		Encore-${PORTVERSION}-api-ref.tgz
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility classes for GNUstep
 
 LICENSE=	LGPL21

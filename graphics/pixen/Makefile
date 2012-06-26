@@ -12,7 +12,7 @@ CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://download.gna.org/gsimageapps/
 DISTNAME=	Pixen-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphics editing software for small-scale pictures for GNUstep
 
 LICENSE=	MIT

@@ -12,7 +12,7 @@ CATEGORIES=	net gnustep
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}-0_1
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Distributed computing project
 
 LICENSE=	BSD

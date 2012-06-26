@@ -13,7 +13,7 @@ MASTER_SITES=	http://xanthippe.dyndns.org/Zipper/
 PKGNAMEPREFIX=	gnustep-
 DISTNAME=	ObjcUnit-${PORTVERSION}-GNUstep
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ObjcUnit frammework for GNUstep
 
 USE_GNUSTEP=	yes

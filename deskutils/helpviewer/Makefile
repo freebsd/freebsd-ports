@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.roard.com/helpviewer/download/
 DISTNAME=	HelpViewer-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An online help viewer for GNUstep programs
 
 LICENSE=	GPLv2

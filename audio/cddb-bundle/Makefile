@@ -13,7 +13,7 @@ MASTER_SITES=	SF/gsburn/cdplayer/${DISTNAME}
 PKGNAMESUFFIX=	-bundle${PKGNAMESUFFIX2}
 DISTNAME=	cdplayer-${CDPLAYER_VERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CDDB client bundle GNUstep
 
 LICENSE=	GPLv2

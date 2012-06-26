@@ -10,7 +10,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	devel gnustep
 MASTER_SITES=	SF
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Object containers and generic algorithms for Objective-C
 
 LICENSE=	LGPL21

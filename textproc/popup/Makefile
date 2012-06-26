@@ -12,7 +12,7 @@ CATEGORIES=	textproc gnustep
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Popup-${PORTVERSION}pre1
 DISTNAME=	Popup-${PORTVERSION}pre1
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive learning aid for pairs of words
 
 LICENSE=	GPLv2

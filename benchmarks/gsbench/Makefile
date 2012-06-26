@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.nice.ch/~phip/ \
 MASTER_SITE_SUBDIR=	dinoex
 DISTNAME=	GSBench-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Benchmarking tool for GNUstep
 
 LICENSE=	GPLv2

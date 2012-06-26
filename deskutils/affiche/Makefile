@@ -12,7 +12,7 @@ CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://www.collaboration-world.com/affiche.data/releases/Stable/
 DISTNAME=	Affiche-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Affiche allows people to stick notes
 
 LICENSE=	GPLv2

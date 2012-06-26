@@ -12,7 +12,7 @@ CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://debian.uni-essen.de/misc/GNUstep/Apps/MyLibrary/
 DISTNAME=	MyWiki-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Personal wiki on GNUstep
 
 LICENSE=	GPLv2

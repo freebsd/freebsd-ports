@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/b/biococoa.app
 DISTNAME=	biococoa.app_${PORTVERSION}.orig
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bioinformatics framework
 
 LICENSE=	LGPL21

@@ -108,7 +108,7 @@
 # ---------------------------------------------------------------------------
 .if !defined(_POSTMKINCLUDED)
 
-GNUstep_Include_MAINTAINER=	dinoex@FreeBSD.org
+GNUstep_Include_MAINTAINER=	ports@FreeBSD.org
 
 .if defined(USE_GNUSTEP_BUILD) || defined(USE_GNUSTEP_MAKE)
 BUILD_DEPENDS+=	${GNUSTEP_MAKEFILES}/GNUstep.sh:${PORTSDIR}/${GNUSTEP_MAKE_PORT}

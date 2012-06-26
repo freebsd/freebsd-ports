@@ -12,7 +12,7 @@ CATEGORIES=	audio gnustep
 MASTER_SITES=	SF/gsburn/${PORTNAME}.bundle/${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX=	-bundle${PKGNAMESUFFIX2}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MP3ToWav plugin for Burn.app
 
 LICENSE=	GPLv2

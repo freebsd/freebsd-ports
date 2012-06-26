@@ -12,7 +12,7 @@ CATEGORIES=	x11 gnustep
 MASTER_SITES=	http://organact.mine.nu/~wolfgang/gskrab/
 DISTNAME=	GSKrab-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep Keyboard Grabber
 
 LICENSE=	GPLv2

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	dinoex
 
 DISTNAME=	ImageViewer-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep Image Viewer
 
 LICENSE=	GPLv2

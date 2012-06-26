@@ -17,7 +17,7 @@ DISTNAME=	Ticker
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	repacked
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RSS monitor for RSS and Atom feeds
 
 LICENSE=	GPLv2

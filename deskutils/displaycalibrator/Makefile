@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://gnu.ethz.ch/linuks.mine.nu/displaycalibrator/
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Frontend to xgamma
 
 USE_GNUSTEP=	yes

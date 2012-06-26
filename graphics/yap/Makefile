@@ -16,7 +16,7 @@ DISTNAME=	Yap
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	repacked/2007-02-15
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep a2ps/gs frontend
 
 RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-${PAPERSIZE}

@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	x11-toolkits gnustep
 MASTER_SITES=	ftp://ftp.inf.uos.de/pub/elmar/gtk/objc-gtoolkit/
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Obj-C wrapper for gtk, a x11 graphics library
 
 LICENSE=	LGPL21

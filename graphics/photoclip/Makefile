@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.vaisburd.net/PhotoClip/ \
 		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	PhotoClip-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple image viewer and editor for GNUstep
 
 LICENSE=	LGPL20
