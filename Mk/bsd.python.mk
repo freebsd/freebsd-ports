@@ -99,9 +99,6 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 # PYTHONPREFIX_LIBDIR		default: ${PREFIX}/lib/${PYTHON_VERSION}
 # PYTHONPREFIX_SITELIBDIR	default: ${PYTHONPREFIX_LIBDIR}/site-packages
 #
-# PYTHON_SHEBANG_FILES
-#					- Specify the files which shebang lines you want to fix.
-#
 # PYDISTUTILS		- Dependency line for the distutils extension. As of
 #					  Python-2.0, the distutils are in the base distribution.
 #
@@ -597,7 +594,6 @@ PLIST_SUB+=		PYTHON_INCLUDEDIR=${PYTHONPREFIX_INCLUDEDIR:S;${PREFIX}/;;} \
 				PYTHON_LIBDIR=${PYTHONPREFIX_LIBDIR:S;${PREFIX}/;;} \
 				PYTHON_PLATFORM=${PYTHON_PLATFORM} \
 				PYTHON_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;} \
-				PYTHON_VER=${PYTHON_VER} \
 				PYTHON_VERSION=${PYTHON_VERSION}
 
 # Zope specific substitutions
