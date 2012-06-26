@@ -7,7 +7,7 @@
 
 PORTNAME=	mozc
 PORTVERSION=	1.5.1090.102
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX?=	ja-
@@ -19,10 +19,10 @@ COMMENT?=	Mozc server for IBus, SCIM and others
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		gtest.0:${PORTSDIR}/devel/googletest \
 		protobuf.7:${PORTSDIR}/devel/protobuf \
-		zinnia.0:${PORTSDIR}/japanese/zinnia
+		zinnia.0:${PORTSDIR}/japanese/zinnia \
+		glib-2.0:${PORTSDIR}/devel/glib20 \
+		gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
-
-BROKEN=		does not build
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -58,7 +58,7 @@ BUILD_MODE=	Debug
 BUILD_MODE=	Release
 .endif
 
-LOCALBASE_REPLACE_FILES= \
+LOCALBASE_REPLACE_FILES=	\
 		gyp/common.gypi \
 		unix/ibus/gen_mozc_xml.py \
 		unix/ibus/mozc.xml \
