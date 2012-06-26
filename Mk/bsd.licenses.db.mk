@@ -65,6 +65,10 @@ _LICENSE_PERMS_DEFAULT=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 # - General permissions from groups are added to each license, if not defined.
 #
 
+
+_LICENSE_NAME_AGPLv3=	GNU Affero General Public License version 3
+_LICENSE_GROUPS_AGPLv3=	FSF GPL OSI
+
 _LICENSE_NAME_AL2=	Apache License
 _LICENSE_GROUPS_AL2=	FSF OSI COPYFREE
 
