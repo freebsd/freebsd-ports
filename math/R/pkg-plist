@@ -272,6 +272,7 @@ lib/R/library/base/html/R.css
 %%NLS%%lib/R/library/base/po/it/LC_MESSAGES/R-base.mo
 %%NLS%%lib/R/library/base/po/ja/LC_MESSAGES/R-base.mo
 %%NLS%%lib/R/library/base/po/ko/LC_MESSAGES/R-base.mo
+%%NLS%%lib/R/library/base/po/pl/LC_MESSAGES/R-base.mo
 %%NLS%%lib/R/library/base/po/pt_BR/LC_MESSAGES/R-base.mo
 %%NLS%%lib/R/library/base/po/ru/LC_MESSAGES/R-base.mo
 %%NLS%%lib/R/library/base/po/tr/LC_MESSAGES/R-base.mo
@@ -395,6 +396,7 @@ lib/R/library/compiler/html/R.css
 %%NLS%%lib/R/library/compiler/po/en@quot/LC_MESSAGES/R-compiler.mo
 %%NLS%%lib/R/library/compiler/po/fr/LC_MESSAGES/R-compiler.mo
 %%NLS%%lib/R/library/compiler/po/ja/LC_MESSAGES/R-compiler.mo
+%%NLS%%lib/R/library/compiler/po/pl/LC_MESSAGES/R-compiler.mo
 %%NLS%%lib/R/library/compiler/po/pt_BR/LC_MESSAGES/R-compiler.mo
 %%NLS%%lib/R/library/compiler/po/ru/LC_MESSAGES/R-compiler.mo
 %%NLS%%lib/R/library/compiler/po/zh_CN/LC_MESSAGES/R-compiler.mo
@@ -592,6 +594,8 @@ lib/R/library/grDevices/libs/grDevices.so
 %%NLS%%lib/R/library/grDevices/po/ja/LC_MESSAGES/grDevices.mo
 %%NLS%%lib/R/library/grDevices/po/ko/LC_MESSAGES/R-grDevices.mo
 %%NLS%%lib/R/library/grDevices/po/ko/LC_MESSAGES/grDevices.mo
+%%NLS%%lib/R/library/grDevices/po/pl/LC_MESSAGES/R-grDevices.mo
+%%NLS%%lib/R/library/grDevices/po/pl/LC_MESSAGES/grDevices.mo
 %%NLS%%lib/R/library/grDevices/po/pt_BR/LC_MESSAGES/R-grDevices.mo
 %%NLS%%lib/R/library/grDevices/po/pt_BR/LC_MESSAGES/grDevices.mo
 %%NLS%%lib/R/library/grDevices/po/ru/LC_MESSAGES/R-grDevices.mo
@@ -637,6 +641,7 @@ lib/R/library/graphics/html/R.css
 %%NLS%%lib/R/library/graphics/po/it/LC_MESSAGES/R-graphics.mo
 %%NLS%%lib/R/library/graphics/po/ja/LC_MESSAGES/R-graphics.mo
 %%NLS%%lib/R/library/graphics/po/ko/LC_MESSAGES/R-graphics.mo
+%%NLS%%lib/R/library/graphics/po/pl/LC_MESSAGES/R-graphics.mo
 %%NLS%%lib/R/library/graphics/po/pt_BR/LC_MESSAGES/R-graphics.mo
 %%NLS%%lib/R/library/graphics/po/ru/LC_MESSAGES/R-graphics.mo
 %%NLS%%lib/R/library/graphics/po/zh_CN/LC_MESSAGES/R-graphics.mo
@@ -686,6 +691,8 @@ lib/R/library/grid/libs/grid.so
 %%NLS%%lib/R/library/grid/po/ja/LC_MESSAGES/grid.mo
 %%NLS%%lib/R/library/grid/po/ko/LC_MESSAGES/R-grid.mo
 %%NLS%%lib/R/library/grid/po/ko/LC_MESSAGES/grid.mo
+%%NLS%%lib/R/library/grid/po/pl/LC_MESSAGES/R-grid.mo
+%%NLS%%lib/R/library/grid/po/pl/LC_MESSAGES/grid.mo
 %%NLS%%lib/R/library/grid/po/pt_BR/LC_MESSAGES/R-grid.mo
 %%NLS%%lib/R/library/grid/po/pt_BR/LC_MESSAGES/grid.mo
 %%NLS%%lib/R/library/grid/po/ru/LC_MESSAGES/R-grid.mo
@@ -756,6 +763,8 @@ lib/R/library/methods/libs/methods.so
 %%NLS%%lib/R/library/methods/po/ja/LC_MESSAGES/R-methods.mo
 %%NLS%%lib/R/library/methods/po/ja/LC_MESSAGES/methods.mo
 %%NLS%%lib/R/library/methods/po/ko/LC_MESSAGES/R-methods.mo
+%%NLS%%lib/R/library/methods/po/pl/LC_MESSAGES/R-methods.mo
+%%NLS%%lib/R/library/methods/po/pl/LC_MESSAGES/methods.mo
 %%NLS%%lib/R/library/methods/po/pt_BR/LC_MESSAGES/R-methods.mo
 %%NLS%%lib/R/library/methods/po/pt_BR/LC_MESSAGES/methods.mo
 %%NLS%%lib/R/library/methods/po/ru/LC_MESSAGES/R-methods.mo
@@ -880,6 +889,8 @@ lib/R/library/parallel/libs/parallel.so
 %%NLS%%lib/R/library/parallel/po/en@quot/LC_MESSAGES/parallel.mo
 %%NLS%%lib/R/library/parallel/po/fr/LC_MESSAGES/R-parallel.mo
 %%NLS%%lib/R/library/parallel/po/fr/LC_MESSAGES/parallel.mo
+%%NLS%%lib/R/library/parallel/po/pl/LC_MESSAGES/R-parallel.mo
+%%NLS%%lib/R/library/parallel/po/pl/LC_MESSAGES/parallel.mo
 %%NLS%%lib/R/library/parallel/po/ru/LC_MESSAGES/R-parallel.mo
 %%NLS%%lib/R/library/parallel/po/ru/LC_MESSAGES/parallel.mo
 %%NLS%%lib/R/library/parallel/po/zh_CN/LC_MESSAGES/R-parallel.mo
@@ -996,6 +1007,8 @@ lib/R/library/splines/libs/splines.so
 %%NLS%%lib/R/library/splines/po/ja/LC_MESSAGES/splines.mo
 %%NLS%%lib/R/library/splines/po/ko/LC_MESSAGES/R-splines.mo
 %%NLS%%lib/R/library/splines/po/ko/LC_MESSAGES/splines.mo
+%%NLS%%lib/R/library/splines/po/pl/LC_MESSAGES/R-splines.mo
+%%NLS%%lib/R/library/splines/po/pl/LC_MESSAGES/splines.mo
 %%NLS%%lib/R/library/splines/po/pt_BR/LC_MESSAGES/R-splines.mo
 %%NLS%%lib/R/library/splines/po/pt_BR/LC_MESSAGES/splines.mo
 %%NLS%%lib/R/library/splines/po/ru/LC_MESSAGES/R-splines.mo
@@ -1027,6 +1040,7 @@ lib/R/library/stats4/html/R.css
 %%NLS%%lib/R/library/stats4/po/it/LC_MESSAGES/R-stats4.mo
 %%NLS%%lib/R/library/stats4/po/ja/LC_MESSAGES/R-stats4.mo
 %%NLS%%lib/R/library/stats4/po/ko/LC_MESSAGES/R-stats4.mo
+%%NLS%%lib/R/library/stats4/po/pl/LC_MESSAGES/R-stats4.mo
 %%NLS%%lib/R/library/stats4/po/pt_BR/LC_MESSAGES/R-stats4.mo
 %%NLS%%lib/R/library/stats4/po/ru/LC_MESSAGES/R-stats4.mo
 %%NLS%%lib/R/library/stats4/po/tr/LC_MESSAGES/R-stats4.mo
@@ -1071,6 +1085,8 @@ lib/R/library/stats/libs/stats.so
 %%NLS%%lib/R/library/stats/po/ja/LC_MESSAGES/stats.mo
 %%NLS%%lib/R/library/stats/po/ko/LC_MESSAGES/R-stats.mo
 %%NLS%%lib/R/library/stats/po/ko/LC_MESSAGES/stats.mo
+%%NLS%%lib/R/library/stats/po/pl/LC_MESSAGES/R-stats.mo
+%%NLS%%lib/R/library/stats/po/pl/LC_MESSAGES/stats.mo
 %%NLS%%lib/R/library/stats/po/pt_BR/LC_MESSAGES/R-stats.mo
 %%NLS%%lib/R/library/stats/po/pt_BR/LC_MESSAGES/stats.mo
 %%NLS%%lib/R/library/stats/po/ru/LC_MESSAGES/R-stats.mo
@@ -1157,6 +1173,8 @@ lib/R/library/tcltk/html/R.css
 %%NLS%%lib/R/library/tcltk/po/ja/LC_MESSAGES/R-tcltk.mo
 %%NLS%%lib/R/library/tcltk/po/ja/LC_MESSAGES/tcltk.mo
 %%NLS%%lib/R/library/tcltk/po/ko/LC_MESSAGES/R-tcltk.mo
+%%NLS%%lib/R/library/tcltk/po/pl/LC_MESSAGES/R-tcltk.mo
+%%NLS%%lib/R/library/tcltk/po/pl/LC_MESSAGES/tcltk.mo
 %%NLS%%lib/R/library/tcltk/po/pt_BR/LC_MESSAGES/R-tcltk.mo
 %%NLS%%lib/R/library/tcltk/po/pt_BR/LC_MESSAGES/tcltk.mo
 %%NLS%%lib/R/library/tcltk/po/ru/LC_MESSAGES/R-tcltk.mo
@@ -1196,6 +1214,8 @@ lib/R/library/tools/libs/tools.so
 %%NLS%%lib/R/library/tools/po/ja/LC_MESSAGES/tools.mo
 %%NLS%%lib/R/library/tools/po/ko/LC_MESSAGES/R-tools.mo
 %%NLS%%lib/R/library/tools/po/ko/LC_MESSAGES/tools.mo
+%%NLS%%lib/R/library/tools/po/pl/LC_MESSAGES/R-tools.mo
+%%NLS%%lib/R/library/tools/po/pl/LC_MESSAGES/tools.mo
 %%NLS%%lib/R/library/tools/po/pt_BR/LC_MESSAGES/R-tools.mo
 %%NLS%%lib/R/library/tools/po/pt_BR/LC_MESSAGES/tools.mo
 %%NLS%%lib/R/library/tools/po/ru/LC_MESSAGES/R-tools.mo
@@ -1233,6 +1253,7 @@ lib/R/library/utils/misc/exDIF.dif
 %%NLS%%lib/R/library/utils/po/fr/LC_MESSAGES/R-utils.mo
 %%NLS%%lib/R/library/utils/po/ja/LC_MESSAGES/R-utils.mo
 %%NLS%%lib/R/library/utils/po/ko/LC_MESSAGES/R-utils.mo
+%%NLS%%lib/R/library/utils/po/pl/LC_MESSAGES/R-utils.mo
 %%NLS%%lib/R/library/utils/po/pt_BR/LC_MESSAGES/R-utils.mo
 %%NLS%%lib/R/library/utils/po/ru/LC_MESSAGES/R-utils.mo
 %%NLS%%lib/R/library/utils/po/tr/LC_MESSAGES/R-utils.mo
@@ -1270,6 +1291,7 @@ lib/R/share/licenses/license.db
 %%NLS%%lib/R/share/locale/ja/LC_MESSAGES/R.mo
 %%NLS%%lib/R/share/locale/ko/LC_MESSAGES/R.mo
 %%NLS%%lib/R/share/locale/nn/LC_MESSAGES/R.mo
+%%NLS%%lib/R/share/locale/pl/LC_MESSAGES/R.mo
 %%NLS%%lib/R/share/locale/pt_BR/LC_MESSAGES/R.mo
 %%NLS%%lib/R/share/locale/ru/LC_MESSAGES/R.mo
 %%NLS%%lib/R/share/locale/tr/LC_MESSAGES/R.mo
@@ -1330,6 +1352,8 @@ lib/R/share/texmf/tex/latex/upquote.sty
 %%NLS%%@dirrm lib/R/share/locale/ru
 %%NLS%%@dirrm lib/R/share/locale/pt_BR/LC_MESSAGES
 %%NLS%%@dirrm lib/R/share/locale/pt_BR
+%%NLS%%@dirrm lib/R/share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/R/share/locale/pl
 %%NLS%%@dirrm lib/R/share/locale/nn/LC_MESSAGES
 %%NLS%%@dirrm lib/R/share/locale/nn
 %%NLS%%@dirrm lib/R/share/locale/ko/LC_MESSAGES
@@ -1367,6 +1391,8 @@ lib/R/share/texmf/tex/latex/upquote.sty
 %%NLS%%@dirrm lib/R/library/utils/po/ru
 %%NLS%%@dirrm lib/R/library/utils/po/pt_BR/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/utils/po/pt_BR
+%%NLS%%@dirrm lib/R/library/utils/po/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/utils/po/pl
 %%NLS%%@dirrm lib/R/library/utils/po/ko/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/utils/po/ko
 %%NLS%%@dirrm lib/R/library/utils/po/ja/LC_MESSAGES
@@ -1396,6 +1422,8 @@ lib/R/share/texmf/tex/latex/upquote.sty
 %%NLS%%@dirrm lib/R/library/tools/po/ru
 %%NLS%%@dirrm lib/R/library/tools/po/pt_BR/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/tools/po/pt_BR
+%%NLS%%@dirrm lib/R/library/tools/po/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/tools/po/pl
 %%NLS%%@dirrm lib/R/library/tools/po/ko/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/tools/po/ko
 %%NLS%%@dirrm lib/R/library/tools/po/ja/LC_MESSAGES
@@ -1423,6 +1451,8 @@ lib/R/share/texmf/tex/latex/upquote.sty
 %%NLS%%@dirrm lib/R/library/tcltk/po/ru
 %%NLS%%@dirrm lib/R/library/tcltk/po/pt_BR/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/tcltk/po/pt_BR
+%%NLS%%@dirrm lib/R/library/tcltk/po/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/tcltk/po/pl
 %%NLS%%@dirrm lib/R/library/tcltk/po/ko/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/tcltk/po/ko
 %%NLS%%@dirrm lib/R/library/tcltk/po/ja/LC_MESSAGES
@@ -1462,6 +1492,8 @@ lib/R/share/texmf/tex/latex/upquote.sty
 %%NLS%%@dirrm lib/R/library/stats/po/ru
 %%NLS%%@dirrm lib/R/library/stats/po/pt_BR/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/stats/po/pt_BR
+%%NLS%%@dirrm lib/R/library/stats/po/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/stats/po/pl
 %%NLS%%@dirrm lib/R/library/stats/po/ko/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/stats/po/ko
 %%NLS%%@dirrm lib/R/library/stats/po/ja/LC_MESSAGES
@@ -1491,6 +1523,8 @@ lib/R/share/texmf/tex/latex/upquote.sty
 %%NLS%%@dirrm lib/R/library/stats4/po/ru
 %%NLS%%@dirrm lib/R/library/stats4/po/pt_BR/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/stats4/po/pt_BR
+%%NLS%%@dirrm lib/R/library/stats4/po/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/stats4/po/pl
 %%NLS%%@dirrm lib/R/library/stats4/po/ko/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/stats4/po/ko
 %%NLS%%@dirrm lib/R/library/stats4/po/ja/LC_MESSAGES
@@ -1518,6 +1552,8 @@ lib/R/share/texmf/tex/latex/upquote.sty
 %%NLS%%@dirrm lib/R/library/splines/po/ru
 %%NLS%%@dirrm lib/R/library/splines/po/pt_BR/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/splines/po/pt_BR
+%%NLS%%@dirrm lib/R/library/splines/po/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/splines/po/pl
 %%NLS%%@dirrm lib/R/library/splines/po/ko/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/splines/po/ko
 %%NLS%%@dirrm lib/R/library/splines/po/ja/LC_MESSAGES
@@ -1571,6 +1607,8 @@ lib/R/share/texmf/tex/latex/upquote.sty
 %%NLS%%@dirrm lib/R/library/parallel/po/zh_CN
 %%NLS%%@dirrm lib/R/library/parallel/po/ru/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/parallel/po/ru
+%%NLS%%@dirrm lib/R/library/parallel/po/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/parallel/po/pl
 %%NLS%%@dirrm lib/R/library/parallel/po/fr/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/parallel/po/fr
 %%NLS%%@dirrm lib/R/library/parallel/po/en@quot/LC_MESSAGES
@@ -1629,6 +1667,8 @@ lib/R/share/texmf/tex/latex/upquote.sty
 %%NLS%%@dirrm lib/R/library/methods/po/ru
 %%NLS%%@dirrm lib/R/library/methods/po/pt_BR/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/methods/po/pt_BR
+%%NLS%%@dirrm lib/R/library/methods/po/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/methods/po/pl
 %%NLS%%@dirrm lib/R/library/methods/po/ko/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/methods/po/ko
 %%NLS%%@dirrm lib/R/library/methods/po/ja/LC_MESSAGES
@@ -1669,6 +1709,8 @@ lib/R/share/texmf/tex/latex/upquote.sty
 %%NLS%%@dirrm lib/R/library/grid/po/ru
 %%NLS%%@dirrm lib/R/library/grid/po/pt_BR/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/grid/po/pt_BR
+%%NLS%%@dirrm lib/R/library/grid/po/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/grid/po/pl
 %%NLS%%@dirrm lib/R/library/grid/po/ko/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/grid/po/ko
 %%NLS%%@dirrm lib/R/library/grid/po/ja/LC_MESSAGES
@@ -1697,6 +1739,8 @@ lib/R/share/texmf/tex/latex/upquote.sty
 %%NLS%%@dirrm lib/R/library/graphics/po/ru
 %%NLS%%@dirrm lib/R/library/graphics/po/pt_BR/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/graphics/po/pt_BR
+%%NLS%%@dirrm lib/R/library/graphics/po/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/graphics/po/pl
 %%NLS%%@dirrm lib/R/library/graphics/po/ko/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/graphics/po/ko
 %%NLS%%@dirrm lib/R/library/graphics/po/ja/LC_MESSAGES
@@ -1725,6 +1769,8 @@ lib/R/share/texmf/tex/latex/upquote.sty
 %%NLS%%@dirrm lib/R/library/grDevices/po/ru
 %%NLS%%@dirrm lib/R/library/grDevices/po/pt_BR/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/grDevices/po/pt_BR
+%%NLS%%@dirrm lib/R/library/grDevices/po/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/grDevices/po/pl
 %%NLS%%@dirrm lib/R/library/grDevices/po/ko/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/grDevices/po/ko
 %%NLS%%@dirrm lib/R/library/grDevices/po/ja/LC_MESSAGES
@@ -1776,6 +1822,8 @@ lib/R/share/texmf/tex/latex/upquote.sty
 %%NLS%%@dirrm lib/R/library/compiler/po/ru
 %%NLS%%@dirrm lib/R/library/compiler/po/pt_BR/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/compiler/po/pt_BR
+%%NLS%%@dirrm lib/R/library/compiler/po/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/compiler/po/pl
 %%NLS%%@dirrm lib/R/library/compiler/po/ja/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/compiler/po/ja
 %%NLS%%@dirrm lib/R/library/compiler/po/fr/LC_MESSAGES
@@ -1845,6 +1893,8 @@ lib/R/share/texmf/tex/latex/upquote.sty
 %%NLS%%@dirrm lib/R/library/base/po/ru
 %%NLS%%@dirrm lib/R/library/base/po/pt_BR/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/base/po/pt_BR
+%%NLS%%@dirrm lib/R/library/base/po/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/base/po/pl
 %%NLS%%@dirrm lib/R/library/base/po/ko/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/base/po/ko
 %%NLS%%@dirrm lib/R/library/base/po/ja/LC_MESSAGES
