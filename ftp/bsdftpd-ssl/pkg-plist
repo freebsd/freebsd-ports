@@ -16,12 +16,12 @@ libexec/ftpd
 %%PORTDOCS%%%%DOCSDIR%%/docs/standards.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/verify.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/x509_auth.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/ftpchroot
-%%PORTDOCS%%%%EXAMPLESDIR%%/ftpusers
-%%PORTDOCS%%%%EXAMPLESDIR%%/rc.conf.d/bsdftpd_ssl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftpchroot
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftpusers
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rc.conf.d/bsdftpd_ssl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/cert
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rc.conf.d
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rc.conf.d
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

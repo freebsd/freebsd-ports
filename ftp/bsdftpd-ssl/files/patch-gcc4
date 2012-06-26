@@ -151,27 +151,6 @@ diff -urN bsdftpd-ssl-1.1.0.ORI/ftpd/ftpd.c ftpd/ftpd.c
  	char *p, *a;
  
  	if (pdata >= 0)		/* close old port if one set */
-diff -urN bsdftpd-ssl-1.1.0.ORI/ftpd/logwtmp.c ftpd/logwtmp.c
---- bsdftpd-ssl-1.1.0.ORI/ftpd/logwtmp.c	2004-12-19 21:44:42.000000000 +0300
-+++ ftpd/logwtmp.c	2007-08-26 15:37:16.000000000 +0400
-@@ -50,7 +50,7 @@
- 
- #include <fcntl.h>
- #include <time.h>
--#if 0 /* Original FreeBSD 5.0 code */
-+#if 1 /* Original FreeBSD 5.0 code */
- #include <timeconv.h>
- #endif
- #include <netdb.h>
-@@ -94,7 +94,7 @@
- 		(void)strncpy(ut.ut_line, line, sizeof(ut.ut_line));
- 		(void)strncpy(ut.ut_name, name, sizeof(ut.ut_name));
- 		(void)strncpy(ut.ut_host, host, sizeof(ut.ut_host));
--#if 0 /* Original FreeBSD 5.0 code */
-+#if 1 /* Original FreeBSD 5.0 code */
- 		ut.ut_time = _time_to_time32(time(NULL));
- #else /* Portable code from FreeBSD 4.8 */
- 		(void)time(&ut.ut_time);
 diff -urN bsdftpd-ssl-1.1.0.ORI/port/bsd_prog.mk port/bsd_prog.mk
 --- bsdftpd-ssl-1.1.0.ORI/port/bsd_prog.mk	2003-04-05 13:42:20.000000000 +0400
 +++ port/bsd_prog.mk	2007-08-26 14:53:23.000000000 +0400
