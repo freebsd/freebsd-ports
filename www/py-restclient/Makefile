@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	restclient
-PORTVERSION=	0.10.1
+PORTVERSION=	0.10.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Convenient library for writing REST clients
+
+LICENSE=	BSD
 
 RUN_DEPENDS=	${PKGNAMEPREFIX}httplib2>=0:${PORTSDIR}/www/py-httplib2
 
