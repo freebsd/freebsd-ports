@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cuse4bsd-kmod
-PORTVERSION=	0.1.23
+PORTVERSION=	0.1.24
 CATEGORIES=	multimedia kld
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://hselasky.homeunix.org:8192/distfiles/
