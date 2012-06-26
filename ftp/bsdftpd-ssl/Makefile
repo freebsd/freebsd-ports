@@ -7,25 +7,26 @@
 
 PORTNAME=	bsdftpd-ssl
 PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp
-MASTER_SITES=	http://bsdftpd.org/files/bsdftpd-ssl/archive/1.1/src/
-DISTNAME=	bsdftpd-ssl-${PORTVERSION}
+MASTER_SITES=	http://bsdftpd.org/files/bsdftpd-ssl/archive/1.1/src/ \
+		http://www.sourcefiles.org/System/Daemons/FTP/
+.if defined(CLIENT_ONLY)
+PKGNAMESUFFIX=	-client
+.endif
 
 MAINTAINER=	skynick@mail.sc.ru
+COMMENT=	Secure FTP server with the TLS/SSL support
+.if defined(CLIENT_ONLY)
+COMMENT=	FTP command-line client utility with the TLS/SSL support
+.endif
 
 USE_OPENSSL=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
-.endif
-
 # Client only part
 .if defined(CLIENT_ONLY)
-PKGNAMESUFFIX=	-client
-COMMENT=	FTP command-line client utility with the TLS/SSL support
 DESCR=		${FILESDIR}/pkg-descr.client
 PLIST=		${FILESDIR}/pkg-plist.client
 .endif
@@ -33,7 +34,6 @@ PLIST=		${FILESDIR}/pkg-plist.client
 MAN1=	ftps.1
 # Server part
 .if !defined(CLIENT_ONLY)
-COMMENT=	Secure FTP server with the TLS/SSL support
 MAN5=	ftpchroot.5 xferlog.5
 MAN8=	ftpd.8
 MLINKS=	ftpd.8 ftpd-ssl.8 ftpchroot.5 ftpchroot-ssl.5
