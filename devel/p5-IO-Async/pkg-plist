@@ -7,7 +7,6 @@
 %%SITE_PERL%%/IO/Async/FileStream.pm
 %%SITE_PERL%%/IO/Async/Function.pm
 %%SITE_PERL%%/IO/Async/Handle.pm
-%%SITE_PERL%%/IO/Async/Internals/SignalProxy.pm
 %%SITE_PERL%%/IO/Async/Internals/TimeQueue.pm
 %%SITE_PERL%%/IO/Async/Listener.pm
 %%SITE_PERL%%/IO/Async/Loop.pm
@@ -16,6 +15,8 @@
 %%SITE_PERL%%/IO/Async/LoopTests.pm
 %%SITE_PERL%%/IO/Async/MergePoint.pm
 %%SITE_PERL%%/IO/Async/Notifier.pm
+%%SITE_PERL%%/IO/Async/OS.pm
+%%SITE_PERL%%/IO/Async/OS/MSWin32.pm
 %%SITE_PERL%%/IO/Async/PID.pm
 %%SITE_PERL%%/IO/Async/Process.pm
 %%SITE_PERL%%/IO/Async/Protocol.pm
@@ -37,6 +38,7 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
 @dirrmtry %%SITE_PERL%%/IO/Async/Timer
 @dirrmtry %%SITE_PERL%%/IO/Async/Protocol
+@dirrmtry %%SITE_PERL%%/IO/Async/OS
 @dirrmtry %%SITE_PERL%%/IO/Async/Loop
 @dirrmtry %%SITE_PERL%%/IO/Async/Internals
 @dirrmtry %%SITE_PERL%%/IO/Async/DetachedCode
