@@ -14,7 +14,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	A library for supervisory tone generation and detection
 
-LIB_DEPENDS=	spandsp.2:${PORTSDIR}/comms/spandsp-devel
+LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile\
+		spandsp.2:${PORTSDIR}/comms/spandsp-devel\
+		tiff.4:${PORTSDIR}/graphics/tiff\
+		xml2.5:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"\
