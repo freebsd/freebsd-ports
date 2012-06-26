@@ -16,6 +16,8 @@
 #   USE_GCC=	4.2+		# port requires GCC 4.2 or later.
 #   USE_GCC=	4.7			# port requires GCC 4.7.
 #
+#   USE_GCC_RELEASE=yes		# use lang/gcc if its version satisfies USE_GCC
+#
 # If your port needs a Fortran compiler, please specify that with the
 # USE_FORTRAN= knob.  Here is the list of options for that knob:
 #
@@ -36,7 +38,7 @@ GCC_Include_MAINTAINER=		gerald@FreeBSD.org
 
 # All GCC versions supported by the ports framework.  Keep them in
 # ascending order and in sync with the table below. 
-GCCVERSIONS=	030402 040200 040400 040600 040700
+GCCVERSIONS=	030402 040200 040400 040600 040700 RELEASE
 
 # The first field if the OSVERSION in which it appeared in the base.
 # The second field is the OSVERSION in which it disappeared from the base.
@@ -46,6 +48,7 @@ GCCVERSION_040200=	700042 9999999 4.2
 GCCVERSION_040400=	     0       0 4.4
 GCCVERSION_040600=	     0       0 4.6
 GCCVERSION_040700=	     0       0 4.7
+GCCVERSION_RELEASE=	     0       0 ${GCC_DEFAULT_VERSION}
 
 GCC_DEFAULT_VERSION=	4.6
 GCC_DEFAULT_V=	${GCC_DEFAULT_VERSION:S/.//}
@@ -177,7 +180,11 @@ _USE_GCC:=	${GCC_DEFAULT_VERSION}
 .for v in ${GCCVERSIONS}
 . if ${_USE_GCC} == ${_GCCVERSION_${v}_V}
 .  if ${OSVERSION} < ${_GCCVERSION_${v}_L} || ${OSVERSION} > ${_GCCVERSION_${v}_R}
+.if defined(USE_GCC_RELEASE) && ${_USE_GCC:S/.//} <= ${_GCCVERSION_${v}_V:S/.//}
+V:=			# empty
+.else
 V:=			${_GCCVERSION_${v}_V:S/.//}
+.endif
 _GCC_BUILD_DEPENDS:=	gcc${V}
 _GCC_PORT_DEPENDS:=	gcc${V}
 CC:=			gcc${V}
