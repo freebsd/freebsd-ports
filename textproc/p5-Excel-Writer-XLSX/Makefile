@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Excel-Writer-XLSX
-PORTVERSION=	0.47
+PORTVERSION=	0.48
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JMCNAMARA
@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Create a new file in the Excel 2007+ XLSX format
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Archive-Zip>=1.30:${PORTSDIR}/archivers/p5-Archive-Zip
 RUN_DEPENDS=	p5-Archive-Zip>=1.30:${PORTSDIR}/archivers/p5-Archive-Zip
@@ -45,6 +48,7 @@ MAN3=		Excel::Writer::XLSX.3 \
 		Excel::Writer::XLSX::Package::VML.3 \
 		Excel::Writer::XLSX::Package::XMLwriter.3 \
 		Excel::Writer::XLSX::Package::XMLwriterSimple.3 \
+		Excel::Writer::XLSX::Shape.3 \
 		Excel::Writer::XLSX::Utility.3 \
 		Excel::Writer::XLSX::Workbook.3 \
 		Excel::Writer::XLSX::Worksheet.3

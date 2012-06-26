@@ -23,6 +23,7 @@
 %%SITE_PERL%%/Excel/Writer/XLSX/Package/VML.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Package/XMLwriter.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Package/XMLwriterSimple.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Shape.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Utility.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Workbook.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Worksheet.pm
