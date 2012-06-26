@@ -7,8 +7,7 @@
 #
 
 PORTNAME?=	R
-PORTVERSION=	2.15.0
-PORTREVISION=	1
+PORTVERSION=	2.15.1
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -48,22 +47,32 @@ CONFIGURE_ENV=		FCFLAGS="${FFLAGS}" \
 			R_LD_LIBRARY_PATH="${R_LD_LIBRARY_PATH}" TAR="${TAR}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-OPTIONS=	ATLAS		"Use ATLAS instead of BLAS/LAPACK" off \
-		ICU		"Use ICU for collation in multibyte locales" on \
-		NLS		"Build with NLS support" on \
-		PCRE_PORT	"Use PCRE port instead of bundled source" on \
-		THREADS		"Build a multithreaded R" on
+
+OPTIONS_DEFINE =	ATLAS ICU PCRE_PORT THREADS
+
+ATLAS_DESC=		Use ATLAS instead of BLAS/LAPACK
+ICU_DESC=		Use ICU for collation in multibyte locales
+PCRE_PORT_DESC =	Use devel/pcre instead of the bundled PCRE
+
+OPTIONS_DEFAULT=	ICU PCRE_PORT THREADS
 .if !defined(LIBR_SLAVEPORT)
-OPTIONS+=	GHOSTSCRIPT	"Enable the [dev2]bitmap() graphics devices" on \
-		JPEG		"Enable the jpeg() graphics device" on \
-		LETTER_PAPER	"Use US Letter paper" off \
-		LIBR		"Install libR and a dynamically-linked R" on \
-		PANGOCAIRO	"Enable cairo and pango in graphics devices" on \
-		PNG		"Enable the png() graphics device" on \
-		TCLTK		"Use Tcl/Tk (for the tcltk package)" on \
-		X11		"Enable the X11() graphics device" on \
-		INFO_MANUALS	"Install GNU info manuals" on \
-		PDF_MANUALS	"Install PDF manuals (requires TeX)" off
+OPTIONS_DEFINE+=	GHOSTSCRIPT INFO_MANUALS JPEG LETTER_PAPER LIBR \
+			PANGOCAIRO PDF_MANUALS PNG TCLTK X11
+
+GHOSTSCRIPT_DESC=	[dev2]bitmap() graphics devices
+INFO_MANUALS_DESC=	GNU info manuals
+JPEG_DESC=		jpeg() graphics device
+LETTER_PAPER_DESC=	US Letter paper
+LIBR_DESC=		R shared library and a dynamically-linked R
+PANGOCAIRO_DESC=	cairo and pango graphics support
+PDF_MANUALS_DESC=	PDF manuals (requires TeX)
+PNG_DESC=		png() graphics device
+TCLTK_DESC=		tcltk package
+X11_DESC=		X11() graphics device
+
+OPTIONS_DEFAULT+=	GHOSTSCRIPT INFO_MANUALS JPEG LIBR PANGOCAIRO PNG TCLTK \
+			X11
+
 .endif # !LIBR_SLAVEPORT
 PLIST_SUB=		R_SOVERSION="${R_SOVERSION}" \
 			RBLAS_SOVERSION="${RBLAS_SOVERSION}" \
@@ -74,7 +83,6 @@ USE_ICONV=		yes
 MAN1=		R.1 Rscript.1
 USE_LDCONFIG=		${PREFIX}/lib/R/lib
 .endif # !LIBR_SLAVEPORT
-WANT_GNOME=		yes
 .endif # LIBRMATH_SLAVEPORT
 GNU_CONFIGURE=		yes
 MAKE_JOBS_UNSAFE=	yes
@@ -85,7 +93,7 @@ RMATH_SOVERSION=	0
 USE_FORTRAN=		yes
 USE_PERL5_BUILD=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64" || ${ARCH} == "powerpc64"
 PICFLAG?=		-fPIC
@@ -97,8 +105,8 @@ CONFIGURE_ENV +=	SHLIB_${flag}FLAGS="${PICFLAG}"
 .endfor
 
 .if !defined(LIBRMATH_SLAVEPORT)
-.if defined(WITH_ATLAS)
-LIB_DEPENDS+=		atlas.2:${PORTSDIR}/math/atlas
+.if ${PORT_OPTIONS:MATLAS}
+LIB_DEPENDS+=		atlas:${PORTSDIR}/math/atlas
 BLAS?=			-lf77blas
 LAPACK?=		-lalapack -lcblas
 .else
@@ -112,14 +120,14 @@ PLIST_SUB+=		LAPACK=""
 PLIST_SUB+=		LAPACK="@comment "
 .endif
 
-.if defined(WITHOUT_ICU)
-CONFIGURE_ARGS+=	--without-ICU
-.else
+.if ${PORT_OPTIONS:MICU}
 LIB_DEPENDS+=		icui18n:${PORTSDIR}/devel/icu
 CONFIGURE_ARGS+=	--with-ICU
+.else
+CONFIGURE_ARGS+=	--without-ICU
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=		yes
 PLIST_SUB+=		NLS=""
 .else
@@ -127,17 +135,17 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@comment "
 .endif
 
-.if defined(WITHOUT_PCRE_PORT)
-CONFIGURE_ARGS+=	--without-system-pcre
-.else
-LIB_DEPENDS+=		pcre.1:${PORTSDIR}/devel/pcre
+.if ${PORT_OPTIONS:MPCRE_PORT}
+LIB_DEPENDS+=		pcre:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=	--with-system-pcre
+.else
+CONFIGURE_ARGS+=	--without-system-pcre
 .endif
 
-.if defined(WITHOUT_THREADS)
-CONFIGURE_ARGS+=	--disable-threads
-.else
+.if ${PORT_OPTIONS:MTHREADS}
 CONFIGURE_ARGS+=	--enable-threads=posix
+.else
+CONFIGURE_ARGS+=	--disable-threads
 .endif
 
 .if defined(LIBR_SLAVEPORT)
@@ -146,73 +154,72 @@ CONFIGURE_ARGS+=	--disable-BLAS-shlib --without-pic --without-x
 
 .else # LIBR_SLAVEPORT
 
-.if !defined(WITHOUT_GHOSTSCRIPT)
+.if ${PORT_OPTIONS:MGHOSTSCRIPT}
 USE_GHOSTSCRIPT_RUN=	yes
 .endif
 
-.if defined(WITHOUT_JPEG)
-CONFIGURE_ARGS+=	--without-jpeglib
-.else
-LIB_DEPENDS+=		jpeg.11:${PORTSDIR}/graphics/jpeg
+.if ${PORT_OPTIONS:MJPEG}
+LIB_DEPENDS+=		jpeg:${PORTSDIR}/graphics/jpeg
 CONFIGURE_ARGS+=	--with-jpeglib
+.else
+CONFIGURE_ARGS+=	--without-jpeglib
 .endif
 
-.if defined(WITH_LETTER_PAPER)
+.if ${PORT_OPTIONS:MLETTER_PAPER}
 CONFIGURE_ENV +=	R_PAPERSIZE=letter
 .endif
 
-.if defined(WITHOUT_LIBR)
-PLIST_SUB+=		LIBR="@comment "
-.else
+.if ${PORT_OPTIONS:MLIBR}
 CONFIGURE_ARGS+=	--enable-R-shlib
 PLIST_SUB+=		LIBR=""
+.else
+PLIST_SUB+=		LIBR="@comment "
 .endif
 
-.if defined(WITHOUT_PANGOCAIRO)
-CONFIGURE_ARGS+=	--without-cairo
-PLIST_SUB+=		PANGOCAIRO="@comment "
-.else
+.if ${PORT_OPTIONS:MPANGOCAIRO}
 USE_GNOME+=		pango
 PLIST_SUB+=		PANGOCAIRO=""
+.else
+CONFIGURE_ARGS+=	--without-cairo
+PLIST_SUB+=		PANGOCAIRO="@comment "
 .endif
 
-.if defined(WITHOUT_PNG)
-CONFIGURE_ARGS+=	--without-libpng
-.else
+.if ${PORT_OPTIONS:MPNG}
 LIB_DEPENDS+=		png15:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=	--with-libpng
+.else
+CONFIGURE_ARGS+=	--without-libpng
 .endif
 
-.if defined(WITHOUT_TCLTK)
-CONFIGURE_ARGS+=	--without-tcltk
-PLIST_SUB+=		TCLTK="@comment "
-.else
+.if ${PORT_OPTIONS:MTCLTK}
 USE_TK_NO_THREADS=	yes
 USE_TK =		84+
-.include "${PORTSDIR}/Mk/bsd.tcl.mk"
 CONFIGURE_ARGS+=	--with-tcltk \
 			--with-tcl-config=${TCL_LIBDIR}/tclConfig.sh \
 			--with-tk-config=${TK_LIBDIR}/tkConfig.sh
 PLIST_SUB+=		TCLTK=""
+.else
+CONFIGURE_ARGS+=	--without-tcltk
+PLIST_SUB+=		TCLTK="@comment "
 .endif
 
-.if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=	--without-x
-PLIST_SUB+=		X11="@comment "
-.else
+.if ${PORT_OPTIONS:MX11}
 CONFIGURE_ARGS+=	--with-x
 USE_XORG=		x11 xmu xt
 PLIST_SUB+=		X11=""
+.else
+CONFIGURE_ARGS+=	--without-x
+PLIST_SUB+=		X11="@comment "
 .endif
 
-.if defined(WITH_INFO_MANUALS) && !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MINFO_MANUALS} && ${PORT_OPTIONS:MDOCS}
 ALL_TARGET+=	info
 INFO=		R-FAQ R-admin R-data R-exts R-intro R-lang
 .endif
 
-.if defined(WITH_PDF_MANUALS) && !defined(NOPORTDOCS)
-BROKEN =		WITH_PDF_MANUALS cannot be used, because print/texinfo is\
-			incompatible with print/teTeX-base
+.if ${PORT_OPTIONS:MPDF_MANUALS} && ${PORT_OPTIONS:MDOCS}
+BROKEN =		The PDF_MANUALS option cannot be used, because\
+			print/texinfo is incompatible with print/teTeX-base
 BUILD_DEPENDS +=	pdftex:${PORTSDIR}/print/teTeX-base \
 			texi2dvi:${PORTSDIR}/print/texinfo
 ALL_TARGET+=		pdf
@@ -242,7 +249,7 @@ post-patch:
 		${WRKSRC}/src/scripts/javareconf
 .if !defined(LIBRMATH_SLAVEPORT)
 	@${RM} -rf  ${WRKSRC}/src/library/compiler/inst/po/compiler-zh_CN
-.if defined(WITHOUT_NLS)
+.if empty(PORT_OPTIONS:MNLS)
 	@(cd ${WRKSRC}/src/library/Recommended; \
 	for tarfile in *.tgz *.tar.gz ; do \
 	${TAR} -czf temptgz --exclude='*/po/*' @$$tarfile ; \
@@ -280,7 +287,7 @@ post-install:
 	@(cd ${PREFIX}/lib/R/lib; if [ -f lib${L}.so ] ; then \
 	${LN} -sf lib${L}.so lib${L}.so.${${L:U}_SOVERSION} ; fi)
 .endfor
-.if defined(WITH_INFO_MANUALS) && !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MINFO_MANUALS} && ${PORT_OPTIONS:MDOCS}
 	@(cd ${WRKSRC}/doc/manual; \
 	for infofile in ${INFO}; do \
 		${INSTALL_DATA} $${infofile}.info* ${PREFIX}/${INFO_PATH}/; \
@@ -304,4 +311,4 @@ check regression-test test: build
 
 .endif # !LIBRMATH_SLAVEPORT
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
