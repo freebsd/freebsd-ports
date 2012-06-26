@@ -16,7 +16,7 @@ DISTNAME=	qt4-qtsolutions-singleinstance-${PORTVERSION}
 MAINTAINER=	yurkis@gmail.com
 COMMENT=	QT4 Solutions Single Application Framework
 
-USE_QT4=	qmake_build moc_build rcc_build uic_build gui network
+USE_QT4?=	qmake_build moc_build rcc_build uic_build gui network
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
