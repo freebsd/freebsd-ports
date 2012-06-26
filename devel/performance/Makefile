@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	libs
 DISTNAME=	Performance-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Help improve the performance of GNUstep applications
 
 LICENSE=	LGPL3

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.gnustep.it/enrico/position/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dinoex
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GPS and Moving-Map Applikation
 
 LIB_DEPENDS=	proj:${PORTSDIR}/graphics/proj

@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	gnustep-
 PKGNAMESUFFIX?=	${NOX11_SUFFIX}${PKGNAMESUFFIX2}
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep interface to the GUILE scheme interpreter
 
 LIB_DEPENDS+=	guile.21:${PORTSDIR}/lang/guile

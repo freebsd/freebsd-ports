@@ -14,7 +14,7 @@ MASTER_SITES=	http://ftp.azc.uam.mx/mirrors/gnu/savannah/files/toolbox/Release.p
 MASTER_SITE_SUBDIR=	dinoex
 DISTNAME=	Toolbox-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of tools for GNUstep
 
 LICENSE=	GPLv2

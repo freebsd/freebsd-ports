@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.sonappart.net/gnustep/mplayer/
 PKGNAMEPREFIX=	gnustep-
 DISTNAME=	Mplayer-0.4-1
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep port of MPlayerOSX
 
 LICENSE=	GPLv2

@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.gna.org/gsimageapps/
 PKGNAMEPREFIX=	gnustep-
 DISTNAME=	Preview-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple image viewer
 
 LICENSE=	GPLv2

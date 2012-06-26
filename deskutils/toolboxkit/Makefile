@@ -17,7 +17,7 @@ DISTNAME=	Toolbox-${PORTVERSION}
 
 LICENSE=	GPLv2
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolbox bundle for GNUstep
 
 USE_GNUSTEP=	yes

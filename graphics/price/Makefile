@@ -11,7 +11,7 @@ CATEGORIES=	graphics gnustep
 MASTER_SITES=	SF/${PORTNAME}/PRICE%20source/${PORTVERSION}
 DISTNAME=	PRICE-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image filtering and manipulation using GNUstep
 
 LICENSE=	GPLv2

@@ -12,7 +12,7 @@ CATEGORIES=	editors gnustep
 MASTER_SITES=	http://git.savannah.gnu.org/cgit/backbone.git/snapshot/
 DISTNAME=	backbone-6343263e17c5cd771770dabc2559ac07ffedcf29
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Basic text editor for GNUstep
 
 USE_BZIP2=	yes

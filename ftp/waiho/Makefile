@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.roard.com/waiho/download/
 DISTNAME=	Waiho-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple FTP client for GNUstep
 
 LICENSE=	GPLv2

@@ -12,7 +12,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Objective-C libraries based on the OpenStep standard
 
 NO_BUILD=	yes

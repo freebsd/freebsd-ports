@@ -16,7 +16,7 @@ DISTNAME=	GScheme
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	repacked
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep-aware scheme interpreter
 
 LICENSE=	GPLv2

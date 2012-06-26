@@ -12,7 +12,7 @@ CATEGORIES=	german gnustep
 MASTER_SITES=	http://gnu.ethz.ch/repository/digibux/
 DISTNAME=	digibux_${PORTVERSION}+CVS20060118.orig
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reader for editions of Digitale Bibliothek
 
 LICENSE=	GPLv2

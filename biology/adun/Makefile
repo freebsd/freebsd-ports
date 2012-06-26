@@ -12,7 +12,7 @@ CATEGORIES=	biology gnustep
 MASTER_SITES=	http://download.gna.org/adun/
 DISTNAME=	Adun-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Molecular Simulator for GNUstep
 
 LIB_DEPENDS+=	gsl.16:${PORTSDIR}/math/gsl

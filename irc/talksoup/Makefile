@@ -12,7 +12,7 @@ CATEGORIES=	irc gnustep
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}alpha
 DISTNAME=	TalkSoup-${PORTVERSION}alpha
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IRC client for GNUstep
 
 LICENSE=	GPLv2

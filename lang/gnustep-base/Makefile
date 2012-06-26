@@ -11,7 +11,7 @@ CATEGORIES=	lang devel gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep Foundation library
 
 LIB_DEPENDS+=	ffi.5:${PORTSDIR}/devel/libffi

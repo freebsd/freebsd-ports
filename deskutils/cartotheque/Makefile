@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=dinoex
 DISTNAME=	Cartotheque-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Managing notes on small cards
 
 LICENSE=	LGPL21

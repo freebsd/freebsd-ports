@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	fortytwo-
 DISTFILES=	BDB-${PORTVERSION}-src.tgz \
 		BDB-${PORTVERSION}-api-ref.tgz
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interface to Berkeley DB for GNUstep
 
 LICENSE=	LGPL21

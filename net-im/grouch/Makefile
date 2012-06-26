@@ -11,7 +11,7 @@ CATEGORIES=	net-im gnustep
 MASTER_SITES=	http://asveikau.ath.cx/projects/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AOL and ICQ Instant Messenger client for GNUstep
 
 LICENSE=	GPLv2

@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.gna.org/gsimageapps/
 PKGNAMEPREFIX=	gnustep-
 DISTNAME=	SlideShow-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SlideShow Viewer
 
 LICENSE=	GPLv2

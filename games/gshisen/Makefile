@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	gap
 DISTNAME=	GShisen-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shisen-sho puzzle game for GNUstep
 
 USE_GNUSTEP=	yes

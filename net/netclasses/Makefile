@@ -10,7 +10,7 @@ PORTVERSION=	1.06
 CATEGORIES=	net gnustep
 MASTER_SITES=	SF
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Objective-C framework for socket programming with GNUstep
 
 LICENSE=	LGPL21

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	gap
 DISTNAME=	GMastermind-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The well-known mastermind game
 
 LICENSE=	GPLv2

@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	usr-apps
 PKGNAMESUFFIX=	-gwmetadata${PKGNAMESUFFIX2}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GWMetadata for GNUstep workspace manager
 
 LICENSE=	GPLv2

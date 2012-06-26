@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/Releases
 DISTNAME=	Paje_${PORTVERSION}
 EXTRACT_SUFX=	.tar.gz.gz
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic visualization tool for GNUstep (Gantt chart and more)
 
 LICENSE=	LGPL21

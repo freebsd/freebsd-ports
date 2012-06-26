@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.gna.org/gsimageapps/ \
 		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	Camera-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep application for digital still cameras
 
 LIB_DEPENDS+=	gphoto2_port:${PORTSDIR}/graphics/libgphoto2

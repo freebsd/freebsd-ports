@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	gap
 DISTNAME=	RemoteDesk-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical interface to rdesktop
 
 RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop

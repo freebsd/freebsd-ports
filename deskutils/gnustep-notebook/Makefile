@@ -14,7 +14,7 @@ MASTER_SITES=	http://notebook.cowgar.com/NoteBook/releases/ \
 PKGNAMEPREFIX=	gnustep-
 DISTNAME=	NoteBook-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A place to store notes in an organized manner
 
 LICENSE=	GPLv2

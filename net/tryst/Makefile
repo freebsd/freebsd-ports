@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	dinoex
 DISTNAME=	tryst-108pl6
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of Apples Bonjour for GNUstep
 
 LIB_DEPENDS=	dns_sd:${PORTSDIR}/net/mDNSResponder

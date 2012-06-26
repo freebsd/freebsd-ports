@@ -11,7 +11,7 @@ CATEGORIES=	devel gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	dev-apps
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical Object Relationship Modeller
 
 LICENSE=	GPLv3

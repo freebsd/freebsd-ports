@@ -12,7 +12,7 @@ CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://debian.uni-duisburg-essen.de/misc/GNUstep/Apps/GWorkspace/
 PKGNAMESUFFIX=	-clipbook${PKGNAMESUFFIX2}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ClipBook for GNUstep workspace manager
 
 LICENSE=	GPLv2

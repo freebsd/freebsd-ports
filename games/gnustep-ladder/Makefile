@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	gap
 PKGNAMEPREFIX=	gnustep-
 DISTNAME=	Ladder-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Go frontend for GNUstep
 
 RUN_DEPENDS=	gnugo:${PORTSDIR}/games/gnugo

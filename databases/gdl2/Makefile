@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	libs
 DISTNAME=	gnustep-dl2-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep Database Library 2 (Enterprise Objects Framework)
 
 LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3

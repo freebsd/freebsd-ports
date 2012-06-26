@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	gap
 PKGNAMEPREFIX=	gnustep-
 DISTNAME=	FTP-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compact and handy FTP client for GNUstep
 
 LICENSE=	GPLv2

@@ -12,7 +12,7 @@ CATEGORIES=	science gnustep
 MASTER_SITES=	SF/tamsys/gnustep%20tams/GTAMSAnalyzer%2${PORTVERSION}
 DISTNAME=	GTAMSAnalyzer.src.${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qualitative Research Software for the Free World for GNUstep
 
 LICENSE=	GPLv2

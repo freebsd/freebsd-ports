@@ -12,7 +12,7 @@ CATEGORIES=	deskutils gnustep
 MASTER_SITES=	SF/prefsapp/prefsapp/${PORTVERSION}
 DISTNAME=	Preferences-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep workspace manager
 
 LICENSE_COMB=	multi

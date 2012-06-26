@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	codeeditor
 DISTNAME=	CodeEditor-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CodeEditor is a text and code editor for GNUstep
 
 LICENSE=	GPLv2

@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-examples${PKGNAMESUFFIX2}
 DISTNAME=	tryst-108pl6
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TBrowser and TChat
 
 LIB_DEPENDS=	dns_sd:${PORTSDIR}/net/mDNSResponder

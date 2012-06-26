@@ -11,7 +11,7 @@ CATEGORIES=	sysutils gnustep
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	gap
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep battery monitor for laptops
 
 LICENSE=	GPLv2
