@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--with-libspectrum-prefix=${LOCALBASE} \
 
 MAN1=	createhdf.1 fuse-utils.1 listbasic.1 raw2hdf.1 rzxcheck.1 rzxdump.1 rzxtool.1 scl2trd.1 snap2tzx.1 snapconv.1 tapeconv.1 tzxlist.1 profile2map.1
 
-OPTIONS_DEFINE=	AUDIOFILE
+OPTIONS_DEFINE=	AUDIOFILE DOCS
 
 AUDIOFILE_DESC=	Build audio <-> tape utilities
 

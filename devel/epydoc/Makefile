@@ -16,7 +16,7 @@ COMMENT=	Python API documentation generation tool
 
 LICENSE=	MIT
 
-OPTIONS_DEFINE=	UTF8
+OPTIONS_DEFINE=	DOCS UTF8
 
 UTF8_DESC=	Use UTF-8 instead of iso-8859-1 in HTMLs
 
