@@ -18,7 +18,8 @@ COMMENT=	Python binding for GDAL
 
 LIB_DEPENDS=	gdal:${PORTSDIR}/graphics/gdal
 
-OPTIONS=	NUMPY	"Enable array support via NumPy" off
+OPTIONS_DEFINE=	NUMPY
+NUMPY_DESC=	Enable array support via NumPy
 
 PYEASYINSTALL_ARCHDEP=	yes
 PYDISTUTILS_PKGNAME=	${PORTNAME:U}
@@ -28,7 +29,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/swig/python
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_NUMPY)
+.if ${PORT_OPTIONS:MNUMPY}
 BUILD_DEPENDS+=	${PKGNAMEPREFIX}numpy>=1.0.0:${PORTSDIR}/math/py-numpy
 RUN_DEPENDS+=	${PKGNAMEPREFIX}numpy>=1.0.0:${PORTSDIR}/math/py-numpy
 .endif
