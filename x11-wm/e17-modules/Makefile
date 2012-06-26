@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	e17-modules
-PORTVERSION=	20110129
-PORTREVISION=	1
+PORTVERSION=	20111128
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	# Empty
 DISTFILES=	# Empty
@@ -19,17 +18,17 @@ NO_BUILD=	yes
 WANT_EFL=	yes
 E17_ARCH=	freebsd${OSREL}-${ARCH}
 
-MODULES=	alarm calendar cpu deskshow diskio drawer \
-		efm_nav efm_path efm_pathbar empris eooorg \
-		everything-mpris everything-pidgin everything-places \
-		everything-wallpaper everything-websearch exebuf execwatch \
-		flame forecasts iiirk itask itask-ng language mail mem \
-		moon mpdule net news notification penguins photo \
-		places quickaccess rain screenshot slideshow snow taskbar \
-		tclock tiling uptime weather winlist-ng winselector wlan
+MODULES=	alarm calendar comp-scale cpu deskshow diskio drawer e-tiling elfe empris eooorg \
+		everything-aspell everything-mpris everything-pidgin everything-places \
+		everything-shotgun everything-wallpaper everything-websearch exebuf execwatch \
+		flame forecasts iiirk itask itask-ng language mail mem moon mpdule net news \
+		penguins photo places quickaccess rain screenshot slideshow snow \
+		taskbar tclock tiling uptime weather winlist-ng winselector wlan xkbswitch
 
+COMP_SCALE_PATH=	scale
 EVERYTHING_MPRIS_PATH=	evry-mpris
 EVERYTHING_PIDGIN_PATH=	evry-pidgin
+EVERYTHING_SHOTGUN_PATH=	evry-shotgun
 EVERYTHING_WEBSEARCH_PATH=	evry-websearch
 
 .for M in ${MODULES}
@@ -47,7 +46,7 @@ OPTIONS+=	off
 . if !defined(${M:U:S,-,_,g}_PATH)
 ${M:U:S,-,_,g}_PATH=	${M}
 . endif
-. if defined(WITH_${M:U:S,-,_,g})
+. if !defined(WITHOUT_${M:U:S,-,_,g})
 RUN_DEPENDS+=	${LOCALBASE}/lib/enlightenment/modules/${${M:U:S,-,_,g}_PATH}/${E17_ARCH}/module.so:${PORTSDIR}/x11-wm/e17-module-${M}
 . endif
 .endfor

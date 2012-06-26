@@ -19,6 +19,9 @@ COMMENT=	A hardware accelerated canvas API (edb engine)
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
+DEPRECATED=	Deprecated by enlightenment.org
+EXPIRATION_DATE=	2012-07-31
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

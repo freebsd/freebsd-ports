@@ -24,24 +24,20 @@
 # USE_EFL	- lists all EFL libraries which port depends on
 # WANT_EFL	- the port wants to test which of EFL libraries are installed
 #		  on the target system
-# USE_EFL_ESMART- the ports depends on specified esmart objects (or on all
-#		  esmart objects if "yes")
 #
 # The following variables could be tested after inclusion of bsd.port.pre.mk:
 # HAVE_EFL	- lists all EFL libraries which are available on target system
-# HAVE_EFL_ESMART - esmart objects available
 #
 # Feel free to send any comments and suggestion to maintainer.
 #
 
-EFL_Include_MAINTAINER=	ports@FreeBSD.org
+EFL_Include_MAINTAINER=	magik@roorback.net
 
 #
 # Define all supported libraries
 #
-_USE_EFL_ALL=	ecore edb edbus edje eet efreet eina elementary embryo emotion \
-		engrave enhance epeg epsilon etk etox evas evfs ewl exml \
-		imlib2
+_USE_EFL_ALL=	ecore edbus edje eet efreet eio eina elementary embryo emotion \
+		epeg evas imlib2
 
 # For each library supported we define the following variables:
 #	_%%LIB%%_CATEGORY	- category the port belongs to
@@ -56,80 +52,50 @@ _USE_EFL_ALL=	ecore edb edbus edje eet efreet eina elementary embryo emotion \
 _ecore_CATEGORY=	devel
 _ecore_DEPENDS=		eina
 _ecore_PORTNAME=	ecore-main
-_ecore_VERSION=		1
-
-_edb_CATEGORY=		databases
-_edb_VERSION=		1
+_ecore_VERSION=		2
 
 _edbus_CATEGORY=	devel
 _edbus_PORTNAME=	e_dbus
-_edbus_VERSION=		1
+_edbus_VERSION=		2
 
 _eet_CATEGORY=		devel
 _eet_DEPENDS=		eina
-_eet_VERSION=		5
+_eet_VERSION=		6
 
 _efreet_CATEGORY=	x11
 _efreet_DEPENDS=	ecore eina
-_efreet_VERSION=	1
+_efreet_VERSION=	2
 
 _edje_CATEGORY=		graphics
 _edje_DEPENDS=		ecore eet embryo evas
-_edje_VERSION=		1
+_edje_VERSION=		2
+
+_eio_CATEGORY=		devel
+_eio_DEPENDS=		ecore eina
+_eio_VERSION=		1
 
 _eina_CATEGORY=		devel
-_eina_VERSION=		1
+_eina_VERSION=		2
 
 _elementary_CATEGORY=	x11-toolkits
 _elementary_DEPENDS=	ecore embryo edje
-_elementary_VERSION=	7
+_elementary_VERSION=	8
 
 _embryo_CATEGORY=	lang
-_embryo_VERSION=	1
+_embryo_DEPENDS=	eina
+_embryo_VERSION=	2
 
 _emotion_CATEGORY=	multimedia
-_emotion_DEPENDS=	ecore edje eet embryo evas
+_emotion_DEPENDS=	ecore edje eet eio embryo evas
 _emotion_VERSION=	2
-
-_engrave_CATEGORY=	devel
-_engrave_DEPENDS=	ecore evas
-_engrave_VERSION=	1
-
-_enhance_CATEGORY=	x11-toolkits
-_enhance_DEPENDS=	ecore etk exml
-_enhance_VERSION=	0
 
 _epeg_CATEGORY=		graphics
 _epeg_VERSION=		9
 
-_epsilon_CATEGORY=	graphics
-_epsilon_DEPENDS=	epeg edje imlib2 ecore
-_epsilon_VERSION=	3
-
-_etk_CATEGORY=		x11-toolkits
-_etk_DEPENDS=		evas ecore edje
-_etk_VERSION=		1
-
-_etox_CATEGORY=		x11-toolkits
-_etox_DEPENDS=		edb evas ecore
-_etox_VERSION=		0
-
 _evas_CATEGORY=		graphics
 _evas_DEPENDS=		eina eet
 _evas_PORTNAME=		evas-core
-_evas_VERSION=		1
-
-_evfs_CATEGORY=		devel
-_evfs_DEPENDS=		eet ecore
-_evfs_VERSION=		0
-
-_ewl_CATEGORY=		x11-toolkits
-_ewl_DEPENDS=		evas ecore edje epsilon
-_ewl_VERSION=		1
-
-_exml_CATEGORY=		textproc
-_exml_DEPENDS=		ecore
-_exml_VERSION=		1
+_evas_VERSION=		2
 
 _imlib2_CATEGORY=	graphics
 _imlib2_VERSION=	5
@@ -154,54 +120,6 @@ _${LIB}_PREFIX=${LOCALBASE}
 .endfor
 
 #
-# Esmart support. We'll define esmart components in the way they are
-# defined for EFL.
-# Values processed:
-# _esmart_COMP_CATEGORY	- Where the port for this esmart object is located
-# _esmart_COMP_PORTNAME	- Object's port subdirectory
-# _esmart_COMP_DEPENDS	- Other components which this object depends on
-# _esmart_COMP_PREFIX	- Where the shared library for this object is located
-# _esmart_COMP_VERSION	- Version of the shared library
-#
-
-# All components that are currently supported
-_EFL_ESMART_ALL=	container draggies text_entry \
-			thumb trans_x11
-
-#
-# Generic stock esmart definitions
-#
-_EFL_ESMART_CATEGORY=	graphics
-_EFL_ESMART_PORTNAME=	esmart
-_EFL_ESMART_DEPENDS=	epsilon evas ecore imlib2 edje
-_EFL_ESMART_PREFIX=	${LOCALBASE}
-_EFL_ESMART_VERSION=	9
-
-#
-# Assign values for variables which were not defined explicitly
-#
-.for COMP in ${_EFL_ESMART_ALL}
-. if !defined(_esmart_${COMP}_CATEGORY)
-_esmart_${COMP}_CATEGORY=	${_EFL_ESMART_CATEGORY}
-. endif
-. if !defined(_esmart_${COMP}_PORTNAME)
-_esmart_${COMP}_PORTNAME=	${_EFL_ESMART_PORTNAME}
-. endif
-. if !defined(_esmart_${COMP}_PREFIX)
-_esmart_${COMP}_PREFIX=	${_EFL_ESMART_PREFIX}
-. endif
-. if !defined(_esmart_${COMP}_DEPENDS)
-_esmart_${COMP}_DEPENDS=	#empty
-. endif
-. if !defined(_esmart_${COMP}_SLIB)
-_esmart_${COMP}_SLIB=	esmart_${COMP}
-. endif
-. if !defined(_esmart_${COMP}_VERSION)
-_esmart_${COMP}_VERSION=	${_EFL_ESMART_VERSION}
-. endif
-.endfor
-
-#
 # Evas engines and loaders support.
 # Values processed:
 # _evas_engine_COMP_CATEGORY	- Where the port for this object is located
@@ -210,8 +128,8 @@ _esmart_${COMP}_VERSION=	${_EFL_ESMART_VERSION}
 #
 
 # All components that are currently supported
-_EFL_EVAS_ENGINES_ALL= buffer opengl sdl x11 xrender
-_EFL_EVAS_LOADERS_ALL= bmp edb eet gif jpeg png pmaps svg tga tiff xpm
+_EFL_EVAS_ENGINES_ALL= buffer opengl sdl x11
+_EFL_EVAS_LOADERS_ALL= bmp edb eet gif ico jpeg png pmaps psd svg tga tiff wbmp xpm
 
 #
 # Generic evas engines definitions
@@ -229,7 +147,6 @@ _evas_engine_buffer_DIR=	buffer
 _evas_engine_opengl_DIR=	gl_x11
 _evas_engine_sdl_DIR=		software_sdl
 _evas_engine_x11_DIR=		software_x11
-_evas_engine_xrender_DIR=	xrender_x11
 
 #
 # Assign values for variables which were not defined explicitly
@@ -317,7 +234,6 @@ _ecore_${COMP}_NAME=	ecore_${COMP}
 EFL_Include_pre=	bsd.efl.mk
 
 HAVE_EFL?=
-HAVE_EFL_ESMART?=
 HAVE_EFL_ECORE?=
 .if defined(WANT_EFL)
 #
@@ -326,15 +242,6 @@ HAVE_EFL_ECORE?=
 . for LIB in ${_USE_EFL_ALL}
 .  if exists(${_${LIB}_PREFIX}/lib/lib${_${LIB}_SLIB}.so.${_${LIB}_VERSION})
 HAVE_EFL+=	${LIB}
-.  endif
-. endfor
-
-#
-# Esmart objects
-#
-. for COMP in ${_EFL_ESMART_ALL}
-.  if exists(${_esmart_${COMP}_PREFIX}/lib/lib${_esmart_${COMP}_SLIB}.so.${_esmart_${COMP}_VERSION})
-HAVE_EFL_ESMART+=	${COMP}
 .  endif
 . endfor
 
@@ -352,45 +259,10 @@ HAVE_EFL_ECORE+=	${COMP}
 .endif #AFTERPORTMK
 
 #
-# Handle USE_EFL, USE_EFL_ESMART, USE_EFL_EVAS_* and USE_EFL_ECORE features
+# Handle USE_EFL, USE_EFL_EVAS_* and USE_EFL_ECORE features
 #
 .if !defined(BEFOREPORTMK)
 .if !defined(EFL_Include_post)
-
-.if defined(USE_EFL_ESMART)
-
-USE_EFL+=	${_EFL_ESMART_DEPENDS} #we use EFL too
-
-_USE_EFL_ESMART=	#empty
-.if USE_EFL_ESMART=="yes"
-_USE_EFL_ESMART=	${_EFL_ESMART_ALL}
-.else
-. for COMP in ${USE_EFL_ESMART}
-.  if ${_EFL_ESMART_ALL:M${COMP}}==""
-IGNORE=	cannot install: unknown Esmart component ${COMP}
-.  else
-_USE_EFL_ESMART+=	${COMP} ${_esmart_${COMP}_DEPENDS}
-.  endif
-. endfor
-.endif
-
-# Get rid of duplicates
-#.if ${OSVERSION} > 700016
-#_USE_EFL_ESMART_UQ=	${_USE_EFL_ESMART:O:u}
-#.else
-_USE_EFL_ESMART_UQ=	#empty
-. for COMP in ${_USE_EFL_ESMART}
-.  if ${_USE_EFL_ESMART_UQ:M${COMP}}==""
-_USE_EFL_ESMART_UQ+=	${COMP}
-.  endif
-. endfor
-#.endif
-
-.for COMP in ${_USE_EFL_ESMART_UQ}
-LIB_DEPENDS+=	${_esmart_${COMP}_SLIB}.${_esmart_${COMP}_VERSION}:${PORTSDIR}/${_esmart_${COMP}_CATEGORY}/${_esmart_${COMP}_PORTNAME}
-.endfor
-
-.endif #USE_EFL_ESMART
 
 .if defined(USE_EFL_EVAS_ENGINES)
 

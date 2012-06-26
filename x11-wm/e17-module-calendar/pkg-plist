@@ -36,6 +36,9 @@ lib/enlightenment/modules/calendar/%%E17_ARCH%%/module.so
 %%NLS%%lib/enlightenment/modules/calendar/locale/bg/LC_MESSAGES/calendar.mo
 %%NLS%%lib/enlightenment/modules/calendar/locale/pt_BR/LC_MESSAGES/calendar.mo
 %%NLS%%lib/enlightenment/modules/calendar/locale/nb/LC_MESSAGES/calendar.mo
+%%NLS%%lib/enlightenment/modules/calendar/locale/sl/LC_MESSAGES/calendar.mo
+%%NLS%%@dirrm lib/enlightenment/modules/calendar/locale/sl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/calendar/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/calendar/locale/nb/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/calendar/locale/nb
 %%NLS%%@dirrm lib/enlightenment/modules/calendar/locale/pt_BR/LC_MESSAGES

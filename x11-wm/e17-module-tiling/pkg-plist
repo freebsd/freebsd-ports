@@ -24,6 +24,9 @@ lib/enlightenment/modules/tiling/e-module-tiling.edj
 %%NLS%%lib/enlightenment/modules/tiling/locale/es/LC_MESSAGES/tiling.mo
 %%NLS%%lib/enlightenment/modules/tiling/locale/hu/LC_MESSAGES/tiling.mo
 %%NLS%%lib/enlightenment/modules/tiling/locale/de/LC_MESSAGES/tiling.mo
+%%NLS%%lib/enlightenment/modules/tiling/locale/sl/LC_MESSAGES/tiling.mo
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/sl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/de/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/de
 %%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/hu/LC_MESSAGES

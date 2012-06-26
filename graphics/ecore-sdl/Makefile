@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	sdl
-DISTVERSION=	1.0.1
-PORTREVISION=	1
+DISTVERSION=	1.1.0
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
-		http://files.roorback.net/e17/2011-05-25/base/
+		http://files.roorback.net/e17/2011-12-02/base/
 PKGNAMEPREFIX=	ecore-
 DISTNAME=	ecore-${DISTVERSION}
 
@@ -18,6 +17,7 @@ MAINTAINER=	magik@roorback.net
 COMMENT=	Enlightenment core abstraction library (sdl module)
 
 LICENSE=	BSD
+
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

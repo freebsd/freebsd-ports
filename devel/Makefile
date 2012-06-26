@@ -359,6 +359,7 @@
     SUBDIR += eieio
     SUBDIR += eiffelstudio
     SUBDIR += eina
+    SUBDIR += eio
     SUBDIR += elf
     SUBDIR += elfio
     SUBDIR += elfkickers

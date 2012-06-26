@@ -1,5 +1,7 @@
 bin/emotion_test
 include/emotion-0/Emotion.h
+include/emotion-0/Emotion_Generic_Plugin.h
+lib/emotion/em_generic.so
 %%GST%%lib/emotion/gstreamer.so
 %%XINE%%lib/emotion/xine.so
 lib/edje/modules/emotion/%%E17_ARCH%%/module.so
@@ -8,6 +10,10 @@ lib/libemotion.so.2
 libdata/pkgconfig/emotion.pc
 %%DATADIR%%/data/theme.edj
 %%DATADIR%%/data/icon.edj
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/emotion_basic_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/emotion_generic_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/emotion_border_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/emotion_signals_example.c
 @dirrm lib/edje/modules/emotion/%%E17_ARCH%%
 @dirrm lib/edje/modules/emotion
 @dirrmtry lib/edje/modules
@@ -16,3 +22,4 @@ libdata/pkgconfig/emotion.pc
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
 @dirrm lib/emotion
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

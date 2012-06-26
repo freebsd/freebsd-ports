@@ -47,6 +47,9 @@ lib/enlightenment/modules/news/e-module-news.edj
 %%NLS%%lib/enlightenment/modules/news/locale/it/LC_MESSAGES/news.mo
 %%NLS%%lib/enlightenment/modules/news/locale/tr/LC_MESSAGES/news.mo
 %%NLS%%lib/enlightenment/modules/news/locale/sk/LC_MESSAGES/news.mo
+%%NLS%%lib/enlightenment/modules/news/locale/sl/LC_MESSAGES/news.mo
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/sl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/news/locale/sk/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/news/locale/sk
 %%NLS%%@dirrm lib/enlightenment/modules/news/locale/tr/LC_MESSAGES

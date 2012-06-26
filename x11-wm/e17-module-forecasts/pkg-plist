@@ -29,6 +29,9 @@ lib/enlightenment/modules/forecasts/%%E17_ARCH%%/module.so
 %%NLS%%lib/enlightenment/modules/forecasts/locale/pt_BR/LC_MESSAGES/forecasts.mo
 %%NLS%%lib/enlightenment/modules/forecasts/locale/eo/LC_MESSAGES/forecasts.mo
 %%NLS%%lib/enlightenment/modules/forecasts/locale/it/LC_MESSAGES/forecasts.mo
+%%NLS%%lib/enlightenment/modules/forecasts/locale/sl/LC_MESSAGES/forecasts.mo
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/sl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/it/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/it
 %%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/eo/LC_MESSAGES

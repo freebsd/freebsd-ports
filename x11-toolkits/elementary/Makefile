@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	elementary
-PORTVERSION=	0.7.0.55225
-PORTREVISION=	1
+PORTVERSION=	0.8.0.65643
 CATEGORIES=	x11-toolkits enlightenment
-MASTER_SITES=	http://download.enlightenment.org/snapshots/2010-12-03/ \
-		http://files.roorback.net/e17/2010-12-03/base/
+MASTER_SITES=	http://download.enlightenment.org/snapshots/2011-11-28/ \
+		http://files.roorback.net/e17/base/
 
 MAINTAINER=	magik@roorback.net
 COMMENT=	Simple widget toolkit using EFL
 
+LICENSE=	LGPL21
+
 LIB_DEPENDS=	lua-5.1:${PORTSDIR}/lang/lua
 
-LICENSE=	LGPL21
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -26,10 +26,24 @@ USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
+CONFIGURE_ARGS=	--disable-install-examples
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+CONFIGURE_ARGS+=	--enable-nls
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
+
 post-patch:
-	${LN} -s profile.src ${WRKSRC}/config/profile.cfg
-	${LN} -s base.src ${WRKSRC}/config/default/base.cfg
-	${LN} -s base.src ${WRKSRC}/config/illume/base.cfg
-	${LN} -s base.src ${WRKSRC}/config/standard/base.cfg
+	@${LN} -s profile.src ${WRKSRC}/config/profile.cfg
+	@${LN} -s base.src ${WRKSRC}/config/default/base.cfg
+	@${LN} -s base.src ${WRKSRC}/config/illume/base.cfg
+	@${LN} -s base.src ${WRKSRC}/config/standard/base.cfg
+
+post-install:
+	@${RMDIR} ${PREFIX}/share/elementary/examples
 
 .include <bsd.port.mk>

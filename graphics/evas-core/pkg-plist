@@ -1,14 +1,30 @@
 include/evas-1/Evas.h
 lib/libevas.so
-lib/libevas.so.1
+lib/libevas.so.2
 lib/evas/modules/engines/software_generic/%%E17_ARCH%%/module.so
 libdata/pkgconfig/evas.pc
-%%DATADIR%%/examples/evas-buffer-simple.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/aspect.edc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cube1.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/enlightenment.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/evas-aspect-hints.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/evas-box.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/evas-buffer-simple.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/evas-events.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/evas-hints.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/evas-images.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/evas-images2.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/evas-init-shutdown.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/evas-map-utils.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/evas-object-manipulation.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/evas-smart-object.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/evas-stacking.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/evas-text.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/im1.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/red.png
 @dirrm include/evas-1
-@dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%
 @dirrm lib/evas/modules/engines/software_generic/%%E17_ARCH%%
 @dirrm lib/evas/modules/engines/software_generic
 @dirrmtry lib/evas/modules/engines
 @dirrmtry lib/evas/modules
 @dirrmtry lib/evas
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

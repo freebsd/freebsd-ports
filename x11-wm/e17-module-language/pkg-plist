@@ -99,6 +99,9 @@ lib/enlightenment/modules/language/module.desktop
 %%NLS%%lib/enlightenment/modules/language/locale/de/LC_MESSAGES/language.mo
 %%NLS%%lib/enlightenment/modules/language/locale/uk/LC_MESSAGES/language.mo
 %%NLS%%lib/enlightenment/modules/language/locale/el/LC_MESSAGES/language.mo
+%%NLS%%lib/enlightenment/modules/language/locale/sl/LC_MESSAGES/language.mo
+%%NLS%%@dirrm lib/enlightenment/modules/language/locale/sl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/language/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/language/locale/el/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/language/locale/el
 %%NLS%%@dirrm lib/enlightenment/modules/language/locale/uk/LC_MESSAGES

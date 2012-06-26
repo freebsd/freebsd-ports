@@ -33,6 +33,9 @@ lib/enlightenment/modules/snow/module_icon.png
 %%NLS%%lib/enlightenment/modules/snow/locale/nb/LC_MESSAGES/snow.mo
 %%NLS%%lib/enlightenment/modules/snow/locale/bg/LC_MESSAGES/snow.mo
 %%NLS%%lib/enlightenment/modules/snow/locale/hr/LC_MESSAGES/snow.mo
+%%NLS%%lib/enlightenment/modules/snow/locale/sl/LC_MESSAGES/snow.mo
+%%NLS%%@dirrm lib/enlightenment/modules/snow/locale/sl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/snow/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/snow/locale/hr/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/snow/locale/hr
 %%NLS%%@dirrm lib/enlightenment/modules/snow/locale/bg/LC_MESSAGES

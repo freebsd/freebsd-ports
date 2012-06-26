@@ -3,12 +3,14 @@ bin/enlightenment_imc
 bin/enlightenment_remote
 bin/enlightenment_start
 %%ETCDIR%%/sysactions.conf
+etc/xdg/menus/enlightenment.menu
 include/enlightenment/e.h
 include/enlightenment/e_about.h
 include/enlightenment/e_acpi.h
 include/enlightenment/e_actions.h
 include/enlightenment/e_alert.h
 include/enlightenment/e_atoms.h
+include/enlightenment/e_backlight.h
 include/enlightenment/e_bg.h
 include/enlightenment/e_bindings.h
 include/enlightenment/e_border.h
@@ -25,6 +27,7 @@ include/enlightenment/e_confirm_dialog.h
 include/enlightenment/e_container.h
 include/enlightenment/e_datastore.h
 include/enlightenment/e_desk.h
+include/enlightenment/e_deskenv.h
 include/enlightenment/e_desklock.h
 include/enlightenment/e_dialog.h
 include/enlightenment/e_dnd.h
@@ -33,6 +36,7 @@ include/enlightenment/e_eap_editor.h
 include/enlightenment/e_editable.h
 include/enlightenment/e_entry.h
 include/enlightenment/e_entry_dialog.h
+include/enlightenment/e_env.h
 include/enlightenment/e_error.h
 include/enlightenment/e_exec.h
 include/enlightenment/e_exehist.h
@@ -146,9 +150,13 @@ include/enlightenment/e_widget_toolbar.h
 include/enlightenment/e_widget_toolbook.h
 include/enlightenment/e_win.h
 include/enlightenment/e_xinerama.h
+include/enlightenment/e_xsettings.h
 include/enlightenment/e_zone.h
 include/enlightenment/evry_api.h
 include/enlightenment/evry_types.h
+lib/enlightenment/modules/backlight/e-module-backlight.edj
+lib/enlightenment/modules/backlight/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/backlight/module.desktop
 lib/enlightenment/modules/battery/e-module-battery.edj
 lib/enlightenment/modules/battery/%%E17_ARCH%%/batget
 lib/enlightenment/modules/battery/%%E17_ARCH%%/module.so
@@ -163,52 +171,20 @@ lib/enlightenment/modules/comp/shadow.edj
 lib/enlightenment/modules/conf/e-module-conf.edj
 lib/enlightenment/modules/conf/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/conf/module.desktop
-lib/enlightenment/modules/conf_acpibindings/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/conf_acpibindings/module.desktop
+lib/enlightenment/modules/connman/e-module-connman.edj
+lib/enlightenment/modules/connman/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/connman/module.desktop
 lib/enlightenment/modules/conf_applications/e-module-conf_applications.edj
 lib/enlightenment/modules/conf_applications/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/conf_applications/module.desktop
-lib/enlightenment/modules/conf_borders/e-module-conf_borders.edj
-lib/enlightenment/modules/conf_borders/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/conf_borders/module.desktop
-lib/enlightenment/modules/conf_clientlist/e-module-conf_clientlist.edj
-lib/enlightenment/modules/conf_clientlist/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/conf_clientlist/module.desktop
-lib/enlightenment/modules/conf_colors/e-module-conf_colors.edj
-lib/enlightenment/modules/conf_colors/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/conf_colors/module.desktop
-lib/enlightenment/modules/conf_desk/e-module-conf_desk.edj
-lib/enlightenment/modules/conf_desk/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/conf_desk/module.desktop
-lib/enlightenment/modules/conf_desklock/e-module-conf_desklock.edj
-lib/enlightenment/modules/conf_desklock/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/conf_desklock/module.desktop
-lib/enlightenment/modules/conf_desks/e-module-conf_desks.edj
-lib/enlightenment/modules/conf_desks/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/conf_desks/module.desktop
 lib/enlightenment/modules/conf_dialogs/e-module-conf_dialogs.edj
 lib/enlightenment/modules/conf_dialogs/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/conf_dialogs/module.desktop
-lib/enlightenment/modules/conf_display/e-module-conf_display.edj
 lib/enlightenment/modules/conf_display/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/conf_display/module.desktop
-lib/enlightenment/modules/conf_dpms/e-module-conf_dpms.edj
-lib/enlightenment/modules/conf_dpms/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/conf_dpms/module.desktop
 lib/enlightenment/modules/conf_edgebindings/e-module-conf_edgebindings.edj
 lib/enlightenment/modules/conf_edgebindings/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/conf_edgebindings/module.desktop
-lib/enlightenment/modules/conf_engine/e-module-conf_engine.edj
-lib/enlightenment/modules/conf_engine/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/conf_engine/module.desktop
-lib/enlightenment/modules/conf_fonts/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/conf_fonts/module.desktop
-lib/enlightenment/modules/conf_icon_theme/e-module-conf_icon_theme.edj
-lib/enlightenment/modules/conf_icon_theme/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/conf_icon_theme/module.desktop
-lib/enlightenment/modules/conf_imc/e-module-conf_imc.edj
-lib/enlightenment/modules/conf_imc/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/conf_imc/module.desktop
 lib/enlightenment/modules/conf_interaction/e-module-conf_interaction.edj
 lib/enlightenment/modules/conf_interaction/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/conf_interaction/module.desktop
@@ -220,65 +196,28 @@ lib/enlightenment/modules/conf_keybindings/module.desktop
 lib/enlightenment/modules/conf_menus/e-module-conf_menus.edj
 lib/enlightenment/modules/conf_menus/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/conf_menus/module.desktop
-lib/enlightenment/modules/conf_mime/e-module-conf_mime.edj
-lib/enlightenment/modules/conf_mime/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/conf_mime/module.desktop
-lib/enlightenment/modules/conf_mouse/e-module-conf_mouse.edj
-lib/enlightenment/modules/conf_mouse/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/conf_mouse/module.desktop
-lib/enlightenment/modules/conf_mouse_cursor/e-module-conf_mouse_cursor.edj
-lib/enlightenment/modules/conf_mouse_cursor/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/conf_mouse_cursor/module.desktop
-lib/enlightenment/modules/conf_mousebindings/e-module-conf_mousebindings.edj
-lib/enlightenment/modules/conf_mousebindings/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/conf_mousebindings/module.desktop
 lib/enlightenment/modules/conf_paths/e-module-conf_paths.edj
 lib/enlightenment/modules/conf_paths/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/conf_paths/module.desktop
 lib/enlightenment/modules/conf_performance/e-module-conf_performance.edj
 lib/enlightenment/modules/conf_performance/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/conf_performance/module.desktop
-lib/enlightenment/modules/conf_profiles/e-module-conf_profiles.edj
-lib/enlightenment/modules/conf_profiles/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/conf_profiles/module.desktop
-lib/enlightenment/modules/conf_scale/e-module-conf_scale.edj
-lib/enlightenment/modules/conf_scale/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/conf_scale/module.desktop
-lib/enlightenment/modules/conf_screensaver/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/conf_screensaver/module.desktop
+lib/enlightenment/modules/conf_randr/e-module-conf_randr.edj
+lib/enlightenment/modules/conf_randr/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/conf_randr/module.desktop
 lib/enlightenment/modules/conf_shelves/e-module-conf_shelves.edj
 lib/enlightenment/modules/conf_shelves/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/conf_shelves/module.desktop
-lib/enlightenment/modules/conf_startup/e-module-conf_startup.edj
-lib/enlightenment/modules/conf_startup/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/conf_startup/module.desktop
 lib/enlightenment/modules/conf_theme/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/conf_theme/module.desktop
-lib/enlightenment/modules/conf_transitions/e-module-conf_transitions.edj
-lib/enlightenment/modules/conf_transitions/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/conf_transitions/module.desktop
-lib/enlightenment/modules/conf_wallpaper/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/conf_wallpaper/module.desktop
 lib/enlightenment/modules/conf_wallpaper2/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/conf_wallpaper2/module.desktop
-lib/enlightenment/modules/conf_window_display/e-module-conf_window_display.edj
-lib/enlightenment/modules/conf_window_display/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/conf_window_display/module.desktop
-lib/enlightenment/modules/conf_window_focus/e-module-conf_window_focus.edj
-lib/enlightenment/modules/conf_window_focus/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/conf_window_focus/module.desktop
 lib/enlightenment/modules/conf_window_manipulation/e-module-conf_winmanip.edj
 lib/enlightenment/modules/conf_window_manipulation/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/conf_window_manipulation/module.desktop
 lib/enlightenment/modules/conf_window_remembers/e-module-conf_window_remembers.edj
 lib/enlightenment/modules/conf_window_remembers/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/conf_window_remembers/module.desktop
-lib/enlightenment/modules/conf_winlist/e-module-conf_winlist.edj
-lib/enlightenment/modules/conf_winlist/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/conf_winlist/module.desktop
-lib/enlightenment/modules/connman/e-module-connman.edj
-lib/enlightenment/modules/connman/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/connman/module.desktop
 lib/enlightenment/modules/cpufreq/e-module-cpufreq.edj
 lib/enlightenment/modules/cpufreq/%%E17_ARCH%%/freqset
 lib/enlightenment/modules/cpufreq/%%E17_ARCH%%/module.so
@@ -286,20 +225,8 @@ lib/enlightenment/modules/cpufreq/module.desktop
 lib/enlightenment/modules/dropshadow/e-module-dropshadow.edj
 lib/enlightenment/modules/dropshadow/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/dropshadow/module.desktop
-lib/enlightenment/modules/everything-apps/e-module.edj
-lib/enlightenment/modules/everything-apps/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/everything-apps/module.desktop
-lib/enlightenment/modules/everything-aspell/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/everything-aspell/module.desktop
-lib/enlightenment/modules/everything-calc/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/everything-calc/module.desktop
-lib/enlightenment/modules/everything-files/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/everything-files/module.desktop
-lib/enlightenment/modules/everything-settings/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/everything-settings/module.desktop
-lib/enlightenment/modules/everything-windows/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/everything-windows/module.desktop
 lib/enlightenment/modules/everything/e-module-everything.edj
+lib/enlightenment/modules/everything/e-module-everything-start.edj
 lib/enlightenment/modules/everything/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/everything/module.desktop
 lib/enlightenment/modules/fileman/e-module-fileman.edj
@@ -317,27 +244,6 @@ lib/enlightenment/modules/ibar/module.desktop
 lib/enlightenment/modules/ibox/e-module-ibox.edj
 lib/enlightenment/modules/ibox/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/ibox/module.desktop
-lib/enlightenment/modules/illume/keyboards/Default.kbd
-lib/enlightenment/modules/illume/keyboards/numeric.png
-lib/enlightenment/modules/illume/keyboards/Numbers.kbd
-lib/enlightenment/modules/illume/keyboards/up.png
-lib/enlightenment/modules/illume/keyboards/enter.png
-lib/enlightenment/modules/illume/keyboards/ignore_built_in_keyboards
-lib/enlightenment/modules/illume/keyboards/right.png
-lib/enlightenment/modules/illume/keyboards/Terminal.kbd
-lib/enlightenment/modules/illume/keyboards/qwerty.png
-lib/enlightenment/modules/illume/keyboards/shift.png
-lib/enlightenment/modules/illume/keyboards/tab.png
-lib/enlightenment/modules/illume/keyboards/alpha.png
-lib/enlightenment/modules/illume/keyboards/left.png
-lib/enlightenment/modules/illume/keyboards/down.png
-lib/enlightenment/modules/illume/keyboards/backspace.png
-lib/enlightenment/modules/illume/e-module-illume.edj
-lib/enlightenment/modules/illume/dicts/English_(US).dic
-lib/enlightenment/modules/illume/dicts/English_(US)_Small.dic
-lib/enlightenment/modules/illume/module.desktop
-lib/enlightenment/modules/illume/%%E17_ARCH%%/module.so
-lib/enlightenment/modules/illume/%%E17_ARCH%%/wifiget
 lib/enlightenment/modules/illume-bluetooth/e-module-illume-bluetooth.edj
 lib/enlightenment/modules/illume-bluetooth/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/illume-bluetooth/module.desktop
@@ -384,18 +290,25 @@ lib/enlightenment/modules/illume2/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/illume2/keyboards/ignore_built_in_keyboards
 lib/enlightenment/modules/illume2/module.desktop
 lib/enlightenment/modules/illume2/policies/illume.so
+lib/enlightenment/modules/illume2/policies/tablet.so
 lib/enlightenment/modules/mixer/e-module-mixer.edj
 lib/enlightenment/modules/mixer/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/mixer/module.desktop
 lib/enlightenment/modules/msgbus/e-module-msgbus.edj
 lib/enlightenment/modules/msgbus/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/msgbus/module.desktop
+lib/enlightenment/modules/notification/e-module-notification.edj
+lib/enlightenment/modules/notification/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/notification/module.desktop
 lib/enlightenment/modules/ofono/e-module-ofono.edj
 lib/enlightenment/modules/ofono/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/ofono/module.desktop
 lib/enlightenment/modules/pager/e-module-pager.edj
 lib/enlightenment/modules/pager/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/pager/module.desktop
+lib/enlightenment/modules/shot/e-module-shot.edj
+lib/enlightenment/modules/shot/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/shot/module.desktop
 lib/enlightenment/modules/start/e-module-start.edj
 lib/enlightenment/modules/start/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/start/module.desktop
@@ -405,6 +318,9 @@ lib/enlightenment/modules/syscon/module.desktop
 lib/enlightenment/modules/systray/e-module-systray.edj
 lib/enlightenment/modules/systray/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/systray/module.desktop
+lib/enlightenment/modules/tasks/e-module-tasks.edj
+lib/enlightenment/modules/tasks/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/tasks/module.desktop
 lib/enlightenment/modules/temperature/e-module-temperature.edj
 lib/enlightenment/modules/temperature/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/temperature/%%E17_ARCH%%/tempget
@@ -412,15 +328,38 @@ lib/enlightenment/modules/temperature/module.desktop
 lib/enlightenment/modules/winlist/e-module-winlist.edj
 lib/enlightenment/modules/winlist/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/winlist/module.desktop
+lib/enlightenment/modules/wizard/def-ibar.txt
 lib/enlightenment/modules/wizard/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_000.so
 lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_010.so
 lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_020.so
 lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_030.so
+lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_040.so
+lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_050.so
+lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_060.so
 lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_070.so
 lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_080.so
+lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_090.so
+lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_100.so
+lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_110.so
+lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_120.so
+lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_130.so
+lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_140.so
+lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_150.so
+lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_160.so
 lib/enlightenment/modules/wizard/%%E17_ARCH%%/page_200.so
+lib/enlightenment/modules/wizard/extra_desktops/mplayer.desktop
+lib/enlightenment/modules/wizard/extra_desktops/xterm.desktop
+lib/enlightenment/modules/wizard/desktop/home.desktop
+lib/enlightenment/modules/wizard/desktop/root.desktop
+lib/enlightenment/modules/wizard/desktop/tmp.desktop
+lib/enlightenment/modules/wizard/favorites/.order
+lib/enlightenment/modules/wizard/favorites/desktop.desktop
+lib/enlightenment/modules/wizard/favorites/home.desktop
+lib/enlightenment/modules/wizard/favorites/root.desktop
+lib/enlightenment/modules/wizard/favorites/tmp.desktop
 lib/enlightenment/preload/e_precache.so
+lib/enlightenment/utils/enlightenment_alert
 lib/enlightenment/utils/enlightenment_fm
 lib/enlightenment/utils/enlightenment_fm_op
 lib/enlightenment/utils/enlightenment_init
@@ -435,62 +374,17 @@ libdata/pkgconfig/everything.pc
 %%DATADIR%%/data/config/default/e.cfg
 %%DATADIR%%/data/config/default/icon.png
 %%DATADIR%%/data/config/default/profile.desktop
-%%DATADIR%%/data/config/illume-home/e.cfg
-%%DATADIR%%/data/config/illume-home/icon.png
-%%DATADIR%%/data/config/illume-home/module.battery.cfg
-%%DATADIR%%/data/config/illume-home/module.conf.cfg
-%%DATADIR%%/data/config/illume-home/module.illume-home.cfg
-%%DATADIR%%/data/config/illume-home/module.illume-indicator.cfg
-%%DATADIR%%/data/config/illume-home/module.illume-keyboard.cfg
-%%DATADIR%%/data/config/illume-home/module.illume-softkey.cfg
-%%DATADIR%%/data/config/illume-home/module.illume2.cfg
-%%DATADIR%%/data/config/illume-home/profile.desktop
 %%DATADIR%%/data/config/illume/e.cfg
 %%DATADIR%%/data/config/illume/icon.png
 %%DATADIR%%/data/config/illume/module.battery.cfg
 %%DATADIR%%/data/config/illume/module.conf.cfg
-%%DATADIR%%/data/config/illume/module.dropshadow.cfg
-%%DATADIR%%/data/config/illume/module.illume.cfg
-%%DATADIR%%/data/config/illume/module.mixer.cfg
-%%DATADIR%%/data/config/illume/module.pager.cfg
+%%DATADIR%%/data/config/illume/module.illume-home.cfg
+%%DATADIR%%/data/config/illume/module.illume-keyboard.cfg
+%%DATADIR%%/data/config/illume/module.illume-indicator.cfg
+%%DATADIR%%/data/config/illume/module.illume-softkey.cfg
+%%DATADIR%%/data/config/illume/module.illume2.cfg
 %%DATADIR%%/data/config/illume/profile.desktop
-%%DATADIR%%/data/config/minimalist/e.cfg
-%%DATADIR%%/data/config/minimalist/icon.png
-%%DATADIR%%/data/config/minimalist/module.battery.cfg
-%%DATADIR%%/data/config/minimalist/module.conf.cfg
-%%DATADIR%%/data/config/minimalist/module.cpufreq.cfg
-%%DATADIR%%/data/config/minimalist/module.dropshadow.cfg
-%%DATADIR%%/data/config/minimalist/module.fileman.cfg
-%%DATADIR%%/data/config/minimalist/module.ibar.cfg
-%%DATADIR%%/data/config/minimalist/module.ibox.cfg
-%%DATADIR%%/data/config/minimalist/module.pager.cfg
-%%DATADIR%%/data/config/minimalist/module.temperature.cfg
-%%DATADIR%%/data/config/minimalist/profile.desktop
-%%DATADIR%%/data/config/netbook/e.cfg
-%%DATADIR%%/data/config/netbook/icon.png
-%%DATADIR%%/data/config/netbook/module.battery.cfg
-%%DATADIR%%/data/config/netbook/module.conf.cfg
-%%DATADIR%%/data/config/netbook/module.cpufreq.cfg
-%%DATADIR%%/data/config/netbook/module.dropshadow.cfg
-%%DATADIR%%/data/config/netbook/module.fileman.cfg
-%%DATADIR%%/data/config/netbook/module.ibar.cfg
-%%DATADIR%%/data/config/netbook/module.ibox.cfg
-%%DATADIR%%/data/config/netbook/module.pager.cfg
-%%DATADIR%%/data/config/netbook/module.temperature.cfg
-%%DATADIR%%/data/config/netbook/profile.desktop
 %%DATADIR%%/data/config/profile.cfg
-%%DATADIR%%/data/config/scaleable/e.cfg
-%%DATADIR%%/data/config/scaleable/icon.png
-%%DATADIR%%/data/config/scaleable/module.battery.cfg
-%%DATADIR%%/data/config/scaleable/module.conf.cfg
-%%DATADIR%%/data/config/scaleable/module.cpufreq.cfg
-%%DATADIR%%/data/config/scaleable/module.dropshadow.cfg
-%%DATADIR%%/data/config/scaleable/module.fileman.cfg
-%%DATADIR%%/data/config/scaleable/module.ibar.cfg
-%%DATADIR%%/data/config/scaleable/module.ibox.cfg
-%%DATADIR%%/data/config/scaleable/module.pager.cfg
-%%DATADIR%%/data/config/scaleable/module.temperature.cfg
-%%DATADIR%%/data/config/scaleable/profile.desktop
 %%DATADIR%%/data/config/standard/e.cfg
 %%DATADIR%%/data/config/standard/icon.png
 %%DATADIR%%/data/config/standard/module.battery.cfg
@@ -536,20 +430,18 @@ libdata/pkgconfig/everything.pc
 %%DATADIR%%/data/images/lang-sl_SI.png
 %%DATADIR%%/data/images/lang-sv_SE.png
 %%DATADIR%%/data/images/lang-zh_CN.png
+%%DATADIR%%/data/images/lang-zh_HK.png
 %%DATADIR%%/data/images/lang-zh_TW.png
+%%DATADIR%%/data/images/lang-system.png
 %%DATADIR%%/data/images/test.edj
 %%DATADIR%%/data/images/test.jpg
 %%DATADIR%%/data/images/test.png
 %%DATADIR%%/data/images/test.svg
+%%DATADIR%%/data/input_methods/ibus.imc
 %%DATADIR%%/data/input_methods/iiimf.imc
 %%DATADIR%%/data/input_methods/scim.imc
 %%DATADIR%%/data/input_methods/uim.imc
-%%DATADIR%%/data/other/desktop_files.tar.gz
-%%DATADIR%%/data/other/desktop_order.tar.gz
-%%DATADIR%%/data/other/efm_favorites.tar.gz
-%%DATADIR%%/data/other/icon_example.tar.gz
 %%DATADIR%%/data/themes/default.edj
-%%DATADIR%%/data/themes/illume.edj
 %%DATADIR%%/doc/FDO.txt
 %%DATADIR%%/doc/cache.txt
 %%DATADIR%%/doc/documentation.html
@@ -595,26 +487,89 @@ share/xsessions/enlightenment.desktop
 %%NLS%%share/locale/uk/LC_MESSAGES/enlightenment.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/enlightenment.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/enlightenment.mo
+%%NLS%%@dirrmtry share/locale/ar/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ar
+%%NLS%%@dirrmtry share/locale/bg/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/bg
+%%NLS%%@dirrmtry share/locale/ca/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ca
+%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cs
+%%NLS%%@dirrmtry share/locale/da/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/da
+%%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de
+%%NLS%%@dirrmtry share/locale/el/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/el
+%%NLS%%@dirrmtry share/locale/eo/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/eo
+%%NLS%%@dirrmtry share/locale/es/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/es
+%%NLS%%@dirrmtry share/locale/et/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/et
+%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fi
 %%NLS%%@dirrmtry share/locale/fo/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/fo
+%%NLS%%@dirrmtry share/locale/fr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fr
 %%NLS%%@dirrmtry share/locale/fr_CH/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/fr_CH
+%%NLS%%@dirrmtry share/locale/he/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/he
+%%NLS%%@dirrmtry share/locale/hr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/hr
+%%NLS%%@dirrmtry share/locale/hu/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/hu
+%%NLS%%@dirrmtry share/locale/it/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/it
+%%NLS%%@dirrmtry share/locale/ja/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ja
 %%NLS%%@dirrmtry share/locale/km/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/km
+%%NLS%%@dirrmtry share/locale/ko/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ko
 %%NLS%%@dirrmtry share/locale/ku/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ku
+%%NLS%%@dirrmtry share/locale/lt/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/lt
+%%NLS%%@dirrmtry share/locale/ms/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ms
+%%NLS%%@dirrmtry share/locale/nb/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nb
+%%NLS%%@dirrmtry share/locale/nl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nl
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl
+%%NLS%%@dirrmtry share/locale/pt/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pt
+%%NLS%%@dirrmtry share/locale/pt_BR/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pt_BR
+%%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ro
+%%NLS%%@dirrmtry share/locale/ru/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ru
+%%NLS%%@dirrmtry share/locale/sk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sk
+%%NLS%%@dirrmtry share/locale/sl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sl
+%%NLS%%@dirrmtry share/locale/sv/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sv
+%%NLS%%@dirrmtry share/locale/tr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/tr
+%%NLS%%@dirrmtry share/locale/uk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/uk
+%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_CN
+%%NLS%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_TW
 @dirrmtry share/xsessions
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%/data/themes
-@dirrm %%DATADIR%%/data/other
 @dirrm %%DATADIR%%/data/input_methods
 @dirrm %%DATADIR%%/data/images
 @dirrm %%DATADIR%%/data/icons
 @dirrm %%DATADIR%%/data/config/standard
-@dirrm %%DATADIR%%/data/config/scaleable
-@dirrm %%DATADIR%%/data/config/netbook
-@dirrm %%DATADIR%%/data/config/minimalist
-@dirrm %%DATADIR%%/data/config/illume-home
 @dirrm %%DATADIR%%/data/config/illume
 @dirrm %%DATADIR%%/data/config/default
 @dirrm %%DATADIR%%/data/config
@@ -623,22 +578,31 @@ share/xsessions/enlightenment.desktop
 @dirrm %%DATADIR%%
 @dirrm lib/enlightenment/utils
 @dirrm lib/enlightenment/preload
+@dirrm lib/enlightenment/modules/wizard/favorites
+@dirrm lib/enlightenment/modules/wizard/desktop
+@dirrm lib/enlightenment/modules/wizard/extra_desktops
 @dirrm lib/enlightenment/modules/wizard/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/wizard
 @dirrm lib/enlightenment/modules/winlist/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/winlist
 @dirrm lib/enlightenment/modules/temperature/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/temperature
+@dirrm lib/enlightenment/modules/tasks/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/tasks
 @dirrm lib/enlightenment/modules/systray/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/systray
 @dirrm lib/enlightenment/modules/syscon/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/syscon
 @dirrm lib/enlightenment/modules/start/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/start
+@dirrm lib/enlightenment/modules/shot/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/shot
 @dirrm lib/enlightenment/modules/pager/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/pager
 @dirrm lib/enlightenment/modules/ofono/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/ofono
+@dirrm lib/enlightenment/modules/notification/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/notification
 @dirrm lib/enlightenment/modules/msgbus/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/msgbus
 @dirrm lib/enlightenment/modules/mixer/%%E17_ARCH%%
@@ -665,10 +629,6 @@ share/xsessions/enlightenment.desktop
 @dirrm lib/enlightenment/modules/illume-home-toggle
 @dirrm lib/enlightenment/modules/illume-bluetooth/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/illume-bluetooth
-@dirrm lib/enlightenment/modules/illume/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/illume/dicts
-@dirrm lib/enlightenment/modules/illume/keyboards
-@dirrm lib/enlightenment/modules/illume
 @dirrm lib/enlightenment/modules/ibox/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/ibox
 @dirrm lib/enlightenment/modules/ibar/%%E17_ARCH%%
@@ -681,64 +641,26 @@ share/xsessions/enlightenment.desktop
 @dirrm lib/enlightenment/modules/fileman
 @dirrm lib/enlightenment/modules/everything/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/everything
-@dirrm lib/enlightenment/modules/everything-windows/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/everything-windows
-@dirrm lib/enlightenment/modules/everything-settings/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/everything-settings
-@dirrm lib/enlightenment/modules/everything-files/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/everything-files
-@dirrm lib/enlightenment/modules/everything-calc/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/everything-calc
-@dirrm lib/enlightenment/modules/everything-aspell/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/everything-aspell
-@dirrm lib/enlightenment/modules/everything-apps/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/everything-apps
 @dirrm lib/enlightenment/modules/dropshadow/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/dropshadow
 @dirrm lib/enlightenment/modules/cpufreq/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/cpufreq
-@dirrm lib/enlightenment/modules/connman/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/connman
-@dirrm lib/enlightenment/modules/conf_winlist/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/conf_winlist
 @dirrm lib/enlightenment/modules/conf_window_remembers/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/conf_window_remembers
 @dirrm lib/enlightenment/modules/conf_window_manipulation/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/conf_window_manipulation
-@dirrm lib/enlightenment/modules/conf_window_focus/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/conf_window_focus
-@dirrm lib/enlightenment/modules/conf_window_display/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/conf_window_display
 @dirrm lib/enlightenment/modules/conf_wallpaper2/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/conf_wallpaper2
-@dirrm lib/enlightenment/modules/conf_wallpaper/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/conf_wallpaper
-@dirrm lib/enlightenment/modules/conf_transitions/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/conf_transitions
 @dirrm lib/enlightenment/modules/conf_theme/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/conf_theme
-@dirrm lib/enlightenment/modules/conf_startup/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/conf_startup
 @dirrm lib/enlightenment/modules/conf_shelves/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/conf_shelves
-@dirrm lib/enlightenment/modules/conf_screensaver/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/conf_screensaver
-@dirrm lib/enlightenment/modules/conf_scale/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/conf_scale
-@dirrm lib/enlightenment/modules/conf_profiles/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/conf_profiles
+@dirrm lib/enlightenment/modules/conf_randr/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/conf_randr
 @dirrm lib/enlightenment/modules/conf_performance/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/conf_performance
 @dirrm lib/enlightenment/modules/conf_paths/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/conf_paths
-@dirrm lib/enlightenment/modules/conf_mousebindings/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/conf_mousebindings
-@dirrm lib/enlightenment/modules/conf_mouse_cursor/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/conf_mouse_cursor
-@dirrm lib/enlightenment/modules/conf_mouse/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/conf_mouse
-@dirrm lib/enlightenment/modules/conf_mime/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/conf_mime
 @dirrm lib/enlightenment/modules/conf_menus/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/conf_menus
 @dirrm lib/enlightenment/modules/conf_keybindings/%%E17_ARCH%%
@@ -747,47 +669,29 @@ share/xsessions/enlightenment.desktop
 @dirrm lib/enlightenment/modules/conf_intl
 @dirrm lib/enlightenment/modules/conf_interaction/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/conf_interaction
-@dirrm lib/enlightenment/modules/conf_imc/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/conf_imc
-@dirrm lib/enlightenment/modules/conf_icon_theme/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/conf_icon_theme
-@dirrm lib/enlightenment/modules/conf_fonts/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/conf_fonts
-@dirrm lib/enlightenment/modules/conf_engine/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/conf_engine
 @dirrm lib/enlightenment/modules/conf_edgebindings/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/conf_edgebindings
-@dirrm lib/enlightenment/modules/conf_dpms/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/conf_dpms
 @dirrm lib/enlightenment/modules/conf_display/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/conf_display
 @dirrm lib/enlightenment/modules/conf_dialogs/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/conf_dialogs
-@dirrm lib/enlightenment/modules/conf_desks/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/conf_desks
-@dirrm lib/enlightenment/modules/conf_desklock/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/conf_desklock
-@dirrm lib/enlightenment/modules/conf_desk/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/conf_desk
-@dirrm lib/enlightenment/modules/conf_colors/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/conf_colors
-@dirrm lib/enlightenment/modules/conf_clientlist/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/conf_clientlist
-@dirrm lib/enlightenment/modules/conf_borders/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/conf_borders
 @dirrm lib/enlightenment/modules/conf_applications/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/conf_applications
-@dirrm lib/enlightenment/modules/conf_acpibindings/%%E17_ARCH%%
-@dirrm lib/enlightenment/modules/conf_acpibindings
 @dirrm lib/enlightenment/modules/conf/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/conf
+@dirrm lib/enlightenment/modules/connman/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/connman
 @dirrm lib/enlightenment/modules/comp/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/comp
 @dirrm lib/enlightenment/modules/clock/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/clock
 @dirrm lib/enlightenment/modules/battery/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/battery
+@dirrm lib/enlightenment/modules/backlight/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/backlight
 @dirrm lib/enlightenment/modules
 @dirrm lib/enlightenment
 @dirrm include/enlightenment
+@dirrmtry etc/xdg/menus
+@dirrmtry etc/xdg
 @dirrm %%ETCDIR%%

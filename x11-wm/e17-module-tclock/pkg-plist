@@ -29,6 +29,9 @@ lib/enlightenment/modules/tclock/e-module-tclock.edj
 %%NLS%%lib/enlightenment/modules/tclock/locale/fi/LC_MESSAGES/tclock.mo
 %%NLS%%lib/enlightenment/modules/tclock/locale/pt/LC_MESSAGES/tclock.mo
 %%NLS%%lib/enlightenment/modules/tclock/locale/pt_BR/LC_MESSAGES/tclock.mo
+%%NLS%%lib/enlightenment/modules/tclock/locale/sl/LC_MESSAGES/tclock.mo
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/sl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/pt_BR/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/pt_BR
 %%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/pt/LC_MESSAGES

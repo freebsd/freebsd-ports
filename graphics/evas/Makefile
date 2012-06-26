@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	evas
-DISTVERSION=	1.0.1
-PORTREVISION=	1
+DISTVERSION=	1.1.0
 PORTEPOCH=	2
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	# none
@@ -20,8 +19,8 @@ COMMENT=	A hardware accelerated canvas API (meta-port)
 NO_BUILD=	yes
 USE_EFL=	evas
 
-EVAS_ENGINES=	buffer opengl sdl x11 xrender
-EVAS_LOADERS=	bmp eet gif jpeg png pmaps svg tga tiff xpm
+EVAS_ENGINES=	buffer opengl sdl x11
+EVAS_LOADERS=	bmp eet gif ico jpeg png pmaps psd svg tga tiff wbmp xpm
 
 .for NODE in ${EVAS_ENGINES}
 OPTIONS+=	${NODE:U} "Install ${NODE} evas engine" on

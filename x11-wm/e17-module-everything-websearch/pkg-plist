@@ -7,6 +7,15 @@ lib/enlightenment/modules/evry-websearch/e-module.edj
 %%NLS%%lib/enlightenment/modules/evry-websearch/locale/cs/LC_MESSAGES/evry-websearch.mo
 %%NLS%%lib/enlightenment/modules/evry-websearch/locale/de/LC_MESSAGES/evry-websearch.mo
 %%NLS%%lib/enlightenment/modules/evry-websearch/locale/pt/LC_MESSAGES/evry-websearch.mo
+%%NLS%%lib/enlightenment/modules/evry-websearch/locale/zh_CN/LC_MESSAGES/evry-websearch.mo
+%%NLS%%lib/enlightenment/modules/evry-websearch/locale/nl/LC_MESSAGES/evry-websearch.mo
+%%NLS%%lib/enlightenment/modules/evry-websearch/locale/sl/LC_MESSAGES/evry-websearch.mo
+%%NLS%%@dirrm lib/enlightenment/modules/evry-websearch/locale/sl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/evry-websearch/locale/sl
+%%NLS%%@dirrm lib/enlightenment/modules/evry-websearch/locale/nl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/evry-websearch/locale/nl
+%%NLS%%@dirrm lib/enlightenment/modules/evry-websearch/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/evry-websearch/locale/zh_CN
 %%NLS%%@dirrm lib/enlightenment/modules/evry-websearch/locale/pt/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/evry-websearch/locale/pt
 %%NLS%%@dirrm lib/enlightenment/modules/evry-websearch/locale/de/LC_MESSAGES

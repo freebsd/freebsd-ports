@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	ethumb
-PORTVERSION=	0.1.1.56361
-PORTREVISION=	2
+PORTVERSION=	0.1.1.65643
 CATEGORIES=	graphics enlightenment
-MASTER_SITES=	http://files.roorback.net/e17/2011-01-29/extra/
+MASTER_SITES=	http://download.enlightenment.org/snapshots/2011-11-28/ \
+		http://files.roorback.net/e17/base/
 
 MAINTAINER=	magik@roorback.net
 COMMENT=	Thumbnail generator library
 
+LICENSE=	LGPL21
+
 LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif
 
-LICENSE=	LGPL21
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

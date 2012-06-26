@@ -1,0 +1,5 @@
+Eio is intended to provide non blocking IO by using thread for all
+operation that may block. It depends only on eina and ecore right now. It
+should integrate all the features/functions of Ecore_File that could block.
+
+WWW: http://docs.enlightenment.org/auto/eio/

@@ -1,0 +1,11 @@
+--- src/bin/e_fm/Makefile.in.orig	2011-11-28 12:06:04.000000000 +0100
++++ src/bin/e_fm/Makefile.in	2012-04-01 23:36:50.502616507 +0200
+@@ -421,7 +421,7 @@
+ ../e_user.c \
+ ../e_sha1.c
+ 
+-enlightenment_fm_LDADD = @E_FM_LIBS@
++enlightenment_fm_LDADD = @E_FM_LIBS@ -lehal -leukit
+ all: all-am
+ 
+ .SUFFIXES:

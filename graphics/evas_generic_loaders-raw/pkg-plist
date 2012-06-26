@@ -1,0 +1,22 @@
+lib/evas/utils/evas_image_loader.raw
+lib/evas/utils/evas_image_loader.arw
+lib/evas/utils/evas_image_loader.cr2
+lib/evas/utils/evas_image_loader.crw
+lib/evas/utils/evas_image_loader.dcr
+lib/evas/utils/evas_image_loader.dng
+lib/evas/utils/evas_image_loader.k25
+lib/evas/utils/evas_image_loader.kdc
+lib/evas/utils/evas_image_loader.erf
+lib/evas/utils/evas_image_loader.mrw
+lib/evas/utils/evas_image_loader.nef
+lib/evas/utils/evas_image_loader.nrf
+lib/evas/utils/evas_image_loader.nrw
+lib/evas/utils/evas_image_loader.orf
+lib/evas/utils/evas_image_loader.rw2
+lib/evas/utils/evas_image_loader.pef
+lib/evas/utils/evas_image_loader.raf
+lib/evas/utils/evas_image_loader.sr2
+lib/evas/utils/evas_image_loader.srf
+lib/evas/utils/evas_image_loader.x3f
+@dirrmtry lib/evas/utils
+@dirrmtry lib/evas

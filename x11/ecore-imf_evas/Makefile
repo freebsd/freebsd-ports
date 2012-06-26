@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	imf_evas
-DISTVERSION=	1.0.1
+DISTVERSION=	1.1.0
 CATEGORIES=	x11 enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
-		http://files.roorback.net/e17/2011-05-25/base/
+		http://files.roorback.net/e17/2011-12-02/base/
 PKGNAMEPREFIX=	ecore-
 DISTNAME=	ecore-${DISTVERSION}
 
@@ -17,6 +17,7 @@ MAINTAINER=	magik@roorback.net
 COMMENT=	Enlightenment core abstraction library (IMF-Evas module)
 
 LICENSE=	BSD
+
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

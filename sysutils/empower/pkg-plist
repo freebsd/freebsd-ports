@@ -17,11 +17,13 @@ bin/empower-askpass
 %%NLS%%share/locale/it/LC_MESSAGES/empower.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/empower.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/empower.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/empower.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/empower.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/empower.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/empower.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/empower.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/empower.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/empower.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/empower.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/empower.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/empower.mo
@@ -36,14 +38,22 @@ bin/empower-askpass
 %%NLS%%@dirrmtry share/locale/tr
 %%NLS%%@dirrmtry share/locale/sv/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sv
+%%NLS%%@dirrmtry share/locale/sl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sl
 %%NLS%%@dirrmtry share/locale/sk/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sk
 %%NLS%%@dirrmtry share/locale/ru/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ru
 %%NLS%%@dirrmtry share/locale/pt_BR/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/pt_BR
+%%NLS%%@dirrmtry share/locale/pt/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pt
 %%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/pl
+%%NLS%%@dirrmtry share/locale/nl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nl
+%%NLS%%@dirrmtry share/locale/lt/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/lt
 %%NLS%%@dirrmtry share/locale/ja/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ja
 %%NLS%%@dirrmtry share/locale/it/LC_MESSAGES
@@ -70,3 +80,5 @@ bin/empower-askpass
 %%NLS%%@dirrmtry share/locale/cs
 %%NLS%%@dirrmtry share/locale/bg/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/bg
+%%NLS%%@dirrmtry share/locale/ar/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ar

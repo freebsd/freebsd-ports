@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	enlightenment
-PORTVERSION=	0.16.999.55225
-PORTREVISION=	1
+PORTVERSION=	0.16.999.65643
 PORTEPOCH=	2
 CATEGORIES=	x11-wm enlightenment
-MASTER_SITES=	http://download.enlightenment.org/snapshots/2010-12-03/ \
-		http://files.roorback.net/e17/2010-12-03/base/
+MASTER_SITES=	http://download.enlightenment.org/snapshots/2011-11-28/ \
+		http://files.roorback.net/e17/base/
 
 MAINTAINER=	magik@roorback.net
 COMMENT=	A very artistic X window manager
 
+LICENSE=	BSD
+
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
-LICENSE=	BSD
-DIST_SUBDIR=    e17
+DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_EFL=	eina eet evas ecore edbus efreet edje libtool_hack librt_hack
@@ -59,10 +59,4 @@ post-install:
 	@${ECHO_MSG} 'set suid bit if do not trust all users of this machine.'
 	@${ECHO_MSG} '********************************************************'
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64" && ${OSVERSION} > 900000
-BROKEN=		Does not build on sparc64-9
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

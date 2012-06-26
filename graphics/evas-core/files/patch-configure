@@ -1,11 +1,11 @@
---- configure.orig	2011-05-25 17:39:00.945937598 +0200
-+++ configure	2011-05-25 17:42:12.592296998 +0200
-@@ -11871,7 +11871,7 @@
+--- configure.orig	2011-12-02 18:39:03.319551596 +0100
++++ configure	2011-12-02 18:43:43.426551716 +0100
+@@ -12097,7 +12097,7 @@
  
  
  case "$host_os" in
--   mingw32ce* | cegcc*)
-+   mingw32ce* | cegcc* | freebsd*)
+-   mingw32ce*)
++   mingw32ce* | freebsd*)
        MODULE_ARCH="$host_os-$host_cpu"
        ;;
     *)

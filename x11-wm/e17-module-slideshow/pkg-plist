@@ -28,6 +28,9 @@ lib/enlightenment/modules/slideshow/slideshow.edj
 %%NLS%%lib/enlightenment/modules/slideshow/locale/sk/LC_MESSAGES/slideshow.mo
 %%NLS%%lib/enlightenment/modules/slideshow/locale/eo/LC_MESSAGES/slideshow.mo
 %%NLS%%lib/enlightenment/modules/slideshow/locale/it/LC_MESSAGES/slideshow.mo
+%%NLS%%lib/enlightenment/modules/slideshow/locale/sl/LC_MESSAGES/slideshow.mo
+%%NLS%%@dirrm lib/enlightenment/modules/slideshow/locale/sl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/slideshow/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/slideshow/locale/it/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/slideshow/locale/it
 %%NLS%%@dirrm lib/enlightenment/modules/slideshow/locale/eo/LC_MESSAGES

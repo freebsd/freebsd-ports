@@ -30,6 +30,15 @@ lib/enlightenment/modules/drawer/module.desktop
 %%NLS%%lib/enlightenment/modules/drawer/locale/es/LC_MESSAGES/drawer.mo
 %%NLS%%lib/enlightenment/modules/drawer/locale/hr/LC_MESSAGES/drawer.mo
 %%NLS%%lib/enlightenment/modules/drawer/locale/de/LC_MESSAGES/drawer.mo
+%%NLS%%lib/enlightenment/modules/drawer/locale/ar/LC_MESSAGES/drawer.mo
+%%NLS%%lib/enlightenment/modules/drawer/locale/sl/LC_MESSAGES/drawer.mo
+%%NLS%%lib/enlightenment/modules/drawer/locale/nl/LC_MESSAGES/drawer.mo
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/nl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/nl
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/sl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/sl
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/ar/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/ar
 %%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/de/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/de
 %%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/hr/LC_MESSAGES

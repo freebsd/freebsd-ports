@@ -11,6 +11,7 @@
     SUBDIR += dbench
     SUBDIR += dbs
     SUBDIR += dkftpbench
+    SUBDIR += expedite
     SUBDIR += fhourstones
     SUBDIR += filebench
     SUBDIR += flops

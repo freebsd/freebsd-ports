@@ -7,7 +7,6 @@
 
 PORTNAME=	notification
 PORTVERSION=	20110129
-PORTREVISION=	1
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	http://files.roorback.net/e17/2011-01-29/modules/
 PKGNAMEPREFIX=	e17-module-
@@ -17,6 +16,10 @@ COMMENT=	An e17 notification daemon module
 
 BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
 RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
+
+BROKEN=		does not build with x11-wm/enlightenment 0.16.999.65643 or newer
+DEPRECATED=	Merged into x11-wm/enlightenment
+EXPIRATION_DATE=	2012-07-31
 
 DIST_SUBDIR=	e17
 GNU_CONFIGURE=	yes

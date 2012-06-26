@@ -17,6 +17,15 @@ lib/enlightenment/modules/iiirk/module.desktop
 %%NLS%%lib/enlightenment/modules/iiirk/locale/pt/LC_MESSAGES/iiirk.mo
 %%NLS%%lib/enlightenment/modules/iiirk/locale/uk/LC_MESSAGES/iiirk.mo
 %%NLS%%lib/enlightenment/modules/iiirk/locale/zh_CN/LC_MESSAGES/iiirk.mo
+%%NLS%%lib/enlightenment/modules/iiirk/locale/de/LC_MESSAGES/iiirk.mo
+%%NLS%%lib/enlightenment/modules/iiirk/locale/sl/LC_MESSAGES/iiirk.mo
+%%NLS%%lib/enlightenment/modules/iiirk/locale/ar/LC_MESSAGES/iiirk.mo
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/ar/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/ar
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/sl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/sl
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/de/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/de
 %%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/zh_CN/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/zh_CN
 %%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/uk/LC_MESSAGES

@@ -1,5 +1,5 @@
 include/ecore-1/Ecore_File.h
 lib/libecore_file.so
-lib/libecore_file.so.1
+lib/libecore_file.so.2
 libdata/pkgconfig/ecore-file.pc
 @dirrmtry include/ecore-1

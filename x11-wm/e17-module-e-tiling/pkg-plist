@@ -1,0 +1,17 @@
+lib/enlightenment/modules/e-tiling/module.desktop
+lib/enlightenment/modules/e-tiling/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/e-tiling/e-module-e-tiling.edj
+%%NLS%%lib/enlightenment/modules/e-tiling/locale/fr/LC_MESSAGES/e-tiling.mo
+%%NLS%%lib/enlightenment/modules/e-tiling/locale/it/LC_MESSAGES/e-tiling.mo
+%%NLS%%lib/enlightenment/modules/e-tiling/locale/pt/LC_MESSAGES/e-tiling.mo
+%%NLS%%@dirrm lib/enlightenment/modules/e-tiling/locale/pt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/e-tiling/locale/pt
+%%NLS%%@dirrm lib/enlightenment/modules/e-tiling/locale/it/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/e-tiling/locale/it
+%%NLS%%@dirrm lib/enlightenment/modules/e-tiling/locale/fr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/e-tiling/locale/fr
+%%NLS%%@dirrm lib/enlightenment/modules/e-tiling/locale
+@dirrm lib/enlightenment/modules/e-tiling/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/e-tiling
+@dirrmtry lib/enlightenment/modules
+@dirrmtry lib/enlightenment

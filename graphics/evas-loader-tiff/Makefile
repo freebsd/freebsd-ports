@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	loader-tiff
-DISTVERSION=	1.0.1
+DISTVERSION=	1.1.0
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
-		http://files.roorback.net/e17/2011-05-25/base/
+		http://files.roorback.net/e17/2011-12-02/base/
 PKGNAMEPREFIX=	evas-
 DISTNAME=	evas-${DISTVERSION}
 
 MAINTAINER=	magik@roorback.net
 COMMENT=	A hardware accelerated canvas API (TIFF loader)
 
+LICENSE=	BSD
+
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		freetype.9:${PORTSDIR}/print/freetype2
 
-LICENSE=	BSD
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

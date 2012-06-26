@@ -1,0 +1,6 @@
+lib/evas/modules/loaders/wbmp/%%E17_ARCH%%/module.so
+@dirrm lib/evas/modules/loaders/wbmp/%%E17_ARCH%%
+@dirrm lib/evas/modules/loaders/wbmp
+@dirrmtry lib/evas/modules/loaders
+@dirrmtry lib/evas/modules
+@dirrmtry lib/evas
