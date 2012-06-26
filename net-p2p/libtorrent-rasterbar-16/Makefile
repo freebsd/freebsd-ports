@@ -54,8 +54,8 @@ CONFIGURE_ARGS+=	--disable-python-binding
 post-patch: slave-post-patch
 .else
 post-patch:
-	${CP} ${WRKSRC}/Jamfile ${WRKSRC}/Jamfile.presed
-	${SED} -e 's#<include>/usr/local/include#<include>${LOCALBASE}/include#' \
+	@${CP} ${WRKSRC}/Jamfile ${WRKSRC}/Jamfile.presed
+	@${SED} -e 's#<include>/usr/local/include#<include>${LOCALBASE}/include#' \
 		${WRKSRC}/Jamfile.presed > ${WRKSRC}/Jamfile
 .endif
 
