@@ -20,7 +20,7 @@ COMMENT=		NBC is a programming language for the LEGO MINDSTORMS NXT product
 MAKE_JOBS_UNSAFE=	yes
 MAKEFILE=		nbcunix.mak
 
-OPTIONS_DEFINE=	ROBOCTL
+OPTIONS_DEFINE=	DOCS ROBOCTL
 
 ROBOCTL_DESC=	Include roboctl to communicate with the NXT
 
