@@ -21,6 +21,8 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/ocamlgraph/graph.a:${PORTSDIR}/math/ocaml-ocamlgraph
 RUN_DEPENDS=	${LOCALBASE}/lib/ocaml/ocamlgraph/graph.a:${PORTSDIR}/math/ocaml-ocamlgraph
 
+BROKEN=		does not build
+
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	FRAMAC_LIBDIR="${PREFIX}/lib/frama-c"
 MAN1=		frama-c.1 frama-c-gui.1
