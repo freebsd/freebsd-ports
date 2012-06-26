@@ -4,6 +4,8 @@
 %%SITE_PERL%%/Net/SIP/Authorize.pod
 %%SITE_PERL%%/Net/SIP/Blocker.pm
 %%SITE_PERL%%/Net/SIP/Blocker.pod
+%%SITE_PERL%%/Net/SIP/DTMF.pm
+%%SITE_PERL%%/Net/SIP/DTMF.pod
 %%SITE_PERL%%/Net/SIP/Debug.pm
 %%SITE_PERL%%/Net/SIP/Debug.pod
 %%SITE_PERL%%/Net/SIP/Dispatcher.pm
