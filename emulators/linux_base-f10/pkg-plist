@@ -607,12 +607,16 @@ usr/lib/krb5/plugins/kdb/db2.so
 usr/lib/libdb-4.7.so
 usr/lib/libdes425.so.3
 usr/lib/libdes425.so.3.0
+usr/lib/libfam.so.0
+usr/lib/libfam.so.0.0.0
 usr/lib/libform.so.5
 usr/lib/libform.so.5.6
 usr/lib/libformw.so.5
 usr/lib/libformw.so.5.6
 usr/lib/libfreetype.so.6
 usr/lib/libfreetype.so.6.3.18
+usr/lib/libgamin-1.so.0
+usr/lib/libgamin-1.so.0.1.9
 usr/lib/libgdbm.so.2
 usr/lib/libgdbm.so.2.0.0
 usr/lib/libglib-1.2.so.0
@@ -664,6 +668,7 @@ usr/lib/libstdc++.so.6.0.10
 usr/lib/libtic.so.5
 usr/lib/libtic.so.5.6
 usr/lib/locale/locale-archive.tmpl
+usr/libexec/gam_server
 usr/libexec/getconf/POSIX_V6_ILP32_OFF32
 usr/libexec/getconf/POSIX_V6_ILP32_OFFBIG
 usr/libexec/pt_chown
@@ -880,6 +885,32 @@ usr/share/doc/elfutils-0.142/TODO
 usr/share/doc/fedora-release-10/GPL
 usr/share/doc/freetype-2.3.7/ChangeLog
 usr/share/doc/freetype-2.3.7/README
+usr/share/doc/gamin-0.1.9/AUTHORS
+usr/share/doc/gamin-0.1.9/ChangeLog
+usr/share/doc/gamin-0.1.9/Copyright
+usr/share/doc/gamin-0.1.9/FAQ.html
+usr/share/doc/gamin-0.1.9/NEWS
+usr/share/doc/gamin-0.1.9/README
+usr/share/doc/gamin-0.1.9/TODO
+usr/share/doc/gamin-0.1.9/callbacks.gif
+usr/share/doc/gamin-0.1.9/client_server.gif
+usr/share/doc/gamin-0.1.9/config.html
+usr/share/doc/gamin-0.1.9/contacts.html
+usr/share/doc/gamin-0.1.9/debug.html
+usr/share/doc/gamin-0.1.9/debugging.txt
+usr/share/doc/gamin-0.1.9/devel.html
+usr/share/doc/gamin-0.1.9/differences.html
+usr/share/doc/gamin-0.1.9/downloads.html
+usr/share/doc/gamin-0.1.9/gamin.html
+usr/share/doc/gamin-0.1.9/index.html
+usr/share/doc/gamin-0.1.9/internals.html
+usr/share/doc/gamin-0.1.9/news.html
+usr/share/doc/gamin-0.1.9/overview.html
+usr/share/doc/gamin-0.1.9/python.html
+usr/share/doc/gamin-0.1.9/security.html
+usr/share/doc/gamin-0.1.9/server_structs.gif
+usr/share/doc/gamin-0.1.9/socket.txt
+usr/share/doc/gamin-0.1.9/using.html
 usr/share/doc/gdbm-1.8.0/COPYING
 usr/share/doc/gdbm-1.8.0/NEWS
 usr/share/doc/gdbm-1.8.0/README
@@ -3770,6 +3801,7 @@ var/cache/ldconfig/aux-cache
 @dirrm usr/share/doc/glibc-2.9
 @dirrm usr/share/doc/glib2-2.18.4
 @dirrm usr/share/doc/glib-1.2.10
+@dirrm usr/share/doc/gamin-0.1.9
 @dirrm usr/share/doc/gdbm-1.8.0
 @dirrm usr/share/doc/freetype-2.3.7
 @dirrm usr/share/doc/fedora-release-10
