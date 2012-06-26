@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for the AOL Instant Messenger OSCAR protocol
 
-BUILD_DEPENDS=	p5-Socks>=0:${PORTSDIR}/net/p5-Socks \
+BUILD_DEPENDS=	p5-SOCKS>=0:${PORTSDIR}/net/p5-Socks \
 		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
