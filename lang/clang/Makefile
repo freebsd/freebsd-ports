@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	clang
-PORTVERSION=	3.0
+PORTVERSION=	3.1
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
+DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${LLVM_SOURCE}
 EXTRACT_ONLY=	${LLVM_SOURCE}
@@ -18,12 +19,12 @@ COMMENT=	C, Objective-C, and (alpha-quality) C++ compiler
 
 CONFLICTS=	clang-devel-[23]*
 
-CLANG_NAME=	clang-${PORTVERSION}
+CLANG_NAME=	clang-${PORTVERSION}.src
 CLANG_SOURCE=	${CLANG_NAME}${EXTRACT_SUFX}
-LLVM_NAME=	llvm-${PORTVERSION}
+LLVM_NAME=	llvm-${PORTVERSION}.src
 LLVM_SOURCE=	${LLVM_NAME}${EXTRACT_SUFX}
 
-WRKSRC=		${WRKDIR}/${LLVM_NAME}.src
+WRKSRC=		${WRKDIR}/${LLVM_NAME}
 BUILD_WRKSRC=	${WRKSRC}/tools/clang
 INSTALL_WRKSRC=	${WRKSRC}/tools/clang
 
@@ -44,12 +45,10 @@ USE_PERL5=	yes
 USE_PYTHON=	yes
 MAKE_JOBS_SAFE=	yes
 
-MAKE_ARGS=	CLANG_TBLGEN=${WRKSRC}/Release/bin/clang-tblgen \
+MAKE_ARGS=	CLANG_TBLGEN=${WRKSRC}/Release+Asserts/bin/clang-tblgen \
 		LLVMIncDir=${LOCALBASE}/include \
 		LLVMToolDir=${LOCALBASE}/bin \
 		LLVMLibDir=${LOCALBASE}/lib
-
-CONFIGURE_ARGS+=	--enable-shared
 
 .if defined(MAINTAINER_MODE)
 CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
@@ -74,7 +73,7 @@ BROKEN=		Does not compile on sparc64
 post-extract:
 	cd ${WRKSRC}/tools && \
 	    tar xf ${DISTDIR}/${CLANG_SOURCE} && \
-	    ${MV} ${CLANG_NAME}.src clang
+	    ${MV} ${CLANG_NAME} clang
 
 post-patch:
 	${REINPLACE_CMD} -e 's|\(PROJ_docsdir.*:=\).*$$|\1${DOCSDIR}|g' \
@@ -90,17 +89,12 @@ post-patch:
 	    ${WRKSRC}/tools/clang/tools/scan-view/scan-view
 
 pre-build:
-	${LN} -sf ${LOCALBASE}/include/llvm/Intrinsics.gen \
-	    ${WRKSRC}/include/llvm/
-	${MKDIR} ${WRKSRC}/Release/lib
-	${LN} -sf ${LOCALBASE}/lib/libLLVM-${PORTVERSION}.so \
-	    ${WRKSRC}/Release/lib/
-	${LN} -sf ${LOCALBASE}/lib/libLLVMTableGen.a \
-	    ${WRKSRC}/Release/lib/
-	${LN} -sf ${LOCALBASE}/lib/libLLVMSupport.a \
-	    ${WRKSRC}/Release/lib/
-	cd ${WRKSRC}/utils/unittest/UnitTestMain && ${GMAKE}
-	cd ${WRKSRC}/utils/unittest/googletest && ${GMAKE}
+	${LN} -sf ${LOCALBASE}/include/llvm/Intrinsics.gen ${WRKSRC}/include/llvm/
+	${MKDIR} ${WRKSRC}/Release+Asserts/lib
+	${LN} -sf ${LOCALBASE}/lib/libLLVM-${PORTVERSION}.so ${WRKSRC}/Release+Asserts/lib/
+	${LN} -sf ${LOCALBASE}/lib/libLLVMTableGen.a ${WRKSRC}/Release+Asserts/lib/
+	${LN} -sf ${LOCALBASE}/lib/libLLVMSupport.a ${WRKSRC}/Release+Asserts/lib/
+	cd ${WRKSRC}/utils/unittest && ${GMAKE}
 
 .if defined(NOPORTDOCS)
 post-build:
