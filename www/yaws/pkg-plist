@@ -40,6 +40,7 @@ bin/yaws
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_soap12_lib.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_soap_lib.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_soap_srv.beam
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_sse.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_stats.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_sup.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_sup_restarts.beam
@@ -53,11 +54,13 @@ bin/yaws
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/examples/ebin/authmod_gssapi.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/examples/ebin/basic_echo_callback.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/examples/ebin/myappmod.beam
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/examples/ebin/server_sent_events.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/examples/ebin/shopcart.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/examples/src/Makefile
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/examples/src/advanced_echo_callback.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/examples/src/authmod_gssapi.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/examples/src/basic_echo_callback.erl
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/examples/src/server_sent_events.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/include/soap-envelope.hrl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/include/soap.hrl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/include/wsdl11soap12.hrl
@@ -115,6 +118,7 @@ bin/yaws
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_soap12_lib.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_soap_lib.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_soap_srv.erl
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_sse.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_stats.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_sup.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_sup_restarts.erl
@@ -300,6 +304,8 @@ bin/yaws
 %%WWWDIR%%/redirect2.yaws
 %%WWWDIR%%/redirect3.yaws
 %%WWWDIR%%/redirect4.yaws
+%%WWWDIR%%/server_sent_events.html
+%%WWWDIR%%/server_sent_events.yaws
 %%WWWDIR%%/session.yaws
 %%WWWDIR%%/session1.yaws
 %%WWWDIR%%/setcookie.yaws
