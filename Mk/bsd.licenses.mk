@@ -558,27 +558,26 @@ clean-for-cdrom-list:
 
 # Check variables are correctly defined and print status up to here
 
+.if ${_LICENSE_STATUS} == "ask" && defined(BATCH)
+IGNORE=		License ${_LICENSE} needs confirmation, but BATCH is defined
+.endif
+
 check-license:
 .if defined(_LICENSE_ERROR)
 		@${ECHO_MSG} "===>  License not correctly defined: ${_LICENSE_ERROR}"
 		@exit 1
 .endif
-.	if ${_LICENSE_STATUS} == "rejected"
+.if ${_LICENSE_STATUS} == "rejected"
 		@${ECHO_MSG} "===>  License ${_LICENSE} rejected by the user"
 		@${ECHO_MSG}
 		@${ECHO_MSG} "If you want to install this port make sure the following license(s) are not present in LICENSES_REJECTED, either in make arguments or /etc/make.conf: ${_LICENSE}. Also check LICENSES_GROUPS_REJECTED in case they contain a group this license(s) belong to." | ${FMT}
 		@${ECHO_MSG}
 		@exit 1
-.	elif ${_LICENSE_STATUS} == "accepted"
+.elif ${_LICENSE_STATUS} == "accepted"
 		@${ECHO_MSG} "===>  License ${_LICENSE} accepted by the user"
-.	elif ${_LICENSE_STATUS} == "ask"
-.		if defined(BATCH)
-		@${ECHO_MSG} "===>  License ${_LICENSE} needs confirmation, but BATCH is defined"
-		@exit 1
-.		else
+.elif ${_LICENSE_STATUS} == "ask"
 		@${ECHO_MSG} "===>  License ${_LICENSE} needs confirmation, will ask later"
-.		endif
-.	endif
+.endif
 
 # Display, ask and save preference if requested
 
@@ -775,7 +774,9 @@ install-license:
 .else	# !LICENSE
 
 check-license:
+.	if defined(LICENSE_VERBOSE)
 	@${ECHO_MSG} "===>  License check disabled, port has not defined LICENSE"
+.	endif
 
 .endif	# LICENSE
 
