@@ -29,22 +29,18 @@ CONFIGURE_ARGS=	--enable-shaped-decorations \
 		--with-docdir=${PREFIX}/share/doc \
 		--with-mkfontdir=${NONEXISTENT}
 
-OPTIONS=	GNOMEDESKTOP	"Enable GNOME desktop support"		off \
-		ESOUND		"Enable EsounD daemon support"		off \
-		XFT		"Enable Xft support for fonts"		on \
-		XINERAMA	"Enable Xinerama support"		on \
-		X86_ASM		"Use optimized x86 assembly code"	on \
-		BEASTIE		"Use Beastie'fied startup button"	on \
-		NLS		"Enable National Language Support"	on \
-		LITE		"Reduced features and memory"		off \
-		MENUFIX		"MenuIconSize fix"			on
+OPTIONS_DEFINE=	GNOME ESOUND XFT XINERAMA ASM BEASTIE NLS LITE MENUFIX
+OPTIONS_DEFAULT=	XFT XINERAMA ASM BEASTIE NLS MENUFIX
+BEASTIE_DESC=	Use Beastie'fied startup button
+MENUFIX_DESC=	MenuIconSize fix
+
 
 # Restrict to stable (even) versions, indicated by the second component.
 #PORTSCOUT=	limitw:1,even
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_GNOMEDESKTOP)
+.if ${PORT_OPTIONS:MGNOME}
 USE_GNOME+=	gnomedesktop libgnomeui
 CONFIGURE_ARGS+=--enable-menus-gnome2
 INSTALL_TARGET=	install 
@@ -53,35 +49,37 @@ PLIST_SUB+=	GNOMEDESKTOP=""
 PLIST_SUB+=	GNOMEDESKTOP="@comment "
 .endif
 
-.if defined(WITH_ESOUND)
+.if ${PORT_OPTIONS:MESOUND}
 USE_GNOME+=	esound
 CONFIGURE_ARGS+=--with-icesound=esound
 .else
 CONFIGURE_ARGS+=--with-icesound=oss
 .endif
 
-.if !defined(WITHOUT_XFT)
+.if ${PORT_OPTIONS:MXFT}
 LIB_DEPENDS+=	Xft:${PORTSDIR}/x11-fonts/libXft
 CONFIGURE_ARGS+=--enable-gradients
 .else
 CONFIGURE_ARGS+=--enable-corefonts --disable-xfreetype
 .endif
 
-.if defined(WITHOUT_XINERAMA)
+.if empty(PORT_OPTIONS:MXINERAMA)
 CONFIGURE_ARGS+=--disable-xinerama
 .endif
 
-.if ${ARCH} != "i386" || defined(WITHOUT_X86_ASM)
+.if ${ARCH} == "i386" && ${PORT_OPTIONS:MASM}
+CONFIGURE_ARGS+=--enable-x86-asm
+.else
 CONFIGURE_ARGS+=--disable-x86-asm
 .endif
 
-.if defined(WITH_BEASTIE)
+.if ${PORT_OPTIONS:MBEASTIE}
 STARTUP_PIXMAP=	${DATADIR}/taskbar/bsd-daemon.xpm
 .else
 STARTUP_PIXMAP=	icewm-logo.xpm
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
@@ -89,11 +87,11 @@ CONFIGURE_ARGS+=--disable-nls --disable-i18n
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if !defined(WITHOUT_LITE)
+.if ${PORT_OPTIONS:MLITE}
 MAKE_ENV+=	LITE=1
 .endif
 
-.if defined(WITH_MENUFIX)
+.if ${PORT_OPTIONS:MMENUFIX}
 EXTRA_PATCHES+=	${FILESDIR}/extra-menu-icon-fix.patch
 .endif
 
