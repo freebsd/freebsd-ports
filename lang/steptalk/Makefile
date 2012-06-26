@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	libs
 DISTNAME=	StepTalk-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The official GNUstep scripting framework
 
 LICENSE=	GPLv2
