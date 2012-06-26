@@ -8,7 +8,7 @@
 PORTNAME=	openssl
 PORTVERSION=	1.0.1
 DISTVERSIONSUFFIX=	c
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
@@ -1061,9 +1061,9 @@ EXTRACONFIGURE+=	no-sse2
 .endif
 
 .if ${PORT_OPTIONS:MASM}
-EXTRACONFIGURE+=	no-asm
-.else
 EXTRACONFIGURE+=	enable-asm
+.else
+EXTRACONFIGURE+=	no-asm
 .endif
 
 .if ${PORT_OPTIONS:MSHARED}
@@ -1077,9 +1077,9 @@ PLIST_SUB+=	SHARED="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MZLIB}
-EXTRACONFIGURE+=	no-zlib no-zlib-dynamic
-.else
 EXTRACONFIGURE+=	zlib zlib-dynamic
+.else
+EXTRACONFIGURE+=	no-zlib no-zlib-dynamic
 .endif
 
 .if ${PORT_OPTIONS:MSCTP}
