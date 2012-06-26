@@ -25,7 +25,7 @@ RUN_DEPENDS=	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
 
 MAKE_JOBS_SAFE=	yes
 
-CONFLICTS=    xscreensaver-gnome-[0-9]* xscreensaver-gnome-hacks-[0-9]*
+CONFLICTS=	xscreensaver-gnome-[0-9]* xscreensaver-gnome-hacks-[0-9]*
 
 USE_XORG=	xpm
 USE_GL=		yes
