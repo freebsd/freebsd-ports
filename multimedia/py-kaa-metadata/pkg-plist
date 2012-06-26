@@ -115,6 +115,7 @@ bin/mminfo
 %%PYTHON_SITELIBDIR%%/kaa/metadata/image/core.py
 %%PYTHON_SITELIBDIR%%/kaa/metadata/image/core.pyc
 %%PYTHON_SITELIBDIR%%/kaa/metadata/image/core.pyo
+%%PYTHON_SITELIBDIR%%/kaa/metadata/image/exiv2.so
 %%PYTHON_SITELIBDIR%%/kaa/metadata/image/generic.py
 %%PYTHON_SITELIBDIR%%/kaa/metadata/image/generic.pyc
 %%PYTHON_SITELIBDIR%%/kaa/metadata/image/generic.pyo
@@ -178,11 +179,11 @@ bin/mminfo
 %%PYTHON_SITELIBDIR%%/kaa/metadata/video/vcd.py
 %%PYTHON_SITELIBDIR%%/kaa/metadata/video/vcd.pyc
 %%PYTHON_SITELIBDIR%%/kaa/metadata/video/vcd.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/kaa/metadata/misc
 @dirrm %%PYTHON_SITELIBDIR%%/kaa/metadata/video
+@dirrm %%PYTHON_SITELIBDIR%%/kaa/metadata/misc
+@dirrm %%PYTHON_SITELIBDIR%%/kaa/metadata/image
+@dirrm %%PYTHON_SITELIBDIR%%/kaa/metadata/games
+@dirrm %%PYTHON_SITELIBDIR%%/kaa/metadata/disc
 @dirrm %%PYTHON_SITELIBDIR%%/kaa/metadata/audio/eyeD3
 @dirrm %%PYTHON_SITELIBDIR%%/kaa/metadata/audio
-@dirrm %%PYTHON_SITELIBDIR%%/kaa/metadata/image
-@dirrm %%PYTHON_SITELIBDIR%%/kaa/metadata/disc
-@dirrm %%PYTHON_SITELIBDIR%%/kaa/metadata/games
 @dirrm %%PYTHON_SITELIBDIR%%/kaa/metadata
