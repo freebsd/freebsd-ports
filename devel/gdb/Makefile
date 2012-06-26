@@ -1,5 +1,4 @@
-# ex:ts=8
-# Ports collection makefile for:	GDB 7.3.x
+# Ports collection makefile for:	GDB
 # Date created:				16 November 2010
 # Whom:					Steven Kreuzer <skreuzer@FreeBSD.org>
 #
@@ -8,11 +7,9 @@
 
 PORTNAME=	gdb
 PORTVERSION=	7.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU:S,$,:gdb,}
-MASTER_SITE_SUBDIR=gdb/:gdb
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:gdb
+MASTER_SITES=	GNU
 
 MAINTAINER=	luca.pizzamiglio@gmail.com
 COMMENT=	GNU GDB of newer version than comes with the system
@@ -23,7 +20,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CONFIGURED_M4=m4 CONFIGURED_BISON=byacc
+CONFIGURE_ENV=	CONFIGURED_M4=m4 CONFIGURED_BISON=byacc
 CONFIGURE_ARGS=	--program-suffix=${PORTVERSION:S/.//g} \
 		--with-gdb-datadir=${PREFIX}/share/gdb${PORTVERSION:S/.//g} \
 		--with-libiconv-prefix=${LOCALBASE} \
@@ -42,7 +39,7 @@ MAN1=	gdb${VER}.1
 ONLY_FOR_ARCHS=	i386 amd64	# untested elsewhere, might work
 
 # Forcing to use the readline.6
-LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
+LIB_DEPENDS+=	readline:${PORTSDIR}/devel/readline
 CFLAGS+=	-isystem ${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -52,7 +49,7 @@ OPTIONS_DEFAULT=	THREADS GDB_LINK
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MGDB_LINK)
+.if ${PORT_OPTIONS:MGDB_LINK}
 PLIST_SUB+=	GDB_LINK=""
 .else
 PLIST_SUB+=	GDB_LINK="@comment "
@@ -69,7 +66,7 @@ CFLAGS+=	-g
 .endif
 
 .if ${PORT_OPTIONS:MEXPAT}
-LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=	expat:${PORTSDIR}/textproc/expat2
 CONFIGURE_ARGS+=	--with-expat=yes
 .else
 CONFIGURE_ARGS+=	--without-expat
@@ -90,7 +87,7 @@ CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 post-patch:
 	@${REINPLACE_CMD} -e 's/$$/ [GDB v${PORTVERSION} for FreeBSD]/' \
 		${WRKSRC}/gdb/version.in
-.if empty(PORT_OPTIONS:MTHREADS)
+.if ${PORT_OPTIONS:MTHREADS}
 	@${CP} ${FILESDIR}/fbsd-threads.c ${WRKSRC}/gdb/
 .endif
 	@${CP} ${FILESDIR}/amd64bsd-nat.h ${WRKSRC}/gdb
@@ -99,11 +96,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb ${PREFIX}/bin/gdb${VER}
 	${LN} ${PREFIX}/bin/gdb${VER} ${PREFIX}/bin/gdbtui${VER}
 	${INSTALL_MAN} ${WRKSRC}/gdb/gdb.1 ${MAN1PREFIX}/man/man1/gdb${VER}.1
-#.if defined(WITH_GDB_LINK)
-.if ${PORT_OPTIONS:MGDB_LINK)
+.if ${PORT_OPTIONS:MGDB_LINK}
 	${LN} -sf gdb${VER} ${PREFIX}/bin/gdb
 .endif
-#.if defined(WITH_PYTHON)
 .if ${PORT_OPTIONS:MPYTHON}
 	(cd ${WRKSRC}/gdb; ${GMAKE} install-python )
 	(cd ${WRKSRC}/gdb/data-directory; ${GMAKE} install-python )
