@@ -6249,42 +6249,6 @@ pretty-print-config:
 	@${ECHO_MSG} ""
 .endif # pretty-print-config
 
-#.if !target(collect-ports-conf)
-#collect-ports-conf:
-#.for opt in ${ALL_OPTIONS}
-#.  if ${PORT_OPTIONS:M${opt}}
-#opts_set+=	${opt}
-#.  else
-#opts_unset+=${opt}
-#.  endif
-#.endfor
-#.for opts in ${OPTIONS_MULTI}
-#.  for opt in ${OPTIONS_MULTI_${opts}}
-#.    if ${PORT_OPTIONS:M${opt}}
-#opts_set+=	${opt}
-#.    else
-#opts_unset+=${opt}
-#.    endif
-#.  endfor
-#.endfor
-#.for opts in ${OPTIONS_SINGLE}
-#.  for opt in ${OPTIONS_SINGLE_${opts}}
-#.    if ${PORT_OPTIONS:M${opt}}
-#opts_set+=	${opt}
-#.    else
-#opts_unset+=${opt}
-#.    endif
-#.  endfor
-#.endfor
-#.undef opt
-#.undef opts
-#.endif # collect-ports-conf
-#
-#.if !target(pretty-print-ports-conf)
-#pretty-print-ports-conf: collect-ports-conf
-#	@${ECHO_MSG} "${.CURDIR:C/${PORTSDIR}\///} : OPTIONS_SET=${opts_set:O} | OPTIONS_UNSET=${opts_unset:O}"
-#.endif # pretty-print-ports-conf
-
 desktop-categories:
 	@categories=""; \
 	for native_category in ${CATEGORIES}; do \
@@ -6479,29 +6443,6 @@ ask-license:
 .if !target(install-license)
 install-license:
 	@${DO_NADA}
-.endif
-
-.if !defined(TEST_ARGS)
-TEST_ARGS=	${MAKE_ARGS}
-.else
-TEST_ARGS+=	${MAKE_ARGS}
-.endif
-.if !defined(TEST_ENV)
-TEST_ENV=	${MAKE_ENV}
-.else
-TEST_ENV+=	${MAKE_ENV}
-.endif
-TEST_TARGET?=	test
-TEST_WRKSRC?=	${BUILD_WRKSRC}
-
-#.if !target(regression-test) && defined(PERL_CONFIGURE) && defined(PKGNAMEPREFIX) && ${PKGNAMEPREFIX} == p5-
-.if !target(regression-test) && defined(PERL_CONFIGURE)
-regression-test: build
-.if defined(PERL_MODBUILD)
-	cd ${TEST_WRKSRC}/ && ${SETENV} ${TEST_ENV} ${PERL5} ${PL_BUILD} ${TEST_ARGS} ${TEST_TARGET} || ${TRUE}
-.else
-	cd ${TEST_WRKSRC}/ && ${SETENV} ${TEST_ENV} ${MAKE} ${TEST_ARGS} ${TEST_TARGET} || ${TRUE}
-.endif
 .endif
 
 .endif
