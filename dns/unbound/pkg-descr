@@ -8,12 +8,8 @@ Goals:
     * Drop-in replacement for BIND apart from config.
     * DNSSEC support.
     * Fully RFC compliant.
-    * High performance
-          o even with validation.
-    * Used as
-          o stub resolver.
-          o full caching name server.
-          o resolver library.
+    * High performance, even with validation enabled.
+    * Used as: stub resolver, full caching name server, resolver library.
     * Elegant design of validator, resolver, cache modules.
           o provide the ability to pick and choose modules.
     * Robust.

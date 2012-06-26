@@ -16,5 +16,20 @@ sbin/unbound-host
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_unbound.so.3
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/unbound.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/unboundmodule.py
+%%MUNIN%%etc/munin/plugins/unbound_munin_by_class
+%%MUNIN%%etc/munin/plugins/unbound_munin_by_flags
+%%MUNIN%%etc/munin/plugins/unbound_munin_by_opcode
+%%MUNIN%%etc/munin/plugins/unbound_munin_by_rcode
+%%MUNIN%%etc/munin/plugins/unbound_munin_by_type
+%%MUNIN%%etc/munin/plugins/unbound_munin_histogram
+%%MUNIN%%etc/munin/plugins/unbound_munin_hits
+%%MUNIN%%etc/munin/plugins/unbound_munin_memory
+%%MUNIN%%etc/munin/plugins/unbound_munin_queue
+%%MUNIN%%share/munin/plugins/unbound_munin_
+%%MUNIN%%@dirrmtry etc/munin/plugins
+%%MUNIN%%@dirrmtry etc/munin
+%%MUNIN%%@dirrmtry share/munin/plugins
+%%MUNIN%%@dirrmtry share/munin
 @dirrmtry etc/unbound
-@dirrmtry /var/run/unbound
+@unexec rm -fr /var/run/unbound
+@exec chown unbound %D/etc/unbound
