@@ -212,6 +212,7 @@ TIDY_DESC?=		tidy html cleaner support
 TIFF_DESC?=		TIFF support
 TINYXML_DESC?=		XML Parser support via TinyXML
 TK_DESC?=		TK toolkit support
+TLS_DESC?=		TLS support
 TOMCAT5_DESC?=		Tomcat 5.x support
 TOMCAT6_DESC?=		Tomcat 6.x support
 TOMCAT7_DESC?=		Tomcat 7.x support
