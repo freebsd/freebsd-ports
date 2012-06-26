@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	tomcat-native
-PORTVERSION=	1.1.23
+PORTVERSION=	1.1.24
 CATEGORIES=	www java
-MASTER_SITES=	${MASTER_SITE_APACHE}
+MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	tomcat/tomcat-connectors/native/${PORTVERSION}/source
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
@@ -21,7 +21,8 @@ LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr1
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/jni/native
 
-OPTIONS=	OCSP "Enable OCSP verification support" off
+OPTIONS_DEFINE=	OCSP
+OCSP_DESC=	Enable OCSP verification support
 
 USE_OPENSSL=	yes
 USE_JAVA=	yes
@@ -32,9 +33,14 @@ CONFIGURE_ARGS=	--with-apr=${LOCALBASE} \
 		--with-java-home=${JAVA_HOME} \
 		--with-ssl=${SSLBASE}
 
+PLIST_FILES=	lib/libtcnative-1.a \
+		lib/libtcnative-1.la \
+		lib/libtcnative-1.so \
+		lib/libtcnative-1.so.1
+
 .include <bsd.port.options.mk>
 
-.if defined(WITH_OCSP)
+.if ${PORT_OPTIONS:MOCSP}
 CONFIGURE_ARGS+=--enable-ocsp
 .endif
 
