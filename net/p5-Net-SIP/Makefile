@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-SIP
-PORTVERSION=	0.64
+PORTVERSION=	0.66
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,6 +22,7 @@ PERL_CONFIGURE=	yes
 MAN3=		Net::SIP.3 \
 		Net::SIP::Authorize.3 \
 		Net::SIP::Blocker.3 \
+		Net::SIP::DTMF.3 \
 		Net::SIP::Debug.3 \
 		Net::SIP::Dispatcher.3 \
 		Net::SIP::Dispatcher::Eventloop.3 \
