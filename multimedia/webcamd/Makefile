@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	webcamd
-PORTVERSION=	3.5.0.2
-PORTREVISION=	1
+PORTVERSION=	3.6.0.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://hselasky.homeunix.org:8192/distfiles/
@@ -16,7 +15,7 @@ MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	A port of Linux USB webcam and DVB drivers into userspace
 
 BUILD_DEPENDS=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat \
-		cuse4bsd-kmod>=0.1.13:${PORTSDIR}/multimedia/cuse4bsd-kmod
+		cuse4bsd-kmod>=0.1.24:${PORTSDIR}/multimedia/cuse4bsd-kmod
 LIB_DEPENDS=	v4l1.0:${PORTSDIR}/multimedia/libv4l \
 		cuse4bsd.1:${PORTSDIR}/multimedia/cuse4bsd-kmod
 
@@ -42,10 +41,12 @@ MAN8=		webcamd.8
 
 LIBDIR=		${PREFIX}/lib
 
-OPTIONS=	HAL "Build with HAL and DBUS support" On \
-		DEBUG "Build with debugging support" Off \
-		VT_CLIENT "Build with vTuner client support" Off \
-		VT_SERVER "Build with vTuner server support" Off
+OPTIONS_DEFINE=	HAL DEBUG VT_CLIENT VT_SERVER
+OPTIONS_DEFAULT=HAL
+HAL_DESC=	Build with HAL and DBUS support
+DEBUG_DESC=	Build with debugging support
+VT_CLIENT_DESC=	Build with vTuner client support
+VT_SERVER_DESC=	Build with vTuner server support
 
 USERS=		webcamd
 GROUPS=		webcamd
@@ -56,7 +57,7 @@ LIBCUSE=${LIBDIR}/libcuse4bsd.so
 
 MAKE_ARGS+=" HAVE_MAN=YES"
 
-.if defined(WITH_HAL)
+.if ${PORT_OPTIONS:MHAL}
 MAKE_ARGS+=" HAVE_HAL=YES"
 LIBHAL=${LIBDIR}/libhal.so:${LIBDIR}/libdbus-1.so:
 LIB_DEPENDS+=hal.1:${PORTSDIR}/sysutils/hal
@@ -65,15 +66,15 @@ LIB_DEPENDS+=dbus-1:${PORTSDIR}/devel/dbus
 LIBHAL=
 .endif
 
-.if defined(WITH_VT_CLIENT)
+.if ${PORT_OPTIONS:MVT_CLIENT}
 MAKE_ARGS+=" HAVE_VTUNER_CLIENT=YES"
 .endif
 
-.if defined(WITH_VT_SERVER)
+.if ${PORT_OPTIONS:MVT_SERVER}
 MAKE_ARGS+=" HAVE_VTUNER_SERVER=YES"
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 MAKE_ARGS+=" HAVE_DEBUG=YES"
 .endif
 
