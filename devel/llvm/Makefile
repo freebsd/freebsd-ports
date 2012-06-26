@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	llvm
-PORTVERSION=	3.0
+PORTVERSION=	3.1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
+DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Low Level Virtual Machine
 
+LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 .if defined(PACKAGE_BUILDING) || defined(MAINTAINER_MODE)
-USE_PYTHON_BUILD=	yes
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 .endif
 .if defined(MAINTAINER_MODE)
@@ -23,17 +24,18 @@ BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 
 CONFLICTS=	llvm-devel-[23]* llvm-etoile-2*
 
-WRKSRC=		${WRKDIR}/${DISTNAME}.src
-
 GNU_CONFIGURE=	yes
 USE_GCC=	4.2+
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PERL5=	yes
+USE_PYTHON_BUILD=	yes
 MAKE_JOBS_SAFE=	yes
 
+# Suggested tweaks from http://llvm.org/docs/Packaging.html
 CONFIGURE_ARGS+=	--enable-shared
 MAKE_ARGS+=		REQUIRES_RTTI=1
+LIBNAME=		libLLVM-${DISTVERSION:C/\.r[0-9]*//}.so
 
 .if defined(MAINTAINER_MODE)
 CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
@@ -43,16 +45,19 @@ CONFIGURE_ARGS+=	--enable-optimized
 
 CONFIGURE_ARGS+=	--enable-bindings=none
 
-OPTIONS=	ASSERTS	"Enable assertions (thread unsafe)" off
+OPTIONS=	ASSERTS	"Enable assertions (thread unsafe)" off \
+		LTOPLUGIN "Build LTO plugin (requires gold)" off
 
 .if defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--disable-docs
 .endif
 
-MAN1=		bugpoint.1 lit.1 llc.1 lli.1 llvm-ar.1 \
-		llvm-as.1 llvm-bcanalyzer.1 llvm-config.1 llvm-diff.1 \
+MAN1=		bugpoint.1 lit.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
+		llvm-bcanalyzer.1 llvm-config.1 llvm-cov.1 llvm-diff.1 \
 		llvm-dis.1 llvm-extract.1 llvm-ld.1 llvm-link.1 llvm-nm.1 \
-		llvm-prof.1 llvm-ranlib.1 opt.1 tblgen.1
+		llvm-prof.1 llvm-ranlib.1 llvm-stress.1 opt.1 tblgen.1
+
+PLIST_SUB+=		PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
@@ -74,7 +79,12 @@ CONFIGURE_ARGS+=	--enable-assertions
 CONFIGURE_ARGS+=	--disable-assertions
 .endif
 
-PLIST_SUB+=		PORTVERSION=${PORTVERSION}
+.ifdef(WITH_LTOPLUGIN)
+BUILD_DEPENDS+=		ld.gold:${PORTSDIR}/devel/binutils
+RUN_DEPENDS+=		ld.gold:${PORTSDIR}/devel/binutils
+CONFIGURE_ARGS+=	--with-binutils-include=${LOCALBASE}/include
+PLIST_FILES+=		lib/LLVMgold.so
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|\(PROJ_docsdir.*:=\).*$$|\1${DOCSDIR}|g' \
@@ -85,15 +95,19 @@ post-patch:
 .if defined(NOPORTDOCS)
 post-build:
 	@cd ${WRKSRC}/docs/CommandGuide && ${GMAKE} ${MAN1}
+.endif
 
 post-install:
+	${MV} ${PREFIX}/lib/${LIBNAME} ${PREFIX}/lib/${LIBNAME}.0
+	${LN} -s ${LIBNAME}.0 ${PREFIX}/lib/${LIBNAME}
+.if defined(NOPORTDOCS)
 .for man in ${MAN1}
 	@${INSTALL_MAN} ${WRKSRC}/docs/CommandGuide/${man} \
 	     ${MANPREFIX}/man/man1/
 .endfor
 .endif
 
-TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} ${GMAKE} check-local-lit)'
+TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} LD_LIBRARY_PATH=${WRKSRC}/Release/lib ${GMAKE} check-local-lit)'
 regression-test: ${BUILD_COOKIE}
 	if [ `${ID} -u` = 0 ]; then \
 		${CHOWN} -R nobody ${WRKSRC}/test; \
@@ -110,7 +124,6 @@ PLIST_FILE_LIST=	bin/bugpoint \
 			bin/opt \
 			lib/BugpointPasses.so \
 			lib/LLVMHello.so \
-			lib/libEnhancedDisassembly.a \
 			lib/libLTO.* \
 			lib/libLLVM* \
 			lib/libprofile_rt.a \
