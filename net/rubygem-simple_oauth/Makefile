@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	simple_oauth
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.8
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Rubygem for Simply builds and verifies OAuth headers
-
-RUN_DEPENDS=	rubygem-mocha>=0:${PORTSDIR}/devel/rubygem-mocha
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
