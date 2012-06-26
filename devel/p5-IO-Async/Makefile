@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-Async
-PORTVERSION=	0.50
+PORTVERSION=	0.51
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PEVANS
@@ -25,8 +25,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Identity>=0:${PORTSDIR}/devel/p5-Test-Identity \
 		p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod \
-		p5-Test-Refcount>=0:${PORTSDIR}/devel/p5-Test-Refcount \
-		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
+		p5-Test-Refcount>=0:${PORTSDIR}/devel/p5-Test-Refcount
 
 PERL_CONFIGURE=	yes
 
@@ -46,6 +45,8 @@ MAN3=		IO::Async.3 \
 		IO::Async::LoopTests.3 \
 		IO::Async::MergePoint.3 \
 		IO::Async::Notifier.3 \
+		IO::Async::OS.3 \
+		IO::Async::OS::MSWin32.3 \
 		IO::Async::PID.3 \
 		IO::Async::Protocol.3 \
 		IO::Async::Protocol::LineStream.3 \
