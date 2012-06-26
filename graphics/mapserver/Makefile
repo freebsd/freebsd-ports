@@ -20,6 +20,8 @@ LIB_DEPENDS=		gd.4:${PORTSDIR}/graphics/gd \
 			jpeg.11:${PORTSDIR}/graphics/jpeg \
 			gif.5:${PORTSDIR}/graphics/giflib
 
+BROKEN=			does not link
+
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--enable-runpath \
