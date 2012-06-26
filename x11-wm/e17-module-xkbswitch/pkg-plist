@@ -1,0 +1,89 @@
+lib/enlightenment/modules/xkbswitch/module.desktop
+lib/enlightenment/modules/xkbswitch/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/xkbswitch/e-module-xkbswitch.edj
+lib/enlightenment/modules/xkbswitch/flags/mao_flag.png
+lib/enlightenment/modules/xkbswitch/flags/uz_flag.png
+lib/enlightenment/modules/xkbswitch/flags/pl_flag.png
+lib/enlightenment/modules/xkbswitch/flags/af_flag.png
+lib/enlightenment/modules/xkbswitch/flags/no_flag.png
+lib/enlightenment/modules/xkbswitch/flags/kh_flag.png
+lib/enlightenment/modules/xkbswitch/flags/kg_flag.png
+lib/enlightenment/modules/xkbswitch/flags/lv_flag.png
+lib/enlightenment/modules/xkbswitch/flags/ba_flag.png
+lib/enlightenment/modules/xkbswitch/flags/pk_flag.png
+lib/enlightenment/modules/xkbswitch/flags/tr_flag.png
+lib/enlightenment/modules/xkbswitch/flags/ca_flag.png
+lib/enlightenment/modules/xkbswitch/flags/mv_flag.png
+lib/enlightenment/modules/xkbswitch/flags/cn_flag.png
+lib/enlightenment/modules/xkbswitch/flags/fi_flag.png
+lib/enlightenment/modules/xkbswitch/flags/epo_flag.png
+lib/enlightenment/modules/xkbswitch/flags/ru_flag.png
+lib/enlightenment/modules/xkbswitch/flags/sk_flag.png
+lib/enlightenment/modules/xkbswitch/flags/rs_flag.png
+lib/enlightenment/modules/xkbswitch/flags/tj_flag.png
+lib/enlightenment/modules/xkbswitch/flags/mn_flag.png
+lib/enlightenment/modules/xkbswitch/flags/fo_flag.png
+lib/enlightenment/modules/xkbswitch/flags/bg_flag.png
+lib/enlightenment/modules/xkbswitch/flags/by_flag.png
+lib/enlightenment/modules/xkbswitch/flags/la_flag.png
+lib/enlightenment/modules/xkbswitch/flags/unknown_flag.png
+lib/enlightenment/modules/xkbswitch/flags/se_flag.png
+lib/enlightenment/modules/xkbswitch/flags/jp_flag.png
+lib/enlightenment/modules/xkbswitch/flags/us_flag.png
+lib/enlightenment/modules/xkbswitch/flags/pt_flag.png
+lib/enlightenment/modules/xkbswitch/flags/in_flag.png
+lib/enlightenment/modules/xkbswitch/flags/gh_flag.png
+lib/enlightenment/modules/xkbswitch/flags/is_flag.png
+lib/enlightenment/modules/xkbswitch/flags/ua_flag.png
+lib/enlightenment/modules/xkbswitch/flags/lt_flag.png
+lib/enlightenment/modules/xkbswitch/flags/br_flag.png
+lib/enlightenment/modules/xkbswitch/flags/mt_flag.png
+lib/enlightenment/modules/xkbswitch/flags/si_flag.png
+lib/enlightenment/modules/xkbswitch/flags/dk_flag.png
+lib/enlightenment/modules/xkbswitch/flags/vn_flag.png
+lib/enlightenment/modules/xkbswitch/flags/al_flag.png
+lib/enlightenment/modules/xkbswitch/flags/fr_flag.png
+lib/enlightenment/modules/xkbswitch/flags/cz_flag.png
+lib/enlightenment/modules/xkbswitch/flags/mm_flag.png
+lib/enlightenment/modules/xkbswitch/flags/gr_flag.png
+lib/enlightenment/modules/xkbswitch/flags/ie_flag.png
+lib/enlightenment/modules/xkbswitch/flags/it_flag.png
+lib/enlightenment/modules/xkbswitch/flags/bd_flag.png
+lib/enlightenment/modules/xkbswitch/flags/az_flag.png
+lib/enlightenment/modules/xkbswitch/flags/ad_flag.png
+lib/enlightenment/modules/xkbswitch/flags/ee_flag.png
+lib/enlightenment/modules/xkbswitch/flags/sy_flag.png
+lib/enlightenment/modules/xkbswitch/flags/de_flag.png
+lib/enlightenment/modules/xkbswitch/flags/am_flag.png
+lib/enlightenment/modules/xkbswitch/flags/ir_flag.png
+lib/enlightenment/modules/xkbswitch/flags/ge_flag.png
+lib/enlightenment/modules/xkbswitch/flags/il_flag.png
+lib/enlightenment/modules/xkbswitch/flags/lk_flag.png
+lib/enlightenment/modules/xkbswitch/flags/hr_flag.png
+lib/enlightenment/modules/xkbswitch/flags/mk_flag.png
+lib/enlightenment/modules/xkbswitch/flags/es_flag.png
+lib/enlightenment/modules/xkbswitch/flags/ro_flag.png
+lib/enlightenment/modules/xkbswitch/flags/kz_flag.png
+lib/enlightenment/modules/xkbswitch/flags/nl_flag.png
+lib/enlightenment/modules/xkbswitch/flags/hu_flag.png
+lib/enlightenment/modules/xkbswitch/flags/za_flag.png
+lib/enlightenment/modules/xkbswitch/flags/th_flag.png
+lib/enlightenment/modules/xkbswitch/flags/gb_flag.png
+lib/enlightenment/modules/xkbswitch/flags/ara_flag.png
+lib/enlightenment/modules/xkbswitch/flags/bt_flag.png
+lib/enlightenment/modules/xkbswitch/flags/be_flag.png
+%%NLS%%lib/enlightenment/modules/xkbswitch/locale/pt/LC_MESSAGES/xkbswitch.mo
+%%NLS%%lib/enlightenment/modules/xkbswitch/locale/it/LC_MESSAGES/xkbswitch.mo
+%%NLS%%lib/enlightenment/modules/xkbswitch/locale/fr/LC_MESSAGES/xkbswitch.mo
+%%NLS%%@dirrm lib/enlightenment/modules/xkbswitch/locale/fr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/xkbswitch/locale/fr
+%%NLS%%@dirrm lib/enlightenment/modules/xkbswitch/locale/it/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/xkbswitch/locale/it
+%%NLS%%@dirrm lib/enlightenment/modules/xkbswitch/locale/pt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/xkbswitch/locale/pt
+%%NLS%%@dirrm lib/enlightenment/modules/xkbswitch/locale
+@dirrm lib/enlightenment/modules/xkbswitch/flags
+@dirrm lib/enlightenment/modules/xkbswitch/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/xkbswitch
+@dirrmtry lib/enlightenment/modules
+@dirrmtry lib/enlightenment

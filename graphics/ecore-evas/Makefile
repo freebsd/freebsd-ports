@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	evas
-DISTVERSION=	1.0.1
+DISTVERSION=	1.1.0
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
-		http://files.roorback.net/e17/2011-05-25/base/
+		http://files.roorback.net/e17/2011-12-02/base/
 PKGNAMEPREFIX=	ecore-
 DISTNAME=	ecore-${DISTVERSION}
 
@@ -17,11 +17,12 @@ MAINTAINER=	magik@roorback.net
 COMMENT=	Enlightenment core abstraction library (evas module)
 
 LICENSE=	BSD
+
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_EFL=	evas ecore libtool_hack
-USE_EFL_ECORE=	input input_evas sdl
+USE_EFL_ECORE=	input input_evas
 USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 BUILD_WRKSRC=	${WRKSRC}/src/lib/ecore_evas
@@ -35,7 +36,6 @@ CONFIGURE_ARGS+=	--enable-ecore-evas \
 
 OPTIONS=	X11	"Enable Evas X11 support"	on \
 		GL	"Enable Evas GL support"	on \
-		XRENDER	"Enable Evas Xrender support"	on \
 		BUFFER	"Enable Evas Buffer support"	on \
 		SDL	"Enable Evas SDL support"	off
 
@@ -49,15 +49,7 @@ WITH_X=			yes
 CONFIGURE_ARGS+=	--disable-ecore-evas-opengl-x11
 .endif
 
-.if !defined(WITHOUT_XRENDER)
-CONFIGURE_ARGS+=	--enable-ecore-evas-xrender-x11
-USE_EFL_EVAS_ENGINES+=	xrender
-WITH_X=			yes
-.else
-CONFIGURE_ARGS+=	--disable-ecore-evas-xrender-x11
-.endif
-
-.if !defined(WITHOUT_X11) || defined(WITH_X)
+.if !defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--enable-ecore-x
 USE_EFL_ECORE+=		x11
 USE_EFL_EVAS_ENGINES+=	x11
@@ -77,7 +69,7 @@ CONFIGURE_ARGS+=	--enable-ecore-evas-software-sdl --enable-ecore-sdl
 USE_EFL_EVAS_ENGINES+=	sdl
 USE_EFL_ECORE+=	sdl
 .else
-CONFIGURE_ARGS+=	--disable-ecore-evas-software-sdl --enable-ecore-sdl
+CONFIGURE_ARGS+=	--disable-ecore-evas-software-sdl --disable-ecore-sdl
 .endif
 
 post-patch:

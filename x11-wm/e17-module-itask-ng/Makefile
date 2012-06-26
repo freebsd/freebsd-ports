@@ -5,13 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	itask-ng
-PORTVERSION=	20110129
-PORTREVISION=	1
+PORTNAME=	engage
+PORTVERSION=	20111128
 CATEGORIES=	x11-wm enlightenment
-MASTER_SITES=	http://files.roorback.net/e17/2011-01-29/modules/
+MASTER_SITES=	http://files.roorback.net/e17/modules/
 PKGNAMEPREFIX=	e17-module-
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	magik@roorback.net
 COMMENT=	MacOS X like taskbar module for e17

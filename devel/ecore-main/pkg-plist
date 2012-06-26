@@ -1,12 +1,63 @@
 include/ecore-1/Ecore.h
 include/ecore-1/Ecore_Getopt.h
 lib/libecore.so
-lib/libecore.so.1
+lib/libecore.so.2
 libdata/pkgconfig/ecore.pc
-share/locale/cs/LC_MESSAGES/ecore.mo
-share/locale/de/LC_MESSAGES/ecore.mo
-share/locale/el/LC_MESSAGES/ecore.mo
-share/locale/fr/LC_MESSAGES/ecore.mo
-share/locale/it/LC_MESSAGES/ecore.mo
-share/locale/pt/LC_MESSAGES/ecore.mo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_animator_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_client_bench.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_con_client_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_con_client_simple_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_con_lookup_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_con_server_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_con_server_http_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_con_server_simple_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_con_url_cookies_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_con_url_download_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_con_url_headers_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_evas_basics_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_evas_buffer_example_01.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_evas_buffer_example_02.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_evas_callbacks.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_evas_ews_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_evas_object_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_evas_window_sizes_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_event_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_fd_handler_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_fd_handler_gnutls_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_file_download_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_idler_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_job_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_pipe_gstreamer_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_pipe_simple_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_poller_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_server_bench.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_thread_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_time_functions_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecore_timer_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/red.png
+%%NLS%%share/locale/cs/LC_MESSAGES/ecore.mo
+%%NLS%%share/locale/de/LC_MESSAGES/ecore.mo
+%%NLS%%share/locale/el/LC_MESSAGES/ecore.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/ecore.mo
+%%NLS%%share/locale/it/LC_MESSAGES/ecore.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/ecore.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/ecore.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/ecore.mo
 @dirrmtry include/ecore-1
+%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cs
+%%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de
+%%NLS%%@dirrmtry share/locale/el/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/el
+%%NLS%%@dirrmtry share/locale/fr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fr
+%%NLS%%@dirrmtry share/locale/it/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/it
+%%NLS%%@dirrmtry share/locale/nl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nl
+%%NLS%%@dirrmtry share/locale/pt/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pt
+%%NLS%%@dirrmtry share/locale/sl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

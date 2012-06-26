@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	emprint
-PORTVERSION=	20110129
-PORTREVISION=	1
+PORTVERSION=	20111128
 CATEGORIES=	x11 enlightenment
-MASTER_SITES=	http://files.roorback.net/e17/2011-01-29/extra/
+MASTER_SITES=	http://files.roorback.net/e17/extra/
 
 MAINTAINER=	magik@roorback.net
 COMMENT=	Utility for taking screenshots for E17
 
 DIST_SUBDIR=	e17
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_EFL=	ecore evas edje imlib2

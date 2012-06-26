@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ecore
-DISTVERSION=	1.0.1
+DISTVERSION=	1.1.0
 PORTEPOCH=	2
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	# none
@@ -39,7 +39,7 @@ OPTIONS+=	off
 USE_EFL_ECORE+=	${NODE}
 .  endif
 . else
-.  if defined(WITH_${NODE:U})
+.  if !defined(WITHOUT_${NODE:U})
 USE_EFL_ECORE+=	${NODE}
 .  endif
 . endif

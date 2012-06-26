@@ -1,0 +1,8 @@
+E-Tiling is a tiling module the Enlightenment Window Manager.
+
+Each desktop can have from 1 to 8 (vertical) columns. Windows are then resized
+and moved to use as much as columns as configured. When there are more windows
+than possible columns, the remaining windows are packed in the last column.
+Resizing or moving a window will try to resize or move the column it is in.
+
+WWW:    http://www.enlightenment.org/

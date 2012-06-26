@@ -16,9 +16,14 @@ DISTNAME=	evas-${DISTVERSION}
 MAINTAINER=	magik@roorback.net
 COMMENT=	A hardware accelerated canvas API (XRender engine)
 
+LICENSE=	BSD
+
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
-LICENSE=	BSD
+BROKEN=		does not build with graphics/evas 1.1.0 or newer
+DEPRECATED=	Deprecated by enlightenment.org
+EXPIRATION_DATE=	2012-07-31
+
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

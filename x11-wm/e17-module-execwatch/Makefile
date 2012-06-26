@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	execwatch
-PORTVERSION=	20110129
-PORTREVISION=	1
+PORTVERSION=	20111128
 CATEGORIES=	x11-wm enlightenment
-MASTER_SITES=	http://files.roorback.net/e17/2011-01-29/modules/
+MASTER_SITES=	http://files.roorback.net/e17/modules/
 PKGNAMEPREFIX=	e17-module-
 
 MAINTAINER=	magik@roorback.net
-COMMENT=	An e17 module to show the last state of a periodically executed command
+COMMENT=	An e17 module to show state of a periodically executed command
 
 BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
 RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment

@@ -19,6 +19,15 @@ lib/enlightenment/modules/places/e-module-places.edj
 %%NLS%%lib/enlightenment/modules/places/locale/fr/LC_MESSAGES/places.mo
 %%NLS%%lib/enlightenment/modules/places/locale/lt/LC_MESSAGES/places.mo
 %%NLS%%lib/enlightenment/modules/places/locale/cs/LC_MESSAGES/places.mo
+%%NLS%%lib/enlightenment/modules/places/locale/nl/LC_MESSAGES/places.mo
+%%NLS%%lib/enlightenment/modules/places/locale/ar/LC_MESSAGES/places.mo
+%%NLS%%lib/enlightenment/modules/places/locale/sl/LC_MESSAGES/places.mo
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/sl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/sl
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/ar/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/ar
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/nl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/nl
 %%NLS%%@dirrm lib/enlightenment/modules/places/locale/cs/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/places/locale/cs
 %%NLS%%@dirrm lib/enlightenment/modules/places/locale/lt/LC_MESSAGES

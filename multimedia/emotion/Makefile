@@ -7,31 +7,32 @@
 #
 
 PORTNAME=	emotion
-PORTVERSION=	0.2.0.56361
-PORTREVISION=	4
+PORTVERSION=	0.2.0.65643
 PORTEPOCH=	1
 CATEGORIES=	multimedia enlightenment
-MASTER_SITES=	http://files.roorback.net/e17/2011-01-29/extra/
+MASTER_SITES=	http://download.enlightenment.org/snapshots/2011-11-28/ \
+		http://files.roorback.net/e17/base/
 
 MAINTAINER=	magik@roorback.net
 COMMENT=	Video playback wrapper library for Enlightenment
 
 LICENSE=	BSD
+
 DIST_SUBDIR=	e17
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_EFL=	ecore edje eet embryo evas libtool_hack modarch_hack
+USE_EFL=	ecore edje eet eio embryo evas libtool_hack modarch_hack
 USE_EFL_EVAS_LOADERS=	png jpeg
 USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 
-OPTIONS=	XINE "Build Xine module" on \
-		GST "Build GStreamer module" on
+OPTIONS=	GST	"Build GStreamer module"	on \
+		XINE	"Build Xine module"		off
 
 # emotion's vlc plugin needs updating due to libvlc API changes
 # details: http://trac.enlightenment.org/e/ticket/601
-CONFIGURE_ARGS=	--disable-vlc
+CONFIGURE_ARGS=	--disable-generic-vlc
 
 .include <bsd.port.pre.mk>
 
@@ -55,6 +56,21 @@ PLIST_SUB+=	GST=""
 .else
 CONFIGURE_ARGS+=--disable-gstreamer
 PLIST_SUB+=	GST="@comment "
+.endif
+
+.if !defined(NOPORTEXAMPLES)
+CONFIGURE_ARGS+=	--enable-install-examples
+.else
+CONFIGURE_ARGS+=	--disable-install-examples
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|= \$$(datadir)/\$$(PACKAGE)/examples|= $$(datadir)/examples/$$(PACKAGE)|' \
+		${WRKSRC}/src/examples/Makefile.in
+
+post-install:
+.if defined(NOPORTEXAMPLES)
+	@${RMDIR} ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>

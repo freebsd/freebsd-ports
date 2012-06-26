@@ -31,6 +31,9 @@ lib/enlightenment/modules/taskbar/e-module-taskbar.edj
 %%NLS%%lib/enlightenment/modules/taskbar/locale/he/LC_MESSAGES/taskbar.mo
 %%NLS%%lib/enlightenment/modules/taskbar/locale/fr/LC_MESSAGES/taskbar.mo
 %%NLS%%lib/enlightenment/modules/taskbar/locale/nl/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/sl/LC_MESSAGES/taskbar.mo
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/sl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/nl/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/nl
 %%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/fr/LC_MESSAGES

@@ -7,7 +7,6 @@
 
 PORTNAME=	edb
 PORTVERSION=	1.0.5.042
-PORTREVISION=	0
 PORTEPOCH=	2
 CATEGORIES=	databases enlightenment
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
@@ -15,6 +14,9 @@ MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
 
 MAINTAINER=	magik@roorback.net
 COMMENT=	Enlightenment Database Library
+
+DEPRECATED=	Deprecated by enlightenment.org team
+EXPIRATION_DATE=	2012-07-31
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

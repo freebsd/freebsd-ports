@@ -1,0 +1,7 @@
+lib/enlightenment/modules/everything-aspell/e-module.edj
+lib/enlightenment/modules/everything-aspell/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/everything-aspell/module.desktop
+@dirrm lib/enlightenment/modules/everything-aspell/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/everything-aspell
+@dirrmtry lib/enlightenment/modules
+@dirrmtry lib/enlightenment

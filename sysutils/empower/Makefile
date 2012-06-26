@@ -7,17 +7,17 @@
 #
 
 PORTNAME=	empower
-PORTVERSION=	20110129
-PORTREVISION=	1
+PORTVERSION=	20111128
 CATEGORIES=	sysutils enlightenment
-MASTER_SITES=	http://files.roorback.net/e17/2011-01-29/extra/
+MASTER_SITES=	http://files.roorback.net/e17/extra/
 
 MAINTAINER=	magik@roorback.net
 COMMENT=	A graphical sudo tool based on the EFL
 
+DIST_SUBDIR=	e17
+
 RUN_DEPENDS=	sudo:${PORTSDIR}/security/sudo
 
-DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_EFL=	evas ecore edje elementary
@@ -28,9 +28,10 @@ USE_LDCONFIG=	yes
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
+CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB+=	NLS=""
 .else
-CONFIGURE_ARGS=	--disable-nls
+CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 

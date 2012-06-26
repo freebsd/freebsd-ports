@@ -1,5 +1,6 @@
 bin/efreet_alloc
 bin/efreet_cache_test
+bin/efreet_icon_cache_dump
 bin/efreet_menu_alloc
 bin/efreet_spec_test
 bin/efreet_test
@@ -14,12 +15,13 @@ include/efreet-1/efreet_menu.h
 include/efreet-1/efreet_uri.h
 include/efreet-1/efreet_utils.h
 lib/libefreet.so
-lib/libefreet.so.1
+lib/libefreet.so.2
 lib/libefreet_mime.so
-lib/libefreet_mime.so.1
+lib/libefreet_mime.so.2
 lib/libefreet_trash.so
-lib/libefreet_trash.so.1
+lib/libefreet_trash.so.2
 lib/efreet/efreet_desktop_cache_create
+lib/efreet/efreet_icon_cache_create
 libdata/pkgconfig/efreet-mime.pc
 libdata/pkgconfig/efreet-trash.pc
 libdata/pkgconfig/efreet.pc

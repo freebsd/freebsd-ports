@@ -22,6 +22,9 @@ lib/enlightenment/modules/photo/images/photo_logo.png
 %%NLS%%lib/enlightenment/modules/photo/locale/eo/LC_MESSAGES/photo.mo
 %%NLS%%lib/enlightenment/modules/photo/locale/it/LC_MESSAGES/photo.mo
 %%NLS%%lib/enlightenment/modules/photo/locale/zh_CN/LC_MESSAGES/photo.mo
+%%NLS%%lib/enlightenment/modules/photo/locale/sl/LC_MESSAGES/photo.mo
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/sl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/sl
 %%NLS%%@dirrm lib/enlightenment/modules/photo/locale/zh_CN/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/photo/locale/zh_CN
 %%NLS%%@dirrm lib/enlightenment/modules/photo/locale/it/LC_MESSAGES

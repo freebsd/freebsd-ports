@@ -7,10 +7,12 @@ include/elementary-0/Elementary.h
 include/elementary-0/Elementary_Cursor.h
 include/elementary-0/elm_widget.h
 lib/libelementary.so
-lib/libelementary.so.7
+lib/libelementary.so.8
 lib/edje/modules/elm/%%E17_ARCH%%/module.so
 lib/elementary_testql.so
+lib/elementary/modules/access_output/%%E17_ARCH%%/module.so
 lib/elementary/modules/test_entry/%%E17_ARCH%%/module.so
+lib/elementary/modules/test_map/%%E17_ARCH%%/module.so
 libdata/pkgconfig/elementary.pc
 share/applications/elementary_config.desktop
 share/applications/elementary_test.desktop
@@ -26,6 +28,7 @@ share/icons/elementary.png
 %%DATADIR%%/config/standard/icon.png
 %%DATADIR%%/config/standard/profile.desktop
 %%DATADIR%%/edje_externals/icons.edj
+%%DATADIR%%/images/animated_logo.gif
 %%DATADIR%%/images/bubble.png
 %%DATADIR%%/images/bubble_sh.png
 %%DATADIR%%/images/icon_00.png
@@ -52,6 +55,8 @@ share/icons/elementary.png
 %%DATADIR%%/images/icon_21.png
 %%DATADIR%%/images/icon_22.png
 %%DATADIR%%/images/icon_23.png
+%%DATADIR%%/images/icon_right_arrow.png
+%%DATADIR%%/images/insanely_huge_test_image.jpg
 %%DATADIR%%/images/logo.png
 %%DATADIR%%/images/logo_small.png
 %%DATADIR%%/images/mystrale.jpg
@@ -59,31 +64,94 @@ share/icons/elementary.png
 %%DATADIR%%/images/panel_01.jpg
 %%DATADIR%%/images/parking.png
 %%DATADIR%%/images/plant_01.jpg
+%%DATADIR%%/images/pol_shadow.png
+%%DATADIR%%/images/pol_sky.png
+%%DATADIR%%/images/pol_twofish.png
+%%DATADIR%%/images/pt.png
 %%DATADIR%%/images/rock_01.jpg
 %%DATADIR%%/images/rock_02.jpg
 %%DATADIR%%/images/sky_01.jpg
 %%DATADIR%%/images/sky_02.jpg
 %%DATADIR%%/images/sky_03.jpg
 %%DATADIR%%/images/sky_04.jpg
+%%DATADIR%%/images/twofish.jpg
 %%DATADIR%%/images/wood_01.jpg
+%%DATADIR%%/images/g_layer/double_tap_1.png
+%%DATADIR%%/images/g_layer/double_tap_2.png
+%%DATADIR%%/images/g_layer/double_tap_3.png
+%%DATADIR%%/images/g_layer/double_tap_4.png
+%%DATADIR%%/images/g_layer/double_tap_5.png
+%%DATADIR%%/images/g_layer/flick_1.png
+%%DATADIR%%/images/g_layer/flick_2.png
+%%DATADIR%%/images/g_layer/flick_3.png
+%%DATADIR%%/images/g_layer/flick_4.png
+%%DATADIR%%/images/g_layer/flick_5.png
+%%DATADIR%%/images/g_layer/line_1.png
+%%DATADIR%%/images/g_layer/line_2.png
+%%DATADIR%%/images/g_layer/line_3.png
+%%DATADIR%%/images/g_layer/line_4.png
+%%DATADIR%%/images/g_layer/line_5.png
+%%DATADIR%%/images/g_layer/long_tap_1.png
+%%DATADIR%%/images/g_layer/long_tap_2.png
+%%DATADIR%%/images/g_layer/long_tap_3.png
+%%DATADIR%%/images/g_layer/long_tap_4.png
+%%DATADIR%%/images/g_layer/long_tap_5.png
+%%DATADIR%%/images/g_layer/momentum_1.png
+%%DATADIR%%/images/g_layer/momentum_2.png
+%%DATADIR%%/images/g_layer/momentum_3.png
+%%DATADIR%%/images/g_layer/momentum_4.png
+%%DATADIR%%/images/g_layer/momentum_5.png
+%%DATADIR%%/images/g_layer/rotate_1.png
+%%DATADIR%%/images/g_layer/tap_1.png
+%%DATADIR%%/images/g_layer/tap_2.png
+%%DATADIR%%/images/g_layer/tap_3.png
+%%DATADIR%%/images/g_layer/tap_4.png
+%%DATADIR%%/images/g_layer/tap_5.png
+%%DATADIR%%/images/g_layer/triple_tap_1.png
+%%DATADIR%%/images/g_layer/triple_tap_2.png
+%%DATADIR%%/images/g_layer/triple_tap_3.png
+%%DATADIR%%/images/g_layer/triple_tap_4.png
+%%DATADIR%%/images/g_layer/triple_tap_5.png
+%%DATADIR%%/images/g_layer/zoom_1.png
+%%DATADIR%%/objects/multibuttonentry.edj
 %%DATADIR%%/objects/multip.edj
+%%DATADIR%%/objects/postit_ent.edj
 %%DATADIR%%/objects/test.edj
 %%DATADIR%%/objects/colorpreview.edj
 %%DATADIR%%/objects/cursors.edj
 %%DATADIR%%/objects/font_preview.edj
 %%DATADIR%%/themes/default.edj
 %%DATADIR%%/themes/default-desktop.edj
+%%NLS%%share/locale/ar/LC_MESSAGES/elementary.mo
+%%NLS%%share/locale/az_IR/LC_MESSAGES/elementary.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/elementary.mo
+%%NLS%%share/locale/de/LC_MESSAGES/elementary.mo
+%%NLS%%share/locale/fa/LC_MESSAGES/elementary.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/elementary.mo
+%%NLS%%share/locale/he/LC_MESSAGES/elementary.mo
+%%NLS%%share/locale/it/LC_MESSAGES/elementary.mo
+%%NLS%%share/locale/ko_KR/LC_MESSAGES/elementary.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/elementary.mo
+%%NLS%%share/locale/ps/LC_MESSAGES/elementary.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/elementary.mo
+%%NLS%%share/locale/ur/LC_MESSAGES/elementary.mo
+%%NLS%%share/locale/yi/LC_MESSAGES/elementary.mo
 @dirrm include/elementary-0
 @dirrm lib/edje/modules/elm/%%E17_ARCH%%
 @dirrm lib/edje/modules/elm
 @dirrmtry lib/edje/modules
 @dirrmtry lib/edje
+@dirrm lib/elementary/modules/test_map/%%E17_ARCH%%
+@dirrm lib/elementary/modules/test_map
 @dirrm lib/elementary/modules/test_entry/%%E17_ARCH%%
 @dirrm lib/elementary/modules/test_entry
+@dirrm lib/elementary/modules/access_output/%%E17_ARCH%%
+@dirrm lib/elementary/modules/access_output
 @dirrm lib/elementary/modules
 @dirrm lib/elementary
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%/objects
+@dirrm %%DATADIR%%/images/g_layer
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/edje_externals
 @dirrm %%DATADIR%%/config/standard
@@ -91,5 +159,33 @@ share/icons/elementary.png
 @dirrm %%DATADIR%%/config/default
 @dirrm %%DATADIR%%/config
 @dirrm %%DATADIR%%
+%%NLS%%@dirrmtry share/locale/ar/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ar
+%%NLS%%@dirrmtry share/locale/az_IR/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/az_IR
+%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cs
+%%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de
+%%NLS%%@dirrmtry share/locale/fa/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fa
+%%NLS%%@dirrmtry share/locale/fr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fr
+%%NLS%%@dirrmtry share/locale/he/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/he
+%%NLS%%@dirrmtry share/locale/it/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/it
+%%NLS%%@dirrmtry share/locale/ko_KR/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ko_KR
+%%NLS%%@dirrmtry share/locale/nl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nl
+%%NLS%%@dirrmtry share/locale/ps/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ps
+%%NLS%%@dirrmtry share/locale/pt/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pt
+%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ur
+%%NLS%%@dirrmtry share/locale/yi/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/yi
 @dirrmtry share/applications
 @dirrmtry share/icons
