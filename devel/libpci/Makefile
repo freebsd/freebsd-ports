@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libpci
-PORTVERSION=	3.1.9
+PORTVERSION=	3.1.10
 CATEGORIES=	devel
 MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
 		LOCAL/sunpoet
@@ -14,6 +14,8 @@ DISTNAME=	pciutils-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PCI configuration space I/O made easy
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:${PORTSDIR}/misc/pciids
 
@@ -30,16 +32,24 @@ LIBPCI_FILES=	include/pci/config.h include/pci/header.h include/pci/pci.h \
 		libdata/pkgconfig/libpci.pc
 
 post-patch:
-	@${REINPLACE_CMD} 's|^CC=|CC?=|; s|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/Makefile
-
-post-build:
+	@${LN} -s . ${WRKSRC}/lib/pci
+	@${REINPLACE_CMD} \
+		-e 's|^CC=.*$$|CC=${CC}|' \
+		-e 's|^CFLAGS=|CFLAGS+=|' \
+		-e 's|^IDSDIR=.*$$|IDSDIR=${PREFIX}/share/pciids|' \
+		-e 's|^OPT=.*$$|OPT=-fPIC|' \
+		-e 's|^PREFIX=.*$$|PREFIX=${PREFIX}|' \
+			${WRKSRC}/Makefile
 	@${REINPLACE_CMD} 's|^#include "|&pci/|' ${WRKSRC}/lib/pci.h
 
+post-build:
+	cd ${WRKSRC}/lib/ && ${CC} ${CFLAGS} -shared *.o -lz -o libpci.so
+
 do-install:
-	@${MKDIR} ${PREFIX}/include/pci/
+	${MKDIR} ${PREFIX}/include/pci/
 .for file in ${LIBPCI_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/lib/${file:T} ${PREFIX}/${file}
+	${INSTALL_DATA} ${WRKSRC}/lib/${file:T} ${PREFIX}/${file}
 .endfor
-	@${LN} -fs libpci.so ${PREFIX}/lib/libpci.so.3
+	${LN} -fs libpci.so ${PREFIX}/lib/libpci.so.3
 
 .include <bsd.port.mk>
