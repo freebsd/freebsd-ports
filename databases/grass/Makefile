@@ -35,6 +35,8 @@ LIB_DEPENDS=	gdal.17:${PORTSDIR}/graphics/gdal \
 		freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
+BROKEN=		does not build
+
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
