@@ -11,7 +11,7 @@ CATEGORIES=	security python
 MASTER_SITES=	http://ftp.dlitz.net/pub/dlitz/crypto/pycrypto/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	k@stereochro.me
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	The Python Cryptography Toolkit
 
 USE_PYTHON=	yes
