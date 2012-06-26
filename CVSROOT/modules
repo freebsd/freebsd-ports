@@ -6956,7 +6956,6 @@ john                            ports/security/john
 jokosher                        ports/audio/jokosher
 jomp                            ports/java/jomp
 jools                           ports/games/jools
-joomla                          ports/www/joomla
 joomla15                        ports/www/joomla15
 joomla25                        ports/www/joomla25
 josm                            ports/astro/josm
@@ -8154,6 +8153,7 @@ libjbigi                        ports/math/libjbigi
 libjingle                       ports/net-im/libjingle
 libjit                          ports/lang/libjit
 libjpeg-turbo                   ports/graphics/libjpeg-turbo
+libjreen                        ports/net-im/libjreen
 libjson++                       ports/devel/libjson++
 libk8055                        ports/devel/libk8055
 libkate                         ports/multimedia/libkate
@@ -23851,6 +23851,7 @@ qtcurve-gtk2                    ports/x11-themes/qtcurve-gtk2
 qtcurve-kde3                    ports/x11-themes/qtcurve-kde3
 qtcurve-kde4                    ports/x11-themes/qtcurve-kde4
 qtcurve-qt4                     ports/x11-themes/qtcurve-qt4
+qtel                            ports/comms/qtel
 qtella                          ports/net-p2p/qtella
 qtemu                           ports/emulators/qtemu
 qtfm                            ports/x11-fm/qtfm
@@ -24237,6 +24238,7 @@ reply-o-matic                   ports/mail/reply-o-matic
 repng2jpeg                      ports/graphics/repng2jpeg
 reportmagic                     ports/www/reportmagic
 repos-style                     ports/www/repos-style
+reposado                        ports/net/reposado
 resid                           ports/audio/resid
 resin3                          ports/www/resin3
 resourceproto                   ports/x11/resourceproto
