@@ -7,6 +7,7 @@
 
 PORTNAME=	clay
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/jckarter/${PORTNAME}/tarball/v${PORTVERSION}/
 DISTNAME=	jckarter-${PORTNAME}-v${PORTVERSION}-0-g${GITVERSION}
