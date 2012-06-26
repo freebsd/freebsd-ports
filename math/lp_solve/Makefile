@@ -24,14 +24,10 @@ BUILDENV=	${ENV} TMPDIR="${TMPDIR}"
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386"
+.if ${ARCH} == "i386" || ${ARCH} == "powerpc"
 LPSOLVE_ARCH=	ux32
 .else
 LPSOLVE_ARCH=	ux64
-.endif
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not install on powerpc
 .endif
 
 post-patch:
