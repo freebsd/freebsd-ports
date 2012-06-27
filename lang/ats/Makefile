@@ -55,10 +55,10 @@ post-patch:
 	    ${WRKSRC}/utils/scripts/atslib.dats
 
 post-configure:
-.if !${PORT_OPTIONS:MGMP}
+.if empty(PORT_OPTIONS:MGMP)
 	${SED} -i '' -e '/HAVE_GMP_H/d' ${WRKSRC}/config.h
 .endif
-.if !${PORT_OPTIONS:MPCRE}
+.if empty(PORT_OPTIONS:MPCRE)
 	${SED} -i '' -e '/HAVE_PCRE_H/d' ${WRKSRC}/config.h
 .endif
 
