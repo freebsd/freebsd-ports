@@ -27,7 +27,9 @@ MAN1=		gawk.1 igawk.1 pgawk.1
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
