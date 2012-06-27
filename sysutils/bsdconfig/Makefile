@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	bsdconfig
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://druidbsd.sourceforge.net/download/bsdconfig/
-DISTNAME=	${PORTNAME}.120621
+DISTNAME=	${PORTNAME}.120626
 EXTRACT_SUFX=	.txz
 
 PATCH_SITES=	${MASTER_SITES}
@@ -206,7 +206,7 @@ PLIST_DIRS=	${BSDCFG_LIBE}/020.docsinstall/include \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900030
-BROKEN=		libdialog 20100428 or newer required.
+IGNORE=		libdialog 20100428 or newer required.
 .endif
 
 post-patch:
