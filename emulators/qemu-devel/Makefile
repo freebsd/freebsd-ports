@@ -32,7 +32,7 @@ CONFLICTS_INSTALL=	qemu-[0-9]*
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	SAMBA SDL OPENGL GNUTLS SASL JPEG PNG CURL CDROM_DMA PCAP \
-		USBREDIR GNS3 ADD_AUDIO ALL_TARGETS
+		USBREDIR GNS3 ADD_AUDIO CLANG X86_TARGETS BSD_USER
 SAMBA_DESC=		samba dependency (for -smb)
 GNUTLS_DESC=		gnutls dependency (vnc encryption)
 SASL_DESC=		cyrus-sasl dependency (vnc encryption)
@@ -45,7 +45,9 @@ SEABIOS_GIT_DESC=	add seabios snapshot (-bios bios.bin-1.6.3.1)
 USBREDIR_DESC=		usb device network redirection (experimental!)
 GNS3_DESC=		gns3 patches (udp, promiscuous multicast)
 ADD_AUDIO_DESC=		Emulate more audio hardware (experimental!)
-ALL_TARGETS_DESC=	Also build bsd-user targets (for testing)
+CLANG_DESC=		clang workaround (result slow and less stable!)
+X86_TARGETS_DESC=	Don't build non-x86 system targets
+BSD_USER_DESC=		Also build bsd-user targets (for testing)
 OPTIONS_DEFAULT=SDL OPENGL GNUTLS SASL JPEG PNG CURL CDROM_DMA PCAP
 
 .include <bsd.port.options.mk>
@@ -53,14 +55,39 @@ OPTIONS_DEFAULT=SDL OPENGL GNUTLS SASL JPEG PNG CURL CDROM_DMA PCAP
 CONFIGURE_ARGS+=	--extra-ldflags=-L${LOCALBASE}/lib
 PORTDOCS=	docs qemu-doc.html qemu-tech.html
 
-.if empty(PORT_OPTIONS:MALL_TARGETS)
-CONFIGURE_ARGS+=	--disable-bsd-user
-PLIST_SUB+=	ALLTARGETS="@comment "
+# XXX this fixes build with clang but --enable-tcg-interpreter that's
+# needed to avoid global register usage that clang doesn't support
+# causes the result to be slow and less stable.
+.if ${PORT_OPTIONS:MCLANG}
+CONFIGURE_ARGS+=	--enable-tcg-interpreter
+CLANG_CFLAGS_AS+=	-no-integrated-as
+.endif
+
+.if ${PORT_OPTIONS:MX86_TARGETS}
+.if ${PORT_OPTIONS:MBSD_USER}
+CONFIGURE_ARGS+=	--target-list=i386-softmmu,x86_64-softmmu,i386-bsd-user,x86_64-bsd-user,sparc-bsd-user,sparc64-bsd-user
 .else
-PLIST_SUB+=	ALLTARGETS=""
+CONFIGURE_ARGS+=	--target-list=i386-softmmu,x86_64-softmmu
+.endif
+.else
+.if empty(PORT_OPTIONS:MBSD_USER)
+CONFIGURE_ARGS+=	--disable-bsd-user
+.endif
+.endif
+
+.if empty(PORT_OPTIONS:MBSD_USER)
+PLIST_SUB+=	BSD_USER="@comment "
+.else
+PLIST_SUB+=	BSD_USER=""
 .if ${ARCH} == "sparc64"
 IGNORE=		bsd-user targets not tested on sparc64
 .endif
+.endif
+
+.if ${PORT_OPTIONS:MX86_TARGETS}
+PLIST_SUB+=	NONX86="@comment "
+.else
+PLIST_SUB+=	NONX86=""
 .endif
 
 .if ${PORT_OPTIONS:MGNS3}
@@ -190,6 +217,9 @@ post-patch:
 		-e "s|^(CFLAGS=).*|\1${CFLAGS} -fno-strict-aliasing -I.|" \
 		-e "s|^(LDFLAGS=).*|\1${LDFLAGS}|" \
 		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -E \
+		-e "s|^(CFLAGS[ 	]*:=.*)|\1 ${CLANG_CFLAGS_AS}|" \
+		${WRKSRC}/pc-bios/optionrom/Makefile
 	@${REINPLACE_CMD} -E \
 		-e "1s|^(#! )/usr/bin/perl|\1${PERL}|" \
 		${WRKSRC}/scripts/texi2pod.pl
