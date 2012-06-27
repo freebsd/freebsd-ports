@@ -17,11 +17,17 @@ COMMENT=	Validating XML parser for OCaml
 BUILD_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/netstring/netstring.a:${PORTSDIR}/www/ocaml-net
 RUN_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/netstring/netstring.a:${PORTSDIR}/www/ocaml-net
 
+OPTIONS_DEFINE=	ULEX
+OPTIONS_DEFAULT=ULEX
+ULEX_DESC=	Include UTF-8 lexical analyzer support
+
 USE_OCAML=	true
 USE_OCAML_FINDLIB=	true
 USE_OCAML_LDCONFIG=	true
 
-.if !defined(WITHOUT_ULEX)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MULEX}
 BUILD_DEPENDS+=	${LOCALBASE}/${OCAML_SITELIBDIR}/ulex/ulexing.a:${PORTSDIR}/devel/ocaml-ulex
 RUN_DEPENDS+=	${LOCALBASE}/${OCAML_SITELIBDIR}/ulex/ulexing.a:${PORTSDIR}/devel/ocaml-ulex
 .endif

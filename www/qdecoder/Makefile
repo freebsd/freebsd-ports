@@ -28,7 +28,7 @@ PLIST_FILES=	include/qdecoder.h \
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+="--enable-debug"
 .endif
 

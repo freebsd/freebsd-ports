@@ -119,7 +119,7 @@ post-patch:
 		${WRKSRC}/tools/tinurl_handler.pl
 
 post-build:
-.ifndef	WITHOUT_NLS
+.if ${PORT_OPTIONS:MNLS}
 	cd ${WRKSRC}/po; ${GMAKE}
 .endif
 
