@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Search-Xapian
-PORTVERSION=	1.2.10.0
+PORTVERSION=	1.2.11.0
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION:R}/ \
 		LOCAL/sunpoet \
@@ -19,8 +19,7 @@ COMMENT=	Perl XS frontend to the Xapian C++ search library
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	xapian.26:${PORTSDIR}/databases/xapian-core
-
+LIB_DEPENDS=	xapian:${PORTSDIR}/databases/xapian-core
 TEST_DEPENDS=	p5-Test-Pod>=1.14:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=1.04:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 
@@ -71,6 +70,6 @@ MAN3=		Search::Xapian.3 \
 		Search::Xapian::WritableDatabase.3
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/^if (defined $$builddir/if (0/' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e 's|^if (defined $$builddir) {|if (0) {|' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
