@@ -7,7 +7,7 @@
 
 PORTNAME=	sshguard
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF/sshguard/sshguard/sshguard-${PORTVERSION}
 
@@ -21,6 +21,7 @@ PLIST_FILES=	sbin/sshguard
 MAN8=		sshguard.8
 MANCOMPRESSED=	no
 USE_BZIP2=	yes
+USE_RC_SUBR=	sshguard
 MAKE_ARGS+=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}"
 HAS_CONFIGURE=	yes
 
