@@ -137,6 +137,7 @@
     SUBDIR += py-easyzone
     SUBDIR += py-idnkit2
     SUBDIR += py-namebench
+    SUBDIR += py-publicsuffix
     SUBDIR += py-twistedNames
     SUBDIR += radns
     SUBDIR += rbldnsd
