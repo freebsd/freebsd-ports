@@ -85,6 +85,7 @@
     SUBDIR += edenmath
     SUBDIR += eigen
     SUBDIR += eigen2
+    SUBDIR += eigen3
     SUBDIR += eispack
     SUBDIR += elmer-umfpack
     SUBDIR += emacs-calc
