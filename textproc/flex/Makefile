@@ -26,7 +26,9 @@ USE_GMAKE=	yes
 MAN1=		flex.1
 INFO=		flex
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
