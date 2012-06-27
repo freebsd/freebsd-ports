@@ -52,6 +52,86 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ff922811-c096-11e1-b0f4-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>20.0.1132.43</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/search/label/Stable%20updates">
+	  <p>[118633] Low CVE-2012-2815: Leak of iframe fragment id. Credit to
+	    Elie Bursztein of Google.</p>
+	  <p>[120222] High CVE-2012-2817: Use-after-free in table section
+	    handling. Credit to miaubiz.</p>
+	  <p>[120944] High CVE-2012-2818: Use-after-free in counter layout.
+	    Credit to miaubiz.</p>
+	  <p>[120977] High CVE-2012-2819: Crash in texture handling. Credit to
+	    Ken "gets" Russell of the Chromium development community.</p>
+	  <p>[121926] Medium CVE-2012-2820: Out-of-bounds read in SVG filter
+	    handling. Credit to Atte Kettunen of OUSPG.</p>
+	  <p>[122925] Medium CVE-2012-2821: Autofill display problem. Credit to
+	   "simonbrown60".</p>
+	  <p>[various] Medium CVE-2012-2822: Misc. lower severity OOB read
+	   issues in PDF. Credit to awesome ASAN and various Googlers (Kostya
+	   Serebryany, Evgeniy Stepanov, Mateusz Jurczyk, Gynvael Coldwind).</p>
+	  <p>[124356] High CVE-2012-2823: Use-after-free in SVG resource
+	   handling. Credit to miaubiz.</p>
+	  <p>[125374] High CVE-2012-2824: Use-after-free in SVG painting.
+	   Credit to miaubiz.</p>
+	  <p>[128688] Medium CVE-2012-2826: Out-of-bounds read in texture
+	   conversion. Credit to Google Chrome Security Team (Inferno).</p>
+	  <p>[Mac only] [129826] Low CVE-2012-2827: Use-after-free in Mac UI.
+	   Credit to the Chromium development community (Dharani Govindan).</p>
+	  <p>[129857] High CVE-2012-2828: Integer overflows in PDF. Credit to
+	   Mateusz Jurczyk of Google Security Team and Google Chrome Security
+	   Team (Chris Evans).</p>
+	  <p>[129947] High CVE-2012-2829: Use-after-free in first-letter
+	   handling. Credit to miaubiz.</p>
+	  <p>[129951] High CVE-2012-2830: Wild pointer in array value setting.
+	   Credit to miaubiz.</p>
+	  <p>[130356] High CVE-2012-2831: Use-after-free in SVG reference
+	   handling. Credit to miaubiz.</p>
+	  <p>[131553] High CVE-2012-2832: Uninitialized pointer in PDF image
+	   codec. Credit to Mateusz Jurczyk of Google Security Team.</p>
+	  <p>[132156] High CVE-2012-2833: Buffer overflow in PDF JS API. Credit
+	   to Mateusz Jurczyk of Google Security Team.</p>
+	  <p>[132779] High CVE-2012-2834: Integer overflow in Matroska
+	   container. Credit to Juri Aedla.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-2815</cvename>
+      <cvename>CVE-2012-2817</cvename>
+      <cvename>CVE-2012-2818</cvename>
+      <cvename>CVE-2012-2819</cvename>
+      <cvename>CVE-2012-2820</cvename>
+      <cvename>CVE-2012-2821</cvename>
+      <cvename>CVE-2012-2822</cvename>
+      <cvename>CVE-2012-2823</cvename>
+      <cvename>CVE-2012-2824</cvename>
+      <cvename>CVE-2012-2826</cvename>
+      <cvename>CVE-2012-2827</cvename>
+      <cvename>CVE-2012-2828</cvename>
+      <cvename>CVE-2012-2829</cvename>
+      <cvename>CVE-2012-2830</cvename>
+      <cvename>CVE-2012-2831</cvename>
+      <cvename>CVE-2012-2832</cvename>
+      <cvename>CVE-2012-2833</cvename>
+      <cvename>CVE-2012-2834</cvename>
+      <url>http://googlechromereleases.blogspot.com/search/label/Stable%20updates</url>
+    </references>
+    <dates>
+      <discovery>2012-06-26</discovery>
+      <entry>2012-06-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="aed44c4e-c067-11e1-b5e0-000c299b62e1">
     <topic>FreeBSD -- Privilege escalation when returning from kernel</topic>
     <affects>
