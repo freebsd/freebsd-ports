@@ -1,4 +1,2 @@
-SHA256 (links-2.6.tar.bz2) = df9149f5f50d0b7742f6b3972b0fc0e9ff091ad4ef27153a3362a9ac1033835b
-SIZE (links-2.6.tar.bz2) = 3866614
-SHA256 (links-2.6-ipv6.patch.gz) = 0e20b756a068e050411bc2e0e76c4b76e00443d2cdcaa92f1994e8eabee15ca8
-SIZE (links-2.6-ipv6.patch.gz) = 9709
+SHA256 (links-2.7.tar.bz2) = 0c182b1cbcdfd5cdcd2f75a6032d1a4b660d07c1225c1e07757cec81d3302130
+SIZE (links-2.7.tar.bz2) = 3884511
