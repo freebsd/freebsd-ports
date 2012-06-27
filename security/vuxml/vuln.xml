@@ -52,6 +52,163 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="aed44c4e-c067-11e1-b5e0-000c299b62e1">
+    <topic>FreeBSD -- Privilege escalation when returning from kernel</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>7.4</ge><lt>7.4_9</lt></range>
+	<range><ge>8.1</ge><lt>8.1_12</lt></range>
+	<range><ge>8.2</ge><lt>8.2_9</lt></range>
+	<range><ge>8.3</ge><lt>8.3_3</lt></range>
+	<range><ge>9.0</ge><lt>9.0_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Problem description:</p>
+	<blockquote cite="http://security.freebsd.org/advisories/FreeBSD-SA-12:04.sysret.asc">
+	  <p>FreeBSD/amd64 runs on CPUs from different vendors.  Due to varying
+	     behaviour of CPUs in 64 bit mode a sanity check of the kernel may be
+	     insufficient when returning from a system call.</p>
+	  <p>Successful exploitation of the problem can lead to local kernel privilege
+	     escalation, kernel data corruption and/or crash.
+	     To exploit this vulnerability, an attacker must be able to run code with user
+	     privileges on the target system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-12:04.sysret</freebsdsa>
+      <cvename>CVE-2012-0217</cvename>
+    </references>
+    <dates>
+      <discovery>2012-06-12</discovery>
+      <entry>2012-06-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fc5231b6-c066-11e1-b5e0-000c299b62e1">
+    <topic>FreeBSD -- Incorrect handling of zero-length RDATA fields in named(8)</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>7.4</ge><lt>7.4_9</lt></range>
+	<range><ge>8.1</ge><lt>8.1_11</lt></range>
+	<range><ge>8.2</ge><lt>8.2_9</lt></range>
+	<range><ge>8.3</ge><lt>8.3_3</lt></range>
+	<range><ge>9.0</ge><lt>9.0_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Problem description:</p>
+	<blockquote cite="http://security.freebsd.org/advisories/FreeBSD-SA-12:03.bind.asc">
+	  <p>The named(8) server does not properly handle DNS resource records where
+	     the RDATA field is zero length, which may cause various issues for the
+	     servers handling them.</p>
+	  <p>Resolving servers may crash or disclose some portion of memory to the
+	     client.  Authoritative servers may crash on restart after transferring a
+	     zone containing records with zero-length RDATA fields.  These would
+	     result in a denial of service, or leak of sensitive information.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-12:03.bind</freebsdsa>
+      <cvename>CVE-2012-1667</cvename>
+    </references>
+    <dates>
+      <discovery>2012-06-12</discovery>
+      <entry>2012-06-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="185ff22e-c066-11e1-b5e0-000c299b62e1">
+    <topic>FreeBSD -- Incorrect crypt() hashing</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>7.4</ge><lt>7.4_8</lt></range>
+	<range><ge>8.1</ge><lt>8.1_10</lt></range>
+	<range><ge>8.2</ge><lt>8.2_8</lt></range>
+	<range><ge>8.3</ge><lt>8.3_2</lt></range>
+	<range><ge>9.0</ge><lt>9.0_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Problem description:</p>
+	<blockquote cite="http://security.freebsd.org/advisories/FreeBSD-SA-12:02.crypt.asc">
+	  <p>There is a programming error in the DES implementation used in crypt()
+	     when handling input which contains characters that can not be represented
+	     with 7-bit ASCII.</p>
+	  <p>When the input contains characters with only the most significant bit set
+	     (0x80), that character and all characters after it will be ignored.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-12:02.crypt</freebsdsa>
+      <cvename>CVE-2012-2143</cvename>
+    </references>
+    <dates>
+      <discovery>2012-05-30</discovery>
+      <entry>2012-06-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2ae114de-c064-11e1-b5e0-000c299b62e1">
+    <topic>FreeBSD -- OpenSSL multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>7.4</ge><lt>7.4_8</lt></range>
+	<range><ge>8.1</ge><lt>8.1_10</lt></range>
+	<range><ge>8.2</ge><lt>8.2_8</lt></range>
+	<range><ge>8.3</ge><lt>8.3_2</lt></range>
+	<range><ge>9.0</ge><lt>9.0_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Problem description:</p>
+	<blockquote cite="http://security.freebsd.org/advisories/FreeBSD-SA-12:01.openssl.asc">
+	  <p>OpenSSL fails to clear the bytes used as block cipher padding in SSL 3.0
+	     records when operating as a client or a server that accept SSL 3.0
+	     handshakes.  As a result, in each record, up to 15 bytes of uninitialized
+	     memory may be sent, encrypted, to the SSL peer.  This could include
+	     sensitive contents of previously freed memory. [CVE-2011-4576]</p>
+	  <p>OpenSSL support for handshake restarts for server gated cryptography (SGC)
+	     can be used in a denial-of-service attack. [CVE-2011-4619]</p>
+	  <p>If an application uses OpenSSL's certificate policy checking when
+	     verifying X509 certificates, by enabling the X509_V_FLAG_POLICY_CHECK
+	     flag, a policy check failure can lead to a double-free. [CVE-2011-4109]</p>
+	  <p>A weakness in the OpenSSL PKCS #7 code can be exploited using
+	     Bleichenbacher's attack on PKCS #1 v1.5 RSA padding also known as the
+	     million message attack (MMA). [CVE-2012-0884]</p>
+	  <p>The asn1_d2i_read_bio() function, used by the d2i_*_bio and d2i_*_fp
+	     functions, in OpenSSL contains multiple integer errors that can cause
+	     memory corruption when parsing encoded ASN.1 data.  This error can occur
+	     on systems that parse untrusted ASN.1 data, such as X.509 certificates
+	     or RSA public keys. [CVE-2012-2110]</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-12:01.openssl</freebsdsa>
+      <cvename>CVE-2011-4576</cvename>
+      <cvename>CVE-2011-4619</cvename>
+      <cvename>CVE-2011-4109</cvename>
+      <cvename>CVE-2012-0884</cvename>
+      <cvename>CVE-2012-2110</cvename>
+    </references>
+    <dates>
+      <discovery>2012-05-03</discovery>
+      <entry>2012-06-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f45c0049-be72-11e1-a284-0023ae8e59f0">
     <topic>pycrypto -- vulnerable ElGamal key generation</topic>
     <affects>
