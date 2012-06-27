@@ -27,7 +27,7 @@
 # 
 
 CONFIG=%%PREFIX%%/etc/swapmonrc
-VERSION="1.4"
+VERSION="1.5"
 
 if [ -r "${CONFIG}" ]
 then	. "${CONFIG}"
@@ -47,10 +47,13 @@ fi
 : ${LOGGER=/usr/bin/logger}
 # if running as daemon where to put pidfile
 : ${PIDFILE=/var/run/swapmon.pid}
+# if no swap is configured create a swapfile with this size
+: ${SWAP_MIN=256}
 
 LOCKF=$SM_HOME/lock
 SWAPFILE=$SM_HOME/swap.XXXX
 SWAPLIST=$SM_HOME/swapfiles
+SWAPDEF=$SM_HOME/swap.def
 MKTEMP=/usr/bin/mktemp
 TRUNCATE=/usr/bin/truncate
 TOUCH=/usr/bin/touch
@@ -61,9 +64,13 @@ SWAPOFF=/sbin/swapoff
 SWAPCTL=/sbin/swapctl
 RM=/bin/rm
 SED=/usr/bin/sed
+PERM=600
+UID=$(/usr/bin/id -u)
+GID=$(/usr/bin/id -g)
 umask 0077
 
-if [ $(/usr/bin/id -u) -gt 0 ]
+# a few sanity checks to see if we can do our work
+if [ $UID -gt 0 ]
 then	echo "I'm not running as root (uid=0) this probably wont work."
 #	exit 1
 fi
@@ -75,7 +82,7 @@ $TOUCH ${SWAPLIST} || { echo "Can't write to ${SWAPLIST} aborting." ; exit 1; }
 # add a 1MB swapfile to check if we have the permissions to do so
 NSWAP=$($MKTEMP ${SWAPFILE})
 $TRUNCATE -s 1M "${NSWAP}" || { echo "Error creating swapfile ${NSWAP}, aborting." ; exit 1; }
-$CHMOD 600 "${NSWAP}"
+$CHMOD ${PERM} "${NSWAP}"
 MDEV=$($MDCONFIG -a -t vnode -f "${NSWAP}")
 if [ -n "$MDEV" ]
 then
@@ -88,12 +95,50 @@ else
 	$RM -f "${NSWAP}"
 	exit
 fi
+# delete leftover swapfiles
+find $SM_HOME -maxdepth 1 -name $(echo ${SWAPFILE##*/}|tr X \?) -type f \
+	-perm ${PERM} -user $UID -group $GID -exec $RM -fv "{}" \;
 
 if [ ${SWAP_LOW} -ge $(( $(($SWAP_HIGH * 100)) / $((100 + $SWAP_STEP)) )) ]
 then	echo "SWAP_LOW(${SWAP_LOW}) schould be lower than $(( $(($SWAP_HIGH * 100)) / $((100 + $SWAP_STEP)) )) to be useful."
 		echo "Swapmon $VERSION."
 		exit 1
 fi
+
+# if there is no swap configured, add some
+add_def_swap()
+{
+	SWAPCTLSK=$($SWAPCTL -sk)
+	SWAPTOTAL=${SWAPCTLSK#* }
+	SWAPTOTAL=${SWAPTOTAL% *}
+	if [ "$SWAPTOTAL" -eq 0 ]
+	then
+		if [ "${SWAP_MIN}" -gt 0 ]
+		then
+			if [ -e "${SWAPDEF}" ]	# if the file already exists
+			then	if [ -f "${SWAPDEF}" -a \! -h "${SWAPDEF}"]	# is it a regular file and no symlink?
+					then	$RM -f "${SWAPDEF}"
+					else	echo "Error: swapfile ${SWAPDEF} is not a regular file, aborting." ; exit 1;
+					fi
+			fi
+			$TRUNCATE -s ${SWAP_MIN}M "${SWAPDEF}" || { echo "Error creating swapfile ${SWAPDEF}, aborting." ; exit 1; }
+			$CHMOD $PERM "${SWAPDEF}"
+			MDEV=$($MDCONFIG -a -t vnode -f "${SWAPDEF}")
+			if [ -n "$MDEV" ]
+			then
+				$SWAPON /dev/${MDEV} || { echo "error activating swapdevice /dev/${MDEV}."; exit 1; }
+				echo "swapmon$VERSION[$$] Activated swapfile ${SWAPDEF} as there was no swap configured!"|$LOGGER
+			else
+				echo "error configuring memory disk ($MDCONFIG -a -t vnode -f \"${SWAPDEF}\")"
+				$RM -f "${SWAPDEF}"
+				exit 1
+			fi
+		else
+			echo "No swap configured, SWAP_MIN set to $SWAP_MIN - aborting."
+			exit 1
+		fi
+	fi
+}
 
 check_swap()
 {
@@ -107,7 +152,7 @@ check_swap()
 		# make sure we can write to the swaplist
 		$TOUCH "${SWAPLIST}" || { echo "swapmon$VERSION[$$] Error modifying ${SWAPLIST} exiting."|$LOGGER; exit 1; }
 		$TRUNCATE -s ${BLOCKS}M "${NSWAP}"
-		$CHMOD 0600 "${NSWAP}"
+		$CHMOD $PERM "${NSWAP}"
 		if [ -s "${NSWAP}" ]
 		then	MDEV=$($MDCONFIG -a -t vnode -f "${NSWAP}")
 			printf "${MDEV} ${NSWAP}\n" >>"${SWAPLIST}"
@@ -146,6 +191,8 @@ check_swap()
 	done
 }
 
+add_def_swap	# this will check if there is some swap configured
+				# we can't work without
 case "$1" in
 	start)
 		$0 -F <&- 2>&1 >/dev/null &
@@ -176,7 +223,7 @@ case "$1" in
 			exit 1;
 		else
 			echo $$ >"${LOCKF}"
-			LOGGER="|/bin/cat"
+			LOGGER="/bin/cat"
 			check_swap
 		fi
 		$RM -f "${LOCKF}"
