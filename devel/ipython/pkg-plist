@@ -6,7 +6,6 @@ bin/iptest
 bin/ipython
 bin/irunner
 bin/pycolor
-%%PYTHON_SITELIBDIR%%/IPython/.git_commit_info.ini
 %%PYTHON_SITELIBDIR%%/IPython/__init__.py
 %%PYTHON_SITELIBDIR%%/IPython/__init__.pyc
 %%PYTHON_SITELIBDIR%%/IPython/__init__.pyo
@@ -186,9 +185,6 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/refbug.py
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/refbug.pyc
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/refbug.pyo
-%%PYTHON_SITELIBDIR%%/IPython/core/tests/test_pylabtools.py
-%%PYTHON_SITELIBDIR%%/IPython/core/tests/test_pylabtools.pyc
-%%PYTHON_SITELIBDIR%%/IPython/core/tests/test_pylabtools.pyo
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/simpleerr.py
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/simpleerr.pyc
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/simpleerr.pyo
@@ -264,6 +260,9 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_prompts.py
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_prompts.pyc
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_prompts.pyo
+%%PYTHON_SITELIBDIR%%/IPython/core/tests/test_pylabtools.py
+%%PYTHON_SITELIBDIR%%/IPython/core/tests/test_pylabtools.pyc
+%%PYTHON_SITELIBDIR%%/IPython/core/tests/test_pylabtools.pyo
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_run.py
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_run.pyc
 %%PYTHON_SITELIBDIR%%/IPython/core/tests/test_run.pyo
@@ -533,6 +532,8 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/prettify/COPYING
 %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/prettify/prettify.css
 %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/prettify/prettify.js
+%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/unminified/README
+%%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/unminified/prettify.js
 %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/templates/layout.html
 %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/templates/login.html
 %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/templates/logout.html
@@ -716,9 +717,6 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/lib/pretty.py
 %%PYTHON_SITELIBDIR%%/IPython/lib/pretty.pyc
 %%PYTHON_SITELIBDIR%%/IPython/lib/pretty.pyo
-@comment %%PYTHON_SITELIBDIR%%/IPython/lib/pylabtools.py
-@comment %%PYTHON_SITELIBDIR%%/IPython/lib/pylabtools.pyc
-@comment %%PYTHON_SITELIBDIR%%/IPython/lib/pylabtools.pyo
 %%PYTHON_SITELIBDIR%%/IPython/lib/security.py
 %%PYTHON_SITELIBDIR%%/IPython/lib/security.pyc
 %%PYTHON_SITELIBDIR%%/IPython/lib/security.pyo
@@ -740,9 +738,9 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_kernel.py
 %%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_kernel.pyc
 %%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_kernel.pyo
-@comment %%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_pylabtools.py
-@comment %%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_pylabtools.pyc
-@comment %%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_pylabtools.pyo
+%%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_pretty.py
+%%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_pretty.pyc
+%%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_pretty.pyo
 %%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_security.py
 %%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_security.pyc
 %%PYTHON_SITELIBDIR%%/IPython/lib/tests/test_security.pyo
@@ -1127,6 +1125,9 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/utils/_process_win32.py
 %%PYTHON_SITELIBDIR%%/IPython/utils/_process_win32.pyc
 %%PYTHON_SITELIBDIR%%/IPython/utils/_process_win32.pyo
+%%PYTHON_SITELIBDIR%%/IPython/utils/_sysinfo.py
+%%PYTHON_SITELIBDIR%%/IPython/utils/_sysinfo.pyc
+%%PYTHON_SITELIBDIR%%/IPython/utils/_sysinfo.pyo
 %%PYTHON_SITELIBDIR%%/IPython/utils/attic.py
 %%PYTHON_SITELIBDIR%%/IPython/utils/attic.pyc
 %%PYTHON_SITELIBDIR%%/IPython/utils/attic.pyo
@@ -1208,6 +1209,9 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/utils/py3compat.py
 %%PYTHON_SITELIBDIR%%/IPython/utils/py3compat.pyc
 %%PYTHON_SITELIBDIR%%/IPython/utils/py3compat.pyo
+%%PYTHON_SITELIBDIR%%/IPython/utils/pyfile.py
+%%PYTHON_SITELIBDIR%%/IPython/utils/pyfile.pyc
+%%PYTHON_SITELIBDIR%%/IPython/utils/pyfile.pyo
 %%PYTHON_SITELIBDIR%%/IPython/utils/rlineimpl.py
 %%PYTHON_SITELIBDIR%%/IPython/utils/rlineimpl.pyc
 %%PYTHON_SITELIBDIR%%/IPython/utils/rlineimpl.pyo
@@ -1376,7 +1380,6 @@ bin/pycolor
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lib/internal_ipkernel.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lib/ipkernel_qtapp.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lib/ipkernel_wxapp.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lib/with_ipkernel.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/00_notebook_tour.ipynb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/01_notebook_introduction.ipynb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notebooks/animation.m4v
@@ -1436,9 +1439,13 @@ bin/pycolor
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_embed/embed1.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_embed/embed2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_embed/embed3.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/heartbeat/gilsleep.ipynb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/heartbeat/hb_gil.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vim/README.rst
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vim/ipy.vim
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/vim
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/heartbeat
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_embed
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/parallel/workflow
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/parallel/wave2D
@@ -1493,6 +1500,7 @@ bin/pycolor
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/qt
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/tests
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/templates
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/unminified
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/prettify
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/pagedown
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/frontend/html/notebook/static/js
