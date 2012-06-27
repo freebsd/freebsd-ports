@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openimageio
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.6
 CATEGORIES=	graphics multimedia python
 MASTER_SITES=	https://github.com/OpenImageIO/oiio/tarball/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ COMMENT=	OpenImageIO python bindings
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	OpenImageIO.1:${PORTSDIR}/graphics/openimageio \
+LIB_DEPENDS=	OpenImageIO:${PORTSDIR}/graphics/openimageio \
 		boost_python:${PORTSDIR}/devel/boost-python-libs
 
 FETCH_ARGS=	-pRr
@@ -36,7 +36,7 @@ LDFLAGS+=	-ltbb
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	2.6+
-WRKSRC=		${WRKDIR}/OpenImageIO-oiio-2388ebf/src
+WRKSRC=		${WRKDIR}/OpenImageIO-oiio-f0a566a/src
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/OpenImageIO.so
 
