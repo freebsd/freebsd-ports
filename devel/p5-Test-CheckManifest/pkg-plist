@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Test/CheckManifest.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/CheckManifest/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/CheckManifest
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Test
