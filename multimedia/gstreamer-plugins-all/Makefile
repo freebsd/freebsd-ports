@@ -8,7 +8,7 @@
 
 PORTNAME=	gstreamer-plugins-all
 PORTVERSION=	1.3.${GST_VERSION}.${GST_SHLIB_VERSION}
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	multimedia
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -40,7 +40,6 @@ PORT_OPTIONS:=	${PORT_OPTIONS:NVDPAU} # Needs to be build agains running kernel
 .if ${ARCH} != "i386"
 PORT_OPTIONS:=	${PORT_OPTIONS:NSPC} # i386 only
 .endif
-PORT_OPTIONS:=	${PORT_OPTIONS:NFLITE} # broken
 
 .for f in ${OPTIONS_DEFINE}
 .if ${PORT_OPTIONS:M${f:U}}

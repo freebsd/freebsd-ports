@@ -1,9 +1,20 @@
+include/gstreamer-%%VERSION%%/gst/basecamerabinsrc/gstbasecamerasrc.h
+include/gstreamer-%%VERSION%%/gst/basecamerabinsrc/gstcamerabin-enum.h
+include/gstreamer-%%VERSION%%/gst/basecamerabinsrc/gstcamerabinpreview.h
+include/gstreamer-%%VERSION%%/gst/codecparsers/gsth264parser.h
+include/gstreamer-%%VERSION%%/gst/codecparsers/gstmpeg4parser.h
+include/gstreamer-%%VERSION%%/gst/codecparsers/gstmpegvideoparser.h
+include/gstreamer-%%VERSION%%/gst/codecparsers/gstvc1parser.h
 include/gstreamer-%%VERSION%%/gst/interfaces/photography-enumtypes.h
 include/gstreamer-%%VERSION%%/gst/interfaces/photography.h
 include/gstreamer-%%VERSION%%/gst/signalprocessor/gstsignalprocessor.h
 include/gstreamer-%%VERSION%%/gst/video/gstbasevideocodec.h
 include/gstreamer-%%VERSION%%/gst/video/gstbasevideodecoder.h
 include/gstreamer-%%VERSION%%/gst/video/gstbasevideoencoder.h
+include/gstreamer-%%VERSION%%/gst/video/gstbasevideoutils.h
+include/gstreamer-%%VERSION%%/gst/video/gstsurfacebuffer.h
+include/gstreamer-%%VERSION%%/gst/video/gstsurfaceconverter.h
+include/gstreamer-%%VERSION%%/gst/video/videocontext.h
 lib/gstreamer-%%VERSION%%/libgstadpcmdec.la
 lib/gstreamer-%%VERSION%%/libgstadpcmdec.so
 lib/gstreamer-%%VERSION%%/libgstadpcmenc.la
@@ -14,10 +25,14 @@ lib/gstreamer-%%VERSION%%/libgstasfmux.la
 lib/gstreamer-%%VERSION%%/libgstasfmux.so
 lib/gstreamer-%%VERSION%%/libgstautoconvert.la
 lib/gstreamer-%%VERSION%%/libgstautoconvert.so
+lib/gstreamer-%%VERSION%%/libgstaudiovisualizers.la
+lib/gstreamer-%%VERSION%%/libgstaudiovisualizers.so
 lib/gstreamer-%%VERSION%%/libgstbayer.la
 lib/gstreamer-%%VERSION%%/libgstbayer.so
 lib/gstreamer-%%VERSION%%/libgstcamerabin.la
 lib/gstreamer-%%VERSION%%/libgstcamerabin.so
+lib/gstreamer-%%VERSION%%/libgstcamerabin2.la
+lib/gstreamer-%%VERSION%%/libgstcamerabin2.so
 lib/gstreamer-%%VERSION%%/libgstcdxaparse.la
 lib/gstreamer-%%VERSION%%/libgstcdxaparse.so
 lib/gstreamer-%%VERSION%%/libgstcoloreffects.la
@@ -38,12 +53,16 @@ lib/gstreamer-%%VERSION%%/libgstdvdspu.la
 lib/gstreamer-%%VERSION%%/libgstdvdspu.so
 lib/gstreamer-%%VERSION%%/libgstdvbsuboverlay.la
 lib/gstreamer-%%VERSION%%/libgstdvbsuboverlay.so
+lib/gstreamer-%%VERSION%%/libgstfaceoverlay.la
+lib/gstreamer-%%VERSION%%/libgstfaceoverlay.so
 lib/gstreamer-%%VERSION%%/libgstfestival.la
 lib/gstreamer-%%VERSION%%/libgstfestival.so
 lib/gstreamer-%%VERSION%%/libgstfieldanalysis.la
 lib/gstreamer-%%VERSION%%/libgstfieldanalysis.so
 lib/gstreamer-%%VERSION%%/libgstfragmented.la
 lib/gstreamer-%%VERSION%%/libgstfragmented.so
+lib/gstreamer-%%VERSION%%/libgstfreeverb.la
+lib/gstreamer-%%VERSION%%/libgstfreeverb.so
 lib/gstreamer-%%VERSION%%/libgstfreeze.la
 lib/gstreamer-%%VERSION%%/libgstfreeze.so
 lib/gstreamer-%%VERSION%%/libgstfrei0r.la
@@ -58,8 +77,8 @@ lib/gstreamer-%%VERSION%%/libgsthdvparse.la
 lib/gstreamer-%%VERSION%%/libgsthdvparse.so
 lib/gstreamer-%%VERSION%%/libgstid3tag.la
 lib/gstreamer-%%VERSION%%/libgstid3tag.so
-lib/gstreamer-%%VERSION%%/libgstinvtelecine.la
-lib/gstreamer-%%VERSION%%/libgstinvtelecine.so
+lib/gstreamer-%%VERSION%%/libgstinter.la
+lib/gstreamer-%%VERSION%%/libgstinter.so
 lib/gstreamer-%%VERSION%%/libgstinterlace.la
 lib/gstreamer-%%VERSION%%/libgstinterlace.so
 lib/gstreamer-%%VERSION%%/libgstivfparse.la
@@ -72,8 +91,6 @@ lib/gstreamer-%%VERSION%%/libgstlegacyresample.la
 lib/gstreamer-%%VERSION%%/libgstlegacyresample.so
 lib/gstreamer-%%VERSION%%/libgstliveadder.la
 lib/gstreamer-%%VERSION%%/libgstliveadder.so
-lib/gstreamer-%%VERSION%%/libgstmpeg4videoparse.la
-lib/gstreamer-%%VERSION%%/libgstmpeg4videoparse.so
 lib/gstreamer-%%VERSION%%/libgstmpegdemux.la
 lib/gstreamer-%%VERSION%%/libgstmpegdemux.so
 lib/gstreamer-%%VERSION%%/libgstmpegpsmux.la
@@ -102,6 +119,8 @@ lib/gstreamer-%%VERSION%%/libgstpnm.so
 %%I386%%lib/gstreamer-%%VERSION%%/libgstreal.so
 lib/gstreamer-%%VERSION%%/libgstrawparse.la
 lib/gstreamer-%%VERSION%%/libgstrawparse.so
+lib/gstreamer-%%VERSION%%/libgstremovesilence.la
+lib/gstreamer-%%VERSION%%/libgstremovesilence.so
 lib/gstreamer-%%VERSION%%/libgstrfbsrc.la
 lib/gstreamer-%%VERSION%%/libgstrfbsrc.so
 lib/gstreamer-%%VERSION%%/libgstrtpmux.la
@@ -120,6 +139,8 @@ lib/gstreamer-%%VERSION%%/libgstshm.la
 lib/gstreamer-%%VERSION%%/libgstshm.so
 lib/gstreamer-%%VERSION%%/libgstsiren.la
 lib/gstreamer-%%VERSION%%/libgstsiren.so
+lib/gstreamer-%%VERSION%%/libgstsmooth.la
+lib/gstreamer-%%VERSION%%/libgstsmooth.so
 lib/gstreamer-%%VERSION%%/libgstspeed.la
 lib/gstreamer-%%VERSION%%/libgstspeed.so
 lib/gstreamer-%%VERSION%%/libgststereo.la
@@ -142,10 +163,18 @@ lib/gstreamer-%%VERSION%%/libgstvmnc.la
 lib/gstreamer-%%VERSION%%/libgstvmnc.so
 lib/gstreamer-%%VERSION%%/libgsty4mdec.la
 lib/gstreamer-%%VERSION%%/libgsty4mdec.so
+lib/libgstbasecamerabinsrc-%%VERSION%%.a
+lib/libgstbasecamerabinsrc-%%VERSION%%.la
+lib/libgstbasecamerabinsrc-%%VERSION%%.so
+lib/libgstbasecamerabinsrc-%%VERSION%%.so.0
 lib/libgstbasevideo-%%VERSION%%.a
 lib/libgstbasevideo-%%VERSION%%.la
 lib/libgstbasevideo-%%VERSION%%.so
 lib/libgstbasevideo-%%VERSION%%.so.0
+lib/libgstcodecparsers-%%VERSION%%.a
+lib/libgstcodecparsers-%%VERSION%%.la
+lib/libgstcodecparsers-%%VERSION%%.so
+lib/libgstcodecparsers-%%VERSION%%.so.0
 lib/libgstphotography-%%VERSION%%.a
 lib/libgstphotography-%%VERSION%%.la
 lib/libgstphotography-%%VERSION%%.so
@@ -163,6 +192,7 @@ share/locale/da/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/de/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/el/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/en_GB/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
+share/locale/eo/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/es/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/eu/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/fi/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
@@ -195,3 +225,5 @@ share/locale/zh_CN/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 @dirrmtry share/locale/ky/LC_MESSAGES
 @dirrmtry share/locale/ky
 @dirrmtry include/gstreamer-%%VERSION%%/gst/signalprocessor
+@dirrmtry include/gstreamer-%%VERSION%%/gst/codecparsers
+@dirrmtry include/gstreamer-%%VERSION%%/gst/basecamerabinsrc
