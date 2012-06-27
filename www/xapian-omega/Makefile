@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xapian-omega
-PORTVERSION=	1.2.10
+PORTVERSION=	1.2.11
 CATEGORIES=	www
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -16,10 +16,12 @@ COMMENT=	CGI search application built on Xapian
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre \
-		xapian.26:${PORTSDIR}/databases/xapian-core
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre \
+		xapian:${PORTSDIR}/databases/xapian-core
 
-OPTIONS=	ICONV	"Enable iconv character set conversion support" on
+OPTIONS_DEFINE=	DOCS EXAMPLES ICONV
+OPTIONS_DEFAULT=ICONV
+ICONV_DESC=	Enable iconv character set conversion support
 
 PORTSCOUT=	limitw:1,even
 
@@ -40,7 +42,7 @@ PORTEXAMPLES=	omega.conf
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_ICONV)
+.if ${PORT_OPTIONS:MICONV}
 USE_ICONV=	yes
 CONFIGURE_ARGS+=--with-iconv
 .else
@@ -52,16 +54,16 @@ post-patch:
 		-e '/^dist_sysconf_DATA = /d' \
 		-e '/^pkglibbindir = / s| = .*$$| = ${WWWDIR}/cgi-bin|' \
 			${WRKSRC}/Makefile.in
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| docs||' ${WRKSRC}/Makefile.in
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${MORE_PORTDOCS} ${DOCSDIR}/
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}/
 .endif
