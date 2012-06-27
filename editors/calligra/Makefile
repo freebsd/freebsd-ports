@@ -33,7 +33,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		fftw3.6:${PORTSDIR}/math/fftw3 \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		gsl.16:${PORTSDIR}/math/gsl
-BUILD_DEPENDS=	eigen>=2.0.b3:${PORTSDIR}/math/eigen2
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2
 
 CONFLICTS=	koffice-kde4-2.*
 CONFLICTS_BUILD=	qt-3.*
@@ -42,7 +42,7 @@ USE_GL=		glew
 USE_GNOME=	glib20 libxml2 libxslt
 USE_ICONV=	yes
 USE_KDE4=	kdehier kdelibs kdeprefix libkdcraw okular pimlibs \
- 		automoc4 sharedmime soprano
+		automoc4 sharedmime soprano
 USE_PERL5=	yes
 USE_QT4=	dbus designer gui opengl phonon porting_build qt3support \
 		qtestlib_build script sql svg webkit xml xmlpatterns \

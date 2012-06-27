@@ -17,7 +17,7 @@ COMMENT=	KDE 4 desktop planetarium
 
 LIB_DEPENDS=	cfitsio.0:${PORTSDIR}/astro/cfitsio
 
-BUILD_DEPENDS=	eigen>=2.0.b3:${PORTSDIR}/math/eigen2 \
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2 \
 		xplanet:${PORTSDIR}/astro/xplanet
 
 RUN_DEPENDS=	xplanet:${PORTSDIR}/astro/xplanet

@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	tkjacobsen@gmail.com
 COMMENT=	An advanced molecular editor and viewer
 
-BUILD_DEPENDS=	eigen>=2.0.3:${PORTSDIR}/math/eigen2
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2
 LIB_DEPENDS=	openbabel.3:${PORTSDIR}/science/openbabel
 
 USE_LDCONFIG=	yes
