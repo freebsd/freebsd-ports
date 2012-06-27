@@ -7,6 +7,7 @@
 
 PORTNAME=	mcollective
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
@@ -19,6 +20,8 @@ RUN_DEPENDS=	rubygem-stomp>=0:${PORTSDIR}/devel/rubygem-stomp
 NO_BUILD=	yes
 USE_RUBY=	yes
 USE_RC_SUBR=	mcollectived
+
+RUBY_SHEBANG_FILES=	bin/mcollectived bin/mco bin/mc-call-agent
 
 # don't make .bak files
 REINPLACE_ARGS=	-i ""
