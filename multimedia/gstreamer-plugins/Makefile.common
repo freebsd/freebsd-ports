@@ -184,7 +184,7 @@ gst_amrnb_LIB_DEPENDS+=	opencore-amrnb.0:${PORTSDIR}/audio/opencore-amr
 gst_amrnb_PLIST_FILES=	${GST_LIB_DIR}/libgstamrnb.la \
 			${GST_LIB_DIR}/libgstamrnb.so \
 			share/gstreamer-${VERSION}/presets/GstAmrnbEnc.prs
-gst_amrnb_PLIST_DIRS=	share/gstreamer-${VERSION}/presets \
+gst_amrnb_PLIST_DIRSTRY=share/gstreamer-${VERSION}/presets \
 			share/gstreamer-${VERSION}
 gst_amrnb_DIST=		ugly
 
@@ -433,7 +433,6 @@ gst_ogg_DIST=	base
 # opencv
 gst_opencv_LIB_DEPENDS+=opencv_highgui.2:${PORTSDIR}/graphics/opencv
 gst_opencv_PLIST_FILES= ${GST_LIB_DIR}/libgstopencv.la \
-			${GST_LIB_DIR}/libgstopencv.a \
 			${GST_LIB_DIR}/libgstopencv.so
 gst_opencv_DIST=	bad
 
@@ -575,7 +574,6 @@ gst_vorbis_DIST=	base
 # vp8
 gst_vp8_LIB_DEPENDS+=	vpx.1:${PORTSDIR}/multimedia/libvpx
 gst_vp8_PLIST_FILES=	${GST_LIB_DIR}/libgstvp8.la \
-			${GST_LIB_DIR}/libgstvp8.a \
 			${GST_LIB_DIR}/libgstvp8.so
 gst_vp8_DIST=		bad
 
@@ -584,7 +582,7 @@ gst_x264_LIB_DEPENDS+=	x264.123:${PORTSDIR}/multimedia/x264
 gst_x264_PLIST_FILES=	${GST_LIB_DIR}/libgstx264.la \
 		${GST_LIB_DIR}/libgstx264.so \
 		share/gstreamer-${VERSION}/presets/GstX264Enc.prs
-gst_x264_PLIST_DIRS=	share/gstreamer-${VERSION}/presets \
+gst_x264_PLIST_DIRSTRY=	share/gstreamer-${VERSION}/presets \
 			share/gstreamer-${VERSION}
 gst_x264_DIST=	ugly
 
@@ -628,6 +626,7 @@ LIB_DEPENDS+=	${gst_${GST_PLUGIN}_LIB_DEPENDS}
 RUN_DEPENDS+=	${gst_${GST_PLUGIN}_RUN_DEPENDS}
 PLIST_FILES=	${gst_${GST_PLUGIN}_PLIST_FILES}
 PLIST_DIRS=	${gst_${GST_PLUGIN}_PLIST_DIRS}
+PLIST_DIRSTRY=	${gst_${GST_PLUGIN}_PLIST_DIRSTRY}
 EXTRA_LIBS+=	${gst_${GST_PLUGIN}_EXTRA_LIBS}
 USE_GNOME+=	${gst_${GST_PLUGIN}_USE_GNOME}
 CONFIGURE_ENV+=	${gst_${GST_PLUGIN}_CONFIGURE_ENV}

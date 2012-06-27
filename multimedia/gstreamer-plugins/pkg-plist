@@ -6,6 +6,9 @@ include/gstreamer-%%VERSION%%/gst/app/gstappsrc.h
 include/gstreamer-%%VERSION%%/gst/audio/audio.h
 include/gstreamer-%%VERSION%%/gst/audio/audio-enumtypes.h
 include/gstreamer-%%VERSION%%/gst/audio/gstaudioclock.h
+include/gstreamer-%%VERSION%%/gst/audio/gstaudiodecoder.h
+include/gstreamer-%%VERSION%%/gst/audio/gstaudioencoder.h
+include/gstreamer-%%VERSION%%/gst/audio/gstaudioiec61937.h
 include/gstreamer-%%VERSION%%/gst/audio/gstaudiofilter.h
 include/gstreamer-%%VERSION%%/gst/audio/gstaudiosink.h
 include/gstreamer-%%VERSION%%/gst/audio/gstaudiosrc.h
@@ -67,12 +70,14 @@ include/gstreamer-%%VERSION%%/gst/rtsp/gstrtspurl.h
 include/gstreamer-%%VERSION%%/gst/sdp/gstsdp.h
 include/gstreamer-%%VERSION%%/gst/sdp/gstsdpmessage.h
 include/gstreamer-%%VERSION%%/gst/tag/gsttagdemux.h
+include/gstreamer-%%VERSION%%/gst/tag/gsttagmux.h
 include/gstreamer-%%VERSION%%/gst/tag/tag.h
 include/gstreamer-%%VERSION%%/gst/tag/xmpwriter.h
 include/gstreamer-%%VERSION%%/gst/video/gstvideofilter.h
 include/gstreamer-%%VERSION%%/gst/video/gstvideosink.h
 include/gstreamer-%%VERSION%%/gst/video/video.h
 include/gstreamer-%%VERSION%%/gst/video/video-enumtypes.h
+include/gstreamer-%%VERSION%%/gst/video/video-overlay-composition.h
 lib/girepository-1.0/GstApp-%%VERSION%%.typelib
 lib/girepository-1.0/GstAudio-%%VERSION%%.typelib
 lib/girepository-1.0/GstFft-%%VERSION%%.typelib
@@ -207,6 +212,7 @@ share/gir-1.0/GstRtsp-%%VERSION%%.gir
 share/gir-1.0/GstSdp-%%VERSION%%.gir
 share/gir-1.0/GstTag-%%VERSION%%.gir
 share/gir-1.0/GstVideo-%%VERSION%%.gir
+share/gst-plugins-base/license-translations.dict
 share/locale/af/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/bg/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
@@ -216,6 +222,7 @@ share/locale/da/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/de/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/el/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/en_GB/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
+share/locale/eo/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/es/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/eu/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/fi/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
@@ -243,6 +250,7 @@ share/locale/uk/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/vi/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/ru/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
+@dirrm share/gst-plugins-base
 @dirrm include/gstreamer-%%VERSION%%/gst/video
 @dirrm include/gstreamer-%%VERSION%%/gst/tag
 @dirrm include/gstreamer-%%VERSION%%/gst/sdp

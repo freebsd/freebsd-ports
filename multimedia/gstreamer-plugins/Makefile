@@ -8,7 +8,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION?=	${BASE_PORTVERSION}
-PORTREVISION?=	1
+PORTREVISION?=	0
 PORTEPOCH=	3
 CATEGORIES?=	multimedia audio
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-plugins-base/:base \
@@ -21,23 +21,23 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT?=	GStreamer written collection of plugins handling several media types
 
 BUILD_DEPENDS+=	v4l_compat>=1.0.20110720:${PORTSDIR}/multimedia/v4l_compat \
-		gstreamer>=0.10.34:${PORTSDIR}/multimedia/gstreamer \
+		gstreamer>=0.10.36:${PORTSDIR}/multimedia/gstreamer \
 		orc>=0.4.14:${PORTSDIR}/devel/orc
 LIB_DEPENDS+=	gstreamer-0.10.0:${PORTSDIR}/multimedia/gstreamer \
 		orc-0.4.0:${PORTSDIR}/devel/orc
 
 CFLAGS:=	${CFLAGS} -O2 -Wno-format
 
-BASE_PORTVERSION=	0.10.35
+BASE_PORTVERSION=	0.10.36
 BASE_DISTNAME=		gst-plugins-base-${BASE_PORTVERSION}
 BASE_DISTFILE=		${BASE_DISTNAME}${EXTRACT_SUFX}
-BAD_PORTVERSION=	0.10.22
+BAD_PORTVERSION=	0.10.23
 BAD_DISTNAME=		gst-plugins-bad-${BAD_PORTVERSION}
 BAD_DISTFILE=		${BAD_DISTNAME}${EXTRACT_SUFX}
-GOOD_PORTVERSION=	0.10.30
+GOOD_PORTVERSION=	0.10.31
 GOOD_DISTNAME=		gst-plugins-good-${GOOD_PORTVERSION}
 GOOD_DISTFILE=		${GOOD_DISTNAME}${EXTRACT_SUFX}
-UGLY_PORTVERSION=	0.10.18
+UGLY_PORTVERSION=	0.10.19
 UGLY_DISTNAME=		gst-plugins-ugly-${UGLY_PORTVERSION}
 UGLY_DISTFILE=		${UGLY_DISTNAME}${EXTRACT_SUFX}
 DIST?=		good
@@ -127,11 +127,12 @@ DEFAULT_DVD_DEVICE=/dev/acd0
 
 post-patch:
 .if ${DIST}=="bad"
-	@${REINPLACE_CMD} -e 's|opencv <= 2.2.0|opencv <= 2.3.9|g' \
-	${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|opencv <= 2.2.0|opencv <= 2.3.99|g' \
+	-e 's|GST_LIBVERSION=23:0:0|GST_LIBVERSION=0:0:0|g' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|g' \
-	${WRKSRC}/ext/resindvd/resindvdbin.c \
-	${WRKSRC}/ext/resindvd/resindvdsrc.c
+		${WRKSRC}/ext/resindvd/resindvdbin.c \
+		${WRKSRC}/ext/resindvd/resindvdsrc.c
 .endif
 	@${FIND} ${WRKSRC}/ext -name Makefile.in | \
 	${XARGS} -n 10 ${REINPLACE_CMD} -e \
@@ -157,8 +158,12 @@ post-patch:
 	  s|$$(top_builddir)/gst-libs/gst/cdda/libgstcdda-@GST_MAJORMINOR@.la|${LOCALBASE}/lib/libgstcdda-@GST_MAJORMINOR@.la|'
 	@${REINPLACE_CMD} -e 's|DEFAULT_AUDIOSINK="alsasink"|DEFAULT_AUDIOSINK="${DEFAULT_AUDIOSINK}"|; \
 		s|DEFAULT_AUDIOSRC="alsasrc"|DEFAULT_AUDIOSRC="${DEFAULT_AUDIOSRC}"|' \
-		-e 's|libpng12.pc|libpng15.pc|g' \
         	-e 's|-Wmissing-include-dirs||g' \
 		${WRKSRC}/configure
+.if ${GST_PLUGIN} == "flite"
+# Hack to get all the libraries linked to the flite plugin so it is useable.
+	-@${REINPLACE_CMD} -e 's|-Wl,--as-needed||g' \
+		${WRKSRC}/../gnome-libtool
+.endif
 
 .include <bsd.port.post.mk>
