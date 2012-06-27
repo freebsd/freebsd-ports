@@ -17,7 +17,7 @@ COMMENT=	The programmer's solid 3D CAD modeller
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
 		flex:${PORTSDIR}/textproc/flex \
-		eigen>=2.0.3:${PORTSDIR}/math/eigen2 \
+		${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2 \
 		${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boost-libs
 #RUN_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	GLU.1:${PORTSDIR}/graphics/libGLU \

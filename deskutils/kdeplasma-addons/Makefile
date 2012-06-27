@@ -19,7 +19,7 @@ LIB_DEPENDS=	qalculate.5:${PORTSDIR}/math/libqalculate \
 		qwt.5:${PORTSDIR}/x11-toolkits/qwt5 \
 		qca.2:${PORTSDIR}/devel/qca
 
-BUILD_DEPENDS=	eigen>=2.0.b3:${PORTSDIR}/math/eigen2
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2
 
 CONFLICTS_INSTALL=	plasma-applet-icontasks-0.[89].*
 

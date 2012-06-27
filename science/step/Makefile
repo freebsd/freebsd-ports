@@ -18,7 +18,7 @@ COMMENT=	KDE 4 interactive physics simulator
 LIB_DEPENDS=	qalculate.5:${PORTSDIR}/math/libqalculate \
 		gsl.16:${PORTSDIR}/math/gsl
 
-BUILD_DEPENDS=	eigen>=2.0.b3:${PORTSDIR}/math/eigen2
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2
 
 CONFLICTS=	kdeedu-4.[0-6].*
 

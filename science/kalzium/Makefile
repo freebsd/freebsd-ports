@@ -18,7 +18,7 @@ COMMENT=	Periodic table of elements for KDE 4
 LIB_DEPENDS=	openbabel.3:${PORTSDIR}/science/openbabel \
 		avogadro.1:${PORTSDIR}/science/avogadro
 
-BUILD_DEPENDS=	eigen>=2.0.b3:${PORTSDIR}/math/eigen2 \
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2 \
 		${LOCALBASE}/lib/ocaml/facile/facile.a:${PORTSDIR}/math/facile
 
 CONFLICTS=	kdeedu-4.[0-6].*

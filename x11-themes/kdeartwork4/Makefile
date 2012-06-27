@@ -14,7 +14,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Artworks Themes
 
-BUILD_DEPENDS=	eigen>=2.0.b1:${PORTSDIR}/math/eigen2
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2
 
 CONFLICTS_INSTALL=	kdeaccessibility-4.[0-6].* \
 			kdebase-workspace-4.5.[0-5] \
