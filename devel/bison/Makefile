@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bison
-PORTVERSION=	2.5
+PORTVERSION=	2.5.1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -18,15 +18,15 @@ COMMENT=	A parser generator from FSF, (mostly) compatible with Yacc
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+CONFIGURE_ARGS+=--disable-yacc
+
 MAN1=		bison.1
 INFO=		bison
-
-CONFIGURE_ARGS+=--disable-yacc
 
 .include <bsd.port.options.mk>
 
@@ -49,7 +49,7 @@ post-extract:
 	@${REINPLACE_CMD} 's/ install-exec-local//' ${WRKSRC}/lib/Makefile.in
 .endif
 
-.if !defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 post-install:
 	${MKDIR} ${EXAMPLESDIR}/calc++
 	${INSTALL_DATA} ${WRKSRC}/examples/calc++/*.[chly]* \
