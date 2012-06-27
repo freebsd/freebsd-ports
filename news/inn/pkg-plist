@@ -4,7 +4,6 @@ bin/actmerge
 bin/actsync
 bin/actsyncd
 bin/archive
-bin/auth/passwd/auth_smb
 bin/auth/passwd/ckpasswd
 bin/auth/passwd/radius
 bin/auth/resolv/domain
@@ -33,7 +32,6 @@ bin/expirerm
 bin/fastrm
 bin/filechan
 bin/filter/INN.py
-%%NOTCURRENT%%bin/filter/filter.tcl
 bin/filter/filter_innd.pl
 bin/filter/filter_innd.py
 bin/filter/filter_nnrpd.pl
@@ -42,10 +40,8 @@ bin/filter/nnrpd_access.py
 bin/filter/nnrpd_auth.pl
 bin/filter/nnrpd_auth.py
 bin/filter/nnrpd_dynamic.py
-%%NOTCURRENT%%bin/filter/startup.tcl
 bin/filter/startup_innd.pl
 bin/getlist
-bin/gpgverify
 bin/grephistory
 bin/imapfeed
 bin/inews
@@ -53,7 +49,6 @@ bin/inncheck
 bin/innconfval
 bin/innd
 bin/inndf
-%%NOTCURRENT%%bin/inndstart
 bin/innfeed
 bin/innmail
 bin/innreport
@@ -100,7 +95,6 @@ bin/shrinkfile
 bin/signcontrol
 bin/simpleftp
 bin/sm
-%%NOTCURRENT%%bin/startinnfeed
 bin/tally.control
 bin/tdx-util
 bin/writelog
@@ -112,7 +106,6 @@ doc/LICENSE
 doc/NEWS
 doc/README
 doc/TODO
-doc/compliance-nntp
 doc/config-design
 doc/config-semantics
 doc/config-syntax
@@ -120,12 +113,8 @@ doc/external-auth
 doc/history
 doc/hook-perl
 doc/hook-python
-%%NOTCURRENT%%doc/hook-tcl
 doc/sample-control
-include/clibrary.h
-%%NOTCURRENT%%include/conffile.h
-include/config.h
-include/dbz.h
+http/innreport.css
 include/inn/buffer.h
 include/inn/confparse.h
 include/inn/defines.h
@@ -144,12 +133,6 @@ include/inn/tst.h
 include/inn/vector.h
 include/inn/version.h
 include/inn/wire.h
-%%NOTCURRENT%%include/inndcomm.h
-%%NOTCURRENT%%include/libinn.h
-%%NOTCURRENT%%include/nntp.h
-%%NOTCURRENT%%include/ov.h
-%%NOTCURRENT%%include/paths.h
-%%NOTCURRENT%%include/storage.h
 lib/innreport_inn.pm
 lib/innshellvars
 lib/innshellvars.pl
@@ -188,26 +171,29 @@ lib/libstorage.a
 %%EXAMPLESDIR%%/actsync.ign
 %%EXAMPLESDIR%%/buffindexed.conf
 %%EXAMPLESDIR%%/control.ctl
+%%EXAMPLESDIR%%/control.ctl.local
 %%EXAMPLESDIR%%/cycbuff.conf
 %%EXAMPLESDIR%%/distrib.pats
+%%EXAMPLESDIR%%/distributions
 %%EXAMPLESDIR%%/expire.ctl
 %%EXAMPLESDIR%%/incoming.conf
 %%EXAMPLESDIR%%/inn.conf
 %%EXAMPLESDIR%%/innfeed.conf
 %%EXAMPLESDIR%%/innreport.conf
 %%EXAMPLESDIR%%/innwatch.ctl
+%%EXAMPLESDIR%%/localgroups
 %%EXAMPLESDIR%%/moderators
 %%EXAMPLESDIR%%/motd.news
 %%EXAMPLESDIR%%/news2mail.cf
 %%EXAMPLESDIR%%/newsfeeds
 %%EXAMPLESDIR%%/nnrpd.track
 %%EXAMPLESDIR%%/nntpsend.ctl
+%%EXAMPLESDIR%%/nocem.ctl
 %%EXAMPLESDIR%%/ovdb.conf
-%%EXAMPLESDIR%%/overview.fmt
 %%EXAMPLESDIR%%/passwd.nntp
 %%EXAMPLESDIR%%/radius.conf
 %%EXAMPLESDIR%%/readers.conf
-%%EXAMPLESDIR%%/sasl.conf
+%%EXAMPLESDIR%%/send-uucp.cf
 %%EXAMPLESDIR%%/storage.conf
 %%EXAMPLESDIR%%/subscriptions
 @exec mkdir -p %%ETCDIR%%
@@ -216,6 +202,7 @@ lib/libstorage.a
 @dirrm %%EXAMPLESDIR%%/db
 @dirrm %%EXAMPLESDIR%%
 @unexec rm -Rf %%TMPDIR%%                 2>/dev/null || true
+@unexec rmdir  %%SHAREDIR%%               2>/dev/null || true
 @unexec rmdir  %%NEWSSPOOL%%/overview     2>/dev/null || true
 @unexec rmdir  %%NEWSSPOOL%%/outgoing     2>/dev/null || true
 @unexec rmdir  %%NEWSSPOOL%%/innfeed      2>/dev/null || true
@@ -226,6 +213,7 @@ lib/libstorage.a
 @unexec rm -Rf %%NEWSSPOOL%%/tmp          2>/dev/null || true
 @unexec rmdir  %%NEWSSPOOL%%              2>/dev/null || true
 @unexec rm -Rf %%RUNDIR%%                 2>/dev/null || true
+@unexec rm -R  %%NEWSBASE%%/http
 @unexec rm -R  %%NEWSBASE%%/lib
 @unexec rm -R  %%NEWSBASE%%/include/inn
 @unexec rm -R  %%NEWSBASE%%/include

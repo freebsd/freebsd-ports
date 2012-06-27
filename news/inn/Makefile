@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	inn
-PORTVERSION?=	2.4.6
-PORTREVISION?=	3
+PORTVERSION?=	2.5.2
 CATEGORIES=	news ipv6
 # Master distribution broken
 #MASTER_SITES?=	${MASTER_SITE_ISC}
@@ -29,8 +28,6 @@ USE_PERL5=	yes
 
 CONFLICTS?=	inn-stable-[0-9]* inn-current-[0-9]*
 
-BRANCH?=	# Empty
-
 OPTIONS=	PYTHON		"Embedded Python module support"		Off	\
 		TCL		"Embedded TCL support"				Off	\
 		KERBEROS	"Enable Kerberos auth support"			Off	\
@@ -44,6 +41,12 @@ VARBASE?=	/var
 
 .include "Makefile.layout"
 
+BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
+		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools
+#		${SITE_PERL}/MIME/parser.pm:${PORTSDIR}/mail/p5-MIME-Tools
+
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
 HAS_CONFIGURE=		yes
 CONFIGURE_ENV+=		LOCALBASE=${LOCALBASE}
 CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man		\
@@ -55,6 +58,7 @@ CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man		\
 			--with-etc-dir=${INN_ETCDIR}		\
 			--with-run-dir=${INN_RUNDIR}		\
 			--with-db-dir=${INN_DBDIR}		\
+			--with-datarootdirdir=${INN_SHAREDIR}	\
 			--with-ssl=${OPENSSLBASE}		\
 			--enable-ipv6 --with-perl
 
@@ -124,35 +128,38 @@ PLIST_SUB+=		WITHOUT_TAGGED_HASH=""
 .endif
 
 PORTDOCS=	CONTRIBUTORS HACKING INSTALL LICENSE MANIFEST NEWS README TODO
-HEADERS=	clibrary.h config.h dbz.h
+HEADERS=	clibrary.h config.h dbz.h libinn.h storage.h
 
 MAN1=		convdate.1 fastrm.1 getlist.1 grephistory.1 inews.1 innconfval.1 \
 		innfeed.1 innmail.1 nntpget.1 pgpverify.1 rnews.1 shlock.1 \
 		shrinkfile.1 simpleftp.1 sm.1 pullnews.1
-MAN3=		clientlib.3 dbz.3 inndcomm.3 libauth.3 libinn.3 libinnhist.3 \
-		libstorage.3 list.3 qio.3 tst.3 uwildmat.3
+MAN3=		INN::Config.3pm clientlib.3 dbz.3 inndcomm.3 libauth.3 libinn.3 \
+		libinnhist.3 libstorage.3 list.3 qio.3 tst.3 uwildmat.3
 MAN5=		active.5 active.times.5 buffindexed.conf.5 control.ctl.5 \
-		cycbuff.conf.5 distrib.pats.5 expire.ctl.5 history.5 incoming.conf.5 \
-		inn.conf.5 innfeed.conf.5 innwatch.ctl.5 moderators.5 motd.news.5 \
-		newsfeeds.5 newslog.5 nnrpd.track.5 nntpsend.ctl.5 ovdb.5 \
-		overview.fmt.5 passwd.nntp.5 radius.conf.5 readers.conf.5 \
+		cycbuff.conf.5 distrib.pats.5 distributions.5 expire.ctl.5 history.5 \
+		incoming.conf.5 inn.conf.5 innfeed.conf.5 innwatch.ctl.5 \
+		moderators.5 motd.news.5 newsfeeds.5 newsgroups.5 \
+		newslog.5 nnrpd.track.5 nntpsend.ctl.5 ovdb.5 \
+		passwd.nntp.5 radius.conf.5 readers.conf.5 \
 		storage.conf.5 subscriptions.5
-MAN8=		actsync.8 archive.8 auth_smb.8 batcher.8 buffchan.8 \
+MAN8=		actsync.8 archive.8 batcher.8 buffchan.8 \
 		ckpasswd.8 cnfsheadconf.8 cnfsstat.8 controlchan.8 ctlinnd.8 \
-		cvtbatch.8 domain.8 expire.8 expireover.8 expirerm.8 filechan.8 \
-		ident.8 inncheck.8 innd.8 inndf.8 innreport.8 innstat.8 \
+		cvtbatch.8 docheckgroups.8 domain.8 expire.8 expireover.8 \
+		expirerm.8 filechan.8 \
+		ident.8 inncheck.8 innbind.8 innd.8 inndf.8 innreport.8 innstat.8 \
 		innupgrade.8 innwatch.8 innxbatch.8 innxmit.8 mailpost.8 makedbz.8 \
 		makehistory.8 mod-active.8 news.daily.8 news2mail.8 ninpaths.8 \
 		nnrpd.8 nntpsend.8 ovdb_init.8 ovdb_monitor.8 ovdb_server.8 \
 		ovdb_stat.8 overchan.8 perl-nocem.8 prunehistory.8 \
 		radius.8 rc.news.8 scanlogs.8 send-nntp.8 send-uucp.8 sendinpaths.8 \
-		tally.control.8 tdx-util.8 writelog.8
+		tally.control.8 tdx-util.8 tinyleaf.8 writelog.8
+MLINKS=		actsync.8 actsyncd.8	docheckgroups.8 localgroups.5	perl-nocem.8 nocem.ctl.5
 
 .if defined(WITH_KERBEROS)
 MAN8+=		auth_krb5.8
 .endif
 
-TO_BE_STRIPPED=	bin/auth/resolv/domain bin/auth/resolv/ident bin/auth/passwd/auth_smb \
+TO_BE_STRIPPED=	bin/auth/resolv/domain bin/auth/resolv/ident \
 		bin/auth/passwd/ckpasswd bin/auth/passwd/radius bin/rnews.libexec/decode \
 		bin/rnews.libexec/encode bin/tdx-util bin/innd bin/nnrpd \
 		bin/innfeed bin/imapfeed bin/convdate bin/expire \
@@ -163,28 +170,26 @@ TO_BE_STRIPPED=	bin/auth/resolv/domain bin/auth/resolv/ident bin/auth/passwd/aut
 		bin/filechan bin/inndf bin/innxmit bin/innxbatch bin/ninpaths bin/nntpget \
 		bin/overchan bin/shlock bin/shrinkfile
 
-CONFIG_FILES=	actsync.cfg actsync.ign buffindexed.conf control.ctl cycbuff.conf \
-		distrib.pats expire.ctl incoming.conf inn.conf innfeed.conf \
+CONFIG_FILES=	actsync.cfg actsync.ign buffindexed.conf control.ctl \
+		control.ctl.local cycbuff.conf \
+		distrib.pats distributions \
+		expire.ctl localgroups incoming.conf inn.conf innfeed.conf \
 		innreport.conf innwatch.ctl moderators motd.news news2mail.cf \
-		newsfeeds nnrpd.track nntpsend.ctl ovdb.conf overview.fmt \
-		passwd.nntp radius.conf readers.conf sasl.conf storage.conf \
-		subscriptions
-
-.if ${BRANCH} != "current"
-MAN1+=		startinnfeed.1
-MAN3+=		parsedate.3
-MAN5+=		sasl.conf.5
-MAN8+=		actsyncd.8 inndstart.8
-TO_BE_STRIPPED+=bin/inndstart bin/startinnfeed
-HEADERS+=	libinn.h storage.h
-PLIST_SUB+=	NOTCURRENT=""
-.else
-PLIST_SUB+=	NOTCURRENT="@comment "
-MAN8+=		innbind.8 tinyleaf.8
-.endif
+		newsfeeds nocem.ctl \
+		nnrpd.track nntpsend.ctl ovdb.conf overview.fmt \
+		passwd.nntp radius.conf readers.conf sasl.conf send-uucp.cf \
+		storage.conf subscriptions
 
 SUB_LIST+=	EGDIR="${EXAMPLESDIR:C,^${PREFIX},\\$\\${PREFIX},}"
 PLIST_SUB+=	ETCFILES="${CONFIG_FILES}"
+
+.include <bsd.port.pre.mk>
+
+# Perl 5.12 deprecated $[
+.if ${PERL_LEVEL} >= 501200
+EXTRA_PATCHES+= ${PATCHDIR}/extra-patch-scripts_innreport.in \
+		${PATCHDIR}/extra-patch-scripts_innreport_inn.pm
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -E 's!\$$[{(]PATHETC[})]!${EXAMPLESDIR}!g' \
@@ -228,9 +233,9 @@ post-install:
 .    endfor
 .endif
 	${MKDIR} ${INN_NEWSBASE}/include
-.for FILE in ${HEADERS}
-	${INSTALL_DATA} ${WRKSRC}/include/${FILE} ${INN_NEWSBASE}/include/
-.endfor
+# XXX  .for FILE in ${HEADERS}
+# XXX  	${INSTALL_DATA} ${WRKSRC}/include/${FILE} ${INN_NEWSBASE}/include/
+# XXX  .endfor
 	${CHOWN} ${BINOWN}:news ${INN_NEWSBASE}/bin/auth/passwd/ckpasswd
 	${CHMOD} 4755 ${INN_NEWSBASE}/bin/auth/passwd/ckpasswd
 	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} CHECK-CONF ${INN_ETCDIR}
@@ -247,4 +252,4 @@ post-install:
 	fi)
 	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL PORTMODE
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
