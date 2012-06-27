@@ -19,6 +19,7 @@ bin/ptests.byte
 %%GUI%%lib/frama-c/design.cmo
 %%GUI%%lib/frama-c/design.cmx
 %%GUI%%lib/frama-c/design.o
+%%GUI%%lib/frama-c/dgraph.cmi
 %%GUI%%lib/frama-c/file_manager.cmi
 %%GUI%%lib/frama-c/file_manager.cmo
 %%GUI%%lib/frama-c/file_manager.cmx
@@ -396,6 +397,10 @@ lib/frama-c/globals.cmi
 lib/frama-c/globals.cmo
 lib/frama-c/globals.cmx
 lib/frama-c/globals.o
+lib/frama-c/graph.cmi
+lib/frama-c/graph.cmo
+lib/frama-c/graph.cmx
+lib/frama-c/graph.o
 lib/frama-c/growArray.cmi
 lib/frama-c/growArray.cmo
 lib/frama-c/growArray.cmx
