@@ -84,4 +84,7 @@ post-patch:
 	${LN} -s ../po ${WRKSRC}/po
 	${RM} ${WRKSRC}/po/*/libkgeomap.po ${WRKSRC}/po/*/kipi*
 
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
 .include <bsd.port.mk>
