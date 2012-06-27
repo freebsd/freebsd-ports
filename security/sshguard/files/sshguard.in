@@ -1,0 +1,92 @@
+#!/bin/sh
+#-
+# Copyright (c) 2012 iXsystems, Inc.
+# All rights reserved.
+#
+# Written by: Xin Li <delphij@FreeBSD.org>
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+#
+# $FreeBSD$
+#
+
+# PROVIDE: sshguard
+# REQUIRE: LOGIN cleanvar
+
+#
+# Add the following lines to /etc/rc.conf to enable sshguard:
+# sshguard_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable sshguard
+# sshguard_pidfile (str):	Path to PID file.
+#				Set to "/var/run/sshguard.pid" by default
+# sshguard_watch_logs (str):	Colon splitted list of logs to watch.
+#				Set to "/var/log/auth.log:/var/log/maillog"
+#				by default.
+# The following options directly maps to their command line options,
+# please read manual page sshguard(8) for detailed information:
+# sshguard_blacklist (str):	[thr:]/path/to/blacklist.
+#				Set to "40:/var/db/sshguard/blacklist.db"
+#				by default.
+# sshguard_safety_thresh (int):	Safety threshold.  Set to "40" by default.
+# sshguard_pardon_min_interval (int):
+#				Minimum pardon interval.  Set to "1200"
+#				by default.
+# sshguard_prescribe_interval (int):
+#				Prescribe interval.  Set to "420" by
+#				default.
+# sshguard_whitelistfile (str):	Path to the whitelist.
+#				Set to "%%PREFIX%%/etc/sshguard.whitelist"
+#				by default.
+
+
+. /etc/rc.subr
+
+name="sshguard"
+rcvar="sshguard_enable"
+command="/usr/sbin/daemon"
+actual_command="%%PREFIX%%/sbin/${name}"
+procname="${actual_command}"
+
+load_rc_config $name
+
+: ${sshguard_enable="NO"}
+: ${sshguard_pidfile="/var/run/${name}.pid"}
+: ${sshguard_blacklist="40:/var/db/sshguard/blacklist.db"}
+: ${sshguard_safety_thresh="40"}
+: ${sshguard_pardon_min_interval="1200"}
+: ${sshguard_prescribe_interval="420"}
+: ${sshguard_whitelistfile="%%PREFIX%%/etc/sshguard.whitelist"}
+: ${sshguard_watch_logs="/var/log/auth.log:/var/log/maillog"}
+
+pidfile="${sshguard_pidfile}"
+sshguard_watch_params=`echo ${sshguard_watch_logs} | tr : \\\n | sed -e s/^/-l\ /g | tr \\\n \ `
+start_precmd="${name}_prestart"
+
+command_args="-cf ${actual_command} -b ${sshguard_blacklist} ${sshguard_watch_params} -a ${sshguard_safety_thresh} -p ${sshguard_pardon_min_interval} -s ${sshguard_prescribe_interval} -w ${sshguard_whitelistfile} -i ${sshguard_pidfile}"
+
+sshguard_prestart()
+{
+	mkdir -p `dirname ${sshguard_blacklist##*:}`
+	[ -e ${sshguard_whitelistfile} ] || touch ${sshguard_whitelistfile}
+}
+
+run_rc_command "$1"
