@@ -20,6 +20,7 @@ EXTRACT_ONLY=	${PORTNAME}${PORTVERSION}.tar.gz
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Argand Library: large eigenvalue subroutines (serial version)
 
+CONFLICTS=	arpack-ng-[0-9]*
 FFLAGS+=	-ffixed-line-length-none
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_FORTRAN=	yes
@@ -78,10 +79,10 @@ WITH_BLAS?=	reference
 .endif
 
 .if ${WITH_BLAS} == atlas
-LIB_DEPENDS+=		atlas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=		atlas:${PORTSDIR}/math/atlas
 BLAS?=			-lf77blas
 .else
-LIB_DEPENDS+=		blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=		blas:${PORTSDIR}/math/blas
 BLAS?=			-lblas
 .endif
 
