@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	autodie
-PORTVERSION=	2.11
+PORTVERSION=	2.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Replace functions with ones that succeed or die with lexical scope
 
 PERL_CONFIGURE=	yes
