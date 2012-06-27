@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xapian-core
-PORTVERSION=	1.2.10
+PORTVERSION=	1.2.11
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
@@ -17,7 +17,8 @@ COMMENT=	A probabilistic text search database engine
 
 LICENSE=	GPLv2
 
-OPTIONS=	SSE2	"Use SSE2 for floating point" off
+OPTIONS_DEFINE=	DOCS SSE2
+SSE2_DESC=	Use SSE2 for floating point
 
 PORTSCOUT=	limitw:1,even
 
@@ -36,12 +37,12 @@ MAN1=		xapian-check.1 \
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITH_SSE2)
+.if empty(PORT_OPTIONS:MSSE2)
 CONFIGURE_ARGS+=--disable-sse
 .endif
 
 post-patch:
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| docs||' ${WRKSRC}/Makefile.in
 .endif
 
