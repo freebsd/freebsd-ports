@@ -1,0 +1,11 @@
+Qudo is simple and extensible job queue manager system.
+
+Your application can insert job into DB ,that is managed by Qudo.  And
+Your application can get & execute job by Qudo worker.  Qudo
+corresponds to deal with DB as MySQL and SQLite.
+
+If you add Hook Point around job's working method, you can add it
+easily and many point of work milestone.  Qudo is consided about
+adding Hook Point Flexibility.
+
+WWW: http://search.cpan.org/dist/Qudo/
