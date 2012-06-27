@@ -376,6 +376,7 @@
     SUBDIR += nut
     SUBDIR += ondir
     SUBDIR += opencyc
+    SUBDIR += openr2
     SUBDIR += orville-write
     SUBDIR += ossp-uuid
     SUBDIR += otter
