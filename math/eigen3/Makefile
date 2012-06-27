@@ -5,25 +5,26 @@
 # $FreeBSD$
 
 PORTNAME=	eigen
-PORTVERSION=	2.0.17
-PORTEPOCH=	1
+PORTVERSION=	3.1.0
 CATEGORIES=	math
-MASTER_SITES=	https://bitbucket.org/eigen/eigen/get/
+MASTER_SITES=	https://bitbucket.org/${PORTNAME}/${PORTNAME}/get/
 DISTNAME=	${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Lightweight library for vector and matrix math
 
+LICENSE=	LGPL3 GPLv2
+LICENSE_COMB=	dual
+
 USE_BZIP2=	yes
 USE_CMAKE=	yes
+CMAKE_OUTSOURCE=yes
+CMAKE_ENV+=	PKG_CONFIG_LIBDIR="${CMAKE_INSTALL_PREFIX}/libdata"
+NO_BUILD=	yes
 
-LATEST_LINK=	${PORTNAME}2
+LATEST_LINK=	${PORTNAME}3
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-b23437e61a07
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|share/pkgconfig|libdata/pkgconfig|g' \
-		${WRKSRC}/CMakeLists.txt
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-ca142d0540d3
 
 .include <bsd.port.mk>
