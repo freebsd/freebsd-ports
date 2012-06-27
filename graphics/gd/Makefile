@@ -42,7 +42,7 @@ NO_OPTIONS_SORT=yes
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:M_FONTCONFIG}
+.if ${PORT_OPTIONS:MFONTCONFIG}
 LIB_DEPENDS+=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_LIBFONTCONFIG -DHAVE_PTHREAD ${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib -lfontconfig
