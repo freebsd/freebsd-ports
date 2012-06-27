@@ -1,0 +1,30 @@
+bin/qudo
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Qudo/.packlist
+%%SITE_PERL%%/Qudo.pm
+%%SITE_PERL%%/Qudo/Driver/Skinny.pm
+%%SITE_PERL%%/Qudo/Driver/Skinny/Row/ExceptionLog.pm
+%%SITE_PERL%%/Qudo/Driver/Skinny/Row/Func.pm
+%%SITE_PERL%%/Qudo/Driver/Skinny/Row/Job.pm
+%%SITE_PERL%%/Qudo/Driver/Skinny/Row/JobStatus.pm
+%%SITE_PERL%%/Qudo/Driver/Skinny/Schema.pm
+%%SITE_PERL%%/Qudo/Hook.pm
+%%SITE_PERL%%/Qudo/Hook/Serialize/JSON.pm
+%%SITE_PERL%%/Qudo/Hook/Serialize/MessagePack.pm
+%%SITE_PERL%%/Qudo/Hook/Serialize/Storable.pm
+%%SITE_PERL%%/Qudo/Job.pm
+%%SITE_PERL%%/Qudo/Manager.pm
+%%SITE_PERL%%/Qudo/Manual/JA/Functions.pod
+%%SITE_PERL%%/Qudo/Manual/JA/Intro.pod
+%%SITE_PERL%%/Qudo/Manual/JA/Tutorial.pod
+%%SITE_PERL%%/Qudo/Plugin.pm
+%%SITE_PERL%%/Qudo/Test.pm
+%%SITE_PERL%%/Qudo/Worker.pm
+@dirrm %%SITE_PERL%%/Qudo/Manual/JA
+@dirrm %%SITE_PERL%%/Qudo/Manual
+@dirrm %%SITE_PERL%%/Qudo/Hook/Serialize
+@dirrm %%SITE_PERL%%/Qudo/Hook
+@dirrm %%SITE_PERL%%/Qudo/Driver/Skinny/Row
+@dirrm %%SITE_PERL%%/Qudo/Driver/Skinny
+@dirrm %%SITE_PERL%%/Qudo/Driver
+@dirrm %%SITE_PERL%%/Qudo
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Qudo
