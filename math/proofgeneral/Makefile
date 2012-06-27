@@ -23,6 +23,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
+BROKEN=		does not build
+
 USE_EMACS=	yes
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
