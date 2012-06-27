@@ -50,7 +50,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .include "Makefile.man"
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
+.if empty(PORT_OPTIONS:MDOCS)
 MAKE_ENV+=	NOPORTDOCS=1
 .endif
 
