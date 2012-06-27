@@ -22,12 +22,14 @@ CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 INFO=		gcal
 #MAN1=		gcal.1 gcal2txt.1 tcal.1 txt2gcal.1
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 GCAL_SCRIPTS=	daily/daily ddiff/ddiff ddiff/ddiffdrv dst/dst gcalltx/gcalltx \

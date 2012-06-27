@@ -23,7 +23,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--program-prefix=g
 MAKE_JOBS_UNSAFE=	yes
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else

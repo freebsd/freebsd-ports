@@ -21,7 +21,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=		cppi.1
 
-.ifndef	WITHOUT_NLS
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=    yes                                                             
 PLIST_SUB+=	NLS=""
 .else                                                                           

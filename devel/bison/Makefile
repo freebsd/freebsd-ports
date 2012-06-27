@@ -27,12 +27,15 @@ MAN1=		bison.1
 INFO=		bison
 
 CONFIGURE_ARGS+=--disable-yacc
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 .ifdef USE_BISON
@@ -42,7 +45,7 @@ PLIST_SUB+=	NLS=""
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/bison.info*
 	@${REINPLACE_CMD} 's/MANS = yacc.1/MANS =/' ${WRKSRC}/doc/Makefile.in
-.if defined(WITHOUT_NLS)
+.if empty(${PORT_OPTIONS:MNLS})
 	@${REINPLACE_CMD} 's/ install-exec-local//' ${WRKSRC}/lib/Makefile.in
 .endif
 
