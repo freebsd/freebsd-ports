@@ -41,6 +41,7 @@
     SUBDIR += aribas
     SUBDIR += arpack
     SUBDIR += arpack++
+    SUBDIR += arpack-ng
     SUBDIR += asir2000
     SUBDIR += asymptote
     SUBDIR += atlas
