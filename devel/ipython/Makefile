@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ipython
-PORTVERSION=	0.12
-PORTREVISION=	2
+PORTVERSION=	0.12.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://archive.ipython.org/release/${PORTVERSION}/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -25,8 +24,6 @@ USE_PYDISTUTILS=yes
 
 MAN1=		ipcluster.1 ipcontroller.1 ipengine.1 iplogger.1 \
 		ipython.1 irunner.1 pycolor.1
-
-MANCOMPRESSED=	yes
 
 OPTIONS=	X11 "Build with X11 support" on \
 		HTML_NOTEBOOK "HTML notebook support" off
