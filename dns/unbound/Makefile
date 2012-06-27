@@ -34,15 +34,15 @@ MAN8=		unbound.8 unbound-anchor.8 unbound-control.8 unbound-checkconf.8
 PORTDOCS=	CREDITS Changelog FEATURES LICENSE README README.svn \
 		README.tests TODO control_proto_spec.txt ietf67-design-02.odp \
 		ietf67-design-02.pdf requirements.txt
-SUB_FILES=	pkg-install pkg-deinstall
 PLIST_SUB+=	PYTHON=${PYTHON} MUNIN=${MUNIN}
 
-OPTIONS_DEFINE=	LIBEVENT THREADS PYTHON GOST ECDSA
+OPTIONS_DEFINE=	LIBEVENT THREADS PYTHON GOST ECDSA MUNIN
 OPTIONS_DEFAULT=THREADS ECDSA
 
 LIBEVENT_DESC=	Enable whenever using many (10000) outgoing ports
 GOST_DESC=	Enable GOST support (requires OpenSSL from ports)
 ECDSA_DESC=	Enable ECDSA (elliptic curve) support
+MUNIN_DESC=	Install Munin plugin
 
 .include <bsd.port.options.mk>
 
