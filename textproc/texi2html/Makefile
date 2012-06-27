@@ -9,7 +9,7 @@ PORTNAME=	texi2html
 PORTVERSION=	5.0
 PORTEPOCH=	1
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITES=	SAVANNAH
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	johans@FreeBSD.org
@@ -53,7 +53,7 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's/^translations.pl/_&/' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e '/^install-data/s|i18n|&/en.thl|' ${WRKSRC}/Makefile.in
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e 's| install-texinfohtmlDATA||g' ${WRKSRC}/doc/Makefile.in
 .endif
 	@${REINPLACE_CMD} -e '1s|/usr/bin/perl|${PERL}|' ${WRKSRC}/*.pl
