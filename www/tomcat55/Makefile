@@ -15,8 +15,12 @@ DISTNAME=	apache-tomcat-${PORTVERSION}
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Open-source Java web server by Apache, 5.5.x branch
 
-OPTIONS=	CRONOLOG "Use Cronolog for Log Processing" Off \
-		CRONOLOG_DEVEL "Use Cronlog-Devel for Log Processing" Off
+OPTIONS_DEFINE=	LOG
+OPTIONS_SINGLE=	LOG
+OPTIONS_SINGLE_LOG= CRONOLOG CRONOLOG_DEVEL
+LOG_DESC=	Use Log Pre-Processor
+CRONOLOG_DESC=	Use Cronolog for Log Processing
+CRONOLOG_DEVEL_DESC=	Use Cronlog-Devel for Log Processing
 
 DEPRECATED=	EOL approaching, consider www/tomcat{6,7}
 EXPIRATION_DATE=2012-12-31
@@ -85,22 +89,18 @@ PLIST_SUB+=	JAVA14=""
 PLIST_SUB+=	JAVA14="@comment "
 .endif
 
-.if defined(WITH_CRONOLOG)
+.if ${PORT_OPTIONS:MCRONOLOG}
 RUN_DEPENDS+=	cronolog:${PORTSDIR}/sysutils/cronolog
 .endif
 
-.if defined(WITH_CRONOLOG_DEVEL)
+.if ${PORT_OPTIONS:MCRONOLOG_DEVEL}
 RUN_DEPENDS+=	cronolog:${PORTSDIR}/sysutils/cronolog-devel
 .endif
 
-.if !( defined(WITH_CRONOLOG) || (WITH_CRONOLOG_DEVEL) )
+.if empty(PORT_OPTIONS:MLOG)
 LOG_ARGS?=">> \$${tomcat\%\%TOMCAT_VERSION\%\%_stdout_log} 2>> \$${tomcat\%\%TOMCAT_VERSION\%\%_stderr_log}"
 .else
 LOG_ARGS?="2>\&1 | ${LOCALBASE}/sbin/cronolog --link \$${tomcat\%\%TOMCAT_VERSION\%\%_catalina_base}/logs/catalina.out \$${tomcat\%\%TOMCAT_VERSION\%\%_catalina_base}/logs/catalina.\%Y_\%m_\%d.out >/dev/null 2>\&1 \&"
-.endif
-
-.if ( defined(WITH_CRONOLOG) && defined(WITH_CRONOLOG_DEVEL) )
-BROKEN=		You can only define one log pre-processor application.
 .endif
 
 pre-patch:
