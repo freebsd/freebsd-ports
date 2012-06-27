@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xapian-bindings
-PORTVERSION=	1.2.10
+PORTVERSION=	1.2.11
 CATEGORIES=	databases
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -16,57 +16,56 @@ COMMENT=	Bindings allowing Xapian to be used from various programming languages
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	xapian.26:${PORTSDIR}/databases/xapian-core
+LIB_DEPENDS=	xapian:${PORTSDIR}/databases/xapian-core
 
-OPTIONS=	PHP	"Build PHP binding" on \
-		PYTHON	"Build Python binding" on \
-		RUBY	"Build Ruby binding" on
+OPTIONS_DEFINE=	DOCS PHP PYTHON RUBY
+OPTIONS_DEFAULT=PHP PYTHON RUBY
 
 PORTSCOUT=	limitw:1,even
 
-CONFIGURE_ARGS=	--datarootdir="${DATADIR}" --docdir="${DOCSDIR}" \
+CONFIGURE_ARGS=	--datarootdir=${DATADIR} --docdir=${DOCSDIR} \
 		--without-csharp --without-java --without-tcl
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_PHP)
-CONFIGURE_ARGS+=--without-php
-PLIST_SUB+=	BINDING_PHP="@comment "
-.else
+.if ${PORT_OPTIONS:MPHP}
 CONFIGURE_ARGS+=--with-php
 CONFIGURE_ENV+=	PHP_CONFIG="${LOCALBASE}/bin/php-config"
-PLIST_SUB+=	BINDING_PHP=""
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
+PLIST_SUB+=	BINDING_PHP=""
+.else
+CONFIGURE_ARGS+=--without-php
+PLIST_SUB+=	BINDING_PHP="@comment "
 .endif
 
-.if defined(WITHOUT_PYTHON)
-CONFIGURE_ARGS+=--without-python
-PLIST_SUB+=	BINDING_PYTHON="@comment "
-.else
+.if ${PORT_OPTIONS:MPYTHON}
 CONFIGURE_ARGS+=--with-python
 CONFIGURE_ENV+=	PYTHON_LIB="${PYTHON_SITELIBDIR}"
-PLIST_SUB+=	BINDING_PYTHON=""
 USE_PYTHON=	yes
+PLIST_SUB+=	BINDING_PYTHON=""
+.else
+CONFIGURE_ARGS+=--without-python
+PLIST_SUB+=	BINDING_PYTHON="@comment "
 .endif
 
-.if defined(WITHOUT_RUBY)
-CONFIGURE_ARGS+=--without-ruby
-PLIST_SUB+=	BINDING_RUBY="@comment "
-.else
+.if ${PORT_OPTIONS:MRUBY}
 CONFIGURE_ARGS+=--with-ruby
-PLIST_SUB+=	BINDING_RUBY=""
 USE_RUBY=	yes
 USE_RUBY_RDOC=	no
+PLIST_SUB+=	BINDING_RUBY=""
+.else
+CONFIGURE_ARGS+=--without-ruby
+PLIST_SUB+=	BINDING_RUBY="@comment "
 .endif
 
 post-patch:
 # do not install rdoc
 	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-data-local||' ${WRKSRC}/ruby/Makefile.in
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-dist_docdataDATA install-dist_exampledataDATA ||' ${WRKSRC}/php/Makefile.in ${WRKSRC}/python/Makefile.in
-	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-dist_docdataDATA||; 759 s|install-dist_exampledataDATA ||' ${WRKSRC}/ruby/Makefile.in
+	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-dist_docdataDATA||; 760 s|install-dist_exampledataDATA ||' ${WRKSRC}/ruby/Makefile.in
 .endif
 
 .include <bsd.port.mk>
