@@ -1,18 +1,31 @@
---- ./CMakeLists.txt.orig	2012-01-02 19:32:49.000000000 -0500
-+++ ./CMakeLists.txt	2012-05-14 20:29:54.000000000 -0400
-@@ -160,6 +160,11 @@
+--- ./CMakeLists.txt.orig	2012-06-04 16:38:57.000000000 -0400
++++ ./CMakeLists.txt	2012-06-24 12:52:32.000000000 -0400
+@@ -203,9 +203,10 @@
      FIND_LIBRARY(MATH_LIBRARY m)
  ENDIF(NOT WIN32)
  
+-IF(Boost_FOUND)
+-    INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIRS})
+-ENDIF(Boost_FOUND)
 +STRING(TOLOWER ${CMAKE_SYSTEM_NAME} node_platform)
 +IF(${node_platform} MATCHES freebsd)
 +    FIND_LIBRARY(KVM_LIBRARY NAMES kvm)
 +ENDIF(${node_platform} MATCHES freebsd)
+ 
+ #-------------------------------------------------------------------------------------
+ 
+@@ -595,6 +596,10 @@
+                         ${CMAKE_CURRENT_BINARY_DIR}/digikam
+     )
+ 
++    IF(Boost_FOUND)
++        INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIRS})
++    ENDIF(Boost_FOUND)
 +
- IF(Boost_FOUND)
-     INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIRS})
- ENDIF(Boost_FOUND)
-@@ -1624,6 +1629,16 @@
+     IF(USE_SCRIPT_IFACE)
+         INCLUDE_DIRECTORIES(${QT_QTSCRIPT_INCLUDE_DIR})
+     ENDIF(USE_SCRIPT_IFACE)
+@@ -1689,6 +1694,16 @@
          MACRO_OPTIONAL_ADD_SUBDIRECTORY(tests)
      ENDIF(KDE4_BUILD_TESTS)
  
