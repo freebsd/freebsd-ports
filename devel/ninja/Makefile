@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ninja
-PORTVERSION=	20120204
+PORTVERSION=	20120619
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/MagikBSD/ninja/tarball/${DISTVERSION}/
 DISTNAME=	MagikBSD-${PORTNAME}-${DISTVERSION}-0-g${GITVERSION}
@@ -19,7 +19,7 @@ LICENSE=	AL2
 CONFLICTS=	irc/ninja-[0-9]*
 USE_PYTHON=	yes
 
-GITVERSION=	ff1c488
+GITVERSION=	b3d63db
 FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/MagikBSD-${PORTNAME}-${GITVERSION}
 
@@ -27,7 +27,7 @@ PLIST_FILES=	bin/ninja
 PORTDOCS=	COPYING HACKING README manual.asciidoc
 
 do-build:
-	@(cd ${WRKSRC}; CXX=${CXX} ./bootstrap.py)
+	@(cd ${WRKSRC}; CXX=${CXX} CFLAGS="${CXXFLAGS}" ./bootstrap.py --verbose)
 
 do-install:
 	@${INSTALL} -m 755 ${WRKSRC}/ninja ${PREFIX}/bin
