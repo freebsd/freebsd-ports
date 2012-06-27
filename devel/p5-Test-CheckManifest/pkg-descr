@@ -1,0 +1,5 @@
+Checks whether the Manifest file matches the distro or not. To match a
+distro the Manifest has to name all files that come along with the
+distribution
+
+WWW: http://search.cpan.org/dist/Test-CheckManifest/
