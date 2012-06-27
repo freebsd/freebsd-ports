@@ -1,6 +1,9 @@
 %%PYTHON_SITELIBDIR%%/danzfs.py
 %%PYTHON_SITELIBDIR%%/danzfs.pyc
 %%PYTHON_SITELIBDIR%%/danzfs.pyo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/date_based_snapshots/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/date_based_snapshots/snapshot_cleanup.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/date_based_snapshots/take_snapshots.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zfs_get.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zfs_list_everything.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zfs_list_filesystems.py
@@ -9,4 +12,5 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zpool_iostat.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zpool_list.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zpool_status.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/date_based_snapshots
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
