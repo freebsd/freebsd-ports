@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	closure-linter
-PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTVERSION=	2.3.5
 CATEGORIES=	www devel
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	closure_linter-${PORTVERSION}
@@ -17,7 +16,6 @@ COMMENT=	JavaScript linter
 
 LICENSE=	AL2
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gflags:${PORTSDIR}/devel/py-gflags
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gflags:${PORTSDIR}/devel/py-gflags
 
 USE_PYTHON=	-2.7
