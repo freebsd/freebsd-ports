@@ -7,9 +7,8 @@
 
 PORTNAME=		frama-c
 DISTVERSIONPREFIX=	Nitrogen-
-PORTREVISION=	1
 DISTVERSION=		20111001
-PORTREVISION=	1
+PORTREVISION=		2
 CATEGORIES=		devel
 MASTER_SITES=		http://frama-c.com/download/ LOCAL/bf
 
@@ -17,11 +16,6 @@ MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Extensible platform for source-code analysis of C
 
 LICENSE=	LGPL21
-
-BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/ocamlgraph/graph.a:${PORTSDIR}/math/ocaml-ocamlgraph
-RUN_DEPENDS=	${LOCALBASE}/lib/ocaml/ocamlgraph/graph.a:${PORTSDIR}/math/ocaml-ocamlgraph
-
-BROKEN=		does not build
 
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	FRAMAC_LIBDIR="${PREFIX}/lib/frama-c"
@@ -111,7 +105,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|HAS_ALTERGO=$$||' \
 		-e '\|case $$ALTERGO_VERSION in|{N; s|0\.92\.2|0.94*|;}' \
 		-e 's|HAS_COQ=$$||' \
-		-e '\|case $$OCAMLGRAPH_VERSION in|{N; s|1\.8|&*|;}' \
 			${WRKSRC}/configure
 
 .if defined(WITH_GUI)
