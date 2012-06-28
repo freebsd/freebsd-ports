@@ -7,6 +7,7 @@
 
 PORTNAME=	linux_dvbwrapper-kmod
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	multimedia kld
 DISTFILES=	# none
 
