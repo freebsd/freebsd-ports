@@ -106,5 +106,5 @@ SHA256 (calio-form-input-nginx-module-v0.07rc5-0-gd41681d.tar.gz) = 831bb3fa3392
 SIZE (calio-form-input-nginx-module-v0.07rc5-0-gd41681d.tar.gz) = 11048
 SHA256 (calio-iconv-nginx-module-v0.10rc7-0-gabdac17.tar.gz) = bc35d461efccb29b7affda5a397d86d89f5c860fcd9d300ac2d6d7f7667c22b1
 SIZE (calio-iconv-nginx-module-v0.10rc7-0-gabdac17.tar.gz) = 12060
-SHA256 (patch.spdy-42.txt) = d2394d095d10cd5b073d7f6430afd24f3df7056715158da6e7c50b90c3bb8392
-SIZE (patch.spdy-42.txt) = 155006
+SHA256 (patch.spdy-43.txt) = c6d7684bf9296a898ea07dc9ddbfb7992604ceff794e2cfaf1cd865d23b7019c
+SIZE (patch.spdy-43.txt) = 155859
