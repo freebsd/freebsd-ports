@@ -25,7 +25,7 @@
  */
 
 #include <sys/cdefs.h>
-__FBSDID("$FreeBSD: /tmp/pcvs/ports/multimedia/linux_dvbwrapper-kmod/files/linux_dvbwrapper.c,v 1.2 2011-09-27 17:37:18 nox Exp $");
+__FBSDID("$FreeBSD: /tmp/pcvs/ports/multimedia/linux_dvbwrapper-kmod/files/linux_dvbwrapper.c,v 1.3 2012-06-28 17:49:51 nox Exp $");
 
 #include <sys/param.h>
 #include <sys/systm.h>
@@ -263,13 +263,13 @@ linux_ioctl_dvb(struct thread *td, struct linux_ioctl_args *args)
 	case LINUX_FE_GET_FRONTEND:
 	case LINUX_FE_GET_EVENT:
 	case LINUX_CA_GET_CAP:
-	case LINUX_CA_GET_SLOT_INFO:
 	case LINUX_CA_GET_DESCR_INFO:
-	case LINUX_CA_GET_MSG:
 		args->cmd = (args->cmd & ~IOC_DIRMASK) | IOC_OUT;
 		break;
 
 	case LINUX_DMX_GET_STC:
+	case LINUX_CA_GET_SLOT_INFO:
+	case LINUX_CA_GET_MSG:
 	case LINUX_NET_GET_IF:
 	net_add_if:
 		args->cmd = (args->cmd & ~IOC_DIRMASK) | IOC_INOUT;
