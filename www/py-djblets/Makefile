@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	djblets
-PORTVERSION=	0.6.17
+PORTVERSION=	0.6.18
 CATEGORIES=	www python
 MASTER_SITES=	http://downloads.reviewboard.org/releases/Djblets/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ COMMENT=	A collection of useful classes and functions for Django
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.1.1:${PORTSDIR}/www/py-django \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.1.1:${PORTSDIR}/www/py-django13 \
 		${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging
 
 USE_PYTHON=	yes
