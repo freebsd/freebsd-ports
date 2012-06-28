@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Git-Wrapper
-PORTVERSION=	0.020
+PORTVERSION=	0.022
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,16 +20,18 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	git>=0:${PORTSDIR}/devel/git \
 		p5-Sort-Versions>=0:${PORTSDIR}/devel/p5-Sort-Versions \
 		p5-File-pushd>=0:${PORTSDIR}/devel/p5-File-pushd
-RUN_DEPENDS=	git>=0:${PORTSDIR}/devel/git \
-		p5-Sort-Versions>=0:${PORTSDIR}/devel/p5-Sort-Versions \
-		p5-File-pushd>=0:${PORTSDIR}/devel/p5-File-pushd
-
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Git::Wrapper.3
+MAN3=		Git::Wrapper.3 \
+		Git::Wrapper::Exception.3 \
+		Git::Wrapper::File::RawModification.3 \
+		Git::Wrapper::Log.3 \
+		Git::Wrapper::Status.3 \
+		Git::Wrapper::Statuses.3
 
 .include <bsd.port.pre.mk>
 
