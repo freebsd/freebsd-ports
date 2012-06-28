@@ -16,17 +16,7 @@
 %%PYTHON_SITELIBDIR%%/pyftpdlib/ftpserver.py
 %%PYTHON_SITELIBDIR%%/pyftpdlib/ftpserver.pyc
 %%PYTHON_SITELIBDIR%%/pyftpdlib/ftpserver.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/pyftpdlib/contrib
-@dirrm %%PYTHON_SITELIBDIR%%/pyftpdlib
-%%PORTDOCS%%%%DOCSDIR%%/adoptions.lnk.html
-%%PORTDOCS%%%%DOCSDIR%%/faq.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/install.html
-%%PORTDOCS%%%%DOCSDIR%%/logo.png
-%%PORTDOCS%%%%DOCSDIR%%/release-notes.html
-%%PORTDOCS%%%%DOCSDIR%%/rfcs-compliance.html
-%%PORTDOCS%%%%DOCSDIR%%/roadmap.lnk.html
-%%PORTDOCS%%%%DOCSDIR%%/tutorial.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/anti_flood_ftpd.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic_ftpd.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/keycert.pem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/md5_ftpd.py
@@ -36,4 +26,5 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/unix_ftpd.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/winnt_ftpd.py
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/pyftpdlib/contrib
+@dirrm %%PYTHON_SITELIBDIR%%/pyftpdlib
