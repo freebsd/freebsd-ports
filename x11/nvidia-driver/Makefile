@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	295.49
+DISTVERSION?=	295.59
 PORTREVISION?=	0			# As a reminder it can be overridden
 CATEGORIES=	x11 kld
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
@@ -44,12 +44,9 @@ PORTDOCS=	*
 # `x11/nvidia-driver-71', `x11/nvidia-driver-96', or `x11/nvidia-driver-173'
 # slave ports.
 #
-# XXX Until NVidia starts to name their releases consistently, employ this
-# ugly hack below to derive NVVERSION. XXX
-#
-.if ${DISTVERSION:C/[0-9]+//g} == ".."			# major.minor.update
+.if ${DISTVERSION:C/[0-9]+//g} == ".."		# major.minor.update
 NVVERSION=	${DISTVERSION:S/.//g}
-.else							# major.minor
+.else						# major.minor
 NVVERSION=	${DISTVERSION:S/.//g}00
 .endif
 
@@ -61,8 +58,9 @@ MASTER_SITE_SUBDIR=	freebsd/${DISTVERSION}
 ONLY_FOR_ARCHS=	i386
 .endif
 
+# Fix recent arbitrary memory access vulnerability in legacy drivers
 .if ${NVVERSION} <= 1905300
-EXTRA_PATCHES=	${PATCHDIR}/security-patch-CVE-2012-0946
+EXTRA_PATCHES=	${FILESDIR}/security-patch-CVE-2012-0946
 .endif
 
 OPTIONS=	FREEBSD_AGP	"Use FreeBSD AGP GART driver" off \
@@ -114,6 +112,7 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e '/return/s/ioctl/sys_&/' \
 		${WRKSRC}/src/nvidia_linux.c
 .endif
+# Process OPTIONS
 .if defined(WITH_FREEBSD_AGP)
 	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_OS_AGP)/define \1/' \
 		${WRKSRC}/src/nv-freebsd.h
