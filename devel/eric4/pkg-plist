@@ -274,6 +274,7 @@
 %%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.ProjectBrowserHelper.html
 %%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.ProjectHelper.html
 %%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnBlameDialog.html
+%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnChangeListsDialog.html
 %%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnCommandDialog.html
 %%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnCommitDialog.html
 %%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsPySvn.SvnConst.html
@@ -307,6 +308,7 @@
 %%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.ProjectBrowserHelper.html
 %%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.ProjectHelper.html
 %%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnBlameDialog.html
+%%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnChangeListsDialog.html
 %%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnCommandDialog.html
 %%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnCommitDialog.html
 %%DOCSDIR%%/Source/eric4.Plugins.VcsPlugins.vcsSubversion.SvnCopyDialog.html
@@ -1433,6 +1435,8 @@
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/ProjectHelper.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/SvnBlameDialog.py
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/SvnBlameDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/SvnChangeListsDialog.py
+%%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/SvnChangeListsDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/SvnCommandDialog.py
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/SvnCommandDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/SvnCommitDialog.py
@@ -1489,6 +1493,8 @@
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/SvnUtilities.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/Ui_SvnBlameDialog.py
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/Ui_SvnBlameDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/Ui_SvnChangeListsDialog.py
+%%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/Ui_SvnChangeListsDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/Ui_SvnCommandDialog.py
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/Ui_SvnCommandDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsPySvn/Ui_SvnCommitDialog.py
@@ -1553,6 +1559,8 @@
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/ProjectHelper.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/SvnBlameDialog.py
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/SvnBlameDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/SvnChangeListsDialog.py
+%%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/SvnChangeListsDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/SvnCommandDialog.py
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/SvnCommandDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/SvnCommitDialog.py
@@ -1599,6 +1607,8 @@
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/SvnUtilities.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/Ui_SvnBlameDialog.py
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/Ui_SvnBlameDialog.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/Ui_SvnChangeListsDialog.py
+%%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/Ui_SvnChangeListsDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/Ui_SvnCommandDialog.py
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/Ui_SvnCommandDialog.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Plugins/VcsPlugins/vcsSubversion/Ui_SvnCommitDialog.py
@@ -2932,6 +2942,7 @@
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/unittestRestart.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/unittestScript.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/vcsAdd.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/vcsChangeLists.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/vcsCheckout.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/vcsCommit.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/vcsDiff.png
