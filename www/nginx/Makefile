@@ -772,16 +772,16 @@ PLIST_SUB+=	WWWDATA="@comment "
 
 .if ${PORT_OPTIONS:MMAIL}
 CONFIGURE_ARGS+=--with-mail
-.if ${PORT_OPTIONS:NMAIL_IMAP}
+.if empty(PORT_OPTIONS:NMAIL_IMAP)
 CONFIGURE_ARGS+=--without-mail_imap_module
 .endif
-.if ${PORT_OPTIONS:NMAIL_POP3}
+.if empty(PORT_OPTIONS:NMAIL_POP3)
 CONFIGURE_ARGS+=--without-mail_pop3_module
 .endif
-.if ${PORT_OPTIONS:NMAIL_SMTP}
+.if empty(PORT_OPTIONS:NMAIL_SMTP)
 CONFIGURE_ARGS+=--without-mail_smtp_module
 .endif
-.if ${PORT_OPTIONS:MMAIL_SSL)
+.if ${PORT_OPTIONS:MMAIL_SSL}
 NGINX_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-mail_ssl_module
 .endif
