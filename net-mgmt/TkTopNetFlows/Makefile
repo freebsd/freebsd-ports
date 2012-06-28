@@ -16,7 +16,7 @@ COMMENT=	GUI tool for NetFlow data visualisation
 
 RUN_DEPENDS=	${LOCALBASE}/lib/libBLT24.so.3:${PORTSDIR}/x11-toolkits/blt \
 		${LOCALBASE}/lib/Tktable2.10/libTktable2.10.so:${PORTSDIR}/x11-toolkits/tktable \
-		${SITE_PERL}/${PERL_ARCH}/Cflow.pm:${PORTSDIR}/net-mgmt/p5-Cflow
+		p5-Cflow>=0:${PORTSDIR}/net-mgmt/p5-Cflow
 
 NO_BUILD=	yes
 

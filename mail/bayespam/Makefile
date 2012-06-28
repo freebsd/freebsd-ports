@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tar_.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	qmail spam filter written in Perl using Bayesian classification
 
-RUN_DEPENDS=	${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools
+RUN_DEPENDS=	p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools
 
 USE_PERL5=	yes
 NO_BUILD=	yes

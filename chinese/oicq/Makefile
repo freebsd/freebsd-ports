@@ -14,8 +14,8 @@ DISTNAME=	Net-OICQ-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implements OICQ messaging protocol
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
-		${SITE_PERL}/Crypt/OICQ.pm:${PORTSDIR}/security/p5-Crypt-OICQ
+BUILD_DEPENDS=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
+		p5-Crypt-OICQ>=0:${PORTSDIR}/security/p5-Crypt-OICQ
 
 PERL_CONFIGURE=	yes
 

@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Documentation gettext tools
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Text/CharWidth.pm:${PORTSDIR}/textproc/libtext-charwidth-perl
+BUILD_DEPENDS=	libtext-charwidth-perl>=0:${PORTSDIR}/textproc/libtext-charwidth-perl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

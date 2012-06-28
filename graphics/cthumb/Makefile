@@ -17,8 +17,8 @@ COMMENT=	A themable web picture album generator
 RUN_DEPENDS=	${LOCALBASE}/bin/pnmscale:${PORTSDIR}/graphics/netpbm \
 		${LOCALBASE}/bin/djpeg:${PORTSDIR}/graphics/jpeg \
 		${LOCALBASE}/bin/jhead:${PORTSDIR}/graphics/jhead \
-		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI
+		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-themedir=${DATADIR}

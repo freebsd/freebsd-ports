@@ -21,9 +21,9 @@ COMMENT=	A web site statistics post-processor for Analog
 USE_PERL5=	yes
 
 RUN_DEPENDS=	analog:${PORTSDIR}/www/analog \
-		${SITE_PERL}/GD/Graph3d.pm:${PORTSDIR}/graphics/p5-GD-Graph3d \
-		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/Config/IniFiles.pm:${PORTSDIR}/devel/p5-Config-IniFiles
+		p5-GD-Graph3d>=0:${PORTSDIR}/graphics/p5-GD-Graph3d \
+		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-Config-IniFiles>=0:${PORTSDIR}/devel/p5-Config-IniFiles
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 NO_BUILD=	YES

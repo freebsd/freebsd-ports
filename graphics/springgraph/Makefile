@@ -17,7 +17,7 @@ EXTRACT_SUFX=	.pl
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Render graph described in a .dot file
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
+RUN_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
 
 CONFLICTS_INSTALL=signing-party-[0-9]*
 

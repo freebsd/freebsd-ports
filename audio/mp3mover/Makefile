@@ -14,7 +14,7 @@ MASTER_SITES=	SF/mediamover/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rename mp3s and manipulate them
 
-RUN_DEPENDS=	${SITE_PERL}/MP3/Tag.pm:${PORTSDIR}/audio/p5-tagged
+RUN_DEPENDS=	p5-tagged>=0:${PORTSDIR}/audio/p5-tagged
 
 USE_PERL5=	yes
 NO_BUILD=	yes

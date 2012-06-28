@@ -14,13 +14,13 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A suite of tools to monitor changes on a network
 
-BUILD_DEPENDS=	${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
-		${SITE_PERL}/XML/Twig.pm:${PORTSDIR}/textproc/p5-XML-Twig \
-		${SITE_PERL}/Nmap/Parser.pm:${PORTSDIR}/security/p5-Nmap-Parser \
-		${SITE_PERL}/mach/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
-		${SITE_PERL}/mach/Text/CSV_XS.pm:${PORTSDIR}/textproc/p5-Text-CSV_XS \
-		${SITE_PERL}/File/HomeDir.pm:${PORTSDIR}/devel/p5-File-HomeDir \
-		${SITE_PERL}/File/Which.pm:${PORTSDIR}/sysutils/p5-File-Which
+BUILD_DEPENDS=	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
+		p5-XML-Twig>=0:${PORTSDIR}/textproc/p5-XML-Twig \
+		p5-Nmap-Parser>=0:${PORTSDIR}/security/p5-Nmap-Parser \
+		p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-Text-CSV_XS>=0:${PORTSDIR}/textproc/p5-Text-CSV_XS \
+		p5-File-HomeDir>=0:${PORTSDIR}/devel/p5-File-HomeDir \
+		p5-File-Which>=0:${PORTSDIR}/sysutils/p5-File-Which
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		nmap:${PORTSDIR}/security/nmap
 

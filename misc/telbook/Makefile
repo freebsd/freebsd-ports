@@ -13,7 +13,7 @@ MASTER_SITES=	http://home.arcor.de/kaffeetisch/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple telephone book
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2
+RUN_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
 
 NO_BUILD=	yes
 USE_BZIP2=	yes

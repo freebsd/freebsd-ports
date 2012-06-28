@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-0.9.1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A perl script to convert text files to PDF files
 
-RUN_DEPENDS=    ${SITE_PERL}/PDF/Create.pm:${PORTSDIR}/textproc/p5-PDF-Create
+RUN_DEPENDS=    p5-PDF-Create>=0:${PORTSDIR}/textproc/p5-PDF-Create
 
 NO_BUILD=	yes
 USE_PERL5=	yes

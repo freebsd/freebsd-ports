@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR?=	release
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A webmail system designed to manage big mail folder files efficiently
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv
+RUN_DEPENDS=	p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv
 
 USE_PERL5=	yes
 NO_BUILD=	yes
@@ -87,15 +87,15 @@ RUN_DEPENDS+	${LOCALBASE}/sbin/lsof:${PORTSDIR}/sysutils/lsof
 .endif
 
 .if ${PORT_OPTIONS:MPAM}
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Authen/PAM.pm:${PORTSDIR}/security/p5-Authen-PAM
+RUN_DEPENDS+=	p5-Authen-PAM>=0:${PORTSDIR}/security/p5-Authen-PAM
 .endif
 
 .if ${PORT_OPTIONS:MPOP3_OVER_SSL}
-RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
+RUN_DEPENDS+=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL
 .endif
 
 .if ${PORT_OPTIONS:MQUOTA}
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Quota.pm:${PORTSDIR}/sysutils/p5-Quota
+RUN_DEPENDS+=	p5-Quota>=0:${PORTSDIR}/sysutils/p5-Quota
 .endif
 
 .if ${PORT_OPTIONS:MTNEF}
@@ -103,7 +103,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef
 .endif
 
 .if ${PORT_OPTIONS:MSPAMCHECK}
-RUN_DEPENDS+=	${SITE_PERL}/Mail/SpamAssassin.pm:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+RUN_DEPENDS+=	p5-Mail-SpamAssassin>=0:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 .endif
 
 .if ${PORT_OPTIONS:MSPEEDYCGI}
@@ -125,7 +125,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
 .if ${PORT_OPTIONS:MZLIB}
 . if ${PERL_LEVEL} < 500903
-RUN_DEPENDS+=	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-IO-Compress
+RUN_DEPENDS+=	p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress
 . endif
 .endif
 

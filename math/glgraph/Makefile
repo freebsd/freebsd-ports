@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OpenGL based function grapher
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/OpenGL.pm:${PORTSDIR}/graphics/p5-OpenGL \
+RUN_DEPENDS=	p5-OpenGL>=0:${PORTSDIR}/graphics/p5-OpenGL \
 		import:${PORTSDIR}/graphics/ImageMagick
 
 USE_BZIP2=	yes

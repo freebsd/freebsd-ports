@@ -15,7 +15,7 @@ DISTNAME=	SnortSnarf-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate HTML report summaries from snort incident alerts
 
-RUN_DEPENDS=	${SITE_PERL}/Time/JulianDay.pm:${PORTSDIR}/devel/p5-Time-modules
+RUN_DEPENDS=	p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes

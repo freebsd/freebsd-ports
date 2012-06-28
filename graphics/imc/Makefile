@@ -15,8 +15,8 @@ MASTER_SITES=	http://users.skynet.be/Peter.Verthez/projects/imc/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image Compiler
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
-		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
+BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
+		p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes

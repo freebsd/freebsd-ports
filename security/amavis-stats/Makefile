@@ -14,7 +14,7 @@ MASTER_SITES=	http://downloads.topicdesk.com/amavis_stats/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple AMaViS statistics generator based on rrdtool
 
-RUN_DEPENDS=	${SITE_PERL}/mach/RRDs.pm:${PORTSDIR}/databases/rrdtool
+RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool
 
 USE_PERL5_RUN=	yes
 USE_PHP=	pcre

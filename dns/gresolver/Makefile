@@ -14,10 +14,10 @@ MASTER_SITES=	http://jodrell.net/files/unsupported/gresolver/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical DNS query tool using GTK+
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext \
-		${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
-		${SITE_PERL}/${PERL_ARCH}/Gtk2/GladeXML.pm:${PORTSDIR}/x11-toolkits/p5-Glade2 \
-		${SITE_PERL}/Net/IPv6Addr.pm:${PORTSDIR}/net-mgmt/p5-Net-IPv6Addr
+RUN_DEPENDS=	p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext \
+		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
+		p5-Glade2>=0:${PORTSDIR}/x11-toolkits/p5-Glade2 \
+		p5-Net-IPv6Addr>=0:${PORTSDIR}/net-mgmt/p5-Net-IPv6Addr
 
 USE_PERL5=	yes
 

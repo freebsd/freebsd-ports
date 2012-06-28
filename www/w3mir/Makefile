@@ -14,7 +14,7 @@ MASTER_SITES=	http://langfeldt.net/w3mir/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	All-purpose HTTP copying and mirroring tool
 
-BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes

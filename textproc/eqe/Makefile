@@ -13,7 +13,7 @@ MASTER_SITES=	http://rlehy.free.fr/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX equation editor
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
+BUILD_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
 		Magick++-config:${PORTSDIR}/graphics/ImageMagick \

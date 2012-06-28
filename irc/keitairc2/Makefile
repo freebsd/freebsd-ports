@@ -16,15 +16,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/47485
 #PATCH_SITES=		http://home.jp.FreeBSD.org/~matusita/keitairc2/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=IRC proxy for mobilephone that have a web interface
+COMMENT=	IRC proxy for mobilephone that have a web interface
 
-RUN_DEPENDS=	${SITE_PERL}/POE/Component/IRC.pm:${PORTSDIR}/irc/p5-POE-Component-IRC \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/HTTP/Response.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
-		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
-		${SITE_PERL}/Proc/Daemon.pm:${PORTSDIR}/devel/p5-Proc-Daemon \
-		${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig
+RUN_DEPENDS=	p5-POE-Component-IRC>=0:${PORTSDIR}/irc/p5-POE-Component-IRC \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
+		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
+		p5-Proc-Daemon>=0:${PORTSDIR}/devel/p5-Proc-Daemon \
+		p5-AppConfig>=0:${PORTSDIR}/devel/p5-AppConfig
 
 CONFLICTS=	keitairc-1.*
 NO_BUILD=	yes

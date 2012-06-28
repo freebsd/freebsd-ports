@@ -14,7 +14,7 @@ MASTER_SITES=	GNU
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnatsweb, a GNATS web interface
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+RUN_DEPENDS=	p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
 
 MAKE_JOBS_SAFE=	yes
 

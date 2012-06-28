@@ -14,12 +14,12 @@ MASTER_SITES=	http://www.taskjuggler.org/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A project management tool for UNIX based operating systems
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Class/MethodMaker.pm:${PORTSDIR}/devel/p5-Class-MethodMaker \
-		${SITE_PERL}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
-		${SITE_PERL}/PostScript/Simple.pm:${PORTSDIR}/print/p5-PostScript-Simple \
+BUILD_DEPENDS=	p5-Class-MethodMaker>=0:${PORTSDIR}/devel/p5-Class-MethodMaker \
+		p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
+		p5-PostScript-Simple>=0:${PORTSDIR}/print/p5-PostScript-Simple \
 		poster:${PORTSDIR}/print/poster \
 		bash:${PORTSDIR}/shells/bash \
-		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	DOCS KDE3

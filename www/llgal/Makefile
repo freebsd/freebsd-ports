@@ -16,14 +16,14 @@ COMMENT=	Command-line online gallery generator
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext \
-		${SITE_PERL}/Image/ExifTool.pm:${PORTSDIR}/graphics/p5-Image-ExifTool
-RUN_DEPENDS=	${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext \
-		${SITE_PERL}/Image/ExifTool.pm:${PORTSDIR}/graphics/p5-Image-ExifTool \
+BUILD_DEPENDS=	p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext \
+		p5-Image-ExifTool>=0:${PORTSDIR}/graphics/p5-Image-ExifTool
+RUN_DEPENDS=	p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext \
+		p5-Image-ExifTool>=0:${PORTSDIR}/graphics/p5-Image-ExifTool \
 		convert:${PORTSDIR}/graphics/ImageMagick
 
 USE_BZIP2=	yes
