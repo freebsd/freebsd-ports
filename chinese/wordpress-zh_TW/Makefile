@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	3.4
+PORTVERSION=	3.4.1
 CATEGORIES=	chinese www
 MASTER_SITES=	http://tw.wordpress.org/ \
 		http://mirror.joehorn.idv.tw/wordpress/
@@ -29,6 +29,8 @@ WWWDIR=		${PREFIX}/www/${PORTNAME}${PKGNAMESUFFIX}
 
 PORTDOCS=	license.txt readme.html
 
+OPTIONS_DEFINE=	DOCS
+
 SUB_FILES+=	pkg-message
 SUB_LISTS+=	WWWDIR=${WWWDIR}
 
@@ -46,6 +48,8 @@ pre-install:
 	if [ ! -f ${WRKSRC}/wp-config-sample.php ]; then ${CP} \
 		${WRKSRC}/wp-config.php.sample ${WRKSRC}/wp-config.php; fi
 
+.include <bsd.port.options.mk>
+
 do-install:
 	@${MKDIR} ${WWWDIR}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
@@ -54,7 +58,7 @@ do-install:
 	@${CHMOD} -R 755 ${WWWDIR}
 	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${WWWDIR}' >> ${TMPPLIST}
 	${CP} -R ${WRKSRC}/ ${WWWDIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/${i}
