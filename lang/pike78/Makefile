@@ -56,6 +56,7 @@ CONFIGURE_ARGS+=	--without-debug \
 		 --with-jpeg \
 		 --with-tiff \
 		 --with-gdbm \
+		 --with-relocatable-dumped-modules \
 		 --without-GL --without-GLUT \
 		 --without-GTK \
 		 --without-ffmpeg \
@@ -93,12 +94,6 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 .if ${OSVERSION} < 800000
 BROKEN=		Does not build on FreeBSD < 8.x
-.endif
-
-.ifdef(WITHOUT_RELOCATABLE_DUMPED_MODULES)
-CONFIGURE_ARGS+=	--without-relocatable-dumped-modules
-.else
-CONFIGURE_ARGS+=	--with-relocatable-dumped-modules
 .endif
 
 .if ${PORT_OPTIONS:MTTF}

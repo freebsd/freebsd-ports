@@ -82,14 +82,14 @@ post-install:
 #	# Install mudlib and other directories
 	@${MKDIR} ${DATADIR} /var/log/${PORTNAME} /var/run/${PORTNAME}
 	@${CHOWN} ${USERS}:${GROUPS} /var/log/${PORTNAME} /var/run/${PORTNAME}
-.ifdef WITH_LPMUD
+.if ${PORT_OPTIONS:MLPMUD}
 	@cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}/mud/lp-245 && ${FIND} . \
 		| ${CPIO} -pdmu -R ${USERS}:${GROUPS} ${DATADIR}
 .else
 	@cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}/mudlib && ${FIND} . \
 		| ${CPIO} -pdmu -R ${USERS}:${GROUPS} ${DATADIR}
 .endif
-.ifndef	NOPORTDOCS
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc && ${FIND} . \
 		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}

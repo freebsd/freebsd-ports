@@ -23,38 +23,44 @@ COQVERSION=	${PORTVERSION:R}pl${PORTVERSION:E}
 USE_OCAML=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	world
-WITH_IDE=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix ${PREFIX}
 CONFIGURE_ARGS+=--emacslib ${PREFIX}/share/emacs/site-lisp
 CONFIGURE_ARGS+=--opt
 
-.ifdef	NOPORTDOCS
-CONFIGURE_ARGS+=--with-doc none
-.else
-BUILD_DEPENDS+=	hevea:${PORTSDIR}/textproc/hevea \
-		latex:${PORTSDIR}/print/teTeX \
-		${LOCALBASE}/share/texmf/tex/latex/ucs/utf8x.def:${PORTSDIR}/print/latex-ucs
-PORTDOCS=	*
-.endif
-
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	IDE
+OPTIONS_DEFAULT=IDE
+IDE_DESC=	Include desktop environment (coqide)
 
 MAN1=	coq-tex.1 coq_makefile.1 coqc.1 coqchk.1 coqdep.1 coqdoc.1 \
 	coqmktop.1 coqtop.1 coqtop.byte.1 coqtop.opt.1 coqwc.1 gallina.1
 
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not link on powerpc
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+BUILD_DEPENDS+=	hevea:${PORTSDIR}/textproc/hevea \
+		latex:${PORTSDIR}/print/teTeX \
+		${LOCALBASE}/share/texmf/tex/latex/ucs/utf8x.def:${PORTSDIR}/print/latex-ucs
+PORTDOCS=	*
+.else
+CONFIGURE_ARGS+=--with-doc none
 .endif
 
-.if defined(WITH_IDE) || exists(${LOCALBASE}/bin/lablgtk2)
+.if ${PORT_OPTIONS:MIDE}
 BUILD_DEPENDS+=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 PLIST_SUB+=	IDE=""
 MAN1+=		coqide.1
 .else
 PLIST_SUB+=	IDE="@comment "
+CONFIGURE_ARGS+=--coqide no
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not link on powerpc
 .endif
 
 post-patch:

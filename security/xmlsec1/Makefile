@@ -20,8 +20,9 @@ COMMENT=	XML Security Library
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-OPTIONS=	GNUTLS	"Enable GNUTLS support"	off	\
-		NSS	"Enable Mozilla's NSS support"	off
+OPTIONS_DEFINE=	GNUTLS NSS
+GNUTLS_DESC=	Enable GNUTLS support
+NSS_DESC=	Enable Mozilla's NSS support
 
 USE_OPENSSL=	yes
 USE_GNOME=	gnomehack lthack libxslt
@@ -35,14 +36,14 @@ MAKE_ENV+=	ABS_BUILDDIR=${WRKSRC} TMPFOLDER=${WRKSRC}
 MAKE_ARGS+=	-EABS_BUILDDIR
 USE_AUTOTOOLS=	libltdl
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 MAKE_ENV+=	DOCS=docs
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_GNUTLS)
+.if ${PORT_OPTIONS:MGNUTLS}
 CONFIGURE_ARGS+=	--with-gnutls="${LOCALBASE}"
 LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
 PLIST_SUB+=		GNUTLS=""
@@ -51,7 +52,7 @@ CONFIGURE_ARGS+=	--without-gnutls
 PLIST_SUB+=		GNUTLS="@comment "
 .endif
 
-.if defined(WITH_NSS)
+.if ${PORT_OPTIONS:MNSS}
 CONFIGURE_ARGS+=	--with-nss="${LOCALBASE}" --with-nspr="${LOCALBASE}"
 LIB_DEPENDS+=		nss3:${PORTSDIR}/security/nss
 PLIST_SUB+=		NSS=""
@@ -83,17 +84,17 @@ post-patch:
 	    -e 's,total_time.*/ 1000),total_time*1000/CLOCKS_PER_SEC,' \
 		${WRKSRC}/apps/xmlsec.c
 	@${REINPLACE_CMD} -e 's,\\\\\\,\\,g' ${WRKSRC}/*.pc.in
-.if defined(WITH_GNUTLS)
+.if ${PORT_OPTIONS:MGNUTLS}
 # Don't rely on broken autodetection
 	@${REINPLACE_CMD} -e '/^GNUTLS_FOUND/s/no/yes/' \
 	    -e '/^GNUTLS_LIBS=/s,"","-L${LOCALBASE}/lib -lgnutls",' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
-.if defined(WITH_NSS)
+.if ${PORT_OPTIONS:MNSS}
 # Makeing the xmlsec1 executable multi-threaded to let load -lnss,
 # when needed.
 	@${REINPLACE_CMD} -e 's,^\(xmlsec1_LDADD = \)\\$$,\1 -L${LOCALBASE}/lib ${PTHREAD_LIBS}\\,' \
 		${WRKSRC}/apps/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

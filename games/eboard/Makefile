@@ -39,7 +39,8 @@ INSTALL_TARGET=	install install-man
 MAN1=	eboard-config.1 eboard-addtheme.1
 MAN6=	eboard.6
 
-OPTIONS=	JOYSTICK "joystick support" off
+OPTIONS_DEFINE=	JOYSTICK
+JOYSTICK_DESC=	Enable joystick support
 
 DESKTOP_ENTRIES="eboard" \
 		"Play chess" \
@@ -48,9 +49,9 @@ DESKTOP_ENTRIES="eboard" \
 		"Application;Game;" \
 		true
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_JOYSTICK)
+.if ${PORT_OPTIONS:MJOYSTICK}
 BUILD_DEPENDS+=	${LOCALBASE}/include/linux/joystick.h:${PORTSDIR}/devel/linux-js
 RUN_DEPENDS+=	${LOCALBASE}/include/linux/joystick.h:${PORTSDIR}/devel/linux-js
 .endif
@@ -65,7 +66,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,g++,${CXX},' -e 's,-O6,${CXXFLAGS},' \
 		${WRKSRC}/configure
 
-.if !defined(WITH_JOYSTICK)
+.if empty(PORT_OPTIONS:MJOYSTICK)
 post-configure:
 	@${REINPLACE_CMD} -e '/^#define HAVE_LINUX_JOYSTICK_H 1/ d' \
 		${WRKSRC}/config.h
@@ -89,4 +90,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/icon-eboard.xpm ${PREFIX}/share/pixmaps/eboard.xpm
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
