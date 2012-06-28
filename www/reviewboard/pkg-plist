@@ -268,6 +268,60 @@ bin/rbssh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/diffviewer/views.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/diffviewer/views.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/diffviewer/views.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/admin.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/admin.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/admin.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/bitbucket.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/bitbucket.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/bitbucket.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/bugzilla.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/bugzilla.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/bugzilla.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/codebasehq.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/codebasehq.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/codebasehq.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/errors.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/errors.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/errors.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/fedorahosted.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/fedorahosted.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/fedorahosted.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/forms.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/forms.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/forms.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/github.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/github.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/github.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/gitorious.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/gitorious.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/gitorious.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/googlecode.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/googlecode.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/googlecode.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/managers.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/managers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/managers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/models.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/models.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/models.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/redmine.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/redmine.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/redmine.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/service.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/service.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/service.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/sourceforge.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/sourceforge.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/sourceforge.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/tests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/tests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/tests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/trac.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/trac.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs/trac.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/errordocs/500.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/media/rb/css/admin.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/media/rb/css/common.css
@@ -557,6 +611,12 @@ bin/rbssh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/evolutions/repository_access_control.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/evolutions/repository_access_control.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/evolutions/repository_access_control.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/evolutions/repository_extra_data_null.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/evolutions/repository_extra_data_null.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/evolutions/repository_extra_data_null.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/evolutions/repository_hosting_accounts.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/evolutions/repository_hosting_accounts.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/evolutions/repository_hosting_accounts.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/evolutions/repository_path_length_255.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/evolutions/repository_path_length_255.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/evolutions/repository_path_length_255.pyo
@@ -795,6 +855,7 @@ bin/rbssh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/admin/authentication_settings.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/admin/base_site.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/admin/cache_stats.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/admin/change_form.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/admin/dashboard.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/admin/database.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/templates/admin/feed.html
@@ -990,6 +1051,7 @@ bin/rbssh
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/media
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs/errordocs
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/htdocs
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/hostingsvcs
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/diffviewer/testdata/orig_src
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/diffviewer/testdata/new_src
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/diffviewer/testdata/diffs/unified
@@ -1016,3 +1078,5 @@ bin/rbssh
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+@dirrm %%PYTHON_SITELIBDIR%%
+@dirrm lib/python2.7
