@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	snd
-PORTVERSION=	12.11
-PORTREVISION=	1
+PORTVERSION=	12.12
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ccrma-ftp.stanford.edu/pub/Lisp/ \
 		http://mirror.mcx2.org/
@@ -15,10 +14,8 @@ MASTER_SITES=	ftp://ccrma-ftp.stanford.edu/pub/Lisp/ \
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Multitracking sound editor and utilities
 
-OPTIONS=	ESD	"Use Enlightened Sound Daemon"		on  \
-		FFTW3	"Use FFTW"				on  \
+OPTIONS=	FFTW3	"Use FFTW"				on  \
 		GSL	"Use GNU Scientific Library"		on  \
-		GUILE	"Use Guile as the extension language"	on  \
 		S7	"Use S7 as the extension language"	off  \
 		LADSPA	"Include support for LADSPA plugins"	on  \
 		MOTIF	"Make Snd with Motif graphics support"	off \
@@ -44,11 +41,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 BROKEN=		does not compile on sparc64
 .endif
 
-.if !defined(WITHOUT_ESD)
-USE_GNOME+=	esound
-CONFIGURE_ARGS+=	--with-esd
-.endif
-
 .if !defined(WITHOUT_FFTW3)
 LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3
 .else
@@ -61,17 +53,8 @@ LIB_DEPENDS+=	gsl.16:${PORTSDIR}/math/gsl
 CONFIGURE_ARGS+=	--without-gsl
 .endif
 
-.if !defined(WITHOUT_GUILE)
-CONFIGURE_ARGS+=	--with-guile
-LIB_DEPENDS+=	guile.21:${PORTSDIR}/lang/guile
-PLIST_SUB+=	SCHEME=""
-.else
-CONFIGURE_ARGS+=	--without-guile
-.endif
-
 .if !defined(WITHOUT_S7)
 CONFIGURE_ARGS+=	--with-s7
-PLIST_SUB+=	SCHEME=""
 .else
 CONFIGURE_ARGS+=	--without-s7
 .endif
@@ -86,17 +69,14 @@ CONFIGURE_ARGS+=	--without-ladspa
 .if defined(WITH_GTK2)
 USE_GNOME+=	gtk20
 CONFIGURE_ARGS+=	--with-gtk
-PLIST_SUB+=	X11=""
 .endif
 .if defined(WITH_MOTIF)
 USE_MOTIF=	yes
 CONFIGURE_ARGS+=	--with-motif
-PLIST_SUB+=	X11=""
 .endif
 
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--with-no-gui
-PLIST_SUB+=	X11="@comment "
 .endif
 
 post-patch:
@@ -111,22 +91,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/snd.1 ${MANPREFIX}/man/man1/
-.if !defined(WITHOUT_GUILE)
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.scm ${DATADIR}
-	@${MKDIR} ${DATADIR}/tools
-	${INSTALL_DATA} ${WRKSRC}/tools/*.scm ${DATADIR}/tools
-	@${MKDIR} ${DATADIR}/sndins/samples
-	${INSTALL_DATA} ${WRKSRC}/sndins/samples/*.scm ${DATADIR}/sndins/samples
-.endif
-.if !defined(WITHOUT_GAUCHE)
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.scm ${DATADIR}
-	@${MKDIR} ${DATADIR}/tools
-	${INSTALL_DATA} ${WRKSRC}/tools/*.scm ${DATADIR}/tools
-	@${MKDIR} ${DATADIR}/sndins/samples
-	${INSTALL_DATA} ${WRKSRC}/sndins/samples/*.scm ${DATADIR}/sndins/samples
-.endif
 .if !defined(WITHOUT_S7)
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.scm ${DATADIR}
