@@ -15,11 +15,11 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Easy manipulation of JSON headers for CGI::Application
 
 BUILD_DEPENDS=	p5-CGI-Application>4.01:${PORTSDIR}/www/p5-CGI-Application \
-		${SITE_PERL}/JSON/Any.pm:${PORTSDIR}/converters/p5-JSON \
-		${SITE_PERL}/JSON.pm:${PORTSDIR}/converters/p5-JSON-Any
+		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
+		p5-JSON-Any>=0:${PORTSDIR}/converters/p5-JSON-Any
 RUN_DEPENDS=	p5-CGI-Application>4.01:${PORTSDIR}/www/p5-CGI-Application \
-		${SITE_PERL}/JSON/Any.pm:${PORTSDIR}/converters/p5-JSON \
-		${SITE_PERL}/JSON.pm:${PORTSDIR}/converters/p5-JSON-Any
+		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
+		p5-JSON-Any>=0:${PORTSDIR}/converters/p5-JSON-Any
 
 PERL_MODBUILD=	yes
 

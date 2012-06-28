@@ -15,9 +15,9 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Add Config::YAML support to CGI::Application
 
 BUILD_DEPENDS=	p5-CGI-Application>4.01:${PORTSDIR}/www/p5-CGI-Application \
-		${SITE_PERL}/Config/YAML.pm:${PORTSDIR}/devel/p5-Config-YAML
+		p5-Config-YAML>=0:${PORTSDIR}/devel/p5-Config-YAML
 RUN_DEPENDS=	p5-CGI-Application>4.01:${PORTSDIR}/www/p5-CGI-Application \
-		${SITE_PERL}/Config/YAML.pm:${PORTSDIR}/devel/p5-Config-YAML
+		p5-Config-YAML>=0:${PORTSDIR}/devel/p5-Config-YAML
 
 PERL_CONFIGURE=	yes
 

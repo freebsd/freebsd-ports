@@ -15,52 +15,52 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl modules for molecular chemistry
 
-BUILD_DEPENDS=	${SITE_PERL}/Chemistry/Mol.pm:${PORTSDIR}/science/p5-Chemistry-Mol \
-		${SITE_PERL}/Chemistry/MacroMol.pm:${PORTSDIR}/science/p5-Chemistry-MacroMol \
-		${SITE_PERL}/Parse/Yapp/Parse.pm:${PORTSDIR}/devel/p5-Parse-Yapp \
-		${SITE_PERL}/Chemistry/File/SMILES.pm:${PORTSDIR}/science/p5-Chemistry-File-SMILES \
-		${SITE_PERL}/Chemistry/File/SMARTS.pm:${PORTSDIR}/science/p5-Chemistry-File-SMARTS \
-		${SITE_PERL}/Chemistry/InternalCoords.pm:${PORTSDIR}/science/p5-Chemistry-InternalCoords \
-		${SITE_PERL}/Chemistry/Pattern.pm:${PORTSDIR}/science/p5-Chemistry-Pattern \
-		${SITE_PERL}/Chemistry/Ring.pm:${PORTSDIR}/science/p5-Chemistry-Ring \
-		${SITE_PERL}/Chemistry/Isotope.pm:${PORTSDIR}/science/p5-Chemistry-Isotope \
-		${SITE_PERL}/Chemistry/3DBuilder.pm:${PORTSDIR}/science/p5-Chemistry-3DBuilder \
-		${SITE_PERL}/Chemistry/Bond/Find.pm:${PORTSDIR}/science/p5-Chemistry-Bond-Find \
-		${SITE_PERL}/Chemistry/Canonicalize.pm:${PORTSDIR}/science/p5-Chemistry-Canonicalize \
-		${SITE_PERL}/Chemistry/File/PDB.pm:${PORTSDIR}/science/p5-Chemistry-File-PDB \
-		${SITE_PERL}/Chemistry/File/XYZ.pm:${PORTSDIR}/science/p5-Chemistry-File-XYZ \
-		${SITE_PERL}/Chemistry/File/VRML.pm:${PORTSDIR}/science/p5-Chemistry-File-VRML \
-		${SITE_PERL}/Chemistry/File/SLN.pm:${PORTSDIR}/science/p5-Chemistry-File-SLN \
-		${SITE_PERL}/Chemistry/File/Mopac.pm:${PORTSDIR}/science/p5-Chemistry-File-Mopac \
-		${SITE_PERL}/Chemistry/File/MDLMol.pm:${PORTSDIR}/science/p5-Chemistry-File-MDLMol \
-		${SITE_PERL}/Chemistry/Reaction.pm:${PORTSDIR}/science/p5-Chemistry-Reaction \
-		${SITE_PERL}/Chemistry/FormulaPattern.pm:${PORTSDIR}/science/p5-Chemistry-FormulaPattern \
-		${SITE_PERL}/Chemistry/MidasPattern.pm:${PORTSDIR}/science/p5-Chemistry-MidasPattern \
-		${SITE_PERL}/Chemistry/Mok.pm:${PORTSDIR}/science/p5-Chemistry-Mok \
-		${SITE_PERL}/Statistics/Regression.pm:${PORTSDIR}/math/p5-Statistics-Regression
-BUILD_DEPENDS=	${SITE_PERL}/Chemistry/Mol.pm:${PORTSDIR}/science/p5-Chemistry-Mol \
-		${SITE_PERL}/Chemistry/MacroMol.pm:${PORTSDIR}/science/p5-Chemistry-MacroMol \
-		${SITE_PERL}/Parse/Yapp/Parse.pm:${PORTSDIR}/devel/p5-Parse-Yapp \
-		${SITE_PERL}/Chemistry/File/SMILES.pm:${PORTSDIR}/science/p5-Chemistry-File-SMILES \
-		${SITE_PERL}/Chemistry/File/SMARTS.pm:${PORTSDIR}/science/p5-Chemistry-File-SMARTS \
-		${SITE_PERL}/Chemistry/InternalCoords.pm:${PORTSDIR}/science/p5-Chemistry-InternalCoords \
-		${SITE_PERL}/Chemistry/Pattern.pm:${PORTSDIR}/science/p5-Chemistry-Pattern \
-		${SITE_PERL}/Chemistry/Ring.pm:${PORTSDIR}/science/p5-Chemistry-Ring \
-		${SITE_PERL}/Chemistry/Isotope.pm:${PORTSDIR}/science/p5-Chemistry-Isotope \
-		${SITE_PERL}/Chemistry/3DBuilder.pm:${PORTSDIR}/science/p5-Chemistry-3DBuilder \
-		${SITE_PERL}/Chemistry/Bond/Find.pm:${PORTSDIR}/science/p5-Chemistry-Bond-Find \
-		${SITE_PERL}/Chemistry/Canonicalize.pm:${PORTSDIR}/science/p5-Chemistry-Canonicalize \
-		${SITE_PERL}/Chemistry/File/PDB.pm:${PORTSDIR}/science/p5-Chemistry-File-PDB \
-		${SITE_PERL}/Chemistry/File/XYZ.pm:${PORTSDIR}/science/p5-Chemistry-File-XYZ \
-		${SITE_PERL}/Chemistry/File/VRML.pm:${PORTSDIR}/science/p5-Chemistry-File-VRML \
-		${SITE_PERL}/Chemistry/File/SLN.pm:${PORTSDIR}/science/p5-Chemistry-File-SLN \
-		${SITE_PERL}/Chemistry/File/Mopac.pm:${PORTSDIR}/science/p5-Chemistry-File-Mopac \
-		${SITE_PERL}/Chemistry/File/MDLMol.pm:${PORTSDIR}/science/p5-Chemistry-File-MDLMol \
-		${SITE_PERL}/Chemistry/Reaction.pm:${PORTSDIR}/science/p5-Chemistry-Reaction \
-		${SITE_PERL}/Chemistry/FormulaPattern.pm:${PORTSDIR}/science/p5-Chemistry-FormulaPattern \
-		${SITE_PERL}/Chemistry/MidasPattern.pm:${PORTSDIR}/science/p5-Chemistry-MidasPattern \
-		${SITE_PERL}/Chemistry/Mok.pm:${PORTSDIR}/science/p5-Chemistry-Mok \
-		${SITE_PERL}/Statistics/Regression.pm:${PORTSDIR}/math/p5-Statistics-Regression
+BUILD_DEPENDS=	p5-Chemistry-Mol>=0:${PORTSDIR}/science/p5-Chemistry-Mol \
+		p5-Chemistry-MacroMol>=0:${PORTSDIR}/science/p5-Chemistry-MacroMol \
+		p5-Parse-Yapp>=0:${PORTSDIR}/devel/p5-Parse-Yapp \
+		p5-Chemistry-File-SMILES>=0:${PORTSDIR}/science/p5-Chemistry-File-SMILES \
+		p5-Chemistry-File-SMARTS>=0:${PORTSDIR}/science/p5-Chemistry-File-SMARTS \
+		p5-Chemistry-InternalCoords>=0:${PORTSDIR}/science/p5-Chemistry-InternalCoords \
+		p5-Chemistry-Pattern>=0:${PORTSDIR}/science/p5-Chemistry-Pattern \
+		p5-Chemistry-Ring>=0:${PORTSDIR}/science/p5-Chemistry-Ring \
+		p5-Chemistry-Isotope>=0:${PORTSDIR}/science/p5-Chemistry-Isotope \
+		p5-Chemistry-3DBuilder>=0:${PORTSDIR}/science/p5-Chemistry-3DBuilder \
+		p5-Chemistry-Bond-Find>=0:${PORTSDIR}/science/p5-Chemistry-Bond-Find \
+		p5-Chemistry-Canonicalize>=0:${PORTSDIR}/science/p5-Chemistry-Canonicalize \
+		p5-Chemistry-File-PDB>=0:${PORTSDIR}/science/p5-Chemistry-File-PDB \
+		p5-Chemistry-File-XYZ>=0:${PORTSDIR}/science/p5-Chemistry-File-XYZ \
+		p5-Chemistry-File-VRML>=0:${PORTSDIR}/science/p5-Chemistry-File-VRML \
+		p5-Chemistry-File-SLN>=0:${PORTSDIR}/science/p5-Chemistry-File-SLN \
+		p5-Chemistry-File-Mopac>=0:${PORTSDIR}/science/p5-Chemistry-File-Mopac \
+		p5-Chemistry-File-MDLMol>=0:${PORTSDIR}/science/p5-Chemistry-File-MDLMol \
+		p5-Chemistry-Reaction>=0:${PORTSDIR}/science/p5-Chemistry-Reaction \
+		p5-Chemistry-FormulaPattern>=0:${PORTSDIR}/science/p5-Chemistry-FormulaPattern \
+		p5-Chemistry-MidasPattern>=0:${PORTSDIR}/science/p5-Chemistry-MidasPattern \
+		p5-Chemistry-Mok>=0:${PORTSDIR}/science/p5-Chemistry-Mok \
+		p5-Statistics-Regression>=0:${PORTSDIR}/math/p5-Statistics-Regression
+BUILD_DEPENDS=	p5-Chemistry-Mol>=0:${PORTSDIR}/science/p5-Chemistry-Mol \
+		p5-Chemistry-MacroMol>=0:${PORTSDIR}/science/p5-Chemistry-MacroMol \
+		p5-Parse-Yapp>=0:${PORTSDIR}/devel/p5-Parse-Yapp \
+		p5-Chemistry-File-SMILES>=0:${PORTSDIR}/science/p5-Chemistry-File-SMILES \
+		p5-Chemistry-File-SMARTS>=0:${PORTSDIR}/science/p5-Chemistry-File-SMARTS \
+		p5-Chemistry-InternalCoords>=0:${PORTSDIR}/science/p5-Chemistry-InternalCoords \
+		p5-Chemistry-Pattern>=0:${PORTSDIR}/science/p5-Chemistry-Pattern \
+		p5-Chemistry-Ring>=0:${PORTSDIR}/science/p5-Chemistry-Ring \
+		p5-Chemistry-Isotope>=0:${PORTSDIR}/science/p5-Chemistry-Isotope \
+		p5-Chemistry-3DBuilder>=0:${PORTSDIR}/science/p5-Chemistry-3DBuilder \
+		p5-Chemistry-Bond-Find>=0:${PORTSDIR}/science/p5-Chemistry-Bond-Find \
+		p5-Chemistry-Canonicalize>=0:${PORTSDIR}/science/p5-Chemistry-Canonicalize \
+		p5-Chemistry-File-PDB>=0:${PORTSDIR}/science/p5-Chemistry-File-PDB \
+		p5-Chemistry-File-XYZ>=0:${PORTSDIR}/science/p5-Chemistry-File-XYZ \
+		p5-Chemistry-File-VRML>=0:${PORTSDIR}/science/p5-Chemistry-File-VRML \
+		p5-Chemistry-File-SLN>=0:${PORTSDIR}/science/p5-Chemistry-File-SLN \
+		p5-Chemistry-File-Mopac>=0:${PORTSDIR}/science/p5-Chemistry-File-Mopac \
+		p5-Chemistry-File-MDLMol>=0:${PORTSDIR}/science/p5-Chemistry-File-MDLMol \
+		p5-Chemistry-Reaction>=0:${PORTSDIR}/science/p5-Chemistry-Reaction \
+		p5-Chemistry-FormulaPattern>=0:${PORTSDIR}/science/p5-Chemistry-FormulaPattern \
+		p5-Chemistry-MidasPattern>=0:${PORTSDIR}/science/p5-Chemistry-MidasPattern \
+		p5-Chemistry-Mok>=0:${PORTSDIR}/science/p5-Chemistry-Mok \
+		p5-Statistics-Regression>=0:${PORTSDIR}/math/p5-Statistics-Regression
 
 PERL_CONFIGURE=	yes
 

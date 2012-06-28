@@ -15,10 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	MDL molfile reader/write
 
-BUILD_DEPENDS=	${SITE_PERL}/Chemistry/Mol.pm:${PORTSDIR}/science/p5-Chemistry-Mol \
-		${SITE_PERL}/Chemistry/Ring/Find.pm:${PORTSDIR}/science/p5-Chemistry-Ring
-RUN_DEPENDS=	${SITE_PERL}/Chemistry/Mol.pm:${PORTSDIR}/science/p5-Chemistry-Mol \
-		${SITE_PERL}/Chemistry/Ring/Find.pm:${PORTSDIR}/science/p5-Chemistry-Ring
+BUILD_DEPENDS=	p5-Chemistry-Mol>=0:${PORTSDIR}/science/p5-Chemistry-Mol \
+		p5-Chemistry-Ring>=0:${PORTSDIR}/science/p5-Chemistry-Ring
+RUN_DEPENDS=	p5-Chemistry-Mol>=0:${PORTSDIR}/science/p5-Chemistry-Mol \
+		p5-Chemistry-Ring>=0:${PORTSDIR}/science/p5-Chemistry-Ring
 
 MAN3=	Chemistry::File::MDLMol.3 Chemistry::File::SDF.3
 
