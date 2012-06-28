@@ -19,6 +19,6 @@ COMMENT=	AMQP Client Library
 PROJECTHOST=	py-amqplib
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=	easy_install
 
 .include <bsd.port.mk>
