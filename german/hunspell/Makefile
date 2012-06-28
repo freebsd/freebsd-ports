@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hunspell
-PORTVERSION=	20110609
-PORTREVISION=	1
+PORTVERSION=	20120607
 CATEGORIES=	german textproc
 MASTER_SITES=	http://www.j3e.de/ispell/igerman98/dict/
 DISTNAME=	igerman98-${PORTVERSION}
