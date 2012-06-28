@@ -15,14 +15,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	MP3 browsing and streaming under mod_perl and Apache
 
-BUILD_DEPENDS=	${SITE_PERL}/Audio/Wav.pm:${PORTSDIR}/audio/p5-Audio-Wav \
-		${SITE_PERL}/CGI/Session.pm:${PORTSDIR}/www/p5-CGI-Session \
-		${SITE_PERL}/MP3/Info.pm:${PORTSDIR}/audio/p5-MP3-Info \
-		${SITE_PERL}/${PERL_ARCH}/Ogg/Vorbis/Header.pm:${PORTSDIR}/audio/p5-Ogg-Vorbis-Header \
-		${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
+BUILD_DEPENDS=	p5-Audio-Wav>=0:${PORTSDIR}/audio/p5-Audio-Wav \
+		p5-CGI-Session>=0:${PORTSDIR}/www/p5-CGI-Session \
+		p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info \
+		p5-Ogg-Vorbis-Header>=0:${PORTSDIR}/audio/p5-Ogg-Vorbis-Header \
+		${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	YES
+PERL_CONFIGURE=	yes
+USE_APACHE=	20+
 
 MAN3=		Apache::MP3.3 \
 		Apache::MP3::L10N.3 \

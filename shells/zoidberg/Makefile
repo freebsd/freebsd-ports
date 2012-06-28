@@ -17,12 +17,12 @@ DISTNAME=	Zoidberg-${PORTVERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A modular PERL shell
 
-BUILD_DEPENDS=	${SITE_PERL}/Exporter/Tidy.pm:${PORTSDIR}/devel/p5-Exporter-Tidy \
-		${SITE_PERL}/Term/ReadLine/Zoid.pm:${PORTSDIR}/devel/p5-Term-ReadLine-Zoid \
-		${SITE_PERL}/Env/PS1.pm:${PORTSDIR}/devel/p5-Env-PS1
-RUN_DEPENDS=	${SITE_PERL}/Exporter/Tidy.pm:${PORTSDIR}/devel/p5-Exporter-Tidy \
-		${SITE_PERL}/Term/ReadLine/Zoid.pm:${PORTSDIR}/devel/p5-Term-ReadLine-Zoid \
-		${SITE_PERL}/Env/PS1.pm:${PORTSDIR}/devel/p5-Env-PS1
+BUILD_DEPENDS=	p5-Exporter-Tidy>=0:${PORTSDIR}/devel/p5-Exporter-Tidy \
+		p5-Term-ReadLine-Zoid>=0:${PORTSDIR}/devel/p5-Term-ReadLine-Zoid \
+		p5-Env-PS1>=0:${PORTSDIR}/devel/p5-Env-PS1
+RUN_DEPENDS=	p5-Exporter-Tidy>=0:${PORTSDIR}/devel/p5-Exporter-Tidy \
+		p5-Term-ReadLine-Zoid>=0:${PORTSDIR}/devel/p5-Term-ReadLine-Zoid \
+		p5-Env-PS1>=0:${PORTSDIR}/devel/p5-Env-PS1
 
 PERL_MODBUILD=	yes
 CONFIGURE_ARGS=	install_path=share="${DATADIR}" \
