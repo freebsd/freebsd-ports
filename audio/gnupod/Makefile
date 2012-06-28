@@ -19,7 +19,7 @@ COMMENT=	Set of Perl scripts for using an Apple iPod
 BUILD_DEPENDS=	p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info \
 		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
-		p5-Unicode-String >=0:${PORTSDIR}/converters/p5-Unicode-String  \
+		p5-Unicode-String>=0:${PORTSDIR}/converters/p5-Unicode-String \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
 RUN_DEPENDS:=	${BUILD_DEPENDS}
