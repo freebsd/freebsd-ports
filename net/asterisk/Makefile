@@ -7,6 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.8.13.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -110,13 +111,14 @@ LIB_DEPENDS+=	pt_r.1:${PORTSDIR}/devel/pwlib \
 
 .if !defined(WITH_DAHDI)
 PLIST_SUB+=	WITH_DAHDI="@comment "
-CONFIGURE_ARGS+=	--without-dahdi
+CONFIGURE_ARGS+=	--without-dahdi --without-openr2
 .else
 PLIST_SUB+=	WITH_DAHDI=""
-CONFIGURE_ARGS+=	--with-dahdi
+CONFIGURE_ARGS+=	--with-dahdi --with-openr2
 BUILD_DEPENDS+=	libpri>=1.4.10:${PORTSDIR}/misc/libpri \
 		${LOCALBASE}/include/dahdi/user.h:${PORTSDIR}/misc/dahdi
-LIB_DEPENDS+=	pri.1:${PORTSDIR}/misc/libpri
+LIB_DEPENDS+=	pri.1:${PORTSDIR}/misc/libpri\
+		openr2.4:${PORTSDIR}/misc/openr2
 .endif
 
 #
