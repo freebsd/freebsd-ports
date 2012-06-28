@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-Socket-SSL
-PORTVERSION=	1.74
+PORTVERSION=	1.76
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SULLR
@@ -15,36 +15,35 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Perl5 interface to SSL sockets
 
-RUN_DEPENDS=	p5-Net-SSLeay>=1.21:${PORTSDIR}/security/p5-Net-SSLeay
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-Net-SSLeay>=1.21:${PORTSDIR}/security/p5-Net-SSLeay
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+OPTIONS_DEFINE=	EXAMPLES IDN IPV6
 
 PERL_CONFIGURE=	yes
 INSTALL_TARGET=	pure_install
 
 MAN3=		IO::Socket::SSL.3
-
-OPTIONS_DEFINE=	IDN IPV6
-IDN_DESC=	International Domain Names (IDN) support
-IPV6_DESC=	IPv6 support
-
-.if !defined(NOPORTEXAMPLES)
 PORTEXAMPLES=	*
-post-install:
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/example/* ${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIDN}
-RUN_DEPENDS+=	p5-Net-LibIDN>=0:${PORTSDIR}/dns/p5-Net-LibIDN
+RUN_DEPENDS+=	p5-URI>=1.50:${PORTSDIR}/net/p5-URI
 .endif
 
 .if ${PORT_OPTIONS:MIPV6}
-RUN_DEPENDS+=	p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
+RUN_DEPENDS+=	p5-IO-Socket-IP>=0.11:${PORTSDIR}/net/p5-IO-Socket-IP \
+		p5-Socket>=1.95:${PORTSDIR}/net/p5-Socket
 .endif
 
-regression-test:
-	@(cd ${WRKSRC} && ${PERL} ${CONFIGURE_SCRIPT} && ${MAKE} test)
+post-install:
+.if ${PORT_OPTIONS:MEXAMPLES}
+	${MKDIR} ${EXAMPLESDIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/example/* ${EXAMPLESDIR}/
+.endif
+
+regression-test: build
+	cd ${WRKSRC}/ && ${MAKE} test
 
 .include <bsd.port.mk>
