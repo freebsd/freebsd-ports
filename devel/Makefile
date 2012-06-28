@@ -3426,6 +3426,7 @@
     SUBDIR += py-tables
     SUBDIR += py-tconfpy
     SUBDIR += py-tempstorage
+    SUBDIR += py-termcolor
     SUBDIR += py-testgears
     SUBDIR += py-testoob
     SUBDIR += py-testtools
