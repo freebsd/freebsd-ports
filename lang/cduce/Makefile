@@ -22,9 +22,11 @@ USE_OCAML=	true
 USE_OCAML_FINDLIB=	true
 USE_OCAML_LDCONFIG=	true
 
-OPTIONS=	OCURL		"Enable url support via ftp/ocaml-ocurl" Off \
-		OCAML_EXPAT	"Enable support for the Expat XML parser" Off \
-		MLIFACE		"Enable building OCaml/CDuce interface" On
+OPTIONS_DEFINE=	OCURL OCAML_EXPAT MLIFACE
+OPTIONS_DEFAULT=MLIFACE
+OCURL_DESC=		Enable url support via ftp/ocaml-ocurl
+OCAML_EXPAT_DESC=	Enable support for the Expat XML parser
+MLIFACE_DESC=		Enable building OCaml/CDuce interface
 
 USE_GMAKE=	yes
 ALL_TARGET=	all
@@ -37,15 +39,17 @@ MAN1=		cduce.1 cduce_mktop.1 dtd2cduce.1
 
 PLIST_FILES=	bin/cduce
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # Support for url via ftp/ocaml-ocurl
-.if defined(WITH_OCURL)
+.if ${PORT_OPTIONS:MOCURL}
 BUILD_DEPENDS+=	${SITELIBDIR}/curl/curl.cmi:${PORTSDIR}/ftp/ocaml-ocurl
+.else
+CONFIGURE_ARGS+=	--without-curl
 .endif
 
 # Support for the PXP XML parser
-.if defined(WITH_OCAML_EXPAT)
+.if ${PORT_OPTIONS:MOCAML_EXPAT}
 CONFIGURE_ARGS+=	--with-expat --without-pxp
 BUILD_DEPENDS+=		${SITELIBDIR}/expat/expat.cmi:${PORTSDIR}/textproc/ocaml-expat
 .else
@@ -53,20 +57,14 @@ CONFIGURE_ARGS+=	--without-expat --with-pxp
 BUILD_DEPENDS+=		${SITELIBDIR}/pxp-engine/pxp_engine.cma:${PORTSDIR}/textproc/ocaml-pxp
 .endif
 
-# Be sure to not build ocurl support if WITH_OCURL is not defined,
-# even if ocurl is present.
-.if !defined(WITH_OCURL)
-CONFIGURE_ARGS+=	--without-curl
-.endif
-
 # Support for OCaml/CDuce interface
-.if !defined(WITHOUT_MLIFACE)
+.if ${PORT_OPTIONS:MMLIFACE}
 PLIST_FILES+=	bin/cduce_mktop
 BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/lang/ocaml:patch
 CONFIGURE_ARGS+=	--mliface=`cd ${PORTSDIR}/lang/ocaml; ${MAKE} -V WRKSRC`
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 ALL_TARGET+=		doc
 INSTALL_TARGET+=	install_doc
 PORTDOCS=		*
@@ -77,16 +75,16 @@ post-patch:
 		${WRKSRC}/Makefile ${WRKSRC}/configure.ml
 
 post-install:
-.if defined(WITH_OCAML_EXPAT)
+.if ${PORT_OPTIONS:MOCAML_EXPAT}
 	@${ECHO_CMD} "****************************************************************"
 	@${ECHO_CMD} "* You choose Expat as XML parser, you may encounter some error *"
 	@${ECHO_CMD} "* when loading XML files with external DTD.                    *"
 	@${ECHO_CMD} "****************************************************************"
 .endif
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 . for i in ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/doc/${i} ${MANPREFIX}/man/man${i:E}/
 . endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

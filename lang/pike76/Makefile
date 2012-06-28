@@ -7,7 +7,7 @@
 
 PORTNAME=	pike76
 PORTVERSION=	7.6.112
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/beta/${PORTVERSION}/ \
 		http://pike.ida.liu.se/pub/pike/beta/${PORTVERSION}/ \
@@ -20,29 +20,34 @@ DISTNAME=	Pike-v${PORTVERSION}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A dynamic programming language with a syntax similar to C++
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		gdbm.4:${PORTSDIR}/databases/gdbm \
-		pcre.1:${PORTSDIR}/devel/pcre \
-		mird.1:${PORTSDIR}/databases/mird \
-		gmp.10:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
+		tiff:${PORTSDIR}/graphics/tiff \
+		gdbm:${PORTSDIR}/databases/gdbm \
+		pcre:${PORTSDIR}/devel/pcre \
+		mird:${PORTSDIR}/databases/mird \
+		gmp:${PORTSDIR}/math/gmp
 
 CONFLICTS=	pike7[28]-[0-9]*
 CONFLICTS_BUILD=nettle-[2-9]*
 
-OPTIONS=	TTF "Add FreeType 1 support" on \
-		FREETYPE "Add FreeType 2 support" on \
-		OPT_CFLAGS "Enable additional compiliation optimizations" on \
-		MYSQL "Add MySQL support" on \
-		FFMPEG "Add FFmpeg support" off \
-		POSTGRESQL "Add Postgres SQL support" off \
-		UNIXODBC "Add UnixODBC support (incompatible with IODBC)" off \
-		IODBC "Add iODBC support (incompatible with UnixODBC)" off \
-		SANE "Add SANE support" off \
-		PDF "Add PDF support" off \
-		SVG2 "Add SVG2 support" off \
-		TDS "Add FreeTDS (Sybase and MSSQL) support" off \
-		FFTW "Add libFFTW support" off
+OPTIONS_DEFINE=	TTF FREETYPE OPT_CFLAGS MYSQL FFMPEG PGSQL \
+		SANE PDF SVG2 TDS FFTW
+OPTIONS_DEFAULT=TTF FREETYPE OPT_CFLAGS MYSQL NOODBC
+OPTIONS_SINGLE=	ODBC
+OPTIONS_SINGLE_ODBC=	NOODBC UNIXODBC IODBC
+
+TTF_DESC?=	Add FreeType 1 support
+FREETYPE_DESC?=	Add FreeType 2 support
+OPT_CFLAGS_DESC?=	Enable additional compiliation optimizations
+FFMPEG_DESC?=	Add FFmpeg support
+NOODBC_DESC?=	No ODBC support (default)
+UNIXODBC_DESC?=	Add UnixODBC support
+IODBC_DESC?=	Add iODBC support
+SANE_DESC?=	Add SANE support
+PDF_DESC?=	Add PDF support
+SVG2_DESC?=	Add SVG2 support
+TDS_DESC?=	Add FreeTDS (Sybase and MSSQL) support
+FFTW_DESC?=	Add libFFTW support
 
 MAN1=		pike.1
 
@@ -76,6 +81,7 @@ CONFIGURE_ARGS+=	--without-debug \
 		 --without-glade \
 		 --without-libglade-config \
 		 --without-machine-code \
+		 --with-relocatable-dumped-modules \
 		 --prefix=${PREFIX}
 
 MAKE_ARGS=	CONFIGUREARGS="${CONFIGURE_ARGS}"
@@ -98,13 +104,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 BROKEN=		segfaults during build
 .endif
 
-.if defined(WITHOUT_RELOCATABLE_DUMPED_MODULES)
-CONFIGURE_ARGS+=	--without-relocatable-dumped-modules
-.else
-CONFIGURE_ARGS+=	--with-relocatable-dumped-modules
-.endif
-
-.if defined(WITH_EXPERIMENTAL_FEATURES)
+.if ${PORT_OPTIONS:MEXPERIMENTAL_FEATURES}
 CONFIGURE_ARGS+=	--with-computed-goto \
 		--with-pg \
 		--with-long-long-int \
@@ -115,7 +115,7 @@ CONFIGURE_ARGS+=	--with-computed-goto \
 		--with-new-multisets
 .endif
 
-.if defined(WITH_OPT_CFLAGS)
+.if ${PORT_OPTIONS:MOPT_CFLAGS}
 .if (${MACHINE} == "i386")
 CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 .else
@@ -123,90 +123,90 @@ CFLAGS+=	-ffast-math -fomit-frame-pointer
 .endif
 .endif
 
-.if defined(WITH_FFMPEG)
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+.if ${PORT_OPTIONS:MFFMPEG}
+LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
 CONFIGURE_ARGS+=	--with-ffmpeg
 .else
 CONFIGURE_ARGS+=	--without-ffmpeg
 .endif
 
-.if defined(WITH_FFTW)
-LIB_DEPENDS+=	fftw.2:${PORTSDIR}/math/fftw
+.if ${PORT_OPTIONS:MFFTW}
+LIB_DEPENDS+=	fftw:${PORTSDIR}/math/fftw
 .endif
 
-.if defined(WITH_TTF)
-LIB_DEPENDS+=	ttf.4:${PORTSDIR}/print/freetype
+.if ${PORT_OPTIONS:MTTF}
+LIB_DEPENDS+=	ttf:${PORTSDIR}/print/freetype
 CONFIGURE_ARGS+=	--with-ttflib
 .else
 CONFIGURE_ARGS+=	--without-ttflib
 .endif
 
-.if defined(WITH_FREETYPE)
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+.if ${PORT_OPTIONS:MFREETYPE}
+LIB_DEPENDS+=	freetype:${PORTSDIR}/print/freetype2
 CONFIGURE_ARGS+=	--with-freetype
 .else
 CONFIGURE_ARGS+=	--without-freetype
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql=${PREFIX}
 .else
 CONFIGURE_ARGS+=	--without-mysql
 .endif
 
-.if defined(WITH_POSTGRESQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=	--with-pgsql=${PREFIX}
 .else
 CONFIGURE_ARGS+=	--without-pgsql
 .endif
 
-.if defined(WITH_MSQL)
+.if ${PORT_OPTIONS:MMSQL}
 BUILD_DEPENDS+=	msql:${PORTSDIR}/databases/msql
 CONFIGURE_ARGS+=	--with-msql=${PREFIX}
 .else
 CONFIGURE_ARGS+=	--without-msql
 .endif
 
-.if defined(WITH_UNIXODBC)
-LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
+.if ${PORT_OPTIONS:MUNIXODBC}
+LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-odbc
 .endif
 
-.if defined(WITH_IODBC)
-LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
+.if ${PORT_OPTIONS:MIODBC}
+LIB_DEPENDS+=	iodbc:${PORTSDIR}/databases/libiodbc
 CONFIGURE_ARGS+=	--with-odbc
 .endif
 
-.if !defined(WITH_UNIXODBC) && !defined(WITH_IODBC)
+.if ${PORT_OPTIONS:MNOODBC}
 CONFIGURE_ARGS+=	--without-odbc
 .endif
 
-.if defined(WITH_SANE)
-LIB_DEPENDS+=	sane.1:${PORTSDIR}/graphics/sane-backends
+.if ${PORT_OPTIONS:MSANE}
+LIB_DEPENDS+=	sane:${PORTSDIR}/graphics/sane-backends
 CONFIGURE_ARGS+=	--with-sane
 .else
 CONFIGURE_ARGS+=	--without-sane
 .endif
 
-.if defined(WITH_PDF)
-LIB_DEPENDS+=	pdf.6:${PORTSDIR}/print/pdflib \
-		panda.0:${PORTSDIR}/print/panda
+.if ${PORT_OPTIONS:MPDF}
+LIB_DEPENDS+=	pdf:${PORTSDIR}/print/pdflib \
+		panda:${PORTSDIR}/print/panda
 CONFIGURE_ARGS+=	--with-libpdf --with-libpanda
 .else
 CONFIGURE_ARGS+=	--without-libpdf --without-libpanda
 .endif
 
-.if defined(WITH_SVG2)
-LIB_DEPENDS+=	rsvg-2.10:${PORTSDIR}/graphics/librsvg2
+.if ${PORT_OPTIONS:MSVG2}
+LIB_DEPENDS+=	rsvg-2:${PORTSDIR}/graphics/librsvg2
 CONFIGURE_ARGS+=	--with-svg
 .else
 CONFIGURE_ARGS+=	--without-svg
 .endif
 
-.if defined(WITH_TDS)
-LIB_DEPENDS+=	ct.4:${PORTSDIR}/databases/freetds
+.if ${PORT_OPTIONS:MTDS}
+LIB_DEPENDS+=	ct:${PORTSDIR}/databases/freetds
 CONFIGURE_ARGS+=	--with-sybase
 PLIST_SUB+=	SYBASE:=""
 .else
@@ -214,9 +214,9 @@ CONFIGURE_ARGS+=	--without-sybase
 PLIST_SUB+=	SYBASE:="@comment "
 .endif
 
-.if defined(HAVE_MESA) || defined(WITH_MESA)
+.if ${PORT_OPTIONS:MMESA}
 USE_GL=		yes
-LIB_DEPENDS+=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
+LIB_DEPENDS+=	gtkgl:${PORTSDIR}/x11-toolkits/gtkglarea
 CONFIGURE_ARGS+=	--with-GL --with-GLUT
 .else
 CONFIGURE_ARGS+=	--without-GL --without-GLUT

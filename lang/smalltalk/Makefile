@@ -17,13 +17,12 @@ COMMENT=	GNU Smalltalk
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		gawk:${PORTSDIR}/lang/gawk
-LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm \
-		execinfo.1:${PORTSDIR}/devel/libexecinfo \
-		cairo.2:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm \
+		execinfo:${PORTSDIR}/devel/libexecinfo \
+		cairo:${PORTSDIR}/graphics/cairo
 
-OPTIONS=	TCLTK "Enable Tcl/Tk binding" on \
-		PGSQL "PostgreSQL binding" on \
-		SDL "SDL binding" on
+OPTIONS_DEFINE=	TCL PGSQL SDL
+OPTIONS_DEFAULT=TCL PGSQL SDL
 
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack pkgconfig pango
@@ -53,35 +52,37 @@ INFO=		gst gst-base gst-libs
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MTCL}
+LIB_DEPENDS+=		tk84:${PORTSDIR}/x11-toolkits/tk84
+CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/lib/tcl8.4 \
+			--with-tk=${LOCALBASE}/lib/tk8.4
+PLIST_SUB+=		TCLTK=""
+.else
+CONFIGURE_ARGS+=	--with-tcl=no
+PLIST_SUB+=		TCLTK="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MPGSQL}
+USE_PGSQL=	yes
+. include "${PORTSDIR}/Mk/bsd.database.mk"
+PLIST_SUB+=	PGSQL=""
+.else
+PLIST_SUB+=	PGSQL="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MSDL}
+USE_SDL=	image mixer sdl sound ttf
+PLIST_SUB+=	SDL=""
+.else
+PLIST_SUB+=	SDL="@comment "
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Fails to install on sparc64
-.endif
-
-.if defined(WITHOUT_TCLTK)
-CONFIGURE_ARGS+=	--with-tcl=no
-PLIST_SUB+=	TCLTK="@comment "
-.else
-LIB_DEPENDS+=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
-CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/lib/tcl8.4 \
-			--with-tk=${LOCALBASE}/lib/tk8.4
-PLIST_SUB+=	TCLTK=""
-.endif
-
-.if defined(WITHOUT_PGSQL)
-PLIST_SUB+=	PGSQL="@comment "
-.else
-USE_PGSQL=	yes
-.include "${PORTSDIR}/Mk/bsd.database.mk"
-PLIST_SUB+=	PGSQL=""
-.endif
-
-.if defined(WITHOUT_SDL)
-PLIST_SUB+=	SDL="@comment "
-.else
-USE_SDL=	image mixer sdl sound ttf
-PLIST_SUB+=	SDL=""
 .endif
 
 post-patch:

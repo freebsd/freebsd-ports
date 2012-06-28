@@ -29,13 +29,22 @@ MAN6=		freeciv-server.6 freeciv-client.6 \
 		freeciv-xaw.6 freeciv-sdl.6 freeciv-gtk2.6 \
 		freeciv-modpack.6
 
-.ifndef WITHOUT_X11
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
+OPTIONS_DEFINE?=	X11 SDL MYSQL IPV6
+OPTIONS_DEFAULT?=	X11 MYSQL IPV6
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSDL} && empty(PORT_OPTIONS:MX11)
+IGNORE=		cannot use SDL without X11: re-run make config
+.endif
+
+.if ${PORT_OPTIONS:MX11}
+LIB_DEPENDS+=	tiff:${PORTSDIR}/graphics/tiff \
 		png15:${PORTSDIR}/graphics/png \
-		ggz.5:${PORTSDIR}/games/libggz \
-		ggz-gtk.1:${PORTSDIR}/games/ggz-gtk-client \
-		ggzcore.9:${PORTSDIR}/games/ggz-client-libs \
-		ggzmod.5:${PORTSDIR}/games/ggz-client-libs
+		ggz:${PORTSDIR}/games/libggz \
+		ggz-gtk:${PORTSDIR}/games/ggz-gtk-client \
+		ggzcore:${PORTSDIR}/games/ggz-client-libs \
+		ggzmod:${PORTSDIR}/games/ggz-client-libs
 USE_XORG=	xpm
 USE_SDL=	mixer
 USE_GNOME=	gtk20
@@ -49,7 +58,7 @@ CONFLICTS=	freeciv-[0-9]*
 PLIST_SUB+=	X11="@comment " GTK="@comment "
 .endif
 
-.ifdef WITH_SDL
+.if ${PORT_OPTIONS:MSDL}
 CONFIGURE_ARGS+=--enable-client=gtk,sdl
 USE_SDL=	sdl image ttf
 PLIST_SUB+=	SDL=""
@@ -57,20 +66,21 @@ PLIST_SUB+=	SDL=""
 PLIST_SUB+=	SDL="@comment "
 .endif
 
-.ifndef WITHOUT_MYSQL
+.if ${PORT_OPTIONS:MMYSQL}
 CONFIGURE_ARGS+=--enable-auth --with-mysql-prefix=${LOCALBASE}
 USE_MYSQL=	yes
 .endif
 
-.ifdef WITHOUT_IPV6
+.if empty(PORT_OPTIONS:MIPV6)
 CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
-.ifdef WITHOUT_NLS
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
-.else
-PLIST_SUB+=	NLS=""
 .endif
 
 post-patch:
@@ -79,7 +89,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in|${XARGS} ${REINPLACE_CMD} -e\
 		'/pkgdatadir/s|$$[(]datadir[)]/@PACKAGE@|${DATADIR}|'
 
-.ifndef WITHOUT_X11
+.if ${PORT_OPTIONS:MX11}
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/data/civclient.dsc ${DATADIR}/
 	@cd ${PREFIX}/bin && ${LN} -s freeciv-gtk2 freeciv-client
