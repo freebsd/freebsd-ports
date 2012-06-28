@@ -1,0 +1,20 @@
+**********************************************************************
+
+Add "filer" to your project's INSTALLED_APPS setting and run syncdb
+(or migrate if you're using South).
+
+You might consider using django-filer with the django CMS plugin and
+its components instead of cms.plugins.file, cms.plugins.picture,
+cms.plugins.teaser and cms.plugins.video core plugins.  In this case
+you should not add them to INSTALLED_APPS but add those instead:
+
+    'filer'
+    'cmsplugin_filer_file'
+    'cmsplugin_filer_folder'
+    'cmsplugin_filer_image'
+    'cmsplugin_filer_teaser'
+    'cmsplugin_filer_video'
+
+(Note that this also requires the installation of cmsplugin-filer.)
+
+**********************************************************************
