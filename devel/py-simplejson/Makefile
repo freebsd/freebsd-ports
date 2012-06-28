@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	simplejson
-PORTVERSION=	2.5.2
+PORTVERSION=	2.6.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Simplejson is a simple, fast, extensible JSON encoder/decoder
+
+LICENSE=	MIT
 
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	yes
