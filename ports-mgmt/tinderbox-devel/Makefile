@@ -119,6 +119,7 @@ post-patch:
 		${WRKSRC}/tc
 .endif
 	${REINPLACE_CMD} -e 's/.set_rcvar./tinderd_enable/' \
+			 -e 's,/space/scripts,${PREFIX}/tinderbox,' \
 		${WRKSRC}/etc/rc.d/tinderd
 	@cd ${WRKSRC} && ${FIND} -E . -regex '.*(orig|bak)' -exec ${RM} {} \;
 

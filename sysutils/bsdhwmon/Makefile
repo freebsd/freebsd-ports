@@ -8,9 +8,9 @@
 PORTNAME=	bsdhwmon
 PORTVERSION=	20090703
 CATEGORIES=	sysutils
-MASTER_SITES=	http://bsdhwmon.parodius.com/dist/
+MASTER_SITES=	http://bsdhwmon.koitsu.org/dist/
 
-MAINTAINER=	jdc@parodius.com
+MAINTAINER=	jdc@koitsu.org
 COMMENT=	Hardware sensor monitoring utility for FreeBSD
 
 PLIST_FILES=	sbin/bsdhwmon

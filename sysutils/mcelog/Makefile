@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.kernel.org/pub/linux/utils/cpu/mce/ \
 		http://korg.cs.utah.edu/pub/linux/utils/cpu/mce/ \
 		http://ftp.oregonstate.edu/pub/linux/utils/cpu/mce/
 
-MAINTAINER=	freebsd@jdc.parodius.com
+MAINTAINER=	jdc@koitsu.org
 COMMENT=	Collects and decodes Machine Check Exception data
 
 LICENSE=	GPLv2
