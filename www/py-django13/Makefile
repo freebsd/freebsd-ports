@@ -7,6 +7,7 @@
 
 PORTNAME=	django
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://media.djangoproject.com/releases/${PORTVERSION:R}/ \
 		CHEESESHOP
@@ -26,7 +27,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Django
 
-CONFLICTS=	py2[0-9]-django-devel-[0-9]* py2[0-9]-django-1.[24].*
+CONFLICTS=	py2[0-9]-django-devel-[0-9]* py2[0-9]-django-1.[24]*
 
 DOCSDIR=	${PREFIX}/share/doc/py-django
 
