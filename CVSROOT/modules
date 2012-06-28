@@ -687,6 +687,7 @@ arp-sk                          ports/net/arp-sk
 arpCounterattack                ports/security/arpCounterattack
 arpack                          ports/math/arpack
 arpack++                        ports/math/arpack++
+arpack-ng                       ports/math/arpack-ng
 arpalert                        ports/net-mgmt/arpalert
 arpcounterattack                ports/security/arpCounterattack
 arpdig                          ports/net/arpdig
@@ -3014,6 +3015,7 @@ eif                             ports/games/eif
 eiffelstudio                    ports/devel/eiffelstudio
 eigen                           ports/math/eigen
 eigen2                          ports/math/eigen2
+eigen3                          ports/math/eigen3
 eights                          ports/games/eights
 eina                            ports/devel/eina
 einstein                        ports/games/einstein
@@ -10862,6 +10864,7 @@ openpref                        ports/games/openpref
 openprinting                    ports/print/openprinting
 openproj                        ports/deskutils/openproj
 openquicktime                   ports/multimedia/openquicktime
+openr2                          ports/misc/openr2
 openradius                      ports/net/openradius
 openresolv                      ports/dns/openresolv
 openrm                          ports/graphics/openrm
@@ -14289,6 +14292,7 @@ p5-Protocol-XMPP                ports/net-im/p5-Protocol-XMPP
 p5-Pugs-Compiler-Rule           ports/lang/p5-Pugs-Compiler-Rule
 p5-Qmail-Envelope               ports/mail/p5-Qmail-Envelope
 p5-Quantum-Superpositions       ports/lang/p5-Quantum-Superpositions
+p5-Qudo                         ports/devel/p5-Qudo
 p5-Queue-Beanstalk              ports/net/p5-Queue-Beanstalk
 p5-Quota                        ports/sysutils/p5-Quota
 p5-RADIUS-UserFile              ports/textproc/p5-RADIUS-UserFile
@@ -14753,6 +14757,7 @@ p5-Test-Benchmark               ports/devel/p5-Test-Benchmark
 p5-Test-BinaryData              ports/devel/p5-Test-BinaryData
 p5-Test-Block                   ports/devel/p5-Test-Block
 p5-Test-CPAN-Meta-YAML          ports/devel/p5-Test-CPAN-Meta-YAML
+p5-Test-CheckManifest           ports/devel/p5-Test-CheckManifest
 p5-Test-Class                   ports/devel/p5-Test-Class
 p5-Test-Class-Most              ports/devel/p5-Test-Class-Most
 p5-Test-ClassAPI                ports/devel/p5-Test-ClassAPI
@@ -18860,6 +18865,7 @@ p5-qdbm                         ports/databases/p5-qdbm
 p5-qmail-envelope               ports/mail/p5-Qmail-Envelope
 p5-qpsmtpd                      ports/mail/p5-qpsmtpd
 p5-quantum-superpositions       ports/lang/p5-Quantum-Superpositions
+p5-qudo                         ports/devel/p5-Qudo
 p5-queue-beanstalk              ports/net/p5-Queue-Beanstalk
 p5-quota                        ports/sysutils/p5-Quota
 p5-radius-userfile              ports/textproc/p5-RADIUS-UserFile
@@ -19332,6 +19338,7 @@ p5-test-base                    ports/devel/p5-Test-Base
 p5-test-benchmark               ports/devel/p5-Test-Benchmark
 p5-test-binarydata              ports/devel/p5-Test-BinaryData
 p5-test-block                   ports/devel/p5-Test-Block
+p5-test-checkmanifest           ports/devel/p5-Test-CheckManifest
 p5-test-class                   ports/devel/p5-Test-Class
 p5-test-class-most              ports/devel/p5-Test-Class-Most
 p5-test-classapi                ports/devel/p5-Test-ClassAPI
