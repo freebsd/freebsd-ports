@@ -15,10 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Represent a ring as a substructure of a molecule
 
-BUILD_DEPENDS=	${SITE_PERL}/Chemistry/Mol.pm:${PORTSDIR}/science/p5-Chemistry-Mol \
-		${SITE_PERL}/Statistics/Regression.pm:${PORTSDIR}/math/p5-Statistics-Regression
-RUN_DEPENDS=	${SITE_PERL}/Chemistry/Mol.pm:${PORTSDIR}/science/p5-Chemistry-Mol \
-		${SITE_PERL}/Statistics/Regression.pm:${PORTSDIR}/math/p5-Statistics-Regression
+BUILD_DEPENDS=	p5-Chemistry-Mol>=0:${PORTSDIR}/science/p5-Chemistry-Mol \
+		p5-Statistics-Regression>=0:${PORTSDIR}/math/p5-Statistics-Regression
+RUN_DEPENDS=	p5-Chemistry-Mol>=0:${PORTSDIR}/science/p5-Chemistry-Mol \
+		p5-Statistics-Regression>=0:${PORTSDIR}/math/p5-Statistics-Regression
 
 MAN3=	Chemistry::Ring.3 Chemistry::Ring::Find.3
 

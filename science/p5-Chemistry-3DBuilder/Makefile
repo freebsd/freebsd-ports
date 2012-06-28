@@ -15,18 +15,18 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Generate 3D coordinates from a connection table
 
-BUILD_DEPENDS=	${SITE_PERL}/Chemistry/Mol.pm:${PORTSDIR}/science/p5-Chemistry-Mol \
-		${SITE_PERL}/Chemistry/File/SMILES.pm:${PORTSDIR}/science/p5-Chemistry-File-SMILES \
-		${SITE_PERL}/Chemistry/File/SMARTS.pm:${PORTSDIR}/science/p5-Chemistry-File-SMARTS \
-		${SITE_PERL}/Chemistry/Ring.pm:${PORTSDIR}/science/p5-Chemistry-Ring \
-		${SITE_PERL}/Chemistry/InternalCoords.pm:${PORTSDIR}/science/p5-Chemistry-InternalCoords \
-		${SITE_PERL}/Math/VectorReal.pm:${PORTSDIR}/math/p5-Math-VectorReal
-RUN_DEPENDS=	${SITE_PERL}/Chemistry/Mol.pm:${PORTSDIR}/science/p5-Chemistry-Mol \
-		${SITE_PERL}/Chemistry/File/SMILES.pm:${PORTSDIR}/science/p5-Chemistry-File-SMILES \
-		${SITE_PERL}/Chemistry/File/SMARTS.pm:${PORTSDIR}/science/p5-Chemistry-File-SMARTS \
-		${SITE_PERL}/Chemistry/Ring.pm:${PORTSDIR}/science/p5-Chemistry-Ring \
-		${SITE_PERL}/Chemistry/InternalCoords.pm:${PORTSDIR}/science/p5-Chemistry-InternalCoords \
-		${SITE_PERL}/Math/VectorReal.pm:${PORTSDIR}/math/p5-Math-VectorReal
+BUILD_DEPENDS=	p5-Chemistry-Mol>=0:${PORTSDIR}/science/p5-Chemistry-Mol \
+		p5-Chemistry-File-SMILES>=0:${PORTSDIR}/science/p5-Chemistry-File-SMILES \
+		p5-Chemistry-File-SMARTS>=0:${PORTSDIR}/science/p5-Chemistry-File-SMARTS \
+		p5-Chemistry-Ring>=0:${PORTSDIR}/science/p5-Chemistry-Ring \
+		p5-Chemistry-InternalCoords>=0:${PORTSDIR}/science/p5-Chemistry-InternalCoords \
+		p5-Math-VectorReal>=0:${PORTSDIR}/math/p5-Math-VectorReal
+RUN_DEPENDS=	p5-Chemistry-Mol>=0:${PORTSDIR}/science/p5-Chemistry-Mol \
+		p5-Chemistry-File-SMILES>=0:${PORTSDIR}/science/p5-Chemistry-File-SMILES \
+		p5-Chemistry-File-SMARTS>=0:${PORTSDIR}/science/p5-Chemistry-File-SMARTS \
+		p5-Chemistry-Ring>=0:${PORTSDIR}/science/p5-Chemistry-Ring \
+		p5-Chemistry-InternalCoords>=0:${PORTSDIR}/science/p5-Chemistry-InternalCoords \
+		p5-Math-VectorReal>=0:${PORTSDIR}/math/p5-Math-VectorReal
 
 PERL_CONFIGURE=	yes
 

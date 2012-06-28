@@ -15,14 +15,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Select atoms in macromolecules
 
-BUILD_DEPENDS=	${SITE_PERL}/Chemistry/Mol.pm:${PORTSDIR}/science/p5-Chemistry-Mol \
-		${SITE_PERL}/Chemistry/File/PDB.pm:${PORTSDIR}/science/p5-Chemistry-File-PDB \
-		${SITE_PERL}/Chemistry/MacroMol.pm:${PORTSDIR}/science/p5-Chemistry-MacroMol \
-		${SITE_PERL}/Chemistry/Pattern.pm:${PORTSDIR}/science/p5-Chemistry-Pattern
-RUN_DEPENDS=	${SITE_PERL}/Chemistry/Mol.pm:${PORTSDIR}/science/p5-Chemistry-Mol \
-		${SITE_PERL}/Chemistry/File/PDB.pm:${PORTSDIR}/science/p5-Chemistry-File-PDB \
-		${SITE_PERL}/Chemistry/MacroMol.pm:${PORTSDIR}/science/p5-Chemistry-MacroMol \
-		${SITE_PERL}/Chemistry/Pattern.pm:${PORTSDIR}/science/p5-Chemistry-Pattern
+BUILD_DEPENDS=	p5-Chemistry-Mol>=0:${PORTSDIR}/science/p5-Chemistry-Mol \
+		p5-Chemistry-File-PDB>=0:${PORTSDIR}/science/p5-Chemistry-File-PDB \
+		p5-Chemistry-MacroMol>=0:${PORTSDIR}/science/p5-Chemistry-MacroMol \
+		p5-Chemistry-Pattern>=0:${PORTSDIR}/science/p5-Chemistry-Pattern
+RUN_DEPENDS=	p5-Chemistry-Mol>=0:${PORTSDIR}/science/p5-Chemistry-Mol \
+		p5-Chemistry-File-PDB>=0:${PORTSDIR}/science/p5-Chemistry-File-PDB \
+		p5-Chemistry-MacroMol>=0:${PORTSDIR}/science/p5-Chemistry-MacroMol \
+		p5-Chemistry-Pattern>=0:${PORTSDIR}/science/p5-Chemistry-Pattern
 
 MAN3=	Chemistry::MidasPattern.3 Chemistry::File::MidasPattern.3
 

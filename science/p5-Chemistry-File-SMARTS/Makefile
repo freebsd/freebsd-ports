@@ -15,14 +15,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	SMARTS chemical substructure pattern linear notation parser
 
-BUILD_DEPENDS=	${SITE_PERL}/Chemistry/Mol.pm:${PORTSDIR}/science/p5-Chemistry-Mol \
-		${SITE_PERL}/Chemistry/Ring/Find.pm:${PORTSDIR}/science/p5-Chemistry-Ring \
-		${SITE_PERL}/Chemistry/Pattern.pm:${PORTSDIR}/science/p5-Chemistry-Pattern \
-		${SITE_PERL}/Chemistry/File/SMILES.pm:${PORTSDIR}/science/p5-Chemistry-File-SMILES
-RUN_DEPENDS=	${SITE_PERL}/Chemistry/Mol.pm:${PORTSDIR}/science/p5-Chemistry-Mol \
-		${SITE_PERL}/Chemistry/Ring/Find.pm:${PORTSDIR}/science/p5-Chemistry-Ring \
-		${SITE_PERL}/Chemistry/Pattern.pm:${PORTSDIR}/science/p5-Chemistry-Pattern \
-		${SITE_PERL}/Chemistry/File/SMILES.pm:${PORTSDIR}/science/p5-Chemistry-File-SMILES
+BUILD_DEPENDS=	p5-Chemistry-Mol>=0:${PORTSDIR}/science/p5-Chemistry-Mol \
+		p5-Chemistry-Ring>=0:${PORTSDIR}/science/p5-Chemistry-Ring \
+		p5-Chemistry-Pattern>=0:${PORTSDIR}/science/p5-Chemistry-Pattern \
+		p5-Chemistry-File-SMILES>=0:${PORTSDIR}/science/p5-Chemistry-File-SMILES
+RUN_DEPENDS=	p5-Chemistry-Mol>=0:${PORTSDIR}/science/p5-Chemistry-Mol \
+		p5-Chemistry-Ring>=0:${PORTSDIR}/science/p5-Chemistry-Ring \
+		p5-Chemistry-Pattern>=0:${PORTSDIR}/science/p5-Chemistry-Pattern \
+		p5-Chemistry-File-SMILES>=0:${PORTSDIR}/science/p5-Chemistry-File-SMILES
 
 MAN3=	Chemistry::File::SMARTS.3
 

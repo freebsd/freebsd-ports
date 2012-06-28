@@ -15,14 +15,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Represent a ring as a substructure of a molecule 
 
-BUILD_DEPENDS=	${SITE_PERL}/Chemistry/Mol.pm:${PORTSDIR}/science/p5-Chemistry-Mol \
-		${SITE_PERL}/Chemistry/File/SMILES.pm:${PORTSDIR}/science/p5-Chemistry-File-SMILES \
-		${SITE_PERL}/Statistics/Regression.pm:${PORTSDIR}/math/p5-Statistics-Regression \
-		${SITE_PERL}/Chemistry/Pattern.pm:${PORTSDIR}/science/p5-Chemistry-Pattern
-RUN_DEPENDS=	${SITE_PERL}/Chemistry/Mol.pm:${PORTSDIR}/science/p5-Chemistry-Mol \
-		${SITE_PERL}/Chemistry/File/SMILES.pm:${PORTSDIR}/science/p5-Chemistry-File-SMILES \
-		${SITE_PERL}/Statistics/Regression.pm:${PORTSDIR}/math/p5-Statistics-Regression \
-		${SITE_PERL}/Chemistry/Pattern.pm:${PORTSDIR}/science/p5-Chemistry-Pattern
+BUILD_DEPENDS=	p5-Chemistry-Mol>=0:${PORTSDIR}/science/p5-Chemistry-Mol \
+		p5-Chemistry-File-SMILES>=0:${PORTSDIR}/science/p5-Chemistry-File-SMILES \
+		p5-Statistics-Regression>=0:${PORTSDIR}/math/p5-Statistics-Regression \
+		p5-Chemistry-Pattern>=0:${PORTSDIR}/science/p5-Chemistry-Pattern
+RUN_DEPENDS=	p5-Chemistry-Mol>=0:${PORTSDIR}/science/p5-Chemistry-Mol \
+		p5-Chemistry-File-SMILES>=0:${PORTSDIR}/science/p5-Chemistry-File-SMILES \
+		p5-Statistics-Regression>=0:${PORTSDIR}/math/p5-Statistics-Regression \
+		p5-Chemistry-Pattern>=0:${PORTSDIR}/science/p5-Chemistry-Pattern
 
 MAN3=	Chemistry::Reaction.3
 
