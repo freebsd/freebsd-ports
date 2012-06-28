@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Twitter
-PORTVERSION=	3.18002
+PORTVERSION=	3.18003
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -35,7 +35,6 @@ BUILD_DEPENDS=	p5-Crypt-SSLeay>=0.50:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-libwww>=2.032:${PORTSDIR}/www/p5-libwww \
 		p5-namespace-autoclean>=0.09:${PORTSDIR}/devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
