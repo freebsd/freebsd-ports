@@ -79,7 +79,7 @@ post-patch:
 	${REINPLACE_CMD} \
 	    -e '/get-snapshot.py $$(CFG_HOST_TRIPLE)/d' \
 	    ${WRKSRC}/mk/stage0.mk
-.if !${PORT_OPTIONS:MCARGO}
+.if empty(PORT_OPTIONS:MCARGO)
 	${REINPLACE_CMD} \
 	    -e '/$$(Q)$$(call INSTALL,$$(HB3),$$(PHB),cargo$$(X))/d' \
 	    ${WRKSRC}/mk/install.mk
