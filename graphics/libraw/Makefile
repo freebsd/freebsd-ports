@@ -31,7 +31,7 @@ OPTIONS_DEFAULT=	LCMS2
 DEMOSAIC_PACK_GPL2_DESC=	Enable GPLv2 demosaic pack
 DEMOSAIC_PACK_GPL3_DESC=	Enable GPLv3 demosaic pack
 OPTIMIZED_CFLAGS_DESC=		Enable optimizations (on x86)
-OPENMP_DESC=		Enable openmp
+OPENMP_DESC=			Enable OpenMP (implies GCC 4.6+)
 
 .include <bsd.port.options.mk>
 
@@ -42,8 +42,8 @@ CFLAGS+=	-O3
 .endif
 
 .if ${PORT_OPTIONS:MOPENMP}
-CONFIGURE_ARGS+=--enable-openmp
 USE_GCC=	4.6+
+CONFIGURE_ARGS+=--enable-openmp
 .else
 CONFIGURE_ARGS+=--disable-openmp
 .endif
