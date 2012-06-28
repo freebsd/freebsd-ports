@@ -15,9 +15,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	mail to procmailrc generator
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Curses.pm:${PORTSDIR}/devel/p5-Curses \
-		${SITE_PERL}/Curses/Widgets.pm:${PORTSDIR}/devel/p5-Curses-Widgets \
-		${SITE_PERL}/Mail/Header.pm:${PORTSDIR}/mail/p5-Mail-Tools
+RUN_DEPENDS=	p5-Curses>=0:${PORTSDIR}/devel/p5-Curses \
+		p5-Curses-Widgets>=0:${PORTSDIR}/devel/p5-Curses-Widgets \
+		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools
 
 USE_PERL5=	yes
 NO_BUILD=	yes

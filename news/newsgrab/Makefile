@@ -15,10 +15,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Download and uudecode binary files from USENET using regexps
 
-RUN_DEPENDS=	${SITE_PERL}/News/NNTPClient.pm:${PORTSDIR}/news/p5-NNTPClient \
-		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
-		${SITE_PERL}/News/Newsrc.pm:${PORTSDIR}/news/p5-News-Newsrc \
-		${SITE_PERL}/Time/ParseDate.pm:${PORTSDIR}/devel/p5-Time-modules
+RUN_DEPENDS=	p5-NNTPClient>=0:${PORTSDIR}/news/p5-NNTPClient \
+		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
+		p5-News-Newsrc>=0:${PORTSDIR}/news/p5-News-Newsrc \
+		p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules
 
 NO_BUILD=	yes
 USE_PERL5=	yes

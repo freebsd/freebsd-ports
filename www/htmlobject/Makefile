@@ -15,8 +15,8 @@ DISTNAME=	lib${PORTNAME}-perl-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML Document Object
 
-BUILD_DEPENDS=	${SITE_PERL}/Data/FormValidator.pm:${PORTSDIR}/textproc/p5-Data-FormValidator \
-		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip
+BUILD_DEPENDS=	p5-Data-FormValidator>=0:${PORTSDIR}/textproc/p5-Data-FormValidator \
+		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip
 
 PERL_CONFIGURE=	yes
 

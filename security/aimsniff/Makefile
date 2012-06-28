@@ -12,13 +12,13 @@ MASTER_SITES=	SF/${PORTNAME}/AIM%20Sniff/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AOL Instant Messanger Sniffing and Reading Tool
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/Pcap.pm:${PORTSDIR}/net/p5-Net-Pcap\
-		${SITE_PERL}/NetPacket.pm:${PORTSDIR}/net/p5-NetPacket\
-		${SITE_PERL}/${PERL_ARCH}/auto/DBI/DBI.so:${PORTSDIR}/databases/p5-DBI\
-		${SITE_PERL}/${PERL_ARCH}/Unicode/String.pm:${PORTSDIR}/converters/p5-Unicode-String\
-		${SITE_PERL}/Proc/Daemon.pm:${PORTSDIR}/devel/p5-Proc-Daemon\
-		${SITE_PERL}/Proc/Simple.pm:${PORTSDIR}/devel/p5-Proc-Simple\
-		${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog
+RUN_DEPENDS=	p5-Net-Pcap>=0:${PORTSDIR}/net/p5-Net-Pcap\
+		p5-NetPacket>=0:${PORTSDIR}/net/p5-NetPacket\
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI\
+		p5-Unicode-String>=0:${PORTSDIR}/converters/p5-Unicode-String\
+		p5-Proc-Daemon>=0:${PORTSDIR}/devel/p5-Proc-Daemon\
+		p5-Proc-Simple>=0:${PORTSDIR}/devel/p5-Proc-Simple\
+		p5-Unix-Syslog>=0:${PORTSDIR}/sysutils/p5-Unix-Syslog
 
 OPTIONS=	SUID_ROOT "Install aimsniff with set-uid bit" off
 

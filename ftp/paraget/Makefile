@@ -15,10 +15,10 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallel ftp-fetching program
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Class/MethodMaker.pm:${PORTSDIR}/devel/p5-Class-MethodMaker
+BUILD_DEPENDS=	p5-Class-MethodMaker>=0:${PORTSDIR}/devel/p5-Class-MethodMaker
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
 
 PERL_CONFIGURE=	yes
 

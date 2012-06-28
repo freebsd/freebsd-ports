@@ -18,7 +18,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 USE_BZIP2=	yes
 USE_PERL5_RUN=	yes

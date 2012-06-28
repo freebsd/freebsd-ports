@@ -16,14 +16,14 @@ MASTER_SITES=	SF/${PORTNAME}/Syndigator/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An RSS feed reader based on Gtk2
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv \
-		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
-		${SITE_PERL}/XML/RSS.pm:${PORTSDIR}/textproc/p5-XML-RSS \
-		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
-		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/${PERL_ARCH}/Gnome2.pm:${PORTSDIR}/x11-toolkits/p5-Gnome2 \
-		${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
-		${SITE_PERL}/${PERL_ARCH}/Gtk2/Html2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2-Html2
+RUN_DEPENDS=	p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv \
+		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
+		p5-XML-RSS>=0:${PORTSDIR}/textproc/p5-XML-RSS \
+		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-Gnome2>=0:${PORTSDIR}/x11-toolkits/p5-Gnome2 \
+		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
+		p5-Gtk2-Html2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2-Html2
 
 USE_GNOME=	gnomehier
 USE_PERL5=	yes

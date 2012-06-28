@@ -15,10 +15,10 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A HTML to PDF converter
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/HTML/Tagset.pm:${PORTSDIR}/www/p5-HTML-Tagset \
-		${SITE_PERL}/HTML/Tree.pm:${PORTSDIR}/www/p5-HTML-Tree \
-		${SITE_PERL}/CSS/Tiny.pm:${PORTSDIR}/textproc/p5-CSS-Tiny \
+RUN_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-HTML-Tagset>=0:${PORTSDIR}/www/p5-HTML-Tagset \
+		p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
+		p5-CSS-Tiny>=0:${PORTSDIR}/textproc/p5-CSS-Tiny \
 		fop:${PORTSDIR}/textproc/fop
 
 USE_PERL5=	yes

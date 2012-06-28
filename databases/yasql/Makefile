@@ -14,25 +14,25 @@ MASTER_SITES=		SF
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Yet Another SQL*Plus Replacement
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/Oracle.pm:${PORTSDIR}/databases/p5-DBD-Oracle	\
-		${SITE_PERL}/${PERL_ARCH}/Term/ReadLine/Gnu.pm:${PORTSDIR}/devel/p5-ReadLine-Gnu
+BUILD_DEPENDS=	p5-DBD-Oracle>=0:${PORTSDIR}/databases/p5-DBD-Oracle	\
+		p5-ReadLine-Gnu>=0:${PORTSDIR}/devel/p5-ReadLine-Gnu
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LICENSE=	GPLv2
 
 # Time::HiRes is used for high resolution benchmarking
 .if !defined(WITHOUT_HIRES)
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+BUILD_DEPENDS+=	p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
 .endif
 
 # Text::CSV_XS is required to output CSV or input from CSV files
 .if !defined(WITHOUT_CSV)
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Text/CSV_XS.pm:${PORTSDIR}/textproc/p5-Text-CSV_XS
+BUILD_DEPENDS+=	p5-Text-CSV_XS>=0:${PORTSDIR}/textproc/p5-Text-CSV_XS
 .endif
 
 # Term::ReadKey is used for better input and output control
 .if !defined(WITHOUT_READKEY)
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey
+BUILD_DEPENDS+=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
 .endif
 
 HAS_CONFIGURE=	yes

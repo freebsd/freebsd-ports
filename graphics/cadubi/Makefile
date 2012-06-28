@@ -13,7 +13,7 @@ MASTER_SITES=	http://langworth.com/pub/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ASCII drawing utility
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey
+RUN_DEPENDS=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
 
 USE_PERL5=	yes
 NO_BUILD=	yes

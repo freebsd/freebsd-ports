@@ -14,10 +14,10 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A high performance, extremely flexible monitoring system
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/RRDs.pm:${PORTSDIR}/databases/rrdtool \
-		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
-		${SITE_PERL}/Time/Zone.pm:${PORTSDIR}/devel/p5-TimeDate
+RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-SNMP_Session>=0:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
+		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate
 
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
@@ -33,7 +33,7 @@ GROUPS=	www
 
 # A reliable version of Time::HiRes is included with perl 5.8.7 and later.
 .if ${PERL_LEVEL} < 500807
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+RUN_DEPENDS+=	p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
 .endif
 
 post-patch:

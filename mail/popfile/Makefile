@@ -13,12 +13,12 @@ MASTER_SITES=	http://getpopfile.org/downloads/
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=Automatic mail classification tool, acts as a POP3 proxy
+COMMENT=	Automatic mail classification tool, acts as a POP3 proxy
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
-		${SITE_PERL}/HTML/Tagset.pm:${PORTSDIR}/www/p5-HTML-Tagset \
-		${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
-		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate
+RUN_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-HTML-Tagset>=0:${PORTSDIR}/www/p5-HTML-Tagset \
+		p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
+		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -37,7 +37,7 @@ RUN_DEPENDS+=  p5-IO-Socket-SSL>=1.07:${PORTSDIR}/security/p5-IO-Socket-SSL
 .endif
 
 .if defined(WITH_POPFILE_XMLRPC)
-RUN_DEPENDS+=  ${SITE_PERL}/XMLRPC/Transport/HTTP.pm:${PORTSDIR}/net/p5-SOAP-Lite
+RUN_DEPENDS+=  p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite
 .endif
 
 .if defined(WITH_POPFILE_SOCKS)
@@ -46,7 +46,7 @@ RUN_DEPENDS+=  ${SITE_PERL}/XMLRPC/Transport/HTTP.pm:${PORTSDIR}/net/p5-SOAP-Lit
 .endif
 
 .if defined(WITH_POPFILE_UPGRADE_FROM_0_20)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB
+RUN_DEPENDS+=	p5-BerkeleyDB>=0:${PORTSDIR}/databases/p5-BerkeleyDB
 .endif
 
 .if defined(WITH_POPFILE_JAPANESE)
@@ -54,10 +54,10 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-B
 WITH_POPFILE_KAKASI=YES
 .endif
 .if defined(WITH_POPFILE_KAKASI)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Text/Kakasi.pm:${PORTSDIR}/japanese/p5-Text-Kakasi
+RUN_DEPENDS+=	p5-Text-Kakasi>=0:${PORTSDIR}/japanese/p5-Text-Kakasi
 .endif
 .if defined(WITH_POPFILE_MECAB)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/MeCab.pm:${PORTSDIR}/japanese/p5-MeCab
+RUN_DEPENDS+=	p5-MeCab>=0:${PORTSDIR}/japanese/p5-MeCab
 .endif
 
 pre-fetch:

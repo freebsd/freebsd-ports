@@ -13,8 +13,8 @@ MASTER_SITES=	http://home.arcor.de/kaffeetisch/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical configuation utility for the newsreader slrn
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
-		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent
+BUILD_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
+		p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent
 
 USE_BZIP2=	yes
 USE_PERL5=	yes

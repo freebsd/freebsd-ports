@@ -16,7 +16,7 @@ COMMENT=	A real-time statistics generator for Half-Life and its mods
 
 LICENSE=	CDDL
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

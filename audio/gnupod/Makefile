@@ -16,12 +16,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of Perl scripts for using an Apple iPod
 
-BUILD_DEPENDS=	${SITE_PERL}/MP3/Info.pm:${PORTSDIR}/audio/p5-MP3-Info \
-		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
-		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
-		${SITE_PERL}/${PERL_ARCH}/Unicode/String.pm:${PORTSDIR}/converters/p5-Unicode-String  \
-		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
+BUILD_DEPENDS=	p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info \
+		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
+		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
+		p5-Unicode-String >=0:${PORTSDIR}/converters/p5-Unicode-String  \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 INFO=		gnupod
@@ -42,11 +42,11 @@ OPTIONS_DEFINE=	FLAC VORBIS DOCS
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFLAC} || exists(${SITE_PERL}/${PERL_ARCH}/Audio/FLAC/Header.pm)
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Audio/FLAC/Header.pm:${PORTSDIR}/audio/p5-Audio-FLAC-Header
+BUILD_DEPENDS+=	p5-Audio-FLAC-Header>=0:${PORTSDIR}/audio/p5-Audio-FLAC-Header
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS} || exists(${SITE_PERL}/Ogg/Vorbis/Header/PurePerl.pm)
-BUILD_DEPENDS+=	${SITE_PERL}/Ogg/Vorbis/Header/PurePerl.pm:${PORTSDIR}/audio/p5-Ogg-Vorbis-Header-PurePerl
+BUILD_DEPENDS+=	p5-Ogg-Vorbis-Header-PurePerl>=0:${PORTSDIR}/audio/p5-Ogg-Vorbis-Header-PurePerl
 BUILD_DEPENDS+=	oggdec:${PORTSDIR}/audio/vorbis-tools
 .endif
 

@@ -20,7 +20,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	mogrify:${PORTSDIR}/graphics/ImageMagick \
-		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		weblint:${PORTSDIR}/www/weblint
 
 NO_BUILD=	yes

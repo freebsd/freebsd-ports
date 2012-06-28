@@ -15,15 +15,15 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	#empty
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=IRC proxy for mobilephone that have a web interface
+COMMENT=	IRC proxy for mobilephone that have a web interface
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unicode/Japanese.pm:${PORTSDIR}/japanese/p5-Unicode-Japanese \
-		${SITE_PERL}/POE/Component/IRC.pm:${PORTSDIR}/irc/p5-POE-Component-IRC \
-		${SITE_PERL}/POE/Component/Pluggable.pm:${PORTSDIR}/devel/p5-POE-Component-Pluggable \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/HTTP/Response.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Proc/Daemon.pm:${PORTSDIR}/devel/p5-Proc-Daemon \
-		${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig
+RUN_DEPENDS=	p5-Unicode-Japanese>=0:${PORTSDIR}/japanese/p5-Unicode-Japanese \
+		p5-POE-Component-IRC>=0:${PORTSDIR}/irc/p5-POE-Component-IRC \
+		p5-POE-Component-Pluggable>=0:${PORTSDIR}/devel/p5-POE-Component-Pluggable \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-Proc-Daemon>=0:${PORTSDIR}/devel/p5-Proc-Daemon \
+		p5-AppConfig>=0:${PORTSDIR}/devel/p5-AppConfig
 
 PLIST_FILES=	bin/keitairc
 

@@ -16,9 +16,9 @@ COMMENT=	A tool for automatic spam reporting via Spamcop.net
 
 LICENSE=	GPLv1
 
-RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Getopt/ArgvFile.pm:${PORTSDIR}/devel/p5-Getopt-ArgvFile \
-		${SITE_PERL}/HTML/Form.pm:${PORTSDIR}/www/p5-HTML-Form
+RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-Getopt-ArgvFile>=0:${PORTSDIR}/devel/p5-Getopt-ArgvFile \
+		p5-HTML-Form>=0:${PORTSDIR}/www/p5-HTML-Form
 
 PERL_CONFIGURE=	yes
 

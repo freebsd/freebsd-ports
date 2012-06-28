@@ -13,9 +13,9 @@ MASTER_SITES=	SF/htmlwml/Html2Wml/${PORTVERSION} http://maddingue.free.fr/softwa
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A CGI that can do on-the-fly HTML to WML conversion
 
-RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \
-		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-Text-Template>=0:${PORTSDIR}/textproc/p5-Text-Template \
+		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
 USE_PERL5=	yes
 MAKE_ARGS=	PREFIX=${PREFIX} DOCDIR=${DOCDIR}

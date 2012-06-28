@@ -16,8 +16,8 @@ COMMENT=	A viewer/converter for CBR/CBZ comic book archives
 
 RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar \
 		unzip:${PORTSDIR}/archivers/unzip \
-		${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
-		${SITE_PERL}/String/ShellQuote.pm:${PORTSDIR}/textproc/p5-String-ShellQuote
+		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
+		p5-String-ShellQuote>=0:${PORTSDIR}/textproc/p5-String-ShellQuote
 
 NO_BUILD=	yes
 USE_PERL5=	yes

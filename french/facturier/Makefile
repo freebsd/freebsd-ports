@@ -17,8 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Logiciel de facturation pour P.M.I. & P.M.E.
 
 RUN_DEPENDS=	${LOCALBASE}/bin/htmldoc:${PORTSDIR}/textproc/htmldoc			\
-		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql	\
-		${SITE_PERL}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash
+		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql	\
+		p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

@@ -15,9 +15,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK front-end to Qemu
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
-		${SITE_PERL}/${PERL_ARCH}/Gtk2/GladeXML/:${PORTSDIR}/x11-toolkits/p5-Glade2 \
-		${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext
+RUN_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
+		p5-Glade2>=0:${PORTSDIR}/x11-toolkits/p5-Glade2 \
+		p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_PERL5=	yes

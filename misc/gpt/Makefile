@@ -17,8 +17,8 @@ COMMENT=	Grid Packaging Tools (used to install Globus)
 
 CONFLICTS=	gpt-3.1*
 
-RUN_DEPENDS+=	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
-		${SITE_PERL}/IO/Zlib.pm:${PORTSDIR}/archivers/p5-IO-Zlib \
+RUN_DEPENDS+=	p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
+		p5-IO-Zlib>=0:${PORTSDIR}/archivers/p5-IO-Zlib \
 		${LOCALBASE}/bin/gmake:${PORTSDIR}/devel/gmake \
 		${LOCALBASE}/bin/makepatch:${PORTSDIR}/textproc/makepatch
 

@@ -24,7 +24,7 @@ MANLANG=	ja
 MAN1=		kcode.1
 MANCOMPRESSED=	no
 
-RUN_DEPENDS=	${SITE_PERL}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
+RUN_DEPENDS=	ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode
 
 do-extract:
 	${MKDIR} ${WRKSRC}

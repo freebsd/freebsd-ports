@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spamassassin SMTP Proxy
 
 RUN_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin \
-		${SITE_PERL}/Net/Server/PreForkSimple.pm:${PORTSDIR}/net/p5-Net-Server
+		p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server
 
 NO_BUILD=	yes
 PLIST_FILES=	sbin/spampd

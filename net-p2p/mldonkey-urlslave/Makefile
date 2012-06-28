@@ -16,7 +16,7 @@ DISTNAME=	mlurlslave-v${PORTVERSION:S/^0.0.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ enabled Perl script for adding ed2k:// links to MLDonkey
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
+BUILD_DEPENDS=	p5-Gtk>=0:${PORTSDIR}/x11-toolkits/p5-Gtk
 
 USE_PERL5=	yes
 NO_BUILD=	yes

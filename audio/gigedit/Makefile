@@ -14,7 +14,7 @@ MASTER_SITES=	http://download.linuxsampler.org/packages/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An instrument editor for gig files
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 LIB_DEPENDS=	gig.10:${PORTSDIR}/audio/libgig \
 		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24
 RUN_DEPENDS=	${LOCALBASE}/lib/linuxsampler/liblinuxsampler.so.3:${PORTSDIR}/audio/linuxsampler
