@@ -36,13 +36,13 @@ libdata/pkgconfig/gammu.pc
 libdata/pkgconfig/gammu-smsd.pc
 lib/libGammu.so
 lib/libGammu.so.7
-lib/libGammu.so.7.1.31.0
+lib/libGammu.so.7.1.32.0
 lib/libgsmsd.so
 lib/libgsmsd.so.7
-lib/libgsmsd.so.7.1.31.0
+lib/libgsmsd.so.7.1.32.0
+share/gammu/gammu-s60-remote.sis
 share/gammu/gnapplet.ini
 share/gammu/gnapplet.sis
-share/gammu/series60-remote.sis
 share/locale/af/LC_MESSAGES/gammu.mo
 share/locale/af/LC_MESSAGES/libgammu.mo
 share/locale/ar/LC_MESSAGES/gammu.mo
