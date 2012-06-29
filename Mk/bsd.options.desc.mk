@@ -81,6 +81,7 @@ GRAPHVIZ_DESC?=		Graphviz support
 GRASS_DESC?=		GRASS support
 GSM_DESC?=		GSM codec support
 GSTREAMER_DESC?=	Multimedia support
+GTK1_DESC?=		GTK1 gui toolkit support
 GTK2_DESC?=		GTK2 gui toolkit support
 GTK3_DESC?=		GTK3 gui toolkit support
 GUI_DESC?=		GUI support
