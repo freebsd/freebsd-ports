@@ -28,11 +28,12 @@ USE_GMAKE=	yes
 
 MAN1=		hotkeys.1
 
-OPTIONS=	XOSD	"Enable On-Screen-Display support"	on
+OPTIONS_DEFINE=	OSD
+OPTIONS_DEFAULT=	OSD
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_XOSD)
+.if ${PORT_OPTIONS:MOSD}
 LIB_DEPENDS+=	xosd.4:${PORTSDIR}/misc/xosd
 CONFIGURE_ARGS+=	--with-xosd
 .endif
@@ -53,4 +54,4 @@ post-install:
 	fi
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

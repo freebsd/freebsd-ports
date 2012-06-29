@@ -24,8 +24,7 @@ LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
-OPTIONS=	LAME "LAME MP3 audio encoder support" off \
-		PDF "PDFlib support" off
+OPTIONS_DEFINE=	LAME PDF
 
 USE_GNOME=	pkgconfig
 USE_GL=		glut
@@ -42,16 +41,16 @@ MAN1=		as3compile.1 font2swf.1 gif2swf.1 jpeg2swf.1 pdf2swf.1 \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_LAME)
+.if ${PORT_OPTIONS:MLAME}
 LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
 .else
 #CONFIGURE_ARGS+=	--disable-lame
 CONFIGURE_ENV+=	ac_cv_lib_mp3lame_lame_init=no
 .endif
 
-.if defined(WITH_PDF)
+.if ${PORT_OPTIONS:MPDF}
 LIB_DEPENDS+=	pdf.6:${PORTSDIR}/print/pdflib
 PLIST_SUB+=	PDF=""
 MAN1+=		pdf2pdf.1
@@ -68,4 +67,4 @@ post-patch:
 	@${REINPLACE_CMD} -e '/python/d ; \
 		 /avi2swf/d' ${WRKSRC}/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -18,15 +18,17 @@ COMMENT=	A multi-GUI (terminal, X, XView) calculator program
 
 USE_LDCONFIG=	yes
 
-OPTIONS=	X11	"Build X11 version of calctool" on \
-		TTY	"Build tty version of calctool" on \
-		XVIEW	"Build tty version of calctool" off
+OPTIONS_DEFINE=	X11 TTY XVIEW
+OPTIONS_DEFAULT=	X11 TTY
+X11_DESC=	Build X11 version of calctool
+TTY_DESC=	Build tty version of calctool
+XVIEW_DESC=	Build tty version of calctool
 
 MAN1=		calctool.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=	x11
 BINARIES+=	xcalctool
 PLIST_SUB+=	X11=""
@@ -34,14 +36,14 @@ PLIST_SUB+=	X11=""
 PLIST_SUB+=	X11="@comment "
 .endif
 
-.if !defined(WITHOUT_TTY)
+.if ${PORT_OPTIONS:MTTY}
 BINARIES+=	tty_calctool
 PLIST_SUB+=	TTY=""
 .else
 PLIST_SUB+=	TTY="@comment "
 .endif
 
-.if defined(WITH_XVIEW)
+.if ${PORT_OPTIONS:MXVIEW}
 BINARIES+=	xv_calctool
 LIB_DEPENDS+=	xview.3:${PORTSDIR}/x11-toolkits/xview
 PLIST_SUB+=	XVIEW=""
@@ -72,4 +74,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/calctool.1 ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/calctool.help ${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

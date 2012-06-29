@@ -35,10 +35,11 @@ USE_AUTOTOOLS=	libtool
 USE_GNOME=	atk glib20 gtk20 libxml2 pango # See above
 USE_XORG=	xv
 
-OPTIONS=	ARTS	  "ARts audio system support" on \
-		GSTREAMER "GStreamer playback support" off \
-		TUBESTUFF "YouTube and other 'download & play' support" off \
-		XINE	  "Xine playback support" off
+OPTIONS_DEFINE=	ARTS GSTREAMER TUBESTUFF XINE DOCS
+OPTIONS_DEFAULT=	ARTS
+GSTREAMER_DESC=	GStreamer playback support
+TUBESTUFF_DESC=	YouTube and other 'download & play' support
+XINE_DESC=	Xine playback support
 
 CONFIGURE_ENV+=	PKG_CONFIG=${LOCALBASE}/bin/pkg-config
 
@@ -49,25 +50,25 @@ post-patch:
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_ARTS)
+.if empty(PORT_OPTIONS:MARTS)
 CONFIGURE_ARGS+=--without-arts
-.endif # WITHOUT_ARTS
+.endif
 
-.if defined(WITH_GSTREAMER)
+.if ${PORT_OPTIONS:MGSTREAMER}
 USE_GSTREAMER+=	yes
 PLIST_FILES+=	bin/kgstplayer
 .else
 CONFIGURE_ARGS+=--without-gstreamer
-.endif # WITH_GSTREAMER
+.endif
 
-.if defined(WITH_XINE)
+.if ${PORT_OPTIONS:MXINE}
 LIB_DEPENDS+=	xine:${PORTSDIR}/multimedia/libxine
 PLIST_FILES+=	bin/kxineplayer
 .else
 CONFIGURE_ARGS+=--without-xine
 .endif # WITH_XINE
 
-.if defined(WITH_TUBESTUFF)
+.if ${PORT_OPTIONS:MTUBESTUFF}
 TUBESTUFF_VER=	20080314
 DISTFILES+=	tubestuff-${TUBESTUFF_VER}.tbz
 BUILD_DEPENDS+=	mencoder:${PORTSDIR}/multimedia/mencoder
@@ -88,11 +89,11 @@ pre-install:
 post-install:
 	cd ${WRKDIR}/tubestuff && ./make_install
 
-.if defined(NOPORTDOCS)
-	${RM} ${PREFIX}/share/apps/kmplayer/tubestuff/README
-.else
+.if ${PORT_OPTIONS:MDOCs}
 PLIST_FILES+=	share/apps/kmplayer/tubestuff/README
-.endif # NOPORTDOCS
+.else
+	${RM} ${PREFIX}/share/apps/kmplayer/tubestuff/README
+.endif
 
 PLIST_FILES+=	share/apps/kmplayer/tubestuff/altertube-dl \
 		share/apps/kmplayer/tubestuff/blip-dl \

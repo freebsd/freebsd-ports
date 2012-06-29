@@ -20,8 +20,9 @@ LIB_DEPENDS=	dv.4:${PORTSDIR}/multimedia/libdv	\
 RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder	\
 		mplex:${PORTSDIR}/multimedia/mjpegtools
 
-OPTIONS=	QUICKTIME "With Quicktime support" off	\
-		FFMPEG_KINO "With ffmpeg-kino" off
+OPTIONS_DEFINE=	QUICKTIME FFMPEG_KINO
+QUICKTIME_DESC=	With Quicktime support
+FFMPEG_KINO_DESC=	With ffmpeg-kino
 
 USE_XORG=	x11 xv ice
 USE_AUTOTOOLS=	autoconf
@@ -38,18 +39,18 @@ LDFLAGS+=	-L${LOCALBASE}/lib/libquicktime	\
 CONFIGURE_ARGS=	--with-dv1394
 MAN1=	kino.1 kino2raw.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_FFMPEG_KINO)
+.if ${PORT_OPTIONS:MFFMPEG_KINO}
 MAN1+=	ffmpeg-kino.1
 .endif
 
-.if defined(WITH_QUICKTIME)
+.if ${PORT_OPTIONS:MQUICKTIME}
 LIB_DEPENDS+=	quicktime.0:${PORTSDIR}/multimedia/libquicktime
 CONFIGURE_ARGS+=	--enable-quicktime
 .endif
 
-.if defined(WITH_FFMPEG_KINO)
+.if ${PORT_OPTIONS:MFFMPEG_KINO}
 PLIST_SUB+=	FFMPEG_KINO=""
 .else
 CONFIGURE_ARGS+=	--disable-local-ffmpeg
@@ -57,4 +58,4 @@ PLIST_SUB+=	FFMPEG_KINO="@comment "
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

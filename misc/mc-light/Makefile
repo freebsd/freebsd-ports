@@ -19,9 +19,9 @@ RUN_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
 
 CONFLICTS=	mc-4.7*
 
-OPTIONS=	NLS "Enable gettext support" on \
-		SUBSHELL "Build with subshell support (only for bash!)" off \
-		MC_IN_MC "Allow run mc inside mc (useful for mcedit)" off
+OPTIONS_DEFINE=	NLS SUBSHELL MC_IN_MC
+SUBSHELL_DESC=	Build with subshell support (only for bash!)
+MC_IN_MC_DESC=	Allow run mc inside mc (useful for mcedit)
 
 USE_GMAKE=	yes
 USE_ICONV=	yes
@@ -37,13 +37,13 @@ CONFIGURE_ARGS+=--with-included-slang \
 MAN1=		mc.1 mcedit.1
 MAN8=		mcserv.8
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITH_SUBSHELL)
+.if ${PORT_OPTIONS:MSUBSHELL}
 CONFIGURE_ARGS+=--without-subshell
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
@@ -51,7 +51,7 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITH_MC_IN_MC)
+.if ${PORT_OPTIONS:MMC_IN_MC}
 CPPFLAGS+=	-DMC_IN_MC_ALLOWED
 .endif
 
@@ -60,4 +60,4 @@ post-install:
 	${CHMOD} 755 ${PREFIX}/share/mc/extfs/${i}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
