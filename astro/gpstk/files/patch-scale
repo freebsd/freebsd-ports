@@ -1,0 +1,40 @@
+$FreeBSD$
+
+'scale' is a pretty generic name to put into bin/, especially
+considering how non-generic this implementation is.
+To avoid naming collisions, rename scale to scale-gpstk.
+
+--- apps/clocktools/help.orig	2011-02-22 09:10:25.000000000 -0700
++++ apps/clocktools/help	2012-06-05 15:31:51.000000000 -0600
+@@ -20,9 +20,9 @@
+ ----
+ 
+ 
+-scale - Scales fractional frequency or phase data by a factor of 10^-6
++scale-gpstk - Scales fractional frequency or phase data by a factor of 10^-6
+ 
+-example: cat data | scale > scdata
++example: cat data | scale-gpstk > scdata
+ 
+ 
+ ----
+--- apps/clocktools/Jamfile.orig	2011-02-22 09:10:25.000000000 -0700
++++ apps/clocktools/Jamfile	2012-06-05 15:32:30.000000000 -0600
+@@ -2,7 +2,7 @@
+ 
+ SubDir TOP apps clocktools ;
+ 
+-GPSLinkLibraries dallandev ffp mallandev nallandev oallandev ohadamarddev ORDPhaseParser pff rmoutlier scale tallandev TIAPhaseParser trunc : gpstk ;
++GPSLinkLibraries dallandev ffp mallandev nallandev oallandev ohadamarddev ORDPhaseParser pff rmoutlier scale-gpstk tallandev TIAPhaseParser trunc : gpstk ;
+ 
+ GPSMain dallandev : dallandev.cpp ;
+ GPSMain ffp : ffp.cpp ;
+@@ -13,7 +13,7 @@
+ GPSMain ORDPhaseParser : ORDPhaseParser.cpp ;
+ GPSMain pff : pff.cpp ;
+ GPSMain rmoutlier : rmoutlier.cpp ;
+-GPSMain scale : scale.cpp ;
++GPSMain scale-gpstk : scale.cpp ;
+ GPSMain tallandev : tallandev.cpp ;
+ GPSMain TIAPhaseParser : TIAPhaseParser.cpp ;
+ GPSMain trunc : trunc.cpp ;

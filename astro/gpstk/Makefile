@@ -7,6 +7,7 @@
 
 PORTNAME=	gpstk
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	astro devel
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -36,7 +37,7 @@ do-build:
 
 NOSTRIPFILES=	ddPlot|ordPlot  # don't strip scripts
 SHLIBS=		geodyn geomatics gpstk procframe rxio vdraw vplot
-SHLIBVER=	${PORTVERSION:C/.//g}
+SHLIBVER=	${PORTVERSION:C/\.//g}
 do-install:
 	@${MKDIR} ${PREFIX}/include/${PORTNAME}
 	cd ${WRKSRC} && ${SETENV} ${JAM_ENV} ${JAM} install
