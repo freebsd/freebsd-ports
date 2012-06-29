@@ -20,7 +20,7 @@ BUILD_DEPENDS=	p5-Data-Util>=0:${PORTSDIR}/devel/p5-Data-Util \
 		p5-SVN-Look>=0:${PORTSDIR}/devel/p5-SVN-Look \
 		p5-SVN-Notify>=0:${PORTSDIR}/devel/p5-SVN-Notify \
 		p5-JIRA-Client>=0:${PORTSDIR}/devel/p5-JIRA-Client \
-		${SITE_PERL}/XMLRPC/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite \
+		p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite \
 		subversion>=1.4.0:${PORTSDIR}/devel/subversion
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

@@ -15,7 +15,7 @@ COMMENT=	Utility to generate changelogs and reports from a CVS repository
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph
+RUN_DEPENDS=	p5-GD-Graph>=0:${PORTSDIR}/graphics/p5-GD-Graph
 
 NO_BUILD=	yes
 USE_PERL5=	yes
