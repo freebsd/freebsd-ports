@@ -11,7 +11,7 @@ PORTVERSION=	0.2.6
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Beautiful Graphs for Ruby
 
 RUN_DEPENDS=	rubygem-builder>=2.0.0:${PORTSDIR}/devel/rubygem-builder

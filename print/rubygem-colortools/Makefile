@@ -10,7 +10,7 @@ CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 DISTNAME=	color-tools-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provides colour space definition and manpiulation
 
 USE_RUBY=	yes

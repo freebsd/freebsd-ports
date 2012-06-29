@@ -10,7 +10,7 @@ CATEGORIES=	archivers rubygems
 MASTER_SITES=	RG
 DISTNAME=	archive-tar-minitar-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	library and command-line utility for tar archives
 
 USE_RUBY=	yes
