@@ -168,6 +168,7 @@ ORACLE_DESC?=		Oracle support
 OSS_DESC?=		Open Sound System support
 PAM_DESC?=		PAM support
 PCRE_DESC?=		Use Perl Compatible Regular Expressions
+PDF_DESC?=		PDF support
 PERL_DESC?=		Perl scripting language support
 PGSQL_DESC?=		PostgreSQL backend
 PHP_DESC?=		PHP binding/support
