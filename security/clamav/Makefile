@@ -16,19 +16,21 @@ COMMENT=	Command line virus scanner written entirely in C
 
 LICENSE=	GPLv2
 
-OPTIONS=	ARC "Enable arch archives support" On \
-		ARJ "Enable arj archives support" On \
-		LHA "Enable lha archives support" On \
-		UNZOO "Enable zoo archives support" On \
-		UNRAR "Enable rar archives support" On \
-		LLVM "Enable JIT Bytecode compiler (bundled LLVM)" On \
-		LLVM_PORTS "Enable JIT Bytecode compiler (from Ports)" Off \
-		TESTS "Run compile-time tests (req. python)" On \
-		MILTER "Compile the milter interface" Off \
-		LDAP "libmilter was built with LDAP" Off \
-		ICONV "Enable ICONV support" Off \
-		STDERR "Print logs to stderr instead of stdout" Off \
-		EXPERIMENTAL "Build experimental code" Off
+OPTIONS_DEFINE=	ARC ARJ LHA UNZOO UNRAR LLVM TESTS MILTER LDAP ICONV STDERR \
+		EXPERIMENTAL
+
+ARC_DESC=		Enable arch archives support
+ARJ_DESC=		Enable arj archives support
+LHA_DESC=		Enable lha archives support
+UNZOO_DESC=		Enable zoo archives support
+UNRAR_DESC=		Enable rar archives support
+LLVM_DESC=		Enable JIT Bytecode compiler (bundled LLVM)
+TESTS_DESC=		Run compile-time tests (req. python)
+MILTER_DESC=		Compile the milter interface
+STDERR_DESC=		Print logs to stderr instead of stdout
+EXPERIMENTAL_DESC=	Build experimental code
+
+OPTIONS_DEFAULT=	ARC ARJ LHA UNZOO UNRAR LLVM TESTS
 
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
@@ -115,45 +117,33 @@ PLIST_SUB+=	CLAMAVUSER=${CLAMAVUSER} \
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_ARC)
+.if ${PORT_OPTIONS:MARC}
 RUN_DEPENDS+=	arc:${PORTSDIR}/archivers/arc
 .endif
-.if defined(WITH_ARJ)
+.if ${PORT_OPTIONS:MARJ}
 RUN_DEPENDS+=	arj:${PORTSDIR}/archivers/arj
 .endif
-.if defined(WITH_LHA)
+.if ${PORT_OPTIONS:MLHA}
 RUN_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
 .endif
-.if defined(WITH_UNZOO)
+.if ${PORT_OPTIONS:MUNZOO}
 RUN_DEPENDS+=	unzoo:${PORTSDIR}/archivers/unzoo
 .endif
-.if defined(WITH_UNRAR)
+.if ${PORT_OPTIONS:MUNRAR}
 PLIST_SUB+=	UNRAR=""
 .else
 PLIST_SUB+=	UNRAR="@comment "
 CONFIGURE_ARGS+=--disable-unrar
 .endif
-.if defined(WITH_ICONV)
+.if ${PORT_OPTIONS:MICONV}
 CONFIGURE_ARGS+=--with-iconv
 USE_ICONV=	yes
 .else
 CONFIGURE_ARGS+=--without-iconv
 .endif
 
-.if defined(WITH_LLVM_PORTS)
-BROKEN=		Does not build with LLVM 3.0
-.endif
-
-.if (defined(WITH_LLVM) || defined(WITH_LLVM_PORTS)) && ( ${ARCH} == "i386" || ${ARCH} == "amd64" )
+.if ${PORT_OPTIONS:MLLVM} && ( ${ARCH} == "i386" || ${ARCH} == "amd64" )
 CONFIGURE_ARGS+=--enable-llvm
-USE_GMAKE=	yes
-. if defined(WITH_LLVM_PORTS)
-BUILD_DEPENDS+=	${LOCALBASE}/bin/llvm-config:${PORTSDIR}/devel/llvm
-CONFIGURE_ARGS+=-with-system-llvm=${LOCALBASE}/bin/llvm-config
-. endif
-. if defined(WITH_LLVM) && defined(WITH_LLVM_PORTS)
-IGNORE=Select only one LLVM
-. endif
 . if defined(WITH_TESTS)
 USE_PYTHON_BUILD=	yes
 . endif
@@ -161,10 +151,10 @@ USE_PYTHON_BUILD=	yes
 CONFIGURE_ARGS+=--disable-llvm
 .endif
 
-.if defined(WITH_MILTER)
+.if ${PORT_OPTIONS:MMILTER}
 USE_RC_SUBR+=	clamav-milter
 CLAM_CONF_FILES+=	clamav-milter
-. if defined(WITH_LDAP) && exists(${LOCALBASE}/lib/libldap.so)
+. if ${PORT_OPTIONS:MLDAP} && exists(${LOCALBASE}/lib/libldap.so)
 USE_OPENLDAP=	yes
 LDFLAGS+=	-lldap
 . endif
@@ -182,11 +172,11 @@ PLIST_SUB+=	CLAMAV-MILTER=""
 PLIST_SUB+=	CLAMAV-MILTER="@comment "
 .endif
 
-.if defined(WITH_STDERR)
+.if ${PORT_OPTIONS:MSTDERR}
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-shared_output.c
 .endif
 
-.if defined(WITH_EXPERIMENTAL)
+.if ${PORT_OPTIONS:MEXPERIMENTAL}
 CONFIGURE_ARGS+=--enable-experimental
 .endif
 
@@ -196,7 +186,7 @@ CONFIGURE_ARGS+=--enable-experimental
 CFLAGS+=	-march=i486
 .endif
 
-.if defined(WITH_TESTS) && ${OSVERSION} >= 700000
+.if ${PORT_OPTIONS:MTESTS} && ${OSVERSION} >= 700000
 BUILD_DEPENDS+=	${LOCALBASE}/include/check.h:${PORTSDIR}/devel/libcheck
 CONFIGURE_ARGS+=--enable-check
 .else
@@ -215,7 +205,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|0x100000000|0x100000000ULL|g' \
 		${WRKSRC}/libclamunrar/unrar.c
 
-.if (defined(WITH_LLVM) || defined(WITH_LLVM_PORTS)) && defined(WITH_TESTS)
+.if ${PORT_OPTIONS:MLLVM} && ${PORT_OPTIONS:MTESTS}
 pre-configure:
 	@if ! ${PYTHON_CMD} -c "import thread" >/dev/null 2>&1; then \
 		${ECHO_MSG} ""; \
@@ -228,7 +218,7 @@ pre-configure:
 	fi
 .endif
 
-.if defined(WITH_TESTS) && ${OSVERSION} >= 700000
+.if ${PORT_OPTIONS:MTESTS} && ${OSVERSION} >= 700000
 post-build:
 	@if [ ! -f "${PY_NO_THREAD}" ]; then \
 		${MAKE} -C ${WRKSRC} check; \
@@ -244,7 +234,7 @@ post-install:
 	@[ -f ${PREFIX}/etc/${c}.conf ] || \
 		${CP} -v ${PREFIX}/etc/${c}.conf.default ${PREFIX}/etc/${c}.conf
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKSRC}/NEWS ${WRKSRC}/ChangeLog ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/html/* ${DOCSDIR}/html
