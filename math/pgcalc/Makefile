@@ -22,11 +22,12 @@ INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	ARTS	"Build with aRts support"	on
+OPTIONS_DEFINE=	ARTS
+OPTIONS_DEFAULT=	ARTS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITH_ARTS)
+.if ${PORT_OPTIONS:MARTS}
 CONFIGURE_ARGS+=	--without-arts
 .endif
 
@@ -43,4 +44,4 @@ post-extract:
 	@${REINPLACE_CMD} -e 's,SkinPath =,& QString("${PREFIX}/share/apps/${PORTNAME}/skins/"); //,' \
 		${WRKSRC}/src/pgcalc.cpp
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

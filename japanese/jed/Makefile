@@ -30,33 +30,35 @@ CONFIGURE_ENV=	JED_ROOT="${JED_ROOT}" X_EXTRA_LIBS="-lcurses"
 CONFIGURE_ARGS=	--enable-x-locale=no
 ALL_TARGET=	${BINSTUFF} getmail
 MAN1=		jed.1 rgrep.1
-.if !defined(NOPORTDOCS)
-INFO=		jed
-.endif
 
 MAKE_JOBS_UNSAFE=  yes
 
 JED_ROOT=	${DATADIR}
 BINSTUFF=	jed rgrep
 
-OPTIONS=	CANNA	"Canna support"	on \
-		X11	"X11 support"	on
+OPTIONS_DEFINE=	DOCS X11 CANNA
+OPTIONS_DEFAULT= CANNA X11
+CANNA_DESC=	Canna support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_CANNA)
-CONFIGURE_ARGS+=	--with-canna=no
-.else
-CONFIGURE_ARGS+=	--with-canna=yes
-LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/canna-lib
+.if ${PORT_OPTIONS:MDOCS}
+INFO=		jed
 .endif
 
-.if defined(WITHOUT_X11)
-PLIST_SUB=	X11="@comment "
+.if ${PORT_OPTIONS:MCANNA}
+CONFIGURE_ARGS+=	--with-canna=yes
+LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/canna-lib
 .else
+CONFIGURE_ARGS+=	--with-canna=no
+.endif
+
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=	x11 xext xt
 BINSTUFF+=	xjed
 PLIST_SUB=	X11="bin/xjed"
+.else
+PLIST_SUB=	X11="@comment "
 .endif
 
 _OBJDIR=	${WRKSRC}/src/${ARCH}objs
@@ -90,7 +92,7 @@ do-install:
 	${INSTALL_DATA} ${_LIBDIR}/colors/* ${JED_ROOT}/lib/colors/
 	${INSTALL_DATA} ${_LIBDIR}/tm/* ${JED_ROOT}/lib/tm/
 	cd ${_DOCDIR} && ${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${INSTALL_DATA} ${_INFODIR}/jed.info ${PREFIX}/info/
 	${INSTALL_DATA} ${_INFODIR}/jed.1in ${PREFIX}/info/jed.info-1
 	${INSTALL_DATA} ${_INFODIR}/jed.2in ${PREFIX}/info/jed.info-2
@@ -102,4 +104,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

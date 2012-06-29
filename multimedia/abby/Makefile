@@ -14,7 +14,9 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Front-end for c/clive
 
-OPTIONS=	CCLIVE "Use cclive backend (instead of clive)" on
+OPTIONS_DEFINE=	CCLIVE
+OPTIONS_DEFAULT=	CCLIVE
+CCLIVE_DESC=	Use cclive backend (instead of clive)
 
 USE_BZIP2=	yes
 USE_QT4=	gui network xml moc_build qmake_build rcc_build uic_build
@@ -24,9 +26,9 @@ QMAKE_PRO=	abby.pro
 
 PLIST_FILES=	bin/abby
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_CCLIVE)
+.if ${PORT_OPTIONS:MCCLIVE}
 RUN_DEPENDS+=	cclive>=0.5.6:${PORTSDIR}/multimedia/cclive
 .else
 RUN_DEPENDS+=	clive>=2.2.5:${PORTSDIR}/multimedia/clive
@@ -38,4 +40,4 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/abby ${PREFIX}/bin/abby
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

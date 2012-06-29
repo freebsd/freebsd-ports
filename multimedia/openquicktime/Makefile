@@ -24,11 +24,11 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 PKGDEINSTALL=	${PKGINSTALL}
 
-OPTIONS=	DEBUG "Turn on debugging" off
+OPTIONS_DEFINE=	DEBUG
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug=no
 .endif
 
@@ -50,4 +50,4 @@ post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
 		${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

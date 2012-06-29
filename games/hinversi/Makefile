@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/latest
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reversi/Othello clone
 
-OPTIONS=	NLS "Native Language Support via gettext utilities" on
+OPTIONS_DEFINE=	NLS
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
@@ -24,15 +24,15 @@ USE_LDCONFIG=	yes
 
 MAN1=		hinversi-cli.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=--with-libintl-prefix=${LOCALBASE}
 PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
@@ -42,4 +42,4 @@ post-patch:
 		 /_la_LIBADD/s|=$$|= $$(LTLIBINTL)|' ${WRKSRC}/${file}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

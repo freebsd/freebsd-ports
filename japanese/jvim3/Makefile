@@ -32,12 +32,13 @@ MAKE_ARGS=	FEPOPT='${FEPOPT}' \
 
 MAN1=		jvim3.1
 
-OPTIONS=	X11	"X11 support"				on \
-		CANNA	"Canna support (via ONEW library)"	on \
-		DIRECT_CANNA	"Canna support (direct)"	off \
-		FREEWNN	"FreeWnn support (via ONEW library)"	on \
-		WNN6	"Wnn6 support"				off \
-		WNN7	"Wnn7 support"				off
+OPTIONS_DEFINE=	X11 CANNA DIRECT_CANNA WNN6 WNN7 FREEWNN 
+OPTIONS_DEFAULT=	CANNA FREEWNN X11
+CANNA_DESC=	Canna support (via ONEW library)
+DIRECT_CANNA_DESC=	Canna support (direct)
+FREEWNN_DESC=	FreeWnn support (via ONEW library)
+WNN6_DESC=	Wnn6 support
+WNN7_DESC=	Wnn7 support
 
 PORTDOCS=	cygwin.txt differen.doc fepctrl.doc readme.doc \
 		termcap.dos uganda.jp vim-jp.htm vim32.ini tutor.j
@@ -46,9 +47,9 @@ PORTDOCS=	cygwin.txt differen.doc fepctrl.doc readme.doc \
 MACHINE=	-DBSD_UNIX -DUSE_LOCALE
 LIBS=		-ltermlib -L${PREFIX}/lib
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=	x11
 MACHINE+=	-DUSE_X11
 CC+=		-I${LOCALBASE}/include
@@ -56,17 +57,17 @@ LIBS+=		-L${LOCALBASE}/lib -lX11
 .endif
 
 #  Direct connection to Canna
-.if !defined(WITHOUT_DIRECT_CANNA)
+.if ${PORT_OPTIONS:MDIRECT_CANNA}
 INPUT_METHOD+=	direct_canna
 LIB_DEPENDS+=	canna.1:${PORTSDIR}/japanese/canna-lib
 FEPOPT+=	-DJP_DEF=\"EEE\" -DCANNA -DFEPCTRL
 FEPLIBS=	-lcanna
 FEPOBJS=	fepcanna.o
 JVIM3RC=	"set fepctrl"
-.else # !WITHOUT_DIRECT_CANNA
+.else
 
 # Connection by using ONEW library
-.if !defined(WITHOUT_CANNA)
+.if ${PORT_OPTIONS:MCANNA}
 INPUT_METHOD+=	canna
 LIB_DEPENDS+=	canna.1:${PORTSDIR}/japanese/canna-lib
 FEPLIBS+=	-L${LOCALBASE}/lib -lonew-canna -lcanna
@@ -75,7 +76,7 @@ FEPOBJS=	feponew.o
 JVIM3RC=	"set fepctrl onewredraw"
 .endif
 
-.if !defined(WITHOUT_FREEWNN)
+.if ${PORT_OPTIONS:MFREEWNN}
 LIB_DEPENDS+=	jd.0:${PORTSDIR}/japanese/FreeWnn-lib
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libonew-freewnn.a:${PORTSDIR}/japanese/onew
 FEPLIBS+=	-L${LOCALBASE}/lib -lonew-freewnn -ljd -lcrypt
@@ -84,7 +85,7 @@ FEPOBJS=	feponew.o
 JVIM3RC=	"set fepctrl onewredraw"
 .endif
 
-.if !defined(WITHOUT_WNN6)
+.if ${PORT_OPTIONS:MWNN6}
 LIB_DEPENDS+=	jd.0:${PORTSDIR}/japanese/FreeWnn-lib
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libonew-wnn6.a:${PORTSDIR}/japanese/onew
 FEPLIBS+=	-L${LOCALBASE}/lib -lonew-wnn6 -ljd -lcrypt
@@ -93,7 +94,7 @@ FEPOBJS=	feponew.o
 JVIM3RC=	"set fepctrl onewredraw"
 .endif
 
-.if !defined(WITHOUT_WNN7)
+.if ${PORT_OPTIONS:MWNN7}
 LIB_DEPENDS+=	jd.0:${PORTSDIR}/japanese/FreeWnn-lib
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libonew-wnn7.a:${PORTSDIR}/japanese/onew
 FEPLIBS+=	-L${LOCALBASE}/lib -lonew-wnn7 -ljd -lcrypt
@@ -101,7 +102,7 @@ FEPOPT+=	-DJP_DEF=\"EEE\" -DONEW -DFEPCTRL
 FEPOBJS=	feponew.o
 JVIM3RC=	"set fepctrl onewredraw"
 .endif
-.endif # !WITHOUT_DIRECT_CANNA
+.endif
 
 post-build:
 	${CP} ${WRKSRC}/doc.j/tutor/tutor.j ${WRKSRC}/doc.j
@@ -114,9 +115,9 @@ post-install:
 .if !exists(${PREFIX}/etc/jvim3rc)
 	${INSTALL_DATA} ${PREFIX}/etc/jvim3rc.dist ${PREFIX}/etc/jvim3rc
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc.j && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

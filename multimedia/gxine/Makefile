@@ -19,9 +19,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr \
 		xine.2:${PORTSDIR}/multimedia/libxine
 
-OPTIONS=	MOZILLA_PLUGIN "Install Mozilla plugin" off \
-		GNOME "Enable Gnome integration" off \
-		LIRC "Enable lirc support" off
+OPTIONS_DEFINE=	MOZILLA_PLUGIN GNOME LIRC
+MOZILLA_PLUGIN_DESC=	Mozilla plugin
 
 USE_XZ=		yes
 USE_GNOME=	gnomehack gtk20
@@ -43,7 +42,7 @@ MANCOMPRESSED=	no
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_MOZILLA_PLUGIN)
+.if ${PORT_OPTIONS:MMOZILLA_PLUGIN}
 USE_XORG+=	xaw
 USE_WEBPLUGINS=	native
 WEBPLUGINS_DIR=	${PREFIX}/lib/gxine
@@ -55,7 +54,7 @@ CONFIGURE_ARGS+=--without-browser-plugin
 PLIST_SUB+=	MOZILLA_PLUGIN="@comment "
 .endif
 
-.if defined(WITH_GNOME)
+.if ${PORT_OPTIONS:MGNOME}
 BUILD_DEPENDS+=	gnome-screensaver:${PORTSDIR}/x11/gnome-screensaver
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS+=	gnome-screensaver:${PORTSDIR}/x11/gnome-screensaver
@@ -64,7 +63,7 @@ CONFIGURE_ARGS+=--with-dbus
 CONFIGURE_ARGS+=--disable-integration-wizard --without-dbus
 .endif
 
-.if defined(WITH_LIRC)
+.if ${PORT_OPTIONS:MLIRC}
 LIB_DEPENDS+=	lirc_client.2:${PORTSDIR}/comms/lirc
 CONFIGURE_ARGS+=--enable-lirc
 .else

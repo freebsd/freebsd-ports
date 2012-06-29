@@ -18,7 +18,8 @@ COMMENT=	A multi-player networked nibbles game
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-OPTIONS=	GTK "Build GTK+ client" on
+OPTIONS_DEFINE=	GTK1
+OPTIONS_DEFAULT=	GTK1
 
 USE_MOTIF=	yes
 WANT_GNOME=	yes
@@ -28,14 +29,14 @@ MAKE_JOBS_SAFE=	yes
 MAN6=		nibbles.6 znibbles.6 znibblesX.6
 PLIST_FILES=	bin/nibbles bin/znibbles bin/znibblesX
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_GTK)
-CONFIGURE_ARGS+=--disable-gtk
-.else
+.if ${PORT_OPTIONS:MGTK1}
 USE_GNOME+=	gtk12
 MAN6+=		gznibbles.6
 PLIST_FILES+=	bin/gznibbles
+.else
+CONFIGURE_ARGS+=--disable-gtk
 .endif
 
 post-extract:
@@ -58,8 +59,8 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/nibbles.6 ${MAN6PREFIX}/man/man6
 	${INSTALL_MAN} ${WRKSRC}/doc/znibbles.6 ${MAN6PREFIX}/man/man6
 	${INSTALL_MAN} ${WRKSRC}/doc/znibblesX.6 ${MAN6PREFIX}/man/man6
-.if !defined(WITHOUT_GTK)
+.if ${PORT_OPTIONS:MGTK1}
 	${INSTALL_MAN} ${WRKSRC}/doc/gznibbles.6 ${MAN6PREFIX}/man/man6
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

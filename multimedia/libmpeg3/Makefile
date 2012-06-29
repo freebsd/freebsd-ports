@@ -16,7 +16,7 @@ COMMENT=	Advanced editing and manipulation of MPEG streams
 
 LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52
 
-OPTIONS=	MMX "Enable MMX instruction set (i386 only)" off
+OPTIONS_DEFINE=	MMX DOCS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -38,9 +38,9 @@ LDFLAGS+=	-lm -L${LOCALBASE}/lib -la52 ${PTHREAD_LIBS}
 
 NASM?=		${LOCALBASE}/bin/nasm
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MMX) && (${ARCH} == "i386")
+.if ${PORT_OPTIONS:MMMX} && (${ARCH} == "i386")
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 MAKE_ARGS+=	USE_MMX=1 NASM="${NASM}"
 CFLAGS+=	-DHAVE_MMX
@@ -65,11 +65,11 @@ do-install:
 .for file in ${LIB_FILES}
 	cd ${WRKSRC}/obj && ${INSTALL_DATA} ${file} ${PREFIX}/lib
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
 	cd ${WRKSRC}/docs && ${INSTALL_DATA} ${file} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

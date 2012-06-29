@@ -17,26 +17,28 @@ COMMENT=	Yet Another Computer Algebra System
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS=	TESTS "Run bundled self-tests after build" on
+OPTIONS_DEFINE=	TESTS DOCS
+OPTIONS_DEFAULT=	TESTS
+TESTS_DESC=	Run bundled self-tests after build
 
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 MAKE_JOBS_SAFE=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile with GCC 4.2
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=	--enable-html-doc --with-html-dir=${DOCSDIR}
 .else
 CONFIGURE_ARGS+=	--disable-html-doc
 .endif
 
-.if !defined(WITHOUT_TESTS)
+.if ${PORT_OPTIONS:MTESTS}
 BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 .endif
 
@@ -45,9 +47,9 @@ post-patch:
 		's| /bin/bash| ${LOCALBASE}/bin/bash|' ${WRKSRC}/tests/test-yacas
 
 post-build:
-.if !defined(WITHOUT_TESTS)
+.if ${PORT_OPTIONS:MTESTS}
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} check ${MAKE_ARGS})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

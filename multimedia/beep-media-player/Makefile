@@ -34,15 +34,15 @@ INPUT_PLUGINS=	cdaudio,mpg123,wav
 OUTPUT_PLUGINS=	OSS
 VISUALIZATION_PLUGINS=	blur_scope
 
-OPTIONS=	VORBIS	"Enable Ogg Vorbis support" on \
-		ESOUND	"Enable Esound support"  off \
-		3DNOW	"Enable 3DNow! optimized decoding routines" on \
-		IPV6	"Enable IPv6 support" off
+OPTIONS_DEFINE=	VORBIS ESOUND 3DNOW IPV6
+OTPIONS_DEFAULT=	VORBIS 3DNOW
 
-.include <bsd.port.pre.mk>
+3DNOW_DESC=	3DNow! optimized decoding routines
+
+.include <bsd.port.options.mk>
 
 # Enable IPv6 support
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 PATCH_SITES+=	http://izb.knu.ac.kr/~bh/diffs/
 PATCHFILES+=	bmp-0.9.7-ipv6-simple.diff
 PATCH_DIST_STRIP+=	-p1
@@ -51,7 +51,7 @@ PATCH_DIST_STRIP+=	-p1
 CONFIGURE_ARGS+=	--disable-mikmod
 PLIST_SUB+=	MIKMODPLUGIN:="@comment "
 
-.if !defined(WITHOUT_VORBIS)
+.if ${PORT_OPTIONS:MVORBIS}
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 INPUT_PLUGINS+=	vorbis
 PLIST_SUB+=	VORBISPLUGIN:=""
@@ -60,7 +60,7 @@ CONFIGURE_ARGS+=	--disable-vorbis
 PLIST_SUB+=	VORBISPLUGIN:="@comment "
 .endif
 
-.if defined(WITH_ESOUND)
+.if ${PORT_OPTIONS:MESOUND}
 USE_GNOME+=	esound
 OUTPUT_PLUGINS+=	esd
 PLIST_SUB+=	ESDPLUGIN:=""
@@ -74,11 +74,7 @@ CONFIGURE_ARGS+=	--disable-esd
 PLIST_SUB+=	ESDPLUGIN:="@comment "
 .endif
 
-.if ${ARCH} != "i386"
-WITHOUT_3DNOW=	yes
-.endif
-
-.if !defined(WITHOUT_3DNOW)
+.if ${PORT_OPTIONS:M3DNOW} && ${ARCH} != "i386"
 CONFIGURE_ARGS+=	--enable-3dnow
 .endif
 
@@ -97,4 +93,4 @@ post-install:
 	-@update-desktop-database
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

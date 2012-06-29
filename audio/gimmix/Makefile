@@ -21,7 +21,7 @@ LIB_DEPENDS=	mpd.4:${PORTSDIR}/audio/libmpd \
 
 LICENSE=	GPLv2
 
-OPTIONS=	NLS	"Native Language Support" on
+OPTIONS_DEFIEN=	NLS
 
 .include <bsd.port.options.mk>
 
@@ -36,7 +36,7 @@ MAN1=		gimmix.1
 
 CONFIGURE_ENV=	DATADIRNAME=share
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 CONFIGURE_ARGS+=	--enable-nls

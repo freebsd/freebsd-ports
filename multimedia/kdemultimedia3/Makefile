@@ -42,14 +42,16 @@ CONFIGURE_ENV+=	AKODE_CONFIG=${LOCALBASE}/bin/akode-config
 USE_LDCONFIG=	yes
 DO_NOT_COMPILE+=akode juk mpeglib mpeglib_artsplug xine_artsplugin
 
-OPTIONS=	AKODE "Use akode for audio playback" on \
-		MPEGLIB "Use mpeglib for audio playback" off \
-		XINE "Enable support for video playback using libxine" off
+OPTIONS_DEFINE=	AKODE MPEGLIB XINE
+OPTIONS_DEFAULT=	AKODE
+AKODE_DESC=	akode for audio playback
+MPEGLIB_DESC=	Use mpeglib for audio playback
+XINE_DESC=	support for video playback using libxine
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_AKODE)
+.if ${PORT_OPTIONS:MAKODE}
 LIB_DEPENDS+=	akode:${PORTSDIR}/audio/akode
 RUN_DEPENDS+=	${LOCALBASE}/lib/libakode.so:${PORTSDIR}/audio/akode
 PLIST_SUB+= AKODE=""
@@ -58,11 +60,11 @@ DO_NOT_COMPILE+=akode_artsplugin
 PLIST_SUB+= AKODE="@comment "
 .endif
 
-.if defined(WITH_XINE)
+.if ${PORT_OPTIONS:MXINE}
 RUN_DEPENDS+=	${LOCALBASE}/lib/libarts_xine.la:${PORTSDIR}/multimedia/xine_artsplugin
 .endif
 
-.if defined(WITH_MPEGLIB)
+.if ${PORT_OPTIONS:MMPEGLIB}
 RUN_DEPENDS+=	mpeglibartsplay:${PORTSDIR}/audio/mpeglib_artsplug
 .endif
 

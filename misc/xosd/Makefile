@@ -34,11 +34,13 @@ MAN3=		xosd.3 xosd_create.3 xosd_destroy.3 xosd_display.3 \
 		xosd_set_shadow_offset.3 xosd_set_vertical_offset.3 \
 		xosd_show.3 xosd_uninit.3
 
-OPTIONS=	XMMS "Install XMMS-OSD plugin" on
+OPTIONS_DEFINE=	XMMS
+OPTIONS_DEFAULT=	XMMS
+XMMS_DESC=	Install XMMS-OSD plugin
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_XMMS)
+.if ${PORT_OPTIONS:MXMMS}
 LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 PLIST_SUB=	WITH_XMMS=""
@@ -54,4 +56,4 @@ pre-patch:
 	@${REINPLACE_CMD} -e 's,^\(CFLAGS =\)\(.*\)$$,\1 -I.. \2,g' ${WRKSRC}/$f
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

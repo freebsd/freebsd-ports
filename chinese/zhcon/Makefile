@@ -34,7 +34,8 @@ SUB_FILES=	pkg-message
 MAN1=		zhcon.1
 PORTDOCS=	*
 
-OPTIONS=	BIG5	"Use Big5 by default (Taiwan, Hong Kong, Macau)" off
+OPTIONS_DEFINE=	BIG5 DOCS
+BIG5_DESC=	Use Big5 by default (Taiwan, Hong Kong, Macau)
 
 .include <bsd.port.options.mk>
 
@@ -49,13 +50,13 @@ post-patch:
 		${WRKSRC}/src/zhcon.conf
 	@${REINPLACE_CMD} -e 's,$$enable_debug = ,x&x,' \
 		${WRKSRC}/configure
-.if defined(WITH_BIG5)
+.if ${PORT_OPTIONS:MBIG5}
 	@${REINPLACE_CMD} -e '/defaultencode =/s,gb2312,big5,' \
 		${WRKSRC}/src/zhcon.conf
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/README.html ${WRKSRC}/doc/bpsf.txt \
 		${WRKSRC}/doc/poem.* ${WRKSRC}/ChangeLog ${WRKSRC}/NEWS \

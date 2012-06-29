@@ -18,7 +18,9 @@ COMMENT=	Jisyo-tools for the SKK Japanese-input software
 
 LICENSE=	GPLv2
 
-OPTIONS=	EXPR2 "Build skkdic-expr2 (needs glib-2.x)" on
+OPTIONS_DEFINE=	EXPR2
+OPTIONS_DEFAULT=	EXPR2
+EXPR2_DESC=	Build skkdic-expr2 (needs glib-2.x)
 
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
@@ -30,19 +32,19 @@ PLIST_FILES=	bin/skkdic-count bin/skkdic-expr bin/skkdic-sort
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_EXPR2)
-CONFIGURE_ARGS=	--without-skkdic-expr2
-.else
+.if ${PORT_OPTIONS:MEXPR2}
 USE_GNOME=	glib20
 PORTDOCS+=	README.skkdic-expr2
 PLIST_FILES+=	bin/skkdic-expr2
+.else
+CONFIGURE_ARGS=	--without-skkdic-expr2
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/READMEs/README.C ${DOCSDIR}/README.skktools
-.if !defined(WITHOUT_EXPR2)
+.if ${PORT_OPTIONS:MEXPR2}
 	${INSTALL_DATA} ${WRKSRC}/READMEs/README.skkdic-expr2 ${DOCSDIR}
 .endif
 .endif
