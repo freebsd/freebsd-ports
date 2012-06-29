@@ -18,10 +18,10 @@ COMMENT=	Perl interface to Prowl Public API
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/LWP/Protocol/https.pm:${PORTSDIR}/www/p5-LWP-Protocol-https \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay \
-		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple
+BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https \
+		p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
+		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

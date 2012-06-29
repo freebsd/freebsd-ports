@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	brix@FreeBSD.org
 COMMENT=	Perl module for the Eksblowfish block cipher
 
-RUN_DEPENDS=	${SITE_PERL}/Class/Mix.pm:${PORTSDIR}/devel/p5-Class-Mix \
-		${SITE_PERL}/parent.pm:${PORTSDIR}/devel/p5-parent
+RUN_DEPENDS=	p5-Class-Mix>=0:${PORTSDIR}/devel/p5-Class-Mix \
+		p5-parent>=0:${PORTSDIR}/devel/p5-parent
 
 LICENSE_COMB=	dual
 LICENSE=	ART10 GPLv1
