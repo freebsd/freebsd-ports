@@ -16,26 +16,26 @@ MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Open Ticket Request System
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Date/Pcalc.pm:${PORTSDIR}/devel/p5-Date-Pcalc \
-		${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
-		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/Crypt/PasswdMD5.pm:${PORTSDIR}/security/p5-Crypt-PasswdMD5 \
+BUILD_DEPENDS=	p5-Date-Pcalc>=0:${PORTSDIR}/devel/p5-Date-Pcalc \
+		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-Crypt-PasswdMD5>=0:${PORTSDIR}/security/p5-Crypt-PasswdMD5 \
 		p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA \
-		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
-		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
+		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \
 		p5-MIME-Tools>=5.427:${PORTSDIR}/mail/p5-MIME-Tools \
 		p5-Net-DNS>=0.66:${PORTSDIR}/dns/p5-Net-DNS \
-		${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff \
-		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
-		${SITE_PERL}/Text/CSV.pm:${PORTSDIR}/textproc/p5-Text-CSV \
+		p5-Algorithm-Diff>=0:${PORTSDIR}/devel/p5-Algorithm-Diff \
+		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
+		p5-Text-CSV>=0:${PORTSDIR}/textproc/p5-Text-CSV \
 		p5-Text-CSV_XS>=0:${PORTSDIR}/textproc/p5-Text-CSV_XS \
 		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 		p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS \
 		p5-CSS-Minifier-XS>=0:${PORTSDIR}/textproc/p5-CSS-Minifier-XS \
 		p5-JavaScript-Minifier-XS>=0:${PORTSDIR}/textproc/p5-JavaScript-Minifier-XS \
-		${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff \
-		${SITE_PERL}/XML/FeedPP.pm:${PORTSDIR}/textproc/p5-XML-FeedPP
+		p5-Text-Diff>=0:${PORTSDIR}/textproc/p5-Text-Diff \
+		p5-XML-FeedPP>=0:${PORTSDIR}/textproc/p5-XML-FeedPP
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS=	MYSQL "MySQL database support" on \
@@ -82,12 +82,12 @@ PLIST_SUB+=	VER_CKEDITOR="3.6.3"
 .include <bsd.port.pre.mk>
 
 .ifdef WITH_MYSQL
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 USE_MYSQL=	yes
 .endif
 
 .ifdef WITH_PGSQL
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 USE_PGSQL=	yes
 .endif
 
@@ -98,20 +98,20 @@ RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=2.0.5:${PORTSDIR}/www/mod_perl2
 .endif
 
 .ifdef WITH_REPORTS_MODULES
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
-		${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph \
-		${SITE_PERL}/GD/Text/Align.pm:${PORTSDIR}/graphics/p5-GD-TextUtil
+RUN_DEPENDS+=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
+		p5-GD-Graph>=0:${PORTSDIR}/graphics/p5-GD-Graph \
+		p5-GD-TextUtil>=0:${PORTSDIR}/graphics/p5-GD-TextUtil
 .endif
 
 .ifdef WITH_SMTP
 RUN_DEPENDS+=	p5-Net-SMTP-SSL>=0:${PORTSDIR}/mail/p5-Net-SMTP-SSL \
 		p5-Net-SMTP-TLS>=0:${PORTSDIR}/mail/p5-Net-SMTP-TLS \
-		${SITE_PERL}/Authen/SASL.pm:${PORTSDIR}/security/p5-Authen-SASL
+		p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL
 .endif
 
 .ifdef WITH_POP3
-RUN_DEPENDS+=	${SITE_PERL}/Mail/POP3Client.pm:${PORTSDIR}/mail/p5-Mail-POP3Client \
-		${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
+RUN_DEPENDS+=	p5-Mail-POP3Client>=0:${PORTSDIR}/mail/p5-Mail-POP3Client \
+		p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL
 .endif
 
 .ifdef WITH_IMAP
@@ -119,7 +119,7 @@ RUN_DEPENDS+=	p5-Net-IMAP-Simple-SSL>=0:${PORTSDIR}/mail/p5-Net-IMAP-Simple-SSL
 .endif
 
 .ifdef WITH_LDAP
-RUN_DEPENDS+=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
+RUN_DEPENDS+=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 .endif
 
 .ifdef WITH_PDF

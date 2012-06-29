@@ -14,8 +14,8 @@ MASTER_SITES=	http://www.headmqa.com/${PORTNAME}/ \
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Renames mp3 files using freedb or local CDDB
 
-RUN_DEPENDS=	${SITE_PERL}/CDDB.pm:${PORTSDIR}/audio/p5-CDDB \
-		${SITE_PERL}/MP3/ID3v1Tag.pm:${PORTSDIR}/audio/p5-MP3-ID3v1Tag
+RUN_DEPENDS=	p5-CDDB>=0:${PORTSDIR}/audio/p5-CDDB \
+		p5-MP3-ID3v1Tag>=0:${PORTSDIR}/audio/p5-MP3-ID3v1Tag
 
 USE_PERL5=	yes
 NO_BUILD=	yes

@@ -15,32 +15,32 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Monitor activity on a CVS Repository
 
-BUILD_DEPENDS=	${SITE_PERL}/Time/Duration.pm:${PORTSDIR}/devel/p5-Time-Duration \
-		${SITE_PERL}/Class/Autouse.pm:${PORTSDIR}/devel/p5-Class-Autouse \
-		${SITE_PERL}/Class/Default.pm:${PORTSDIR}/devel/p5-Class-Default \
-		${SITE_PERL}/Class/Inspector.pm:${PORTSDIR}/devel/p5-Class-Inspector \
-		${SITE_PERL}/Class/Handle.pm:${PORTSDIR}/devel/p5-Class-Handle \
-		${SITE_PERL}/Sort/Versions.pm:${PORTSDIR}/devel/p5-Sort-Versions \
-		${SITE_PERL}/${PERL_ARCH}/Proc/ProcessTable.pm:${PORTSDIR}/devel/p5-Proc-ProcessTable \
-		${SITE_PERL}/Net/Telnet.pm:${PORTSDIR}/net/p5-Net-Telnet \
-		${SITE_PERL}/HTTP/BrowserDetect.pm:${PORTSDIR}/www/p5-HTTP-BrowserDetect \
-		${SITE_PERL}/Validate/Net.pm:${PORTSDIR}/net/p5-Validate-Net \
-		${SITE_PERL}/Chart/Math/Axis.pm:${PORTSDIR}/math/p5-Chart-Math-Axis \
-		${SITE_PERL}/File/NCopy.pm:${PORTSDIR}/devel/p5-File-NCopy \
-		${SITE_PERL}/File/Remove.pm:${PORTSDIR}/devel/p5-File-Remove \
-		${SITE_PERL}/File/Flat.pm:${PORTSDIR}/devel/p5-File-Flat \
-		${SITE_PERL}/File/Find/Rule.pm:${PORTSDIR}/devel/p5-File-Find-Rule \
-		${SITE_PERL}/File/Which.pm:${PORTSDIR}/sysutils/p5-File-Which \
-		${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
-		${SITE_PERL}/Time/ParseDate.pm:${PORTSDIR}/devel/p5-Time-modules \
-		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone \
-		${SITE_PERL}/Config/Tiny.pm:${PORTSDIR}/devel/p5-Config-Tiny \
-		${SITE_PERL}/Array/Window.pm:${PORTSDIR}/devel/p5-Array-Window \
-		${SITE_PERL}/Number/Compare.pm:${PORTSDIR}/math/p5-Number-Compare \
-		${SITE_PERL}/Text/Glob.pm:${PORTSDIR}/textproc/p5-Text-Glob \
-		${SITE_PERL}/XML/Generator.pm:${PORTSDIR}/textproc/p5-XML-Generator \
-		${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph
+BUILD_DEPENDS=	p5-Time-Duration>=0:${PORTSDIR}/devel/p5-Time-Duration \
+		p5-Class-Autouse>=0:${PORTSDIR}/devel/p5-Class-Autouse \
+		p5-Class-Default>=0:${PORTSDIR}/devel/p5-Class-Default \
+		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
+		p5-Class-Handle>=0:${PORTSDIR}/devel/p5-Class-Handle \
+		p5-Sort-Versions>=0:${PORTSDIR}/devel/p5-Sort-Versions \
+		p5-Proc-ProcessTable>=0:${PORTSDIR}/devel/p5-Proc-ProcessTable \
+		p5-Net-Telnet>=0:${PORTSDIR}/net/p5-Net-Telnet \
+		p5-HTTP-BrowserDetect>=0:${PORTSDIR}/www/p5-HTTP-BrowserDetect \
+		p5-Validate-Net>=0:${PORTSDIR}/net/p5-Validate-Net \
+		p5-Chart-Math-Axis>=0:${PORTSDIR}/math/p5-Chart-Math-Axis \
+		p5-File-NCopy>=0:${PORTSDIR}/devel/p5-File-NCopy \
+		p5-File-Remove>=0:${PORTSDIR}/devel/p5-File-Remove \
+		p5-File-Flat>=0:${PORTSDIR}/devel/p5-File-Flat \
+		p5-File-Find-Rule>=0:${PORTSDIR}/devel/p5-File-Find-Rule \
+		p5-File-Which>=0:${PORTSDIR}/sysutils/p5-File-Which \
+		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
+		p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-Clone>=0:${PORTSDIR}/devel/p5-Clone \
+		p5-Config-Tiny>=0:${PORTSDIR}/devel/p5-Config-Tiny \
+		p5-Array-Window>=0:${PORTSDIR}/devel/p5-Array-Window \
+		p5-Number-Compare>=0:${PORTSDIR}/math/p5-Number-Compare \
+		p5-Text-Glob>=0:${PORTSDIR}/textproc/p5-Text-Glob \
+		p5-XML-Generator>=0:${PORTSDIR}/textproc/p5-XML-Generator \
+		p5-GD-Graph>=0:${PORTSDIR}/graphics/p5-GD-Graph
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

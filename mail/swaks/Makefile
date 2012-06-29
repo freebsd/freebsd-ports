@@ -24,15 +24,15 @@ USE_PERL5_RUN=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PERL_NET_DNS)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
+RUN_DEPENDS+=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
 .endif
 
 .if defined(WITH_PERL_NET_SSLEAY)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay
+RUN_DEPENDS+=	p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay
 .endif
 
 .if defined(WITH_PERL_AUTHEN_NTLM)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Authen/NTLM.pm:${PORTSDIR}/security/p5-Authen-NTLM
+RUN_DEPENDS+=	p5-Authen-NTLM>=0:${PORTSDIR}/security/p5-Authen-NTLM
 .endif
 
 do-build:

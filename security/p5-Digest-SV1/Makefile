@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Perl extension for SV1 hash algorithm
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
-		${SITE_PERL}/${PERL_ARCH}/Digest/Haval256.pm:${PORTSDIR}/security/p5-Digest-Haval256
+BUILD_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
+		p5-Digest-Haval256>=0:${PORTSDIR}/security/p5-Digest-Haval256
 
 PERL_MODBUILD=	yes
 
