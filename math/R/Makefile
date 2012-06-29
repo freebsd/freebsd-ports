@@ -30,6 +30,8 @@ DISTNAME=	R-${PORTVERSION}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT?=	A language for statistical computing and graphics
 
+PORTSCOUT=	skipv:2.15.1-w
+
 .if defined(LIBRMATH_SLAVEPORT)
 BUILD_WRKSRC=		${WRKSRC}/src/nmath/standalone
 CONFIGURE_ARGS =	--disable-nls --with-ICU=no --with-cairo=no --with-iconv=no \
