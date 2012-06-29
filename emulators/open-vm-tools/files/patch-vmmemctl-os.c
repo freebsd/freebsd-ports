@@ -1,6 +1,6 @@
---- modules/freebsd/vmmemctl/os.c.orig	2009-04-09 15:18:08.000000000 -0400
-+++ modules/freebsd/vmmemctl/os.c	2009-04-09 15:34:06.000000000 -0400
-@@ -413,12 +413,14 @@
+--- modules/freebsd/vmmemctl/os.c.orig	2011-09-21 14:25:15.000000000 -0400
++++ modules/freebsd/vmmemctl/os.c	2012-06-20 09:44:40.434083000 -0400
+@@ -344,12 +344,22 @@
     os_state *state = &global_state;
     os_pmap *pmap = &state->pmap;
  
@@ -9,9 +9,17 @@
 +   VM_OBJECT_LOCK(state->vmobject);
 +   if ( vm_page_lookup(state->vmobject, page->pindex) ) {
 +   	os_pmap_putindex(pmap, page->pindex);
++#if __FreeBSD_version >= 900000
++	vm_page_lock(page);
++#else
 +	vm_page_lock_queues();
++#endif
 +   	vm_page_free(page);
++#if __FreeBSD_version >= 900000
++	vm_page_unlock(page);
++#else
 +	vm_page_unlock_queues();
++#endif
     }
 -
 -   os_pmap_putindex(pmap, page->pindex);
@@ -19,8 +27,8 @@
 +   VM_OBJECT_UNLOCK(state->vmobject);
  }
  
- static vm_page_t os_kmem_alloc(int alloc_normal_failed)
-@@ -430,8 +432,11 @@
+ 
+@@ -361,8 +371,11 @@
     os_state *state = &global_state;
     os_pmap *pmap = &state->pmap;
  
@@ -32,7 +40,7 @@
        return NULL;
     }
  
-@@ -452,6 +457,7 @@
+@@ -383,6 +396,7 @@
     if (!page) {
        os_pmap_putindex(pmap, pindex);
     }
