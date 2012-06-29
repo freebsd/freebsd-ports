@@ -6,44 +6,43 @@
 #
 
 PORTNAME=	optipng
-PORTVERSION=	0.6.5
+PORTVERSION=	0.7.1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/OptiPNG/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	tom@hur.st
 COMMENT=	An optimizer for PNG files
 
-OPTIONS=	BUNDLED_LIBPNG	"Use bundled libpng"	off \
-		BUNDLED_ZLIB	"Use bundled zlib"	off
+OPTIONS_DEFINE=	BUNDLED_LIBPNG BUNDLED_ZLIB
+
+BUNDLED_LIBPNG_DESC=	Use bundled libpng
+BUNDLED_ZLIB_DESC=	Use bundled zlib
 
 HAS_CONFIGURE=	yes
-BUILD_WRKSRC=	${WRKSRC}/src
-MAKEFILE=	scripts/unix.mak
-ALL_TARGET=	${PORTNAME}
 PLIST_FILES=	bin/optipng
 MAN1=		optipng.1
-PORTDOCS=	caveat.txt history.txt manual.html manual.pdf manual.txt \
-		png_optimization_guide.html thanks.html todo.txt
+PORTDOCS=	history.txt optipng.man.html optipng.man.pdf optipng.man.txt \
+		png_optimization.html todo.txt
 
 .include <bsd.port.options.mk>
 
-.ifndef(WITH_BUNDLED_LIBPNG)
-BROKEN=		does not build with libpng 1.5.x
+.if empty(PORT_OPTIONS:MBUNDLED_LIBPNG)
 CONFIGURE_ARGS+=	--with-system-libpng
 CFLAGS+=	"-I${LOCALBASE}/include"
+LDFLAGS+=	"-L${LOCALBASE}/lib"
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 .endif
 
-.ifndef(WITH_BUNDLED_ZLIB)
+.if empty(PORT_OPTIONS:MBUNDLED_ZLIB)
 CONFIGURE_ARGS+=	--with-system-zlib
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/optipng ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/man/optipng.1 ${MAN1PREFIX}/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/optipng/optipng ${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/src/optipng/man/optipng.1 ${MAN1PREFIX}/man/man1/
 
 post-install:
-.ifndef NOPORTDOCS
+.if ${PORT_OPTIONS:MDOCS}
 	${INSTALL} -d ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${DOCSDIR}/
 .endif
