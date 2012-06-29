@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	timur@FreeBSD.org
 COMMENT=	Encode plugin for Punycode
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/IDN/Encode.pm:${PORTSDIR}/textproc/p5-Net-IDN-Encode
+RUN_DEPENDS=	p5-Net-IDN-Encode>=0:${PORTSDIR}/textproc/p5-Net-IDN-Encode
 BUILD_DEPENDS:=	${RUN_DEPENDS} \
-		${SITE_PERL}/Test/NoWarnings.pm:${PORTSDIR}/devel/p5-Test-NoWarnings
+		p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
 
 PERL_MODBUILD=	yes
 

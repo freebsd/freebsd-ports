@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	timur@FreeBSD.org
 COMMENT=	normalization of domain names (Nameprep, RFC 3491)
 
-RUN_DEPENDS=	${SITE_PERL}/Unicode/Stringprep.pm:${PORTSDIR}/converters/p5-Unicode-Stringprep
+RUN_DEPENDS=	p5-Unicode-Stringprep>=0:${PORTSDIR}/converters/p5-Unicode-Stringprep
 BUILD_DEPENDS:=	${RUN_DEPENDS} \
-		${SITE_PERL}/Test/NoWarnings.pm:${PORTSDIR}/devel/p5-Test-NoWarnings
+		p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
 
 PERL_MODBUILD=	yes
 
