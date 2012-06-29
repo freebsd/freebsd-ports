@@ -3,8 +3,8 @@
 # $FreeBSD$
 
 PREFIX=%%PREFIX%%
-PYPYPREFIX=%%PYPYPREFIX%%
 PYPY_NAMES="%%PYPY_NAMES%%"
+PYPY_VER=%%PYPY_VER%%
 
 if [ "$2" = "POST-INSTALL" ]
 then
@@ -12,13 +12,13 @@ then
 	do
 		if [ ! -L $PREFIX/bin/$name ]
 		then
-			ln -s $PYPYPREFIX/bin/$name $PREFIX/bin/$name
+			ln -s $name$PYPY_VER $PREFIX/bin/$name
 		fi
 	done
 elif [ "$2" = "POST-DEINSTALL" ] ; then
 	for name in $PYPY_NAMES
 	do
-		if [ -L $PREFIX/bin/$name ] && [ `readlink $PREFIX/bin/$name` = $PYPYPREFIX/bin/$name ]
+		if [ -L $PREFIX/bin/$name ] && [ `readlink $PREFIX/bin/$name` = $name ]
 		then
 			rm $PREFIX/bin/$name
 		fi
