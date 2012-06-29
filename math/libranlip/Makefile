@@ -6,7 +6,7 @@
 PORTNAME=	libranlip
 DISTVERSION=	1.0
 CATEGORIES=	math
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
+MASTER_SITES=	LOCAL/bf \
 		http://www.deakin.edu.au/~gleb/
 
 MAINTAINER=	bf@FreeBSD.org
