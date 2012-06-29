@@ -368,6 +368,7 @@
     SUBDIR += hardlink
     SUBDIR += hatop
     SUBDIR += hdup
+    SUBDIR += hdrecover
     SUBDIR += healthd
     SUBDIR += heartbeat
     SUBDIR += heirloom
