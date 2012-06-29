@@ -16,7 +16,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	FreeStyle Wiki (perl based wiki clone)
 
 RUN_DEPENDS=	${JCODE}:${PORTSDIR}/japanese/p5-Jcode \
-	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template
+	p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template
 
 USE_ZIP=	yes
 USE_PERL5=	yes

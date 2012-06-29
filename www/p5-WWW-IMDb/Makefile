@@ -16,8 +16,8 @@ DISTNAME=	IMDb-current
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Perl interface to query the Internet Movie Database(IMDb)
 
-RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
+RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PERL_CONFIGURE=	yes

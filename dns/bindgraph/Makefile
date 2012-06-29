@@ -15,8 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	A RRDtool frontend for BIND statistics
 
-RUN_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/databases/rrdtool	\
-		${SITE_PERL}/File/Tail.pm:${PORTSDIR}/devel/p5-File-Tail
+RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool	\
+		p5-File-Tail>=0:${PORTSDIR}/devel/p5-File-Tail
 
 NO_BUILD=	yes
 USE_PERL5=	yes

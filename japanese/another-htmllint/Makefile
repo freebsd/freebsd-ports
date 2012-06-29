@@ -13,7 +13,7 @@ MASTER_SITES=	http://dist.bsdlab.org/
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Another HTML-lint (all messages are written in Japanese)
 
-RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
+RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		${JCODE}:${PORTSDIR}/japanese/p5-Jcode
 
 USE_PERL5=	YES

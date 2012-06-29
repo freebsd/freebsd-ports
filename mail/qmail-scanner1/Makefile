@@ -17,7 +17,7 @@ MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Content/Anti-virus Scanner for qmail
 
 BUILD_DEPENDS=	reformime:${PORTSDIR}/mail/maildrop \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
 
 MANUAL_PACKAGE_BUILD=	Requires qmail built with non-standard setting
 

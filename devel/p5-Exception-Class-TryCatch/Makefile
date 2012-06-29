@@ -14,10 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Syntactic try/catch sugar for use with Exception::Class
 
-BUILD_DEPENDS+=	${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS+=	${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+BUILD_DEPENDS+=	p5-Exception-Class>=0:${PORTSDIR}/devel/p5-Exception-Class \
+		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
+RUN_DEPENDS+=	p5-Exception-Class>=0:${PORTSDIR}/devel/p5-Exception-Class \
+		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	yes
 

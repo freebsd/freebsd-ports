@@ -24,7 +24,7 @@ PATCH_DIST_STRIP=-p1
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	Darwin Streaming Server, a MP3, MPEG4 and QuickTime streaming server
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay
+RUN_DEPENDS=	p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay
 
 NOT_FOR_ARCHS=	ia64 powerpc sparc64
 
