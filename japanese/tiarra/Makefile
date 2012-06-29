@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.clovery.jp/tiarra/archive/2010/02/
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	IRC Proxy software
 
-RUN_DEPENDS=	${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-Socket-INET6
+RUN_DEPENDS=	p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
 
 USE_PERL5_RUN=	yes
 USE_BZIP2=	yes

@@ -15,7 +15,7 @@ MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	This tool displays the utilization of the network links
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD/Image.pm:${PORTSDIR}/graphics/p5-GD \
+RUN_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
 		mrtg:${PORTSDIR}/net-mgmt/mrtg
 
 NO_BUILD=	yes

@@ -18,8 +18,8 @@ COMMENT=	A Sledge plug-in that adds Log::Dispatch::Config on
 BUILD_DEPENDS=	${PM_DEPENDS}
 RUN_DEPENDS=	${PM_DEPENDS}
 
-PM_DEPENDS=	${SITE_PERL}/Sledge.pm:${PORTSDIR}/www/p5-Sledge
-PM_DEPENDS+=	${SITE_PERL}/Log/Dispatch/Config.pm:${PORTSDIR}/devel/p5-Log-Dispatch-Config
+PM_DEPENDS=	p5-Sledge>=0:${PORTSDIR}/www/p5-Sledge
+PM_DEPENDS+=	p5-Log-Dispatch-Config>=0:${PORTSDIR}/devel/p5-Log-Dispatch-Config
 
 PERL_CONFIGURE=	yes
 

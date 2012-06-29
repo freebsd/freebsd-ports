@@ -34,7 +34,7 @@ SUB_LIST+=	NOTEWORK=""
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_GDSUPPORT)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
+RUN_DEPENDS+=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
 .endif
 
 post-patch:

@@ -26,8 +26,8 @@ COMMENT=	Additional SNMP plugins for Nagios from silfreed.net
 
 # Also uses traceroute, dig at runtime (in base system with hardcoded paths).
 RUN_DEPENDS+=	\
-	${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net-mgmt/p5-Net-Netmask \
-	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP
+	p5-Net-Netmask>=0:${PORTSDIR}/net-mgmt/p5-Net-Netmask \
+	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
 .if defined(WITH_EXPECT_TOOLS)
 RUN_DEPENDS+=	\
 	${LOCALBASE}/bin/expect:${PORTSDIR}/lang/expect

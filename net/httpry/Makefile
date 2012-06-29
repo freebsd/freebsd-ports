@@ -25,7 +25,7 @@ OPTIONS=	EXTRASCRIPTS "Install additional scripts" Off
 .if defined(WITH_EXTRASCRIPTS)
 PLIST_SUB=	EXTRASCRIPTS=""
 USE_PERL5_RUN=	yes
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 . if ${PERL_LEVEL} < 500903
 RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
 . endif

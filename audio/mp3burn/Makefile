@@ -15,9 +15,9 @@ COMMENT=	Command line tool to burn audio CDs from MP3, Ogg, Vorbis, FLAC files
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 		ogg123:${PORTSDIR}/audio/vorbis-tools \
-		${SITE_PERL}/MP3/Info.pm:${PORTSDIR}/audio/p5-MP3-Info \
-		${SITE_PERL}/${PERL_ARCH}/Ogg/Vorbis/Header.pm:${PORTSDIR}/audio/p5-Ogg-Vorbis-Header \
-		${SITE_PERL}/String/ShellQuote.pm:${PORTSDIR}/textproc/p5-String-ShellQuote
+		p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info \
+		p5-Ogg-Vorbis-Header>=0:${PORTSDIR}/audio/p5-Ogg-Vorbis-Header \
+		p5-String-ShellQuote>=0:${PORTSDIR}/textproc/p5-String-ShellQuote
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

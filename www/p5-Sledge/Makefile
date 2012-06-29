@@ -21,7 +21,7 @@ DEPRECATED=	depends on mod_perl 1 which is gone
 BUILD_DEPENDS=	${PM_DEPENDS}
 RUN_DEPENDS=	${PM_DEPENDS}
 
-PM_DEPENDS=	${SITE_PERL}/Bundle/Sledge.pm:${PORTSDIR}/www/p5-Bundle-Sledge
+PM_DEPENDS=	p5-Bundle-Sledge>=0:${PORTSDIR}/www/p5-Bundle-Sledge
 
 PERL_CONFIGURE=	yes
 

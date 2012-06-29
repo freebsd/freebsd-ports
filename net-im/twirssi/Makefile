@@ -16,9 +16,9 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Twitter script to irssi
 
 RUN_DEPENDS=	irssi:${PORTSDIR}/irc/irssi \
-		${SITE_PERL}/Net/Twitter.pm:${PORTSDIR}/net/p5-Net-Twitter \
-		${SITE_PERL}/WWW/Shorten.pm:${PORTSDIR}/www/p5-WWW-Shorten \
-		${SITE_PERL}/WWW/Shorten/Bitly.pm:${PORTSDIR}/www/p5-WWW-Shorten-Bitly
+		p5-Net-Twitter>=0:${PORTSDIR}/net/p5-Net-Twitter \
+		p5-WWW-Shorten>=0:${PORTSDIR}/www/p5-WWW-Shorten \
+		p5-WWW-Shorten-Bitly>=0:${PORTSDIR}/www/p5-WWW-Shorten-Bitly
 
 SUB_FILES=	pkg-message
 

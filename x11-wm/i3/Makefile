@@ -24,7 +24,7 @@ LIB_DEPENDS=	xcb.2:${PORTSDIR}/x11/libxcb \
 		xcb-icccm.4:${PORTSDIR}/x11/xcb-util-wm \
 		ev.4:${PORTSDIR}/devel/libev \
 		yajl.2:${PORTSDIR}/devel/yajl
-RUN_DEPENDS=	${SITE_PERL}/IPC/Run.pm:${PORTSDIR}/devel/p5-IPC-Run \
+RUN_DEPENDS=	p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-AnyEvent-I3>=0:${PORTSDIR}/devel/p5-AnyEvent-I3
 

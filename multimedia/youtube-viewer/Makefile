@@ -18,9 +18,9 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Search and play YouTube videos streaming in MPlayer
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Fast.pm:${PORTSDIR}/net/p5-XML-Fast \
-		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor \
+RUN_DEPENDS=	p5-XML-Fast>=0:${PORTSDIR}/net/p5-XML-Fast \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-Term-ANSIColor>=0:${PORTSDIR}/devel/p5-Term-ANSIColor \
 		mplayer:${PORTSDIR}/multimedia/mplayer
 
 USE_PERL5_RUN=	yes
