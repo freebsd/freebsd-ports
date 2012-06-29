@@ -18,10 +18,10 @@ COMMENT=	Keep track of the computers configuration and software
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
-		${SITE_PERL}/Net/IP.pm:${PORTSDIR}/net-mgmt/p5-Net-IP \
-		${SITE_PERL}/Proc/Daemon.pm:${PORTSDIR}/devel/p5-Proc-Daemon
+RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
+		p5-Net-IP>=0:${PORTSDIR}/net-mgmt/p5-Net-IP \
+		p5-Proc-Daemon>=0:${PORTSDIR}/devel/p5-Proc-Daemon
 BUILD_DEPENDS=	dmidecode:${PORTSDIR}/sysutils/dmidecode \
 		lspci:${PORTSDIR}/sysutils/pciutils
 

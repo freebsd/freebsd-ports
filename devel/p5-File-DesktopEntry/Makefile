@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Object to handle desktop files
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
+BUILD_DEPENDS=	p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools \
 		p5-File-BaseDir>=0.03:${PORTSDIR}/devel/p5-File-BaseDir
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

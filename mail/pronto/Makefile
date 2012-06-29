@@ -14,19 +14,19 @@ MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	A Mail Client for Gnome/Gtk written in Perl
 
 BUILD_DEPENDS=\
-		${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk \
-		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/DBD/CSV.pm:${PORTSDIR}/databases/p5-DBD-CSV \
-		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
-		${SITE_PERL}/SQL/Statement.pm:${PORTSDIR}/databases/p5-SQL-Statement \
-		${SITE_PERL}/MIME/Tools.pm:${PORTSDIR}/mail/p5-MIME-Tools \
-		${SITE_PERL}/MIME/Types.pm:${PORTSDIR}/mail/p5-MIME-Types \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/Lingua/Ispell.pm:${PORTSDIR}/textproc/p5-Lingua-Ispell
+		p5-Gtk>=0:${PORTSDIR}/x11-toolkits/p5-Gtk \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-DBD-CSV>=0:${PORTSDIR}/databases/p5-DBD-CSV \
+		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
+		p5-SQL-Statement>=0:${PORTSDIR}/databases/p5-SQL-Statement \
+		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
+		p5-MIME-Types>=0:${PORTSDIR}/mail/p5-MIME-Types \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-Lingua-Ispell>=0:${PORTSDIR}/textproc/p5-Lingua-Ispell
 
 .if defined(WITH_MYSQL)
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-Mysql
+BUILD_DEPENDS+=	p5-Mysql>=0:${PORTSDIR}/databases/p5-Mysql
 .endif
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}

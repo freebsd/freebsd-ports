@@ -19,11 +19,11 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio curses based logging program
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Curses.pm:${PORTSDIR}/devel/p5-Curses \
-		${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
-		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/${PERL_ARCH}/Hamlib.pm:${PORTSDIR}/comms/hamlib \
-		${SITE_PERL}/Net/FTP/File.pm:${PORTSDIR}/net/p5-Net-FTP-File
+RUN_DEPENDS=	p5-Curses>=0:${PORTSDIR}/devel/p5-Curses \
+		p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		hamlib>=0:${PORTSDIR}/comms/hamlib \
+		p5-Net-FTP-File>=0:${PORTSDIR}/net/p5-Net-FTP-File
 
 USE_PERL5=	yes
 NO_BUILD=	yes

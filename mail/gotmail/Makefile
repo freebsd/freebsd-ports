@@ -15,8 +15,8 @@ MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	A script to fetch mail from a Hotmail or MSN mailbox
 
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/Net/libnet.cfg:${PORTSDIR}/net/p5-Net
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-Net>=0:${PORTSDIR}/net/p5-Net
 
 MAN1=		${PORTNAME}.1
 USE_PERL5=	yes

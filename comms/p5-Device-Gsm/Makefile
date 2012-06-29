@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Perl interface to GSM phones/modems on serial ports
 
-BUILD_DEPENDS=	${SITE_PERL}/Device/Modem.pm:${PORTSDIR}/comms/p5-Device-Modem
-RUN_DEPENDS=	${SITE_PERL}/Device/Modem.pm:${PORTSDIR}/comms/p5-Device-Modem
+BUILD_DEPENDS=	p5-Device-Modem>=0:${PORTSDIR}/comms/p5-Device-Modem
+RUN_DEPENDS=	p5-Device-Modem>=0:${PORTSDIR}/comms/p5-Device-Modem
 
 PERL_CONFIGURE=	yes
 
