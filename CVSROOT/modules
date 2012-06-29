@@ -22542,6 +22542,7 @@ py-django-devel                 ports/www/py-django-devel
 py-django-easy-thumbnails       ports/graphics/py-django-easy-thumbnails
 py-django-evolution             ports/www/py-django-evolution
 py-django-extensions            ports/www/py-django-extensions
+py-django-filer                 ports/www/py-django-filer
 py-django-haystack              ports/www/py-django-haystack
 py-django-json-rpc              ports/www/py-django-json-rpc
 py-django-keyedcache            ports/www/py-django-keyedcache
@@ -22553,6 +22554,7 @@ py-django-pipeline              ports/www/py-django-pipeline
 py-django-piston                ports/www/py-django-piston
 py-django-profiles              ports/www/py-django-profiles
 py-django-registration          ports/www/py-django-registration
+py-django-reversion             ports/www/py-django-reversion
 py-django-sekizai               ports/www/py-django-sekizai
 py-django-signals-ahoy          ports/www/py-django-signals-ahoy
 py-django-storages              ports/www/py-django-storages
@@ -23084,6 +23086,7 @@ py-psyco                        ports/devel/py-psyco
 py-psycopg                      ports/databases/py-psycopg
 py-psycopg2                     ports/databases/py-psycopg2
 py-ptrace                       ports/devel/py-ptrace
+py-publicsuffix                 ports/dns/py-publicsuffix
 py-pudb                         ports/devel/py-pudb
 py-punjab                       ports/net-im/py-punjab
 py-px                           ports/devel/py-px
@@ -23316,6 +23319,7 @@ py-tagpy                        ports/audio/py-tagpy
 py-tconfpy                      ports/devel/py-tconfpy
 py-tempita                      ports/textproc/py-Tempita
 py-tempstorage                  ports/devel/py-tempstorage
+py-termcolor                    ports/devel/py-termcolor
 py-testgears                    ports/devel/py-testgears
 py-testoob                      ports/devel/py-testoob
 py-testtools                    ports/devel/py-testtools
