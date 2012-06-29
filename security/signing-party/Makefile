@@ -18,13 +18,13 @@ MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Various OpenPGP related tools
 
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
-		${SITE_PERL}/${PERL_ARCH}/Class/MethodMaker.pm:${PORTSDIR}/devel/p5-Class-MethodMaker \
-		${SITE_PERL}/GnuPG/Interface.pm:${PORTSDIR}/security/p5-GnuPG-Interface \
-		${SITE_PERL}/Mail/Util.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-		${SITE_PERL}/MIME/Tools.pm:${PORTSDIR}/mail/p5-MIME-Tools \
-		${SITE_PERL}/Convert/Recode.pm:${PORTSDIR}/converters/p5-Convert-Recode \
-		${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \
-		${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
+		p5-Class-MethodMaker>=0:${PORTSDIR}/devel/p5-Class-MethodMaker \
+		p5-GnuPG-Interface>=0:${PORTSDIR}/security/p5-GnuPG-Interface \
+		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \
+		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
+		p5-Convert-Recode>=0:${PORTSDIR}/converters/p5-Convert-Recode \
+		p5-Text-Template>=0:${PORTSDIR}/textproc/p5-Text-Template \
+		p5-GD>=0:${PORTSDIR}/graphics/p5-GD
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/:S/.orig//}
 
