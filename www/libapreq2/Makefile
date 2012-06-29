@@ -28,9 +28,9 @@ PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 .if defined (WITH_MODPERL2)
 PKGNAMEPREFIX+=	p5-
 
-P5_APREQ_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2 \
-		${SITE_PERL}/ExtUtils/XSBuilder:${PORTSDIR}/devel/p5-ExtUtils-XSBuilder \
-		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent
+P5_APREQ_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
+		p5-ExtUtils-XSBuilder>=0:${PORTSDIR}/devel/p5-ExtUtils-XSBuilder \
+		p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent
 BUILD_DEPENDS+=	${P5_APREQ_DEPENDS}
 RUN_DEPENDS+=	${P5_APREQ_DEPENDS}
 

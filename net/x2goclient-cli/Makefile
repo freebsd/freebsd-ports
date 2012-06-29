@@ -14,8 +14,8 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	The x2go perl client
 
-RUN_DEPENDS=	${SITE_PERL}/Proc/Simple.pm:${PORTSDIR}/devel/p5-Proc-Simple \
-		${SITE_PERL}/Term/ReadPassword.pm:${PORTSDIR}/devel/p5-Term-ReadPassword \
+RUN_DEPENDS=	p5-Proc-Simple>=0:${PORTSDIR}/devel/p5-Proc-Simple \
+		p5-Term-ReadPassword>=0:${PORTSDIR}/devel/p5-Term-ReadPassword \
 		nxproxy:${PORTSDIR}/net/nxproxy
 
 LICENSE=	GPLv2

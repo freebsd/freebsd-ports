@@ -15,7 +15,7 @@ MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Interface for access Samba filesystem with libsmclient.so
 
 LIB_DEPENDS=	smbclient.0:${PORTSDIR}/net/samba-libsmbclient
-BUILD_DEPENDS=	${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple
+BUILD_DEPENDS=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	yes
 

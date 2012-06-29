@@ -18,7 +18,7 @@ MAINTAINER=	anders@FreeBSD.org
 COMMENT=	A mailing list manager
 
 .if defined(WITH_SHA1_COOKIES)
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
+RUN_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
 .endif
 
 USE_PERL5=	yes
@@ -35,7 +35,7 @@ DOCSDIR=	${PREFIX}/${PORTNAME}/doc
 
 .if !defined(WITH_SHA1_COOKIES)
 . if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
+RUN_DEPENDS+=	p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5
 . endif
 .endif
 

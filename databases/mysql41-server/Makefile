@@ -175,9 +175,9 @@ post-patch:
 USE_MYSQL=	yes
 WANT_MYSQL_VER=	41
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql41
+RUN_DEPENDS=	p5-DBD-mysql41>=0:${PORTSDIR}/databases/p5-DBD-mysql41
 .if ${PERL_LEVEL} <= 500800
-RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+RUN_DEPENDS+=	p5-File-Temp>=0:${PORTSDIR}/devel/p5-File-Temp
 .endif
 
 LATEST_LINK=	mysql41-scripts

@@ -15,8 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	A multi-file tail on both local and remote hosts
 
-RUN_DEPENDS=	${SITE_PERL}/Config/General.pm:${PORTSDIR}/devel/p5-Config-General \
-		${SITE_PERL}/Getopt/Declare.pm:${PORTSDIR}/devel/p5-Getopt-Declare
+RUN_DEPENDS=	p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General \
+		p5-Getopt-Declare>=0:${PORTSDIR}/devel/p5-Getopt-Declare
 
 USE_PERL5_RUN=	yes
 
