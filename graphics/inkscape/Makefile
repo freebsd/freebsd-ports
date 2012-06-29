@@ -25,7 +25,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		wpg-0.2:${PORTSDIR}/graphics/libwpg \
 		png15:${PORTSDIR}/graphics/png \
 		Magick++.5:${PORTSDIR}/graphics/ImageMagick
-RUN_DEPENDS=	${SITE_PERL}/XML/XQL.pm:${PORTSDIR}/textproc/p5-XML-XQL
+RUN_DEPENDS=	p5-XML-XQL>=0:${PORTSDIR}/textproc/p5-XML-XQL
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	Search A9 OpenSearch compatible engines
 
-RUN_DEPENDS=	${SITE_PERL}/URI/Template.pm:${PORTSDIR}/net/p5-URI-Template \
+RUN_DEPENDS=	p5-URI-Template>=0:${PORTSDIR}/net/p5-URI-Template \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-Data-Page>=2.00:${PORTSDIR}/databases/p5-Data-Page \
 		p5-XML-Feed>=0.08:${PORTSDIR}/textproc/p5-XML-Feed \

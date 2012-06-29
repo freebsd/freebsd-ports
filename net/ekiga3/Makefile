@@ -18,7 +18,7 @@ COMMENT=	VoIP and video conferencing application
 LIB_DEPENDS=	sigc-2:${PORTSDIR}/devel/libsigc++20 \
 		opal-3.6.[6-9]:${PORTSDIR}/net/opal3
 BUILD_DEPENDS=	intltoolize:${PORTSDIR}/textproc/intltool \
-		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
+		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		${LOCALBASE}/bin/scrollkeeper-config:${PORTSDIR}/textproc/rarian
 
 CONFLICTS=	ekiga-2.*

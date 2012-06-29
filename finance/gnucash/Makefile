@@ -24,9 +24,9 @@ LIB_DEPENDS=	gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring \
 		goffice-0.8.8:${PORTSDIR}/devel/goffice
 RUN_DEPENDS=	guile>=1.8.6:${PORTSDIR}/lang/guile \
 		${LOCALBASE}/share/guile/1.8/slibcat:${PORTSDIR}/lang/slib-guile \
-		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
-		${SITE_PERL}/Finance/Quote.pm:${PORTSDIR}/finance/p5-Finance-Quote
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
+		p5-Finance-Quote>=0:${PORTSDIR}/finance/p5-Finance-Quote
 
 OPTIONS_DEFINE=	AQBANKING OFX DATABASE LOCALE_TAX WEBKIT PYTHON
 
