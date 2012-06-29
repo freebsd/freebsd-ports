@@ -14,8 +14,8 @@ MASTER_SITES=	http://josefsson.org/${PORTNAME}/releases/
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Recover zone file information from servers that use DNSSEC
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
-		${SITE_PERL}/Net/DNS/SEC.pm:${PORTSDIR}/dns/p5-Net-DNS-SEC
+RUN_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
+		p5-Net-DNS-SEC>=0:${PORTSDIR}/dns/p5-Net-DNS-SEC
 
 USE_PERL5=	yes
 NO_BUILD=	yes
