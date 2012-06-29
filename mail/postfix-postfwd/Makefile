@@ -17,10 +17,10 @@ COMMENT=	A postfix firewall policy daemon
 
 LICENSE=	BSD
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
-		${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
-		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+RUN_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
+		p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
+		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable \
+		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
 
 PORTDOCS=	*
 PORTEXAMPLES=	request.sample postfwd.plugins.sample
