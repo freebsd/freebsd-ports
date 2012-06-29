@@ -10,7 +10,7 @@ CATEGORIES=	textproc www rubygems
 MASTER_SITES=	RG
 DISTNAME=	htmltools-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Tools for parsing and manipulating HTML text in Ruby
 
 USE_RUBY=	yes

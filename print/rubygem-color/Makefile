@@ -9,7 +9,7 @@ PORTVERSION=	1.4.1
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provides colour space definition and manpiulation
 
 RUN_DEPENDS=	rubygem-archive-tar-minitar>=0.5.1:${PORTSDIR}/archivers/rubygem-archive-tar-minitar \
