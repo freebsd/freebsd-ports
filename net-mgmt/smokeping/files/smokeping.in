@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 # PROVIDE: smokeping
-# REQUIRE: sshd
+# REQUIRE: LOGIN
 # KEYWORD: shutdown
 
 # Define these smokeping_* variables in one of these files:
@@ -23,7 +23,7 @@ smokeping_group=${smokeping_group-"%%GROUPS%%"}
 . /etc/rc.subr
 
 name="smokeping"
-rcvar=smokeping_enable
+rcvar="smokeping_enable"
 load_rc_config $name
 command="/usr/local/bin/smokeping"
 command_args="--logfile=${smokeping_logfile}"
@@ -31,11 +31,50 @@ pidfile="${smokeping_pidfile}"
 
 extra_commands="reload"
 reload_cmd="smokeping_reloadcmd"
+start_precmd="smokeping_startprecmd"
+stop_cmd="smokeping_stopcmd"
+status_cmd="smokeping_statuscmd"
 
 smokeping_reloadcmd()
 {
 	$command --reload
 }
 
-run_rc_command "$1"
+smokeping_statuscmd()
+{
+	if [ ! -e $pidfile ];
+	then
+		echo "pidfile does not exist. $name is not running?";
+		exit 1;
+	fi
 
+	if pgrep -F $pidfile >/dev/null;
+	then
+		echo "$name is running.";
+	else
+		echo "$name is not running.";
+		exit 1;
+	fi
+}
+
+smokeping_stopcmd()
+{
+	if pgrep -F $pidfile >/dev/null; 
+	then
+		kill $sig_stop `cat $pidfile`;
+		wait_for_pids `cat $pidfile`;
+	else
+		echo "$name is not running.";
+		exit 1;
+	fi
+}
+
+smokeping_startprecmd()
+{
+	if [ ! -e $smokeping_logfile ];
+	then
+		install -o %%USERS%% -g %%GROUPS%% /dev/null $smokeping_logfile || echo "ERROR: Could not initialize logfile at $smokeping_logfile.";
+	fi
+}
+
+run_rc_command "$1"
