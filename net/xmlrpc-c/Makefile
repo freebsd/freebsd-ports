@@ -15,9 +15,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	XML-RPC library for C and C++
 
-OPTIONS=	DEBUG "Compile with debugging information" off \
-		CURL "Compile with curl support" on \
-		LIBWWW "Compile with libwww support" on
+LICENSE=	BSD
+
+OPTIONS_DEFINE=	DEBUG CURL LIBWWW
+OPTIONS_DEFAULT=CURL LIBWWW
+
+LIBWWW_DESC=	Compile with libwww support
 
 CONFLICTS=	xmlrpc-epi-0.* xmlrpc-c-devel-[0-9]*
 
@@ -31,31 +34,29 @@ MAKE_ARGS=	LIBTOOL="${LIBTOOL}" \
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 
-LICENSE=	BSD
-
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_DEBUG)
+.if empty(PORT_OPTIONS:MDEBUG)
 CFLAGS+=	-DNDEBUG
 .endif
 
-.if defined(WITH_CURL)
-LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+.if ${PORT_OPTIONS:MCURL}
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--enable-curl-client
 .else
 CONFIGURE_ARGS+=	--disable-curl-client
 .endif
 
-.if defined(WITH_LIBWWW)
-LIB_DEPENDS+=	wwwcore.1:${PORTSDIR}/www/libwww
+.if ${PORT_OPTIONS:MLIBWWW}
+LIB_DEPENDS+=	wwwcore:${PORTSDIR}/www/libwww
 CONFIGURE_ARGS+=	--enable-libwww-client
 .else
 CONFIGURE_ARGS+=	--disable-libwww-client
 .endif
 
 post-extract:
-	@${FIND} ${WRKSRC} -type l -name blddir | ${XARGS} ${RM}
-	@${FIND} ${WRKSRC} -type l -name srcdir | ${XARGS} ${RM}
+	@${FIND} ${WRKSRC} -type l -name blddir -delete
+	@${FIND} ${WRKSRC} -type l -name srcdir -delete
 
 post-patch:
 	@${GREP} -lR '\-lpthread' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \

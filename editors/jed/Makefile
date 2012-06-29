@@ -17,13 +17,15 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A SLang-based text editor
 
-LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
+LIB_DEPENDS=	slang:${PORTSDIR}/devel/libslang2
 
 CONFLICTS=	jed-devel-[0-9]*
 
-OPTIONS=	X11 "Build xjed (depends of X11)" on \
-		PERMS "Respect permissions by Root" off \
-		HOSTLOOKUP "Look-up for hostname" on
+OPTIONS_DEFINE=	X11 PERMS HOSTLOOKUP
+OPTIONS_DEFAULT=X11 HOSTLOOKUP
+
+PERMS_DESC=	Respect permissions by Root
+HOSTLOOKUP_DESC=Look-up for hostname
 
 USE_BZIP2=	yes
 DIST_SUBDIR=	jed
@@ -33,7 +35,7 @@ CONFIGURE_ENV+=	JED_ROOT=${PREFIX}/lib/jed
 
 PORTDOCS=	*
 MAKE_ENV+=	DEST_DOC_DIR=${DOCSDIR}
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 MAKE_ENV+=	JED_DOC_FILES="" \
 		JED_DOC_TXT_FILES="" \
 		JED_DOC_HLP_FILES="" \
@@ -45,15 +47,15 @@ MAN1=		jed.1 rgrep.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_X11)
-PLIST_SUB+=	XJED="@comment "
-.else
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=	x11 ice xt
 ALL_TARGET+=	xjed
 PLIST_SUB+=	XJED=""
+.else
+PLIST_SUB+=	XJED="@comment "
 .endif
 
-.if defined(WITHOUT_HOSTLOOKUP)
+.if empty(PORT_OPTIONS:MHOSTLOOKUP)
 HOSTNAME_CMD=	/bin/hostname
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src__userinfo.c
 .endif
@@ -63,14 +65,14 @@ post-patch:
 			  -e 's,\.\./info/\*,,' \
 			  -e 's,^\(JED_DOC_.*FILES\) =,\1 \?=,g' \
 		${WRKSRC}/src/Makefile.in
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e '/MKINSDIR.*DEST_DOC_DIR/d' \
 		${WRKSRC}/src/Makefile.in
 .endif
-.if defined(WITHOUT_PERMS)
+.if empty(PORT_OPTIONS:MPERMS)
 	@${REINPLACE_CMD} 's|jed_file_is_readonly (file, 1)|jed_file_is_readonly (file, 0)|' ${WRKSRC}/src/file.c
 .endif
-.if defined(WITHOUT_HOSTLOOKUP)
+.if empty(PORT_OPTIONS:MHOSTLOOKUP)
 	@${REINPLACE_CMD} -e "s/%%JED_HOSTNAME%%/$$(${HOSTNAME_CMD})/" \
 		${WRKSRC}/src/userinfo.c
 .endif
