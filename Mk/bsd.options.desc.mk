@@ -165,6 +165,7 @@ OPENMP_DESC?=		parallel processing support
 OPENSSL_DESC?=		SSL support via OpenSSL
 OPTIMIZED_CFLAGS_DESC?=	compilation optimizations
 ORACLE_DESC?=		Oracle support
+OSD_DESC?=		On-Screen-Display support
 OSS_DESC?=		Open Sound System support
 PAM_DESC?=		PAM support
 PCRE_DESC?=		Use Perl Compatible Regular Expressions
