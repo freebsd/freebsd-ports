@@ -1,19 +1,13 @@
-An IMMENSELY FAST JPEG thumbnailer library API.
+epeg is a convenient, fast library that uses libjpeg to: load JPEG
+images destined to be turned into thumbnails; save and retrieve
+thumbnail information; and manage loading of the image, ready for
+scaling, with the minimum of overhead.
 
-Why write this? It's a convenience library API to using libjpeg to load JPEG
-images destined to be turned into thumbnails of the original, saving
-information with these thumbnails, retreiving it and managing to load the image
-ready for scaling with the minimum of fuss and CPU overhead.
+epeg loads and scales large JPEG images very quickly, with a speed-up
+proportional to the difference in the number of pixels in the source
+image and the thumbnail. This is accomplished by decoding only the DCT
+coefficients needed to reconstruct an image.  If the YUV (or GRAY8, if
+the source is grayscale) format is used, then colorspace conversions
+are also avoided.
 
-This means it's insanely fast at loading large JPEG images and scaling them
-down to tiny thumbnails. It's speedup will be proportional to the size
-difference between the source image and the output thumbnail size as a
-count of their pixels.
-
-It makes use of libjpeg features of being able to load an image by only
-decoding the DCT coefficients needed to reconstruct an image of the size
-desired. This gives a massive speedup. If you do not try and access the pixels
-in a format other than YUV (or GRAY8 if the source is grascale) then it also
-avoids colorspace conversions as well.
-
-WWW: http://enlightenment.sourceforge.net/Libraries/Epeg/
+WWW: http://docs.enlightenment.org/api/epeg/
