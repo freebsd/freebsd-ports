@@ -36,7 +36,7 @@ WITHOUT_GNOME=	yes
 .if ${HAVE_GNOME:Mgtk12}!=""
 USE_GNOME=	gtk12
 USE_PERL5=	yes
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
+RUN_DEPENDS=	p5-Gtk>=0:${PORTSDIR}/x11-toolkits/p5-Gtk
 MAN1+=		gpppclient.1
 BUILD_PERLGTK=	yes
 .endif

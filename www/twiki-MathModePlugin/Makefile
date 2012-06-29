@@ -15,7 +15,7 @@ COMMENT=	Include LaTeX formatted math in your TWiki pages
 
 RUN_DEPENDS=	dvipng:${PORTSDIR}/print/teTeX-base \
 		latex:${PORTSDIR}/print/teTeX-base \
-		${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick
+		ImageMagick>=0:${PORTSDIR}/graphics/ImageMagick
 
 post-patch:
 	${REINPLACE_CMD} -i '' -e 's!=/usr/bin!=${LOCALBASE}/bin!g; s!=/bin!=/usr/bin!g;' \

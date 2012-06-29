@@ -15,7 +15,7 @@ MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	GTK+ frontend for git version control system
 
 BUILD_DEPENDS=	git:${PORTSDIR}/devel/git \
-		${SITE_PERL}/mach/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS=	git:${PORTSDIR}/devel/git
 OPTIONS=	EDS	"Evolution Data Server support"	On \
 		VTE	"Terminal Widget" On

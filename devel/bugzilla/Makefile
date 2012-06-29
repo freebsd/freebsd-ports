@@ -76,9 +76,9 @@ USE_PGSQL=	yes
 
 .ifdef WITH_GRAPH_REPORTS
 RUN_DEPENDS+=	p5-GD>=1.20:${PORTSDIR}/graphics/p5-GD \
-		${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph \
-		${SITE_PERL}/GD/Text.pm:${PORTSDIR}/graphics/p5-GD-TextUtil \
-		${SITE_PERL}/Template/Plugin/GD/Image.pm:${PORTSDIR}/www/p5-Template-GD
+		p5-GD-Graph>=0:${PORTSDIR}/graphics/p5-GD-Graph \
+		p5-GD-TextUtil>=0:${PORTSDIR}/graphics/p5-GD-TextUtil \
+		p5-Template-GD>=0:${PORTSDIR}/www/p5-Template-GD
 .endif
 
 .ifdef WITH_CHARTING_MODULES
@@ -92,12 +92,12 @@ RUN_DEPENDS+=	p5-PatchReader>=0.9.4:${PORTSDIR}/devel/p5-PatchReader \
 
 .ifdef WITH_MORE_HTML
 RUN_DEPENDS+=	p5-HTML-Parser>=3.40:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/HTML/Scrubber.pm:${PORTSDIR}/www/p5-HTML-Scrubber
+		p5-HTML-Scrubber>=0:${PORTSDIR}/www/p5-HTML-Scrubber
 .endif
 
 .ifdef WITH_INBOUND_EMAIL
-RUN_DEPENDS+=	${SITE_PERL}/Email/MIME/Attachment/Stripper.pm:${PORTSDIR}/mail/p5-Email-MIME-Attachment-Stripper \
-		${SITE_PERL}/Email/Reply.pm:${PORTSDIR}/mail/p5-Email-Reply
+RUN_DEPENDS+=	p5-Email-MIME-Attachment-Stripper>=0:${PORTSDIR}/mail/p5-Email-MIME-Attachment-Stripper \
+		p5-Email-Reply>=0:${PORTSDIR}/mail/p5-Email-Reply
 .endif
 
 .ifdef WITH_MAIL_QUEUEING
@@ -106,12 +106,12 @@ RUN_DEPENDS+=	p5-TheSchwartz>=0:${PORTSDIR}/devel/p5-TheSchwartz \
 .endif
 
 .ifdef WITH_MOVE_BUGZ
-RUN_DEPENDS+=	${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools \
-		${SITE_PERL}/XML/Twig.pm:${PORTSDIR}/textproc/p5-XML-Twig
+RUN_DEPENDS+=	p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
+		p5-XML-Twig>=0:${PORTSDIR}/textproc/p5-XML-Twig
 .endif
 
 .ifdef WITH_BMP2PNG
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS+=	ImageMagick>=0:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 .if defined(WITH_XMLRPC) || defined(WITH_JSONRPC)
@@ -128,8 +128,8 @@ RUN_DEPENDS+=	p5-JSON-RPC>=0:${PORTSDIR}/devel/p5-JSON-RPC \
 .endif
 
 .ifdef WITH_MODPERL2
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2 \
-		${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI
+RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
+		p5-Apache-DBI>=0:${PORTSDIR}/www/p5-Apache-DBI
 .endif
 
 .ifdef WITH_GRAPHVIZ
@@ -137,8 +137,8 @@ RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 .endif
 
 .ifdef WITH_EXPORT_IMPORT
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
-		${SITE_PERL}/XML/Twig.pm:${PORTSDIR}/textproc/p5-XML-Twig
+RUN_DEPENDS+=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
+		p5-XML-Twig>=0:${PORTSDIR}/textproc/p5-XML-Twig
 .endif
 
 .ifdef WITH_CONTRIB
@@ -148,7 +148,7 @@ PLIST_SUB+=	CONTRIB="@comment "
 .endif
 
 .ifdef WITH_LDAP
-RUN_DEPENDS+=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
+RUN_DEPENDS+=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 .endif
 
 .ifdef WITH_RADIUS
