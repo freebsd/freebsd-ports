@@ -10,7 +10,6 @@ DISTVERSION=	0.2.2.37
 CATEGORIES=	security net ipv6
 MASTER_SITES=	https://www.torproject.org/dist/ \
 		ftp://ftp.bit.nl/mirror/tor/ \
-		ftp://ftp.fodt.it/pub/mirror/tor/dist/ \
 		http://cyberside.net.ee/tor/ \
 		http://ftp.bit.nl/mirror/tor/ \
 		http://mirror.hessmo.com/tor/dist/ \
