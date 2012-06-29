@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	2.0602
+PORTVERSION=	2.0603
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DOY
@@ -18,6 +18,7 @@ COMMENT=	A complete modern object system for Perl 5
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+# Do not add devel/p5-Data-Visitor to TEST_DEPENDS to avoid cyclic dependency in tinderbox
 BUILD_DEPENDS=	\
 	p5-Class-Load>=0.09:${PORTSDIR}/devel/p5-Class-Load \
 	p5-Class-Load-XS>=0.01:${PORTSDIR}/devel/p5-Class-Load-XS \
@@ -35,8 +36,6 @@ BUILD_DEPENDS=	\
 	p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
 	p5-Try-Tiny>=0.02:${PORTSDIR}/lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-# Do not add devel/p5-Data-Visitor to avoid cyclic dependency in tinderbox
 TEST_DEPENDS=	\
 	p5-DBM-Deep>=0:${PORTSDIR}/databases/p5-DBM-Deep \
 	p5-DateTime-Format-MySQL>=0:${PORTSDIR}/devel/p5-DateTime-Format-MySQL \
@@ -51,10 +50,9 @@ TEST_DEPENDS=	\
 	p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output \
 	p5-Test-Requires>=0.05:${PORTSDIR}/devel/p5-Test-Requires
 
-MAKE_JOBS_UNSAFE=	yes
-
-PERL_CONFIGURE=	yes
 CFLAGS+=	-I.	# mop.h
+MAKE_JOBS_UNSAFE=	yes
+PERL_CONFIGURE=	yes
 
 CONFLICTS=	p5-Class-MOP-[0-9]*
 
