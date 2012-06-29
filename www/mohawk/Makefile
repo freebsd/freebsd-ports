@@ -7,6 +7,7 @@
 
 PORTNAME=	mohawk
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://files.etoilebsd.net/mohawk/ \
 		http://mohawk.bsdsx.fr/
@@ -22,6 +23,12 @@ PLIST_FILES+=	bin/mhtpasswd \
 
 PORTEXAMPLES=	*
 USE_RC_SUBR=	mohawk
+
+MANCOMPRESSED=	yes
+
+MAN5=	mohawk.conf.5
+MAN8=	mhtpasswd.8 \
+	mohawk.8
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 800502
