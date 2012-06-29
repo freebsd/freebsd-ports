@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Sort-Key
-PORTVERSION=	1.28
+PORTVERSION=	1.31
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,10 +16,11 @@ COMMENT=	Sorts objects by one or several keys really fast
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Sort::Key.3 \
-	Sort::Key::Maker.3 \
-	Sort::Key::Multi.3 \
-	Sort::Key::Natural.3 \
-	Sort::Key::Register.3
+MAN3=		Sort::Key.3 \
+		Sort::Key::Maker.3 \
+		Sort::Key::Multi.3 \
+		Sort::Key::Natural.3 \
+		Sort::Key::Register.3 \
+		Sort::Key::Types.3
 
 .include <bsd.port.mk>
