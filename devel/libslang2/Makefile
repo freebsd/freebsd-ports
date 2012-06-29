@@ -34,24 +34,24 @@ MAN1=		slsh.1
 DOCSDIR=	${PREFIX}/share/doc/slang
 DATADIR=	${PREFIX}/share/slsh
 
-OPTIONS=	PCRE	"Include pcre support" on \
-		PNG	"Include png support"  on \
-		ICONV	"Include iconv support" on \
-		ONIG	"Include Oniguruma support" off
+OPTIONS_DEFINE=	PCRE PNG ICONV ONIG
+OPTIONS_DEFAULT=PCRE PNG ICONV
+
+ONIG_DESC=	Oniguruma support
 
 PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_PCRE)
-LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+.if ${PORT_OPTIONS:MPCRE}
+LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 PLIST_SUB+=	PCRE=""
 .else
 CONFIGURE_ARGS+=	--without-pcre
 PLIST_SUB+=	PCRE="@comment "
 .endif
 
-.if !defined(WITHOUT_PNG)
+.if ${PORT_OPTIONS:MPNG}
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 PLIST_SUB+=	PNG=""
 .else
@@ -59,7 +59,7 @@ CONFIGURE_ARGS+=	--without-png
 PLIST_SUB+=	PNG="@comment "
 .endif
 
-.if !defined(WITHOUT_ICONV)
+.if ${PORT_OPTIONS:MICONV}
 USE_ICONV=	yes
 PLIST_SUB+=	ICONV=""
 .else
@@ -67,8 +67,8 @@ CONFIGURE_ARGS+=	--without-iconv
 PLIST_SUB+=	ICONV="@comment "
 .endif
 
-.if defined(WITH_ONIG)
-LIB_DEPENDS+=	onig.1:${PORTSDIR}/devel/oniguruma4
+.if ${PORT_OPTIONS:MONIG}
+LIB_DEPENDS+=	onig:${PORTSDIR}/devel/oniguruma4
 PLIST_SUB+=	ONIG=""
 .else
 CONFIGURE_ARGS+=	--without-onig
@@ -78,7 +78,7 @@ PLIST_SUB+=	ONIG="@comment "
 post-patch:
 	@${REINPLACE_CMD} -E 's,doc/slsh,doc/slang/v\@slang_major_version\@,' \
 		${WRKSRC}/slsh/Makefile.in
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's, install[_-]docs,,g; /MKINSDIR.*DEST_SLSH_DOC_DIR/d' \
 		${WRKSRC}/src/Makefile.in \
 		${WRKSRC}/slsh/Makefile.in

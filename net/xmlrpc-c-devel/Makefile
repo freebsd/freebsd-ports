@@ -15,10 +15,13 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	XML-RPC library for C and C++
 
-OPTIONS=	DEBUG "Compile with debugging information" off \
-		CURL "Compile with curl support" on \
-		LIBWWW "Compile with libwww support" on \
-		TOOLS "Build xmlrpc-c tools" on
+LICENSE=	BSD
+
+OPTIONS_DEFINE=	DEBUG CURL LIBWWW TOOLS
+OPTIONS_DEFAULT=CURL LIBWWW TOOLS
+
+LIBWWW_DESC=	 Compile with libwww support
+TOOLS_DESC=	 Build xmlrpc-c tools
 
 CONFLICTS=	xmlrpc-epi-0.* xmlrpc-c-[0-9]*
 
@@ -33,29 +36,27 @@ MAKE_ARGS=	LIBTOOL="${LIBTOOL}" \
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 
-LICENSE=	BSD
-
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_DEBUG)
+.if empty(PORT_OPTIONS:MDEBUG)
 CFLAGS+=	-DNDEBUG
 .endif
 
-.if defined(WITH_CURL)
-LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+.if ${PORT_OPTIONS:MCURL}
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--enable-curl-client
 .else
 CONFIGURE_ARGS+=	--disable-curl-client
 .endif
 
-.if defined(WITH_LIBWWW)
-LIB_DEPENDS+=	wwwcore.1:${PORTSDIR}/www/libwww
+.if ${PORT_OPTIONS:MLIBWWW}
+LIB_DEPENDS+=	wwwcore:${PORTSDIR}/www/libwww
 CONFIGURE_ARGS+=	--enable-libwww-client
 .else
 CONFIGURE_ARGS+=	--disable-libwww-client
 .endif
 
-.if defined(WITH_TOOLS)
+.if ${PORT_OPTIONS:MTOOLS}
 CONFIGURE_ARGS+=	--enable-tools
 PLIST_SUB+=		TOOLS=""
 MAN1+=			xml-rpc-api2cpp.1 xml-rpc-api2txt.1
@@ -64,8 +65,8 @@ CONFIGURE_ARGS+=	--disable-tools
 PLIST_SUB+=		TOOLS="@comment "
 .endif
 
-.if defined(WITHOUT_LIBWWW) && defined(WITHOUT_CURL)
-. if defined(WITH_TOOLS)
+.if empty(PORT_OPTIONS:MLIBWWW) && empty(PORT_OPTIONS:MCURL)
+. if ${PORT_OPTIONS:MTOOLS}
 IGNORE=		xmlrpc-c tools requires CURL or LIBWWW support enabled
 . endif
 PLIST_SUB+=	CLIENT="@comment "
@@ -74,8 +75,8 @@ PLIST_SUB+=	CLIENT=""
 .endif
 
 post-extract:
-	@${FIND} ${WRKSRC} -type l -name blddir | ${XARGS} ${RM}
-	@${FIND} ${WRKSRC} -type l -name srcdir | ${XARGS} ${RM}
+	@${FIND} ${WRKSRC} -type l -name blddir -delete
+	@${FIND} ${WRKSRC} -type l -name srcdir -delete
 
 post-patch:
 	@${GREP} -lR '\-lpthread' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
