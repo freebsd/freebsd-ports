@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	brix@FreeBSD.org
 COMMENT=	Perl module for DEC VMS password hashing
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Scalar/String.pm:${PORTSDIR}/devel/p5-Scalar-String \
-		${SITE_PERL}/Data/Integer.pm:${PORTSDIR}/devel/p5-Data-Integer \
-		${SITE_PERL}/${PERL_ARCH}/Digest/CRC.pm:${PORTSDIR}/security/p5-Digest-CRC
+BUILD_DEPENDS=	p5-Scalar-String>=0:${PORTSDIR}/devel/p5-Scalar-String \
+		p5-Data-Integer>=0:${PORTSDIR}/devel/p5-Data-Integer \
+		p5-Digest-CRC>=0:${PORTSDIR}/security/p5-Digest-CRC
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LICENSE=	GPLv2

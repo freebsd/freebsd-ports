@@ -19,13 +19,13 @@ COMMENT=	Apache::Gallery - mod_perl handler to create an image gallery
 
 LICENSE=	ART10
 
-BUILD_DEPENDS=	${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \
-		${SITE_PERL}/Image/Info.pm:${PORTSDIR}/graphics/p5-Image-Info \
-		${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
-		${SITE_PERL}/${PERL_ARCH}/Image/Imlib2.pm:${PORTSDIR}/graphics/p5-Image-Imlib2 \
-		${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2 \
-		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
+BUILD_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-Text-Template>=0:${PORTSDIR}/textproc/p5-Text-Template \
+		p5-Image-Info>=0:${PORTSDIR}/graphics/p5-Image-Info \
+		p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size \
+		p5-Image-Imlib2>=0:${PORTSDIR}/graphics/p5-Image-Imlib2 \
+		p5-libapreq2>=0:${PORTSDIR}/www/p5-libapreq2 \
+		p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

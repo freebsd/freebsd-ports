@@ -15,23 +15,23 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	brix@FreeBSD.org
 COMMENT=	A wiki compiler
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext \
-		${SITE_PERL}/CGI/FormBuilder.pm:${PORTSDIR}/www/p5-CGI-FormBuilder \
-		${SITE_PERL}/CGI/Session.pm:${PORTSDIR}/www/p5-CGI-Session \
-		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
-		${SITE_PERL}/HTML/Scrubber.pm:${PORTSDIR}/www/p5-HTML-Scrubber \
-		${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
-		${SITE_PERL}/Mail/Sendmail.pm:${PORTSDIR}/mail/p5-Mail-Sendmail \
-		${SITE_PERL}/Text/Markdown.pm:${PORTSDIR}/textproc/p5-Text-Markdown \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
-		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
+BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext \
+		p5-CGI-FormBuilder>=0:${PORTSDIR}/www/p5-CGI-FormBuilder \
+		p5-CGI-Session>=0:${PORTSDIR}/www/p5-CGI-Session \
+		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
+		p5-HTML-Scrubber>=0:${PORTSDIR}/www/p5-HTML-Scrubber \
+		p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
+		p5-Mail-Sendmail>=0:${PORTSDIR}/mail/p5-Mail-Sendmail \
+		p5-Text-Markdown>=0:${PORTSDIR}/textproc/p5-Text-Markdown \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
+		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
-		${SITE_PERL}/File/MimeInfo.pm:${PORTSDIR}/devel/p5-File-MimeInfo \
-		${SITE_PERL}/RPC/XML.pm:${PORTSDIR}/net/p5-RPC-XML \
-		${SITE_PERL}/XML/Feed.pm:${PORTSDIR}/textproc/p5-XML-Feed \
-		${SITE_PERL}/Authen/Passphrase.pm:${PORTSDIR}/security/p5-Authen-Passphrase
+		p5-File-MimeInfo>=0:${PORTSDIR}/devel/p5-File-MimeInfo \
+		p5-RPC-XML>=0:${PORTSDIR}/net/p5-RPC-XML \
+		p5-XML-Feed>=0:${PORTSDIR}/textproc/p5-XML-Feed \
+		p5-Authen-Passphrase>=0:${PORTSDIR}/security/p5-Authen-Passphrase
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -60,8 +60,8 @@ PLIST_SUB+=	PO4A="@comment "
 .endif
 
 .if defined(WITH_SEARCH)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
-		${SITE_PERL}/${PERL_ARCH}/Search/Xapian.pm:${PORTSDIR}/databases/p5-Search-Xapian \
+RUN_DEPENDS+=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
+		p5-Search-Xapian>=0:${PORTSDIR}/databases/p5-Search-Xapian \
 		${LOCALBASE}/www/xapian-omega/cgi-bin/omega:${PORTSDIR}/www/xapian-omega
 .endif
 

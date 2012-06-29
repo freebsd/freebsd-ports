@@ -17,17 +17,17 @@ COMMENT=	Perl module for handling hashed passwords/passphrases as objects
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Authen/DecHpwd.pm:${PORTSDIR}/security/p5-Authen-DecHpwd \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/Blowfish.pm:${PORTSDIR}/security/p5-Crypt-Blowfish \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/DES.pm:${PORTSDIR}/security/p5-Crypt-DES \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/Eksblowfish.pm:${PORTSDIR}/security/p5-Crypt-Eksblowfish \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/MySQL.pm:${PORTSDIR}/security/p5-Crypt-MySQL \
-		${SITE_PERL}/Crypt/PasswdMD5.pm:${PORTSDIR}/security/p5-Crypt-PasswdMD5 \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/UnixCrypt_XS.pm:${PORTSDIR}/security/p5-Crypt-UnixCrypt_XS \
-		${SITE_PERL}/Data/Entropy/Algorithms.pm:${PORTSDIR}/security/p5-Data-Entropy \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD4.pm:${PORTSDIR}/security/p5-Digest-MD4 \
-		${SITE_PERL}/Module/Runtime.pm:${PORTSDIR}/devel/p5-Module-Runtime \
-		${SITE_PERL}/${PERL_ARCH}/Params/Classify.pm:${PORTSDIR}/devel/p5-Params-Classify
+BUILD_DEPENDS=	p5-Authen-DecHpwd>=0:${PORTSDIR}/security/p5-Authen-DecHpwd \
+		p5-Crypt-Blowfish>=0:${PORTSDIR}/security/p5-Crypt-Blowfish \
+		p5-Crypt-DES>=0:${PORTSDIR}/security/p5-Crypt-DES \
+		p5-Crypt-Eksblowfish>=0:${PORTSDIR}/security/p5-Crypt-Eksblowfish \
+		p5-Crypt-MySQL>=0:${PORTSDIR}/security/p5-Crypt-MySQL \
+		p5-Crypt-PasswdMD5>=0:${PORTSDIR}/security/p5-Crypt-PasswdMD5 \
+		p5-Crypt-UnixCrypt_XS>=0:${PORTSDIR}/security/p5-Crypt-UnixCrypt_XS \
+		p5-Data-Entropy>=0:${PORTSDIR}/security/p5-Data-Entropy \
+		p5-Digest-MD4>=0:${PORTSDIR}/security/p5-Digest-MD4 \
+		p5-Module-Runtime>=0:${PORTSDIR}/devel/p5-Module-Runtime \
+		p5-Params-Classify>=0:${PORTSDIR}/devel/p5-Params-Classify
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
