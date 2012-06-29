@@ -28,8 +28,6 @@ UNRAR_DESC=	Enable rar archives support
 LLVM_DESC=	Enable JIT Bytecode compiler (bundled LLVM)
 TESTS_DESC=	Run compile-time tests (req. python)
 MILTER_DESC=	Compile the milter interface
-LDAP_DESC=	libmilter was built with LDAP
-ICONV_DESC=	Enable ICONV support
 STDERR_DESC=	Print logs to stderr instead of stdout
 
 OPTIONS_DEFAULT=	ARC ARJ LHA UNZOO UNRAR LLVM TESTS
