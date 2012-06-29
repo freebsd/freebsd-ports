@@ -1,4 +1,3 @@
-@stopdaemon smokeping
 bin/smokeinfo
 bin/smokeping
 bin/smokeping_cgi
