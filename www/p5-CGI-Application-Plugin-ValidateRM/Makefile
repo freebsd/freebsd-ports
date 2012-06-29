@@ -13,10 +13,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Help validate forms with the CGI::Application framework
 
-BUILD_DEPENDS=	${SITE_PERL}/HTML/FillInForm.pm:${PORTSDIR}/www/p5-HTML-FillInForm \
-		${SITE_PERL}/Data/FormValidator.pm:${PORTSDIR}/textproc/p5-Data-FormValidator \
-		${SITE_PERL}/CGI/Carp.pm:${PORTSDIR}/www/p5-CGI-modules \
-		${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Application
+BUILD_DEPENDS=	p5-HTML-FillInForm>=0:${PORTSDIR}/www/p5-HTML-FillInForm \
+		p5-Data-FormValidator>=0:${PORTSDIR}/textproc/p5-Data-FormValidator \
+		p5-CGI-modules>=0:${PORTSDIR}/www/p5-CGI-modules \
+		p5-CGI-Application>=0:${PORTSDIR}/www/p5-CGI-Application
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes

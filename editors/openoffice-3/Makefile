@@ -125,7 +125,7 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip \
 		gpatch:${PORTSDIR}/devel/patch \
-		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
+		p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 		bash:${PORTSDIR}/shells/bash \
 		imake:${PORTSDIR}/devel/imake \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
@@ -139,7 +139,7 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		${JAVALIBDIR}/saxon9.jar:${PORTSDIR}/textproc/saxon-devel \
 		epm:${PORTSDIR}/devel/epm \
 		dmake:${PORTSDIR}/devel/dmake \
-		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 USE_AUTOTOOLS=	autoconf
 USE_BISON=	build

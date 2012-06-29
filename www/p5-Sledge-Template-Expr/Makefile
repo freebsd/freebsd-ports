@@ -18,8 +18,8 @@ COMMENT=	A Sledge extension that uses HTML::Template::Expr as template engine
 BUILD_DEPENDS=	${PM_DEPENDS}
 RUN_DEPENDS=	${PM_DEPENDS}
 
-PM_DEPENDS=	${SITE_PERL}/Sledge.pm:${PORTSDIR}/www/p5-Sledge
-PM_DEPENDS+=	${SITE_PERL}/HTML/Template/Expr.pm:${PORTSDIR}/www/p5-HTML-Template-Expr
+PM_DEPENDS=	p5-Sledge>=0:${PORTSDIR}/www/p5-Sledge
+PM_DEPENDS+=	p5-HTML-Template-Expr>=0:${PORTSDIR}/www/p5-HTML-Template-Expr
 
 PERL_CONFIGURE=	yes
 

@@ -33,7 +33,7 @@ PLIST_SUB+=	NLS="@comment "
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile
 PLIST_SUB+=	OPML="@comment "
 .else
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
+RUN_DEPENDS=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
 PLIST_SUB+=	OPML=""
 # opml2snow only have "" manpage
 _MANPAGES+=	${PREFIX}/man/man1/opml2snow.1

@@ -16,19 +16,19 @@ COMMENT=	Produce PDF from scanned documents
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${SITE_PERL}/Test/Perl/Critic.pm:${PORTSDIR}/textproc/p5-Test-Perl-Critic \
-		${SITE_PERL}/Set/IntSpan.pm:${PORTSDIR}/math/p5-Set-IntSpan \
-		${SITE_PERL}/XML/LibXML/Simple.pm:${PORTSDIR}/textproc/p5-XML-LibXML-Simple \
-		${SITE_PERL}/Sys/SigAction.pm:${PORTSDIR}/devel/p5-Sys-SigAction \
-		${SITE_PERL}/${PERL_ARCH}/forks.pm:${PORTSDIR}/devel/p5-forks \
-		${SITE_PERL}/${PERL_ARCH}/Proc/ProcessTable.pm:${PORTSDIR}/devel/p5-Proc-ProcessTable \
-		${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick \
-		${SITE_PERL}/${PERL_ARCH}/Goo/Canvas.pm:${PORTSDIR}/devel/p5-Goo-Canvas \
-		${SITE_PERL}/${PERL_ARCH}/Pango.pm:${PORTSDIR}/x11-toolkits/p5-Pango \
-		${SITE_PERL}/${PERL_ARCH}/Acme/Damn.pm:${PORTSDIR}/devel/p5-Acme-Damn \
-		${SITE_PERL}/Devel/Symdump.pm:${PORTSDIR}/devel/p5-Devel-Symdump \
-		${SITE_PERL}/${PERL_ARCH}/Glib.pm:${PORTSDIR}/devel/p5-Glib2 \
-		${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
+BUILD_DEPENDS=	p5-Test-Perl-Critic>=0:${PORTSDIR}/textproc/p5-Test-Perl-Critic \
+		p5-Set-IntSpan>=0:${PORTSDIR}/math/p5-Set-IntSpan \
+		p5-XML-LibXML-Simple>=0:${PORTSDIR}/textproc/p5-XML-LibXML-Simple \
+		p5-Sys-SigAction>=0:${PORTSDIR}/devel/p5-Sys-SigAction \
+		p5-forks>=0:${PORTSDIR}/devel/p5-forks \
+		p5-Proc-ProcessTable>=0:${PORTSDIR}/devel/p5-Proc-ProcessTable \
+		ImageMagick>=0:${PORTSDIR}/graphics/ImageMagick \
+		p5-Goo-Canvas>=0:${PORTSDIR}/devel/p5-Goo-Canvas \
+		p5-Pango>=0:${PORTSDIR}/x11-toolkits/p5-Pango \
+		p5-Acme-Damn>=0:${PORTSDIR}/devel/p5-Acme-Damn \
+		p5-Devel-Symdump>=0:${PORTSDIR}/devel/p5-Devel-Symdump \
+		p5-Glib2>=0:${PORTSDIR}/devel/p5-Glib2 \
+		p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
 		p5-Locale-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
 		p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General \
 		cjb2:${PORTSDIR}/graphics/djvulibre \
@@ -47,7 +47,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Test/Perl/Critic.pm:${PORTSDIR}/textproc/p5-Test-Per
 		p5-Gtk2-ImageView>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2-ImageView \
 		bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
-RUN_DEPENDS=	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
+RUN_DEPENDS=	p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
 		p5-Locale-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
 		p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General \
 		cjb2:${PORTSDIR}/graphics/djvulibre \

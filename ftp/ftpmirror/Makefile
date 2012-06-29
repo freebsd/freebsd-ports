@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.sai.msu.su/pub/unix/FTP/mirror/
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	An utility to mirror directory hierarchy with FTP
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Socket6.pm:${PORTSDIR}/net/p5-Socket6
+RUN_DEPENDS=	p5-Socket6>=0:${PORTSDIR}/net/p5-Socket6
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

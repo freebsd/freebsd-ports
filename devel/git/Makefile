@@ -236,9 +236,9 @@ PLIST_SUB+=	PYTHON="@comment "
 .ifdef (WITH_PERL)
 USE_PERL5=	yes
 MAKE_ENV+=	PERL_PATH=${PERL}
-BUILD_DEPENDS+=	${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error
-RUN_DEPENDS+=	${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
-		${SITE_PERL}/Net/SMTP/SSL.pm:${PORTSDIR}/mail/p5-Net-SMTP-SSL
+BUILD_DEPENDS+=	p5-Error>=0:${PORTSDIR}/lang/p5-Error
+RUN_DEPENDS+=	p5-Error>=0:${PORTSDIR}/lang/p5-Error \
+		p5-Net-SMTP-SSL>=0:${PORTSDIR}/mail/p5-Net-SMTP-SSL
 MAN3=		Git.3 \
 		Git::I18N.3
 PLIST_SUB+=	PERLSUB=""
@@ -299,8 +299,8 @@ MAKE_ARGS+=	NO_TCLTK=yes
 # devel/p5-subversion if you set WITH_SUBVERSION_VER=16. Otherwise
 # devel/subversion will be brought in.
 .ifdef (WITH_SVN)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
-		${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/p5-subversion
+RUN_DEPENDS+=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
+		p5-subversion>=0:${PORTSDIR}/devel/p5-subversion
 PLIST_SUB+=	SVN=""
 MAN1+=		git-svn.1
 .else

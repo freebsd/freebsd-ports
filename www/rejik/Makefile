@@ -55,8 +55,8 @@ PLIST_SUB+=	WWW="@comment "
 .if defined(WITH_DBL)
 DISTFILES+=	dbl-2.0.tgz
 USE_PERL5_RUN=	yes
-RUN_DEPENDS+=	${SITE_PERL}/mach/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv \
-		${SITE_PERL}/mach/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
+RUN_DEPENDS+=	p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv \
+		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		wget:${PORTSDIR}/ftp/wget
 PLIST_SUB+=	DBL=""
 .else

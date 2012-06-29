@@ -15,9 +15,9 @@ MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Enable "magic dot" notation in CGI::Application-derived applications
 
 BUILD_DEPENDS=	p5-CGI-Application>=4.0:${PORTSDIR}/www/p5-CGI-Application \
-		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
-		${SITE_PERL}/HTML/Template/Plugin/Dot.pm:${PORTSDIR}/www/p5-HTML-Template-Pluggable \
-		${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Application \
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-HTML-Template-Pluggable>=0:${PORTSDIR}/www/p5-HTML-Template-Pluggable \
+		p5-CGI-Application>=0:${PORTSDIR}/www/p5-CGI-Application \
 		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

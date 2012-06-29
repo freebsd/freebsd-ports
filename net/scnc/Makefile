@@ -15,8 +15,8 @@ COMMENT=	SSL Capable Netcat
 
 LICENSE=	BSD
 
-RUN_DEPENDS=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-Socket-INET6
+RUN_DEPENDS=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
+		p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PLIST_FILES=	bin/${PORTNAME}

@@ -20,8 +20,8 @@ RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
 		rawplay:${PORTSDIR}/audio/rawrec \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		flac:${PORTSDIR}/audio/flac \
-		${SITE_PERL}/${PERL_ARCH}/Term/ReadLine/Gnu.pm:${PORTSDIR}/devel/p5-ReadLine-Gnu \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+		p5-ReadLine-Gnu>=0:${PORTSDIR}/devel/p5-ReadLine-Gnu \
+		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
 
 LICENSE=	GPLv2
 

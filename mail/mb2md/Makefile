@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.gz
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Converts mbox mailboxes to Maildir
 
-RUN_DEPENDS=	${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate
+RUN_DEPENDS=	p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate
 
 EXTRACT_CMD=	${GZIP_CMD} -cd
 EXTRACT_AFTER_ARGS=	> ${WRKDIR}/${PORTNAME}

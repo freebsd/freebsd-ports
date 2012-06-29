@@ -18,7 +18,7 @@ COMMENT=	A Sledge plug-in that automatically calls Data::Dumper
 BUILD_DEPENDS=	${PM_DEPENDS}
 RUN_DEPENDS=	${PM_DEPENDS}
 
-PM_DEPENDS=	${SITE_PERL}/Sledge.pm:${PORTSDIR}/www/p5-Sledge
+PM_DEPENDS=	p5-Sledge>=0:${PORTSDIR}/www/p5-Sledge
 
 PERL_CONFIGURE=	yes
 

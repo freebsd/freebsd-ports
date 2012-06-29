@@ -15,14 +15,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Perl interface to the GooCanvas
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Cairo.pm:${PORTSDIR}/graphics/p5-Cairo \
-		${SITE_PERL}/${PERL_ARCH}/Glib.pm:${PORTSDIR}/devel/p5-Glib2 \
-		${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2
+BUILD_DEPENDS=	p5-Cairo>=0:${PORTSDIR}/graphics/p5-Cairo \
+		p5-Glib2>=0:${PORTSDIR}/devel/p5-Glib2 \
+		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
 LIB_DEPENDS=	goocanvas.3:${PORTSDIR}/graphics/goocanvas \
 		gdk_pixbuf_xlib.2:${PORTSDIR}/graphics/gdk-pixbuf
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Cairo.pm:${PORTSDIR}/graphics/p5-Cairo \
-		${SITE_PERL}/${PERL_ARCH}/Glib.pm:${PORTSDIR}/devel/p5-Glib2 \
-		${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2
+RUN_DEPENDS=	p5-Cairo>=0:${PORTSDIR}/graphics/p5-Cairo \
+		p5-Glib2>=0:${PORTSDIR}/devel/p5-Glib2 \
+		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
 
 MAKE_JOBS_UNSAFE=	yes
 

@@ -18,7 +18,7 @@ COMMENT=	Greylist Policy Service for postfix
 
 LIB_DEPENDS=	dbi.1:${PORTSDIR}/databases/libdbi
 RUN_DEPENDS=	${LOCALBASE}/lib/dbd:${PORTSDIR}/databases/libdbi-drivers \
-		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 
 SCRIPT_FILES=	gps-maintain.pl gps-db-update.pl
 PLIST_FILES=	etc/gps.conf-dist libexec/gps libexec/gps-maintain.pl libexec/gps-db-update.pl

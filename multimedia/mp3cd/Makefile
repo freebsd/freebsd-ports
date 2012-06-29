@@ -14,7 +14,7 @@ MASTER_SITES=	http://outflux.net/software/pkgs/mp3cd/download/
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Perl script that burns MP3 to audio CDs
 
-BUILD_DEPENDS=	${SITE_PERL}/Config/Simple.pm:${PORTSDIR}/devel/p5-Config-Simple
+BUILD_DEPENDS=	p5-Config-Simple>=0:${PORTSDIR}/devel/p5-Config-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes

@@ -15,10 +15,10 @@ MASTER_SITE_SUBDIR=	WWW/MACKERS
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Send SMS messages via the websites of Irish mobile operators
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay \
-		${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		${SITE_PERL}/Lingua/EN/Squeeze.pm:${PORTSDIR}/textproc/p5-Lingua-EN-Squeeze \
-		${SITE_PERL}/TestGen4Web/Runner.pm:${PORTSDIR}/www/p5-TestGen4Web-Runner
+BUILD_DEPENDS=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
+		p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
+		p5-Lingua-EN-Squeeze>=0:${PORTSDIR}/textproc/p5-Lingua-EN-Squeeze \
+		p5-TestGen4Web-Runner>=0:${PORTSDIR}/www/p5-TestGen4Web-Runner
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

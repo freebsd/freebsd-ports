@@ -20,7 +20,7 @@ LICENSE_FILE=	${WRKSRC}/files/LICENSE
 OPTIONS=	LSOF "Use LSOF" on \
 		NMAP "Use NMAP" off
 
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
+RUN_DEPENDS+=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
 		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
 USE_PERL5=	yes
