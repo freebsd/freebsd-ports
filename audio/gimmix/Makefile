@@ -21,7 +21,7 @@ LIB_DEPENDS=	mpd.4:${PORTSDIR}/audio/libmpd \
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFIEN=	NLS
+OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 
