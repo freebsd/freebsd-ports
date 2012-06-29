@@ -24,7 +24,7 @@ PERL_MODBUILD=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_CONFIG)
-BUILD_DEPENDS+=	${SITE_PERL}/SVN/Notify/Config.pm:${PORTSDIR}/devel/p5-SVN-Notify-Config
+BUILD_DEPENDS+=	p5-SVN-Notify-Config>=0:${PORTSDIR}/devel/p5-SVN-Notify-Config
 .endif
 
 MAN3=		SVN::Notify::Snapshot.3 SVN::Notify::Snapshot::ConfigData.3

@@ -15,12 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Perl interface to Amazon Alexa Site Thumbnail web service
 
-RUN_DEPENDS=	${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
-		${SITE_PERL}/Digest/HMAC_SHA1.pm:${PORTSDIR}/security/p5-Digest-HMAC \
-		${SITE_PERL}/URI/QueryParam.pm:${PORTSDIR}/net/p5-URI \
+RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
-		${SITE_PERL}/XML/XPath.pm:${PORTSDIR}/textproc/p5-XML-XPath
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-XML-XPath>=0:${PORTSDIR}/textproc/p5-XML-XPath
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes

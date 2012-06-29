@@ -15,9 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	OO API for accessing the Amazon Simple Queue Service
 
-BUILD_DEPENDS=	${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
-		${SITE_PERL}/Digest/HMAC_SHA1.pm:${PORTSDIR}/security/p5-Digest-HMAC \
-		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
+BUILD_DEPENDS=	p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
+		p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Perl extension to manipulate SVN Access files
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Base.pm:${PORTSDIR}/devel/p5-subversion \
+BUILD_DEPENDS=	p5-subversion>=0:${PORTSDIR}/devel/p5-subversion \
 		p5-Tie-IxHash>=1.21:${PORTSDIR}/devel/p5-Tie-IxHash
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Base.pm:${PORTSDIR}/devel/p5-subversion \
+RUN_DEPENDS=	p5-subversion>=0:${PORTSDIR}/devel/p5-subversion \
 		p5-Tie-IxHash>=1.21:${PORTSDIR}/devel/p5-Tie-IxHash
 
 PERL_CONFIGURE=	yes
