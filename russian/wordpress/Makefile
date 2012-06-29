@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	3.4
+PORTVERSION=	3.4.1
 CATEGORIES=	russian www
 MASTER_SITES=	http://ru.wordpress.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-ru_RU
