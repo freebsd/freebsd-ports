@@ -14,8 +14,8 @@ MASTER_SITES=	http://freebsdcluster.org/~mich/software/
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A Web-based graphical ping log
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+RUN_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
+		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
 
 USE_PERL5=	5.8.0+
 USE_BZIP2=	yes

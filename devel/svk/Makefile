@@ -16,23 +16,23 @@ DISTNAME=	SVK-v${PORTVERSION}
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	A Distributed Version Control System
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-List-MoreUtils \
-		${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/p5-subversion \
-		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
-		${SITE_PERL}/Algorithm/Annotate.pm:${PORTSDIR}/devel/p5-Algorithm-Annotate \
-		${SITE_PERL}/App/CLI.pm:${PORTSDIR}/devel/p5-App-CLI \
-		${SITE_PERL}/Class/Accessor/Fast.pm:${PORTSDIR}/devel/p5-Class-Accessor \
-		${SITE_PERL}/Class/Data/Inheritable.pm:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
-		${SITE_PERL}/FreezeThaw.pm:${PORTSDIR}/devel/p5-FreezeThaw \
-		${SITE_PERL}/IO/Digest.pm:${PORTSDIR}/devel/p5-IO-Digest \
-		${SITE_PERL}/IO/Pager.pm:${PORTSDIR}/devel/p5-IO-Pager \
-		${SITE_PERL}/Log/Log4perl.pm:${PORTSDIR}/devel/p5-Log-Log4perl \
-		${SITE_PERL}/Pod/Escapes.pm:${PORTSDIR}/textproc/p5-Pod-Escapes \
-		${SITE_PERL}/Pod/Simple.pm:${PORTSDIR}/textproc/p5-Pod-Simple \
-		${SITE_PERL}/Regexp/Shellish.pm:${PORTSDIR}/devel/p5-Regexp-Shellish \
-		${SITE_PERL}/SVN/Mirror.pm:${PORTSDIR}/devel/p5-SVN-Mirror \
-		${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-require \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
+BUILD_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-subversion>=0:${PORTSDIR}/devel/p5-subversion \
+		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
+		p5-Algorithm-Annotate>=0:${PORTSDIR}/devel/p5-Algorithm-Annotate \
+		p5-App-CLI>=0:${PORTSDIR}/devel/p5-App-CLI \
+		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
+		p5-FreezeThaw>=0:${PORTSDIR}/devel/p5-FreezeThaw \
+		p5-IO-Digest>=0:${PORTSDIR}/devel/p5-IO-Digest \
+		p5-IO-Pager>=0:${PORTSDIR}/devel/p5-IO-Pager \
+		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
+		p5-Pod-Escapes>=0:${PORTSDIR}/textproc/p5-Pod-Escapes \
+		p5-Pod-Simple>=0:${PORTSDIR}/textproc/p5-Pod-Simple \
+		p5-Regexp-Shellish>=0:${PORTSDIR}/devel/p5-Regexp-Shellish \
+		p5-SVN-Mirror>=0:${PORTSDIR}/devel/p5-SVN-Mirror \
+		p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-Algorithm-Diff>=1.1901:${PORTSDIR}/devel/p5-Algorithm-Diff \
 		p5-Class-Autouse>=1.15:${PORTSDIR}/devel/p5-Class-Autouse \
 		p5-Data-Hierarchy>=0.30:${PORTSDIR}/devel/p5-Data-Hierarchy \

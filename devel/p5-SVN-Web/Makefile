@@ -16,14 +16,14 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Subversion repository web frontend
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/p5-subversion \
-		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
-		${SITE_PERL}/Locale/Maketext/Simple.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
-		${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff \
-		${SITE_PERL}/XML/RSS.pm:${PORTSDIR}/textproc/p5-XML-RSS \
-		${SITE_PERL}/XML/RSS/Parser.pm:${PORTSDIR}/textproc/p5-XML-RSS-Parser \
-		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
-		${SITE_PERL}/Time/Zone.pm:${PORTSDIR}/devel/p5-TimeDate \
+RUN_DEPENDS=	p5-subversion>=0:${PORTSDIR}/devel/p5-subversion \
+		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
+		p5-Locale-Maketext-Simple>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
+		p5-Text-Diff>=0:${PORTSDIR}/textproc/p5-Text-Diff \
+		p5-XML-RSS>=0:${PORTSDIR}/textproc/p5-XML-RSS \
+		p5-XML-RSS-Parser>=0:${PORTSDIR}/textproc/p5-XML-RSS-Parser \
+		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
+		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
 		p5-Cache-Cache>=0:${PORTSDIR}/devel/p5-Cache-Cache \
 		p5-Exception-Class>=1.22:${PORTSDIR}/devel/p5-Exception-Class \
 		p5-HTTP-Server-Simple>=0:${PORTSDIR}/www/p5-HTTP-Server-Simple \
@@ -35,9 +35,9 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/p5-subversi
 		p5-Text-Diff-HTML>=0:${PORTSDIR}/textproc/p5-Text-Diff-HTML \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
 BUILD_DEPENDS:=	${RUN_DEPENDS} \
-		${SITE_PERL}/Test/Benchmark.pm:${PORTSDIR}/devel/p5-Test-Benchmark \
-		${SITE_PERL}/Test/HTML/Tidy.pm:${PORTSDIR}/devel/p5-Test-HTML-Tidy \
-		${SITE_PERL}/Test/WWW/Mechanize.pm:${PORTSDIR}/devel/p5-Test-WWW-Mechanize
+		p5-Test-Benchmark>=0:${PORTSDIR}/devel/p5-Test-Benchmark \
+		p5-Test-HTML-Tidy>=0:${PORTSDIR}/devel/p5-Test-HTML-Tidy \
+		p5-Test-WWW-Mechanize>=0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize
 
 PERL_MODBUILD=	yes
 CONFIGURE_ARGS=	--skip_questions

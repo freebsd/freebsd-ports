@@ -16,7 +16,7 @@ MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A scanner for open SMTP relays
 
 .if defined(WITH_GUI)
-RUN_DEPENDS=	${SITE_PERL}/mach/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
+RUN_DEPENDS=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk
 PLIST_SUB+=	WITHGUI=""
 .else
 PLIST_SUB+=	WITHGUI="@comment "

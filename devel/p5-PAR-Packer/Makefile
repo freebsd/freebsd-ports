@@ -19,10 +19,10 @@ RUN_DEPENDS=	p5-Archive-Zip>=1.00:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress \
 		p5-Getopt-ArgvFile>=1.07:${PORTSDIR}/devel/p5-Getopt-ArgvFile \
 		p5-Module-ScanDeps>=0.96:${PORTSDIR}/devel/p5-Module-ScanDeps \
-		${SITE_PERL}/Module/Signature.pm:${PORTSDIR}/security/p5-Module-Signature \
+		p5-Module-Signature>=0:${PORTSDIR}/security/p5-Module-Signature \
 		p5-PAR-Dist>=0.22:${PORTSDIR}/devel/p5-PAR-Dist \
 		p5-PAR>=1.00.5:${PORTSDIR}/devel/p5-PAR \
-		${SITE_PERL}/B/Deobfuscate.pm:${PORTSDIR}/devel/p5-B-Deobfuscate
+		p5-B-Deobfuscate>=0:${PORTSDIR}/devel/p5-B-Deobfuscate
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 CONFLICTS=	sketchy-*

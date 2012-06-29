@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.inl.fr/download/
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	A tool to generate statistics for spamd of Mail::SpamAssassin
 
-RUN_DEPENDS=	${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip
+RUN_DEPENDS=	p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip
 
 USE_PERL5=	yes
 NO_BUILD=	yes

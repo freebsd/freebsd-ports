@@ -14,8 +14,8 @@ MASTER_SITES=	http://freebsdcluster.org/~mich/software/ \
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	An SNMP-based ARP watcher
 
-RUN_DEPENDS=	${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig \
-		${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP
+RUN_DEPENDS=	p5-AppConfig>=0:${PORTSDIR}/devel/p5-AppConfig \
+		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
 
 USE_PERL5=	YES
 NO_BUILD=	YES

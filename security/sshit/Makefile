@@ -15,9 +15,9 @@ MASTER_SITES=	http://anp.ath.cx/sshit/ \
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Checks for SSH/FTP bruteforce and blocks given IPs
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog \
-		${SITE_PERL}/IPC/Shareable.pm:${PORTSDIR}/devel/p5-IPC-Shareable \
-		${SITE_PERL}/Proc/PID/File.pm:${PORTSDIR}/devel/p5-Proc-PID-File
+RUN_DEPENDS=	p5-Unix-Syslog>=0:${PORTSDIR}/sysutils/p5-Unix-Syslog \
+		p5-IPC-Shareable>=0:${PORTSDIR}/devel/p5-IPC-Shareable \
+		p5-Proc-PID-File>=0:${PORTSDIR}/devel/p5-Proc-PID-File
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes

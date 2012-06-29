@@ -17,7 +17,7 @@ COMMENT=	GTK+ and GNOME interfaces for the .NET runtime
 
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono \
-		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
+		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
 
 LATEST_LINK=	gtk-sharp20
 USE_BZIP2=	yes

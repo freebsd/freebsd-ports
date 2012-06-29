@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	gsynaptics/21527
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	GNOME Synaptics Touchpad setting tool
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
 USE_GNOME=	lthack intlhack intltool pkgconfig gtk20 libgnome libglade2 libgnomeui
 USE_ICONV=	yes
