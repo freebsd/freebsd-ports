@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	3.1.4
-PORTREVISION=	1
+PORTVERSION=	3.2.0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v${PORTVERSION:C/\.[^\.]*$//}/  \
 		CRITICAL
@@ -55,7 +54,7 @@ CONFIGURE_ARGS+=--disable-ssl
 .endif
 
 .if defined(WITH_GPGME)
-LIB_DEPENDS+=	gpgme.19:${PORTSDIR}/security/gpgme
+LIB_DEPENDS+=	gpgme:${PORTSDIR}/security/gpgme
 RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg \
 		pinentry-gtk-2:${PORTSDIR}/security/pinentry-gtk2
 CONFIGURE_ARGS+=--enable-gpgme
@@ -64,14 +63,14 @@ CONFIGURE_ARGS+=--disable-gpgme
 .endif
 
 .if defined(WITH_COMPFACE)
-LIB_DEPENDS+=	compface.1:${PORTSDIR}/mail/faces
+LIB_DEPENDS+=	compface:${PORTSDIR}/mail/faces
 CONFIGURE_ARGS+=--enable-compface
 .else
 CONFIGURE_ARGS+=--disable-compface
 .endif
 
 .if defined(WITH_JPILOT)
-LIB_DEPENDS+=	pisock.9:${PORTSDIR}/palm/pilot-link
+LIB_DEPENDS+=	pisock:${PORTSDIR}/palm/pilot-link
 RUN_DEPENDS+=	jpilot:${PORTSDIR}/palm/jpilot
 CONFIGURE_ARGS+=--enable-jpilot
 .else
@@ -86,7 +85,7 @@ CONFIGURE_ARGS+=--disable-ldap
 .endif
 
 .if defined(WITH_GTKSPELL)
-LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
+LIB_DEPENDS+=	gtkspell:${PORTSDIR}/textproc/gtkspell
 CONFIGURE_ARGS+=--enable-gtkspell
 .else
 CONFIGURE_ARGS+=--disable-gtkspell
