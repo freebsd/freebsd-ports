@@ -404,10 +404,10 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_mogilefs_module-${NGINX_MOGILEFS_VE
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_MP4_H264}
-NGINX_H264_MODULE_VERSION=	2.2.7
+NGINX_H264_VERSION=	2.2.7
 MASTER_SITES+=	http://h264.code-shop.com/download/:mp4streaming
-DISTFILES+=	nginx_mod_h264_streaming-${NGINX_H264_MODULE_VERSION}.tar.gz:mp4streaming
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_mod_h264_streaming-${NGINX_H264_MODULE_VERSION}
+DISTFILES+=	nginx_mod_h264_streaming-${NGINX_H264_VERSION}.tar.gz:mp4streaming
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_mod_h264_streaming-${NGINX_H264_VERSION}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_streaming_module.c
 .endif
 
