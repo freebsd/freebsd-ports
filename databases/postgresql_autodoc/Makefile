@@ -14,9 +14,9 @@ DIST_SUBDIR=	postgresql
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Automatic documentation generator for postgresql databases
 
-BUILD_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
-		${SITE_PERL}/mach/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
-		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+BUILD_DEPENDS=	p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
+		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
+		p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 
 USE_GMAKE=	yes
 USE_PERL5=	yes
