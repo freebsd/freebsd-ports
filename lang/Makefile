@@ -57,6 +57,7 @@
     SUBDIR += eperl
     SUBDIR += erlang
     SUBDIR += erlang-lite
+    SUBDIR += erlang14
     SUBDIR += etoile-compiler
     SUBDIR += etoile-io
     SUBDIR += etoile-languagekit
