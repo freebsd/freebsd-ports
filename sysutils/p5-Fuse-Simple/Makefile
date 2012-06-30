@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Simple way to write filesystems in Perl using FUSE
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Fuse.pm:${PORTSDIR}/sysutils/p5-Fuse
+RUN_DEPENDS=	p5-Fuse>=0:${PORTSDIR}/sysutils/p5-Fuse
 
 PERL_CONFIGURE=	yes
 

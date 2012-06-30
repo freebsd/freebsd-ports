@@ -15,9 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Perl interface to the Yahoo! Browser-Based Authentication
 
-RUN_DEPENDS=	${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
-		${SITE_PERL}/JSON.pm:${PORTSDIR}/converters/p5-JSON \
-		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 PERL_CONFIGURE=	yes
 

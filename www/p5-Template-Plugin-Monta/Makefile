@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kaoru@kaisei.org
 COMMENT=	Template-Toolkit plugin to Monta Method
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit
+BUILD_DEPENDS=	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
-		${SITE_PERL}/Acme/Monta.pm:${PORTSDIR}/www/p5-Acme-Monta
+		p5-Acme-Monta>=0:${PORTSDIR}/www/p5-Acme-Monta
 
 PERL_CONFIGURE=	yes
 

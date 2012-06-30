@@ -36,8 +36,8 @@ CONFLICTS?=	slony1v2-2*
 .if defined(WITH_PERLTOOLS)
 USE_PERL5=	yes
 CONFIGURE_ARGS+=	--with-perltools=${LOCALBASE}/sbin
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
+BUILD_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 PLIST_SUB+=	PERLTOOLS=""
 SUB_LIST+=	PERLTOOLS=""
 .else

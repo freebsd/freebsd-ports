@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	Web-based user interface for the flow-tools NetFlow data
 
-RUN_DEPENDS=	${SITE_PERL}/GD/Graph/linespoints.pm:${PORTSDIR}/graphics/p5-GD-Graph \
+RUN_DEPENDS=	p5-GD-Graph>=0:${PORTSDIR}/graphics/p5-GD-Graph \
 		flow-cat:${PORTSDIR}/net-mgmt/flow-tools
 
 .ifndef WITHOUT_WWWDIR

@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Geometry related functions
 
-RUN_DEPENDS=	${SITE_PERL}/Math/Matrix.pm:${PORTSDIR}/math/p5-Math-Matrix
+RUN_DEPENDS=	p5-Math-Matrix>=0:${PORTSDIR}/math/p5-Math-Matrix
 
 PERL_CONFIGURE=	yes
 

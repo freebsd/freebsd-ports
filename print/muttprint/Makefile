@@ -24,8 +24,8 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		psnup:${PORTSDIR}/print/psutils-${PAPERSIZE} \
 		uncompface:${PORTSDIR}/mail/faces \
 		convert:${PORTSDIR}/graphics/ImageMagick \
-		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
-		${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv
+		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
+		p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv
 .if defined(WITH_CUPS)
 RUN_DEPENDS+=	cupstestppd:${PORTSDIR}/print/cups-base \
 		espgs:${PORTSDIR}/print/cups-pstoraster

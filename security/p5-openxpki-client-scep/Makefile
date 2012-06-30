@@ -17,9 +17,9 @@ MAINTAINER=	svysh@pn.sinp.msu.ru
 COMMENT=	Client for SCEP requests to openxpki server
 
 BUILD_DEPENDS=	\
-	${SITE_PERL}/Config/Std.pm:${PORTSDIR}/devel/p5-Config-Std \
-	${SITE_PERL}/OpenXPKI/Client.pm:${PORTSDIR}/security/p5-openxpki-client \
-	${SITE_PERL}/${PERL_ARCH}/NetAddr/IP.pm:${PORTSDIR}/net-mgmt/p5-NetAddr-IP
+	p5-Config-Std>=0:${PORTSDIR}/devel/p5-Config-Std \
+	p5-openxpki-client>=0:${PORTSDIR}/security/p5-openxpki-client \
+	p5-NetAddr-IP>=0:${PORTSDIR}/net-mgmt/p5-NetAddr-IP
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	OpenXPKI::Client::SCEP.3

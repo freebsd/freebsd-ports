@@ -15,8 +15,8 @@ MAINTAINER=	svysh@pn.sinp.msu.ru
 COMMENT=	Page numbering and spread pagination
 
 BUILD_DEPENDS=	\
-	${SITE_PERL}/Data/Page.pm:${PORTSDIR}/databases/p5-Data-Page \
-	${SITE_PERL}/Math/Round.pm:${PORTSDIR}/math/p5-Math-Round
+	p5-Data-Page>=0:${PORTSDIR}/databases/p5-Data-Page \
+	p5-Math-Round>=0:${PORTSDIR}/math/p5-Math-Round
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

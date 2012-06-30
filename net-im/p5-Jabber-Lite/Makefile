@@ -15,9 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Standalone library for communicating with Jabber servers
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
-		${SITE_PERL}/Authen/SASL.pm:${PORTSDIR}/security/p5-Authen-SASL \
-		${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
+RUN_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
+		p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL \
+		p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL
 
 PERL_CONFIGURE=	yes
 

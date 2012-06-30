@@ -15,10 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kaoru@kaisei.org
 COMMENT=	Perl module for check URI
 
-RUN_DEPENDS=	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI	\
-		${SITE_PERL}/Test/Builder/Tester.pm:${PORTSDIR}/devel/p5-Test-Simple
-BUILD_DEPENDS=	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI	\
-		${SITE_PERL}/Test/Builder/Tester.pm:${PORTSDIR}/devel/p5-Test-Simple
+RUN_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI	\
+		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
+BUILD_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI	\
+		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	yes
 

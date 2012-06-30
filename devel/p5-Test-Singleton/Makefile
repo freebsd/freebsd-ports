@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Test for Singleton classes
 
-RUN_DEPENDS=	${SITE_PERL}/Class/Singleton.pm:${PORTSDIR}/devel/p5-Class-Singleton \
-		${SITE_PERL}/Test/Builder/Tester.pm:${PORTSDIR}/devel/p5-Test-Simple
+RUN_DEPENDS=	p5-Class-Singleton>=0:${PORTSDIR}/devel/p5-Class-Singleton \
+		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes

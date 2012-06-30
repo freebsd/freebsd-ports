@@ -18,14 +18,13 @@ COMMENT=	Event Based High Performance Web Crawler Framework
 DEPRECATED=	Removed from CPAN
 EXPIRATION_DATE=	2012-05-11
 
-BUILD_DEPENDS=	${SITE_PERL}/Cache/Cache.pm:${PORTSDIR}/devel/p5-Cache-Cache \
-		${SITE_PERL}/HTTP/Request.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/HTTP/Response.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Log/Dispatch.pm:${PORTSDIR}/devel/p5-Log-Dispatch \
-		${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
-		${SITE_PERL}/POE/Component/Client/DNS.pm:${PORTSDIR}/dns/p5-POE-Component-Client-DNS \
-		${SITE_PERL}/POE/Component/Client/HTTP.pm:${PORTSDIR}/www/p5-POE-Component-Client-HTTP \
-		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
+BUILD_DEPENDS=	p5-Cache-Cache>=0:${PORTSDIR}/devel/p5-Cache-Cache \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-Log-Dispatch>=0:${PORTSDIR}/devel/p5-Log-Dispatch \
+		p5-POE>=0:${PORTSDIR}/devel/p5-POE \
+		p5-POE-Component-Client-DNS>=0:${PORTSDIR}/dns/p5-POE-Component-Client-DNS \
+		p5-POE-Component-Client-HTTP>=0:${PORTSDIR}/www/p5-POE-Component-Client-HTTP \
+		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes

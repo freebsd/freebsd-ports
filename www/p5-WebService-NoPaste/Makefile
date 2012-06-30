@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	A pastebin web application to upload snippets of text
 
-BUILD_DEPENDS=	${SITE_PERL}/IO/All.pm:${PORTSDIR}/devel/p5-IO-All \
-		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Spiffy.pm:${PORTSDIR}/devel/p5-Spiffy
+BUILD_DEPENDS=	p5-IO-All>=0:${PORTSDIR}/devel/p5-IO-All \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-Spiffy>=0:${PORTSDIR}/devel/p5-Spiffy
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -28,7 +28,7 @@ OPTIONS=	X11	"Enable X11 Clipboard support"	off
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_X11)
-BUILD_DEPENDS+=	${SITE_PERL}/Clipboard.pm:${PORTSDIR}/x11/p5-Clipboard
+BUILD_DEPENDS+=	p5-Clipboard>=0:${PORTSDIR}/x11/p5-Clipboard
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-lib-WebService-NoPaste.pm
 .endif
