@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	cm@therek.net
 COMMENT=	Perl5 module for building, finding and using wxWidgets binaries
 
-BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/CBuilder.pm:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
+BUILD_DEPENDS=	p5-ExtUtils-CBuilder>=0:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
 
 OPTIONS=	UNICODE "Build with Unicode support"    on
 
@@ -26,7 +26,7 @@ PERL_MODBUILD=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500809
-BUILD_DEPENDS+=	${SITE_PERL}/Module/Pluggable.pm:${PORTSDIR}/devel/p5-Module-Pluggable
+BUILD_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
 .endif
 
 .if defined(WITH_UNICODE)

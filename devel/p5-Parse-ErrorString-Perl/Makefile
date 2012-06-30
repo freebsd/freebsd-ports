@@ -15,9 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	cm@therek.net
 COMMENT=	Parse error messages from the Perl interpreter
 
-BUILD_DEPENDS=	${SITE_PERL}/Pod/POM.pm:${PORTSDIR}/textproc/p5-Pod-POM \
-		${SITE_PERL}/Test/Differences.pm:${PORTSDIR}/devel/p5-Test-Differences \
-		${SITE_PERL}/${PERL_ARCH}/Class/XSAccessor.pm:${PORTSDIR}/devel/p5-Class-XSAccessor
+BUILD_DEPENDS=	p5-Pod-POM>=0:${PORTSDIR}/textproc/p5-Pod-POM \
+		p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
+		p5-Class-XSAccessor>=0:${PORTSDIR}/devel/p5-Class-XSAccessor
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
