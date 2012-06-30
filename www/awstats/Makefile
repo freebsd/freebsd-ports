@@ -15,7 +15,7 @@ MASTER_SITES=	SF/${PORTNAME}/AWStats/${PORTVERSION}
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	Free real-time logfile analyzer to get advanced web statistics
 
-RUN_DEPENDS=	${SITE_PERL}/Net/XWhois.pm:${PORTSDIR}/net/p5-Net-XWhois
+RUN_DEPENDS=	p5-Net-XWhois>=0:${PORTSDIR}/net/p5-Net-XWhois
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/LICENSE.TXT
@@ -42,12 +42,12 @@ OPTIONS=	IPV6 "Enable IPV6 for use with IPv6 Plugin" Off
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_IPV6)
-RUN_DEPENDS+=	${SITE_PERL}/Net/IP.pm:${PORTSDIR}/net-mgmt/p5-Net-IP
-RUN_DEPENDS+=	${SITE_PERL}/mach/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
+RUN_DEPENDS+=	p5-Net-IP>=0:${PORTSDIR}/net-mgmt/p5-Net-IP
+RUN_DEPENDS+=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
 .endif
 
 .if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
+RUN_DEPENDS+=	p5-Storable>=0:${PORTSDIR}/devel/p5-Storable
 .endif
 
 post-patch:

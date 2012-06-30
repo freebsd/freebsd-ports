@@ -17,9 +17,9 @@ MAINTAINER=	svysh@pn.sinp.msu.ru
 COMMENT=	Web interface for local openxpki daemon
 
 BUILD_DEPENDS=	\
-	${SITE_PERL}/OpenXPKI/Client.pm:${PORTSDIR}/security/p5-openxpki-client \
-	${SITE_PERL}/Apache/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason \
-	${SITE_PERL}/Data/SpreadPagination.pm:${PORTSDIR}/textproc/p5-Data-SpreadPagination
+	p5-openxpki-client>=0:${PORTSDIR}/security/p5-openxpki-client \
+	p5-HTML-Mason>=0:${PORTSDIR}/www/p5-HTML-Mason \
+	p5-Data-SpreadPagination>=0:${PORTSDIR}/textproc/p5-Data-SpreadPagination
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	OpenXPKI::Client::HTML::Mason.3 \

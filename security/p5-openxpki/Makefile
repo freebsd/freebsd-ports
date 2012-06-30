@@ -19,29 +19,29 @@ COMMENT=	Perl based trustcenter software for PKI: core for server
 
 BUILD_DEPENDS=	\
 	p5-Workflow>=0.31:${PORTSDIR}/devel/p5-Workflow \
-	${SITE_PERL}/CGI/Session.pm:${PORTSDIR}/www/p5-CGI-Session \
-	${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
-	${SITE_PERL}/Locale/Recode.pm:${PORTSDIR}/devel/p5-Locale-libintl \
-	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
-	${SITE_PERL}/Regexp/Common.pm:${PORTSDIR}/textproc/p5-Regexp-Common \
-	${SITE_PERL}/${PERL_ARCH}/Text/CSV_XS.pm:${PORTSDIR}/textproc/p5-Text-CSV_XS \
-	${SITE_PERL}/XML/Filter/XInclude.pm:${PORTSDIR}/textproc/p5-XML-Filter-XInclude \
-	${SITE_PERL}/XML/SAX/Writer.pm:${PORTSDIR}/textproc/p5-XML-SAX-Writer \
-	${SITE_PERL}/XML/Validator/Schema.pm:${PORTSDIR}/textproc/p5-XML-Validator-Schema \
-	${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
-	${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod \
-	${SITE_PERL}/Test/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
-	${SITE_PERL}/Net/IP.pm:${PORTSDIR}/net-mgmt/p5-Net-IP \
-	${SITE_PERL}/Class/Std.pm:${PORTSDIR}/devel/p5-Class-Std \
-	${SITE_PERL}/Mail/RFC822/Address.pm:${PORTSDIR}/mail/p5-Mail-RFC822-Address \
-	${SITE_PERL}/${PERL_ARCH}/Proc/ProcessTable.pm:${PORTSDIR}/devel/p5-Proc-ProcessTable \
-	${SITE_PERL}/Sys/SigAction.pm:${PORTSDIR}/devel/p5-Sys-SigAction \
-	${SITE_PERL}/Data/Password.pm:${PORTSDIR}/security/p5-Data-Password \
-	${SITE_PERL}/RT/Client/REST.pm:${PORTSDIR}/www/p5-RT-Client-REST \
-	${SITE_PERL}/Data/Serializer.pm:${PORTSDIR}/devel/p5-Data-Serializer \
-	${SITE_PERL}/${PERL_ARCH}/IPC/ShareLite.pm:${PORTSDIR}/devel/p5-IPC-ShareLite \
-	${SITE_PERL}/DateTime/Format/DateParse.pm:${PORTSDIR}/devel/p5-DateTime-Format-DateParse \
-	${SITE_PERL}/IO/Prompt.pm:${PORTSDIR}/devel/p5-IO-Prompt
+	p5-CGI-Session>=0:${PORTSDIR}/www/p5-CGI-Session \
+	p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
+	p5-Locale-libintl>=0:${PORTSDIR}/devel/p5-Locale-libintl \
+	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap \
+	p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common \
+	p5-Text-CSV_XS>=0:${PORTSDIR}/textproc/p5-Text-CSV_XS \
+	p5-XML-Filter-XInclude>=0:${PORTSDIR}/textproc/p5-XML-Filter-XInclude \
+	p5-XML-SAX-Writer>=0:${PORTSDIR}/textproc/p5-XML-SAX-Writer \
+	p5-XML-Validator-Schema>=0:${PORTSDIR}/textproc/p5-XML-Validator-Schema \
+	p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
+	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
+	p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
+	p5-Net-IP>=0:${PORTSDIR}/net-mgmt/p5-Net-IP \
+	p5-Class-Std>=0:${PORTSDIR}/devel/p5-Class-Std \
+	p5-Mail-RFC822-Address>=0:${PORTSDIR}/mail/p5-Mail-RFC822-Address \
+	p5-Proc-ProcessTable>=0:${PORTSDIR}/devel/p5-Proc-ProcessTable \
+	p5-Sys-SigAction>=0:${PORTSDIR}/devel/p5-Sys-SigAction \
+	p5-Data-Password>=0:${PORTSDIR}/security/p5-Data-Password \
+	p5-RT-Client-REST>=0:${PORTSDIR}/www/p5-RT-Client-REST \
+	p5-Data-Serializer>=0:${PORTSDIR}/devel/p5-Data-Serializer \
+	p5-IPC-ShareLite>=0:${PORTSDIR}/devel/p5-IPC-ShareLite \
+	p5-DateTime-Format-DateParse>=0:${PORTSDIR}/devel/p5-DateTime-Format-DateParse \
+	p5-IO-Prompt>=0:${PORTSDIR}/devel/p5-IO-Prompt
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	OpenXPKI.3 \

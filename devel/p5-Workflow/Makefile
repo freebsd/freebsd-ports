@@ -14,34 +14,34 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	svysh@pn.sinp.msu.ru
 COMMENT=	Simple, flexible system to implement workflows
 
-RUN_DEPENDS=	${SITE_PERL}/Class/Observable.pm:${PORTSDIR}/devel/p5-Class-Observable \
-		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
-		${SITE_PERL}/DBD/Mock.pm:${PORTSDIR}/databases/p5-DBD-Mock \
-		${SITE_PERL}/Class/Factory.pm:${PORTSDIR}/devel/p5-Class-Factory \
-		${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
-		${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
-		${SITE_PERL}/DateTime/Format/Strptime.pm:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
-		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
-		${SITE_PERL}/Log/Dispatch.pm:${PORTSDIR}/devel/p5-Log-Dispatch \
-		${SITE_PERL}/Log/Log4perl.pm:${PORTSDIR}/devel/p5-Log-Log4perl \
-		${SITE_PERL}/${PERL_ARCH}/Data/UUID.pm:${PORTSDIR}/devel/p5-Data-UUID \
-		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
-		${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp
-BUILD_DEPENDS=	${SITE_PERL}/Class/Observable.pm:${PORTSDIR}/devel/p5-Class-Observable \
-		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
-		${SITE_PERL}/DBD/Mock.pm:${PORTSDIR}/databases/p5-DBD-Mock \
-		${SITE_PERL}/Class/Factory.pm:${PORTSDIR}/devel/p5-Class-Factory \
-		${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
-		${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
-		${SITE_PERL}/DateTime/Format/Strptime.pm:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
-		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
-		${SITE_PERL}/Log/Dispatch.pm:${PORTSDIR}/devel/p5-Log-Dispatch \
-		${SITE_PERL}/Log/Log4perl.pm:${PORTSDIR}/devel/p5-Log-Log4perl \
-		${SITE_PERL}/${PERL_ARCH}/Data/UUID.pm:${PORTSDIR}/devel/p5-Data-UUID \
-		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
-		${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp
+RUN_DEPENDS=	p5-Class-Observable>=0:${PORTSDIR}/devel/p5-Class-Observable \
+		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-DBD-Mock>=0:${PORTSDIR}/databases/p5-DBD-Mock \
+		p5-Class-Factory>=0:${PORTSDIR}/devel/p5-Class-Factory \
+		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
+		p5-Exception-Class>=0:${PORTSDIR}/devel/p5-Exception-Class \
+		p5-DateTime-Format-Strptime>=0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
+		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
+		p5-Log-Dispatch>=0:${PORTSDIR}/devel/p5-Log-Dispatch \
+		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
+		p5-Data-UUID>=0:${PORTSDIR}/devel/p5-Data-UUID \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
+BUILD_DEPENDS=	p5-Class-Observable>=0:${PORTSDIR}/devel/p5-Class-Observable \
+		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-DBD-Mock>=0:${PORTSDIR}/databases/p5-DBD-Mock \
+		p5-Class-Factory>=0:${PORTSDIR}/devel/p5-Class-Factory \
+		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
+		p5-Exception-Class>=0:${PORTSDIR}/devel/p5-Exception-Class \
+		p5-DateTime-Format-Strptime>=0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
+		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
+		p5-Log-Dispatch>=0:${PORTSDIR}/devel/p5-Log-Dispatch \
+		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
+		p5-Data-UUID>=0:${PORTSDIR}/devel/p5-Data-UUID \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
 
 PERL_CONFIGURE=	yes
 

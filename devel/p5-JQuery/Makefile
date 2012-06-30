@@ -16,11 +16,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Interface to Jquery, a language based on Javascript
 
-RUN_DEPENDS=	${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Application \
-		${SITE_PERL}/CSS.pm:${PORTSDIR}/textproc/p5-CSS \
-		${SITE_PERL}/HTML/Table.pm:${PORTSDIR}/www/p5-HTML-Table \
-		${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
-		${SITE_PERL}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer
+RUN_DEPENDS=	p5-CGI-Application>=0:${PORTSDIR}/www/p5-CGI-Application \
+		p5-CSS>=0:${PORTSDIR}/textproc/p5-CSS \
+		p5-HTML-Table>=0:${PORTSDIR}/www/p5-HTML-Table \
+		p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
+		p5-XML-Writer>=0:${PORTSDIR}/textproc/p5-XML-Writer
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes

@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	File::Find::Rule adapted to Filesys::Virtual
 
-RUN_DEPENDS=	${SITE_PERL}/File/Find/Rule.pm:${PORTSDIR}/devel/p5-File-Find-Rule \
-		${SITE_PERL}/Filesys/Virtual.pm:${PORTSDIR}/devel/p5-Filesys-Virtual \
-		${SITE_PERL}/Filesys/Virtual/Plain.pm:${PORTSDIR}/devel/p5-Filesys-Virtual-Plain
+RUN_DEPENDS=	p5-File-Find-Rule>=0:${PORTSDIR}/devel/p5-File-Find-Rule \
+		p5-Filesys-Virtual>=0:${PORTSDIR}/devel/p5-Filesys-Virtual \
+		p5-Filesys-Virtual-Plain>=0:${PORTSDIR}/devel/p5-Filesys-Virtual-Plain
 
 PERL_CONFIGURE=	yes
 

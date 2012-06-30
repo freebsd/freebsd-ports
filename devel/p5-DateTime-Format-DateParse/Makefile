@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	svysh@pn.sinp.msu.ru
 COMMENT=	This module is a compatibility wrapper around Date::Parse
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
-		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate
+BUILD_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
+		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate
 
 PERL_MODBUILD=	yes
 

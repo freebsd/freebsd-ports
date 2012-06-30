@@ -17,9 +17,9 @@ MAINTAINER=	svysh@pn.sinp.msu.ru
 COMMENT=	Perl based enterprise class trustcenter software for PKI
 
 BUILD_DEPENDS=	\
-	${SITE_PERL}/OpenXPKI/Client.pm:${PORTSDIR}/security/p5-openxpki-client \
-	${SITE_PERL}/Config/Std.pm:${PORTSDIR}/devel/p5-Config-Std \
-	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
+	p5-openxpki-client>=0:${PORTSDIR}/security/p5-openxpki-client \
+	p5-Config-Std>=0:${PORTSDIR}/devel/p5-Config-Std \
+	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
 	bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

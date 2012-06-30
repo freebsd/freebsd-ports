@@ -15,7 +15,7 @@ DISTNAME=	fsbackup-1.2pl1
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	File system backup and synchronization utility
 
-RUN_DEPENDS=	${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
+RUN_DEPENDS=	p5-Net>=0:${PORTSDIR}/net/p5-Net
 
 USE_PERL5=	yes
 

@@ -15,11 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	svysh@pn.sinp.msu.ru
 COMMENT=	Perl modules designed to talk to RT installation using REST protocol
 
-BUILD_DEPENDS=	${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
-		${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
-		${SITE_PERL}/HTTP/Cookies.pm:${PORTSDIR}/www/p5-libwww \
+BUILD_DEPENDS=	p5-Error>=0:${PORTSDIR}/lang/p5-Error \
+		p5-Exception-Class>=0:${PORTSDIR}/devel/p5-Exception-Class \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
-		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Get user information of Maple3-style BBS
 
-RUN_DEPENDS=	${SITE_PERL}/Expect.pm:${PORTSDIR}/lang/p5-Expect
+RUN_DEPENDS=	p5-Expect>=0:${PORTSDIR}/lang/p5-Expect
 
 PERL_CONFIGURE=	yes
 

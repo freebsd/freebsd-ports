@@ -15,10 +15,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-fix
 MAINTAINER=	mor@WhiteLuna.com
 COMMENT=	Perl5 module for handles loading and saveing of .torrent file
 
-RUN_DEPENDS=	${SITE_PERL}/Convert/Bencode.pm:${PORTSDIR}/converters/p5-Convert-Bencode \
-		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
+RUN_DEPENDS=	p5-Convert-Bencode>=0:${PORTSDIR}/converters/p5-Convert-Bencode \
+		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
 BUILD_DEPENDS:=	${RUN_DEPENDS}
-BUILD_DEPENDS+=	${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple
+BUILD_DEPENDS+=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-fix//}
 

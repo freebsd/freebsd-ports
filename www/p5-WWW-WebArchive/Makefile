@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Retrieve old versions of public web pages from various web archives
 
-RUN_DEPENDS=	${SITE_PERL}/App/Options.pm:${PORTSDIR}/devel/p5-App-Options \
-		${SITE_PERL}/App/Trace.pm:${PORTSDIR}/devel/p5-App-Trace \
-		${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize
+RUN_DEPENDS=	p5-App-Options>=0:${PORTSDIR}/devel/p5-App-Options \
+		p5-App-Trace>=0:${PORTSDIR}/devel/p5-App-Trace \
+		p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize
 
 PERL_CONFIGURE=	yes
 

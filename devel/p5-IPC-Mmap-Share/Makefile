@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Safely share structures among processes using anonymous mmap
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/IPC/Mmap.pm:${PORTSDIR}/devel/p5-IPC-Mmap
+RUN_DEPENDS=	p5-IPC-Mmap>=0:${PORTSDIR}/devel/p5-IPC-Mmap
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes

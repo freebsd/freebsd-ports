@@ -15,7 +15,7 @@ PKGNAMESUFFIX=
 
 COMMENT=		IDL compiler written in Perl
 
-RUN_DEPENDS=		${SITE_PERL}/Parse/Yapp.pm:${PORTSDIR}/devel/p5-Parse-Yapp
+RUN_DEPENDS=		p5-Parse-Yapp>=0:${PORTSDIR}/devel/p5-Parse-Yapp
 
 CONFLICTS=
 

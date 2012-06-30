@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Embedded debug statements, including call/return tracing
 
-RUN_DEPENDS=	${SITE_PERL}/App/Options.pm:${PORTSDIR}/devel/p5-App-Options
+RUN_DEPENDS=	p5-App-Options>=0:${PORTSDIR}/devel/p5-App-Options
 
 PERL_CONFIGURE=	yes
 
