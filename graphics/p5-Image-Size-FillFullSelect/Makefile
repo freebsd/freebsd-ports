@@ -15,7 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Pick whether an image fill setting for a image should be fill or full
 
-RUN_DEPENDS=	${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size
+BUILD_DEPENDS=	p5-Image-Size>=3.230:${PORTSDIR}/graphics/p5-Image-Size
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
