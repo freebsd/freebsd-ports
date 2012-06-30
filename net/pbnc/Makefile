@@ -14,7 +14,7 @@ DISTNAME=	pbnc
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Simple userspace TCP port bouncer
 
-RUN_DEPENDS=	${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net-mgmt/p5-Net-Netmask
+RUN_DEPENDS=	p5-Net-Netmask>=0:${PORTSDIR}/net-mgmt/p5-Net-Netmask
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes

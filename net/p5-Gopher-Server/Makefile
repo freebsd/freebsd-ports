@@ -15,9 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	toni.viemero@iki.fi
 COMMENT=	Backend for Gopher Servers
 
-RUN_DEPENDS=	${SITE_PERL}/Net/Gopher.pm:${PORTSDIR}/net/p5-Net-Gopher \
-				${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy \
-				${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception
+RUN_DEPENDS=	p5-Net-Gopher>=0:${PORTSDIR}/net/p5-Net-Gopher \
+				p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
+				p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes

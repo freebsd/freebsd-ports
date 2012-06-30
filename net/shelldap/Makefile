@@ -13,12 +13,12 @@ MASTER_SITES=	http://www.martini.nu/misc/
 MAINTAINER=	mahlon@martini.nu
 COMMENT=	A shell-like environment for LDAP
 
-RUN_DEPENDS=	${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff \
-		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
-		${SITE_PERL}/Term/Shell.pm:${PORTSDIR}/devel/p5-Term-Shell \
-		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
-		${SITE_PERL}/${PERL_ARCH}/Term/ReadLine/Gnu.pm:${PORTSDIR}/devel/p5-ReadLine-Gnu \
-		${SITE_PERL}/${PERL_ARCH}/YAML/Syck.pm:${PORTSDIR}/textproc/p5-YAML-Syck
+RUN_DEPENDS=	p5-Algorithm-Diff>=0:${PORTSDIR}/devel/p5-Algorithm-Diff \
+		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap \
+		p5-Term-Shell>=0:${PORTSDIR}/devel/p5-Term-Shell \
+		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
+		p5-ReadLine-Gnu>=0:${PORTSDIR}/devel/p5-ReadLine-Gnu \
+		p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck
 
 USE_PERL5=	yes
 

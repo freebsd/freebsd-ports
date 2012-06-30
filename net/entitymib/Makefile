@@ -18,8 +18,8 @@ EXTRACT_ONLY=
 MAINTAINER=	wollman@FreeBSD.org
 COMMENT=Display the Entity MIB of an SNMP agent
 
-RUN_DEPENDS=	${SITE_PERL}/Tree/DAG_Node.pm:${PORTSDIR}/devel/p5-Tree-DAG_Node \
-		${SITE_PERL}/${PERL_ARCH}/SNMP.pm:${PORTSDIR}/net-mgmt/net-snmp
+RUN_DEPENDS=	p5-Tree-DAG_Node>=0:${PORTSDIR}/devel/p5-Tree-DAG_Node \
+		net-snmp>=0:${PORTSDIR}/net-mgmt/net-snmp
 
 USE_PERL5_RUN=	yes
 MAN1=		entitymib.1

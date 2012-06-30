@@ -14,7 +14,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	Janos.Mohacsi@bsd.hu
 COMMENT=	Rude is a Real-time UDP Data Emitter and Collector (crude)
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
+RUN_DEPENDS=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	--with-debug-lvl=3

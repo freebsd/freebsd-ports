@@ -15,9 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	A Perl interface for store and retrieve files on Flickr
 
-BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Acme/Steganography/Image/Png.pm:${PORTSDIR}/graphics/p5-Acme-Steganography-Image-Png \
-		${SITE_PERL}/Flickr/Upload.pm:${PORTSDIR}/www/p5-Flickr-Upload
+BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-Acme-Steganography-Image-Png>=0:${PORTSDIR}/graphics/p5-Acme-Steganography-Image-Png \
+		p5-Flickr-Upload>=0:${PORTSDIR}/www/p5-Flickr-Upload
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes

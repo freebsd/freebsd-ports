@@ -27,7 +27,7 @@ OPTIONS=	XML "XML support" off
 .if defined(WITH_XML)
 USE_GNOME+=	libxml2
 CONFIGURE_ARGS+=--with-xml
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+RUN_DEPENDS+=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 PLIST_FILES+=	bin/freedbd-parse %%EXAMPLESDIR%%/sample_db.xml
 .endif
 
