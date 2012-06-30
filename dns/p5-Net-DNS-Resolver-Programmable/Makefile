@@ -15,8 +15,8 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	gmc@sonologic.nl
 COMMENT=	Programmable DNS resolver for off-line testing
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
-		${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version
+RUN_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
+		p5-version>=0:${PORTSDIR}/devel/p5-version
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes

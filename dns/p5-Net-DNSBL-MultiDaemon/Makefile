@@ -14,13 +14,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	greenwood.andy@gmail.com
 COMMENT=	Net::DNSBL::MultiDaemon - multi DNSBL prioritization
 
-BUILD_DEPENDS=	${SITE_PERL}/mach/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog \
-		${SITE_PERL}/Geo/IP/PurePerl.pm:${PORTSDIR}/net/p5-Geo-IP-PurePerl \
-		${SITE_PERL}/mach/NetAddr/IP.pm:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
-		${SITE_PERL}/Net/DNS/Codes.pm:${PORTSDIR}/dns/p5-Net-DNS-Codes \
-		${SITE_PERL}/mach/Net/DNS/ToolKit.pm:${PORTSDIR}/dns/p5-Net-DNS-ToolKit
+BUILD_DEPENDS=	p5-Unix-Syslog>=0:${PORTSDIR}/sysutils/p5-Unix-Syslog \
+		p5-Geo-IP-PurePerl>=0:${PORTSDIR}/net/p5-Geo-IP-PurePerl \
+		p5-NetAddr-IP>=0:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
+		p5-Net-DNS-Codes>=0:${PORTSDIR}/dns/p5-Net-DNS-Codes \
+		p5-Net-DNS-ToolKit>=0:${PORTSDIR}/dns/p5-Net-DNS-ToolKit
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
-				${SITE_PERL}/File/SafeDO.pm:${PORTSDIR}/devel/p5-File-SafeDO
+				p5-File-SafeDO>=0:${PORTSDIR}/devel/p5-File-SafeDO
 
 PERL_CONFIGURE=	yes
 
