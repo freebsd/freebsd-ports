@@ -19,7 +19,8 @@ RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-XML-RSS>=0:${PORTSDIR}/textproc/p5-XML-RSS \
 		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
 		p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
-		p5-HTTP-Lite>=0:${PORTSDIR}/www/p5-HTTP-Lite
+		p5-HTTP-Lite>=0:${PORTSDIR}/www/p5-HTTP-Lite \
+		${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
