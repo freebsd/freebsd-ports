@@ -9,6 +9,7 @@ lib/claws-mail/plugins/clamd.a
 %%NLS%%share/locale/hu/LC_MESSAGES/clamd.mo
 %%NLS%%share/locale/id_ID/LC_MESSAGES/clamd.mo
 %%NLS%%share/locale/it/LC_MESSAGES/clamd.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/clamd.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/clamd.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/clamd.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/clamd.mo

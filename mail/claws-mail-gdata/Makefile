@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gdata
-PORTVERSION=	0.3
-PORTREVISION=	1
+PORTVERSION=	0.4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -18,9 +17,9 @@ COMMENT=	Plugin providing Google Contacts in the Tab-address completion
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	claws-mail>=3.8.0:${PORTSDIR}/mail/claws-mail
+BUILD_DEPENDS=	claws-mail>=3.8.1:${PORTSDIR}/mail/claws-mail
 LIB_DEPENDS=	gdata:${PORTSDIR}/devel/libgdata
-RUN_DEPENDS=	claws-mail>=3.8.0:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.8.1:${PORTSDIR}/mail/claws-mail
 
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes

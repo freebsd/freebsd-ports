@@ -11,6 +11,7 @@ lib/claws-mail/plugins/rssyl.so
 %%NLS%%share/locale/id_ID/LC_MESSAGES/rssyl.mo
 %%NLS%%share/locale/it/LC_MESSAGES/rssyl.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/rssyl.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/rssyl.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/rssyl.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/rssyl.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/rssyl.mo
