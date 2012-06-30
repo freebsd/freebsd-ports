@@ -23,13 +23,13 @@ COMMENT=	Logfile analyse toolkit for multiple applications
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		lambda:${PORTSDIR}/math/lambda \
-		${SITE_PERL}/MIME/Tools.pm:${PORTSDIR}/mail/p5-MIME-Tools \
-		${SITE_PERL}/Time/Timezone.pm:${PORTSDIR}/devel/p5-Time-modules \
-		${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
-		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
-		${SITE_PERL}/${PERL_ARCH}/Curses.pm:${PORTSDIR}/devel/p5-Curses \
-		${SITE_PERL}/Curses/UI.pm:${PORTSDIR}/devel/p5-Curses-UI \
-		${SITE_PERL}/Locale/TextDomain.pm:${PORTSDIR}/devel/p5-Locale-libintl
+		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
+		p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules \
+		p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
+		p5-Curses>=0:${PORTSDIR}/devel/p5-Curses \
+		p5-Curses-UI>=0:${PORTSDIR}/devel/p5-Curses-UI \
+		p5-Locale-libintl>=0:${PORTSDIR}/devel/p5-Locale-libintl
 
 OPTIONS=	CHARTS "Have Charts output format" On \
 		HTML "Have HTML or DocBook output format" On \
@@ -264,7 +264,7 @@ MAN7=		lire.7
 
 .ifdef(WITH_CHARTS)
 RUN_DEPENDS+=	ploticus:${PORTSDIR}/math/ploticus-nox11
-BUILD_DEPENDS+=	${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph
+BUILD_DEPENDS+=	p5-GD-Graph>=0:${PORTSDIR}/graphics/p5-GD-Graph
 .endif
 .ifdef(WITH_HTML)
 RUN_DEPENDS+=	lynx:${PORTSDIR}/www/lynx
@@ -278,7 +278,7 @@ RUN_DEPENDS+=	epsffit:${PORTSDIR}/print/psutils-a4 \
 
 .endif
 .ifdef(WITH_EXCEL95)
-BUILD_DEPENDS+=	${SITE_PERL}/Spreadsheet/WriteExcel.pm:${PORTSDIR}/textproc/p5-Spreadsheet-WriteExcel
+BUILD_DEPENDS+=	p5-Spreadsheet-WriteExcel>=0:${PORTSDIR}/textproc/p5-Spreadsheet-WriteExcel
 .endif
 
 RUN_DEPENDS+=	${BUILD_DEPENDS}

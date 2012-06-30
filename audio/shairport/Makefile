@@ -16,12 +16,12 @@ MAINTAINER=	miks.mikelsons@gmail.com
 COMMENT=	Airtunes emulator
 
 LIB_DEPENDS=	ao.4:${PORTSDIR}/audio/libao
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
-		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
-		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/OpenSSL/RSA.pm:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${SITE_PERL}/HTTP/Request.pm:${PORTSDIR}/www/p5-HTTP-Message \
+RUN_DEPENDS=	p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64 \
+		p5-Getopt-Long>=0:${PORTSDIR}/devel/p5-Getopt-Long \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-Crypt-OpenSSL-RSA>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA \
+		p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5 \
+		p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
 		avahi-publish-service:${PORTSDIR}/net/avahi-app
 
 USE_GMAKE=	yes

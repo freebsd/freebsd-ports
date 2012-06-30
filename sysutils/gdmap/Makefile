@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	delphus@gmail.com
 COMMENT=	Graphical disk map Utility
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
 USE_GNOME=	gnomeprefix gnomehack gtk20
 USE_GMAKE=	yes

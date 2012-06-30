@@ -83,8 +83,8 @@ PLIST_SUB+=		MGMT="@comment "
 .endif
 
 .if defined(WITH_LDIRECTORD)
-RUN_DEPENDS+=		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-			${SITE_PERL}/Mail/Send.pm:${PORTSDIR}/mail/p5-Mail-Tools
+RUN_DEPENDS+=		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+			p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools
 USE_PERL5_RUN=		yes
 PLIST_SUB+=		LDIRECTORD=""
 MAN8+=			ldirectord.8

@@ -18,8 +18,8 @@ MAINTAINER=	fehlner@gmx.de
 COMMENT=	Account management and creation tool
 
 RUN_DEPENDS=	\
-    ${SITE_PERL}/Crypt/PasswdMD5.pm:${PORTSDIR}/security/p5-Crypt-PasswdMD5 \
-    ${SITE_PERL}/Crypt/RandPasswd.pm:${PORTSDIR}/security/p5-Crypt-RandPasswd
+    p5-Crypt-PasswdMD5>=0:${PORTSDIR}/security/p5-Crypt-PasswdMD5 \
+    p5-Crypt-RandPasswd>=0:${PORTSDIR}/security/p5-Crypt-RandPasswd
 
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes

@@ -14,9 +14,9 @@ PKGNAMESUFFIX=	-common
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Common components between a munin node and server
 
-BUILD_DEPENDS=	${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build \
-		${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay
+BUILD_DEPENDS=	p5-Module-Build>=0:${PORTSDIR}/devel/p5-Module-Build \
+		p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay
+RUN_DEPENDS=	p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay
 
 USE_PERL5=	yes
 USE_GMAKE=	yes

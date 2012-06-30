@@ -16,7 +16,7 @@ MAINTAINER=	mahlon@martini.nu
 COMMENT=	An object oriented perl interface to jail(2)
 
 BUILD_DEPENDS=\
-	${SITE_PERL}/Inline.pm:${PORTSDIR}/devel/p5-Inline
+	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline
 
 MAKE_JOBS_UNSAFE=	yes
 

@@ -13,16 +13,16 @@ MASTER_SITES=	http://backupme.org.ua/
 MAINTAINER=	yaroslav@berezhinskiy.org.ua
 COMMENT=	Flexible and easy backup utility
 
-RUN_DEPENDS=	${SITE_PERL}/Log/Log4perl.pm:${PORTSDIR}/devel/p5-Log-Log4perl \
-		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
-		${SITE_PERL}/Mail/Sendmail.pm:${PORTSDIR}/mail/p5-Mail-Sendmail \
-		${SITE_PERL}/mach/Filesys/Df.pm:${PORTSDIR}/sysutils/p5-Filesys-Df \
-		${SITE_PERL}/Filesys/DiskUsage.pm:${PORTSDIR}/sysutils/p5-Filesys-DiskUsage \
-		${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net \
-		${SITE_PERL}/Net/SCP/Expect.pm:${PORTSDIR}/net/p5-Net-SCP-Expect \
-		${SITE_PERL}/Net/IPv6Addr.pm:${PORTSDIR}/net-mgmt/p5-Net-IPv6Addr \
-		${SITE_PERL}/Net/Jabber.pm:${PORTSDIR}/net-im/p5-Net-Jabber \
-		${SITE_PERL}/Net/SSH.pm:${PORTSDIR}/net/p5-Net-SSH
+RUN_DEPENDS=	p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
+		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
+		p5-Mail-Sendmail>=0:${PORTSDIR}/mail/p5-Mail-Sendmail \
+		p5-Filesys-Df>=0:${PORTSDIR}/sysutils/p5-Filesys-Df \
+		p5-Filesys-DiskUsage>=0:${PORTSDIR}/sysutils/p5-Filesys-DiskUsage \
+		p5-Net>=0:${PORTSDIR}/net/p5-Net \
+		p5-Net-SCP-Expect>=0:${PORTSDIR}/net/p5-Net-SCP-Expect \
+		p5-Net-IPv6Addr>=0:${PORTSDIR}/net-mgmt/p5-Net-IPv6Addr \
+		p5-Net-Jabber>=0:${PORTSDIR}/net-im/p5-Net-Jabber \
+		p5-Net-SSH>=0:${PORTSDIR}/net/p5-Net-SSH
 
 USE_PERL5=	yes
 

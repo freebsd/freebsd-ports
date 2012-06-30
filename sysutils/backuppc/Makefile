@@ -47,10 +47,10 @@ OPTIONS=	COMPRESS_ZLIB "Perl5 interface to zlib compression library"	on \
 RUN_DEPENDS+=	p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress
 .endif
 .if defined(WITH_ARCHIVE_ZIP)
-RUN_DEPENDS+=	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip
+RUN_DEPENDS+=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip
 .endif
 .if defined(WITH_FILE_RSYNCP)
-RUN_DEPENDS+=	${SITE_PERL}/mach/File/RsyncP.pm:${PORTSDIR}/net/p5-File-RsyncP
+RUN_DEPENDS+=	p5-File-RsyncP>=0:${PORTSDIR}/net/p5-File-RsyncP
 .endif
 .if defined(WITH_SMBCLIENT)
 RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba-smbclient
@@ -59,7 +59,7 @@ RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba-smbclient
 RUN_DEPENDS+=	nmblookup:${PORTSDIR}/net/samba-nmblookup
 .endif
 .if defined(WITH_XML_RSS)
-RUN_DEPENDS+=	${SITE_PERL}/XML/RSS.pm:${PORTSDIR}/textproc/p5-XML-RSS
+RUN_DEPENDS+=	p5-XML-RSS>=0:${PORTSDIR}/textproc/p5-XML-RSS
 .endif
 
 post-patch:

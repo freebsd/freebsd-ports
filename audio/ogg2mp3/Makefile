@@ -14,7 +14,7 @@ MAINTAINER=	tobias.rehbein@web.de
 COMMENT=	Perl script that converts Ogg Vorbis files to MP3 format
 
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
-		${SITE_PERL}/String/ShellQuote.pm:${PORTSDIR}/textproc/p5-String-ShellQuote \
+		p5-String-ShellQuote>=0:${PORTSDIR}/textproc/p5-String-ShellQuote \
 		ogginfo:${PORTSDIR}/audio/vorbis-tools
 
 NO_BUILD=	yes

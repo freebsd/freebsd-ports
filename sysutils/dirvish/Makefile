@@ -15,8 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	tarkhil@over.ru
 COMMENT=	Network backup system based off of rsync
 
-RUN_DEPENDS=	${SITE_PERL}/Time/ParseDate.pm:${PORTSDIR}/devel/p5-Time-modules \
-		${SITE_PERL}/Time/Period.pm:${PORTSDIR}/devel/p5-Time-Period \
+RUN_DEPENDS=	p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules \
+		p5-Time-Period>=0:${PORTSDIR}/devel/p5-Time-Period \
 		rsync:${PORTSDIR}/net/rsync
 
 MAN5=		dirvish.conf.5

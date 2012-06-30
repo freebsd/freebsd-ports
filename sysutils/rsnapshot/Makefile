@@ -15,7 +15,7 @@ COMMENT=	Filesystem snapshot utility based on rsync(1)
 
 BUILD_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync \
-		${SITE_PERL}/${PERL_ARCH}/Lchown.pm:${PORTSDIR}/sysutils/p5-Lchown
+		p5-Lchown>=0:${PORTSDIR}/sysutils/p5-Lchown
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

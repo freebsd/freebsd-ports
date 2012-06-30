@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	darcsis@gmail.com
 COMMENT=	An alternative for replaygain
 
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
+RUN_DEPENDS+=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		wavegain:${PORTSDIR}/audio/wavegain
 
 USE_PERL5_RUN=	yes
@@ -39,7 +39,7 @@ OPTIONS=	\
 
 .if defined(WITH_GNORMALIZE_MP3)
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame \
-	${SITE_PERL}/MP3/Info.pm:${PORTSDIR}/audio/p5-MP3-Info
+	p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info
 .endif
 
 .if defined(WITH_GNORMALIZE_OGG)
@@ -64,7 +64,7 @@ RUN_DEPENDS+=	cddb.pl:${PORTSDIR}/audio/p5-CDDB_get
 .endif
 
 .if defined(WITH_GNORMALIZE_CDPLAY)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Audio/CD.pm:${PORTSDIR}/audio/p5-Audio-CD
+RUN_DEPENDS+=	p5-Audio-CD>=0:${PORTSDIR}/audio/p5-Audio-CD
 .endif
 
 .if defined(WITH_GNORMALIZE_FLAC)
