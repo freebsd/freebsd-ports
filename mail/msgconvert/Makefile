@@ -16,9 +16,9 @@ EXTRACT_SUFX=	.bz2
 MAINTAINER=	klammer@webonaut.com
 COMMENT=	Convert .MSG files to multipart MIME messages (mbox)
 
-RUN_DEPENDS=	${SITE_PERL}/OLE/Storage_Lite.pm:${PORTSDIR}/devel/p5-OLE-Storage_Lite \
-		${SITE_PERL}/MIME/Words.pm:${PORTSDIR}/mail/p5-MIME-Tools \
-		${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate
+RUN_DEPENDS=	p5-OLE-Storage_Lite>=0:${PORTSDIR}/devel/p5-OLE-Storage_Lite \
+		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
+		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

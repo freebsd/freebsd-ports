@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.chifeng.name/dist/extman/%SUBDIR%/ \
 MAINTAINER=	chifeng@gmail.com
 COMMENT=	Web interface to manage Virtual Accounts
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
+RUN_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
 
 USE_PERL5=	yes
 NO_BUILD=	yes
@@ -26,11 +26,11 @@ OPTIONS=	MySQL "Use MySQL support" On \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MySQL)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
 .if defined(WITH_LDAP)
-RUN_DEPENDS+=	${SITE_PERL}/DBD/LDAP.pm:${PORTSDIR}/databases/p5-DBD-LDAP
+RUN_DEPENDS+=	p5-DBD-LDAP>=0:${PORTSDIR}/databases/p5-DBD-LDAP
 .endif
 
 do-install:

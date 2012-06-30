@@ -13,9 +13,9 @@ MASTER_SITES=	http://www.openspf.org/blobs/
 MAINTAINER=	ports.maintainer@evilphi.com
 COMMENT=	SPF policy service for Postfix written in Perl
 
-RUN_DEPENDS=	${SITE_PERL}/Mail/SPF.pm:${PORTSDIR}/mail/p5-Mail-SPF \
+RUN_DEPENDS=	p5-Mail-SPF>=0:${PORTSDIR}/mail/p5-Mail-SPF \
 		p5-NetAddr-IP>=4:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
-		${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version
+		p5-version>=0:${PORTSDIR}/devel/p5-version
 
 USE_PERL5_RUN=	5.6.0+
 NO_BUILD=	yes

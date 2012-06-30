@@ -23,9 +23,9 @@ RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm			\
 		ocrad:${PORTSDIR}/graphics/ocrad			\
 		gifasm:${PORTSDIR}/graphics/giflib			\
 		spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin	\
-		${SITE_PERL}/MLDBM.pm:${PORTSDIR}/databases/p5-MLDBM	\
-		${SITE_PERL}/MLDBM/Sync.pm:${PORTSDIR}/databases/p5-MLDBM-Sync \
-		${SITE_PERL}/${PERL_ARCH}/String/Approx.pm:${PORTSDIR}/devel/p5-String-Approx
+		p5-MLDBM>=0:${PORTSDIR}/databases/p5-MLDBM	\
+		p5-MLDBM-Sync>=0:${PORTSDIR}/databases/p5-MLDBM-Sync \
+		p5-String-Approx>=0:${PORTSDIR}/devel/p5-String-Approx
 
 USE_PERL5=	yes
 NO_BUILD=	yes

@@ -16,10 +16,10 @@ COMMENT=	Milter based anti-spam and anti-virus filtering program
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	\
-	${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
+	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
 	p5-MIME-Tools>=5.417:${PORTSDIR}/mail/p5-MIME-Tools \
-	${SITE_PERL}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
+	p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \
+	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
 	p5-Mail-SpamAssassin>=3.0:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

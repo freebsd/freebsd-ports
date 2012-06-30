@@ -13,9 +13,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-1.8%20%28stable%29
 MAINTAINER=	chifeng@gmail.com
 COMMENT=	Greylisting policy server for Postfix using an SQL backend
 
-RUN_DEPENDS=	${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
-		${SITE_PERL}/IO/Multiplex.pm:${PORTSDIR}/devel/p5-IO-Multiplex \
-		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-Pod-Parser
+RUN_DEPENDS=	p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
+		p5-IO-Multiplex>=0:${PORTSDIR}/devel/p5-IO-Multiplex \
+		p5-Pod-Parser>=0:${PORTSDIR}/textproc/p5-Pod-Parser
 
 USE_PERL5_RUN=	yes
 USE_RC_SUBR=	sqlgrey
@@ -48,19 +48,19 @@ OPTIONS=	PGSQL "PostgreSQL backend" off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PGSQL)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
 .if defined(WITH_MYSQL)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
 .if defined(WITH_SQLITE)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
+RUN_DEPENDS+=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 .endif
 
 .if defined(WITH_STATS)
-RUN_DEPENDS+=	${SITE_PERL}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc
+RUN_DEPENDS+=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc
 .endif
 
 post-patch:

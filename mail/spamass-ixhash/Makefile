@@ -17,7 +17,7 @@ MAINTAINER=	michael@ranner.eu
 COMMENT=	The iXhash plugin for SpamAssassin
 
 RUN_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
+		p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5 \
 		p5-Net-DNS>=0.63:${PORTSDIR}/dns/p5-Net-DNS
 
 LICENSE=	AL2

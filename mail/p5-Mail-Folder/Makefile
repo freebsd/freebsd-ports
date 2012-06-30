@@ -15,10 +15,10 @@ DISTNAME=	MailFolder-${PORTVERSION}
 MAINTAINER=	chifeng@gmail.com
 COMMENT=	Perl module for a folder-independant interface to email folders
 
-BUILD_DEPENDS=	${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-		${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
-		${SITE_PERL}/${PERL_ARCH}/File/Sync.pm:${PORTSDIR}/devel/p5-File-Sync \
-		${SITE_PERL}/MIME/Head.pm:${PORTSDIR}/mail/p5-MIME-Tools
+BUILD_DEPENDS=	p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \
+		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
+		p5-File-Sync>=0:${PORTSDIR}/devel/p5-File-Sync \
+		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES

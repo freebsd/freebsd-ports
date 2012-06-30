@@ -18,10 +18,10 @@ MASTER_SITES=	http://romana.now.ie/software/ \
 MAINTAINER=	james@now.ie
 COMMENT=	An ODMR/ATRN server for vpopmail+qmail
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/CDB_File.pm:${PORTSDIR}/databases/p5-CDB_File \
-		${SITE_PERL}/${PERL_ARCH}/vpopmail.pm:${PORTSDIR}/mail/p5-vpopmail \
-		${SITE_PERL}/Mail/Header.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-		${SITE_PERL}/Digest/HMAC_MD5.pm:${PORTSDIR}/security/p5-Digest-HMAC
+RUN_DEPENDS=	p5-CDB_File>=0:${PORTSDIR}/databases/p5-CDB_File \
+		p5-vpopmail>=0:${PORTSDIR}/mail/p5-vpopmail \
+		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \
+		p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC
 
 .if !defined(WITHOUT_TCPSERVER)
 RUN_DEPENDS+=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
