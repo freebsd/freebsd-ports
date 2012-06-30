@@ -14,13 +14,12 @@ MASTER_SITES=	http://www.dixongroup.net/
 MAINTAINER=	jhuldtgren@gmail.com
 COMMENT=	Simple weblog
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
-		${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2 \
-		${SITE_PERL}/XML/RSS.pm:${PORTSDIR}/textproc/p5-XML-RSS \
-		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
-		${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
-		${SITE_PERL}/HTTP/Lite.pm:${PORTSDIR}/www/p5-HTTP-Lite
+RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-XML-RSS>=0:${PORTSDIR}/textproc/p5-XML-RSS \
+		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
+		p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
+		p5-HTTP-Lite>=0:${PORTSDIR}/www/p5-HTTP-Lite
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
