@@ -15,6 +15,8 @@ COMMENT=	Automatically generating simple manual pages from program output
 
 LICENSE=	GPLv3
 
+OPTIONS_DEFINE=	NLS
+
 CFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -24,9 +26,9 @@ INFO=		${PORTNAME}
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME}
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS=	--disable-nls
-.else
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 BUILD_DEPENDS+=	p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext
 RUN_DEPENDS+=	p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext
 
@@ -44,6 +46,8 @@ PLIST_FILES+=	share/locale/${lang}/LC_MESSAGES/${PORTNAME}.mo
 .for lang in ${LANGS}
 PLIST_DIRSTRY+=	man/${lang}/man1 man/${lang}
 .endfor
+.else
+CONFIGURE_ARGS=	--disable-nls
 .endif
 
 post-patch:
