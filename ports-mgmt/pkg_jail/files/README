@@ -2,7 +2,9 @@
 # /usr/ports/local/update/
 #
 #	Scripts reside here.
-#	fetch them from	http://people.freebsd.org/~dinoex/batch/
+#	install then here with:
+#	cd /usr/ports/ports-mgmt/pkg_jail && make install-ports
+#	/usr/ports should be shared with buildjail and hosts.
 #
 #
 #	Intended to run within a jailed System:
