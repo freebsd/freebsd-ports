@@ -12,13 +12,14 @@ is a script to handle an clean jail for package-builds.
 .TP
 .B init
 Creates or updates a clean jail with "installworld" and populate /etc inside the jail.
+You need to have a sucessful "buildword" made in /usr/src before this.
 .TP
 .B start
 Start the jail as a guest server.
 You should have setup sshd inside the jail to login and maintain it with this option.
 .TP
 .B shell
-Start the jail and give a shell back.
+Start the jail and give a shell back. You can build packages now.
 .TP
 .B list
 Show processes running in the jail.
@@ -52,14 +53,27 @@ The ip-address for the jail.
 The new root for the jail.
 .TP
 .B pkg_jail_rule
-The rulset number the script uses for the devfs isnide the jail.
+The rulset number the script uses for the devfs inside the jail.
 .SH RETURN VALUES
 undefined.
 .SH "FILES"
-The variables can be set in /etc/rc.conf or in $PREFIX /etc/pkg_jail.conf.
+The variables can be set in /etc/rc.conf or in $PREFIX/etc/pkg_jail.conf.
 .SH "EXAMPLES"
-.B pkg_jail
-shell
+.B Setting up the Jail Directory Tree
+.P
+Install all Files with the following comands on the host:
+.IP
+cd /usr/src && make buildworld
+.br
+pkg_jail init
+.TP
+.B Creating a Package
+.P
+Change to your management directory and execute pkg_upgrade:
+.IP
+cd /usr/ports/local/update
+.br
+sh pkg_update make-packages devel/gmake
 .SH "SEE ALSO"
 .TP
 .B pkg_update(1)

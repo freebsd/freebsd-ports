@@ -39,7 +39,7 @@ extra_commands="status shell list init"
 : ${pkg_jail_dir="/usr/jail/mybuild"}
 : ${pkg_jail_rule="127"}
 #
-pkg_jail_init()
+pkg_jail_setup()
 {
 	if test ! -d "${pkg_jail_dir}"
 	then
@@ -52,6 +52,10 @@ pkg_jail_init()
 	make "DESTDIR=${D}" delete-old-libs RM_I="-f -v"
 	if test ! -f "${pkg_jail_dir}/etc/rc.conf"
 	then
+		if test ! -d "${pkg_jail_dir}/usr/ports"
+		then
+			mkdir "${pkg_jail_dir}/usr/ports"
+		fi
 		cd /usr/src/etc
 		make "DESTDIR=${pkg_jail_dir}" distribution
 		ln -sf dev/null "${pkg_jail_dir}/kernel"
@@ -108,7 +112,8 @@ pkg_jail_create_dev_links()
 pkg_jail_create_devfs()
 {
 	local jail_devdir="${pkg_jail_dir}/dev"
-	if test ! -e "${jail_devdir}/null"
+	local jail_devmount=`mount -t devfs | cut -d " " -f 3 | fgrep -x ${jail_devdir}`
+	if test "${jail_devmount}" = ""
 	then
 		# create and mount devfs
 		pkg_jail_create_dev_rules
@@ -116,7 +121,7 @@ pkg_jail_create_devfs()
 		devfs -m ${jail_devdir} ruleset ${pkg_jail_rule}
 		devfs -m ${jail_devdir} rule applyset
 	fi
-	if test ! -L "${jail_devdir}/console"
+	if test ! -e "${jail_devdir}/console"
 	then
 		pkg_jail_create_dev_links ${jail_devdir} null console
 	fi
@@ -159,6 +164,11 @@ pkg_jail_create_jail_mount()
 pkg_jail_start()
 {
 	echo "Starting jail-${pkg_jail_hostname}-${pkg_jail_ip}"
+	if test ! -d "${pkg_jail_dir}"
+	then
+		echo "${pkg_jail_dir}: Directory not found" >&2
+		exit 1
+	fi
 	pkg_jail_create_devfs
 	pkg_jail_create_jail_mount "${pkg_jail_dir}"
 	sysctl security.jail.sysvipc_allowed=1
@@ -202,6 +212,18 @@ pkg_jail_umount()
 			umount "${dir}"
 		fi
 	done
+}
+pkg_jail_init()
+{
+	if pkg_jail_free
+	then
+		pkg_jail_setup
+		pkg_jail_create_devfs
+		pkg_jail_create_jail_mount "${pkg_jail_dir}"
+		/usr/sbin/jail -n "${pkg_jail_short}" "${pkg_jail_dir}" "${pkg_jail_hostname}" "${pkg_jail_ip}" \
+			/bin/sh -c "/usr/ports/ports-mgmt/pkg_jail  && make install-ports"
+		pkg_jail_umount
+	fi
 }
 pkg_jail_shell()
 {

@@ -1,5 +1,5 @@
 #!/bin/sh
-#       $Id: pkg_update,v 1.69 2010/06/24 15:56:40 cvs Exp $
+#       $Id: pkg_update,v 1.70 2012/01/15 10:55:12 cvs Exp $
 #       $FreeBSD$
 #
 # Copyright (c) 2001-2006
@@ -2022,7 +2022,7 @@ clean-distfiles)
 	;;
 merge-distfiles)
 	distdir=`make -f /usr/share/mk/bsd.port.mk ${nowarn} -V DISTDIR`
-	mergedistdir="${MERGEDISTDIR-/media/ports/distfiles}"
+	mergedistdir="${MERGEDISTDIR-/media/distfiles}"
 	old="${distdir}/Old"
 	#
 	merge_distfiles

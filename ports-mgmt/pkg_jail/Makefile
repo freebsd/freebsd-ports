@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pkg_jail
-PORTVERSION=	1.70
+PORTVERSION=	1.71
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -29,7 +29,7 @@ do-install:
 .endif
 
 install-ports:
-	-${MKDIR} ${PORTSDIR}/local/update
+	-${MKDIR} ${PORTSDIR}/local/update/data
 	${LN} -s ${FILESDIR}/README ${PORTSDIR}/local/update/
 	${LN} -s ${FILESDIR}/pkg_update ${PORTSDIR}/local/update/
 	${LN} -s ${FILESDIR}/pkg_jail ${PORTSDIR}/local/update/
