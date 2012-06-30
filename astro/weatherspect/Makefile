@@ -17,9 +17,9 @@ COMMENT=	Weather simulation in ASCII art
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	${SITE_PERL}/Term/Animation.pm:${PORTSDIR}/devel/p5-Term-Animation \
-		${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/${PERL_ARCH}/HTML/TokeParser.pm:${PORTSDIR}/www/p5-HTML-Parser
+RUN_DEPENDS=	p5-Term-Animation>=0:${PORTSDIR}/devel/p5-Term-Animation \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
 
 PORTSCOUT=	skipv:1.31	# Wrong versioning upstream
 

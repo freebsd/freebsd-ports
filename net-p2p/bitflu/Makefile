@@ -35,7 +35,7 @@ OPTIONS=	IPV6 "Enable functionality over IPv6 transport" on
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_IPV6)
-RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-Socket-INET6
+RUN_DEPENDS+=	p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
 .endif
 
 post-patch:

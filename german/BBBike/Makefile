@@ -14,9 +14,9 @@ MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	slaven@rezic.de
 COMMENT=	A route-finder for cyclists in Berlin and Brandenburg
 
-BUILD_DEPENDS=	${SITE_PERL}/Inline.pm:${PORTSDIR}/devel/p5-Inline \
-		${SITE_PERL}/${PERL_ARCH}/CDB_File.pm:${PORTSDIR}/databases/p5-CDB_File
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk \
+BUILD_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline \
+		p5-CDB_File>=0:${PORTSDIR}/databases/p5-CDB_File
+RUN_DEPENDS=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk \
 		${BUILD_DEPENDS}
 
 USE_PERL5=	YES

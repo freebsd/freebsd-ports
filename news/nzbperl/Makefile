@@ -18,8 +18,8 @@ EXTRACT_SUFX=
 MAINTAINER=	ports@thepentagon.org
 COMMENT=	A perl script for downloading nzb files
 
-RUN_DEPENDS=	${SITE_PERL}/XML/DOM.pm:${PORTSDIR}/textproc/p5-XML-DOM \
-		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
+RUN_DEPENDS=	p5-XML-DOM>=0:${PORTSDIR}/textproc/p5-XML-DOM \
+		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
 		${LOCALBASE}/bin/uudeview:${PORTSDIR}/converters/uudeview
 
 PLIST_FILES=	bin/nzbperl
@@ -27,7 +27,7 @@ NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
 .if defined(WITH_SSL)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay
+RUN_DEPENDS+=	p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay
 .endif
 
 do-extract:

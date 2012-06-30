@@ -43,7 +43,7 @@ VARBASE?=	/var
 
 BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
 		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools
-#		${SITE_PERL}/MIME/parser.pm:${PORTSDIR}/mail/p5-MIME-Tools
+#		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

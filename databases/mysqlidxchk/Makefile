@@ -15,9 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	rdna@rdna.ru
 COMMENT=	Checks MySQL databases/tables for unused indexes
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
-		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 
 NO_WRKSUBDIR=	yes
 

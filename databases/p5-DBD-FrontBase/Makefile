@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	mjs@bur.st
 COMMENT=	DBI driver for FrontBase RDBMS server
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
+BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		${LOCALBASE}/lib/libFBCAccess.a:${PORTSDIR}/databases/frontbase
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

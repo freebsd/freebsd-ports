@@ -13,9 +13,9 @@ MASTER_SITES=	SF/ledger-smb/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	anarcat@anarcat.ath.cx
 COMMENT=	A double entry accounting system
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg \
-			${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite \
-			${SITE_PERL}/Config/Std.pm:${PORTSDIR}/devel/p5-Config-Std
+BUILD_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg \
+			p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \
+			p5-Config-Std>=0:${PORTSDIR}/devel/p5-Config-Std
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LATEST_LINK=	ledgersmb12

@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	C library to read various Paradox files
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool

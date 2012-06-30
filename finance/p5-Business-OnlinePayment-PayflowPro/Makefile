@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	never@nevermind.kiev.ua
 COMMENT=	A Business::OnlinePayment backend module for PayflowPro
 
-BUILD_DEPENDS=	${SITE_PERL}/Business/OnlinePayment.pm:${PORTSDIR}/finance/p5-Business-OnlinePayment \
-		${SITE_PERL}/mach/PFProAPI.pm:${PORTSDIR}/finance/p5-PFProAPI
+BUILD_DEPENDS=	p5-Business-OnlinePayment>=0:${PORTSDIR}/finance/p5-Business-OnlinePayment \
+		p5-PFProAPI>=0:${PORTSDIR}/finance/p5-PFProAPI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

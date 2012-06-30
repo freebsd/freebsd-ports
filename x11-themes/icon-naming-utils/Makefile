@@ -14,8 +14,8 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	yuri.pankov@gmail.com
 COMMENT=	Utilities of the Tango project
 
-BUILD_DEPENDS=	${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple
-RUN_DEPENDS=	${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple
+BUILD_DEPENDS=	p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
+RUN_DEPENDS=	p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

@@ -27,7 +27,7 @@ OPTIONS=	GUI "Install Tk GUI" off
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GUI)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
+RUN_DEPENDS+=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk
 PLIST_SUB=	GUI=""
 MAKE_ARGS+=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 .else

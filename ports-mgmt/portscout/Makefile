@@ -24,22 +24,22 @@ PORTDOCS=	UPDATING portscout-portconfig.txt xml-datasrc-example.xml
 
 MAN1=		portscout.1
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI	\
-		${SITE_PERL}/Proc/Queue.pm:${PORTSDIR}/devel/p5-Proc-Queue	\
-		${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net			\
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI			\
-		${SITE_PERL}/XML/XPath.pm:${PORTSDIR}/textproc/p5-XML-XPath	\
-		${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite		\
-		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI	\
+		p5-Proc-Queue>=0:${PORTSDIR}/devel/p5-Proc-Queue	\
+		p5-Net>=0:${PORTSDIR}/net/p5-Net			\
+		p5-URI>=0:${PORTSDIR}/net/p5-URI			\
+		p5-XML-XPath>=0:${PORTSDIR}/textproc/p5-XML-XPath	\
+		p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite		\
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 .include <bsd.port.options.mk>
 
 .if defined(WITH_SQLITE3)
 USE_SQLITE=	3
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
+RUN_DEPENDS+=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 .elif !defined(WITHOUT_PGSQL)
 USE_PGSQL=	yes
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
 pre-everything::

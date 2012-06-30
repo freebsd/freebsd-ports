@@ -15,7 +15,7 @@ MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	A text-based ICQ implementation
 
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadLine/Gnu.pm:${PORTSDIR}/devel/p5-ReadLine-Gnu
+RUN_DEPENDS=	p5-ReadLine-Gnu>=0:${PORTSDIR}/devel/p5-ReadLine-Gnu
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

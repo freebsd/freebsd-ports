@@ -31,7 +31,7 @@ MAN3=	DBIx::Simple.3 \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SQL_INTERP)
-RUN_DEPENDS+=	${SITE_PERL}/SQL/Interp.pm:${PORTSDIR}/databases/p5-SQL-Interp
+RUN_DEPENDS+=	p5-SQL-Interp>=0:${PORTSDIR}/databases/p5-SQL-Interp
 .endif
 
 .if defined(WITH_SQL_ABSTRACT)

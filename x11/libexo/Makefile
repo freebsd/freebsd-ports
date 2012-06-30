@@ -16,8 +16,8 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Application library for the Xfce desktop environment
 
-BUILD_DEPENDS=	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
-RUN_DEPENDS=	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
+BUILD_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI
+RUN_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/lib//}
