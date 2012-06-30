@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	3.4
+PORTVERSION=	3.4.1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://wordpress.org/
@@ -24,6 +24,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST=		${WRKDIR}/pkg-plist
 PORTDOCS=	license.txt readme.html
 
+OPTIONS_DEFINE=	DOCS
+
 pre-everything::
 	@${ECHO_CMD} "If you want to upgrade, you must read upgrade document."
 	@${ECHO_CMD} ""
@@ -36,10 +38,12 @@ pre-install:
 	if [ ! -f ${WRKSRC}/wp-config-sample.php ]; then ${CP} \
 		${WRKSRC}/wp-config.php.sample ${WRKSRC}/wp-config.php; fi
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL} -d -g ${WWWGRP} -m 755 -o ${WWWOWN} ${WWWDIR}/
 	${CP} -R ${WRKSRC}/ ${WWWDIR}/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
