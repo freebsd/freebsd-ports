@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	cassandra/${PORTVERSION}
 DISTNAME=	apache-cassandra-${PORTVERSION}
 EXTRACT_SUFX=	-bin.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hsn@sendmail.cz
 COMMENT=	Open source distributed database management system
 
 LICENSE=	AL2
