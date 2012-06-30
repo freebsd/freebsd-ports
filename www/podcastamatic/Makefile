@@ -16,8 +16,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
 MAINTAINER=	lars.eggert@gmx.net
 COMMENT=	Automates creation of webpage and RSS feed for a podcast
 
-RUN_DEPENDS=	${SITE_PERL}/MP3/Info.pm:${PORTSDIR}/audio/p5-MP3-Info \
-		${SITE_PERL}/MP4/Info.pm:${PORTSDIR}/multimedia/p5-MP4-Info
+RUN_DEPENDS=	p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info \
+		p5-MP4-Info>=0:${PORTSDIR}/multimedia/p5-MP4-Info
 
 USE_ZIP=	yes
 USE_PERL5_RUN=	yes

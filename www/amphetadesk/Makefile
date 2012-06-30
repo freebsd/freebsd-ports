@@ -16,13 +16,13 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	RSS client that serves HTTP to your local web browser
 
 RUN_DEPENDS=	\
-		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
-		${SITE_PERL}/HTML/Tagset.pm:${PORTSDIR}/www/p5-HTML-Tagset \
-		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
-		${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \
-		${SITE_PERL}/URI/URL.pm:${PORTSDIR}/net/p5-URI
+		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
+		p5-HTML-Tagset>=0:${PORTSDIR}/www/p5-HTML-Tagset \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
+		p5-Text-Template>=0:${PORTSDIR}/textproc/p5-Text-Template \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
 LICENSE=	EULA
 LICENSE_NAME=	The Clarified Artistic License

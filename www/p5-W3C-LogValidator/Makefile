@@ -15,12 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	toni.viemero@iki.fi
 COMMENT=	A comprehensive validation tool for webmasters and web developers
 
-BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/Config/General.pm:${PORTSDIR}/devel/p5-Config-General \
-		${SITE_PERL}/Mail/Sendmail.pm:${PORTSDIR}/mail/p5-Mail-Sendmail \
-		${SITE_PERL}/WebService/Validator/CSS/W3C.pm:${PORTSDIR}/www/p5-webservice-validator-css-w3c \
-		${SITE_PERL}/WebService/Validator/HTML/W3C.pm:${PORTSDIR}/www/p5-webservice-validator-html-w3c \
+BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General \
+		p5-Mail-Sendmail>=0:${PORTSDIR}/mail/p5-Mail-Sendmail \
+		p5-webservice-validator-css-w3c>=0:${PORTSDIR}/www/p5-webservice-validator-css-w3c \
+		p5-webservice-validator-html-w3c>=0:${PORTSDIR}/www/p5-webservice-validator-html-w3c \
 		${LOCALBASE}/bin/checklink:${PORTSDIR}/www/p5-W3C-LinkChecker
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

@@ -15,9 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Perl module that implements the Google Provisioning API
 
-RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/${PERL_ARCH}/Encode.pm:${PORTSDIR}/converters/p5-Encode \
-		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple
+RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-Encode>=0:${PORTSDIR}/converters/p5-Encode \
+		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
 
 PERL_CONFIGURE=	yes
 

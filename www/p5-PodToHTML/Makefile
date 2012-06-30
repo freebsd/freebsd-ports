@@ -15,10 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Generating HTML from several files containg POD documentation
 
-BUILD_DEPENDS=	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/HTML/Element.pm:${PORTSDIR}/www/p5-HTML-Tree \
-		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/HTML/FormatPS.pm:${PORTSDIR}/textproc/p5-HTML-Format
+BUILD_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
+		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-HTML-Format>=0:${PORTSDIR}/textproc/p5-HTML-Format
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

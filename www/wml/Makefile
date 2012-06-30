@@ -18,7 +18,7 @@ COMMENT=	Website META Language, webdesign toolkit for HTML generation
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	\
-		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
+		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		p5-Bit-Vector>=5.2:${PORTSDIR}/math/p5-Bit-Vector \
 		p5-File-PathConvert>0:${PORTSDIR}/devel/p5-File-PathConvert \
 		p5-Image-Size>=2.6:${PORTSDIR}/graphics/p5-Image-Size \

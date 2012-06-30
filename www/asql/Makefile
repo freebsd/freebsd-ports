@@ -14,9 +14,9 @@ MASTER_SITES=	http://www.steve.org.uk/Software/asql/ \
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Query Apache logfiles via SQL
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
-		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/Term/ReadLine/Perl.pm:${PORTSDIR}/devel/p5-ReadLine-Perl
+RUN_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-ReadLine-Perl>=0:${PORTSDIR}/devel/p5-ReadLine-Perl
 
 NO_BUILD=	yes
 PLIST_FILES=	bin/asql

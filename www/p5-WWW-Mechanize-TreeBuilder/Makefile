@@ -14,10 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	alex.deiter@gmail.com
 COMMENT=	WWW::Mechanize::TreeBuilder
 
-BUILD_DEPENDS=	${SITE_PERL}/MooseX/Role/Parameterized.pm:${PORTSDIR}/devel/p5-MooseX-Role-Parameterized \
-		${SITE_PERL}/HTML/TreeBuilder.pm:${PORTSDIR}/www/p5-HTML-Tree \
-		${SITE_PERL}/Test/WWW/Mechanize.pm:${PORTSDIR}/devel/p5-Test-WWW-Mechanize \
-		${SITE_PERL}/${PERL_ARCH}/Moose.pm:${PORTSDIR}/devel/p5-Moose
+BUILD_DEPENDS=	p5-MooseX-Role-Parameterized>=0:${PORTSDIR}/devel/p5-MooseX-Role-Parameterized \
+		p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
+		p5-Test-WWW-Mechanize>=0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize \
+		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

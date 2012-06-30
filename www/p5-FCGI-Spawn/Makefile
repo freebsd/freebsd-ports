@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	peter@vereshagin.org
 COMMENT=	FastCGI server for CGI-like applications multiprocessing
 
-RUN_DEPENDS=	${SITE_PERL}/FCGI/ProcManager.pm:${PORTSDIR}/www/p5-FCGI-ProcManager
+RUN_DEPENDS=	p5-FCGI-ProcManager>=0:${PORTSDIR}/www/p5-FCGI-ProcManager
 
 PERL_CONFIGURE=	yes
 

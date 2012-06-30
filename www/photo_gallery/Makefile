@@ -16,8 +16,8 @@ MAINTAINER=		bob@bomar.us
 COMMENT=		Simple web based photo gallery
 
 RUN_DEPENDS=	anytopnm:${PORTSDIR}/graphics/netpbm\
-		${SITE_PERL}/Image/Info.pm:${PORTSDIR}/graphics/p5-Image-Info\
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
+		p5-Image-Info>=0:${PORTSDIR}/graphics/p5-Image-Info\
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
 USE_APACHE=	20+
 USE_PERL5=	yes

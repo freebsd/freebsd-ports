@@ -15,11 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	catone@cpan.org
 COMMENT=	Catalyst Plugin for storing sessions in a browser cookie
 
-BUILD_DEPENDS=	${SITE_PERL}/Class/Accessor/Fast.pm:${PORTSDIR}/devel/p5-Class-Accessor \
-		${SITE_PERL}/Crypt/CBC.pm:${PORTSDIR}/security/p5-Crypt-CBC \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/Rijndael.pm:${PORTSDIR}/security/p5-Crypt-Rijndael \
-		${SITE_PERL}/JSON/XS/VersionOneAndTwo.pm:${PORTSDIR}/converters/p5-JSON-XS-VersionOneAndTwo \
-		${SITE_PERL}/Catalyst.pm:${PORTSDIR}/www/p5-Catalyst-Runtime
+BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-Crypt-CBC>=0:${PORTSDIR}/security/p5-Crypt-CBC \
+		p5-Crypt-Rijndael>=0:${PORTSDIR}/security/p5-Crypt-Rijndael \
+		p5-JSON-XS-VersionOneAndTwo>=0:${PORTSDIR}/converters/p5-JSON-XS-VersionOneAndTwo \
+		p5-Catalyst-Runtime>=0:${PORTSDIR}/www/p5-Catalyst-Runtime
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

@@ -14,11 +14,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hartzell@alerce.com
 COMMENT=	This plug-in add DebugScreen support to CGI::Application
 
-BUILD_DEPENDS=	${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Application \
-		${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
-		${SITE_PERL}/CGI/Application/Plugin/ViewCode.pm:${PORTSDIR}/www/p5-CGI-Application-Plugin-ViewCode \
-		${SITE_PERL}/Devel/StackTrace.pm:${PORTSDIR}/devel/p5-Devel-StackTrace \
-		${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-require
+BUILD_DEPENDS=	p5-CGI-Application>=0:${PORTSDIR}/www/p5-CGI-Application \
+		p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
+		p5-CGI-Application-Plugin-ViewCode>=0:${PORTSDIR}/www/p5-CGI-Application-Plugin-ViewCode \
+		p5-Devel-StackTrace>=0:${PORTSDIR}/devel/p5-Devel-StackTrace \
+		p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

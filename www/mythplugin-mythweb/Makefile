@@ -18,7 +18,7 @@ DISTNAME=	mythplugins-${PORTVERSION}
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	A frontend for scheduling and managing recordings on your MythTV Box
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 
 NO_BUILD=	yes
 USE_BZIP2=	yes

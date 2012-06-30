@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@c0decafe.net
 COMMENT=	Singleton class for mod_perl
 
-RUN_DEPENDS=${SITE_PERL}/Class/Singleton.pm:${PORTSDIR}/devel/p5-Class-Singleton
+RUN_DEPENDS=p5-Class-Singleton>=0:${PORTSDIR}/devel/p5-Class-Singleton
 
 PERL_CONFIGURE=	yes
 
