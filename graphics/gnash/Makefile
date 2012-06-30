@@ -66,14 +66,14 @@ OPTIONS_SINGLE_RENDERER=AGG OPENGL CAIRO
 OPTIONS_DEFAULT=GTK2 PLUGIN AGG FFMPEG VAAPI
 
 NO_OPTIONS_SORT=yes
-PLUGIN_DESC=	Enable browser plugin
-CYGNAL_DESC=	Enable Cygnal media server
-AGG_DESC=	Enable AGG renderer
-OPENGL_DESC=	Enable OpenGL renderer (broken)
-CAIRO_DESC=	Enable Cairo renderer (experimental)
-FFMPEG_DESC=	Enable ffmpeg media handler
-GSTREAMER_DESC=	Enable GStreamer media handler
-VAAPI_DESC=	Enable VAAPI support (requires FFMPEG)
+PLUGIN_DESC=	browser plugin
+CYGNAL_DESC=	Cygnal media server
+AGG_DESC=	AGG renderer
+OPENGL_DESC=	OpenGL renderer (broken)
+CAIRO_DESC=	Cairo renderer (experimental)
+FFMPEG_DESC=	ffmpeg media handler
+GSTREAMER_DESC=	GStreamer media handler
+VAAPI_DESC=	VAAPI support (requires FFMPEG)
 
 .include <bsd.port.options.mk>
 

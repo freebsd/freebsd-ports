@@ -75,7 +75,7 @@ OPTIONS_DEFAULT=	LIBPAPER GHOSTSCRIPT
 NO_OPTIONS_SORT=	yes
 .endif
 
-LIBUSB_DESC=		Enable USB support
+LIBUSB_DESC=		USB support
 GHOSTSCRIPT_DESC=	Build pdftops with GHOSTSCRIPT
 XPDF_DESC=		Build pdftops with XPDF
 XDG_OPEN=		Build with XDG_OPEN as browser

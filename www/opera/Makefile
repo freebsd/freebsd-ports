@@ -44,8 +44,8 @@ EXPLICIT_PACKAGE_DEPENDS=	yes
 OPTIONS_DEFINE=	CUPS VIDEO GTK2 KDE4
 OPTIONS_DEFAULT=	CUPS VIDEO
 
-CUPS_DESC=	Enable support for printing (requires CUPS)
-VIDEO_DESC=	Enable support for HTML5 video (requires GStreamer)
+CUPS_DESC=	support for printing (requires CUPS)
+VIDEO_DESC=	support for HTML5 video (requires GStreamer)
 
 .include <bsd.port.options.mk>
 
