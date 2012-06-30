@@ -14,10 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	cm@therek.net
 COMMENT=	Perl5 File::ShareDir module with PAR support
 
-BUILD_DEPENDS=	${SITE_PERL}/Class/Inspector.pm:${PORTSDIR}/devel/p5-Class-Inspector \
-		${SITE_PERL}/File/ShareDir.pm:${PORTSDIR}/devel/p5-File-ShareDir \
-		${SITE_PERL}/PAR.pm:${PORTSDIR}/devel/p5-PAR \
-		${SITE_PERL}/${PERL_ARCH}/Params/Util.pm:${PORTSDIR}/devel/p5-Params-Util
+BUILD_DEPENDS=	p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
+		p5-File-ShareDir>=0:${PORTSDIR}/devel/p5-File-ShareDir \
+		p5-PAR>=0:${PORTSDIR}/devel/p5-PAR \
+		p5-Params-Util>=0:${PORTSDIR}/devel/p5-Params-Util
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES

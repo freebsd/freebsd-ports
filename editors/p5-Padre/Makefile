@@ -40,16 +40,16 @@ BUILD_DEPENDS=	p5-ack>=1.86:${PORTSDIR}/textproc/p5-ack \
 		p5-Parse-ExuberantCTags>=1.00:${PORTSDIR}/devel/p5-Parse-ExuberantCTags \
 		p5-Pod-Abstract>=0.16:${PORTSDIR}/textproc/p5-Pod-Abstract \
 		p5-Pod-POM>=0.17:${PORTSDIR}/textproc/p5-Pod-POM \
-		${SITE_PERL}/Probe/Perl.pm:${PORTSDIR}/sysutils/p5-Probe-Perl \
-		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
-		${SITE_PERL}/Test/NoWarnings.pm:${PORTSDIR}/devel/p5-Test-NoWarnings \
-		${SITE_PERL}/Test/Script.pm:${PORTSDIR}/devel/p5-Test-Script \
+		p5-Probe-Perl>=0:${PORTSDIR}/sysutils/p5-Probe-Perl \
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings \
+		p5-Test-Script>=0:${PORTSDIR}/devel/p5-Test-Script \
 		p5-Text-Diff>=0.35:${PORTSDIR}/textproc/p5-Text-Diff \
 		p5-Text-FindIndent>=0.06:${PORTSDIR}/textproc/p5-Text-FindIndent \
 		p5-URI>0:${PORTSDIR}/net/p5-URI \
 		p5-YAML-Tiny>=1.32:${PORTSDIR}/textproc/p5-YAML-Tiny \
 		p5-Class-XSAccessor>=1.05:${PORTSDIR}/devel/p5-Class-XSAccessor \
-		${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-DBI>=1.58:${PORTSDIR}/databases/p5-DBI \
 		p5-HTML-Parser>=3.65:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-Params-Util>=0.33:${PORTSDIR}/devel/p5-Params-Util \
