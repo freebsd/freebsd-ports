@@ -16,12 +16,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Background management utitility and Perl module that uses ZConf
 
-RUN_DEPENDS=	${SITE_PERL}/Image/Size/FillFullSelect.pm:${PORTSDIR}/graphics/p5-Image-Size-FillFullSelect \
-		${SITE_PERL}/ZConf.pm:${PORTSDIR}/net/p5-ZConf \
+BUILD_DEPENDS=	p5-Image-Size-FillFullSelect>=0.1.0:${PORTSDIR}/graphics/p5-Image-Size-FillFullSelect \
+		p5-ZConf>=:${PORTSDIR}/net/p5-ZConf \
 		${LOCALBASE}/bin/hsetroot:${PORTSDIR}/graphics/hsetroot \
-		${SITE_PERL}/Imager/AverageGray.pm:${PORTSDIR}/graphics/p5-Imager-AverageGray \
-		${SITE_PERL}/X11/Resolution.pm:${PORTSDIR}/x11/p5-X11-Resolution \
-		${SITE_PERL}/String/ShellQuote.pm:${PORTSDIR}/textproc/p5-String-ShellQuote
+		p5-Imager-AverageGray>=0.0.0:${PORTSDIR}/graphics/p5-Imager-AverageGray \
+		p5-X11-Resolution>=0.0.0:${PORTSDIR}/x11/p5-X11-Resolution \
+		p5-String-ShellQuote>=1.04:${PORTSDIR}/textproc/p5-String-ShellQuote
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
