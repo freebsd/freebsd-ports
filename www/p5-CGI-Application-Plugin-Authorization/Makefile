@@ -15,12 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hartzell@alerce.com
 COMMENT=	Support for authorization of requests in CGI::Application
 
-BUILD_DEPENDS=	${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Application \
-		${SITE_PERL}/Class/ISA.pm:${PORTSDIR}/devel/p5-Class-ISA \
-		${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-require \
-		${SITE_PERL}/CGI/Application/Plugin/Authentication.pm:${PORTSDIR}/www/p5-CGI-Application-Plugin-Authentication \
-		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
-		${SITE_PERL}/Test/Warn.pm:${PORTSDIR}/devel/p5-Test-Warn
+BUILD_DEPENDS=	p5-CGI-Application>=0:${PORTSDIR}/www/p5-CGI-Application \
+		p5-Class-ISA>=0:${PORTSDIR}/devel/p5-Class-ISA \
+		p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require \
+		p5-CGI-Application-Plugin-Authentication>=0:${PORTSDIR}/www/p5-CGI-Application-Plugin-Authentication \
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes

@@ -16,18 +16,18 @@ MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Markup Validation Service from the World Wide Web Consortium (W3C)
 
 RUN_DEPENDS=	onsgmls:${PORTSDIR}/textproc/opensp \
-		${SITE_PERL}/Config/General.pm:${PORTSDIR}/devel/p5-Config-General \
-		${SITE_PERL}/${PERL_ARCH}/Encode/HanExtra.pm:${PORTSDIR}/chinese/p5-Encode-HanExtra \
-		${SITE_PERL}/${PERL_ARCH}/Encode/JIS2K.pm:${PORTSDIR}/converters/p5-Encode-JIS2K \
-		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/HTML/Encoding.pm:${PORTSDIR}/www/p5-HTML-Encoding \
-		${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
+		p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General \
+		p5-Encode-HanExtra>=0:${PORTSDIR}/chinese/p5-Encode-HanExtra \
+		p5-Encode-JIS2K>=0:${PORTSDIR}/converters/p5-Encode-JIS2K \
+		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-HTML-Encoding>=0:${PORTSDIR}/www/p5-HTML-Encoding \
+		p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
 		p5-libwww>=5.817:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/JSON.pm:${PORTSDIR}/converters/p5-JSON \
-		${SITE_PERL}/Net/IP.pm:${PORTSDIR}/net-mgmt/p5-Net-IP \
-		${SITE_PERL}/${PERL_ARCH}/SGML/Parser/OpenSP.pm:${PORTSDIR}/textproc/p5-SGML-Parser-OpenSP \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
+		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
+		p5-Net-IP>=0:${PORTSDIR}/net-mgmt/p5-Net-IP \
+		p5-SGML-Parser-OpenSP>=0:${PORTSDIR}/textproc/p5-SGML-Parser-OpenSP \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	5.8.0+
@@ -39,7 +39,7 @@ OPTIONS=	HTML_TIDY "Enable HTML Markup Cleaning" On
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_HTML_TIDY)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/HTML/Tidy.pm:${PORTSDIR}/textproc/p5-HTML-Tidy
+RUN_DEPENDS+=	p5-HTML-Tidy>=0:${PORTSDIR}/textproc/p5-HTML-Tidy
 .endif
 
 post-extract:

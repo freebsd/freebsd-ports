@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hartzell@alerce.com
 COMMENT=	A message stack for your CGI::Application
 
-BUILD_DEPENDS=	${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Application \
-		${SITE_PERL}/CGI/Application/Plugin/Session.pm:${PORTSDIR}/www/p5-CGI-Application-Plugin-Session \
-		${SITE_PERL}/CGI/Application/Plugin/TT.pm:${PORTSDIR}/www/p5-CGI-Application-Plugin-TT
+BUILD_DEPENDS=	p5-CGI-Application>=0:${PORTSDIR}/www/p5-CGI-Application \
+		p5-CGI-Application-Plugin-Session>=0:${PORTSDIR}/www/p5-CGI-Application-Plugin-Session \
+		p5-CGI-Application-Plugin-TT>=0:${PORTSDIR}/www/p5-CGI-Application-Plugin-TT
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes

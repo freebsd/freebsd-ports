@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	delgod@portaone.com
 COMMENT=	A simple http server class with SSL support
 
-RUN_DEPENDS=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		${SITE_PERL}/HTTP/Daemon.pm:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 PERL_CONFIGURE=	yes
 

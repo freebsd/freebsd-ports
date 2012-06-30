@@ -15,9 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hartzell@alerce.com
 COMMENT=	Plugin that adds session support to CGI::Application
 
-BUILD_DEPENDS=	${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Application \
-		${SITE_PERL}/CGI/Session.pm:${PORTSDIR}/www/p5-CGI-Session \
-		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception
+BUILD_DEPENDS=	p5-CGI-Application>=0:${PORTSDIR}/www/p5-CGI-Application \
+		p5-CGI-Session>=0:${PORTSDIR}/www/p5-CGI-Session \
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes

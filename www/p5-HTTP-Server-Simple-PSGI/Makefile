@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@c0decafe.net
 COMMENT=	PSGI handler for HTTP::Server::Simple
 
-RUN_DEPENDS=	${SITE_PERL}/HTTP/Server/Simple.pm:${PORTSDIR}/www/p5-HTTP-Server-Simple
+RUN_DEPENDS=	p5-HTTP-Server-Simple>=0:${PORTSDIR}/www/p5-HTTP-Server-Simple
 
 USE_PERL5=	YES
 PERL_CONFIGURE=	YES

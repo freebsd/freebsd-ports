@@ -15,10 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hartzell@alerce.com
 COMMENT=	Make tamper-resisistent links in CGI::Application
 
-BUILD_DEPENDS=	${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Application \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/Digest/HMAC.pm:${PORTSDIR}/security/p5-Digest-HMAC \
-		${SITE_PERL}/CGI/Application/Plugin/AutoRunmode.pm:${PORTSDIR}/www/p5-CGI-Application-Plugin-AutoRunmode
+BUILD_DEPENDS=	p5-CGI-Application>=0:${PORTSDIR}/www/p5-CGI-Application \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
+		p5-CGI-Application-Plugin-AutoRunmode>=0:${PORTSDIR}/www/p5-CGI-Application-Plugin-AutoRunmode
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes

@@ -16,9 +16,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Retrieve infromation from SourceForge site
 
-BUILD_DEPENDS=	${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize \
-		${SITE_PERL}/HTML/TableExtract.pm:${PORTSDIR}/www/p5-HTML-TableExtract \
-		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
+BUILD_DEPENDS=	p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize \
+		p5-HTML-TableExtract>=0:${PORTSDIR}/www/p5-HTML-TableExtract \
+		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

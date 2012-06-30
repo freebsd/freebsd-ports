@@ -32,11 +32,11 @@ OPTIONS=	MYSQL "Add MySQL support" on \
 USE_RC_SUBR=	interchange.sh
 
 .if defined(WITH_MYSQL)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
 .if defined(WITH_PGSQL)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
 ARCH_PERL=	${SITE_PERL}/${PERL_ARCH}

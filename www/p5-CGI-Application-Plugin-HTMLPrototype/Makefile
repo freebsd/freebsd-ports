@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hartzell@alerce.com
 COMMENT=	Access to the prototype JavaScript library using HTML::Prototype
 
-BUILD_DEPENDS=	${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Application \
-		${SITE_PERL}/HTML/Prototype.pm:${PORTSDIR}/www/p5-HTML-Prototype
+BUILD_DEPENDS=	p5-CGI-Application>=0:${PORTSDIR}/www/p5-CGI-Application \
+		p5-HTML-Prototype>=0:${PORTSDIR}/www/p5-HTML-Prototype
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes

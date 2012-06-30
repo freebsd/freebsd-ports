@@ -15,9 +15,9 @@ DISTNAME=	davical-${PORTVERSION}
 MAINTAINER=	maurice@castro.aus.net
 COMMENT=	A simple CalDAV server using a postgres backend
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
-		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg \
+RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
+		p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg \
 		${LOCALBASE}/bin/pwgen:${PORTSDIR}/sysutils/pwgen \
 		php-libawl>=0.51:${PORTSDIR}/devel/php-libawl
 

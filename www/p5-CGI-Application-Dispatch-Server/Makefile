@@ -14,12 +14,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hartzell@alerce.com
 COMMENT=	A simple HTTP server for developing with CGI::Application::Dispatch
 
-BUILD_DEPENDS=	${SITE_PERL}/HTTP/Request.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/IO/Capture/Stdout.pm:${PORTSDIR}/devel/p5-IO-Capture \
-		${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Application \
-		${SITE_PERL}/CGI/Application/Dispatch.pm:${PORTSDIR}/www/p5-CGI-Application-Dispatch \
-		${SITE_PERL}/HTTP/Server/Simple/CGI.pm:${PORTSDIR}/www/p5-HTTP-Server-Simple \
-		${SITE_PERL}/HTTP/Server/Simple/Static.pm:${PORTSDIR}/www/p5-HTTP-Server-Simple-Static \
+BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-IO-Capture>=0:${PORTSDIR}/devel/p5-IO-Capture \
+		p5-CGI-Application>=0:${PORTSDIR}/www/p5-CGI-Application \
+		p5-CGI-Application-Dispatch>=0:${PORTSDIR}/www/p5-CGI-Application-Dispatch \
+		p5-HTTP-Server-Simple>=0:${PORTSDIR}/www/p5-HTTP-Server-Simple \
+		p5-HTTP-Server-Simple-Static>=0:${PORTSDIR}/www/p5-HTTP-Server-Simple-Static \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
 
 PERL_MODBUILD=	yes

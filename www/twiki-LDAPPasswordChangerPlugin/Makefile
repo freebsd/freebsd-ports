@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Change TWiki password at a pre-configured LDAP server
 
-RUN_DEPENDS=	${SITE_PERL}/Bundle/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
+RUN_DEPENDS=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 
 SVNREV=		18108
 

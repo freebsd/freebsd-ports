@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tolid@tolid.eu.org
 COMMENT=	Perl interface to the database of series/episodes at TV.com
 
-RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 PERL_CONFIGURE=	yes
 

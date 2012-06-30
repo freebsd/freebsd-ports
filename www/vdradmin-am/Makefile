@@ -14,20 +14,20 @@ MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - webinterface
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext \
+		p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext \
 		p5-Template-Plugin-JavaScript>=0:${PORTSDIR}/www/p5-Template-Plugin-JavaScript \
-		${SITE_PERL}/Authen/SASL.pm:${PORTSDIR}/security/p5-Authen-SASL \
-		${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-IO-Compress \
-		${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-Socket-INET6 \
-		${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		${SITE_PERL}/HTTP/Date.pm:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext \
+		p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL \
+		p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress \
+		p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6 \
+		p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext \
 		p5-Template-Plugin-JavaScript>=0:${PORTSDIR}/www/p5-Template-Plugin-JavaScript \
-		${SITE_PERL}/Authen/SASL.pm:${PORTSDIR}/security/p5-Authen-SASL \
-		${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-IO-Compress \
-		${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-Socket-INET6 \
-		${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		${SITE_PERL}/HTTP/Date.pm:${PORTSDIR}/www/p5-libwww
+		p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL \
+		p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress \
+		p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6 \
+		p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 DIST_SUBDIR=	vdr
 PATCH_STRIP=	-p1

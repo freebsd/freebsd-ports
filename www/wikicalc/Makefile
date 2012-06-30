@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S,.,-,}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	An Open Source Wiki-Spreadsheet
 
-RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 USE_PERL5=	yes
 NO_BUILD=	yes

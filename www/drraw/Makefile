@@ -15,7 +15,7 @@ MASTER_SITES=	http://web.taranis.org/drraw/dist/ \
 MAINTAINER=	avg@icyb.net.ua
 COMMENT=	A simple web-based presentation front-end for RRDtool
 
-RUN_DEPENDS+=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/databases/rrdtool
+RUN_DEPENDS+=	rrdtool>=0:${PORTSDIR}/databases/rrdtool
 
 OPTIONS=	ZOOM_PATCH	"Zoom support using jQuery via external patch"	off
 

@@ -71,7 +71,7 @@ post-install:
 
 .if ${PORT_OPTIONS:MMOD_PERL}
 USE_APACHE=	20+
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2
+RUN_DEPENDS+=	p5-libapreq2>=0:${PORTSDIR}/www/p5-libapreq2
 .endif
 
 .include <bsd.port.mk>

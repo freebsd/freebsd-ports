@@ -14,12 +14,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lin-chi@lastamericanempire.com
 COMMENT=	POE Component to server HTTP requests
 
-BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
-		${SITE_PERL}/HTTP/Message.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/HTTP/Status.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/HTML/Template/HashWrapper.pm:${PORTSDIR}/www/p5-HTML-Template-HashWrapper \
-		${SITE_PERL}/MIME/Types.pm:${PORTSDIR}/mail/p5-MIME-Types
+BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-HTML-Template-HashWrapper>=0:${PORTSDIR}/www/p5-HTML-Template-HashWrapper \
+		p5-MIME-Types>=0:${PORTSDIR}/mail/p5-MIME-Types
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
