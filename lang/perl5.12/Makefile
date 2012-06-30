@@ -26,7 +26,8 @@ LICENSE_COMB=	dual
 
 CONFLICTS=	perl-5.6.* perl-5.8.* perl-threaded-5.8.* \
 		perl-5.10.* perl-threaded-5.10.* \
-		perl-5.14.* perl-threaded-5.14.*
+		perl-5.14.* perl-threaded-5.14.* \
+		perl-5.16.* perl-threaded-5.16.*
 
 OPTIONS=	DEBUGGING	"Build with debugging support"		off \
 		GDBM		"Build GDBM_File extension"		off \
@@ -151,7 +152,7 @@ LINK_USRBIN=	yes
 LINK_USRBIN=	no
 .endif
 
-LATEST_LINK=	perl
+NO_LATEST_LINK=	yes
 
 .if defined(WITH_GDBM)
 MAN3+=	GDBM_File.3
