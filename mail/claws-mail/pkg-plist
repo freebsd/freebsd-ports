@@ -11,6 +11,7 @@ include/claws-mail/addrcustomattr.h
 include/claws-mail/addrdefs.h
 include/claws-mail/addrduplicates.h
 include/claws-mail/addressadd.h
+include/claws-mail/addressbook-dbus.h
 include/claws-mail/addressbook.h
 include/claws-mail/addressbook_foldersel.h
 include/claws-mail/addressitem.h
@@ -323,6 +324,7 @@ share/locale/sk/LC_MESSAGES/claws-mail.mo
 share/locale/sv/LC_MESSAGES/claws-mail.mo
 share/locale/uk/LC_MESSAGES/claws-mail.mo
 share/locale/zh_CN/LC_MESSAGES/claws-mail.mo
+share/locale/zh_TW/LC_MESSAGES/claws-mail.mo
 @dirrmtry share/locale/id_ID/LC_MESSAGES
 @dirrmtry share/locale/id_ID
 @dirrmtry %%DATADIR%%

@@ -16,5 +16,6 @@ lib/claws-mail/plugins/fancy.a
 %%NLS%%share/locale/ru/LC_MESSAGES/fancy.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/fancy.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/fancy.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/fancy.mo
 %%NLS%%@dirrmtry share/locale/id_ID/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/id_ID
