@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	extjs
-PORTVERSION=	4.0.7
+PORTVERSION=	4.1.0
 CATEGORIES=	www
 MASTER_SITES=	http://cdn.sencha.io/ \
 		http://extjs.cachefly.net/ \
@@ -19,7 +19,7 @@ COMMENT=	A JavaScript platform for rapid development of cross-browser web apps
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-WRKSRC=		${WRKDIR}/ext-${PORTVERSION}-gpl
+WRKSRC=		${WRKDIR}/extjs-${PORTVERSION}
 
 USE_ZIP=	yes
 NO_BUILD=	yes
@@ -28,8 +28,10 @@ OPTIONS=	DOC	"Install with documents" on \
 		EXAMPLE "Install with examples" on
 
 WWW_SUB=	"bootstrap.js build builds ext-all-debug-w-comments.js \
-		 ext-all-debug.js ext-all-dev.js ext-all.js ext-debug.js \
-		 ext-dev.js ext.js index.html jsbuilder license.txt locale \
+		 ext-all-debug.js ext-all-dev.js ext-all.js \
+		 ext-debug-w-comments.js ext-debug.js ext-dev.js \
+		 ext-neptune-debug-w-comments.js ext-neptune-debug.js \
+		 ext-neptune.js	ext.js index.html license.txt locale \
 		 pkgs release-notes.html resources src welcome"
 
 .include <bsd.port.pre.mk>
@@ -51,6 +53,7 @@ SUB_LIST+=	COMMENTEXAMPLES=
 .endif
 
 do-install:
+	@cd ${WRKSRC} && ${RM} -rf resources/sass/.sass-cache/*
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${WWW_SUB} ${WWWDIR}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 .if !defined(NOPORTDOCS)

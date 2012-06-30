@@ -1,15 +1,7 @@
-%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/app.js
-%%PORTDOCS%%%%DOCSDIR%%/build-js.html
 %%PORTDOCS%%%%DOCSDIR%%/data.js
-%%PORTDOCS%%%%DOCSDIR%%/examples/examples.json
-%%PORTDOCS%%%%DOCSDIR%%/extIframe.html
-%%PORTDOCS%%%%DOCSDIR%%/extjs/bootstrap.js
-%%PORTDOCS%%%%DOCSDIR%%/extjs/builds/ext-core.js
-%%PORTDOCS%%%%DOCSDIR%%/extjs/ext-all-debug.js
+%%PORTDOCS%%%%DOCSDIR%%/eg-iframe.html
 %%PORTDOCS%%%%DOCSDIR%%/extjs/ext-all.js
-%%PORTDOCS%%%%DOCSDIR%%/extjs/release-notes.html
-%%PORTDOCS%%%%DOCSDIR%%/extjs/resources/css/ext-all.css
 %%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/boundlist/trigger-arrow.png
 %%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/box/corners-blue.gif
 %%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/box/corners.gif
@@ -364,6 +356,14 @@
 %%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/util/splitter/mini-top.gif
 %%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/window-header/window-header-default-bottom-corners.gif
 %%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/window-header/window-header-default-bottom-sides.gif
+%%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/window-header/window-header-default-collapsed-bottom-corners.gif
+%%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/window-header/window-header-default-collapsed-bottom-sides.gif
+%%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/window-header/window-header-default-collapsed-left-corners.gif
+%%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/window-header/window-header-default-collapsed-left-sides.gif
+%%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/window-header/window-header-default-collapsed-right-corners.gif
+%%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/window-header/window-header-default-collapsed-right-sides.gif
+%%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/window-header/window-header-default-collapsed-top-corners.gif
+%%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/window-header/window-header-default-collapsed-top-sides.gif
 %%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/window-header/window-header-default-left-corners.gif
 %%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/window-header/window-header-default-left-sides.gif
 %%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/window-header/window-header-default-right-corners.gif
@@ -372,54 +372,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/window-header/window-header-default-top-sides.gif
 %%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/window/window-default-corners.gif
 %%PORTDOCS%%%%DOCSDIR%%/extjs/resources/themes/images/default/window/window-default-sides.gif
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/css/blank.gif
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/css/iepngfix.htc
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/css/welcome.css
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/css/welcome_ie6.css
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/_bg-blue.gif
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/_welcome-bg-js4.gif
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/bright-green.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/ie.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/ie/bright-green.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/ie/link-blue-over.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/ie/link-blue.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/ie/link-dark-blue-over.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/ie/link-dark-blue.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/ie/link-dark-grey-over.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/ie/link-dark-grey.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/ie/link-green-standard-over.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/ie/link-green-standard.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/ie/link-green.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/ie/link-grey-over.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/ie/link-grey.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/ie/nav-on.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/link-blue-over.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/link-blue.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/link-dark-blue-over.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/link-dark-blue.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/link-dark-grey-over.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/link-dark-grey.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/link-green-standard-over.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/link-green-standard.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/link-green.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/link-grey-over.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/link-grey.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/button-bg/nav-on.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/facebook-16.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/hero-extjs4-alt.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/hero-extjs4.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/icon/more-dark.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/icon/more-ie.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/icon/more.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/linkedin-16.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/logo-screen-ie.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/logo-screen-noglow.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/logo-sencha-sm.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/rss-16.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/tumblr-16.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/twitter-16.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/img/vimeo-16.png
-%%PORTDOCS%%%%DOCSDIR%%/extjs/welcome/release-notes.css
 %%PORTDOCS%%%%DOCSDIR%%/favicon.ico
 %%PORTDOCS%%%%DOCSDIR%%/guides/application_architecture/README.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/application_architecture/README.md
@@ -427,7 +379,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/guides/application_architecture/firstControllerListener.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/application_architecture/firstView.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/application_architecture/folderStructure.png
-%%PORTDOCS%%%%DOCSDIR%%/guides/application_architecture/icon-lg.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/application_architecture/icon.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/application_architecture/loadedForm.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/application_architecture/panelView.png
@@ -437,7 +388,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/guides/class_system/README.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/class_system/README.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/class_system/call-stack.png
-%%PORTDOCS%%%%DOCSDIR%%/guides/class_system/icon-lg.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/class_system/icon.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/components/README.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/components/README.md
@@ -450,7 +400,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/guides/components/examples/lazy_instantiation/index.html
 %%PORTDOCS%%%%DOCSDIR%%/guides/components/examples/managed_image/app.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/components/examples/managed_image/index.html
-%%PORTDOCS%%%%DOCSDIR%%/guides/components/icon-lg.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/components/icon.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/components/lazy_render1.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/components/lazy_render2.png
@@ -479,7 +428,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/guides/data/examples/sorting_grouping_filtering_store/app.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/data/examples/sorting_grouping_filtering_store/data/users.json
 %%PORTDOCS%%%%DOCSDIR%%/guides/data/examples/sorting_grouping_filtering_store/index.html
-%%PORTDOCS%%%%DOCSDIR%%/guides/data/icon-lg.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/data/icon.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/data/model.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt1/README.js
@@ -488,16 +436,26 @@
 %%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt1/grid-bare.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt1/grid-full.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt1/grid-tutorial.sql
-%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt1/icon-lg.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt1/icon.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt1/reference-files.zip
 %%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt1/row-editor.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt2/README.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt2/README.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt2/creating-record.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt2/grid-full.png
-%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt2/icon-lg.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt2/icon.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt2/reference-files.zip
+%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt2/reference-files/grid.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt2/reference-files/images/add.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt2/reference-files/images/delete.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt2/reference-files/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt2/reference-files/php/api.php
+%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt2/reference-files/php/classes/QueryDatabase.php
+%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt2/reference-files/php/config.php
+%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt2/reference-files/php/router.php
+%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt2/reference-files/style.css
 %%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt2/row-editor.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/direct_grid_pt2/start.zip
 %%PORTDOCS%%%%DOCSDIR%%/guides/drag_and_drop/README.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/drag_and_drop/README.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/drag_and_drop/diagram.jpg
@@ -508,8 +466,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/guides/drag_and_drop/dnd_story.jpg
 %%PORTDOCS%%%%DOCSDIR%%/guides/drag_and_drop/drag_and_drop_working_with_invitation.jpg
 %%PORTDOCS%%%%DOCSDIR%%/guides/drag_and_drop/drag_and_drop_working_without_invitation.jpg
-%%PORTDOCS%%%%DOCSDIR%%/guides/drag_and_drop/icon-lg.png
-%%PORTDOCS%%%%DOCSDIR%%/guides/drag_and_drop/step1.html
+%%PORTDOCS%%%%DOCSDIR%%/guides/drag_and_drop/icon.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/drawing_and_charting/Area.jpg
 %%PORTDOCS%%%%DOCSDIR%%/guides/drawing_and_charting/Bar.jpg
 %%PORTDOCS%%%%DOCSDIR%%/guides/drawing_and_charting/Gauge.jpg
@@ -520,13 +477,27 @@
 %%PORTDOCS%%%%DOCSDIR%%/guides/drawing_and_charting/Radar.jpg
 %%PORTDOCS%%%%DOCSDIR%%/guides/drawing_and_charting/Scatter.jpg
 %%PORTDOCS%%%%DOCSDIR%%/guides/drawing_and_charting/Ticks.jpg
-%%PORTDOCS%%%%DOCSDIR%%/guides/drawing_and_charting/icon-lg.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/drawing_and_charting/icon.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/editable_grid/GeekFlicks/app.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/editable_grid/GeekFlicks/app/controller/Movies.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/editable_grid/GeekFlicks/app/model/Movie.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/editable_grid/GeekFlicks/app/store/Movies.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/editable_grid/GeekFlicks/app/view/Movies.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/editable_grid/GeekFlicks/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guides/editable_grid/GeekFlicks/index.html.html
+%%PORTDOCS%%%%DOCSDIR%%/guides/editable_grid/GeekFlicks/movies.php
 %%PORTDOCS%%%%DOCSDIR%%/guides/editable_grid/README.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/editable_grid/README.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/editable_grid/geekflicks.zip
 %%PORTDOCS%%%%DOCSDIR%%/guides/editable_grid/geekflicks_readonly.png
-%%PORTDOCS%%%%DOCSDIR%%/guides/editable_grid/icon-lg.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/editable_grid/icon.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/editable_grid_pt2/README.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/editable_grid_pt2/README.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/editable_grid_pt2/editing.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/editable_grid_pt2/geekflicks.zip
+%%PORTDOCS%%%%DOCSDIR%%/guides/editable_grid_pt2/geekflicks_readonly.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/editable_grid_pt2/icon.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/editable_grid_pt2/icons.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/forms/README.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/forms/README.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/forms/custom_error_message.png
@@ -544,14 +515,13 @@
 %%PORTDOCS%%%%DOCSDIR%%/guides/forms/examples/validation/app.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/forms/examples/validation/index.html
 %%PORTDOCS%%%%DOCSDIR%%/guides/forms/hbox.png
-%%PORTDOCS%%%%DOCSDIR%%/guides/forms/icon-lg.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/forms/icon.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/forms/invalid_field.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/forms/invalid_field_hover.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/forms/simple_form.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/getting_started/README.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/getting_started/README.md
-%%PORTDOCS%%%%DOCSDIR%%/guides/getting_started/icon-lg.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/getting_started/icon.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/getting_started/loader-warning-viewport.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/grid/README.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/grid/README.md
@@ -570,27 +540,25 @@
 %%PORTDOCS%%%%DOCSDIR%%/guides/grid/examples/simple_grid/app.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/grid/examples/simple_grid/index.html
 %%PORTDOCS%%%%DOCSDIR%%/guides/grid/grouping.png
-%%PORTDOCS%%%%DOCSDIR%%/guides/grid/icon-lg.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/grid/icon.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/grid/paging_toolbar.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/grid/row_editing.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/grid/simple_grid.png
-%%PORTDOCS%%%%DOCSDIR%%/guides/guides.json
 %%PORTDOCS%%%%DOCSDIR%%/guides/keyboard_nav/README.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/keyboard_nav/README.md
-%%PORTDOCS%%%%DOCSDIR%%/guides/keyboard_nav/icon-lg.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/keyboard_nav/icon.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/keyboard_nav/start.zip
 %%PORTDOCS%%%%DOCSDIR%%/guides/layouts_and_containers/README.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/layouts_and_containers/README.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/layouts_and_containers/auto_layout.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/layouts_and_containers/column_layout.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/layouts_and_containers/component_architecture.png
-%%PORTDOCS%%%%DOCSDIR%%/guides/layouts_and_containers/icon-lg.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/layouts_and_containers/icon.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/localization/README.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/localization/README.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/localization/combobox.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/localization/datepicker.png
-%%PORTDOCS%%%%DOCSDIR%%/guides/localization/icon-lg.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/localization/icon.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/localization/onfailure.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/localization/tooltip.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt1/README.js
@@ -599,7 +567,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt1/base_layout.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt1/controllers.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt1/folderStructure1.png
-%%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt1/icon-lg.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt1/icon.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt1/models.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt1/stores.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt1/too-general.png
@@ -608,12 +576,26 @@
 %%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt2/README.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt2/apidocs-events.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt2/balanced.png
-%%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt2/icon-lg.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt2/icon.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt2/stores.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt3/README.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt3/README.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt3/code.zip
-%%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt3/icon-lg.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt3/icon.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/performance/README.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/performance/README.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/performance/icon.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/performance/optextjs4.11.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/performance/optextjs4.12.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/performance/optextjs4.13.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/performance/optextjs4.14.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/testing/README.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/testing/README.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/testing/article.html
+%%PORTDOCS%%%%DOCSDIR%%/guides/testing/folder.jpg
+%%PORTDOCS%%%%DOCSDIR%%/guides/testing/icon.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/testing/jasmine-setup.jpg
+%%PORTDOCS%%%%DOCSDIR%%/guides/testing/run-jasmine.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/theming/README.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/theming/README.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/theming/_README.md
@@ -622,7 +604,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/guides/theming/demo1.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/theming/demo2.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/theming/demo3.png
-%%PORTDOCS%%%%DOCSDIR%%/guides/theming/icon-lg.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/theming/icon.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/tree/README.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/tree/README.md
@@ -630,19 +611,23 @@
 %%PORTDOCS%%%%DOCSDIR%%/guides/tree/arrows.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/tree/examples/simple_tree/app.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/tree/examples/simple_tree/index.html
-%%PORTDOCS%%%%DOCSDIR%%/guides/tree/icon-lg.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/tree/icon.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/tree/insert-children.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/tree/nodeinterface.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/tree/root-lines.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/tree/simple_tree.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/tree/tree-bulk-load.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/tree/tree-dynamic-load.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/tree/treegrid.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/upgrade/README.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/upgrade/README.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/upgrade/ext4-class-system.jpg
-%%PORTDOCS%%%%DOCSDIR%%/guides/upgrade/icon-lg.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/upgrade/icon.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/upgrade/logo-sencha-sm.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/upgrade/working-with-charts.gif
+%%PORTDOCS%%%%DOCSDIR%%/guides/upgrade_41/README.js
+%%PORTDOCS%%%%DOCSDIR%%/guides/upgrade_41/README.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/upgrade_41/icon.png
 %%PORTDOCS%%%%DOCSDIR%%/images/Ext.Editor/Ext.Editor.png
 %%PORTDOCS%%%%DOCSDIR%%/images/Ext.Img/Ext.Img.png
 %%PORTDOCS%%%%DOCSDIR%%/images/Ext.chart.Chart/Ext.chart.Chart1.png
@@ -664,20 +649,14 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.Ajax.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.Array.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.Base.js
-%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ButtonToggleManager.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.Class.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.ClassManager.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.Component.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.ComponentLoader.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.ComponentManager.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.ComponentQuery.js
-%%PORTDOCS%%%%DOCSDIR%%/output/Ext.CompositeElement.js
-%%PORTDOCS%%%%DOCSDIR%%/output/Ext.CompositeElementLite.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.Date.js
-%%PORTDOCS%%%%DOCSDIR%%/output/Ext.DomHelper.js
-%%PORTDOCS%%%%DOCSDIR%%/output/Ext.DomQuery.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.Editor.js
-%%PORTDOCS%%%%DOCSDIR%%/output/Ext.Element.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.ElementLoader.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.Error.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.EventManager.js
@@ -703,6 +682,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.Version.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.WindowManager.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.XTemplate.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.XTemplateCompiler.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.XTemplateParser.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.ZIndexManager.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.app.Application.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.app.Controller.js
@@ -717,6 +698,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.chart.Legend.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.chart.LegendItem.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.chart.Mask.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.chart.MaskLayer.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.chart.Navigation.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.chart.Shape.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.chart.Tip.js
@@ -743,18 +725,16 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.container.AbstractContainer.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.container.ButtonGroup.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.container.Container.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.container.DockingContainer.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.container.Viewport.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.AbstractStore.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.ArrayStore.js
-%%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.Association.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.Batch.js
-%%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.BelongsToAssociation.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.BufferStore.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.Connection.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.DirectStore.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.Errors.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.Field.js
-%%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.HasManyAssociation.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.IdGenerator.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.JsonP.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.JsonPStore.js
@@ -774,6 +754,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.Types.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.UuidGenerator.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.XmlStore.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.association.Association.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.association.BelongsTo.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.association.HasMany.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.association.HasOne.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.proxy.Ajax.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.proxy.Client.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.proxy.Direct.js
@@ -797,6 +781,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.dd.DDProxy.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.dd.DDTarget.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.dd.DragDrop.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.dd.DragDropElement.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.dd.DragDropManager.ElementWrapper.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.dd.DragDropManager.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.dd.DragSource.js
@@ -817,17 +802,28 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.direct.RemotingMethod.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.direct.RemotingProvider.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.direct.Transaction.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.dom.AbstractElement.Fly.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.dom.AbstractElement.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.dom.AbstractHelper.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.dom.AbstractQuery.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.dom.CompositeElement.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.dom.CompositeElementLite.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.dom.Element.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.dom.Helper.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.dom.Query.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.draw.Color.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.draw.Component.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.draw.CompositeSprite.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.draw.Draw.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.draw.Matrix.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.draw.Sprite.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.draw.SpriteDD.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.draw.Surface.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.draw.Text.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.draw.engine.ImageExporter.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.draw.engine.Svg.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.draw.engine.SvgExporter.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.draw.engine.Vml.js
-%%PORTDOCS%%%%DOCSDIR%%/output/Ext.env.Browser.js
-%%PORTDOCS%%%%DOCSDIR%%/output/Ext.env.FeatureDetector.js
-%%PORTDOCS%%%%DOCSDIR%%/output/Ext.env.OS.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.flash.Component.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.form.Basic.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.form.CheckboxGroup.js
@@ -880,6 +876,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.fx.target.Sprite.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.fx.target.Target.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.CellEditor.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.ColumnComponentLayout.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.ColumnLayout.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.Lockable.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.LockingView.js
@@ -887,8 +884,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.Panel.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.RowEditor.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.RowNumberer.js
-%%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.Scroller.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.View.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.ViewDropZone.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.column.Action.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.column.Boolean.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.column.Column.js
@@ -918,8 +915,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.grid.property.Store.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.is.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.ClassList.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.Context.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.ContextItem.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.Layout.js
-%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.AbstractDock.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.SizeModel.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.Auto.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.Body.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.BoundList.js
@@ -927,22 +927,18 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.Component.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.Dock.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.Draw.js
-%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.Editor.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.FieldSet.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.ProgressBar.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.Tab.js
-%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.Tip.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.field.ComboBox.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.field.Field.js
-%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.field.File.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.field.FieldContainer.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.field.HtmlEditor.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.field.Slider.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.field.Text.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.field.TextArea.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.component.field.Trigger.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.container.Absolute.js
-%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.container.AbstractCard.js
-%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.container.AbstractContainer.js
-%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.container.AbstractFit.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.container.Accordion.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.container.Anchor.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.container.Auto.js
@@ -952,7 +948,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.container.CheckboxGroup.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.container.Column.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.container.Container.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.container.Editor.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.container.Fit.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.container.Form.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.container.HBox.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.container.Table.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.container.VBox.js
@@ -968,15 +966,20 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.menu.Menu.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.menu.Separator.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.panel.AbstractPanel.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.panel.DD.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.panel.Header.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.panel.Panel.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.panel.Proxy.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.panel.Table.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.panel.Tool.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.perf.Accumulator.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.perf.Monitor.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.picker.Color.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.picker.Date.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.picker.Month.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.picker.Time.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.resizer.BorderSplitter.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.resizer.BorderSplitterTracker.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.resizer.Handle.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.resizer.ResizeTracker.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.resizer.Resizer.js
@@ -1015,15 +1018,19 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.tree.Column.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.tree.Panel.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.tree.View.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.tree.ViewDragZone.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.tree.ViewDropZone.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.tree.plugin.TreeViewDragDrop.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.AbstractMixedCollection.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.Animate.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.Bindable.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.CSS.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.ClickRepeater.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.ComponentDragger.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.Cookies.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.DelayedTask.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.ElementContainer.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.Event.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.Filter.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.Floating.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.Format.js
@@ -1033,16 +1040,69 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.Inflector.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.KeyMap.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.KeyNav.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.LruCache.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.Memento.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.MixedCollection.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.Observable.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.Offset.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.Point.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.ProtoElement.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.Queue.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.Region.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.Renderable.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.Sortable.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.Sorter.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.TaskRunner.Task.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.TaskRunner.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.util.TextMetrics.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.BoxReorderer.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.CheckColumn.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.DataView.Animated.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.DataView.DragSelector.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.DataView.Draggable.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.DataView.LabelEditor.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.DataViewTransition.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.FieldReplicator.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.GMapPanel.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.GroupTabPanel.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.GroupTreeChunker.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.IFrame.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.LiveSearchGridPanel.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.PreviewPlugin.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.ProgressBarPager.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.RowExpander.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.SlidingPager.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.Spotlight.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.TabCloseMenu.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.TabReorderer.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.TabScrollerMenu.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.ToolbarDroppable.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.TreePicker.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.ajax.JsonSimlet.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.ajax.SimManager.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.ajax.SimXhr.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.ajax.Simlet.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.data.PagingMemoryProxy.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.event.Driver.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.event.Maker.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.event.Player.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.event.Recorder.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.event.RecorderManager.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.form.ItemSelector.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.form.MultiSelect.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.grid.FiltersFeature.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.grid.TransformGrid.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.grid.filter.BooleanFilter.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.grid.filter.DateFilter.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.grid.filter.Filter.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.grid.filter.ListFilter.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.grid.filter.NumericFilter.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.grid.filter.StringFilter.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.grid.menu.ListMenu.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.grid.menu.RangeMenu.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.layout.Center.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.statusbar.StatusBar.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.statusbar.ValidationStatus.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.view.AbstractView.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.view.BoundList.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.view.BoundListKeyNav.js
@@ -1058,33 +1118,27 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Object.js
 %%PORTDOCS%%%%DOCSDIR%%/output/RegExp.js
 %%PORTDOCS%%%%DOCSDIR%%/output/String.js
-%%PORTDOCS%%%%DOCSDIR%%/print-template.html
 %%PORTDOCS%%%%DOCSDIR%%/resources/css/app.css
-%%PORTDOCS%%%%DOCSDIR%%/resources/css/ie.css
-%%PORTDOCS%%%%DOCSDIR%%/resources/css/print.css
+%%PORTDOCS%%%%DOCSDIR%%/resources/css/touch.css
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/ajax-loader.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/arrows.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/class-m.png
-%%PORTDOCS%%%%DOCSDIR%%/resources/images/class-sm.png
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/comment-bubble.png
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/comment.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/component-m.png
-%%PORTDOCS%%%%DOCSDIR%%/resources/images/configs.png
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/default-guide.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/doc-m.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/down-arr.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/elbow-end.gif
-%%PORTDOCS%%%%DOCSDIR%%/resources/images/events.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/example-icons.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/expandcollapse.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/gettingstarted.jpg
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/group-expand-sprite.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/guide-icon.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/guides.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/header.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/hero-extjs4-alt.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/icons.png
-%%PORTDOCS%%%%DOCSDIR%%/resources/images/ipad-l.jpg
-%%PORTDOCS%%%%DOCSDIR%%/resources/images/ipad-p.jpg
-%%PORTDOCS%%%%DOCSDIR%%/resources/images/iphone-l.jpg
-%%PORTDOCS%%%%DOCSDIR%%/resources/images/iphone-p.jpg
-%%PORTDOCS%%%%DOCSDIR%%/resources/images/iphone-small-l.jpg
-%%PORTDOCS%%%%DOCSDIR%%/resources/images/iphone-small-p.jpg
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/link-arrow-next.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/link-green-standard-over.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/link-green-standard.png
@@ -1095,15 +1149,23 @@
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/member-collapsed.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/member-expanded.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/member-hover.gif
-%%PORTDOCS%%%%DOCSDIR%%/resources/images/methods.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/more.png
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/phone-l.jpg
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/phone-p.jpg
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/phone-small-l.jpg
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/phone-small-p.jpg
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/preview.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/print.png
-%%PORTDOCS%%%%DOCSDIR%%/resources/images/properties.png
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/sample-over.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/search-box.png
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/sencha-stamp.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/singleton-m.png
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/tablet-l.jpg
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/tablet-p.jpg
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/tabs.png
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/text-bg.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/version-tabs.png
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/vote-arrows.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/welcome-bg-js4.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/x.png
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/x12.png
@@ -1112,20 +1174,26 @@
 %%PORTDOCS%%%%DOCSDIR%%/resources/prettify/prettify.js
 %%PORTDOCS%%%%DOCSDIR%%/source/Absolute.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Abstract.html
-%%PORTDOCS%%%%DOCSDIR%%/source/AbstractCard.html
 %%PORTDOCS%%%%DOCSDIR%%/source/AbstractComponent.html
 %%PORTDOCS%%%%DOCSDIR%%/source/AbstractContainer.html
-%%PORTDOCS%%%%DOCSDIR%%/source/AbstractContainer2.html
-%%PORTDOCS%%%%DOCSDIR%%/source/AbstractDock.html
-%%PORTDOCS%%%%DOCSDIR%%/source/AbstractFit.html
+%%PORTDOCS%%%%DOCSDIR%%/source/AbstractElement.alignment.html
+%%PORTDOCS%%%%DOCSDIR%%/source/AbstractElement.html
+%%PORTDOCS%%%%DOCSDIR%%/source/AbstractElement.insertion.html
+%%PORTDOCS%%%%DOCSDIR%%/source/AbstractElement.position.html
+%%PORTDOCS%%%%DOCSDIR%%/source/AbstractElement.static.html
+%%PORTDOCS%%%%DOCSDIR%%/source/AbstractElement.style.html
+%%PORTDOCS%%%%DOCSDIR%%/source/AbstractElement.traversal.html
+%%PORTDOCS%%%%DOCSDIR%%/source/AbstractHelper.html
 %%PORTDOCS%%%%DOCSDIR%%/source/AbstractManager.html
 %%PORTDOCS%%%%DOCSDIR%%/source/AbstractMixedCollection.html
 %%PORTDOCS%%%%DOCSDIR%%/source/AbstractPanel.html
 %%PORTDOCS%%%%DOCSDIR%%/source/AbstractPlugin.html
+%%PORTDOCS%%%%DOCSDIR%%/source/AbstractQuery.html
 %%PORTDOCS%%%%DOCSDIR%%/source/AbstractStore.html
 %%PORTDOCS%%%%DOCSDIR%%/source/AbstractSummary.html
 %%PORTDOCS%%%%DOCSDIR%%/source/AbstractView.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Accordion.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Accumulator.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Action.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Action2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Action3.html
@@ -1134,6 +1202,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/Anchor.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Anim.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Animate.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Animated.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Animator.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Application.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Area.html
@@ -1152,16 +1221,20 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/Base3.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Basic.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Batch.html
-%%PORTDOCS%%%%DOCSDIR%%/source/BelongsToAssociation.html
+%%PORTDOCS%%%%DOCSDIR%%/source/BelongsTo.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Bindable.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Body.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Boolean.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Boolean2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/BooleanFilter.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Border.html
+%%PORTDOCS%%%%DOCSDIR%%/source/BorderSplitter.html
+%%PORTDOCS%%%%DOCSDIR%%/source/BorderSplitterTracker.html
 %%PORTDOCS%%%%DOCSDIR%%/source/BoundList.html
 %%PORTDOCS%%%%DOCSDIR%%/source/BoundList2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/BoundListKeyNav.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Box.html
-%%PORTDOCS%%%%DOCSDIR%%/source/Browser.html
+%%PORTDOCS%%%%DOCSDIR%%/source/BoxReorderer.html
 %%PORTDOCS%%%%DOCSDIR%%/source/BufferStore.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Button.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Button2.html
@@ -1174,7 +1247,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/CellEditing.html
 %%PORTDOCS%%%%DOCSDIR%%/source/CellEditor.html
 %%PORTDOCS%%%%DOCSDIR%%/source/CellModel.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Center.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Chart.html
+%%PORTDOCS%%%%DOCSDIR%%/source/CheckColumn.html
+%%PORTDOCS%%%%DOCSDIR%%/source/CheckHeader.css.html
 %%PORTDOCS%%%%DOCSDIR%%/source/CheckItem.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Checkbox.html
 %%PORTDOCS%%%%DOCSDIR%%/source/CheckboxGroup.html
@@ -1183,6 +1259,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/CheckboxModel.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Chunking.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Class.html
+%%PORTDOCS%%%%DOCSDIR%%/source/ClassList.html
 %%PORTDOCS%%%%DOCSDIR%%/source/ClassManager.html
 %%PORTDOCS%%%%DOCSDIR%%/source/ClickRepeater.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Client.html
@@ -1193,8 +1270,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/Column2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Column3.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Column4.html
+%%PORTDOCS%%%%DOCSDIR%%/source/ColumnComponentLayout.html
 %%PORTDOCS%%%%DOCSDIR%%/source/ColumnLayout.html
 %%PORTDOCS%%%%DOCSDIR%%/source/ComboBox.html
+%%PORTDOCS%%%%DOCSDIR%%/source/ComboBox2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Component.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Component2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Component3.html
@@ -1207,7 +1286,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/CompositeElement.html
 %%PORTDOCS%%%%DOCSDIR%%/source/CompositeElement2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/CompositeElementCSS.html
-%%PORTDOCS%%%%DOCSDIR%%/source/CompositeElementLite-more.html
 %%PORTDOCS%%%%DOCSDIR%%/source/CompositeElementLite.html
 %%PORTDOCS%%%%DOCSDIR%%/source/CompositeSprite.html
 %%PORTDOCS%%%%DOCSDIR%%/source/CompositeSprite2.html
@@ -1215,6 +1293,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/Container.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Container2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Container3.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Context.html
+%%PORTDOCS%%%%DOCSDIR%%/source/ContextItem.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Controller.html
 %%PORTDOCS%%%%DOCSDIR%%/source/CookieProvider.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Cookies.html
@@ -1225,11 +1305,13 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/DDProxy.html
 %%PORTDOCS%%%%DOCSDIR%%/source/DDTarget.html
 %%PORTDOCS%%%%DOCSDIR%%/source/DataViewModel.html
+%%PORTDOCS%%%%DOCSDIR%%/source/DataViewTransition.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Date.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Date2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Date3.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Date4.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Date5.html
+%%PORTDOCS%%%%DOCSDIR%%/source/DateFilter.html
 %%PORTDOCS%%%%DOCSDIR%%/source/DatePicker.html
 %%PORTDOCS%%%%DOCSDIR%%/source/DelayedTask.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Direct.html
@@ -1238,18 +1320,21 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/DirectSubmit.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Display.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Dock.html
-%%PORTDOCS%%%%DOCSDIR%%/source/DomHelper.html
-%%PORTDOCS%%%%DOCSDIR%%/source/DomQuery.html
+%%PORTDOCS%%%%DOCSDIR%%/source/DockingContainer.html
 %%PORTDOCS%%%%DOCSDIR%%/source/DragDrop.html
 %%PORTDOCS%%%%DOCSDIR%%/source/DragDrop2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/DragDropManager.html
+%%PORTDOCS%%%%DOCSDIR%%/source/DragSelector.css.html
+%%PORTDOCS%%%%DOCSDIR%%/source/DragSelector.html
 %%PORTDOCS%%%%DOCSDIR%%/source/DragSource.html
 %%PORTDOCS%%%%DOCSDIR%%/source/DragTracker.html
 %%PORTDOCS%%%%DOCSDIR%%/source/DragZone.html
 %%PORTDOCS%%%%DOCSDIR%%/source/DragZone2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/DragZone3.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Draggable.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Draw.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Draw2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Driver.html
 %%PORTDOCS%%%%DOCSDIR%%/source/DropTarget.html
 %%PORTDOCS%%%%DOCSDIR%%/source/DropZone.html
 %%PORTDOCS%%%%DOCSDIR%%/source/DropZone2.html
@@ -1258,23 +1343,18 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/Editing.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Editor.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Editor2.html
-%%PORTDOCS%%%%DOCSDIR%%/source/Element-more.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Element.alignment.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Element.anim.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Element.dd.html
-%%PORTDOCS%%%%DOCSDIR%%/source/Element.fx-more.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Element.fx.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Element.html
-%%PORTDOCS%%%%DOCSDIR%%/source/Element.insertion.html
-%%PORTDOCS%%%%DOCSDIR%%/source/Element.keys.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Element.position.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Element.scroll.html
-%%PORTDOCS%%%%DOCSDIR%%/source/Element.static-more.html
-%%PORTDOCS%%%%DOCSDIR%%/source/Element.static.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Element.style.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Element.traversal.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Element2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/ElementCSS.html
+%%PORTDOCS%%%%DOCSDIR%%/source/ElementContainer.html
 %%PORTDOCS%%%%DOCSDIR%%/source/ElementLoader.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Error.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Errors.html
@@ -1287,67 +1367,86 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/Ext-more.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Ext.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Feature.html
-%%PORTDOCS%%%%DOCSDIR%%/source/FeatureDetector.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Field.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Field2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Field3.html
 %%PORTDOCS%%%%DOCSDIR%%/source/FieldAncestor.html
 %%PORTDOCS%%%%DOCSDIR%%/source/FieldContainer.html
+%%PORTDOCS%%%%DOCSDIR%%/source/FieldContainer2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/FieldReplicator.html
 %%PORTDOCS%%%%DOCSDIR%%/source/FieldSet.html
 %%PORTDOCS%%%%DOCSDIR%%/source/FieldSet2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/File.html
-%%PORTDOCS%%%%DOCSDIR%%/source/File2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Fill.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Filter.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Filter2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/FiltersFeature.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Fit.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Floating.html
 %%PORTDOCS%%%%DOCSDIR%%/source/FocusManager.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Form.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Format.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Function.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Function2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/GMapPanel.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Gauge.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Gauge2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Grid.html
+%%PORTDOCS%%%%DOCSDIR%%/source/GridFilters.css.html
+%%PORTDOCS%%%%DOCSDIR%%/source/GroupTabPanel.css.html
+%%PORTDOCS%%%%DOCSDIR%%/source/GroupTabPanel.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Grouper.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Grouping.html
 %%PORTDOCS%%%%DOCSDIR%%/source/GroupingSummary.html
 %%PORTDOCS%%%%DOCSDIR%%/source/HBox.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Handle.html
-%%PORTDOCS%%%%DOCSDIR%%/source/HasManyAssociation.html
+%%PORTDOCS%%%%DOCSDIR%%/source/HasMany.html
+%%PORTDOCS%%%%DOCSDIR%%/source/HasOne.html
 %%PORTDOCS%%%%DOCSDIR%%/source/HashMap.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Header.html
 %%PORTDOCS%%%%DOCSDIR%%/source/HeaderContainer.html
 %%PORTDOCS%%%%DOCSDIR%%/source/HeaderReorderer.html
 %%PORTDOCS%%%%DOCSDIR%%/source/HeaderResizer.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Helper.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Hidden.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Highlight.html
 %%PORTDOCS%%%%DOCSDIR%%/source/History.html
 %%PORTDOCS%%%%DOCSDIR%%/source/HtmlEditor.html
 %%PORTDOCS%%%%DOCSDIR%%/source/HtmlEditor2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/IFrame.html
 %%PORTDOCS%%%%DOCSDIR%%/source/IdGenerator.html
+%%PORTDOCS%%%%DOCSDIR%%/source/ImageExporter.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Img.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Inflector.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Item.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Item2.html
-%%PORTDOCS%%%%DOCSDIR%%/source/JSON3.html
-%%PORTDOCS%%%%DOCSDIR%%/source/Json.html
+%%PORTDOCS%%%%DOCSDIR%%/source/ItemSelector.css.html
+%%PORTDOCS%%%%DOCSDIR%%/source/ItemSelector.html
+%%PORTDOCS%%%%DOCSDIR%%/source/JSON.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Json2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Json3.html
 %%PORTDOCS%%%%DOCSDIR%%/source/JsonP.html
 %%PORTDOCS%%%%DOCSDIR%%/source/JsonP2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/JsonPStore.html
 %%PORTDOCS%%%%DOCSDIR%%/source/JsonProvider.html
+%%PORTDOCS%%%%DOCSDIR%%/source/JsonSimlet.html
 %%PORTDOCS%%%%DOCSDIR%%/source/JsonStore.html
 %%PORTDOCS%%%%DOCSDIR%%/source/KeyMap.html
 %%PORTDOCS%%%%DOCSDIR%%/source/KeyNav.html
 %%PORTDOCS%%%%DOCSDIR%%/source/KeyNav2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Label.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Label2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/LabelEditor.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Labelable.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Layer.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Layout.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Legend.html
 %%PORTDOCS%%%%DOCSDIR%%/source/LegendItem.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Line.html
+%%PORTDOCS%%%%DOCSDIR%%/source/ListFilter.html
+%%PORTDOCS%%%%DOCSDIR%%/source/ListMenu.html
+%%PORTDOCS%%%%DOCSDIR%%/source/LiveSearchGridPanel.css.html
+%%PORTDOCS%%%%DOCSDIR%%/source/LiveSearchGridPanel.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Load.html
 %%PORTDOCS%%%%DOCSDIR%%/source/LoadMask.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Loader.html
@@ -1355,6 +1454,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/LocalStorageProvider.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Lockable.html
 %%PORTDOCS%%%%DOCSDIR%%/source/LockingView.html
+%%PORTDOCS%%%%DOCSDIR%%/source/LruCache.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Maker.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Manager.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Manager2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Manager3.html
@@ -1371,8 +1472,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/Model.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Model2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/ModelManager.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Monitor.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Month.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Multi.html
+%%PORTDOCS%%%%DOCSDIR%%/source/MultiSelect.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Navigation.html
 %%PORTDOCS%%%%DOCSDIR%%/source/NodeInterface.html
 %%PORTDOCS%%%%DOCSDIR%%/source/NodeStore.html
@@ -1382,13 +1485,14 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/Number3.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Number4.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Numeric.html
-%%PORTDOCS%%%%DOCSDIR%%/source/OS.html
+%%PORTDOCS%%%%DOCSDIR%%/source/NumericFilter.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Object.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Object2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Observable.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Offset.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Operation.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Paging.html
+%%PORTDOCS%%%%DOCSDIR%%/source/PagingMemoryProxy.html
 %%PORTDOCS%%%%DOCSDIR%%/source/PagingScroller.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Panel.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Panel2.html
@@ -1397,18 +1501,24 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/Panel5.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Picker.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Pie.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Player.html
 %%PORTDOCS%%%%DOCSDIR%%/source/PluginManager.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Point.html
 %%PORTDOCS%%%%DOCSDIR%%/source/PollingProvider.html
+%%PORTDOCS%%%%DOCSDIR%%/source/PreviewPlugin.html
 %%PORTDOCS%%%%DOCSDIR%%/source/ProgressBar.html
 %%PORTDOCS%%%%DOCSDIR%%/source/ProgressBar2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/ProgressBarPager.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Property.html
 %%PORTDOCS%%%%DOCSDIR%%/source/PropertyHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/source/ProtoElement.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Provider.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Provider2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Proxy.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Proxy2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Query.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Queue.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Queue2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/QuickTip.html
 %%PORTDOCS%%%%DOCSDIR%%/source/QuickTipManager.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Radar.html
@@ -1416,13 +1526,18 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/Radio.html
 %%PORTDOCS%%%%DOCSDIR%%/source/RadioGroup.html
 %%PORTDOCS%%%%DOCSDIR%%/source/RadioManager.html
+%%PORTDOCS%%%%DOCSDIR%%/source/RangeMenu.css.html
+%%PORTDOCS%%%%DOCSDIR%%/source/RangeMenu.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Reader.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Recorder.html
+%%PORTDOCS%%%%DOCSDIR%%/source/RecorderManager.html
 %%PORTDOCS%%%%DOCSDIR%%/source/RegExp.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Region.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Registry.html
 %%PORTDOCS%%%%DOCSDIR%%/source/RemotingEvent.html
 %%PORTDOCS%%%%DOCSDIR%%/source/RemotingMethod.html
 %%PORTDOCS%%%%DOCSDIR%%/source/RemotingProvider.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Renderable.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Request.html
 %%PORTDOCS%%%%DOCSDIR%%/source/ResizeTracker.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Resizer.html
@@ -1431,6 +1546,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/RowBody.html
 %%PORTDOCS%%%%DOCSDIR%%/source/RowEditing.html
 %%PORTDOCS%%%%DOCSDIR%%/source/RowEditor.html
+%%PORTDOCS%%%%DOCSDIR%%/source/RowExpander.html
 %%PORTDOCS%%%%DOCSDIR%%/source/RowModel.html
 %%PORTDOCS%%%%DOCSDIR%%/source/RowNumberer.html
 %%PORTDOCS%%%%DOCSDIR%%/source/RowWrap.html
@@ -1438,6 +1554,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/ScrollManager.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Scroller.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Scroller2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/SearchField.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Separator.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Separator2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/SequentialIdGenerator.html
@@ -1447,8 +1564,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/Shadow.html
 %%PORTDOCS%%%%DOCSDIR%%/source/ShadowPool.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Shape.html
+%%PORTDOCS%%%%DOCSDIR%%/source/SimManager.html
+%%PORTDOCS%%%%DOCSDIR%%/source/SimXhr.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Simlet.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Single.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Slider.html
+%%PORTDOCS%%%%DOCSDIR%%/source/SlidingPager.html
 %%PORTDOCS%%%%DOCSDIR%%/source/SortTypes.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Sortable.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Sorter.html
@@ -1457,24 +1578,32 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/Split.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Splitter.html
 %%PORTDOCS%%%%DOCSDIR%%/source/SplitterTracker.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Spotlight.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Sprite.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Sprite2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/SpriteDD.html
 %%PORTDOCS%%%%DOCSDIR%%/source/StandardSubmit.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Stateful.html
+%%PORTDOCS%%%%DOCSDIR%%/source/StatusBar.html
 %%PORTDOCS%%%%DOCSDIR%%/source/StatusProxy.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Store.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Store2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/StoreManager.html
 %%PORTDOCS%%%%DOCSDIR%%/source/String.html
 %%PORTDOCS%%%%DOCSDIR%%/source/String2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/StringFilter.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Submit.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Summary.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Support.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Surface.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Svg.html
+%%PORTDOCS%%%%DOCSDIR%%/source/SvgExporter.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Tab.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Tab2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/TabCloseMenu.html
+%%PORTDOCS%%%%DOCSDIR%%/source/TabReorderer.html
+%%PORTDOCS%%%%DOCSDIR%%/source/TabScrollerMenu.css.html
+%%PORTDOCS%%%%DOCSDIR%%/source/TabScrollerMenu.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Table.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Table2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Table3.html
@@ -1485,6 +1614,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/Template2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Text.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Text2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/Text3.html
 %%PORTDOCS%%%%DOCSDIR%%/source/TextArea.html
 %%PORTDOCS%%%%DOCSDIR%%/source/TextArea2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/TextItem.html
@@ -1497,15 +1627,16 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/Tip.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Tip2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Tip3.html
-%%PORTDOCS%%%%DOCSDIR%%/source/Tip4.html
 %%PORTDOCS%%%%DOCSDIR%%/source/TipSurface.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Tool.html
 %%PORTDOCS%%%%DOCSDIR%%/source/ToolTip.html
-%%PORTDOCS%%%%DOCSDIR%%/source/Toolbar-legacy.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Toolbar.html
+%%PORTDOCS%%%%DOCSDIR%%/source/ToolbarDroppable.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Transaction.html
+%%PORTDOCS%%%%DOCSDIR%%/source/TransformGrid.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Tree.html
 %%PORTDOCS%%%%DOCSDIR%%/source/TreeModel.html
+%%PORTDOCS%%%%DOCSDIR%%/source/TreePicker.html
 %%PORTDOCS%%%%DOCSDIR%%/source/TreeStore.html
 %%PORTDOCS%%%%DOCSDIR%%/source/TreeViewDragDrop.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Trigger.html
@@ -1514,6 +1645,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/UuidGenerator.html
 %%PORTDOCS%%%%DOCSDIR%%/source/VBox.html
 %%PORTDOCS%%%%DOCSDIR%%/source/VTypes.html
+%%PORTDOCS%%%%DOCSDIR%%/source/ValidationStatus.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Version.html
 %%PORTDOCS%%%%DOCSDIR%%/source/View.html
 %%PORTDOCS%%%%DOCSDIR%%/source/View2.html
@@ -1524,20 +1656,38 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/Viewport.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Vml.html
 %%PORTDOCS%%%%DOCSDIR%%/source/WebStorage.html
-%%PORTDOCS%%%%DOCSDIR%%/source/Window-legacy.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Window.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Writer.html
 %%PORTDOCS%%%%DOCSDIR%%/source/XTemplate.html
+%%PORTDOCS%%%%DOCSDIR%%/source/XTemplateCompiler.html
+%%PORTDOCS%%%%DOCSDIR%%/source/XTemplateParser.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Xml.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Xml2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/XmlStore.html
 %%PORTDOCS%%%%DOCSDIR%%/source/ZIndexManager.html
+%%PORTDOCS%%%%DOCSDIR%%/source/statusbar.css.html
+%%PORTDOCS%%%%DOCSDIR%%/source/tail.html
 %%PORTDOCS%%%%DOCSDIR%%/source/validations.html
-%%PORTDOCS%%%%DOCSDIR%%/template.html
-%%PORTDOCS%%%%DOCSDIR%%/touch-welcome.html
-%%PORTDOCS%%%%DOCSDIR%%/touchIframe.html
-%%PORTDOCS%%%%DOCSDIR%%/videos/videos.json
-%%PORTDOCS%%%%DOCSDIR%%/welcome.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/MVC/article.mdown
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/MVC/pandora/app/app.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/MVC/pandora/app/controller/Song.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/MVC/pandora/app/controller/Station.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/MVC/pandora/app/model/Song.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/MVC/pandora/app/model/Station.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/MVC/pandora/app/store/RecentSongs.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/MVC/pandora/app/store/SearchResults.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/MVC/pandora/app/store/Stations.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/MVC/pandora/app/view/NewStation.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/MVC/pandora/app/view/RecentlyPlayedScroller.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/MVC/pandora/app/view/SongControls.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/MVC/pandora/app/view/SongInfo.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/MVC/pandora/app/view/StationsList.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/MVC/pandora/app/view/Viewport.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/MVC/pandora/data/searchresults.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/MVC/pandora/data/songs.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/MVC/pandora/data/stations.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/MVC/pandora/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/feed-viewer/all-classes.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/feed-viewer/app.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/feed-viewer/app.jsb3
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/feed-viewer/app/controller/Articles.js
@@ -1554,7 +1704,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/feed-viewer/app/view/feed/Add.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/feed-viewer/app/view/feed/List.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/feed-viewer/app/view/feed/Show.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/feed-viewer/classes.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/feed-viewer/feed-proxy.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/feed-viewer/feed-viewer.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/feed-viewer/images/article.gif
@@ -1570,6 +1719,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/feed-viewer/images/rss_load.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/feed-viewer/images/tab_new.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/feed-viewer/images/tabs.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/nested-loading/all-classes.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/nested-loading/app.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/nested-loading/app.jsb3
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/nested-loading/app/controller/Books.js
@@ -1582,7 +1732,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/nested-loading/app/view/book/SideBar.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/nested-loading/app/view/book/View.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/nested-loading/app/view/review/List.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/nested-loading/classes.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/nested-loading/nested-loading.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/nested-loading/resources/css/nested-loading.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/nested-loading/resources/images/book.png
@@ -1599,6 +1748,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/nested-loading/resources/json/products.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/nested-loading/resources/sass/config.rb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/nested-loading/resources/sass/nested-loading.scss
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/simple/all-classes.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/simple/app.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/simple/app.jsb3
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/simple/app/controller/Users.js
@@ -1607,16 +1757,62 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/simple/app/view/Viewport.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/simple/app/view/user/Edit.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/simple/app/view/user/List.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/simple/classes.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/simple/data/updateUsers.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/simple/data/users.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/app/simple/simple.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/aria/DateField.js.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/aria/aria-form.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/aria/aria-form.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/aria/aria-grid.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/aria/aria-grid.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/button/button.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/button/button.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/button/button.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/button/images/add.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/button/images/add16.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/button/images/add24.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/resources/css/calendar.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/resources/css/examples.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/resources/images/default/arrow.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/resources/images/default/bg.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/resources/images/default/calendar-sprites.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/resources/images/default/ext-cal-edit-hd.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/resources/images/default/page-next.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/resources/images/default/page-prev.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/App.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/CalendarPanel.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/data/CalendarMappings.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/data/CalendarModel.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/data/Calendars.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/data/EventMappings.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/data/EventModel.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/data/Events.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/data/MemoryCalendarStore.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/data/MemoryEventStore.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/dd/DayDragZone.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/dd/DayDropZone.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/dd/DragZone.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/dd/DropZone.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/dd/StatusProxy.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/form/EventDetails.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/form/EventWindow.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/form/field/CalendarCombo.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/form/field/DateRange.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/form/field/ReminderCombo.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/template/BoxLayout.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/template/DayBody.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/template/DayHeader.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/template/Month.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/util/Date.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/util/WeekEventRenderer.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/view/AbstractCalendar.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/view/Day.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/view/DayBody.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/view/DayHeader.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/view/Month.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/view/MonthDayDetail.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/src/view/Week.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/charts/Area - BrowserStats.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/charts/Area.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/charts/Area.js
@@ -1671,6 +1867,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/associations.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/associations.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/customer.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/meta-config-basic.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/meta-config-basic.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/order.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/orderitem.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datasets/sencha-touch-examples.json
@@ -1697,10 +1895,21 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dd/dnd_grid_to_formpanel.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dd/dnd_grid_to_grid.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dd/dnd_grid_to_grid.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dd/dnd_with_dom.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dd/dnd_with_dom.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dd/dnd_with_dom.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dd/dragdropzones.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dd/dragdropzones.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dd/field-to-grid-dd.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dd/field-to-grid-dd.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dd/img/camaro.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dd/img/corvette.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dd/img/f150.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dd/img/miata.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dd/img/mustang.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dd/img/s10.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dd/img/tacoma.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dd/img/tahoe.jpg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/AccordionWindow.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/App.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/BogusMenuModule.js
@@ -1712,8 +1921,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/TabWindow.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/VideoWindow.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/WallpaperModel.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/all-classes.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/app.jsb3
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/classes.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/credits.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/css/desktop.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/desktop.html
@@ -1770,7 +1979,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/images/windows-bg.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/js/App.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/js/Desktop.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/js/FitAllLayout.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/js/Module.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/js/ShortcutModel.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/desktop/js/StartMenu.js
@@ -1804,6 +2012,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/direct/php/poll.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/direct/php/router.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draw/Logos.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/draw/Logos.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draw/Rotate Text.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draw/RotateText.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draw/Sencha.html
@@ -1814,6 +2023,9 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/feed-viewer/Feed-Viewer.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feed-viewer/data/feed_http_3A_2F_2Ffeeds.feedburner.com_2Fajaxian_page_1_start_0_limit_25.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feed-viewer/data/feed_http_3A_2F_2Ffeeds.feedburner.com_2Fextblog_page_1_start_0_limit_25.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feed-viewer/data/feed_http_3A_2F_2Fsencha.com_2Fforum_2Fexternal.php_3Ftype_3DRSS2_page_1_start_0_limit_25.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/feed-viewer/feed-proxy.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/feed-viewer/feed-viewer.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/feed-viewer/images/article.gif
@@ -1836,12 +2048,15 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/feed-viewer/viewer/FeedPost.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/feed-viewer/viewer/FeedViewer.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/feed-viewer/viewer/FeedWindow.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feed-viewer/viewer/Sim.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/form/absform.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/form/absform.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/form/adv-vtypes.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/form/adv-vtypes.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/form/anchoring.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/form/anchoring.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/form/aria.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/form/aria.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/form/check-radio.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/form/check-radio.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/form/checkout.html
@@ -1916,6 +2131,10 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/images/thumbs/zack_hat.jpg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/images/thumbs/zack_sink.jpg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/images/thumbs/zacks_grill.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/infinite-scroll-grid-tuner.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/infinite-scroll-grid-tuner.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/infinite-scroll-with-filter.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/infinite-scroll-with-filter.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/infinite-scroll.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/infinite-scroll.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/list-view.css
@@ -1923,8 +2142,16 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/list-view.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/live-search-grid.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/live-search-grid.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/locking-cell-editing-grid.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/locking-cell-editing-grid.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/locking-grid.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/locking-grid.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/locking-group-summary-grid.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/locking-group-summary-grid.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/locking-infinite-scroll.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/locking-infinite-scroll.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/locking-row-editing-grid.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/locking-row-editing-grid.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/multiple-sorting.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/multiple-sorting.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/multiple-sorting.js
@@ -1935,18 +2162,27 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/progress-bar-pager.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/property.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/property.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/remote-group-summary-grid-simjax.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/remote-group-summary-grid.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/remote-group-summary-grid.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/remove-all-recs.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/row-editing.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/row-editing.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/sampledata.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/sheldon.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/simjax-paging.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/simjax-paging.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/sliding-pager.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/sliding-pager.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/transform-dom.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/transform-dom.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/var-height-rows.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/var-height-rows.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/xml-grid.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/xml-grid.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grouptabs/all-classes.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grouptabs/app-all.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grouptabs/app.jsb3
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grouptabs/grouptabs.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grouptabs/grouptabs.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grouptabs/images/group.png
@@ -1982,6 +2218,51 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/key-feed-viewer/viewer/FeedWindow.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/keynav/keynav.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/keynav/keynav.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/all-classes.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app.jsb3
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/controller/Main.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/model/Restaurant.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/store/Companies.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/store/Examples.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/store/Restaurants.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/store/States.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/store/TreeStore.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/view/Header.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/view/List.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/view/Viewport.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/view/examples/Example.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/view/examples/PanelExample.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/view/examples/forms/Contact.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/view/examples/forms/Login.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/view/examples/forms/Register.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/view/examples/grids/BasicGrid.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/view/examples/grids/GroupedGrid.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/view/examples/grids/GroupedHeaderGrid.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/view/examples/grids/LockedGrid.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/view/examples/panels/BasicPanel.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/view/examples/panels/FramedPanel.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/view/examples/tabs/BasicTabs.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/view/examples/tabs/FramedTabs.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/view/examples/tabs/IconTabs.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/view/examples/tabs/TitledTabPanels.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/view/examples/toolbars/BasicToolbar.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/view/examples/toolbars/DockedToolbar.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/view/examples/trees/BasicTree.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/app/view/examples/windows/BasicWindow.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/resources/config.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/resources/css/sink.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/resources/images/logo.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/resources/sass/accessories/_all.scss
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/resources/sass/accessories/readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/resources/sass/accessories/scss/_background.scss
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/resources/sass/accessories/scss/_color.scss
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/resources/sass/accessories/scss/_google_webfonts.scss
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/resources/sass/accessories/scss/_pictos.scss
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/resources/sass/accessories/scss/_shapes.scss
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/resources/sass/accessories/scss/config.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kitchensink/resources/sass/sink.scss
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout-browser/images/disk.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout-browser/images/email_go.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout-browser/images/layout-browser-hd-bg.gif
@@ -1996,7 +2277,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout-browser/layouts/combination.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout-browser/layouts/custom.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout-browser/tree-data.json
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/EXTJSIV-2101.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/accordion.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/anchor.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/anchor.js
@@ -2005,9 +2285,14 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/column.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/complex.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/hbox.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/paneltest.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/table.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/table.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/tablelayouttest.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/tabpaneltest.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/vbox.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/view-no-store.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/viewporttest.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/locale/ContactForm-nl.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/locale/ContactForm.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/locale/create_languages_js.py
@@ -2052,6 +2337,40 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/organizer/organizer.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/organizer/organizer.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/organizer/organizer.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/Console.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/PageAnalyzer.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/Summary.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/hooks.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/models/BasicTimeData.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/models/ComponentTreeNode.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/models/LayoutIdSummaryData.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/models/LayoutTreeNode.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/models/LayoutTypeSummaryData.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/page-analyzer.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/resources/images/add.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/resources/images/boxParent.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/resources/images/component.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/resources/images/delete.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/resources/images/folder-open.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/resources/images/folder.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/resources/images/gray-component.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/resources/images/gray-folder-open.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/resources/images/gray-folder.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/resources/images/green-folder-open.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/resources/images/green-folder.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/resources/images/green-led.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/resources/images/info.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/resources/images/led-green-th.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/resources/images/orange-folder-open.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/resources/images/orange-folder.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/resources/images/orange-led.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/resources/images/red-folder-open.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/resources/images/red-folder.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/resources/images/red-led-gif.xcf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/resources/images/red-led.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/resources/images/redr-th.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/resources/images/refresh.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page-analyzer/resources/page-analyzer.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/panel/bubble-panel/bubble-panel.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/panel/bubble-panel/bubble-panel.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/panel/bubble-panel/resources/css/bubble-panel.css
@@ -2074,8 +2393,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/personel-review/reviewapp.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/platform/templates.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/platform/templates.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/portal/all-classes.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/portal/app.jsb3
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/portal/classes.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/portal/classes/ChartPortlet.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/portal/classes/GridPortlet.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/portal/classes/PortalColumn.js
@@ -2116,9 +2435,10 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/restful/restful.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/restful/restful.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/restful/restful.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rtl.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sandbox/credits.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sandbox/css/desktop.css
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sandbox/desktop.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sandbox/get-users.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sandbox/images/accordian.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sandbox/images/bogus.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sandbox/images/chart48x48.png
@@ -2236,6 +2556,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/icons/fam/user_red.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/icons/fam/user_suit.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/icons/fam/user_suit.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/include-theme.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/acc-tree.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/actions-grid.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/actions.gif
@@ -2342,6 +2663,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/grouped-tab.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/history.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/keyboard.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/kitchensink.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/layout-absolute.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/layout-accordion.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/layout-anchor.gif
@@ -2400,6 +2722,59 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/window.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/writer-thumb.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/states.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/app.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/app/controller/Lists.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/app/controller/Tasks.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/app/model/List.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/app/model/Task.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/app/store/Lists.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/app/store/Tasks.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/app/ux/CheckColumn.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/app/ux/DragDrop.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/app/ux/DropZone.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/app/ux/ReminderColumn.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/app/view/Toolbar.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/app/view/Viewport.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/app/view/lists/ContextMenu.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/app/view/lists/Tree.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/app/view/tasks/ContextMenu.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/app/view/tasks/DefaultTimeWindow.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/app/view/tasks/EditWindow.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/app/view/tasks/Form.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/app/view/tasks/Grid.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/app/view/tasks/ReminderWindow.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/db/schema.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/db/simple_tasks.db
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/php/config/read.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/php/config/update.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/php/connection.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/php/list/create.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/php/list/delete.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/php/list/move.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/php/list/read.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/php/list/update.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/php/task/create.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/php/task/delete.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/php/task/read.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/php/task/update.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/resources/css/tasks.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/resources/images/bell.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/resources/images/check.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/resources/images/check_header.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/resources/images/delete.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/resources/images/delete_folder.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/resources/images/delete_list.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/resources/images/delete_task.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/resources/images/edit_task.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/resources/images/mark_active.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/resources/images/mark_complete.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/resources/images/new.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/resources/images/new_folder.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/resources/images/new_list.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/resources/images/show_active.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/resources/images/show_all.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-tasks/resources/images/show_complete.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-widgets/editor.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-widgets/editor.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple-widgets/images/custom-bar.gif
@@ -2437,9 +2812,11 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabs/tabs.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabs/tabs.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tabs/tabs.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testpointerevents.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes/index-access.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes/index-gray.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes/test.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes/themes.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/toolbar/images/add.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/toolbar/images/add16.gif
@@ -2484,6 +2861,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/FieldReplicator.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/GMapPanel.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/GroupTabPanel.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/IFrame.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/LiveSearchGridPanel.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/PreviewPlugin.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/ProgressBarPager.js
@@ -2494,11 +2872,11 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/TabReorderer.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/TabScrollerMenu.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/ToolbarDroppable.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/TreePicker.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/ajax/JsonSimlet.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/ajax/SimManager.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/ajax/SimXhr.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/ajax/Simlet.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/css/CenterLayout.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/css/CheckHeader.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/css/GroupTabPanel.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/css/ItemSelector.css
@@ -2508,6 +2886,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/css/images/bottom2.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/css/images/checked.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/css/images/down2.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/css/images/elbow-minus-nl.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/css/images/elbow-plus-nl.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/css/images/left2.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/css/images/right2.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/css/images/tab-collapsed.gif
@@ -2517,10 +2897,13 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/css/images/top2.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/css/images/unchecked.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/css/images/up2.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/css/images/x-grouptabs-corners.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/data/PagingMemoryProxy.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/event/Driver.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/event/Maker.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/event/Player.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/event/Recorder.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/event/RecorderManager.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/event/RecorderManager.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/form/ItemSelector.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/form/MultiSelect.js
@@ -2542,8 +2925,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/grid/menu/ListMenu.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/grid/menu/RangeMenu.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/layout/Center.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/layout/component/form/ItemSelector.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/layout/component/form/MultiSelect.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/statusbar/StatusBar.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/statusbar/ValidationStatus.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/statusbar/css/statusbar.css
@@ -2552,6 +2933,22 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/statusbar/images/loading.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/statusbar/images/saved.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/statusbar/images/saving.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/videos/data.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/videos/direct.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/videos/form.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/videos/formBuilder.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/videos/grid.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/videos/keymap.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/videos/layout.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/videos/model.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/videos/panel.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/videos/proxy.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/videos/renderer.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/videos/store.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/videos/toolbar.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/videos/tree.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/videos/tree.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/videos/window.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/view/animated-dataview.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/view/animated-dataview.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/view/animated-dataview.js
@@ -2639,6 +3036,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/writer/images/stop.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/writer/images/user.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/writer/images/user_add.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/writer/remote/app/controllers/example.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/writer/remote/app/controllers/users.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/writer/remote/app/models/user.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/writer/remote/init.php
@@ -2651,30 +3049,16 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/writer/writer.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/writer/writer.js
 %%WWWDIR%%/bootstrap.js
-%%WWWDIR%%/build/Ext3-manifest.json
-%%WWWDIR%%/build/Ext4-manifest.json
-%%WWWDIR%%/build/all.html
-%%WWWDIR%%/build/bin/linux/hammerjs
-%%WWWDIR%%/build/bin/mac/hammerjs
-%%WWWDIR%%/build/bin/mac/phantomjs
-%%WWWDIR%%/build/bin/windows/hammerjs.exe
-%%WWWDIR%%/build/build-all-jsb3.sh
-%%WWWDIR%%/build/build-bootstrap-data.js
-%%WWWDIR%%/build/build-bootstrap.sh
-%%WWWDIR%%/build/build-custom-jsb3.js
-%%WWWDIR%%/build/build-custom.sh
-%%WWWDIR%%/build/build-ext-all-jsb3.js
-%%WWWDIR%%/build/build-manifest.js
-%%WWWDIR%%/build/build.bat
-%%WWWDIR%%/build/build.sh
-%%WWWDIR%%/build/ignore.json
 %%WWWDIR%%/build/sdk.jsb3
+%%WWWDIR%%/builds/ext-all-sandbox-debug-w-comments.js
 %%WWWDIR%%/builds/ext-all-sandbox-debug.js
 %%WWWDIR%%/builds/ext-all-sandbox-dev.js
 %%WWWDIR%%/builds/ext-all-sandbox.js
+%%WWWDIR%%/builds/ext-core-debug-w-comments.js
 %%WWWDIR%%/builds/ext-core-debug.js
 %%WWWDIR%%/builds/ext-core-dev.js
 %%WWWDIR%%/builds/ext-core.js
+%%WWWDIR%%/builds/ext-foundation-debug-w-comments.js
 %%WWWDIR%%/builds/ext-foundation-debug.js
 %%WWWDIR%%/builds/ext-foundation-dev.js
 %%WWWDIR%%/builds/ext-foundation.js
@@ -2682,84 +3066,14 @@
 %%WWWDIR%%/ext-all-debug.js
 %%WWWDIR%%/ext-all-dev.js
 %%WWWDIR%%/ext-all.js
+%%WWWDIR%%/ext-debug-w-comments.js
 %%WWWDIR%%/ext-debug.js
 %%WWWDIR%%/ext-dev.js
+%%WWWDIR%%/ext-neptune-debug-w-comments.js
+%%WWWDIR%%/ext-neptune-debug.js
+%%WWWDIR%%/ext-neptune.js
 %%WWWDIR%%/ext.js
 %%WWWDIR%%/index.html
-%%WWWDIR%%/jsbuilder/.commit-template
-%%WWWDIR%%/jsbuilder/JSBuilder.bat
-%%WWWDIR%%/jsbuilder/JSBuilder.sh
-%%WWWDIR%%/jsbuilder/README.md
-%%WWWDIR%%/jsbuilder/bin/Dispatch.js
-%%WWWDIR%%/jsbuilder/bin/Generator.js
-%%WWWDIR%%/jsbuilder/bin/JSBuilder.js
-%%WWWDIR%%/jsbuilder/jsdb/license.txt
-%%WWWDIR%%/jsbuilder/jsdb/linux/jsdb
-%%WWWDIR%%/jsbuilder/jsdb/mac/jsdb
-%%WWWDIR%%/jsbuilder/jsdb/win/jsdb.exe
-%%WWWDIR%%/jsbuilder/sencha.sh
-%%WWWDIR%%/jsbuilder/src/Build.js
-%%WWWDIR%%/jsbuilder/src/Cli.js
-%%WWWDIR%%/jsbuilder/src/Cmd.js
-%%WWWDIR%%/jsbuilder/src/Ext.js
-%%WWWDIR%%/jsbuilder/src/Filesystem.js
-%%WWWDIR%%/jsbuilder/src/Generator.js
-%%WWWDIR%%/jsbuilder/src/JSBuilder.js
-%%WWWDIR%%/jsbuilder/src/Loader.js
-%%WWWDIR%%/jsbuilder/src/Logger.js
-%%WWWDIR%%/jsbuilder/src/Package.js
-%%WWWDIR%%/jsbuilder/src/Parser.js
-%%WWWDIR%%/jsbuilder/src/Parser.old.js
-%%WWWDIR%%/jsbuilder/src/Parser/Statement.js
-%%WWWDIR%%/jsbuilder/src/Parser/Statement/Debug.js
-%%WWWDIR%%/jsbuilder/src/Parser/Statement/Deprecated.js
-%%WWWDIR%%/jsbuilder/src/Parser/Statement/Else.js
-%%WWWDIR%%/jsbuilder/src/Parser/Statement/Elseif.js
-%%WWWDIR%%/jsbuilder/src/Parser/Statement/If.js
-%%WWWDIR%%/jsbuilder/src/Parser/Statement/Uncomment.js
-%%WWWDIR%%/jsbuilder/src/Platform.js
-%%WWWDIR%%/jsbuilder/src/Project.js
-%%WWWDIR%%/jsbuilder/src/Target.js
-%%WWWDIR%%/jsbuilder/src/Template.js
-%%WWWDIR%%/jsbuilder/src/XTemplate.js
-%%WWWDIR%%/jsbuilder/src/generators/app/Application.js
-%%WWWDIR%%/jsbuilder/src/generators/app/files/app/routes.js
-%%WWWDIR%%/jsbuilder/src/generators/app/files/index.html
-%%WWWDIR%%/jsbuilder/src/generators/app/files/lib/JSBuilder/bin/Dispatch.js
-%%WWWDIR%%/jsbuilder/src/generators/app/files/lib/jasmine/MIT.LICENSE
-%%WWWDIR%%/jsbuilder/src/generators/app/files/lib/jasmine/jasmine-html.js
-%%WWWDIR%%/jsbuilder/src/generators/app/files/lib/jasmine/jasmine.css
-%%WWWDIR%%/jsbuilder/src/generators/app/files/lib/jasmine/jasmine.js
-%%WWWDIR%%/jsbuilder/src/generators/app/files/lib/sencha-jasmine/matchers/Controller.js
-%%WWWDIR%%/jsbuilder/src/generators/app/files/lib/sencha-jasmine/matchers/Model.js
-%%WWWDIR%%/jsbuilder/src/generators/app/files/lib/sencha-jasmine/sencha-jasmine.css
-%%WWWDIR%%/jsbuilder/src/generators/app/files/lib/sencha-jasmine/sencha-jasmine.js
-%%WWWDIR%%/jsbuilder/src/generators/app/files/public/resources/css/application.css
-%%WWWDIR%%/jsbuilder/src/generators/app/files/sencha.sh
-%%WWWDIR%%/jsbuilder/src/generators/app/files/test/unit/.htaccess
-%%WWWDIR%%/jsbuilder/src/generators/app/files/test/unit/SpecOptions.js
-%%WWWDIR%%/jsbuilder/src/generators/app/files/test/unit/index.html
-%%WWWDIR%%/jsbuilder/src/generators/app/templates/Application.js
-%%WWWDIR%%/jsbuilder/src/generators/app/templates/Viewport.js
-%%WWWDIR%%/jsbuilder/src/generators/controller/Controller.js
-%%WWWDIR%%/jsbuilder/src/generators/controller/templates/Controller.js
-%%WWWDIR%%/jsbuilder/src/generators/controller/templates/ControllerSpec.js
-%%WWWDIR%%/jsbuilder/src/generators/model/Model.js
-%%WWWDIR%%/jsbuilder/src/generators/model/templates/Fixture.js
-%%WWWDIR%%/jsbuilder/src/generators/model/templates/Model.js
-%%WWWDIR%%/jsbuilder/src/generators/model/templates/ModelSpec.js
-%%WWWDIR%%/jsbuilder/tests/builder.js
-%%WWWDIR%%/jsbuilder/tests/parser.js
-%%WWWDIR%%/jsbuilder/tests/parser/after1.js
-%%WWWDIR%%/jsbuilder/tests/parser/after2.js
-%%WWWDIR%%/jsbuilder/tests/parser/after3.js
-%%WWWDIR%%/jsbuilder/tests/parser/after4.js
-%%WWWDIR%%/jsbuilder/tests/parser/before1.js
-%%WWWDIR%%/jsbuilder/tests/parser/before2.js
-%%WWWDIR%%/jsbuilder/tests/parser/before3.js
-%%WWWDIR%%/jsbuilder/tests/parser/before4.js
-%%WWWDIR%%/jsbuilder/tests/run.js
-%%WWWDIR%%/jsbuilder/ycompressor/ycompressor.jar
 %%WWWDIR%%/license.txt
 %%WWWDIR%%/locale/ext-lang-af.js
 %%WWWDIR%%/locale/ext-lang-bg.js
@@ -2811,14 +3125,26 @@
 %%WWWDIR%%/pkgs/extras.js
 %%WWWDIR%%/pkgs/foundation.js
 %%WWWDIR%%/pkgs/manifest.js
+%%WWWDIR%%/pkgs/tail.js
 %%WWWDIR%%/release-notes.html
+%%WWWDIR%%/resources/css/ext-all-access-debug.css
 %%WWWDIR%%/resources/css/ext-all-access.css
+%%WWWDIR%%/resources/css/ext-all-debug.css
+%%WWWDIR%%/resources/css/ext-all-gray-debug.css
 %%WWWDIR%%/resources/css/ext-all-gray.css
+%%WWWDIR%%/resources/css/ext-all-scoped-debug.css
 %%WWWDIR%%/resources/css/ext-all-scoped.css
 %%WWWDIR%%/resources/css/ext-all.css
+%%WWWDIR%%/resources/css/ext-ie-debug.css
+%%WWWDIR%%/resources/css/ext-ie-scoped-debug.css
 %%WWWDIR%%/resources/css/ext-ie-scoped.css
 %%WWWDIR%%/resources/css/ext-ie.css
+%%WWWDIR%%/resources/css/ext-neptune-debug.css
+%%WWWDIR%%/resources/css/ext-neptune.css
+%%WWWDIR%%/resources/css/ext-sandbox-debug.css
 %%WWWDIR%%/resources/css/ext-sandbox.css
+%%WWWDIR%%/resources/css/ext-standard-debug.css
+%%WWWDIR%%/resources/css/ext-standard-scoped-debug.css
 %%WWWDIR%%/resources/css/ext-standard-scoped.css
 %%WWWDIR%%/resources/css/ext-standard.css
 %%WWWDIR%%/resources/sass/config.rb
@@ -2828,6 +3154,7 @@
 %%WWWDIR%%/resources/sass/ext-all.scss
 %%WWWDIR%%/resources/sass/ext-ie-scoped.scss
 %%WWWDIR%%/resources/sass/ext-ie.scss
+%%WWWDIR%%/resources/sass/ext-neptune.scss
 %%WWWDIR%%/resources/sass/ext-sandbox.scss
 %%WWWDIR%%/resources/sass/ext-standard-scoped.scss
 %%WWWDIR%%/resources/sass/ext-standard.scss
@@ -3263,6 +3590,14 @@
 %%WWWDIR%%/resources/themes/images/access/util/splitter/mini-top.gif
 %%WWWDIR%%/resources/themes/images/access/window-header/window-header-default-bottom-corners.gif
 %%WWWDIR%%/resources/themes/images/access/window-header/window-header-default-bottom-sides.gif
+%%WWWDIR%%/resources/themes/images/access/window-header/window-header-default-collapsed-bottom-corners.gif
+%%WWWDIR%%/resources/themes/images/access/window-header/window-header-default-collapsed-bottom-sides.gif
+%%WWWDIR%%/resources/themes/images/access/window-header/window-header-default-collapsed-left-corners.gif
+%%WWWDIR%%/resources/themes/images/access/window-header/window-header-default-collapsed-left-sides.gif
+%%WWWDIR%%/resources/themes/images/access/window-header/window-header-default-collapsed-right-corners.gif
+%%WWWDIR%%/resources/themes/images/access/window-header/window-header-default-collapsed-right-sides.gif
+%%WWWDIR%%/resources/themes/images/access/window-header/window-header-default-collapsed-top-corners.gif
+%%WWWDIR%%/resources/themes/images/access/window-header/window-header-default-collapsed-top-sides.gif
 %%WWWDIR%%/resources/themes/images/access/window-header/window-header-default-left-corners.gif
 %%WWWDIR%%/resources/themes/images/access/window-header/window-header-default-left-sides.gif
 %%WWWDIR%%/resources/themes/images/access/window-header/window-header-default-right-corners.gif
@@ -3631,6 +3966,14 @@
 %%WWWDIR%%/resources/themes/images/default/util/splitter/mini-top.gif
 %%WWWDIR%%/resources/themes/images/default/window-header/window-header-default-bottom-corners.gif
 %%WWWDIR%%/resources/themes/images/default/window-header/window-header-default-bottom-sides.gif
+%%WWWDIR%%/resources/themes/images/default/window-header/window-header-default-collapsed-bottom-corners.gif
+%%WWWDIR%%/resources/themes/images/default/window-header/window-header-default-collapsed-bottom-sides.gif
+%%WWWDIR%%/resources/themes/images/default/window-header/window-header-default-collapsed-left-corners.gif
+%%WWWDIR%%/resources/themes/images/default/window-header/window-header-default-collapsed-left-sides.gif
+%%WWWDIR%%/resources/themes/images/default/window-header/window-header-default-collapsed-right-corners.gif
+%%WWWDIR%%/resources/themes/images/default/window-header/window-header-default-collapsed-right-sides.gif
+%%WWWDIR%%/resources/themes/images/default/window-header/window-header-default-collapsed-top-corners.gif
+%%WWWDIR%%/resources/themes/images/default/window-header/window-header-default-collapsed-top-sides.gif
 %%WWWDIR%%/resources/themes/images/default/window-header/window-header-default-left-corners.gif
 %%WWWDIR%%/resources/themes/images/default/window-header/window-header-default-left-sides.gif
 %%WWWDIR%%/resources/themes/images/default/window-header/window-header-default-right-corners.gif
@@ -3996,6 +4339,14 @@
 %%WWWDIR%%/resources/themes/images/gray/util/splitter/mini-top.gif
 %%WWWDIR%%/resources/themes/images/gray/window-header/window-header-default-bottom-corners.gif
 %%WWWDIR%%/resources/themes/images/gray/window-header/window-header-default-bottom-sides.gif
+%%WWWDIR%%/resources/themes/images/gray/window-header/window-header-default-collapsed-bottom-corners.gif
+%%WWWDIR%%/resources/themes/images/gray/window-header/window-header-default-collapsed-bottom-sides.gif
+%%WWWDIR%%/resources/themes/images/gray/window-header/window-header-default-collapsed-left-corners.gif
+%%WWWDIR%%/resources/themes/images/gray/window-header/window-header-default-collapsed-left-sides.gif
+%%WWWDIR%%/resources/themes/images/gray/window-header/window-header-default-collapsed-right-corners.gif
+%%WWWDIR%%/resources/themes/images/gray/window-header/window-header-default-collapsed-right-sides.gif
+%%WWWDIR%%/resources/themes/images/gray/window-header/window-header-default-collapsed-top-corners.gif
+%%WWWDIR%%/resources/themes/images/gray/window-header/window-header-default-collapsed-top-sides.gif
 %%WWWDIR%%/resources/themes/images/gray/window-header/window-header-default-left-corners.gif
 %%WWWDIR%%/resources/themes/images/gray/window-header/window-header-default-left-sides.gif
 %%WWWDIR%%/resources/themes/images/gray/window-header/window-header-default-right-corners.gif
@@ -4008,6 +4359,38 @@
 %%WWWDIR%%/resources/themes/images/gray/window/icon-warning.gif
 %%WWWDIR%%/resources/themes/images/gray/window/window-default-corners.gif
 %%WWWDIR%%/resources/themes/images/gray/window/window-default-sides.gif
+%%WWWDIR%%/resources/themes/images/neptune/WYSIWYG.png
+%%WWWDIR%%/resources/themes/images/neptune/button/arrow.gif
+%%WWWDIR%%/resources/themes/images/neptune/button/arrow.png
+%%WWWDIR%%/resources/themes/images/neptune/button/btn.gif
+%%WWWDIR%%/resources/themes/images/neptune/button/group-cs.gif
+%%WWWDIR%%/resources/themes/images/neptune/button/group-lr.gif
+%%WWWDIR%%/resources/themes/images/neptune/button/group-tb.gif
+%%WWWDIR%%/resources/themes/images/neptune/button/s-arrow-b-noline.gif
+%%WWWDIR%%/resources/themes/images/neptune/button/s-arrow-b.gif
+%%WWWDIR%%/resources/themes/images/neptune/button/s-arrow-bo.gif
+%%WWWDIR%%/resources/themes/images/neptune/button/s-arrow-light.gif
+%%WWWDIR%%/resources/themes/images/neptune/button/s-arrow-noline.png
+%%WWWDIR%%/resources/themes/images/neptune/button/s-arrow-o.png
+%%WWWDIR%%/resources/themes/images/neptune/button/s-arrow-p.png
+%%WWWDIR%%/resources/themes/images/neptune/button/s-arrow.png
+%%WWWDIR%%/resources/themes/images/neptune/checkbox.gif
+%%WWWDIR%%/resources/themes/images/neptune/grid/header-border.png
+%%WWWDIR%%/resources/themes/images/neptune/grid/sort.png
+%%WWWDIR%%/resources/themes/images/neptune/icons.png
+%%WWWDIR%%/resources/themes/images/neptune/invalid.gif
+%%WWWDIR%%/resources/themes/images/neptune/radio.gif
+%%WWWDIR%%/resources/themes/images/neptune/tools-small.png
+%%WWWDIR%%/resources/themes/images/neptune/tools.png
+%%WWWDIR%%/resources/themes/images/neptune/tree/elbows.png
+%%WWWDIR%%/resources/themes/images/neptune/tree/icons-blue.png
+%%WWWDIR%%/resources/themes/images/neptune/tree/icons-gray.png
+%%WWWDIR%%/resources/themes/images/neptune/tree/icons-navy.png
+%%WWWDIR%%/resources/themes/images/neptune/tree/icons-orange.png
+%%WWWDIR%%/resources/themes/images/neptune/tree/icons-white.png
+%%WWWDIR%%/resources/themes/images/neptune/tree/icons.png
+%%WWWDIR%%/resources/themes/images/neptune/triggerfield.png
+%%WWWDIR%%/resources/themes/images/neptune/valid.gif
 %%WWWDIR%%/resources/themes/lib/utils.rb
 %%WWWDIR%%/resources/themes/stylesheets/ext4/default/_all.scss
 %%WWWDIR%%/resources/themes/stylesheets/ext4/default/_core.scss
@@ -4079,6 +4462,85 @@
 %%WWWDIR%%/resources/themes/stylesheets/ext4/default/widgets/form/_file.scss
 %%WWWDIR%%/resources/themes/stylesheets/ext4/default/widgets/form/_htmleditor.scss
 %%WWWDIR%%/resources/themes/stylesheets/ext4/default/widgets/form/_triggerfield.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/_all.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/_core.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/_functions.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/_mixins.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/_variables.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/_widgets.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/accessories/_all.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/accessories/readme.txt
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/accessories/scss/_background.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/accessories/scss/_color.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/accessories/scss/_google_webfonts.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/accessories/scss/_pictos-font.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/accessories/scss/_pictos.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/accessories/scss/_shapes.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/accessories/scss/config.rb
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/core/_core.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/core/_reset.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/layout/_accordion.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/layout/_layout.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/mixins/_background-gradient-legacy.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/mixins/_frame.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/mixins/_inner-border.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/mixins/_reset-extras.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/mixins/_theme-background-image.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/util/_dragdrop.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/util/_focus.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/util/_messagebox.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/util/_resizable.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/util/_scroller.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/util/_splitter.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/util/_tool.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/variables/_base.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/variables/_boundlist.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/variables/_btn-group.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/variables/_button.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/variables/_core.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/variables/_focus.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/variables/_form.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/variables/_grid.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/variables/_htmleditor.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/variables/_loadmask.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/variables/_menu.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/variables/_panel.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/variables/_pickers.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/variables/_progress-bar.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/variables/_qtip.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/variables/_tabs.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/variables/_toolbar.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/variables/_tree.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/variables/_window.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/_boundlist.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/_btn-group.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/_button.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/_colorpicker.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/_datepicker.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/_drawcomponent.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/_form.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/_grid.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/_html.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/_loadmask.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/_menu.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/_panel.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/_progress-bar.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/_qtip.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/_slider.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/_tab.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/_tabbar.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/_toolbar.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/_tree.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/_viewport.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/_window.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/form/_all.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/form/_checkbox.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/form/_checkboxgroup.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/form/_field.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/form/_fieldset.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/form/_file.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/form/_htmleditor.scss
+%%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/form/_triggerfield.scss
 %%WWWDIR%%/resources/themes/templates/resources/sass/config.rb
 %%WWWDIR%%/resources/themes/templates/resources/sass/my-ext-theme.scss
 %%WWWDIR%%/src/AbstractComponent.js
@@ -4103,6 +4565,8 @@
 %%WWWDIR%%/src/ShadowPool.js
 %%WWWDIR%%/src/Template.js
 %%WWWDIR%%/src/XTemplate.js
+%%WWWDIR%%/src/XTemplateCompiler.js
+%%WWWDIR%%/src/XTemplateParser.js
 %%WWWDIR%%/src/ZIndexManager.js
 %%WWWDIR%%/src/app/Application.js
 %%WWWDIR%%/src/app/Controller.js
@@ -4144,7 +4608,10 @@
 %%WWWDIR%%/src/container/AbstractContainer.js
 %%WWWDIR%%/src/container/ButtonGroup.js
 %%WWWDIR%%/src/container/Container.js
+%%WWWDIR%%/src/container/DockingContainer.js
 %%WWWDIR%%/src/container/Viewport.js
+%%WWWDIR%%/src/core/dom/Element.form.js
+%%WWWDIR%%/src/core/dom/Element.static-more.js
 %%WWWDIR%%/src/core/examples/index.html
 %%WWWDIR%%/src/core/examples/index.js
 %%WWWDIR%%/src/core/examples/src/Sample/CTO.js
@@ -4174,26 +4641,18 @@
 %%WWWDIR%%/src/core/src/class/Class.js
 %%WWWDIR%%/src/core/src/class/ClassManager.js
 %%WWWDIR%%/src/core/src/class/Loader.js
+%%WWWDIR%%/src/core/src/dom/AbstractElement.alignment.js
+%%WWWDIR%%/src/core/src/dom/AbstractElement.insertion.js
+%%WWWDIR%%/src/core/src/dom/AbstractElement.js
+%%WWWDIR%%/src/core/src/dom/AbstractElement.position.js
+%%WWWDIR%%/src/core/src/dom/AbstractElement.static.js
+%%WWWDIR%%/src/core/src/dom/AbstractElement.style.js
+%%WWWDIR%%/src/core/src/dom/AbstractElement.traversal.js
+%%WWWDIR%%/src/core/src/dom/AbstractHelper.js
+%%WWWDIR%%/src/core/src/dom/AbstractQuery.js
 %%WWWDIR%%/src/core/src/dom/CompositeElement.js
-%%WWWDIR%%/src/core/src/dom/CompositeElementLite-more.js
 %%WWWDIR%%/src/core/src/dom/CompositeElementLite.js
-%%WWWDIR%%/src/core/src/dom/DomHelper.js
-%%WWWDIR%%/src/core/src/dom/DomQuery.js
-%%WWWDIR%%/src/core/src/dom/Element-more.js
-%%WWWDIR%%/src/core/src/dom/Element.alignment.js
-%%WWWDIR%%/src/core/src/dom/Element.anim.js
-%%WWWDIR%%/src/core/src/dom/Element.dd.js
-%%WWWDIR%%/src/core/src/dom/Element.fx-more.js
-%%WWWDIR%%/src/core/src/dom/Element.fx.js
-%%WWWDIR%%/src/core/src/dom/Element.insertion.js
-%%WWWDIR%%/src/core/src/dom/Element.js
-%%WWWDIR%%/src/core/src/dom/Element.keys.js
-%%WWWDIR%%/src/core/src/dom/Element.position.js
-%%WWWDIR%%/src/core/src/dom/Element.scroll.js
-%%WWWDIR%%/src/core/src/dom/Element.static-more.js
-%%WWWDIR%%/src/core/src/dom/Element.static.js
-%%WWWDIR%%/src/core/src/dom/Element.style.js
-%%WWWDIR%%/src/core/src/dom/Element.traversal.js
+%%WWWDIR%%/src/core/src/dom/DomQuery-aria.js
 %%WWWDIR%%/src/core/src/env/Browser.js
 %%WWWDIR%%/src/core/src/env/FeatureDetector.js
 %%WWWDIR%%/src/core/src/env/OS.js
@@ -4205,6 +4664,8 @@
 %%WWWDIR%%/src/core/src/lang/Object.js
 %%WWWDIR%%/src/core/src/lang/String.js
 %%WWWDIR%%/src/core/src/misc/JSON.js
+%%WWWDIR%%/src/core/src/perf/Accumulator.js
+%%WWWDIR%%/src/core/src/perf/Monitor.js
 %%WWWDIR%%/src/core/src/util/DelayedTask.js
 %%WWWDIR%%/src/core/src/util/Event.js
 %%WWWDIR%%/src/core/src/util/Format.js
@@ -4223,20 +4684,26 @@
 %%WWWDIR%%/src/core/test/unit/other_specs/dom/touch-api-out.js
 %%WWWDIR%%/src/core/test/unit/other_specs/dom/touch-api.js
 %%WWWDIR%%/src/core/test/unit/other_specs/env/Environment.js
-%%WWWDIR%%/src/core/test/unit/resources/BlockLoader.js
-%%WWWDIR%%/src/core/test/unit/spec/Date.js
+%%WWWDIR%%/src/core/test/unit/resources/APITest.js
+%%WWWDIR%%/src/core/test/unit/resources/jsb3.js
+%%WWWDIR%%/src/core/test/unit/resources/test-setup.js
 %%WWWDIR%%/src/core/test/unit/spec/EventManager.js
 %%WWWDIR%%/src/core/test/unit/spec/Ext-mess.backup
 %%WWWDIR%%/src/core/test/unit/spec/Ext-more.js
 %%WWWDIR%%/src/core/test/unit/spec/Ext.js
 %%WWWDIR%%/src/core/test/unit/spec/Support.js
+%%WWWDIR%%/src/core/test/unit/spec/class/Base.js
 %%WWWDIR%%/src/core/test/unit/spec/class/Class.js
 %%WWWDIR%%/src/core/test/unit/spec/class/ClassManager.js
+%%WWWDIR%%/src/core/test/unit/spec/dom/CompositeElementLite.js
+%%WWWDIR%%/src/core/test/unit/spec/dom/DomHelper.js
 %%WWWDIR%%/src/core/test/unit/spec/dom/Element.insertion.js
 %%WWWDIR%%/src/core/test/unit/spec/dom/Element.js
 %%WWWDIR%%/src/core/test/unit/spec/dom/Element.static.js
+%%WWWDIR%%/src/core/test/unit/spec/dom/Element.style.js
 %%WWWDIR%%/src/core/test/unit/spec/dom/Element.traversal.js
 %%WWWDIR%%/src/core/test/unit/spec/lang/Array.js
+%%WWWDIR%%/src/core/test/unit/spec/lang/Date.js
 %%WWWDIR%%/src/core/test/unit/spec/lang/Error.js
 %%WWWDIR%%/src/core/test/unit/spec/lang/Function.js
 %%WWWDIR%%/src/core/test/unit/spec/lang/Number.js
@@ -4248,15 +4715,12 @@
 %%WWWDIR%%/src/core/test/unit/specs.html
 %%WWWDIR%%/src/data/AbstractStore.js
 %%WWWDIR%%/src/data/ArrayStore.js
-%%WWWDIR%%/src/data/Association.js
 %%WWWDIR%%/src/data/Batch.js
-%%WWWDIR%%/src/data/BelongsToAssociation.js
 %%WWWDIR%%/src/data/BufferStore.js
 %%WWWDIR%%/src/data/Connection.js
 %%WWWDIR%%/src/data/DirectStore.js
 %%WWWDIR%%/src/data/Errors.js
 %%WWWDIR%%/src/data/Field.js
-%%WWWDIR%%/src/data/HasManyAssociation.js
 %%WWWDIR%%/src/data/IdGenerator.js
 %%WWWDIR%%/src/data/JsonP.js
 %%WWWDIR%%/src/data/JsonPStore.js
@@ -4276,6 +4740,10 @@
 %%WWWDIR%%/src/data/Types.js
 %%WWWDIR%%/src/data/UuidGenerator.js
 %%WWWDIR%%/src/data/XmlStore.js
+%%WWWDIR%%/src/data/association/Association.js
+%%WWWDIR%%/src/data/association/BelongsTo.js
+%%WWWDIR%%/src/data/association/HasMany.js
+%%WWWDIR%%/src/data/association/HasOne.js
 %%WWWDIR%%/src/data/proxy/Ajax.js
 %%WWWDIR%%/src/data/proxy/Client.js
 %%WWWDIR%%/src/data/proxy/Direct.js
@@ -4308,6 +4776,8 @@
 %%WWWDIR%%/src/dd/Registry.js
 %%WWWDIR%%/src/dd/ScrollManager.js
 %%WWWDIR%%/src/dd/StatusProxy.js
+%%WWWDIR%%/src/diag/layout/Context.js
+%%WWWDIR%%/src/diag/layout/ContextItem.js
 %%WWWDIR%%/src/direct/Event.js
 %%WWWDIR%%/src/direct/ExceptionEvent.js
 %%WWWDIR%%/src/direct/JsonProvider.js
@@ -4318,6 +4788,17 @@
 %%WWWDIR%%/src/direct/RemotingMethod.js
 %%WWWDIR%%/src/direct/RemotingProvider.js
 %%WWWDIR%%/src/direct/Transaction.js
+%%WWWDIR%%/src/dom/Element.alignment.js
+%%WWWDIR%%/src/dom/Element.anim.js
+%%WWWDIR%%/src/dom/Element.dd.js
+%%WWWDIR%%/src/dom/Element.fx.js
+%%WWWDIR%%/src/dom/Element.js
+%%WWWDIR%%/src/dom/Element.position.js
+%%WWWDIR%%/src/dom/Element.scroll.js
+%%WWWDIR%%/src/dom/Element.style.js
+%%WWWDIR%%/src/dom/Element.traversal.js
+%%WWWDIR%%/src/dom/Helper.js
+%%WWWDIR%%/src/dom/Query.js
 %%WWWDIR%%/src/draw/Color.js
 %%WWWDIR%%/src/draw/Component.js
 %%WWWDIR%%/src/draw/CompositeSprite.js
@@ -4326,7 +4807,10 @@
 %%WWWDIR%%/src/draw/Sprite.js
 %%WWWDIR%%/src/draw/SpriteDD.js
 %%WWWDIR%%/src/draw/Surface.js
+%%WWWDIR%%/src/draw/Text.js
+%%WWWDIR%%/src/draw/engine/ImageExporter.js
 %%WWWDIR%%/src/draw/engine/Svg.js
+%%WWWDIR%%/src/draw/engine/SvgExporter.js
 %%WWWDIR%%/src/draw/engine/Vml.js
 %%WWWDIR%%/src/flash/Component.js
 %%WWWDIR%%/src/form/Basic.js
@@ -4380,6 +4864,7 @@
 %%WWWDIR%%/src/fx/target/Sprite.js
 %%WWWDIR%%/src/fx/target/Target.js
 %%WWWDIR%%/src/grid/CellEditor.js
+%%WWWDIR%%/src/grid/ColumnComponentLayout.js
 %%WWWDIR%%/src/grid/ColumnLayout.js
 %%WWWDIR%%/src/grid/Lockable.js
 %%WWWDIR%%/src/grid/LockingView.js
@@ -4417,8 +4902,10 @@
 %%WWWDIR%%/src/grid/property/HeaderContainer.js
 %%WWWDIR%%/src/grid/property/Property.js
 %%WWWDIR%%/src/grid/property/Store.js
+%%WWWDIR%%/src/layout/ClassList.js
+%%WWWDIR%%/src/layout/Context.js
+%%WWWDIR%%/src/layout/ContextItem.js
 %%WWWDIR%%/src/layout/Layout.js
-%%WWWDIR%%/src/layout/component/AbstractDock.js
 %%WWWDIR%%/src/layout/component/Auto.js
 %%WWWDIR%%/src/layout/component/Body.js
 %%WWWDIR%%/src/layout/component/BoundList.js
@@ -4426,32 +4913,31 @@
 %%WWWDIR%%/src/layout/component/Component.js
 %%WWWDIR%%/src/layout/component/Dock.js
 %%WWWDIR%%/src/layout/component/Draw.js
-%%WWWDIR%%/src/layout/component/Editor.js
 %%WWWDIR%%/src/layout/component/FieldSet.js
 %%WWWDIR%%/src/layout/component/ProgressBar.js
 %%WWWDIR%%/src/layout/component/Tab.js
-%%WWWDIR%%/src/layout/component/Tip.js
+%%WWWDIR%%/src/layout/component/field/ComboBox.js
 %%WWWDIR%%/src/layout/component/field/Field.js
-%%WWWDIR%%/src/layout/component/field/File.js
+%%WWWDIR%%/src/layout/component/field/FieldContainer.js
 %%WWWDIR%%/src/layout/component/field/HtmlEditor.js
 %%WWWDIR%%/src/layout/component/field/Slider.js
 %%WWWDIR%%/src/layout/component/field/Text.js
 %%WWWDIR%%/src/layout/component/field/TextArea.js
 %%WWWDIR%%/src/layout/component/field/Trigger.js
 %%WWWDIR%%/src/layout/container/Absolute.js
-%%WWWDIR%%/src/layout/container/AbstractCard.js
-%%WWWDIR%%/src/layout/container/AbstractContainer.js
-%%WWWDIR%%/src/layout/container/AbstractFit.js
 %%WWWDIR%%/src/layout/container/Accordion.js
 %%WWWDIR%%/src/layout/container/Anchor.js
 %%WWWDIR%%/src/layout/container/Auto.js
+%%WWWDIR%%/src/layout/container/Border-old-js
 %%WWWDIR%%/src/layout/container/Border.js
 %%WWWDIR%%/src/layout/container/Box.js
 %%WWWDIR%%/src/layout/container/Card.js
 %%WWWDIR%%/src/layout/container/CheckboxGroup.js
 %%WWWDIR%%/src/layout/container/Column.js
 %%WWWDIR%%/src/layout/container/Container.js
+%%WWWDIR%%/src/layout/container/Editor.js
 %%WWWDIR%%/src/layout/container/Fit.js
+%%WWWDIR%%/src/layout/container/Form.js
 %%WWWDIR%%/src/layout/container/HBox.js
 %%WWWDIR%%/src/layout/container/Table.js
 %%WWWDIR%%/src/layout/container/VBox.js
@@ -4477,6 +4963,8 @@
 %%WWWDIR%%/src/picker/Date.js
 %%WWWDIR%%/src/picker/Month.js
 %%WWWDIR%%/src/picker/Time.js
+%%WWWDIR%%/src/resizer/BorderSplitter.js
+%%WWWDIR%%/src/resizer/BorderSplitterTracker.js
 %%WWWDIR%%/src/resizer/Handle.js
 %%WWWDIR%%/src/resizer/ResizeTracker.js
 %%WWWDIR%%/src/resizer/Resizer.js
@@ -4500,6 +4988,7 @@
 %%WWWDIR%%/src/tab/Bar.js
 %%WWWDIR%%/src/tab/Panel.js
 %%WWWDIR%%/src/tab/Tab.js
+%%WWWDIR%%/src/tail.js
 %%WWWDIR%%/src/tip/QuickTip.js
 %%WWWDIR%%/src/tip/QuickTipManager.js
 %%WWWDIR%%/src/tip/Tip.js
@@ -4520,10 +5009,12 @@
 %%WWWDIR%%/src/tree/plugin/TreeViewDragDrop.js
 %%WWWDIR%%/src/util/AbstractMixedCollection.js
 %%WWWDIR%%/src/util/Animate.js
+%%WWWDIR%%/src/util/Bindable.js
 %%WWWDIR%%/src/util/CSS.js
 %%WWWDIR%%/src/util/ClickRepeater.js
 %%WWWDIR%%/src/util/ComponentDragger.js
 %%WWWDIR%%/src/util/Cookies.js
+%%WWWDIR%%/src/util/ElementContainer.js
 %%WWWDIR%%/src/util/Filter.js
 %%WWWDIR%%/src/util/Floating.js
 %%WWWDIR%%/src/util/Grouper.js
@@ -4532,12 +5023,16 @@
 %%WWWDIR%%/src/util/Inflector.js
 %%WWWDIR%%/src/util/KeyMap.js
 %%WWWDIR%%/src/util/KeyNav.js
+%%WWWDIR%%/src/util/LruCache.js
 %%WWWDIR%%/src/util/Memento.js
 %%WWWDIR%%/src/util/MixedCollection.js
 %%WWWDIR%%/src/util/Observable.js
 %%WWWDIR%%/src/util/Offset.js
 %%WWWDIR%%/src/util/Point.js
+%%WWWDIR%%/src/util/ProtoElement.js
+%%WWWDIR%%/src/util/Queue.js
 %%WWWDIR%%/src/util/Region.js
+%%WWWDIR%%/src/util/Renderable.js
 %%WWWDIR%%/src/util/Sortable.js
 %%WWWDIR%%/src/util/Sorter.js
 %%WWWDIR%%/src/util/TextMetrics.js
@@ -4640,11 +5135,15 @@
 @dirrm %%WWWDIR%%/src/flash
 @dirrm %%WWWDIR%%/src/draw/engine
 @dirrm %%WWWDIR%%/src/draw
+@dirrm %%WWWDIR%%/src/dom
 @dirrm %%WWWDIR%%/src/direct
+@dirrm %%WWWDIR%%/src/diag/layout
+@dirrm %%WWWDIR%%/src/diag
 @dirrm %%WWWDIR%%/src/dd
 @dirrm %%WWWDIR%%/src/data/writer
 @dirrm %%WWWDIR%%/src/data/reader
 @dirrm %%WWWDIR%%/src/data/proxy
+@dirrm %%WWWDIR%%/src/data/association
 @dirrm %%WWWDIR%%/src/data
 @dirrm %%WWWDIR%%/src/core/test/unit/spec/version
 @dirrm %%WWWDIR%%/src/core/test/unit/spec/util
@@ -4662,6 +5161,7 @@
 @dirrm %%WWWDIR%%/src/core/test
 @dirrm %%WWWDIR%%/src/core/src/version
 @dirrm %%WWWDIR%%/src/core/src/util
+@dirrm %%WWWDIR%%/src/core/src/perf
 @dirrm %%WWWDIR%%/src/core/src/misc
 @dirrm %%WWWDIR%%/src/core/src/lang
 @dirrm %%WWWDIR%%/src/core/src/env
@@ -4674,6 +5174,7 @@
 @dirrm %%WWWDIR%%/src/core/examples/src/Sample
 @dirrm %%WWWDIR%%/src/core/examples/src
 @dirrm %%WWWDIR%%/src/core/examples
+@dirrm %%WWWDIR%%/src/core/dom
 @dirrm %%WWWDIR%%/src/core
 @dirrm %%WWWDIR%%/src/container
 @dirrm %%WWWDIR%%/src/chart/theme
@@ -4686,6 +5187,17 @@
 @dirrm %%WWWDIR%%/resources/themes/templates/resources/sass
 @dirrm %%WWWDIR%%/resources/themes/templates/resources
 @dirrm %%WWWDIR%%/resources/themes/templates
+@dirrm %%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets/form
+@dirrm %%WWWDIR%%/resources/themes/stylesheets/neptune/default/widgets
+@dirrm %%WWWDIR%%/resources/themes/stylesheets/neptune/default/variables
+@dirrm %%WWWDIR%%/resources/themes/stylesheets/neptune/default/util
+@dirrm %%WWWDIR%%/resources/themes/stylesheets/neptune/default/mixins
+@dirrm %%WWWDIR%%/resources/themes/stylesheets/neptune/default/layout
+@dirrm %%WWWDIR%%/resources/themes/stylesheets/neptune/default/core
+@dirrm %%WWWDIR%%/resources/themes/stylesheets/neptune/default/accessories/scss
+@dirrm %%WWWDIR%%/resources/themes/stylesheets/neptune/default/accessories
+@dirrm %%WWWDIR%%/resources/themes/stylesheets/neptune/default
+@dirrm %%WWWDIR%%/resources/themes/stylesheets/neptune
 @dirrm %%WWWDIR%%/resources/themes/stylesheets/ext4/default/widgets/form
 @dirrm %%WWWDIR%%/resources/themes/stylesheets/ext4/default/widgets
 @dirrm %%WWWDIR%%/resources/themes/stylesheets/ext4/default/variables
@@ -4697,6 +5209,10 @@
 @dirrm %%WWWDIR%%/resources/themes/stylesheets/ext4
 @dirrm %%WWWDIR%%/resources/themes/stylesheets
 @dirrm %%WWWDIR%%/resources/themes/lib
+@dirrm %%WWWDIR%%/resources/themes/images/neptune/tree
+@dirrm %%WWWDIR%%/resources/themes/images/neptune/grid
+@dirrm %%WWWDIR%%/resources/themes/images/neptune/button
+@dirrm %%WWWDIR%%/resources/themes/images/neptune
 @dirrm %%WWWDIR%%/resources/themes/images/gray/window-header
 @dirrm %%WWWDIR%%/resources/themes/images/gray/window
 @dirrm %%WWWDIR%%/resources/themes/images/gray/util/splitter
@@ -4791,48 +5307,13 @@
 @dirrm %%WWWDIR%%/resources/themes/images/access
 @dirrm %%WWWDIR%%/resources/themes/images
 @dirrm %%WWWDIR%%/resources/themes
+@dirrm %%WWWDIR%%/resources/sass/.sass-cache
 @dirrm %%WWWDIR%%/resources/sass
 @dirrm %%WWWDIR%%/resources/css
 @dirrm %%WWWDIR%%/resources
 @dirrm %%WWWDIR%%/pkgs
 @dirrm %%WWWDIR%%/locale
-@dirrm %%WWWDIR%%/jsbuilder/ycompressor
-@dirrm %%WWWDIR%%/jsbuilder/tests/parser
-@dirrm %%WWWDIR%%/jsbuilder/tests
-@dirrm %%WWWDIR%%/jsbuilder/src/generators/model/templates
-@dirrm %%WWWDIR%%/jsbuilder/src/generators/model
-@dirrm %%WWWDIR%%/jsbuilder/src/generators/controller/templates
-@dirrm %%WWWDIR%%/jsbuilder/src/generators/controller
-@dirrm %%WWWDIR%%/jsbuilder/src/generators/app/templates
-@dirrm %%WWWDIR%%/jsbuilder/src/generators/app/files/test/unit
-@dirrm %%WWWDIR%%/jsbuilder/src/generators/app/files/test
-@dirrm %%WWWDIR%%/jsbuilder/src/generators/app/files/public/resources/css
-@dirrm %%WWWDIR%%/jsbuilder/src/generators/app/files/public/resources
-@dirrm %%WWWDIR%%/jsbuilder/src/generators/app/files/public
-@dirrm %%WWWDIR%%/jsbuilder/src/generators/app/files/lib/sencha-jasmine/matchers
-@dirrm %%WWWDIR%%/jsbuilder/src/generators/app/files/lib/sencha-jasmine
-@dirrm %%WWWDIR%%/jsbuilder/src/generators/app/files/lib/jasmine
-@dirrm %%WWWDIR%%/jsbuilder/src/generators/app/files/lib/JSBuilder/bin
-@dirrm %%WWWDIR%%/jsbuilder/src/generators/app/files/lib/JSBuilder
-@dirrm %%WWWDIR%%/jsbuilder/src/generators/app/files/lib
-@dirrm %%WWWDIR%%/jsbuilder/src/generators/app/files/app
-@dirrm %%WWWDIR%%/jsbuilder/src/generators/app/files
-@dirrm %%WWWDIR%%/jsbuilder/src/generators/app
-@dirrm %%WWWDIR%%/jsbuilder/src/generators
-@dirrm %%WWWDIR%%/jsbuilder/src/Parser/Statement
-@dirrm %%WWWDIR%%/jsbuilder/src/Parser
-@dirrm %%WWWDIR%%/jsbuilder/src
-@dirrm %%WWWDIR%%/jsbuilder/jsdb/win
-@dirrm %%WWWDIR%%/jsbuilder/jsdb/mac
-@dirrm %%WWWDIR%%/jsbuilder/jsdb/linux
-@dirrm %%WWWDIR%%/jsbuilder/jsdb
-@dirrm %%WWWDIR%%/jsbuilder/bin
-@dirrm %%WWWDIR%%/jsbuilder
 @dirrm %%WWWDIR%%/builds
-@dirrm %%WWWDIR%%/build/bin/windows
-@dirrm %%WWWDIR%%/build/bin/mac
-@dirrm %%WWWDIR%%/build/bin/linux
-@dirrm %%WWWDIR%%/build/bin
 @dirrm %%WWWDIR%%/build
 @dirrm %%WWWDIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/writer/remote/lib
@@ -4849,11 +5330,10 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/view/chooser/icons
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/view/chooser
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/view
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/videos
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ux/statusbar/images
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ux/statusbar/css
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ux/statusbar
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ux/layout/component/form
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ux/layout/component
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ux/layout
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ux/grid/menu
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ux/grid/images
@@ -4880,6 +5360,23 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/slider
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple-widgets/images
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple-widgets
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple-tasks/resources/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple-tasks/resources/css
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple-tasks/resources
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple-tasks/php/task
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple-tasks/php/list
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple-tasks/php/config
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple-tasks/php
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple-tasks/db
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple-tasks/app/view/tasks
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple-tasks/app/view/lists
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple-tasks/app/view
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple-tasks/app/ux
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple-tasks/app/store
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple-tasks/app/model
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple-tasks/app/controller
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple-tasks/app
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple-tasks
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/shared/screens
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/shared/icons/fam
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/shared/icons
@@ -4917,6 +5414,10 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/panel/bubble-panel/resources
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/panel/bubble-panel
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/panel
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/page-analyzer/resources/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/page-analyzer/resources
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/page-analyzer/models
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/page-analyzer
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/organizer
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/multiselect
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/message-box/images
@@ -4928,6 +5429,26 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/layout-browser/images
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/layout-browser
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/layout
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kitchensink/resources/sass/accessories/scss
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kitchensink/resources/sass/accessories
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kitchensink/resources/sass
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kitchensink/resources/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kitchensink/resources/css
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kitchensink/resources
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kitchensink/app/view/examples/windows
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kitchensink/app/view/examples/trees
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kitchensink/app/view/examples/toolbars
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kitchensink/app/view/examples/tabs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kitchensink/app/view/examples/panels
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kitchensink/app/view/examples/grids
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kitchensink/app/view/examples/forms
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kitchensink/app/view/examples
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kitchensink/app/view
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kitchensink/app/store
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kitchensink/app/model
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kitchensink/app/controller
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kitchensink/app
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kitchensink
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/keynav
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/key-feed-viewer/viewer
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/key-feed-viewer/images
@@ -4942,6 +5463,7 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/form
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/feed-viewer/viewer
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/feed-viewer/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/feed-viewer/data
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/feed-viewer
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/draw
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/direct/php/classes
@@ -4954,6 +5476,7 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/desktop/images
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/desktop/css
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/desktop
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dd/img
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dd
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/datasets/touch-icons
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/datasets
@@ -4961,8 +5484,22 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/core
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/component-loader
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/charts
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/calendar/src/view
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/calendar/src/util
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/calendar/src/template
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/calendar/src/form/field
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/calendar/src/form
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/calendar/src/dd
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/calendar/src/data
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/calendar/src
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/calendar/resources/images/default
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/calendar/resources/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/calendar/resources/css
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/calendar/resources
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/calendar
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/button/images
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/button
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/aria
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/app/simple/data
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/app/simple/app/view/user
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/app/simple/app/view
@@ -4997,8 +5534,15 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/app/feed-viewer/app
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/app/feed-viewer
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/app
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/MVC/pandora/data
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/MVC/pandora/app/view
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/MVC/pandora/app/store
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/MVC/pandora/app/model
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/MVC/pandora/app/controller
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/MVC/pandora/app
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/MVC/pandora
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/MVC
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/videos
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/source
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/resources/prettify
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/resources/images
@@ -5013,11 +5557,14 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images/Ext.Img
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images/Ext.Editor
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/upgrade_41
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/upgrade
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/tree/examples/simple_tree
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/tree/examples
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/tree
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/theming
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/testing
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/performance
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/mvc_pt3
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/mvc_pt2
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/mvc_pt1
@@ -5043,9 +5590,20 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/forms/examples/layout
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/forms/examples
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/forms
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/editable_grid_pt2
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/editable_grid/GeekFlicks/app/view
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/editable_grid/GeekFlicks/app/store
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/editable_grid/GeekFlicks/app/model
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/editable_grid/GeekFlicks/app/controller
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/editable_grid/GeekFlicks/app
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/editable_grid/GeekFlicks
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/editable_grid
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/drawing_and_charting
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/drag_and_drop
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/direct_grid_pt2/reference-files/php/classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/direct_grid_pt2/reference-files/php
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/direct_grid_pt2/reference-files/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/direct_grid_pt2/reference-files
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/direct_grid_pt2
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/direct_grid_pt1
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/data/examples/sorting_grouping_filtering_store/data
@@ -5078,12 +5636,6 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/class_system
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides/application_architecture
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guides
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/welcome/img/icon
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/welcome/img/button-bg/ie
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/welcome/img/button-bg
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/welcome/img
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/welcome/css
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/welcome
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/resources/themes/images/default/window-header
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/resources/themes/images/default/window
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/resources/themes/images/default/util/splitter
@@ -5116,9 +5668,7 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/resources/themes/images/default
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/resources/themes/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/resources/themes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/resources/css
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/resources
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/builds
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec mkdir -p %D/%%WWWDIR%%/resources/sass/.sass-cache
