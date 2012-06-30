@@ -26,7 +26,7 @@ OPTIONS=	CONFIG  "Enable custom config (recuire Config::General)" Off
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_CONFIG)
-RUN_DEPENDS=	${SITE_PERL}/Config/General.pm:${PORTSDIR}/devel/p5-Config-General
+RUN_DEPENDS=	p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General
 PLIST_FILES+=	etc/${PORTNAME}.cfg.sample
 .endif
 

@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	admin@lissyara.su
 COMMENT=	A robust log colorizer
 
-RUN_DEPENDS=	${SITE_PERL}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor
+RUN_DEPENDS=	p5-Term-ANSIColor>=0:${PORTSDIR}/devel/p5-Term-ANSIColor
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 

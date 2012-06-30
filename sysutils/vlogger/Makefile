@@ -15,7 +15,7 @@ COMMENT=	Logging utility for Apache servers with many virtual hosts
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Bundle/DBI.pm:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 
 USE_PERL5=	yes
 NO_BUILD=	yes

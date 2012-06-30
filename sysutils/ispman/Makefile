@@ -15,26 +15,26 @@ DISTNAME=	${PORTNAME}-1.3rc2
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	ISP management software
 
-RUN_DEPENDS=	${SITE_PERL}/Text/Balanced.pm:${PORTSDIR}/textproc/p5-Text-Balanced\
-		${SITE_PERL}/Convert/ASN1.pm:${PORTSDIR}/converters/p5-Convert-ASN1 \
-		${SITE_PERL}/Authen/SASL.pm:${PORTSDIR}/security/p5-Authen-SASL \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy \
-		${SITE_PERL}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX \
-		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent \
-		${SITE_PERL}/Log/Agent.pm:${PORTSDIR}/devel/p5-Log-Agent \
-		${SITE_PERL}/CGI/Session.pm:${PORTSDIR}/www/p5-CGI-Session \
-		${SITE_PERL}/IMAP/Admin.pm:${PORTSDIR}/mail/p5-IMAP-Admin \
-		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
-		${SITE_PERL}/DNS/ZoneParse.pm:${PORTSDIR}/dns/p5-DNS-ZoneParse \
-		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/${PERL_ARCH}/Unicode/String.pm:${PORTSDIR}/converters/p5-Unicode-String \
-		${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \
-		${SITE_PERL}/Mail/RFC822/Address.pm:${PORTSDIR}/mail/p5-Mail-RFC822-Address \
-		${SITE_PERL}/Locale/Maketext/Lexicon.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
-		${SITE_PERL}/I18N/LangTags.pm:${PORTSDIR}/misc/p5-I18N-LangTags \
-		${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite
+RUN_DEPENDS=	p5-Text-Balanced>=0:${PORTSDIR}/textproc/p5-Text-Balanced\
+		p5-Convert-ASN1>=0:${PORTSDIR}/converters/p5-Convert-ASN1 \
+		p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
+		p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
+		p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX \
+		p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent \
+		p5-Log-Agent>=0:${PORTSDIR}/devel/p5-Log-Agent \
+		p5-CGI-Session>=0:${PORTSDIR}/www/p5-CGI-Session \
+		p5-IMAP-Admin>=0:${PORTSDIR}/mail/p5-IMAP-Admin \
+		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap \
+		p5-DNS-ZoneParse>=0:${PORTSDIR}/dns/p5-DNS-ZoneParse \
+		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-Unicode-String>=0:${PORTSDIR}/converters/p5-Unicode-String \
+		p5-Text-Template>=0:${PORTSDIR}/textproc/p5-Text-Template \
+		p5-Mail-RFC822-Address>=0:${PORTSDIR}/mail/p5-Mail-RFC822-Address \
+		p5-Locale-Maketext-Lexicon>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
+		p5-I18N-LangTags>=0:${PORTSDIR}/misc/p5-I18N-LangTags \
+		p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite
 
 USE_GMAKE=	yes
 USE_PERL5=	yes

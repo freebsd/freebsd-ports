@@ -16,8 +16,8 @@ COMMENT=	Webfrontend for managing accounts stored in an OpenLDAP server
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Quota.pm:${PORTSDIR}/sysutils/p5-Quota \
-		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
+RUN_DEPENDS=	p5-Quota>=0:${PORTSDIR}/sysutils/p5-Quota \
+		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 
 NO_BUILD=	yes
 USE_GETTEXT=	yes

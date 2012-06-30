@@ -18,8 +18,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Web-based interface for performing some user tasks
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
-		${SITE_PERL}/${PERL_ARCH}/Authen/PAM.pm:${PORTSDIR}/security/p5-Authen-PAM
+RUN_DEPENDS=	p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay \
+		p5-Authen-PAM>=0:${PORTSDIR}/security/p5-Authen-PAM
 
 FETCH_CMD?=	/usr/bin/fetch -pRr
 NO_BUILD=	yes

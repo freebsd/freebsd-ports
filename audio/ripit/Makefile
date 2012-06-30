@@ -15,9 +15,9 @@ MAINTAINER=	tobias.rehbein@web.de
 COMMENT=	A command line audio CD ripper
 
 # See pkg-message about other dependencies.
-RUN_DEPENDS=	${SITE_PERL}/CDDB_get.pm:${PORTSDIR}/audio/p5-CDDB_get \
-	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww \
-	${SITE_PERL}/WebService/MusicBrainz.pm:${PORTSDIR}/www/p5-WebService-MusicBrainz \
+RUN_DEPENDS=	p5-CDDB_get>=0:${PORTSDIR}/audio/p5-CDDB_get \
+	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+	p5-WebService-MusicBrainz>=0:${PORTSDIR}/www/p5-WebService-MusicBrainz \
 	p5-MusicBrainz-DiscID>=0:${PORTSDIR}/audio/p5-MusicBrainz-DiscID \
 	lame:${PORTSDIR}/audio/lame \
 	cdparanoia:${PORTSDIR}/audio/cdparanoia \
