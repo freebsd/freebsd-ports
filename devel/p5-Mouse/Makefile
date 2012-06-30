@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mouse
-PORTVERSION=	0.97
+PORTVERSION=	0.99
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -57,9 +57,6 @@ MAN3=		Mouse.3 \
 
 post-install:
 	@${CAT} ${PKGDIR}/pkg-message
-
-post-extract:
-	@${PERL} -i -ne 'print unless m,build_requires,' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.pre.mk>
 
