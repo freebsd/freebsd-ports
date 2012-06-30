@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Plain and login auth methods for Net::Server::Mail::ESMTP
 
-BUILD_DEPENDS=	${SITE_PERL}/Net/Server/Mail/ESMTP.pm:${PORTSDIR}/mail/p5-Net-Server-Mail \
-		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+BUILD_DEPENDS=	p5-Net-Server-Mail>=0:${PORTSDIR}/mail/p5-Net-Server-Mail \
+		p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

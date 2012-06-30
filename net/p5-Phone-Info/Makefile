@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Provides a nicer CLI interface to Net::WhitePages
 
-RUN_DEPENDS=	${SITE_PERL}/Net/WhitePages.pm:${PORTSDIR}/net/p5-Net-WhitePages
+RUN_DEPENDS=	p5-Net-WhitePages>=0:${PORTSDIR}/net/p5-Net-WhitePages
 
 PERL_CONFIGURE=	yes
 

@@ -15,9 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Creates new Net::LDAP::Entry objects for a posixAccount entry
 
-RUN_DEPENDS=	${SITE_PERL}/Net/LDAP/Entry.pm:${PORTSDIR}/net/p5-perl-ldap \
-		${SITE_PERL}/Sys/User/UIDhelper.pm:${PORTSDIR}/sysutils/p5-Sys-User-UIDhelper \
-		${SITE_PERL}/Sys/Group/GIDhelper.pm:${PORTSDIR}/sysutils/p5-Sys-Group-GIDhelper
+RUN_DEPENDS=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap \
+		p5-Sys-User-UIDhelper>=0:${PORTSDIR}/sysutils/p5-Sys-User-UIDhelper \
+		p5-Sys-Group-GIDhelper>=0:${PORTSDIR}/sysutils/p5-Sys-Group-GIDhelper
 
 PERL_CONFIGURE=	yes
 

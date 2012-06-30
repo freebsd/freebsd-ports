@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	A system for bookmarking URIs using ZConf
 
-RUN_DEPENDS=	${SITE_PERL}/ZConf.pm:${PORTSDIR}/net/p5-ZConf
+RUN_DEPENDS=	p5-ZConf>=0:${PORTSDIR}/net/p5-ZConf
 
 PERL_CONFIGURE=	yes
 

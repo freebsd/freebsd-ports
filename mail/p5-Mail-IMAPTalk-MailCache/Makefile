@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Caches mail information for Mail::IMAPTalk using Mail::Cache.
 
-BUILD_DEPENDS=	${SITE_PERL}/Mail/Cache.pm:${PORTSDIR}/mail/p5-Mail-Cache \
-		${SITE_PERL}/Mail/IMAPTalk.pm:${PORTSDIR}/mail/p5-Mail-IMAPTalk
+BUILD_DEPENDS=	p5-Mail-Cache>=0:${PORTSDIR}/mail/p5-Mail-Cache \
+		p5-Mail-IMAPTalk>=0:${PORTSDIR}/mail/p5-Mail-IMAPTalk
 
 PERL_CONFIGURE=	yes
 

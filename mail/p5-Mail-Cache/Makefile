@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Caches mail information
 
-BUILD_DEPENDS=	${SITE_PERL}/File/BaseDir.pm:${PORTSDIR}/devel/p5-File-BaseDir \
-		${SITE_PERL}/Email/Simple.pm:${PORTSDIR}/mail/p5-Email-Simple
+BUILD_DEPENDS=	p5-File-BaseDir>=0:${PORTSDIR}/devel/p5-File-BaseDir \
+		p5-Email-Simple>=0:${PORTSDIR}/mail/p5-Email-Simple
 
 PERL_CONFIGURE=	yes
 

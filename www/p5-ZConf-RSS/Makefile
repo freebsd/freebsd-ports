@@ -16,11 +16,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	ZConf backed RSS fetching and viewing
 
-BUILD_DEPENDS=	${SITE_PERL}/ZConf.pm:${PORTSDIR}/net/p5-ZConf \
-		${SITE_PERL}/ZConf/GUI.pm:${PORTSDIR}/devel/p5-ZConf-GUI \
-		${SITE_PERL}/XML/FeedPP.pm:${PORTSDIR}/textproc/p5-XML-FeedPP \
-		${SITE_PERL}/Text/NeatTemplate.pm:${PORTSDIR}/textproc/p5-Text-NeatTemplate \
-		${SITE_PERL}/HTML/FormatText/WithLinks.pm:${PORTSDIR}/textproc/p5-HTML-FormatText-WithLinks
+BUILD_DEPENDS=	p5-ZConf>=0:${PORTSDIR}/net/p5-ZConf \
+		p5-ZConf-GUI>=0:${PORTSDIR}/devel/p5-ZConf-GUI \
+		p5-XML-FeedPP>=0:${PORTSDIR}/textproc/p5-XML-FeedPP \
+		p5-Text-NeatTemplate>=0:${PORTSDIR}/textproc/p5-Text-NeatTemplate \
+		p5-HTML-FormatText-WithLinks>=0:${PORTSDIR}/textproc/p5-HTML-FormatText-WithLinks
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

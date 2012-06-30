@@ -15,15 +15,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Manages POSIX users in LDAP and is extensible via a plugin system
 
-RUN_DEPENDS=	${SITE_PERL}/Net/LDAP/Entry.pm:${PORTSDIR}/net/p5-perl-ldap \
-		${SITE_PERL}/Sys/User/UIDhelper.pm:${PORTSDIR}/sysutils/p5-Sys-User-UIDhelper \
-		${SITE_PERL}/Sys/Group/GIDhelper.pm:${PORTSDIR}/sysutils/p5-Sys-Group-GIDhelper \
-		${SITE_PERL}/Net/LDAP/posixAccount.pm:${PORTSDIR}/net/p5-Net-LDAP-posixAccount \
-		${SITE_PERL}/Net/LDAP/posixGroup.pm:${PORTSDIR}/net/p5-Net-LDAP-posixGroup \
-		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
-		${SITE_PERL}/String/ShellQuote.pm:${PORTSDIR}/textproc/p5-String-ShellQuote \
-		${SITE_PERL}/File/BaseDir.pm:${PORTSDIR}/devel/p5-File-BaseDir \
-		${SITE_PERL}/Config/IniHash.pm:${PORTSDIR}/devel/p5-Config-IniHash
+RUN_DEPENDS=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap \
+		p5-Sys-User-UIDhelper>=0:${PORTSDIR}/sysutils/p5-Sys-User-UIDhelper \
+		p5-Sys-Group-GIDhelper>=0:${PORTSDIR}/sysutils/p5-Sys-Group-GIDhelper \
+		p5-Net-LDAP-posixAccount>=0:${PORTSDIR}/net/p5-Net-LDAP-posixAccount \
+		p5-Net-LDAP-posixGroup>=0:${PORTSDIR}/net/p5-Net-LDAP-posixGroup \
+		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
+		p5-String-ShellQuote>=0:${PORTSDIR}/textproc/p5-String-ShellQuote \
+		p5-File-BaseDir>=0:${PORTSDIR}/devel/p5-File-BaseDir \
+		p5-Config-IniHash>=0:${PORTSDIR}/devel/p5-Config-IniHash
 
 PERL_CONFIGURE=	yes
 
