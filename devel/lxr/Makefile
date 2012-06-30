@@ -16,7 +16,7 @@ COMMENT=	Source code indexer and cross-referencer
 
 BUILD_DEPENDS=	exctags:${PORTSDIR}/devel/ctags \
 		swish-e:${PORTSDIR}/www/swish-e \
-		${SITE_PERL}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic
+		p5-File-MMagic>=0:${PORTSDIR}/devel/p5-File-MMagic
 
 PATCH_STRIP=	-p1
 
@@ -51,13 +51,13 @@ IGNORE=		you must choose only one database backend
 .endif
 
 .if defined(WITH_POSTGRESQL)
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+BUILD_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 MSG_FILES+=	pkg_message.postgresql
 DB_DRIVER=	Pg
 .endif # defined(WITH_POSTGRESQL)
 
 .if defined(WITH_MYSQL)
-BUILD_DEPENDS+=	${SITE_PERL}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+BUILD_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 MSG_FILES+=	pkg_message.mysql
 DB_DRIVER=	mysql
 .endif # defined(WITH_MYSQL)

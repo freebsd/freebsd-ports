@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sergey.dyatko@gmail.com
 COMMENT=	Format DateTime according to xsd:dateTime
 
-BUILD_DEPENDS=	${SITE_PERL}/DateTime/Format/ISO8601.pm:${PORTSDIR}/devel/p5-DateTime-Format-ISO8601
-RUN_DEPENDS=	${SITE_PERL}/DateTime/Format/ISO8601.pm:${PORTSDIR}/devel/p5-DateTime-Format-ISO8601
+BUILD_DEPENDS=	p5-DateTime-Format-ISO8601>=0:${PORTSDIR}/devel/p5-DateTime-Format-ISO8601
+RUN_DEPENDS=	p5-DateTime-Format-ISO8601>=0:${PORTSDIR}/devel/p5-DateTime-Format-ISO8601
 
 PERL_CONFIGURE=	yes
 

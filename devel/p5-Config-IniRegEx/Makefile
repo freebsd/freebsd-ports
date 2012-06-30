@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mopsfelder@gmail.com
 COMMENT=	Ini workaround, regex search for parameters and sections
 
-RUN_DEPENDS=	${SITE_PERL}/Config/IniFiles.pm:${PORTSDIR}/devel/p5-Config-IniFiles
+RUN_DEPENDS=	p5-Config-IniFiles>=0:${PORTSDIR}/devel/p5-Config-IniFiles
 
 PERL_CONFIGURE=	yes
 

@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mopsfelder@gmail.com
 COMMENT=	Stringify and pretty print Perl data structures
 
-RUN_DEPENDS=	${SITE_PERL}/Perl/Tidy.pm:${PORTSDIR}/devel/perltidy
+RUN_DEPENDS=	perltidy>=0:${PORTSDIR}/devel/perltidy
 
 PERL_CONFIGURE=	yes
 

@@ -14,8 +14,8 @@ COMMENT=	Imports svn repositories into git
 
 LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion
 RUN_DEPENDS+=	git:${PORTSDIR}/devel/git \
-		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
-		${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/p5-subversion
+		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
+		p5-subversion>=0:${PORTSDIR}/devel/p5-subversion
 
 LICENSES=	GPLv1 GPLv2 GPLv3
 

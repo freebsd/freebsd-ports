@@ -15,8 +15,8 @@ MASTER_SITES=	SF
 MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	A perl script which analyses the history of a CVS-managed project
 
-RUN_DEPENDS=	${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
-		${SITE_PERL}/String/ShellQuote.pm:${PORTSDIR}/textproc/p5-String-ShellQuote \
+RUN_DEPENDS=	p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
+		p5-String-ShellQuote>=0:${PORTSDIR}/textproc/p5-String-ShellQuote \
 		gnuplot:${PORTSDIR}/math/gnuplot
 
 USE_PERL5=	yes

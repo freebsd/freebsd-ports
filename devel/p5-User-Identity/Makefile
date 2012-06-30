@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mcampos@bpsw.biz
 COMMENT=	Perl module for abstracting information about a physical person
 
-RUN_DEPENDS=	${SITE_PERL}/Geography/Countries.pm:${PORTSDIR}/misc/p5-Geography-Countries
+RUN_DEPENDS=	p5-Geography-Countries>=0:${PORTSDIR}/misc/p5-Geography-Countries
 
 PERL_CONFIGURE=	yes
 

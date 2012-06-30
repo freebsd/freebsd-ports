@@ -17,7 +17,7 @@ COMMENT=	A Perl extension for parsing Mac OS X property lists
 LICENSE_COMB=	dual
 LICENSE=	ART10 GPLv1
 
-BUILD_DEPENDS=	${SITE_PERL}/XML/Entities.pm:${PORTSDIR}/textproc/p5-XML-Entities
+BUILD_DEPENDS=	p5-XML-Entities>=0:${PORTSDIR}/textproc/p5-XML-Entities
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
