@@ -15,8 +15,8 @@ EXTRACT_SUFX=		.tgz
 MAINTAINER=	nistor@snickers.org
 COMMENT=	SNMP trap handler/translator/swiss-army-knife
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SNMP.pm:${PORTSDIR}/net-mgmt/net-snmp \
-		${SITE_PERL}/Config/IniFiles.pm:${PORTSDIR}/devel/p5-Config-IniFiles
+RUN_DEPENDS=	net-snmp>=0:${PORTSDIR}/net-mgmt/net-snmp \
+		p5-Config-IniFiles>=0:${PORTSDIR}/devel/p5-Config-IniFiles
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 

@@ -19,29 +19,29 @@ COMMENT=	A log file parser for computer forensic investigations
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-		${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
-		${SITE_PERL}/${PERL_ARCH}/DBI/DBD.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/Carp/Assert.pm:${PORTSDIR}/devel/p5-Carp-Assert \
-		${SITE_PERL}/Data/Hexify.pm:${PORTSDIR}/devel/p5-Data-Hexify \
-		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
-		${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
-		${SITE_PERL}/DateTime/Format/Strptime.pm:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
-		${SITE_PERL}/DateTime/TimeZone.pm:${PORTSDIR}/devel/p5-DateTime-TimeZone \
-		${SITE_PERL}/${PERL_ARCH}/Glib.pm:${PORTSDIR}/devel/p5-Glib2 \
-		${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
-		${SITE_PERL}/Mac/PropertyList.pm:${PORTSDIR}/devel/p5-Mac-PropertyList \
-		${SITE_PERL}/Parse/Win32Registry.pm:${PORTSDIR}/devel/p5-Parse-Win32Registry \
-		${SITE_PERL}/Image/ExifTool.pm:${PORTSDIR}/graphics/p5-Image-ExifTool \
-		${SITE_PERL}/${PERL_ARCH}/Net/Pcap.pm:${PORTSDIR}/net/p5-Net-Pcap \
-		${SITE_PERL}/NetPacket.pm:${PORTSDIR}/net/p5-NetPacket \
-		${SITE_PERL}/${PERL_ARCH}/Digest/CRC.pm:${PORTSDIR}/security/p5-Digest-CRC \
-		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
-		${SITE_PERL}/File/Mork.pm:${PORTSDIR}/www/p5-File-Mork \
-		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/HTML/Scrubber.pm:${PORTSDIR}/www/p5-HTML-Scrubber \
-		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2
+BUILD_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
+		p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-Carp-Assert>=0:${PORTSDIR}/devel/p5-Carp-Assert \
+		p5-Data-Hexify>=0:${PORTSDIR}/devel/p5-Data-Hexify \
+		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
+		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
+		p5-DateTime-Format-Strptime>=0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
+		p5-DateTime-TimeZone>=0:${PORTSDIR}/devel/p5-DateTime-TimeZone \
+		p5-Glib2>=0:${PORTSDIR}/devel/p5-Glib2 \
+		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
+		p5-Mac-PropertyList>=0:${PORTSDIR}/devel/p5-Mac-PropertyList \
+		p5-Parse-Win32Registry>=0:${PORTSDIR}/devel/p5-Parse-Win32Registry \
+		p5-Image-ExifTool>=0:${PORTSDIR}/graphics/p5-Image-ExifTool \
+		p5-Net-Pcap>=0:${PORTSDIR}/net/p5-Net-Pcap \
+		p5-NetPacket>=0:${PORTSDIR}/net/p5-NetPacket \
+		p5-Digest-CRC>=0:${PORTSDIR}/security/p5-Digest-CRC \
+		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
+		p5-File-Mork>=0:${PORTSDIR}/www/p5-File-Mork \
+		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-HTML-Scrubber>=0:${PORTSDIR}/www/p5-HTML-Scrubber \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

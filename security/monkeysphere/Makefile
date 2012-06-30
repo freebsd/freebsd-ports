@@ -18,8 +18,8 @@ COMMENT=	Use the OpenPGP web of trust to verify ssh connections
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg1 \
 		lockfile:${PORTSDIR}/mail/procmail \
 		bash:${PORTSDIR}/shells/bash \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/OpenSSL/RSA.pm:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA \
-		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
+		p5-Crypt-OpenSSL-RSA>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA \
+		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
 
 MAN1=		monkeysphere.1 openpgp2ssh.1 pem2openpgp.1
 MAN7=		monkeysphere.7

@@ -17,7 +17,7 @@ COMMENT=	Free image processing system
 OPTIONS+=	LIBOIL	"Use liboil for CPU-optimized primitives" on
 OPTIONS+=	PYTHON	"Create Python bindings" ${PYPRESENT}
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		exif:${PORTSDIR}/graphics/libexif	\

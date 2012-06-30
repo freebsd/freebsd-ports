@@ -15,9 +15,9 @@ MASTER_SITES=	http://www.pulia.nu/code/projects/npretty/ \
 MAINTAINER=	peter@pean.org
 COMMENT=	A simple web-gallery generator written in perl
 
-RUN_DEPENDS=	${SITE_PERL}/Image/ExifTool.pm:${PORTSDIR}/graphics/p5-Image-ExifTool \
-		${SITE_PERL}/mach/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick \
-		${SITE_PERL}/mach/forks.pm:${PORTSDIR}/devel/p5-forks
+RUN_DEPENDS=	p5-Image-ExifTool>=0:${PORTSDIR}/graphics/p5-Image-ExifTool \
+		ImageMagick>=0:${PORTSDIR}/graphics/ImageMagick \
+		p5-forks>=0:${PORTSDIR}/devel/p5-forks
 
 LIB_DEPENDS+=	Magick.*:${PORTSDIR}/graphics/ImageMagick
 

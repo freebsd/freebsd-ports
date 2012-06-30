@@ -17,11 +17,11 @@ MAINTAINER=	cristianorolim@hotmail.com
 COMMENT=	Collects the output from Nagios and generates graphs
 
 BUILD_DEPENDS=	\
-	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
-	${SITE_PERL}/RRDp.pm:${PORTSDIR}/databases/rrdtool \
-	${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick \
-	${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
-	${SITE_PERL}/Calendar/Simple.pm:${PORTSDIR}/devel/p5-Calendar-Simple \
+	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
+	rrdtool>=0:${PORTSDIR}/databases/rrdtool \
+	ImageMagick>=0:${PORTSDIR}/graphics/ImageMagick \
+	p5-URI>=0:${PORTSDIR}/net/p5-URI \
+	p5-Calendar-Simple>=0:${PORTSDIR}/devel/p5-Calendar-Simple \
 	${LOCALBASE}/bin/nagios:${PORTSDIR}/net-mgmt/nagios
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

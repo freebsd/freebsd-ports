@@ -16,10 +16,10 @@ COMMENT=	Nagios plugin to observe LDAP
 
 PERL_CONFIGURE=	yes
 
-BUILD_DEPENDS=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
-		${SITE_PERL}/Nagios/Plugin.pm:${PORTSDIR}/net-mgmt/p5-Nagios-Plugin \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-		${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime
+BUILD_DEPENDS=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap \
+		p5-Nagios-Plugin>=0:${PORTSDIR}/net-mgmt/p5-Nagios-Plugin \
+		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes \
+		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

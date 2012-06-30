@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	fbsd_user@a1poweruser.com
 COMMENT=	Proactive Probing Abuse Reporting System
 
-RUN_DEPENDS=	${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net-mgmt/p5-Net-Netmask
+RUN_DEPENDS=	p5-Net-Netmask>=0:${PORTSDIR}/net-mgmt/p5-Net-Netmask
 
 USE_PERL5=	yes
 

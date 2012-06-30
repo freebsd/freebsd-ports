@@ -18,8 +18,8 @@ COMMENT=	Web based frontend to nfdump netflow collector
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/BSD-license.txt
 
-RUN_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/databases/rrdtool \
-		${SITE_PERL}/Mail/Header.pm:${PORTSDIR}/mail/p5-Mail-Tools \
+RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool \
+		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \
 		nfdump:${PORTSDIR}/net-mgmt/nfdump
 
 USE_ICONV=	yes

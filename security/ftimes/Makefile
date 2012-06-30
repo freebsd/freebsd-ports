@@ -31,7 +31,7 @@ OPTIONS=		DIG_TOOLS "install dig tools" on \
 
 .if defined(WITH_DIG_TOOLS) || defined(WITH_MAP_TOOLS)
 . if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
+RUN_DEPENDS+=		p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5
 . endif
 .endif
 
@@ -39,7 +39,7 @@ RUN_DEPENDS+=		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-D
 PLIST_SUB+=		DIG_TOOLS=""
 CONFIGURE_ARGS+=	--with-dig-tools
 MAN1+=			ftimes-crv2dbi.1 ftimes-crv2raw.1 ftimes-dig2ctx.1 ftimes-dig2dbi.1 hipdig.1
-RUN_DEPENDS+=		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
+RUN_DEPENDS+=		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
 .else
 PLIST_SUB+=		DIG_TOOLS="@comment "
 .endif

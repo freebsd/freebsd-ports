@@ -14,8 +14,8 @@ MASTER_SITES=	SF/${PORTNAME}/1.%20ClusterSSH%20Series%203/${PORTVERSION}
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Controls multiple hosts simultaneously via xterms and ssh
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk \
-		${SITE_PERL}/X11/Protocol.pm:${PORTSDIR}/x11/p5-X11-Protocol
+RUN_DEPENDS=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk \
+		p5-X11-Protocol>=0:${PORTSDIR}/x11/p5-X11-Protocol
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

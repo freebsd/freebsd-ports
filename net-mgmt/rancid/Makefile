@@ -15,7 +15,7 @@ COMMENT=	Really Awesome New Cisco confIg Differ
 
 BUILD_DEPENDS=	expect:${PORTSDIR}/lang/expect-devel
 RUN_DEPENDS=	expect:${PORTSDIR}/lang/expect-devel \
-		${SITE_PERL}/LockFile/Simple.pm:${PORTSDIR}/devel/p5-LockFile-Simple
+		p5-LockFile-Simple>=0:${PORTSDIR}/devel/p5-LockFile-Simple
 
 USE_PERL5=	yes
 SUB_FILES=	pkg-message

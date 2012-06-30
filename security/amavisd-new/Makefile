@@ -19,11 +19,11 @@ COMMENT=	Performance-enhanced daemonized version of amavis-perl
 
 LICENCE=	GPLv2
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog \
-		${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools \
-		${SITE_PERL}/Convert/TNEF.pm:${PORTSDIR}/converters/p5-Convert-TNEF \
+RUN_DEPENDS=	p5-Unix-Syslog>=0:${PORTSDIR}/sysutils/p5-Unix-Syslog \
+		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
+		p5-Convert-TNEF>=0:${PORTSDIR}/converters/p5-Convert-TNEF \
 		p5-Convert-UUlib>=1.08,1:${PORTSDIR}/converters/p5-Convert-UUlib \
-		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
+		p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-Net-Server>=0.93:${PORTSDIR}/net/p5-Net-Server \
 		p5-Mail-DKIM>=0.33:${PORTSDIR}/mail/p5-Mail-DKIM
 
@@ -86,40 +86,40 @@ PLIST_SUB+=	AMAVIS_NOP0F=${AMAVIS_NOP0F}
 USE_RC_SUBR+=	amavisd.sh
 
 .if defined(WITH_IPV6)
-RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-Socket-INET6
+RUN_DEPENDS+=	p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
 .endif
 
 .if defined(WITH_SNMP) && defined(WITH_BDB)
 USE_RC_SUBR+=	amavisd-snmp.sh
-RUN_DEPENDS+=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP
+RUN_DEPENDS+=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
 .endif
 
 .if defined(WITH_BDB)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB
+RUN_DEPENDS+=	p5-BerkeleyDB>=0:${PORTSDIR}/databases/p5-BerkeleyDB
 .endif
 
 .if defined(WITH_SQLITE)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
+RUN_DEPENDS+=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 .endif
 
 .if defined(WITH_MYSQL)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
 .if defined(WITH_PGSQL)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
 .if defined(WITH_LDAP)
-RUN_DEPENDS+=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
+RUN_DEPENDS+=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 .endif
 
 .if defined(WITH_SASL)
-RUN_DEPENDS+=	${SITE_PERL}/Authen/SASL.pm:${PORTSDIR}/security/p5-Authen-SASL
+RUN_DEPENDS+=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL
 .endif
 
 .if defined(WITH_SPAMASSASSIN)
-RUN_DEPENDS+=	${SITE_PERL}/Mail/SpamAssassin.pm:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+RUN_DEPENDS+=	p5-Mail-SpamAssassin>=0:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 .endif
 
 .if defined(WITH_P0F)

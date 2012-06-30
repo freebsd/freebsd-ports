@@ -18,13 +18,13 @@ COMMENT=	The easiest and flexiblest way to SSL in POEIntegrate SSL into POE
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
-		${SITE_PERL}/HTTP/Status.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/POE/Filter/Stackable.pm:${PORTSDIR}/devel/p5-POE \
-		${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
-		${SITE_PERL}/HTTP/Status.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/POE/Filter/Stackable.pm:${PORTSDIR}/devel/p5-POE
+BUILD_DEPENDS=	p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-POE>=0:${PORTSDIR}/devel/p5-POE \
+		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
+RUN_DEPENDS=	p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-POE>=0:${PORTSDIR}/devel/p5-POE
 
 WRKSRC=	${WRKDIR}
 

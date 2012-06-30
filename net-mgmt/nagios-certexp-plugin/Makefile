@@ -14,9 +14,9 @@ EXTRACT_SUFX=
 MAINTAINER=	ecronin@gizmolabs.org
 COMMENT=	Nagios plugin for checking SSL server certificate expiration
 
-RUN_DEPENDS+=	${SITE_PERL}/mach/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
-		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
-		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long
+RUN_DEPENDS+=	p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay \
+		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
+		p5-Getopt-Long>=0:${PORTSDIR}/devel/p5-Getopt-Long
 
 USE_PERL5=	yes
 NO_WRKSUBDIR=	yes

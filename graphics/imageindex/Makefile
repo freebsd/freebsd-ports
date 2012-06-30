@@ -19,7 +19,7 @@ RUN_DEPENDS=	\
 	${LOCALBASE}/bin/Magick-config:${PORTSDIR}/graphics/ImageMagick \
 	${LOCALBASE}/bin/wrjpgcom:${PORTSDIR}/graphics/jpeg \
 	${LOCALBASE}/bin/mplayer:${PORTSDIR}/multimedia/mplayer \
-	${SITE_PERL}/Image/Info.pm:${PORTSDIR}/graphics/p5-Image-Info
+	p5-Image-Info>=0:${PORTSDIR}/graphics/p5-Image-Info
 
 USE_PERL5_RUN=	yes
 MAKE_ARGS+=	PERLPATH=${PERL}

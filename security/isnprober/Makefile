@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	onatan@gmail.com
 COMMENT=	PenTest tool for TCP Initial Sequence Numbers research
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/RawIP.pm:${PORTSDIR}/net/p5-Net-RawIP
+RUN_DEPENDS=	p5-Net-RawIP>=0:${PORTSDIR}/net/p5-Net-RawIP
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README

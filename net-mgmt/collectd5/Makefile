@@ -143,10 +143,10 @@ CONFIGURE_ARGS+=--enable-debug
 .endif
 
 .if defined(WITH_CGI)
-RUN_DEPENDS+=	${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
-		${SITE_PERL}/${PERL_ARCH}/Data/Dumper.pm:${PORTSDIR}/devel/p5-Data-Dumper \
-		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser
+RUN_DEPENDS+=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm \
+		p5-Data-Dumper>=0:${PORTSDIR}/devel/p5-Data-Dumper \
+		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
 PLIST_SUB+=	CGI=""
 WITH_RRDTOOL=	YES
 .else

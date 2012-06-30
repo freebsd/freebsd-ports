@@ -15,7 +15,7 @@ COMMENT=	Perl utility for various processing tasks on the image files
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	${SITE_PERL}/Image/ExifTool.pm:${PORTSDIR}/graphics/p5-Image-ExifTool
+BUILD_DEPENDS=	p5-Image-ExifTool>=0:${PORTSDIR}/graphics/p5-Image-ExifTool
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -28,7 +28,7 @@ PORTDOCS=	AUTHORS README ChangeLog NEWS TODO
 .include <bsd.port.options.mk>
 
 .if defined(WITH_IMAGEMAGICK)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS+=	ImageMagick>=0:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 post-install:

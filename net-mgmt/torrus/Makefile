@@ -16,16 +16,16 @@ COMMENT=	The Data Series Processing Framework - think mrtg with xml configs
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/databases/rrdtool \
-		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
-		${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB \
-		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
-		${SITE_PERL}/Proc/Daemon.pm:${PORTSDIR}/devel/p5-Proc-Daemon \
-		${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
-		${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session \
-		${SITE_PERL}/${PERL_ARCH}/FCGI.pm:${PORTSDIR}/www/p5-FCGI \
+BUILD_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool \
+		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
+		p5-BerkeleyDB>=0:${PORTSDIR}/databases/p5-BerkeleyDB \
+		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
+		p5-Proc-Daemon>=0:${PORTSDIR}/devel/p5-Proc-Daemon \
+		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
+		p5-Apache-Session>=0:${PORTSDIR}/www/p5-Apache-Session \
+		p5-FCGI>=0:${PORTSDIR}/www/p5-FCGI \
 		p5-JSON>0:${PORTSDIR}/converters/p5-JSON
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

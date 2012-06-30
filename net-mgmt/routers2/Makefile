@@ -16,14 +16,14 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Frontend for the MRTG system monitoring software
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
-RUN_DEPENDS=	${SITE_PERL}/Convert/ASN1/IO.pm:${PORTSDIR}/converters/p5-Convert-ASN1 \
-		${SITE_PERL}/Crypt/UnixCrypt.pm:${PORTSDIR}/security/p5-Crypt-UnixCrypt \
-		${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
-		${SITE_PERL}/Crypt/UnixCrypt.pm:${PORTSDIR}/security/p5-Crypt-UnixCrypt \
-		${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
-		${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
-		${SITE_PERL}/CGI/SpeedyCGI.pm:${PORTSDIR}/www/p5-CGI-SpeedyCGI \
+BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
+RUN_DEPENDS=	p5-Convert-ASN1>=0:${PORTSDIR}/converters/p5-Convert-ASN1 \
+		p5-Crypt-UnixCrypt>=0:${PORTSDIR}/security/p5-Crypt-UnixCrypt \
+		p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
+		p5-Crypt-UnixCrypt>=0:${PORTSDIR}/security/p5-Crypt-UnixCrypt \
+		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
+		p5-SNMP_Session>=0:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
+		p5-CGI-SpeedyCGI>=0:${PORTSDIR}/www/p5-CGI-SpeedyCGI \
 		${LOCALBASE}/bin/mrtg:${PORTSDIR}/net-mgmt/mrtg
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}

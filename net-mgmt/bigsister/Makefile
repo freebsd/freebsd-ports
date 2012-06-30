@@ -15,12 +15,12 @@ DISTNAME=		big-sister-${PORTVERSION}
 MAINTAINER=	freebsd@troback.com
 COMMENT=	SNMP-based network and system monitor with web interface
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SNMP.pm:${PORTSDIR}/net-mgmt/net-snmp \
+RUN_DEPENDS=	net-snmp>=0:${PORTSDIR}/net-mgmt/net-snmp \
 		rrdtool:${PORTSDIR}/databases/rrdtool \
-		${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
-		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
+		p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-SNMP_Session>=0:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
 USE_GMAKE=	yes
 USE_PERL5=	yes

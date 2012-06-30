@@ -73,7 +73,7 @@ USE_MYSQL=	client
 .endif
 
 .if defined(WITH_JAIL)
-RUN_DEPENDS+=	${SITE_PERL}/Net/Ping.pm:${PORTSDIR}/net/p5-Net-Ping
+RUN_DEPENDS+=	p5-Net-Ping>=0:${PORTSDIR}/net/p5-Net-Ping
 DISTFILES+=	fping
 SUB_LIST+=	FPING="${LOCALBASE}/bin/fping-perl"
 PLIST_FILES+=	bin/fping-perl
