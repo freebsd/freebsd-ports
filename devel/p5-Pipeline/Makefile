@@ -16,12 +16,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	rouslan@rshell.net
 COMMENT=	Pipeline - Generic pipeline interface
 
-BUILD_DEPENDS=	${SITE_PERL}/Class/ISA.pm:${PORTSDIR}/devel/p5-Class-ISA \
-		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
-		${SITE_PERL}/IO/Null.pm:${PORTSDIR}/devel/p5-IO-Null \
-		${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
-		${SITE_PERL}/${PERL_ARCH}/Data/UUID.pm:${PORTSDIR}/devel/p5-Data-UUID \
-		${SITE_PERL}/${PERL_ARCH}/Data/Structure/Util.pm:${PORTSDIR}/devel/p5-Data-Structure-Util
+BUILD_DEPENDS=	p5-Class-ISA>=0:${PORTSDIR}/devel/p5-Class-ISA \
+		p5-Error>=0:${PORTSDIR}/lang/p5-Error \
+		p5-IO-Null>=0:${PORTSDIR}/devel/p5-IO-Null \
+		p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
+		p5-Data-UUID>=0:${PORTSDIR}/devel/p5-Data-UUID \
+		p5-Data-Structure-Util>=0:${PORTSDIR}/devel/p5-Data-Structure-Util
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

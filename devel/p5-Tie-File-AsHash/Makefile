@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	rdg@bzerk.org
 COMMENT=	Access the lines of a disk file via a Perl hash
 
-BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS=	${SITE_PERL}/Tie/File.pm:${PORTSDIR}/devel/p5-Tie-File
+BUILD_DEPENDS=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
+RUN_DEPENDS=	p5-Tie-File>=0:${PORTSDIR}/devel/p5-Tie-File
 
 PERL_CONFIGURE=	yes
 

@@ -18,13 +18,13 @@ MASTER_SITE_SUBDIR=	scop
 MAINTAINER=	noackjr@alumni.rice.edu
 COMMENT=	WWW CGI script to browse CVS repository trees version 3
 
-RUN_DEPENDS=	${SITE_PERL}/IPC/Run.pm:${PORTSDIR}/devel/p5-IPC-Run \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
+RUN_DEPENDS=	p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
 # The following extra dependencies are optional, but CVSweb works the
 # best with them.
-RUN_DEPENDS+=	${SITE_PERL}/MIME/Types.pm:${PORTSDIR}/mail/p5-MIME-Types \
-		${SITE_PERL}/${PERL_ARCH}/String/Ediff.pm:${PORTSDIR}/devel/p5-String-Ediff \
+RUN_DEPENDS+=	p5-MIME-Types>=0:${PORTSDIR}/mail/p5-MIME-Types \
+		p5-String-Ediff>=0:${PORTSDIR}/devel/p5-String-Ediff \
 		cvsgraph:${PORTSDIR}/devel/cvsgraph
 
 # Use PAPERSIZE to avoid a stale dependency on Enscript.

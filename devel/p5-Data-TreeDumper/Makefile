@@ -14,11 +14,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Dumps a data structure in a tree fashion
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/Size.pm:${PORTSDIR}/devel/p5-Term-Size \
-		${SITE_PERL}/Text/Wrap.pm:${PORTSDIR}/textproc/p5-Text-Tabs+Wrap \
-		${SITE_PERL}/Check/ISA.pm:${PORTSDIR}/devel/p5-Check-ISA \
-		${SITE_PERL}/${PERL_ARCH}/Devel/Size.pm:${PORTSDIR}/devel/p5-Devel-Size \
-		${SITE_PERL}/Sort/Naturally.pm:${PORTSDIR}/textproc/p5-Sort-Naturally
+BUILD_DEPENDS=	p5-Term-Size>=0:${PORTSDIR}/devel/p5-Term-Size \
+		p5-Text-Tabs+Wrap>=0:${PORTSDIR}/textproc/p5-Text-Tabs+Wrap \
+		p5-Check-ISA>=0:${PORTSDIR}/devel/p5-Check-ISA \
+		p5-Devel-Size>=0:${PORTSDIR}/devel/p5-Devel-Size \
+		p5-Sort-Naturally>=0:${PORTSDIR}/textproc/p5-Sort-Naturally
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=		Data::TreeDumper.3

@@ -18,7 +18,7 @@ LICENSE=	LGPL21
 
 # gmake is needed to use the port, not to build it
 RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake \
-		${SITE_PERL}/YAML/Any.pm:${PORTSDIR}/textproc/p5-YAML \
+		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
 		arduino:${PORTSDIR}/devel/arduino
 PATCH_DEPENDS=	${LOCALBASE}/arduino/lib/version.txt:${PORTSDIR}/devel/arduino
 

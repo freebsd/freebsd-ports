@@ -15,15 +15,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Generate accounting statistic for general logs
 
-BUILD_DEPENDS=	${SITE_PERL}/Spiffy.pm:${PORTSDIR}/devel/p5-Spiffy \
-		${SITE_PERL}/Perl6/Form.pm:${PORTSDIR}/devel/p5-Perl6-Form \
-		${SITE_PERL}/FreezeThaw.pm:${PORTSDIR}/devel/p5-FreezeThaw \
-		${SITE_PERL}/Array/Compare.pm:${PORTSDIR}/misc/p5-Array-Compare \
-		${SITE_PERL}/Array/Iterator/Reusable.pm:${PORTSDIR}/devel/p5-Array-Iterator \
-		${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone \
-		${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph \
-		${SITE_PERL}/Imager/Graph/Pie.pm:${PORTSDIR}/graphics/p5-Imager-Graph \
-		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
+BUILD_DEPENDS=	p5-Spiffy>=0:${PORTSDIR}/devel/p5-Spiffy \
+		p5-Perl6-Form>=0:${PORTSDIR}/devel/p5-Perl6-Form \
+		p5-FreezeThaw>=0:${PORTSDIR}/devel/p5-FreezeThaw \
+		p5-Array-Compare>=0:${PORTSDIR}/misc/p5-Array-Compare \
+		p5-Array-Iterator>=0:${PORTSDIR}/devel/p5-Array-Iterator \
+		p5-Clone>=0:${PORTSDIR}/devel/p5-Clone \
+		p5-GD-Graph>=0:${PORTSDIR}/graphics/p5-GD-Graph \
+		p5-Imager-Graph>=0:${PORTSDIR}/graphics/p5-Imager-Graph \
+		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

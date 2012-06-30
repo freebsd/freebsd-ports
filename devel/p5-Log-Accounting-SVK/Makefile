@@ -15,11 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Perl module for accounting SVK repository
 
-BUILD_DEPENDS=	${SITE_PERL}/SVK.pm:${PORTSDIR}/devel/svk \
-		${SITE_PERL}/Spiffy.pm:${PORTSDIR}/devel/p5-Spiffy \
-		${SITE_PERL}/Graph/SocialMap.pm:${PORTSDIR}/graphics/p5-Graph-SocialMap \
-		${SITE_PERL}/Graph/Writer/GraphViz.pm:${PORTSDIR}/graphics/p5-Graph-Writer-GraphViz \
-		${SITE_PERL}/Algorithm/Accounting.pm:${PORTSDIR}/devel/p5-Algorithm-Accounting
+BUILD_DEPENDS=	svk>=0:${PORTSDIR}/devel/svk \
+		p5-Spiffy>=0:${PORTSDIR}/devel/p5-Spiffy \
+		p5-Graph-SocialMap>=0:${PORTSDIR}/graphics/p5-Graph-SocialMap \
+		p5-Graph-Writer-GraphViz>=0:${PORTSDIR}/graphics/p5-Graph-Writer-GraphViz \
+		p5-Algorithm-Accounting>=0:${PORTSDIR}/devel/p5-Algorithm-Accounting
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

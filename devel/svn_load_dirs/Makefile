@@ -14,7 +14,7 @@ DISTFILES=	# none
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Perl script to load directories into a Subversion repository
 
-RUN_DEPENDS=	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
+RUN_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion16
 
 USE_BZIP2=	yes

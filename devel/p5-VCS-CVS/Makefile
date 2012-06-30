@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	tolid@plab.ku.dk
 COMMENT=	Perl module that provides a simple interface to CVS
 
-BUILD_DEPENDS=	${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod
+BUILD_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod
 
 PERL_MODBUILD=	yes
 MAN3=		VCS::CVS.3

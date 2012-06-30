@@ -15,13 +15,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	Search CPAN using a SQLite database
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite	\
-		${SITE_PERL}/File/HomeDir.pm:${PORTSDIR}/devel/p5-File-HomeDir \
-		${SITE_PERL}/CPAN/DistnameInfo.pm:${PORTSDIR}/devel/p5-CPAN-DistnameInfo \
-		${SITE_PERL}/IO/Zlib.pm:${PORTSDIR}/archivers/p5-IO-Zlib \
-		${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
-		${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools
+BUILD_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite	\
+		p5-File-HomeDir>=0:${PORTSDIR}/devel/p5-File-HomeDir \
+		p5-CPAN-DistnameInfo>=0:${PORTSDIR}/devel/p5-CPAN-DistnameInfo \
+		p5-IO-Zlib>=0:${PORTSDIR}/archivers/p5-IO-Zlib \
+		p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
