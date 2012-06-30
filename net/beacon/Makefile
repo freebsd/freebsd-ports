@@ -14,8 +14,8 @@ MASTER_SITES=	SF/multicastbeacon/multicastbeacon/beacon%20v${PORTVERSION}
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Beacon active measurement tool to monitor multicast
 
-BUILD_DEPENDS=	${SITE_PERL}/Net/Domain.pm:${PORTSDIR}/net/p5-Net
-RUN_DEPENDS=	${SITE_PERL}/Net/Domain.pm:${PORTSDIR}/net/p5-Net
+BUILD_DEPENDS=	p5-Net>=0:${PORTSDIR}/net/p5-Net
+RUN_DEPENDS=	p5-Net>=0:${PORTSDIR}/net/p5-Net
 
 WWW_DIR?=	${PREFIX}/www/
 PLIST_SUB+=	VERSION=${PORTVERSION}
@@ -25,7 +25,7 @@ USE_AUTOTOOLS=	autoconf
 OPTIONS=	IPV6	"Enable IPv6 PTR lookups" off
 
 .ifdef(WITH_IPV6)
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Socket6.pm:${PORTSDIR}/net/p5-Socket6
+BUILD_DEPENDS+=	p5-Socket6>=0:${PORTSDIR}/net/p5-Socket6
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 

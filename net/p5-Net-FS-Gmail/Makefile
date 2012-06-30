@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	A Perl interface for store and retrieve files on Gmail
 
-BUILD_DEPENDS=	${SITE_PERL}/Mail/Webmail/Gmail.pm:${PORTSDIR}/mail/p5-Mail-Webmail-Gmail \
-		${SITE_PERL}/Time/ParseDate.pm:${PORTSDIR}/devel/p5-Time-modules \
-		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI
+BUILD_DEPENDS=	p5-Mail-Webmail-Gmail>=0:${PORTSDIR}/mail/p5-Mail-Webmail-Gmail \
+		p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

@@ -14,30 +14,30 @@ MASTER_SITES=	http://www.isi.edu/xbone/software/xbone/
 MAINTAINER=	xbone@isi.edu
 COMMENT=	Deploys and manages IP-based VPNs (aka "virtual Internets")
 
-BUILD_DEPENDS=	${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig \
-		${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		${SITE_PERL}/${PERL_ARCH}/IO/Socket/Multicast.pm:${PORTSDIR}/net/p5-IO-Socket-Multicast \
-		${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-Socket-INET6 \
+BUILD_DEPENDS=	p5-AppConfig>=0:${PORTSDIR}/devel/p5-AppConfig \
+		p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
+		p5-IO-Socket-Multicast>=0:${PORTSDIR}/net/p5-IO-Socket-Multicast \
+		p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6 \
 		p5-IO-Socket-Multicast>=0.25:${PORTSDIR}/net/p5-IO-Socket-Multicast \
 		p5-IO-Socket-Multicast6>=0:${PORTSDIR}/net/p5-IO-Socket-Multicast6 \
-		${SITE_PERL}/Parallel/ForkManager.pm:${PORTSDIR}/devel/p5-Parallel-ForkManager \
-		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent \
-		${SITE_PERL}/Graph.pm:${PORTSDIR}/math/p5-Graph \
+		p5-Parallel-ForkManager>=0:${PORTSDIR}/devel/p5-Parallel-ForkManager \
+		p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent \
+		p5-Graph>=0:${PORTSDIR}/math/p5-Graph \
 		p5-NetAddr-IP>0:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
-		${SITE_PERL}/Net/IP.pm:${PORTSDIR}/net-mgmt/p5-Net-IP \
-		${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net-mgmt/p5-Net-Netmask \
-		${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
-		${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
-		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
-		${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
-		${SITE_PERL}/Mail/Sendmail.pm:${PORTSDIR}/mail/p5-Mail-Sendmail \
-		${SITE_PERL}/${PERL_ARCH}/Socket6.pm:${PORTSDIR}/net/p5-Socket6 \
-		${SITE_PERL}/Net/SSH/Perl.pm:${PORTSDIR}/net/p5-Net-SSH-Perl \
-		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
-		${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk \
-		${SITE_PERL}/Tk/Getopt.pm:${PORTSDIR}/x11-toolkits/p5-Tk-Getopt \
-		${SITE_PERL}/${PERL_ARCH}/Tk/TableMatrix.pm:${PORTSDIR}/x11-toolkits/p5-Tk-TableMatrix
+		p5-Net-IP>=0:${PORTSDIR}/net-mgmt/p5-Net-IP \
+		p5-Net-Netmask>=0:${PORTSDIR}/net-mgmt/p5-Net-Netmask \
+		p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
+		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
+		p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay \
+		p5-Mail-Sendmail>=0:${PORTSDIR}/mail/p5-Mail-Sendmail \
+		p5-Socket6>=0:${PORTSDIR}/net/p5-Socket6 \
+		p5-Net-SSH-Perl>=0:${PORTSDIR}/net/p5-Net-SSH-Perl \
+		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap \
+		p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk \
+		p5-Tk-Getopt>=0:${PORTSDIR}/x11-toolkits/p5-Tk-Getopt \
+		p5-Tk-TableMatrix>=0:${PORTSDIR}/x11-toolkits/p5-Tk-TableMatrix
 
 USE_GMAKE=	yes
 #IS_INTERACTIVE=	yes

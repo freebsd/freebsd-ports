@@ -19,10 +19,10 @@ COMMENT=	Billing system for dialup, VPN and VoIP management
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	radiusd:${PORTSDIR}/net/freeradius \
-		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD4.pm:${PORTSDIR}/security/p5-Digest-MD4 \
-		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/DES.pm:${PORTSDIR}/security/p5-Crypt-DES
+		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
+		p5-Digest-MD4>=0:${PORTSDIR}/security/p5-Digest-MD4 \
+		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
+		p5-Crypt-DES>=0:${PORTSDIR}/security/p5-Crypt-DES
 
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes

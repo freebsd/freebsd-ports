@@ -49,16 +49,16 @@ OPTIONS=\
 .include <bsd.port.pre.mk>
 
 RUN_DEPENDS+=\
-${SITE_PERL}/lib/abs.pm:${PORTSDIR}/devel/p5-lib-abs
+p5-lib-abs>=0:${PORTSDIR}/devel/p5-lib-abs
 
 .if defined(WITH_CRAWLER)
 RUN_DEPENDS+=\
-${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser \
+p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+p5-URI>=0:${PORTSDIR}/net/p5-URI \
+p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 nmap:${PORTSDIR}/security/nmap \
-${SITE_PERL}/Net/DirectConnect.pm:${PORTSDIR}/net-p2p/p5-Net-DirectConnect
+p5-Net-DirectConnect>=0:${PORTSDIR}/net-p2p/p5-Net-DirectConnect
 .endif
 
 .if defined(WITH_SAMBA)
@@ -90,7 +90,7 @@ ${LOCALBASE}/${APACHEMODDIR}/mod_perl.so:${PORTSDIR}/www/mod_perl2
 .if defined(WITH_MOD_FASTCGI)
 RUN_DEPENDS+=\
 ${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi	\
-${SITE_PERL}/${PERL_ARCH}/FCGI.pm:${PORTSDIR}/www/p5-FCGI
+p5-FCGI>=0:${PORTSDIR}/www/p5-FCGI
 .endif
 
 .if defined(WITH_SPHINX)
@@ -102,7 +102,7 @@ searchd:${PORTSDIR}/textproc/sphinxsearch-devel
 .if defined(WITH_MYSQL)
 USE_MYSQL=	client
 RUN_DEPENDS+=\
-${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
 .if defined(WITH_DB) && defined(WITH_MYSQL)
@@ -111,7 +111,7 @@ USE_MYSQL=	server
 
 .if defined(WITH_MARIA)
 RUN_DEPENDS+=\
-${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
+p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
 ${LOCALBASE}bin/mysql:${PORTSDIR}/databases/mariadb-client
 .endif
 
@@ -123,12 +123,12 @@ ${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mariadb-server
 .if defined(WITH_PGSQL)
 USE_PGSQL=	yes
 RUN_DEPENDS+=\
-${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
 .if  defined(WITH_PGPP)
 RUN_DEPENDS+=\
-${SITE_PERL}/DBD/PgPP.pm:${PORTSDIR}/databases/p5-DBD-PgPP
+p5-DBD-PgPP>=0:${PORTSDIR}/databases/p5-DBD-PgPP
 .endif
 
 .if (defined(WITH_PGSQL) || defined(WITH_PGPP)) && defined(WITH_DB)
@@ -140,7 +140,7 @@ ${LOCALBASE}/bin/postgres:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 .if defined(WITH_SQLITE)
 USE_SQLITE=	yes
 RUN_DEPENDS+=\
-${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
+p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 .endif
 
 WRKSRC=	${WRKDIR}/search

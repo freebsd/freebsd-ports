@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	catone@cpan.org
 COMMENT=	Pure Perl implementation for an XML-RPC client and server
 
-BUILD_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/XML/TreePP.pm:${PORTSDIR}/textproc/p5-XML-TreePP
+BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-XML-TreePP>=0:${PORTSDIR}/textproc/p5-XML-TreePP
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

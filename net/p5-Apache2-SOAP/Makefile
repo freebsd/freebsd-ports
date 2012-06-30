@@ -16,7 +16,7 @@ MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Apache2 mod_perl2 SOAP Server
 
 BUILD_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_perl.so:${PORTSDIR}/www/mod_perl2 \
-	${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite
+	p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

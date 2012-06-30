@@ -16,11 +16,11 @@ MASTER_SITE_SUBDIR=	CPAN:LOOSIFER
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Interactive shell used to administer ldap directories
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
-		${SITE_PERL}/Term/ReadLine/Perl.pm:${PORTSDIR}/devel/p5-ReadLine-Perl \
-		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
-		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
-		${SITE_PERL}/Parse/Lex.pm:${PORTSDIR}/devel/p5-ParseLex
+BUILD_DEPENDS=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
+		p5-ReadLine-Perl>=0:${PORTSDIR}/devel/p5-ReadLine-Perl \
+		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap \
+		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
+		p5-ParseLex>=0:${PORTSDIR}/devel/p5-ParseLex
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 SUB_FILES=	pkg-message

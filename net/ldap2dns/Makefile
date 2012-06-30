@@ -14,8 +14,8 @@ MASTER_SITES=	http://projects.alkaloid.net/e107_files/downloads/
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Maintain DNS zones using an LDAP directory
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
-		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
+RUN_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
+		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 
 USE_GMAKE=	yes
 USE_OPENLDAP=	yes
