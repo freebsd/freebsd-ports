@@ -13,14 +13,14 @@ MASTER_SITES=	http://wwwopt.mathematik.tu-darmstadt.de/polymake/lib/exe/fetch.ph
 MAINTAINER=	gawrilow@math.tu-berlin.de
 COMMENT=	A framework for experimental discrete geometry
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
-		${SITE_PERL}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer \
+BUILD_DEPENDS=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
+		p5-XML-Writer>=0:${PORTSDIR}/textproc/p5-XML-Writer \
 		${LOCALBASE}/share/xml/dtd/xhtml/xhtml-lat1.ent:${PORTSDIR}/textproc/xhtml
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
-		${SITE_PERL}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer \
+RUN_DEPENDS=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
+		p5-XML-Writer>=0:${PORTSDIR}/textproc/p5-XML-Writer \
 		${LOCALBASE}/share/xml/dtd/xhtml/xhtml-lat1.ent:${PORTSDIR}/textproc/xhtml \
-		${SITE_PERL}/${PERL_ARCH}/Term/ReadLine/Gnu.pm:${PORTSDIR}/devel/p5-ReadLine-Gnu \
-		${SITE_PERL}/${PERL_ARCH}/XML/LibXSLT.pm:${PORTSDIR}/textproc/p5-XML-LibXSLT \
+		p5-ReadLine-Gnu>=0:${PORTSDIR}/devel/p5-ReadLine-Gnu \
+		p5-XML-LibXSLT>=0:${PORTSDIR}/textproc/p5-XML-LibXSLT \
 		${LOCALBASE}/bin/c++filt:${PORTSDIR}/devel/binutils
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 		readline.[56]:${PORTSDIR}/devel/readline

@@ -15,7 +15,7 @@ MAINTAINER=	delphus@gmail.com
 COMMENT=	Unpack data in MS Outlook TNEF format
 
 LIB_DEPENDS=	ytnef.0:${PORTSDIR}/devel/libytnef
-RUN_DEPENDS=	${SITE_PERL}/MIME/Tools.pm:${PORTSDIR}/mail/p5-MIME-Tools
+RUN_DEPENDS=	p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools
 
 USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes

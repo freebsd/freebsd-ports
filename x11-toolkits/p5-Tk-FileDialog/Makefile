@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 MAINTAINER=	minter@lunenburg.org
 COMMENT=	Tk::FileDialog - A file selector dialog for perl/Tk
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
+BUILD_DEPENDS=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk
 
 PERL_CONFIGURE=	yes
 MAN3=		Tk::FileDialog.3

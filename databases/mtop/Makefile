@@ -15,9 +15,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/v${PORTVERSION}
 MAINTAINER=	tut@nhamon.com.ua
 COMMENT=	MySQL Monitoring Tool
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Curses.pm:${PORTSDIR}/devel/p5-Curses \
-		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
-		${SITE_PERL}/Net/Domain.pm:${PORTSDIR}/net/p5-Net
+BUILD_DEPENDS=	p5-Curses>=0:${PORTSDIR}/devel/p5-Curses \
+		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
+		p5-Net>=0:${PORTSDIR}/net/p5-Net
 
 PERL_CONFIGURE=	yes
 

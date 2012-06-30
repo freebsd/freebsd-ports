@@ -16,7 +16,7 @@ MASTER_SITES=	http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Convert CHORD input files to HTML
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
+RUN_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
 
 USE_PERL5=	yes
 NO_BUILD=	yes

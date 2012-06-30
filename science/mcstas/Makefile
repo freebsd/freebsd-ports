@@ -18,8 +18,8 @@ COMMENT=	A neutron ray-trace simulation package
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	pgxwin_server:${PORTSDIR}/graphics/pgplot
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/PDL.pm:${PORTSDIR}/math/PDL \
-		${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
+RUN_DEPENDS=	PDL>=0:${PORTSDIR}/math/PDL \
+		p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk
 
 STRIP=
 USE_PERL5=	yes

@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.sql-ledger.com/source/ \
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	A double entry accounting system
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+BUILD_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_BUILD=	yes

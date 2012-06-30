@@ -59,8 +59,8 @@ PORTDOCS1=	Changes README.FAQ README.configure
 PORTDOCS=	README.xvt ${PORTDOCS1}
 
 .if !defined(WITHOUT_IMLOCALE_FIX)
-PATCH_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Encode/HanExtra.pm:${PORTSDIR}/chinese/p5-Encode-HanExtra \
-		${SITE_PERL}/${PERL_ARCH}/Encode/JIS2K.pm:${PORTSDIR}/converters/p5-Encode-JIS2K
+PATCH_DEPENDS+=	p5-Encode-HanExtra>=0:${PORTSDIR}/chinese/p5-Encode-HanExtra \
+		p5-Encode-JIS2K>=0:${PORTSDIR}/converters/p5-Encode-JIS2K
 .endif
 
 # disable the embedded perl interpreter

@@ -16,7 +16,7 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A Perl/Tk Jabber client
 
 RUN_DEPENDS=	ptksh:${PORTSDIR}/x11-toolkits/p5-Tk \
-		${SITE_PERL}/Net/Jabber/IQ.pm:${PORTSDIR}/net-im/p5-Net-Jabber
+		p5-Net-Jabber>=0:${PORTSDIR}/net-im/p5-Net-Jabber
 
 NO_BUILD=	yes
 

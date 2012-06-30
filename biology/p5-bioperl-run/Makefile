@@ -18,8 +18,8 @@ MAINTAINER=	mauricio@arareko.net
 COMMENT=	Wrapper modules for common bioinformatics tools
 
 BUILD_DEPENDS=	p5-bioperl>=1.6.0:${PORTSDIR}/biology/p5-bioperl \
-		${SITE_PERL}/IPC/Run.pm:${PORTSDIR}/devel/p5-IPC-Run \
-		${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff
+		p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
+		p5-Algorithm-Diff>=0:${PORTSDIR}/devel/p5-Algorithm-Diff
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	p5-bioperl-run-1.[13579]*

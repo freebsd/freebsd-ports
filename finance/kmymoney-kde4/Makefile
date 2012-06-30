@@ -68,11 +68,11 @@ PLIST_SUB+=	WITH_OFX="@comment "
 
 .if defined(WITH_QUOTES)
 USE_PERL5_RUN=	yes
-RUN_DEPENDS+=	${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
-		${SITE_PERL}/Finance/Quote.pm:${PORTSDIR}/finance/p5-Finance-Quote \
-		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
-		${SITE_PERL}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer \
-		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS+=	p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
+		p5-Finance-Quote>=0:${PORTSDIR}/finance/p5-Finance-Quote \
+		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
+		p5-XML-Writer>=0:${PORTSDIR}/textproc/p5-XML-Writer \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 .endif
 
 .if !defined(PACKAGE_BUILDING) && defined(WITH_KBANKING) && !exists(${LOCALBASE}/lib/libgwengui-qt4.so)

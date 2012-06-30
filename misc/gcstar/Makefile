@@ -15,26 +15,26 @@ MAINTAINER=	dominique.goncalves@gmail.com
 COMMENT=	Open source application for managing your collections
 
 USE_GNOME=	desktopfileutils
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
-		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
-		${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
-		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-		${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/MP3/Info.pm:${PORTSDIR}/audio/p5-MP3-Info \
-		${SITE_PERL}/MP3/Tag.pm:${PORTSDIR}/audio/p5-MP3-Tag \
-		${SITE_PERL}/Ogg/Vorbis/Header/PurePerl.pm:${PORTSDIR}/audio/p5-Ogg-Vorbis-Header-PurePerl \
-		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
-		${SITE_PERL}/${PERL_ARCH}/Time/Piece.pm:${PORTSDIR}/devel/p5-Time-Piece \
-		${SITE_PERL}/${PERL_ARCH}/Gtk2/Spell.pm:${PORTSDIR}/devel/p5-Gtk2-Spell \
-		${SITE_PERL}/DateTime/Format/Strptime.pm:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
-		${SITE_PERL}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
+RUN_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
+		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
+		p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
+		p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info \
+		p5-MP3-Tag>=0:${PORTSDIR}/audio/p5-MP3-Tag \
+		p5-Ogg-Vorbis-Header-PurePerl>=0:${PORTSDIR}/audio/p5-Ogg-Vorbis-Header-PurePerl \
+		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
+		p5-Time-Piece>=0:${PORTSDIR}/devel/p5-Time-Piece \
+		p5-Gtk2-Spell>=0:${PORTSDIR}/devel/p5-Gtk2-Spell \
+		p5-DateTime-Format-Strptime>=0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
+		p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
 		p5-Switch>0:${PORTSDIR}/lang/p5-Switch \
-		${SITE_PERL}/${PERL_ARCH}/Gnome2/VFS.pm:${PORTSDIR}/x11-toolkits/p5-Gnome2-VFS \
-		${SITE_PERL}/${PERL_ARCH}/Net/FreeDB.pm:${PORTSDIR}/audio/p5-Net-FreeDB \
-		${SITE_PERL}/Sort/Naturally.pm:${PORTSDIR}/textproc/p5-Sort-Naturally \
-		${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
-		${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph \
-		${SITE_PERL}/GD/Text.pm:${PORTSDIR}/graphics/p5-GD-TextUtil
+		p5-Gnome2-VFS>=0:${PORTSDIR}/x11-toolkits/p5-Gnome2-VFS \
+		p5-Net-FreeDB>=0:${PORTSDIR}/audio/p5-Net-FreeDB \
+		p5-Sort-Naturally>=0:${PORTSDIR}/textproc/p5-Sort-Naturally \
+		p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
+		p5-GD-Graph>=0:${PORTSDIR}/graphics/p5-GD-Graph \
+		p5-GD-TextUtil>=0:${PORTSDIR}/graphics/p5-GD-TextUtil
 
 MAN1=		gcstar.1
 MANCOMPRESSED=	yes

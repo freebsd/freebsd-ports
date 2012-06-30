@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	steinex@nognu.de
 COMMENT=	Perl interface and script to send SMS via SMS77.de
 
-BUILD_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 MAN1=		sms77send.1
 MAN3=		SMS::SMS77::Message.3 \

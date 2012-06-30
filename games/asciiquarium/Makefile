@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	aquarium/sea animation in ASCII art
 
-RUN_DEPENDS=	${SITE_PERL}/Term/Animation.pm:${PORTSDIR}/devel/p5-Term-Animation
+RUN_DEPENDS=	p5-Term-Animation>=0:${PORTSDIR}/devel/p5-Term-Animation
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 NO_BUILD=	yes

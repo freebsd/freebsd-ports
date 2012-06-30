@@ -18,12 +18,12 @@ DISTNAME=	Gtk2-GladeXML-${PORTVERSION}
 MAINTAINER=	ports@c0decafe.net
 COMMENT=	Gtk2-Perl bindings to libglade2
 
-EXTRACT_DEPENDS=${SITE_PERL}/ExtUtils/Depends.pm:${PORTSDIR}/devel/p5-ExtUtils-Depends
-BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/Depends.pm:${PORTSDIR}/devel/p5-ExtUtils-Depends \
-		${SITE_PERL}/${PERL_ARCH}/Cairo.pm:${PORTSDIR}/graphics/p5-Cairo \
-		${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
-		${SITE_PERL}/ExtUtils/PkgConfig.pm:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2
+EXTRACT_DEPENDS=p5-ExtUtils-Depends>=0:${PORTSDIR}/devel/p5-ExtUtils-Depends
+BUILD_DEPENDS=	p5-ExtUtils-Depends>=0:${PORTSDIR}/devel/p5-ExtUtils-Depends \
+		p5-Cairo>=0:${PORTSDIR}/graphics/p5-Cairo \
+		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
+		p5-ExtUtils-PkgConfig>=0:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig
+RUN_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
 
 USE_GNOME=	libglade2
 PERL_CONFIGURE=	yes

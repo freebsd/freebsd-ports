@@ -15,8 +15,8 @@ DISTNAME=	frozen-bubble-${PORTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Throw colourful bubbles to build groups and destroy the groups
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SDL_perl.pm:${PORTSDIR}/devel/p5-SDL
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SDL_perl.pm:${PORTSDIR}/devel/p5-SDL
+BUILD_DEPENDS=	p5-SDL>=0:${PORTSDIR}/devel/p5-SDL
+RUN_DEPENDS=	p5-SDL>=0:${PORTSDIR}/devel/p5-SDL
 
 USE_SDL=	mixer sdl pango
 USE_GMAKE=	yes
@@ -31,7 +31,7 @@ MAN6=		frozen-bubble-editor.6 frozen-bubble.6
 LEXECDIR=	${PREFIX}/libexec/${PORTNAME}
 
 .if !defined(WITHOUT_NLS)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext
+RUN_DEPENDS+=	p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
