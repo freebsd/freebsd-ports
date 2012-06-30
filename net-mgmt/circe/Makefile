@@ -15,18 +15,18 @@ COMMENT=	A captive portal-based network access control solution in perl
 
 LICENSE=	BSD
 
-RUN_DEPENDS=	${SITE_PERL}/mach/Net/IP/Match/XS.pm:${PORTSDIR}/net-mgmt/p5-Net-IP-Match-XS \
-		${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		${SITE_PERL}/${PERL_ARCH}/IO.pm:${PORTSDIR}/devel/p5-IO \
-		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
-		${SITE_PERL}/${PERL_ARCH}/Sys/Syslog.pm:${PORTSDIR}/sysutils/p5-Sys-Syslog \
-		${SITE_PERL}/${PERL_ARCH}/TryCatch.pm:${PORTSDIR}/lang/p5-TryCatch \
-		${SITE_PERL}/Data/Validate/IP.pm:${PORTSDIR}/net-mgmt/p5-Data-Validate-IP \
-		${SITE_PERL}/Regexp/Common.pm:${PORTSDIR}/textproc/p5-Regexp-Common \
-		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
-		${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB \
-		${SITE_PERL}/Crypt/CBC.pm:${PORTSDIR}/security/p5-Crypt-CBC \
-		${SITE_PERL}/Proc/PID/File.pm:${PORTSDIR}/devel/p5-Proc-PID-File
+RUN_DEPENDS=	p5-Net-IP-Match-XS>=0:${PORTSDIR}/net-mgmt/p5-Net-IP-Match-XS \
+		p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
+		p5-IO>=0:${PORTSDIR}/devel/p5-IO \
+		p5-Error>=0:${PORTSDIR}/lang/p5-Error \
+		p5-Sys-Syslog>=0:${PORTSDIR}/sysutils/p5-Sys-Syslog \
+		p5-TryCatch>=0:${PORTSDIR}/lang/p5-TryCatch \
+		p5-Data-Validate-IP>=0:${PORTSDIR}/net-mgmt/p5-Data-Validate-IP \
+		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common \
+		p5-Getopt-Long>=0:${PORTSDIR}/devel/p5-Getopt-Long \
+		p5-BerkeleyDB>=0:${PORTSDIR}/databases/p5-BerkeleyDB \
+		p5-Crypt-CBC>=0:${PORTSDIR}/security/p5-Crypt-CBC \
+		p5-Proc-PID-File>=0:${PORTSDIR}/devel/p5-Proc-PID-File
 
 USE_PERL5=	yes
 
@@ -38,8 +38,8 @@ OPTIONS=	ENCRYPT "Encrypt the destination URL in redirection" Off
 .include <bsd.port.options.mk>
 
 .if defined(WITH_ENCRYPT)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Crypt/DES.pm:${PORTSDIR}/security/p5-Crypt-DES \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/OpenSSL/AES.pm:${PORTSDIR}/security/p5-Crypt-OpenSSL-AES
+RUN_DEPENDS+=	p5-Crypt-DES>=0:${PORTSDIR}/security/p5-Crypt-DES \
+		p5-Crypt-OpenSSL-AES>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-AES
 .endif
 
 MANCOMPRESSED=	no

@@ -15,11 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Slide Shows in Vim
 
-BUILD_DEPENDS=	${SITE_PERL}/IO/All.pm:${PORTSDIR}/devel/p5-IO-All \
-		${SITE_PERL}/${PERL_ARCH}/YAML/XS.pm:${PORTSDIR}/textproc/p5-YAML-LibYAML \
-		${SITE_PERL}/Class/Field.pm:${PORTSDIR}/devel/p5-Class-Field \
-		${SITE_PERL}/File/HomeDir.pm:${PORTSDIR}/devel/p5-File-HomeDir \
-		${SITE_PERL}/Template/Toolkit/Simple.pm:${PORTSDIR}/www/p5-Template-Toolkit-Simple
+BUILD_DEPENDS=	p5-IO-All>=0:${PORTSDIR}/devel/p5-IO-All \
+		p5-YAML-LibYAML>=0:${PORTSDIR}/textproc/p5-YAML-LibYAML \
+		p5-Class-Field>=0:${PORTSDIR}/devel/p5-Class-Field \
+		p5-File-HomeDir>=0:${PORTSDIR}/devel/p5-File-HomeDir \
+		p5-Template-Toolkit-Simple>=0:${PORTSDIR}/www/p5-Template-Toolkit-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

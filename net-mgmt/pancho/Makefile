@@ -15,9 +15,9 @@ DISTNAME=	pancho-v${PORTVERSION}
 MAINTAINER=	ecu@ipv42.net
 COMMENT=	Network devices management tool using TFTP and SNMP
 
-RUN_DEPENDS=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
-		${SITE_PERL}/Config/IniFiles.pm:${PORTSDIR}/devel/p5-Config-IniFiles \
-		${SITE_PERL}/Parallel/ForkManager.pm:${PORTSDIR}/devel/p5-Parallel-ForkManager
+RUN_DEPENDS=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
+		p5-Config-IniFiles>=0:${PORTSDIR}/devel/p5-Config-IniFiles \
+		p5-Parallel-ForkManager>=0:${PORTSDIR}/devel/p5-Parallel-ForkManager
 
 WRKSRC=		${WRKDIR}/Pancho-${PORTVERSION}
 PERL_CONFIGURE=	YES

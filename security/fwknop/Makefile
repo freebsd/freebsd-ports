@@ -15,18 +15,18 @@ MASTER_SITES=	http://www.cipherdyne.org/fwknop/download/
 MAINTAINER=	sean.greven@gmail.com
 COMMENT=	An SPA implimentation for Linux and FreeBSD
 
-BUILD_DEPENDS=	${SITE_PERL}/Net/IPv4Addr.pm:${PORTSDIR}/net-mgmt/p5-Net-IPv4Addr \
-		${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog \
-		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
-		${SITE_PERL}/${PERL_ARCH}/Net/Pcap.pm:${PORTSDIR}/net/p5-Net-Pcap \
-		${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-List-MoreUtils \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/Rijndael.pm:${PORTSDIR}/security/p5-Crypt-Rijndael \
-		${SITE_PERL}/${PERL_ARCH}/Class/MethodMaker.pm:${PORTSDIR}/devel/p5-Class-MethodMaker \
-		${SITE_PERL}/${PERL_ARCH}/Net/RawIP.pm:${PORTSDIR}/net/p5-Net-RawIP \
-		${SITE_PERL}/GnuPG/Key.pm:${PORTSDIR}/security/p5-GnuPG-Interface \
-		${SITE_PERL}/Crypt/CBC.pm:${PORTSDIR}/security/p5-Crypt-CBC \
-		${SITE_PERL}/NetPacket.pm:${PORTSDIR}/net/p5-NetPacket \
-		${SITE_PERL}/Net/Ping/External.pm:${PORTSDIR}/net/p5-Net-Ping-External
+BUILD_DEPENDS=	p5-Net-IPv4Addr>=0:${PORTSDIR}/net-mgmt/p5-Net-IPv4Addr \
+		p5-Unix-Syslog>=0:${PORTSDIR}/sysutils/p5-Unix-Syslog \
+		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
+		p5-Net-Pcap>=0:${PORTSDIR}/net/p5-Net-Pcap \
+		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-Crypt-Rijndael>=0:${PORTSDIR}/security/p5-Crypt-Rijndael \
+		p5-Class-MethodMaker>=0:${PORTSDIR}/devel/p5-Class-MethodMaker \
+		p5-Net-RawIP>=0:${PORTSDIR}/net/p5-Net-RawIP \
+		p5-GnuPG-Interface>=0:${PORTSDIR}/security/p5-GnuPG-Interface \
+		p5-Crypt-CBC>=0:${PORTSDIR}/security/p5-Crypt-CBC \
+		p5-NetPacket>=0:${PORTSDIR}/net/p5-NetPacket \
+		p5-Net-Ping-External>=0:${PORTSDIR}/net/p5-Net-Ping-External
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN8=		fwknop.8 fwknopd.8 knopmd.8 knopwatchd.8

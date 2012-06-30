@@ -87,9 +87,9 @@ PLIST_SUB+=	SUB_FPING="@comment "
 
 .if defined(WITH_NETSNMP)
 BUILD_DEPENDS+=	snmpcheck:${PORTSDIR}/net-mgmt/net-snmp \
-		${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP
+		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
 RUN_DEPENDS+=	snmpcheck:${PORTSDIR}/net-mgmt/net-snmp \
-		${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP
+		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
 CONFIGURE_ARGS+=	--enable-snmp
 PLIST_SUB+=	SUB_SNMP=""
 .else

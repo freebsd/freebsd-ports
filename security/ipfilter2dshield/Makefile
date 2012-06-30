@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.txt
 MAINTAINER=	fbsd_user@a1poweruser.com
 COMMENT=	Official DShield client for ipfilter firewall logs
 
-RUN_DEPENDS=	${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net-mgmt/p5-Net-Netmask
+RUN_DEPENDS=	p5-Net-Netmask>=0:${PORTSDIR}/net-mgmt/p5-Net-Netmask
 
 USE_PERL5=	yes
 

@@ -14,7 +14,7 @@ MASTER_SITES=	http://s89813419.onlinehome.us/ \
 MAINTAINER=	daniel+hunch@pelleg.org
 COMMENT=	Scan httpd log files for vulnerability probes, mail admins
 
-RUN_DEPENDS=	${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
+RUN_DEPENDS=	p5-Net>=0:${PORTSDIR}/net/p5-Net
 
 USE_PERL5=	yes
 

@@ -25,8 +25,8 @@ LICENSE=	GPLv1
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
-RUN_DEPENDS+=	${SITE_PERL}/Crypt/PasswdMD5.pm:${PORTSDIR}/security/p5-Crypt-PasswdMD5 \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/OpenSSL/Random.pm:${PORTSDIR}/security/p5-Crypt-OpenSSL-Random
+RUN_DEPENDS+=	p5-Crypt-PasswdMD5>=0:${PORTSDIR}/security/p5-Crypt-PasswdMD5 \
+		p5-Crypt-OpenSSL-Random>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-Random
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

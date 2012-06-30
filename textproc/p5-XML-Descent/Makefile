@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mike@urgle.com
 COMMENT=	Recursive descent XML parsing
 
-BUILD_DEPENDS=	${SITE_PERL}/XML/TokeParser.pm:${PORTSDIR}/textproc/p5-XML-TokeParser \
-		${SITE_PERL}/Test/Differences.pm:${PORTSDIR}/devel/p5-Test-Differences
-RUN_DEPENDS=	${SITE_PERL}/XML/TokeParser.pm:${PORTSDIR}/textproc/p5-XML-TokeParser
+BUILD_DEPENDS=	p5-XML-TokeParser>=0:${PORTSDIR}/textproc/p5-XML-TokeParser \
+		p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences
+RUN_DEPENDS=	p5-XML-TokeParser>=0:${PORTSDIR}/textproc/p5-XML-TokeParser
 
 PERL_CONFIGURE=	yes
 

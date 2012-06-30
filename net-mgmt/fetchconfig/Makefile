@@ -13,7 +13,7 @@ MASTER_SITES=	SAVANNAH
 MAINTAINER=	salexanov@gmail.com
 COMMENT=	Perl script for retrieving configuration of various network devices
 
-BUILD_DEPENDS=	${SITE_PERL}/Net/Telnet.pm:${PORTSDIR}/net/p5-Net-Telnet
+BUILD_DEPENDS=	p5-Net-Telnet>=0:${PORTSDIR}/net/p5-Net-Telnet
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes

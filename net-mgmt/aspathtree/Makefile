@@ -14,7 +14,7 @@ DISTNAME=	ASpath-tree-v${PORTVERSION}
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Checks IPv6 routes' stability and correctness on IPv6 internet
 
-RUN_DEPENDS=	${SITE_PERL}/Net/Telnet.pm:${PORTSDIR}/net/p5-Net-Telnet \
+RUN_DEPENDS=	p5-Net-Telnet>=0:${PORTSDIR}/net/p5-Net-Telnet \
 		whois3:${PORTSDIR}/net/ripe-whois
 
 WRKSRC=			${WRKDIR}/ASpath-tree-v${PORTVERSION}/

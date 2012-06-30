@@ -17,11 +17,11 @@ DISTNAME=	glpi-tracker_agent-1.5.3
 MAINTAINER=	d.durieux@siprossii.com
 COMMENT=	Agent get informations of networking devices by SNMP for GLPI
 
-RUN_DEPENDS=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
-		${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig \
-		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
-		${SITE_PERL}/Parallel/ForkManager.pm:${PORTSDIR}/devel/p5-Parallel-ForkManager
+RUN_DEPENDS=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
+		p5-AppConfig>=0:${PORTSDIR}/devel/p5-AppConfig \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
+		p5-Parallel-ForkManager>=0:${PORTSDIR}/devel/p5-Parallel-ForkManager
 
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/agent_tracker

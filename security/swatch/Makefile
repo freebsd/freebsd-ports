@@ -15,10 +15,10 @@ MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	The Simple WATCHer and filter
 
 BUILD_DEPENDS=	\
-	${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
-	${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
-	${SITE_PERL}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
-	${SITE_PERL}/File/Tail.pm:${PORTSDIR}/devel/p5-File-Tail
+	p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
+	p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
+	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
+	p5-File-Tail>=0:${PORTSDIR}/devel/p5-File-Tail
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

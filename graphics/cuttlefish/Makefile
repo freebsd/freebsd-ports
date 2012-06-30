@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.caida.org/tools/visualization/cuttlefish/code/
 MAINTAINER=	mjl@luckie.org.nz
 COMMENT=	Plots diurnal and geographical patterns of supplied data
 
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
+RUN_DEPENDS+=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
 		convert:${PORTSDIR}/graphics/ImageMagick \
 		gifsicle:${PORTSDIR}/graphics/gifsicle
 

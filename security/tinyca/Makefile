@@ -16,10 +16,10 @@ DISTNAME=	${PORTNAME}2-${PORTVERSION}
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Simple graphical interface to manage a small Certification Authority
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
-		${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext \
+RUN_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
+		p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext \
 		zip:${PORTSDIR}/archivers/zip \
-		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+		p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
 
 USE_BZIP2=	yes
 USE_PERL5=	yes

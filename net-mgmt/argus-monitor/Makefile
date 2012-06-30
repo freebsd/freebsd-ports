@@ -50,8 +50,8 @@ BUILD_DEPENDS+=	fping:${PORTSDIR}/net/fping
 .endif
 
 .if !defined(WITHOUT_GD)
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
+BUILD_DEPENDS+=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
+RUN_DEPENDS+=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
 .endif
 
 post-install:

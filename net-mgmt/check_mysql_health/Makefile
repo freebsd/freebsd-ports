@@ -13,7 +13,7 @@ MASTER_SITES=	http://labs.consol.de/wp-content/uploads/2011/04/
 MAINTAINER=	ssanders@taximagic.com
 COMMENT=	Nagios plugin to check various parameters of a MySQL database
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 
 LICENSE=	GPLv2
 
