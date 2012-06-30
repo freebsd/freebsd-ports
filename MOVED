@@ -777,7 +777,6 @@ mail/bogofilter-qdbm||2009-07-07|Has expired: Migrate to bogofilter-tc instead
 mail/xc-mail||2009-07-07|Has expired: depends on a port that expired in 2007
 www/trac-blog||2009-07-07|Has expired: Not supported anymore for trac > 0.10; use FullBlogPlugin instead
 www/trac-restrictedarea||2009-07-07|Has expired: Not supported anymore; functionality included in trac since 0.11
-mail/claws-mail-pdf_viewer||2009-07-07|Licensing problems
 deskutils/plasma-applet-quicklauncher||2009-07-10|Not supported anymore; functionality in kdebase4-workspace now
 net-mgmt/net-snmp53||2009-07-13|Has expired: Use net-mgmt/net-snmp
 www/firefox-devel||2009-07-13|Please use www/firefox3 or www/firefox35
