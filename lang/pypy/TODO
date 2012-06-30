@@ -1,8 +1,0 @@
-TODO:
- * support valgrind
- * make jitviewer port (depends flask pygments simplejson Jinja2 Werkzeug)
- * integrate into bsd.python.mk
-
-Pypy deficiencies under FreeBSD:
- * boehm GC does not work (possibly FreeBSD specific)
- * --gcrootfinder=asmgcc does not work (currently only works under Linux)
