@@ -14,8 +14,8 @@ MAINTAINER=	hans@nordhaug.priv.no
 COMMENT=	Manage ezmlm-idx mailing lists through the web (using CGI)
 
 RUN_DEPENDS=	ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx \
-		${SITE_PERL}/Mail/Ezmlm.pm:${PORTSDIR}/mail/p5-Mail-Ezmlm \
-		${SITE_PERL}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools
+		p5-Mail-Ezmlm>=0:${PORTSDIR}/mail/p5-Mail-Ezmlm \
+		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools
 
 EXAMPLES=	apache.conf.dist ezmlmwebrc.dist ezmlmwebrc.minimal-dist \
 		htaccess.dist multidomain.conf.dist webusers.dist

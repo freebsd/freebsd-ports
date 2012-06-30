@@ -16,24 +16,24 @@ MAINTAINER=	kkobb@skylinecorp.com
 COMMENT=	Powerful virus/spam scanning framework for mail gateways
 
 BUILD_DEPENDS=	\
-	${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
-	${SITE_PERL}/${PERL_ARCH}/Bundle/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-	${SITE_PERL}/Mail/Header.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-	${SITE_PERL}/HTML/Tagset.pm:${PORTSDIR}/www/p5-HTML-Tagset \
-	${SITE_PERL}/${PERL_ARCH}/HTML/HeadParser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-	${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools \
-	${SITE_PERL}/Convert/TNEF.pm:${PORTSDIR}/converters/p5-Convert-TNEF \
-	${SITE_PERL}/Convert/BinHex.pm:${PORTSDIR}/converters/p5-Convert-BinHex \
-	${SITE_PERL}/Net/CIDR.pm:${PORTSDIR}/net-mgmt/p5-Net-CIDR \
-	${SITE_PERL}/Net/Ident.pm:${PORTSDIR}/net/p5-Net-Ident \
-	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
-	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-	${SITE_PERL}/Time/Zone.pm:${PORTSDIR}/devel/p5-TimeDate \
-	${SITE_PERL}/${PERL_ARCH}/Filesys/Df.pm:${PORTSDIR}/sysutils/p5-Filesys-Df \
-	${SITE_PERL}/Sys/Hostname/Long.pm:${PORTSDIR}/sysutils/p5-Sys-Hostname-Long \
-	${SITE_PERL}/OLE/Storage_Lite.pm:${PORTSDIR}/devel/p5-OLE-Storage_Lite \
-	${SITE_PERL}/Sys/SigAction.pm:${PORTSDIR}/devel/p5-Sys-SigAction
+	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
+	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+	p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \
+	p5-HTML-Tagset>=0:${PORTSDIR}/www/p5-HTML-Tagset \
+	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+	p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
+	p5-Convert-TNEF>=0:${PORTSDIR}/converters/p5-Convert-TNEF \
+	p5-Convert-BinHex>=0:${PORTSDIR}/converters/p5-Convert-BinHex \
+	p5-Net-CIDR>=0:${PORTSDIR}/net-mgmt/p5-Net-CIDR \
+	p5-Net-Ident>=0:${PORTSDIR}/net/p5-Net-Ident \
+	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
+	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
+	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+	p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
+	p5-Filesys-Df>=0:${PORTSDIR}/sysutils/p5-Filesys-Df \
+	p5-Sys-Hostname-Long>=0:${PORTSDIR}/sysutils/p5-Sys-Hostname-Long \
+	p5-OLE-Storage_Lite>=0:${PORTSDIR}/devel/p5-OLE-Storage_Lite \
+	p5-Sys-SigAction>=0:${PORTSDIR}/devel/p5-Sys-SigAction
 
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		bash:${PORTSDIR}/shells/bash \
@@ -94,7 +94,7 @@ RUN_DEPENDS+=	clamscan:${PORTSDIR}/security/clamav
 .endif
 
 .if defined(WITH_CLAMAVMODULE)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Mail/ClamAV.pm:${PORTSDIR}/mail/p5-Mail-ClamAV
+RUN_DEPENDS+=	p5-Mail-ClamAV>=0:${PORTSDIR}/mail/p5-Mail-ClamAV
 .endif
 
 .if defined(WITH_CLAMAV)||defined(WITH_CLAMAVMODULE)

@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	chifeng@gmail.com
 COMMENT=	Sender Rewriting Scheme
 
-BUILD_DEPENDS=	${SITE_PERL}/Digest/HMAC_SHA1.pm:${PORTSDIR}/security/p5-Digest-HMAC \
-		${SITE_PERL}/MLDBM.pm:${PORTSDIR}/databases/p5-MLDBM
+BUILD_DEPENDS=	p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
+		p5-MLDBM>=0:${PORTSDIR}/databases/p5-MLDBM
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Mail::SRS.3 \

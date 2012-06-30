@@ -15,10 +15,10 @@ DISTNAME=	cluebringer-${PORTVERSION}
 MAINTAINER=	chifeng@gmail.com
 COMMENT=	Policyd v2 is a multi-platform policy server for popular MTAs
 
-RUN_DEPENDS=	${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
-		${SITE_PERL}/Net/CIDR.pm:${PORTSDIR}/net-mgmt/p5-Net-CIDR \
-		${SITE_PERL}/Config/IniFiles.pm:${PORTSDIR}/devel/p5-Config-IniFiles \
-		${SITE_PERL}/mach/Cache/FastMmap.pm:${PORTSDIR}/devel/p5-Cache-FastMmap
+RUN_DEPENDS=	p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
+		p5-Net-CIDR>=0:${PORTSDIR}/net-mgmt/p5-Net-CIDR \
+		p5-Config-IniFiles>=0:${PORTSDIR}/devel/p5-Config-IniFiles \
+		p5-Cache-FastMmap>=0:${PORTSDIR}/devel/p5-Cache-FastMmap
 
 USE_PERL5=	yes
 USE_PHP=	yes
@@ -37,13 +37,13 @@ OPTIONS=	MYSQL "Use MySQL support" On \
 .include <bsd.port.pre.mk>
 USE_PHP=	pdo_mysql
 .if defined(WITH_MYSQL)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 .if defined(WITH_SQLite)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
+RUN_DEPENDS+=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 .endif
 .if defined(WITH_PostgreSQL)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
 post-patch:
