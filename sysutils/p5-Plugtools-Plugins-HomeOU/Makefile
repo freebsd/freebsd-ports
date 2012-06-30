@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Automatically handles the home OU for when adding/removing users
 
-RUN_DEPENDS=	${SITE_PERL}/Plugtools.pm:${PORTSDIR}/sysutils/p5-Plugtools
+RUN_DEPENDS=	p5-Plugtools>=0:${PORTSDIR}/sysutils/p5-Plugtools
 
 PERL_CONFIGURE=	yes
 

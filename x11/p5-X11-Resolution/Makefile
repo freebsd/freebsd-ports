@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Provides a method to get the resolution for a X11 screen
 
-RUN_DEPENDS=	${SITE_PERL}/X11/Protocol.pm:${PORTSDIR}/x11/p5-X11-Protocol
+RUN_DEPENDS=	p5-X11-Protocol>=0:${PORTSDIR}/x11/p5-X11-Protocol
 
 PERL_CONFIGURE=	yes
 

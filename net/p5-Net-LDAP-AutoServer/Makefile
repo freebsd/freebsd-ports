@@ -15,9 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Automatically make some default decisions some LDAP server information
 
-RUN_DEPENDS=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
-		${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
-		${SITE_PERL}/Net/DNS/RR/SRV/Helper.pm:${PORTSDIR}/dns/p5-Net-DNS-RR-SRV-Helper
+RUN_DEPENDS=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap \
+		p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
+		p5-Net-DNS-RR-SRV-Helper>=0:${PORTSDIR}/dns/p5-Net-DNS-RR-SRV-Helper
 
 PERL_CONFIGURE=	yes
 

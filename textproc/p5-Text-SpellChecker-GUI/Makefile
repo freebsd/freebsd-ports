@@ -15,10 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Implements a user interface to Text::SpellChecker using ZConf::GUI
 
-BUILD_DEPENDS=	${SITE_PERL}/Curses/UI.pm:${PORTSDIR}/devel/p5-Curses-UI \
-		${SITE_PERL}/String/ShellQuote.pm:${PORTSDIR}/textproc/p5-String-ShellQuote \
-		${SITE_PERL}/ZConf/GUI.pm:${PORTSDIR}/devel/p5-ZConf-GUI \
-		${SITE_PERL}/Text/SpellChecker.pm:${PORTSDIR}/textproc/p5-Text-SpellChecker
+BUILD_DEPENDS=	p5-Curses-UI>=0:${PORTSDIR}/devel/p5-Curses-UI \
+		p5-String-ShellQuote>=0:${PORTSDIR}/textproc/p5-String-ShellQuote \
+		p5-ZConf-GUI>=0:${PORTSDIR}/devel/p5-ZConf-GUI \
+		p5-Text-SpellChecker>=0:${PORTSDIR}/textproc/p5-Text-SpellChecker
 
 PERL_CONFIGURE=	yes
 

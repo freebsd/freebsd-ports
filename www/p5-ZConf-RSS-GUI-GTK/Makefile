@@ -16,8 +16,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Provides a GTK backend for ZConf::RSS::GUI
 
-RUN_DEPENDS=	${SITE_PERL}/ZConf/RSS.pm:${PORTSDIR}/www/p5-ZConf-RSS \
-		${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2
+RUN_DEPENDS=	p5-ZConf-RSS>=0:${PORTSDIR}/www/p5-ZConf-RSS \
+		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
 
 PERL_CONFIGURE=	yes
 

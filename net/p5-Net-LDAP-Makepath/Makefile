@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Provides a methode for creating paths in LDAP simply
 
-RUN_DEPENDS=	 ${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
+RUN_DEPENDS=	 p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 
 PERL_CONFIGURE=	yes
 
