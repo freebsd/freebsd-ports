@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	Cubic Spline Interpolation of data
 
-RUN_DEPENDS=	${SITE_PERL}/Math/Derivative.pm:${PORTSDIR}/math/p5-Math-Derivative
+RUN_DEPENDS=	p5-Math-Derivative>=0:${PORTSDIR}/math/p5-Math-Derivative
 
 PERL_CONFIGURE=	yes
 

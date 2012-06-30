@@ -16,8 +16,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	Seamlessly enable SVG output from scripts written using GD
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
-		${SITE_PERL}/SVG.pm:${PORTSDIR}/textproc/p5-SVG
+BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
+		p5-SVG>=0:${PORTSDIR}/textproc/p5-SVG
 
 PERL_CONFIGURE=	yes
 
