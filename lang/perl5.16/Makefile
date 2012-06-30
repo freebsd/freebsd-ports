@@ -7,7 +7,6 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
-PORTREVISION=	2
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -26,7 +25,8 @@ LICENSE_COMB=	dual
 
 CONFLICTS=	perl-5.6.* perl-5.8.* perl-threaded-5.8.* \
 		perl-5.10.* perl-threaded-5.10.* \
-		perl-5.12.* perl-threaded-5.12.*
+		perl-5.12.* perl-threaded-5.12.* \
+		perl-5.14.* perl-threaded-5.14.*
 
 OPTIONS=	DEBUGGING	"Build with debugging support"		off \
 		GDBM		"Build GDBM_File extension"		off \
@@ -40,7 +40,7 @@ OPTIONS=	DEBUGGING	"Build with debugging support"		off \
 
 PORTSCOUT=	limitw:1,even
 
-PERL_VERSION=	5.14.2
+PERL_VERSION=	5.16.0
 PERL_ARCH=	mach
 SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VERSION}
 SITE_PERL?=	${LOCALBASE}/${SITE_PERL_REL}
@@ -186,7 +186,7 @@ post-patch:
 		> ${WRKDIR}/perl-after-upgrade
 	${CP} ${WRKDIR}/use.perl ${PKGINSTALL}
 	${CP} ${WRKDIR}/use.perl ${PKGDEINSTALL}
-	${SED} -i '' -e 's|%%PERL_PKGNAME%%|${PKGNAME}|g; s|%%PERL_VER%%|5.14|g;' \
+	${SED} -i '' -e 's|%%PERL_PKGNAME%%|${PKGNAME}|g; s|%%PERL_VER%%|5.16|g;' \
 		-e 's!%%BSDPAN_VERSION%%!${BSDPAN_VERSION}!g;' \
 		${BSDPAN_WRKSRC}/ExtUtils/*.pm
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \

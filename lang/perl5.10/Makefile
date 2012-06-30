@@ -26,7 +26,8 @@ LICENSE_COMB=	dual
 
 CONFLICTS=	perl-5.6.* perl-5.8.* perl-threaded-5.8.* \
 		perl-5.12.* perl-threaded-5.12.* \
-		perl-5.14.* perl-threaded-5.14.*
+		perl-5.14.* perl-threaded-5.14.* \
+		perl-5.16.* perl-threaded-5.16.*
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	DEBUGGING	"Build with debugging support"		off \

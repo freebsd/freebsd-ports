@@ -241,6 +241,7 @@
     SUBDIR += perl5.10
     SUBDIR += perl5.12
     SUBDIR += perl5.14
+    SUBDIR += perl5.16
     SUBDIR += perl5.8
     SUBDIR += petite-chez
     SUBDIR += pfe

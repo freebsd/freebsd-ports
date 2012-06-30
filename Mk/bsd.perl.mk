@@ -44,7 +44,7 @@
 Perl_Pre_Include=			bsd.perl.mk
 PERL_Include_MAINTAINER=	perl@FreeBSD.org
 
-PERL_VERSION?=	5.12.4
+PERL_VERSION?=	5.14.2
 
 .if !defined(PERL_LEVEL) && defined(PERL_VERSION)
 perl_major=		${PERL_VERSION:C|^([1-9]+).*|\1|}
@@ -66,7 +66,9 @@ PERL_ARCH?=		mach
 
 # there must always be a default to prevent dependency failures such
 # as "ports/lang: not found"
-.if    ${PERL_LEVEL} >= 501400
+.if    ${PERL_LEVEL} >= 501600
+PERL_PORT?=	perl5.16
+.elif  ${PERL_LEVEL} >= 501400
 PERL_PORT?=	perl5.14
 .elif  ${PERL_LEVEL} >= 501200
 PERL_PORT?=	perl5.12
@@ -118,7 +120,7 @@ masked_PERL_LEVEL=	${PERL_LEVEL}
 
 .if ${want_perl_sign} == "+"
 .if ${USE_PERL5_LEVEL} > ${masked_PERL_LEVEL}
-USE_PERL5_REASON?=	requires Perl ${want_perl_ver} or later, install lang/perl5.8, lang/perl5.10, lang/perl5.12 or lang/perl5.14 and try again
+USE_PERL5_REASON?=	requires Perl ${want_perl_ver} or later, install lang/perl${want_perl_major}.${want_perl_minor:C|^0||} and try again
 IGNORE=	${USE_PERL5_REASON}
 .endif # ${USE_PERL5_LEVEL} > ${masked_PERL_LEVEL}
 .elif ${want_perl_sign} == ""
