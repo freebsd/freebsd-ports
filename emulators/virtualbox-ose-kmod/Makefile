@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.1.16
+DISTVERSION=	4.1.18
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -40,8 +40,8 @@ CONFLICTS=	bcc-[0-9]*
 CONFLICTS_BUILD=	kBuild-[0-9]*
 CONFLICTS_INSTALL=	virtualbox-ose-kmod-devel-[3,4]* virtualbox-ose-kmod-legacy-[3,4]*
 
-OPTIONS=	DEBUG "Build with debugging symbols" off \
-		VIMAGE "VIMAGE virtual networking support" off
+OPTIONS_DEFINE=	DEBUG VIMAGE
+VIMAGE_DESC=	VIMAGE virtual networking support
 
 .include <bsd.port.options.mk>
 
@@ -56,9 +56,15 @@ KMK_BUILDTYPE=	release
 KMK_CONFIG=	VBOX_LIBPATH_X11=${LOCALBASE} VBOX_FREEBSD_SRC=${SRC_BASE}/sys
 KMK_FLAGS=	HostDrivers-src vboxdrv-mod VBoxNetFlt-src VBoxNetAdp-src
 
-.if defined(WITH_DEBUG)
+MAKE_FLAGS=	SYSDIR=${SRC_BASE}/sys
+
+.if ${PORT_OPTIONS:MDEBUG}
 KMK_FLAGS+=	BUILD_TYPE=debug
 KMK_BUILDTYPE=	debug
+MAKE_FLAGS+=	DEBUG_FLAGS="-O1 -g"
+PLIST_SUB+=	WITH_DEBUG=""
+.else
+PLIST_SUB+=	WITH_DEBUG="@comment "
 .endif
 
 .if ${ARCH} == i386
@@ -77,7 +83,7 @@ IGNORE=		requires kernel sources
 BROKEN=		Does not compile on FreeBSD < 8.2
 .endif
 
-.if ${OSVERSION} < 800500 && defined(WITH_VIMAGE)
+.if ${OSVERSION} < 800500 && !empty(PORT_OPTIONS:MVIMAGE)
 IGNORE=		newer kernel is required to build with VIMAGE
 .endif
 
@@ -86,7 +92,7 @@ post-patch:
 	@${ECHO} 'VBOX_WITH_NETFLT = 1' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_NETADP = 1' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_ADDITIONS =' >> ${WRKSRC}/LocalConfig.kmk
-.if defined(WITH_VIMAGE)
+.if ${PORT_OPTIONS:MVIMAGE}
 	@${ECHO} 'VBOX_WITH_NETFLT_VIMAGE = 1' >> ${WRKSRC}/LocalConfig.kmk
 .endif
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
@@ -100,13 +106,18 @@ pre-build:
 
 do-build:
 	cd ${WRKSRC} && ${SH} env.sh && cd ${WRKSRC}/src/VBox/HostDrivers && ${KMK_CONFIG} ${LOCALBASE}/bin/kmk ${KMK_FLAGS}
-	cd ${VBOX_BIN} && make SYSDIR=${SRC_BASE}/sys
+	cd ${VBOX_BIN} && make ${MAKE_FLAGS}
 
 do-install:
 	${MKDIR} ${KMODDIR}
 	${INSTALL_KLD} ${VBOX_BIN}/vboxdrv/vboxdrv.ko ${KMODDIR}
 	${INSTALL_KLD} ${VBOX_BIN}/vboxnetadp/vboxnetadp.ko ${KMODDIR}
 	${INSTALL_KLD} ${VBOX_BIN}/vboxnetflt/vboxnetflt.ko ${KMODDIR}
+.if $(PORT_OPTIONS:MDEBUG)
+	${INSTALL_KLD} ${VBOX_BIN}/vboxdrv/vboxdrv.ko.symbols ${KMODDIR}
+	${INSTALL_KLD} ${VBOX_BIN}/vboxnetadp/vboxnetadp.ko.symbols ${KMODDIR}
+	${INSTALL_KLD} ${VBOX_BIN}/vboxnetflt/vboxnetflt.ko.symbols ${KMODDIR}
+.endif
 	@/usr/sbin/kldxref ${KMODDIR}
 
 .include <bsd.port.post.mk>

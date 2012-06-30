@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.1.16
+DISTVERSION=	4.1.18
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -41,9 +41,8 @@ CONFLICTS=	bcc-[0-9]*
 CONFLICTS_BUILD=	kBuild-[0-9]*
 CONFLICTS_INSTALL=	virtualbox-ose-additions-devel-[3,4]* virtualbox-ose-[3,4]* virtualbox-ose-devel-[3,4]* virtualbox-ose-legacy-[3,4]*
 
-OPTIONS=	DEBUG "Build with debugging symbols" off \
-		X11 "Build with X11 support" on \
-		OPENGL "Build with OpenGL support" off
+OPTIONS_DEFINE=	DEBUG X11 OPENGL
+OPTIONS_DEFAULT=	X11
 
 .include <bsd.port.options.mk>
 
@@ -60,12 +59,12 @@ KMK_BUILDTYPE=	release
 KMK_CONFIG=	VBOX_LIBPATH_X11=${LOCALBASE}
 KMK_FLAGS=
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 KMK_FLAGS+=	BUILD_TYPE=debug
 KMK_BUILDTYPE=	debug
 .endif
 
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 VBOX_WITH_X11=	1
 USE_XORG=	xcursor xmu inputproto xorg-server xrandr
 PLIST_SUB+=	X11=""
@@ -74,10 +73,10 @@ VBOX_WITH_X11=
 PLIST_SUB+=	X11="@comment "
 .endif
 
-.if defined(WITHOUT_OPENGL)
-CONFIGURE_ARGS+=--disable-opengl
-.else
+.if ${PORT_OPTIONS:MOPENGL}
 USE_GL=		gl
+.else
+CONFIGURE_ARGS+=--disable-opengl
 .endif
 
 .if ${ARCH} == i386
@@ -139,7 +138,7 @@ do-install:
 	${INSTALL_PROGRAM} ${VBOX_BIN}/VBoxControl ${PREFIX}/sbin/
 	${INSTALL_PROGRAM} ${VBOX_BIN}/VBoxService ${PREFIX}/sbin/
 
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 	${INSTALL_PROGRAM} ${VBOX_BIN}/VBoxClient ${PREFIX}/bin/
 
 	${MKDIR} ${PREFIX}/bin
