@@ -15,12 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	freebsd-ports@t-b-o-h.net
 COMMENT=	TT enabled MIME::Lite wrapper
 
-BUILD_DEPENDS=	${SITE_PERL}/mach/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
-		${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite \
-		${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS=	${SITE_PERL}/mach/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
-		${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite \
-		${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple
+BUILD_DEPENDS=	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
+		p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \
+		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
+RUN_DEPENDS=	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
+		p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \
+		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	yes
 

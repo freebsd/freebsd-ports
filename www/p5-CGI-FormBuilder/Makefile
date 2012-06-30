@@ -45,19 +45,19 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_TT)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit
+RUN_DEPENDS+=	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit
 .endif
 
 .if defined(WITH_HTML_TEMPLATE)
-RUN_DEPENDS+=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template
+RUN_DEPENDS+=	p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template
 .endif
 
 .if defined(WITH_TEXT_TEMPLATE)
-RUN_DEPENDS+=	${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template
+RUN_DEPENDS+=	p5-Text-Template>=0:${PORTSDIR}/textproc/p5-Text-Template
 .endif
 
 .if defined(WITH_CGI_FAST_TEMPLATE)
-RUN_DEPENDS+=	${SITE_PERL}/CGI/FastTemplate.pm:${PORTSDIR}/www/p5-CGI-FastTemplate
+RUN_DEPENDS+=	p5-CGI-FastTemplate>=0:${PORTSDIR}/www/p5-CGI-FastTemplate
 .endif
 
 .include <bsd.port.post.mk>

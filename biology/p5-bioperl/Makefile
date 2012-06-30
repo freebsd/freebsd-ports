@@ -19,45 +19,45 @@ COMMENT=	A collection of Perl modules for bioinformatics
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/${PERL_VERSION}/Text/Wrap.pm:${PORTSDIR}/lang/${PERL_PORT} \
 		${LOCALBASE}/lib/perl5/${PERL_VERSION}/${PERL_ARCH}/DB_File.pm:${PORTSDIR}/lang/${PERL_PORT} \
-		${SITE_PERL}/Bio/ASN1/EntrezGene.pm:${PORTSDIR}/biology/p5-Bio-ASN1-EntrezGene \
-		${SITE_PERL}/Class/AutoClass.pm:${PORTSDIR}/devel/p5-Class-AutoClass \
-		${SITE_PERL}/Data/Stag/ITextWriter.pm:${PORTSDIR}/devel/p5-Data-Stag \
-		${SITE_PERL}/Data/Stag/SxprWriter.pm:${PORTSDIR}/devel/p5-Data-Stag \
-		${SITE_PERL}/Data/Stag/XMLWriter.pm:${PORTSDIR}/devel/p5-Data-Stag \
-		${SITE_PERL}/GD/SVG.pm:${PORTSDIR}/graphics/p5-GD-SVG \
-		${SITE_PERL}/Graph/Directed.pm:${PORTSDIR}/math/p5-Graph \
-		${SITE_PERL}/HTTP/Request/Common.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy \
-		${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
-		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite \
-		${SITE_PERL}/SVG.pm:${PORTSDIR}/textproc/p5-SVG \
-		${SITE_PERL}/SVG/Graph.pm:${PORTSDIR}/graphics/p5-SVG-Graph \
-		${SITE_PERL}/Text/Shellwords.pm:${PORTSDIR}/textproc/p5-Text-Shellwords \
-		${SITE_PERL}/XML/DOM.pm:${PORTSDIR}/textproc/p5-XML-DOM \
-		${SITE_PERL}/XML/DOM/XPath.pm:${PORTSDIR}/textproc/p5-XML-DOM-XPath \
-		${SITE_PERL}/XML/Parser/PerlSAX.pm:${PORTSDIR}/textproc/p5-libxml \
-		${SITE_PERL}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX \
-		${SITE_PERL}/XML/SAX/Base.pm:${PORTSDIR}/textproc/p5-XML-SAX \
-		${SITE_PERL}/XML/SAX/Writer.pm:${PORTSDIR}/textproc/p5-XML-SAX-Writer \
-		${SITE_PERL}/XML/Twig.pm:${PORTSDIR}/textproc/p5-XML-Twig \
-		${SITE_PERL}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer \
-		${SITE_PERL}/${PERL_ARCH}/Ace.pm:${PORTSDIR}/biology/p5-AcePerl \
-		${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone \
-		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
-		${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
-		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
-		${SITE_PERL}/Spreadsheet/ParseExcel.pm:${PORTSDIR}/textproc/p5-Spreadsheet-ParseExcel \
-		${SITE_PERL}/${PERL_ARCH}/Convert/Binary/C.pm:${PORTSDIR}/converters/p5-Convert-Binary-C \
-		${SITE_PERL}/Algorithm/Munkres.pm:${PORTSDIR}/math/p5-Algorithm-Munkres \
-		${SITE_PERL}/Array/Compare.pm:${PORTSDIR}/misc/p5-Array-Compare \
-		${SITE_PERL}/GraphViz.pm:${PORTSDIR}/graphics/p5-GraphViz \
-		${SITE_PERL}/${PERL_ARCH}/Math/Random.pm:${PORTSDIR}/math/p5-Math-Random \
-		${SITE_PERL}/PostScript/TextBlock.pm:${PORTSDIR}/print/p5-PostScript \
-		${SITE_PERL}/Set/Scalar.pm:${PORTSDIR}/devel/p5-Set-Scalar \
-		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI
+		p5-Bio-ASN1-EntrezGene>=0:${PORTSDIR}/biology/p5-Bio-ASN1-EntrezGene \
+		p5-Class-AutoClass>=0:${PORTSDIR}/devel/p5-Class-AutoClass \
+		p5-Data-Stag>=0:${PORTSDIR}/devel/p5-Data-Stag \
+		p5-Data-Stag>=0:${PORTSDIR}/devel/p5-Data-Stag \
+		p5-Data-Stag>=0:${PORTSDIR}/devel/p5-Data-Stag \
+		p5-GD-SVG>=0:${PORTSDIR}/graphics/p5-GD-SVG \
+		p5-Graph>=0:${PORTSDIR}/math/p5-Graph \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
+		p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite \
+		p5-SVG>=0:${PORTSDIR}/textproc/p5-SVG \
+		p5-SVG-Graph>=0:${PORTSDIR}/graphics/p5-SVG-Graph \
+		p5-Text-Shellwords>=0:${PORTSDIR}/textproc/p5-Text-Shellwords \
+		p5-XML-DOM>=0:${PORTSDIR}/textproc/p5-XML-DOM \
+		p5-XML-DOM-XPath>=0:${PORTSDIR}/textproc/p5-XML-DOM-XPath \
+		p5-libxml>=0:${PORTSDIR}/textproc/p5-libxml \
+		p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX \
+		p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX \
+		p5-XML-SAX-Writer>=0:${PORTSDIR}/textproc/p5-XML-SAX-Writer \
+		p5-XML-Twig>=0:${PORTSDIR}/textproc/p5-XML-Twig \
+		p5-XML-Writer>=0:${PORTSDIR}/textproc/p5-XML-Writer \
+		p5-AcePerl>=0:${PORTSDIR}/biology/p5-AcePerl \
+		p5-Clone>=0:${PORTSDIR}/devel/p5-Clone \
+		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
+		p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
+		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
+		p5-Spreadsheet-ParseExcel>=0:${PORTSDIR}/textproc/p5-Spreadsheet-ParseExcel \
+		p5-Convert-Binary-C>=0:${PORTSDIR}/converters/p5-Convert-Binary-C \
+		p5-Algorithm-Munkres>=0:${PORTSDIR}/math/p5-Algorithm-Munkres \
+		p5-Array-Compare>=0:${PORTSDIR}/misc/p5-Array-Compare \
+		p5-GraphViz>=0:${PORTSDIR}/graphics/p5-GraphViz \
+		p5-Math-Random>=0:${PORTSDIR}/math/p5-Math-Random \
+		p5-PostScript>=0:${PORTSDIR}/print/p5-PostScript \
+		p5-Set-Scalar>=0:${PORTSDIR}/devel/p5-Set-Scalar \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

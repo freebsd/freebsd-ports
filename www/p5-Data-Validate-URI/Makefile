@@ -15,10 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	freebsd-ports@t-b-o-h.net
 COMMENT=	Common data validation methods for URIs
 
-BUILD_DEPENDS=	${SITE_PERL}/Data/Validate/Domain.pm:${PORTSDIR}/dns/p5-Data-Validate-Domain \
-		${SITE_PERL}/Data/Validate/IP.pm:${PORTSDIR}/net-mgmt/p5-Data-Validate-IP
-RUN_DEPENDS=	${SITE_PERL}/Data/Validate/Domain.pm:${PORTSDIR}/dns/p5-Data-Validate-Domain \
-		${SITE_PERL}/Data/Validate/IP.pm:${PORTSDIR}/net-mgmt/p5-Data-Validate-IP
+BUILD_DEPENDS=	p5-Data-Validate-Domain>=0:${PORTSDIR}/dns/p5-Data-Validate-Domain \
+		p5-Data-Validate-IP>=0:${PORTSDIR}/net-mgmt/p5-Data-Validate-IP
+RUN_DEPENDS=	p5-Data-Validate-Domain>=0:${PORTSDIR}/dns/p5-Data-Validate-Domain \
+		p5-Data-Validate-IP>=0:${PORTSDIR}/net-mgmt/p5-Data-Validate-IP
 
 PERL_CONFIGURE=	yes
 

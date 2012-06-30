@@ -18,12 +18,12 @@ DISTNAME=	Autodia-${PORTVERSION}
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	Automatic Dia XML - from Source Code and Data
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
-		${SITE_PERL}/${PERL_ARCH}/Inline/Java.pm:${PORTSDIR}/devel/p5-Inline-Java \
-		${SITE_PERL}/GraphViz.pm:${PORTSDIR}/graphics/p5-GraphViz \
-		${SITE_PERL}/VCG.pm:${PORTSDIR}/graphics/p5-VCG \
-		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
-		${SITE_PERL}/SpringGraph.pm:${PORTSDIR}/graphics/p5-SpringGraph
+BUILD_DEPENDS=	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
+		p5-Inline-Java>=0:${PORTSDIR}/devel/p5-Inline-Java \
+		p5-GraphViz>=0:${PORTSDIR}/graphics/p5-GraphViz \
+		p5-VCG>=0:${PORTSDIR}/graphics/p5-VCG \
+		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
+		p5-SpringGraph>=0:${PORTSDIR}/graphics/p5-SpringGraph
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

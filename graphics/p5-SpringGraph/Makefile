@@ -17,7 +17,7 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	Directed graph alternative to GraphViz
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
+BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
 
 MAN3=	SpringGraph.3
 
