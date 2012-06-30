@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	algol68g
-PORTVERSION=	2.4
+PORTVERSION=	2.4.1
 CATEGORIES=	lang
 MASTER_SITES=	http://jmvdveer.home.xs4all.nl/
 
@@ -40,7 +40,7 @@ CONFIGURE_ARGS+=--disable-postgresql
 .endif
 
 post-patch:
-	# Skip broken check, assume our $CC works
+#	Skip broken check, assume our $CC works
 	@${REINPLACE_CMD} -e 's/"xgcc"/"x${CC}"/' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^install-data-am/s/install-docDATA//' \
 		${WRKSRC}/Makefile.in
