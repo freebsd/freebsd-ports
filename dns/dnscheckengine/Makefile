@@ -46,7 +46,7 @@ OPTIONS=	MYSQL "Add MySQL Support (needed for webgui)" off
 
 .if defined(WITH_MYSQL)
 BUILD_DEPENDS+=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 USE_MYSQL=	yes
 .endif
 

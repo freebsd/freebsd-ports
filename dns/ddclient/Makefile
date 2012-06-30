@@ -26,7 +26,7 @@ OPTIONS=	SSL "Enable SSL support" ON
 .include <bsd.port.options.mk>
 
 .ifndef WITHOUT_SSL
-RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
+RUN_DEPENDS+=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL
 .endif
 
 SUB_FILES=	pkg-message ddclient_force

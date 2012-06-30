@@ -14,9 +14,9 @@ DISTNAME=	${PORTNAME:L}-${PORTVERSION:S/.p/-pre/:S/.b/-beta/}
 MAINTAINER=	dan@algenta.com
 COMMENT=	DNSMax-perl is a perl DNS update client for the REST DNSMax protocol
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay \
-		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
-		${SITE_PERL}/HTTP/Response.pm:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
+		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 USE_ZIP=	yes
 NO_BUILD=	yes
