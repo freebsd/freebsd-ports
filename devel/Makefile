@@ -3455,6 +3455,7 @@
     SUBDIR += py-venusian
     SUBDIR += py-versiontools
     SUBDIR += py-virtualenv
+    SUBDIR += py-virtualenv-clone
     SUBDIR += py-virtualenvwrapper
     SUBDIR += py-wsgi_xmlrpc
     SUBDIR += py-wsgitools
