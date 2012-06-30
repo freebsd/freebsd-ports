@@ -15,11 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Run a file using a choosen methode, desktop entry or mimetype
 
-RUN_DEPENDS=	${SITE_PERL}/ZConf.pm:${PORTSDIR}/net/p5-ZConf \
-		${SITE_PERL}/File/MimeInfo/Applications.pm:${PORTSDIR}/devel/p5-File-MimeInfo \
-		${SITE_PERL}/Curses/UI.pm:${PORTSDIR}/devel/p5-Curses-UI \
-		${SITE_PERL}/ZConf/GUI.pm:${PORTSDIR}/devel/p5-ZConf-GUI \
-		${SITE_PERL}/String/ShellQuote.pm:${PORTSDIR}/textproc/p5-String-ShellQuote
+BUILD_DEPENDS=	p5-ZConf>=6.1.0:${PORTSDIR}/net/p5-ZConf \
+		p5-File-MimeInfo>=0.16:${PORTSDIR}/devel/p5-File-MimeInfo \
+		p5-Curses-UI>=0.9609:${PORTSDIR}/devel/p5-Curses-UI \
+		p5-ZConf-GUI>=1.0.3:${PORTSDIR}/devel/p5-ZConf-GUI \
+		p5-String-ShellQuote>=1.04:${PORTSDIR}/textproc/p5-String-ShellQuote
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
