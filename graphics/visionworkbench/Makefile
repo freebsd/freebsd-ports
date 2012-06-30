@@ -45,6 +45,12 @@ CFLAGS+=	-Dtgammaf=tgamma
 . endif
 .endif
 
+CFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
+
+CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
+		LIBS="-L${LOCALBASE}/lib ${LDFLAGS}"
+
 pre-configure:
 	echo "HAVE_PKG_FLAPACK=yes" >> ${WRKSRC}/config.options
 	echo "PKG_FLAPACK_LDFLAGS=-L${LOCALBASE}/lib/${CC}" >> ${WRKSRC}/config.options
