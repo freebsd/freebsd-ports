@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_rivet
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	www tcl
 MASTER_SITES=		${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	tcl/rivet
@@ -15,13 +15,13 @@ DISTNAME=		rivet-${PORTVERSION}
 MAINTAINER=	cowbert@gmail.com
 COMMENT=	Embeds a Tcl interpreter in the Apache server
 
-MAKE_JOBS_SAFE=	yes
 LICENSE=		AL2
 
 USE_APACHE=	22+
 USE_TCL=	84+
 USE_LDCONFIG=	${PREFIX}/lib/rivet
 
+MAKE_JOBS_SAFE=	yes
 GMAKE=		yes
 GNU_CONFIGURE=	yes
 
@@ -39,7 +39,7 @@ post-patch:
 post-install:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "===================================================="
-	@${ECHO_MSG} "Remember to modify your apache configuration file
+	@${ECHO_MSG} "Remember to modify your apache configuration file"
 	@${ECHO_MSG} "to load mod_rivet and set the appropriate handlers:"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "LoadModule rivet_module ${APACHEMODDIR}/mod_rivet.so"
