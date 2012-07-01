@@ -1,6 +1,6 @@
---- Makefile.orig	Mon Feb 23 17:32:56 1998
-+++ Makefile	Mon Feb 23 17:33:50 1998
-@@ -8,8 +8,7 @@
+--- Makefile.orig	1996-08-02 23:44:24.000000000 +0200
++++ Makefile	2012-07-01 19:12:23.000000000 +0200
+@@ -8,12 +8,11 @@
  
  PROG=	upsd
  
@@ -10,3 +10,8 @@
  NOMAN=	noway
  
  #DEBUG=	-g -DDEBUG
+-CFLAGS+=-I../include ${DEBUG} -Wall -O6 # -pedantic
++CFLAGS+=-I../include ${DEBUG} -Wall # -pedantic
+ LDADD=
+ 
+ CLEANFILES+=*.core y.*
