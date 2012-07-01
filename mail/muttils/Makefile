@@ -15,6 +15,8 @@ DISTNAME=	${PORTVERSION}
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Python utilities for console mail clients (eg. mutt)
 
+CONFLICTS=	zh-wenju-[0-9]* talkfilters-[0-9]* reed-[0-9]*
+
 CHANGESET=	42b380758b70
 WRKSRC=		${WRKDIR}/blacktrash-${PORTNAME}-${CHANGESET}
 USE_PYTHON_BUILD=	yes
