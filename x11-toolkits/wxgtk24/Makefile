@@ -24,6 +24,7 @@ USE_BZIP2=	yes
 USE_XORG=	x11 sm xxf86vm xinerama
 USE_GL=		glu
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
