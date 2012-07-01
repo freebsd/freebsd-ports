@@ -32,6 +32,10 @@ MAKE_ENV=	BINDIR="${PREFIX}/sbin" MANDIR="${MANPREFIX}/man/man" \
 WRKSRC=		${WRKDIR}/fuse4bsd-${HG_SHORTREV}
 DISABLE_SIZE=	yes
 
+OPTIONS=	AUTOSETUP "Automatic global config file setup" off
+
+.include <bsd.port.pre.mk>
+
 SRC_BASE?=	/usr/src
 SETUP=		setup.sh
 HG_SHORTREV=	498acaef33b0
@@ -53,10 +57,6 @@ HTML_DOCS=	Faq.html \
 		remote.png \
 		serif.css \
 		tabbar-right.css
-
-OPTIONS=	AUTOSETUP "Automatic global config file setup" off
-
-.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900040
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-fuse_module__fuse_vnops.c
