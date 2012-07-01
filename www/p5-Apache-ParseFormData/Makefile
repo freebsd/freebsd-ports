@@ -15,10 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	nistor@snickers.org
 COMMENT=	Module allows you to easily decode/parse form and query data
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
+BUILD_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+USE_APACHE=	20+
 
 MAN3=		Apache::ParseFormData.3
 

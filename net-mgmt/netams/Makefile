@@ -66,20 +66,20 @@ PLIST_SUB+=		MYSQL="@comment "
 .endif
 
 .if defined(WITH_POSTGRESQL) && defined(WITH_CGI)
-RUN_DEPENDS+=		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+RUN_DEPENDS+=		p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
 .if defined(WITH_MYSQL) && defined(WITH_CGI)
-RUN_DEPENDS+=		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql50
+RUN_DEPENDS+=		p5-DBD-mysql50>=0:${PORTSDIR}/databases/p5-DBD-mysql50
 .endif
 
 .if defined(WITH_CGI)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
-		${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph \
-		${SITE_PERL}/GD/Text.pm:${PORTSDIR}/graphics/p5-GD-TextUtil \
-		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
-		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/Crypt/GeneratePassword.pm:${PORTSDIR}/security/p5-Crypt-GeneratePassword
+RUN_DEPENDS+=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
+		p5-GD-Graph>=0:${PORTSDIR}/graphics/p5-GD-Graph \
+		p5-GD-TextUtil>=0:${PORTSDIR}/graphics/p5-GD-TextUtil \
+		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-Crypt-GeneratePassword>=0:${PORTSDIR}/security/p5-Crypt-GeneratePassword
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 PLIST_SUB+=	CGI=""

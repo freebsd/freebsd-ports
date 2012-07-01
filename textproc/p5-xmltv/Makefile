@@ -16,34 +16,34 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Set of programs to process TV (tvguide) listings in XML format
 
 XMLTV_DEPENDS=	\
-	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
-	${SITE_PERL}/XML/Twig.pm:${PORTSDIR}/textproc/p5-XML-Twig \
-	${SITE_PERL}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer \
-	${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
-	${SITE_PERL}/${PERL_ARCH}/PerlIO/gzip.pm:${PORTSDIR}/archivers/p5-PerlIO-gzip \
-	${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
-	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-IO-Compress \
-	${SITE_PERL}/${PERL_ARCH}/Data/Dumper.pm:${PORTSDIR}/devel/p5-Data-Dumper \
-	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-	${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent \
-	${SITE_PERL}/HTML/TreeBuilder.pm:${PORTSDIR}/www/p5-HTML-Tree \
-	${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-	${SITE_PERL}/${PERL_ARCH}/Tk/TableMatrix.pm:${PORTSDIR}/x11-toolkits/p5-Tk-TableMatrix \
-	${SITE_PERL}/${PERL_ARCH}/Text/Kakasi.pm:${PORTSDIR}/japanese/p5-Text-Kakasi \
-	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
-	${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite \
-	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
-	${SITE_PERL}/HTML/TableExtract.pm:${PORTSDIR}/www/p5-HTML-TableExtract \
-	${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize \
-	${SITE_PERL}/Term/ProgressBar.pm:${PORTSDIR}/devel/p5-Term-ProgressBar \
-	${SITE_PERL}/Lingua/Preferred.pm:${PORTSDIR}/textproc/p5-Lingua-Preferred \
-	${SITE_PERL}/${PERL_ARCH}/Unicode/String.pm:${PORTSDIR}/converters/p5-Unicode-String \
-	${SITE_PERL}/Unicode/UTF8simple.pm:${PORTSDIR}/converters/p5-Unicode-UTF8simple \
-	${SITE_PERL}/Lingua/EN/Numbers/Ordinate.pm:${PORTSDIR}/textproc/p5-Lingua-EN-Numbers-Ordinate \
-	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-	${SITE_PERL}/HTTP/Cache/Transparent.pm:${PORTSDIR}/www/p5-HTTP-Cache-Transparent \
-	${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
-	${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate
+	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
+	p5-XML-Twig>=0:${PORTSDIR}/textproc/p5-XML-Twig \
+	p5-XML-Writer>=0:${PORTSDIR}/textproc/p5-XML-Writer \
+	p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
+	p5-PerlIO-gzip>=0:${PORTSDIR}/archivers/p5-PerlIO-gzip \
+	p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm \
+	p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress \
+	p5-Data-Dumper>=0:${PORTSDIR}/devel/p5-Data-Dumper \
+	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+	p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent \
+	p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
+	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+	p5-Tk-TableMatrix>=0:${PORTSDIR}/x11-toolkits/p5-Tk-TableMatrix \
+	ja-p5-Text-Kakasi>=0:${PORTSDIR}/japanese/p5-Text-Kakasi \
+	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
+	p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite \
+	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
+	p5-HTML-TableExtract>=0:${PORTSDIR}/www/p5-HTML-TableExtract \
+	p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize \
+	p5-Term-ProgressBar>=0:${PORTSDIR}/devel/p5-Term-ProgressBar \
+	p5-Lingua-Preferred>=0:${PORTSDIR}/textproc/p5-Lingua-Preferred \
+	p5-Unicode-String>=0:${PORTSDIR}/converters/p5-Unicode-String \
+	p5-Unicode-UTF8simple>=0:${PORTSDIR}/converters/p5-Unicode-UTF8simple \
+	p5-Lingua-EN-Numbers-Ordinate>=0:${PORTSDIR}/textproc/p5-Lingua-EN-Numbers-Ordinate \
+	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
+	p5-HTTP-Cache-Transparent>=0:${PORTSDIR}/www/p5-HTTP-Cache-Transparent \
+	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
+	p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate
 BUILD_DEPENDS=	${XMLTV_DEPENDS}
 RUN_DEPENDS=	${XMLTV_DEPENDS}
 

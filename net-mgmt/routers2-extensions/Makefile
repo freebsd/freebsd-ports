@@ -17,7 +17,7 @@ MAINTAINER=	kiwi@oav.net
 COMMENT=	Extensions of routers2 frontend
 
 RUN_DEPENDS=	${LOCALBASE}/www/routers2/routers2.cgi:${PORTSDIR}/net-mgmt/routers2 \
-		${SITE_PERL}/Net/Telnet/Cisco.pm:${PORTSDIR}/net-mgmt/p5-Telnet-Cisco \
+		p5-Net-Telnet-Cisco>=0:${PORTSDIR}/net-mgmt/p5-Telnet-Cisco \
 		${LOCALBASE}/bin/htmldoc:${PORTSDIR}/textproc/htmldoc
 
 WRKSRC=		${WRKDIR}/routers2-v${PORTVERSION}/extensions
