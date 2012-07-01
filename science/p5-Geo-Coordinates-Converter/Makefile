@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Geo-Coordinates-Converter
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	science geography perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:YAPPO
+#MASTER_SITE_SUBDIR=	CPAN:YAPPO
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple converter of geo coordinates
 
 BUILD_DEPENDS=	p5-Class-Accessor-Lite>0.0.5:${PORTSDIR}/devel/p5-Class-Accessor-Lite \
