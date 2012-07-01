@@ -17,6 +17,9 @@ MAINTAINER=	admin@lissyara.su
 COMMENT=	Kernel module and program for SkyStar2/SkyStar2.8A, ver. ${PORTVERSION}
 
 USE_BZIP2=	yes
+
+.include <bsd.port.pre.mk>
+
 SYSDIR?=	${SRC_BASE}/sys
 KMODDIR=	/boot/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR}
@@ -48,8 +51,6 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile on ia64, powerprc, or sparc64
