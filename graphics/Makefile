@@ -611,6 +611,7 @@
     SUBDIR += p5-Cairo
     SUBDIR += p5-Captcha-reCAPTCHA
     SUBDIR += p5-Captcha-reCAPTCHA-Mailhide
+    SUBDIR += p5-Chart
     SUBDIR += p5-Chart-Clicker
     SUBDIR += p5-Chart-Graph
     SUBDIR += p5-Chart-PNGgraph
@@ -693,7 +694,6 @@
     SUBDIR += p5-URI-GoogleChart
     SUBDIR += p5-VCG
     SUBDIR += p5-Visio
-    SUBDIR += p5-chart
     SUBDIR += p5-ming
     SUBDIR += panoglview
     SUBDIR += panomatic
