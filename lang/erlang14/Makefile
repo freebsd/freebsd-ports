@@ -7,7 +7,7 @@
 
 PORTNAME=	erlang
 PORTVERSION=	r14b04
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
@@ -22,30 +22,48 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:erlangorg	\
 		${ERLANG_MAN}:erlangorg			\
 		${ERLANG_DOCS}:erlangorg		\
 		${DOC_DISTFILES}
+DIST_SUBDIR=	erlang
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+
+PATCH_SITES=	http://www.erlang.org/download
+
+MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	A functional programming language from Ericsson
+
 DOC_DISTFILES=	armstrong_thesis_2003.pdf:joe		\
 		bjarnelic.pdf:publications		\
 		erlang-book-part1.pdf:erlangorg		\
 		master_thesis_patterns.pdf:local	\
 		mnesia_overview.pdf:publications	\
 		programming_rules.pdf:erlangse
-DIST_SUBDIR=	erlang
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-
-PATCH_SITES=	http://www.erlang.org/download/
-
-MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A functional programming language from Ericsson
 
 CONFLICTS?=	erlang-lite-r[0-9]*
 
 SUB_FILES=	pkg-message
 SUB_LIST=	TOOLS_VSN=${TOOLS_VSN}
 
-OPTIONS=	JAVA	"Enable Java applications"	off \
-		X11	"Enable X11 support"		off \
-		WX	"Enable WX extensions"		off \
-		ODBC	"Enable ODBC"			off \
-		SMP	"Enable SMP"			on
+OPTIONS_DEFINE=	HIPE JAVA KQUEUE ODBC OPENSSL SCTP SMP THREADS WX X11
+OPTIONS_SINGLE=	ODBC
+OPTIONS_SINGLE_ODBC=	IODBC UNIXODBC
+
+HIPE_DESC=	Build native HiPE compiler
+KQUEUE_DESC=	Enable Kernel Poll (kqueue) support
+UNIXODBC_DESC=	Build with unixODBC support
+IODBC_DESC=	Build with libiodbc support
+SCTP_DESC=	Enable SCTP support
+SMP_DESC=	Enable SMP support
+WX_DESC=	Enable WX extensions
+
+OPTIONS_DEFAULT=	SMP OPENSSL THREADS SCTP KQUEUE
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MOPENSSL}
+USE_OPENSSL=YES
+CONFIGURE_ARGS+=--enable-ssl=${OPENSSLBASE} --enable-dynamic-ssl-lib
+.else
+CONFIGURE_ARGS+=--disable-ssl
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -57,18 +75,32 @@ OPTIONS=	JAVA	"Enable Java applications"	off \
 # this is the case (that I could think of at least) was to make sure
 # ${JAVA_HOME}/bin is added to the PATH, using the *_ENV macros.
 
-.if !defined(WITHOUT_JAVA)
+.if ${PORT_OPTIONS:MJAVA}
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 # Make sure ${JAVA_HOME}/bin is in the path
 CONFIGURE_ENV+=	PATH=${PATH}:${JAVA_HOME}/bin
 MAKE_ENV+=	PATH=${PATH}:${JAVA_HOME}/bin
 SCRIPT_ENV+=	PATH=${PATH}:${JAVA_HOME}/bin
+.else
+CONFIGURE_ARGS+=--without-javac
 .endif
 
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MHIPE}
+CONFIGURE_ARGS+=--enable-hipe
+.else
+CONFIGURE_ARGS+=--disable-hipe
+.endif
+
+.if ${PORT_OPTIONS:MKQUEUE}
+CONFIGURE_ARGS+=--enable-kernel-poll
+.else
+CONFIGURE_ARGS+=--disable-kernel-poll
+.endif
+
+.if ${PORT_OPTIONS:MX11}
 USE_TK_RUN=	yes
-.if !defined(WITHOUT_WX)
+.if ${PORT_OPTIONS:MWX}
 USE_WX=		2.8+
 WX_COMPS=	wx contrib
 WX_UNICODE=	yes
@@ -77,24 +109,26 @@ CONFIGURE_ARGS+=--with-wx-config=${WX_CONFIG}
 .endif
 
 USE_GMAKE=	yes
+USE_CSTD=	gnu89
 USE_PERL5=	yes
 USE_RC_SUBR=	epmd.sh
 GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386 amd64 sparc64 powerpc
 REINPLACE_ARGS=	-i
-MAKE_JOBS_UNSAFE=	yes
 
 .if (${OSVERSION} < 700000)
 USE_GCC=	4.2+
 .endif
 
-.if !defined(WITHOUT_ODBC)
-DRIVER_MANAGER?=	iodbc
-.if ${DRIVER_MANAGER} == "unixodbc"
-LIB_DEPENDS+=		odbc.2:${PORTSDIR}/databases/unixODBC
-.else # assume we're using iodbc
-LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
+.if ${PORT_OPTIONS:MODBC}
+CONFIGURE_ARGS+=--with-odbc
+.if ${PORT_OPTIONS:MUNIXODBC}
+LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
+.elif ${PORT_OPTIONS:MIODBC}
+LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
 .endif
+.else
+CONFIGURE_ARGS+=--without-odbc
 .endif
 
 ERLANG_MAN=	otp_doc_man_R14B04.tar.gz
@@ -103,13 +137,25 @@ ERLANG_DOCS=	otp_doc_html_R14B04.tar.gz
 .endif
 ERLANG_PLIST=	${WRKDIR}/pkg-plist
 
+.if ${PORT_OPTIONS:MTHREADS}
+CONFIGURE_ARGS+=--enable-threads
+.else
+CONFIGURE_ARGS+=--disable-threads
+.endif
+
+.if ${PORT_OPTIONS:MSCTP}
+CONFIGURE_ARGS+=--with-sctp
+.else
+CONFIGURE_ARGS+=--without-sctp
+.endif
+
 # enabling --enable-smp-support crashes the OS when
 # net_kernel:start([node_name, shortnames]) invoked repeatedly
 
-.if !defined(WITHOUT_SMP)
-CONFIGURE_ARGS+=--enable-threads --enable-dynamic-ssl-lib --enable-sctp --enable-smp-support
+.if ${PORT_OPTIONS:MSMP}
+CONFIGURE_ARGS+=--enable-smp-support
 .else
-CONFIGURE_ARGS+=--enable-threads --enable-dynamic-ssl-lib --enable-sctp
+CONFIGURE_ARGS+=--disable-smp-support
 .endif
 
 CFLAGS+=	-I${LOCALBASE}/include
@@ -136,7 +182,7 @@ pre-configure:
 	@${REINPLACE_CMD} -e 's#%%CFLAGS%%#${CFLAGS}#g' ${WRKSRC}/lib/wx/configure
 
 # Check if ${JAVAC} exists.
-.if !defined(WITHOUT_JAVA)
+.if ${PORT_OPTIONS:MJAVA}
 	@if [ ! -x ${JAVAC} ]; then \
 		${ECHO_MSG} ">> Error: cannot find ${JAVAC}."; \
 		exit 1; \
