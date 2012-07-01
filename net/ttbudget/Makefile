@@ -17,6 +17,9 @@ MAINTAINER=	admin@lissyara.su
 COMMENT=	Driver for 'TechnoTrend budget DVB S-1401' (SkyStar3)
 
 USE_BZIP2=	yes
+
+.include <bsd.port.pre.mk>
+
 SYSDIR?=	${SRC_BASE}/sys
 KMODDIR=	/boot/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR}
@@ -31,8 +34,6 @@ pre-fetch:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile on ia64, powerprc, or sparc64
