@@ -16,6 +16,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Service monitoring and logging utilities by djb
 
+CONFLICTS=	freedt-[0-9]* serialmail-[0-9]*
+
 LICENSE=	PD
 LICENSE_NAME=	public domain
 LICENSE_TEXT=	The daemontools-0.76.tar.gz archive is in the public domain as of 2007.12.28.
