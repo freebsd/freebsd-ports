@@ -14,6 +14,7 @@ lib/rivet/packages/dio/dio_Postgresql.tcl
 lib/rivet/packages/dio/dio_Sqlite.tcl
 lib/rivet/packages/dio/diodisplay.tcl
 lib/rivet/packages/dtcl/dtcl.tcl
+lib/rivet/packages/entities/entities.tcl
 lib/rivet/packages/form/form.tcl
 lib/rivet/packages/rivet_ncgi/rivet_ncgi.tcl
 lib/rivet/packages/session/README.txt
@@ -36,6 +37,7 @@ lib/rivet/rivet-tcl/README
 lib/rivet/rivet-tcl/cookie.tcl
 lib/rivet/rivet-tcl/debug.tcl
 lib/rivet/rivet-tcl/html.tcl
+lib/rivet/rivet-tcl/http_accept.tcl
 lib/rivet/rivet-tcl/import_keyvalue_pairs.tcl
 lib/rivet/rivet-tcl/import_switch_args.tcl
 lib/rivet/rivet-tcl/incr0.tcl
@@ -45,6 +47,7 @@ lib/rivet/rivet-tcl/lmatch.tcl
 lib/rivet/rivet-tcl/load_cookies.tcl
 lib/rivet/rivet-tcl/load_response.tcl
 lib/rivet/rivet-tcl/parray.tcl
+lib/rivet/rivet-tcl/parray_table.tcl
 lib/rivet/rivet-tcl/random.tcl
 lib/rivet/rivet-tcl/read_file.tcl
 lib/rivet/rivet-tcl/rivet_command_document.tcl
@@ -55,6 +58,7 @@ lib/rivet/rivet-tcl/wrap.tcl
 @dirrm lib/rivet/packages/session
 @dirrm lib/rivet/packages/rivet_ncgi
 @dirrm lib/rivet/packages/form
+@dirrm lib/rivet/packages/entities
 @dirrm lib/rivet/packages/dtcl
 @dirrm lib/rivet/packages/dio
 @dirrm lib/rivet/packages/commserver
