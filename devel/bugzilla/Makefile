@@ -82,7 +82,7 @@ RUN_DEPENDS+=	p5-GD>=1.20:${PORTSDIR}/graphics/p5-GD \
 .endif
 
 .ifdef WITH_CHARTING_MODULES
-RUN_DEPENDS+=	p5-Chart>=2.1:${PORTSDIR}/graphics/p5-chart
+RUN_DEPENDS+=	p5-Chart>=2.1:${PORTSDIR}/graphics/p5-Chart
 .endif
 
 .ifdef WITH_PATCH_VIEWER
