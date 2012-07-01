@@ -30,5 +30,7 @@ BUILD_DEPENDS+=	gsed:${PORTSDIR}/textproc/gsed
 post-configure:
 	${FIND} -X ${WRKSRC} -name 'Makefile' | ${XARGS} ${REINPLACE_CMD} \
 	's/sed /gsed /g'
+	@${REINPLACE_CMD} 's|push_back|this->push_back|' \
+		${WRKSRC}/beagle/include/beagle/RouletteT.hpp
 
 .include <bsd.port.mk>
