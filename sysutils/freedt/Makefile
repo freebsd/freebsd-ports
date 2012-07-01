@@ -15,6 +15,8 @@ MASTER_SITES=	http://offog.org/files/ \
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	An experimental reimplementation of Dan Bernstein's daemontools
 
+CONFLICTS=	daemontools-[0-9]*
+
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
