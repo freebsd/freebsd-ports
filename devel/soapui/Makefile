@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	soapui
-PORTVERSION=	4.5.0
+PORTVERSION=	4.5.1
 CATEGORIES=	devel java www
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/4.5/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/4.5.1/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-linux-bin
 
 MAINTAINER=	fbsd-ports@opsec.eu
@@ -17,20 +17,25 @@ USE_ZIP=	YES
 USE_JAVA=	1.5+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 REINPLACE_ARGS=	-i ''
-SOAPUI_HOME=	${JAVASHAREDIR}/${PORTNAME}
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-build:
-	${REINPLACE_CMD} -e 's:%%SOAPUI_HOME%%:${SOAPUI_HOME}:' \
+	${REINPLACE_CMD} -e 's:%%SOAPUI_HOME%%:${DATADIR}:' \
 			-e 's:%%JAVA%%:${JAVA}:' ${WRKSRC}/bin/${PORTNAME}.sh
+
+.include <bsd.port.options.mk>
+
 do-install:
 .for dir in bin lib
-	( cd ${WRKSRC}/${dir} && ${COPYTREE_SHARE} . ${SOAPUI_HOME}/${dir} )
+	( cd ${WRKSRC}/${dir} && ${COPYTREE_SHARE} . ${DATADIR}/${dir} )
 .endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME}.sh ${PREFIX}/bin
-.if	!defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	( cd ${WRKSRC}/Tutorials && ${COPYTREE_SHARE} . ${EXAMPLESDIR}/Tutorials )
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .	for i in ${PORTDOCS}
 		${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
