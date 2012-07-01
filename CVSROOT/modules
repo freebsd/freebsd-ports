@@ -1748,6 +1748,7 @@ claws-mail-gtkhtml2_viewer      ports/mail/claws-mail-gtkhtml2_viewer
 claws-mail-mailmbox             ports/mail/claws-mail-mailmbox
 claws-mail-newmail              ports/mail/claws-mail-newmail
 claws-mail-notification         ports/mail/claws-mail-notification
+claws-mail-pdf_viewer           ports/mail/claws-mail-pdf_viewer
 claws-mail-perl                 ports/mail/claws-mail-perl
 claws-mail-python               ports/mail/claws-mail-python
 claws-mail-rssyl                ports/mail/claws-mail-rssyl
@@ -5376,6 +5377,7 @@ hdf                             ports/science/hdf
 hdf-java                        ports/science/hdf-java
 hdf5                            ports/science/hdf5
 hdf5-18                         ports/science/hdf5-18
+hdrecover                       ports/sysutils/hdrecover
 hdup                            ports/sysutils/hdup
 healthd                         ports/sysutils/healthd
 heartbeat                       ports/sysutils/heartbeat
@@ -13336,6 +13338,7 @@ p5-Mail-SendEasy                ports/mail/p5-Mail-SendEasy
 p5-Mail-Sender                  ports/mail/p5-Mail-Sender
 p5-Mail-Sendmail                ports/mail/p5-Mail-Sendmail
 p5-Mail-SpamAssassin            ports/mail/p5-Mail-SpamAssassin
+p5-Mail-SpamAssassin-Alt        ports/mail/p5-Mail-SpamAssassin-Alt
 p5-Mail-Spool                   ports/mail/p5-Mail-Spool
 p5-Mail-Tools                   ports/mail/p5-Mail-Tools
 p5-Mail-Transport-Dbx           ports/mail/p5-Mail-Transport-Dbx
@@ -17847,6 +17850,7 @@ p5-mail-sendeasy                ports/mail/p5-Mail-SendEasy
 p5-mail-sender                  ports/mail/p5-Mail-Sender
 p5-mail-sendmail                ports/mail/p5-Mail-Sendmail
 p5-mail-spamassassin            ports/mail/p5-Mail-SpamAssassin
+p5-mail-spamassassin-alt        ports/mail/p5-Mail-SpamAssassin-Alt
 p5-mail-spf                     ports/mail/p5-Mail-SPF
 p5-mail-spf-query               ports/mail/p5-Mail-SPF-Query
 p5-mail-spool                   ports/mail/p5-Mail-Spool
