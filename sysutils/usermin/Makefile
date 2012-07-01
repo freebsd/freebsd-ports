@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	usermin
-PORTVERSION=	1.500
+PORTVERSION=	1.510
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/uupdates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf \
