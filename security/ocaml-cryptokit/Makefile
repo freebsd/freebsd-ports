@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	cryptokit
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	security
-MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/639/
+MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/891/
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	jaapb@kerguelen.org
@@ -22,7 +22,11 @@ USE_OCAML_FINDLIB=	yes
 USE_OCAMLFIND_PLIST=	yes
 MAKE_JOBS_SAFE=	yes
 
-.ifndef(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 ALL_TARGET+=	doc
 CONFIGURE_ARGS+=	--docdir ${PREFIX}/share/doc/ocaml
 
