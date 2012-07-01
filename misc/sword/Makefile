@@ -7,6 +7,7 @@
 
 PORTNAME=	sword
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.crosswire.org/pub/sword/source/v1.6/ \
 		http://crosswire.org/ftpmirror/pub/sword/source/v1.6/ \
@@ -26,15 +27,16 @@ USE_GNOME=	pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake autoconf
-CONFIGURE_ARGS+=	--without-conf --without-clucene --with-zlib --without-icu
+CONFIGURE_ARGS+=	--without-conf --with-zlib
 USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-OPTIONS_DEFINE=	CURL
-OPTIONS_DEFAULT=CURL
+OPTIONS_DEFINE=	CURL CLUCENE
+CLUCENE_DESC=	Include indexing capability
+OPTIONS_DEFAULT=CURL CLUCENE
 
 .include <bsd.port.options.mk>
 
@@ -43,6 +45,16 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-curl
 .else
 CONFIGURE_ARGS+=	--without-curl
+.endif
+
+.if ${PORT_OPTIONS:MCLUCENE}
+LIB_DEPENDS+=	clucene:${PORTSDIR}/textproc/clucene \
+		icudata:${PORTSDIR}/devel/icu
+CONFIGURE_ARGS+=	--with-clucene --with-icu
+PLIST_SUB+=		ICU=""
+.else
+CONFIGURE_ARGS+=	--without-clucene --without-icu
+PLIST_SUB+=		ICU="@comment "
 .endif
 
 run-autotools::	run-autotools-aclocal
