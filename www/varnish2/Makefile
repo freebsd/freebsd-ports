@@ -35,12 +35,6 @@ MAN7=		vcl.7
 USE_RC_SUBR=	varnishd varnishlog varnishncsa
 SUB_FILES=	pkg-message
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 601000
-BROKEN=		does not compile
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|\$$(libdir)/pkgconfig|\$$(prefix)/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
@@ -48,4 +42,4 @@ post-patch:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
