@@ -5,12 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	libupskirt
-DISTVERSION=	1.1
+PORTNAME=	libsoldout
+DISTVERSION=	1.2
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://instinctive.eu/code/
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	natbsd@instinctive.eu
 COMMENT=	Flexible C library for markdown
 
 LICENSE=	BSD
@@ -27,11 +27,11 @@ BROKEN=		does not compile on 6.X
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/libupskirt.so.2 ${PREFIX}/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/lace ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/kilt ${PREFIX}/bin
-	cd ${PREFIX}/lib && ${LN} -s libupskirt.so.2 libupskirt.so
-	${MKDIR} ${PREFIX}/include/upskirt
-	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/upskirt
+	${INSTALL_PROGRAM} ${WRKSRC}/libsoldout.so.1 ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/mkd2html ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/mkd2man ${PREFIX}/bin
+	cd ${PREFIX}/lib && ${LN} -s libsoldout.so.1 libsoldout.so
+	${MKDIR} ${PREFIX}/include/soldout
+	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/soldout
 
 .include <bsd.port.post.mk>
