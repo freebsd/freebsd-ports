@@ -7,7 +7,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	5
+PORTREVISION=	0
 
 MASTER_SITE_SUBDIR=	src/${PORTVERSION}/
 MASTER_SITES+=	http://dev-www.libreoffice.org/src/:ext \
@@ -24,10 +24,10 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		dmake:${PORTSDIR}/devel/dmake \
 		p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
+		${LOCALBASE}/lib/libboost_regex.a:${PORTSDIR}/devel/boost-libs \
 		vigra-config:${PORTSDIR}/graphics/vigra
 
 #		${LOCALBASE}/include/mdds/global.hpp:${PORTSDIR}/devel/mdds
-#		${LOCALBASE}/lib/libboost_regex.a:${PORTSDIR}/devel/boost-libs
 
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
@@ -81,8 +81,8 @@ DISTFILES+=	${PORTNAME}-${components}-${LOVERSION}${EXTRACT_SUFX}
 
 EXTRACT_ONLY:=	${DISTFILES}
 
-DISTFILES+=	0ff7d225d087793c8c2c680d77aac3e7-mdds_0.5.3.tar.bz2:ext \
-		f02578f5218f217a9f20e9c30e119c6a-boost_1_44_0.tar.bz2:ext
+DISTFILES+=	0ff7d225d087793c8c2c680d77aac3e7-mdds_0.5.3.tar.bz2:ext
+#		f02578f5218f217a9f20e9c30e119c6a-boost_1_44_0.tar.bz2:ext
 
 USE_BDB=	yes
 USE_PERL5_BUILD=	yes
@@ -112,7 +112,6 @@ CONFIGURE_ENV=		GPERF=${LOCALBASE}/bin/gperf \
 			OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 			OPENSSL_LIBS="-L${OPENSSLLIB} -lssl"
 
-#			--with-system-boost
 #			--with-system-mdds
 CONFIGURE_ARGS+=	--with-unix-wrapper="libreoffice" \
 			--disable-fetch-external \
@@ -121,6 +120,7 @@ CONFIGURE_ARGS+=	--with-unix-wrapper="libreoffice" \
 			--exec-prefix=${PREFIX} \
 			--with-gnu-patch=${LOCALBASE}/bin/gpatch \
 			--with-external-tar=${DISTDIR}/${DIST_SUBDIR} \
+			--with-system-boost \
 			--with-system-libxml \
 			--with-system-cairo \
 			--enable-cairo-canvas \
@@ -226,7 +226,7 @@ CXXCPP=	clang++ -E
 CPP=	clang -E
 .endif
 # XXX Work around C++11 problems with Clang.
-CXXFLAGS=	-std=gnu++98 -Qunused-arguments
+CXXFLAGS+=	-std=gnu++0x -Qunused-arguments
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcppunit.so:${PORTSDIR}/devel/cppunit
 .endif
 
