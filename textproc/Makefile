@@ -374,6 +374,7 @@
     SUBDIR += libparsifal
     SUBDIR += libpathan
     SUBDIR += libroxml
+    SUBDIR += libsoldout
     SUBDIR += libsphinxclient
     SUBDIR += libstree
     SUBDIR += libtext-charwidth-perl
@@ -382,7 +383,6 @@
     SUBDIR += libtranslate
     SUBDIR += libtre
     SUBDIR += libuninameslist
-    SUBDIR += libupskirt
     SUBDIR += libvisio
     SUBDIR += libwpd
     SUBDIR += libwpd08

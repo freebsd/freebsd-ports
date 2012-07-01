@@ -3533,3 +3533,4 @@ sysutils/xfce4-utils||2012-06-23|No longer relevant, see UPDATING
 devel/py-sendfile|net/py-pysendfile|2012-06-24|Domain lapsed, forked
 www/joomla||2012-06-25|Unmaintained upstream, please use www/joomla25 instead.
 graphics/p5-chart|graphics/p5-Chart|2012-06-30|Move to a better place via repocopy
+textproc/libupskirt|textproc/libsoldout|2012-07-01|Move to respect upstream new name
