@@ -12,5 +12,5 @@
 +LDFLAGS?=-g -O3 -Wall -Werror
 +CC?=gcc
  
- all:		libupskirt.so lace kilt
+ all:		libsoldout.so mkd2html mkd2man
  

@@ -3,7 +3,7 @@ lightweight C library that can parse John Gruber's [markdown]
 it into several formats and can be easily extended.
 
 It also provides two usage examples:
-- lace: markdown to xhtml conversion.
-- kilt: markdown to manpage conversion.
+- mkd2html: markdown to xhtml conversion.
+- mkd2man: markdown to manpage conversion.
 
-WWW: http://fossil.instinctive.eu/libupskirt/index
+WWW: http://fossil.instinctive.eu/libsoldout/index
