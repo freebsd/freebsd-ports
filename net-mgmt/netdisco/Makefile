@@ -13,23 +13,23 @@ MASTER_SITES=	SF
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Web-based network management tool for moderate to large networks
 
-OPTIONS=	GRAPHVIZ "Install GraphViz for network map support"	on	\
-		OUIDL "Download oui.txt file"   off	\
+OPTIONS=	GRAPHVIZ "Install GraphViz for network map support"	on \
+		OUIDL "Download oui.txt file"   off \
 		MIBS "depend on net-mgmt/netdisco-mibs" on
 
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2 		\
-		${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI			\
-		${SITE_PERL}/${PERL_ARCH}/APR/Request/Apache2.pm:${PORTSDIR}/www/p5-libapreq2 	\
-		${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP			\
-		${SITE_PERL}/SNMP/Info.pm:${PORTSDIR}/net-mgmt/p5-SNMP-Info			\
-		${SITE_PERL}/HTML/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason			\
-		${SITE_PERL}/DB_File/Lock.pm:${PORTSDIR}/devel/p5-DB_File-Lock			\
-		${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session		\
-		${SITE_PERL}/Net/NBName.pm:${PORTSDIR}/net/p5-Net-NBName			\
-		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg		\
-		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser	\
-		${SITE_PERL}/MasonX/Request/WithApacheSession.pm:${PORTSDIR}/www/p5-MasonX-Request-WithApacheSession	\
-		${SITE_PERL}/Parallel/ForkManager.pm:${PORTSDIR}/devel/p5-Parallel-ForkManager	\
+RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
+		p5-Apache-DBI>=0:${PORTSDIR}/www/p5-Apache-DBI	\
+		p5-libapreq2>=0:${PORTSDIR}/www/p5-libapreq2 \
+		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
+		p5-SNMP-Info>=0:${PORTSDIR}/net-mgmt/p5-SNMP-Info \
+		p5-HTML-Mason>=0:${PORTSDIR}/www/p5-HTML-Mason \
+		p5-DB_File-Lock>=0:${PORTSDIR}/devel/p5-DB_File-Lock \
+		p5-Apache-Session>=0:${PORTSDIR}/www/p5-Apache-Session \
+		p5-Net-NBName>=0:${PORTSDIR}/net/p5-Net-NBName \
+		p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg \
+		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-MasonX-Request-WithApacheSession>=0:${PORTSDIR}/www/p5-MasonX-Request-WithApacheSession \
+		p5-Parallel-ForkManager>=0:${PORTSDIR}/devel/p5-Parallel-ForkManager
 
 USERS=		netdisco
 GROUPS=		netdisco
@@ -84,8 +84,8 @@ RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
 .endif
 
 .if defined(WITH_GRAPHVIZ)
-RUN_DEPENDS+=	${SITE_PERL}/Graph.pm:${PORTSDIR}/math/p5-Graph	\
-		${SITE_PERL}/GraphViz.pm:${PORTSDIR}/graphics/p5-GraphViz
+RUN_DEPENDS+=	p5-Graph>=0:${PORTSDIR}/math/p5-Graph	\
+		p5-GraphViz>=0:${PORTSDIR}/graphics/p5-GraphViz
 .endif
 
 .if defined(WITH_OUIDL)

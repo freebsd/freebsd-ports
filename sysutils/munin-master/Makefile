@@ -15,25 +15,25 @@ PKGNAMESUFFIX=	-master
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Collector part of Munin
 
-BUILD_DEPENDS=	${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build \
-		${SITE_PERL}/Munin/Common/Defaults.pm:${PORTSDIR}/sysutils/munin-common \
-		${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
-		${SITE_PERL}/${PERL_ARCH}/RRDs.pm:${PORTSDIR}/databases/rrdtool \
-		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
-		${SITE_PERL}/DateTime/HiRes.pm:${PORTSDIR}/devel/p5-DateTime-HiRes \
-		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
-		${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
-		${SITE_PERL}/Log/Log4perl.pm:${PORTSDIR}/devel/p5-Log-Log4perl \
-		${SITE_PERL}/Text/Balanced.pm:${PORTSDIR}/textproc/p5-Text-Balanced
-RUN_DEPENDS=	${SITE_PERL}/Munin/Common/Defaults.pm:${PORTSDIR}/sysutils/munin-common \
-		${SITE_PERL}/${PERL_ARCH}/RRDs.pm:${PORTSDIR}/databases/rrdtool \
-		${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
-		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
-		${SITE_PERL}/DateTime/HiRes.pm:${PORTSDIR}/devel/p5-DateTime-HiRes \
-		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
-		${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
-		${SITE_PERL}/Log/Log4perl.pm:${PORTSDIR}/devel/p5-Log-Log4perl \
-		${SITE_PERL}/Text/Balanced.pm:${PORTSDIR}/textproc/p5-Text-Balanced
+BUILD_DEPENDS=	p5-Module-Build>=0:${PORTSDIR}/devel/p5-Module-Build \
+		munin-common>=0:${PORTSDIR}/sysutils/munin-common \
+		p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay \
+		rrdtool>=0:${PORTSDIR}/databases/rrdtool \
+		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable \
+		p5-DateTime-HiRes>=0:${PORTSDIR}/devel/p5-DateTime-HiRes \
+		p5-Getopt-Long>=0:${PORTSDIR}/devel/p5-Getopt-Long \
+		p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
+		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
+		p5-Text-Balanced>=0:${PORTSDIR}/textproc/p5-Text-Balanced
+RUN_DEPENDS=	munin-common>=0:${PORTSDIR}/sysutils/munin-common \
+		rrdtool>=0:${PORTSDIR}/databases/rrdtool \
+		p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay \
+		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable \
+		p5-DateTime-HiRes>=0:${PORTSDIR}/devel/p5-DateTime-HiRes \
+		p5-Getopt-Long>=0:${PORTSDIR}/devel/p5-Getopt-Long \
+		p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
+		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
+		p5-Text-Balanced>=0:${PORTSDIR}/textproc/p5-Text-Balanced
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
