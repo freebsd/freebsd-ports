@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.lissyara.su/users/nsand/skyfish/
 MAINTAINER=	nsand@sura.ru
 COMMENT=	Grabbing TCP streams from network interface (SAT internet)
 
+.include <bsd.port.pre.mk>
+
 SYSDIR?=	${SRC_BASE}/sys
 KMODDIR=	/boot/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR}
@@ -28,4 +30,4 @@ pre-fetch:
 	exit 1
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
