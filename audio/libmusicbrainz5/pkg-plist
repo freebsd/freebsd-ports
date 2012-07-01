@@ -17,8 +17,12 @@ include/musicbrainz4/Entity.h
 include/musicbrainz4/FreeDBDisc.h
 include/musicbrainz4/FreeDBDiscList.h
 include/musicbrainz4/HTTPFetch.h
+include/musicbrainz4/IPI.h
+include/musicbrainz4/IPIList.h
 include/musicbrainz4/ISRC.h
 include/musicbrainz4/ISRCList.h
+include/musicbrainz4/ISWC.h
+include/musicbrainz4/ISWCList.h
 include/musicbrainz4/Label.h
 include/musicbrainz4/LabelInfo.h
 include/musicbrainz4/LabelInfoList.h
@@ -42,10 +46,13 @@ include/musicbrainz4/Recording.h
 include/musicbrainz4/RecordingList.h
 include/musicbrainz4/Relation.h
 include/musicbrainz4/RelationList.h
+include/musicbrainz4/RelationListList.h
 include/musicbrainz4/Release.h
 include/musicbrainz4/ReleaseGroup.h
 include/musicbrainz4/ReleaseGroupList.h
 include/musicbrainz4/ReleaseList.h
+include/musicbrainz4/SecondaryType.h
+include/musicbrainz4/SecondaryTypeList.h
 include/musicbrainz4/Tag.h
 include/musicbrainz4/TagList.h
 include/musicbrainz4/TextRepresentation.h
@@ -56,10 +63,11 @@ include/musicbrainz4/UserTag.h
 include/musicbrainz4/UserTagList.h
 include/musicbrainz4/Work.h
 include/musicbrainz4/WorkList.h
+include/musicbrainz4/defines.h
 include/musicbrainz4/mb4_c.h
 include/musicbrainz4/xmlParser.h
 lib/libmusicbrainz4.so
 lib/libmusicbrainz4.so.3
-lib/libmusicbrainz4.so.3.0.0
+lib/libmusicbrainz4.so.3.2.1
 libdata/pkgconfig/libmusicbrainz4.pc
 @dirrm include/musicbrainz4
