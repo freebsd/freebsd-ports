@@ -20,6 +20,8 @@ KMODDIR?=	/boot/modules
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+.include <bsd.port.pre.mk>
+
 SRC_BASE?=	/usr/src
 
 PLIST_SUB=	KMODDIR=${KMODDIR}
@@ -28,8 +30,6 @@ MAKE_ENV+=	KMODDIR=${KMODDIR}
 PLIST_FILES=	"@cwd %%KMODDIR%%"
 PLIST_FILES+=	mono.ko
 PLIST_FILES+=	"@unexec kldxref ${KMODDIR}"
-
-.include <bsd.port.pre.mk>
 
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel source to be installed
