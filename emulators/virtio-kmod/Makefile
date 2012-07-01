@@ -24,11 +24,11 @@ PLIST_SUB=	KMODDIR=${KMODDIR:C,^/,,}
 NEEDSUBDIRS=	amd64 conf contrib dev/pci geom i386 kern net netinet netinet6 \
 	sys tools vm x86
 
+.include <bsd.port.pre.mk>
+
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel source to be installed
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${OSREL} != "8.2" && ${OSREL} != "8.3" && ${OSREL} != "9.0"
 IGNORE=		not supported $${OSREL} (${OSREL})
