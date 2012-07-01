@@ -17,4 +17,10 @@ COMMENT=	Bell Laboratories cardiac computer emulator
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
+PLIST_FILES=	bin/cinc \
+		bin/casm
+
+post-patch:
+	@${REINPLACE_CMD} 's|-I-||g' ${WRKSRC}/Makefile.in
+
 .include <bsd.port.mk>
