@@ -465,9 +465,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Implies inclusion of bsd.kde4.mk.  See bsd.kde4.mk
 #				  for more details.
 #
-# USE_QT_VER	- Set to 3 or 4 to use the respective version
-#				  of the Qt libraries.
-#				  Implies inclusion of bsd.kde.mk or bsd.qt.mk.
+# USE_QT_VER	- Set to 3 to use the Qt 3 libraries.
+#				  Implies inclusion of bsd.kde.mk.
 #
 # USE_QT4		- A list of the QT4 dependencies the port has (e.g,
 #				  corelib, webkit).  Implies that the port needs Qt.
