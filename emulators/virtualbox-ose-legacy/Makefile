@@ -21,9 +21,6 @@ EXTRACT_ONLY=	VirtualBox-${DISTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	A general-purpose full virtualizer for x86 hardware
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
-
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		as86:${PORTSDIR}/devel/dev86 \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
@@ -32,6 +29,9 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		xslt.2:${PORTSDIR}/textproc/libxslt \
 		curl.6:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	/boot/modules/vboxdrv.ko:${PORTSDIR}/emulators/virtualbox-ose-kmod-legacy
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}_OSE
 ONLY_FOR_ARCHS=	i386 amd64
@@ -79,8 +79,6 @@ PLIST_SUB+=	PYTHON_VER=${PYTHON_VER} \
 
 SUB_LIST+=	VBOXUSER=${VBOXUSER}
 USE_RC_SUBR+=	vboxheadless
-
-.include <bsd.port.pre.mk>
 
 KMK_BUILDTYPE=	release
 KMK_CONFIG=	VBOX_LIBPATH_X11=${LOCALBASE} VBOX_FREEBSD_SRC=${SRC_BASE}/sys
@@ -175,6 +173,8 @@ PLIST_SUB+=	I386=""
 KMK_ARCH=	freebsd.${ARCH}
 PLIST_SUB+=	I386="@comment "
 .endif
+
+.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 900012
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-include-iprt-string.h
