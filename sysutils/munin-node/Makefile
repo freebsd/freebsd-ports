@@ -14,17 +14,17 @@ PKGNAMESUFFIX=	-node
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Node-specific part of Munin
 
-BUILD_DEPENDS=	${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build \
-		${SITE_PERL}/DateTime/HiRes.pm:${PORTSDIR}/devel/p5-DateTime-HiRes \
-		${SITE_PERL}/Munin/Common/Defaults.pm:${PORTSDIR}/sysutils/munin-common \
-		${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
-		${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
+BUILD_DEPENDS=	p5-Module-Build>=0:${PORTSDIR}/devel/p5-Module-Build \
+		p5-DateTime-HiRes>=0:${PORTSDIR}/devel/p5-DateTime-HiRes \
+		munin-common>=0:${PORTSDIR}/sysutils/munin-common \
+		p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
+		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
 		bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS=	${SITE_PERL}/Cache/Cache.pm:${PORTSDIR}/devel/p5-Cache-Cache \
-		${SITE_PERL}/DateTime/HiRes.pm:${PORTSDIR}/devel/p5-DateTime-HiRes \
-		${SITE_PERL}/Munin/Common/Defaults.pm:${PORTSDIR}/sysutils/munin-common \
-		${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
-		${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
+RUN_DEPENDS=	p5-Cache-Cache>=0:${PORTSDIR}/devel/p5-Cache-Cache \
+		p5-DateTime-HiRes>=0:${PORTSDIR}/devel/p5-DateTime-HiRes \
+		munin-common>=0:${PORTSDIR}/sysutils/munin-common \
+		p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
+		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
 		bash:${PORTSDIR}/shells/bash
 
 USE_PERL5=	yes
