@@ -170,7 +170,7 @@ CONFIGURE_ARGS+=	INSTALLDIRS="site"
 .endif # defined(PERL_MODBUILD)
 
 .if defined(PERL_CONFIGURE)
-USE_PERL5=	yes
+USE_PERL5?=	yes
 # Disable AutoInstall from attempting to install from CPAN directly in
 # the case of missing dependencies.  This causes the build to loop on
 # the build cluster asking for interactive input.
