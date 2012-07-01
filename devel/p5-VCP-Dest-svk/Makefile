@@ -16,10 +16,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	VCP destination driver for svn/svk
 
-BUILD_DEPENDS=	${SITE_PERL}/VCP.pm:${PORTSDIR}/devel/p5-VCP-autrijus \
-		${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/p5-subversion \
-		${SITE_PERL}/SVK.pm:${PORTSDIR}/devel/svk \
-		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
+BUILD_DEPENDS=	p5-VCP-autrijus>=0:${PORTSDIR}/devel/p5-VCP-autrijus \
+		p5-subversion>=0:${PORTSDIR}/devel/p5-subversion \
+		svk>=0:${PORTSDIR}/devel/svk \
+		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

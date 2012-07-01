@@ -15,10 +15,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	cristi@net.utcluj.ro
 COMMENT=	Network Discovery and Monitoring tool
 
-RUN_DEPENDS=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
-		${SITE_PERL}/Net/Telnet/Cisco.pm:${PORTSDIR}/net-mgmt/p5-Telnet-Cisco \
-		${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff \
-		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
+		p5-Net-Telnet-Cisco>=0:${PORTSDIR}/net-mgmt/p5-Telnet-Cisco \
+		p5-Algorithm-Diff>=0:${PORTSDIR}/devel/p5-Algorithm-Diff \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes

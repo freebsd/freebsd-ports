@@ -23,14 +23,14 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		pcre.1:${PORTSDIR}/devel/pcre \
 		avutil.1:${PORTSDIR}/multimedia/ffmpeg
 BUILD_DEPENDS=	${LOCALBASE}/bin/php-config:${PORTSDIR}/lang/php5-extensions \
-		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER} \
-		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
-		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-		${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
-		${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite \
-		${SITE_PERL}/MIME/Entity.pm:${PORTSDIR}/mail/p5-MIME-Tools \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-DBD-mysql${MYSQL_VER}>=0:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER} \
+		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
+		p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
+		p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \
+		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
 		${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
 
 GNU_CONFIGURE=	yes

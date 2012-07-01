@@ -16,7 +16,7 @@ DISTNAME=	Pushmi-v${PORTVERSION}
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Subversion repository replication tool
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/p5-subversion \
+RUN_DEPENDS=	p5-subversion>=0:${PORTSDIR}/devel/p5-subversion \
 		p5-App-CLI>=0.06:${PORTSDIR}/devel/p5-App-CLI \
 		p5-Cache-Memcached>=0:${PORTSDIR}/databases/p5-Cache-Memcached \
 		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
@@ -27,9 +27,10 @@ BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		p5-IPC-Run3>=0:${PORTSDIR}/devel/p5-IPC-Run3 \
 		p5-RunApp>=0.13:${PORTSDIR}/devel/p5-RunApp \
 		p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output \
-		${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
+		${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2
 
 PERL_CONFIGURE=	yes
+USE_APACHE=	20+
 
 MAN3=		Pushmi.3 \
 		Pushmi::Command::Mirror.3 \

@@ -131,7 +131,7 @@ RUN_DEPENDS+=	${PEAR_DIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime \
 .endif
 
 .if defined(WITH_MYSQL)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
 .if defined(WITH_MYSQLSERVER)
@@ -139,7 +139,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/mysqld_safe:${PORTSDIR}/databases/mysql55-server
 .endif
 
 .if defined(WITH_PGSQL)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
 .if defined(WITH_PGSQLSERVER)
@@ -159,7 +159,7 @@ RUN_DEPENDS+=	${LOCALBASE}/www/postfixadmin/config.inc.php:${PORTSDIR}/mail/post
 .endif
 
 .if defined(WITH_FUZZYOCR)
-RUN_DEPENDS+=	${SITE_PERL}/Mail/SpamAssassin/Plugin/FuzzyOcr.pm:${PORTSDIR}/mail/p5-FuzzyOcr-devel
+RUN_DEPENDS+=	p5-FuzzyOcr-devel>=0:${PORTSDIR}/mail/p5-FuzzyOcr-devel
 .endif
 
 .if defined(WITH_CLAMAV)
@@ -167,7 +167,7 @@ RUN_DEPENDS+=	clamd:${PORTSDIR}/security/clamav
 .endif
 
 .if defined(WITH_SPAMASSASSIN)
-RUN_DEPENDS+=	${SITE_PERL}/Mail/SpamAssassin.pm:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+RUN_DEPENDS+=	p5-Mail-SpamAssassin>=0:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 .endif
 
 .if defined(WITH_GRAPHICS)
@@ -179,7 +179,7 @@ RUN_DEPENDS+=	${PEAR_DIR}/Image/Color.php:${PORTSDIR}/graphics/pear-Image_Color 
 .endif
 
 .if defined(WITH_BDB)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB
+RUN_DEPENDS+=	p5-BerkeleyDB>=0:${PORTSDIR}/databases/p5-BerkeleyDB
 .endif
 
 .if defined(WITH_ALTERMIME)
@@ -187,25 +187,25 @@ RUN_DEPENDS+=	altermime:${PORTSDIR}/mail/altermime
 .endif
 
 .if defined(WITH_CRYPT)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Crypt/Blowfish.pm:${PORTSDIR}/security/p5-Crypt-Blowfish \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/OpenSSL/RSA.pm:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA \
-		${SITE_PERL}/Crypt/CBC.pm:${PORTSDIR}/security/p5-Crypt-CBC
+RUN_DEPENDS+=	p5-Crypt-Blowfish>=0:${PORTSDIR}/security/p5-Crypt-Blowfish \
+		p5-Crypt-OpenSSL-RSA>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA \
+		p5-Crypt-CBC>=0:${PORTSDIR}/security/p5-Crypt-CBC
 .endif
 
 .if defined(WITH_IPCOUNTRY)
-RUN_DEPENDS+=	${SITE_PERL}/IP/Country.pm:${PORTSDIR}/net/p5-IP-Country
+RUN_DEPENDS+=	p5-IP-Country>=0:${PORTSDIR}/net/p5-IP-Country
 .endif
 
 .if defined(WITH_DOMAINKEYS)
-RUN_DEPENDS+=	${SITE_PERL}/Mail/DomainKeys.pm:${PORTSDIR}/mail/p5-Mail-DomainKeys
+RUN_DEPENDS+=	p5-Mail-DomainKeys>=0:${PORTSDIR}/mail/p5-Mail-DomainKeys
 .endif
 
 .if defined(WITH_SPF)
-RUN_DEPENDS+=	${SITE_PERL}/Mail/SPF.pm:${PORTSDIR}/mail/p5-Mail-SPF
+RUN_DEPENDS+=	p5-Mail-SPF>=0:${PORTSDIR}/mail/p5-Mail-SPF
 .endif
 
 .if defined(WITH_DKIM)
-RUN_DEPENDS+=	${SITE_PERL}/Mail/DKIM.pm:${PORTSDIR}/mail/p5-Mail-DKIM
+RUN_DEPENDS+=	p5-Mail-DKIM>=0:${PORTSDIR}/mail/p5-Mail-DKIM
 .endif
 
 .if defined(WITH_FILE)

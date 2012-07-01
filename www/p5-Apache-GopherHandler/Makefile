@@ -15,11 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	toni.viemero@iki.fi
 COMMENT=	Gopher protocol implementation for Apache2
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2 \
-		${SITE_PERL}/Gopher/Server/ParseRequest.pm:${PORTSDIR}/net/p5-Gopher-Server
+RUN_DEPENDS=	{APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
+		p5-Gopher-Server>=0:${PORTSDIR}/net/p5-Gopher-Server
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
+USE_APACHE=	20+
 
 MAN3=		Apache::GopherHandler.3 \
 		Apache::GopherHandler::TiedSocket.3
