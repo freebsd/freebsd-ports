@@ -21,8 +21,10 @@ GNU_CONFIGURE=	yes
 MAN8=		cciss_vol_status.8
 PLIST_FILES=	bin/cciss_vol_status
 
+.include <bsd.port.pre.mk>
+
 .if !exists(${SRC_BASE}/sys/dev/ciss/cissio.h)
 IGNORE=		cciss_vol_status requires kernel sources of the ciss driver
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
