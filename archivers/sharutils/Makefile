@@ -25,13 +25,15 @@ INSTALL_TARGET=	install install-man
 MAN1=		gshar.1 gunshar.1
 INFO=		sharutils
 
-.if defined(WITHOUT_NLS)
-PLIST_SUB+=	NLS="@comment "
-CONFIGURE_ARGS+=--disable-nls
-.else
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=--with-libintl-prefix="${LOCALBASE}"
+.else
+PLIST_SUB+=	NLS="@comment "
+CONFIGURE_ARGS+=--disable-nls
 .endif
 
 post-patch:
@@ -54,4 +56,4 @@ post-patch:
 		${WRKSRC}/doc/${man}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
