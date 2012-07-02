@@ -56,7 +56,7 @@ pre-everything::
 	@if [ -f ${PREFIX}/etc/couchdb/local.ini -a \
 	    ! -f ${PREFIX}/etc/couchdb/local.ini.sample ] && \
 	    ${PKG_INFO} -qX '${PKGBASE}-[01].[^2-6][0-9]*(\.[0-9a-z]*)*(,1)?'; \
-	   then ${ECHO_MSG} Please see UPDATING note 20120613 to avoid loss of your local.ini ; \
+	   then ${ECHO_MSG} Please see UPDATING note 20120702 to avoid loss of your local.ini ; \
 		exit 2 ; \
 	fi
 
