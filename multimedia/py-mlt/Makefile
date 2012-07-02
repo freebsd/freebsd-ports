@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	mlt
-PORTVERSION=	0.7.8
-PORTREVISION=	1
+PORTVERSION=	0.8.0
 CATEGORIES=	multimedia python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +18,7 @@ COMMENT=	Python bindings for the MLT multimedia framework
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL
 
-LIB_DEPENDS=	mlt.4:${PORTSDIR}/multimedia/mlt
+LIB_DEPENDS=	mlt.5:${PORTSDIR}/multimedia/mlt
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 
@@ -52,7 +51,7 @@ do-install:
 post-install:
 .ifndef(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}/python
-.for f in codecs play waveforms
+.for f in codecs getimage play waveforms
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/${f}.py ${EXAMPLESDIR}/python
 .endfor
 .endif
