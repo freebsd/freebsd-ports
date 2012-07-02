@@ -32,6 +32,8 @@ WRKSRC=	${WRKDIR}/${PORTNAME}
 USE_RUBY=	yes
 NO_BUILD=	yes
 
+CONFLICTS=	mikutter-0.1.1.*
+
 RUBY_SHEBANG_FILES=	mikutter.rb \
 			core/autotag.rb \
 			core/chi.rb \
