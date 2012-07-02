@@ -461,6 +461,7 @@
     SUBDIR += libexif
     SUBDIR += libexif-gtk
     SUBDIR += libfpx
+    SUBDIR += libgaiagraphics
     SUBDIR += libgeotiff
     SUBDIR += libgfx
     SUBDIR += libggi
