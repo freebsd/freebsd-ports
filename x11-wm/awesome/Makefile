@@ -23,17 +23,17 @@ BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xcb-util>=0.3.8:${PORTSDIR}/x11/xcb-util \
 		xproto>=7.0.11:${PORTSDIR}/x11/xproto \
 		${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml-450
-LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
-		ev.4:${PORTSDIR}/devel/libev \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
-		xdg-basedir.2:${PORTSDIR}/x11/libxdg-basedir \
-		xcb.2:${PORTSDIR}/x11/libxcb \
-		xcb-util.0:${PORTSDIR}/x11/xcb-util \
-		xcb-image.0:${PORTSDIR}/x11/xcb-util-image \
-		xcb-keysyms.1:${PORTSDIR}/x11/xcb-util-keysyms \
-		xcb-icccm.4:${PORTSDIR}/x11/xcb-util-wm \
-		execinfo.1:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
+		ev:${PORTSDIR}/devel/libev \
+		freetype:${PORTSDIR}/print/freetype2 \
+		startup-notification-1:${PORTSDIR}/x11/startup-notification \
+		xdg-basedir:${PORTSDIR}/x11/libxdg-basedir \
+		xcb:${PORTSDIR}/x11/libxcb \
+		xcb-util:${PORTSDIR}/x11/xcb-util \
+		xcb-image:${PORTSDIR}/x11/xcb-util-image \
+		xcb-keysyms:${PORTSDIR}/x11/xcb-util-keysyms \
+		xcb-icccm:${PORTSDIR}/x11/xcb-util-wm \
+		execinfo:${PORTSDIR}/devel/libexecinfo
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
@@ -52,7 +52,8 @@ MANLANG=	"" de es fr
 MANCOMPRESSED=	yes
 PORTDOCS=	AUTHORS BUGS LICENSE README
 
-OPTIONS+=	DBUS "Enable D-BUS support" On
+OPTIONS_DEFINE=	DBUS
+OPTIONS_DEFAULT=DBUS
 
 .include <bsd.port.pre.mk>
 
@@ -61,7 +62,7 @@ OPTIONS+=	DBUS "Enable D-BUS support" On
 IGNORE=	cannot find dependency: The cairo exists but not with XCB support. Please reinstall graphics/cairo with XCB support
 .endif
 
-.ifdef(WITH_DBUS)
+.if ${PORT_OPTIONS:MDBUS}
 LIB_DEPENDS += dbus-1.3:${PORTSDIR}/devel/dbus
 CMAKE_ARGS += -DWITH_DBUS=YES
 .else
@@ -76,7 +77,7 @@ pre-configure:
 	-e 's,tr ,env LC_ALL="C" ${TR} ,g' \
 	-e 's,gperf,${LOCALBASE}/bin/gperf,g' \
 		${WRKSRC}/build-utils/gperf.sh
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} \
 		-e 's/"install port docs" ON/\"install port docs" OFF/g' \
 		${WRKSRC}/awesomeConfig.cmake
