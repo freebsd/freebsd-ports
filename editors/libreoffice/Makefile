@@ -209,10 +209,10 @@ MANCOMPRESSED=	yes
 #DISTFILES+=	bd30e9cf5523cdfc019b94f5e1d7fd19-cppunit-1.12.1.tar.gz:ext
 #.else
 CONFIGURE_ARGS+=	--with-system-cppunit
-CC=	clang
-CXX=	clang++
-CXXCPP=	clang-cpp
-CPP=	clang-cpp
+CC=	${LOCALBASE}/bin/clang
+CXX=	${LOCALBASE}/bin/clang++
+CXXCPP=	${LOCALBASE}/bin/clang-cpp
+CPP=	${LOCALBASE}/bin/clang-cpp
 # Work around a bug in pointyhat and tinderbox, prevent it to determine than
 # clang from ports is needed when host is a freebsd 9+
 #.if defined(PACKAGE_BUILDING)
