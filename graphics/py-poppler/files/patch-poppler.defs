@@ -1,7 +1,65 @@
-diff -up pypoppler-0.12.1/poppler.defs.poppler15 pypoppler-0.12.1/poppler.defs
---- poppler.defs.poppler15	2010-10-06 16:02:47.023101009 -0400
-+++ poppler.defs	2010-10-06 16:10:32.749101000 -0400
-@@ -1760,6 +1760,12 @@
+--- poppler.defs.orig	2009-09-27 17:07:59.000000000 +0800
++++ poppler.defs	2012-04-09 05:50:38.000000000 +0800
+@@ -1646,58 +1646,6 @@
+   (return-type "GType")
+ )
+ 
+-(define-method render_to_pixbuf
+-  (of-object "PopplerPage")
+-  (c-name "poppler_page_render_to_pixbuf")
+-  (return-type "none")
+-  (parameters
+-    '("int" "src_x")
+-    '("int" "src_y")
+-    '("int" "src_width")
+-    '("int" "src_height")
+-    '("double" "scale")
+-    '("int" "rotation")
+-    '("GdkPixbuf*" "pixbuf")
+-  )
+-)
+-
+-(define-method render_to_pixbuf_for_printing
+-  (of-object "PopplerPage")
+-  (c-name "poppler_page_render_to_pixbuf_for_printing")
+-  (return-type "none")
+-  (parameters
+-    '("int" "src_x")
+-    '("int" "src_y")
+-    '("int" "src_width")
+-    '("int" "src_height")
+-    '("double" "scale")
+-    '("int" "rotation")
+-    '("GdkPixbuf*" "pixbuf")
+-  )
+-)
+-
+-(define-method get_thumbnail_pixbuf
+-  (of-object "PopplerPage")
+-  (c-name "poppler_page_get_thumbnail_pixbuf")
+-  (return-type "GdkPixbuf*")
+-)
+-
+-(define-method render_selection_to_pixbuf
+-  (of-object "PopplerPage")
+-  (c-name "poppler_page_render_selection_to_pixbuf")
+-  (return-type "none")
+-  (parameters
+-    '("gdouble" "scale")
+-    '("int" "rotation")
+-    '("GdkPixbuf*" "pixbuf")
+-    '("PopplerRectangle*" "selection")
+-    '("PopplerRectangle*" "old_selection")
+-    '("PopplerSelectionStyle" "style")
+-    '("GdkColor*" "glyph_color")
+-    '("GdkColor*" "background_color")
+-  )
+-)
+-
+ (define-method render
+   (of-object "PopplerPage")
+   (c-name "poppler_page_render")
+@@ -1752,6 +1700,12 @@
    (return-type "int")
  )
  
@@ -14,7 +72,7 @@ diff -up pypoppler-0.12.1/poppler.defs.poppler15 pypoppler-0.12.1/poppler.defs
  (define-method get_duration
    (of-object "PopplerPage")
    (c-name "poppler_page_get_duration")
-@@ -1805,9 +1811,15 @@
+@@ -1796,9 +1750,15 @@
    (of-object "PopplerPage")
    (c-name "poppler_page_get_text")
    (return-type "char*")
@@ -31,7 +89,7 @@ diff -up pypoppler-0.12.1/poppler.defs.poppler15 pypoppler-0.12.1/poppler.defs
    )
  )
  
-@@ -1895,6 +1907,16 @@
+@@ -1886,6 +1846,16 @@
    )
  )
  
@@ -48,7 +106,7 @@ diff -up pypoppler-0.12.1/poppler.defs.poppler15 pypoppler-0.12.1/poppler.defs
  (define-method get_crop_box
    (of-object "PopplerPage")
    (c-name "poppler_page_get_crop_box")
-@@ -1904,6 +1926,16 @@
+@@ -1895,6 +1865,16 @@
    )
  )
  
