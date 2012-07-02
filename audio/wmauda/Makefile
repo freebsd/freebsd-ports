@@ -18,12 +18,12 @@ COMMENT=	A port of wmxmms to GTK 2.x and Audacious
 
 BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
 RUN_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
-LIB_DEPENDS=	mowgli.2:${PORTSDIR}/devel/libmowgli
+LIB_DEPENDS=	mowgli:${PORTSDIR}/devel/libmowgli
 
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_GNOME=	gnomeprefix gtk20
-CFLAGS=		`pkg-config --cflags gtk+-2.0`
+CFLAGS+=	`pkg-config --cflags gtk+-2.0`
 MAKE_ENV=	MANPAGE_DIR=${MAN1PREFIX}/man/man1 \
 		LIBS="`pkg-config --libs gtk+-2.0`"
 
