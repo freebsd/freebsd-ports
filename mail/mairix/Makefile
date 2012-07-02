@@ -22,6 +22,26 @@ MAN5=	mairixrc.5
 PLIST_FILES=	bin/mairix %%EXAMPLESDIR%%/dotmairixrc.eg
 PLIST_DIRS=	%%EXAMPLESDIR%%
 
+OPTIONS_DEFINE=	GZIP BZIP
+GZIP_DESC=	Enable gzip mbox support
+BZIP_DESC=	Enable bzip2 mbox support
+
+OPTIONS_DEFAULT=
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGZIP}
+CONFIGURE_ARGS+=	--enable-gzip-mbox
+.else
+CONFIGURE_ARGS+=	--disable-gzip-mbox
+.endif
+
+.if ${PORT_OPTIONS:MBZIP}
+CONFIGURE_ARGS+=	--enable-bzip-mbox
+.else
+CONFIGURE_ARGS+=	--disable-bzip-mbox
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mairix ${PREFIX}/bin
 	${MKDIR} ${EXAMPLESDIR}
