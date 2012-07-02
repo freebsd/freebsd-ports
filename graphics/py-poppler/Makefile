@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	poppler
-PORTVERSION=	0.10.1
-PORTREVISION=	6
+PORTVERSION=	0.12.1
 CATEGORIES=	graphics python
 MASTER_SITES=	https://launchpad.net/poppler-python/trunk/development/+download/ \
 		http://launchpadlibrarian.net/30270080/ \
