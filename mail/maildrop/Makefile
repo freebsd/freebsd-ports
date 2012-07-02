@@ -42,7 +42,7 @@ CONFIGURE_ARGS=	--enable-syslog=1 \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 
 MAILDROP_LOG_COLUMNS?=	72	# lenght of 'File:' line in log
 
@@ -55,7 +55,7 @@ MAILDROP_LOG_COLUMNS?=	72	# lenght of 'File:' line in log
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GDBM)
-LIB_DEPENDS+=		gdbm.4:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=		gdbm:${PORTSDIR}/databases/gdbm
 CONFIGURE_ARGS+=	--with-db=gdbm
 .else
 CONFIGURE_ARGS+=	--with-db=db

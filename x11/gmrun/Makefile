@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A customizable program to run programs, with tab-completion
 
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt
 
 USE_GNOME=	gtk20
 USE_GMAKE=	yes

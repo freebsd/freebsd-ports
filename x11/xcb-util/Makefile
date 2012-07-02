@@ -14,7 +14,7 @@ MASTER_SITES=	http://xcb.freedesktop.org/dist/
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A module with libxcb/libX11 extension/replacement libraries
 
-LIB_DEPENDS=	xcb.2:${PORTSDIR}/x11/libxcb
+LIB_DEPENDS=	xcb:${PORTSDIR}/x11/libxcb
 BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf
 
 USE_BZIP2=	yes
