@@ -204,10 +204,10 @@ MANCOMPRESSED=	yes
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GCC)
-USE_GCC=	4.6+
-DISTFILES+=	bd30e9cf5523cdfc019b94f5e1d7fd19-cppunit-1.12.1.tar.gz:ext
-.else
+#.if defined(WITH_GCC)
+#USE_GCC=	4.6+
+#DISTFILES+=	bd30e9cf5523cdfc019b94f5e1d7fd19-cppunit-1.12.1.tar.gz:ext
+#.else
 CONFIGURE_ARGS+=	--with-system-cppunit
 CC=	clang
 CXX=	clang++
@@ -215,20 +215,20 @@ CXXCPP=	clang-cpp
 CPP=	clang-cpp
 # Work around a bug in pointyhat and tinderbox, prevent it to determine than
 # clang from ports is needed when host is a freebsd 9+
-.if defined(PACKAGE_BUILDING)
+#.if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/clang:${PORTSDIR}/lang/clang
 USE_BINUTILS=	yes
-.endif
-.if !exists(/usr/bin/clang)
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang:${PORTSDIR}/lang/clang
-USE_BINUTILS=	yes
-CXXCPP=	clang++ -E
-CPP=	clang -E
-.endif
+#.endif
+#.if !exists(/usr/bin/clang)
+#BUILD_DEPENDS+=	${LOCALBASE}/bin/clang:${PORTSDIR}/lang/clang
+#USE_BINUTILS=	yes
+#CXXCPP=	clang++ -E
+#CPP=	clang -E
+#.endif
 # XXX Work around C++11 problems with Clang.
 CXXFLAGS+=	-std=gnu++0x -Qunused-arguments
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcppunit.so:${PORTSDIR}/devel/cppunit
-.endif
+#.endif
 
 MAKE_ENV+=	USE_GMAKE=1 DESTDIR=${LODESTDIR}
 
