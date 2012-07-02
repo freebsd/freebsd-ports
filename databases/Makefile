@@ -822,6 +822,7 @@
     SUBDIR += slony1v2
     SUBDIR += soci
     SUBDIR += spatialite
+    SUBDIR += spatialite_gui
     SUBDIR += sqlbuddy
     SUBDIR += sqlcached
     SUBDIR += sqlclient
