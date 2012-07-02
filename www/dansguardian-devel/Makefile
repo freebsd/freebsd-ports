@@ -15,7 +15,7 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A fast, feature-rich web content filter for Squid proxy servers
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
-LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 
 USE_RC_SUBR=	dansguardian
 USE_GNOME=	pkgconfig

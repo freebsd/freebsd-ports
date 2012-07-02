@@ -13,8 +13,8 @@ MASTER_SITES=	http://xcb.freedesktop.org/dist/
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Standard X key constants and conversion to/from keycodes
 
-LIB_DEPENDS=	xcb.2:${PORTSDIR}/x11/libxcb \
-		xcb-util.0:${PORTSDIR}/x11/xcb-util
+LIB_DEPENDS=	xcb:${PORTSDIR}/x11/libxcb \
+		xcb-util:${PORTSDIR}/x11/xcb-util
 #BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf
 
 USE_BZIP2=	yes
