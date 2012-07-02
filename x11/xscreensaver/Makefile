@@ -134,10 +134,6 @@ MAN6=	anemone.6 anemotaxis.6 antinspect.6 antmaze.6 antspotlight.6 \
 	companioncube.6 hilbert.6 tronbit.6 \
 	xscreensaver-gl-helper.6
 
-.if ${ARCH} == "amd64"
-CFLAGS+=	-O0
-.endif
-
 post-patch:
 	@ ${CP} ${WRKSRC}/configure ${WRKSRC}/configure.Patched
 	@ ${SED} -e 's#-lpthread#${PTHREAD_LIBS}#g' \
