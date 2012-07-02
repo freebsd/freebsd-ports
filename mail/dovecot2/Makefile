@@ -163,6 +163,7 @@ PLIST_SUB+=	SQL="@comment "
 .if defined(WITH_SOLR) && !defined(WITHOUT_SOLR)
 CONFIGURE_ARGS+=--with-solr
 LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
+BUILD_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	WITHSOLR=""
 SUB_LIST+=	WITHSOLR=""
 .else
