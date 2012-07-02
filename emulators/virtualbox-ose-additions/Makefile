@@ -10,6 +10,7 @@ DISTVERSION=	4.1.18
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
+		SF/virtualbox.mirror/ \
 		http://disasterarea.chruetertee.ch/
 PKGNAMESUFFIX=	-additions
 DISTNAME=	VirtualBox-${DISTVERSION}

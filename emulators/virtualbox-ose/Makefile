@@ -10,6 +10,7 @@ DISTVERSION=	4.1.18
 CATEGORIES=	emulators
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
+		SF/virtualbox.mirror/ \
 		http://disasterarea.chruetertee.ch/ \
 		http://download.virtualbox.org/virtualbox/${VBOX_GUEST_VER}/:guestadditions
 DISTFILES=	VirtualBox-${DISTVERSION}${EXTRACT_SUFX} ${GADISTFILES}
