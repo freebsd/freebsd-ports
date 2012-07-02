@@ -23,11 +23,11 @@ MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	README.txt INSTALL.txt mysql.sql
 
-OPTIONS=	MYSQL "Enable MySQL support" off
+OPTIONS_DEFINE=	MYSQL
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 CONFIGURE_ARGS+=	--enable-mysql
 USE_MYSQL=		yes
 .endif
@@ -38,7 +38,7 @@ do-install:
 .if !exists(${PREFIX}/etc/scanhill.conf)
 	${INSTALL_DATA} ${WRKSRC}/scanhill.conf ${PREFIX}/etc/
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 . for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
