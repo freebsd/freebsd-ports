@@ -18,6 +18,7 @@ COMMENT=	A useful widget set complementary to GTK+ 2.0
 USE_GNOME=	gtk20 gnomehack
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
+USE_CSTD=	gnu89
 USE_LDCONFIG=	yes
 
 LATEST_LINK=	gtkextra2
@@ -25,11 +26,13 @@ DOCSDIR=	${PREFIX}/share/doc/gtkextra2
 
 PORTDOCS=	*
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|docs||' ${WRKSRC}/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 .for d in reference tutorial
 	@${MKDIR} ${DOCSDIR}/${d}
 	@(cd ${WRKSRC}/docs/${d} && ${COPYTREE_SHARE} . ${DOCSDIR})
