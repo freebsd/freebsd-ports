@@ -15,9 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	PHP language extension for RedHat Newt library
 
-LIB_DEPENDS=	newt.52:${PORTSDIR}/devel/newt
-
 LICENSE=	PHP301
+
+LIB_DEPENDS=	newt:${PORTSDIR}/devel/newt
 
 USE_PHP=	yes
 USE_PHPIZE=	yes
