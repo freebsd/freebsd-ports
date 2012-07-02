@@ -6,26 +6,27 @@
 #
 
 PORTNAME=	stixfonts
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	x11-fonts
-MASTER_SITES=	SF/${PORTNAME}/CurrentRelease/
-# http://freefr.dl.sourceforge.net/project/stixfonts/CurrentRelease/STIXv1.0.0.zip
+MASTER_SITES=	SF/${PORTNAME}/
 DISTNAME=	STIXv${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A comprehensive set of fonts for scientific and engineering purposes
 
-BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
-RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-
-USE_ZIP=	yes
-USE_XORG=	x11
-
 LICENSE=	OFL
 LICENSE_NAME=	Open Font License
 LICENSE_FILE=	${WRKSRC}/License/STIX\ Font\ License\ 2010.pdf
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
+RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+
+NO_WRKSUBDIR=	yes
+
+USE_ZIP=	yes
+USE_XORG=	x11
 
 PLIST_SUB=	FONTDIR="${FONTDIR:S|${PREFIX}/||}"	\
 		FCCACHE='${FCCACHE}'
@@ -41,14 +42,27 @@ MKFONTSCL_CMD=	${LOCALBASE}/bin/mkfontscale
 MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
 FCCACHE=	${LOCALBASE}/bin/fc-cache -f -v
 
+.if !defined(NOPORTDOCS)
+PORTDOCS=	STIXv${PORTVERSION}.pdf
+.endif
+
 do-build:
-	cd ${WRKSRC}/Fonts && ${MKFONTSCL_CMD}
-	${REINPLACE_CMD} -e 's|-misc-|-stix-|' ${WRKSRC}/Fonts/fonts.scale
-	cd ${WRKSRC}/Fonts && ${MKFONTDIR_CMD}
+	${MKDIR} ${WRKDIR}/build
+.for group in STIX-General STIX-Word
+	${CP} ${WRKSRC}/Fonts/${group}/*.otf ${WRKDIR}/build
+.endfor
+	cd ${WRKDIR}/build && ${MKFONTSCL_CMD}
+	${REINPLACE_CMD} -e 's|-misc-|-stix-|' ${WRKDIR}/build/fonts.scale
+	cd ${WRKDIR}/build && ${MKFONTDIR_CMD}
 
 do-install:
 	${MKDIR} ${FONTDIR}
-	cd ${WRKSRC}/Fonts && ${INSTALL_DATA} fonts.dir fonts.scale *.otf ${FONTDIR}
+	cd ${WRKDIR}/build && ${INSTALL_DATA} fonts.dir fonts.scale *.otf ${FONTDIR}
+	cd ${FONTDIR} && ${MKFONTDIR_CMD}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
 
 post-install:
 	@${ECHO_MSG} "===> Running fc-cache"
