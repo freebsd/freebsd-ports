@@ -79,6 +79,7 @@
     SUBDIR += meanwhile
     SUBDIR += mercury
     SUBDIR += mikutter
+    SUBDIR += mikutter003
     SUBDIR += msn-proxy
     SUBDIR += mu-conference
     SUBDIR += naim
