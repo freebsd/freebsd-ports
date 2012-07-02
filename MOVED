@@ -3534,3 +3534,6 @@ devel/py-sendfile|net/py-pysendfile|2012-06-24|Domain lapsed, forked
 www/joomla||2012-06-25|Unmaintained upstream, please use www/joomla25 instead.
 graphics/p5-chart|graphics/p5-Chart|2012-06-30|Move to a better place via repocopy
 textproc/libupskirt|textproc/libsoldout|2012-07-01|Move to respect upstream new name
+net-p2p/libtorrent-rasterbar-14||2012-07-01|Discontinued upstream, move to libtorrent-rasterbar-16
+net-p2p/hrktorrent||2012-07-01|Relies on net-p2p/libtorrent-rasterbar-14, which has been discontinued
+net-p2p/sharktorrent||2012-07-01|Relies on net-p2p/libtorrent-rasterbar-14, which has been discontinued

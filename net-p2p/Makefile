@@ -34,7 +34,6 @@
     SUBDIR += gtk-gnutella
     SUBDIR += gtkhx
     SUBDIR += gtorrentviewer
-    SUBDIR += hrktorrent
     SUBDIR += i2p
     SUBDIR += jigdo
     SUBDIR += kmldonkey
@@ -46,7 +45,6 @@
     SUBDIR += libpdtp
     SUBDIR += libtorrent
     SUBDIR += libtorrent-devel
-    SUBDIR += libtorrent-rasterbar-14
     SUBDIR += libtorrent-rasterbar-15
     SUBDIR += libtorrent-rasterbar-15-python
     SUBDIR += libtorrent-rasterbar-16
@@ -94,7 +92,6 @@
     SUBDIR += rtgui
     SUBDIR += rtorrent
     SUBDIR += rtorrent-devel
-    SUBDIR += sharktorrent
     SUBDIR += solidcoin
     SUBDIR += squall
     SUBDIR += teknap

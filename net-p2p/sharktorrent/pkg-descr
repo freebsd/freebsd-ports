@@ -1,4 +1,0 @@
-sharktorrent is an open source/freeware bittorrent client written in c++. It
-uses wxWidgets, libtorrent and boost.
-
-WWW: http://sharktorrent.com/
