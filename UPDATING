@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20120702:
+  AFFECTS: users of databases/couchdb
+  AUTHOR: crees@FreeBSD.org, Adam Strohl <adams-ports@ateamsystems.com>
+
+  The couchdb port has an unfortunate side effect; versions before 1.2.0
+  will clobber local.ini.  The port will refuse to build if that file is
+  present and an earlier version is installed, however no such protection
+  can be afforded to package installation.
+
+  To upgrade from 1.1.0 and earlier, simply move PREFIX/etc/couchdb/local.ini
+  out of the way until the upgrade is complete.
+
+20120702:
   AFFECTS: users of net-im/mikutter
   AUTHOR: tota@FreeBSD.org
 
