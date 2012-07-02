@@ -20,79 +20,75 @@ COMMENT=	Qt4 based multimedia player and streaming server
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
-		gcrypt.18:${PORTSDIR}/security/libgcrypt \
-		proxy.1:${PORTSDIR}/net/libproxy
+LIB_DEPENDS=	avcodec:${PORTSDIR}/multimedia/ffmpeg \
+		gcrypt:${PORTSDIR}/security/libgcrypt \
+		proxy:${PORTSDIR}/net/libproxy
 
-OPTIONS=	A52 "A52 DVD audio decoder" On \
-		AALIB "Aalib Console Graphics Support" Off \
-		ASS "Enable ASS/SSA subtitle rendering" Off \
-		AVAHI "Enable Avahi mDNS networking" On \
-		CACA "Libcaca Console Graphics Support (requires AALIB)" Off \
-		DBUS "Enable D-Bus control support" On \
-		DIRAC "Enable Dirac support" Off \
-		DTS "DTS DVD audio decoder" On \
-		DVB "Digital Video Broadcasting support (requires V4L)" On \
-		DVDREAD "DVD Playback support" On \
-		DVDNAV "DVD menu navigation" On \
-		FAAD "Faad audio decoder (mp4/aac) support" On \
-		FLAC "Flac audio codec support" On \
-		FLUID "Enable Fluidsynth MIDI support" Off \
-		FRIBIDI "FriBidi bidirectional unicode support" Off \
-		GGI "General Graphic Interface support" Off \
-		GLX "X11 OpenGL rendering (requires XCB)" On \
-		GNOMEVFS "Gnome VFS support" Off \
-		GNUTLS "Enable stream encryption" On \
-		GOOM "Enable the Goom visual effect library" Off \
-		HTTPD "Streaming media control via http" On \
-		JACK "Jack audio support" Off \
-		LIVEMEDIA "Support for rstp/rtp/sdp protocols" On \
-		LUA "Enable Lua scripting" On \
-		MAD "Mad mp3 audio decoder support" On \
-		MATROSKA "Matroska Container Format support" On \
-		MODPLUG "Mod audio suport" Off \
-		MPEG2 "Mpeg-2 audio/video decoder Support" On \
-		MTP "Enable support for the Music Transport Protocol" Off \
-		MUSEPACK "Musepack audio support" Off \
-		NCURSES "Enable ncurses (console) interface" Off \
-		NLS "Native Language Support" On \
-		NOTIFY "Enable tray notifications" Off \
-		OCFLAGS "Optimized CFLAGS" Off \
-		OGG "Ogg audio decoder support" On \
-		OPENGL "OpenGL acceleration support" Off \
-		PLUGIN "VLC Mozilla Plugin" Off \
-		PNG "PNG graphics format support" On \
-		PORTAUDIO "Portaudio library support" Off \
-		PROJM "Enable ProjectM visualizations" Off \
-		PULSE "Pulse Audio support" Off \
-		QT4 "Qt4 Interface" On \
-		REALAUDIO "Real Audio(R) support" On \
-		REMOTEOSD "Remote OSD support" On \
-		RUNROOT "Enable running as root" Off \
-		SAMBA "SAMBA Access module" Off \
-		SCHROED "Enable Schroedinger decoder" Off \
-		SDL "SDL video output" On \
-		SHOUT "Shout2 support" Off \
-		SKINS "Enable winamp skins interface (requires QT4)" On \
-		STREAM "Enable stream output" On \
-		SPEEX "Speex voice codec support" On \
-		SQLITE "Enable SQLite database support" Off \
-		SVG "SVG graphics support" Off \
-		SVGALIB "SVGALIB video output" Off \
-		TAGLIB "ID3 tag and Ogg comment support" On \
-		THEORA "OGG/Vorbis video codec support" On \
-		TREMOR "Tremor voice audio (redundant with Vorbis)" Off \
-		TWOLAME "Twolame mpeg2 audio encoder support" On \
-		UPNP "Enable UPnP network device control" Off \
-		V4L "Video4Linux video capture compatibility" On \
-		VAAPI "Support hardware decoding via VAAPI" Off \
-		VCD "Video CD support" On \
-		VORBIS "Vorbis audio decoder support" On \
-		X264 "Enable H.264/AVC codec support" On \
-		XCB "Use X C Bindings for X11 output" On \
-		XOSD "X11 On Screen Display support" Off \
-		XVIDEO "X11 video rendering (requires XCB)" On \
-		ZVBI "VBI decoding support" Off
+OPTIONS_DEFINE=	A52 AALIB ASS AVAHI CACA DBUS DIRAC DOCS DTS DVB DVDREAD \
+		DVDNAV FAAD FLAC FLUID FRIBIDI GGI GLX GNOMEVFS GNUTLS GOOM \
+		HTTPD JACK LIVEMEDIA LUA MAD MATROSKA MODPLUG MPEG2 MTP \
+		MUSEPACK NCURSES NLS NOTIFY OPTIMIZED_CFLAGS OGG OPENGL PLUGIN \
+		PNG PORTAUDIO PROJM PULSEAUDIO QT4 REALAUDIO REMOTEOSD RUNROOT \
+		SAMBA SCHROED SDL SHOUTCAST SKINS STREAM SPEEX SQLITE SVG \
+		SVGALIB TAGLIB THEORA TREMOR TWOLAME UPNP V4L VAAPI VCD \
+		VORBIS X11 X264 XCB XOSD XVIDEO ZVBI SERVER_ONLY DEBUG \
+		UNSAFE_PLUGINS
+OPTIONS_DEFAULT=A52 AVAHI DBUS DTS DVB DVDREAD DVDNAV FAAD FLAC GLX GNUTLS \
+		HTTPD LIVEMEDIA LUA MAD MATROSKA MPEG2 OGG PNG QT4 REALAUDIO \
+		REMOTEOSD SDL SKINS STREAM SPEEX TAGLIB THEORA TWOLAME V4L \
+		VCD VORBIS X11 X264 XCB XVIDEO
+A52_DESC=	A52 DVD audio decoder
+AALIB_DESC=	Aalib Console Graphics Support
+ASS_DESC=	ASS/SSA subtitle rendering
+CACA_DESC=	libcaca Console Graphics Support (requires AALIB)
+DBUS_DESC=	D-Bus control support
+DIRAC_DESC=	Dirac support
+DTS_DESC=	DTS DVD audio decoder
+DVB_DESC=	Digital Video Broadcasting support (requires V4L)
+DVDREAD_DESC=	DVD Playback support
+DVDNAV_DESC=	DVD menu navigation
+FAAD_DESC=	Faad audio decoder (mp4/aac) support
+FLAC_DESC=	Flac audio codec support
+FLUID_DESC=	Fluidsynth MIDI support
+FRIBIDI_DESC=	FriBidi bidirectional unicode support
+GGI_DESC=	General Graphic Interface support
+GLX_DESC=	X11 OpenGL rendering (requires XCB)
+GNOMEVFS_DESC=	Gnome VFS support
+GOOM_DESC=	the Goom visual effect library
+LIVEMEDIA_DESC=	Support for rstp/rtp/sdp protocols
+MATROSKA_DESC=	Matroska Container Format support
+MPEG2_DESC=	Mpeg-2 audio/video decoder Support
+MTP_DESC=	support for the Music Transport Protocol
+NCURSES_DESC=	ncurses (console) interface
+OGG_DESC=	Ogg audio decoder support
+OPENGL_DESC=	OpenGL acceleration support
+PLUGIN_DESC=	VLC Mozilla Plugin
+PNG_DESC=	PNG graphics format support
+PROJM_DESC=	ProjectM visualizations
+QT4_DESC=	Qt4 Interface
+REALAUDIO_DESC=	Real Audio(R) support
+REMOTEOSD_DESC=	Remote OSD support
+RUNROOT_DESC=	Enable running as root
+SAMBA_DESC=	SAMBA Access module
+SCHROED_DESC=	Schroedinger decoder
+SKINS_DESC=	winamp skins interface (requires QT4)
+STREAM_DESC=	stream output
+SQLITE_DESC=	SQLite database support
+SVGALIB_DESC=	SVGALIB video output
+TAGLIB_DESC=	ID3 tag and Ogg comment support
+THEORA_DESC=	OGG/Vorbis video codec support
+TREMOR_DESC=	Tremor voice audio (redundant with Vorbis)
+TWOLAME_DESC=	Twolame mpeg2 audio encoder support
+UPNP_DESC=	UPnP network device control
+V4L_DESC=	Video4Linux video capture compatibility
+VAAPI_DESC=	Support hardware decoding via VAAPI
+VCD_DESC=	Video CD support
+XCB_DESC=Use X C Bindings for X11 output
+XOSD_DESC=X11 On Screen Display support
+XVIDEO_DESC=X11 video rendering (requires XCB)
+ZVBI_DESC=VBI decoding support
+SERVER_ONLY_DESC=	Only build server parts
+UNSAFE_PLUGINS_DESC=	Install unsafe, unsupported plugins
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -142,7 +138,7 @@ MAN1=		vlc.1 \
 # Use these for batch control of certain types of builds
 
 # Disable DVD specific features
-.if defined(WITHOUT_DVD)
+.if !${PORT_OPTIONS:MDVD}
 WITHOUT_A52=yes
 WITHOUT_DTS=yes
 WITHOUT_DVDREAD=yes
@@ -150,7 +146,7 @@ WITHOUT_DVDNAV=yes
 .endif
 
 # Use this to disable all UI and output modules
-.if defined(WITH_SERVER_ONLY)
+.if ${PORT_OPTIONS:MSERVER_ONLY}
 WITHOUT_LUA=yes
 WITHOUT_QT4=yes
 WITH_RUNROOT=yes
@@ -164,7 +160,7 @@ WITHOUT_XCB=yes
 
 # This was the pre-1.1.0 DEBUG option. It differs in function than bsd.port.mk's
 # knob and is not needed by most users. Put here for those who need/want it.
-.if defined(WITH_VERBOSE)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--enable-debug
 .else
 CONFIGURE_ARGS+=--disable-debug
@@ -173,11 +169,11 @@ CONFIGURE_ARGS+=--disable-debug
 # End Macro section
 
 # Qt bits must be included before bsd.port.pre.mk
-.if defined(WITHOUT_QT4)
-CONFIGURE_ARGS+=--disable-qt4
-.else
-USE_QT4=	gui corelib moc_build rcc_build uic_build
+.if ${PORT_OPTIONS:MQT4}
 CONFIGURE_ARGS+=--enable-qt4
+USE_QT4=	gui corelib moc_build rcc_build uic_build
+.else
+CONFIGURE_ARGS+=--disable-qt4
 .endif
 
 .include <bsd.port.pre.mk>
@@ -186,23 +182,6 @@ CONFIGURE_ARGS+=--enable-qt4
 .if (${OSVERSION} < 800040)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules__misc__inhibit__xdg.c \
 		${FILESDIR}/extra-patch-modules__misc__inhibit__xscreensaver.c
-.endif
-
-.if (${OSVERSION} < 703100)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules__access__file.c \
-		${FILESDIR}/extra-patch-modules__access__fs.c
-.endif
-
-.if (${OSVERSION} < 701000)
-CFLAGS+=	-DHAVE_SYS_MOUNT_H
-.endif
-
-.if (${OSVERSION} < 700000)
-BROKEN=	VLC 1.1.0 does not work on FreeBSD 6.x
-.endif
-
-.if ${PERL_LEVEL} < 500800
-BROKEN=	Does not compile with perl ${PERL_VERSION}
 .endif
 
 .if ${ARCH} == "powerpc64"
@@ -232,261 +211,261 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11
 # OPTIONS
 # Keep these organized!
 
-.if defined(WITHOUT_A52)
-CONFIGURE_ARGS+=--disable-a52
-.else
-LIB_DEPENDS+=	a52.0:${PORTSDIR}/audio/liba52
+.if ${PORT_OPTIONS:MA52}
 CONFIGURE_ARGS+=--enable-a52
+LIB_DEPENDS+=	a52:${PORTSDIR}/audio/liba52
+.else
+CONFIGURE_ARGS+=--disable-a52
 .endif
 
-.if defined(WITH_AALIB)
-LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
+.if ${PORT_OPTIONS:MAALIB}
+LIB_DEPENDS+=	aa:${PORTSDIR}/graphics/aalib
 CONFIGURE_ARGS+=--enable-aa
 .else
 CONFIGURE_ARGS+=--disable-aa
 .endif
 
-.if defined(WITH_ASS)
-LIB_DEPENDS+=	ass.5:${PORTSDIR}/multimedia/libass
+.if ${PORT_OPTIONS:MASS}
+LIB_DEPENDS+=	ass:${PORTSDIR}/multimedia/libass
 CONFIGURE_ARGS+=--enable-libass
 .else
 CONFIGURE_ARGS+=--disable-libass
 .endif
 
-.if defined(WITH_AVAHI)
-LIB_DEPENDS+=	avahi-common.3:${PORTSDIR}/net/avahi-app
+.if ${PORT_OPTIONS:MAVAHI}
+LIB_DEPENDS+=	avahi-common:${PORTSDIR}/net/avahi-app
 CONFIGURE_ARGS+=--enable-bonjour
 .else
 CONFIGURE_ARGS+=--disable-bonjour
 .endif
 
-.if defined(WITH_CACA) && defined(WITH_AALIB)
-LIB_DEPENDS+=	caca.0:${PORTSDIR}/graphics/libcaca
+.if ${PORT_OPTIONS:MCACA} && ${PORT_OPTIONS:MAALIB}
+LIB_DEPENDS+=	caca:${PORTSDIR}/graphics/libcaca
 CONFIGURE_ARGS+=--enable-caca
 .else
 CONFIGURE_ARGS+=--disable-caca
 .endif
 
-.if defined(WITHOUT_DBUS)
-CONFIGURE_ARGS+=--disable-dbus
-.else
-LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
+.if ${PORT_OPTIONS:MDBUS}
+LIB_DEPENDS+=	dbus-1:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+=--enable-dbus
+.else
+CONFIGURE_ARGS+=--disable-dbus
 .endif
 
-.if defined(WITH_DIRAC)
-LIB_DEPENDS+=	dirac_decoder.1:${PORTSDIR}/multimedia/dirac
+.if ${PORT_OPTIONS:MDIRAC}
+LIB_DEPENDS+=	dirac_decoder:${PORTSDIR}/multimedia/dirac
 CONFIGURE_ARGS+=--enable-dirac
 CPPFLAGS+=	-I${LOCALBASE}/include/dirac
 .else
 CONFIGURE_ARGS+=--disable-dirac
 .endif
 
-.if defined(WITHOUT_DTS)
-CONFIGURE_ARGS+=--disable-dca
-.else
-LIB_DEPENDS+=	dca.0:${PORTSDIR}/multimedia/libdca
+.if ${PORT_OPTIONS:MDTS}
+LIB_DEPENDS+=	dca:${PORTSDIR}/multimedia/libdca
 CONFIGURE_ARGS+=--enable-dca
+.else
+CONFIGURE_ARGS+=--disable-dca
 .endif
 
-.if defined(WITHOUT_DVB)
-CONFIGURE_ARGS+=--disable-dvb --disable-dvbpsi
-.else
-LIB_DEPENDS+=	dvbpsi.7:${PORTSDIR}/multimedia/libdvbpsi
+.if ${PORT_OPTIONS:MDVB}
+LIB_DEPENDS+=	dvbpsi:${PORTSDIR}/multimedia/libdvbpsi
 CONFIGURE_ARGS+=--enable-dvb --enable-dvbpsi \
 		--with-dvbpsi=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--disable-dvb --disable-dvbpsi
 .endif
 
-.if defined(WITHOUT_DVDREAD)
-CONFIGURE_ARGS+=--disable-dvdread
-.else
-LIB_DEPENDS+=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
+.if ${PORT_OPTIONS:MDVDREAD}
+LIB_DEPENDS+=	dvdread:${PORTSDIR}/multimedia/libdvdread
 CONFIGURE_ARGS+=--enable-dvdread
+.else
+CONFIGURE_ARGS+=--disable-dvdread
 .endif
 
-.if defined(WITHOUT_DVDNAV)
-CONFIGURE_ARGS+=--disable-dvdnav
-.else
-LIB_DEPENDS+=	dvdnav.4:${PORTSDIR}/multimedia/libdvdnav
+.if ${PORT_OPTIONS:MDVDNAV}
+LIB_DEPENDS+=	dvdnav:${PORTSDIR}/multimedia/libdvdnav
 CONFIGURE_ARGS+=--enable-dvdnav
+.else
+CONFIGURE_ARGS+=--disable-dvdnav
 .endif
 
-.if defined(WITHOUT_FAAD)
-CONFIGURE_ARGS+=--disable-faad
-.else
-LIB_DEPENDS+=	faad.2:${PORTSDIR}/audio/faad
+.if ${PORT_OPTIONS:MFAAD}
+LIB_DEPENDS+=	faad:${PORTSDIR}/audio/faad
 CONFIGURE_ARGS+=--enable-faad
-.endif
-
-.if defined(WITHOUT_FLAC)
-CONFIGURE_ARGS+=--disable-flac
 .else
-LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
-CONFIGURE_ARGS+=--enable-flac
+CONFIGURE_ARGS+=--disable-faad
 .endif
 
-.if defined(WITH_FLUID)
-LIB_DEPENDS+=	fluidsynth.1:${PORTSDIR}/audio/fluidsynth
+.if ${PORT_OPTIONS:MFLAC}
+LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
+CONFIGURE_ARGS+=--enable-flac
+.else
+CONFIGURE_ARGS+=--disable-flac
+.endif
+
+.if ${PORT_OPTIONS:MFLUID}
+LIB_DEPENDS+=	fluidsynth:${PORTSDIR}/audio/fluidsynth
 CONFIGURE_ARGS+=--enable-fluidsynth
 .else
 CONFIGURE_ARGS+=--disable-fluidsynth
 .endif
 
-.if defined(WITHOUT_FRIBIDI)
-CONFIGURE_ARGS+=--disable-fribidi
-.else
-LIB_DEPENDS+=	fribidi.3:${PORTSDIR}/converters/fribidi
+.if ${PORT_OPTIONS:MFRIBIDI}
+LIB_DEPENDS+=	fribidi:${PORTSDIR}/converters/fribidi
 CONFIGURE_ARGS+=--enable-fribidi
+.else
+CONFIGURE_ARGS+=--disable-fribidi
 .endif
 
-.if defined(WITH_GGI)
-LIB_DEPENDS+=	ggi.2:${PORTSDIR}/graphics/libggi
+.if ${PORT_OPTIONS:MGGI}
+LIB_DEPENDS+=	ggi:${PORTSDIR}/graphics/libggi
 CONFIGURE_ARGS+=--enable-ggi
 .else
 CONFIGURE_ARGS+=--disable-ggi
 .endif
 
-.if defined(WITHOUT_GLX)
-CONFIGURE_ARGS+=--disable-glx
-.else
+.if ${PORT_OPTIONS:MGLX}
 CONFIGURE_ARGS+=--enable-glx
+.else
+CONFIGURE_ARGS+=--disable-glx
 .endif
 
-.if defined(WITH_GNOMEVFS)
+.if ${PORT_OPTIONS:MGNOMEVFS}
 USE_GNOME=	gnomevfs2
 CONFIGURE_ARGS+=--enable-gnomevfs
 .else
 COFIGURE_ARGS+=--disable-gnomevfs
 .endif
 
-.if defined(WITHOUT_GNUTLS)
-CONFIGURE_ARGS+=--disable-gnutls
-.else
-LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
+.if ${PORT_OPTIONS:MGNUTLS}
+LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=--enable-gnutls
+.else
+CONFIGURE_ARGS+=--disable-gnutls
 .endif
 
-.if defined(WITH_GOOM)
-LIB_DEPENDS+=	goom2.0:${PORTSDIR}/graphics/goom
+.if ${PORT_OPTIONS:MGOOM}
+LIB_DEPENDS+=	goom2:${PORTSDIR}/graphics/goom
 CONFIGURE_ARGS+=--enable-goom
 .else
 CONFIGURE_ARGS+=--disable-goom
 .endif
 
-.if defined(WITHOUT_HTTPD)
-CONFIGURE_ARGS+=--disable-httpd
-.else
+.if ${PORT_OPTIONS:MHTTPD}
 CONFIGURE_ARGS+=--enable-httpd
+.else
+CONFIGURE_ARGS+=--disable-httpd
 .endif
 
-.if defined(WITH_JACK)
-LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+.if ${PORT_OPTIONS:MJACK}
+LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
 CONFIGURE_ARGS+=--enable-jack
 .else
 CONFIGURE_ARGS+=--disable-jack
 .endif
 
-.if defined(WITHOUT_LIVEMEDIA)
-CONFIGURE_ARGS+=--disable-live555
-.else
+.if ${PORT_OPTIONS:MLIVEMEDIA}
 BUILD_DEPENDS+=	${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
 CONFIGURE_ARGS+=--enable-live555 \
 		--with-live555-tree=${LOCALBASE}/live
+.else
+CONFIGURE_ARGS+=--disable-live555
 .endif
 
 # This may become mandantory in the future
-.if defined(WITHOUT_LUA)
-CONFIGURE_ARGS+=--disable-lua
-.else
+.if ${PORT_OPTIONS:MLUA}
 USE_LUA=5.1+
 WANT_LUA_VER=5.1
 CONFIGURE_ENV=	LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua"
 CONFIGURE_ARGS+=--enable-lua LUAC=luac-${WANT_LUA_VER}
+.else
+CONFIGURE_ARGS+=--disable-lua
 .endif
 
-.if defined(WITHOUT_MAD)
-CONFIGURE_ARGS+=--disable-mad
-.else
-LIB_DEPENDS+=	id3tag.0:${PORTSDIR}/audio/libid3tag \
-		mad.2:${PORTSDIR}/audio/libmad
+.if ${PORT_OPTIONS:MMAD}
+LIB_DEPENDS+=	id3tag:${PORTSDIR}/audio/libid3tag \
+		mad:${PORTSDIR}/audio/libmad
 CONFIGURE_ARGS+=--enable-mad --with-mad=${LOCALBASE}
-.endif
-
-.if defined(WITHOUT_MATROSKA)
-CONFIGURE_ARGS+=--disable-mkv
 .else
-LIB_DEPENDS+=	matroska.5:${PORTSDIR}/multimedia/libmatroska
-CONFIGURE_ARGS+=--enable-mkv
+CONFIGURE_ARGS+=--disable-mad
 .endif
 
-.if defined(WITH_MODPLUG)
-LIB_DEPENDS+=	modplug.1:${PORTSDIR}/audio/libmodplug
+.if ${PORT_OPTIONS:MMATROSKA}
+LIB_DEPENDS+=	matroska:${PORTSDIR}/multimedia/libmatroska
+CONFIGURE_ARGS+=--enable-mkv
+.else
+CONFIGURE_ARGS+=--disable-mkv
+.endif
+
+.if ${PORT_OPTIONS:MMODPLUG}
+LIB_DEPENDS+=	modplug:${PORTSDIR}/audio/libmodplug
 CONFIGURE_ARGS+=--enable-mod
 .else
 CONFIGURE_ARGS+=--disable-mod
 .endif
 
-.if defined(WITHOUT_MPEG2)
-CONFIGURE_ARGS+=--disable-libmpeg2
-.else
-LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
+.if ${PORT_OPTIONS:MMPEG2}
+LIB_DEPENDS+=	mpeg2:${PORTSDIR}/multimedia/libmpeg2
 CONFIGURE_ARGS+=--enable-libmpeg2
+.else
+CONFIGURE_ARGS+=--disable-libmpeg2
 .endif
 
-.if defined(WITH_MTP)
-LIB_DEPENDS+=	mtp.9:${PORTSDIR}/audio/libmtp
+.if ${PORT_OPTIONS:MMTP}
+LIB_DEPENDS+=	mtp:${PORTSDIR}/audio/libmtp
 CONFIGURE_ARGS+=--enable-mtp
 .else
 CONFIGURE_ARGS+=--disable-mtp
 .endif
 
-.if defined(WITH_MUSEPACK)
-LIB_DEPENDS+=	mpcdec.7:${PORTSDIR}/audio/musepack
+.if ${PORT_OPTIONS:MMUSEPACK}
+LIB_DEPENDS+=	mpcdec:${PORTSDIR}/audio/musepack
 CONFIGURE_ARGS+=--enable-mpc
 .else
 CONFIGURE_ARGS+=--disable-mpc
 .endif
 
-.if defined(WITH_NCURSES)
+.if ${PORT_OPTIONS:MNCURSES}
 CONFIGURE_ARGS+=--enable-ncurses
 .else
 CONFIGURE_ARGS+=--disable-ncurses
 .endif
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=--disable-nls
-.else
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
+.else
+CONFIGURE_ARGS+=--disable-nls
 .endif
 
-.if defined(WITH_NOTIFY)
+.if ${PORT_OPTIONS:MNOTIFY}
 CONFIGURE_ARGS+=--enable-notify
-LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
 .else
 CONFIGURE_ARGS+=--disable-notify
 .endif
 
-.if defined(WITH_OCFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=-O3 -ffast-math -fomit-frame-pointer
 CONFIGURE_ARGS+=--enable-optimizations
 .endif
 
-.if defined(WITHOUT_OGG)
-CONFIGURE_ARGS+=--disable-ogg
-WITHOUT_VORBIS=	yes
-.else
-LIB_DEPENDS+=	ogg.7:${PORTSDIR}/audio/libogg
+.if ${PORT_OPTIONS:MOGG}
+LIB_DEPENDS+=	ogg:${PORTSDIR}/audio/libogg
 CONFIGURE_ARGS+=--enable-ogg
+.else
+WITHOUT_VORBIS=	yes
+CONFIGURE_ARGS+=--disable-ogg
 .endif
 
-.if defined(WITH_OPENGL)
+.if ${PORT_OPTIONS:MOPENGL}
 USE_GL=yes
 CONFIGURE_ARGS+=--enable-opengl
 .else
 CONFIGURE_ARGS+=--disable-opengl
 .endif
 
-.if defined(WITH_PLUGIN)
+.if ${PORT_OPTIONS:MPLUGIN}
 USE_GECKO=	libxul
 USE_WEBPLUGINS=	gecko*
 WEBPLUGINS_FILES=libvlcplugin.so
@@ -497,29 +476,29 @@ CONFIGURE_ARGS+=--enable-mozilla	\
 CONFIGURE_ARGS+=--disable-mozilla
 .endif
 
-.if defined(WITHOUT_PNG)
-CONFIGURE_ARGS+=--disable-png
-.else
+.if ${PORT_OPTIONS:MPNG}
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=--enable-png
+.else
+CONFIGURE_ARGS+=--disable-png
 .endif
 
-.if defined(WITH_PORTAUDIO)
-LIB_DEPENDS+=	portaudio.2:${PORTSDIR}/audio/portaudio2
+.if ${PORT_OPTIONS:MPORTAUDIO}
+LIB_DEPENDS+=	portaudio:${PORTSDIR}/audio/portaudio2
 CONFIGURE_ARGS+=--enable-portaudio
 .else
 CONFIGURE_ARGS+=--disable-portaudio
 .endif
 
-.if defined(WITH_PROJM)
-LIB_DEPENDS+=	projectM.2:${PORTSDIR}/graphics/libprojectm
+.if ${PORT_OPTIONS:MPROJM}
+LIB_DEPENDS+=	projectM:${PORTSDIR}/graphics/libprojectm
 CONFIGURE_ARGS+=--enable-projectm
 .else
 CONFIGURE_ARGS+=--disable-projectm
 .endif
 
-.if defined(WITH_PULSE)
-LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+.if ${PORT_OPTIONS:MPULSEAUDIO}
+LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
 CONFIGURE_ARGS+=--enable-pulse
 .else
 CONFIGURE_ARGS+=--disable-pulse
@@ -528,193 +507,193 @@ CONFIGURE_ARGS+=--disable-pulse
 # WITHOUT_QT4
 # Before .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_REALAUDIO)
-CONFIGURE_ARGS+=--disable-real --disable-realrtsp
-.else
+.if ${PORT_OPTIONS:MREALAUDIO}
 CONFIGURE_ARGS+=--enable-real --enable-realrtsp
-.endif
-
-.if defined(WITHOUT_REMOTEOSD)
-CONFIGURE_ARGS+=--disable-remoteosd
 .else
-CONFIGURE_ARGS+=--enable-remoteosd
+CONFIGURE_ARGS+=--disable-real --disable-realrtsp
 .endif
 
-.if defined(WITH_RUNROOT)
+.if ${PORT_OPTIONS:MREMOTEOSD}
+CONFIGURE_ARGS+=--enable-remoteosd
+.else
+CONFIGURE_ARGS+=--disable-remoteosd
+.endif
+
+.if ${PORT_OPTIONS:MRUNROOT}
 CONFIGURE_ARGS+=--enable-run-as-root
 .endif
 
-.if defined(WITH_SAMBA)
-LIB_DEPENDS+=	smbclient.0:${PORTSDIR}/net/samba-libsmbclient
+.if ${PORT_OPTIONS:MSAMBA}
+LIB_DEPENDS+=	smbclient:${PORTSDIR}/net/samba-libsmbclient
 CONFIGURE_ARGS+=--enable-smb
 .else
 CONFIGURE_ARGS+=--disable-smb
 .endif
 
-.if defined(WITH_SCHROED)
-LIB_DEPENDS+=	schroedinger-1.0.11:${PORTSDIR}/multimedia/schroedinger
+.if ${PORT_OPTIONS:MSCHROED}
+LIB_DEPENDS+=	schroedinger-1:${PORTSDIR}/multimedia/schroedinger
 CONFIGURE_ARGS+=--enable-schroedinger
 .else
 CONFIGURE_ARGS+=--disable-schroedinger
 .endif
 
-.if defined(WITHOUT_SDL) || defined(WITHOUT_XCB)
-CONFIGURE_ARGS+=--disable-sdl --disable-sdl-image
-.else
+.if ${PORT_OPTIONS:MSDL} && ${PORT_OPTIONS:MXCB}
 WANT_SDL=	yes
 USE_SDL=	image
 CONFIGURE_ARGS+=--enable-sdl --enable-sdl-image
+.else
+CONFIGURE_ARGS+=--disable-sdl --disable-sdl-image
 .endif
 
-.if defined(WITH_SHOUT)
-LIB_DEPENDS+=	shout.5:${PORTSDIR}/audio/libshout2
+.if ${PORT_OPTIONS:MSHOUTCAST}
+LIB_DEPENDS+=	shout:${PORTSDIR}/audio/libshout2
 CONFIGURE_ARGS+=--enable-shout
 .else
 CONFIGURE_ARGS+=--disable-shout
 .endif
 
-.if defined(WITHOUT_SKINS) || defined(WITHOUT_QT4)
-CONFIGURE_ARGS+=--disable-skins2 --disable-libtar
-.else
-LIB_DEPENDS+=	tar.0:${PORTSDIR}/devel/libtar
+.if ${PORT_OPTIONS:MSKINS} && ${PORT_OPTIONS:MQT4}
+LIB_DEPENDS+=	tar:${PORTSDIR}/devel/libtar
 CONFIGURE_ARGS+=--enable-skins2 --enable-libtar
+.else
+CONFIGURE_ARGS+=--disable-skins2 --disable-libtar
 .endif
 
-.if defined(WITHOUT_STREAM)
-CONFIGURE_ARGS+=--disable-sout
-.else
+.if ${PORT_OPTIONS:MSTREAM}
 CONFIGURE_ARGS+=--enable-sout
+.else
+CONFIGURE_ARGS+=--disable-sout
 .endif
 
-.if defined(WITHOUT_SPEEX)
-CONFIGURE_ARGS+=--disable-speex
-.else
-LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
+.if ${PORT_OPTIONS:MSPEEX}
+LIB_DEPENDS+=	speex:${PORTSDIR}/audio/speex
 CONFIGURE_ARGS+=--enable-speex
 CPPFLAGS+=-I${LOCALBASE}/include/speex
+.else
+CONFIGURE_ARGS+=--disable-speex
 .endif
 
-.if defined(WITH_SQLITE)
-LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+.if ${PORT_OPTIONS:MSQLITE}
+LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
 CONFIGURE_ARGS+=--enable-sqlite
 .else
 CONFIGURE_ARGS+=--disable-sqlite
 .endif
 
-.if defined(WITH_SVG) && !defined(WITHOUT_XCB)
+.if ${PORT_OPTIONS:MSVG} && ${PORT_OPTIONS:MXCB}
 USE_GNOME+=	librsvg2
 CONFIGURE_ARGS+=--enable-svg
 .else
 CONFIGURE_ARGS+=--disable-svg
 .endif
 
-.if defined(WITH_SVGALIB)
-LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
+.if ${PORT_OPTIONS:MSVGALIB}
+LIB_DEPENDS+=	vga:${PORTSDIR}/graphics/svgalib
 CONFIGURE_ARGS+=--enable-svgalib
 .else
 CONFIGURE_ARGS+=--disable-svgalib
 .endif
 
-.if defined(WITHOUT_TAGLIB)
-CONFIGURE_ARGS+=--disable-taglib
-.else
-LIB_DEPENDS+=	tag.1:${PORTSDIR}/audio/taglib
+.if ${PORT_OPTIONS:MTAGLIB}
+LIB_DEPENDS+=	tag:${PORTSDIR}/audio/taglib
 CONFIGURE_ARGS+=--enable-taglib
-.endif
-
-.if defined(WITHOUT_THEORA)
-CONFIGURE_ARGS+=--disable-theora
 .else
-LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
-CONFIGURE_ARGS+=--enable-theora
+CONFIGURE_ARGS+=--disable-taglib
 .endif
 
-.if defined(WITH_TREMOR) && !defined(WITH_VORBIS)
+.if ${PORT_OPTIONS:MTHEORA}
+LIB_DEPENDS+=	theora:${PORTSDIR}/multimedia/libtheora
+CONFIGURE_ARGS+=--enable-theora
+.else
+CONFIGURE_ARGS+=--disable-theora
+.endif
+
+.if ${PORT_OPTIONS:MTREMOR} && !${PORT_OPTIONS:MVORBIS}
 # Tremor is integer based Vorbis subset, using both is redundant
-LIB_DEPENDS+=	vorbisidec.1:${PORTSDIR}/audio/libtremor
+LIB_DEPENDS+=	vorbisidec:${PORTSDIR}/audio/libtremor
 .else
 CONFIGURE_ARGS+=--disable-tremor
 .endif
 
-.if defined(WITHOUT_TWOLAME)
-CONFIGURE_ARGS+=	--disable-twolame
-.else
-LIB_DEPENDS+=		twolame.0:${PORTSDIR}/audio/twolame
+.if ${PORT_OPTIONS:MTWOLAME}
+LIB_DEPENDS+=		twolame:${PORTSDIR}/audio/twolame
 CONFIGURE_ARGS+=	--enable-twolame
+.else
+CONFIGURE_ARGS+=	--disable-twolame
 .endif
 
-.if defined(WITH_UPNP)
-LIB_DEPENDS+=	upnp.9:${PORTSDIR}/devel/upnp
+.if ${PORT_OPTIONS:MUPNP}
+LIB_DEPENDS+=	upnp:${PORTSDIR}/devel/upnp
 CONFIGURE_ARGS+=--enable-upnp
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules__services_discovery__upnp_intel.cpp
 .else
 CONFIGURE_ARGS+=--disable-upnp
 .endif
 
-.if defined(WITHOUT_V4L) && defined(WITHOUT_DVB)
-CONFIGURE_ARGS+=--disable-v4l --disable-v4l2
-.else
-LIB_DEPENDS+=	v4l1.0:${PORTSDIR}/multimedia/libv4l
+.if ${PORT_OPTIONS:MV4L} || ${PORT_OPTIONS:MDVB}
+LIB_DEPENDS+=	v4l1:${PORTSDIR}/multimedia/libv4l
 CONFIGURE_ARGS+=--enable-v4l --enable-v4l2
+.else
+CONFIGURE_ARGS+=--disable-v4l --disable-v4l2
 .endif
 
-.if defined(WITH_VAAPI)
-LIB_DEPENDS+=	va.1:${PORTSDIR}/multimedia/libva
+.if ${PORT_OPTIONS:MVAAPI}
+LIB_DEPENDS+=	va:${PORTSDIR}/multimedia/libva
 CONFIGURE_ARGS+=--enable-libva
 .else
 CONFIGURE_ARGS+=--disable-libva
 .endif
 
-.if defined(WITHOUT_VCD)
-CONFIGURE_ARGS+=--disable-vcd --disable-libcddb
-.else
+.if ${PORT_OPTIONS:MVCD}
 CONFIGURE_ARGS+=--enable-vcd --enable-libcddb
+.else
+CONFIGURE_ARGS+=--disable-vcd --disable-libcddb
 .endif
 
-.if defined(WITHOUT_VORBIS)
-CONFIGURE_ARGS+=--disable-vorbis
-.else
-LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+.if ${PORT_OPTIONS:MVORBIS}
+LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--enable-vorbis
-.endif
-
-.if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=--without-x
 .else
-CONFIGURE_ARGS+=--with-x
+CONFIGURE_ARGS+=--disable-vorbis
 .endif
 
-.if defined(WITH_X264)
+.if ${PORT_OPTIONS:MX11}
+CONFIGURE_ARGS+=--with-x
+.else
+CONFIGURE_ARGS+=--without-x
+.endif
+
+.if ${PORT_OPTIONS:MX264}
 CONFIGURE_ARGS+=--enable-x264
-LIB_DEPENDS+=	x264.123:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	x264:${PORTSDIR}/multimedia/x264
 .else
 CONFIGURE_ARGS+=--disable-x264
 .endif
 
-.if defined(WITHOUT_XCB)
-CONFIGURE_ARGS+=--disable-xcb --without-x
-.else
+.if ${PORT_OPTIONS:MXCB}
 USE_XORG=	xpm
-LIB_DEPENDS+=	xcb.2:${PORTSDIR}/x11/libxcb \
-		xcb-keysyms.1:${PORTSDIR}/x11/xcb-util-keysyms
+LIB_DEPENDS+=	xcb:${PORTSDIR}/x11/libxcb \
+		xcb-keysyms:${PORTSDIR}/x11/xcb-util-keysyms
 CONFIGURE_ARGS+=--enable-xcb --with-x
+.else
+CONFIGURE_ARGS+=--disable-xcb --without-x
 .endif
 
-.if defined(WITH_XOSD)
-LIB_DEPENDS+=	xosd.4:${PORTSDIR}/misc/xosd
+.if ${PORT_OPTIONS:MXOSD}
+LIB_DEPENDS+=	xosd:${PORTSDIR}/misc/xosd
 CONFIGURE_ARGS+=--enable-xosd
 .else
 CONFIGURE_ARGS+=--disable-xosd
 .endif
 
-.if defined(WITHOUT_XVIDEO) || defined(WITHOUT_XCB)
-CONFIGURE_ARGS+=--disable-xvideo
-.else
+.if ${PORT_OPTIONS:MXVIDEO} && ${PORT_OPTIONS:MXCB}
 CONFIGURE_ARGS+=--enable-xvideo
+.else
+CONFIGURE_ARGS+=--disable-xvideo
 .endif
 
-.if defined(WITH_ZVBI)
-LIB_DEPENDS+=	zvbi.13:${PORTSDIR}/devel/libzvbi
+.if ${PORT_OPTIONS:MZVBI}
+LIB_DEPENDS+=	zvbi:${PORTSDIR}/devel/libzvbi
 CONFIGURE_ARGS+=--enable-zvbi
 .else
 CONFIGURE_ARGS+=--disable-zvbi
@@ -733,7 +712,7 @@ post-patch:
 		${WRKSRC}/modules/audio_output/portaudio.c
 
 pre-configure:
-.if defined(WITH_PLUGIN)
+.if ${PORT_OPTIONS:MPLUGIN}
 	${REINPLACE_CMD} -e 's|npvlcdir = $$(libdir)/mozilla/plugins|npvlcdir = ${WEBPLUGINS_DIR}|g' \
 		${WRKSRC}/projects/mozilla/Makefile.am \
 		${WRKSRC}/projects/mozilla/Makefile.in
@@ -755,11 +734,11 @@ pre-install:
 		${SED} -e 's|^|include/|' >> ${PLIST} \
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrmtry include/|' >> ${PLIST}
-.if !defined(WITH_UNSAFE_PLUGINS)
+.if ${PORT_OPTIONS:MUNSAFE_PLUGINS}
 	${RM} -f ${FAKEDIR}/lib/vlc/plugins/services_discovery/libsap_plugin.la
 	${RM} -f ${FAKEDIR}/lib/vlc/plugins/services_discovery/libsap_plugin.so
 .endif
-.if defined(WITH_PLUGIN)
+.if ${PORT_OPTIONS:MPLUGIN}
 . for ext in so la
 	${ECHO_CMD} "${WEBPLUGINS_DIR}/libvlcplugin.${ext}" | \
 		${SED} -e 's|${PREFIX}/||' >> ${PLIST}
@@ -786,7 +765,7 @@ pre-install:
 		&& ${ECHO_CMD} "@dirrmtry share/${dir}" >> ${PLIST} ; \
 	fi
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	cd ${FAKEDIR}/share/doc && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's|^|share/doc/|' >> ${PLIST} \
 		 && ${FIND} -d * -type d | \
@@ -794,7 +773,7 @@ pre-install:
 .else
 	${RM} -rf ${FAKEDIR}/share/doc
 .endif
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	cd ${FAKEDIR}/share/locale && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's|^|share/locale/|' >> ${PLIST}
 .endif
