@@ -59,6 +59,7 @@ libdata/pkgconfig/c++-gtk-utils-2-2.0.pc
 %%DOCSDIR%%/2.0/html/async__result_8h.html
 %%DOCSDIR%%/2.0/html/async__result_8h_source.html
 %%DOCSDIR%%/2.0/html/bc_s.png
+%%DOCSDIR%%/2.0/html/bdwn.png
 %%DOCSDIR%%/2.0/html/callback_8h.html
 %%DOCSDIR%%/2.0/html/callback_8h_source.html
 %%DOCSDIR%%/2.0/html/cgu__config_8h.html
@@ -280,6 +281,7 @@ libdata/pkgconfig/c++-gtk-utils-2-2.0.pc
 %%DOCSDIR%%/2.0/html/closed.png
 %%DOCSDIR%%/2.0/html/convert_8h.html
 %%DOCSDIR%%/2.0/html/convert_8h_source.html
+%%DOCSDIR%%/2.0/html/dir_101f02d72531e1268e20029abbed11e1.html
 %%DOCSDIR%%/2.0/html/do__if_8h.html
 %%DOCSDIR%%/2.0/html/do__if_8h_source.html
 %%DOCSDIR%%/2.0/html/doxygen.css
@@ -292,6 +294,22 @@ libdata/pkgconfig/c++-gtk-utils-2-2.0.pc
 %%DOCSDIR%%/2.0/html/file__print__manager_8h.html
 %%DOCSDIR%%/2.0/html/file__print__manager_8h_source.html
 %%DOCSDIR%%/2.0/html/files.html
+%%DOCSDIR%%/2.0/html/ftv2blank.png
+%%DOCSDIR%%/2.0/html/ftv2cl.png
+%%DOCSDIR%%/2.0/html/ftv2doc.png
+%%DOCSDIR%%/2.0/html/ftv2folderclosed.png
+%%DOCSDIR%%/2.0/html/ftv2folderopen.png
+%%DOCSDIR%%/2.0/html/ftv2lastnode.png
+%%DOCSDIR%%/2.0/html/ftv2link.png
+%%DOCSDIR%%/2.0/html/ftv2mlastnode.png
+%%DOCSDIR%%/2.0/html/ftv2mnode.png
+%%DOCSDIR%%/2.0/html/ftv2mo.png
+%%DOCSDIR%%/2.0/html/ftv2node.png
+%%DOCSDIR%%/2.0/html/ftv2ns.png
+%%DOCSDIR%%/2.0/html/ftv2plastnode.png
+%%DOCSDIR%%/2.0/html/ftv2pnode.png
+%%DOCSDIR%%/2.0/html/ftv2splitbar.png
+%%DOCSDIR%%/2.0/html/ftv2vertline.png
 %%DOCSDIR%%/2.0/html/functions.html
 %%DOCSDIR%%/2.0/html/functions_0x62.html
 %%DOCSDIR%%/2.0/html/functions_0x63.html
@@ -387,6 +405,7 @@ libdata/pkgconfig/c++-gtk-utils-2-2.0.pc
 %%DOCSDIR%%/2.0/html/namespacemembers_type.html
 %%DOCSDIR%%/2.0/html/namespaces.html
 %%DOCSDIR%%/2.0/html/nav_f.png
+%%DOCSDIR%%/2.0/html/nav_g.png
 %%DOCSDIR%%/2.0/html/nav_h.png
 %%DOCSDIR%%/2.0/html/notifier_8h.html
 %%DOCSDIR%%/2.0/html/notifier_8h_source.html
