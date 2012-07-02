@@ -22,11 +22,12 @@ USE_APACHE=	20+
 
 SUB_FILES=	pkg-message
 
-OPTIONS=	LDAP "Enable ldap support" On
+OPTIONS_DEFINE=	LDAP
+OPTIONS_DEFAULT=LDAP
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_PHP+=	ldap xml
 .endif
 

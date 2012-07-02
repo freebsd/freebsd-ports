@@ -17,8 +17,11 @@ COMMENT=	Squid log analyzer and HTML report generator
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-OPTIONS=	GD "Enable GD support" on\
-		PHP "Install PHP for reporting generating" on
+OPTIONS_DEFINE=	GD PHP
+OPTIONS_DEFAULT=GD PHP
+
+GD_DESC=	Enable GD support
+PHP_DESC=	Install PHP for reporting generating
 
 USE_AUTOTOOLS=	autoconf aclocal
 USE_GMAKE=	yes
@@ -33,24 +36,24 @@ MAN1=		sarg.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_NLS)
-PLIST_SUB+=	NLS="@comment "
-CONFIGURE_ARGS+=	--disable-nls
-.else
+.if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
 USE_GETTEXT=	yes
 USE_ICONV=	yes
+.else
+PLIST_SUB+=	NLS="@comment "
+CONFIGURE_ARGS+=--disable-nls
 .endif
 
-.if !defined(WITHOUT_GD)
-LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
+.if ${PORT_OPTIONS:MGD}
+LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
 .endif
 
-.if !defined(WITHOUT_PHP)
-CONFIGURE_ARGS+=	--enable-sargphp="${ETCDIR}"
+.if ${PORT_OPTIONS:MPHP}
+CONFIGURE_ARGS+=--enable-sargphp="${ETCDIR}"
 PLIST_SUB+=	PHP=""
 .else
-CONFIGURE_ARGS+=	--disable-sargphp
+CONFIGURE_ARGS+=--disable-sargphp
 PLIST_SUB+=	PHP="@comment "
 .endif
 
@@ -59,7 +62,7 @@ post-extract:
 	@${CHMOD} 0755 ${WRKSRC}/configure
 
 post-patch:
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e '/^LIBS/ s/$$/ -lintl/' ${WRKSRC}/Makefile.in
 .endif
 
