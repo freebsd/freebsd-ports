@@ -5,28 +5,33 @@
 # $FreeBSD$
 
 PORTNAME=	mlt
-PORTVERSION=	0.7.8
-PORTREVISION=	1
+PORTVERSION=	0.8.0
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Multimedia framework and video playout server for TV broadcasting
 
-LICENSE=	LGPL21 GPLv2
+LICENSE=	LGPL21 GPLv2 GPLv3
 LICENSE_COMB=	multi
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING
 LICENSE_FILE_GPLv2=	${WRKSRC}/GPL
+LICENSE_FILE_GPLv3=	${WRKSRC}/GPLv3
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
+
+# They both install bin/melt.
+CONFLICTS_INSTALL=	freeze-[0-9]*
 
 USE_GNOME=	gnomehack libxml2
 USE_SDL=	image
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-gpl --linsys-with-jpeg
+CONFIGURE_ARGS=	--enable-gpl --enable-gpl3 --linsys-with-jpeg
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
+
+PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 # Required at least for frei0r detection.
 CFLAGS+=	-I${LOCALBASE}/include
