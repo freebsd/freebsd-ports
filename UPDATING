@@ -20,7 +20,7 @@ you update your ports collection, before attempting any port upgrades.
   or
   # portupgrade -o net-im/mikutter003 net-im/mikutter
 
-201206230:
+20120630:
   AFFECTS: users of lang/perl*
   AUTHOR: skv@FreeBSD.org
 
