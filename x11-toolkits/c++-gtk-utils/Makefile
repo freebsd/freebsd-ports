@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	c++-gtk-utils
-PORTVERSION=	2.0.9
-PORTREVISION=	1
+PORTVERSION=	2.0.10
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/cxx-gtk-utils/cxx-gtk-utils/${PORTVERSION}/
 DISTNAME=	c%2B%2B-gtk-utils-${PORTVERSION}
@@ -21,11 +20,13 @@ LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
 GNU_CONFIGURE=	yes
 USE_GCC=	4.4+
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 gnomehack
 USE_LDCONFIG=	yes
 
+CONFIGURE_SCRIPT=	configure-gtk2
+CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-CONFIGURE_ARGS+=--docdir=${DOCSDIR}
 
 OPTIONS_DEFINE=	DEBUG
 
@@ -35,23 +36,4 @@ OPTIONS_DEFINE=	DEBUG
 CONFIGURE_ARGS+=--enable-debug
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
-		${REINPLACE_FILE}
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 1000000
-USE_AUTOTOOLS=	autoconf aclocal libtool
-ACLOCAL_ARGS=	-I${LOCALBASE}/share/aclocal
-REINPLACE_FILE=	${WRKSRC}/Makefile.am
-
-pre-configure:
-	@cd ${WRKSRC} && ./bootstrap-gtk2.sh
-
-.else
-CONFIGURE_SCRIPT=	configure-gtk2
-REINPLACE_FILE=		${WRKSRC}/Makefile.in
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
