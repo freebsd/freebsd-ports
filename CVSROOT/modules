@@ -8510,6 +8510,7 @@ libsmi                          ports/net-mgmt/libsmi
 libsndfile                      ports/audio/libsndfile
 libsocket++                     ports/net/libsocket++
 libsocketcpp                    ports/net/libsocketcpp
+libsoldout                      ports/textproc/libsoldout
 libsoup                         ports/devel/libsoup
 libsoup-gnome                   ports/devel/libsoup-gnome
 libsoup-reference               ports/devel/libsoup-reference
@@ -8591,7 +8592,6 @@ libunp                          ports/net/libunp
 libunrar                        ports/archivers/libunrar
 libunrar4                       ports/archivers/libunrar4
 libunwind                       ports/devel/libunwind
-libupskirt                      ports/textproc/libupskirt
 libusb                          ports/devel/libusb
 libutempter                     ports/sysutils/libutempter
 libutf                          ports/misc/libutf
@@ -11603,6 +11603,7 @@ p5-CatalystX-RoleApplicator     ports/www/p5-CatalystX-RoleApplicator
 p5-CatalystX-SimpleLogin        ports/www/p5-CatalystX-SimpleLogin
 p5-Cdk                          ports/devel/p5-Cdk
 p5-Cflow                        ports/net-mgmt/p5-Cflow
+p5-Chart                        ports/graphics/p5-Chart
 p5-Chart-Clicker                ports/graphics/p5-Chart-Clicker
 p5-Chart-Graph                  ports/graphics/p5-Chart-Graph
 p5-Chart-Math-Axis              ports/math/p5-Chart-Math-Axis
@@ -16085,7 +16086,7 @@ p5-cgi-xmlapplication           ports/www/p5-CGI-XMLApplication
 p5-cgi.pm                       ports/www/p5-CGI.pm
 p5-cgi_lite                     ports/www/p5-CGI_Lite
 p5-cgp-cli                      ports/mail/p5-CGP-CLI
-p5-chart                        ports/graphics/p5-chart
+p5-chart                        ports/graphics/p5-Chart
 p5-chart-clicker                ports/graphics/p5-Chart-Clicker
 p5-chart-graph                  ports/graphics/p5-Chart-Graph
 p5-chart-math-axis              ports/math/p5-Chart-Math-Axis
@@ -21176,6 +21177,7 @@ perl2html                       ports/textproc/perl2html
 perl5.10                        ports/lang/perl5.10
 perl5.12                        ports/lang/perl5.12
 perl5.14                        ports/lang/perl5.14
+perl5.16                        ports/lang/perl5.16
 perl5.8                         ports/lang/perl5.8
 perlbal                         ports/www/perlbal
 perlconsole                     ports/devel/perlconsole
@@ -23411,6 +23413,7 @@ py-versiontools                 ports/devel/py-versiontools
 py-vertex                       ports/net-p2p/py-vertex
 py-viper                        ports/math/py-viper
 py-virtualenv                   ports/devel/py-virtualenv
+py-virtualenv-clone             ports/devel/py-virtualenv-clone
 py-virtualenvwrapper            ports/devel/py-virtualenvwrapper
 py-visual                       ports/graphics/py-visual
 py-vobject                      ports/deskutils/py-vobject
