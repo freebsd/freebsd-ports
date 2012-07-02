@@ -7,6 +7,7 @@ bin/cglog
 bin/cgmkdb
 bin/cgrecover
 include/cego/CegoAdmNet.h
+include/cego/CegoAdminHandler.h
 include/cego/CegoBlob.h
 include/cego/CegoCheckObject.h
 include/cego/CegoContentObject.h
