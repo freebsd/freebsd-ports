@@ -14,13 +14,13 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Improved network monitoring dock app (with tons of features)
 
+LICENSE=	GPLv2
+
 USE_XORG=	ice sm x11 xext xpm
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--disable-dummy-driver
-
-LICENSE=	GPLv2
 
 MAN1=		wmnd.1
 PORTEXAMPLES=	wmndrc
