@@ -20,18 +20,21 @@ USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_CSTD=	gnu89
 USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 
 MAN3=		vstr.3 vstr_const.3
 
+.include <bsd.port.options.mk>
+
 post-patch:
-.if defined(NOPORTDOCS)
+.if !${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e 's| Documentation||' ${WRKSRC}/Makefile.in
 .endif
 
 post-install:
-.if defined(NOPORTDOCS)
+.if !${PORT_OPTIONS:MDOCS}
 	cd ${WRKSRC}/Documentation && ${GMAKE} install-man3
 .endif
 
