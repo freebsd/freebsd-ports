@@ -4,10 +4,10 @@ RMDIR=/bin/rmdir
 
 COUCH_DBDIR=/var/db/couchdb
 COUCH_LOGDIR=/var/log/couchdb
-COUCH_LIBDIR=/var/lib/couchdb
+COUCH_RUNDIR=/var/run/couchdb
 
 if [ "$2" = "POST-DEINSTALL" ]; then
-	for i in ${COUCH_LIBDIR} ${COUCH_DBDIR} ${COUCH_LOGDIR}; do
+	for i in ${COUCH_RUNDIR} ${COUCH_DBDIR} ${COUCH_LOGDIR}; do
 		${RMDIR} ${i} 2>/dev/null
 	done
 fi

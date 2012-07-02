@@ -35,12 +35,14 @@ couchdb_respawn="${couchdb_respawn:-"0"}"
 
 command="%%PREFIX%%/bin/${name}"
 pidfile="/var/run/${name}/${name}.pid"
+urifile="/var/run/${name}/couch.uri"
 
 command_args="-p ${pidfile} -b"
 
 couchdb_prestart()
 {
 	install -o $couchdb_user /dev/null $pidfile
+	install -o $couchdb_user /dev/null $urifile
 
 	if [ -n "$couchdb_flags" ]; then
 		case "$couchdb_flags" in
