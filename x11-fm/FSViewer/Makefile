@@ -18,9 +18,11 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 file manager using WINGS library. Dockable in WindowMaker
 
-LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker
-
 BROKEN=		does not configure
+DEPRECATED=	Broken, unmaintained, dead upstream
+EXPIRATION_DATE=	2012-07-31
+
+LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker
 
 USE_XORG=	x11 xmu
 USE_GMAKE=	yes
