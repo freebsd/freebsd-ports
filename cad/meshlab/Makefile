@@ -7,22 +7,24 @@
 #
 
 PORTNAME=	meshlab
-PORTVERSION=	1.2.3
-PORTREVISION=	2
+DISTVERSION=	1.3.0
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/MeshLab%20v${PORTVERSION}/
-DISTNAME=	MeshLabSrc_AllInc_v123a
+DISTNAME=	MeshLabSrc_AllInc_v${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A tool for processing and editing 3D triangular meshes
 
+LIB_DEPENDS=	QtSolutions_SOAP-head:${PORTSDIR}/devel/qt4-qtsolutions-soap
+
 USE_GL=		glew glu
 USE_QT4=	qmake corelib gui xml opengl network moc uic rcc
+MAKE_ENV+=	CXX=clang++
 
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/meshlab/src
+WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
 post-patch:
 	${FIND} ${WRKSRC} -name "*.pro" | ${XARGS} ${REINPLACE_CMD} -e 's|^linux-g++|freebsd-g++|'
@@ -31,7 +33,7 @@ post-patch:
 
 do-configure:
 	cd ${WRKSRC}/external && ${QMAKE} -recursive external.pro
-	cd ${WRKSRC} && ${QMAKE} -recursive meshlabv12.pro
+	cd ${WRKSRC} && ${QMAKE} -recursive meshlab_full.pro
 
 do-build:
 	cd ${WRKSRC}/external && ${MAKE}
