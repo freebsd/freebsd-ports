@@ -8,7 +8,8 @@
 PORTNAME=	pycrypto
 PORTVERSION=	2.6
 CATEGORIES=	security python
-MASTER_SITES=	http://ftp.dlitz.net/pub/dlitz/crypto/pycrypto/
+MASTER_SITES=	CHEESESHOP \
+		https://ftp.dlitz.net/pub/dlitz/crypto/pycrypto/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jgh@FreeBSD.org
