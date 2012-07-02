@@ -50,11 +50,11 @@ include/mlt/framework/mlt_transition.h
 include/mlt/framework/mlt_types.h
 include/mlt/framework/mlt_version.h
 lib/libmlt++.so
-lib/libmlt++.so.0.7.8
+lib/libmlt++.so.%%PORTVERSION%%
 lib/libmlt++.so.3
 lib/libmlt.so
-lib/libmlt.so.0.7.8
-lib/libmlt.so.4
+lib/libmlt.so.%%PORTVERSION%%
+lib/libmlt.so.5
 %%FFMPEG%%lib/mlt/libmltavformat.so
 lib/mlt/libmltcore.so
 lib/mlt/libmltdecklink.so
