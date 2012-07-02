@@ -6,6 +6,7 @@
 
 PORTNAME=	kdenlive
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src/
@@ -16,7 +17,7 @@ COMMENT=	KDE professional quality non-linear video editing suite
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	mlt.4:${PORTSDIR}/multimedia/mlt \
+LIB_DEPENDS=	mlt.5:${PORTSDIR}/multimedia/mlt \
 		qjson.0:${PORTSDIR}/devel/qjson
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4 sharedmime
