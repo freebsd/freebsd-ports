@@ -5530,7 +5530,6 @@ hplip                           ports/print/hplip
 hploscripts                     ports/sysutils/hploscripts
 hppsmtools                      ports/graphics/hppsmtools
 hr-aspell                       ports/textproc/hr-aspell
-hrktorrent                      ports/net-p2p/hrktorrent
 hs-ALUT                         ports/audio/hs-ALUT
 hs-Agda                         ports/math/hs-Agda
 hs-Agda-executable              ports/math/hs-Agda-executable
@@ -8043,6 +8042,7 @@ libfs                           ports/x11-fonts/libFS
 libftdi                         ports/devel/libftdi
 libg19                          ports/devel/libg19
 libg19draw                      ports/devel/libg19draw
+libgaiagraphics                 ports/graphics/libgaiagraphics
 libgail-gnome                   ports/x11-toolkits/libgail-gnome
 libgal                          ports/astro/libgal
 libgalago                       ports/devel/libgalago
@@ -8567,7 +8567,6 @@ libtommath                      ports/math/libtommath
 libtool                         ports/devel/libtool
 libtorrent                      ports/net-p2p/libtorrent
 libtorrent-devel                ports/net-p2p/libtorrent-devel
-libtorrent-rasterbar-14         ports/net-p2p/libtorrent-rasterbar-14
 libtorrent-rasterbar-15         ports/net-p2p/libtorrent-rasterbar-15
 libtorrent-rasterbar-15-python  ports/net-p2p/libtorrent-rasterbar-15-python
 libtorrent-rasterbar-16         ports/net-p2p/libtorrent-rasterbar-16
@@ -9509,6 +9508,7 @@ mifluz                          ports/textproc/mifluz
 migrate                         ports/biology/migrate
 mikmod                          ports/audio/mikmod
 mikutter                        ports/net-im/mikutter
+mikutter003                     ports/net-im/mikutter003
 milkytracker                    ports/audio/milkytracker
 milter-bogom                    ports/mail/milter-bogom
 milter-callback                 ports/mail/milter-callback
@@ -21618,6 +21618,7 @@ pingwi                          ports/x11-fonts/pingwi
 pink-pony                       ports/games/pink-pony
 pinot                           ports/deskutils/pinot
 pinpoint                        ports/graphics/pinpoint
+pinta                           ports/graphics/pinta
 pioneers                        ports/games/pioneers
 pipe                            ports/misc/pipe
 pipebench                       ports/benchmarks/pipebench
@@ -25634,7 +25635,6 @@ shared-mime-info                ports/misc/shared-mime-info
 sharedance                      ports/databases/sharedance
 sharefonts                      ports/x11-fonts/sharefonts
 sharity-light                   ports/net/sharity-light
-sharktorrent                    ports/net-p2p/sharktorrent
 sharpconstruct                  ports/graphics/sharpconstruct
 sharutils                       ports/archivers/sharutils
 shc                             ports/misc/shc
@@ -25968,6 +25968,7 @@ spass                           ports/security/spass
 spassgen                        ports/sysutils/spassgen
 spatialindex                    ports/devel/spatialindex
 spatialite                      ports/databases/spatialite
+spatialite_gui                  ports/databases/spatialite_gui
 spawn-fcgi                      ports/www/spawn-fcgi
 spblas                          ports/math/spblas
 spcaview                        ports/graphics/spcaview
