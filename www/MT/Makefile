@@ -29,7 +29,7 @@ OPTIONS=	APACHE			"USE_APACHE"		off \
 .if !defined(WITHOUT_OPTIONAL_MODULES)
 RUN_DEPENDS+=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite \
-		ImageMagick>=0:${PORTSDIR}/graphics/ImageMagick \
+		convert:${PORTSDIR}/graphics/ImageMagick \
 		p5-Crypt-DSA>=0:${PORTSDIR}/security/p5-Crypt-DSA \
 		p5-Mail-Sendmail>=0:${PORTSDIR}/mail/p5-Mail-Sendmail \
 		p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \

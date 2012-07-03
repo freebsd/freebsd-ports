@@ -34,8 +34,8 @@ MAN3=		GD::SecurityImage.3 \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
-BUILD_DEPENDS+=	ImageMagick>=0:${PORTSDIR}/graphics/ImageMagick
-RUN_DEPENDS+=	ImageMagick>=0:${PORTSDIR}/graphics/ImageMagick
+BUILD_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 .include <bsd.port.pre.mk>

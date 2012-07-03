@@ -19,7 +19,7 @@ COMMENT=	Collects the output from Nagios and generates graphs
 BUILD_DEPENDS=	\
 	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
 	rrdtool>=0:${PORTSDIR}/databases/rrdtool \
-	ImageMagick>=0:${PORTSDIR}/graphics/ImageMagick \
+	convert:${PORTSDIR}/graphics/ImageMagick \
 	p5-URI>=0:${PORTSDIR}/net/p5-URI \
 	p5-Calendar-Simple>=0:${PORTSDIR}/devel/p5-Calendar-Simple \
 	${LOCALBASE}/bin/nagios:${PORTSDIR}/net-mgmt/nagios

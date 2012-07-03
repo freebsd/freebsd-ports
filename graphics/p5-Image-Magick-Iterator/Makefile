@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Sequentially read Image::Magick object from a filehandle
 
-RUN_DEPENDS=	ImageMagick>=0:${PORTSDIR}/graphics/ImageMagick \
+RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		p5-Image-PBMlib>=0:${PORTSDIR}/graphics/p5-Image-PBMlib
 
 PERL_CONFIGURE=	yes

@@ -28,7 +28,7 @@ PORTDOCS=	AUTHORS README ChangeLog NEWS TODO
 .include <bsd.port.options.mk>
 
 .if defined(WITH_IMAGEMAGICK)
-RUN_DEPENDS+=	ImageMagick>=0:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 post-install:
