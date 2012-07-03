@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqlalchemy
-PORTVERSION=	0.7.7
+PORTVERSION=	0.7.8
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,6 +14,8 @@ DISTNAME=	SQLAlchemy-${DISTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A Python SQL toolkit and Object Relational Mapper
+
+LICENSE=	MIT
 
 # Python3 ready
 USE_PYTHON=	yes
@@ -26,33 +28,39 @@ PYEASYINSTALL_ARCHDEP=	yes
 # bypass infrastructure bug
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-OPTIONS=	FIREBIRD "support FireBird" off
-OPTIONS+=	MSSQL "support MS SQL Server" off
-OPTIONS+=	MYSQL "support MySQL" on
-OPTIONS+=	NOSE "install Nose for unit tests" off
-OPTIONS+=	PGSQL "support PostGreSQL" on
-OPTIONS+=	SQLITE "support Sqlite" on
-OPTIONS+=	SYBASE "support Sybase" off
+OPTIONS_DEFINE=	DOCS EXAMPLES NOSE
+
+OPTIONS_MULTI=	BACKEND
+OPTIONS_MULTI_BACKEND=	FIREBIRD MSSQL MYSQL PGSQL SQLITE SYBASE
+
+OPTIONS_DEFAULT=	MYSQL PGSQL SQLITE
+
+FIREBIRD_DESC=	Firebird backend
+MSSQL_DESC=	MS SQL Server backend
+NOSE_DESC=	Use Nose for unit tests
+SYBASE_DESC=	Sybase backend
+
+.include <bsd.port.options.mk>
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 AL_PORTDOCS=	*.html *.js
 AL_PORTDOCS_SUBDIR=	core dialects orm
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_FIREBIRD)
+.if ${PORT_OPTIONS:MFIREBIRD}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/kinterbasdb/__init__.py:${PORTSDIR}/databases/kinterbasdb
 .endif
 
-.if defined(WITH_MSSQL)
+.if ${PORT_OPTIONS:MMSSQL}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pymssql.py:${PORTSDIR}/databases/py-mssql
 .endif
 
-.if !defined(WITHOUT_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 .if ${PYTHON_VER} < 3.0
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb
 #.else
@@ -62,24 +70,24 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MyS
 .endif
 .endif
 
-.if defined(WITH_NOSE)
+.if ${PORT_OPTIONS:MNOSE}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}nose-1.0.0:${PORTSDIR}/devel/py-nose
 .endif
 
-.if !defined(WITHOUT_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.0.8:${PORTSDIR}/databases/py-psycopg2
 .endif
 
-.if !defined(WITHOUT_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 .endif
 
-.if !defined(WITHOUT_SYBASE)
+.if ${PORT_OPTIONS:MSYBASE}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Sybase.py:${PORTSDIR}/databases/py-sybase
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for i in ${AL_PORTDOCS}
 	    ${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
@@ -90,7 +98,7 @@ post-install:
 .endfor
 .endif
 
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 	@cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
