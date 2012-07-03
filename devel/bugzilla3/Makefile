@@ -111,7 +111,7 @@ RUN_DEPENDS+=	p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
 .endif
 
 .ifdef WITH_BMP2PNG
-RUN_DEPENDS+=	ImageMagick>=0:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 .if defined(WITH_XMLRPC) || defined(WITH_JSONRPC)

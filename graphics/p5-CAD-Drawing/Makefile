@@ -18,7 +18,7 @@ COMMENT=	Methods to create, load, and save vector graphics
 RUN_DEPENDS=	p5-Math-Vec>=0:${PORTSDIR}/math/p5-Math-Vec \
 		p5-CAD-Calc>=0:${PORTSDIR}/math/p5-CAD-Calc \
 		p5-MatrixReal>=0:${PORTSDIR}/math/p5-MatrixReal \
-		ImageMagick>=0:${PORTSDIR}/graphics/ImageMagick \
+		convert:${PORTSDIR}/graphics/ImageMagick \
 		p5-Stream>=0:${PORTSDIR}/devel/p5-Stream \
 		p5-Math-Geometry-Planar>=0:${PORTSDIR}/math/p5-Math-Geometry-Planar
 BUILD_DEPENDS:=	${RUN_DEPENDS}

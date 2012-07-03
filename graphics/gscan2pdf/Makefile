@@ -22,7 +22,7 @@ BUILD_DEPENDS=	p5-Test-Perl-Critic>=0:${PORTSDIR}/textproc/p5-Test-Perl-Critic \
 		p5-Sys-SigAction>=0:${PORTSDIR}/devel/p5-Sys-SigAction \
 		p5-forks>=0:${PORTSDIR}/devel/p5-forks \
 		p5-Proc-ProcessTable>=0:${PORTSDIR}/devel/p5-Proc-ProcessTable \
-		ImageMagick>=0:${PORTSDIR}/graphics/ImageMagick \
+		convert:${PORTSDIR}/graphics/ImageMagick \
 		p5-Goo-Canvas>=0:${PORTSDIR}/devel/p5-Goo-Canvas \
 		p5-Pango>=0:${PORTSDIR}/x11-toolkits/p5-Pango \
 		p5-Acme-Damn>=0:${PORTSDIR}/devel/p5-Acme-Damn \
