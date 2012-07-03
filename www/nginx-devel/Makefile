@@ -312,7 +312,7 @@ CONFIGURE_ARGS+=--without-http-cache
 .endif
 
 .if ${PORT_OPTIONS:MCACHE_PURGE}
-NGINX_CACHE_PURGE_VERSION=	1.5
+NGINX_CACHE_PURGE_VERSION=	1.6
 MASTER_SITES+=	http://labs.frickle.com/files/:cache_purge
 DISTFILES+=	ngx_cache_purge-${NGINX_CACHE_PURGE_VERSION}.tar.gz:cache_purge
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_cache_purge-${NGINX_CACHE_PURGE_VERSION}
@@ -485,13 +485,12 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upload_module-${NGINX_UPLOAD_VERSIO
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_UPLOAD_PROGRESS}
-NGINX_UPLOADPROGRESS_VERSION=	0.8.3
-GIT_UPLOADPROGRESS_VERSION=	0-gc7c663f
+NGINX_UPLOADPROGRESS_VERSION=	0.9.0
+GIT_UPLOADPROGRESS_VERSION=	0-ga788dea
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/masterzen/nginx-upload-progress-module/tarball/v${NGINX_UPLOADPROGRESS_VERSION}/:uploadprogress
 DISTFILES+=	masterzen-nginx-upload-progress-module-v${NGINX_UPLOADPROGRESS_VERSION}-${GIT_UPLOADPROGRESS_VERSION}.tar.gz:uploadprogress
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/masterzen-nginx-upload-progress-module-${GIT_UPLOADPROGRESS_VERSION:S/^0-g//}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_uploadprogress_module.c
 .endif
 
 .if !empty(PORT_OPTIONS:MHTTP_UPSTREAM_FAIR) || !empty(PORT_OPTIONS:MSUPERVISORD)
@@ -699,7 +698,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_sflow_config.c
 .endif
 
 .if ${PORT_OPTIONS:MSLOWFS_CACHE}
-NGINX_SLOWFS_CACHE_VERSION=	1.8
+NGINX_SLOWFS_CACHE_VERSION=	1.9
 MASTER_SITES+=	http://labs.frickle.com/files/:slowfs_cache
 DISTFILES+=	ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_VERSION}.tar.gz:slowfs_cache
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_VERSION}
