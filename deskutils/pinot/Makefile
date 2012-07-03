@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pinot
-PORTVERSION=	0.98
-PORTREVISION=	3
+PORTVERSION=	1.0
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 #MASTER_SITES=	http://colinf.chez.com/pinot/
@@ -21,7 +20,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	update-desktop-database:${PORTSDIR}/devel/desktop-file-utils
 LIB_DEPENDS=	xapian.26:${PORTSDIR}/databases/xapian-core	\
 		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24	\
-		textcat.0:${PORTSDIR}/textproc/libtextcat	\
+		exttextcat.0:${PORTSDIR}/textproc/libexttextcat	\
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib	\
 		xml\\+\\+-2.6:${PORTSDIR}/textproc/libxml++26	\
 		boost_thread.4:${PORTSDIR}/devel/boost-libs	\
@@ -44,10 +43,12 @@ PROJECTHOST=	${PORTNAME}-search
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-http=curl --with-ssl=${OPENSSLBASE} --enable-libarchive
+CONFIGURE_ARGS=	--with-http=curl --with-ssl=${OPENSSLBASE} --enable-libarchive	\
+		--enable-mempool=no
 CONFIGURE_ENV=	MKDIR_P="${MKDIR}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
+USE_DOS2UNIX=	textcat32_conf.txt
 USE_XORG=	pixman
 USE_GETTEXT=	yes
 USE_SQLITE=	3
@@ -68,18 +69,13 @@ PLIST_SUB+=	CHMLIB="@comment "
 
 INSTALLS_ICONS=	yes
 
-PLIST_SUB+=	DESKBAR_MOD="${LDESKBAR_MOD}"
-
 MAN1=		pinot-dbus-daemon.1 pinot-index.1 pinot-label.1 pinot-search.1 pinot.1
 
 PORTDOCS=	AUTHORS ChangeLog ChangeLog-dijon INSTALL NEWS README TODO
 
-LM2FIX=		textcat_conf.txt textcat3_conf.txt textcat31_conf.txt
+LM2FIX=		textcat_conf.txt textcat3_conf.txt textcat31_conf.txt textcat32_conf.txt
 SHR2FIX=	Core/pinot-search.1 README
 UL2FIX=		Utils/xdgmime/xdgmime.c
-
-LDESKBAR_MOD=	libexec/deskbar-applet/modules-2.20-compatible
-DESKBAR_MOD=	${PREFIX}/${LDESKBAR_MOD}
 
 .include <bsd.port.pre.mk>
 
@@ -112,12 +108,6 @@ pre-configure:
 
 post-install:
 	${TOUCH} ${DATADIR}/stopwords/.empty_file
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${DESKBAR_MOD}
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${DESKBAR_MOD}
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py		\
-		${PREFIX}/lib/deskbar-applet/handlers
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py	\
-		${PREFIX}/lib/deskbar-applet/handlers
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
