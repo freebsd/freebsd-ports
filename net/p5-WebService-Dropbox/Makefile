@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WebService-Dropbox
-PORTVERSION=	1.06
+PORTVERSION=	1.07
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ASKADNA
@@ -20,7 +20,8 @@ BUILD_DEPENDS=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 		p5-String-Random>=0.22:${PORTSDIR}/devel/p5-String-Random
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-OPTIONS=	LWP	"Use LWP instead of Furl" off
+OPTIONS_DEFINE=	LWP
+LWP_DESC=	Use LWP instead of Furl
 
 PERL_CONFIGURE=	yes
 
@@ -28,7 +29,7 @@ MAN3=		WebService::Dropbox.3
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_LWP)
+.if ${PORT_OPTIONS:MLWP}
 BUILD_DEPENDS+=	p5-LWP-Protocol-https>=6.02:${PORTSDIR}/www/p5-LWP-Protocol-https \
 		p5-libwww>=6.02:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS+=	p5-LWP-Protocol-https>=6.02:${PORTSDIR}/www/p5-LWP-Protocol-https \
