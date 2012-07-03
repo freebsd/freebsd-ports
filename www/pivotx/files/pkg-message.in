@@ -26,7 +26,7 @@ Adding the above alias allows you to access the admin page at
   http://localhost/%%BLOGURL%%/pivotx/
 Use usernames that are hard to guess.
 
-%%DOCSDIR%%/example.htaccess is a sample .htaccess for %%WWWDIR%%.
+%%EXAMPLESDIR%%/example.htaccess is a sample .htaccess for %%WWWDIR%%.
 
 Setting date.timezone of %%PREFIX%%/etc/php.ini in POSIX style may
 ease your life.

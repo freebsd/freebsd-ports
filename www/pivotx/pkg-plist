@@ -1,7 +1,3 @@
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/example.htaccess
-%%PORTDOCS%%%%DOCSDIR%%/data.php.orig
 %%WWWDIR%%/images/index.html
 %%WWWDIR%%/index.php
 %%WWWDIR%%/pivotx/ajaxhelper.php
@@ -957,8 +953,7 @@
 @dirrmtry %%WWWDIR%%/pivotx/db/rsscache
 @dirrmtry %%WWWDIR%%/pivotx/db/refkeys
 @dirrmtry %%WWWDIR%%/pivotx/db/cache
-@dirrm %%WWWDIR%%/pivotx/db
+@dirrmtry %%WWWDIR%%/pivotx/db
 @dirrmtry %%WWWDIR%%/pivotx
 @dirrm %%WWWDIR%%/images
 @dirrmtry %%WWWDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
