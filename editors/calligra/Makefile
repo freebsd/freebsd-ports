@@ -7,7 +7,7 @@
 
 PORTNAME=	calligra
 PORTVERSION=	${CALLIGRA_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${CALLIGRA_BRANCH}/${PORTNAME}-${PORTVERSION}/
@@ -100,8 +100,8 @@ PLIST_SUB+=	MYSQL="@comment "
 
 .if !defined(WITHOUT_PGSQL)
 USE_PGSQL=	yes
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx30
-RUN_DEPENDS+=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx30
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx3
+RUN_DEPENDS+=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx3
 PLIST_SUB+=	PGSQL=""
 .else
 CMAKE_ARGS+=	-DWITH_PostgreSQL:BOOL=FALSE
