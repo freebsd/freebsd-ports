@@ -1,5 +1,4 @@
 bin/gns3
-bin/qemuwrapper.py
 libexec/gns3/qemuwrapper.py
 libexec/gns3/vboxcontroller_4_1.py
 libexec/gns3/vboxwrapper.py

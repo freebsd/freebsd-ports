@@ -7,6 +7,7 @@
 
 PORTNAME=	gns3
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/gns-3/GNS3/${PORTVERSION}
 DISTNAME=	GNS3-${PORTVERSION}-src
@@ -28,21 +29,20 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4
 USE_PYTHON=		2.6+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	GNS3
-MAN1=			${PORTNAME}.1
 
 OPTIONS_DEFINE=		MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
 
 .include <bsd.port.options.mk>
 
-.include <bsd.port.pre.mk>
+.if ${PORT_OPTIONS:MMANPAGES}
+MAN1=	${PORTNAME}.1
+.endif
 
 post-install:
 .if ${PORT_OPTIONS:MMANPAGES}
-	${INSTALL_MAN} ${WRKSRC}/docs/man/${MAN1} ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/man/${MAN1} ${MAN1PREFIX}/man/man1
 .endif
-	${INSTALL_SCRIPT} ${WRKSRC}/qemuwrapper/qemuwrapper.py \
-		${PREFIX}/bin/qemuwrapper.py
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
