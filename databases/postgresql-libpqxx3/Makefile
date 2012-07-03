@@ -6,24 +6,27 @@
 #
 
 PORTNAME=	libpqxx
-PORTVERSION=	3.0.2
+PORTVERSION=	3.1
 CATEGORIES=	databases
-MASTER_SITES=	http://pqxx.org/download/software/libpqxx/
+MASTER_SITES=	http://pqxx.org/download/software/${PORTNAME}/
 PKGNAMEPREFIX=	postgresql-
 DIST_SUBDIR=	postgresql
 
 MAINTAINER=	20080111.freebsd.org@ab.ote.we.lv
-COMMENT=	A new C++ interface for PostgreSQL
+COMMENT=	New C++ interface for PostgreSQL
 
 CONFLICTS=	postgresql-libpqxx-[2-4].*
-LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}30
+LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}3
+PORTSCOUT=	limit:^2\.
 
 USE_PGSQL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-PLIST_SUB=	SHLIBVERSION=3.0
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-CONFIGURE_ARGS=	--enable-shared
+CONFIGURE_ARGS=	--with-postgres=${LOCALBASE} \
+		--enable-shared \
+		--with-postgres-include=${LOCALBASE}/include/postgresql
 
 .include <bsd.port.mk>

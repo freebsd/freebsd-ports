@@ -19,6 +19,27 @@ include/pqxx/dbtransaction
 include/pqxx/dbtransaction.hxx
 include/pqxx/except
 include/pqxx/except.hxx
+include/pqxx/internal/callgate.hxx
+include/pqxx/internal/gates/connection-dbtransaction.hxx
+include/pqxx/internal/gates/connection-largeobject.hxx
+include/pqxx/internal/gates/connection-notify-listener.hxx
+include/pqxx/internal/gates/connection-parameterized_invocation.hxx
+include/pqxx/internal/gates/connection-pipeline.hxx
+include/pqxx/internal/gates/connection-prepare-declaration.hxx
+include/pqxx/internal/gates/connection-prepare-invocation.hxx
+include/pqxx/internal/gates/connection-reactivation_avoidance_exemption.hxx
+include/pqxx/internal/gates/connection-sql_cursor.hxx
+include/pqxx/internal/gates/connection-transaction.hxx
+include/pqxx/internal/gates/icursor_iterator-icursorstream.hxx
+include/pqxx/internal/gates/icursorstream-icursor_iterator.hxx
+include/pqxx/internal/gates/result-connection.hxx
+include/pqxx/internal/gates/result-creation.hxx
+include/pqxx/internal/gates/result-sql_cursor.hxx
+include/pqxx/internal/gates/transaction-subtransaction.hxx
+include/pqxx/internal/gates/transaction-tablereader.hxx
+include/pqxx/internal/gates/transaction-tablewriter.hxx
+include/pqxx/internal/gates/transaction-transactionfocus.hxx
+include/pqxx/internal/statement_parameters.hxx
 include/pqxx/isolation
 include/pqxx/isolation.hxx
 include/pqxx/largeobject
@@ -28,6 +49,7 @@ include/pqxx/nontransaction
 include/pqxx/nontransaction.hxx
 include/pqxx/notify-listen
 include/pqxx/notify-listen.hxx
+include/pqxx/performance.hxx
 include/pqxx/pipeline
 include/pqxx/pipeline.hxx
 include/pqxx/pqxx
@@ -37,6 +59,8 @@ include/pqxx/result
 include/pqxx/result.hxx
 include/pqxx/robusttransaction
 include/pqxx/robusttransaction.hxx
+include/pqxx/strconv
+include/pqxx/strconv.hxx
 include/pqxx/subtransaction
 include/pqxx/subtransaction.hxx
 include/pqxx/tablereader
@@ -55,10 +79,13 @@ include/pqxx/trigger
 include/pqxx/trigger.hxx
 include/pqxx/util
 include/pqxx/util.hxx
+include/pqxx/version
 include/pqxx/version.hxx
-lib/libpqxx-%%SHLIBVERSION%%.so
+lib/libpqxx-%%PORTVERSION%%.so
 lib/libpqxx.a
 lib/libpqxx.la
 lib/libpqxx.so
 libdata/pkgconfig/libpqxx.pc
+@dirrm include/pqxx/internal/gates
+@dirrm include/pqxx/internal
 @dirrm include/pqxx
