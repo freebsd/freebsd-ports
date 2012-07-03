@@ -30,7 +30,7 @@ include/gutenprintui2/typebuiltins.h
 lib/libgutenprint.a
 lib/libgutenprint.la
 lib/libgutenprint.so
-lib/libgutenprint.so.2
+lib/libgutenprint.so.3
 lib/libgutenprintui2.a
 lib/libgutenprintui2.la
 lib/libgutenprintui2.so
@@ -162,6 +162,8 @@ libdata/pkgconfig/gutenprintui2.pc
 %%DATADIR%%/5.2/xml/escp2/model/model_113.xml
 %%DATADIR%%/5.2/xml/escp2/model/model_114.xml
 %%DATADIR%%/5.2/xml/escp2/model/model_115.xml
+%%DATADIR%%/5.2/xml/escp2/model/model_116.xml
+%%DATADIR%%/5.2/xml/escp2/model/model_117.xml
 %%DATADIR%%/5.2/xml/escp2/model/model_12.xml
 %%DATADIR%%/5.2/xml/escp2/model/model_13.xml
 %%DATADIR%%/5.2/xml/escp2/model/model_14.xml
@@ -260,6 +262,7 @@ libdata/pkgconfig/gutenprintui2.pc
 %%DATADIR%%/5.2/xml/escp2/model/model_99.xml
 %%DATADIR%%/5.2/xml/escp2/qualitypresets/p1_5.xml
 %%DATADIR%%/5.2/xml/escp2/qualitypresets/picturemate.xml
+%%DATADIR%%/5.2/xml/escp2/qualitypresets/prox900.xml
 %%DATADIR%%/5.2/xml/escp2/qualitypresets/standard.xml
 %%DATADIR%%/5.2/xml/escp2/qualitypresets/v2880.xml
 %%DATADIR%%/5.2/xml/escp2/qualitypresets/wf40.xml
@@ -310,6 +313,7 @@ share/locale/en_GB/LC_MESSAGES/gutenprint.mo
 share/locale/es/LC_MESSAGES/gutenprint.mo
 share/locale/fi/LC_MESSAGES/gutenprint.mo
 share/locale/fr/LC_MESSAGES/gutenprint.mo
+share/locale/gl/LC_MESSAGES/gutenprint.mo
 share/locale/hu/LC_MESSAGES/gutenprint.mo
 share/locale/it/LC_MESSAGES/gutenprint.mo
 share/locale/ja/LC_MESSAGES/gutenprint.mo
@@ -321,6 +325,8 @@ share/locale/ru/LC_MESSAGES/gutenprint.mo
 share/locale/sk/LC_MESSAGES/gutenprint.mo
 share/locale/sl/LC_MESSAGES/gutenprint.mo
 share/locale/sv/LC_MESSAGES/gutenprint.mo
+share/locale/uk/LC_MESSAGES/gutenprint.mo
+share/locale/zh_CN/LC_MESSAGES/gutenprint.mo
 share/locale/zh_TW/LC_MESSAGES/gutenprint.mo
 @dirrm %%DATADIR%%/samples
 @dirrm %%DATADIR%%/doc/reference-html

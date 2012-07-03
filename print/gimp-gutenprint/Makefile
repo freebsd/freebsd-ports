@@ -9,7 +9,7 @@ PORTEPOCH=	0
 PKGNAMEPREFIX=	gimp-
 PKGNAMESUFFIX=	# empty
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cmt@burggraben.net
 COMMENT=	Gimp print plug-in
 
 MASTERDIR=	${.CURDIR}/../../print/gutenprint-base

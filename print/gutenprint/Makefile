@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gutenprint
-PORTVERSION=	5.2.7
+PORTVERSION=	5.2.8
 CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -18,27 +18,30 @@ COMMENT=	The "meta-port" for GutenPrint
 
 RUN_DEPENDS=	gutenprint-base>0:${PORTSDIR}/print/gutenprint-base
 
-OPTIONS=	CUPS "GutenPrint (gimp-print) Cups Drivers" Off \
-		IJS "IJS GhostScript Drivers" On \
-		FOOMATIC "Foomatic data files" Off
+OPTIONS_DEFINE=		CUPS GIMP IJS FOOMATIC
+OPTIONS_DEFAULT=	IJS
+CUPS_DESC=			GutenPrint (gimp-print) Cups Drivers
+GIMP_DESC=			GIMP Gutenprint printing plugin
+IJS_DESC=			IJS GhostScript Drivers
+FOOMATIC_DESC=		Foomatic data files
 
 NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_CUPS)
+.if ${PORT_OPTIONS:MCUPS}
 RUN_DEPENDS+=	gutenprint-cups>0:${PORTSDIR}/print/gutenprint-cups
 .endif
 
-.if defined(WITH_GIMP)
+.if ${PORT_OPTIONS:MGIMP}
 RUN_DEPENDS+=	gimp-gutenprint>0:${PORTSDIR}/print/gimp-gutenprint
 .endif
 
-.if !defined(WITHOUT_IJS)
+.if ${PORT_OPTIONS:MIJS}
 RUN_DEPENDS+=	gutenprint-ijs>0:${PORTSDIR}/print/gutenprint-ijs
 .endif
 
-.if defined(WITH_FOOMATIC)
+.if ${PORT_OPTIONS:MFOOMATIC}
 RUN_DEPENDS+=	gutenprint-foomatic>0:${PORTSDIR}/print/gutenprint-foomatic
 .endif
 
