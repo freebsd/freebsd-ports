@@ -11,7 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	https://opensource.conformal.com/snapshots/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	zeising@daemonic.se
+MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	A small, dynamic tiling window manager for X11
 
 LICENSE=	ISCL

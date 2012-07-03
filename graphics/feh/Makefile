@@ -13,7 +13,7 @@ MASTER_SITES=	http://feh.finalrewind.org/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	uqs
 
-MAINTAINER=	zeising@daemonic.se
+MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	An image viewer that utilizes Imlib2
 
 LICENSE=	MIT
