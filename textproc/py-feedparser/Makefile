@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	feedparser
-PORTVERSION=	5.0.1
+PORTVERSION=	5.1.2
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,16 +15,16 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	An RSS feed parser written in Python
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/chardet/__init__.py:${PORTSDIR}/textproc/py-chardet
-
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/chardet/__init__.py:${PORTSDIR}/textproc/py-chardet
 
 USE_PYTHON=	yes
 USE_BZIP2=	yes
 USE_PYDISTUTILS=	yes
 
-PORTDOCS=	NEWS PKG-INFO README README-PYTHON3 README-TESTS
+PORTDOCS=	NEWS PKG-INFO README
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -32,7 +32,7 @@ post-install:
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
-#regression-test:
-#	@(cd ${WRKSRC}/${PORTNAME} && ${PYTHON_CMD} ${PORTNAME}test.py)
+regression-test:
+	@(cd ${WRKSRC}/${PORTNAME} && ${PYTHON_CMD} ${PORTNAME}test.py)
 
 .include <bsd.port.mk>
