@@ -7,6 +7,7 @@
 
 PORTNAME=	pivotx
 PORTVERSION=	2.3.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/pivot-weblog/PivotX \
 		http://pivotx.net/files/ \
@@ -19,8 +20,8 @@ COMMENT=	Software to help you maintain dynamic sites such as weblogs
 
 LICENSE=	GPLv2
 
-DOCS=		LICENSE.txt README.txt example.htaccess
-DOCS_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}-${PORTREVISION}-docs
+PORTDOCS=	LICENSE.txt README.txt
+PORTEXAMPLES=	example.htaccess
 
 # Requirements:
 # http://book.pivotx.net/index.php?page=app-e#anchor-determining-if-your-server-meets-pivotxs-requirements
@@ -68,13 +69,17 @@ post-extract:
 	@${MKDIR} '${TEMP_WRKSRC}'
 	@${MV} '${WRKDIR}/'* '${TEMP_WRKSRC}'
 	@${MV} '${TEMP_WRKSRC}' '${WRKSRC}'
-	@${MKDIR} '${DOCS_WRKSRC}'
-.for FILES in ${DOCS}
-	@${MV} '${WRKSRC}/${FILES}' '${DOCS_WRKSRC}'
+	@${MKDIR} '${TEMP_WRKSRC}'
+.for FILES in ${PORTDOCS}
+	@${MV} '${WRKSRC}/${FILES}' '${TEMP_WRKSRC}'
 .endfor
 
 post-patch:
-	@cd '${WRKSRC}' && { ${FIND} . -type f -name '*.orig' -print0 | ${XARGS} -0 -J % ${MV} % '${DOCS_WRKSRC}'; }
+.for FILES in ${PORTEXAMPLES}
+	@${SED} -e 's#%%BLOGURL%%#${BLOGURL}#g' '${WRKSRC}/${FILES}' >'${TEMP_WRKSRC}/${FILES}'
+	@${RM} -f '${WRKSRC}/${FILES}'
+.endfor
+	@cd '${WRKSRC}' && ${FIND} . -type f -name '*.orig' -delete
 
 do-install:
 	@if ${TEST} -e '${TEMP_DIFF}'; then ${RM} -f '${TEMP_DIFF}'; fi
@@ -96,7 +101,15 @@ do-install:
 	 fi
 .if !defined(NOPORTDOCS)
 	@${MKDIR} '${DOCSDIR}'
-	@cd '${DOCS_WRKSRC}' && ${COPYTREE_SHARE} . '${DOCSDIR}'
+.for FILES in ${PORTDOCS}
+	@${INSTALL_DATA} '${TEMP_WRKSRC}/${FILES}' '${DOCSDIR}'
+.endfor
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} '${EXAMPLESDIR}'
+.for FILES in ${PORTEXAMPLES}
+	@${INSTALL_DATA} '${TEMP_WRKSRC}/${FILES}' '${EXAMPLESDIR}'
+.endfor
 .endif
 	@${MKDIR} '${WWWDIR}'
 	@cd '${WRKSRC}' && ${COPYTREE_SHARE} . '${WWWDIR}'
