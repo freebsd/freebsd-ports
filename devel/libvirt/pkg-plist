@@ -53,6 +53,7 @@ sbin/libvirtd
 share/augeas/lenses/libvirtd.aug
 share/augeas/lenses/tests/test_libvirtd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/32favicon.png
+%%DOCSDIR%%%%PORTVERSION%%/html/404.html
 %%DOCSDIR%%%%PORTVERSION%%/html/api.html
 %%DOCSDIR%%%%PORTVERSION%%/html/api_extension.html
 %%DOCSDIR%%%%PORTVERSION%%/html/apps.html
@@ -264,6 +265,12 @@ share/gtk-doc/html/libvirt/up.png
 @dirrmtry %%PYTHON_SITELIBDIR%%
 @dirrmtry %%PYTHON_LIBDIR%%
 @exec /bin/mkdir -p %%PREFIX%%/lib/libvirt/connection-driver
+lib/libvirt/connection-driver/libvirt_driver_secret.a
+lib/libvirt/connection-driver/libvirt_driver_secret.so
+lib/libvirt/connection-driver/libvirt_driver_secret.la
+lib/libvirt/connection-driver/libvirt_driver_storage.a
+lib/libvirt/connection-driver/libvirt_driver_storage.so
+lib/libvirt/connection-driver/libvirt_driver_storage.la
 @dirrm lib/libvirt/connection-driver
 @dirrm lib/libvirt
 @dirrm %%DOCSDIR%%%%PORTVERSION%%/html/html
