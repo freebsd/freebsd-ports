@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTVERSION=	1.2.2
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
@@ -462,6 +461,7 @@ MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:subs_filter/}
 MASTER_SITE_SUBDIR+=	osa/:subs_filter
 DISTFILES+=	ngx_http_subs_filter_module-${NGINX_HTTP_SUBS_FILTER_VERSION}.tar.gz:subs_filter
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_subs_filter_module-${NGINX_HTTP_SUBS_FILTER_VERSION}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_subs_filter_module.c
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_SECURE_LINK}
@@ -607,6 +607,7 @@ NGINX_NAXSI_VERSION=	0.46-1
 MASTER_SITES+=	http://naxsi.googlecode.com/files/:naxsi
 DISTFILES+=	naxsi-${NGINX_NAXSI_VERSION}.tgz:naxsi
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/naxsi-${NGINX_NAXSI_VERSION}/naxsi_src
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-naxsi_runtime.c
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_REWRITE} || defined(USE_HTTP_REWRITE)
