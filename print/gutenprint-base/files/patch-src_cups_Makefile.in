@@ -1,0 +1,15 @@
+--- src/cups/Makefile.in.orig	2012-06-17 19:30:42.000000000 +0200
++++ src/cups/Makefile.in	2012-06-17 19:29:16.000000000 +0200
+@@ -1242,10 +1242,10 @@
+ ppd-stamp-phony: $(PPD)
+ 
+ ppd-catalog-clean:
+-	-$(RM) -r catalog
++	-$(RM) -rf catalog
+ 
+ ppd-clean:
+-	-$(RM) -r ppd
++	-$(RM) -rf ppd
+ 
+ ppd-stamp-pre: ppd-catalog-clean ppd-clean
+ 

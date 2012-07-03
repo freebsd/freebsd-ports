@@ -7,14 +7,15 @@
 #
 
 PORTNAME?=	gutenprint
-PORTVERSION=	5.2.7
-PORTREVISION=	1
+PORTVERSION=	5.2.8
 CATEGORIES=	print
 MASTER_SITES=	SF/gimp-print/gutenprint-5.2/${PORTVERSION}
 PKGNAMESUFFIX?=	-base
 
 MAINTAINER=	cmt@burggraben.net
 COMMENT=	GutenPrint Printer Driver
+
+LICENSE=	GPLv2
 
 CONFLICTS=	gimp-print-[0-9]*
 
@@ -41,7 +42,7 @@ MAN1+=		escputil.1
 
 .if defined(GUT_SLAVE) && ${GUT_SLAVE}=="gimp"
 LIB_DEPENDS+=	gimp-2.0:${PORTSDIR}/graphics/gimp-app \
-		gutenprint.2:${PORTSDIR}/print/gutenprint-base
+		gutenprint.3:${PORTSDIR}/print/gutenprint-base
 CONFIGURE_ARGS=--with-gimp2=yes # Override CONFIGURE_ARGS
 BUILD_WRKSRC=	${WRKSRC}/src/gimp2
 INSTALL_WRKSRC=	${WRKSRC}/src/gimp2
