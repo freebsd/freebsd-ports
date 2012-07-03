@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	bzr-rewrite
-PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTVERSION=	0.6.3
 CATEGORIES=	devel
-MASTER_SITES=	http://launchpadlibrarian.net/65470418/ \
+MASTER_SITES=	http://launchpadlibrarian.net/94574861/ \
 		http://www.c-s.li/ports/
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	A bzr plugin that provides rewriting existing revisions
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
 RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
-
-LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
