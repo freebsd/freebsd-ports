@@ -7,8 +7,8 @@
 +FCITX_EXPORT_API
 +ssize_t getline(char ** p, size_t * cap, FILE * fp) {
 +	ssize_t l;
-+	if (!*cap && (*p = malloc(128))) *cap = 128;
-+	else if (!*p) return -1;
++	if ((!*cap || !*p) && (*p = malloc(128))) *cap = 128;
++	if (!*p) return -1;
 +	fgets(*p, *cap, fp);
 +	l = strlen(*p);
 +	while (!feof(fp) && (*p)[l - 1] != '\n') {
