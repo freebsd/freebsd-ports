@@ -6,17 +6,33 @@ bin/pinot-prefs
 bin/pinot-search
 etc/pinot/external-filters.xml
 etc/pinot/globalconfig.xml
-etc/pinot/textcat3_conf.txt
 etc/pinot/textcat31_conf.txt
+etc/pinot/textcat32_conf.txt
+etc/pinot/textcat3_conf.txt
 etc/pinot/textcat_conf.txt
 etc/xdg/autostart/pinot-dbus-daemon.desktop
-%%DESKBAR_MOD%%/pinot-module.py
-%%DESKBAR_MOD%%/pinot-module.pyc
-%%DESKBAR_MOD%%/pinot-module.pyo
-lib/deskbar-applet/handlers/pinot-live.py
-lib/deskbar-applet/handlers/pinot-live.pyc
-lib/deskbar-applet/handlers/pinot-live.pyo
 lib/pinot/backends/libxapianbackend.so
+lib/pinot/backends/libxapianbackend.so.1
+lib/pinot/libBasicUtils.a
+lib/pinot/libBasicUtils.la
+lib/pinot/libCollect.a
+lib/pinot/libCollect.la
+lib/pinot/libCore.a
+lib/pinot/libCore.la
+lib/pinot/libFilter.a
+lib/pinot/libFilter.la
+lib/pinot/libIndex.a
+lib/pinot/libIndex.la
+lib/pinot/libIndexSearch.a
+lib/pinot/libIndexSearch.la
+lib/pinot/libMonitor.a
+lib/pinot/libMonitor.la
+lib/pinot/libSQL.a
+lib/pinot/libSQL.la
+lib/pinot/libTokenize.a
+lib/pinot/libTokenize.la
+lib/pinot/libUtils.a
+lib/pinot/libUtils.la
 lib/pinot/filters/libarchivefilter.so
 %%CHMLIB%%lib/pinot/filters/libchmfilter.so
 lib/pinot/filters/libexiv2imagefilter.so
@@ -47,8 +63,7 @@ share/locale/zh_TW/LC_MESSAGES/pinot.mo
 %%DATADIR%%/engines/AmazonAPI.src
 %%DATADIR%%/engines/Bing.src
 %%DATADIR%%/engines/Clusty.src
-%%DATADIR%%/engines/DuckDuckGo.xml
-%%DATADIR%%/engines/Freshmeat.src
+%%DATADIR%%/engines/Freecode.src
 %%DATADIR%%/engines/Google.src
 %%DATADIR%%/engines/KodersDescription.xml
 %%DATADIR%%/engines/OmegaDescription.xml
@@ -74,10 +89,6 @@ share/locale/zh_TW/LC_MESSAGES/pinot.mo
 @dirrm lib/pinot/filters
 @dirrm lib/pinot/backends
 @dirrm lib/pinot
-@dirrmtry libexec/deskbar-applet/modules-2.20-compatible
-@dirrmtry libexec/deskbar-applet
-@dirrmtry lib/deskbar-applet/handlers
-@dirrmtry lib/deskbar-applet
 @dirrmtry etc/xdg/autostart
 @dirrmtry etc/xdg
 @dirrm etc/pinot
