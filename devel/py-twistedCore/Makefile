@@ -1,12 +1,13 @@
 # New ports collection makefile for:	py-twisted
-# Date created:		13 April 2005
-# Whom:	      		Neal Nelson <neal@nelson.name>
+# Date created:				13 April 2005
+# Whom:					Neal Nelson <neal@nelson.name>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	twistedCore
 PORTVERSION=	12.1.0
+PORTREVISION=	1
 CATEGORIES=	devel net python
 MASTER_SITES=	http://twistedmatrix.com/Releases/Core/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,10 +17,8 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	An asynchronous networking framework for Python - Core module
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=3.3.0_1:${PORTSDIR}/devel/py-zope.interface
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=3.3.0:${PORTSDIR}/devel/py-zope.interface
 
 # - Note that Twisted ships with some graphical examples and clients that
 #   require PyGNOME to run.  These are not central to the funcitoning of
@@ -27,11 +26,14 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 #   separately if desired.
 
 USE_BZIP2=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	${PORTNAME:S/twisted/Twisted_/}
 
 MAN1=		manhole.1 pyhtmlizer.1 tap2deb.1 tap2rpm.1 tapconvert.1 trial.1 twistd.1
+
+post-patch:
+	@${FIND} ${WRKSRC} -type f -name "*.orig" -delete
 
 post-install:
 # permission safeness
