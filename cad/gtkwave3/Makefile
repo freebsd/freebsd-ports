@@ -11,7 +11,7 @@ CATEGORIES=	cad
 MASTER_SITES=	http://gtkwave.sourceforge.net/
 DISTNAME=	gtkwave-${PORTVERSION}
 
-MAINTAINER=	zeising@daemonic.se
+MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	Electronic Waveform Viewer
 
 GNU_CONFIGURE=	yes

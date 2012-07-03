@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.lysator.liu.se/%SUBDIR%/
 MASTER_SITE_SUBDIR=	pub/${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	zeising@daemonic.se
+MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	BSD licensed implementation of libdwarf
 
 USE_BZIP2=	yes
