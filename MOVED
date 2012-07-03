@@ -3537,3 +3537,4 @@ textproc/libupskirt|textproc/libsoldout|2012-07-01|Move to respect upstream new 
 net-p2p/libtorrent-rasterbar-14||2012-07-01|Discontinued upstream, move to libtorrent-rasterbar-16
 net-p2p/hrktorrent||2012-07-01|Relies on net-p2p/libtorrent-rasterbar-14, which has been discontinued
 net-p2p/sharktorrent||2012-07-01|Relies on net-p2p/libtorrent-rasterbar-14, which has been discontinued
+databases/postgresql-libpqxx30|databases/postgresql-libpqxx3|2012-07-03|Port renamed to be updated to 3.1

@@ -1,6 +1,6 @@
---- Makefile.in	2009-08-14 10:16:35.000000000 -0700
-+++ Makefile.in.new	2010-01-13 23:09:39.000000000 -0800
-@@ -226,7 +226,7 @@
+--- Makefile.in.orig	2011-09-12 11:39:56.000000000 +0200
++++ Makefile.in	2011-09-12 11:40:48.000000000 +0200
+@@ -270,7 +270,7 @@
  MAINTAINERCLEANFILES = Makefile.in aclocal.m4 config.h.in config.log configure \
  	stamp-h.in
  
