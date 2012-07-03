@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Acme/6502.pm
+%%SITE_PERL%%/Acme/6502/Tube.pm
+@dirrm %%SITE_PERL%%/Acme/6502/
+@dirrmtry %%SITE_PERL%%/Acme/
