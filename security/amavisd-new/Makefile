@@ -7,7 +7,7 @@
 # Based on amavisd ports makefile.
 
 PORTNAME=	amavisd-new
-PORTVERSION=	2.7.0
+PORTVERSION=	2.8.0
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
@@ -15,9 +15,9 @@ MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
 		http://mirror.mainloop.se/amavisd/
 
 MAINTAINER=	gabor@FreeBSD.org
-COMMENT=	Performance-enhanced daemonized version of amavis-perl
+COMMENT=	A mail scanner interface between mailer and content checkers
 
-LICENCE=	GPLv2
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-Unix-Syslog>=0:${PORTSDIR}/sysutils/p5-Unix-Syslog \
 		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
@@ -217,15 +217,6 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef
 .if ${PERL_LEVEL} < 500903
 RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
 .endif
-
-pre-fetch:
-	@${ECHO} ""
-	@${ECHO} " **** UPGRADE WARNING:  SQL SCHEMA CHANGED ****"
-	@${ECHO} " If you are upgrading from version prior to 2.6.6"
-	@${ECHO} " Hit ^c now and read /usr/ports/UPDATING section or"
-	@${ECHO} " /usr/local/share/doc/amavisd-new/RELEASE_NOTES"
-	@read -p "Hit ^c now to stop, any key to continue: " -t 5 a || true
-	@${ECHO} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|$daemon_user  = \'vscan\';|$daemon_user  = \'${AMAVISUSER}\';|" \
