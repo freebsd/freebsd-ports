@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	octave-forge-octcdf
-PORTVERSION=	1.1.4
-PORTREVISION=	2
+PORTVERSION=	1.1.5
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
