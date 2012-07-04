@@ -1,12 +1,12 @@
---- ./diffprobe.h.orig	2009-12-01 12:47:55.000000000 -0800
-+++ ./diffprobe.h	2011-06-11 10:51:08.000000000 -0700
+--- diffprobe.h.orig	2012-01-25 04:33:22.000000000 +0800
++++ diffprobe.h	2012-06-07 16:32:41.050222578 +0800
 @@ -26,6 +26,8 @@
  #ifndef _DIFFPROBE_H_
  #define _DIFFPROBE_H_
  
 +#include <netinet/in.h>
 +
- #define VERSION 3
+ #define VERSION 4
  #define RATE_FACTOR 0.9
  #define RATE_DROP_FACTOR 2
 @@ -69,7 +71,7 @@
