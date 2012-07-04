@@ -13,7 +13,7 @@ MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A sophisticated scripter based on tcl/tk
 
-CONFLICTS=	expect-5.44*
+CONFLICTS=	expect-5.44* weather-[0-9]*
 
 PORTSCOUT=	skipv:5.44.0,5.44.1	# These were recalled by NIST
 
