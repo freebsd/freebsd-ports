@@ -15,8 +15,10 @@ MASTER_SITES=	http://www.zeroflux.org/proj/knock/files/ \
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	A flexible port-knocking server and client
 
-LICENSE=       GPLv2
-LICENSE_FILE=  ${WRKSRC}/COPYING
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+CONFLICTS=	doorman-[0-9]*
 
 GNU_CONFIGURE=	yes
 
