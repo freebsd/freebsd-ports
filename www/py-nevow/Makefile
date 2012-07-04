@@ -7,7 +7,7 @@
 
 PORTNAME=	nevow
 PORTVERSION=	0.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python devel
 MASTER_SITES=	http://divmod.org/trac/attachment/wiki/SoftwareReleases/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
