@@ -40,11 +40,11 @@ OPTIONS_DEFAULT=A52 AVAHI DBUS DTS DVB DVDREAD DVDNAV FAAD FLAC GLX GNUTLS \
 A52_DESC=	A52 DVD audio decoder
 AALIB_DESC=	Aalib Console Graphics Support
 ASS_DESC=	ASS/SSA subtitle rendering
-CACA_DESC=	libcaca Console Graphics Support (requires AALIB)
+CACA_DESC=	libcaca Console Graphics Support
 DBUS_DESC=	D-Bus control support
 DIRAC_DESC=	Dirac support
 DTS_DESC=	DTS DVD audio decoder
-DVB_DESC=	Digital Video Broadcasting support (requires V4L)
+DVB_DESC=	Digital Video Broadcasting support
 DVDREAD_DESC=	DVD Playback support
 DVDNAV_DESC=	DVD menu navigation
 FAAD_DESC=	Faad audio decoder (mp4/aac) support
@@ -52,7 +52,7 @@ FLAC_DESC=	Flac audio codec support
 FLUID_DESC=	Fluidsynth MIDI support
 FRIBIDI_DESC=	FriBidi bidirectional unicode support
 GGI_DESC=	General Graphic Interface support
-GLX_DESC=	X11 OpenGL rendering (requires XCB)
+GLX_DESC=	X11 OpenGL rendering
 GNOMEVFS_DESC=	Gnome VFS support
 GOOM_DESC=	the Goom visual effect library
 LIVEMEDIA_DESC=	Support for rstp/rtp/sdp protocols
@@ -71,7 +71,7 @@ REMOTEOSD_DESC=	Remote OSD support
 RUNROOT_DESC=	Enable running as root
 SAMBA_DESC=	SAMBA Access module
 SCHROED_DESC=	Schroedinger decoder
-SKINS_DESC=	winamp skins interface (requires QT4)
+SKINS_DESC=	winamp skins interface
 STREAM_DESC=	stream output
 SQLITE_DESC=	SQLite database support
 SVGALIB_DESC=	SVGALIB video output
@@ -85,7 +85,7 @@ VAAPI_DESC=	Support hardware decoding via VAAPI
 VCD_DESC=	Video CD support
 XCB_DESC=Use X C Bindings for X11 output
 XOSD_DESC=X11 On Screen Display support
-XVIDEO_DESC=X11 video rendering (requires XCB)
+XVIDEO_DESC=X11 video rendering
 ZVBI_DESC=VBI decoding support
 SERVER_ONLY_DESC=	Only build server parts
 UNSAFE_PLUGINS_DESC=	Install unsafe, unsupported plugins
@@ -239,9 +239,13 @@ CONFIGURE_ARGS+=--enable-bonjour
 CONFIGURE_ARGS+=--disable-bonjour
 .endif
 
-.if ${PORT_OPTIONS:MCACA} && ${PORT_OPTIONS:MAALIB}
+.if ${PORT_OPTIONS:MCACA}
+.if ${PORT_OPTIONS:MAALIB}
 LIB_DEPENDS+=	caca:${PORTSDIR}/graphics/libcaca
 CONFIGURE_ARGS+=--enable-caca
+.else
+IGNORE=	CACA option requires AALIB option
+.endif
 .else
 CONFIGURE_ARGS+=--disable-caca
 .endif
@@ -269,9 +273,13 @@ CONFIGURE_ARGS+=--disable-dca
 .endif
 
 .if ${PORT_OPTIONS:MDVB}
+.if ${PORT_OPTIONS:MV4L}
 LIB_DEPENDS+=	dvbpsi:${PORTSDIR}/multimedia/libdvbpsi
 CONFIGURE_ARGS+=--enable-dvb --enable-dvbpsi \
 		--with-dvbpsi=${LOCALBASE}
+.else
+IGNORE=	DVB option requires V4L option
+.endif
 .else
 CONFIGURE_ARGS+=--disable-dvb --disable-dvbpsi
 .endif
@@ -326,7 +334,11 @@ CONFIGURE_ARGS+=--disable-ggi
 .endif
 
 .if ${PORT_OPTIONS:MGLX}
+.if ${PORT_OPTIONS:MXCB}
 CONFIGURE_ARGS+=--enable-glx
+.else
+IGNORE=	GLX option requires XCB option
+.endif
 .else
 CONFIGURE_ARGS+=--disable-glx
 .endif
@@ -552,9 +564,13 @@ CONFIGURE_ARGS+=--enable-shout
 CONFIGURE_ARGS+=--disable-shout
 .endif
 
-.if ${PORT_OPTIONS:MSKINS} && ${PORT_OPTIONS:MQT4}
+.if ${PORT_OPTIONS:MSKINS}
+.if ${PORT_OPTIONS:MQT4}
 LIB_DEPENDS+=	tar:${PORTSDIR}/devel/libtar
 CONFIGURE_ARGS+=--enable-skins2 --enable-libtar
+.else
+IGNORE=	SKINS option requires QT4 option
+.endif
 .else
 CONFIGURE_ARGS+=--disable-skins2 --disable-libtar
 .endif
@@ -686,8 +702,12 @@ CONFIGURE_ARGS+=--enable-xosd
 CONFIGURE_ARGS+=--disable-xosd
 .endif
 
-.if ${PORT_OPTIONS:MXVIDEO} && ${PORT_OPTIONS:MXCB}
+.if ${PORT_OPTIONS:MXVIDEO}
+.if ${PORT_OPTIONS:MXCB}
 CONFIGURE_ARGS+=--enable-xvideo
+.else
+IGNORE=	XVIDEO option requires XCB option
+.endif
 .else
 CONFIGURE_ARGS+=--disable-xvideo
 .endif
