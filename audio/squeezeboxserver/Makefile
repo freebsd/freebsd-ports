@@ -7,7 +7,7 @@
 
 PORTNAME=	squeezeboxserver
 PORTVERSION=	7.5.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.slimdevices.com/SqueezeboxServer_v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-noCPAN
@@ -30,7 +30,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-32171-noCPAN
 RUN_DEPENDS+=	p5-DBIx-Class>=0:${PORTSDIR}/databases/p5-DBIx-Class \
 		p5-File-Which>=0:${PORTSDIR}/sysutils/p5-File-Which \
 		p5-URI-Find>=0:${PORTSDIR}/textproc/p5-URI-Find \
-		p5-DBD-mysql50>=0:${PORTSDIR}/databases/p5-DBD-mysql50 \
+		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
 		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
 		p5-Encode-Detect>=0:${PORTSDIR}/converters/p5-Encode-Detect \
 		p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
@@ -57,7 +57,6 @@ RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
 .endif
 
 USE_MYSQL=	server
-WANT_MYSQL_VER=	50
 
 .if ${PORT_OPTIONS:MAPE}
 RUN_DEPENDS+=	mac:${PORTSDIR}/audio/mac
@@ -173,6 +172,12 @@ post-patch:
 	    -e 's|%%TMP_SLIMDIR%%|${TMP_SLIMDIR}|g' \
 		${WRKSRC}/scanner.pl \
 		${WRKSRC}/slimserver.pl
+	${REINPLACE_CMD} \
+		-e 's/skip-locking/skip-external-locking/' \
+		-e 's/default-character-set/character-set-server/'\
+		-e 's/default-collation/collation-server/'  ${WRKSRC}/MySQL/my.tt
+	${REINPLACE_CMD} \
+		-e 's/TYPE=InnoDB/ENGINE=InnoDB/' ${WRKSRC}/SQL/mysql/schema_*.sql
 
 do-build:
 	@${MKDIR} -m 0755 ${TMP_SLIMDIR}
