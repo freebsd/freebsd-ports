@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spectrwm
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://opensource.conformal.com/snapshots/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
@@ -16,14 +16,15 @@ COMMENT=	A small, dynamic tiling window manager for X11
 
 LICENSE=	ISCL
 
-OPTIONS=	DMENU_BOTTOM "dmenu at screen bottom (instead of top)" Off
+OPTIONS_DEFINE=	DMENU_BOTTOM
+DMENU_BOTTOM_DESC=	dmenu at screen bottom (instead of top)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 USE_XORG=	x11 xproto xrandr xt xtst
 
 MAN1=		spectrwm.1
-USE_LDCONFIG=yes
+USE_LDCONFIG=	yes
 PORTEXAMPLES=	spectrwm_cz.conf \
 		spectrwm_es.conf \
 		spectrwm_fr.conf \
@@ -33,7 +34,7 @@ PORTEXAMPLES=	spectrwm_cz.conf \
 
 RUN_DEPENDS+=	dmenu:${PORTSDIR}/x11/dmenu
 
-.if defined(WITH_DMENU_BOTTOM)
+.if ${PORT_OPTIONS:MDMENU_BOTTOM}
 EXTRA_PATCHES+=	${FILESDIR}/spawn_menu_atbottom.patch
 .endif
 
@@ -64,4 +65,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
