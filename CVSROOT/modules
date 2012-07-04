@@ -11012,6 +11012,7 @@ p5-AI-Perceptron                ports/math/p5-AI-Perceptron
 p5-AI-Prolog                    ports/devel/p5-AI-Prolog
 p5-AMF-Perl                     ports/www/p5-AMF-Perl
 p5-AcePerl                      ports/biology/p5-AcePerl
+p5-Acme-6502                    ports/emulators/p5-Acme-6502
 p5-Acme-ButFirst                ports/misc/p5-Acme-ButFirst
 p5-Acme-Damn                    ports/devel/p5-Acme-Damn
 p5-Acme-GuessNumber             ports/games/p5-Acme-GuessNumber
@@ -15507,6 +15508,7 @@ p5-ZeroMQ                       ports/net/p5-ZeroMQ
 p5-accessors                    ports/devel/p5-accessors
 p5-aceperl                      ports/biology/p5-AcePerl
 p5-ack                          ports/textproc/p5-ack
+p5-acme-6502                    ports/emulators/p5-Acme-6502
 p5-acme-butfirst                ports/misc/p5-Acme-ButFirst
 p5-acme-damn                    ports/devel/p5-Acme-Damn
 p5-acme-guessnumber             ports/games/p5-Acme-GuessNumber
@@ -21989,7 +21991,7 @@ postgresql-jdbc                 ports/databases/postgresql-jdbc
 postgresql-libpgeasy            ports/databases/postgresql-libpgeasy
 postgresql-libpq++              ports/databases/postgresql-libpq++
 postgresql-libpqxx              ports/databases/postgresql-libpqxx
-postgresql-libpqxx30            ports/databases/postgresql-libpqxx30
+postgresql-libpqxx3             ports/databases/postgresql-libpqxx3
 postgresql-odbc                 ports/databases/postgresql-odbc
 postgresql-pllua                ports/databases/postgresql-pllua
 postgresql-plproxy              ports/databases/postgresql-plproxy
