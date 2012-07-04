@@ -7,6 +7,7 @@
 
 MASTERDIR=	${.CURDIR}/../mtr
 
-WITHOUT_X11=	yes
+OPTIONS_EXCLUDE=X11
+OPTIONS_FILE_UNSET=	X11
 
 .include "${MASTERDIR}/Makefile"
