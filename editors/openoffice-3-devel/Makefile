@@ -235,7 +235,7 @@ post-patch:
 .endif
 
 pre-configure:
-	@${LN} -sf ${LOCALBASE}/bin/unzip ${WRKSRC}/solenv/bin/unzip
+	@${LN} -sf ${UNZIP_CMD} ${WRKSRC}/solenv/bin/unzip
 
 do-build:
 	@cd ${WRKDIR}/ooo ; ${PRINTF} "[repositories]\n" > source_config
