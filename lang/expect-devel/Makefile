@@ -14,7 +14,7 @@ DISTNAME=	expect-cvs-20091231
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A sophisticated scripter based on tcl/tk
 
-CONFLICTS=	expect-5.43*
+CONFLICTS=	expect-5.43* weather-[0-9]*
 LATEST_LINK=	expect-devel
 
 USE_AUTOTOOLS=	autoconf
