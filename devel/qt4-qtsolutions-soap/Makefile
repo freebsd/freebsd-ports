@@ -7,7 +7,7 @@
 
 MASTERDIR=	${.CURDIR}/../qt4-qtsolutions-singleapplication
 
-USE_QT4=	qmake_build moc_build rcc_build uic_build network xml
+USE_QT4=	qmake_build moc_build rcc_build uic_build network xml gui
 
 .include	"${MASTERDIR}/Makefile"
 
