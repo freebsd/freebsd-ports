@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	syslog-ng
-PORTVERSION=	3.4.0a2
-PORTREVISION=	2
+PORTVERSION=	3.4.0a3
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 DISTVERSION=	$(PORTVERSION:S/a/alpha/)
@@ -22,7 +21,7 @@ CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 WRKSRC=		$(WRKDIR)/$(PORTNAME)-$(DISTVERSION)
 
 OPTIONS=	SYS_SSL "Build with OpenSSL support (from system)" off \
-		PORTS_SSL "Build with OpenSSL support (from ports)" off \
+		PORTS_SSL "Build with OpenSSL support (from ports)" on \
 		TCP_WRAPPERS "Build with TCP Wrappers" off \
 		SQL "Build with database (libdbi) support" off \
 		SPOOF "Build with spoof source support" off \
@@ -79,8 +78,8 @@ CONFIGURE_ARGS+=	--disable-tcp-wrapper
 
 .if defined(WITH_SPOOF)
 BUILD_DEPENDS=		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet-devel
-LIBNET_CONFIG?=		${LOCALBASE}/bin/libnet115-config
-CONFIGURE_ARGS+=	--enable-spoof-source --with-libnet=${LOCALBASE}/bin \
+LIBNET_CONFIG?=		${LOCALBASE}/bin/libnet116-config
+CONFIGURE_ARGS+=	--enable-spoof-source --with-libnet=${LOCALBASE}/bin
 CFLAGS+=		`${LIBNET_CONFIG} --cflags` -I${LOCALBASE}/include
 LDFLAGS+=		`${LIBNET_CONFIG} --libs`
 .else
