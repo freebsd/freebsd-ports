@@ -1,0 +1,2 @@
+#!/bin/sh
+fetch -o - http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz | gunzip > %%DATADIR%%/GeoIP.dat
