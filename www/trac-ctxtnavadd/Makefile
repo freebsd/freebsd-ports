@@ -15,6 +15,9 @@ PKGNAMEPREFIX=	trac-
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Add links to the ctxtnav bar from other plugins
 
+DEPRECATED=	Functionality of this plugin merged into Trac itself
+EXPIRATION_DATE=2012-08-04
+
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
