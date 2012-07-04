@@ -277,6 +277,7 @@
     SUBDIR += pyjama
     SUBDIR += qdvdauthor
     SUBDIR += qmmp
+    SUBDIR += qmmp-plugin-pack
     SUBDIR += qt-faststart
     SUBDIR += qt4-multimedia
     SUBDIR += qt4-phonon
