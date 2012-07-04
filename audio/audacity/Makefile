@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	audacity
-PORTVERSION=	2.0.0
-PORTREVISION=	2
+PORTVERSION=	2.0.1
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE \
 		SF/${PORTNAME}/${PORTNAME}-unstable/${PORTVERSION}
@@ -18,7 +17,7 @@ COMMENT=	Audacity is a GUI editor for digital audio waveforms
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile
 
 CONFLICTS=	audacity-devel-[0-9]*
 
@@ -37,23 +36,21 @@ MAKE_JOBS_SAFE=	yes
 MAN1=		audacity.1
 MANCOMPRESSED=	yes
 
-OPTIONS=	FFMPEG		"Use ffmpeg for import and export support" on \
-		FLAC		"Use libFLAC for FLAC support" on \
-		ID3TAG		"Use libid3tag for mp3 id3 tag support" on \
-		JACK		"Use JACK audio server" on \
-		LADSPA		"LADSPA plug-in support" on \
-		MAD		"Use libmad for mp2/3 decoding support"	on \
-		NYQUIST		"Nyquist plug-in support" on \
-		PORTMIXER	"Compile with PortMixer" on \
-		SAMPLERATE	"Use libsamplerate for sample rate conversion" on \
-		SBSMS		"Use libsbsms for pitch and tempo changing" on \
-		SOUNDTOUCH 	"Use libSoundTouch for pitch and tempo changing" on\
-		TAGLIB		"Use TagLib for metadata support" on \
-		TWOLAME		"Use libtwolame for MP2 export support" on \
-		VORBIS		"Use libvorbis for Ogg Vorbis support"	on \
-		VAMP		"Use libvamp for Vamp plug-in support" on
+OPTIONS_DEFINE=	DOCS FFMPEG FLAC ID3TAG JACK LADSPA MAD NYQUIST PORTMIXER \
+		SAMPLERATE SBSMS SOUNDTOUCH TAGLIB TWOLAME VAMP VORBIS
+OPTIONS_DEFAULT=	DOCS FFMPEG FLAC ID3TAG JACK LADSPA MAD NYQUIST \
+			PORTMIXER SAMPLERATE SBSMS SOUNDTOUCH TAGLIB \
+			TWOLAME VAMP VORBIS
 
-.include <bsd.port.pre.mk>
+NYQUIST_DESC=	Nyquist plug-in support
+PORTMIXER_DESC=	Compile with PortMixer support
+SBSMS_DESC=	Support libsbsms for pitch and tempo changing
+SOUNDTOUCH_DESC=	Use libSoundTouch for pitch and tempo changing
+TAGLIB_DESC=	Use TagLib for metadata support
+TWOLAME_DESC=	Use libtwolame for MP2 export support
+VAMP_DESC=	Vamp plug-in support
+
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386"
 SSE_CFLAGS=	-mno-sse -mno-sse2
@@ -70,7 +67,7 @@ CFLAGS+=	-I${WRKSRC}/lib-src/portsmf -I${WRKSRC}/lib-src/portaudio-v19/include -
 
 CONFIGURE_ENV+=	WX_CONFIG="${WX_CONFIG}"
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 MAKE_ENV=	DOC=yes
 .endif
 
@@ -78,102 +75,102 @@ CONFIGURE_ARGS+=	--with-lib-preference="local system"
 CONFIGURE_ARGS+=	--with-portaudio
 CONFIGURE_ARGS+=	--enable-unicode
 
-.if defined(WITH_FFMPEG)
+.if ${PORT_OPTIONS:MFFMPEG}
 RUN_DEPENDS+=		ffmpeg:${PORTSDIR}/multimedia/ffmpeg
 CONFIGURE_ARGS+=	--with-ffmpeg
 .else
 CONFIGURE_ARGS+=	--without-ffmpeg
 .endif
 
-.if defined(WITH_FLAC)
-LIB_DEPENDS+=		FLAC.10:${PORTSDIR}/audio/flac
+.if ${PORT_OPTIONS:MFLAC}
+LIB_DEPENDS+=		FLAC:${PORTSDIR}/audio/flac
 CONFIGURE_ARGS+=	--with-libflac
 .else
 CONFIGURE_ARGS+=	--without-libflac
 .endif
 
-.if defined(WITH_ID3TAG)
-LIB_DEPENDS+=		id3tag.0:${PORTSDIR}/audio/libid3tag
+.if ${PORT_OPTIONS:MID3TAG}
+LIB_DEPENDS+=		id3tag:${PORTSDIR}/audio/libid3tag
 CONFIGURE_ARGS+=	--with-libid3tag
 .else
 CONFIGURE_ARGS+=	--without-libid3tag
 .endif
 
-.if defined(WITH_JACK)
-LIB_DEPENDS+=		jack.0:${PORTSDIR}/audio/jack
+.if ${PORT_OPTIONS:MJACK}
+LIB_DEPENDS+=		jack:${PORTSDIR}/audio/jack
 CONFIGURE_ARGS+=	--with-jack
 .else
 CONFIGURE_ARGS+=	--without-jack
 .endif
 
-.if defined(WITH_LADSPA)
+.if ${PORT_OPTIONS:MLADSPA}
 RUN_DEPENDS+=		listplugins:${PORTSDIR}/audio/ladspa
 CONFIGURE_ARGS+=	--enable-ladspa
 .else
 CONFIGURE_ARGS+=	--disable-ladspa
 .endif
 
-.if defined(WITH_MAD)
-LIB_DEPENDS+=		mad.2:${PORTSDIR}/audio/libmad
+.if ${PORT_OPTIONS:MMAD}
+LIB_DEPENDS+=		mad:${PORTSDIR}/audio/libmad
 CONFIGURE_ARGS+=	--with-libmad
 .else
 CONFIGURE_ARGS+=	--without-libmad
 .endif
 
-.if defined(WITH_NYQUIST)
+.if ${PORT_OPTIONS:MNYQUIST}
 CONFIGURE_ARGS+=	--enable-nyquist
 .else
 CONFIGURE_ARGS+=	--disable-nyquist
 .endif
 
-.if defined(WITH_PORTMIXER)
+.if ${PORT_OPTIONS:MPORTMIXER}
 CONFIGURE_ARGS+=	--with-portmixer
 .else
 CONFIGURE_ARGS+=	--without-portmixer
 .endif
 
-.if defined(WITH_SAMPLERATE)
-LIB_DEPENDS+=		samplerate.1:${PORTSDIR}/audio/libsamplerate
+.if ${PORT_OPTIONS:MSAMPLERATE}
+LIB_DEPENDS+=		samplerate:${PORTSDIR}/audio/libsamplerate
 CONFIGURE_ARGS+=	--with-libsamplerate
 .else
 CONFIGURE_ARGS+=	--without-libsamplerate
 .endif
 
-.if defined(WITH_SBSMS)
+.if ${PORT_OPTIONS:MSBSMS}
 CONFIGURE_ARGS+=	--with-sbsms
 .else
 CONFIGURE_ARGS+=	--without-sbsms
 .endif
 
-.if defined(WITH_SOUNDTOUCH)
-LIB_DEPENDS+=		SoundTouch.0:${PORTSDIR}/audio/soundtouch
+.if ${PORT_OPTIONS:MSOUNDTOUCH}
+LIB_DEPENDS+=		SoundTouch:${PORTSDIR}/audio/soundtouch
 CONFIGURE_ARGS+=	--with-soundtouch
 .else
 CONFIGURE_ARGS+=	--without-soundtouch
 .endif
 
-.if defined(WITH_TWOLAME)
-LIB_DEPENDS+=		twolame.0:${PORTSDIR}/audio/twolame
+.if ${PORT_OPTIONS:MTWOLAME}
+LIB_DEPENDS+=		twolame:${PORTSDIR}/audio/twolame
 CONFIGURE_ARGS+=	--with-libtwolame
 .else
 CONFIGURE_ARGS+=	--without-libtwolame
 .endif
 
-.if defined(WITH_TAGLIB)
-LIB_DEPENDS+=		tag.1:${PORTSDIR}/audio/taglib
+.if ${PORT_OPTIONS:MTAGLIB}
+LIB_DEPENDS+=		tag:${PORTSDIR}/audio/taglib
 CONFIGURE_ARGS+=	--with-taglib
 .else
 CONFIGURE_ARGS+=	--without-taglib
 .endif
 
-.if defined(WITH_VAMP)
+.if ${PORT_OPTIONS:MVAMP}
 CONFIGURE_ARGS+=	--with-libvamp
 .else
 CONFIGURE_ARGS+=	--without-libvamp
 .endif
 
-.if defined(WITH_VORBIS)
-LIB_DEPENDS+=		vorbis.4:${PORTSDIR}/audio/libvorbis
+.if ${PORT_OPTIONS:MVORBIS}
+LIB_DEPENDS+=		vorbis:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=	--with-libvorbis
 .else
 CONFIGURE_ARGS+=	--without-libvorbis
@@ -184,12 +181,12 @@ post-patch:
 #these must be patched out for the case when they are installed but
 #option-disabled to avoid unrecorded dependencies.
 
-.if defined(WITHOUT_JACK)
+.if empty(PORT_OPTIONS:MJACK)
 	@${REINPLACE_CMD} -e 's|PKG_CHECK_MODULES(JACK, jack, have_jack=yes, have_jack=no)|have_jack=no|' ${WRKSRC}/configure.in
 .endif
 
-.if defined(WITHOUT_SAMPLERATE)
+.if empty(PORT_OPTIONS:MSAMPLERATE)
 	@${REINPLACE_CMD} -e 's|libresample.a -lsamplerate $(LIBS)|libresample.a $(LIBS)|' ${WRKSRC}/lib-src/libresample/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
