@@ -12,7 +12,6 @@ bin/pbc_merge
 bin/pbc_to_exe
 bin/perl6
 bin/ufo
-bin/ufobuilder
 bin/winxed
 include/parrot/%%PARROT_VERSION%%/imcc/api.h
 include/parrot/%%PARROT_VERSION%%/imcc/embed.h
@@ -250,6 +249,7 @@ lib/parrot/%%PARROT_VERSION%%/languages/nqp/lib/NQPHLL.pbc
 lib/parrot/%%PARROT_VERSION%%/languages/nqp/lib/NQPP6Regex.pbc
 lib/parrot/%%PARROT_VERSION%%/languages/nqp/lib/NQPRegex.pbc
 lib/parrot/%%PARROT_VERSION%%/languages/nqp/lib/Perl6/Actions.pbc
+lib/parrot/%%PARROT_VERSION%%/languages/nqp/lib/Perl6/BOOTSTRAP.pbc
 lib/parrot/%%PARROT_VERSION%%/languages/nqp/lib/Perl6/Compiler.pbc
 lib/parrot/%%PARROT_VERSION%%/languages/nqp/lib/Perl6/ConstantFolder.pbc
 lib/parrot/%%PARROT_VERSION%%/languages/nqp/lib/Perl6/Grammar.pbc
@@ -276,15 +276,27 @@ lib/parrot/%%PARROT_VERSION%%/languages/pct/src/POST/Compiler.pir
 lib/parrot/%%PARROT_VERSION%%/languages/pct/src/POST/Node.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Bailador.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Bailador.pm
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Bailador/App.pir
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Bailador/App.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Bailador/Request.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Bailador/Request.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Bailador/Response.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Bailador/Response.pm
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Bailador/Test.pir
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Bailador/Test.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/CORE.setting.pbc
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Config/INI.pir
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Config/INI.pm
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Config/INI/Writer.pir
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Config/INI/Writer.pm
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/DBDish.pir
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/DBDish.pm6
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/DBDish/Pg.pir
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/DBDish/Pg.pm6
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/DBDish/SQLite.pir
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/DBDish/SQLite.pm6
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/DBDish/TestMock.pir
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/DBDish/TestMock.pm6
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/DBDish/mysql.pir
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/DBDish/mysql.pm6
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/DBIish.pir
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/DBIish.pm6
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Digest/MD5.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Digest/MD5.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/File/Find.pir
@@ -301,30 +313,32 @@ lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/HTTP/Easy/PSGI.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/HTTP/Easy/PSGI.pm6
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/HTTP/Status.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/HTTP/Status.pm6
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/IETF/RFC_Grammar.pir
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/IETF/RFC_Grammar.pm
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/IETF/RFC_Grammar/IPv6.pir
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/IETF/RFC_Grammar/IPv6.pm
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/IETF/RFC_Grammar/URI.pir
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/IETF/RFC_Grammar/URI.pm
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/JSON/RPC/Client.pir
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/JSON/RPC/Client.pm
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/JSON/RPC/Error.pir
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/JSON/RPC/Error.pm
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/JSON/RPC/Server.pir
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/JSON/RPC/Server.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/JSON/Tiny.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/JSON/Tiny.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/JSON/Tiny/Actions.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/JSON/Tiny/Actions.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/JSON/Tiny/Grammar.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/JSON/Tiny/Grammar.pm
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/LWP/Simple.pir
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/LWP/Simple.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/MIME/Base64.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/MIME/Base64.pm6
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Math/Model.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Math/Model.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Math/RungeKutta.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Math/RungeKutta.pm
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/MiniDBD.pir
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/MiniDBD.pm6
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/MiniDBD/CSV.pir
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/MiniDBD/CSV.pm6
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/MiniDBD/Pg.pir
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/MiniDBD/Pg.pm6
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/MiniDBD/PgPir.pir
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/MiniDBD/PgPir.pm6
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/MiniDBD/mysql.pir
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/MiniDBD/mysql.pm6
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/MiniDBI.pir
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/MiniDBI.pm6
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/NativeCall.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/NativeCall.pm6
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Panda.pir
@@ -345,6 +359,8 @@ lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Panda/Tester.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Panda/Tester.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Pies.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Pies.pm
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Pod/To/HTML.pir
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Pod/To/HTML.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Pod/To/Text.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Ratel.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Ratel.pm
@@ -367,11 +383,22 @@ lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Shell/Command.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Shell/Command.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Term/ANSIColor.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Term/ANSIColor.pm
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Test.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Test.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Test/Mock.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Test/Mock.pm
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Text/Escape.pir
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Text/Escape.pm
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/URI.pir
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/URI.pm
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/URI/DefaultPort.pir
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/URI/DefaultPort.pm
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/URI/Escape.pir
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/URI/Escape.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/XML/Writer.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/XML/Writer.pm
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/lib.pir
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/lib.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/perl6.pbc
 lib/parrot/%%PARROT_VERSION%%/languages/pge/Defines.mak
 lib/parrot/%%PARROT_VERSION%%/languages/pge/P6Rule.grammar
@@ -677,7 +704,7 @@ share/doc/parrot/%%PARROT_VERSION%%/DONORS.pod
 share/doc/parrot/%%PARROT_VERSION%%/LICENSE
 share/doc/parrot/%%PARROT_VERSION%%/PBC_COMPAT
 share/doc/parrot/%%PARROT_VERSION%%/PLATFORMS
-share/doc/parrot/%%PARROT_VERSION%%/README
+share/doc/parrot/%%PARROT_VERSION%%/README.pod
 share/doc/parrot/%%PARROT_VERSION%%/README_cygwin.pod
 share/doc/parrot/%%PARROT_VERSION%%/README_win32.pod
 share/doc/parrot/%%PARROT_VERSION%%/RESPONSIBLE_PARTIES
@@ -853,6 +880,8 @@ src/parrot/%%PARROT_VERSION%%/vtable.tbl
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/pge/PGE
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/pge
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/XML
+@dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/URI
+@dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Text
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Test
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Term
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Shell
@@ -862,19 +891,21 @@ src/parrot/%%PARROT_VERSION%%/vtable.tbl
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Pod/To
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Pod
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Panda
-@dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/MiniDBD
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Math
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/MIME
+@dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/LWP
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/JSON/Tiny
+@dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/JSON/RPC
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/JSON
+@dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/IETF/RFC_Grammar
+@dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/IETF
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/HTTP/Easy
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/HTTP
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Grammar/Profiler
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Grammar
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/File
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Digest
-@dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Config/INI
-@dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Config
+@dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/DBDish
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Bailador
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6
