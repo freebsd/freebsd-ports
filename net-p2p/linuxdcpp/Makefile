@@ -11,8 +11,8 @@ PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://launchpadlibrarian.net/69733951/
 
-MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	A port of the DC++ direct connect client to POSIX-like systems
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A port of the DC++ Direct Connect client to Unix-like systems
 
 LICENSE=	GPLv2
 
