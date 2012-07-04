@@ -181,7 +181,7 @@ pre-fetch:
 	@${ECHO}
 	@${ECHO} "On a fast machine PyPy takes around 45 minutes to translate and compile,"
 	@${ECHO} "however an average machine takes in excess of 4 hours, per instance."
-.if !defined(PYPY_IGNORE_MEM) && (${PYPY_ARCH} == "i386" || ${PYPY_ARCH} == "ppc_32")
+.if !defined(PYPY_IGNORE_MEM) && (${PYPY_ARCH} == "x86_32" || ${PYPY_ARCH} == "ppc_32")
 	@if [ $$((`sysctl -n hw.physmem` / 1024 / 1024)) -le 2000 ]; then \
 		${ECHO}; \
 		${ECHO} "err: this system has insufficient memory, expected at least 2G RAM",; \
