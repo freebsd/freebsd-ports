@@ -831,6 +831,7 @@ bin/nit
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pastebin/static
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pastebin/pastebin/web
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pastebin/pastebin
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pastebin/data
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pastebin
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/objcontainer
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/nestedsequence
