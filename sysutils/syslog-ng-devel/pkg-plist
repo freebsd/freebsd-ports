@@ -47,6 +47,7 @@ include/syslog-ng/mainloop.h
 include/syslog-ng/memtrace.h
 include/syslog-ng/messages.h
 include/syslog-ng/misc.h
+include/syslog-ng/ml-batched-timer.h
 include/syslog-ng/msg-format.h
 include/syslog-ng/nvtable.h
 include/syslog-ng/parser-expr-parser.h
@@ -68,13 +69,14 @@ include/syslog-ng/tlscontext.h
 include/syslog-ng/tlstransport.h
 include/syslog-ng/utils.h
 include/syslog-ng/value-pairs.h
+include/syslog-ng/versioning.h
 include/syslog-ng/cfg-tree.h
 include/syslog-ng/file-perms.h
 include/syslog-ng/uuid.h
 include/syslog-ng/vptransform.h
 lib/libsyslog-ng.la
 lib/libsyslog-ng.so
-lib/libsyslog-ng-3.4.0alpha2.so
+lib/libsyslog-ng-3.4.0alpha3.so
 libdata/pkgconfig/syslog-ng.pc
 lib/syslog-ng/libaffile.la
 lib/syslog-ng/libaffile.so
@@ -113,6 +115,7 @@ share/tools/merge-grammar.pl
 share/xsd/patterndb-1.xsd
 share/xsd/patterndb-2.xsd
 share/xsd/patterndb-3.xsd
+share/xsd/patterndb-4.xsd
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
