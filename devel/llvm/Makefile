@@ -37,20 +37,12 @@ CONFIGURE_ARGS+=	--enable-shared
 MAKE_ARGS+=		REQUIRES_RTTI=1
 LIBNAME=		libLLVM-${DISTVERSION:C/\.r[0-9]*//}.so
 
-.if defined(MAINTAINER_MODE)
-CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--enable-optimized
-.endif
-
 CONFIGURE_ARGS+=	--enable-bindings=none
 
-OPTIONS=	ASSERTS	"Enable assertions (thread unsafe)" off \
-		LTOPLUGIN "Build LTO plugin (requires gold)" off
+OPTIONS_DEFINE=	ASSERTS DOCS LTOPLUGIN
 
-.if defined(NOPORTDOCS)
-CONFIGURE_ARGS+=	--disable-docs
-.endif
+ASSERTS_DESC=	Enable assertions (thread unsafe)
+LTOPLUGIN_DESC=	Build LTO plugin (requires gold)
 
 MAN1=		bugpoint.1 lit.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 		llvm-bcanalyzer.1 llvm-config.1 llvm-cov.1 llvm-diff.1 \
@@ -58,6 +50,33 @@ MAN1=		bugpoint.1 lit.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 		llvm-prof.1 llvm-ranlib.1 llvm-stress.1 opt.1 tblgen.1
 
 PLIST_SUB+=		PORTVERSION=${PORTVERSION}
+
+.include <bsd.port.options.mk>
+
+.if defined(MAINTAINER_MODE)
+CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--enable-optimized
+.endif
+
+.if ${PORT_OPTIONS:MDOCS}
+CONFIGURE_ARGS+=	--enable-docs
+.else
+CONFIGURE_ARGS+=	--disable-docs
+.endif
+
+.if ${PORT_OPTIONS:MASSERTS}
+CONFIGURE_ARGS+=	--enable-assertions
+.else
+CONFIGURE_ARGS+=	--disable-assertions
+.endif
+
+.if ${PORT_OPTIONS:MLTOPLUGIN}
+BUILD_DEPENDS+=		ld.gold:${PORTSDIR}/devel/binutils
+RUN_DEPENDS+=		ld.gold:${PORTSDIR}/devel/binutils
+CONFIGURE_ARGS+=	--with-binutils-include=${LOCALBASE}/include
+PLIST_FILES+=		lib/LLVMgold.so
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -73,26 +92,13 @@ CONFIGURE_ARGS+=	--enable-pic --with-pic
 CONFIGURE_ARGS+=	--with-optimize-option=-O2
 .endif
 
-.ifdef(WITH_ASSERTS)
-CONFIGURE_ARGS+=	--enable-assertions
-.else
-CONFIGURE_ARGS+=	--disable-assertions
-.endif
-
-.ifdef(WITH_LTOPLUGIN)
-BUILD_DEPENDS+=		ld.gold:${PORTSDIR}/devel/binutils
-RUN_DEPENDS+=		ld.gold:${PORTSDIR}/devel/binutils
-CONFIGURE_ARGS+=	--with-binutils-include=${LOCALBASE}/include
-PLIST_FILES+=		lib/LLVMgold.so
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's|\(PROJ_docsdir.*:=\).*$$|\1${DOCSDIR}|g' \
 	    ${WRKSRC}/Makefile.config.in
 	${REINPLACE_CMD} -e 's|\(PROJ_mandir.*:=\).*$$|\1${MANPREFIX}/man|g' \
 	    ${WRKSRC}/Makefile.config.in
 
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 post-build:
 	@cd ${WRKSRC}/docs/CommandGuide && ${GMAKE} ${MAN1}
 .endif
@@ -100,7 +106,7 @@ post-build:
 post-install:
 	${MV} ${PREFIX}/lib/${LIBNAME} ${PREFIX}/lib/${LIBNAME}.0
 	${LN} -s ${LIBNAME}.0 ${PREFIX}/lib/${LIBNAME}
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 .for man in ${MAN1}
 	@${INSTALL_MAN} ${WRKSRC}/docs/CommandGuide/${man} \
 	     ${MANPREFIX}/man/man1/

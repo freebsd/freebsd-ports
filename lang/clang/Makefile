@@ -7,6 +7,7 @@
 
 PORTNAME=	clang
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -45,10 +46,20 @@ USE_PERL5=	yes
 USE_PYTHON=	yes
 MAKE_JOBS_SAFE=	yes
 
-MAKE_ARGS=	CLANG_TBLGEN=${WRKSRC}/Release+Asserts/bin/clang-tblgen \
+MAKE_ARGS=	CLANG_TBLGEN=${WRKSRC}/${RELTYPE}/bin/clang-tblgen \
 		LLVMIncDir=${LOCALBASE}/include \
 		LLVMToolDir=${LOCALBASE}/bin \
 		LLVMLibDir=${LOCALBASE}/lib
+
+OPTIONS_DEFINE=	ASSERTS DOCS
+
+ASSERTS_DESC=	Enable assertions (thread unsafe)
+
+MAN1=		clang.1
+
+PLIST_SUB+=		PORTVERSION=${PORTVERSION}
+
+.include <bsd.port.options.mk>
 
 .if defined(MAINTAINER_MODE)
 CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
@@ -56,13 +67,19 @@ CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
 CONFIGURE_ARGS+=	--enable-optimized
 .endif
 
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
+CONFIGURE_ARGS+=	--enable-docs
+.else
 CONFIGURE_ARGS+=	--disable-docs
 .endif
 
-PLIST_SUB+=		PORTVERSION=${PORTVERSION}
-
-MAN1=		clang.1
+.if ${PORT_OPTIONS:MASSERTS}
+CONFIGURE_ARGS+=	--enable-assertions
+RELTYPE=		Release+Asserts
+.else
+CONFIGURE_ARGS+=	--disable-assertions
+RELTYPE=		Release
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -90,13 +107,13 @@ post-patch:
 
 pre-build:
 	${LN} -sf ${LOCALBASE}/include/llvm/Intrinsics.gen ${WRKSRC}/include/llvm/
-	${MKDIR} ${WRKSRC}/Release+Asserts/lib
-	${LN} -sf ${LOCALBASE}/lib/libLLVM-${PORTVERSION}.so ${WRKSRC}/Release+Asserts/lib/
-	${LN} -sf ${LOCALBASE}/lib/libLLVMTableGen.a ${WRKSRC}/Release+Asserts/lib/
-	${LN} -sf ${LOCALBASE}/lib/libLLVMSupport.a ${WRKSRC}/Release+Asserts/lib/
+	${MKDIR} ${WRKSRC}/${RELTYPE}/lib
+	${LN} -sf ${LOCALBASE}/lib/libLLVM-${PORTVERSION}.so ${WRKSRC}/${RELTYPE}/lib/
+	${LN} -sf ${LOCALBASE}/lib/libLLVMTableGen.a ${WRKSRC}/${RELTYPE}/lib/
+	${LN} -sf ${LOCALBASE}/lib/libLLVMSupport.a ${WRKSRC}/${RELTYPE}/lib/
 	cd ${WRKSRC}/utils/unittest && ${GMAKE}
 
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 post-build:
 	@cd ${WRKSRC}/tools/clang/docs/tools && ${GMAKE} clang.1
 .endif
@@ -116,7 +133,7 @@ post-install:
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/scanview.css ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/sorttable.js ${DATADIR}
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${INSTALL_MAN} ${WRKSRC}/tools/clang/docs/tools/clang.1 \
 	    ${MANPREFIX}/man/man1/
 .else
