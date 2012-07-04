@@ -32,7 +32,7 @@ PLIST_FILES=	%%LUA_MODSHAREDIR%%/pty.lua \
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
-.for file in ${DISTFILES}
+.for file in ${DISTFILES:C,:.*,,}
 	@${CP} ${DISTDIR}/${file} ${WRKSRC}/${file:C/\?.*$//}
 .endfor
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
