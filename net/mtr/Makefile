@@ -16,7 +16,9 @@ MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Traceroute and ping in a single graphical network diagnostic tool
 
-OPTIONS=	IPV6	"Build IPv6 support" on
+OPTIONS_DEFINE=	IPV6 X11
+OPTIONS_DEFAULT=IPV6 X11
+X11_DESC=	Build X11-enabled mtr
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -26,29 +28,24 @@ PLIST_FILES=	sbin/mtr
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=--enable-ipv6
 CATEGORIES+=	ipv6
 .else
 CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 CONFIGURE_ARGS+=--with-gtk
-OPTIONS+=	X11	"Build X11-enabled mtr" on
 USE_GNOME=	gtk20
 .else
 CONFIGURE_ARGS+=--without-gtk
-OPTIONS+=	X11	"Build X11-enabled mtr" off
 PKGNAMESUFFIX=	-nox11
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|getopt.*$$(OBJEXT)||g; s|getopt.*[ch]||g; /getopt.*Po/d' \
-		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e \
-		's|"getopt\.h"|<getopt.h>|g' ${WRKSRC}/mtr.c
+	@${REINPLACE_CMD} -e 's|getopt.*$$(OBJEXT)||g; s|getopt.*[ch]||g; /getopt.*Po/d' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|"getopt\.h"|<getopt.h>|g' ${WRKSRC}/mtr.c
 
 post-install:
 	@${ECHO_MSG} ""
