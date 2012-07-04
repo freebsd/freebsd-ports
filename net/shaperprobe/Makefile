@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	shaperprobe
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.cc.gatech.edu/~partha/diffprobe/
 DISTNAME=	${PORTNAME}
@@ -21,6 +21,6 @@ MAKEFILE=	Makefile.osx
 PLIST_FILES=	bin/prober
 
 do-install:
-	@${INSTALL} ${WRKSRC}/prober ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/prober ${PREFIX}/bin/
 
 .include <bsd.port.mk>
