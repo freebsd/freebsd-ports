@@ -21,53 +21,54 @@ RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 
-OPTIONS=	AO2 "Variant of letter 'a'" off \
-		DV1 "Variant of cyrillic letters 'de' and 've'" off \
-		GE2 "Variant of cyrillic letter 'ge'" off \
-		GQ2 "Variant of grave accent and apostrophe" off \
-		IJ1 "Variant of cyrillic letters 'i' and 'short i'" off \
-		KA2 "Variant of cyrillic letter 'ka'" off \
-		HI2 "Higher uppercase letters, for size 18" off \
-		LL2 "Variant with more distinctive l (ell)" off
+OPTIONS_DEFINE=	AO2 DV1 GE2 GQ2 IJ1 KA2 HI2 LL2
+AO2_DESC=	Variant of letter 'a'
+DV1_DESC=	Variant of cyrillic letters 'de' and 've'
+GE2_DESC=	Variant of cyrillic letter 'ge'
+GQ2_DESC=	Variant of grave accent and apostrophe
+IJ1_DESC=	Variant of cyrillic letters 'i' and 'short i'
+KA2_DESC=	Variant of cyrillic letter 'ka'
+HI2_DESC=	Higher uppercase letters, for size 18
+LL2_DESC=	Variant with more distinctive l (ell)
 
 SUB_LIST=	FONTDIR="${PREFIX}/${FONTDIR}"
 SUB_FILES=	pkg-message
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 ALL_TARGET=	pcf
 FONTDIR=	lib/X11/fonts/${PORTNAME}
 PLIST_SUB+=	FONTDIR=${FONTDIR}
 
 post-extract:
-.if defined(WITH_AO2)
+.if ${PORT_OPTIONS:MAO2}
 	cd ${WRKSRC} && ${PATCH} -p1 -i alt/ao2.diff
 .endif
-.if defined(WITH_DV1) && !defined(WITH_HI2)
+.if ${PORT_OPTIONS:MDV1} && !${PORT_OPTIONS:MHI2}
 	cd ${WRKSRC} && ${PATCH} -p1 -i alt/dv1.diff
 .endif
-.if defined(WITH_GE2)
+.if ${PORT_OPTIONS:MGE2}
 	cd ${WRKSRC} && ${PATCH} -p1 -i alt/ge2.diff
 .endif
-.if defined(WITH_GQ2)
+.if ${PORT_OPTIONS:MGQ2}
 	cd ${WRKSRC} && ${PATCH} -p1 -i alt/gq2.diff
 .endif
-.if defined(WITH_IJ1)
+.if ${PORT_OPTIONS:MIJ1}
 	cd ${WRKSRC} && ${PATCH} -p1 -i alt/ij1.diff
 .endif
-.if defined(WITH_KA2) && !defined(WITH_HI2)
+.if ${PORT_OPTIONS:MKA2} && !${PORT_OPTIONS:MHI2}
 	cd ${WRKSRC} && ${PATCH} -p1 -i alt/ka2.diff
 .endif
-.if defined(WITH_HI2)
+.if ${PORT_OPTIONS:MHI2}
 	cd ${WRKSRC} && ${PATCH} -p1 -i alt/hi2.diff
-.if defined(WITH_DV1)
+.if ${PORT_OPTIONS:MDV1}
 	cd ${WRKSRC} && ${PATCH} -p1 -i alt/hi2-dv1.diff
 .endif
-.if defined(WITH_KA2)
+.if ${PORT_OPTIONS:MKA2}
 	cd ${WRKSRC} && ${PATCH} -p1 -i alt/hi2-ka2.diff
 .endif
 .endif
-.if defined(WITH_LL2)
+.if ${PORT_OPTIONS:MLL2}
 	cd ${WRKSRC} && ${PATCH} -p1 -i alt/ll2.diff
 .endif
 
@@ -84,4 +85,4 @@ post-install:
 	@command fc-cache -f -v ${PREFIX}/${FONTDIR} || true
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
