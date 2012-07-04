@@ -13,11 +13,11 @@ Visual effects:
 Output system support:
 	PulseAudio, OSS, OSS4, jack, and ALSA
 Other features:
-	10-band equalizer, Last.fm/Libre.fm scrobbler, global hotkey, MPRIS,
-	streaming (MP3, Vorbis, AAC, AAC+ via IceCast/ShoutCast), CDDB support,
-	removable device detection (via HAL or UDisks), cover art support,
-	multiple playlists, ReplayGain support, CUE sheet support, MMS support,
-	embedded CUE support (for FLAC and WavPack), MPRIS (1.0 and 2.0),
+	multi-band equalizer, Last.fm/Libre.fm scrobbler, global hotkey,
+	streaming (MP3, Vorbis, AAC, AAC+ via IceCast/ShoutCast) and browser,
+	CDDB, removable device detection (via HAL or UDisks), cover art,
+	multiple playlists, MMS, file type determination and converter, MPRIS,
+	CUE sheet, embedded CUE (for FLAC and WavPack), ReplayGain,
 	automatic charset detection for cue files and ShoutCast metadata,
 	video playback via Mplayer, lyrics (using lyrics.wikia.com), and
 	skinned UI (supports all skins for XMMS and Winamp 2.x)

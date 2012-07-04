@@ -1,4 +1,4 @@
-%%SKINNEDUI%%bin/qmmp
+bin/qmmp
 include/qmmp/abstractengine.h
 include/qmmp/audioparameters.h
 include/qmmp/buffer.h
@@ -23,15 +23,15 @@ include/qmmp/statehandler.h
 include/qmmp/tagmodel.h
 include/qmmp/visual.h
 include/qmmp/visualfactory.h
-include/qmmp/volumecontrol.h
+include/qmmp/volume.h
 include/qmmpui/commandlinemanager.h
 include/qmmpui/commandlineoption.h
+include/qmmpui/configdialog.h
 include/qmmpui/detailsdialog.h
 include/qmmpui/filedialog.h
 include/qmmpui/filedialogfactory.h
 include/qmmpui/general.h
 include/qmmpui/generalfactory.h
-include/qmmpui/generalhandler.h
 include/qmmpui/mediaplayer.h
 include/qmmpui/metadataformatter.h
 include/qmmpui/playlistformat.h
@@ -39,7 +39,11 @@ include/qmmpui/playlistitem.h
 include/qmmpui/playlistmanager.h
 include/qmmpui/playlistmodel.h
 include/qmmpui/playlistparser.h
+include/qmmpui/qmmpuisettings.h
 include/qmmpui/templateeditor.h
+include/qmmpui/uifactory.h
+include/qmmpui/uihelper.h
+include/qmmpui/uiloader.h
 lib/libqmmp.so
 lib/libqmmp.so.0
 lib/libqmmp.so.%%SHLIB_VER%%
@@ -47,6 +51,7 @@ lib/libqmmpui.so
 lib/libqmmpui.so.0
 lib/libqmmpui.so.%%SHLIB_VER%%
 lib/qmmp/CommandLineOptions/libincdecvolumeoption.so
+lib/qmmp/CommandLineOptions/libplaylistoption.so
 lib/qmmp/CommandLineOptions/libseekoption.so
 lib/qmmp/CommandLineOptions/libstatusoption.so
 %%LADSPA%%lib/qmmp/Effect/libladspa.so
@@ -54,7 +59,9 @@ lib/qmmp/CommandLineOptions/libstatusoption.so
 %%SRCONV%%lib/qmmp/Effect/libsrconverter.so
 %%STEREO%%lib/qmmp/Effect/libstereo.so
 %%CROSSFADE%%lib/qmmp/Effect/libcrossfade.so
+%%MPLAYER%%lib/qmmp/Engines/libmplayer.so
 %%QMMP_DIALOG%%lib/qmmp/FileDialogs/libqmmpfiledialog.so
+%%CONVERTER%%lib/qmmp/General/libconverter.so
 %%COVER%%lib/qmmp/General/libcovermanager.so
 %%FILEOPS%%lib/qmmp/General/libfileops.so
 %%HAL%%lib/qmmp/General/libhal.so
@@ -65,6 +72,7 @@ lib/qmmp/CommandLineOptions/libstatusoption.so
 %%NOTIFIER%%lib/qmmp/General/libnotifier.so
 %%SCROBBLER%%lib/qmmp/General/libscrobbler.so
 %%STATICON%%lib/qmmp/General/libstatusicon.so
+%%SB%%lib/qmmp/General/libstreambrowser.so
 %%UDISKS%%lib/qmmp/General/libudisks.so
 %%FAAD%%lib/qmmp/Input/libaac.so
 %%CDIO%%lib/qmmp/Input/libcdaudio.so
@@ -75,7 +83,6 @@ lib/qmmp/CommandLineOptions/libstatusoption.so
 %%MODPLUG%%lib/qmmp/Input/libmodplug.so
 %%GME%%lib/qmmp/Input/libgme.so
 %%MUSEPACK%%lib/qmmp/Input/libmpc.so
-%%MPLAYER%%lib/qmmp/Engines/libmplayer.so
 %%SNDFILE%%lib/qmmp/Input/libsndfile.so
 %%VORBIS%%lib/qmmp/Input/libvorbis.so
 %%WAVPACK%%lib/qmmp/Input/libwavpack.so
@@ -91,28 +98,32 @@ lib/qmmp/PlaylistFormats/libplsplaylistformat.so
 lib/qmmp/PlaylistFormats/libxspfplaylistformat.so
 %%CURL%%lib/qmmp/Transports/libhttp.so
 %%MMS%%lib/qmmp/Transports/libmms.so
+%%SKINNEDUI%%lib/qmmp/Ui/libskinned.so
 %%ANALYZER%%lib/qmmp/Visual/libanalyzer.so
 %%PROJECTM%%lib/qmmp/Visual/libprojectm.so
-%%SKINNEDUI%%share/applications/qmmp.desktop
-%%SKINNEDUI%%share/applications/qmmp_enqueue.desktop
-%%CUE%%share/applications/qmmp_cue.desktop
-%%SKINNEDUI%%share/icons/hicolor/16x16/apps/qmmp.png
-%%SKINNEDUI%%share/icons/hicolor/32x32/apps/qmmp.png
-%%SKINNEDUI%%share/icons/hicolor/48x48/apps/qmmp.png
-%%SKINNEDUI%%share/icons/hicolor/scalable/apps/qmmp.svgz
-%%SKINNEDUI%%share/icons/hicolor/scalable/apps/qmmp-simple.svgz
+libdata/pkgconfig/qmmp.pc
+libdata/pkgconfig/qmmpui.pc
+%%DIR_ASSOC%%share/applications/qmmp.desktop
+%%DIR_ASSOC%%share/applications/qmmp_enqueue.desktop
+%%DIR_ASSOC%%share/applications/qmmp_dir.desktop
+%%DIR_ASSOC%%%%CUE%%share/applications/qmmp_cue.desktop
+share/icons/hicolor/16x16/apps/qmmp.png
+share/icons/hicolor/32x32/apps/qmmp.png
+share/icons/hicolor/48x48/apps/qmmp.png
+share/icons/hicolor/scalable/apps/qmmp.svgz
+share/icons/hicolor/scalable/apps/qmmp-simple.svgz
 %%KDENOTIFY%%%%DATADIR%%/images/app_icon.png
 %%KDENOTIFY%%%%DATADIR%%/images/empty_cover.png
 %%KDENOTIFY%%@dirrm %%DATADIR%%/images
 %%KDENOTIFY%%@dirrm %%DATADIR%%
-%%SKINNEDUI%%@dirrmtry share/icons/hicolor/scalable/apps
-%%SKINNEDUI%%@dirrmtry share/icons/hicolor/scalable
-%%SKINNEDUI%%@dirrmtry share/icons/hicolor/48x48/apps
-%%SKINNEDUI%%@dirrmtry share/icons/hicolor/48x48
-%%SKINNEDUI%%@dirrmtry share/icons/hicolor/32x32/apps
-%%SKINNEDUI%%@dirrmtry share/icons/hicolor/32x32
-%%SKINNEDUI%%@dirrmtry share/icons/hicolor/16x16/apps
-%%SKINNEDUI%%@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
 @comment Insert PLIST.doc here
 @dirrm include/qmmp
 @dirrm include/qmmpui
@@ -125,5 +136,6 @@ lib/qmmp/PlaylistFormats/libxspfplaylistformat.so
 @dirrmtry lib/qmmp/Output
 @dirrmtry lib/qmmp/PlaylistFormats
 @dirrmtry lib/qmmp/Transports
+@dirrmtry lib/qmmp/Ui
 @dirrmtry lib/qmmp/Visual
-@dirrm lib/qmmp
+@dirrmtry lib/qmmp
