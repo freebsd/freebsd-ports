@@ -6,22 +6,21 @@
 #
 
 PORTNAME=	flwrap
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.3.4
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://www.w1hkj.com/fldigi-distro/ \
+MASTER_SITES=	http://www.w1hkj.com/downloads/flwrap/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Flwrap is a companion utility for fldigi
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/fltk11/libfltk.so:${PORTSDIR}/x11-toolkits/fltk11
+LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_DOS2UNIX=	yes
-CONFIGURE_ENV=  FLTK_CONFIG="${LOCALBASE}/bin/fltk11/fltk-config"
+CONFIGURE_ENV=	FLTK_CONFIG="${LOCALBASE}/bin/fltk-config"
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|' \
