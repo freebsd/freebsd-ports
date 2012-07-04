@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xscreensaver
-PORTVERSION=	5.17
+PORTVERSION=	5.18
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/ \
 		http://dougbarton.us/Downloads/
@@ -140,11 +140,7 @@ post-patch:
 		-e 's#malloc.h#stdlib.h#g' \
 		-e 's#/usr/X11R6#${LOCALBASE}#g' \
 		${WRKSRC}/configure.Patched > ${WRKSRC}/configure
-	@ ${CP} ${WRKSRC}/hacks/glx/Makefile.in \
-		${WRKSRC}/hacks/glx/Makefile.in.presed
-	@ ${SED} -e 's#lament.xpm#lament512.xpm#g' \
-		${WRKSRC}/hacks/glx/Makefile.in.presed > \
-		${WRKSRC}/hacks/glx/Makefile.in
+
 .if defined(WITH_PAM)
 .for f in driver/passwd-pam.c driver/xscreensaver.man
 	@ ${CP} ${WRKSRC}/${f} ${WRKSRC}/${f}.presed
