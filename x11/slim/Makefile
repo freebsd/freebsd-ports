@@ -6,7 +6,7 @@
 
 PORTNAME=	slim
 PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://slim.berlios.de/releases/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.release.asc
@@ -15,13 +15,13 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	Graphical login manager for X11, derived from Login.app
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		ck-connector.0:${PORTSDIR}/sysutils/consolekit \
 		png15:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2 \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
-
-LICENSE=	GPLv2
 
 USE_CMAKE=	yes
 USE_XORG=	x11 xft xmu xorg-server xrender
@@ -33,7 +33,17 @@ CMAKE_ARGS=	-DUSE_CONSOLEKIT=yes
 
 MAN1=		slim.1
 
+OPTIONS=	PAM "Use pam" off
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_PAM)
+CMAKE_ARGS+=	-DUSE_PAM=yes
+PLIST_SUB+=	PAM=""
+.else
+CMAKE_ARGS+=	-DUSE_PAM=no
+PLIST_SUB+=	PAM="@comment "
+.endif
 
 verify: checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.release.asc
@@ -49,15 +59,21 @@ post-patch:
 
 # Fix a previous bad install
 pre-install:
-	@/bin/rm -f ${LOCALBASE}/share/man/man1/slim.1
-	@/bin/rmdir ${LOCALBASE}/share/man/man1 2>/dev/null || true
-	@/bin/rmdir ${LOCALBASE}/share/man 2>/dev/null || true
+	@${RM} -f ${LOCALBASE}/share/man/man1/slim.1
+	@${RMDIR} ${LOCALBASE}/share/man/man1 2>/dev/null || true
+	@${RMDIR} ${LOCALBASE}/share/man 2>/dev/null || true
 
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
 	@if [ ! -f ${PREFIX}/etc/slim.conf ]; then \
 		${CP} ${PREFIX}/etc/slim.conf.sample ${PREFIX}/etc/slim.conf ; \
 	fi
+.	if defined(WITH_PAM)
+	@${INSTALL_DATA} ${FILESDIR}/pam.conf ${PREFIX}/etc/pam.d/slim.default
+	@if [ ! -f ${PREFIX}/etc/pam.d/slim ]; then \
+		${CP} ${PREFIX}/etc/pam.d/slim.default ${PREFIX}/etc/pam.d/slim ; \
+	fi
+.	endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
