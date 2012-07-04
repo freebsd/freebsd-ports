@@ -30,15 +30,12 @@ USE_AUTOTOOLS=	libtool
 
 WRKSRC=		${WRKDIR}/blt2.4z
 GNU_CONFIGURE=	yes
-CFLAGS+=	-Wall -Wno-uninitialized -DWERROR
+CFLAGS+=	-Wall -Wno-uninitialized
 CFLAGS+=	-I${TK_INCLUDEDIR}/generic -I${TK_INCLUDEDIR}/unix
 MAKE_JOBS_SAFE=	yes
 
 USE_TK=		82+
 USE_XORG=	x11
-
-post-configure:
-	${REINPLACE_CMD} 's,-DWERROR,-Werror,' ${WRKSRC}/src/Makefile
 
 post-install:
 	${LN} -sf libBLT24.so.3 ${PREFIX}/lib/libBLT24.so
