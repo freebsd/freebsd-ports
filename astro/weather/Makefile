@@ -14,6 +14,8 @@ MASTER_SITES=	http://fungi.yuggoth.org/weather/src/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	An utility to provide current weather conditions and forecasts
 
+CONFLICTS=	expect-[0-9]* expect-nox11-[0-9]*
+
 USE_PYTHON=	yes
 USE_XZ=		yes
 
