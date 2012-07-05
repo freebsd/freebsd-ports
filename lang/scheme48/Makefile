@@ -19,6 +19,8 @@ USE_GMAKE=	yes
 CONFLICTS=	scsh-*
 
 GNU_CONFIGURE=	yes
+LDFLAGS+=	${PTHREAD_LIBS}
+
 ALL_TARGET=	enough
 MAN1=		scheme48.1
 
