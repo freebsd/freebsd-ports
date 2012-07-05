@@ -9,8 +9,7 @@ PORTNAME=	nevow
 PORTVERSION=	0.10.0
 PORTREVISION=	2
 CATEGORIES=	www python devel
-MASTER_SITES=	http://divmod.org/trac/attachment/wiki/SoftwareReleases/ \
-		http://nivi.interfree.it/distfiles/${PORTNAME}/
+MASTER_SITES=	http://divmod.org/trac/attachment/wiki/SoftwareReleases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Nevow-${PORTVERSION}
 EXTRACT_SUFX=	.tar.gz?format=raw
