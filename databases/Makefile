@@ -124,6 +124,7 @@
     SUBDIR += jdbc-oracle8i
     SUBDIR += jdbc-oracle9i
     SUBDIR += jdbc-oracle10g
+    SUBDIR += jdbc-oracle11g
     SUBDIR += jdbm2
     SUBDIR += jrobin
     SUBDIR += jrrd
