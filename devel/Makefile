@@ -2662,6 +2662,7 @@
     SUBDIR += p5-Test-YAML-Meta
     SUBDIR += p5-Test-YAML-Valid
     SUBDIR += p5-Test-use-ok
+    SUBDIR += p5-Test-utf8
     SUBDIR += p5-Text-Levenshtein
     SUBDIR += p5-Text-LevenshteinXS
     SUBDIR += p5-Text-Outdent
