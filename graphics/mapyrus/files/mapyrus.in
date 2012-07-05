@@ -5,5 +5,11 @@ if [ -z "${DISPLAY}" ]; then
 else
     JAVA_AWT_HEADLESS=""
 fi
-JAVA_VERSION="%%JAVA_VERSION%%" \
-	exec "%%LOCALBASE%%/bin/java" ${JAVA_AWT_HEADLESS} -jar "%%DATADIR%%/%%MAPYRUSJAR%%" "$@"
+if [ -z "$1" ]; then
+    MAPYRUS_ARGS="-h"
+else
+    MAPYRUS_ARGS="$@"
+fi
+JAVA_VERSION="1.5+" \
+	exec "/usr/local/bin/java" ${JAVA_AWT_HEADLESS} -jar "/usr/local/share/java/mapyrus/mapyrus.jar" ${MAPYRUS_ARGS}
+	

@@ -60,6 +60,7 @@ bin/mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialgeoimage1.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialgeoimage2.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialgeoimage3.mapyrus
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialgeoimage4.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialgradient.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialhtmlpage1.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialhtmlpage2.mapyrus
