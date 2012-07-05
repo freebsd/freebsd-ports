@@ -1,15 +1,15 @@
-# New ports collection makefile for:	opengfx
-# Date created:			2010-11-04
-# Whom:				Ilya A. Arhipov
+# New ports collection makefile for:	OpenGFX
+# Date created:				2010-11-04
+# Whom:					Ilya A. Arhipov <admin@gorodkirov.ru>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	opengfx
-PORTVERSION=	0.3.7
+PORTVERSION=	0.4.4
 CATEGORIES=	games
-MASTER_SITES=	http://gb.binaries.openttd.org/binaries/extra/${PORTNAME}/${PORTVERSION}/ \
-		http://de.binaries.openttd.org/binaries/extra/${PORTNAME}/${PORTVERSION}/ \
+MASTER_SITES=	http://hu.binaries.openttd.org/binaries/extra/${PORTNAME}/${PORTVERSION}/ \
+		http://us.binaries.openttd.org/binaries/extra/${PORTNAME}/${PORTVERSION}/ \
 		http://cz.binaries.openttd.org/openttd/binaries/extra/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-all
 
@@ -18,10 +18,11 @@ COMMENT=	Free alternative graphics for OpenTTD game engine
 
 USE_ZIP=	yes
 NO_BUILD=	yes
+LATEST_LINK=	openttd-${PORTNAME}
 
 do-install:
-	${MKDIR} ${PREFIX}/share/openttd/data/opengfx/
+	@${MKDIR} ${PREFIX}/share/openttd/baseset/opengfx
 	${INSTALL_DATA} ${WRKDIR}/opengfx-${PORTVERSION}/* \
-		${PREFIX}/share/openttd/data/opengfx/
+		${PREFIX}/share/openttd/baseset/opengfx
 
 .include <bsd.port.mk>
