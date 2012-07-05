@@ -123,7 +123,10 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		poppler-glib.8:${PORTSDIR}/graphics/poppler-glib \
 		rdf.0:${PORTSDIR}/textproc/redland \
 		textcat.0:${PORTSDIR}/textproc/libtextcat \
-		freetype.9:${PORTSDIR}/print/freetype2
+		freetype.9:${PORTSDIR}/print/freetype2 \
+		apr-1.4:${PORTSDIR}/devel/apr1 \
+		CoinMP.7:${PORTSDIR}/math/coinmp \
+		serf-1.0:${PORTSDIR}/www/serf
 
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip \
@@ -178,6 +181,9 @@ CONFIGURE_ARGS+=	--enable-verbose \
 			--with-system-redland \
 			--with-system-vigra \
 			--with-system-stdlibs \
+			--with-system-apr \
+			--with-system-apr-util \
+			--with-system-coinmp \
 			--with-commons-codec-jar=${JAVALIBDIR}/commons-codec.jar \
 			--with-commons-lang-jar=${JAVALIBDIR}/commons-lang.jar	\
 			--with-commons-httpclient-jar=${JAVALIBDIR}/commons-httpclient.jar \
@@ -197,6 +203,8 @@ CONFIGURE_ARGS+=	--enable-verbose \
 			--with-system-beanshell	\
 			--with-beanshell-jar=${JAVALIBDIR}/bsh.jar \
 			--without-fonts
+
+#			--with-system-serf \
 
 OOOEXTENSIONS+=		minimizer/presentation-minimizer.oxt
 OOOEXTENSIONS+=		presenter/presenter-screen.oxt
