@@ -6,33 +6,33 @@
 #
 
 PORTNAME=	soundtouch
-DISTVERSION=	1.4.0
+DISTVERSION=	1.6.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.surina.net/soundtouch/
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open-source audio processing library
 
 LICENSE=	LGPL21
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared=yes
+USE_AUTOTOOLS=	autoconf automake libtool
 USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--enable-shared=yes
+MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig" \
+		pkgdoc_DATA="${PORTDOCS}" pkgdocdir="${DOCSDIR}"
+.if !defined(NOPORTDOCS)
 PORTDOCS=	README.html
-
-post-patch: .SILENT
-# Adjust some paths for FreeBSD, respect CFLAGS, and get rid of GPL
-	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -E \
-		's|\(libdir\)/pkgconfig|(prefix)/libdata/pkgconfig|g; \
-		s| -O3( -[mf][[:graph:]]*)*||; \
-		s|\(prefix\)/doc|(datadir)/doc|; s|COPYING\.TXT||'
-# Fix SSE detection
-	${REINPLACE_CMD} -e 's|__x86_64__|&) \&\& defined(__SSE__|' \
-		${WRKSRC}/include/STTypes.h
-.if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e 's|[[:blank:]]install-pkgdocDATA$$||' \
-		${WRKSRC}/Makefile.in
 .endif
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+post-patch:
+	@${REINPLACE_CMD} -E 's|-O3 ?||' \
+		${WRKSRC}/source/SoundStretch/Makefile.am \
+		${WRKSRC}/source/SoundTouch/Makefile.am
+
+run-autotools:		# see ${WRKSRC}/soundtouch/bootstrap for reference
+	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} \
+		AUTOMAKE="${AUTOMAKE} --add-missing --foreign --copy" \
+		${AUTORECONF} -fisv)
 
 .include <bsd.port.mk>
