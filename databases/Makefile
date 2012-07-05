@@ -123,6 +123,7 @@
     SUBDIR += jdb
     SUBDIR += jdbc-oracle8i
     SUBDIR += jdbc-oracle9i
+    SUBDIR += jdbc-oracle10g
     SUBDIR += jdbm2
     SUBDIR += jrobin
     SUBDIR += jrrd
