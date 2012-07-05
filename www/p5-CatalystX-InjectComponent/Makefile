@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	CatalystX-InjectComponent
-PORTVERSION=	0.024
-PORTREVISION=	1
+PORTVERSION=	0.025
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,10 +14,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Inject components into your Catalyst application
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.8:${PORTSDIR}/www/p5-Catalyst-Runtime \
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.80000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector
-RUN_DEPENDS=	p5-Catalyst-Runtime>=5.8:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Most>=0:${PORTSDIR}/devel/p5-Test-Most
 
 PERL_CONFIGURE=	yes
