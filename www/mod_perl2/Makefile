@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_perl
 PORTVERSION=	2.0.7
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	APACHE/perl
@@ -19,8 +20,6 @@ COMMENT=	Embeds a Perl interpreter in the Apache2 server
 BUILD_DEPENDS=	p5-BSD-Resource>=0:${PORTSDIR}/devel/p5-BSD-Resource
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-CONFLICTS=	p5-Apache-Reload-0.*
-
 MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	pkg-message
@@ -28,6 +27,7 @@ SUB_LIST=	APACHEMODDIR=${APACHEMODDIR}
 USE_APACHE=	20+
 PERL_CONFIGURE=	yes
 GMAKE=		yes
+USE_CSTD=	gnu89
 
 # Using apxs in this way is problematic if apache2 is installed under a
 # different PREFIX than mod_perl2, because the mod_perl2 installation will
@@ -92,6 +92,14 @@ PLIST_SUB+=	THREADMUTEX="@comment "
 PLIST_SUB+=	THREADRWLOCK="@comment "
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -e 's/APR_INLINE//g' \
+		${PATCH_WRKSRC}/src/modules/perl/modperl_common_util.h
+
+post-configure:
+	${REINPLACE_CMD} -e 's/-pthread -Wl,-E//g' \
+		${PATCH_WRKSRC}/xs/APR/APR/Makefile
+
 post-install:
 	${MKDIR} ${PREFIX}/${APACHEINCLUDEDIR}/modules/perl
 	${INSTALL_DATA} ${WRKSRC}/src/modules/perl/*.h \
@@ -101,6 +109,8 @@ post-install:
 	${MKDIR} ${PREFIX}/${APACHEMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/modules/perl/mod_perl.so \
 		${PREFIX}/${APACHEMODDIR}/mod_perl.so
+
+	${APXS} -e -A -n perl ${PREFIX}/${APACHEMODDIR}/mod_perl.so
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
