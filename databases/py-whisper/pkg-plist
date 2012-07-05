@@ -1,13 +1,12 @@
-@comment $FreeBSD$
+bin/rrd2whisper.py
+bin/whisper-create.py
+bin/whisper-dump.py
+bin/whisper-fetch.py
+bin/whisper-info.py
+bin/whisper-merge.py
+bin/whisper-resize.py
+bin/whisper-set-aggregation-method.py
+bin/whisper-update.py
 %%PYTHON_SITELIBDIR%%/whisper.py
 %%PYTHON_SITELIBDIR%%/whisper.pyc
 %%PYTHON_SITELIBDIR%%/whisper.pyo
-bin/rrd2whisper.py
-bin/whisper-info.py
-bin/whisper-fetch.py
-bin/whisper-update.py
-bin/whisper-resize.py
-bin/whisper-create.py
-bin/whisper-set-aggregation-method.py
-bin/whisper-dump.py
-bin/whisper-merge.py
