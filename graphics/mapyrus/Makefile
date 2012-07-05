@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mapyrus
-PORTVERSION=	1.105
+PORTVERSION=	1.201
 PORTREVISION=	0
 CATEGORIES=	graphics print java
 MASTER_SITES=	SF
@@ -33,15 +33,19 @@ MAPYRUSDOCS=	${PORTNAME}.pdf
 FIND_DATA=	-type f -not \( -iname "copying" -or -iname "*.tex" \)
 FIND_HERE=	userdoc
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.options.mk>
+
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKDIR}/${MAPYRUSJAR} ${DATADIR}/${MAPYRUSJAR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/${MAPYRUSDOCS} ${DOCSDIR}/
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKDIR} && ${FIND} ${FIND_HERE} ${FIND_DATA} -exec ${INSTALL_DATA} {} ${EXAMPLESDIR} \;
 .endif
