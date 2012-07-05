@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	rhino
-DISTVERSION=	1_7R3
+DISTVERSION=	1_7R4
 CATEGORIES=	lang java
-MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/js/:rhino \
+MASTER_SITES=	http://cloud.github.com/downloads/mozilla/rhino/:rhino \
 		http://java.sun.com/products/jfc/tsc/articles/treetable2/downloads/:swingex \
-		http://www.apache.org/dist/xmlbeans/binaries/:xmlbeans
+		${MASTER_SITE_APACHE}:xmlbeans
 MASTER_SITE_SUBDIR=	xmlbeans/binaries/:xmlbeans
 DISTFILES=	${PORTNAME}${DISTVERSION}.zip:rhino \
 		src.zip:swingex \
@@ -23,8 +23,6 @@ COMMENT=	An implementation of JavaScript written in Java
 
 LICENSE=	MPL
 
-OPTIONS=	LINEDIT	"Enable line editing in the Rhino shell" on
-
 ALL_TARGET=	jar
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
@@ -34,10 +32,17 @@ JAVA_VERSION=	1.5+
 MAKE_ARGS=	-Dxmlbeans.url=file://${DISTDIR}/${DIST_SUBDIR}/xmlbeans-2.5.0.zip \
 		-Dswing-ex-url=file://${DISTDIR}/${DIST_SUBDIR}/src.zip
 
+OPTIONS_DEFINE=	LINEDIT
+LINEDIT_DESC=	Enable line editing in the Rhino shell
+
+OPTIONS_DEFAULT=	LINEDIT
+
+.include <bsd.port.options.mk>
+
 RHINOJAR=	${DATADIR}/${PORTNAME}.jar
 
 SUB_FILES=	rhinoc rhinodbg rhinosh
-SUB_LIST=	RHINOJAR=${RHINOJAR} JLINEJAR=":${JLINEJAR}"
+SUB_LIST=	RHINOJAR=${RHINOJAR} JLINEJAR="${JLINEJAR}"
 
 USE_ANT=	yes
 USE_JAVA=	yes
@@ -55,7 +60,7 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_LINEDIT)
+.if ${PORT_OPTIONS:MLINEDIT}
 JLINEJAR=	${JAVAJARDIR}/jline.jar
 RUN_DEPENDS+=	${JLINEJAR}:${PORTSDIR}/devel/jline
 .else
