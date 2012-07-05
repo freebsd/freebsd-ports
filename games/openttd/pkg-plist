@@ -3,19 +3,19 @@ share/pixmaps/openttd.32.xpm
 %%DATADIR%%/ai/compat_0.7.nut
 %%DATADIR%%/ai/compat_1.0.nut
 %%DATADIR%%/ai/compat_1.1.nut
+%%DATADIR%%/ai/compat_1.2.nut
 @dirrm %%DATADIR%%/ai
-%%DATADIR%%/gm/no_music.obm
-%%DATADIR%%/gm/orig_win.obm
-@dirrmtry %%DATADIR%%/gm
-%%DATADIR%%/data/openttd.grf
-%%DATADIR%%/data/opntitle.dat
-%%DATADIR%%/data/orig_dos.obg
-%%DATADIR%%/data/orig_dos.obs
-%%DATADIR%%/data/orig_dos_de.obg
-%%DATADIR%%/data/orig_win.obg
-%%DATADIR%%/data/orig_win.obs
-%%DATADIR%%/data/no_sound.obs
-@dirrmtry %%DATADIR%%/data
+%%DATADIR%%/baseset/no_music.obm
+%%DATADIR%%/baseset/orig_win.obm
+%%DATADIR%%/baseset/openttd.grf
+%%DATADIR%%/baseset/opntitle.dat
+%%DATADIR%%/baseset/orig_dos.obg
+%%DATADIR%%/baseset/orig_dos.obs
+%%DATADIR%%/baseset/orig_dos_de.obg
+%%DATADIR%%/baseset/orig_win.obg
+%%DATADIR%%/baseset/orig_win.obs
+%%DATADIR%%/baseset/no_sound.obs
+@dirrmtry %%DATADIR%%/baseset
 %%DATADIR%%/lang/afrikaans.lng
 %%DATADIR%%/lang/arabic_egypt.lng
 %%DATADIR%%/lang/brazilian_portuguese.lng
@@ -27,6 +27,7 @@ share/pixmaps/openttd.32.xpm
 %%DATADIR%%/lang/danish.lng
 %%DATADIR%%/lang/dutch.lng
 %%DATADIR%%/lang/english.lng
+%%DATADIR%%/lang/english_AU.lng
 %%DATADIR%%/lang/english_US.lng
 %%DATADIR%%/lang/esperanto.lng
 %%DATADIR%%/lang/estonian.lng
