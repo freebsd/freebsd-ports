@@ -30,7 +30,7 @@ post-patch:
 		${WRKSRC}/source/SoundStretch/Makefile.am \
 		${WRKSRC}/source/SoundTouch/Makefile.am
 
-run-autotools:		# see ${WRKSRC}/soundtouch/bootstrap for reference
+run-autotools:	# see ${WRKSRC}/bootstrap for reference
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} \
 		AUTOMAKE="${AUTOMAKE} --add-missing --foreign --copy" \
 		${AUTORECONF} -fisv)
