@@ -16,6 +16,8 @@ DISTNAME=	tn-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cross-platform terminal manipulation library
 
+USE_CSTD=	gnu89
+
 do-install:
 	@${MKDIR} ${PREFIX}/include/tn
 	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/tn

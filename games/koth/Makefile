@@ -19,6 +19,7 @@ LIB_DEPENDS=	ggi.2:${PORTSDIR}/graphics/libggi
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_CSTD=	gnu89
 
 PLIST_FILES=	bin/kclever-ai bin/kmoron-ai bin/koth bin/koths
 MAN6=		kclever-ai.6 kmoron-ai.6 koth.6 koths.6

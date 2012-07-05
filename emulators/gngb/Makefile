@@ -17,6 +17,7 @@ COMMENT=	GameBoy(tm) emulator
 USE_SDL=	sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_CSTD=	gnu89
 
 PLIST_FILES=	bin/gngb
 

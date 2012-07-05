@@ -22,6 +22,7 @@ CONFLICTS=	ja-ebview-0*
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_CSTD=	gnu89
 CONFIGURE_ARGS+=--with-eb-conf=${LOCALBASE}/etc/eb.conf
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -17,6 +17,7 @@ COMMENT=	QuakeWorld client with cool features, but still compatible
 
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
+USE_CSTD=	gnu89
 NO_WRKSUBDIR=	yes
 
 OPTIONS_MULTI=	EXE

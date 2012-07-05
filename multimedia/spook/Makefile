@@ -24,6 +24,7 @@ OPTIONS= \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_CSTD=	gnu89
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf aclocal automake

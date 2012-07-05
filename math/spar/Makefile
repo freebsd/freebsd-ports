@@ -17,6 +17,7 @@ COMMENT=	A modular math parser
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
+USE_CSTD=	gnu89
 USE_LDCONFIG=	yes
 
 MAN1=	spar.1

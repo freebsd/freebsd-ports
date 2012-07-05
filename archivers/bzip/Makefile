@@ -15,6 +15,7 @@ COMMENT=	A block-sorting file compressor
 
 RESTRICTED=	may be covered by patents
 MAN1=		bzip.1 bunzip.1
+USE_CSTD=	gnu89
 
 PLIST_FILES=	bin/bzip bin/bunzip
 
