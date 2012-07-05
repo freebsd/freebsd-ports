@@ -283,6 +283,7 @@ bin/mp2bug
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/mod_perl2/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/mod_perl2.pm
 %%APACHEMODDIR%%/mod_perl.so
+@exec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%F
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/mod_perl2
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ModPerl/Util
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ModPerl/Global
@@ -349,3 +350,5 @@ bin/mp2bug
 @dirrm %%APACHEINCLUDEDIR%%/modules/perl
 @dirrmtry %%APACHEINCLUDEDIR%%/modules
 @dirrmtry %%APACHEINCLUDEDIR%%
+@unexec sed -i '' -E '/LoadModule[[:blank:]]+%%AP_NAME%%_module/d' %D/%%APACHEETCDIR%%/httpd.conf
+@unexec echo "Don't forget to remove all mod_perl2-related directives in your httpd.conf"
