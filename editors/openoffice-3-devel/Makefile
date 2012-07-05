@@ -73,7 +73,7 @@ FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 OOOSRC=			ApacheOpenOffice.r${SVNREVISION}${EXTRACT_SUFX}
 EXTSRC=			ApacheOpenOffice.ext_sources.r${SVNREVISION}${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SVNREVISION=		1347855
+SVNREVISION=		1356713
 INSTALLATION_BASEDIR?=	openoffice-r${SVNREVISION}
 EXECBASE?=		openoffice-r${SVNREVISION}
 DIST_SUBDIR=		openoffice
@@ -96,7 +96,11 @@ RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hico
 		${JAVALIBDIR}/commons-httpclient.jar:${PORTSDIR}/java/jakarta-commons-httpclient \
 		${JAVALIBDIR}/commons-lang.jar:${PORTSDIR}/java/jakarta-commons-lang \
 		${JAVALIBDIR}/bsh.jar:${PORTSDIR}/lang/bsh \
-		${JAVALIBDIR}/saxon9.jar:${PORTSDIR}/textproc/saxon-devel
+		${JAVALIBDIR}/saxon9.jar:${PORTSDIR}/textproc/saxon-devel \
+		${LOCALBASE}/lib/X11/fonts/ChromeOS/Arimo-Bold.ttf.ttf:${PORTSDIR}/x11-fonts/croscorefonts-fonts-ttf \
+		${LOCALBASE}/lib/X11/fonts/LinLibertineG/LinLibertine_DR_G.ttf:${PORTSDIR}/x11-fonts/linuxlibertine-g \
+		${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu \
+		${LOCALBASE}/lib/X11/fonts/gentium-basic/GenBasI.ttf:${PORTSDIR}/x11-fonts/gentium-basic
 
 .if defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
@@ -172,8 +176,6 @@ CONFIGURE_ARGS+=	--enable-verbose \
 			--with-system-curl		\
 			--with-system-poppler \
 			--with-system-redland \
-			--with-system-libtextcat \
-			--with-system-libtextcat-data=${LOCALBASE}/share/libtextcat \
 			--with-system-vigra \
 			--with-system-stdlibs \
 			--with-commons-codec-jar=${JAVALIBDIR}/commons-codec.jar \
@@ -193,7 +195,8 @@ CONFIGURE_ARGS+=	--enable-verbose \
 			--with-system-saxon     \
 			--with-saxon-jar=${JAVALIBDIR}/saxon9.jar  \
 			--with-system-beanshell	\
-			--with-beanshell-jar=${JAVALIBDIR}/bsh.jar
+			--with-beanshell-jar=${JAVALIBDIR}/bsh.jar \
+			--without-fonts
 
 OOOEXTENSIONS+=		minimizer/presentation-minimizer.oxt
 OOOEXTENSIONS+=		presenter/presenter-screen.oxt
