@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://bbdock.nethence.com/download/
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An application launcher for Blackbox-like window manager
 
 LICENSE=	BSD

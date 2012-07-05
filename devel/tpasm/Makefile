@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.ct0.com/pub/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-assembler for variety of microprocessors and controllers
 
 LICENSE=	GPLv2
