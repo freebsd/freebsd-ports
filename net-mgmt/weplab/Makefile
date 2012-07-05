@@ -14,6 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WepLab is a tool designed to teach how WEP works
 
 GNU_CONFIGURE=	yes
+USE_CSTD=	gnu89
 
 MAN1=		weplab.1
 PLIST_FILES=	bin/weplab

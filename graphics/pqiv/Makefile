@@ -27,6 +27,7 @@ ANIMATIONS_DESC=Enable support for animations
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
+USE_CSTD=	gnu89
 CFLAGS+=	-DNO_INOTIFY -DBINARY_NAME=\"${PORTNAME}\"
 
 MAN1=		pqiv.1

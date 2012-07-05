@@ -17,6 +17,7 @@ COMMENT=	A POP3 mail check for the Window Maker dock
 
 WRKSRC=		${WRKDIR}/${DISTNAME:L}/wmpop3
 
+USE_CSTD=	gnu89
 USE_XORG=	xpm
 ALL_TARGET=	clean all
 

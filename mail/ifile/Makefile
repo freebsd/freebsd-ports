@@ -15,6 +15,7 @@ COMMENT=	An application of machine learning to e-mail filtering
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_CSTD=	gnu89
 
 MAN1=		ifile.1
 PLIST_FILES=	bin/ifile

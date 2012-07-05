@@ -29,6 +29,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 USE_DOS2UNIX=	*.[ch] Makefile*
 USE_GMAKE=	yes
 USE_TCL=	yes
+USE_CSTD=	gnu89
 MAKE_ENV=	TCL_SUFX="${TCL_VER:S/.//}"
 .for v in TCL_INCLUDEDIR TCL_LIBDIR DATADIR
 MAKE_ENV+=	${v}="${${v}}"

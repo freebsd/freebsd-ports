@@ -18,6 +18,7 @@ USE_SDL=	mixer sdl
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USE_CSTD=	gnu89
 
 MAN6=		sdlroids.6
 
