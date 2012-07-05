@@ -54,6 +54,8 @@ share/locale/hu/LC_MESSAGES/kthesaurus.mo
 share/locale/hu/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/hu/LC_MESSAGES/plan.mo
 share/locale/hu/LC_MESSAGES/planlibs.mo
+share/locale/hu/LC_MESSAGES/planrcpsplugin.mo
+share/locale/hu/LC_MESSAGES/plantjplugin.mo
 share/locale/hu/LC_MESSAGES/planwork.mo
 share/locale/hu/LC_MESSAGES/sheets.mo
 share/locale/hu/LC_MESSAGES/stage.mo
