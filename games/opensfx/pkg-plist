@@ -1,8 +1,8 @@
-share/openttd/data/opensfx/changelog.txt
-share/openttd/data/opensfx/license.txt
-share/openttd/data/opensfx/opensfx.cat
-share/openttd/data/opensfx/opensfx.obs
-share/openttd/data/opensfx/readme.txt
-@dirrmtry share/openttd/data/opensfx
-@dirrmtry share/openttd/data
+share/openttd/baseset/opensfx/changelog.txt
+share/openttd/baseset/opensfx/license.txt
+share/openttd/baseset/opensfx/opensfx.cat
+share/openttd/baseset/opensfx/opensfx.obs
+share/openttd/baseset/opensfx/readme.txt
+@dirrmtry share/openttd/baseset/opensfx
+@dirrmtry share/openttd/baseset
 @dirrmtry share/openttd

@@ -1,13 +1,13 @@
-share/openttd/data/opengfx/changelog.txt
-share/openttd/data/opengfx/license.txt
-share/openttd/data/opengfx/ogfx1_base.grf
-share/openttd/data/opengfx/ogfxc_arctic.grf
-share/openttd/data/opengfx/ogfxe_extra.grf
-share/openttd/data/opengfx/ogfxh_tropical.grf
-share/openttd/data/opengfx/ogfxi_logos.grf
-share/openttd/data/opengfx/ogfxt_toyland.grf
-share/openttd/data/opengfx/opengfx.obg
-share/openttd/data/opengfx/readme.txt
-@dirrmtry share/openttd/data/opengfx
-@dirrmtry share/openttd/data
+share/openttd/baseset/opengfx/changelog.txt
+share/openttd/baseset/opengfx/license.txt
+share/openttd/baseset/opengfx/ogfx1_base.grf
+share/openttd/baseset/opengfx/ogfxc_arctic.grf
+share/openttd/baseset/opengfx/ogfxe_extra.grf
+share/openttd/baseset/opengfx/ogfxh_tropical.grf
+share/openttd/baseset/opengfx/ogfxi_logos.grf
+share/openttd/baseset/opengfx/ogfxt_toyland.grf
+share/openttd/baseset/opengfx/opengfx.obg
+share/openttd/baseset/opengfx/readme.txt
+@dirrmtry share/openttd/baseset/opengfx
+@dirrmtry share/openttd/baseset
 @dirrmtry share/openttd
