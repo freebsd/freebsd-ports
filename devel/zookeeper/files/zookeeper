@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# $FreeBSD: /tmp/pcvs/ports/devel/zookeeper/files/Attic/zookeeper,v 1.1 2012-07-06 20:27:35 gnn Exp $
+#
+# PROVIDE: zookeeper
+#
+# Add the following line to /etc/rc.conf to enable zookeeper:
+#
+# zookeeper_enable="YES"
+
+command="/usr/local/zookeeper/bin/zkServer.sh"
+
+. /etc/rc.subr
+
+load_rc_config zookeeper
+
+#set defaults
+zookeeper_enable=${zookeeper_enable:-"NO"}
+
+name=zookeeper
+rcvar=`set_rcvar`
+
+start_cmd="zookeeper_command start"
+stop_cmd="zookeeper_command stop"
+restart_cmd="zookeeper_command restart"
+status_cmd="zookeeper_command status"
+
+zookeeper_command()
+{
+	${command} ${rc_arg}
+}
+
+run_rc_command "$1"
