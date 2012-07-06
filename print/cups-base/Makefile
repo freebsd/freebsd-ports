@@ -162,7 +162,7 @@ PLIST_SUB+=		WITH_PDFTOPS=""
 .elif !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MXPDF}
 BUILD_DEPENDS+=		pdftops:${PORTSDIR}/graphics/xpdf
 RUN_DEPENDS+=		pdftops:${PORTSDIR}/graphics/xpdf
-CONFIGURE_ARGS+=	--enable-pdftops --with-pdftops=${LOCALBASE}/bin/pdftops
+CONFIGURE_ARGS+=	--enable-pdftops --with-pdftops=${LOCALBASE}/libexec/xpdf/pdftops
 PLIST_SUB+=		WITH_PDFTOPS=""
 .else
 PLIST_SUB+=		WITH_PDFTOPS="@comment "
