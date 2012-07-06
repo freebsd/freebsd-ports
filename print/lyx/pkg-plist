@@ -35,8 +35,8 @@ bin/tex2lyx
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/lyx.mo
 share/applications/lyx.desktop
 share/icons/hicolor/48x48/apps/lyx.png
-%%DATADIR%%/autocorrect
 %%DATADIR%%/CREDITS
+%%DATADIR%%/autocorrect
 %%DATADIR%%/bind/aqua.bind
 %%DATADIR%%/bind/broadway.bind
 %%DATADIR%%/bind/cua.bind
@@ -370,10 +370,10 @@ share/icons/hicolor/48x48/apps/lyx.png
 %%DATADIR%%/examples/serial_letter1.lyx
 %%DATADIR%%/examples/serial_letter2.lyx
 %%DATADIR%%/examples/serial_letter3.lyx
-%%DATADIR%%/examples/simplecv.lyx
 %%DATADIR%%/examples/sheet1.gnumeric
 %%DATADIR%%/examples/sheet2.ods
 %%DATADIR%%/examples/sheet3.xls
+%%DATADIR%%/examples/simplecv.lyx
 %%DATADIR%%/examples/sk/splash.lyx
 %%DATADIR%%/examples/sl/primer_lyxan.lyx
 %%DATADIR%%/examples/sl/primer_surov.lyx
@@ -1559,6 +1559,7 @@ share/icons/hicolor/48x48/apps/lyx.png
 %%DATADIR%%/layouts/theorems-ams.module
 %%DATADIR%%/layouts/theorems-bytype.inc
 %%DATADIR%%/layouts/theorems-bytype.module
+%%DATADIR%%/layouts/theorems-case.inc
 %%DATADIR%%/layouts/theorems-chap-bytype.module
 %%DATADIR%%/layouts/theorems-chap.module
 %%DATADIR%%/layouts/theorems-named.module
