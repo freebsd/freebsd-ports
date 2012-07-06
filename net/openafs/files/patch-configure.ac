@@ -1,0 +1,22 @@
+diff --git a/configure.ac b/configure.ac
+index 35c8694..3eb836f 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -56,6 +56,7 @@ AS_IF([test x"$KRB5_LIBS" != x],
+         add_to_error_table \
+         encode_krb5_enc_tkt_part \
+         encode_krb5_ticket \
++	krb5_524_conv_principal \
+         krb5_allow_weak_crypto \
+         krb5_c_encrypt \
+         krb5_decode_ticket \
+@@ -69,6 +70,9 @@ AS_IF([test x"$KRB5_LIBS" != x],
+              [AC_CHECK_LIB([krb524], [krb524_convert_creds_kdc],
+                  [LIBS="-lkrb524 $LIBS"
+                   KRB5_LIBS="-lkrb524 $KRB5_LIBS"
++		  AC_CHECK_LIB([krb524], [krb5_524_conv_principal],
++		  [AC_DEFINE([HAVE_KRB5_524_CONV_PRINCIPAL], 1,
++		     [Define to 1 if you have the `krb5_524_conv_principal' function.])])
+                   AC_DEFINE([HAVE_KRB524_CONVERT_CREDS_KDC], 1,
+                      [Define to 1 if you have the `krb524_convert_creds_kdc' function.])])])])
+      AC_CHECK_HEADERS([kerberosIV/krb.h])

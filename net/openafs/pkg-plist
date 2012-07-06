@@ -27,6 +27,7 @@ bin/restorevol
 bin/klog.krb5
 bin/asetkey
 bin/aklog
+bin/afsio
 include/openafs/afs/param.h
 include/openafs/afs/stds.h
 include/openafs/afs/afs_sysnames.h
@@ -54,6 +55,7 @@ include/openafs/afs/com_err.h
 include/openafs/afs/error_table.h
 include/openafs/afs/mit-sipb-cr.h
 include/openafs/afs/afs.h
+include/openafs/afs/afscp.h
 include/openafs/afs/osi_inode.h
 include/openafs/afs/afs_stats.h
 include/openafs/afs/exporter.h
@@ -206,6 +208,7 @@ lib/libafsauthent.a
 lib/libuafs.a
 lib/libubik.a
 lib/libafsrpc.a
+lib/libafscp.a
 lib/pam_afs.krb.so.1
 lib/libjuafs.a
 lib/pam_afs.so.1

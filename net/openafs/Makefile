@@ -8,7 +8,6 @@
 
 PORTNAME=	openafs
 DISTVERSION=	${AFS_DISTVERSION}.${DBVERSION:S/-//g}
-PORTREVISION=	3
 CATEGORIES=	net kld
 MASTER_SITES=	http://dl.central.org/dl/openafs/${AFS_DISTVERSION}/:openafs \
 		http://dl.openafs.org/dl/openafs/${AFS_DISTVERSION}/:openafs \
@@ -28,17 +27,17 @@ LICENSE_NAME=	IBM Public License Version 1.0
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 LICENSE_PERMS=	auto-accept
 
-AFS_DISTVERSION=	1.6.0
+AFS_DISTVERSION=	1.6.1
 DBVERSION=	2011-08-14
 
-OPTIONS=	FUSE "Build afsd.fuse (enable fuse support)" off
+OPTIONS_DEFINE=	FUSE
 
 USE_LDCONFIG=	yes
 PATCH_STRIP=	-p1
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 USE_RC_SUBR=	afsd afsserver
-MAKE_JOBS_UNSAFE=	yes
+MAKE_JOBS_SAFE=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -80,12 +79,12 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 	--includedir=${PREFIX}/include/openafs \
 	${CONFIGURE_TARGET}
 
-.if !defined(WITH_FUSE)
-CONFIGURE_ARGS+=	--disable-fuse-client
-PLIST_SUB+=	FUSE="@comment "
-.else
+.if ${PORT_OPTIONS:MFUSE}
 LIB_DEPENDS+=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
 PLIST_SUB+=	FUSE=""
+.else
+CONFIGURE_ARGS+=	--disable-fuse-client
+PLIST_SUB+=	FUSE="@comment "
 .endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${AFS_DISTVERSION}
