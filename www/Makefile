@@ -1697,6 +1697,7 @@
     SUBDIR += rubygem-jekyll
     SUBDIR += rubygem-journey
     SUBDIR += rubygem-jquery-rails
+    SUBDIR += rubygem-jwt
     SUBDIR += rubygem-layout-yullio
     SUBDIR += rubygem-less
     SUBDIR += rubygem-lighthouse-api
