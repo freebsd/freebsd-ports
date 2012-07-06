@@ -38,7 +38,7 @@ OPTIONS_DEFINE=	XMMS
 OPTIONS_DEFAULT=	XMMS
 XMMS_DESC=	Install XMMS-OSD plugin
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXMMS}
 LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms \
