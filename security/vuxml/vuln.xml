@@ -52,6 +52,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c28ee9cd-916e-4dcf-8ed3-e97e5846db6c">
+    <topic>typo3 -- Cross-Site Scripting Vulnerability in TYPO3 Core</topic>
+    <affects>
+      <package>
+	<name>typo3</name>
+	<range><ge>4.5</ge><lt>4.5.17</lt></range>
+	<range><ge>4.6</ge><lt>4.6.10</lt></range>
+	<range><ge>4.7</ge><lt>4.7.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Typo3 Security Report (TYPO3-CORE-SA-2012-003):</p>
+	<blockquote cite="https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2012-003/">
+	  <p>TYPO3 bundles and uses an external JavaScript and Flash Upload Library
+	    called swfupload. TYPO3 can be configured to use this Flash uploader.
+		Input passed via the "movieName" parameter to swfupload.swf is not
+		properly sanitised before being used in a call to
+		"ExternalInterface.call()". This can be exploited to execute arbitrary
+		script code in a user's browser session in context of an affected site.
+		The existance of the swfupload library is sufficient to be vulnerable
+		to the reported problem.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	  <url>http://secunia.com/advisories/49780/</url>
+	  <url>https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2012-003/</url>
+    </references>
+    <dates>
+      <discovery>2012-07-04</discovery>
+      <entry>2012-07-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fd8bac56-c444-11e1-864b-001cc0877741"> 
     <topic>phpList -- SQL injection and XSS vulnerability</topic> 
     <affects>
