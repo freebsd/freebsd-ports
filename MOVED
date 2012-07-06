@@ -3542,3 +3542,4 @@ mail/mew2|mail/mew|2012-07-06|Development of this versions ceased, superseded by
 mail/mew3|mail/mew|2012-07-06|Development of this versions ceased, superseded by mail/mew
 sysutils/devcpu||2012-07-06|Already included in base system
 mail/squirreloutlook||2012-07-06|Based on a vulnerable version of squirrelmail, use mail/squirrelmail for similar functionality
+x11-wm/e17-module-itask-ng|x11-wm/e17-module-engage|2012-07-06|Project has been renamed
