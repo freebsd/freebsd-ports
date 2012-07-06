@@ -47,6 +47,7 @@
     SUBDIR += e17-module-efm_pathbar
     SUBDIR += e17-module-elfe
     SUBDIR += e17-module-empris
+    SUBDIR += e17-module-engage
     SUBDIR += e17-module-eooorg
     SUBDIR += e17-module-everything-aspell
     SUBDIR += e17-module-everything-mpris
@@ -61,7 +62,6 @@
     SUBDIR += e17-module-forecasts
     SUBDIR += e17-module-iiirk
     SUBDIR += e17-module-itask
-    SUBDIR += e17-module-itask-ng
     SUBDIR += e17-module-language
     SUBDIR += e17-module-mail
     SUBDIR += e17-module-mem

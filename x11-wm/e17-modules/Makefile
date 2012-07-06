@@ -18,10 +18,10 @@ NO_BUILD=	yes
 WANT_EFL=	yes
 E17_ARCH=	freebsd${OSREL}-${ARCH}
 
-MODULES=	alarm calendar comp-scale cpu deskshow diskio drawer e-tiling elfe empris eooorg \
+MODULES=	alarm calendar comp-scale cpu deskshow diskio drawer e-tiling elfe empris engage eooorg \
 		everything-aspell everything-mpris everything-pidgin everything-places \
 		everything-shotgun everything-wallpaper everything-websearch exebuf execwatch \
-		flame forecasts iiirk itask itask-ng language mail mem moon mpdule net news \
+		flame forecasts iiirk itask language mail mem moon mpdule net news \
 		penguins photo places quickaccess rain screenshot slideshow snow \
 		taskbar tclock tiling uptime weather winlist-ng winselector wlan xkbswitch
 
