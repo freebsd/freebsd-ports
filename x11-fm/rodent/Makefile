@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rodent
-PORTVERSION=	4.7.4
-PORTREVISION=	1
+PORTVERSION=	4.8.0
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/xffm/${PORTVERSION}/
 
@@ -20,11 +19,11 @@ BUILD_DEPENDS=	gawk:${PORTSDIR}/japanese/gawk \
 		bash:${PORTSDIR}/shells/bash \
 		intltoolize:${PORTSDIR}/textproc/intltool
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
-		glib-2.0.0:${PORTSDIR}/devel/glib20 \
-		cairo.2:${PORTSDIR}/graphics/cairo \
+		glib-2:${PORTSDIR}/devel/glib20 \
+		cairo:${PORTSDIR}/graphics/cairo \
 		rsvg-2:${PORTSDIR}/graphics/librsvg2 \
 		gtk-x11-2:${PORTSDIR}/x11-toolkits/gtk20 \
-		magic.1:${PORTSDIR}/sysutils/file
+		magic:${PORTSDIR}/sysutils/file
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--docdir=${DOCSDIR}

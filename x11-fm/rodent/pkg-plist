@@ -2,16 +2,27 @@ bin/fgr
 bin/rfm
 bin/rfm-inquire
 bin/rodent
+bin/rodent-cifs
 bin/rodent-desk
 bin/rodent-diff
 bin/rodent-dotdesktop
+bin/rodent-ecryptfs
 bin/rodent-fgr
 bin/rodent-forked
 bin/rodent-fstab
+bin/rodent-ftp
+bin/rodent-fuse
 bin/rodent-getpass
 bin/rodent-mime
+bin/rodent-nfs
+bin/rodent-obex
 bin/rodent-ps
 bin/rodent-root
+bin/rodent-shares
+bin/rodent-smb
+bin/rodent-sshfs
+bin/rodent-workgroup
+bin/xffm
 lib/librfm.la
 lib/librfm.so
 lib/librfm.so.1
@@ -125,33 +136,54 @@ lib/librodent.so.1
 %%NLS%%lib/locale/zh_HK/LC_MESSAGES/rodent.mo
 %%NLS%%lib/locale/zh_TW.Big5/LC_MESSAGES/rodent.mo
 %%NLS%%lib/locale/zh_TW/LC_MESSAGES/rodent.mo
-lib/rfm-Gamma/libcombobox.la
-lib/rfm-Gamma/libcombobox.so
-lib/rfm-Gamma/libcombobox.so.0
-lib/rfm-Gamma/libdotdesktop.la
-lib/rfm-Gamma/libdotdesktop.so
-lib/rfm-Gamma/libdotdesktop.so.0
-lib/rfm-Gamma/libfgr.la
-lib/rfm-Gamma/libfgr.so
-lib/rfm-Gamma/libfgr.so.0
-lib/rfm-Gamma/libfstab.la
-lib/rfm-Gamma/libfstab.so
-lib/rfm-Gamma/libfstab.so.0
-lib/rfm-Gamma/libicons.la
-lib/rfm-Gamma/libicons.so
-lib/rfm-Gamma/libicons.so.0
-lib/rfm-Gamma/libmime.la
-lib/rfm-Gamma/libmime.so
-lib/rfm-Gamma/libmime.so.0
-lib/rfm-Gamma/libproperties.la
-lib/rfm-Gamma/libproperties.so
-lib/rfm-Gamma/libproperties.so.0
-lib/rfm-Gamma/libps.la
-lib/rfm-Gamma/libps.so
-lib/rfm-Gamma/libps.so.0
-lib/rfm-Gamma/libsettings.la
-lib/rfm-Gamma/libsettings.so
-lib/rfm-Gamma/libsettings.so.0
+lib/rfm/modules/libcombobox.la
+lib/rfm/modules/libcombobox.so
+lib/rfm/modules/libcombobox.so.0
+lib/rfm/modules/libcompletion.la
+lib/rfm/modules/libcompletion.so
+lib/rfm/modules/libcompletion.so.0
+lib/rfm/modules/libfgr.la
+lib/rfm/modules/libfgr.so
+lib/rfm/modules/libfgr.so.0
+lib/rfm/modules/libicons.la
+lib/rfm/modules/libicons.so
+lib/rfm/modules/libicons.so.0
+lib/rfm/modules/libmime.la
+lib/rfm/modules/libmime.so
+lib/rfm/modules/libmime.so.0
+lib/rfm/modules/libmimezip.la
+lib/rfm/modules/libmimezip.so
+lib/rfm/modules/libmimezip.so.0
+lib/rfm/modules/libops.la
+lib/rfm/modules/libops.so
+lib/rfm/modules/libops.so.0
+lib/rfm/modules/libproperties.la
+lib/rfm/modules/libproperties.so
+lib/rfm/modules/libproperties.so.0
+lib/rfm/modules/librun.la
+lib/rfm/modules/librun.so
+lib/rfm/modules/librun.so.0
+lib/rfm/modules/libsettings.la
+lib/rfm/modules/libsettings.so
+lib/rfm/modules/libsettings.so.0
+lib/rfm/plugins/libdotdesktop.la
+lib/rfm/plugins/libdotdesktop.so
+lib/rfm/plugins/libdotdesktop.so.0
+lib/rfm/plugins/libfstab.la
+lib/rfm/plugins/libfstab.so
+lib/rfm/plugins/libfstab.so.0
+lib/rfm/plugins/libfuse.la
+lib/rfm/plugins/libfuse.so
+lib/rfm/plugins/libfuse.so.0
+lib/rfm/plugins/libnfs.la
+lib/rfm/plugins/libnfs.so
+lib/rfm/plugins/libnfs.so.0
+lib/rfm/plugins/libps.la
+lib/rfm/plugins/libps.so
+lib/rfm/plugins/libps.so.0
+lib/rfm/plugins/libsftp.la
+lib/rfm/plugins/libsftp.so
+lib/rfm/plugins/libsftp.so.0
 share/applications/Rfm-mime.desktop
 share/applications/Rfm-root.desktop
 share/applications/Rodent-diff.desktop
@@ -161,6 +193,7 @@ share/applications/Rodent-fstab.desktop
 share/applications/Rodent-home.desktop
 share/applications/Rodent-ps.desktop
 share/applications/Rodent.desktop
+share/applications/rodent-fgr.png
 share/icons/Rodent/48x48/apps/KDE.png
 share/icons/Rodent/48x48/apps/gnome.png
 share/icons/Rodent/48x48/apps/gtk.png
@@ -873,6 +906,7 @@ share/icons/Rodent/scalable/stock/gtk-undelete.svg
 share/icons/Rodent/scalable/stock/gtk-yes.svg
 share/icons/Rodent/scalable/stock/notes.svg
 share/icons/Rodent/scalable/stock/regular.svg
+share/images/juchi-2007.jpg
 share/pixmaps/rodent-diff.png
 share/pixmaps/rodent-dotdesktop.png
 share/pixmaps/rodent-fgr.png
@@ -881,10 +915,10 @@ share/pixmaps/rodent-mime.png
 share/pixmaps/rodent-ps.png
 share/pixmaps/rodent-root.png
 share/pixmaps/rodent.png
-share/rfm-Gamma/icons.mime.xml
-share/rfm-Gamma/mime-module.xml
-@dirrm share/rfm-Gamma
-@dirrmtry share/pixmaps
+share/rfm/modules/icons.mime.xml
+share/rfm/modules/mime-module.xml
+@dirrm share/rfm/modules
+@dirrm share/rfm
 @dirrm share/icons/Rodent/scalable/stock
 @dirrm share/icons/Rodent/scalable/status
 @dirrm share/icons/Rodent/scalable/places
@@ -900,7 +934,11 @@ share/rfm-Gamma/mime-module.xml
 @dirrm share/icons/Rodent/48x48
 @dirrm share/icons/Rodent
 @dirrmtry share/applications
-@dirrm lib/rfm-Gamma
+@dirrmtry share/icons
+@dirrmtry share/pixmaps
+@dirrm lib/rfm/plugins
+@dirrm lib/rfm/modules
+@dirrm lib/rfm
 %%NLS%%@dirrmtry lib/locale/zh_TW/LC_MESSAGES
 %%NLS%%@dirrmtry lib/locale/zh_TW.Big5/LC_MESSAGES
 %%NLS%%@dirrmtry lib/locale/zh_TW.Big5
