@@ -1347,6 +1347,7 @@
     SUBDIR += p5-CPAN-DistnameInfo
     SUBDIR += p5-CPAN-Inject
     SUBDIR += p5-CPAN-Meta
+    SUBDIR += p5-CPAN-Meta-Check
     SUBDIR += p5-CPAN-Meta-Requirements
     SUBDIR += p5-CPAN-Meta-YAML
     SUBDIR += p5-CPAN-Mini
