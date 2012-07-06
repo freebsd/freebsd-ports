@@ -953,6 +953,7 @@
     SUBDIR += p5-XML-NodeFilter
     SUBDIR += p5-XML-OPML
     SUBDIR += p5-XML-OPML-LibXML
+    SUBDIR += p5-XML-Parsepp
     SUBDIR += p5-XML-Parser
     SUBDIR += p5-XML-Parser-EasyTree
     SUBDIR += p5-XML-Parser-Lite-Tree
