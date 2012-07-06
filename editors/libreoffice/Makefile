@@ -66,6 +66,7 @@ LO_COMPONENTS=	help
 
 USE_XZ=	yes
 USE_PYTHON=	yes
+USE_QT4=	# empty but required
 #l10n
 INSTALL_TARGET=	distro-pack-install
 
@@ -281,9 +282,9 @@ CONFIGURE_ARGS+=	--disable-neon
 
 .if ${PORT_OPTIONS:MKDE4}
 USE_KDE4=	kdelibs
-USE_QT4=	yes
-CONFIGURE_ARGS+=	--enable-kde4 QT4DIR="${QT_PREFIX}" QT4LIB="${QT_LIBDIR}" QT4INC="${QT_INCDIR}" KDE4DIR="${KDE4_PREFIX}"
-QT_COMPONENTS+=		moc_build
+USE_QT4+=	moc_build qmake_build
+CONFIGURE_ENV+=		QT4DIR="${QT_PREFIX}" QT4LIB="${QT_LIBDIR}" QT4INC="${QT_INCDIR}" KDE4DIR="${KDE4_PREFIX}"
+CONFIGURE_ARGS+=	--enable-kde4
 .else
 CONFIGURE_ARGS+=	--disable-kde4
 .endif
@@ -378,6 +379,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#5.1 5.0#${BDB_VER}#g' \
 		 -e 's,-ldb$$dash$$dbver,-l${BDB_LIB_NAME},g' \
 		 -e 's,"Linux" \&\& test "z$$enable_graphite","FreeBSD" \&\& test "z$$enable_graphite",g' \
+		 -e 's,`dirname $$qt_lib_dir`/bin:,,g' \
 		${WRKSRC}/configure
 #install-gdb-printer is failing
 	@${REINPLACE_CMD} -e "/gdb/d" ${WRKSRC}/solenv/prj/build.lst
