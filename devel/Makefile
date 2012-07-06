@@ -4097,6 +4097,7 @@
     SUBDIR += z80ex
     SUBDIR += zmq
     SUBDIR += zmq-devel
+    SUBDIR += zookeeper
     SUBDIR += ztcl
     SUBDIR += zthread
     SUBDIR += zziplib
