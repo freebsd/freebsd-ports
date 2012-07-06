@@ -3540,3 +3540,5 @@ net-p2p/sharktorrent||2012-07-01|Relies on net-p2p/libtorrent-rasterbar-14, whic
 databases/postgresql-libpqxx30|databases/postgresql-libpqxx3|2012-07-03|Port renamed to be updated to 3.1
 mail/mew2|mail/mew|2012-07-06|Development of this versions ceased, superseded by mail/mew
 mail/mew3|mail/mew|2012-07-06|Development of this versions ceased, superseded by mail/mew
+sysutils/devcpu||2012-07-06|Already included in base system
+mail/squirreloutlook||2012-07-06|Based on a vulnerable version of squirrelmail, use mail/squirrelmail for similar functionality

@@ -166,7 +166,6 @@
     SUBDIR += desktopbsd-tools
     SUBDIR += detach
     SUBDIR += detox
-    SUBDIR += devcpu
     SUBDIR += devcpu-data
     SUBDIR += devstat
     SUBDIR += dfc
