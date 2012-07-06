@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dio
-DISTVERSION=	0.0.4RC4
+DISTVERSION=	0.0.6
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
