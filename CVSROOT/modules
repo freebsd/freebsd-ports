@@ -6402,6 +6402,7 @@ ja-bible_names-fpw              ports/japanese/bible_names-fpw
 ja-bookview                     ports/japanese/bookview
 ja-bugzilla                     ports/japanese/bugzilla
 ja-bugzilla3                    ports/japanese/bugzilla3
+ja-calligra-l10n                ports/japanese/calligra-l10n
 ja-canna-lib                    ports/japanese/canna-lib
 ja-canna-server                 ports/japanese/canna-server
 ja-cannadic                     ports/japanese/cannadic
@@ -6898,6 +6899,8 @@ jcmdline                        ports/devel/jcmdline
 jcommon                         ports/java/jcommon
 jday                            ports/astro/jday
 jdb                             ports/databases/jdb
+jdbc-oracle10g                  ports/databases/jdbc-oracle10g
+jdbc-oracle11g                  ports/databases/jdbc-oracle11g
 jdbc-oracle8i                   ports/databases/jdbc-oracle8i
 jdbc-oracle9i                   ports/databases/jdbc-oracle9i
 jdbcpool                        ports/java/jdbcpool
@@ -14890,6 +14893,7 @@ p5-Test-YAML-Valid              ports/devel/p5-Test-YAML-Valid
 p5-Test-mysqld                  ports/databases/p5-Test-mysqld
 p5-Test-postgresql              ports/databases/p5-Test-postgresql
 p5-Test-use-ok                  ports/devel/p5-Test-use-ok
+p5-Test-utf8                    ports/devel/p5-Test-utf8
 p5-TestGen4Web-Runner           ports/www/p5-TestGen4Web-Runner
 p5-Text-ASCIIMathML             ports/textproc/p5-Text-ASCIIMathML
 p5-Text-ASCIITable              ports/textproc/p5-Text-ASCIITable
@@ -19459,6 +19463,7 @@ p5-test-unit                    ports/devel/p5-Test-Unit
 p5-test-uri                     ports/net/p5-Test-URI
 p5-test-use-ok                  ports/devel/p5-Test-use-ok
 p5-test-useallmodules           ports/devel/p5-Test-UseAllModules
+p5-test-utf8                    ports/devel/p5-Test-utf8
 p5-test-warn                    ports/devel/p5-Test-Warn
 p5-test-weaken                  ports/devel/p5-Test-Weaken
 p5-test-without-module          ports/devel/p5-Test-Without-Module
@@ -23197,6 +23202,7 @@ py-rauth                        ports/devel/py-rauth
 py-rdflib                       ports/textproc/py-rdflib
 py-recaptcha                    ports/www/py-recaptcha
 py-record                       ports/devel/py-Record
+py-reddit                       ports/devel/py-reddit
 py-redis                        ports/databases/py-redis
 py-relatorio                    ports/print/py-relatorio
 py-repl                         ports/devel/py-repl
@@ -23786,6 +23792,7 @@ qmc2                            ports/emulators/qmc2
 qmhandle                        ports/mail/qmhandle
 qmls                            ports/cad/qmls
 qmmp                            ports/multimedia/qmmp
+qmmp-plugin-pack                ports/multimedia/qmmp-plugin-pack
 qmpdclient                      ports/audio/qmpdclient
 qmqtool                         ports/mail/qmqtool
 qmrtg                           ports/mail/qmrtg
