@@ -7,7 +7,7 @@
 
 PORTNAME=	rezound
 DISTVERSION=	0.12.3beta
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/ReZound/${DISTVERSION}
 
@@ -23,58 +23,60 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-alsa
+MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	LARGEFILE	"Enable 64-bit I/O support (not yet!)"	off \
+OPTIONS=	LARGEFILE	"Enable 64-bit file I/O support"	off \
 		JACK		"Enable Jack audio server support"	off \
-		AUDIOFILE	"Enable Audio File Library support"	on \
+		AUDIOFILE	"Enable Audio File library support"	on \
 		PORTAUDIO	"Enable PortAudio support"		on \
 		OGG		"Enable OGG support"			on \
 		VORBIS		"Enable Vorbis support"			on \
 		FLAC		"Enable FLAC support"			on \
 		FFTW		"Enable FFTW support"			off \
 		SOUNDTOUCH	"Enable SoundTouch features"		on \
-		LADSPA		"Enable LADSPA plugin support"		on \
+		LADSPA		"Enable LADSPA plugins support"		on \
 		LAME		"Enable loading and saving MP3 files"	on \
-		CDRDAO		"Enable burning audio files to CD"	off \
-		NLS		"Enable Native Language Support"	on
+		CDRDAO		"Enable burning audio files to CD"	off
+#		BROKEN_NLS	"Enable Native Language Support"	on
+# NLS support is broken as of recent versions of libstdc++; rezound dies at
+# startup with "locale::facet::_S_create_c_locale name not valid" exception
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_LARGEFILE)
 CONFIGURE_ARGS+=	--enable-largefile
-BROKEN=		no expl(), logl(), nearbyintl(), etc
 .endif
 
 .if defined(WITH_JACK)
-LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
 .endif
 
 .if defined(WITH_AUDIOFILE)
-LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
+LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile
 .endif
 
 .if defined(WITH_PORTAUDIO)
-LIB_DEPENDS+=	portaudio.0:${PORTSDIR}/audio/portaudio
+LIB_DEPENDS+=	portaudio:${PORTSDIR}/audio/portaudio
 .endif
 
 .if defined(WITH_OGG)
-LIB_DEPENDS+=	ogg.7:${PORTSDIR}/audio/libogg
+LIB_DEPENDS+=	ogg:${PORTSDIR}/audio/libogg
 .endif
 
 .if defined(WITH_VORBIS)
-LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
 .endif
 
 .if defined(WITH_FLAC)
-LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
 .endif
 
 .if defined(WITH_FFTW)
-LIB_DEPENDS+=	fftw.2:${PORTSDIR}/math/fftw
+LIB_DEPENDS+=	fftw:${PORTSDIR}/math/fftw
 .endif
 
 .if defined(WITH_SOUNDTOUCH)
-LIB_DEPENDS+=	SoundTouch.0:${PORTSDIR}/audio/soundtouch
+LIB_DEPENDS+=	SoundTouch:${PORTSDIR}/audio/soundtouch
 .endif
 
 .if defined(WITH_LADSPA)
@@ -91,7 +93,7 @@ RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if defined(WITH_BROKEN_NLS)	# Enable only if you know what you're doing
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
