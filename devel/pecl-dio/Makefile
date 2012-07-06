@@ -7,6 +7,7 @@
 
 PORTNAME=	dio
 DISTVERSION=	0.0.6
+PORTREVISION=	1
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -20,7 +21,5 @@ LICENSE=	PHP30
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
-DEFAULT_PHP_VER=53
-IGNORE_WITH_PHP=5
 
 .include <bsd.port.mk>
