@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	oauth2
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -15,8 +15,9 @@ COMMENT=	A Ruby wrapper for the OAuth 2.0 protocol
 
 RUN_DEPENDS=	rubygem-faraday>=0.8:${PORTSDIR}/www/rubygem-faraday \
 		rubygem-httpauth>=0.1:${PORTSDIR}/net/rubygem-httpauth \
+		rubygem-jwt>=0.1.4:${PORTSDIR}/www/rubygem-jwt \
 		rubygem-multi_json>=1.0:${PORTSDIR}/devel/rubygem-multi_json \
-		rubygem-rack>=1.4:${PORTSDIR}/www/rubygem-rack
+		rubygem-rack>=1.2:${PORTSDIR}/www/rubygem-rack
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
