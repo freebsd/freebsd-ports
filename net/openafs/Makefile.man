@@ -188,9 +188,10 @@ MAN5+=	uss.5
 MAN5+=	uss_bulk.5
 MAN5+=	vldb.DB0.5
 MAN8+=	afsd.8
-.if defined(WITH_FUSE)
+.if ${PORT_OPTIONS:MFUSE}
 MLINKS+=	afsd.8 afsd.fuse.8
 .endif
+MAN8+=	aklog_dynamic_auth.8
 MAN8+=	asetkey.8
 MAN8+=	backup.8
 MAN8+=	backup_adddump.8

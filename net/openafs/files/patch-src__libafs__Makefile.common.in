@@ -1,0 +1,11 @@
+--- openafs-1.6.1/src/libafs/Makefile.common.in.orig	2012-03-27 08:03:34.000000000 +0900
++++ openafs-1.6.1/src/libafs/Makefile.common.in	2012-06-24 09:26:33.000000000 +0900
+@@ -58,7 +58,7 @@
+
+ all:	setup $(COMPDIRS)
+
+-single_compdir single_instdir single_destdir: setup
++single_compdir single_instdir single_destdir: setup vnode_if.h
+ 	cd $(KOBJ) ; \
+ 	echo $(MAKE) DESTDIR=${DESTDIR} $@_libafs; \
+ 	$(MAKE) DESTDIR=${DESTDIR}  $@_libafs

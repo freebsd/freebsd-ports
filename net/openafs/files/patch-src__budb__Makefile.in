@@ -1,0 +1,16 @@
+--- openafs-1.6.1/src/budb/Makefile.in	2012-06-24 06:49:53.000000000 +0900
++++ openafs-1.6.1/src/budb/Makefile.in	2012-06-24 06:50:00.000000000 +0900
+@@ -76,10 +76,9 @@
+ #
+ budb_errs.o: budb_errs.c budb_client.h budb_errs.h
+
+-budb_client.h: budb_errs.c
+-
+-budb_errs.c: budb_errs.et budb_client.p.h
+-	$(RM) -f budb_client.h budb_errs.c; ${COMPILE_ET} -p ${srcdir} budb_errs -h budb_client
++budb_errs.c budb_client.h: budb_errs.et budb_client.p.h
++	$(RM) -f budb_client.h budb_errs.c
++	${COMPILE_ET} -p ${srcdir} budb_errs -h budb_client
+
+ budb_errs.h: budb_errs.et
+ 	${COMPILE_ET} -p ${srcdir} budb_errs
