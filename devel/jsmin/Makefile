@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	jsmin
-PORTVERSION=	20120415
+PORTVERSION=	20120702
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/douglascrockford/JSMin/tarball/master/
 DISTNAME=	douglascrockford-JSMin-${GITVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	douglascrockford-JSMin-${GITVERSION}
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	The JavaScript Minifier
 
-GITVERSION=	5ca277e
+GITVERSION=	49a70cf
 FETCH_ARGS=	-pRr
 
 PLIST_FILES=	bin/jsmin
