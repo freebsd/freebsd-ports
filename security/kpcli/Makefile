@@ -1,0 +1,46 @@
+# New ports collection makefile for:	kpcli
+# Date created:		25 May 2012
+# Whom:			Alexander Y. Grigoryev <alexander.4mail@gmail.com>
+#
+# $FreeBSD$
+
+PORTNAME=	kpcli
+PORTVERSION=	1.4
+CATEGORIES=	security
+MASTER_SITES=	SF/kpcli/
+EXTRACT_SUFX=	.pl
+
+MAINTAINER=	alexander.4mail@gmail.com
+COMMENT=	Command line interface to KeePassX and KeePass 1.x database files
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+RUN_DEPENDS=	p5-Crypt-Rijndael>=1.08:${PORTSDIR}/security/p5-Crypt-Rijndael \
+		p5-Term-ReadKey>=2.30:${PORTSDIR}/devel/p5-Term-ReadKey \
+		p5-Sort-Naturally>=1.02:${PORTSDIR}/textproc/p5-Sort-Naturally \
+		p5-File-KeePass>=0.03:${PORTSDIR}/security/p5-File-KeePass \
+		p5-Term-ShellUI>=0.9:${PORTSDIR}/shells/p5-Term-ShellUI \
+		p5-ReadLine-Gnu>=1.19:${PORTSDIR}/devel/p5-ReadLine-Gnu \
+		p5-Clone>=0.31:${PORTSDIR}/devel/p5-Clone
+BUILD_DEPENDS:=	${RUN_DEPENDS}
+
+USE_PERL5=	yes
+
+MAN1=	${PORTNAME}.1
+MANCOMPRESSED=	yes
+PLIST_FILES=	bin/kpcli
+
+do-extract:
+	@${MKDIR} ${WRKSRC}
+	@${CP} ${DISTDIR}/${PORTNAME}-${PORTVERSION}.pl ${WRKSRC}/${PORTNAME}
+
+do-build:
+	${LOCALBASE}/bin/pod2man ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.1
+	${GZIP_CMD} ${WRKSRC}/${PORTNAME}.1
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1.gz ${MAN1PREFIX}/man/man1/
+
+.include <bsd.port.mk>
