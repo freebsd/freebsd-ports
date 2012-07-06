@@ -6,6 +6,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.7.13
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -84,6 +85,24 @@ COMPAT_HEADERS=libavcodec/avcodec.h \
 
 .include <bsd.port.options.mk>
 
+# PORTDOCS
+.if !defined(NOPORTDOCS)
+USE_PERL5_BUILD=	yes
+BUILD_DEPENDS+=		${LOCALBASE}/bin/texi2html:${PORTSDIR}/textproc/texi2html
+MAN1+=		ffmpeg.1 ffprobe.1
+. if !defined(WITHOUT_FFSERVER)
+MAN1+=		ffserver.1
+. endif
+.else
+CONFIGURE_ARGS+=	--disable-doc
+.endif
+
+# rtmp
+.if defined(WITH_RTMP)
+USE_OPENSSL=	yes
+.endif
+
+# x11grab
 .if defined(WITH_X11GRAB)
 USE_XORG=	x11 xext xfixes
 CONFIGURE_ARGS+=	--enable-x11grab
@@ -141,16 +160,7 @@ WITHOUT_BUILTIN_VECTOR=	yes
 
 # builtin vector, requires mmx and sse
 .if !defined(WITHOUT_BUILTIN_VECTOR) && defined(WITH_BUILTIN_VECTOR)
-FFMPEG_CFLAGS+=		-msse
-.endif
-
-# PORTDOCS
-.if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=		texi2html:${PORTSDIR}/textproc/texi2html
-MAN1+=		ffmpeg.1 ffprobe.1
-. if !defined(WITHOUT_FFSERVER)
-MAN1+=		ffserver.1
-. endif
+CFLAGS+=	-msse
 .endif
 
 # optimizations
@@ -278,6 +288,10 @@ CONFIGURE_ARGS+=	--disable-libopenjpeg
 .if defined(WITH_RTMP)
 LIB_DEPENDS+=	rtmp.0:${PORTSDIR}/multimedia/rtmpdump
 CONFIGURE_ARGS+=	--enable-librtmp
+. if ${OPENSSLBASE} != "/usr"
+FFMPEG_CFLAGS+=		-I${OPENSSLINC}
+FFMPEG_LDFLAGS+=	-L${OPENSSLLIB}
+. endif
 .else
 CONFIGURE_ARGS+=	--disable-librtmp
 .endif
@@ -426,6 +440,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||; s|$$(LIBMAJOR)|${SHLIB_VER}|g;' \
 		-e 's|opencv opencv/cxcore.h|opencv-core opencv2/core/core_c.h|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL5}|g' \
+		${WRKSRC}/doc/texi2pod.pl
 .if defined(WITH_SDL)
 	@${REINPLACE_CMD} -E \
 		-e 's|sdl-config|${SDL_CONFIG}|g' \
