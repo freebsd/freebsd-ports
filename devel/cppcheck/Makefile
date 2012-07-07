@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cppcheck
-PORTVERSION=	1.54
+PORTVERSION=	1.55
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
@@ -15,8 +15,8 @@ COMMENT=	Static analysis of C/C++ code
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre \
-		tinyxml.3:${PORTSDIR}/textproc/tinyxml
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre \
+		tinyxml:${PORTSDIR}/textproc/tinyxml
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
@@ -30,7 +30,7 @@ ALL_TARGET=	cppcheck
 
 .include <bsd.port.pre.mk>
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 
