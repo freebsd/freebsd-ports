@@ -20,8 +20,6 @@ LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
 		wsound.1:${PORTSDIR}/audio/wsoundserver
 RUN_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
 
-BROKEN=		does not compile
-
 USE_IMAKE=	yes
 USE_XORG=	x11 xext
 NO_INSTALL_MANPAGES=yes
