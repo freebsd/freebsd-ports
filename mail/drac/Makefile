@@ -10,7 +10,6 @@ PORTVERSION=	1.12
 PORTREVISION=	8
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cc.umanitoba.ca/src/ \
-		ftp://ftp.parodius.com/pub/umanitoba/ \
 		http://atreides.freenix.no/~anders/ \
 		ftp://totem.fix.no/pub/mirrors/misc/
 DISTNAME=	${PORTNAME}

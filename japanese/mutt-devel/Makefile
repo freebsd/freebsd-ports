@@ -14,7 +14,6 @@ CATEGORIES=	japanese mail
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/devel/:body \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/devel/:body \
 		ftp://ftp.demon.co.uk/pub/mirrors/mutt/devel/:body \
-		ftp://ftp.parodius.com/pub/mutt/devel/:body \
 		http://www.emaillab.org/mutt/${MANUALVERSION}/:ja_man1 \
 		http://mutt-j.sourceforge.jp/:ja_man2 \
 		http://www.emaillab.org/mutt/1.5/doc/:ja_doc

@@ -9,7 +9,6 @@ PORTVERSION=	1.2.3
 PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://services.ratbox.org/download/		\
-		ftp://ftp.parodius.com/pub/ircd-ratbox/${PORTNAME}/	\
 		http://services.ratbox.org/download/old/
 EXTRACT_SUFX=	.tgz
 
