@@ -2406,7 +2406,6 @@ detex                           ports/print/detex
 detox                           ports/sysutils/detox
 deutex                          ports/archivers/deutex
 dev86                           ports/devel/dev86
-devcpu                          ports/sysutils/devcpu
 devcpu-data                     ports/sysutils/devcpu-data
 devd-notifier                   ports/deskutils/devd-notifier
 devede                          ports/multimedia/devede
@@ -7577,6 +7576,7 @@ koth                            ports/games/koth
 kover                           ports/print/kover
 kovpn                           ports/security/kovpn
 kpackagekit                     ports/ports-mgmt/kpackagekit
+kpcli                           ports/security/kpcli
 kpdftool                        ports/print/kpdftool
 kphone                          ports/net/kphone
 kphotoalbum                     ports/graphics/kphotoalbum
@@ -9479,8 +9479,6 @@ metis-edf                       ports/math/metis-edf
 metisse                         ports/x11/metisse
 metromap                        ports/misc/metromap
 mew                             ports/mail/mew
-mew2                            ports/mail/mew2
-mew3                            ports/mail/mew3
 mftrace                         ports/print/mftrace
 mg                              ports/editors/mg
 mga_hal                         ports/x11-servers/mga_hal
@@ -11429,6 +11427,7 @@ p5-CPAN-Checksums               ports/devel/p5-CPAN-Checksums
 p5-CPAN-DistnameInfo            ports/devel/p5-CPAN-DistnameInfo
 p5-CPAN-Inject                  ports/devel/p5-CPAN-Inject
 p5-CPAN-Meta                    ports/devel/p5-CPAN-Meta
+p5-CPAN-Meta-Check              ports/devel/p5-CPAN-Meta-Check
 p5-CPAN-Meta-Requirements       ports/devel/p5-CPAN-Meta-Requirements
 p5-CPAN-Meta-YAML               ports/devel/p5-CPAN-Meta-YAML
 p5-CPAN-Mini                    ports/devel/p5-CPAN-Mini
@@ -15411,6 +15410,7 @@ p5-XML-Node                     ports/textproc/p5-XML-Node
 p5-XML-NodeFilter               ports/textproc/p5-XML-NodeFilter
 p5-XML-OPML                     ports/textproc/p5-XML-OPML
 p5-XML-OPML-LibXML              ports/textproc/p5-XML-OPML-LibXML
+p5-XML-Parsepp                  ports/textproc/p5-XML-Parsepp
 p5-XML-Parser                   ports/textproc/p5-XML-Parser
 p5-XML-Parser-EasyTree          ports/textproc/p5-XML-Parser-EasyTree
 p5-XML-Parser-Lite-Tree         ports/textproc/p5-XML-Parser-Lite-Tree
@@ -16344,6 +16344,7 @@ p5-cpan-distnameinfo            ports/devel/p5-CPAN-DistnameInfo
 p5-cpan-inject                  ports/devel/p5-CPAN-Inject
 p5-cpan-listchanges             ports/devel/p5-cpan-listchanges
 p5-cpan-meta                    ports/devel/p5-CPAN-Meta
+p5-cpan-meta-check              ports/devel/p5-CPAN-Meta-Check
 p5-cpan-meta-requirements       ports/devel/p5-CPAN-Meta-Requirements
 p5-cpan-meta-yaml               ports/devel/p5-CPAN-Meta-YAML
 p5-cpan-mini                    ports/devel/p5-CPAN-Mini
@@ -20010,6 +20011,7 @@ p5-xml-node                     ports/textproc/p5-XML-Node
 p5-xml-nodefilter               ports/textproc/p5-XML-NodeFilter
 p5-xml-opml                     ports/textproc/p5-XML-OPML
 p5-xml-opml-libxml              ports/textproc/p5-XML-OPML-LibXML
+p5-xml-parsepp                  ports/textproc/p5-XML-Parsepp
 p5-xml-parser                   ports/textproc/p5-XML-Parser
 p5-xml-parser-easytree          ports/textproc/p5-XML-Parser-EasyTree
 p5-xml-parser-lite-tree         ports/textproc/p5-XML-Parser-Lite-Tree
@@ -24981,6 +24983,7 @@ rubygem-jruby-jars              ports/devel/rubygem-jruby-jars
 rubygem-json                    ports/devel/rubygem-json
 rubygem-json146                 ports/devel/rubygem-json146
 rubygem-json_pure               ports/devel/rubygem-json_pure
+rubygem-jwt                     ports/www/rubygem-jwt
 rubygem-kgio                    ports/devel/rubygem-kgio
 rubygem-kramdown                ports/textproc/rubygem-kramdown
 rubygem-kwalify                 ports/textproc/rubygem-kwalify
@@ -26126,7 +26129,6 @@ squirrelmail-user_special_mailboxes-plugin  ports/mail/squirrelmail-user_special
 squirrelmail-vlogin-plugin      ports/mail/squirrelmail-vlogin-plugin
 squirrelmail-websearch-plugin   ports/mail/squirrelmail-websearch-plugin
 squirrelmail-wetteronline-plugin  ports/mail/squirrelmail-wetteronline-plugin
-squirreloutlook                 ports/mail/squirreloutlook
 squish                          ports/graphics/squish
 squsq                           ports/archivers/squsq
 sqwebmail                       ports/mail/sqwebmail
