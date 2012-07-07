@@ -12,7 +12,6 @@ CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/ \
 		http://tehran.lain.pl/epic-mirror/EPIC4-PRODUCTION/ \
 		ftp://ftp.irc.org/irc/clients/unix/epic/EPIC4-PRODUCTION/ \
-		ftp://ftp.parodius.com/pub/epic/EPIC4-PRODUCTION/ \
 		http://ftp.freenet.de/pub/ftp.prbh.org/pub/epic/EPIC4-PRODUCTION/ \
 		ftp://ftp.eu.uu.net/pub/unix/irc/epic/EPIC4-PRODUCTION/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \

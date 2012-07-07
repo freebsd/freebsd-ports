@@ -8,8 +8,7 @@
 PORTNAME=	ratbox-respond
 PORTVERSION=	1.0
 CATEGORIES=	irc sysutils
-MASTER_SITES=	http://respond.ratbox.org/download/ \
-		ftp://ftp.parodius.com/pub/ircd-ratbox/${PORTNAME}/
+MASTER_SITES=	http://respond.ratbox.org/download/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org

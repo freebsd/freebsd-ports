@@ -11,7 +11,6 @@ CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC5-PRODUCTION/ \
 		http://tehran.lain.pl/epic-mirror/EPIC5-PRODUCTION/ \
 		ftp://ftp.irc.org/irc/clients/unix/epic/EPIC5-PRODUCTION/ \
-		ftp://ftp.parodius.com/pub/epic/EPIC5-PRODUCTION/ \
 		http://ftp.freenet.de/pub/ftp.prbh.org/pub/epic/EPIC5-PRODUCTION/
 
 MAINTAINER=	jpaetzel@FreeBSD.org
