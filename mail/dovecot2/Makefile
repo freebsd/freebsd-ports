@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dovecot
-PORTVERSION=	2.1.7
+PORTVERSION=	2.1.8
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/${PORTVERSION:R}/
 
@@ -40,36 +40,22 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	${PREFIX}/lib/dovecot
 
-.if defined(NOPORTDOCS)
-CONFIGURE_ARGS+=--without-docs
-.else
-DOCS=		AUTHORS COPYING COPYING.LGPL COPYING.MIT INSTALL NEWS TODO README
-PORTDOCS=	*
-.endif
-
-.if !defined(NOPORTEXAMPLES)
-PORTEXAMPLES=	*
-.endif
-
 USERS=		${PORTNAME} dovenull
 GROUPS=		${USERS}
 
 PROTOCOLS=	imap pop3
 
-OPTIONS=	KQUEUE		"kqueue(2) support"	on  \
-		SSL		"SSL support"		on  \
-		GSSAPI		"GSSAPI support"	off \
-		VPOPMAIL	"vpopmail support"	off \
-		LDAP		"OpenLDAP support"	off \
-		PGSQL		"PostgreSQL support"	off \
-		MYSQL		"MySQL support"		off \
-		SQLITE		"SQLite support"	off \
-		SOLR		"Solr support"		off
-
-.include <bsd.port.pre.mk>
-
 # Default requirement for dovecot rc script
 _REQUIRE=	LOGIN
+
+OPTIONS_DEFINE=	KQUEUE SSL GSSAPI VPOPMAIL LDAP PGSQL MYSQL SQLITE SOLR DOCS EXAMPLES
+OPTIONS_DEFAULT=	KQUEUE SSL
+
+KQUEUE_DESC=	kqueue(2) support
+VPOPMAIL_DESC=	vpopmail support
+SOLR_DESC=	Solr FTS support
+
+.include <bsd.port.pre.mk>
 
 # sed script for dovecot.conf
 REINPLACE=	s!%%PROTOCOLS%%!${PROTOCOLS}!g;\
@@ -80,15 +66,28 @@ REINPLACE=	s!%%PROTOCOLS%%!${PROTOCOLS}!g;\
 		s![[:<:]]doc/(dovecot-[^-]+)-example.conf[[:>:]]!${EXAMPLESDIR}/\1.conf!g;\
 		s!\#sendmail_path = /usr/.*!sendmail_path = /usr/sbin/sendmail!g;
 
+.if ${PORT_OPTIONS:MDOCS}
+DOCS=		AUTHORS COPYING COPYING.LGPL COPYING.MIT INSTALL NEWS TODO README
+PORTDOCS=	*
+PLIST_SUB+=	PORT=""
+.else
+CONFIGURE_ARGS+=	--without-docs
+PLIST_SUB+=	PORT="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MEXAMPLES}
+PORTEXAMPLES=	*
+.endif
+
 ## kqueue(2) support
 #
-.if !defined(WITHOUT_KQUEUE)
+.if ${PORT_OPTIONS:MKQUEUE)
 CONFIGURE_ARGS+=--with-ioloop=kqueue
 .endif
 
 ## SSL support
 #
-.if defined(WITH_SSL) && !defined(WITHOUT_SSL)
+.if ${PORT_OPTIONS:MSSL}
 PROTOCOLS+=	imaps pop3s
 .else
 CONFIGURE_ARGS+=--without-ssl
@@ -96,7 +95,7 @@ CONFIGURE_ARGS+=--without-ssl
 
 ## GSSAPI support
 #
-.if defined(WITH_GSSAPI) && !defined(WITHOUT_GSSAPI)
+.if ${PORT_OPTIONS:MGSSAPI}
 CONFIGURE_ARGS+=--with-gssapi
 .else
 CONFIGURE_ARGS+=--without-gssapi
@@ -104,7 +103,7 @@ CONFIGURE_ARGS+=--without-gssapi
 
 ## VPopMail Support
 #
-.if defined(WITH_VPOPMAIL) && !defined(WITHOUT_VPOPMAIL)
+.if ${PORT_OPTIONS:MVPOPMAIL}
 BUILD_DEPENDS+=	${LOCALBASE}/vpopmail/bin/vchkpw:${PORTSDIR}/mail/vpopmail
 CONFIGURE_ARGS+=--with-vpopmail
 .else
@@ -113,7 +112,7 @@ CONFIGURE_ARGS+=--without-vpopmail
 
 ## OpenLDAP Support
 #
-.if defined(WITH_LDAP) && !defined(WITHOUT_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--with-ldap
 PLIST_SUB+=	LDAP=""
@@ -125,7 +124,7 @@ PLIST_SUB+=	LDAP="@comment "
 
 ## PostgreSQL Support
 #
-.if defined(WITH_PGSQL) && !defined(WITHOUT_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=--with-pgsql
 PLIST_SUB+=	SQL=""
@@ -137,7 +136,7 @@ PLIST_SUB+=	SQL="@comment "
 
 ## MySQL Support
 #
-.if defined(WITH_MYSQL) && !defined(WITHOUT_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-mysql
 PLIST_SUB+=	SQL=""
@@ -149,7 +148,7 @@ PLIST_SUB+=	SQL="@comment "
 
 ## SQLite Support
 #
-.if defined(WITH_SQLITE) && !defined(WITHOUT_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 USE_SQLITE=	3
 CONFIGURE_ARGS+=--with-sqlite
 PLIST_SUB+=	SQL=""
@@ -160,22 +159,14 @@ PLIST_SUB+=	SQL="@comment "
 
 ## SOLR support
 #
-.if defined(WITH_SOLR) && !defined(WITHOUT_SOLR)
+.if ${PORT_OPTIONS:MSOLR}
 CONFIGURE_ARGS+=--with-solr
-LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 BUILD_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
-PLIST_SUB+=	WITHSOLR=""
-SUB_LIST+=	WITHSOLR=""
+LIB_DEPENDS+=	expat:${PORTSDIR}/textproc/expat2
+PLIST_SUB+=	SOLR=""
 .else
 CONFIGURE_ARGS+=--without-solr
-PLIST_SUB+=	WITHSOLR="@comment "
-SUB_LIST+=	WITHSOLR="@comment "
-.endif
-
-.if !defined(NOPORTDOCS)
-PLIST_SUB+=	PORT=""
-.else
-PLIST_SUB+=	PORT="@comment "
+PLIST_SUB+=	SOLR="@comment "
 .endif
 
 SUB_LIST=	REQUIRE="${_REQUIRE}"
@@ -222,18 +213,18 @@ post-patch:
 		s!-example\.conf[[:>:]]!.conf!g;\
 		s!^(confdir[[:space:]]+=[[:space:]]+)\$$\(sysconfdir\)!\1${EXAMPLESDIR}!g;\
 		' ${WRKSRC}/*/Makefile.in ${WRKSRC}/Makefile.in
-.if defined(WITH_GSSAPI)
+.if ${PORT_OPTIONS:MGSSAPI}
 	@${REINPLACE_CMD} -e '\
 		s!<gssapi/gssapi\.h>!<gssapi.h>!;\
 		' ${WRKSRC}/src/auth/mech-gssapi.c ${WRKSRC}/configure
 .endif
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_SCRIPT} dovecot-openssl.cnf mkcert.sh ${EXAMPLESDIR}
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
