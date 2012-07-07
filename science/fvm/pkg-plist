@@ -9,6 +9,7 @@ include/fvm_group.h
 include/fvm_interface.h
 include/fvm_io_num.h
 include/fvm_locator.h
+include/fvm_neighborhood.h
 include/fvm_nodal.h
 include/fvm_nodal_append.h
 include/fvm_nodal_extract.h
@@ -21,7 +22,9 @@ include/fvm_order.h
 include/fvm_parall.h
 include/fvm_part_to_block.h
 include/fvm_periodicity.h
+include/fvm_point_location.h
 include/fvm_selector.h
+include/fvm_trace.h
 include/fvm_triangulate.h
 include/fvm_writer.h
 lib/libfvm.a

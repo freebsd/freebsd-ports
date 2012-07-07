@@ -6,23 +6,24 @@
 #
 
 PORTNAME=	fvm
-PORTVERSION=	0.12.0
-PORTREVISION=	5
+PORTVERSION=	0.15.3
 CATEGORIES=	science parallel
-MASTER_SITES=	http://rd.edf.com/fichiers/fckeditor/File/EDF%20RD/Code_Saturne/Fichiers/
+MASTER_SITES=	http://research.edf.com/fichiers/fckeditor/Commun/Innovation/logiciels/code_saturne/Releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Code_Saturne Finite Volume Mesh
 
-LIB_DEPENDS=	med.2:${PORTSDIR}/french/med		\
+LICENSE=	LGPL21
+
+LIB_DEPENDS=	med.4:${PORTSDIR}/french/med		\
 		bft.1:${PORTSDIR}/science/bft		\
 		hdf5.7:${PORTSDIR}/science/hdf5-18	\
-		cgns.0:${PORTSDIR}/science/cgnslib
+		cgns.3:${PORTSDIR}/science/cgnslib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+USE_ZIP=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-bft=${LOCALBASE}	\
@@ -48,6 +49,8 @@ CONFIGURE_ARGS+=	--with-mpi=${LOCALBASE}
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
 .endif
+
+MAN1=		fvm-config.1
 
 TESTSBIN=	fvm_file_test fvm_interface_test fvm_selector_postfix_test fvm_selector_test
 
