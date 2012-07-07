@@ -7,7 +7,6 @@
 
 PORTNAME=		aster
 DISTVERSION=		${ASTER_DISTVERSION}
-PORTREVISION=		5
 CATEGORIES=		french cad
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -40,9 +39,10 @@ BUILD_DEPENDS+=	${LOCALBASE}/aster/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur	\
 LIB_DEPENDS+=	tcl${SHORT_TCL_VER}:${PORTSDIR}/lang/tcl${SHORT_TCL_VER}	\
 		tk${SHORT_TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}	\
 		hdf5.7:${PORTSDIR}/science/hdf5-18				\
-		med.2:${PORTSDIR}/french/med
+		med.4:${PORTSDIR}/french/med
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot	\
 		${LOCALBASE}/bin/onmetis.exe:${PORTSDIR}/math/metis-edf		\
+		${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}		\
 		${LOCALBASE}/aster/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur
 
 MANUAL_PACKAGE_BUILD=	runaway python on pointyhat
@@ -50,7 +50,7 @@ MANUAL_PACKAGE_BUILD=	runaway python on pointyhat
 LICENSE=	GPLv2
 
 USE_BISON=	build
-USE_PYTHON=	yes
+USE_PYTHON=	2.6-2.7	# >2.5 and <3.0
 HAS_CONFIGURE=	yes
 REINPLACE_ARGS=	-i ""
 
@@ -187,9 +187,6 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/xemacs:${PORTSDIR}/editors/xemacs
 . elif exists(${LOCALBASE}/bin/gedit)
 WITH_ED=	gedit
 RUN_DEPENDS+=	${LOCALBASE}/bin/gedit:${PORTSDIR}/editors/gedit
-. elif exists(${LOCALBASE}/bin/kwrite)
-WITH_ED=	kwrite
-RUN_DEPENDS+=	${LOCALBASE}/bin/kwrite:${PORTSDIR}/x11/kdebase3
 . elif exists(${LOCALBASE}/bin/xedit)
 WITH_ED=	xedit
 RUN_DEPENDS+=	${LOCALBASE}/bin/xedit:${PORTSDIR}/x11/xedit
@@ -217,8 +214,11 @@ lib_atlas=	atlas
 lib_blas=	blas
 lib_atlas=	# empty
 .endif
+
 LASTKDIR?=	${PORTNAME}/ASTK/ASTK_CLIENT
 ASTKDIR=	${LOCALBASE}/${LASTKDIR}
+
+BASH2RC=	products_data.py
 
 ${WRKSRC}/instdir/${vaster}/elements:	build
 
@@ -234,6 +234,9 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|?ASTER_ROOT?|${WRKSRC}/instdir|'		\
 		${WRKSRC}/products.py
 	${REINPLACE_CMD} -e "s|'gfortran'|'${FC}'|g" ${WRKSRC}/check_compilers.py
+.for sh in ${BASH2RC}
+	${REINPLACE_CMD} -e 's|/bin/bash|${SHELL_INSTALL_ASTER}|' ${WRKSRC}/${sh}
+.endfor
 .if defined(WITH_ATLAS)
 	${REINPLACE_CMD} -e "s|cfg\['BLASLIB'\]|cfg['BLASLIB'], cfg['ATLASLIB']|"	\
 		${WRKSRC}/products.py
@@ -293,31 +296,33 @@ pre-configure:
 	${ECHO_CMD} "ATLASLIB='${lib_atlas}'"			>> ${WRKSRC}/setup.cfg
 .endif
 	${ECHO_CMD} "BLASLIB='${lib_blas}'"			>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "LAPACKLIB='${LOCALBASE}/lib/liblapack.a'"	>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "LAPACKLIB='lapack'"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "GZIP='/usr/bin/gzip'"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "SHELL_EXECUTION='${SHELL_INSTALL_ASTER}'"	>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "TERMINAL='xterm'"				>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "EDITOR='${WITH_ED}'"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "LDFLAGS='-v ${LDFLAGS}'"			>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "FFLAGS='-c ${FFLAGS} ${FLAGARCH} ${FFLAGARCH}'"	>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "FFLAGS_DBG='-c -g -O ${FLAGARCH} ${FFLAGARCH}'"	>> ${WRKSRC}/setup.cfg
+	# -O2 causes failure in compilation of the elements -see GCC Bug 51267
+	${ECHO_CMD} "FFLAGS='-c ${FFLAGS:C|O2|O0|} -fno-tree-dse ${FLAGARCH} ${FFLAGARCH}'"	>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "FFLAGS_DBG='-c -g -O -fno-tree-dse ${FLAGARCH} ${FFLAGARCH}'"	>> ${WRKSRC}/setup.cfg
 .if defined(WITH_MPI)
-	${ECHO_CMD} "F90FLAGS='-c ${FFLAGS} ${FLAGARCH} ${FFLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
+	${ECHO_CMD} "F90FLAGS='-c ${FFLAGS:C|O2|O0|} -fno-tree-dse ${FLAGARCH} ${FFLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
 		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "F90FLAGS_DBG='-c -g -O ${FLAGARCH} ${FFLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
+	${ECHO_CMD} "F90FLAGS_DBG='-c -g -O -fno-tree-dse ${FLAGARCH} ${FFLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
 		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "CFLAGS='-c ${CFLAGS} -fno-stack-protector -DH5_USE_16_API ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
+	# -O2 causes failure in compilation of the elements -see GCC Bug 51267
+	${ECHO_CMD} "CFLAGS='-c ${CFLAGS:C|O2|O0|} -fno-tree-dse -DH5_USE_16_API ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
 		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe -fno-stack-protector -DH5_USE_16_API ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
+	${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe -fno-tree-dse -DH5_USE_16_API ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
 		>> ${WRKSRC}/setup.cfg
 .else
-	${ECHO_CMD} "F90FLAGS='-c ${FFLAGS} ${FLAGARCH} ${FFLAGARCH} -I${LOCALBASE}/include'"	\
+	${ECHO_CMD} "F90FLAGS='-c ${FFLAGS:C|O2|O0|} -fno-tree-dse ${FLAGARCH} ${FFLAGARCH} -I${LOCALBASE}/include'"	\
 		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "F90FLAGS_DBG='-c -g -O ${FLAGARCH} ${FFLAGARCH} -I${LOCALBASE}/include'"	\
+	${ECHO_CMD} "F90FLAGS_DBG='-c -g -O -fno-tree-dse ${FLAGARCH} ${FFLAGARCH} -I${LOCALBASE}/include'"	\
 		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "CFLAGS='-c ${CFLAGS} -fno-stack-protector -DH5_USE_16_API ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include'"	\
+	${ECHO_CMD} "CFLAGS='-c ${CFLAGS:C|O2|O0|} -fno-tree-dse -DH5_USE_16_API ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include'"	\
 		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe -fno-stack-protector -DH5_USE_16_API ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include'"	\
+	${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe -fno-tree-dse -DH5_USE_16_API ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include'"	\
 		>> ${WRKSRC}/setup.cfg
 .endif
 .for is in ${INTERACTIVE_SCRIPTS}
@@ -334,10 +339,9 @@ do-configure:
 	${CAT} ${CONFIGURE_WRKSRC}/setup.log
 	@${ECHO_MSG} "------------ Fin debug ------------------"
 
-pre-build:
-	${MKDIR} ${WRKSRC}/instdir/etc/codeaster
-	${CP} ${LOCALBASE}/aster/etc/codeaster/*		\
-		${WRKSRC}/instdir/etc/codeaster/
+post-configure:
+	${MKDIR} ${WRKSRC}/instdir/etc/
+	${CP} -R ${LOCALBASE}/aster/etc/codeaster ${WRKSRC}/instdir/etc/
 	${ECHO_CMD} "#?vers : VVV?" >> ${WRKSRC}/instdir/etc/codeaster/aster
 	${CP} -R ${LOCALBASE}/aster/ASTK/ASTK_SERV/bin		\
 		${LOCALBASE}/aster/ASTK/ASTK_SERV/asrun		\

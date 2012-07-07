@@ -1,11 +1,11 @@
---- include/med_outils.h.orig	Wed Nov 17 15:05:46 2004
-+++ include/med_outils.h	Sat Jan  8 22:51:32 2005
-@@ -152,7 +152,7 @@
- #define MED_TAILLE_LIENS 7 
+--- include/med_outils.h.orig	2011-07-28 15:11:41.000000000 +0200
++++ include/med_outils.h	2011-12-26 19:27:12.000000000 +0100
+@@ -241,7 +241,7 @@
  
  /*Pour eviter le bug solaris*/
+ #ifndef __APPLE__
 -#include <malloc.h>
 +#include <stdlib.h>
+ #endif
  
  /* Interface des routines du composant tools */
- #include <med_misc.h>

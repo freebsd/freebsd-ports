@@ -1,26 +1,20 @@
---- ./bin/bsf.orig	2009-12-23 15:53:05.000000000 +0100
-+++ ./bin/bsf	2010-02-02 19:30:16.000000000 +0100
-@@ -17,20 +17,14 @@
+--- ./bin/bsf.orig	2011-12-20 13:33:00.000000000 +0100
++++ ./bin/bsf	2012-01-02 22:28:16.000000000 +0100
+@@ -17,15 +17,9 @@
  #    1 AVENUE DU GENERAL DE GAULLE, 92141 CLAMART CEDEX, FRANCE.
  # ==============================================================================
  
 -set_prefix() {
--   local this=`readlink -n -f $1`
--   local bin=`dirname $this`
--   prefix=`dirname $bin`
+-    local this=`readlink -n -f $1`
+-    local bin=`dirname $this`
+-    prefix=`dirname $bin`
 -}
--
--set_prefix $0
 +prefix=%%inst_dir%%/ASTK_CLIENT
  
- # set environment
- if [ -f /etc/codeaster/profile.sh ]; then
-    . /etc/codeaster/profile.sh
- fi
--if [ -f $prefix/etc/codeaster/profile.sh ]; then
--   . $prefix/etc/codeaster/profile.sh
-+if [ -f ?ASTER_ROOT?/etc/codeaster/profile.sh ]; then
-+   . ?ASTER_ROOT?/etc/codeaster/profile.sh
- fi
- 
- # start tcl/tk interpreter
+-set_prefix $0
+-
+-ASTER_ROOT=$prefix
++ASTER_ROOT=?ASTER_ROOT?
+ ASTER_ETC=$ASTER_ROOT/etc
+ if [ "$ASTER_ROOT" = "/usr" ]; then
+     ASTER_ETC=/etc

@@ -25,7 +25,10 @@
 %%CLIENT%%%%ASTKDIR%%/lib/HELP/FR/item_111.txt
 %%CLIENT%%%%ASTKDIR%%/lib/HELP/FR/item_190.txt
 %%CLIENT%%%%ASTKDIR%%/lib/HELP/FR/item_323.txt
-%%CLIENT%%%%ASTKDIR%%/lib/RELNOTES
+%%CLIENT%%%%ASTKDIR%%/lib/RELNOTES.ENG
+%%CLIENT%%%%ASTKDIR%%/lib/RELNOTES.ENG.html
+%%CLIENT%%%%ASTKDIR%%/lib/RELNOTES.FR
+%%CLIENT%%%%ASTKDIR%%/lib/RELNOTES.FR.html
 %%CLIENT%%%%ASTKDIR%%/lib/__pkginfo__.tcl
 %%CLIENT%%%%ASTKDIR%%/lib/aide.tcl
 %%CLIENT%%%%ASTKDIR%%/lib/appli.tcl
@@ -241,9 +244,15 @@
 %%SERV%%%%ASTKDIR%%/asrun/calcul.py
 %%SERV%%%%ASTKDIR%%/asrun/calcul.pyc
 %%SERV%%%%ASTKDIR%%/asrun/calcul.pyo
-%%SERV%%%%ASTKDIR%%/asrun/client.py
-%%SERV%%%%ASTKDIR%%/asrun/client.pyc
-%%SERV%%%%ASTKDIR%%/asrun/client.pyo
+%%SERV%%%%ASTKDIR%%/asrun/client/__init__.py
+%%SERV%%%%ASTKDIR%%/asrun/client/__init__.pyc
+%%SERV%%%%ASTKDIR%%/asrun/client/__init__.pyo
+%%SERV%%%%ASTKDIR%%/asrun/client/calcul_handler.py
+%%SERV%%%%ASTKDIR%%/asrun/client/calcul_handler.pyc
+%%SERV%%%%ASTKDIR%%/asrun/client/calcul_handler.pyo
+%%SERV%%%%ASTKDIR%%/asrun/client/config.py
+%%SERV%%%%ASTKDIR%%/asrun/client/config.pyc
+%%SERV%%%%ASTKDIR%%/asrun/client/config.pyo
 %%SERV%%%%ASTKDIR%%/asrun/common/__init__.py
 %%SERV%%%%ASTKDIR%%/asrun/common/__init__.pyc
 %%SERV%%%%ASTKDIR%%/asrun/common/__init__.pyo
@@ -292,6 +301,9 @@
 %%SERV%%%%ASTKDIR%%/asrun/core/default_configuration.py
 %%SERV%%%%ASTKDIR%%/asrun/core/default_configuration.pyc
 %%SERV%%%%ASTKDIR%%/asrun/core/default_configuration.pyo
+%%SERV%%%%ASTKDIR%%/asrun/core/server.py
+%%SERV%%%%ASTKDIR%%/asrun/core/server.pyc
+%%SERV%%%%ASTKDIR%%/asrun/core/server.pyo
 %%SERV%%%%ASTKDIR%%/asrun/ctl/__init__.py
 %%SERV%%%%ASTKDIR%%/asrun/ctl/__init__.pyc
 %%SERV%%%%ASTKDIR%%/asrun/ctl/__init__.pyo
@@ -322,9 +334,6 @@
 %%SERV%%%%ASTKDIR%%/asrun/job.py
 %%SERV%%%%ASTKDIR%%/asrun/job.pyc
 %%SERV%%%%ASTKDIR%%/asrun/job.pyo
-%%SERV%%%%ASTKDIR%%/asrun/logger.py
-%%SERV%%%%ASTKDIR%%/asrun/logger.pyc
-%%SERV%%%%ASTKDIR%%/asrun/logger.pyo
 %%SERV%%%%ASTKDIR%%/asrun/main.py
 %%SERV%%%%ASTKDIR%%/asrun/main.pyc
 %%SERV%%%%ASTKDIR%%/asrun/main.pyo
@@ -334,6 +343,9 @@
 %%SERV%%%%ASTKDIR%%/asrun/mpi.py
 %%SERV%%%%ASTKDIR%%/asrun/mpi.pyc
 %%SERV%%%%ASTKDIR%%/asrun/mpi.pyo
+%%SERV%%%%ASTKDIR%%/asrun/multiple.py
+%%SERV%%%%ASTKDIR%%/asrun/multiple.pyc
+%%SERV%%%%ASTKDIR%%/asrun/multiple.pyo
 %%SERV%%%%ASTKDIR%%/asrun/myconnect.py
 %%SERV%%%%ASTKDIR%%/asrun/myconnect.pyc
 %%SERV%%%%ASTKDIR%%/asrun/myconnect.pyo
@@ -349,6 +361,21 @@
 %%SERV%%%%ASTKDIR%%/asrun/parser.py
 %%SERV%%%%ASTKDIR%%/asrun/parser.pyc
 %%SERV%%%%ASTKDIR%%/asrun/parser.pyo
+%%SERV%%%%ASTKDIR%%/asrun/plugins/__init__.py
+%%SERV%%%%ASTKDIR%%/asrun/plugins/__init__.pyc
+%%SERV%%%%ASTKDIR%%/asrun/plugins/__init__.pyo
+%%SERV%%%%ASTKDIR%%/asrun/plugins/actions.py
+%%SERV%%%%ASTKDIR%%/asrun/plugins/actions.pyc
+%%SERV%%%%ASTKDIR%%/asrun/plugins/actions.pyo
+%%SERV%%%%ASTKDIR%%/asrun/plugins/default.py
+%%SERV%%%%ASTKDIR%%/asrun/plugins/default.pyc
+%%SERV%%%%ASTKDIR%%/asrun/plugins/default.pyo
+%%SERV%%%%ASTKDIR%%/asrun/plugins/rsh_server.py
+%%SERV%%%%ASTKDIR%%/asrun/plugins/rsh_server.pyc
+%%SERV%%%%ASTKDIR%%/asrun/plugins/rsh_server.pyo
+%%SERV%%%%ASTKDIR%%/asrun/plugins/server.py
+%%SERV%%%%ASTKDIR%%/asrun/plugins/server.pyc
+%%SERV%%%%ASTKDIR%%/asrun/plugins/server.pyo
 %%SERV%%%%ASTKDIR%%/asrun/profil.py
 %%SERV%%%%ASTKDIR%%/asrun/profil.pyc
 %%SERV%%%%ASTKDIR%%/asrun/profil.pyo
@@ -373,6 +400,9 @@
 %%SERV%%%%ASTKDIR%%/asrun/services.py
 %%SERV%%%%ASTKDIR%%/asrun/services.pyc
 %%SERV%%%%ASTKDIR%%/asrun/services.pyo
+%%SERV%%%%ASTKDIR%%/asrun/status.py
+%%SERV%%%%ASTKDIR%%/asrun/status.pyc
+%%SERV%%%%ASTKDIR%%/asrun/status.pyo
 %%SERV%%%%ASTKDIR%%/asrun/system.py
 %%SERV%%%%ASTKDIR%%/asrun/system.pyc
 %%SERV%%%%ASTKDIR%%/asrun/system.pyo
@@ -398,6 +428,7 @@
 %%SERV%%%%ASTKDIR%%/asrun/utils.pyc
 %%SERV%%%%ASTKDIR%%/asrun/utils.pyo
 %%SERV%%%%ASTKDIR%%/bin/as_run
+%%SERV%%%%ASTKDIR%%/bin/auto_update.cron
 %%SERV%%%%ASTKDIR%%/bin/parallel_cp
 %%SERV%%%%ASTKDIR%%/i18n/Makefile
 %%SERV%%%%ASTKDIR%%/i18n/asrun.fr.mo
@@ -409,6 +440,9 @@
 %%SERV%%%%ASTKDIR%%/share/codeaster/asrun/data/meshtool.comm
 %%SERV%%%%ASTKDIR%%/share/codeaster/asrun/data/mpirun_template
 %%SERV%%%%ASTKDIR%%/share/codeaster/asrun/data/stanley_post.comm
+%%SERV%%%%ASTKDIR%%/share/codeaster/asrun/doc/dev_guide.html
+%%SERV%%%%ASTKDIR%%/share/codeaster/asrun/doc/dev_guide.pdf
+%%SERV%%%%ASTKDIR%%/share/codeaster/asrun/doc/dev_guide.rst
 %%SERV%%%%ASTKDIR%%/share/codeaster/asrun/examples/alamain.py
 %%SERV%%%%ASTKDIR%%/share/codeaster/asrun/examples/alamain.pyc
 %%SERV%%%%ASTKDIR%%/share/codeaster/asrun/examples/alamain.pyo
@@ -428,6 +462,9 @@
 %%SERV%%%%ASTKDIR%%/unittest/020_object.py
 %%SERV%%%%ASTKDIR%%/unittest/020_object.pyc
 %%SERV%%%%ASTKDIR%%/unittest/020_object.pyo
+%%SERV%%%%ASTKDIR%%/unittest/030_server.py
+%%SERV%%%%ASTKDIR%%/unittest/030_server.pyc
+%%SERV%%%%ASTKDIR%%/unittest/030_server.pyo
 %%SERV%%%%ASTKDIR%%/unittest/050_build_export.py
 %%SERV%%%%ASTKDIR%%/unittest/050_build_export.pyc
 %%SERV%%%%ASTKDIR%%/unittest/050_build_export.pyo
@@ -440,6 +477,9 @@
 %%SERV%%%%ASTKDIR%%/unittest/080_agla.py
 %%SERV%%%%ASTKDIR%%/unittest/080_agla.pyc
 %%SERV%%%%ASTKDIR%%/unittest/080_agla.pyo
+%%SERV%%%%ASTKDIR%%/unittest/090_devel.py
+%%SERV%%%%ASTKDIR%%/unittest/090_devel.pyc
+%%SERV%%%%ASTKDIR%%/unittest/090_devel.pyo
 %%SERV%%%%ASTKDIR%%/unittest/100_study.py
 %%SERV%%%%ASTKDIR%%/unittest/100_study.pyc
 %%SERV%%%%ASTKDIR%%/unittest/100_study.pyo
@@ -455,6 +495,9 @@
 %%SERV%%%%ASTKDIR%%/unittest/200_client.py
 %%SERV%%%%ASTKDIR%%/unittest/200_client.pyc
 %%SERV%%%%ASTKDIR%%/unittest/200_client.pyo
+%%SERV%%%%ASTKDIR%%/unittest/210_multi.py
+%%SERV%%%%ASTKDIR%%/unittest/210_multi.pyc
+%%SERV%%%%ASTKDIR%%/unittest/210_multi.pyo
 %%SERV%%%%ASTKDIR%%/unittest/300_development.py
 %%SERV%%%%ASTKDIR%%/unittest/300_development.pyc
 %%SERV%%%%ASTKDIR%%/unittest/300_development.pyo
@@ -467,6 +510,9 @@
 %%SERV%%%%ASTKDIR%%/unittest/320_astout_dvp.py
 %%SERV%%%%ASTKDIR%%/unittest/320_astout_dvp.pyc
 %%SERV%%%%ASTKDIR%%/unittest/320_astout_dvp.pyo
+%%SERV%%%%ASTKDIR%%/unittest/901_realistic.py
+%%SERV%%%%ASTKDIR%%/unittest/901_realistic.pyc
+%%SERV%%%%ASTKDIR%%/unittest/901_realistic.pyo
 %%SERV%%%%ASTKDIR%%/unittest/999_clean.py
 %%SERV%%%%ASTKDIR%%/unittest/999_clean.pyc
 %%SERV%%%%ASTKDIR%%/unittest/999_clean.pyo
@@ -485,6 +531,8 @@
 %%SERV%%%%ASTKDIR%%/unittest/datafiles/parametric.distr
 %%SERV%%%%ASTKDIR%%/unittest/datafiles/parametric.pre.include
 %%SERV%%%%ASTKDIR%%/unittest/datafiles/poursuite.comm
+%%SERV%%%%ASTKDIR%%/unittest/datafiles/sample.export
+%%SERV%%%%ASTKDIR%%/unittest/datafiles/sample2.export
 %%SERV%%%%ASTKDIR%%/unittest/datafiles/sleep.comm
 %%SERV%%%%ASTKDIR%%/unittest/datafiles/study.comm
 %%SERV%%%%ASTKDIR%%/unittest/datafiles/test_profile.sh
@@ -492,11 +540,16 @@
 %%SERV%%%%ASTKDIR%%/unittest/run_test.py
 %%SERV%%%%ASTKDIR%%/unittest/run_test.pyc
 %%SERV%%%%ASTKDIR%%/unittest/run_test.pyo
+%%SERV%%%%ASTKDIR%%/unittest/test_relocate.py
+%%SERV%%%%ASTKDIR%%/unittest/test_relocate.pyc
+%%SERV%%%%ASTKDIR%%/unittest/test_relocate.pyo
 %%SERV%%%%ETCDIR%%/asrun
 %%SERV%%%%ETCDIR%%/aster
 %%SERV%%%%ETCDIR%%/config_nodename
+%%SERV%%%%ETCDIR%%/plugins/__init__.py
 %%SERV%%%%ETCDIR%%/profile.csh
 %%SERV%%%%ETCDIR%%/profile.sh
+%%SERV%%@dirrm %%ETCDIR%%/plugins
 %%SERV%%@dirrm %%ETCDIR%%
 @dirrmtry aster/etc
 %%CLIENT%%@dirrm %%BWidget_DIR%%/images
@@ -505,6 +558,7 @@
 %%SERV%%@dirrm %%ASTKDIR%%/unittest/datafiles
 %%SERV%%@dirrm %%ASTKDIR%%/unittest
 %%SERV%%@dirrm %%ASTKDIR%%/share/codeaster/asrun/examples
+%%SERV%%@dirrm %%ASTKDIR%%/share/codeaster/asrun/doc
 %%SERV%%@dirrm %%ASTKDIR%%/share/codeaster/asrun/data
 %%SERV%%@dirrm %%ASTKDIR%%/share/codeaster/asrun
 %%SERV%%@dirrm %%ASTKDIR%%/share/codeaster
@@ -514,11 +568,13 @@
 %%SERV%%@dirrm %%ASTKDIR%%/i18n/locale
 %%SERV%%@dirrm %%ASTKDIR%%/i18n
 %%SERV%%@dirrm %%ASTKDIR%%/bin
+%%SERV%%@dirrm %%ASTKDIR%%/asrun/plugins
 %%SERV%%@dirrm %%ASTKDIR%%/asrun/dev
 %%SERV%%@dirrm %%ASTKDIR%%/asrun/ctl
 %%SERV%%@dirrm %%ASTKDIR%%/asrun/core
 %%SERV%%@dirrm %%ASTKDIR%%/asrun/contrib
 %%SERV%%@dirrm %%ASTKDIR%%/asrun/common
+%%SERV%%@dirrm %%ASTKDIR%%/asrun/client
 %%SERV%%@dirrm %%ASTKDIR%%/asrun
 %%CLIENT%%@dirrm %%ASTKDIR%%/lib/icons
 %%CLIENT%%@dirrm %%ASTKDIR%%/lib/HELP/FR
