@@ -1,48 +1,47 @@
---- CMakeLists.txt.orig	2010-10-15 13:35:00.000000000 +0000
-+++ CMakeLists.txt	2011-07-25 03:34:11.000000000 +0000
-@@ -53,6 +53,7 @@
- option(ENABLE_TAUCS "Enable Taucs linear algebra solver" ON)
- option(ENABLE_TETGEN "Enable Tetgen mesh generator" ON)
+--- CMakeLists.txt.orig	2012-03-03 00:03:38.000000000 +0100
++++ CMakeLists.txt	2012-03-03 16:05:27.000000000 +0100
+@@ -63,6 +63,7 @@
  option(ENABLE_TETGEN_NEW "Enable experimental version of Tetgen" OFF)
+ option(ENABLE_WRAP_JAVA "Build Java wrappers" OFF)
+ option(ENABLE_WRAP_PYTHON "Build Python wrappers" ${DEFAULT})
 +option(INSTALL_DOCS "Install the docs (FreeBSD only)" ON)
  
  set(GMSH_MAJOR_VERSION 2)
  set(GMSH_MINOR_VERSION 5)
-@@ -574,13 +575,17 @@
-   endif(NOT HAVE_METIS)
-   find_library(TAUCS_LIB taucs PATH_SUFFIXES lib)
-   if(TAUCS_LIB)
--    find_path(TAUCS_INC "taucs.h" PATH_SUFFIXES src include taucs)
--    if(TAUCS_INC)
--      set_config_option(HAVE_TAUCS "Taucs")
--      add_definitions(-DTAUCS_CILK)
--      list(APPEND EXTERNAL_LIBRARIES ${TAUCS_LIB})
--      list(APPEND EXTERNAL_INCLUDES ${TAUCS_INC})
--    endif(TAUCS_INC)
-+    find_library(COMPAT_LIB compat)
-+    if (COMPAT_LIB)
-+      find_path(TAUCS_INC "taucs.h" PATH_SUFFIXES src include)
-+      if(TAUCS_INC)
-+        set(HAVE_TAUCS TRUE)
-+        list(APPEND CONFIG_OPTIONS "Taucs")
-+        list(APPEND EXTERNAL_LIBRARIES ${TAUCS_LIB})
-+        list(APPEND EXTERNAL_LIBRARIES ${COMPAT_LIB})
-+        list(APPEND EXTERNAL_INCLUDES ${TAUCS_INC})
-+      endif(TAUCS_INC)
-+    endif(COMPAT_LIB)
-   endif(TAUCS_LIB)
- endif(ENABLE_TAUCS)
+@@ -671,13 +672,16 @@
+     endif(NOT HAVE_METIS)
+     find_library(TAUCS_LIB taucs PATH_SUFFIXES lib)
+     if(TAUCS_LIB)
+-      find_path(TAUCS_INC "taucs.h" PATH_SUFFIXES src include taucs)
+-      if(TAUCS_INC)
+-        set_config_option(HAVE_TAUCS "Taucs")
+-        add_definitions(-DTAUCS_CILK)
+-        list(APPEND EXTERNAL_LIBRARIES ${TAUCS_LIB})
+-        list(APPEND EXTERNAL_INCLUDES ${TAUCS_INC})
+-      endif(TAUCS_INC)
++      find_library(COMPAT_LIB compat)
++      if (COMPAT_LIB)
++        find_path(TAUCS_INC "taucs.h" PATH_SUFFIXES src include taucs)
++        if(TAUCS_INC)
++          set_config_option(HAVE_TAUCS "Taucs")
++          add_definitions(-DTAUCS_CILK)
++          list(APPEND EXTERNAL_LIBRARIES ${TAUCS_LIB})
++          list(APPEND EXTERNAL_INCLUDES ${TAUCS_INC})
++        endif(TAUCS_INC)
++      endif(COMPAT_LIB)
+     endif(TAUCS_LIB)
+   endif(ENABLE_TAUCS)
  
-@@ -673,7 +678,7 @@
+@@ -819,7 +823,7 @@
    list(LENGTH OCC_LIBS NUM_OCC_LIBS)
    if(NUM_OCC_LIBS EQUAL NUM_OCC_LIBS_REQUIRED)
      find_path(OCC_INC "BRep_Tool.hxx" PATHS ENV CASROOT PATH_SUFFIXES inc 
--              include opencascade)
-+              include opencascade OpenCAS/ros/inc)
+-              include include/oce opencascade)
++              include include/oce opencascade OpenCAS/ros/inc)
      if(OCC_INC)
        set_config_option(HAVE_OCC "OpenCascade")
        list(APPEND EXTERNAL_LIBRARIES ${OCC_LIBS})
-@@ -969,11 +974,13 @@
+@@ -1117,11 +1121,13 @@
  install(TARGETS gmsh DESTINATION ${GMSH_BIN} OPTIONAL)
  install(TARGETS lib shared DESTINATION lib OPTIONAL)
  install(FILES ${GMSH_API} DESTINATION include/gmsh)

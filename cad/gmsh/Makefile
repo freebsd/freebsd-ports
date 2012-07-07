@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gmsh
-PORTVERSION=	2.5.0
-PORTREVISION=	2
+PORTVERSION=	2.6.0
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/ \
 		http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/
@@ -19,6 +18,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	An automatic 3D finite element mesh generator
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
@@ -92,14 +93,14 @@ CMAKE_ARGS+=	-DENABLE_TAUCS=OFF
 .endif
 
 .if !defined(WITHOUT_MED)
-LIB_DEPENDS+=	med.2:${PORTSDIR}/french/med
+LIB_DEPENDS+=	med.4:${PORTSDIR}/french/med
 CMAKE_ARGS+=	-DENABLE_MED=ON
 .else
 CMAKE_ARGS+=	-DENABLE_MED=OFF
 .endif
 
 .if !defined(WITHOUT_CGNS)
-LIB_DEPENDS+=	cgns.0:${PORTSDIR}/science/cgnslib
+LIB_DEPENDS+=	cgns.3:${PORTSDIR}/science/cgnslib
 CMAKE_ARGS+=	-DENABLE_CGNS=ON
 .else
 CMAKE_ARGS+=	-DENABLE_CGNS=OFF
@@ -117,6 +118,10 @@ CONFLICTS=	gmsh-2.*
 CMAKE_ARGS+=	-DENABLE_OCC=OFF
 CONFLICTS=	gmsh-occ-2.*
 .endif
+
+# TODO
+# Dependencies against PythonLibs, swig and petsc are found and registered if installed
+# => add knobs to handle them.
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
