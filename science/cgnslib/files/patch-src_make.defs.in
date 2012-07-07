@@ -1,0 +1,20 @@
+--- ./src/make.defs.in.orig	2011-03-12 00:38:33.000000000 +0100
++++ ./src/make.defs.in	2012-03-13 21:31:59.000000000 +0100
+@@ -16,7 +16,7 @@
+ COOUT   = @COOUT@
+ CEOUT   = @CEOUT@
+ LDFLAGS = @LDFLAGS@
+-CLIBS   = @LIBS@
++CLIBS   = @LIBS@ $(PTHREAD_LIBS)
+ 
+ #------------------------------------------------------------------------
+ # SPACE  - used to force a space in the compiler executable output flag
+@@ -64,7 +64,7 @@
+ F77    = @F77@
+ FFLAGS = @FFLAGS@ @SYSFFLAGS@
+ FEOUT  = @FEOUT@
+-FLIBS  = @FLIBS@
++FLIBS  = @FLIBS@ $(PTHREAD_LIBS)
+ 
+ #------------------------------------------------------------------------
+ # strip command for executables - set to true if not used
