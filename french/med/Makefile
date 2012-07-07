@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	med
-DISTVERSION=	2.3.6
-PORTREVISION=	4
+DISTVERSION=	3.0.4
 CATEGORIES=	french science
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Modelisation et Echanges de Donnees
+
+LICENSE=	GPLv3
 
 BUILD_DEPENDS=	wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}
 LIB_DEPENDS=	hdf5.7:${PORTSDIR}/science/hdf5-18
 RUN_DEPENDS=	wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}
-
-LICENSE=	GPLv3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -37,7 +36,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf
 USE_LDCONFIG=	yes
 
-DOC2FIX=	. gif html jpg png tests
+DOC2FIX=	. dox gif html html.dox jpg png
 TST2FIX=	c f
 
 PORTDOCS=	*
@@ -55,10 +54,12 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|docdir = $$(datadir)/doc|docdir = @docdir@|'	\
 		${WRKSRC}/doc/${dd}/Makefile.${ext}
 . endfor
-. for dd in ${TST2FIX}
+.endfor
+.for dd in ${TST2FIX}
+	${FIND} ${WRKSRC}/tests -name "Makefile.*" | ${XARGS}	\
 	${REINPLACE_CMD} -e 's|test${dd}dir = $$(bindir)/test|test${dd}dir = ${EXAMPLESDIR}/test|' \
-		${WRKSRC}/tests/${dd}/Makefile.${ext}
-. endfor
+			-e 's|unittestsdir = $$(bindir)/unit|unittestsdir = ${EXAMPLESDIR}/unit|' \
+			-e 's|usescasesdir = $$(bindir)/uses|usescasesdir = ${EXAMPLESDIR}/uses|'
 .endfor
 
 post-install:

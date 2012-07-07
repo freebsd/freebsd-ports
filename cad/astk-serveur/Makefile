@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	astk
-PORTVERSION=	1.8.4
+PORTVERSION=	1.10.4
 CATEGORIES=	cad
 .if !defined(CLIENT_SEUL)
 PKGNAMESUFFIX=	-serveur
@@ -123,6 +123,7 @@ SHIA=		ksh93
 SHIA=		zsh
 .endif
 SHIADEP=	${SHIA}
+BASH2RC=	asrun/calcul.py share/codeaster/asrun/data/mpirun_template
 
 .if !defined(WITH_ED)
 . if exists(${LOCALBASE}/bin/nedit)
@@ -230,6 +231,9 @@ do-configure:
 	${REINPLACE_CMD} -e 's|%%MAKE_JOBS_NUMBER%%|1|'	${WRKSRC}/asrun/system.py
 . endif
 	${REINPLACE_CMD} -e 's|bash|${SHIA}|' ${WRKSRC}/asrun/system_command.py
+. for sh in ${BASH2RC}
+	${REINPLACE_CMD} -e 's|/bin/bash|${SHELL_INSTALL_ASTER}|' ${WRKSRC}/${sh}
+. endfor
 	${REINPLACE_CMD} -e 's|/usr/bin/|${LOCALBASE}/bin/|;s|LINUX|FREEBSD|'	\
 		${WRKSRC}/asrun/core/configuration.py
 .else

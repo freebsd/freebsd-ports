@@ -6,30 +6,28 @@
 #
 
 PORTNAME=	eficas
-DISTVERSION=	2.1.1-1
-PORTREVISION=	2
+DISTVERSION=	6.4.0-1
 CATEGORIES=	french cad
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	ASter Command FIle Editor
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/py-Pmw	\
 		${PYTHON_SITELIBDIR}/mx:${PORTSDIR}/lang/py-mx-base		\
-		${PYNUMPY}							\
-		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+		${PYNUMPY}
 
 USE_PYTHON=	yes
 REINPLACE_ARGS=	-i ""
 NO_BUILD=	yes
-
-LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 LEFICASDIR?=	apps/${PORTNAME}
 EFICASDIR=	${PREFIX}/${LEFICASDIR}
 PLIST_SUB=	EFICASDIR=${LEFICASDIR}
-SUB_FILES=	eficas
+SUB_FILES=	qtEficas
 SUB_LIST=	EFICASDIR=${EFICASDIR} PYTHON_CMD=${PYTHON_CMD}
 
 .if defined(LANG) && ${LANG:Mfr*} != ""
@@ -38,49 +36,38 @@ EF_LANG=	fr
 EF_LANG=	ang
 .endif
 
-.if !defined(WITHOUT_QT)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui	\
 		${PYTHON_SITELIBDIR}/PyQt4/QtAssistant.so:${PORTSDIR}/devel/py-qt4-assistant
-SUB_FILES+=	qtEficas
-PLIST_SUB+=	QT4=""
-.else
-PLIST_SUB+=	QT4="@comment "
-.endif
 
-FIXSHTK=	bureau.py cataediteur.py panels.py
 FIXSHQT4=	typeNode.py
-FIXBASH=	cataSTA9/Macro/macr_ecre_calc_ops.py cataSTA10/Macro/macr_ecre_calc_ops.py
+FIXBASH=	cataSTA9/Macro/macr_ecre_calc_ops.py	\
+		cataSTA10/Macro/macr_ecre_calc_ops.py
+FIXPMW=		Aster/editeur_salome.ini Aster/editeur.ini
 
 pre-configure:
 	${RM} ${WRKSRC}/convert/Parserv5/Translate.py.orig
-	${RM} -r ${WRKSRC}/Pmw	# Use our ported Pmw
-.for tk in TK QT4
-. for FILE in ${FIXSH${tk}}
-	${REINPLACE_CMD} -e "s|/usr/bin/sh|/bin/sh|" ${WRKSRC}/Interface${tk}/${FILE}
-. endfor
+.for FILE in ${FIXPMX}
+	${REINPLACE_CMD} -e 's|../Pmw|${PYTHON_SITELIBDIR}/Pmw|' ${WRKSRC}/${FILE}
+.endfor
+.for FILE in ${FIXSHQT4}
+	${REINPLACE_CMD} -e "s|/usr/bin/sh|/bin/sh|" ${WRKSRC}/InterfaceQT4/${FILE}
 .endfor
 	${REINPLACE_CMD} -e "s#lang='fr'#lang='${EF_LANG}'#"			\
 		${WRKSRC}/Aster/prefs.py
 	${REINPLACE_CMD} -e "s#os.path.join(rep_cata,'..','Doc')#\"${DOCSDIR}\"#"	\
-		-e "s#os.path.join(initialdir,'../Pmw')#'${PYTHON_SITELIBDIR}/Pmw'#"	\
 		${WRKSRC}/Aster/editeur.ini
 .for cata in ${FIXBASH}
 	${REINPLACE_CMD} -e "s|'/bin/bash'|'${LOCALBASE}/bin/bash'|"	\
 		${WRKSRC}/Aster/Cata/${cata}
 .endfor
-	${REINPLACE_CMD} -e 's|QListBoxItem\*|QListWidgetItem*|' ${WRKSRC}/InterfaceQT4/*.py
 
 do-install:
 	${MKDIR} ${EFICASDIR}
 	${CP} -R ${WRKSRC}/* ${EFICASDIR}
-	${FIND} ${EFICASDIR} -name CMakeFiles -delete
-	${FIND} ${EFICASDIR} -name CVS | ${XARGS} ${RM} -rf
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${EFICASDIR}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${EFICASDIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/eficas ${PREFIX}/bin
-.if !defined(WITHOUT_QT)
 	${INSTALL_SCRIPT} ${WRKDIR}/qtEficas ${PREFIX}/bin
-.endif
+	${LN} -sf ${PREFIX}/bin/qtEficas ${PREFIX}/bin/eficas
 
 post-install:
 	@${ECHO_MSG}

@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	homard
-DISTVERSION=	9.8-1
-PORTREVISION=	2
+DISTVERSION=	10.1-1
 CATEGORIES=	french cad linux
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A refinement and de-refinement mesh tool
 
 BUILD_DEPENDS=	${LOCALBASE}/aster/${vaster}/asteru:${PORTSDIR}/french/aster
@@ -34,7 +33,7 @@ vaster=		STA${ASTER_VER:R}
 ASTER_TOOLS=	${LOCALBASE}/aster/outils
 HOMARDDIR=	${PREFIX}/${LHOMARDDIR}
 AHPY=		aster_homard_py
-HOMARDSCRIPT=	${PORTNAME}_base
+HOMARDSCRIPT=	${PORTNAME}_base ASTER_HOMARD/aster_homard_py/aster_homard_3.py
 # This name is requested to run aster's make test
 HOMARDPG=	${PORTNAME:U}_V${PORTVERSION:R}.out
 HOMARDWDIR=	${PORTNAME:U}
@@ -44,16 +43,23 @@ DOCS=		A_Lire.txt Readme.txt
 PLIST_SUB=	HOMARDDIR=${LHOMARDDIR} AHPY=${LHOMARDDIR}/${AHPY}			\
 		UNAMES=${OPSYS} HOMARDPG=${HOMARDPG} ASTER_TOOLS=${ASTER_TOOLS}
 
+.include <bsd.port.pre.mk>
+
 pre-configure:
-	${REINPLACE_CMD} -e "s#/logiciels/HOMARD/HOMARD_PUBLIC#${PREFIX}/bin#"		\
-		${WRKSRC}/${HOMARDWDIR}/${HOMARDSCRIPT}
+.for sc in ${HOMARDSCRIPT}
+	${REINPLACE_CMD} -e "s#/logiciels/HOMARD/HOMARD_PUBLIC#${HOMARDDIR}#"		\
+		${WRKSRC}/${HOMARDWDIR}/${sc}
+.endfor
 
 do-install:
-	${MKDIR} ${HOMARDDIR}
-	${MKDIR} ${PREFIX}/bin/${OPSYS}
-	${INSTALL_PROGRAM} ${WRKSRC}/${HOMARDWDIR}/Linux/${HOMARDPG} ${PREFIX}/bin/${OPSYS}
-	${BRANDELF} -t Linux ${PREFIX}/bin/${OPSYS}/${HOMARDPG}
-	${INSTALL_SCRIPT} ${WRKSRC}/${HOMARDWDIR}/${HOMARDSCRIPT} ${HOMARDDIR}/${PORTNAME}
+	${MKDIR} ${HOMARDDIR} ${PREFIX}/apps/${OPSYS}
+.if ${ARCH} == "i386"
+	${INSTALL_PROGRAM} ${WRKSRC}/${HOMARDWDIR}/Linux/${HOMARDPG} ${PREFIX}/apps/${OPSYS}
+.else
+	${INSTALL_PROGRAM} ${WRKSRC}/${HOMARDWDIR}/Linux64/${HOMARDPG} ${PREFIX}/apps/${OPSYS}
+.endif
+	${BRANDELF} -t Linux ${PREFIX}/apps/${OPSYS}/${HOMARDPG}
+	${INSTALL_SCRIPT} ${WRKSRC}/${HOMARDWDIR}/${PORTNAME}_base ${HOMARDDIR}/${PORTNAME}
 	${CP} -R ${WRKSRC}/${HOMARDWDIR}/ASTER_HOMARD/${AHPY} ${HOMARDDIR}
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${HOMARDDIR}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${HOMARDDIR}
@@ -79,4 +85,4 @@ post-install:
 	@${ECHO_MSG}
 
 .include "${.CURDIR}/../../french/aster/bsd.aster.mk"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

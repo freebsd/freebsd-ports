@@ -1,4 +1,4 @@
-Warning: if py26-Pmw and py26-tkinter are built against different
+Warning: if py27-Pmw and py27-tkinter are built against different
 versions of Tk, eficas won't run!
 
 When upgrading, don't forget to remove the line

@@ -13,14 +13,14 @@ case $2 in
     DEINSTALL)
 	;;
     POST-DEINSTALL)
-	if [ -f ${CATADIR}/cataSTA8c_clefs_docu.orig ]; then
-	    mv ${CATADIR}/cataSTA8c_clefs_docu.orig ${CATADIR}/cataSTA8c_clefs_docu
-	fi
 	if [ -f ${CATADIR}/cataSTA9c_clefs_docu.orig ]; then
 	    mv ${CATADIR}/cataSTA9c_clefs_docu.orig ${CATADIR}/cataSTA9c_clefs_docu
 	fi
 	if [ -f ${CATADIR}/cataSTA10c_clefs_docu.orig ]; then
 	    mv ${CATADIR}/cataSTA10c_clefs_docu.orig ${CATADIR}/cataSTA10c_clefs_docu
+	fi
+	if [ -f ${CATADIR}/cataSTA11c_clefs_docu.orig ]; then
+	    mv ${CATADIR}/cataSTA11c_clefs_docu.orig ${CATADIR}/cataSTA11c_clefs_docu
 	fi
         ;;
     *)
