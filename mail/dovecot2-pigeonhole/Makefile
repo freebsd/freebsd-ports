@@ -7,7 +7,7 @@
 
 PORTNAME=	dovecot-pigeonhole
 PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.rename-it.nl/dovecot/${DOVECOTVERSION}/
 DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${PORTVERSION}
@@ -35,14 +35,18 @@ MAN7=		pigeonhole.7
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/-/\//}
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 EXTENSIONDOCS=	editheader.txt include.txt spamtest-virustest.txt \
 		vacation.txt vnd.dovecot.duplicate.txt
 PORTDOCS=	AUTHORS COPYING COPYING.LGPL INSTALL NEWS README TODO \
 		script-location-dict.txt ${EXTENSIONDOCS}
 .endif
 
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME:S/-/\//}
 PORTEXAMPLES=	*.sieve
 .endif
@@ -52,7 +56,7 @@ post-patch:
 		s!^(install-data-am:) install-sieve_docDATA!\1!; \
 		s!^(uninstall-am:) uninstall-sieve_docDATA!\1!;' \
 		${WRKSRC}/doc/Makefile.in
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 .for f in ${EXTENSIONDOCS}
 	@${LN} -f ${WRKSRC}/doc/extensions/${f} ${WRKSRC}/
 .endfor
@@ -60,14 +64,14 @@ post-patch:
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} ${_SHROWNGRP} -m ${BINMODE} -d ${DOCSDIR}
 .for f in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}"
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${INSTALL} ${_SHROWNGRP} -m ${BINMODE} -d ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/examples/*.sieve ${EXAMPLESDIR}
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}"
