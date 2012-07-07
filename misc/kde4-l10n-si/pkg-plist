@@ -312,5 +312,5 @@ share/locale/si/LC_MESSAGES/systemsettings.mo
 share/locale/si/LC_MESSAGES/useraccount.mo
 share/locale/si/LC_MESSAGES/validatorsplugin.mo
 share/locale/si/entry.desktop
-@dirrm share/locale/si/LC_MESSAGES
-@dirrm share/locale/si
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
