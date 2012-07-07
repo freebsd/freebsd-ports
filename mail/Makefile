@@ -708,7 +708,6 @@
     SUBDIR += swaks
     SUBDIR += sylpheed
     SUBDIR += sympa
-    SUBDIR += sympa5
     SUBDIR += synonym
     SUBDIR += t-prot
     SUBDIR += teapop
