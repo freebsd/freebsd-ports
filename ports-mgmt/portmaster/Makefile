@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	portmaster
-PORTVERSION=	3.12.2
+PORTVERSION=	3.13
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://dougbarton.us/Downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
