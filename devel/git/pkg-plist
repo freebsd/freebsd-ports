@@ -46,6 +46,7 @@ libexec/git-core/git-cherry-pick
 %%GUI%%libexec/git-core/git-citool
 libexec/git-core/git-clean
 libexec/git-core/git-clone
+libexec/git-core/git-column
 libexec/git-core/git-commit
 libexec/git-core/git-commit-tree
 libexec/git-core/git-config
@@ -114,6 +115,7 @@ libexec/git-core/git-mktree
 libexec/git-core/git-mv
 libexec/git-core/git-name-rev
 libexec/git-core/git-notes
+%%P4%%libexec/git-core/git-p4
 libexec/git-core/git-pack-objects
 libexec/git-core/git-pack-redundant
 libexec/git-core/git-pack-refs
@@ -157,9 +159,9 @@ libexec/git-core/git-sh-i18n
 libexec/git-core/git-sh-i18n--envsubst
 libexec/git-core/git-sh-setup
 libexec/git-core/git-shell
-libexec/git-core/git-stage
 %%ETCSHELLS%%@exec echo "Updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells; rm -f /etc/shells.bak
 %%ETCSHELLS%%@unexec echo "Updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak
+libexec/git-core/git-stage
 libexec/git-core/git-shortlog
 libexec/git-core/git-show
 libexec/git-core/git-show-branch
@@ -206,14 +208,21 @@ libexec/git-core/mergetools/araxis
 %%PERLSUB%%%%SITE_PERL%%/Git.pm
 %%PERLSUB%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/.packlist
 %%PERLSUB%%%%SITE_PERL%%/Git/I18N.pm
+%%PERLSUB%%%%SITE_PERL%%/Git/SVN/Memoize/YAML.pm
+%%PERLSUB%%%%SITE_PERL%%/Git/SVN/Ra.pm
+%%PERLSUB%%%%SITE_PERL%%/Git/SVN/Prompt.pm
+%%PERLSUB%%%%SITE_PERL%%/Git/SVN/Editor.pm
+%%PERLSUB%%%%SITE_PERL%%/Git/SVN/Fetcher.pm
 lib/xemacs/site-lisp/git/git.el
 lib/xemacs/site-lisp/git/git-blame.el
 %%NLS%%share/locale/da/LC_MESSAGES/git.mo
 %%NLS%%share/locale/de/LC_MESSAGES/git.mo
 %%NLS%%share/locale/is/LC_MESSAGES/git.mo
+%%NLS%%share/locale/it/LC_MESSAGES/git.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/git.mo
 %%NLS%%share/locale/pt_PT/LC_MESSAGES/git.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/git.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/git.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/git.mo
 share/emacs/site-lisp/git/git.el
 share/emacs/site-lisp/git/git-blame.el
@@ -311,6 +320,8 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/git-citool.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-clean.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-clone.html
+%%HTMLDOCS%%%%DOCSDIR%%/git-column.html
+%%HTMLDOCS%%%%DOCSDIR%%/git-column.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-commit-tree.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-commit.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-config.html
@@ -917,6 +928,10 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.10.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.10.2.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.10.3.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.10.4.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.10.5.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.11.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.11.1.txt
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/gitweb.cgi
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.js
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.css
@@ -972,10 +987,9 @@ share/git-core/templates/info/exclude
 %%CONTRIB%%share/git-core/contrib/examples/git-svnimport.txt
 %%CONTRIB%%share/git-core/contrib/examples/git-tag.sh
 %%CONTRIB%%share/git-core/contrib/examples/git-verify-tag.sh
+%%CONTRIB%%share/git-core/contrib/fast-import/git-p4.README
 %%CONTRIB%%share/git-core/contrib/fast-import/git-import.perl
 %%CONTRIB%%share/git-core/contrib/fast-import/git-import.sh
-%%CONTRIB%%share/git-core/contrib/fast-import/git-p4
-%%CONTRIB%%share/git-core/contrib/fast-import/git-p4.bat
 %%CONTRIB%%share/git-core/contrib/fast-import/import-directories.perl
 %%CONTRIB%%share/git-core/contrib/fast-import/import-tars.perl
 %%CONTRIB%%share/git-core/contrib/fast-import/import-zips.py
@@ -1002,6 +1016,23 @@ share/git-core/templates/info/exclude
 %%CONTRIB%%share/git-core/contrib/patches/docbook-xsl-manpages-charmap.patch
 %%CONTRIB%%share/git-core/contrib/remotes2config.sh
 %%CONTRIB%%share/git-core/contrib/rerere-train.sh
+%%CONTRIB%%share/git-core/contrib/persistent-https/client.go
+%%CONTRIB%%share/git-core/contrib/persistent-https/Makefile
+%%CONTRIB%%share/git-core/contrib/persistent-https/README
+%%CONTRIB%%share/git-core/contrib/persistent-https/LICENSE
+%%CONTRIB%%share/git-core/contrib/persistent-https/main.go
+%%CONTRIB%%share/git-core/contrib/persistent-https/proxy.go
+%%CONTRIB%%share/git-core/contrib/persistent-https/socket.go
+%%CONTRIB%%share/git-core/contrib/subtree/t/Makefile
+%%CONTRIB%%share/git-core/contrib/subtree/t/t7900-subtree.sh
+%%CONTRIB%%share/git-core/contrib/subtree/COPYING
+%%CONTRIB%%share/git-core/contrib/subtree/INSTALL
+%%CONTRIB%%share/git-core/contrib/subtree/Makefile
+%%CONTRIB%%share/git-core/contrib/subtree/README
+%%CONTRIB%%share/git-core/contrib/subtree/git-subtree.sh
+%%CONTRIB%%share/git-core/contrib/subtree/git-subtree.txt
+%%CONTRIB%%share/git-core/contrib/subtree/.gitignore
+%%CONTRIB%%share/git-core/contrib/subtree/todo
 %%CONTRIB%%share/git-core/contrib/stats/git-common-hash
 %%CONTRIB%%share/git-core/contrib/stats/mailmap.pl
 %%CONTRIB%%share/git-core/contrib/stats/packinfo.pl
@@ -1017,6 +1048,8 @@ share/git-core/templates/info/exclude
 %%GITWEB%%@dirrm %%EXAMPLESDIR%%/gitweb
 %%GITWEB%%@dirrm %%EXAMPLESDIR%%
 %%PERLSUB%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git
+%%PERLSUB%%@dirrmtry %%SITE_PERL%%/Git/SVN/Memoize
+%%PERLSUB%%@dirrmtry %%SITE_PERL%%/Git/SVN
 %%PERLSUB%%@dirrmtry %%SITE_PERL%%/Git
 @dirrm lib/xemacs/site-lisp/git
 @dirrmtry lib/xemacs/site-lisp
@@ -1060,6 +1093,9 @@ share/git-core/templates/info/exclude
 %%CONTRIB%%@dirrm share/git-core/contrib/mw-to-git
 %%CONTRIB%%@dirrm share/git-core/contrib/p4import
 %%CONTRIB%%@dirrm share/git-core/contrib/patches
+%%CONTRIB%%@dirrm share/git-core/contrib/persistent-https
+%%CONTRIB%%@dirrm share/git-core/contrib/subtree/t
+%%CONTRIB%%@dirrm share/git-core/contrib/subtree
 %%CONTRIB%%@dirrm share/git-core/contrib/stats
 %%CONTRIB%%@dirrm share/git-core/contrib/svn-fe
 %%CONTRIB%%@dirrm share/git-core/contrib/thunderbird-patch-inline
