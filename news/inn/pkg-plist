@@ -5,11 +5,13 @@ bin/actsync
 bin/actsyncd
 bin/archive
 bin/auth/passwd/ckpasswd
+%%KRB5%%bin/auth/passwd/auth_krb5
 bin/auth/passwd/radius
 bin/auth/resolv/domain
 bin/auth/resolv/ident
 bin/batcher
 bin/buffchan
+bin/buffindexed_d
 bin/cnfsheadconf
 bin/cnfsstat
 bin/control/checkgroups.pl
@@ -35,6 +37,7 @@ bin/filter/INN.py
 bin/filter/filter_innd.pl
 bin/filter/filter_innd.py
 bin/filter/filter_nnrpd.pl
+bin/filter/nnrpd.py
 bin/filter/nnrpd_access.pl
 bin/filter/nnrpd_access.py
 bin/filter/nnrpd_auth.pl
@@ -47,6 +50,7 @@ bin/imapfeed
 bin/inews
 bin/inncheck
 bin/innconfval
+bin/innbind
 bin/innd
 bin/inndf
 bin/innfeed
@@ -82,6 +86,7 @@ bin/rnews
 bin/rnews.libexec/c7unbatch
 bin/rnews.libexec/decode
 bin/rnews.libexec/encode
+bin/rnews.libexec/bunbatch
 bin/rnews.libexec/gunbatch
 bin/scanlogs
 bin/scanspool
@@ -96,6 +101,7 @@ bin/signcontrol
 bin/simpleftp
 bin/sm
 bin/tally.control
+bin/tinyleaf
 bin/tdx-util
 bin/writelog
 doc/CONTRIBUTORS
@@ -111,25 +117,39 @@ doc/config-semantics
 doc/config-syntax
 doc/external-auth
 doc/history
+doc/history-innfeed
 doc/hook-perl
 doc/hook-python
 doc/sample-control
 http/innreport.css
 include/inn/buffer.h
 include/inn/confparse.h
+include/inn/dbz.h
 include/inn/defines.h
+include/inn/dispatch.h
 include/inn/hashtab.h
 include/inn/history.h
 include/inn/innconf.h
+include/inn/inndcomm.h
+include/inn/libinn.h
 include/inn/list.h
 include/inn/md5.h
 include/inn/messages.h
 include/inn/mmap.h
+include/inn/network.h
+include/inn/newsuser.h
+include/inn/nntp.h
+include/inn/options.h
+include/inn/ov.h
+include/inn/overview.h
+include/inn/paths.h
 include/inn/qio.h
 include/inn/sequence.h
+include/inn/storage.h
 include/inn/system.h
 include/inn/timer.h
 include/inn/tst.h
+include/inn/utility.h
 include/inn/vector.h
 include/inn/version.h
 include/inn/wire.h
@@ -140,6 +160,7 @@ lib/innshellvars.tcl
 lib/libinn.a
 lib/libinnhist.a
 lib/libstorage.a
+lib/perl/INN/Config.pm
 @comment --------------------------------------------------------------
 @cwd
 @exec mkdir -p %%DBDIR%%

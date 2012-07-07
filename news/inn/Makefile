@@ -7,6 +7,7 @@
 
 PORTNAME?=	inn
 PORTVERSION?=	2.5.2
+PORTREVISION?=	1
 CATEGORIES=	news ipv6
 # Master distribution broken
 #MASTER_SITES?=	${MASTER_SITE_ISC}
@@ -17,35 +18,38 @@ MASTER_SITE_SUBDIR=	fluffy
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	InterNetNews -- the Internet meets Netnews
 
+BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
+		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools
+
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
 USE_RC_SUBR=	innd.sh
 SUB_FILES=	pkg-install
 
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
 USE_GMAKE=	yes
-USE_OPENSSL=	yes
 USE_PERL5=	yes
 
 CONFLICTS?=	inn-stable-[0-9]* inn-current-[0-9]*
 
-OPTIONS=	PYTHON		"Embedded Python module support"		Off	\
-		TCL		"Embedded TCL support"				Off	\
-		KERBEROS	"Enable Kerberos auth support"			Off	\
-		SASL		"Enable SASL support (for imapfeed auth)"	Off	\
-		TAGGED_HASH	"Use tagged hash table for history"		Off	\
-		LARGE_FILES	"Support for files larger than 2GB"		Off	\
-		KEYWORDS	"Automatic keyword generation support"		On	\
-		BERKELEYDB	"Enable BerkeleyDB (for ovdb overview method)"	Off
+OPTIONS_DEFINE=		PYTHON KERBEROS SASL KEYWORDS BERKELEYDB OPENSSL \
+			TAGGED_HASH LARGE_FILES GNUPG
+OPTIONS_DEFAULT=	KEYWORDS
+
+PYTHON_DESC=		Embedded Python module support
+KERBEROS_DESC=		Enable Kerberos v5 (for auth_krb5)
+SASL_DESC=		Enable SASL (for imapfeed authentication)
+TAGGED_HASH_DESC=	Use tagged hash table for history
+LARGE_FILES_DESC=	Support for files larger than 2GB
+KEYWORDS_DESC=		Automatic keyword generation support
+BERKELEYDB_DESC=	Enable BerkeleyDB (for ovdb overview method)
+OPENSSL_DESC=		Enable OpenSSL (for NNTP over TLS/SSL support)
+GNUPG_DESC=		GnuPG support (for pgpverify control message)
 
 VARBASE?=	/var
 
 .include "Makefile.layout"
-
-BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
-		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools
-#		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools
-
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 HAS_CONFIGURE=		yes
 CONFIGURE_ENV+=		LOCALBASE=${LOCALBASE}
@@ -54,24 +58,22 @@ CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man		\
 			--with-spool-dir=${INN_NEWSSPOOL}	\
 			--with-log-dir=${INN_LOGDIR}		\
 			--with-tmp-dir=${INN_TMPDIR}		\
-			--with-openssl=${OPENSSLBASE}		\
-			--with-etc-dir=${INN_ETCDIR}		\
+			--sysconfdir=${INN_ETCDIR}		\
 			--with-run-dir=${INN_RUNDIR}		\
 			--with-db-dir=${INN_DBDIR}		\
-			--with-datarootdirdir=${INN_SHAREDIR}	\
-			--with-ssl=${OPENSSLBASE}		\
+			--datarootdir=${INN_SHAREDIR}		\
 			--enable-ipv6 --with-perl
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_BERKELEYDB)
+.if ${PORT_OPTIONS:MBERKELEYDB}
 USE_BDB=		44+
 CONFIGURE_ENV+=		DB_VER=db${BDB_VER}
 CONFIGURE_ENV+=		DB_LIB=${BDB_LIB_NAME}
 CONFIGURE_ARGS+=	--with-berkeleydb=${LOCALBASE}
 .endif
 
-.if defined(WITH_KERBEROS)
+.if ${PORT_OPTIONS:MKERBEROS}
 .    if exists(${LOCALBASE}/bin/krb5-config)
 LIB_DEPENDS+=		gssapi_krb5:${PORTSDIR}/security/krb5
 CONFIGURE_ARGS+=	--with-kerberos=${LOCALBASE}
@@ -80,51 +82,55 @@ CONFIGURE_ARGS+=	--with-kerberos=/usr
 .    endif
 CONFIGURE_ENV+=		ac_cv_search_krb5_parse_name="-lcrypt -lcrypto -lkrb5 -lasn1 -lroken -lhx509"
 CONFIGURE_ENV+=		ac_cv_func_krb5_init_ets=yes
+MAN8+=		auth_krb5.8
+PLIST_SUB+=	KRB5=""
 .else
 CONFIGURE_ARGS+=	--without-kerberos
+PLIST_SUB+=	KRB5="@comment"
 .endif
 
-.if defined(WITH_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=		yes
 CONFIGURE_ARGS+=	--with-python
-.    include "${PORTSDIR}/Mk/bsd.python.mk"
 .endif
 
-.if defined(WITH_TCL)
-USE_TCL=		84+
-CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}
-.endif
-
-.if defined(WITH_MAXSOCKET)
-CONFIGURE_ARGS+=	--with-max-sockets=${WITH_MAXSOCKET}
-.endif
-
-.if defined(WITH_LARGE_FILES)
+.if ${PORT_OPTIONS:MLARGE_FILES}
 CONFIGURE_ARGS+=	--enable-largefiles
-.    if defined(WITH_TAGGED_HASH)
+.    if ${PORT_OPTIONS:MTAGGED_HASH}
 IGNORE=			cannot be compiled with both LARGE_FILES and TAGGED_HASH: please re-run make config
 .    endif
 .endif
 
-.if !defined(WITHOUT_KEYWORDS)
+.if ${PORT_OPTIONS:MKEYWORDS}
 CONFIGURE_ARGS+=	--enable-keywords
 .endif
 
-.if defined(WITH_SASL)
+.if ${PORT_OPTIONS:MSASL}
 CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 LIB_DEPENDS+=		sasl2:${PORTSDIR}/security/cyrus-sasl2
 .endif
 
-.if defined(WITH_TAGGED_HASH)
+.if ${PORT_OPTIONS:MTAGGED_HASH}
 CONFIGURE_ARGS+=	--enable-tagged-hash
 DBZ_FILES=		dir pag
 PLIST_SUB+=		WITH_TAGGED_HASH=""
 PLIST_SUB+=		WITHOUT_TAGGED_HASH="@comment "
 .else
-CONFIGURE_ARGS+=	--enable-largefiles
 DBZ_FILES=		dir hash index
 PLIST_SUB+=		WITH_TAGGED_HASH="@comment "
 PLIST_SUB+=		WITHOUT_TAGGED_HASH=""
+.endif
+
+.if ${PORT_OPTIONS:MOPENSSL}
+USE_OPENSSL=		yes
+CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
+.endif
+
+.if ${PORT_OPTIONS:MGNUPG}
+# Although pgpverify needs gpgv/gpgv2,
+# checking 'gpg' is the shortest way to check any version of GnuPG installed.
+BUILD_DEPENDS+=		gpg:${PORTSDIR}/security/gnupg
+RUN_DEPENDS+=		gpg:${PORTSDIR}/security/gnupg
 .endif
 
 PORTDOCS=	CONTRIBUTORS HACKING INSTALL LICENSE MANIFEST NEWS README TODO
@@ -155,10 +161,6 @@ MAN8=		actsync.8 archive.8 batcher.8 buffchan.8 \
 		tally.control.8 tdx-util.8 tinyleaf.8 writelog.8
 MLINKS=		actsync.8 actsyncd.8	docheckgroups.8 localgroups.5	perl-nocem.8 nocem.ctl.5
 
-.if defined(WITH_KERBEROS)
-MAN8+=		auth_krb5.8
-.endif
-
 TO_BE_STRIPPED=	bin/auth/resolv/domain bin/auth/resolv/ident \
 		bin/auth/passwd/ckpasswd bin/auth/passwd/radius bin/rnews.libexec/decode \
 		bin/rnews.libexec/encode bin/tdx-util bin/innd bin/nnrpd \
@@ -176,8 +178,8 @@ CONFIG_FILES=	actsync.cfg actsync.ign buffindexed.conf control.ctl \
 		expire.ctl localgroups incoming.conf inn.conf innfeed.conf \
 		innreport.conf innwatch.ctl moderators motd.news news2mail.cf \
 		newsfeeds nocem.ctl \
-		nnrpd.track nntpsend.ctl ovdb.conf overview.fmt \
-		passwd.nntp radius.conf readers.conf sasl.conf send-uucp.cf \
+		nnrpd.track nntpsend.ctl ovdb.conf \
+		passwd.nntp radius.conf readers.conf send-uucp.cf \
 		storage.conf subscriptions
 
 SUB_LIST+=	EGDIR="${EXAMPLESDIR:C,^${PREFIX},\\$\\${PREFIX},}"
@@ -187,18 +189,13 @@ PLIST_SUB+=	ETCFILES="${CONFIG_FILES}"
 
 # Perl 5.12 deprecated $[
 .if ${PERL_LEVEL} >= 501200
-EXTRA_PATCHES+= ${PATCHDIR}/extra-patch-scripts_innreport.in \
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-scripts_innreport.in \
 		${PATCHDIR}/extra-patch-scripts_innreport_inn.pm
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -E 's!\$$[{(]PATHETC[})]!${EXAMPLESDIR}!g' \
 	                  ${WRKSRC}/site/Makefile
-.if defined(WITH_TCL)
-	@${REINPLACE_CMD} -e 's!<tcl.h>!<tcl${TCL_VER}/tcl.h>!' ${WRKSRC}/innd/innd.h
-	@${REINPLACE_CMD} -e 's!-ltcl!-ltcl${USE_TCL}!'			\
-	                  ${WRKSRC}/configure
-.endif
 	@${REINPLACE_CMD} -e 's!et/com_err\.h!com_err.h!g'	\
 	                  -e 's!-lk5crypto!!g'			\
 	                  ${WRKSRC}/configure
