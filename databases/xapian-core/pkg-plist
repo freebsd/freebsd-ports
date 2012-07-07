@@ -45,7 +45,7 @@ lib/cmake/xapian/xapian-config.cmake
 lib/libxapian.a
 lib/libxapian.la
 lib/libxapian.so
-lib/libxapian.so.26
+lib/libxapian.so.27
 share/aclocal/xapian.m4
 %%PORTDOCS%%%%DOCSDIR%%/admin_notes.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc.pdf
