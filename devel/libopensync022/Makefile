@@ -14,8 +14,6 @@ MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Freedesktop synchronization framework
 
-CONFLICTS=	libopensync-0.[3-9]*
-
 BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 RUN_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
@@ -27,6 +25,8 @@ USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_GNOME=	gnomehack glib20 libxml2
 USE_LDCONFIG=	yes
+
+CONFLICTS=	libopensync-0.[3-9]*
 
 LATEST_LINK=	libopensync022
 
@@ -41,7 +41,8 @@ post-patch:
 		${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e "s,-Werror,," ${WRKSRC}/opensync/Makefile.in \
 		${WRKSRC}/osengine/Makefile.in \
-		${WRKSRC}/formats/vformats-xml/Makefile.in
+		${WRKSRC}/formats/vformats-xml/Makefile.in \
+		${WRKSRC}/tools/Makefile.in
 	${REINPLACE_CMD} -e "s,echo aout, echo elf,g" ${WRKSRC}/configure
 
 .include <bsd.port.mk>
