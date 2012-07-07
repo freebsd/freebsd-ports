@@ -15,7 +15,8 @@ COMMENT=	Python binding for Subversion
 
 LICENSE=	AL2
 
-LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion
+LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion \
+		neon:${PORTSDIR}/www/neon29
 
 # Python3 ready
 USE_PYTHON=	yes
