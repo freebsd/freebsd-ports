@@ -424,9 +424,9 @@ lib/dovecot/lib20_zlib_plugin.so
 lib/dovecot/lib21_fts_squat_plugin.a
 lib/dovecot/lib21_fts_squat_plugin.la
 lib/dovecot/lib21_fts_squat_plugin.so
-%%WITHSOLR%%lib/dovecot/lib21_fts_solr_plugin.a
-%%WITHSOLR%%lib/dovecot/lib21_fts_solr_plugin.la
-%%WITHSOLR%%lib/dovecot/lib21_fts_solr_plugin.so
+%%SOLR%%lib/dovecot/lib21_fts_solr_plugin.a
+%%SOLR%%lib/dovecot/lib21_fts_solr_plugin.la
+%%SOLR%%lib/dovecot/lib21_fts_solr_plugin.so
 lib/dovecot/lib30_imap_zlib_plugin.a
 lib/dovecot/lib30_imap_zlib_plugin.la
 lib/dovecot/lib30_imap_zlib_plugin.so
@@ -499,4 +499,4 @@ share/aclocal/dovecot.m4
 @dirrm lib/dovecot
 @dirrm include/dovecot
 @dirrmtry %%ETCDIR%%
-@dirrmtry %%DOCSDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
