@@ -7,6 +7,7 @@
 
 PORTNAME=	notmuch
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://notmuchmail.org/releases/
 
@@ -14,7 +15,7 @@ MAINTAINER=	darwinsurvivor@gmail.com
 COMMENT=	A thread-based email index, search and tagging application
 
 LIB_DEPENDS=	gmime-2.4:${PORTSDIR}/mail/gmime24 \
-		xapian.26:${PORTSDIR}/databases/xapian-core \
+		xapian:${PORTSDIR}/databases/xapian-core \
 		talloc:${PORTSDIR}/devel/talloc
 
 MAN1=		notmuch.1

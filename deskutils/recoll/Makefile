@@ -7,6 +7,7 @@
 
 PORTNAME=	recoll
 PORTVERSION=	1.17.3
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lesbonscomptes.com/recoll/
 
@@ -16,7 +17,7 @@ COMMENT=	A personal full text search package, based on Xapian
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	xapian.26:${PORTSDIR}/databases/xapian-core
+LIB_DEPENDS=	xapian:${PORTSDIR}/databases/xapian-core
 
 OPTIONS_DEFINE=	QT4 ASPELL PYTHON X11MON
 OPTIONS_DEFAULT=QT4 ASPELL PYTHON X11MON
