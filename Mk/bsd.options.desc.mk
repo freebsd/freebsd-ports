@@ -41,6 +41,7 @@ CUE_DESC?=		Support embedded cue sheets
 CUPS_DESC?=		Cups printing support
 CURL_DESC?=		CURL support
 DAGRAB_DESC?=		dagrab CD ripper
+DATA_DESC?=		Install data files
 DBM_DESC?=		DBM support
 DBUS_DESC?=		D-Bus support
 DEBUG_DESC?=		Install debug symbols
