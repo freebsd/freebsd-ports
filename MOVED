@@ -3544,3 +3544,4 @@ sysutils/devcpu||2012-07-06|Already included in base system
 mail/squirreloutlook||2012-07-06|Based on a vulnerable version of squirrelmail, use mail/squirrelmail for similar functionality
 x11-wm/e17-module-itask-ng|x11-wm/e17-module-engage|2012-07-06|Project has been renamed
 sysutils/rubygem-puppet-module||2012-07-07|Integrated in to sysutils/puppet since 2.7.14
+mail/sympa5|mail/sympa|2012-07-07|Has expired: Unsupported by upstream, Multiple vulnerabilities have been discovered in Sympa archive management that allow to skip the scenario-based authorization mechanisms.  http://www.sympa.org/security_advisories
