@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.7.10.3
+PORTVERSION=	1.7.11.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -41,6 +41,7 @@ MAN1=		git.1 \
 		git-cherry.1 \
 		git-clean.1 \
 		git-clone.1 \
+		git-column.1 \
 		git-commit-tree.1 \
 		git-commit.1 \
 		git-config.1 \
@@ -198,21 +199,20 @@ WANT_PERL=	yes
 
 CONFIGURE_ARGS=	--enable-pthreads=${PTHREAD_LIBS}
 
-OPTIONS=	GUI "Enable building of GUI tools" off \
-		SVN "Enable required dependencies for SVN tools" off \
-		GITWEB "Install gitweb" off \
-		CONTRIB "Install contributed scripts" on \
-		P4 "Enable Perforce support" on \
-		CVS "Enable CVS support" on \
-		HTMLDOCS "Install additional documentation" off \
-		PERL "Build perl based git tools" on \
-		ICONV "Support for multiple character encodings" on \
-		CURL "Support HTTP push and pull" on \
-		ETCSHELLS "Modify /etc/shells" on
+OPTIONS_DEFINE=	GUI SVN GITWEB CONTRIB P4 CVS HTMLDOCS PERL ICONV CURL \
+		ETCSHELLS NLS
+OPTIONS_DEFAULT=	CONTRIB P4 CVS PERL ICONV CURL ETCSHELLS NLS
+
+GITWEB_DESC=	Install gitweb
+CONTRIB_DESC=	Install contributed scripts
+P4_DESC=	Enable Perforce support
+CVS_DESC=	Enable CVS support
+HTMLDOCS_DESC=	Install additional documentation
+ETCSHELLS_DESC=	Modify /etc/shells
 
 .include <bsd.port.options.mk>
 
-.ifndef (WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
@@ -220,11 +220,12 @@ PLIST_SUB+=	NLS="@comment "
 MAKE_ENV+=	NO_GETTEXT=yes
 .endif
 
+# This is intentionally not exposed as an option.
 .ifndef (WITH_DEBUG)
 ALL_TARGET=	all strip
 .endif
 
-.ifdef (WITH_P4) || defined (WITH_CONTRIB)
+.if ${PORT_OPTIONS:MP4} || ${PORT_OPTIONS:MCONTRIB}
 USE_PYTHON=	yes
 PLIST_SUB+=	PYTHON_VER=${PYTHON_VER} PYTHON=""
 CONFIGURE_ARGS+=	--with-python=${LOCALBASE}/bin/python
@@ -233,21 +234,26 @@ CONFIGURE_ARGS+=	--without-python
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
-.ifdef (WITH_PERL)
+.if ${PORT_OPTIONS:MPERL}
 USE_PERL5=	yes
 MAKE_ENV+=	PERL_PATH=${PERL}
 BUILD_DEPENDS+=	p5-Error>=0:${PORTSDIR}/lang/p5-Error
 RUN_DEPENDS+=	p5-Error>=0:${PORTSDIR}/lang/p5-Error \
 		p5-Net-SMTP-SSL>=0:${PORTSDIR}/mail/p5-Net-SMTP-SSL
 MAN3=		Git.3 \
-		Git::I18N.3
+		Git::I18N.3 \
+		Git::SVN::Editor.3 \
+		Git::SVN::Fetcher.3 \
+		Git::SVN::Memoize::YAML.3 \
+		Git::SVN::Prompt.3 \
+		Git::SVN::Ra.3
 PLIST_SUB+=	PERLSUB=""
 .else
 MAKE_ENV+=	NO_PERL=1
 PLIST_SUB+=	PERLSUB="@comment "
 .endif
 
-.ifdef (WITH_ICONV)
+.if ${PORT_OPTIONS:MICONV}
 USE_ICONV=	yes
 MAKE_ENV+=	NEEDS_LIBICONV=yes \
 		ICONVDIR=${LOCALBASE}
@@ -256,7 +262,7 @@ CONFIGURE_ARGS+=	--with-iconv=${LOCALBASE}
 MAKE_ENV+=	NO_ICONV=1
 .endif
 
-.ifdef (WITH_CURL)
+.if ${PORT_OPTIONS:MCURL}
 MAKE_ENV+=	CURLDIR=${LOCALBASE}
 BUILD_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 RUN_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
@@ -270,14 +276,14 @@ PLIST_SUB+=	CURL="@comment "
 
 # Always fetch the htmldocs distfile in maintainer mode.
 # Always include it when building distinfo (makesum)
-.if defined (WITH_HTMLDOCS) || make(makesum) || (defined(MAINTAINER_MODE) && make(fetch))
+.if ${PORT_OPTIONS:MHTMLDOCS} || make(makesum) || (defined(MAINTAINER_MODE) && make(fetch))
 DISTFILES+=	${PORTNAME}-htmldocs-${PORTVERSION}${EXTRACT_SUFX}
 PLIST_SUB+=	HTMLDOCS=""
 .else
 PLIST_SUB+=	HTMLDOCS="@comment "
 .endif
 
-.ifdef (WITH_GUI)
+.if ${PORT_OPTIONS:MGUI}
 USE_TK=		84+
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
 MAN1+=		git-citool.1 \
@@ -298,7 +304,7 @@ MAKE_ARGS+=	NO_TCLTK=yes
 # to have git use devel/subversion16 it will be brought in through
 # devel/p5-subversion if you set WITH_SUBVERSION_VER=16. Otherwise
 # devel/subversion will be brought in.
-.ifdef (WITH_SVN)
+.if ${PORT_OPTIONS:MSVN}
 RUN_DEPENDS+=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
 		p5-subversion>=0:${PORTSDIR}/devel/p5-subversion
 PLIST_SUB+=	SVN=""
@@ -308,29 +314,29 @@ PLIST_SUB+=	SVN="@comment "
 RMMAN1+=	git-svn.1
 .endif
 
-.ifdef (WITH_GITWEB)
+.if ${PORT_OPTIONS:MGITWEB}
 PLIST_SUB+=	GITWEB=""
 .else
 PLIST_SUB+=	GITWEB="@comment "
 .endif
 
-.ifdef (WITH_GITWEB) && !defined (WITH_PERL)
+.if ${PORT_OPTIONS:MGITWEB} && empty(PORT_OPTIONS:MPERL)
 IGNORE=	using GITWEB support requires PERL support
 .endif
 
-.ifdef (WITH_CONTRIB)
+.if ${PORT_OPTIONS:MCONTRIB}
 PLIST_SUB+=	CONTRIB=""
 .else
 PLIST_SUB+=	CONTRIB="@comment "
 .endif
 
-.ifdef (WITH_P4)
+.if ${PORT_OPTIONS:MP4}
 PLIST_SUB+=	P4=""
 .else
 PLIST_SUB+=	P4="@comment "
 .endif
 
-.ifdef (WITH_CVS)
+.if ${PORT_OPTIONS:MCVS}
 MAN1+=		git-cvsimport.1 git-cvsexportcommit.1 git-cvsserver.1
 MAN7+=		gitcvs-migration.7
 PLIST_SUB+=	CVS=""
@@ -341,7 +347,7 @@ RMMAN1+=	git-cvsimport.1 git-cvsexportcommit.1 git-cvsserver.1
 RMMAN7+=	gitcvs-migration.7
 .endif
 
-.ifdef (WITH_ETCSHELLS)
+.if ${PORT_OPTIONS:METCSHELLS}
 SHELLS=		/etc/shells
 PLIST_SUB+=	ETCSHELLS=""
 .else
@@ -349,7 +355,7 @@ PLIST_SUB+=	ETCSHELLS="@comment "
 .endif
 
 post-extract:
-.if defined (WITH_HTMLDOCS)
+.if ${PORT_OPTIONS:MHTMLDOCS}
 	@${MKDIR} ${WRKDIR}/htmldocs
 	@cd ${WRKDIR}/htmldocs && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		${DISTDIR}/${PORTNAME}-htmldocs-${PORTVERSION}${EXTRACT_SUFX} \
@@ -364,7 +370,7 @@ post-patch:
 	@${RM} ${WRKDIR}/man7/${FILE}
 .endfor
 	@${REINPLACE_CMD} -e 's|share/man/man3|man/man3|' ${WRKSRC}/perl/Makefile.PL
-.ifndef (WITH_CVS)
+.if empty(PORT_OPTIONS:MCVS)
 	@${REINPLACE_CMD} -e '/git-cvsexportcommit.perl/d; \
 		/git-cvsimport.perl/d; \
 		/git-cvsserver.perl/d; \
@@ -372,15 +378,18 @@ post-patch:
 		s/git-cvsserver//' \
 		${WRKSRC}/Makefile
 .endif
-.ifndef (WITH_SVN)
+.if empty(PORT_OPTIONS:MSVN)
 	@${REINPLACE_CMD} -e '/git-svn.perl/d' ${WRKSRC}/Makefile
 .endif
-.ifndef (WITH_GITWEB)
+.if empty(PORT_OPTIONS:MGITWEB)
 	@${REINPLACE_CMD} -e '/$$(MAKE) -C gitweb install/d' ${WRKSRC}/Makefile
+.endif
+.if empty(PORT_OPTIONS:MP4)
+	@${REINPLACE_CMD} -e '/^SCRIPT_PYTHON += git-p4.py$$/d' ${WRKSRC}/Makefile
 .endif
 
 post-build:
-.ifdef (WITH_P4) || defined (WITH_CONTRIB)
+.if ${PORT_OPTIONS:MP4} || ${PORT_OPTIONS:MCONTRIB}
 	@${REINPLACE_CMD} -e '1s|#!/usr/bin/python|#!${PYTHON_CMD}|' \
 		${WRKSRC}/contrib/p4import/git-p4import.py
 	@${CP} ${WRKSRC}/contrib/p4import/git-p4import.py \
@@ -392,7 +401,7 @@ post-install:
 	(cd ${WRKDIR}/man1/ && ${COPYTREE_SHARE} \* ${MANPREFIX}/man/man1)
 	(cd ${WRKDIR}/man5/ && ${COPYTREE_SHARE} \* ${MANPREFIX}/man/man5)
 	(cd ${WRKDIR}/man7/ && ${COPYTREE_SHARE} \* ${MANPREFIX}/man/man7)
-.if defined (WITH_HTMLDOCS)
+.if ${PORT_OPTIONS:MHTMLDOCS}
 	# Manually remove the index.html symlink before installing, and then
 	# recreate it after. This is necessary because the distfile is
 	# extracted with --no-same-owner. If the distfile is extracted as a
@@ -413,23 +422,23 @@ post-install:
 		${PREFIX}/lib/xemacs/site-lisp/git/git.el
 	${LN} -sf ${PREFIX}/share/emacs/site-lisp/git/git-blame.el \
 		${PREFIX}/lib/xemacs/site-lisp/git/git-blame.el
-.ifdef (WITH_CONTRIB)
+.if ${PORT_OPTIONS:MCONTRIB}
 	@${ECHO_MSG} "===> Installing contributed scripts"
 	${MKDIR} ${PREFIX}/share/git-core/contrib
 	${CP} -R ${WRKSRC}/contrib/* ${PREFIX}/share/git-core/contrib
 .endif
-.ifdef (WITH_P4)
+.if ${PORT_OPTIONS:MP4}
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/p4import/git-p4import ${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${WRKSRC}/contrib/fast-import/git-p4 ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/git-p4 ${PREFIX}/bin/
 .endif
-.ifdef (WITH_ETCSHELLS)
+.if ${PORT_OPTIONS:METCSHELLS}
 	@${ECHO_MSG} "===> Updating ${SHELLS}"
 	@${CP} ${SHELLS} ${SHELLS}.bak
 	@(${GREP} -v ${PREFIX}/libexec/git-core/git-shell ${SHELLS}.bak; \
 	  ${ECHO_CMD} ${PREFIX}/libexec/git-core/git-shell) > ${SHELLS}
 	@${RM} ${SHELLS}.bak
 .endif
-.ifdef (WITH_GITWEB) || defined (WITH_CONTRIB)
+.if ${PORT_OPTIONS:MGITWEB} || ${PORT_OPTIONS:MCONTRIB}
 	@${CAT} ${PKGMESSAGE}
 .endif
 
