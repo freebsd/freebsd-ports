@@ -6,58 +6,70 @@
 #
 
 PORTNAME=	cgnslib
-DISTVERSION=	2.5-5
-PORTREVISION=	1
+DISTVERSION=	3.1.3-4
 CATEGORIES=	science
-MASTER_SITES=	SF/cgns/${PORTNAME}_${PORTVERSION:R}/Release%20${PORTVERSION:E}
+MASTER_SITES=	SF/cgns/${PORTNAME}_${PORTVERSION:R:R}/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	CFD General Notation System library code
 
 LICENSE=	AS-IS
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_NAME=	AS-IS
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/license.txt
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared=all
+USE_CMAKE=	yes
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 USE_LDCONFIG=	yes
 
 .if !defined(WITHOUT_HDF5)
 LIB_DEPENDS+=	hdf5.7:${PORTSDIR}/science/hdf5-18
-CONFIGURE_ARGS+=--with-hdf5=${LOCALBASE}
+CMAKE_ARGS+=	-DENABLE_HDF5:BOOL=TRUE -DHDF5_NEED_ZLIB:BOOL=TRUE	\
+		-DHDF5_INCLUDE_PATH:PATH="${LOCALBASE}/include"
 PLIST_SUB=	HDF5=""
+. if !defined(WITHOUT_SZIP)
+CMAKE_ARGS+=	-DHDF5_NEED_SZIP:BOOL=OFF
+. endif
 .else
-CONFIGURE_ARGS+=--with-hdf5=no
+CMAKE_ARGS+=	-DENABLE_HDF5:BOOL=OFF
 PLIST_SUB=	HDF5="@comment "
 .endif
 
 .if !defined(WITHOUT_TESTS)
 USE_FORTRAN=	yes
-TESTSBIN=	rundbtest cgwrite cgread
+CMAKE_ARGS+=	-DENABLE_TESTS:BOOL=TRUE -DENABLE_FORTRAN:BOOL=TRUE
+TESTSBIN=	cgwrite cgread test_partial
+.endif
+
+.if !defined(WITHOUT_TOOLS)
+USE_TK=		yes
+USE_GL=		gl glu
+USE_XORG=	xmu
+CMAKE_ARGS+=	-DBUILD_CGNSTOOLS:BOOL=TRUE			\
+		-DTCL_INCLUDE_PATH:STRING="${TCL_INCLUDEDIR}"	\
+		-DTK_INCLUDE_PATH:STRING="${TK_INCLUDEDIR}"
+PLIST_SUB=	TOOLS=""
+.else
+PLIST_SUB=	TOOLS="@comment "
 .endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:R}
-CNVBIN=		adf2hdf hdf2adf
+LIBVER=		${PORTVERSION:R:R}
 
-post-build:
+OPTIONS=	HDF5	"Enable or disable HDF5 interface"	on	\
+		TESTS	"Enable test programs"			on	\
+		TOOLS	"Build the CGNSTools package"		on	\
+		SZIP	"SZIP support in HDF5"			off
+
 .if !defined(WITHOUT_TESTS)
-	@(cd ${BUILD_WRKSRC}/tests;	\
-	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
-	@(cd ${BUILD_WRKSRC}/tests;	\
-	${SETENV} ${MAKE_ENV} FOPTS="${FFLAGS} -I.." ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} fortran)
+regression-test:
+. for pg in ${TESTSBIN}
+	@(cd ${BUILD_WRKSRC}/src/tests; ./${pg})
+. endfor
 .endif
 
-regression-test:
-.for pg in ${TESTSBIN}
-	@(cd ${BUILD_WRKSRC}/tests; ./${pg})
-.endfor
-
 post-install:
-	${MV} ${PREFIX}/lib/libcgns.so ${PREFIX}/lib/libcgns.so.0
-	${LN} -sf ${PREFIX}/lib/libcgns.so.0 ${PREFIX}/lib/libcgns.so
-	${INSTALL_PROGRAM} ${CNVBIN:C|^|${BUILD_WRKSRC}/${OPSYS:U}/|} ${PREFIX}/bin
+	${LN} -sf ${PREFIX}/lib/libcgns.so.${LIBVER} ${PREFIX}/lib/libcgns.so.${LIBVER:R}
 
 .include <bsd.port.mk>
