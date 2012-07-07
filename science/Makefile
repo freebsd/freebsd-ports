@@ -98,6 +98,7 @@
     SUBDIR += mcstas
     SUBDIR += medit
     SUBDIR += meep
+    SUBDIR += mei
     SUBDIR += minc
     SUBDIR += minc2
     SUBDIR += mol2ps
