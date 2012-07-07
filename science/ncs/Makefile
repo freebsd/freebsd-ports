@@ -6,28 +6,41 @@
 #
 
 PORTNAME=	ncs
-PORTVERSION=	1.3.3
-PORTREVISION=	9
+PORTVERSION=	2.0.4
 CATEGORIES=	science parallel
-MASTER_SITES=	http://rd.edf.com/fichiers/fckeditor/File/EDF%20RD/Code_Saturne/Fichiers/
+MASTER_SITES=	http://research.edf.com/fichiers/fckeditor/Commun/Innovation/logiciels/code_saturne/Releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Code_Saturne Kernel
 
-LIB_DEPENDS=	fvm.0:${PORTSDIR}/science/fvm
-RUN_DEPENDS=	xmgrace:${PORTSDIR}/math/grace	\
-		ecs:${PORTSDIR}/science/ecs
+LICENSE=	GPLv2
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=0:${PORTSDIR}/devel/py-qt4	\
+		cs_preprocess:${PORTSDIR}/science/ecs	\
+		pyrcc4:${PORTSDIR}/textproc/py-qt4-xml
+LIB_DEPENDS=	fvm.0:${PORTSDIR}/science/fvm	\
+		mei.0:${PORTSDIR}/science/mei
+RUN_DEPENDS=	xmgrace:${PORTSDIR}/math/grace	\
+		bash:${PORTSDIR}/shells/bash	\
+		xterm:${PORTSDIR}/x11/xterm	\
+		cs_preprocess:${PORTSDIR}/science/ecs
+
+USE_ZIP=	yes
 USE_GMAKE=	yes
+USE_ICONV=	yes
+USE_GETTEXT=	yes
 USE_GNOME=	libxml2
 USE_PYTHON=	yes
+USE_QT_VER=	4
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-BUILD_WRKSRC=	${WRKSRC}/bin
-MAKE_ENV=	NOM_ARCH=${OPSYS} CS_HOME=${WRKSRC} CS_MPI_PATH=${MPI_HOME}/bin	\
-		PTHREAD_LIBS=${PTHREAD_LIBS} TERM=${TERM}			\
+CPPFLAGS+=	-I${LOCALBASE}/include/libxml2
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	MPI_LIBS="${MPI_LIBS}"
+MAKE_ENV=	NOM_ARCH=${OPSYS} CS_MPI_PATH=${MPI_HOME}/bin	\
+		PTHREAD_LIBS=${PTHREAD_LIBS} TERM=${TERM}	\
 		MPI_HOME=${MPI_HOME} MPI_LIBS="${MPI_LIBS}"
+USE_LDCONFIG=	yes
 
 USE_FORTRAN=	yes
 FORTRANLIBDIR=	`${DIRNAME} \\`${FC} -print-libgcc-file-name\\``
@@ -39,19 +52,13 @@ TERM=		vt100	# Force for pointyhat to override su
 TERM?=		vt100	# Default value needed for tput in jail or tinderbox
 .endif
 
-PATHCS=		${PREFIX}/Saturne
-CS_HOME=	${PATHCS}/Noyau/ncs
-ECS_HOME=	${PATHCS}/Enveloppe/ecs
-PLIST_SUB=	CS_HOME=Saturne/Noyau/ncs ECS_HOME=Saturne/Enveloppe/ecs
-
-SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
-
 SUB_DIRS=	data include src users
 BIN_SCRIPTS=	autovalid check_mesh compiler_version cree_sat cs.exe gracehst	\
 		grp info_cs lance_install rang_mpi.sh
 BIN_DATAS=	Makefile SaturneGUI autovalid.xml cs_profile lance lance.help	\
 		macros_FreeBSD.mk
+
+MAN1=		code_saturne.1 cs_solver.1
 
 .if defined(WITH_LAM)
 MPI_HOME=	${LOCALBASE}
@@ -73,7 +80,9 @@ MPI_LIBS=	-lmpich -lmpl ${PTHREAD_LIBS}
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	pdftex:${PORTSDIR}/print/teTeX-base	\
 		fig2dev:${PORTSDIR}/print/transfig
-DOCS=		AUTHORS COMPATIBILITY Changelog TODO
+ALL_TARGET=	all pdf
+INSTALL_TARGET=	install install-pdf
+DOCS=		AUTHORS COMPATIBILITY ChangeLog README
 .endif
 
 .include <bsd.port.pre.mk>
@@ -104,75 +113,16 @@ pre-everything::
 	@${ECHO_MSG} "WITHOUT_BLAS or WITHOUT_ATLAS if you prefer."
 	@${ECHO_MSG}
 
-pre-patch:
-	${CP} -p ${WRKSRC}/bin/macros_Linux.mk ${WRKSRC}/bin/macros_FreeBSD.mk
-
-do-configure:
-	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|'	\
-		-e 's|%%FC%%|${FC}|'				\
-		-e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|'	\
-		-e 's|%%MPI_HOME%%|${MPI_HOME}|'		\
-		-e 's|%%MPI_LIBS%%|${MPI_LIBS}|'		\
-		${BUILD_WRKSRC}/cs_profile
-.if defined(WITH_ATLAS)
-	${REINPLACE_CMD} -e 's|BLAS            =0|BLAS            =1|'			\
-		${BUILD_WRKSRC}/macros_FreeBSD.mk
-.endif
-.if !defined(WITHOUT_BLAS) && !defined(WITHOUT_ATLAS)
-	${REINPLACE_CMD} -e 's|BLAS_LDFLAGS    =|BLAS_LDFLAGS    =${BLAS_LIB}|'		\
-		-e 's|BLAS_INC        =|BLAS_INC        =-I${LOCALBASE}/include|'	\
-		${BUILD_WRKSRC}/macros_FreeBSD.mk
-.endif
-	${REINPLACE_CMD} -e 's|make|${GMAKE}|g' ${BUILD_WRKSRC}/lance_install
-
-do-build:
-	(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ./lance_install)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "===>  Build terminated."
-	@${ECHO_MSG}
-	(cd ${WRKSRC}/arch/${OPSYS}; ${FIND} . -name ".readme*" | ${XARGS}	\
-		${GREP} -B 10 '^Stop in ') || ${TRUE}
-.if !defined(NOPORTDOCS)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "===>  Building documentation."
-	@${ECHO_MSG}
-	(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ./lance_install DOC)
-.endif
-
-do-install:
-	${FIND} ${WRKSRC}/arch/${OPSYS}/lib -name "libsaturne*" -exec	\
-		${INSTALL_DATA} {} ${PREFIX}/lib \;
-	${MKDIR} ${CS_HOME}/bin ${CS_HOME}/arch/${OPSYS}/bin	\
-		${CS_HOME}/arch/${OPSYS}/lib ${ECS_HOME}/bin
-	${LN} -sf ${PREFIX}/lib/libsaturne*.a ${CS_HOME}/arch/${OPSYS}/lib/
-.for sd in ${SUB_DIRS}
-	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} ${sd} ${CS_HOME})
-.endfor
-	${CHMOD} -R u+w ${CS_HOME}/users
-	(cd ${BUILD_WRKSRC}/ && ${COPYTREE_SHARE} Autovalidation ${CS_HOME}/bin/)
-	${INSTALL_SCRIPT} ${BIN_SCRIPTS:S|^|${BUILD_WRKSRC}/|} ${CS_HOME}/bin/
-	${INSTALL_DATA} ${BIN_DATAS:S|^|${BUILD_WRKSRC}/|} ${CS_HOME}/bin/
-	${CHMOD} u+w ${CS_HOME}/bin/lance
-	${LN} -sf ${LOCALBASE}/bin/ecs ${ECS_HOME}/bin/
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${CS_HOME}/bin/Autovalidation
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${CS_HOME}/bin/Autovalidation
-	${INSTALL_PROGRAM} ${WRKSRC}/arch/${OPSYS}/bin/cs13.exe	\
-		${CS_HOME}/arch/${OPSYS}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR} ${CS_HOME}/doc/THEORY/ ${CS_HOME}/doc/USER/	\
-		${CS_HOME}/doc/TUTORIAL/
-	${INSTALL_DATA} ${WRKSRC}/doc/THEORY/theory.pdf ${CS_HOME}/doc/THEORY/
-	${INSTALL_DATA} ${WRKSRC}/doc/TUTORIAL/tutorial.pdf ${CS_HOME}/doc/TUTORIAL/
-	${INSTALL_DATA} ${WRKSRC}/doc/USER/user.pdf ${CS_HOME}/doc/USER/
-	${LN} -sf ${CS_HOME}/doc/THEORY/theory.pdf ${CS_HOME}/doc/TUTORIAL/tutorial.pdf	\
-		${CS_HOME}/doc/USER/user.pdf ${DOCSDIR}/
-	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-	${LN} -sf ${LOCALBASE}/share/doc/ecs/ ${ECS_HOME}/doc
-.endif
+pre-configure:
+	${REINPLACE_CMD} -e 's|/bin/bash| ${LOCALBASE}/bin/bash|' ${WRKSRC}/bin/runcase.in
 
 post-install:
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+.if !defined(NOPORTDOCS)
+	${INSTALL_DATA} ${DOCS:C|^|${WRKSRC}/|} ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.post.mk>

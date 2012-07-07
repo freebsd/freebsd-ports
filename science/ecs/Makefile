@@ -6,31 +6,42 @@
 #
 
 PORTNAME=	ecs
-PORTVERSION=	1.3.3
-PORTREVISION=	7
+PORTVERSION=	2.0.2
 CATEGORIES=	science
-MASTER_SITES=	http://rd.edf.com/fichiers/fckeditor/File/EDF%20RD/Code_Saturne/Fichiers/
+MASTER_SITES=	http://research.edf.com/fichiers/fckeditor/Commun/Innovation/logiciels/code_saturne/Releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Code_Saturne Preprocessor
 
-LIB_DEPENDS=	med.2:${PORTSDIR}/french/med		\
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	med.4:${PORTSDIR}/french/med		\
 		bft.1:${PORTSDIR}/science/bft		\
 		hdf5.7:${PORTSDIR}/science/hdf5-18	\
-		cgns.0:${PORTSDIR}/science/cgnslib
+		cgns.3:${PORTSDIR}/science/cgnslib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+USE_ZIP=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-bft=${LOCALBASE}		\
 		--with-hdf5=${LOCALBASE}	\
 		--with-cgns=${LOCALBASE}	\
 		--with-med=${LOCALBASE}		\
-		--with-metis=${LOCALBASE}
+		--with-metis=${LOCALBASE}	\
+		--with-metis-include=${LOCALBASE}/include/metis
 CONFIGURE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
 USE_GMAKE=	yes
+
+.if defined(WITH_CCMIO)
+LIB_DEPENDS+=	adf.5:${PORTSDIR}/science/libccmio	\
+		ccmio.2:${PORTSDIR}/science/libccmio
+CONFIGURE_ARGS+=--with-adf=${LOCALBASE}		\
+		--with-ccm=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--without-adf --without-ccm
+.endif
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
@@ -45,12 +56,13 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-#NOPORTDOCS=	yes	# PDF not produced ATM
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	pdflatex:${PORTSDIR}/print/teTeX-base	\
 		fig2dev:${PORTSDIR}/print/transfig
-PORTDOCS=	mi_ecs.pdf mu_ecs.pdf
+PORTDOCS=	mi_ecs.pdf mt_ecs.pdf
 .endif
+
+MAN1=	cs_io_dump.1 cs_partition.1 cs_preprocess-config.1 cs_preprocess.1
 
 .include <bsd.port.pre.mk>
 
@@ -60,6 +72,11 @@ LIB_DEPENDS+=	metis.1:${PORTSDIR}/math/metis
 .else
 # Prefer metis-edf to avoid conflict with Code_Aster
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmetis.a:${PORTSDIR}/math/metis-edf
+.endif
+
+.if ${ARCH} == "i386"
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libscotch.a:${PORTSDIR}/cad/scotch
+CONFIGURE_ARGS+=	--with-scotch=${LOCALBASE}
 .endif
 
 pre-configure:
