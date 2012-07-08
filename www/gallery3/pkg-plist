@@ -194,6 +194,7 @@
 %%WWWDIR%%/modules/gallery/helpers/MY_url.php
 %%WWWDIR%%/modules/gallery/helpers/MY_valid.php
 %%WWWDIR%%/modules/gallery/helpers/access.php
+%%WWWDIR%%/modules/gallery/helpers/ajax.php
 %%WWWDIR%%/modules/gallery/helpers/album.php
 %%WWWDIR%%/modules/gallery/helpers/auth.php
 %%WWWDIR%%/modules/gallery/helpers/batch.php
@@ -240,7 +241,7 @@
 %%WWWDIR%%/modules/gallery/images/gd.png
 %%WWWDIR%%/modules/gallery/images/graphicsmagick.png
 %%WWWDIR%%/modules/gallery/images/imagemagick.jpg
-%%WWWDIR%%/modules/gallery/images/missing_movie.png
+%%WWWDIR%%/modules/gallery/images/missing_movie.jpg
 %%WWWDIR%%/modules/gallery/images/missing_photo.png
 %%WWWDIR%%/modules/gallery/js/albums_form_add.js
 %%WWWDIR%%/modules/gallery/js/item_form_delete.js
@@ -341,6 +342,7 @@
 %%WWWDIR%%/modules/gallery/views/user_profile_info.html.php
 %%WWWDIR%%/modules/gallery/views/welcome_message.html.php
 %%WWWDIR%%/modules/gallery/views/welcome_message_loader.html.php
+%%WWWDIR%%/modules/image_block/controllers/image_block.php
 %%WWWDIR%%/modules/image_block/helpers/image_block_block.php
 %%WWWDIR%%/modules/image_block/helpers/image_block_installer.php
 %%WWWDIR%%/modules/image_block/module.info
@@ -844,6 +846,7 @@
 @dirrm %%WWWDIR%%/modules/info
 @dirrm %%WWWDIR%%/modules/image_block/views
 @dirrm %%WWWDIR%%/modules/image_block/helpers
+@dirrm %%WWWDIR%%/modules/image_block/controllers
 @dirrm %%WWWDIR%%/modules/image_block
 @dirrm %%WWWDIR%%/modules/gallery/views/kohana
 @dirrm %%WWWDIR%%/modules/gallery/views
