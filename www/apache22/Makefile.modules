@@ -101,7 +101,7 @@ PLIST_SUB+=	BDB="@comment "
 .   if ${WITH_DBM:L} == "sdbm"
 CONFIGURE_ARGS+=	--with-dbm=sdbm
 .   elif ${WITH_DBM:L} == "gdbm"
-LIB_DEPENDS+=		gdbm.4:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=		gdbm:${PORTSDIR}/databases/gdbm
 CONFIGURE_ARGS+=	--with-gdbm=${LOCALBASE}
 .   elif ${WITH_DBM:L} == "db" || ${WITH_DBM:L} == "bdb"
 .	if defined(WITH_BDB_BASE)
