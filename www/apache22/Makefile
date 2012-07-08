@@ -18,20 +18,15 @@ DIST_SUBDIR=	apache22
 MAINTAINER?=	apache@FreeBSD.org
 COMMENT?=	Version 2.2.x of Apache web server with ${WITH_MPM:L} MPM.
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 		apr-1:${PORTSDIR}/devel/apr1 \
-		pcre.1:${PORTSDIR}/devel/pcre
+		pcre:${PORTSDIR}/devel/pcre
 
 MAKE_JOBS_SAFE=	yes
 
 LATEST_LINK?=	apache22
 
-CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.* \
-		apache+mod_ssl+mod_snmp+ipv6-1.* apache+mod_ssl+mod_accel-1.* \
-		apache+mod_ssl+mod_snmp+mod_accel-1.* \
-		apache+ipv6-1.* apache+ssl-1.* apache-1.* apache_fp-1.* \
-		caudium-devel-1.* caudium10-1.* caudium12-1.* caudium14-1.* \
-		ru-apache+mod_ssl-1.* ru-apache-1.* \
+CONFLICTS=	caudium14-1.* \
 		apache-2.0.* apache-*-2.0.* \
 		apache-*-2.2.*
 

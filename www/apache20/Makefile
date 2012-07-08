@@ -22,8 +22,8 @@ EXTRACT_ONLY=	${DISTNAME}.tar.bz2
 MAINTAINER?=	apache@FreeBSD.org
 COMMENT?=	Version 2.0.x of Apache web server with ${WITH_MPM:L} MPM.
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-	pcre.1:${PORTSDIR}/devel/pcre \
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
+	pcre:${PORTSDIR}/devel/pcre \
 	apr-0:${PORTSDIR}/devel/apr0
 
 MAKE_JOBS_SAFE=	yes
@@ -33,13 +33,8 @@ EXPIRATION_DATE=	2012-01-01
 
 LATEST_LINK=	apache20
 
-CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.* \
-		apache+mod_ssl+mod_snmp+ipv6-1.* apache+mod_ssl+mod_accel-1.* \
-		apache+mod_ssl+mod_snmp+mod_accel-1.* \
-		apache+ipv6-1.* apache+ssl-1.* apache-1.* apache_fp-1.* \
-		apache-2.2.* apache-peruser-2.2.* \
-		caudium-devel-1.* caudium10-1.* caudium12-1.* caudium14-1.* \
-		ru-apache+mod_ssl-1.* ru-apache-1.*
+CONFLICTS=	apache-2.2.* apache-*-2.2.* \
+		caudium14-1.*
 
 ## XXX: Every possible option for things in Makefile.modules needs to be
 ## XXX: in OPTIONS too, or its not passed to make.
