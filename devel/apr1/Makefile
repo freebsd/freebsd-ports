@@ -19,19 +19,15 @@ LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS_DEFINE=	THREADS IPV6 BDB GDBM LDAP MYSQL NDBM PGSQL SQLITE DEVRANDOM
-OPTIONS_DEFAULT=THREADS IPV6 BDB GDBM DEVRANDOM
+NO_OPTIONS_SORT=yes
+# apr
+OPTIONS_DEFINE=	THREADS IPV6 DEVRANDOM
+# apr-util
+OPTIONS_DEFINE+=BDB GDBM LDAP MYSQL NDBM PGSQL SQLITE
+OPTIONS_DEFAULT=THREADS IPV6 DEVRANDOM BDB GDBM
 
-THREADS_DESC=	Enable Threads in apr
-IPV6_DESC=	Enable IPV6 Support in apr
-BDB_DESC=	Enable Berkley BDB support in apr-util
-GDBM_DESC=	Enable GNU dbm support in apr-util
-LDAP_DESC=	Enable LDAP support in apr-util
-MYSQL_DESC=	Enable MySQL suport in apr-util
-NDBM_DESC=	Enable NDBM support in apr-util
-PGSQL_DESC=	Enable Postgresql suport in apr-util
-SQLITE_DESC=	Enable SQLite3 support in apr-util
-DEVRANDOM_DESC= Use /dev/random or compatible in apr
+DEVRANDOM_DESC= Use /dev/random or compatible
+NDBM_DESC=	NDBM support
 
 .include <bsd.port.options.mk>
 
