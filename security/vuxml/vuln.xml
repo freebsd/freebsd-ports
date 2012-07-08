@@ -3442,21 +3442,17 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="46aeba13-64a1-11e1-bc16-0023ae8e59f0">
-    <topic>openx -- security issue</topic>
+    <topic>openx -- undisclosed security issue</topic>
     <affects>
       <package>
 	<name>openx</name>
-	<range><lt>2.8.8</lt></range>
+	<range><lt>2.8.9</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>OpenX Reports:</p>
-	<blockquote cite="http://blog.openx.org/12/security-matters-3/">
-	  <p>Recently we became aware of a security issue with OpenX Source
-	    v2.8.7 and, in response, we've now issued and released
-	    OpenXSource v2.8.8 to address it.</p>
-	</blockquote>
+	<p>OpenX does not provide information about vulnerabilities beyond their
+	  existence.</p>
       </body>
     </description>
     <references>
@@ -3465,6 +3461,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2011-12-01</discovery>
       <entry>2012-03-02</entry>
+      <modified>2012-07-08</modified>
     </dates>
   </vuln>
 
