@@ -6,40 +6,27 @@
 #
 
 PORTNAME=	asymptote
-PORTVERSION=	2.15
-PORTREVISION=	1
+PORTVERSION=	2.16
+PORTREVISION=	0
 CATEGORIES=	math
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
-		SF/${PORTNAME}/${PORTNAME}/old/${PORTVERSION}
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A powerful script-based vector graphics language
 
-.if defined(WITH_GSL)
-LIB_DEPENDS+=	gsl.16:${PORTSDIR}/math/gsl
-.endif
-.if defined(WITH_FFTW)
-LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3
-.endif
+LICENSE=	GPLv3 LGPL3
+LICENSE_COMB=	dual
 
-.if 0 # NOPORTDOCS= teTeX is too old to compile the asymptote documentation
-BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
-		dvips:${PORTSDIR}/print/dvipsk-tetex \
-		latex:${PORTSDIR}/print/teTeX-base \
-		makeinfo:${PORTSDIR}/textproc/texi2html \
-		${MKTEXLSR}:${PORTSDIR}/print/teTeX-base \
-		svn:${PORTSDIR}/devel/subversion \
-		texi2dvi:${PORTSDIR}/print/texinfo
-.endif
 RUN_DEPENDS=	gv:${PORTSDIR}/print/gv \
 		latex:${PORTSDIR}/print/teTeX-base \
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_PKGNAMEPREFIX}imaging>=1.1.6_3:${PORTSDIR}/graphics/py-imaging
 
 ONLY_FOR_ARCHS=	i386 amd64
-# it requires boehm-gc 7.X
+# it requires boehm-gc 7.X with Pthread enabled
 CONFIGURE_ARGS=	--disable-gc
 
 USE_GHOSTSCRIPT=yes
@@ -66,22 +53,71 @@ PLIST_SUB=	MKTEXLSR=${MKTEXLSR}
 ALL_TARGET=	asy asy-keywords.el
 INSTALL_TARGET=	install-asy install-texhash
 
+# Options
+OPTIONS_DEFINE=	EXAMPLES GSL FFTW READLINE #DOCS MANPAGES
+OPTIONS_DEFAULT=	EXAMPLES GSL FFTW READLINE #MANPAGES
+
+GSL_DESC=	Enable GNU Scientific library
+FFTW_DESC=	Use FFTW to compute the Discrete Fourier Transform
+READLINE_DESC=	${LIBEDIT_DESC}
+
+.include <bsd.port.options.mk>
+
 # Documentation
-#if !defined(NOPORTDOCS)
-.if 0 #NOPORTDOCS= teTeX is too old to compile the asymptote documentation
+#.if ${PORT_OPTIONS:MDOCS}
+# teTeX is too old to compile the asymptote documentation
+.if 0
+ALL_TARGET+=	html
+CONFIGURE_ARGS+=	--with-docdir=${DOCSDIR}
+INSTALL_TARGET+=	install-html
+.endif
+
+#.if ${PORT_OPTIONS:MMANPAGES}
+# teTeX is too old to compile the asymptote documentation
+.if 0
 MAN1=	asy.1 xasy.1x
 INFO=	asy-faq
-
-ALL_TARGET+=	html man
-CONFIGURE_ARGS+=	--with-docdir=${DOCSDIR}
-INSTALL_TARGET+=	install-html install-man
+ALL_TARGET+=	man
+INSTALL_TARGET+=	install-man
 .endif
-RM_OPTS=	-R
 
-post-install:
+#.if ${PORT_OPTIONS:MMANPAGES} || ${PORT_OPTIONS:MDOCS}
+# teTeX is too old to compile the asymptote documentation
+.if 0
+BUILD_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick \
+		dvips:${PORTSDIR}/print/dvipsk-tetex \
+		latex:${PORTSDIR}/print/teTeX-base \
+		makeinfo:${PORTSDIR}/textproc/texi2html \
+		${MKTEXLSR}:${PORTSDIR}/print/teTeX-base \
+		svn:${PORTSDIR}/devel/subversion \
+		texi2dvi:${PORTSDIR}/print/texinfo
+.endif
+
 # Examples
-.if defined(NOPORTEXAMPLES)
-	@${RM} ${RM_OPTS} ${EXAMPLESDIR}
+.if !${PORT_OPTIONS:MEXAMPLES}
+post-install:
+	@${RM} -R ${EXAMPLESDIR}
+.endif
+
+# Optimizations
+.if ${PORT_OPTIONS:MGSL}
+LIB_DEPENDS+=	gsl:${PORTSDIR}/math/gsl
+CONFIGURE_ARGS+=	--enable-gsl
+.else
+CONFIGURE_ARGS+=	--disable-gsl
+.endif
+
+.if ${PORT_OPTIONS:MFFTW}
+LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3
+CONFIGURE_ARGS+=	--enable-fftw
+.else
+CONFIGURE_ARGS+=	--disable-fftw
+.endif
+
+.if ${PORT_OPTIONS:MREADLINE}
+CONFIGURE_ARGS+=	--enable-readline
+.else
+CONFIGURE_ARGS+=	--disable-readline
 .endif
 
 .include <bsd.port.mk>
