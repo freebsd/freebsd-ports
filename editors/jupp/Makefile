@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	jupp
-PORTVERSION=	3.1.18
+PORTVERSION=	3.1.20
 CATEGORIES=	editors
 MASTER_SITES=	http://www.mirbsd.org/MirOS/dist/jupp/ \
 		http://pub.allbsd.org/MirOS/dist/jupp/
-DISTNAME=	joe-3.1jupp18
-EXTRACT_SUFX=	.cpio.gz
+DISTNAME=	joe-3.1jupp20
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	magik@roorback.net
 COMMENT=	Portable version of Joe's Own Editor from MirBSD
