@@ -15,8 +15,10 @@ MASTER_SITES=	http://healthd.thehousleys.net/ \
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	A daemon to monitor vital motherboard parameters
 
-OPTIONS=	IPV6		"IPv6 support"			off \
-			FULL_CONFIG "Full Config support" 	off
+OPTIONS_DEFINE=	IPV6 FULL_CONFIG
+.include <bsd.port.options.mk>
+
+FULL_CONFIG_DESC= Remotely reading the full config
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_RC_SUBR=	${PORTNAME}
@@ -26,12 +28,16 @@ CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
 MAN8=		healthd.8 healthdc.8
 INSTALL_TARGET=	install-all
 
-.if defined(WITHOUT_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
+CONFIGURE_ARGS+=	--enable-ipv6
+.else
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-.if defined(WITH_FULL_CONFIG)
+.if ${PORT_OPTIONS:MFULL_CONFIG}
 CONFIGURE_ARGS+=	--enable-full-config
+.else
+CONFIGURE_ARGS+=	--disable-full-config
 .endif
 
 post-install:
@@ -41,7 +47,7 @@ post-install:
 		${ECHO} "before running the program."; \
 		${CP} ${PREFIX}/etc/healthd.conf.sample ${PREFIX}/etc/healthd.conf; \
 	fi
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/PROTOCOL ${DOCSDIR}/
