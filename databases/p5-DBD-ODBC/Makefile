@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBD-ODBC
-PORTVERSION=	1.37
+PORTVERSION=	1.39
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MJEVANS
@@ -18,46 +18,57 @@ COMMENT=	DBD module interfacing the ODBC databases
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-DBI>=1.609:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+OPTIONS_DEFINE=	DOCS
+OPTIONS_SINGLE=	ODBC
+OPTIONS_SINGLE_ODBC=	IODBC UNIXODBC
+OPTIONS_DEFAULT=	ODBC IODBC
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	-o ${LOCALBASE}
 
 MAN3=		DBD::ODBC.3
+PORTDOCS=	Changes README README.adabas README.informix
+
+.include <bsd.port.options.mk>
+
+.if empty(PORT_OPTIONS:MODBC)
+IGNORE=		an ODBC driver (iODBC or unixODBC) is required
+.endif
+
+.if ${PORT_OPTIONS:MIODBC}
+LIB_DEPENDS+=	iodbc:${PORTSDIR}/databases/libiodbc
+MYODBC=		iodbc
+.endif
+
+.if ${PORT_OPTIONS:MUNIXODBC}
+LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
+MYODBC=		unixodbc
+.endif
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_IODBC) && defined(WITH_UNIXODBC)
-IGNORE=		selected mutually exclusive options: WITH_IODBC and WITH_UNIXODBC
+.if ${PERL_LEVEL} < 501001
+TEST_DEPENDS+=	p5-Test-Simple>=0.90:${PORTSDIR}/devel/p5-Test-Simple
 .endif
 
-.if !defined(WITH_IODBC) && !defined(WITH_UNIXODBC)
-WITH_IODBC?=	yes
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e '/my $$myodbc/ s|q{}|"${MYODBC}"|' ${WRKSRC}/Makefile.PL
 
-.if defined(WITH_IODBC)
-LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
-MYODBC=	iodbc
-.elif defined(WITH_UNIXODBC)
-LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
-MYODBC=	unixodbc
 post-configure:
+.if ${PORT_OPTIONS:MUNIXODBC}
 	@${PERL} -pi -e 's/-lodbc/-lodbc ${PTHREAD_LIBS}/g;' \
 		-e 's/$$/ ${PTHREAD_CFLAGS}/ if (/^CCFLAGS/);' \
 		${WRKSRC}/Makefile
 .endif
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	Changes README README.adabas README.informix
-
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
-
-post-patch:
-	${REINPLACE_CMD} -e '/my $$myodbc/s|q{}|"${MYODBC}"|' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.post.mk>
