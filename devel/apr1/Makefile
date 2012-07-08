@@ -15,20 +15,25 @@ DISTFILES=	apr-${APR_VERSION}.tar.gz apr-util-${APU_VERSION}.tar.gz
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache Portability Library
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	THREADS "Enable Threads in apr"				on  \
-		IPV6	"Enable IPV6 Support in apr"			on  \
-		BDB	"Enable Berkley BDB support in apr-util"	on  \
-		GDBM	"Enable GNU dbm support in apr-util"		on  \
-		LDAP	"Enable LDAP support in apr-util"		off \
-		MYSQL	"Enable MySQL suport in apr-util"		off \
-		NDBM	"Enable NDBM support in apr-util"		off \
-		PGSQL	"Enable Postgresql suport in apr-util"		off \
-		SQLITE  "Enable SQLite3 support in apr-util"		off \
-		DEVRANDOM "Use /dev/random or compatible in apr"	on
+OPTIONS_DEFINE=	THREADS IPV6 BDB GDBM LDAP MYSQL NDBM PGSQL SQLITE DEVRANDOM
+OPTIONS_DEFAULT=THREADS IPV6 BDB GDBM DEVRANDOM
+
+THREADS_DESC=	Enable Threads in apr
+IPV6_DESC=	Enable IPV6 Support in apr
+BDB_DESC=	Enable Berkley BDB support in apr-util
+GDBM_DESC=	Enable GNU dbm support in apr-util
+LDAP_DESC=	Enable LDAP support in apr-util
+MYSQL_DESC=	Enable MySQL suport in apr-util
+NDBM_DESC=	Enable NDBM support in apr-util
+PGSQL_DESC=	Enable Postgresql suport in apr-util
+SQLITE_DESC=	Enable SQLite3 support in apr-util
+DEVRANDOM_DESC= Use /dev/random or compatible in apr
+
+.include <bsd.port.options.mk>
 
 APR_VERSION=	1.4.5
 APU_VERSION=	1.3.12
@@ -55,104 +60,102 @@ APU_CONF_ARGS=	--with-apr=${APR_WRKDIR} \
 		--with-expat=${LOCALBASE} \
 		--with-iconv=${LOCALBASE}
 
-.include <bsd.port.options.mk>
-
 ########## APR Options
-.if defined(WITHOUT_THREADS)
-APR_CONF_ARGS+=	--disable-threads
-.if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nothr
-.else
-PKGNAMESUFFIX=	-nothr
-.endif
-.else
+.if ${PORT_OPTIONS:MTHREADS}
 APR_CONF_ARGS+=	--enable-threads
+.else
+APR_CONF_ARGS+=	--disable-threads
+. if defined(PKGNAMESUFFIX)
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nothr
+. else
+PKGNAMESUFFIX=	-nothr
+. endif
 .endif
 
-.if defined(WITHOUT_IPV6)
-APR_CONF_ARGS+=	--disable-ipv6
-.else
+.if ${PORT_OPTIONS:MIPV6}
 APR_CONF_ARGS+=	--enable-ipv6
-.if defined(PKGNAMESUFFIX)
+. if defined(PKGNAMESUFFIX)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-ipv6
-.else
+. else
 PKGNAMESUFFIX=	-ipv6
-.endif
+. endif
+.else
+APR_CONF_ARGS+=	--disable-ipv6
 .endif
 
-.if defined(WITHOUT_DEVRANDOM)
-APR_CONF_ARGS+=	--without-devrandom
-.else
+.if ${PORT_OPTIONS:MDEVRANDOM}
 APR_CONF_ARGS+=	--with-devrandom
-.if defined(PKGNAMESUFFIX)
+. if defined(PKGNAMESUFFIX)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-devrandom
-.else
+. else
 PKGNAMESUFFIX=	-devrandom
-.endif
+. endif
+.else
+APR_CONF_ARGS+=	--without-devrandom
 .endif
 
 ######### APR-Util Options
-.if defined(WITHOUT_GDBM)
-PLIST_SUB+=	GDBM="@comment "
-APU_CONF_ARGS+=	--without-gdbm
-.else
+.if ${PORT_OPTIONS:MGDBM}
 PLIST_SUB+=	GDBM=""
 APU_EXTRAS=	yes
-LIB_DEPENDS+=	gdbm.4:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	gdbm:${PORTSDIR}/databases/gdbm
 APU_CONF_ARGS+=	--with-gdbm=${LOCALBASE}
-.if defined(PKGNAMESUFFIX)
+. if defined(PKGNAMESUFFIX)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gdbm
-.else
+. else
 PKGNAMESUFFIX=	-gdbm
-.endif
+. endif
+.else
+PLIST_SUB+=	GDBM="@comment "
+APU_CONF_ARGS+=	--without-gdbm
 .endif
 
-.if defined(WITHOUT_BDB)
-PLIST_SUB+=	BDB="@comment "
-APU_CONF_ARGS+=	--without-berkeley-db
-.else
+.if ${PORT_OPTIONS:MBDB}
 APU_EXTRAS=	yes
 PLIST_SUB+=	BDB=""
 USE_BDB=	42+
 APU_CONF_ARGS+=	--with-berkeley-db=${BDB_INCLUDE_DIR}:${BDB_LIB_DIR}
-.if defined(PKGNAMESUFFIX)
+. if defined(PKGNAMESUFFIX)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-${BDB_INCLUDE_DIR:S,^${LOCALBASE}/include/,,}
-.else
+. else
 PKGNAMESUFFIX=	-${BDB_INCLUDE_DIR:S,^${LOCALBASE}/include/,,}
-.endif
+. endif
+.else
+PLIST_SUB+=	BDB="@comment "
+APU_CONF_ARGS+=	--without-berkeley-db
 .endif
 
-.if defined(WITH_NDBM)
+.if ${PORT_OPTIONS:MNDBM}
 APU_EXTRAS=	yes
 PLIST_SUB+=	NDBM=""
 APU_CONF_ARGS+=	--with-ndbm=/usr
-.if defined(PKGNAMESUFFIX)
+. if defined(PKGNAMESUFFIX)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-ndbm
-.else
+. else
 PKGNAMESUFFIX=	-ndbm
-.endif
+. endif
 .else
 PLIST_SUB+=	NDBM="@comment "
 APU_CONF_ARGS+=	--without-ndbm
 .endif
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 APU_EXTRAS=	yes
 PLIST_SUB+=	LDAP=""
 USE_OPENLDAP=	yes
 APU_CONF_ARGS+=	--with-ldap-include=${LOCALBASE}/include \
 	--with-ldap-lib=${LOCALBASE}/lib --with-ldap=ldap
-.if defined(PKGNAMESUFFIX)
+. if defined(PKGNAMESUFFIX)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-ldap${OPENLDAP_VER}
-.else
+. else
 PKGNAMESUFFIX=	-ldap
-.endif
+. endif
 .else
 PLIST_SUB+=	LDAP="@comment "
 APU_CONF_ARGS+=	--without-ldap
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 APU_EXTRAS=	yes
 PLIST_SUB+=	MYSQL=""
 USE_MYSQL=	YES
@@ -160,42 +163,42 @@ APU_CONF_ARGS+=	--with-mysql=${LOCALBASE}
 CONFIGURE_ENV+=	LIBS="${LIBS}"
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/mysql -DHAVE_MYSQL_H
 LDFLAGS+=	-L${LOCALBASE}/lib/mysql
-.if defined(PKGNAMESUFFIX)
+. if defined(PKGNAMESUFFIX)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-mysql${MYSQL_VER}
-.else
+. else
 PKGNAMESUFFIX=	-mysql
-.endif
+. endif
 .else
 PLIST_SUB+=	MYSQL="@comment "
 APU_CONF_ARGS+=	--without-mysql
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 APU_EXTRAS=	yes
 PLIST_SUB+=	PGSQL=""
 USE_PGSQL=	YES
 APU_CONF_ARGS+=	--with-pgsql=${LOCALBASE}
 CONFIGURE_ENV+=	ac_cv_path_PGSQL_CONFIG=""
-.if defined(PKGNAMESUFFIX)
+. if defined(PKGNAMESUFFIX)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-pgsql${PGSQL_VER}
-.else
+. else
 PKGNAMESUFFIX=	-pgsql
-.endif
+. endif
 .else
 PLIST_SUB+=	PGSQL="@comment "
 APU_CONF_ARGS+=	--without-pgsql
 .endif
 
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 APU_EXTRAS=	yes
 PLIST_SUB+=	SQLITE3=""
 USE_SQLITE=	YES
 APU_CONF_ARGS+=	--with-sqlite3=${LOCALBASE}
-.if defined(PKGNAMESUFFIX)
+. if defined(PKGNAMESUFFIX)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-sqlite3
-.else
+. else
 PKGNAMESUFFIX=	-sqlite3
-.endif
+. endif
 .else
 APU_CONF_ARGS+=	--without-sqlite3
 PLIST_SUB+=	SQLITE3="@comment "
