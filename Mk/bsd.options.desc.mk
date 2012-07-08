@@ -65,6 +65,7 @@ FREETDS_DESC?=		FreeTDS support
 FREETYPE_DESC?=		TrueType font rendering engine
 FUSE_DESC?=		Fuse support
 GCONF_DESC?=		gconf backend
+GDBM_DESC?=		GNU dbm support
 GDM_DESC?=		Build GDM login manager
 GEOIP_DESC?=		GeoIP support
 GEOS_DESC?=		GEOS support
