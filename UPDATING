@@ -61,6 +61,8 @@ you update your ports collection, before attempting any port upgrades.
   Note: If the "perl-" glob matches more than one port you will need to
 	specify the name of the Perl directory in /var/db/pkg explicitly.
 
+  The default version for Perl has also been changed from 5.12 to 5.14.
+
 20120623:
   AFFECTS: users of sysutils/xfce4-utils
   AUTHOR: xfce@FreeBSD.org
