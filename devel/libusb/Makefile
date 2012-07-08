@@ -48,4 +48,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/html/* ${DOCSDIR}/html
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
