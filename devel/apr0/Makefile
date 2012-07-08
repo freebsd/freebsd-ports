@@ -22,16 +22,15 @@ EXPIRATION_DATE=    2012-02-01
 MAKE_JOBS_SAFE=	yes
 
 NO_OPTIONS_SORT=yes
-OPTIONS_DEFINE=	THREADS IPV6 BDB GDBM LDAP NDBM DEVRANDOM
-OPTIONS_DEFAULT=THREADS IPV6 BDB GDBM DEVRANDOM
+# apr
+OPTIONS_DEFINE=	THREADS IPV6 DEVRANDOM
+# apr-util
+OPTIONS_DEFINE+=BDB GDBM LDAP NDBM
 
-THREADS_DESC=	Threads in apr
-DEVRANDOM_DESC=	Use /dev/random or compatible in apr
-IPV6_DESC=	IPV6 Support in apr
-BDB_DESC=	Berkley BDB support in apr-util
-LDAP_DESC=	LDAP support in apr-util	
-GDBM_DESC=	GNU dbm support in apr-util
-NDBM_DESC=	NDBM support in apr-util
+OPTIONS_DEFAULT=THREADS IPV6 DEVRANDOM BDB GDBM
+
+DEVRANDOM_DESC=	Use /dev/random or compatible
+NDBM_DESC=	NDBM support
 
 .include <bsd.port.options.mk>
 
