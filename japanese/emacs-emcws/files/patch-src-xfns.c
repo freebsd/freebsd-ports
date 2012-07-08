@@ -1,5 +1,14 @@
 --- src/xfns.c.orig	2002-12-06 18:05:35.000000000 +0100
-+++ src/xfns.c	2010-03-30 06:35:54.000000000 +0200
++++ src/xfns.c	2012-05-02 19:50:40.000000000 +0200
+@@ -8541,7 +8541,7 @@
+ {
+   xassert (png_ptr != NULL);
+   image_error ("PNG error: %s", build_string (msg), Qnil);
+-  longjmp (png_ptr->jmpbuf, 1);
++  longjmp (png_jmpbuf(png_ptr), 1);
+ }
+ 
+ 
 @@ -8641,7 +8641,7 @@
  
        /* Check PNG signature.  */
@@ -18,3 +27,12 @@
  	{
  	  image_error ("Not a PNG image: `%s'", img->spec, Qnil);
  	  UNGCPRO;
+@@ -8699,7 +8699,7 @@
+ 
+   /* Set error jump-back.  We come back here when the PNG library
+      detects an error.  */
+-  if (setjmp (png_ptr->jmpbuf))
++  if (setjmp (png_jmpbuf(png_ptr)))
+     {
+     error:
+       if (png_ptr)
