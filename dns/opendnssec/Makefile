@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	opendnssec
-PORTVERSION=	1.3.7
+PORTVERSION=	1.3.9
 CATEGORIES=	dns
-MASTER_SITES=	http://www.opendnssec.org/files/source/
+MASTER_SITES=	http://www.opendnssec.org/files/source/ \
+		http://dist.opendnssec.org/source/
 
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Tool suite for maintaining DNSSEC
@@ -22,6 +23,9 @@ USE_GNOME=	libxml2
 USE_PERL5=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
+
+USERS=		${PORTNAME}
+GROUPS=		${PORTNAME}
 
 MAN1=		ods-hsmspeed.1 ods-hsmutil.1 ods-ksmutil.1
 MAN5=		ods-timing.5
@@ -66,10 +70,16 @@ RUN_DEPENDS+=	softhsm>=1.2.0:${PORTSDIR}/security/softhsm
 
 PKGMESSAGE=	${WRKSRC}/MIGRATION
 
+pre-install:
+.if defined(WITH_MYSQL)
+	@${REINPLACE_CMD} -e '/REQUIRE:/ s|$$| mysql|' ${WRKDIR}/opendnssec
+.endif
+
 post-install:
 .if !defined(BATCH)
 	@${CAT} ${PKGMESSAGE}
 .endif
+	${CHOWN} -R ${USERS}:${GROUPS} ${PREFIX}/var/opendnssec
 
 .include <bsd.port.pre.mk>
 .if defined(WITH_AUDITOR) && ${RUBY_VER} == 1.9

@@ -4,9 +4,13 @@ bin/ods-hsmutil
 bin/ods-ksmutil
 %%AUDITOR%%bin/ods-kaspcheck
 bin/ods-kasp2html
+@unexec if cmp -s %D/etc/opendnssec/conf.xml %D/etc/opendnssec/conf.xml.sample; then rm -f %D/etc/opendnssec/conf.xml; fi
 %%ETCDIR%%/conf.xml.sample
+@unexec if cmp -s %D/etc/opendnssec/kasp.xml %D/etc/opendnssec/kasp.xml.sample; then rm -f %D/etc/opendnssec/kasp.xml; fi
 %%ETCDIR%%/kasp.xml.sample
+@unexec if cmp -s %D/etc/opendnssec/zonefetch.xml %D/etc/opendnssec/zonefetch.xml.sample; then rm -f %D/etc/opendnssec/zonefetch.xml; fi
 %%ETCDIR%%/zonefetch.xml.sample
+@unexec if cmp -s %D/etc/opendnssec/zonelist.xml %D/etc/opendnssec/zonelist.xml.sample; then rm -f %D/etc/opendnssec/zonelist.xml; fi
 %%ETCDIR%%/zonelist.xml.sample
 %%AUDITOR%%lib/opendnssec/kasp_auditor/auditor.rb
 %%AUDITOR%%lib/opendnssec/kasp_auditor/changed_config.rb
@@ -36,14 +40,11 @@ sbin/ods-signerd
 %%DATADIR%%/zonefetch.rng
 %%DATADIR%%/zonelist.rnc
 %%DATADIR%%/zonelist.rng
-@dirrm var/run/opendnssec
-@dirrm var/run
 @dirrm var/opendnssec/unsigned
 @dirrm var/opendnssec/tmp
 @dirrm var/opendnssec/signed
 @dirrm var/opendnssec/signconf
 @dirrm var/opendnssec
-@dirrm var
 @dirrm %%DATADIR%%
 @dirrm lib/opendnssec/kasp_auditor
 @dirrm lib/opendnssec
@@ -53,3 +54,6 @@ sbin/ods-signerd
 @exec mkdir -p %D/var/opendnssec/tmp
 @exec mkdir -p %D/var/opendnssec/signed
 @exec mkdir -p %D/var/opendnssec/signconf
+@dirrmtry var/run/opendnssec
+@dirrmtry var/run
+@dirrmtry var
