@@ -2842,6 +2842,7 @@ e17-module-efm_path             ports/x11-wm/e17-module-efm_path
 e17-module-efm_pathbar          ports/x11-wm/e17-module-efm_pathbar
 e17-module-elfe                 ports/x11-wm/e17-module-elfe
 e17-module-empris               ports/x11-wm/e17-module-empris
+e17-module-engage               ports/x11-wm/e17-module-engage
 e17-module-eooorg               ports/x11-wm/e17-module-eooorg
 e17-module-everything-aspell    ports/x11-wm/e17-module-everything-aspell
 e17-module-everything-mpris     ports/x11-wm/e17-module-everything-mpris
@@ -2856,7 +2857,6 @@ e17-module-flame                ports/x11-wm/e17-module-flame
 e17-module-forecasts            ports/x11-wm/e17-module-forecasts
 e17-module-iiirk                ports/x11-wm/e17-module-iiirk
 e17-module-itask                ports/x11-wm/e17-module-itask
-e17-module-itask-ng             ports/x11-wm/e17-module-itask-ng
 e17-module-language             ports/x11-wm/e17-module-language
 e17-module-mail                 ports/x11-wm/e17-module-mail
 e17-module-mem                  ports/x11-wm/e17-module-mem
@@ -6079,7 +6079,6 @@ iconv-rfc1345                   ports/converters/iconv-rfc1345
 icoutils                        ports/graphics/icoutils
 icpld                           ports/net/icpld
 icqlib                          ports/net-im/icqlib
-ics                             ports/science/ics
 icu                             ports/devel/icu
 id-aspell                       ports/textproc/id-aspell
 id-hyphen                       ports/textproc/id-hyphen
@@ -9408,6 +9407,7 @@ megaglest-data                  ports/games/megaglest-data
 megapov                         ports/graphics/megapov
 megarc                          ports/sysutils/megarc
 mehdiaplayer                    ports/audio/mehdiaplayer
+mei                             ports/science/mei
 meld                            ports/textproc/meld
 memcached                       ports/databases/memcached
 memcached12                     ports/databases/memcached12
@@ -14764,6 +14764,7 @@ p5-Test-Benchmark               ports/devel/p5-Test-Benchmark
 p5-Test-BinaryData              ports/devel/p5-Test-BinaryData
 p5-Test-Block                   ports/devel/p5-Test-Block
 p5-Test-CPAN-Meta-YAML          ports/devel/p5-Test-CPAN-Meta-YAML
+p5-Test-CheckDeps               ports/devel/p5-Test-CheckDeps
 p5-Test-CheckManifest           ports/devel/p5-Test-CheckManifest
 p5-Test-Class                   ports/devel/p5-Test-Class
 p5-Test-Class-Most              ports/devel/p5-Test-Class-Most
@@ -19350,6 +19351,7 @@ p5-test-base                    ports/devel/p5-Test-Base
 p5-test-benchmark               ports/devel/p5-Test-Benchmark
 p5-test-binarydata              ports/devel/p5-Test-BinaryData
 p5-test-block                   ports/devel/p5-Test-Block
+p5-test-checkdeps               ports/devel/p5-Test-CheckDeps
 p5-test-checkmanifest           ports/devel/p5-Test-CheckManifest
 p5-test-class                   ports/devel/p5-Test-Class
 p5-test-class-most              ports/devel/p5-Test-Class-Most
@@ -25101,7 +25103,6 @@ rubygem-prototype-rails         ports/devel/rubygem-prototype-rails
 rubygem-pry                     ports/devel/rubygem-pry
 rubygem-ptreloaded              ports/devel/rubygem-ptreloaded
 rubygem-public_suffix_service   ports/dns/rubygem-public_suffix_service
-rubygem-puppet-module           ports/sysutils/rubygem-puppet-module
 rubygem-qmail                   ports/mail/rubygem-qmail
 rubygem-racc                    ports/devel/rubygem-racc
 rubygem-rack                    ports/www/rubygem-rack
@@ -26393,7 +26394,6 @@ symbion-sslproxy                ports/security/symbion-sslproxy
 symlinks                        ports/sysutils/symlinks
 symon                           ports/sysutils/symon
 sympa                           ports/mail/sympa
-sympa5                          ports/mail/sympa5
 symports                        ports/ports-mgmt/symports
 synaesthesia                    ports/graphics/synaesthesia
 synce-gvfs                      ports/palm/synce-gvfs
@@ -29310,6 +29310,7 @@ zonecheck                       ports/dns/zonecheck
 zoneminder                      ports/multimedia/zoneminder
 zonenotify                      ports/dns/zonenotify
 zoo                             ports/archivers/zoo
+zookeeper                       ports/devel/zookeeper
 zoom                            ports/games/zoom
 zope                            ports/www/zope
 zope211                         ports/www/zope211
