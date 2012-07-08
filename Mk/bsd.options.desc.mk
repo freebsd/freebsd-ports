@@ -150,6 +150,7 @@ MMX_DESC?=		MMX optimized routines
 MODPERL_DESC?=		mod_perl support
 MODPLUG_DESC?=		Support MODPLUG decoder
 MOTIF_DESC?=		Motif widget library
+MP3_DESC?=		support for mp3
 MP4_DESC?=		support for mp4
 MPLAYER_DESC?=		support for mplayer
 MPP_DESC?=		support for musepack
