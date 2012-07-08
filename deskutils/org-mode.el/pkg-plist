@@ -1,10 +1,15 @@
 @comment $FreeBSD$
+%%EMACS_LIBDIR%%/etc/org-mode/styles/OrgOdtContentTemplate.xml
+%%EMACS_LIBDIR%%/etc/org-mode/styles/OrgOdtStyles.xml
+%%EMACS_LIBDIR%%/etc/org-mode/styles/README
 %%EMACS_SITE_LISPDIR%%/ob-C.el
 %%EMACS_SITE_LISPDIR%%/ob-C.elc
 %%EMACS_SITE_LISPDIR%%/ob-R.el
 %%EMACS_SITE_LISPDIR%%/ob-R.elc
 %%EMACS_SITE_LISPDIR%%/ob-asymptote.el
 %%EMACS_SITE_LISPDIR%%/ob-asymptote.elc
+%%EMACS_SITE_LISPDIR%%/ob-awk.el
+%%EMACS_SITE_LISPDIR%%/ob-awk.elc
 %%EMACS_SITE_LISPDIR%%/ob-calc.el
 %%EMACS_SITE_LISPDIR%%/ob-calc.elc
 %%EMACS_SITE_LISPDIR%%/ob-clojure.el
@@ -23,10 +28,14 @@
 %%EMACS_SITE_LISPDIR%%/ob-eval.elc
 %%EMACS_SITE_LISPDIR%%/ob-exp.el
 %%EMACS_SITE_LISPDIR%%/ob-exp.elc
+%%EMACS_SITE_LISPDIR%%/ob-fortran.el
+%%EMACS_SITE_LISPDIR%%/ob-fortran.elc
 %%EMACS_SITE_LISPDIR%%/ob-gnuplot.el
 %%EMACS_SITE_LISPDIR%%/ob-gnuplot.elc
 %%EMACS_SITE_LISPDIR%%/ob-haskell.el
 %%EMACS_SITE_LISPDIR%%/ob-haskell.elc
+%%EMACS_SITE_LISPDIR%%/ob-java.el
+%%EMACS_SITE_LISPDIR%%/ob-java.elc
 %%EMACS_SITE_LISPDIR%%/ob-js.el
 %%EMACS_SITE_LISPDIR%%/ob-js.elc
 %%EMACS_SITE_LISPDIR%%/ob-keys.el
@@ -35,10 +44,16 @@
 %%EMACS_SITE_LISPDIR%%/ob-latex.elc
 %%EMACS_SITE_LISPDIR%%/ob-ledger.el
 %%EMACS_SITE_LISPDIR%%/ob-ledger.elc
+%%EMACS_SITE_LISPDIR%%/ob-lilypond.el
+%%EMACS_SITE_LISPDIR%%/ob-lilypond.elc
+%%EMACS_SITE_LISPDIR%%/ob-lisp.el
+%%EMACS_SITE_LISPDIR%%/ob-lisp.elc
 %%EMACS_SITE_LISPDIR%%/ob-lob.el
 %%EMACS_SITE_LISPDIR%%/ob-lob.elc
 %%EMACS_SITE_LISPDIR%%/ob-matlab.el
 %%EMACS_SITE_LISPDIR%%/ob-matlab.elc
+%%EMACS_SITE_LISPDIR%%/ob-maxima.el
+%%EMACS_SITE_LISPDIR%%/ob-maxima.elc
 %%EMACS_SITE_LISPDIR%%/ob-mscgen.el
 %%EMACS_SITE_LISPDIR%%/ob-mscgen.elc
 %%EMACS_SITE_LISPDIR%%/ob-ocaml.el
@@ -49,6 +64,8 @@
 %%EMACS_SITE_LISPDIR%%/ob-org.elc
 %%EMACS_SITE_LISPDIR%%/ob-perl.el
 %%EMACS_SITE_LISPDIR%%/ob-perl.elc
+%%EMACS_SITE_LISPDIR%%/ob-picolisp.el
+%%EMACS_SITE_LISPDIR%%/ob-picolisp.elc
 %%EMACS_SITE_LISPDIR%%/ob-plantuml.el
 %%EMACS_SITE_LISPDIR%%/ob-plantuml.elc
 %%EMACS_SITE_LISPDIR%%/ob-python.el
@@ -65,6 +82,8 @@
 %%EMACS_SITE_LISPDIR%%/ob-screen.elc
 %%EMACS_SITE_LISPDIR%%/ob-sh.el
 %%EMACS_SITE_LISPDIR%%/ob-sh.elc
+%%EMACS_SITE_LISPDIR%%/ob-shen.el
+%%EMACS_SITE_LISPDIR%%/ob-shen.elc
 %%EMACS_SITE_LISPDIR%%/ob-sql.el
 %%EMACS_SITE_LISPDIR%%/ob-sql.elc
 %%EMACS_SITE_LISPDIR%%/ob-sqlite.el
@@ -99,8 +118,6 @@
 %%EMACS_SITE_LISPDIR%%/org-colview.elc
 %%EMACS_SITE_LISPDIR%%/org-compat.el
 %%EMACS_SITE_LISPDIR%%/org-compat.elc
-%%EMACS_SITE_LISPDIR%%/org-complete.el
-%%EMACS_SITE_LISPDIR%%/org-complete.elc
 %%EMACS_SITE_LISPDIR%%/org-crypt.el
 %%EMACS_SITE_LISPDIR%%/org-crypt.elc
 %%EMACS_SITE_LISPDIR%%/org-ctags.el
@@ -113,6 +130,8 @@
 %%EMACS_SITE_LISPDIR%%/org-docview.elc
 %%EMACS_SITE_LISPDIR%%/org-entities.el
 %%EMACS_SITE_LISPDIR%%/org-entities.elc
+%%EMACS_SITE_LISPDIR%%/org-eshell.el
+%%EMACS_SITE_LISPDIR%%/org-eshell.elc
 %%EMACS_SITE_LISPDIR%%/org-exp-blocks.el
 %%EMACS_SITE_LISPDIR%%/org-exp-blocks.elc
 %%EMACS_SITE_LISPDIR%%/org-exp.el
@@ -151,6 +170,8 @@
 %%EMACS_SITE_LISPDIR%%/org-latex.elc
 %%EMACS_SITE_LISPDIR%%/org-list.el
 %%EMACS_SITE_LISPDIR%%/org-list.elc
+%%EMACS_SITE_LISPDIR%%/org-lparse.el
+%%EMACS_SITE_LISPDIR%%/org-lparse.elc
 %%EMACS_SITE_LISPDIR%%/org-mac-message.el
 %%EMACS_SITE_LISPDIR%%/org-mac-message.elc
 %%EMACS_SITE_LISPDIR%%/org-macs.el
@@ -165,6 +186,10 @@
 %%EMACS_SITE_LISPDIR%%/org-mobile.elc
 %%EMACS_SITE_LISPDIR%%/org-mouse.el
 %%EMACS_SITE_LISPDIR%%/org-mouse.elc
+%%EMACS_SITE_LISPDIR%%/org-odt.el
+%%EMACS_SITE_LISPDIR%%/org-odt.elc
+%%EMACS_SITE_LISPDIR%%/org-pcomplete.el
+%%EMACS_SITE_LISPDIR%%/org-pcomplete.elc
 %%EMACS_SITE_LISPDIR%%/org-plot.el
 %%EMACS_SITE_LISPDIR%%/org-plot.elc
 %%EMACS_SITE_LISPDIR%%/org-protocol.el
@@ -175,6 +200,8 @@
 %%EMACS_SITE_LISPDIR%%/org-remember.elc
 %%EMACS_SITE_LISPDIR%%/org-rmail.el
 %%EMACS_SITE_LISPDIR%%/org-rmail.elc
+%%EMACS_SITE_LISPDIR%%/org-special-blocks.el
+%%EMACS_SITE_LISPDIR%%/org-special-blocks.elc
 %%EMACS_SITE_LISPDIR%%/org-src.el
 %%EMACS_SITE_LISPDIR%%/org-src.elc
 %%EMACS_SITE_LISPDIR%%/org-table.el
@@ -197,22 +224,27 @@
 %%PORTDOCS%%%%DOCSDIR%%/orgcard.pdf
 %%PORTDOCS%%%%DOCSDIR%%/orgguide.pdf
 %%DOCSDIR%%/contrib/babel/langs/ob-oz.el
+%%DOCSDIR%%/contrib/babel/langs/ob-fomus.el
 %%DOCSDIR%%/contrib/babel/library-of-babel.org
+%%DOCSDIR%%/contrib/doc/fr-orgcard.tex
 %%DOCSDIR%%/contrib/lisp/htmlize.el
 %%DOCSDIR%%/contrib/lisp/org-annotate-file.el
 %%DOCSDIR%%/contrib/lisp/org-bookmark.el
 %%DOCSDIR%%/contrib/lisp/org-checklist.el
 %%DOCSDIR%%/contrib/lisp/org-choose.el
 %%DOCSDIR%%/contrib/lisp/org-collector.el
+%%DOCSDIR%%/contrib/lisp/org-contacts.el
 %%DOCSDIR%%/contrib/lisp/org-contribdir.el
 %%DOCSDIR%%/contrib/lisp/org-depend.el
 %%DOCSDIR%%/contrib/lisp/org-drill.el
+%%DOCSDIR%%/contrib/lisp/org-element.el
 %%DOCSDIR%%/contrib/lisp/org-elisp-symbol.el
 %%DOCSDIR%%/contrib/lisp/org-eval-light.el
 %%DOCSDIR%%/contrib/lisp/org-eval.el
 %%DOCSDIR%%/contrib/lisp/org-exp-bibtex.el
 %%DOCSDIR%%/contrib/lisp/org-expiry.el
 %%DOCSDIR%%/contrib/lisp/org-export-generic.el
+%%DOCSDIR%%/contrib/lisp/org-export.el
 %%DOCSDIR%%/contrib/lisp/org-git-link.el
 %%DOCSDIR%%/contrib/lisp/org-interactive-query.el
 %%DOCSDIR%%/contrib/lisp/org-invoice.el
@@ -228,15 +260,23 @@
 %%DOCSDIR%%/contrib/lisp/org-registry.el
 %%DOCSDIR%%/contrib/lisp/org-screen.el
 %%DOCSDIR%%/contrib/lisp/org-secretary.el
-%%DOCSDIR%%/contrib/lisp/org-special-blocks.el
 %%DOCSDIR%%/contrib/lisp/org-static-mathjax.el
+%%DOCSDIR%%/contrib/lisp/org-sudoku.el
 %%DOCSDIR%%/contrib/lisp/org-toc.el
 %%DOCSDIR%%/contrib/lisp/org-track.el
 %%DOCSDIR%%/contrib/lisp/org-velocity.el
 %%DOCSDIR%%/contrib/lisp/org-wikinodes.el
+%%DOCSDIR%%/contrib/lisp/org-xhtml.el
 %%DOCSDIR%%/contrib/lisp/org2rem.el
 %%DOCSDIR%%/contrib/lisp/orgtbl-sqlinsert.el
 %%DOCSDIR%%/contrib/lisp/test-org-export-preproc.el
+%%DOCSDIR%%/contrib/odt/BasicODConverter/BasicODConverter-0.8.0.oxt
+%%DOCSDIR%%/contrib/odt/BasicODConverter/Filters.bas
+%%DOCSDIR%%/contrib/odt/BasicODConverter/Main.bas
+%%DOCSDIR%%/contrib/odt/etc/schema/od-manifest-schema-v1.2-cs01.rnc
+%%DOCSDIR%%/contrib/odt/etc/schema/od-schema-v1.2-cs01.rnc
+%%DOCSDIR%%/contrib/odt/etc/schema/schemas.xml
+%%DOCSDIR%%/contrib/odt/README.org
 %%DOCSDIR%%/contrib/README
 %%DOCSDIR%%/contrib/scripts/dir2org.zsh
 %%DOCSDIR%%/contrib/scripts/ditaa.jar
@@ -251,7 +291,12 @@
 %%DOCSDIR%%/contrib/scripts/staticmathjax/README.txt
 @dirrm %%DOCSDIR%%/contrib/babel/langs
 @dirrm %%DOCSDIR%%/contrib/babel
+@dirrm %%DOCSDIR%%/contrib/doc
 @dirrm %%DOCSDIR%%/contrib/lisp
+@dirrm %%DOCSDIR%%/contrib/odt/BasicODConverter
+@dirrm %%DOCSDIR%%/contrib/odt/etc/schema
+@dirrm %%DOCSDIR%%/contrib/odt/etc
+@dirrm %%DOCSDIR%%/contrib/odt/
 @dirrm %%DOCSDIR%%/contrib/scripts/staticmathjax/chrome/content
 @dirrm %%DOCSDIR%%/contrib/scripts/staticmathjax/chrome
 @dirrm %%DOCSDIR%%/contrib/scripts/staticmathjax/defaults/preferences
@@ -259,4 +304,7 @@
 @dirrm %%DOCSDIR%%/contrib/scripts/staticmathjax
 @dirrm %%DOCSDIR%%/contrib/scripts
 @dirrm %%DOCSDIR%%/contrib
+@dirrm %%EMACS_LIBDIR%%/etc/org-mode/styles
+@dirrm %%EMACS_LIBDIR%%/etc/org-mode
+@dirrmtry %%EMACS_LIBDIR%%/etc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
