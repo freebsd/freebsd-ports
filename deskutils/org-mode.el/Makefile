@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	org-mode.el
-PORTVERSION=	7.4
-PORTREVISION=	2
+PORTVERSION=	7.8.11
 CATEGORIES=	deskutils elisp
 MASTER_SITES=	http://orgmode.org/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -18,27 +17,33 @@ COMMENT=	An Emacs mode for notes and project planning
 
 DOCSDIR=	${PREFIX}/share/doc/org-mode
 USE_EMACS=	yes
+USE_GMAKE=	yes
 
 INFO=		org${PORTVERSION}
 
 CONTRIBS=	\
+	babel/langs/ob-fomus.el \
 	babel/langs/ob-oz.el \
 	babel/library-of-babel.org \
+	doc/fr-orgcard.tex \
 	lisp/htmlize.el \
 	lisp/org-annotate-file.el \
 	lisp/org-bookmark.el \
 	lisp/org-checklist.el \
 	lisp/org-choose.el \
 	lisp/org-collector.el \
+	lisp/org-contacts.el \
 	lisp/org-contribdir.el \
 	lisp/org-depend.el \
 	lisp/org-drill.el \
+	lisp/org-element.el \
 	lisp/org-elisp-symbol.el \
 	lisp/org-eval-light.el \
 	lisp/org-eval.el \
 	lisp/org-exp-bibtex.el \
 	lisp/org-expiry.el \
 	lisp/org-export-generic.el \
+	lisp/org-export.el \
 	lisp/org-git-link.el \
 	lisp/org-interactive-query.el \
 	lisp/org-invoice.el \
@@ -54,15 +59,23 @@ CONTRIBS=	\
 	lisp/org-registry.el \
 	lisp/org-screen.el \
 	lisp/org-secretary.el \
-	lisp/org-special-blocks.el \
 	lisp/org-static-mathjax.el \
+	lisp/org-sudoku.el \
 	lisp/org-toc.el \
 	lisp/org-track.el \
 	lisp/org-velocity.el \
 	lisp/org-wikinodes.el \
+	lisp/org-xhtml.el \
 	lisp/org2rem.el \
 	lisp/orgtbl-sqlinsert.el \
 	lisp/test-org-export-preproc.el \
+	odt/BasicODConverter/BasicODConverter-0.8.0.oxt \
+	odt/BasicODConverter/Filters.bas \
+	odt/BasicODConverter/Main.bas \
+	odt/etc/schema/od-manifest-schema-v1.2-cs01.rnc \
+	odt/etc/schema/od-schema-v1.2-cs01.rnc \
+	odt/etc/schema/schemas.xml \
+	odt/README.org \
 	README \
 	scripts/dir2org.zsh \
 	scripts/ditaa.jar \
@@ -85,7 +98,10 @@ post-patch:
 post-install:
 	${INSTALL} -d ${DOCSDIR} \
 	    ${DOCSDIR}/contrib/babel/langs \
+	    ${DOCSDIR}/contrib/doc \
 	    ${DOCSDIR}/contrib/lisp \
+	    ${DOCSDIR}/contrib/odt/BasicODConverter \
+	    ${DOCSDIR}/contrib/odt/etc/schema \
 	    ${DOCSDIR}/contrib/scripts/staticmathjax/chrome/content \
 	    ${DOCSDIR}/contrib/scripts/staticmathjax/defaults/preferences
 .for i in ${CONTRIBS}
