@@ -14,13 +14,16 @@ MASTER_SITE_SUBDIR=mod-authn-sasl/mod-authn-sasl/${PORTVERSION}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows user authentication based on libsasl2 mechanisms on apache 2.2
 
-LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+LICENSE=	AL2
+
+LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	SASLAUTHD	"Register dependency for cyrus-sasl2-saslauthd"	off
+OPTIONS_DEFINE=	SASLAUTHD
+SASLAUTHD_DESC=	cyrus-sasl2-saslauthd support
 
-LICENSE=	AL2
+.include <bsd.port.options.mk>
 
 USE_BZIP2=	yes
 USE_APACHE=	22
@@ -31,14 +34,12 @@ AP_LIB=		${LOCALBASE}/lib -lsasl2
 PORTDOCS1=	AUTHORS LICENSE
 PORTDOCS=	*
 
-.include <bsd.port.options.mk>
-
-.if defined(WITH_SASLAUTHD)
+.if ${PORT_OPTIONS:MSASLAUTHD}
 RUN_DEPENDS+=	saslauthd:${PORTSDIR}/security/cyrus-sasl2-saslauthd
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/
 	@${FIND} ${WRKSRC}/doc \( -name "*.in" -o -name "*.am" \) -delete
 .   for f in ${PORTDOCS1}

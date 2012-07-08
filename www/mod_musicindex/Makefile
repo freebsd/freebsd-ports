@@ -16,14 +16,14 @@ COMMENT=	Apache module that allows downloading and streaming of audio
 
 LICENSE=	LGPL21
 
-OPTIONS=	NLS "Native language support" on \
-		FLAC "FLAC support" off \
-		MP3 "MP3 support" on \
-		MP4 "MP4 support" off \
-		VORBIS "Ogg/Vorbis support" off \
-		LIBARCHIVE "Archive downloading support" on \
-		FILECACHE "Flat file caching support" on \
-		MYSQLCACHE "MySQL caching support" off
+OPTIONS_DEFINE=	NLS FLAC MP3 MP4 VORBIS LIBARCHIVE FILECACHE MYSQLCACHE
+OPTIONS_DEFAULT=NLS MP3 LIBARCHIVE FILECACHE
+
+LIBARCHIVE_DESC=	Archive downloading support
+FILECACHE_DESC=		Flat file caching support
+MYSQLCACHE_DESC=	MySQL caching support
+
+.include <bsd.port.options.mk>
 
 MAKE_JOBS_SAFE=	yes
 
@@ -40,70 +40,78 @@ SUB_LIST=	PORTNAME=${PORTNAME}
 
 PORTDOCS=	README
 
-.include <bsd.port.options.mk>
-
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 CFLAGS+=	-lintl
 PLIST_SUB+=	NLS=""
+CONFIGURE_ARGS+=--enable-nls
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITHOUT_FLAC)
-CONFIGURE_ARGS+=	--disable-flac
-.else
+.if ${PORT_OPTIONS:MFLAC}
 LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
+CONFIGURE_ARGS+=	--enable-flac
+.else
+CONFIGURE_ARGS+=	--disable-flac
 .endif
 
-.if defined(WITHOUT_MP3)
-CONFIGURE_ARGS+=	--disable-mp3
-.else
+.if ${PORT_OPTIONS:MMP3}
 LIB_DEPENDS+=	id3tag:${PORTSDIR}/audio/libid3tag \
 		mad:${PORTSDIR}/audio/libmad
+CONFIGURE_ARGS+=	--enable-mp3
+.else
+CONFIGURE_ARGS+=	--disable-mp3
 .endif
 
-.if defined(WITHOUT_MP4)
-CONFIGURE_ARGS+=	--disable-mp4
-.else
+.if ${PORT_OPTIONS:MMP4}
 LIB_DEPENDS+=	mp4v2:${PORTSDIR}/multimedia/mp4v2
-.endif
-
-.if defined(WITHOUT_VORBIS)
-CONFIGURE_ARGS+=	--disable-vorbis
+CONFIGURE_ARGS+=	--enable-mp4
 .else
-LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
+CONFIGURE_ARGS+=	--disable-mp4
 .endif
 
-.if defined(WITHOUT_LIBARCHIVE)
+.if ${PORT_OPTIONS:MVORBIS}
+LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
+CONFIGURE_ARGS+=	--enable-vorbis
+.else
+CONFIGURE_ARGS+=	--disable-vorbis
+.endif
+
+.if ${PORT_OPTIONS:MLIBARCHIVE}
+CONFIGURE_ARGS+=	--enable-archive
+.else
 CONFIGURE_ARGS+=	--disable-archive
 .endif
 
-.if defined(WITHOUT_FILECACHE)
+.if ${PORT_OPTIONS:MFILECACHE}
+CONFIGURE_ARGS+=	--enable-filecache
+.else
 CONFIGURE_ARGS+=	--disable-filecache
 .endif
 
-.if defined(WITHOUT_MYSQLCACHE)
-CONFIGURE_ARGS+=	--disable-mysqlcache
-.else
+.if ${PORT_OPTIONS:MMYSQLCACHE}
 USE_MYSQL=	yes
+CONFIGURE_ARGS+=	--enable-mysqlcache
+.else
+CONFIGURE_ARGS+=	--disable-mysqlcache
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/@BUILD_FOR_APACHE2/ s| -i -n musicindex| -a &|' \
 		${WRKSRC}/src/Makefile.in
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	${RM} ${WRKSRC}/po/*.gmo
 .endif
 
 post-build:
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	cd ${WRKSRC}/po && ${SETENV} ${MAKE_ENV} ${MAKE} update-gmo
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}/
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
 .endif

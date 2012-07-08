@@ -27,17 +27,20 @@ PORTDOCS=	changelog.html documentation.html download.html \
 		index.html my.css
 PORTEXAMPLES=	vhosts.sql httpd.conf.add
 
-OPTIONS=	PHP_MODULE	"Enable PHP"	on \
-		DEBUG_MODULE	"Enable debigging"	off
+OPTIONS_DEFINE=		PHP_MODULE DEBUG_MODULE PHP DEBUG
+OPTIONS_DEFAULT=	PHP_MODULE
+
+PHP_MODULE_DESC=	Enable PHP
+DEBUG_MODULE_DESC=	Enable debugging
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_DEBUG_MODULE)
+.if ${PORT_OPTIONS:MDEBUG_MODULE}
 MAKE_ENV+=	WITH_DEBUG=true
 STRIP=		# keep debug information
 .endif
 
-.if defined(WITH_PHP_MODULE)
+.if ${PORT_OPTIONS:MPHP_MODULE}
 MAKE_ENV+=	WITH_PHP=true
 USE_PHP=	yes
 USE_PHP_MOD=	yes
@@ -51,11 +54,11 @@ pre-patch:
 		-e "s|= cp|= ${CP}|" ${WRKSRC}/Makefile
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
 .endif
