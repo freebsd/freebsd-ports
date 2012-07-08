@@ -86,7 +86,7 @@ MAN8+=		auth_krb5.8
 PLIST_SUB+=	KRB5=""
 .else
 CONFIGURE_ARGS+=	--without-kerberos
-PLIST_SUB+=	KRB5="@comment"
+PLIST_SUB+=	KRB5="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
