@@ -14,20 +14,26 @@ DISTFILES=	apr-${APR_VERSION}.tar.gz apr-util-${APU_VERSION}.tar.gz
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache Portability Library
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 
 DEPRECATED= will be unsupported by ASF when 2.4.0 is released, migrate to devel/apr1 now
 EXPIRATION_DATE=    2012-02-01
 
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	THREADS "Enable Threads in apr"				on  \
-		IPV6	"Enable IPV6 Support in apr"			on  \
-		BDB	"Enable Berkley BDB support in apr-util"	on  \
-		GDBM	"Enable GNU dbm support in apr-util"		on  \
-		LDAP	"Enable LDAP support in apr-util"		off \
-		NDBM	"Enable NDBM support in apr-util"		off \
-		DEVRANDOM "Use /dev/random or compatible in apr"	on
+NO_OPTIONS_SORT=yes
+OPTIONS_DEFINE=	THREADS IPV6 BDB GDBM LDAP NDBM DEVRANDOM
+OPTIONS_DEFAULT=THREADS IPV6 BDB GDBM DEVRANDOM
+
+THREADS_DESC=	Threads in apr
+DEVRANDOM_DESC=	Use /dev/random or compatible in apr
+IPV6_DESC=	IPV6 Support in apr
+BDB_DESC=	Berkley BDB support in apr-util
+LDAP_DESC=	LDAP support in apr-util	
+GDBM_DESC=	GNU dbm support in apr-util
+NDBM_DESC=	NDBM support in apr-util
+
+.include <bsd.port.options.mk>
 
 APR_VERSION=	0.9.20
 APU_VERSION=	0.9.19
@@ -55,48 +61,46 @@ APU_CONF_ARGS=	--with-apr=${APR_WRKDIR} \
 		--with-expat=${LOCALBASE} \
 		--with-iconv=${LOCALBASE}
 
-.include <bsd.port.options.mk>
-
 ########## APR Options
-.if defined(WITHOUT_THREADS)
-APR_CONF_ARGS+=	--disable-threads
-.else
+.if ${PORT_OPTIONS:MTHREADS}
 APR_CONF_ARGS+=	--enable-threads
+.else
+APR_CONF_ARGS+=	--disable-threads
 .endif
 
-.if defined(WITHOUT_IPV6)
-APR_CONF_ARGS+=	--disable-ipv6
-.else
+.if ${PORT_OPTIONS:MIPV6}
 APR_CONF_ARGS+=	--enable-ipv6
-.endif
-
-.if defined(WITHOUT_DEVRANDOM)
-APR_CONF_ARGS+=	--without-devrandom
 .else
-APR_CONF_ARGS+=	--with-devrandom
+APR_CONF_ARGS+=	--disable-ipv6
 .endif
 
-######### APR-Util Options
-.if defined(WITHOUT_GDBM)
+.if ${PORT_OPTIONS:MDEVRANDOM}
+APR_CONF_ARGS+=	--with-devrandom
+.else
+APR_CONF_ARGS+=	--without-devrandom
+.endif
+
+#======== APR-Util Options
+.if ${PORT_OPTIONS:MGDBM}
+PLIST_SUB+=	GDBM=""
+LIB_DEPENDS+=	gdbm:${PORTSDIR}/databases/gdbm
+APU_CONF_ARGS+=	--with-gdbm=${LOCALBASE}
+.else
 PLIST_SUB+=	GDBM="@comment "
 APU_CONF_ARGS+=	--without-gdbm
-.else
-PLIST_SUB+=	GDBM=""
-LIB_DEPENDS+=	gdbm.4:${PORTSDIR}/databases/gdbm
-APU_CONF_ARGS+=	--with-gdbm=${LOCALBASE}
 .endif
 
-.if defined(WITHOUT_BDB)
-PLIST_SUB+=	BDB="@comment "
-APU_CONF_ARGS+=	--without-berkeley-db
-.else
+.if ${PORT_OPTIONS:MBDB}
 PLIST_SUB+=	BDB=""
 USE_BDB=	42+
 INVALID_BDB_VER=	50
 APU_CONF_ARGS+=	--with-berkeley-db=${BDB_INCLUDE_DIR}:${BDB_LIB_DIR}
+.else
+PLIST_SUB+=	BDB="@comment "
+APU_CONF_ARGS+=	--without-berkeley-db
 .endif
 
-.if defined(WITH_NDBM)
+.if ${PORT_OPTIONS:MNDBM}
 PLIST_SUB+=	NDBM=""
 APU_CONF_ARGS+=	--with-ndbm=/usr
 .else
@@ -104,7 +108,7 @@ PLIST_SUB+=	NDBM="@comment "
 APU_CONF_ARGS+=	--without-ndbm
 .endif
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 PLIST_SUB+=	LDAP=""
 USE_OPENLDAP=	yes
 APU_CONF_ARGS+=	--with-ldap-include=${LOCALBASE}/include \
