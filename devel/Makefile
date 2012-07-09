@@ -1007,6 +1007,7 @@
     SUBDIR += libvanessa_socket
     SUBDIR += libvc
     SUBDIR += libvirt
+    SUBDIR += libvirt-java
     SUBDIR += libvolume_id
     SUBDIR += libvshadow
     SUBDIR += libwfut
