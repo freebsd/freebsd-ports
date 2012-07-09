@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120709:
+  AFFECTS: users of math/metis
+  AUTHOR: bf@FreeBSD.org
+
+  The older version of metis has been moved to math/metis4, and
+  math/metis has been updated to 5.0.2.  Dependent ports still use
+  the old API, and the different versions of metis cannot coexist, so
+  most users should update with:
+
+  # portmaster -o math/metis4 math/metis
+  # portmaster -r math/metis4
+
+  or the equivalent.
+
 20120702:
   AFFECTS: users of databases/couchdb
   AUTHOR: crees@FreeBSD.org, Adam Strohl <adams-ports@ateamsystems.com>

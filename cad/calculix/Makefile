@@ -7,6 +7,7 @@
 
 PORTNAME=	CalculiX
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.dhondt.de/
 DISTFILES=	${DIST_SOURCES}
@@ -30,7 +31,7 @@ COMMENT=	A Three-Dimensional Structural Finite Element Program
 
 LIB_DEPENDS=	arpack.1:${PORTSDIR}/math/arpack	\
 		spooles.1:${PORTSDIR}/math/spooles \
-		metis.1:${PORTSDIR}/math/metis	\
+		metis.1:${PORTSDIR}/math/metis4	\
 		taucs.1:${PORTSDIR}/math/taucs
 
 USE_BZIP2=	yes

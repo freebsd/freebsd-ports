@@ -7,7 +7,7 @@
 
 PORTNAME=	taucs
 PORTVERSION=	2.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	math
 MASTER_SITES=	http://www.tau.ac.il/~stoledo/taucs/${PORTVERSION}/
 DISTNAME=	${PORTNAME}
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	C library of sparse linear solvers
 
-LIB_DEPENDS=	metis.1:${PORTSDIR}/math/metis
+LIB_DEPENDS=	metis.1:${PORTSDIR}/math/metis4
 
 HAS_CONFIGURE=	yes
 USE_FORTRAN=	yes

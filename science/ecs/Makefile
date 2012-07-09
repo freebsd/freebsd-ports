@@ -67,11 +67,11 @@ MAN1=	cs_io_dump.1 cs_partition.1 cs_preprocess-config.1 cs_preprocess.1
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/bin/partdmesh)
-# The regular metis is there, cannot depends on metis-edf
-LIB_DEPENDS+=	metis.1:${PORTSDIR}/math/metis
+# The regular metis is present, so we cannot depend on metis-edf
+LIB_DEPENDS+=	metis.1:${PORTSDIR}/math/metis4
 .else
 # Prefer metis-edf to avoid conflict with Code_Aster
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libmetis.a:${PORTSDIR}/math/metis-edf
+BUILD_DEPENDS+=	${LOCALBASE}/bin/onmetis.exe:${PORTSDIR}/math/metis-edf
 .endif
 
 .if ${ARCH} == "i386"

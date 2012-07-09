@@ -67,7 +67,7 @@ CONFIGURE_ARGS+=	--with-mpi=no
 .endif
 
 .if defined(WITH_METIS)
-LIB_DEPENDS+=	metis:${PORTSDIR}/math/metis
+LIB_DEPENDS+=	metis.1:${PORTSDIR}/math/metis4
 CONFIGURE_ARGS+=	--with-metis=yes
 CPPFLAGS+=	-I${LOCALBASE}/include/metis
 .else
@@ -82,7 +82,7 @@ CONFIGURE_ARGS+=	--with-chaco=no
 .endif
 
 .if defined(WITH_GINAC)
-LIB_DEPENDS+=	metis:${PORTSDIR}/math/metis \
+LIB_DEPENDS+=	metis.1:${PORTSDIR}/math/metis4 \
 		ginac:${PORTSDIR}/math/GiNaC
 CONFIGURE_ARGS+=	--with-ginac=yes
 CPPFLAGS+=	-I${LOCALBASE}/include/metis

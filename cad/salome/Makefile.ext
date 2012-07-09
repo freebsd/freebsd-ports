@@ -231,9 +231,9 @@ BUILD_DEPENDS+=		${PYTHON_SITELIBDIR}/PyQt4/QtXml.so:${PORTSDIR}/textproc/py-qt4
 
 #Dependency from metis & scotsch
 .if ${SAL_MODULE} == "med"
-. if exists(${LOCALBASE}/bin/graphchk)
-BUILD_DEPENDS+=		kmetis:${PORTSDIR}/math/metis
-RUN_DEPENDS+=		kmetis:${PORTSDIR}/math/metis
+. if exists(${LOCALBASE}/bin/oemetis)
+BUILD_DEPENDS+=		kmetis:${PORTSDIR}/math/metis4
+RUN_DEPENDS+=		kmetis:${PORTSDIR}/math/metis4
 . else
 BUILD_DEPENDS+=		kmetis:${PORTSDIR}/math/metis-edf
 RUN_DEPENDS+=		kmetis:${PORTSDIR}/math/metis-edf

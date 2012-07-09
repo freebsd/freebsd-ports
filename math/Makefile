@@ -233,6 +233,7 @@
     SUBDIR += mbasecalc
     SUBDIR += metis
     SUBDIR += metis-edf
+    SUBDIR += metis4
     SUBDIR += mingw32-libgmp
     SUBDIR += miracl
     SUBDIR += moo
