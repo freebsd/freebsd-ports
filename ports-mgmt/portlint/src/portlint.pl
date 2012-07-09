@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.245 2012/05/20 05:12:07 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.250 2012/07/09 01:37:29 marcus Exp $
 #
 
 use strict;
@@ -52,7 +52,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 13;
-my $micro = 10;
+my $micro = 11;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -193,7 +193,7 @@ my @varlist =  qw(
 	PORTNAME PORTVERSION PORTREVISION PORTEPOCH PKGNAME PKGNAMEPREFIX
 	PKGNAMESUFFIX DISTVERSIONPREFIX DISTVERSION DISTVERSIONSUFFIX
 	DISTNAME DISTFILES CATEGORIES MASTERDIR MAINTAINER MASTER_SITES
-	WRKDIR WRKSRC NO_WRKSUBDIR PATCHDIR SCRIPTDIR FILESDIR
+	WRKDIR WRKSRC NO_WRKSUBDIR SCRIPTDIR FILESDIR
 	PKGDIR COMMENT DESCR PLIST PKGCATEGORY PKGINSTALL PKGDEINSTALL
 	PKGREQ PKGMESSAGE DISTINFO_FILE .CURDIR USE_LDCONFIG USE_AUTOTOOLS
 	INDEXFILE PKGORIGIN CONFLICTS PKG_VERSION PKGINSTALLVER
@@ -302,7 +302,7 @@ if ($checkmfiles) {
 		$checker{$i} = \&checkmfile;
 	}
 }
-foreach my $i (<$makevar{PATCHDIR}/patch-*>) {
+foreach my $i (<$makevar{FILESDIR}/patch-*>) {
 	next if (! -T $i);
 	next if (defined $checker{$i});
 	push(@checker, $i);
@@ -722,7 +722,7 @@ sub checkplist {
 	# no %%PORTRUBY_MODDOC%% substitution.
 	my %check_xxxdir_ok = (
 		"DOCS"				=> "DOCS",
-		"EXAMPLES"			=> "EXPAMPLES",
+		"EXAMPLES"			=> "EXAMPLES",
 		"DATA"				=> "DATA",
 		"RUBY_DOC"			=> "DOCS",
 		"RUBY_EXAMPLES"		=> "EXAMPLES",
@@ -1381,6 +1381,8 @@ sub checkmakefile {
 	my %autocmdnames = ();
 	my $pre_mk_line = 0;
 	my $options_mk_line = 0;
+	my $docsused = 0;
+	my $nlsused = 0;
 
 	open(IN, "< $file") || return 0;
 	$rawwhole = '';
@@ -1735,7 +1737,7 @@ sub checkmakefile {
 	}
 
 	#
-	# whole file: IS_INTERACTIVE/NOPORTDOCS
+	# whole file: IS_INTERACTIVE/NOPORTDOCS|PORT_OPTIONS:MDOCS
 	#
 	print "OK: checking IS_INTERACTIVE.\n" if ($verbose);
 	if ($whole =~ /\nIS_INTERACTIVE/) {
@@ -1746,6 +1748,10 @@ sub checkmakefile {
 				"FOR_CDROM.");
 		}
 	}
+	print "OK: checking for use of PORT_OPTIONS:MDOCS.\n" if ($verbose);
+	if ($sharedocused && $whole =~ /PORT_OPTIONS:MDOCS/) {
+		$docsused++;
+	}
 	print "OK: checking for use of NOPORTDOCS.\n" if ($verbose);
 	if ($whole =~ /NOPORTSDOC/) {
 		my $lineno = &linenumber($`);
@@ -1755,17 +1761,37 @@ sub checkmakefile {
 	if ($sharedocused && $whole !~ /defined\s*\(?NOPORTDOCS\)?/
 	 && $whole !~ /def\s*\(?NOPORTDOCS\)?/
 	 && $whole !~ m#(\$[\{\(]PREFIX[\}\)]|$localbase)/share/doc#) {
-		&perror("WARN", $file, -1, "use \".if !defined(NOPORTDOCS)\" to wrap ".
-			"installation of files into $localbase/share/doc.");
+	 	if ($docsused == 0) {
+			&perror("WARN", $file, -1, "use \".if !defined(NOPORTDOCS)\" to wrap ".
+				"installation of files into $localbase/share/doc.");
+		}
+	} else {
+		$docsused++;
+	}
+	if ($docsused > 1) {
+		&perror("FATAL", $file, -1, "Both NOPORTDOCS and PORT_OPTIONS:MDOCS are found ".
+			"Remove one or another.");
 	}
 
 	#
 	# whole file: check for USE_GETTEXT
 	#
+	print "OK: checking for USE_GETTEXT without PORT_OPTIONS:MNLS.\n" if ($verbose);
+	if ($whole =~ /\nUSE_GETTEXT/ && $whole =~ /PORT_OPTIONS:MNLS/) {
+		$nlsused++;
+	}
 	print "OK: checking for USE_GETTEXT without WITHOUT_NLS.\n" if ($verbose);
 	if ($whole =~ /\nUSE_GETTEXT/ && $whole !~ /def(?:ined)?\s*\(?WITHOUT_NLS\)?/) {
+		if ($nlsused == 0) {
 			&perror("WARN", $file, -1, "Consider adding support for a WITHOUT_NLS ".
 					"knob to conditionally disable gettext support.");
+		}
+	} else {
+		$nlsused++;
+	}
+	if ($nlsused > 1) {
+		&perror("FATAL", $file, -1, "Both WITHOUT_NLS and PORT_OPTIONS:MNLS are found ".
+			"Remove one or another.");
 	}
 
 	#
