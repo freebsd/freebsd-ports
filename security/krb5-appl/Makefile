@@ -31,6 +31,7 @@ USE_OPENSSL=		yes
 USE_GMAKE=		yes
 USE_PERL5_BUILD=	yes
 USE_LDCONFIG=		yes
+USE_CSTD=		gnu89
 USE_AUTOTOOLS=		libtool autoheader autoconf
 CONFIGURE_ARGS?=	--enable-shared --with-krb5=${PREFIX}/bin/krb5-config
 CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC=/usr/bin/yacc
