@@ -36,7 +36,7 @@ _pwd=`pwd`
 sed '/^#/d;/^[[:space:]]*$/d' "${_conf}" | while read _line; do
     for _port in ${_line%%:*}; do
         if [ "${_pwd%%${_port}}" != "${_pwd}" ]; then
-            echo ${_line#*:} | sed -E 's/([A-Z0-9_]+)(=([^|]+))?/\1=\3/g;s/!([A-Z0-9_]+)=([^|]+)?/.undef \1/g;s/ *\| */|/g;s/ /%/g'
+            echo ${_line#*:} | sed -E 's/([A-Za-z0-9_]+)(=([^|]+))?/\1=\3/g;s/!([A-Za-z0-9_]+)=([^|]+)?/.undef \1/g;s/ *\| */|/g;s/ /%/g'
         fi
     done
 done
