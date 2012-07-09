@@ -2,7 +2,6 @@
 %%SITE_PERL%%/IO/Async/Channel.pm
 %%SITE_PERL%%/IO/Async/ChildManager.pm
 %%SITE_PERL%%/IO/Async/Connector.pm
-%%SITE_PERL%%/IO/Async/DetachedCode.pm
 %%SITE_PERL%%/IO/Async/File.pm
 %%SITE_PERL%%/IO/Async/FileStream.pm
 %%SITE_PERL%%/IO/Async/Function.pm
@@ -41,6 +40,5 @@
 @dirrmtry %%SITE_PERL%%/IO/Async/OS
 @dirrmtry %%SITE_PERL%%/IO/Async/Loop
 @dirrmtry %%SITE_PERL%%/IO/Async/Internals
-@dirrmtry %%SITE_PERL%%/IO/Async/DetachedCode
 @dirrmtry %%SITE_PERL%%/IO/Async
 @dirrmtry %%SITE_PERL%%/IO
