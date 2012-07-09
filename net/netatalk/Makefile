@@ -7,7 +7,7 @@
 
 PORTNAME=	netatalk
 PORTVERSION=	2.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net print
 MASTER_SITES=	SF
@@ -110,6 +110,7 @@ LIB_DEPENDS+=		avahi-client.3:${PORTSDIR}/net/avahi-app
 USE_GNOME+=		pkgconfig
 SUB_LIST+=		ZEROCONF="avahi_daemon"
 .else
+CONFIGURE_ARGS+=	--disable-zerconf
 SUB_LIST+=		ZEROCONF=""
 .endif
 
