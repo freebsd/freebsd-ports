@@ -23,6 +23,7 @@ COMMENT=	Argand Library: large eigenvalue subroutines (serial version)
 CONFLICTS=	arpack-ng-[0-9]*
 FFLAGS+=	-ffixed-line-length-none
 LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_JOBS_UNSAFE=	yes
 USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
 WRKSRC =	${WRKDIR}/ARPACK
