@@ -7,7 +7,7 @@
 
 PORTNAME=	lash
 PORTVERSION=	0.5.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	SAVANNAH
 
@@ -17,9 +17,9 @@ COMMENT=	Session management system for JACK audio applications
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
-		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat
+LIB_DEPENDS=	jack:${PORTSDIR}/audio/jack \
+		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid \
+		dssialsacompat:${PORTSDIR}/audio/libdssialsacompat
 
 USE_GNOME=	gnomehack gtk20 libxml2
 USE_GMAKE=	yes
@@ -31,10 +31,22 @@ MAKE_JOBS_SAFE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include/dssi -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
+PORTDOCS=	lash-manual.html
 
-.if exists(${LOCALBASE}/lib/libreadline.so.6)
-LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html
 .endif
 
-.include <bsd.port.post.mk>
+post-extract:
+	@${REINPLACE_CMD} -e 's|texi2html --number|texi2html|' \
+		${WRKSRC}/docs/Makefile.in
+
+.if ${PORT_OPTIONS:MDOCS}
+post-install:
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/lash-manual-html-one-page/lash-manual.html ${DOCSDIR}
+.endif
+
+.include <bsd.port.mk>
