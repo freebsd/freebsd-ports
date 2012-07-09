@@ -1,0 +1,6 @@
+lib/kde4/kcm_kpartsplugin.so
+share/kde4/services/kcm_kpartsplugin.desktop
+@cwd %%LOCALBASE%%
+mozilla/plugins/libkpartsplugin.so
+@dirrmtry mozilla/plugins
+@dirrmtry mozilla
