@@ -1057,6 +1057,7 @@
     SUBDIR += yed
     SUBDIR += yukon
     SUBDIR += zathura
+    SUBDIR += zathura-djvu
     SUBDIR += zathura-pdf-poppler
     SUBDIR += zbar
     SUBDIR += zgv
