@@ -51,8 +51,8 @@
 +   kd = kvm_open(NULL, _PATH_DEVNULL, NULL, O_RDONLY, NULL);
 +   assert(kd != NULL);
 +   kvm_getswapinfo(kd, kvmswapinfo, 1, 0);
-+   this->totalSwap = kvmswapinfo[0].ksw_total * PAGE_SIZE / KB;
-+   this->usedSwap = kvmswapinfo[0].ksw_used * PAGE_SIZE / KB;
++   this->totalSwap = kvmswapinfo[0].ksw_total * (PAGE_SIZE / KB);
++   this->usedSwap = kvmswapinfo[0].ksw_used * (PAGE_SIZE / KB);
 +   kvm_close(kd);
 +   len = sizeof(this->totalMem);
 +   SYSCTLBYNAME("vm.stats.vm.v_page_count", this->totalMem, len);
