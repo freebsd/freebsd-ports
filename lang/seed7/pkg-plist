@@ -10,11 +10,14 @@ lib/seed7/bitmapfont.s7i
 lib/seed7/bitset.s7i
 lib/seed7/bitsetof.s7i
 lib/seed7/boolean.s7i
+lib/seed7/bstring.s7i
 lib/seed7/cards.s7i
+lib/seed7/category.s7i
 lib/seed7/cgi.s7i
 lib/seed7/char.s7i
 lib/seed7/charsets.s7i
 lib/seed7/chartype.s7i
+lib/seed7/clib_file.s7i
 lib/seed7/color.s7i
 lib/seed7/complex.s7i
 lib/seed7/console.s7i
@@ -25,7 +28,9 @@ lib/seed7/dir.s7i
 lib/seed7/draw.s7i
 lib/seed7/duration.s7i
 lib/seed7/echo.s7i
+lib/seed7/enable_input.s7i
 lib/seed7/enable_io.s7i
+lib/seed7/enable_output.s7i
 lib/seed7/encoding.s7i
 lib/seed7/external_file.s7i
 lib/seed7/field.s7i
