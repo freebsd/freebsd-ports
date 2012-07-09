@@ -1,0 +1,17 @@
+Index: src/java/org/jivesoftware/openfire/session/LocalIncomingServerSession.java
+===================================================================
+--- src/java/org/jivesoftware/openfire/session/LocalIncomingServerSession.java	(wersja 12902)
++++ src/java/org/jivesoftware/openfire/session/LocalIncomingServerSession.java	(kopia robocza)
+@@ -122,7 +122,11 @@
+             openingStream.append(" xmlns=\"jabber:server\"");
+             openingStream.append(" from=\"").append(serverName).append("\"");
+             openingStream.append(" id=\"").append(streamID).append("\"");
+-            openingStream.append(" version=\"1.0\">");
++            if (serverVersion[0] >= 1) {
++                openingStream.append(" version=\"1.0\">");
++            } else {
++                openingStream.append(">");
++            }
+             connection.deliverRawText(openingStream.toString());
+ 
+             if (serverVersion[0] >= 1) {        	
