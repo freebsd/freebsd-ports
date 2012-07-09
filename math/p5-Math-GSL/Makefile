@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Math-GSL
-PORTVERSION=	0.26
+PORTVERSION=	0.27
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,15 +14,17 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A perl interface to GNU Scientific Library
 
-BUILD_DEPENDS=	p5-ExtUtils-PkgConfig>=1.03:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig
-LIB_DEPENDS=	gsl.16:${PORTSDIR}/math/gsl
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	p5-ExtUtils-PkgConfig>=1.03:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig
+LIB_DEPENDS=	gsl:${PORTSDIR}/math/gsl
 TEST_DEPENDS=	p5-Test-Class>=0.12:${PORTSDIR}/devel/p5-Test-Class \
 		p5-Test-Exception>=0.21:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Most>=0:${PORTSDIR}/devel/p5-Test-Most
 
+CFLAGS+=	-I${LOCALBASE}/include
 PERL_MODBUILD=	yes
-MAKE_ENV=	INC="-I${LOCALBASE}/include"
 
 MAN1=		smolder_smoke_signal.1
 MAN3=		Math::GSL.3 \
@@ -74,7 +76,8 @@ MAN3=		Math::GSL.3 \
 		Math::GSL::Test.3 \
 		Math::GSL::Vector.3 \
 		Math::GSL::VectorComplex.3 \
-		Math::GSL::Wavelet.3
+		Math::GSL::Wavelet.3 \
+		Math::GSL::Wavelet2D.3
 
 .include <bsd.port.pre.mk>
 
