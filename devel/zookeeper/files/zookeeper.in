@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $FreeBSD: /tmp/pcvs/ports/devel/zookeeper/files/Attic/zookeeper,v 1.1 2012-07-06 20:27:35 gnn Exp $
+# $FreeBSD$
 #
 # PROVIDE: zookeeper
 #
@@ -18,7 +18,7 @@ load_rc_config zookeeper
 zookeeper_enable=${zookeeper_enable:-"NO"}
 
 name=zookeeper
-rcvar=`set_rcvar`
+rcvar=zookeeper_enable
 
 start_cmd="zookeeper_command start"
 stop_cmd="zookeeper_command stop"

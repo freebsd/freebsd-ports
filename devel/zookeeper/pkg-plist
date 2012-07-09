@@ -336,7 +336,6 @@ zookeeper/bin/zkEnv.cmd
 zookeeper/bin/zkServer.sh
 zookeeper/bin/zkEnv.sh
 zookeeper/bin/README.txt
-etc/rc.d/zookeeper
 include/c-client-src/zookeeper.h
 include/c-client-src/zookeeper_version.h
 include/c-client-src/zookeeper_log.h
