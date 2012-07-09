@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zlib
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.7
 CATEGORIES=	archivers
 MASTER_SITES=	SF/libpng/${PORTNAME}/${PORTVERSION} \
 		http://zlib.net/
@@ -27,7 +27,7 @@ PLIST_FILES=	include/zconf.h \
 		lib/libz.so \
 		lib/libz.a \
 		lib/libz.so.1 \
-		lib/libz.so.1.2.6 \
+		lib/libz.so.1.2.7 \
 		lib/pkgconfig/zlib.pc
 PLIST_DIRS=	lib/pkgconfig
 
