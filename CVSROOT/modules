@@ -21989,7 +21989,6 @@ postfix-policyd-spf-perl        ports/mail/postfix-policyd-spf-perl
 postfix-policyd-spf-python      ports/mail/postfix-policyd-spf-python
 postfix-policyd-weight          ports/mail/postfix-policyd-weight
 postfix-postfwd                 ports/mail/postfix-postfwd
-postfix25                       ports/mail/postfix25
 postfix26                       ports/mail/postfix26
 postfix27                       ports/mail/postfix27
 postfix28                       ports/mail/postfix28
