@@ -19,27 +19,29 @@ LICENSE_COMB=	dual
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPL
 LICENSE_FILE_MPL=	${WRKSRC}/COPYING.MPL
 
+OPTIONS_DEFINE=	RCC
+
+RCC_DESC=	Build with RusXMMS librcc patches (experimental)
+
 USE_CMAKE=	yes
 CMAKE_ARGS=	-DWITH_ASF:BOOL=ON \
 		-DWITH_MP4:BOOL=ON
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	RCC "Build with RusXMMS librcc patches (experimental)" off
-
 .include <bsd.port.options.mk>
 
-.if defined(WITH_RCC)
+.if ${PORT_OPTIONS:MRCC}
 PKGNAMESUFFIX=	-rcc
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-rcc
-LIB_DEPENDS+=	rcc.2:${PORTSDIR}/devel/librcc
+LIB_DEPENDS+=	rcc:${PORTSDIR}/devel/librcc
 PLIST_SUB+=	RCC=""
 .else
 PLIST_SUB+=	RCC="@comment "
 .endif
 
 post-patch:
-.if defined(WITH_RCC)
+.if ${PORT_OPTIONS:MRCC}
 	@${REINPLACE_CMD} -e 's|-ltag|-ltag -lrcc|g' \
 		${WRKSRC}/taglib.pc.cmake ${WRKSRC}/taglib-config.cmake \
 		${WRKSRC}/bindings/c/taglib_c.pc.cmake
