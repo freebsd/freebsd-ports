@@ -13,11 +13,15 @@ MASTER_SITES=	SF
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Compares two text files by word, by character, or by line
 
+OPTIONS_DEFINE=	DOCS
+
 NO_BUILD=	yes
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	iconv
 
 PORTDOCS=	readme.html readme.en.html readme.ja.html
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -31,7 +35,7 @@ do-install:
 	cd ${WRKSRC}/${PORTNAME}/ && ${COPYTREE_SHARE} . ${RUBY_SITELIBDIR}/${PORTNAME}/
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.rb ${PREFIX}/bin/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf.example ${PREFIX}/etc/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${INSTALL} -d ${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
