@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTNAME}-${PORTVERSION} \
 		http://files.wesnoth.org/
 
-MAINTAINER=	philip@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fantasy turn-based strategy game
 
 LICENSE=	GPLv2 GPLv3
