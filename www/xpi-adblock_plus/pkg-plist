@@ -1,0 +1,537 @@
+%%XPI_XPIDIR%%/bootstrap.js
+%%XPI_XPIDIR%%/chrome/content/errors.html
+%%XPI_XPIDIR%%/chrome/content/objtabs.css
+%%XPI_XPIDIR%%/chrome/content/ui/composer.js
+%%XPI_XPIDIR%%/chrome/content/ui/composer.xul
+%%XPI_XPIDIR%%/chrome/content/ui/fennecSettings.xul
+%%XPI_XPIDIR%%/chrome/content/ui/filters-backup.js
+%%XPI_XPIDIR%%/chrome/content/ui/filters-filteractions.js
+%%XPI_XPIDIR%%/chrome/content/ui/filters-filterview.js
+%%XPI_XPIDIR%%/chrome/content/ui/filters-search.js
+%%XPI_XPIDIR%%/chrome/content/ui/filters-subscriptionactions.js
+%%XPI_XPIDIR%%/chrome/content/ui/filters-subscriptionview.js
+%%XPI_XPIDIR%%/chrome/content/ui/filters.js
+%%XPI_XPIDIR%%/chrome/content/ui/filters.xul
+%%XPI_XPIDIR%%/chrome/content/ui/firstRun.js
+%%XPI_XPIDIR%%/chrome/content/ui/firstRun.xhtml
+%%XPI_XPIDIR%%/chrome/content/ui/flasher.js
+%%XPI_XPIDIR%%/chrome/content/ui/overlay.xul
+%%XPI_XPIDIR%%/chrome/content/ui/progressBar.js
+%%XPI_XPIDIR%%/chrome/content/ui/progressBar.xul
+%%XPI_XPIDIR%%/chrome/content/ui/sendReport.js
+%%XPI_XPIDIR%%/chrome/content/ui/sendReport.xul
+%%XPI_XPIDIR%%/chrome/content/ui/settings.xul
+%%XPI_XPIDIR%%/chrome/content/ui/sidebar.js
+%%XPI_XPIDIR%%/chrome/content/ui/sidebar.xul
+%%XPI_XPIDIR%%/chrome/content/ui/sidebarDetached.xul
+%%XPI_XPIDIR%%/chrome/content/ui/subscriptionSelection.js
+%%XPI_XPIDIR%%/chrome/content/ui/subscriptionSelection.xul
+%%XPI_XPIDIR%%/chrome/content/ui/subscriptions.xml
+%%XPI_XPIDIR%%/chrome/content/ui/utils.js
+%%XPI_XPIDIR%%/chrome/locale/ar/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/ar/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/ar/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/ar/global.properties
+%%XPI_XPIDIR%%/chrome/locale/ar/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/ar/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/ar/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/ar/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/bg/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/bg/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/bg/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/bg/global.properties
+%%XPI_XPIDIR%%/chrome/locale/bg/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/bg/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/bg/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/bg/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/ca/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/ca/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/ca/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/ca/global.properties
+%%XPI_XPIDIR%%/chrome/locale/ca/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/ca/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/ca/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/ca/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/cs/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/cs/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/cs/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/cs/global.properties
+%%XPI_XPIDIR%%/chrome/locale/cs/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/cs/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/cs/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/cs/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/da/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/da/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/da/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/da/global.properties
+%%XPI_XPIDIR%%/chrome/locale/da/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/da/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/da/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/da/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/de/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/de/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/de/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/de/global.properties
+%%XPI_XPIDIR%%/chrome/locale/de/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/de/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/de/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/de/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/el/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/el/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/el/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/el/global.properties
+%%XPI_XPIDIR%%/chrome/locale/el/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/el/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/el/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/el/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-GB/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-GB/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-GB/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-GB/global.properties
+%%XPI_XPIDIR%%/chrome/locale/en-GB/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-GB/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-GB/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-GB/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-US/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-US/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-US/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-US/global.properties
+%%XPI_XPIDIR%%/chrome/locale/en-US/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-US/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-US/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-US/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/eo/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/eo/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/eo/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/eo/global.properties
+%%XPI_XPIDIR%%/chrome/locale/eo/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/eo/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/eo/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/eo/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-AR/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-AR/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-AR/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-AR/global.properties
+%%XPI_XPIDIR%%/chrome/locale/es-AR/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-AR/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-AR/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-AR/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-ES/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-ES/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-ES/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-ES/global.properties
+%%XPI_XPIDIR%%/chrome/locale/es-ES/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-ES/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-ES/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-ES/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-MX/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-MX/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-MX/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-MX/global.properties
+%%XPI_XPIDIR%%/chrome/locale/es-MX/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-MX/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-MX/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-MX/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/et/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/et/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/et/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/et/global.properties
+%%XPI_XPIDIR%%/chrome/locale/et/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/et/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/et/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/et/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/fa/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/fa/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/fa/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/fa/global.properties
+%%XPI_XPIDIR%%/chrome/locale/fa/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/fa/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/fa/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/fa/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/fi/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/fi/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/fi/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/fi/global.properties
+%%XPI_XPIDIR%%/chrome/locale/fi/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/fi/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/fi/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/fi/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/fr/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/fr/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/fr/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/fr/global.properties
+%%XPI_XPIDIR%%/chrome/locale/fr/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/fr/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/fr/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/fr/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/fy-NL/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/fy-NL/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/fy-NL/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/fy-NL/global.properties
+%%XPI_XPIDIR%%/chrome/locale/fy-NL/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/fy-NL/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/fy-NL/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/fy-NL/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/gl/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/gl/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/gl/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/gl/global.properties
+%%XPI_XPIDIR%%/chrome/locale/gl/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/gl/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/gl/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/gl/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/he/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/he/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/he/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/he/global.properties
+%%XPI_XPIDIR%%/chrome/locale/he/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/he/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/he/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/he/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/hr/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/hr/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/hr/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/hr/global.properties
+%%XPI_XPIDIR%%/chrome/locale/hr/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/hr/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/hr/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/hr/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/hsb/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/hsb/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/hsb/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/hsb/global.properties
+%%XPI_XPIDIR%%/chrome/locale/hsb/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/hsb/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/hsb/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/hsb/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/hu/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/hu/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/hu/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/hu/global.properties
+%%XPI_XPIDIR%%/chrome/locale/hu/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/hu/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/hu/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/hu/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/hy-AM/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/hy-AM/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/hy-AM/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/hy-AM/global.properties
+%%XPI_XPIDIR%%/chrome/locale/hy-AM/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/hy-AM/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/hy-AM/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/hy-AM/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/is/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/is/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/is/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/is/global.properties
+%%XPI_XPIDIR%%/chrome/locale/is/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/is/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/is/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/is/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/it/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/it/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/it/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/it/global.properties
+%%XPI_XPIDIR%%/chrome/locale/it/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/it/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/it/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/it/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/ja/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/ja/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/ja/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/ja/global.properties
+%%XPI_XPIDIR%%/chrome/locale/ja/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/ja/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/ja/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/ja/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/ka-GE/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/ka-GE/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/ka-GE/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/ka-GE/global.properties
+%%XPI_XPIDIR%%/chrome/locale/ka-GE/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/ka-GE/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/ka-GE/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/ka-GE/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/kk-KZ/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/kk-KZ/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/kk-KZ/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/kk-KZ/global.properties
+%%XPI_XPIDIR%%/chrome/locale/kk-KZ/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/kk-KZ/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/kk-KZ/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/kk-KZ/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/ko/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/ko/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/ko/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/ko/global.properties
+%%XPI_XPIDIR%%/chrome/locale/ko/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/ko/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/ko/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/ko/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/lt/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/lt/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/lt/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/lt/global.properties
+%%XPI_XPIDIR%%/chrome/locale/lt/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/lt/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/lt/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/lt/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/lv/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/lv/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/lv/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/lv/global.properties
+%%XPI_XPIDIR%%/chrome/locale/lv/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/lv/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/lv/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/lv/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/mn/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/mn/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/mn/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/mn/global.properties
+%%XPI_XPIDIR%%/chrome/locale/mn/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/mn/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/mn/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/mn/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/ms-MY/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/ms-MY/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/ms-MY/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/ms-MY/global.properties
+%%XPI_XPIDIR%%/chrome/locale/ms-MY/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/ms-MY/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/ms-MY/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/ms-MY/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/nl/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/nl/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/nl/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/nl/global.properties
+%%XPI_XPIDIR%%/chrome/locale/nl/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/nl/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/nl/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/nl/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/pl/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/pl/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/pl/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/pl/global.properties
+%%XPI_XPIDIR%%/chrome/locale/pl/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/pl/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/pl/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/pl/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/global.properties
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-BR/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-PT/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-PT/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-PT/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-PT/global.properties
+%%XPI_XPIDIR%%/chrome/locale/pt-PT/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-PT/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-PT/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/pt-PT/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/ro/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/ro/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/ro/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/ro/global.properties
+%%XPI_XPIDIR%%/chrome/locale/ro/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/ro/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/ro/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/ro/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/ru/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/ru/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/ru/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/ru/global.properties
+%%XPI_XPIDIR%%/chrome/locale/ru/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/ru/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/ru/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/ru/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/sk/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/sk/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/sk/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/sk/global.properties
+%%XPI_XPIDIR%%/chrome/locale/sk/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/sk/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/sk/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/sk/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/sl/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/sl/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/sl/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/sl/global.properties
+%%XPI_XPIDIR%%/chrome/locale/sl/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/sl/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/sl/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/sl/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/sq/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/sq/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/sq/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/sq/global.properties
+%%XPI_XPIDIR%%/chrome/locale/sq/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/sq/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/sq/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/sq/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/sr/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/sr/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/sr/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/sr/global.properties
+%%XPI_XPIDIR%%/chrome/locale/sr/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/sr/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/sr/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/sr/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/sv-SE/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/sv-SE/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/sv-SE/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/sv-SE/global.properties
+%%XPI_XPIDIR%%/chrome/locale/sv-SE/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/sv-SE/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/sv-SE/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/sv-SE/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/th/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/th/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/th/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/th/global.properties
+%%XPI_XPIDIR%%/chrome/locale/th/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/th/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/th/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/th/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/tr/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/tr/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/tr/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/tr/global.properties
+%%XPI_XPIDIR%%/chrome/locale/tr/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/tr/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/tr/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/tr/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/uk/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/uk/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/uk/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/uk/global.properties
+%%XPI_XPIDIR%%/chrome/locale/uk/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/uk/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/uk/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/uk/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/vi/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/vi/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/vi/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/vi/global.properties
+%%XPI_XPIDIR%%/chrome/locale/vi/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/vi/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/vi/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/vi/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/global.properties
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-CN/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-TW/composer.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-TW/filters.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-TW/firstRun.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-TW/global.properties
+%%XPI_XPIDIR%%/chrome/locale/zh-TW/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-TW/sendReport.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-TW/sidebar.dtd
+%%XPI_XPIDIR%%/chrome/locale/zh-TW/subscriptionSelection.dtd
+%%XPI_XPIDIR%%/chrome/skin/abp-icon-big.png
+%%XPI_XPIDIR%%/chrome/skin/abp-status-16.png
+%%XPI_XPIDIR%%/chrome/skin/abp-status.png
+%%XPI_XPIDIR%%/chrome/skin/checkbox.png
+%%XPI_XPIDIR%%/chrome/skin/close.png
+%%XPI_XPIDIR%%/chrome/skin/composer.css
+%%XPI_XPIDIR%%/chrome/skin/filters.css
+%%XPI_XPIDIR%%/chrome/skin/firstRun.css
+%%XPI_XPIDIR%%/chrome/skin/item-state.png
+%%XPI_XPIDIR%%/chrome/skin/overlay.css
+%%XPI_XPIDIR%%/chrome/skin/sendReport.css
+%%XPI_XPIDIR%%/chrome/skin/sidebar.css
+%%XPI_XPIDIR%%/chrome/skin/slow.png
+%%XPI_XPIDIR%%/chrome/skin/subscriptionSelection.css
+%%XPI_XPIDIR%%/chrome.manifest
+%%XPI_XPIDIR%%/defaults/patterns.ini
+%%XPI_XPIDIR%%/defaults/prefs.js
+%%XPI_XPIDIR%%/icon.png
+%%XPI_XPIDIR%%/icon64.png
+%%XPI_XPIDIR%%/install.rdf
+%%XPI_XPIDIR%%/lib/Public.jsm
+%%XPI_XPIDIR%%/lib/appSupport.js
+%%XPI_XPIDIR%%/lib/contentPolicy.js
+%%XPI_XPIDIR%%/lib/elemHide.js
+%%XPI_XPIDIR%%/lib/filterClasses.js
+%%XPI_XPIDIR%%/lib/filterListener.js
+%%XPI_XPIDIR%%/lib/filterNotifier.js
+%%XPI_XPIDIR%%/lib/filterStorage.js
+%%XPI_XPIDIR%%/lib/io.js
+%%XPI_XPIDIR%%/lib/keySelector.js
+%%XPI_XPIDIR%%/lib/main.js
+%%XPI_XPIDIR%%/lib/matcher.js
+%%XPI_XPIDIR%%/lib/objectTabs.js
+%%XPI_XPIDIR%%/lib/prefs.js
+%%XPI_XPIDIR%%/lib/requestNotifier.js
+%%XPI_XPIDIR%%/lib/subscriptionClasses.js
+%%XPI_XPIDIR%%/lib/sync.js
+%%XPI_XPIDIR%%/lib/synchronizer.js
+%%XPI_XPIDIR%%/lib/ui.js
+%%XPI_XPIDIR%%/lib/utils.js
+%%XPI_XPIDIR%%/lib/windowObserver.js
+@dirrm %%XPI_XPIDIR%%/chrome/content/ui
+@dirrm %%XPI_XPIDIR%%/chrome/content
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ar
+@dirrm %%XPI_XPIDIR%%/chrome/locale/bg
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ca
+@dirrm %%XPI_XPIDIR%%/chrome/locale/cs
+@dirrm %%XPI_XPIDIR%%/chrome/locale/da
+@dirrm %%XPI_XPIDIR%%/chrome/locale/de
+@dirrm %%XPI_XPIDIR%%/chrome/locale/el
+@dirrm %%XPI_XPIDIR%%/chrome/locale/en-GB
+@dirrm %%XPI_XPIDIR%%/chrome/locale/en-US
+@dirrm %%XPI_XPIDIR%%/chrome/locale/eo
+@dirrm %%XPI_XPIDIR%%/chrome/locale/es-AR
+@dirrm %%XPI_XPIDIR%%/chrome/locale/es-ES
+@dirrm %%XPI_XPIDIR%%/chrome/locale/es-MX
+@dirrm %%XPI_XPIDIR%%/chrome/locale/et
+@dirrm %%XPI_XPIDIR%%/chrome/locale/fa
+@dirrm %%XPI_XPIDIR%%/chrome/locale/fi
+@dirrm %%XPI_XPIDIR%%/chrome/locale/fr
+@dirrm %%XPI_XPIDIR%%/chrome/locale/fy-NL
+@dirrm %%XPI_XPIDIR%%/chrome/locale/gl
+@dirrm %%XPI_XPIDIR%%/chrome/locale/he
+@dirrm %%XPI_XPIDIR%%/chrome/locale/hr
+@dirrm %%XPI_XPIDIR%%/chrome/locale/hsb
+@dirrm %%XPI_XPIDIR%%/chrome/locale/hu
+@dirrm %%XPI_XPIDIR%%/chrome/locale/hy-AM
+@dirrm %%XPI_XPIDIR%%/chrome/locale/is
+@dirrm %%XPI_XPIDIR%%/chrome/locale/it
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ja
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ka-GE
+@dirrm %%XPI_XPIDIR%%/chrome/locale/kk-KZ
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ko
+@dirrm %%XPI_XPIDIR%%/chrome/locale/lt
+@dirrm %%XPI_XPIDIR%%/chrome/locale/lv
+@dirrm %%XPI_XPIDIR%%/chrome/locale/mn
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ms-MY
+@dirrm %%XPI_XPIDIR%%/chrome/locale/nl
+@dirrm %%XPI_XPIDIR%%/chrome/locale/pl
+@dirrm %%XPI_XPIDIR%%/chrome/locale/pt-BR
+@dirrm %%XPI_XPIDIR%%/chrome/locale/pt-PT
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ro
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ru
+@dirrm %%XPI_XPIDIR%%/chrome/locale/sk
+@dirrm %%XPI_XPIDIR%%/chrome/locale/sl
+@dirrm %%XPI_XPIDIR%%/chrome/locale/sq
+@dirrm %%XPI_XPIDIR%%/chrome/locale/sr
+@dirrm %%XPI_XPIDIR%%/chrome/locale/sv-SE
+@dirrm %%XPI_XPIDIR%%/chrome/locale/th
+@dirrm %%XPI_XPIDIR%%/chrome/locale/tr
+@dirrm %%XPI_XPIDIR%%/chrome/locale/uk
+@dirrm %%XPI_XPIDIR%%/chrome/locale/vi
+@dirrm %%XPI_XPIDIR%%/chrome/locale/zh-CN
+@dirrm %%XPI_XPIDIR%%/chrome/locale/zh-TW
+@dirrm %%XPI_XPIDIR%%/chrome/locale
+@dirrm %%XPI_XPIDIR%%/chrome/skin
+@dirrm %%XPI_XPIDIR%%/chrome
+@dirrm %%XPI_XPIDIR%%/defaults
+@dirrm %%XPI_XPIDIR%%/lib
