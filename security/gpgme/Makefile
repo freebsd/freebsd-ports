@@ -21,6 +21,15 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	assuan.0:${PORTSDIR}/security/libassuan \
 		gpg-error.0:${PORTSDIR}/security/libgpg-error
 
+OPTIONS_DEFINE=		DOCS UISERVER
+OPTIONS_SINGLE=		GNUPG
+OPTIONS_SINGLE_GNUPG=	GNUPG1 GNUPG2
+OPTIONS_DEFAULT=	GNUPG2
+
+GNUPG1_DESC=		Build gpgme library for GnuPG 1.x
+GNUPG2_DESC=		Build gpgme library for GnuPG 2.x
+UISERVER_DESC=		GnuPG UI server support
+
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
@@ -34,18 +43,17 @@ INFO=		gpgme
 PORTDOCS=	AUTHORS ChangeLog COPYING COPYING.LESSER INSTALL \
 		NEWS README THANKS TODO
 
-OPTIONS=	GNUPG1 "Use GNUPG 1.x instead of GNUPG 2.x" off \
-		UISERVER "Enable the GNUPG UI Server support" off
+.include <bsd.port.options.mk>
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_GNUPG1)
-BUILD_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg1
-RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg1
+.if ${PORT_OPTIONS:MGNUPG1}
+BUILD_DEPENDS+=	gpgv:${PORTSDIR}/security/gnupg1
+RUN_DEPENDS+=	gpgv:${PORTSDIR}/security/gnupg1
 CONFIGURE_ARGS+=--with-gpg=${LOCALBASE}/bin/gpg \
 		--with-gpgsm=no \
 		--with-gpgconf=no
-.else
+.endif
+
+.if ${PORT_OPTIONS:MGNUPG2}
 BUILD_DEPENDS+=	gpg2:${PORTSDIR}/security/gnupg
 RUN_DEPENDS+=	gpg2:${PORTSDIR}/security/gnupg
 CONFIGURE_ARGS+=--with-gpg=${LOCALBASE}/bin/gpg2 \
@@ -57,7 +65,7 @@ CONFIGURE_ARGS+=--with-gpgsm=no
 .endif
 .endif
 
-.if defined(WITH_UISERVER)
+.if ${PORT_OPTIONS:MUISERVER}
 CONFIGURE_ARGS+=--enable-fd-passing
 .endif
 
@@ -74,9 +82,9 @@ post-patch:
 					${WRKSRC}/lang/cl/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
