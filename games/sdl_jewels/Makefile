@@ -28,16 +28,22 @@ PORTDOCS=	ChangeLog README
 
 ALL_TARGET=
 
+post-patch:
+	@${RM} -rf ${WRKSRC}/data/CVS
+# Fix data location
+	@${REINPLACE_CMD} -e 's!data/bigfont.ppm!${DATADIR}/data/bigfont.ppm!' \
+	-e 's!dirlist\[\]="data";!dirlist[]="${DATADIR}/data";'! \
+	-e 's!char name[256],!char name[512],!' \
+	${WRKSRC}/gljewel.c ${WRKSRC}/sound.c
+# Fix CFLAGS/LDFLAGS
+	@${REINPLACE_CMD} -e 's!CFLAGS = -O2 -Wall!CFLAGS+=!' \
+	-e 's!LDFLAGS =!LDFLAGS+=!' ${WRKSRC}/Makefile
+
 do-install:
-# Scripts
-	@${PRINTF} "#!/bin/sh\n\ncd ${DATADIR} &&\
-		./gljewel\n" > ${WRKDIR}/sdljewels.sh
-	@${INSTALL_SCRIPT} ${WRKDIR}/sdljewels.sh ${PREFIX}/bin/sdljewels
 # Executable
-	${MKDIR} ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/gljewel ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/gljewel ${PREFIX}/bin/sdljewels
 # Data
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} data ${DATADIR})
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} data ${DATADIR})
 
 # Documentation
 .if !defined(NOPORTDOCS)
