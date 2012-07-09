@@ -147,7 +147,8 @@ post-patch:
 	@ ${SED} -e "s#/etc/pam.d#${PREFIX}/etc/pam.d#g" \
 	    ${WRKSRC}/${f}.presed > ${WRKSRC}/${f}
 .endfor
-	@ ${CP} ${FILESDIR}/xscreensaver.pam ${WRKSRC}/driver/xscreensaver.pam
+	@ ${CP} ${FILESDIR}/xscreensaver.pam \
+	    ${WRKSRC}/driver/xscreensaver.pam.in
 .else
 	@ ${CP} ${WRKSRC}/driver/Makefile.in ${WRKSRC}/driver/Makefile.in.post
 	@ ${SED} -e "s#install-xml install-pam#install-xml#" \
