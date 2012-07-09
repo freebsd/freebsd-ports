@@ -27,6 +27,7 @@ KERBEROSV_URL=		http://web.mit.edu/kerberos/
 USE_GMAKE=		yes
 USE_PERL5_BUILD=	yes
 USE_LDCONFIG=		yes
+USE_CSTD=		gnu89
 USE_AUTOTOOLS=		libtool
 CONFIGURE_ARGS?=	--enable-shared
 CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC="${YACC}"
