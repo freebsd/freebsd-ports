@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/postgresql/alock.py
 %%PYTHON_SITELIBDIR%%/postgresql/alock.pyc
 %%PYTHON_SITELIBDIR%%/postgresql/alock.pyo
@@ -37,10 +38,10 @@
 %%PYTHON_SITELIBDIR%%/postgresql/documentation/bin.pyc
 %%PYTHON_SITELIBDIR%%/postgresql/documentation/bin.pyo
 %%PYTHON_SITELIBDIR%%/postgresql/documentation/bin.txt
+%%PYTHON_SITELIBDIR%%/postgresql/documentation/changes-v1.0.txt
 %%PYTHON_SITELIBDIR%%/postgresql/documentation/changes.py
 %%PYTHON_SITELIBDIR%%/postgresql/documentation/changes.pyc
 %%PYTHON_SITELIBDIR%%/postgresql/documentation/changes.pyo
-%%PYTHON_SITELIBDIR%%/postgresql/documentation/changes.txt
 %%PYTHON_SITELIBDIR%%/postgresql/documentation/clientparameters.py
 %%PYTHON_SITELIBDIR%%/postgresql/documentation/clientparameters.pyc
 %%PYTHON_SITELIBDIR%%/postgresql/documentation/clientparameters.pyo
@@ -73,6 +74,7 @@
 %%PYTHON_SITELIBDIR%%/postgresql/documentation/notifyman.pyc
 %%PYTHON_SITELIBDIR%%/postgresql/documentation/notifyman.pyo
 %%PYTHON_SITELIBDIR%%/postgresql/documentation/notifyman.txt
+%%PYTHON_SITELIBDIR%%/postgresql/documentation/modules.txt
 %%PYTHON_SITELIBDIR%%/postgresql/documentation/__init__.py
 %%PYTHON_SITELIBDIR%%/postgresql/documentation/__init__.pyc
 %%PYTHON_SITELIBDIR%%/postgresql/documentation/__init__.pyo
@@ -153,9 +155,6 @@
 %%PYTHON_SITELIBDIR%%/postgresql/python/command.py
 %%PYTHON_SITELIBDIR%%/postgresql/python/command.pyc
 %%PYTHON_SITELIBDIR%%/postgresql/python/command.pyo
-%%PYTHON_SITELIBDIR%%/postgresql/python/contextlib.py
-%%PYTHON_SITELIBDIR%%/postgresql/python/contextlib.pyc
-%%PYTHON_SITELIBDIR%%/postgresql/python/contextlib.pyo
 %%PYTHON_SITELIBDIR%%/postgresql/python/datetime.py
 %%PYTHON_SITELIBDIR%%/postgresql/python/datetime.pyc
 %%PYTHON_SITELIBDIR%%/postgresql/python/datetime.pyo
@@ -342,9 +341,6 @@
 %%PYTHON_SITELIBDIR%%/postgresql/types/namedtuple.py
 %%PYTHON_SITELIBDIR%%/postgresql/types/namedtuple.pyc
 %%PYTHON_SITELIBDIR%%/postgresql/types/namedtuple.pyo
-%%PYTHON_SITELIBDIR%%/postgresql/unittest.py
-%%PYTHON_SITELIBDIR%%/postgresql/unittest.pyc
-%%PYTHON_SITELIBDIR%%/postgresql/unittest.pyo
 %%PYTHON_SITELIBDIR%%/postgresql/versionstring.py
 %%PYTHON_SITELIBDIR%%/postgresql/versionstring.pyc
 %%PYTHON_SITELIBDIR%%/postgresql/versionstring.pyo
