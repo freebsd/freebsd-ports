@@ -43,7 +43,7 @@ FFLAGS+=	-O3 -ffast-math
 .endif
 
 .ifdef WITH_METIS
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libmetis.a:${PORTSDIR}/math/metis
+BUILD_DEPENDS+=	${LOCALBASE}/bin/oemetis:${PORTSDIR}/math/metis4
 MAKE_ENV+=	ORDERINGSF=-Dmetis
 .endif
 

@@ -19,7 +19,7 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
 .if defined (WITH_METIS)
-LIB_DEPENDS=	metis:${PORTSDIR}/math/metis
+LIB_DEPENDS=	metis.1:${PORTSDIR}/math/metis4
 
 RESTRICTED=	GPL and METIS licenses are contradictory
 .endif

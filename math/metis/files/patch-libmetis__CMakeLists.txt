@@ -1,0 +1,12 @@
+--- libmetis/CMakeLists.txt.orig	2011-06-22 13:47:13.000000000 -0400
++++ libmetis/CMakeLists.txt	2012-07-07 11:05:47.000000000 -0400
+@@ -4,6 +4,9 @@
+ file(GLOB metis_sources *.c)
+ # Build libmetis.
+ add_library(metis ${METIS_LIBRARY_TYPE} ${GKlib_sources} ${metis_sources})
++if(SHARED)
++  set_target_properties(metis PROPERTIES SOVERSION ${SHLIB_MAJOR})
++endif()
+ if(UNIX)
+   target_link_libraries(metis m)
+ endif()
