@@ -90,7 +90,7 @@ CONFIGURE_ARGS+=	--with-ioloop=kqueue
 
 ## SSL support
 #
-.if defined(WITH_SSL) && !defined(WITHOUT_SSL)
+.if defined(WITH_SSL)
 PROTOCOLS+=		imaps pop3s
 .else
 CONFIGURE_ARGS+=	--without-ssl
@@ -98,7 +98,7 @@ CONFIGURE_ARGS+=	--without-ssl
 
 ## ManageSieve support
 #
-.if defined(WITH_MANAGESIEVE) && !defined(WITHOUT_MANAGESIEVE)
+.if defined(WITH_MANAGESIEVE)
 MANAGESIEVEVERSION!=	${MAKE} -C ${.CURDIR}/../dovecot-managesieve -V PORTVERSION
 PATCH_SITES!=		${MAKE} -C ${.CURDIR}/../dovecot-managesieve -V MASTER_SITES
 PATCHFILES+=		dovecot-${PORTVERSION}-managesieve-${MANAGESIEVEVERSION}.diff.gz
@@ -109,7 +109,7 @@ DOCS+=			README.managesieve
 
 ## GSSAPI support
 #
-.if defined(WITH_GSSAPI) && !defined(WITHOUT_GSSAPI)
+.if defined(WITH_GSSAPI)
 CONFIGURE_ARGS+=	--with-gssapi
 .else
 CONFIGURE_ARGS+=	--without-gssapi
@@ -117,7 +117,7 @@ CONFIGURE_ARGS+=	--without-gssapi
 
 ## VPopMail Support
 #
-.if defined(WITH_VPOPMAIL) && !defined(WITHOUT_VPOPMAIL)
+.if defined(WITH_VPOPMAIL)
 VPOPMAIL=		${LOCALBASE}/vpopmail/bin/vchkpw
 BUILD_DEPENDS+=		${VPOPMAIL}:${PORTSDIR}/mail/vpopmail
 CONFIGURE_ARGS+=	--with-vpopmail
@@ -127,7 +127,7 @@ CONFIGURE_ARGS+=	--without-vpopmail
 
 ## BDB Support
 #
-.if defined(WITH_BDB) && !defined(WITHOUT_BDB)
+.if defined(WITH_BDB)
 USE_BDB=		42+
 CONFIGURE_ARGS+=	--with-db
 CFLAGS+=		-I${BDB_INCLUDE_DIR} -L${BDB_LIB_DIR}
@@ -139,7 +139,7 @@ PLIST_SUB+=		BDB="@comment "
 
 ## OpenLDAP Support
 #
-.if defined(WITH_LDAP) && !defined(WITHOUT_LDAP)
+.if defined(WITH_LDAP)
 USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--with-ldap
 PLIST_SUB+=		LDAP=""
@@ -151,7 +151,7 @@ PLIST_SUB+=		LDAP="@comment "
 
 ## PostgreSQL Support
 #
-.if defined(WITH_PGSQL) && !defined(WITHOUT_PGSQL)
+.if defined(WITH_PGSQL)
 USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-pgsql
 PLIST_SUB+=		SQL=""
@@ -163,7 +163,7 @@ PLIST_SUB+=		SQL="@comment "
 
 ## MySQL Support
 #
-.if defined(WITH_MYSQL) && !defined(WITHOUT_MYSQL)
+.if defined(WITH_MYSQL)
 USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--with-mysql
 PLIST_SUB+=		SQL=""
@@ -175,7 +175,7 @@ PLIST_SUB+=		SQL="@comment "
 
 ## SQLite Support
 #
-.if defined(WITH_SQLITE) && !defined(WITHOUT_SQLITE)
+.if defined(WITH_SQLITE)
 USE_SQLITE=		3
 CONFIGURE_ARGS+=	--with-sqlite
 PLIST_SUB+=		SQL=""
@@ -194,11 +194,6 @@ post-patch:
 		s!-example\.conf[[:>:]]!.conf!g;\
 		s!^(confdir[[:space:]]+=[[:space:]]+)\$$\(sysconfdir\)!\1${EXAMPLESDIR}!g;\
 		' ${WRKSRC}/*/Makefile.in ${WRKSRC}/Makefile.in
-.if defined(WITH_GSSAPI)
-	@${REINPLACE_CMD} -e '\
-		s!<gssapi/gssapi\.h>!<gssapi.h>!;\
-		' ${WRKSRC}/src/auth/mech-gssapi.c ${WRKSRC}/configure
-.endif
 	@${LN} -f ${WRKSRC}/dovecot-example.conf		${WRKSRC}/dovecot.conf
 	@${LN} -f ${WRKSRC}/doc/dovecot-db-example.conf		${WRKSRC}/doc/dovecot-db.conf
 	@${LN} -f ${WRKSRC}/doc/dovecot-dict-sql-example.conf	${WRKSRC}/doc/dovecot-dict-sql.conf
