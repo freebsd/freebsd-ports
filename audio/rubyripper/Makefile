@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	rubyripper
-DISTVERSION=	0.6.0
-PORTREVISION=	2
+DISTVERSION=	0.6.2
 CATEGORIES=	audio sysutils ruby
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Digital audio CD extraction tool for accurate ripping
 
 LICENSE=	GPLv3
@@ -25,8 +24,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
 		cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		cd-discid:${PORTSDIR}/audio/cd-discid
-
-BROKEN=		does not package
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
