@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.3.18-rc
+DISTVERSION=	0.2.3.19-rc
 CATEGORIES=	security net ipv6
 MASTER_SITES=	https://www.torproject.org/dist/ \
 		ftp://ftp.bit.nl/mirror/tor/ \
