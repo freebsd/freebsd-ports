@@ -18,7 +18,8 @@ COMMENT=	Bitstream Vera Fonts clone with a wider range of characters
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
-OPTIONS=	LINKS "Install links of configuration files in conf.d" off
+OPTIONS_DEFINE=	DOCS LINKS
+LINKS_DESC=	Install links of configuration files in conf.d
 
 NO_BUILD=	yes
 USE_BZIP2=	yes
@@ -34,7 +35,7 @@ SUB_LIST=	FONTSDIR=${FONTSDIR}
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_LINKS)
+.if ${PORT_OPTIONS:MLINKS}
 FCDIR_LINKS=	${FCDIR_REL:S|conf.avail|conf.d|}
 PLIST_SUB+=	FCDIR_LINKS="${FCDIR_LINKS}"
 .else
@@ -42,20 +43,20 @@ PLIST_SUB+=	FCDIR_LINKS="@comment "
 .endif
 
 do-install:
-	${MKDIR} ${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/fontconfig/*.conf ${FCDIR}
-	${INSTALL_DATA} ${WRKSRC}/ttf/*.ttf ${FONTSDIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	${MKDIR} ${FONTSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/fontconfig/*.conf ${FCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/ttf/*.ttf ${FONTSDIR}/
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}/
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
-.if defined(WITH_LINKS)
-	cd ${PREFIX}/${FCDIR_LINKS} && ${LN} -fs ../conf.avail/*dejavu*.conf .
+.if ${PORT_OPTIONS:MLINKS}
+	cd ${PREFIX}/${FCDIR_LINKS}/ && ${LN} -fs ../conf.avail/*dejavu*.conf .
 .endif
 
 post-install:
 	@${ECHO_MSG} "===> Running fc-cache"
-	-${LOCALBASE}/bin/fc-cache -f -v ${FONTSDIR}
+	-${LOCALBASE}/bin/fc-cache -f -v ${FONTSDIR}/
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
