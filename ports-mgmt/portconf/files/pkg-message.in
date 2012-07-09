@@ -7,7 +7,7 @@ with the following syntax:
 ---------------------------------------------------------
 # this is a comment
 *: NOPORTDOCS
-editors/openoffice.org-2: WITH_CCACHE|LOCALIZED_LANG=it
+editors/openoffice-3: WITH_CCACHE|LOCALIZED_LANG=it
 print/ghostscript-* print/lpr-wrapper: A4
 sysutils/fusefs-kmod*: !KERNCONF | !NOPORTDOCS
 www/firefox-i18n: WITHOUT_SWITCHER | FIREFOX_I18N=fr it
