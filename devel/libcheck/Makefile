@@ -14,6 +14,8 @@ DISTNAME=	check-${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A unit test framework for C
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 GNU_CONFIGURE=	yes
 PLIST_SUB=	CHECK_VERSION=${PORTVERSION}
 USE_GMAKE=	yes
@@ -21,16 +23,17 @@ USE_LDCONFIG=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/check-${PORTVERSION}
 EXAMPLESDIR=	${PREFIX}/share/examples/check-${PORTVERSION}
-
 INFO=		check
 
+.include <bsd.port.options.mk>
+
 post-patch:
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} \
 		-e '/^install-data-am:/ s/ install-docDATA//' \
 		${WRKSRC}/Makefile.in
 .endif
-.if defined(NOPORTEXAMPLES)
+.if empty(PORT_OPTIONS:MEXAMPLES)
 	@${REINPLACE_CMD} \
 		-e '/^install-data-am:/ s/ install-exampleDATA//' \
 		-e '/^install-data-am:/ s/ install-examplesrcDATA//' \
