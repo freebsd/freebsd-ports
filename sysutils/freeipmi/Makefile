@@ -20,8 +20,8 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	argp:${PORTSDIR}/devel/argp-standalone \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
-OPTIONS=	DEBUG	"Debugging features" off \
-		IOPERM	"Use i386_set_ioperm (i386/amd64 only)" off
+OPTIONS_DEFINE=	DEBUG DOCS IOPERM
+IOPERM_DESC=	Use i386_set_ioperm (i386/amd64 only)
 
 CONFIGURE_ARGS=	--disable-init-scripts \
 		--disable-logdir \
@@ -63,18 +63,20 @@ CONF_DIR?=	${ETCDIR}
 LOG_DIR=	/var/log/${PORTNAME}
 RUN_DIR=	/var/lib/${PORTNAME}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--enable-debug --enable-trace
 .endif
 
-.if defined(WITH_IOPERM)
-.if ${ARCH} == "amd64" && ${OSVERSION} < 800000
-BROKEN=		IOPERM option is not available on FreeBSD/amd64 7.x and below
-.else
+.if ${PORT_OPTIONS:MIOPERM}
 CPPFLAGS+=	-DUSE_IOPERM
 .endif
+
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MIOPERM} && ${ARCH} == "amd64" && ${OSVERSION} < 800000
+BROKEN=		IOPERM option is not available on FreeBSD/amd64 7.x
 .endif
 
 post-patch:
@@ -83,13 +85,13 @@ post-patch:
 		-e '/^FREEIPMI_SYSCONFDIR/ s|/freeipmi/$$||' \
 		-e '/FREEIPMI_CONFIG_FILE_DEFAULT_TMP1=/ s|freeipmi.conf|&.sample|' \
 			${WRKSRC}/configure
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-docDATA||' \
 		${WRKSRC}/Makefile.in ${WRKSRC}/doc/Makefile.in
 .endif
 
 post-install:
-	@${MKDIR} ${LOG_DIR}
-	@${CHMOD} 0700 ${CACHE_DIR} ${LOG_DIR} ${RUN_DIR}
+	${MKDIR} ${LOG_DIR}/
+	${CHMOD} 0700 ${CACHE_DIR}/ ${LOG_DIR}/ ${RUN_DIR}/
 
 .include <bsd.port.post.mk>
