@@ -27,8 +27,6 @@ include/curlpp/internal/OptionSetter.inl
 include/curlpp/internal/SList.hpp
 include/curlpp/internal/buildconfig.h
 include/curlpp/internal/global.h
-@dirrm include/curlpp/internal
-@dirrm include/curlpp
 include/utilspp/EmptyType.hpp
 include/utilspp/Functors.hpp
 include/utilspp/NonCopyable.hpp
@@ -61,9 +59,6 @@ include/utilspp/singleton/PrivateMembers.hpp
 include/utilspp/singleton/PrivateMembers.inl
 include/utilspp/singleton/SingletonHolder.hpp
 include/utilspp/singleton/SingletonHolder.inl
-@dirrm include/utilspp/functor
-@dirrm include/utilspp/singleton
-@dirrm include/utilspp
 lib/libcurlpp.a
 lib/libcurlpp.la
 lib/libcurlpp.so
@@ -74,7 +69,6 @@ lib/libutilspp.so
 lib/libutilspp.so.0
 libdata/pkgconfig/curlpp.pc
 %%PORTDOCS%%%%DOCSDIR%%/guide.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example01.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example02.cpp
@@ -101,3 +95,9 @@ libdata/pkgconfig/curlpp.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example23.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example24.cpp
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/utilspp/singleton
+@dirrm include/utilspp/functor
+@dirrm include/utilspp
+@dirrm include/curlpp/internal
+@dirrm include/curlpp
