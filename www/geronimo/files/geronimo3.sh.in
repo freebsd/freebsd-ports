@@ -1,0 +1,40 @@
+#!/bin/sh
+#
+# $FreeBSD: /tmp/pcvs/ports/www/geronimo/files/geronimo3.sh.in,v 1.1 2012-07-09 13:36:34 gahr Exp $
+#
+
+# PROVIDE: %%APP_SHORTNAME%%
+# REQUIRE: NETWORKING SERVERS
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="geronimo%%GERONIMO_VERSION%%"
+rcvar=geronimo%%GERONIMO_VERSION%%_enable
+pidfile="%%PID_FILE%%"
+
+export JAVA_HOME=%%JAVA_HOME%%
+export JRE_HOME=$JAVA_HOME/jre
+export EXT_DIRS="$JRE_HOME/lib/ext:${geronimo%%GERONIMO_VERSION%%_home}/lib/ext"
+export ENDORSED_DIRS="$JRE_HOME/lib/endorsed:${geronimo%%GERONIMO_VERSION%%_home}/lib/endorsed"
+export GERONIMO_PID=$pidfile
+
+
+start_cmd="geronimo%%GERONIMO_VERSION%%_start"
+stop_cmd="geronimo%%GERONIMO_VERSION%%_stop"
+
+geronimo%%GERONIMO_VERSION%%_start() {
+   %%GERONIMO_HOME%%/bin/geronimo start
+}
+
+geronimo%%GERONIMO_VERSION%%_stop() {
+   rc_pid=$(check_pidfile $pidfile ${JRE_HOME}/bin/java)
+   echo "Stopping ${name}."
+   kill ${rc_pid} 2> /dev/null
+   wait_for_pids ${rc_pid}
+   rm $pidfile
+}
+
+load_rc_config "${name}"
+
+run_rc_command "$1"

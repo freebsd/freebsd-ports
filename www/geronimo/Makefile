@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	geronimo
-PORTVERSION=	2.2.1
+DISTVERSION=	3.0-beta-1
 CATEGORIES=	www devel java
 MASTER_SITES=	${MASTER_SITE_APACHE}
-MASTER_SITE_SUBDIR=	geronimo/${PORTVERSION}
-DISTNAME=	${PORTNAME}-${WEBSERVER}-javaee5-${PORTVERSION}-bin
+MASTER_SITE_SUBDIR=	geronimo/${DISTVERSION}
+DISTNAME=	${PORTNAME}-${WEBSERVER}-javaee6-${DISTVERSION}-bin
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source Java EE 5 application server
@@ -19,17 +19,17 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 NO_BUILD=	YES
 
-USE_RC_SUBR=	geronimo2.sh
+USE_RC_SUBR=	geronimo3.sh
 SUB_FILES=	pkg-deinstall
 
-OPTIONS=	TOMCAT6 "Use Tomcat instead of default Jetty" off
+OPTIONS=	TOMCAT7 "Use Tomcat instead of default Jetty" off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_TOMCAT6)
-WEBSERVER=	tomcat6
+.if defined(WITH_TOMCAT7)
+WEBSERVER=	tomcat7
 .else
-WEBSERVER=	jetty7
+WEBSERVER=	jetty8
 .endif
 
 MAJOR_VER=	${PORTVERSION:C/\..*//}
@@ -61,7 +61,8 @@ SUB_LIST=	GERONIMO_HOME=${APP_HOME} \
 		USER=${GERONIMO_USER} \
 		GERONIMO_VERSION=${MAJOR_VER} \
 		GERONIMO_OUT=${GERONIMO_OUT} \
-		JAVA_HOME=${JAVA_HOME}
+		JAVA_HOME=${JAVA_HOME} \
+		JAVA_VERSION=${JAVA_VERSION}
 
 pre-patch:
 	@${ECHO_MSG} "Installation settings:"
@@ -75,6 +76,7 @@ post-patch:
 	@${ECHO_MSG} -n ">> Removing unneeded files..."
 	@${RM} -f `${FIND} ${WRKSRC} -name '*.bat'` `${FIND} ${WRKSRC} -name '*.orig'` `${FIND} ${WRKSRC} -name '*.exe'`
 	@${ECHO_MSG} " [ DONE ]"
+	@${REINPLACE_CMD} -e '/^activemq.data/s|= |= ${APP_HOME}/|' ${WRKSRC}/var/config/config-substitutions.properties
 
 do-install:
 	${MKDIR} ${APP_HOME} && ${CHOWN} ${GERONIMO_USER}:${GERONIMO_GROUP} ${APP_HOME}
