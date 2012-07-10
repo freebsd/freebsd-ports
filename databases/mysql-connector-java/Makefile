@@ -14,14 +14,11 @@ MASTER_SITE_SUBDIR=	Connector-J
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	MySQL Connector/J: JDBC interface for MySQL
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j
 
 USE_ZIP=	yes
-
-CONFLICTS=	mysql-connector-java*-5.0.*
-
-LICENSE=	GPLv2
-
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 BUILDDIR=	${WRKDIR}/${DISTNAME}
