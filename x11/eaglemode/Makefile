@@ -36,10 +36,6 @@ OPTIONS=	XINE "Video playback support through libxine" off \
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 700000
-BROKEN=		Does not build on 6.x
-.endif
-
 .if !defined(WITHOUT_XINE)
 LIB_DEPENDS+=	xine.2:${PORTSDIR}/multimedia/libxine
 BUILD_ARGS+=	xine-inc-dir="${LOCALBASE}/include" \

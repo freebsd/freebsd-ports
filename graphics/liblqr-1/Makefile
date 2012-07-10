@@ -46,9 +46,6 @@ PORTDOCS=	*
 .endif
 
 post-patch:
-.if ${OSVERSION} < 700042
-	@${REINPLACE_CMD} -e 's|FVISIBILITY_FLAG=".*"|FVISIBILITY_FLAG=""|' ${WRKSRC}/configure
-.endif
 	@${REINPLACE_CMD} -e '/^lqr_pkgconfigdir/ s|$$(libdir)|$${exec_prefix}/libdata|' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr.*chunk\.xsl|${LOCALBASE}/share/xsl/docbook/html/chunk.xsl|' \
