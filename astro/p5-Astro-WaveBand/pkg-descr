@@ -1,0 +1,21 @@
+Class to transparently deal with the conversion between filters, wavelength,
+frequency and other methods of specifying a location in the electro-magentic
+spectrum.
+
+Astro::WaveBand tries to determine the natural form of the numbers such that a
+request for a summary of the object when it contains 2.2 microns would return
+the filter name but would return the wavelength if it was not a standard filter.
+In ambiguous cases an instrument name is required to decide what to return. In
+really ambiguous cases the user can specify the unit in which to display the
+numbers on stringification.
+
+Used mainly as a way of storing a single number in a database table but using
+logic to determine the number that an observer is most likely to understand.
+
+Numerical comparison operators can be used to compare two Astro::WaveBand
+objects. When checking equality, the "natural" and "instrument" methods are
+used, so if two Astro::WaveBand objects return the same value from those
+methods, they are considered to be equal. When checking other comparisons such
+as greater than, the wavelength is used.
+
+WWW: http://search.cpan.org/dist/Astro-WaveBand/
