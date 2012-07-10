@@ -14,15 +14,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for using the cfitsio library
 
-LIB_DEPENDS=	cfitsio.0:${PORTSDIR}/astro/cfitsio
+LIB_DEPENDS=	cfitsio:${PORTSDIR}/astro/cfitsio
 
+CONFIGURE_ENV=	CFITSIO=${LOCALBASE}
 PERL_CONFIGURE=	yes
 
-MAN3=	Astro::FITS::CFITSIO.3
+MAN3=		Astro::FITS::CFITSIO.3
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-	${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' ${WRKSRC}/Makefile.PL
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
