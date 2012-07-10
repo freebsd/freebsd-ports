@@ -1,0 +1,13 @@
+Astro::Coords is a class for manipulating and transforming astronomical
+coordinates. Can handle the following coordinate types:
+- Equatorial RA/Dec, galactic (including proper motions and parallax)
+- Planets
+- Comets/Asteroids
+- Fixed locations in azimuth and elevations
+- Interpolated apparent coordinates
+
+For time dependent calculations a telescope location and reference time must be
+provided. See Astro::Telescope and DateTime for details on specifying location
+and reference epoch.
+
+WWW: http://search.cpan.org/dist/Astro-Coords/

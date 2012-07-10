@@ -53,6 +53,7 @@
     SUBDIR += p5-Astro-ADS
     SUBDIR += p5-Astro-Catalog
     SUBDIR += p5-Astro-Constants
+    SUBDIR += p5-Astro-Coords
     SUBDIR += p5-Astro-DSS
     SUBDIR += p5-Astro-FITS-CFITSIO
     SUBDIR += p5-Astro-FITS-Header
