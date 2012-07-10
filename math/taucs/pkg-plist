@@ -1,5 +1,6 @@
 bin/direct
 bin/iter
+bin/taucs_run
 lib/libtaucs.a
 lib/libtaucs.so
 lib/libtaucs.so.1
