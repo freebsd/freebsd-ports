@@ -1,6 +1,16 @@
 --- a/Makefile
 +++ b/Makefile
-@@ -50,7 +50,8 @@ PACKAGE = vdr-$(ARCHIVE)
+@@ -12,7 +12,8 @@
+ STRIP = strip
+ 
+ # Install command
+-INSTALL = cp --remove-destination
++#INSTALL = cp --remove-destination
++INSTALL = cp -f
+ 
+ # The official name of this plugin.
+ # This name will be used in the '-P...' option of VDR to load the plugin.
+@@ -58,7 +58,8 @@ PACKAGE = vdr-$(ARCHIVE)
  
  ### Includes and Defines (add further entries here):
  
@@ -10,22 +20,9 @@
  
  DEFINES += -D_GNU_SOURCE -DPLUGIN_NAME_I18N='"$(PLUGIN)"'
  
-@@ -117,7 +118,11 @@ libvdr-$(PLUGIN).so: $(OBJS)
- ifndef IPTV_DEBUG
- 	@$(STRIP) $@
- endif
-+ifdef FREEBSD
-+	@cp -f $@ $(LIBDIR)/$@.$(APIVERSION)
-+else
- 	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
-+endif
+@@ -148,3 +149,5 @@ clean:
  
- dist: clean
- 	@-rm -rf $(TMPDIR)/$(ARCHIVE)
-@@ -129,3 +134,6 @@ dist: clean
- 
- clean:
- 	@-rm -f $(OBJS) $(DEPFILE) *.so *.tgz core* *~ $(PODIR)/*.mo $(PODIR)/*.pot
-+
+ cppcheck: $(OBJS)
+ 	@cppcheck --enable=information,style,unusedFunction -v -f $(OBJS:%.o=%.c)
 +install:
 +	${INSTALL_PROGRAM} $(LIBDIR)/libvdr-$(PLUGIN).so.$(APIVERSION) $(PREFIX)/lib/vdr/libvdr-$(PLUGIN).so.$(APIVERSION)
