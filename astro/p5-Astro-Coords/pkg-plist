@@ -1,0 +1,13 @@
+%%SITE_PERL%%/Astro/Coords.pm
+%%SITE_PERL%%/Astro/Coords/Angle.pm
+%%SITE_PERL%%/Astro/Coords/Angle/Hour.pm
+%%SITE_PERL%%/Astro/Coords/Calibration.pm
+%%SITE_PERL%%/Astro/Coords/Elements.pm
+%%SITE_PERL%%/Astro/Coords/Equatorial.pm
+%%SITE_PERL%%/Astro/Coords/Fixed.pm
+%%SITE_PERL%%/Astro/Coords/Interpolated.pm
+%%SITE_PERL%%/Astro/Coords/Offset.pm
+%%SITE_PERL%%/Astro/Coords/Planet.pm
+@dirrmtry %%SITE_PERL%%/Astro/Coords/Angle
+@dirrmtry %%SITE_PERL%%/Astro/Coords
+@dirrmtry %%SITE_PERL%%/Astro
