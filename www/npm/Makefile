@@ -68,7 +68,6 @@ GITHUB_VERSION=	v${MS_VERSION}
 maketar: do-clean extract
 	${MKDIR} ${MS_WRKSRC}/
 	${FETCH_BINARY} ${FETCH_ARGS:C/A//} -o ${MS_WRKSRC}/tags ${GITHUB_TAGSURL}
-	g -o '/isaacs/npm/tarball/[^"]*' tags | head -1 | cut -d/ -f5 | sed 's|^v||'
 	${GREP} -o '/${GITHUB_USER}/${GITHUB_PROJECT}/tarball/[^"]*' ${MS_WRKSRC}/tags | ${HEAD} -1 | ${CUT} -d/ -f5 | ${SED} 's|^v||' > ${MS_VERSIONFILE}
 	${ECHO_MSG} "*** Updating from ${PORTVERSION} to ${MS_VERSION} ..."
 	${FETCH_BINARY} ${FETCH_ARGS:C/A//} -o ${MS_WRKSRC}/${MS_DISTNAME}.tar.gz ${GITHUB_TARBALL}
