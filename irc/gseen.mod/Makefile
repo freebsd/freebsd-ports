@@ -32,7 +32,8 @@ GNU_CONGFIGURE=	yes
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
-	@${CP} -R ${WRKDIRPREFIX}${.CURDIR}/../../irc/eggdrop/work/eggdrop1.6.20 ${WRKSRC}
+	@${CP} -R $$(${MAKE} -C ${PORTSDIR}/irc/eggdrop \
+		-V WRKSRC) ${WRKSRC} ${WRKSRC}
 	cd ${WRKSRC}/src/mod && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${EXTRACT_ONLY} ${EXTRACT_AFTER_ARGS}
 
 post-extract:
