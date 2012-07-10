@@ -7,21 +7,20 @@
 
 PORTNAME=	wesnoth
 PORTVERSION=	1.10.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTNAME}-${PORTVERSION} \
 		http://files.wesnoth.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rnejdl@ringofsaturn.com
 COMMENT=	A fantasy turn-based strategy game
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 BUILD_DEPENDS=	${LOCALBASE}/lib/X11/fonts/junicode/Junicode.ttf:${PORTSDIR}/x11-fonts/junicode
-LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
+LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
 		png15:${PORTSDIR}/graphics/png
 
 USE_SDL=	image mixer net ttf
@@ -36,64 +35,66 @@ MAN6=		wesnoth.6
 PORTDOCS=	*
 PORTDATA=	*
 
-OPTIONS=	ANA	 "Enable Asynchronous Network API (WIP)" Off \
-		CAMPAIGN "Enable campaign server"	On \
-		FRIBIDI	 "Enable bidirectional support"	On \
-		LOWMEM	 "Reduce memory usage (disables animations)" Off \
-		NOTIFY	 "Enable desktop notifications"	On \
-		OPENMP	 "Enable OpenMP support"	Off \
-		POOLALLOC "Use wesnoth own memory allocator" Off \
-		PYTHON	 "Enable python developer tools" Off \
-		RAWSOCKETS "Use raw receiving sockets in multiplayer" Off \
-		SERVER	 "Enable server"		On \
-		TESTS	 "Enable unit tests"		Off \
-		TOOLS	 "Enable extra tools for artists and translators" On
+OPTIONS_DEFINE=	ANA CAMPAIGN FRIBIDI LOWMEM NOTIFY OPENMP POOLALLOC PYTHON \
+		RAWSOCKETS SERVER TESTS TOOLS
+
+OPTIONS_DEFAULT=	CAMPAIGN FRIBIDI NOTIFY SERVER TOOLS
+
+ANA_DESC=	Asynchronous Network API (WIP)
+CAMPAIGN_DESC=	Campaign server
+FRIBIDI_DESC=	Bidirectional support
+LOWMEM_DESC=	Reduce memory usage (disables animations)
+NOTIFY_DESC=	Desktop notifications
+OPENMP_DESC=	OpenMP support
+POOLALLOC_DESC=	Use wesnoth own memory allocator
+PYTHON_DESC=	Python developer tools
+RAWSOCKETS_DESC=	Use raw receiving sockets in multiplayer
+SERVER_DESC=	Server
+TESTS_DESC=	Unit tests
+TOOLS_DESC=	Extra tools for artists and translators
 
 .include <bsd.port.options.mk>
 
 # XXX: breaks compilation because of -Werror
-.if !defined(WITH_STRICT)
+.if empty(PORT_OPTIONS:MSTRICT)
 CMAKE_ARGS+=	-DENABLE_STRICT_COMPILATION=off
 .endif
 
-.if defined(WITHOUT_ANA)
-CMAKE_ARGS+=	-DUSE_ANA_NETWORK=off
-.else
+.if ${PORT_OPTIONS:MANA}
 CMAKE_ARGS+=	-DUSE_ANA_NETWORK=on
+.else
+CMAKE_ARGS+=	-DUSE_ANA_NETWORK=off
 .endif
 
-.if defined(WITHOUT_CAMPAIGN)
-CMAKE_ARGS+=	-DENABLE_CAMPAIGN_SERVER=off
-PLIST_SUB+=	CAMPAIGN="@comment "
-.else
+.if ${PORT_OPTIONS:MCAMPAIGN}
 CMAKE_ARGS+=	-DENABLE_CAMPAIGN_SERVER=on
 PLIST_SUB+=	CAMPAIGN=""
+.else
+CMAKE_ARGS+=	-DENABLE_CAMPAIGN_SERVER=off
+PLIST_SUB+=	CAMPAIGN="@comment "
 .endif
 
-.if defined(WITHOUT_FRIBIDI)
-CMAKE_ARGS+=	-DENABLE_FRIBIDI=off
-.else
+.if ${PORT_OPTIONS:MFRIBIDI}
 CMAKE_ARGS+=	-DENABLE_FRIBIDI=on
-LIB_DEPENDS+=	fribidi.3:${PORTSDIR}/converters/fribidi
+LIB_DEPENDS+=	fribidi:${PORTSDIR}/converters/fribidi
+.else
+CMAKE_ARGS+=	-DENABLE_FRIBIDI=off
 .endif
 
-.if defined(WITHOUT_LOWMEM)
-CMAKE_ARGS+=	-DENABLE_LOW_MEM=off
+.if ${PORT_OPTIONS:MLOWMEM}
+CMAKE_ARGS+=	-DENABLE_LOW_MEM=on
 .else
 CMAKE_ARGS+=	-DENABLE_LOW_MEM=off
 .endif
 
-.if defined(WITHOUT_NOTIFY)
-CMAKE_ARGS+=	-DENABLE_NOTIFICATIONS=off
-.else
+.if ${PORT_OPTIONS:MNOTIFY}
 CMAKE_ARGS+=	-DENABLE_NOTIFICATIONS=on
-LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	dbus-1:${PORTSDIR}/devel/dbus
+.else
+CMAKE_ARGS+=	-DENABLE_NOTIFICATIONS=off
 .endif
 
-.if defined(WITHOUT_NLS)
-CMAKE_ARGS+=	-DENABLE_NLS=off
-PLIST_SUB+=	NLS="@comment "
-.else
+.if ${PORT_OPTIONS:MNLS}
 CMAKE_ARGS+=	-DENABLE_NLS=on -DLOCALEDIR=${PREFIX}/share/locale
 USE_GETTEXT=	yes
 MANLANG=	"" cs de en_GB es et fi fr gl hu id it lt pl ru sk \
@@ -102,61 +103,64 @@ _MANPAGES+=	${PREFIX}/man/ja/man6/wesnothd.6 \
 		${PREFIX}/man/pt_BR/man6/wesnothd.6 \
 		${PREFIX}/man/tr/man6/wesnothd.6
 PLIST_SUB+=	NLS=""
+.else
+CMAKE_ARGS+=	-DENABLE_NLS=off
+PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITHOUT_OPENMP)
-CMAKE_ARGS+=	-DENABLE_OMP=off
-.else
+.if ${PORT_OPTIONS:MOPENMP}
 CMAKE_ARGS+=	-DENABLE_OMP=on
+.else
+CMAKE_ARGS+=	-DENABLE_OMP=off
 .endif
 
-.if defined(WITHOUT_POOLALLOC)
-CMAKE_ARGS+=	-DENABLE_POOL_ALLOC=off
-.else
+.if ${PORT_OPTIONS:MPOOLALLOC}
 CMAKE_ARGS+=	-DENABLE_POOL_ALLOC=on
+.else
+CMAKE_ARGS+=	-DENABLE_POOL_ALLOC=off
 .endif
 
-.if defined(WITHOUT_PYTHON)
-PLIST_SUB+=	PYTHON="@comment "
-.else
+.if ${PORT_OPTIONS:MPYTHON}
 BROKEN=		cmake build doesn\'t support installing python tools
 USE_PYTHON=	yes
 CONFIGURE_ENV+=	PYTHON_PREFIX=${PREFIX} \
 		PYTHON_VERSION=${PYTHON_VERSION:S/python//}
 CONFIGURE_ARGS+=--enable-python-install
 PLIST_SUB+=	PYTHON=""
+.else
+PLIST_SUB+=	PYTHON="@comment "
 .endif
 
-.if !defined(WITHOUT_RAWSOCKETS)
+.if ${PORT_OPTIONS:MRAWSOCKETS}
 CFLAGS+=	-DNETWORK_USE_RAW_SOCKETS
 .endif
 
-.if defined(WITHOUT_SERVER)
-CMAKE_ARGS+=	-DENABLE_SERVER=off
-PLIST_SUB+=	SERVER="@comment "
-.else
+.if ${PORT_OPTIONS:MSERVER}
 CMAKE_ARGS+=	-DENABLE_SERVER=on
 MAN6+=		wesnothd.6
 PLIST_SUB+=	SERVER=""
+.else
+CMAKE_ARGS+=	-DENABLE_SERVER=off
+PLIST_SUB+=	SERVER="@comment "
 .endif
 
-.if defined(WITHOUT_TESTS)
-CMAKE_ARGS+=	-DENABLE_TESTS=off
-PLIST_SUB+=	TESTS="@comment "
-.else
+.if ${PORT_OPTIONS:MTESTS}
 CMAKE_ARGS+=	-DENABLE_TESTS=on
 PLIST_SUB+=	TESTS=""
+.else
+CMAKE_ARGS+=	-DENABLE_TESTS=off
+PLIST_SUB+=	TESTS="@comment "
 .endif
 
-.if defined(WITHOUT_TOOLS)
-CMAKE_ARGS+=	-DENABLE_TOOLS=off
-PLIST_SUB+=	TOOLS="@comment "
-.else
+.if ${PORT_OPTIONS:MTOOLS}
 CMAKE_ARGS+=	-DENABLE_TOOLS=on
 PLIST_SUB+=	TOOLS=""
+.else
+CMAKE_ARGS+=	-DENABLE_TOOLS=off
+PLIST_SUB+=	TOOLS="@comment "
 .endif
 
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 CMAKE_ARGS+=	-DDOCDIR=none
 .endif
 

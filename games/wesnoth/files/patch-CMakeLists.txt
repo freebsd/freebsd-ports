@@ -1,8 +1,7 @@
---- CMakeLists.txt~
-+++ CMakeLists.txt
-@@ -21,11 +21,10 @@ set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR
+Index: CMakeLists.txt
+@@ -21,11 +21,10 @@
  find_package(SDL 1.2.7 REQUIRED)
- find_package(Boost 1.35 REQUIRED COMPONENTS iostreams regex)
+ find_package(Boost 1.36 REQUIRED COMPONENTS iostreams program_options regex system)
  
 -# no, gettext executables are not required when NLS is deactivated
 +if(ENABLE_NLS)
@@ -14,7 +13,7 @@
  
  find_package(X11)
  
-@@ -68,7 +67,7 @@ option(ENABLE_GAME "Enable compilation o
+@@ -73,7 +72,7 @@
  option(ENABLE_GAME "Enable compilation of the game" ON)
  option(ENABLE_CAMPAIGN_SERVER "Enable compilation of campaign server")
  option(ENABLE_SERVER "Enable compilation of server" ON)
@@ -23,7 +22,7 @@
  option(ENABLE_TESTS "Build unit tests")
  option(ENABLE_NLS "Enable building of translations" ON)
  option(ENABLE_POOL_ALLOC "Enable custom pool malloc" OFF)
-@@ -114,18 +113,18 @@ if(CMAKE_COMPILER_IS_GNUCXX)
+@@ -120,18 +119,18 @@
  		endif(ENABLE_STRICT_COMPILATION)
  
  		# Strict compilation for C files is disabled until somebody wants to clean them.
@@ -48,7 +47,19 @@
  				CACHE STRING "Flags used by the CXX compiler during release builds." FORCE)
  
  	endif(NOT CONFIGURED)
-@@ -154,6 +153,7 @@ add_definitions(-DLOCALEDIR=\\\"${LOCALE
+@@ -158,6 +157,11 @@
+ 	add_definitions(-D_X11)
+ endif(X11_FOUND)
+ 
++if(ENABLE_NLS)
++	set(CMAKE_C_FLAGS "-DENABLE_NLS ${CMAKE_C_FLAGS}")
++	set(CMAKE_CXX_FLAGS "-DENABLE_NLS ${CMAKE_CXX_FLAGS}")
++endif(ENABLE_NLS)
++
+ add_definitions(-DLOCALEDIR=\\\"${LOCALEDIR}\\\")
+ 
+ # When the path starts with a / on a Unix system it's an absolute path.
+@@ -165,6 +169,7 @@
  if(LOCALEDIR MATCHES "^/")
  	add_definitions(-DHAS_RELATIVE_LOCALEDIR=0)
  	set(LOCALE_INSTALL ${LOCALEDIR})
@@ -56,8 +67,8 @@
  else(LOCALEDIR MATCHES "^/")
  	add_definitions(-DHAS_RELATIVE_LOCALEDIR=1)
  	set(LOCALE_INSTALL ${DATADIR}/${LOCALEDIR})
-@@ -213,10 +213,14 @@ if(ENABLE_TESTS)
- 	find_package( Boost 1.35 REQUIRED COMPONENTS unit_test_framework )
+@@ -219,10 +224,14 @@
+ 	find_package( Boost 1.36 REQUIRED COMPONENTS unit_test_framework )
  endif(ENABLE_TESTS)
  if(ENABLE_GAME)
 -	find_package( FriBiDi )
