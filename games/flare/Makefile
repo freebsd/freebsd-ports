@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	flare
-DISTVERSION=	015_1
-PORTREVISION=	3
+DISTVERSION=	016
 CATEGORIES=	games
 MASTER_SITES=	http://cloud.github.com/downloads/clintbellanger/flare/ \
 		http://mirror.amdmi3.ru/files/
@@ -18,6 +17,7 @@ COMMENT=	Free Libre Action Roleplaying Engine
 
 LICENSE=	GPLv3
 
+USE_ZIP=	yes
 USE_CMAKE=	yes
 USE_SDL=	sdl mixer image ttf
 MAKE_JOBS_SAFE=	yes
@@ -27,6 +27,8 @@ INSTALLS_ICONS=	yes
 CMAKE_ARGS=	-DBINDIR="bin" -DDATADIR="share/flare"
 
 LATEST_LINK=	flare-rpg
+
+WRKSRC=		${WRKDIR}/${PORTNAME}_v${DISTVERSION}
 
 PORTDOCS=	*
 
