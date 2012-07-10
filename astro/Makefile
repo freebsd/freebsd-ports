@@ -68,6 +68,7 @@
     SUBDIR += p5-GPS-Babel
     SUBDIR += p5-GPS-OID
     SUBDIR += p5-Geo-METAR
+    SUBDIR += p5-Misc-Quality
     SUBDIR += p5-Weather-Underground
     SUBDIR += p5-ZConf-Weather
     SUBDIR += phoon
