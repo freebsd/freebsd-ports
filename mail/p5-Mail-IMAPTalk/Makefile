@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-IMAPTalk
-PORTVERSION=	2.01
+PORTVERSION=	3.01
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,10 +14,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	IMAP client interface with lots of features
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 MAKE_JOBS_SAFE=	yes
-
-MAN3=	Mail::IMAPTalk.3
-
 PERL_CONFIGURE=	yes
+
+MAN3=		Mail::IMAPTalk.3
 
 .include <bsd.port.mk>
