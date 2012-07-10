@@ -7,24 +7,37 @@
 #
 
 PORTNAME=	Astro-Catalog
-PORTVERSION=	4.1.0
+PORTVERSION=	4.2.4
 CATEGORIES=	astro perl5
-MASTER_SITES=	CPAN \
-		http://www.estar.org.uk/software/
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A generic stellar catalogue object
 
-BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+LICENSE=	GPLv3
+
+# p5-Astro-FITS-CFITSIO is a recommended dependency
+BUILD_DEPENDS=	p5-Astro-Coords>=0.12:${PORTSDIR}/astro/p5-Astro-Coords \
+		p5-Astro-FITS-CFITSIO>=1.03:${PORTSDIR}/astro/p5-Astro-FITS-CFITSIO \
+		p5-Astro-Flux>=0.01:${PORTSDIR}/astro/p5-Astro-Flux \
+		p5-Astro-Telescope>=0.50:${PORTSDIR}/astro/p5-Astro-Telescope \
+		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
+		p5-DateTime-Format-ISO8601>=0:${PORTSDIR}/devel/p5-DateTime-Format-ISO8601 \
+		p5-Misc-Quality>=0.1:${PORTSDIR}/astro/p5-Misc-Quality \
+		p5-Number-Uncertainty>=0.1:${PORTSDIR}/math/p5-Number-Uncertainty \
+		p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite \
+		p5-libwww>=5.53:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
-
-CONFIG=		sss.cfg skycat.cfg
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+PERL_MODBUILD=	yes
 
 MAN3=		Astro::Catalog.3 \
 		Astro::Catalog::IO::ASCII.3 \
+		Astro::Catalog::IO::ASSM.3 \
 		Astro::Catalog::IO::Astrom.3 \
 		Astro::Catalog::IO::Binary.3 \
 		Astro::Catalog::IO::Cluster.3 \
@@ -32,6 +45,8 @@ MAN3=		Astro::Catalog.3 \
 		Astro::Catalog::IO::FITSTable.3 \
 		Astro::Catalog::IO::GaiaPick.3 \
 		Astro::Catalog::IO::JCMT.3 \
+		Astro::Catalog::IO::LCOGTFITSTable.3 \
+		Astro::Catalog::IO::Northstar.3 \
 		Astro::Catalog::IO::RITMatch.3 \
 		Astro::Catalog::IO::SExtractor.3 \
 		Astro::Catalog::IO::STL.3 \
@@ -39,6 +54,7 @@ MAN3=		Astro::Catalog.3 \
 		Astro::Catalog::IO::TST.3 \
 		Astro::Catalog::IO::UKIRTBS.3 \
 		Astro::Catalog::IO::VOTable.3 \
+		Astro::Catalog::IO::XY.3 \
 		Astro::Catalog::Item.3 \
 		Astro::Catalog::Item::Morphology.3 \
 		Astro::Catalog::Query.3 \
@@ -58,15 +74,14 @@ MAN3=		Astro::Catalog.3 \
 		Astro::Catalog::Transport::WebService.3 \
 		Tk::AstroCatalog.3
 
-post-patch:
-	@${PERL} -pi -e "s!^(my.*cfg_to_install).*!\$$1=\"\";!;" ${WRKSRC}/Makefile.PL
+.include <bsd.port.pre.mk>
 
-post-install:
-.for f in ${CONFIG}
-	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${PREFIX}/etc/${f}.default
-.if !exists(${PREFIX}/etc/${f})
-	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${PREFIX}/etc/${f}
+.if ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-Time-Piece>=1.08:${PORTSDIR}/devel/p5-Time-Piece
+RUN_DEPENDS+=	p5-Time-Piece>=1.08:${PORTSDIR}/devel/p5-Time-Piece
 .endif
-.endfor
 
-.include <bsd.port.mk>
+post-patch:
+	@${REINPLACE_CMD} -e '/\.cfg/ s|\.cfg|&.sample|2' ${WRKSRC}/Build.PL
+
+.include <bsd.port.post.mk>

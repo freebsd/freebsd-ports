@@ -1,51 +1,50 @@
-@unexec if cmp -s %D/etc/sss.cfg %D/etc/sss.cfg.default; then rm -f %D/etc/sss.cfg; fi
-etc/sss.cfg.default
-@exec [ -f %B/sss.cfg ] || cp %B/%f %B/sss.cfg
-@unexec if cmp -s %D/etc/skycat.cfg %D/etc/skycat.cfg.default; then rm -f %D/etc/skycat.cfg; fi
-etc/skycat.cfg.default
-@exec [ -f %B/skycat.cfg ] || cp %B/%f %B/skycat.cfg
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/Catalog/.packlist
+etc/skycat.cfg.sample
+etc/sss.cfg.sample
 %%SITE_PERL%%/Astro/Catalog.pm
-%%SITE_PERL%%/Astro/Catalog/Query.pm
-%%SITE_PERL%%/Astro/Catalog/Star.pm
-%%SITE_PERL%%/Astro/Catalog/IO/Simple.pm
+%%SITE_PERL%%/Astro/Catalog/IO/ASCII.pm
+%%SITE_PERL%%/Astro/Catalog/IO/ASSM.pm
+%%SITE_PERL%%/Astro/Catalog/IO/Astrom.pm
+%%SITE_PERL%%/Astro/Catalog/IO/Binary.pm
+%%SITE_PERL%%/Astro/Catalog/IO/Cluster.pm
 %%SITE_PERL%%/Astro/Catalog/IO/FINDOFF.pm
+%%SITE_PERL%%/Astro/Catalog/IO/FITSTable.pm
+%%SITE_PERL%%/Astro/Catalog/IO/GaiaPick.pm
+%%SITE_PERL%%/Astro/Catalog/IO/JCMT.pm
+%%SITE_PERL%%/Astro/Catalog/IO/LCOGTFITSTable.pm
+%%SITE_PERL%%/Astro/Catalog/IO/Northstar.pm
 %%SITE_PERL%%/Astro/Catalog/IO/RITMatch.pm
 %%SITE_PERL%%/Astro/Catalog/IO/SExtractor.pm
-%%SITE_PERL%%/Astro/Catalog/IO/GaiaPick.pm
-%%SITE_PERL%%/Astro/Catalog/IO/Binary.pm
 %%SITE_PERL%%/Astro/Catalog/IO/STL.pm
-%%SITE_PERL%%/Astro/Catalog/IO/Cluster.pm
-%%SITE_PERL%%/Astro/Catalog/IO/VOTable.pm
-%%SITE_PERL%%/Astro/Catalog/IO/Astrom.pm
-%%SITE_PERL%%/Astro/Catalog/IO/JCMT.pm
-%%SITE_PERL%%/Astro/Catalog/IO/FITSTable.pm
-%%SITE_PERL%%/Astro/Catalog/IO/UKIRTBS.pm
+%%SITE_PERL%%/Astro/Catalog/IO/Simple.pm
 %%SITE_PERL%%/Astro/Catalog/IO/TST.pm
-%%SITE_PERL%%/Astro/Catalog/IO/ASCII.pm
+%%SITE_PERL%%/Astro/Catalog/IO/UKIRTBS.pm
+%%SITE_PERL%%/Astro/Catalog/IO/VOTable.pm
+%%SITE_PERL%%/Astro/Catalog/IO/XY.pm
 %%SITE_PERL%%/Astro/Catalog/Item.pm
 %%SITE_PERL%%/Astro/Catalog/Item/Morphology.pm
-%%SITE_PERL%%/Astro/Catalog/Query/SkyCat.pm
+%%SITE_PERL%%/Astro/Catalog/Query.pm
 %%SITE_PERL%%/Astro/Catalog/Query/2MASS.pm
+%%SITE_PERL%%/Astro/Catalog/Query/CMC.pm
+%%SITE_PERL%%/Astro/Catalog/Query/GSC.pm
+%%SITE_PERL%%/Astro/Catalog/Query/MPC.pm
+%%SITE_PERL%%/Astro/Catalog/Query/SIMBAD.pm
+%%SITE_PERL%%/Astro/Catalog/Query/Sesame.pm
+%%SITE_PERL%%/Astro/Catalog/Query/SkyCat.pm
 %%SITE_PERL%%/Astro/Catalog/Query/SuperCOSMOS.pm
 %%SITE_PERL%%/Astro/Catalog/Query/USNOA2.pm
 %%SITE_PERL%%/Astro/Catalog/Query/Vizier.pm
-%%SITE_PERL%%/Astro/Catalog/Query/Sesame.pm
-%%SITE_PERL%%/Astro/Catalog/Query/SIMBAD.pm
-%%SITE_PERL%%/Astro/Catalog/Query/MPC.pm
-%%SITE_PERL%%/Astro/Catalog/Query/CMC.pm
-%%SITE_PERL%%/Astro/Catalog/Query/GSC.pm
+%%SITE_PERL%%/Astro/Catalog/Star.pm
 %%SITE_PERL%%/Astro/Catalog/Star/Morphology.pm
 %%SITE_PERL%%/Astro/Catalog/Transport/REST.pm
 %%SITE_PERL%%/Astro/Catalog/Transport/WebService.pm
 %%SITE_PERL%%/Tk/AstroCatalog.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/Catalog
-@dirrm %%SITE_PERL%%/Astro/Catalog/IO
-@dirrm %%SITE_PERL%%/Astro/Catalog/Item
-@dirrm %%SITE_PERL%%/Astro/Catalog/Query
-@dirrm %%SITE_PERL%%/Astro/Catalog/Star
-@dirrm %%SITE_PERL%%/Astro/Catalog/Transport
-@dirrm %%SITE_PERL%%/Astro/Catalog
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro
-@dirrmtry %%SITE_PERL%%/Astro
 @dirrmtry %%SITE_PERL%%/Tk
+@dirrm %%SITE_PERL%%/Astro/Catalog/Transport
+@dirrm %%SITE_PERL%%/Astro/Catalog/Star
+@dirrm %%SITE_PERL%%/Astro/Catalog/Query
+@dirrm %%SITE_PERL%%/Astro/Catalog/Item
+@dirrm %%SITE_PERL%%/Astro/Catalog/IO
+@dirrm %%SITE_PERL%%/Astro/Catalog
+@dirrmtry %%SITE_PERL%%/Astro
