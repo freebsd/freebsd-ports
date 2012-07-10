@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Number/Uncertainty.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Number/Uncertainty/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number/Uncertainty
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number
+@dirrmtry %%SITE_PERL%%/Number
