@@ -56,6 +56,7 @@
     SUBDIR += p5-Astro-DSS
     SUBDIR += p5-Astro-FITS-CFITSIO
     SUBDIR += p5-Astro-FITS-Header
+    SUBDIR += p5-Astro-Flux
     SUBDIR += p5-Astro-Hipparcos
     SUBDIR += p5-Astro-MoonPhase
     SUBDIR += p5-Astro-SIMBAD

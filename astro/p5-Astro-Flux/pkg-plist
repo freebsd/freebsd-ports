@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Astro/Flux.pm
+%%SITE_PERL%%/Astro/FluxColor.pm
+%%SITE_PERL%%/Astro/Fluxes.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/Flux/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/Flux
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro
+@dirrmtry %%SITE_PERL%%/Astro
