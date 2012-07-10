@@ -9,6 +9,7 @@ share/applications/flare.desktop
 %%DATADIR%%/mods/averguard/items/items.txt
 %%DATADIR%%/mods/averguard/languages/data.de.po
 %%DATADIR%%/mods/averguard/languages/data.fi.po
+%%DATADIR%%/mods/averguard/languages/data.fr.po
 %%DATADIR%%/mods/averguard/languages/data.gl.po
 %%DATADIR%%/mods/averguard/languages/data.ja.po
 %%DATADIR%%/mods/averguard/languages/data.pot
@@ -29,11 +30,14 @@ share/applications/flare.desktop
 %%DATADIR%%/mods/averguard/quests/index.txt
 %%DATADIR%%/mods/fantasycore/animations/antlion.txt
 %%DATADIR%%/mods/fantasycore/animations/antlion_small.txt
+%%DATADIR%%/mods/fantasycore/animations/cursed_grave.txt
 %%DATADIR%%/mods/fantasycore/animations/goblin.txt
 %%DATADIR%%/mods/fantasycore/animations/goblin_runner.txt
 %%DATADIR%%/mods/fantasycore/animations/hero.txt
 %%DATADIR%%/mods/fantasycore/animations/minotaur.txt
 %%DATADIR%%/mods/fantasycore/animations/skeleton.txt
+%%DATADIR%%/mods/fantasycore/animations/wyvern.txt
+%%DATADIR%%/mods/fantasycore/animations/wyvern_adult.txt
 %%DATADIR%%/mods/fantasycore/animations/zombie.txt
 %%DATADIR%%/mods/fantasycore/enemies/antlion.txt
 %%DATADIR%%/mods/fantasycore/enemies/antlion_blinker.txt
@@ -42,6 +46,7 @@ share/applications/flare.desktop
 %%DATADIR%%/mods/fantasycore/enemies/antlion_hatchling.txt
 %%DATADIR%%/mods/fantasycore/enemies/antlion_slasher.txt
 %%DATADIR%%/mods/fantasycore/enemies/antlion_spitter.txt
+%%DATADIR%%/mods/fantasycore/enemies/cursed_grave.txt
 %%DATADIR%%/mods/fantasycore/enemies/goblin.txt
 %%DATADIR%%/mods/fantasycore/enemies/goblin_charger.txt
 %%DATADIR%%/mods/fantasycore/enemies/goblin_charger_elite.txt
@@ -56,14 +61,21 @@ share/applications/flare.desktop
 %%DATADIR%%/mods/fantasycore/enemies/skeletal_sniper.txt
 %%DATADIR%%/mods/fantasycore/enemies/skeletal_warrior.txt
 %%DATADIR%%/mods/fantasycore/enemies/skeleton.txt
+%%DATADIR%%/mods/fantasycore/enemies/wyvern.txt
+%%DATADIR%%/mods/fantasycore/enemies/wyvern_adult.txt
 %%DATADIR%%/mods/fantasycore/enemies/zombie.txt
 %%DATADIR%%/mods/fantasycore/enemies/zombie_bloodthirsty.txt
 %%DATADIR%%/mods/fantasycore/enemies/zombie_brute.txt
 %%DATADIR%%/mods/fantasycore/enemies/zombie_iceclaw.txt
 %%DATADIR%%/mods/fantasycore/enemies/zombie_rotting.txt
+%%DATADIR%%/mods/fantasycore/engine/autopickup.txt
 %%DATADIR%%/mods/fantasycore/engine/font_settings.txt
 %%DATADIR%%/mods/fantasycore/engine/hero_options.txt
+%%DATADIR%%/mods/fantasycore/engine/languages.txt
+%%DATADIR%%/mods/fantasycore/engine/tileset_config.txt
+%%DATADIR%%/mods/fantasycore/engine/xp_table.txt
 %%DATADIR%%/mods/fantasycore/fonts/LiberationSans-Regular.ttf
+%%DATADIR%%/mods/fantasycore/fonts/unifont-5.1.ttf
 %%DATADIR%%/mods/fantasycore/images/avatar/female/buckler.png
 %%DATADIR%%/mods/fantasycore/images/avatar/female/clothes.png
 %%DATADIR%%/mods/fantasycore/images/avatar/female/dagger.png
@@ -74,6 +86,24 @@ share/applications/flare.desktop
 %%DATADIR%%/mods/fantasycore/images/avatar/female/leather_armor.png
 %%DATADIR%%/mods/fantasycore/images/avatar/female/longbow.png
 %%DATADIR%%/mods/fantasycore/images/avatar/female/longsword.png
+%%DATADIR%%/mods/fantasycore/images/avatar/female/preview/buckler.png
+%%DATADIR%%/mods/fantasycore/images/avatar/female/preview/clothes.png
+%%DATADIR%%/mods/fantasycore/images/avatar/female/preview/dagger.png
+%%DATADIR%%/mods/fantasycore/images/avatar/female/preview/greatbow.png
+%%DATADIR%%/mods/fantasycore/images/avatar/female/preview/greatstaff.png
+%%DATADIR%%/mods/fantasycore/images/avatar/female/preview/greatsword.png
+%%DATADIR%%/mods/fantasycore/images/avatar/female/preview/head_long.png
+%%DATADIR%%/mods/fantasycore/images/avatar/female/preview/leather_armor.png
+%%DATADIR%%/mods/fantasycore/images/avatar/female/preview/longbow.png
+%%DATADIR%%/mods/fantasycore/images/avatar/female/preview/longsword.png
+%%DATADIR%%/mods/fantasycore/images/avatar/female/preview/rod.png
+%%DATADIR%%/mods/fantasycore/images/avatar/female/preview/shield.png
+%%DATADIR%%/mods/fantasycore/images/avatar/female/preview/shortbow.png
+%%DATADIR%%/mods/fantasycore/images/avatar/female/preview/shortsword.png
+%%DATADIR%%/mods/fantasycore/images/avatar/female/preview/slingshot.png
+%%DATADIR%%/mods/fantasycore/images/avatar/female/preview/staff.png
+%%DATADIR%%/mods/fantasycore/images/avatar/female/preview/steel_armor.png
+%%DATADIR%%/mods/fantasycore/images/avatar/female/preview/wand.png
 %%DATADIR%%/mods/fantasycore/images/avatar/female/rod.png
 %%DATADIR%%/mods/fantasycore/images/avatar/female/shield.png
 %%DATADIR%%/mods/fantasycore/images/avatar/female/shortbow.png
@@ -94,6 +124,26 @@ share/applications/flare.desktop
 %%DATADIR%%/mods/fantasycore/images/avatar/male/leather_armor.png
 %%DATADIR%%/mods/fantasycore/images/avatar/male/longbow.png
 %%DATADIR%%/mods/fantasycore/images/avatar/male/longsword.png
+%%DATADIR%%/mods/fantasycore/images/avatar/male/preview/buckler.png
+%%DATADIR%%/mods/fantasycore/images/avatar/male/preview/clothes.png
+%%DATADIR%%/mods/fantasycore/images/avatar/male/preview/dagger.png
+%%DATADIR%%/mods/fantasycore/images/avatar/male/preview/greatbow.png
+%%DATADIR%%/mods/fantasycore/images/avatar/male/preview/greatstaff.png
+%%DATADIR%%/mods/fantasycore/images/avatar/male/preview/greatsword.png
+%%DATADIR%%/mods/fantasycore/images/avatar/male/preview/head_bald.png
+%%DATADIR%%/mods/fantasycore/images/avatar/male/preview/head_hood.png
+%%DATADIR%%/mods/fantasycore/images/avatar/male/preview/head_short.png
+%%DATADIR%%/mods/fantasycore/images/avatar/male/preview/leather_armor.png
+%%DATADIR%%/mods/fantasycore/images/avatar/male/preview/longbow.png
+%%DATADIR%%/mods/fantasycore/images/avatar/male/preview/longsword.png
+%%DATADIR%%/mods/fantasycore/images/avatar/male/preview/rod.png
+%%DATADIR%%/mods/fantasycore/images/avatar/male/preview/shield.png
+%%DATADIR%%/mods/fantasycore/images/avatar/male/preview/shortbow.png
+%%DATADIR%%/mods/fantasycore/images/avatar/male/preview/shortsword.png
+%%DATADIR%%/mods/fantasycore/images/avatar/male/preview/slingshot.png
+%%DATADIR%%/mods/fantasycore/images/avatar/male/preview/staff.png
+%%DATADIR%%/mods/fantasycore/images/avatar/male/preview/steel_armor.png
+%%DATADIR%%/mods/fantasycore/images/avatar/male/preview/wand.png
 %%DATADIR%%/mods/fantasycore/images/avatar/male/rod.png
 %%DATADIR%%/mods/fantasycore/images/avatar/male/shield.png
 %%DATADIR%%/mods/fantasycore/images/avatar/male/shortbow.png
@@ -102,9 +152,9 @@ share/applications/flare.desktop
 %%DATADIR%%/mods/fantasycore/images/avatar/male/staff.png
 %%DATADIR%%/mods/fantasycore/images/avatar/male/steel_armor.png
 %%DATADIR%%/mods/fantasycore/images/avatar/male/wand.png
-%%DATADIR%%/mods/fantasycore/images/avatar/preview_background.png
 %%DATADIR%%/mods/fantasycore/images/enemies/antlion.png
 %%DATADIR%%/mods/fantasycore/images/enemies/antlion_hatchling.png
+%%DATADIR%%/mods/fantasycore/images/enemies/cursed_grave.png
 %%DATADIR%%/mods/fantasycore/images/enemies/fire_ant.png
 %%DATADIR%%/mods/fantasycore/images/enemies/goblin.png
 %%DATADIR%%/mods/fantasycore/images/enemies/goblin_elite.png
@@ -114,6 +164,8 @@ share/applications/flare.desktop
 %%DATADIR%%/mods/fantasycore/images/enemies/skeleton_archer.png
 %%DATADIR%%/mods/fantasycore/images/enemies/skeleton_mage.png
 %%DATADIR%%/mods/fantasycore/images/enemies/skeleton_weak.png
+%%DATADIR%%/mods/fantasycore/images/enemies/wyvern.png
+%%DATADIR%%/mods/fantasycore/images/enemies/wyvern_adult.png
 %%DATADIR%%/mods/fantasycore/images/enemies/zombie.png
 %%DATADIR%%/mods/fantasycore/images/icons/icons32.png
 %%DATADIR%%/mods/fantasycore/images/icons/icons64.png
@@ -155,13 +207,20 @@ share/applications/flare.desktop
 %%DATADIR%%/mods/fantasycore/images/menus/bar_mp.png
 %%DATADIR%%/mods/fantasycore/images/menus/bar_xp.png
 %%DATADIR%%/mods/fantasycore/images/menus/buttons/button_default.png
+%%DATADIR%%/mods/fantasycore/images/menus/buttons/button_small.png
 %%DATADIR%%/mods/fantasycore/images/menus/buttons/button_x.png
+%%DATADIR%%/mods/fantasycore/images/menus/buttons/checkbox_default.png
+%%DATADIR%%/mods/fantasycore/images/menus/buttons/combobox_default.png
 %%DATADIR%%/mods/fantasycore/images/menus/buttons/down.png
 %%DATADIR%%/mods/fantasycore/images/menus/buttons/left.png
+%%DATADIR%%/mods/fantasycore/images/menus/buttons/listbox_default.png
 %%DATADIR%%/mods/fantasycore/images/menus/buttons/right.png
+%%DATADIR%%/mods/fantasycore/images/menus/buttons/scrollbar_default.png
+%%DATADIR%%/mods/fantasycore/images/menus/buttons/slider_default.png
 %%DATADIR%%/mods/fantasycore/images/menus/buttons/up.png
 %%DATADIR%%/mods/fantasycore/images/menus/character.png
 %%DATADIR%%/mods/fantasycore/images/menus/character_proficiency.png
+%%DATADIR%%/mods/fantasycore/images/menus/config.png
 %%DATADIR%%/mods/fantasycore/images/menus/confirm_bg.png
 %%DATADIR%%/mods/fantasycore/images/menus/dialog_box.png
 %%DATADIR%%/mods/fantasycore/images/menus/disabled.png
@@ -190,14 +249,36 @@ share/applications/flare.desktop
 %%DATADIR%%/mods/fantasycore/images/npcs/peasant_woman2.png
 %%DATADIR%%/mods/fantasycore/images/npcs/wandering_trader1.png
 %%DATADIR%%/mods/fantasycore/images/npcs/wandering_trader2.png
+%%DATADIR%%/mods/fantasycore/images/portraits/dog01.png
 %%DATADIR%%/mods/fantasycore/images/portraits/female01.png
 %%DATADIR%%/mods/fantasycore/images/portraits/female02.png
 %%DATADIR%%/mods/fantasycore/images/portraits/female03.png
+%%DATADIR%%/mods/fantasycore/images/portraits/female04.png
+%%DATADIR%%/mods/fantasycore/images/portraits/female05.png
+%%DATADIR%%/mods/fantasycore/images/portraits/female06.png
+%%DATADIR%%/mods/fantasycore/images/portraits/female07.png
+%%DATADIR%%/mods/fantasycore/images/portraits/female08.png
+%%DATADIR%%/mods/fantasycore/images/portraits/female09.png
 %%DATADIR%%/mods/fantasycore/images/portraits/male01.png
 %%DATADIR%%/mods/fantasycore/images/portraits/male02.png
 %%DATADIR%%/mods/fantasycore/images/portraits/male03.png
 %%DATADIR%%/mods/fantasycore/images/portraits/male04.png
 %%DATADIR%%/mods/fantasycore/images/portraits/male05.png
+%%DATADIR%%/mods/fantasycore/images/portraits/male06.png
+%%DATADIR%%/mods/fantasycore/images/portraits/male07.png
+%%DATADIR%%/mods/fantasycore/images/portraits/male08.png
+%%DATADIR%%/mods/fantasycore/images/portraits/male09.png
+%%DATADIR%%/mods/fantasycore/images/portraits/male10.png
+%%DATADIR%%/mods/fantasycore/images/portraits/male11.png
+%%DATADIR%%/mods/fantasycore/images/portraits/male12.png
+%%DATADIR%%/mods/fantasycore/images/portraits/male13.png
+%%DATADIR%%/mods/fantasycore/images/portraits/male14.png
+%%DATADIR%%/mods/fantasycore/images/portraits/male15.png
+%%DATADIR%%/mods/fantasycore/images/portraits/male16.png
+%%DATADIR%%/mods/fantasycore/images/portraits/male17.png
+%%DATADIR%%/mods/fantasycore/images/portraits/male18.png
+%%DATADIR%%/mods/fantasycore/images/portraits/male19.png
+%%DATADIR%%/mods/fantasycore/images/portraits/male20.png
 %%DATADIR%%/mods/fantasycore/images/powers/arrow_stuck.png
 %%DATADIR%%/mods/fantasycore/images/powers/arrows.png
 %%DATADIR%%/mods/fantasycore/images/powers/blast.png
@@ -222,28 +303,33 @@ share/applications/flare.desktop
 %%DATADIR%%/mods/fantasycore/items/items.txt
 %%DATADIR%%/mods/fantasycore/languages/data.de.po
 %%DATADIR%%/mods/fantasycore/languages/data.fi.po
+%%DATADIR%%/mods/fantasycore/languages/data.fr.po
 %%DATADIR%%/mods/fantasycore/languages/data.gl.po
 %%DATADIR%%/mods/fantasycore/languages/data.ja.po
 %%DATADIR%%/mods/fantasycore/languages/data.pot
 %%DATADIR%%/mods/fantasycore/languages/data.ru.po
 %%DATADIR%%/mods/fantasycore/languages/data.uk.po
-%%DATADIR%%/mods/fantasycore/languages/engine.by.po
+%%DATADIR%%/mods/fantasycore/languages/engine.be.po
 %%DATADIR%%/mods/fantasycore/languages/engine.de.po
 %%DATADIR%%/mods/fantasycore/languages/engine.es.po
 %%DATADIR%%/mods/fantasycore/languages/engine.fi.po
 %%DATADIR%%/mods/fantasycore/languages/engine.fr.po
 %%DATADIR%%/mods/fantasycore/languages/engine.gl.po
+%%DATADIR%%/mods/fantasycore/languages/engine.it.po
 %%DATADIR%%/mods/fantasycore/languages/engine.ja.po
 %%DATADIR%%/mods/fantasycore/languages/engine.pot
 %%DATADIR%%/mods/fantasycore/languages/engine.ru.po
+%%DATADIR%%/mods/fantasycore/languages/engine.sk.po
 %%DATADIR%%/mods/fantasycore/languages/engine.sv.po
 %%DATADIR%%/mods/fantasycore/languages/engine.uk.po
 %%DATADIR%%/mods/fantasycore/languages/readme.txt
 %%DATADIR%%/mods/fantasycore/languages/xgettext.py
+%%DATADIR%%/mods/fantasycore/menus/config.txt
 %%DATADIR%%/mods/fantasycore/music/battle_theme.ogg
 %%DATADIR%%/mods/fantasycore/music/boss_theme.ogg
 %%DATADIR%%/mods/fantasycore/music/cave_theme.ogg
 %%DATADIR%%/mods/fantasycore/music/dungeon_theme.ogg
+%%DATADIR%%/mods/fantasycore/music/forest_theme.ogg
 %%DATADIR%%/mods/fantasycore/music/magical_theme.ogg
 %%DATADIR%%/mods/fantasycore/music/overworld_theme.ogg
 %%DATADIR%%/mods/fantasycore/music/safe_room_theme.ogg
@@ -272,6 +358,10 @@ share/applications/flare.desktop
 %%DATADIR%%/mods/fantasycore/soundfx/enemies/skeleton_hit.ogg
 %%DATADIR%%/mods/fantasycore/soundfx/enemies/skeleton_ment.ogg
 %%DATADIR%%/mods/fantasycore/soundfx/enemies/skeleton_phys.ogg
+%%DATADIR%%/mods/fantasycore/soundfx/enemies/wyvern_die.ogg
+%%DATADIR%%/mods/fantasycore/soundfx/enemies/wyvern_hit.ogg
+%%DATADIR%%/mods/fantasycore/soundfx/enemies/wyvern_ment.ogg
+%%DATADIR%%/mods/fantasycore/soundfx/enemies/wyvern_phys.ogg
 %%DATADIR%%/mods/fantasycore/soundfx/enemies/zombie_critdie.ogg
 %%DATADIR%%/mods/fantasycore/soundfx/enemies/zombie_die.ogg
 %%DATADIR%%/mods/fantasycore/soundfx/enemies/zombie_hit.ogg
@@ -296,6 +386,14 @@ share/applications/flare.desktop
 %%DATADIR%%/mods/fantasycore/soundfx/male_die.ogg
 %%DATADIR%%/mods/fantasycore/soundfx/male_hit.ogg
 %%DATADIR%%/mods/fantasycore/soundfx/melee_attack.ogg
+%%DATADIR%%/mods/fantasycore/soundfx/npcs/female_merchant_01.ogg
+%%DATADIR%%/mods/fantasycore/soundfx/npcs/female_merchant_02.ogg
+%%DATADIR%%/mods/fantasycore/soundfx/npcs/female_merchant_03.ogg
+%%DATADIR%%/mods/fantasycore/soundfx/npcs/female_merchant_04.ogg
+%%DATADIR%%/mods/fantasycore/soundfx/npcs/female_merchant_05.ogg
+%%DATADIR%%/mods/fantasycore/soundfx/npcs/female_merchant_06.ogg
+%%DATADIR%%/mods/fantasycore/soundfx/npcs/female_merchant_07.ogg
+%%DATADIR%%/mods/fantasycore/soundfx/npcs/female_merchant_08.ogg
 %%DATADIR%%/mods/fantasycore/soundfx/npcs/male_merchant_01.ogg
 %%DATADIR%%/mods/fantasycore/soundfx/npcs/male_merchant_02.ogg
 %%DATADIR%%/mods/fantasycore/soundfx/npcs/male_merchant_03.ogg
@@ -336,11 +434,13 @@ share/applications/flare.desktop
 %%DATADIR%%/mods/frontier/enemies/rilrak.txt
 %%DATADIR%%/mods/frontier/languages/data.de.po
 %%DATADIR%%/mods/frontier/languages/data.fi.po
+%%DATADIR%%/mods/frontier/languages/data.fr.po
 %%DATADIR%%/mods/frontier/languages/data.gl.po
 %%DATADIR%%/mods/frontier/languages/data.ja.po
 %%DATADIR%%/mods/frontier/languages/data.pot
 %%DATADIR%%/mods/frontier/languages/data.ru.po
 %%DATADIR%%/mods/frontier/languages/data.uk.po
+%%DATADIR%%/mods/frontier/maps/ancient_temple.txt
 %%DATADIR%%/mods/frontier/maps/frontier_outpost.txt
 %%DATADIR%%/mods/frontier/maps/frontier_plains.txt
 %%DATADIR%%/mods/frontier/maps/river_encampment.txt
@@ -370,7 +470,9 @@ share/applications/flare.desktop
 %%DATADIR%%/mods/living_bones/items/items.txt
 %%DATADIR%%/mods/living_bones/languages/data.de.po
 %%DATADIR%%/mods/living_bones/languages/data.fi.po
+%%DATADIR%%/mods/living_bones/languages/data.fr.po
 %%DATADIR%%/mods/living_bones/languages/data.gl.po
+%%DATADIR%%/mods/living_bones/languages/data.it.po
 %%DATADIR%%/mods/living_bones/languages/data.ja.po
 %%DATADIR%%/mods/living_bones/languages/data.pot
 %%DATADIR%%/mods/living_bones/languages/data.ru.po
@@ -425,6 +527,7 @@ share/icons/hicolor/scalable/apps/flare.svg
 @dirrm %%DATADIR%%/mods/fantasycore/soundfx
 @dirrm %%DATADIR%%/mods/fantasycore/powers
 @dirrm %%DATADIR%%/mods/fantasycore/music
+@dirrm %%DATADIR%%/mods/fantasycore/menus
 @dirrm %%DATADIR%%/mods/fantasycore/languages
 @dirrm %%DATADIR%%/mods/fantasycore/items
 @dirrm %%DATADIR%%/mods/fantasycore/images/tilesets
@@ -437,7 +540,9 @@ share/icons/hicolor/scalable/apps/flare.svg
 @dirrm %%DATADIR%%/mods/fantasycore/images/logo
 @dirrm %%DATADIR%%/mods/fantasycore/images/icons
 @dirrm %%DATADIR%%/mods/fantasycore/images/enemies
+@dirrm %%DATADIR%%/mods/fantasycore/images/avatar/male/preview
 @dirrm %%DATADIR%%/mods/fantasycore/images/avatar/male
+@dirrm %%DATADIR%%/mods/fantasycore/images/avatar/female/preview
 @dirrm %%DATADIR%%/mods/fantasycore/images/avatar/female
 @dirrm %%DATADIR%%/mods/fantasycore/images/avatar
 @dirrm %%DATADIR%%/mods/fantasycore/images
