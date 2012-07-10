@@ -59,6 +59,7 @@
     SUBDIR += p5-Astro-Flux
     SUBDIR += p5-Astro-Hipparcos
     SUBDIR += p5-Astro-MoonPhase
+    SUBDIR += p5-Astro-PAL
     SUBDIR += p5-Astro-SIMBAD
     SUBDIR += p5-Astro-SIMBAD-Client
     SUBDIR += p5-Astro-SpaceTrack
