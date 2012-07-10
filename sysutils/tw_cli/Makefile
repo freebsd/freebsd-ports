@@ -8,7 +8,7 @@
 PORTNAME=	tw_cli
 PORTVERSION=	9.5.4
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://tsupport:tsupport@ftp0.lsil.com/private/3Ware/downloads/
+MASTER_SITES=	ftp://hosting.lissyara.su/
 DISTNAME=	cli_freebsd_10.2.1_9.5.4
 EXTRACT_SUFX=	.zip
 
