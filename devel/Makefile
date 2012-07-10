@@ -305,6 +305,7 @@
     SUBDIR += dconf
     SUBDIR += ddd
     SUBDIR += deheader
+    SUBDIR += delta
     SUBDIR += deputy
     SUBDIR += desktop-file-utils
     SUBDIR += dev86

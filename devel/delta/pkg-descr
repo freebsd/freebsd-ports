@@ -1,0 +1,6 @@
+Delta assists you in minimizing "interesting" files subject
+to a test of their interestingness. A common such situation is when attempting
+to isolate a small failure-inducing substring of a large input that causes your
+program to exhibit a bug.
+
+WWW:	http://delta.tigris.org/
