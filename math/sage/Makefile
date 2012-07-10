@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sage
-PORTVERSION=	5.0.1
+PORTVERSION=	5.1
 CATEGORIES=	math
 MASTER_SITES=	http://boxen.math.washington.edu/home/sagemath/sage-mirror/src/ \
 		http://mirrors.xmission.com/sage/src/ \
@@ -17,12 +17,10 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Open source Mathematics software
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		latex:${PORTSDIR}/print/teTeX-base
+BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas \
 		lapack:${PORTSDIR}/math/lapack \
 		jpeg:${PORTSDIR}/graphics/jpeg
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 # 387 option: this only makes a difference for the amd64 architecture.  Causes
 # the internal floating point calculations to be performed with extended
@@ -71,7 +69,6 @@ post-patch:
 # Create the wrappers for the compiler invocations.
 	@${MKDIR} ${WRKSRC}/local/bin
 	@${LN} -s -f ${LOCALBASE}/bin/gmake ${WRKSRC}/local/bin/make
-	@${LN} -s -f ${LOCALBASE}/bin/bash ${WRKSRC}/local/bin/sh
 	@${SED} -e 's#%%CC%%#${LOCALBASE}/bin/${CC}#' \
 		-e 's#%%LDFLAGS%%#${LDFLAGS} ${FPM_FLAG}#' \
 		${FILESDIR}/gcc.in > ${WRKSRC}/local/bin/cc

@@ -1,5 +1,5 @@
 --- gap-4.4.12.p6/patches/sysfiles.c.orig	2010-04-29 01:30:00.000000000 +1000
-+++ gap-4.4.12.p6/patches/sysfiles.c	2010-07-26 05:25:58.334562226 +1000
++++ gap-4.4.12.p7/patches/sysfiles.c	2010-07-26 05:25:58.334562226 +1000
 @@ -1524,7 +1524,7 @@
  **  to cooked mode before stopping GAP and back to raw mode when continueing.
  */
