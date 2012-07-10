@@ -1,0 +1,10 @@
+Astro::PAL provides a Perl interface to either the Starlink PAL positional
+astronomy library.
+
+Return values are returned on the stack rather than being modified in place.
+
+In addition small utility subroutines are provided that do useful tasks (from
+the author's point of view) - specifically routines for calculating the Local
+Sidereal Time.
+
+WWW: http://search.cpan.org/dist/Astro-PAL/
