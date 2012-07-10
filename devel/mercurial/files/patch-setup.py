@@ -1,6 +1,14 @@
---- setup.py.orig	2012-02-01 21:23:54.000000000 +0100
-+++ setup.py	2012-02-02 12:44:12.000000000 +0100
-@@ -379,7 +379,7 @@
+--- setup 1.py	2012-06-02 08:48:21.000000000 +0400
++++ setup.py	2012-06-12 17:05:27.091982103 +0400
+@@ -223,6 +223,7 @@
+     description = "build translations (.mo files)"
+ 
+     def run(self):
++%%NLS%%        return
+         if not find_executable('msgfmt'):
+             self.warn("could not find msgfmt executable, no translations "
+                      "will be built")
+@@ -385,7 +386,7 @@
              'install_scripts': hginstallscripts}
  
  packages = ['mercurial', 'mercurial.hgweb',

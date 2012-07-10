@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mercurial
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	devel python
 MASTER_SITES=	http://mercurial.selenic.com/release/
 
@@ -69,7 +69,9 @@ SUB_FILES=	pkg-message
 
 post-patch:
 .if defined(WITHOUT_NLS)
-	@${REINPLACE_CMD} '/^build.sub_co.*$$/d' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's/^%%NLS%%//' ${WRKSRC}/${PYSETUP}
+.else
+	@${REINPLACE_CMD} -e 's/^%%NLS%%/# /' ${WRKSRC}/${PYSETUP}
 .endif
 
 post-install:
