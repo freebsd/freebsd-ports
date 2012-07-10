@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	Algorithm-Evolutionary
-PORTVERSION=	0.77
-PORTREVISION=	1
+PORTVERSION=	0.78
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A library for doing evolutionary computation in Perl
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	p5-Algorithm-Permute>=0.01:${PORTSDIR}/devel/p5-Algorithm-Permute \
 		p5-Bit-Vector>=0:${PORTSDIR}/math/p5-Bit-Vector \
@@ -29,7 +30,6 @@ BUILD_DEPENDS=	p5-Algorithm-Permute>=0.01:${PORTSDIR}/devel/p5-Algorithm-Permute
 		p5-XML-Parser-Style-EasyTree>=0:${PORTSDIR}/textproc/p5-XML-Parser-Style-EasyTree \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 TEST_DEPENDS=	p5-Pod-Escapes>=0:${PORTSDIR}/textproc/p5-Pod-Escapes \
 		p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod
 
