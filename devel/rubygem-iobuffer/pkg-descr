@@ -1,0 +1,5 @@
+IO::Buffer is a fast byte queue which is primarily intended for
+non-blocking I/O applications but is suitable wherever buffering is
+required.  IO::Buffer is compatible with Ruby 1.8/1.9 and Rubinius.
+
+WWW: https://github.com/tarcieri/iobuffer
