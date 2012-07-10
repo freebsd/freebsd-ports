@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vdr-plugin-iptv
-PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.saunalahti.fi/~rahrenbe/vdr/iptv/files/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
@@ -21,6 +20,7 @@ HAVE_CONFIGURE=	yes
 PORTDOCS=	COPYING README HISTORY
 PORTEXAMPLES=	channels.conf.iptv
 MAKE_JOBS_SAFE=	yes
+MAKE_ARGS+=	IPTV_EXTSHELL=/bin/sh
 WRKSRC=		${WRKDIR}/${PLUGIN}-${DISTVERSION}
 
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
