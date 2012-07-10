@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qooxdoo
-PORTVERSION=	1.6
+PORTVERSION=	2.0.1
 PORTREVISION=	0
 CATEGORIES=	www devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-current/${PORTVERSION}/
@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-sdk
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A comprehensive and innovative Ajax application framework
+
+LICENSE=	LGPL3 EPL
+LICENSE_COMB=	dual
 
 FIND_FILES=	${WRKSRC} -type f -name "*.py" -print0
 FIND_FILES_BAK=	${WRKSRC} -type f -and \( -name "*.orig" -or -name "*.bak" \)
@@ -29,23 +32,27 @@ SHAREMODE=	644
 
 XARGS_ARGS=	-0
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	${FIND} ${FIND_FILES} | ${XARGS} ${XARGS_ARGS} ${REINPLACE_CMD}
 	${FIND} ${FIND_FILES_BAK} -delete
 
 do-build:
-	${PYTHON_CMD} -m compileall -f ${WRKSRC}/tool/bin
-	${PYTHON_CMD} -O -m compileall -f ${WRKSRC}/tool/bin
+	${PYTHON_CMD} -m compileall -f ${WRKSRC}/tool
+	${PYTHON_CMD} -O -m compileall -f ${WRKSRC}/tool
 
 do-install:
 	${MKDIR} ${DATADIR}
 .for D in ${QXDDIRS}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} ${D} ${DATADIR}
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	cd ${WRKSRC}/documentation/manual && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	cd ${WRKSRC}/application && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
 	${INSTALL_DATA} ${WRKSRC}/version.txt ${DATADIR}
