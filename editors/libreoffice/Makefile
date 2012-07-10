@@ -209,25 +209,22 @@ MANCOMPRESSED=	yes
 #USE_GCC=	4.6+
 #DISTFILES+=	bd30e9cf5523cdfc019b94f5e1d7fd19-cppunit-1.12.1.tar.gz:ext
 #.else
-CONFIGURE_ARGS+=	--with-system-cppunit
+.if defined(WITH_SYSTEM_CLANG)
+# XXX Clang PR13308 (http://llvm.org/bugs/show_bug.cgi?id=13308)
+# Fixed in r159895 (http://llvm.org/viewvc/llvm-project?view=rev&revision=159895)
+CC=	/usr/bin/clang
+CXX=	/usr/bin/clang++
+CXXCPP=	/usr/bin/clang-cpp -x c++
+CPP=	/usr/bin/clang-cpp
+.else
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang:${PORTSDIR}/lang/clang
+USE_BINUTILS=	yes
 CC=	${LOCALBASE}/bin/clang
 CXX=	${LOCALBASE}/bin/clang++
 CXXCPP=	${LOCALBASE}/bin/clang++ -E
 CPP=	${LOCALBASE}/bin/clang -E
-# Work around a bug in pointyhat and tinderbox, prevent it to determine than
-# clang from ports is needed when host is a freebsd 9+
-#.if defined(PACKAGE_BUILDING)
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang:${PORTSDIR}/lang/clang
-USE_BINUTILS=	yes
-#.endif
-#.if !exists(/usr/bin/clang)
-#BUILD_DEPENDS+=	${LOCALBASE}/bin/clang:${PORTSDIR}/lang/clang
-#USE_BINUTILS=	yes
-#CXXCPP=	clang++ -E
-#CPP=	clang -E
-#.endif
-# XXX Work around C++11 problems with Clang.
-CXXFLAGS+=	-std=gnu++0x -Qunused-arguments
+.endif
+CONFIGURE_ARGS+=	--with-system-cppunit
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcppunit.so:${PORTSDIR}/devel/cppunit
 #.endif
 
