@@ -4,10 +4,11 @@ consists of a C++ class library and several interpreted interface layers
 including Tcl/Tk, Java, and Python. Kitware, whose team created and continues
 to extend the toolkit, offers professional support and consulting services for
 VTK. VTK supports a wide variety of visualization algorithms including: scalar,
-vector, tensor, texture, and volumetric methods; and advanced modeling techniques
-such as: implicit modeling, polygon reduction, mesh smoothing, cutting, contouring,
-and Delaunay triangulation. VTK has an extensive information visualization
-framework, has a suite of 3D interaction widgets, supports parallel processing,
-and integrates with various databases on GUI toolkits such as Qt and Tk.
+vector, tensor, texture, and volumetric methods; and advanced modeling
+techniques such as: implicit modeling, polygon reduction, mesh smoothing,
+cutting, contouring, and Delaunay triangulation. VTK has an extensive
+information visualization framework, has a suite of 3D interaction widgets,
+supports parallel processing, and integrates with various databases on GUI
+toolkits such as Qt and Tk.
 
 WWW: http://www.vtk.org

@@ -8,7 +8,7 @@
 
 PORTNAME=	vtk
 PORTVERSION=	5.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${PORTVERSION:R}/ \
 		http://www.neuro.mcw.edu/Ports/distfiles/VTK5/
@@ -17,9 +17,9 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	The Visualization Toolkit
 
 LIB_DEPENDS=	expat.[5-6]:${PORTSDIR}/textproc/expat2 \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
+		jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff
+		tiff:${PORTSDIR}/graphics/tiff
 
 LATEST_LINK=	vtk5
 
@@ -86,7 +86,7 @@ PLIST_SUB+=	SHARED="@comment " \
 .endif
 
 .if defined(WITH_VTKMPEG2)
-LIB_DEPENDS+=	vtkMPEG2Encode.5:${PORTSDIR}/multimedia/vtkmpeg2encode
+LIB_DEPENDS+=	vtkMPEG2Encode:${PORTSDIR}/multimedia/vtkmpeg2encode
 PLIST_SUB+=	MPEG=""
 CMAKE_ARGS+=	-DVTK_USE_PATENTED:BOOL=ON \
 		-DVTK_USE_MPEG2_ENCODER:BOOL=ON \
@@ -97,7 +97,7 @@ PLIST_SUB+=	MPEG="@comment "
 .endif
 
 .if defined(WITH_GL2PS)
-LIB_DEPENDS+=	gl2ps.1:${PORTSDIR}/print/gl2ps
+LIB_DEPENDS+=	gl2ps:${PORTSDIR}/print/gl2ps
 CMAKE_ARGS+=	-DVTK_USE_GL2PS:BOOL=ON
 PLIST_SUB+=	GL2PS=""
 .else
@@ -105,22 +105,23 @@ PLIST_SUB+=	GL2PS="@comment "
 .endif
 
 .if defined(WITH_OSMESA)
-LIB_DEPENDS+=	OSMesa32.8:${PORTSDIR}/graphics/libosmesa
+LIB_DEPENDS+=	OSMesa32:${PORTSDIR}/graphics/libosmesa
 CMAKE_ARGS+=	-DVTK_OPENGL_HAS_OSMESA:BOOL=ON \
 		-DOSMESA_INCLUDE_DIR:PATH=${LOCALBASE}/include/Mesa \
 		-DOSMESA_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSMesa32.so \
 		-DOPENGL_gl_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSMesa32.so \
-		-DOPENGL_glu_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSGLU.so
+		-DOPENGL_glu_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSGLU.so \
+		-DVTK_USE_X:BOOL=OFF
 PLIST_SUB+=	X11="@comment "
 .else
 USE_GL=		yes
+CMAKE_ARGS+=	-DVTK_USE_X:BOOL=ON
 PLIST_SUB+=	X11=""
 .endif
 
 .if defined(WITH_QT)
-USE_QT4=	corelib assistant assistantclient designer \
-		gui opengl qtestlib sql dbus \
-		qmake_build uic_build moc_build rcc_build
+USE_QT4=	corelib designer gui opengl qmake_build uic_build \
+		moc_build rcc_build
 CMAKE_ARGS+=	-DVTK_USE_GUISUPPORT:BOOL=ON \
    		-DVTK_USE_QVTK:BOOL=ON \
    		-DVTK_USE_QT:BOOL=ON \
