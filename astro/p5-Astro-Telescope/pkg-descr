@@ -1,0 +1,4 @@
+Astro::Telescope is a class for handling properties of individual telescopes
+such as longitude, latitude, height and observational limits.
+
+WWW: http://search.cpan.org/dist/Astro-Telescope/
