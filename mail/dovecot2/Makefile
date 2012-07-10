@@ -213,11 +213,6 @@ post-patch:
 		s!-example\.conf[[:>:]]!.conf!g;\
 		s!^(confdir[[:space:]]+=[[:space:]]+)\$$\(sysconfdir\)!\1${EXAMPLESDIR}!g;\
 		' ${WRKSRC}/*/Makefile.in ${WRKSRC}/Makefile.in
-.if ${PORT_OPTIONS:MGSSAPI}
-	@${REINPLACE_CMD} -e '\
-		s!<gssapi/gssapi\.h>!<gssapi.h>!;\
-		' ${WRKSRC}/src/auth/mech-gssapi.c ${WRKSRC}/configure
-.endif
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
