@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Time-Local
-PORTVERSION=	1.20.00
+PORTVERSION=	1.22.00
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,17 +15,27 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Efficiently compute time from local and GMT time
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+OPTIONS_DEFINE=	DOCS
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Time::Local.3
-
-.if !defined(NOPORTDOCS)
 PORTDOCS=	Changes
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
