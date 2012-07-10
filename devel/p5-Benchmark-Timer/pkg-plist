@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Benchmark/Timer.pm
+%%SITE_PERL%%/Benchmark/delta.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Benchmark/Timer/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Benchmark/Timer
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Benchmark/

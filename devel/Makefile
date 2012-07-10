@@ -1337,6 +1337,7 @@
     SUBDIR += p5-BSD-stat
     SUBDIR += p5-BZ-Client
     SUBDIR += p5-Badger
+    SUBDIR += p5-Benchmark-Timer
     SUBDIR += p5-Best
     SUBDIR += p5-Bread-Board
     SUBDIR += p5-Bread-Board-Declare
