@@ -469,7 +469,7 @@ share/xsessions/e16-gnome3-session.desktop
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/config
 @dirrm %%DATADIR%%/E-docs
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%
 @dirrm lib/e16
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/xsessions
