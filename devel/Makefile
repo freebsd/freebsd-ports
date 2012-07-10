@@ -3781,6 +3781,7 @@
     SUBDIR += rubygem-inline
     SUBDIR += rubygem-interact
     SUBDIR += rubygem-io-like
+    SUBDIR += rubygem-iobuffer
     SUBDIR += rubygem-jammit
     SUBDIR += rubygem-jeweler
     SUBDIR += rubygem-jruby-jars
