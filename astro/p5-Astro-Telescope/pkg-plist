@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Astro/Telescope.pm
+%%SITE_PERL%%/Astro/Telescope/MPC.pm
+@dirrmtry %%SITE_PERL%%/Astro/Telescope
+@dirrmtry %%SITE_PERL%%/Astro
