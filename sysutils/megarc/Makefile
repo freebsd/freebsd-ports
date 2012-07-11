@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	# not available
 DISTNAME=	dr_freebsd_${PORTVERSION}
 
-MAINTAINER=	gerrit.beine@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LSI Logic's MegaRAID controlling software
 
 USE_ZIP=	yes

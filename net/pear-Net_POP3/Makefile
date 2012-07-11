@@ -10,7 +10,7 @@ PORTVERSION=	1.3.7
 PORTREVISION=	1
 CATEGORIES=	net pear
 
-MAINTAINER=	gerrit.beine@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides a POP3 class to access POP3 server
 
 BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket

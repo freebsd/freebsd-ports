@@ -10,7 +10,7 @@ CATEGORIES=	java devel
 MASTER_SITES=	http://s3.amazonaws.com/dist.springframework.org/release/SPR/
 DISTNAME=	spring-framework-${PORTVERSION}.RELEASE-with-docs
 
-MAINTAINER=	gerrit.beine@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Spring Framework for Java
 
 WRKSRC=		${WRKDIR}/spring-framework-${PORTVERSION}.RELEASE

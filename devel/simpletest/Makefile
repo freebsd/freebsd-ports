@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}_${PORTVERSION}
 DISTNAME=	${PORTNAME:L}_${PORTVERSION}
 
-MAINTAINER=	gerrit.beine@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unit testing, mock objects and web testing framework for PHP
 
 USE_PHP=	pcre

@@ -9,7 +9,7 @@ PORTNAME=	PhpDocumentor
 PORTVERSION=	1.4.3
 CATEGORIES=	devel www pear
 
-MAINTAINER=	gerrit.beine@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides automatic documenting of php-api from the source
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

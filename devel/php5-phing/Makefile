@@ -10,7 +10,7 @@ PORTVERSION=	2.3.1
 CATEGORIES=	devel
 MASTER_SITES=	http://pear.phing.info/get/
 
-MAINTAINER=	gerrit.beine@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Project build system based on Apache Ant
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

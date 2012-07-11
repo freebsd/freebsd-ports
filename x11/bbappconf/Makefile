@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	SF/bbtools/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	gerrit.beine@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application configuring tool for the blackbox window manager
 
 USE_XORG=	x11

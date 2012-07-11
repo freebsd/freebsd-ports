@@ -12,7 +12,7 @@ CATEGORIES=	www perl5 devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20-%20Source%20Code%20%28with%20UNIX%20style%20line%20endings%29
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	gerrit.beine@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for automated testing of web applications
 
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
