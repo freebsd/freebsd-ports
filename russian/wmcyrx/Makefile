@@ -23,6 +23,8 @@ MAKE_ENV+=	COPT="${CXXFLAGS} -fpermissive"
 
 post-extract:
 	@ ${MV} ${WRKSRC}/makefile ${WRKSRC}/Makefile
+	@ ${REINPLACE_CMD} 's|inline min|inline int min|' \
+		${WRKSRC}/cyrx2.cc
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/cyrx2 ${PREFIX}/bin/wmcyrx2
