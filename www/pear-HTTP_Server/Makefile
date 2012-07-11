@@ -9,7 +9,7 @@ PORTNAME=	HTTP_Server
 PORTVERSION=	0.4.0
 CATEGORIES=	www devel pear
 
-MAINTAINER=	gerrit.beine@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP server class
 
 BUILD_DEPENDS=	${PEARDIR}/HTTP.php:${PORTSDIR}/www/pear-HTTP \

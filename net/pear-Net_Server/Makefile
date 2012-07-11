@@ -9,7 +9,7 @@ PORTNAME=	Net_Server
 PORTVERSION=	1.0.2
 CATEGORIES=	net pear
 
-MAINTAINER=	gerrit.beine@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic server class
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

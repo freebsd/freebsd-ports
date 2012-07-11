@@ -9,7 +9,7 @@ PORTNAME=	HTML_QuickForm
 PORTVERSION=	3.2.12
 CATEGORIES=	devel www pear
 
-MAINTAINER=	gerrit.beine@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provide methods for creating, validating and processing HTML forms
 
 BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:${PORTSDIR}/devel/pear-HTML_Common

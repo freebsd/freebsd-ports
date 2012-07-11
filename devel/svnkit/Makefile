@@ -11,7 +11,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	http://svnkit.com/
 DISTNAME=	org.tmatesoft.svn_${PORTVERSION}.standalone
 
-MAINTAINER=	gerrit.beine@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The only pure Java Subversion client library in the world
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper

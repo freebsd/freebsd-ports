@@ -13,7 +13,7 @@ MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	${PORTNAME}/java/${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gerrit.beine@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full-text search engine for Java
 
 LICENSE=	AL2

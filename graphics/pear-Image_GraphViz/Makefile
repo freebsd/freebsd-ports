@@ -10,7 +10,7 @@ PORTVERSION=	1.2.1
 PORTREVISION=	3
 CATEGORIES=	graphics www pear
 
-MAINTAINER=	gerrit.beine@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interface to AT&T's GraphViz tools
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TONVOON
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gerrit.beine@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modules to streamline writing Nagios plugins
 
 PERL_CONFIGURE=	yes

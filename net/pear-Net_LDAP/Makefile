@@ -10,7 +10,7 @@ DISTVERSION=	1.1.5
 PORTREVISION=	1
 CATEGORIES=	net pear
 
-MAINTAINER=	gerrit.beine@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OO interface for searching and manipulating LDAP-entries
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

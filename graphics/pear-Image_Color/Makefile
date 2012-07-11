@@ -9,7 +9,7 @@ PORTNAME=	Image_Color
 PORTVERSION=	1.0.3
 CATEGORIES=	graphics www pear
 
-MAINTAINER=	gerrit.beine@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR::Image_Color manages and handles color data and conversions
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

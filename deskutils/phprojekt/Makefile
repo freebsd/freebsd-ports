@@ -11,7 +11,7 @@ CATEGORIES=	deskutils www
 MASTER_SITES=	http://www.phprojekt.com/downloads/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	gerrit.beine@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open source groupware suite
 
 USE_PHP=	session imap mysql
