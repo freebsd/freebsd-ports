@@ -1,8 +1,6 @@
-$FreeBSD$
-
---- config.mk.orig	Mon Sep 18 21:06:37 2000
-+++ config.mk	Sat Mar  2 19:21:24 2002
-@@ -4,11 +4,11 @@
+--- config.mk.orig	2012-03-17 22:55:49.000000000 +0100
++++ config.mk	2012-07-11 20:57:38.000000000 +0200
+@@ -6,11 +6,12 @@
  
  default: all
  
@@ -13,20 +11,8 @@ $FreeBSD$
  
  # (Add a -g for debugging)
 -CPPFLAGS += -O2 -Wall
-+CPPFLAGS += -Wall
++CPPFLAGS += -Wall -I%%LOCALBASE%%/include %%PTHREAD_CFLAGS%%
++LDFLAGS += %%PTHREAD_LIBS%%
  
  # Add compile options, such as -I option to include jpeglib's headers
  # CPPFLAGS += -I/home/fred/jpeglib
-@@ -33,9 +33,10 @@
- 
- OS 	   := -DLC_LINUX
- OSDIR 	   := linux
--PREFIX     := /usr/local
-+PREFIX     := %%LOCALBASE%%
- GTK_CONFIG := gtk12-config
--CPPFLAGS   += -L/usr/local/lib
-+CPPFLAGS   += ${CFLAGS} -L%%LOCALBASE%%/lib -I%%LOCALBASE%%/include %%PTHREAD_CFLAGS%%
-+LDFLAGS    += -L%%LOCALBASE%%/lib %%PTHREAD_LIBS%%
- 
- endif
- 

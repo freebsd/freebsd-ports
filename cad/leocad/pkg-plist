@@ -1,6 +1,0 @@
-bin/leocad
-share/leocad/pieces.bin
-share/leocad/pieces.idx
-share/leocad/textures.bin
-share/leocad/textures.idx
-@dirrm share/leocad
