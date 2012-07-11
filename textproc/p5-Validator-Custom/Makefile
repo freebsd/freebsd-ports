@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Validator-Custom
-PORTVERSION=	0.1427
+PORTVERSION=	0.1428
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KIMOTO
@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Validator::Custom for simple data validation
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Object-Simple>=3.0616:${PORTSDIR}/devel/p5-Object-Simple
 RUN_DEPENDS=	p5-Object-Simple>=3.0616:${PORTSDIR}/devel/p5-Object-Simple
