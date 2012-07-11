@@ -9,7 +9,8 @@ other softwares:
 - Solely uses smb(4), significantly decreasing risks and CPU usage
 - Based heavily on documentation provided from the server and H/W monitoring IC
   manufacturers
-- Full tested on both i386 and amd64 systems, using RELENG_6 and RELENG_7
+- Full tested on both i386 and amd64 systems, using RELENG_6, RELENG_7, 
+  RELENG_8 and RELENG_9
 - Written entirely in C
 - Completely standalone; relies on no third-party libraries or tools (autoconf,
   etc.)
