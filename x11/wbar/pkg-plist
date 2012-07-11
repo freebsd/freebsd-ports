@@ -1,8 +1,9 @@
 @comment $FreeBSD$
 bin/wbar
-bin/wbar-config
-etc/default/wbar/wbar.cfg
-etc/xdg/autostart/wbar.desktop
+%%WBARCONFIG%%bin/wbar-config
+etc/wbar.d/wbar.cfg
+@comment etc/wbar.d/wbar.desktop
+%%DESKTOPDIR%%/wbar.desktop
 %%NLS%%share/locale/de/LC_MESSAGES/wbar.mo
 %%NLS%%share/locale/es/LC_MESSAGES/wbar.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/wbar.mo
@@ -11,16 +12,14 @@ share/pixmaps/wbar/anjuta.png
 share/pixmaps/wbar/bluefish.png
 share/pixmaps/wbar/gimp.png
 share/pixmaps/wbar/ooffice.png
+share/pixmaps/wbar/questionmark.png
 share/pixmaps/wbar/osxbarback.png
 share/pixmaps/wbar/pidgin.png
 share/pixmaps/wbar/synaptic.png
 share/pixmaps/wbar/terminal.png
 share/pixmaps/wbar/wbar.png
-@dirrm share/pixmaps/wbar
 %%DATADIR%%/glade/wbar.glade
+@dirrm share/pixmaps/wbar
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
-@dirrm etc/default/wbar
-@dirrm etc/default
-@dirrmtry etc/xdg/autostart
-@dirrmtry etc/xdg
+@dirrm etc/wbar.d

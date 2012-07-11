@@ -1,11 +1,24 @@
---- ./configure.orig	2011-06-30 10:09:16.000000000 +0200
-+++ ./configure	2011-06-30 10:09:46.000000000 +0200
-@@ -7766,7 +7766,7 @@
-    make update-po | perl -ne 'print if /:$/'
+--- ./configure.orig	2012-03-03 21:40:43.000000000 +0100
++++ ./configure	2012-07-10 15:12:44.000000000 +0200
+@@ -6259,7 +6259,7 @@
+ fi
+ 
+ 
+-PIDOF_BIN="pidof "
++PIDOF_BIN="/bin/pgrep "
+ 
+ # Extract the first word of "pidof", so it can be a program name with args.
+ set dummy pidof; ac_word=$2
+@@ -7813,10 +7813,10 @@
+    echo "Execute make update-po"
+    echo ""
+    cd po
+-   make update-po | perl -ne 'print if /:$/'
++   $MAKE update-po | perl -ne 'print if /:$/'
     echo ""
     for file in $(ls *.po); do \
 -       sed -i '/^\"POT-Creation-Date:.*\\n.*$/d' $file
-+       sed -i.bak -e '/^\"POT-Creation-Date:.*\\n.*$/d' $file
++       sed -i.bak '/^\"POT-Creation-Date:.*\\n.*$/d' $file
     done
     cd ..
     echo "======================================="
