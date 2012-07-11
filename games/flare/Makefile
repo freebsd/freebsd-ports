@@ -32,6 +32,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_v${DISTVERSION}
 
 PORTDOCS=	*
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 802502
+BROKEN=		requires log2(3) support
+.endif
+
 post-extract:
 	@${FIND} ${WRKSRC} -name '._*' -delete
 
@@ -41,4 +47,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
