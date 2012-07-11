@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	cfitsio
-PORTVERSION=	3.250
+PORTVERSION=	3.300
 CATEGORIES=	astro
 MASTER_SITES=	ftp://heasarc.gsfc.nasa.gov/software/fitsio/c/ \
 		ftp://heasarc.gsfc.nasa.gov/software/fitsio/c/oldvers/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for reading and writing files in FITS data format
 
-LIB_DEPENDS=	f2c.2:${PORTSDIR}/lang/f2c
+LIB_DEPENDS=	f2c:${PORTSDIR}/lang/f2c
+
+OPTIONS_DEFINE=	DOCS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -24,6 +26,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_prog_FC="f2c"
 ALL_TARGET=	shared
 USE_LDCONFIG=	yes
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${GREP} -lR "<malloc.\h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
@@ -41,7 +45,7 @@ do-install:
 .for f in cfitsio.pc
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/libdata/pkgconfig
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.doc ${DOCSDIR}
 .endif
