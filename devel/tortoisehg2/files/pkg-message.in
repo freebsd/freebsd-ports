@@ -1,4 +1,4 @@
 It is recommended to %include TortoiseHG's mergetools.rc into your ~/.hgrc file,
-especially if you use textproc/kdiff3 as your merge tool.
+especially if you use textproc/kdiff3 as your merge tool:
 
 %include %%PREFIX%%/share/tortoisehg/mergetools.rc

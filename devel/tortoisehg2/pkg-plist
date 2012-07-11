@@ -321,9 +321,6 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/hglib.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/hglib.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/hglib.pyo
-%%PYTHON_SITELIBDIR%%/tortoisehg/util/hgshelve.py
-%%PYTHON_SITELIBDIR%%/tortoisehg/util/hgshelve.pyc
-%%PYTHON_SITELIBDIR%%/tortoisehg/util/hgshelve.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/hgversion.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/hgversion.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/hgversion.pyo
@@ -545,6 +542,7 @@ share/pixmaps/tortoisehg/icons/scalable/status/thg-file-merged.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-file-p0.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-file-p1.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-git-subrepo.svg
+share/pixmaps/tortoisehg/icons/scalable/status/thg-remote-repo.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-subrepo.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-success.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-svn-subrepo.svg
@@ -564,7 +562,6 @@ share/pixmaps/tortoisehg/icons/svg/merge.svg
 share/pixmaps/tortoisehg/icons/svg/proxy.svg
 share/pixmaps/tortoisehg/icons/svg/recovery.svg
 share/pixmaps/tortoisehg/icons/svg/refresh_overlays.svg
-share/pixmaps/tortoisehg/icons/svg/remote-repo.svg
 share/pixmaps/tortoisehg/icons/svg/remove.svg
 share/pixmaps/tortoisehg/icons/svg/repobrowse.svg
 share/pixmaps/tortoisehg/icons/svg/shelve.svg
