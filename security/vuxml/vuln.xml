@@ -52,6 +52,85 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3a6960ef-c8a8-11e1-9924-001fd0af1a4c">
+     <topic>puppet -- multiple vulnerabilities</topic>
+     <affects>
+        <package>
+           <name>puppet</name>
+           <range><lt>2.7.18</lt></range>
+        </package>
+     </affects>
+     <description>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+           <p>puppet -- multiple vulnerabilities</p>
+           <blockquote cite="http://projects.puppetlabs.com/projects/puppet/wiki/Release_Notes#2.7.18">
+              <p>Arbitrary file read on the puppet master from authenticated
+                 clients (high). It is possible to construct an HTTP get request
+                 from an authenticated client with a valid certificate that will
+                 return the contents of an arbitrary file on the Puppet master
+                 that the master has read-access to.</p>
+              <p>Arbitrary file delete/D.O.S on Puppet Master from authenticated
+                 clients (high). Given a Puppet master with the "Delete"
+                 directive allowed in auth.conf for an authenticated host, an
+                 attacker on that host can send a specially crafted Delete
+                 request that can cause an arbitrary file deletion on the Puppet
+                 master, potentially causing a denial of service attack. Note
+                 that this vulnerability does *not* exist in Puppet as
+                 configured by default.</p>
+              <p>The last_run_report.yaml is world readable (medium). The most
+                 recent Puppet run report is stored on the Puppet master with
+                 world-readable permissions. The report file contains the
+                 context diffs of any changes to configuration on an agent,
+                 which may contain sensitive information that an attacker can
+                 then access. The last run report is overwritten with every
+                 Puppet run.</p>
+              <p>Arbitrary file read on the Puppet master by an agent (medium).
+                 This vulnerability is dependent upon vulnerability
+                 "last_run_report.yml is world readable" above. By creating a
+                 hard link of a Puppet-managed file to an arbitrary file that
+                 the Puppet master can read, an attacker forces the contents to
+                 be written to the puppet run summary. The context diff is
+                 stored in last_run_report.yaml, which can then be accessed by
+                 the attacker.</p>
+              <p>Insufficient input validation for agent hostnames (low). An
+                 attacker could trick the administrator into signing an
+                 attacker's certificate rather than the intended one by
+                 constructing specially crafted certificate requests containing
+                 specific ANSI control sequences. It is possible to use the
+                 sequences to rewrite the order of text displayed to an
+                 administrator such that display of an invalid certificate and
+                 valid certificate are transposed. If the administrator signs
+                 the attacker's certificate, the attacker can then
+                 man-in-the-middle the agent.</p>
+              <p>Agents with certnames of IP addresses can be impersonated
+                 (low). If an authenticated host with a certname of an IP
+                 address changes IP addresses, and a second host assumes the
+                 first host's former IP address, the second host will be treated
+                 by the puppet master as the first one, giving the second host
+                 access to the first host's catalog. Note: This will not be
+                 fixed in Puppet versions prior to the forthcoming 3.x. Instead,
+                 with this announcement IP-based authentication in Puppet &lt; 3.x
+                 is deprecated.</p>
+           </blockquote>
+        </body>
+     </description>
+     <references>
+        <cvename>CVE-2012-3864</cvename>
+        <cvename>CVE-2012-3865</cvename>
+        <cvename>CVE-2012-3866</cvename>
+        <cvename>CVE-2012-3867</cvename>
+        <url>http://projects.puppetlabs.com/projects/puppet/wiki/Release_Notes#2.7.18</url>
+        <url>http://puppetlabs.com/security/cve/cve-2012-3864/</url>
+        <url>http://puppetlabs.com/security/cve/cve-2012-3865/</url>
+        <url>http://puppetlabs.com/security/cve/cve-2012-3866/</url>
+        <url>http://puppetlabs.com/security/cve/cve-2012-3867/</url>
+     </references>
+     <dates>
+        <discovery>2012-07-05</discovery>
+        <entry>2012-07-10</entry>
+     </dates>
+  </vuln>
+
   <vuln vid="4c1ac2dd-c788-11e1-be25-14dae9ebcf89">
     <topic>asterisk -- multiple vulnerabilities</topic>
     <affects>
