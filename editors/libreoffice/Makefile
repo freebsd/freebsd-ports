@@ -213,17 +213,18 @@ MANCOMPRESSED=	yes
 # XXX Clang PR13308 (http://llvm.org/bugs/show_bug.cgi?id=13308)
 # Fixed in r159895 (http://llvm.org/viewvc/llvm-project?view=rev&revision=159895)
 CC=	/usr/bin/clang
-CXX=	/usr/bin/clang++
-CXXCPP=	/usr/bin/clang-cpp -x c++
 CPP=	/usr/bin/clang-cpp
+CXX=	/usr/bin/clang++
+CXXCPP=	${CPP} -x c++
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/bin/clang:${PORTSDIR}/lang/clang
 USE_BINUTILS=	yes
 CC=	${LOCALBASE}/bin/clang
+CPP=	${CC} -E
 CXX=	${LOCALBASE}/bin/clang++
-CXXCPP=	${LOCALBASE}/bin/clang++ -E
-CPP=	${LOCALBASE}/bin/clang -E
+CXXCPP=	${CXX} -E
 .endif
+CONFIGURE_ENV+=		CXXCPP="${CXXCPP}"
 CONFIGURE_ARGS+=	--with-system-cppunit
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcppunit.so:${PORTSDIR}/devel/cppunit
 #.endif
