@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libskk
-PORTVERSION=	0.0.12
+PORTVERSION=	0.0.13
 CATEGORIES=	japanese
 MASTER_SITES=	http://cloud.github.com/downloads/ueno/libskk/
 
@@ -14,8 +14,8 @@ MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	A library to deal with Japanese kana-to-kanji conversion method
 
 BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	gee.2:${PORTSDIR}/devel/libgee \
-		json-glib-1.0.0:${PORTSDIR}/devel/json-glib
+LIB_DEPENDS=	gee:${PORTSDIR}/devel/libgee \
+		json-glib-1.0:${PORTSDIR}/devel/json-glib
 
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
@@ -26,7 +26,11 @@ MAN1=		skk.1
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-.if !defined(WITHOUT_NLS)
+OPTIONS_DEFINE=	NLS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
