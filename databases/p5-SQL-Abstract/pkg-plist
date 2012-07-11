@@ -1,14 +1,14 @@
 bin/format-sql
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Abstract/.packlist
 %%SITE_PERL%%/DBIx/Class/Storage/Debug/PrettyPrint.pm
 %%SITE_PERL%%/SQL/Abstract.pm
 %%SITE_PERL%%/SQL/Abstract/Test.pm
 %%SITE_PERL%%/SQL/Abstract/Tree.pm
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Storage/Debug
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Storage
-@dirrmtry %%SITE_PERL%%/DBIx/Class
-@dirrmtry %%SITE_PERL%%/DBIx
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Abstract/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Abstract
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL
 @dirrmtry %%SITE_PERL%%/SQL/Abstract
 @dirrmtry %%SITE_PERL%%/SQL
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Storage/Debug
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Storage
+@dirrmtry %%SITE_PERL%%/DBIx/Class
+@dirrmtry %%SITE_PERL%%/DBIx
