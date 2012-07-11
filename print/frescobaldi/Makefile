@@ -14,12 +14,11 @@ MASTER_SITES=	http://lilykde.googlecode.com/files/
 MAINTAINER=	martin.dieringer@gmx.de
 COMMENT=	A music score editor for lilypond
 
-BUILD_DEPENDS=	${KDE4_PREFIX}/lib/kde4/kpythonpluginfactory.so:${PORTSDIR}/devel/kdebindings4-python-pykde4
 RUN_DEPENDS=	lilypond:${PORTSDIR}/print/lilypond
 
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
-USE_KDE4=	kdebase kdeprefix kdelibs pykde4
+USE_KDE4=	baseapps kdeprefix kdelibs pykde4_build pykde4_run
 USE_CMAKE=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	2.6+
