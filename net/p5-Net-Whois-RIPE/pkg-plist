@@ -1,7 +1,33 @@
+%%SITE_PERL%%/Net/Whois/Object.pm
+%%SITE_PERL%%/Net/Whois/Object/AsBlock.pm
+%%SITE_PERL%%/Net/Whois/Object/AsSet.pm
+%%SITE_PERL%%/Net/Whois/Object/AutNum.pm
+%%SITE_PERL%%/Net/Whois/Object/Domain.pm
+%%SITE_PERL%%/Net/Whois/Object/FilterSet.pm
+%%SITE_PERL%%/Net/Whois/Object/Inet6Num.pm
+%%SITE_PERL%%/Net/Whois/Object/InetNum.pm
+%%SITE_PERL%%/Net/Whois/Object/InetRtr.pm
+%%SITE_PERL%%/Net/Whois/Object/Information.pm
+%%SITE_PERL%%/Net/Whois/Object/Irt.pm
+%%SITE_PERL%%/Net/Whois/Object/KeyCert.pm
+%%SITE_PERL%%/Net/Whois/Object/Limerick.pm
+%%SITE_PERL%%/Net/Whois/Object/Mntner.pm
+%%SITE_PERL%%/Net/Whois/Object/Organisation.pm
+%%SITE_PERL%%/Net/Whois/Object/PeeringSet.pm
+%%SITE_PERL%%/Net/Whois/Object/Person.pm
+%%SITE_PERL%%/Net/Whois/Object/Poem.pm
+%%SITE_PERL%%/Net/Whois/Object/PoeticForm.pm
+%%SITE_PERL%%/Net/Whois/Object/Response.pm
+%%SITE_PERL%%/Net/Whois/Object/Role.pm
+%%SITE_PERL%%/Net/Whois/Object/Route.pm
+%%SITE_PERL%%/Net/Whois/Object/Route6.pm
+%%SITE_PERL%%/Net/Whois/Object/RouteSet.pm
+%%SITE_PERL%%/Net/Whois/Object/RtrSet.pm
 %%SITE_PERL%%/Net/Whois/RIPE.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Whois/RIPE/.packlist
-@dirrmtry %%SITE_PERL%%/Net/Whois
-@dirrmtry %%SITE_PERL%%/Net
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Whois/RIPE
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Whois
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/Net/Whois/Object
+@dirrmtry %%SITE_PERL%%/Net/Whois
+@dirrmtry %%SITE_PERL%%/Net
