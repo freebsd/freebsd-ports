@@ -40,12 +40,15 @@ CONFIGURE_ARGS+=--with-curl=${LOCALBASE}
 .if ${PHP_MODNAME} == "dba"
 CONFIGURE_ARGS+=--enable-dba
 
-OPTIONS=	CDB "cdb database support" on \
-		DB4 "Berkeley DB4 support" off \
-		GDBM "GDBM database support" off \
-		QDBM "QDBM database support" off \
-		INIFILE "INI file support" on \
-		FLATFILE "flatfile support" on
+OPTIONS_DEFINE=	CDB DB4 GDBM QDBM INIFILE FLATFILE
+OPTIONS_DEFAULT=	CDB INIFILE FLATFILE
+
+CDB_DESC=	cdb database support
+DB4_DESC=	Berkeley DB4 support
+GDBM_DESC=	GDBM database support
+QDBM_DESC=	QDBM database support
+INIFILE_DESC=	INI file support
+FLATFILE_DESC=	flatfile support
 
 PHP_HEADER_DIRS=	libcdb libflatfile libinifile
 .endif
@@ -85,7 +88,7 @@ USE_OPENSSL=	yes
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
-.	if !defined(WITHOUT_X11)
+.	if !empty(PORT_OPTIONS:MX11)
 USE_XORG=	xpm
 .	endif
 
@@ -94,13 +97,17 @@ CONFIGURE_ARGS+=--with-gd \
 		--with-jpeg-dir=${LOCALBASE} \
 		--with-png-dir=${LOCALBASE} \
 		--with-zlib-dir=/usr
-.	if !defined(WITHOUT_X11)
+.	if !empty(PORT_OPTIONS:MX11)
 CONFIGURE_ARGS+=--with-xpm-dir=${LOCALBASE}
 .	endif
 
-OPTIONS=	T1LIB "Include T1lib support" on \
-		TRUETYPE "Enable TrueType string function" on \
-		JIS "Enable JIS-mapped Japanese font support" off
+OPTIONS_DEFINE=	T1LIB TRUETYPE JIS
+OPTIONS_DEFAULT=	T1LIB TRUETYPE
+
+T1LIB_DESC=	Include T1lib support
+TRUETYPE_DESC=	TrueType string function
+JIS_DESC=	JIS-mapped Japanese font support
+
 
 PHP_HEADER_DIRS=libgd
 .endif
@@ -133,7 +140,7 @@ LIB_DEPENDS+=	c-client4.9:${PORTSDIR}/mail/cclient
 
 CONFIGURE_ARGS+=--with-imap=${LOCALBASE} \
 		--with-pcre-dir=${LOCALBASE}
-.if !defined(WITHOUT_SSL)
+.if !empty(PORT_OPTIONS:MSSL)
 CONFIGURE_ARGS+=--with-imap-ssl=${OPENSSLBASE}
 
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
@@ -166,7 +173,10 @@ CONFIGURE_ARGS+=--with-ldap-sasl
 CONFIGURE_ARGS+=--enable-mbstring \
 		--with-pcre-dir=${LOCALBASE}
 
-OPTIONS=	REGEX "Enable multibyte regex support" on
+OPTIONS_DEFINE=	REGEX
+OPTIONS_DEFAULT=	REGEX
+
+REGEX_DESC=	multibyte regex support
 
 PHP_HEADER_DIRS=libmbfl libmbfl/filters libmbfl/mbfl libmbfl/nls
 .endif
@@ -186,17 +196,23 @@ CONFIGURE_ARGS+=--with-mssql=${LOCALBASE}
 .endif
 
 .if ${PHP_MODNAME} == "mysql"
-OPTIONS=	MYSQLND "Use MySQL Native Driver" on
+OPTIONS_DEFINE=	MYSQLND
+OPTIONS_DEFAULT=	MYSQLND
+
+MYSQLND_DESC=	Use MySQL Native Driver"   
 .endif
 
 .if ${PHP_MODNAME} == "mysqli"
-OPTIONS=	MYSQLND "Use MySQL Native Driver" on
+OPTIONS_DEFINE=	MYSQLND
+OPTIONS_DEFAULT=	MYSQLND
+
+MYSQLND_DESC=	Use MySQL Native Driver"   
 .endif
 
 .if ${PHP_MODNAME} == "odbc"
 CONFIGURE_ARGS+=--enable-odbc
 
-OPTIONS=	IODBC "Use the iODBC driver instead of unixODBC" off
+OPTIONS_DEFINE=	IODBC
 .endif
 
 .if ${PHP_MODNAME} == "openssl"
@@ -220,7 +236,9 @@ CONFIGURE_ARGS+=--with-pdo-dblib=${LOCALBASE}
 USE_PHP=	pdo
 USE_PHP_BUILD=	yes
 
-OPTIONS=	MSSQL	"Enable Microsoft SQL Server support" off
+OPTIONS_DEFINE=	MSSQL
+
+MSSQL_DESC=	Microsoft SQL Server support
 .endif
 
 .if ${PHP_MODNAME} == "pdo_firebird"
@@ -233,14 +251,19 @@ USE_FIREBIRD=	yes
 .endif
 
 .if ${PHP_MODNAME} == "pdo_mysql"
-OPTIONS=	MYSQLND "Use MySQL Native Driver" on
+OPTIONS_DEFINE=	MYSQLND
+OPTIONS_DEFAULT=	MYSQLND
+
+MYSQLND_DESC=	Use MySQL Native Driver
 
 USE_PHP=	pdo
 USE_PHP_BUILD=	yes
 .endif
 
 .if ${PHP_MODNAME} == "pdo_odbc"
-OPTIONS=	IODBC "Use the iODBC driver instead of unixODBC" off
+OPTIONS_DEFINE=	IODBC
+
+IODBC_DESC=	Use the iODBC driver instead of unixODBC
 
 USE_PHP=	pdo
 USE_PHP_BUILD=	yes
@@ -347,7 +370,9 @@ USE_PHP=	session
 USE_PHP_BUILD=	yes
 PHP_HEADER_DIRS=libsqlite/src
 
-OPTIONS=	UTF8 "Enable UTF-8 support" off
+OPTIONS_DEFINE=	UTF8
+
+UTF8_DESC=	UTF-8 support
 .endif
 
 .if ${PHP_MODNAME} == "sqlite3"
@@ -452,58 +477,58 @@ CONFIGURE_ARGS+=--with-zlib=/usr
 .include <bsd.port.pre.mk>
 
 .if ${PHP_MODNAME} == "dba"
-.	if defined(WITHOUT_CDB)
+.	if empty(PORT_OPTIONS:MCDB)
 CONFIGURE_ARGS+=--without-cdb
 .	endif
-.	if defined(WITH_DB4)
+.	if ${PORT_OPTIONS:MDB4}
 CONFIGURE_ARGS+=--with-db4=${LOCALBASE}
 
 USE_BDB=		40+
 WITH_BDB_HIGHEST=	yes
 .	endif
-.	if defined(WITH_GDBM)
+.	if ${PORT_OPTIONS:MGDBM}
 LIB_DEPENDS+=	gdbm.4:${PORTSDIR}/databases/gdbm
 
 CONFIGURE_ARGS+=--with-gdbm=${LOCALBASE}
 .	endif
-.	if defined(WITH_QDBM)
+.	if ${PORT_OPTIONS:MQDBM}
 LIB_DEPENDS+=	qdbm.14:${PORTSDIR}/databases/qdbm
 
 CONFIGURE_ARGS+=--with-qdbm=${LOCALBASE}
 .	endif
-.	if defined(WITHOUT_INIFILE)
+.	if empty(PORT_OPTIONS:MINIFILE)
 CONFIGURE_ARGS+=--disable-inifile
 .	endif
-.	if defined(WITHOUT_FLATFILE)
+.	if empty(PORT_OPTIONS:MFLATFILE)
 CONFIGURE_ARGS+=--disable-flatfile
 .	endif
 .endif
 
 .if ${PHP_MODNAME} == "gd"
-.	if !defined(WITHOUT_T1LIB)
+.	if ${PORT_OPTIONS:MT1LIB}
 LIB_DEPENDS+=	t1.5:${PORTSDIR}/devel/t1lib
 
 CONFIGURE_ARGS+=--with-t1lib=${LOCALBASE}
 .	endif
-.	if !defined(WITHOUT_TRUETYPE)
+.	if ${PORT_OPTIONS:MTRUETYPE}
 CONFIGURE_ARGS+=--enable-gd-native-ttf
 .	endif
-.	if defined(WITH_JIS)
+.	if ${PORT_OPTIONS:MJIS}
 CONFIGURE_ARGS+=--enable-gd-jis-conv
 .	endif
 .endif
 
 .if ${PHP_MODNAME} == "mbstring"
-.	if defined(WITHOUT_REGEX)
-CONFIGURE_ARGS+=--disable-mbregex
-.	else
+.	if ${PORT_OPTIONS:MREGEX}
 LIB_DEPENDS+=	onig.1:${PORTSDIR}/devel/oniguruma4
 CONFIGURE_ARGS+=--with-onig=${LOCALBASE}
+.	else
+CONFIGURE_ARGS+=--disable-mbregex
 .	endif
 .endif
 
 .if ${PHP_MODNAME} == "mysql"
-.	if defined(WITH_MYSQLND)
+.	if ${PORT_OPTIONS:MMYSQLND}
 CONFIGURE_ARGS+=--with-mysql=mysqlnd
 .	else
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} \
@@ -514,7 +539,7 @@ USE_MYSQL=	yes
 .endif
 
 .if ${PHP_MODNAME} == "mysqli"
-.	if defined(WITH_MYSQLND)
+.	if ${PORT_OPTIONS:MMYSQLND}
 CONFIGURE_ARGS+=--with-mysqli=mysqlnd
 .	else
 CONFIGURE_ARGS+=--with-mysqli=${LOCALBASE}/bin/mysql_config
@@ -529,7 +554,7 @@ post-extract:
 .endif
 
 .if ${PHP_MODNAME} == "odbc"
-.if defined(WITH_IODBC)
+.if ${PORT_OPTIONS:MIODBC}
 LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
 
 CONFIGURE_ARGS+=--with-iodbc=${LOCALBASE}
@@ -541,7 +566,7 @@ CONFIGURE_ARGS+=--with-unixODBC=${LOCALBASE}
 .endif
 
 .if ${PHP_MODNAME} == "pdo_dblib"
-.if defined(WITH_MSSQL)
+.if ${PORT_OPTIONS:MMSSQL}
 LIB_DEPENDS+=	sybdb.5:${PORTSDIR}/databases/freetds-msdblib
 .else
 LIB_DEPENDS+=	ct.4:${PORTSDIR}/databases/freetds
@@ -549,7 +574,7 @@ LIB_DEPENDS+=	ct.4:${PORTSDIR}/databases/freetds
 .endif
 
 .if ${PHP_MODNAME} == "pdo_odbc"
-.if defined(WITH_IODBC)
+.if ${PORT_OPTIONS:MIODBC}
 LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
 
 CONFIGURE_ARGS+=--with-pdo-odbc=iODBC,${LOCALBASE}
@@ -561,7 +586,7 @@ CONFIGURE_ARGS+=--with-pdo-odbc=unixODBC,${LOCALBASE}
 .endif
 
 .if ${PHP_MODNAME} == "pdo_mysql"
-.	if defined(WITH_MYSQLND)
+.	if ${PORT_OPTIONS:MYSQLND}
 CONFIGURE_ARGS+=--with-pdo-mysql=mysqlnd
 
 USE_PHP+=	mysql
@@ -574,7 +599,7 @@ USE_MYSQL=	yes
 .endif
 
 .if ${PHP_MODNAME} == "sqlite"
-.	if defined(WITH_UTF8)
+.	if ${PORT_OPTIONS:MUTF8}
 CONFIGURE_ARGS+=--enable-sqlite-utf8
 .	endif
 .endif

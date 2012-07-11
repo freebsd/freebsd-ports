@@ -39,17 +39,20 @@ CONFIGURE_ARGS=	\
 
 USE_GNOME=	libxml2
 
-OPTIONS=	CLI "Build CLI version" on \
-		CGI "Build CGI version" on \
-		FPM "Build FPM version (experimental)" off \
-		APACHE "Build Apache module" off \
-		AP2FILTER " Use Apache 2.x filter interface (experimental)" off \
-		DEBUG "Enable debug" off \
-		SUHOSIN "Enable Suhosin protection system" on \
-		MULTIBYTE "Enable zend multibyte support" off \
-		IPV6 "Enable ipv6 support" on \
-		MAILHEAD "Enable mail header patch" off \
-		LINKTHR "Link thread lib (for threaded extensions)" off
+OPTIONS_DEFINE=	CLI CGI FPM APACHE AP2FILTER DEBUG SUHOSIN MULTIBYTE IPV6 \
+		MAILHEAD LINKTHR
+
+OPTIONS_DEFAULT=	CLI CGI SUHOSIN IPV6
+
+CLI_DESC=	Build CLI version
+CGI_DESC=	Build CGI version
+FPM_DESC=	Build FPM version (experimental)
+APACHE_DESC=	Build Apache module
+AP2FILTER_DESC=	Use Apache 2.x filter interface (experimental)
+SUHOSIN_DESC=	Suhosin protection system
+MULTIBYTE_DESC=	zend multibyte support
+MAILHEAD_DESC=	mail header patch
+LINKTHR_DESC=	Link thread lib (for threaded extensions)
 
 CONFLICTS=	php52-5* php5-5*
 
@@ -62,7 +65,7 @@ PATCH_DIST_STRIP=	-p1
 PATCH_SITES+=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	ale
 
-.if !defined(WITHOUT_SUHOSIN)
+.if ${PORT_OPTIONS:MSUHOSIN_DESC}
 PATCHFILES+=	suhosin-patch-5.3.x-0.9.10.patch.gz
 PATCH_SITES+=	http://download.suhosin.org/:suhosin
 PLIST_SUB+=	SUHOSIN=""
@@ -70,12 +73,12 @@ PLIST_SUB+=	SUHOSIN=""
 PLIST_SUB+=	SUHOSIN="@comment "
 .endif
 
-.if defined(WITH_MAILHEAD)
+.if ${PORT_OPTIONS:MMAILHEAD}
 PATCHFILES+=	php-5.3.x-mail-header.patch:mail
 PATCH_SITES+=	http://choon.net/opensource/php/:mail
 .endif
 
-.if !defined(WITHOUT_CLI)
+.if ${PORT_OPTIONS:MCLI}
 PHP_SAPI+=	cli
 PLIST_SUB+=	CLI=""
 MAN1+=		php.1
@@ -84,7 +87,7 @@ PLIST_SUB+=	CLI="@comment "
 CONFIGURE_ARGS+=--disable-cli
 .endif
 
-.if !defined(WITHOUT_CGI)
+.if ${PORT_OPTIONS:MCGI}
 PHP_SAPI+=	cgi
 PLIST_SUB+=	CGI=""
 .else
@@ -92,7 +95,7 @@ PLIST_SUB+=	CGI="@comment "
 CONFIGURE_ARGS+=--disable-cgi
 .endif
 
-.if defined(WITH_FPM)
+.if ${PORT_OPTIONS:MFPM}
 PHP_SAPI+=	fpm
 MAN8+=		php-fpm.8
 USE_RC_SUBR+=	php-fpm
@@ -104,11 +107,11 @@ PLIST_SUB+=	FPM=""
 PLIST_SUB+=	FPM="@comment "
 .endif
 
-.if defined(WITH_APACHE)
+.if ${PORT_OPTIONS:MAPACHE}
 PHP_SAPI+=	mod
 USE_APACHE=	20+
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
-.if defined(WITH_AP2FILTER)
+.if ${PORT_OPTIONS:MAP2FILTER}
 CONFIGURE_ARGS+=--with-apxs2filter=${APXS}
 .else
 CONFIGURE_ARGS+=--with-apxs2=${APXS}
@@ -140,26 +143,26 @@ CONFIGURE_ENV+=	ac_cv_pthreads_lib="" \
 		pthreads_working="yes" \
 		lt_cv_path_SED="sed"
 
-.if defined(WITH_LINKTHR)
+.if ${PORT_OPTIONS:MLINKTHR}
 CONFIGURE_ENV+=	LIBS="${LIBS} ${PTHREAD_LIBS}"
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--enable-debug
 .endif
 
-.if defined(WITH_MULTIBYTE)
+.if ${PORT_OPTIONS:MMULTIBYTE}
 CONFIGURE_ARGS+=--enable-zend-multibyte
 .endif
 
-.if defined(WITHOUT_IPV6)
+.if empty(PORT_OPTIONS:MIPV6)
 CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
 post-patch:
 	@${TOUCH} ${WRKSRC}/ext/php_config.h
 	@${REINPLACE_CMD} "s|^\(extension_dir\)|; \1|" ${WRKSRC}/php.ini-*
-.if defined(WITH_FPM)
+.if ${PORT_OPTIONS:MFPM}
 	@${REINPLACE_CMD} -e "s|^;\(pid\)|\1|;s|^;\(pm\.[a-z_]*_servers\)|\1|" \
 		${WRKSRC}/sapi/fpm/php-fpm.conf.in
 .endif
@@ -185,10 +188,10 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/php.ini-production ${PREFIX}/etc
 	@${INSTALL_DATA} ${WRKDIR}/php.conf ${PREFIX}/etc
 	@${TOUCH} ${PREFIX}/include/php/ext/php_config.h
-.if defined(WITH_FPM)
+.if ${PORT_OPTIONS:MFPM}
 	@${CP} -n ${PREFIX}/etc/php-fpm.conf.default ${PREFIX}/etc/php-fpm.conf
 .endif
-.if defined(WITH_APACHE)
+.if ${PORT_OPTIONS:MAPACHE}
 	@${CAT} ${PKGMESSAGE}
 .endif
 
