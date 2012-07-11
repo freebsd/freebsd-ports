@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsdhwmon
-PORTVERSION=	20090703
+PORTVERSION=	20120702
 CATEGORIES=	sysutils
 MASTER_SITES=	http://bsdhwmon.koitsu.org/dist/
 
@@ -16,11 +16,14 @@ COMMENT=	Hardware sensor monitoring utility for FreeBSD
 PLIST_FILES=	sbin/bsdhwmon
 MAN8=		bsdhwmon.8
 
-.if defined(WITH_DEBUG)
-MAKE_ARGS+=	DEBUG=1
-.endif
+OPTIONS_DEFINE=	DEBUG
+DEBUG_DESC=	Enable debug build
 
 .include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MDEBUG}
+MAKE_ARGS+=	DEBUG=1
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bsdhwmon ${PREFIX}/sbin
