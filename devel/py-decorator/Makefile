@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	decorator
-PORTVERSION=	3.3.1
+PORTVERSION=	3.3.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dsh@wizard.volgograd.ru
 COMMENT=	Better living through Python with decorators
+
+LICENSE=	BSD
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
