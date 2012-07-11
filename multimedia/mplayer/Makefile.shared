@@ -39,6 +39,7 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 		--disable-bitmap-font \
 		--disable-liba52 \
 		--disable-alsa \
+		--disable-libbs2b \
 		--enable-ass-internal
 
 WANT_GNOME=	yes
