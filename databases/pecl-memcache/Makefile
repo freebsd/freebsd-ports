@@ -13,23 +13,24 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Memcached extension
 
-USE_PHP=	zlib session
-USE_PHP_BUILD=	yes
-USE_PHPIZE=	yes
-USE_PHPEXT=	yes
-PHP_MODNAME=	memcache
-
-USE_DOS2UNIX=	yes
+OPTIONS_DEFINE=	EXAMPLES
 
 CONFIGURE_ARGS=	--with-zlib-dir=/usr
+USE_DOS2UNIX=	yes
+USE_PHP=	zlib session
+USE_PHP_BUILD=	yes
+USE_PHPEXT=	yes
+USE_PHPIZE=	yes
 
-.if !defined(NOPORTEXAMPLES)
+.include <bsd.port.options.mk>
+
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/example.php ${EXAMPLESDIR}
+.if ${PORT_OPTIONS:MEXAMPLES}
+	${MKDIR} ${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/example.php ${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>
