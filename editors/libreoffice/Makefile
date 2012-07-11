@@ -215,7 +215,7 @@ MANCOMPRESSED=	yes
 CC=	/usr/bin/clang
 CPP=	/usr/bin/clang-cpp
 CXX=	/usr/bin/clang++
-CXXCPP=	${CPP} -x c++
+CXXCPP=	${CPP}
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/bin/clang:${PORTSDIR}/lang/clang
 USE_BINUTILS=	yes
