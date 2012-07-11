@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	suricata
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.openinfosecfoundation.org/download/ \
 		http://mirrors.rit.edu/zi/
@@ -18,9 +17,9 @@ COMMENT=	Open Source next generation IDS/IPS engine by OISF
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre \
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre \
 		yaml:${PORTSDIR}/textproc/libyaml \
-		htp-0.2.1:${PORTSDIR}/devel/libhtp
+		htp:${PORTSDIR}/devel/libhtp
 
 BUILD_DEPENDS+=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet \
 		pkg-config:${PORTSDIR}/devel/pkg-config
@@ -31,10 +30,13 @@ USE_RC_SUBR=	suricata
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
-OPTIONS=	IPFW "Enable IPFW/IPDIVERT for IPS usage" on \
-		PRELUDE "Enable Prelude NIDS integration" off \
-		PORTS_PCAP "Use libpcap from ports" off \
-		DAG "Enable Endace DAG Support" off
+OPTIONS_DEFINE=	IPFW PRELUDE PORTS_PCAP DAG
+OPTIONS_DEFAULT=IPFW
+
+IPFW_DESC=	Enable ipfw/ipdivert for IPS usage
+PRELUDE_DESC=	Enable Prelude NIDS integration
+PORTS_PCAP_DESC=Use libpcap from ports
+DAG_DESC=	Enable Endace DAG Support
 
 .include <bsd.port.options.mk>
 
@@ -61,19 +63,19 @@ LOGS_DIR=	/var/log/suricata
 BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
-.if defined(WITH_PRELUDE)
-LIB_DEPENDS+=		prelude.20:${PORTSDIR}/security/libprelude
+.if ${PORT_OPTIONS:MPRELUDE}
+LIB_DEPENDS+=		prelude:${PORTSDIR}/security/libprelude
 CONFIGURE_ARGS+=	--enable-prelude \
 			--with-libprelude-prefix=${LOCALBASE}
 PLIST_SUB+=		PRELUDE=""
 .endif
 
-.if defined(WITH_IPFW)
+.if ${PORT_OPTIONS:MIPFW}
 CONFIGURE_ARGS+=	--enable-ipfw
 .endif
 
-.if defined(WITH_PORTS_PCAP)
-LIB_DEPENDS+=		pcap.1:${PORTSDIR}/net/libpcap
+.if ${PORT_OPTIONS:MPORTS_PCAP}
+LIB_DEPENDS+=		pcap:${PORTSDIR}/net/libpcap
 CONFIGURE_ARGS+=	--with-libpcap-includes=${LOCALBASE}/include \
 			--with-libpcap-libraries=${LOCALBASE}/lib
 .else
@@ -81,7 +83,7 @@ CONFIGURE_ARGS+=	--with-libpcap-includes=/usr/include \
 			--with-libpcap-libraries=/usr/lib
 .endif
 
-.if defined(WITH_DAG)
+.if ${PORT_OPTIONS:MDAG}
 CONFIGURE_ARGS+=	--enable-dag \
 			--with-dag-includes=${LOCALBASE}/include \
 			--with-dag-libraries=${LOCALBASE}/lib
@@ -92,7 +94,7 @@ AUTOTOOLSFILES=	aclocal.m4 libhtp/aclocal.m4
 post-patch:
 	@${REINPLACE_CMD} -Ee 's|^(install-data-am: )install-pkgconfigDATA|\1|' ${WRKSRC}/libhtp/Makefile.in
 .for f in ${AUTOTOOLSFILES}
-	@${REINPLACE_CMD} -e 's|1.11.1|%%AUTOMAKE_APIVER%%|g' ${WRKSRC}/${f}
+	@${REINPLACE_CMD} -e 's|1.11.3|%%AUTOMAKE_APIVER%%|g' ${WRKSRC}/${f}
 .endfor
 
 pre-install:
