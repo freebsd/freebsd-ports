@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gdisk
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.5
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	gptfdisk/gptfdisk/${PORTVERSION}
@@ -27,8 +27,9 @@ FETCH_ARGS=	-Rr
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-OPTIONS=	CGDISK "A curses-based interactive program" off \
-		UTF16 "Support for Unicode partition names" off
+OPTIONS_DEFINE=	CGDISK UTF16
+CGDISK_DESC=	A curses-based interactive program
+UTF16_DESC=	Support for Unicode partition names
 
 .include <bsd.port.pre.mk>
 
@@ -41,9 +42,13 @@ MAKEFILE=	Makefile.freebsd
 PROGRAM_LIST=	fixparts gdisk sgdisk
 PLIST_FILES=	${PROGRAM_LIST:C,^,sbin/,}
 
-.if defined(WITH_CGDISK)
+.if ${PORT_OPTIONS:MCGDISK}
 PROGRAM_LIST+=	cgdisk
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
+.endif
+
+.if ${PORT_OPTIONS:MUTF16}
+LIB_DEPENDS+=	icuuc.48:${PORTSDIR}/devel/icu
 .endif
 
 MAN8=
@@ -51,19 +56,15 @@ MAN8=
 MAN8+=	${i}.8
 .endfor
 
-.if defined(WITH_UTF16)
-LIB_DEPENDS+=	icuuc.48:${PORTSDIR}/devel/icu
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/include/||' ${WRKSRC}/guid.h
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/${MAKEFILE}
 
-.if !defined(WITH_CGDISK)
+.if empty(PORT_OPTIONS:MCGDISK)
 	${REINPLACE_CMD} -e '/^all:/s| cgdisk||' ${WRKSRC}/${MAKEFILE}
 .endif
 
-.if !defined(WITH_UTF16)
+.if empty(PORT_OPTIONS:MUTF16)
 	${REINPLACE_CMD} -e 's| -D USE_UTF16||' \
 			 -e 's| -licuio||' ${WRKSRC}/${MAKEFILE}
 .endif
