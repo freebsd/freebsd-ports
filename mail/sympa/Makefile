@@ -7,6 +7,7 @@
 
 PORTNAME=	sympa
 PORTVERSION=	6.1.11
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sympa.org/distribution/ \
 		http://www.sympa.org/distribution/old/
