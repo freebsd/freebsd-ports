@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Perl-Critic
-PORTVERSION=	1.11.7
+PORTVERSION=	1.11.8
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Critique Perl source for style and standards
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-B-Keywords>=1.05:${PORTSDIR}/devel/p5-B-Keywords \
 		p5-Config-Tiny>=2:${PORTSDIR}/devel/p5-Config-Tiny \
@@ -25,7 +28,7 @@ BUILD_DEPENDS=	p5-B-Keywords>=1.05:${PORTSDIR}/devel/p5-B-Keywords \
 		p5-List-MoreUtils>=0.19:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Pod-Spell>=0:${PORTSDIR}/textproc/p5-Pod-Spell \
 		p5-PPI>=1.215:${PORTSDIR}/textproc/p5-PPI \
-		p5-PPIx-Regexp>=0.022:${PORTSDIR}/textproc/p5-PPIx-Regexp \
+		p5-PPIx-Regexp>=0.027:${PORTSDIR}/textproc/p5-PPIx-Regexp \
 		p5-PPIx-Utilities>=1.001:${PORTSDIR}/textproc/p5-PPIx-Utilities \
 		p5-Readonly>=1.03:${PORTSDIR}/devel/p5-Readonly \
 		p5-String-Format>=1.13:${PORTSDIR}/textproc/p5-String-Format \
@@ -126,7 +129,6 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::Miscellanea::ProhibitTies.3 \
 	Perl::Critic::Policy::Miscellanea::ProhibitUnrestrictedNoCritic.3 \
 	Perl::Critic::Policy::Miscellanea::ProhibitUselessNoCritic.3 \
-	Perl::Critic::Policy::Miscellanea::RequireRcsKeywords.3 \
 	Perl::Critic::Policy::Modules::ProhibitAutomaticExportation.3 \
 	Perl::Critic::Policy::Modules::ProhibitConditionalUseStatements.3 \
 	Perl::Critic::Policy::Modules::ProhibitEvilModules.3 \

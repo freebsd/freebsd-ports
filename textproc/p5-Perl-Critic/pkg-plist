@@ -86,7 +86,6 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/Miscellanea/ProhibitTies.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Miscellanea/ProhibitUnrestrictedNoCritic.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Miscellanea/ProhibitUselessNoCritic.pm
-%%SITE_PERL%%/Perl/Critic/Policy/Miscellanea/RequireRcsKeywords.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Modules/ProhibitAutomaticExportation.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Modules/ProhibitConditionalUseStatements.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Modules/ProhibitEvilModules.pm
