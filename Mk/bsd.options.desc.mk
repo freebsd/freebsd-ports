@@ -195,6 +195,7 @@ POPPLER_DESC?=		PDF and PS support
 PORTAUDIO_DESC?=	PortAudio support
 POSTGIS_DESC?=		postgis support
 PRINT_DESC?=		Printer support
+PROFILE_DESC?=		Profiling library support
 PROJ_DESC?=		PROJ.4 support 
 PROXY_DESC?=		Proxy support
 PTH_DESC?=		Use GNU Pth for threading/multiprocessing
