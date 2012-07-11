@@ -532,6 +532,9 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/hexbin_extent.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/hexbin_extent.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/hexbin_extent.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/hist_log.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/hist_log.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/hist_log.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/imshow.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/imshow.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_axes/imshow.svg
@@ -1486,6 +1489,9 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_simplification/clipping_diamond.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_simplification/clipping_diamond.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_simplification/clipping_diamond.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_simplification/clipping_with_nans.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_simplification/clipping_with_nans.png
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_simplification/clipping_with_nans.svg
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_simplification/fft_peaks.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_simplification/fft_peaks.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_simplification/fft_peaks.svg
@@ -1504,6 +1510,7 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_spines/spines_axes_positions.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_spines/spines_axes_positions.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_spines/spines_axes_positions.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_text/antialiased.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_text/font_styles.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_text/font_styles.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_text/font_styles.svg
@@ -1528,6 +1535,8 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_tightlayout/tight_layout6.pdf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_tightlayout/tight_layout6.png
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_tightlayout/tight_layout6.svg
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_ttconv/truetype-conversion.pdf
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/mpltest.ttf
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_agg.py
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_agg.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_agg.pyo
@@ -1588,6 +1597,12 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_transforms.py
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_transforms.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/tests/test_transforms.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_triangulation.py
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_triangulation.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_triangulation.pyo
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_ttconv.py
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_ttconv.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/tests/test_ttconv.pyo
 %%PYTHON_SITELIBDIR%%/matplotlib/texmanager.py
 %%PYTHON_SITELIBDIR%%/matplotlib/texmanager.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/texmanager.pyo
@@ -2065,6 +2080,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/major_minor_demo1.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/major_minor_demo2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/manual_axis.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/marker_path.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/masked_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/mathtext_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pylab_examples/mathtext_examples.py
@@ -2220,6 +2236,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/mpl_toolkits/axes_grid
 @dirrm %%PYTHON_SITELIBDIR%%/mpl_toolkits
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tri
+@dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_ttconv
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_tightlayout
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_text
 @dirrm %%PYTHON_SITELIBDIR%%/matplotlib/tests/baseline_images/test_spines
