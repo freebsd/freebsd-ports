@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	weechat
-PORTVERSION=	20120610
+PORTVERSION=	20120707
 CATEGORIES=	irc
 MASTER_SITES=	http://perturb.me.uk/distfiles/
 PKGNAMESUFFIX=	-devel
@@ -22,32 +22,33 @@ CONFLICTS=	weechat-0.3*
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_NCURSES=	yes
-WITH_NCURSES_BASE=	yes
+WITH_NCURSES_PORT=	yes
 USE_CMAKE=	yes
+CMAKE_ARGS+=	-DNCURSES_INCLUDE_PATH=${LOCALBASE}/include/ncurses
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 WANT_PERL=	yes
 
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 
-GITREV=	9c5116b
+GITREV=	92aa9bf
 WRKSRC=	${WRKDIR}/${PORTNAME}-${GITREV}
 
 # Please note: the DEBUG option is *NOT* empty, it is utilised by
 # bsd.cmake.mk to set the cmake build type to Debug instead of
 # Release.
 
-OPTIONS_DEFINE=	RUBY PYTHON PERL TCL LUA GUILE CHARSET BACKTRACE DEBUG ASPELL GNUTLS NLS DOCUMENTATION
+OPTIONS_DEFINE=	RUBY PYTHON PERL TCL LUA GUILE CHARSET BACKTRACE DEBUG ASPELL GNUTLS NLS DOCUMENTATION SASL
 OPTIONS_DEFAULT=CHARSET BACKTRACE DEBUG
 
-BACKTRACE_DESC=	Enable crash backtraces
-CHARSET_DESC=	Enable charset conversion support
+BACKTRACE_DESC=	Provide crash backtraces
+CHARSET_DESC=	Charset conversion support
 DOCUMENTATION_DESC=	Build and install documentation
-GUILE_DESC=	Enable Guile scripting support
-LUA_DESC=	Enable Lua scripting support
-PERL_DESC=	Enable Perl scripting support
-PYTHON_DESC=	Enable Python scripting support
-RUBY_DESC=	Enable Ruby scripting support
-TCL_DESC=	Enable Tcl scripting support
+GUILE_DESC=	Guile scripting support
+LUA_DESC=	Lua scripting support
+PERL_DESC=	Perl scripting support
+PYTHON_DESC=	Python scripting support
+RUBY_DESC=	Ruby scripting support
+TCL_DESC=	Tcl scripting support
 
 .include <bsd.port.options.mk>
 
@@ -121,9 +122,8 @@ PLIST_SUB+=	TCL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLUA}
-USE_LUA=	5.0+
-CMAKE_ARGS+=	-DBSD_LUA_VER=${LUA_VER} \
-		-DBSD_LUA_LIBDIR=${LUA_LIBDIR} \
+USE_LUA=	5.1+
+CMAKE_ARGS+=	-DBSD_LUA_LIBDIR=${LUA_LIBDIR} \
 		-DBSD_LUA_INCDIR=${LUA_INCDIR}
 PLIST_SUB+=	LUA=""
 .else
@@ -151,6 +151,14 @@ PLIST_SUB+=	DOCUMENTATION="@comment "
 
 .if ${PORT_OPTIONS:MBACKTRACE}
 LIB_DEPENDS+=	execinfo:${PORTSDIR}/devel/libexecinfo
+.endif
+
+.if ${PORT_OPTIONS:MSASL}
+LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
+PLIST_SUB+=	SASL=""
+.else
+CMAKE_ARGS+=	-DENABLE_SASL=no
+PLIST_SUB+=	SASL="@comment "
 .endif
 
 MAN1=	weechat-curses.1
