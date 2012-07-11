@@ -83,6 +83,7 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/ResultSetManager.pm
 %%SITE_PERL%%/DBIx/Class/ResultSetProxy.pm
 %%SITE_PERL%%/DBIx/Class/ResultSource.pm
+%%SITE_PERL%%/DBIx/Class/ResultSource/RowParser.pm
 %%SITE_PERL%%/DBIx/Class/ResultSource/Table.pm
 %%SITE_PERL%%/DBIx/Class/ResultSource/View.pm
 %%SITE_PERL%%/DBIx/Class/ResultSourceHandle.pm
@@ -108,21 +109,24 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/Serialize/Storable.pm
 %%SITE_PERL%%/DBIx/Class/StartupCheck.pm
 %%SITE_PERL%%/DBIx/Class/Storage.pm
+%%SITE_PERL%%/DBIx/Class/Storage/BlockRunner.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/ACCESS.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/ADO.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/ADO/CursorUtils.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/ADO/MS_Jet.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/ADO/MS_Jet/Cursor.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/ADO/Microsoft_SQL_Server.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/ADO/Microsoft_SQL_Server/Cursor.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/AutoCast.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Cursor.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/DB2.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Firebird.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Firebird/Common.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/IdentityInsert.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Informix.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/InterBase.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/MSSQL.pm
-%%SITE_PERL%%/DBIx/Class/Storage/DBI/MultiColumnIn.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/NoBindVars.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/ODBC.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/ODBC/ACCESS.pm
@@ -180,6 +184,7 @@ bin/dbicadmin
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Storage/DBI/Oracle
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Storage/DBI/ODBC
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Storage/DBI/Firebird
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Storage/DBI/ADO/Microsoft_SQL_Server
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Storage/DBI/ADO/MS_Jet
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Storage/DBI/ADO
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Storage/DBI
