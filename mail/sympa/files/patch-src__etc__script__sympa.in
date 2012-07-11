@@ -16,7 +16,7 @@
  	    for pid in $pids; do
  		killcount=0
 -		running=`ps -A | grep "$pid ..* $1\\.pl"`
-+		running=`ps -A | grep "$pid .* $1\\.pl"`
++		running=`ps -A | grep "^[[:space:]]*$pid[[:space:]].*$1\\.pl"`
  		while [ "$running" != "" ]; do
  		    if [ $killcount -gt 10 ]; then
  			if [ ${use_functions} ]; then
@@ -25,14 +25,14 @@
  
  		    kill -TERM $pid >/dev/null 2>&1
 -		    running=`ps -A | grep "$pid ..* $1\\.pl"`
-+		    running=`ps -A | grep "$pid .* $1\\.pl"`
++		    running=`ps -A | grep "^[[:space:]]*$pid[[:space:]].*$1\\.pl"`
  		    if [ "$running" = "" ]; then
  			runcount=`expr $runcount + 1`
  			break
  		    fi
  		    sleep 2
 -		    running=`ps -A | grep "$pid ..* $1\\.pl"`
-+		    running=`ps -A | grep "$pid .* $1\\.pl"`
++		    running=`ps -A | grep "^[[:space:]]*$pid[[:space:]].*$1\\.pl"`
  		    if [ "$running" = "" ]; then
  			runcount=`expr $runcount + 1`
  			break
