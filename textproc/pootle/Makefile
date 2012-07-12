@@ -7,7 +7,7 @@
 
 PORTNAME=	pootle
 PORTVERSION=	2.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/translate/Pootle/${PORTVERSION}/
 DISTNAME=	Pootle-${PORTVERSION}
@@ -20,6 +20,9 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.2:${PORTSDIR}/www/py-django \
 		${PYTHON_PKGNAMEPREFIX}south>=0.7:${PORTSDIR}/databases/py-south
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+CONFLICTS=	${PYTHON_PKGNAMEPREFIX}django-profiles-[0-9]* \
+		${PYTHON_PKGNAMEPREFIX}django-registration-[0-9]*
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -53,26 +56,27 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 
 PORTDOCS=	ChangeLog COPYING INSTALL README wsgi.py
 
-OPTIONS=	MYSQL		"MYSQL support"	on \
-		SUBVERSION	"SVN support"	on \
-		LUCENE		"py-lucene for faster searching"	on \
-		MEMCACHED	"Enable memcached support"	on
+OPTIONS_DEFINE=	MYSQL SUBVERSION LUCENE MEMCACHED
+OPTIONS_DEFAULT=	MYSQL SUBVERSION LUCENE MEMCACHED
+SUBVERSION_DESC=	${SVN_DESC}
+LUCENE_DESC=	py-lucene for faster searching
+MEMCACHED_DESC=	Enable memcached support
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 .endif
 
-.if defined(WITH_SUBVERSION)
+.if ${PORT_OPTIONS:MSUBVERSION}
 RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 .endif
 
-.if defined(WITH_LUCENE)
+.if ${PORT_OPTIONS:MLUCENE}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}PyLucene>0:${PORTSDIR}/textproc/py-lucene
 .endif
 
-.if defined(WITH_MEMCACHED)
+.if ${PORT_OPTIONS:MMEMCACHED}
 LIB_DEPENDS+=	memcached:${PORTSDIR}/databases/libmemcached
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}memcached>=1.45:${PORTSDIR}/databases/py-memcached
 .endif
@@ -92,7 +96,7 @@ post-install:
 	@${CP} -n ${PREFIX}/etc/pootle/localsettings.py.sample \
 		${PREFIX}/etc/pootle/localsettings.py
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for docs in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
