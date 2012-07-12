@@ -7,7 +7,6 @@
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
-PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_EXIM:S/$/:exim/}
 MASTER_SITE_SUBDIR=	exim4/:exim
@@ -79,7 +78,7 @@ PLIST_SUB+=	SO_1024=""
 PLIST_SUB+=	SO_1024="@comment "
 .endif
 
-EXIM_VERSION=	4.77
+EXIM_VERSION=	4.80
 SA_EXIM_VERSION=4.2
 SO_1024_VERSION=3.2
 
@@ -167,6 +166,10 @@ WITH_DEFAULT_CHARSET?=	ISO-8859-1
 
 LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 
+.if defined(WITHOUT_DKIM)
+SEDLIST+=	-e 's,^\# (DISABLE_DKIM=),\1,'
+.endif
+
 .if defined(WITH_LISTMATCH_RHS)
 SEDLIST+=	-e 's,^\# (EXPAND_LISTMATCH_RHS=),\1,'
 .endif
@@ -210,10 +213,15 @@ PLIST_SUB+=	EXIMON="@comment "
 .endif
 
 .if !defined(WITHOUT_TLS)
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
 SEDLIST+=	-e 's,^\# (SUPPORT_TLS=),\1,'
+.if !defined(WITH_GNUTLS)
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+SEDLIST+=	-e 's,^\# (TLS_LIBS=.*-lssl[[:space:]]),\1,'
 .else
-SEDLIST+=	-e 's,^(TLS_LIBS=),\# \1,'
+LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+SEDLIST+=	-e 's,^\# (USE_GNUTLS=),\1,'
+SEDLIST+=	-e 's,^\# (TLS_LIBS=.*-lgnutls[[:space:]]),\1,'
+.endif
 .endif
 
 .if !defined(WITHOUT_EMBEDDED_PERL)

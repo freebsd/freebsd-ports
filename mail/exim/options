@@ -12,6 +12,7 @@ OPTIONS+= \
 	DCC "Enable DCC at ACL support via dccifd" off \
 	DEBUG "Build with debugging symbols" off \
 	DISABLE_D_OPT "Disable macros overrides using option -D" on \
+	DKIM "Enable support for DKIM" on \
 	DNSDB "Enable DNS-style lookups" on \
 	DSEARCH "Enable directory-list lookups" on \
 	EMBEDDED_PERL "Enable embedded Perl interpreter" on \
@@ -42,6 +43,7 @@ OPTIONS+= \
 	SRS_ALT "Enable alternative SRS library" off \
 	SUID "Install the exim binary suid root" on \
 	TCP_WRAPPERS "Enable /etc/hosts.allow access control" off \
-	TLS "Link against OpenSSL" on \
+	TLS "Enable TLS support" on \
+	GNUTLS "Use GnuTLS instead of OpenSSL for TLS" off \
 	WISHLIST "Include the unsupported patches" off \
 	XCLIENT "Enable XCLIENT command in exim" off

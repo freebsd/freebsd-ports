@@ -18,3 +18,20 @@ Just two steps to do it:
     and carefully review your configuration for untrusted
     right-hand sides in match_* operations.
 
+
+Upgrades to Exim 4.80
+=====================
+
+Exim 4.80 contains some backward-incompatible changes.
+
+OpenSSL default options have changed to be more secure, including
+disabling of SSLv2 by default (and adding support for TLSv1.1 and
+TLSv1.2 if using OpenSSL 1.0.1 or newer); GnuTLS has been updated to use
+a new API and stop honouring some options starting gnutls_*; users of
+LDAP can now distinguish "comma in data" from "multi-valued attribute".
+There are more details, covering more changes, in README.UPDATING.
+
+We now enable accept_8bitmime by default, as the Exim maintainers agree
+with Dan Bernstein about the best way to deal with the 8BITMIME
+extension.
+

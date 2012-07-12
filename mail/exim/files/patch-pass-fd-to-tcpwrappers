@@ -1,0 +1,37 @@
+This patch passes output filedescriptor argument (stdout in the
+case of SMTP sessions) to the tcp_wrappers code in order to allow
+statements like 'twist' (that output anything instead of the daemon)
+to work.  Bare hosts_ctl() is too dumb to handle such usage of tcp
+wrappers.
+
+--- src/smtp_in.c.orig	2012-06-28 19:52:46.000000000 +0400
++++ src/smtp_in.c	2012-06-28 20:08:00.000000000 +0400
+@@ -1357,6 +1357,9 @@
+ uschar *user_msg, *log_msg;
+ uschar *code, *esc;
+ uschar *p, *s, *ss;
++#ifdef USE_TCP_WRAPPERS
++struct request_info tcpwrap_ri;
++#endif
+ 
+ smtp_connection_start = time(NULL);
+ for (smtp_ch_index = 0; smtp_ch_index < SMTP_HBUFF_SIZE; smtp_ch_index++)
+@@ -1706,10 +1709,14 @@
+       "(tcp_wrappers_name) failed: %s", string_printing(tcp_wrappers_name),
+         expand_string_message);
+     }
+-  if (!hosts_ctl(tcp_wrappers_name,
+-         (sender_host_name == NULL)? STRING_UNKNOWN : CS sender_host_name,
+-         (sender_host_address == NULL)? STRING_UNKNOWN : CS sender_host_address,
+-         (sender_ident == NULL)? STRING_UNKNOWN : CS sender_ident))
++  request_init(&tcpwrap_ri,
++         RQ_DAEMON, tcp_wrappers_name,
++         RQ_FILE, fileno(smtp_out),
++         RQ_CLIENT_NAME, (sender_host_name == NULL)? STRING_UNKNOWN : CS sender_host_name,
++         RQ_CLIENT_ADDR, (sender_host_address == NULL)? STRING_UNKNOWN : CS sender_host_address,
++         RQ_USER, (sender_ident == NULL)? STRING_UNKNOWN : CS sender_ident,
++         0);
++  if (!hosts_access(&tcpwrap_ri))
+     {
+     if (errno == 0 || errno == ENOENT)
+       {

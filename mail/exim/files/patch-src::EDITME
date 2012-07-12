@@ -1,6 +1,6 @@
---- src/EDITME.orig	2010-12-26 21:17:23.000000000 +0300
-+++ src/EDITME	2011-01-06 11:25:01.000000000 +0300
-@@ -100,7 +100,7 @@
+--- src/EDITME.orig	2012-05-31 04:40:15.000000000 +0400
++++ src/EDITME	2012-06-28 18:43:50.000000000 +0400
+@@ -98,7 +98,7 @@
  # /usr/local/sbin. The installation script will try to create this directory,
  # and any superior directories, if they do not exist.
  
@@ -9,7 +9,7 @@
  
  
  #------------------------------------------------------------------------------
-@@ -116,7 +116,7 @@
+@@ -114,7 +114,7 @@
  # don't exist. It will also install a default runtime configuration if this
  # file does not exist.
  
@@ -18,7 +18,7 @@
  
  # It is possible to specify a colon-separated list of files for CONFIGURE_FILE.
  # In this case, Exim will use the first of them that exists when it is run.
-@@ -133,7 +133,7 @@
+@@ -131,7 +131,7 @@
  # deliveries. (Local deliveries run as various non-root users, typically as the
  # owner of a local mailbox.) Specifying these values as root is not supported.
  
@@ -27,7 +27,7 @@
  
  # If you specify EXIM_USER as a name, this is looked up at build time, and the
  # uid number is built into the binary. However, you can specify that this
-@@ -154,7 +154,7 @@
+@@ -152,7 +152,7 @@
  # for EXIM_USER (e.g. EXIM_USER=exim), you don't need to set EXIM_GROUP unless
  # you want to use a group other than the default group for the given user.
  
@@ -36,7 +36,7 @@
  
  # Many sites define a user called "exim", with an appropriate default group,
  # and use
-@@ -294,6 +294,7 @@
+@@ -330,6 +330,7 @@
  # LDAP_LIB_TYPE=OPENLDAP2
  # LDAP_LIB_TYPE=NETSCAPE
  # LDAP_LIB_TYPE=SOLARIS
@@ -44,9 +44,9 @@
  
  # If you don't set any of these, Exim assumes the original University of
  # Michigan (OpenLDAP 1) library.
-@@ -320,8 +321,10 @@
- # specified in INCLUDE. The settings below are just examples; -lpq is for
- # PostgreSQL, -lgds is for Interbase, -lsqlite3 is for SQLite.
+@@ -361,8 +362,10 @@
+ #
+ # You do not need to use this for any lookup information added via pkg-config.
  
 -# LOOKUP_INCLUDE=-I /usr/local/ldap/include -I /usr/local/mysql/include -I /usr/local/pgsql/include
 -# LOOKUP_LIBS=-L/usr/local/lib -lldap -llber -lmysqlclient -lpq -lgds -lsqlite3
@@ -57,7 +57,7 @@
  
  
  #------------------------------------------------------------------------------
-@@ -332,7 +335,7 @@
+@@ -373,7 +376,7 @@
  # files are defaulted in the OS/Makefile-Default file, but can be overridden in
  # local OS-specific make files.
  
@@ -66,7 +66,7 @@
  
  
  #------------------------------------------------------------------------------
-@@ -403,6 +406,7 @@
+@@ -454,6 +457,7 @@
  
  
  
@@ -74,7 +74,7 @@
  ###############################################################################
  #                 THESE ARE THINGS YOU MIGHT WANT TO SPECIFY                  #
  ###############################################################################
-@@ -470,6 +474,7 @@
+@@ -521,6 +525,7 @@
  
  # ALT_CONFIG_PREFIX=/some/directory/
  # ALT_CONFIG_PREFIX=/some/directory/exim.conf-
@@ -82,7 +82,7 @@
  
  
  #------------------------------------------------------------------------------
-@@ -548,7 +553,7 @@
+@@ -607,7 +612,7 @@
  # one that is set in the headers_charset option. The default setting is
  # defined by this setting:
  
@@ -91,16 +91,7 @@
  
  # If you are going to make use of $header_xxx expansions in your configuration
  # file, or if your users are going to use them in filter files, and the normal
-@@ -633,7 +638,7 @@
- # SUPPORT_TLS=yes
- 
- # Uncomment this setting if you are using OpenSSL
--# TLS_LIBS=-lssl -lcrypto
-+TLS_LIBS=-lssl -lcrypto
- 
- # Uncomment these settings if you are using GnuTLS
- # USE_GNUTLS=yes
-@@ -684,7 +689,7 @@
+@@ -751,7 +756,7 @@
  # Once you have done this, "make install" will build the info files and
  # install them in the directory you have defined.
  
@@ -109,7 +100,7 @@
  
  
  #------------------------------------------------------------------------------
-@@ -697,7 +702,7 @@
+@@ -764,7 +769,7 @@
  # %s. This will be replaced by one of the strings "main", "panic", or "reject"
  # to form the final file names. Some installations may want something like this:
  
@@ -118,7 +109,7 @@
  
  # which results in files with names /var/log/exim_mainlog, etc. The directory
  # in which the log files are placed must exist; Exim does not try to create
-@@ -773,7 +778,7 @@
+@@ -840,7 +845,7 @@
  # that the local_scan API is made available by the linker. You may also need
  # to add -ldl to EXTRALIBS so that dlopen() is available to Exim.
  
@@ -127,7 +118,7 @@
  
  
  #------------------------------------------------------------------------------
-@@ -870,6 +875,8 @@
+@@ -937,6 +942,8 @@
  #
  # but of course there may need to be other things in CFLAGS and EXTRALIBS_EXIM
  # as well.
@@ -136,7 +127,7 @@
  #
  # To use a name other than exim in the tcpwrappers config file,
  # e.g. if you're running multiple daemons with different access lists,
-@@ -878,6 +885,14 @@
+@@ -945,6 +952,14 @@
  #
  # TCP_WRAPPERS_DAEMON_NAME="exim"
  
@@ -151,7 +142,7 @@
  
  #------------------------------------------------------------------------------
  # The default action of the exim_install script (which is run by "make
-@@ -1145,7 +1160,7 @@
+@@ -1222,7 +1237,7 @@
  # (process id) to a file so that it can easily be identified. The path of the
  # file can be specified here. Some installations may want something like this:
  
