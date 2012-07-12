@@ -7,15 +7,15 @@
 
 PORTNAME=	cmake
 PORTVERSION=	2.8.8
+PORTREVISION?=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.${PORTNAME}.org/files/v${PORTVERSION:C/\.[[:digit:]]+$//}/
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	A cross-platform Makefile generator
+COMMENT?=	A cross-platform Makefile generator
 
 LICENSE=	BSD
 
-HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKE=make
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--datadir="/${DATADIR_REL}" \
@@ -25,6 +25,10 @@ MAKE_JOBS_SAFE=	yes
 .if defined(STRIP) && ${STRIP} != ""
 INSTALL_TARGET=	install/strip
 .endif
+
+.if !defined(CMAKE_MODULES)
+HAS_CONFIGURE=	yes
+RUN_DEPENDS=	${DATADIR}/Modules/CMake.cmake:${PORTSDIR}/devel/cmake-modules
 
 MAN1=		ccmake.1 \
 		cmake.1 \
@@ -36,6 +40,7 @@ MAN1=		ccmake.1 \
 		cmakevars.1 \
 		cpack.1 \
 		ctest.1
+.endif
 
 post-patch:
 	@(${FIND} ${WRKSRC}/Modules -name "*.cmake" -print0; \
@@ -52,7 +57,9 @@ post-patch:
 	   	${WRKSRC}/Modules/FindDCMTK.cmake
 	@${FIND} ${WRKSRC} -name "*.bak" -delete -o -name "*.orig" -delete
 
+.if !defined(CMAKE_MODULES)
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/Docs/cmake-mode.el ${PREFIX}/share/emacs/site-lisp
+.endif
 
 .include <bsd.port.mk>
