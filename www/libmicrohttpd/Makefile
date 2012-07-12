@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmicrohttpd
-PORTVERSION=	0.9.15
+PORTVERSION=	0.9.20
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,7 +25,7 @@ IGNORE=	strdup is not available in this OS release
 
 .if defined(WITH_GNUTLS)
 LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt \
-		gnutls.47:${PORTSDIR}/security/gnutls
+		gnutls:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=--with-gnutls=${LOCALBASE} --enable-https
 .endif
 
@@ -36,7 +36,7 @@ MAKE_ARGS+=	pkgconfigdir=${PREFIX}/libdata/pkgconfig
 MAN3=		libmicrohttpd.3
 INFO=		microhttpd microhttpd-tutorial
 
-PLIST_FILES=	lib/libmicrohttpd.so.23 \
+PLIST_FILES=	lib/libmicrohttpd.so.25 \
 		lib/libmicrohttpd.la \
 		lib/libmicrohttpd.so \
 		lib/libmicrohttpd.a \
