@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/cvsup-advanced/docbook.css
@@ -14,6 +15,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/java-tomcat/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/laptop/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/make-world/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/mh/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/multi-os/docbook.css
