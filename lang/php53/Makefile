@@ -65,7 +65,7 @@ PATCH_DIST_STRIP=	-p1
 PATCH_SITES+=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	ale
 
-.if ${PORT_OPTIONS:MSUHOSIN_DESC}
+.if ${PORT_OPTIONS:MSUHOSIN}
 PATCHFILES+=	suhosin-patch-5.3.x-0.9.10.patch.gz
 PATCH_SITES+=	http://download.suhosin.org/:suhosin
 PLIST_SUB+=	SUHOSIN=""
