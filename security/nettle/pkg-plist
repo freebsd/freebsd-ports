@@ -36,6 +36,7 @@ include/nettle/realloc.h
 include/nettle/ripemd160.h
 include/nettle/rsa-compat.h
 include/nettle/rsa.h
+include/nettle/salsa20.h
 include/nettle/serpent.h
 include/nettle/sexp.h
 include/nettle/sha.h
@@ -44,11 +45,11 @@ include/nettle/yarrow.h
 lib/libhogweed.a
 lib/libhogweed.so
 lib/libhogweed.so.2
-lib/libhogweed.so.2.1
+lib/libhogweed.so.2.2
 lib/libnettle.a
 lib/libnettle.so
 lib/libnettle.so.4
-lib/libnettle.so.4.3
+lib/libnettle.so.4.4
 libdata/pkgconfig/nettle.pc
 libdata/pkgconfig/hogweed.pc
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
@@ -56,10 +57,11 @@ libdata/pkgconfig/hogweed.pc
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/nettle.html
 %%PORTDOCS%%%%DOCSDIR%%/nettle.pdf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/base16dec.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/base16enc.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/base64dec.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/base64enc.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eratosthenes.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/getopt.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/getopt.h
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/getopt1.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/io.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/io.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nettle-benchmark.c

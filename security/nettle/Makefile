@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	nettle
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		http://www.lysator.liu.se/~nisse/archive/:liu \
@@ -20,7 +20,7 @@ COMMENT=	A low-level cryptographic library
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
 
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
@@ -38,16 +38,14 @@ EXAMPLES=	examples/*.c examples/*.h
 
 INFO=		nettle
 
-post-patch:
-	@${REINPLACE_CMD} -e 's/[[:<:]]sub[[:>:]]/subl/' \
-		${WRKSRC}/x86/camellia-crypt-internal.asm
+.include <bsd.port.options.mk>
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
