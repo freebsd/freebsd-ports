@@ -7,7 +7,7 @@
 
 PORTNAME=	xbmc
 PORTVERSION=	11.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mirrors.xbmc.org/releases/source/
 
