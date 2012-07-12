@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	png
-PORTVERSION=	1.5.11
+PORTVERSION=	1.5.12
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lib${PORTNAME}/lib${PORTNAME}15/${PORTVERSION}
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
@@ -22,8 +22,8 @@ GNU_CONFIGURE=	yes
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 
-SHLIB_VER=	6
 CMAKE_ARGS+=	-DPNG_MAN_DIR:STRING=man
+SOSUFFIX=	${PORTVERSION:S/1.5//}
 
 MAN3=		libpng.3 libpngpf.3
 MAN5=		png.5
@@ -37,7 +37,7 @@ BROKEN=		Please remove WITH_DEBUG for this port
 .endif
 
 .if !defined(WITHOUT_APNG) || make(makesum) || defined(FETCH_ALL)
-MASTER_SITES+=	SF/lib${PORTNAME}-apng/libpng15/${PORTVERSION}:apng 
+MASTER_SITES+=	SF/apng/libpng/libpng15/:apng
 DISTFILES+=	${DISTNAME}-apng.patch.gz:apng
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
@@ -75,10 +75,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/pngdebug.h ${WRKSRC}/pnginfo.h \
 		${WRKSRC}/pngpriv.h ${WRKSRC}/pngstruct.h \
 		${PREFIX}/include/libpng15/
-	${RMDIR} ${PREFIX}/include/libpng
+	-${RMDIR} ${PREFIX}/include/libpng
 	${RM} ${PREFIX}/libdata/pkgconfig/libpng.pc
 	${LN} -sf libpng15.pc ${PREFIX}/libdata/pkgconfig/libpng.pc
 	${RM} ${PREFIX}/lib/libpng15.so.15
-	${MV} ${PREFIX}/lib/libpng15.so.15.11 ${PREFIX}/lib/libpng15.so.15
+	${MV} ${PREFIX}/lib/libpng15.so.15${SOSUFFIX} ${PREFIX}/lib/libpng15.so.15
 
 .include <bsd.port.post.mk>
