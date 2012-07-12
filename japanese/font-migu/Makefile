@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	font-migu
-PORTVERSION=	1.0.20111002
+PORTVERSION=	1.0.20120411
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	mix-mplus-ipa/53389
-DISTFILES=	migu-1p-20111002${EXTRACT_SUFX} \
-		migu-1c-20111002${EXTRACT_SUFX} \
-		migu-1m-20111002${EXTRACT_SUFX} \
-		migu-2m-20111002${EXTRACT_SUFX} \
-		migu-1vs-20111002${EXTRACT_SUFX} \
-		migu-2ds-20111002${EXTRACT_SUFX}
+MASTER_SITE_SUBDIR=	mix-mplus-ipa/56156
+DISTFILES=	migu-1p-20120411-2${EXTRACT_SUFX} \
+		migu-1c-20120411-2${EXTRACT_SUFX} \
+		migu-1m-20120411-2${EXTRACT_SUFX} \
+		migu-2m-20120411-2${EXTRACT_SUFX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Another Japanese font set based on MigMix
@@ -31,25 +29,23 @@ SUB_LIST=	X_FONTSDIR=${PREFIX}/${X_FONTSDIR}
 PLIST_SUB=	X_FONTSDIR=${X_FONTSDIR} \
 		LOCAL_FONTSDIR=${LOCAL_FONTSDIR}
 PORTDOCS=	IPA_Font_License_Agreement_v1.0.txt Readme_ipag00303.txt \
-		README_E README_J LICENSE_E LICENSE_J migu-README.txt
+		README_E README_J migu-README.txt
 
 LOCAL_FONTSDIR=	share/fonts
 X_FONTSDIR=	lib/X11/fonts
 
 do-install:
-	cd ${WRKDIR}/migu-1p-20111002/ && \
+	cd ${WRKDIR}/migu-1p-20120411-2/ && \
 		${INSTALL_DATA} ipag00303/*.txt \
-			mplus-TESTFLIGHT-043/* \
+			mplus-TESTFLIGHT-048/* \
 			migu-README.txt \
 			${WRKDIR}
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} \
-		${WRKDIR}/migu-1p-20111002/*.ttf \
-		${WRKDIR}/migu-1c-20111002/*.ttf \
-		${WRKDIR}/migu-1m-20111002/*.ttf \
-		${WRKDIR}/migu-2m-20111002/*.ttf \
-		${WRKDIR}/migu-1vs-20111002/*.ttf \
-		${WRKDIR}/migu-2ds-20111002/*.ttf \
+		${WRKDIR}/migu-1p-20120411-2/*.ttf \
+		${WRKDIR}/migu-1c-20120411-2/*.ttf \
+		${WRKDIR}/migu-1m-20120411-2/*.ttf \
+		${WRKDIR}/migu-2m-20120411-2/*.ttf \
 		${DATADIR}
 	${MKDIR} ${PREFIX}/${LOCAL_FONTSDIR}/TTF
 	${LN} -s -f ${DATADIR}/migu*.ttf \
