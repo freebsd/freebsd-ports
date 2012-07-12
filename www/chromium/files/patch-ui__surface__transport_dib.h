@@ -1,5 +1,5 @@
---- ui/gfx/surface/transport_dib.h.orig	2011-11-01 10:43:23.000000000 +0200
-+++ ui/gfx/surface/transport_dib.h	2011-11-21 22:35:21.000000000 +0200
+--- ui/surface/transport_dib.h.orig	2011-11-01 10:43:23.000000000 +0200
++++ ui/surface/transport_dib.h	2011-11-21 22:35:21.000000000 +0200
 @@ -9,7 +9,7 @@
  #include "base/basictypes.h"
  #include "ui/gfx/surface/surface_export.h"

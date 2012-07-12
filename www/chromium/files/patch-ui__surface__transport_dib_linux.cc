@@ -1,5 +1,5 @@
---- ui/gfx/surface/transport_dib_linux.cc.orig	2011-09-14 11:02:00.000000000 +0300
-+++ ui/gfx/surface/transport_dib_linux.cc	2011-09-21 13:59:55.000000000 +0300
+--- ui/surface/transport_dib_linux.cc.orig	2011-09-14 11:02:00.000000000 +0300
++++ ui/surface/transport_dib_linux.cc	2011-09-21 13:59:55.000000000 +0300
 @@ -31,6 +31,11 @@
      address_ = kInvalidAddress;
    }

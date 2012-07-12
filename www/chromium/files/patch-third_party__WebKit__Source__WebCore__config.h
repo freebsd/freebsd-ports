@@ -1,6 +1,6 @@
---- third_party/WebKit/Source/WebCore/config.h.orig	2012-02-15 03:05:44.000000000 +0100
-+++ third_party/WebKit/Source/WebCore/config.h	2012-02-27 23:06:55.000000000 +0100
-@@ -164,6 +164,14 @@
+--- third_party/WebKit/Source/WebCore/config.h.orig	2012-05-30 10:05:35.000000000 +0300
++++ third_party/WebKit/Source/WebCore/config.h	2012-06-05 22:32:48.000000000 +0300
+@@ -127,6 +127,11 @@
  #define WTF_USE_NEW_THEME 1
  #endif // PLATFORM(MAC)
  
@@ -12,6 +12,6 @@
 +#endif
 +#endif
 +
- #if OS(UNIX) || OS(WINDOWS)
- #define WTF_USE_OS_RANDOMNESS 1
- #endif
+ #if PLATFORM(CHROMIUM)
+ 
+ // Chromium uses this file instead of JavaScriptCore/config.h to compile

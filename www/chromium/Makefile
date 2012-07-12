@@ -7,8 +7,7 @@
 
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
-DISTVERSION=	19.0.1084.56
-PORTREVISION=	1
+DISTVERSION=	20.0.1132.57
 CATEGORIES=	www
 MASTER_SITES=	http://download.goodking.org/downloads/ \
 		ftp://rene-ladan.nl/pub/distfiles/ \
@@ -28,6 +27,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		bash:${PORTSDIR}/shells/bash \
 		yasm:${PORTSDIR}/devel/yasm \
 		flock:${PORTSDIR}/sysutils/flock \
+		svnversion:${PORTSDIR}/devel/subversion \
 		v4l_compat>=1.0.20110603:${PORTSDIR}/multimedia/v4l_compat
 
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
@@ -66,7 +66,6 @@ GYP_DEFINES+=	use_cups=1 \
 		use_system_libxml=1 \
 		use_system_ffmpeg=0 \
 		use_system_libevent=1 \
-		use_system_tcmalloc=1 \
 		linux_strip_binary=1 \
 		linux_use_tcmalloc=0 \
 		linux_use_heapchecker=0 \
@@ -188,7 +187,9 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/out/${BUILDTYPE}/chrome.1 ${MANPREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/chrome.pak \
 		${WRKSRC}/out/${BUILDTYPE}/product_logo_48.png \
-		${WRKSRC}/out/${BUILDTYPE}/resources.pak ${DATADIR}
+		${WRKSRC}/out/${BUILDTYPE}/resources.pak \
+		${WRKSRC}/out/${BUILDTYPE}/ui_resources_standard.pak \
+		${WRKSRC}/out/${BUILDTYPE}/theme_resources_standard.pak ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/out/${BUILDTYPE}/chrome-wrapper \
 		${WRKSRC}/out/${BUILDTYPE}/xdg-settings ${DATADIR}
 .for f in chrome libffmpegsumo.so mksnapshot protoc
