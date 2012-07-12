@@ -7,10 +7,6 @@
 %%DATADIR%%/migu-1m-regular.ttf
 %%DATADIR%%/migu-2m-bold.ttf
 %%DATADIR%%/migu-2m-regular.ttf
-%%DATADIR%%/migu-1vs-bold.ttf
-%%DATADIR%%/migu-1vs-regular.ttf
-%%DATADIR%%/migu-2ds-bold.ttf
-%%DATADIR%%/migu-2ds-regular.ttf
 @dirrm %%DATADIR%%
 %%LOCAL_FONTSDIR%%/TTF/migu-1c-bold.ttf
 %%LOCAL_FONTSDIR%%/TTF/migu-1c-regular.ttf
@@ -20,10 +16,6 @@
 %%LOCAL_FONTSDIR%%/TTF/migu-1m-regular.ttf
 %%LOCAL_FONTSDIR%%/TTF/migu-2m-bold.ttf
 %%LOCAL_FONTSDIR%%/TTF/migu-2m-regular.ttf
-%%LOCAL_FONTSDIR%%/TTF/migu-1vs-bold.ttf
-%%LOCAL_FONTSDIR%%/TTF/migu-1vs-regular.ttf
-%%LOCAL_FONTSDIR%%/TTF/migu-2ds-bold.ttf
-%%LOCAL_FONTSDIR%%/TTF/migu-2ds-regular.ttf
 @dirrmtry %%LOCAL_FONTSDIR%%/TTF
 @dirrmtry %%LOCAL_FONTSDIR%%
 etc/fonts/conf.avail/20-unhint-migu.conf
@@ -38,10 +30,6 @@ etc/fonts/conf.d/62-fonts-migu.conf
 %%X_FONTSDIR%%/TTF/migu-1m-regular.ttf
 %%X_FONTSDIR%%/TTF/migu-2m-bold.ttf
 %%X_FONTSDIR%%/TTF/migu-2m-regular.ttf
-%%X_FONTSDIR%%/TTF/migu-1vs-bold.ttf
-%%X_FONTSDIR%%/TTF/migu-1vs-regular.ttf
-%%X_FONTSDIR%%/TTF/migu-2ds-bold.ttf
-%%X_FONTSDIR%%/TTF/migu-2ds-regular.ttf
 @exec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true
 @unexec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true
 @unexec rm -f %D/%%X_FONTSDIR%%/TTF/fonts.cache-1

@@ -77,11 +77,6 @@ addentries ()
 		make_xlfd $ENC migu-1p-bold.ttf ipa "migu 1p" p bold
 		make_xlfd $ENC migu-1p-regular.ttf ipa "migu 1p" p medium
 
-		make_xlfd $ENC migu-1vs-bold.ttf ipa "migu 1vs" p bold
-		make_xlfd $ENC migu-1vs-regular.ttf ipa "migu 1vs" p medium
-		make_xlfd $ENC migu-2ds-bold.ttf ipa "migu 2ds" p bold
-		make_xlfd $ENC migu-2ds-regular.ttf ipa "migu 2ds" p medium
-
 		make_xlfd $ENC migu-1m-bold.ttf ipa "migu 1m" c bold
 		make_xlfd $ENC migu-1m-regular.ttf ipa "migu 1m" c medium
 		make_xlfd $ENC migu-2m-bold.ttf ipa "migu 2m" c bold
