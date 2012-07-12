@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/cvsup-advanced/article.pdf
@@ -14,6 +15,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/java-tomcat/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/laptop/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/make-world/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/mh/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/multi-os/article.pdf

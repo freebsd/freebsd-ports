@@ -168,6 +168,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/advanced-networking/isdn-twisted-pair.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/advanced-networking/natd.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/advanced-networking/net-routing.png
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/advanced-networking/pxe-nfs.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/advanced-networking/static-routes.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-adduser1.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-adduser2.png

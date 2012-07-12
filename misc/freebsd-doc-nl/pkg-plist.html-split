@@ -84,6 +84,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-rcd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-starting-services.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-sysctl.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-syslog.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-virtual-hosts.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/consoles.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/creating-cds.html

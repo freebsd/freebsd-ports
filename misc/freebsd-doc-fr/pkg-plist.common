@@ -29,6 +29,7 @@
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/multi-os
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/mh
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/make-world
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/laptop
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/java-tomcat
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must
@@ -42,6 +43,7 @@
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/cvsup-advanced
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/contributors
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/contributing
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles

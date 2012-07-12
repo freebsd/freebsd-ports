@@ -220,7 +220,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/l10n.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/lang-setup.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-lbc-install.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-mathematica.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-mathematicau.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-oracle.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail-advanced.html
@@ -228,6 +228,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail-trouble.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail-using.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/make-delete-old.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/makeworld.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors-afs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors-bittorrent.html
@@ -312,10 +313,10 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-xdm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11-wm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x15369.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x31986.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x32030.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x32074.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x15516.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x32076.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x32120.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x32164.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/LEGALNOTICE.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/changes.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-after-port-mk.html
