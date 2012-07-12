@@ -1,0 +1,31 @@
+--- CMakeLists.txt.orig	2012-04-18 20:10:54.000000000 +0200
++++ CMakeLists.txt	2012-07-12 11:43:03.000000000 +0200
+@@ -621,17 +621,17 @@
+ INSTALL(FILES Copyright.txt DESTINATION ${CMake_DOC_DEST})
+ 
+ # Install script directories.
+-INSTALL(
+-  DIRECTORY Modules Templates
+-  DESTINATION "${CMake_DATA_DEST}"
+-  FILE_PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
+-  DIRECTORY_PERMISSIONS OWNER_READ OWNER_EXECUTE OWNER_WRITE
+-                        GROUP_READ GROUP_EXECUTE
+-                        WORLD_READ WORLD_EXECUTE
+-  PATTERN "*.sh*" PERMISSIONS OWNER_READ OWNER_EXECUTE OWNER_WRITE
+-                              GROUP_READ GROUP_EXECUTE
+-                              WORLD_READ WORLD_EXECUTE
+-  )
++#INSTALL(
++#  DIRECTORY Modules Templates
++#  DESTINATION "${CMake_DATA_DEST}"
++#  FILE_PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
++#  DIRECTORY_PERMISSIONS OWNER_READ OWNER_EXECUTE OWNER_WRITE
++#                        GROUP_READ GROUP_EXECUTE
++#                        WORLD_READ WORLD_EXECUTE
++#  PATTERN "*.sh*" PERMISSIONS OWNER_READ OWNER_EXECUTE OWNER_WRITE
++#                              GROUP_READ GROUP_EXECUTE
++#                              WORLD_READ WORLD_EXECUTE
++#  )
+ 
+ #-----------------------------------------------------------------------
+ # End of the main section of the CMakeLists file
