@@ -3,7 +3,6 @@
 
 # PROVIDE: snortsam
 # REQUIRE: DAEMON
-# BEFORE:  LOGIN
 # KEYWORD: shutdown
 
 #
