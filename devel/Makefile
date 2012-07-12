@@ -218,6 +218,7 @@
     SUBDIR += cmake
     SUBDIR += cmake-fedora
     SUBDIR += cmake-gui
+    SUBDIR += cmake-modules
     SUBDIR += cmph
     SUBDIR += cmunge
     SUBDIR += cobf
