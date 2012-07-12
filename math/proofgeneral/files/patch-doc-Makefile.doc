@@ -1,5 +1,14 @@
 --- doc/Makefile.doc.orig	2011-05-05 10:46:27.000000000 -0700
-+++ doc/Makefile.doc	2012-04-11 22:03:35.000000000 -0700
++++ doc/Makefile.doc	2012-07-10 15:19:30.000000000 -0700
+@@ -18,7 +18,7 @@
+ 
+ MAKE = make -f Makefile.doc 
+ MAKEINFO = makeinfo
+-TEXI2HTML = texi2html -expandinfo -number -split_chapter --noheader
++TEXI2HTML = texi2html -expandinfo -number-sections -split_chapter --noheader
+ # `texinfo-tex' package contains texi2pdf
+ TEXI2PDF = texi2pdf
+ # `dviutils' package contains these useful utilities.
 @@ -40,16 +40,13 @@
  
  TMPFILE=pgt

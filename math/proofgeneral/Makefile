@@ -7,7 +7,7 @@
 
 PORTNAME=	proofgeneral
 PORTVERSION=	4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math elisp
 MASTER_SITES=	http://proofgeneral.inf.ed.ac.uk/releases/
 PKGNAMESUFFIX=	-${EMACS_NAME}
@@ -23,8 +23,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
-BROKEN=		does not build
-
 USE_EMACS=	yes
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
@@ -36,6 +34,10 @@ USE_PERL5=	yes
 PLIST_SUB+=	PACKAGE_BUILDING="@comment "
 .else
 PLIST_SUB+=	PACKAGE_BUILDING=""
+.endif
+
+.if ${EMACS_NAME} == xemacs
+IGNORE=	the ProofGeneral developers no longer support XEmacs
 .endif
 
 MAKE_ARGS+=	PREFIX="${LOCALBASE}" DEST_PREFIX="${PREFIX}" MAKE="${GMAKE}" \
