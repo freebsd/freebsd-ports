@@ -60,6 +60,8 @@ bin/chrome
 %%DATADIR%%/product_logo_48.png
 %%DATADIR%%/protoc
 %%DATADIR%%/resources.pak
+%%DATADIR%%/ui_resources_standard.pak
+%%DATADIR%%/theme_resources_standard.pak
 %%DATADIR%%/resources/inspector/auditsPanel.css
 %%DATADIR%%/resources/inspector/dataGrid.css
 %%DATADIR%%/resources/inspector/devTools.css
@@ -140,6 +142,8 @@ bin/chrome
 %%DATADIR%%/resources/inspector/Images/resourcesSizeGraphIcon.png
 %%DATADIR%%/resources/inspector/Images/resourcesTimeGraphIcon.png
 %%DATADIR%%/resources/inspector/Images/scriptsSilhouette.png
+%%DATADIR%%/resources/inspector/Images/searchNext.png
+%%DATADIR%%/resources/inspector/Images/searchPrev.png
 %%DATADIR%%/resources/inspector/Images/searchSmallBlue.png
 %%DATADIR%%/resources/inspector/Images/searchSmallBrightBlue.png
 %%DATADIR%%/resources/inspector/Images/searchSmallGray.png
@@ -226,6 +230,7 @@ bin/chrome
 %%DATADIR%%/resources/inspector/Images/warningsErrors.png
 %%DATADIR%%/resources/inspector/indexedDBViews.css
 %%DATADIR%%/resources/inspector/inspectorCommon.css
+%%DATADIR%%/resources/inspector/navigatorView.css
 %%DATADIR%%/resources/inspector/networkLogView.css
 %%DATADIR%%/resources/inspector/networkPanel.css
 %%DATADIR%%/resources/inspector/panelEnablerView.css

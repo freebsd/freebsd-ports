@@ -1,5 +1,5 @@
---- chrome/renderer/chrome_ppb_pdf_impl.cc.orig	2012-02-01 21:17:28.000000000 +0200
-+++ chrome/renderer/chrome_ppb_pdf_impl.cc	2012-02-01 21:18:02.000000000 +0200
+--- chrome/renderer/pepper/ppb_pdf_impl.cc.orig	2012-02-01 21:17:28.000000000 +0200
++++ chrome/renderer/pepper/ppb_pdf_impl.cc	2012-02-01 21:18:02.000000000 +0200
 @@ -43,7 +43,7 @@
  
  namespace chrome {
