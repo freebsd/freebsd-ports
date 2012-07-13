@@ -3,6 +3,6 @@
 
   The first time, run Eclipse with the option -clean, and configure
   a Python or Jython interpreter in  Window -> Preferences -> PyDev
-  before creating a new Pydev project
+  -> Interpreter before creating a new Pydev project
 
 *********************************************************************
