@@ -6,27 +6,27 @@
 #
 
 PORTNAME=	Catalyst-ActionRole-ACL
-PORTVERSION=	0.05
+PORTVERSION=	0.07
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:CONVERTER
+MASTER_SITE_SUBDIR=	CPAN:BOBTFISH
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	User role-based authorization action class
 
-BUILD_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
-		p5-Catalyst-Runtime>=0:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-Catalyst-Controller-ActionRole>=0:${PORTSDIR}/www/p5-Catalyst-Controller-ActionRole \
-		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
-RUN_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
-		p5-Catalyst-Runtime>=0:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-Catalyst-Controller-ActionRole>=0:${PORTSDIR}/www/p5-Catalyst-Controller-ActionRole \
-		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
-USE_PERL5=	yes
+BUILD_DEPENDS=	p5-Catalyst-Controller-ActionRole>=0:${PORTSDIR}/www/p5-Catalyst-Controller-ActionRole \
+		p5-Catalyst-Runtime>=5.90013:${PORTSDIR}/www/p5-Catalyst-Runtime \
+		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
+		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
 PERL_CONFIGURE=	yes
 
-MAN3=	Catalyst::Action::Role::ACL.3 Catalyst::ActionRole::ACL.3
+MAN3=		Catalyst::Action::Role::ACL.3 \
+		Catalyst::ActionRole::ACL.3
 
 .include <bsd.port.mk>
