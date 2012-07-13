@@ -477,6 +477,7 @@
     SUBDIR += generatorrunner
     SUBDIR += gengetopt
     SUBDIR += genproto
+    SUBDIR += geoip-java
     SUBDIR += gettext
     SUBDIR += gettext-lint
     SUBDIR += gettext-msghack
