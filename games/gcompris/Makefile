@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gcompris
-PORTVERSION=	12.01
-PORTREVISION=	1
+PORTVERSION=	12.05
 CATEGORIES=	games gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
@@ -29,11 +28,12 @@ RUN_DEPENDS=	gnuchess:${PORTSDIR}/games/gnuchess \
 		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
 		gnucap:${PORTSDIR}/cad/gnucap
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GSTREAMER=	yes
-USE_PYTHON=	2.6-2.7
+USE_PYTHON=	-2.7
 USE_SDL=	mixer
 USE_DISPLAY=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix gtk20 pygtk2 libxml2 librsvg2
