@@ -3,6 +3,8 @@ popular open source revision control software. It can be used as both client
 and server for repositories and provides granular access control over data
 stored in the repository. It aims to be as compatible as possible with other
 CVS implementations, except when particular features reduce the overall
-security of the system.
+security of the system. Among other things, support for the pserver
+connection mechanism has been dropped because of security issues with
+the authentication mechanism.
 
 WWW: http://www.opencvs.org/
