@@ -1,5 +1,5 @@
---- src/bookmarks.cpp.orig	2012-03-08 04:46:39.000000000 -0600
-+++ src/bookmarks.cpp	2012-04-30 14:20:26.157046128 -0500
+--- src/bookmarks.cpp.orig	2012-07-11 18:10:56.065528820 -0500
++++ src/bookmarks.cpp	2012-07-11 18:19:42.041677562 -0500
 @@ -22,6 +22,11 @@
  #ifndef BOOKMARKS_CPP
  #define BOOKMARKS_CPP
@@ -12,7 +12,7 @@
  #include <QtGui>
  #include "bookmarkmodel.h"
  #include "icondlg.h"
-@@ -80,42 +85,74 @@ void MainWindow::mountWatcherTriggered()
+@@ -80,44 +85,74 @@ void MainWindow::mountWatcherTriggered()
  }
  
  //---------------------------------------------------------------------------
@@ -74,11 +74,12 @@
 -    mtab.close();
 +    mntsize = getmntinfo(&mntbuf, MNT_NOWAIT);
  
+-    QStringList sysMounts = QStringList() << "/dev" << "/sys" << "/pro" << "/tmp" << "/run";
      QStringList dontShowList = settings->value("hideBookmarks",0).toStringList();
      mounts.clear();
  
 -    foreach(QString item, mtabMounts)
--        if(item[0] == '/')
+-	if(!sysMounts.contains(item.split(" ").at(1).left(4)))
 +    for (mnt = mntbuf; mntsize > 0; mntsize--, mnt++)
 +        // XXX zpool name does not start with /
 +        if (mnt->f_mntfromname[0] == '/' or !strcmp(mnt->f_fstypename, "zfs"))
@@ -94,6 +95,7 @@
 +                //add a new auto bookmark if it doesn't exist
 +                if(!autoBookmarks.contains(mnt->f_mntonname))
                  {
+-			autoBookmarks.append(path);
 -                    if(item.split(" ").at(2) == "iso9660") modelBookmarks->addBookmark(path,path,"1","drive-optical");
 -                    else if(item.split(" ").at(2).contains("fat")) modelBookmarks->addBookmark(path,path,"1","drive-removable-media");
 -                    else modelBookmarks->addBookmark(path,path,"1","drive-harddisk");

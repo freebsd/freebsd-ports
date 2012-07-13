@@ -1,5 +1,5 @@
---- src/mymodel.cpp.orig	2012-03-09 05:00:54.000000000 -0600
-+++ src/mymodel.cpp	2012-04-29 16:13:57.725169164 -0500
+--- src/mymodel.cpp.orig	2012-07-11 18:21:24.302333223 -0500
++++ src/mymodel.cpp	2012-07-11 18:59:06.428956406 -0500
 @@ -21,7 +21,6 @@
  
  #include <mainwindow.h>
@@ -8,19 +8,20 @@
  #include <unistd.h>
  #include <sys/ioctl.h>
  
-@@ -63,9 +62,8 @@ myModel::myModel(bool realMime)
+@@ -63,10 +62,8 @@ myModel::myModel(bool realMime)
  
      iconFactory = new QFileIconProvider();
  
 -    inotifyFD = inotify_init();
 -    notifier = new QSocketNotifier(inotifyFD, QSocketNotifier::Read, this);
 -    connect(notifier, SIGNAL(activated(int)), this, SLOT(notifyChange()));
+-    connect(&eventTimer,SIGNAL(timeout()),this,SLOT(eventTimeout()));
 +    watcher = new QFileSystemWatcher(this);
 +    connect(watcher, SIGNAL(directoryChanged(QString)), this, SLOT(notifyChange(QString)));
  
      realMimeTypes = realMime;
  }
-@@ -188,28 +186,9 @@ QString myModel::getMimeType(const QMode
+@@ -189,62 +186,9 @@ QString myModel::getMimeType(const QMode
  }
  
  //---------------------------------------------------------------------------------------
@@ -44,38 +45,72 @@
 -
 -        int w = event->wd;
 -
--        if(watchers.contains(w))
+-        if(eventTimer.isActive())
 -        {
--            myModelItem *parent = rootItem->matchPath(watchers.value(w).split(SEPARATOR));
-+            myModelItem *parent = rootItem->matchPath(path.split(SEPARATOR));
- 
-             if(parent)
-             {
-@@ -230,9 +209,7 @@ void myModel::notifyChange()
-                         //must of been deleted, remove from model
-                         if(child->fileInfo().isDir())
-                         {
--                            int wd = watchers.key(child->absoluteFilePath());
--                            inotify_rm_watch(inotifyFD,wd);
--                            watchers.remove(wd);
-+                            watcher->removePath(child->absoluteFilePath());
-                         }
-                         beginRemoveRows(index(parent->absoluteFilePath()),child->childNumber(),child->childNumber());
-                         parent->removeChild(child);
-@@ -249,23 +226,17 @@ void myModel::notifyChange()
-             }
-             else
-             {
--                inotify_rm_watch(inotifyFD,w);
--                watchers.remove(w);
-+                watcher->removePath(path);
-             }
+-            if(w == lastEventID)
+-                eventTimer.start(40);
+-            else
+-            {
+-                eventTimer.stop();
+-                notifyProcess(lastEventID);
+-                lastEventID = w;
+-                eventTimer.start(40);
+-            }
+-        }
+-        else
+-        {
+-            lastEventID = w;
+-            eventTimer.start(40);
 -        }
 -
 -        at += sizeof(inotify_event) + event->len;
 -    }
 -
 -    notifier->setEnabled(1);
+-}
+-
+-//---------------------------------------------------------------------------------------
+-void myModel::eventTimeout()
+-{
+-    notifyProcess(lastEventID);
+-    eventTimer.stop();
+-}
+-
+-//---------------------------------------------------------------------------------------
+-void myModel::notifyProcess(int eventID)
+-{
+-    if(watchers.contains(eventID))
+-    {
+-        myModelItem *parent = rootItem->matchPath(watchers.value(eventID).split(SEPARATOR));
++        myModelItem *parent = rootItem->matchPath(path.split(SEPARATOR));
+ 
+         if(parent)
+         {
+@@ -265,9 +209,7 @@ void myModel::notifyProcess(int eventID)
+                     //must of been deleted, remove from model
+                     if(child->fileInfo().isDir())
+                     {
+-                        int wd = watchers.key(child->absoluteFilePath());
+-                        inotify_rm_watch(inotifyFD,wd);
+-                        watchers.remove(wd);
++                        watcher->removePath(child->absoluteFilePath());
+                     }
+                     beginRemoveRows(index(parent->absoluteFilePath()),child->childNumber(),child->childNumber());
+                     parent->removeChild(child);
+@@ -282,20 +224,19 @@ void myModel::notifyProcess(int eventID)
+                 endInsertRows();
+             }
+         }
+-    }
+-    else
+-    {
+-        inotify_rm_watch(inotifyFD,eventID);
+-        watchers.remove(eventID);
+-    }
++        else
++        {
++                watcher->removePath(path);
++        }
  }
  
  //---------------------------------------------------------------------------------
@@ -90,7 +125,7 @@
          item->watched = 1;
          item = item->parent();
      }
-@@ -278,7 +249,7 @@ bool myModel::setRootPath(const QString&
+@@ -308,7 +249,7 @@ bool myModel::setRootPath(const QString&
  
      myModelItem *item = rootItem->matchPath(path.split(SEPARATOR));
  
@@ -99,7 +134,7 @@
  
      if(item->walked == 0)
      {
-@@ -352,10 +323,7 @@ void myModel::refresh()
+@@ -382,10 +323,7 @@ void myModel::refresh()
  {
      myModelItem *item = rootItem->matchPath(QStringList("/"));
  
@@ -111,7 +146,7 @@
  
      beginResetModel();
      item->clearAll();
-@@ -811,9 +779,7 @@ bool myModel::remove(const QModelIndex &
+@@ -840,9 +778,7 @@ bool myModel::remove(const QModelIndex &
          QFileInfo info(children.at(i));
          if(info.isDir())
          {
