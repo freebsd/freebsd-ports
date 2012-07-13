@@ -1,9 +1,12 @@
 bin/calcurse
+bin/calcurse-upgrade
 %%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/submitting-patches.html
 %%NLS%%share/locale/de/LC_MESSAGES/calcurse.mo
 %%NLS%%share/locale/en/LC_MESSAGES/calcurse.mo
 %%NLS%%share/locale/es/LC_MESSAGES/calcurse.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/calcurse.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/calcurse.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/calcurse.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/calcurse.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
