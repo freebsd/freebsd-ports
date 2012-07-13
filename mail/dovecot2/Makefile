@@ -18,8 +18,8 @@ CONFLICTS=	dovecot-1.[0-9]*
 
 ######################################################################
 # Anytime PORTVERSION changes please bump PORTREVISION of            #
-# mail/dovecot2-pigeonhole. Please see ports/135311 and              #
-# ports/146029 for an explanation.                                   #
+# mail/dovecot2-pigeonhole and also mail/dovecot2-antispam-plugin.   #
+# Please see ports/135311 and ports/146029 for an explanation.       #
 #                                                                    #
 # Please be careful when updating this port as changes to this port  #
 # can break mail/dovecot2-pigeonhole. In order to ensure the least   #
