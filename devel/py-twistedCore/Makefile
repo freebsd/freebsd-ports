@@ -29,11 +29,12 @@ USE_BZIP2=	yes
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	${PORTNAME:S/twisted/Twisted_/}
+REINPLACE_ARGS=	-i ''
 
 MAN1=		manhole.1 pyhtmlizer.1 tap2deb.1 tap2rpm.1 tapconvert.1 trial.1 twistd.1
 
 post-patch:
-	@${FIND} ${WRKSRC} -type f -name "*.orig" -delete
+	@${REINPLACE_CMD} -e '/preventImports=/ s|"gi"|""|' ${WRKSRC}/twisted/internet/gtk2reactor.py
 
 post-install:
 # permission safeness
