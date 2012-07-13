@@ -26,9 +26,12 @@ BOOST_LIBS=	date_time filesystem graph iostreams\
 .include "${PORTSDIR}/devel/boost-all/common.mk"
 .include "${PORTSDIR}/devel/boost-all/compiled.mk"
 
-.if defined (WITH_ICU)
+.if defined(WITH_ICU)
 LIB_DEPENDS+=	icuuc:${PORTSDIR}/devel/icu
 BJAM_OPTIONS+=	-sICU_PATH=${LOCALBASE}
+.else
+USE_ICONV=	yes
+BJAM_OPTIONS+=	-sICONV_PATH=${LOCALBASE}
 .endif
 
 .if ${ARCH} == "sparc64"

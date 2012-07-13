@@ -1,23 +1,29 @@
---- boost/asio/detail/io_control.hpp.orig	2010-12-06 01:32:39.000000000 +0300
-+++ boost/asio/detail/io_control.hpp	2010-12-06 01:37:34.000000000 +0300
-@@ -44,7 +44,7 @@
+--- boost/asio/detail/io_control.hpp.orig	2011-06-06 03:21:43.000000000 +0400
++++ boost/asio/detail/io_control.hpp	2012-07-10 13:24:45.000000000 +0400
+@@ -44,9 +44,9 @@
    }
  
    // Get the name of the IO control command.
 -  int name() const
 +  ioctl_cmd_type name() const
    {
-     return FIONBIO;
+-    return static_cast<int>(FIONBIO);
++    return static_cast<ioctl_cmd_type>(FIONBIO);
    }
-@@ -94,7 +94,7 @@
+ 
+   // Set the value of the I/O control command.
+@@ -94,9 +94,9 @@
    }
  
    // Get the name of the IO control command.
 -  int name() const
 +  ioctl_cmd_type name() const
    {
-     return FIONREAD;
+-    return static_cast<int>(FIONREAD);
++    return static_cast<ioctl_cmd_type>(FIONREAD);
    }
+ 
+   // Set the value of the I/O control command.
 --- boost/asio/detail/descriptor_ops.hpp.orig	2010-12-06 01:55:08.000000000 +0300
 +++ boost/asio/detail/descriptor_ops.hpp	2010-12-06 01:55:39.000000000 +0300
 @@ -79,7 +79,7 @@
