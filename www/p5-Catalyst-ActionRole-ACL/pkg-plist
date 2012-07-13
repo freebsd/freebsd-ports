@@ -1,8 +1,8 @@
 %%SITE_PERL%%/Catalyst/Action/Role/ACL.pm
 %%SITE_PERL%%/Catalyst/ActionRole/ACL.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/ActionRole/ACL/.packlist
-@dirrmtry %%SITE_PERL%%/Catalyst/Action/Role
-@dirrmtry %%SITE_PERL%%/Catalyst/Action
-@dirrmtry %%SITE_PERL%%/Catalyst/ActionRole
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/ActionRole/ACL
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/ActionRole
+@dirrmtry %%SITE_PERL%%/Catalyst/ActionRole
+@dirrmtry %%SITE_PERL%%/Catalyst/Action/Role
+@dirrmtry %%SITE_PERL%%/Catalyst/Action
