@@ -173,8 +173,12 @@ sortConfiguration () {
             _VM=`dirname "${_VM}"`
             _VM=`dirname "${_VM}"`
             _VM=`basename "${_VM}"`
-            VERSION=`echo ${VM} | sed -e 's|[^0-9]*||' 2>/dev/null`
-            _VERSION=`echo ${_VM} | sed -e 's|[^0-9]*||' 2>/dev/null`
+            # Consistent version numbering for various install directory names
+            # including 'openjdk6', 'jdk1.6.0', 'linux-sun-jdk1.6.0', etc.
+            VERSION=`echo ${VM} | sed -e 's|[^0-9]*||' -e 's|1\.||' \
+		                      -e 's|\.[0-9]||' 2>/dev/null`
+            _VERSION=`echo ${_VM} | sed -e 's|[^0-9]*||' -e 's|1\.||' \
+		                        -e 's|\.[0-9]||' 2>/dev/null`
             if [ "${VERSION}" \> "${_VERSION}" ]; then
                 _JAVAVMS="${_JAVAVMS}:${JAVAVM}:${_JAVAVM}"
                 JAVAVM=
@@ -184,14 +188,14 @@ sortConfiguration () {
                 continue
             else
                 case "${VM}" in
-                    diablo-jdk*)
+                    openjdk*)
                         _JAVAVMS="${_JAVAVMS}:${JAVAVM}:${_JAVAVM}"
                         JAVAVM=
                         continue
                         ;;
-                    diablo-jre*|openjdk*)
+                    diablo-jdk*)
                         case "${_VM}" in
-                            diablo*)
+                            open*)
                                 _JAVAVMS="${_JAVAVMS}:${_JAVAVM}"
                                 continue
                                 ;;
@@ -202,9 +206,9 @@ sortConfiguration () {
                                 ;;
                         esac
                         ;;
-                    jdk*)
+                    diablo-jre*|jdk*)
                         case "${_VM}" in
-                            diablo*|open*)
+                            open*|diablo*)
                                 _JAVAVMS="${_JAVAVMS}:${_JAVAVM}"
                                 continue
                                 ;;
@@ -217,7 +221,7 @@ sortConfiguration () {
                         ;;
                     jre*|linux-sun-jdk*)
                         case "${_VM}" in
-                            diablo*|open*|j*)
+                            open*|diablo*|j*)
                                 _JAVAVMS="${_JAVAVMS}:${_JAVAVM}"
                                 continue
                                 ;;
@@ -228,22 +232,9 @@ sortConfiguration () {
                                 ;;
                         esac
                         ;;
-                    linux-sun-jre*|linux-blackdown-jdk*)
+                    linux-sun-jre*)
                         case "${_VM}" in
-                            diablo*|open*|j*|linux-sun*)
-                                _JAVAVMS="${_JAVAVMS}:${_JAVAVM}"
-                                continue
-                                ;;
-                            *)
-                                _JAVAVMS="${_JAVAVMS}:${JAVAVM}:${_JAVAVM}"
-                                JAVAVM=
-                                continue
-                                ;;
-                        esac
-                        ;;
-                    linux-blackdown-jre*|linux-ibm-jdk*)
-                        case "${_VM}" in
-                            diablo*|open*|j*|linux-sun*|linux-blackdown*)
+                            open*|diablo*|j*|linux-sun*)
                                 _JAVAVMS="${_JAVAVMS}:${_JAVAVM}"
                                 continue
                                 ;;
@@ -466,11 +457,11 @@ manualpageVM () {
     MANPATH="${JAVA_HOME}/man:${MANPATH}"
     export MANPATH
     if [ "${LANG}" = "ja_JP.eucJP" -a -x "${_JAVAVM_PREFIX}/bin/jman" ]; then
-	setJavaOptions jman "`basename ${JAVA_HOME}`"
-	exec ${_JAVAVM_PREFIX}/bin/jman -S 1 ${_JAVAVM_OPTS} ${1}
+        setJavaOptions jman "`basename ${JAVA_HOME}`"
+        exec ${_JAVAVM_PREFIX}/bin/jman -S 1 ${_JAVAVM_OPTS} ${1}
     else
-	setJavaOptions man "`basename ${JAVA_HOME}`"
-	exec man -S 1 ${_JAVAVM_OPTS} ${1}
+        setJavaOptions man "`basename ${JAVA_HOME}`"
+        exec man -S 1 ${_JAVAVM_OPTS} ${1}
     fi
 }
 
@@ -481,39 +472,43 @@ setJavaHome() {
     # Use JAVA_HOME if it's set, unless its set to %%PREFIX%%
     if [ -n "${JAVA_HOME}" ]; then
         if [ "`realpath "${JAVA_HOME}"`" != "`realpath "${_JAVAVM_PREFIX}"`" ]; then
-	    if [ -f "${JAVA_HOME}/bin/${_JAVAVM_PROG}" ]; then
-		_JAVAVM_PROG_PATH="${JAVA_HOME}/bin"
-		return 0
-	    elif [ -f "${JAVA_HOME}/jre/bin/${_JAVAVM_PROG}" ]; then
-		_JAVAVM_PROG_PATH="${JAVA_HOME}/jre/bin"
-		return 0
-	    fi
-	fi
+            if [ -f "${JAVA_HOME}/bin/${_JAVAVM_PROG}" ]; then
+                _JAVAVM_PROG_PATH="${JAVA_HOME}/bin"
+                return 0
+            elif [ -f "${JAVA_HOME}/jre/bin/${_JAVAVM_PROG}" ]; then
+                _JAVAVM_PROG_PATH="${JAVA_HOME}/jre/bin"
+                return 0
+            fi
+        fi
     fi
 
     unset JAVA_HOME
 
-    # Determine location of bsd.port.mk if it exists
-    _JAVAVM_PORTSDIR=
-    if [ -r /usr/share/mk/bsd.port.mk ]; then
-        _JAVAVM_PORTSDIR=`"${_JAVAVM_MAKE}" -f /usr/share/mk/bsd.port.mk -V PORTSDIR 2>/dev/null`
-    fi
+    # Use bsd.java.mk to determine the VM to use if it exists unless
+    # JAVAVM_FALLBACK_ONLY is set
+    if [ -z "${JAVAVM_FALLBACK_ONLY}" ]; then
+        # Determine location of bsd.port.mk if it exists
+        _JAVAVM_PORTSDIR=
+        if [ -r /usr/share/mk/bsd.port.mk ]; then
+            _JAVAVM_PORTSDIR=`"${_JAVAVM_MAKE}" -f /usr/share/mk/bsd.port.mk -V PORTSDIR 2>/dev/null`
+        fi
 
-    _JAVAVM_BSD_PORT_MK=
-    if [ -n "${_JAVAVM_PORTSDIR}" -a -r "${_JAVAVM_PORTSDIR}/Mk/bsd.port.mk" ]; then
-        _JAVAVM_BSD_PORT_MK="${_JAVAVM_PORTSDIR}/Mk/bsd.port.mk"
-    fi
+        _JAVAVM_BSD_PORT_MK=
+        if [ -n "${_JAVAVM_PORTSDIR}" -a -r "${_JAVAVM_PORTSDIR}/Mk/bsd.port.mk" ]; then
+            _JAVAVM_BSD_PORT_MK="${_JAVAVM_PORTSDIR}/Mk/bsd.port.mk"
+        fi
 
-    # If bsd.port.mk was found, use that to determine the VM to use.
-    if [ -n "${_JAVAVM_BSD_PORT_MK}" ]; then
-        JAVA_HOME=`"${_JAVAVM_MAKE}" -f "${_JAVAVM_BSD_PORT_MK}" -V JAVA_HOME USE_JAVA=yes 2>/dev/null`
-        if [ -n "${JAVA_HOME}" -a -f "${JAVA_HOME}/bin/${_JAVAVM_PROG}" ]; then
-            _JAVAVM_PROG_PATH="${JAVA_HOME}/bin"
-            return 0
-        elif [ -n "${JAVA_HOME}" -a \
-               -f "${JAVA_HOME}/jre/bin/${_JAVAVM_PROG}" ]; then
-            _JAVAVM_PROG_PATH="${JAVA_HOME}/jre/bin"
-            return 0
+        # If bsd.port.mk was found, use that to determine the VM to use.
+        if [ -n "${_JAVAVM_BSD_PORT_MK}" ]; then
+            JAVA_HOME=`"${_JAVAVM_MAKE}" -f "${_JAVAVM_BSD_PORT_MK}" -V JAVA_HOME USE_JAVA=yes 2>/dev/null`
+            if [ -n "${JAVA_HOME}" -a -f "${JAVA_HOME}/bin/${_JAVAVM_PROG}" ]; then
+                _JAVAVM_PROG_PATH="${JAVA_HOME}/bin"
+                return 0
+            elif [ -n "${JAVA_HOME}" -a \
+                   -f "${JAVA_HOME}/jre/bin/${_JAVAVM_PROG}" ]; then
+                _JAVAVM_PROG_PATH="${JAVA_HOME}/jre/bin"
+                return 0
+            fi
         fi
     fi
 
@@ -531,25 +526,13 @@ setJavaHome() {
         _JAVAVM_VERSION=
         for version in ${JAVA_VERSION}; do
             case "${version}" in
-                1.1+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.1 1.2 1.3 1.4 1.5 1.6 1.7"
-                    ;;
-                1.2+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.2 1.3 1.4 1.5 1.6 1.7"
-                    ;;
-                1.3+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.3 1.4 1.5 1.6 1.7"
-                    ;;
-                1.4+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.4 1.5 1.6 1.7"
-                    ;;
                 1.5+)
                     _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.5 1.6 1.7"
                     ;;
                 1.6+)
                     _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.6 1.7"
                     ;;
-                1.6+)
+                1.7+)
                     _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.7"
                     ;;
                 *)
@@ -569,7 +552,7 @@ setJavaHome() {
         if [ -n "${JAVA_VERSION}" ]; then
             _JAVAVM_VERSION=`echo ${_JAVAVM_VM} | \
                 sed -e 's|^[^0-9]*\([0-9]\)\.\([0-9]\)\.[0-9]$|\1.\2|' \
-		    -e 's|^[^0-9]*\([0-9]\)$|1.\1|'`
+                    -e 's|^[^0-9]*\([0-9]\)$|1.\1|'`
             for _JAVAVM_REQUESTED_VERSION in ${JAVA_VERSION}; do
                 if [ "${_JAVAVM_VERSION}" = "${_JAVAVM_REQUESTED_VERSION}" ]; then
                     _JAVAVM_VERSION=
@@ -584,7 +567,7 @@ setJavaHome() {
         if [ -n "${JAVA_OS}" ]; then
             _JAVAVM_OS=
             case "${_JAVAVM_VM}" in
-                diablo*|j*)
+                diablo*|j*|openjdk*)
                     _JAVAVM_OS=native
                     ;;
                 linux*)
@@ -605,22 +588,16 @@ setJavaHome() {
         if [ -n "${JAVA_VENDOR}" ]; then
             _JAVAVM_VENDOR=
             case "${_JAVAVM_VM}" in
-                linux-blackdown*)
-                    _JAVAVM_VENDOR=blackdown
-                    ;;
                 diablo*)
                     _JAVAVM_VENDOR=freebsd
                     ;;
                 j*)
                     _JAVAVM_VENDOR=bsdjava
                     ;;
-                linux-ibm*)
-                    _JAVAVM_VENDOR=ibm
-                    ;;
                 openjdk*)
                     _JAVAVM_VENDOR=openjdk
                     ;;
-                linux-sun*)
+                linux*)
                     _JAVAVM_VENDOR=sun
                     ;;
             esac
