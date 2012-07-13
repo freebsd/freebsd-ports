@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	WWW-GitHub-Gist
-PORTVERSION=	0.13
-PORTREVISION=	2
+PORTVERSION=	0.14
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dennylin93@hs.ntnu.edu.tw
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to Gist
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
