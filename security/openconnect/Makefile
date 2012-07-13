@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openconnect
-PORTVERSION=	4.04
+PORTVERSION=	4.05
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/ \
 		http://mirrors.rit.edu/zi/
