@@ -1,6 +1,4 @@
 bin/mason.pl
-%%SITE_PERL%%/Apache/Mason.pm
-%%SITE_PERL%%/Bundle/HTML/Mason.pm
 %%SITE_PERL%%/HTML/Mason.pm
 %%SITE_PERL%%/HTML/Mason/Admin.pod
 %%SITE_PERL%%/HTML/Mason/ApacheHandler.pm
@@ -33,6 +31,9 @@ bin/mason.pl
 %%SITE_PERL%%/HTML/Mason/Tests.pm
 %%SITE_PERL%%/HTML/Mason/Tools.pm
 %%SITE_PERL%%/HTML/Mason/Utils.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Mason/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Mason
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
 @dirrm %%SITE_PERL%%/HTML/Mason/Apache
 @dirrm %%SITE_PERL%%/HTML/Mason/Cache
 @dirrm %%SITE_PERL%%/HTML/Mason/Compiler
@@ -40,7 +41,4 @@ bin/mason.pl
 @dirrm %%SITE_PERL%%/HTML/Mason/Plugin
 @dirrm %%SITE_PERL%%/HTML/Mason/Resolver
 @dirrm %%SITE_PERL%%/HTML/Mason
-@dirrmtry %%SITE_PERL%%/Bundle/HTML
-@dirrmtry %%SITE_PERL%%/Bundle
 @dirrmtry %%SITE_PERL%%/HTML
-@dirrmtry %%SITE_PERL%%/Apache
