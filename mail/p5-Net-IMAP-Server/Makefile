@@ -9,6 +9,7 @@ PORTNAME=	Net-IMAP-Server
 PORTVERSION=	1.31
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	chifeng@gmail.com
 COMMENT=	A single-threaded multiplexing IMAP server implementation
