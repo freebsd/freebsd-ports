@@ -3,9 +3,10 @@
 # Whom:                                 Herbert J. Skuhra <h.skuhra@gmail.com>
 #
 # $FreeBSD$
+#
 
 PORTNAME=	calcurse
-PORTVERSION=	2.9.2
+PORTVERSION=	3.0.0
 CATEGORIES=	deskutils
 MASTER_SITES=	http://calcurse.org/files/ \
 		ftp://ftp2.culot.org/culot/
@@ -15,35 +16,36 @@ COMMENT=	A text-based calendar and scheduling application
 
 LICENSE=	BSD
 
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+OPTIONS_DEFINE=	DOCS NLS
 
-CONFIGURE_ARGS+=	--without-asciidoc
+CONFIGURE_ARGS=	--without-asciidoc
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 
 MAN1=		calcurse.1
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.endif
+.include <bsd.port.options.mk>
 
-post-patch:
-.if !defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e \
-		's|^docdir = .*|docdir = ${DOCSDIR}|' \
-		${WRKSRC}/doc/Makefile.in
-.else
+.if empty(PORT_OPTIONS:MDOCS)
 CONFIGURE_ARGS+=	--disable-docs
 .endif
 
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
+
+post-patch:
+.if ${PORT_OPTIONS:MDOCS}
+	@${REINPLACE_CMD} -e 's|^docdir = .*|docdir = ${DOCSDIR}|' ${WRKSRC}/doc/Makefile.in
+.endif
+
 post-install:
-.if defined(NOPORTDOCS)
-.for file in ${MAN1}
-	@${INSTALL_MAN} ${WRKSRC}/doc/${file} ${MANPREFIX}/man/man1
-.endfor
+.if empty(PORT_OPTIONS:MDOCS)
+	cd ${WRKSRC}/doc/ && ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1/
 .endif
 
 .include <bsd.port.mk>
