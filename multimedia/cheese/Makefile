@@ -8,7 +8,7 @@
 
 PORTNAME=	cheese
 PORTVERSION=	2.32.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -26,7 +26,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack evolutiondataserver librsvg2 \
 		gnomedocutils gnomedesktop
 USE_GETTEXT=	yes
-USE_GSTREAMER=	good v4l2
+USE_GSTREAMER=	gconf good ogg theora v4l2 vorbis
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
