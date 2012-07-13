@@ -27,6 +27,11 @@ PORT_OPTIONS+=	NLS
 PORT_OPTIONS+=	EXAMPLES
 .endif
 
+.for opt in ${OPTIONS_EXCLUDE_${ARCH}}
+OPTIONS_DEFINE:=	${OPTIONS_DEFINE:N${opt}}
+OPTIONS_DEFAULT:=	${OPTIONS_DEFAULT:N${opt}}
+.endfor
+
 # Append options set by the port Makefile
 .for opt in ${OPTIONS_DEFINE}
 ALL_OPTIONS+=	${opt}
