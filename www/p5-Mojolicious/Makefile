@@ -144,7 +144,7 @@ BUILD_DEPENDS+=	p5-IO-Socket-IP>=0.16:${PORTSDIR}/net/p5-IO-Socket-IP
 RUN_DEPENDS+=	p5-IO-Socket-IP>=0.16:${PORTSDIR}/net/p5-IO-Socket-IP
 .endif
 
-.if ${PORT_OPTIONS:MIPV6}
+.if ${PORT_OPTIONS:MTLS}
 BUILD_DEPENDS+=	p5-IO-Socket-SSL>=1.75:${PORTSDIR}/security/p5-IO-Socket-SSL
 RUN_DEPENDS+=	p5-IO-Socket-SSL>=1.75:${PORTSDIR}/security/p5-IO-Socket-SSL
 .endif
