@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	hyphen
-PORTVERSION=	2.8.3
+PORTVERSION=	2.8.5
 CATEGORIES=	textproc
 MASTER_SITES=	SF/hunspell/Hyphen/${PORTVERSION:R}/
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library for high quality hyphenation and justification
