@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pydev
-PORTVERSION=	2.2.4
+PORTVERSION=	2.6.0
 PORTREVISION=	0
 CATEGORIES=	java devel python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/PyDev%20${PORTVERSION}/
@@ -16,24 +16,44 @@ DISTNAME=	PyDev%20${PORTVERSION}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Eclipse plugin for Python and Jython development
 
+LICENSE=	EPL
+
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 
-JAVA_VERSION=	1.5+
-
-NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-PLIST_SUB=	PORTVERSION=${PORTVERSION}.2011110216
+OPTIONS_DEFINE=	JYTHON
+JYTHON_DESC=	Use Jython as Python interpreter
 
-USE_JAVA=	yes
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MJYTHON}
+RUN_DEPENDS+=	jython:${PORTSDIR}/lang/jython
+.endif
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}.${DISTDATE}
+
+USE_PYTHON=	yes
 USE_ZIP=	yes
 
-do-install:
-.for d in features plugins
-	cd ${WRKDIR}/${d} && ${COPYTREE_SHARE} . ${PREFIX}/lib/eclipse/${d}
-.endfor
+DISTDATE=	2012062818
+
+pre-install:
+	@# ignore javashell.py file, because there is a syntax error
+	@# see http://goo.gl/E4epH
+	${PYTHON_CMD} -m compileall  -x javashell.py -f ${WRKSRC}/plugins
+	${PYTHON_CMD} -O -m compileall -x javashell.py -f ${WRKSRC}
 
 post-install:
+	@# Update the bundles.info...
+	@${LOCALBASE}/bin/eclipse -consoleLog -initialize
 	@${CAT} ${PKGMESSAGE}
+
+add-plist-post:
+	@${ECHO_CMD} "@exec ${MKDIR} %D/share/eclipse/dropins/${PORTNAME}/eclipse/plugins/com.python.pydev.codecompletion_${PORTVERSION}.${DISTDATE}/icons" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/eclipse -consoleLog -initialize" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${LOCALBASE}/bin/eclipse -consoleLog -initialize" >> ${TMPPLIST}
+
+.include "${PORTSDIR}/java/eclipse/Makefile.plugins"
 
 .include <bsd.port.mk>
