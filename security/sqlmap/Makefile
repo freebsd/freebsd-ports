@@ -8,13 +8,15 @@
 PORTNAME=	sqlmap
 PORTVERSION=	0.9
 CATEGORIES=	security python
-MASTER_SITES=	SF
+MASTER_SITES=	https://github.com/sqlmapproject/sqlmap/downloads/ \
+		SF
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	An automatic SQL injection tool
 
 LICENSE=	GPLv2
 
+FETCH_ARGS=	-pRr
 USE_PYTHON=	-2.7
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	${PORTNAME}.sh
