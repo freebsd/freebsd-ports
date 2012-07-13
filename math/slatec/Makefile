@@ -26,6 +26,7 @@ WRKSRC=		${WRKDIR}/src
 SHLIB_MAJOR=	1
 
 PLIST_FILES=	lib/libslatec.a lib/libslatec.so lib/libslatec.so.${SHLIB_MAJOR}
+PORTDOCS=	guide toc
 
 LDFLAGS+=	${FFLAGS}
 LDADD ?=	-lgfortran -lm
@@ -33,16 +34,16 @@ SRCCONF=	${NONEXISTENT}
 MAKE_ENV+=	LDADD="${LDADD}" SHLIB_MAJOR="${SHLIB_MAJOR}" \
 		SRCCONF="${SRCCONF}"
 
-OPTIONS=	PROFILE "Build a profiling library" Off
+OPTIONS_DEFINE=	DOCS PROFILE
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PROFILE)
+.if ${PORT_OPTIONS:MPROFILE}
 .if defined(NOPROFILE) || defined(NO_PROFILE) || defined(WITHOUT_PROFILE)
-IGNORE =	you have defined WITH_PROFILE, but have also defined\
+IGNORE=	you have selected PROFILE option, but have also defined\
 WITHOUT_PROFILE, NOPROFILE, or NO_PROFILE
 .elif !exists(/usr/lib/libc_p.a)
-IGNORE  =	you have chosen WITH_PROFILE, but have not installed the\
+IGNORE=	you have chosen WITH_PROFILE, but have not installed the\
 base system profiling libraries
 .endif
 PLIST_FILES+=	lib/libslatec_p.a
@@ -72,12 +73,10 @@ test-${l}: build
 
 .endfor
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	guide toc
-
 post-install:
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@cd ${_DISTDIR}; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-
 .endif
+
 .include <bsd.port.mk>
