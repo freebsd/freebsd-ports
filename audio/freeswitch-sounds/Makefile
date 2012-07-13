@@ -138,7 +138,7 @@ do-build:
 							${MV} ${WRKSRC}/fr/ca/june/$${dir}/$${rate}/$${filename} ${WRKDIR}/tmp/fr/ca/june/$${dir}/$${rate}/$${filename} ; \
 						else \
 							${ECHO} -n "."; \
-							${LOCALBASE}/bin/sox -v ${SCALE} "${WRKSRC}/fr/ca/june/$${dir}/48000/$${filename}" -r $${rate} -c 1 "${WRKDIR}/tmp/fr/ca/$${dir}/$${rate}/$${filename}"; \
+							${LOCALBASE}/bin/sox -v ${SCALE} "${WRKSRC}/fr/ca/june/$${dir}/48000/$${filename}" -r $${rate} -c 1 "${WRKDIR}/tmp/fr/ca/june/$${dir}/$${rate}/$${filename}"; \
 						fi \
 					fi \
 				done; \
