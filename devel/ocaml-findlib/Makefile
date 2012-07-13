@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	findlib
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	devel
 MASTER_SITES=	http://download.camlcity.org/download/
 PKGNAMEPREFIX=	ocaml-
@@ -27,6 +27,10 @@ ALL_TARGET=	all opt
 CONFIGURE_ARGS=	-bindir "${PREFIX}/bin" -mandir "${PREFIX}/man" \
 		-sitelib "${PREFIX}/lib/ocaml/site-lib" \
 		-config "${PREFIX}/etc/findlib.conf"
+
+OPTIONS_DEFINE=	TOOLBOX
+OPTIONS_DEFAULT=TOOLBOX
+TOOLBOX_DESC=	Include toolbox interface (requires OCaml with TK)
 
 DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
 
@@ -48,27 +52,29 @@ post-patch:
 		-e 's,path="@SITELIB@,&:${PREFIX}/lib/ocaml,' \
 		${WRKSRC}/findlib.conf.in
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !exists(${LOCALBASE}/lib/ocaml/labltk)
-WITHOUT_TK=	yes
+.if ${PORT_OPTIONS:MTOOLBOX} && \
+	exists(${LOCALBASE}/bin/ocaml) && \
+	!exists(${LOCALBASE}/lib/ocaml/labltk)
+IGNORE=		either build OCaml with TK support or disable TOOLBOX
 .endif
 
-.if defined(WITHOUT_TK)
-PLIST_SUB+=	TK="@comment "
-.else
+.if ${PORT_OPTIONS:MTOOLBOX}
 CONFIGURE_ARGS+=-with-toolbox
 PLIST_SUB+=	TK=""
+.else
+PLIST_SUB+=	TK="@comment "
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${DOCSDIR} \
 	"! -regex .*ref-man.*")
 .endif
-.if !defined(WITHOUT_TK)
+.if ${PORT_OPTIONS:MTOOLBOX}
 	@${CHMOD} +x ${PREFIX}/lib/ocaml/site-lib/findlib/make_wizard
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
