@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Mason
-PORTVERSION=	1.48
+PORTVERSION=	1.50
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,19 +14,23 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	High-performance, dynamic web site authoring system
 
-BUILD_DEPENDS=	p5-Class-Container>=0.7:${PORTSDIR}/devel/p5-Class-Container \
-		p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Cache-Cache>=1:${PORTSDIR}/devel/p5-Cache-Cache \
+		p5-Class-Container>=0.07:${PORTSDIR}/devel/p5-Class-Container \
 		p5-Exception-Class>=1.15:${PORTSDIR}/devel/p5-Exception-Class \
+		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-Log-Any>=0.08:${PORTSDIR}/devel/p5-Log-Any \
-		p5-Cache-Cache>=1:${PORTSDIR}/devel/p5-Cache-Cache
+		p5-Params-Validate>=0.70:${PORTSDIR}/devel/p5-Params-Validate
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
+TEST_DEPENDS=	p5-CHI>=0.210:${PORTSDIR}/devel/p5-CHI \
+		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
+		p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
-MAN3=		Bundle::HTML::Mason.3 \
-		HTML::Mason.3 \
+MAN3=		HTML::Mason.3 \
 		HTML::Mason::Admin.3 \
 		HTML::Mason::ApacheHandler.3 \
 		HTML::Mason::CGIHandler.3 \
@@ -57,21 +61,19 @@ MAN3=		Bundle::HTML::Mason.3 \
 		HTML::Mason::Tools.3 \
 		HTML::Mason::Utils.3
 
-OPTIONS_DEFINE=	MOD_PERL
-MOD_PERL_DESC= with mod_perl dependency
+OPTIONS_DEFINE=	MODPERL
 
-post-build:
-	${MV} -f ${WRKSRC}/bin ${WRKSRC}/bin.orig
-	${MV} -f ${WRKSRC}/blib/script ${WRKSRC}/blib/script.orig
+post-patch:
+	@${REINPLACE_CMD} -e '/bin\/convert/d' ${WRKSRC}/Makefile.PL
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/blib/script.orig/mason.pl ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/blib/script/mason.pl ${PREFIX}/bin/
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MMOD_PERL}
-USE_APACHE=	20+
+.if ${PORT_OPTIONS:MMODPERL}
 RUN_DEPENDS+=	p5-libapreq2>=0:${PORTSDIR}/www/p5-libapreq2
+USE_APACHE=	20+
 .endif
 
 .include <bsd.port.mk>
