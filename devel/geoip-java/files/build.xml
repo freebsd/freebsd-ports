@@ -1,0 +1,56 @@
+<!-- Found at http://www.benow.ca/misc/geoip/build.xml authored by benow -->
+
+<project name="maxmind-geoip" default="compile" basedir=".">
+
+	<property name="app.name" value="maxmind-geoip" />
+	<property name="app.version" value="1.0" />
+	<property name="build.home" value="build" />
+	<property name="src.home" value="source" />
+	<property name="doc.home" value="javadoc" />
+
+
+	<path id="compile.classpath">
+		<pathelement path="${build.home}" />
+	</path>
+
+	<target name="all" depends="clean,jar,javadoc" description="Clean build and jar, with javadoc" />
+
+	<target name="clean" description="Delete old build directories">
+		<delete dir="${build.home}" quiet="yes" />
+		<delete dir="${doc.home}" quiet="yes" />
+		<delete quiet="yes">
+			<fileset dir="." includes="**/*~*" defaultexcludes="no" />
+		</delete>
+
+		<!--
+   <delete dir="${dist.home}"/>
+-->
+
+	</target>
+
+	<target name="compile" description="Compile Java sources">
+		<mkdir dir="${build.home}" />
+		<javac srcdir="${src.home}" destdir="${build.home}" debug="${compile.debug}" deprecation="${compile.deprecation}" optimize="${compile.optimize}">
+			<classpath refid="compile.classpath" />
+		</javac>
+	</target>
+
+	<target name="jar" depends="clean,compile" description="Create binary distribution">
+		<mkdir dir="${build.home}" />
+
+		<!-- Create application JAR file -->
+		<jar jarfile="${app.name}.jar" basedir="${build.home}"/>
+	</target>
+
+	<target name="javadoc" depends="compile" description="Create Javadoc API documentation">
+
+		<delete dir="${doc.home}" />
+		<mkdir dir="${doc.home}" />
+		<javadoc sourcepath="${src.home}" destdir="${doc.home}" windowtitle="${app.name} Documentation" doctitle="${app.name} Documentation" packagenames="com.*,test.*,org.*">
+			<classpath refid="compile.classpath" />
+		</javadoc>
+	</target>
+
+</project>
+
+
