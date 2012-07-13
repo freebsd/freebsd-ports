@@ -126,6 +126,16 @@ Java VM as options.
 For more information on environment variables which can be used to set
 options see
 .Pa %%PREFIX%%/etc/javavm_opts.conf.dist .
+.It Ev JAVAVM_FALLBACK_ONLY
+If this variable is set then instead of selecting the Java VM based on
+.Pa %%PORTSDIR%%/Mk/bsd.java.mk
+only the internal selection process is used.
+This may be useful to achieve consistent results for Java VM selection
+across multiple hosts, where some have the ports collection installed
+and others do not.
+However, this option, when used with scripts installed by a port, may
+result in Java VM selection inconsistent with that intended by the script
+author.
 .It Ev JAVAVM_DRYRUN
 When this variable is set, no Java VM is invoked.
 Instead, the Java VM wrapper prints out the following information:
