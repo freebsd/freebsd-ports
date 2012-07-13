@@ -34,8 +34,8 @@ include/libnova/uranus.h
 include/libnova/utility.h
 include/libnova/venus.h
 include/libnova/vsop87.h
-lib/libnova-0.14.so
-lib/libnova-0.14.so.0
+lib/libnova-0.15.so
+lib/libnova-0.15.so.0
 lib/libnova.a
 lib/libnova.la
 lib/libnova.so
