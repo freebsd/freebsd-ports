@@ -2,8 +2,9 @@
 %%SITE_PERL%%/Archive/Any/Plugin.pm
 %%SITE_PERL%%/Archive/Any/Plugin/Tar.pm
 %%SITE_PERL%%/Archive/Any/Plugin/Zip.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive/Any/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive/Any
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive
 @dirrmtry %%SITE_PERL%%/Archive/Any/Plugin
 @dirrmtry %%SITE_PERL%%/Archive/Any
 @dirrmtry %%SITE_PERL%%/Archive
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive/Any
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive
