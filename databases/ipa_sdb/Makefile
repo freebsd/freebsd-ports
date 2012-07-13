@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipa_sdb
-PORTVERSION=	1.1
+PORTVERSION=	1.1.1
 CATEGORIES=	databases
 MASTER_SITES=	SF/ipa-system/modules/ipa_sdb
 
