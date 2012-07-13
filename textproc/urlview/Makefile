@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.mutt.org/mutt/contrib/ \
 		ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/contrib/ \
 		http://seis.bris.ac.uk/~mexas/
 
-MAINTAINER=	mexas@bris.ac.uk
+MAINTAINER=	mexas@bristol.ac.uk
 COMMENT=	URL extractor/launcher
 
 GNU_CONFIGURE=	yes
