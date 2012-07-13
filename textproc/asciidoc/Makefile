@@ -10,7 +10,7 @@ PORTVERSION=	8.6.4
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
-MAINTAINER=	peter.schuller@infidyne.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A text document format for writing short documents and man pages
 
 USE_PYTHON=	2.5+
