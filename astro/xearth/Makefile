@@ -13,7 +13,7 @@ MASTER_SITES=	XCONTRIB/applications \
 		http://seis.bris.ac.uk/~mexas/ \
 		LOCAL/simon
 
-MAINTAINER=	mexas@bris.ac.uk
+MAINTAINER=	mexas@bristol.ac.uk
 COMMENT=	Set the root window to the image of earth
 
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
