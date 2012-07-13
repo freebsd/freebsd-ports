@@ -166,6 +166,7 @@
     SUBDIR += uae
     SUBDIR += vMac
     SUBDIR += vba
+    SUBDIR += vboxtool
     SUBDIR += vgb-bin
     SUBDIR += vgba-bin
     SUBDIR += vice
