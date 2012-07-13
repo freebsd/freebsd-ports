@@ -9,6 +9,7 @@ share/pixmaps/qtfm.png
 %%DATADIR%%/qtfm_pl.qm
 %%DATADIR%%/qtfm_ru.qm
 %%DATADIR%%/qtfm_sr.qm
+%%DATADIR%%/qtfm_sv.qm
 %%DATADIR%%/qtfm_zh.qm
 %%DATADIR%%/qtfm_zh_TW.qm
 @dirrm %%DATADIR%%

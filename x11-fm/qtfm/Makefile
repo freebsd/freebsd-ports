@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qtfm
-DISTVERSION=	5.4
-PORTREVISION=	1
+DISTVERSION=	5.5
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.qtfm.org/
 
