@@ -104,6 +104,10 @@ WITHOUT_SIMD+=	yes
 
 .if !defined(WITHOUT_SIMD)
 CONFIGURE_ARGS+=	--enable-simd
+.else
+.if ${ARCH} == "i386"
+BROKEN=	must use option WITH_SIMD on ${ARCH} see pr ports/63456
+.endif
 .endif
 
 .if defined(WITH_SPEC)
