@@ -1,0 +1,8 @@
+@unexec if  cmp -s  %%PREFIX%%/%%EXAMPLESDIR%%/machines.conf %D/etc/vboxtool/machines.conf; then  rm -f %D/etc/vboxtool/machines.conf; fi
+@unexec if  cmp -s %%PREFIX%%/%%EXAMPLESDIR%%/vboxtool.conf %D/etc/vboxtool/vboxtool.conf; then  rm -f %D/etc/vboxtool/vboxtool.conf; fi
+bin/vboxtool
+etc/rc.d/vboxtoolinit
+%%EXAMPLESDIR%%/machines.conf
+%%EXAMPLESDIR%%/vboxtool.conf
+@dirrmtry etc/vboxtool
+@dirrmtry %%EXAMPLESDIR%%
