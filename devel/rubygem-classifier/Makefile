@@ -9,7 +9,7 @@ PORTVERSION=	1.3.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	peter.schuller@infidyne.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A classifier module for Bayesian and other types of classifications
 
 RUN_DEPENDS=	rubygem-fast-stemmer>=1.0.0:${PORTSDIR}/devel/rubygem-fast-stemmer

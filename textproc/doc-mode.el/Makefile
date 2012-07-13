@@ -13,7 +13,7 @@ MASTER_SITES=	SF/xpt/doc-mode/doc-mode-${PORTVERSION}
 DISTNAME=	doc-mode-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	peter.schuller@infidyne.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Asciidoc fontlocking for emacs
 
 USE_EMACS=	yes

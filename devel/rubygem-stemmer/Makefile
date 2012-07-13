@@ -9,7 +9,7 @@ PORTVERSION=	1.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	peter.schuller@infidyne.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of the Porter word stemming algorithm
 
 USE_RUBY=	yes

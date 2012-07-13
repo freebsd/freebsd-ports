@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/:savannah \
 		vd/${PORTNAME}${PKGNAMESUFFIX}/:local
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:savannah,local
 
-MAINTAINER=	peter.schuller@infidyne.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Local/remote mirroring+incremental backup
 
 LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync

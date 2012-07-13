@@ -11,7 +11,7 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	http://bitflu.workaround.ch/bitflu/ CENKES
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	peter.schuller@infidyne.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BitTorrent client written in Perl
 
 RUN_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \

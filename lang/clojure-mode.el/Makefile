@@ -12,7 +12,7 @@ CATEGORIES=	lang elisp
 MASTER_SITES=	http://distfiles.scode.org/ports/
 DISTNAME=	clojure-mode-${PORTVERSION}
 
-MAINTAINER=	peter.schuller@infidyne.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs lisp module for the Clojure language
 
 USE_EMACS=	yes
