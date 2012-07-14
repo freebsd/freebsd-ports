@@ -15,13 +15,6 @@ MASTER_SITE_SUBDIR=	mcmc-jags/JAGS/${S}.x/Source/:1 \
 		mcmc-jags/Manuals/2.x/:3 \
 		mcmc-jags/Manuals/${S}.x/:4
 DISTFILES=	JAGS-${PORTVERSION}${EXTRACT_SUFX}:1
-.if !defined(NOPORTDOCS) || make(makesum)
-DISTFILES+=	jags_developer_manual.pdf:3 jags_installation_manual.pdf:4 \
-		jags_user_manual.pdf:4
-.endif
-.if !defined(NOPORTEXAMPLES) || make(makesum)
-DISTFILES+=	classic-bugs.tar.gz:2
-.endif
 EXTRACT_ONLY=	${DISTFILES:M*[12]:C|:.*||}
 
 MAINTAINER=	bf@FreeBSD.org
@@ -40,27 +33,36 @@ WRKSRC=		${WRKDIR}/JAGS-${PORTVERSION}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		jags.1
-OPTIONS=	ATLAS "use ATLAS libraries instead of BLAS and LAPACK" off
 PLIST_SUB=	MODULEVERSION=${S}
 S=		${PORTVERSION:C|\..*||}
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-CONFIGURE_ARGS=	--with-lapack="-lalapack -lptcblas" --with-blas="-lptf77blas"
-.else
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
-CONFIGURE_ARGS=	--with-lapack="-llapack" --with-blas="-lblas"
-.endif
-
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS} || make(makesum)
+DISTFILES+=	jags_developer_manual.pdf:3 jags_installation_manual.pdf:4 \
+		jags_user_manual.pdf:4
 PORTDOCS=	${DISTFILES:M*[34]:C|:.*||}
 .endif
-
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES} || make(makesum)
+DISTFILES+=	classic-bugs.tar.gz:2
 PORTEXAMPLES=	*
+.endif
+
+.if exists(${LOCALBASE}/lib/libatlas.so)
+WITH_BLAS?=	atlas
+.else
+WITH_BLAS?=	reference
+.endif
+
+.if ${WITH_BLAS} == "atlas"
+LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
+CONFIGURE_ARGS=	--with-lapack="-lalapack -lptcblas" --with-blas="-lptf77blas"
+.elif ${WITH_BLAS} == "reference"
+LIB_DEPENDS+=	blas:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	lapack:${PORTSDIR}/math/lapack
+CONFIGURE_ARGS=	--with-lapack="-llapack" --with-blas="-lblas"
+.else
+IGNORE =	: invalid value for WITH_BLAS: ${WITH_BLAS}
 .endif
 
 post-patch:
@@ -73,17 +75,17 @@ post-patch:
 		-e '/@WINDOWS_FALSE@.*rm -f jags/s/jags/mcmc-&/' \
 		-e '/@WINDOWS_FALSE@.*mv jags.tmp jags/s/jags/mcmc-&/2' \
 		${WRKSRC}/src/terminal/Makefile.in
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${SED} -i '' -e '\|JAGS ?=|{s|jags|mcmc-&|;s|/usr/local|${PREFIX}|;}' \
 		${WRKDIR}/classic-bugs/vol[12]/Makefile
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@cd ${_DISTDIR}; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@cd ${WRKDIR}/classic-bugs; ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
 .endif
