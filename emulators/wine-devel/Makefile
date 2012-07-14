@@ -62,59 +62,56 @@ USE_XORG=	xcursor xi xpm xrandr xrender
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-OPTIONS=	CUPS	"Use CUPS (Common UNIX Printing System)"	Off \
-		DOSBOX	"Use DOSBox to run MS-DOS programs"		Off \
-		GNUTLS	"Use GnuTLS"					Off \
-		HAL	"Use HAL (Hardware Abstraction Layer)"		Off \
-		LDAP	"Use LDAP"					Off \
-		LIBXSLT	"Use libxslt (only used by msxml3.dll)"		Off \
-		OPENAL	"Use OpenAL (3D audio library)"			Off \
-		WINEMAKER "Fully support winemaker (requires Perl)"	Off
+OPTIONS_DEFINE=	CUPS DOSBOX GNUTLS HAL LDAP LIBXSLT OPENAL WINEMAKER
+
+DOSBOX_DESC=	Use DOSBox to run MS-DOS programs
+LIBXSLT_DESC=	Use libxslt (only used by msxml3.dll)
+WINEMAKER_DESC=	Fully support winemaker (requires Perl)
 
 PORTDATA=	fonts/ generic.ppd l_intl.nls wine.inf
 
 .include <bsd.port.pre.mk>
 
-.ifdef WITHOUT_CUPS
-CONFIGURE_ARGS+=	--without-cups
-.else
+.if ${PORT_OPTIONS:MCUPS}
 CONFIGURE_ARGS+=	--with-cups
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
+.else
+CONFIGURE_ARGS+=	--without-cups
 .endif
 
-.ifdef WITH_DOSBOX
+.if ${PORT_OPTIONS:MDOSBOX}
 RUN_DEPENDS+=	dosbox:${PORTSDIR}/emulators/dosbox
 .endif
 
-.ifdef WITH_GNUTLS
+.if ${PORT_OPTIONS:MGNU_TLS}
 CONFIGURE_ARGS+=	--with-gnutls
 LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--without-gnutls
 .endif
 
-.ifdef WITH_HAL
+.if ${PORT_OPTIONS:MHAL}
 CONFIGURE_ARGS+=	--with-hal
 LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
 .else
 CONFIGURE_ARGS+=	--without-hal
 .endif
 
-.ifdef WITH_LDAP
+.if ${PORT_OPTIONS:MLDAP}
 CONFIGURE_ARGS+=	--with-ldap
 USE_OPENLDAP=	yes
 .else
 CONFIGURE_ARGS+=	--without-ldap
 .endif
 
-.ifdef WITH_LIBXSLT
+.if ${PORT_OPTIONS:MLIBXSLT}
 CONFIGURE_ARGS+=	--with-xslt
 LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 .else
 CONFIGURE_ARGS+=	--without-xslt
 .endif
 
-.ifdef WITH_OPENAL
+.if ${PORT_OPTIONS:MOPENAL}
 CONFIGURE_ARGS+=	--with-openal
 USE_OPENAL=		yes
 PLIST_SUB+=		OPENAL=""
@@ -123,7 +120,7 @@ CONFIGURE_ARGS+=	--without-openal
 PLIST_SUB+=		OPENAL="@comment "
 .endif
 
-.ifdef WITH_WINEMAKER
+.if ${PORT_OPTIONS:MWINEMAKER}
 RUN_DEPENDS+=	p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML
 .endif
 
