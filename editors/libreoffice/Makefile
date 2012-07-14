@@ -7,7 +7,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	0
+PORTREVISION=	1
 
 MASTER_SITE_SUBDIR=	src/${PORTVERSION}/
 MASTER_SITES+=	http://dev-www.libreoffice.org/src/:ext \
@@ -209,9 +209,8 @@ MANCOMPRESSED=	yes
 #USE_GCC=	4.6+
 #DISTFILES+=	bd30e9cf5523cdfc019b94f5e1d7fd19-cppunit-1.12.1.tar.gz:ext
 #.else
-.if defined(WITH_SYSTEM_CLANG)
+.if ${OSVERSION} >= 1000015 || defined(WITH_SYSTEM_CLANG)
 # XXX Clang PR13308 (http://llvm.org/bugs/show_bug.cgi?id=13308)
-# Fixed in r159895 (http://llvm.org/viewvc/llvm-project?view=rev&revision=159895)
 CC=	/usr/bin/clang
 CPP=	/usr/bin/clang-cpp
 CXX=	/usr/bin/clang++
@@ -413,7 +412,8 @@ post-configure:
 post-install:
 	@${RM} -f ${PLISTF} ${PLISTD}
 	# It seems that the empty directories are necessary for libreoffice keep them for now
-	@${FIND} ${LODESTDIR}/${PREFIX}/lib -type d -empty -exec ${TOUCH} {}/.keep \;
+	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -d lib/libreoffice -type d -empty \
+		-exec ${ECHO_CMD} "@exec ${MKDIR} %D/{}" \; >> ${PLISTD}
 
 	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -H -s lib \( -type f -o -type l \) -print >> ${PLISTF}
 	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -d lib/libreoffice -type d -exec ${ECHO_CMD} "@dirrm {}" \; >> ${PLISTD}
@@ -444,7 +444,8 @@ post-install:
 .endif
 
 	@${SORT} ${PLISTF} >> ${TMPPLIST}
-	@${SORT} -r ${PLISTD} >> ${TMPPLIST}
+	@${GREP} ^@exec ${PLISTD} | ${SORT} >> ${TMPPLIST}
+	@${GREP} -v ^@exec ${PLISTD} | ${SORT} -r >> ${TMPPLIST}
 
 .if ${PORT_OPTIONS:MSDK}
 .for subdir in include share/idl share/libreoffice share/doc
