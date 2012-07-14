@@ -7,6 +7,7 @@
 
 PORTNAME=	Algorithm-CheckDigits
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -15,6 +16,8 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl extension to generate and test check digits
 
 TEST_DEPENDS=	p5-Probe-Perl>=0:${PORTSDIR}/sysutils/p5-Probe-Perl
+
+PKGNAMEPREFIX=	p5-
 
 PERL_CONFIGURE=	yes
 
