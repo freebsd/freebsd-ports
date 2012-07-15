@@ -152,6 +152,7 @@ print-index:	${INDEXDIR}/${INDEXFILE}
 	@awk -F\| '{ printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nB-deps:\t%s\nR-deps:\t%s\nE-deps:\t%s\nP-deps:\t%s\nF-deps:\t%s\nWWW:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9, $$11, $$12, $$13, $$10); }' < ${INDEXDIR}/${INDEXFILE}
 
 CVS?= cvs
+SVN?= svn
 SUP?= csup
 PORTSNAP?= portsnap
 PORTSNAP_FLAGS?= -p ${.CURDIR}
@@ -171,6 +172,12 @@ update:
 	@echo "--------------------------------------------------------------"
 	cd ${.CURDIR}; ${CVS} -R -q update -A -P -d -I!
 .else
+.if exists(${.CURDIR}/.svn)
+	@echo "--------------------------------------------------------------"
+	@echo ">>> Updating ${.CURDIR} from svn repository"
+	@echo "--------------------------------------------------------------"
+	cd ${.CURDIR}; ${SVN} -q update
+.else
 	@echo "--------------------------------------------------------------"
 	@echo ">>> Running ${PORTSNAP}"
 	@echo "--------------------------------------------------------------"
@@ -183,6 +190,7 @@ update:
 .else
 	@${PORTSNAP} ${PORTSNAP_FLAGS} fetch
 	@${PORTSNAP} ${PORTSNAP_FLAGS} update
+.endif
 .endif
 .endif
 .endif
