@@ -57,18 +57,16 @@ sub lastcomment();
 
 my %opts;
 
-getopts('abc:d:fh:il:L:M:mns:tu:y', \%opts);
+getopts('ac:d:fh:il:L:M:mns:tu:y', \%opts);
 
 my $autofill_l = $opts{'l'};
 my $autofill_L = $opts{'L'};
 my $autofill = ($autofill_l ? $autofill_l : $autofill_L);
 my $c = $opts{'c'} if ($opts{'c'} ne "");
-my $binfiles = $opts{'b'};
 my $distdir = $opts{'s'} if ($opts{'s'} ne "");
 my $dir = $opts{'d'};
-my $h = "pcvs.FreeBSD.org";
+my $h = "svn.FreeBSD.org";
 $h = $opts{'h'} if ($opts{'h'} ne "");
-my $n = ""; $n = "-n" if $opts{'n'};
 my $u = $ENV{USER};
 $u = $opts{'u'} if ($opts{'u'} ne "");
 my $more_testing = $opts{'t'};
@@ -95,11 +93,6 @@ my %l10nprefix = (
 
 my $tmpdir;
 my $repo;
-my $ssh;
-my $sshmod;
-if( !defined $ENV{"CVS_RSH"} ) {
-	$ENV{CVS_RSH} = "ssh";
-}
 my $portsdir = $ENV{PORTSDIR} ? $ENV{PORTSDIR} : '/usr/ports';
 my $make = "make";
 my $portlint = `which portlint`; chomp $portlint;
@@ -108,6 +101,7 @@ my $perl = "perl";
 my $cp = "cp";
 my $mv = "mv";
 my $rm = "rm";
+my $keyword = '\$FreeBSD\\\$';
 # vars required for commitfile
 my $descr; my $portversion; my $pkgcomment;
 my $tmp; my $pkgcommentlen; my $comment; my $orig;
@@ -117,17 +111,11 @@ $tmp = $tmp2 = $offset = 0;
 chomp(my $myhost = lc(hostname()));
 $moduleshost = $myhost if ($moduleshost eq "");
 
-# SSH is always required nowadays... pcvs.FreeBSD.org isn't shell accessible.
-$ssh = "$ENV{CVS_RSH} $h -l $u";
-if ($myhost eq $moduleshost) {
-	$sshmod = "";
+if ($ENV{ADDPSVNROOT}) {
+	$repo = "$ENV{ADDPSVNROOT}";
 } else {
-	$sshmod = "$ENV{CVS_RSH} -A $moduleshost -l $u";
+	$repo = "svn+ssh://$u\@$h/ports/head";
 }
-$repo= "$u\@$h:/home/pcvs" if !$ENV{ADDPCVSROOT};
-$repo = "$ENV{ADDPCVSROOT}" if $ENV{ADDPCVSROOT};
-
-my $cvs = "cvs -d $repo";
 
 # Check the editor.
 my $edit = "/usr/bin/vi";
@@ -168,10 +156,8 @@ if ($addlchk && -f $portlint) {
 	if (!$nomkdir) {
 		chdir $tmpdir;
 		print "Checking out Mk directory to ensure portlint correctness.\n";
-		system("$cvs co ports/Mk") && errx(1, "Could not checkout Mk directory");
-		system("$cvs co ports/Templates") && errx(1, "Could not checkout Templates directory");
-		system("mv ports/Mk Mk") && errx(1, "Could not set up Mk directory");
-		system("mv ports/Templates Templates") && errx(1, "Could not set up Templates directory");
+		system("svn co $repo/Mk Mk") && errx(1, "Could not checkout Mk directory");
+		system("svn co $repo/Templates Templates") && errx(1, "Could not checkout Templates directory");
 		chdir $currentdir;
 	}
 }
@@ -187,7 +173,7 @@ if ($dir eq "") {
 if ($checkexist) {
 	my $found = 0;
 	print ">> Checking out modules file to scan for duplicates...";
-	system("$cvs -q co -p modules > $tmpdir/modules") && errx(1, "Could not checkout CVSROOT/modules.");
+#	system("$cvs -q co -p modules > $tmpdir/modules") && errx(1, "Could not checkout CVSROOT/modules.");
 	print " [DONE]\n";
 	my @namepart;
 	foreach (split(/\,/, $dir)) {
@@ -232,7 +218,7 @@ foreach my $thisdir (@dirs) {
 	chomp $portname;
 	warnx("Port directory contains upper-case character! Please try using an all lower-case name to make everybody's life a bit easier.") if ($portname =~ /[A-Z]/);
 	if ($interactive) {
-		if (prompt("Port directory name will be $portname in CVS Repo.  OK? ")) {
+		if (prompt("Port directory name will be $portname in SVN Repo.  OK? ")) {
 			do {
 				$portname = query("Preferred name for port directory? ");
 			} while (prompt("Is the new name $portname OK? "));
@@ -246,7 +232,7 @@ foreach my $thisdir (@dirs) {
 		system("$_") && errx(1, "'$_' had problems. aborting.");
 	}
 
-	# Get the category name and make it suitable for use with cvs
+	# Get the category name and make it suitable for use with svn
 	my $category;
 	$_ = `$make -V CATEGORIES`;
 	m/([\w-]+)/;
@@ -259,8 +245,8 @@ foreach my $thisdir (@dirs) {
 			} while (prompt("Is the new category $category OK? "));
 		}
 	}
-	chomp(my $cvs_category = $category);
-	$cvs_category =~ s/-/_/g;
+	chomp(my $svn_category = $category);
+	$svn_category =~ s/-/_/g;
 
 	# Do commitfile checking but only if the user did not request automatic filling.
 	if (!$autofill) {
@@ -323,40 +309,38 @@ foreach my $thisdir (@dirs) {
 		print "\nRemember, you asked to use a commit file to read for the commit log.\n";
 		print "This means you'll get a message saying the log message was unchanged or\n";
 		print "not specified.  Just tell it to continue and it will be committed.\n\n";
-		$commitfile = "-F $tmpdir/commitfile";
+		$commitfile = "--file $tmpdir/commitfile";
 	}
 
 	print "We're ready to commit.\n";
 	print "Source directory: $thisdir\n";
-	print "Target CVS Repo directory: ports/$category/$portname\n";
+	print "Target SVN Repo directory: ports/$category/$portname\n";
 	prompt("Adding port $portname to $category OK? ") && errx(1, "user abort requested");
 	
 	chdir $tmpdir or err(1, "$tmpdir");
 
 	# let's get our hands dirty.
 	if (! -d $category) {
-		system("$cvs co -l ports_$cvs_category") && errx(1, "can't get temporary category directory, aborting.");
-		system("$mv ports_$cvs_category $category");
+		system("svn co --depth files $repo/$svn_category $category") && errx(1, "can't get temporary category directory, aborting.");
 	}
 	chdir $category or err(1,"$category");
 	system("$cp -PRp $thisdir .");
-	system("$cvs add `find $portname -type d | grep -v CVS | grep -v '^$portname/work'`") && errx(1, "cvs add for dirs failed, aborting.");
+	system("svn add --depth empty `find $portname -type d | grep -v '^$portname/work'`") && errx(1, "svn add for dirs failed, aborting.");
 
-	my $gotfiles = 0;
-	if ($binfiles) {
-		if (-d "$portname/files") {
-			my (@pf, $fd);
-			opendir($fd, "$portname/files") and
-				@pf = grep { /^.*patch-.*$/ } readdir($fd);
-			$gotfiles = ++$#pf;
+	system("svn add `find $portname -type f | grep -v '^$portname/work'`") && errx(1, "svn add for files failed, aborting.");
+
+	# find files with keywords in and propset
+
+	my @portfiles = split("\n", `find $portname -type f`);
+	my $portfiles = join(" ", @portfiles);
+	my @keywordfiles = split("\n", `grep -l $keyword $portfiles`);
+	foreach (@portfiles) {
+		if ($_ ~~ @keywordfiles) {
+			system("svn -q propset svn:keywords FreeBSD=%H $_");
+			system("svn -q propdel fbsd:nokeywords $_");
+		} else {
+			system("svn -q propset fbsd:nokeywords on $_");
 		}
-	}
-
-	if ($binfiles && $gotfiles > 0) {
-		system("$cvs add `find $portname -type f | grep -v CVS | grep -v '^$portname/files/.*patch-.*' | grep -v '^$portname/work'`") && errx(1, "cvs add for files failed, aborting.");
-		system("$cvs add -ko `find $portname -type f | grep -v CVS | grep -v '^$portname/work' | grep '^$portname/files/.*patch-.*'`") && errx(1, "cvs add for files failed, aborting.");
-	} else {
-		system("$cvs add `find $portname -type f | grep -v CVS | grep -v '^$portname/work'`") && errx(1, "cvs add for files failed, aborting.");
 	}
 
 	# figure out where the port name belongs in category Makefile
@@ -396,7 +380,11 @@ foreach my $thisdir (@dirs) {
 
 	# commit the actual port.
 	chdir "$tmpdir/$category" or err(1, "$tmpdir/$category");
-	system("$cvs $n ci $commitfile Makefile $portname") && errx(1, "cvs commit failed, aborting.");
+	if ($opts{'n'}) {
+		print "Faking commit....\n";
+	} else {
+		system("svn ci $commitfile Makefile $portname") && errx(1, "svn commit failed, aborting.");
+	}
 }
 
 print <<EOF;
@@ -460,11 +448,9 @@ SYNOPSIS
 OPTIONS
 	-a		Perform checks on the port to make sure
 			there are no problems.  Recommended.
-	-b		Add all patch-* files in \${FILESDIR} as binary
-			files (i.e. don't expand CVS tags)
 	-c file		Use file in place of normal log message.
 	-f		Do not fetch the distfile.
-	-h host		Use a cvshost besides pcvs.FreeBSD.org.
+	-h host		Use a svnhost besides svn.FreeBSD.org.
 	-i		Interactive mode; allow more control over
 			where things are placed.
 	-l PR#		Attempts to autogenerate a commit message by
@@ -486,8 +472,7 @@ OPTIONS
 ENVIRONMENT VARIABLES
 	$0 supports the following environment variables:
 
-	CVS_RSH		- Command to use when connecting to CVS host.
-	ADDPCVSROOT	- Location of CVS repository.
+	ADDPSVNROOT	- Location of SVN repository.
 	USER		- Username of user invoking $0.
 
 EXAMPLES

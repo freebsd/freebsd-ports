@@ -44,7 +44,7 @@ TODAY=`date -u -v+0d +%Y-%m-%d`
 
 SED="sed -i .orig -E"
 # use ~/.ssh/config to set up the desired username if different than $LOGNAME
-PCVS=${PCVS:-cvs -d pcvs.freebsd.org:/home/pcvs}
+SVNREPO=${SVNREPO:-svn+ssh://svn.FreeBSD.org/ports}
 
 if ! CDIFF=$(which cdiff) ; then
 	CDIFF=${EDITOR}
@@ -122,13 +122,7 @@ mkcodir()
 {
 	log "creating temporary directory"
 	d=`mktemp -d -t rmport`
-	mkdir ${d}/CVS
-	cat > ${d}/CVS/Repository <<REPOSITORY
-We need ./CVS directory in order to create a custom commit message template
-(and put it in ./CVS/Template). Anyway cvs insists on CVS/Repository existence
-although it (hopefully) does not care about its contents.
-REPOSITORY
-	touch ${d}/CVS/Template
+	touch ${d}/svnlog
 	log "created ${d}"
 	echo "${d}"
 }
@@ -137,7 +131,8 @@ REPOSITORY
 co_common()
 {
 	log "getting ports/MOVED and ports/LEGAL from repository"
-	${PCVS} co ports/MOVED ports/LEGAL
+	svn co --depth empty ${SVNREPO}/head ports
+	svn up ports/MOVED ports/LEGAL
 }
 
 # check if some ports depend on the given port
@@ -297,7 +292,8 @@ co_port()
 	port=${2}
 
 	log "${cat}/${port}: getting ${cat}/Makefile and port's files from repository"
-	${PCVS} co ports/${cat}/Makefile ports/${cat}/${port}
+	svn up --depth empty ports/${cat} ports/$cat/Makefile
+	svn up ports/${cat}/${port}
 }
 
 # check if anything about the port is mentioned in ports/LEGAL
@@ -362,7 +358,7 @@ rm_port()
 
 	log "${catport}: removing port's files"
 
-	${PCVS} rm `find ports/${catport} -type f -not -path "*/CVS/*" -delete -print`
+	svn rm ports/${catport}
 }
 
 append_Template()
@@ -383,7 +379,7 @@ append_Template()
 
 	log "${catport}: adding entry to commit message template"
 
-	echo "${msg}" >> ./CVS/Template
+	echo "${msg}" >> ./svnlog
 }
 
 # diff
@@ -393,9 +389,9 @@ diff()
 
 	diffout=${codir}/diff
 
-	${PCVS} diff -uN ports > ${diffout} 2>&1 || :
+	svn diff ports > ${diffout} 2>&1 || :
 
-	read -p "hit <enter> to view cvs diff output" dummy
+	read -p "hit <enter> to view svn diff output" dummy
 
 	# give this to the outside world so it can be showed to the committer
 	# and removed when we are done
@@ -405,13 +401,15 @@ diff()
 # update, ask for confirmation and commit
 commit()
 {
-	log "running cvs update"
-	${PCVS} -fnq up ports 2>&1 |${PAGER:-less}
+	log "running svn update"
+	svn up --quiet ports 2>&1 |${PAGER:-less}
+
+	$EDITOR svnlog
 
 	answer=`ask "do you want to commit?"`
 
 	if [ "${answer}" = "y" ] ; then
-		${PCVS} ci ports
+		svn ci --file svnlog ports
 	fi
 }
 
@@ -424,11 +422,10 @@ cleanup()
 
 	rm ${diffout}
 
-	rm CVS/Entries.Log CVS/Repository CVS/Template
-	rmdir CVS
+	rm svnlog
 
-	# release cvs directories
-	${PCVS} rel -d ports
+	# release ports directories
+	rm -r ports
 
 	cd /
 	rmdir ${codir}
