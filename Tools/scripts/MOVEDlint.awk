@@ -30,7 +30,7 @@
 # MOVEDlint - check MOVED for consistency
 #
 # Usage:
-#  [env PORTSDIR=/usr/ports CVS=yes] /usr/ports/Tools/scripts/MOVEDlint.awk
+#  [env PORTSDIR=/usr/ports] /usr/ports/Tools/scripts/MOVEDlint.awk
 #
 
 BEGIN {
@@ -38,8 +38,6 @@ BEGIN {
     portsdir = ENVIRON["PORTSDIR"] ? ENVIRON["PORTSDIR"] : "/usr/ports"
     if (ARGC == 1) {
         ARGV[ARGC++] = portsdir "/MOVED"
-        if (ENVIRON["CVS"] && !system("test -d " portsdir "/CVS"))
-            annotate = "cd " portsdir "; cvs -R annotate MOVED 2>/dev/null"
     }
     sort = "/usr/bin/sort -n"
     lastdate="1999-12-31"
