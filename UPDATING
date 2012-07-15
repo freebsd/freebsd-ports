@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120716:
+  AFFECTS: Nobody
+  AUTHOR: beat@FreeBSD.org
+
+  The FreeBSD ports tree switched from CVS to Subversion. A Subversion
+  to CVS exporter is in place to continue the support of CVSup.
+
 20120709:
   AFFECTS: users of math/metis
   AUTHOR: bf@FreeBSD.org
