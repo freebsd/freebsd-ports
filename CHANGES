@@ -10,6 +10,21 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20120715:
+AUTHOR: beat@FreeBSD.org
+
+  * The ports tree moved from CVS to Subversion. A Subversion to
+    CVS exporter is in place to continue the support of CVSup but
+    do not commit to pcvs directly.
+
+    All commits have to be done in the new port Subversion repository
+    on svn.FreeBSD.org. You will find more information about
+    Subversion in the Ports Subversion Primer in the FreeBSD wiki,
+    in the "Committer's Guide" and the "Porter's Handbook".
+
+    If you are in doubt or unsure about a Subversion operation
+    please contact portmgr@FreeBSD.org or beat@FreeBSD.org directly.
+
 20120529:
 AUTHOR: crees@FreeBSD.org
 
