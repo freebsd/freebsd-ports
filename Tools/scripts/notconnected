@@ -15,7 +15,7 @@ echo "****************** No entry for dir in category Makefile"
 #### dir -> Makefile
 cd $PORTSDIR
 
-ports=$(find $PORTSDIR -type d -depth 2 | egrep -v 'CVS|.git|Tools')
+ports=$(find $PORTSDIR -type d -depth 2 | egrep -v '.svn|CVS|.git|Tools')
 for port in $ports; do
   cat=$(echo $port  |awk -F'/' '{print $1}')
   portname=$(echo $port |awk -F'/' '{print $2}')
