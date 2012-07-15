@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portsopt
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.chruetertee.ch/files/download/
 
