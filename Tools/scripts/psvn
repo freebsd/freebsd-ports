@@ -1,0 +1,136 @@
+#!/bin/sh -e
+#
+# psvn - Wrapper to set Subversion properties automatically
+#
+# Copyright (c) 2012 Beat Gaetzi <beat@FreeBSD.org>
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+#
+# $FreeBSD$
+#
+# MAINTAINER=	beat@FreeBSD.org
+#
+
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:${PATH}
+export PATH
+
+SVN=`which svn`
+
+VERSION=`${SVN} --version --quiet | sed -e 's,^\(.*\)\.\(.*\)\..*,\1\2,'`
+if [ ${VERSION} -lt 17 ] ;
+then
+	echo "===> Please consider upgrading to Subversion 1.7"
+fi
+
+checkstatus () {
+	_error=0
+ 
+	_files=`${SVN} status "${@}" | awk '{ print $NF }'`
+
+	for _file in `echo ${_files}`
+	do
+		_status=`${SVN} status ${_file} | awk '{ print $1 }'`
+
+		case "${_status}" in
+			R?|R)
+				echo "===> Do not replace files as this will break the CVS exporter: ${_file}"
+				_error=1
+			;;
+			C|?C)
+				echo "===> Conflict detected: ${_file}"
+				_error=1
+			;;
+			\?)
+				echo "===> Untracked file. Consider svn adding or deleting this file: ${_file}"
+				_error=1
+			;;
+			\!)
+				echo "===> Removed file. Consider readding or svn deleting this file: ${_file}"
+				_error=1
+			;;
+		esac
+	done
+
+	if [ ${_error} -ne 0 ] ;
+	then
+		exit 1
+	fi
+}
+
+setprop () {
+	_files=`${SVN} status "${@}" | awk '{ print $NF }'`
+
+	for _file in `echo ${_files}`
+	do
+		if [ -d ${_file} ] ;
+		then
+			continue
+		fi
+		if [ `${SVN} status ${_file} | head -1 | awk '{ print $1 }'` = 'D' ] ;
+		then
+			continue
+		fi
+		echo "=> Adding svn keywords to ${_file}"
+		if egrep '\$FreeBSD\$|\$[BDFSer]+:' ${_file} > /dev/null ;
+		then
+			${SVN} -q propset svn:keywords "FreeBSD=%H" ${_file}
+			${SVN} -q propdel fbsd:nokeywords ${_file}
+		else
+			${SVN} -q propset fbsd:nokeywords 1 ${_file}
+			${SVN} -q propdel svn:keywords ${_file}
+		fi
+		if [ `basename ${_file}` != "bsd.port.mk" ] ;
+		then
+			${SVN} -q propset svn:eol-style native ${_file}
+		fi
+		${SVN} -q propset svn:mime-type text/plain ${_file}
+		${SVN} -q propdel cvs2svn:cvs-rev ${_file}
+	done
+}
+
+
+case "${1}" in
+	check)
+		files=`${SVN} status | awk '{ print $NF }'`
+		checkstatus "${files}"
+		exit 0
+	;;
+	ci|commit)
+		opts=${@}
+		shift
+		while getopts qm:F: opt
+		do
+			case "$opt" in
+				q) ;;
+				m) ;;
+				F) ;;
+			esac
+		done
+		shift `expr $OPTIND - 1`
+		checkstatus "${@}"
+		setprop "${@}"
+		${SVN} ${opts}
+	;;
+	*)
+		${SVN} $@
+	;;
+esac
