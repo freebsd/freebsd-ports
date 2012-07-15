@@ -69,6 +69,7 @@ GYP_DEFINES+=	use_cups=1 \
 		linux_strip_binary=1 \
 		linux_use_tcmalloc=0 \
 		linux_use_heapchecker=0 \
+		clang_use_chrome_plugins=0 \
 		disable_nacl=1 \
 		enable_webrtc=0 \
 		enable_openmax=1 \
