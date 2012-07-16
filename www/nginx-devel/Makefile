@@ -210,7 +210,7 @@ NGINX_ACCESSLOG?=	${NGINX_LOGDIR}/nginx-access.log
 NGINX_ERRORLOG?=	${NGINX_LOGDIR}/nginx-error.log
 
 CONFLICTS?=	nginx-1.*
-USE_RC_SUBR=	nginx.sh
+USE_RC_SUBR=	nginx
 SUB_LIST+=	WWWOWN=${WWWOWN} \
 		WWWGRP=${WWWGRP} \
 		NGINX_RUNDIR=${NGINX_RUNDIR} \
