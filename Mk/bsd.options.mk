@@ -117,6 +117,15 @@ PORT_OPTIONS:=	 ${PORT_OPTIONS:N${O}}
 
 ALL_OPTIONS:=	${ALL_OPTIONS:O:u}
 
+# complete list
+COMPLETE_OPTIONS_LIST=	${ALL_OPTIONS}
+.for single in ${OPTIONS_SINGLE}
+COMPLETE_OPTIONS_LIST+=	${OPTIONS_SINGLE_${single}}
+.endfor
+.for multi in ${OPTIONS_MULTI}
+COMPLETE_OPTIONS_LIST+=	${OPTIONS_MULTI_${multi}}
+.endfor
+
 ## Now create the list of activated options
 .if defined(OPTIONS_OVERRIDE)
 # Special case $OPTIONS_OVERRIDE; if it is defined forget about anything done
@@ -132,7 +141,7 @@ PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 
 ## Set system-wide defined options (set by user in make.conf)
 .  for opt in ${OPTIONS_SET}
-.    if !empty(OPTIONS_DEFINE:M${opt})
+.    if !empty(COMPLETE_OPTIONS_LIST:M${opt})
 PORT_OPTIONS+=	${opt}
 .    endif
 .  endfor
@@ -145,7 +154,7 @@ PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
 
 ## Set the options specified per-port (set by user in make.conf)
 .  for opt in ${${UNIQUENAME}_SET}
-.    if !empty(OPTIONS_DEFINE:M${opt})
+.    if !empty(COMPLETE_OPTIONS_LIST:M${opt})
 PORT_OPTIONS+=	${opt}
 .    endif
 .  endfor
@@ -177,7 +186,7 @@ PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
 
 ## Finish by using the options set by the port config dialog, if any
 .  for opt in ${OPTIONS_FILE_SET}
-.    if !empty(OPTIONS_DEFINE:M${opt})
+.    if !empty(COMPLETE_OPTIONS_LIST:M${opt})
 PORT_OPTIONS+=	${opt}
 .    endif
 .  endfor
