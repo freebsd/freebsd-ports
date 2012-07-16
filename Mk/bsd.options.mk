@@ -2,6 +2,25 @@
 # $FreeBSD$
 # Global options
 #
+# OPTIONS_DEFINE		- List of options this ports accept
+# OPTIONS_DEFINE_${ARCH}	- List of options this ports accept and are
+#				specific to ${ARCH}
+# OPTIONS_DEFAULT		- List of options activated by default
+# OPTIONS_DEFAULT_${ARCH}	- List of options activated by default for a
+#				given arch
+#
+# OPTIONS_EXCLUDE_${ARCH}	- List of options unsupported on a given ${ARCH}
+# ${OPTION}_DESC		- Description the the ${OPTION}
+#
+# OPTIONS_SINGLE		- List of radio choice grouped options
+# OPTIONS_MULTI			- List of multiple-choice grouped options
+#
+# OPTIONS_SINGLE_${NAME}	- List of OPTIONS grouped as radio choice (for
+#				the single named as ${NAME} as defined in
+#				OPTIONS_SINGLE)
+# OTPIONS_MULTI_${NAME}		- List of OPTIONS grouped as multiple-choice
+#				(for the multi named as ${NAME} as defined in 
+#				OPTIONS_MULTI)
 
 ##
 # Set all the options available for the ports, beginning with the
@@ -27,9 +46,24 @@ PORT_OPTIONS+=	NLS
 PORT_OPTIONS+=	EXAMPLES
 .endif
 
+# Exclude per arch options
 .for opt in ${OPTIONS_EXCLUDE_${ARCH}}
 OPTIONS_DEFINE:=	${OPTIONS_DEFINE:N${opt}}
 OPTIONS_DEFAULT:=	${OPTIONS_DEFAULT:N${opt}}
+.endfor
+
+# Add per arch options
+.for opt in ${OPTIONS_DEFINE_${ARCH}}
+.if empty(OPTIONS_DEFINE:M${opt})
+OPTIONS_DEFINE+=	${opt}
+.endif
+.endfor
+
+# Add per arch defaults
+.for opt in ${OPTIONS_DEFAULT_${ARCH}}
+.if empty(OPTIONS_DEFAULT:M${opt}}
+OPTIONS_DEFAULT+=	${opt}
+.endif
 .endfor
 
 # Append options set by the port Makefile
@@ -98,7 +132,9 @@ PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 
 ## Set system-wide defined options (set by user in make.conf)
 .  for opt in ${OPTIONS_SET}
+.    if !empty(OPTIONS_DEFINE:M${opt})
 PORT_OPTIONS+=	${opt}
+.    endif
 .  endfor
 PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 
@@ -109,7 +145,9 @@ PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
 
 ## Set the options specified per-port (set by user in make.conf)
 .  for opt in ${${UNIQUENAME}_SET}
+.    if !empty(OPTIONS_DEFINE:M${opt})
 PORT_OPTIONS+=	${opt}
+.    endif
 .  endfor
 PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 
@@ -139,7 +177,9 @@ PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
 
 ## Finish by using the options set by the port config dialog, if any
 .  for opt in ${OPTIONS_FILE_SET}
+.    if !empty(OPTIONS_DEFINE:M${opt})
 PORT_OPTIONS+=	${opt}
+.    endif
 .  endfor
 PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 

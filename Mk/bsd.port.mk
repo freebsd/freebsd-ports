@@ -809,18 +809,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # Here are some variables used in various stages.
 #
-# For options:
-# OPTIONS		- List of what WITH_<option> options this port accept.  The
-#				  format is <option> "<description>" [on|off]
-#				  Example:
-#					FLEXRESP "Flexible response to events" off
-#				  which tell that an option WITH_FLEXRESP exists for this port,
-#				  that by default it is not defined, and that the description to
-#				  show to a user in the config dialog is "Flexible response to
-#				  events".  If you have more than one option, just chain them
-#				  into a single variable.  NOTE: To make options work, you need
-#				  to include bsd.port.pre.mk before you start testing the
-#				  WITH_xyz variables.
+# For options see bsd.options.mk
 #
 # For fetch:
 #
