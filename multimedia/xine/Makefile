@@ -25,9 +25,12 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
 		xine:${PORTSDIR}/multimedia/libxine
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
-OPTIONS_DEFINE=	CACA AALIB LIRC CURL WIN32_CODECS NLS XFT DOCS
-OPTIONS_DEFAULT=CURL WIN32_CODECS XFT
-WIN32_CODECS_DESC=	Enable win32 codecs (for i386 only)
+OPTIONS_DEFINE=	CACA AALIB LIRC CURL NLS XFT DOCS
+OPTIONS_DEFAULT=	CURL XFT
+OPTIONS_DEFINE_i386=	WIN32_CODECS
+OPTIONS_DEFAULT_i386=	WIN32_CODECS
+
+WIN32_CODECS_DESC=	Enable win32 codecs
 
 USE_XZ=		yes
 USE_XORG=	x11 xext xinerama xscrnsaver xt xtst xv xxf86vm
@@ -53,15 +56,13 @@ MAN1_PL=	aaxine.1 xine-remote.1 xine.1
 DOCSDIR=	${PREFIX}/share/doc/xine-ui
 XINE_PLUGINSDIR=	lib/xine/plugins/2.2
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${ARCH} == "i386"
 .if ${PORT_OPTIONS:MWIN32_CODECS}
 RUN_DEPENDS+=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 
 CODEC_PORT=	${PORTSDIR}/multimedia/win32-codecs
 CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
-.endif
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
@@ -134,4 +135,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
