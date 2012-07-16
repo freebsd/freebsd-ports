@@ -24,10 +24,6 @@ JAVA_VENDOR=	openjdk
 JAVA_VERSION=	1.6
 USE_XORG=	x11
 
-OPTIONS=	PLUGIN "Enable the browser plug-in" on \
-		RHINO "Add support for Proxy Auto Config files" off \
-		TEST "Add support for running regression test" off
-
 MAN1=		itweb-javaws.1
 PLIST_FILES=	bin/itweb-javaws bin/itweb-settings \
 		share/applications/itweb-javaws.desktop \
@@ -42,13 +38,21 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
 CONFIGURE_ARGS+=--with-ecj=no --with-jdk-home="${JAVA_HOME}"
 
+.include <bsd.port.options.mk>
+
+OPTIONS_DEFINE=	PLUGIN RHINO TEST
+OPTIONS_DEFAULT=PLUGIN
+PLUGIN_DESC=	Enable the browser plug-in
+RHINO_DESC=	Add support for Proxy Auto Config files
+TEST_DESC=	Add support for running regression test
+
 .include <bsd.port.pre.mk>
 
 .if defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--disable-docs
 .endif
 
-.if defined(WITH_PLUGIN)
+.if ${PORT_OPTIONS:MPLUGIN}
 USE_WEBPLUGINS=	native
 WEBPLUGINS_DIR=	${PREFIX}/lib
 WEBPLUGINS_FILES=IcedTeaPlugin.so
@@ -66,7 +70,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc:${PORTSDIR}/devel/gli
 CONFIGURE_ARGS+=--disable-plugin
 .endif
 
-.if defined(WITH_RHINO)
+.if ${PORT_OPTIONS:MRHINO}
 CONFIGURE_ARGS+=--with-rhino=${JAVASHAREDIR}/rhino/rhino.jar
 BUILD_DEPENDS+=	${JAVASHAREDIR}/rhino/rhino.jar:${PORTSDIR}/lang/rhino
 RUN_DEPENDS+=	${JAVASHAREDIR}/rhino/rhino.jar:${PORTSDIR}/lang/rhino
@@ -74,7 +78,7 @@ RUN_DEPENDS+=	${JAVASHAREDIR}/rhino/rhino.jar:${PORTSDIR}/lang/rhino
 CONFIGURE_ARGS+=--with-rhino=no
 .endif
 
-.if defined(WITH_TEST)
+.if ${PORT_OPTIONS:MTEST}
 CONFIGURE_ARGS+=--with-junit=${JAVALIBDIR}/junit.jar
 BUILD_DEPENDS+=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
 .else
@@ -92,7 +96,7 @@ pre-extract:
 	@${ECHO_MSG}
 	@sleep 10
 
-.if defined(WITH_TEST)
+.if ${PORT_OPTIONS:MTEST}
 post-build:
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Run \"make test\" to execute regression test."
@@ -109,10 +113,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/javaws.png \
 	    ${PREFIX}/share/pixmaps/itweb-javaws.png
 
-.if defined(WITH_TEST)
+.if ${PORT_OPTIONS:MTEST}
 test:	build
 	@(cd ${WRKSRC}; ${GMAKE} check)
-.if defined(WITH_PLUGIN)
+.if ${PORT_OPTIONS:MPLUGIN}
 	@(cd ${WRKSRC}; ${GMAKE} plugin-tests)
 .endif
 .endif
