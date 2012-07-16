@@ -878,6 +878,7 @@
     SUBDIR += libestr
     SUBDIR += libev
     SUBDIR += libevent
+    SUBDIR += libevent-hiphop
     SUBDIR += libevent2
     SUBDIR += libewf
     SUBDIR += libexecinfo
