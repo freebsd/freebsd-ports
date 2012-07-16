@@ -6,7 +6,10 @@ bin/clang++
 bin/clang-tblgen
 bin/scan-build
 bin/scan-view
+include/clang-c/CXCompilationDatabase.h
+include/clang-c/CXString.h
 include/clang-c/Index.h
+include/clang-c/Platform.h
 include/clang/ARCMigrate/ARCMT.h
 include/clang/ARCMigrate/ARCMTActions.h
 include/clang/ARCMigrate/FileRemapper.h
@@ -26,6 +29,14 @@ include/clang/AST/BuiltinTypes.def
 include/clang/AST/CXXInheritance.h
 include/clang/AST/CanonicalType.h
 include/clang/AST/CharUnits.h
+include/clang/AST/Comment.h
+include/clang/AST/CommentBriefParser.h
+include/clang/AST/CommentDiagnostic.h
+include/clang/AST/CommentLexer.h
+include/clang/AST/CommentNodes.inc
+include/clang/AST/CommentParser.h
+include/clang/AST/CommentSema.h
+include/clang/AST/CommentVisitor.h
 include/clang/AST/Decl.h
 include/clang/AST/DeclAccessPair.h
 include/clang/AST/DeclBase.h
@@ -53,6 +64,7 @@ include/clang/AST/NestedNameSpecifier.h
 include/clang/AST/OperationKinds.h
 include/clang/AST/ParentMap.h
 include/clang/AST/PrettyPrinter.h
+include/clang/AST/RawCommentList.h
 include/clang/AST/RecordLayout.h
 include/clang/AST/RecursiveASTVisitor.h
 include/clang/AST/Redeclarable.h
@@ -76,6 +88,11 @@ include/clang/AST/TypeVisitor.h
 include/clang/AST/UnresolvedSet.h
 include/clang/AST/VTTBuilder.h
 include/clang/AST/VTableBuilder.h
+include/clang/ASTMatchers/ASTMatchFinder.h
+include/clang/ASTMatchers/ASTMatchers.h
+include/clang/ASTMatchers/ASTMatchersInternal.h
+include/clang/ASTMatchers/ASTMatchersMacros.h
+include/clang/ASTMatchers/RefactoringCallbacks.h
 include/clang/Analysis/Analyses/CFGReachabilityAnalysis.h
 include/clang/Analysis/Analyses/Dominators.h
 include/clang/Analysis/Analyses/FormatString.h
@@ -108,15 +125,16 @@ include/clang/Basic/Builtins.def
 include/clang/Basic/Builtins.h
 include/clang/Basic/BuiltinsARM.def
 include/clang/Basic/BuiltinsHexagon.def
+include/clang/Basic/BuiltinsMips.def
+include/clang/Basic/BuiltinsNVPTX.def
 include/clang/Basic/BuiltinsPPC.def
-include/clang/Basic/BuiltinsPTX.def
 include/clang/Basic/BuiltinsX86.def
 include/clang/Basic/ConvertUTF.h
-include/clang/Basic/DelayedCleanupPool.h
 include/clang/Basic/Diagnostic.h
 include/clang/Basic/DiagnosticASTKinds.inc
 include/clang/Basic/DiagnosticAnalysisKinds.inc
 include/clang/Basic/DiagnosticCategories.h
+include/clang/Basic/DiagnosticCommentKinds.inc
 include/clang/Basic/DiagnosticCommonKinds.inc
 include/clang/Basic/DiagnosticDriverKinds.inc
 include/clang/Basic/DiagnosticFrontendKinds.inc
@@ -140,6 +158,7 @@ include/clang/Basic/LangOptions.h
 include/clang/Basic/Linkage.h
 include/clang/Basic/MacroBuilder.h
 include/clang/Basic/Module.h
+include/clang/Basic/ObjCRuntime.h
 include/clang/Basic/OnDiskHashTable.h
 include/clang/Basic/OpenCL.h
 include/clang/Basic/OpenCLExtensions.def
@@ -173,12 +192,10 @@ include/clang/Driver/ArgList.h
 include/clang/Driver/CC1AsOptions.h
 include/clang/Driver/CC1AsOptions.inc
 include/clang/Driver/CC1Options.h
-include/clang/Driver/CC1Options.inc
 include/clang/Driver/Compilation.h
 include/clang/Driver/Driver.h
 include/clang/Driver/DriverDiagnostic.h
 include/clang/Driver/Job.h
-include/clang/Driver/ObjCRuntime.h
 include/clang/Driver/OptSpecifier.h
 include/clang/Driver/OptTable.h
 include/clang/Driver/Option.h
@@ -273,6 +290,7 @@ include/clang/Sema/AttrTemplateInstantiate.inc
 include/clang/Sema/AttributeList.h
 include/clang/Sema/CXXFieldCollector.h
 include/clang/Sema/CodeCompleteConsumer.h
+include/clang/Sema/CodeCompleteOptions.h
 include/clang/Sema/DeclSpec.h
 include/clang/Sema/DelayedDiagnostic.h
 include/clang/Sema/Designator.h
@@ -320,9 +338,11 @@ include/clang/StaticAnalyzer/Core/CheckerManager.h
 include/clang/StaticAnalyzer/Core/CheckerOptInfo.h
 include/clang/StaticAnalyzer/Core/CheckerRegistry.h
 include/clang/StaticAnalyzer/Core/PathDiagnosticConsumers.h
+include/clang/StaticAnalyzer/Core/PathSensitive/APSIntType.h
 include/clang/StaticAnalyzer/Core/PathSensitive/AnalysisManager.h
 include/clang/StaticAnalyzer/Core/PathSensitive/BasicValueFactory.h
 include/clang/StaticAnalyzer/Core/PathSensitive/BlockCounter.h
+include/clang/StaticAnalyzer/Core/PathSensitive/Calls.h
 include/clang/StaticAnalyzer/Core/PathSensitive/CheckerContext.h
 include/clang/StaticAnalyzer/Core/PathSensitive/CheckerHelpers.h
 include/clang/StaticAnalyzer/Core/PathSensitive/ConstraintManager.h
@@ -332,7 +352,6 @@ include/clang/StaticAnalyzer/Core/PathSensitive/ExplodedGraph.h
 include/clang/StaticAnalyzer/Core/PathSensitive/ExprEngine.h
 include/clang/StaticAnalyzer/Core/PathSensitive/FunctionSummary.h
 include/clang/StaticAnalyzer/Core/PathSensitive/MemRegion.h
-include/clang/StaticAnalyzer/Core/PathSensitive/ObjCMessage.h
 include/clang/StaticAnalyzer/Core/PathSensitive/ProgramState.h
 include/clang/StaticAnalyzer/Core/PathSensitive/ProgramStateTrait.h
 include/clang/StaticAnalyzer/Core/PathSensitive/ProgramState_Fwd.h
@@ -348,25 +367,30 @@ include/clang/StaticAnalyzer/Core/PathSensitive/TaintTag.h
 include/clang/StaticAnalyzer/Core/PathSensitive/WorkList.h
 include/clang/StaticAnalyzer/Frontend/CheckerRegistration.h
 include/clang/StaticAnalyzer/Frontend/FrontendActions.h
+include/clang/Tooling/ArgumentsAdjusters.h
+include/clang/Tooling/CommandLineClangTool.h
 include/clang/Tooling/CompilationDatabase.h
+include/clang/Tooling/Refactoring.h
 include/clang/Tooling/Tooling.h
-lib/clang/3.1/include/arm_neon.h
-lib/clang/3.1/include/emmintrin.h
-lib/clang/3.1/include/immintrin.h
-lib/clang/3.1/include/mm3dnow.h
-lib/clang/3.1/include/mm_malloc.h
-lib/clang/3.1/include/mmintrin.h
-lib/clang/3.1/include/module.map
-lib/clang/3.1/include/nmmintrin.h
-lib/clang/3.1/include/pmmintrin.h
-lib/clang/3.1/include/smmintrin.h
-lib/clang/3.1/include/tmmintrin.h
-lib/clang/3.1/include/wmmintrin.h
-lib/clang/3.1/include/xmmintrin.h
+lib/clang/%%CLANG_RELEASE%%/include/ammintrin.h
+lib/clang/%%CLANG_RELEASE%%/include/arm_neon.h
+lib/clang/%%CLANG_RELEASE%%/include/emmintrin.h
+lib/clang/%%CLANG_RELEASE%%/include/immintrin.h
+lib/clang/%%CLANG_RELEASE%%/include/mm3dnow.h
+lib/clang/%%CLANG_RELEASE%%/include/mm_malloc.h
+lib/clang/%%CLANG_RELEASE%%/include/mmintrin.h
+lib/clang/%%CLANG_RELEASE%%/include/module.map
+lib/clang/%%CLANG_RELEASE%%/include/nmmintrin.h
+lib/clang/%%CLANG_RELEASE%%/include/pmmintrin.h
+lib/clang/%%CLANG_RELEASE%%/include/smmintrin.h
+lib/clang/%%CLANG_RELEASE%%/include/tmmintrin.h
+lib/clang/%%CLANG_RELEASE%%/include/wmmintrin.h
+lib/clang/%%CLANG_RELEASE%%/include/xmmintrin.h
 lib/libclang.a
 lib/libclang.so
 lib/libclangARCMigrate.a
 lib/libclangAST.a
+lib/libclangASTMatchers.a
 lib/libclangAnalysis.a
 lib/libclangBasic.a
 lib/libclangCodeGen.a
@@ -389,13 +413,20 @@ lib/libclangTooling.a
 %%PORTDOCS%%%%DOCSDIR%%/html/AddressSanitizer.html
 %%PORTDOCS%%%%DOCSDIR%%/html/AnalyzerRegions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/AutomaticReferenceCounting.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ClangPlugins.html
 %%PORTDOCS%%%%DOCSDIR%%/html/DriverInternals.html
+%%PORTDOCS%%%%DOCSDIR%%/html/HowToSetupToolingForLLVM.html
 %%PORTDOCS%%%%DOCSDIR%%/html/InternalsManual.html
+%%PORTDOCS%%%%DOCSDIR%%/html/JSONCompilationDatabase.html
 %%PORTDOCS%%%%DOCSDIR%%/html/LanguageExtensions.html
+%%PORTDOCS%%%%DOCSDIR%%/html/LibTooling.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ObjectiveCLiterals.html
 %%PORTDOCS%%%%DOCSDIR%%/html/PCHInternals.html
 %%PORTDOCS%%%%DOCSDIR%%/html/PTHInternals.html
+%%PORTDOCS%%%%DOCSDIR%%/html/RAVFrontendAction.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ReleaseNotes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ThreadSanitizer.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Tooling.html
 %%PORTDOCS%%%%DOCSDIR%%/html/UsersManual.html
 %%PORTDOCS%%%%DOCSDIR%%/html/clang/clang.html
 %%PORTDOCS%%%%DOCSDIR%%/html/clang/manpage.css
@@ -407,8 +438,8 @@ lib/libclangTooling.a
 %%PYTHON_SITELIBDIR%%/Resources/bugcatcher.ico
 %%PYTHON_SITELIBDIR%%/ScanView.py
 %%PYTHON_SITELIBDIR%%/startfile.py
-@dirrm lib/clang/3.1/include
-@dirrm lib/clang/3.1
+@dirrm lib/clang/%%CLANG_RELEASE%%/include
+@dirrm lib/clang/%%CLANG_RELEASE%%
 @dirrm lib/clang
 @dirrm include/clang/Tooling
 @dirrm include/clang/StaticAnalyzer/Frontend
@@ -435,6 +466,7 @@ lib/libclangTooling.a
 @dirrm include/clang/Analysis/DomainSpecific
 @dirrm include/clang/Analysis/Analyses
 @dirrm include/clang/Analysis
+@dirrm include/clang/ASTMatchers
 @dirrm include/clang/AST
 @dirrm include/clang/ARCMigrate
 @dirrm include/clang-c
