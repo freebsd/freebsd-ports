@@ -7,7 +7,7 @@
 
 PORTNAME=	urlgrabber
 PORTVERSION=	3.9.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://urlgrabber.baseurl.org/download/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
