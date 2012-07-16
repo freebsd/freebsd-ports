@@ -30,7 +30,6 @@ DOCFORMAT?=	html
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} >= 260
 .  if ${DOCFORMAT} == "html" || ${DOCFORMAT} == "text"
 WRKSRC=		${WRKDIR}/${DISTNAME}
 .  else
@@ -39,9 +38,6 @@ WRKSRC=		${WRKDIR}/docs-pdf
 .  if ${DOCFORMAT} != "html" && ${DOCFORMAT} != "pdf-a4" && ${DOCFORMAT} != "pdf-letter" && ${DOCFORMAT} != "text"
 IGNORE=		invalid value for DOCFORMAT: "${DOCFORMAT}", possible values are: text, html, pdf-a4, pdf-letter
 .  endif
-.else
-IGNORE=		there is no documentation for this Python version, because it deprecated upstream
-.endif
 
 pre-install:
 	@cd ${WRKSRC} && \

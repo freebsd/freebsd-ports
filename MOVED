@@ -3549,3 +3549,7 @@ science/ics||2012-07-07|ICS is no more a part of Code_Saturne
 mail/postfix25||2012-07-07|Has expired: no further upstream development; please consider upgrading
 misc/alevt||2012-07-16|Has expired: No more upstream
 multimedia/moonlight||2012-07-16|Has expired: BROKEN for more than 6 month
+lang/python24||2012-07-16|End Of Life reached
+lang/python25||2012-07-16|End Of Life reached
+www/zope||2012-07-16|End Of Life reached
+www/zope211||2012-07-16|End Of Life reached
