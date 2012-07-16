@@ -202,9 +202,9 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #
 
 _PYTHON_PORTBRANCH=		2.7
-_PYTHON_ALLBRANCHES=	2.7 2.6 2.5 2.4 3.2 3.1	# preferred first
-_ZOPE_PORTBRANCH=		2.7
-_ZOPE_ALLBRANCHES=		2.7 2.8 2.9 2.10 3.2
+_PYTHON_ALLBRANCHES=	2.7 2.6 3.2 3.1	# preferred first
+_ZOPE_PORTBRANCH=		2.13
+_ZOPE_ALLBRANCHES=		2.13
 
 
 # Determine version number of Zope to use
@@ -256,7 +256,7 @@ _ZOPE_VERSION=	${_ZOPE_PORTBRANCH} # just to avoid version sanity checking.
 
 ZOPE_VERSION?=	${_ZOPE_VERSION}
 
-PYTHON_VERSION=	python2.4
+PYTHON_VERSION=	python2.7
 .endif	# defined(USE_ZOPE)
 
 
@@ -392,22 +392,6 @@ PYTHON_REL=			268
 PYTHON_SUFFIX=		26
 PYTHON_VER=			2.6
 
-# Python-2.5
-.elif ${PYTHON_VERSION} == "python2.5"
-PYTHON_PORTVERSION?=2.5.6
-PYTHON_PORTSDIR=	${PORTSDIR}/lang/python25
-PYTHON_REL=			256
-PYTHON_SUFFIX=		25
-PYTHON_VER=			2.5
-
-# Python-2.4
-.elif ${PYTHON_VERSION} == "python2.4"
-PYTHON_PORTVERSION?=2.4.5
-PYTHON_PORTSDIR=	${PORTSDIR}/lang/python24
-PYTHON_REL=			245
-PYTHON_SUFFIX=		24
-PYTHON_VER=			2.4
-
 # Python versions in development
 .elif defined(FORCE_PYTHON_VERSION)
 PYTHON_PORTSDIR=	# empty
@@ -422,8 +406,6 @@ PYTHON_VER!=		${PYTHON_CMD} -c 'import sys; print(sys.version[:3])'
 check-makevars::
 	@${ECHO} "Makefile error: bad value for PYTHON_VERSION: ${PYTHON_VERSION}."
 	@${ECHO} "Legal values are:"
-	@${ECHO} "  python2.4"
-	@${ECHO} "  python2.5"
 	@${ECHO} "  python2.6"
 	@${ECHO} "  python2.7 (default)"
 	@${ECHO} "  python3.1"
@@ -530,30 +512,12 @@ CONFIGURE_ENV+=	PYTHON="${PYTHON_CMD}"
 
 # Zope-related variables
 .if defined(USE_ZOPE)
-.if ${ZOPE_VERSION} == "3.2"
-SZOPEBASEDIR?=			www/Zope3
-ZOPE_PORTSDIR=			${PORTSDIR}/www/zope3
-ZOPESKELDIR=			${ZOPEBASEDIR}/zopeskel
-.elif ${ZOPE_VERSION} == "2.10"
-SZOPEBASEDIR?=			www/Zope210
-ZOPE_PORTSDIR=			${PORTSDIR}/www/zope210
-ZOPESKELDIR=			${ZOPEBASEDIR}/skel
-.elif ${ZOPE_VERSION} == "2.9"
-SZOPEBASEDIR?=			www/Zope29
-ZOPE_PORTSDIR=			${PORTSDIR}/www/zope29
-ZOPESKELDIR=			${ZOPEBASEDIR}/skel
-.elif ${ZOPE_VERSION} == "2.8"
-SZOPEBASEDIR?=			www/Zope28
-ZOPE_PORTSDIR=			${PORTSDIR}/www/zope28
-ZOPESKELDIR=			${ZOPEBASEDIR}/skel
-.elif ${ZOPE_VERSION} == "2.7"
-SZOPEBASEDIR?=			www/Zope
-ZOPE_PORTSDIR=			${PORTSDIR}/www/zope
-ZOPESKELDIR=			${ZOPEBASEDIR}/skel
+.if ${ZOPE_VERSION} == "2.13"
+ZOPE_PORTSDIR=		${PORTSDIR}/www/zope213
 .else
 check-makevars::
 	@${ECHO} "Makefile error: bad value for ZOPE_VERSION: ${ZOPE_VERSION}."
-	@${ECHO} "Legal values are: 2.7 (default), 2.8, 2.9, 2.10, 3.2"
+	@${ECHO} "Legal values are: 2.13 (default)"
 	@${FALSE}
 .endif
 ZOPEBASEDIR?=			${PREFIX}/${SZOPEBASEDIR}
