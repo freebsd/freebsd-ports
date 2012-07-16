@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	App-Nopaste
-PORTVERSION=	0.33
+PORTVERSION=	0.34
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SARTAK
@@ -20,7 +20,8 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS+=	p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize \
 		p5-MooseX-Getopt>=0.17:${PORTSDIR}/devel/p5-MooseX-Getopt \
-		p5-Moose>=0.74:${PORTSDIR}/devel/p5-Moose
+		p5-Moose>=0.74:${PORTSDIR}/devel/p5-Moose \
+		p5-JSON>0:${PORTSDIR}/converters/p5-JSON
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
