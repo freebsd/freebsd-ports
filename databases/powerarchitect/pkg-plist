@@ -3,33 +3,55 @@ bin/powerarchitect
 %%DATADIR%%/architect.jar
 %%DATADIR%%/jdbc/sqlserver_2005.jar
 %%DATADIR%%/lib/activation.jar
-%%DATADIR%%/lib/architecthelp.jar
+%%DATADIR%%/lib/annotations.jar
+%%DATADIR%%/lib/apache-mime4j-0.6.jar
 %%DATADIR%%/lib/commons-beanutils-bean-collections.jar
 %%DATADIR%%/lib/commons-beanutils-core.jar
 %%DATADIR%%/lib/commons-beanutils.jar
-%%DATADIR%%/lib/commons-collections-3.1.jar
-%%DATADIR%%/lib/commons-dbcp-1.2.1.jar
+%%DATADIR%%/lib/commons-codec-20041127.091804.jar
+%%DATADIR%%/lib/commons-collections-3.2.1.jar
+%%DATADIR%%/lib/commons-dbcp-1.2.2.jar
 %%DATADIR%%/lib/commons-digester.jar
+%%DATADIR%%/lib/commons-httpclient-3.1.jar
+%%DATADIR%%/lib/commons-io-1.4.jar
+%%DATADIR%%/lib/commons-lang-2.4.jar
 %%DATADIR%%/lib/commons-logging.jar
-%%DATADIR%%/lib/commons-pool-1.3.jar
+%%DATADIR%%/lib/commons-pool-1.5.1.jar
 %%DATADIR%%/lib/commons-vfs-1.0.jar
-%%DATADIR%%/lib/darwinsys.jar
 %%DATADIR%%/lib/edtftpj-1.5.4.jar
 %%DATADIR%%/lib/eigenbase-properties.jar
-%%DATADIR%%/lib/forms-1.1.0.jar
+%%DATADIR%%/lib/forms-1.3.0.jar
+%%DATADIR%%/lib/google-collect-1.0.jar
+%%DATADIR%%/lib/httpclient-4.0.jar
+%%DATADIR%%/lib/httpcore-4.0.1.jar
+%%DATADIR%%/lib/httpmime-4.0.jar
 %%DATADIR%%/lib/iText-2.0.8.jar
 %%DATADIR%%/lib/jakarta-regexp-1.2.jar
 %%DATADIR%%/lib/jcommon-1.0.0.jar
 %%DATADIR%%/lib/jfreechart-1.0.1.jar
-%%DATADIR%%/lib/jhall.jar
-%%DATADIR%%/lib/kettle-engine-3.0.jar
-%%DATADIR%%/lib/log4j.jar
-%%DATADIR%%/lib/mail.jar
-%%DATADIR%%/lib/mondrian.jar
+%%DATADIR%%/lib/jmdns-2.1.jar
+%%DATADIR%%/lib/jsr305.jar
+%%DATADIR%%/lib/junit-3.8.2.jar
+%%DATADIR%%/lib/kettle-core-3.2.2.jar
+%%DATADIR%%/lib/kettle-db-3.2.2.jar
+%%DATADIR%%/lib/kettle-engine-3.2.2.jar
+%%DATADIR%%/lib/log4j-1.2.15.jar
+%%DATADIR%%/lib/mail-1.4.1.jar
+%%DATADIR%%/lib/miglayout-3.7-swing.jar
+%%DATADIR%%/lib/olap4j-0.9.7.302.jar
+%%DATADIR%%/lib/opencsv-1.8.jar
+%%DATADIR%%/lib/piccolo.jar
+%%DATADIR%%/lib/piccolox.jar
+%%DATADIR%%/lib/rsyntaxtextarea.jar
+%%DATADIR%%/lib/servlet-api-2.5.jar
 %%DATADIR%%/lib/spring-core.jar
+%%DATADIR%%/lib/spring-security-core-2.0.5.RELEASE.jar
 %%DATADIR%%/lib/sqlpower_library.jar
+%%DATADIR%%/lib/velocity-1.6.2.jar
+%%DATADIR%%/lib/velocity-tools-generic-1.4.jar
+%%DATADIR%%/lib/xercesImpl-2.9.1.jar
 %%PORTDOCS%%%%DOCSDIR%%/README.generic
-@dirrm %%DATADIR%%/jdbc
 @dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/jdbc
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
