@@ -3733,6 +3733,7 @@
     SUBDIR += rubygem-coffee-script-source
     SUBDIR += rubygem-columnize
     SUBDIR += rubygem-configuration
+    SUBDIR += rubygem-cool.io
     SUBDIR += rubygem-crack
     SUBDIR += rubygem-cri
     SUBDIR += rubygem-daemon_controller
