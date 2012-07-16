@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bleach
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,6 @@ MAINTAINER=	koobs.freebsd@gmail.com
 COMMENT=	An easy whitelist-based HTML-sanitizing tool for Python
 
 LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}html5lib>=0.95:${PORTSDIR}/www/py-html5lib
 
