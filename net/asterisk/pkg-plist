@@ -529,7 +529,7 @@ lib/asterisk/modules/cdr_csv.so
 lib/asterisk/modules/cdr_custom.so
 lib/asterisk/modules/cdr_manager.so
 %%WITH_MYSQL%%lib/asterisk/modules/cdr_mysql.so
-%%WITH_POSTGRES%%lib/asterisk/modules/cdr_pgsql.so
+%%WITH_PGSQL%%lib/asterisk/modules/cdr_pgsql.so
 %%WITH_RADIUS%%lib/asterisk/modules/cdr_radius.so
 %%WITH_SQLITE%%lib/asterisk/modules/cdr_sqlite.so
 %%WITH_SQLITE%%lib/asterisk/modules/cdr_sqlite3_custom.so
@@ -537,7 +537,7 @@ lib/asterisk/modules/cdr_syslog.so
 lib/asterisk/modules/cel_custom.so
 lib/asterisk/modules/cel_manager.so
 %%WITH_ODBC%%lib/asterisk/modules/cel_odbc.so
-%%WITH_POSTGRES%%lib/asterisk/modules/cel_pgsql.so
+%%WITH_PGSQL%%lib/asterisk/modules/cel_pgsql.so
 %%WITH_RADIUS%%lib/asterisk/modules/cel_radius.so
 %%WITH_SQLITE%%lib/asterisk/modules/cel_sqlite3_custom.so
 %%WITH_FREETDS%%lib/asterisk/modules/cel_tds.so
@@ -547,6 +547,7 @@ lib/asterisk/modules/chan_iax2.so
 lib/asterisk/modules/chan_local.so
 lib/asterisk/modules/chan_mgcp.so
 lib/asterisk/modules/chan_multicast_rtp.so
+%%WITH_OOH323%%lib/asterisk/modules/chan_ooh323.so
 lib/asterisk/modules/chan_oss.so
 lib/asterisk/modules/chan_sip.so
 lib/asterisk/modules/chan_skinny.so
@@ -567,7 +568,7 @@ lib/asterisk/modules/format_h263.so
 lib/asterisk/modules/format_h264.so
 lib/asterisk/modules/format_ilbc.so
 lib/asterisk/modules/format_jpeg.so
-%%WITH_OGGVORBIS%%lib/asterisk/modules/format_ogg_vorbis.so
+%%WITH_VORBIS%%lib/asterisk/modules/format_ogg_vorbis.so
 lib/asterisk/modules/format_pcm.so
 lib/asterisk/modules/format_sln.so
 lib/asterisk/modules/format_vox.so
@@ -610,7 +611,7 @@ lib/asterisk/modules/res_calendar.so
 %%WITH_EXCHANGE%%lib/asterisk/modules/res_calendar_ews.so
 lib/asterisk/modules/res_clioriginate.so
 %%WITH_MYSQL%%lib/asterisk/modules/res_config_mysql.so
-%%WITH_POSTGRES%%lib/asterisk/modules/res_config_pgsql.so
+%%WITH_PGSQL%%lib/asterisk/modules/res_config_pgsql.so
 lib/asterisk/modules/res_convert.so
 lib/asterisk/modules/res_crypto.so
 lib/asterisk/modules/res_fax.so

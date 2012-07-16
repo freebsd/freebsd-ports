@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.8.14.0
+PORTVERSION=	1.8.14.1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -42,29 +42,24 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		NOISY_BUILD=YES \
 		DOCSDIR=${DOCSDIR} \
 		ASTCFLAGS="${CFLAGS}"
+
 MAN8=		asterisk.8 astgenkey.8 autosupport.8 safe_asterisk.8
+
 CONFLICTS_BUILD=	linuxthreads-*
 CONFLICTS_INSTALL=	asterisk*-1.4* asterisk*-1.6* asterisk*-10*
 
-OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
-		IODBC		"Enable iODBC support" off \
-		UODBC		"Enable unixODBC support" on \
-		POSTGRES	"Enable PostgreSQL support" on \
-		MYSQL		"Enable MySQL support" off \
-		RADIUS		"Enable RADIUS accounting support" on \
-		SNMP		"Enable SNMP support" on \
-		H323		"Enable H.323 support" on \
-		FREETDS		"Enable FreeTDS support" on \
-		JABBER		"Enable Jabber and Gtalk support" on \
-		SQLITE          "Enable SQLITE support" on \
-		GSM		"Enable GSM codec" on \
-		CURL		"Enable CURL support" on \
-		SPANDSP		"Enable Spandsp faxing support" off \
-		EXCHANGE	"Enable Exchange calendar support" off \
-		NEWG711		"Enable new G711 Codec" off \
-		SRTP		"Enable SecureRTP support" off \
-		LUA		"Enable LUA extensions support" off \
-		LDAP		"Enable Ldap support" off
+OPTIONS_DEFINE=	VORBIS PGSQL MYSQL RADIUS SNMP H323 FREETDS JABBER SQLITE GSM \
+		CURL SPANDSP EXCHANGE NEWG711 SRTP LUA LDAP ODBC OOH323
+OPTIONS_DEFAULT= VORBIS ODBC UNIXODBC PGSQL RADIUS SNMP H323 FREETDS JABBER GSM \
+		SQLITE CURL
+
+OPTIONS_SINGLE=	ODBC
+OPTIONS_SINGLE_ODBC=	IODBC UNIXODBC
+ 
+EXCHANGE_DESC?=	Exchange calendar support
+NEWG711_DESC?=	New G711 Codec
+SRTP_DESC?=	SecureRTP support
+OOH323_DESC?=	ooh323 support
 
 PORTSCOUT=	limit:^1\.8\.
 
@@ -83,11 +78,9 @@ VARDIR=${PREFIX}/var
 .endif
 
 .if ${ARCH} == "i386" || ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-OPTIONS+=	DAHDI		"Enable DAHDI support" on
-
-.if defined(WITH_IODBC) && defined(WITH_UODBC)
-IGNORE=	please select only one of iodbc or unixODBC
-.endif
+OPTIONS_DEFINE+=	DAHDI
+OPTIONS_DEFAULT+=	DAHDI
+DAHDI_DESC?=	DAHDI support
 
 # Include this since we have altered OPTIONS.
 .include <bsd.port.options.mk>
@@ -98,7 +91,7 @@ PLIST_SUB+=	ASTERISK_USER=${ASTERISK_USER}
 PLIST_SUB+=	ASTERISK_GROUP=${ASTERISK_GROUP}
 PLIST_SUB+=	VARDIR=${VARDIR}
 
-.if !defined(WITH_H323)
+.if ${PORT_OPTIONS:MH323}
 PLIST_SUB+=	WITH_H323="@comment "
 CONFIGURE_ARGS+=	--without-h323
 .else
@@ -108,7 +101,7 @@ LIB_DEPENDS+=	pt_r.1:${PORTSDIR}/devel/pwlib \
 		h323_r.1:${PORTSDIR}/net/openh323
 .endif
 
-.if !defined(WITH_DAHDI)
+.if ${PORT_OPTIONS:MDAHDI}
 PLIST_SUB+=	WITH_DAHDI="@comment "
 CONFIGURE_ARGS+=	--without-dahdi --without-openr2
 .else
@@ -123,146 +116,146 @@ LIB_DEPENDS+=	pri.1:${PORTSDIR}/misc/libpri\
 #
 # WITH_FREETDS, WITH_PGSQL and WITH_SQLITE can also be added to MAKE_ENV
 # similarly
-.if !defined(WITH_UODBC)
+.if empty(PORT_OPTIONS:MUNIXODBC)
 CONFIGURE_ARGS+=	--without-unixodbc
 .endif
-.if !defined(WITH_IODBC)
+.if empty(PORT_OPTIONS:MIODBC)
 CONFIGURE_ARGS+=	--without-iodbc
 .endif
-.if !defined(WITH_UODBC) && !defined(WITH_IODBC)
+.if empty(PORT_OPTIONS:MUNIXODBC) && empty(PORT_OPTIONS:MIODBC)
 PLIST_SUB+=	WITH_ODBC="@comment "
 .endif
-.if defined(WITH_UODBC) || defined(WITH_IODBC)
+.if ${PORT_OPTIONS:MUNIXODBC} || ${PORT_OPTIONS:MIODBC}
 PLIST_SUB+=	WITH_ODBC=""
 USE_AUTOTOOLS=	libltdl
-.if defined(WITH_UODBC)
+.if ${PORT_OPTIONS:MUNIXODBC}
 CONFIGURE_ARGS+=	--with-unixodbc --with-ltdl
 LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
-.elif defined(WITH_IODBC)
+.elif ${PORT_OPTIONS:MIODBC}
 CONFIGURE_ARGS+=	--with-iodbc --with-ltdl
 LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
 .endif
 .endif
 
-.if !defined(WITH_FREETDS)
-PLIST_SUB+=	WITH_FREETDS="@comment "
-CONFIGURE_ARGS+=	--without-tds
-.else
+.if ${PORT_OPTIONS:MFREETDS}
 PLIST_SUB+=	WITH_FREETDS=""
 CONFIGURE_ARGS+=	--with-tds=${LOCALBASE}
 LIB_DEPENDS+=	tds.5:${PORTSDIR}/databases/freetds
+.else
+PLIST_SUB+=	WITH_FREETDS="@comment "
+CONFIGURE_ARGS+=	--without-tds
 .endif
 
-.if !defined(WITH_POSTGRES)
-PLIST_SUB+=	WITH_POSTGRES="@comment "
-CONFIGURE_ARGS+=	--without-postgres
-.else
-PLIST_SUB+=	WITH_POSTGRES=""
+.if ${PORT_OPTIONS:MPGSQL}
+PLIST_SUB+=	WITH_PGSQL=""
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=	--with-postgres
+.else
+PLIST_SUB+=	WITH_PGSQL="@comment "
+CONFIGURE_ARGS+=	--without-postgres
 .endif
 
-.if !defined(WITH_MYSQL)
-PLIST_SUB+=	WITH_MYSQL="@comment "
-CONFIGURE_ARGS+=	--without-mysql
-.else
+.if ${PORT_OPTIONS:MMYSQL}
 PLIST_SUB+=	WITH_MYSQL=""
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql
+.else
+PLIST_SUB+=	WITH_MYSQL="@comment "
+CONFIGURE_ARGS+=	--without-mysql
 .endif
 
-.if !defined(WITH_OGGVORBIS)
-PLIST_SUB+=	WITH_OGGVORBIS="@comment "
-CONFIGURE_ARGS+=	--without-ogg
-.else
-PLIST_SUB+=	WITH_OGGVORBIS=""
+.if ${PORT_OPTIONS:MVORBIS}
+PLIST_SUB+=	WITH_VORBIS=""
 CONFIGURE_ARGS+=	--with-ogg
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+.else
+PLIST_SUB+=	WITH_VORBIS="@comment "
+CONFIGURE_ARGS+=	--without-ogg
 .endif
 
-.if !defined(WITH_RADIUS)
-PLIST_SUB+=	WITH_RADIUS="@comment "
-CONFIGURE_ARGS+=	--without-radius
-.else
+.if ${PORT_OPTIONS:MRADIUS}
 PLIST_SUB+=	WITH_RADIUS=""
 CONFIGURE_ARGS+=	--with-radius
 LIB_DEPENDS+=	radiusclient-ng.2:${PORTSDIR}/net/radiusclient
+.else
+PLIST_SUB+=	WITH_RADIUS="@comment "
+CONFIGURE_ARGS+=	--without-radius
 .endif
 
-.if !defined(WITH_SNMP)
-PLIST_SUB+=	WITH_SNMP="@comment "
-CONFIGURE_ARGS+=	--without-netsnmp
-.else
+.if ${PORT_OPTIONS:MSNMP}
 PLIST_SUB+=	WITH_SNMP=""
 CONFIGURE_ARGS+=	--with-netsnmp
 LIB_DEPENDS+=	netsnmp:${PORTSDIR}/net-mgmt/net-snmp
+.else
+PLIST_SUB+=	WITH_SNMP="@comment "
+CONFIGURE_ARGS+=	--without-netsnmp
 .endif
 
-.if !defined(WITH_JABBER)
-PLIST_SUB+=	WITH_JABBER="@comment "
-CONFIGURE_ARGS+=	--without-iksemel
-.else
+.if ${PORT_OPTIONS:MJABBER}
 PLIST_SUB+=	WITH_JABBER=""
 CONFIGURE_ARGS+=	--with-iksemel
 LIB_DEPENDS+=	iksemel.4:${PORTSDIR}/textproc/iksemel
+.else
+PLIST_SUB+=	WITH_JABBER="@comment "
+CONFIGURE_ARGS+=	--without-iksemel
 .endif
 
-.if !defined(WITH_SQLITE)
-PLIST_SUB+=	WITH_SQLITE="@comment "
-CONFIGURE_ARGS+=	--without-sqlite \
-			--with-sqlite3=no
-.else
+.if ${PORT_OPTIONS:MSQLITE}
 PLIST_SUB+=	WITH_SQLITE=""
 CONFIGURE_ARGS+=	--with-sqlite
 LIB_DEPENDS+=	sqlite:${PORTSDIR}/databases/sqlite2 \
 		sqlite3:${PORTSDIR}/databases/sqlite3
+.else
+PLIST_SUB+=	WITH_SQLITE="@comment "
+CONFIGURE_ARGS+=	--without-sqlite \
+			--with-sqlite3=no
 .endif
 
-.if !defined(WITH_GSM)
-PLIST_SUB+=	WITH_GSM="@comment "
-CONFIGURE_ARGS+=	--without-gsm
-.else
+.if ${PORT_OPTIONS:MGSM}
 PLIST_SUB+=	WITH_GSM=""
 CONFIGURE_ARGS+=	--with-gsm
 LIB_DEPENDS+=	gsm.1:${PORTSDIR}/audio/gsm
+.else
+PLIST_SUB+=	WITH_GSM="@comment "
+CONFIGURE_ARGS+=	--without-gsm
 .endif
 
-.if !defined(WITH_CURL)
-PLIST_SUB+=	WITH_CURL="@comment "
-CONFIGURE_ARGS+=	--with-libcurl=no
-.else
+.if ${PORT_OPTIONS:MCURL}
 PLIST_SUB+=	WITH_CURL=""
 CONFIGURE_ARGS+=	--with-libcurl
 LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+.else
+PLIST_SUB+=	WITH_CURL="@comment "
+CONFIGURE_ARGS+=	--with-libcurl=no
 .endif
 
-.if !defined(WITH_SPANDSP)
-PLIST_SUB+=	WITH_SPANDSP="@comment "
-CONFIGURE_ARGS+=	--without-spandsp
-.else
+.if ${PORT_OPTIONS:MSPANDSP}
 PLIST_SUB+=	WITH_SPANDSP=""
 CONFIGURE_ARGS+=	--with-spandsp
 LIB_DEPENDS+=	spandsp.2:${PORTSDIR}/comms/spandsp-devel
+.else
+PLIST_SUB+=	WITH_SPANDSP="@comment "
+CONFIGURE_ARGS+=	--without-spandsp
 .endif
 
-.if !defined(WITH_EXCHANGE)
-CONFIGURE_ARGS+=	--without-neon --without-neon29
-PLIST_SUB+=	WITH_EXCHANGE="@comment "
-.else
+.if ${PORT_OPTIONS:MEXCHANGE}
 LIB_DEPENDS+=	neon.27:${PORTSDIR}/www/neon29
 PLIST_SUB+=	WITH_EXCHANGE=""
+.else
+CONFIGURE_ARGS+=	--without-neon --without-neon29
+PLIST_SUB+=	WITH_EXCHANGE="@comment "
 .endif
 
-.if !defined(WITH_SRTP)
-PLIST_SUB+=	WITH_SRTP="@comment "
-CONFIGURE_ARGS+=	--without-srtp
-.else
+.if ${PORT_OPTIONS:MSRTP}
 PLIST_SUB+=	WITH_SRTP=""
 BUILD_DEPENDS+=	libsrtp>=1.4.4:${PORTSDIR}/net/libsrtp
 CONFIGURE_ARGS+=	--with-srtp
+.else
+PLIST_SUB+=	WITH_SRTP="@comment "
+CONFIGURE_ARGS+=	--without-srtp
 .endif
 
-.if defined(WITH_LUA)
+.if ${PORT_OPTIONS:MLUA}
 CONFIGURE_ARGS+=	--with-lua
 CFLAGS+=	-I${LUA_INCDIR}
 USE_LUA=	yes
@@ -273,13 +266,19 @@ CONFIGURE_ARGS+=	--without-lua
 PLIST_SUB+=	WITH_LUA="@comment "
 .endif
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 CONFIGURE_ARGS+=	--with-ldap
 USE_OPENLDAP=	yes
 PLIST_SUB+=	WITH_LDAP=""
 .else
 CONFIGURE_ARGS+=	--without-ldap
 PLIST_SUB+=	WITH_LDAP="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MOOH323}
+PLIST_SUB+=	WITH_OOH323=""
+.else
+PLIST_SUB+=	WITH_OOH323="@comment "
 .endif
 
 post-extract:
@@ -289,14 +288,17 @@ post-patch:
 	${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/musiconhold.conf.sample
 
 post-configure:
-.if defined(WITH_MYSQL) || defined(WITH_NEWG711)
+.if !empty(PORT_OPTIONS:MMYSQL) || !empty(PORT_OPTIONS:MNEWG711) || !empty(PORT_OPTIONS:MOOH323)
 	@cd ${WRKSRC} && make menuselect.makeopts
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable res_config_mysql menuselect.makeopts
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable app_mysql menuselect.makeopts
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable cdr_mysql menuselect.makeopts
 .endif
-.if defined(WITH_NEWG711)
+.if ${PORT_OPTIONS:MOOH323}
+	@cd ${WRKSRC} && ./menuselect/menuselect --enable chan_ooh323 menuselect.makeopts
+.endif
+.if ${PORT_OPTIONS:MNEWG711}
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable  G711_NEW_ALGORITHM menuselect.makeopts
 .endif
 .endif
