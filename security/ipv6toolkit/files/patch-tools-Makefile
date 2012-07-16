@@ -1,0 +1,40 @@
+--- /dev/null	2012-07-17 03:00:00.000000000 +0900
++++ tools/Makefile	2012-07-17 02:59:01.000000000 +0900
+@@ -0,0 +1,37 @@
++# $FreeBSD$
++
++PREFIX?=	/usr/local
++BINDIR?=	${DESTDIR}${PREFIX}/bin
++CFLAGS+=	-Wall
++
++PROG=	flow6 frag6 icmp6 jumbo6 na6 ni6 ns6 ra6 rd6 rs6 scan6 tcp6
++
++.for P in ${PROG}
++PT:=${P}
++${P}.o: ${P}.c ${P}.h
++${P}: ${P}.o
++.if ${PT:Mflow6}
++	${CC} ${CFLAGS} ${LDFLAGS} -o ${.TARGET} ${P}.o -lpcap -lm
++.elif ${PT:Mfrag6}
++	${CC} ${CFLAGS} ${LDFLAGS} -o ${.TARGET} ${P}.o -lpcap -lm
++.else
++	${CC} ${CFLAGS} ${LDFLAGS} -o ${.TARGET} ${P}.o -lpcap
++.endif
++CLEANFILES+=	${P} ${P}.o
++.endfor
++
++all: ${PROG}
++
++beforeinstall:
++	mkdir -p ${BINDIR}
++
++realinstall: _proginstall
++
++_proginstall:
++	${INSTALL} ${STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
++	    ${_INSTALLFLAGS} ${PROG} ${DESTDIR}${BINDIR}
++
++.include <bsd.init.mk>
++.include <bsd.files.mk>
++.include <bsd.obj.mk>
++.include <bsd.sys.mk>
