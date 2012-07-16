@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sort
-PORTVERSION=	20120508
-PORTREVISION=	1
+PORTVERSION=	20120716
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	gabor
@@ -25,28 +24,29 @@ MAN1=		sort.1
 MAKE_ENV+=	BINDIR="${PREFIX}/bin" \
 		MANDIR="${MANPREFIX}/man/man" \
 		CATDIR="${MANPREFIX}/man/man" \
-		NLSDIR="${PREFIX}/share/nls"
+		NLSDIR="${PREFIX}/share/nls" \
+		MK_GNU_SORT="no"
 
 CFLAGS+=	-std=c99
 
-OPTIONS=	THREADS		"Compile with threads support"	on \
-		NLS		"Compile with NLS support"	on \
-		OVERWRITE_BASE	"Replaces base GNU sort"	off
+OPTIONS_DEFINE=		THREADS NLS OVERWRITE_BASE
+OVERWRITE_BASE_DESC=	"Replaces base GNU sort"
+OPTIONS_DEFAULT=	THREADS NLS
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
+PLIST_SUB+=	NLS=""
+.else
 MAKE_ENV+=	WITHOUT_NLS=yes
 PLIST_SUB+=	NLS="@comment "
-.else
-PLIST_SUB+=	NLS=""
 .endif
 
-.if defined(WITHOUT_THREADS)
-MAKE_ENV+=	WITHOUT_THREADS=yes
+.if ${PORT_OPTIONS:MTHREADS}
+MAKE_ENV+=	WITH_THREADS=yes
 .endif
 
-.if defined(WITH_OVERWRITE_BASE)
+.if ${PORT_OPTIONS:MOVERWRITE_BASE}
 PREFIX=		/usr
 PLIST_SUB+=	OVERWRITE_BASE="" NO_OVERWRITE_BASE="@comment "
 .else
