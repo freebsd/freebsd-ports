@@ -15,13 +15,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modules to streamline writing Nagios plugins
 
-PERL_CONFIGURE=	yes
-
-BUILD_DEPENDS+=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
+BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
 		p5-Math-Calc-Units>=0:${PORTSDIR}/math/p5-Math-Calc-Units \
 		p5-Config-Tiny>=0:${PORTSDIR}/devel/p5-Config-Tiny
-RUN_DEPENDS+=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
 
 MAN3=		Nagios::Plugin.3 \
 		Nagios::Plugin::Config.3 \
