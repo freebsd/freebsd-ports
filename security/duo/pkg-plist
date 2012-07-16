@@ -8,7 +8,11 @@ lib/libduo.a
 libdata/pkgconfig/libduo.pc
 lib/security/pam_duo.so
 lib/security/pam_duo.la
-lib/security/pam_duo.a
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 sbin/login_duo
 @dirrmtry lib/security
 @dirrmtry %%ETCDIR%%
