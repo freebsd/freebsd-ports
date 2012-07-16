@@ -49,7 +49,9 @@ post-extract:
 	@${REINPLACE_CMD} 's/ install-exec-local//' ${WRKSRC}/lib/Makefile.in
 .endif
 
-.if empty(PORT_OPTIONS:MDOCS)
+.if ${PORT_OPTIONS:MEXAMPLES}
+PORTEXAMPLES=	calc++
+
 post-install:
 	${MKDIR} ${EXAMPLESDIR}/calc++
 	${INSTALL_DATA} ${WRKSRC}/examples/calc++/*.[chly]* \
