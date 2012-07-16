@@ -27,6 +27,8 @@ LIB_DEPENDS=	c-client4.9:${PORTSDIR}/mail/cclient
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 SUB_FILES=	pkg-message
 
+MAKE_JOBS_UNSAFE=	yes
+
 MAN1=		dmail.1 mailutil.1 tmail.1
 MAN8=		ipopd.8 imapd.8
 
