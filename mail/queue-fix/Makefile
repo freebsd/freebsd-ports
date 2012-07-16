@@ -21,28 +21,26 @@ MAKE_JOBS_SAFE=	yes
 
 PREFIX?=	${QMAIL_PREFIX}
 
-OPTIONS=	BIG_TODO "Use big_todo patch" off
+OPTIONS_DEFINE=	BIG_TODO
+
+BIG_TODO_DESC=	Use big_todo patch
 
 CONFIGURE_SCRIPT=
 ALL_TARGET=
 
-PLIST_SUB=	DOCDIR=${DOCDIR}
 PLIST_FILES=	bin/queue-fix
 
-.if !defined(NOPORTDOCS)
-PLIST_FILES+=	%%DOCDIR%%/README
-PLIST_DIRS+=	%%DOCDIR%%
-.endif
+PORTDOCS=	README
 
 .include <bsd.port.pre.mk>
 
 .if (${PREFIX} == ${LOCALBASE})
-DOCDIR=	share/doc/qmail/queue-fix
+DOCSDIR=	${PREFIX}/share/doc/qmail/queue-fix
 .else
-DOCDIR=	doc/queue-fix
+DOCSDIR=	${PREFIX}/doc/queue-fix
 .endif
 
-.if defined(WITH_BIG_TODO)
+.if ${PORT_OPTIONS:MBIG_TODO}
 PATCH_SITES+=		http://www.qmail.org/
 PATCHFILES+=		queue-fix-todo.patch
 PATCH_DIST_STRIP+=	-p1
@@ -51,9 +49,9 @@ PATCH_DIST_STRIP+=	-p1
 do-install:
 	@${MKDIR} ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/queue-fix ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/${DOCDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
