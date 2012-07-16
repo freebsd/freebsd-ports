@@ -336,7 +336,7 @@ SEDLIST+=	-e 's,^\# (AUTH_SPA=),\1,'
 .if defined(WITH_AUTH_SASL)
 LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 SEDLIST+=	-e 's,^\# (AUTH_CYRUS_SASL=),\1,' \
-		-e 's,^\# (AUTH_LIBS=),\1,'
+		-e 's,^\# (AUTH_LIBS=.*-lsasl2),\1,'
 .endif
 
 .if defined(WITH_AUTH_RADIUS)
