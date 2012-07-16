@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clang
-PORTVERSION=	3.1.r${SVN_REV}
+PORTVERSION=	3.2.r${SVN_REV}
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -21,6 +21,7 @@ COMMENT=	C, Objective-C, and (alpha-quality) C++ compiler
 CONFLICTS=	clang-[23]*
 
 CLANG_NAME=	clang-${PORTVERSION}
+CLANG_RELEASE=	${PORTVERSION:C/\.r[0-9]*//}
 CLANG_SOURCE=	${CLANG_NAME}${EXTRACT_SUFX}
 LLVM_NAME=	llvm-${PORTVERSION}
 LLVM_SOURCE=	${LLVM_NAME}${EXTRACT_SUFX}
@@ -47,10 +48,20 @@ USE_PERL5=	yes
 USE_PYTHON=	yes
 MAKE_JOBS_SAFE=	yes
 
-MAKE_ARGS=	CLANG_TBLGEN=${WRKSRC}/Release+Asserts/bin/clang-tblgen \
+MAKE_ARGS=	CLANG_TBLGEN=${WRKSRC}/${RELTYPE}/bin/clang-tblgen \
 		LLVMIncDir=${LOCALBASE}/include \
 		LLVMToolDir=${LOCALBASE}/bin \
 		LLVMLibDir=${LOCALBASE}/lib
+
+OPTIONS_DEFINE=	ASSERTS DOCS
+
+ASSERTS_DESC=	Enable assertions (thread unsafe)
+
+MAN1=		clang.1
+
+PLIST_SUB+=	CLANG_RELEASE=${CLANG_RELEASE}
+
+.include <bsd.port.options.mk>
 
 .if defined(MAINTAINER_MODE)
 CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
@@ -58,11 +69,19 @@ CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
 CONFIGURE_ARGS+=	--enable-optimized
 .endif
 
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
+CONFIGURE_ARGS+=	--enable-docs
+.else
 CONFIGURE_ARGS+=	--disable-docs
 .endif
 
-MAN1=		clang.1
+.if ${PORT_OPTIONS:MASSERTS}
+CONFIGURE_ARGS+=	--enable-assertions
+RELTYPE=		Release+Asserts
+.else
+CONFIGURE_ARGS+=	--disable-assertions
+RELTYPE=		Release
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -106,12 +125,12 @@ post-patch:
 
 pre-build:
 	${LN} -sf ${LOCALBASE}/include/llvm/Intrinsics.gen ${WRKSRC}/include/llvm/
-	${MKDIR} ${WRKSRC}/Release+Asserts/lib
-	${LN} -sf ${LOCALBASE}/lib/libLLVMTableGen.a ${WRKSRC}/Release+Asserts/lib/
-	${LN} -sf ${LOCALBASE}/lib/libLLVMSupport.a ${WRKSRC}/Release+Asserts/lib/
+	${MKDIR} ${WRKSRC}/${RELTYPE}/lib
+	${LN} -sf ${LOCALBASE}/lib/libLLVMTableGen.a ${WRKSRC}/${RELTYPE}/lib/
+	${LN} -sf ${LOCALBASE}/lib/libLLVMSupport.a ${WRKSRC}/${RELTYPE}/lib/
 	cd ${WRKSRC}/utils/unittest && ${GMAKE}
 
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-build:
 	@cd ${WRKSRC}/tools/clang/docs/tools && ${GMAKE} clang.1
 .endif
@@ -131,7 +150,7 @@ post-install:
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/scanview.css ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/sorttable.js ${DATADIR}
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL_MAN} ${WRKSRC}/tools/clang/docs/tools/clang.1 \
 	    ${MANPREFIX}/man/man1/
 .else
@@ -169,6 +188,7 @@ build-plist:
 	${RM} -f ${PLIST}
 	cd ${PREFIX} && \
 	    (ls ${PLIST_FILE_LIST}; ${FIND} ${PLIST_DIR_LIST} -type f) | \
+	    ${SED} -e 's|${CLANG_RELEASE}|%%CLANG_RELEASE%%|' | \
 	    ${SORT} >> ${PLIST}
 	${FIND} ${DATADIR} ${DOCSDIR} -type f | \
 	    ${SED} -e 's|${DATADIR}|%%DATADIR%%|' \
@@ -178,6 +198,7 @@ build-plist:
 	    ${SED} -e 's|^|%%PYTHON_SITELIBDIR%%/|' >> ${PLIST}
 	cd ${PREFIX} && \
 	    ${FIND} ${PLIST_DIR_LIST} -type d | \
+	    ${SED} -e 's|${CLANG_RELEASE}|%%CLANG_RELEASE%%|' | \
 	    ${SORT} -r | ${SED} -e 's|^|@dirrm |' >> ${PLIST}
 	cd ${PYTHONPREFIX_SITELIBDIR} && \
 	    ${FIND} ${PLIST_PYDIR_LIST} -type d | ${SORT} -r | \

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	llvm
-DISTVERSION=	3.1.r${SVN_REV}
+DISTVERSION=	3.2.r${SVN_REV}
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -34,9 +34,26 @@ USE_PYTHON_BUILD=	yes
 MAKE_JOBS_SAFE=	yes
 
 # Suggested tweaks from http://llvm.org/docs/Packaging.html
-MAKE_ARGS+=		REQUIRES_RTTI=1
 CONFIGURE_ARGS+=	--enable-shared
+MAKE_ARGS+=		REQUIRES_RTTI=1
 LIBNAME=		libLLVM-${DISTVERSION:C/\.r[0-9]*//}svn.so
+
+CONFIGURE_ARGS+=	--enable-bindings=none
+
+OPTIONS_DEFINE=	ASSERTS DOCS LTOPLUGIN
+
+ASSERTS_DESC=	Enable assertions (thread unsafe)
+LTOPLUGIN_DESC=	Build LTO plugin (requires gold)
+
+MAN1=		bugpoint.1 lit.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
+		llvm-bcanalyzer.1 llvm-cov.1 llvm-config.1 llvm-diff.1 \
+		llvm-dis.1 llvm-extract.1 llvm-link.1 llvm-nm.1 \
+		llvm-prof.1 llvm-ranlib.1 llvm-stress.1 opt.1 tblgen.1
+
+LLVM_RELEASE=	${PORTVERSION:C/\.r[0-9]*//}
+PLIST_SUB+=	LLVM_RELEASE=${LLVM_RELEASE}
+
+.include <bsd.port.options.mk>
 
 .if defined(MAINTAINER_MODE)
 CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
@@ -44,19 +61,25 @@ CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
 CONFIGURE_ARGS+=	--enable-optimized
 .endif
 
-CONFIGURE_ARGS+=	--enable-bindings=none
-
-OPTIONS=	ASSERTS	"Enable assertions (thread unsafe)" off \
-		LTOPLUGIN "Build LTO plugin (requires gold)" off
-
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
+CONFIGURE_ARGS+=	--enable-docs
+BUILD_DEPENDS+=		sphinx-build:${PORTSDIR}/textproc/py-sphinx
+.else
 CONFIGURE_ARGS+=	--disable-docs
 .endif
 
-MAN1=		bugpoint.1 lit.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
-		llvm-bcanalyzer.1 llvm-cov.1 llvm-config.1 llvm-diff.1 \
-		llvm-dis.1 llvm-extract.1 llvm-ld.1 llvm-link.1 llvm-nm.1 \
-		llvm-prof.1 llvm-ranlib.1 llvm-stress.1 opt.1 tblgen.1
+.if ${PORT_OPTIONS:MASSERTS}
+CONFIGURE_ARGS+=	--enable-assertions
+.else
+CONFIGURE_ARGS+=	--disable-assertions
+.endif
+
+.if ${PORT_OPTIONS:MLTOPLUGIN}
+BUILD_DEPENDS+=		ld.gold:${PORTSDIR}/devel/binutils
+RUN_DEPENDS+=		ld.gold:${PORTSDIR}/devel/binutils
+CONFIGURE_ARGS+=	--with-binutils-include=${LOCALBASE}/include
+PLIST_FILES+=		lib/LLVMgold.so
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -81,19 +104,6 @@ CONFIGURE_ARGS+=	--enable-pic --with-pic
 CONFIGURE_ARGS+=	--with-optimize-option=-O2
 .endif
 
-.ifdef(WITH_ASSERTS)
-CONFIGURE_ARGS+=	--enable-assertions
-.else
-CONFIGURE_ARGS+=	--disable-assertions
-.endif
-
-.ifdef(WITH_LTOPLUGIN)
-BUILD_DEPENDS+=		ld.gold:${PORTSDIR}/devel/binutils
-RUN_DEPENDS+=		ld.gold:${PORTSDIR}/devel/binutils
-CONFIGURE_ARGS+=	--with-binutils-include=${LOCALBASE}/include
-PLIST_FILES+=		lib/LLVMgold.so
-.endif
-
 .if defined(BOOTSTRAP) || defined(SVN_FETCH)
 FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 
@@ -115,17 +125,20 @@ post-patch:
 	${REINPLACE_CMD} -e 's|\(PROJ_mandir.*:=\).*$$|\1${MANPREFIX}/man|g' \
 	    ${WRKSRC}/Makefile.config.in
 
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-build:
-	@cd ${WRKSRC}/docs/CommandGuide && ${GMAKE} ${MAN1}
+	@cd ${WRKSRC}/docs && ${GMAKE} -f Makefile.sphinx man html
 .endif
 
 post-install:
-	mv ${PREFIX}/lib/${LIBNAME} ${PREFIX}/lib/${LIBNAME}.0
-	ln -s ${LIBNAME}.0 ${PREFIX}/lib/${LIBNAME}
-.if defined(NOPORTDOCS)
+	${MV} ${PREFIX}/lib/${LIBNAME} ${PREFIX}/lib/${LIBNAME}.0
+	${LN} -s ${LIBNAME}.0 ${PREFIX}/lib/${LIBNAME}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}/html
+	find ${WRKSRC}/docs/_build/html -type f | \
+	    xargs -I _DOC_ ${INSTALL_DATA} _DOC_ ${DOCSDIR}/html/
 .for man in ${MAN1}
-	@${INSTALL_MAN} ${WRKSRC}/docs/CommandGuide/${man} \
+	@${INSTALL_MAN} ${WRKSRC}/docs/_build/man/${man} \
 	     ${MANPREFIX}/man/man1/
 .endfor
 .endif
@@ -145,19 +158,19 @@ PLIST_FILE_LIST=	bin/bugpoint \
 			bin/llvm* \
 			bin/macho-dump \
 			bin/opt \
-			lib/LLVMHello.so \
 			lib/BugpointPasses.so \
+			lib/LLVMHello.so \
 			lib/libLTO.* \
 			lib/libLLVM* \
-			lib/libprofile_rt.so \
-			lib/libprofile_rt.a
+			lib/libprofile_rt.a \
+			lib/libprofile_rt.so
 PLIST_DIR_LIST=		include/llvm-c \
 			include/llvm
 build-plist:
 	${RM} -f ${PLIST}
 	cd ${PREFIX} && \
 	    (ls ${PLIST_FILE_LIST}; ${FIND} ${PLIST_DIR_LIST} -type f) | \
-	    ${SED} -e 's|${PORTVERSION}|%%PORTVERSION%%|' | \
+	    ${SED} -e 's|${LLVM_RELEASE}|%%LLVM_RELEASE%%|' | \
 	    ${SORT} >> ${PLIST}
 	${FIND} ${DOCSDIR} -type f | \
 	    ${SED} -e 's|${DOCSDIR}|%%PORTDOCS%%%%DOCSDIR%%|' | \
