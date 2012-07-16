@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20120716:
+  AFFECTS: users of www/lighttpd
+  AUTHOR: mm@FreeBSD.org
+
+  The following port options have been reorganized:
+  The OPENLDAP option has been renamed to LDAP.
+  The MAGNET and CML options have been withdrawn in favor of new LUA option.
+
+20120716:
   AFFECTS: users of mail/postfix-current
   AUTHOR: sahil@FreeBSD.org
 

@@ -7,7 +7,7 @@
 
 PORTNAME?=	lighttpd
 PORTVERSION=	1.4.31
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	www
 MASTER_SITES?=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -45,22 +45,19 @@ USE_RC_SUBR=	lighttpd.sh
 
 MAN8=		lighttpd.8
 
-OPTIONS_DEFINE=	BZIP2 CML FAM GDBM IPV6 LIBEV MAGNET MEMCACHE MYSQL MYSQLAUTH \
-		NODELAY OPENLDAP OPENSSL SPAWNFCGI VALGRIND WEBDAV REMOTEUSER
+OPTIONS_DEFINE=	BZIP2 FAM GDBM IPV6 LIBEV LUA MEMCACHE MYSQL MYSQLAUTH \
+		NODELAY LDAP OPENSSL SPAWNFCGI VALGRIND WEBDAV REMOTEUSER
 
 OPTIONS_DEFAULT=	IPV6 OPENSSL 
 
-BZIP2_DESC=	bzip2 support
-CML_DESC=	Cache Meta Language support
-FAM_DESC=	fam/gamin support
-GDBM_DESC=	gdbm storage support
-LIBEV_DESC=	libev support
-MAGNET_DESC=	magnet support
-MEMCACHE_DESC=	Memory caching support
-MYSQL_DESC=	MySQL support
+BZIP2_DESC=	bzip2 support (mod_compress)
+GDBM_DESC=	gdbm storage (mod_trigger_b4_dl)
+LDAP_DESC=	LDAP authentication
+LUA_DESC=	lua support (mod_cml, mod_magnet)
+MEMCACHE_DESC=	memcached storage (mod_trigger_b4_dl)
+MYSQL_DESC=	MySQL support (mod_mysql_vhost)
 MYSQLAUTH_DESC=	MySQL authentication (requires WITH_MYSQL)
 NODELAY_DESC=	Set TCP_NODELAY on listening sockets
-OPENLDAP_DESC=	LDAP support
 SPAWNFCGI_DESC=	Depend on spawn-fcgi utility
 VALGRIND_DESC=	valgrind support
 WEBDAV_DESC=	WebDAV support
@@ -112,12 +109,6 @@ CONFIGURE_ARGS+=	--with-openssl \
 CONFIGURE_ARGS+=	--with-bzip2
 .endif
 
-.if ${PORT_OPTIONS:MCML}
-USE_LUA=		yes
-CONFIGURE_ARGS+=	--with-lua
-CONFIGURE_ENV+=		LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua"
-.endif
-
 .if ${PORT_OPTIONS:MFAM}
 USE_FAM=		yes
 CONFIGURE_ARGS+=	--with-fam
@@ -138,8 +129,8 @@ CONFIGURE_ARGS+=	--with-libev=${LOCALBASE}
 LIB_DEPENDS+=		ev.4:${PORTSDIR}/devel/libev
 .endif
 
-.if ${PORT_OPTIONS:MMAGNET}
-USE_LUA=		5.1+
+.if ${PORT_OPTIONS:MLUA}
+USE_LUA=		5.1
 CONFIGURE_ARGS+=	--with-lua
 CONFIGURE_ENV+=		LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua"
 .endif
@@ -168,7 +159,7 @@ PORTDOCS+=		README.mysqlauth mysql_auth.sql
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-nodelay
 .endif
 
-.if ${PORT_OPTIONS:MOPENLDAP}
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--with-ldap
 _REQUIRE+=		slapd
