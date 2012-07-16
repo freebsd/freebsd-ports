@@ -3547,3 +3547,5 @@ sysutils/rubygem-puppet-module||2012-07-07|Integrated in to sysutils/puppet sinc
 mail/sympa5|mail/sympa|2012-07-07|Has expired: Unsupported by upstream, Multiple vulnerabilities have been discovered in Sympa archive management that allow to skip the scenario-based authorization mechanisms.  http://www.sympa.org/security_advisories
 science/ics||2012-07-07|ICS is no more a part of Code_Saturne
 mail/postfix25||2012-07-07|Has expired: no further upstream development; please consider upgrading
+misc/alevt||2012-07-16|Has expired: No more upstream
+multimedia/moonlight||2012-07-16|Has expired: BROKEN for more than 6 month

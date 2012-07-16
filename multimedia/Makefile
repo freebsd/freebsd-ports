@@ -203,7 +203,6 @@
     SUBDIR += mmpython
     SUBDIR += mmsclient
     SUBDIR += mmsrip
-    SUBDIR += moonlight
     SUBDIR += motion
     SUBDIR += mp3cd
     SUBDIR += mp4split

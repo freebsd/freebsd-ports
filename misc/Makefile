@@ -6,7 +6,6 @@
     SUBDIR += achievo
     SUBDIR += aclgen
     SUBDIR += airoflash
-    SUBDIR += alevt
     SUBDIR += amanda-client
     SUBDIR += amanda-perl-wrapper
     SUBDIR += amanda-server
