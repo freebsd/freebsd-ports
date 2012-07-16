@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	An xbiff-like Window Maker dock app
 
-OPTIONS=	GNUTLS "Support for SSL" off
+OPTIONS_DEFINE=	GNUTLS
 
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
@@ -33,7 +33,7 @@ PLIST_DIRS=	%%DATADIR%%/skins \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_GNUTLS)
+.if ${PORT_OPTIONS:MGNUTLS}
 LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt \
 		gnutls:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-libgnutls-prefix=${LOCALBASE} \
