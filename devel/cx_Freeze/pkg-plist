@@ -16,6 +16,12 @@ bin/cxfreeze
 %%PYTHON_SITELIBDIR%%/cx_Freeze/hooks.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/hooks.pyc
 %%PYTHON_SITELIBDIR%%/cx_Freeze/hooks.pyo
+%%PYTHON_SITELIBDIR%%/cx_Freeze/macdist.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/macdist.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/macdist.pyo
+%%PYTHON_SITELIBDIR%%/cx_Freeze/setupwriter.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/setupwriter.pyc
+%%PYTHON_SITELIBDIR%%/cx_Freeze/setupwriter.pyo
 %%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/Console.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/Console3.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/ConsoleKeepPath.py
