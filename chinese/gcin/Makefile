@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	2.7.6.1
-PORTREVISION=	1
+PORTVERSION=	2.7.8
+PORTREVISION=	0
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/:main
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:main
@@ -26,9 +26,10 @@ USE_GMAKE=	YES
 USE_XORG=	x11 xtst xext
 INSTALLS_ICONS=	YES
 USE_LDCONFIG=	YES
-OPTIONS=	ANTHY		"enable Japanese anthy IM module" off \
-		CHEWING		"enable Chewing IM module" off \
-		QT_IM_MODULE	"enable QT IM module" off
+OPTIONS_DEFINE=	ANTHY CHEWING QT_IM_MODULE
+ANTHY_DESC=	Japanese anthy IM module
+CHEWING_DESC=	Chewing IM module
+QT_IM_MODULE_DESC=	QT IM module
 
 MAN1=		gcin.1 gcin-exit.1 gcin2tab.1 gcin-gb-toggle.1 gcin-kbm-toggle.1 \
 		gcin-message.1 gcin-tools.1 gtab-merge.1 juyin-learn.1 \
@@ -37,7 +38,7 @@ MAN1=		gcin.1 gcin-exit.1 gcin2tab.1 gcin-gb-toggle.1 gcin-kbm-toggle.1 \
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_QT_IM_MODULE)
+.if ${PORT_OPTIONS:MQT_IM_MODULE}
 USE_QT4=	inputmethods qmake_build moc_build corelib gui
 LIB_DEPENDS+=	mng:${PORTSDIR}/graphics/libmng
 PLIST_SUB+=	QT_IM_MODULE=""
@@ -52,18 +53,18 @@ PLIST_SUB+=	QT_IM_MODULE="@comment "
 BROKEN=		does not compile
 .endif
 
-.if defined(WITH_ANTHY)
+.if ${PORT_OPTIONS:MANTHY}
 BUILD_DEPENDS+=	${LOCALBASE}/include/anthy/anthy.h:${PORTSDIR}/japanese/anthy
-LIB_DEPENDS+=	anthy.1:${PORTSDIR}/japanese/anthy
+LIB_DEPENDS+=	anthy:${PORTSDIR}/japanese/anthy
 PLIST_SUB+=	ANTHY_MODULE=""
 .else
 CONFIGURE_ARGS+=	--use_anthy=N
 PLIST_SUB+=	ANTHY_MODULE="@comment "
 .endif
 
-.if defined(WITH_CHEWING)
+.if ${PORT_OPTIONS:MCHEWING}
 BUILD_DEPENDS+=	${LOCALBASE}/include/chewing/chewing.h:${PORTSDIR}/chinese/libchewing
-LIB_DEPENDS+=	chewing.3:${PORTSDIR}/chinese/libchewing
+LIB_DEPENDS+=	chewing:${PORTSDIR}/chinese/libchewing
 PLIST_SUB+=	CHEWING_MODULE=""
 .else
 CONFIGURE_ARGS+=	--use_chewing=N

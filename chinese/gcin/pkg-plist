@@ -17,6 +17,7 @@ bin/tsa2d32
 bin/tsd2a32
 bin/tsin2gtab-phrase
 bin/tslearn
+bin/txt2gtab-phrase
 lib/gtk-2.0/immodules/im-gcin.so
 %%QT_IM_MODULE%%lib/qt4/plugins/inputmethods/im-gcin.so
 %%ANTHY_MODULE%%lib/gcin/anthy-module.so
@@ -50,6 +51,7 @@ lib/gcin/libgcin-im-client.so.1
 %%DATADIR%%/table/greek.gtab
 %%DATADIR%%/table/gtab.list
 %%DATADIR%%/table/hangul.gtab
+%%DATADIR%%/table/hangul-phrase.txt
 %%DATADIR%%/table/hsu.kbm
 %%DATADIR%%/table/ibm.kbm
 %%DATADIR%%/table/jyutping.gtab
