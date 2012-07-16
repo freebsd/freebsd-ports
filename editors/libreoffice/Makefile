@@ -44,7 +44,7 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		wpg-0.2.2:${PORTSDIR}/graphics/libwpg \
 		wps-0.2.2:${PORTSDIR}/textproc/libwps \
 		rdf.0:${PORTSDIR}/textproc/redland \
-		exttextcat.0:${PORTSDIR}/textproc/libexttextcat \
+		exttextcat-1.0.0:${PORTSDIR}/textproc/libexttextcat \
 		lpsolve55:${PORTSDIR}/math/lp_solve \
 		cups.2:${PORTSDIR}/print/cups-client \
 		visio-0.0.0:${PORTSDIR}/textproc/libvisio \
