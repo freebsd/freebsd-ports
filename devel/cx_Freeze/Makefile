@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cx_Freeze
-PORTVERSION=	4.2.3
+PORTVERSION=	4.3
 CATEGORIES=	devel python
 MASTER_SITES=   SF/cx-freeze/${PORTVERSION}
 
