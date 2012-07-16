@@ -88,26 +88,19 @@ USE_OPENSSL=	yes
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
-.	if !empty(PORT_OPTIONS:MX11)
-USE_XORG=	xpm
-.	endif
 
 CONFIGURE_ARGS+=--with-gd \
 		--with-freetype-dir=${LOCALBASE} \
 		--with-jpeg-dir=${LOCALBASE} \
 		--with-png-dir=${LOCALBASE} \
 		--with-zlib-dir=/usr
-.	if !empty(PORT_OPTIONS:MX11)
-CONFIGURE_ARGS+=--with-xpm-dir=${LOCALBASE}
-.	endif
 
-OPTIONS_DEFINE=	T1LIB TRUETYPE JIS
-OPTIONS_DEFAULT=	T1LIB TRUETYPE
+OPTIONS_DEFINE=	T1LIB TRUETYPE JIS X11
+OPTIONS_DEFAULT=	T1LIB TRUETYPE X11
 
 T1LIB_DESC=	Include T1lib support
 TRUETYPE_DESC=	TrueType string function
 JIS_DESC=	JIS-mapped Japanese font support
-
 
 PHP_HEADER_DIRS=libgd
 .endif
@@ -136,16 +129,13 @@ USE_ICONV=	yes
 .endif
 
 .if ${PHP_MODNAME} == "imap"
+OPTIONS_DEFINE=	SSL
+OPTIONS_DEFAULT=	SSL
 LIB_DEPENDS+=	c-client4.9:${PORTSDIR}/mail/cclient
 
 CONFIGURE_ARGS+=--with-imap=${LOCALBASE} \
 		--with-pcre-dir=${LOCALBASE}
-.if !empty(PORT_OPTIONS:MSSL)
-CONFIGURE_ARGS+=--with-imap-ssl=${OPENSSLBASE}
-
-LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
 USE_OPENSSL=	yes
-.endif
 .endif
 
 .if ${PHP_MODNAME} == "interbase"
@@ -505,6 +495,14 @@ CONFIGURE_ARGS+=--disable-flatfile
 .endif
 
 .if ${PHP_MODNAME} == "gd"
+.	if ${PORT_OPTIONS:MX11}
+USE_XORG=	xpm
+.	endif
+
+.	if ${PORT_OPTIONS:MX11}
+CONFIGURE_ARGS+=--with-xpm-dir=${LOCALBASE}
+.	endif
+
 .	if ${PORT_OPTIONS:MT1LIB}
 LIB_DEPENDS+=	t1.5:${PORTSDIR}/devel/t1lib
 
@@ -515,6 +513,13 @@ CONFIGURE_ARGS+=--enable-gd-native-ttf
 .	endif
 .	if ${PORT_OPTIONS:MJIS}
 CONFIGURE_ARGS+=--enable-gd-jis-conv
+.	endif
+.endif
+
+.if ${PHP_MODNAME} == "imap"
+.	if ${PORT_OPTIONS:MSSL}
+CONFIGURE_ARGS+=--with-imap-ssl=${OPENSSLBASE}
+LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -ssl
 .	endif
 .endif
 
