@@ -5,12 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	tap-plugins
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	audio
 MASTER_SITES=	SF/tap-plugins/tap-plugins/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	taku@tackymt.homeip.net
 COMMENT=	LADSPA Plugins by Tom Szilagy
+
+LICENSE=	GPLv2
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I. -c -fPIC -DPIC" \
 		LDFLAGS="-nostartfiles -shared -Wl,-Bsymbolic -lm"
