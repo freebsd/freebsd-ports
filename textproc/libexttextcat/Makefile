@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libexttextcat
-PORTVERSION=	3.2.0
-PORTREVISION=	2
+PORTVERSION=	3.3.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://dev-www.libreoffice.org/src/libexttextcat/
 
@@ -46,10 +45,10 @@ post-install:
 .if defined(WITH_COMPAT_TEXTCAT)
 	${LN} -sf libexttextcat/textcat.h ${PREFIX}/include/
 	${LN} -sf libexttextcat ${PREFIX}/include/libtextcat
-	${LN} -sf libexttextcat.a ${PREFIX}/lib/libtextcat.a
-	${LN} -sf libexttextcat.la ${PREFIX}/lib/libtextcat.la
-	${LN} -sf libexttextcat.so.0 ${PREFIX}/lib/libtextcat.so
-	${LN} -sf libexttextcat.so.0 ${PREFIX}/lib/libtextcat.so.0
+	${LN} -sf libexttextcat-1.0.a ${PREFIX}/lib/libtextcat.a
+	${LN} -sf libexttextcat-1.0.la ${PREFIX}/lib/libtextcat.la
+	${LN} -sf libexttextcat-1.0.so.0 ${PREFIX}/lib/libtextcat.so
+	${LN} -sf libexttextcat-1.0.so.0 ${PREFIX}/lib/libtextcat.so.0
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
