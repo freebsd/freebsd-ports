@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20120716:
+  AFFECTS: users of mail/postfix-current
+  AUTHOR: sahil@FreeBSD.org
+
+  The postscreen-to-smtpd protocol has changed.  To avoid "cannot
+  receive connection attributes" warnings and dropped connections,
+  execute the command "postfix reload".
+
+20120716:
   AFFECTS: Nobody
   AUTHOR: beat@FreeBSD.org
 
