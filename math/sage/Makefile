@@ -86,12 +86,9 @@ post-patch:
 
 # Apply the patches to the appropriate xz'ed tarballs contained in
 # ${WRKSRC}/spkg/standard.  The names of the patches are
-# spkg-${ORIGINAL_NAME_OF_TARBALL}_-_${NAME_OF_PATCH}.
+# spkg-${GENERIC_NAME_OF_TARBALL}_-_${NAME_OF_PATCH}.
 # The actual name of the tarball will be deduced from the second line of the
 # patch.
-# ORIGINAL_NAME_OF_TARBALL is there for historical reasons (because renaming
-# the patch will ruin the CVS history).  It might be renamed to
-# GENERIC_NAME_OF_TARBALL when ports moves to SVN.
 
 	@${MKDIR} ${WRKSRC}/tmp
 	@${RM} -rf ${WRKSRC}/tmp/*
