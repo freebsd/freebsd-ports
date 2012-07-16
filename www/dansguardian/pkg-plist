@@ -287,13 +287,6 @@ etc/dansguardian/downloadmanagers/fancy.conf
 %%CLISCANCONF%%etc/dansguardian/contentscanners/commandlinescan.conf
 etc/dansguardian/dansguardian.conf
 etc/dansguardian/dansguardianf1.conf
-%%PORTDOCS%%%%DOCSDIR%%/AuthPlugins
-%%PORTDOCS%%%%DOCSDIR%%/ContentScanners
-%%PORTDOCS%%%%DOCSDIR%%/DownloadManagers
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/FAQ.html
-%%PORTDOCS%%%%DOCSDIR%%/Plugins
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/languages/arspanish
 @dirrm %%DATADIR%%/languages/bulgarian
