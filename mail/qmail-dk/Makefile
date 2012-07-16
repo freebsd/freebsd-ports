@@ -17,7 +17,7 @@ DIST_SUBDIR=	qmail
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	DomainKeys implementation for qmail
 
-LIB_DEPENDS+=	domainkeys.3:${PORTSDIR}/mail/libdomainkeys
+LIB_DEPENDS+=	domainkeys:${PORTSDIR}/mail/libdomainkeys
 
 PATCH_SITES=	${MASTER_SITE_QMAIL}
 PATCHFILES=	qmail-1.03-dk-0.54.patch
@@ -32,11 +32,14 @@ MAN8=		qmail-dk.8
 ALL_TARGET=	qmail-dk ${MAN8}
 CFLAGS+=	-I${LOCALBASE}/include
 
-OPTIONS=	SMTP_AUTH "Support SMTP_AUTH" On
+OPTIONS_DEFINE=	SMTP_AUTH
+OPTIONS_DEFAULT=SMTP_AUTH
+
+SMTP_AUTH_DESC=	Support SMTP_AUTH
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_SMTP_AUTH)
+.if ${PORT_OPTIONS:MSMTP_AUTH}
 PATCH_SITES+=	http://jeremy.kister.net/code/:auth
 PATCHFILES+=	qmail-dk-0.54-auth.patch:auth
 .endif
