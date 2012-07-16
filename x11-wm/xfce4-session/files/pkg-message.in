@@ -15,3 +15,12 @@ Action=org.freedesktop.consolekit.system.stop
 ResultAny=yes
 ResultInactive=yes
 ResultActive=yes
+
+For those who have working suspend/resume:
+
+[Suspend]
+Identity=unix-group:PUTYOURGROUPHERE
+Action=org.freedesktop.upower.suspend
+ResultAny=yes
+ResultInactive=yes
+ResultActive=yes
