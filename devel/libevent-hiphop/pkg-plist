@@ -1,0 +1,16 @@
+%%HIPHOP_DIR%%/ext/include/event-config.h
+%%HIPHOP_DIR%%/ext/include/event.h
+%%HIPHOP_DIR%%/ext/include/evhttp.h
+%%HIPHOP_DIR%%/ext/include/evdns.h
+%%HIPHOP_DIR%%/ext/include/evrpc.h
+%%HIPHOP_DIR%%/ext/include/evutil.h
+%%HIPHOP_DIR%%/ext/lib/libevent_core.a
+%%HIPHOP_DIR%%/ext/lib/libevent_core.la
+%%HIPHOP_DIR%%/ext/lib/libevent_extra.a
+%%HIPHOP_DIR%%/ext/lib/libevent_extra.la
+%%HIPHOP_DIR%%/ext/lib/libevent.a
+%%HIPHOP_DIR%%/ext/lib/libevent.la
+@dirrmtry %%HIPHOP_DIR%%/ext/lib
+@dirrmtry %%HIPHOP_DIR%%/ext/include
+@dirrmtry %%HIPHOP_DIR%%/ext
+@dirrmtry %%HIPHOP_DIR%%
