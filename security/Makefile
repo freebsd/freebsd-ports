@@ -223,6 +223,7 @@
     SUBDIR += ipfwcount
     SUBDIR += ipguard
     SUBDIR += ipsec-tools
+    SUBDIR += ipv6toolkit
     SUBDIR += isakmpd
     SUBDIR += isnprober
     SUBDIR += its4

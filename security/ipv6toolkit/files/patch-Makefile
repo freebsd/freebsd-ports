@@ -1,0 +1,11 @@
+--- /dev/null	2012-07-17 03:01:43.000000000 +0900
++++ Makefile	2012-07-17 03:02:23.000000000 +0900
+@@ -0,0 +1,8 @@
++# $FreeBSD$
++
++SUBDIR=	tools
++.if defined(WITH_DOCS)
++SUBDIR+=	manuals
++.endif
++
++.include <bsd.subdir.mk>

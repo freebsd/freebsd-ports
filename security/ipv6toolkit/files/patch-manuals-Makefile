@@ -1,0 +1,21 @@
+--- /dev/null	2012-07-17 03:15:58.000000000 +0900
++++ manuals/Makefile	2012-07-17 03:16:10.000000000 +0900
+@@ -0,0 +1,18 @@
++# $FreeBSD$
++
++PREFIX?=	/usr/local
++FILESDIR?=	${DESTDIR}${PREFIX}/share/doc/ipv6toolkit
++MANDIR?=	${DESTDIR}${PREFIX}/man/man
++
++FILES=	flow6-manual.pdf frag6-manual.pdf icmp6-manual.pdf		\
++	jumbo6-manual.pdf na6-manual.pdf ni6-manual.pdf			\
++	ns6-manual.pdf ra6-manual.pdf rd6-manual.pdf rs6-manual.pdf	\
++	scan6-manual.pdf tcp6-manual.pdf
++
++NO_MANCOMPRESS=
++MAN=	scan6.1
++
++beforeinstall:
++	mkdir -p ${FILESDIR}
++
++.include <bsd.prog.mk>

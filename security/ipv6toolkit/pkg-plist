@@ -1,0 +1,13 @@
+@comment $FreeBSD$
+bin/flow6
+bin/frag6
+bin/icmp6
+bin/jumbo6
+bin/na6
+bin/ni6
+bin/ns6
+bin/ra6
+bin/rd6
+bin/rs6
+bin/scan6
+bin/tcp6
