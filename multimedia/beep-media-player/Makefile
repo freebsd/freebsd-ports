@@ -37,6 +37,8 @@ VISUALIZATION_PLUGINS=	blur_scope
 OPTIONS_DEFINE=	VORBIS ESOUND 3DNOW IPV6
 OTPIONS_DEFAULT=	VORBIS 3DNOW
 
+OPTIONS_EXCLUDE_i386=	3DNOW
+
 3DNOW_DESC=	3DNow! optimized decoding routines
 
 .include <bsd.port.options.mk>
@@ -74,7 +76,7 @@ CONFIGURE_ARGS+=	--disable-esd
 PLIST_SUB+=	ESDPLUGIN:="@comment "
 .endif
 
-.if ${PORT_OPTIONS:M3DNOW} && ${ARCH} != "i386"
+.if ${PORT_OPTIONS:M3DNOW}
 CONFIGURE_ARGS+=	--enable-3dnow
 .endif
 
