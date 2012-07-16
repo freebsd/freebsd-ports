@@ -63,6 +63,10 @@ LOGS_DIR=	/var/log/suricata
 BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
+.if ${CC} == "clang" || ${CXX} == "clang++"
+BROKEN=		Does not build when compiled with clang
+.endif
+
 .if ${PORT_OPTIONS:MPRELUDE}
 LIB_DEPENDS+=		prelude:${PORTSDIR}/security/libprelude
 CONFIGURE_ARGS+=	--enable-prelude \
