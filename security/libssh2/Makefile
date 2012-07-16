@@ -23,26 +23,29 @@ USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	GCRYPT "Use libgcrypt instead of OpenSSL" off \
-		TRACE "Enable debug packet traces" off \
-		ZLIB "Enable compression" on
+OPTIONS_DEFINE=	GCRYPT TRACE ZLIB
+OPTIONS_DEFAULT=	ZLIB
+
+GCRYPT_DESC=	Use libgcrypt instead of OpenSSL
+TRACE_DESC=	Enable debug packet traces
+ZLIB_DESC=	Enable compression
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_TRACE)
+.if ${PORT_OPTIONS:MTRACE}
 CONFIGURE_ARGS+=	--enable-debug
 .else
 CONFIGURE_ARGS+=	--disable-debug
 .endif
 
-.if defined(WITH_GCRYPT)
+.if ${PORT_OPTIONS:MGCRYPT}
 LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=	--with-libgcrypt -with-libgcrypt-prefix=${LOCALBASE} --without-openssl
-CFLAGS+=-I${LOCALBASE}/include
-LDFLAGS+=-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
-.if defined(WITH_ZLIB)
+.if ${PORT_OPTIONS:MZLIB}
 CONFIGURE_ARGS+=	--with-libz
 .else
 CONFIGURE_ARGS+=	--without-libz
