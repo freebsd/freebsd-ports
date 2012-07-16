@@ -13,11 +13,12 @@ MASTER_SITES=	http://monkey.org/~provos/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-stable
 
 MAINTAINER=	mm@FreeBSD.org
-COMMENT=	Provides an API to execute callback functions on certain events
+COMMENT?=	Provides an API to execute callback functions on certain events
 
 LICENSE=	BSD
 
 GNU_CONFIGURE=	yes
+.if !defined(_BUILDING_LIBEVENT_HIPHOP)
 USE_LDCONFIG=	yes
 
 MAN3=	event.3 \
@@ -86,6 +87,7 @@ MLINKS=	event.3 event_init.3 \
 	- evdns_search_ndots_set.3 \
 	- evdns_set_log_fn.3 \
 	- evdns_config_windows_nameservers.3
+.endif
 
 pre-configure:
 	@${MKDIR} ${WRKSRC}/m4
