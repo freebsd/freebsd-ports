@@ -23,7 +23,7 @@ AUTHOR: beat@FreeBSD.org
     in the "Committer's Guide" and the "Porter's Handbook".
 
     If you are in doubt or unsure about a Subversion operation
-    please contact portmgr@FreeBSD.org or beat@FreeBSD.org directly.
+    please contact ports@FreeBSD.org.
 
 20120529:
 AUTHOR: crees@FreeBSD.org
