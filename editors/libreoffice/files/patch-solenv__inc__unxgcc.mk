@@ -1,5 +1,5 @@
---- ./solenv/inc/unxgcc.mk.orig	2012-05-22 08:48:18.000000000 -0400
-+++ ./solenv/inc/unxgcc.mk	2012-07-10 18:28:23.000000000 -0400
+--- ./solenv/inc/unxgcc.mk.orig	2012-07-03 07:01:28.000000000 -0400
++++ ./solenv/inc/unxgcc.mk	2012-07-16 20:19:59.000000000 -0400
 @@ -78,7 +78,7 @@
  # flags for the C++ Compiler
  CFLAGSCC= -pipe $(ARCH_FLAGS)
@@ -15,10 +15,10 @@
  .IF "$(HAVE_CXX0X)" == "TRUE"
 -CFLAGSCXX+=-std=c++0x
 +CFLAGSCXX+=-std=gnu++0x
- .IF "$(GCCNUMVER)" <= "000400059999"
- CFLAGSCXX+=-Wno-deprecated-declarations
- .ENDIF
-@@ -136,8 +136,8 @@
+ CFLAGSCXX+=-Wno-deprecated-declarations -Wno-deprecated
+ .ENDIF # "$(HAVE_CXX0X)" == "TRUE"
+ 
+@@ -134,8 +134,8 @@
  # -Wshadow does not work for C with nested uses of pthread_cleanup_push:
  CFLAGSWARNBOTH=-Wall -Wextra -Wendif-labels
  CFLAGSWARNCC=$(CFLAGSWARNBOTH) -Wdeclaration-after-statement
