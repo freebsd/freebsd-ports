@@ -7,6 +7,7 @@
 
 PORTNAME=	pypy
 DISTVERSION=	1.9
+PORTREVISION=	1
 CATEGORIES=	lang python java
 MASTER_SITES=	https://bitbucket.org/pypy/pypy/get/
 DISTNAME=	release-${DISTVERSION}
@@ -202,6 +203,9 @@ post-extract:
 	${MKDIR} ${WRKSRC}/lib
 	${MV} ${WRKSRC}/lib-python/${PYTHON_IMPL_VER} ${WRKSRC}/${PYPY_LIBDIR}
 	${MV} ${WRKSRC}/lib_pypy ${WRKSRC}/${PYPY_LIBDIR}/
+
+post-patch:
+	${FIND} ${WRKSRC}/lib -name '*.orig' -delete
 
 do-configure:
 	${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \

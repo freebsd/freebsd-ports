@@ -1555,7 +1555,6 @@
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/locale.ctc.py
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/locale.ctc.pyc
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/rebuild.py
-%%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/rebuild.py.orig
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/rebuild.pyc
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/resource.ctc.py
 %%PYPY_LIBDIR%%/lib_pypy/ctypes_config_cache/resource.ctc.pyc
@@ -2384,7 +2383,6 @@
 %%PYPY_LIBDIR%%/shutil.pyc
 %%PYPY_LIBDIR%%/site-packages/README
 %%PYPY_LIBDIR%%/site.py
-%%PYPY_LIBDIR%%/site.py.orig
 %%PYPY_LIBDIR%%/site.pyc
 %%PYPY_LIBDIR%%/smtpd.py
 %%PYPY_LIBDIR%%/smtpd.pyc
