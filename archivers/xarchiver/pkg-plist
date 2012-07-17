@@ -39,10 +39,10 @@ share/applications/xarchiver.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog.png
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/xarchiver.css
-%%NLS%%share/icons/hicolor/16x16/apps/xarchiver.png
-%%NLS%%share/icons/hicolor/24x24/apps/xarchiver.png
-%%NLS%%share/icons/hicolor/48x48/apps/xarchiver.png
-%%NLS%%share/icons/hicolor/scalable/apps/xarchiver.svg
+share/icons/hicolor/16x16/apps/xarchiver.png
+share/icons/hicolor/24x24/apps/xarchiver.png
+share/icons/hicolor/48x48/apps/xarchiver.png
+share/icons/hicolor/scalable/apps/xarchiver.svg
 %%NLS%%share/locale/bg/LC_MESSAGES/xarchiver.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/xarchiver.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/xarchiver.mo
@@ -73,12 +73,9 @@ share/pixmaps/xarchiver/xarchiver-html.png
 %%NLS%%@dirrm share/locale/nb_NO/LC_MESSAGES
 %%NLS%%@dirrm share/locale/nb_NO
 @dirrm share/pixmaps/xarchiver
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/pixmaps/hicolor/48x48/apps
-@dirrmtry share/pixmaps/hicolor/24x24/apps
-@dirrmtry share/pixmaps/hicolor/16x16/apps
 @dirrmtry libexec/thunar-archive-plugin
-@dirrmtry share/applications
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
