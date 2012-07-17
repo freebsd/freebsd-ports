@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-settings
 PORTVERSION=	4.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DIST_SUBDIR=	xfce4
@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	--enable-pluggable-dialogs \
 		--enable-gio-unix
 
 OPTIONS_DEFINE=		XKLAVIER XCURSOR XRANDR NOTIFY NLS SOUND
-OPTIONS_DEFAULT=	XCURSOR XRANDR NOTIFY NLS SOUND
+OPTIONS_DEFAULT=	XKLAVIER XCURSOR XRANDR NOTIFY NLS
 SOUND_DESC=		Enable sound control
 
 .include <bsd.port.options.mk>
@@ -85,7 +85,9 @@ CONFIGURE_ARGS+=--disable-sound-settings
 post-patch:
 	# until xfce4-icon-theme is back we rely on Tango
 	@${REINPLACE_CMD} -e 's|Rodent|Tango|g' \
-		${WRKSRC}/dialogs/appearance-settings/main.c \
+		${WRKSRC}/dialogs/appearance-settings/main.c
+	@${REINPLACE_CMD} -e 's|IconThemeName" type="empty|IconThemeName" type="string" value="Tango|; \
+		s|"ThemeName" type="empty|"ThemeName" type="string" value="Xfce|' \
 		${WRKSRC}/xfsettingsd/xsettings.xml
 	@${REINPLACE_CMD} -e 's|xkl_config_registry_load (settings->priv->xkl_registry)|xkl_config_registry_load (settings->priv->xkl_registry, FALSE)|g; \
 		s|xkl_engine_stop_listen (settings->priv->xkl_engine)|xkl_engine_stop_listen (settings->priv->xkl_engine, FALSE)|g' \
