@@ -1,0 +1,6 @@
+Yajl-tcl is a Tcl wrapper for the Yet Another JSON Library (YAJL).
+Although there is already a package in the tcllib library, huddle,
+that can generate JSON, the big advantage in using yajl-tcl is
+performance.
+
+WWW: https://github.com/flightaware/yajl-tcl
