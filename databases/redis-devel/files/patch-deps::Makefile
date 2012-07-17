@@ -1,0 +1,17 @@
+--- deps/Makefile.orig	2012-07-02 04:18:07.000000000 +0400
++++ deps/Makefile	2012-07-02 04:18:56.000000000 +0400
+@@ -58,12 +58,12 @@
+   LUA_CFLAGS= -D__C99FEATURES__=1
+ endif
+ 
+-LUA_CFLAGS+= -O2 -Wall -DLUA_ANSI $(CFLAGS)
++LUA_CFLAGS+= -Wall -DLUA_ANSI $(CFLAGS)
+ LUA_LDFLAGS+= $(LDFLAGS)
+ 
+ lua: .make-prerequisites
+ 	@printf '%b %b\n' $(MAKECOLOR)MAKE$(ENDCOLOR) $(BINCOLOR)$@$(ENDCOLOR)
+-	cd lua/src && $(MAKE) all CFLAGS="$(LUA_CFLAGS)" MYLDFLAGS="$(LUA_LDFLAGS)"
++	cd lua/src && $(MAKE) all CC="$(CC)" CFLAGS="$(LUA_CFLAGS)" MYLDFLAGS="$(LUA_LDFLAGS)"
+ 
+ .PHONY: lua
+ 
