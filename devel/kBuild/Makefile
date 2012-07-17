@@ -9,7 +9,9 @@ PORTNAME=	kBuild
 DISTVERSION=	${KBUILD_VERSION}-p2
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.netlabs.org/pub/kbuild/
+MASTER_SITES=	ftp://ftp.netlabs.org/pub/kbuild/ \
+		http://tmp.chruetertee.ch/ \
+		http://disasterarea.chruetertee.ch/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	gahr@FreeBSD.org

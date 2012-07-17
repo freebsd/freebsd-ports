@@ -9,7 +9,8 @@ PORTNAME=	kBuild
 DISTVERSION=	${KBUILD_VERSION}
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netlabs.org/pub/kbuild/ \
-		http://home.bluelife.at/ports/distfiles/
+		http://tmp.chruetertee.ch/ \
+		http://disasterarea.chruetertee.ch/
 PKGNAMESUFFIX=  -devel
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
