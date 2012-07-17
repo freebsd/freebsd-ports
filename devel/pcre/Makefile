@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pcre
-PORTVERSION=	8.30
-PORTREVISION=	2
+PORTVERSION=	8.31
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/programming/%SUBDIR%/ \
 		ftp://ftp.fu-berlin.de/unix/misc/%SUBDIR%/ \
@@ -20,8 +19,9 @@ COMMENT=	Perl Compatible Regular Expressions library
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-OPTIONS=	JIT "Enable Just-In-Time compiling support" on \
-		LIBEDIT "Link pcretest against libedit" off
+OPTIONS_DEFINE=		JIT
+OPTIONS_DEFAULT=	JIT
+JIT_DESC=		Enable Just-In-Time compiling support
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -32,25 +32,22 @@ CONFIGURE_ARGS=	--enable-utf --enable-unicode-properties \
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_LIBEDIT)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libedit
-CONFIGURE_ARGS+=	--enable-pcretest-libedit
-GNOME_MAKEFILEIN+=	Makefile.am
-USE_AUTOTOOLS+=	aclocal autoconf autoheader automake libtool libtoolize
-ACLOCAL_ARGS+=	#undefined
-.endif
-
-.if !defined(WITHOUT_JIT) && ${ARCH} != "sparc64"
+.if ${PORT_OPTIONS:MJIT} && ${ARCH} != "sparc64"
 CONFIGURE_ARGS+=	--enable-jit
 .else
 CONFIGURE_ARGS+=	--disable-jit
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 .endif
 
 .include <bsd.port.pre.mk>
+
+# For FreeBSD 8.x and above link pcretest against libedit
+.if ${OSVERSION} > 800000
+CONFIGURE_ARGS+=	--enable-pcretest-libedit
+.endif
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC
