@@ -41,7 +41,7 @@ CFLAGS+=	-DNO_CONFIGDATA -I${LOCALBASE}/include/inn
 MAKE_ENV+=	DB_TYPE="-DUSE_INN23 -DDO_TAGGED_HASH"
 MAKE_ENV+=	DB_LIB="-linn -lstorage"
 MAKE_ENV+=	DB_LIB_LOC=-L${LOCALBASE}/news/lib
-MAKE_ENV+=	DB_INC_LOC=-I${LOCALBASE}/news/include
+MAKE_ENV+=	DB_INC_LOC="-I${LOCALBASE}/news/include -I${LOCALBASE}/news/include/inn"
 MAKE_ENV+=	INCDIR2=-I${LOCALBASE}/include
 BUILD_DEPENDS+=	${LOCALBASE}/news/lib/libinn.a:${PORTSDIR}/news/inn
 CONFLICTS+=	suck-cnews-4.*
