@@ -24,7 +24,6 @@ WRKSRC=		${WRKDIR}/dovecot-antispam-plugin-43880985e3dd
 
 USE_AUTOTOOLS=	aclocal autoheader autoconf
 USE_BZIP2=	yes
-USE_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/dovecot
 
