@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120717:
+  AFFECTS: users of ftp/proftpd
+  AUTHOR: mm@FreeBSD.org
+
+  The options of ProFTPD have been made much more user-friendly.
+  As the modules are all shared libraries, all possible modules are built
+  and installed. The following modules are now in separate slave ports:
+
+  databases/proftpd-mod_sql_odbc: mod_sql_odbc
+  databases/proftpd-mod_sql_sqlite: mod_sql_sqlite
+  databases/proftpd-mod_sql_tds: mod_sql_tds
+  net/proftpd-mod_ldap: mod_ldap and mod_quotatab_ldap
+
 20120716:
   AFFECTS: users of www/lighttpd
   AUTHOR: mm@FreeBSD.org
