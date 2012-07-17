@@ -7,6 +7,7 @@
 
 PORTNAME=	sphinx
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,5 +26,11 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pygments>=1.2:${PORTSDIR}/textproc/py-pygme
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Sphinx
+
+PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
+
+post-install:
+	@${SETENV} PYTHONPATH=${PYTHONPREFIX_SITELIBDIR} \
+	${PYTHON_CMD} -m sphinx.pycode.pgen2.driver -c 'import load_grammar'
 
 .include <bsd.port.mk>
