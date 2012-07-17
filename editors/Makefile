@@ -120,9 +120,11 @@
     SUBDIR += libreoffice
     SUBDIR += libreoffice-af
     SUBDIR += libreoffice-as
+    SUBDIR += libreoffice-ast
     SUBDIR += libreoffice-be
     SUBDIR += libreoffice-bg
     SUBDIR += libreoffice-bn
+    SUBDIR += libreoffice-bo
     SUBDIR += libreoffice-br
     SUBDIR += libreoffice-brx
     SUBDIR += libreoffice-bs
@@ -155,9 +157,11 @@
     SUBDIR += libreoffice-ka
     SUBDIR += libreoffice-kk
     SUBDIR += libreoffice-km
+    SUBDIR += libreoffice-kn
     SUBDIR += libreoffice-kok
     SUBDIR += libreoffice-ks
     SUBDIR += libreoffice-ku
+    SUBDIR += libreoffice-lb
     SUBDIR += libreoffice-lo
     SUBDIR += libreoffice-lt
     SUBDIR += libreoffice-lv
@@ -200,6 +204,7 @@
     SUBDIR += libreoffice-tn
     SUBDIR += libreoffice-tr
     SUBDIR += libreoffice-ts
+    SUBDIR += libreoffice-ug
     SUBDIR += libreoffice-uz
     SUBDIR += libreoffice-ve
     SUBDIR += libreoffice-xh

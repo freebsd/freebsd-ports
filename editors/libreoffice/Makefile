@@ -7,7 +7,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	2
+PORTREVISION=	0
 
 MASTER_SITE_SUBDIR=	src/${PORTVERSION}/
 MASTER_SITES+=	http://dev-www.libreoffice.org/src/:ext \
@@ -209,14 +209,14 @@ MANCOMPRESSED=	yes
 #USE_GCC=	4.6+
 #DISTFILES+=	bd30e9cf5523cdfc019b94f5e1d7fd19-cppunit-1.12.1.tar.gz:ext
 #.else
-.if ${OSVERSION} >= 1000015 || defined(WITH_SYSTEM_CLANG)
-# XXX Clang PR13308 (http://llvm.org/bugs/show_bug.cgi?id=13308)
+.if exists(/usr/bin/clang)
 CC=	/usr/bin/clang
 CPP=	/usr/bin/clang-cpp
 CXX=	/usr/bin/clang++
 CXXCPP=	${CPP}
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang:${PORTSDIR}/lang/clang
+# XXX Clang PR13308 (http://llvm.org/bugs/show_bug.cgi?id=13308)
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang>=3.2:${PORTSDIR}/lang/clang-devel
 USE_BINUTILS=	yes
 CC=	${LOCALBASE}/bin/clang
 CPP=	${CC} -E
@@ -421,19 +421,19 @@ post-install:
 .for subdir in applications icons mime mimelnk
 	@cd ${LODESTDIR}/${PREFIX} && ${FIND}  -H -s share/${subdir} \( -type f -o -type l \) -print >> ${PLISTF}
 	@cd ${LODESTDIR}/${PREFIX}/ && ${FIND} -d share/${subdir} -type d \
-		-exec ${ECHO_CMD} "@unexec ${RMDIR} %D/{}  2>/dev/null || ${TRUE}" \; >> ${PLISTD}
+		-exec ${ECHO_CMD} "@unexec ${RMDIR} %D/{} 2>/dev/null || ${TRUE}" \; >> ${PLISTD}
 .endfor
 # do not add the subdir itself as dirrmtry
 .for subdir in application-registry mime-info
 	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -H -s share/${subdir} \( -type f -o -type l \) -print >> ${PLISTF}
 	@cd ${LODESTDIR}/${PREFIX}/ && ${FIND} -d share/${subdir}/* -type d \
-		-exec ${ECHO_CMD} "@unexec ${RMDIR} %D/{}  2>/dev/null || ${TRUE}" \; >> ${PLISTD}
+		-exec ${ECHO_CMD} "@unexec ${RMDIR} %D/{} 2>/dev/null || ${TRUE}" \; >> ${PLISTD}
 .endfor
 	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -H -s bin \( -type f -o -type l \) -print >> ${PLISTF}
 
 .if ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGNOME} || ${PORT_OPTIONS:MGTK3}
-	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/update-desktop-database >/dev/null || ${TRUE}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${LOCALBASE}/bin/update-desktop-database >/dev/null || ${TRUE}" >> ${TMPPLIST}
 .endif
 
 .if ${PORT_OPTIONS:MSDK}
