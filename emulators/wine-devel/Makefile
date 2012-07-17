@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wine
-DISTVERSION=	1.5.8
+DISTVERSION=	1.5.9
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -20,10 +20,10 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
-LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		lcms.1:${PORTSDIR}/graphics/lcms \
+LIB_DEPENDS=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
+		freetype:${PORTSDIR}/print/freetype2 \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		lcms:${PORTSDIR}/graphics/lcms \
 		png15:${PORTSDIR}/graphics/png \
 		xml2:${PORTSDIR}/textproc/libxml2
 
@@ -74,7 +74,7 @@ PORTDATA=	fonts/ generic.ppd l_intl.nls wine.inf
 
 .if ${PORT_OPTIONS:MCUPS}
 CONFIGURE_ARGS+=	--with-cups
-LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
+LIB_DEPENDS+=	cups:${PORTSDIR}/print/cups-client
 .else
 CONFIGURE_ARGS+=	--without-cups
 .endif
@@ -85,14 +85,14 @@ RUN_DEPENDS+=	dosbox:${PORTSDIR}/emulators/dosbox
 
 .if ${PORT_OPTIONS:MGNU_TLS}
 CONFIGURE_ARGS+=	--with-gnutls
-LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--without-gnutls
 .endif
 
 .if ${PORT_OPTIONS:MHAL}
 CONFIGURE_ARGS+=	--with-hal
-LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
+LIB_DEPENDS+=	hal:${PORTSDIR}/sysutils/hal
 .else
 CONFIGURE_ARGS+=	--without-hal
 .endif
@@ -106,7 +106,7 @@ CONFIGURE_ARGS+=	--without-ldap
 
 .if ${PORT_OPTIONS:MLIBXSLT}
 CONFIGURE_ARGS+=	--with-xslt
-LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
+LIB_DEPENDS+=	xslt:${PORTSDIR}/textproc/libxslt
 .else
 CONFIGURE_ARGS+=	--without-xslt
 .endif
