@@ -7,7 +7,7 @@
 
 PORTNAME=	xarchiver
 PORTVERSION=	0.5.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	archivers
 MASTER_SITES=	SF
 
@@ -18,13 +18,13 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	glib20 gtk20 intltool pkgconfig
+USE_GNOME=	glib20 gtk20 intltool pkgconfig desktopfileutils
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NLS)
+.if !empty(PORT_OPTIONS:MNLS)
 USE_GETTEXT=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -34,11 +34,16 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|;multipart/x-zip||' \
+		${WRKSRC}/xarchiver.desktop.in
 .if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e 's|doc||g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|doc||g' ${WRKSRC}/Makefile.in
 .endif
-.if defined(WITHOUT_NLS)
-	${REINPLACE_CMD} -e 's| po | |g' ${WRKSRC}/Makefile.in
+.if empty(PORT_OPTIONS:MNLS)
+	@${REINPLACE_CMD} -e 's| po | |g' ${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+post-install:
+	@-update-desktop-database
+
+.include <bsd.port.mk>
