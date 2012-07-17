@@ -7,6 +7,7 @@
 
 PORTNAME=	nsd
 PORTVERSION=	3.2.11
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
@@ -70,7 +71,7 @@ MAXIPS_DESC=		Raise max-ips from 8 to ${NSDMAX_IPS}
 CONFIGURE_ARGS+=	--enable-root-server
 .endif
 
-.if empty(PORT_OPTIONS:MLARGFILE)
+.if empty(PORT_OPTIONS:MLARGEFILE)
 CONFIGURE_ARGS+=	--disable-largefile
 .endif
 
