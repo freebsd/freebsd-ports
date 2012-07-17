@@ -9,7 +9,7 @@ PORTNAME=	bzr
 PORTVERSION=	20110228
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://home.tiscali.cz/~cz210552/bsdports/tarballs/
+MASTER_SITES=	http://schema.filez.com/distfiles/
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
@@ -21,7 +21,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac bzr:${PORTSDIR}/devel/bzr
 
-USE_PYTHON=		2.5+
+USE_PYTHON=		-2.7
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_NOEGGINFO=	yes
 
