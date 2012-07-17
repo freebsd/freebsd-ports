@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	bzr-explorer
-PORTVERSION=	1.2.2
-PORTREVISION=	2
+PORTVERSION=	1.3.0
 CATEGORIES=	devel
-MASTER_SITES=	https://launchpadlibrarian.net/93535508/ \
+MASTER_SITES=	https://launchpadlibrarian.net/109861791/ \
 		http://www.c-s.li/ports/
 
 MAINTAINER=	cs@FreeBSD.org
