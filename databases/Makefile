@@ -667,6 +667,7 @@
     SUBDIR += proftpd-mod_sql_mysql
     SUBDIR += proftpd-mod_sql_odbc
     SUBDIR += proftpd-mod_sql_postgres
+    SUBDIR += proftpd-mod_sql_sqlite
     SUBDIR += pure-sql3
     SUBDIR += puredb
     SUBDIR += pxlib
