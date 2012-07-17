@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freecode-submit
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	misc
 MASTER_SITES=	http://www.catb.org/~esr/freecode-submit/ \
 		http://www.c-s.li/ports/
