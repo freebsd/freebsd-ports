@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nsd
-PORTVERSION=	3.2.10
+PORTVERSION=	3.2.11
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
@@ -49,68 +49,67 @@ PORTDOCS=	CREDITS ChangeLog LICENSE NSD-DATABASE NSD-DIFFFILE \
 		REQUIREMENTS TESTPLAN TODO UPGRADING coding-style \
 		differences.tex
 
-OPTIONS=	ROOT_SERVER	"Configure NSD as a root server" Off \
-		LARGEFILE	"Enable support for large files" On \
-		IPV6		"Enable IPv6 support" On \
-		BIND8_STATS	"Enable BIND8 like NSTATS & XSTATS" Off \
-		CHECKING	"Enable internal runtime checks" Off \
-		NSEC3		"Enable NSEC3 support" On \
-		MINRESPSIZE	"Enable minimized response size" On \
-		NSEC3PREHASH	"Enable full NSEC3 prehashing" On \
-		MMAP		"Use mmap instead of malloc(experimental)" Off \
-		MAXIPS		"Raise max-ips from 8 to ${NSDMAX_IPS}" Off
+OPTIONS_DEFINE=	ROOT_SERVER LARGEFILE IPV6 BIND8_STATS ZONE_STATS CHECKING \
+		MINRESPSIZE NSEC3 NSEC3PREHASH MMAP MAXIPS DOCS 
+OPTIONS_DEFAULT=	LARGEFILE IPV6 NSEC3 NSEC3PREHASH MINRESPSIZE
 
-.include <bsd.port.pre.mk>
+ROOT_SERVER_DESC=	Configure as a root server
+LARGEFILE_DESC=		Largefile support
+BIND8_STATS_DESC=	BIND8-like NSTATS & XSTATS
+ZONE_STATS_DESC=	Per-zone BIND8 stats
+CHECKING_DESC=		Internal run-time checks
+NSEC3_DESC=		NSEC3 support
+NSEC3PREHASH_DESC=	Full NSEC3 pre-hashing
+MINRESPSIZE_DESC=	Minimial response sizing
+MMAP_DESC=		Use mmap instead of malloc (experimental)
+MAXIPS_DESC=		Raise max-ips from 8 to ${NSDMAX_IPS}
 
-.if defined(WITH_ROOT_SERVER)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MROOT_SERVER}
 CONFIGURE_ARGS+=	--enable-root-server
 .endif
 
-.if defined(WITHOUT_LARGEFILE)
+.if empty(PORT_OPTIONS:MLARGFILE)
 CONFIGURE_ARGS+=	--disable-largefile
 .endif
 
-.if defined(WITHOUT_IPV6)
+.if empty(PORT_OPTIONS:MIPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-.if defined(WITHOUT_DNSSEC)
-CONFIGURE_ARGS+=	--disable-dnssec
-.endif
-
-.if defined(WITH_BIND8_STATS)
+.if ${PORT_OPTIONS:MBIND8_STATS}
 CONFIGURE_ARGS+=	--enable-bind8-stats
 .endif
 
-.if defined(WITH_CHECKING)
+.if ${PORT_OPTIONS:MZONE_STATS}
+.	if empty(PORT_OPTIONS:MBIND8_STATS)
+CONFIGURE_ARGS+=	--enable-bind8-stats
+.	endif
+CONFIGURE_ARGS+=	--enable-zone-stats
+.endif
+
+.if ${PORT_OPTIONS:MCHECKING}
 CONFIGURE_ARGS+=	--enable-checking
 .endif
 
-.if defined(WITHOUT_TSIG)
-CONFIGURE_ARGS+=	--disable-tsig
-.endif
-
-.if defined(WITHOUT_NSEC3)
+.if empty(PORT_OPTIONS:MNSEC3)
 CONFIGURE_ARGS+=	--disable-nsec3
 .endif
 
-.if defined(WITHOUT_MINRESPSIZE)
+.if empty(PORT_OPTIONS:MMINRESPSIZE)
 CONFIGURE_ARGS+=	--disable-minimal-responses
 .endif
 
-.if defined(WITHOUT_NSEC3PREHASH)
-CONFIGURE_ARGS+=	--disable-disable-full-prehash
+.if empty(PORT_OPTIONS:MNSEC3PREHASH)
+CONFIGURE_ARGS+=	--disable-full-prehash
 .endif
 
-.if defined(WITHOUT_NSID)
-CONFIGURE_ARGS+=	--disable-nsid
-.endif
-
-.if defined(WITH_MMAP)
+.if ${PORT_OPTIONS:MMMAP}
 CONFIGURE_ARGS+=	--enable-mmap
 .endif
 
-.if defined(WITH_MAXIPS)
+.if ${PORT_OPTIONS:MMAXIPS)
 CONFIGURE_ARGS+=	--with-max-ips=${NSDMAX_IPS}
 .endif
 
@@ -132,7 +131,7 @@ pre-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/nsd.conf.sample \
 		${PREFIX}/etc/nsd/nsd.conf.sample
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}/${f}
@@ -141,4 +140,4 @@ post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
