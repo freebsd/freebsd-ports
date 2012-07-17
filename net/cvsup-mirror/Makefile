@@ -11,7 +11,7 @@ PORTREVISION=	8
 CATEGORIES=	net
 DISTFILES=
 
-MAINTAINER=	wxs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A kit for easily setting up a FreeBSD mirror site using CVSup
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/cvsupd:${PORTSDIR}/net/cvsup-without-gui
