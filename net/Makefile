@@ -860,6 +860,7 @@
     SUBDIR += pppload
     SUBDIR += pppoa
     SUBDIR += pptpclient
+    SUBDIR += proftpd-mod_ldap
     SUBDIR += prosearch
     SUBDIR += proxy-connect
     SUBDIR += proxy-suite
