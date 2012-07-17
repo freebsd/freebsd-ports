@@ -1,7 +1,6 @@
 bin/l2t_process
 bin/log2timeline
 bin/timescanner
-bin/update_log2timeline
 %%SITE_PERL%%/Log2Timeline.pm
 %%SITE_PERL%%/Log2t/BinRead.pm
 %%SITE_PERL%%/Log2t/Common.pm
@@ -34,6 +33,8 @@ bin/update_log2timeline
 %%SITE_PERL%%/Log2t/input/jp_ntfs_change.pm
 %%SITE_PERL%%/Log2t/input/l2t_csv.pm
 %%SITE_PERL%%/Log2t/input/linux.lst
+%%SITE_PERL%%/Log2t/input/ls_quarantine.pm
+%%SITE_PERL%%/Log2t/input/macosx.lst
 %%SITE_PERL%%/Log2t/input/mactime.pm
 %%SITE_PERL%%/Log2t/input/mcafee.pm
 %%SITE_PERL%%/Log2t/input/mcafeefireup.pm
@@ -79,67 +80,85 @@ bin/update_log2timeline
 %%SITE_PERL%%/Log2t/output/csv.pm
 %%SITE_PERL%%/Log2t/output/mactime.pm
 %%SITE_PERL%%/Log2t/output/mactime_l.pm
+%%SITE_PERL%%/Log2t/output/serialize.pm
 %%SITE_PERL%%/Log2t/output/simile.pm
 %%SITE_PERL%%/Log2t/output/sqlite.pm
 %%SITE_PERL%%/Log2t/output/tab.pm
 %%SITE_PERL%%/Log2t/output/tln.pm
 %%SITE_PERL%%/Log2t/output/tlnx.pm
-%%SITE_PERL%%/Parse/Evtx.pm
-%%SITE_PERL%%/Parse/Evtx/BXmlNode.pm
-%%SITE_PERL%%/Parse/Evtx/BXmlNode/NameString.pm
-%%SITE_PERL%%/Parse/Evtx/BXmlNode/Node0x00.pm
-%%SITE_PERL%%/Parse/Evtx/BXmlNode/Node0x01.pm
-%%SITE_PERL%%/Parse/Evtx/BXmlNode/Node0x02.pm
-%%SITE_PERL%%/Parse/Evtx/BXmlNode/Node0x03.pm
-%%SITE_PERL%%/Parse/Evtx/BXmlNode/Node0x04.pm
-%%SITE_PERL%%/Parse/Evtx/BXmlNode/Node0x05.pm
-%%SITE_PERL%%/Parse/Evtx/BXmlNode/Node0x06.pm
-%%SITE_PERL%%/Parse/Evtx/BXmlNode/Node0x0c.pm
-%%SITE_PERL%%/Parse/Evtx/BXmlNode/Node0x0d.pm
-%%SITE_PERL%%/Parse/Evtx/BXmlNode/Node0x0e.pm
-%%SITE_PERL%%/Parse/Evtx/BXmlNode/Node0x0f.pm
-%%SITE_PERL%%/Parse/Evtx/BXmlNode/Root.pm
-%%SITE_PERL%%/Parse/Evtx/BXmlNode/SubstArray.pm
-%%SITE_PERL%%/Parse/Evtx/BXmlNode/Template.pm
-%%SITE_PERL%%/Parse/Evtx/Chunk.pm
-%%SITE_PERL%%/Parse/Evtx/Const.pm
-%%SITE_PERL%%/Parse/Evtx/Event.pm
-%%SITE_PERL%%/Parse/Evtx/VariantType.pm
-%%SITE_PERL%%/Parse/Evtx/VariantType/Type0x00.pm
-%%SITE_PERL%%/Parse/Evtx/VariantType/Type0x01.pm
-%%SITE_PERL%%/Parse/Evtx/VariantType/Type0x02.pm
-%%SITE_PERL%%/Parse/Evtx/VariantType/Type0x03.pm
-%%SITE_PERL%%/Parse/Evtx/VariantType/Type0x04.pm
-%%SITE_PERL%%/Parse/Evtx/VariantType/Type0x05.pm
-%%SITE_PERL%%/Parse/Evtx/VariantType/Type0x06.pm
-%%SITE_PERL%%/Parse/Evtx/VariantType/Type0x07.pm
-%%SITE_PERL%%/Parse/Evtx/VariantType/Type0x08.pm
-%%SITE_PERL%%/Parse/Evtx/VariantType/Type0x09.pm
-%%SITE_PERL%%/Parse/Evtx/VariantType/Type0x0a.pm
-%%SITE_PERL%%/Parse/Evtx/VariantType/Type0x0b.pm
-%%SITE_PERL%%/Parse/Evtx/VariantType/Type0x0c.pm
-%%SITE_PERL%%/Parse/Evtx/VariantType/Type0x0d.pm
-%%SITE_PERL%%/Parse/Evtx/VariantType/Type0x0e.pm
-%%SITE_PERL%%/Parse/Evtx/VariantType/Type0x0f.pm
-%%SITE_PERL%%/Parse/Evtx/VariantType/Type0x10.pm
-%%SITE_PERL%%/Parse/Evtx/VariantType/Type0x11.pm
-%%SITE_PERL%%/Parse/Evtx/VariantType/Type0x12.pm
-%%SITE_PERL%%/Parse/Evtx/VariantType/Type0x13.pm
-%%SITE_PERL%%/Parse/Evtx/VariantType/Type0x14.pm
-%%SITE_PERL%%/Parse/Evtx/VariantType/Type0x15.pm
-%%SITE_PERL%%/Parse/Evtx/VariantType/Type0x21.pm
-%%SITE_PERL%%/Parse/Evtx/VariantType/Type0x81.pm
-%%SITE_PERL%%/Parse/Evtx/VariantType/Type0x94.pm
-%%SITE_PERL%%/Parse/Evtx/VariantType/Type0x95.pm
+%%SITE_PERL%%/Parse/Evtx2.pm
+%%SITE_PERL%%/Parse/Evtx2/BXmlNode.pm
+%%SITE_PERL%%/Parse/Evtx2/BXmlNode/NameString.pm
+%%SITE_PERL%%/Parse/Evtx2/BXmlNode/Node0x00.pm
+%%SITE_PERL%%/Parse/Evtx2/BXmlNode/Node0x01.pm
+%%SITE_PERL%%/Parse/Evtx2/BXmlNode/Node0x02.pm
+%%SITE_PERL%%/Parse/Evtx2/BXmlNode/Node0x03.pm
+%%SITE_PERL%%/Parse/Evtx2/BXmlNode/Node0x04.pm
+%%SITE_PERL%%/Parse/Evtx2/BXmlNode/Node0x05.pm
+%%SITE_PERL%%/Parse/Evtx2/BXmlNode/Node0x06.pm
+%%SITE_PERL%%/Parse/Evtx2/BXmlNode/Node0x07.pm
+%%SITE_PERL%%/Parse/Evtx2/BXmlNode/Node0x09.pm
+%%SITE_PERL%%/Parse/Evtx2/BXmlNode/Node0x0a.pm
+%%SITE_PERL%%/Parse/Evtx2/BXmlNode/Node0x0b.pm
+%%SITE_PERL%%/Parse/Evtx2/BXmlNode/Node0x0c.pm
+%%SITE_PERL%%/Parse/Evtx2/BXmlNode/Node0x0d.pm
+%%SITE_PERL%%/Parse/Evtx2/BXmlNode/Node0x0e.pm
+%%SITE_PERL%%/Parse/Evtx2/BXmlNode/Node0x0f.pm
+%%SITE_PERL%%/Parse/Evtx2/BXmlNode/Root.pm
+%%SITE_PERL%%/Parse/Evtx2/BXmlNode/SubstArray.pm
+%%SITE_PERL%%/Parse/Evtx2/BXmlNode/Template.pm
+%%SITE_PERL%%/Parse/Evtx2/Chunk.pm
+%%SITE_PERL%%/Parse/Evtx2/Const.pm
+%%SITE_PERL%%/Parse/Evtx2/Event.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x00.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x01.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x02.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x03.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x04.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x05.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x06.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x07.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x08.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x09.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x0a.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x0b.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x0c.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x0d.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x0e.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x0f.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x10.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x11.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x12.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x13.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x14.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x15.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x21.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x81.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x83.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x84.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x85.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x86.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x87.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x88.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x89.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x8a.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x8b.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x8c.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x8f.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x91.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x92.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x94.pm
+%%SITE_PERL%%/Parse/Evtx2/VariantType/Type0x95.pm
 %%SITE_PERL%%/mach/auto/Log2t/.packlist
 @dirrm %%SITE_PERL%%/Log2t/PreProc
 @dirrm %%SITE_PERL%%/Log2t/base
 @dirrm %%SITE_PERL%%/Log2t/input
 @dirrm %%SITE_PERL%%/Log2t/output
 @dirrm %%SITE_PERL%%/Log2t
-@dirrm %%SITE_PERL%%/Parse/Evtx/BXmlNode
-@dirrm %%SITE_PERL%%/Parse/Evtx/VariantType
-@dirrm %%SITE_PERL%%/Parse/Evtx
+@dirrm %%SITE_PERL%%/Parse/Evtx2/BXmlNode
+@dirrm %%SITE_PERL%%/Parse/Evtx2/VariantType
+@dirrm %%SITE_PERL%%/Parse/Evtx2
 @dirrm %%SITE_PERL%%/mach/auto/Log2t
 @dirrmtry %%SITE_PERL%%/Parse
 @dirrmtry %%SITE_PERL%%/mach/auto/Parse/Win32Registry
