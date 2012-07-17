@@ -21,7 +21,9 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PORTDOCS=	README UserGuide.pdf
 
-.if !exists(/usr/include/netinet6/send.h)
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 900042
 IGNORE=		is supported only on 9.0 and later
 .endif
 
@@ -42,4 +44,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
