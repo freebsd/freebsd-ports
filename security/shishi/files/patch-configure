@@ -1,0 +1,59 @@
+The upstream configuration is not able to properly detect                       
+the use of "resolv.h" and res_query() on BSD systems.                           
+As a consequence of this the built library libshishi.so                         
+is not able to question a DNS server for SRV resources.
+
+http://lists.gnu.org/archive/html/help-shishi/2012-07/msg00001.html
+
+--- configure.bak	2012-07-17 17:41:29.000000000 +0200
++++ configure	2012-07-17 17:48:44.000000000 +0200
+@@ -6688,10 +6688,11 @@
+ 
+ fi
+ 
+-for ac_header in termios.h pwd.h syslog.h resolv.h arpa/nameser.h netinet/in6.h
++for ac_header in termios.h pwd.h syslog.h arpa/nameser.h netinet/in6.h
+ do :
+   as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
+-ac_fn_c_check_header_mongrel "$LINENO" "$ac_header" "$as_ac_Header" "$ac_includes_default"
++ac_fn_c_check_header_mongrel "$LINENO" "$ac_header" "$as_ac_Header" "$ac_includes_default
++"
+ if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
+   cat >>confdefs.h <<_ACEOF
+ #define `$as_echo "HAVE_$ac_header" | $as_tr_cpp` 1
+@@ -6701,6 +6702,15 @@
+ 
+ done
+ 
++# Check for resolv.h
++ac_fn_c_check_header_mongrel "$LINENO" "resolv.h" "as_ac_resolv_h" "$ac_includes_default
++#include <sys/types.h>
++#include <netinet/in.h>"
++if test "x$as_ac_resolv_h" = x"yes"; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_RESOLV_H 1
++_ACEOF
++fi
+ 
+ # Used when creating libshishi-XX.def.
+ SOVERSION=`expr ${LT_CURRENT} - ${LT_AGE}`
+@@ -33526,7 +33536,7 @@
+ fi
+ 
+ # Checks for library functions.
+-for ac_func in signal select ngettext gethostbyname getpwnam getuid
++for ac_func in signal select ngettext gethostbyname getpwnam getuid res_query
+ do :
+   as_ac_var=`$as_echo "ac_cv_func_$ac_func" | $as_tr_sh`
+ ac_fn_c_check_func "$LINENO" "$ac_func" "$as_ac_var"
+--- lib/resolv.c.bak	2012-02-08 13:17:44.000000000 +0100
++++ lib/resolv.c	2012-07-17 17:41:29.000000000 +0200
+@@ -30,7 +30,7 @@
+ 
+ #include "internal.h"
+ 
+-#ifdef HAVE_LIBRESOLV
++#ifdef HAVE_RES_QUERY
+ 
+ /* the largest packet we'll send and receive */
+ #if PACKETSZ > 1024

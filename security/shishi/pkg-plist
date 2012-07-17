@@ -35,4 +35,4 @@ libdata/pkgconfig/shishi.pc
 @dirrmtry etc/shishi
 @dirrmtry lib/security
 @exec mkdir -m 0700 -p /var/shishi
-@dirrmtry /var/shishi
+@unexec rmdir /var/shishi 2>/dev/null || true
