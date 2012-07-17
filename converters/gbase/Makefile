@@ -9,10 +9,12 @@ PORTNAME=	gbase
 PORTVERSION=	0.5
 PORTREVISION=	6
 CATEGORIES=	converters
-MASTER_SITES=	http://www.fluxcode.net/
+MASTER_SITES=	http://www.fluxcode.net/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to convert between the 4 common bases used in programming
+
+LICENSE=	ART10
 
 OPTIONS_DEFINE=	GTK2
 
