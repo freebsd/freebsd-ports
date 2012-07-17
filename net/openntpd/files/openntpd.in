@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: openntpd
-# REQUIRE: DAEMON
+# REQUIRE: DAEMON ntpdate
 # BEFORE:  LOGIN
 # KEYWORD: nojail shutdown
 #
