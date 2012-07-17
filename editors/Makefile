@@ -204,6 +204,7 @@
     SUBDIR += libreoffice-tn
     SUBDIR += libreoffice-tr
     SUBDIR += libreoffice-ts
+    SUBDIR += libreoffice-tt
     SUBDIR += libreoffice-ug
     SUBDIR += libreoffice-uz
     SUBDIR += libreoffice-ve
