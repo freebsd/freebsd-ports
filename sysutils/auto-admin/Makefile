@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	auto-admin
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
-		http://acadix.biz/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
+		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Tools for automating system management
@@ -17,11 +17,16 @@ COMMENT=	Tools for automating system management
 NO_BUILD=	yes
 
 MAN1=		auto-admin.1 \
+		auto-amd-nfs-setup.1 \
+		auto-amd-local-setup.1 \
 		auto-append-line.1 \
 		auto-ask.1 \
 		auto-clean-ports.1 \
 		auto-disable-service.1 \
+		auto-enable-compat32.1 \
+		auto-enable-passwdqc.1 \
 		auto-enable-service.1 \
+		auto-set-suspend-on-lid.1 \
 		auto-fastest-mirror.1 \
 		auto-install-packages.1 \
 		auto-ipfw-gateway-setup.1 \
