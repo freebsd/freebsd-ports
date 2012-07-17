@@ -160,6 +160,7 @@
     SUBDIR += lua50
     SUBDIR += luajit
     SUBDIR += lush
+    SUBDIR += malbolge
     SUBDIR += maude
     SUBDIR += mawk
     SUBDIR += mdk
