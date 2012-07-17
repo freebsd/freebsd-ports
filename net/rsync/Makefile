@@ -7,6 +7,7 @@
 
 PORTNAME=	rsync
 PORTVERSION=	3.0.9
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
 		ftp://ftp.samba.org/pub/%SUBDIR%/ \
@@ -90,7 +91,8 @@ EXTRA_PATCHES+=	${WRKSRC}/patches/fileflags.diff
 
 .if defined(WITH_RENAMED)
 PATCH_STRIP=	-p1
-EXTRA_PATCHES+=	${WRKSRC}/patches/detect-renamed.diff
+#EXTRA_PATCHES+=	${WRKSRC}/patches/detect-renamed.diff
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-detect-renamed.diff
 .endif
 
 .if defined(WITH_ACL)
