@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2012-07-10 17:36:55.865075371 +0100
++++ src/Makefile.in	2012-07-10 17:37:10.624820391 +0100
+@@ -575,7 +575,7 @@
+ @HAVE_INTROSPECTION_TRUE@    ibusenumtypes.h             \
+ @HAVE_INTROSPECTION_TRUE@    $(NULL)
+ 
+-@HAVE_INTROSPECTION_TRUE@IBus_1_0_gir_SCANNERFLAGS = --pkg=ibus-1.0 $(IBUS_GIR_SCANNERFLAGS)
++@HAVE_INTROSPECTION_TRUE@IBus_1_0_gir_SCANNERFLAGS = --pkg-export=ibus-1.0 $(IBUS_GIR_SCANNERFLAGS)
+ @HAVE_INTROSPECTION_TRUE@IBus_1_0_gir_INCLUDES = GLib-2.0 GObject-2.0 Gio-2.0
+ @HAVE_INTROSPECTION_TRUE@IBus_1_0_gir_LIBS = $(libibus)
+ @HAVE_INTROSPECTION_TRUE@IBus_1_0_gir_FILES = $(addprefix $(srcdir)/,$(introspection_files))
