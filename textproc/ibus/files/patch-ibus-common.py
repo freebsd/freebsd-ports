@@ -5,7 +5,7 @@
  #     return address
  
 -libibus = ctypes.CDLL("libibus-1.0.so.0")
-+libibus = ctypes.CDLL("libibus-1.0.so.400")
++libibus = ctypes.CDLL("libibus-1.0.so.401")
  get_address = libibus.ibus_get_address
  get_address.restype=ctypes.c_char_p
  

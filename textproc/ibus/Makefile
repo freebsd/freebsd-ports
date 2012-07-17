@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ibus
-PORTVERSION=	1.4.0
-PORTREVISION=	4
+PORTVERSION=	1.4.1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -34,38 +33,40 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 GCONF_SCHEMAS=	ibus.schemas
 
-OPTIONS=	ISOCODES "Use isocodecs" on \
-		GTK3 "Install GTK3 client" on \
-		VALA "Install vala binding" on \
-		GINTRO "Install GObject Introspection data" on
+OPTIONS_DEFINE=	ISOCODES NLS GTK3 VALA GINTRO
+OPTIONS_DEFAULT=	ISOCODES GTK3 VALA GINTRO
 
-.include <bsd.port.pre.mk>
+ISOCODES_DESC=	Use isocodecs
+GTK3_DESC=	Install GTK3 client
+VALA_DESC=	Install vala binding
+GINTRO_DESC=	Install GObject Introspection data
 
-.if defined(WITH_ISOCODES)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MISOCODES}
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 RUN_DEPENDS+=	${LOCALBASE}/share/xml/iso-codes/iso_639.xml:${PORTSDIR}/misc/iso-codes
 .else
 CONFIGURE_ARGS+=	--disable-iso-codes-check
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
-CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITHOUT_GTK3)
-CONFIGURE_ARGS+=	--disable-gtk3
-PLIST_SUB+=	GTK3="@comment "
-.else
+.if ${PORT_OPTIONS:MGTK3}
 USE_GNOME+=	gtk30
 PLIST_SUB+=	GTK3=""
+.else
+CONFIGURE_ARGS+=	--disable-gtk3
+PLIST_SUB+=	GTK3="@comment "
 .endif
 
-.if defined(WITH_VALA)
+.if ${PORT_OPTIONS:MVALA}
 CONFIGURE_ARGS+=	--enable-vala
 PLIST_SUB+=	VALA=""
 .else
@@ -73,7 +74,7 @@ CONFIGURE_ARGS+=	--disable-vala
 PLIST_SUB+=	VALA="@comment "
 .endif
 
-.if defined(WITH_GINTRO)
+.if ${PORT_OPTIONS:MGINTRO}
 BUILD_DEPENDS+=		gobject-introspection>=0.6.8:${PORTSDIR}/devel/gobject-introspection
 RUN_DEPENDS+=		gobject-introspection>=0.6.8:${PORTSDIR}/devel/gobject-introspection
 CONFIGURE_ARGS+=	--enable-introspection=yes
@@ -95,11 +96,11 @@ post-patch:
 post-install:
 	@${MKDIR} ${PREFIX}/etc/xdg/autostart
 	@${INSTALL_DATA} ${WRKSRC}/bus/ibus.desktop ${PREFIX}/etc/xdg/autostart
-.	if defined(WITH_GTK3)
+.	if ${PORT_OPTIONS:MGTK3}
 		@gtk-query-immodules-3.0 --update-cache
 .	endif
 	@gtk-query-immodules-2.0 > ${LOCALBASE}/etc/gtk-2.0/gtk.immodules
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO} To display this message again, type ${PKG_INFO} -D ${PKGNAME}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
