@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xfce4-battery-plugin
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.0.5
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -25,11 +24,12 @@ USE_GNOME=	gnomehack gtk20 glib20 intltool intlhack pkgconfig
 USE_XFCE=	configenv libmenu libutil panel
 INSTALLS_ICONS=	yes
 
-OPTIONS=	NLS "Enable Native Language Support" on
+OPTIONS_DEFINE= NLS
+OPTIONS_DEFAULT=        NLS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	NLS=""
@@ -38,4 +38,4 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
