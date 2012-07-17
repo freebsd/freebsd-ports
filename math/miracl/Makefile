@@ -6,23 +6,33 @@
 #
 
 PORTNAME=	miracl
-PORTVERSION=	5.3.2
-PORTREVISION=	1
+PORTVERSION=	5.6
 PORTEPOCH=	1
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.computing.dcu.ie/pub/crypto/ \
+MASTER_SITES=	http://www.shatow.net/freebsd/${PORTNAME}/ \
 		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	pav
-DISTNAME=	${PORTNAME}
-DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
+MASTER_SITE_SUBDIR=	jase
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bryan@shatow.net
 COMMENT=	Multiprecision Integer and Rational Arithmetic C/C++ Library
 
-USE_ZIP=	yes
-NO_WRKSUBDIR=	yes
+LICENSE=	AGPLv3 COMMERCIAL
+LICENSE_COMB=	dual
+LICENSE_NAME_COMMERCIAL=	Commericial use license to not be bound by AGPLv3
+LICENSE_TEXT_COMMERCIAL=	License available from CertiVox for commercial use and
+LICENSE_TEXT_COMMERCIAL+=	to not be bound by the terms of the AGPLv3. Visit
+LICENSE_TEXT_COMMERCIAL+=	http://certivox.com/index.php/solutions/miracl-crypto-sdk/
+LICENSE_TEXT_COMMERCIAL+=	for more details.
+LICENSE_FILE=	${FILESDIR}/LICENSE
+LICENSE_PERMS_COMMERCIAL=	dist-mirror dist-sell pkg-mirror pkg-sell no-auto-accept
 
-EXTRACT_BEFORE_ARGS=	-j -aa -L
+ONLY_FOR_ARCHS=	i386 amd64
+
+USE_ZIP=	yes
+USE_LDCONFIG=	yes
+
+EXTRACT_BEFORE_ARGS=	-j -aa -L -q
+EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
 PLIST_FILES=	lib/libmiracl.a \
 		include/miracl.h include/mirdef.h
@@ -33,8 +43,6 @@ PLIST_FILES=	lib/libmiracl.a \
 BUILDCMD=	linux
 .elif ${ARCH} == "amd64"
 BUILDCMD=	linux64
-.else
-IGNORE=		Builds on x86 and amd64 only
 .endif
 
 post-patch:
@@ -53,9 +61,15 @@ post-patch:
 		-e 's|-O2|${CFLAGS} -fPIC|' \
 		${WRKSRC}/${BUILDCMD}
 .endif
+# Don't error when files not found
+# Fix mrmuldv.cc not existing
+	@${REINPLACE_CMD} -E \
+		-e 's|^rm |${RM} -f |' \
+		-e 's|^cp mrmuldv\.cc mrmuldv\.c|${CP} mrmuldv.gcc mrmuldv.c|' \
+		${WRKSRC}/${BUILDCMD}
 
 do-build:
-	@cd ${WRKSRC} && ${SH} ./${BUILDCMD}
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${SH} -ve ./${BUILDCMD}
 
 do-install:
 # lib

@@ -15,4 +15,4 @@ implemented as a C library, a well-thought out C++ wrapper is
 provided, which greatly simplifies program development. Most example
 programs (25+ of them) are provided in both C and C++ versions.
 
-WWW: http://www.shamus.ie/
+WWW: http://certivox.com/index.php/solutions/miracl-crypto-sdk
