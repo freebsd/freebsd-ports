@@ -4100,6 +4100,7 @@
     SUBDIR += xxgdb
     SUBDIR += xxl
     SUBDIR += yajl
+    SUBDIR += yajl-tcl
     SUBDIR += yasm
     SUBDIR += z80-asm
     SUBDIR += z80asm
