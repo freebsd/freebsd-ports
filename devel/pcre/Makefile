@@ -44,8 +44,8 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-# For FreeBSD 8.x and above link pcretest against libedit
-.if ${OSVERSION} > 800000
+# For FreeBSD 8.3 and above link pcretest against libedit
+.if ${OSVERSION} >= 803000
 CONFIGURE_ARGS+=	--enable-pcretest-libedit
 .endif
 
