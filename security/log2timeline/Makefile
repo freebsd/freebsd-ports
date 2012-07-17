@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	log2timeline
-PORTVERSION=	0.62
-PORTREVISION=	1
+PORTVERSION=	0.64
 CATEGORIES=	security
 MASTER_SITES=	http://log2timeline.net/files/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -20,6 +19,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
+		p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS \
 		p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-Carp-Assert>=0:${PORTSDIR}/devel/p5-Carp-Assert \
@@ -28,7 +28,6 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-Format-Strptime>=0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
 		p5-DateTime-TimeZone>=0:${PORTSDIR}/devel/p5-DateTime-TimeZone \
-		p5-Glib2>=0:${PORTSDIR}/devel/p5-Glib2 \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
 		p5-Mac-PropertyList>=0:${PORTSDIR}/devel/p5-Mac-PropertyList \
 		p5-Parse-Win32Registry>=0:${PORTSDIR}/devel/p5-Parse-Win32Registry \
@@ -40,8 +39,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-File-Mork>=0:${PORTSDIR}/www/p5-File-Mork \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-HTML-Scrubber>=0:${PORTSDIR}/www/p5-HTML-Scrubber \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -62,6 +60,7 @@ MAN3=	Log2Timeline.3 \
 	Log2t::input::ff_bookmark.3 \
 	Log2t::input::firefox2.3 \
 	Log2t::input::ftk_dirlisting.3 \
+	Log2t::input::iehistory.3 \
 	Log2t::input::jp_ntfs_change.3 \
 	Log2t::input::mcafee.3 \
 	Log2t::input::mcafeefireup.3 \
@@ -81,8 +80,9 @@ MAN3=	Log2Timeline.3 \
 	Log2t::output::cef.3 \
 	Log2t::output::cftl.3 \
 	Log2t::output::csv.3 \
+	Log2t::output::serialize.3 \
 	Log2t::output::tab.3 \
-	Parse::Evtx.3 \
-	Parse::Evtx::Chunk.3
+	Parse::Evtx2.3 \
+	Parse::Evtx2::Chunk.3
 
 .include <bsd.port.mk>
