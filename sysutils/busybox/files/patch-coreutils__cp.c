@@ -1,5 +1,5 @@
---- ./coreutils/cp.c.orig	2011-08-22 04:57:49.000000000 +0200
-+++ ./coreutils/cp.c	2011-09-22 23:05:23.000000000 +0200
+--- ./coreutils/cp.c.orig	2012-06-26 13:35:45.000000000 +0000
++++ ./coreutils/cp.c	2012-07-17 02:08:37.000000000 +0000
 @@ -35,6 +35,8 @@
  #include "libbb.h"
  #include "libcoreutils/coreutils.h"
