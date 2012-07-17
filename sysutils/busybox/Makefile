@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	busybox
-PORTVERSION=	1.19.4
+PORTVERSION=	1.20.2
 CATEGORIES=	sysutils misc shells
 MASTER_SITES=	http://www.busybox.net/downloads/
 
@@ -41,6 +41,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's/<malloc.h>/<stdlib.h>/' \
 		${WRKSRC}/libbb/appletlib.c \
 		${WRKSRC}/shell/hush.c
+	${REINPLACE_CMD} -e 's/<alloca.h>/<stdlib.h>/' \
+		${WRKSRC}/scripts/basic/*.c
 
 do-configure:
 	${CP} ${FILESDIR}/data-.config ${WRKSRC}/.config

@@ -1,5 +1,5 @@
---- ./include/platform.h.orig	2011-08-28 12:59:56.000000000 +0200
-+++ ./include/platform.h	2011-09-22 23:05:09.000000000 +0200
+--- ./include/platform.h.orig	2012-07-02 14:08:25.000000000 +0000
++++ ./include/platform.h	2012-07-17 02:08:37.000000000 +0000
 @@ -423,6 +423,15 @@
  
  #if defined(__FreeBSD__)
