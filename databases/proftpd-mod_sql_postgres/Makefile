@@ -9,7 +9,7 @@ CATEGORIES=	databases ftp
 PKGNAMEPREFIX=	proftpd-
 
 MAINTAINER=	mm@FreeBSD.org
-COMMENT=	PostgreSQL backend module for ProFTPD
+COMMENT=	PostgreSQL ProFTPD module
 
 LICENSE=	GPLv2
 
@@ -23,6 +23,6 @@ USE_PGSQL=	yes
 INCLUDEDIRS=	${LOCALBASE}/include
 LIBDIRS=	${LOCALBASE}/lib
 
-_PROFTPD_MODULE=	${PORTNAME}
+_BUILDING_PROFTPD_MODULE=	${PORTNAME}
 
 .include "${MASTERDIR}/Makefile"

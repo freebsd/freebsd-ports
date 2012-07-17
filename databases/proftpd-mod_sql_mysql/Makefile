@@ -9,7 +9,7 @@ CATEGORIES=	databases ftp
 PKGNAMEPREFIX=	proftpd-
 
 MAINTAINER=	mm@FreeBSD.org
-COMMENT=	MySQL module for ProFTPD
+COMMENT=	MySQL ProFTPD module
 
 LICENSE=	GPLv2
 
@@ -23,6 +23,6 @@ USE_MYSQL=	yes
 INCLUDEDIRS=	${LOCALBASE}/include:${LOCALBASE}/include/mysql
 LIBDIRS=	${LOCALBASE}/lib
 
-_PROFTPD_MODULE=	${PORTNAME}
+_BUILDING_PROFTPD_MODULE=	${PORTNAME}
 
 .include "${MASTERDIR}/Makefile"
