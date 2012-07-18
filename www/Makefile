@@ -426,6 +426,7 @@
     SUBDIR += mahara
     SUBDIR += mambo
     SUBDIR += man2web
+    SUBDIR += mathjax
     SUBDIR += mathopd
     SUBDIR += mawstats
     SUBDIR += mediawiki
