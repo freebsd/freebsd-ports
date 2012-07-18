@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Imap_Client
-PORTVERSION=	1.5.4
+PORTVERSION=	1.5.5
 CATEGORIES=	mail www pear
 PKGNAMEPREFIX=	pear-
 
