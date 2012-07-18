@@ -1,0 +1,50 @@
+diff -ur ./VERSION ./VERSION
+--- ./VERSION	2012-04-19 03:12:33.000000000 -0700
++++ ./VERSION	2012-07-13 04:13:57.000000000 -0700
+@@ -1 +1 @@
+-2012-01-25a "Angua"
++2012-01-25b "Angua"
+diff -ur ./doku.php ./doku.php
+--- ./doku.php	2012-04-19 03:12:33.000000000 -0700
++++ ./doku.php	2012-07-13 04:13:57.000000000 -0700
+@@ -7,7 +7,7 @@
+  */
+ 
+ // update message version
+-$updateVersion = 36.1;
++$updateVersion = 36.2;
+ 
+ //  xdebug_start_profiling();
+ 
+diff -ur ./inc/template.php ./inc/template.php
+--- ./inc/template.php	2012-04-19 03:09:54.000000000 -0700
++++ ./inc/template.php	2012-07-13 04:13:57.000000000 -0700
+@@ -1151,7 +1151,7 @@
+     echo '<div class="panelHeader">'.NL;
+     echo '<h3>';
+     $tabTitle = ($NS) ? $NS : '['.$lang['mediaroot'].']';
+-    printf($lang['media_' . $opened_tab], '<strong>'.$tabTitle.'</strong>');
++    printf($lang['media_' . $opened_tab], '<strong>'.hsc($tabTitle).'</strong>');
+     echo '</h3>'.NL;
+     if ($opened_tab === 'search' || $opened_tab === 'files') {
+         media_tab_files_options();
+diff -ur ./lib/exe/ajax.php ./lib/exe/ajax.php
+--- ./lib/exe/ajax.php	2012-04-19 03:09:54.000000000 -0700
++++ ./lib/exe/ajax.php	2012-07-13 04:13:57.000000000 -0700
+@@ -13,7 +13,6 @@
+ 
+ header('Content-Type: text/html; charset=utf-8');
+ 
+-
+ //call the requested function
+ if(isset($_POST['call'])){
+     $call = $_POST['call'];
+@@ -204,7 +203,7 @@
+     global $conf;
+     global $NS;
+ 
+-    $NS = $_POST['ns'];
++    $NS = cleanID($_POST['ns']);
+     if ($_POST['do'] == 'media') {
+         tpl_mediaFileList();
+     } else {
