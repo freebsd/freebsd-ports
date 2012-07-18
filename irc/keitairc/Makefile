@@ -17,7 +17,7 @@ EXTRACT_SUFX=	#empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IRC proxy for mobilephone that have a web interface
 
-RUN_DEPENDS=	p5-Unicode-Japanese>=0:${PORTSDIR}/japanese/p5-Unicode-Japanese \
+RUN_DEPENDS=	ja-p5-Unicode-Japanese>=0:${PORTSDIR}/japanese/p5-Unicode-Japanese \
 		p5-POE-Component-IRC>=0:${PORTSDIR}/irc/p5-POE-Component-IRC \
 		p5-POE-Component-Pluggable>=0:${PORTSDIR}/devel/p5-POE-Component-Pluggable \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
