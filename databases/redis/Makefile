@@ -21,7 +21,7 @@ CONFLICTS?=	redis-scripting-2.*
 
 USE_GMAKE=	yes
 MAKE_ENV=	"V=yo"
-USE_RC_SUBR=	redis.sh
+USE_RC_SUBR=	redis
 BIN_FILES=	redis-benchmark redis-check-aof redis-check-dump \
 		redis-cli redis-server
 
