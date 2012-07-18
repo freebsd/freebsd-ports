@@ -18,7 +18,8 @@ LICENSE=	LGPL20
 BUILD_DEPENDS=	gobject-introspection>=0.6.7:${PORTSDIR}/devel/gobject-introspection
 LIB_DEPENDS=	soup-2.4:${PORTSDIR}/devel/libsoup
 
-OPTIONS=	GTK	"Build with GTK+ 2.0" on
+OPTIONS_DEFINE=	GTK2
+OPTIONS_DEFAULT=GTK2
 
 CONFIGURE_ARGS=	--enable-introspection=yes
 GNU_CONFIGURE=	yes
@@ -29,7 +30,7 @@ USE_XZ=		yes
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GTK)
+.if ${PORT_OPTIONS:MGTK2}
 USE_GNOME+=	gtk20
 PLIST_SUB=	GTK=""
 .else
