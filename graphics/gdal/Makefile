@@ -7,6 +7,7 @@
 
 PORTNAME=	gdal
 PORTVERSION=	1.9.1
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/gdal/ \
 		ftp://ftp.remotesensing.org/pub/gdal/ \
@@ -15,222 +16,178 @@ MASTER_SITES=	http://download.osgeo.org/gdal/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A translator library for geospatial data formats
 
+LICENSE=	MIT
+
+OPTIONS_DEFINE=	CFITSIO CURL ECW EXPAT GEOS GEOTIFF GIF HDF5 ICONV JASPER \
+		JPEG KML MYSQL NETCDF ODBC PGSQL PNG PROJ SQLITE TIFF WEBP \
+		XERCES
+OPTIONS_DEFAULT=GEOTIFF GIF JASPER JPEG PNG TIFF
+
 CFLAGS+=	-fPIC ${PTHREAD_CFLAGS}
 CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--with-libz=/usr --with-liblzma=yes --with-threads=yes
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}
-MAKEFILE=	GNUmakefile
+LDFLAGS+=	-L${LOCALBASE} ${PTHREAD_LIBS}
 MAKE_JOBS_UNSAFE=	yes
+MAKEFILE=	GNUmakefile
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	CFITSIO	"FITS support"			off \
-		CURL	"Curl support"			off \
-		ECW	"ECW & JPEG 2000 support"	off \
-		EXPAT	"Expat support"			off \
-		GEOS	"GEOS support"			off \
-		GEOTIFF	"GeoTIFF support"		on \
-		GIF	"GIF support"			on \
-		HDF4	"HDF4 support"			off \
-		HDF5	"HDF5 support"			off \
-		JASPER	"JPEG 2000 support via jasper"	on \
-		JPEG	"JPEG support"			on \
-		KML	"KML support"			off \
-		MYSQL	"MySQL support"			off \
-		NETCDF	"NetCDF support"		off \
-		ODBC	"ODBC support"			off \
-		PGSQL	"PostgreSQL support"		off \
-		PNG	"PNG support"			on \
-		PROJ	"Projection support via proj"	off \
-		SQLITE	"SQLite support"		off \
-		TIFF	"External libtiff"		off \
-		WEBP	"WebP support"			off \
-		XERCES	"Xerces support"		off
-
-HDF5_VER?=	18
-NETCDF_VER?=	4
-XERCES_PORT?=	textproc/xerces-c3
-
 .include <bsd.port.options.mk>
 
-.if defined(WITH_NETCDF) && (${NETCDF_VER} == "4")
-WITH_HDF5=	yes
-HDF5_VER=	18
-.endif
-
-.if defined(WITH_CFITSIO)
+.if ${PORT_OPTIONS:MCFITSIO}
 LIB_DEPENDS+=	cfitsio:${PORTSDIR}/astro/cfitsio
 CONFIGURE_ARGS+=--with-cfitsio=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-cfitsio=no
 .endif
 
-.if defined(WITH_CURL)
+.if ${PORT_OPTIONS:MCURL}
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=--with-curl=${LOCALBASE}/bin/curl-config
 .else
 CONFIGURE_ARGS+=--with-curl=no
 .endif
 
-.if defined(WITH_ECW)
+.if ${PORT_OPTIONS:MECW}
 LIB_DEPENDS+=	NCSEcw:${PORTSDIR}/graphics/libecwj2
 CONFIGURE_ARGS+=--with-ecw=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-ecw=no
 .endif
 
-.if defined(WITH_EXPAT)
+.if ${PORT_OPTIONS:MEXPAT}
 LIB_DEPENDS+=	expat:${PORTSDIR}/textproc/expat2
 CONFIGURE_ARGS+=--with-expat=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-expat=no
 .endif
 
-.if defined(WITH_GEOS)
+.if ${PORT_OPTIONS:MGEOS}
 LIB_DEPENDS+=	geos:${PORTSDIR}/graphics/geos
 CONFIGURE_ARGS+=--with-geos=${LOCALBASE}/bin/geos-config
 .else
 CONFIGURE_ARGS+=--with-geos=no
 .endif
 
-.if !defined(WITHOUT_GEOTIFF)
+.if ${PORT_OPTIONS:MGEOTIFF}
 LIB_DEPENDS+=	geotiff:${PORTSDIR}/graphics/libgeotiff
 CONFIGURE_ARGS+=--with-geotiff=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-geotiff=internal
 .endif
 
-.if !defined(WITHOUT_GIF)
+.if ${PORT_OPTIONS:MGIF}
 LIB_DEPENDS+=	gif:${PORTSDIR}/graphics/giflib
 CONFIGURE_ARGS+=--with-gif=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-gif=internal
 .endif
 
-.if defined(WITH_HDF4)
-LIB_DEPENDS+=	mfhdf:${PORTSDIR}/science/hdf
-CONFIGURE_ARGS+=--with-hdf4=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-hdf4=no
-.endif
-
-.if defined(WITH_HDF5)
-.if (${NETCDF_VER} == "4")
+.if ${PORT_OPTIONS:MHDF5}
 LIB_DEPENDS+=	hdf5.7:${PORTSDIR}/science/hdf5-18
-.else
-LIB_DEPENDS+=	hdf5.0:${PORTSDIR}/science/hdf5
-.endif
 CONFIGURE_ARGS+=--with-hdf5=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-hdf5=no
 .endif
 
-.if defined(WITH_ICONV)
+.if ${PORT_OPTIONS:MICONV}
 CONFIGURE_ARGS+=--with-libiconv-prefix=${LOCALBASE}
 USE_ICONV=	yes
 .else
 CONFIGURE_ARGS+=--with-libiconv-prefix=no
 .endif
 
-.if !defined(WITHOUT_JASPER)
+.if ${PORT_OPTIONS:MJASPER}
 LIB_DEPENDS+=	jasper:${PORTSDIR}/graphics/jasper
 CONFIGURE_ARGS+=--with-jasper=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-jasper=no
 .endif
 
-.if !defined(WITHOUT_JPEG)
+.if ${PORT_OPTIONS:MJPEG}
 LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
 CONFIGURE_ARGS+=--with-jpeg=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-jpeg=internal
 .endif
 
-.if defined(WITH_KML)
+.if ${PORT_OPTIONS:MKML}
 LIB_DEPENDS+=	kmlbase:${PORTSDIR}/science/libkml
 CONFIGURE_ARGS+=--with-libkml=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-libkml=no
 .endif
 
-.if defined(WITH_MYSQL)
-USE_MYSQL=	yes
+.if ${PORT_OPTIONS:MMYSQL}
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE}/bin/mysql_config
+USE_MYSQL=	yes
 .else
 CONFIGURE_ARGS+=--with-mysql=no
 .endif
 
-.if defined(WITH_NETCDF)
-.if (${NETCDF_VER} == "4")
+.if ${PORT_OPTIONS:MNETCDF}
 LIB_DEPENDS+=	netcdf.7:${PORTSDIR}/science/netcdf4
-.else
-LIB_DEPENDS+=	netcdf.4:${PORTSDIR}/science/netcdf
-.endif
 CONFIGURE_ARGS+=--with-netcdf=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-netcdf=no
 .endif
 
-.if defined(WITH_ODBC)
+.if ${PORT_OPTIONS:MODBC}
 LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=--with-odbc=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-odbc=no
 .endif
 
-.if defined(WITH_PGSQL)
-USE_PGSQL=	yes
+.if ${PORT_OPTIONS:MPGSQL}
 CONFIGURE_ARGS+=--with-pg=${LOCALBASE}/bin/pg_config
+USE_PGSQL=	yes
 .else
 CONFIGURE_ARGS+=--with-pg=no
 .endif
 
-.if !defined(WITHOUT_PNG)
+.if ${PORT_OPTIONS:MPNG}
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=--with-png=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-png=internal
 .endif
 
-.if defined(WITH_PROJ)
+.if ${PORT_OPTIONS:MPROJ}
 LIB_DEPENDS+=	proj:${PORTSDIR}/graphics/proj
 CONFIGURE_ARGS+=--with-static-proj4=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-static-proj4=no
 .endif
 
-.if defined(WITH_SQLITE)
-USE_SQLITE=	yes
+.if ${PORT_OPTIONS:MSQLITE}
 CONFIGURE_ARGS+=--with-sqlite3=${LOCALBASE}
+USE_SQLITE=	yes
 .else
 CONFIGURE_ARGS+=--with-sqlite3=no
 .endif
 
-.if !defined(WITHOUT_TIFF)
+.if ${PORT_OPTIONS:MTIFF}
 LIB_DEPENDS+=	tiff:${PORTSDIR}/graphics/tiff
 CONFIGURE_ARGS+=--with-libtiff=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-libtiff=internal
 .endif
 
-.if defined(WITH_WEBP)
+.if ${PORT_OPTIONS:MWEBP}
 LIB_DEPENDS+=	webp:${PORTSDIR}/graphics/webp
 CONFIGURE_ARGS+=--with-webp=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-webp=no
 .endif
 
-.if defined(WITH_XERCES)
-LIB_DEPENDS+=	xerces-c:${PORTSDIR}/${XERCES_PORT}
+.if ${PORT_OPTIONS:MXERCES}
+LIB_DEPENDS+=	xerces-c:${PORTSDIR}/textproc/xerces-c3
 CONFIGURE_ARGS+=--with-xerces=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-xerces=no
-.endif
-
-.if defined(WITH_HDF4) && defined(WITH_HDF5)
-IGNORE=		you cannot use HDF4 with HDF5
 .endif
 
 post-patch:
