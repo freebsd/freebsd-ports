@@ -156,7 +156,7 @@ post-patch:
 .endif
 
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/*.xml ${DATADIR}/config/
+	${INSTALL_DATA} ${FILESDIR}/x*.xml ${DATADIR}/config/
 	@(if test -x ${LOCALBASE}/bin/xscreensaver-hacks/webcollage-helper; then \
 		${ECHO} "bin/xscreensaver-hacks/webcollage-helper" | \
 			${CAT} - ${TMPPLIST} > ${TMPPLIST}.cat && \
