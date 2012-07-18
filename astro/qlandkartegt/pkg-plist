@@ -1,13 +1,16 @@
+bin/cache2gtiff
 bin/map2gcm
+bin/map2rmap
 bin/qlandkartegt
 bin/qlandkartegt.bin
 share/applications/qlandkartegt.desktop
 share/pixmaps/qlandkartegt.png
+%%DATADIR%%/translations/qlandkartegt_cs.qm
 %%DATADIR%%/translations/qlandkartegt_de.qm
 %%DATADIR%%/translations/qlandkartegt_es_ES.qm
 %%DATADIR%%/translations/qlandkartegt_fr.qm
 %%DATADIR%%/translations/qlandkartegt_it_IT.qm
-%%DATADIR%%/translations/qlandkartegt_nl_NL.qm
+%%DATADIR%%/translations/qlandkartegt_nl.qm
 %%DATADIR%%/translations/qlandkartegt_ru.qm
 @dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%
