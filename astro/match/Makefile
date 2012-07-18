@@ -17,6 +17,7 @@ COMMENT=	A program for matching star lists
 
 LICENSE=	GPLv2
 
+CONFLICTS=	avenger-[0-9]*
 GNU_CONFIGURE=	yes
 
 MAN1=		match.1

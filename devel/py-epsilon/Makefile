@@ -19,6 +19,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl
 
+CONFLICTS=	brlcad-[0-9]*
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Epsilon
