@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	speaklater
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	duchateau.olivier@gmail.com
+MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	Lazy string Python module for translations
 
 LICENSE=	BSD
