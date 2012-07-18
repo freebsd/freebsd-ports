@@ -21,7 +21,7 @@ COMMENT=	Address to hostname filter
 
 MAKE_JOBS_UNSAFE=	yes
 
-CONFLICTS=	hf-[0-9]* bro-1.[0-9]*
+CONFLICTS=	hf-[0-9]*
 
 PLIST_FILES=	bin/hf
 
