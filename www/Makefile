@@ -1191,6 +1191,7 @@
     SUBDIR += p5-TestGen4Web-Runner
     SUBDIR += p5-Tie-TinyURL
     SUBDIR += p5-Twiggy
+    SUBDIR += p5-Twiggy-TLS
     SUBDIR += p5-URI-Encode
     SUBDIR += p5-URI-Escape-JavaScript
     SUBDIR += p5-URI-Escape-XS

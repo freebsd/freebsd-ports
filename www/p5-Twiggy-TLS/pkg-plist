@@ -1,0 +1,13 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Twiggy/TLS/.packlist
+%%SITE_PERL%%/Plack/Handler/Twiggy/TLS.pm
+%%SITE_PERL%%/Twiggy/Server/TLS.pm
+%%SITE_PERL%%/Twiggy/TLS.pm
+%%SITE_PERL%%/Twiggy/TLS/Info.pm
+@dirrm %%SITE_PERL%%/Twiggy/TLS
+@dirrmtry %%SITE_PERL%%/Twiggy/Server
+@dirrmtry %%SITE_PERL%%/Twiggy
+@dirrm %%SITE_PERL%%/Plack/Handler/Twiggy
+@dirrmtry %%SITE_PERL%%/Plack/Handler
+@dirrmtry %%SITE_PERL%%/Plack
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Twiggy/TLS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Twiggy
