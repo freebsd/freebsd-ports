@@ -48,6 +48,7 @@
     SUBDIR += asc
     SUBDIR += asciiquarium
     SUBDIR += assaultcube
+    SUBDIR += asteroids3d
     SUBDIR += atanks
     SUBDIR += atitd
     SUBDIR += atlantikdesigner
