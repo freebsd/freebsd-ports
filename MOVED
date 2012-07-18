@@ -3552,3 +3552,4 @@ lang/python24||2012-07-16|End Of Life reached
 lang/python25||2012-07-16|End Of Life reached
 www/zope||2012-07-16|End Of Life reached
 www/zope211||2012-07-16|End Of Life reached
+archivers/zlib||2012-07-18|Removed in favor of base system zlib
