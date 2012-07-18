@@ -110,6 +110,9 @@
 %%PYTHON_SITELIBDIR%%/github/Label.py
 %%PYTHON_SITELIBDIR%%/github/Label.pyc
 %%PYTHON_SITELIBDIR%%/github/Label.pyo
+%%PYTHON_SITELIBDIR%%/github/Legacy.py
+%%PYTHON_SITELIBDIR%%/github/Legacy.pyc
+%%PYTHON_SITELIBDIR%%/github/Legacy.pyo
 %%PYTHON_SITELIBDIR%%/github/Milestone.py
 %%PYTHON_SITELIBDIR%%/github/Milestone.pyc
 %%PYTHON_SITELIBDIR%%/github/Milestone.pyo
