@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	carton
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -19,7 +19,10 @@ COMMENT=	Perl module dependency manager
 RUN_DEPENDS=	\
 	p5-App-cpanminus>=1.5:${PORTSDIR}/devel/p5-App-cpanminus \
 	p5-CPAN-Meta>=2.112:${PORTSDIR}/devel/p5-CPAN-Meta \
+	p5-Capture-Tiny>0:${PORTSDIR}/devel/p5-Capture-Tiny \
+	p5-Dist-Metadata>0:${PORTSDIR}/devel/p5-Dist-Metadata \
 	p5-Exception-Class>=1.32:${PORTSDIR}/devel/p5-Exception-Class \
+	p5-File-chdir>0:${PORTSDIR}/devel/p5-File-chdir \
 	p5-JSON>=2.53:${PORTSDIR}/converters/p5-JSON \
 	p5-Module-Metadata>=1.000003:${PORTSDIR}/devel/p5-Module-Metadata \
 	p5-Try-Tiny>=0.09:${PORTSDIR}/lang/p5-Try-Tiny \
