@@ -1,0 +1,16 @@
+%%HIPHOP_DIR%%/ext/include/curl/curl.h
+%%HIPHOP_DIR%%/ext/include/curl/curlbuild.h
+%%HIPHOP_DIR%%/ext/include/curl/curlrules.h
+%%HIPHOP_DIR%%/ext/include/curl/curlver.h
+%%HIPHOP_DIR%%/ext/include/curl/easy.h
+%%HIPHOP_DIR%%/ext/include/curl/mprintf.h
+%%HIPHOP_DIR%%/ext/include/curl/multi.h
+%%HIPHOP_DIR%%/ext/include/curl/stdcheaders.h
+%%HIPHOP_DIR%%/ext/include/curl/typecheck-gcc.h
+@dirrm %%HIPHOP_DIR%%/ext/include/curl
+%%HIPHOP_DIR%%/ext/lib/libcurl.a
+%%HIPHOP_DIR%%/ext/lib/libcurl.la
+@dirrmtry %%HIPHOP_DIR%%/ext/include
+@dirrmtry %%HIPHOP_DIR%%/ext/lib
+@dirrmtry %%HIPHOP_DIR%%/ext
+@dirrmtry %%HIPHOP_DIR%%
