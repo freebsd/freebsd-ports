@@ -7,7 +7,7 @@
 
 PORTNAME?=	lighttpd
 PORTVERSION=	1.4.31
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES?=	www
 MASTER_SITES?=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -120,7 +120,7 @@ LIB_DEPENDS+=		gdbm:${PORTSDIR}/databases/gdbm
 CONFIGURE_ARGS+=	--with-gdbm
 .endif
 
-.if ${PORT_OPTIONS:MIPV6}
+.if empty(PORT_OPTIONS:MIPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
