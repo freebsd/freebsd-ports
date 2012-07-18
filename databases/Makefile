@@ -356,6 +356,7 @@
     SUBDIR += p5-DBIx-Class-InflateColumn-IP
     SUBDIR += p5-DBIx-Class-IntrospectableM2M
     SUBDIR += p5-DBIx-Class-Loader
+    SUBDIR += p5-DBIx-Class-Migration
     SUBDIR += p5-DBIx-Class-MooseColumns
     SUBDIR += p5-DBIx-Class-QueryLog
     SUBDIR += p5-DBIx-Class-QueryProfiler

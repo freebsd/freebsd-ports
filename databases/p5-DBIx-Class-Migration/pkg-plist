@@ -1,0 +1,44 @@
+bin/dbic-migration
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Migration/.packlist
+%%SITE_PERL%%/Catalyst/TraitFor/Model/DBIC/Schema/FromMigration.pm
+%%SITE_PERL%%/Catalyst/TraitFor/Model/DBIC/Schema/FromMigration/_MigrationHelper.pm
+%%SITE_PERL%%/DBIx/Class/Migration.pm
+%%SITE_PERL%%/DBIx/Class/Migration/FAQ.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Features.pod
+%%SITE_PERL%%/DBIx/Class/Migration/MySQLSandbox.pm
+%%SITE_PERL%%/DBIx/Class/Migration/Population.pm
+%%SITE_PERL%%/DBIx/Class/Migration/PostgresqlSandbox.pm
+%%SITE_PERL%%/DBIx/Class/Migration/RunScript.pm
+%%SITE_PERL%%/DBIx/Class/Migration/RunScript/Trait/SchemaLoader.pm
+%%SITE_PERL%%/DBIx/Class/Migration/Sandbox.pm
+%%SITE_PERL%%/DBIx/Class/Migration/SchemaLoader.pm
+%%SITE_PERL%%/DBIx/Class/Migration/Script.pm
+%%SITE_PERL%%/DBIx/Class/Migration/ShareDirBuilder.pm
+%%SITE_PERL%%/DBIx/Class/Migration/SqliteSandbox.pm
+%%SITE_PERL%%/DBIx/Class/Migration/TargetDirSandboxBuilder.pm
+%%SITE_PERL%%/DBIx/Class/Migration/TempDirBuilder.pm
+%%SITE_PERL%%/DBIx/Class/Migration/TempDirSandboxBuilder.pm
+%%SITE_PERL%%/DBIx/Class/Migration/Tutorial.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Tutorial/AddMySQL.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Tutorial/Catalyst.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Tutorial/Conclusion.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Tutorial/FirstMigration.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Tutorial/SecondMigration.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Tutorial/Setup.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Tutorial/Testing.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Tutorial/ThirdMigration.pod
+%%SITE_PERL%%/Test/DBIx/Class/FixtureCommand/Population.pm
+@dirrm %%SITE_PERL%%/Test/DBIx/Class/FixtureCommand
+@dirrmtry %%SITE_PERL%%/Test/DBIx/Class
+@dirrmtry %%SITE_PERL%%/Test/DBIx
+@dirrm %%SITE_PERL%%/DBIx/Class/Migration/Tutorial
+@dirrm %%SITE_PERL%%/DBIx/Class/Migration/RunScript/Trait
+@dirrm %%SITE_PERL%%/DBIx/Class/Migration/RunScript
+@dirrm %%SITE_PERL%%/DBIx/Class/Migration
+@dirrm %%SITE_PERL%%/Catalyst/TraitFor/Model/DBIC/Schema/FromMigration
+@dirrm %%SITE_PERL%%/Catalyst/TraitFor/Model/DBIC/Schema
+@dirrm %%SITE_PERL%%/Catalyst/TraitFor/Model/DBIC
+@dirrm %%SITE_PERL%%/Catalyst/TraitFor/Model
+@dirrm %%SITE_PERL%%/Catalyst/TraitFor
+@dirrmtry %%SITE_PERL%%/Catalyst
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Migration
