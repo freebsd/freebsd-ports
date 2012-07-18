@@ -216,7 +216,7 @@ CXX=	/usr/bin/clang++
 CXXCPP=	${CPP}
 .else
 # XXX Clang PR13308 (http://llvm.org/bugs/show_bug.cgi?id=13308)
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang>=3.2:${PORTSDIR}/lang/clang-devel
+BUILD_DEPENDS+=	clang-devel>=3.2.r159895:${PORTSDIR}/lang/clang-devel
 USE_BINUTILS=	yes
 CC=	${LOCALBASE}/bin/clang
 CPP=	${CC} -E
