@@ -52,6 +52,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a460035e-d111-11e1-aff7-001fd056c417">
+    <topic>libjpeg-turbo -- heap-based buffer overflow</topic>
+    <affects>
+      <package>
+	<name>libjpeg-turbo</name>
+	<range><lt>1.2.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="http://sourceforge.net/projects/libjpeg-turbo/files/1.2.1/README.txt">
+	  <p>The Changelog for version 1.2.1 says: Fixed a regression caused by
+	  1.2.0[6] in which decompressing corrupt JPEG images (specifically,
+	  images in which the component count was erroneously set to a large
+	  value) would cause libjpeg-turbo to segfault.</p>
+	</blockquote>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=826849">
+	  <p>A Heap-based buffer overflow was found in the way libjpeg-turbo
+	  decompressed certain corrupt JPEG images in which the component count
+	  was erroneously set to a large value. An attacker could create a
+	  specially-crafted JPEG image that, when opened, could cause an
+	  application using libpng to crash or, possibly, execute arbitrary code
+	  with the privileges of the user running the application.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+    <cvename>CVE-2012-2806</cvename>
+    </references>
+    <dates>
+      <discovery>2012-05-31</discovery>
+      <entry>2012-07-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2fe4b57f-d110-11e1-ac76-10bf48230856">
     <topic>Dokuwiki -- cross site scripting vulnerability</topic>
     <affects>
