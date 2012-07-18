@@ -7,7 +7,7 @@
 
 PORTNAME=	akonadi-google
 PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases kde
 MASTER_SITES=	http://www.progdan.cz/wp-content/uploads/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
