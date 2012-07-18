@@ -1,0 +1,40 @@
+commit a5ab37f15f39217cf631f8d61b2ea21305b81490
+Author: Dan Vrátil <dan@progdan.cz>
+Date:   Wed Jun 6 00:36:46 2012 +0200
+
+    Parse OAuth code from page title instead of body
+    
+    The OAuth code used for obtaining access tokens is provided
+    in webpage <title> as a string. The title is guaranteed not to change
+    syntax, while the body of the page, from which we were parsing the token
+    before, can change anytime, which breaks the authentication process.
+    
+    BUG: 301240
+    FIXED-IN: 0.4.1
+
+diff --git a/libkgapi/ui/authwidget_p.cpp b/libkgapi/ui/authwidget_p.cpp
+index 57d914c..55e77cb 100644
+--- ./libkgoogle/authdialog.cpp
++++ ./libkgoogle/authdialog.cpp
+@@ -147,13 +147,18 @@ void AuthWidgetPrivate::webviewFinished()
+     }
+ 
+     if (url.host() == "accounts.google.com" && url.path() == "/o/oauth2/approval") {
+-        QWebElement el = m_webiew->page()->mainFrame()->findFirstElement("textarea");
+-        if (el.isNull()) {
++        QString title = m_webiew->title();
++        QString token;
++
++        if (title.startsWith(QLatin1String("success"), Qt::CaseInsensitive)) {
++            int pos = title.indexOf(QLatin1String("code="));
++            /* Skip the 'code=' string as well */
++            token = title.mid (pos + 5);
++        } else {
+             emitError(KGoogle::AuthError, i18n("Parsing token page failed."));
+             return;
+         }
+ 
+-        QString token = el.toInnerXml();
+         if (token.isEmpty()) {
+             emitError(KGoogle::AuthError, i18n("Failed to obtain token."));
+             return;
