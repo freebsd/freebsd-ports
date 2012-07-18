@@ -30,6 +30,14 @@
 # MAINTAINER=	beat@FreeBSD.org
 #
 
+#
+# The psvn wrapper checkes from replaced, conflicting, missing or
+# untracked files. When committing it adds the needed Subversion 
+# properties and removes unneeded ones.
+# There is also adds a check subcommand which just executes the
+# checks.
+# 
+
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:${PATH}
 export PATH
 
@@ -44,7 +52,7 @@ fi
 checkstatus () {
 	_error=0
  
-	_files=`${SVN} status "${@}" | awk '{ print $NF }'`
+	_files="${@}"
 
 	for _file in `echo ${_files}`
 	do
@@ -77,7 +85,7 @@ checkstatus () {
 }
 
 setprop () {
-	_files=`${SVN} status "${@}" | awk '{ print $NF }'`
+	_files="${@}"
 
 	for _file in `echo ${_files}`
 	do
@@ -126,8 +134,9 @@ case "${1}" in
 			esac
 		done
 		shift `expr $OPTIND - 1`
-		checkstatus "${@}"
-		setprop "${@}"
+		files=`${SVN} status "${@}" | awk '{ print $NF }'`
+		checkstatus "${files}"
+		setprop "${files}"
 		${SVN} ${opts}
 	;;
 	*)
