@@ -114,6 +114,7 @@
     SUBDIR += guile
     SUBDIR += harbour
     SUBDIR += haskell-mode.el
+    SUBDIR += hiphop-php
     SUBDIR += hla
     SUBDIR += hope
     SUBDIR += hs-brainfuck

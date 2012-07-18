@@ -1,0 +1,15 @@
+From the HipHop Homepage:
+
+HipHop transforms your PHP source code into highly optimized C++ and then
+compiles it with g++ to build binary files. You keep coding in simpler PHP,
+then HipHop executes your source code in a semantically equivalent manner and
+sacrifices some rarely used features - such as eval() - in exchange for
+improved performance.
+
+HipHop was developed by Facebook and was released as open source in early 2010.
+
+Facebook sees about a 50% reduction in CPU usage when serving equal amounts
+of Web traffic when compared to Apache and PHP. Facebook.s API tier can serve
+twice the traffic using 30% less CPU.
+
+WWW: https://github.com/facebook/hiphop-php/wiki
