@@ -18,7 +18,7 @@ COMMENT=	FXP (server-to-server FTP) client
 
 USE_PERL5=	yes
 
-RUN_DEPENDS=	p5-Socks>=0:${PORTSDIR}/net/p5-Socks \
+RUN_DEPENDS=	p5-SOCKS>=0:${PORTSDIR}/net/p5-Socks \
 		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
 		p5-ReadLine-Perl>=0:${PORTSDIR}/devel/p5-ReadLine-Perl
 
