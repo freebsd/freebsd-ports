@@ -7,7 +7,7 @@
 
 PORTNAME=	sonata
 PORTVERSION=	1.6.2.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio python
 MASTER_SITES=	http://codingteam.net/project/sonata/upload/releases/
 
@@ -47,7 +47,7 @@ MAN1=	${PORTNAME}.1
 MAKE_ENV=	NO_INSTALL_MANPAGES=${NO_INSTALL_MANPAGES}
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
+.if !${PORT_OPTIONS:MDOCS}
 MAKE_ENV+=	NOPORTDOCS=${NOPORTDOCS}
 .endif
 
