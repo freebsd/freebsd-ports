@@ -6,13 +6,17 @@
 #
 
 PORTNAME=	urwid
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	devel python
 MASTER_SITES=	http://excess.org/urwid/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Curses-based user interface library for Python
+
+LICENSE=	LGPL21
+
+OPTIONS_DEFINE=	EXAMPLES
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
@@ -33,12 +37,14 @@ PORTEXAMPLES=	bigtext.py \
 		treesample.py
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
+.include <bsd.port.options.mk>
+
 post-patch:
 # disable setuptools for now
-	@${REINPLACE_CMD} 's/setuptools/xxx/g' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} 's/setuptools/do_not_use_&/g' ${WRKSRC}/setup.py
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}/
 .endif
