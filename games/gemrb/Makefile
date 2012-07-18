@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gemrb
-PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTVERSION=	0.7.1
 CATEGORIES=	games emulators
 MASTER_SITES=	SF/${PORTNAME}/GemRB%20Sources/GemRB%20${PORTVERSION}%20Sources
 
@@ -18,7 +17,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		vorbis.4:${PORTSDIR}/audio/libvorbis
+		vorbis:${PORTSDIR}/audio/libvorbis
 
 USE_CMAKE=	yes
 USE_SDL=	sdl mixer ttf
