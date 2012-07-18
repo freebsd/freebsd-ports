@@ -1,2 +1,46 @@
-@comment $FreeBSD$
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/constants.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/constants.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/constants.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/dj.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/dj.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/dj.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/error.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/error.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/error.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/sanedelta.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/sanedelta.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/sanedelta.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/sanespan.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/sanespan.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/sanespan.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/sanetime.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/sanetime.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/sanetime.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/sanetztime.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/sanetztime.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/sanetztime.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/test/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/test/test_delta.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/test/test_delta.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/test/test_delta.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/test/test_time.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/test/test_time.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/test/test_time.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/test/test_tztime.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/test/test_tztime.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/test/test_tztime.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime/test
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sanetime
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
