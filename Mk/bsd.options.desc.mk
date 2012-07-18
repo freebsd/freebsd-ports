@@ -165,6 +165,7 @@ MODPLUG_DESC?=		Support MODPLUG decoder
 MOTIF_DESC?=		Motif widget library
 MP3_DESC?=		MP3 support
 MP4_DESC?=		MP4 support
+MPG123_DESC?=		MPG123 support
 MPLAYER_DESC?=		MPlayer support
 MPP_DESC?=		Musepack support
 MSQL_DESC?=		mSQL backend
