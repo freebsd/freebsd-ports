@@ -8,15 +8,12 @@
 
 PORTNAME=	cvsps
 PORTVERSION=	2.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cobite.com/cvsps/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create patchset information from CVS
-
-USE_GMAKE=	yes
-ALL_TARGET=	cvsps
 
 CONFLICTS=	cvsps-devel-*
 

@@ -1,0 +1,12 @@
+--- Makefile.orig	2012-07-18 12:44:35.000000000 +0200
++++ Makefile	2012-07-18 12:44:52.000000000 +0200
+@@ -23,6 +23,9 @@ all: cvsps
+ cvsps: $(OBJS)
+ 	$(CC) -o cvsps $(OBJS) -lz
+ 
++.c.o:
++	$(CC) $(CFLAGS) -c -o $@ $<
++
+ install:
+ 	[ -d $(prefix)/bin ] || mkdir -p $(prefix)/bin
+ 	[ -d $(prefix)/share/man/man1 ] || mkdir -p $(prefix)/share/man/man1
