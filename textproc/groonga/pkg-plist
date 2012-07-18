@@ -1,8 +1,6 @@
 bin/grntest
 bin/groonga
 bin/groonga-suggest-create-dataset
-etc/groonga/init.d/redhat/sysconfig/groonga
-etc/groonga/init.d/redhat/groonga
 etc/groonga/groonga.conf
 include/groonga/groonga.h
 include/groonga/groonga/plugin.h
@@ -17,342 +15,85 @@ lib/libgroonga.la
 lib/libgroonga.so
 lib/libgroonga.so.0
 libdata/pkgconfig/groonga.pc
-%%DATADIR%%/admin_html/css/admin.css
-%%DATADIR%%/admin_html/css/ui-lightness/images/ui-bg_diagonals-thick_18_b81900_40x40.png
-%%DATADIR%%/admin_html/css/ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png
-%%DATADIR%%/admin_html/css/ui-lightness/images/ui-bg_flat_10_000000_40x100.png
-%%DATADIR%%/admin_html/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png
-%%DATADIR%%/admin_html/css/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png
-%%DATADIR%%/admin_html/css/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png
-%%DATADIR%%/admin_html/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png
-%%DATADIR%%/admin_html/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
-%%DATADIR%%/admin_html/css/ui-lightness/images/ui-bg_highlight-soft_75_ffe45c_1x100.png
-%%DATADIR%%/admin_html/css/ui-lightness/images/ui-icons_222222_256x240.png
-%%DATADIR%%/admin_html/css/ui-lightness/images/ui-icons_228ef1_256x240.png
-%%DATADIR%%/admin_html/css/ui-lightness/images/ui-icons_ef8c08_256x240.png
-%%DATADIR%%/admin_html/css/ui-lightness/images/ui-icons_ffd27a_256x240.png
-%%DATADIR%%/admin_html/css/ui-lightness/images/ui-icons_ffffff_256x240.png
-%%DATADIR%%/admin_html/css/ui-lightness/jquery-ui-1.8.1.custom.css
-%%DATADIR%%/admin_html/images/groonga.png
-%%DATADIR%%/admin_html/images/loading.gif
-%%DATADIR%%/admin_html/index.html
-%%DATADIR%%/admin_html/js/jquery-1.4.2.min.js
-%%DATADIR%%/admin_html/js/jquery-ui-1.8.1.custom.min.js
-%%DATADIR%%/admin_html/js/jquery.json-2.2.min.js
-%%DATADIR%%/doc/ja/html/.buildinfo
-%%DATADIR%%/doc/ja/html/_sources/characteristic.txt
-%%DATADIR%%/doc/ja/html/_sources/command_version.txt
-%%DATADIR%%/doc/ja/html/_sources/commands.txt
-%%DATADIR%%/doc/ja/html/_sources/commands/cache_limit.txt
-%%DATADIR%%/doc/ja/html/_sources/commands/check.txt
-%%DATADIR%%/doc/ja/html/_sources/commands/clearlock.txt
-%%DATADIR%%/doc/ja/html/_sources/commands/column_create.txt
-%%DATADIR%%/doc/ja/html/_sources/commands/column_list.txt
-%%DATADIR%%/doc/ja/html/_sources/commands/column_remove.txt
-%%DATADIR%%/doc/ja/html/_sources/commands/define_selector.txt
-%%DATADIR%%/doc/ja/html/_sources/commands/defrag.txt
-%%DATADIR%%/doc/ja/html/_sources/commands/delete.txt
-%%DATADIR%%/doc/ja/html/_sources/commands/dump.txt
-%%DATADIR%%/doc/ja/html/_sources/commands/load.txt
-%%DATADIR%%/doc/ja/html/_sources/commands/log_level.txt
-%%DATADIR%%/doc/ja/html/_sources/commands/log_put.txt
-%%DATADIR%%/doc/ja/html/_sources/commands/log_reopen.txt
-%%DATADIR%%/doc/ja/html/_sources/commands/quit.txt
-%%DATADIR%%/doc/ja/html/_sources/commands/select.txt
-%%DATADIR%%/doc/ja/html/_sources/commands/shutdown.txt
-%%DATADIR%%/doc/ja/html/_sources/commands/status.txt
-%%DATADIR%%/doc/ja/html/_sources/commands/suggest.txt
-%%DATADIR%%/doc/ja/html/_sources/commands/table_create.txt
-%%DATADIR%%/doc/ja/html/_sources/commands/table_list.txt
-%%DATADIR%%/doc/ja/html/_sources/commands/table_remove.txt
-%%DATADIR%%/doc/ja/html/_sources/commands/view_add.txt
-%%DATADIR%%/doc/ja/html/_sources/commands_not_implemented/add.txt
-%%DATADIR%%/doc/ja/html/_sources/commands_not_implemented/get.txt
-%%DATADIR%%/doc/ja/html/_sources/commands_not_implemented/set.txt
-%%DATADIR%%/doc/ja/html/_sources/developer.txt
-%%DATADIR%%/doc/ja/html/_sources/developer/com.txt
-%%DATADIR%%/doc/ja/html/_sources/developer/document.txt
-%%DATADIR%%/doc/ja/html/_sources/developer/query.txt
-%%DATADIR%%/doc/ja/html/_sources/developer/test.txt
-%%DATADIR%%/doc/ja/html/_sources/execfile.txt
-%%DATADIR%%/doc/ja/html/_sources/expr.txt
-%%DATADIR%%/doc/ja/html/_sources/functions.txt
-%%DATADIR%%/doc/ja/html/_sources/functions/edit_distance.txt
-%%DATADIR%%/doc/ja/html/_sources/functions/geo_distance.txt
-%%DATADIR%%/doc/ja/html/_sources/functions/geo_in_circle.txt
-%%DATADIR%%/doc/ja/html/_sources/functions/geo_in_rectangle.txt
-%%DATADIR%%/doc/ja/html/_sources/functions/now.txt
-%%DATADIR%%/doc/ja/html/_sources/functions/rand.txt
-%%DATADIR%%/doc/ja/html/_sources/grnslap.txt
-%%DATADIR%%/doc/ja/html/_sources/grntest.txt
-%%DATADIR%%/doc/ja/html/_sources/http.txt
-%%DATADIR%%/doc/ja/html/_sources/index.txt
-%%DATADIR%%/doc/ja/html/_sources/install.txt
-%%DATADIR%%/doc/ja/html/_sources/news.txt
-%%DATADIR%%/doc/ja/html/_sources/process.txt
-%%DATADIR%%/doc/ja/html/_sources/pseudo_column.txt
-%%DATADIR%%/doc/ja/html/_sources/reference.txt
-%%DATADIR%%/doc/ja/html/_sources/spec.txt
-%%DATADIR%%/doc/ja/html/_sources/spec/search.txt
-%%DATADIR%%/doc/ja/html/_sources/troubleshooting.txt
-%%DATADIR%%/doc/ja/html/_sources/troubleshooting/different_results_with_the_same_keyword.txt
-%%DATADIR%%/doc/ja/html/_sources/tutorial.txt
-%%DATADIR%%/doc/ja/html/_sources/tutorial/tutorial01.txt
-%%DATADIR%%/doc/ja/html/_sources/tutorial/tutorial02.txt
-%%DATADIR%%/doc/ja/html/_sources/tutorial/tutorial03.txt
-%%DATADIR%%/doc/ja/html/_sources/tutorial/tutorial04.txt
-%%DATADIR%%/doc/ja/html/_sources/tutorial/tutorial05.txt
-%%DATADIR%%/doc/ja/html/_sources/tutorial/tutorial06.txt
-%%DATADIR%%/doc/ja/html/_sources/tutorial/tutorial07.txt
-%%DATADIR%%/doc/ja/html/_sources/tutorial/tutorial08.txt
-%%DATADIR%%/doc/ja/html/_sources/tutorial/tutorial09.txt
-%%DATADIR%%/doc/ja/html/_sources/tutorial/tutorial10.txt
-%%DATADIR%%/doc/ja/html/_sources/type.txt
-%%DATADIR%%/doc/ja/html/_static/basic.css
-%%DATADIR%%/doc/ja/html/_static/default.css
-%%DATADIR%%/doc/ja/html/_static/doctools.js
-%%DATADIR%%/doc/ja/html/_static/file.png
-%%DATADIR%%/doc/ja/html/_static/jquery.js
-%%DATADIR%%/doc/ja/html/_static/minus.png
-%%DATADIR%%/doc/ja/html/_static/plus.png
-%%DATADIR%%/doc/ja/html/_static/pygments.css
-%%DATADIR%%/doc/ja/html/_static/searchtools.js
-%%DATADIR%%/doc/ja/html/_static/sidebar.js
-%%DATADIR%%/doc/ja/html/_static/underscore.js
-%%DATADIR%%/doc/ja/html/characteristic.html
-%%DATADIR%%/doc/ja/html/command_version.html
-%%DATADIR%%/doc/ja/html/commands.html
-%%DATADIR%%/doc/ja/html/commands/cache_limit.html
-%%DATADIR%%/doc/ja/html/commands/check.html
-%%DATADIR%%/doc/ja/html/commands/clearlock.html
-%%DATADIR%%/doc/ja/html/commands/column_create.html
-%%DATADIR%%/doc/ja/html/commands/column_list.html
-%%DATADIR%%/doc/ja/html/commands/column_remove.html
-%%DATADIR%%/doc/ja/html/commands/define_selector.html
-%%DATADIR%%/doc/ja/html/commands/defrag.html
-%%DATADIR%%/doc/ja/html/commands/delete.html
-%%DATADIR%%/doc/ja/html/commands/dump.html
-%%DATADIR%%/doc/ja/html/commands/load.html
-%%DATADIR%%/doc/ja/html/commands/log_level.html
-%%DATADIR%%/doc/ja/html/commands/log_put.html
-%%DATADIR%%/doc/ja/html/commands/log_reopen.html
-%%DATADIR%%/doc/ja/html/commands/quit.html
-%%DATADIR%%/doc/ja/html/commands/select.html
-%%DATADIR%%/doc/ja/html/commands/shutdown.html
-%%DATADIR%%/doc/ja/html/commands/status.html
-%%DATADIR%%/doc/ja/html/commands/suggest.html
-%%DATADIR%%/doc/ja/html/commands/table_create.html
-%%DATADIR%%/doc/ja/html/commands/table_list.html
-%%DATADIR%%/doc/ja/html/commands/table_remove.html
-%%DATADIR%%/doc/ja/html/commands/view_add.html
-%%DATADIR%%/doc/ja/html/commands_not_implemented/add.html
-%%DATADIR%%/doc/ja/html/commands_not_implemented/get.html
-%%DATADIR%%/doc/ja/html/commands_not_implemented/set.html
-%%DATADIR%%/doc/ja/html/developer.html
-%%DATADIR%%/doc/ja/html/developer/com.html
-%%DATADIR%%/doc/ja/html/developer/document.html
-%%DATADIR%%/doc/ja/html/developer/query.html
-%%DATADIR%%/doc/ja/html/developer/test.html
-%%DATADIR%%/doc/ja/html/execfile.html
-%%DATADIR%%/doc/ja/html/expr.html
-%%DATADIR%%/doc/ja/html/functions.html
-%%DATADIR%%/doc/ja/html/functions/edit_distance.html
-%%DATADIR%%/doc/ja/html/functions/geo_distance.html
-%%DATADIR%%/doc/ja/html/functions/geo_in_circle.html
-%%DATADIR%%/doc/ja/html/functions/geo_in_rectangle.html
-%%DATADIR%%/doc/ja/html/functions/now.html
-%%DATADIR%%/doc/ja/html/functions/rand.html
-%%DATADIR%%/doc/ja/html/genindex.html
-%%DATADIR%%/doc/ja/html/grnslap.html
-%%DATADIR%%/doc/ja/html/grntest.html
-%%DATADIR%%/doc/ja/html/http.html
-%%DATADIR%%/doc/ja/html/index.html
-%%DATADIR%%/doc/ja/html/install.html
-%%DATADIR%%/doc/ja/html/news.html
-%%DATADIR%%/doc/ja/html/objects.inv
-%%DATADIR%%/doc/ja/html/process.html
-%%DATADIR%%/doc/ja/html/pseudo_column.html
-%%DATADIR%%/doc/ja/html/reference.html
-%%DATADIR%%/doc/ja/html/search.html
-%%DATADIR%%/doc/ja/html/searchindex.js
-%%DATADIR%%/doc/ja/html/spec.html
-%%DATADIR%%/doc/ja/html/spec/search.html
-%%DATADIR%%/doc/ja/html/troubleshooting.html
-%%DATADIR%%/doc/ja/html/troubleshooting/different_results_with_the_same_keyword.html
-%%DATADIR%%/doc/ja/html/tutorial.html
-%%DATADIR%%/doc/ja/html/tutorial/tutorial01.html
-%%DATADIR%%/doc/ja/html/tutorial/tutorial02.html
-%%DATADIR%%/doc/ja/html/tutorial/tutorial03.html
-%%DATADIR%%/doc/ja/html/tutorial/tutorial04.html
-%%DATADIR%%/doc/ja/html/tutorial/tutorial05.html
-%%DATADIR%%/doc/ja/html/tutorial/tutorial06.html
-%%DATADIR%%/doc/ja/html/tutorial/tutorial07.html
-%%DATADIR%%/doc/ja/html/tutorial/tutorial08.html
-%%DATADIR%%/doc/ja/html/tutorial/tutorial09.html
-%%DATADIR%%/doc/ja/html/tutorial/tutorial10.html
-%%DATADIR%%/doc/ja/html/type.html
-%%DATADIR%%/doc/ja/source/__init__.py
-%%DATADIR%%/doc/ja/source/characteristic.txt
-%%DATADIR%%/doc/ja/source/command_version.txt
-%%DATADIR%%/doc/ja/source/commands.txt
-%%DATADIR%%/doc/ja/source/commands/cache_limit.txt
-%%DATADIR%%/doc/ja/source/commands/check.txt
-%%DATADIR%%/doc/ja/source/commands/clearlock.txt
-%%DATADIR%%/doc/ja/source/commands/column_create.txt
-%%DATADIR%%/doc/ja/source/commands/column_list.txt
-%%DATADIR%%/doc/ja/source/commands/column_remove.txt
-%%DATADIR%%/doc/ja/source/commands/define_selector.txt
-%%DATADIR%%/doc/ja/source/commands/defrag.txt
-%%DATADIR%%/doc/ja/source/commands/delete.txt
-%%DATADIR%%/doc/ja/source/commands/dump.txt
-%%DATADIR%%/doc/ja/source/commands/load.txt
-%%DATADIR%%/doc/ja/source/commands/log_level.txt
-%%DATADIR%%/doc/ja/source/commands/log_put.txt
-%%DATADIR%%/doc/ja/source/commands/log_reopen.txt
-%%DATADIR%%/doc/ja/source/commands/quit.txt
-%%DATADIR%%/doc/ja/source/commands/select.txt
-%%DATADIR%%/doc/ja/source/commands/shutdown.txt
-%%DATADIR%%/doc/ja/source/commands/status.txt
-%%DATADIR%%/doc/ja/source/commands/suggest.txt
-%%DATADIR%%/doc/ja/source/commands/table_create.txt
-%%DATADIR%%/doc/ja/source/commands/table_list.txt
-%%DATADIR%%/doc/ja/source/commands/table_remove.txt
-%%DATADIR%%/doc/ja/source/commands/view_add.txt
-%%DATADIR%%/doc/ja/source/commands_not_implemented/add.txt
-%%DATADIR%%/doc/ja/source/commands_not_implemented/get.txt
-%%DATADIR%%/doc/ja/source/commands_not_implemented/set.txt
-%%DATADIR%%/doc/ja/source/conf.py
-%%DATADIR%%/doc/ja/source/developer.txt
-%%DATADIR%%/doc/ja/source/developer/com.txt
-%%DATADIR%%/doc/ja/source/developer/document.txt
-%%DATADIR%%/doc/ja/source/developer/query.txt
-%%DATADIR%%/doc/ja/source/developer/test.txt
-%%DATADIR%%/doc/ja/source/example/tutorial01-1.log
-%%DATADIR%%/doc/ja/source/example/tutorial01-10.log
-%%DATADIR%%/doc/ja/source/example/tutorial01-11.log
-%%DATADIR%%/doc/ja/source/example/tutorial01-12.log
-%%DATADIR%%/doc/ja/source/example/tutorial01-13.log
-%%DATADIR%%/doc/ja/source/example/tutorial01-14.log
-%%DATADIR%%/doc/ja/source/example/tutorial01-15.log
-%%DATADIR%%/doc/ja/source/example/tutorial01-16.log
-%%DATADIR%%/doc/ja/source/example/tutorial01-17.log
-%%DATADIR%%/doc/ja/source/example/tutorial01-2.log
-%%DATADIR%%/doc/ja/source/example/tutorial01-3.log
-%%DATADIR%%/doc/ja/source/example/tutorial01-4.log
-%%DATADIR%%/doc/ja/source/example/tutorial01-5.log
-%%DATADIR%%/doc/ja/source/example/tutorial01-6.log
-%%DATADIR%%/doc/ja/source/example/tutorial01-7.log
-%%DATADIR%%/doc/ja/source/example/tutorial01-8.log
-%%DATADIR%%/doc/ja/source/example/tutorial01-9.log
-%%DATADIR%%/doc/ja/source/example/tutorial02-1.log
-%%DATADIR%%/doc/ja/source/example/tutorial02-2.log
-%%DATADIR%%/doc/ja/source/example/tutorial02-3.log
-%%DATADIR%%/doc/ja/source/example/tutorial03-1.log
-%%DATADIR%%/doc/ja/source/example/tutorial03-2.log
-%%DATADIR%%/doc/ja/source/example/tutorial03-3.log
-%%DATADIR%%/doc/ja/source/example/tutorial04-1.log
-%%DATADIR%%/doc/ja/source/example/tutorial04-2.log
-%%DATADIR%%/doc/ja/source/example/tutorial04-3.log
-%%DATADIR%%/doc/ja/source/example/tutorial04-4.log
-%%DATADIR%%/doc/ja/source/example/tutorial04-5.log
-%%DATADIR%%/doc/ja/source/example/tutorial04-6.log
-%%DATADIR%%/doc/ja/source/example/tutorial04-7.log
-%%DATADIR%%/doc/ja/source/example/tutorial05-1.log
-%%DATADIR%%/doc/ja/source/example/tutorial05-2.log
-%%DATADIR%%/doc/ja/source/example/tutorial05-3.log
-%%DATADIR%%/doc/ja/source/example/tutorial05-4.log
-%%DATADIR%%/doc/ja/source/example/tutorial05-5.log
-%%DATADIR%%/doc/ja/source/example/tutorial05-6.log
-%%DATADIR%%/doc/ja/source/example/tutorial06-1.log
-%%DATADIR%%/doc/ja/source/example/tutorial06-2.log
-%%DATADIR%%/doc/ja/source/example/tutorial06-3.log
-%%DATADIR%%/doc/ja/source/example/tutorial06-4.log
-%%DATADIR%%/doc/ja/source/example/tutorial06-5.log
-%%DATADIR%%/doc/ja/source/example/tutorial07-1.log
-%%DATADIR%%/doc/ja/source/example/tutorial07-2.log
-%%DATADIR%%/doc/ja/source/example/tutorial07-3.log
-%%DATADIR%%/doc/ja/source/example/tutorial07-4.log
-%%DATADIR%%/doc/ja/source/example/tutorial08-1.log
-%%DATADIR%%/doc/ja/source/example/tutorial10-1.log
-%%DATADIR%%/doc/ja/source/example/tutorial10-10.log
-%%DATADIR%%/doc/ja/source/example/tutorial10-2.log
-%%DATADIR%%/doc/ja/source/example/tutorial10-3.log
-%%DATADIR%%/doc/ja/source/example/tutorial10-4.log
-%%DATADIR%%/doc/ja/source/example/tutorial10-5.log
-%%DATADIR%%/doc/ja/source/example/tutorial10-6.log
-%%DATADIR%%/doc/ja/source/example/tutorial10-7.log
-%%DATADIR%%/doc/ja/source/example/tutorial10-8.log
-%%DATADIR%%/doc/ja/source/example/tutorial10-9.log
-%%DATADIR%%/doc/ja/source/execfile.txt
-%%DATADIR%%/doc/ja/source/expr.txt
-%%DATADIR%%/doc/ja/source/functions.txt
-%%DATADIR%%/doc/ja/source/functions/edit_distance.txt
-%%DATADIR%%/doc/ja/source/functions/geo_distance.txt
-%%DATADIR%%/doc/ja/source/functions/geo_in_circle.txt
-%%DATADIR%%/doc/ja/source/functions/geo_in_rectangle.txt
-%%DATADIR%%/doc/ja/source/functions/now.txt
-%%DATADIR%%/doc/ja/source/functions/rand.txt
-%%DATADIR%%/doc/ja/source/grnslap.txt
-%%DATADIR%%/doc/ja/source/grntest.txt
-%%DATADIR%%/doc/ja/source/http.txt
-%%DATADIR%%/doc/ja/source/index.txt
-%%DATADIR%%/doc/ja/source/install.txt
-%%DATADIR%%/doc/ja/source/news.txt
-%%DATADIR%%/doc/ja/source/process.txt
-%%DATADIR%%/doc/ja/source/pseudo_column.txt
-%%DATADIR%%/doc/ja/source/rdoc.py
-%%DATADIR%%/doc/ja/source/reference.txt
-%%DATADIR%%/doc/ja/source/spec.txt
-%%DATADIR%%/doc/ja/source/spec/search.txt
-%%DATADIR%%/doc/ja/source/troubleshooting.txt
-%%DATADIR%%/doc/ja/source/troubleshooting/different_results_with_the_same_keyword.txt
-%%DATADIR%%/doc/ja/source/tutorial.txt
-%%DATADIR%%/doc/ja/source/tutorial/tutorial01.txt
-%%DATADIR%%/doc/ja/source/tutorial/tutorial02.txt
-%%DATADIR%%/doc/ja/source/tutorial/tutorial03.txt
-%%DATADIR%%/doc/ja/source/tutorial/tutorial04.txt
-%%DATADIR%%/doc/ja/source/tutorial/tutorial05.txt
-%%DATADIR%%/doc/ja/source/tutorial/tutorial06.txt
-%%DATADIR%%/doc/ja/source/tutorial/tutorial07.txt
-%%DATADIR%%/doc/ja/source/tutorial/tutorial08.txt
-%%DATADIR%%/doc/ja/source/tutorial/tutorial09.txt
-%%DATADIR%%/doc/ja/source/tutorial/tutorial10.txt
-%%DATADIR%%/doc/ja/source/type.txt
-%%DATADIR%%/doc/ja/source/update_execution_example.py
+%%DATADIR%%/examples/dictionary/edict/edict-import.sh
 %%DATADIR%%/examples/dictionary/edict/edict2grn.rb
-%%DATADIR%%/examples/dictionary/edict/edict_import.sh
+%%DATADIR%%/examples/dictionary/eijiro/eijiro-import.sh
 %%DATADIR%%/examples/dictionary/eijiro/eijiro2grn.rb
-%%DATADIR%%/examples/dictionary/eijiro/eijiro_import.sh
+%%DATADIR%%/examples/dictionary/gene95/gene-import.sh
 %%DATADIR%%/examples/dictionary/gene95/gene2grn.rb
-%%DATADIR%%/examples/dictionary/gene95/gene_import.sh
 %%DATADIR%%/examples/dictionary/html/css/dictionary.css
-%%DATADIR%%/examples/dictionary/html/index.html
+%%DATADIR%%/examples/dictionary/html/css/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%DATADIR%%/examples/dictionary/html/css/smoothness/images/ui-bg_flat_75_ffffff_40x100.png
+%%DATADIR%%/examples/dictionary/html/css/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png
+%%DATADIR%%/examples/dictionary/html/css/smoothness/images/ui-bg_glass_65_ffffff_1x400.png
+%%DATADIR%%/examples/dictionary/html/css/smoothness/images/ui-bg_glass_75_dadada_1x400.png
+%%DATADIR%%/examples/dictionary/html/css/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png
+%%DATADIR%%/examples/dictionary/html/css/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png
+%%DATADIR%%/examples/dictionary/html/css/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+%%DATADIR%%/examples/dictionary/html/css/smoothness/images/ui-icons_222222_256x240.png
+%%DATADIR%%/examples/dictionary/html/css/smoothness/images/ui-icons_2e83ff_256x240.png
+%%DATADIR%%/examples/dictionary/html/css/smoothness/images/ui-icons_454545_256x240.png
+%%DATADIR%%/examples/dictionary/html/css/smoothness/images/ui-icons_888888_256x240.png
+%%DATADIR%%/examples/dictionary/html/css/smoothness/images/ui-icons_cd0a0a_256x240.png
+%%DATADIR%%/examples/dictionary/html/css/smoothness/jquery-ui-1.8.12.custom.css
 %%DATADIR%%/examples/dictionary/html/js/dictionary.js
-%%DATADIR%%/examples/dictionary/html/js/jquery-1.4.2.min.js
-%%DATADIR%%/examples/dictionary/init_db.sh
+%%DATADIR%%/examples/dictionary/html/js/jquery-1.6.0.min.js
+%%DATADIR%%/examples/dictionary/html/js/jquery-ui-1.8.12.min.js
+%%DATADIR%%/examples/dictionary/html/index.html
+%%DATADIR%%/examples/dictionary/init-db.sh
 %%DATADIR%%/examples/dictionary/jmdict/jmdict.rb
 %%DATADIR%%/examples/dictionary/readme.txt
-%%DATADIR%%/munin/plugins/groonga_disk
+%%DATADIR%%/html/admin/css/admin.css
+%%DATADIR%%/html/admin/css/ui-lightness/images/ui-bg_diagonals-thick_18_b81900_40x40.png
+%%DATADIR%%/html/admin/css/ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png
+%%DATADIR%%/html/admin/css/ui-lightness/images/ui-bg_flat_10_000000_40x100.png
+%%DATADIR%%/html/admin/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png
+%%DATADIR%%/html/admin/css/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png
+%%DATADIR%%/html/admin/css/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png
+%%DATADIR%%/html/admin/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png
+%%DATADIR%%/html/admin/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+%%DATADIR%%/html/admin/css/ui-lightness/images/ui-bg_highlight-soft_75_ffe45c_1x100.png
+%%DATADIR%%/html/admin/css/ui-lightness/images/ui-icons_222222_256x240.png
+%%DATADIR%%/html/admin/css/ui-lightness/images/ui-icons_228ef1_256x240.png
+%%DATADIR%%/html/admin/css/ui-lightness/images/ui-icons_ef8c08_256x240.png
+%%DATADIR%%/html/admin/css/ui-lightness/images/ui-icons_ffd27a_256x240.png
+%%DATADIR%%/html/admin/css/ui-lightness/images/ui-icons_ffffff_256x240.png
+%%DATADIR%%/html/admin/css/ui-lightness/jquery-ui-1.8.1.custom.css
+%%DATADIR%%/html/admin/favicon.ico
+%%DATADIR%%/html/admin/favicon.png
+%%DATADIR%%/html/admin/favicon.svg
+%%DATADIR%%/html/admin/images/groonga.png
+%%DATADIR%%/html/admin/images/loading.gif
+%%DATADIR%%/html/admin/index.html
+%%DATADIR%%/html/admin/js/jquery-1.4.2.min.js
+%%DATADIR%%/html/admin/js/jquery-ui-1.8.1.custom.min.js
+%%DATADIR%%/html/admin/js/jquery.flot-0.7.min.js
+%%DATADIR%%/html/admin/js/jquery.flot.license.txt
+%%DATADIR%%/html/admin/js/jquery.json-2.2.min.js
 %%DATADIR%%/munin/plugins/groonga_cpu_load
 %%DATADIR%%/munin/plugins/groonga_cpu_time
-%%DATADIR%%/munin/plugins/groonga_status
+%%DATADIR%%/munin/plugins/groonga_disk
 %%DATADIR%%/munin/plugins/groonga_memory
 %%DATADIR%%/munin/plugins/groonga_n_records
 %%DATADIR%%/munin/plugins/groonga_query_performance
-@dirrm lib/groonga/plugins/tokenizers
-@dirrm lib/groonga/plugins/suggest
-@dirrm lib/groonga/plugins
-@dirrm lib/groonga
-@dirrm include/groonga/groonga
-@dirrm include/groonga
-@dirrm etc/groonga/init.d/redhat/sysconfig
-@dirrm etc/groonga/init.d/redhat
-@dirrm etc/groonga/init.d
-@dirrm etc/groonga
+%%DATADIR%%/munin/plugins/groonga_status
+%%DATADIR%%/munin/plugins/groonga_throughput
+@dirrm %%DOCSDIR%%/ja
+@dirrm %%DOCSDIR%%/en
+@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/munin/plugins
 @dirrm %%DATADIR%%/munin
+@dirrm %%DATADIR%%/html/admin/css/ui-lightness/images
+@dirrm %%DATADIR%%/html/admin/css/ui-lightness
+@dirrm %%DATADIR%%/html/admin/css
+@dirrm %%DATADIR%%/html/admin/images
+@dirrm %%DATADIR%%/html/admin/js
+@dirrm %%DATADIR%%/html/admin
+@dirrm %%DATADIR%%/html
 @dirrm %%DATADIR%%/examples/dictionary/jmdict
 @dirrm %%DATADIR%%/examples/dictionary/html/js
+@dirrm %%DATADIR%%/examples/dictionary/html/css/smoothness/images
+@dirrm %%DATADIR%%/examples/dictionary/html/css/smoothness
 @dirrm %%DATADIR%%/examples/dictionary/html/css
 @dirrm %%DATADIR%%/examples/dictionary/html
 @dirrm %%DATADIR%%/examples/dictionary/gene95
@@ -360,38 +101,11 @@ libdata/pkgconfig/groonga.pc
 @dirrm %%DATADIR%%/examples/dictionary/edict
 @dirrm %%DATADIR%%/examples/dictionary
 @dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%/doc/ja/source/tutorial
-@dirrm %%DATADIR%%/doc/ja/source/troubleshooting
-@dirrm %%DATADIR%%/doc/ja/source/spec
-@dirrm %%DATADIR%%/doc/ja/source/functions
-@dirrm %%DATADIR%%/doc/ja/source/example
-@dirrm %%DATADIR%%/doc/ja/source/developer
-@dirrm %%DATADIR%%/doc/ja/source/commands_not_implemented
-@dirrm %%DATADIR%%/doc/ja/source/commands
-@dirrm %%DATADIR%%/doc/ja/source
-@dirrm %%DATADIR%%/doc/ja/html/tutorial
-@dirrm %%DATADIR%%/doc/ja/html/troubleshooting
-@dirrm %%DATADIR%%/doc/ja/html/spec
-@dirrm %%DATADIR%%/doc/ja/html/functions
-@dirrm %%DATADIR%%/doc/ja/html/developer
-@dirrm %%DATADIR%%/doc/ja/html/commands_not_implemented
-@dirrm %%DATADIR%%/doc/ja/html/commands
-@dirrm %%DATADIR%%/doc/ja/html/_static
-@dirrm %%DATADIR%%/doc/ja/html/_sources/tutorial
-@dirrm %%DATADIR%%/doc/ja/html/_sources/troubleshooting
-@dirrm %%DATADIR%%/doc/ja/html/_sources/spec
-@dirrm %%DATADIR%%/doc/ja/html/_sources/functions
-@dirrm %%DATADIR%%/doc/ja/html/_sources/developer
-@dirrm %%DATADIR%%/doc/ja/html/_sources/commands_not_implemented
-@dirrm %%DATADIR%%/doc/ja/html/_sources/commands
-@dirrm %%DATADIR%%/doc/ja/html/_sources
-@dirrm %%DATADIR%%/doc/ja/html
-@dirrm %%DATADIR%%/doc/ja
-@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%/admin_html/js
-@dirrm %%DATADIR%%/admin_html/images
-@dirrm %%DATADIR%%/admin_html/css/ui-lightness/images
-@dirrm %%DATADIR%%/admin_html/css/ui-lightness
-@dirrm %%DATADIR%%/admin_html/css
-@dirrm %%DATADIR%%/admin_html
 @dirrm %%DATADIR%%
+@dirrm lib/groonga/plugins/tokenizers
+@dirrm lib/groonga/plugins/suggest
+@dirrm lib/groonga/plugins
+@dirrm lib/groonga
+@dirrm include/groonga/groonga
+@dirrm include/groonga
+@dirrm etc/groonga

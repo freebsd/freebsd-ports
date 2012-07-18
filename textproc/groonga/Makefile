@@ -6,23 +6,26 @@
 #
 
 PORTNAME=	groonga
-PORTVERSION=	1.1.0
+PORTVERSION=	1.3.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://groonga.org/files/groonga/
+		http://packages.groonga.org/source/groonga/
 MASTER_SITE_SUBDIR=	kuriyama
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Open-source fulltext search engine and column store
 
+#BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+
 LICENSE=	LGPL21
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	pkgconfig
+CONFIGURE_ARGS=	--with-munin-plugins
+# We cannot enable this document option until textproc/py-sphinx be upgraded to 1.2.
+CONFIGURE_ARGS+=	--disable-document
 
 OPTIONS=	MECAB	"use mecab for morphological analysis" on
-
-MAN1=	groonga.1
 
 .include <bsd.port.pre.mk>
 
