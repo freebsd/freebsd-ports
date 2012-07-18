@@ -19,8 +19,7 @@ COMMENT=	A tool for processing and editing 3D triangular meshes
 LIB_DEPENDS=	QtSolutions_SOAP-head:${PORTSDIR}/devel/qt4-qtsolutions-soap
 
 USE_GL=		glew glu
-USE_QT4=	qmake corelib gui xml opengl network moc uic rcc
-MAKE_ENV+=	CXX=clang++
+USE_QT4=	qmake corelib gui xml opengl network moc uic rcc script
 
 USE_LDCONFIG=	yes
 
