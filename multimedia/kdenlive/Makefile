@@ -19,6 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	mlt.5:${PORTSDIR}/multimedia/mlt \
 		qjson.0:${PORTSDIR}/devel/qjson
+RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4 sharedmime
 USE_QT4=	dbus gui opengl script svg xml \
@@ -30,15 +31,16 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		kdenlive.1 kdenlive_render.1
 
-OPTIONS=	DVD	"DVD creation with cdrtools and dvdauthor" on \
-		FREI0R	"frei0r video plugins" on \
-		LADSPA	"LADSPA audio plugins" on \
-		SCREENGRAB	"Screen capture with recordMyDesktop" on \
-		XINE	"DVD preview with xine" on
+OPTIONS_DEFINE=	DVDWIZARD FREI0R LADSPA SCREENREC XINE
+DVDWIZARD_DESC=	DVD authoring with DVDAuthor and cdrtools
+SCREENREC_DESC=	Screen recording with recordMyDesktop
+XINE_DESC=	DVD previewing with xine
+
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDVD}
+.if ${PORT_OPTIONS:MDVDWIZARD}
 RUN_DEPENDS+=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor
 USE_CDRTOOLS=	yes
 .endif
@@ -59,7 +61,7 @@ CMAKE_ARGS+=	-DBUILD_po:BOOL=FALSE
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MSCREENGRAB}
+.if ${PORT_OPTIONS:MSCREENREC}
 RUN_DEPENDS+=	recordmydesktop:${PORTSDIR}/multimedia/recordmydesktop
 .endif
 
