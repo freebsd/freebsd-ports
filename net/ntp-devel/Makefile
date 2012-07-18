@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ntp
-PORTVERSION=	4.2.7p255
+PORTVERSION=	4.2.7p289
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ntp-dev/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-dev/ \
@@ -56,6 +56,10 @@ CONFIGURE_ARGS+=	--without-ntpsnmpd
 CONFIGURE_ARGS+=	--enable-${D}
 .endif
 .endfor
+
+.if defined(WITH_MX4200)
+BROKEN=		Fails to compile when MX4200 is enabled.
+.endif
  
 .include <bsd.port.pre.mk>
 
