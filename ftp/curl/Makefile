@@ -12,8 +12,8 @@ MASTER_SITES=	http://curl.haxx.se/download/ \
 		LOCAL/sunpoet
 EXTRACT_SUFX=	.tar.lzma
 
-MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Non-interactive tool to get files from FTP, GOPHER, HTTP(S) servers
+MAINTAINER?=	sunpoet@FreeBSD.org
+COMMENT?=	Non-interactive tool to get files from FTP, GOPHER, HTTP(S) servers
 
 LICENSE=	MIT
 
@@ -33,16 +33,18 @@ OPTIONS=	CARES "Asynchronous DNS resolution via c-ares" off \
 		RTMP "RTMP streams support" off \
 		TRACKMEMORY "Enable curl memory diagnostic output" off
 
-CONFIGURE_ARGS=	--disable-threaded-resolver --disable-werror \
+CONFIGURE_ARGS+=--disable-threaded-resolver --disable-werror \
 		--enable-imap --enable-pop3 --enable-rtsp --enable-smtp
 CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
 GNU_CONFIGURE=	yes
 MAKE_ENV=	SHLIB_VER="${SHLIB_VER}"
 MAKE_JOBS_SAFE=	yes
 USE_GNOME=	gnomehack
-USE_LDCONFIG=	yes
 USE_PERL5_BUILD=	yes
 USE_XZ=		yes
+
+.if !defined(BUILDING_HIPHOP)
+USE_LDCONFIG=	yes
 
 DOCS=		BINDINGS BUGS CONTRIBUTE DISTRO-DILEMMA FAQ FEATURES HISTORY \
 		INSTALL INSTALL.devcpp INTERNALS KNOWN_BUGS LICENSE-MIXING \
@@ -72,6 +74,7 @@ MAN3=		curl_easy_cleanup.3 curl_easy_duphandle.3 curl_easy_escape.3 \
 PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 
 SHLIB_VER=	6
+.endif
 
 .include <bsd.port.options.mk>
 
@@ -207,6 +210,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/require "valgrind.pm";/d' ${WRKSRC}/tests/runtests.pl
 
 post-install:
+.if !defined(BUILDING_HIPHOP)
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/ ${DOCSDIR}/libcurl/
 	cd ${WRKSRC}/docs/ && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}/
@@ -215,6 +219,7 @@ post-install:
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}/
 	cd ${WRKSRC}/docs/examples/ && ${INSTALL_DATA} README Makefile.example makefile* *.c *.cc ${EXAMPLESDIR}/
+.endif
 .endif
 
 # Setting LC_ALL=C is a kludge; maybe curl/libcurl shouldn't actually use
