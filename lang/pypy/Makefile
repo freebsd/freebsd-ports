@@ -7,7 +7,7 @@
 
 PORTNAME=	pypy
 DISTVERSION=	1.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang python java
 MASTER_SITES=	https://bitbucket.org/pypy/pypy/get/
 DISTNAME=	release-${DISTVERSION}
