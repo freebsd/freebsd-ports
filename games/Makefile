@@ -558,6 +558,7 @@
     SUBDIR += monsterz
     SUBDIR += moon-buggy
     SUBDIR += moonlander
+    SUBDIR += mopesnake
     SUBDIR += moria
     SUBDIR += motogt
     SUBDIR += mt_dolphin_ia
