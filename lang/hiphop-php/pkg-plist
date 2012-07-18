@@ -10,7 +10,6 @@ bin/hphpi
 %%DATADIR%%/CMake/FindLibAfdt.cmake
 %%DATADIR%%/CMake/FindLibCh.cmake
 %%DATADIR%%/CMake/FindLibEvent.cmake
-%%DATADIR%%/CMake/FindLibEvent.cmake.bak
 %%DATADIR%%/CMake/FindLibmemcached.cmake
 %%DATADIR%%/CMake/FindLibpam.cmake
 %%DATADIR%%/CMake/FindMcrypt.cmake
@@ -21,13 +20,9 @@ bin/hphpi
 %%DATADIR%%/CMake/FindReadline.cmake
 %%DATADIR%%/CMake/FindTBB.cmake
 %%DATADIR%%/CMake/HPHPFindLibs.cmake
-%%DATADIR%%/CMake/HPHPFindLibs.cmake.bak
 %%DATADIR%%/CMake/HPHPFunctions.cmake
 %%DATADIR%%/CMake/HPHPSetup.cmake
-%%DATADIR%%/CMake/HPHPSetup.cmake.bak
 %%DATADIR%%/CMake/Options.cmake
-%%DATADIR%%/LICENSE.PHP
-%%DATADIR%%/LICENSE.ZEND
 %%DATADIR%%/bin/CMakeLists.base.txt
 %%DATADIR%%/bin/apc_sample_serializer.php
 %%DATADIR%%/bin/crutch.php
