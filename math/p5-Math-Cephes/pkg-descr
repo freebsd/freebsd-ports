@@ -1,11 +1,10 @@
-  This module provides an interface to over 150 functions of the 
-  cephes math library of Stephen Moshier. No functions are exported 
-  by default, but rather must be imported explicitly, as in
+This module provides an interface to over 150 functions of the 
+cephes math library of Stephen Moshier. No functions are exported 
+by default, but rather must be imported explicitly, as in
 
-     use Math::Cephes qw(sin cos);
+  use Math::Cephes qw(sin cos);
 
-  There are a number of export tags defined which allow
-  importing groups of functions.
+There are a number of export tags defined which allow
+importing groups of functions.
 
-Author: Randy Kobes
-WWW: http://search.cpan.org/dist/Math-Cephes
+WWW: http://search.cpan.org/dist/Math-Cephes/
