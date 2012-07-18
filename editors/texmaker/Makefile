@@ -1,14 +1,12 @@
-# ex:ts=8
 # Ports collection makefile for:	texmaker
-# Date created:			Dec 29, 2003
-# Whom:				ijliao
+# Date created:				2003-12-29
+# Whom:					ijliao
 #
 # $FreeBSD$
 #
 
 PORTNAME=	texmaker
-PORTVERSION=	3.3.3
-PORTREVISION=	1
+PORTVERSION=	3.4
 PORTEPOCH=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.xm1math.net/texmaker/
@@ -31,18 +29,19 @@ QMAKE_ARGS=	PREFIX=${PREFIX} ICONDIR=${PREFIX}/share/pixmaps \
 		DESKTOPDIR=${DESKTOPDIR}
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	XDVI "view dvi with xdvi" Off \
-		GV "view ps with gv" Off
+OPTIONS_DEFINE=	GV XDVI
+GV_DESC=	View ps files with gv
+XDVI_DESC=	View dvi files with xdvi
 
 STRIP_FILES=	bin/texmaker
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_XDVI)
+.if ${PORT_OPTIONS:MXDVI}
 RUN_DEPENDS+=	xdvi:${PORTSDIR}/print/xdvik
 .endif
 
-.if !defined(WITHOUT_GV)
+.if ${PORT_OPTIONS:MGV}
 RUN_DEPENDS+=	gv:${PORTSDIR}/print/gv
 .endif
 
