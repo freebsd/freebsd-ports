@@ -1,5 +1,5 @@
 # New ports collection makefile for:	hiphop
-# Date created:				2012-07-18
+# Date created:				20120712
 # Whom:					Martin Matuska <mm@FreeBSD.org>
 #
 # $FreeBSD$
@@ -7,6 +7,7 @@
 
 PORTNAME=	hiphop-php
 PORTVERSION=	0.0.20120716
+PORTREVISION=	1
 CATEGORIES=	lang devel www
 MASTER_SITES=	https://github.com/facebook/hiphop-php/tarball/${GITVERSION}/:main \
 		http://unicode.org/Public/UNIDATA/:unidata \
@@ -18,6 +19,22 @@ PATCH_SITES=	http://cpp.in/dev/
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Hiphop PHP to C++ code transformer
+
+LICENSE=	PHP301 ZEND200 UNICODE
+LICENSE_COMB=	multi
+LICENSE_NAME_UNICODE=	Unicode, Inc. License Agreement
+LICENSE_NAME_ZEND200=	The Zend Engine License, version 2.00
+LICENSE_FILE_PHP301=	${WRKSRC}/LICENSE.PHP
+LICENSE_FILE_UNICODE=	${FILESDIR}/LICENSE.UNICODE
+LICENSE_FILE_ZEND200=	${WRKSRC}/LICENSE.ZEND
+LICENSE_PERMS_UNICODE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS_ZEND200=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_DISTFILES_PHP301=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+LICENSE_DISTFILES_UNICODE= EastAsianWidth.txt \
+	8859-1.TXT 8859-2.TXT 8859-3.TXT 8859-4.TXT 8859-5.TXT \
+	8859-6.TXT 8859-7.TXT 8859-8.TXT 8859-9.TXT 8859-10.TXT \
+	8859-11.TXT 8859-13.TXT 8859-14.TXT 8859-15.TXT 8859-16.TXT
+LICENSE_DISTFILES_ZEND200=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 LIB_DEPENDS=	icudata.48:${PORTSDIR}/devel/icu \
 		boost_thread:${PORTSDIR}/devel/boost-libs \
@@ -122,16 +139,17 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%CFLAGS%%|${_CFLAGS}|g' \
 		-e 's|%%CXXFLAGS%%|${_CXXFLAGS}|g' \
 		${WRKSRC}/CMake/HPHPSetup.cmake
+	@${REINPLACE_CMD} -e 's|LICENSE.PHP|src/version|g' \
+		${WRKSRC}/bin/CMakeLists.base.txt
 
 do-install:
 	@${MKDIR} ${DATADIR}/bin ${DATADIR}/src
 	@${FIND} ${WRKSRC} -type f -name '*.orig' -exec ${RM} {} \;
+	@${FIND} ${WRKSRC} -type f -name '*.bak' -exec ${RM} {} \;
 	@${CP} -R ${WRKSRC}/CMake ${WRKSRC}/bin ${DATADIR}
 	@${CP} -R ${WRKSRC}/src/runtime ${WRKSRC}/src/system \
 		${WRKSRC}/src/util  ${DATADIR}/src
-.for file in LICENSE.PHP LICENSE.ZEND src/version
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DATADIR}/${file}
-.endfor
+	@${INSTALL_DATA} ${WRKSRC}/src/version ${DATADIR}/src/version
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/hphp/hphp ${DATADIR}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/hphpi/hphpi ${PREFIX}/bin/hphpi
 	@${INSTALL_SCRIPT} ${WRKDIR}/hphp ${PREFIX}/bin/hphp
