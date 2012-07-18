@@ -1,4 +1,4 @@
-bin/app
+bin/papp
 %%DATADIR%%/include/exceptions.mal
 %%DATADIR%%/include/lowio.mal
 %%DATADIR%%/include/syscalls.mal

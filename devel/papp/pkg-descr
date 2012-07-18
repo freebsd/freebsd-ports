@@ -1,0 +1,4 @@
+The papp command preprocesses assembly language code, much like cpp does
+for C and C++.
+
+WWW:	http://acadix.biz/papp.php

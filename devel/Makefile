@@ -47,7 +47,6 @@
     SUBDIR += apache-ant
     SUBDIR += api-sanity-autotest
     SUBDIR += apiextractor
-    SUBDIR += app
     SUBDIR += apr0
     SUBDIR += apr1
     SUBDIR += apr2
@@ -2826,6 +2825,7 @@
     SUBDIR += p65
     SUBDIR += paexec
     SUBDIR += papi
+    SUBDIR += papp
     SUBDIR += pas2dox
     SUBDIR += patch
     SUBDIR += pccts
