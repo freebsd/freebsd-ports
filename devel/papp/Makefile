@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	app
+PORTNAME=	papp
 PORTVERSION=	0.3
 CATEGORIES=	devel
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
@@ -16,6 +16,6 @@ COMMENT=	Assembly Preprocessor
 
 LICENSE=	BSD
 
-MAN1=		app.1
+MAN1=		papp.1
 
 .include <bsd.port.mk>
