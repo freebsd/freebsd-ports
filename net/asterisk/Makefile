@@ -7,6 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.8.14.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -81,9 +82,6 @@ VARDIR=${PREFIX}/var
 OPTIONS_DEFINE+=	DAHDI
 OPTIONS_DEFAULT+=	DAHDI
 DAHDI_DESC?=	DAHDI support
-
-# Include this since we have altered OPTIONS.
-.include <bsd.port.options.mk>
 .endif
 
 SUB_LIST+=	ASTERISK_USER=${ASTERISK_USER}
@@ -92,25 +90,25 @@ PLIST_SUB+=	ASTERISK_GROUP=${ASTERISK_GROUP}
 PLIST_SUB+=	VARDIR=${VARDIR}
 
 .if ${PORT_OPTIONS:MH323}
-PLIST_SUB+=	WITH_H323="@comment "
-CONFIGURE_ARGS+=	--without-h323
-.else
 PLIST_SUB+=	WITH_H323=""
 CONFIGURE_ARGS+=	--with-h323=${LOCALBASE}
 LIB_DEPENDS+=	pt_r.1:${PORTSDIR}/devel/pwlib \
 		h323_r.1:${PORTSDIR}/net/openh323
+.else
+PLIST_SUB+=	WITH_H323="@comment "
+CONFIGURE_ARGS+=	--without-h323
 .endif
 
 .if ${PORT_OPTIONS:MDAHDI}
-PLIST_SUB+=	WITH_DAHDI="@comment "
-CONFIGURE_ARGS+=	--without-dahdi --without-openr2
-.else
 PLIST_SUB+=	WITH_DAHDI=""
 CONFIGURE_ARGS+=	--with-dahdi --with-openr2
 BUILD_DEPENDS+=	libpri>=1.4.10:${PORTSDIR}/misc/libpri \
 		${LOCALBASE}/include/dahdi/user.h:${PORTSDIR}/misc/dahdi
 LIB_DEPENDS+=	pri.1:${PORTSDIR}/misc/libpri\
 		openr2.4:${PORTSDIR}/misc/openr2
+.else
+PLIST_SUB+=	WITH_DAHDI="@comment "
+CONFIGURE_ARGS+=	--without-dahdi --without-openr2
 .endif
 
 #
