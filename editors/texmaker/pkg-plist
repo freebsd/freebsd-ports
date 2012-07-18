@@ -17,6 +17,7 @@ share/texmaker/README_de_DE_frami.txt
 share/texmaker/README_en_US.txt
 share/texmaker/README_es_ES.txt
 share/texmaker/README_hu_HU.txt
+share/texmaker/README_pl.txt
 share/texmaker/atd.css
 share/texmaker/cs_CZ.aff
 share/texmaker/cs_CZ.dic
@@ -84,6 +85,8 @@ share/texmaker/jquery.atd.textarea.js
 share/texmaker/latexhelp.html
 share/texmaker/nl_NL.aff
 share/texmaker/nl_NL.dic
+share/texmaker/pl_PL.aff
+share/texmaker/pl_PL.dic
 share/texmaker/qt_cs.qm
 share/texmaker/qt_de.qm
 share/texmaker/qt_es.qm
@@ -106,6 +109,7 @@ share/texmaker/texmaker_hu.qm
 share/texmaker/texmaker_it.qm
 share/texmaker/texmaker_nl.qm
 share/texmaker/texmaker_pl.qm
+share/texmaker/texmaker_pt.qm
 share/texmaker/texmaker_pt_BR.qm
 share/texmaker/texmaker_ru.qm
 share/texmaker/texmaker_se.qm
