@@ -17,6 +17,8 @@ MASTER_SITES=	http://www.lottanzb.org/releases/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pyGTK usenet frontend for hellanzb
 
+LICENSE=	GPLv3
+
 RUN_DEPENDS=	SABnzbd.py:${PORTSDIR}/news/sabnzbdplus \
 		yelp:${PORTSDIR}/x11/yelp \
 		unrar:${PORTSDIR}/archivers/unrar \
@@ -25,8 +27,7 @@ RUN_DEPENDS=	SABnzbd.py:${PORTSDIR}/news/sabnzbdplus \
 		${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedparser \
 		${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl
 
-LICENSE=	GPLv3
-
+CONFLICTS=	shared-mime-info-[0-9]*
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_GNOME=	desktopfileutils intltool
