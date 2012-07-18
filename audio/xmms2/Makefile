@@ -38,29 +38,23 @@ OPTIONS_SINGLE_MDNS=	MDNS_APPLE MDNS_AVAHI
 OPTIONS_DEFAULT=	CURL FAAD FLAC MAD MDNS MDNS_APPLE VORBIS
 
 AIRPLAY_DESC=	Support output via Airport Express
-APE_DESC=	Support to playback Monkey's Audio files
-AVCODEC_DESC=	Support to playback files with avcodec
-CDDA_DESC=	Support to playback AudioCD
-CURL_DESC=	Support to playback files via HTTP
+AVCODEC_DESC=	Avcodevc playback support
+CDDA_DESC=	AudioCD support
 ET_DESC=	Install usage feedback reporting client
-FAAD_DESC=	Support to playback AAC files
 FAM_DESC=	Support to update Media Library on file change
-GME_DESC=	Support to playback video game music files
-GVFS_DESC=	Support to playback files via GVFS
-ICES_DESC=	Support to playback files to an icecast server
-MAD_DESC=	Support to playback MP3 files
-MDNS_DESC=	Support to announce XMMS2d via mDNS (Choose implementation)
+GME_DESC=	Video game music files support
+GVFS_DESC=	Playback files via GVFS
+ICES_DESC=	Playback files to an icecast server
+MDNS_DESC=	Announce XMMS2d via mDNS (Choose implementation)
 MDNS_APPLE_DESC=	Use Apple mDNS implementation
 MDNS_AVAHI_DESC=	Use Avahi mDNS implementation
-MMS_DESC=	Support to playback streams via MMS
-MPG123_DESC=	Support to playback MP3 files
-OFA_DESC=	Support to collect MusicDNS fingerprints
-SAMBA_DESC=	Support to playback files via SMB
-SID_DESC=	Support to playback SID files
-VISUAL_DESC=	Support for visualization plugins
+OFA_DESC=	Collect MusicDNS fingerprints
+SAMBA_DESC=	Playback files via SMB
+SID_DESC=	Playback SID files
+VISUAL_DESC=	Visualization plugins support
 VOCODER_DESC=	Phase Vocoder effect plugin
-WAVPACK_DESC=	Support to playback WV files
-XML_DESC=	Support for XML based playlists (XSPF, RSS)
+WAVPACK_DESC=	Playback WV files
+XML_DESC=	Support XML based playlists (XSPF, RSS)
 
 .endif # !XMMS_SLAVE
 
