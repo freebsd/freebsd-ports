@@ -17,8 +17,6 @@ PKGNAMEPREFIX=	lbl-
 MAINTAINER=	leres@ee.lbl.gov
 COMMENT=	Unix time to formated time and date filter
 
-CONFLICTS=	security/bro-1.*
-
 PLIST_FILES=	bin/cf
 
 MAN1=		cf.1
