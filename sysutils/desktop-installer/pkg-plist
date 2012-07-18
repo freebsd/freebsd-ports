@@ -1,4 +1,3 @@
-sbin/amd-setup
 sbin/desktop-installer
 %%DATADIR%%/90-vboxguest.fdi
 %%DATADIR%%/Gnome/Xsession
@@ -25,6 +24,7 @@ sbin/desktop-installer
 %%DATADIR%%/XFCE4/bsd_background.jpg
 %%DATADIR%%/XFCE4/xdmshutdown
 %%DATADIR%%/XFCE4/xinitrc
+%%DATADIR%%/epdfview-options
 %%DATADIR%%/fstab
 %%DATADIR%%/gcc45/Makefile
 %%DATADIR%%/gcc45/distinfo
@@ -42,6 +42,7 @@ sbin/desktop-installer
 %%DATADIR%%/splash.bmp
 %%DATADIR%%/todo
 %%DATADIR%%/vbox
+%%DATADIR%%/xfce4-print-options
 @dirrm %%DATADIR%%/gcc45/files
 @dirrm %%DATADIR%%/gcc45
 @dirrm %%DATADIR%%/XFCE4
