@@ -489,6 +489,7 @@ libexec/dovecot/script
 libexec/dovecot/script-login
 libexec/dovecot/ssl-params
 libexec/dovecot/stats
+%%LIBWRAP%%libexec/dovecot/tcpwrap
 libexec/dovecot/xml2text
 sbin/dovecot
 share/aclocal/dovecot.m4
