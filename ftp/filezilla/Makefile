@@ -26,6 +26,8 @@ LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		tinyxml.3:${PORTSDIR}/textproc/tinyxml
 
+MAKE_JOBS_SAFE=	yes
+
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
