@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Icalendar
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org
