@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Astro-Coords
-PORTVERSION=	0.15
+PORTVERSION=	0.17
 CATEGORIES=	astro perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Astro-PAL>=0:${PORTSDIR}/astro/p5-Astro-PAL \
 		p5-Astro-Telescope>=0.71:${PORTSDIR}/astro/p5-Astro-Telescope \
-		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime
+		p5-DateTime>=0.76:${PORTSDIR}/devel/p5-DateTime
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Number-Delta>=0:${PORTSDIR}/devel/p5-Test-Number-Delta \
 		p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
