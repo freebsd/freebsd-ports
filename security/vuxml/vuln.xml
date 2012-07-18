@@ -52,6 +52,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2fe4b57f-d110-11e1-ac76-10bf48230856">
+    <topic>Dokuwiki -- cross site scripting vulnerability</topic>
+    <affects>
+      <package>
+	<name>dokuwiki</name>
+	<range><lt>20120125_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia Research reports:</p>
+	<blockquote cite="http://secunia.com/advisories/49196/">
+	  <p>Secunia Research has discovered a vulnerability in DokuWiki, which can
+	    be exploited by malicious people to conduct cross-site scripting
+	    attacks.</p>
+	  <p>Input passed to the "ns" POST parameter in lib/exe/ajax.php (when "call"
+	    is set to "medialist" and "do" is set to "media") is not properly
+	    sanitised within the "tpl_mediaFileList()" function in inc/template.php
+	    before being returned to the user. This can be exploited to execute
+	    arbitrary HTML and script code in a user's browser session in context
+	    of an affected site.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/49196/</url>
+      <cvename>CVE-2012-0283</cvename>
+    </references>
+    <dates>
+      <discovery>2012-07-13</discovery>
+      <entry>2012-07-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3a6960ef-c8a8-11e1-9924-001fd0af1a4c">
      <topic>puppet -- multiple vulnerabilities</topic>
      <affects>
