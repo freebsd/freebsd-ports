@@ -6,30 +6,29 @@
 #
 
 PORTNAME=	xfce4-systemload-plugin
-PORTVERSION=	1.0.0
-PORTREVISION=	4
+PORTVERSION=	1.1.1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	thorsten.greiner@web.de
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	System Load plugin for XFce4
 
-USE_AUTOTOOLS=	libtool
+LIB_DEPENDS=	upower-glib.1:${PORTSDIR}/sysutils/upower
+
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gtk20 intltool intlhack pkgconfig
-USE_XFCE=	configenv libgui panel
+USE_XFCE=	configenv libmenu libutil panel
 
-CONFIGURE_ARGS=	--disable-debug
+OPTIONS_DEFINE= NLS
+OPTIONS_DEFAULT=        NLS
 
-OPTIONS=	NLS "Enable Native Language Support" on
+.include <bsd.port.options.mk>
 
-.include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	NLS=""
@@ -38,4 +37,4 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
