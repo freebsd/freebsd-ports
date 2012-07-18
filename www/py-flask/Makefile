@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Flask
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	duchateau.olivier@gmail.com
+MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	Micro webdevelopment framework for Python
 
 LICENSE=	BSD
@@ -21,5 +21,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}werkzeug>=0.8:${PORTSDIR}/www/py-werkzeug \
 
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	easy_install
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|, 'flask.testsuite'||; \
+		s|test_suite|#test_suite|" ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
