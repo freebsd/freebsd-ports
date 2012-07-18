@@ -1277,7 +1277,6 @@ editors/vim6||2010-09-17|Has expired: Outdated, superseded by editors/vim7 and h
 editors/vim6+ruby||2010-09-17|Has expired: Outdated, superseded by editors/vim7 and has multiple security issues
 sysutils/cdrtools-cjk|sysutils/cdrtools|2010-09-17|Obsoleted by iconv support in mainstream kit
 lang/pfe-devel|lang/pfe|2010-09-20|Moved to lang/pfe since it's a stable version
-databases/redis-devel|databases/redis|2010-09-20|Moved to databases/redis since it's a stable version
 archivers/p5-Compress-Zlib|archivers/p5-IO-Compress|2010-09-21|Replaced by archivers/p5-IO-Compress
 archivers/p5-IO-Compress-Base|archivers/p5-IO-Compress|2010-09-21|Replaced by archivers/p5-IO-Compress
 archivers/p5-IO-Compress-Bzip2|archivers/p5-IO-Compress|2010-09-21|Replaced by archivers/p5-IO-Compress
