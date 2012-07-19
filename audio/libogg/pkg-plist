@@ -5,7 +5,7 @@ include/ogg/os_types.h
 lib/libogg.a
 lib/libogg.la
 lib/libogg.so
-lib/libogg.so.7
+lib/libogg.so.8
 libdata/pkgconfig/ogg.pc
 share/aclocal/ogg.m4
 %%PORTDOCS%%%%DOCSDIR%%/framing.html
