@@ -127,6 +127,7 @@ share/foomatic/db/source/opt/gutenprint-ijs.5.2-stp_enableprintmethod.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.2-stp_enablereddensity.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.2-stp_enablescandrytime.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.2-stp_enablescanmindrytime.xml
+share/foomatic/db/source/opt/gutenprint-ijs.5.2-stp_enablesubchannelcutoff.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.2-stp_enablevacuumintensity.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.2-stp_enableyellowbalance.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.2-stp_enableyellowdensity.xml
@@ -173,6 +174,7 @@ share/foomatic/db/source/opt/gutenprint-ijs.5.2-stp_inklimit-4.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.2-stp_inklimit-5.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.2-stp_inklimit-6.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.2-stp_inklimit-7.xml
+share/foomatic/db/source/opt/gutenprint-ijs.5.2-stp_inklimit-8.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.2-stp_inkset.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.2-stp_inktype.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.2-stp_inputslot.xml
@@ -205,6 +207,7 @@ share/foomatic/db/source/opt/gutenprint-ijs.5.2-stp_reddensity-1.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.2-stp_resolution.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.2-stp_scandrytime-1.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.2-stp_scanmindrytime-1.xml
+share/foomatic/db/source/opt/gutenprint-ijs.5.2-stp_subchannelcutoff-1.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.2-stp_usegloss.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.2-stp_vacuumintensity-1.xml
 share/foomatic/db/source/opt/gutenprint-ijs.5.2-stp_weave.xml
