@@ -22,6 +22,7 @@ bin/qemu-system-i386
 %%NONX86%%bin/qemu-system-sh4eb
 %%NONX86%%bin/qemu-system-sparc
 %%NONX86%%bin/qemu-system-sparc64
+%%BSD_USER%%bin/qemu-arm
 %%BSD_USER%%bin/qemu-i386
 %%BSD_USER%%bin/qemu-sparc
 %%BSD_USER%%bin/qemu-sparc64

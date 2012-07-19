@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/:release \
 		LOCAL/nox:snapshot
@@ -18,7 +18,7 @@ MAINTAINER=	nox@FreeBSD.org
 COMMENT=	QEMU CPU Emulator - development version
 
 HAS_CONFIGURE=	yes
-USE_BZIP2=	yes
+EXTRACT_SUFX=	.tar.bz2
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
 USE_PYTHON_BUILD=	yes
@@ -32,7 +32,7 @@ CONFLICTS_INSTALL=	qemu-[0-9]*
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS_DEFINE=	SAMBA SDL OPENGL GNUTLS SASL JPEG PNG CURL CDROM_DMA PCAP \
-		USBREDIR GNS3 ADD_AUDIO CLANG X86_TARGETS BSD_USER
+		USBREDIR GNS3 ADD_AUDIO CLANG_HACK X86_TARGETS BSD_USER
 SAMBA_DESC=		samba dependency (for -smb)
 GNUTLS_DESC=		gnutls dependency (vnc encryption)
 SASL_DESC=		cyrus-sasl dependency (vnc encryption)
@@ -45,7 +45,7 @@ SEABIOS_GIT_DESC=	add seabios snapshot (-bios bios.bin-1.6.3.1)
 USBREDIR_DESC=		usb device network redirection (experimental!)
 GNS3_DESC=		gns3 patches (udp, promiscuous multicast)
 ADD_AUDIO_DESC=		Emulate more audio hardware (experimental!)
-CLANG_DESC=		clang workaround (result slow and less stable!)
+CLANG_HACK_DESC=		clang workaround (result slow and less stable!)
 X86_TARGETS_DESC=	Don't build non-x86 system targets
 BSD_USER_DESC=		Also build bsd-user targets (for testing)
 OPTIONS_DEFAULT=SDL OPENGL GNUTLS SASL JPEG PNG CURL CDROM_DMA PCAP
@@ -53,19 +53,19 @@ OPTIONS_DEFAULT=SDL OPENGL GNUTLS SASL JPEG PNG CURL CDROM_DMA PCAP
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=	--extra-ldflags=-L${LOCALBASE}/lib
-PORTDOCS=	docs qemu-doc.html qemu-tech.html
+PORTDOCS=	docs qemu-doc.html qemu-tech.html qmp-commands.txt
 
 # XXX this fixes build with clang but --enable-tcg-interpreter that's
 # needed to avoid global register usage that clang doesn't support
 # causes the result to be slow and less stable.
-.if ${PORT_OPTIONS:MCLANG}
+.if ${PORT_OPTIONS:MCLANG_HACK}
 CONFIGURE_ARGS+=	--enable-tcg-interpreter
 CLANG_CFLAGS_AS+=	-no-integrated-as
 .endif
 
 .if ${PORT_OPTIONS:MX86_TARGETS}
 .if ${PORT_OPTIONS:MBSD_USER}
-CONFIGURE_ARGS+=	--target-list=i386-softmmu,x86_64-softmmu,i386-bsd-user,x86_64-bsd-user,sparc-bsd-user,sparc64-bsd-user
+CONFIGURE_ARGS+=	--target-list=i386-softmmu,x86_64-softmmu,i386-bsd-user,x86_64-bsd-user,sparc-bsd-user,sparc64-bsd-user,arm-bsd-user
 .else
 CONFIGURE_ARGS+=	--target-list=i386-softmmu,x86_64-softmmu
 .endif
