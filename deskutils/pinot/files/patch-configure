@@ -1,0 +1,11 @@
+--- configure.orig	2012-06-10 15:26:06.000000000 +0200
++++ configure	2012-07-19 18:59:05.000000000 +0200
+@@ -18840,7 +18840,7 @@
+   HAVE_TEXTCAT_CAT_FALSE=
+ fi
+ 
+-   TEXTCAT_LIBS="-lexttextcat"
++   TEXTCAT_LIBS="-lexttextcat-1.0"
+ fi
+ 
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether to enable the libarchive filter" >&5
