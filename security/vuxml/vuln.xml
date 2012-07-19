@@ -57,7 +57,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>libjpeg-turbo</name>
-	<range><lt>1.2.0</lt></range>
+	<range><lt>1.2.1</lt></range>
       </package>
     </affects>
     <description>
@@ -79,11 +79,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-    <cvename>CVE-2012-2806</cvename>
+      <cvename>CVE-2012-2806</cvename>
+      <url>http://sourceforge.net/projects/libjpeg-turbo/files/1.2.1/README.txt</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=826849</url>
     </references>
     <dates>
       <discovery>2012-05-31</discovery>
       <entry>2012-07-18</entry>
+      <modified>2012-07-19</modified>
     </dates>
   </vuln>
 
