@@ -1,0 +1,25 @@
+--- CMake/HPHPFindLibs.cmake.orig	2012-07-15 01:13:18.000000000 +0200
++++ CMake/HPHPFindLibs.cmake	2012-07-19 16:20:37.949508810 +0200
+@@ -304,6 +284,14 @@
+ 
+ if (FREEBSD)
+ 	FIND_LIBRARY (EXECINFO_LIB execinfo)
++	FIND_LIBRARY (GETTEXT_LIB intl)
++
++	if (NOT EXECINFO_LIB)
++		message(FATAL_ERROR "You need to install libexecinfo")
++	endif()
++	if (NOT GETTEXT_LIB)
++		message(FATAL_ERROR "You need to install gettext (libintl)")
++	endif()
+ endif()
+ 
+ #find_package(BISON REQUIRED)
+@@ -349,6 +337,7 @@
+ 
+ if (FREEBSD)
+ 	target_link_libraries(${target} ${EXECINFO_LIB})
++	target_link_libraries(${target} ${GETTEXT_LIB})
+ endif()
+ 
+ 	target_link_libraries(${target} ${BFD_LIB})
