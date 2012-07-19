@@ -5,12 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	slim
-PORTVERSION=	1.3.3
-PORTREVISION=	2
+PORTVERSION=	1.3.4
 CATEGORIES=	x11
 MASTER_SITES=	http://slim.berlios.de/releases/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.release.asc
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	Graphical login manager for X11, derived from Login.app
@@ -45,9 +42,6 @@ CMAKE_ARGS+=	-DUSE_PAM=no
 PLIST_SUB+=	PAM="@comment "
 .endif
 
-verify: checksum
-	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.release.asc
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/${PORTNAME}.conf
 	@${REINPLACE_CMD} -e 's|"/etc"|"${PREFIX}/etc"|' \
@@ -57,7 +51,7 @@ post-patch:
 	@${MV} ${WRKSRC}/slim.conf ${WRKSRC}/slim.conf.sample
 	@${REINPLACE_CMD} -e 's|std::snprintf|snprintf|' ${WRKSRC}/Ck.cpp
 
-# Fix a previous bad install
+# Fix a previous bad install - Ok to remove at version 1.3.5 or later
 pre-install:
 	@${RM} -f ${LOCALBASE}/share/man/man1/slim.1
 	@${RMDIR} ${LOCALBASE}/share/man/man1 2>/dev/null || true
