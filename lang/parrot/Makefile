@@ -53,7 +53,7 @@ PLIST_SUB+=	PARROT_VER="${PORTVERSION}" \
 do-configure:
 	cd ${WRKSRC} && ${PERL} ${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
 
-test:
+regression-test test: build
 	cd ${WRKSRC} && ${MAKE} test
 
 x-generate-plist:
