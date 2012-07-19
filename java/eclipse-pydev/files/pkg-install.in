@@ -1,0 +1,28 @@
+#!/bin/sh
+
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { POST-INSTALL }" >&2
+    exit 1
+fi
+
+PATH="/bin:/sbin:/usr/bin:/usr/sbin"
+
+BUNDLES_INFO=%%BUNDLES_INFO%%
+DISTDATE=%%DISTDATE%%
+PLUGINDIR=%%PLUGINDIR%%
+PORTVERSION=%%PORTVERSION%%
+REVDOM=python.pydev
+
+if [ "$2" = "POST-INSTALL" ]; then
+	echo "===>   Updating ${BUNDLES_INFO}"
+	for c in '' '.analysis' '.codecompletion' '.debug' '.fastparser' '.refactoring'; do
+	    echo "com.${REVDOM}${c},${PORTVERSION}.${DISTDATE},${PLUGINDIR}/com.${REVDOM}${c}_${PORTVERSION}.${DISTDATE}/,4,false" >> ${BUNDLES_INFO}
+	done
+	for c in '' '.ast' '.core' '.customizations' '.debug' '.django' '.help' '.jython' '.parser' '.red_core' '.refactoring'; do
+	    echo "org.${REVDOM}${c},${PORTVERSION}.${DISTDATE},${PLUGINDIR}/org.${REVDOM}${c}_${PORTVERSION}.${DISTDATE}/,4,false" >> ${BUNDLES_INFO}
+	done
+	sort ${BUNDLES_INFO} > ${BUNDLES_INFO}.sort && \
+	mv ${BUNDLES_INFO}.sort ${BUNDLES_INFO}
+fi
+
+exit 0
