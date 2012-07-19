@@ -7,33 +7,39 @@
 #
 
 PORTNAME=	qfsm
-PORTVERSION=	0.52.0
-PORTREVISION=	2
+PORTVERSION=	0.53.0
+DISTVERSIONSUFFIX=	-Source
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-Source
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical tool for designing finite state machines
 
+LICENSE=	GPLv3 # (or later)
+
+OPTIONS_DEFINE=	GRAPHVIZ DOCS EXAMPLES
+
 USE_BZIP2=	yes
 USE_XORG=	xi
 USE_QT4=	corelib gui qt3support svg xml \
-		moc_build porting_build qmake_build \
-		uic_build uic3_build rcc_build
+		moc_build qmake_build rcc_build uic_build
 USE_GNOME=	desktopfileutils
 USE_CMAKE=	yes
 INSTALLS_ICONS=	yes
+MAKE_JOBS_SAFE=	yes
 
-.if !defined(WITH_DEBUG)
-CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS_RELEASE:STRING="-DNDEBUG"
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGRAPHVIZ}
+BULID_DEPENDS+=	graphviz>=2.22:${PORTSDIR}/graphics/graphviz
+RUN_DEPENDS+=	graphviz>=2.22:${PORTSDIR}/graphics/graphviz
+.else
+CMAKE_ARGS+=	-DQFSM_AVOID_GRAPHVIZ:BOOL=ON
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|(/usr/include/.*$$|(|g ; \
-		 /^\/usr\/include/d ; \
-		 /SET.*CMAKE_BUILD_TYPE/d ; \
-		 /SET.*CMAKE_INSTALL_PREFIX/d' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e \
+		'/\/usr\//d' ${WRKSRC}/FindGraphViz.cmake
 
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} qfsm ${PREFIX}/bin)
@@ -53,11 +59,11 @@ do-install:
 		${PREFIX}/share/mimelnk/application)
 	@${MKDIR} ${DATADIR}
 	(cd ${WRKSRC}/po && ${INSTALL_DATA} *.qm ${DATADIR})
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC}/doc/user && ${COPYTREE_SHARE} . ${DOCSDIR})
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
 .endif
