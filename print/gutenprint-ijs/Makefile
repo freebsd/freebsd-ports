@@ -11,6 +11,8 @@ PKGNAMESUFFIX=	-ijs
 MAINTAINER=	cmt@burggraben.net
 COMMENT=	GutenPrint Ghostscript Drivers
 
+LICENSE=	GPLv2
+
 MASTERDIR=	${.CURDIR}/../../print/gutenprint-base
 
 GUT_SLAVE=	ijs
