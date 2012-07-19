@@ -12,6 +12,8 @@ PKGNAMESUFFIX=	# empty
 MAINTAINER=	cmt@burggraben.net
 COMMENT=	Gimp print plug-in
 
+LICENSE=	GPLv2
+
 MASTERDIR=	${.CURDIR}/../../print/gutenprint-base
 
 GUT_SLAVE=	gimp
