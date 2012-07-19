@@ -8,17 +8,12 @@
 PORTNAME=	delta
 PORTVERSION=	2006.08.03
 CATEGORIES=	devel
-MASTER_SITES=	http://delta.tigris.org/files/documents/3103/33566/
+MASTER_SITES=	LOCAL/eadler/delta
 
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Heuristically minimizes interesting files
 
 LICENSE=	BSD
-
-FETCH_DEPENDS=	wget:${PORTSDIR}/ftp/wget
-
-FETCH_CMD=	${LOCALBASE}/bin/wget
-FETCH_ARGS=	--quiet
 
 PLIST_FILES=	bin/delta bin/multidelta bin/topformflat
 
