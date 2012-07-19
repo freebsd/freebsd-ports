@@ -17,7 +17,7 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 CFLAGS+=	-I${LOCALBASE}/include
 
-CONFLICTS?=	redis-scripting-2.*
+CONFLICTS?=	redis-devel-2.6.*
 
 USE_GMAKE=	yes
 MAKE_ENV=	"V=yo"
