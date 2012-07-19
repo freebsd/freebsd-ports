@@ -26,7 +26,7 @@ MAKE_JOBS_SAFE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 pre-configure:
-	${REINPLACE_CMD} -e 's,lib.*/pkg-config,libdata/pkg-config,' \
+	${REINPLACE_CMD} -e 's,lib.*/pkgconfig,libdata/pkgconfig,' \
 		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
