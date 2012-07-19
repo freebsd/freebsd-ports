@@ -38,11 +38,14 @@ share/applications/qfsm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/zoom.png
 %%PORTDOCS%%%%DOCSDIR%%/zoomin.png
 %%PORTDOCS%%%%DOCSDIR%%/zoomout.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ascii.gv
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ascii_example.fsm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bin.gv
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bin_example.fsm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datum.fsm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/float.fsm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/integer.fsm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/more_complex_nonsense.fsm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/text_example.fsm
 share/icons/hicolor/32x32/apps/qfsm.png
 share/icons/hicolor/32x32/mimetypes/x-qfsm.png
