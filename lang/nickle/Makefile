@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nickle
-PORTVERSION=	2.75
+PORTVERSION=	2.76
 CATEGORIES=	lang
 MASTER_SITES=	http://www.nickle.org/release/
 
@@ -15,6 +15,9 @@ COMMENT=	A numeric oriented programming language
 
 LICENSE=	MIT
 
+PORT_OPTIONS=	EXAMPLES
+
+USE_NCURSES=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
@@ -25,19 +28,19 @@ LDFLAGS+=	${PTHREAD_LIBS}
 
 MAN1=		nickle.1
 
+.include <bsd.port.options.mk>
+
 post-patch:
-# Do not descend into "examples" subdirectory to prevent them being installed
-# under DATADIR (instead, we manually install them later in post-install into
-# EXAMPLESDIR); also remove extra -O2 since we provide our own CFLAGS.
-	@${REINPLACE_CMD} -e '/^SUBDIRS/s|examples|| ; s| -O2||' \
-		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		'/^SUBDIRS/s|examples|| ; \
+		 s| -O2||' ${WRKSRC}/Makefile.in
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@(cd ${WRKSRC}/examples && ${FIND} . ! \( -name "*Makefile*" -or \
-		-name "*.sgml" \) | ${CPIO} -pdm -LR ${SHAREOWN}:${SHAREGRP} \
-			${EXAMPLESDIR})
+		-name "*.sgml" \) | ${CPIO} -pdm -L \
+		-R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR})
 	@${FIND} ${EXAMPLESDIR} -type d | ${XARGS} ${CHMOD} a+rx
 	@${FIND} ${EXAMPLESDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 .endif
