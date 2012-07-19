@@ -7,18 +7,12 @@
 
 PORTNAME=	asmx
 PORTVERSION=	1.8.2
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://xi6.com/files/ \
-		http://distfiles.arcadebsd.org/
+MASTER_SITES=	http://xi6.com/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-CPU macro assembler for many major 8-bit and 16-bit CPUs
-
-WRKSRC=		${WRKDIR}
-USE_ZIP=	yes
-ALL_TARGET=
-
-PORTDOCS=	README.txt
 
 OPTIONS_DEFINE=	1802 6502 6809 68HC11 68HC16 8051 8085 F8 Z80 DOCS
 OPTIONS_DEFAULT=	1802 6502 6809 68HC11 68HC16 8051 8085 F8 Z80
@@ -33,6 +27,12 @@ OPTIONS_DEFAULT=	1802 6502 6809 68HC11 68HC16 8051 8085 F8 Z80
 8085_DESC=	Intel 8080 and 8085
 F8_DESC=	Fairchild F8
 Z80_DESC=	Zilog Z-80 and Nintendo Gameboy Z-80 variant
+
+NO_WRKSUBDIR=	yes
+
+USE_ZIP=	yes
+
+PORTDOCS=	README.txt
 
 .include <bsd.port.options.mk>
 
@@ -86,15 +86,17 @@ ALL_TARGET+=	asmx-z80
 PLIST_FILES+=	bin/asmx-z80
 .endif
 
-post-extract:
-	${CP} ${FILESDIR}/Makefile ${WRKSRC}
+post-patch:
+	@${ECHO_CMD} >> ${WRKSRC}/asmguts.h
 
-pre-build:
-	${ECHO_CMD} ALL_TARGET=${ALL_TARGET}
+do-build:
+.for f in ${ALL_TARGET}
+	(cd ${BUILD_WRKSRC} && ${CC} ${CFLAGS} ${f:S/asmx-/asm/}.c -o ${f})
+.endfor
 
 do-install:
 .for f in ${ALL_TARGET}
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
