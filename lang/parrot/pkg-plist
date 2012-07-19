@@ -448,7 +448,6 @@ lib/parrot/%%PARROT_VER%%/tools/build/pmc2c.pl
 lib/parrot/%%PARROT_VER%%/tools/dev/create_language.pl
 lib/parrot/%%PARROT_VER%%/tools/dev/gen_makefile.pl
 lib/parrot/%%PARROT_VER%%/tools/dev/mk_language_shell.pl
-lib/parrot/%%PARROT_VER%%/tools/dev/pbc_to_exe.pir
 lib/parrot/%%PARROT_VER%%/tools/dev/pprof2cg.pl
 lib/parrot/%%PARROT_VER%%/tools/dev/reconfigure.pl
 lib/parrot/%%PARROT_VER%%/tools/lib/File/Which.pm
@@ -514,13 +513,10 @@ lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/IO/Path.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Install.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Manifest.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/PMC.pm
-lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Pmc2c/Attribute.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Pmc2c/Dumper.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Pmc2c/Emitter.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Pmc2c/Library.pm
-lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Pmc2c/MULTI.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Pmc2c/Method.pm
-lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Pmc2c/Object.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Pmc2c/PCCMETHOD.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Pmc2c/PCCMETHOD_BITS.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Pmc2c/PMC.pm
@@ -549,7 +545,7 @@ lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Vtable.pm
 %%PARROT_DOCS%%/LICENSE
 %%PARROT_DOCS%%/PBC_COMPAT
 %%PARROT_DOCS%%/PLATFORMS
-%%PARROT_DOCS%%/README
+%%PARROT_DOCS%%/README.pod
 %%PARROT_DOCS%%/README_cygwin.pod
 %%PARROT_DOCS%%/README_win32.pod
 %%PARROT_DOCS%%/RESPONSIBLE_PARTIES
