@@ -521,6 +521,7 @@
     SUBDIR += opencore-amr
     SUBDIR += openspc
     SUBDIR += optimfrog
+    SUBDIR += opus
     SUBDIR += osalp
     SUBDIR += osd-lyrics
     SUBDIR += osdmixer

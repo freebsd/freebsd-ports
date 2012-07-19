@@ -1,0 +1,10 @@
+include/opus/opus.h
+include/opus/opus_defines.h
+include/opus/opus_multistream.h
+include/opus/opus_types.h
+lib/libopus.a
+lib/libopus.la
+lib/libopus.so
+lib/libopus.so.0
+libdata/pkgconfig/opus.pc
+@dirrm include/opus
