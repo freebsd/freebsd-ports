@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	OpenLP
-PORTVERSION=	1.9.9
+PORTVERSION=	1.9.10
 CATEGORIES=	multimedia python
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -35,14 +35,32 @@ RUN_DEPENDS=	py*-beautifulsoup<3.1:${PORTSDIR}/www/py-beautifulsoup30 \
 		py*-sqlite3>=0:${PORTSDIR}/databases/py-sqlite3
 
 PYDISTUTILS_NOEGGINFO=	yes
-USE_PYTHON=		2.5+
-USE_PYDISTUTILS=	easy_install
-USE_GSTREAMER=		good
+USE_PYTHON=	2.6+
+USE_PYDISTUTILS=easy_install
+USE_GSTREAMER=	good bad ugly
+USE_QT4=	linguist phonon-gst
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+QT_LRELEASE=	${LOCALBASE}/bin/lrelease-qt4
+
+pre-build:
+	@${MKDIR} -p ${WRKSRC}/resources/i18n/qm
+	@set -e; \
+        for TSFILE in ${WRKSRC}/resources/i18n/*.ts; do \
+            ${QT_LRELEASE} $$TSFILE -qm ${WRKSRC}/resources/i18n/qm/`basename $$TSFILE .ts`.qm; \
+        done
 
 post-install:
+	@${MKDIR} -p ${PREFIX}/share/openlp/i18n/
+	@${CP} ${PYTHON_SITELIBDIR}/${PYEASYINSTALL_EGG}/resources/i18n/qm/*.qm ${PREFIX}/share/openlp/i18n/
+	#@${MV} ${PREFIX}/bin/openlp.pyw ${PREFIX}/bin/openlp
 	@${LN} -s ${PREFIX}/bin/openlp.pyw ${PREFIX}/bin/openlp
-	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/openlp-remoteclient.py \
-		${PREFIX}/bin/openlp-remoteclient.py
+	@${CP} ${PYTHON_SITELIBDIR}/${PYEASYINSTALL_EGG}/resources/openlp.desktop ${PREFIX}/share/applications/
+	@set -e; \
+        for SIZE in 16x16 32x32 48x48 64x64 128x128 256x256; do \
+		mkdir -p ${PREFIX}/share/icons/hicolor/$$SIZE/apps && \
+		cp ${PYTHON_SITELIBDIR}/${PYEASYINSTALL_EGG}/resources/images/openlp-logo-$$SIZE.png ${PREFIX}/share/icons/hicolor/$$SIZE/apps/openlp.png; \
+	done
+	@${MKDIR} -p ${PREFIX}/share/icons/hicolor/scalable/apps
+	@${CP} ${PYTHON_SITELIBDIR}/${PYEASYINSTALL_EGG}/resources/images/openlp-logo.svg ${PREFIX}/share/icons/hicolor/scalable/apps/openlp.svg
 
 .include <bsd.port.mk>
