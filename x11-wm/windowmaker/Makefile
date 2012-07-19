@@ -8,12 +8,11 @@ PORTNAME?=	windowmaker
 PORTVERSION=	0.95.2
 PORTREVISION?=	4
 CATEGORIES=	x11-wm windowmaker
-MASTER_SITES=	http://windowmaker.org/pub/%SUBDIR%/ \
-		http://dougbarton.us/Downloads/
+MASTER_SITES=	http://windowmaker.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	source/release
 DISTNAME=	WindowMaker-${PORTVERSION}
 
-MAINTAINER=	dougb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	GNUstep-compliant NeXTstep window manager clone
 
 LIB_DEPENDS=	gif:${PORTSDIR}/graphics/giflib \
