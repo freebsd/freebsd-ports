@@ -41,7 +41,7 @@ PORTDOCS=	AUTHORS ChangeLog README
 
 .if !defined(WITHOUT_PYCONF)
 USE_PYTHON=	yes
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 pygtk2
 CMAKE_ARGS+=	-DENABLE_TINT2CONF:BOOL=ON
 PLIST_FILES+=	bin/tint2conf bin/tintwizard.py \
 		share/applications/tint2conf.desktop \
