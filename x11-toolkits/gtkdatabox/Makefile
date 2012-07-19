@@ -7,32 +7,28 @@
 #
 
 PORTNAME=	gtkdatabox
-PORTVERSION=	0.9.0.1
-PORTREVISION=	5
+PORTVERSION=	0.9.1.3
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	SF http://www.eudoxos.de/gtk/gtkdatabox/download/
+MASTER_SITES=	SF
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK+2 widget to display large amounts of numerical data
 
-USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack gtk20
-USE_AUTOTOOLS=	libtool
-CONFIGURE_ARGS+=	--includedir="${PREFIX}/include/${PORTNAME}" \
-			--with-html-dir="${PREFIX}/share/doc"
+LICENSE=	LGPL21
 
-BROKEN=		does not package - does not install documentation
-
-OPTIONS_DEFINE= GLADE GLADEUI DOCS EXAMPLES
+OPTIONS_DEFINE=	GLADE GLADEUI DOCS EXAMPLES
 GLADE_DESC=	Enable libglade2 support
 GLADEUI_DESC=	Enable glade3 support
 
-.include <bsd.port.pre.mk>
+USE_GNOME=	gnomehack gtk20
+USE_AUTOTOOLS=	libtool
+CONFIGURE_ARGS=	--includedir="${PREFIX}/include/${PORTNAME}" \
+		--with-html-dir="${PREFIX}/share/doc"
+USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
-.if ${PORT_OPTIONS:MDOCS}
-USE_GNOME+=	referencehack
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGLADE}
 USE_GNOME+=	libglade2
@@ -44,7 +40,7 @@ PLIST_SUB+=	GLADE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGLADEUI}
-LIB_DEPENDS+=	gladeui-1.10:${PORTSDIR}/devel/glade3
+LIB_DEPENDS+=	gladeui-1:${PORTSDIR}/devel/glade3
 CONFIGURE_ARGS+=	--enable-glade
 PLIST_SUB+=	GLADEUI=""
 .else
@@ -53,17 +49,22 @@ PLIST_SUB+=	GLADEUI="@comment "
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|@libglade_moduledir@|@prefix@/lib/libglade/2.0|g ; \
-		 s|@glade_moduledir@|@prefix@/lib/glade3/modules|g ; \
-		 s|@glade_catalogdir@|@prefix@/share/glade3/catalogs|g'
-	@${REINPLACE_CMD} -e 's|-DGTK_DISABLE_DEPRECATED||g' \
-		${WRKSRC}/gtk/Makefile.in ${WRKSRC}/examples/Makefile.in
+	@${REINPLACE_CMD} -e \
+		'/^SUBDIR/s|examples||' ${WRKSRC}/Makefile.in
+.for dir in examples gtk
+	@${REINPLACE_CMD} -e \
+		'/-O2/d ; \
+		 /DISABLE_DEPRECATED/d' ${WRKSRC}/${dir}/Makefile.in
+.endfor
 
 post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/reference/html/*.* ${DOCSDIR}
+.endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.c ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
