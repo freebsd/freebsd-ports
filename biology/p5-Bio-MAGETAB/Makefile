@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	Bio-MAGETAB
-PORTVERSION=	1.22
+PORTVERSION=	1.23
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A data model and utility API for the MAGE-TAB format
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	p5-Date-Manip>=5.44:${PORTSDIR}/devel/p5-Date-Manip \
 		p5-DateTime>=0.43.02:${PORTSDIR}/devel/p5-DateTime \
@@ -26,11 +28,9 @@ BUILD_DEPENDS=	p5-Date-Manip>=5.44:${PORTSDIR}/devel/p5-Date-Manip \
 		p5-Text-CSV_XS>=0.32:${PORTSDIR}/textproc/p5-Text-CSV_XS \
 		p5-URI>=1.35:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 TEST_DEPENDS=	p5-Test-Exception>=0.26:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAN3=		Bio::MAGETAB.3 \
 		Bio::MAGETAB::ArrayDesign.3 \
