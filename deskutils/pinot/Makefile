@@ -7,7 +7,7 @@
 
 PORTNAME=	pinot
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 #MASTER_SITES=	http://colinf.chez.com/pinot/
@@ -21,7 +21,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	update-desktop-database:${PORTSDIR}/devel/desktop-file-utils
 LIB_DEPENDS=	xapian:${PORTSDIR}/databases/xapian-core	\
 		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24	\
-		exttextcat.0:${PORTSDIR}/textproc/libexttextcat	\
+		exttextcat-1.0:${PORTSDIR}/textproc/libexttextcat	\
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib	\
 		xml\\+\\+-2.6:${PORTSDIR}/textproc/libxml++26	\
 		boost_thread.4:${PORTSDIR}/devel/boost-libs	\
