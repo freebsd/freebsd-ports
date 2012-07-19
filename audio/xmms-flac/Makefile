@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-flac
 PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF/flac/flac-src/flac-${PORTVERSION}-src
 DISTNAME=	flac-${PORTVERSION}
@@ -18,7 +18,7 @@ COMMENT=	XMMS input plugin for playing FLAC files
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		FLAC.10:${PORTSDIR}/audio/flac \
 		pthread-stubs.0:${PORTSDIR}/devel/libpthread-stubs \
-		ogg.7:${PORTSDIR}/audio/libogg \
+		ogg:${PORTSDIR}/audio/libogg \
 		xcb.2:${PORTSDIR}/x11/libxcb
 
 USE_AUTOTOOLS=	libtool

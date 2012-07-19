@@ -7,7 +7,7 @@
 
 PORTNAME=	kid3
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio kde
 MASTER_SITES=	SF
 
@@ -61,7 +61,7 @@ CMAKE_ARGS+=	-DWITH_VORBIS=OFF
 .else
 CMAKE_ARGS+=	-DWITH_VORBIS=ON
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis \
-		ogg.7:${PORTSDIR}/audio/libogg
+		ogg:${PORTSDIR}/audio/libogg
 .endif
 
 .if defined(WITHOUT_TAGLIB)

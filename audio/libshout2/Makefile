@@ -7,6 +7,7 @@
 
 PORTNAME=	libshout2
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://downloads.xiph.org/releases/libshout/ \

@@ -7,7 +7,7 @@
 
 PORTNAME=	scummvm
 DISTVERSION=	1.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games emulators
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${DISTVERSION}
@@ -66,7 +66,7 @@ PLIST_DIRS=	%%DATADIR%%
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_VORBIS)
-LIB_DEPENDS+=	ogg.7:${PORTSDIR}/audio/libogg \
+LIB_DEPENDS+=	ogg:${PORTSDIR}/audio/libogg \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--with-ogg-prefix=${LOCALBASE} \
 		--with-vorbis-prefix=${LOCALBASE}

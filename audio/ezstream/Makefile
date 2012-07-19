@@ -7,7 +7,7 @@
 
 PORTNAME=	ezstream
 PORTVERSION=	0.5.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/ezstream/ \
 		http://svn.xiph.org/releases/ezstream/

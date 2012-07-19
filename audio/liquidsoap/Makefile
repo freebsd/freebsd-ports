@@ -7,7 +7,7 @@
 
 PORTNAME=	liquidsoap
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio net
 MASTER_SITES=	SF/savonet/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-full
@@ -121,7 +121,7 @@ LIB_DEPENDS_gstreamer=	gstreamer-0.10.0:${PORTSDIR}/multimedia/gstreamer \
 BUILD_DEPENDS_ladspa=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS_lame=	mp3lame.0:${PORTSDIR}/audio/lame
 LIB_DEPENDS_mad=	mad.2:${PORTSDIR}/audio/libmad
-LIB_DEPENDS_ogg=	ogg.7:${PORTSDIR}/audio/libogg
+LIB_DEPENDS_ogg=	ogg:${PORTSDIR}/audio/libogg
 LIB_DEPENDS_vorbis=	vorbis.4:${PORTSDIR}/audio/libvorbis
 LIB_DEPENDS_speex=	speex.1:${PORTSDIR}/audio/speex
 LIB_DEPENDS_theora=	theora.0:${PORTSDIR}/multimedia/libtheora

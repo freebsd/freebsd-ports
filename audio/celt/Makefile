@@ -7,6 +7,7 @@
 
 PORTNAME=	celt
 PORTVERSION=	0.11.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.us.xiph.org/releases/celt/
 
@@ -16,7 +17,7 @@ COMMENT=	The CELT ultra-low delay audio codec
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	ogg.7:${PORTSDIR}/audio/libogg
+LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ogg=${LOCALBASE}

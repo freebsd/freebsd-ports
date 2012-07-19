@@ -43,7 +43,7 @@ CONFIGURE_ARGS+=--disable-mp3
 .endif
 
 .if defined(WITH_OGG)
-LIB_DEPENDS+=	ogg.7:${PORTSDIR}/audio/libogg \
+LIB_DEPENDS+=	ogg:${PORTSDIR}/audio/libogg \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 .else
 CONFIGURE_ARGS+=--disable-ogg

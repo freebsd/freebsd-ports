@@ -7,7 +7,7 @@
 
 PORTNAME=	0ad
 DISTVERSION=	alpha.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/zero-ad/releases
 DISTFILES=	${PORTNAME}-${SVNREV}-alpha-unix-build.tar.xz \

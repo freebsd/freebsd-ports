@@ -7,7 +7,7 @@
 
 PORTNAME=	xonotic
 PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://hagger.rbi.informatik.uni-frankfurt.de/xonotic/ \
 		http://dl.xonotic.org/
@@ -46,7 +46,7 @@ IGNORE=		requires at least one of CLIENT or SERVER options
 LIB_DEPENDS+=	modplug.1:${PORTSDIR}/audio/libmodplug \
 		theora.0:${PORTSDIR}/multimedia/libtheora \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		ogg.7:${PORTSDIR}/audio/libogg
+		ogg:${PORTSDIR}/audio/libogg
 USE_SDL=	sdl
 ALL_TARGET+=	sdl-release
 BINARIES+=	xonotic-sdl
