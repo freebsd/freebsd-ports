@@ -45,6 +45,7 @@ libdata/pkgconfig/libfreecell-solver.pc
 %%DATADIR%%/presets/sentient-pearls.sh
 %%DATADIR%%/presets/tea-for-two.sh
 %%DATADIR%%/presets/the-iglu-cabal.sh
+%%DATADIR%%/presets/three-eighty.sh
 %%DATADIR%%/presets/toons-for-twenty-somethings.sh
 %%DATADIR%%/presets/yellow-brick-road.sh
 @dirrm %%DATADIR%%/presets

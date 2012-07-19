@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	freecell-solver
-PORTVERSION=	3.10.0
+PORTVERSION=	3.12.0
 CATEGORIES=	games
 MASTER_SITES=	http://fc-solve.shlomifish.org/downloads/fc-solve/
 
@@ -37,7 +37,7 @@ MAN6=		fc-solve-board_gen.6 fc-solve.6 \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTCMALLOC}
-LIB_DEPENDS+=	tcmalloc.2:${PORTSDIR}/devel/google-perftools
+LIB_DEPENDS+=	tcmalloc:${PORTSDIR}/devel/google-perftools
 .else
 CMAKE_ARGS+=	-DFCS_AVOID_TCMALLOC:BOOL=ON
 .endif
