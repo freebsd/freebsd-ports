@@ -1,0 +1,9 @@
+The Pycadia project is a collection of vector arcade games written in Python
+using the excellent pygame libraries.
+
+Current games are:
+
+SpaceWarpy is a conversion of the original classic game Spacewar!.
+Vektoroids is loosely based on the arcade classic Asteroids.
+
+WWW: http://www.anti-particle.com/old/pycadia.shtml

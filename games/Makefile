@@ -707,6 +707,7 @@
     SUBDIR += py-sgfsummary
     SUBDIR += py-ski
     SUBDIR += pyawale
+    SUBDIR += pycadia
     SUBDIR += pyching
     SUBDIR += pydance
     SUBDIR += pykawari
