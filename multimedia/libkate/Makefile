@@ -7,7 +7,7 @@
 
 PORTNAME=	libkate
 PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -17,7 +17,7 @@ COMMENT=	Codec for karaoke and text encapsulation for Ogg
 LICENSE=	BSD
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
-LIB_DEPENDS=	ogg.7:${PORTSDIR}/audio/libogg \
+LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
 		png15:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes

@@ -7,14 +7,14 @@
 
 PORTNAME=	phlipple
 PORTVERSION=	0.8.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Flipping squares will never be the same
 
-LIB_DEPENDS=	ogg.7:${PORTSDIR}/audio/libogg \
+LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		GLEW.1:${PORTSDIR}/graphics/glew
 

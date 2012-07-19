@@ -7,14 +7,14 @@
 
 PORTNAME=	flac
 PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Free lossless audio codec
 
-LIB_DEPENDS=	ogg.7:${PORTSDIR}/audio/libogg
+LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes

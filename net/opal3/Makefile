@@ -116,7 +116,7 @@ CONFIGURE_ARGS+=	--enable-localilbc
 
 .if defined(WITH_THEORA)
 LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora \
-		ogg.7:${PORTSDIR}/audio/libogg
+		ogg:${PORTSDIR}/audio/libogg
 CONFIGURE_ARGS+=	--enable-theora
 PLIST_SUB+=	THEORA=""
 WITH_VIDEO=	yes

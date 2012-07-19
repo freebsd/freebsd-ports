@@ -8,7 +8,7 @@
 
 PORTNAME=	MuSE
 PORTVERSION=	0.9.2
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	audio
 MASTER_SITES=	http://files.dyne.org/muse/releases/
 
@@ -18,7 +18,7 @@ COMMENT=	Multiple Streaming Engine
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
-		ogg.7:${PORTSDIR}/audio/libogg
+		ogg:${PORTSDIR}/audio/libogg
 
 OPTIONS_DEFINE=	X11 LAME SNDFILE DOCS
 OPTIONS_DEFAULT=X11

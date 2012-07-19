@@ -6,7 +6,7 @@
 
 PORTNAME=	callweaver
 PORTVERSION=	1.2.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net
 MASTER_SITES=	http://devs.callweaver.org/release/
 EXTRACT_SUFX=	.tgz

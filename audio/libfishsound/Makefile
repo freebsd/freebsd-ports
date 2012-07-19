@@ -7,6 +7,7 @@
 
 PORTNAME=	libfishsound
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/libfishsound/ \
 		LOCAL/sunpoet

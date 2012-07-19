@@ -7,7 +7,7 @@
 
 PORTNAME=	lopster
 PORTVERSION=	1.2.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF \
 		http://lopster.sourceforge.net/download/
@@ -38,7 +38,7 @@ CONFIGURE_ARGS+=	--without-flac
 
 # --with-ogg is on by default
 .if defined(WITH_OGG)
-LIB_DEPENDS+=		ogg.7:${PORTSDIR}/audio/libogg
+LIB_DEPENDS+=		ogg:${PORTSDIR}/audio/libogg
 .else
 CONFIGURE_ARGS+=	--without-ogg
 .endif

@@ -118,7 +118,7 @@ CONFIGURE_ARGS+=	--disable-x264
 .endif
 
 .if defined(WITH_OGG)
-LIB_DEPENDS+=	ogg.7:${PORTSDIR}/audio/libogg
+LIB_DEPENDS+=	ogg:${PORTSDIR}/audio/libogg
 CONFIGURE_ARGS+=	--enable-ogg
 .else
 CONFIGURE_ARGS+=	--disable-ogg

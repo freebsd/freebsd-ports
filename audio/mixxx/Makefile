@@ -7,9 +7,8 @@
 
 PORTNAME=	mixxx
 PORTVERSION=	1.10.0
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://mixxx.rasant-records.de/downloads/%SUBDIR%/ \
 		http://moo.glines.org/mixxx/%SUBDIR%/ \
