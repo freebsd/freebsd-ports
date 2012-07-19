@@ -7,7 +7,7 @@
 
 PORTNAME=	ibus-hangul
 PORTVERSION=	1.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	korean
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -16,8 +16,8 @@ COMMENT=	Hangul input engine for IBus
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	hangul.1:${PORTSDIR}/korean/libhangul \
-		ibus-1.0.400:${PORTSDIR}/textproc/ibus
+LIB_DEPENDS=	hangul:${PORTSDIR}/korean/libhangul \
+		ibus-1.0:${PORTSDIR}/textproc/ibus
 
 PROJECTHOST=	ibus
 
@@ -28,7 +28,9 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack intltool pkgconfig
 USE_PYTHON=	yes
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
