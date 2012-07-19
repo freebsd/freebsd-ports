@@ -30,14 +30,16 @@ PORTDOCS=	Changelog README
 
 ALL_TARGET=
 
+post-patch:
+# Fix data location
+	@${REINPLACE_CMD} -e 's!data/bg%d.pcx!${DATADIR}/data/bg%d.pcx!' \
+	-e 's!data/tiles%d.pcx!${DATADIR}/data/tiles%d.pcx!' \
+	-e 's!char temp\[64\];!char temp\[256\];!' \
+	${WRKSRC}/lopan.c
+
 do-install:
-# Scripts
-	@${PRINTF} "#!/bin/sh\n\ncd ${DATADIR} &&\
-		./lopan\n" > ${WRKDIR}/sdllopan.sh
-	@${INSTALL_SCRIPT} ${WRKDIR}/sdllopan.sh ${PREFIX}/bin/sdllopan
 # Executable
-	${MKDIR} ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/lopan ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lopan ${PREFIX}/bin/sdllopan
 # Data
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} data ${DATADIR})
 
