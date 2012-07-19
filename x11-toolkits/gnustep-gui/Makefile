@@ -29,6 +29,8 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libflite.a:${PORTSDIR}/audio/flite
 LICENSE_COMB=	multi
 LICENSE=	GPLv3 LGPL3
 
+BROKEN=		incorrect plist
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-tiff-library=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-tiff-include=${LOCALBASE}/include
