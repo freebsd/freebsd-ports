@@ -8,8 +8,7 @@
 PORTNAME=	sunpinyin
 DISTVERSION=	2.0.4rc2
 CATEGORIES=	chinese devel
-MASTER_SITES=	LOCAL/wen:1 \
-		http://students.cs.niu.edu/~z1565938/distfiles/:1 \
+MASTER_SITES=	LOCAL/delphij:1 \
 		${MASTER_SITE_GOOGLE_CODE}:1 \
 		http://open-gram.googlecode.com/files/:2
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:1 \
