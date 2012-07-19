@@ -29,6 +29,7 @@ lib/gemrb/plugins/MOSImporter.so
 lib/gemrb/plugins/MUSImporter.so
 lib/gemrb/plugins/MVEPlayer.so
 lib/gemrb/plugins/NullSound.so
+lib/gemrb/plugins/NullSource.so
 lib/gemrb/plugins/OGGReader.so
 lib/gemrb/plugins/OpenALAudio.so
 lib/gemrb/plugins/PLTImporter.so
@@ -76,6 +77,7 @@ share/pixmaps/gemrb.png
 %%PORTDOCS%%%%DOCSDIR%%/en/GUIScript/Button_CreateLabelOnButton.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/GUIScript/Button_EnableBorder.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/GUIScript/Button_SetActionIcon.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/GUIScript/Button_SetAnchor.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/GUIScript/Button_SetBAM.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/GUIScript/Button_SetBorder.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/GUIScript/Button_SetFlags.txt
@@ -86,6 +88,7 @@ share/pixmaps/gemrb.png
 %%PORTDOCS%%%%DOCSDIR%%/en/GUIScript/Button_SetPLT.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/GUIScript/Button_SetPicture.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/GUIScript/Button_SetPictureClipping.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/GUIScript/Button_SetPushOffset.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/GUIScript/Button_SetSpellIcon.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/GUIScript/Button_SetSprite2D.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/GUIScript/Button_SetSprites.txt
@@ -467,6 +470,7 @@ share/pixmaps/gemrb.png
 %%PORTDOCS%%%%DOCSDIR%%/en/Tables/pdolls.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/Tables/pictures.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/Tables/polystat.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/Tables/proftype.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/Tables/qslots.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/Tables/races.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/Tables/randitem.txt
@@ -769,6 +773,7 @@ share/pixmaps/gemrb.png
 %%DATADIR%%/override/bg1/dart.pro
 %%DATADIR%%/override/bg1/dartex.pro
 %%DATADIR%%/override/bg1/defsound.2da
+%%DATADIR%%/override/bg1/difflvls.2da
 %%DATADIR%%/override/bg1/dsclass.2da
 %%DATADIR%%/override/bg1/dsrace.2da
 %%DATADIR%%/override/bg1/dstable.2da
@@ -1222,6 +1227,7 @@ share/pixmaps/gemrb.png
 %%DATADIR%%/override/how/portal.pro
 %%DATADIR%%/override/how/prayer.pro
 %%DATADIR%%/override/how/prayerh.pro
+%%DATADIR%%/override/how/proftype.2da
 %%DATADIR%%/override/how/protevil.pro
 %%DATADIR%%/override/how/prtl_cl.pro
 %%DATADIR%%/override/how/prtl_cl.spl
@@ -1592,6 +1598,7 @@ share/pixmaps/gemrb.png
 %%DATADIR%%/override/iwd/portal.pro
 %%DATADIR%%/override/iwd/prayer.pro
 %%DATADIR%%/override/iwd/prayerh.pro
+%%DATADIR%%/override/iwd/proftype.2da
 %%DATADIR%%/override/iwd/protevil.pro
 %%DATADIR%%/override/iwd/prtl_cl.pro
 %%DATADIR%%/override/iwd/prtl_cl.spl
@@ -1732,6 +1739,7 @@ share/pixmaps/gemrb.png
 %%DATADIR%%/override/iwd2/acidblob.pro
 %%DATADIR%%/override/iwd2/acidbloc.pro
 %%DATADIR%%/override/iwd2/acidh.pro
+%%DATADIR%%/override/iwd2/acidh.vvc
 %%DATADIR%%/override/iwd2/adhwil.pro
 %%DATADIR%%/override/iwd2/adhwilh.pro
 %%DATADIR%%/override/iwd2/alance.pro
@@ -1760,6 +1768,7 @@ share/pixmaps/gemrb.png
 %%DATADIR%%/override/iwd2/arrowfli.pro
 %%DATADIR%%/override/iwd2/arrowflm.pro
 %%DATADIR%%/override/iwd2/arrowhvy.pro
+%%DATADIR%%/override/iwd2/artstr.spl
 %%DATADIR%%/override/iwd2/ascorch.pro
 %%DATADIR%%/override/iwd2/astorm.pro
 %%DATADIR%%/override/iwd2/asumm1.pro
@@ -1821,6 +1830,7 @@ share/pixmaps/gemrb.png
 %%DATADIR%%/override/iwd2/cocoldh.pro
 %%DATADIR%%/override/iwd2/cofire.pro
 %%DATADIR%%/override/iwd2/coldh.pro
+%%DATADIR%%/override/iwd2/coldh.vvc
 %%DATADIR%%/override/iwd2/colrspry.pro
 %%DATADIR%%/override/iwd2/confush.pro
 %%DATADIR%%/override/iwd2/confusp.pro
@@ -1828,6 +1838,7 @@ share/pixmaps/gemrb.png
 %%DATADIR%%/override/iwd2/conjuh.pro
 %%DATADIR%%/override/iwd2/conjut.pro
 %%DATADIR%%/override/iwd2/copest.pro
+%%DATADIR%%/override/iwd2/cripstr.spl
 %%DATADIR%%/override/iwd2/cry150.pro
 %%DATADIR%%/override/iwd2/cry200.pro
 %%DATADIR%%/override/iwd2/cry225.pro
@@ -1852,18 +1863,23 @@ share/pixmaps/gemrb.png
 %%DATADIR%%/override/iwd2/ddoorh.pro
 %%DATADIR%%/override/iwd2/defsound.2da
 %%DATADIR%%/override/iwd2/destruh.pro
+%%DATADIR%%/override/iwd2/detect.spl
 %%DATADIR%%/override/iwd2/dfog.pro
+%%DATADIR%%/override/iwd2/dirty.spl
 %%DATADIR%%/override/iwd2/disint.pro
 %%DATADIR%%/override/iwd2/disinth.pro
 %%DATADIR%%/override/iwd2/dispel.pro
 %%DATADIR%%/override/iwd2/divinh.pro
 %%DATADIR%%/override/iwd2/divint.pro
+%%DATADIR%%/override/iwd2/dsclass.2da
 %%DATADIR%%/override/iwd2/dspell.pro
 %%DATADIR%%/override/iwd2/dspellh.pro
+%%DATADIR%%/override/iwd2/dsrace.2da
 %%DATADIR%%/override/iwd2/dstable.2da
 %%DATADIR%%/override/iwd2/effects.ids
 %%DATADIR%%/override/iwd2/efftext.2da
 %%DATADIR%%/override/iwd2/electrh.pro
+%%DATADIR%%/override/iwd2/electrh.vvc
 %%DATADIR%%/override/iwd2/emotion.pro
 %%DATADIR%%/override/iwd2/enchah.pro
 %%DATADIR%%/override/iwd2/enchan.pro
@@ -1875,6 +1891,29 @@ share/pixmaps/gemrb.png
 %%DATADIR%%/override/iwd2/exaltah.pro
 %%DATADIR%%/override/iwd2/factioh.pro
 %%DATADIR%%/override/iwd2/fbreath.pro
+%%DATADIR%%/override/iwd2/feat00.spl
+%%DATADIR%%/override/iwd2/feat02.spl
+%%DATADIR%%/override/iwd2/feat07.spl
+%%DATADIR%%/override/iwd2/feat09.spl
+%%DATADIR%%/override/iwd2/feat0a.spl
+%%DATADIR%%/override/iwd2/feat0c.spl
+%%DATADIR%%/override/iwd2/feat0d.spl
+%%DATADIR%%/override/iwd2/feat0f.spl
+%%DATADIR%%/override/iwd2/feat10.spl
+%%DATADIR%%/override/iwd2/feat18.spl
+%%DATADIR%%/override/iwd2/feat19.spl
+%%DATADIR%%/override/iwd2/feat1a.spl
+%%DATADIR%%/override/iwd2/feat1c.spl
+%%DATADIR%%/override/iwd2/feat1d.spl
+%%DATADIR%%/override/iwd2/feat1e.spl
+%%DATADIR%%/override/iwd2/feat20.spl
+%%DATADIR%%/override/iwd2/feat22.spl
+%%DATADIR%%/override/iwd2/feat23.spl
+%%DATADIR%%/override/iwd2/feat25.spl
+%%DATADIR%%/override/iwd2/feat32.spl
+%%DATADIR%%/override/iwd2/feat33.spl
+%%DATADIR%%/override/iwd2/feat3b.spl
+%%DATADIR%%/override/iwd2/feat41.spl
 %%DATADIR%%/override/iwd2/featreq.2da
 %%DATADIR%%/override/iwd2/ffinger.pro
 %%DATADIR%%/override/iwd2/findtrap.pro
@@ -1883,6 +1922,7 @@ share/pixmaps/gemrb.png
 %%DATADIR%%/override/iwd2/firebolt.pro
 %%DATADIR%%/override/iwd2/firebtbl.pro
 %%DATADIR%%/override/iwd2/fireh.pro
+%%DATADIR%%/override/iwd2/fireh.vvc
 %%DATADIR%%/override/iwd2/firestor.pro
 %%DATADIR%%/override/iwd2/fistweap.2da
 %%DATADIR%%/override/iwd2/fodeath.pro
@@ -1904,6 +1944,7 @@ share/pixmaps/gemrb.png
 %%DATADIR%%/override/iwd2/gshout.pro
 %%DATADIR%%/override/iwd2/guibtact.2da
 %%DATADIR%%/override/iwd2/guils.chu
+%%DATADIR%%/override/iwd2/hamstr.spl
 %%DATADIR%%/override/iwd2/harmh.pro
 %%DATADIR%%/override/iwd2/harmony.pro
 %%DATADIR%%/override/iwd2/haterace.2da
@@ -1927,6 +1968,7 @@ share/pixmaps/gemrb.png
 %%DATADIR%%/override/iwd2/invoct.pro
 %%DATADIR%%/override/iwd2/iplague.pro
 %%DATADIR%%/override/iwd2/island00.2da
+%%DATADIR%%/override/iwd2/itemdata.2da
 %%DATADIR%%/override/iwd2/itemsnd.2da
 %%DATADIR%%/override/iwd2/itemtype.2da
 %%DATADIR%%/override/iwd2/itemuse.2da
@@ -1935,8 +1977,10 @@ share/pixmaps/gemrb.png
 %%DATADIR%%/override/iwd2/lightbnb.pro
 %%DATADIR%%/override/iwd2/lightsto.pro
 %%DATADIR%%/override/iwd2/lodisr.pro
+%%DATADIR%%/override/iwd2/magesch.2da
 %%DATADIR%%/override/iwd2/magicmis.pro
 %%DATADIR%%/override/iwd2/malison.pro
+%%DATADIR%%/override/iwd2/mdfeats.2da
 %%DATADIR%%/override/iwd2/mfmiss.pro
 %%DATADIR%%/override/iwd2/mfmiss2.pro
 %%DATADIR%%/override/iwd2/mfmissh.pro
@@ -1973,6 +2017,7 @@ share/pixmaps/gemrb.png
 %%DATADIR%%/override/iwd2/portal.pro
 %%DATADIR%%/override/iwd2/prayer.pro
 %%DATADIR%%/override/iwd2/prayerh.pro
+%%DATADIR%%/override/iwd2/proftype.2da
 %%DATADIR%%/override/iwd2/protevil.pro
 %%DATADIR%%/override/iwd2/prtl_cl.pro
 %%DATADIR%%/override/iwd2/prtl_op.pro
@@ -1981,6 +2026,7 @@ share/pixmaps/gemrb.png
 %%DATADIR%%/override/iwd2/pwsileh.pro
 %%DATADIR%%/override/iwd2/pwstun.pro
 %%DATADIR%%/override/iwd2/pwstunh.pro
+%%DATADIR%%/override/iwd2/raceflag.2da
 %%DATADIR%%/override/iwd2/races.2da
 %%DATADIR%%/override/iwd2/rad100.pro
 %%DATADIR%%/override/iwd2/rad250.pro
@@ -2050,6 +2096,9 @@ share/pixmaps/gemrb.png
 %%DATADIR%%/override/iwd2/spearex.pro
 %%DATADIR%%/override/iwd2/spfdeath.pro
 %%DATADIR%%/override/iwd2/spfirebl.pro
+%%DATADIR%%/override/iwd2/spin231r.spl
+%%DATADIR%%/override/iwd2/spin232r.spl
+%%DATADIR%%/override/iwd2/spin233r.spl
 %%DATADIR%%/override/iwd2/spklarbk.pro
 %%DATADIR%%/override/iwd2/spklarbl.pro
 %%DATADIR%%/override/iwd2/spklarch.pro
@@ -2061,6 +2110,7 @@ share/pixmaps/gemrb.png
 %%DATADIR%%/override/iwd2/spklarpu.pro
 %%DATADIR%%/override/iwd2/spklarre.pro
 %%DATADIR%%/override/iwd2/spklarst.pro
+%%DATADIR%%/override/iwd2/splfocus.2da
 %%DATADIR%%/override/iwd2/splprot.2da
 %%DATADIR%%/override/iwd2/splspec.2da
 %%DATADIR%%/override/iwd2/spoisoh.pro
@@ -2283,6 +2333,7 @@ share/pixmaps/gemrb.png
 %%DATADIR%%/override/pst/pdolls.2da
 %%DATADIR%%/override/pst/poo.spl
 %%DATADIR%%/override/pst/poone.pro
+%%DATADIR%%/override/pst/proftype.2da
 %%DATADIR%%/override/pst/pwb.spl
 %%DATADIR%%/override/pst/pwblind.pro
 %%DATADIR%%/override/pst/pwk.spl
@@ -2402,6 +2453,7 @@ share/pixmaps/gemrb.png
 %%DATADIR%%/override/shared/cow.pro
 %%DATADIR%%/override/shared/demoend.chu
 %%DATADIR%%/override/shared/detect.spl
+%%DATADIR%%/override/shared/difflvls.2da
 %%DATADIR%%/override/shared/dmgtypes.2da
 %%DATADIR%%/override/shared/dummy.spl
 %%DATADIR%%/override/shared/fatigue.2da
