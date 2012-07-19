@@ -1,0 +1,29 @@
+--- xtoys.orig	2009-02-08 05:48:26.000000000 +0900
++++ xtoys	2012-06-21 16:03:49.000000000 +0900
+@@ -1,17 +1,16 @@
+-#!/bin/bash
++#!/bin/sh
+ #
+-# /usr/bin/X11/xtoys -- puts a random cuddly toy onto desktop
++# %%PREFIX%%/bin/xtoys -- puts a random cuddly toy onto desktop
+ #
+ # Thanks to Andrew Stribblehill <a.d.stribblehill@dur.ac.uk>
+ # who supported this script
+ #
+-if [ -d /usr/local/share/xteddy ] ; then
+-  images=(`ls /usr/share/xteddy` `ls /usr/local/share/xteddy 2> /dev/null`)
+-else
+-  images=(`ls /usr/share/xteddy`)
+-fi
++i=0
++for img in `ls %%PREFIX%%/share/xteddy`; do
++	images[$i]=$img
++	i=`expr $i + 1`
++done
+ 
+-num=${#images[*]}
+-choice=`expr $RANDOM % $num`
++choice=`expr $RANDOM % $i`
+ 
+-/usr/games/xteddy -F${images[choice]} $*
++%%PREFIX%%/bin/xteddy -F${images[choice]} $*
