@@ -41,7 +41,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=1.44:${PORTSDIR}/devel/p5-Test-Pod
 
-PERL_CONFIGURE=	yes
+# This port also requires strict>=1.04 (5.10.0+), utf8>=1.09 (5.14.0+) and warnings>=1.12 (5.14.0+)
+PERL_CONFIGURE=	5.14.0+
 
 MAN3=		GraphViz2.3 \
 		GraphViz2::DBI.3 \
