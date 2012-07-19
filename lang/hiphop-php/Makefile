@@ -7,7 +7,7 @@
 
 PORTNAME=	hiphop-php
 PORTVERSION=	0.0.20120716
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel www
 MASTER_SITES=	https://github.com/facebook/hiphop-php/tarball/${GITVERSION}/:main \
 		http://unicode.org/Public/UNIDATA/:unidata \
@@ -38,6 +38,7 @@ LICENSE_DISTFILES_ZEND200=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 LIB_DEPENDS=	icudata.48:${PORTSDIR}/devel/icu \
 		boost_thread:${PORTSDIR}/devel/boost-libs \
+		execinfo:${PORTSDIR}/devel/libexecinfo \
 		tbb.4:${PORTSDIR}/devel/tbb \
 		gd.4:${PORTSDIR}/graphics/gd \
 		mcrypt.8:${PORTSDIR}/security/libmcrypt \
@@ -46,6 +47,10 @@ LIB_DEPENDS=	icudata.48:${PORTSDIR}/devel/icu \
 		expat.6:${PORTSDIR}/textproc/expat2 \
 		memcached.10:${PORTSDIR}/databases/libmemcached \
 		c-client4.9:${PORTSDIR}/mail/cclient
+
+OPTIONS_DEFINE=	NLS
+OPTIONS_DEFAULT=	NLS
+NLS_DESC=	Depend on gettext (required if binutils have NLS)
 
 _EXTDIR=	share/hiphop-php/ext
 
@@ -67,6 +72,7 @@ USE_MYSQL=	yes
 USE_GNOME=	libxml2
 USE_OPENSSL=	yes
 USE_OPENLDAP=	yes
+USE_GETTEXT=	yes
 USE_GCC=	4.4+
 
 GITVERSION=	96532ec
@@ -104,6 +110,12 @@ SUB_LIST+=	CC="${CC}" \
 		HPHP="${DATADIR}/bin/hphp"
 
 SUB_FILES+=	hphp
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gettext
+.endif
 
 .include <bsd.port.pre.mk>
 
