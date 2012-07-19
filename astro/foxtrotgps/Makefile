@@ -18,8 +18,6 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		soup-2.4:${PORTSDIR}/devel/libsoup \
 		gps:${PORTSDIR}/astro/gpsd
 
-USE_AUTOTOOLS=	automake aclocal libtool autoconf
-ACLOCAL_ARGS=	--force
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
