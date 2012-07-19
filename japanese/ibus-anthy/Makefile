@@ -7,7 +7,7 @@
 
 PORTNAME=	ibus-anthy
 PORTVERSION=	1.2.7
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	japanese
 PROJECTHOST=	ibus
@@ -19,7 +19,7 @@ COMMENT=	Anthy engine for IBus
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	anthy.1:${PORTSDIR}/japanese/anthy \
-		ibus-1.0.400:${PORTSDIR}/textproc/ibus
+		ibus-1.0.401:${PORTSDIR}/textproc/ibus
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/_pynotify.so:${PORTSDIR}/devel/py-notify
 
 GNU_CONFIGURE=	yes
