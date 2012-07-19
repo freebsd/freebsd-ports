@@ -21,8 +21,6 @@ LICENSE=	GPLv3 # (or later)
 
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
-BROKEN=		does not compile
-
 OPTIONS_DEFINE=	NLS SVG DOCS
 OPTIONS_DEFAULT=	SVG
 
@@ -40,7 +38,7 @@ CONFIGURE_ENV=	T4K_COMMON_CFLAGS="-I${T4K_WRKSRC}/src" \
 MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	$$(pkg-config --cflags SDL_Pango) -I${LOCALBASE}/include \
-		-DHAVE_ALPHASORT -DHAVE_SCANDIR -DHAVE_FSYNC -DICONV_CONST="" 
+		-DHAVE_ALPHASORT -DHAVE_SCANDIR -DHAVE_FSYNC -DICONV_CONST=""
 LDFLAGS+=	$$(pkg-config --libs SDL_Pango) -L${LOCALBASE}/lib
 
 T4K_NAME=	t4k_common
@@ -51,6 +49,7 @@ T4K_WRKSRC=	${WRKDIR}/${T4K_NAME}-${T4K_VERSION}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
