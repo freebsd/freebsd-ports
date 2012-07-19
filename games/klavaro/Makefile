@@ -7,7 +7,7 @@
 
 PORTNAME=	klavaro
 PORTVERSION=	1.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -17,7 +17,7 @@ COMMENT=	Touchtyping trainer
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
-		gtkdatabox-0.9.0.1:${PORTSDIR}/x11-toolkits/gtkdatabox
+		gtkdatabox-0.9.1.3:${PORTSDIR}/x11-toolkits/gtkdatabox
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes

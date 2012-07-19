@@ -17,27 +17,26 @@ include/gtkdatabox/gtkdatabox_xyc_graph.h
 %%GLADE%%lib/libglade/2.0/libdatabox.a
 %%GLADE%%lib/libglade/2.0/libdatabox.la
 %%GLADE%%lib/libglade/2.0/libdatabox.so
-lib/libgtkdatabox-0.9.0.so
-lib/libgtkdatabox-0.9.0.so.1
+lib/libgtkdatabox-0.9.1.so
+lib/libgtkdatabox-0.9.1.so.3
 lib/libgtkdatabox.a
 lib/libgtkdatabox.la
 lib/libgtkdatabox.so
 libdata/pkgconfig/gtkdatabox.pc
-%%GLADEUI%%share/glade3/catalogs/gtkdatabox.xml
-%%PORTDOCS%%%%DOCSDIR%%/GtkDatabox.html
-%%PORTDOCS%%%%DOCSDIR%%/GtkDataboxBars.html
-%%PORTDOCS%%%%DOCSDIR%%/GtkDataboxCrossSimple.html
-%%PORTDOCS%%%%DOCSDIR%%/GtkDataboxGraph.html
-%%PORTDOCS%%%%DOCSDIR%%/GtkDataboxGrid.html
-%%PORTDOCS%%%%DOCSDIR%%/GtkDataboxLines.html
-%%PORTDOCS%%%%DOCSDIR%%/GtkDataboxMarkers.html
-%%PORTDOCS%%%%DOCSDIR%%/GtkDataboxPoints.html
-%%PORTDOCS%%%%DOCSDIR%%/GtkDataboxRuler.html
-%%PORTDOCS%%%%DOCSDIR%%/GtkDataboxXYCGraph.html
 %%PORTDOCS%%%%DOCSDIR%%/ch01.html
+%%PORTDOCS%%%%DOCSDIR%%/gtkdatabox-gtkdatabox-bars.html
+%%PORTDOCS%%%%DOCSDIR%%/gtkdatabox-gtkdatabox-cross-simple.html
+%%PORTDOCS%%%%DOCSDIR%%/gtkdatabox-gtkdatabox-graph.html
+%%PORTDOCS%%%%DOCSDIR%%/gtkdatabox-gtkdatabox-grid.html
+%%PORTDOCS%%%%DOCSDIR%%/gtkdatabox-gtkdatabox-lines.html
+%%PORTDOCS%%%%DOCSDIR%%/gtkdatabox-gtkdatabox-markers.html
 %%PORTDOCS%%%%DOCSDIR%%/gtkdatabox-gtkdatabox-marshal.html
+%%PORTDOCS%%%%DOCSDIR%%/gtkdatabox-gtkdatabox-points.html
+%%PORTDOCS%%%%DOCSDIR%%/gtkdatabox-gtkdatabox-ruler.html
 %%PORTDOCS%%%%DOCSDIR%%/gtkdatabox-gtkdatabox-scale.html
 %%PORTDOCS%%%%DOCSDIR%%/gtkdatabox-gtkdatabox-typedefs.html
+%%PORTDOCS%%%%DOCSDIR%%/gtkdatabox-gtkdatabox-xyc-graph.html
+%%PORTDOCS%%%%DOCSDIR%%/gtkdatabox-gtkdatabox.html
 %%PORTDOCS%%%%DOCSDIR%%/gtkdatabox.devhelp
 %%PORTDOCS%%%%DOCSDIR%%/gtkdatabox.devhelp2
 %%PORTDOCS%%%%DOCSDIR%%/home.png
@@ -54,11 +53,13 @@ libdata/pkgconfig/gtkdatabox.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/colors.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/enable_disable.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid_array.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/keycontrol.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lissajous.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/logarithmic.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/markers.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/signals.c
-@dirrm include/gtkdatabox
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%GLADEUI%%share/glade3/catalogs/gtkdatabox.xml
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/gtkdatabox
