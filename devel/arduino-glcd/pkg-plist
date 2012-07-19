@@ -1,0 +1,225 @@
+arduino/libraries/glcd/Buildinfo.txt
+arduino/libraries/glcd/License.txt
+arduino/libraries/glcd/bitmaps/ArduinoIcon.h
+arduino/libraries/glcd/bitmaps/ArduinoIcon32.bmp
+arduino/libraries/glcd/bitmaps/ArduinoIcon32.h
+arduino/libraries/glcd/bitmaps/ArduinoIcon32x32.bmp
+arduino/libraries/glcd/bitmaps/ArduinoIcon32x32.h
+arduino/libraries/glcd/bitmaps/ArduinoIcon64x32.bmp
+arduino/libraries/glcd/bitmaps/ArduinoIcon64x32.h
+arduino/libraries/glcd/bitmaps/ArduinoIcon64x64.bmp
+arduino/libraries/glcd/bitmaps/ArduinoIcon64x64.h
+arduino/libraries/glcd/bitmaps/ArduinoIcon96x32.bmp
+arduino/libraries/glcd/bitmaps/ArduinoIcon96x32.h
+arduino/libraries/glcd/bitmaps/allBitmaps.h
+arduino/libraries/glcd/bitmaps/utils/Java/glcdMakeBitmap.jar
+arduino/libraries/glcd/bitmaps/utils/Java/glcdMakeBitmap.java
+arduino/libraries/glcd/bitmaps/utils/Readme.txt
+arduino/libraries/glcd/bitmaps/utils/data/ArduinoIcon.bmp
+arduino/libraries/glcd/bitmaps/utils/glcdMakeBitmap/glcdMakeBitmap.pde
+arduino/libraries/glcd/config/Modagm1264f_Manual_Config.h
+arduino/libraries/glcd/config/Modmt12232d_Manual_Config.h
+arduino/libraries/glcd/config/Modvk5121_Manual_Config.h
+arduino/libraries/glcd/config/ks0108-192x64_Panel.h
+arduino/libraries/glcd/config/ks0108_Arduino.h
+arduino/libraries/glcd/config/ks0108_Manual_Config.h
+arduino/libraries/glcd/config/ks0108_Mega.h
+arduino/libraries/glcd/config/ks0108_Panel.h
+arduino/libraries/glcd/config/ks0108_Sanguino.h
+arduino/libraries/glcd/config/ks0108_Teensy.h
+arduino/libraries/glcd/device/hd44102_Device.h
+arduino/libraries/glcd/device/ks0108_Device.h
+arduino/libraries/glcd/device/ks0713_Device.h
+arduino/libraries/glcd/device/mt12232d_Device.h
+arduino/libraries/glcd/device/sed1520_Device.h
+arduino/libraries/glcd/device/xxx_Device.h
+arduino/libraries/glcd/doc/GLCD_Documentation.pdf
+arduino/libraries/glcd/doc/GLCDref.htm
+arduino/libraries/glcd/doc/html/Coordinates.jpg
+arduino/libraries/glcd/doc/html/annotated.html
+arduino/libraries/glcd/doc/html/bc_s.png
+arduino/libraries/glcd/doc/html/classes.html
+arduino/libraries/glcd/doc/html/classg_text-members.html
+arduino/libraries/glcd/doc/html/classg_text.html
+arduino/libraries/glcd/doc/html/classg_text.png
+arduino/libraries/glcd/doc/html/classglcd-members.html
+arduino/libraries/glcd/doc/html/classglcd.html
+arduino/libraries/glcd/doc/html/classglcd.png
+arduino/libraries/glcd/doc/html/classglcd___device-members.html
+arduino/libraries/glcd/doc/html/classglcd___device.html
+arduino/libraries/glcd/doc/html/classglcd___device.png
+arduino/libraries/glcd/doc/html/closed.png
+arduino/libraries/glcd/doc/html/doxygen.css
+arduino/libraries/glcd/doc/html/doxygen.png
+arduino/libraries/glcd/doc/html/ftv2blank.png
+arduino/libraries/glcd/doc/html/ftv2doc.png
+arduino/libraries/glcd/doc/html/ftv2folderclosed.png
+arduino/libraries/glcd/doc/html/ftv2folderopen.png
+arduino/libraries/glcd/doc/html/ftv2lastnode.png
+arduino/libraries/glcd/doc/html/ftv2link.png
+arduino/libraries/glcd/doc/html/ftv2mlastnode.png
+arduino/libraries/glcd/doc/html/ftv2mnode.png
+arduino/libraries/glcd/doc/html/ftv2node.png
+arduino/libraries/glcd/doc/html/ftv2plastnode.png
+arduino/libraries/glcd/doc/html/ftv2pnode.png
+arduino/libraries/glcd/doc/html/ftv2splitbar.png
+arduino/libraries/glcd/doc/html/ftv2vertline.png
+arduino/libraries/glcd/doc/html/functions.html
+arduino/libraries/glcd/doc/html/functions_func.html
+arduino/libraries/glcd/doc/html/functions_vars.html
+arduino/libraries/glcd/doc/html/glcdMakeBitmap.png
+arduino/libraries/glcd/doc/html/glcddiag1.jpg
+arduino/libraries/glcd/doc/html/glcddiag2.jpg
+arduino/libraries/glcd/doc/html/glcddiag3.jpg
+arduino/libraries/glcd/doc/html/glcddiag4.jpg
+arduino/libraries/glcd/doc/html/glcddiag5.jpg
+arduino/libraries/glcd/doc/html/glcddiag6.jpg
+arduino/libraries/glcd/doc/html/glcdlib.jpg
+arduino/libraries/glcd/doc/html/group__glcd__deprecated.html
+arduino/libraries/glcd/doc/html/group__glcd__enum.html
+arduino/libraries/glcd/doc/html/hierarchy.html
+arduino/libraries/glcd/doc/html/index.html
+arduino/libraries/glcd/doc/html/installdox
+arduino/libraries/glcd/doc/html/jquery.js
+arduino/libraries/glcd/doc/html/ks0108_Panel_A.gif
+arduino/libraries/glcd/doc/html/ks0108_Panel_A_WiringPic.jpg
+arduino/libraries/glcd/doc/html/ks0108_Panel_B.gif
+arduino/libraries/glcd/doc/html/ks0108lib.jpg
+arduino/libraries/glcd/doc/html/modules.html
+arduino/libraries/glcd/doc/html/nav_f.png
+arduino/libraries/glcd/doc/html/nav_h.png
+arduino/libraries/glcd/doc/html/navtree.css
+arduino/libraries/glcd/doc/html/navtree.js
+arduino/libraries/glcd/doc/html/open.png
+arduino/libraries/glcd/doc/html/page__additional_resources.html
+arduino/libraries/glcd/doc/html/page__bitmaps.html
+arduino/libraries/glcd/doc/html/page__fonts.html
+arduino/libraries/glcd/doc/html/page__fonts_bitmaps.html
+arduino/libraries/glcd/doc/html/page__g_l_c_d_methods.html
+arduino/libraries/glcd/doc/html/page__g_l_c_d_object.html
+arduino/libraries/glcd/doc/html/page__g_l_c_ddiags.html
+arduino/libraries/glcd/doc/html/page_arduino_print.html
+arduino/libraries/glcd/doc/html/page_configuring.html
+arduino/libraries/glcd/doc/html/page_coordinates.html
+arduino/libraries/glcd/doc/html/page_g_text_object.html
+arduino/libraries/glcd/doc/html/page_ks0108_family.html
+arduino/libraries/glcd/doc/html/page_ks0108_libmigrate.html
+arduino/libraries/glcd/doc/html/page_ks0108config.html
+arduino/libraries/glcd/doc/html/page_ks0108sketch.html
+arduino/libraries/glcd/doc/html/page_pindefines.html
+arduino/libraries/glcd/doc/html/page_sed1520_family.html
+arduino/libraries/glcd/doc/html/page_troubleshoot.html
+arduino/libraries/glcd/doc/html/page_wiring.html
+arduino/libraries/glcd/doc/html/panel_ks0108.jpg
+arduino/libraries/glcd/doc/html/panel_vk5121.jpg
+arduino/libraries/glcd/doc/html/resize.js
+arduino/libraries/glcd/doc/html/search/all_62.html
+arduino/libraries/glcd/doc/html/search/all_63.html
+arduino/libraries/glcd/doc/html/search/all_64.html
+arduino/libraries/glcd/doc/html/search/all_65.html
+arduino/libraries/glcd/doc/html/search/all_66.html
+arduino/libraries/glcd/doc/html/search/all_67.html
+arduino/libraries/glcd/doc/html/search/all_68.html
+arduino/libraries/glcd/doc/html/search/all_69.html
+arduino/libraries/glcd/doc/html/search/all_70.html
+arduino/libraries/glcd/doc/html/search/all_72.html
+arduino/libraries/glcd/doc/html/search/all_73.html
+arduino/libraries/glcd/doc/html/search/all_77.html
+arduino/libraries/glcd/doc/html/search/classes_67.html
+arduino/libraries/glcd/doc/html/search/close.png
+arduino/libraries/glcd/doc/html/search/functions_63.html
+arduino/libraries/glcd/doc/html/search/functions_64.html
+arduino/libraries/glcd/doc/html/search/functions_65.html
+arduino/libraries/glcd/doc/html/search/functions_66.html
+arduino/libraries/glcd/doc/html/search/functions_67.html
+arduino/libraries/glcd/doc/html/search/functions_69.html
+arduino/libraries/glcd/doc/html/search/functions_70.html
+arduino/libraries/glcd/doc/html/search/functions_72.html
+arduino/libraries/glcd/doc/html/search/functions_73.html
+arduino/libraries/glcd/doc/html/search/functions_77.html
+arduino/libraries/glcd/doc/html/search/mag_sel.png
+arduino/libraries/glcd/doc/html/search/nomatches.html
+arduino/libraries/glcd/doc/html/search/search.css
+arduino/libraries/glcd/doc/html/search/search.js
+arduino/libraries/glcd/doc/html/search/search_l.png
+arduino/libraries/glcd/doc/html/search/search_m.png
+arduino/libraries/glcd/doc/html/search/search_r.png
+arduino/libraries/glcd/doc/html/search/variables_62.html
+arduino/libraries/glcd/doc/html/search/variables_63.html
+arduino/libraries/glcd/doc/html/search/variables_68.html
+arduino/libraries/glcd/doc/html/search/variables_72.html
+arduino/libraries/glcd/doc/html/search/variables_77.html
+arduino/libraries/glcd/doc/html/tab_a.png
+arduino/libraries/glcd/doc/html/tab_b.png
+arduino/libraries/glcd/doc/html/tab_h.png
+arduino/libraries/glcd/doc/html/tab_s.png
+arduino/libraries/glcd/doc/html/tabs.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR_REL%%/BigNums/BigNums.pde
+%%PORTEXAMPLES%%%%EXAMPLESDIR_REL%%/GLCD_BigDemo/AnalogClock.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR_REL%%/GLCD_BigDemo/AnalogClock.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR_REL%%/GLCD_BigDemo/BigDemo.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR_REL%%/GLCD_BigDemo/GLCD_BigDemo.pde
+%%PORTEXAMPLES%%%%EXAMPLESDIR_REL%%/GLCD_BigDemo/Rocket.pde
+%%PORTEXAMPLES%%%%EXAMPLESDIR_REL%%/GLCD_BigDemo/bitmaps.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR_REL%%/GLCD_BigDemo/clockFace.pde
+%%PORTEXAMPLES%%%%EXAMPLESDIR_REL%%/GLCD_BigDemo/life.pde
+%%PORTEXAMPLES%%%%EXAMPLESDIR_REL%%/GLCDdemo/GLCDdemo.pde
+%%PORTEXAMPLES%%%%EXAMPLESDIR_REL%%/GLCDdiags/GLCDdiags.pde
+%%PORTEXAMPLES%%%%EXAMPLESDIR_REL%%/HelloWorld/HelloWorld.pde
+%%PORTEXAMPLES%%%%EXAMPLESDIR_REL%%/Rocket/Rocket.pde
+%%PORTEXAMPLES%%%%EXAMPLESDIR_REL%%/Rocket/bitmaps.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR_REL%%/Serial2GLCD/Serial2GLCD.pde
+%%PORTEXAMPLES%%%%EXAMPLESDIR_REL%%/clockFace/AnalogClock.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR_REL%%/clockFace/AnalogClock.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR_REL%%/clockFace/clockFace.pde
+%%PORTEXAMPLES%%%%EXAMPLESDIR_REL%%/ks0108example/ks0108example.pde
+%%PORTEXAMPLES%%%%EXAMPLESDIR_REL%%/life/life.pde
+arduino/libraries/glcd/fonts/Arial14.h
+arduino/libraries/glcd/fonts/Arial_bold_14.h
+arduino/libraries/glcd/fonts/Corsiva_12.h
+arduino/libraries/glcd/fonts/SystemFont5x7.h
+arduino/libraries/glcd/fonts/Verdana_digits_24.h
+arduino/libraries/glcd/fonts/allFonts.h
+arduino/libraries/glcd/fonts/fixednums15x31.h
+arduino/libraries/glcd/fonts/fixednums7x15.h
+arduino/libraries/glcd/fonts/fixednums8x16.h
+arduino/libraries/glcd/gText.cpp
+arduino/libraries/glcd/glcd.cpp
+arduino/libraries/glcd/glcd.h
+arduino/libraries/glcd/glcd_Buildinfo.h
+arduino/libraries/glcd/glcd_Config.h
+arduino/libraries/glcd/glcd_Device.cpp
+arduino/libraries/glcd/include/Streaming.h
+arduino/libraries/glcd/include/arduino_io.h
+arduino/libraries/glcd/include/avrio.h
+arduino/libraries/glcd/include/delay.h
+arduino/libraries/glcd/include/gText.h
+arduino/libraries/glcd/include/glcd_Deprecated.h
+arduino/libraries/glcd/include/glcd_Device.h
+arduino/libraries/glcd/include/glcd_errno.h
+arduino/libraries/glcd/include/glcd_io.h
+arduino/libraries/glcd/readme.txt
+@dirrm arduino/libraries/glcd/include
+@dirrm arduino/libraries/glcd/fonts
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR_REL%%/life
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR_REL%%/ks0108example
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR_REL%%/clockFace
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR_REL%%/Serial2GLCD
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR_REL%%/Rocket
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR_REL%%/HelloWorld
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR_REL%%/GLCDdiags
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR_REL%%/GLCDdemo
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR_REL%%/GLCD_BigDemo
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR_REL%%/BigNums
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR_REL%%
+@dirrm arduino/libraries/glcd/doc/html/search
+@dirrm arduino/libraries/glcd/doc/html
+@dirrm arduino/libraries/glcd/doc
+@dirrm arduino/libraries/glcd/device
+@dirrm arduino/libraries/glcd/config
+@dirrm arduino/libraries/glcd/bitmaps/utils/glcdMakeBitmap
+@dirrm arduino/libraries/glcd/bitmaps/utils/data
+@dirrm arduino/libraries/glcd/bitmaps/utils/Java
+@dirrm arduino/libraries/glcd/bitmaps/utils
+@dirrm arduino/libraries/glcd/bitmaps
+@dirrm arduino/libraries/glcd
