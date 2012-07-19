@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rust
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	lang
 MASTER_SITES=	http://dl.rust-lang.org/dist/:src \
 		http://dl.rust-lang.org/stage0-snapshots/:boot
@@ -19,13 +19,14 @@ COMMENT=	A language with a focus on memory safety and concurrency
 
 RUST_SOURCE=	${DISTNAME}${EXTRACT_SUFX}
 RUST_BOOT=	rust-stage0-${RUST_BOOT_SIG}.tar.bz2
-RUST_BOOT_SIG=	2012-03-27-eec6383-freebsd-x86_64-595f06a3c7a073917fa3274d2aafa6328c50754b
+RUST_BOOT_SIG=	2012-07-06-b5f5676-freebsd-x86_64-926e17746576397c10af9796d30af6a730329f71
 RUST_TARGET=	x86_64-unknown-freebsd
 
 ONLY_FOR_ARCHS=	amd64
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 USE_PERL5_BUILD=	yes
 USE_PYTHON_BUILD=	2.6-2.7
 
