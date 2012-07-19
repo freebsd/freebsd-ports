@@ -8,7 +8,6 @@ include/sunpinyin-2.0/ime-core/imi_keys.h
 include/sunpinyin-2.0/ime-core/imi_option_event.h
 include/sunpinyin-2.0/ime-core/imi_option_keys.h
 include/sunpinyin-2.0/ime-core/imi_options.h
-include/sunpinyin-2.0/ime-core/imi_plugin.h
 include/sunpinyin-2.0/ime-core/imi_uiobjects.h
 include/sunpinyin-2.0/ime-core/imi_view.h
 include/sunpinyin-2.0/ime-core/imi_view_classic.h

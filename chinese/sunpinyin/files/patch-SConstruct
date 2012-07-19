@@ -1,28 +1,28 @@
---- SConstruct.orig	2011-02-17 21:39:52.000000000 -0600
-+++ SConstruct	2011-11-10 03:04:39.833952104 -0600
-@@ -150,9 +150,13 @@ def CreateEnvironment():
-         tar = 'gtar'
-         make = 'gmake'
+--- SConstruct.orig	2012-07-17 23:25:59.000000000 -0500
++++ SConstruct	2012-07-17 23:40:11.633113871 -0500
+@@ -176,10 +176,12 @@ def CreateEnvironment():
  
--    return Environment(ENV=os.environ, CFLAGS=cflags, CXXFLAGS=cflags,
--                       TAR=tar, MAKE=make, WGET=wget,
--                       CPPPATH=['.'] + allinc())
-+    env = Environment(**ARGUMENTS)
+     libln_builder = Builder(action='ln -s ${SOURCE.name} ${TARGET.name}',
+                             chdir=True)
+-    env = Environment(ENV=os.environ, CFLAGS=cflags, CXXFLAGS=cflags,
+-                      TAR=tar, MAKE=make, WGET=wget,
+-                      CPPPATH=['.'] + allinc(),
+-                      tools=['default', 'textfile'])
++    env = Environment(tools=['default', 'textfile'], **ARGUMENTS)
 +    env['ENV'] = os.environ
 +    env['TAR'] = tar
 +    env['MAKE'] = make
 +    env['CPPPATH'] = ['.'] + allinc()
 +
-+    return env
+     env.Append(BUILDERS={'InstallAsSymlink': libln_builder})
+     return env
  
- def PassVariables(envvar, env):
-     for (x, y) in envvar:
-@@ -382,7 +386,7 @@ def DoInstall():
-                         (install_path, libname, libname_link))
+@@ -420,7 +422,7 @@ def DoInstall():
+                                  lib_target_bin),
              ]
  
--    lib_pkgconfig_target = env.Install(libdir+'/pkgconfig',
-+    lib_pkgconfig_target = env.Install(env['PREFIX']+'/libdata/pkgconfig',
+-    lib_pkgconfig_target = env.Install(os.path.join(libdir, 'pkgconfig'),
++    lib_pkgconfig_target = env.Install(os.path.join(env['PREFIX'], 'libdata/pkgconfig'),
                                         ['sunpinyin-2.0.pc'])
      libdata_target = env.Install(libdatadir,
                                   ['data/lm_sc.t3g',
