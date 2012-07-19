@@ -522,6 +522,7 @@
     SUBDIR += openspc
     SUBDIR += optimfrog
     SUBDIR += opus
+    SUBDIR += opus-tools
     SUBDIR += osalp
     SUBDIR += osd-lyrics
     SUBDIR += osdmixer
