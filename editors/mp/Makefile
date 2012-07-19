@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mp
-PORTVERSION=	5.2.2
+PORTVERSION=	5.2.3
 CATEGORIES=	editors
 MASTER_SITES=	http://triptico.com/download/
 
@@ -21,7 +21,6 @@ OPTIONS_SINGLE=	GUI
 OPTIONS_SINGLE_GUI=	GTK2 QT4
 OPTIONS_DEFAULT=	PCRE
 
-WANT_GNOME=	yes
 USE_NCURSES=	yes
 USE_ICONV=	yes
 HAS_CONFIGURE=	yes
@@ -57,7 +56,7 @@ CONFIGURE_ARGS+=	--without-qt4
 .endif
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=	--with-pcre
 .endif
 
