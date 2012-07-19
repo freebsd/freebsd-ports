@@ -1,16 +1,16 @@
---- src/libcore/f32.rs.orig	2012-04-01 10:40:20.915606509 +0800
-+++ src/libcore/f32.rs	2012-04-01 10:43:43.847606825 +0800
+--- src/libcore/f32.rs.orig	2012-07-16 17:14:25.444144084 +0800
++++ src/libcore/f32.rs	2012-07-16 17:15:29.799514797 +0800
 @@ -5,6 +5,8 @@
  import cmath::c_float::*;
  import cmath::c_float_targ_consts::*;
  
 +import cmath::c_double;
 +
- // FIXME find out why these have to be exported explicitly
- 
- export add, sub, mul, div, rem, lt, le, gt, eq, eq, ne;
-@@ -176,6 +178,10 @@
-     ret ln(n) / consts::ln_2;
+ export add, sub, mul, div, rem, lt, le, gt, eq, ne;
+ export is_positive, is_negative, is_nonpositive, is_nonnegative;
+ export is_zero, is_infinite, is_finite;
+@@ -179,6 +181,10 @@
+     fn from_int(n: int) -> f32 { ret n as f32;    }
  }
  
 +pure fn tgamma(n: f32) -> f32 {
