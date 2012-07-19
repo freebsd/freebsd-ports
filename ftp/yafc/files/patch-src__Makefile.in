@@ -1,0 +1,14 @@
+--- src/Makefile.in.orig	2012-06-05 23:37:06.000000000 +0900
++++ src/Makefile.in	2012-06-25 16:34:16.000000000 +0900
+@@ -308,7 +308,10 @@
+ 						 libmhe/libmhe.a \
+ 						 ../lib/libfoo.a $(SSH_LIBS)
+ 
+-yafc_DEPENDENCIES = $(yafc_LDADD) yafcrc.h
++yafc_DEPENDENCIES = ftp/libftp.a \
++						 libmhe/libmhe.a \
++						 ../lib/libfoo.a yafcrc.h
++
+ AM_CPPFLAGS = -I$(srcdir) \
+ 							-I$(top_srcdir)/lib \
+ 							-I$(top_srcdir)/src/ftp \
