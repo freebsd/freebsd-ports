@@ -6,33 +6,4 @@ network debugging and exploration tool, since it can create almost any
 kind of connection you would need and has several interesting built-in
 capabilities.
 
-Some of netcat's major features are:
-
-	Outbound or inbound connections, IPv4 or IPv6, TCP or UDP,
-		to or from any ports
-	Full DNS forward/reverse checking, with appropriate warnings
-	Ability to use any local source port
-	Ability to use any locally-configured network source address
-	Built-in port-scanning capabilities, with randomizer
-	Built-in loose source-routing capability
-	Can read command line arguments from standard input
-	Slow-send mode, one line every N seconds
-	Hex dump of transmitted and received data
-	Optional ability to let another program service established connections
-	Optional telnet-options responder
-
-A very short list of potential uses:
-
-	Script backends
-	Scanning ports and inventorying services, automated probes
-	Backup handlers
-	File transfers
-	Server testing, simulation, debugging, and hijacking
-	Firewall testing
-	Proxy gatewaying
-	Network performance testing
-	Address spoofing tests
-	Protecting X servers
-	1001 other uses you'll likely come up with
-
-_H* 960320
+WWW: http://nc110.sourceforge.net/
