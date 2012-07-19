@@ -6,15 +6,22 @@
 #
 
 PORTNAME=	ddrescue
-PORTVERSION=	1.15
+PORTVERSION=	1.16
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
+EXTRACT_SUFX=	.tar.lz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data recovery tool
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+EXTRACT_DEPENDS=lzip:${PORTSDIR}/archivers/lzip
+
+EXTRACT_CMD=	${LOCALBASE}/bin/lzip
+
+OPTIONS_DEFINE=	DOCS
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
@@ -26,6 +33,8 @@ INFO=		ddrescue
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 PLIST_FILES=	bin/ddrescue bin/ddrescuelog
 
+.include <bsd.port.options.mk>
+
 do-install:
 .for i in ddrescue ddrescuelog
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin
@@ -34,7 +43,7 @@ do-install:
 .for i in ddrescue
 	${INSTALL_DATA} ${WRKSRC}/doc/${i}.info ${PREFIX}/${INFO_PATH}
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
