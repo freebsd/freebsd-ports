@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	sunpinyin
-DISTVERSION=	2.0.4rc1
+DISTVERSION=	2.0.4rc2
 CATEGORIES=	chinese devel
 MASTER_SITES=	LOCAL/wen:1 \
+		http://students.cs.niu.edu/~z1565938/distfiles/:1 \
 		${MASTER_SITE_GOOGLE_CODE}:1 \
 		http://open-gram.googlecode.com/files/:2
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:1 \
@@ -21,7 +22,7 @@ COMMENT=	A statistical language model based input method engine
 LICENSE=	LGPL21 CDDL
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 
 LICENSE_FILE_LGPL21=	${WRKSRC}/LGPL.LICENSE
