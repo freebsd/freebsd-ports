@@ -1,7 +1,0 @@
-bin/ef
-%%WRAPPER%%bin/evilfinder
-libexec/ef-shuffle
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%DATADIR%%/evilnumbers.dat
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%
