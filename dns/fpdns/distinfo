@@ -1,4 +1,2 @@
-SHA256 (Net-DNS-Fingerprint-0.9.3.tar.gz) = 8dbfa96ebcd3adee0f9053d619bd04e45b3e7e0ad47824404f73e53b88b79ec7
-SIZE (Net-DNS-Fingerprint-0.9.3.tar.gz) = 10476
-SHA256 (Net-DNS-Fingerprint-0.9.3.tar.gz.sig) = 1998bcf19240a5ee49a9215e2038f8630fc80abe1b86663aa46c6a6c3af79b03
-SIZE (Net-DNS-Fingerprint-0.9.3.tar.gz.sig) = 65
+SHA256 (Net-DNS-Fingerprint-0.9.3-9eb38df.tar.gz) = 8179b9671d40cec3cd073773e16b2d8557a113247dd2dd444b627b6980fcfc21
+SIZE (Net-DNS-Fingerprint-0.9.3-9eb38df.tar.gz) = 13141
