@@ -14,12 +14,15 @@ DISTNAME=	${PORTNAME}.${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to clone harddisks/partitions over a fast switched network
 
-OPTIONS=	BZIP2 "bzip2 instead of gzip for compressing"	on \
-		HIGHEST_COMPRESSION "Highest rather than fastest compression" on
+OPTIONS_DEFINE=	BZIP2 HIGHEST_COMPRESSION DOCS
+OPTIONS_DEFAULT=	BZIP2 HIGHEST_COMPRESSION
+BZIP2_DESC=	bzip2 instead of gzip for compressing
+HIGHEST_COMPRESSION_DESC=	Highest rather than fastest compression
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README
 
+.include <bsd.port.options.mk>
 do-configure:
 # C{C,FLAGS} safeness
 	@${REINPLACE_CMD} -E \
@@ -28,7 +31,7 @@ do-configure:
 		${BUILD_WRKSRC}/${MAKEFILE}
 
 do-install:
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 . for _file in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${_file} ${DOCSDIR}/
@@ -36,10 +39,8 @@ do-install:
 .endif
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 
-.include <bsd.port.pre.mk>
-
 # Correctly depend upon bzip2 if necessary
-.ifdef(WITH_BZIP2)
+.if ${PORT_OPTIONS:MBZIP2}
 EXTRA_PATCHES+=	${FILESDIR}/extra-bzip2-patch-dolly.c
 .endif
 
@@ -49,7 +50,7 @@ post-patch:
 		-e 's|use gzip|use gunzip|' \
 		${WRKSRC}/dolly.c
 # Properly reference bzip2 instead of gzip
-.ifndef(WITHOUT_BZIP2)
+.if ${PORT_OPTIONS:MBZIP2}
 	@${REINPLACE_CMD} -E \
 		-e 's|/usr/bin/gzip|${BZIP2_CMD}|' \
 		-e 's|gzip|bzip2|' \
@@ -70,10 +71,10 @@ post-patch:
 		${WRKSRC}/*
 .endif
 # Highest compression possible
-.ifndef(WITHOUT_HIGHEST_COMPRESSION)
+.if ${PORT_OPTIONS:MHIGHEST_COMPRESSION}
 	@${REINPLACE_CMD} -E \
 		-e 's|-cf|-9cf|' \
 		${WRKSRC}/dolly.c
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
