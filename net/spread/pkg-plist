@@ -26,3 +26,5 @@ sbin/spread
 %%EXAMPLESDIR%%/test.pl
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spread
+@exec install -m 750 -o %%USERS%% -g %%GROUPS%% -d %%RUNDIR%%
+@dirrmtry %%RUNDIR%%
