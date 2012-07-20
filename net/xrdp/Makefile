@@ -7,6 +7,7 @@
 
 PORTNAME=	xrdp
 PORTVERSION=	0.6.0.20110117
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.club.kyutech.ac.jp/~meta/distfiles/ \
 		http://key2.jp/~meta/distfiles/
