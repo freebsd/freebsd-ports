@@ -66,6 +66,7 @@
     SUBDIR += sysbench
     SUBDIR += tcpblast
     SUBDIR += thrulay
+    SUBDIR += tsung
     SUBDIR += ttcp
     SUBDIR += ubench
     SUBDIR += unixbench
