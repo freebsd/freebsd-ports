@@ -25,24 +25,26 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 SENNA_HOME?=	/var/senna
 
-OPTIONS=	MECAB	"use mecab for morphological analysis" on \
-		NFKC	"use nfkc based utf8 normalization" on
+OPTIONS_DEFINE=	MECAB NFKC
+OPTIONS_DEFAULT=	MECAB NFKC
+MECAB_DESC=	use mecab for morphological analysis
+NFKC_DESC=	use nfkc based utf8 normalization
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile on ${ARCH}
 .endif
 
-.if defined(WITH_MECAB)
+.if ${PORT_OPTIONS:MMECAB}
 CONFIGURE_ARGS+=	--with-mecab
 LIB_DEPENDS+=	mecab:${PORTSDIR}/japanese/mecab
 .else
 CONFIGURE_ARGS+=	--without-mecab
 .endif
 
-.if !defined(WITH_NFKC)
+.if ${PORT_OPTIONS:MNFKC}
 CONFIGURE_ARGS+=	--disable-nfkc
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
