@@ -7,7 +7,7 @@
 
 PORTNAME=	mozc
 PORTVERSION=	1.5.1090.102
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX?=	ja-
@@ -30,9 +30,13 @@ USE_OPENSSL=	yes
 
 BUILD_MOZC_LIST?=	mozc_server
 
-.if ${BUILD_MOZC_LIST:Mmozc_tool} == "mozc_tool"
+.if ${BUILD_MOZC_LIST:Mmozc_server} == "mozc_server"
+USE_GNOME+=	glib20 gtk20
+.elif ${BUILD_MOZC_LIST:Mmozc_tool} == "mozc_tool"
+USE_GNOME+=	gtk20
 USE_QT4+=	gui dbus qmake_build moc_build uic_build rcc_build
-.elif ${BUILD_MOZC_LIST:Mibus_mozc} == "ibus_mozc" || ${BUILD_MOZC_LIST:Mscim_mozc} == "scim_mozc"
+.elif ${BUILD_MOZC_LIST:Mibus_mozc} == "ibus_mozc" || \
+      ${BUILD_MOZC_LIST:Mscim_mozc} == "scim_mozc"
 USE_GNOME+=	pygtk2
 .elif ${BUILD_MOZC_LIST:Mfcitx_mozc} == "fcitx_mozc"
 USE_GNOME+=	glib20 gtk20
@@ -107,6 +111,7 @@ pre-build:
 
 # mozc_server
 .if ${BUILD_MOZC_LIST:Mmozc_server} == "mozc_server"
+LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
 PLIST_FILES+=	bin/mozc_server
 
 do-build-mozc_server:
@@ -120,6 +125,7 @@ do-install-mozc_server:
 
 # mozc_tool
 .if ${BUILD_MOZC_LIST:Mmozc_tool} == "mozc_tool"
+LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
 RUN_DEPENDS+=	${LOCALBASE}/share/tegaki/models/zinnia/handwriting-ja.model:${PORTSDIR}/japanese/tegaki-zinnia-japanese
 
 PLIST_FILES+=	bin/mozc_tool \
