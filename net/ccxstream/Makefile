@@ -14,17 +14,20 @@ MASTER_SITES=		SF/xbplayer/XStream%20Servers/ccXStream%20${PORTVERSION}%20for%20
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Stream media files to XBox Media Center via XBMSP
 
-OPTIONS=		SO_KEEPALIVE "Build with SO_KEEPALIVE" ON \
-			TCP_NODELAY "Build with TCP_NODELAY" OFF
+OPTIONS_DEFINE=	SO_KEEPALIVE TCP_NODELAY DOCS
+OPTIONS_DEFAULT=	SO_KEEPALIVE
+SO_KEEPALIVE_DESC=	Build with SO_KEEPALIVE
+TCP_NODELAY_DESC=	Build with TCP_NODELAY
 
 USE_GMAKE=		yes
 USE_RC_SUBR=		ccxstream
 
-PLIST_FILES=		\
-			bin/ccxtest \
+PLIST_FILES=		bin/ccxtest \
 			sbin/ccxstream
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=		README ChangeLog TODO xbmsp-xml.txt xbmsp.txt
 .endif
 
@@ -42,16 +45,14 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
 # enable SO_KEEPALIVE
-.if defined(WITH_SO_KEEPALIVE)
+.if ${PORT_OPTIONS:MSO_KEEPALIVE}
 CFLAGS+=	-DSO_KEEPALIVE
 .endif
 
 # enable TCP_NODELAY
-.if defined(WITH_TCP_NODELAY)
+.if ${PORT_OPTIONS:MTCP_NODELAY}
 CFLAGS+=	-DTCP_NODELAY
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
