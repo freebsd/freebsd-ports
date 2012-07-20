@@ -16,11 +16,9 @@
 # Of course, the netcdf port must be installed first.
 
 PORTNAME=	minc
-PORTVERSION=	1.4
-PORTREVISION=	2
+PORTVERSION=	1.5.1
 CATEGORIES=	science biology
-MASTER_SITES=	http://www.bic.mni.mcgill.ca/software/distribution/packages/ \
-		http://www.neuro.mcw.edu/~bacon/Ports/distfiles/
+MASTER_SITES=	http://www.nitrc.org/frs/downloadlink.php/400/
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Medical Imaging NetCDF
@@ -34,7 +32,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-static=yes --enable-shared=yes
 
-CONFLICTS=	minc-2*
+CONFLICTS=	minc-2* zh-tk-[0-9]*
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-1.5
 
 MAN1=	dcm2mnc.1 \
 	ecattominc.1 \
@@ -49,6 +49,7 @@ MAN1=	dcm2mnc.1 \
 	mincexpand.1 \
 	mincextract.1 \
 	mincheader.1 \
+	minchistory.1 \
 	mincinfo.1 \
 	minclookup.1 \
 	mincmakescalar.1 \
@@ -72,6 +73,8 @@ MAN1=	dcm2mnc.1 \
 	xfminvert.1
 
 MAN3=	ParseArgv.3
+
+FETCH_ARGS+=	-F
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
