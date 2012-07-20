@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtkwave3
-PORTVERSION=	3.3.37
+PORTVERSION=	3.3.38
 CATEGORIES=	cad
 MASTER_SITES=	http://gtkwave.sourceforge.net/
 DISTNAME=	gtkwave-${PORTVERSION}
@@ -35,7 +35,7 @@ CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR} \
 CONFIGURE_ARGS+=	--disable-tcl
 .endif
 
-MAN1=	ghwdump.1 gtkwave.1 evcd2vcd.1 fst2vcd.1 lxt2miner.1 \
+MAN1=	ghwdump.1 gtkwave.1 evcd2vcd.1 fst2vcd.1 fstminer.1 lxt2miner.1 \
 	lxt2vcd.1 rtlbrowse.1 shmidcat.1 twinwave.1 vcd2fst.1 \
 	vcd2lxt.1 vcd2lxt2.1 vcd2vzt.1 vermin.1 vzt2vcd.1 vztminer.1
 MAN5=	gtkwaverc.5

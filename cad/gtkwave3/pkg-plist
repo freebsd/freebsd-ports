@@ -1,5 +1,6 @@
 bin/evcd2vcd
 bin/fst2vcd
+bin/fstminer
 bin/ghwdump
 bin/gtkwave
 bin/lxt2miner
