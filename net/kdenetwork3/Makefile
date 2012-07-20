@@ -19,7 +19,8 @@ COMMENT=	Network-related programs and modules for KDE
 
 LIB_DEPENDS=	slp:${PORTSDIR}/net/openslp
 
-OPTIONS=	KOPETE	"Install kopete multi-protocol instant messenger" OFF
+OPTIONS_DEFINE=	KOPETE
+KOPETE_DESC=	Install kopete multi-protocol instant messenger
 
 USE_KDELIBS_VER=3
 USE_PERL5=	yes
@@ -68,7 +69,7 @@ pre-configure:
 # OPTIONS handling
 ##
 #
-.if defined(WITH_KOPETE)
+.if ${PORT_OPTIONS:MKOPETE}
 RUN_DEPENDS+=	kopete:${PORTSDIR}/net-im/kopete
 .endif
 
