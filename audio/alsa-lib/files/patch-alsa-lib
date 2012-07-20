@@ -102,13 +102,15 @@
  typedef __compar_fn_t comparison_fn_t;
 --- include/sound/asound.h.orig	2009-09-09 20:34:54.000000000 +0800
 +++ include/sound/asound.h	2009-09-15 00:44:37.000000000 +0800
-@@ -62,6 +62,31 @@
+@@ -62,6 +62,33 @@
  #include <sys/ioctl.h>
  #endif
  
 +#ifdef __FreeBSD__
 +#define ESTRPIPE	0x7a69	/* Linux PCM suspend errno, fehh?! */
 +#define EBADFD		EBADF
++
++typedef uint64_t __u64;
 +
 +#define bswap_16(x)	bswap16(x)
 +#define bswap_32(x)	bswap32(x)
@@ -182,6 +184,20 @@
  #include <string.h>
  
  #define __USE_GNU
+--- src/conf.c.orig
++++ src/conf.c
+@@ -428,7 +428,11 @@ beginning:</P>
+ 
+ #ifdef HAVE_LIBPTHREAD
+ static pthread_mutex_t snd_config_update_mutex =
++#ifdef PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP
+ 				PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP;
++#else
++				PTHREAD_MUTEX_INITIALIZER;
++#endif
+ #endif
+ 
+ struct _snd_config {
 --- src/pcm/pcm.c.orig	2009-09-09 20:34:54.000000000 +0800
 +++ src/pcm/pcm.c	2009-09-15 00:19:09.000000000 +0800
 @@ -630,7 +630,9 @@
