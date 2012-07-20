@@ -38,6 +38,10 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
+post-patch:
+	# Disabling Vala version check
+	${REINPLACE_CMD} -e 's/as_fn_error.*Vala.*not found.*;;/;;/' ${WRKSRC}/configure
+
 post-install:
 	cd ${WRKSRC}/docs && ${GMAKE} install-man
 
