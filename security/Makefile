@@ -540,6 +540,7 @@
     SUBDIR += p5-Filter-Crypto
     SUBDIR += p5-GD-SecurityImage
     SUBDIR += p5-GSSAPI
+    SUBDIR += p5-GnuPG
     SUBDIR += p5-GnuPG-Interface
     SUBDIR += p5-HTML-Email-Obfuscate
     SUBDIR += p5-IO-Async-SSL

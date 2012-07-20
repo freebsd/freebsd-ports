@@ -1,0 +1,11 @@
+bin/gpgmailtunl
+%%SITE_PERL%%/GnuPG.pm
+%%SITE_PERL%%/GnuPG/Tie.pm
+%%SITE_PERL%%/GnuPG/Tie/ClearSign.pm
+%%SITE_PERL%%/GnuPG/Tie/Decrypt.pm
+%%SITE_PERL%%/GnuPG/Tie/Encrypt.pm
+%%SITE_PERL%%/GnuPG/Tie/Sign.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GnuPG/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GnuPG
+@dirrm %%SITE_PERL%%/GnuPG/Tie
+@dirrm %%SITE_PERL%%/GnuPG
