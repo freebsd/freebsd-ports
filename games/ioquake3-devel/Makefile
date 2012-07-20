@@ -7,7 +7,7 @@
 
 PORTNAME?=	ioquake3-devel
 DISTVERSION?=	1.36_SVN${SVNREVISION}
-PORTREVISION?=	0
+PORTREVISION?=	1
 MASTER_SITES?=	ftp://deponie.yamagi.org/freebsd/distfiles/ioquake3/ \
 		http://deponie.yamagi.org/freebsd/distfiles/ioquake3/
 
