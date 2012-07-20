@@ -25,12 +25,14 @@ PYDISTUTILS_PKGNAME=	BTQueue
 DATADIR=	${PREFIX}/share/BTQueue
 DOCSDIR=	${PREFIX}/share/doc/BTQueue
 
-OPTIONS=	PYXML "Add dependency on PyXML (needed for crawler only)" on
+OPTIONS_DEFINE=	PYXML
+OPTIONS_DEFAULT=	PYXML
+PYXML_DESC=	Add dependency on PyXML (needed for crawler only)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_PYXML)
+.if ${PORT_OPTIONS:MPYXML}
 RUN_DEPENDS+=	${PYXML}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
