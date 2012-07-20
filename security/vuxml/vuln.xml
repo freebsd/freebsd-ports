@@ -52,6 +52,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ce82bfeb-d276-11e1-92c6-14dae938ec40">
+    <topic>dns/nsd -- DoS vulnerability from non-standard DNS packet</topic>
+    <affects>
+      <package>
+	<name>nsd</name>
+	<range><lt>3.2.11_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Marek Vavrusa and Lubos Slovak report:</p>
+	<blockquote cite="http://www.nlnetlabs.nl/downloads/CVE-2012-2978.txt">
+	  <p>It is possible to crash (SIGSEGV) a NSD child server process
+	    by sending it a non-standard DNS packet from any host on the
+	    internet.  A crashed child process will automatically be restarted
+	    by the parent process, but an attacker may keep the NSD server
+	    occupied restarting child processes by sending it a stream of
+	    such packets effectively preventing the NSD server to serve.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-2978</cvename>
+      <freebsdpr>ports/170024</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2012-07-19</discovery>
+      <entry>2012-07-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a460035e-d111-11e1-aff7-001fd056c417">
     <topic>libjpeg-turbo -- heap-based buffer overflow</topic>
     <affects>
