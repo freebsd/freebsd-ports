@@ -10,6 +10,7 @@ lib/libGLEW.so
 lib/libGLEWmx.so.1
 lib/libGLEW.so.1
 libdata/pkgconfig/glew.pc
+libdata/pkgconfig/glewmx.pc
 %%PORTDOCS%%%%DOCSDIR%%/advanced.html
 %%PORTDOCS%%%%DOCSDIR%%/basic.html
 %%PORTDOCS%%%%DOCSDIR%%/build.html
