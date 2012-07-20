@@ -26,18 +26,13 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
-OPTIONS=	DEBUG 		"Enable debug" Off \
-		PROFILE 	"Enable profiling" Off \
-		GCOV		"Enable GCOV (require profiling)" Off \
-		EFENCE		"Enable Electric Fence (require profiling)" Off \
-		ASS		"Enable libASS subtitle provider" On \
-		ALSA		"Enable ALSA audio provider" Off \
-		OPENAL		"Enable OpenAL audio privider" Off \
-		PORTAUDIO	"Enable PortAudio2 audio provider" Off \
-		PULSEAUDIO	"Enable PulseAudio audio provider" On \
-		FFMPEG		"Enable FFMPEG video provider" On \
-		HUNSPELL	"Enable Hunspell support" On \
-		LUA		"LUA Scripting" On
+OPTIONS_DEFINE=	DEBUG PROFILE GCOV EFENCE ASS ALSA OPENAL PORTAUDIO PULSEAUDIO \
+		FFMPEG HUNSPELL LUA DOCS
+OPTIONS_DEFAULT=	ASS PULSEAUDIO FFMPEG HUNSPELL LUA
+GCOV_DESC=	GCOV (require profiling)
+EFENCE_DESC=	Electric Fence (require profiling)
+ASS_DESC=	libASS subtitle provider
+HUNSPELL_DESC=	Hunspell support
 
 USE_GNOME=	intltool pkgconfig
 USE_WX=		2.8
@@ -71,45 +66,45 @@ FFMS_LIBS=	${FFMS_WRKSRC}/src/core/.libs/libffms2.a \
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug --enable-debug-exceptions
 .endif
 
-.if defined(WITH_GCOV)
+.if ${PORT_OPTIONS:MGCOV}
 CONFIGURE_ARGS+=	--enable-gcov
 LDFLAGS+=	-fprofile-arcs
 WITH_PROFILE=	yes
 .endif
 
-.if defined(WITH_EFENCE)
+.if ${PORT_OPTIONS:MEFENCE}
 LIB_DEPENDS+=	efence.0:${PORTSDIR}/devel/ElectricFence
 CONFIGURE_ARGS+=	--enable-efence
 WITH_PROFILE=	yes
 .endif
 
-.if defined(WITH_PROFILE)
+.if ${PORT_OPTIONS:MPROFILE}
 CONFIGURE_ARGS+=	--enable-profile
 .endif
 
-.if defined(WITH_ASS)
+.if ${PORT_OPTIONS:MASS}
 LIB_DEPENDS+=	ass.5:${PORTSDIR}/multimedia/libass
 .else
 CONFIGURE_ARGS+=	--without-libass
 .endif
 
-.if defined(WITH_ALSA)
+.if ${PORT_OPTIONS:MALSA}
 LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
 .else
 CONFIGURE_ARGS+=	--without-alsa
 .endif
 
-.if defined(WITH_OPENAL)
+.if ${PORT_OPTIONS:MOPENAL}
 USE_OPENAL=		yes
 .else
 CONFIGURE_ARGS+=	--without-openal
 .endif
 
-.if defined(WITH_PORTAUDIO)
+.if ${PORT_OPTIONS:MPORTAUDIO}
 BROKEN=		portaudio2 support is broken
 BUILD_DEPENDS+=	portaudio>=19:${PORTSDIR}/audio/portaudio2
 RUN_DEPENDS+=	portaudio>=19:${PORTSDIR}/audio/portaudio2
@@ -119,13 +114,13 @@ LDFLAGS+=	-L${LOCALBASE}/lib/portaudio2
 CONFIGURE_ARGS+=	--without-portaudio
 .endif
 
-.if defined(WITH_PULSEAUDIO)
+.if ${PORT_OPTIONS:MPULSEAUDIO}
 LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 .else
 CONFIGURE_ARGS+=	--without-pulseaudio
 .endif
 
-.if defined(WITH_FFMPEG)
+.if ${PORT_OPTIONS:MFFMPEG}
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 CONFIGURE_ENV+=	FFMS_CFLAGS="${FFMS_CFLAGS}" FFMS_LIBS="${FFMS_LIBS}"
 CONFIGURE_ARGS+=	--with-provider-video=ffmpegsource \
@@ -135,13 +130,13 @@ CPPFLAGS+=	${FFMS_CFLAGS}
 CONFIGURE_ARGS+=	--without-ffms
 .endif
 
-.if defined(WITH_HUNSPELL)
+.if ${PORT_OPTIONS:MHUNSPELL}
 LIB_DEPENDS+=	hunspell-1.3.0:${PORTSDIR}/textproc/hunspell
 .else
 CONFIGURE_ARGS+=	--without-hunspell
 .endif
 
-.if defined(WITH_LUA)
+.if ${PORT_OPTIONS:MLUA}
 USE_LUA=	5.1+
 CONFIGURE_ENV+=	LUA_CFLAGS="-I${LUA_INCDIR}" \
 		LUA_LDFLAGS="-L${LUA_LIBDIR} -llua"
@@ -183,14 +178,14 @@ post-patch:
 .endfor
 
 pre-configure:
-.if defined(WITH_FFMPEG)
+.if ${PORT_OPTIONS:MFFMPEG}
 	@(cd ${FFMS_WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./configure \
 		--disable-shared CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS}")
 .endif
 
 pre-build:
-.if defined(WITH_FFMPEG)
+.if ${PORT_OPTIONS:MFFMPEG}
 	@(cd ${FFMS_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} \
 		${MAKE_FLAGS} ${MAKEFILE} ${_make_jobs} ${MAKE_ARGS} \
 		${ALL_TARGET})
@@ -200,7 +195,7 @@ post-install:
 	@(cd ${WRKSRC}/automation && ${SETENV} ${MAKE_ENV} ${GMAKE} \
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} \
 		install-nobase_automationDATA)
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@(cd ${WRKSRC}/automation && ${SETENV} ${MAKE_ENV} ${GMAKE} \
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} \
 		install-nobase_share_docDATA)
