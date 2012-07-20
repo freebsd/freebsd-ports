@@ -25,7 +25,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	OPENGL
 OPTIONS_DEFAULT=	OPENGL
-OPTIONS=	GL "Enable OpenGL support" on
 
 MAN5=		boom.cfg.5
 MAN6=		prboom.6 prboom-game-server.6
