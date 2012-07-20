@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	audacious
-PORTVERSION=	3.2.3
+PORTVERSION=	3.2.4
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
@@ -30,7 +30,7 @@ CONFIGURE_ARGS=	--disable-gtk3 --disable-chardet
 
 MAN1=		audacious.1 audtool.1
 
-PORTDOCS=	README AUTHORS
+PORTDOCS=	AUTHORS
 
 OPTIONS=	DBUS	"Build with dbus support"			on  \
 		GNOME	"Build with gconf support"			off \

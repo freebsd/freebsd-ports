@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	audacious-plugins
-PORTVERSION=	3.2.3
+PORTVERSION=	3.2.4
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
