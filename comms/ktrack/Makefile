@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-0.3.0-rc1
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio satellite tracking and prediction
 
-RUN_DEPENDS=	xplanet:${PORTSDIR}/astro/xplanet:install
+RUN_DEPENDS=	xplanet:${PORTSDIR}/astro/xplanet
 LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib \
 		jpeg:${PORTSDIR}/graphics/jpeg
 
