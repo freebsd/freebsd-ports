@@ -28,10 +28,12 @@ include/alsa/seqmid.h
 include/alsa/sound/asound_fm.h
 include/alsa/sound/emu10k1.h
 include/alsa/sound/hdsp.h
+include/alsa/sound/hdspm.h
 include/alsa/sound/sb16_csp.h
 include/alsa/sound/sscape_ioctl.h
 include/alsa/sound/type_compat.h
 include/alsa/timer.h
+include/alsa/use-case.h
 include/alsa/version.h
 include/sys/asoundlib.h
 lib/alsa-lib/smixer/smixer-ac97.la
@@ -46,6 +48,7 @@ lib/libasound.so.2
 libdata/pkgconfig/alsa.pc
 share/aclocal/alsa.m4
 share/alsa/alsa.conf
+share/alsa/alsa.conf.d/README
 share/alsa/cards/AACI.conf
 share/alsa/cards/ATIIXP-MODEM.conf
 share/alsa/cards/ATIIXP-SPDMA.conf
@@ -70,6 +73,8 @@ share/alsa/cards/ENS1370.conf
 share/alsa/cards/ENS1371.conf
 share/alsa/cards/ES1968.conf
 share/alsa/cards/FM801.conf
+share/alsa/cards/FWSpeakers.conf
+share/alsa/cards/FireWave.conf
 share/alsa/cards/GUS.conf
 share/alsa/cards/HDA-Intel.conf
 share/alsa/cards/ICE1712.conf
@@ -125,6 +130,7 @@ etc/asound.conf.sample
 @dirrm share/alsa/pcm
 @dirrm share/alsa/cards/SI7018
 @dirrm share/alsa/cards
+@dirrm share/alsa/alsa.conf.d
 @dirrm share/alsa
 @dirrm lib/alsa-lib/smixer
 @dirrm lib/alsa-lib

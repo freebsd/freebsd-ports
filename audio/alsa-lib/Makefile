@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	alsa-lib
-PORTVERSION=	1.0.23
+PORTVERSION=	1.0.25
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.silug.org/pub/alsa/lib/ \
 		ftp://gd.tuwien.ac.at/opsys/linux/alsa/lib/ \
@@ -19,7 +19,8 @@ COMMENT=	ALSA compatibility library
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+= --disable-aload --disable-python
+CONFIGURE_ARGS+=--disable-aload --disable-python \
+		--with-pkgconfdir="${PREFIX}/libdata/pkgconfig"
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e '/LIBS/ { s/-ldl//g; s/-lrt//g; }' \
@@ -28,9 +29,6 @@ post-patch:	.SILENT
 		${WRKSRC}/modules/mixer/simple/Makefile.in
 	${REINPLACE_CMD} 's|/etc|${PREFIX}&|g' \
 		${WRKSRC}/src/conf/alsa.conf
-	${REINPLACE_CMD} \
-		'/pkgconfigdir/s|$$(libdir)|$$(prefix)/libdata|g' \
-		${WRKSRC}/utils/Makefile.in
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/asound.conf.sample ${PREFIX}/etc

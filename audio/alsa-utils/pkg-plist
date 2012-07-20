@@ -1,5 +1,7 @@
 bin/aconnect
+bin/alsaloop
 bin/alsamixer
+bin/alsaucm
 bin/amidi
 bin/amixer
 bin/aplay
@@ -20,6 +22,7 @@ share/alsa/init/info
 share/alsa/init/test
 share/alsa/speaker-test/sample_map.csv
 %%NLS%%share/locale/de/LC_MESSAGES/alsa-utils.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/alsa-utils.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/alsa-utils.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/alsaconf.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/alsaconf.mo

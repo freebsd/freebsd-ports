@@ -1,3 +1,62 @@
+--- alsaloop/alsaloop.c.orig
++++ alsaloop/alsaloop.c
+@@ -30,6 +30,7 @@
+ #include <sys/time.h>
+ #include <math.h>
+ #include <pthread.h>
++#include <signal.h>
+ #include <syslog.h>
+ #include <sys/signal.h>
+ #include "alsaloop.h"
+@@ -749,7 +750,11 @@ static void thread_job1(void *_data)
+ 			snd_output_printf(output, "pool took %lius\n", timediff(tv2, tv1));
+ 		}
+ 		if (err < 0) {
++#ifndef __FreeBSD__
+ 			if (err == -EINTR || err == -ERESTART)
++#else
++			if (err == -EINTR)
++#endif
+ 				continue;
+ 			logit(LOG_CRIT, "Poll failed: %s\n", strerror(-err));
+ 			my_exit(thread, EXIT_FAILURE);
+--- alsaloop/pcmjob.c.orig
++++ alsaloop/pcmjob.c
+@@ -63,7 +63,11 @@ static const char *src_types[] = {
+ #endif
+ 
+ static pthread_mutex_t pcm_open_mutex =
++#ifdef PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP
+                                 PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP;
++#else
++                                PTHREAD_MUTEX_INITIALIZER;
++#endif
+ 
+ static inline void pcm_open_lock(void)
+ {
+--- alsamixer/mixer_display.c.orig
++++ alsamixer/mixer_display.c
+@@ -17,7 +17,9 @@
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
++#ifndef __FreeBSD__
+ #define _C99_SOURCE /* lrint() */
++#endif
+ #include "aconfig.h"
+ #include <stdlib.h>
+ #include <string.h>
+--- alsamixer/volume_mapping.c.orig
++++ alsamixer/volume_mapping.c
+@@ -37,7 +37,7 @@
+ #include <stdbool.h>
+ #include "volume_mapping.h"
+ 
+-#ifdef __UCLIBC__
++#if defined(__UCLIBC__) || defined(__FreeBSD__)
+ /* 10^x = 10^(log e^x) = (e^x)^log10 = e^(x * log 10) */
+ #define exp10(x) (exp((x) * log(10)))
+ #endif /* __UCLIBC__ */
 --- aplay/aplay.c.orig	2010-04-16 13:11:06.000000000 +0200
 +++ aplay/aplay.c	2010-04-23 04:17:13.000000000 +0200
 @@ -28,7 +28,9 @@
@@ -10,14 +69,14 @@
  #include <unistd.h>
  #include <stdlib.h>
  #include <string.h>
-@@ -45,7 +47,11 @@
- #include <sys/uio.h>
- #include <sys/time.h>
+@@ -48,7 +50,11 @@
  #include <sys/signal.h>
-+#ifndef __FreeBSD__
- #include <asm/byteorder.h>
+ #include <sys/stat.h>
+ #include <sys/types.h>
++#ifdef __FreeBSD__
++#include <sys/endian.h>
 +#else
-+#include <sys/stat.h>
+ #include <endian.h>
 +#endif
  #include "aconfig.h"
  #include "gettext.h"

@@ -1,29 +1,5 @@
---- jack/pcm_jack.c.orig	2009-09-16 04:33:36.000000000 +0800
-+++ jack/pcm_jack.c	2009-09-16 04:33:55.000000000 +0800
-@@ -20,7 +20,9 @@
-  *
-  */
- 
-+#ifndef __FreeBSD__
- #include <byteswap.h>
-+#endif
- #include <sys/shm.h>
- #include <sys/types.h>
- #include <sys/socket.h>
 --- oss/ctl_oss.c.orig	2009-08-31 21:09:41.000000000 +0800
 +++ oss/ctl_oss.c	2009-09-15 01:07:51.000000000 +0800
-@@ -26,7 +26,11 @@
- #include <sys/ioctl.h>
- #include <alsa/asoundlib.h>
- #include <alsa/control_external.h>
-+#ifdef __FreeBSD__
-+#include <sys/soundcard.h>
-+#else
- #include <linux/soundcard.h>
-+#endif
- 
- typedef struct snd_ctl_oss {
- 	snd_ctl_ext_t ext;
 @@ -362,7 +366,9 @@
  {
  	snd_config_iterator_t it, next;
@@ -66,15 +42,13 @@
  	oss->ext.private_data = oss;
 --- oss/pcm_oss.c.orig	2009-08-31 21:09:41.000000000 +0800
 +++ oss/pcm_oss.c	2009-09-28 14:54:12.000000000 +0800
-@@ -22,17 +22,57 @@
+@@ -22,17 +22,55 @@
  #include <sys/ioctl.h>
  #include <alsa/asoundlib.h>
  #include <alsa/pcm_external.h>
+ #include <linux/soundcard.h>
 +#ifdef __FreeBSD__
 +#include <sys/param.h>
-+#include <sys/soundcard.h>
-+#else
- #include <linux/soundcard.h>
 +#endif
 +
 +#define ARRAY_SIZE(x)	(sizeof(x) / sizeof(*(x)))

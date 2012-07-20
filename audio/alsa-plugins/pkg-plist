@@ -1,5 +1,7 @@
 %%PULSE%%lib/alsa-lib/libasound_module_conf_pulse.la
 %%PULSE%%lib/alsa-lib/libasound_module_conf_pulse.so
+lib/alsa-lib/libasound_module_ctl_arcam_av.la
+lib/alsa-lib/libasound_module_ctl_arcam_av.so
 lib/alsa-lib/libasound_module_ctl_oss.la
 lib/alsa-lib/libasound_module_ctl_oss.so
 %%PULSE%%lib/alsa-lib/libasound_module_ctl_pulse.la
@@ -16,6 +18,8 @@ lib/alsa-lib/libasound_module_pcm_oss.so
 %%SPEEX%%lib/alsa-lib/libasound_module_pcm_speex.so
 lib/alsa-lib/libasound_module_pcm_upmix.la
 lib/alsa-lib/libasound_module_pcm_upmix.so
+lib/alsa-lib/libasound_module_pcm_usb_stream.la
+lib/alsa-lib/libasound_module_pcm_usb_stream.so
 lib/alsa-lib/libasound_module_pcm_vdownmix.la
 lib/alsa-lib/libasound_module_pcm_vdownmix.so
 %%LAVC%%lib/alsa-lib/libasound_module_rate_lavcrate.la
@@ -34,3 +38,5 @@ lib/alsa-lib/libasound_module_pcm_vdownmix.so
 %%SPEEX%%lib/alsa-lib/libasound_module_rate_speexrate.so
 %%SPEEX%%lib/alsa-lib/libasound_module_rate_speexrate_best.so
 %%SPEEX%%lib/alsa-lib/libasound_module_rate_speexrate_medium.so
+%%PULSE%%share/alsa/alsa.conf.d/50-pulseaudio.conf
+%%PULSE%%share/alsa/alsa.conf.d/99-pulseaudio-default.conf.example
