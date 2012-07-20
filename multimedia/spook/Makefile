@@ -17,10 +17,11 @@ COMMENT=	Embedded RTP/RTSP/HTTP video streamer
 # TODO: FireWire IIDC support (needs libraw1394, libdc1394).
 # TODO: Test with Luigi-ified V4L input drivers e.g. pwc, etc.
 
-OPTIONS= \
-	JPEG	"With JPEG encoding support" on \
-	MPEG4	"With MPEG4 encoding support" off \
-	V4L	"With V4L input support" on
+OPTIONS_DEFINE=	JPEG MPEG4 V4L DOCS
+OPTIONS_DEFAULT=	JPEG V4L
+
+MPEG4_DESC=	MPEG4 encoding support
+V4L_DESC=	V4L input support
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -37,31 +38,31 @@ SUB_FILES=	pkg-message
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_JPEG)
+.if ${PORT_OPTIONS:MJPEG}
 LIB_DEPENDS+=		jpeg.11:${PORTSDIR}/graphics/jpeg
 CONFIGURE_ARGS+=	--enable-encoder-jpeg
 .endif
 
-.if defined(WITH_MPEG4)
+.if ${PORT_OPTIONS:MMPEG4}
 LIB_DEPENDS+=		xvidcore.4:${PORTSDIR}/multimedia/xvid
 CONFIGURE_ARGS+=	--enable-encoder-mpeg4
 .endif
 
-.if !defined(WITHOUT_V4L)
+.if ${PORT_OPTIONS:MV4L}
 BUILD_DEPENDS+=		${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
 CONFIGURE_ARGS+=	--enable-input-v4l
 .endif
 
 PLIST_FILES=	bin/spook bin/spookctl etc/spook.conf.dist
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	README
 .endif
 
 do-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
 .endif
@@ -69,4 +70,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/spookctl ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/spook.conf.dist ${PREFIX}/etc
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
