@@ -15,7 +15,7 @@ COMMENT=	A numeric oriented programming language
 
 LICENSE=	MIT
 
-PORT_OPTIONS=	EXAMPLES
+OPTIONS_DEFINE=	EXAMPLES
 
 USE_NCURSES=	yes
 USE_GMAKE=	yes
