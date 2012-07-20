@@ -16,7 +16,8 @@ COMMENT=	User-mode virtual ethernet infrastructure
 LICENSE=	BSD GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-OPTIONS=	PYTHON "Enable python bindings support" on
+OPTIONS_DEFINE=	PYTHON
+OPTIONS_DEFAULT=	PYTHON
 
 CONFLICTS=	vde-[0-9]*
 
@@ -37,7 +38,7 @@ MAN8=		vde_tunctl.8
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 CONFIGURE_ARGS+=--disable-python
 PLIST_SUB+=	PYTHON="@comment "
 .else
