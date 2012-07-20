@@ -1,0 +1,18 @@
+Tsung is an open-source multi-protocol distributed load testing tool
+
+It can be used to stress HTTP, WebDAV, SOAP, PostgreSQL, MySQL, LDAP and
+Jabber/XMPP servers. Tsung is a free software released under the GPLv2 license.
+
+The purpose of Tsung is to simulate users in order to test the scalability and
+performance of IP based client/server applications. You can use it to do load
+and stress testing of your servers. Many protocols have been implemented and
+tested, and it can be easily extended.
+
+It can be distributed on several client machines and is able to simulate
+hundreds of thousands of virtual users concurrently (or even millions if you
+have enough hardware ...).
+
+Tsung is developed in Erlang, an open-source language made by Ericsson for
+building robust fault-tolerant distributed applications.
+
+WWW: http://tsung.erlang-projects.org/

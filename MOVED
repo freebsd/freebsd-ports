@@ -44,7 +44,6 @@ sysutils/eventwatcher||2008-02-27|Has expired: no active development
 sysutils/p5-UPS-Nut||2008-02-27|Has expired: Version branch long since retired
 net-mgmt/netsaint||2008-02-27|Has expired: Now developed as Nagios, see net-mgmt/nagios port
 net-mgmt/netsaint-plugins||2008-02-27|Has expired: Now developed as Nagios, see net-mgmt/nagios port
-benchmarks/tsung||2008-02-27|Has expired: "fails to install"
 games/ggo||2008-02-27|Has expired: developer's focus have moved elsewhere
 mail/claws-mail-etpan_privacy||2008-02-27|Has expired: no longer supported by developers
 x11-themes/indubstrial||2008-02-28|Has expired: yes
