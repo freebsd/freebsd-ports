@@ -16,25 +16,23 @@
 # Of course, the netcdf port must be installed first.
 
 PORTNAME=	minc
-PORTVERSION=	2.0.09
-PORTREVISION=	1
+PORTVERSION=	2.0.18
 CATEGORIES=	science biology
-MASTER_SITES=	http://www.bic.mni.mcgill.ca/users/bert/ \
-		http://www.neuro.mcw.edu/~bacon/Ports/distfiles/
+MASTER_SITES=	http://www.nitrc.org/frs/download.php/801/
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Medical Imaging NetCDF
 
 LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf \
-		hdf5.0:${PORTSDIR}/science/hdf5
+		hdf5:${PORTSDIR}/science/hdf5
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
+CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include -DH5_USE_16_API
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ARGS=	--enable-shared=yes --enable-static=yes
 
-CONFLICTS=	minc-1*
+CONFLICTS=	minc-1* zh-tk-[0-9]*
 LATEST_LINK=	minc2
 
 MAN1=	dcm2mnc.1 \
@@ -71,9 +69,12 @@ MAN1=	dcm2mnc.1 \
 	rawtominc.1 \
 	transformtags.1 \
 	upet2mnc.1 \
+	vff2mnc.1 \
 	voxeltoworld.1 \
 	xfmconcat.1 \
+	xfmflip.1 \
 	xfminvert.1
+
 MAN3=	ParseArgv.3
 
 post-install:

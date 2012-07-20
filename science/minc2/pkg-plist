@@ -33,9 +33,11 @@ bin/nii2mnc
 bin/rawtominc
 bin/transformtags
 bin/upet2mnc
+bin/vff2mnc
 bin/voxeltoworld
 bin/worldtovoxel
 bin/xfmconcat
+bin/xfmflip
 bin/xfminvert
 include/ParseArgv.h
 include/minc.h
