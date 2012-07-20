@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-conf
 PORTVERSION=	4.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DISTNAME=	xfconf-${PORTVERSION}
@@ -16,6 +16,7 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	D-Bus-based configuration storage system
 
+BUILD_DEPENDS=	p5-XML-Parser>0:${PORTSDIR}/textproc/p5-XML-Parser
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
 USE_AUTOTOOLS=	libtool
@@ -24,6 +25,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack gtk20 intltool intlhack pkgconfig
 USE_LDCONFIG=	yes
+USE_PERL5_BUILD=	yes
 USE_XFCE=	configenv libutil
 USE_XORG=	x11
 
