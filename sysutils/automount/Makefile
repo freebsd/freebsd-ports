@@ -11,7 +11,7 @@ CATEGORIES=   sysutils
 MASTER_SITES= https://raw.github.com/vermaden/automount/master/
 
 MAINTAINER=   vermaden@interia.pl
-COMMENT=      FreeBSD's devd(8) based automount sollution
+COMMENT=      FreeBSD's devd(8) based automount solution
 
 LICENSE=      BSD
 
