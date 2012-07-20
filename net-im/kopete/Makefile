@@ -58,7 +58,8 @@ INSTALL_WRKSRC=	${WRKSRC}/kopete
 
 PKG_CONFIG?=	${LOCALBASE}/bin/pkg-config
 
-OPTIONS=	WEBCAM "Enable webcamera support" off
+OPTIONS_DEFINE=	WEBCAM
+WEBCAM_DESC=	Enable webcamera support
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
