@@ -7,6 +7,7 @@
 
 PORTNAME=	virtio
 PORTVERSION=	0.${SVN_REV}
+PORTREVISION=	1
 CATEGORIES=	emulators kld
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kuriyama
@@ -41,9 +42,9 @@ SVN_REV=	228301
 
 post-extract:
 	cd ${WRKSRC} && ${MKDIR} sys/dev tmp && ${MV} dev modules tmp/
-	for d in ${NEEDSUBDIRS}; do \
-		${CP} -Rp ${SRC_BASE}/sys/${d} ${WRKSRC}/sys/${d}; \
-	done
+.for d in ${NEEDSUBDIRS}
+	${CP} -Rp ${SRC_BASE}/sys/${d} ${WRKSRC}/sys/${d}
+.endfor
 	${CP} -Rp ${WRKSRC}/tmp/* ${WRKSRC}/sys/
 
 do-build:

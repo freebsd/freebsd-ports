@@ -1,5 +1,5 @@
-Port for package building of virtio kernel lodable modules.
+Port for package building of virtio kernel loadable modules.
 
-This port support only 8.2 and 9.0 releases.
+This port support only 8.[23] and 9.0 releases.
 
 WWW: http://people.FreeBSD.org/~kuriyama/virtio/
