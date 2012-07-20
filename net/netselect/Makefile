@@ -19,11 +19,12 @@ PLIST_FILES=	bin/${PORTNAME}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS=	SUID "Install with the sticky bit (mode 4110)" off
+OPTIONS_DEFINE=	SUID
+SUID_DESC=	Install with the sticky bit (mode 4110)
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_SUID)
+.if ${PORT_OPTIONS:MSUID}
 BINMODE=	4110
 .else
 BINMODE=	0100
@@ -35,4 +36,4 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
