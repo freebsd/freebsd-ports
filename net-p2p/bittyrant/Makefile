@@ -31,7 +31,9 @@ JAVA_OS=	native
 USE_ANT=	yes
 WRKSRC=		${WRKDIR}/BitTyrant
 
-OPTIONS=	SWTDEVEL "Use SWT Development port" on
+OPTIONS_DEFINE=	SWTDEVEL
+OPTIONS_DEFAULT=	SWTDEVEL
+SWTDEVEL_DESC=	Use SWT Development port
 
 # build classpath from BUILD_DEPENDS
 MAKE_ENV=	LANG=C
@@ -46,9 +48,9 @@ SUB_LIST=	JARFILE="${PORTNAME}.jar" \
 		LIBDIR="${LOCALBASE}/lib" \
 		SWTJAR="${JAVAJARDIR}/${SWT}.jar"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_SWTDEVEL)
+.if ${PORT_OPTIONS:MSWTDEVEL}
 SWT=		swt-devel
 .else
 SWT=		swt
@@ -68,4 +70,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/dist/Azureus2.jar \
 		${JAVAJARDIR}/${PORTNAME}.jar
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
