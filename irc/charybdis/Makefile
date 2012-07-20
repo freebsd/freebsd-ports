@@ -7,10 +7,12 @@
 
 PORTNAME=	charybdis
 PORTVERSION=	3.3.0
+PORTREVISION=	1
 CATEGORIES=	irc net
 MASTER_SITES=	http://www.stack.nl/~jilles/irc/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
-EXTRACT_SUFX=	.tbz2
+DISTFILES=	${DISTNAME}.tbz2
+EXTRACT_ONLY=	${DISTFILES:M*tbz2}
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	A powerful IRC daemon, based on ircd-ratbox
@@ -24,6 +26,7 @@ CONFLICTS=	ircd-ratbox-[0-9]* ircd-ratbox-devel-[0-9]* \
 		ru-ircd-hybrid-[0-9]* \
 
 MAN8=		ircd.8
+PORTDOCS=	*
 
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
@@ -37,6 +40,13 @@ CONFIGURE_ARGS=	--with-confdir=${ETCDIR} \
 USERS=	ircd
 GROUPS=	ircd
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+DISTFILES+=	charybdis-oper-guide.pdf:pdf
+MASTER_SITES+=	http://www.stack.nl/~jilles/irc/charybdis-stable-oper-guide/:pdf
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's#(libdir)/pkgconfig#${PREFIX}/libdata/pkgconfig#' \
@@ -47,5 +57,9 @@ post-patch:
 
 pre-su-install:
 	@${MKDIR} ${DATADIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${DISTDIR}/charybdis-oper-guide.pdf ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
