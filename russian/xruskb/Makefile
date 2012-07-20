@@ -22,11 +22,12 @@ CONFIGURE_ARGS=	--datadir=${PREFIX}/share
 MAN1=		xrus.1
 DOCS=		FAQ NEWS README* TODO xrus.doc-*
 
-OPTIONS=	MOTIF "Support for pixmaps in indicator icon" off
+OPTIONS_DEFINE=	MOTIF DOCS
+MOTIF_DESC=	Support for pixmaps in indicator icon
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_MOTIF)
+.if ${PORT_OPTIONS:MMOTIF}
 USE_MOTIF=	yes
 CONFIGURE_ARGS+=	--with-toolkit=motif
 .else
@@ -35,7 +36,7 @@ CONFIGURE_ARGS+=	--with-toolkit=none
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/Xrus.ad ${PREFIX}/lib/X11/app-defaults/Xrus
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
