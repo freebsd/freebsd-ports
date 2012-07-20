@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	SOAP-Lite
-PORTVERSION=	0.714
+PORTVERSION=	0.715
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	SOAP::Lite - Client and server side SOAP implementation
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \
 		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
@@ -23,14 +26,13 @@ RUN_DEPENDS=	p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
 		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector
 BUILD_DEPENDS:=	${RUN_DEPENDS}
-
 TEST_DEPENDS=	p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject
 
 CONFLICTS=	p5-SOAP-Lite-0.60* p5-SOAP-[0-9]*
 
-PERL_CONFIGURE=	yes
-CONFIGURE_ARGS+=--noprompt
+CONFIGURE_ARGS=	--noprompt
 INSTALL_TARGET=	pure_install
+PERL_CONFIGURE=	yes
 
 MAN1=		SOAPsh.pl.1 XMLRPCsh.pl.1 stubmaker.pl.1
 MAN3=		Apache::SOAP.3 \
@@ -64,7 +66,7 @@ MAN3=		Apache::SOAP.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500903
+.if ${PERL_LEVEL} < 501000
 RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
 .endif
 

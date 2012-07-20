@@ -39,8 +39,6 @@ bin/XMLRPCsh.pl
 %%SITE_PERL%%/Apache/SOAP.pm
 %%SITE_PERL%%/Apache/XMLRPC/Lite.pm
 %%SITE_PERL%%/UDDI/Lite.pm
-%%SITE_PERL%%/IO/SessionData.pm
-%%SITE_PERL%%/IO/SessionSet.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Lite
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP
 @dirrm %%SITE_PERL%%/Apache/XMLRPC
@@ -51,7 +49,6 @@ bin/XMLRPCsh.pl
 @dirrm %%SITE_PERL%%/XMLRPC/Transport
 @dirrm %%SITE_PERL%%/XMLRPC
 @dirrmtry %%SITE_PERL%%/Apache
-@dirrmtry %%SITE_PERL%%/IO
 @dirrmtry %%SITE_PERL%%/SOAP
 @dirrmtry %%SITE_PERL%%/XML/Parser
 @dirrmtry %%SITE_PERL%%/XML
