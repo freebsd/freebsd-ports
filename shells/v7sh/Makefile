@@ -31,19 +31,21 @@ NO_WRKSUBDIR=	yes
 MAN1=		${PORTNAME}.1
 MANCOMPRESSED=	yes
 
-OPTIONS=	V7SH_SYSIII	"System III enhancements"	on \
-		V7SH_RENO	"4.3BSD-Reno enhancements"	on \
-		V7SH_ULTRIX	"Ultrix 3.1 enhancements"	on
+OPTIONS_DEFINE=	SYSIII RENO ULTRIX
+OPTIONS_DEFAULT=	SYSIII RENO ULTRIX
+SYSIII_DESC=	System III enhancements
+RENO_DESC=	4.3BSD-Reno enhancements
+ULTRIX_DESC=	Ultrix 3.1 enhancements
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_V7SH_SYSIII)
+.if ${PORT_OPTIONS:MSYSIII}
 CFLAGS+=	-DSYSIII
 .endif
-.if !defined(WITHOUT_V7SH_RENO)
+.if ${PORT_OPTIONS:MRENO}
 CFLAGS+=	-DRENO
 .endif
-.if !defined(WITHOUT_V7SH_ULTRIX)
+.if ${PORT_OPTIONS:MULTRIX}
 CFLAGS+=	-DULTRIX
 .endif
 
@@ -60,4 +62,4 @@ post-install:
 	 ${ECHO_CMD} ${PREFIX}/bin/${PORTNAME}) > /etc/shells
 	@${RM} /etc/shells.bak
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
