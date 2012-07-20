@@ -18,7 +18,6 @@ COMMENT=	A Collection of DOM Implementations
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	gdome.8:${PORTSDIR}/textproc/gdome2
-RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GNOME=	glib20 gnomehack libxml2
