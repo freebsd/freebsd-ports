@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave-forge
-PORTVERSION=	20120619
+PORTVERSION=	20120720
 CATEGORIES=	math
 MASTER_SITES=	#none
 DISTFILES=	#none
@@ -59,6 +59,7 @@ OPTIONS=	\
 	MSH "Install package: msh" On \
 	MULTICORE "Install package: multicore" On \
 	NAN "Install package: nan" On \
+	NCARRAY "Install package: ncarray" On \
 	NLWING2 "Install package: nlwing2" On \
 	NNET "Install package: nnet" On \
 	NURBS "Install package: nurbs" On \
@@ -231,6 +232,9 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/multicore.tar.gz:${PORTSDIR}/math/octave-forge-mul
 .endif
 .if defined(WITH_NAN)
 RUN_DEPENDS+=	${TARBALLS_DIR}/nan.tar.gz:${PORTSDIR}/math/octave-forge-nan
+.endif
+.if defined(WITH_NCARRAY)
+RUN_DEPENDS+=	${TARBALLS_DIR}/ncarray.tar.gz:${PORTSDIR}/math/octave-forge-ncarray
 .endif
 .if defined(WITH_NLWING2)
 RUN_DEPENDS+=	${TARBALLS_DIR}/nlwing2.tar.gz:${PORTSDIR}/math/octave-forge-nlwing2
