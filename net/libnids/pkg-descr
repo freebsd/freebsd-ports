@@ -8,4 +8,4 @@ a) assembly of TCP segments into TCP streams
 b) IP defragmentation
 c) TCP port scan detection 
 
-WWW: http://www.packetfactory.net/projects/libnids/
+WWW: http://libnids.sf.net
