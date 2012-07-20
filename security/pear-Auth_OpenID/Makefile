@@ -27,8 +27,9 @@ LATEST_LINK=	pear-Auth_OpenID
 
 WRKSRC=		${WRKDIR}/php-openid-${PORTVERSION}
 
-OPTIONS=	BCMATH "Use bcmath instead of libgmp" off \
-		PEAR_DB "Support SQL stores" off
+OPTIONS_DEFINE=	BCMATH PEAR_DB
+BCMATH_DESC=	Use bcmath instead of libgmp
+PEAR_DB_DESC=	Support SQL stores
 
 USE_PHP=	curl dom
 USE_PYTHON_BUILD=	yes
@@ -178,13 +179,13 @@ _DOCSDIR=	doc
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 EXTRACT_SUFX=	.tar.bz2
 
-.ifdef(WITH_BCMATH)
+.if ${PORT_OPTIONS:MBCMATH}
 USE_PHP+=	bcmath
 .else
 USE_PHP+=	gmp
 .endif
 
-.ifdef(WITH_PEAR_DB)
+.if ${PORT_OPTIONS:MPEAR_DB}
 BUILD_DEPENDS+=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
 RUN_DEPENDS+=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
 .endif
