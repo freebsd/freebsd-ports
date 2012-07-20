@@ -14,7 +14,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert PNM images to PPA for some HP printers
 
-OPTIONS=	A4SIZE "Set A4 (not Letter) as a default paper size" off
+OPTIONS_DEFINE=	A4SIZE
+A4SIZE_DESC=	Set A4 (not Letter) as a default paper size
 
 USE_GHOSTSCRIPT_RUN=	yes
 USE_GMAKE=	yes
@@ -28,7 +29,7 @@ PKGDEINSTALL=	${PKGINSTALL}
 
 .include <bsd.port.pre.mk>
 
-.if defined(A4) || defined(WITH_A4SIZE)
+.if defined(A4) || !empty(PORT_OPTIONS:MA4SIZE}
 RUN_DEPENDS=	enscript:${PORTSDIR}/print/enscript-a4
 .else
 RUN_DEPENDS=	enscript:${PORTSDIR}/print/enscript-letter
