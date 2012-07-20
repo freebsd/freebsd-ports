@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	terminus-font
-PORTVERSION=	4.36
+PORTVERSION=	4.38
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S|%SUBDIR%|${PORTNAME:L}/${PORTNAME}-${PORTVERSION}|}
 
@@ -21,7 +21,7 @@ RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 
-OPTIONS_DEFINE=	AO2 DV1 GE2 GQ2 IJ1 KA2 HI2 LL2
+OPTIONS_DEFINE=	AO2 DV1 GE2 GQ2 IJ1 KA2 HI2 LL2 TD1
 AO2_DESC=	Variant of letter 'a'
 DV1_DESC=	Variant of cyrillic letters 'de' and 've'
 GE2_DESC=	Variant of cyrillic letter 'ge'
@@ -29,7 +29,8 @@ GQ2_DESC=	Variant of grave accent and apostrophe
 IJ1_DESC=	Variant of cyrillic letters 'i' and 'short i'
 KA2_DESC=	Variant of cyrillic letter 'ka'
 HI2_DESC=	Higher uppercase letters, for size 18
-LL2_DESC=	Variant with more distinctive l (ell)
+LL2_DESC=	Variant with more distinctive 'l' (ell)
+TD1_DESC=	Variant with centered '~'
 
 SUB_LIST=	FONTDIR="${PREFIX}/${FONTDIR}"
 SUB_FILES=	pkg-message
@@ -70,6 +71,9 @@ post-extract:
 .endif
 .if ${PORT_OPTIONS:MLL2}
 	cd ${WRKSRC} && ${PATCH} -p1 -i alt/ll2.diff
+.endif
+.if ${PORT_OPTIONS:MTD1}
+	cd ${WRKSRC} && ${PATCH} -p1 -i alt/td1.diff
 .endif
 
 post-build:
