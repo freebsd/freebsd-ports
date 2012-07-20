@@ -16,9 +16,13 @@ COMMENT=	An implementation of Kernigan & Bentley's grap language
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=--with-freebsd-ports
 
+CONFLICTS_INSTALL=heirloom-doctools-[0-9]*
+
 MAN1=		grap.1
 
-.if defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${RM} -rf ${DOCSDIR}
 .endif
