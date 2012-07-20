@@ -7,6 +7,7 @@
 
 PORTNAME=	spread4
 PORTVERSION=	4.1.0
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	LOCAL/wen
 DISTNAME=	spread-src-${PORTVERSION}
@@ -16,9 +17,15 @@ COMMENT=	The Spread Group Communication System, a network toolkit
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_RC_SUBR=	spread.sh
+USE_RC_SUBR=	spread
 USE_LDCONFIG=	yes
 ALL_TARGET=	all
+
+USERS=		spread
+GROUPS=		spread
+RUNDIR=		/var/run/spread
+
+PLIST_SUB+=	USERS=${USERS} GROUPS=${GROUPS} RUNDIR=${RUNDIR}
 
 WRKSRC=		${WRKDIR}/spread-src-${PORTVERSION}
 
@@ -42,9 +49,6 @@ MAN3=		SP_connect.3 SP_disconnect.3 SP_equal_group_ids.3 \
 post-extract:
 		@${REINPLACE_CMD} -e 's|INSTALLSUBDIRS=daemon docs|INSTALLSUBDIRS=daemon|' \
 		${WRKSRC}/Makefile.in
-
-pre-install:
-	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/sample.spread.conf \
@@ -76,8 +80,7 @@ post-install:
 .for f in ${MAN3}
 	${INSTALL_MAN} ${WRKSRC}/docs/${f} ${LOCALBASE}/man/man3/
 .endfor
-
+	@${INSTALL} -m 750 -o ${USERS} -g ${GROUPS} -d ${RUNDIR}
 	@${CAT} ${PKGMESSAGE}
-	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>

@@ -1,5 +1,5 @@
---- Makefile.in	Thu Sep 23 12:12:52 2004
-+++ Makefile.in	Tue Oct  4 14:49:56 2005
+--- ./Makefile.in.orig	2004-09-23 19:12:52.000000000 +0200
++++ ./Makefile.in	2012-07-20 21:55:23.000000000 +0200
 @@ -26,7 +26,7 @@
  #Rules: major  -- inc for incompatible change
  #     : minor  -- inc for bugfix or forward compatible change
@@ -91,15 +91,15 @@
  	rm -f config.cache config.log docs/*.out core
  	rm -rf autom4te.cache
  
-@@ -254,11 +262,6 @@
- 	done
+@@ -255,11 +263,6 @@
  	if [ ! -d $(DESTDIR)$(sysconfdir) ]; then \
  		$(buildtoolsdir)/mkinstalldirs $(DESTDIR)$(sysconfdir); \
--	fi
+ 	fi
 -	if [ ! -f $(DESTDIR)$(sysconfdir)/spread.conf ]; then \
 -		$(INSTALL) -m 644 $(srcdir)/sample.spread.conf $(DESTDIR)$(sysconfdir)/spread.conf; \
 -	else \
 -		echo "$(DESTDIR)$(sysconfdir)/spread.conf already exists, install will not overwrite"; \
- 	fi
+-	fi
  
  uninstallall:	uninstall
+ 	-rm -f $(DESTDIR)$(sysconfdir)/spread.conf

@@ -1,5 +1,5 @@
---- spread.c	Thu Jun 19 00:31:23 2003
-+++ spread.c	Mon Dec  8 20:55:41 2003
+--- ./spread.c.orig	2006-11-20 05:53:13.000000000 +0100
++++ ./spread.c	2012-07-20 21:55:23.000000000 +0200
 @@ -48,6 +48,8 @@
  #include <pwd.h>
  #include <unistd.h>
@@ -29,12 +29,10 @@
          /* initialize each valid authentication protocol */
          null_init();
          ip_init();
-@@ -193,6 +201,20 @@
- 	E_handle_events();
- 
+@@ -195,6 +203,20 @@
  	return 0;
-+}
-+
+ }
+ 
 +static void
 +writepidfile()
 +{
@@ -47,6 +45,8 @@
 +	snprintf(pidbuf, sizeof(pidbuf), "%ld\n", (long)getpid());
 +	write(pidfd, pidbuf, strlen(pidbuf));
 +	close(pidfd);
- }
- 
++}
++
  static  void    Print_help(void)
+ {
+     Alarmp( SPLOG_FATAL, SYSTEM, "Usage: spread\n%s\n%s\n%s\n",

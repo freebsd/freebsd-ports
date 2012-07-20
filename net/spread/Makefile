@@ -7,6 +7,7 @@
 
 PORTNAME=	spread
 PORTVERSION=	3.17.4
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	http://www.edu-linux.org/down/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -20,8 +21,14 @@ PORTSCOUT=	limit:^3
 
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
-USE_RC_SUBR=	spread.sh
+USE_RC_SUBR=	spread
 USE_LDCONFIG=	yes
+
+USERS=		spread
+GROUPS=		spread
+RUNDIR=		/var/run/spread
+
+PLIST_SUB+=	USERS=${USERS} GROUPS=${GROUPS} RUNDIR=${RUNDIR}
 
 MAKE_ARGS+=	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS}
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
@@ -55,9 +62,6 @@ post-build:
 		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
 	@cd ${WRKSRC}/perl/Spread && ${MAKE}
 
-pre-install:
-	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 post-install:
 .for f in ${HEADERFILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/include
@@ -82,7 +86,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/Readme.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/license.txt ${DOCSDIR}/LICENSE
 .endif
+	@${INSTALL} -m 750 -o ${USERS} -g ${GROUPS} -d ${RUNDIR}
 	@${CAT} ${PKGMESSAGE}
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>

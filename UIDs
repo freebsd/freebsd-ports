@@ -135,6 +135,7 @@ frontbase:*:276:276::0:0:FrontBase Daemon:/usr/local/FrontBase/Databases:/bin/sh
 mrtg:*:279:279::0:0:MRTG daemon:/nonexistent:/usr/sbin/nologin
 xymon:*:280:280::0:0:Xymon Monitor:/nonexistent:/usr/sbin/nologin
 prelude:*:281:281::0:0:Prelude user:/nonexistent:/usr/sbin/nologin
+spread:*:282:282::0:0:Spread user:/nonexistent:/usr/sbin/nologin
 backuppc:*:300:300::0:0:BackupPC pseudo-user:/nonexistent:/usr/sbin/nologin
 _sphinx:*:312:312::0:0:Sphinxsearch Owner:/nonexistent:/usr/sbin/nologin
 dkfilter:*:325:325::0:0:DK Filter Owner:/nonexistent:/usr/sbin/nologin

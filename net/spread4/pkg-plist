@@ -33,3 +33,5 @@ sbin/spread
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/PORTING
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec install -m 750 -o %%USERS%% -g %%GROUPS%% -d %%RUNDIR%%
+@dirrmtry %%RUNDIR%%
