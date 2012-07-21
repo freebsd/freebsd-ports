@@ -6,19 +6,23 @@
 #
 
 PORTNAME=	spass
-PORTVERSION=	2.0
+PORTVERSION=	3.0
 CATEGORIES=	security
-MASTER_SITES=	http://www.guyrutenberg.com/wp-content/uploads/2010/08/
+MASTER_SITES=	http://cloud.github.com/downloads/guyru/spass/
+DISTFILES=	${DISTNAME}.tar.bz2
 
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	A secure password generator with a true random number generator
 
-LIB_DEPENDS=	boost_program_options:${PORTSDIR}/devel/boost-libs
+LICENSE=	GPLv3
 
-GNU_CONFIGURE=	yes
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/format.hpp:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	asound:${PORTSDIR}/audio/alsa-lib \
+		boost_program_options:${PORTSDIR}/devel/boost-libs
+
+USE_CMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_BZIP2=	yes
 
 PLIST_FILES=	bin/spass
 
