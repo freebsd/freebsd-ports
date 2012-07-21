@@ -102,6 +102,9 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/reporters/text.py
 %%PYTHON_SITELIBDIR%%/pylint/reporters/text.pyc
 %%PYTHON_SITELIBDIR%%/pylint/reporters/text.pyo
+%%PYTHON_SITELIBDIR%%/pylint/testutils.py
+%%PYTHON_SITELIBDIR%%/pylint/testutils.pyc
+%%PYTHON_SITELIBDIR%%/pylint/testutils.pyo
 %%PYTHON_SITELIBDIR%%/pylint/utils.py
 %%PYTHON_SITELIBDIR%%/pylint/utils.pyc
 %%PYTHON_SITELIBDIR%%/pylint/utils.pyo
