@@ -88,7 +88,7 @@ CONFIGURE_ARGS+=--with-libevent=${LOCALBASE}
 CONFIGURE_ARGS+=--with-libevent=no
 .endif
 
-.if empty(${PORT_OPTIONS:MTHREADS})
+.if empty(PORT_OPTIONS:MTHREADS)
 CONFIGURE_ARGS+=--without-pthreads
 .endif
 
