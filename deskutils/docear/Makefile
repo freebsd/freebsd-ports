@@ -6,14 +6,10 @@
 #
 
 PORTNAME=	docear
-PORTVERSION=	1.0.0.b01
-# TODO FIXME with next PORTVERSION, switch to allOS and .zip variant,
-# to sidestep the 1.0.0_beta01 re-rolling churn.
-PORTREVISION=	1
+PORTVERSION=	1.0.0.b04
 CATEGORIES=	deskutils java
 MASTER_SITES=	SF/docear/1.x/${PORTVERSION:S/.b/_beta/}
 DISTNAME=	docear_linux
-#DIST_SUBDIR=	${PORTVERSION} # TODO FIXME enable this next time the DISTFILE or PORTVERSION change.
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Mind Mapping tool with Reference, Library, and PDF Management
