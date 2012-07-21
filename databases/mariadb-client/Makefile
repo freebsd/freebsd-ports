@@ -14,8 +14,6 @@ COMMENT=	Database client - drop-in replacement for MySQL
 MASTERDIR=	${.CURDIR}/../mariadb-server
 MARIADB_CLIENT_SLAVE=	yes
 
-BROKEN=		incomplete plist
-
 CONFIGURE_ARGS=	--without-server --with-libevent=no
 
 OPTIONS=	THREADSAFE "Build thread-safe client" On

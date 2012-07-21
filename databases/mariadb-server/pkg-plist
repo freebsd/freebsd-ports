@@ -230,16 +230,8 @@ bin/resolveip
 %%STATIC%%lib/mysql/plugin/feedback.so
 %%STATIC%%lib/mysql/plugin/feedback.so.0
 %%XTRADB%%bin/innochecksum
-include/mysql/private/atomic/gcc_builtins.h
-include/mysql/private/atomic/generic-msvc.h
-include/mysql/private/atomic/nolock.h
-include/mysql/private/atomic/rwlock.h
-include/mysql/private/atomic/x86-gcc.h
 include/mysql/private/authors.h
-include/mysql/private/base64.h
 include/mysql/private/client_settings.h
-include/mysql/private/config-netware.h
-include/mysql/private/config-win.h
 include/mysql/private/contributors.h
 include/mysql/private/create_options.h
 include/mysql/private/debug_sync.h
@@ -250,7 +242,6 @@ include/mysql/private/event_queue.h
 include/mysql/private/event_scheduler.h
 include/mysql/private/events.h
 include/mysql/private/field.h
-include/mysql/private/ft_global.h
 include/mysql/private/gcalc_slicescan.h
 include/mysql/private/gcalc_tools.h
 include/mysql/private/gstream.h
@@ -260,11 +251,7 @@ include/mysql/private/ha_ndbcluster_cond.h
 include/mysql/private/ha_ndbcluster_tables.h
 include/mysql/private/ha_partition.h
 include/mysql/private/handler.h
-include/mysql/private/hash.h
 include/mysql/private/hash_filo.h
-include/mysql/private/heap.h
-include/mysql/private/help_end.h
-include/mysql/private/help_start.h
 include/mysql/private/item.h
 include/mysql/private/item_cmpfunc.h
 include/mysql/private/item_create.h
@@ -278,40 +265,14 @@ include/mysql/private/item_timefunc.h
 include/mysql/private/item_xmlfunc.h
 include/mysql/private/lex.h
 include/mysql/private/lex_symbol.h
-include/mysql/private/lf.h
 include/mysql/private/log.h
 include/mysql/private/log_event.h
 include/mysql/private/log_event_old.h
 include/mysql/private/log_slow.h
-include/mysql/private/maria.h
 include/mysql/private/multi_range_read.h
-include/mysql/private/my_aes.h
-include/mysql/private/my_alarm.h
-include/mysql/private/my_atomic.h
-include/mysql/private/my_base.h
-include/mysql/private/my_bit.h
-include/mysql/private/my_bitmap.h
-include/mysql/private/my_compare.h
 include/mysql/private/my_decimal.h
-include/mysql/private/my_handler.h
-include/mysql/private/my_libwrap.h
-include/mysql/private/my_md5.h
-include/mysql/private/my_nosys.h
-include/mysql/private/my_regex.h
-include/mysql/private/my_stacktrace.h
-include/mysql/private/my_time.h
-include/mysql/private/my_tree.h
-include/mysql/private/my_trie.h
-include/mysql/private/my_uctype.h
-include/mysql/private/my_user.h
-include/mysql/private/my_vle.h
-include/mysql/private/myisam.h
-include/mysql/private/myisamchk.h
-include/mysql/private/myisammrg.h
-include/mysql/private/myisampack.h
 include/mysql/private/mysql_priv.h
 include/mysql/private/mysqld_suffix.h
-include/mysql/private/mysys_err.h
 include/mysql/private/opt_range.h
 include/mysql/private/opt_subselect.h
 include/mysql/private/parse_file.h
@@ -320,8 +281,6 @@ include/mysql/private/partition_info.h
 include/mysql/private/plistsort.c
 include/mysql/private/procedure.h
 include/mysql/private/protocol.h
-include/mysql/private/queues.h
-include/mysql/private/rijndael.h
 include/mysql/private/rpl_constants.h
 include/mysql/private/rpl_filter.h
 include/mysql/private/rpl_injector.h
@@ -333,9 +292,7 @@ include/mysql/private/rpl_rli.h
 include/mysql/private/rpl_tblmap.h
 include/mysql/private/rpl_utility.h
 include/mysql/private/scheduler.h
-include/mysql/private/service_versions.h
 include/mysql/private/set_var.h
-include/mysql/private/sha1.h
 include/mysql/private/slave.h
 include/mysql/private/sp.h
 include/mysql/private/sp_cache.h
@@ -372,17 +329,10 @@ include/mysql/private/sql_trigger.h
 include/mysql/private/sql_udf.h
 include/mysql/private/sql_view.h
 include/mysql/private/structs.h
-include/mysql/private/t_ctype.h
 include/mysql/private/table.h
-include/mysql/private/thr_alarm.h
-include/mysql/private/thr_lock.h
 include/mysql/private/tzfile.h
 include/mysql/private/tztime.h
 include/mysql/private/unireg.h
-include/mysql/private/violite.h
-include/mysql/private/waiting_threads.h
-include/mysql/private/welcome_copyright_notice.h
-include/mysql/private/wqueue.h
 lib/mysql/libdbug.a
 lib/mysql/libheap.a
 lib/mysql/libmyisam.a
@@ -420,7 +370,7 @@ libexec/mysqld
 @dirrm %%DATADIR%%/danish
 @dirrm %%DATADIR%%/czech
 @dirrm %%DATADIR%%/charsets
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%
 %%NDB%%@dirrm include/mysql/storage/ndb/ndbapi
 %%NDB%%@dirrm include/mysql/storage/ndb/mgmapi
 %%NDB%%@dirrm include/mysql/storage/ndb
@@ -428,6 +378,3 @@ libexec/mysqld
 %%HANDLERSOCKET%%@dirrm include/handlersocket
 @dirrmtry lib/mysql/plugin
 @dirrmtry lib/mysql
-@dirrmtry include/mysql/private/atomic
-@dirrmtry include/mysql/private
-@dirrmtry include/mysql
