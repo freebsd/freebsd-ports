@@ -1,4 +1,5 @@
 bin/clay
+%%BINDGEN%%bin/clay-bindgen
 lib/lib-clay/algorithms/algorithms.clay
 lib/lib-clay/algorithms/heaps/heaps.clay
 lib/lib-clay/algorithms/introsort/introsort.clay
