@@ -8,11 +8,13 @@ PORTNAME=	wmsun
 PORTVERSION=	1.03
 PORTREVISION=	2
 CATEGORIES=	astro windowmaker
-MASTER_SITES=	http://www.dockapps.org/files/16/23/
+MASTER_SITES=	http://dockapps.windowmaker.org/download.php/id/23/
 DISTNAME=	wmSun-1.03
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockapp that displays the rise and set time of the sun
+
+FETCH_ARGS=	-Fpr
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmSun
 
