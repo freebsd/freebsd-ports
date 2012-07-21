@@ -84,6 +84,9 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/logilab/common/pytest.py
 %%PYTHON_SITELIBDIR%%/logilab/common/pytest.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/pytest.pyo
+%%PYTHON_SITELIBDIR%%/logilab/common/registry.py
+%%PYTHON_SITELIBDIR%%/logilab/common/registry.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/registry.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/shellutils.py
 %%PYTHON_SITELIBDIR%%/logilab/common/shellutils.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/shellutils.pyo
@@ -189,6 +192,9 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_pytest.py
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_pytest.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_pytest.pyo
+%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_registry.py
+%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_registry.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_registry.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_shellutils.py
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_shellutils.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_shellutils.pyo
