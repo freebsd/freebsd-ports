@@ -52,6 +52,7 @@
     SUBDIR += apr2
     SUBDIR += arduino
     SUBDIR += arduino-glcd
+    SUBDIR += arduino-irremote
     SUBDIR += arduino-mk
     SUBDIR += argouml
     SUBDIR += argp-standalone

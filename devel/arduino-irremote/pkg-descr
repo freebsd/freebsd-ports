@@ -1,0 +1,7 @@
+A Multi-Protocol Infrared Remote Library for the Arduino
+
+This IR remote library, written by Ken Shirriff, lets you both send
+and receive IR remote codes in multiple protocols. It supports NEC,
+Sony SIRC, Philips RC5, Philips RC6, and raw protocols.
+
+WWW: http://www.arcfn.com/2009/08/multi-protocol-infrared-remote-library.html
