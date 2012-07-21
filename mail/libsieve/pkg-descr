@@ -5,4 +5,4 @@ you to make it so. libSieve makes no attempt to have knowledge of how SMTP,
 IMAP, or anything else work; just how to parse and deal with a buffer full of
 emails. The rest is up to you!
 
-WWW: http://libsieve.sourceforge.net/
+WWW: http://sodabrew.com/libsieve/
