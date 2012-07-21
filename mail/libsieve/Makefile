@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	libsieve
-PORTVERSION=	2.2.6
+PORTVERSION=	2.3.1
 CATEGORIES=	mail
-MASTER_SITES=	SF
+MASTER_SITES=	http://cloud.github.com/downloads/sodabrew/libsieve/
 
 MAINTAINER=	mark_sf@kikg.ifmo.ru
 COMMENT=	A library for parsing, sorting and filtering mail
 
+LICENSE=LGPL21
+
 GNU_CONFIGURE=	yes
-CONFIGURE_WRKSRC=${WRKSRC}/src
 CONFIGURE_ARGS+=--prefix=${PREFIX}
 USE_GMAKE=	yes
-BUILD_WRKSRC=	${WRKSRC}/src
-INSTALL_WRKSRC=	${WRKSRC}/src
 USE_BISON=	build
 USE_LDCONFIG=	yes
 
