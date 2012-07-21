@@ -7,7 +7,7 @@
 
 PORTNAME=	ibus-kmfl
 PORTVERSION=	1.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	SF/kmfl/${PORTNAME}/${PORTVERSION} \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/${DIST_SUBDIR}/
@@ -16,7 +16,7 @@ DIST_SUBDIR=	kmfl
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	KMFL IMEngine for IBus framework
 
-LIB_DEPENDS=	ibus-1.0.400:${PORTSDIR}/textproc/ibus \
+LIB_DEPENDS=	ibus-1.0:${PORTSDIR}/textproc/ibus \
 		kmfl.0:${PORTSDIR}/textproc/libkmfl \
 		kmflcomp.0:${PORTSDIR}/textproc/kmflcomp
 RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp
