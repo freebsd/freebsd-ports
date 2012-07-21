@@ -22,10 +22,90 @@ include/shiboken/typeresolver.h
 lib/cmake/Shiboken-%%PORTVERSION%%/ShibokenConfig-%%PYTHON_VERSION%%.cmake
 lib/cmake/Shiboken-%%PORTVERSION%%/ShibokenConfig.cmake
 lib/cmake/Shiboken-%%PORTVERSION%%/ShibokenConfigVersion.cmake
-lib/generatorrunner/shiboken_generator.so
 lib/libshiboken-%%PYTHON_VERSION%%.so
 lib/libshiboken-%%PYTHON_VERSION%%.so.1
 lib/libshiboken-%%PYTHON_VERSION%%.so.%%PORTVERSION%%
 libdata/pkgconfig/shiboken.pc
+%%PORTDOCS%%%%DOCSDIR%%/.buildinfo
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/codeinjectionsemantics.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/commandlineoptions.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/contents.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/environment.pickle
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/faq.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/overview.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/ownership.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/projectfile.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/sequenceprotocol.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/shibokenmodule.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/typeconverters.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/typesystemvariables.doctree
+%%PORTDOCS%%%%DOCSDIR%%/.doctrees/wordsofadvice.doctree
+%%PORTDOCS%%%%DOCSDIR%%/_images/bindinggen-development.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/boostqtarch.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/converter.png
+%%PORTDOCS%%%%DOCSDIR%%/_sources/codeinjectionsemantics.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/commandlineoptions.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/contents.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/faq.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/overview.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/ownership.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/projectfile.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/sequenceprotocol.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/shibokenmodule.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/typeconverters.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/typesystemvariables.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/wordsofadvice.txt
+%%PORTDOCS%%%%DOCSDIR%%/_static/ajax-loader.gif
+%%PORTDOCS%%%%DOCSDIR%%/_static/basic.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/bg_header.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/bg_topo.jpg
+%%PORTDOCS%%%%DOCSDIR%%/_static/comment-bright.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/comment-close.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/comment.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/default.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/doctools.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/down-pressed.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/down.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/fakebar.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/file.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/jquery.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/logo_indt.jpg
+%%PORTDOCS%%%%DOCSDIR%%/_static/logo_openbossa.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/logo_python.jpg
+%%PORTDOCS%%%%DOCSDIR%%/_static/logo_qt.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/minus.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/plus.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/pygments.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/pysidedocs.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/pysidelogo.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/relbar_bg.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/searchtools.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/sidebar.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/underscore.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/up-pressed.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/up.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/websupport.js
+%%PORTDOCS%%%%DOCSDIR%%/codeinjectionsemantics.html
+%%PORTDOCS%%%%DOCSDIR%%/commandlineoptions.html
+%%PORTDOCS%%%%DOCSDIR%%/contents.html
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/objects.inv
+%%PORTDOCS%%%%DOCSDIR%%/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/ownership.html
+%%PORTDOCS%%%%DOCSDIR%%/projectfile.html
+%%PORTDOCS%%%%DOCSDIR%%/search.html
+%%PORTDOCS%%%%DOCSDIR%%/searchindex.js
+%%PORTDOCS%%%%DOCSDIR%%/sequenceprotocol.html
+%%PORTDOCS%%%%DOCSDIR%%/shibokenmodule.html
+%%PORTDOCS%%%%DOCSDIR%%/typeconverters.html
+%%PORTDOCS%%%%DOCSDIR%%/typesystemvariables.html
+%%PORTDOCS%%%%DOCSDIR%%/wordsofadvice.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_static
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/.doctrees
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/cmake/Shiboken-%%PORTVERSION%%
+@dirrm lib/cmake
 @dirrm include/shiboken
