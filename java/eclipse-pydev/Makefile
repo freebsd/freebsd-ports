@@ -37,8 +37,7 @@ USE_ZIP=	yes
 DISTDATE=	2012062818
 
 SUB_FILES=	pkg-install
-SUB_LIST=	BUNDLES_INFO=${BUNDLES_INFO} DISTDATE=${DISTDATE} \
-		PLUGINDIR=${PLUGINDIR} PORTVERSION=${PORTVERSION}
+SUB_LIST=	BUNDLES_INFO=${BUNDLES_INFO} PLUGINDIR=${PLUGINDIR}
 
 pre-install:
 	@# ignore javashell.py file, because there is a syntax error
@@ -46,21 +45,19 @@ pre-install:
 	${PYTHON_CMD} -m compileall  -x javashell.py -f ${WRKSRC}/plugins
 	${PYTHON_CMD} -O -m compileall -x javashell.py -f ${WRKSRC}
 
-REVDOM=	python.pydev
-PLUGINDIR=	../../share/eclipse/dropins/pydev/eclipse/plugins
+PLUGINDIR=	share/eclipse/dropins/pydev/eclipse/plugins
 BUNDLES_INFO=	${PREFIX}/lib/eclipse/configuration/org.eclipse.equinox.simpleconfigurator/bundles.info
-COMPONENTS=	com com.analysis com.codecompletion com.debug com.fastparser com.refactoring \
-		org org.ast org.core org.customizations org.debug org.django org.help org.jython org.parser org.red_core org.refactoring
+
 post-install:
 	@${ECHO_MSG} "===>   Updating ${BUNDLES_INFO}"
-.for d in com org
-.	for c in ${COMPONENTS:M${d}*}
-		@${ECHO_CMD} "${d}.${REVDOM}${c:S,${d},,},${PORTVERSION}.${DISTDATE},${PLUGINDIR}/${d}.${REVDOM}${c:S,${d},,}_${PORTVERSION}.${DISTDATE}/,4,false" >> ${BUNDLES_INFO}
-.	endfor
-.endfor
+	@PLUGINS=$$(ls -1 ${PREFIX}/${PLUGINDIR}); \
+	for d in $${PLUGINS}; do \
+	    (${ECHO_CMD} "$${d},../../${PLUGINDIR}/$${d}/,4,false" | \
+	    ${SED} -e 's/_\([0-9]\)/,\1/1' -e '/templates/d') >> ${BUNDLES_INFO}; \
+	done
 	@(${SORT} ${BUNDLES_INFO} > ${BUNDLES_INFO}.sort) && \
 	${MV} ${BUNDLES_INFO}.sort ${BUNDLES_INFO}
-	${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 add-plist-post:
 	@${ECHO_CMD} "@exec ${MKDIR} %D/share/eclipse/dropins/${PORTNAME}/eclipse/plugins/com.python.pydev.codecompletion_${PORTVERSION}.${DISTDATE}/icons" >> ${TMPPLIST}
