@@ -8,18 +8,15 @@ fi
 PATH="/bin:/sbin:/usr/bin:/usr/sbin"
 
 BUNDLES_INFO=%%BUNDLES_INFO%%
-DISTDATE=%%DISTDATE%%
 PLUGINDIR=%%PLUGINDIR%%
-PORTVERSION=%%PORTVERSION%%
-REVDOM=python.pydev
+PREFIX=%%PREFIX%%
 
 if [ "$2" = "POST-INSTALL" ]; then
 	echo "===>   Updating ${BUNDLES_INFO}"
-	for c in '' '.analysis' '.codecompletion' '.debug' '.fastparser' '.refactoring'; do
-	    echo "com.${REVDOM}${c},${PORTVERSION}.${DISTDATE},${PLUGINDIR}/com.${REVDOM}${c}_${PORTVERSION}.${DISTDATE}/,4,false" >> ${BUNDLES_INFO}
-	done
-	for c in '' '.ast' '.core' '.customizations' '.debug' '.django' '.help' '.jython' '.parser' '.red_core' '.refactoring'; do
-	    echo "org.${REVDOM}${c},${PORTVERSION}.${DISTDATE},${PLUGINDIR}/org.${REVDOM}${c}_${PORTVERSION}.${DISTDATE}/,4,false" >> ${BUNDLES_INFO}
+	for d in $(ls -1 ${PREFIX}/${PLUGINDIR})
+	do
+	    (echo "${d},../../${PLUGINDIR}/${d}/,4,false" | \
+	    sed -e 's/_\([0-9]\)/,\1/1' -e '/templates/d') >> ${BUNDLES_INFO}
 	done
 	sort ${BUNDLES_INFO} > ${BUNDLES_INFO}.sort && \
 	mv ${BUNDLES_INFO}.sort ${BUNDLES_INFO}
