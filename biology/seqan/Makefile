@@ -34,7 +34,7 @@ PKG_MESSAGE=	${WRKDIR}/pkg-message
 
 .if ${ARCH} == i386
 # triggers internal error in system gcc
-USE_GCC=	4.4+
+USE_GCC=	4.6+
 .endif
 
 # unsafe workaround because FreeBSD lacks logl and expl
