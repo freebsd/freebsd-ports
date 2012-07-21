@@ -7,6 +7,7 @@
 
 PORTNAME=	redmine
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -29,29 +30,31 @@ USE_RAKE=	yes
 NO_BUILD=	yes
 SUB_LIST+=	RUBY_NAME=${RUBY_NAME}
 
-BROKEN=		Does not work with RubyGems 1.8
-
-OPTIONS=	MYSQL "Enable MySQL support" on \
-		POSTGRESQL "Enable PostgreSQL support" off \
-		RMAGIC "Enable Gantt charts support" on \
-		THIN "Use Thin WEB server" on \
-		PASSENGER "Use Apache/Nginx WEB server" off
+OPTIONS_DEFINE=	MYSQL POSTGRESQL RMAGIC WWWSERVER
+OPTIONS_DEFAULT=MYSQL            RMAGIC WWWSERVER THIN
+OPTIONS_SINGLE=	WWWSERVER
+OPTIONS_SINGLE_WWWSERVER=	THIN PASSENGER
+POSTGRESQL_DESC=Enable PostgreSQL support
+RMAGIC_DESC=	Enable Gantt charts support
+THIN_DESC=	Use Thin WEB server
+PASSENGER_DESC=	Use Apache/Nginx WEB server
+NO_OPTIONS_SORT=yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/mysql.so:${PORTSDIR}/databases/ruby-mysql
 .endif
 
-.if defined(WITH_POSTGRESQL)
+.if ${PORT_OPTIONS:MPOSTGRESQL}
 RUN_DEPENDS+=	rubygem-pg>=0:${PORTSDIR}/databases/rubygem-pg
 .endif
 
-.if defined(WITH_RMAGIC)
+.if ${PORT_OPTIONS:MRMAGIC}
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/RMagick2.so:${PORTSDIR}/graphics/ruby-rmagick
 .endif
 
-.if defined(WITH_THIN)
+.if ${PORT_OPTIONS:MTHIN}
 USERS=		${WWWOWN}
 GROUPS=		${WWWGRP}
 RUN_DEPENDS+=	thin:${PORTSDIR}/www/rubygem-thin
@@ -59,25 +62,28 @@ USE_RC_SUBR=	redmine
 SUB_LIST+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 .endif
 
-.if defined(WITH_PASSENGER)
+.if ${PORT_OPTIONS:MPASSENGER}
 RUN_DEPENDS+=	passenger-config:${PORTSDIR}/www/rubygem-passenger
 .endif
 
-.if !defined(WITH_THIN) && !defined(WITH_PASSENGER)
-IGNORE=		either Thin or Apache/Nginx WEB server option required. \
-		Please 'make config' again.
-.endif
+post-extract:
+	${MV} ${WRKSRC}/config/settings.yml ${WRKSRC}/config/settings.yml-dist
+
+pre-install:
+	${MKDIR} ${WRKSRC}/public/plugin_assets
 
 do-install:
 	${MKDIR} ${WWWDIR}
-	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "*" ${WWWDIR} "! ( -name *\.orig -o -name *\.bak )")
-
-	${MKDIR} ${WWWDIR}/public/plugin_assets
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-
-	${FIND} ${WWWDIR}/script -type f -exec ${CHMOD} 755 {} \;
+	cd ${WRKSRC} && \
+	${COPYTREE_SHARE} "*" ${WWWDIR} "! ( -name *\.orig -o -name *\.bak )"
+	${FIND} ${WRKSRC}/script -type f -print | ${XARGS} ${CHMOD} 755
 
 post-install:
+	if ! [ -r ${WWWDIR}/config/settings.yml ]; then			\
+		${INSTALL_DATA} ${WWWDIR}/config/settings.yml-dist	\
+			${WWWDIR}/config/settings.yml;			\
+	fi
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
