@@ -11,7 +11,7 @@ CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	marcellocoutinho@gmail.com
 COMMENT=	Perl module for interfacing with GnuPG
 
 LICENSE=	GPLv2
