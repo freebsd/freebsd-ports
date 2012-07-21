@@ -10,6 +10,7 @@
 %%PYTHON_SITELIBDIR%%/logilab/astng/bases.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/bases.pyc
 %%PYTHON_SITELIBDIR%%/logilab/astng/bases.pyo
+%%PYTHON_SITELIBDIR%%/logilab/astng/brain/py2stdlib.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/builder.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/builder.pyc
 %%PYTHON_SITELIBDIR%%/logilab/astng/builder.pyo
@@ -113,5 +114,6 @@
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/astng/test/data/SSL1
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/astng/test/data
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/astng/test
+@dirrm %%PYTHON_SITELIBDIR%%/logilab/astng/brain
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/astng
 @dirrmtry %%PYTHON_SITELIBDIR%%/logilab
