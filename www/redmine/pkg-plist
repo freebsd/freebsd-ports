@@ -510,7 +510,9 @@
 %%WWWDIR%%/config/locales/zh-TW.yml
 %%WWWDIR%%/config/locales/zh.yml
 %%WWWDIR%%/config/routes.rb
-%%WWWDIR%%/config/settings.yml
+@unexec if cmp %D/%%WWWDIR%%/config/settings.yml-dist %D/%%WWWDIR%%/config/settings.yml; then rm -f %D/%%WWWDIR%%/config/settings.yml; fi
+%%WWWDIR%%/config/settings.yml-dist
+@exec if ! [ -r %D/%%WWWDIR%%/config/settings.yml ]; then cp %D/%%WWWDIR%%/config/settings.yml-dist %D/%%WWWDIR%%/config/settings.yml; fi
 %%WWWDIR%%/db/migrate/001_setup.rb
 %%WWWDIR%%/db/migrate/002_issue_move.rb
 %%WWWDIR%%/db/migrate/003_issue_add_note.rb
@@ -3901,10 +3903,14 @@
 @dirrm %%WWWDIR%%/vendor/gems
 @dirrmtry %%WWWDIR%%/vendor
 @dirrm %%WWWDIR%%/tmp/test
+@exec mkdir -p %D/%%WWWDIR%%/tmp/sockets
 @dirrm %%WWWDIR%%/tmp/sockets
 @dirrmtry %%WWWDIR%%/tmp/sessions
+@exec mkdir -p %D/%%WWWDIR%%/tmp/sessions
 @dirrmtry %%WWWDIR%%/tmp/pids
+@exec mkdir -p %D/%%WWWDIR%%/tmp/pids
 @dirrmtry %%WWWDIR%%/tmp/cache
+@exec mkdir -p %D/%%WWWDIR%%/tmp/cache
 @dirrmtry %%WWWDIR%%/tmp
 @dirrm %%WWWDIR%%/test/unit/lib/redmine/wiki_formatting
 @dirrm %%WWWDIR%%/test/unit/lib/redmine/views/builders
@@ -3920,7 +3926,9 @@
 @dirrm %%WWWDIR%%/test/unit/helpers
 @dirrm %%WWWDIR%%/test/unit
 @dirrm %%WWWDIR%%/test/mocks/test
+@exec mkdir -p %D/%%WWWDIR%%/test/mocks/test
 @dirrm %%WWWDIR%%/test/mocks/development
+@exec mkdir -p %D/%%WWWDIR%%/test/mocks/development
 @dirrm %%WWWDIR%%/test/mocks
 @dirrm %%WWWDIR%%/test/integration/lib/redmine
 @dirrm %%WWWDIR%%/test/integration/lib
@@ -3929,6 +3937,7 @@
 @dirrm %%WWWDIR%%/test/functional
 @dirrm %%WWWDIR%%/test/fixtures/repositories
 @dirrm %%WWWDIR%%/test/fixtures/mailer
+@exec mkdir -p %D/%%WWWDIR%%/test/fixtures/mailer
 @dirrm %%WWWDIR%%/test/fixtures/mail_handler
 @dirrm %%WWWDIR%%/test/fixtures/ldap
 @dirrm %%WWWDIR%%/test/fixtures/files
@@ -3977,6 +3986,7 @@
 @dirrm %%WWWDIR%%/lib/redmine/activity
 @dirrm %%WWWDIR%%/lib/redmine
 @dirrm %%WWWDIR%%/lib/plugins
+@exec mkdir -p %D/%%WWWDIR%%/lib/plugins
 @dirrm %%WWWDIR%%/lib/generators/redmine_plugin_model/templates
 @dirrm %%WWWDIR%%/lib/generators/redmine_plugin_model
 @dirrm %%WWWDIR%%/lib/generators/redmine_plugin_controller/templates
@@ -4065,6 +4075,7 @@
 @dirrm %%WWWDIR%%/app/views/account
 @dirrm %%WWWDIR%%/app/views
 @dirrm %%WWWDIR%%/app/sweepers
+@exec mkdir -p %D/%%WWWDIR%%/app/sweepers
 @dirrm %%WWWDIR%%/app/models/repository
 @dirrm %%WWWDIR%%/app/models
 @dirrm %%WWWDIR%%/app/helpers
