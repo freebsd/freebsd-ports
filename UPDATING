@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120721
+  AFFECTS: users of audio/libogg
+  AUTHOR: naddy@FreeBSD.org
+
+  There is a new version of libogg (1.3.0) and the shared library version
+  has been bumped (ogg.7 to ogg.8).  All ports that have an identifiable
+  direct dependency on this library have had their PORTREVISIONs bumped.
+  However, some ports that pull in the library indirectly may continue to
+  look for the old version.  To ensure that all are updated, perform this
+  step:
+
+  # portmaster -r libogg
+  or
+  # portupgrade -rf libogg
+
 20120717:
   AFFECTS: users of ftp/proftpd
   AUTHOR: mm@FreeBSD.org
