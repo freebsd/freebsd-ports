@@ -16,10 +16,10 @@ MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/rvm/src/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A persistent VM library
 
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	lwp.2:${PORTSDIR}/devel/lwp
 
 USE_GMAKE=	yes
-USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

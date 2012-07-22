@@ -16,10 +16,10 @@ COMMENT=	Standalone Djvu viewer and plugin based on Qt4 toolkit
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	djvulibre:${PORTSDIR}/graphics/djvulibre
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	pkgconfig
 USE_QT4=	gui network rcc_build uic_build moc_build qmake_build
 QT_NONSTANDARD=	yes
 CONFIGURE_ARGS=	--x-includes="${LOCALBASE}/include" \

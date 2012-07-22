@@ -17,6 +17,7 @@ COMMENT=	SWF manipulation and generation utilities
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		gif.5:${PORTSDIR}/graphics/giflib \
@@ -26,7 +27,6 @@ LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \
 
 OPTIONS_DEFINE=	LAME PDF
 
-USE_GNOME=	pkgconfig
 USE_GL=		glut
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

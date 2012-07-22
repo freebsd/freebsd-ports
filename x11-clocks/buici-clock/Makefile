@@ -16,12 +16,12 @@ COMMENT=	Xlib implementation of an attractive, configurable clock
 
 LICENSE=	GPLv2 # (or later)
 
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_XORG=	x11 xext
-USE_GNOME=	pkgconfig
 USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

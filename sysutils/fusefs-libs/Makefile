@@ -14,10 +14,11 @@ DISTNAME=	fuse-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FUSE allows filesystem implementation in userspace
 
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MOUNT_FUSE_PATH=${PREFIX}/sbin
 CFLAGS+=	${PTHREAD_CFLAGS}
-USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 USE_ICONV=	yes
 CONFIGURE_ARGS=	--disable-kernel-module --prefix=${PREFIX} \

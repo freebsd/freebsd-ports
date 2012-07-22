@@ -13,9 +13,9 @@ MASTER_SITES=	# none known, please fix
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intelligent predictive text entry platform
 
-BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man
+BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man \
+		pkg-config>0:${PORTSDIR}/devel/pkg-config
 
-USE_GNOME=	pkgconfig
 USE_SQLITE=	3
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	ac_cv_path_CPPUNIT_CONFIG=no \

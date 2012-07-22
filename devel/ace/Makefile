@@ -15,6 +15,8 @@ DISTNAME=	ACE-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Adaptive Communication Environment for C++
 
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
+
 OPTIONS_DEFINE=	SSL TRIO X11 FLTK TK QT4
 OPTIONS_DEFAULT=SSL
 TRIO_DESC=	Enable trio support
@@ -26,7 +28,6 @@ CONFLICTS=	ace+tao-5*
 WRKSRC=		${WRKDIR}/ACE_wrappers
 
 USE_BZIP2=	yes
-USE_GNOME=	pkgconfig
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/lib" ACE_ROOT="${WRKSRC}" \
