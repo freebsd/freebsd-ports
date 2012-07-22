@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vdr-plugins
-PORTVERSION=	1.7.28
+PORTVERSION=	1.7.29
 CATEGORIES=	multimedia
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -14,6 +14,8 @@ EXTRACT_ONLY=	# none
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - plugin metaport
+
+RUN_DEPENDS+=	vdr:${PORTSDIR}/multimedia/vdr
 
 NO_BUILD=	yes
 

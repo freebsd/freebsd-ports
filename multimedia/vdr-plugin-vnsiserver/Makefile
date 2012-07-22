@@ -7,7 +7,7 @@
 
 PORTNAME=	vdr-plugin-vnsiserver
 PORTVERSION=	0.0.2s20100808.0952
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ppa.launchpad.net/yavdr/testing-vdr/ubuntu/pool/main/v/vdr-plugin-vnsiserver/ \
 		LOCAL/nox/
