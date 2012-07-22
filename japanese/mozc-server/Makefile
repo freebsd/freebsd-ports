@@ -7,7 +7,7 @@
 
 PORTNAME=	mozc
 PORTVERSION=	1.5.1090.102
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX?=	ja-
@@ -30,10 +30,7 @@ USE_OPENSSL=	yes
 
 BUILD_MOZC_LIST?=	mozc_server
 
-.if ${BUILD_MOZC_LIST:Mmozc_server} == "mozc_server"
-USE_GNOME+=	glib20 gtk20
-.elif ${BUILD_MOZC_LIST:Mmozc_tool} == "mozc_tool"
-USE_GNOME+=	gtk20
+.if ${BUILD_MOZC_LIST:Mmozc_tool} == "mozc_tool"
 USE_QT4+=	gui dbus qmake_build moc_build uic_build rcc_build
 .elif ${BUILD_MOZC_LIST:Mibus_mozc} == "ibus_mozc" || \
       ${BUILD_MOZC_LIST:Mscim_mozc} == "scim_mozc"
@@ -76,11 +73,19 @@ SSL_REINPLACE_STR=
 SSL_REINPLACE_STR+=	-e "s,%%${V}%%,${${V}},"
 .endfor
 
+.if ${BUILD_MOZC_LIST:Mmozc_server} == "mozc_server"
+GYP_DEFINES="use_libprotobuf=1 enable_gtk_renderer=0"
+.elif ${BUILD_MOZC_LIST:Mmozc_tool} == "mozc_tool"
+GYP_DEFINES="use_libprotobuf=1 enable_gtk_renderer=0"
+.else
+GYP_DEFINES="use_libprotobuf=1"
+.endif
+
 BUILD_CMD=	${SETENV} ${MAKE_ENV} ${GMAKE}
 BUILD_MOZC_CMD=	cd ${BUILD_WRKSRC} && \
 		${SETENV} BUILD_COMMAND="${WRKSRC}/mozcmake" \
 		PYTHONPATH=${WRKSRC}/third_party/gyp/local/lib/python${PYTHON_VER}/site-packages \
-		GYP_DEFINES="use_libprotobuf=1" \
+		GYP_DEFINES=${GYP_DEFINES} \
 		${PYTHON_CMD} build_mozc.py
 BUILD_GYP_CMD=	cd ${WRKSRC}/third_party/gyp && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP}
 
@@ -111,7 +116,6 @@ pre-build:
 
 # mozc_server
 .if ${BUILD_MOZC_LIST:Mmozc_server} == "mozc_server"
-LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
 PLIST_FILES+=	bin/mozc_server
 
 do-build-mozc_server:
@@ -125,7 +129,6 @@ do-install-mozc_server:
 
 # mozc_tool
 .if ${BUILD_MOZC_LIST:Mmozc_tool} == "mozc_tool"
-LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
 RUN_DEPENDS+=	${LOCALBASE}/share/tegaki/models/zinnia/handwriting-ja.model:${PORTSDIR}/japanese/tegaki-zinnia-japanese
 
 PLIST_FILES+=	bin/mozc_tool \
