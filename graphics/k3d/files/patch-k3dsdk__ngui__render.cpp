@@ -1,6 +1,6 @@
---- ngui/render.cpp.orig	2007-01-24 06:12:37.000000000 +0100
-+++ ngui/render.cpp	2011-07-26 21:00:55.000000000 +0200
-@@ -162,7 +162,7 @@
+--- k3dsdk/ngui/render.cpp.orig	2010-07-03 11:27:46.000000000 +0900
++++ k3dsdk/ngui/render.cpp	2012-06-20 07:15:53.000000000 +0900
+@@ -169,7 +169,7 @@
  		row[columns.separator] = false;
  	}
  
@@ -9,7 +9,7 @@
  
  	combo.pack_start(columns.icon, false);
  
-@@ -286,7 +286,7 @@
+@@ -295,7 +295,7 @@
  		row[columns.separator] = false;
  	}
  
