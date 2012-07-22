@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Dancer
-PORTVERSION=	1.3095
+PORTVERSION=	1.3097
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:XSAWYERX
@@ -26,12 +26,22 @@ RUN_DEPENDS=	\
 	p5-URI>=1.59:${PORTSDIR}/net/p5-URI \
 	p5-Try-Tiny>=0.09:${PORTSDIR}/lang/p5-Try-Tiny
 BUILD_DEPENDS:=	${RUN_DEPENDS}
+TEST_DEPENDS=	\
+	p5-Clone>0:${PORTSDIR}/devel/p5-Clone \
+	p5-Test-TCP>0:${PORTSDIR}/devel/p5-Test-TCP \
+	p5-JSON>0:${PORTSDIR}/converters/p5-JSON \
+	p5-YAML>0:${PORTSDIR}/textproc/p5-YAML \
+	p5-Plack>0:${PORTSDIR}/www/p5-Plack \
+	p5-XML-Simple>0:${PORTSDIR}/textproc/p5-XML-Simple \
+	p5-HTTP-Parser-XS>0:${PORTSDIR}/www/p5-HTTP-Parser-XS \
+	p5-Template-Toolkit>0:${PORTSDIR}/www/p5-Template-Toolkit \
+	p5-Test-Output>0:${PORTSDIR}/devel/p5-Test-Output
 
-OPTIONS=	YAML "Enable YAML implementation in Perl" On
+OPTIONS_DEFINE=	YAML
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_YAML)
+.if ${PORT_OPTIONS:MYAML}
 RUN_DEPENDS+=	p5-YAML>=0.71:${PORTSDIR}/textproc/p5-YAML
 .endif
 
