@@ -8,7 +8,8 @@
 PORTNAME=	opus
 PORTVERSION=	0.9.14
 CATEGORIES=	audio
-MASTER_SITES=	http://downloads.xiph.org/releases/opus/
+MASTER_SITES=	http://downloads.xiph.org/releases/opus/ \
+		https://ftp.mozilla.org/pub/mozilla.org/opus/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Interactive speech and audio codec

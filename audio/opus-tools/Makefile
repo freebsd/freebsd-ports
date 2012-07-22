@@ -8,7 +8,8 @@
 PORTNAME=	opus-tools
 PORTVERSION=	0.1.3
 CATEGORIES=	audio
-MASTER_SITES=	http://downloads.xiph.org/releases/opus/
+MASTER_SITES=	http://downloads.xiph.org/releases/opus/ \
+		https://ftp.mozilla.org/pub/mozilla.org/opus/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Encode, inspect, and decode Opus files
