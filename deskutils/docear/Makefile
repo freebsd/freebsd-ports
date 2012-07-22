@@ -27,7 +27,7 @@ NO_BUILD=	yes
 JDATADIR=	${JAVASHAREDIR}/${PORTNAME}
 icon=		${DATADIR}/${PORTNAME}-icon48x48.png
 
-WRKSRC=		${WRKDIR}/docear-1.0.0_beta_build31
+WRKSRC=		${WRKDIR}/docear-1.0.0.4_beta_build90
 SUB_FILES=	docear.desktop
 
 post-patch:
