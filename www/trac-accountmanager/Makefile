@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	accountmanager
-PORTVERSION=	0.3.${REV}
+PORTVERSION=	0.4.${REV}
 PORTEPOCH=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://trac-hacks.org/changeset/${REV}/accountmanagerplugin/trunk?old_path=/&format=zip&filename=
 MASTER_SITE_SUBDIR=	kuriyama
 PKGNAMEPREFIX=	trac-
+DIST_SUBDIR=	trac
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Account Manager Plugin for trac
@@ -21,12 +22,12 @@ BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac
 
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
-REV=			9930
+REV=			11722
 USE_ZIP=		yes
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TracAccountManager
-PYDISTUTILS_PKGVERSION=	0.3dev
+PYDISTUTILS_PKGVERSION=	0.4dev
 WRKSRC=			${WRKDIR}/accountmanagerplugin/trunk
 
 EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
