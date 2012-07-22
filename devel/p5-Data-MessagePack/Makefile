@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	Data-MessagePack
-PORTVERSION=	0.41
+PORTVERSION=	0.46
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:GFUJI
+MASTER_SITE_SUBDIR=	CPAN:TOKUHIROM
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for MessagePack
 
-TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
+TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
+		p5-Test-LeakTrace>0:${PORTSDIR}/devel/p5-Test-LeakTrace
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	--xs
