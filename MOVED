@@ -3554,3 +3554,4 @@ www/zope211||2012-07-16|End Of Life reached
 archivers/zlib||2012-07-18|Removed in favor of base system zlib
 devel/app|devel/papp|2012-07-18|Project renamed upstream
 databases/redis-scripting|databases/redis-devel|2012-07-19|Removed, please use databases/redis-devel instead.
+devel/acpicatools||2012-07-22|Has expired: It's quite obsolete and is already in base system for a long time

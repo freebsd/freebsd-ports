@@ -25,7 +25,6 @@
     SUBDIR += abi-compliance-checker
     SUBDIR += ace
     SUBDIR += ace+tao-doc
-    SUBDIR += acpicatools
     SUBDIR += activitymail
     SUBDIR += adabooch
     SUBDIR += adabooch-doc-html
