@@ -16,6 +16,8 @@ COMMENT=	Encode, inspect, and decode Opus files
 LIB_DEPENDS=	ogg.8:${PORTSDIR}/audio/libogg \
 		opus:${PORTSDIR}/audio/opus
 
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
+
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
