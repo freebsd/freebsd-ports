@@ -6,11 +6,11 @@
 #
 
 # Just to get a mutt-devel-lite pkg on pkg cluster
-MASTERDIR=	${.CURDIR}/../mutt-devel
+MASTERDIR=	${.CURDIR}/../mutt
 
 COMMENT=	The Mongrel of Mail User Agents (development version, lite package)
 
-CONFLICTS=	ja-mutt-[0-9]* ja-mutt-devel-[0-9]* mutt-[0-9]* mutt-devel-[0-9]* mutt-lite-[0-9]* zh-mutt-devel-[0-9]*
+CONFLICTS=	ja-mutt-[0-9]* ja-mutt-devel-[0-9]* mutt-[0-9]* mutt-devel-[0-9]* mutt-lite-1.4* zh-mutt-devel-[0-9]*
 
 MUTT_LITE=	yes
 
