@@ -226,6 +226,9 @@ bin/drpython
 %%PYTHON_SITELIBDIR%%/drpython/drFileDialogPrefs.py
 %%PYTHON_SITELIBDIR%%/drpython/drFileDialogPrefs.pyc
 %%PYTHON_SITELIBDIR%%/drpython/drFileDialogPrefs.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drFileHistory.py
+%%PYTHON_SITELIBDIR%%/drpython/drFileHistory.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drFileHistory.pyo
 %%PYTHON_SITELIBDIR%%/drpython/drFindReplaceDialog.py
 %%PYTHON_SITELIBDIR%%/drpython/drFindReplaceDialog.pyc
 %%PYTHON_SITELIBDIR%%/drpython/drFindReplaceDialog.pyo
@@ -241,6 +244,9 @@ bin/drpython
 %%PYTHON_SITELIBDIR%%/drpython/drKeywords.py
 %%PYTHON_SITELIBDIR%%/drpython/drKeywords.pyc
 %%PYTHON_SITELIBDIR%%/drpython/drKeywords.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drListBox.py
+%%PYTHON_SITELIBDIR%%/drpython/drListBox.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drListBox.pyo
 %%PYTHON_SITELIBDIR%%/drpython/drMenu.py
 %%PYTHON_SITELIBDIR%%/drpython/drMenu.pyc
 %%PYTHON_SITELIBDIR%%/drpython/drMenu.pyo
@@ -289,6 +295,9 @@ bin/drpython
 %%PYTHON_SITELIBDIR%%/drpython/drSTC.py
 %%PYTHON_SITELIBDIR%%/drpython/drSTC.pyc
 %%PYTHON_SITELIBDIR%%/drpython/drSTC.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drSaveRootFile.py
+%%PYTHON_SITELIBDIR%%/drpython/drSaveRootFile.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drSaveRootFile.pyo
 %%PYTHON_SITELIBDIR%%/drpython/drScriptDialog.py
 %%PYTHON_SITELIBDIR%%/drpython/drScriptDialog.pyc
 %%PYTHON_SITELIBDIR%%/drpython/drScriptDialog.pyo
@@ -361,8 +370,6 @@ bin/drpython
 %%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/RunInTerminal.pyc
 %%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/RunInTerminal.pyo
 %%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/SetTerminalArgs.py
-%%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/SetTerminalArgs.pyc
-%%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/SetTerminalArgs.pyo
 %%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/SwitcherooInSelection.py
 %%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/SwitcherooInSelection.pyc
 %%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/SwitcherooInSelection.pyo

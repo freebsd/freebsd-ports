@@ -6,23 +6,25 @@
 #
 
 PORTNAME=	drpython
-PORTVERSION=	3.11.1
-PORTREVISION=	3
+PORTVERSION=	3.11.3
 CATEGORIES=	devel python
-MASTER_SITES=	SF/${PORTNAME}/DrPython%20Current/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/DrPython%20%283.x%29/${PORTVERSION}
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
+DISTNAME=	DrPython_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Highly customizable cross-platform ide to aid programming in Python
 
-WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
+LICENSE=	GPLv2
+
+WRKSRC=		${WRKDIR}/DrPython
 
 USE_ZIP=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	DrPython
 USE_WX=		2.6+
-WX_COMPS=	python
+WX_COMPS=	python:lib
 
 post-install:
 	@${ECHO_CMD} '#!/bin/sh' > ${WRKDIR}/drpython.sh
