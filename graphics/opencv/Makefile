@@ -20,7 +20,7 @@ LICENSE_FILE=	${WRKSRC}/doc/license.txt
 
 USE_GNOME=	pkgconfig
 WANT_GSTREAMER=	yes
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
