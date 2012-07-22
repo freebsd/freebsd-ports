@@ -17,6 +17,8 @@ LICENSE=	BSD
 
 STACKNAME=	${PORTNAME:S/ros-//}
 
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
+
 CFLAGS+=	-I${LOCALBASE}/include
 LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs \
 		gtest:${PORTSDIR}/devel/googletest
@@ -32,7 +34,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/yaml/__init__.py:${PORTSDIR}/devel/py-yaml \
 		gmake:${PORTSDIR}/devel/gmake \
 		sudo:${PORTSDIR}/security/sudo \
 		wget:${PORTSDIR}/ftp/wget
-USE_GNOME=	pkgconfig
 USE_PYTHON=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes

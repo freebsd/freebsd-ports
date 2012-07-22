@@ -18,8 +18,9 @@ COMMENT=	A C library to evaluate poker hands
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
+
 GNU_CONFIGURE=	yes
-USE_GNOME=	pkgconfig
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes

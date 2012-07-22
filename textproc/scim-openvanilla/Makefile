@@ -17,14 +17,14 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM OpenVanilla input method (IM)/output filter (OF) framework
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim	\
-		${LOCALBASE}/include/OpenVanilla/OpenVanilla.h:${PORTSDIR}/textproc/openvanilla-framework
+		${LOCALBASE}/include/OpenVanilla/OpenVanilla.h:${PORTSDIR}/textproc/openvanilla-framework \
+		pkg-config>0:${PORTSDIR}/devel/pkg-config
 RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 USE_AUTOTOOLS=	libltdl
 WRKSRC=		${WRKDIR}/${DISTNAME}/Loaders/SCIM
 USE_GMAKE=	yes
-USE_GNOME=	pkgconfig
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes

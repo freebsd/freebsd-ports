@@ -16,12 +16,12 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION:E}.0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python adaptor for the poker-eval toolkit
 
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	poker-eval.1:${PORTSDIR}/games/poker-eval
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_GNOME=	pkgconfig
 USE_PYTHON=	2.5-2.7
 USE_AUTOTOOLS=	aclocal autoconf automake libtool
 ACLOCAL_ARGS=	-I config

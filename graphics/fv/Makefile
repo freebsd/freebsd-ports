@@ -17,11 +17,11 @@ COMMENT=	A viewer of hdr/pfm images
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_ZIP=	yes
 USE_GL=		glut
-USE_GNOME=	pkgconfig
 USE_GMAKE=	yes
 ALL_TARGET=	${PORTNAME}
 MAKE_JOBS_SAFE=	yes

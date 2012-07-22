@@ -16,13 +16,13 @@ COMMENT=	LV2 Application Support Library
 LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/lv2.h:${PORTSDIR}/audio/lv2core
+BUILD_DEPENDS=	${LOCALBASE}/include/lv2.h:${PORTSDIR}/audio/lv2core \
+		pkg-config>0:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		rdf.0:${PORTSDIR}/textproc/redland
 
 USE_BZIP2=	yes
 USE_PYTHON_BUILD=	yes
-USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 

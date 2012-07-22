@@ -17,11 +17,11 @@ COMMENT=	A 3D filesystem browser
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg
 
 USE_GL=		glut
 USE_SDL=	image sdl
-USE_GNOME=	pkgconfig
 
 PORTDOCS=	README
 PLIST_FILES=	bin/${PORTNAME}
