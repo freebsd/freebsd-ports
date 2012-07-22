@@ -5,7 +5,7 @@
  quickml: quickml.in
  	for i in $(MESSAGES); do\
 -	  $(RUBY) lib/quickml/gettext.rb $$i quickml.in lib/quickml/*.rb;\
-+	  $(RUBY) -E Shift_JIS:UTF-16LE lib/quickml/gettext.rb $$i quickml.in lib/quickml/*.rb;\
++	  $(RUBY) -Ke lib/quickml/gettext.rb $$i quickml.in lib/quickml/*.rb;\
  	done
  	rm -f quickml
  	sed -e 's!%RUBY%!$(RUBY)!g' \
