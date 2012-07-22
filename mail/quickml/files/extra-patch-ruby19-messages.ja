@@ -1,0 +1,7 @@
+--- messages.ja.orig	2012-06-21 16:22:16.000000000 +0900
++++ messages.ja	2012-06-21 16:22:45.000000000 +0900
+@@ -1,3 +1,4 @@
++#coding: euc-jp
+ # -*- mode: ruby -*-
+ Messages = {
+   "<%s> was removed from the mailing list:\n<%s>\n" =>

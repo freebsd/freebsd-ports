@@ -8,7 +8,7 @@
 %%RUBY_LIBDIR%%/quickml/utils.rb
 %%RUBY_LIBDIR%%/quickml/version.rb
 %%RUBY_LIBDIR%%/quickml.rb
-bin/quickml-analog
+%%ANALOG%%bin/quickml-analog
 sbin/quickml
 sbin/quickml-ctl
 @unexec if cmp -s %D/etc/quickmlrc %D/etc/quickmlrc.sample; then rm -f %D/etc/quickmlrc; fi

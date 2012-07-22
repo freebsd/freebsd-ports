@@ -1,0 +1,17 @@
+--- quickmlrc.sample.in.org	2004-06-07 17:50:58.000000000 +0900
++++ quickmlrc.sample.in	2012-06-21 15:55:28.000000000 +0900
+@@ -31,4 +31,14 @@
+ 
+   # :message_catalog => nil  # for English messages
+   :message_catalog => '%DATADIR%/messages.ja',
++
++  :creator_check => false,
++  :creator_addresses => [
++      '^.+@example\.net$',
++  ],
++
++  :member_check => false,
++  :member_addresses => [
++      '^.+@example\.net$',
++  ],
+ }

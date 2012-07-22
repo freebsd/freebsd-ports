@@ -7,60 +7,52 @@
 
 PORTNAME=	quickml
 PORTVERSION=	0.7
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	mail
 MASTER_SITES=	http://0xcc.net/quickml/
 
 MAINTAINER=	yaizawa@2004.jukuin.keio.ac.jp
 COMMENT=	An easy-to-use mailing list system
 
-OPTIONS+=	ANALOG "Enable quickml-analog" on \
-		LIMIT  "Enable Creators and Members Limitation Patch" off
-
-USERS=	quickml
-GROUPS=	quickml
-
 LICENSE=	GPLv2
 
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 USE_RUBY=	yes
-
 USE_RC_SUBR=	${PORTNAME}
 
-CONFIGURE_ARGS+=	--datadir="${PREFIX}/share/quickml"
-CONFIGURE_ARGS+=	--with-ruby="${RUBY}"
-CONFIGURE_ARGS+=	--with-user="${USERS}"
-CONFIGURE_ARGS+=	--with-group="${GROUPS}"
-CONFIGURE_ARGS+=	--with-rubydir="${RUBY_LIBDIR}"
+USERS=	quickml
+GROUPS=	quickml
+
+CONFIGURE_ARGS=	--datadir="${PREFIX}/share/quickml" \
+	--with-ruby="${RUBY}" \
+	--with-user="${USERS}" \
+	--with-group="${GROUPS}" \
+	--with-rubydir="${RUBY_LIBDIR}"
+
+SUB_LIST=	RUBY=${RUBY}
+
+OPTIONS=	ANALOG "Enable quickml-analog" on \
+		LIMIT  "Enable Creators and Members Limitation Patch" off
 
 .include <bsd.port.pre.mk>
 
 .if ${RUBY_VER} == 1.9
-EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-ruby19-Makefile.in
-.endif
-
-.if !defined(WITHOUT_LIMIT)
-PATCH_DIST_STRIP=	-p1
+EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-ruby19-*
 .endif
 
 .if !defined(WITHOUT_ANALOG)
 USE_GHOSTSCRIPT_RUN=	yes
 RUN_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot \
 		convert:${PORTSDIR}/graphics/ImageMagick
+PLIST_SUB+=	ANALOG=""
+.else
+PLIST_SUB+=	ANALOG="@comment "
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-woanalog-Makefile.in
 .endif
 
-post-fetch:
 .if !defined(WITHOUT_LIMIT)
-	@ ( cd ${DISTDIR} && ${FETCH_CMD} -o ${PORTNAME}-${PORTVERSION}-limited.patch "http://linux.matchy.net/view.xcg?c=plugin;plugin=attach_download;p=QuickMLLimited;file_name=${PORTNAME}-${PORTVERSION}-limited.patch" )
-.endif
-
-post-patch:
-.if !defined(WITHOUT_LIMIT)
-	@${PATCH} ${PATCH_DIST_ARGS} < ${DISTDIR}/${PORTNAME}-${PORTVERSION}-limited.patch
-.endif
-.if defined(WITHOUT_ANALOG)
-	${PATCH} ${PATCH_DIST_ARGS} < ${FILESDIR}/without_quickml-analog
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-limit-*
 .endif
 
 post-install:

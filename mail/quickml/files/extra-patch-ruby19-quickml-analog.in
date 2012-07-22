@@ -1,0 +1,11 @@
+--- quickml-analog.in.orig	2004-06-07 17:50:59.000000000 +0900
++++ quickml-analog.in	2012-06-21 15:52:24.000000000 +0900
+@@ -12,7 +12,7 @@
+ #
+ 
+ require 'getoptlong'
+-require 'ftools'
++require 'fileutils'
+ require 'time'
+ require 'cgi'
+ 
