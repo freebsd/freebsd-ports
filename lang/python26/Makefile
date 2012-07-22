@@ -7,7 +7,7 @@
 
 PORTNAME=	python26
 PORTVERSION=	2.6.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -21,7 +21,7 @@ WRKSRC=		${PYTHON_WRKSRC}/portbld.static
 PATCH_WRKSRC=	${PYTHON_WRKSRC}
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../configure # must be relative
-CONFIGURE_ENV=	OPT="${CFLAGS}" SVNVERSION="echo freebsd"
+CONFIGURE_ENV=	SVNVERSION="echo freebsd"
 MAKE_ENV=	VPATH="${PYTHON_WRKSRC}"
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
@@ -148,6 +148,8 @@ CONFIGURE_ARGS+=	--disable-ipv6
 CONFIGURE_ARGS+=	--with-fpectl
 .endif
 
+CONFIGURE_ENV+=	OPT="${CFLAGS} ${_PTH_CPPFLAGS}"
+
 pre-patch:
 	${CP} -r ${PATCH_WRKSRC}/Lib/plat-freebsd8 \
 		${PATCH_WRKSRC}/Lib/plat-freebsd9
@@ -176,8 +178,10 @@ pre-patch:
 		${PATCH_WRKSRC}/Makefile.pre.in
 
 	${SED} -e 's|^#!.*|#!${PREFIX}/bin/${PYTHON_VERSION}|' \
+		-e 's|libs = getvar|libs = getvar("LDFLAGS").split() + getvar|' \
 		${PATCH_WRKSRC}/Misc/python-config.in > ${WRKDIR}/${PYTHON_VERSION}-config
 	${SED} -e 's|^#!.*|#!${PREFIX}/bin/${PYTHON_VERSION:S/thon/thon-shared/}|' \
+		-e 's|libs = getvar|libs = getvar("LDFLAGS").split() + getvar|' \
 		${PATCH_WRKSRC}/Misc/python-config.in > ${WRKDIR}/${PYTHON_VERSION:S/thon/thon-shared/}-config
 
 .if ${PORT_OPTIONS:MFPECTL) && ${ARCH} == i386
