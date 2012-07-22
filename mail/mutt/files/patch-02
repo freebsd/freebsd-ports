@@ -1,63 +1,32 @@
---- doc/Makefile.in.orig	Tue Nov  6 11:12:31 2001
-+++ doc/Makefile.in	Fri Jun 21 12:00:28 2002
-@@ -60,13 +60,19 @@
- topsrcdir_DOCFILES = COPYRIGHT GPL INSTALL ChangeLog	\
- 	README NEWS TODO README.SECURITY README.SSL 
+--- doc/Makefile.am.orig	2010-09-17 16:04:58.000000000 +0200
++++ doc/Makefile.am	2010-09-17 16:09:09.000000000 +0200
+@@ -47,7 +47,7 @@
  
--all: muttrc.man try-html try-txt
-+all: muttrc.man try-html try-txt try-latin1
+ all: makedoc-all
  
- try-html: ../makedoc
--	test -f manual.html || $(MAKE) manual.html || cp $(srcdir)/manual*.html ./
-+	rm -f *.html && $(MAKE) manual.html || cp $(srcdir)/manual*.html ./
-+	touch $@
+-makedoc-all: mutt.1 smime_keys.1 muttrc.man manual.html stamp-doc-rc stamp-doc-chunked manual.txt
++makedoc-all: mutt.1 smime_keys.1 muttrc.man
  
- try-txt: ../makedoc
--	test -f manual.txt || $(MAKE) manual.txt || cp $(srcdir)/manual.txt ./
-+	$(MAKE) manual.txt || cp $(srcdir)/manual.txt ./
-+	touch $@
-+
-+try-latin1: 
-+	$(MAKE) manual.latin1 || cp $(srcdir)/manual.latin1 ./
-+	touch $@
- 
- install: all instdoc
+ install-data-local: makedoc-all instdoc
  	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1
-@@ -86,10 +92,10 @@
- 		$(INSTALL) -m 644 $(top_srcdir)/$$f $(DESTDIR)$(docdir) ; \
+@@ -70,9 +70,6 @@
+ 		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir) ; \
  	done
- 	$(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir) || true
--	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)/html
--	for file in manual*.html ; do	\
--		$(INSTALL) -m 644 $$file $(DESTDIR)$(docdir)/html/ || true ;\
+ 	-$(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir)
+-	-for f in $(HTML_DOCFILES) ; do \
+-		$(INSTALL) -m 644 $$f $(DESTDIR)$(docdir) ; \
 -	done
-+	# $(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)/html
-+	# for file in manual*.html ; do	\
-+	# 	$(INSTALL) -m 644 $$file $(DESTDIR)$(docdir)/html/ || true ;\
-+	# done
- 
- uninstall:
- 	-rm -f $(DESTDIR)$(mandir)/man1/mutt.1
-@@ -99,14 +105,18 @@
+ 	$(INSTALL) -m 644 Muttrc $(DESTDIR)$(sysconfdir)/Muttrc.dist
+ 	-if [ -f $(DESTDIR)$(pkgdatadir)/Muttrc ] ; then \
+ 		mv $(DESTDIR)$(pkgdatadir)/Muttrc* $(DESTDIR)$(sysconfdir) ; \
+@@ -103,9 +100,7 @@
  
  check:
- manual.txt: manual.sgml
--	if sgml2txt -c latin manual ; then \
--		uniq < manual.txt | expand > _manual.txt ; \
--		rm manual.txt ; \
-+	if sgmlfmt -f ascii manual; then \
-+		uniq < manual.ascii | expand > _manual.txt ; \
-+		rm -f manual.txt manual.ascii; \
- 		mv _manual.txt manual.txt ;\
- 	fi
+ manual.txt: manual.html
+-	-LC_ALL=C lynx -dump -nolist -with_backspaces -display_charset=us-ascii manual.html > $@ || \
+-	LC_ALL=C w3m -dump manual.html > $@ || \
+-	LC_ALL=C elinks -dump -no-numbering -no-references manual.html | sed -e 's,\\001, ,g' > $@
++	-LC_ALL=C lynx -dump -nolist -with_backspaces -display_charset=us-ascii manual.html > $@
  
- manual.html: manual.sgml
--	sgml2html manual  || true
-+	@# sgml2html manual  || true
-+	sgmlfmt -f html manual  || true
-+
-+manual.latin1: manual.sgml
-+	sgmlfmt -f latin1 manual  || true
+ Muttrc: stamp-doc-rc
  
- manual.ps: manual.sgml
- 	sgml2latex --output=ps manual || true

@@ -300,9 +300,9 @@
     SUBDIR += mu
     SUBDIR += mulberry
     SUBDIR += mutt
-    SUBDIR += mutt-devel
-    SUBDIR += mutt-devel-lite
-    SUBDIR += mutt-lite
+    SUBDIR += mutt14
+    SUBDIR += mutt14-lite
+#    SUBDIR += mutt-lite
     SUBDIR += mutt_vc_query
     SUBDIR += muttils
     SUBDIR += muttzilla

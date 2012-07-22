@@ -1,50 +1,109 @@
---- contrib/Makefile.in.orig	Mon Jun  4 19:14:31 2001
-+++ contrib/Makefile.in	Wed Mar 26 11:45:15 2003
-@@ -12,6 +12,7 @@
- mandir = @mandir@
- srcdir = @srcdir@
- docdir = @docdir@
-+samplesdir = @samplesdir@
- top_srcdir = @top_srcdir@
- top_builddir = ..
- INSTALL = @INSTALL@
-@@ -37,12 +38,12 @@
- check:
+--- contrib/Makefile.am.orig	Tue Jul 18 20:04:14 2006
++++ contrib/Makefile.am	Wed Aug 30 16:05:33 2006
+@@ -1,6 +1,7 @@
+ # $Id: Makefile.am,v 3.1 2006/07/18 18:04:14 brendan Exp $
  
- install:
+ subdir = contrib
++samplesdir = @samplesdir@
+ 
+ SAMPLES = Mush.rc Pine.rc gpg.rc pgp2.rc pgp5.rc pgp6.rc Tin.rc \
+ 	sample.muttrc  sample.mailcap sample.muttrc-tlr \
+@@ -14,12 +15,12 @@
+ 	iconv/make.sh
+ 
+ install-data-local:
 -	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)/samples $(DESTDIR)$(docdir)/samples/iconv
 +	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(samplesdir) $(DESTDIR)$(samplesdir)/iconv
  	for f in $(SAMPLES) ; do \
 -		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir)/samples ;	\
-+		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(samplesdir);	\
++		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(samplesdir) ;	\
  	done
  	for f in $(srcdir)/iconv/*.rc ; do					\
 -		$(INSTALL) -m 644 $$f $(DESTDIR)$(docdir)/samples/iconv	  ;	\
-+		$(INSTALL) -m 644 $$f $(DESTDIR)$(samplesdir)/iconv	  ;	\
++		$(INSTALL) -m 644 $$f $(DESTDIR)$(samplesdir)/iconv  ;	\
  	done
  
- # Nothing needs to be done - uninstall in doc removes samples as well.
---- init.h.orig	Wed Mar 26 11:50:36 2003
-+++ init.h	Wed Mar 26 12:54:37 2003
-@@ -1347,8 +1347,8 @@
+ uninstall-local:
+--- init.h.orig	2009-02-06 13:27:52.000000000 +0100
++++ init.h	2009-02-06 13:34:09.000000000 +0100
+@@ -1808,9 +1808,8 @@
    ** .pp
    ** For examples on how to configure these formats for the various versions
-   ** of PGP which are floating around, see the pgp*.rc and gpg.rc files in
--  ** the samples/ subdirectory which has been installed on your system
+   ** of PGP which are floating around, see the pgp and gpg sample configuration files in
+-  ** the \fCsamples/\fP subdirectory which has been installed on your system
 -  ** alongside the documentation.
-+  ** the share/examples/mutt subdirectory which has been installed on your
-+  ** system.
+-  ** (PGP only)
++  ** the \fCshare/examples/mutt/\fP subdirectory which has been installed on
++  **  your system. (PGP only)
    */
    { "pgp_getkeys_command",	DT_STR, R_NONE, UL &PgpGetkeysCommand, 0},
    /*
---- Makefile.am.orig	Wed Mar 26 13:13:10 2003
-+++ Makefile.am	Wed Mar 26 13:25:40 2003
-@@ -13,7 +13,7 @@
+@@ -2017,9 +2016,8 @@
+   ** .de
+   ** .pp
+   ** For examples on how to configure these formats, see the \fCsmime.rc\fP in
+-  ** the \fCsamples/\fP subdirectory which has been installed on your system
+-  ** alongside the documentation.
+-  ** (S/MIME only)
++  ** the \fCshare/examples/mutt/\fP subdirectory which has been installed on
++  ** your system. (S/MIME only)
+   */
+   { "smime_verify_command", 	DT_STR, R_NONE, UL &SmimeVerifyCommand, 0},
+   /*
+--- INSTALL.orig	Mon Nov 25 15:16:46 2002
++++ INSTALL	Wed Mar 26 15:59:57 2003
+@@ -225,13 +225,13 @@
+ need to tell mutt about implementation-defined names for some
+ character sets.  Sample configuration files for various systems can
+ be found in the directory contrib/iconv/ in this source
+-distribution, and will be installed in the samples/iconv directory
++distribution, and will be installed in the share/examples/mutt/iconv directory
+ as part of mutt's documentation.
  
- bin_SCRIPTS = muttbug flea
+ In order to use these sample configuration files, just put a line
+ like
  
--BUILT_SOURCES = keymap_defs.h patchlist.c
-+BUILT_SOURCES = keymap_defs.h patchlist.c Muttrc
+-     source /usr/local/doc/mutt/samples/iconv/iconv.osf1-4.0d.rc
++     source /usr/local/share/examples/mutt/iconv/iconv.osf1-4.0d.rc
  
- bin_PROGRAMS = mutt @DOTLOCK_TARGET@ @PGPAUX_TARGET@
- mutt_SOURCES = $(BUILT_SOURCES) \
+ into your system's global Muttrc, which normally resides in /etc or
+ /usr/local/etc.
+--- doc/manual.txt.orig	2009-06-14 20:54:56.000000000 +0200
++++ doc/manual.txt	2009-06-22 15:11:26.000000000 +0200
+@@ -3225,9 +3225,9 @@
+ shows that arguments can be quoted: the script will receive the expanded string
+ between the single quotes as the only argument.
+ 
+-A practical example is the mutt_xtitle script installed in the samples
+-subdirectory of the Mutt documentation: it can be used as filter for
+-$status_format to set the current terminal's title, if supported.
++A practical example is the mutt_xtitle script installed in the
++share/examples/mutt/ subdirectory of the Mutt documentation: it can be used as
++filter for $status_format to set the current terminal's title, if supported.
+ 
+ 29.4. Padding
+ 
+@@ -7740,8 +7740,8 @@
+ 
+ For examples on how to configure these formats for the various versions of PGP
+ which are floating around, see the pgp and gpg sample configuration files in
+-the samples/ subdirectory which has been installed on your system alongside the
+-documentation. (PGP only)
++the share/examples/mutt/ subdirectory which has been installed on your system.
++(PGP only)
+ 
+ 3.158. pgp_decrypt_command
+ 
+@@ -8751,9 +8751,9 @@
+ |  |$smime_ca_location?.                                                      |
+ +-----------------------------------------------------------------------------+
+ 
+-For examples on how to configure these formats, see the smime.rc in the samples
+-/ subdirectory which has been installed on your system alongside the
+-documentation. (S/MIME only)
++For examples on how to configure these formats, see the smime.rc in the 
++share/examples/mutt/ subdirectory which has been installed on your system.
++(S/MIME only)
+ 
+ 3.244. smime_decrypt_use_default_key
+ 

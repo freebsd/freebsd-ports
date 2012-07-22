@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120722
+  AFFECTS: users of mail/mutt
+  AUTHOR: crees@FreeBSD.org
+
+  mail/mutt-devel has been moved to mail/mutt, since 1.5 has been around
+  for a while.
+
+  Should you wish to stick with version 1.4 at this time;
+
+  # portmaster -o mail/mutt14 mutt
+
 20120721
   AFFECTS: users of audio/libogg
   AUTHOR: naddy@FreeBSD.org

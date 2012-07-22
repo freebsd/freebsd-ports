@@ -1,12 +1,12 @@
---- doc/mutt.man.orig	Mon Jul 13 12:50:38 1998
-+++ doc/mutt.man	Thu Oct  1 22:15:40 1998
-@@ -20,7 +20,8 @@
- .SH DESCRIPTION
- Mutt is a small but very powerful text based program for reading electronic
- mail under unix operating systems, including support color terminals, MIME,
--and a threaded sorting mode.
-+and a threaded sorting mode.  Details of how to use all of this is
+--- doc/mutt.man.orig	2009-02-06 13:52:38.000000000 +0100
++++ doc/mutt.man	2009-02-06 13:55:05.000000000 +0100
+@@ -69,7 +69,8 @@
+ .PP
+ Mutt is a small but very powerful text based program for reading and sending electronic
+ mail under unix operating systems, including support for color terminals, MIME,
+-OpenPGP, and a threaded sorting mode.
++OpenPGP, and a threaded sorting mode. Details of how to use all of this is
 +available in \fI${DOCSDIR}\fP.
- .SH OPTIONS
- .IP "-a \fIfile\fP"
- Attach a file to your message using MIME.
+ .PP
+ .I Note:
+ .IR
