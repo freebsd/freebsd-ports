@@ -243,6 +243,7 @@
     SUBDIR += geneweb
     SUBDIR += geolizer
     SUBDIR += geronimo
+    SUBDIR += get_flash_videos
     SUBDIR += getleft
     SUBDIR += gist
     SUBDIR += glpi
