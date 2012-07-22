@@ -13,6 +13,9 @@ MASTER_SITES=	SF/gmerlin/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose media decoding library
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/dvb/frontend.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	gavl.1:${PORTSDIR}/multimedia/gavl
 
