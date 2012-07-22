@@ -2,6 +2,10 @@
 %%SITE_PERL%%/Log/Any/Adapter.pm
 %%SITE_PERL%%/Log/Any/Adapter/Base.pm
 %%SITE_PERL%%/Log/Any/Adapter/Development.pod
+%%SITE_PERL%%/Log/Any/Adapter/File.pm
+%%SITE_PERL%%/Log/Any/Adapter/FileScreenBase.pm
+%%SITE_PERL%%/Log/Any/Adapter/Stderr.pm
+%%SITE_PERL%%/Log/Any/Adapter/Stdout.pm
 %%SITE_PERL%%/Log/Any/Adapter/Test/Memory.pm
 %%SITE_PERL%%/Log/Any/Adapter/Util.pm
 %%SITE_PERL%%/Log/Any/Manager.pm
