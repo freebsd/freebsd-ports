@@ -5,8 +5,6 @@ share/docear/docear-icon48x48.png
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || :
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 share/java/docear/bzrinfo.txt
-share/java/docear/core/org.freeplane.core/META-INF/MANIFEST.MF
-share/java/docear/core/org.freeplane.core/lib/SimplyHTML.jar
 share/java/docear/core/org.freeplane.core/lib/commons-lang-2.0.jar
 share/java/docear/core/org.freeplane.core/lib/forms-1.2.1.jar
 share/java/docear/core/org.freeplane.core/lib/freeplaneeditor.jar
@@ -15,14 +13,17 @@ share/java/docear/core/org.freeplane.core/lib/freeplaneosgi.jar
 share/java/docear/core/org.freeplane.core/lib/freeplaneviewer.jar
 share/java/docear/core/org.freeplane.core/lib/gnu-regexp-1.1.4.jar
 share/java/docear/core/org.freeplane.core/lib/jortho.jar
+share/java/docear/core/org.freeplane.core/lib/SimplyHTML.jar
+share/java/docear/core/org.freeplane.core/META-INF/MANIFEST.MF
+share/java/docear/doc/docear-welcome.mm
+share/java/docear/doc/examplepicture_nl.JPG
 share/java/docear/doc/FilterConsumer.jpg
 share/java/docear/doc/FilterConsumerEnd.jpg
 share/java/docear/doc/FilterConsumerUnfold.jpg
-share/java/docear/doc/docear-welcome.mm
-share/java/docear/doc/examplepicture_nl.JPG
+share/java/docear/doc/freeplane.jpg
 share/java/docear/doc/freeplane.mm
 share/java/docear/doc/freeplaneApplications.mm
-share/java/docear/doc/freeplaneApplications.png
+share/java/docear/doc/freeplaneApplications_ja.mm
 share/java/docear/doc/freeplaneApplications_nl.mm
 share/java/docear/doc/freeplaneFunctions.mm
 share/java/docear/doc/freeplaneFunctions_ja.mm
@@ -49,14 +50,21 @@ share/java/docear/doc/freeplane_nl.jpg
 share/java/docear/doc/freeplane_ru.mm
 share/java/docear/doc/freeplane_vi.mm
 share/java/docear/doc/history_en.txt
+share/java/docear/doc/Images/doc/BackgroundContextMenu.png
+share/java/docear/doc/Images/doc/BackgroundContextMenu_nl.png
+share/java/docear/doc/Images/doc/freeplaneApplications.png
+share/java/docear/doc/Images/doc/HotKeysTable.png
+share/java/docear/doc/Images/doc/HotKeysTable_nl.png
+share/java/docear/doc/Images/doc/In-lineEditContextMenu.png
+share/java/docear/doc/Images/doc/MenusPropertiesPanel.png
+share/java/docear/doc/Images/doc/MenusPropertiesPanel_nl.png
+share/java/docear/doc/Images/doc/NodeContextMenu.png
+share/java/docear/doc/Images/mouse/mouse_RB.png
 share/java/docear/docear.png
 share/java/docear/docear.sh
 share/java/docear/framework.jar
 share/java/docear/init.xargs
 share/java/docear/license.txt
-share/java/docear/plugins/org.docear.plugin.backup/META-INF/MANIFEST.MF
-share/java/docear/plugins/org.docear.plugin.backup/lib/plugin.jar
-share/java/docear/plugins/org.docear.plugin.bibtex/META-INF/MANIFEST.MF
 share/java/docear/plugins/org.docear.plugin.bibtex/lib/JabRef-2.7.1.jar
 share/java/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.core/plugin.xml
 share/java/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.export.misq/build.xml
@@ -69,45 +77,49 @@ share/java/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref
 share/java/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.export.misq/templates/readme.txt
 share/java/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/readme.txt
 share/java/docear/plugins/org.docear.plugin.bibtex/lib/plugin.jar
-share/java/docear/plugins/org.docear.plugin.communications/META-INF/MANIFEST.MF
+share/java/docear/plugins/org.docear.plugin.bibtex/META-INF/MANIFEST.MF
 share/java/docear/plugins/org.docear.plugin.communications/lib/jersey-client-1.1.5.1.jar
 share/java/docear/plugins/org.docear.plugin.communications/lib/jersey-core-1.1.5.1.jar
 share/java/docear/plugins/org.docear.plugin.communications/lib/jersey-multipart-1.1.5.1.jar
 share/java/docear/plugins/org.docear.plugin.communications/lib/jsr311-api-1.1.1.jar
 share/java/docear/plugins/org.docear.plugin.communications/lib/mimepull-1.3.jar
 share/java/docear/plugins/org.docear.plugin.communications/lib/plugin.jar
-share/java/docear/plugins/org.docear.plugin.core/META-INF/MANIFEST.MF
+share/java/docear/plugins/org.docear.plugin.communications/META-INF/MANIFEST.MF
 share/java/docear/plugins/org.docear.plugin.core/lib/JHyperlink.jar
 share/java/docear/plugins/org.docear.plugin.core/lib/plugin.jar
 share/java/docear/plugins/org.docear.plugin.core/lib/swingworker-backport.jar
 share/java/docear/plugins/org.docear.plugin.core/license.txt
-share/java/docear/plugins/org.docear.plugin.optionpane/META-INF/MANIFEST.MF
+share/java/docear/plugins/org.docear.plugin.core/META-INF/MANIFEST.MF
 share/java/docear/plugins/org.docear.plugin.optionpane/lib/plugin.jar
-share/java/docear/plugins/org.docear.plugin.pdfutilities/META-INF/MANIFEST.MF
+share/java/docear/plugins/org.docear.plugin.optionpane/META-INF/MANIFEST.MF
+share/java/docear/plugins/org.docear.plugin.pdfutilities/lib/jna/jna.jar
+share/java/docear/plugins/org.docear.plugin.pdfutilities/lib/jna/platform.jar
 share/java/docear/plugins/org.docear.plugin.pdfutilities/lib/jpod/iscwt.jar
 share/java/docear/plugins/org.docear.plugin.pdfutilities/lib/jpod/isrt.jar
-share/java/docear/plugins/org.docear.plugin.pdfutilities/lib/jpod/jPod.jar
 share/java/docear/plugins/org.docear.plugin.pdfutilities/lib/jpod/jbig2.jar
+share/java/docear/plugins/org.docear.plugin.pdfutilities/lib/jpod/jPod.jar
 share/java/docear/plugins/org.docear.plugin.pdfutilities/lib/plugin.jar
-share/java/docear/plugins/org.freeplane.plugin.accountmanager/META-INF/MANIFEST.MF
+share/java/docear/plugins/org.docear.plugin.pdfutilities/META-INF/MANIFEST.MF
+share/java/docear/plugins/org.docear.plugin.services/lib/plugin.jar
+share/java/docear/plugins/org.docear.plugin.services/META-INF/MANIFEST.MF
 share/java/docear/plugins/org.freeplane.plugin.accountmanager/lib/plugin.jar
-share/java/docear/plugins/org.freeplane.plugin.bugreport/META-INF/MANIFEST.MF
+share/java/docear/plugins/org.freeplane.plugin.accountmanager/META-INF/MANIFEST.MF
 share/java/docear/plugins/org.freeplane.plugin.bugreport/lib/plugin.jar
-share/java/docear/plugins/org.freeplane.plugin.formula/META-INF/MANIFEST.MF
+share/java/docear/plugins/org.freeplane.plugin.bugreport/META-INF/MANIFEST.MF
 share/java/docear/plugins/org.freeplane.plugin.formula/lib/plugin.jar
-share/java/docear/plugins/org.freeplane.plugin.latex/META-INF/MANIFEST.MF
+share/java/docear/plugins/org.freeplane.plugin.formula/META-INF/MANIFEST.MF
+share/java/docear/plugins/org.freeplane.plugin.latex/lib/COPYING
+share/java/docear/plugins/org.freeplane.plugin.latex/lib/jlatexmath-0.9.7.jar
 share/java/docear/plugins/org.freeplane.plugin.latex/lib/LICENSE
-share/java/docear/plugins/org.freeplane.plugin.latex/lib/README
-share/java/docear/plugins/org.freeplane.plugin.latex/lib/jlatexmath.jar
 share/java/docear/plugins/org.freeplane.plugin.latex/lib/plugin.jar
-share/java/docear/plugins/org.freeplane.plugin.script/META-INF/MANIFEST.MF
+share/java/docear/plugins/org.freeplane.plugin.latex/META-INF/MANIFEST.MF
 share/java/docear/plugins/org.freeplane.plugin.script/lib/groovy-all-1.8.2-LICENSE.txt
 share/java/docear/plugins/org.freeplane.plugin.script/lib/groovy-all-1.8.2.jar
 share/java/docear/plugins/org.freeplane.plugin.script/lib/jsyntaxpane/jsyntaxpane-jdk5.jar
 share/java/docear/plugins/org.freeplane.plugin.script/lib/jsyntaxpane/jsyntaxpane.jar
 share/java/docear/plugins/org.freeplane.plugin.script/lib/jsyntaxpane/nodehighlighter.jar
 share/java/docear/plugins/org.freeplane.plugin.script/lib/plugin.jar
-share/java/docear/plugins/org.freeplane.plugin.svg/META-INF/MANIFEST.MF
+share/java/docear/plugins/org.freeplane.plugin.script/META-INF/MANIFEST.MF
 share/java/docear/plugins/org.freeplane.plugin.svg/lib/batik-anim.jar
 share/java/docear/plugins/org.freeplane.plugin.svg/lib/batik-awt-util.jar
 share/java/docear/plugins/org.freeplane.plugin.svg/lib/batik-bridge.jar
@@ -132,9 +144,10 @@ share/java/docear/plugins/org.freeplane.plugin.svg/lib/plugin.jar
 share/java/docear/plugins/org.freeplane.plugin.svg/lib/xerces_2_5_0.jar
 share/java/docear/plugins/org.freeplane.plugin.svg/lib/xml-apis-ext.jar
 share/java/docear/plugins/org.freeplane.plugin.svg/lib/xml-apis.jar
-share/java/docear/plugins/org.freeplane.plugin.workspace/META-INF/MANIFEST.MF
+share/java/docear/plugins/org.freeplane.plugin.svg/META-INF/MANIFEST.MF
 share/java/docear/plugins/org.freeplane.plugin.workspace/lib/commons-io-2.0.1.jar
 share/java/docear/plugins/org.freeplane.plugin.workspace/lib/plugin.jar
+share/java/docear/plugins/org.freeplane.plugin.workspace/META-INF/MANIFEST.MF
 share/java/docear/props.xargs
 share/java/docear/resources/bzrinfo.properties
 share/java/docear/resources/ortho/dictionary_de.ortho
@@ -154,6 +167,7 @@ share/java/docear/resources/xslt/mm2mwiki.xsl
 share/java/docear/resources/xslt/mm2oowriter.manifest.xsl
 share/java/docear/resources/xslt/mm2oowriter.xsl
 share/java/docear/resources/xslt/mm2opml.xsl
+share/java/docear/resources/xslt/mm2raw.xsl
 share/java/docear/resources/xslt/mm2text.xsl
 share/java/docear/resources/xslt/mm2wordml_utf8.xsl
 share/java/docear/resources/xslt/mm2wordml_utf8_TEMPLATE.mm
@@ -170,58 +184,63 @@ share/mime/text/x-docear.xml
 @dirrm share/java/docear/resources/xslt
 @dirrm share/java/docear/resources/templates
 @dirrm share/java/docear/resources/ortho
-@dirrmtry share/java/docear/resources/accelerators
+@dirrm share/java/docear/resources/accelerators
 @dirrm share/java/docear/resources
-@dirrm share/java/docear/plugins/org.freeplane.plugin.workspace/lib
 @dirrm share/java/docear/plugins/org.freeplane.plugin.workspace/META-INF
+@dirrm share/java/docear/plugins/org.freeplane.plugin.workspace/lib
 @dirrm share/java/docear/plugins/org.freeplane.plugin.workspace
-@dirrm share/java/docear/plugins/org.freeplane.plugin.svg/lib
 @dirrm share/java/docear/plugins/org.freeplane.plugin.svg/META-INF
+@dirrm share/java/docear/plugins/org.freeplane.plugin.svg/lib
 @dirrm share/java/docear/plugins/org.freeplane.plugin.svg
+@dirrm share/java/docear/plugins/org.freeplane.plugin.script/META-INF
 @dirrm share/java/docear/plugins/org.freeplane.plugin.script/lib/jsyntaxpane
 @dirrm share/java/docear/plugins/org.freeplane.plugin.script/lib
-@dirrm share/java/docear/plugins/org.freeplane.plugin.script/META-INF
 @dirrm share/java/docear/plugins/org.freeplane.plugin.script
-@dirrm share/java/docear/plugins/org.freeplane.plugin.latex/lib
 @dirrm share/java/docear/plugins/org.freeplane.plugin.latex/META-INF
+@dirrm share/java/docear/plugins/org.freeplane.plugin.latex/lib
 @dirrm share/java/docear/plugins/org.freeplane.plugin.latex
-@dirrm share/java/docear/plugins/org.freeplane.plugin.formula/lib
 @dirrm share/java/docear/plugins/org.freeplane.plugin.formula/META-INF
+@dirrm share/java/docear/plugins/org.freeplane.plugin.formula/lib
 @dirrm share/java/docear/plugins/org.freeplane.plugin.formula
-@dirrm share/java/docear/plugins/org.freeplane.plugin.bugreport/lib
 @dirrm share/java/docear/plugins/org.freeplane.plugin.bugreport/META-INF
+@dirrm share/java/docear/plugins/org.freeplane.plugin.bugreport/lib
 @dirrm share/java/docear/plugins/org.freeplane.plugin.bugreport
-@dirrm share/java/docear/plugins/org.freeplane.plugin.accountmanager/lib
 @dirrm share/java/docear/plugins/org.freeplane.plugin.accountmanager/META-INF
+@dirrm share/java/docear/plugins/org.freeplane.plugin.accountmanager/lib
 @dirrm share/java/docear/plugins/org.freeplane.plugin.accountmanager
-@dirrm share/java/docear/plugins/org.docear.plugin.pdfutilities/lib/jpod
-@dirrm share/java/docear/plugins/org.docear.plugin.pdfutilities/lib
+@dirrm share/java/docear/plugins/org.docear.plugin.services/META-INF
+@dirrm share/java/docear/plugins/org.docear.plugin.services/lib
+@dirrm share/java/docear/plugins/org.docear.plugin.services
 @dirrm share/java/docear/plugins/org.docear.plugin.pdfutilities/META-INF
+@dirrm share/java/docear/plugins/org.docear.plugin.pdfutilities/lib/jpod
+@dirrm share/java/docear/plugins/org.docear.plugin.pdfutilities/lib/jna
+@dirrm share/java/docear/plugins/org.docear.plugin.pdfutilities/lib
 @dirrm share/java/docear/plugins/org.docear.plugin.pdfutilities
-@dirrm share/java/docear/plugins/org.docear.plugin.optionpane/lib
 @dirrm share/java/docear/plugins/org.docear.plugin.optionpane/META-INF
+@dirrm share/java/docear/plugins/org.docear.plugin.optionpane/lib
 @dirrm share/java/docear/plugins/org.docear.plugin.optionpane
-@dirrm share/java/docear/plugins/org.docear.plugin.core/lib
 @dirrm share/java/docear/plugins/org.docear.plugin.core/META-INF
+@dirrm share/java/docear/plugins/org.docear.plugin.core/lib
 @dirrm share/java/docear/plugins/org.docear.plugin.core
-@dirrm share/java/docear/plugins/org.docear.plugin.communications/lib
 @dirrm share/java/docear/plugins/org.docear.plugin.communications/META-INF
+@dirrm share/java/docear/plugins/org.docear.plugin.communications/lib
 @dirrm share/java/docear/plugins/org.docear.plugin.communications
+@dirrm share/java/docear/plugins/org.docear.plugin.bibtex/META-INF
 @dirrm share/java/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.export.misq/templates
 @dirrm share/java/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.export.misq
 @dirrm share/java/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins/net.sf.jabref.core
 @dirrm share/java/docear/plugins/org.docear.plugin.bibtex/lib/lib/plugins
 @dirrm share/java/docear/plugins/org.docear.plugin.bibtex/lib/lib
 @dirrm share/java/docear/plugins/org.docear.plugin.bibtex/lib
-@dirrm share/java/docear/plugins/org.docear.plugin.bibtex/META-INF
 @dirrm share/java/docear/plugins/org.docear.plugin.bibtex
-@dirrm share/java/docear/plugins/org.docear.plugin.backup/lib
-@dirrm share/java/docear/plugins/org.docear.plugin.backup/META-INF
-@dirrm share/java/docear/plugins/org.docear.plugin.backup
 @dirrm share/java/docear/plugins
+@dirrm share/java/docear/doc/Images/mouse
+@dirrm share/java/docear/doc/Images/key
+@dirrm share/java/docear/doc/Images/doc
+@dirrm share/java/docear/doc/Images
 @dirrm share/java/docear/doc
-@dirrm share/java/docear/core/org.freeplane.core/lib
 @dirrm share/java/docear/core/org.freeplane.core/META-INF
+@dirrm share/java/docear/core/org.freeplane.core/lib
 @dirrm share/java/docear/core/org.freeplane.core
 @dirrm share/java/docear/core
 @dirrm share/java/docear
