@@ -10,7 +10,7 @@ PORTVERSION=	1.4.0
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/gmerlin/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for handling uncompressed video and audio data
 
 LICENSE=	GPLv3
