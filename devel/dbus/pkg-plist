@@ -29,7 +29,6 @@ lib/libdbus-1.so
 lib/libdbus-1.so.3
 libdata/pkgconfig/dbus-1.pc
 libexec/dbus-daemon-launch-helper
-@exec mkdir -p %D/libexec/dbus-1
 @exec mkdir -p %D/etc/dbus-1/system.d
 @exec mkdir -p %D/share/dbus-1/interfaces
 @exec mkdir -p %D/share/dbus-1/services
@@ -39,7 +38,6 @@ libexec/dbus-daemon-launch-helper
 @dirrmtry share/dbus-1/services
 @dirrmtry share/dbus-1/interfaces
 @dirrmtry share/dbus-1
-@dirrmtry libexec/dbus-1
 @dirrm include/dbus-%%VERSION%%/include/dbus
 @dirrm include/dbus-%%VERSION%%/include
 @dirrm include/dbus-%%VERSION%%/dbus
