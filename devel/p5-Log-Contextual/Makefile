@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log-Contextual
-PORTVERSION=	0.004100
+PORTVERSION=	0.004201
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,6 +18,7 @@ RUN_DEPENDS=	\
 	p5-Data-Dumper-Concise>0:${PORTSDIR}/devel/p5-Data-Dumper-Concise \
 	p5-Exporter-Declare>=0.105:${PORTSDIR}/devel/p5-Exporter-Declare
 BUILD_DEPENDS:=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Log-Log4perl>0:${PORTSDIR}/devel/p5-Log-Log4perl
 
 PERL_CONFIGURE=	yes
 
