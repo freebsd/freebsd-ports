@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class-DeploymentHandler
-PORTVERSION=	0.002114
+PORTVERSION=	0.002115
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,7 +20,6 @@ RUN_DEPENDS=	\
 	p5-DBD-SQLite>=1.35:${PORTSDIR}/databases/p5-DBD-SQLite \
 	p5-DBIx-Class>=0.08121:${PORTSDIR}/databases/p5-DBIx-Class \
 	p5-Log-Contextual>=0.00300:${PORTSDIR}/devel/p5-Log-Contextual \
-	p5-File-Touch>=0.08:${PORTSDIR}/devel/p5-File-Touch \
 	p5-Method-Signatures-Simple>=0.05:${PORTSDIR}/devel/p5-Method-Signatures-Simple \
 	p5-Moose>=1.0:${PORTSDIR}/devel/p5-Moose \
 	p5-MooseX-Role-Parameterized>=0.18:${PORTSDIR}/devel/p5-MooseX-Role-Parameterized \
