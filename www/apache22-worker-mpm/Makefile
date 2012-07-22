@@ -12,7 +12,7 @@ MAINTAINER=		apache@FreeBSD.org
 
 WITH_MPM=		worker
 
-LATEST_LINK=		apache22-worker-mpm
+LATEST_LINK=		apache22-${WITH_MPM:L}-mpm
 DESCR=			${.CURDIR}/pkg-descr
 
 .include "${MASTERDIR}/Makefile"

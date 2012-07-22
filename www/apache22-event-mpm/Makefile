@@ -12,7 +12,7 @@ MAINTAINER=		apache@FreeBSD.org
 
 WITH_MPM=		event
 
-LATEST_LINK=		apache22-event-mpm
+LATEST_LINK=		apache22-${WITH_MPM:L}-mpm
 DESCR=			${.CURDIR}/pkg-descr
 
 .include "${MASTERDIR}/Makefile"

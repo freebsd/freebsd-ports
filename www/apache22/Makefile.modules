@@ -44,45 +44,49 @@ ALL_MODULES_CATEGORIES=	AUTH AUTHN AUTHZ CACHE DAV EXPERIMENTAL LDAP \
 
 .endif
 
+# =============================================
 .if defined(_PREMKINCLUDED)
-# MPM section:
-# << TO BE WRITTEN >>
-.if defined (SLAVE_PORT_MPM)
-PLIST_SUB+=	PREFORK="@comment " WORKER="@comment " EVENT="@comment "
-PKGNAMESUFFIX=	-${SLAVE_PORT_MPM}
+# MPM's: prefork worker event itk peruser
+
+.if ${WITH_MPM:L} == "prefork"
+PLIST_SUB+=		WORKER="@comment " EVENT="@comment "
+
+.elif ${WITH_MPM:L} == "worker"
+PLIST_SUB+=		WORKER="" EVENT="@comment "
+
+.elif ${WITH_MPM:L} == "event"
+PLIST_SUB+=		WORKER="@comment " EVENT=""
+
+.elif ${WITH_MPM:L} == "peruser"
+PLIST_SUB+=		WORKER="@comment " EVENT="@comment "
+
+.elif ${WITH_MPM:L} == "itk"
+PLIST_SUB+=		WORKER="@comment " EVENT="@comment "
+EXTRA_PATCHES+=		${PATCHDIR}/mpm-itk-${MPM_ITK_VERSION}
+.   if defined (WITH_ITK_PERDIR_REGEX)
+EXTRA_PATCHES+= 	${PATCHDIR}/mpm-itk-perdir-regex
+.   endif
+
 .else
-.   if ${WITH_MPM} != "prefork"
+IGNORE=			"Unknown MPM: ${WITH_MPM}"
+.endif	# MPM prefork
+
+.if ${WITH_MPM:L} != "prefork"
 PKGNAMESUFFIX=		-${WITH_MPM:L}
-.   if ${WITH_MPM} != "itk"
+LATEST_LINK=		apache22-${WITH_MPM:L}-mpm
+.endif
+
+.if ${WITH_MPM:L} == "worker" || ${WITH_MPM:L} == "event"
 WITH_THREADS=		yes
 WITH_THREADS_MODULES=	yes
 WITHOUT_MODULES+=	cgi
-.   endif
-.      if ${WITH_MPM:L} == "worker"
-PLIST_SUB+=	PREFORK="@comment " WORKER="" EVENT="@comment "
-.      elif  ${WITH_MPM:L} == "event"
-PLIST_SUB+=	PREFORK="@comment " WORKER="@comment " EVENT=""
-.      elif  ${WITH_MPM:L} == "itk"
-PLIST_SUB+=	PREFORK="@comment " WORKER="@comment " EVENT="@comment "
-EXTRA_PATCHES+=	${PATCHDIR}/mpm-itk-${MPM_ITK_VERSION}
-.   if defined (WITH_ITK_PERDIR_REGEX)
-EXTRA_PATCHES+= ${PATCHDIR}/mpm-itk-perdir-regex
-.   endif
-.      else
-IGNORE=		"Unknown MPM: ${WITH_MPM}"
-.      endif
-.   else
-PLIST_SUB+=	PREFORK="@comment " WORKER="@comment " THREADPOOL="@comment " EVENT="@comment "
-.   endif
-.else
-PLIST_SUB+=	PREFORK="@comment " WORKER="@comment " EVENT="@comment "
 .endif
 
 # xDBM section
 #
 .if !defined(WITH_DBM)
 .   if defined(WITH_BDB) || defined(WITH_BDB_BASE) || defined(WITH_BERKELEYDB)
-WITH_DBM=bdb
+WITH_DBM=	bdb
 PLIST_SUB+=	BDB=""
 .   else
 PLIST_SUB+=	BDB="@comment "
@@ -91,9 +95,9 @@ PLIST_SUB+=	BDB="@comment "
 
 .if defined(WITH_BERKELEYDB) && !defined(WITH_BDB_VER)
 .   if ${WITH_BERKELEYDB} == "FreeBSD"
-       WITH_BDB_BASE=YES
+WITH_BDB_BASE=YES
 .   else
-      WITH_BDB_VER=${WITH_BERKELEYDB:S/db//} 
+WITH_BDB_VER=${WITH_BERKELEYDB:S/db//}
 .   endif
 .endif
 
@@ -111,7 +115,7 @@ CONFIGURE_ARGS+=	--with-dbm=db185 \
 USE_BDB=		yes
 CONFIGURE_ARGS+=	--with-dbm=db${BDB_VER:S/40/4/} \
 			--with-berkeley-db=${LOCALBASE}
-.       endif
+.	endif
 .   else
 IGNORE=		"Unknown DBM"
 .   endif
@@ -139,9 +143,9 @@ CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 
 .if !defined(WITH_THREADS)
 WITHOUT_MODULES+=	mem_cache
-.if !defined(WITHOUT_APACHE_OPTIONS) && defined(WITH_MEM_CACHE)
+.   if !defined(WITHOUT_APACHE_OPTIONS) && defined(WITH_MEM_CACHE)
 IGNORE+=	mod_mem_cache requires WITH_THREADS
-.endif
+.   endif
 .else
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
@@ -149,8 +153,9 @@ LDFLAGS+=	${PTHREAD_LIBS}
 
 .if !defined(WITH_MYSQL) && !defined(WITH_PGSQL) && !defined(WITH_SQLITE)
 WITHOUT_MODULES+=	authn_dbd dbd
-.if !defined(WITHOUT_APACHE_OPTIONS) && (defined(WITH_DBD) || defined(WITH_AUTHN_DBD))
+.   if !defined(WITHOUT_APACHE_OPTIONS) && (defined(WITH_DBD) || defined(WITH_AUTHN_DBD))
 IGNORE+=	You need to enable at least one DBD backend
+.   endif
 .endif
-.endif
-.endif
+
+.endif	# _PREMKINCLUDED

@@ -51,13 +51,6 @@ APACHEDIR=	${MASTERDIR}
 .endif
 
 .if !defined(WITHOUT_APACHE_OPTIONS)
-OPTIONS=	\
-	THREADS 		"Enable threads support in APR" 		Off \
-	MYSQL 			"Enable MySQL support for apr-dbd" 		Off \
-	PGSQL 			"Enable PostgreSQL support for apr-dbd" Off \
-	SQLITE 			"Enable SQLite support for apr-dbd" 	Off \
-	IPV6 			"Enable IPv6 support" 					On  \
-	BDB 			"Enable BerkeleyDB dbm" 				Off
 .include "${APACHEDIR}/Makefile.options"
 .endif
 

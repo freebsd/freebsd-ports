@@ -1,78 +1,88 @@
+# $FreeBSD$
+
+OPTIONS= \
+	THREADS	"Threads support in APR" 	off \
+	MYSQL 	"MySQL support for apr-dbd" 	off \
+	PGSQL 	"PostgreSQL support for apr-dbd" off \
+	SQLITE 	"SQLite support for apr-dbd" 	off \
+	IPV6 	"IPv6 support" 			on  \
+	BDB 	"BerkeleyDB dbm" 		off
+
 OPTIONS+= \
-	 AUTH_BASIC "Enable mod_auth_basic" ON \
-	 AUTH_DIGEST "Enable mod_auth_digest" ON \
-	 AUTHN_FILE "Enable mod_authn_file" ON \
-	 AUTHN_DBD "Enable mod_authn_dbd" OFF \
-	 AUTHN_DBM "Enable mod_authn_dbm" ON \
-	 AUTHN_ANON "Enable mod_authn_anon" ON \
-	 AUTHN_DEFAULT "Enable mod_authn_default" ON \
-	 AUTHN_ALIAS "Enable mod_authn_alias" ON \
-	 AUTHZ_HOST "Enable mod_authz_host" ON \
-	 AUTHZ_GROUPFILE "Enable mod_authz_groupfile" ON \
-	 AUTHZ_USER "Enable mod_authz_user" ON \
-	 AUTHZ_DBM "Enable mod_authz_dbm" ON \
-	 AUTHZ_OWNER "Enable mod_authz_owner" ON \
-	 AUTHZ_DEFAULT "Enable mod_authz_default" ON \
-	 CACHE "Enable mod_cache" ON \
-	 DISK_CACHE "Enable mod_disk_cache" ON \
-	 FILE_CACHE "Enable mod_file_cache" ON \
-	 MEM_CACHE "Enable mod_mem_cache" OFF \
-	 DAV "Enable mod_dav" ON \
-	 DAV_FS "Enable mod_dav_fs" ON \
-	 BUCKETEER "Enable mod_bucketeer" OFF \
-	 CASE_FILTER "Enable mod_case_filter" OFF \
-	 CASE_FILTER_IN "Enable mod_case_filter_in" OFF \
-	 EXT_FILTER "Enable mod_ext_filter" OFF \
-	 LOG_FORENSIC "Enable mod_log_forensic" OFF \
-	 OPTIONAL_HOOK_EXPORT "Enable mod_optional_hook_export" OFF \
-	 OPTIONAL_HOOK_IMPORT "Enable mod_optional_hook_import" OFF \
-	 OPTIONAL_FN_IMPORT "Enable mod_optional_fn_import" OFF \
-	 OPTIONAL_FN_EXPORT "Enable mod_optional_fn_export" OFF \
-	 LDAP "Enable mod_ldap" OFF \
-	 AUTHNZ_LDAP "Enable mod_authnz_ldap" OFF \
-	 ACTIONS "Enable mod_actions" ON \
-	 ALIAS "Enable mod_alias" ON \
-	 ASIS "Enable mod_asis" ON \
-	 AUTOINDEX "Enable mod_autoindex" ON \
-	 CERN_META "Enable mod_cern_meta" ON \
-	 CGI "Enable mod_cgi" ON \
-	 CHARSET_LITE "Enable mod_charset_lite" ON \
-	 DBD "Enable mod_dbd" OFF \
-	 DEFLATE "Enable mod_deflate" ON \
-	 DIR "Enable mod_dir" ON \
-	 DUMPIO "Enable mod_dumpio" ON \
-	 ENV "Enable mod_env" ON \
-	 EXPIRES "Enable mod_expires" ON \
-	 HEADERS "Enable mod_headers" ON \
-	 IMAGEMAP "Enable mod_imagemap" ON \
-	 INCLUDE "Enable mod_include" ON \
-	 INFO "Enable mod_info" ON \
-	 LOG_CONFIG "Enable mod_log_config" ON \
-	 LOGIO "Enable mod_logio" ON \
-	 MIME "Enable mod_mime" ON \
-	 MIME_MAGIC "Enable mod_mime_magic" ON \
-	 NEGOTIATION "Enable mod_negotiation" ON \
-	 REWRITE "Enable mod_rewrite" ON \
-	 SETENVIF "Enable mod_setenvif" ON \
-	 SPELING "Enable mod_speling" ON \
-	 STATUS "Enable mod_status" ON \
-	 UNIQUE_ID "Enable mod_unique_id" ON \
-	 USERDIR "Enable mod_userdir" ON \
-	 USERTRACK "Enable mod_usertrack" ON \
-	 VHOST_ALIAS "Enable mod_vhost_alias" ON \
-	 FILTER "Enable mod_filter" ON \
-	 SUBSTITUTE "Enable mod_substitute" OFF \
-	 VERSION "Enable mod_version" ON \
-	 PROXY "Enable mod_proxy" OFF \
-	 PROXY_CONNECT "Enable mod_proxy_connect" OFF \
-	 PROXY_FTP "Enable mod_proxy_ftp" OFF \
-	 PROXY_HTTP "Enable mod_proxy_http" OFF \
-	 PROXY_AJP "Enable mod_proxy_ajp" OFF \
-	 PROXY_BALANCER "Enable mod_proxy_balancer" OFF \
-	 PROXY_SCGI "Enable mod_proxy_scgi" OFF \
-	 SSL "Enable mod_ssl" ON \
-	 SUEXEC "Enable mod_suexec" OFF \
-	 SUEXEC_RSRCLIMIT "SuEXEC rlimits based on login class" OFF \
-	 REQTIMEOUT "Enable mod_reqtimeout" ON \
-	 CGID "Enable mod_cgid" OFF \
+	 AUTH_BASIC "mod_auth_basic" on \
+	 AUTH_DIGEST "mod_auth_digest" on \
+	 AUTHN_FILE "mod_authn_file" on \
+	 AUTHN_DBD "mod_authn_dbd" off \
+	 AUTHN_DBM "mod_authn_dbm" on \
+	 AUTHN_ANON "mod_authn_anon" on \
+	 AUTHN_DEFAULT "mod_authn_default" on \
+	 AUTHN_ALIAS "mod_authn_alias" on \
+	 AUTHZ_HOST "mod_authz_host" on \
+	 AUTHZ_GROUPFILE "mod_authz_groupfile" on \
+	 AUTHZ_USER "mod_authz_user" on \
+	 AUTHZ_DBM "mod_authz_dbm" on \
+	 AUTHZ_OWNER "mod_authz_owner" on \
+	 AUTHZ_DEFAULT "mod_authz_default" on \
+	 CACHE "mod_cache" on \
+	 DISK_CACHE "mod_disk_cache" on \
+	 FILE_CACHE "mod_file_cache" on \
+	 MEM_CACHE "mod_mem_cache" off \
+	 DAV "mod_dav" on \
+	 DAV_FS "mod_dav_fs" on \
+	 BUCKETEER "mod_bucketeer" off \
+	 CASE_FILTER "mod_case_filter" off \
+	 CASE_FILTER_IN "mod_case_filter_in" off \
+	 EXT_FILTER "mod_ext_filter" off \
+	 LOG_FORENSIC "mod_log_forensic" off \
+	 OPTIONAL_HOOK_EXPORT "mod_optional_hook_export" off \
+	 OPTIONAL_HOOK_IMPORT "mod_optional_hook_import" off \
+	 OPTIONAL_FN_IMPORT "mod_optional_fn_import" off \
+	 OPTIONAL_FN_EXPORT "mod_optional_fn_export" off \
+	 LDAP "mod_ldap" off \
+	 AUTHNZ_LDAP "mod_authnz_ldap" off \
+	 ACTIONS "mod_actions" on \
+	 ALIAS "mod_alias" on \
+	 ASIS "mod_asis" on \
+	 AUTOINDEX "mod_autoindex" on \
+	 CERN_META "mod_cern_meta" on \
+	 CGI "mod_cgi" on \
+	 CHARSET_LITE "mod_charset_lite" on \
+	 DBD "mod_dbd" off \
+	 DEFLATE "mod_deflate" on \
+	 DIR "mod_dir" on \
+	 DUMPIO "mod_dumpio" on \
+	 ENV "mod_env" on \
+	 EXPIRES "mod_expires" on \
+	 HEADERS "mod_headers" on \
+	 IMAGEMAP "mod_imagemap" on \
+	 INCLUDE "mod_include" on \
+	 INFO "mod_info" on \
+	 LOG_CONFIG "mod_log_config" on \
+	 LOGIO "mod_logio" on \
+	 MIME "mod_mime" on \
+	 MIME_MAGIC "mod_mime_magic" on \
+	 NEGOTIATION "mod_negotiation" on \
+	 REWRITE "mod_rewrite" on \
+	 SETENVIF "mod_setenvif" on \
+	 SPELING "mod_speling" on \
+	 STATUS "mod_status" on \
+	 UNIQUE_ID "mod_unique_id" on \
+	 USERDIR "mod_userdir" on \
+	 USERTRACK "mod_usertrack" on \
+	 VHOST_ALIAS "mod_vhost_alias" on \
+	 FILTER "mod_filter" on \
+	 SUBSTITUTE "mod_substitute" off \
+	 VERSION "mod_version" on \
+	 PROXY "mod_proxy" off \
+	 PROXY_CONNECT "mod_proxy_connect" off \
+	 PROXY_FTP "mod_proxy_ftp" off \
+	 PROXY_HTTP "mod_proxy_http" off \
+	 PROXY_AJP "mod_proxy_ajp" off \
+	 PROXY_BALANCER "mod_proxy_balancer" off \
+	 PROXY_SCGI "mod_proxy_scgi" off \
+	 SSL "mod_ssl" on \
+	 SUEXEC "mod_suexec" off \
+	 SUEXEC_RSRCLIMIT "SuEXEC rlimits based on login class" off \
+	 REQTIMEOUT "mod_reqtimeout" on \
+	 CGID "mod_cgid" off
 
