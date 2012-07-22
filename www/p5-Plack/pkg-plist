@@ -45,6 +45,7 @@ bin/plackup
 %%SITE_PERL%%/Plack/Middleware/Head.pm
 %%SITE_PERL%%/Plack/Middleware/HTTPExceptions.pm
 %%SITE_PERL%%/Plack/Middleware/IIS6ScriptNameFix.pm
+%%SITE_PERL%%/Plack/Middleware/IIS7KeepAliveFix.pm
 %%SITE_PERL%%/Plack/Middleware/JSONP.pm
 %%SITE_PERL%%/Plack/Middleware/LighttpdScriptNameFix.pm
 %%SITE_PERL%%/Plack/Middleware/Lint.pm

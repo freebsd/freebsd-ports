@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Plack
-PORTVERSION=	0.9988
+PORTVERSION=	1.0000
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -27,7 +27,6 @@ RUN_DEPENDS=	\
 	p5-libwww>=5.814:${PORTSDIR}/www/p5-libwww \
 	p5-URI>=1.59:${PORTSDIR}/net/p5-URI
 BUILD_DEPENDS:=	${RUN_DEPENDS}
-
 TEST_DEPENDS=  \
 	p5-Authen-Simple-Passwd>0:${PORTSDIR}/security/p5-Authen-Simple-Passwd \
 	p5-CGI-Compile>0:${PORTSDIR}/www/p5-CGI-Compile \
@@ -90,6 +89,7 @@ MAN3=	HTTP::Message::PSGI.3 \
 	Plack::Middleware::HTTPExceptions.3 \
 	Plack::Middleware::Head.3 \
 	Plack::Middleware::IIS6ScriptNameFix.3 \
+	Plack::Middleware::IIS7KeepAliveFix.3 \
 	Plack::Middleware::JSONP.3 \
 	Plack::Middleware::LighttpdScriptNameFix.3 \
 	Plack::Middleware::Lint.3 \
