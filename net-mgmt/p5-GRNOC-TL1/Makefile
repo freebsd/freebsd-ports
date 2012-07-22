@@ -16,8 +16,8 @@ COMMENT=	Module supports retrieval of data from different models of TL1 devices
 
 PERL_CONFIGURE=	yes
 
-BUILD_DEPENDS+=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
+BUILD_DEPENDS=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
 		p5-Net-Telnet>=0:${PORTSDIR}/net/p5-Net-Telnet
-RUN_DEPENDS+=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 .include <bsd.port.mk>
