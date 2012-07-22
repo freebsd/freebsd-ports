@@ -6,43 +6,33 @@
 #
 
 PORTNAME=	gmerlin
-PORTVERSION=	1.0.0
-PORTREVISION=	4
+PORTVERSION=	1.2.0
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multimedia framework
 
-LIB_DEPENDS=	gavl.1:${PORTSDIR}/multimedia/gavl
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS=	PULSEAUDIO "Enable PulseAudio support" on \
-		QUICKTIME "Enable QuickTime support" on \
-		VISUAL "Enable libvisual support" on \
-		CDIO	"Enable libcdio support" on \
-		CDDB	"Enable CDDB support" on \
-		ESOUND	"Enable ESounD support" off \
-		JACK	"Enable Jack support" on \
-		JPEG	"Enable JPEG support" on \
-		PNG	"Enable PNG support" on \
-		TIFF	"Enable TIFF support" on \
-		PLUGINCFG "Build plugin configurator" on \
-		PLAYER	"Build player" on \
-		KBD	"Build keyboard daemon" on \
-		TRANSCODER "Build transcoder" on \
-		RECORDER "Build recorder" on \
-		VISUALIZER "Build visualizer" on \
-		THUMBNAILER "Build thumbnailer" on \
-		OPTIMIZED_CFLAGS "Additional optimizations" on
+LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
+		gavl.1:${PORTSDIR}/multimedia/gavl
 
-USE_GNOME=	gnomehack gtk20 libxml2
-USE_XORG=	ice x11 xinerama xv
-USE_GL=		gl
+OPTIONS_DEFINE= ALSA CDDB CDIO ESOUND JACK JPEG LIBVISUAL \
+		OPTIMIZED_CFLAGS PNG PULSEAUDIO QUICKTIME \
+		TIFF
+OPTIONS_DEFAULT=	CDDB CDIO JACK JPEG LIBVISUAL \
+		OPTIMIZED_CFLAGS PNG PULSEAUDIO QUICKTIME \
+		TIFF
+
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-alsa --disable-v4l --disable-v4l2 \
-		--disable-camelot --disable-alsamixer --disable-v4lconvert \
-		--without-doxygen --without-cpuflags --disable-musicbrainz
+CONFIGURE_ARGS=	--disable-v4l --disable-v4l2 --disable-v4lconvert \
+		--without-doxygen --with-cpuflags=none --disable-musicbrainz
+USE_GNOME=	gnomehack gtk20 libxml2
+USE_XORG=	x11 xext xfixes xinerama xv
+USE_GL=		gl
 USE_LDCONFIG=	yes
 INSTALL_ICONS=	yes
 
@@ -50,11 +40,24 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 INFO=		gmerlin
-MAN1=		gmerlin_play.1
+MAN1=		gmerlin.1 \
+		gmerlin_play.1 \
+		gmerlin_remote.1 \
+		gmerlin_transcoder.1 \
+		gmerlin_transcoder_remote.1 \
+		gmerlin-record.1
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_PULSEAUDIO)
+.if ${PORT_OPTIONS:MALSA}
+LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+PLIST_SUB+=	ALSA=""
+.else
+CONFIGURE_ARGS+=--disable-alsa
+PLIST_SUB+=	ALSA="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MPULSEAUDIO}
 LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 PLIST_SUB+=	PULSEAUDIO=""
 .else
@@ -62,7 +65,7 @@ CONFIGURE_ARGS+=--disable-pulseaudio
 PLIST_SUB+=	PULSEAUDIO="@comment "
 .endif
 
-.if !defined(WITHOUT_QUICKTIME)
+.if ${PORT_OPTIONS:MQUICKTIME}
 LIB_DEPENDS+=	quicktime.0:${PORTSDIR}/multimedia/libquicktime
 PLIST_SUB+=	QUICKTIME=""
 .else
@@ -70,13 +73,13 @@ CONFIGURE_ARGS+=--disable-lqt
 PLIST_SUB+=	QUICKTIME="@comment "
 .endif
 
-.if !defined(WITHOUT_VISUAL)
+.if ${PORT_OPTIONS:MLIBVISUAL}
 LIB_DEPENDS+=	visual-0.4:${PORTSDIR}/graphics/libvisual04
 .else
 CONFIGURE_ARGS+=--disable-libvisual
 .endif
 
-.if !defined(WITHOUT_CDIO)
+.if ${PORT_OPTIONS:MCDIO}
 LIB_DEPENDS+=	cdio.13:${PORTSDIR}/sysutils/libcdio
 PLIST_SUB+=	CDIO=""
 .else
@@ -84,13 +87,13 @@ CONFIGURE_ARGS+=--disable-libcdio
 PLIST_SUB+=	CDIO="@comment "
 .endif
 
-.if !defined(WITHOUT_CDDB)
+.if ${PORT_OPTIONS:MCDDB}
 LIB_DEPENDS+=	cddb.4:${PORTSDIR}/audio/libcddb
 .else
 CONFIGURE_ARGS+=--disable-cddb
 .endif
 
-.if defined(WITH_ESOUND)
+.if ${PORT_OPTIONS:MESOUND}
 LIB_DEPENDS+=	esd.2:${PORTSDIR}/audio/esound
 PLIST_SUB+=	ESOUND=""
 .else
@@ -98,7 +101,7 @@ CONFIGURE_ARGS+=--disable-esd
 PLIST_SUB+=	ESOUND="@comment "
 .endif
 
-.if defined(WITH_JACK)
+.if ${PORT_OPTIONS:MJACK}
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 PLIST_SUB+=	JACK=""
 .else
@@ -106,7 +109,7 @@ CONFIGURE_ARGS+=--disable-jack
 PLIST_SUB+=	JACK="@comment "
 .endif
 
-.if !defined(WITHOUT_JPEG)
+.if ${PORT_OPTIONS:MJPEG}
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 PLIST_SUB+=	JPEG=""
 .else
@@ -114,7 +117,7 @@ CONFIGURE_ARGS+=--disable-libjpeg
 PLIST_SUB+=	JPEG="@comment "
 .endif
 
-.if !defined(WITHOUT_PNG)
+.if ${PORT_OPTIONS:MPNG}
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 PLIST_SUB+=	PNG=""
 .else
@@ -122,7 +125,7 @@ CONFIGURE_ARGS+=--disable-libpng
 PLIST_SUB+=	PNG="@comment "
 .endif
 
-.if !defined(WITHOUT_TIFF)
+.if ${PORT_OPTIONS:MTIFF}
 LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 PLIST_SUB+=	TIFF=""
 .else
@@ -131,59 +134,15 @@ PLIST_SUB+=	TIFF="@comment "
 .endif
 
 # applications
-.if !defined(WITHOUT_PLUGINCFG)
-PLIST_SUB+=	PLUGINCFG=""
+.if ${PORT_OPTIONS:MALSA}
+PLIST_SUB+=	ALSAMIXER=""
 .else
-CONFIGURE_ARGS+=--disable-plugincfg
-PLIST_SUB+=	PLUGINCFG="@comment "
-.endif
-
-.if !defined(WITHOUT_PLAYER)
-MAN1+=		gmerlin.1 gmerlin_remote.1
-PLIST_SUB+=	PLAYER=""
-.else
-CONFIGURE_ARGS+=--disable-player
-PLIST_SUB+=	PLAYER="@comment "
-.endif
-
-.if !defined(WITHOUT_KBD)
-PLIST_SUB+=	KBD=""
-.else
-CONFIGURE_ARGS+=--disable-kbd
-PLIST_SUB+=	KBD="@comment "
-.endif
-
-.if !defined(WITHOUT_TRANSCODER)
-MAN1+=		gmerlin_transcoder.1 gmerlin_transcoder_remote.1
-PLIST_SUB+=	TRANSCODER=""
-.else
-CONFIGURE_ARGS+=--disable-transcoder
-PLIST_SUB+=	TRANSCODER="@comment "
-.endif
-
-.if !defined(WITHOUT_RECORDER)
-PLIST_SUB+=	RECORDER=""
-.else
-CONFIGURE_ARGS+=--disable-recorder
-PLIST_SUB+=	RECORDER="@comment "
-.endif
-
-.if !defined(WITHOUT_VISUALIZER)
-PLIST_SUB+=	VISUALIZER=""
-.else
-CONFIGURE_ARGS+=--disable-visualizer
-PLIST_SUB+=	VISUALIZER="@comment "
-.endif
-
-.if !defined(WITHOUT_THUMBNAILER)
-PLIST_SUB+=	THUMBNAILER=""
-.else
-CONFIGURE_ARGS+=--disable-thumbnailer
-PLIST_SUB+=	THUMBNAILER="@comment "
+CONFIGURE_ARGS+=--disable-alsamixer
+PLIST_SUB+=	ALSAMIXER="@comment "
 .endif
 
 # vendor ocflags from configure
-.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-O3 -funroll-all-loops -fomit-frame-pointer -ffast-math
 CXXFLAGS+=	-O3 -funroll-all-loops -fomit-frame-pointer -ffast-math
 .endif
@@ -194,21 +153,18 @@ post-patch:
 		 s|-DGTK_DISABLE_DEPRECATED||g ; \
 		 /LIBS/ s|-ldl||g ; \
 		 s|^LDFLAGS="|&$${LDFLAGS} |g' ${WRKSRC}/configure
-.for file in apps/cmdlineplayer/Makefile.in apps/kbd/Makefile.in \
-	apps/player/Makefile.in apps/transcoder/Makefile.in \
-	apps/thumbnailer/Makefile.in lib/Makefile.in tests/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|-ldl||g ; \
 		 s|-lpthread|${PTHREAD_LIBS}|g ; \
-		 /^LIBS = / s|$$| @LIBINTL@ ${PTHREAD_LIBS}|g' ${WRKSRC}/${file}
-.endfor
-.for file in doc/Makefile.in
+		 /^LIBS = / s|$$| @LIBINTL@ ${PTHREAD_LIBS}|g' \
+		${WRKSRC}/lib/Makefile.am ${WRKSRC}/lib/Makefile.in \
+		${WRKSRC}/tests/Makefile.am ${WRKSRC}/tests/Makefile.in \
+		${WRKSRC}/apps/*/Makefile.am ${WRKSRC}/apps/*/Makefile.in
 	@${REINPLACE_CMD} -e \
-		 's|^texinfo_|#texinfo_|g' ${WRKSRC}/${file}
-.endfor
+		 's|^texinfo_|#texinfo_|g' ${WRKSRC}/doc/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
