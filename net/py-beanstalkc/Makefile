@@ -19,16 +19,16 @@ LICENSE=	AL2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
-OPTIONS=	PYYAML	"YAML support"	on
+OPTIONS_DEFINE=	YAML
+OPTIONS_DEFAULT=	YAML
+YAML_DESC=	Support parsing YAML reponses
 
 # bypass infrastructure bug
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/${PYEASYINSTALL_EGG}
-
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PYYAML)
+.if ${PORT_OPTIONS:MYAML}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml
 .endif
 
