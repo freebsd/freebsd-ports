@@ -26,6 +26,9 @@ LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 	pcre:${PORTSDIR}/devel/pcre \
 	apr-0:${PORTSDIR}/devel/apr0
 
+USERS=	www
+GROUPS=	www
+
 MAKE_JOBS_SAFE=	yes
 
 DEPRECATED=	will be unsupported by ASF when 2.4.0 is release, migrate to 2.2.x+ now
@@ -215,9 +218,6 @@ post-configure:
 			${WRKSRC}/docs/conf/httpd-std.conf
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," \
 			${WRKSRC}/support/envvars-std
-
-pre-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/apache2/envvars.d
