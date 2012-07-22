@@ -7,6 +7,7 @@
 
 PORTNAME=	libbs2b
 PORTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/bs2b/bs2b/${PORTVERSION}
 
@@ -14,7 +15,10 @@ MAINTAINER=	liangtai.s4@gmail.com
 COMMENT=	Bauer Stereophonic-to-Binaural DSP
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
-LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS+=	sndfile:${PORTSDIR}/audio/libsndfile \
+		ogg:${PORTSDIR}/audio/libogg \
+		FLAC:${PORTSDIR}/audio/flac \
+		vorbis:${PORTSDIR}/audio/libvorbis
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
