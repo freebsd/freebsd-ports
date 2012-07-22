@@ -7,6 +7,7 @@
 
 PORTNAME=	Test-MockObject
 PORTVERSION=	1.20120301
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,12 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Tests remote URLs or local web files
 
-BUILD_DEPENDS=	p5-UNIVERSAL-can>=1.16:${PORTSDIR}/devel/p5-UNIVERSAL-can \
-		p5-UNIVERSAL-isa>=1.03:${PORTSDIR}/devel/p5-UNIVERSAL-isa
-RUN_DEPENDS=	p5-UNIVERSAL-can>=1.16:${PORTSDIR}/devel/p5-UNIVERSAL-can \
-		p5-UNIVERSAL-isa>=1.03:${PORTSDIR}/devel/p5-UNIVERSAL-isa
-TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
-		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
+BUILD_DEPENDS=	p5-UNIVERSAL-can>=1.20110617:${PORTSDIR}/devel/p5-UNIVERSAL-can \
+		p5-UNIVERSAL-isa>=1.20110614:${PORTSDIR}/devel/p5-UNIVERSAL-isa
+RUN_DEPENDS=	p5-UNIVERSAL-can>=1.20110617:${PORTSDIR}/devel/p5-UNIVERSAL-can \
+		p5-UNIVERSAL-isa>=1.20110614:${PORTSDIR}/devel/p5-UNIVERSAL-isa
+TEST_DEPENDS=	p5-Test-Exception>=0.31:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-Warn>=0.23:${PORTSDIR}/devel/p5-Test-Warn
 
 PERL_CONFIGURE=	yes
 INSTALL_TARGET=	pure_install
