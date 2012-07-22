@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gmerlin-avdecoder
-PORTVERSION=	1.1.0
-PORTREVISION=	7
+PORTVERSION=	1.2.0
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/gmerlin/${PORTNAME}/${PORTVERSION}
 
@@ -17,32 +16,20 @@ COMMENT=	General purpose media decoding library
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/dvb/frontend.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	gavl.1:${PORTSDIR}/multimedia/gavl
 
-OPTIONS=	GMERLIN	"Enable gmerlin support" on \
-		FFMPEG	"Enable ffmpeg support" on \
-		THEORA	"Enable theora support" on \
-		SPEEX	"Enable speex support" on \
-		MJPEGTOOLS "Enable mjpegtools support" on \
-		VORBIS	"Enable vorbis support" on \
-		MPEG2	"Enable MPEG2 support" on \
-		TIFF	"Enable TIFF support" on \
-		SAMBA	"Enable samba support" on \
-		PNG	"Enable libpng support" on \
-		FAAD	"Enabled FAAD2 support" on \
-		DVDREAD "Enable libdvdread support" on \
-		FLAC	"Enable FLAC support" on \
-		MUSEPACK "Enable musepack (mpc) support" on \
-		MAD	"Enable mp3 support" on \
-		A52	"Enable A52 support" on \
-		DCA	"Enable DTS Coherent Acoustics decoder" on \
-		CDIO	"Enable libcdio support" on \
-		OPENJPEG "Enable JPEG2000 support" on \
-		SCHROEDINGER "Enable dirac support" on \
-		OPTIMIZED_CFLAGS "Additional optimizations" on
+OPTIONS_DEFINE=	A52 CDIO DCA DVDREAD FAAD FFMPEG FLAC GMERLIN MAD \
+		MJPEGTOOLS MPEG2 MUSEPACK OPENJPEG OPTIMIZED_CFLAGS PNG \
+		SAMBA SCHROEDINGER SPEEX THEORA TIFF VDPAU VORBIS
+OPTIONS_DEFAULT=	A52 CDIO DCA DVDREAD FAAD FFMPEG FLAC GMERLIN MAD \
+		MJPEGTOOLS MPEG2 MUSEPACK OPENJPEG OPTIMIZED_CFLAGS PNG \
+		SAMBA SCHROEDINGER SPEEX THEORA TIFF VDPAU VORBIS
+DVDREAD_DESC=	libdvdread support
+GMERLIN_DESC=	gmerlin support
+SAMBA_DESC=	Samba support using libsmbclient
 
 USE_GNOME=	gnomehack pkgconfig
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-cpuflags --without-doxygen
+CONFIGURE_ARGS=	--with-cpuflags=none --without-doxygen
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -50,7 +37,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_GMERLIN)
+.if ${PORT_OPTIONS:MGMERLIN}
 LIB_DEPENDS+=	gmerlin.0:${PORTSDIR}/multimedia/gmerlin
 PLIST_SUB+=	GMERLIN=""
 .else
@@ -58,68 +45,68 @@ CONFIGURE_ARGS+=--disable-gmerlin
 PLIST_SUB+=	GMERLIN="@comment "
 .endif
 
-.if !defined(WITHOUT_FFMPEG)
+.if ${PORT_OPTIONS:MFFMPEG}
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 .else
 CONFIGURE_ARGS+=--disable-libavcodec --disable-libpostproc --disable-libswscale --disable-libavformat
 .endif
 
-.if !defined(WITHOUT_THEORA)
+.if ${PORT_OPTIONS:MTHEORA}
 LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
 .else
 CONFIGURE_ARGS+=--disable-theoradec
 .endif
 
-.if !defined(WITHOUT_SPEEX)
+.if ${PORT_OPTIONS:MSPEEX}
 LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
 .else
 CONFIGURE_ARGS+=--disable-speex
 .endif
 
-.if !defined(WITHOUT_MJPEGTOOLS)
+.if ${PORT_OPTIONS:MJPEGTOOLS}
 LIB_DEPENDS+=	lavjpeg-2.0.0:${PORTSDIR}/multimedia/mjpegtools
 .else
 CONFIGURE_ARGS+=--disable-mjpegtools
 .endif
 
-.if !defined(WITHOUT_VORBIS)
+.if ${PORT_OPTIONS:MVORBIS}
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--with-vorbis=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--disable-vorbis
 .endif
 
-.if !defined(WITHOUT_MPEG2)
+.if ${PORT_OPTIONS:MMPEG2}
 LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
 .else
 CONFIGURE_ARGS+=--disable-libmpeg2
 .endif
 
-.if !defined(WITHOUT_TIFF)
+.if ${PORT_OPTIONS:MTIFF}
 LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 .else
 CONFIGURE_ARGS+=--disable-libtiff
 .endif
 
-.if !defined(WITHOUT_SAMBA)
+.if ${PORT_OPTIONS:MSAMBA}
 LIB_DEPENDS+=	smbclient.0:${PORTSDIR}/net/samba-libsmbclient
 .else
 CONFIGURE_ARGS+=--disable-samba
 .endif
 
-.if !defined(WITHOUT_PNG)
+.if ${PORT_OPTIONS:MPNG}
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 .else
 CONFIGURE_ARGS+=--disable-libpng
 .endif
 
-.if !defined(WITHOUT_FAAD)
+.if ${PORT_OPTIONS:MFAAD}
 LIB_DEPENDS+=	faad.2:${PORTSDIR}/audio/faad
 .else
 CONFIGURE_ARGS+=--disable-faad2
 .endif
 
-.if !defined(WITHOUT_DVDREAD)
+.if ${PORT_OPTIONS:MDVDREAD}
 LIB_DEPENDS+=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
 PLIST_SUB+=	DVDREAD=""
 .else
@@ -127,38 +114,38 @@ CONFIGURE_ARGS+=--disable-dvdread
 PLIST_SUB+=	DVDREAD="@comment "
 .endif
 
-.if !defined(WITHOUT_FLAC)
+.if ${PORT_OPTIONS:MFLAC}
 LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
 .else
 CONFIGURE_ARGS+=--disable-flac
 .endif
 
-.if !defined(WITHOUT_MUSEPACK)
+.if ${PORT_OPTIONS:MMUSEPACK}
 LIB_DEPENDS+=	mpcdec.7:${PORTSDIR}/audio/musepack
 .else
 CONFIGURE_ARGS+=--disable-musepack
 .endif
 
-.if !defined(WITHOUT_MAD)
+.if ${PORT_OPTIONS:MMAD}
 LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
 .else
 CONFIGURE_ARGS+=--disable-mad
 .endif
 
-.if !defined(WITHOUT_A52)
+.if ${PORT_OPTIONS:MA52}
 LIB_DEPENDS+=	a52.0:${PORTSDIR}/audio/liba52
 .else
 CONFIGURE_ARGS+=--disable-liba52
 .endif
 
-.if !defined(WITHOUT_DCA)
+.if ${PORT_OPTIONS:MDCA}
 LIB_DEPENDS+=	dca.0:${PORTSDIR}/multimedia/libdca
 .else
 # error in configure
 CONFIGURE_ARGS+=--disable-libcda --disable-libdca
 .endif
 
-.if !defined(WITHOUT_CDIO)
+.if ${PORT_OPTIONS:MCDIO}
 LIB_DEPENDS+=	cdio.13:${PORTSDIR}/sysutils/libcdio
 PLIST_SUB+=	CDIO=""
 .else
@@ -166,20 +153,26 @@ CONFIGURE_ARGS+=--disable-libcdio
 PLIST_SUB+=	CDIO="@comment "
 .endif
 
-.if !defined(WITHOUT_OPENJPEG)
+.if ${PORT_OPTIONS:MOPENJPEG}
 LIB_DEPENDS+=	openjpeg.2:${PORTSDIR}/graphics/openjpeg
 .else
 CONFIGURE_ARGS+=--disable-openjpeg
 .endif
 
-.if !defined(WITHOUT_SCHROEDINGER)
+.if ${PORT_OPTIONS:MSCHROEDINGER}
 LIB_DEPENDS+=	schroedinger-1.0.11:${PORTSDIR}/multimedia/schroedinger
 .else
 CONFIGURE_ARGS+=--disable-schroedinger
 .endif
 
+.if ${PORT_OPTIONS:MVDPAU}
+LIB_DEPENDS+=	vdpau.1:${PORTSDIR}/multimedia/libvdpau
+.else
+CONFIGURE_ARGS+=	--disable-vdpau
+.endif
+
 # vendor ocflags from configure
-.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-O3 -funroll-all-loops -ffast-math
 CXXFLAGS+=	-O3 -funroll-all-loops -ffast-math
 .endif
@@ -197,7 +190,7 @@ post-patch:
 		's|malloc.h|stdlib.h|' ${WRKSRC}/lib/in_smb.c
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
