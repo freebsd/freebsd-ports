@@ -8,12 +8,10 @@
 
 PORTNAME=	mutt
 PORTVERSION=	1.4.2.3
-PORTREVISION?=	6
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
-		ftp://ftp.demon.co.uk/pub/mirrors/mutt/ \
-		ftp://ftp.parodius.com/pub/mutt/
+		ftp://ftp.demon.co.uk/pub/mirrors/mutt/
 
 PATCHVERSION?=	${PORTVERSION}
 PATCHVERSION=	1.4.2.2
@@ -29,7 +27,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER?=	udo.schweigert@siemens.com
 COMMENT?=	The Mongrel of Mail User Agents (part Elm, Pine, Mush, mh, etc.)
 
-CONFLICTS?=	ja-mutt-[0-9]* ja-mutt-devel-[0-9]* mutt-devel-[0-9]* mutt-devel-lite-[0-9]* mutt-lite-[0-9]* zh-mutt-devel-[0-9]*
+CONFLICTS?=	ja-mutt-[0-9]* ja-mutt-devel-[0-9]* mutt-devel-[0-9]* mutt-devel-lite-[0-9]* mutt-lite-[0-9]* zh-mutt-devel-[0-9]* mutt-[^1].[^4]*
 
 OPTIONS=	NLS "Native Language Support via gettext utilities" on \
  SLANG "Adds display/screen management via S-Lang" off \

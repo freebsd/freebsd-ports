@@ -9,7 +9,7 @@
 PORTREVISION=	2
 CATEGORIES=	chinese
 
-MASTERDIR=	${.CURDIR}/../../mail/mutt-devel
+MASTERDIR=	${.CURDIR}/../../mail/mutt
 REVISEDATE=	20100927
 PORTREVISION=	${REVISEDATE}
 
@@ -19,7 +19,7 @@ PORTREVISION=	${REVISEDATE}
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	The Mongrel of Mail User Agents with Chinese support
 
-CONFLICTS=	ja-mutt-[0-9]* ja-mutt-devel-[0-9]* mutt-[0-9]* mutt-devel-[0-9]* mutt-devel-lite-[0-9]* mutt-lite-[0-9]*
+CONFLICTS=	ja-mutt-[0-9]* ja-mutt-devel-[0-9]* mutt-[0-9]* mutt-lite-[0-9]*
 
 LIB_DEPENDS+=	hz.0:${PORTSDIR}/chinese/autoconvert
 
