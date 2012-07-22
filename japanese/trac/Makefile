@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	trac
-PORTVERSION=	0.12.2
+PORTVERSION=	0.12.3
 CATEGORIES=	japanese www devel python
-MASTER_SITES=	http://dist.bsdlab.org/ \
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.i-act.co.jp/project/products/downloads/
-DISTNAME=	Trac-${PORTVERSION}.ja1
+MASTER_SITE_SUBDIR=	kuriyama
+DISTNAME=	Trac-${PORTVERSION}.ja2
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	An enhanced wiki and issue tracking system for software projects
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Genshi>=0.5:${PORTSDIR}/textproc/py-genshi \
 		${PYTHON_PKGNAMEPREFIX}Babel>=0.9:${PORTSDIR}/devel/py-babel
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Genshi>=0.5:${PORTSDIR}/textproc/py-genshi \
+		${PYTHON_PKGNAMEPREFIX}Babel>=0.9:${PORTSDIR}/devel/py-babel
 
 OPTIONS=	SILVERCITY "Use Silvercity for syntax highlighting" On \
 		DOCUTILS   "Allow additional text markup" On \
@@ -32,7 +34,7 @@ USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Trac
 PYDISTUTILS_NOEGGINFO=	yes
-PYDISTUTILS_PKGVERSION=	${PORTVERSION}.ja1
+PYDISTUTILS_PKGVERSION=	${PORTVERSION}.ja2
 
 # This target is only meant to be used by the port maintainer.
 x-generate-plist:
