@@ -19,8 +19,6 @@ COMMENT=	A Ruby binding for ImageMagick
 
 LIB_DEPENDS=	MagickWand.5:${PORTSDIR}/graphics/ImageMagick
 
-BROKEN=		does not configure
-
 USE_BZIP2=	yes
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
