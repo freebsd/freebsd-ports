@@ -1,0 +1,13 @@
+--- recording.c	2012/06/09 13:57:30	2.57
++++ recording.c	2012/07/15 10:47:58
+@@ -831,8 +831,8 @@
+ {
+   char **sb = (RecordingsSortMode == rsmName) ? &sortBufferName : &sortBufferTime;
+   if (!*sb) {
+-     char *s = (RecordingsSortMode == rsmName) ? strdup(FileName() + strlen(VideoDirectory) + 1)
+-                                              : StripEpisodeName(strdup(FileName() + strlen(VideoDirectory) + 1));
++     char *s = (RecordingsSortMode == rsmName) ? strdup(FileName() + strlen(VideoDirectory))
++                                              : StripEpisodeName(strdup(FileName() + strlen(VideoDirectory)));
+      strreplace(s, '/', 'a'); // some locales ignore '/' when sorting
+      int l = strxfrm(NULL, s, 0) + 1;
+      *sb = MALLOC(char, l);

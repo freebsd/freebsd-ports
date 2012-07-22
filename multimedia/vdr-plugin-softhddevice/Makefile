@@ -7,6 +7,7 @@
 
 PORTNAME=	vdr-plugin-softhddevice
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/1000/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}

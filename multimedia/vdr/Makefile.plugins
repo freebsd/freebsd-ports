@@ -1,13 +1,13 @@
 # this is to be included by vdr plugin ports
 #
-# $FreeBSD: /tmp/pcvs/ports/multimedia/vdr/Makefile.plugins,v 1.4 2012-06-19 18:42:07 nox Exp $
+# $FreeBSD$
 
 BUILD_DEPENDS+=  ${LOCALBASE}/include/linux/dvb/frontend.h:${PORTSDIR}/multimedia/v4l_compat
 
 BUILD_DEPENDS+=	vdr:${PORTSDIR}/multimedia/vdr
 RUN_DEPENDS+=	vdr:${PORTSDIR}/multimedia/vdr
 
-APIVERSION=	1.7.28
+APIVERSION=	1.7.29
 DIST_SUBDIR=	vdr
 PATCH_SUBDIR=	vdr
 USE_GMAKE=	yes
