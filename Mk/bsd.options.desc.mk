@@ -174,6 +174,7 @@ MP4_DESC?=		MP4 support
 MPEG2_DESC?=		MPEG2 support via libmpeg2
 MPG123_DESC?=		MPG123 support
 MPLAYER_DESC?=		MPlayer support
+MPLS_DESC?=		MPLS support
 MPP_DESC?=		Musepack support
 MSQL_DESC?=		mSQL backend
 MTP_DESC?=		MTP device support
