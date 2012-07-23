@@ -1,4 +1,5 @@
 bin/flex
+bin/flex++
 include/flex/FlexLexer.h
 lib/libfl.a
 lib/libfl_pic.a
@@ -6,6 +7,7 @@ lib/libfl_pic.a
 %%NLS%%share/locale/da/LC_MESSAGES/flex.mo
 %%NLS%%share/locale/de/LC_MESSAGES/flex.mo
 %%NLS%%share/locale/es/LC_MESSAGES/flex.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/flex.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/flex.mo
 %%NLS%%share/locale/ga/LC_MESSAGES/flex.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/flex.mo
