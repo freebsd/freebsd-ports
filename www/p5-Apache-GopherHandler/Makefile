@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	toni.viemero@iki.fi
 COMMENT=	Gopher protocol implementation for Apache2
 
-RUN_DEPENDS=	{APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
+RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
 		p5-Gopher-Server>=0:${PORTSDIR}/net/p5-Gopher-Server
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
