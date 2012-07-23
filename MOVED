@@ -3557,3 +3557,4 @@ databases/redis-scripting|databases/redis-devel|2012-07-19|Removed, please use d
 devel/acpicatools||2012-07-22|Has expired: It's quite obsolete and is already in base system for a long time
 mail/mutt-devel|mail/mutt|2012-07-22|mail/mutt-devel is ready for primetime
 mail/mutt-devel-lite|mail/mutt-lite|2012-07-22|mail/mutt-devel is ready for primetime
+deskutils/phpgroupware|www/phpgroupware|2012-07-23|Moved to proper category
