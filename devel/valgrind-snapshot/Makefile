@@ -18,11 +18,13 @@ COMMENT=	A (memory) debugging and profiling tool
 CONFLICTS=	valgrind-[0-9]*
 LATEST_LINK=	valgrind-snapshot
 
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
+
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}

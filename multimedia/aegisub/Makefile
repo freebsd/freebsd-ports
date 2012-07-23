@@ -24,6 +24,7 @@ COMMENT=	A cross-platform subtitle editor
 
 LICENSE=	BSD
 
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
 OPTIONS_DEFINE=	DEBUG PROFILE GCOV EFENCE ASS ALSA OPENAL PORTAUDIO PULSEAUDIO \
@@ -34,7 +35,7 @@ EFENCE_DESC=	Electric Fence (require profiling)
 ASS_DESC=	libASS subtitle provider
 HUNSPELL_DESC=	Hunspell support
 
-USE_GNOME=	intltool pkgconfig
+USE_GNOME=	intltool
 USE_WX=		2.8
 WX_COMPS=	wx contrib
 WX_UNICODE=	yes

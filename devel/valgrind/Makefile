@@ -19,12 +19,14 @@ CONFLICTS=	valgrind-snapshot-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
+
 OPTIONS_DEFINE=	MPI
 MPI_DESC=	Enable build of MPI wrappers
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	gnomehack
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

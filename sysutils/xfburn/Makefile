@@ -16,6 +16,7 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CD/DVD burning tool for Xfce
 
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	burn.4:${PORTSDIR}/devel/libburn \
 		isofs.6:${PORTSDIR}/devel/libisofs
 RUN_DEPENDS=	cdrdao:${PORTSDIR}/sysutils/cdrdao
@@ -25,7 +26,7 @@ CONFIGURE_ENV=	GMSGFMT=${PREFIX}/bin/msgfmt DATADIRNAME=share
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	intltool pkgconfig
+USE_GNOME=	intltool
 USE_XFCE=	configenv libexo libgui
 USE_CDRTOOLS=	yes
 INSTALLS_ICONS=	yes

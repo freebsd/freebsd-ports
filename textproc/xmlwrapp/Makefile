@@ -17,11 +17,12 @@ COMMENT=	A modern style C++ library for working with XML data
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	boost_iostreams.4:${PORTSDIR}/devel/boost-libs
 
 OPTIONS=	XSLT "build libxsltwrap library (requires libxslt)" off
 
-USE_GNOME=	gnomehack libxml2 pkgconfig
+USE_GNOME=	gnomehack libxml2
 USE_PERL5_BUILD=yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-silent-rules

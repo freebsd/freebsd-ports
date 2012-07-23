@@ -17,10 +17,11 @@ COMMENT=	A High Quality Rendering Engine for C++
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_XORG=	x11
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	gnomehack
 USE_SDL=	sdl
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	aclocal autoheader autoconf libtoolize automake

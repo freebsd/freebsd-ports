@@ -13,7 +13,9 @@ MASTER_SITES=	http://libfov.googlecode.com/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library for calculating fields of view on low resolution rasters
 
-USE_GNOME=	gnomehack pkgconfig
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
+
+USE_GNOME=	gnomehack
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	ac_cv_prog_doxygen=no ac_cv_path_SDL_CONFIG=no
 USE_LDCONFIG=	yes

@@ -17,12 +17,13 @@ COMMENT=	Transparently handles automatic compression and decompression of files
 
 LICENSE=	LGPL21
 
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 #LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 
 OPTIONS_DEFINE=	NLS
 
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
