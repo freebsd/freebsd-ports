@@ -29,6 +29,9 @@ BUILD_DEPENDS=	yasm>=0.6.0:${PORTSDIR}/devel/yasm \
 
 CONFLICTS=	x264-0.*
 
+DEPRECATED=	x264 github development makes this port obsolete
+EXPIRATION_DATE=	2012-08-23
+
 LATEST_LINK=	x264-devel
 
 X264_BUILD=	124
