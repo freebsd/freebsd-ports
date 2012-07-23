@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ktorrent
-DISTVERSION=	4.2.0
-PORTREVISION=	1
+DISTVERSION=	4.2.1
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://ktorrent.org/downloads/${DISTVERSION}/
 
@@ -23,11 +22,11 @@ USE_QT4=	qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
+#MAKE_JOBS_SAFE=	yes
 
 CONFLICTS_BUILD=	ktorrent-2*
 
-SHLIB_VER=	13.0.0
+SHLIB_VER=	13.0.1
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER} \
 		SHLIB_SHVER=${SHLIB_VER:R:R}
 
