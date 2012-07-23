@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Class-Std-Fast
+PORTVERSION=	0.0.8
 DISTVERSION=	v0.0.8
-PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Faster but less secure than Class::Std
 
 BUILD_DEPENDS=	p5-Test-Simple>=0.86:${PORTSDIR}/devel/p5-Test-Simple
