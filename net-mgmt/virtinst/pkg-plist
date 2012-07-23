@@ -132,6 +132,9 @@ bin/virt-install
 %%PYTHON_SITELIBDIR%%/virtinst/VirtualInputDevice.py
 %%PYTHON_SITELIBDIR%%/virtinst/VirtualInputDevice.pyc
 %%PYTHON_SITELIBDIR%%/virtinst/VirtualInputDevice.pyo
+%%PYTHON_SITELIBDIR%%/virtinst/VirtualMemballoon.py
+%%PYTHON_SITELIBDIR%%/virtinst/VirtualMemballoon.pyc
+%%PYTHON_SITELIBDIR%%/virtinst/VirtualMemballoon.pyo
 %%PYTHON_SITELIBDIR%%/virtinst/VirtualNetworkInterface.py
 %%PYTHON_SITELIBDIR%%/virtinst/VirtualNetworkInterface.pyc
 %%PYTHON_SITELIBDIR%%/virtinst/VirtualNetworkInterface.pyo
@@ -174,11 +177,10 @@ bin/virt-install
 %%PYTHON_SITELIBDIR%%/virtinst/util.py
 %%PYTHON_SITELIBDIR%%/virtinst/util.pyc
 %%PYTHON_SITELIBDIR%%/virtinst/util.pyo
-%%PYTHON_SITELIBDIR%%/virtinst/version.py
-%%PYTHON_SITELIBDIR%%/virtinst/version.pyc
-%%PYTHON_SITELIBDIR%%/virtinst/version.pyo
+share/locale/da/LC_MESSAGES/virtinst.mo
 share/locale/es/LC_MESSAGES/virtinst.mo
 share/locale/fr/LC_MESSAGES/virtinst.mo
+share/locale/gu/LC_MESSAGES/virtinst.mo
 share/locale/it/LC_MESSAGES/virtinst.mo
 share/locale/ja/LC_MESSAGES/virtinst.mo
 share/locale/nl/LC_MESSAGES/virtinst.mo
@@ -189,6 +191,7 @@ share/locale/sr/LC_MESSAGES/virtinst.mo
 share/locale/sr@latin/LC_MESSAGES/virtinst.mo
 share/locale/uk/LC_MESSAGES/virtinst.mo
 share/locale/zh_CN/LC_MESSAGES/virtinst.mo
+share/locale/zh_TW/LC_MESSAGES/virtinst.mo
 @dirrm %%PYTHON_SITELIBDIR%%/virtinst
 @dirrm %%PYTHON_SITELIBDIR%%/virtconv/parsers
 @dirrm %%PYTHON_SITELIBDIR%%/virtconv
