@@ -1,5 +1,5 @@
 --- ./GNUmakefile.orig	2010-08-09 14:22:42.000000000 -0700
-+++ ./GNUmakefile	2011-01-27 12:43:08.905856979 -0800
++++ ./GNUmakefile	2012-07-21 03:14:01.000000000 +0200
 @@ -1,4 +1,4 @@
 -CXXFLAGS = -DNDEBUG -g -O2
 +#CXXFLAGS = -DNDEBUG -g -O2
@@ -19,3 +19,12 @@
  ISMINGW = $(shell $(CXX) --version 2>&1 | $(EGREP) -c "mingw")
  
  ifneq ($(GCC42_OR_LATER),0)
+@@ -151,7 +151,7 @@
+	$(RANLIB) $@
+ 
+ libcryptopp.so: $(LIBOBJS)
+-	$(CXX) -shared -o $@ $(LIBOBJS)
++	$(CXX) -shared -o $@ $(CXXFLAGS) $(LDFLAGS) $(LIBOBJS)
+ 
+ cryptest.exe: libcryptopp.a $(TESTOBJS)
+	$(CXX) -o $@ $(CXXFLAGS) $(TESTOBJS) -L. -lcryptopp $(LDFLAGS) $(LDLIBS)
