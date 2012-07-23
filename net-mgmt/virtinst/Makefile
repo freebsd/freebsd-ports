@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	virtinst
-PORTVERSION=	0.600.1
+PORTVERSION=	0.600.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://virt-manager.org/download/sources/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
