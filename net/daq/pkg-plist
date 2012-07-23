@@ -4,7 +4,7 @@ include/daq_api.h
 include/daq_common.h
 include/sfbpf.h
 include/sfbpf_dlt.h
-lib/libdaq.so.0
+lib/libdaq.so.1
 lib/libdaq.so
 lib/libdaq.la
 lib/libdaq_static.la
