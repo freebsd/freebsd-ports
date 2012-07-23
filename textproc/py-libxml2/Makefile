@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc gnome python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -20,6 +20,8 @@ PLIST=		${.CURDIR}/pkg-plist
 
 USE_GNOME=	gnomehack libxml2
 USE_PYTHON=	yes
+CPPFLAGS+=	`${PYTHON_VERSION}-config --cflags`
+LDFLAGS+=	`${PYTHON_VERSION}-config --libs`
 CONFIGURE_ARGS=	--with-iconv=${LOCALBASE} \
 		--with-html-dir=${PREFIX}/share/doc \
 		--with-html-subdir=${PORTNAME} \
