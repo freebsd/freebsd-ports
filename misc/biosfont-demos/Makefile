@@ -16,7 +16,7 @@ COMMENT=	Demos for the biosfont kernel module
 LICENSE=	BSD
 
 BUILD_DEPENDS=	${LOCALBASE}/include/biosfont.h:${PORTSDIR}/sysutils/biosfont
-RUN_DEPENDS=	/boot/modules/biosfont.ko:${PORTSDIR}/sysutils/biosfont
+INSTALL_DEPENDS=	/boot/modules/biosfont.ko:${PORTSDIR}/sysutils/biosfont
 
 PLIST_FILES=	bin/showchar bin/showdati
 
