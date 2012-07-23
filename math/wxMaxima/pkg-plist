@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 bin/wxmaxima
+%%DESKTOPDIR%%/wxmaxima.desktop
 share/locale/ca/LC_MESSAGES/wxMaxima.mo
 share/locale/cs/LC_MESSAGES/wxMaxima.mo
 share/locale/da/LC_MESSAGES/wxMaxima.mo
@@ -15,6 +16,7 @@ share/locale/pt_BR/LC_MESSAGES/wxMaxima.mo
 share/locale/ru/LC_MESSAGES/wxMaxima.mo
 share/locale/uk/LC_MESSAGES/wxMaxima.mo
 share/locale/zh_TW/LC_MESSAGES/wxMaxima.mo
+share/pixmaps/wxmaxima.png
 %%DATADIR%%/COPYING
 %%DATADIR%%/README
 %%DATADIR%%/autocomplete.txt
@@ -25,3 +27,6 @@ share/locale/zh_TW/LC_MESSAGES/wxMaxima.mo
 %%DATADIR%%/wxmathml.lisp
 %%DATADIR%%/wxmaxima.png
 @dirrm %%DATADIR%%
+@dirrmtry %%DESKTOPDIR%%
+@exec %%LOCALBASE%%/bin/update-desktop-database -q > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database -q > /dev/null || /usr/bin/true

@@ -1,0 +1,11 @@
+--- ./wxmaxima.desktop.orig	2012-07-22 22:58:40.000000000 +0200
++++ ./wxmaxima.desktop	2012-07-22 22:58:43.000000000 +0200
+@@ -2,7 +2,7 @@
+ Name=wxMaxima
+ Comment=Perform symbolic and numeric calculations using Maxima
+ Exec=wxmaxima %f
+-Icon=wxmaxima.png
++Icon=wxmaxima
+ Terminal=false
+ Type=Application
+ Categories=Education;Science;Math;X-Red-Hat-Base;X-Red-Hat-Base-Only;
