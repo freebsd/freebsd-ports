@@ -1,3 +1,4 @@
+@comment LC_ALL=C sort -f [for @dirrm*: sort -f -r]
 bin/docear
 share/applications/docear.desktop
 share/docear/docear-icon48x48.png
