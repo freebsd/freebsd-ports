@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rspec-core
-PORTVERSION=	2.8.0
+PORTVERSION=	2.11.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
