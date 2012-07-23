@@ -1,0 +1,72 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/core/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/core/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/core/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/core/connect.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/core/connect.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/core/connect.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/core/introspect.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/core/introspect.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/core/introspect.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/core/split_sql.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/core/split_sql.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/core/split_sql.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/core/tr/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/core/tr/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/core/tr/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/core/tr/dump.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/core/tr/dump.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/core/tr/dump.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/inet/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/inet/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/inet/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/inet/dump.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/inet/dump.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/inet/dump.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/inet/introspect.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/inet/introspect.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/inet/introspect.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/system/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/system/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/system/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/system/introspect.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/system/introspect.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/system/introspect.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/timeout/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/timeout/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/timeout/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/timeout/connect.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/timeout/connect.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/timeout/connect.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/view/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/view/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/view/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/view/introspect.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/view/introspect.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/view/introspect.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/view/rulesparser.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/view/rulesparser.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/view/rulesparser.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/view
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/timeout
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/system
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak/inet
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/tweak
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/core/tr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql/core
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_pgsql
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
