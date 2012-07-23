@@ -52,6 +52,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bdab0acd-d4cd-11e1-8a1c-14dae9ebcf89">
+    <topic>php -- potential overflow in _php_stream_scandir</topic>
+    <affects>
+      <package>
+	<name>php5</name>
+	<range><gt>5.4</gt><lt>5.4.5</lt></range>
+      </package>
+      <package>
+	<name>php53</name>
+	<range><lt>5.3.15</lt></range>
+      </package>
+      <package>
+	<name>php52</name>
+	<range><le>5.2.17_10</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PHP Development Team reports:</p>
+	<blockquote cite="http://www.php.net/archive/2012.php#id2012-07-19-1">
+	  <p>The release of PHP 5.4.15 and 5.4.5 fix a potential overflow in
+	    _php_stream_scandir</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2012-2688</cvename>
+	<url>http://www.php.net/archive/2012.php#id2012-07-19-1</url>
+    </references>
+    <dates>
+      <discovery>2012-07-19</discovery>
+      <entry>2012-07-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ce82bfeb-d276-11e1-92c6-14dae938ec40">
     <topic>dns/nsd -- DoS vulnerability from non-standard DNS packet</topic>
     <affects>
