@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120823:
+  AFFECTS: users of graphics/ImageMagick and graphics/ImageMagick-nox11
+  AUTHOR: mm@FreeBSD.org
+
+  The options for ImageMagick have been changed to match commonly used
+  option names. If you are using a customized build, please reconfigure
+  your port options with "make config".
+
 20120820:
   AFFECTS: users of net/spread and net/spread4
   AUTHOR:  ohauer@FreeBSD.org
