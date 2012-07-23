@@ -31,4 +31,10 @@ post-patch:
 regression-test test: build
 	cd ${WRKSR}/ && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if (${OSVERSION} >= 900000 && ${OSVERSION} < 900012) || ${OSVERSION} < 800505
+LIB_DEPENDS+=		lzma:${PORTSDIR}/archivers/xz
+.endif
+
+.include <bsd.port.post.mk>
