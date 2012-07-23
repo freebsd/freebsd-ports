@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.rarlab.com/rar/
 DISTNAME=	unrarsrc-${PORTVERSION}
 
 MAINTAINER=	joris@vandalon.nl
-COMMENT=	Library to work with RAR archivies
+COMMENT=	Library to work with RAR archives
 
 WRKSRC=		${WRKDIR}/unrar
 

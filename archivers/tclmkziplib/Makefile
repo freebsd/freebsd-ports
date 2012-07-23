@@ -13,7 +13,7 @@ MASTER_SITES=	http://mkextensions.sourceforge.net/
 DISTNAME=	mkZiplib${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GZIP and ZIP support for TCL; dynamicly loadable
+COMMENT=	GZIP and ZIP support for TCL; dynamically loadable
 
 LICENSE=	BSD
 

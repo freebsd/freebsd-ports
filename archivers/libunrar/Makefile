@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.rarlab.com/rar/
 DISTNAME=	unrarsrc-${PORTVERSION}
 
 MAINTAINER=	samm@os2.kiev.ua
-COMMENT=	Library to work with RAR archivies
+COMMENT=	Library to work with RAR archives
 
 WRKSRC=		${WRKDIR}/unrar
 

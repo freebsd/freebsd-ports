@@ -12,7 +12,7 @@ CATEGORIES=	astro tk
 MASTER_SITES=	SF/tkgeomap/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Displays U.S. Census Burea populated places on a map
+COMMENT=	Displays U.S. Census Bureau populated places on a map
 
 LIB_DEPENDS=	tkgeomap.0:${PORTSDIR}/astro/tkgeomap
 

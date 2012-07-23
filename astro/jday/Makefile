@@ -10,7 +10,7 @@ CATEGORIES=	astro
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Astronomical julian date calculator
+COMMENT=	Astronomical Julian date calculator
 
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack

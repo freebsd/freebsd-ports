@@ -14,7 +14,7 @@ DISTNAME=	arab${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A TeX/LaTeX package to generate the arabic writing
+COMMENT=	A TeX/LaTeX package to generate the Arabic writing
 
 BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX \
 		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal

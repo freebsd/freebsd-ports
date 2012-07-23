@@ -12,7 +12,7 @@ CATEGORIES=	astro windowmaker
 MASTER_SITES=	http://www.inxsoft.net/wmjupiter/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Dockapp that displays information on jupiter
+COMMENT=	Dockapp that displays information on Jupiter
 
 PLIST_FILES=	bin/wmJupiter
 WRKSRC=		${WRKDIR}/wmJupiter
