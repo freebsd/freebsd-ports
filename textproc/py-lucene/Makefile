@@ -8,6 +8,7 @@
 
 PORTNAME=	PyLucene
 PORTVERSION=	3.6.0
+PORTREVISION=	1
 CATEGORIES=	textproc devel python java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	lucene/pylucene
@@ -27,7 +28,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 USE_GMAKE=	yes
 PATCHSET=	-2
-LUCENE_VER=	3.6.0
+LUCENE_VER=	3.6.1
 EGG_INFO=	lucene-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}-${PYTHON_VERSION:S/thon//}.egg-info
 #EGG_INFO=	lucene-${LUCENE_VER}-${PYTHON_VERSION:S/thon//}.egg-info
 
