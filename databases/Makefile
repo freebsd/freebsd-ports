@@ -696,6 +696,7 @@
     SUBDIR += py-gdbm
     SUBDIR += py-hiredis
     SUBDIR += py-htsql
+    SUBDIR += py-htsql-mysql
     SUBDIR += py-htsql-pgsql
     SUBDIR += py-kyotocabinet
     SUBDIR += py-leveldb
