@@ -19,12 +19,13 @@ COMMENT=	A PDF generation library
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	gnomehack
 USE_BDB=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool

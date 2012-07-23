@@ -15,12 +15,13 @@ DISTNAME=	libYGP-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another General Purpose library
 
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 		boost_filesystem:${PORTSDIR}/devel/boost-libs
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	pkgconfig gnomehack
+USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"

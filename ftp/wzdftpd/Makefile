@@ -14,12 +14,14 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-sources/${PORTNAME}-0.8
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular FTP server configurable online using SITE commands
 
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
+
 USE_AUTOTOOLS=	libtool
 USE_RC_SUBR=	wzdftpd.sh
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	pkgconfig ltverhack
+USE_GNOME=	ltverhack
 CONFIGURE_ARGS+=	--without-pam --disable-pgsql --disable-bonjour
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}

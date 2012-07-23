@@ -16,6 +16,7 @@ COMMENT=	A powerful RAW image processing application
 
 LICENSE=	GPLv3
 
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		iptcdata.3:${PORTSDIR}/graphics/libiptcdata \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
@@ -27,7 +28,7 @@ LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_XZ=		yes
-USE_GNOME=	gtk20 glib20 pkgconfig
+USE_GNOME=	gtk20 glib20
 USE_LDCONFIG=	yes
 CFLAGS+=	-I${LOCALBASE}/include -fPIC ${PTHREAD_CFLAGS}
 CXXFLAGS+=	-I${LOCALBASE}/include -fPIC ${PTHREAD_CFLAGS}

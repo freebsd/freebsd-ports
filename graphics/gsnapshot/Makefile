@@ -14,8 +14,10 @@ MASTER_SITES=	SF/gould/${PORTNAME}/release%20${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A gtk+ based screen capture
 
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
+
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtool
-USE_GNOME=	pkgconfig gtk20 libwnck libxml2
+USE_GNOME=	gtk20 libwnck libxml2
 USE_XORG=	x11 xmu
 
 CFLAGS+=	-fPIC -I${LOCALBASE}/include/libxml2

@@ -16,12 +16,14 @@ MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose string library for C
 
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
+
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_CSTD=	gnu89
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 
 MAN3=		vstr.3 vstr_const.3

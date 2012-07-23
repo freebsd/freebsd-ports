@@ -15,10 +15,12 @@ COMMENT=	A network abstraction library used by for feng, libnemesi, felix
 
 LICENSE=	LGPL21
 
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	pkgconfig gnomehack
+USE_GNOME=	gnomehack
 
 .include <bsd.port.mk>

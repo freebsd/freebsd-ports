@@ -16,11 +16,13 @@ COMMENT=	Media Transfer Protocol (MTP) library
 
 LICENSE=	LGPL21
 
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
+
 OPTIONS_DEFINE=	MTPZ
 OPTIONS_DEFAULT=	MTPZ
 MTPZ_DESC=	Enable functionality to connect to MTPZ devices
 
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	gnomehack
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

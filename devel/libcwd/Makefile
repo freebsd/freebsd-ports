@@ -14,7 +14,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The C++ Debugging Support Library
 
-USE_GNOME=	gnomehack pkgconfig
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
+
+USE_GNOME=	gnomehack
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-alloc --disable-location --disable-threading \

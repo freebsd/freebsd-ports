@@ -16,7 +16,9 @@ COMMENT=	A simple, powerful configuration-file parser
 
 LICENSE=	LGPL21
 
-USE_GNOME=	gnomehack pkgconfig
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
+
+USE_GNOME=	gnomehack
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
