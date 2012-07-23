@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	flex
-PORTVERSION=	2.5.35
-PORTREVISION=	4
+PORTVERSION=	2.5.36
 CATEGORIES=	textproc
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Fast lexical analyzer generator
@@ -35,6 +34,12 @@ PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MDOCS}
+PORTDOCS=	*
+.else
+CONFIGURE_ARGS+=--docdir=${WRKSRC}
 .endif
 
 post-patch:	.SILENT
