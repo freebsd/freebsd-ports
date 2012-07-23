@@ -7,7 +7,7 @@
 # Please don't forget to bump the version in py-lucene if this changes!
 
 PORTNAME=	lucene
-PORTVERSION=	3.6.0
+PORTVERSION=	3.6.1
 CATEGORIES=	textproc java devel
 MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	${PORTNAME}/java/${PORTVERSION}/
@@ -23,7 +23,8 @@ NO_BUILD=	yes
 JAVA_VERSION=	1.5+
 
 OPTIONS_DEFINE=	CONTRIB
-CONTRIB_DESC=	Install contribs
+CONTRIB_DESC=	Install contributed jars
+OPTIONS_DEFAULT=	CONTRIB
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}-core-${PORTVERSION}.jar
 
