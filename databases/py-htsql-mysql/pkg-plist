@@ -1,0 +1,43 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/core/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/core/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/core/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/core/connect.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/core/connect.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/core/connect.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/core/introspect.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/core/introspect.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/core/introspect.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/core/split_sql.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/core/split_sql.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/core/split_sql.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/core/tr/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/core/tr/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/core/tr/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/core/tr/compile.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/core/tr/compile.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/core/tr/compile.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/core/tr/dump.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/core/tr/dump.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/core/tr/dump.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/core/tr/reduce.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/core/tr/reduce.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/core/tr/reduce.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/core/tr/signature.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/core/tr/signature.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/core/tr/signature.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/core/tr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql/core
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/htsql_mysql
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
