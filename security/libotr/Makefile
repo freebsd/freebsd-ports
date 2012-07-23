@@ -20,12 +20,12 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	The portable OTR Messaging Library and toolkit
 
+BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	gpg-error.0:${PORTSDIR}/security/libgpg-error \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
 MAKE_JOBS_SAFE=	yes
 
-USE_GNOME=	pkgconfig
 USE_AUTOTOOLS=	autoconf libtool
 USE_LDCONFIG=	yes
 

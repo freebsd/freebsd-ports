@@ -13,12 +13,12 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	Integrate twitter with pidgin (AKA microblog-purple)
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/pidgin:${PORTSDIR}/net-im/pidgin
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${LOCALBASE}/bin/pidgin:${PORTSDIR}/net-im/pidgin \
+		pkg-config>0:${PORTSDIR}/devel/pkg-config
+RUN_DEPENDS=	${LOCALBASE}/bin/pidgin:${PORTSDIR}/net-im/pidgin
 
 PROJECTHOST=	microblog-purple
 USE_GMAKE=	yes
-USE_GNOME=	pkgconfig
 
 post-patch:
 	@${CP} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.Dist
