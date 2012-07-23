@@ -10,11 +10,6 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
-20120820:
-AUTHOR:	ohauer@FreeBSD.org
-  * The ports net/spread and net/spread4 are using now the
-    reserved UID/GID 282 instead (user|group)next.
-
 20120715:
 AUTHOR: beat@FreeBSD.org
 
