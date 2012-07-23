@@ -1396,6 +1396,7 @@
     SUBDIR += phpbb-devel
     SUBDIR += phpbb3
     SUBDIR += phpgedview
+    SUBDIR += phpgroupware
     SUBDIR += phpmp
     SUBDIR += phpmustache
     SUBDIR += phpmyfaq

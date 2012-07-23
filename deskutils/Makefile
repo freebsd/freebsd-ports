@@ -209,7 +209,6 @@
     SUBDIR += pal
     SUBDIR += parcellite
     SUBDIR += phpcollab
-    SUBDIR += phpgroupware
     SUBDIR += phpicalendar
     SUBDIR += phprojekt
     SUBDIR += pinot
