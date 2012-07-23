@@ -5,7 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20120823:
+20120723:
+  AFFECTS: users of security/snort
+  AUTHOR: zi@FreeBSD.org
+
+  The database output modules have been deprecated.  If you need this
+  functionality please look at the security/barnyard2 port.
+
+20120723:
   AFFECTS: users of graphics/ImageMagick and graphics/ImageMagick-nox11
   AUTHOR: mm@FreeBSD.org
 
@@ -13,14 +20,14 @@ you update your ports collection, before attempting any port upgrades.
   option names. If you are using a customized build, please reconfigure
   your port options with "make config".
 
-20120820:
+20120720:
   AFFECTS: users of net/spread and net/spread4
-  AUTHOR:  ohauer@FreeBSD.org
+  AUTHOR: ohauer@FreeBSD.org
 
   The ports net/spread and net/spread4 are using now the
   reserved UID/GID 282 instead (user|group)next.
 
-20120722
+20120722:
   AFFECTS: users of mail/mutt
   AUTHOR: crees@FreeBSD.org
 
@@ -31,7 +38,7 @@ you update your ports collection, before attempting any port upgrades.
 
   # portmaster -o mail/mutt14 mutt
 
-20120721
+20120721:
   AFFECTS: users of audio/libogg
   AUTHOR: naddy@FreeBSD.org
 
