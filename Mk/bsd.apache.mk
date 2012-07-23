@@ -120,6 +120,7 @@ IGNORE=	${_ERROR_MSG} Illegal use of USE_APACHE ( no version specified )
 IGNORE=	Sorry, ${SLAVENAME} and ${PORTNAME} versions are out of sync ${PORTVERSION} != ${SLAVE_DESIGNED_FOR}
 .endif
 
+# used by www/cakeph* ports
 .if defined(SLAVE_PORT_MODULES)
 DEFAULT_MODULES_CATEGORIES+=	SLAVE_PORT
 ALL_MODULES_CATEGORIES+=		SLAVE_PORT
@@ -142,9 +143,7 @@ ${module}_PLIST_SUB=		"@comment "
 
 # Configure
 # dirty hacks to make sure all modules are disabled before we select them
-.if ${USE_APACHE} == common13
-CONFIGURE_ARGS+=	--disable-module="all"
-.elif ${USE_APACHE} == common20
+.if ${USE_APACHE} == common20
 CONFIGURE_ARGS+=	--disable-access --disable-auth \
 			--disable-charset-lite --disable-include \
 			--disable-log-config --disable-env --disable-setenvif \
@@ -212,10 +211,7 @@ WITH_ALL_STATIC_MODULES=	YES
 .endif
 
 .if defined(WITH_SUEXEC) || defined(WITH_SUEXEC_MODULES)
-.	if ${USE_APACHE} == common13
-SUEXEC_CONFARGS=	suexec
-CONFIGURE_ARGS+=	--enable-suexec
-.	elif ${USE_APACHE:Mcommon2*} != ""
+.	if ${USE_APACHE:Mcommon2*} != ""
 _APACHE_MODULES+=		${SUEXEC_MODULES}
 SUEXEC_CONFARGS=	with-suexec
 .	endif
@@ -255,13 +251,8 @@ APACHE_MODULES!=	\
 .endif
 
 .if defined(WITH_STATIC_MODULES)
-.	if ${USE_APACHE} ==	common13
-STATIC_MODULE_CONFARG=	--enable-module=$${module}
-DSO_MODULE_CONFARG=		--enable-module=$${module} --enable-shared=$${module}
-.	else
 STATIC_MODULE_CONFARG=	--enable-$${module}
 DSO_MODULE_CONFARG=		--enable-$${module}=shared
-.	endif
 _CONFIGURE_ARGS!=	\
 			for module in ${APACHE_MODULES} ; do \
 				${ECHO_CMD} ${WITH_STATIC_MODULES} | \
@@ -274,21 +265,9 @@ _CONFIGURE_ARGS!=	\
 CONFIGURE_ARGS+=	${_CONFIGURE_ARGS}
 .elif defined(WITH_STATIC_APACHE) || defined(WITH_ALL_STATIC_MODULES)
 WITH_STATIC_MODULES=	${APACHE_MODULES}
-.	if ${USE_APACHE} == common13
-.		for module in ${APACHE_MODULES}
-CONFIGURE_ARGS+=	--enable-module=${module}
-.		endfor
-.	else
 CONFIGURE_ARGS+=	--enable-modules="${APACHE_MODULES}"
-.	endif
 .else
-.	if ${USE_APACHE} == common13
-.		for module in ${APACHE_MODULES}
-CONFIGURE_ARGS+=	--enable-module=${module} --enable-shared=${module}
-.		endfor
-.	else
 CONFIGURE_ARGS+=	--enable-mods-shared="${APACHE_MODULES}"
-.	endif
 .endif
 
 .if defined(WITH_STATIC_MODULES)
@@ -322,7 +301,10 @@ SRC_FILE?=	${MODULENAME}.c
 
 .if exists(${HTTPD})
 _APACHE_VERSION!=	${HTTPD} -V | ${SED} -ne 's/^Server version: Apache\/\([0-9]\)\.\([0-9]*\).*/\1\2/p'
-.	if ${_APACHE_VERSION} > 13
+# Apache 2.4 and onwards doesn't require linking the MPM module
+# directly in the httpd binary anymore. APXS lost the MPM_NAME query,
+# so we can't assume a given MPM anymore.
+.	if ${_APACHE_VERSION} <= 22
 APACHE_MPM!=		${APXS} -q MPM_NAME
 .	endif
 .elif defined(APACHE_PORT)
@@ -389,12 +371,6 @@ APACHEMODDIR=	libexec/apache${APACHE_VERSION}
 APACHEINCLUDEDIR=include/apache${APACHE_VERSION}
 APACHEETCDIR=	etc/apache${APACHE_VERSION}
 APACHE_PORT?=	www/apache${APACHE_VERSION}
-.else
-AP_BUILDEXT=	so
-APACHEMODDIR=	libexec/apache
-APACHEINCLUDEDIR=include/apache
-APACHEETCDIR=	etc/apache
-APACHE_PORT?= www/apache13
 .endif
 
 PLIST_SUB+=	APACHEMODDIR="${APACHEMODDIR}" \
