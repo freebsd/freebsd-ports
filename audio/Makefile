@@ -459,6 +459,7 @@
     SUBDIR += mma
     SUBDIR += moc
     SUBDIR += modplugplay
+    SUBDIR += mous
     SUBDIR += mp-player
     SUBDIR += mp3-archive-tools
     SUBDIR += mp32ogg

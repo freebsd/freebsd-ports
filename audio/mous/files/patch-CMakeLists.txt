@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2012-06-15 04:46:40.000000000 +0200
++++ CMakeLists.txt	2012-07-18 17:04:03.462575000 +0200
+@@ -292,7 +292,7 @@
+         RUNTIME DESTINATION bin)
+     install(
+         CODE "file(GLOB TRANSLATION_FILES \"${PROJECT_BINARY_DIR}/*.qm\")"
+-        CODE "file(INSTALL \${TRANSLATION_FILES} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/mous/qt)"
++        CODE "file(INSTALL \${TRANSLATION_FILES} DESTINATION %%DATADIR%%/qt)"
+     )
+ endif()
+ 
+@@ -307,7 +307,7 @@
+ )
+ 
+ file(GLOB RESOURCE_FILES "${MOUS_SOURCE_DIR}/resource/*")
+-install(DIRECTORY ${RESOURCE_FILES} DESTINATION share/mous)
++install(DIRECTORY ${RESOURCE_FILES} DESTINATION %%DATADIR%%)
+ 
+ #==== Messages ====#
+ message("CMake:		" ${CMAKE_VERSION})
