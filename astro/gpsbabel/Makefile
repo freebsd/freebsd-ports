@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	wenheping@gmail.com
-COMMENT=	A gps file translating tool
+COMMENT=	A GPS file translating tool
 
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 

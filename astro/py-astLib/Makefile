@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A set of python astonomy modules
+COMMENT=	A set of python astronomy modules
 
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PKGNAMEPREFIX}scipy>=0.7.0:${PORTSDIR}/science/py-scipy \

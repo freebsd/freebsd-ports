@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.beastwithin.org/users/wwwwolf/code/xmms/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Create a named pipe to retrive xmms info about currently playing song
+COMMENT=	Create a named pipe to retrieve xmms info about currently playing song
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms

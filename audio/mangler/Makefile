@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.mangler.org/downloads/ \
 		http://ultimeordi.com/pub/mangler/
 
 MAINTAINER=	janik@hikarihq.com
-COMMENT=	A Ventrilo VOIP combatible client
+COMMENT=	A Ventrilo VOIP compatible client
 
 LIB_DEPENDS=	celt0.2:${PORTSDIR}/audio/celt \
 		speex.1:${PORTSDIR}/audio/speex \
