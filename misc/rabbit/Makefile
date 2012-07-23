@@ -7,6 +7,7 @@
 
 PORTNAME=	rabbit
 PORTVERSION=	1.0.8
+PORTREVISION=	1
 CATEGORIES=	misc ruby
 MASTER_SITES=	http://rabbit-shockers.org/download/ \
 		LOCAL
@@ -51,9 +52,9 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 PORTDATA=	*
 
-OPTIONS_DEFAULT=	MIMETEX TWITTER
-MIMETEX_DESC=		Run with mimetex
-TWITTER_DESC=		Run with Twitter
+OPTIONS_DEFINE=	MIMETEX TWITTER
+MIMETEX_DESC=	Run with mimetex
+TWITTER_DESC=	Run with Twitter
 
 .include <bsd.port.options.mk>
 
