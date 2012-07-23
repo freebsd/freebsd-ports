@@ -6,15 +6,14 @@
 
 PORTNAME=	x264
 PORTVERSION=	0.${X264_BUILD}.${X264_REV}
-PORTREVISION=	2
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
+MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/ \
 		http://samples.mplayerhq.hu/yuv4mpeg2/:pgo
 MASTER_SITE_SUBDIR=	mm/x264
-DISTFILES=	${DISTNAME}.tar.xz
-DISTNAME=	${PORTNAME}-${X264_GITVER}
+DISTNAME=	${PORTNAME}-snapshot-${X264_SNAPSHOT}-2245-stable
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	x264
-EXTRACT_ONLY=	${DISTFILES}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT?=	Library and tool for encoding H.264/AVC video streams
@@ -25,26 +24,26 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	yasm>=0.6.0:${PORTSDIR}/devel/yasm \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
-X264_BUILD=	123
-X264_REV=	2189
-X264_COMMIT=	35cf912671fddcb3e701bf667a75f77dd8b28264
+X264_BUILD=	125
+X264_REV=	2201
+X264_COMMIT=	37be55213a39db40cf159ada319bd482a1b00680
 X264_GITVER=	${X264_COMMIT:C/^(.......).*$/\1/g}
+X264_SNAPSHOT=	20120721
 
-X264_GITVER=	35cf912
-
-USE_XZ=		yes
+USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	ASM "Assembly optimizations (devel/binutils)" On \
-		DEBUG "Enable Debugging" Off \
-		PGO "Enable Profile-Guided Optimization" On \
-		GCC44 "Use gcc 4.4+ (implies WITH_ASM)" Off \
-		GPAC "Enable MPEG-4 Output" On \
-		X11_OUTPUT "Enable X11 Output" Off
+OPTIONS_DEFINE=	ASM DEBUG PGO GCC44 GPAC X11_OUTPUT
+OPTIONS_DEFAULT=	ASM PGO GPAC
+ASM_DESC=		Assembly optimizations (devel/binutils)
+PGO_DESC=		Enable Profile-Guided Optimization
+GCC44_DESC=		Use gcc 4.4+ (implies WITH_ASM)
+GPAC_DESC=		Enable MPEG-4 Output
+X11_OUTPUT_DESC=	Enable X11 Output
 
 CONFIGURE_ARGS+=	--extra-cflags="${CPPFLAGS} ${CFLAGS} -fPIC -I${LOCALBASE}/include" \
 			--extra-ldflags="${LDFLAGS} -L${LOCALBASE}/lib" \
@@ -52,13 +51,15 @@ CONFIGURE_ARGS+=	--extra-cflags="${CPPFLAGS} ${CFLAGS} -fPIC -I${LOCALBASE}/incl
 
 PLIST_SUB+=	X264_BUILD=${X264_BUILD}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GCC44)
+.if ${PORT_OPTIONS:MGCC44}
 USE_GCC?=	4.4+
 .endif
 
-.if !defined(WITHOUT_ASM) || defined(WITH_GCC44)
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MASM} || ${PORT_OPTIONS:MGCC44}
 BUILD_DEPENDS+=		${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 CONFIGURE_ENV+=		COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=		COMPILER_PATH=${LOCALBASE}/bin
@@ -78,16 +79,16 @@ CONFIGURE_ENV+=	ARCH= \
 MAKE_ENV+=	ARCH= \
 		TARGET_ARCH=
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-.if defined(WITH_PGO) && ${SLAVE_PORT:L}!="yes"
+.if ${PORT_OPTIONS:MPGO} && ${SLAVE_PORT:L}!="yes"
 # y4m sample video
 Y4M_VIDEO=example.y4m
 Y4M_VIDEO_DISTFILE=example.y4m.bz2
 
-DISTFILES+=	${Y4M_VIDEO_DISTFILE}:pgo
+DISTFILES+=	${Y4M_VIDEO_DISTFILE}
 ALL_TARGET=	fprofiled
 MAKE_ENV+=	VIDS="${WRKDIR}/${Y4M_VIDEO}"
 
@@ -95,20 +96,20 @@ RESTRICTED=	${Y4M_VIDEO_DISTFILE} file may not be mirrored
 RESTRICTED_FILES=	${Y4M_VIDEO_DISTFILE}
 .endif
 
-.if !defined(WITHOUT_GPAC)
+.if ${PORT_OPTIONS:MGPAC}
 BUILD_DEPENDS+=		gpac-libgpac>=0.4.5,1:${PORTSDIR}/multimedia/gpac-libgpac
 LIB_DEPENDS+=		gpac.1:${PORTSDIR}/multimedia/gpac-libgpac
 .else
 CONFIGURE_ARGS+=	--disable-gpac
 .endif
 
-.if defined(WITH_X11_OUTPUT)
+.if ${PORT_OPTIONS:MX11_OUTPUT}
 CONFIGURE_ARGS+=	--enable-visualize
 USE_XORG=	x11
 .endif
 
 post-extract:
-.if defined(WITH_PGO) && ${SLAVE_PORT:L}!="yes"
+.if ${PORT_OPTIONS:MPGO} && ${SLAVE_PORT:L}!="yes"
 	@( cd ${WRKDIR} && ${BZIP2_CMD} -dc ${DISTDIR}/${DIST_SUBDIR}/${Y4M_VIDEO_DISTFILE} > ${Y4M_VIDEO} )
 .endif
 
@@ -122,7 +123,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|; \
 		s|$${libdir}/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile
-.if !defined(WITH_GCC44)
+.if ${PORT_OPTIONS:MGCC44}
 	@${REINPLACE_CMD} -e 's|$$(CC) -shared -o|COMPILER_PATH= $$(CC) -shared -o|g' \
 		-e 's|$$(CC) -o|COMPILER_PATH= $$(CC) -o|g' \
 		${WRKSRC}/Makefile
