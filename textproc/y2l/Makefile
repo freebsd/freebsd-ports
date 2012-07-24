@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Yacc-to-Latex pretty printer/convertor
+COMMENT=	Yacc-to-Latex pretty printer/converter
 
 NO_BUILD=	yes
 

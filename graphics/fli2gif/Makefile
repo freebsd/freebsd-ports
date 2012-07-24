@@ -13,7 +13,7 @@ MASTER_SITES=	http://jeff.bovine.net/download/fli2gif/
 DISTNAME=	${PORTNAME}b
 
 MAINTAINER=	ak@FreeBSD.org
-COMMENT=	Automatic Flic to animated GIF convertor
+COMMENT=	Automatic Flic to animated GIF converter
 
 NO_WRKSUBDIR=	yes
 

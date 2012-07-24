@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	CPAN:MONS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mons@cpan.org
-COMMENT=	Modern perl with unicode
+COMMENT=	Modern perl with Unicode
 
 RUN_DEPENDS=	p5-Encode>=2.37:${PORTSDIR}/converters/p5-Encode \
 		p5-lib-abs>=0.90:${PORTSDIR}/devel/p5-lib-abs

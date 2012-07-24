@@ -11,7 +11,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Conversions to/from UTF8 from/to charactersets
+COMMENT=	Conversions to/from UTF-8 from/to charactersets
 
 PERL_CONFIGURE=	yes
 

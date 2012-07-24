@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Unicode functions for utf8, iso-latin-* and other encodings
+COMMENT=	Unicode functions for UTF-8, iso-latin-* and other encodings
 
 CABAL_SETUP=	Setup.hs
 

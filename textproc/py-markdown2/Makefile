@@ -12,7 +12,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	A fast and complete Python implementaion of Markdown
+COMMENT=	A fast and complete Python implementation of Markdown
 
 USE_ZIP=	yes
 USE_PYTHON=	2.5+

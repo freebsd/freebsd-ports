@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	python
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An iconv wrapper with unicode codec for Python
+COMMENT=	An iconv wrapper with Unicode codec for Python
 
 USE_ICONV=	yes
 USE_PYTHON=	yes

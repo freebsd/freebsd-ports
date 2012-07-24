@@ -15,7 +15,7 @@ MASTER_SITES=	http://users.skynet.be/ppc/cwirc/download/ \
 MASTER_SITE_SUBDIR=	db
 
 MAINTAINER=	db@FreeBSD.org
-COMMENT=	X-Chat morse plugin
+COMMENT=	X-Chat Morse plugin
 
 BUILD_DEPENDS=	xchat:${PORTSDIR}/irc/xchat
 

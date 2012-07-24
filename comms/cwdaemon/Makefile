@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.chronos.org.uk/download/ \
 MASTER_SITE_SUBDIR=	db
 
 MAINTAINER=	db@FreeBSD.org
-COMMENT=	Amateur Radio cw (morse code) keyer daemon
+COMMENT=	Amateur Radio cw (Morse code) keyer daemon
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	cw:${PORTSDIR}/comms/unixcw

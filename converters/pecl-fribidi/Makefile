@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A PECL extension for the unicode Bidi algorithm
+COMMENT=	A PECL extension for the Unicode Bidi algorithm
 
 LIB_DEPENDS=	fribidi.3:${PORTSDIR}/converters/fribidi
 

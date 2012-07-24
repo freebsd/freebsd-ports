@@ -10,7 +10,7 @@ PORTVERSION=	1.0.3
 CATEGORIES=	converters www pear
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	PHP implementaion of json_encode/decode
+COMMENT=	PHP implementation of json_encode/decode
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS:=	${BUILD_DEPENDS}

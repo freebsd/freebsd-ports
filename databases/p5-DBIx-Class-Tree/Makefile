@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
-COMMENT=	Perl extension to manipulate and anaylze tree structured data
+COMMENT=	Perl extension to manipulate and analyze tree structured data
 
 RUN_DEPENDS=	\
 	p5-DBIx-Class>=0.08100:${PORTSDIR}/databases/p5-DBIx-Class

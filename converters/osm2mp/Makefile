@@ -11,7 +11,7 @@ CATEGORIES=	converters geography
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	OpenStreetMap data into Polish map format (MP) convertor
+COMMENT=	OpenStreetMap data into Polish map format (MP) converter
 
 RUN_DEPENDS=	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
 		p5-Encode-Locale>=0:${PORTSDIR}/converters/p5-Encode-Locale \
