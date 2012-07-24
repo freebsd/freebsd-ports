@@ -1,5 +1,3 @@
-bin/arse
-bin/arse-core
 bin/s9
 bin/s9help
 bin/s9resolve
@@ -15,12 +13,9 @@ bin/scmpp
 %%DATADIR%%/append-to-output-file.scm
 %%DATADIR%%/appendb.scm
 %%DATADIR%%/array.scm
-%%DATADIR%%/arse-core.image
-%%DATADIR%%/arse.help
-%%DATADIR%%/arse.porting
-%%DATADIR%%/arse.scm
 %%DATADIR%%/assp.scm
 %%DATADIR%%/basename.scm
+%%DATADIR%%/bitops.scm
 %%DATADIR%%/bitwise-ops.scm
 %%DATADIR%%/c2html.scm
 %%DATADIR%%/catch.scm
@@ -54,6 +49,8 @@ bin/scmpp
 %%DATADIR%%/format-time.scm
 %%DATADIR%%/format.scm
 %%DATADIR%%/format.txt
+%%DATADIR%%/get-line.scm
+%%DATADIR%%/get-prop.scm
 %%DATADIR%%/graph-tools.scm
 %%DATADIR%%/group-list.scm
 %%DATADIR%%/hash-table.scm
@@ -82,7 +79,6 @@ bin/scmpp
 %%DATADIR%%/help/array-ref
 %%DATADIR%%/help/array-setb
 %%DATADIR%%/help/arrayp
-%%DATADIR%%/help/arse
 %%DATADIR%%/help/asin
 %%DATADIR%%/help/assert-record-type
 %%DATADIR%%/help/assoc
@@ -93,6 +89,23 @@ bin/scmpp
 %%DATADIR%%/help/basename
 %%DATADIR%%/help/begin
 %%DATADIR%%/help/binary-string-to-integer
+%%DATADIR%%/help/bit-op
+%%DATADIR%%/help/bit0
+%%DATADIR%%/help/bit1
+%%DATADIR%%/help/bita
+%%DATADIR%%/help/bitb
+%%DATADIR%%/help/bitca
+%%DATADIR%%/help/bitcb
+%%DATADIR%%/help/bitcplus
+%%DATADIR%%/help/bitcstar
+%%DATADIR%%/help/biteq
+%%DATADIR%%/help/bitneq
+%%DATADIR%%/help/bitnplus
+%%DATADIR%%/help/bitnstar
+%%DATADIR%%/help/bitplus
+%%DATADIR%%/help/bitplusc
+%%DATADIR%%/help/bitstar
+%%DATADIR%%/help/bitstarc
 %%DATADIR%%/help/bitwise-1
 %%DATADIR%%/help/bitwise-2
 %%DATADIR%%/help/bitwise-and
@@ -248,6 +261,7 @@ bin/scmpp
 %%DATADIR%%/help/curs_standout
 %%DATADIR%%/help/curs_unctrl
 %%DATADIR%%/help/curs_ungetch
+%%DATADIR%%/help/data-structures
 %%DATADIR%%/help/decb
 %%DATADIR%%/help/define
 %%DATADIR%%/help/define-class
@@ -312,7 +326,10 @@ bin/scmpp
 %%DATADIR%%/help/gcd
 %%DATADIR%%/help/ge
 %%DATADIR%%/help/gensym
+%%DATADIR%%/help/get-line
+%%DATADIR%%/help/get-prop
 %%DATADIR%%/help/go
+%%DATADIR%%/help/graph-tools
 %%DATADIR%%/help/group-list
 %%DATADIR%%/help/gt
 %%DATADIR%%/help/hash-table-length
@@ -435,6 +452,8 @@ bin/scmpp
 %%DATADIR%%/help/posv
 %%DATADIR%%/help/pp
 %%DATADIR%%/help/pp-file
+%%DATADIR%%/help/pp-loop
+%%DATADIR%%/help/pp-string
 %%DATADIR%%/help/predicateb
 %%DATADIR%%/help/pretty-print
 %%DATADIR%%/help/print
@@ -443,6 +462,8 @@ bin/scmpp
 %%DATADIR%%/help/prolog
 %%DATADIR%%/help/proper-timep
 %%DATADIR%%/help/pushb
+%%DATADIR%%/help/put-prop
+%%DATADIR%%/help/put-propb
 %%DATADIR%%/help/quasiquote
 %%DATADIR%%/help/query
 %%DATADIR%%/help/queue
@@ -476,6 +497,8 @@ bin/scmpp
 %%DATADIR%%/help/record-to-list
 %%DATADIR%%/help/record-type-matches
 %%DATADIR%%/help/recordp
+%%DATADIR%%/help/rem-prop
+%%DATADIR%%/help/rem-propb
 %%DATADIR%%/help/remainder
 %%DATADIR%%/help/remove
 %%DATADIR%%/help/remp
@@ -522,7 +545,6 @@ bin/scmpp
 %%DATADIR%%/help/stats
 %%DATADIR%%/help/stream-any
 %%DATADIR%%/help/stream-eosp
-%%DATADIR%%/help/string-expand
 %%DATADIR%%/help/stream-extract
 %%DATADIR%%/help/stream-id
 %%DATADIR%%/help/stream-iota
@@ -551,6 +573,7 @@ bin/scmpp
 %%DATADIR%%/help/string-copy
 %%DATADIR%%/help/string-digest
 %%DATADIR%%/help/string-downcase
+%%DATADIR%%/help/string-expand
 %%DATADIR%%/help/string-fillb
 %%DATADIR%%/help/string-find
 %%DATADIR%%/help/string-find-last
@@ -564,6 +587,8 @@ bin/scmpp
 %%DATADIR%%/help/string-mapb
 %%DATADIR%%/help/string-parse
 %%DATADIR%%/help/string-position
+%%DATADIR%%/help/string-prefix-cieqp
+%%DATADIR%%/help/string-prefixeqp
 %%DATADIR%%/help/string-ref
 %%DATADIR%%/help/string-reverse
 %%DATADIR%%/help/string-scan
@@ -589,9 +614,11 @@ bin/scmpp
 %%DATADIR%%/help/substring
 %%DATADIR%%/help/subvector
 %%DATADIR%%/help/sum
+%%DATADIR%%/help/swapb
 %%DATADIR%%/help/symbol-to-string
 %%DATADIR%%/help/symbolp
 %%DATADIR%%/help/symbols
+%%DATADIR%%/help/syntax-extensions
 %%DATADIR%%/help/syntax-rules
 %%DATADIR%%/help/syntaxp
 %%DATADIR%%/help/sys_access
@@ -717,9 +744,15 @@ bin/scmpp
 %%DATADIR%%/help/thread-yield
 %%DATADIR%%/help/throw
 %%DATADIR%%/help/time
+%%DATADIR%%/help/time-add
+%%DATADIR%%/help/time-afterp
+%%DATADIR%%/help/time-beforep
+%%DATADIR%%/help/time-difference
+%%DATADIR%%/help/time-subtract
 %%DATADIR%%/help/time-to-unix-time
 %%DATADIR%%/help/trace
 %%DATADIR%%/help/transpose
+%%DATADIR%%/help/tree-copy
 %%DATADIR%%/help/tree-equalp
 %%DATADIR%%/help/tree-map
 %%DATADIR%%/help/true
@@ -817,6 +850,8 @@ bin/scmpp
 %%DATADIR%%/runtime-stats.scm
 %%DATADIR%%/s9.image
 %%DATADIR%%/s9.scm
+%%DATADIR%%/s9sos.scm
+%%DATADIR%%/s9sos.txt
 %%DATADIR%%/scheme.css
 %%DATADIR%%/scm2html.scm
 %%DATADIR%%/search-path.scm
@@ -826,8 +861,6 @@ bin/scmpp
 %%DATADIR%%/sieve.scm
 %%DATADIR%%/simple-module.scm
 %%DATADIR%%/sort.scm
-%%DATADIR%%/sos.scm
-%%DATADIR%%/sos.txt
 %%DATADIR%%/spawn-command.scm
 %%DATADIR%%/spawn-shell-command.scm
 %%DATADIR%%/split-url.scm
@@ -844,6 +877,7 @@ bin/scmpp
 %%DATADIR%%/string-map.scm
 %%DATADIR%%/string-parse.scm
 %%DATADIR%%/string-position.scm
+%%DATADIR%%/string-prefixeqp.scm
 %%DATADIR%%/string-reverse.scm
 %%DATADIR%%/string-scan.scm
 %%DATADIR%%/string-split.scm
@@ -855,7 +889,6 @@ bin/scmpp
 %%DATADIR%%/substitute.scm
 %%DATADIR%%/subvector.scm
 %%DATADIR%%/sum.scm
-%%DATADIR%%/swapb.scm
 %%DATADIR%%/symbols.scm
 %%DATADIR%%/syntax-extensions.scm
 %%DATADIR%%/syntax-rules.scm
@@ -863,6 +896,7 @@ bin/scmpp
 %%DATADIR%%/tagbody.scm
 %%DATADIR%%/threads.scm
 %%DATADIR%%/time-to-unix-time.scm
+%%DATADIR%%/time-ops.scm
 %%DATADIR%%/time.scm
 %%DATADIR%%/transpose.scm
 %%DATADIR%%/tree-copy.scm
