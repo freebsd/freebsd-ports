@@ -11,7 +11,7 @@ CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	DataMapper plugin for writing and speccing migrations
+COMMENT=	DataMapper plugin for writing and specifying migrations
 
 RUN_DEPENDS=	rubygem-dm-core>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-dm-core
 

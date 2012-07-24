@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	CPAN:VVELOX
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
-COMMENT=	Background management utitility and Perl module that uses ZConf
+COMMENT=	Background management utility and Perl module that uses ZConf
 
 BUILD_DEPENDS=	p5-Image-Size-FillFullSelect>=0.1.0:${PORTSDIR}/graphics/p5-Image-Size-FillFullSelect \
 		p5-ZConf>=:${PORTSDIR}/net/p5-ZConf \

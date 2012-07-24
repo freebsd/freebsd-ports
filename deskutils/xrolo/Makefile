@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}.v2p6
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Electronic rolodex
+COMMENT=	Electronic Rolodex
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 

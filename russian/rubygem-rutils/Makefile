@@ -10,7 +10,7 @@ CATEGORIES=	russian devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Simple processing of russian strings
+COMMENT=	Simple processing of Russian strings
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Perl extension for detecting and converting various russian character sets
+COMMENT=	Perl extension for detecting and converting various Russian character sets
 
 PERL_CONFIGURE=	YES
 

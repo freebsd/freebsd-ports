@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	pecl-
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	vanilla@FreeBSD.org
-COMMENT=	A PECL extension for google ctemplate library
+COMMENT=	A PECL extension for Google ctemplate library
 
 LIB_DEPENDS=	ctemplate.2:${PORTSDIR}/textproc/google-ctemplate
 
