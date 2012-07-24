@@ -24,6 +24,14 @@ JAVA_VENDOR=	openjdk
 JAVA_VERSION=	1.6
 USE_XORG=	x11
 
+OPTIONS_DEFINE=	PLUGIN RHINO TEST
+OPTIONS_DEFAULT=PLUGIN
+PLUGIN_DESC=	Enable the browser plug-in
+RHINO_DESC=	Add support for Proxy Auto Config files
+TEST_DESC=	Add support for running regression test
+
+.include <bsd.port.options.mk>
+
 MAN1=		itweb-javaws.1
 PLIST_FILES=	bin/itweb-javaws bin/itweb-settings \
 		share/applications/itweb-javaws.desktop \
@@ -38,17 +46,9 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
 CONFIGURE_ARGS+=--with-ecj=no --with-jdk-home="${JAVA_HOME}"
 
-.include <bsd.port.options.mk>
-
-OPTIONS_DEFINE=	PLUGIN RHINO TEST
-OPTIONS_DEFAULT=PLUGIN
-PLUGIN_DESC=	Enable the browser plug-in
-RHINO_DESC=	Add support for Proxy Auto Config files
-TEST_DESC=	Add support for running regression test
-
 .include <bsd.port.pre.mk>
 
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 CONFIGURE_ARGS+=	--disable-docs
 .endif
 
