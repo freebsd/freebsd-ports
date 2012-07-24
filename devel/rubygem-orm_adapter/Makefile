@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	orm_adapter
-PORTVERSION=	0.0.7
+PORTVERSION=	0.4.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
