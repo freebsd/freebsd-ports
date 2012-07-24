@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	actionpack
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.6
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -14,16 +14,13 @@ COMMENT=	Action Controller and Action View of Rails MVC Framework
 
 RUN_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-activemodel>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-activemodel \
-		rubygem-tzinfo>=0.3.23:${PORTSDIR}/devel/rubygem-tzinfo \
-		rubygem-erubis>=2.7.0:${PORTSDIR}/www/rubygem-erubis \
-		rubygem-rack>=1.4.0:${PORTSDIR}/www/rubygem-rack \
-		rubygem-rack-cache>=1.1:${PORTSDIR}/www/rubygem-rack-cache \
-		rubygem-rack-mount>=0.8.2:${PORTSDIR}/www/rubygem-rack-mount \
-		rubygem-rack-test>=0.6.1:${PORTSDIR}/www/rubygem-rack-test \
 		rubygem-builder>=3.0.0:${PORTSDIR}/devel/rubygem-builder \
-		rubygem-i18n>=0.6:${PORTSDIR}/devel/rubygem-i18n \
-		rubygem-sprockets>=2.1.2:${PORTSDIR}/devel/rubygem-sprockets \
-		rubygem-journey>=1.0.0:${PORTSDIR}/www/rubygem-journey
+		rubygem-erubis>=2.7.0:${PORTSDIR}/www/rubygem-erubis \
+		rubygem-journey>=1.0.1:${PORTSDIR}/www/rubygem-journey \
+		rubygem-rack>=1.4.0:${PORTSDIR}/www/rubygem-rack \
+		rubygem-rack-cache>=1.2:${PORTSDIR}/www/rubygem-rack-cache \
+		rubygem-rack-test>=0.6.1:${PORTSDIR}/www/rubygem-rack-test \
+		rubygem-sprockets>=2.1.3:${PORTSDIR}/devel/rubygem-sprockets
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

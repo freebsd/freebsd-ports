@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rails
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.6
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -18,6 +18,7 @@ RUN_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-act
 		rubygem-actionmailer>=${PORTVERSION}:${PORTSDIR}/mail/rubygem-actionmailer \
 		rubygem-activeresource>=${PORTVERSION}:${PORTSDIR}/www/rubygem-activeresource \
 		rubygem-railties>=${PORTVERSION}:${PORTSDIR}/www/rubygem-railties \
+		rubygem-rake>=0.8.7:${PORTSDIR}/devel/rubygem-rake \
 		rubygem-sass-rails>=1.0.18:${PORTSDIR}/textproc/rubygem-sass-rails \
 		rubygem-coffee-rails>=3.1.1:${PORTSDIR}/devel/rubygem-coffee-rails \
 		rubygem-jquery-rails>=1.0.18:${PORTSDIR}/www/rubygem-jquery-rails \
@@ -26,7 +27,7 @@ RUN_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-act
 		rubygem-bundler>=1.0:${PORTSDIR}/sysutils/rubygem-bundler \
 		rubygem-treetop>=1.4.10:${PORTSDIR}/devel/rubygem-treetop \
 		rubygem-json>=1.6.1:${PORTSDIR}/devel/rubygem-json \
-		js:${PORTSDIR}/lang/spidermonkey
+		node:${PORTSDIR}/www/node
 
 # XXX: rails3 gem no longer has a lib/ dir
 # XXX: which breaks devel/ruby-gems specification.

@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	activerecord
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.6
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -15,17 +15,17 @@ COMMENT=	Object-relational mapping layer for Rails MVC Framework
 RUN_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-activemodel>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-activemodel \
 		rubygem-tzinfo>=0.3.29:${PORTSDIR}/devel/rubygem-tzinfo \
-		rubygem-arel>=3.0.0:${PORTSDIR}/databases/rubygem-arel
+		rubygem-arel>=3.0.2:${PORTSDIR}/databases/rubygem-arel
 
-USE_RUBY=   yes
-USE_RUBYGEMS=   yes
-RUBYGEM_AUTOPLIST=  yes
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
 
 OPTIONS= \
 	NATIVE_MYSQL 		"Use native MySQL bindings" 		Off \
 	NATIVE_POSTGRESQL 	"Use native PostgreSQL bindings" 	Off \
 	NATIVE_SQLITE3 		"Use native SQLite3 bindings" 		Off
-OPTIONSFILE=   ${PORT_DBDIR}/rubygem-${PORTNAME}/options
+OPTIONSFILE=	${PORT_DBDIR}/rubygem-${PORTNAME}/options
 
 .include <bsd.port.options.mk>
 
