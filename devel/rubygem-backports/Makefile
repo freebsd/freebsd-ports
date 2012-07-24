@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	backports
-PORTVERSION=	2.6.1
+PORTVERSION=	2.6.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
