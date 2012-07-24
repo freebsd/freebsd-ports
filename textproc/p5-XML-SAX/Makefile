@@ -27,7 +27,7 @@ MAN3=		XML::SAX.3 XML::SAX::DocumentLocator.3 XML::SAX::Intro.3 \
 
 OPTIONS_DEFINE=	WRITE_INI_OK
 
-WRITE_INI_OK_DESC=	Alter ParserDetails.ini with relevant information
+WRITE_INI_OK_DESC=	Alter ParserDetails.ini information
 
 .include <bsd.port.options.mk>
 
