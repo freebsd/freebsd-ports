@@ -17,8 +17,9 @@ COMMENT=	Multiple GNOME terminals in one window
 
 LICENSE=	GPLv2
 
-OPTIONS=	NLS	"Native language support" 	on \
-		GCONF	"Use GNOME Terminal settings"	on
+OPTIONS_DEFINE=	NLS GCONF
+GCONF_DESC=	Use GNOME Terminal settings
+OPTIONS_DEFAULT=	NLS GCONF
 
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
@@ -31,7 +32,7 @@ WANT_GNOME=	yes
 .include <bsd.port.pre.mk>
 
 PYSETUP+=	--without-icon-cache
-.ifdef(WITHOUT_NLS)
+.if empty(PORT_OPTIONS:MNLS)
 PLIST_SUB+=	NLS="@comment "
 PYSETUP+=	--without-gettext
 .else
@@ -40,7 +41,7 @@ PLIST_SUB+=	NLS=""
 .endif
 
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/vtemodule.so:${PORTSDIR}/x11-toolkits/py-vte
-.if defined(WITH_GCONF)
+.if ${PORT_OPTIONS:MGCONF}
 USE_GNOME+=	pygnome2
 .endif
 USE_GNOME+=	pygtk2
