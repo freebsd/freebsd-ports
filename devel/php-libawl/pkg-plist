@@ -15,6 +15,7 @@
 %%LIBAWLDIR%%/inc/DataUpdate.php
 %%LIBAWLDIR%%/inc/EMail.php
 %%LIBAWLDIR%%/inc/MenuSet.php
+%%LIBAWLDIR%%/inc/Multipart.php
 %%LIBAWLDIR%%/inc/PgQuery.php
 %%LIBAWLDIR%%/inc/Session.php
 %%LIBAWLDIR%%/inc/Translation.php
