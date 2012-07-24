@@ -46,6 +46,9 @@ PLIST_DIRSTRY+=	share/zsh/site-functions
 PLIST_DIRSTRY+=	share/zsh/
 .endif
 
+post-patch:
+	@find ${WRKSRC} -name "*.orig" -delete
+
 post-install:
 	@${TOUCH} ${PREFIX}/poudriere/cron/.keep
 .if defined(WITH_ZSH)
