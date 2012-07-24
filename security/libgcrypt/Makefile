@@ -35,16 +35,14 @@ INFO=	gcrypt
 
 .if ${ARCH} == "powerpc"
 CONFIGURE_ARGS+=	--disable-asm
+BROKEN=	will not compile. See pr ports/166388
 .elif ${ARCH} == "i386"
 .if (${OSVERSION} < 900033)
-CONFIGURE_ARGS+=  --disable-aesni-support
+CONFIGURE_ARGS+=	--disable-aesni-support
 #workaround for FreeBSD 10.0
 .elif (${OSVERSION} >= 1000000)
-CONFIGURE_ARGS+=  --disable-asm
+CONFIGURE_ARGS+=	--disable-asm
 .endif
-.endif
-.if (${OSVERSION} < 700000)
-CONFIGURE_ARGS+=	--disable-padlock-support
 .endif
 
 post-patch:
