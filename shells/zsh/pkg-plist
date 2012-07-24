@@ -557,7 +557,6 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_surfraw
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_sysctl
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_systemd
-%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_systemctl
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_tar
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_tar_archive
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_tardy
