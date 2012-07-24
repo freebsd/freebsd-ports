@@ -17,17 +17,17 @@ COMMENT=	Bug-tracking system developed by Mozilla Project
 LICENSE=	MPL
 
 RUN_DEPENDS=	\
-		p5-TimeDate>=1.19:${PORTSDIR}/devel/p5-TimeDate \
+		p5-CGI.pm>=3.51:${PORTSDIR}/www/p5-CGI.pm \
 		p5-DBI>=1.41:${PORTSDIR}/databases/p5-DBI \
-		p5-Template-Toolkit>=2.22:${PORTSDIR}/www/p5-Template-Toolkit \
-		p5-DateTime>=0.28:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-TimeZone>=0.71:${PORTSDIR}/devel/p5-DateTime-TimeZone \
+		p5-DateTime>=0.28:${PORTSDIR}/devel/p5-DateTime \
+		p5-Email-MIME>=1.904:${PORTSDIR}/mail/p5-Email-MIME \
+		p5-Email-Send>=2.00:${PORTSDIR}/mail/p5-Email-Send \
 		p5-List-MoreUtils>=0.22:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Math-Random-Secure>=0.05:${PORTSDIR}/math/p5-Math-Random-Secure \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-CGI.pm>=3.51:${PORTSDIR}/www/p5-CGI.pm \
-		p5-Email-Send>=2.00:${PORTSDIR}/mail/p5-Email-Send \
-		p5-Email-MIME>=1.904:${PORTSDIR}/mail/p5-Email-MIME
+		p5-Template-Toolkit>=2.22:${PORTSDIR}/www/p5-Template-Toolkit \
+		p5-TimeDate>=1.19:${PORTSDIR}/devel/p5-TimeDate \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
 USE_PERL5=	yes
 
@@ -38,29 +38,10 @@ SUB_FILES=	pkg-message
 DATA_DIRS_LIST=	images js skins
 
 .include "${.CURDIR}/Makefile.common"
-
-OPTIONS=	MYSQL "MySQL database support" off \
-		PGSQL "PostgreSQL database support" off \
-		GRAPH_REPORTS "Graphical Reports" on \
-		CHARTING_MODULES "Bug charting support" on \
-		PATCH_VIEWER "Patch Viewer" on \
-		MORE_HTML "More HTML in Product/Group Descriptions" on \
-		INBOUND_EMAIL "Inbound Email" off \
-		MAIL_QUEUEING "Mail Queueing" off \
-		MOVE_BUGZ "Move Bugs Between Installations" off \
-		BMP2PNG "BMP Attachments to PNGs" off \
-		XMLRPC "XML-RPC Interface" off \
-		JSONRPC "JSON-RPC Interface" off \
-		MODPERL2 "With mod_perl2 support" off \
-		GRAPHVIZ "Use GraphViz" off \
-		EXPORT_IMPORT "Import/export bugs (via XML)" off \
-		CONTRIB	"Install user-contributed scripts" on \
-		LDAP "LDAP Authentication" off \
-		RADIUS "RADIUS Authentication" off
-
+.include "${.CURDIR}/Makefile.options"
 .include <bsd.port.options.mk>
 
-.ifdef (WITH_MODPERL2)
+.if ${PORT_OPTIONS:MMODPERL}
 USE_APACHE_RUN=	20+
 .endif
 
@@ -70,101 +51,102 @@ USE_APACHE_RUN=	20+
 RUN_DEPENDS+=	p5-Digest-SHA>=5.47:${PORTSDIR}/security/p5-Digest-SHA
 .endif
 
-.ifdef WITH_MYSQL
-RUN_DEPENDS+=	p5-DBD-mysql>=2.9003:${PORTSDIR}/databases/p5-DBD-mysql
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
+RUN_DEPENDS+=	p5-DBD-mysql>=2.9003:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
-.ifdef WITH_PGSQL
-RUN_DEPENDS+=	p5-DBD-Pg>=1.45:${PORTSDIR}/databases/p5-DBD-Pg
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
+RUN_DEPENDS+=	p5-DBD-Pg>=1.45:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
-.ifdef WITH_GRAPH_REPORTS
+.if ${PORT_OPTIONS:MGRAPH_REPORTS}
 RUN_DEPENDS+=	p5-GD>=1.20:${PORTSDIR}/graphics/p5-GD \
 		p5-GD-Graph>=0:${PORTSDIR}/graphics/p5-GD-Graph \
 		p5-GD-TextUtil>=0:${PORTSDIR}/graphics/p5-GD-TextUtil \
 		p5-Template-GD>=0:${PORTSDIR}/www/p5-Template-GD
 .endif
 
-.ifdef WITH_CHARTING_MODULES
+.if ${PORT_OPTIONS:MCHARTING_MODULES}
 RUN_DEPENDS+=	p5-Chart>=2.1:${PORTSDIR}/graphics/p5-Chart
 .endif
 
-.ifdef WITH_PATCH_VIEWER
+.if ${PORT_OPTIONS:MPATCH_VIEWER}
 RUN_DEPENDS+=	p5-PatchReader>=0.9.4:${PORTSDIR}/devel/p5-PatchReader \
 		interdiff:${PORTSDIR}/misc/patchutils
 .endif
 
-.ifdef WITH_MORE_HTML
+.if ${PORT_OPTIONS:MMORE_HTML}
 RUN_DEPENDS+=	p5-HTML-Parser>=3.40:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-HTML-Scrubber>=0:${PORTSDIR}/www/p5-HTML-Scrubber
 .endif
 
-.ifdef WITH_INBOUND_EMAIL
+.if ${PORT_OPTIONS:MINBOUND_EMAIL}
 RUN_DEPENDS+=	p5-Email-MIME-Attachment-Stripper>=0:${PORTSDIR}/mail/p5-Email-MIME-Attachment-Stripper \
 		p5-Email-Reply>=0:${PORTSDIR}/mail/p5-Email-Reply
 .endif
 
-.ifdef WITH_MAIL_QUEUEING
+.if ${PORT_OPTIONS:MMAIL_QUEUEING}
 RUN_DEPENDS+=	p5-TheSchwartz>=0:${PORTSDIR}/devel/p5-TheSchwartz \
 		p5-Daemon-Generic>=0:${PORTSDIR}/net/p5-Daemon-Generic
 .endif
 
-.ifdef WITH_MOVE_BUGZ
+.if ${PORT_OPTIONS:MMOVE_BUGZ}
 RUN_DEPENDS+=	p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
 		p5-XML-Twig>=0:${PORTSDIR}/textproc/p5-XML-Twig
 .endif
 
-.ifdef WITH_BMP2PNG
+.if ${PORT_OPTIONS:MBMP2PNG}
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 
-.if defined(WITH_XMLRPC) || defined(WITH_JSONRPC)
+.if ${PORT_OPTIONS:MXMLRPC} || ${PORT_OPTIONS:MJSONRPC}
 RUN_DEPENDS+=	p5-Test-Taint>=0:${PORTSDIR}/devel/p5-Test-Taint
 .endif
 
-.ifdef WITH_XMLRPC
+.if ${PORT_OPTIONS:MXMLRPC}
 RUN_DEPENDS+=	p5-SOAP-Lite>=0.712:${PORTSDIR}/net/p5-SOAP-Lite
 .endif
 
-.ifdef WITH_JSONRPC
+.if ${PORT_OPTIONS:MJSONRPC}
 RUN_DEPENDS+=	p5-JSON-RPC>=0:${PORTSDIR}/devel/p5-JSON-RPC \
 		p5-JSON-XS>=2.0:${PORTSDIR}/converters/p5-JSON-XS
 .endif
 
-.ifdef WITH_MODPERL2
+.if ${PORT_OPTIONS:MMODPERL}
 RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
 		p5-Apache-DBI>=0:${PORTSDIR}/www/p5-Apache-DBI
 .endif
 
-.ifdef WITH_GRAPHVIZ
+.if ${PORT_OPTIONS:MWITH_GRAPHVIZ}
 RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 .endif
 
-.ifdef WITH_EXPORT_IMPORT
+.if ${PORT_OPTIONS:MEXPORT_IMPORT}
 RUN_DEPENDS+=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		p5-XML-Twig>=0:${PORTSDIR}/textproc/p5-XML-Twig
 .endif
 
-.ifdef WITH_CONTRIB
+.if ${PORT_OPTIONS:MCONTRIB}
 PLIST_SUB+=	CONTRIB=""
 .else
 PLIST_SUB+=	CONTRIB="@comment "
 .endif
 
-.ifdef WITH_LDAP
+.if ${PORT_OPTIONS:MLDAP}
 RUN_DEPENDS+=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 .endif
 
-.ifdef WITH_RADIUS
+.if ${PORT_OPTIONS:MRADIUS}
 RUN_DEPENDS+=	p5-Authen-Radius>=0:${PORTSDIR}/security/p5-Authen-Radius
 .endif
 
 post-patch:
 	@${PERL} -pi -e 's/(default => ON_WINDOWS.+)apache/$$1www/' \
 		${WRKSRC}/Bugzilla/Install/Localconfig.pm
-.if defined(WITH_PGSQL) && !defined(WITH_MYSQL)
+
+.if ${PORT_OPTIONS:MPGSQL} && empty(PORT_OPTIONS:MMYSQL)
 	@${PERL} -pi -e 's/(default =>.+|Default is )mysql/$$1Pg/' \
 		${WRKSRC}/Bugzilla/Install/Localconfig.pm
 .endif
@@ -185,14 +167,16 @@ do-install:	.SILENT
 	(cd ${WRKSRC}/${D} && ${COPYTREE_SHARE} . ${WWWDIR}/${D})
 .endfor
 	${TAR} -C ${WRKSRC} -cf - Bugzilla template | ${TAR} --unlink -C ${WWWDIR} -xf -
-.ifndef NOPORTDOCS
+
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${DOCSDIR}/)
 .endif
-# This are empty directories but they are needed,
-# else ckecksetup.pl will fail!
+
+# checksetup will fail if these directories are not present!
 	${MKDIR} ${WWWDIR}/contrib ${WWWDIR}/lib ${WWWDIR}/t ${WWWDIR}/xt
-.ifdef WITH_CONTRIB
+
+.if ${PORT_OPTIONS:MCONTRIB}
 	@cd ${WRKSRC}/contrib && \
 		${FIND} . -type d -exec ${MKDIR} "${WWWDIR}/contrib/{}" \; && \
 		${FIND} . -type f -exec ${INSTALL_DATA} "{}" "${WWWDIR}/contrib/{}" \;
