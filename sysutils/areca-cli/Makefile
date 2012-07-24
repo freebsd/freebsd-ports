@@ -23,8 +23,8 @@ PERIODICSCRIPT=	407.status-areca-raid
 USE_ZIP=	yes
 NO_BUILD=	yes
 
-CLI_VER=	1.84
-CLI_REV=	101109
+CLI_VER=	1.86
+CLI_REV=	111101
 
 SUB_FILES+=	${PERIODICSCRIPT}
 
@@ -36,7 +36,7 @@ do-install:
 .if ${ARCH} == "i386"
 		${INSTALL_PROGRAM} ${WRKSRC}/${ARCH}/cli32 ${PREFIX}/sbin/areca-cli
 .elif ${ARCH} == "amd64"
-		${INSTALL_PROGRAM} ${WRKSRC}/x86-64/cli64 ${PREFIX}/sbin/areca-cli
+		${INSTALL_PROGRAM} ${WRKSRC}/x86_64/cli64 ${PREFIX}/sbin/areca-cli
 .endif
 		@${MKDIR} ${PREFIX}/etc/periodic/daily
 		${INSTALL_SCRIPT} ${WRKDIR}/${PERIODICSCRIPT} ${PREFIX}/etc/periodic/daily
