@@ -24,6 +24,9 @@ USE_GMAKE=	yes
 ALL_TARGET=	default
 MAKE_JOBS_SAFE=	yes
 
+DEPRECATED=	Upstream abandoned this project.
+EXPIRATION_DATE=	2012-08-24
+
 PLIST_FILES=	include/tfm.h lib/libtfm.a
 
 .include <bsd.port.pre.mk>

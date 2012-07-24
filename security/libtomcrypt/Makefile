@@ -25,6 +25,9 @@ USE_GMAKE=	yes
 ALL_TARGET=	library
 MAKE_JOBS_SAFE=	yes
 
+DEPRECATED=	Upstream abandoned this project.
+EXPIRATION_DATE=	2012-08-24
+
 CFLAGS+=	-I${PREFIX}/include
 
 OPTIONS=	DOCS "build documentation (depends on teTeX)" off \
