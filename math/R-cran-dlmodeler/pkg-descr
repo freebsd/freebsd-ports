@@ -1,0 +1,8 @@
+dlmodeler is a set of user-friendly functions to simplify the state-space
+modelling, fitting, analysis and forecasting of Generalized Dynamic Linear
+Models (DLMs). It includes functions to name and extract individual components
+of a DLM, build classical seasonal time-series models (monthly, quarterly,
+yearly, etc. with calendar adjustments) and provides a unified interface
+compatible with other state-space packages including: dlm, FKF and KFAS.
+
+WWW: http://cran.r-project.org/web/packages/dlmodeler/
