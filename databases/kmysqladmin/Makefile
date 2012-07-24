@@ -12,7 +12,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.alwins-world.de/programs/download/kmysqladmin/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A graphical frontend for administration of mysql servers
+COMMENT=	A graphical frontend for administration of MySQL servers
 
 USE_AUTOTOOLS=	libtool
 USE_MYSQL=	yes

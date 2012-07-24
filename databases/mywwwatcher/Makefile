@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.the.cz/mywwwatcher/files/
 DISTNAME=	mywwwatcher-${PORTVERSION}
 
 MAINTAINER=	pm@kostax.cz
-COMMENT=	Simply web-based mysql client + tools (dump, import, scheme, ...)
+COMMENT=	Simply web-based MySQL client + tools (dump, import, scheme, ...)
 
 WRKSRC=		${WRKDIR}/mywwwatcher
 

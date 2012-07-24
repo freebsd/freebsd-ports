@@ -11,7 +11,7 @@ CATEGORIES=	databases gnome
 PKGNAMESUFFIX?=	-mysql
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Provides mysql backend for the libgda4 library
+COMMENT=	Provides MySQL backend for the libgda4 library
 
 MASTERDIR=	${.CURDIR}/../libgda4
 BUILD_WRKSRC=	${WRKSRC}/providers/mysql/

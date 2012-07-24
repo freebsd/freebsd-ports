@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	as@bsdgroup.de
-COMMENT=	A server-side rss aggregator written in php with mysql
+COMMENT=	A server-side RSS aggregator written in PHP with MySQL
 
 NO_BUILD=	yes
 
