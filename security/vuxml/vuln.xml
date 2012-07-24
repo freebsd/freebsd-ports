@@ -52,6 +52,53 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0bc67930-d5c3-11e1-bef6-0024e81297ae">
+    <topic>dns/bind9* -- Heavy DNSSEC Validation Load Can Cause a 'Bad Cache' Assertion Failure</topic>
+    <affects>
+      <package>
+	<name>bind99</name>
+	<range><lt>9.9.1.2</lt></range>
+      </package>
+      <package>
+	<name>bind98</name>
+	<range><lt>9.8.3.2</lt></range>
+      </package>
+      <package>
+	<name>bind97</name>
+	<range><lt>9.7.6.2</lt></range>
+      </package>
+      <package>
+	<name>bind96</name>
+	<range><lt>9.6.3.1.ESV.R7.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC reports:</p>
+	<blockquote cite="https://kb.isc.org/article/AA-00729">
+	  <p>High numbers of queries with DNSSEC validation enabled can
+	     cause an assertion failure in named, caused by using a 'bad cache'
+	     data structure before it has been initialized.</p>
+	  <p>BIND 9 stores a cache of query names that are known to be failing due
+	     to misconfigured name servers or a broken chain of trust. Under high query
+	     loads when DNSSEC validation is active, it is possible for a condition
+	     to arise in which data from this cache of failing queries could be used
+	     before it was fully initialized, triggering an assertion failure.</p>
+	  <p>This bug cannot be encountered unless your server is doing DNSSEC
+	     validation.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	 <cvename>CVE-2012-3817</cvename>
+	 <url>https://kb.isc.org/article/AA-00729</url>
+    </references>
+    <dates>
+      <discovery>2012-07-24</discovery>
+      <entry>2012-07-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="748aa89f-d529-11e1-82ab-001fd0af1a4c">
      <topic>rubygem-activerecord -- multiple vulnerabilities</topic>
      <affects>

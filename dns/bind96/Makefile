@@ -12,10 +12,9 @@
 # release you can generally build it cleanly from the source - Doug
 
 PORTNAME=	bind96
-PORTVERSION=	9.6.3.1.ESV.R7.1
+PORTVERSION=	9.6.3.1.ESV.R7.2
 CATEGORIES=	dns net ipv6
-MASTER_SITES=	${MASTER_SITE_ISC} \
-		http://dougbarton.us/Downloads/%SUBDIR%/
+MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
 DISTNAME=	bind-${ISCVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
@@ -25,7 +24,7 @@ MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	The BIND DNS suite with updated DNSSEC and threads
 
 # ISC releases things like 9.4.0b3, which our versioning doesn't like
-ISCVERSION=	9.6-ESV-R7-P1
+ISCVERSION=	9.6-ESV-R7-P2
 
 MAKE_JOBS_UNSAFE=	yes
 
