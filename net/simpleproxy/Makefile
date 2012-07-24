@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF
 
 MAINTAINER=	pluknet@gmail.com
-COMMENT=	Simple tcp proxy
+COMMENT=	Simple TCP proxy
 
 GNU_CONFIGURE=	yes
 

@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.cdf.toronto.edu/pub/jdd/tcplist/
 EXTRACT_SUFX=	.shar
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Lists tcp connections to/from local machine (+username on both sides)
+COMMENT=	Lists TCP connections to/from local machine (+username on both sides)
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/lsof:${PORTSDIR}/sysutils/lsof
 

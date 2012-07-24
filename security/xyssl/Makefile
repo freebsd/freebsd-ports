@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.evolane.com/download/mirror/etcl/ \
 DISTFILES=	xyssl-${PORTVERSION}-bsd.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A liteweight SSL and TLS toolkit for C developers
+COMMENT=	A lightweight SSL and TLS toolkit for C developers
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/BSD.txt

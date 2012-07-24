@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.inlab.de/
 
 MAINTAINER=	joseph@randomnetworks.com
-COMMENT=	Simple but powerful generic tcp proxy with round robin features
+COMMENT=	Simple but powerful generic TCP proxy with round robin features
 
 ALL_TARGET=	balance
 USE_RC_SUBR=	balance.sh

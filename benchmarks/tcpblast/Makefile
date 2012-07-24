@@ -13,7 +13,7 @@ CATEGORIES=	benchmarks net ipv6
 DISTFILES=	# none
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Measures the throughput of a tcp connection
+COMMENT=	Measures the throughput of a TCP connection
 
 PLIST_FILES=	bin/tcpblast
 

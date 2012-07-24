@@ -15,7 +15,7 @@ MASTER_SITES=	http://ftp.cerias.purdue.edu/pub/tools/unix/scanners/queso/ \
 		http://www.mirrors.wiretapped.net/security/network-mapping/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Determine the remote OS using simple tcp packets
+COMMENT=	Determine the remote OS using simple TCP packets
 
 GNU_CONFIGURE=	yes
 

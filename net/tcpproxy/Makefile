@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.spreadspace.org/tcpproxy/releases/ \
 		http://alex.bmg.gv.at/programs/
 
 MAINTAINER=	alex@hugo.bmg.gv.at
-COMMENT=	A simple tcp connection proxy for ipv4 and ipv6
+COMMENT=	A simple TCP connection proxy for IPv4 and IPv6
 
 BUILD_DEPENDS=	ragel:${PORTSDIR}/devel/ragel
 

@@ -13,7 +13,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.wormulon.net/files/ttlscan/
 
 MAINTAINER=	mich@FreeBSD.org
-COMMENT=	A tcp based scanner, showing ttl responses
+COMMENT=	A TCP based scanner, showing ttl responses
 
 BUILD_DEPENDS=	${LOCALBASE}/include/dnet.h:${PORTSDIR}/net/libdnet \
 		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
