@@ -1,10 +1,9 @@
-Scheme 9 from Empty Space is a portable R4RS Scheme interpreter with the
-following features:
+Scheme 9 from Empty Space is a portable R4RS Scheme
+interpreter with the following features:
 
   - Support for low-level Unix programming
   - Basic networking procedures
   - Cursor addressing with Curses
-  - A vi-style integrated development environment
   - Loads of useful library functions
 
 WWW: http://www.t3x.org/s9fes/
