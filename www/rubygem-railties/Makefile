@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	railties
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.6
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -21,7 +21,7 @@ RUN_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-act
 USE_RUBY=	yes
 USE_RAKE=	yes
 USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=  yes
+RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/rails
 
