@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.Awfulhak.org/httptunnel/ \
 		http://www.nocrew.org/software/httptunnel/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Tunnel a tcp/ip connection through a http/tcp/ip connection
+COMMENT=	Tunnel a TCP/IP connection through a HTTP/TCP/IP connection
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--quiet

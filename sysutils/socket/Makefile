@@ -12,7 +12,7 @@ CATEGORIES=	sysutils net ipv6
 MASTER_SITES=	http://wolfram.schneider.org/src/
 
 MAINTAINER=	wosch@FreeBSD.org
-COMMENT=	Create tcp socket and connect to stdin/out
+COMMENT=	Create TCP socket and connect to stdin/out
 
 MAKE_ENV+=	SWITCHES="-DUSE_INET6 -DHAVE_SYS_PARAM_H -Wall"
 MAN1=		socket.1

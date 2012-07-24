@@ -12,7 +12,7 @@ MASTER_SITES=	http://home.tiscali.cz:8080/~cz210552/distfiles/ \
 		http://home.tiscali.cz/~cz210552/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	DJB dns server with PostgreSQL backend
+COMMENT=	DJB DNS server with PostgreSQL backend
 
 DJ_PORT?=	${PORTSDIR}/dns/djbdns
 BUILD_DEPENDS=	${NONEXISTENT}:${DJ_PORT}:extract

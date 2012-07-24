@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	gslin@gslin.org
-COMMENT=	Perl extension parsing ipv4 ranges
+COMMENT=	Perl extension parsing IPv4 ranges
 
 PERL_CONFIGURE=	yes
 

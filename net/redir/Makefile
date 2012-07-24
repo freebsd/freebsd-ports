@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://sammy.net/~sammy/hacks/
 
 MAINTAINER=	araujo@FreeBSD.org
-COMMENT=	A tcp connection redirection utility
+COMMENT=	A TCP connection redirection utility
 
 USE_RC_SUBR=	redir
 

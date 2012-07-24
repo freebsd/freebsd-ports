@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	CPAN:JOHND
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Liteweight context-aware dbi handle cache and utility methods
+COMMENT=	Lightweight context-aware dbi handle cache and utility methods
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

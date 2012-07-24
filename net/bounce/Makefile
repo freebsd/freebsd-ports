@@ -16,7 +16,7 @@ DISTNAME=	bounce
 EXTRACT_SUFX=	.c
 
 MAINTAINER=	matt@efs.org
-COMMENT=	Bounce tcp connections to another machine/port
+COMMENT=	Bounce TCP connections to another machine/port
 
 USE_RC_SUBR=	bounce
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

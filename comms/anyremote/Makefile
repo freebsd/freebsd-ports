@@ -11,7 +11,7 @@ CATEGORIES=	comms
 MASTER_SITES=	SF
 
 MAINTAINER=	samm@os2.kiev.ua
-COMMENT=	Remote control service over Bluetooth, infrared or tcp/ip networking
+COMMENT=	Remote control service over Bluetooth, infrared or TCP/IP networking
 
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes

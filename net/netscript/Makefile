@@ -16,7 +16,7 @@ MASTER_SITES=	SF \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Portable/multi-platform lightweight tcp socket scripting
+COMMENT=	Portable/multi-platform lightweight TCP socket scripting
 
 WANT_GNOME=	yes
 
