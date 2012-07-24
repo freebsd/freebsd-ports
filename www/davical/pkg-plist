@@ -89,6 +89,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/Resource/_inc---DAVResource.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/SqlToArray.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/VCard.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/VTimezone.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_htdocs---SqlToArray.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_htdocs---admin.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_htdocs---always.php.html
@@ -97,6 +98,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_htdocs---feed.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_htdocs---freebusy.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_htdocs---help.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_htdocs---iSchedule.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_htdocs---index.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_htdocs---newfile.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_htdocs---setup.php.html
@@ -124,6 +126,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---pubsub.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---test-RRULE-v2.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---test-RRULE.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---vtimezone.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---ui---collection-edit.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---ui---external-browse.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---ui---principal-browse.php.html
@@ -138,6 +141,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-DELETE.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-DELTICKET.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-GET.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-GET-functions.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-MKCOL.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-MKTICKET.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-MOVE.php.html
@@ -155,6 +159,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/external-bind/_inc---external-fetch.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/iSchedule/_inc---iSchedule.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/iSchedule/iSchedule.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/iSchedule-POST/_inc---iSchedule-POST.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/iSchedule-POST/FakeSession.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/ldap/_inc---drivers_imap_pam.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/ldap/_inc---drivers_ldap.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/ldap/_inc---drivers_rimap.php.html
@@ -289,6 +295,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/httpd-davical.conf
 %%PORTDOCS%%%%DOCSDIR%%/scripts/build-always.sh
 %%PORTDOCS%%%%DOCSDIR%%/scripts/cron-sync-ldap.php
+%%PORTDOCS%%%%DOCSDIR%%/scripts/export_calendar.php
+%%PORTDOCS%%%%DOCSDIR%%/scripts/load_calendar.php
 %%PORTDOCS%%%%DOCSDIR%%/scripts/po/rebuild-translations.sh
 %%PORTDOCS%%%%DOCSDIR%%/scripts/refresh-alarms.php
 %%PORTDOCS%%%%DOCSDIR%%/scripts/sync-remote-caldav.php
@@ -304,6 +312,7 @@
 %%WWWDIR%%/htdocs/feed.php
 %%WWWDIR%%/htdocs/freebusy.php
 %%WWWDIR%%/htdocs/help.php
+%%WWWDIR%%/htdocs/iSchedule.php
 %%WWWDIR%%/htdocs/images/down.gif
 %%WWWDIR%%/htdocs/images/up.gif
 %%WWWDIR%%/htdocs/index.php
@@ -333,6 +342,7 @@
 %%WWWDIR%%/inc/caldav-DELETE.php
 %%WWWDIR%%/inc/caldav-DELTICKET.php
 %%WWWDIR%%/inc/caldav-GET.php
+%%WWWDIR%%/inc/caldav-GET-functions.php
 %%WWWDIR%%/inc/caldav-LOCK.php
 %%WWWDIR%%/inc/caldav-MKCOL.php
 %%WWWDIR%%/inc/caldav-MKTICKET.php
@@ -367,6 +377,7 @@
 %%WWWDIR%%/inc/external-fetch.php
 %%WWWDIR%%/inc/freebusy-functions.php
 %%WWWDIR%%/inc/iSchedule.php
+%%WWWDIR%%/inc/iSchedule-POST.php
 %%WWWDIR%%/inc/interactive-page.php
 %%WWWDIR%%/inc/log_caldav_action.php
 %%WWWDIR%%/inc/other_translated_strings.php
@@ -375,6 +386,7 @@
 %%WWWDIR%%/inc/pubsub.php
 %%WWWDIR%%/inc/schedule-functions.php
 %%WWWDIR%%/inc/test-RRULE.php
+%%WWWDIR%%/inc/vtimezone.php
 %%WWWDIR%%/inc/tz/capabilities.php
 %%WWWDIR%%/inc/tz/expand.php
 %%WWWDIR%%/inc/tz/get.php
@@ -409,6 +421,7 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/davical/logging
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/davical/ldap
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/davical/iSchedule
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/davical/iSchedule-POST
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/davical/external-bind
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/davical/caldav
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/davical/authentication
