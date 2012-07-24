@@ -4,7 +4,7 @@
 
 DIST_SUBDIR=	${PORTNAME}
 
-CONFLICTS=	bugzilla-3.*
+CONFLICTS=	bugzilla-3.* \
 		bugzilla-4.0.*
 
 PORTSCOUT=	limitw:1,even
