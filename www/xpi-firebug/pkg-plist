@@ -1,31 +1,39 @@
+%%XPI_XPIDIR%%/bootstrap.js
+%%XPI_XPIDIR%%/build.js
 %%XPI_XPIDIR%%/chrome.manifest
 %%XPI_XPIDIR%%/content/firebug/accessible/a11y.js
 %%XPI_XPIDIR%%/content/firebug/blank.gif
 %%XPI_XPIDIR%%/content/firebug/branch.properties
-%%XPI_XPIDIR%%/content/firebug/browserOverlay.xul
 %%XPI_XPIDIR%%/content/firebug/bti/inProcess/browser.js
 %%XPI_XPIDIR%%/content/firebug/bti/inProcess/compilationunit.js
 %%XPI_XPIDIR%%/content/firebug/bti/inProcess/javascripttool.js
 %%XPI_XPIDIR%%/content/firebug/bti/inProcess/webApp.js
 %%XPI_XPIDIR%%/content/firebug/chrome/activation.js
+%%XPI_XPIDIR%%/content/firebug/chrome/annotations.js
 %%XPI_XPIDIR%%/content/firebug/chrome/balloonNote.js
 %%XPI_XPIDIR%%/content/firebug/chrome/chrome.js
-%%XPI_XPIDIR%%/content/firebug/chrome/firstRunPage.js
+%%XPI_XPIDIR%%/content/firebug/chrome/firefox.js
 %%XPI_XPIDIR%%/content/firebug/chrome/infotip.js
 %%XPI_XPIDIR%%/content/firebug/chrome/knownIssues.js
+%%XPI_XPIDIR%%/content/firebug/chrome/menu.js
 %%XPI_XPIDIR%%/content/firebug/chrome/navigationHistory.js
 %%XPI_XPIDIR%%/content/firebug/chrome/panelActivation.js
 %%XPI_XPIDIR%%/content/firebug/chrome/plugin.js
+%%XPI_XPIDIR%%/content/firebug/chrome/privacy.js
 %%XPI_XPIDIR%%/content/firebug/chrome/reps.js
 %%XPI_XPIDIR%%/content/firebug/chrome/searchBox.js
 %%XPI_XPIDIR%%/content/firebug/chrome/shortcuts.js
 %%XPI_XPIDIR%%/content/firebug/chrome/tabContext.js
+%%XPI_XPIDIR%%/content/firebug/chrome/tabWatcher.js
 %%XPI_XPIDIR%%/content/firebug/chrome/tableRep.js
+%%XPI_XPIDIR%%/content/firebug/chrome/toolbar.js
+%%XPI_XPIDIR%%/content/firebug/chrome/window.js
 %%XPI_XPIDIR%%/content/firebug/console/autoCompleter.js
+%%XPI_XPIDIR%%/content/firebug/console/commandEditor.js
 %%XPI_XPIDIR%%/content/firebug/console/commandHistory.js
 %%XPI_XPIDIR%%/content/firebug/console/commandLine.js
 %%XPI_XPIDIR%%/content/firebug/console/commandLineExposed.js
-%%XPI_XPIDIR%%/content/firebug/console/commandLineInjected.js
+%%XPI_XPIDIR%%/content/firebug/console/commandLineHelp.js
 %%XPI_XPIDIR%%/content/firebug/console/commandLinePopup.js
 %%XPI_XPIDIR%%/content/firebug/console/console.js
 %%XPI_XPIDIR%%/content/firebug/console/consoleExposed.js
@@ -35,53 +43,62 @@
 %%XPI_XPIDIR%%/content/firebug/console/eventMonitor.js
 %%XPI_XPIDIR%%/content/firebug/console/memoryProfiler.js
 %%XPI_XPIDIR%%/content/firebug/console/profiler.js
-%%XPI_XPIDIR%%/content/firebug/css/cssComputedElementPanel.js
-%%XPI_XPIDIR%%/content/firebug/css/cssElementPanel.js
+%%XPI_XPIDIR%%/content/firebug/cookies/baseObserver.js
+%%XPI_XPIDIR%%/content/firebug/cookies/breakpoints.js
+%%XPI_XPIDIR%%/content/firebug/cookies/cookie.js
+%%XPI_XPIDIR%%/content/firebug/cookies/cookieClipboard.js
+%%XPI_XPIDIR%%/content/firebug/cookies/cookieEvents.js
+%%XPI_XPIDIR%%/content/firebug/cookies/cookieModule.js
+%%XPI_XPIDIR%%/content/firebug/cookies/cookieObserver.js
+%%XPI_XPIDIR%%/content/firebug/cookies/cookiePanel.js
+%%XPI_XPIDIR%%/content/firebug/cookies/cookiePanel.xul
+%%XPI_XPIDIR%%/content/firebug/cookies/cookiePermissions.js
+%%XPI_XPIDIR%%/content/firebug/cookies/cookieReps.js
+%%XPI_XPIDIR%%/content/firebug/cookies/cookieUtils.js
+%%XPI_XPIDIR%%/content/firebug/cookies/cookies.css
+%%XPI_XPIDIR%%/content/firebug/cookies/dateTimePicker.xml
+%%XPI_XPIDIR%%/content/firebug/cookies/editCookie.css
+%%XPI_XPIDIR%%/content/firebug/cookies/editCookie.js
+%%XPI_XPIDIR%%/content/firebug/cookies/editCookie.xul
+%%XPI_XPIDIR%%/content/firebug/cookies/headerResizer.js
+%%XPI_XPIDIR%%/content/firebug/cookies/httpObserver.js
+%%XPI_XPIDIR%%/content/firebug/cookies/legacy.js
+%%XPI_XPIDIR%%/content/firebug/cookies/menuUtils.js
+%%XPI_XPIDIR%%/content/firebug/cookies/popupFilterPanel.xml
+%%XPI_XPIDIR%%/content/firebug/css/computedPanel.js
 %%XPI_XPIDIR%%/content/firebug/css/cssModule.js
 %%XPI_XPIDIR%%/content/firebug/css/cssPanel.js
+%%XPI_XPIDIR%%/content/firebug/css/cssReps.js
+%%XPI_XPIDIR%%/content/firebug/css/stylePanel.js
 %%XPI_XPIDIR%%/content/firebug/dom/domBreakpointGroup.js
 %%XPI_XPIDIR%%/content/firebug/dom/domModule.js
 %%XPI_XPIDIR%%/content/firebug/dom/domPanel.js
 %%XPI_XPIDIR%%/content/firebug/dom/toggleBranch.js
 %%XPI_XPIDIR%%/content/firebug/editor/editor.js
 %%XPI_XPIDIR%%/content/firebug/editor/editorSelector.js
-%%XPI_XPIDIR%%/content/firebug/editor/external/changeeditor.js
-%%XPI_XPIDIR%%/content/firebug/editor/external/changeeditor.xul
-%%XPI_XPIDIR%%/content/firebug/editor/external/editorToContextMenu.js
-%%XPI_XPIDIR%%/content/firebug/editor/external/editors.js
-%%XPI_XPIDIR%%/content/firebug/editor/external/editors.xul
-%%XPI_XPIDIR%%/content/firebug/editor/external/editorsBrowserOverlay.xul
-%%XPI_XPIDIR%%/content/firebug/editor/external/editorsOverlay.xul
-%%XPI_XPIDIR%%/content/firebug/editor/external/externalEditors.js
 %%XPI_XPIDIR%%/content/firebug/firebug.css
 %%XPI_XPIDIR%%/content/firebug/firebug.js
 %%XPI_XPIDIR%%/content/firebug/firebugOverlay.xul
 %%XPI_XPIDIR%%/content/firebug/firefox/aboutOverlay.js
 %%XPI_XPIDIR%%/content/firebug/firefox/aboutOverlay.xul
-%%XPI_XPIDIR%%/content/firebug/firefox/annotations.js
 %%XPI_XPIDIR%%/content/firebug/firefox/bindings.xml
-%%XPI_XPIDIR%%/content/firebug/firefox/browserMenuOverlay.xul
-%%XPI_XPIDIR%%/content/firebug/firefox/browserOverlayWithFrame.xul
+%%XPI_XPIDIR%%/content/firebug/firefox/browserOverlay.css
+%%XPI_XPIDIR%%/content/firebug/firefox/browserOverlay.js
 %%XPI_XPIDIR%%/content/firebug/firefox/customizeShortcuts.js
 %%XPI_XPIDIR%%/content/firebug/firefox/customizeShortcuts.xul
+%%XPI_XPIDIR%%/content/firebug/firefox/external-editors/changeeditor.js
+%%XPI_XPIDIR%%/content/firebug/firefox/external-editors/changeeditor.xul
+%%XPI_XPIDIR%%/content/firebug/firefox/external-editors/editors.js
+%%XPI_XPIDIR%%/content/firebug/firefox/external-editors/editors.xul
+%%XPI_XPIDIR%%/content/firebug/firefox/external-editors/externalEditors.js
 %%XPI_XPIDIR%%/content/firebug/firefox/firebug.xul
 %%XPI_XPIDIR%%/content/firebug/firefox/firebugFrame.xul
-%%XPI_XPIDIR%%/content/firebug/firefox/firebugMenu.js
 %%XPI_XPIDIR%%/content/firebug/firefox/firebugMenuOverlay.xul
-%%XPI_XPIDIR%%/content/firebug/firefox/firefox.js
-%%XPI_XPIDIR%%/content/firebug/firefox/menu.js
 %%XPI_XPIDIR%%/content/firebug/firefox/panelBarWaiter.js
-%%XPI_XPIDIR%%/content/firebug/firefox/privacy.js
-%%XPI_XPIDIR%%/content/firebug/firefox/start-button/customizeToolbarOverlay.xul
-%%XPI_XPIDIR%%/content/firebug/firefox/start-button/startButton.css
 %%XPI_XPIDIR%%/content/firebug/firefox/start-button/startButton.xml
 %%XPI_XPIDIR%%/content/firebug/firefox/start-button/startButtonOverlay.js
-%%XPI_XPIDIR%%/content/firebug/firefox/start-button/startButtonOverlay.xul
-%%XPI_XPIDIR%%/content/firebug/firefox/system.js
-%%XPI_XPIDIR%%/content/firebug/firefox/tabWatcher.js
-%%XPI_XPIDIR%%/content/firebug/firefox/window.js
-%%XPI_XPIDIR%%/content/firebug/firefox/xpcom.js
 %%XPI_XPIDIR%%/content/firebug/html/highlighter.css
+%%XPI_XPIDIR%%/content/firebug/html/highlighterCache.js
 %%XPI_XPIDIR%%/content/firebug/html/htmlLib.js
 %%XPI_XPIDIR%%/content/firebug/html/htmlPanel.js
 %%XPI_XPIDIR%%/content/firebug/html/insideOutBox.js
@@ -108,6 +125,7 @@
 %%XPI_XPIDIR%%/content/firebug/lib/dragdrop.js
 %%XPI_XPIDIR%%/content/firebug/lib/events.js
 %%XPI_XPIDIR%%/content/firebug/lib/fonts.js
+%%XPI_XPIDIR%%/content/firebug/lib/http.js
 %%XPI_XPIDIR%%/content/firebug/lib/json.js
 %%XPI_XPIDIR%%/content/firebug/lib/keywords.js
 %%XPI_XPIDIR%%/content/firebug/lib/lib.js
@@ -117,17 +135,18 @@
 %%XPI_XPIDIR%%/content/firebug/lib/persist.js
 %%XPI_XPIDIR%%/content/firebug/lib/search.js
 %%XPI_XPIDIR%%/content/firebug/lib/string.js
+%%XPI_XPIDIR%%/content/firebug/lib/system.js
 %%XPI_XPIDIR%%/content/firebug/lib/tool.js
 %%XPI_XPIDIR%%/content/firebug/lib/trace.js
 %%XPI_XPIDIR%%/content/firebug/lib/url.js
 %%XPI_XPIDIR%%/content/firebug/lib/wrapper.js
 %%XPI_XPIDIR%%/content/firebug/lib/xml.js
 %%XPI_XPIDIR%%/content/firebug/lib/xpath.js
+%%XPI_XPIDIR%%/content/firebug/lib/xpcom.js
 %%XPI_XPIDIR%%/content/firebug/main.js
 %%XPI_XPIDIR%%/content/firebug/moduleConfig.js
 %%XPI_XPIDIR%%/content/firebug/net/fontViewer.js
 %%XPI_XPIDIR%%/content/firebug/net/httpActivityObserver.js
-%%XPI_XPIDIR%%/content/firebug/net/httpLib.js
 %%XPI_XPIDIR%%/content/firebug/net/jsonViewer.js
 %%XPI_XPIDIR%%/content/firebug/net/netDebugger.js
 %%XPI_XPIDIR%%/content/firebug/net/netMonitor.js
@@ -145,42 +164,52 @@
 %%XPI_XPIDIR%%/content/firebug/trace/traceListener.js
 %%XPI_XPIDIR%%/content/firebug/trace/traceModule.js
 %%XPI_XPIDIR%%/content/firebug/trace.js
+%%XPI_XPIDIR%%/defaults/preferences/cookies.js
 %%XPI_XPIDIR%%/defaults/preferences/firebug.js
 %%XPI_XPIDIR%%/defaults/preferences/tracingConsole.js
 %%XPI_XPIDIR%%/docs/Bugs.txt
 %%XPI_XPIDIR%%/docs/TODO.txt
+%%XPI_XPIDIR%%/icon64.png
 %%XPI_XPIDIR%%/icons/default/firebug.ico
 %%XPI_XPIDIR%%/install.rdf
 %%XPI_XPIDIR%%/license.txt
 %%XPI_XPIDIR%%/locale/bg/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/bg/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/bg/firebug.properties
+%%XPI_XPIDIR%%/locale/ca-AD/cookies.properties
 %%XPI_XPIDIR%%/locale/ca-AD/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/ca-AD/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/ca-AD/firebug.properties
+%%XPI_XPIDIR%%/locale/cs/cookies.properties
 %%XPI_XPIDIR%%/locale/cs/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/cs/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/cs/firebug.properties
 %%XPI_XPIDIR%%/locale/da/firebug.properties
+%%XPI_XPIDIR%%/locale/de/cookies.properties
 %%XPI_XPIDIR%%/locale/de/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/de/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/de/firebug.properties
+%%XPI_XPIDIR%%/locale/el/cookies.properties
 %%XPI_XPIDIR%%/locale/el/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/el/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/el/firebug.properties
+%%XPI_XPIDIR%%/locale/en-US/cookies.properties
 %%XPI_XPIDIR%%/locale/en-US/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/en-US/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/en-US/firebug.properties
 %%XPI_XPIDIR%%/locale/es/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/es/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/es/firebug.properties
+%%XPI_XPIDIR%%/locale/es-AR/cookies.properties
 %%XPI_XPIDIR%%/locale/es-AR/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/es-AR/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/es-AR/firebug.properties
+%%XPI_XPIDIR%%/locale/es-ES/cookies.properties
 %%XPI_XPIDIR%%/locale/es-ES/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/es-ES/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/es-ES/firebug.properties
 %%XPI_XPIDIR%%/locale/fa/firebug.properties
+%%XPI_XPIDIR%%/locale/fr/cookies.properties
 %%XPI_XPIDIR%%/locale/fr/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/fr/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/fr/firebug.properties
@@ -190,6 +219,7 @@
 %%XPI_XPIDIR%%/locale/hr-HR/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/hr-HR/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/hr-HR/firebug.properties
+%%XPI_XPIDIR%%/locale/hu-HU/cookies.properties
 %%XPI_XPIDIR%%/locale/hu-HU/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/hu-HU/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/hu-HU/firebug.properties
@@ -199,28 +229,37 @@
 %%XPI_XPIDIR%%/locale/is-IS/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/is-IS/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/is-IS/firebug.properties
+%%XPI_XPIDIR%%/locale/it/cookies.properties
 %%XPI_XPIDIR%%/locale/it/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/it/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/it/firebug.properties
+%%XPI_XPIDIR%%/locale/ja-JP/cookies.properties
 %%XPI_XPIDIR%%/locale/ja-JP/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/ja-JP/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/ja-JP/firebug.properties
+%%XPI_XPIDIR%%/locale/ko-KR/cookies.properties
 %%XPI_XPIDIR%%/locale/ko-KR/firebug.properties
+%%XPI_XPIDIR%%/locale/nl/cookies.properties
 %%XPI_XPIDIR%%/locale/nl/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/nl/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/nl/firebug.properties
+%%XPI_XPIDIR%%/locale/pl/cookies.properties
 %%XPI_XPIDIR%%/locale/pl/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/pl/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/pl/firebug.properties
+%%XPI_XPIDIR%%/locale/pt-BR/cookies.properties
 %%XPI_XPIDIR%%/locale/pt-BR/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/pt-BR/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/pt-BR/firebug.properties
+%%XPI_XPIDIR%%/locale/pt-PT/cookies.properties
 %%XPI_XPIDIR%%/locale/pt-PT/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/pt-PT/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/pt-PT/firebug.properties
+%%XPI_XPIDIR%%/locale/ro-RO/cookies.properties
 %%XPI_XPIDIR%%/locale/ro-RO/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/ro-RO/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/ro-RO/firebug.properties
+%%XPI_XPIDIR%%/locale/ru/cookies.properties
 %%XPI_XPIDIR%%/locale/ru/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/ru/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/ru/firebug.properties
@@ -231,32 +270,41 @@
 %%XPI_XPIDIR%%/locale/sr/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/sr/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/sr/firebug.properties
+%%XPI_XPIDIR%%/locale/sv-SE/cookies.properties
 %%XPI_XPIDIR%%/locale/sv-SE/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/sv-SE/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/sv-SE/firebug.properties
-%%XPI_XPIDIR%%/locale/tr-TR/firebug.properties
+%%XPI_XPIDIR%%/locale/tr/cookies.properties
+%%XPI_XPIDIR%%/locale/tr/firebug.properties
+%%XPI_XPIDIR%%/locale/uk-UA/cookies.properties
 %%XPI_XPIDIR%%/locale/uk-UA/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/uk-UA/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/uk-UA/firebug.properties
 %%XPI_XPIDIR%%/locale/vi/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/vi/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/vi/firebug.properties
+%%XPI_XPIDIR%%/locale/zh-CN/cookies.properties
 %%XPI_XPIDIR%%/locale/zh-CN/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/zh-CN/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/zh-CN/firebug.properties
+%%XPI_XPIDIR%%/locale/zh-TW/cookies.properties
 %%XPI_XPIDIR%%/locale/zh-TW/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/zh-TW/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/zh-TW/firebug.properties
 %%XPI_XPIDIR%%/modules/debuggerHalter.js
+%%XPI_XPIDIR%%/modules/fbtrace.js
 %%XPI_XPIDIR%%/modules/firebug-http-observer.js
 %%XPI_XPIDIR%%/modules/firebug-service.js
 %%XPI_XPIDIR%%/modules/firebug-trace-service.js
-%%XPI_XPIDIR%%/modules/moduleLoader.js
+%%XPI_XPIDIR%%/modules/gcli.js
+%%XPI_XPIDIR%%/modules/loader.js
+%%XPI_XPIDIR%%/modules/locale.js
+%%XPI_XPIDIR%%/modules/mini-require.js
 %%XPI_XPIDIR%%/modules/observer-service.js
+%%XPI_XPIDIR%%/modules/prefLoader.js
 %%XPI_XPIDIR%%/modules/require-debug.js
 %%XPI_XPIDIR%%/modules/require.js
 %%XPI_XPIDIR%%/modules/storageService.js
-%%XPI_XPIDIR%%/skin/classic/Templarian_inspector.png
 %%XPI_XPIDIR%%/skin/classic/about.css
 %%XPI_XPIDIR%%/skin/classic/activation-menu-console.png
 %%XPI_XPIDIR%%/skin/classic/activation-menu-net.png
@@ -289,16 +337,20 @@
 %%XPI_XPIDIR%%/skin/classic/console-error-caret.png
 %%XPI_XPIDIR%%/skin/classic/console.css
 %%XPI_XPIDIR%%/skin/classic/continue.png
+%%XPI_XPIDIR%%/skin/classic/cookies/activation-menu-cookies.png
+%%XPI_XPIDIR%%/skin/classic/cookies/breakOnCookieSingle.png
+%%XPI_XPIDIR%%/skin/classic/cookies/cookie.svg
+%%XPI_XPIDIR%%/skin/classic/cookies/cookies.css
+%%XPI_XPIDIR%%/skin/classic/cookies/editCookie.css
+%%XPI_XPIDIR%%/skin/classic/cookies/trace.css
 %%XPI_XPIDIR%%/skin/classic/css.css
 %%XPI_XPIDIR%%/skin/classic/customizeShortcuts.css
 %%XPI_XPIDIR%%/skin/classic/debugger.css
-%%XPI_XPIDIR%%/skin/classic/disable.png
-%%XPI_XPIDIR%%/skin/classic/disableHover.png
+%%XPI_XPIDIR%%/skin/classic/disable.svg
 %%XPI_XPIDIR%%/skin/classic/dom.css
-%%XPI_XPIDIR%%/skin/classic/errorIcon-sm.png
-%%XPI_XPIDIR%%/skin/classic/errorIcon.png
+%%XPI_XPIDIR%%/skin/classic/error.svg
+%%XPI_XPIDIR%%/skin/classic/errorSmall.svg
 %%XPI_XPIDIR%%/skin/classic/exe.png
-%%XPI_XPIDIR%%/skin/classic/firebug-gray-16.png
 %%XPI_XPIDIR%%/skin/classic/firebug.css
 %%XPI_XPIDIR%%/skin/classic/firebug.png
 %%XPI_XPIDIR%%/skin/classic/firebug16.png
@@ -306,7 +358,7 @@
 %%XPI_XPIDIR%%/skin/classic/firebug64.png
 %%XPI_XPIDIR%%/skin/classic/fontViewer.css
 %%XPI_XPIDIR%%/skin/classic/html.css
-%%XPI_XPIDIR%%/skin/classic/infoIcon.png
+%%XPI_XPIDIR%%/skin/classic/info.svg
 %%XPI_XPIDIR%%/skin/classic/inspect.png
 %%XPI_XPIDIR%%/skin/classic/jsonViewer.css
 %%XPI_XPIDIR%%/skin/classic/layout.css
@@ -323,6 +375,7 @@
 %%XPI_XPIDIR%%/skin/classic/mac/twistyClosed.png
 %%XPI_XPIDIR%%/skin/classic/mac/twistyOpen.png
 %%XPI_XPIDIR%%/skin/classic/mac/window.css
+%%XPI_XPIDIR%%/skin/classic/migrationArrow.svg
 %%XPI_XPIDIR%%/skin/classic/nav-back.png
 %%XPI_XPIDIR%%/skin/classic/nav-down.png
 %%XPI_XPIDIR%%/skin/classic/nav-forward.png
@@ -335,8 +388,7 @@
 %%XPI_XPIDIR%%/skin/classic/noteCorners.png
 %%XPI_XPIDIR%%/skin/classic/noteCornersUps.png
 %%XPI_XPIDIR%%/skin/classic/notificationClose.png
-%%XPI_XPIDIR%%/skin/classic/notloading_16.png
-%%XPI_XPIDIR%%/skin/classic/okIcon-sm.png
+%%XPI_XPIDIR%%/skin/classic/orion-firebug.css
 %%XPI_XPIDIR%%/skin/classic/panel.css
 %%XPI_XPIDIR%%/skin/classic/panelbase.css
 %%XPI_XPIDIR%%/skin/classic/rerun.png
@@ -352,7 +404,7 @@
 %%XPI_XPIDIR%%/skin/classic/tabbar/tab-bkgnd.png
 %%XPI_XPIDIR%%/skin/classic/tabbar/tab-hover-bkgnd.png
 %%XPI_XPIDIR%%/skin/classic/tableRep.css
-%%XPI_XPIDIR%%/skin/classic/warningIcon.png
+%%XPI_XPIDIR%%/skin/classic/warning.svg
 %%XPI_XPIDIR%%/skin/classic/win/close.png
 %%XPI_XPIDIR%%/skin/classic/win/commandHistory.png
 %%XPI_XPIDIR%%/skin/classic/win/detach.png
@@ -373,10 +425,11 @@
 @dirrm %%XPI_XPIDIR%%/content/firebug/bti
 @dirrm %%XPI_XPIDIR%%/content/firebug/chrome
 @dirrm %%XPI_XPIDIR%%/content/firebug/console
+@dirrm %%XPI_XPIDIR%%/content/firebug/cookies
 @dirrm %%XPI_XPIDIR%%/content/firebug/css
 @dirrm %%XPI_XPIDIR%%/content/firebug/dom
-@dirrm %%XPI_XPIDIR%%/content/firebug/editor/external
 @dirrm %%XPI_XPIDIR%%/content/firebug/editor
+@dirrm %%XPI_XPIDIR%%/content/firebug/firefox/external-editors
 @dirrm %%XPI_XPIDIR%%/content/firebug/firefox/start-button
 @dirrm %%XPI_XPIDIR%%/content/firebug/firefox
 @dirrm %%XPI_XPIDIR%%/content/firebug/html
@@ -421,7 +474,7 @@
 @dirrm %%XPI_XPIDIR%%/locale/sl-SI
 @dirrm %%XPI_XPIDIR%%/locale/sr
 @dirrm %%XPI_XPIDIR%%/locale/sv-SE
-@dirrm %%XPI_XPIDIR%%/locale/tr-TR
+@dirrm %%XPI_XPIDIR%%/locale/tr
 @dirrm %%XPI_XPIDIR%%/locale/uk-UA
 @dirrm %%XPI_XPIDIR%%/locale/vi
 @dirrm %%XPI_XPIDIR%%/locale/zh-CN
@@ -429,6 +482,7 @@
 @dirrm %%XPI_XPIDIR%%/locale
 @dirrm %%XPI_XPIDIR%%/modules
 @dirrm %%XPI_XPIDIR%%/skin/classic/breakOn
+@dirrm %%XPI_XPIDIR%%/skin/classic/cookies
 @dirrm %%XPI_XPIDIR%%/skin/classic/mac
 @dirrm %%XPI_XPIDIR%%/skin/classic/tabbar
 @dirrm %%XPI_XPIDIR%%/skin/classic/win
