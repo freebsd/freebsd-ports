@@ -613,6 +613,7 @@
     SUBDIR += php53-pdo_pgsql
     SUBDIR += php53-pdo_sqlite
     SUBDIR += php53-pgsql
+    SUBDIR += php53-redis
     SUBDIR += php53-sqlite
     SUBDIR += php53-sqlite3
     SUBDIR += php53-sybase_ct
