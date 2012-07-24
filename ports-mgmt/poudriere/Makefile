@@ -47,7 +47,7 @@ PLIST_DIRSTRY+=	share/zsh/
 .endif
 
 post-patch:
-	@find ${WRKSRC} -name "*.orig" -delete
+	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
 post-install:
 	@${TOUCH} ${PREFIX}/poudriere/cron/.keep
