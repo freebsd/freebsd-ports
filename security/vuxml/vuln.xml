@@ -52,6 +52,43 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="748aa89f-d529-11e1-82ab-001fd0af1a4c">
+     <topic>rubygem-activerecord -- multiple vulnerabilities</topic>
+     <affects>
+        <package>
+           <name>databases/rubygem-activemodel</name>
+           <range><lt>3.2.4</lt></range>
+        </package>
+     </affects>
+     <description>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+           <p>rubygem-activerecord -- multiple vulernabilities</p>
+           <blockquote>
+	      <p>Due to the way Active Record interprets parameters in
+		 combination with the way that Rack parses query parameters, it
+		 is possible for an attacker to issue unexpected database
+		 queries with "IS NULL" where clauses.  This issue does *not*
+		 let an attacker insert arbitrary values into an SQL query,
+		 however they can cause the query to check for NULL where most
+                 users wouldn't expect it.</p>
+	      <p>Due to the way Active Record handles nested query parameters,
+		 an attacker can use a specially crafted request to inject some
+                 forms of SQL into your application's SQL queries.</p>
+           </blockquote>
+        </body>
+     </description>
+     <references>
+        <cvename>CVE-2012-2660</cvename>
+        <cvename>CVE-2012-2661</cvename>
+        <url>https://groups.google.com/forum/?fromgroups#!topic/rubyonrails-security/8SA-M3as7A8</url>
+        <url>https://groups.google.com/forum/?fromgroups#!topic/rubyonrails-security/dUaiOOGWL1k</url>
+     </references>
+     <dates>
+        <discovery>2012-05-31</discovery>
+        <entry>2012-07-23</entry>
+     </dates>
+  </vuln>
+
   <vuln vid="bdab0acd-d4cd-11e1-8a1c-14dae9ebcf89">
     <topic>php -- potential overflow in _php_stream_scandir</topic>
     <affects>
