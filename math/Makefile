@@ -15,6 +15,7 @@
     SUBDIR += R-cran-car
     SUBDIR += R-cran-coda
     SUBDIR += R-cran-deldir
+    SUBDIR += R-cran-dlmodeler
     SUBDIR += R-cran-gpclib
     SUBDIR += R-cran-igraph
     SUBDIR += R-cran-inline
