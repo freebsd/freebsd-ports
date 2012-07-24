@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	uuidtools
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
