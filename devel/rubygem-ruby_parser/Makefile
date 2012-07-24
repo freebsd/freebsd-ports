@@ -7,15 +7,14 @@
 
 PORTNAME=	ruby_parser
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	voldern@hoeggen.net
 COMMENT=	A ruby parser written in pure ruby
 
-RUN_DEPENDS=	rubygem-sexp_processor>=3.0:${PORTSDIR}/devel/rubygem-sexp_processor \
-		rubygem-parsetree>=0:${PORTSDIR}/devel/rubygem-parsetree \
-		rubygem-hoe>=1.8.2:${PORTSDIR}/devel/rubygem-hoe
+RUN_DEPENDS=	rubygem-sexp_processor>=3.0:${PORTSDIR}/devel/rubygem-sexp_processor
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
