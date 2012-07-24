@@ -1,4 +1,2 @@
-SHA256 (zsh-4.3.17.tar.bz2) = 054e0452afd9c742c9f1489465175e1d4d7db50d88b602d132551d850cf7a704
-SIZE (zsh-4.3.17.tar.bz2) = 2978903
-SHA256 (zsh-4.3.17-doc.tar.bz2) = 68f71ba6ba0dc56bfdd93573c7f02dcc3a4f06fd8e24a5f9e17202cf5e68cb91
-SIZE (zsh-4.3.17-doc.tar.bz2) = 2719164
+SHA256 (zsh-5.0.0.tar.bz2) = cd014a8e09a3607c68369d1615db96d0fbb7279a125950b32032fd448c44a888
+SIZE (zsh-5.0.0.tar.bz2) = 3014362
