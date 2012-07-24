@@ -33,10 +33,4 @@ CMAKE_ARGS+=	-DNLS_ENABLED=false
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-BROKEN=	does not compile on FreeBSD 7.X
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
