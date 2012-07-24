@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.arpalert.org/src/ \
 		http://xz.cx/downloads/mysac/
 
 MAINTAINER=	jake@xz.cx
-COMMENT=	MySAC: MySQL Simple Asynchonous Client
+COMMENT=	MySAC: MySQL Simple Asynchronous Client
 
 USE_LDCONFIG=	yes
 USE_MYSQL=	yes

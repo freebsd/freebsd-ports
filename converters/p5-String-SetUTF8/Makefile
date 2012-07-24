@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	reki@reki.ru
-COMMENT=	Perl module to manipulate internal UTF8 flag on strings
+COMMENT=	Perl module to manipulate internal UTF-8 flag on strings
 
 PERL_CONFIGURE=	yes
 

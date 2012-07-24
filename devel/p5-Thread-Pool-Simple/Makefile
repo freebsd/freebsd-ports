@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Simple thread-pool implementaion
+COMMENT=	Simple thread-pool implementation
 
 PERL_CONFIGURE=	yes
 

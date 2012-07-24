@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	culot@FreeBSD.org
-COMMENT=	Convert fractions into unicode chars
+COMMENT=	Convert fractions into Unicode chars
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

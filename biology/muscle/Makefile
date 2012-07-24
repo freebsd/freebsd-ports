@@ -22,7 +22,7 @@ DISTFILES+=	${file}:docs
 .endif
 
 MAINTAINER=	mzaki@m.u-tokyo.ac.jp
-COMMENT=	MUltiple Sequence Comparison by Log-Expectation
+COMMENT=	Multiple Sequence Comparison by Log-Expectation
 
 FETCH_ARGS=	-A
 

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Unicode/FABPOT
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Perl extension to deal with IMAP UTF7
+COMMENT=	Perl extension to deal with IMAP UTF-7
 
 BUILD_DEPENDS=	p5-Unicode-String>=0:${PORTSDIR}/converters/p5-Unicode-String
 RUN_DEPENDS:=	${BUILD_DEPENDS}

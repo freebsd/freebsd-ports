@@ -12,7 +12,7 @@ MASTER_SITES=	http://yudit.org/download/ \
 		SUNSITE/apps/editors/X
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Multi-lingual unicode text editor with TTF support
+COMMENT=	Multi-lingual Unicode text editor with TTF support
 
 CONFLICTS=	netatalk-[0-9]*
 

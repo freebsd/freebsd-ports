@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}unicode
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Free unicode font for Sinhala script
+COMMENT=	Free Unicode font for Sinhala script
 
 BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir	\

@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A program to inferface with the Rio600, Rio800, and psa[play devices
+COMMENT=	A program to interface with the Rio600, Rio800, and psa[play devices
 
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
