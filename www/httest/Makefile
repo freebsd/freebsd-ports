@@ -43,6 +43,10 @@ post-patch:
 
 .include <bsd.port.options.mk>
 
+.if ${OSVERSION} < 800000 && ${ARCH} == "amd64"
+BROKEN=		does not compile on 7.X/amd64
+.endif
+
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}/
