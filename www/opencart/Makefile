@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opencart
-PORTVERSION=	1.4.9.1
+PORTVERSION=	1.5.3
 CATEGORIES=	www misc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
@@ -17,7 +17,7 @@ COMMENT=	An open source PHP-based online shopping cart system
 #PROJECTHOST=	open-cart
 USE_ZIP=	yes
 USE_PHP=	mysql gd session pcre
-WRKSRC=		${WRKDIR}/upload
+WRKSRC=		${WRKDIR}/${PORTNAME}_v${PORTVERSION}/upload
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
