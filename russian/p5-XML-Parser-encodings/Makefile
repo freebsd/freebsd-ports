@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 DISTFILES=
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Additional russian encodings for XML::Parser
+COMMENT=	Additional Russian encodings for XML::Parser
 
 RUN_DEPENDS=	p5-XML-Parser>=2.40:${PORTSDIR}/textproc/p5-XML-Parser
 BUILD_DEPENDS:=	${RUN_DEPENDS} \

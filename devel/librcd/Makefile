@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	fluffy
 
 
 MAINTAINER=	fluffy@FreeBSD.org
-COMMENT=	Library used by rusxmms for autodetection of russian charset
+COMMENT=	Library used by rusxmms for autodetection of Russian charset
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

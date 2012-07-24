@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.rusf.ru/books/yo/src/ \
 DISTNAME=	xcodesrc
 
 MAINTAINER=	pankov_p@mail.ru
-COMMENT=	A program for converting russian encodings with care to letter YO
+COMMENT=	A program for converting Russian encodings with care to letter YO
 
 PLIST_FILES=	bin/xcode
 USE_ZIP=	yes

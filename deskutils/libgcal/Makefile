@@ -11,7 +11,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	tkjacobsen@gmail.com
-COMMENT=	Library allowing communication with google calendar and contacts
+COMMENT=	Library allowing communication with Google calendar and contacts
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		iconv:${PORTSDIR}/converters/libiconv \

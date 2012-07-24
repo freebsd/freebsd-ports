@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://bestia.kiev.ua/pub/files/ ftp://hosting.cvu.kiev.ua/pub/file
 DISTNAME=	fortune.ru-${PORTVERSION}
 
 MAINTAINER=	obezpalko@gmail.com
-COMMENT=	Fortunes in russian
+COMMENT=	Fortunes in Russian
 
 NO_BUILD=	yes
 

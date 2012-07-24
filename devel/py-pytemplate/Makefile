@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.bulot.org/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	benoit@litchis.org
-COMMENT=	Pytemplate gives python developpers a starting framework
+COMMENT=	Pytemplate gives python developers a starting framework
 
 BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS:=	${BUILD_DEPENDS}
