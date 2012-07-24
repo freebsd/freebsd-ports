@@ -58,6 +58,12 @@ OPTIONS=	MYSQL "MySQL database support" off \
 		LDAP "LDAP Authentication" off \
 		RADIUS "RADIUS Authentication" off
 
+.include <bsd.port.options.mk>
+
+.ifdef (WITH_MODPERL2)
+USE_APACHE_RUN=	20+
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501000
