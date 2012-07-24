@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.mysqludf.org/lib_mysqludf_preg/
 DISTNAME=	lib_mysqludf_preg-${PORTVERSION}
 
 MAINTAINER=	pgollucci@FreeBSD.org
-COMMENT=	Library of mysql UDFs providing access to PCRE
+COMMENT=	Library of MySQL UDFs providing access to PCRE
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 

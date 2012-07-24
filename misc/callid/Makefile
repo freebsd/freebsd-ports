@@ -12,7 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://possamai.home.xs4all.nl/callid/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Utility to log incoming calls using ISDN and output to mysql/php
+COMMENT=	Utility to log incoming calls using ISDN and output to MySQL/PHP
 
 USE_MYSQL=	yes
 USE_PERL5=	yes

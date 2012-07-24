@@ -12,7 +12,7 @@ MASTER_SITES=	http://downloads.mikekohn.net/mp2p/ \
 		http://www.heim2.tu-clausthal.de/~upp/mysqlphp2postgres/
 
 MAINTAINER=	uwe.pierau@tu-clausthal.de
-COMMENT=	Convert mysql calls in a php page into PostgreSQL calls
+COMMENT=	Convert MySQL calls in a PHP page into PostgreSQL calls
 
 ALL_TARGET=	default
 PLIST_FILES=	bin/mysqlphp2postgres

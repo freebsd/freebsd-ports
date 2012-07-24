@@ -10,7 +10,7 @@ DISTVERSION=	1.5.0b3
 CATEGORIES=	databases www pear
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	PEAR mysql MDB2 driver
+COMMENT=	PEAR MySQL MDB2 driver
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 		${PEARDIR}/MDB2.php:${PORTSDIR}/databases/pear-MDB2
