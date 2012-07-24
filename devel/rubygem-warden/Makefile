@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	warden
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
