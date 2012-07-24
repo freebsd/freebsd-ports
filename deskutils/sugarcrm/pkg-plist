@@ -1217,6 +1217,8 @@
 %%WWWDIR%%/include/connectors/sources/ext/rest/rest.php
 %%WWWDIR%%/include/connectors/sources/ext/soap/soap.php
 %%WWWDIR%%/include/connectors/sources/loc/xml.php
+%%WWWDIR%%/include/connectors/utils/ConnectorHtmlHelperFactory.php
+%%WWWDIR%%/include/connectors/utils/ConnectorHtmlHelper.php
 %%WWWDIR%%/include/connectors/utils/ConnectorUtils.php
 %%WWWDIR%%/include/contextMenus/contextMenu.php
 %%WWWDIR%%/include/contextMenus/menuDefs/sugarAccount.php
@@ -5449,6 +5451,7 @@
 %%WWWDIR%%/modules/MailMerge/get_doc.php
 %%WWWDIR%%/modules/MailMerge/index.php
 %%WWWDIR%%/modules/MailMerge/language/en_us.lang.php
+%%WWWDIR%%/modules/MailMerge/merge_query.php
 %%WWWDIR%%/modules/MailMerge/modules_array.php
 %%WWWDIR%%/modules/Meetings/Dashlets/MyMeetingsDashlet/MyMeetingsDashlet.data.php
 %%WWWDIR%%/modules/Meetings/Dashlets/MyMeetingsDashlet/MyMeetingsDashlet.meta.php
@@ -6082,6 +6085,8 @@
 %%WWWDIR%%/modules/Users/ListRoles.php
 %%WWWDIR%%/modules/Users/Login.php
 %%WWWDIR%%/modules/Users/Logout.php
+%%WWWDIR%%/modules/Users/LoggedOut.tpl
+%%WWWDIR%%/modules/Users/LoggedOut.php
 %%WWWDIR%%/modules/Users/Menu.php
 %%WWWDIR%%/modules/Users/PasswordRequirementBox.css
 %%WWWDIR%%/modules/Users/PasswordRequirementBox.js
