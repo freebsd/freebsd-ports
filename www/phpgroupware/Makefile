@@ -6,7 +6,7 @@
 
 PORTNAME=	phpgroupware
 PORTVERSION=	0.9.16.017
-CATEGORIES=	deskutils
+CATEGORIES=	www
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	phpgroupware/phpgroupware/${PORTVERSION}
 
