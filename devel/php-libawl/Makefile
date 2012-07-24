@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	php-libawl
-PORTVERSION=	0.51
+PORTVERSION=	0.53
 CATEGORIES=	devel
 MASTER_SITES=	http://debian.mcmillan.net.nz/packages/awl/ \
 		SF/rscds/awl/${PORTVERSION}
@@ -15,7 +15,12 @@ COMMENT=	Andrew.s Web Libraries - PHP Utility Libraries
 
 WRKSRC=		${WRKDIR}/awl-${PORTVERSION}
 
-.if !defined(WITHOUT_PHP_DEPENDS)
+OPTIONS_DEFINE=	PHP
+OPTIONS_DEFAULT=	PHP
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MPHP}
 USE_PHP=	YES
 .endif
 NO_BUILD=	YES
