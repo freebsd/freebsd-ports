@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	delayed_job
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
