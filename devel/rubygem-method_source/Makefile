@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	method_source
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
