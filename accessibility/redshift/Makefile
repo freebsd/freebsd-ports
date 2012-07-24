@@ -58,8 +58,8 @@ CONFIGURE_ARGS+=--disable-vidmode
 
 .if ${PORT_OPTIONS:MGUI}
 CONFIGURE_ARGS+=--enable-gui --enable-gnome-clock
-RUN_DEPENDS+=	py-gtk2:${PORTSDIR}/x11-toolkits/py-gtk2 \
-		py-xdg:${PORTSDIR}/devel/py-xdg
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
+		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg
 PLIST_SUB+=	GUI=""
 .else
 CONFIGURE_ARGS+=--disable-gui --disable-gnome-clock
