@@ -57,6 +57,9 @@ bin/markdown_py
 %%PYTHON_SITELIBDIR%%/markdown/extensions/rss.py
 %%PYTHON_SITELIBDIR%%/markdown/extensions/rss.pyc
 %%PYTHON_SITELIBDIR%%/markdown/extensions/rss.pyo
+%%PYTHON_SITELIBDIR%%/markdown/extensions/sane_lists.py
+%%PYTHON_SITELIBDIR%%/markdown/extensions/sane_lists.pyc
+%%PYTHON_SITELIBDIR%%/markdown/extensions/sane_lists.pyo
 %%PYTHON_SITELIBDIR%%/markdown/extensions/tables.py
 %%PYTHON_SITELIBDIR%%/markdown/extensions/tables.pyc
 %%PYTHON_SITELIBDIR%%/markdown/extensions/tables.pyo
