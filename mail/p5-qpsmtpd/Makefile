@@ -7,7 +7,7 @@
 
 PORTNAME=	qpsmtpd
 PORTVERSION=	0.84
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://smtpd.develooper.com/files/
 PKGNAMEPREFIX=	p5-
@@ -25,9 +25,13 @@ BUILD_DEPENDS=	spamd:${PORTSDIR}/mail/p5-Mail-SpamAssassin \
 		p5-Time-HiRes>0:${PORTSDIR}/devel/p5-Time-HiRes
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-OPTIONS	=	MODPERL "Enable Apache Support via mod_perl"	On
+OPTIONS_DEFINE=	MODPERL
+OPTIONS_DEFAULT=MODPERL
+MOD_PERL_DESC=	"Apache Support via mod_perl"
 
-.ifdef WITH_MODPERL
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMODPERL}
 USE_APACHE=	20+
 RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2
 .endif
