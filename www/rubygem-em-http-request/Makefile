@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	em-http-request
-PORTVERSION=	0.2.14
+PORTVERSION=	0.2.15
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
