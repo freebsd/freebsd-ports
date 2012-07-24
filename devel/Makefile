@@ -134,6 +134,7 @@
     SUBDIR += bug-buddy
     SUBDIR += bugzilla
     SUBDIR += bugzilla3
+    SUBDIR += bugzilla42
     SUBDIR += build
     SUBDIR += buildapp
     SUBDIR += buildbot

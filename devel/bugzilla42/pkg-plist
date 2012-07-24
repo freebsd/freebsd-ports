@@ -1,0 +1,1054 @@
+%%PORTDOCS%%%%DOCSDIR%%/bugzilla.ent
+%%PORTDOCS%%%%DOCSDIR%%/en/html/Bugzilla-Guide.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/about.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/administration.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Attachment.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Auth.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Auth/Login.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Auth/Verify.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/CGI.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Classification.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Comment.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Component.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Config.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Config/Common.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/DB.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/DB/Mysql.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/DB/Oracle.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/DB/Pg.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/DB/Schema.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/DB/Sqlite.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Error.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Extension.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Field.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Field/Choice.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Field/ChoiceInterface.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Flag.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/FlagType.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Group.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Hook.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Install.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Install/CPAN.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Install/DB.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Install/Filesystem.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Install/Localconfig.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Install/Requirements.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Install/Util.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/JobQueue.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/JobQueue/Runner.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Keyword.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Migrate.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Milestone.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Object.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Product.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Search/Recent.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Search/Saved.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Status.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Template.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Template/Plugin/Bugzilla.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Template/Plugin/Hook.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Template/Plugin/User.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Token.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Update.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/User.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/User/Setting.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/User/Setting/Lang.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/User/Setting/Skin.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/User/Setting/Timezone.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Util.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Version.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/WebService.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/WebService/Bug.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/WebService/Bugzilla.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/WebService/Group.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/WebService/Product.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/WebService/Server/JSONRPC.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/WebService/Server/XMLRPC.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/WebService/User.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/WebService/Util.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Whine.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Whine/Query.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Whine/Schedule.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/checksetup.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/collectstats.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/contrib/bz_webservice_demo.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/contrib/bzdbcopy.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/contrib/console.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/contrib/extension-convert.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/contrib/merge-users.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/contrib/recode.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/email_in.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/extensions/create.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/importxml.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/index.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/install-module.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/jobqueue.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/migrate.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/sanitycheck.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/attachments.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/bug_page.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/bug_status_workflow.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/bugreports.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/classifications.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/cmdline-bugmail.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/cmdline.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/components.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/configuration.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/conventions.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/copyright.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/credits.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/cust-change-permissions.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/cust-skins.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/cust-templates.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/custom-fields.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/customization.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/disclaimer.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/edit-values.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/extensions.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/extraconfig.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/flags-overview.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/flags.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/general-advice.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/gfdl-0.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/gfdl-1.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/gfdl-10.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/gfdl-2.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/gfdl-3.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/gfdl-4.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/gfdl-5.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/gfdl-6.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/gfdl-7.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/gfdl-8.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/gfdl-9.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/gfdl-howto.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/gfdl.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/glossary.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/groups.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/hintsandtips.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/install-perlmodules-manual.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/installation.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/installing-bugzilla.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/integration.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/keywords.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/lifecycle.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/milestones.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/modules-manual-download.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/modules-manual-instructions.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/modules-manual-optional.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/multiple-bz-dbs.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/myaccount.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/newversions.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/nonroot.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/os-specific.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/parameters.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/paranoid-security.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/patches.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/products.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/query.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/quips.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/reporting.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/sanitycheck.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/security-bugzilla.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/security-os.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/security-webserver.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/security.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/timetracking.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/trbl-dbdsponge.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/trbl-index.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/trbl-passwd-encryption.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/trbl-perlmodule.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/trbl-relogin-everyone.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/trbl-testserver.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/troubleshooting.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/upgrade.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/useradmin.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/userpreferences.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/using-intro.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/using.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/versions.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/voting.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/whining.html
+%%PORTDOCS%%%%DOCSDIR%%/en/images/bzLifecycle.png
+%%PORTDOCS%%%%DOCSDIR%%/en/images/bzLifecycle.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/images/callouts/1.gif
+%%PORTDOCS%%%%DOCSDIR%%/en/images/callouts/2.gif
+%%PORTDOCS%%%%DOCSDIR%%/en/images/callouts/3.gif
+%%PORTDOCS%%%%DOCSDIR%%/en/images/caution.gif
+%%PORTDOCS%%%%DOCSDIR%%/en/images/note.gif
+%%PORTDOCS%%%%DOCSDIR%%/en/images/tip.gif
+%%PORTDOCS%%%%DOCSDIR%%/en/images/warning.gif
+%%PORTDOCS%%%%DOCSDIR%%/en/pdf/Bugzilla-Guide.pdf
+%%PORTDOCS%%%%DOCSDIR%%/en/rel_notes.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/txt/Bugzilla-Guide.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/Bugzilla-Guide.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/about.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/administration.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/bugzilla.ent
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/conventions.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/customization.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/gfdl.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/glossary.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/index.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/installation.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/modules.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/patches.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/security.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/troubleshooting.xml
+%%PORTDOCS%%%%DOCSDIR%%/en/xml/using.xml
+%%PORTDOCS%%%%DOCSDIR%%/lib/Pod/Simple/HTML/Bugzilla.pm
+%%PORTDOCS%%%%DOCSDIR%%/lib/Pod/Simple/HTMLBatch/Bugzilla.pm
+%%PORTDOCS%%%%DOCSDIR%%/makedocs.pl
+%%PORTDOCS%%%%DOCSDIR%%/style.css
+%%WWWDIR%%/.htaccess
+%%WWWDIR%%/Bugzilla.pm
+%%WWWDIR%%/Bugzilla/Attachment.pm
+%%WWWDIR%%/Bugzilla/Attachment/PatchReader.pm
+%%WWWDIR%%/Bugzilla/Auth.pm
+%%WWWDIR%%/Bugzilla/Auth/Login.pm
+%%WWWDIR%%/Bugzilla/Auth/Login/CGI.pm
+%%WWWDIR%%/Bugzilla/Auth/Login/Cookie.pm
+%%WWWDIR%%/Bugzilla/Auth/Login/Env.pm
+%%WWWDIR%%/Bugzilla/Auth/Login/Stack.pm
+%%WWWDIR%%/Bugzilla/Auth/Persist/Cookie.pm
+%%WWWDIR%%/Bugzilla/Auth/Verify.pm
+%%WWWDIR%%/Bugzilla/Auth/Verify/DB.pm
+%%WWWDIR%%/Bugzilla/Auth/Verify/LDAP.pm
+%%WWWDIR%%/Bugzilla/Auth/Verify/RADIUS.pm
+%%WWWDIR%%/Bugzilla/Auth/Verify/Stack.pm
+%%WWWDIR%%/Bugzilla/Bug.pm
+%%WWWDIR%%/Bugzilla/BugMail.pm
+%%WWWDIR%%/Bugzilla/BugUrl.pm
+%%WWWDIR%%/Bugzilla/BugUrl/Bugzilla.pm
+%%WWWDIR%%/Bugzilla/BugUrl/Bugzilla/Local.pm
+%%WWWDIR%%/Bugzilla/BugUrl/Debian.pm
+%%WWWDIR%%/Bugzilla/BugUrl/Google.pm
+%%WWWDIR%%/Bugzilla/BugUrl/JIRA.pm
+%%WWWDIR%%/Bugzilla/BugUrl/Launchpad.pm
+%%WWWDIR%%/Bugzilla/BugUrl/MantisBT.pm
+%%WWWDIR%%/Bugzilla/BugUrl/SourceForge.pm
+%%WWWDIR%%/Bugzilla/BugUrl/Trac.pm
+%%WWWDIR%%/Bugzilla/CGI.pm
+%%WWWDIR%%/Bugzilla/Chart.pm
+%%WWWDIR%%/Bugzilla/Classification.pm
+%%WWWDIR%%/Bugzilla/Comment.pm
+%%WWWDIR%%/Bugzilla/Component.pm
+%%WWWDIR%%/Bugzilla/Config.pm
+%%WWWDIR%%/Bugzilla/Config/Admin.pm
+%%WWWDIR%%/Bugzilla/Config/Advanced.pm
+%%WWWDIR%%/Bugzilla/Config/Attachment.pm
+%%WWWDIR%%/Bugzilla/Config/Auth.pm
+%%WWWDIR%%/Bugzilla/Config/BugChange.pm
+%%WWWDIR%%/Bugzilla/Config/BugFields.pm
+%%WWWDIR%%/Bugzilla/Config/Common.pm
+%%WWWDIR%%/Bugzilla/Config/Core.pm
+%%WWWDIR%%/Bugzilla/Config/DependencyGraph.pm
+%%WWWDIR%%/Bugzilla/Config/General.pm
+%%WWWDIR%%/Bugzilla/Config/GroupSecurity.pm
+%%WWWDIR%%/Bugzilla/Config/LDAP.pm
+%%WWWDIR%%/Bugzilla/Config/MTA.pm
+%%WWWDIR%%/Bugzilla/Config/PatchViewer.pm
+%%WWWDIR%%/Bugzilla/Config/Query.pm
+%%WWWDIR%%/Bugzilla/Config/RADIUS.pm
+%%WWWDIR%%/Bugzilla/Config/ShadowDB.pm
+%%WWWDIR%%/Bugzilla/Config/UserMatch.pm
+%%WWWDIR%%/Bugzilla/Constants.pm
+%%WWWDIR%%/Bugzilla/DB.pm
+%%WWWDIR%%/Bugzilla/DB/Mysql.pm
+%%WWWDIR%%/Bugzilla/DB/Oracle.pm
+%%WWWDIR%%/Bugzilla/DB/Pg.pm
+%%WWWDIR%%/Bugzilla/DB/Schema.pm
+%%WWWDIR%%/Bugzilla/DB/Schema/Mysql.pm
+%%WWWDIR%%/Bugzilla/DB/Schema/Oracle.pm
+%%WWWDIR%%/Bugzilla/DB/Schema/Pg.pm
+%%WWWDIR%%/Bugzilla/DB/Schema/Sqlite.pm
+%%WWWDIR%%/Bugzilla/DB/Sqlite.pm
+%%WWWDIR%%/Bugzilla/Error.pm
+%%WWWDIR%%/Bugzilla/Extension.pm
+%%WWWDIR%%/Bugzilla/Field.pm
+%%WWWDIR%%/Bugzilla/Field/Choice.pm
+%%WWWDIR%%/Bugzilla/Field/ChoiceInterface.pm
+%%WWWDIR%%/Bugzilla/Flag.pm
+%%WWWDIR%%/Bugzilla/FlagType.pm
+%%WWWDIR%%/Bugzilla/Group.pm
+%%WWWDIR%%/Bugzilla/Hook.pm
+%%WWWDIR%%/Bugzilla/Install.pm
+%%WWWDIR%%/Bugzilla/Install/CPAN.pm
+%%WWWDIR%%/Bugzilla/Install/DB.pm
+%%WWWDIR%%/Bugzilla/Install/Filesystem.pm
+%%WWWDIR%%/Bugzilla/Install/Localconfig.pm
+%%WWWDIR%%/Bugzilla/Install/Requirements.pm
+%%WWWDIR%%/Bugzilla/Install/Util.pm
+%%WWWDIR%%/Bugzilla/Job/Mailer.pm
+%%WWWDIR%%/Bugzilla/JobQueue.pm
+%%WWWDIR%%/Bugzilla/JobQueue/Runner.pm
+%%WWWDIR%%/Bugzilla/Keyword.pm
+%%WWWDIR%%/Bugzilla/Mailer.pm
+%%WWWDIR%%/Bugzilla/Migrate.pm
+%%WWWDIR%%/Bugzilla/Migrate/Gnats.pm
+%%WWWDIR%%/Bugzilla/Milestone.pm
+%%WWWDIR%%/Bugzilla/Object.pm
+%%WWWDIR%%/Bugzilla/Product.pm
+%%WWWDIR%%/Bugzilla/RNG.pm
+%%WWWDIR%%/Bugzilla/Search.pm
+%%WWWDIR%%/Bugzilla/Search/Clause.pm
+%%WWWDIR%%/Bugzilla/Search/Condition.pm
+%%WWWDIR%%/Bugzilla/Search/Quicksearch.pm
+%%WWWDIR%%/Bugzilla/Search/Recent.pm
+%%WWWDIR%%/Bugzilla/Search/Saved.pm
+%%WWWDIR%%/Bugzilla/Series.pm
+%%WWWDIR%%/Bugzilla/Status.pm
+%%WWWDIR%%/Bugzilla/Template.pm
+%%WWWDIR%%/Bugzilla/Template/Context.pm
+%%WWWDIR%%/Bugzilla/Template/Plugin/Bugzilla.pm
+%%WWWDIR%%/Bugzilla/Template/Plugin/Hook.pm
+%%WWWDIR%%/Bugzilla/Template/Plugin/User.pm
+%%WWWDIR%%/Bugzilla/Token.pm
+%%WWWDIR%%/Bugzilla/Update.pm
+%%WWWDIR%%/Bugzilla/User.pm
+%%WWWDIR%%/Bugzilla/User/Setting.pm
+%%WWWDIR%%/Bugzilla/User/Setting/Lang.pm
+%%WWWDIR%%/Bugzilla/User/Setting/Skin.pm
+%%WWWDIR%%/Bugzilla/User/Setting/Timezone.pm
+%%WWWDIR%%/Bugzilla/Util.pm
+%%WWWDIR%%/Bugzilla/Version.pm
+%%WWWDIR%%/Bugzilla/WebService.pm
+%%WWWDIR%%/Bugzilla/WebService/Bug.pm
+%%WWWDIR%%/Bugzilla/WebService/Bugzilla.pm
+%%WWWDIR%%/Bugzilla/WebService/Constants.pm
+%%WWWDIR%%/Bugzilla/WebService/Group.pm
+%%WWWDIR%%/Bugzilla/WebService/Product.pm
+%%WWWDIR%%/Bugzilla/WebService/README
+%%WWWDIR%%/Bugzilla/WebService/Server.pm
+%%WWWDIR%%/Bugzilla/WebService/Server/JSONRPC.pm
+%%WWWDIR%%/Bugzilla/WebService/Server/XMLRPC.pm
+%%WWWDIR%%/Bugzilla/WebService/User.pm
+%%WWWDIR%%/Bugzilla/WebService/Util.pm
+%%WWWDIR%%/Bugzilla/Whine.pm
+%%WWWDIR%%/Bugzilla/Whine/Query.pm
+%%WWWDIR%%/Bugzilla/Whine/Schedule.pm
+%%WWWDIR%%/README
+%%WWWDIR%%/admin.cgi
+%%WWWDIR%%/attachment.cgi
+%%WWWDIR%%/buglist.cgi
+%%WWWDIR%%/bugzilla.dtd
+%%WWWDIR%%/chart.cgi
+%%WWWDIR%%/checksetup.pl
+%%WWWDIR%%/colchange.cgi
+%%WWWDIR%%/collectstats.pl
+%%WWWDIR%%/config.cgi
+%%CONTRIB%%%%WWWDIR%%/contrib/README
+%%CONTRIB%%%%WWWDIR%%/contrib/bugzilla-queue.rhel
+%%CONTRIB%%%%WWWDIR%%/contrib/bugzilla-queue.suse
+%%CONTRIB%%%%WWWDIR%%/contrib/bugzilla-submit/README
+%%CONTRIB%%%%WWWDIR%%/contrib/bugzilla-submit/bugdata.txt
+%%CONTRIB%%%%WWWDIR%%/contrib/bugzilla-submit/bugzilla-submit
+%%CONTRIB%%%%WWWDIR%%/contrib/bugzilla-submit/bugzilla-submit.xml
+%%CONTRIB%%%%WWWDIR%%/contrib/bz_webservice_demo.pl
+%%CONTRIB%%%%WWWDIR%%/contrib/bzdbcopy.pl
+%%CONTRIB%%%%WWWDIR%%/contrib/cmdline/bugcount
+%%CONTRIB%%%%WWWDIR%%/contrib/cmdline/bugids
+%%CONTRIB%%%%WWWDIR%%/contrib/cmdline/buglist
+%%CONTRIB%%%%WWWDIR%%/contrib/cmdline/bugs
+%%CONTRIB%%%%WWWDIR%%/contrib/cmdline/bugslink
+%%CONTRIB%%%%WWWDIR%%/contrib/cmdline/makequery
+%%CONTRIB%%%%WWWDIR%%/contrib/cmdline/query.conf
+%%CONTRIB%%%%WWWDIR%%/contrib/console.pl
+%%CONTRIB%%%%WWWDIR%%/contrib/convert-workflow.pl
+%%CONTRIB%%%%WWWDIR%%/contrib/cvs-update.pl
+%%CONTRIB%%%%WWWDIR%%/contrib/extension-convert.pl
+%%CONTRIB%%%%WWWDIR%%/contrib/fixperms.pl
+%%CONTRIB%%%%WWWDIR%%/contrib/jb2bz.py
+%%CONTRIB%%%%WWWDIR%%/contrib/merge-users.pl
+%%CONTRIB%%%%WWWDIR%%/contrib/mysqld-watcher.pl
+%%CONTRIB%%%%WWWDIR%%/contrib/new-yui.sh
+%%CONTRIB%%%%WWWDIR%%/contrib/recode.pl
+%%CONTRIB%%%%WWWDIR%%/contrib/sendbugmail.pl
+%%CONTRIB%%%%WWWDIR%%/contrib/sendunsentbugmail.pl
+%%CONTRIB%%%%WWWDIR%%/contrib/syncLDAP.pl
+%%WWWDIR%%/createaccount.cgi
+%%WWWDIR%%/describecomponents.cgi
+%%WWWDIR%%/describekeywords.cgi
+%%WWWDIR%%/duplicates.cgi
+%%WWWDIR%%/editclassifications.cgi
+%%WWWDIR%%/editcomponents.cgi
+%%WWWDIR%%/editfields.cgi
+%%WWWDIR%%/editflagtypes.cgi
+%%WWWDIR%%/editgroups.cgi
+%%WWWDIR%%/editkeywords.cgi
+%%WWWDIR%%/editmilestones.cgi
+%%WWWDIR%%/editparams.cgi
+%%WWWDIR%%/editproducts.cgi
+%%WWWDIR%%/editsettings.cgi
+%%WWWDIR%%/editusers.cgi
+%%WWWDIR%%/editvalues.cgi
+%%WWWDIR%%/editversions.cgi
+%%WWWDIR%%/editwhines.cgi
+%%WWWDIR%%/editworkflow.cgi
+%%WWWDIR%%/email_in.pl
+%%WWWDIR%%/enter_bug.cgi
+%%WWWDIR%%/images/favicon.ico
+%%WWWDIR%%/images/padlock.png
+%%WWWDIR%%/importxml.pl
+%%WWWDIR%%/index.cgi
+%%WWWDIR%%/install-module.pl
+%%WWWDIR%%/jobqueue.pl
+%%WWWDIR%%/js/TUI.js
+%%WWWDIR%%/js/attachment.js
+%%WWWDIR%%/js/bug.js
+%%WWWDIR%%/js/change-columns.js
+%%WWWDIR%%/js/comments.js
+%%WWWDIR%%/js/custom-search.js
+%%WWWDIR%%/js/expanding-tree.js
+%%WWWDIR%%/js/field.js
+%%WWWDIR%%/js/flag.js
+%%WWWDIR%%/js/global.js
+%%WWWDIR%%/js/history.js/license.txt
+%%WWWDIR%%/js/history.js/native.history.js
+%%WWWDIR%%/js/history.js/readme.txt
+%%WWWDIR%%/js/params.js
+%%WWWDIR%%/js/productform.js
+%%WWWDIR%%/js/util.js
+%%WWWDIR%%/js/yui/animation/animation-min.js
+%%WWWDIR%%/js/yui/assets/skins/sam/ajax-loader.gif
+%%WWWDIR%%/js/yui/assets/skins/sam/asc.gif
+%%WWWDIR%%/js/yui/assets/skins/sam/autocomplete.css
+%%WWWDIR%%/js/yui/assets/skins/sam/back-h.png
+%%WWWDIR%%/js/yui/assets/skins/sam/back-v.png
+%%WWWDIR%%/js/yui/assets/skins/sam/bar-h.png
+%%WWWDIR%%/js/yui/assets/skins/sam/bar-v.png
+%%WWWDIR%%/js/yui/assets/skins/sam/bg-h.gif
+%%WWWDIR%%/js/yui/assets/skins/sam/bg-v.gif
+%%WWWDIR%%/js/yui/assets/skins/sam/blankimage.png
+%%WWWDIR%%/js/yui/assets/skins/sam/button.css
+%%WWWDIR%%/js/yui/assets/skins/sam/calendar.css
+%%WWWDIR%%/js/yui/assets/skins/sam/carousel.css
+%%WWWDIR%%/js/yui/assets/skins/sam/check0.gif
+%%WWWDIR%%/js/yui/assets/skins/sam/check1.gif
+%%WWWDIR%%/js/yui/assets/skins/sam/check2.gif
+%%WWWDIR%%/js/yui/assets/skins/sam/colorpicker.css
+%%WWWDIR%%/js/yui/assets/skins/sam/container.css
+%%WWWDIR%%/js/yui/assets/skins/sam/datatable.css
+%%WWWDIR%%/js/yui/assets/skins/sam/desc.gif
+%%WWWDIR%%/js/yui/assets/skins/sam/dt-arrow-dn.png
+%%WWWDIR%%/js/yui/assets/skins/sam/dt-arrow-up.png
+%%WWWDIR%%/js/yui/assets/skins/sam/editor-knob.gif
+%%WWWDIR%%/js/yui/assets/skins/sam/editor-sprite-active.gif
+%%WWWDIR%%/js/yui/assets/skins/sam/editor-sprite.gif
+%%WWWDIR%%/js/yui/assets/skins/sam/editor.css
+%%WWWDIR%%/js/yui/assets/skins/sam/header_background.png
+%%WWWDIR%%/js/yui/assets/skins/sam/hue_bg.png
+%%WWWDIR%%/js/yui/assets/skins/sam/imagecropper.css
+%%WWWDIR%%/js/yui/assets/skins/sam/layout.css
+%%WWWDIR%%/js/yui/assets/skins/sam/layout_sprite.png
+%%WWWDIR%%/js/yui/assets/skins/sam/loading.gif
+%%WWWDIR%%/js/yui/assets/skins/sam/logger.css
+%%WWWDIR%%/js/yui/assets/skins/sam/menu-button-arrow-disabled.png
+%%WWWDIR%%/js/yui/assets/skins/sam/menu-button-arrow.png
+%%WWWDIR%%/js/yui/assets/skins/sam/menu.css
+%%WWWDIR%%/js/yui/assets/skins/sam/menubaritem_submenuindicator.png
+%%WWWDIR%%/js/yui/assets/skins/sam/menubaritem_submenuindicator_disabled.png
+%%WWWDIR%%/js/yui/assets/skins/sam/menuitem_checkbox.png
+%%WWWDIR%%/js/yui/assets/skins/sam/menuitem_checkbox_disabled.png
+%%WWWDIR%%/js/yui/assets/skins/sam/menuitem_submenuindicator.png
+%%WWWDIR%%/js/yui/assets/skins/sam/menuitem_submenuindicator_disabled.png
+%%WWWDIR%%/js/yui/assets/skins/sam/paginator.css
+%%WWWDIR%%/js/yui/assets/skins/sam/picker_mask.png
+%%WWWDIR%%/js/yui/assets/skins/sam/profilerviewer.css
+%%WWWDIR%%/js/yui/assets/skins/sam/progressbar.css
+%%WWWDIR%%/js/yui/assets/skins/sam/resize.css
+%%WWWDIR%%/js/yui/assets/skins/sam/simpleeditor.css
+%%WWWDIR%%/js/yui/assets/skins/sam/slider.css
+%%WWWDIR%%/js/yui/assets/skins/sam/split-button-arrow-active.png
+%%WWWDIR%%/js/yui/assets/skins/sam/split-button-arrow-disabled.png
+%%WWWDIR%%/js/yui/assets/skins/sam/split-button-arrow-focus.png
+%%WWWDIR%%/js/yui/assets/skins/sam/split-button-arrow-hover.png
+%%WWWDIR%%/js/yui/assets/skins/sam/split-button-arrow.png
+%%WWWDIR%%/js/yui/assets/skins/sam/sprite.png
+%%WWWDIR%%/js/yui/assets/skins/sam/tabview.css
+%%WWWDIR%%/js/yui/assets/skins/sam/treeview-loading.gif
+%%WWWDIR%%/js/yui/assets/skins/sam/treeview-sprite.gif
+%%WWWDIR%%/js/yui/assets/skins/sam/treeview.css
+%%WWWDIR%%/js/yui/assets/skins/sam/wait.gif
+%%WWWDIR%%/js/yui/assets/skins/sam/yuitest.css
+%%WWWDIR%%/js/yui/autocomplete/autocomplete-min.js
+%%WWWDIR%%/js/yui/base/base-min.css
+%%WWWDIR%%/js/yui/base/base.css
+%%WWWDIR%%/js/yui/button/button-min.js
+%%WWWDIR%%/js/yui/calendar/calendar-min.js
+%%WWWDIR%%/js/yui/carousel/carousel-min.js
+%%WWWDIR%%/js/yui/charts/charts-min.js
+%%WWWDIR%%/js/yui/colorpicker/colorpicker-min.js
+%%WWWDIR%%/js/yui/connection/connection-min.js
+%%WWWDIR%%/js/yui/connection/connection.swf
+%%WWWDIR%%/js/yui/connection/connection_core-min.js
+%%WWWDIR%%/js/yui/container/container-min.js
+%%WWWDIR%%/js/yui/container/container_core-min.js
+%%WWWDIR%%/js/yui/cookie/cookie-min.js
+%%WWWDIR%%/js/yui/datasource/datasource-min.js
+%%WWWDIR%%/js/yui/datatable/datatable-min.js
+%%WWWDIR%%/js/yui/datemath/datemath-min.js
+%%WWWDIR%%/js/yui/dom/dom-min.js
+%%WWWDIR%%/js/yui/dragdrop/dragdrop-min.js
+%%WWWDIR%%/js/yui/element-delegate/element-delegate-min.js
+%%WWWDIR%%/js/yui/element/element-min.js
+%%WWWDIR%%/js/yui/event-delegate/event-delegate-min.js
+%%WWWDIR%%/js/yui/event-mouseenter/event-mouseenter-min.js
+%%WWWDIR%%/js/yui/event-simulate/event-simulate-min.js
+%%WWWDIR%%/js/yui/event/event-min.js
+%%WWWDIR%%/js/yui/fonts/fonts-min.css
+%%WWWDIR%%/js/yui/fonts/fonts.css
+%%WWWDIR%%/js/yui/get/get-min.js
+%%WWWDIR%%/js/yui/grids/grids-min.css
+%%WWWDIR%%/js/yui/grids/grids.css
+%%WWWDIR%%/js/yui/history/history-min.js
+%%WWWDIR%%/js/yui/imagecropper/imagecropper-min.js
+%%WWWDIR%%/js/yui/imageloader/imageloader-min.js
+%%WWWDIR%%/js/yui/json/json-min.js
+%%WWWDIR%%/js/yui/layout/layout-min.js
+%%WWWDIR%%/js/yui/logger/logger-min.js
+%%WWWDIR%%/js/yui/menu/menu-min.js
+%%WWWDIR%%/js/yui/paginator/paginator-min.js
+%%WWWDIR%%/js/yui/profiler/profiler-min.js
+%%WWWDIR%%/js/yui/profilerviewer/profilerviewer-min.js
+%%WWWDIR%%/js/yui/progressbar/progressbar-min.js
+%%WWWDIR%%/js/yui/reset-fonts-grids/reset-fonts-grids.css
+%%WWWDIR%%/js/yui/reset-fonts/reset-fonts.css
+%%WWWDIR%%/js/yui/reset/reset-min.css
+%%WWWDIR%%/js/yui/reset/reset.css
+%%WWWDIR%%/js/yui/resize/resize-min.js
+%%WWWDIR%%/js/yui/selector/selector-min.js
+%%WWWDIR%%/js/yui/slider/slider-min.js
+%%WWWDIR%%/js/yui/storage/storage-min.js
+%%WWWDIR%%/js/yui/stylesheet/stylesheet-min.js
+%%WWWDIR%%/js/yui/swf/swf-min.js
+%%WWWDIR%%/js/yui/swfdetect/swfdetect-min.js
+%%WWWDIR%%/js/yui/swfstore/swfstore-min.js
+%%WWWDIR%%/js/yui/swfstore/swfstore.swf
+%%WWWDIR%%/js/yui/tabview/tabview-min.js
+%%WWWDIR%%/js/yui/treeview/treeview-min.js
+%%WWWDIR%%/js/yui/uploader/uploader-min.js
+%%WWWDIR%%/js/yui/yahoo-dom-event/yahoo-dom-event.js
+%%WWWDIR%%/js/yui/yahoo/yahoo-min.js
+%%WWWDIR%%/js/yui/yuiloader/yuiloader-min.js
+%%WWWDIR%%/js/yui/yuitest/yuitest-min.js
+%%WWWDIR%%/js/yui/yuitest/yuitest_core-min.js
+%%WWWDIR%%/jsonrpc.cgi
+%%WWWDIR%%/migrate.pl
+%%WWWDIR%%/mod_perl.pl
+%%WWWDIR%%/page.cgi
+%%WWWDIR%%/post_bug.cgi
+%%WWWDIR%%/process_bug.cgi
+%%WWWDIR%%/query.cgi
+%%WWWDIR%%/quips.cgi
+%%WWWDIR%%/relogin.cgi
+%%WWWDIR%%/report.cgi
+%%WWWDIR%%/reports.cgi
+%%WWWDIR%%/request.cgi
+%%WWWDIR%%/robots.txt
+%%WWWDIR%%/runtests.pl
+%%WWWDIR%%/sanitycheck.cgi
+%%WWWDIR%%/sanitycheck.pl
+%%WWWDIR%%/search_plugin.cgi
+%%WWWDIR%%/show_activity.cgi
+%%WWWDIR%%/show_bug.cgi
+%%WWWDIR%%/showdependencygraph.cgi
+%%WWWDIR%%/showdependencytree.cgi
+%%WWWDIR%%/skins/README
+%%WWWDIR%%/skins/contrib/Dusk/buglist.css
+%%WWWDIR%%/skins/contrib/Dusk/global.css
+%%WWWDIR%%/skins/contrib/Dusk/index.css
+%%WWWDIR%%/skins/standard/IE-fixes.css
+%%WWWDIR%%/skins/standard/admin.css
+%%WWWDIR%%/skins/standard/attachment.css
+%%WWWDIR%%/skins/standard/buglist.css
+%%WWWDIR%%/skins/standard/dependency-tree.css
+%%WWWDIR%%/skins/standard/dependency-tree/bug-item.png
+%%WWWDIR%%/skins/standard/dependency-tree/tree-closed.png
+%%WWWDIR%%/skins/standard/dependency-tree/tree-open.png
+%%WWWDIR%%/skins/standard/dependency-tree/tree.png
+%%WWWDIR%%/skins/standard/duplicates.css
+%%WWWDIR%%/skins/standard/editusers.css
+%%WWWDIR%%/skins/standard/enter_bug.css
+%%WWWDIR%%/skins/standard/global.css
+%%WWWDIR%%/skins/standard/global/body-back.gif
+%%WWWDIR%%/skins/standard/global/calendar.png
+%%WWWDIR%%/skins/standard/global/header.png
+%%WWWDIR%%/skins/standard/index.css
+%%WWWDIR%%/skins/standard/index/file-a-bug.png
+%%WWWDIR%%/skins/standard/index/help.png
+%%WWWDIR%%/skins/standard/index/new-account.png
+%%WWWDIR%%/skins/standard/index/search.png
+%%WWWDIR%%/skins/standard/page.css
+%%WWWDIR%%/skins/standard/params.css
+%%WWWDIR%%/skins/standard/reports.css
+%%WWWDIR%%/skins/standard/search_form.css
+%%WWWDIR%%/skins/standard/show_bug.css
+%%WWWDIR%%/skins/standard/show_multiple.css
+%%WWWDIR%%/skins/standard/summarize-time.css
+%%WWWDIR%%/summarize_time.cgi
+%%WWWDIR%%/template/en/default/account/auth/login-small.html.tmpl
+%%WWWDIR%%/template/en/default/account/auth/login.html.tmpl
+%%WWWDIR%%/template/en/default/account/cancel-token.txt.tmpl
+%%WWWDIR%%/template/en/default/account/create.html.tmpl
+%%WWWDIR%%/template/en/default/account/created.html.tmpl
+%%WWWDIR%%/template/en/default/account/email/change-new.txt.tmpl
+%%WWWDIR%%/template/en/default/account/email/change-old.txt.tmpl
+%%WWWDIR%%/template/en/default/account/email/confirm-new.html.tmpl
+%%WWWDIR%%/template/en/default/account/email/confirm.html.tmpl
+%%WWWDIR%%/template/en/default/account/email/request-new.txt.tmpl
+%%WWWDIR%%/template/en/default/account/password/forgotten-password.txt.tmpl
+%%WWWDIR%%/template/en/default/account/password/set-forgotten-password.html.tmpl
+%%WWWDIR%%/template/en/default/account/prefs/account.html.tmpl
+%%WWWDIR%%/template/en/default/account/prefs/email.html.tmpl
+%%WWWDIR%%/template/en/default/account/prefs/permissions.html.tmpl
+%%WWWDIR%%/template/en/default/account/prefs/prefs.html.tmpl
+%%WWWDIR%%/template/en/default/account/prefs/saved-searches.html.tmpl
+%%WWWDIR%%/template/en/default/account/prefs/settings.html.tmpl
+%%WWWDIR%%/template/en/default/account/profile-activity.html.tmpl
+%%WWWDIR%%/template/en/default/admin/admin.html.tmpl
+%%WWWDIR%%/template/en/default/admin/classifications/add.html.tmpl
+%%WWWDIR%%/template/en/default/admin/classifications/del.html.tmpl
+%%WWWDIR%%/template/en/default/admin/classifications/edit-common.html.tmpl
+%%WWWDIR%%/template/en/default/admin/classifications/edit.html.tmpl
+%%WWWDIR%%/template/en/default/admin/classifications/footer.html.tmpl
+%%WWWDIR%%/template/en/default/admin/classifications/reclassify.html.tmpl
+%%WWWDIR%%/template/en/default/admin/classifications/select.html.tmpl
+%%WWWDIR%%/template/en/default/admin/components/confirm-delete.html.tmpl
+%%WWWDIR%%/template/en/default/admin/components/create.html.tmpl
+%%WWWDIR%%/template/en/default/admin/components/edit-common.html.tmpl
+%%WWWDIR%%/template/en/default/admin/components/edit.html.tmpl
+%%WWWDIR%%/template/en/default/admin/components/footer.html.tmpl
+%%WWWDIR%%/template/en/default/admin/components/list.html.tmpl
+%%WWWDIR%%/template/en/default/admin/components/select-product.html.tmpl
+%%WWWDIR%%/template/en/default/admin/confirm-action.html.tmpl
+%%WWWDIR%%/template/en/default/admin/custom_fields/cf-js.js.tmpl
+%%WWWDIR%%/template/en/default/admin/custom_fields/confirm-delete.html.tmpl
+%%WWWDIR%%/template/en/default/admin/custom_fields/create.html.tmpl
+%%WWWDIR%%/template/en/default/admin/custom_fields/edit.html.tmpl
+%%WWWDIR%%/template/en/default/admin/custom_fields/list.html.tmpl
+%%WWWDIR%%/template/en/default/admin/fieldvalues/confirm-delete.html.tmpl
+%%WWWDIR%%/template/en/default/admin/fieldvalues/create.html.tmpl
+%%WWWDIR%%/template/en/default/admin/fieldvalues/edit.html.tmpl
+%%WWWDIR%%/template/en/default/admin/fieldvalues/footer.html.tmpl
+%%WWWDIR%%/template/en/default/admin/fieldvalues/list.html.tmpl
+%%WWWDIR%%/template/en/default/admin/fieldvalues/select-field.html.tmpl
+%%WWWDIR%%/template/en/default/admin/flag-type/confirm-delete.html.tmpl
+%%WWWDIR%%/template/en/default/admin/flag-type/edit.html.tmpl
+%%WWWDIR%%/template/en/default/admin/flag-type/list.html.tmpl
+%%WWWDIR%%/template/en/default/admin/groups/confirm-remove.html.tmpl
+%%WWWDIR%%/template/en/default/admin/groups/create.html.tmpl
+%%WWWDIR%%/template/en/default/admin/groups/delete.html.tmpl
+%%WWWDIR%%/template/en/default/admin/groups/edit.html.tmpl
+%%WWWDIR%%/template/en/default/admin/groups/list.html.tmpl
+%%WWWDIR%%/template/en/default/admin/keywords/confirm-delete.html.tmpl
+%%WWWDIR%%/template/en/default/admin/keywords/create.html.tmpl
+%%WWWDIR%%/template/en/default/admin/keywords/edit.html.tmpl
+%%WWWDIR%%/template/en/default/admin/keywords/list.html.tmpl
+%%WWWDIR%%/template/en/default/admin/milestones/confirm-delete.html.tmpl
+%%WWWDIR%%/template/en/default/admin/milestones/create.html.tmpl
+%%WWWDIR%%/template/en/default/admin/milestones/edit.html.tmpl
+%%WWWDIR%%/template/en/default/admin/milestones/footer.html.tmpl
+%%WWWDIR%%/template/en/default/admin/milestones/list.html.tmpl
+%%WWWDIR%%/template/en/default/admin/milestones/select-product.html.tmpl
+%%WWWDIR%%/template/en/default/admin/params/admin.html.tmpl
+%%WWWDIR%%/template/en/default/admin/params/advanced.html.tmpl
+%%WWWDIR%%/template/en/default/admin/params/attachment.html.tmpl
+%%WWWDIR%%/template/en/default/admin/params/auth.html.tmpl
+%%WWWDIR%%/template/en/default/admin/params/bugchange.html.tmpl
+%%WWWDIR%%/template/en/default/admin/params/bugfields.html.tmpl
+%%WWWDIR%%/template/en/default/admin/params/common.html.tmpl
+%%WWWDIR%%/template/en/default/admin/params/core.html.tmpl
+%%WWWDIR%%/template/en/default/admin/params/dependencygraph.html.tmpl
+%%WWWDIR%%/template/en/default/admin/params/editparams.html.tmpl
+%%WWWDIR%%/template/en/default/admin/params/general.html.tmpl
+%%WWWDIR%%/template/en/default/admin/params/groupsecurity.html.tmpl
+%%WWWDIR%%/template/en/default/admin/params/index.html.tmpl
+%%WWWDIR%%/template/en/default/admin/params/ldap.html.tmpl
+%%WWWDIR%%/template/en/default/admin/params/mta.html.tmpl
+%%WWWDIR%%/template/en/default/admin/params/patchviewer.html.tmpl
+%%WWWDIR%%/template/en/default/admin/params/query.html.tmpl
+%%WWWDIR%%/template/en/default/admin/params/radius.html.tmpl
+%%WWWDIR%%/template/en/default/admin/params/shadowdb.html.tmpl
+%%WWWDIR%%/template/en/default/admin/params/usermatch.html.tmpl
+%%WWWDIR%%/template/en/default/admin/products/confirm-delete.html.tmpl
+%%WWWDIR%%/template/en/default/admin/products/create.html.tmpl
+%%WWWDIR%%/template/en/default/admin/products/edit-common.html.tmpl
+%%WWWDIR%%/template/en/default/admin/products/edit.html.tmpl
+%%WWWDIR%%/template/en/default/admin/products/footer.html.tmpl
+%%WWWDIR%%/template/en/default/admin/products/groupcontrol/confirm-edit.html.tmpl
+%%WWWDIR%%/template/en/default/admin/products/groupcontrol/edit.html.tmpl
+%%WWWDIR%%/template/en/default/admin/products/groupcontrol/updated.html.tmpl
+%%WWWDIR%%/template/en/default/admin/products/list-classifications.html.tmpl
+%%WWWDIR%%/template/en/default/admin/products/list.html.tmpl
+%%WWWDIR%%/template/en/default/admin/products/updated.html.tmpl
+%%WWWDIR%%/template/en/default/admin/sanitycheck/list.html.tmpl
+%%WWWDIR%%/template/en/default/admin/sanitycheck/messages.html.tmpl
+%%WWWDIR%%/template/en/default/admin/settings/edit.html.tmpl
+%%WWWDIR%%/template/en/default/admin/sudo.html.tmpl
+%%WWWDIR%%/template/en/default/admin/table.html.tmpl
+%%WWWDIR%%/template/en/default/admin/users/confirm-delete.html.tmpl
+%%WWWDIR%%/template/en/default/admin/users/create.html.tmpl
+%%WWWDIR%%/template/en/default/admin/users/edit.html.tmpl
+%%WWWDIR%%/template/en/default/admin/users/list.html.tmpl
+%%WWWDIR%%/template/en/default/admin/users/listselectvars.html.tmpl
+%%WWWDIR%%/template/en/default/admin/users/responsibilities.html.tmpl
+%%WWWDIR%%/template/en/default/admin/users/search.html.tmpl
+%%WWWDIR%%/template/en/default/admin/users/userdata.html.tmpl
+%%WWWDIR%%/template/en/default/admin/versions/confirm-delete.html.tmpl
+%%WWWDIR%%/template/en/default/admin/versions/create.html.tmpl
+%%WWWDIR%%/template/en/default/admin/versions/edit.html.tmpl
+%%WWWDIR%%/template/en/default/admin/versions/footer.html.tmpl
+%%WWWDIR%%/template/en/default/admin/versions/list.html.tmpl
+%%WWWDIR%%/template/en/default/admin/versions/select-product.html.tmpl
+%%WWWDIR%%/template/en/default/admin/workflow/comment.html.tmpl
+%%WWWDIR%%/template/en/default/admin/workflow/edit.html.tmpl
+%%WWWDIR%%/template/en/default/attachment/choose.html.tmpl
+%%WWWDIR%%/template/en/default/attachment/confirm-delete.html.tmpl
+%%WWWDIR%%/template/en/default/attachment/create.html.tmpl
+%%WWWDIR%%/template/en/default/attachment/created.html.tmpl
+%%WWWDIR%%/template/en/default/attachment/createformcontents.html.tmpl
+%%WWWDIR%%/template/en/default/attachment/delete_reason.txt.tmpl
+%%WWWDIR%%/template/en/default/attachment/diff-file.html.tmpl
+%%WWWDIR%%/template/en/default/attachment/diff-footer.html.tmpl
+%%WWWDIR%%/template/en/default/attachment/diff-header.html.tmpl
+%%WWWDIR%%/template/en/default/attachment/edit.html.tmpl
+%%WWWDIR%%/template/en/default/attachment/list.html.tmpl
+%%WWWDIR%%/template/en/default/attachment/midair.html.tmpl
+%%WWWDIR%%/template/en/default/attachment/show-multiple.html.tmpl
+%%WWWDIR%%/template/en/default/attachment/updated.html.tmpl
+%%WWWDIR%%/template/en/default/bug/activity/show.html.tmpl
+%%WWWDIR%%/template/en/default/bug/activity/table.html.tmpl
+%%WWWDIR%%/template/en/default/bug/choose.html.tmpl
+%%WWWDIR%%/template/en/default/bug/comments.html.tmpl
+%%WWWDIR%%/template/en/default/bug/create/comment-guided.txt.tmpl
+%%WWWDIR%%/template/en/default/bug/create/comment.txt.tmpl
+%%WWWDIR%%/template/en/default/bug/create/create-guided.html.tmpl
+%%WWWDIR%%/template/en/default/bug/create/create.html.tmpl
+%%WWWDIR%%/template/en/default/bug/create/created.html.tmpl
+%%WWWDIR%%/template/en/default/bug/create/make-template.html.tmpl
+%%WWWDIR%%/template/en/default/bug/create/user-message.html.tmpl
+%%WWWDIR%%/template/en/default/bug/dependency-graph.html.tmpl
+%%WWWDIR%%/template/en/default/bug/dependency-tree.html.tmpl
+%%WWWDIR%%/template/en/default/bug/edit.html.tmpl
+%%WWWDIR%%/template/en/default/bug/field-events.js.tmpl
+%%WWWDIR%%/template/en/default/bug/field-help.none.tmpl
+%%WWWDIR%%/template/en/default/bug/field-label.html.tmpl
+%%WWWDIR%%/template/en/default/bug/field.html.tmpl
+%%WWWDIR%%/template/en/default/bug/format_comment.txt.tmpl
+%%WWWDIR%%/template/en/default/bug/knob.html.tmpl
+%%WWWDIR%%/template/en/default/bug/link.html.tmpl
+%%WWWDIR%%/template/en/default/bug/navigate.html.tmpl
+%%WWWDIR%%/template/en/default/bug/process/bugmail.html.tmpl
+%%WWWDIR%%/template/en/default/bug/process/confirm-duplicate.html.tmpl
+%%WWWDIR%%/template/en/default/bug/process/header.html.tmpl
+%%WWWDIR%%/template/en/default/bug/process/midair.html.tmpl
+%%WWWDIR%%/template/en/default/bug/process/results.html.tmpl
+%%WWWDIR%%/template/en/default/bug/process/verify-new-product.html.tmpl
+%%WWWDIR%%/template/en/default/bug/show-header.html.tmpl
+%%WWWDIR%%/template/en/default/bug/show-multiple.html.tmpl
+%%WWWDIR%%/template/en/default/bug/show.html.tmpl
+%%WWWDIR%%/template/en/default/bug/show.xml.tmpl
+%%WWWDIR%%/template/en/default/bug/summarize-time.html.tmpl
+%%WWWDIR%%/template/en/default/bug/time.html.tmpl
+%%WWWDIR%%/template/en/default/config.js.tmpl
+%%WWWDIR%%/template/en/default/config.rdf.tmpl
+%%WWWDIR%%/template/en/default/email/bugmail-common.txt.tmpl
+%%WWWDIR%%/template/en/default/email/bugmail-header.txt.tmpl
+%%WWWDIR%%/template/en/default/email/bugmail.html.tmpl
+%%WWWDIR%%/template/en/default/email/bugmail.txt.tmpl
+%%WWWDIR%%/template/en/default/email/lockout.txt.tmpl
+%%WWWDIR%%/template/en/default/email/sanitycheck.txt.tmpl
+%%WWWDIR%%/template/en/default/email/sudo.txt.tmpl
+%%WWWDIR%%/template/en/default/email/whine.txt.tmpl
+%%WWWDIR%%/template/en/default/extensions/config.pm.tmpl
+%%WWWDIR%%/template/en/default/extensions/extension.pm.tmpl
+%%WWWDIR%%/template/en/default/extensions/hook-readme.txt.tmpl
+%%WWWDIR%%/template/en/default/extensions/license.txt.tmpl
+%%WWWDIR%%/template/en/default/extensions/name-readme.txt.tmpl
+%%WWWDIR%%/template/en/default/extensions/util.pm.tmpl
+%%WWWDIR%%/template/en/default/extensions/web-readme.txt.tmpl
+%%WWWDIR%%/template/en/default/filterexceptions.pl
+%%WWWDIR%%/template/en/default/flag/list.html.tmpl
+%%WWWDIR%%/template/en/default/global/banner.html.tmpl
+%%WWWDIR%%/template/en/default/global/choose-classification.html.tmpl
+%%WWWDIR%%/template/en/default/global/choose-product.html.tmpl
+%%WWWDIR%%/template/en/default/global/code-error.html.tmpl
+%%WWWDIR%%/template/en/default/global/common-links.html.tmpl
+%%WWWDIR%%/template/en/default/global/confirm-action.html.tmpl
+%%WWWDIR%%/template/en/default/global/confirm-user-match.html.tmpl
+%%WWWDIR%%/template/en/default/global/docslinks.html.tmpl
+%%WWWDIR%%/template/en/default/global/field-descs.none.tmpl
+%%WWWDIR%%/template/en/default/global/footer.html.tmpl
+%%WWWDIR%%/template/en/default/global/header.html.tmpl
+%%WWWDIR%%/template/en/default/global/help.html.tmpl
+%%WWWDIR%%/template/en/default/global/hidden-fields.html.tmpl
+%%WWWDIR%%/template/en/default/global/initialize.none.tmpl
+%%WWWDIR%%/template/en/default/global/js-products.html.tmpl
+%%WWWDIR%%/template/en/default/global/message.html.tmpl
+%%WWWDIR%%/template/en/default/global/message.txt.tmpl
+%%WWWDIR%%/template/en/default/global/messages.html.tmpl
+%%WWWDIR%%/template/en/default/global/per-bug-queries.html.tmpl
+%%WWWDIR%%/template/en/default/global/reason-descs.none.tmpl
+%%WWWDIR%%/template/en/default/global/select-menu.html.tmpl
+%%WWWDIR%%/template/en/default/global/setting-descs.none.tmpl
+%%WWWDIR%%/template/en/default/global/site-navigation.html.tmpl
+%%WWWDIR%%/template/en/default/global/tabs.html.tmpl
+%%WWWDIR%%/template/en/default/global/textarea.html.tmpl
+%%WWWDIR%%/template/en/default/global/useful-links.html.tmpl
+%%WWWDIR%%/template/en/default/global/user-error.html.tmpl
+%%WWWDIR%%/template/en/default/global/user.html.tmpl
+%%WWWDIR%%/template/en/default/global/userselect.html.tmpl
+%%WWWDIR%%/template/en/default/global/value-descs.js.tmpl
+%%WWWDIR%%/template/en/default/global/value-descs.none.tmpl
+%%WWWDIR%%/template/en/default/global/variables.none.tmpl
+%%WWWDIR%%/template/en/default/index.html.tmpl
+%%WWWDIR%%/template/en/default/list/change-columns.html.tmpl
+%%WWWDIR%%/template/en/default/list/edit-multiple.html.tmpl
+%%WWWDIR%%/template/en/default/list/list-simple.html.tmpl
+%%WWWDIR%%/template/en/default/list/list.atom.tmpl
+%%WWWDIR%%/template/en/default/list/list.csv.tmpl
+%%WWWDIR%%/template/en/default/list/list.html.tmpl
+%%WWWDIR%%/template/en/default/list/list.ics.tmpl
+%%WWWDIR%%/template/en/default/list/list.rdf.tmpl
+%%WWWDIR%%/template/en/default/list/quips.html.tmpl
+%%WWWDIR%%/template/en/default/list/server-push.html.tmpl
+%%WWWDIR%%/template/en/default/list/table.html.tmpl
+%%WWWDIR%%/template/en/default/pages/bug-writing.html.tmpl
+%%WWWDIR%%/template/en/default/pages/fields.html.tmpl
+%%WWWDIR%%/template/en/default/pages/linked.html.tmpl
+%%WWWDIR%%/template/en/default/pages/linkify.html.tmpl
+%%WWWDIR%%/template/en/default/pages/quicksearch.html.tmpl
+%%WWWDIR%%/template/en/default/pages/release-notes.html.tmpl
+%%WWWDIR%%/template/en/default/pages/release-notes3.html.tmpl
+%%WWWDIR%%/template/en/default/pages/sudo.html.tmpl
+%%WWWDIR%%/template/en/default/reports/chart.csv.tmpl
+%%WWWDIR%%/template/en/default/reports/chart.html.tmpl
+%%WWWDIR%%/template/en/default/reports/chart.png.tmpl
+%%WWWDIR%%/template/en/default/reports/components.html.tmpl
+%%WWWDIR%%/template/en/default/reports/create-chart.html.tmpl
+%%WWWDIR%%/template/en/default/reports/delete-series.html.tmpl
+%%WWWDIR%%/template/en/default/reports/duplicates-simple.html.tmpl
+%%WWWDIR%%/template/en/default/reports/duplicates-table.html.tmpl
+%%WWWDIR%%/template/en/default/reports/duplicates.html.tmpl
+%%WWWDIR%%/template/en/default/reports/edit-series.html.tmpl
+%%WWWDIR%%/template/en/default/reports/keywords.html.tmpl
+%%WWWDIR%%/template/en/default/reports/menu.html.tmpl
+%%WWWDIR%%/template/en/default/reports/old-charts.html.tmpl
+%%WWWDIR%%/template/en/default/reports/report-bar.png.tmpl
+%%WWWDIR%%/template/en/default/reports/report-line.png.tmpl
+%%WWWDIR%%/template/en/default/reports/report-pie.png.tmpl
+%%WWWDIR%%/template/en/default/reports/report-simple.html.tmpl
+%%WWWDIR%%/template/en/default/reports/report-table.csv.tmpl
+%%WWWDIR%%/template/en/default/reports/report-table.html.tmpl
+%%WWWDIR%%/template/en/default/reports/report.csv.tmpl
+%%WWWDIR%%/template/en/default/reports/report.html.tmpl
+%%WWWDIR%%/template/en/default/reports/series-common.html.tmpl
+%%WWWDIR%%/template/en/default/reports/series.html.tmpl
+%%WWWDIR%%/template/en/default/request/email.txt.tmpl
+%%WWWDIR%%/template/en/default/request/queue.html.tmpl
+%%WWWDIR%%/template/en/default/search/boolean-charts.html.tmpl
+%%WWWDIR%%/template/en/default/search/field.html.tmpl
+%%WWWDIR%%/template/en/default/search/form.html.tmpl
+%%WWWDIR%%/template/en/default/search/knob.html.tmpl
+%%WWWDIR%%/template/en/default/search/search-advanced.html.tmpl
+%%WWWDIR%%/template/en/default/search/search-create-series.html.tmpl
+%%WWWDIR%%/template/en/default/search/search-plugin.xml.tmpl
+%%WWWDIR%%/template/en/default/search/search-report-graph.html.tmpl
+%%WWWDIR%%/template/en/default/search/search-report-select.html.tmpl
+%%WWWDIR%%/template/en/default/search/search-report-table.html.tmpl
+%%WWWDIR%%/template/en/default/search/search-specific.html.tmpl
+%%WWWDIR%%/template/en/default/search/tabs.html.tmpl
+%%WWWDIR%%/template/en/default/search/type-select.html.tmpl
+%%WWWDIR%%/template/en/default/setup/strings.txt.pl
+%%WWWDIR%%/template/en/default/welcome-admin.html.tmpl
+%%WWWDIR%%/template/en/default/whine/mail.html.tmpl
+%%WWWDIR%%/template/en/default/whine/mail.txt.tmpl
+%%WWWDIR%%/template/en/default/whine/multipart-mime.txt.tmpl
+%%WWWDIR%%/template/en/default/whine/schedule.html.tmpl
+%%WWWDIR%%/testagent.cgi
+%%WWWDIR%%/testserver.pl
+%%WWWDIR%%/token.cgi
+%%WWWDIR%%/userprefs.cgi
+%%WWWDIR%%/votes.cgi
+%%WWWDIR%%/whine.pl
+%%WWWDIR%%/whineatnews.pl
+%%WWWDIR%%/xmlrpc.cgi
+@dirrmtry %%WWWDIR%%/xt
+@dirrm %%WWWDIR%%/template/en/default/whine
+@dirrm %%WWWDIR%%/template/en/default/setup
+@dirrm %%WWWDIR%%/template/en/default/search
+@dirrm %%WWWDIR%%/template/en/default/request
+@dirrm %%WWWDIR%%/template/en/default/reports
+@dirrm %%WWWDIR%%/template/en/default/pages
+@dirrm %%WWWDIR%%/template/en/default/list
+@dirrm %%WWWDIR%%/template/en/default/global
+@dirrm %%WWWDIR%%/template/en/default/flag
+@dirrm %%WWWDIR%%/template/en/default/extensions
+@dirrm %%WWWDIR%%/template/en/default/email
+@dirrm %%WWWDIR%%/template/en/default/bug/process
+@dirrm %%WWWDIR%%/template/en/default/bug/create
+@dirrm %%WWWDIR%%/template/en/default/bug/activity
+@dirrm %%WWWDIR%%/template/en/default/bug
+@dirrm %%WWWDIR%%/template/en/default/attachment
+@dirrm %%WWWDIR%%/template/en/default/admin/workflow
+@dirrm %%WWWDIR%%/template/en/default/admin/versions
+@dirrm %%WWWDIR%%/template/en/default/admin/users
+@dirrm %%WWWDIR%%/template/en/default/admin/settings
+@dirrm %%WWWDIR%%/template/en/default/admin/sanitycheck
+@dirrm %%WWWDIR%%/template/en/default/admin/products/groupcontrol
+@dirrm %%WWWDIR%%/template/en/default/admin/products
+@dirrm %%WWWDIR%%/template/en/default/admin/params
+@dirrm %%WWWDIR%%/template/en/default/admin/milestones
+@dirrm %%WWWDIR%%/template/en/default/admin/keywords
+@dirrm %%WWWDIR%%/template/en/default/admin/groups
+@dirrm %%WWWDIR%%/template/en/default/admin/flag-type
+@dirrm %%WWWDIR%%/template/en/default/admin/fieldvalues
+@dirrm %%WWWDIR%%/template/en/default/admin/custom_fields
+@dirrm %%WWWDIR%%/template/en/default/admin/components
+@dirrm %%WWWDIR%%/template/en/default/admin/classifications
+@dirrm %%WWWDIR%%/template/en/default/admin
+@dirrm %%WWWDIR%%/template/en/default/account/prefs
+@dirrm %%WWWDIR%%/template/en/default/account/password
+@dirrm %%WWWDIR%%/template/en/default/account/email
+@dirrm %%WWWDIR%%/template/en/default/account/auth
+@dirrm %%WWWDIR%%/template/en/default/account
+@dirrm %%WWWDIR%%/template/en/default
+@dirrm %%WWWDIR%%/template/en
+@dirrmtry %%WWWDIR%%/template
+@dirrmtry %%WWWDIR%%/t
+@dirrm %%WWWDIR%%/skins/standard/index
+@dirrm %%WWWDIR%%/skins/standard/global
+@dirrm %%WWWDIR%%/skins/standard/dependency-tree
+@dirrm %%WWWDIR%%/skins/standard
+@dirrm %%WWWDIR%%/skins/contrib/Dusk
+@dirrm %%WWWDIR%%/skins/contrib
+@dirrmtry %%WWWDIR%%/skins
+@dirrmtry %%WWWDIR%%/lib
+@dirrmtry %%WWWDIR%%/js/yui/yuitest
+@dirrmtry %%WWWDIR%%/js/yui/yuiloader
+@dirrmtry %%WWWDIR%%/js/yui/yahoo-dom-event
+@dirrmtry %%WWWDIR%%/js/yui/yahoo
+@dirrmtry %%WWWDIR%%/js/yui/uploader
+@dirrmtry %%WWWDIR%%/js/yui/treeview
+@dirrmtry %%WWWDIR%%/js/yui/tabview
+@dirrmtry %%WWWDIR%%/js/yui/swfstore
+@dirrmtry %%WWWDIR%%/js/yui/swfdetect
+@dirrmtry %%WWWDIR%%/js/yui/swf
+@dirrmtry %%WWWDIR%%/js/yui/stylesheet
+@dirrmtry %%WWWDIR%%/js/yui/storage
+@dirrmtry %%WWWDIR%%/js/yui/slider
+@dirrmtry %%WWWDIR%%/js/yui/selector
+@dirrmtry %%WWWDIR%%/js/yui/resize
+@dirrmtry %%WWWDIR%%/js/yui/reset-fonts-grids
+@dirrmtry %%WWWDIR%%/js/yui/reset-fonts
+@dirrmtry %%WWWDIR%%/js/yui/reset
+@dirrmtry %%WWWDIR%%/js/yui/progressbar
+@dirrmtry %%WWWDIR%%/js/yui/profilerviewer
+@dirrmtry %%WWWDIR%%/js/yui/profiler
+@dirrmtry %%WWWDIR%%/js/yui/paginator
+@dirrmtry %%WWWDIR%%/js/yui/menu
+@dirrmtry %%WWWDIR%%/js/yui/logger
+@dirrmtry %%WWWDIR%%/js/yui/layout
+@dirrmtry %%WWWDIR%%/js/yui/json
+@dirrmtry %%WWWDIR%%/js/yui/imageloader
+@dirrmtry %%WWWDIR%%/js/yui/imagecropper
+@dirrmtry %%WWWDIR%%/js/yui/history
+@dirrmtry %%WWWDIR%%/js/yui/grids
+@dirrmtry %%WWWDIR%%/js/yui/get
+@dirrmtry %%WWWDIR%%/js/yui/fonts
+@dirrmtry %%WWWDIR%%/js/yui/event-simulate
+@dirrmtry %%WWWDIR%%/js/yui/event-mouseenter
+@dirrmtry %%WWWDIR%%/js/yui/event-delegate
+@dirrmtry %%WWWDIR%%/js/yui/event
+@dirrmtry %%WWWDIR%%/js/yui/element-delegate
+@dirrmtry %%WWWDIR%%/js/yui/element
+@dirrmtry %%WWWDIR%%/js/yui/dragdrop
+@dirrmtry %%WWWDIR%%/js/yui/dom
+@dirrmtry %%WWWDIR%%/js/yui/datemath
+@dirrmtry %%WWWDIR%%/js/yui/datatable
+@dirrmtry %%WWWDIR%%/js/yui/datasource
+@dirrmtry %%WWWDIR%%/js/yui/cookie
+@dirrmtry %%WWWDIR%%/js/yui/container
+@dirrmtry %%WWWDIR%%/js/yui/connection
+@dirrmtry %%WWWDIR%%/js/yui/colorpicker
+@dirrmtry %%WWWDIR%%/js/yui/charts
+@dirrmtry %%WWWDIR%%/js/yui/carousel
+@dirrmtry %%WWWDIR%%/js/yui/calendar
+@dirrmtry %%WWWDIR%%/js/yui/button
+@dirrmtry %%WWWDIR%%/js/yui/base
+@dirrmtry %%WWWDIR%%/js/yui/autocomplete
+@dirrmtry %%WWWDIR%%/js/yui/assets/skins/sam
+@dirrmtry %%WWWDIR%%/js/yui/assets/skins
+@dirrmtry %%WWWDIR%%/js/yui/assets
+@dirrmtry %%WWWDIR%%/js/yui/animation
+@dirrmtry %%WWWDIR%%/js/yui
+@dirrmtry %%WWWDIR%%/js/history.js
+@dirrmtry %%WWWDIR%%/js
+@dirrm %%WWWDIR%%/images
+%%CONTRIB%%@dirrm %%WWWDIR%%/contrib/cmdline
+%%CONTRIB%%@dirrm %%WWWDIR%%/contrib/bugzilla-submit
+@dirrmtry %%WWWDIR%%/contrib
+@dirrm %%WWWDIR%%/Bugzilla/Whine
+@dirrm %%WWWDIR%%/Bugzilla/WebService/Server
+@dirrm %%WWWDIR%%/Bugzilla/WebService
+@dirrm %%WWWDIR%%/Bugzilla/User/Setting
+@dirrm %%WWWDIR%%/Bugzilla/User
+@dirrm %%WWWDIR%%/Bugzilla/Template/Plugin
+@dirrm %%WWWDIR%%/Bugzilla/Template
+@dirrm %%WWWDIR%%/Bugzilla/Search
+@dirrm %%WWWDIR%%/Bugzilla/Migrate
+@dirrm %%WWWDIR%%/Bugzilla/JobQueue
+@dirrm %%WWWDIR%%/Bugzilla/Job
+@dirrm %%WWWDIR%%/Bugzilla/Install
+@dirrm %%WWWDIR%%/Bugzilla/Field
+@dirrm %%WWWDIR%%/Bugzilla/DB/Schema
+@dirrm %%WWWDIR%%/Bugzilla/DB
+@dirrm %%WWWDIR%%/Bugzilla/Config
+@dirrm %%WWWDIR%%/Bugzilla/BugUrl/Bugzilla
+@dirrm %%WWWDIR%%/Bugzilla/BugUrl
+@dirrm %%WWWDIR%%/Bugzilla/Auth/Verify
+@dirrm %%WWWDIR%%/Bugzilla/Auth/Persist
+@dirrm %%WWWDIR%%/Bugzilla/Auth/Login
+@dirrm %%WWWDIR%%/Bugzilla/Auth
+@dirrm %%WWWDIR%%/Bugzilla/Attachment
+@dirrmtry %%WWWDIR%%/Bugzilla
+@dirrmtry %%WWWDIR%%/data
+@dirrmtry %%WWWDIR%%/graphs
+@dirrmtry %%WWWDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/lib/Pod/Simple/HTMLBatch
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/lib/Pod/Simple/HTML
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/lib/Pod/Simple
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/lib/Pod
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/lib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/xml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/images/callouts
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/images
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/en/html/api/extensions
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/contrib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/Whine
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/WebService/Server
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/WebService
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/User/Setting
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/User
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/Template/Plugin
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/Template
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/Search
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/JobQueue
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/Install
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/Field
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/DB
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/Config
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/Auth
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec mkdir -p %D/%%WWWDIR%%/xt
+@exec mkdir -p %D/%%WWWDIR%%/t
+@exec mkdir -p %D/%%WWWDIR%%/lib
+@exec mkdir -p %D/%%WWWDIR%%/contrib
