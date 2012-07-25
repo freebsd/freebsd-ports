@@ -52,8 +52,6 @@ share/themes/bubble/gtk-2.0/red.svg
 @dirrm share/doc/rsvg-2.0
 @dirrm include/librsvg-2.0/librsvg
 @dirrm include/librsvg-2.0
-@dirrmtry lib/gtk-3.0/engines
-@dirrmtry lib/gtk-3.0
 @dirrmtry share/themes/bubble/gtk-2.0
 @dirrmtry share/themes/bubble/gtk-3.0
 @dirrmtry share/themes/bubble
