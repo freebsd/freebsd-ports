@@ -29,6 +29,7 @@
     SUBDIR += bookview
     SUBDIR += bugzilla
     SUBDIR += bugzilla3
+    SUBDIR += bugzilla42
     SUBDIR += calligra-l10n
     SUBDIR += canna-lib
     SUBDIR += canna-server

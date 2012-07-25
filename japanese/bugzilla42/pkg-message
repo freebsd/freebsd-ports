@@ -1,0 +1,5 @@
+==========================================================================
+  Japanese localization for Bugzilla has now been installed.
+
+  Please run "checksetup.pl" to re-generate templates.
+==========================================================================
