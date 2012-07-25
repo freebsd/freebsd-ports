@@ -1,0 +1,12 @@
+Beautiful Soup parses arbitrarily invalid XML- or HTML-like substance
+into a tree representation. It provides methods and Pythonic idioms
+that make it easy to search and modify the tree.
+
+A well-formed XML/HTML document will yield a well-formed data
+structure. An ill-formed XML/HTML document will yield a
+correspondingly ill-formed data structure. If your document is only
+locally well-formed, you can use this library to find and process the
+well-formed part of it. The BeautifulSoup class has heuristics for
+obtaining a sensible parse tree in the face of common HTML errors.
+
+WWW: http://www.crummy.com/software/BeautifulSoup/

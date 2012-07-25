@@ -1,24 +1,24 @@
 # New ports collection makefile for:	beautifulsoup
-# Date created:				15 July 2005
-# Whom:					Mike Meyer <mwm@mired.org>
+# Date created:				25 July 2012
+# Whom:					Mike Meyer
 #
 # $FreeBSD$
 #
 
 PORTNAME=	beautifulsoup
-PORTVERSION=	3.2.0
+PORTVERSION=	4.1.1
 CATEGORIES=	www python
-MASTER_SITES=	http://www.crummy.com/software/BeautifulSoup/download/3.x/
+MASTER_SITES=	http://www.crummy.com/software/BeautifulSoup/bs4/download/4.1/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	BeautifulSoup-${PORTVERSION}
+DISTNAME=	beautifulsoup4-${PORTVERSION}
 
-MAINTAINER=	mwm@mired.org
+MAINTAINER=	william88@gmail.com
 COMMENT=	HTML/XML Parser for Python
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.7
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	BeautifulSoup
+PYDISTUTILS_PKGNAME=	beautifulsoup4
 
-CONFLICTS=	py[0-9]*-beautifulsoup-3.0.*
+CONFLICTS=	py[0-9]*-beautifulsoup-3.*
 
 .include <bsd.port.mk>
