@@ -1,5 +1,10 @@
-lib/openvpn-auth-pam.so
-lib/openvpn-down-root.so
+lib/openvpn/plugins/openvpn-plugin-auth-pam.so
+lib/openvpn-plugin-auth-pam.so
+lib/openvpn/plugins/openvpn-plugin-auth-pam.la
+lib/openvpn/plugins/openvpn-plugin-down-root.so
+lib/openvpn-plugin-down-root.so
+lib/openvpn/plugins/openvpn-plugin-down-root.la
+include/openvpn-plugin.h
 sbin/openvpn
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
@@ -8,48 +13,10 @@ sbin/openvpn
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/PORTS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.openvpn-auth-pam
-%%PORTDOCS%%%%DOCSDIR%%/README.openvpn-down-root
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/README
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/build-ca
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/build-dh
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/build-inter
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/build-key
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/build-key-pass
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/build-key-pkcs12
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/build-key-server
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/build-req
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/build-req-pass
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/clean-all
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/list-crl
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/make-crl
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/openssl.cnf
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/revoke-crt
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/revoke-full
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/sign-req
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/vars
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/Makefile
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/README
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/build-ca
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/build-dh
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/build-inter
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/build-key
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/build-key-pass
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/build-key-pkcs12
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/build-key-server
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/build-req
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/build-req-pass
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/clean-all
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/inherit-inter
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/list-crl
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/openssl-0.9.6.cnf
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/openssl-0.9.8.cnf
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/openssl-1.0.0.cnf
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/pkitool
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/revoke-full
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/sign-req
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/vars
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/whichopensslcnf
+%%PORTDOCS%%%%DOCSDIR%%/README.auth-pam
+%%PORTDOCS%%%%DOCSDIR%%/README.down-root
+%%PORTDOCS%%%%DOCSDIR%%/README.IPv6
+%%PORTDOCS%%%%DOCSDIR%%/README.polarssl
 %%PORTDOCS%%%%DOCSDIR%%/management-notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/sample-config-files/README
 %%PORTDOCS%%%%DOCSDIR%%/sample-config-files/client.conf
@@ -70,12 +37,11 @@ sbin/openvpn
 %%PORTDOCS%%%%DOCSDIR%%/sample-scripts/auth-pam.pl
 %%PORTDOCS%%%%DOCSDIR%%/sample-scripts/bridge-start
 %%PORTDOCS%%%%DOCSDIR%%/sample-scripts/bridge-stop
-%%PORTDOCS%%%%DOCSDIR%%/sample-scripts/openvpn.init
 %%PORTDOCS%%%%DOCSDIR%%/sample-scripts/ucn.pl
 %%PORTDOCS%%%%DOCSDIR%%/sample-scripts/verify-cn
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/sample-scripts
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/sample-config-files
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/easy-rsa/2.0
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/easy-rsa/1.0
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/easy-rsa
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry %%PORTDOCS%%%%DOCSDIR%%/openvpn
+@dirrmtry lib/openvpn/plugins
+@dirrmtry lib/openvpn
