@@ -1,7 +1,7 @@
 # $FreeBSD$
 #
 
-    COMMENT = Monetary, financial and related applications
+    COMMENT = Monetary, financial, and related applications
 
     SUBDIR += R-cran-PerformanceAnalytics
     SUBDIR += R-cran-RFinanceYJ

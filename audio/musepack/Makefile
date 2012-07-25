@@ -13,7 +13,7 @@ MASTER_SITES=	http://files.musepack.net/source/
 DISTNAME=	${PORTNAME}_src_r435
 
 MAINTAINER=	shoesoft@gmx.net
-COMMENT=	Decoder, encoder and replaygain for musepack (mpc)
+COMMENT=	Decoder, encoder, and replaygain for musepack (mpc)
 
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	aclocal autoheader libtoolize automake autoconf libtool

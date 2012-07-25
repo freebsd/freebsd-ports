@@ -13,7 +13,7 @@ MASTER_SITES=	http://mikmod.raphnet.net/files/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	Mod player which plays MTM, STM, XM, MOD, S3M, ULT, UNI and IT mods
+COMMENT=	Mod player which plays MTM, STM, XM, MOD, S3M, ULT, UNI, and IT mods
 
 LICENSE=	GPLv2
 

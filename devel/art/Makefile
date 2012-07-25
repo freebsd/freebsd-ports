@@ -12,7 +12,7 @@ MASTER_SITES=	http://skylark.tsu.ru/art/0.9/download/src/ \
 		SF/art-project/src/
 
 MAINTAINER=	virtual.lark@gmail.com
-COMMENT=	A resource tracing, debugging and profiling tool
+COMMENT=	A resource tracing, debugging, and profiling tool
 
 LICENSE=	GPLv3
 

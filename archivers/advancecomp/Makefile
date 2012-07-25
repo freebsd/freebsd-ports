@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	SF/advancemame/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Recompression utilities for .ZIP, .PNG, .MNG and .GZ files
+COMMENT=	Recompression utilities for .ZIP, .PNG, .MNG, and .GZ files
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_linux
 
 MAINTAINER=	lme@FreeBSD.org
-COMMENT=	A reindenter and reformatter of C, C++, C\# and Java source code
+COMMENT=	A reindenter and reformatter of C, C++, C\#, and Java source code
 
 ALL_TARGET=	astyle
 CFLAGS+=	-W -Wall -fno-rtti -fno-exceptions

@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sahil@FreeBSD.org
-COMMENT=	An object-oriented handler for logging, tracing and debugging in Perl
+COMMENT=	An object-oriented handler for logging, tracing, and debugging in Perl
 
 BUILD_DEPENDS=	p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
 RUN_DEPENDS:=	${BUILD_DEPENDS}

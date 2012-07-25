@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://radare.org/get/
 
 MAINTAINER=	kpedersen@opencde.org
-COMMENT=	Tools to disasm, debug, analyze and manipulate binary files
+COMMENT=	Tools to disasm, debug, analyze, and manipulate binary files
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

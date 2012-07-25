@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-01jun01
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Functional programming, lazy expressions and thread pools for Python
+COMMENT=	Functional programming, lazy expressions, and thread pools for Python
 
 USE_PYTHON=	yes
 NO_WRKSUBDIR=	yes

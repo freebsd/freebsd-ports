@@ -13,7 +13,7 @@ CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME:U}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Orbit Reconstruction, Simulation and Analysis
+COMMENT=	Orbit Reconstruction, Simulation, and Analysis
 
 LIB_DEPENDS=	gsl.16:${PORTSDIR}/math/gsl \
 		cln.6:${PORTSDIR}/math/cln \

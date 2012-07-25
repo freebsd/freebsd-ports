@@ -13,7 +13,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF
 
 MAINTAINER=	rodrigo@bebik.net
-COMMENT=	An all-in-one sequencer, drum machine, sampler and more
+COMMENT=	An all-in-one sequencer, drum machine, sampler, and more
 
 LICENSE=	GPLv2
 

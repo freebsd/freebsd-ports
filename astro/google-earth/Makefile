@@ -17,7 +17,7 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 EXTRACT_ONLY=	# none
 
 MAINTAINER=	nox@FreeBSD.org
-COMMENT=	Explore, Search and Discover
+COMMENT=	Explore, Search, and Discover
 
 EXTRACT_DEPENDS=	unmakeself:${PORTSDIR}/archivers/unmakeself
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info

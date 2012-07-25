@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	CPAN:VVELOX
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
-COMMENT=	Make a hash out or the return from a search using Net::LDAP::Search
+COMMENT=	Make a hash out of the return from a search using Net::LDAP::Search
 
 BUILD_DEPENDS=	p5-perl-ldap>=0.39:${PORTSDIR}/net/p5-perl-ldap
 RUN_DEPENDS=	p5-perl-ldap>=0.39:${PORTSDIR}/net/p5-perl-ldap

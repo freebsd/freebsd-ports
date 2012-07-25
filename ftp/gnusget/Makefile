@@ -12,7 +12,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	http://fb.roolz.org/gnusget/
 
 MAINTAINER=	ilya.otyutskiy@gmail.com
-COMMENT=	Shell-extension for wget, which uses download- and history-file
+COMMENT=	Shell-extension for wget which uses download- and history-file
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 

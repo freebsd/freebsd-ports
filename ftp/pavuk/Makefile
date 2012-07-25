@@ -12,7 +12,7 @@ CATEGORIES=	ftp www
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	HTTP, FTP and Gopher mirroring tool
+COMMENT=	HTTP, FTP, and Gopher mirroring tool
 
 USE_BZIP2=	yes
 WANT_GNOME=	yes

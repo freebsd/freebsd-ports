@@ -12,7 +12,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	zope@FreeBSD.org
-COMMENT=	Copy, Paste and Move support for content components
+COMMENT=	Copy, Paste, and Move support for content components
 
 LICENSE=	ZPL21
 

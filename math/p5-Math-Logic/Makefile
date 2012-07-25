@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Perl module providing pure 2, 3 or multi-value logic
+COMMENT=	Perl module providing pure 2, 3, or multi-value logic
 
 PERL_CONFIGURE=	yes
 MAN3=		Math::Logic.3

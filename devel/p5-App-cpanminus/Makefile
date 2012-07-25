@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
-COMMENT=	Perl extension to get, unpack, build and install modules from CPAN
+COMMENT=	Perl extension to get, unpack, build, and install modules from CPAN
 
 PERL_CONFIGURE=	yes
 

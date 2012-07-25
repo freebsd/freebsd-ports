@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	SF
 
 MAINTAINER=	jjuanino@gmail.com
-COMMENT=	Indexing and searching in Maildir, MH or mbox folders
+COMMENT=	Indexing and searching in Maildir, MH, or mbox folders
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes

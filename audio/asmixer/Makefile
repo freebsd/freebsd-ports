@@ -12,7 +12,7 @@ CATEGORIES=	audio afterstep
 MASTER_SITES=	http://www.tigr.net/afterstep/download/asmixer/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A mixer control for X, and specifically the AfterStep Window Manager
+COMMENT=	A mixer control for X and specifically the AfterStep Window Manager
 
 MAN1=		${PORTNAME}.1x
 PLIST_FILES=	bin/asmixer

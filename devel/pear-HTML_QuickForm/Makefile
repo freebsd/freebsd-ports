@@ -10,7 +10,7 @@ PORTVERSION=	3.2.12
 CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Provide methods for creating, validating and processing HTML forms
+COMMENT=	Provide methods for creating, validating, and processing HTML forms
 
 BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:${PORTSDIR}/devel/pear-HTML_Common
 RUN_DEPENDS:=	${BUILD_DEPENDS}

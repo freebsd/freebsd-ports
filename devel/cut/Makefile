@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.falvotech.com/content/cut/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Unit Testing Framework for C, C++ and Objective-C
+COMMENT=	Unit Testing Framework for C, C++, and Objective-C
 
 USE_PYTHON_RUN=	yes
 ALL_TARGET=	build

@@ -13,7 +13,7 @@ MASTER_SITES=	http://romain.blogreen.org/distfiles/
 DISTNAME=	tomboy-todo-${PORTVERSION}
 
 MAINTAINER=	mono@FreeBSD.org
-COMMENT=	Highlight FIXME, TODO and XXX in your notes
+COMMENT=	Highlight FIXME, TODO, and XXX in your notes
 
 BUILD_DEPENDS=	tomboy:${PORTSDIR}/deskutils/tomboy
 RUN_DEPENDS=	tomboy:${PORTSDIR}/deskutils/tomboy

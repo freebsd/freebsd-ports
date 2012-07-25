@@ -12,7 +12,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://people.csail.mit.edu/fredette/tme/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Emulator for Sun 2/120, 3/150 and SPARCstation 2 machines
+COMMENT=	Emulator for Sun 2/120, 3/150, and SPARCstation 2 machines
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

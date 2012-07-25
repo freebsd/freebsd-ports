@@ -11,7 +11,7 @@ CATEGORIES=	astro tcl
 MASTER_SITES=	SF/tkgeomap/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Read, manipulate and display geo data
+COMMENT=	Read, manipulate, and display geo data
 
 USE_TCL=	82+
 GNU_CONFIGURE=	yes

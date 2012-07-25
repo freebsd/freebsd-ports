@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A light-weight MovableType client Perl module
+COMMENT=	A lightweight MovableType client Perl module
 
 BUILD_DEPENDS=	p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite
 RUN_DEPENDS:=	${BUILD_DEPENDS}

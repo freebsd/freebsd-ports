@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jadawin@FreeBSD.org
-COMMENT=	Streaming server for MP3, Ogg Vorbis and other streamable audio files
+COMMENT=	Streaming server for MP3, Ogg Vorbis, and other streamable audio files
 
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		sox:${PORTSDIR}/audio/sox \

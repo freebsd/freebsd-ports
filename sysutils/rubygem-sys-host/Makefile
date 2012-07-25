@@ -11,7 +11,7 @@ CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	freebsdports@chillibear.com
-COMMENT=	Provides hostname, ip address, and other information for a given host
+COMMENT=	Provides hostname, IP address, and other information for a given host
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes

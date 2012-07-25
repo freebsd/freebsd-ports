@@ -10,7 +10,7 @@ PORTVERSION=	1.6.7
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Help writing simple, concise and fast generic operations
+COMMENT=	Help writing simple, concise, and fast generic operations
 
 LICENSE=	BSD
 

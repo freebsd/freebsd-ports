@@ -11,7 +11,7 @@ CATEGORIES=	astro tk
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Read, manipulate and display geo data
+COMMENT=	Read, manipulate, and display geo data
 
 LIB_DEPENDS=	tclgeomap.0:${PORTSDIR}/astro/tclgeomap
 

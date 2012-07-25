@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mhjacks@swbell.net
-COMMENT=	Inherit different shell environments, and restore previous
+COMMENT=	Inherit different shell environments and restore previous
 
 RUN_DEPENDS=	p5-Class-MethodMaker>=0:${PORTSDIR}/devel/p5-Class-MethodMaker
 

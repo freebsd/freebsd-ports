@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.cs.umass.edu/~emery/hoard/hoard-${PORTVERSION}/source/
 DISTNAME=	hoard-38
 
 MAINTAINER=	osa@FreeBSD.org
-COMMENT=	Fast, scalable and memory-efficient allocator for MP
+COMMENT=	Fast, scalable, and memory-efficient allocator for MP
 
 LICENSE=	GPLv2
 

@@ -14,7 +14,7 @@ MASTER_SITES=	CHEESESHOP \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A fast, and easy to use stand-alone template engine
+COMMENT=	A fast and easy to use stand-alone template engine
 
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install

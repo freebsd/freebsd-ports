@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${KDEVELOP_BRANCH}/kdevelop/${DISTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Opensource IDE based on KDevPlatform, KDE and Qt libraries
+COMMENT=	Opensource IDE based on KDevPlatform, KDE, and Qt libraries
 
 LIB_DEPENDS+=	kdevplatforminterfaces.5:${PORTSDIR}/devel/kdevplatform
 

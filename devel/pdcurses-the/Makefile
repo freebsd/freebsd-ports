@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	-the
 DISTNAME=	PDCurses-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Curses library implementation for Win32, DOS, OS/2 and X11
+COMMENT=	Curses library implementation for Win32, DOS, OS/2, and X11
 
 CONFLICTS=	pdcurses-[0-9]*
 

@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/FileZilla_Client/${PORTVERSION}
 DISTNAME=	FileZilla_${PORTVERSION}_src
 
 MAINTAINER=	jsa@FreeBSD.org
-COMMENT=	Fast and reliable cross-platform FTP, FTPS and SFTP client
+COMMENT=	Fast and reliable cross-platform FTP, FTPS, and SFTP client
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

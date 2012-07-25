@@ -12,7 +12,7 @@ MASTER_SITES=	GNU
 MASTER_SITE_SUBDIR=	commoncpp
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	A very light-weight C++ design patternlibrary
+COMMENT=	A very lightweight C++ design patternlibrary
 
 LICENSE=	LGPL3
 

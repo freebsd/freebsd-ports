@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.digip.org/jansson/releases/
 
 MAINTAINER=	vanilla@FreeBSD.org
-COMMENT=	A C library for encoding, decoding and manipulating JSON data
+COMMENT=	A C library for encoding, decoding, and manipulating JSON data
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes

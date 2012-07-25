@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.gphpedit.org/download/store/ \
 		http://www.jolupatech.info/crux/gphpedit/
 
 MAINTAINER=	novel@FreeBSD.org
-COMMENT=	PHP, HTML and CSS development environment for GNOME 2.x
+COMMENT=	PHP, HTML, and CSS development environment for GNOME 2.x
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui libgtkhtml

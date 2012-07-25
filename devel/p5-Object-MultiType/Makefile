@@ -11,7 +11,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Perl Objects as Hash, Array and Scalar at the same time
+COMMENT=	Perl Objects as Hash, Array, and Scalar at the same time
 
 MAN3=		Object::MultiType.3
 

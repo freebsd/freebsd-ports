@@ -12,7 +12,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	duchateau.olivier@gmail.com
-COMMENT=	A lightweight, fast and simple key-value store
+COMMENT=	A lightweight, fast, and simple key-value store
 
 LICENSE=	BSD
 

@@ -12,7 +12,7 @@ MASTER_SITES=	SF/${PORTNAME}/Release%20${PORTVERSION}/Release%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	jsi@jules.de
-COMMENT=	Web-based requirement, test and bugtracking system
+COMMENT=	Web-based requirement, test, and bugtracking system
 
 USE_ZIP=	yes
 NO_BUILD=	yes

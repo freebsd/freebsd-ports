@@ -12,7 +12,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	kuriyama@FreeBSD.org
-COMMENT=	Simple, light-weight distributed issue tracker
+COMMENT=	Simple lightweight distributed issue tracker
 
 RUN_DEPENDS=	rubygem-trollop>=1.9:${PORTSDIR}/devel/rubygem-trollop
 

@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Utilities to maintain file history, do file comparisions and merges
+COMMENT=	Utilities to maintain file history, do file comparisons, and merges
 
 LICENSE=	GPLv3
 

@@ -16,7 +16,7 @@ DISTFILES+=	${DISTNAME}-doc${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	maho@FreeBSD.org
-COMMENT=	Molecular viewer, editor and visualization program
+COMMENT=	Molecular viewer, editor, and visualization program
 
 USE_GMAKE=	yes
 USE_XORG=	x11
