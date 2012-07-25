@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dcl
-PORTVERSION=	1.6.3
-PORTREVISION=	1
+PORTVERSION=	1.7.0
 CATEGORIES=	science graphics ruby
 MASTER_SITES=	http://ruby.gfd-dennou.org/products/ruby-dcl/release/ \
 		http://dennou-h.gfd-dennou.org/library/ruby/products/ruby-dcl/release/ \
@@ -22,19 +21,20 @@ LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray \
-		${LOCALBASE}/lib/libcdcl.a:${PORTSDIR}/science/cdcl
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray
-
-.if defined(WITHOUT_GTK)
-.else
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gdk_pixbuf2.so:${PORTSDIR}/graphics/ruby-gdk_pixbuf2 \
+		${LOCALBASE}/lib/libcdcl.so:${PORTSDIR}/science/cdcl
+RUN_DEPENDS=	${LOCALBASE}/lib/libcdcl.so:${PORTSDIR}/science/cdcl \
+		${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray \
+		${RUBY_SITEARCHLIBDIR}/gdk_pixbuf2.so:${PORTSDIR}/graphics/ruby-gdk_pixbuf2 \
 		${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
-.endif
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-DOCS=		ChangeLog LICENSE.txt README ToDo
+DOCSDIR=	${RUBY_MODDOCDIR}
+EXAMPLESDIR=	${RUBY_MODEXAMPLESDIR}
+
+PORTDOCS=	ChangeLog README ToDo
+PORTEXAMPLES=	*
 
 .include <bsd.port.pre.mk>
 
@@ -49,7 +49,7 @@ post-install:
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
-.for f in ${DOCS}
+.for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}
 .endfor
 .endif
