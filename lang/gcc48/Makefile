@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.8.0.20120715
+PORTVERSION=	4.8.0.20120722
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -16,9 +16,9 @@ DISTNAME=	gcc-${VERSIONSTRING}
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.8
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
-		mpfr.4:${PORTSDIR}/math/mpfr \
-		mpc.2:${PORTSDIR}/math/mpc
+LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
+		mpfr:${PORTSDIR}/math/mpfr \
+		mpc:${PORTSDIR}/math/mpc
 RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 
 .if defined(MAINTAINER_MODE)
