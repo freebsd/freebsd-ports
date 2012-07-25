@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		http://www.transit.hanse.de/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/cyrus-mail/&,}
 
-PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/ \
+PATCH_SITES=	http://www.mahoroba.org/~ume/ipv6/ \
 		http://home.jp.FreeBSD.org/~ume/ipv6/
 PATCHFILES=	${PORTNAME}-2.1.16-ipv6-20031121.diff.gz
 

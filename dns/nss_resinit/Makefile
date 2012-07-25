@@ -9,7 +9,7 @@ PORTNAME=	nss_resinit
 PORTVERSION=	20060412
 #PORTREVISION=	0
 CATEGORIES=	dns
-MASTER_SITES=	http://www.imasy.or.jp/~ume/FreeBSD/
+MASTER_SITES=	http://www.mahoroba.org/~ume/FreeBSD/
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Resolver re-initialization NSS module
