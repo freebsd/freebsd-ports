@@ -1,6 +1,14 @@
---- data/CMakeLists.txt~	2011-10-02 05:43:11.000000000 -0500
-+++ data/CMakeLists.txt	2011-11-09 04:34:25.659393502 -0600
-@@ -43,7 +43,6 @@ intltool_merge_translation(${CMAKE_CURRE
+--- data/CMakeLists.txt.orig	2012-07-17 15:21:04.000000000 -0500
++++ data/CMakeLists.txt	2012-07-25 09:15:36.331202614 -0500
+@@ -29,7 +29,6 @@ set(FCITX_PY_FILES
+ set(FCITX_DSEKTOP_FILES
+     fcitx.desktop
+     fcitx-configtool.desktop
+-    fcitx-autostart.desktop
+ )
+ 
+ set(PY_ORGDATA pyPhrase.org)
+@@ -45,7 +44,6 @@ intltool_merge_translation(${CMAKE_CURRE
  add_custom_target(pinyin_data ALL DEPENDS ${PY_DATA})
  
  add_custom_command(OUTPUT ${PY_ORGDATA}
@@ -8,3 +16,12 @@
                     COMMAND ${TAR} xzmvf ${PY_TAR})
  add_custom_command(OUTPUT ${PY_DATA}
                     DEPENDS ${PY_ORGDATA}
+@@ -60,7 +58,3 @@ fcitx_add_configdesc_file(${FCITX_DESC_F
+ install(FILES ${FCITX_PY_FILES} ${CMAKE_CURRENT_BINARY_DIR}/pybase.mb ${CMAKE_CURRENT_BINARY_DIR}/pyphrase.mb DESTINATION ${pkgdatadir}/pinyin)
+ 
+ set_directory_properties(PROPERTIES ADDITIONAL_MAKE_CLEAN_FILES "${CMAKE_CURRENT_BINARY_DIR}/pyERROR,${CMAKE_CURRENT_BINARY_DIR}/pyPhrase.ok")
+-
+-if (_ENABLE_DBUS)
+-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/fcitx-autostart.desktop DESTINATION /etc/xdg/autostart)
+-endif (_ENABLE_DBUS)
+\ No newline at end of file

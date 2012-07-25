@@ -6,6 +6,22 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20120725:
+AFFECTS: users of chinese/fcitx
+AUTHOR: lichray@gmail.com
+
+The textproc/fcitx-keyboard port is merged into chinese/fcitx.
+Before updating, be sure to
+
+# pkg_delete -f fcitx-keyboard-\*
+
+And make sure you have at least one keyboard layout based input method
+enabled in fcitx-configtool, to keep the activation/deactivation of IM
+panel working.
+
+And, since chinese/fcitx-sunpinyin depends on an update to
+chinese/sunpinyin
+
+20120725:
   AFFECTS: users of www/py-beautifulsoup
   AUTHOR: rm@FreeBSD.org
 

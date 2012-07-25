@@ -5,6 +5,7 @@ share/fcitx/inputmethod/sunpinyin.conf
 share/fcitx/skin/classic/sunpinyin.png
 share/fcitx/skin/dark/sunpinyin.png
 share/fcitx/skin/default/sunpinyin.png
+share/fcitx/imicon/sunpinyin.png
 share/icons/hicolor/128x128/apps/fcitx-sunpinyin.png
 share/icons/hicolor/16x16/apps/fcitx-sunpinyin.png
 share/icons/hicolor/22x22/apps/fcitx-sunpinyin.png

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fcitx
-PORTVERSION=	4.2.3
-PORTREVISION=	3
+PORTVERSION=	4.2.5
 CATEGORIES=	chinese x11
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pinyin.tar.gz table.tar.gz
@@ -19,8 +18,11 @@ COMMENT=	A Flexible Input Method Framework
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
-		dbus-1.3:${PORTSDIR}/devel/dbus
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
+LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
+		dbus-1:${PORTSDIR}/devel/dbus \
+		enchant:${PORTSDIR}/textproc/enchant \
+		icuuc:${PORTSDIR}/devel/icu
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 MAN1=		createPYMB.1 fcitx-remote.1 fcitx.1 mb2org.1 mb2txt.1 \
@@ -28,10 +30,12 @@ MAN1=		createPYMB.1 fcitx-remote.1 fcitx.1 mb2org.1 mb2txt.1 \
 SUB_FILES=	pkg-message
 SUB_LIST+=	PORTSDIR=${PORTSDIR}
 
+CONFLICTS=	zh-scim-fcitx-3.*
+
 USE_XZ=		yes
-USE_GNOME=	pango intltool gnomehack
+USE_GNOME=	pango intltool libxml2 gnomehack
 USE_GETTEXT=	yes
-USE_XORG=	x11 xext
+USE_XORG=	x11 xext xkbfile
 USE_LDCONFIG=	yes
 USE_CMAKE=	yes
 INSTALLS_ICONS=	yes
@@ -76,7 +80,7 @@ PLIST_SUB+=	QT4="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOPENCC}
-LIB_DEPENDS+=	opencc.1:${PORTSDIR}/chinese/opencc
+LIB_DEPENDS+=	opencc:${PORTSDIR}/chinese/opencc
 .else
 CMAKE_ARGS+=	-DENABLE_OPENCC=OFF
 .endif
