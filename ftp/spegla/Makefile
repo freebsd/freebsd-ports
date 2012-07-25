@@ -13,7 +13,7 @@ CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://subzero.campus.luth.se/pub/spegla/ \
 		ftp://ftp.luth.se/pub/unix/mirror/
 
-PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/
+PATCH_SITES=	http://www.mahoroba.org/~ume/ipv6/
 PATCHFILES=	${DISTNAME}-ipv6-20020129-3.diff.gz
 
 MAINTAINER=	hrs@FreeBSD.org
