@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120725:
+  AFFECTS: users of www/py-beautifulsoup
+  AUTHOR: rm@FreeBSD.org
+
+  Current www/py-beautifulsoup has been moved to www/py-beautifulsoup32,
+  since 4.1.1 is now current stable version.
+
+  If you prefer to stick with 3.2.0 do:
+
+  # portmaster -o www/py-beautifulsoup32 www/py-beautifulsoup
+
 20120723:
   AFFECTS: users of security/snort
   AUTHOR: zi@FreeBSD.org
