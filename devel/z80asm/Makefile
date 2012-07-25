@@ -12,7 +12,7 @@ MASTER_SITES=	http://nongnu.mirror.ironie.org/releases/${PORTNAME}/ \
 		http://savannah.c3sl.ufpr.br/${PORTNAME}/
 
 MAINTAINER=	sigma.zx@gmail.com
-COMMENT=	Assembler for the Z80 microprcessor
+COMMENT=	Assembler for the Z80 microprocessor
 
 USE_GMAKE=	yes
 MAN1=		z80asm.1

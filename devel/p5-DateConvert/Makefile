@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Date
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Perl5 module to convert dates between any two calendrical formats
+COMMENT=	Perl5 module to convert dates between any two calender formats
 
 PERL_CONFIGURE=	YES
 

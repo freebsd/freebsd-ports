@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A NES RPG game for learning KANA and KANJI (linux version)
+COMMENT=	NES RPG game for learning KANA and KANJI (Linux version)
 
 NO_BUILD=	yes
 USE_LINUX=	yes

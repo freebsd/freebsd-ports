@@ -12,7 +12,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tota@FreeBSD.org
-COMMENT=	Recurisve descent parsing library based on functional combinators
+COMMENT=	Recursive descent parsing library based on functional combinators
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

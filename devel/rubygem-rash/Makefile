@@ -11,7 +11,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	clsung@FreeBSD.org
-COMMENT=	Simple extension to Hashie::Mash for rubyified keys
+COMMENT=	Simple extension to Hashie::Mash for rubyfied keys
 
 RUN_DEPENDS=	rubygem-hashie>=1.2.0:${PORTSDIR}/devel/rubygem-hashie
 

@@ -14,7 +14,7 @@ MASTER_SITES=	SF/nbd/nbd/${PORTVERSION}
 DISTNAME=	nbd-${PORTVERSION}
 
 MAINTAINER=	rebehn@ant.uni-bremen.de
-COMMENT=	A server for the linux network block device (nbd)
+COMMENT=	Server for the Linux network block device (nbd)
 
 USE_BZIP2=	yes
 USE_GNOME=	glib20

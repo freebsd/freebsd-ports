@@ -13,7 +13,7 @@ MASTER_SITES=	http://source.robertk.com/fl_editor/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Text Editor Widgets for the Fast Light ToolKit
+COMMENT=	Text editor widgets for the Fast Light ToolKit
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 

@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Perl interface for cyclic redundency check generation
+COMMENT=	Perl interface for cyclic redundancy check generation
 
 PERL_CONFIGURE=	yes
 

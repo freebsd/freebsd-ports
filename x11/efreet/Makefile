@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.enlightenment.org/releases/ \
 		http://files.roorback.net/e17/2011-12-02/base/
 
 MAINTAINER=	magik@roorback.net
-COMMENT=	Freedesktop.org EFL compatiblity layer
+COMMENT=	Freedesktop.org EFL compatibility layer
 
 LICENSE=	BSD
 

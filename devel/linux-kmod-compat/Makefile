@@ -11,7 +11,7 @@ MASTER_SITES=	http://info.iet.unipi.it/~luigi/FreeBSD/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Adaptation layer to build linux drivers on FreeBSD
+COMMENT=	Adaptation layer to build Linux drivers on FreeBSD
 
 WRKSRC=		${WRKDIR}/linux_compat
 NO_BUILD=	yes

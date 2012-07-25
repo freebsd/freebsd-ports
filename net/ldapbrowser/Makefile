@@ -14,7 +14,7 @@ MASTER_SITES=	http://T32.TecNik93.com/FreeBSD/others_ports/${PORTNAME}/sources/ 
 DISTNAME=	Browser282b2
 
 MAINTAINER=	ronald@echteman.nl
-COMMENT=	Java/Swing-based LDAP Browser/Editor
+COMMENT=	Java/Swing-based LDAP browser/editor
 
 RESTRICTED=	No reply from author regarding redistribution licensing
 

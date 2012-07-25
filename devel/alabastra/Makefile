@@ -13,7 +13,7 @@ DISTNAME=	Alabastra-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	C++ Editor written with QT4
+COMMENT=	C++ editor written with QT4
 
 USE_QT4=	gui xml qmake_build moc_build uic_build rcc_build \
 		iconengines

@@ -11,7 +11,7 @@ CATEGORIES=	dns
 MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	Updates the serialnumber in one or more zonefiles
+COMMENT=	Updates the serial number in one or more zonefiles
 
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes

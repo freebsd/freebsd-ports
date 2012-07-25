@@ -13,7 +13,7 @@ DISTNAME=	fnteditfs-${PORTVERSION}
 EXTRACT_SUFX=.tgz
 
 MAINTAINER=	uri@keves.org
-COMMENT=	A Full Screen Syscons Font Editor
+COMMENT=	Full screen syscons font editor
 
 MAN1=		fnteditfs.1
 PLIST_FILES=	bin/fnteditfs

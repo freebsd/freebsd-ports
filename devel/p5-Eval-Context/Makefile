@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	CPAN:NKH
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	Evalute perl code in context wraper
+COMMENT=	Evalute perl code in context wrapper
 
 BUILD_DEPENDS=	p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output \
 		p5-Package-Generator>=0:${PORTSDIR}/devel/p5-Package-Generator \

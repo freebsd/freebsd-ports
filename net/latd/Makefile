@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF/linux-decnet/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The linux-decnet project LAT protocol suite
+COMMENT=	The Linux-DECnet project LAT protocol suite
 
 LICENSE=	GPLv2
 

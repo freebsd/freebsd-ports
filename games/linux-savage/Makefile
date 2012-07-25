@@ -19,7 +19,7 @@ DISTFILES=	SFE-Standalone${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	The Savage game (linux version)
+COMMENT=	The Savage game (Linux version)
 
 USE_LINUX=	yes
 USE_LINUX_APPS=	libvorbis tiff

@@ -15,7 +15,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://vrml.cip.ica.uni-stuttgart.de/dune/ CENKES
 
 MAINTAINER=	devel@stasyan.com
-COMMENT=	Graphical VRML97 Editor and animation tool
+COMMENT=	Graphical VRML97 editor and animation tool
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png

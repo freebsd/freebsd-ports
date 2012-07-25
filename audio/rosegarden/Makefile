@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}-LINUX/
 
 MAINTAINER=	pawel@FreeBSD.org
-COMMENT=	The Rosegarden Editor and Sequencer suite
+COMMENT=	The Rosegarden editor and sequencer suite
 
 LICENSE=	GPLv2
 

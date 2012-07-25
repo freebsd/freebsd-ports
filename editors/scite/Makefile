@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	cyberbotx@cyberbotx.com
-COMMENT=	A full-featured SCIntilla based Text Editor for GTK/GNOME
+COMMENT=	Full-featured SCIntilla based text editor for GTK/GNOME
 
 LIB_DEPENDS=	scintilla.2:${PORTSDIR}/x11-toolkits/scintilla
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils

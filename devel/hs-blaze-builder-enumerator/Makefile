@@ -10,7 +10,7 @@ PORTVERSION=	0.2.0.4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Enumeratees for the incremental conversion of builders to bytestrings
+COMMENT=	Enumerators for the incremental conversion of builders to bytestrings
 
 LICENSE=	BSD
 

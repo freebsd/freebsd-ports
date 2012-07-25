@@ -12,7 +12,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://semicomplete.googlecode.com/files/
 
 MAINTAINER=	wxs@FreeBSD.org
-COMMENT=	Programatically simulate keyboard input or mouse activity
+COMMENT=	Programmatically simulate keyboard input or mouse activity
 
 USE_PERL5_BUILD=	yes
 USE_LDCONFIG=	yes

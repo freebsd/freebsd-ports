@@ -14,7 +14,7 @@ DISTNAME=	io-reactor-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A Ruby module that implements an asynchronous multiplexeded IO Reactor
+COMMENT=	Ruby module that implements an asynchronous multiplexed IO Reactor
 
 USE_RUBY=	yes
 USE_RAKE=	yes

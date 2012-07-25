@@ -14,7 +14,7 @@ MASTER_SITES=	http://tibleiz.net/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	A Folding Text Editor
+COMMENT=	Folding text editor
 
 PORTSCOUT=	skipv:3.19 # Windows-only patch
 

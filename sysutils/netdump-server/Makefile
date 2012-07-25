@@ -12,7 +12,7 @@ MASTER_SITES=	http://mbsd.msk.ru/dist/
 DISTNAME=	netdump-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	RedHat server part of netdump/netconsole package for linux
+COMMENT=	RedHat server part of netdump/netconsole package for Linux
 
 LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt \
 		glib:${PORTSDIR}/devel/glib20

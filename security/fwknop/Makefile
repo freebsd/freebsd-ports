@@ -13,7 +13,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.cipherdyne.org/fwknop/download/
 
 MAINTAINER=	sean.greven@gmail.com
-COMMENT=	An SPA implimentation for Linux and FreeBSD
+COMMENT=	SPA implementation for Linux and FreeBSD
 
 BUILD_DEPENDS=	p5-Net-IPv4Addr>=0:${PORTSDIR}/net-mgmt/p5-Net-IPv4Addr \
 		p5-Unix-Syslog>=0:${PORTSDIR}/sysutils/p5-Unix-Syslog \

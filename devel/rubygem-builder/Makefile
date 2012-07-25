@@ -12,7 +12,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Facilitate programatic generation of XML markup
+COMMENT=	Facilitate programmatic generation of XML markup
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
