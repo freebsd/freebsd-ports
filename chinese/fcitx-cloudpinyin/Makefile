@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fcitx-cloudpinyin
-PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTVERSION=	0.2.3
 CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DIST_SUBDIR=	fcitx
@@ -15,7 +14,7 @@ DIST_SUBDIR=	fcitx
 MAINTAINER=	lichray@gmail.com
 COMMENT=	A cloud-based Pinyin module for Fcitx
 
-LIB_DEPENDS=	fcitx-config.4:${PORTSDIR}/chinese/fcitx \
+LIB_DEPENDS=	fcitx-config:${PORTSDIR}/chinese/fcitx \
 		curl:${PORTSDIR}/ftp/curl
 
 USE_XZ=		yes

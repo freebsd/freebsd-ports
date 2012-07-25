@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fcitx-sunpinyin
-PORTVERSION=	0.3.6
-PORTREVISION=	1
+PORTVERSION=	0.3.8
 CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DIST_SUBDIR=	fcitx
@@ -15,8 +14,9 @@ DIST_SUBDIR=	fcitx
 MAINTAINER=	lichray@gmail.com
 COMMENT=	SunPinyin support for Fcitx
 
-LIB_DEPENDS=	fcitx-config.4:${PORTSDIR}/chinese/fcitx \
-		sunpinyin.3:${PORTSDIR}/chinese/sunpinyin
+LIB_DEPENDS=	fcitx-config:${PORTSDIR}/chinese/fcitx
+BUILD_DEPENDS=	zh-sunpinyin>=2.0.4.r2:${PORTSDIR}/chinese/sunpinyin
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_XZ=		yes
 USE_GETTEXT=	yes

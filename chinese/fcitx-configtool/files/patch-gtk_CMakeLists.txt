@@ -1,6 +1,11 @@
---- gtk/CMakeLists.txt~	2012-05-03 01:21:57.000000000 -0500
-+++ gtk/CMakeLists.txt	2012-05-14 01:56:06.761294523 -0500
-@@ -49,6 +49,7 @@ target_link_libraries (fcitx-config-gtk
+--- gtk/CMakeLists.txt.orig	2012-06-02 11:14:45.000000000 -0500
++++ gtk/CMakeLists.txt	2012-07-18 02:00:53.555897529 -0500
+@@ -1,3 +1,4 @@
++PKG_CHECK_MODULES (GTK2 "gtk+-2.0 >= 2.22" REQUIRED)
+ PKG_CHECK_MODULES (DBUS_GLIB "dbus-glib-1" REQUIRED)
+ PKG_CHECK_MODULES (UNIQUE "unique-1.0")
+ 
+@@ -49,6 +50,7 @@ target_link_libraries (fcitx-config-gtk
                         ${FCITX4_FCITX_LIBRARIES}
                         ${GLIB2_LIBRARIES}
                         ${DBUS_GLIB_LIBRARIES}

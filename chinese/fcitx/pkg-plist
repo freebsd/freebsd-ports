@@ -13,6 +13,11 @@ bin/txt2mb
 include/fcitx-config/fcitx-config.h
 include/fcitx-config/hotkey.h
 include/fcitx-config/xdg.h
+include/fcitx-gclient/fcitxkbd.h
+include/fcitx-gclient/fcitxclient.h
+include/fcitx-gclient/fcitxinputmethod.h
+include/fcitx-utils/keysymgen.h
+include/fcitx-utils/keysym.h
 include/fcitx-utils/log.h
 include/fcitx-utils/memory.h
 include/fcitx-utils/utarray.h
@@ -36,6 +41,7 @@ include/fcitx/module/dbus/dbusstuff.h
 include/fcitx/module/ipc/ipc.h
 include/fcitx/module/pinyin/pydef.h
 include/fcitx/module/punc/punc.h
+include/fcitx/module/quickphrase/quickphrase.h
 include/fcitx/module/x11/x11stuff.h
 include/fcitx/profile.h
 include/fcitx/ui.h
@@ -44,6 +50,8 @@ lib/fcitx/fcitx-chttrans.so
 lib/fcitx/fcitx-classic-ui.so
 lib/fcitx/fcitx-dbus.so
 lib/fcitx/fcitx-fullwidth-char.so
+lib/fcitx/fcitx-keyboard.so
+lib/fcitx/fcitx-imselector.so
 lib/fcitx/fcitx-ipc.so
 lib/fcitx/fcitx-kimpanel-ui.so
 lib/fcitx/fcitx-pinyin.so
@@ -52,18 +60,26 @@ lib/fcitx/fcitx-quickphrase.so
 lib/fcitx/fcitx-qw.so
 lib/fcitx/fcitx-remote-module.so
 lib/fcitx/fcitx-table.so
+lib/fcitx/fcitx-unicode.so
 lib/fcitx/fcitx-vk.so
 lib/fcitx/fcitx-x11.so
 lib/fcitx/fcitx-xim.so
+lib/fcitx/fcitx-xkb.so
+lib/fcitx/fcitx-xkbdbus.so
 lib/libfcitx-config.so
 lib/libfcitx-config.so.4
 lib/libfcitx-config.so.4.1
 lib/libfcitx-core.so
 lib/libfcitx-core.so.0
 lib/libfcitx-core.so.0.3
+lib/libfcitx-gclient.so
+lib/libfcitx-gclient.so.0
+lib/libfcitx-gclient.so.0.1
 lib/libfcitx-utils.so
 lib/libfcitx-utils.so.0
 lib/libfcitx-utils.so.0.1
+lib/girepository-1.0/Fcitx-1.0.typelib
+share/gir-1.0/Fcitx-1.0.gir
 %%GTK2%%lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-fcitx.so
 %%GTK2%%@exec gtk-query-immodules-2.0 > %%LOCALBASE%%/etc/gtk-2.0/gtk.immodules
 %%GTK2%%@unexec gtk-query-immodules-2.0 > %%LOCALBASE%%/etc/gtk-2.0/gtk.immodules
@@ -74,6 +90,7 @@ lib/libfcitx-utils.so.0.1
 %%QT4%%@dirrmtry lib/qt4/plugins/inputmethods
 %%QT4%%@dirrmtry lib/qt4/plugins
 libdata/pkgconfig/fcitx-config.pc
+libdata/pkgconfig/fcitx-gclient.pc
 libdata/pkgconfig/fcitx-utils.pc
 libdata/pkgconfig/fcitx.pc
 share/applications/fcitx-configtool.desktop
@@ -93,7 +110,9 @@ share/cmake/fcitx/FcitxMacro.cmake
 %%DATADIR%%/addon/fcitx-classic-ui.conf
 %%DATADIR%%/addon/fcitx-dbus.conf
 %%DATADIR%%/addon/fcitx-fullwidth-char.conf
+%%DATADIR%%/addon/fcitx-imselector.conf
 %%DATADIR%%/addon/fcitx-ipc.conf
+%%DATADIR%%/addon/fcitx-keyboard.conf
 %%DATADIR%%/addon/fcitx-kimpanel-ui.conf
 %%DATADIR%%/addon/fcitx-pinyin.conf
 %%DATADIR%%/addon/fcitx-punc.conf
@@ -101,26 +120,42 @@ share/cmake/fcitx/FcitxMacro.cmake
 %%DATADIR%%/addon/fcitx-qw.conf
 %%DATADIR%%/addon/fcitx-remote-module.conf
 %%DATADIR%%/addon/fcitx-table.conf
+%%DATADIR%%/addon/fcitx-unicode.conf
 %%DATADIR%%/addon/fcitx-vk.conf
 %%DATADIR%%/addon/fcitx-x11.conf
 %%DATADIR%%/addon/fcitx-xim.conf
+%%DATADIR%%/addon/fcitx-xkb.conf
+%%DATADIR%%/addon/fcitx-xkbdbus.conf
 %%DATADIR%%/configdesc/addon.desc
 %%DATADIR%%/configdesc/config.desc
 %%DATADIR%%/configdesc/fcitx-chttrans.desc
 %%DATADIR%%/configdesc/fcitx-classic-ui.desc
+%%DATADIR%%/configdesc/fcitx-imselector.desc
+%%DATADIR%%/configdesc/fcitx-keyboard.desc
 %%DATADIR%%/configdesc/fcitx-pinyin.desc
 %%DATADIR%%/configdesc/fcitx-quickphrase.desc
+%%DATADIR%%/configdesc/fcitx-table.desc
+%%DATADIR%%/configdesc/fcitx-unicode.desc
 %%DATADIR%%/configdesc/fcitx-xim.desc
+%%DATADIR%%/configdesc/fcitx-xkb.desc
 %%DATADIR%%/configdesc/inputmethod.desc
 %%DATADIR%%/configdesc/profile.desc
 %%DATADIR%%/configdesc/skin.desc
 %%DATADIR%%/configdesc/table.desc
 %%DATADIR%%/data/AutoEng.dat
+%%DATADIR%%/data/charselectdata
 %%DATADIR%%/data/gbks2t.tab
 %%DATADIR%%/data/punc.mb.zh_CN
 %%DATADIR%%/data/punc.mb.zh_HK
 %%DATADIR%%/data/punc.mb.zh_TW
 %%DATADIR%%/data/vk.conf
+%%DATADIR%%/imicon/wbpy.png
+%%DATADIR%%/imicon/ziranma.png
+%%DATADIR%%/imicon/erbi.png
+%%DATADIR%%/imicon/wubi.png
+%%DATADIR%%/imicon/shuangpin.png
+%%DATADIR%%/imicon/pinyin.png
+%%DATADIR%%/imicon/cangjie.png
 %%DATADIR%%/inputmethod/pinyin.conf
 %%DATADIR%%/inputmethod/qw.conf
 %%DATADIR%%/inputmethod/shuangpin.conf
@@ -315,13 +350,14 @@ share/mime/packages/x-fskin.xml
 @dirrmtry share/icons/gnome
 @dirrmtry share/icons/hicolor/scalable/status
 @dirrmtry share/icons/hicolor/scalable
-@dirrm %%DATADIR%%/table
+@dirrmtry %%DATADIR%%/table
 @dirrm %%DATADIR%%/skin/default
 @dirrm %%DATADIR%%/skin/dark
 @dirrm %%DATADIR%%/skin/classic
-@dirrm %%DATADIR%%/skin
+@dirrmtry %%DATADIR%%/skin
 @dirrm %%DATADIR%%/pinyin
 @dirrm %%DATADIR%%/inputmethod
+@dirrm %%DATADIR%%/imicon
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%/configdesc
 @dirrm %%DATADIR%%/addon
@@ -330,9 +366,11 @@ share/mime/packages/x-fskin.xml
 @dirrm share/cmake/fcitx
 @dirrm lib/fcitx
 @dirrm include/fcitx/module/x11
+@dirrm include/fcitx/module/quickphrase
 @dirrm include/fcitx/module/punc
 @dirrm include/fcitx/module/pinyin
 @dirrm include/fcitx/module/ipc
+@dirrm include/fcitx-gclient
 @dirrm include/fcitx/module/dbus
 @dirrm include/fcitx/module/classicui
 @dirrm include/fcitx/module/chttrans
@@ -340,3 +378,5 @@ share/mime/packages/x-fskin.xml
 @dirrm include/fcitx-utils
 @dirrm include/fcitx-config
 @dirrm include/fcitx
+@dirrmtry lib/girepository-1.0
+@dirrmtry share/gir-1.0

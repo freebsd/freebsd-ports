@@ -1,0 +1,18 @@
+--- src/lib/fcitx-gclient/CMakeLists.txt~	2012-07-17 15:21:04.000000000 -0500
++++ src/lib/fcitx-gclient/CMakeLists.txt	2012-07-18 00:46:13.209418264 -0500
+@@ -46,7 +46,7 @@ target_link_libraries(fcitx-gclient ${GI
+ configure_file(fcitx-gclient.pc.in ${CMAKE_CURRENT_BINARY_DIR}/fcitx-gclient.pc)
+ 
+ install(TARGETS fcitx-gclient LIBRARY DESTINATION "${libdir}")
+-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/fcitx-gclient.pc DESTINATION "${libdir}/pkgconfig")
++install(FILES ${CMAKE_CURRENT_BINARY_DIR}/fcitx-gclient.pc DESTINATION "libdata/pkgconfig")
+ install(FILES ${FCITX_GCLIENT_HEADERS} DESTINATION "${includedir}/fcitx-gclient")
+ 
+ if (ENABLE_GIR)
+@@ -86,4 +86,4 @@ install(TARGETS fcitx-gclient-static
+ )
+ endif (ENABLE_STATIC)
+ 
+-add_subdirectory(test)
+\ No newline at end of file
++add_subdirectory(test)

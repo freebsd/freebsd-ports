@@ -1,0 +1,11 @@
+--- data/script/CMakeLists.txt~	2012-07-17 15:21:04.000000000 -0500
++++ data/script/CMakeLists.txt	2012-07-18 03:16:21.077945464 -0500
+@@ -2,7 +2,3 @@ install(FILES fcitx-configtool DESTINATI
+ 
+ configure_file(fcitx4-config.in ${CMAKE_CURRENT_BINARY_DIR}/fcitx4-config)
+ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/fcitx4-config DESTINATION ${bindir}  PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
+-
+-if (_ENABLE_DBUS)
+-install(FILES fcitx-autostart DESTINATION ${bindir}  PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
+-endif (_ENABLE_DBUS)
+\ No newline at end of file

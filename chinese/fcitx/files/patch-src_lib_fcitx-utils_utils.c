@@ -1,78 +1,23 @@
-diff --git src/lib/fcitx-utils/utils.c src/lib/fcitx-utils/utils.c
-index c97ff44..473abc3 100644
---- src/lib/fcitx-utils/utils.c
-+++ src/lib/fcitx-utils/utils.c
-@@ -337,19 +337,23 @@ int fcitx_utils_pid_exists(pid_t pid)
-     if (vm == 0) // ignore all error
-         return 1;
- 
--    int cnt;
--    struct kinfo_proc * kp = kvm_getprocs(vm, KERN_PROC_PID, pid, &cnt);
--    if (kp == 0)
--        return 1;
--    int i;
--    for (i = 0; i < cnt; i++)
--        if (kp->ki_pid == pid)
-+    int result = 1;
-+    do {
-+        int cnt;
-+        struct kinfo_proc * kp = kvm_getprocs(vm, KERN_PROC_PID, pid, &cnt);
-+        if (kp == 0) {
-+            result = 1;
-             break;
--    int result;
--    if (i != cnt)
--        result = 1;
--    else
--        result = 0;
-+        }
-+        int i;
-+        for (i = 0; i < cnt; i++)
-+            if (kp->ki_pid == pid)
-+                break;
-+        if (i != cnt)
-+            result = 1;
-+        else
-+            result = 0;
-+    } while (0);
-     kvm_close(vm);
-     return result;
- #else
-@@ -386,21 +390,24 @@ char* fcitx_utils_get_process_name()
-     if (vm == 0)
-         return strdup("");
- 
--    int cnt;
--    int mypid = getpid();
--    struct kinfo_proc * kp = kvm_getprocs(vm, KERN_PROC_PID, mypid, &cnt);
--    if ((cnt != 1) || (kp == 0))
--        return strdup("");
--    int i;
--    for (i = 0; i < cnt; i++)
--        if (kp->ki_pid == mypid)
--            break;
-     char* result = NULL;
--    if (i != cnt)
--        result = strdup(kp->ki_comm);
--    else
--        result = strdup("");
-+    do {
-+        int cnt;
-+        int mypid = getpid();
-+        struct kinfo_proc * kp = kvm_getprocs(vm, KERN_PROC_PID, mypid, &cnt);
-+        if ((cnt != 1) || (kp == 0)) {
-+            break;
-+        }
-+        int i;
-+        for (i = 0; i < cnt; i++)
-+            if (kp->ki_pid == mypid)
-+                break;
-+        if (i != cnt)
-+            result = strdup(kp->ki_comm);
-+    } while (0);
-     kvm_close(vm);
-+    if (result == NULL)
-+        result = strdup("");
-     return result;
- #else
-     return strdup("");
+--- ./src/lib/fcitx-utils/utils.c~	2012-07-17 15:21:04.000000000 -0500
++++ ./src/lib/fcitx-utils/utils.c	2012-07-18 00:14:56.901797676 -0500
+@@ -113,13 +113,13 @@ void fcitx_utils_init_as_daemon()
+         exit(0);
+     }
+     setsid();
+-    sighandler_t oldint = signal(SIGINT, SIG_IGN);
+-    sighandler_t oldhup  =signal(SIGHUP, SIG_IGN);
+-    sighandler_t oldquit = signal(SIGQUIT, SIG_IGN);
+-    sighandler_t oldpipe = signal(SIGPIPE, SIG_IGN);
+-    sighandler_t oldttou = signal(SIGTTOU, SIG_IGN);
+-    sighandler_t oldttin = signal(SIGTTIN, SIG_IGN);
+-    sighandler_t oldchld = signal(SIGCHLD, SIG_IGN);
++    sig_t oldint = signal(SIGINT, SIG_IGN);
++    sig_t oldhup  =signal(SIGHUP, SIG_IGN);
++    sig_t oldquit = signal(SIGQUIT, SIG_IGN);
++    sig_t oldpipe = signal(SIGPIPE, SIG_IGN);
++    sig_t oldttou = signal(SIGTTOU, SIG_IGN);
++    sig_t oldttin = signal(SIGTTIN, SIG_IGN);
++    sig_t oldchld = signal(SIGCHLD, SIG_IGN);
+     if (fork() > 0)
+         exit(0);
+     chdir("/");

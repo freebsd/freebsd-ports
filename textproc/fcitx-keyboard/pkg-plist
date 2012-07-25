@@ -1,8 +1,0 @@
-lib/fcitx/fcitx-keyboard.so
-lib/fcitx/fcitx-xkb.so
-share/fcitx/addon/fcitx-keyboard.conf
-share/fcitx/addon/fcitx-xkb.conf
-share/fcitx/configdesc/fcitx-keyboard.desc
-share/fcitx/configdesc/fcitx-xkb.desc
-share/locale/zh_CN/LC_MESSAGES/fcitx-keyboard.mo
-share/locale/zh_TW/LC_MESSAGES/fcitx-keyboard.mo
