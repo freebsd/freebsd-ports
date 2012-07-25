@@ -177,7 +177,8 @@ lib/lib-clay/libc/generated/generated_from_win32.h
 lib/lib-clay/libc/libc.freebsd.clay
 lib/lib-clay/libc/libc.linux.clay
 lib/lib-clay/libc/libc.macosx.clay
-lib/lib-clay/libc/libc.windows.clay
+lib/lib-clay/libc/libc.windows.32.clay
+lib/lib-clay/libc/libc.windows.64.clay
 lib/lib-clay/llvm/libclang/generated/Makefile
 lib/lib-clay/llvm/libclang/generated/generated.clay
 lib/lib-clay/llvm/libclang/generated/generated_from.h
