@@ -13,7 +13,7 @@ CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
 MAINTAINER=	kwm@FreeBSD.org
-COMMENT=	GLib based implimentation of the GData protocol
+COMMENT=	GLib based implementation of the GData protocol
 
 BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 LIB_DEPENDS=	soup-gnome-2.4.1:${PORTSDIR}/devel/libsoup-gnome

@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A stat() with BSD 4.4 extentions
+COMMENT=	A stat() with BSD 4.4 extensions
 
 PERL_CONFIGURE=	yes
 

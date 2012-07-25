@@ -13,7 +13,7 @@ MASTER_SITES=	http://catseye-fm.sourceforge.net/downloads/ \
 		http://catseye-fm-temp.sourceforge.net/downloads/
 
 MAINTAINER=	klausgeyer@gmx.de
-COMMENT=	A clear, fast, powerfull file browser using gtk+2.0
+COMMENT=	Clear, fast, powerful file browser using gtk+2.0
 
 USE_GNOME=	gtk20
 

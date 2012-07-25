@@ -13,7 +13,7 @@ MASTER_SITES=		http://curvedns.on2it.net/releases/
 DISTNAME=		curvedns-0.88-unstable
 
 MAINTAINER=		freebsd@dns-lab.com
-COMMENT=		A forwarder adding DNSCurve to an authoritive nameserver
+COMMENT=		Forwarder adding DNSCurve to an authoritative nameserver
 
 LIB_DEPENDS=		ev.4:${PORTSDIR}/devel/libev
 RUN_DEPENDS=		setuidgid:${PORTSDIR}/sysutils/daemontools

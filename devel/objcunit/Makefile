@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	gnustep-
 DISTNAME=	ObjcUnit-${PORTVERSION}-GNUstep
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	ObjcUnit frammework for GNUstep
+COMMENT=	ObjcUnit framework for GNUstep
 
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes

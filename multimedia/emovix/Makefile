@@ -11,7 +11,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	SF/movix/eMoviX/0.9
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A mini linux distro to create bootable video CDs
+COMMENT=	Mini Linux distro to create bootable video CDs
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

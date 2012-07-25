@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	file-${PORTVERSION}
 
 MAINTAINER=	lwhsu@FreeBSD.org
-COMMENT=	Python module for determing file type
+COMMENT=	Python module for determining file type
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

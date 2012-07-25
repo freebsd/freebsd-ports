@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.libsdl.org/projects/SDL_ttf/release/
 DISTNAME=	SDL_ttf-${PORTVERSION}-1
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A library to use TrueType fonts in SDL applications (linux version)
+COMMENT=	Library to use TrueType fonts in SDL applications (Linux version)
 
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	sdl12

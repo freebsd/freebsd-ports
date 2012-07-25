@@ -15,7 +15,7 @@ DISTFILES=	Mesa-linux-bin-${PORTVERSION}.tar.bz2 \
 		linux-dri-tools.tar.gz
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	Binary Linux DRI libraries for 3D hardware acceleration of linux apps
+COMMENT=	Binary Linux DRI libraries for 3D hardware acceleration of Linux apps
 
 CONFLICTS=	linux_dri-6.5.2006* linux-libGLU-[0-9]* linux-f8-dri-[0-9]* \
 		linux-f8-libGLU-[0-9]* linux-f10-dri-[0-9]* linux-dri-[0-9]* \

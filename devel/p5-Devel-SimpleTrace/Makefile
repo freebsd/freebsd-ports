@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lippe@FreeBSD.org
-COMMENT=	Perl module for better stack traces on interpretter-generated warn/die
+COMMENT=	Perl module for better stack traces on interpreter-generated warn/die
 
 PERL_CONFIGURE=	yes
 

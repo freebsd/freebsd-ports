@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	rospell/rospell/2008.00
 DISTNAME=	${PORTNAME}-2009.00-rc2
 
 MAINTAINER=	itetcu@FreeBSD.org
-COMMENT=	QT-based editor with support for romanian charsets and spell checking
+COMMENT=	QT-based editor with support for Romanian charsets and spell checking
 
 BUILD_DEPENDS+=	exctags:${PORTSDIR}/devel/ctags
 RUN_DEPENDS+=	exctags:${PORTSDIR}/devel/ctags

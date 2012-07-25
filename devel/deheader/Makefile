@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.catb.org/esr/deheader/
 
 MAINTAINER=	kevlo@FreeBSD.org
-COMMENT=	A tool to find unnecesary includes in C/C++ files
+COMMENT=	Tool to find unnecessary includes in C/C++ files
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING

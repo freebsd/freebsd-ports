@@ -13,7 +13,7 @@ DISTNAME=	OmegaT_2.3.0_08_Source
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	rodrigo@bebik.net
-COMMENT=	A powerfull translation memory application written in Java
+COMMENT=	Powerful translation memory application written in Java
 
 LICENSE=	GPLv2
 

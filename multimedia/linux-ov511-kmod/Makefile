@@ -16,7 +16,7 @@ DISTFILES=	ov511.c ov511.h
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A port of the linux ov511 webcam driver
+COMMENT=	Linux ov511 webcam driver
 
 # Requires the linux emulation layer to be built
 BUILD_DEPENDS=	/usr/share/mk/bsd.linux_kmod.mk:${PORTSDIR}/devel/linux-kmod-compat

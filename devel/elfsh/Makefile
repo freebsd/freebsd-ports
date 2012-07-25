@@ -14,7 +14,7 @@ DISTNAME=	elfsh-0.51b3-portable
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An attractive toolkit for the analyzation of ELF object files
+COMMENT=	Attractive toolkit for the analysis of ELF object files
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes

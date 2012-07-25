@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	glarkin@FreeBSD.org
-COMMENT=	A caching wrapper aroung the svnlook command
+COMMENT=	Caching wrapper around the svnlook command
 
 BUILD_DEPENDS=	subversion>=1.7.0:${PORTSDIR}/devel/subversion \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \

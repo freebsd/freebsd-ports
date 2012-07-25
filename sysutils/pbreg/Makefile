@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.pcbsd.org/pub/software/ \
 		http://www.pcbsd.org/~kris/software/
 
 MAINTAINER=	kmoore@FreeBSD.org
-COMMENT=	PC-BSD Registry Editor
+COMMENT=	PC-BSD registry editor
 
 WRKSRC=		${WRKDIR}/PBReg
 

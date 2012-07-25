@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kaoru@kaisei.org
-COMMENT=	Minimalitic variant of p5-Class-Accessor
+COMMENT=	Minimalistic variant of p5-Class-Accessor
 
 PERL_CONFIGURE=	yes
 

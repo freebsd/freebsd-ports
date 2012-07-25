@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Create context-senstive return values
+COMMENT=	Create context-sensitive return values
 
 BUILD_DEPENDS=	p5-Want>=0:${PORTSDIR}/devel/p5-Want
 RUN_DEPENDS=	p5-Want>=0:${PORTSDIR}/devel/p5-Want

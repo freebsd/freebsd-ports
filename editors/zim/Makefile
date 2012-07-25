@@ -12,7 +12,7 @@ CATEGORIES=	editors python
 MASTER_SITES=	http://www.zim-wiki.org/downloads/
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	A Desktop Wiki Editor
+COMMENT=	Desktop wiki editor
 
 LICENSE=	GPLv2
 

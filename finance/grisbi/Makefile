@@ -12,7 +12,7 @@ CATEGORIES=	finance
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION:R}.x/
 
 MAINTAINER=	thierry@FreeBSD.org
-COMMENT=	A personnal accounting application
+COMMENT=	Personal accounting application
 
 LICENSE=	GPLv2
 
