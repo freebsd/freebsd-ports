@@ -1,5 +1,5 @@
---- src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c.orig	2011-12-19 15:01:31.000000000 +0200
-+++ src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c	2012-02-23 01:24:32.111859551 +0200
+--- src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c.orig	2012-06-20 15:18:10.000000000 +0200
++++ src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c	2012-07-25 18:04:01.534886951 +0200
 @@ -5,6 +5,7 @@
  
  /*
@@ -149,7 +149,7 @@
 +        VM_OBJECT_UNLOCK(pObject);
 +        if (pPages || tries >= 1)
 +            break;
-+        vm_contig_grow_cache(tries, 0, VmPhysAddrHigh);
++        vm_pageout_grow_cache(tries, 0, VmPhysAddrHigh);
 +        tries++;
 +    }
 +    return pPages;
