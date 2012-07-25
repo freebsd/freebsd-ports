@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://sources.redhat.com/autobook/
 
 MAINTAINER=	edwin@mavetju.org
-COMMENT=	GNU autoconf, automake and libtool - The Book
+COMMENT=	GNU autoconf, automake, and libtool - The Book
 
 NO_BUILD=	yes	# it's only text!
 

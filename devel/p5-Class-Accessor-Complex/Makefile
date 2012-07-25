@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	gslin@gslin.org
-COMMENT=	Arrays, hashes, booleans, integers, sets and more
+COMMENT=	Arrays, hashes, booleans, integers, sets, and more
 
 BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Data-Miscellany>=0:${PORTSDIR}/devel/p5-Data-Miscellany \

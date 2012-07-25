@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Add support for i18n, documentation and icons to distutils
+COMMENT=	Add support for i18n, documentation, and icons to distutils
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

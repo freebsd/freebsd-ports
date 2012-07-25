@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://hselasky.homeunix.org:8192/distfiles/
 
 MAINTAINER=	hselasky@FreeBSD.org
-COMMENT=	A MIDI playback, recording and live performance tool
+COMMENT=	A MIDI playback, recording, and live performance tool
 
 BUILD_DEPENDS=	libumidi>=2.0.2:${PORTSDIR}/audio/libumidi
 

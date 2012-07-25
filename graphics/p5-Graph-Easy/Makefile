@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
-COMMENT=	Render graphs as ASCII, HTML, SVG or Graphviz
+COMMENT=	Render graphs as ASCII, HTML, SVG, or Graphviz
 
 BUILD_DEPENDS=	p5-Heap>0:${PORTSDIR}/devel/p5-Heap
 RUN_DEPENDS:=	${BUILD_DEPENDS}

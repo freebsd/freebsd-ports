@@ -12,7 +12,7 @@ CATEGORIES=	benchmarks databases
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A modular, cross-platform and multi-threaded benchmark tool
+COMMENT=	A modular, cross-platform, and multi-threaded benchmark tool
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

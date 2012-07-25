@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A utility C++ class library for daemons, clients, servers and more
+COMMENT=	A utility C++ class library for daemons, clients, servers, and more
 
 LICENSE=	LGPL20
 

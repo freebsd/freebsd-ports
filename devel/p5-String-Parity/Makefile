@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A perl5 module to generate and test even, odd, mark and space parity
+COMMENT=	A perl5 module to generate and test even, odd, mark, and space parity
 
 PERL_CONFIGURE=	yes
 

@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	culot@FreeBSD.org
-COMMENT=	Perl extension for looking up the whois information for ip addresses
+COMMENT=	Perl extension for looking up the whois information for IP addresses
 
 MAN3=	Net::Whois::IP.3
 

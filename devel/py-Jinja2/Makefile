@@ -13,7 +13,7 @@ MASTER_SITES=	CHEESESHOP \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A fast, and easy to use stand-alone template engine
+COMMENT=	A fast and easy to use stand-alone template engine
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE

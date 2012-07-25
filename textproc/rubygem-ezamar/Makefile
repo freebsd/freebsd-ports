@@ -11,7 +11,7 @@ CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	jyyou@cs.nctu.edu.tw
-COMMENT=	A light-weight and simple templating engine for Ruby
+COMMENT=	A lightweight and simple templating engine for Ruby
 
 USE_RUBY=	yes
 

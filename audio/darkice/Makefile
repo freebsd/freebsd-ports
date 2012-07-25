@@ -13,7 +13,7 @@ CATEGORIES=	audio net
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An IceCast, IceCast2 and ShoutCast live audio streamer
+COMMENT=	An IceCast, IceCast2, and ShoutCast live audio streamer
 
 LICENSE=	GPLv3
 

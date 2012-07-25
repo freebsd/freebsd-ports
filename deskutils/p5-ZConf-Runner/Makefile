@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	CPAN:VVELOX
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
-COMMENT=	Run a file using a chosen method, desktop entry or mimetype
+COMMENT=	Run a file using a chosen method, desktop entry, or mimetype
 
 BUILD_DEPENDS=	p5-ZConf>=6.1.0:${PORTSDIR}/net/p5-ZConf \
 		p5-File-MimeInfo>=0.16:${PORTSDIR}/devel/p5-File-MimeInfo \

@@ -11,7 +11,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/4.5.1/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-linux-bin
 
 MAINTAINER=	fbsd-ports@opsec.eu
-COMMENT=	A web service, SOA and SOAP testing tool
+COMMENT=	A web service, SOA, and SOAP testing tool
 
 USE_ZIP=	YES
 USE_JAVA=	1.5+

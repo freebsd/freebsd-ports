@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Shows information about Java class, dependencies and more
+COMMENT=	Shows information about Java class, dependencies, and more
 
 BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 

@@ -14,7 +14,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A full-featured, secure, extensible and configurable Perl FTP server
+COMMENT=	A full-featured, secure, extensible, and configurable Perl FTP server
 
 RUN_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-Authen-PAM>=0:${PORTSDIR}/security/p5-Authen-PAM \

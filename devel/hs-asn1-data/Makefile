@@ -10,7 +10,7 @@ PORTVERSION=	0.6.1.3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	ASN1 data reader and writer in RAW, BER, DER and CER forms
+COMMENT=	ASN1 data reader and writer in RAW, BER, DER, and CER forms
 
 LICENSE=	BSD
 

@@ -12,7 +12,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sbz@FreeBSD.org
-COMMENT=	Simple construction, analysis and modification of binary data
+COMMENT=	Simple construction, analysis, and modification of binary data
 
 LICENSE=	MIT
 

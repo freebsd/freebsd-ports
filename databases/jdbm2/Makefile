@@ -11,7 +11,7 @@ CATEGORIES=	databases java
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A fast, simple and transactional Java persistence engine
+COMMENT=	A fast, simple, and transactional Java persistence engine
 
 USE_ZIP=	yes
 USE_JAVA=	yes

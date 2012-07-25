@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.sh
 
 MAINTAINER=	fw@moov.de
-COMMENT=	Make daily, weekly and monthly backups of your MySQL databases
+COMMENT=	Make daily, weekly, and monthly backups of your MySQL databases
 
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 

@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.linux-games.com/black-box/
 
 MAINTAINER=	nemysis@gmx.ch
-COMMENT=	You can shoot in and watch, where the shot leaves the box
+COMMENT=	You can shoot in and watch where the shot leaves the box
 
 LICENSE=	GPLv2
 

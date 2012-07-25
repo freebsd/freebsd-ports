@@ -12,7 +12,7 @@ MASTER_SITES=	SF \
 		http://www.mpg123.de/download/
 
 MAINTAINER=	novel@FreeBSD.org
-COMMENT=	Command-line player for mpeg layer 1, 2 and 3 audio
+COMMENT=	Command-line player for mpeg layer 1, 2, and 3 audio
 
 LICENSE=	LGPL21
 

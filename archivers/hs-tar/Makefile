@@ -10,7 +10,7 @@ PORTVERSION=	0.4.0.0
 CATEGORIES=	archivers haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Reading, writing and manipulating ".tar" archive files
+COMMENT=	Reading, writing, and manipulating ".tar" archive files
 
 LICENSE=	BSD
 

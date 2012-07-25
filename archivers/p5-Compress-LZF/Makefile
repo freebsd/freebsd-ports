@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Extremely light-weight Lempel-Ziv-Free compression
+COMMENT=	Extremely lightweight Lempel-Ziv-Free compression
 
 PERL_CONFIGURE=	yes
 

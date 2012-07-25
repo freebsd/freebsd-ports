@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://whatpix.sourceforge.net/download/
 
 MAINTAINER=	pcasidy@casidy.com
-COMMENT=	Perl console application which finds, moves or deletes duplicate files
+COMMENT=	Perl console application which finds, moves, or deletes duplicate files
 
 RUN_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
 

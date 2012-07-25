@@ -17,7 +17,7 @@ DISTFILES=	#
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Doom data files (Doom, Doom II, Hexen, Heretic and Strife)
+COMMENT=	Doom data files (Doom, Doom II, Hexen, Heretic, and Strife)
 
 USE_BZIP2=	yes
 NO_BUILD=	yes

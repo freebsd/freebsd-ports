@@ -12,7 +12,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	A Python packages installer, and Setuptools replacement
+COMMENT=	A Python packages installer and Setuptools replacement
 
 CONFLICTS=	${PYTHON_PKGNAMEPREFIX}setuptools-[0-9]*
 

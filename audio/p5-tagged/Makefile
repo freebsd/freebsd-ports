@@ -14,7 +14,7 @@ MASTER_SITES=	CPAN/MP3 \
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Read, change and write different tags of MP3 audio files
+COMMENT=	Read, change, and write different tags of MP3 audio files
 
 PERL_CONFIGURE=	yes
 

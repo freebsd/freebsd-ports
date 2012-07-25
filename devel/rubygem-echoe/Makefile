@@ -11,7 +11,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Rake tasks for docs, extension compiling, testing and deployment
+COMMENT=	Rake tasks for docs, extension compiling, testing, and deployment
 
 RUN_DEPENDS=	rubygem-rubyforge>=0:${PORTSDIR}/devel/rubygem-rubyforge \
 		rubygem-gemcutter>=0:${PORTSDIR}/devel/rubygem-gemcutter \

@@ -17,7 +17,7 @@ MASTER_SITE_SUBDIR=	mandree
 EXTRACT_SUFX=	.tar.lzma
 
 MAINTAINER=	mandree@FreeBSD.org
-COMMENT=	Lightweight DNS forwarder, DHCP and TFTP server
+COMMENT=	Lightweight DNS forwarder, DHCP, and TFTP server
 
 LICENSE=	GPLv2
 

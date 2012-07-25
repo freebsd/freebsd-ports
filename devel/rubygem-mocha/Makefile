@@ -10,7 +10,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A library for mocking and stubbing syntax like JMock, and SchMock
+COMMENT=	A library for mocking and stubbing syntax like JMock and SchMock
 
 USE_RUBY=	yes
 USE_RAKE=	yes

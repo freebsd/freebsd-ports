@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://gatling.ikk.sztaki.hu/pub/aclgen/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Optimize Cisco routers ip access lists
+COMMENT=	Optimize Cisco routers IP access lists
 
 NO_WRKSUBDIR=	YES
 MAKEFILE=	/usr/share/mk/bsd.prog.mk

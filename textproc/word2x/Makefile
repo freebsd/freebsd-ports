@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-zero/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Converter from MS Word to text, HTML or LaTeX
+COMMENT=	Converter from MS Word to text, HTML, or LaTeX
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

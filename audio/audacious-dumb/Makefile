@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.netswarm.net/misc/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	Audacious plugin that support the IT, XM, S3M or MOD formats
+COMMENT=	Audacious plugin that support the IT, XM, S3M, or MOD formats
 
 LICENSE=	GPLv2
 

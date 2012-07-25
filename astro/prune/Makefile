@@ -15,7 +15,7 @@ EXTRACT_SUFX=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	Application for viewing, editing and converting GPS coordinate data
+COMMENT=	Application for viewing, editing, and converting GPS coordinate data
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

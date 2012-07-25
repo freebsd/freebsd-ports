@@ -12,7 +12,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	GNU
 
 MAINTAINER=	garga@FreeBSD.org
-COMMENT=	Pack, send and unpack shell archives; synchronize via e-mail
+COMMENT=	Pack, send, and unpack shell archives; synchronize via e-mail
 
 LICENSE=	GPLv3
 

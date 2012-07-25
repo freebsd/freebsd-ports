@@ -12,7 +12,7 @@ MASTER_SITES=	http://semanchuk.com/philip/sysv_ipc/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
-COMMENT=	System V IPC for Python - Semaphores, Shared Memory and Message Queues
+COMMENT=	System V IPC for Python - Semaphores, Shared Memory, and Message Queues
 
 LICENSE=	BSD
 

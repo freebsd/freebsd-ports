@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
-COMMENT=	Track calls to subs, classes and object instances
+COMMENT=	Track calls to subs, classes, and object instances
 
 PERL_CONFIGURE=	yes
 

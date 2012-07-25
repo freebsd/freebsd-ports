@@ -14,7 +14,7 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Clean, mean and lean CD ripper for GNOME2
+COMMENT=	Clean, mean, and lean CD ripper for GNOME2
 
 LIB_DEPENDS=	musicbrainz3.6:${PORTSDIR}/audio/libmusicbrainz3 \
 		gnome-media-profiles.0:${PORTSDIR}/audio/gnome-media \

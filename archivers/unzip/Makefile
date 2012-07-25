@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}60
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main
 
 MAINTAINER?=	ehaupt@FreeBSD.org
-COMMENT?=	List, test and extract compressed files in a ZIP archive
+COMMENT?=	List, test, and extract compressed files in a ZIP archive
 
 LICENSE=	Info-ZIP
 LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}

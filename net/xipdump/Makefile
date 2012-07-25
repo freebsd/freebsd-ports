@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.lse.epita.fr/twiki/pub/Projects/XipDump/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	umeno@rr.iij4u.or.jp
-COMMENT=	Displays ip packets using X window
+COMMENT=	Displays IP packets using X window
 
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 

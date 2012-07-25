@@ -15,7 +15,7 @@ MASTER_SITES=	LOCAL/chinsan/pyDict/ \
 		http://525183.serverbox.org/freebsd/pyDict/
 
 MAINTAINER=	sunrychen@gmail.com
-COMMENT=	A Chinese <-> English dictionary, under both console and X11
+COMMENT=	A Chinese <-> English dictionary under both, console and X11
 
 RUN_DEPENDS=	${LOCALBASE}/include/pygtk/pygtk.h:${PORTSDIR}/x11-toolkits/py-gtk \
 		${LOCALBASE}/lib/X11/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf

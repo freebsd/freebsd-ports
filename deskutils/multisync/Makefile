@@ -12,7 +12,7 @@ MASTER_SITES=	SF/multisync/OldFiles
 DISTNAME=	multisync-${PORTVERSION}
 
 MAINTAINER?=	pav@FreeBSD.org
-COMMENT?=	Synchronize calendars, addressbooks and other PIM data
+COMMENT?=	Synchronize calendars, addressbooks, and other PIM data
 
 WRKSRC?=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WRKSRCMASTER=	${WRKDIR}/multisync-${PORTVERSION}

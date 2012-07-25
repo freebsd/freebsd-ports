@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	CPAN:VVELOX
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
-COMMENT=	Takes a string composed of various tests, arguements, and etc and returns a value
+COMMENT=	Takes a string composed of various tests, arguments, etc and returns a value
 
 RUN_DEPENDS=	p5-Net-CIDR-Lite>=0.21:${PORTSDIR}/net/p5-Net-CIDR-Lite \
 		p5-IO-Socket-SSL>=1.74:${PORTSDIR}/security/p5-IO-Socket-SSL \

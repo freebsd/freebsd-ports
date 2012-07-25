@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	CPAN:DAGOLDEN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bill.brinzer@gmail.com
-COMMENT=	Capture STDOUT and STDERR from Perl, XS or external programs
+COMMENT=	Capture STDOUT and STDERR from Perl, XS, or external programs
 
 PERL_CONFIGURE=	yes
 

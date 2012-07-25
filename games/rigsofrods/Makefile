@@ -15,7 +15,7 @@ DISTFILES=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	Truck, car, airplane and boat simulator with advanced physics
+COMMENT=	Truck, car, airplane, and boat simulator with advanced physics
 
 LIB_DEPENDS=	zzip.13:${PORTSDIR}/devel/zziplib \
 		freetype.9:${PORTSDIR}/print/freetype2 \

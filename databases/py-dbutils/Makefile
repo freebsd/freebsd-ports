@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	DBUtils-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	Providing solid, persistent and pooled connections to a database
+COMMENT=	Providing solid, persistent, and pooled connections to a database
 
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=easy_install

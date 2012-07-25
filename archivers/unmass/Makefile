@@ -12,7 +12,7 @@ MASTER_SITES=	http://mirex.mypage.sk/FILES/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	Extract game archives such as wad, dar, mea exe's and many more
+COMMENT=	Extract game archives such as wad, dar, mea exe's, and many more
 
 LICENSE=	GPLv2
 

@@ -10,7 +10,7 @@ PORTVERSION=	1.2.1.1
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A fast, light-weight web server for WAI applications
+COMMENT=	A fast, lightweight web server for WAI applications
 
 LICENSE=	MIT
 

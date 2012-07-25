@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	CPAN:REEDFISH
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	culot@FreeBSD.org
-COMMENT=	Create Powerful Terminal, Console and CMD Environment Menus
+COMMENT=	Create Powerful Terminal, Console, and CMD Environment Menus
 
 LICENSE=	GPLv3
 

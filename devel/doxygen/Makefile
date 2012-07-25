@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/ \
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	cyberbotx@cyberbotx.com
-COMMENT=	A documentation system for C, C++ and other languages
+COMMENT=	A documentation system for C, C++, and other languages
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
