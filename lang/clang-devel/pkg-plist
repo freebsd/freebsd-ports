@@ -473,6 +473,7 @@ lib/libclangTooling.a
 @dirrm include/clang
 @dirrm %%PYTHON_SITELIBDIR%%/Resources
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/img
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/clang
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
