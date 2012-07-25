@@ -6,32 +6,32 @@
 #
 
 PORTNAME=	anyremote
-PORTVERSION=	5.4.2
+PORTVERSION=	6.0
 CATEGORIES=	comms
 MASTER_SITES=	SF
 
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	Remote control service over Bluetooth, infrared, or TCP/IP networking
 
+LICENSE=	GPLv2
+
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-LICENSE=	GPLv2
-
-OPTIONS=	DBUS		"Build with DBUS support" on \
-		X11		"Build with X11 library" on
+OPTIONS_DEFINE=	DBUS X11
+OPTIONS_DEFAULT=	DBUS X11
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_DBUS)
+.if empty(PORT_OPTIONS:MDBUS)
 CONFIGURE_ARGS+=--disable-dbus
 .else
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 .endif
 
-.if defined(WITHOUT_X11)
+.if empty(PORT_OPTIONS:MX11)
 CONFIGURE_ARGS+=--disable-xtest
 .else
 USE_XORG=	x11 xtst
@@ -44,7 +44,7 @@ MANCOMPRESSED=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|(datadir)/man/man1|(mandir)/man1|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|xtext|xtest|g' ${WRKSRC}/configure
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/doc\/${PORTNAME}/d' ${WRKSRC}/Makefile.in
 .endif
 
