@@ -21,7 +21,7 @@ LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 		smpeg.1:${PORTSDIR}/multimedia/smpeg
 
 USE_BZIP2=	yes
-USE_GCC=	4.4+
+USE_GCC=	4.6+
 USE_LDCONFIG=	yes
 USE_LUA=	5.0+
 USE_OPENAL=	al
