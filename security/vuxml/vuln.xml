@@ -52,6 +52,53 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c7fa3618-d5ff-11e1-90a2-000c299b62e1">
+    <topic>isc-dhcp -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>isc-dhcp42-server</name>
+	<range><lt>4.2.4_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC reports:</p>
+	<blockquote cite="https://www.isc.org/announcement/bind-and-dhcp-security-updates-released">
+	  <p>An unexpected client identifier parameter can cause the ISC DHCP daemon
+	     to segmentation fault when running in DHCPv6 mode, resulting in a denial
+	     of service to further client requests. In order to exploit this
+	     condition, an attacker must be able to send requests to the DHCP server.</p>
+	  <p>An error in the handling of malformed client identifiers can cause a DHCP
+	     server running affected versions (see "Impact") to enter a state where
+	     further client requests are not processed and the server process loops
+	     endlessly, consuming all available CPU cycles.
+	     Under normal circumstances this condition should not be triggered, but
+	     a non-conforming or malicious client could deliberately trigger it in a
+	     vulnerable server. In order to exploit this condition an attacker must
+	     be able to send requests to the DHCP server.</p>
+	  <p>Two memory leaks have been found and fixed in ISC DHCP. Both are
+	     reproducible when running in DHCPv6 mode (with the -6 command-line
+	     argument.) The first leak is confirmed to only affect servers operating
+	     in DHCPv6 mode, but based on initial code analysis the second may
+	     theoretically affect DHCPv4 servers (though this has not been
+	     demonstrated.)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-3570</cvename>
+      <cvename>CVE-2012-3571</cvename>
+      <cvename>CVE-2012-3954</cvename>
+      <url>https://kb.isc.org/article/AA-00714</url>
+      <url>https://kb.isc.org/article/AA-00712</url>
+      <url>https://kb.isc.org/article/AA-00737</url>
+    </references>
+    <dates>
+      <discovery>2012-07-24</discovery>
+      <entry>2012-07-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0bc67930-d5c3-11e1-bef6-0024e81297ae">
     <topic>dns/bind9* -- Heavy DNSSEC Validation Load Can Cause a 'Bad Cache' Assertion Failure</topic>
     <affects>
