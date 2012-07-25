@@ -109,7 +109,7 @@ bin/rabrick
 %%RUBY_SITELIBDIR%%/rabbit/parser/rd.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/rd/ext/base.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/rd/ext/block-verbatim.rb
-%%RUBY_SITELIBDIR%%/rabbit/parser/rd/ext/entity.rb
+%%RUBY_SITELIBDIR%%/rabbit/parser/rd/ext/character-reference.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/rd/ext/image.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/rd/ext/inline-verbatim.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/rd/ext/refer.rb

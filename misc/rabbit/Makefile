@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rabbit
-PORTVERSION=	1.0.8
-PORTREVISION=	1
+PORTVERSION=	1.0.9
 CATEGORIES=	misc ruby
 MASTER_SITES=	http://rabbit-shockers.org/download/ \
 		LOCAL
@@ -22,6 +21,7 @@ LICENSE_FILE=	${WRKSRC}/GPL
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
 		${RUBY_SITEARCHLIBDIR}/rsvg2.so:${PORTSDIR}/graphics/ruby-rsvg2 \
 		${RUBY_SITEARCHLIBDIR}/poppler.so:${PORTSDIR}/x11-toolkits/ruby-poppler \
+		${RUBY_SITEARCHLIBDIR}/gio2.so:${PORTSDIR}/devel/ruby-gio2 \
 		hikidoc:${PORTSDIR}/textproc/ruby-hikidoc \
 		rubygem-nokogiri>0:${PORTSDIR}/textproc/rubygem-nokogiri \
 		rubygem-sinatra>0:${PORTSDIR}/www/rubygem-sinatra \
@@ -64,7 +64,7 @@ RUN_DEPENDS+=	${LOCALBASE}/www/mimetex/cgi-bin/mimetex.cgi:${PORTSDIR}/www/mimet
 
 .if ${PORT_OPTIONS:MTWITTER}
 RUN_DEPENDS+=	rubygem-twitter_oauth>=0:${PORTSDIR}/security/rubygem-twitter_oauth \
-		rubygem-twitter-stream>=0:${PORTSDIR}/net/rubygem-twitter-stream
+		rubygem-twitter-stream>=0.1.16:${PORTSDIR}/net/rubygem-twitter-stream
 .endif
 
 post-patch:
