@@ -14,11 +14,11 @@ MASTER_SITES=	http://cdn.thegraveyard.org/releases/skippy/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full-screen X11 task-switcher like Apple's Expose
 
-BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2 \
-		pkg-config>0:${PORTSDIR}/devel/pkg-config
+BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
 USE_XORG=	x11 xft xcomposite xdamage xfixes xrender xinerama xext xmu
+USE_PKGCONFIG=	yes
 PLIST_FILES=	bin/skippy-xd \
 		%%DATADIR%%/skippy-xd.rc-default
 PLIST_DIRS=	%%DATADIR%%

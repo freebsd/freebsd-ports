@@ -10,6 +10,21 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20120726:
+AUTHOR: bapt@FreeBSD.org
+
+  * new macro USE_PKGCONFIG has been introduce in place of
+    USE_GNOME= pkgconfig
+
+    USE_PKGCONFIG= yes and USE_PKGCONFIG= build
+    for build only dependency
+
+    USE_PKGCONFIG= run
+    for run only dependency
+
+    USE_PKGCONFIG= both
+    for both build and run dependency
+
 20120715:
 AUTHOR: beat@FreeBSD.org
 

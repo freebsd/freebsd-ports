@@ -15,7 +15,6 @@ DISTNAME=	WindowMaker-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	GNUstep-compliant NeXTstep window manager clone
 
-BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	gif:${PORTSDIR}/graphics/giflib \
 		png15:${PORTSDIR}/graphics/png \
 		jbig:${PORTSDIR}/graphics/jbigkit \
@@ -35,6 +34,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomehack
 USE_XORG=	xft xinerama xmu xpm
 USE_GETTEXT=	yes
+USE_PKGCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

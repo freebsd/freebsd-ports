@@ -17,13 +17,13 @@ COMMENT=	A Fox toolkit reimplementation of Scintilla editing widget
 LICENSE=	LGPL21 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16
 
 USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>

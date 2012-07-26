@@ -16,11 +16,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.([[:digit:]])$/-\1/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An C++ networking library and application framework
 
-BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
-
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	yes
 PLIST_SUB=	ASSA_VERSION=${PORTVERSION:R:R}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/(\.[[:digit:]])$//}

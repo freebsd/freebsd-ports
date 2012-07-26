@@ -15,7 +15,6 @@ DISTNAME=	mc-${PORTVERSION:S/.p9/-pre9/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight Midnight Commander clone
 
-BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 
 CONFLICTS=	mc-4.7*
@@ -26,6 +25,7 @@ MC_IN_MC_DESC=	Allow run mc inside mc (useful for mcedit)
 
 USE_GMAKE=	yes
 USE_ICONV=	yes
+USE_PKGCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-included-slang \
 		--with-gettext \

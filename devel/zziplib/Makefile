@@ -16,8 +16,7 @@ COMMENT=	A library to provide transparent read access to zipped files
 LICENSE=	LGPL21 MPL
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		pkg-config>0:${PORTSDIR}/devel/pkg-config
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 OPTIONS_DEFINE=	SDL
 
@@ -25,6 +24,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomehack
 USE_PYTHON_BUILD=	yes
 USE_AUTOTOOLS=	libtool
+USE_PKGCONFIG=	yes
 CONFIGURE_ENV=	ac_cv_path_XMLTO=":"
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes

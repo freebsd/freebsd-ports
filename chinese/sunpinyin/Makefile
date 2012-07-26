@@ -22,7 +22,6 @@ LICENSE=	LGPL21 CDDL
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 
 LICENSE_FILE_LGPL21=	${WRKSRC}/LGPL.LICENSE
 LICENSE_FILE_CDDL=	${WRKSRC}/OPENSOLARIS.LICENSE
@@ -31,6 +30,7 @@ USE_XZ=		yes
 USE_SCONS=	yes
 SCONS_ARGS+=	--prefix=${PREFIX} --libdatadir=${PREFIX}/share
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	yes
 USE_GMAKE=	yes
 
 post-patch:

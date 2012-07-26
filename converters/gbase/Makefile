@@ -16,11 +16,10 @@ COMMENT=	A program to convert between the 4 common bases used in programming
 
 LICENSE=	ART10
 
-BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
-
 OPTIONS_DEFINE=	GTK2
 
 PLIST_FILES=	bin/${PORTNAME}
+USE_PKGCONFIG=	yes
 
 .include <bsd.port.options.mk>
 

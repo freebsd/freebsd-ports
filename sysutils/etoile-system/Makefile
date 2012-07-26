@@ -18,7 +18,6 @@ PORTSCOUT=	limit:^0\.2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Etoile Project System Tool
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus
 
 DEPRECATED=	API no longer supported
@@ -29,6 +28,7 @@ USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 USE_GNUSTEP_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
+USE_PKGCONFIG=	yes
 
 WRKSRC=	${WRKDIR}/Etoile-${PORTVERSION}
 USE_GNUSTEP_MAKE_DIRS+=	Services/Private/System

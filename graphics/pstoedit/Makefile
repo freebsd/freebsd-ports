@@ -16,7 +16,6 @@ COMMENT=	Convert PostScript to other vector graphic formats
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
 OPTIONS_DEFINE=	MAGICK EMF MING PLOTUTILS DOCS EXAMPLES
@@ -26,6 +25,7 @@ MING_DESC=	Enable swf interface
 PLOTUTILS_DESC=	Enable libplot interface
 
 USE_GNOME=	gnomehack
+USE_PKGCONFIG=	yes
 USE_GHOSTSCRIPT=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

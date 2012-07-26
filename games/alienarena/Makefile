@@ -50,7 +50,7 @@ LIBDIR=		${PREFIX}/lib/${PORTNAME}
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_CLIENT)
-BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
+USE_PKGCONFIG=	yes
 LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \

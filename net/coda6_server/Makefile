@@ -23,6 +23,7 @@ LIB_DEPENDS=	lwp.2:${PORTSDIR}/devel/lwp \
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_PKGCONFIG=	yes
 
 CONFIGURE_ARGS+=	--enable-${CODA_SUITE}
 

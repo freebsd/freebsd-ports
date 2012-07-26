@@ -16,7 +16,6 @@ COMMENT=	TI Linking Program
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	ticables2.5:${PORTSDIR}/comms/libticables2 \
 		tifiles2.8:${PORTSDIR}/devel/libtifiles2 \
 		ticalcs2.10:${PORTSDIR}/comms/libticalcs2 \
@@ -25,6 +24,7 @@ LIB_DEPENDS=	ticables2.5:${PORTSDIR}/comms/libticables2 \
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_PKGCONFIG=	yes
 USE_GNOME=	gtk20 libglade2
 
 .if !defined(WITHOUT_NLS)

@@ -15,7 +15,6 @@ DISTNAME=	svxlink-${PORTVERSION}
 MAINTAINER=	shurd@sasktel.net
 COMMENT=	Qt EchoLink Client and SvrLink audio server
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	sigc-1.2:${PORTSDIR}/devel/libsigc++12 \
 		speex:${PORTSDIR}/audio/speex \
 		gcrypt:${PORTSDIR}/security/libgcrypt \
@@ -39,6 +38,7 @@ MANCOMPRESSED=	yes
 USE_GMAKE=	yes
 USE_QT_VER=	3
 USE_TCL=	yes
+USE_PKGCONFIG=	yes
 USE_RC_SUBR=	svxlink remotetrx
 USE_LDCONFIG=	${LOCALBASE}/lib ${LOCALBASE}/lib/svxlink
 

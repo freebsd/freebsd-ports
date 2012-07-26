@@ -9,8 +9,9 @@ COMMENT=	RFC3195 input support for rsyslog
 MASTERDIR=	${.CURDIR}/../rsyslog5
 
 MNAME=	rfc3195
-BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS+=	logging.0:${PORTSDIR}/devel/liblogging
+
+USE_PKGCONFIG=	yes
 
 CONFIGURE_ARGS+=--enable-rfc3195
 

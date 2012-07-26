@@ -14,8 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VRML97 runtime and browser
 
-BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone	\
-		pkg-config:${PORTSDIR}/devel/pkg-config
+BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone
 LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig		\
 		js.1:${PORTSDIR}/lang/spidermonkey			\
 		jpeg.11:${PORTSDIR}/graphics/jpeg			\
@@ -28,6 +27,7 @@ USE_GNOME=	gnomehack libglade2 libgnomeui
 USE_SDL=	sdl
 USE_JAVA=	yes
 USE_GCC=	4.6+
+USE_PKGCONFIG=	yes
 GNU_CONFIGURE=	yes
 LIBTOOLFILES=	configure
 CONFIGURE_ARGS=	--enable-gecko-rpath \

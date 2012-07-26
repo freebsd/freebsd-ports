@@ -34,7 +34,6 @@ EXTRACT_ONLY=	${BASE_PORTNAME}-${PORTVERSION}.tar.gz
 MAINTAINER=	r.neese@gmail.com
 COMMENT=	FreeSwitch SoftSwitch Port
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		tiff:${PORTSDIR}/graphics/tiff \
@@ -48,6 +47,7 @@ USE_AUTOTOOLS=	autoconf:env automake:env libtool:env
 
 USE_PERL5_BUILD=yes
 USE_BISON=	both
+USE_PKGCONFIG=	yes
 USE_GMAKE=	yes
 SUB_FILES=	pkg-install pkg-message
 USE_RC_SUBR=	freeswitch

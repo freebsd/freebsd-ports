@@ -40,9 +40,10 @@ PLIST_FILES=	bin/itweb-javaws bin/itweb-settings \
 PORTDATA=	about.jar about.jnlp netx.jar
 PORTDOCS=	netx
 
-BUILD_DEPENDS+=	${LOCALBASE}/bin/zip:${PORTSDIR}/archivers/zip \
-		${LOCALBASE}/bin/pkg-config:${PORTSDIR}/devel/pkg-config
+BUILD_DEPENDS+=	${LOCALBASE}/bin/zip:${PORTSDIR}/archivers/zip
 RUN_DEPENDS+=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+
+USE_PKGCONFIG=	yes
 
 CONFIGURE_ARGS+=--with-ecj=no --with-jdk-home="${JAVA_HOME}"
 

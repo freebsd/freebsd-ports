@@ -9,8 +9,8 @@ COMMENT=	RELP input/output module for rsyslog
 MASTERDIR=	${.CURDIR}/../rsyslog5
 
 MNAME=	relp
-BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	relp.0:${PORTSDIR}/devel/librelp
+USE_PKGCONFIG=	yes
 
 CONFIGURE_ARGS+=--enable-relp
 

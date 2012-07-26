@@ -17,7 +17,6 @@ COMMENT=	SWF manipulation and generation utilities
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		gif.5:${PORTSDIR}/graphics/giflib \
@@ -29,6 +28,7 @@ OPTIONS_DEFINE=	LAME PDF
 
 USE_GL=		glut
 USE_GMAKE=	yes
+USE_PKGCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_lib_zzip_zzip_file_open=no
 

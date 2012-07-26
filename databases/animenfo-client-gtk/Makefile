@@ -17,13 +17,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	AnimeNfo client with GTK support
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
-
 LICENSE=	GPLv2
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20
+USE_PKGCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 CFLAGS+=	${CPPFLAGS}

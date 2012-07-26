@@ -19,12 +19,12 @@ COMMENT=	Shows current mldonkey donwload/upload rates and allows setting them
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	\
-		pkg-config:${PORTSDIR}/devel/pkg-config \
 		${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	autoconf
+USE_PKGCONFIG=	yes
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_JOBS_SAFE=	yes

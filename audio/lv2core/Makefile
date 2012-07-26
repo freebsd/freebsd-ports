@@ -16,10 +16,9 @@ COMMENT=	LV2 Core Package
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
-
 USE_BZIP2=	yes
 USE_PYTHON_BUILD=	yes
+USE_PKGCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>

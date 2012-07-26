@@ -16,7 +16,8 @@ COMMENT=	RedHat server part of netdump/netconsole package for Linux
 
 LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt \
 		glib:${PORTSDIR}/devel/glib20
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
+
+USE_PKGCONFIG=	yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 

@@ -14,13 +14,12 @@ MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility library that includes a wrapper for imlib2
 
-BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
-
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack
 USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|: install-docsDATA|:|g' ${WRKSRC}/Makefile.in

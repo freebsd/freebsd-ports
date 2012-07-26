@@ -16,7 +16,6 @@ COMMENT=	Music collection manager and player
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	xine.2:${PORTSDIR}/multimedia/libxine \
 		tag.1:${PORTSDIR}/audio/taglib	\
 		sqlite3.8:${PORTSDIR}/databases/sqlite3
@@ -35,6 +34,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--mandir=${PREFIX}/man --prefix=${PREFIX}
 MAKE_JOBS_SAFE=	yes
 USE_GMAKE=	yes
+USE_PKGCONFIG=	yes
 USE_XZ=		yes
 INSTALLS_ICONS=	yes
 MAN1=		gogglesmm.1

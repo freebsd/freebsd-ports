@@ -21,10 +21,10 @@ LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre \
 		yaml:${PORTSDIR}/textproc/libyaml \
 		htp:${PORTSDIR}/devel/libhtp
 
-BUILD_DEPENDS+=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet \
-		pkg-config:${PORTSDIR}/devel/pkg-config
+BUILD_DEPENDS+=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 
 USE_AUTOTOOLS=	automake autoconf libtool
+USE_PKGCONFIG=	yes
 
 USE_RC_SUBR=	suricata
 

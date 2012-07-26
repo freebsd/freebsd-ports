@@ -38,7 +38,7 @@ USE_SDL+=	ttf
 .endif
 
 .if defined(WITH_LUA)
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
+USE_PKGCONFIG=	yes
 USE_LUA=	5.1
 .else
 MAKE_ARGS+=	NOLUA=1

@@ -25,6 +25,7 @@ CONFLICTS_INSTALL=	ntfsprogs-*
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 USE_ICONV=	yes
+USE_PKGCONFIG=	yes
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} --disable-mount-helper \
 		--disable-mtab --with-fuse=external
 CPPFLAGS+=	-I${WRKSRC}/include/ntfs-3g/ -I${LOCALBASE}/include

@@ -15,8 +15,6 @@ DISTNAME=	ACE-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Adaptive Communication Environment for C++
 
-BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
-
 OPTIONS_DEFINE=	SSL TRIO X11 FLTK TK QT4
 OPTIONS_DEFAULT=SSL
 TRIO_DESC=	Enable trio support
@@ -34,6 +32,7 @@ MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/lib" ACE_ROOT="${WRKSRC}" \
 		CROSS-COMPILE=1
 MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

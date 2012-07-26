@@ -16,7 +16,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}b
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Collection of DOM Implementations
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	gdome.8:${PORTSDIR}/textproc/gdome2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -26,6 +25,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	yes
 
 OPTIONS=	OCAML "OCAML language support" off
 

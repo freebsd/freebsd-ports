@@ -14,7 +14,6 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Sabbu%20${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Program used to time subtitles
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		sndfile:${PORTSDIR}/audio/libsndfile
 
@@ -22,6 +21,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
+USE_PKGCONFIG=	yes
 
 USE_GNOME=	gtk20
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include

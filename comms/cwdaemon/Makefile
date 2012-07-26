@@ -15,11 +15,11 @@ MASTER_SITE_SUBDIR=	db
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio cw (Morse code) keyer daemon
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	cw:${PORTSDIR}/comms/unixcw
 
 INSTALL_TARGET=	install-exec
 GNU_CONFIGURE=	yes
+USE_PKGCONFIG=	yes
 CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/doc
 MAN8=		cwdaemon.8
 

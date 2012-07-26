@@ -246,7 +246,7 @@ PLIST_SUB+=	NUTUPS="@comment "
 .endif
 
 .if defined(WITH_INTERFACE)
-BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
+USE_PKGCONFIG=	yes
 CONFIGURE_ARGS+=--enable-interface
 LIB_DEPENDS+=	statgrab.8:${PORTSDIR}/devel/libstatgrab
 PLIST_SUB+=	INTERFACE=""

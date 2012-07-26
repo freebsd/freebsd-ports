@@ -14,7 +14,6 @@ MASTER_SITES=	SF/tapioca-voip/OldFiles
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abstraction layer for interprocess communication
 
-BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
 GNU_CONFIGURE=	yes
@@ -22,6 +21,7 @@ USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

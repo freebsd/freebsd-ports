@@ -19,13 +19,13 @@ LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 .endif
 
-BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	lthack
 USE_GMAKE=	yes
+USE_PKGCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 #.if !defined(_BUILDING_LIGHTTPD_MODULE)

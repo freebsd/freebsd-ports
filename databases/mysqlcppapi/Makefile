@@ -14,11 +14,10 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%202/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fork of mysql++ C++ API for MySQL
 
-BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
-
 USE_AUTOTOOLS=	libtool
 USE_MYSQL=	yes
 USE_GNOME=	gnomehack
+USE_PKGCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

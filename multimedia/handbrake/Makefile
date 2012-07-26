@@ -33,11 +33,11 @@ DIST_SUBDIR=	handbrake
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=	A DVD to MPEG-4 ripper and encoder
 
-BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam \
-		pkg-config:${PORTSDIR}/devel/pkg-config
+BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_GMAKE=	yes
+USE_PKGCONFIG=	yes
 
 USE_AUTOTOOLS=	libtool aclocal
 

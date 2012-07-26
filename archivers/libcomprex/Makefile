@@ -17,7 +17,7 @@ COMMENT=	Transparently handles automatic compression and decompression of files
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
+USE_PKGCONFIG=	yes
 #LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 
 OPTIONS_DEFINE=	NLS

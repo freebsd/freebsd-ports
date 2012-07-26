@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=		ochusha/16560
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GUI BBS browser for 2ch.net
 
-BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
-
 MAN1=		ochusha.1
 MANCOMPRESSED=	no
 
@@ -25,6 +23,7 @@ USE_GNOME=	glib20 gtk20 libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
+USE_PKGCONFIG=	yes
 
 DESKTOP_ENTRIES="Ochusha" "A GUI BBS browser for 2ch.net" \
 		"${LOCALBASE}/share/ochusha/ochusha32.xpm" \

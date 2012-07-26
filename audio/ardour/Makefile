@@ -98,7 +98,9 @@ SCONS_ENV+=	FPU_OPTIMIZATION=0
 CFLAGS:=	${CFLAGS:N-fno-strict-aliasing}
 
 post-patch:
-	${REINPLACE_CMD} -e "s|%%CFLAGS%%|${CFLAGS}|g" ${WRKSRC}/SConstruct
+	${REINPLACE_CMD} -e "s|%%CFLAGS%%|${CFLAGS}|g" \
+		-e "s|soundtouch-1.4|soundtouch-1.6|g" \
+		${WRKSRC}/SConstruct
 	${REINPLACE_CMD} -e "s|alsa_pcm|oss|g" ${WRKSRC}/templates/*.template
 
 post-install:

@@ -16,14 +16,14 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	GObject-based wrapper around the Exiv2 library
 
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool \
-		gm4:${PORTSDIR}/devel/m4 \
-		pkg-config:${PORTSDIR}/devel/pkg-config
+		gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	exiv2.10:${PORTSDIR}/graphics/exiv2
 
 USE_BZIP2=	yes
 USE_GNOME=	glib20
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -E \
