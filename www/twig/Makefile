@@ -9,8 +9,7 @@ PORTNAME=	twig
 PORTVERSION=	2.8.3
 PORTREVISION=	2
 CATEGORIES=	www mail
-MASTER_SITES=	http://informationgateway.org/download/ \
-		ftp://ftp.informationgateway.org/pub/
+MASTER_SITES=	ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Web Based Email Client and Scheduler
