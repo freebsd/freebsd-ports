@@ -16,13 +16,13 @@ COMMENT=	An x86 CPU identification utility
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	pci.3:${PORTSDIR}/devel/libpci
+LIB_DEPENDS=	pci:${PORTSDIR}/devel/libpci
 
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_GMAKE=	yes
 ALL_TARGET=	x86info lsmsr
-USE_GNOME=	pkgconfig
+USE_PKGCONFIG=	build
 USE_PYTHON_BUILD=yes
 MAKE_JOBS_SAFE=	yes
 
@@ -31,11 +31,6 @@ MAN8=		lsmsr.8
 PLIST_FILES=	bin/lsmsr bin/x86info
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 701102
-BUILD_DEPENDS+=	${LOCALBASE}/include/cpu.h:${PORTSDIR}/sysutils/devcpu
-CFLAGS+=	-I${LOCALBASE}/include
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/x86info ${PREFIX}/bin
