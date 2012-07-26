@@ -47,72 +47,63 @@ EXTRA_SBIN=	libcheck/noroot libconf/tree libmta/statit \
 #GROUPS=	meta1s meta1q meta1c meta1m meta1
 #USERS=		meta1s meta1q meta1c meta1m meta1
 
-# Options to define Features:
-# META1_WITHOUT_TLS=yes
-# META1_WITHOUT_SASL=yes
-# META1_WITHOUT_PMILTER=yes
-# META1_WITH_INTERNAL_BERKELEYD=yes
-# META1_WITH_BERKELEYDB=yes
-#   Set either WITH_BDB_VER or META1_WITH_BDB_VER
-#   to the version of Berkely DB to use.
-
 # default config:
 META1CONFDIR?=	${PREFIX}/etc/meta1
 NOLOGIN_CMD?=	/usr/sbin/nologin
 
-.if defined(META1_WITH_BERKELEYDB_VER)
-META1_WITH_BERKELEYDB=	yes
-OBSOLETE_BDB_VAR=	META1_WITH_BERKELEYDB_VER BERKELEYDB_PORT \
-	BERKELEYDB_LIB BERKELEYDB_LIBDIR BERKELEYDB_INCLUDE
-IGNORE=	use META1_WITH_BERKELEYDB to select Berkeley DB
-.endif
+OPTIONS_DEFINE=	BDB PMILTER SASL2 SASL2AUTHD TLS
+OPTIONS_DEFAULT=	BDB PMILTER SASL2 TLS
 
-.if defined(META1_WITH_INTERNAL_BERKELEYD)
-BERKELEYDB_SUFFIX=	-intbdb
-PLIST_SUB+=	WITH_BDBINT=""
-.else
-.if defined(META1_WITH_BDB_VER)
-META1_WITH_BERKELEYDB=yes
-.endif
-.if !defined(META1_WITH_BERKELEYDB)
-META1_WITH_BERKELEYDB=yes
-WITH_BDB_VER=	43
-.endif
-USE_BDB=	41+
-IGNORE_WITH_BDB=	2 3 40
-BERKELEYDB_SUFFIX=	-${BDB_INCLUDE_DIR:S,^${LOCALBASE}/include/,,}
+BDB_DESC=	External Berkeley DB support
+PMILTER_DESC=	Adds policy milter support
+SASL2_DESC=	Adds SASL2 support
+SASL2AUTHD_DESC=	Enable plaintext authentication via SASL2
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MBDB}
+USE_BDB=	42+
+INVALID_BDB_VER=	46 47 48 5
+BERKELEYDB_SUFFIX=	-db${BDB_VER}
 CONFIGURE_ARGS+=	--disable-included-bdb
 CONFIGURE_ARGS+=	--with-bdb-incdir=${BDB_INCLUDE_DIR}
 CONFIGURE_ARGS+=	--with-bdb-libdir=${BDB_LIB_DIR}
 PLIST_SUB+=	WITH_BDBINT="@comment "
+.else
+BERKELEYDB_SUFFIX=	-intbdb
+PLIST_SUB+=	WITH_BDBINT=""
 .endif
 
-.if defined(META1_WITHOUT_SASL)
-SASL_SUFFIX?=	-nosasl
-CONFIGURE_ARGS+=	--disable-SASL
+.if ${PORT_OPTIONS:MPMILTER}
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=	--enable-pmilter
 .else
-LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
-.if !defined(META1_WITHOUT_SASLAUTHD)
-RUN_DEPENDS+=	${LOCALBASE}/sbin/saslauthd:${PORTSDIR}/security/cyrus-sasl2-saslauthd
+PMILTER_SUFFIX?=	-nopmilter
+CONFIGURE_ARGS+=	--disable-pmilter
 .endif
+
+.if ${PORT_OPTIONS:MSASL2}
+LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--enable-SASL
 CONFIGURE_ARGS+=	--with-sasl-incdir=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-sasl-libdir=${LOCALBASE}/lib
+.else
+SASL_SUFFIX?=	-nosasl
+CONFIGURE_ARGS+=	--disable-SASL
 .endif
 
-.if defined(META1_WITHOUT_TLS) || defined(WITHOUT_TLS)
+.if ${PORT_OPTIONS:MSASL2AUTHD}
+.if empty(PORT_OPTIONS:MSASL2)
+IGNORE=		Option SASL2AUTHD needs option SASL2
+.endif
+RUN_DEPENDS+=	${LOCALBASE}/sbin/saslauthd:${PORTSDIR}/security/cyrus-sasl2-saslauthd
+.endif
+
+.if ${PORT_OPTIONS:MTLS}
+CONFIGURE_ARGS+=	--enable-TLS
+.else
 TLS_SUFFIX?=	-notls
 CONFIGURE_ARGS+=	--disable-TLS
-.else
-CONFIGURE_ARGS+=	--enable-TLS
-.endif
-
-.if defined(META1_WITHOUT_PMILTER) || defined(WITHOUT_PMILTER)
-PMILTER_SUFFIX?=	-nopmilter
-CONFIGURE_ARGS+=	--disable-pmilter
-.else
-USE_OPENSSL=	yes
-CONFIGURE_ARGS+=	--enable-pmilter
 .endif
 
 post-patch:
@@ -142,6 +133,13 @@ test:
 
 #fails on bento
 #regression-test:	test
+
+.if !defined(UID)
+UID!=	${ID} -u
+.endif
+.if ${UID} != 0
+post-build:	test
+.endif
 
 pre-install:
 	if ! pw groupshow meta1s; then pw groupadd meta1s -g 260; fi
@@ -176,13 +174,4 @@ post-install:
 	@cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if !defined(UID)
-UID!=	${ID} -u
-.endif
-.if ${UID} != 0
-post-build:	test
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
