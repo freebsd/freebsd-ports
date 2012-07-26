@@ -1,37 +1,10 @@
 --- js/src/configure.in.orig	2012-02-22 17:06:28.000000000 +0100
 +++ js/src/configure.in	2012-03-07 21:03:11.000000000 +0100
-@@ -1470,7 +1470,7 @@
-     CPU_ARCH=sparc
-     ;;
+@@ -5946,6 +5946,7 @@ _EGREP_PATTERN="${_EGREP_PATTERN}dummy_n
+  * C++ implementations should define these macros only when __STDC_LIMIT_MACROS
+  * is defined before <stdint.h> is included. */
+ #define __STDC_LIMIT_MACROS
++#define __STDC_CONSTANT_MACROS
  
--x86_64 | ia64)
-+amd64 | x86_64 | ia64)
-     CPU_ARCH="$OS_TEST"
-     ;;
+ #endif /* _JS_CONFDEFS_H_ */
  
-@@ -1492,7 +1492,7 @@
- dnl ===============================================================
- INTEL_ARCHITECTURE=
- case "$OS_TEST" in
--    x86_64|i?86)
-+    amd64|x86_64|i?86)
-       INTEL_ARCHITECTURE=1
- esac
- 
-@@ -2814,6 +2814,16 @@
-     AC_DEFINE(JS_CPU_X86)
-     AC_DEFINE(JS_NUNBOX32)
-     ;;
-+amd64*-*)
-+    ENABLE_TRACEJIT=1
-+    NANOJIT_ARCH=X64
-+    ENABLE_METHODJIT=1
-+    ENABLE_MONOIC=1
-+    ENABLE_POLYIC=1
-+    ENABLE_POLYIC_TYPED_ARRAY=1
-+    AC_DEFINE(JS_CPU_X64)
-+    AC_DEFINE(JS_PUNBOX64)
-+    ;;
- x86_64*-*)
-     ENABLE_METHODJIT=1
-     ENABLE_MONOIC=1

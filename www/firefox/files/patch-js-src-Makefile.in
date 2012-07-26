@@ -1,24 +1,5 @@
 --- js/src/Makefile.in.orig	2012-03-15 20:40:13.000000000 +0100
 +++ js/src/Makefile.in	2012-03-16 10:03:18.000000000 +0100
-@@ -352,7 +352,7 @@
- # For architectures without YARR JIT, PCRE is faster than the YARR
- # interpreter (bug 684559).
- 
--ifeq (,$(filter arm% sparc %86 x86_64 mips%,$(TARGET_CPU)))
-+ifeq (,$(filter arm% sparc %86 amd64 x86_64 mips%,$(TARGET_CPU)))
- 
- VPATH +=        $(srcdir)/yarr/pcre \
- 		$(NULL)
-@@ -418,6 +418,9 @@
- else
- #CPPSRCS		+= only_on_x86.cpp
- endif
-+ifeq (amd64, $(TARGET_CPU))
-+#CPPSRCS                += only_on_x86_64.cpp
-+endif
- endif
- ifeq (arm, $(TARGET_CPU))
- #CPPSRCS		+= only_on_arm.cpp
 @@ -737,7 +740,7 @@
  endif # WINNT
  

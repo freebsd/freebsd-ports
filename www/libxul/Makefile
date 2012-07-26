@@ -17,15 +17,15 @@ MAINTAINER?=	gecko@FreeBSD.org
 COMMENT?=	Mozilla runtime package that can be used to bootstrap XUL+XPCOM apps
 
 WRKSRC=		${WRKDIR}/mozilla-1.9.2
-CONFLICTS=	mozilla-[0-9]*
+CONFLICTS=	mozilla-[0-9]* libxul-[0-9][0-9].*
 GECKO_PLIST_PRE_DIRS=	lib/${MOZILLA}/bin lib/${MOZILLA}/idl \
 			lib/${MOZILLA}/include lib/${MOZILLA}/lib
 
-USE_AUTOTOOLS=	autoconf213
+USE_AUTOTOOLS=	autoconf213:env
 WANT_GNOME=	yes
 WANT_PERL=	yes
 ALL_TARGET=	default
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
@@ -34,60 +34,56 @@ LDFLAGS+=	-Wl,-rpath,${PREFIX}/lib/${MOZ_RPATH}
 USE_LDCONFIG=	${PREFIX}/lib/${MOZILLA}
 
 PORT_MOZCONFIG=	${WRKSRC}/xulrunner/config/mozconfig
-MOZ_OPTIONS?=	--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
-		--disable-javaxpcom --enable-canvas \
-		--enable-system-cairo --disable-updater \
-		--disable-necko-wifi --disable-ipc
+MOZ_OPTIONS?=	--disable-ipc
 MOZ_EXTENSIONS=	default,cookie,permissions
-OPTIONS=	# Empty, used for generic gecko OPTIONS
-USE_GECKO_OPTIONS=	java debug logging optimized_cflags
 USE_GECKO=	gecko
 MOZILLA_EXEC_NAME=xulrunner
-MOZ_TOOLKIT=	cairo-gtk2
-USE_MOZILLA=	-png -nss -dbm -jpeg
+USE_MOZILLA=	-event -ffi -vpx
+MOZ_CHROME=	jar
 MOZ_PKGCONFIG_FILES=	libxul-embedding libxul mozilla-gtkmozembed-embedding \
-		mozilla-gtkmozembed mozilla-js mozilla-nss mozilla-plugin
+		mozilla-gtkmozembed mozilla-js mozilla-plugin
 
-OPTIONS=	DBUS "Enable D-BUS support" on
+OPTIONS_DEFINE=	JAVA
+JAVA_DESC?=	JAVA xpcom
+
+.include "${.CURDIR}/../../www/firefox/Makefile.options"
+
+OPTIONS_DEFINE:=${OPTIONS_DEFINE:NLIBPROXY}
+OPTIONS_SINGLE:=${OPTIONS_SINGLE:NTOOLKIT}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
-EXTRA_PATCHES=	${FILESDIR}/releng6_pulseaudio
-.else
-EXTRA_PATCHES=	${FILESDIR}/libsydney_oss
+.if ${USE_MOZILLA:M-nss}
+MOZ_PKGCONFIG_FILES+=	mozilla-nss
 .endif
 
-.if ${ARCH} == powerpc64
+.if ${ARCH} == amd64
+CONFIGURE_TARGET=x86_64-portbld-freebsd${OSREL}
+.elif ${ARCH} == powerpc64
 .if ${OSVERSION} < 900033
 BROKEN=		Needs binutils 2.17.50 to build
 .else
-CONFIGURE_ENV+=	UNAME_m="powerpc64"
+MOZ_EXPORT+=	UNAME_m="powerpc64"
 CFLAGS+=	-mminimal-toc
 .endif
 .endif
 
-.if defined(WITHOUT_DBUS)
-MOZ_OPTIONS+=	--disable-dbus --disable-libnotify
+.if ${PORT_OPTIONS:MJAVA}
+USE_JAVA=	yes
+JAVA_VERSION+=	1.5+
+JAVA_OS+=	native
+MOZ_EXPORT+=	JAVA_HOME="${JAVA_HOME}"
+MOZ_OPTIONS+=	--enable-javaxpcom
 .else
-LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		notify.4:${PORTSDIR}/devel/libnotify
+MOZ_OPTIONS+=	--disable-javaxpcom
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' \
-	    	${WRKSRC}/storage/build/Makefile.in \
-		${WRKSRC}/db/sqlite3/src/Makefile.in
 	${REINPLACE_CMD} -e 's|/usr/local/include|${LOCALBASE}/include|' \
 	    	${WRKSRC}/js/src/config/mkdepend/Makefile.in
-	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g ; \
-		s|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|echo aout|echo elf|g ; \
-		s|/usr/X11R6|${LOCALBASE}|g' \
-		${WRKSRC}/js/src/configure
 
 pre-configure:
+	(cd ${WRKSRC} && ${AUTOCONF})
 	(cd ${WRKSRC}/js/src/ && ${AUTOCONF})
 
 post-build:

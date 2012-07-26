@@ -1,9 +1,9 @@
 --- js/src/jsnum.cpp.orig	2010-01-05 22:35:17.000000000 -0500
 +++ js/src/jsnum.cpp	2010-01-11 05:10:19.000000000 -0500
-@@ -43,6 +43,9 @@
- /*
-  * JS number type and wrapper class.
-  */
+@@ -49,6 +49,9 @@
+ // Avoid warnings about ASSERT being defined by the assembler as well.
+ #undef ASSERT
+ 
 +#if defined(__FreeBSD__)
 +#include <sys/param.h>
 +#endif

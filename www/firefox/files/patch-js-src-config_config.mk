@@ -4,7 +4,7 @@
    -I$(srcdir) \
    -I. \
    -I$(DIST)/include -I$(DIST)/include/nsprpub \
-+  -I%%LOCALBASE%%/include \
++  -I$(LOCALBASE)/include \
    $(if $(LIBXUL_SDK),-I$(LIBXUL_SDK)/include -I$(LIBXUL_SDK)/include/nsprpub) \
    $(OS_INCLUDES) \
    $(NULL) 

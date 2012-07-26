@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox
-DISTVERSION=	13.0.1
+DISTVERSION=	14.0.1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -17,27 +17,27 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
 BUILD_DEPENDS=	nspr>=4.9:${PORTSDIR}/devel/nspr \
+		nss>=3.13.2:${PORTSDIR}/security/nss \
+		sqlite3>=3.7.11:${PORTSDIR}/databases/sqlite3 \
 		cairo>=1.10.2_1,1:${PORTSDIR}/graphics/cairo \
 		unzip:${PORTSDIR}/archivers/unzip
-LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
-		event-1.4:${PORTSDIR}/devel/libevent
 
 CONFLICTS_BUILD=	spidermonkey-*
 
-USE_AUTOTOOLS=	autoconf213
+USE_AUTOTOOLS=	autoconf213:env
 USE_GECKO=	gecko
 CONFLICTS=	firefox-10.*
 MOZ_PKGCONFIG_FILES=	# empty
-USE_MOZILLA=	-png -nss -dbm -jpeg -xft
+USE_MOZILLA=	# empty
 MOZILLA_NAME=	Firefox
-MOZ_TOOLKIT=	cairo-gtk2
 
 MAKE_JOBS_SAFE=	yes
 WANT_GNOME=	yes
+USE_QT4=	# empty
+QT_NONSTANDARD=	yes
 ALL_TARGET=	default
-CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
-EXTRA_CFLAGS=	-O0
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
+OBJDIR_BUILD=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GL=		gl
@@ -46,43 +46,39 @@ NO_MOZPKGINSTALL=yes
 FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default48.png
 MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
-		--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
-		--enable-svg --enable-svg-renderer=cairo \
 		--enable-application=browser \
-		--enable-official-branding --disable-updater \
-		--enable-canvas --enable-libxul --disable-necko-wifi \
-		--with-system-libevent=${LOCALBASE}
+		--enable-official-branding
 
-OPTIONS=	DBUS "Enable D-BUS support" on \
-		PGO "Enable Profile-Guided Optimization" off
+OPTIONS_DEFINE=	GSTREAMER PGO
 
+.include "${.CURDIR}/../../www/firefox/Makefile.options"
 .include <bsd.port.pre.mk>
 
 WRKSRC:=	${WRKDIR}/mozilla-release
 
-.if ${HAVE_GNOME:Mlibgnomeui}!=""
-USE_GNOME+=	libgnomeui
-MOZ_OPTIONS+=	--enable-gnomeui
+.if ${ARCH} == amd64
+CONFIGURE_TARGET=x86_64-portbld-freebsd${OSREL}
+.elif ${ARCH} == powerpc64
+.if ${OSVERSION} < 900033
+BROKEN=		Needs binutils 2.17.50 to build
 .else
-MOZ_OPTIONS+=	--disable-gnomeui
+MOZ_EXPORT+=	UNAME_m="powerpc64"
+CFLAGS+=	-mminimal-toc
+.endif
 .endif
 
-.if defined(WITHOUT_DBUS)
-MOZ_OPTIONS+=	--disable-dbus --disable-libnotify
-.else
-LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		notify.4:${PORTSDIR}/devel/libnotify
-.endif
-
-.if defined(WITH_PGO)
-BROKEN=		does not build with PGO option enabled
+.if ${PORT_OPTIONS:MPGO}
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 USE_PYTHON_BUILD=	yes
 USE_DISPLAY=		yes
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 
-MAKEFILE=	client.mk
+.undef GNU_CONFIGURE
+MOZ_OPTIONS+=	${CONFIGURE_TARGET}
+MAKEFILE=	${WRKSRC}/client.mk
 ALL_TARGET=	profiledbuild
+MOZ_MK_OPTIONS+=PROFILE_GEN_SCRIPT='"${PYTHON_CMD} \
+		@MOZ_OBJDIR@/_profile/pgo/profileserver.py"'
 .endif
 
 .if ${ARCH} == amd64 || ${ARCH} == i386
@@ -90,7 +86,7 @@ BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
 .endif
 
 pre-extract:
-.if defined(WITH_PGO)
+.if ${PORT_OPTIONS:MPGO}
 	@${ECHO} "*****************************************************************"
 	@${ECHO} "**************************** attention **************************"
 	@${ECHO} "*****************************************************************"
@@ -109,37 +105,12 @@ post-extract:
 		<${FILESDIR}/firefox.desktop.in >${WRKDIR}/${MOZILLA}.desktop
 
 post-patch:
-	@${GREP} -Flr \"/proc ${WRKSRC}/ipc/chromium/src/base | ${XARGS} ${REINPLACE_CMD} \
-		-e 's|/proc/self/fd|/dev/fd|' \
-		-e 's|/proc["/]|/compat/linux&|'
-	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' \
-		${WRKSRC}/storage/build/Makefile.in \
-		${WRKSRC}/toolkit/library/Makefile.in \
-		${WRKSRC}/db/sqlite3/src/Makefile.in
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-		${WRKSRC}/security/manager/ssl/src/Makefile.in \
-		${WRKSRC}/js/src/config/mkdepend/Makefile.in \
-		${WRKSRC}/js/src/config/config.mk \
-		${WRKSRC}/config/mkdepend/Makefile.in \
-		${WRKSRC}/config/config.mk \
-		${WRKSRC}/xpcom/io/nsAppFileLocationProvider.cpp
-	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g ; \
-		s|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|echo aout|echo elf|g ; \
-		s|/usr/X11R6|${LOCALBASE}|g' \
-		${WRKSRC}/js/src/configure.in
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/browser/app/nsBrowserApp.cpp
 
 pre-configure:
 	(cd ${WRKSRC} && ${AUTOCONF})
 	(cd ${WRKSRC}/js/src/ && ${AUTOCONF})
-
-post-configure:
-.if defined(WITH_PGO)
-	@${SED} -e 's|@PYTHON@|${PYTHON_CMD}|' \
-		<${FILESDIR}/mozconfig-profile_guided_optimization.in \
-		>> ${BUILD_WRKSRC}/.mozconfig
-	(cd ${WRKSRC} && ${GMAKE} distclean)
-.endif
 
 port-pre-install:
 	${ECHO_CMD} 'share/applications/${MOZILLA}.desktop' >> ${PLISTF}

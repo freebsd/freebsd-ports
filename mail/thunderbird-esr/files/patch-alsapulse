@@ -1,0 +1,119 @@
+--- mozilla/config/autoconf.mk.in~
++++ mozilla/config/autoconf.mk.in
+@@ -568,7 +568,13 @@ MOZ_LIBNOTIFY_CFLAGS	= @MOZ_LIBNOTIFY_CF
+ MOZ_LIBNOTIFY_LIBS	= @MOZ_LIBNOTIFY_LIBS@
+ MOZ_ENABLE_LIBNOTIFY	= @MOZ_ENABLE_LIBNOTIFY@
+ 
++MOZ_ALSA                = @MOZ_ALSA@
+ MOZ_ALSA_LIBS           = @MOZ_ALSA_LIBS@
++MOZ_ALSA_CFLAGS         = @MOZ_ALSA_CFLAGS@
++
++MOZ_PULSEAUDIO          = @MOZ_PULSEAUDIO@
++MOZ_PULSEAUDIO_LIBS     = @MOZ_PULSEAUDIO_LIBS@
++MOZ_PULSEAUDIO_CFLAGS   = @MOZ_PULSEAUDIO_CFLAGS@
+ 
+ GLIB_CFLAGS	= @GLIB_CFLAGS@
+ GLIB_LIBS	= @GLIB_LIBS@
+--- mozilla/configure.in~
++++ mozilla/configure.in
+@@ -5758,17 +5775,48 @@ dnl ====================================
+ dnl = Check alsa availability on Linux if using sydneyaudio
+ dnl ========================================================
+ 
++MOZ_ARG_ENABLE_BOOL(alsa,
++[  --enable-alsa          Enable Alsa support],
++MOZ_ALSA=1,
++MOZ_ALSA= MOZ_ALSA_FORCE=$enableval)
++
+ dnl If using sydneyaudio with Linux, ensure that the alsa library is available
+-if test -n "$MOZ_SYDNEYAUDIO"; then
++if test -n "$MOZ_SYDNEYAUDIO" -a "$MOZ_ALSA_FORCE" != "no"; then
+    case "$target_os" in
+ linux*)
++      MOZ_ALSA=1
++      ;;
++   esac
++fi
++
++if test -n "$MOZ_ALSA"; then
+       PKG_CHECK_MODULES(MOZ_ALSA, alsa, ,
+          [echo "$MOZ_ALSA_PKG_ERRORS"
+           AC_MSG_ERROR([Need alsa for Ogg, Wave or WebM decoding on Linux.  Disable with --disable-ogg --disable-wave --disable-webm.  (On Ubuntu, you might try installing the package libasound2-dev.)])])
+-      ;;
+-   esac
+ fi
+ 
++AC_SUBST(MOZ_ALSA_CFLAGS)
++AC_SUBST(MOZ_ALSA)
++
++dnl ========================================================
++dnl = Enable PulseAudio
++dnl ========================================================
++
++MOZ_ARG_ENABLE_BOOL(pulseaudio,
++[  --enable-pulseaudio          Enable PulseAudio support],
++MOZ_PULSEAUDIO=1,
++MOZ_PULSEAUDIO=)
++
++if test -n "$MOZ_PULSEAUDIO"; then
++    PKG_CHECK_MODULES(MOZ_PULSEAUDIO, libpulse, ,
++         [echo "$MOZ_PULSEAUDIO_PKG_ERRORS"
++          AC_MSG_ERROR([pulseaudio audio backend requires libpulse package])])
++fi
++
++AC_SUBST(MOZ_PULSEAUDIO_CFLAGS)
++AC_SUBST(MOZ_PULSEAUDIO_LIBS)
++AC_SUBST(MOZ_PULSEAUDIO)
++
+ dnl ========================================================
+ dnl Permissions System
+ dnl ========================================================
+--- mozilla/media/libsydneyaudio/src/Makefile.in~
++++ mozilla/media/libsydneyaudio/src/Makefile.in
+@@ -30,10 +30,6 @@ else ifeq ($(MOZ_WIDGET_TOOLKIT),android)
+ CSRCS		= \
+ 		sydney_audio_android.c \
+ 		$(NULL)
+-else ifeq ($(OS_ARCH),Linux)
+-CSRCS		= \
+-		sydney_audio_alsa.c \
+-		$(NULL)
+ endif
+ 
+ ifeq ($(OS_ARCH),WINNT)
+@@ -68,6 +64,18 @@ CSRCS		= \
+ 		$(NULL)
+ endif
+ 
++ifdef MOZ_ALSA
++CSRCS		= \
++		sydney_audio_alsa.c \
++		$(NULL)
++endif
++
++ifdef MOZ_PULSEAUDIO
++CSRCS		= \
++		sydney_audio_pulseaudio.c \
++		$(NULL)
++endif
++
+ ifeq ($(OS_ARCH),WINNT)
+ OS_LIBS += winmm.lib
+ endif
+--- mozilla/toolkit/library/libxul-config.mk~
++++ mozilla/toolkit/library/libxul-config.mk
+@@ -348,10 +348,12 @@ ifdef MOZ_NATIVE_LIBVPX
+ EXTRA_DSO_LDOPTS += $(MOZ_LIBVPX_LIBS)
+ endif
+ 
+-ifdef MOZ_SYDNEYAUDIO
+-ifeq ($(OS_ARCH),Linux)
++ifdef MOZ_ALSA
+ EXTRA_DSO_LDOPTS += $(MOZ_ALSA_LIBS)
+ endif
++
++ifdef MOZ_PULSEAUDIO
++EXTRA_DSO_LDOPTS += $(MOZ_PULSEAUDIO_LIBS)
+ endif
+ 
+ ifdef HAVE_CLOCK_MONOTONIC

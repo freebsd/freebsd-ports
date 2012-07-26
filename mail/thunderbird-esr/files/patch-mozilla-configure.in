@@ -1,23 +1,5 @@
 --- mozilla/configure.in.orig	2010-11-04 21:05:18.000000000 +0100
 +++ mozilla/configure.in	2010-11-09 12:59:28.000000000 +0100
-@@ -1549,7 +1549,7 @@
-     CPU_ARCH=sparc
-     ;;
- 
--x86_64 | ia64)
-+amd64 | x86_64 | ia64)
-     CPU_ARCH="$OS_TEST"
-     ;;
- 
-@@ -1567,7 +1567,7 @@ dnl Set INTEL_ARCHITECTURE if we're comp
- dnl ===============================================================
- INTEL_ARCHITECTURE=
- case "$OS_TEST" in
--    x86_64|i?86)
-+    amd64|x86_64|i?86)
-       INTEL_ARCHITECTURE=1
- esac
- 
 @@ -3803,19 +3803,21 @@
  AC_CHECK_FUNCS(localtime_r strtok_r)
  
@@ -45,15 +27,29 @@
      AC_DEFINE(HAVE_CLOCK_MONOTONIC)
      AC_SUBST(HAVE_CLOCK_MONOTONIC)
      AC_SUBST(REALTIME_LIBS)
-@@ -4808,7 +4810,7 @@ CFLAGS=$_SAVE_CFLAGS
+@@ -4230,6 +4233,9 @@
+ if test -z "$LIBEVENT_DIR" -o "$LIBEVENT_DIR" = no; then
+     MOZ_NATIVE_LIBEVENT=
+ else
++PKG_CHECK_MODULES(MOZ_LIBEVENT,	libevent,
++    [MOZ_NATIVE_LIBEVENT=1
++     MOZ_LIBEVENT_INCLUDES="$MOZ_LIBEVENT_CFLAGS"], [
+     if test "${LIBEVENT_DIR}" = "yes"; then
+         LIBEVENT_DIR=/usr
+     fi
+@@ -4242,10 +4248,11 @@ else
+         AC_MSG_ERROR([--with-system-libevent requested but event.h not found]))
+     AC_CHECK_LIB(event, event_init,
+                  [MOZ_NATIVE_LIBEVENT=1
+-                  MOZ_LIBEVENT_INCLUDES="${LIBEVENT_DIR}/include"
++                  MOZ_LIBEVENT_INCLUDES="-I${LIBEVENT_DIR}/include"
+                   MOZ_LIBEVENT_LIBS="-L${LIBEVENT_DIR}/lib -levent"],
+                  [MOZ_NATIVE_LIBEVENT= MOZ_LIBEVENT_INCLUDES= MOZ_LIBEVENT_LIBS=])
+ fi
++])
+ CFLAGS=$_SAVE_CFLAGS
  LDFLAGS=$_SAVE_LDFLAGS
  LIBS=$_SAVE_LIBS
- 
--if test "${ZLIB_DIR}" -a -d "${ZLIB_DIR}" -a "$SYSTEM_ZLIB" = 1; then
-+if test "${ZLIB_DIR}" -a "${ZLIB_DIR}" != "/usr" -a -d "${ZLIB_DIR}" -a "$SYSTEM_ZLIB" = 1; then
-     ZLIB_CFLAGS="-I${ZLIB_DIR}/include"
-     ZLIB_LIBS="-L${ZLIB_DIR}/lib ${ZLIB_LIBS}"
- fi
 @@ -6022,6 +6024,14 @@
        VPX_ASFLAGS="-f elf64 -rnasm -pnasm -DPIC"
        VPX_X86_ASM=1
@@ -62,7 +58,7 @@
 +      VPX_ASFLAGS="-f elf32 -rnasm -pnasm"
 +      VPX_X86_ASM=1
 +    ;;
-+    FreeBSD:amd64)
++    FreeBSD:x86_64)
 +      VPX_ASFLAGS="-f elf64 -rnasm -pnasm -DPIC"
 +      VPX_X86_ASM=1
 +    ;;
@@ -77,7 +73,7 @@
 +    LIBJPEG_TURBO_ASFLAGS="-f elf32 -rnasm -pnasm -DPIC -DELF"
 +    LIBJPEG_TURBO_X86_ASM=1
 +  ;;
-+  FreeBSD:amd64)
++  FreeBSD:x86_64)
 +    LIBJPEG_TURBO_ASFLAGS="-f elf64 -rnasm -pnasm -D__x86_64__ -DPIC -DELF"
 +    LIBJPEG_TURBO_X64_ASM=1
 +  ;;

@@ -1,40 +1,5 @@
 --- mozilla/js/src/configure.in.orig	2012-01-29 15:44:24.000000000 +0100
 +++ mozilla/js/src/configure.in	2012-01-30 23:37:46.541060008 +0100
-@@ -1410,7 +1410,7 @@
-     CPU_ARCH=sparc
-     ;;
- 
--x86_64 | ia64)
-+amd64 | x86_64 | ia64)
-     CPU_ARCH="$OS_TEST"
-     ;;
- 
-@@ -1432,7 +1432,7 @@
- dnl ===============================================================
- INTEL_ARCHITECTURE=
- case "$OS_TEST" in
--    x86_64|i?86)
-+    amd64|x86_64|i?86)
-       INTEL_ARCHITECTURE=1
- esac
- 
-@@ -2713,6 +2713,16 @@
-     AC_DEFINE(JS_CPU_X86)
-     AC_DEFINE(JS_NUNBOX32)
-     ;;
-+amd64*-*)
-+    ENABLE_TRACEJIT=1
-+    NANOJIT_ARCH=X64
-+    ENABLE_METHODJIT=1
-+    ENABLE_MONOIC=1
-+    ENABLE_POLYIC=1
-+    ENABLE_POLYIC_TYPED_ARRAY=1
-+    AC_DEFINE(JS_CPU_X64)
-+    AC_DEFINE(JS_PUNBOX64)
-+    ;;
- x86_64*-*)
-     NANOJIT_ARCH=X64
-     ENABLE_METHODJIT=1
 @@ -2732,6 +2742,7 @@
      AC_DEFINE(JS_NUNBOX32)
      ;;
@@ -51,14 +16,11 @@
      ;;
  esac
  
-@@ -2795,6 +2807,10 @@
- i?86-*)
-     AC_DEFINE(AVMPLUS_IA32)
-     ;;
-+amd64*-*)
-+    AC_DEFINE(AVMPLUS_AMD64)
-+    AC_DEFINE(AVMPLUS_64BIT)
-+    ;;
- x86_64*-*)
-     AC_DEFINE(AVMPLUS_AMD64)
-     AC_DEFINE(AVMPLUS_64BIT)
+@@ -5946,6 +5946,7 @@ _EGREP_PATTERN="${_EGREP_PATTERN}dummy_n
+  * C++ implementations should define these macros only when __STDC_LIMIT_MACROS
+  * is defined before <stdint.h> is included. */
+ #define __STDC_LIMIT_MACROS
++#define __STDC_CONSTANT_MACROS
+ 
+ #endif /* _JS_CONFDEFS_H_ */
+ 

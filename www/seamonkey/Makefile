@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	seamonkey
-DISTVERSION=	2.9.1
-PORTREVISION=	1
+DISTVERSION=	2.11
 CATEGORIES?=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	seamonkey/releases/${DISTVERSION}/source
@@ -16,111 +15,96 @@ DISTNAME=	seamonkey-${DISTVERSION}.source
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
 
-BUILD_DEPENDS=	nspr>=4.8.7:${PORTSDIR}/devel/nspr \
+BUILD_DEPENDS=	nspr>=4.9:${PORTSDIR}/devel/nspr \
+		nss>=3.13.2:${PORTSDIR}/security/nss \
+		sqlite3>=3.7.11:${PORTSDIR}/databases/sqlite3 \
 		unzip:${PORTSDIR}/archivers/unzip
-LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
-		event-1.4:${PORTSDIR}/devel/libevent
 
-USE_AUTOTOOLS=	autoconf213
+USE_AUTOTOOLS=	autoconf213:env
 CONFLICTS_BUILD=	spidermonkey-1.[0-7]*
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GECKO=	gecko
 WANT_GNOME=	yes
+USE_QT4=	# empty
+QT_NONSTANDARD=	yes
 WANT_PERL=	yes
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
+OBJDIR_BUILD=	yes
 ALL_TARGET=	default
 USE_GL=		gl
 MAKE_JOBS_SAFE=	yes
 MOZ_PIS_SCRIPTS=	moz_pis_S50cleanhome
-MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin
-CPPFLAGS+=	-I${LOCALBASE}/include/cairo
-USE_GCC=	4.2+
-
-CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 
 MOZ_EXTENSIONS=	default
 MOZ_OPTIONS+=	--program-transform-name='s/seamonkey/${MOZILLA}/' \
-		--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
-		--enable-svg \
-		--enable-application=suite	\
-		--enable-svg-renderer=cairo	\
-		--enable-system-cairo		\
-		--enable-canvas			\
-		--disable-necko-wifi		\
-		--disable-updater		\
-		--with-system-libevent=${LOCALBASE}
+		--enable-application=suite
 
-USE_MOZILLA=	-png -nss -dbm -jpeg -xft
-MOZ_TOOLKIT=	cairo-gtk2
+USE_MOZILLA=	# empty
 MOZILLA_PLIST_DIRS=	bin lib
 MOZ_PKGCONFIG_FILES=
 
 NOT_FOR_ARCHS=	ia64
 
-OPTIONS=MAILNEWS "Enable Mail and News modules" on \
-	COMPOSER "Enable the HTML Composer module" on \
-	LDAP "Enable LDAP support for Mailnews" on \
-	CHATZILLA "Enable the Chatzilla IRC module" on \
-	LIGHTNING "Enable calendar extension" off \
-	DBUS "Enable D-BUS support" on \
-	SMB "Enable smb:// URI support using gnomevfs" off
+OPTIONS_DEFINE=	CHATZILLA COMPOSER GSTREAMER LDAP LIGHTNING MAILNEWS
+OPTIONS_DEFAULT=CHATZILLA COMPOSER LDAP MAILNEWS
 
+CHATZILLA_DESC?=Chatzilla IRC module
+COMPOSER_DESC?=	HTML Composer module
+LDAP_DESC?=	LDAP support for Mailnews
+MAILNEWS_DESC?=	Mail and News modules
+
+.include "${.CURDIR}/../../www/firefox/Makefile.options"
 .include <bsd.port.pre.mk>
 
-MOZSRC:=	${WRKDIR}/comm-release/mozilla
 WRKSRC=		${WRKDIR}/comm-release
+MOZSRC:=	${WRKSRC}/mozilla
 
-.if ${HAVE_GNOME:Mlibgnomeui}!=""
-USE_GNOME+=	libgnomeui
-MOZ_OPTIONS+=	--enable-gnomeui
+.if ${ARCH} == amd64
+CONFIGURE_TARGET=x86_64-portbld-freebsd${OSREL}
+.elif ${ARCH} == powerpc64
+.if ${OSVERSION} < 900033
+BROKEN=		Needs binutils 2.17.50 to build
 .else
-MOZ_OPTIONS+=	--disable-gnomeui
+MOZ_EXPORT+=	UNAME_m="powerpc64"
+CFLAGS+=	-mminimal-toc
+.endif
 .endif
 
-.if exists(${LOCALBASE}/include/cairo/cairo-glitz.h)
-# Glitz support can only be enabled if cairo is built with glitz support
-MOZ_OPTIONS+=	--enable-glitz
-LIB_DEPENDS+=	glitz.1:${PORTSDIR}/graphics/glitz
-.endif
-
-.if defined(WITHOUT_MAILNEWS)
+.if ! ${PORT_OPTIONS:MMAILNEWS}
 EXTRA_PATCHES+=	${FILESDIR}/extra-mailnews-patch-bridge-bridge.mk \
 		${FILESDIR}/extra-patch-configure.in
 MOZ_OPTIONS+=	--disable-ldap --disable-mailnews
 .else
 # mail and news desired, but not LDAP
-.if defined(WITHOUT_LDAP)
+.if ! ${PORT_OPTIONS:MLDAP}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bridge-bridge.mk
 MOZ_OPTIONS+=	--disable-ldap --enable-mailnews
 .else
 MOZ_OPTIONS+=	--enable-ldap --enable-mailnews
 .endif
 .endif
-.if !defined(WITHOUT_CHATZILLA)
+.if ${PORT_OPTIONS:MCHATZILLA}
 MOZ_EXTENSIONS:=	${MOZ_EXTENSIONS},irc
 .endif
 
-.if defined(WITHOUT_COMPOSER)
+.if ! ${PORT_OPTIONS:MCOMPOSER}
 MOZ_OPTIONS+=	--disable-composer
-.endif
-
-.if defined(WITHOUT_DBUS)
-MOZ_OPTIONS+=	--disable-dbus --disable-libnotify
-.else
-LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		notify.4:${PORTSDIR}/devel/libnotify
 .endif
 
 .if ${ARCH} == amd64 || ${ARCH} == i386
 BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
 .endif
 
-.if defined(WITH_LIGHTNING)
+.if !empty(CXX:M*clang++*)
+CFLAGS+=	-Wno-return-type-c-linkage
+.endif
+
+.if ${PORT_OPTIONS:MLIGHTNING}
 MOZ_OPTIONS+=	--enable-calendar
 MOZ_MK_OPTIONS+=	MOZ_CO_PROJECT=calendar
 LIGHTNING_DIR=	share/lightning
-XPI_FILE=	${MOZSRC}/dist/xpi-stage/lightning.xpi
+XPI_FILE=	${MOZ_OBJDIR}/mozilla/dist/xpi-stage/lightning.xpi
 XPI_LIBDIR=	${PREFIX}/lib/xpi
 XPI_ORIG_ID=	{e2fda1a4-762b-4020-b5ad-a41df1933103}
 XPI_ID=		lightning@seamonkey.mozilla.org
@@ -129,19 +113,10 @@ MOZ_OPTIONS+=	--disable-calendar
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-		${WRKSRC}/mozilla/security/manager/ssl/src/Makefile.in \
-		${WRKSRC}/mozilla/js/src/config/mkdepend/Makefile.in
-	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' \
-		${MOZSRC}/storage/build/Makefile.in \
-		${MOZSRC}/toolkit/library/Makefile.in \
-		${MOZSRC}/db/sqlite3/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/suite/app/nsSuiteApp.cpp
 	@${REINPLACE_CMD} -e '/accessibility.typeaheadfind.enablesound/s/true/false/' \
 		${WRKSRC}/mozilla/modules/libpref/src/init/all.js
-	@${REINPLACE_CMD} -e 's|<iconv.h>|\"${LOCALBASE}/include/iconv.h\"|g' \
-		${WRKSRC}/configure.in \
-		${WRKSRC}/mozilla/configure.in \
-		${WRKSRC}/mozilla/xpcom/io/nsNativeCharsetUtils.cpp
 	@${REINPLACE_CMD} -e 's|libgnome-2.so.0|libgnome-2.so|' \
 		${WRKSRC}/mozilla/toolkit/xre/nsNativeAppSupportUnix.cpp \
 		${WRKSRC}/mozilla/image/decoders/icon/gtk/nsIconChannel.cpp
@@ -150,13 +125,6 @@ post-patch:
 		${WRKSRC}/mozilla/image/decoders/icon/gtk/nsIconChannel.cpp
 	@${REINPLACE_CMD} -e 's|libgnomevfs-2.so.0|libgnomevfs-2.so|' \
 		${WRKSRC}/mozilla/image/decoders/icon/gtk/nsIconChannel.cpp
-	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g ; \
-		s|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|echo aout|echo elf|g ; \
-		s|/usr/X11R6|${LOCALBASE}|g' \
-		${WRKSRC}/mozilla/js/src/configure.in \
-		${WRKSRC}/mozilla/configure.in \
-		${WRKSRC}/configure.in
 	@${SED} -e 's|%%MOZILLA%%|${MOZILLA}|g' \
 		< ${FILESDIR}/seamonkey.desktop.in > \
 		${WRKDIR}/${MOZILLA}.desktop
@@ -177,7 +145,7 @@ do-install:
 		${PREFIX}/share/pixmaps/${MOZILLA}.png
 
 post-install:
-.if defined(WITH_LIGHTNING)
+.if ${PORT_OPTIONS:MLIGHTNING}
 	@${MKDIR} ${XPI_LIBDIR}/${XPI_ID} ${XPI_LIBDIR}/symlinks/seamonkey
 	@(cd ${XPI_LIBDIR}/${XPI_ID}; ${TAR} -xf ${XPI_FILE})
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${XPI_LIBDIR}/${XPI_ID}

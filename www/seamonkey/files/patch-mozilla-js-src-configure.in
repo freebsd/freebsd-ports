@@ -1,17 +1,10 @@
---- mozilla/js/src/configure.in.orig	2012-03-12 10:27:55.000000000 +0100
-+++ mozilla/js/src/configure.in	2012-03-12 10:28:22.000000000 +0100
-@@ -2831,12 +2831,14 @@
-     AC_DEFINE(JS_NUNBOX32)
-     ;;
- sparc*-*)
-+    if test ! "$HAVE_64BIT_OS" ; then
-     ENABLE_METHODJIT=1
-     ENABLE_MONOIC=1
-     ENABLE_POLYIC=1
-     ENABLE_METHODJIT_TYPED_ARRAY=1
-     AC_DEFINE(JS_CPU_SPARC)
-     AC_DEFINE(JS_NUNBOX32)
-+    fi
-     ;;
- esac
+--- mozilla/js/src/configure.in.orig	2012-02-22 17:06:28.000000000 +0100
++++ mozilla/js/src/configure.in	2012-03-07 21:03:11.000000000 +0100
+@@ -5946,6 +5946,7 @@ _EGREP_PATTERN="${_EGREP_PATTERN}dummy_n
+  * C++ implementations should define these macros only when __STDC_LIMIT_MACROS
+  * is defined before <stdint.h> is included. */
+ #define __STDC_LIMIT_MACROS
++#define __STDC_CONSTANT_MACROS
+ 
+ #endif /* _JS_CONFDEFS_H_ */
  

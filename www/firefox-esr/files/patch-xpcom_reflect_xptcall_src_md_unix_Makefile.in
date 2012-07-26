@@ -1,16 +1,6 @@
 --- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	2011-04-26 23:22:05.000000000 +0200
 +++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	2011-04-26 23:48:09.637442986 +0200
-@@ -94,6 +94,9 @@
- DEFINES		+= -DKEEP_STACK_16_BYTE_ALIGNED
- CPPSRCS		:= xptcinvoke_unixish_x86.cpp xptcstubs_unixish_x86.cpp
- endif
-+ifeq (x86_64,$(OS_TEST))
-+CPPSRCS		:= xptcinvoke_x86_64_linux.cpp xptcstubs_x86_64_linux.cpp
-+endif
- endif
- endif
- 
-@@ -117,7 +120,7 @@
+@@ -70,7 +70,7 @@
  endif
  endif
  # IA64 Linux
@@ -19,36 +9,6 @@
  ifneq (,$(findstring ia64,$(OS_TEST)))
  CPPSRCS		:= xptcinvoke_ipf64.cpp xptcstubs_ipf64.cpp
  ASFILES		:= xptcstubs_asm_ipf64.s xptcinvoke_asm_ipf64.s
-@@ -130,6 +133,12 @@
- CPPSRCS		:= xptcinvoke_amd64_openbsd.cpp xptcstubs_amd64_openbsd.cpp
- endif
- #
-+# FreeBSD/amd64
-+#
-+ifeq ($(OS_ARCH)$(OS_TEST),FreeBSDamd64)
-+CPPSRCS		:= xptcinvoke_amd64_openbsd.cpp xptcstubs_amd64_openbsd.cpp
-+endif
-+#
- # Neutrino/Intel (uses the same unixish_x86 code)
- #
- ifeq ($(OS_TARGET),NTO)
-@@ -184,9 +193,15 @@
- ASFILES		:= xptcinvoke_asm_osf1_alpha.s xptcstubs_asm_osf1_alpha.s
- endif
- #
-+# FreeBSD/Alpha
-+#
-+ifeq ($(OS_ARCH)$(OS_TEST),FreeBSDalpha)
-+CPPSRCS		:= xptcinvoke_freebsd_alpha.cpp xptcstubs_freebsd_alpha.cpp
-+endif
-+#
- # Linux/Alpha
- #
--ifneq (,$(filter Linuxalpha FreeBSDalpha NetBSDalpha,$(OS_ARCH)$(OS_TEST)))                           
-+ifneq (,$(filter Linuxalpha NetBSDalpha,$(OS_ARCH)$(OS_TEST)))                           
- CPPSRCS		:= xptcinvoke_linux_alpha.cpp xptcstubs_linux_alpha.cpp
- endif
- #
 @@ -341,7 +356,7 @@
  #
  # Linux/PPC
@@ -58,19 +18,21 @@
  CPPSRCS		:= xptcinvoke_ppc_linux.cpp xptcstubs_ppc_linux.cpp
  ASFILES		:= xptcinvoke_asm_ppc_linux.s xptcstubs_asm_ppc_linux.s
  AS		:= $(CC) -c -x assembler-with-cpp
-@@ -419,6 +434,15 @@
- ASFILES		:= xptcinvoke_asm_sparc_netbsd.s xptcstubs_asm_sparc_netbsd.s
+@@ -350,7 +365,7 @@
+ #
+ # Linux/PPC64
+ #
+-ifeq ($(OS_ARCH)$(OS_TEST),Linuxpowerpc64)
++ifneq (,$(filter Linuxpowerpc64 FreeBSDpowerpc64,$(OS_ARCH)$(OS_TEST)))
+ CPPSRCS                := xptcinvoke_ppc64_linux.cpp xptcstubs_ppc64_linux.cpp
+ ASFILES                := xptcinvoke_asm_ppc64_linux.s xptcstubs_asm_ppc64_linux.s
+ AS             := $(CC) -c -x assembler-with-cpp
+@@ -350,7 +350,7 @@
+ #
+ # OpenBSD/SPARC64
+ #
+-ifeq ($(OS_ARCH)$(OS_TEST),OpenBSDsparc64)
++ifneq (,$(filter OpenBSDsparc64 FreeBSDsparc64,$(OS_ARCH)$(OS_TEST)))
+ CPPSRCS		:= xptcinvoke_sparc64_openbsd.cpp xptcstubs_sparc64_openbsd.cpp
+ ASFILES		:= xptcinvoke_asm_sparc64_openbsd.s xptcstubs_asm_sparc64_openbsd.s
  endif
- #
-+# FreeBSD/SPARC64
-+#
-+ifeq ($(OS_ARCH),FreeBSD)
-+ifneq (,$(findstring sparc,$(OS_TEST)))
-+CPPSRCS		:= xptcinvoke_sparc64_openbsd.cpp xptcstubs_sparc64_openbsd.cpp
-+ASFILES		:= xptcinvoke_asm_sparc64_openbsd.s xptcstubs_asm_sparc64_openbsd.s
-+endif
-+endif
-+#
- # OpenBSD/SPARC
- #
- ifeq ($(OS_ARCH)$(OS_TEST),OpenBSDsparc)

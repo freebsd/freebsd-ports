@@ -16,12 +16,9 @@ lib/%%APP_NAME%%/chrome/icons/default/ablistWindow48.png
 lib/%%APP_NAME%%/chrome/icons/default/addressbookWindow.png
 lib/%%APP_NAME%%/chrome/icons/default/addressbookWindow16.png
 lib/%%APP_NAME%%/chrome/icons/default/addressbookWindow48.png
-lib/%%APP_NAME%%/chrome/icons/default/bmPropsWindow.png
-lib/%%APP_NAME%%/chrome/icons/default/bmPropsWindow16.png
-lib/%%APP_NAME%%/chrome/icons/default/bmPropsWindow48.png
-lib/%%APP_NAME%%/chrome/icons/default/bookmark-window.png
-lib/%%APP_NAME%%/chrome/icons/default/bookmark-window16.png
-lib/%%APP_NAME%%/chrome/icons/default/bookmark-window48.png
+lib/%%APP_NAME%%/chrome/icons/default/bookmarkproperties.png
+lib/%%APP_NAME%%/chrome/icons/default/bookmarkproperties48.png
+lib/%%APP_NAME%%/chrome/icons/default/bookmarkproperties16.png
 lib/%%APP_NAME%%/chrome/icons/default/default.png
 lib/%%APP_NAME%%/chrome/icons/default/default16.png
 lib/%%APP_NAME%%/chrome/icons/default/default48.png
@@ -49,6 +46,9 @@ lib/%%APP_NAME%%/chrome/icons/default/messengerWindow48.png
 lib/%%APP_NAME%%/chrome/icons/default/msgcomposeWindow.png
 lib/%%APP_NAME%%/chrome/icons/default/msgcomposeWindow16.png
 lib/%%APP_NAME%%/chrome/icons/default/msgcomposeWindow48.png
+lib/%%APP_NAME%%/chrome/icons/default/places.png
+lib/%%APP_NAME%%/chrome/icons/default/places16.png
+lib/%%APP_NAME%%/chrome/icons/default/places48.png
 lib/%%APP_NAME%%/chrome/icons/default/seamonkey.png
 lib/%%APP_NAME%%/chrome/icons/default/venkman-window.png
 lib/%%APP_NAME%%/chrome/icons/default/venkman-window16.png

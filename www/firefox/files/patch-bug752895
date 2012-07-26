@@ -1,0 +1,71 @@
+commit de14ddd
+Author: Andrew Benton <b3nton@gmail.com>
+Date:   Tue Jun 12 09:10:09 2012 +0200
+
+    Bug 752895 - Don't try to install nspr, nss and sqlite when using system libraries. r=glandium
+---
+ browser/installer/Makefile.in         | 8 ++++++++
+ browser/installer/package-manifest.in | 6 ++++++
+ 2 files changed, 14 insertions(+)
+
+diff --git browser/installer/Makefile.in browser/installer/Makefile.in
+index 975b1f4..c791872 100644
+--- browser/installer/Makefile.in
++++ browser/installer/Makefile.in
+@@ -44,6 +44,14 @@ ifeq (gtk2, $(MOZ_WIDGET_TOOLKIT))
+ DEFINES += -DMOZ_GTK2=1
+ endif
+ 
++ifdef MOZ_NATIVE_NSPR
++DEFINES += -DMOZ_NATIVE_NSPR=1
++endif
++
++ifdef MOZ_NATIVE_NSS
++DEFINES += -DMOZ_NATIVE_NSS=1
++endif
++
+ ifdef NSS_DISABLE_DBM
+ DEFINES += -DNSS_DISABLE_DBM=1
+ endif
+diff --git browser/installer/package-manifest.in browser/installer/package-manifest.in
+index 2969643..b8fddf0 100644
+--- browser/installer/package-manifest.in
++++ browser/installer/package-manifest.in
+@@ -58,9 +58,11 @@
+ #ifndef MOZ_STATIC_JS
+ @BINPATH@/@DLL_PREFIX@mozjs@DLL_SUFFIX@
+ #endif
++#ifndef MOZ_NATIVE_NSPR
+ @BINPATH@/@DLL_PREFIX@nspr4@DLL_SUFFIX@
+ @BINPATH@/@DLL_PREFIX@plc4@DLL_SUFFIX@
+ @BINPATH@/@DLL_PREFIX@plds4@DLL_SUFFIX@
++#endif
+ @BINPATH@/@DLL_PREFIX@xpcom@DLL_SUFFIX@
+ #ifdef XP_MACOSX
+ @BINPATH@/XUL
+@@ -109,7 +111,9 @@
+ #endif
+ @BINPATH@/platform.ini
+ #ifndef XP_OS2
++#ifndef MOZ_NATIVE_SQLITE
+ @BINPATH@/@DLL_PREFIX@mozsqlite3@DLL_SUFFIX@
++#endif
+ #else
+ @BINPATH@/mozsqlt3@DLL_SUFFIX@
+ #endif
+@@ -583,6 +587,7 @@
+ ; NSS libraries are signed in the staging directory,
+ ; meaning their .chk files are created there directly.
+ ;
++#ifndef MOZ_NATIVE_NSS
+ @BINPATH@/@DLL_PREFIX@freebl3@DLL_SUFFIX@
+ @BINPATH@/@DLL_PREFIX@nss3@DLL_SUFFIX@
+ @BINPATH@/@DLL_PREFIX@nssckbi@DLL_SUFFIX@
+@@ -593,6 +598,7 @@
+ @BINPATH@/@DLL_PREFIX@smime3@DLL_SUFFIX@
+ @BINPATH@/@DLL_PREFIX@softokn3@DLL_SUFFIX@
+ @BINPATH@/@DLL_PREFIX@ssl3@DLL_SUFFIX@
++#endif
+ @BINPATH@/chrome/pippki@JAREXT@
+ @BINPATH@/chrome/pippki.manifest
+ @BINPATH@/components/pipboot.xpt

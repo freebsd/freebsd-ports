@@ -1,0 +1,11 @@
+--- security/nss/lib/Makefile~
++++ security/nss/lib/Makefile
+@@ -63,7 +63,7 @@ ZLIB_SRCDIR = zlib  # Add the zlib direc
+ endif
+ 
+ ifndef MOZILLA_CLIENT
+-ifndef NSS_USE_SYSTEM_SQLITE
++ifndef MOZ_NATIVE_SQLITE
+ SQLITE_SRCDIR = sqlite  # Add the sqlite directory to DIRS.
+ endif
+ endif

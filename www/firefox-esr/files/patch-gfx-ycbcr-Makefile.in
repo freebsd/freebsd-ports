@@ -1,0 +1,21 @@
+--- gfx/ycbcr/Makefile.in~
++++ gfx/ycbcr/Makefile.in
+@@ -58,6 +58,10 @@ ifeq ($(OS_ARCH),Linux)
+ CPPSRCS += yuv_row_posix.cpp \
+            $(NULL)
+ else
++ifeq ($(OS_ARCH),FreeBSD)
++CPPSRCS += yuv_row_posix.cpp \
++           $(NULL)
++else
+ ifeq ($(OS_ARCH),SunOS)
+ CPPSRCS += yuv_row_posix.cpp \
+            $(NULL)
+@@ -70,6 +74,7 @@ CPPSRCS += yuv_row_other.cpp \
+            $(NULL)
+ endif # Darwin
+ endif # SunOS
++endif # FreeBSD
+ endif # linux
+ endif # windows
+ 
