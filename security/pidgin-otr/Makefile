@@ -21,7 +21,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	Allows deniable private conversations using Pidgin
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/pidgin:${PORTSDIR}/net-im/pidgin
+BUILD_DEPENDS=	${LOCALBASE}/bin/pidgin:${PORTSDIR}/net-im/pidgin \
+		pkgconf>0:${PORTSDIR}/devel/pkgconf
 LIB_DEPENDS=	otr:${PORTSDIR}/security/libotr \
 		gcrypt:${PORTSDIR}/security/libgcrypt \
 		purple:${PORTSDIR}/net-im/libpurple
