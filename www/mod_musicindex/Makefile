@@ -16,6 +16,10 @@ COMMENT=	Apache module that allows downloading and streaming of audio
 
 LICENSE=	LGPL21
 
+USE_APACHE=	20+
+
+.include <bsd.port.pre.mk>
+
 OPTIONS_DEFINE=	NLS FLAC MP3 MP4 VORBIS LIBARCHIVE FILECACHE MYSQLCACHE
 OPTIONS_DEFAULT=NLS MP3 LIBARCHIVE FILECACHE
 
@@ -26,8 +30,6 @@ MYSQLCACHE_DESC=	MySQL caching support
 .include <bsd.port.options.mk>
 
 MAKE_JOBS_SAFE=	yes
-
-USE_APACHE=	20+
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -119,4 +121,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
