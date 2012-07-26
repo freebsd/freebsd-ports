@@ -27,6 +27,7 @@ USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_NCURSES=	yes
+USE_PKGCONFIG=	build
 USE_GNOME=	glib20
 
 MAN1=		mcabber.1

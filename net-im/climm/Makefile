@@ -17,6 +17,7 @@ MAINTAINER=	johans@FreeBSD.org
 COMMENT=	CLI-based Multi-Messenger
 
 USE_GMAKE=	yes
+USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -70,7 +71,7 @@ CONFIGURE_ARGS+=	--disable-remote
 CFLAGS+=		-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-xmpp --enable-ssl=gnutls \
 			--with-libgcrypt-prefix=${LOCALBASE}
-CONFIGURE_ENV+=		LIBGNUTLS_CONFIG="${LOCALBASE}/bin/pkg-config gnutls"
+CONFIGURE_ENV+=		LIBGNUTLS_CONFIG="${LOCALBASE}/bin/pkgconf gnutls"
 USE_PKGCONFIG=		yes
 LIB_DEPENDS+=		iksemel:${PORTSDIR}/textproc/iksemel \
 			gnutls:${PORTSDIR}/security/gnutls \
