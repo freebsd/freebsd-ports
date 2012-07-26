@@ -33,38 +33,3 @@ https://bugzilla.gnome.org/show_bug.cgi?id=680363
                                 sed 's/^.*[ 	]\([0-9.]*[a-z]*\).*$/\1/'`
  	    if compare_versions $vc_min_version $vc_actual_version; then
  		echo "found $vc_actual_version"
-https://bugs.gentoo.org/show_bug.cgi?id=427432
-https://bugzilla.gnome.org/show_bug.cgi?id=680363
-
---- ./macros2/gnome-autogen.sh.orig	2009-05-27 23:29:07.000000000 +0200
-+++ ./macros2/gnome-autogen.sh	2012-07-24 10:29:13.064750613 +0200
-@@ -77,6 +77,7 @@
-     vc_min_version=$4
-     vc_source=$5
-     vc_status=1
-+    vc_option="--version"
- 
-     vc_checkprog=`eval echo "\\$$vc_variable"`
-     if [ -n "$vc_checkprog" ]; then
-@@ -89,11 +90,19 @@
-     else
- 	vc_comparator=">="
-     fi
-+    # The most reliable way to check pkg-config version is to query the actual
-+    # virtual
-+    # pkg-config package entry's modversion.  This works in all known
-+    # implementations.
-+
-+    if test "x$vc_package" = "xpkg-config"; then
-+	vc_option="--modversion pkg-config"
-+    fi
-     printbold "checking for $vc_package $vc_comparator $vc_min_version..."
-     for vc_checkprog in $vc_checkprogs; do
- 	echo $ECHO_N "  testing $vc_checkprog... " $ECHO_C
--	if $vc_checkprog --version < /dev/null > /dev/null 2>&1; then
--	    vc_actual_version=`$vc_checkprog --version | head -n 1 | \
-+	if $vc_checkprog $vc_option < /dev/null > /dev/null 2>&1; then
-+	    vc_actual_version=`$vc_checkprog $vc_option | head -n 1 | \
-                                sed 's/^.*[ 	]\([0-9.]*[a-z]*\).*$/\1/'`
- 	    if compare_versions $vc_min_version $vc_actual_version; then
- 		echo "found $vc_actual_version"
