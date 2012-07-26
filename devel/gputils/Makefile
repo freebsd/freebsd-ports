@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gputils
-PORTVERSION=	0.14.1
+PORTVERSION=	0.14.2
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -15,7 +15,9 @@ COMMENT=	A set of utilities for Microchip PIC microcontrollers
 
 LICENSE=	GPLv2
 
+CONFLICTS=	gplink-[0-9]*
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 
 MANLANG=	"" fr
 MAN1=		gpasm.1 gpdasm.1 gplib.1 gplink.1 gpstrip.1 gputils.1 \
