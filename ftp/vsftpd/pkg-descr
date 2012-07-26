@@ -3,13 +3,13 @@ A FTP daemon that aims to be "very secure"
 From the README file:
 
 	Author: Chris Evans
-	Contact: chris@scary.beasts.org
+	Contact: scarybeasts@gmail.com
 
 	vsftpd is an FTP server, or daemon. The "vs" stands for Very
-	Secure.  Obviously this is not a guarantee, but a reflection
+	Secure. Obviously this is not a guarantee, but a reflection
 	that I have written the entire codebase with security in mind,
 	and carefully designed the program to be resilient to attack.
 
 LICENSE: GPL2 or later with execption to link with OpenSSL
 
-WWW: http://vsftpd.beasts.org/
+WWW: https://security.appspot.com/vsftpd.html
