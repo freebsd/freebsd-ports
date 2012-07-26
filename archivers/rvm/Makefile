@@ -22,7 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_LATEST_LINK=	yes
 
 USE_GMAKE=	yes
-USE_GCC=	4.4+
+USE_GCC=	4.6+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-default-config-file=${PREFIX}/etc/rvm.conf \
 		--enable-assume-stl-memory-exception
