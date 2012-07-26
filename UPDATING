@@ -11,9 +11,9 @@ you update your ports collection, before attempting any port upgrades.
 
   devel/pkg-config has been replaced by devel/pkgconf
 
-  # portmaster -o devel/pkg-config devel/pkgconf
+  # portmaster -o devel/pkgconf devel/pkg-config
   or
-  # portupgrade -o devel/pkg-config devel/pkgconf
+  # portupgrade -o devel/pkgconf devel/pkg-config
 
 20120725:
   AFFECTS: users of chinese/fcitx
