@@ -24,6 +24,7 @@ USE_QT4=	# empty
 
 USE_GMAKE=	yes
 USE_ICONV=	yes
+USE_PKGCONFIG=	build
 WANT_SDL=	yes
 USE_CMAKE=	yes
 CMAKE_USE_PTHREAD=yes
