@@ -26,19 +26,21 @@ DOCFILES=	AUDIT BENCHMARKS BUGS Changelog FAQ INSTALL LICENSE \
 		README README.security README.ssl REFS REWARD \
 		SIZE SPEED TODO TUNING
 
-OPTIONS=	VSFTPD_SSL	"Include support for SSL" off \
-		PIDFILE		"unofficial support for pidfile" off
+OPTIONS_DEFINE=	VSFTPD_SSL PIDFILE
+
+VSFTPD_SSL_DESC=Include support for SSL
+PIDFILE_DESC=	Unofficial support for pidfile
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_VSFTPD_SSL) && !defined(WITHOUT_SSL)
+.if ${PORT_OPTIONS:MVSFTPD_SSL} && !defined(WITHOUT_SSL)
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 SSL_SUFFIX=	-ssl
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 .endif
 
-.if defined(WITH_PIDFILE)
+.if ${PORT_OPTIONS:MPIDFILE}
 EXTRA_PATCHES+=	${FILESDIR}/pidfile.patch
 .endif
 
@@ -46,7 +48,7 @@ EXTRA_PATCHES+=	${FILESDIR}/pidfile.patch
 LDFLAGS+=	 -lssp_nonshared
 
 do-configure:
-.if !defined(WITHOUT_SSL) && defined(WITH_VSFTPD_SSL)
+.if !defined(WITHOUT_SSL) && ${PORT_OPTIONS:MVSFTPD_SSL}
 	${REINPLACE_CMD} -e \
 		"s|#undef VSF_BUILD_TCPWRAPPERS|#define VSF_BUILD_TCPWRAPPERS 1|" \
 		-e "s|#undef VSF_BUILD_SSL|#define VSF_BUILD_SSL 1|" \
@@ -94,7 +96,7 @@ do-install:
 		${INSTALL_MAN} -m 644 ${WRKSRC}/$${i} ${MANPREFIX}/man/man5/ ; \
 		done
 	${MKDIR} /var/ftp
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for i in ${DOCFILES}
 	${INSTALL_DATA} -m 644 ${WRKSRC}/${i} ${DOCSDIR}
