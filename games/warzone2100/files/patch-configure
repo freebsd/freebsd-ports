@@ -9,14 +9,3 @@
  		ac_prog_major_check=`echo $ac_prog_version_check | cut -d. -f1`
  		ac_prog_minor_check=`echo $ac_prog_version_check | sed s/[-,a-z,A-Z].*// | cut -d. -f2`
  		ac_prog_micro_check=`echo $ac_prog_version_check | sed s/[-,a-z,A-Z].*// | cut -d. -f3`
---- ./configure.orig	2012-07-25 12:01:59.220711135 +0200
-+++ ./configure	2012-07-25 12:02:30.934712586 +0200
-@@ -8603,7 +8603,7 @@
- 
- 
- 	for ac_prog in pkg-config; do
--		ac_prog_version_check=`$ac_prog --version | head -n 1 | sed 's/([^)]*)//g;s/^[a-zA-Z\.\ \-\/]*//;s/ .*$//'`
-+		ac_prog_version_check=`$ac_prog --modversion pkg-config | head -n 1 | sed 's/([^)]*)//g;s/^[a-zA-Z\.\ \-\/]*//;s/ .*$//'`
- 		ac_prog_major_check=`echo $ac_prog_version_check | cut -d. -f1`
- 		ac_prog_minor_check=`echo $ac_prog_version_check | sed s/[-,a-z,A-Z].*// | cut -d. -f2`
- 		ac_prog_micro_check=`echo $ac_prog_version_check | sed s/[-,a-z,A-Z].*// | cut -d. -f3`
