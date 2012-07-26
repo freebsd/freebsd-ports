@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave-forge-java
-PORTVERSION=	1.2.8
+PORTVERSION=	1.2.9
 CATEGORIES=	math java
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -30,6 +30,7 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/signal.tar.gz:${PORTSDIR}/math/octave-forge-signal
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
 post-patch:
 	${REINPLACE_CMD} 's+/client/libjvm.so+/server/libjvm.so+' ${WRKSRC}/__java__.cc
+	${REINPLACE_CMD} 's|getenv ("JAVA_HOME")|"${JAVA_HOME}"|' ${WRKDIR}/java/pre_install.m
 
 post-build:
 	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
