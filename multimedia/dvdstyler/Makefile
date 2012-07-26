@@ -36,6 +36,7 @@ WX_COMPS=	wx svg
 WX_CONF_ARGS=	absolute
 USE_GMAKE=	yes
 USE_GNOME=	desktopfileutils
+USE_PKGCONFIG=	build
 WANT_GNOME=	yes
 USE_GETTEXT=	yes
 USE_CDRTOOLS=	yes	# dvdstyler needs mkisofs
