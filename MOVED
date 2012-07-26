@@ -3559,3 +3559,4 @@ mail/mutt-devel|mail/mutt|2012-07-22|mail/mutt-devel is ready for primetime
 mail/mutt-devel-lite|mail/mutt-lite|2012-07-22|mail/mutt-devel is ready for primetime
 deskutils/phpgroupware|www/phpgroupware|2012-07-23|Moved to proper category
 textproc/fcitx-keyboard||2012-07-25|Removed, merged into chinese/fcitx
+devel/pkg-config|devel/pkgconf|2012-07-26|pkg-config has been replace by pkgconf
