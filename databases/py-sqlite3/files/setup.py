@@ -32,6 +32,12 @@ sqlite_srcs = [
 '_sqlite/statement.c',
 '_sqlite/util.c']
 
+try:
+    import ctypes
+    ctypes.CDLL('libsqlite3.so').sqlite3_load_extension
+except AttributeError:
+    macros.append(('SQLITE_OMIT_LOAD_EXTENSION', '1'))
+
 setup(name = "_sqlite3",
       description = "SQLite 3 extension to Python",
       
