@@ -7,7 +7,7 @@
 
 PORTNAME=	mozc
 PORTVERSION=	1.5.1090.102
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX?=	ja-
@@ -37,7 +37,7 @@ USE_QT4+=	gui dbus qmake_build moc_build uic_build rcc_build
 USE_GNOME+=	pygtk2
 .elif ${BUILD_MOZC_LIST:Mfcitx_mozc} == "fcitx_mozc"
 USE_GNOME+=	glib20 gtk20
-.elif ${BUILD_MOZC_LIST:Mmozc-el} == "mozc-el"
+.elif ${BUILD_MOZC_LIST:Mmozc_el} == "mozc_el"
 USE_EMACS=	yes
 .endif
 
@@ -73,9 +73,9 @@ SSL_REINPLACE_STR=
 SSL_REINPLACE_STR+=	-e "s,%%${V}%%,${${V}},"
 .endfor
 
-.if ${BUILD_MOZC_LIST:Mmozc_server} == "mozc_server"
-GYP_DEFINES="use_libprotobuf=1 enable_gtk_renderer=0"
-.elif ${BUILD_MOZC_LIST:Mmozc_tool} == "mozc_tool"
+.if ${BUILD_MOZC_LIST:Mmozc_server} == "mozc_server" || \
+    ${BUILD_MOZC_LIST:Mmozc_tool} == "mozc_tool" || \
+    ${BUILD_MOZC_LIST:Mmozc_el} == "mozc_el"
 GYP_DEFINES="use_libprotobuf=1 enable_gtk_renderer=0"
 .else
 GYP_DEFINES="use_libprotobuf=1"
@@ -306,8 +306,8 @@ do-install-fcitx_mozc:
 .endfor
 .endif
 
-# mozc-el
-.if ${BUILD_MOZC_LIST:Mmozc-el} == "mozc-el"
+# mozc_el
+.if ${BUILD_MOZC_LIST:Mmozc_el} == "mozc_el"
 CATEGORIES+=	editors elisp
 RUN_DEPENDS+=	mozc_server:${PORTSDIR}/japanese/mozc-server \
 		mozc_server_start:${PORTSDIR}/japanese/mozc-additions
@@ -316,14 +316,14 @@ PLIST_FILES+=	bin/mozc_emacs_helper \
 		${EMACS_VERSION_SITE_LISPDIR}/mozc.el \
 		${EMACS_VERSION_SITE_LISPDIR}/mozc.elc
 
-do-build-mozc-el:
+do-build-mozc_el:
 	${BUILD_MOZC_CMD} build -c ${BUILD_MODE} \
 		unix/emacs/emacs.gyp:mozc_emacs_helper
 	@cd ${WRKSRC}/unix/emacs && \
 		${EMACS_CMD} -batch -q -no-site-file -no-init-file \
 				-f batch-byte-compile mozc.el
 
-do-install-mozc-el:
+do-install-mozc_el:
 	@${INSTALL_PROGRAM} \
 		${WRKSRC}/out_linux/${BUILD_MODE}/mozc_emacs_helper \
 		${PREFIX}/bin/
