@@ -17,7 +17,7 @@ DISTFILES=	SamuraiWars-Linux${EXTRACT_SUFX}
 DIST_SUBDIR=	savage
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	An official mod for Savage game (Linux version)
+COMMENT=	An official mod for Savage (Linux version)
 
 USE_BZIP2=	yes
 USE_LINUX=	yes

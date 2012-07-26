@@ -11,7 +11,7 @@ CATEGORIES=	devel pear
 DISTNAME=	CodeGen-${PORTVERSION}
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	Tool to create Code generators that operate on XML descriptions
+COMMENT=	Tool to create code generators that operate on XML descriptions
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
