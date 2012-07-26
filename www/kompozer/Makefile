@@ -16,8 +16,6 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Complete Web Authoring Suite
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
-
 WANT_GNOME=	yes
 WANT_PERL=	yes
 USE_BZIP2=	yes
@@ -26,11 +24,14 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/mozilla
 MAKEFILE=	client.mk
 ALL_TARGET=	build_all
-#CFLAGS+=	-I${LOCALBASE}/include/libpng15
+USE_MOZILLA=	-event -ffi -hunspell -sqlite -vpx
+MOZ_CHROME=	jar
+MOZ_TOOLKIT=	gtk2
 MOZ_EXTENSIONS=	wallet,xml-rpc,xmlextras,pref,universalchardet,spellcheck
-MOZ_OPTIONS=	--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
-				--enable-application=composer \
-				--enable-system-cairo
+MOZ_OPTIONS=	${CONFIGURE_TARGET} \
+		--enable-xinerama \
+		--disable-xprint \
+		--enable-application=composer
 PORT_MOZCONFIG=	${WRKSRC}/composer/config/mozconfig.linux
 
 DESKTOP_ENTRIES="Kompozer" "${COMMENT}" \
@@ -40,11 +41,19 @@ DESKTOP_ENTRIES="Kompozer" "${COMMENT}" \
 NOT_FOR_ARCHS=	ia64
 NOT_FOR_ARCHS_REASON_ia64=	does not build
 
+.include "${.CURDIR}/../../www/firefox/Makefile.options"
+
+OPTIONS_DEFINE:=${OPTIONS_DEFINE:NDBUS:NGIO:NLIBPROXY}
+OPTIONS_SINGLE:=${OPTIONS_SINGLE:NAUDIO:NTOOLKIT}
+OPTIONS_MULTI_GNOME:=${OPTIONS_MULTI_GNOME:NGIO}
+
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == amd64
+CONFIGURE_TARGET=x86_64-portbld-freebsd${OSREL}
+.endif
+
 post-patch:
-	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' \
-		${WRKSRC}/storage/build/Makefile.in
 	@${RM} -f ${WRKSRC}/config.status ${WRKSRC}/config.cache
 	@${ECHO_CMD} "LDFLAGS += -L${LOCALBASE}/lib" >> ${WRKSRC}/toolkit/components/Makefile.in
 	@${ECHO_CMD} "LDFLAGS += -L${LOCALBASE}/lib" >> ${WRKSRC}/toolkit/components/gnome/Makefile.in

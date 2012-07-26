@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	seamonkey-i18n
-PORTVERSION=	2.9.1
+PORTVERSION=	2.11
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	seamonkey/releases/${PORTVERSION}/langpack
 PKGNAMEPREFIX=
@@ -22,7 +22,7 @@ PLIST?=		${WRKDIR}/plist
 PLISTD?=	${WRKDIR}/plist_dirs
 PLISTF?=	${WRKDIR}/plist_files
 
-USE_SEAMONKEY=	29
+USE_SEAMONKEY=	11
 USE_XPI=	seamonkey linux-seamonkey
 
 USE_SUBMAKE=	yes

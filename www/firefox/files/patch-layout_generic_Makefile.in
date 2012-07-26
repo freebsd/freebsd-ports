@@ -1,9 +1,9 @@
---- layout/generic/Makefile.in.orig	2011-07-06 05:09:28.000000000 +0200
-+++ layout/generic/Makefile.in	2011-07-06 21:49:25.105659269 +0200
-@@ -159,9 +159,10 @@
- 		-I$(srcdir)/../../content/html/content/src \
+--- layout/generic/Makefile.in~
++++ layout/generic/Makefile.in
+@@ -154,9 +154,10 @@ LOCAL_INCLUDES += \
  		-I$(srcdir)/../../dom/base \
  		-I$(srcdir)/../../dom/plugins/base \
+ 		-I$(srcdir)/../svg/base/src \
 -		$(MOZ_CAIRO_CFLAGS) \
  		$(NULL)
  

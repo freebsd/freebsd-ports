@@ -17,8 +17,7 @@
  CPU_ARCH		= x86
  endif
  ifeq ($(CPU_ARCH),amd64)
--CPU_ARCH		= x86_64
-+CPU_ARCH		= amd64
+ CPU_ARCH		= x86_64
 +USE_64			= 1
 +endif
 +ifeq ($(OS_TEST),alpha)

@@ -1,24 +1,5 @@
 --- js/src/Makefile.in.orig	2011-07-06 05:09:22.000000000 +0200
 +++ js/src/Makefile.in	2011-07-06 22:23:46.363233778 +0200
-@@ -416,7 +416,7 @@
- # END enclude sources for V8 dtoa
- #############################################
- 
--ifeq (,$(filter arm% sparc %86 x86_64,$(TARGET_CPU)))
-+ifeq (,$(filter arm% sparc %86 amd64 x86_64,$(TARGET_CPU)))
- 
- VPATH +=	$(srcdir)/assembler \
- 		$(srcdir)/assembler/wtf \
-@@ -469,6 +469,9 @@
- else
- #CPPSRCS		+= only_on_x86.cpp
- endif
-+ifeq (amd64, $(TARGET_CPU))
-+#CPPSRCS                += only_on_x86_64.cpp
-+endif
- endif
- ifeq (arm, $(TARGET_CPU))
- #CPPSRCS		+= only_on_arm.cpp
 @@ -793,7 +796,7 @@
  endif # WINNT
  

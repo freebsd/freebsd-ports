@@ -1,0 +1,12 @@
+--- ldap/sdks/c-sdk/ldap/libraries/libssldap/Makefile.in~
++++ ldap/sdks/c-sdk/ldap/libraries/libssldap/Makefile.in
+@@ -188,6 +188,9 @@ endif
+ 
+ OBJDEST = $(OBJDIR_NAME)
+ 
++# accept -pthread with MOZ_NATIVE_NSS
++LINK_DLL	= $(CC_FOR_LINK) -shared -o $@ $(OBJS) $(EXTRA_DLL_LIBS)
++
+ ###########################################################################
+ 
+ ifeq ($(USE_DLL_EXPORTS_FILE), 1)

@@ -1,0 +1,11 @@
+--- suite/installer/Makefile.in.orig	2012-06-19 20:42:29.000000000 +0200
++++ suite/installer/Makefile.in	2012-06-19 20:42:54.000000000 +0200
+@@ -49,7 +49,7 @@
+ MOZ_PKG_MANIFEST_P = $(srcdir)/package-manifest.in
+ # Be fatal, except when building with XULRunner which already bundles some files.
+ ifndef SYSTEM_LIBXUL
+-MOZ_PKG_FATAL_WARNINGS = 1
++MOZ_PKG_FATAL_WARNINGS = 0
+ endif
+ 
+ MOZ_NONLOCALIZED_PKG_LIST = \

@@ -1,0 +1,11 @@
+--- mail/components/Makefile.in~
++++ mail/components/Makefile.in
+@@ -46,7 +46,7 @@ include $(DEPTH)/config/autoconf.mk
+ # least one module from search/ on all platforms
+ DIRS    = compose cloudfile preferences addrbook migration activity search about-support wintaskbar newmailaccount im
+ 
+-ifneq (,$(filter windows gtk2 cocoa, $(MOZ_WIDGET_TOOLKIT)))
++ifneq (,$(filter windows gtk2 cocoa qt, $(MOZ_WIDGET_TOOLKIT)))
+ DIRS += shell
+ endif
+ 

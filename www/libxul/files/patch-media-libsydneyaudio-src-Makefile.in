@@ -1,0 +1,15 @@
+--- media/libsydneyaudio/src/Makefile.in.orig	2009-08-17 14:21:06.000000000 +0200
++++ media/libsydneyaudio/src/Makefile.in	2009-08-17 14:21:53.000000000 +0200
+@@ -45,6 +45,12 @@
+ LIBRARY_NAME	= sydneyaudio
+ FORCE_STATIC_LIB= 1
+ 
++ifeq ($(OS_ARCH),FreeBSD)
++CSRCS		= \
++		sydney_audio_oss.c \
++		$(NULL)
++endif
++
+ ifneq (,$(filter WINNT WINCE,$(OS_ARCH)))
+ CSRCS		= \
+ 		sydney_audio_waveapi.c \

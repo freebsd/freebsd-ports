@@ -1,0 +1,20 @@
+# -*- makefile-bsdmake -*-
+
+OPTIONS_DEFINE+=	DBUS DEBUG GNOME LIBPROXY LOGGING OPTIMIZED_CFLAGS
+OPTIONS_DEFAULT+=	DBUS GTK2 LOGGING OSS
+
+OPTIONS_SINGLE+=	AUDIO
+OPTIONS_SINGLE_AUDIO=	ALSA OSS PULSEAUDIO
+
+OPTIONS_SINGLE+=	TOOLKIT
+OPTIONS_SINGLE_TOOLKIT=	GTK2 QT4
+
+OPTIONS_MULTI+=		GNOME
+OPTIONS_MULTI_GNOME=	GCONF GIO GNOMEUI GNOMEVFS2
+
+GIO_DESC?=		GIO for file I/O # move to bsd.options.desc.mk
+GNOMEUI_DESC?=		libgnomeui support module
+LIGHTNING_DESC?=	Calendar extension
+LOGGING_DESC?=		Additional log messages
+PGO_DESC?=		Profile-Guided Optimization # move to bsd.options.desc.mk
+LIBPROXY_DESC?=		Proxy support via libproxy
