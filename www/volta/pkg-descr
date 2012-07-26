@@ -3,7 +3,8 @@ Squid caching proxy server (http://www.squid-cache.org) With it, you
 can dynamically alter URI requests that pass through Squid based on
 various criteria.
 
-It uses a state machine to parse URIs and rules, and a constant database
-to store and access those rules.
+It uses a state machine to parse URIs and rules, and a constant
+database to store and access those rules. It can then either perform
+conditional rewrites internally, or by evaluating Lua scripts.
 
 WWW: http://projects.martini.nu/volta/
