@@ -26,6 +26,7 @@ PORTEXAMPLES=	bitlbee.conf motd.txt
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20
+USE_PKGCONFIG=	build
 USE_RC_SUBR=	bitlbee
 PKGMESSAGE=	${WRKDIR}/pkg-message
 

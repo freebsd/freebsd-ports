@@ -19,6 +19,7 @@ LIB_DEPENDS=	otr:${PORTSDIR}/security/libotr
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+USE_PKGCONFIG=	build
 PYDISTUTILS_PKGNAME=	python-otr
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib

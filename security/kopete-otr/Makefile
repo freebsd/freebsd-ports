@@ -29,5 +29,6 @@ USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	build
 
 .include <bsd.port.mk>
