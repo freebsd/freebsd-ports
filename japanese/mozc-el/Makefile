@@ -11,7 +11,7 @@ COMMENT=	Mozc for GNU Emacs
 MASTERDIR=	${.CURDIR}/../../japanese/mozc-server
 PKGMESSAGE=	${.CURDIR}/pkg-message
 
-BUILD_MOZC_LIST=	mozc-el
+BUILD_MOZC_LIST=	mozc_el
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
