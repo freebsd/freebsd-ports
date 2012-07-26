@@ -36,6 +36,7 @@ lib/calibre/calibre/devices/android/__init__.py
 lib/calibre/calibre/devices/android/driver.py
 lib/calibre/calibre/devices/apple/__init__.py
 lib/calibre/calibre/devices/apple/driver.py
+lib/calibre/calibre/devices/apple/itunes.py
 lib/calibre/calibre/devices/bambook/__init__.py
 lib/calibre/calibre/devices/bambook/driver.py
 lib/calibre/calibre/devices/bambook/libbambookcore.py
@@ -266,6 +267,7 @@ lib/calibre/calibre/ebooks/metadata/book/__init__.py
 lib/calibre/calibre/ebooks/metadata/book/base.py
 lib/calibre/calibre/ebooks/metadata/book/json_codec.py
 lib/calibre/calibre/ebooks/metadata/cli.py
+lib/calibre/calibre/ebooks/metadata/docx.py
 lib/calibre/calibre/ebooks/metadata/epub.py
 lib/calibre/calibre/ebooks/metadata/ereader.py
 lib/calibre/calibre/ebooks/metadata/extz.py
@@ -555,6 +557,7 @@ lib/calibre/calibre/gui2/catalog/catalog_epub_mobi_ui.py
 lib/calibre/calibre/gui2/catalog/catalog_tab_template_ui.py
 lib/calibre/calibre/gui2/comments_editor.py
 lib/calibre/calibre/gui2/complete.py
+lib/calibre/calibre/gui2/complete2.py
 lib/calibre/calibre/gui2/convert/__init__.py
 lib/calibre/calibre/gui2/convert/azw3_output_ui.py
 lib/calibre/calibre/gui2/convert/azw3_output.py
@@ -794,12 +797,13 @@ lib/calibre/calibre/gui2/store/stores/ebookpoint_plugin.py
 lib/calibre/calibre/gui2/store/stores/escapemagazine_plugin.py
 lib/calibre/calibre/gui2/store/stores/gandalf_plugin.py
 lib/calibre/calibre/gui2/store/stores/litres_plugin.py
+lib/calibre/calibre/gui2/store/stores/mills_boon_uk_plugin.py
 lib/calibre/calibre/gui2/store/stores/pragmatic_bookshelf_plugin.py
 lib/calibre/calibre/gui2/store/stores/nexto_plugin.py
 lib/calibre/calibre/gui2/store/stores/rw2010_plugin.py
+lib/calibre/calibre/gui2/store/stores/sony_plugin.py
 lib/calibre/calibre/gui2/store/stores/whsmith_uk_plugin.py
 lib/calibre/calibre/gui2/store/stores/zixo_plugin.py
-lib/calibre/calibre/gui2/store/stores/oreilly_plugin.py
 lib/calibre/calibre/gui2/store/stores/woblink_plugin.py
 lib/calibre/calibre/gui2/store/stores/archive_org_plugin.py
 lib/calibre/calibre/gui2/store/stores/weightless_books_plugin.py
@@ -936,6 +940,7 @@ lib/calibre/calibre/libunrar.py
 lib/calibre/calibre/libunzip.py
 lib/calibre/calibre/libwand.py
 lib/calibre/calibre/linux.py
+lib/calibre/calibre/plugins/calibre_style.so
 lib/calibre/calibre/plugins/cPalmdoc.so
 lib/calibre/calibre/plugins/chm_extra.so
 lib/calibre/calibre/plugins/chmlib.so
@@ -1208,6 +1213,7 @@ lib/calibre/pyPdf/generic.py
 lib/calibre/pyPdf/pdf.py
 lib/calibre/pyPdf/utils.py
 lib/calibre/pyPdf/xmp.py
+lib/calibre/qtcurve/test_rendering.py
 lib/calibre/routes/__init__.py
 lib/calibre/routes/base.py
 lib/calibre/routes/lru.py
@@ -1220,12 +1226,12 @@ share/applications/calibre-gui.desktop
 share/applications/calibre-lrfviewer.desktop
 share/applications/calibre-ebook-viewer.desktop
 share/mime/packages/calibre-mimetypes
-share/icons/hicolor/128x128/apps/calibre-gui.png
 share/icons/hicolor/128x128/apps/calibre-viewer.png
 share/icons/hicolor/128x128/mimetypes/application-lrf.png
 share/icons/hicolor/128x128/mimetypes/gnome-mime-application-lrf.png
 share/icons/hicolor/128x128/mimetypes/text-lrs.png
 share/icons/hicolor/128x128/mimetypes/gnome-mime-text-lrs.png
+share/icons/hicolor/256x256/apps/calibre-gui.png
 share/gnome/apps/calibre-gui.desktop
 share/gnome/apps/calibre-lrfviewer.desktop
 share/gnome/apps/calibre-ebook-viewer.desktop
@@ -1392,6 +1398,7 @@ share/gnome/apps/calibre-ebook-viewer.desktop
 %%DATADIR%%/images/mimetypes/bmp.png
 %%DATADIR%%/images/mimetypes/computer.png
 %%DATADIR%%/images/mimetypes/dir.png
+%%DATADIR%%/images/mimetypes/docx.png
 %%DATADIR%%/images/mimetypes/epub.png
 %%DATADIR%%/images/mimetypes/fb2.png
 %%DATADIR%%/images/mimetypes/gif.png
@@ -1473,6 +1480,8 @@ share/gnome/apps/calibre-ebook-viewer.desktop
 %%DATADIR%%/images/highlight_only_on.png
 %%DATADIR%%/images/connect_share_on.png
 %%DATADIR%%/images/drm-unlocked.png
+%%DATADIR%%/images/cover_texture.png
+%%DATADIR%%/images/scroll.png
 %%DATADIR%%/jacket/stylesheet.css
 %%DATADIR%%/jacket/template.xhtml
 %%DATADIR%%/jquery.simulate.js
@@ -1496,6 +1505,7 @@ share/gnome/apps/calibre-ebook-viewer.desktop
 %%DATADIR%%/templates/rtf.xsl
 %%DATADIR%%/templates/book_details.css
 %%DATADIR%%/tracer.epub
+%%DATADIR%%/viewer/blank.html
 %%DATADIR%%/viewer/bookmarks.js
 %%DATADIR%%/viewer/hyphenate/Hyphenator.js
 %%DATADIR%%/viewer/hyphenate/patterns.zip
@@ -1528,6 +1538,7 @@ share/gnome/apps/calibre-ebook-viewer.desktop
 @dirrm %%DATADIR%%
 @dirrm lib/calibre/templite
 @dirrm lib/calibre/routes
+@dirrm lib/calibre/qtcurve
 @dirrm lib/calibre/pyPdf
 @dirrm lib/calibre/odf
 @dirrm lib/calibre/chardet
@@ -1684,6 +1695,7 @@ share/gnome/apps/calibre-ebook-viewer.desktop
 @dirrmtry share/mime/packages
 @dirrmtry share/icons/hicolor/128x128/apps
 @dirrmtry share/icons/hicolor/128x128/mimetypes
+@dirrmtry share/icons/hicolor/256x256/apps
 @dirrmtry share/gnome/apps
 @dirrmtry share/gnome
 @dirrmtry share/desktop-directories
