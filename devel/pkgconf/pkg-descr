@@ -3,10 +3,4 @@ development frameworks. It is similar to pkg-config, but was written from
 scratch in Summer of 2011 to replace pkg-config, which now needs itself to build
 itself.
 
-WWW:	https://github.com/pkgconf/pkgconf
-pkgconf is a program which helps to configure compiler and linker flags for
-development frameworks. It is similar to pkg-config, but was written from
-scratch in Summer of 2011 to replace pkg-config, which now needs itself to build
-itself.
-
-WWW:	https://github.com/pkgconf/pkgconf
+WWW: https://github.com/pkgconf/pkgconf
