@@ -16,7 +16,7 @@ COMMENT=	Simplistic interface to pkg-config
 
 LICENSE=	LGPL3
 
-USE_GNOME=	pkgconfig
+USE_PKGCONFIG=	both
 PERL_CONFIGURE=	yes
 
 MAN3=		ExtUtils::PkgConfig.3
