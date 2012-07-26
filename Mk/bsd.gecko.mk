@@ -14,7 +14,7 @@
 # WITH_GECKO=	libxul
 #
 # The valid backends are:
-# libxul
+# libxul libxul19
 #
 # See below for more details.
 # ======================= /USERS ================================
@@ -80,9 +80,10 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #		${MOZSRC}/configure
 #  .endif
 
-_GECKO_ALL=	libxul
+_GECKO_ALL=	libxul libxul19
 
 libxul_PLIST=		${LOCALBASE}/lib/libxul/libxul.so
+libxul19_PLIST=		${LOCALBASE}/lib/libxul/libxul.so
 
 .for gecko in ${_GECKO_ALL}
 ${gecko}_PORTSDIR?=	www
@@ -181,7 +182,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         is given by the maintainer via the port or by the
 #                         user via defined variable try to find the highest
 #                         stable installed version.
-#                         Available values: yes 10+ 13+ 10 13+
+#                         Available values: yes 10+ 14+ 10 14+
 #                         NOTE:
 #                         default value 10 is used in case of USE_FIREFOX=yes
 #
@@ -192,9 +193,9 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         version is given by the maintainer via the port 
 #                         or by the user via defined variable try to find
 #                         the highest stable installed version.
-#                         Available values: yes 29+ 29
+#                         Available values: yes 11+ 11
 #                         NOTE:
-#                         default value 29 is used in case of USE_SEAMONKEY=yes
+#                         default value 11 is used in case of USE_SEAMONKEY=yes
 #
 # USE_SEAMONKEY_BUILD     Add buildtime dependency on SeaMonkey.
 #                         Available values: see USE_SEAMONKEY
@@ -203,7 +204,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         version is given by the maintainer via the port 
 #                         or by the user via defined variable try to find 
 #                         the highest stable installed version.
-#                         Available values: yes 10+ 13+ 10 13
+#                         Available values: yes 10+ 14+ 10 14
 #                         NOTE:
 #                         default value 10 is used in case of USE_THUNDERBIRD=yes
 #
@@ -223,11 +224,11 @@ _FIREFOX_BUILD_DEPENDS=		yes
 .endif
 
 _FIREFOX_DEFAULT_VERSION=	10
-_FIREFOX_VERSIONS=			10 13
-_FIREFOX_RANGE_VERSIONS=	10+ 13+
+_FIREFOX_VERSIONS=			10 14
+_FIREFOX_RANGE_VERSIONS=	10+ 14+
 
 # For specifying [10, ..]+
-_FIREFOX_13P=	13 ${_FIREFOX_10P}
+_FIREFOX_14P=	14 ${_FIREFOX_10P}
 _FIREFOX_10P=	10
 
 # Set the default Firefox version and check if USE_FIREFOX=yes was given
@@ -237,14 +238,7 @@ USE_FIREFOX=	${_FIREFOX_DEFAULT_VERSION}
 
 # Setting/finding Firefox version we want.
 .if exists(${LOCALBASE}/bin/firefox)
-_TMP_VER!=	${LOCALBASE}/bin/firefox --version 2>/dev/null | ${HEAD} -1 | ${SED} -e 's/Mozilla Firefox \([0-9]\{1,2\}\)\.\([0-9]*\).*/\1\2/'
-.if ${_TMP_VER} >= 100
-_FIREFOX_VER:=	${_TMP_VER:C/([0-9][0-9]).*/\1/}
-.else
-_FIREFOX_VER=	${_TMP_VER}
-.endif
-.elif exists(${LOCALBASE}/bin/firefox3)
-_FIREFOX_VER!=	${LOCALBASE}/bin/firefox3 --version 2>/dev/null | ${HEAD} -1 | ${SED} -e 's/Mozilla Firefox \([0-9]\)\.\([0-9]*\).*/\1\2/'
+_FIREFOX_VER!=	${LOCALBASE}/bin/firefox --version 2>/dev/null | ${HEAD} -1 | ${SED} -e 's/Mozilla Firefox \([0-9]\{1,2\}\)\.\([0-9]*\).*/\1/'
 .endif
 
 # Check if installed Firefox version matches the wanted one
@@ -281,7 +275,7 @@ IGNORE=			cannot install: unknown Firefox version: firefox-${USE_FIREFOX:C/([0-9
 
 # Dependence lines for different Firefox versions
 10_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox-esr
-13_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
+14_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
 
 # Add dependencies
 .if defined(USE_FIREFOX)
@@ -303,12 +297,12 @@ USE_SEAMONKEY:=				${USE_SEAMONKEY_BUILD}
 _SEAMONKEY_BUILD_DEPENDS=	yes
 .endif
 
-_SEAMONKEY_DEFAULT_VERSION=	29
-_SEAMONKEY_VERSIONS=		29
-_SEAMONKEY_RANGE_VERSIONS=	29+
+_SEAMONKEY_DEFAULT_VERSION=	11
+_SEAMONKEY_VERSIONS=		11
+_SEAMONKEY_RANGE_VERSIONS=	11+
 
-# For specifying [29, 20, ..]+
-_SEAMONKEY_29P=	29
+# For specifying [11, ..]+
+_SEAMONKEY_11P=	11
 
 # Set the default SeaMonkey version and check if USE_SEAMONKEY=yes was given
 .if ${USE_SEAMONKEY} == "yes"
@@ -317,7 +311,7 @@ USE_SEAMONKEY=	${_SEAMONKEY_DEFAULT_VERSION}
 
 # Setting/finding SeaMonkey version we want.
 .if exists(${LOCALBASE}/bin/seamonkey)
-_SEAMONKEY_VER!=	${LOCALBASE}/bin/seamonkey --version 2>/dev/null | ${HEAD} -1 | ${SED} -e 's/Mozilla SeaMonkey \([0-9]\)\.\([0-9]*\).*/\1\2/'
+_SEAMONKEY_VER!=	${LOCALBASE}/bin/seamonkey --version 2>/dev/null | ${HEAD} -1 | ${SED} -e 's/Mozilla SeaMonkey \([0-9]\{1,2\}\)\.\([0-9]*\).*/\2/'
 .endif
 
 # Check if installed SeaMonkey version matches the wanted one
@@ -341,16 +335,16 @@ _SUPSEAMONKEY=		yes
 .endif
 .endif
 .if ${_SUPSEAMONKEY} == no
-IGNORE=			cannot install: SeaMonkey versions mismatch: seamonkey-${_SEAMONKEY_VER:C/([0-9])([0-9])/\1.\2/} is installed and wanted version is seamonkey-${USE_SEAMONKEY:C/([0-9])([0-9])/\1.\2/}
+IGNORE=			cannot install: SeaMonkey versions mismatch: seamonkey-2.${_SEAMONKEY_VER} is installed and wanted version is seamonkey-2.${USE_SEAMONKEY}
 .endif
 .endif
 
 .if !defined(_SEAMONKEY_${USE_SEAMONKEY:S/+//}P)
-IGNORE=			cannot install: unknown SeaMonkey version: seamonkey-${USE_SEAMONKEY:C/([0-9])([0-9])/\1.\2/}
+IGNORE=			cannot install: unknown SeaMonkey version: seamonkey-2.${USE_SEAMONKEY}
 .endif
 
 # Dependence lines for different SeaMonkey versions
-29_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey
+11_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey
 
 # Add dependencies
 .if defined(USE_SEAMONKEY)
@@ -373,11 +367,11 @@ _THUNDERBIRD_BUILD_DEPENDS=		yes
 .endif
 
 _THUNDERBIRD_DEFAULT_VERSION=	10
-_THUNDERBIRD_VERSIONS=			10 13
-_THUNDERBIRD_RANGE_VERSIONS=	10+ 13+
+_THUNDERBIRD_VERSIONS=			10 14
+_THUNDERBIRD_RANGE_VERSIONS=	10+ 14+
 
 # For specifying [10, ..]+
-_THUNDERBIRD_13P=	13 ${_THUNDERBIRD_10P}
+_THUNDERBIRD_14P=	14 ${_THUNDERBIRD_10P}
 _THUNDERBIRD_10P=	10
 
 # Set the default Thunderbird version and check if USE_THUNDERBIRD=yes was given
@@ -387,8 +381,7 @@ USE_THUNDERBIRD=	${_THUNDERBIRD_DEFAULT_VERSION}
 
 # Setting/finding Thunderbird version we want.
 .if exists(${LOCALBASE}/bin/thunderbird)
-_TMP_VER!=	${LOCALBASE}/bin/thunderbird --version 2>/dev/null | ${HEAD} -1 | ${SED} -e 's/ Thunderbird \([0-9]\{1,2\}\)\.\([0-9]*\).*/\1\2/'
-_THUNDERBIRD_VER:=	${_TMP_VER:C/([0-9][0-9]).*/\1/}
+_THUNDERBIRD_VER!=	${LOCALBASE}/bin/thunderbird --version 2>/dev/null | ${HEAD} -1 | ${SED} -e 's/ Thunderbird \([0-9]\{1,2\}\)\.\([0-9]*\).*/\1/'
 .endif
 
 # Check if installed Thunderbird version matches the wanted one
@@ -424,7 +417,7 @@ IGNORE=			cannot install: unknown Thunderbird version: thunderbird-${USE_THUNDER
 
 # Dependence lines for different Thunderbird versions
 10_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird-esr
-13_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird
+14_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird
 
 # Add dependencies
 .if defined(USE_THUNDERBIRD)
@@ -452,10 +445,11 @@ Gecko_Pre_Include=	bsd.gecko.mk
 # Ports can use the following:
 #
 # USE_MOZILLA			By default, it enables the denendencies: cairo, dbm,
-# 						jpeg, nspr, nss, png, xft and zip. Search for
-# 						'_ALL_DEPENDS' below to see the list. If your port
-# 						doesn't need one of list then you can use '-' like
-# 						'USE_MOZILLA= -png -zip' to subtract the dependencies.
+# 						event, ffi, hunspell, jpeg, nspr, nss, png, sqlite,
+# 						vpx and zip. Search for '_ALL_DEPENDS' below to see
+# 						the list. If your port doesn't need one of list then
+# 						you can use '-' like 'USE_MOZILLA= -png -zip' to
+# 						subtract the dependencies.
 #
 # GECKO_PLIST_PRE_FILES	Manual add files in the plist if it needs.
 #
@@ -485,12 +479,13 @@ Gecko_Pre_Include=	bsd.gecko.mk
 # 						to .mozconfig). If NOMOZCONFIG is defined, you
 # 						probably want to set MAKE_ENV+=${MOZ_EXPORT}
 #
+# MOZ_CHROME			A variable for the --enable-chrome-format= in
+# 						CONFIGURE_ARGS. The default is omni.
+#
 # MOZ_TOOLKIT			A variable for the --enable-default-toolkit= in
-# 						CONFIGURE_ARGS. The default is gtk2.
+# 						CONFIGURE_ARGS. The default is cairo-gtk2.
 #
 # MOZ_EXTENSIONS		A list of extensions to build
-#
-# MOZ_GRAPHICS			A list of image decoders to build
 #
 # MOZ_PROTOCOLS			A list of protocols to build (http, ftp, etc.)
 #
@@ -514,7 +509,7 @@ MOZILLA_VER?=	${PORTVERSION}
 MOZILLA_BIN?=	${PORTNAME}-bin
 MOZILLA_EXEC_NAME?=${MOZILLA}
 MOZ_RPATH?=	${MOZILLA}
-USE_GNOME+=	gtk20 libidl desktopfileutils
+USE_GNOME+=	libidl desktopfileutils
 USE_ICONV=	yes
 USE_PERL5_BUILD=yes
 USE_XORG=	printproto sm xt xi xext x11 xinerama \
@@ -529,7 +524,6 @@ PLISTD?=	${WRKDIR}/plist_dirs
 PLISTF?=	${WRKDIR}/plist_files
 MASTER_DIR?=	${.CURDIR}/../../www/seamonkey
 
-KRB5_HOME?=	/usr
 MOZ_PIS_DIR?=		lib/${MOZILLA}/init.d
 
 ESD_LIB?=	libesd.so.2
@@ -548,7 +542,7 @@ PKGDEINSTALL_INC?=	${MASTER_MOZDIR}/pkg-deinstall.in
 EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --exclude */CVS/*	\
 			--exclude */macbuild/*			\
 			--exclude */package/*			\
-			--exclude mozilla/gc/boehm
+			--exclude mozilla*/gc/boehm
 
 MOZ_PKGCONFIG_FILES?=	${MOZILLA}-gtkmozembed ${MOZILLA}-js \
 			${MOZILLA}-xpcom ${MOZILLA}-plugin
@@ -556,52 +550,52 @@ MOZ_PKGCONFIG_FILES?=	${MOZILLA}-gtkmozembed ${MOZILLA}-js \
 CFLAGS+=		${PTHREAD_CFLAGS}
 LIBS+=			${PTHREAD_LIBS} -L${LOCALBASE}/lib -liconv
 
-_USE_GECKO_OPTIONS_ALL=	java debug logging optimized_cflags
-
-.if !defined(USE_GECKO_OPTIONS)
-USE_GECKO_OPTIONS=	debug logging optimized_cflags
-.endif
-
-debug_OPTION=	"Build a debugging image" off
-java_OPTION=	"Enable JAVA xpcom" off
-logging_OPTION=	"Enable additional log messages" off
-optimized_cflags_OPTION=	"Enable some additional optimizations" off
-
-.for option in ${USE_GECKO_OPTIONS:L}
-.if ${_USE_GECKO_OPTIONS_ALL:M${option}}!=""
-OPTIONS+=	${option:U} ${${option}_OPTION}
-_${option}=	${TRUE}
-.endif
-.endfor
-
 # Standard depends
-_ALL_DEPENDS=	cairo dbm jpeg nspr nss png xft zip
+_ALL_DEPENDS=	cairo dbm event ffi hunspell jpeg nspr nss png sqlite vpx zip
 
-cairo_LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
-cairo_MOZ_OPTIONS=	--enable-system-cairo
-cairo_EXTRACT_AFTER_ARGS=	--exclude mozilla/gfx/cairo
+cairo_LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo
+cairo_MOZ_OPTIONS=	--enable-system-cairo --enable-system-pixman
+cairo_EXTRACT_AFTER_ARGS=	--exclude mozilla*/gfx/cairo
 
-dbm_EXTRACT_AFTER_ARGS=		--exclude mozilla/dbm
+dbm_EXTRACT_AFTER_ARGS=		--exclude mozilla*/dbm
 
-jpeg_LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
+event_LIB_DEPENDS=	event-2.0:${PORTSDIR}/devel/libevent2
+event_MOZ_OPTIONS=	--with-system-libevent=${LOCALBASE}
+event_EXTRACT_AFTER_ARGS=	--exclude mozilla*/ipc/chromium/src/third_party/libevent
+
+ffi_LIB_DEPENDS=	ffi:${PORTSDIR}/devel/libffi
+ffi_MOZ_OPTIONS=	--enable-system-ffi
+ffi_EXTRACT_AFTER_ARGS=	--exclude mozilla*/js/src/ctypes/libffi
+
+hunspell_LIB_DEPENDS=	hunspell-1.3:${PORTSDIR}/textproc/hunspell
+hunspell_MOZ_OPTIONS=	--enable-system-hunspell
+
+jpeg_LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 jpeg_MOZ_OPTIONS=	--with-system-jpeg=${LOCALBASE}
-jpeg_EXTRACT_AFTER_ARGS=	--exclude mozilla/jpeg
+jpeg_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libjpeg
 
 nspr_LIB_DEPENDS=	nspr4:${PORTSDIR}/devel/nspr
 nspr_MOZ_OPTIONS=	--with-system-nspr
 
 nss_LIB_DEPENDS=	nss3:${PORTSDIR}/security/nss
-nss_EXTRACT_AFTER_ARGS=	--exclude mozilla/security/nss
 nss_MOZ_OPTIONS=	--with-system-nss
+#nss_EXTRACT_AFTER_ARGS=	--exclude mozilla*/security/nss
 nss_CPPFLAGS+=		-I${LOCALBASE}/include/nss -I${LOCALBASE}/include/nss/nss
 nss_LDFLAGS+=		-L${LOCALBASE}/lib/nss -Wl,-rpath,${PREFIX}/lib/${MOZ_RPATH}
 
-
 png_LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 png_MOZ_OPTIONS=	--with-system-png=${LOCALBASE}
+png_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libpng
 
-xft_LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
-zip_DEPENDS=		zip:${PORTSDIR}/archivers/zip
+sqlite_LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
+sqlite_MOZ_OPTIONS=	--enable-system-sqlite
+
+vpx_LIB_DEPENDS=	vpx:${PORTSDIR}/multimedia/libvpx
+vpx_MOZ_OPTIONS=	--with-system-libvpx
+#vpx_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libvpx
+
+zip_BUILD_DEPENDS=		zip:${PORTSDIR}/archivers/zip
+zip_RUN_DEPENDS=		${zip_BUILD_DEPENDS}
 
 .for use in ${USE_MOZILLA}
 ${use:S/-/_WITHOUT_/}=	${TRUE}
@@ -609,9 +603,9 @@ ${use:S/-/_WITHOUT_/}=	${TRUE}
 
 .for dep in ${_ALL_DEPENDS}
 .if !defined(_WITHOUT_${dep})
-BUILD_DEPENDS+=	${${dep}_DEPENDS}
+BUILD_DEPENDS+=	${${dep}_BUILD_DEPENDS}
 LIB_DEPENDS+=	${${dep}_LIB_DEPENDS}
-RUN_DEPENDS+=	${${dep}_DEPENDS}
+RUN_DEPENDS+=	${${dep}_RUN_DEPENDS}
 MOZ_OPTIONS+=	${${dep}_MOZ_OPTIONS}
 EXTRACT_AFTER_ARGS+=	${${dep}_EXTRACT_AFTER_ARGS}
 CPPFLAGS+=	${${dep}_CPPFLAGS}
@@ -619,12 +613,13 @@ LDFLAGS+=	${${dep}_LDFLAGS}
 .endif
 .endfor
 
-# Standard options from README
-MOZ_TOOLKIT?=	gtk2
-MOZ_OPTIONS+=	--enable-crypto 	\
-		--disable-tests 	\
+# Standard options
+MOZ_CHROME?=	omni
+MOZ_TOOLKIT?=	cairo-gtk2
+MOZ_OPTIONS+=	--disable-tests 	\
+		--enable-chrome-format=${MOZ_CHROME} \
 		--enable-default-toolkit=${MOZ_TOOLKIT} \
-		--enable-xft		\
+		--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
 		--with-pthreads
 # Configure options for install
 MOZ_OPTIONS+=	--x-includes=${LOCALBASE}/include \
@@ -634,53 +629,111 @@ MOZ_OPTIONS+=	--enable-extensions=default
 .else
 MOZ_OPTIONS+=	--enable-extensions=${MOZ_EXTENSIONS}
 .endif
-.if !defined(MOZ_GRAPHICS)
-MOZ_OPTIONS+=	--enable-image-decoders=default
-.else
-MOZ_OPTIONS+=	--enable-image-decoders=${MOZ_GRAPHICS}
-.endif
 .if !defined(MOZ_PROTOCOLS)
 MOZ_OPTIONS+=	--enable-necko-protocols=default
 .else
 MOZ_OPTIONS+=	--enable-necko-protocols=${MOZ_PROTOCOLS}
 .endif
 # others 
-MOZ_OPTIONS+=	--with-system-zlib=/usr		\
-		--with-gssapi=${KRB5_HOME}	\
+MOZ_OPTIONS+=	--with-system-zlib		\
+		--with-system-bz2		\
 		--disable-auto-deps		\
 		--disable-debug-symbols		\
-		--enable-chrome-format=jar	\
-		--disable-cpp-exceptions	\
-		--disable-cpp-rtti		\
 		--disable-glibtest		\
 		--disable-gtktest		\
 		--disable-freetypetest		\
-		--enable-double-buffer		\
-		--enable-mathml			\
 		--disable-installer		\
 		--disable-md			\
-		--disable-pedantic		\
-		--disable-bidi			\
-		--disable-xterm-updates		\
-		--disable-xprint		\
-		--enable-xinerama
+		--disable-necko-wifi		\
+		--disable-updater		\
+		--disable-pedantic
 MOZ_MK_OPTIONS+=	XP_UNIX=1		\
 			PERL=${PERL}
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
-MOZ_OPTIONS+=	--enable-optimize=${WITH_OPTIMIZE}
-CFLAGS:=	${CFLAGS} -O2 -fno-strict-aliasing ${EXTRA_CFLAGS}
-WITH_OPTIMIZE?=	-O2
-.else
-MOZ_OPTIONS+=	--disable-optimize
-CFLAGS:=	${CFLAGS} ${EXTRA_CFLAGS}
+.if ${CXXFLAGS:M-stdlib=libc++}
+LIBS+=		-lcxxrt
 .endif
 
-.if defined(WITH_SMB)
+.if ${PORT_OPTIONS:MQT4}
+MOZ_TOOLKIT=	cairo-qt
+USE_MOZILLA+=	-cairo # ports/169343
+.endif
+
+.if ${MOZ_TOOLKIT:Mcairo-qt}
+USE_GNOME+=	pango
+USE_QT4+=	moc_build gui network opengl
+MOZ_OPTIONS+=	--with-qtdir= # pkg-config
+MOZ_EXPORT+=	HOST_MOC="${MOC}" HOST_RCC="${FALSE}"
+.else # gtk2, cairo-gtk2
+USE_GNOME+=	gtk20
+.endif
+
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
+MOZ_EXPORT+=	MOZ_OPTIMIZE_FLAGS='"${CFLAGS:M-O*}"'
+MOZ_OPTIONS+=	--enable-optimize
+.else
+MOZ_OPTIONS+=	--disable-optimize
+.endif
+
+.if ${PORT_OPTIONS:MDBUS}
+LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+				notify.4:${PORTSDIR}/devel/libnotify \
+				startup-notification-1.0:${PORTSDIR}/x11/startup-notification
+MOZ_OPTIONS+=	--enable-startup-notification
+.else
+MOZ_OPTIONS+=	--disable-dbus --disable-libnotify
+.endif
+
+.if ${PORT_OPTIONS:MGSTREAMER}
+USE_GSTREAMER=	yes
+MOZ_OPTIONS+=	--enable-gstreamer
+.else
+MOZ_OPTIONS+=	--disable-gstreamer
+.endif
+
+.if ${PORT_OPTIONS:MGCONF}
+USE_GNOME+=		gconf2
+MOZ_OPTIONS+=	--enable-gconf
+.else
+MOZ_OPTIONS+=	--disable-gconf
+.endif
+
+.if ${PORT_OPTIONS:MGIO}
+MOZ_OPTIONS+=	--enable-gio
+.else
+MOZ_OPTIONS+=	--disable-gio
+.endif
+
+.if ${PORT_OPTIONS:MGNOMEUI}
+USE_GNOME+=		libgnomeui
+MOZ_OPTIONS+=	--enable-gnomeui
+.else
+MOZ_OPTIONS+=	--disable-gnomeui
+.endif
+
+.if ${PORT_OPTIONS:MGNOMEVFS2}
 USE_GNOME+=		gnomevfs2
 MOZ_OPTIONS+=	--enable-gnomevfs
 .else
 MOZ_OPTIONS+=	--disable-gnomevfs
+.endif
+
+.if ${PORT_OPTIONS:MLIBPROXY}
+LIB_DEPENDS+=	proxy:${PORTSDIR}/net/libproxy
+MOZ_OPTIONS+=	--enable-libproxy
+.else
+MOZ_OPTIONS+=	--disable-libproxy
+.endif
+
+.if ${PORT_OPTIONS:MALSA}
+LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
+MOZ_OPTIONS+=	--enable-alsa
+.endif
+
+.if ${PORT_OPTIONS:MPULSEAUDIO}
+LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+MOZ_OPTIONS+=	--enable-pulseaudio
 .endif
 
 .if !defined(STRIP) || ${STRIP} == ""
@@ -689,22 +742,14 @@ MOZ_OPTIONS+=	--disable-strip --disable-install-strip
 MOZ_OPTIONS+=	--enable-strip --enable-install-strip
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 MOZ_OPTIONS+=	--enable-debug
 WITH_LOGGING=	yes
 .else
 MOZ_OPTIONS+=	--disable-debug
 .endif
 
-.if defined(WITH_JAVA) && defined(_WITH_JAVA)
-USE_JAVA=	yes
-JAVA_VERSION+=	1.5+
-JAVA_OS+=	native
-CONFIGURE_ENV+=	JAVA_HOME="${JAVA_HOME}"
-MOZ_OPTIONS+=	--enable-javaxpcom
-.endif
-
-.if defined(WITH_LOGGING)
+.if ${PORT_OPTIONS:MLOGGING}
 MOZ_OPTIONS+=	--enable-logging
 .else
 MOZ_OPTIONS+=	--disable-logging
@@ -717,7 +762,6 @@ MOZ_SED_ARGS+=	-e's|@CPPFLAGS@|${CPPFLAGS}|g'		\
 		-e 's|@LOCALBASE@|${LOCALBASE}|g'	\
 		-e 's|@FAKEDIR@|${FAKEDIR}|g'		\
 		-e 's|@PERL@|${PERL5}|g'			\
-		-e 's|@KRB5_HOME@|${KRB5_HOME}|g'	\
 		-e 's|@MOZDIR@|${PREFIX}/lib/${MOZILLA}|g'	\
 		-e 's|%%PREFIX%%|${PREFIX}|g'		\
 		-e 's|%%CFLAGS%%|${CFLAGS}|g'		\
@@ -726,7 +770,6 @@ MOZ_SED_ARGS+=	-e's|@CPPFLAGS@|${CPPFLAGS}|g'		\
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|g'	\
 		-e 's|%%FAKEDIR%%|${FAKEDIR}|g'		\
 		-e 's|%%PERL%%|${PERL5}|g'		\
-		-e 's|%%KRB5_HOME%%|${KRB5_HOME}|g'	\
 		-e 's|%%MOZILLA%%|${MOZILLA}|g'		\
 		-e 's|%%MOZILLA_BIN%%|${MOZILLA_BIN}|g'	\
 		-e 's|%%MOZDIR%%|${PREFIX}/lib/${MOZILLA}|g'
@@ -735,6 +778,17 @@ MOZCONFIG_SED?= ${SED} ${MOZ_SED_ARGS}
 .if ${ARCH}=="sparc64"
 # Work around miscompilation/mislinkage of the sCanonicalVTable hacks.
 MOZ_OPTIONS+=	--disable-v1-string-abi
+.endif
+
+.if defined(OBJDIR_BUILD)
+CONFIGURE_SCRIPT=../configure
+
+MOZ_OBJDIR=		${WRKSRC}/obj-${CONFIGURE_TARGET}
+CONFIGURE_WRKSRC=${MOZ_OBJDIR}
+BUILD_WRKSRC=	${MOZ_OBJDIR}
+INSTALL_WRKSRC=	${MOZ_OBJDIR}
+.else
+MOZ_OBJDIR=		${WRKSRC}
 .endif
 
 .else # bsd.port.post.mk
@@ -772,37 +826,39 @@ gecko-post-patch:
 		s|"%FULL_NSPR_LIBS%"|`nspr-config --libs`|g' \
 			${MOZSRC}/build/unix/mozilla-config.in
 .endif
-	@${REINPLACE_CMD} -e 's|<iconv.h>|\"${LOCALBASE}/include/iconv.h\"|g' \
-		${WRKSRC}/configure
-.for subdir in config/system_wrappers nsprpub/config/system_wrappers js/src/config/system_wrappers_js
-	@${MKDIR} ${MOZSRC}/${subdir}
-	@${ECHO_CMD} "#pragma GCC system_header" >> ${MOZSRC}/${subdir}/iconv.h
-	@${ECHO_CMD} "#pragma GCC visibility push(default)" >> ${MOZSRC}/${subdir}/iconv.h
-	@${ECHO_CMD} "#include \"${LOCALBASE}/include/iconv.h\"" >> ${MOZSRC}/${subdir}/iconv.h
-	@${ECHO_CMD} "#pragma GCC visibility pop" >> ${MOZSRC}/${subdir}/iconv.h
-.endfor
 .for subdir in "" nsprpub js/src
 	@if [ -f ${MOZSRC}/${subdir}/config/system-headers ] ; then \
+		${ECHO_CMD} "cairo-qt.h" >> ${MOZSRC}/${subdir}/config/system-headers ; \
 		${ECHO_CMD} "fenv.h" >> ${MOZSRC}/${subdir}/config/system-headers ; \
+		${ECHO_CMD} "malloc_np.h" >> ${MOZSRC}/${subdir}/config/system-headers ; \
 		${ECHO_CMD} "pthread_np.h" >> ${MOZSRC}/${subdir}/config/system-headers ; \
+		${ECHO_CMD} "pulse/pulseaudio.h" >> ${MOZSRC}/${subdir}/config/system-headers ; \
+		${ECHO_CMD} "unwind.h" >> ${MOZSRC}/${subdir}/config/system-headers ; \
 	fi
 .endfor
-	@${REINPLACE_CMD} -e 's|%%MOZILLA%%|${MOZILLA}|g' \
-		${WRKSRC}/config/autoconf.mk.in
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g ; \
-		s|echo aout|echo elf|g ; s|/usr/X11R6|${LOCALBASE}|g' \
-		${MOZSRC}/security/coreconf/FreeBSD.mk \
-		${MOZSRC}/js/src/Makefile.in
-	@if [ -d ${WRKSRC}/directory/c-sdk ]; then \
-		${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
+	@for f in \
 			${WRKSRC}/directory/c-sdk/config/FreeBSD.mk \
-			${WRKSRC}/directory/c-sdk/configure ; \
+			${WRKSRC}/directory/c-sdk/configure \
+			${MOZSRC}/security/coreconf/FreeBSD.mk \
+			${MOZSRC}/js/src/Makefile.in \
+			${MOZSRC}/js/src/configure \
+			${MOZSRC}/configure \
+			${WRKSRC}/configure; do \
+		if [ -f $$f ] ; then \
+			${REINPLACE_CMD} -Ee 's|-lc_r|${PTHREAD_LIBS}|g ; \
+				s|-l?pthread|${PTHREAD_LIBS}|g ; \
+				s|echo aout|echo elf|g ; \
+				s|/usr/X11R6|${LOCALBASE}|g' \
+				$$f; \
+		fi; \
+	done
+	@if [ -f ${WRKSRC}/config/baseconfig.mk ] ; then \
+		${REINPLACE_CMD} -e 's|%%MOZILLA%%|${MOZILLA}|g' \
+			${WRKSRC}/config/baseconfig.mk; \
+	else \
+		${REINPLACE_CMD} -e 's|%%MOZILLA%%|${MOZILLA}|g' \
+			${WRKSRC}/config/autoconf.mk.in; \
 	fi
-	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g ; \
-		s|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|echo aout|echo elf|g ; \
-		s|/usr/X11R6|${LOCALBASE}|g' \
-		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g' \
 			${MOZSRC}/build/unix/run-mozilla.sh
@@ -824,16 +880,17 @@ gecko-moz-pis-patch:
 	@${MOZCONFIG_SED} < ${FILESDIR}/${moz} > ${WRKDIR}/${moz}
 .endfor
 
+pre-configure: gecko-pre-configure
+
+gecko-pre-configure:
+.if defined(OBJDIR_BUILD)
+	${MKDIR} ${MOZ_OBJDIR}
+.endif
+
 post-configure: gecko-post-configure
 
 gecko-post-configure:
 	@${ECHO_CMD} "#define JNIIMPORT" >> ${MOZSRC}/mozilla-config.h
-
-post-build: gecko-post-build
-
-gecko-post-build:
-	@${REINPLACE_CMD} -e "s|\(Libs:.*\)\($$\)|\1 -Wl,-rpath,${PREFIX}/lib/${MOZ_RPATH}\2|" \
-		${MOZSRC}/build/unix/*.pc || ${TRUE}
 
 pre-install: gecko-moz-pis-pre-install gecko-pre-install port-pre-install gecko-create-plist
 
@@ -846,23 +903,25 @@ gecko-pre-install:
 .if !defined(NOGECKO_PLIST)
 	@${RM} -rf ${FAKEDIR} ${PLIST} ${PLISTD} ${PLISTF}
 	@${TOUCH} -f ${PLIST} ${PLISTD} ${PLISTF}
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+	@cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} prefix=${FAKEDIR} ${INSTALL_TARGET}
 .if defined(MOZILLA_SUFX) && ${MOZILLA_SUFX}!="none"
-	${MV} ${FAKEDIR}/bin/${MOZILLA:S/${MOZILLA_SUFX}//} ${FAKEDIR}/bin/${MOZILLA}
-.if exists(${FAKEDIR}/bin/${MOZILLA:S/${MOZILLA_SUFX}//}-config)
-	${MV} ${FAKEDIR}/bin/${MOZILLA:S/${MOZILLA_SUFX}//}-config ${FAKEDIR}/bin/${MOZILLA}-config
+	${MV} ${FAKEDIR}/bin/${MOZILLA_EXEC_NAME:S/${MOZILLA_SUFX}//} ${FAKEDIR}/bin/${MOZILLA}
+.if exists(${FAKEDIR}/bin/${MOZILLA_EXEC_NAME:S/${MOZILLA_SUFX}//}-config)
+	${MV} ${FAKEDIR}/bin/${MOZILLA_EXEC_NAME:S/${MOZILLA_SUFX}//}-config ${FAKEDIR}/bin/${MOZILLA}-config
 .endif
 .for pc in ${MOZ_PKGCONFIG_FILES:S|${MOZILLA_SUFX}||}
 	${SED} -e 's|Requires: ${MOZILLA:S/${MOZILLA_SUFX}//}|Requires: ${MOZILLA}|' \
 	${FAKEDIR}/lib/pkgconfig/${pc}.pc > ${FAKEDIR}/lib/pkgconfig/${pc:S/${MOZILLA:S,${MOZILLA_SUFX},,}/${MOZILLA}/}.pc
 .endfor
-	@${REINPLACE_CMD} -e 's|${MOZILLA}-bin|${MOZILLA:S/${MOZILLA_SUFX}//}|; \
+	@${REINPLACE_CMD} -e 's|${MOZILLA_BIN}|${MOZILLA:S/${MOZILLA_SUFX}//}|; \
 		s|$${progbase}-bin|${MOZILLA:S/${MOZILLA_SUFX}//}-bin|' \
-		-i '' $$(${REALPATH} ${FAKEDIR}/bin/${MOZILLA_EXEC_NAME}*)
-.endif
+		-e 's|${FAKEDIR}|${PREFIX}|g' \
+		-i '' $$(${REALPATH} ${FAKEDIR}/bin/${MOZILLA}*)
+.else
 	@${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g' \
 		-i '' $$(${REALPATH} ${FAKEDIR}/bin/${MOZILLA_EXEC_NAME}*)
+.endif
 .endif
 
 gecko-create-plist:
