@@ -52,6 +52,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cdc4ff0e-d736-11e1-8221-e0cb4e266481">
+    <topic>p5-RT-Authen-ExternalAuth -- privilege escalation</topic>
+    <affects>
+      <package>
+	<name>p5-RT-Authen-ExternalAuth</name>
+	<range><lt>0.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The RT development team reports:</p>
+	<blockquote cite="http://blog.bestpractical.com/2012/07/security-vulnerabilities-in-three-commonly-deployed-rt-extensions.html">
+	  <p>RT::Authen::ExternalAuth 0.10 and below (for all versions
+	  of RT) are vulnerable to an escalation of privilege attack
+	  where the URL of a RSS feed of the user can be used to
+	  acquire a fully logged-in session as that user.
+	  CVE-2012-2770 has been assigned to this vulnerability.</p>
+	  <p>Users of RT 3.8.2 and above should upgrade to
+	  RT::Authen::ExternalAuth 0.11, which resolves this
+	  vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://blog.bestpractical.com/2012/07/security-vulnerabilities-in-three-commonly-deployed-rt-extensions.html</url>
+      <cvename>CVE-2012-2770</cvename>
+    </references>
+    <dates>
+      <discovery>2012-07-25</discovery>
+      <entry>2012-07-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c7fa3618-d5ff-11e1-90a2-000c299b62e1">
     <topic>isc-dhcp -- multiple vulnerabilities</topic>
     <affects>
