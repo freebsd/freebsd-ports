@@ -14,7 +14,7 @@ MASTER_SITES=	http://fkurz.net/ham/ebook2cw/ \
 MASTER_SITE_SUBDIR=	db
 
 MAINTAINER=	db@FreeBSD.org
-COMMENT=	Convert text files into cw as a mp3 file
+COMMENT=	Convert text files into cw as an mp3 or ogg file
 
 LIB_DEPENDS=	mp3lame:${PORTSDIR}/audio/lame \
 		vorbis:${PORTSDIR}/audio/libvorbis

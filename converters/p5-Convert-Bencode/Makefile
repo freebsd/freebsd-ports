@@ -13,8 +13,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mor@WhiteLuna.com
-COMMENT=	This module provides encode and decode bencoded strings respectively
-
+COMMENT=	Module to encode and decode bencoded strings
 BUILD_DEPENDS=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	yes
