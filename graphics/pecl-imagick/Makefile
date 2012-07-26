@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imagick
-DISTVERSION=	3.1.0RC1
+DISTVERSION=	3.1.0RC2
 CATEGORIES=	graphics
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
