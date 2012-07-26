@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	volta
-DISTVERSION=	0.1.1
+DISTVERSION=	0.2.0
 CATEGORIES=	www
 MASTER_SITES=	http://dl.dropbox.com/u/7234177/Releases/ \
 		http://projects.martini.nu/volta/chrome/site/
