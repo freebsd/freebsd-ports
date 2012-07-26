@@ -314,7 +314,7 @@ post-build:
 .endif
 
 post-install: strip-files install-config-files install-doc-files display-message
-	${MKDIR} /var/agentx
+	${MKDIR} /var/agentx ${PREFIX}/etc/snmp
 
 strip-files:
 	cd ${PREFIX}/bin; ${STRIP_CMD} ${BIN_FILES}
