@@ -83,9 +83,7 @@ CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}" \
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
 PKGCONFIGDIR_REL?=	${PKGCONFIGDIR:S|^${PREFIX}/||}
 
-PKG_CONFIG?=		${LOCALBASE}/bin/pkg-config
-CONFIGURE_ENV+=		PKG_CONFIG="${PKG_CONFIG}"
-BUILD_DEPENDS+=		${PKG_CONFIG}:${PORTSDIR}/devel/pkg-config
+USE_PKGCONFIG=		yes
 # Let process generate meaningful backtrace on a core dump
 LIB_DEPENDS+=		execinfo.1:${PORTSDIR}/devel/libexecinfo
 # tdb

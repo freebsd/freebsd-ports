@@ -16,14 +16,13 @@ COMMENT=	Codec for karaoke and text encapsulation for Ogg
 
 LICENSE=	BSD
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
 		png15:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	yes
 
 CFLAGS+=	"-I${LOCALBASE}/include"
 

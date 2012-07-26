@@ -16,9 +16,8 @@ EXTRACT_SUFX?=	.zip
 MAINTAINER?=	kamikaze@bsdforen.de
 COMMENT?=	Cleaned-up and enhanced version of Quake 3
 
-BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
-
 USE_GMAKE=	yes
+USE_PKGCONFIG=	yes
 
 .if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX:M*-server}
 # Server config

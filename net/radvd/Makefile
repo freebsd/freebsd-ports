@@ -13,12 +13,12 @@ MASTER_SITES=	http://www.litech.org/radvd/dist/
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A Linux/BSD IPv6 router advertisement daemon
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	daemon.0:${PORTSDIR}/devel/libdaemon
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name=
 USE_GMAKE=	yes
+USE_PKGCONFIG=	yes
 USE_RC_SUBR=	radvd
 
 MAN5=	radvd.conf.5

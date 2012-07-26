@@ -13,12 +13,11 @@ MASTER_SITES=	http://lscube.org/files/downloads/bufferpool/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bufferpool - the memory management library Feng and Felix depend upon
 
-BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
-
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	yes
 USE_GNOME=	gnomehack
 
 .include <bsd.port.mk>

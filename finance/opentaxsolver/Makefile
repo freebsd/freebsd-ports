@@ -24,7 +24,7 @@ UPPORTNAME=	OpenTaxSolver
 .if !defined(WITHOUT_X11)
 USE_GL=		yes
 USE_XORG=	xmu xext x11
-BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
+USE_PKGCONFIG=	yes
 CPPFLAGS+=	$$(pkg-config --cflags-only-I glu xext xmu)
 LDFLAGS+=	$$(pkg-config --libs-only-L glu xext xmu)
 SUB_LIST+=	X11=

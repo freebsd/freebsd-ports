@@ -17,7 +17,6 @@ MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	XML Security Library
 
-RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 OPTIONS_DEFINE=	GNUTLS NSS
@@ -28,6 +27,7 @@ USE_OPENSSL=	yes
 USE_GNOME=	gnomehack lthack libxslt
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	yes
 
 MAN1=	xmlsec1.1 xmlsec1-config.1
 CFLAGS+=	-I${LOCALBASE}/include

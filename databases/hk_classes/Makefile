@@ -12,8 +12,7 @@ MASTER_SITES=	SF/hk-classes/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ Library for rapid development of database applications
 
-BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone \
-		pkg-config>0:${PORTSDIR}/devel/pkg-config
+BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone
 LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
@@ -21,6 +20,7 @@ USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
+USE_PKGCONFIG=	yes
 CXXFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib -largp -lintl
 USE_AUTOTOOLS=	libtool

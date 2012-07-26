@@ -17,8 +17,7 @@ COMMENT=	Emulator for Commodore C64, C128, VIC20, PET, and CBM-II
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
-		pkg-config:${PORTSDIR}/devel/pkg-config
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		gif:${PORTSDIR}/graphics/giflib \
 		mp3lame:${PORTSDIR}/audio/lame
@@ -32,6 +31,7 @@ LICENSE=	GPLv2
 USE_XORG=	xpm ice sm xext xv xt x11 xmu
 USE_XORG+=	xrender xinerama xi xrandr xcursor xcomposite xdamage xfixes
 USE_GMAKE=	yes
+USE_PKGCONFIG=	yes
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	MAKEINFOFLAGS="--no-split"
 
@@ -55,8 +55,6 @@ USE_XORG+=	xaw
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
-PKG_CONFIG?=	${LOCALBASE}/bin/pkg-config
-CONFIGURE_ENV+=	PKG_CONFIG="${LOCALBASE}/bin/pkg-config"
 CONFIGURE_ARGS+=	--enable-fullscreen --enable-ipv6 --disable-dependency-tracking
 MAN1=		vice.1 c1541.1 petcat.1
 MLINKS=		vice.1 x64.1 \

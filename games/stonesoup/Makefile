@@ -71,7 +71,7 @@ CONFLICTS+=	${PORTNAME}-[0-9]*
 MAKE_ARGS+=	TILES=y
 PLIST_SUB+=	SDL=""
 PKGNAMESUFFIX=	-sdl
-BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
+USE_PKGCONFIG=	yes
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2
 USE_SDL=	sdl image

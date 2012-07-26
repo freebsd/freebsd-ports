@@ -71,7 +71,7 @@ CFLAGS+=		-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-xmpp --enable-ssl=gnutls \
 			--with-libgcrypt-prefix=${LOCALBASE}
 CONFIGURE_ENV+=		LIBGNUTLS_CONFIG="${LOCALBASE}/bin/pkg-config gnutls"
-BUILD_DEPENDS+=		pkg-config:${PORTSDIR}/devel/pkg-config
+USE_PKGCONFIG=		yes
 LIB_DEPENDS+=		iksemel:${PORTSDIR}/textproc/iksemel \
 			gnutls:${PORTSDIR}/security/gnutls \
 			gcrypt:${PORTSDIR}/security/libgcrypt \

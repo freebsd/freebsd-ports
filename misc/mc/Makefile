@@ -20,10 +20,9 @@ COMMENT=	Midnight Commander, a free Norton Commander Clone
 
 CONFLICTS=	mc-light-4*
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
-
 USE_GMAKE=	yes
 USE_GNOME=	glib20
+USE_PKGCONFIG=	yes
 USE_PERL5=	yes
 USE_XZ=		yes
 GNU_CONFIGURE=	yes

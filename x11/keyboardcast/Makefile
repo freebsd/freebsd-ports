@@ -14,10 +14,9 @@ MASTER_SITES=	http://desrt.mcmaster.ca/code/keyboardcast/
 MAINTAINER=	eimar.koort@gmail.com
 COMMENT=	Broadcast keystrokes to multiple X windows for Gnome2
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
-
 USE_XORG=	xmu
 USE_GNOME=	libwnck libglade2 gtk20
+USE_PKGCONFIG=	yes
 INSTALLS_ICONS=	yes
 
 post-install:

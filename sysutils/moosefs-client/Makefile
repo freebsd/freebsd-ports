@@ -16,9 +16,10 @@ COMMENT=	Moosefs client tools
 
 DISTINFO_FILE=	${.CURDIR}/../moosefs-master/distinfo
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/pkg-config:${PORTSDIR}/devel/pkg-config \
-		${LOCALBASE}/include/fuse.h:${PORTSDIR}/sysutils/fusefs-libs
+BUILD_DEPENDS=	${LOCALBASE}/include/fuse.h:${PORTSDIR}/sysutils/fusefs-libs
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
+
+USE_PKGCONFIG=	yes
 
 MAN1=		mfstools.1 mfscheckfile.1 mfsdirinfo.1 mfsfileinfo.1 \
 		mfsfilerepair.1 mfsgetgoal.1 mfsgettrashtime.1 \

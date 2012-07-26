@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120726:
+  AFFECTS: users of devel/pkg-config
+  AUTHOR: bapt@FreeBSD.org
+
+  devel/pkg-config has been replaced by devel/pkgconf
+
+  # portmaster -o devel/pkg-config devel/pkgconf
+  or
+  # portupgrade -o devel/pkg-config devel/pkgconf
+
 20120725:
   AFFECTS: users of chinese/fcitx
   AUTHOR: lichray@gmail.com

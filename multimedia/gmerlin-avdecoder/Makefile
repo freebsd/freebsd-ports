@@ -16,8 +16,7 @@ COMMENT=	General purpose media decoding library
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/linux/dvb/frontend.h:${PORTSDIR}/multimedia/v4l_compat \
-		pkg-config>0:${PORTSDIR}/devel/pkg-config
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/dvb/frontend.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	gavl.1:${PORTSDIR}/multimedia/gavl
 
 OPTIONS_DEFINE=	A52 CDIO DCA DVDREAD FAAD FFMPEG FLAC GMERLIN MAD \
@@ -35,6 +34,7 @@ USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cpuflags=none --without-doxygen
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

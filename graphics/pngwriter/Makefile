@@ -15,9 +15,10 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ library for creating PNG images
 
-BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
+
+USE_PKGCONFIG=	yes
 
 BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 

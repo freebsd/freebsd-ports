@@ -21,7 +21,6 @@ COMMENT=		An environment for rapid engineering and scientific processing
 
 LIB_DEPENDS=		lapack.4:${PORTSDIR}/math/lapack	\
 			pcre.1:${PORTSDIR}/devel/pcre
-BUILD_DEPENDS=		pkg-config:${PORTSDIR}/devel/pkg-config
 
 LICENSE=		GPLv2
 
@@ -35,6 +34,7 @@ USE_FORTRAN=		yes
 FFLAGS+=		-O2
 
 USE_GL=			yes
+USE_PKGCONFIG=		yes
 USE_CMAKE=		yes
 USE_QT4=		gui network opengl moc_build rcc_build uic_build \
 			qmake_build xml svg

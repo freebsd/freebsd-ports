@@ -17,12 +17,11 @@ COMMENT=	Disk Based Hashtables
 
 CONFLICTS=	dbh-[2-9]*
 
-BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
-
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	yes
 
 LATEST_LINK=	dbh10
 

@@ -3070,7 +3070,7 @@
     SUBDIR += pipestatus
     SUBDIR += pire
     SUBDIR += pit
-    SUBDIR += pkg-config
+    SUBDIR += pkgconf
     SUBDIR += plan9port
     SUBDIR += pmd
     SUBDIR += pmk

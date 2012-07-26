@@ -15,7 +15,6 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for reading and writing files in FITS data format
 
-BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	f2c:${PORTSDIR}/lang/f2c
 
 OPTIONS_DEFINE=	DOCS
@@ -26,6 +25,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_prog_FC="f2c"
 ALL_TARGET=	shared
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	yes
 
 .include <bsd.port.options.mk>
 

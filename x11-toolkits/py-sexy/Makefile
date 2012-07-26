@@ -16,12 +16,12 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libsexy bindings for Python
 
-BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	sexy.2:${PORTSDIR}/x11-toolkits/libsexy
 
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
+USE_PKGCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

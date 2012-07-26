@@ -17,7 +17,7 @@ COMMENT=	Replace file copies using hardlinks
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
+USE_PKGCONFIG=	yes
 
 MAN1=		hardlink.1
 PLIST_FILES=	bin/hardlink

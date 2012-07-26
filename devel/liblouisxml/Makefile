@@ -11,13 +11,13 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Library Provide Complete Braille Transcription Services
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	louis.2:${PORTSDIR}/devel/liblouis \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	yes
 
 INFO=		liblouisxml-guide
 MAN1=		msword2brl.1 xml2brl.1

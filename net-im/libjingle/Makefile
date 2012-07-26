@@ -14,7 +14,6 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Google Talk's implementation of Jingle and Jingle-Audio
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		ilbc.0:${PORTSDIR}/net/ilbc \
 		ortp.8:${PORTSDIR}/net/linphone-base \
@@ -27,6 +26,7 @@ USE_GNOME=	glib20
 USE_OPENSSL=	yes
 USE_AUTOTOOLS=	libtool
 USE_DOS2UNIX=	README
+USE_PKGCONFIG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ilbc=${LOCALBASE} \

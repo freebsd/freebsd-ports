@@ -16,10 +16,9 @@ MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image processing tools
 
-BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
-
 USE_XZ=		yes
 USE_PERL5=	yes
+USE_PKGCONFIF=	yes
 USE_GNOME=	gnomehack
 USE_AUTOTOOLS=	libltdl
 # For some reason, using our libtool breaks the build into pieces:

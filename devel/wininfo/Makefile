@@ -14,12 +14,11 @@ MASTER_SITES=	http://www.freedesktop.org/software/wininfo/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A window information utility
 
-BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
-
 USE_XORG=	xext xrender xinerama xrandr xi xfixes xcursor \
 		xcomposite x11 xres
 USE_GNOME=	gtk20 gnomeprefix
 GNU_CONFIGURE=	yes
+USE_PKGCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

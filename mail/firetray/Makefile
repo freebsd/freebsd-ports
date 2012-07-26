@@ -15,13 +15,12 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 MAINTAINER=	avg@icyb.net.ua
 COMMENT=	System tray add-on for firefox, thunderbird, seamonkey, etc
 
-PATCH_DEPENDS=	nspr>=4.8:${PORTSDIR}/devel/nspr \
-		pkg-config:${PORTSDIR}/devel/pkg-config
+PATCH_DEPENDS=	nspr>=4.8:${PORTSDIR}/devel/nspr
 
 USE_ZIP=	yes
 USE_GECKO=	libxul
 USE_SCONS=	yes
-USE_GNOME=	pkgconfig
+USE_PKGCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}

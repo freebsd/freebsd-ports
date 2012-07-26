@@ -19,7 +19,6 @@ COMMENT=	A PDF generation library
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
@@ -31,6 +30,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--enable-berkeley-db
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}

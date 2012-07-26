@@ -15,10 +15,9 @@ COMMENT=	A utility C++ class library for daemons, clients, servers, and more
 
 LICENSE=	LGPL20
 
-BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
-
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
+USE_PKGCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	PTHREADINCLUDES="${PTHREAD_CFLAGS}" \
 		PTHREADLIB="${PTHREAD_LIBS}"

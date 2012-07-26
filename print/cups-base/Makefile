@@ -133,10 +133,9 @@ CONFIGURE_ARGS+=	--with-printcap=${PREFIX}/etc/printcap
  
 .if ${PORT_OPTIONS:MGNUTLS}
 CONFIGURE_ARGS+=	--disable-openssl --enable-gnutls
-CONFIGURE_ENV+=		PKGCONFIG="${LOCALBASE}/bin/pkg-config"
 LIB_DEPENDS+=		gcrypt.18:${PORTSDIR}/security/libgcrypt
 LIB_DEPENDS+=		gnutls.47:${PORTSDIR}/security/gnutls
-BUILD_DEPENDS+=		pkg-config:${PORTSDIR}/devel/pkg-config
+USE_PKGCONFIG=	yes
 .else
 CONFIGURE_ARGS+=	--disable-gnutls --enable-openssl
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"

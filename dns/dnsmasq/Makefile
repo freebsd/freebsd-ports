@@ -46,7 +46,7 @@ CFLAGS+=	-DNO_IPV6
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
+USE_PKGCONFIG=	yes
 LIB_DEPENDS+=	idn:${PORTSDIR}/dns/libidn
 PLIST_SUB+=	NLS=""
 ALL_TARGET=	all-i18n
@@ -62,7 +62,7 @@ LIB_DEPENDS+=	idn:${PORTSDIR}/dns/libidn
 
 .if ${PORT_OPTIONS:MDBUS}
 LIB_DEPENDS+=	dbus-1:${PORTSDIR}/devel/dbus
-BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
+USE_PKGCONFIG=	yes
 CFLAGS+=	-DHAVE_DBUS
 .endif
 

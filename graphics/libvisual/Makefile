@@ -17,11 +17,10 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abstraction library that sits between apps and visual plugin
 
-BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
-
 USE_GNOME=	gnomehack
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 

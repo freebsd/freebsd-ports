@@ -14,7 +14,6 @@ MASTER_SITES=	http://www.autistici.org/bakunin/libmrss/
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A C library for parsing, writing, and creating RSS
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		nxml.18:${PORTSDIR}/textproc/libnxml
 
@@ -25,6 +24,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	yes
 WANT_GNOME=	yes
 
 pre-patch:

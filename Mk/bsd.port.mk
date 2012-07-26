@@ -530,6 +530,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # USE_NCURSES	- If set, this port relies on the ncurses package.
 #
+# USE_PKGCONFIG	- Implies that the port uses pkg-config in one way or another:
+#		  'build', 'run', 'both', implying build,
+#		  runtime, and both build/run dependencies
+#
 # Conflict checking.  Use if your port cannot be installed at the same time as
 # another package.
 #
@@ -1638,6 +1642,23 @@ EXTRACT_DEPENDS+=	unmakeself:${PORTSDIR}/archivers/unmakeself
 .if defined(USE_GMAKE)
 BUILD_DEPENDS+=		gmake:${PORTSDIR}/devel/gmake
 CONFIGURE_ENV+=	MAKE=${GMAKE}
+.endif
+.if defined(USE_PKGCONFIG)
+.if ${USE_PKGCONFIG:L} == yes
+USE_PKGCONFIG=	build
+.endif
+.if ${USE_PKGCONFIG:L} == run
+RUN_DEPENDS+=	pkgconf:${PORTSDIR}/devel/pkgconf
+.endif
+.if ${USE_PKGCONFIG:L} == build
+BUILD_DEPENDS+=	pkgconf:${PORTSDIR}/devel/pkgconf
+CONFIGURE_ENV+=	PKG_CONFIG=pkgconf
+.endif
+.if ${USE_PKGCONFIG:L} == both
+RUN_DEPENDS+=	pkgconf:${PORTSDIR}/devel/pkgconf
+BUILD_DEPENDS+=	pkgconf:${PORTSDIR}/devel/pkgconf
+CONFIGURE_ENV+=	PKG_CONFIG=pkgconf
+.endif
 .endif
 
 .if defined(USE_GCC) || defined(USE_FORTRAN)

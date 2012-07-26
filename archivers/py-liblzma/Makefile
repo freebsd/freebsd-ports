@@ -16,8 +16,7 @@ DISTNAME=	${PYDISTUTILS_PKGNAME}-${PORTVERSION}
 MAINTAINER=	naylor.b.david@gmail.com
 COMMENT=	Python binding for the LZMA compression library
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
-
+USE_PKGCONFIG=	yes
 USE_BZIP2=	yes
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=yes

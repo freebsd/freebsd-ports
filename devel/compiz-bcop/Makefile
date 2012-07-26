@@ -13,7 +13,6 @@ MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Code generator for Compiz Fusion Plugins
 
-BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/bin/getopt:${PORTSDIR}/misc/getopt
 
@@ -21,6 +20,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
 USE_GNOME=	libxslt
+USE_PKGCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} \

@@ -90,6 +90,11 @@ post-patch:
 	${REINPLACE_CMD} -Ee '/^install-info: /s/ install-info-am$$//' \
 	-e '/^install-data-am:/s/ install-info-am$$//' ${WRKSRC}/doc/Makefile.in
 .endif
+	${REINPLACE_CMD} -e "s/\"lua/\"lua-${LUA_VER}/g" \
+		-e "s/\"idn/\"libidn/g" \
+		-e "s/\"pcre/\"libpcre/g" \
+		-e "s/\"botan/\"botan-1.8/g" \
+		${WRKSRC}/configure
 
 post-install:
 	${MKDIR} ${PREFIX}/share/zsh/site-functions

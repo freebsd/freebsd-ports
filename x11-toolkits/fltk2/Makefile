@@ -81,7 +81,7 @@ CONFIGURE_ARGS+=	--enable-cairo
 LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
 # XXX:
 # FLTK2's configure check currently depends on pkg-config being available...
-BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
+USE_PKGCONFIG=	yes
 .else
 CONFIGURE_ARGS+=	--disable-cairo
 .endif

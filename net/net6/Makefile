@@ -15,7 +15,6 @@ COMMENT=	Network access framework for IPv4/IPv6
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 		gnutls.47:${PORTSDIR}/security/gnutls
 
@@ -23,6 +22,7 @@ USE_GNOME=	gnomehack
 USE_AUTOTOOLS=	libtool
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	yes
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls

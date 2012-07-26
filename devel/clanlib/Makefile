@@ -18,7 +18,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform game SDK
 
-BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
 		mikmod:${PORTSDIR}/audio/libmikmod \
@@ -36,6 +35,7 @@ USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 USE_SDL=	gfx
 USE_GL=		yes
+USE_PKGCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 

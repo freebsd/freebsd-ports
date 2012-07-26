@@ -15,11 +15,10 @@ MASTER_SITES=	http://www.loria.fr/~rougier/pub/Software/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Funny pets to follow your mouse pointer
 
-BUILD_DEPENDS=	pkg-config>0:${PORTSDIR}/devel/pkg-config
-
 WRKSRC=		${WRKDIR}/pet-${PORTVERSION}
 
 USE_GNOME=	gtk20
+USE_PKGCONFIG=	yes
 
 SUB_FILES=	pkg-message
 

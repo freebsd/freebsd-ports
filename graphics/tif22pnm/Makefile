@@ -18,7 +18,8 @@ COMMENT=	Converts TIFF- sampled images to PNM image
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
+
+USE_PKGCONFIG=	yes
 
 PROJECTHOST=	sam2p
 LICENSE=	GPLv2
