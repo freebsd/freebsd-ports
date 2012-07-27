@@ -347,6 +347,7 @@
     SUBDIR += libtnl
     SUBDIR += libtrace
     SUBDIR += libunp
+    SUBDIR += libutp
     SUBDIR += libvncserver
     SUBDIR += liferea
     SUBDIR += linc
