@@ -19,13 +19,14 @@ COMMENT=	Visually-appealing notification daemon for Xfce
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		notify.4:${PORTSDIR}/devel/libnotify
+		notify:${PORTSDIR}/devel/libnotify
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 gnomehack intltool intlhack desktopfileutils pkgconfig
+USE_GNOME=	gtk20 gnomehack intltool intlhack desktopfileutils
+USE_PKGCONFIG=	build
 USE_XFCE=	configenv libexo libmenu libutil xfconf
 INSTALLS_ICONS=	yes
 USE_XORG=	x11
