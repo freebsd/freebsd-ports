@@ -21,6 +21,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 
 USE_GNOME=	gnomehack glib20 gconf2

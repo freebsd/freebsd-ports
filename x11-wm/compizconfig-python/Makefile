@@ -23,6 +23,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	-2.7
+USE_PKGCONFIG=	build
 USE_GNOME=	gnomehack glib20
 USE_AUTOTOOLS=	libtool
 

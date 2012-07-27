@@ -26,6 +26,7 @@ USE_GNOME=	gnomehack gtk20 libwnck pango
 USE_XORG=	xrender
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	libtool
 
 MAN1=		emerald.1 \
