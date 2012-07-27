@@ -18,16 +18,16 @@ you update your ports collection, before attempting any port upgrades.
 20120725:
   AFFECTS: users of chinese/fcitx
   AUTHOR: lichray@gmail.com
-  
+
   The textproc/fcitx-keyboard port is merged into chinese/fcitx.
   Before updating, be sure to
-  
+
   # pkg_delete -f fcitx-keyboard-\*
-  
+
   And make sure you have at least one keyboard layout based input method
   enabled in fcitx-configtool, to keep the activation/deactivation of IM
   panel working.
-  
+
   And, since chinese/fcitx-sunpinyin depends on an update to
   chinese/sunpinyin
 
@@ -239,7 +239,7 @@ you update your ports collection, before attempting any port upgrades.
   apache startup script. The "reload" subcommand now sends a SIGHUP to the
   process and triggers cycling of log files. The new command "graceful"
   performs a graceful restart (similiar to former "reload") and "gracefulstop"
-  performs a graceful stop. The "check" command has been replaced with 
+  performs a graceful stop. The "check" command has been replaced with
   the "configtest" command.
 
 20120615:
@@ -487,7 +487,7 @@ you update your ports collection, before attempting any port upgrades.
   additional manual migration steps which can be found in the online
   documentation.
 
-  http://sitaramc.github.com/gitolite/install.html#migr                       
+  http://sitaramc.github.com/gitolite/install.html#migr
 
   Current users wishing to continue using gitolite 2.x should run:
 
@@ -783,7 +783,7 @@ you update your ports collection, before attempting any port upgrades.
   Postfix 2.9.0 contains several major changes, some of which could
   result in incompatible or unexpected behavior.  Regardless of the
   version from which you are upgrading, please carefully review the
-  RELEASE_NOTES before proceeding. 
+  RELEASE_NOTES before proceeding.
 
 20120126:
   AFFECTS: users of ftp/proftpd and ftp/proftpd-mysql
