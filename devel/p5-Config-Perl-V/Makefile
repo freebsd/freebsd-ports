@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	swills@FreeBSD.org
-COMMENT=	Structured data retrieval of Perl -V output
+COMMENT=	Structured data retrieval of perl -V output
 
 BUILD_DEPENDS=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
 RUN_DEPENDS:=	${BUILD_DEPENDS}
