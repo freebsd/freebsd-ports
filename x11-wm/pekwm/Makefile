@@ -22,6 +22,7 @@ USE_XORG=	xft xpm x11
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_BZIP2=	yes
+USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-shape --enable-xinerama --enable-xrandr \
 		--enable-xft --enable-image-xpm --enable-image-jpeg \
@@ -34,12 +35,8 @@ MANCOMPRESSED=	no
 
 # replace calls to obsolete libpng12 functions
 post-extract:
-	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|; \
+	@${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|; \
 			s|png_check_sig(sig, PImageLoaderPng::PNG_SIG_BYTES) !=|png_sig_cmp(sig, 0, PImageLoaderPng::PNG_SIG_BYTES) ==|' \
 		${WRKSRC}/src/PImageLoaderPng.cc
-
-post-patch:
-	${REINPLACE_CMD} -e 's|libpng12|libpng14|g' \
-		${WRKSRC}/configure
 
 .include <bsd.port.mk>
