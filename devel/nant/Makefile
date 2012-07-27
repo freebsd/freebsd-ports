@@ -17,6 +17,8 @@ COMMENT=	A .NET build tool inspired by Ant
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 
+BROKEN=		fails to build
+
 DATADIR=	${PREFIX}/share/NAnt
 DOCSDIR=	${PREFIX}/share/doc/NAnt
 INSTALL_TARGET=	install prefix=${PREFIX}
@@ -24,12 +26,6 @@ MAKE_ENV=	MONO_PATH=${WRKSRC}/lib TARGET=mono-4.0
 MAKE_JOBS_UNSAFE=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		fails to build
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|MCS=mcs|MCS=dmcs|' ${WRKSRC}/Makefile
@@ -44,4 +40,4 @@ post-install:
 	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR}/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
