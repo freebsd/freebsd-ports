@@ -19,7 +19,7 @@ LIB_DEPENDS=	binio.1:${PORTSDIR}/devel/libbinio
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	pkgconfig
+USE_PKGCONFIG=	build
 USE_CSTD=	gnu89
 
 MAKE_JOBS_SAFE=	yes
