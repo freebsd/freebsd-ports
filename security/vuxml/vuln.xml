@@ -56,6 +56,7 @@ Note:  Please add new entries to the beginning of this file.
     <topic>bugzilla -- multiple vulnerabilities</topic>
     <affects>
       <package>
+	<name>bugzilla</name>
 	<range><ge>3.6.0</ge><lt>3.6.10</lt></range>
 	<range><ge>4.0.0</ge><lt>4.0.7</lt></range>
 	<range><ge>4.2.0</ge><lt>4.2.2</lt></range>
