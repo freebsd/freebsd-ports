@@ -23,6 +23,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 USE_GNOME=	gnomehack gtk20 libxml2
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
+USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 
 MAN1=		mathmlviewer.1

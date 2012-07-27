@@ -24,6 +24,7 @@ USE_XZ=		yes
 USE_GNOME=	gnomehack gtk20
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
+USE_PKGCONFIG=	build
 MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -20,6 +20,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_CSTD=	gnu89
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	build
 
 LATEST_LINK=	gtkextra2
 DOCSDIR=	${PREFIX}/share/doc/gtkextra2

@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libgnomecanvas gnomehack
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	build
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \

@@ -18,6 +18,7 @@ USE_GNOME=	vte
 USE_GETTEXT=	yes
 USE_CMAKE=	yes
 USE_BZIP2=	yes
+USE_PKGCONFIG=	build
 
 MAN1=		sakura.1
 
