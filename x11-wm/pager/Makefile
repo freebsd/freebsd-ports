@@ -21,6 +21,7 @@ RUN_DEPENDS=	sawfish:${PORTSDIR}/x11-wm/sawfish
 USE_XZ=		yes
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
+USE_PKGCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	lib/sawfish/sawfishpager \
