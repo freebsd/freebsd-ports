@@ -52,6 +52,57 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="58253655-d82c-11e1-907c-20cf30e32f6d">
+    <topic>bugzilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<range><ge>3.6.0</ge><lt>3.6.10</lt></range>
+	<range><ge>4.0.0</ge><lt>4.0.7</lt></range>
+	<range><ge>4.2.0</ge><lt>4.2.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>A Bugzilla Security Advisory reports:</h1>
+	<blockquote cite="http://www.bugzilla.org/security/3.6.9/">
+	  <p>The following security issues have been discovered in
+	    Bugzilla:</p>
+	  <h1>Information Leak</h1>
+	  <p>Versions: 4.1.1 to 4.2.1, 4.3.1</p>
+	  <p>In HTML bugmails, all bug IDs and attachment IDs are
+	   linkified, and hovering these links displays a tooltip
+	   with the bug summary or the attachment description if
+	   the user is allowed to see the bug or attachment.
+	   But when validating user permissions when generating the
+	   email, the permissions of the user who edited the bug were
+	   taken into account instead of the permissions of the
+	   addressee. This means that confidential information could
+	   be disclosed to the addressee if the other user has more
+	   privileges than the addressee.
+	   Plain text bugmails are not affected as bug and attachment
+	   IDs are not linkified.</p>
+	  <h1>Information Leak</h1>
+           <p>Versions: 2.17.5 to 3.6.9, 3.7.1 to 4.0.6, 4.1.1 to
+            4.2.1, 4.3.1</p>
+	  <p>The description of a private attachment could be visible
+	   to a user who hasn't permissions to access this attachment
+	   if the attachment ID is mentioned in a public comment in
+	   a bug that the user can see.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-1968</cvename>
+      <cvename>CVE-2012-1969</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=777398</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=777586</url>
+    </references>
+    <dates>
+      <discovery>2012-07-26</discovery>
+      <entry>2012-07-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="17f369dc-d7e7-11e1-90a2-000c299b62e1">
     <topic>nsd -- Denial of Service</topic>
     <affects>
