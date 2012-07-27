@@ -337,6 +337,7 @@ arduino/libraries/Wire/Wire.h
 arduino/libraries/Wire/keywords.txt
 arduino/libraries/Wire/utility/twi.c
 arduino/libraries/Wire/utility/twi.h
+arduino/logo.png
 %%REFDOCS%%arduino/reference/Abs.html
 %%REFDOCS%%arduino/reference/AnalogRead.html
 %%REFDOCS%%arduino/reference/AnalogReference.html
@@ -614,7 +615,6 @@ arduino/libraries/Wire/utility/twi.h
 %%REFDOCS%%arduino/reference/arduinoWide.css
 %%REFDOCS%%arduino/reference/arduinoWideRender.css
 %%REFDOCS%%arduino/reference/environment.html
-%%REFDOCS%%arduino/reference/img/logo.png
 %%REFDOCS%%arduino/reference/index.html
 arduino/revisions.txt
 arduino/tools/Mangler/make.sh
@@ -624,7 +624,6 @@ bin/arduino
 @dirrm arduino/tools/Mangler/src
 @dirrm arduino/tools/Mangler
 @dirrm arduino/tools
-%%REFDOCS%%@dirrm arduino/reference/img
 %%REFDOCS%%@dirrm arduino/reference
 @dirrm arduino/libraries/Wire/utility
 %%EXAMPLES%%@dirrm arduino/libraries/Wire/examples/slave_sender
