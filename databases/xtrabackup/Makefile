@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	xtrabackup
-PORTVERSION=	1.6.6
+PORTVERSION=	2.0.1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL_GRP} \
 		http://downloads.skysql.com/archives/mysql-5.5/:mysql55 \
 		http://downloads.mysql.com/archives/mysql-5.5/:mysql55 \
-		http://www.percona.com/downloads/%SUBDIR%/:xtrabackup,libtar,percsrc51,percsrc55 \
-		http://samm.kiev.ua/percona/:percsrc51,percsrc55 \
-		ftp://ftp.feep.net/pub/software/libtar/:libtar
+		http://www.percona.com/downloads/%SUBDIR%/:xtrabackup,percsrc51,percsrc55 \
+		http://samm.kiev.ua/percona/:percsrc51,percsrc55
+DISTNAME=	percona-${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 DISTFILES=	mysql-${MYSQL51_SRCVER}.tar.gz:mysql51 mysql-${MYSQL55_SRCVER}.tar.gz:mysql55 \
-		xtrabackup-${PORTVERSION}.tar.gz:xtrabackup libtar-1.2.11.tar.gz:libtar \
+		mysql-${MYSQL55PERCONA_SRCVER}.tar.gz:mysql55 \
+		percona-xtrabackup-${PORTVERSION}.tar.gz:xtrabackup \
 		Percona-Server-5.1.59-13.0-patches.tar.gz:percsrc51 \
 		Percona-Server-5.5.16-22.0-patches.tar.gz:percsrc55
-EXTRACT_ONLY=	xtrabackup-${PORTVERSION}.tar.gz
+EXTRACT_ONLY=	percona-xtrabackup-${PORTVERSION}.tar.gz
 
 MAINTAINER=	aleksandr.kuzminsky@percona.com
 COMMENT=	OpenSource version of InnoDB backup with support of Percona extensions
@@ -37,34 +38,39 @@ USE_AUTOTOOLS=	automake autoheader autoconf libtool aclocal
 
 # use MASTER_SITE_MYSQL for the MySQL 5.1
 MASTER_SITE_MYSQL_GRP=	${MASTER_SITE_MYSQL:S@%SUBDIR%/@%SUBDIR%/:mysql51@g}
-MASTER_SITE_SUBDIR=	MySQL-5.1/:mysql51 community/:libtar \
+MASTER_SITE_SUBDIR=	MySQL-5.1/:mysql51 \
 	XtraBackup/XtraBackup-${PORTVERSION}/source/:xtrabackup \
 	Percona-Server-5.1/Percona-Server-5.1.59-13.0/source/:percsrc51 \
 	Percona-Server-5.5/Percona-Server-5.5.16-22.0/source/:percsrc55
 
 # port needs MySQL sources to build
-MYSQL51_SRCVER=5.1.59
-MYSQL55_SRCVER=5.5.16
+MYSQL51_SRCVER=		5.1.59
+MYSQL55_SRCVER=		5.5.17
+MYSQL55PERCONA_SRCVER=	5.5.16
 
-PLIST_FILES=	bin/xtrabackup bin/xtrabackup_51 bin/xtrabackup_55 bin/tar4ibd bin/innobackupex
+PLIST_FILES=	bin/xtrabackup bin/xtrabackup_51 bin/xtrabackup_55 bin/xbstream bin/innobackupex
 
 pre-build:
-	${CP} ${DISTDIR}/xtrabackup-${PORTVERSION}.tar.gz ${DISTDIR}/libtar-1.2.11.tar.gz \
+	${CP} ${DISTDIR}/percona-xtrabackup-${PORTVERSION}.tar.gz \
 	${DISTDIR}/mysql-${MYSQL51_SRCVER}.tar.gz ${DISTDIR}/mysql-${MYSQL55_SRCVER}.tar.gz \
+	${DISTDIR}/mysql-${MYSQL55PERCONA_SRCVER}.tar.gz \
 	${DISTDIR}/Percona-Server-5.1.59-13.0-patches.tar.gz \
 	${DISTDIR}/Percona-Server-5.5.16-22.0-patches.tar.gz ${WRKSRC}
 
 do-build:
 	cd ${WRKSRC} && ./utils/build.sh 5.1
+	${CP} ${WRKSRC}/src/xtrabackup_51 ${WRKSRC}/src/xbstream ${WRKSRC}
 	cd ${WRKSRC} && ./utils/build.sh xtradb
+	${CP} ${WRKSRC}/src/xtrabackup ${WRKSRC}
 	cd ${WRKSRC} && ./utils/build.sh xtradb55
+	${CP} ${WRKSRC}/src/xtrabackup_55 ${WRKSRC}
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/Percona-Server/storage/innodb_plugin/xtrabackup/xtrabackup ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/Percona-Server-5.5/storage/innobase/xtrabackup/xtrabackup_55 ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/mysql-5.1/storage/innobase/xtrabackup/xtrabackup_51 ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/xtrabackup ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/xtrabackup_55 ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/xtrabackup_51 ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/xbstream ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/innobackupex ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/libtar-1.2.11/libtar/tar4ibd ${PREFIX}/bin
 
 # autoconf is running by build.sh
 do-configure:
