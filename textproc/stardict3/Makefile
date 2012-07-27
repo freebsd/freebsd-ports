@@ -35,13 +35,14 @@ INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
 
 PROJECTHOST=	stardict-3
 
-OPTIONS=	GNOME "GNOME support" On
+OPTIONS_DEFINE=	GNOME
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
-CONFLICTS_RUN=	stardict-2.[0-9]*
+CONFLICTS_INSTALL=	stardict-2.[0-9]*
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_GNOME)
+.if ${PORT_OPTIONS:MGNOME}
 USE_GNOME+=	gnomeprefix gnomedocutils libgnomeui
 GCONF_SCHEMAS=	stardict.schemas
 INSTALLS_OMF=	yes
@@ -57,7 +58,7 @@ MAKE_ARGS+=     AUTOMAKE="${TRUE}" ACLOCAL="${TRUE}"
 MAN1=		stardict.1
 
 post-patch:
-.if defined(WITHOUT_GNOME)
+.if !${PORT_OPTIONS:MGNOME}
 	${REINPLACE_CMD} -e '/DATADIRNAME=lib/s,lib,share,' ${WRKSRC}/dict/m4/intltool.m4
 	${REINPLACE_CMD} -e '/^SUBDIRS/s,help,,' ${WRKSRC}/dict/Makefile.in
 	${REINPLACE_CMD} -e '/^GNOME_DOC_INIT/d' \

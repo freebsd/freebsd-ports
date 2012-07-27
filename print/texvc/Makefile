@@ -22,11 +22,13 @@ BUILD_WRKSRC=	${WRKSRC}/src
 
 PLIST_FILES=	bin/texvc
 
-OPTIONS=	RASTER "rasterization support" on
+OPTIONS_DEFINE=	RASTER
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+RASTER_DESC=	rasterization support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_RASTER)
+.if ${PORT_OPTIONS:MRASTER}
 USE_GHOSTSCRIPT_RUN=	yes
 RUN_DEPENDS+=	latex:${PORTSDIR}/print/teTeX-base \
 		dvips:${PORTSDIR}/print/dvipsk-tetex \
@@ -36,4 +38,4 @@ RUN_DEPENDS+=	latex:${PORTSDIR}/print/teTeX-base \
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/texvc ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

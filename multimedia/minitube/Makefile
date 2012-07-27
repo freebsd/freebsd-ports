@@ -27,7 +27,9 @@ LRELEASE=	${LOCALBASE}/bin/lrelease-qt4
 
 STRIP_FILES=	bin/minitube
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_QT4+=	linguist_build
 PLIST_SUB+=	NLS=""
 .else
@@ -36,7 +38,7 @@ PLIST_SUB+=	NLS="@comment "
 
 pre-configure:
 	${REINPLACE_CMD} -e 's,$$$$PKGDATADIR,${DATADIR},g' ${QMAKE_PRO}
-.if defined(WITHOUT_NLS)
+.if !${PORT_OPTIONS:MNLS}
 	${REINPLACE_CMD} -e '/include(locale\/locale.pri)/d' ${QMAKE_PRO}
 .endif
 

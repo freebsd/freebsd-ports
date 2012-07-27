@@ -21,27 +21,28 @@ USE_DOS2UNIX=	qstardict.pri
 
 DICPATH=	${LOCALBASE}/share/stardict/dic
 
-OPTIONS=	DBUS "Enable D-BUS support" on
+OPTIONS_DEFINE=	DBUS
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
+PLIST_SUB+=	NLS=""
+.else
 QMAKE_ARGS+=	NO_TRANSLATIONS=1
 PLIST_SUB+=	NLS="@comment "
-.else
-PLIST_SUB+=	NLS=""
 .endif
 
-.if defined(WITHOUT_DBUS)
-QMAKE_ARGS+=	NO_DBUS=1
+.if ${PORT_OPTIONS:MDBUS}
+USE_QT4+=	dbus
 .else
-LIB_DEPENDS+=	QtDBus.4:${PORTSDIR}/devel/dbus-qt4
+QMAKE_ARGS+=	NO_DBUS=1
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr|${PREFIX}|g" \
 		${WRKSRC}/qstardict.pri
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e "/^INSTALLS/s|docs||g" \
 		${WRKSRC}/qstardict.pro
 .endif
@@ -58,4 +59,4 @@ post-configure:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

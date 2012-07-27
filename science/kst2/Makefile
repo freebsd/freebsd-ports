@@ -29,19 +29,21 @@ CMAKE_ARGS+=	-Dkst_install_prefix=${PREFIX}
 MAN1=		kst2.1
 PLIST_SUB=	SHLIB_VER=${PORTVERSION}
 
-OPTIONS=	FITS "Support for data in FITS format" off \
-		NETCDF "Support for data in NetCDF format" off
+OPTIONS_DEFINE=	FITS NETCDF
+
+FITS_DESC=	Support for data in FITS format
+NETCDF_DESC=	Support for data in NetCDF format
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_FITS)
+.if ${PORT_OPTIONS:MFITS}
 LIB_DEPENDS+=	cfitsio.0:${PORTSDIR}/astro/cfitsio
 PLIST_SUB+=	FITS=""
 .else
 PLIST_SUB+=	FITS="@comment "
 .endif
 
-.if defined(WITH_NETCDF)
+.if ${PORT_OPTIONS:MNETCDF}
 LIB_DEPENDS+=	netcdf.4:${PORTSDIR}/science/netcdf
 PLIST_SUB+=	NETCDF=""
 .else
@@ -53,11 +55,11 @@ post-patch:
 		${WRKSRC}/src/kst/kst2.desktop
 
 pre-configure:
-.if !defined(WITH_FITS)
+.if !${PORT_OPTIONS:MFITS}
 	${REINPLACE_CMD} -e '/find_package(CFITSIO)/d' \
 		${CMAKE_SOURCE_PATH}/CMakeLists.txt
 .endif
-.if !defined(WITH_NETCDF)
+.if !${PORT_OPTIONS:MNETCDF}
 	${REINPLACE_CMD} -e '/find_package(Netcdf)/d' \
 		${CMAKE_SOURCE_PATH}/CMakeLists.txt
 .endif

@@ -15,23 +15,23 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A LaTeX source editor for KDE
 
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
-		identify:${PORTSDIR}/graphics/ImageMagick \
-		${KDE4_PREFIX}/lib/kde4/katepart.so:${PORTSDIR}/editors/kate
+		identify:${PORTSDIR}/graphics/ImageMagick
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_QT4=	qmake_build moc_build rcc_build uic_build
-USE_KDE4=	kdeprefix kdelibs automoc4 sharedmime
+USE_KDE4=	kdeprefix kdelibs automoc4 sharedmime kate_run
 MAKE_JOBS_SAFE=	yes
 
 LATEST_LINK=	${PORTNAME}-kde4
 
-OPTIONS=	OKULAR "Use Okular for viewing" off
+OPTIONS_DEFINE=	OKULAR
+OKULAR_DESC=	Use Okular for viewing
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_OKULAR)
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/okular:${PORTSDIR}/graphics/okular
+.if ${PORT_OPTIONS:MOKULAR)
+USE_KDE4+=	okular_run
 .endif
 
 .include <bsd.port.mk>

@@ -9,10 +9,11 @@ PORTNAME=	pinentry
 
 COMMENT=	GTK version of the gnupg password dialog
 
-CONFLICTS=	pinentry-[0-9]*
+CONFLICTS_INSTALL=	pinentry-[0-9]* pinentry-curses-* \
+		pinentry-gtk2-* pinentry-qt-* pinentry-qt4-*
 
 PINENTRY_SLAVE=	-gtk
-WITH_GTK=	yes
+PORT_OPTIONS+=	GTK
 
 MASTERDIR=	${.CURDIR}/../pinentry
 

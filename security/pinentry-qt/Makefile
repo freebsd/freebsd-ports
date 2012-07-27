@@ -9,10 +9,11 @@ PORTNAME=	pinentry
 
 COMMENT=	QT3 version of the gnupg password dialog
 
-CONFLICTS=	pinentry-[0-9]*
+CONFLICTS_INSTALL=	pinentry-[0-9]* pinentry-curses-* pinentry-gtk-* \
+		pinentry-gtk2-* pinentry-qt4-*
 
 PINENTRY_SLAVE=	-qt3
-WITH_QT3=	yes
+PORT_OPTIONS+=	QT3
 
 MASTERDIR=	${.CURDIR}/../pinentry
 

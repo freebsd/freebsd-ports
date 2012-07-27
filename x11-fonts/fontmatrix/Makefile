@@ -22,11 +22,13 @@ INSTALLS_ICONS=	yes
 
 USE_CMAKE=	yes
 
-OPTIONS=	FONTFORGE "With FontForge editor" off
+OPTIONS_DEFINE=	FONTFORGE
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+FONTFORGE_DESC=	With FontForge editor
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_FONTFORGE)
+.if ${PORT_OPTIONS:MFONTFORGE}
 RUN_DEPENDS+=	${LOCALBASE}/bin/fontforge:${PORTSDIR}/print/fontforge
 .endif
 
@@ -41,4 +43,4 @@ pre-configure:
 		${LOCALBASE}/bin/lupdate-qt4 -noobsolete ../ -ts *.ts && \
 		${LOCALBASE}/bin/lrelease-qt4 *.ts
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

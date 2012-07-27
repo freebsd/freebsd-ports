@@ -23,7 +23,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT?=	IRC client for KDE4
 
 .if !defined(PKGNAMESUFFIX)
-CONFLICTS=	kvirc-qt4-4.*
+CONFLICTS_INSTALL=	kvirc-qt4-4.*
 .endif
 
 USE_BZIP2=	yes
@@ -42,14 +42,17 @@ MAKE_JOBS_SAFE=	yes
 MAN1=		kvirc.1
 MANLANG=	"" de fr it
 
-OPTIONS=	AUDIOFILE "Support for various audio formats" off \
-		DEBUG "Build with debug support" off \
-		GSM "u-law to gsm audio converter support" off \
-		PERL "Perl scripting support" off \
-		PYTHON "Python scripting support" off
+OPTIONS_DEFINE=	AUDIOFILE GSM PERL PYTHON
+
+AUDIOFILE_DESC=	Support for various audio formats
+GSM_DESC=	u-law to gsm audio converter support
+PERL_DESC=	Perl scripting support
+PYTHON_DESC=	Python scripting support
+
 .if defined(PKGNAMESUFFIX)
-OPTIONS+=	PHONON "Build with Phonon support" off \
-		WEBKIT "Build with QtWebkit support" off
+OPTIONS_DEFINE+=	PHONON WEBKIT
+PHONON_DESC=	Build with Phonon support
+WEBKIT_DESC=	Build with QtWebkit support
 .endif
 
 PLIST_SUB+=	VER="${PORTVERSION:R}"
@@ -59,12 +62,12 @@ PLIST_SUB+=	VER="${PORTVERSION:R}"
 .if defined(PKGNAMESUFFIX)
 CMAKE_ARGS+=	-DWITHOUT_KDE4=yes
 PLIST_SUB+=	QT="" KDE="@comment "
-. if defined(WITH_PHONON)
+. if ${PORT_OPTIONS:MPHONON}
 USE_QT4+=	phonon
 . else
 CMAKE_ARGS+=	-DWITHOUT_PHONON=yes
 . endif
-. if defined(WITH_WEBKIT)
+. if ${PORT_OPTIONS:MWEBKIT}
 USE_QT4+=	webkit
 . else
 CMAKE_ARGS+=	-DWITHOUT_QTWEBKIT=yes
@@ -79,20 +82,20 @@ CMAKE_ARGS+=	-DWITH_DEBUG=yes -DVERBOSE=yes
 .endif
 
 #audio support
-.if defined(WITH_AUDIOFILE)
+.if ${PORT_OPTIONS:MAUDIOFILE}
 LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 .else
 CMAKE_ARGS+=	-DWITHOUT_AUDIOFILE=yes
 .endif
 
-.if defined(WITH_GSM)
+.if ${PORT_OPTIONS:MGSM}
 LIB_DEPENDS+=	gsm.1:${PORTSDIR}/audio/gsm
 .else
 CMAKE_ARGS+=	-DWITHOUT_GSM=yes
 .endif
 
 #scripting support
-.if defined(WITH_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	yes
 PLIST_SUB+=	PYTHON=""
 .else
@@ -100,7 +103,7 @@ CMAKE_ARGS+=	-DWITHOUT_PYTHON=yes
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
-.if defined(WITH_PERL)
+.if ${PORT_OPTIONS:MPERL}
 USE_PERL5_RUN=	yes
 PLIST_SUB+=	PERL=""
 .else
@@ -108,7 +111,7 @@ CMAKE_ARGS+=	-DWITHOUT_PERL=yes
 PLIST_SUB+=	PERL="@comment "
 .endif
 
-.if defined(WITH_PERL)
+.if ${PORT_OPTIONS:MPERL}
 pre-everything::
 	@${ECHO_CMD} "====================================================="
 	@${ECHO_CMD} "     To enable perl scripting you need to rebuild"

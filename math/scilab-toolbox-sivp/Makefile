@@ -28,11 +28,13 @@ TOOLBOXDIR=	${PREFIX}/${TOOLBOXDIR_REL}
 PLIST_SUB=	TOOLBOXDIR=${TOOLBOXDIR_REL}
 TOOLBOX_SUBDIRS=	demos etc images macros
 
-OPTIONS=	HELP "Build help files (requires scilab with gui support)" on
+OPTIONS_DEFINE=	HELP
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+HELP_DESC=	Build help files (requires scilab with gui support)
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_HELP)
+.if !${PORT_OPTIONS:MHELP}
 SCILAB_ARGS=	-nogui
 PLIST_SUB+=	HELP="@comment "
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-etc__SIVP.start
@@ -49,14 +51,14 @@ pre-everything::
 	@${ECHO_CMD}
 
 post-patch:
-.if defined(WITHOUT_HELP)
+.if !${PORT_OPTIONS:MHELP}
 	${REINPLACE_CMD} -e '/tbx_builder_help/d' ${WRKSRC}/builder.sce
 .endif
 	${ECHO_CMD} quit >> ${WRKSRC}/builder.sce
 
 pre-build:
 	${FIND} -d ${WRKSRC} \( -name '*.orig' -or -name '*.bak' \) -delete
-.if !defined(WITHOUT_HELP) && !defined(DISPLAY)
+.if ${PORT_OPTIONS:MHELP} && !defined(DISPLAY)
 	@if [ -f ${WRKDIR}/.Xvfb.pid ]; then \
 		${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill || ${TRUE} ; \
 		${RM} -f ${WRKDIR}/.Xvfb.pid ; \
@@ -70,7 +72,7 @@ do-build:
 		${SETENV} ${MAKE_ENV} ${SCILAB_CMD} ${SCILAB_ARGS} -f builder.sce
 
 post-build:
-.if !defined(WITHOUT_HELP) && !defined(DISPLAY)
+.if ${PORT_OPTIONS:MHELP} && !defined(DISPLAY)
 	@if [ -f ${WRKDIR}/.Xvfb.pid ]; then \
 		${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill || ${TRUE} ; \
 		${RM} -f ${WRKDIR}/.Xvfb.pid ; \

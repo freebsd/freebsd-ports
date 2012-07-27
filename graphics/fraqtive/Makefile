@@ -24,13 +24,14 @@ CONFIGURE_ENV=	QMAKESPEC="${QMAKESPEC}" \
 CONFIGURE_ARGS=	-prefix ${PREFIX} -qmake ${QMAKE}
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	SSE2 "Enable SSE2 optimization" off
+OPTIONS_DEFINE=	SSE2
+SSE2_DESC=	Enable SSE2 optimization
 
 STRIP_FILES=	bin/fraqtive
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITH_SSE2)
+.if !${PORT_OPTIONS:MSSE2}
 CONFIGURE_ARGS+=-no-sse2
 .endif
 
@@ -44,4 +45,4 @@ post-configure:
 post-install:
 		${STRIP_CMD} ${STRIP_FILES:S,^,${PREFIX}/,}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

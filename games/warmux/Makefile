@@ -18,7 +18,7 @@ COMMENT=	Wormux game
 LIB_DEPENDS=	xml++-2.6.2:${PORTSDIR}/textproc/libxml++26 \
 		curl:${PORTSDIR}/ftp/curl
 
-CONFLICTS=	wormux-*
+CONFLICTS_INSTALL=	wormux-*
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -30,9 +30,9 @@ USE_DOS2UNIX=	fixed_class.h
 MANCOMPRESSED=	no
 MAN6=		warmux.6
 
-OPTIONS+=	NLS "Native Language Support via gettext utilities" on \
-		FRIBIDI "Enable bi-directional unicode support" off \
-		SERVER "Enable dedicated server" off
+OPTIONS_DEFINE=	FRIBIDI SERVER
+FRIBIDI_DESC=	Enable bi-directional unicode support
+SERVER_DESC=	Enable dedicated server
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:R}
 
@@ -49,7 +49,7 @@ CONFIGURE_ARGS+=	--enable-debug \
 			--enable-logging
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -59,14 +59,14 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITH_SERVER)
+.if ${PORT_OPTIONS:MSERVER}
 PLIST_SUB+=	SERVER=""
 CONFIGURE_ARGS+=	--enable-servers
 .else
 PLIST_SUB+=	SERVER="@comment "
 .endif
 
-.if defined(WITH_FRIBIDI)
+.if ${PORT_OPTIONS:MFRIBIDI}
 LIB_DEPENDS+=	fribidi:${PORTSDIR}/converters/fribidi
 CONFIGURE_ARGS+=	--enable-fribidi
 .else

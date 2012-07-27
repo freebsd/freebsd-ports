@@ -27,11 +27,11 @@ MAN1=		mp3unicode.1
 PLIST_FILES=	bin/mp3unicode
 PORTDOCS=	COPYING README
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 pre-configure:
-.if defined(NOPORTDOCS)
+.if !${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e '/^install-data-am/s|install-dist_docDATA||' ${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

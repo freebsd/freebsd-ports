@@ -27,36 +27,39 @@ CMAKE_ARGS=	-DWITH_CHROMAPRINT=off
 USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	FLAC "Support for FLAC files" on \
-		ID3LIB "Support for mp3 files" on \
-		MP4V2 "Support for mp4 files" on \
-		VORBIS "Support for Ogg/Vorbis files" on \
-		TAGLIB "Support for various audio formats" on
+OPTIONS_DEFINE=	FLAC ID3LIB MP4V2 VORBIS TAGLIB
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+
+FLAC_DESC=	Support for FLAC files
+ID3LIB_DESC=	Support for mp3 files
+MP4V2_DESC=	Support for mp4 files
+VORBIS_DESC=	Support for Ogg/Vorbis files
+TAGLIB_DESC=	Support for various audio formats
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_FLAC)
+.if ${PORT_OPTIONS:MFLAC}
 CMAKE_ARGS+=	-DWITH_FLAC=OFF
 .else
 CMAKE_ARGS+=	-DWITH_FLAC=ON
 LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
 .endif
 
-.if defined(WITHOUT_ID3LIB)
+.if ${PORT_OPTIONS:MID3LIB}
 CMAKE_ARGS+=	-DWITH_ID3LIB=OFF
 .else
 CMAKE_ARGS+=	-DWITH_ID3LIB=ON
 LIB_DEPENDS+=	id3-3.8.3:${PORTSDIR}/audio/id3lib
 .endif
 
-.if defined(WITHOUT_MP4V2)
+.if ${PORT_OPTIONS:MMP4V2}
 CMAKE_ARGS+=	-DWITH_MP4V2=OFF
 .else
 CMAKE_ARGS+=	-DWITH_MP4V2=ON
 LIB_DEPENDS+=	mp4v2.10:${PORTSDIR}/multimedia/mp4v2
 .endif
 
-.if defined(WITHOUT_VORBIS)
+.if ${PORT_OPTIONS:MVORBIS}
 CMAKE_ARGS+=	-DWITH_VORBIS=OFF
 .else
 CMAKE_ARGS+=	-DWITH_VORBIS=ON
@@ -64,7 +67,7 @@ LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 		ogg:${PORTSDIR}/audio/libogg
 .endif
 
-.if defined(WITHOUT_TAGLIB)
+.if ${PORT_OPTIONS:MTAGLIB}
 CMAKE_ARGS+=	-DWITH_TAGLIB=OFF
 .else
 CMAKE_ARGS+=	-DWITH_TAGLIB=ON

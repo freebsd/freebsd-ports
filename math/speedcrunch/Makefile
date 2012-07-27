@@ -23,7 +23,9 @@ MAKE_JOBS_SAFE=	yes
 LRELEASE_CMD=	${LOCALBASE}/bin/lrelease-qt4
 LRELEASE_ARGS=	-compress -silent
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_QT4+=	linguist
 PLIST_SUB+=	NLS=""
 .else
@@ -31,7 +33,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 pre-configure:
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	cd ${WRKSRC}/src/i18n && ${LRELEASE_CMD} ${LRELEASE_ARGS} *.ts
 .else
 	${REINPLACE_CMD} -e '/speedcrunch_TRANSLATIONS/d' ${WRKSRC}/src/CMakeLists.txt

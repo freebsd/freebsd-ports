@@ -30,8 +30,11 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --qtdir=${LOCALBASE} \
 
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	ASPELL "Use aspell for spell checking" on \
-		ENCHANT "Use Enchant for spell checking" off
+OPTIONS_DEFINE=	ASPELL ENCHANT
+OPTIONS_DEFAULT=	ASPELL
+
+ASPELL_DESC=	Use aspell for spell checking
+ENCHANT_DESC=	Use Enchant for spell checking
 
 .include <bsd.port.options.mk>
 
@@ -43,7 +46,7 @@ CONFIGURE_ARGS+=	--release  --no-separate-debug-info
 PLIST_SUB+=	DEBUG="@comment "
 .endif
 
-.if defined(WITH_ASPELL)
+.if ${PORT_OPTIONS:MASPELL}
 LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 CONFIGURE_ARGS+=	--with-aspell-inc=${LOCALBASE}/include \
 			--with-aspell-lib=${LOCALBASE}/lib
@@ -51,7 +54,7 @@ CONFIGURE_ARGS+=	--with-aspell-inc=${LOCALBASE}/include \
 CONFIGURE_ARGS+=	--disable-aspell
 .endif
 
-.if defined(WITH_ENCHANT)
+.if ${PORT_OPTIONS:MENCHANT}
 LIB_DEPENDS+=	enchant.1:${PORTSDIR}/textproc/enchant
 .else
 CONFIGURE_ARGS+=	--disable-enchant

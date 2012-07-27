@@ -26,12 +26,14 @@ MAN6=	trophy.6
 
 PORTDOCS=	AUTHORS COPYING ChangeLog README TODO
 
+.include <bsd.port.options.mk>
+
 pre-configure:
 	${REINPLACE_CMD} -e "/^icondir =/s,icons,pixmaps," \
 		${WRKSRC}/resources/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR} && \
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif

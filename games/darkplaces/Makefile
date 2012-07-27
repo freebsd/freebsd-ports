@@ -25,9 +25,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	makefile
 ALL_TARGET=	#
 
-OPTIONS=	CLIENT "Build GLX client" on \
-		DEDICATED "Build dedicated server" on \
-		SDL "Build SDL client" on
+OPTIONS_MULTI=	MODULE
+OPTIONS_MULTI_MODULE=	CLIENT DEDICATED SDL
+OPTIONS_DEFAULT=	${OPTIONS_MULTI_MODULE}
+
+CLIENT_DESC=	Build GLX client
+DEDICATED_DESC=	Build dedicated server
+SDL_DESC=	Build SDL client
 
 PLIST_FILES=	%%DATADIR%%/dummy
 PLIST_DIRS=	%%DATADIR%%
@@ -37,18 +41,14 @@ PORTDOCS=	darkplaces.txt
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITH_CLIENT) && !defined(WITH_DEDICATED) && !defined(WITH_SDL)
-IGNORE=		needs at least one of CLIENT, DEDICATED and SDL options
-.endif
-
-.if defined(WITH_CLIENT) || defined(WITH_SDL)
-USE_GL=		yes
+.if ${PORT_OPTIONS:MCLIENT} || ${PORT_OPTIONS:MSDL}
+USE_GL=		glu
 # Loads libraries at run-time, thus RUN_DEPENDS.
 RUN_DEPENDS+=	${LOCALBASE}/lib/libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		${LOCALBASE}/lib/libvorbis.so:${PORTSDIR}/audio/libvorbis
 .endif
 
-.if defined(WITH_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 ALL_TARGET+=	cl-release
 EXE_TARGETS+=	${PORTNAME}-glx
 PLIST_SUB+=	CLIENT=""
@@ -57,13 +57,13 @@ DESKTOP_ENTRIES+="Darkplaces GLX Client" "" "" "darkplaces-glx" \
 		"Game;ActionGame;" "false"
 .endif
 
-.if defined(WITH_DEDICATED)
+.if ${PORT_OPTIONS:MDEDICATED}
 ALL_TARGET+=	sv-release
 EXE_TARGETS+=	${PORTNAME}-dedicated
 PLIST_FILES+=	bin/${PORTNAME}-dedicated
 .endif
 
-.if defined(WITH_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	sdl
 ALL_TARGET+=	sdl-release
 EXE_TARGETS+=	${PORTNAME}-sdl
@@ -83,7 +83,7 @@ do-install:
 .endfor
 	@${MKDIR} ${DATADIR}
 	@${TOUCH} ${DATADIR}/dummy
-.if !defined(NOPORTDOCS)
+.if !{PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/darkplaces.txt ${DOCSDIR}
 .endif
