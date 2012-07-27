@@ -5,6 +5,7 @@
 
 PORTNAME=	arduino
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel java lang
 MASTER_SITES=	GOOGLE_CODE
@@ -30,7 +31,7 @@ SUB_LIST=	PORTNAME=${PORTNAME}
 REINPLACE_ARGS=	-i ""
 
 DESKTOP_ENTRIES=	"Arduino" "Arduino IDE" \
-			${PREFIX}/${PORTNAME}/reference/img/logo.png \
+			${PREFIX}/${PORTNAME}/logo.png \
 			"arduino" "Development;IDE;" "false"
 
 OPTIONS_DEFINE+=	DOCS EXAMPLES
@@ -59,6 +60,9 @@ post-patch:
 
 	@${RM} ${WRKSRC}/lib/RXTXcomm.jar
 	@${LN} -s ${JAVA_HOME}/lib/ext/RXTXcomm.jar ${WRKSRC}/lib/RXTXcomm.jar
+
+	@${MV} ${WRKSRC}/reference/img/logo.png ${WRKSRC}/
+	@${RM} -rf ${WRKSRC}/reference/img/
 
 .if empty(PORT_OPTIONS:MDOCS)
 	@${RM} -rf ${WRKSRC}/reference
