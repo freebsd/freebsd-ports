@@ -20,6 +20,8 @@ VPOPMAIL_PORT?=	mail/vpopmail
 BUILD_DEPENDS=	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/${VPOPMAIL_PORT}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+BROKEN=		Does not build
+
 PERL_CONFIGURE=	yes
 
 MAN3=		vpopmail.3
