@@ -30,7 +30,8 @@ LANGDIR=	${WWWDIR}/template/de
 # non supported bugzilla version, however there are no relevant
 # changes in the template between 3.6.8 and 3.6.9
 post-patch:
-	@${SED} -i '' -e 's|3.6.8|3.6.9|' ${WRKDIR}/de/default/global/gzversion.html.tmpl
+	@${SED} -i '' -e 's|3.6.8|3.6.10|' ${WRKDIR}/de/default/global/gzversion.html.tmpl
+	@${FIND} ${WRKDIR}/ -name \*.orig -delete
 
 do-install:
 	@-${MKDIR} ${LANGDIR}
@@ -42,7 +43,7 @@ do-install:
 .endif
 
 # Maintainer
-plist:	extract
+plist: patch
 	@( cd ${WRKDIR}/ && ${FIND} de -type f | ${AWK} '{print "%%WWWDIR%%/template/"$$1}' | ${SORT} > ${PLIST}.new )
 	@( cd ${WRKDIR}/ && ${FIND} de -type d | ${AWK} '{print "@dirrmtry %%WWWDIR%%/template/"$$1}' | ${SORT} -r >> ${PLIST}.new )
 	@if ${DIFF} -u ${PLIST} ${PLIST}.new ; then \

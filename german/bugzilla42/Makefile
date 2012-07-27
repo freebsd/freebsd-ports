@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bugzilla
-PORTVERSION=	4.0.5
-PORTREVISION=	2
+PORTVERSION=	4.2.1
 CATEGORIES=	german
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=bugzilla-de/${PORTVERSION:R}/${PORTVERSION}
@@ -16,21 +15,19 @@ DISTNAME=	germzilla-${PORTVERSION}-1.utf-8
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	German localization for Bugzilla
 
-RUN_DEPENDS=	bugzilla>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla
+RUN_DEPENDS=	bugzilla>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla42
 
-LATEST_LINK=	${PKGNAMEPREFIX}bugzilla${PKGNAMESUFFIX}
+LATEST_LINK=	${PKGNAMEPREFIX}bugzilla42${PKGNAMESUFFIX}
 
 NO_WRKSUBDIR=	yes
 
-.include "${.CURDIR}/../../devel/bugzilla/Makefile.common"
+.include "${.CURDIR}/../../devel/bugzilla42/Makefile.common"
 
 LANGDIR=	${WWWDIR}/template/de
 
 # german template checks the bugzilla version number and displays
-# non supported bugzilla version, however there are no relevant
-# changes in the templates between 4.0.5 and 4.0.7
+# non supported bugzilla version.
 post-patch:
-	@${SED} -i '' -e 's|4.0.5|4.0.7|' ${WRKDIR}/de/default/global/gzversion.html.tmpl
 	@${FIND} ${WRKDIR}/ -name \*.orig -delete
 
 do-install:

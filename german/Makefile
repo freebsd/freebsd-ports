@@ -14,6 +14,7 @@
     SUBDIR += bsdpaste
     SUBDIR += bugzilla
     SUBDIR += bugzilla3
+    SUBDIR += bugzilla42
     SUBDIR += calligra-l10n
     SUBDIR += dict
     SUBDIR += digibux
