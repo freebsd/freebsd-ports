@@ -377,6 +377,7 @@
     SUBDIR += libmusicbrainz
     SUBDIR += libmusicbrainz3
     SUBDIR += libmusicbrainz4
+    SUBDIR += libmusicbrainz5
     SUBDIR += libnjb
     SUBDIR += libnoise
     SUBDIR += libofa
