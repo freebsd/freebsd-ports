@@ -563,17 +563,17 @@ Note:  Please add new entries to the beginning of this file.
     </dates>
   </vuln>
 
-  <vuln vid="fd8bac56-c444-11e1-864b-001cc0877741"> 
-    <topic>phpList -- SQL injection and XSS vulnerability</topic> 
+  <vuln vid="fd8bac56-c444-11e1-864b-001cc0877741">
+    <topic>phpList -- SQL injection and XSS vulnerability</topic>
     <affects>
       <package>
-	<name>phplist</name> 
-	<range><le>2.10.17</le></range> 
+	<name>phplist</name>
+	<range><le>2.10.17</le></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Zero Science Lab reports:</p> 
+	<p>Zero Science Lab reports:</p>
 	<blockquote cite="http://www.zeroscience.mk/en/vulnerabilities/ZSL-2012-5081.php">
 	  <p>Input passed via the parameter 'sortby' is not properly
 	    sanitised before being returned to the user or used in SQL queries.
@@ -584,16 +584,16 @@ Note:  Please add new entries to the beginning of this file.
         </blockquote>
       </body>
     </description>
-    <references> 
-      <cvename>CVE-2012-2740</cvename> 
-      <cvename>CVE-2012-2741</cvename> 
-      <bid>52657</bid> 
-      <url>https://www.phplist.com/?lid=567</url> 
-      <url>http://www.zeroscience.mk/en/vulnerabilities/ZSL-2012-5081.php</url> 
+    <references>
+      <cvename>CVE-2012-2740</cvename>
+      <cvename>CVE-2012-2741</cvename>
+      <bid>52657</bid>
+      <url>https://www.phplist.com/?lid=567</url>
+      <url>http://www.zeroscience.mk/en/vulnerabilities/ZSL-2012-5081.php</url>
     </references>
     <dates>
-      <discovery>2012-03-21</discovery> 
-      <entry>2012-07-02</entry> 
+      <discovery>2012-03-21</discovery>
+      <entry>2012-07-02</entry>
     </dates>
   </vuln>
 
