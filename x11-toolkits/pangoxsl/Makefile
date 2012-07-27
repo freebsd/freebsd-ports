@@ -18,6 +18,8 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack pango
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
+USE_PKGCONFIG=	build
+
 CONFIGURE_ARGS=	--disable-gtk-doc \
 		--with-html-dir=${PREFIX}/share/doc
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -22,6 +22,7 @@ USE_GETTEXT=	yes
 USE_GNOME=	gnomehack gnomeprefix gtk20
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
+USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 
 post-patch:

@@ -22,6 +22,7 @@ USE_GL=		yes
 USE_XORG=	xt
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
+USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 
 post-patch:

@@ -26,6 +26,7 @@ USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--includedir="${PREFIX}/include/${PORTNAME}" \
 		--with-html-dir="${PREFIX}/share/doc"
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	build
 MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
