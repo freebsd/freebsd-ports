@@ -1,5 +1,5 @@
 libmusicbrainz is a client library for accessing the MusicBrainz database
-allowing metadata lookup for audio files. This is version 4.x which supports
+allowing metadata lookup for audio files. This is version 5.x which supports
 version 2 of the XML Web Service.
 
 WWW: http://musicbrainz.org/
