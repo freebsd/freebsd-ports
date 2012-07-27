@@ -22,6 +22,7 @@ INSTALLS_ICONS=		yes
 GCONF_SCHEMAS=		gnome-translate.schemas
 USE_GNOME=		gnomehack gnomeprefix eel2 intlhack libgnomeui
 USE_GMAKE=		yes
+USE_PKGCONFIG=		build
 GNU_CONFIGURE=		yes
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib -Wl,-export-dynamic

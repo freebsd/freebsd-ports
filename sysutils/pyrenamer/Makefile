@@ -19,6 +19,7 @@ USE_GNOME=	gconf2 gnomehack pygtk2
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
+USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

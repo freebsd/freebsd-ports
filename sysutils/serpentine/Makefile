@@ -21,8 +21,8 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	pygnomedesktop intlhack
 USE_GMAKE=	yes
+USE_PKGCONFIG=	build
 USE_GSTREAMER=	core gnomevfs python
 USE_PYTHON=	2.4+
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

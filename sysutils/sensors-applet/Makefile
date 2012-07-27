@@ -18,6 +18,7 @@ RUN_DEPENDS=	mbmon:${PORTSDIR}/sysutils/mbmon \
 		smartctl:${PORTSDIR}/sysutils/smartmontools
 
 USE_GNOME=	gnomehack gnomeprefix intlhack gnomepanel libgnomeui
+USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 DEFINES=	-DMBMON_EXECUTABLE=\\\"${LOCALBASE}/bin/mbmon\\\" \

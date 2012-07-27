@@ -21,6 +21,7 @@ USE_GNOME=	desktopfileutils gnomehack gnomemenus gnomeprefix \
 		gtksourceview intlhack libgnomeprintui libgnomeui libgtkhtml
 USE_XORG=	xpm
 USE_GMAKE=	yes
+USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

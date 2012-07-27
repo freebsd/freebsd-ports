@@ -22,6 +22,7 @@ RPORTNAME=	gnome-vfs-fuse
 WRKSRC=		${WRKDIR}/${RPORTNAME}
 USE_GNOME=	gnomevfs2
 USE_GMAKE=	yes
+USE_PKGCONFIG=	yes
 PLIST_FILES=	bin/gnomevfs-mount
 PORTDOCS=	README
 
