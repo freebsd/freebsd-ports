@@ -20,9 +20,9 @@ USE_XORG=	x11 xext
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-OPTIONS=	PTHREAD "Enable SMP support (experimental)" off \
-		GTK2 "GTK+ User Interface (experimental)" off \
-		NLS "Native Language Support" on
+OPTIONS_DEFINE=	GTK2 PTHREAD
+GTK2_DESC=	GTK+ User Interface (experimental)
+PTHREAD_DESC=	Enable SMP support (experimental)
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -39,7 +39,7 @@ DESKTOP_ENTRIES=	"XaoS" "Fractal zoomer" "" "xaos" "" false
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PTHREAD)
+.if ${PORT_OPTIONS:MPTHREAD}
 CONFIGURE_ARGS+=	--with-pthread=yes
 CONFIGURE_ENV+=		LIBS="${PTHREAD_LIBS}"
 CFLAGS+=		${PTHREAD_CFLAGS}
@@ -47,12 +47,12 @@ CFLAGS+=		${PTHREAD_CFLAGS}
 CONFIGURE_ARGS+=	--with-pthread=no
 .endif
 
-.if defined(WITH_GTK2)
+.if ${PORT_OPTIONS:MGTK2}
 USE_GNOME=	gtk20
 CONFIGURE_ARGS+=	--with-gtk-driver=yes --with-x11-driver=no
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else

@@ -24,7 +24,7 @@ RUN_DEPENDS=	espgs:${PORTSDIR}/print/cups-pstoraster \
 		${PYTHON_SITELIBDIR}/dbus/_dbus.py:${PORTSDIR}/devel/py-dbus \
 		xdg-open:${PORTSDIR}/devel/xdg-utils
 
-CONFLICTS=	hpijs-[0-9]*
+CONFLICTS_INSTALL=	hpijs-[0-9]*
 
 USE_GHOSTSCRIPT_RUN=	yes
 USE_PYTHON=	2.5+
@@ -76,11 +76,14 @@ FILES4FIX=	Makefile.in \
 		ui/setupform.py \
 		ui4/devmgr5.py
 
-OPTIONS=	QT "Graphical User Interface (Qt4)" on \
-		FAX "PC Send Fax support" off \
-		SNMP "Network/JetDirect support" off \
-		SCAN "Scanning support" off \
-		XSANE "Install XSane for scanning (requires SCAN)" off
+OPTIONS_DEFINE=	QT FAX SNMP SCAN XSANE
+OPTIONS_DEFAULT=	QT
+
+QT_DESC=	Graphical User Interface (Qt4)
+FAX_DESC=	PC Send Fax support
+SNMP_DESC=	Network/JetDirect support
+SCAN_DESC=	Scanning support
+XSANE_DESC=	Install XSane for scanning (requires SCAN)
 
 .include <bsd.port.options.mk>
 
@@ -95,7 +98,7 @@ USB_INCLUDE=	${LOCALBASE}/include
 USB_INCLUDE=	/usr/include
 .endif
 
-.if !defined(WITHOUT_QT)
+.if ${PORT_OPTIONS:MQT}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui \
 		${PYTHON_SITELIBDIR}/dbus/mainloop/qt.so:${PORTSDIR}/devel/py-qt4-dbus
 CONFIGURE_ARGS+=	--enable-qt4 \
@@ -107,7 +110,7 @@ CONFIGURE_ARGS+=	--disable-qt4 \
 PLIST_SUB+=	GUI="@comment "
 .endif
 
-.if defined(WITH_FAX)
+.if ${PORT_OPTIONS:MFAX}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab2
 CONFIGURE_ARGS+=	--enable-fax-build
 PLIST_SUB+=	FAX=""
@@ -116,7 +119,7 @@ CONFIGURE_ARGS+=	--disable-fax-build
 PLIST_SUB+=	FAX="@comment "
 .endif
 
-.if defined(WITH_SNMP)
+.if ${PORT_OPTIONS:MSNMP}
 USE_OPENSSL=	yes
 LIB_DEPENDS+=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=	--enable-network-build
@@ -128,8 +131,8 @@ CONFIGURE_ENV+=	LIBS="-lssp_nonshared"
 CONFIGURE_ARGS+=	--disable-network-build
 .endif
 
-.if defined(WITH_SCAN)
-. if defined(WITH_XSANE)
+.if ${PORT_OPTIONS:MSCAN}
+. if ${PORT_OPTIONS:MXSANE}
 RUN_DEPENDS+=	xsane:${PORTSDIR}/graphics/xsane
 . endif
 LIB_DEPENDS+=	sane.1:${PORTSDIR}/graphics/sane-backends
@@ -141,7 +144,7 @@ CONFIGURE_ARGS+=	--disable-scan-build
 PLIST_SUB+=	SCAN="@comment "
 .endif
 
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=	--enable-doc-build=no
 .endif
 

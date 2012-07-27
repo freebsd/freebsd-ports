@@ -19,7 +19,9 @@ USE_QT4=	help qt3support help-tools_build moc_build qmake_build \
 		rcc_build uic_build uic3_build
 MAKE_JOBS_SAFE=	yes
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_QT4+=	linguist_build
 PLIST_SUB+=	NLS=""
 .else
@@ -37,7 +39,7 @@ do-configure:
 	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS})
 
 post-build:
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	@(cd ${WRKSRC} && ${LOCALBASE}/bin/lrelease-qt4 -compress librecad.pro)
 	${MKDIR} ${WRKSRC}/unix/resources/qm
 	${INSTALL_DATA} ${WRKSRC}/ts/*.qm ${WRKSRC}/unix/resources/qm

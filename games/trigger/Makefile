@@ -35,6 +35,8 @@ DATAVERSION=	0.5.2
 DESKTOP_ENTRIES="Trigger" "Car racing game" "" \
 		"trigger" "" false
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|SDL/||' \
 		${WRKSRC}/src/trigger/main.cpp \
@@ -61,7 +63,7 @@ do-install:
 	${FIND} ${DATADIR}/* -type f -exec ${CHMOD} 444 {} \;
 	${FIND} ${DATADIR}/* -type d -exec ${CHMOD} 555 {} \;
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in README-stereo.txt README.txt
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}

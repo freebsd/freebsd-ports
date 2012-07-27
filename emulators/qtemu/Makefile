@@ -22,9 +22,9 @@ CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
 DESKTOP_ENTRIES="QtEmu" "QEMU frontend" "" \
 		"qtemu" "" false
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 #USE_QT4+=	linguist
 BUILD_DEPENDS+=	${LOCALBASE}/bin/lupdate-qt4:${PORTSDIR}/devel/qt4-linguist
 PLIST_SUB+=	NLS=""
@@ -45,12 +45,12 @@ post-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qtemu ${PREFIX}/bin/qtemu
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	${MKDIR} ${DATADIR}
 	(cd ${WRKSRC}/translations/ && ${COPYTREE_SHARE} 'qtemu*.qm' ${DATADIR}/translations)
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	(cd ${WRKSRC}/help/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

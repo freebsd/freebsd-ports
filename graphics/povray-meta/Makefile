@@ -25,37 +25,33 @@ DEFAULT_VER?=	36
 #To change version linked by default define WITH_DEFAULT${ver}.
 #Please, note that only one of WITH_DEFAULT* can be set at once.
 
-OPT_POVRAY${DEFAULT_VER}=	on
-OPT_DEFAULT${DEFAULT_VER}=	on
+OPTIONS_MULTI=	POVRAY
+OPTIONS_SINGLE=	DEFAULT
+
+OPTIONS_DEFAULT=	POVRAY${DEFAULT_VER} DEFAULT${DEFAULT_VER}
 
 .for ver in ${POV_VERSIONS_ALL}
 POVRAY${ver}_BIN=	${LOCALBASE}/bin/povray${ver}
 POVRAY${ver}_PORT=	graphics/povray${ver}
-OPT_POVRAY${ver}?=	off
-OPT_DEFAULT${ver}?=	off
-OPTIONS+=	POVRAY${ver} "Install graphics/povray${ver}" ${OPT_POVRAY${ver}}
-OPTIONS+=	DEFAULT${ver} "Create link bin/povray -> bin/povray${ver}" ${OPT_DEFAULT${ver}}
+
+OPTIONS_MULTI_POVRAY+=	POVRAY${ver}
+OPTIONS_SINGLE_DEFAULT+=	DEFAULT${ver}
+
+POVRAY${ver}_DESC=	Install graphics/povray${ver}
+DEFAULT${ver}_DESC=	Create link bin/povray -> bin/povray${ver}
 .endfor
 
 .include <bsd.port.options.mk>
 
 .for ver in ${POV_VERSIONS_ALL}
-. if defined(WITH_DEFAULT${ver})
-WITH_POVRAY${ver}=	yes
-.  if defined(POV_VERSION)
-IGNORE=	can't be build: only one default povray can be chosen
-.  else
+. if ${PORT_OPTIONS:MDEFAULT${ver}}
+PORT_OPTIONS+=	POVRAY${ver}
 POV_VERSION=	${ver}
-.  endif
 . endif
-. if defined(WITH_POVRAY${ver})
+. if ${PORT_OPTIONS:MPOVRAY${ver}}
 RUN_DEPENDS+=	${POVRAY${ver}_BIN}:${PORTSDIR}/${POVRAY${ver}_PORT}
 . endif
 .endfor
-
-.if !defined(POV_VERSION)
-IGNORE=	can't be build: one default povray must be chosen
-.endif
 
 do-install:
 	${LN} -s ${POVRAY${POV_VERSION}_BIN} ${PREFIX}/bin/povray

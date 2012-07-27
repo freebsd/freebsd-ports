@@ -18,7 +18,7 @@ COMMENT?=	A collection of simple PIN or passphrase entry dialogs
 LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt \
 		ksba.19:${PORTSDIR}/security/libksba
 
-CONFLICTS?=	pinentry-[a-z]*-[0.9]*
+CONFLICTS_INSTALL?=	pinentry-[a-z]*-[0.9]*
 
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
@@ -29,22 +29,22 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if !defined(PINENTRY_SLAVE)
-OPTIONS=	NCURSES "Curses frontend" on \
-		GTK "Gtk+1 frontend" on \
-		GTK2 "Gtk+2 frontend" on \
-		QT3 "Qt3 frontend" on \
-		QT4 "Qt4 frontend" on
+OPTIONS_MULTI=	FRONTEND
+OPTIONS_MULTI_FRONTEND=	NCURSES GTK GTK2 QT3 QT4
+OPTIONS_DEFAULT=	${OPTIONS_MULTI_FRONTEND}
+
+NCURSES_DESC=	Curses frontend
+GTK_DESC=	Gtk+1 frontend
+GTK2_DESC=	Gtk+2 frontend
+QT3_DESC=	Qt3 frontend
+QT4_DESC=	Qt4 frontend
 .else
 PKGNAMESUFFIX=	${PINENTRY_SLAVE}
 .endif
 
 .include <bsd.port.options.mk>
 
-.if !(defined(WITH_NCURSES) || defined(WITH_GTK) || defined(WITH_GTK2) || defined(WITH_QT3) || defined(WITH_QT4))
-IGNORE=	requires at least one frontend. Please rerun 'make config'
-.endif
-
-.if defined(WITH_QT3)
+.if ${PORT_OPTIONS:MQT3}
 USE_QT_VER=	3
 PLIST_SUB+=	WITH_QT3=""
 MOC3=		${LOCALBASE}/bin/moc
@@ -53,12 +53,8 @@ CONFIGURE_ARGS+=--disable-pinentry-qt
 PLIST_SUB+=	WITH_QT3="@comment "
 .endif
 
-.if defined(WITH_QT4)
-#USE_QT_VER=	4
-#QT_COMPONENTS=	gui moc_build
-.include "${PORTSDIR}/Mk/bsd.qt.mk"
-BUILD_DEPENDS+=	moc-qt4:${PORTSDIR}/devel/qt4-moc
-LIB_DEPENDS+=	QtGui.4:${PORTSDIR}/x11-toolkits/qt4-gui
+.if ${PORT_OPTIONS:MQT4}
+USE_QT4=	gui moc_build
 PLIST_SUB+=	WITH_QT4=""
 MOC4=		${LOCALBASE}/bin/moc-qt4
 LDFLAGS+=	${PTHREAD_LIBS}
@@ -67,7 +63,7 @@ CONFIGURE_ARGS+=--disable-pinentry-qt4
 PLIST_SUB+=	WITH_QT4="@comment "
 .endif
 
-.if defined(WITH_GTK)
+.if ${PORT_OPTIONS:MGTK}
 USE_GNOME+=	gtk12
 PLIST_SUB+=	WITH_GTK=""
 .else
@@ -75,7 +71,7 @@ CONFIGURE_ARGS+=--disable-pinentry-gtk
 PLIST_SUB+=	WITH_GTK="@comment "
 .endif
 
-.if defined(WITH_GTK2)
+.if ${PORT_OPTIONS:MGTK2}
 USE_GNOME+=	gtk20
 PLIST_SUB+=	WITH_GTK2=""
 .else
@@ -83,7 +79,7 @@ CONFIGURE_ARGS+=--disable-pinentry-gtk2
 PLIST_SUB+=	WITH_GTK2="@comment "
 .endif
 
-.if defined(WITH_NCURSES)
+.if ${PORT_OPTIONS:MNCURSES}
 USE_NCURSES=	yes
 PLIST_SUB+=	WITH_NCURSES=""
 .else
@@ -94,11 +90,11 @@ PLIST_SUB+=	WITH_NCURSES="@comment "
 pre-configure:
 	${REINPLACE_CMD} -e "s@-lpthread@${PTHREAD_LIBS}@g" \
 		${WRKSRC}/m4/qt.m4 ${WRKSRC}/configure
-.if defined(WITH_QT3)
+.if ${PORT_OPTIONS:MQT3}
 	${REINPLACE_CMD} -e "/^MOC/s,@MOC@,${MOC3}," \
 		${WRKSRC}/qt/Makefile.in
 .endif
-.if defined(WITH_QT4)
+.if ${PORT_OPTIONS:MQT4}
 	cd ${WRKSRC}/qt4 && \
 		${MOC4} pinentrydialog.h > pinentrydialog.moc && \
 		${MOC4} qsecurelineedit.h > qsecurelineedit.moc

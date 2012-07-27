@@ -15,14 +15,13 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A development environment entirely dedicated to Qt4
 
-RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags \
-		qt4-sqlite-plugin>=0:${PORTSDIR}/databases/qt4-sqlite3-plugin
+RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags
 
-USE_QT4=	gui sql network xml designer \
+USE_QT4=	gui sql network xml designer sql-sqlite3_run \
 		qmake_build moc_build uic_build rcc_build
 MAKE_JOBS_SAFE=	yes
 
-QMAKE_ARGS=	-unix -recursive ${QMAKE_PRO}
+QMAKE_ARGS=	-recursive ${QMAKE_PRO}
 QMAKE_PRO=	QDevelop.pro
 STRIP_FILES=	bin/${PORTNAME}
 
@@ -35,17 +34,20 @@ DESKTOP_ENTRIES=	"QDevelop" \
 			"Qt;KDE;Development;" \
 			"false"
 
-OPTIONS=	TOOLS "Install Qt4 dev. tools (qmake, moc, etc.)" on
+OPTIONS_DEFINE=	TOOLS
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+TOOLS_DESC=	Install Qt4 dev. tools (qmake, moc, etc.)
 
-.include <bsd.port.pre.mk>
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_QT4+=	linguist_build
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if !defined(WITHOUT_TOOLS)
+.if ${PORT_OPTIONS:MTOOLS}
 USE_QT4+=	assistant_run linguist_run \
 		qmake_run moc_run uic_run rcc_run
 .endif
@@ -68,7 +70,7 @@ post-patch:
 		${WRKSRC}/plugins/formatting-astyle/astyleplugin.cpp
 
 do-configure:
-.if !defined(WITHOUT_NLS)
+.if !${PORT_OPTIONS:MNLS}
 	cd ${WRKSRC} && ${QT_LRELEASE} ${QMAKE_PRO}
 .endif
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS}
@@ -76,15 +78,15 @@ do-configure:
 post-install:
 	${STRIP_CMD} ${STRIP_FILES:S,^,${PREFIX}/,}
 	${INSTALL_DATA} ${WRKSRC}/resources/images/logo.png ${PREFIX}/share/pixmaps/qdevelop.png
-.if !defined(WITHOUT_NLS)
+.if !${PORT_OPTIONS:MNLS}
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/resources/translations/ && ${COPYTREE_SHARE} '*.qm' ${DATADIR}/translations
 .endif
-.if !defined(NOPORTDOCS)
+.if !${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for doc in ChangeLog.txt README.txt
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

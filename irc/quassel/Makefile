@@ -21,9 +21,13 @@ USE_CMAKE=	yes
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	MONO "Quassel standalone client" on \
-		CORE "Quassel core" on \
-		CLIENT "Quassel client" on
+OPTIONS_MULTI=	MODULE
+OPTIONS_MULTI_MODULE=	MONO CORE CLIENT
+OPTIONS_DEFAULT=	${OPTIONS_MULTI_MODULE}
+
+MONO_DESC=	Quassel standalone client
+CORE_DESC=	Quassel core
+CLIENT_DESC=	Quassel client
 
 CMAKE_ARGS+=	-DWANT_MONO=${QUASSEL_MONO} \
 		-DWANT_CORE=${QUASSEL_CORE} \
@@ -32,21 +36,17 @@ CMAKE_ARGS+=	-DWANT_MONO=${QUASSEL_MONO} \
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_MONO) && defined(WITHOUT_CORE) && defined(WITHOUT_CLIENT)
-IGNORE=		needs at least one Quassel component. Please, rerun 'make config'
-.endif
-
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_QT4+=	linguist_build
 .endif
 
-.if defined(WITHOUT_MONO) && defined(WITHOUT_CLIENT)
+.if !${PORT_OPTIONS:MMONO} && !${PORT_OPTIONS:MCLIENT}
 PLIST_SUB+=	MONO_OR_CLIENT="@comment "
 .else
 PLIST_SUB+=	MONO_OR_CLIENT=""
 .endif
 
-.if !defined(WITHOUT_MONO)
+.if ${PORT_OPTIONS:MMONO}
 USE_QT4+=	dbus gui network script sql xml webkit
 QUASSEL_MONO=	ON
 PLIST_SUB+=	MONO=""
@@ -55,7 +55,7 @@ QUASSEL_MONO=	OFF
 PLIST_SUB+=	MONO="@comment "
 .endif
 
-.if !defined(WITHOUT_CORE)
+.if ${PORT_OPTIONS:MCORE}
 USE_QT4+=	network script sql sql-sqlite3_run
 QUASSEL_CORE=	ON
 PLIST_SUB+=	CORE=""
@@ -69,7 +69,7 @@ QUASSEL_CORE=	OFF
 PLIST_SUB+=	CORE="@comment "
 .endif
 
-.if !defined(WITHOUT_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 USE_QT4+=	dbus gui network xml webkit
 QUASSEL_CLIENT=	ON
 PLIST_SUB+=	CLIENT=""
@@ -79,13 +79,13 @@ PLIST_SUB+=	CLIENT="@comment "
 .endif
 
 pre-configure:
-.if defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	${REINPLACE_CMD} -e '/add_subdirectory(i18n)/d' \
 		${WRKSRC}/CMakeLists.txt
 .endif
 
 post-install:
-.if !defined(WITHOUT_CORE)
+.if ${PORT_OPTIONS:MCORE}
 	@${CAT} ${PKGMESSAGE}
 .endif
 

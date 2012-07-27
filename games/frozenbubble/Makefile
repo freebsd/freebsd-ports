@@ -30,7 +30,9 @@ MAN6=		frozen-bubble-editor.6 frozen-bubble.6
 
 LEXECDIR=	${PREFIX}/libexec/${PORTNAME}
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 RUN_DEPENDS+=	p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext
 PLIST_SUB+=	NLS=""
 .else
@@ -54,24 +56,18 @@ pre-install:
 
 do-install:
 	cd ${WRKSRC}/c_stuff && ${GMAKE} install
-
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	cd ${WRKSRC}/po && ${GMAKE} install
 .endif
-
 	${INSTALL_SCRIPT} ${BUILD_WRKSRC}/frozen-bubble ${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${BUILD_WRKSRC}/frozen-bubble-editor ${PREFIX}/bin/
-
 	${INSTALL_MAN} ${MAN6:S,^,${WRKSRC}/doc/,} ${PREFIX}/man/man6/
-
 	${MKDIR} ${DATADIR}
 	@(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "gfx snd data" ${DATADIR}/)
-
 	${MKDIR} ${LEXECDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/server/fb-server ${LEXECDIR}/
 
 post-install:
-
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

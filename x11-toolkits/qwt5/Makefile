@@ -35,7 +35,7 @@ post-install:
 	${MKDIR} ${PREFIX}/man/man3
 	${INSTALL_MAN} ${WRKSRC}/doc/man/man3/Qwt* ${PREFIX}/man/man3
 	${STRIP_CMD} ${STRIP_FILES:S,^,${PREFIX}/,}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	(cd ${WRKSRC}/doc/html/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
 .endif
 

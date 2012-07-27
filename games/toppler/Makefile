@@ -25,6 +25,8 @@ MAN6=		${PORTNAME}.6
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|DATA install-dist_pkgdocDATA|DATA|g' ${WRKSRC}/Makefile.in
@@ -34,7 +36,7 @@ post-install:
 	@${CHOWN} root:games ${PREFIX}/bin/${PORTNAME}
 	@${CHMOD} 0664 ${DATADIR}/${PORTNAME}.hsc
 	@${CHOWN} root:games ${DATADIR}/${PORTNAME}.hsc
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in AUTHORS ChangeLog NEWS README
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}

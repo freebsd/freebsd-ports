@@ -1,6 +1,6 @@
-## New ports collection makefile for:   swt
-# Date created:			28 March 2006
-# Whom:				Max Brazhnikov makc@issp.ac.ru
+## New ports collection makefile for:	swt
+# Date created:				2006-03-28
+# Whom:					Max Brazhnikov makc@issp.ac.ru
 #
 # $FreeBSD$
 #
@@ -26,16 +26,19 @@ TOOLBOXDIR=	${PREFIX}/${TOOLBOXDIR_REL}
 PLIST_SUB=	TOOLBOXDIR=${TOOLBOXDIR_REL}
 TOOLBOX_SUBDIRS=	demos etc macros
 
-OPTIONS=	SIVP "Enable Image and Video support" off \
-		HELP "Build help files (requires scilab with gui support)" on
+OPTIONS_DEFINE=	HELP SIVP
+OPTIONS_DEFAULT=	HELP
+
+HELP_DESC=	Build help files (requires scilab with gui support)
+SIVP_DESC=	Enable Image and Video support
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_SIVP)
+.if ${PORT_OPTIONS:MSIVP}
 RUN_DEPENDS+=	${LOCALBASE}/${CONTRIBDIR}/sivp/loader.sce:${PORTSDIR}/math/scilab-toolbox-sivp
 .endif
 
-.if defined(WITHOUT_HELP)
+.if !${PORT_OPTIONS:MHELP}
 SCILAB_ARGS=	-nogui
 PLIST_SUB+=	HELP="@comment "
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-etc__swt.start
@@ -47,7 +50,7 @@ TOOLBOX_SUBDIRS+=	jar
 .endif
 
 post-patch:
-.if defined(WITHOUT_HELP)
+.if !${PORT_OPTIONS:MHELP}
 	${REINPLACE_CMD} -e '/tbx_builder_help/d' ${WRKSRC}/builder.sce
 .endif
 	${REINPLACE_CMD} -e "s,SWTDIR+','${TOOLBOXDIR}/demos," \
@@ -56,7 +59,7 @@ post-patch:
 
 pre-build:
 	${FIND} -d ${WRKSRC} \( -name '*.orig' -or -name '*.bak' \) -delete
-.if !defined(WITHOUT_HELP) && !defined(DISPLAY)
+.if ${PORT_OPTIONS:MHELP} && !defined(DISPLAY)
 	@if [ -f ${WRKDIR}/.Xvfb.pid ]; then \
 		${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill || ${TRUE} ; \
 		${RM} -f ${WRKDIR}/.Xvfb.pid ; \
@@ -70,7 +73,7 @@ do-build:
 		${SETENV} ${MAKE_ENV} ${SCILAB_CMD} ${SCILAB_ARGS} -f builder.sce
 
 post-build:
-.if !defined(WITHOUT_HELP) && !defined(DISPLAY)
+.if ${PORT_OPTIONS:MHELP} && !defined(DISPLAY)
 	@if [ -f ${WRKDIR}/.Xvfb.pid ]; then \
 		${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill || ${TRUE} ; \
 		${RM} -f ${WRKDIR}/.Xvfb.pid ; \

@@ -18,30 +18,32 @@ USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_KDE4=	kdeprefix kdelibs automoc4
 USE_QT4=	gui qmake_build moc_build rcc_build uic_build
-WANT_GSTREAMER=	yes
 
 LATEST_LINK=	${PORTNAME}-kde4
 
-OPTIONS=	MPLAYER "Enable MPlayer backend (recommended)" on \
-		XINE "Enable Xine backend" off \
-		GSTREAMER "Enable GStreamer backend (broken)" off
+OPTIONS_DEFINE=	GSTREAMER MPLAYER XINE
+OPTIONS_DEFAULT=	MPLAYER
 
-.include <bsd.port.pre.mk>
+MPLAYER_DESC=	Enable MPlayer backend (recommended)
+XINE_DESC=	Enable Xine backend
+GSTREAMER_DESC=	Enable GStreamer backend (broken)
 
-.if defined(WITH_MPLAYER)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMPLAYER}
 RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 .endif
 
-.if defined(WITH_XINE)
+.if ${PORT_OPTIONS:MXINE}
 LIB_DEPENDS+=	xine.2:${PORTSDIR}/multimedia/libxine
 .else
 CMAKE_ARGS+=	-DWITH_Xine:Bool=Off
 .endif
 
-.if defined(WITH_GSTREAMER)
-USE_GSTREAMER+=	yes
+.if ${PORT_OPTIONS:MGSTREAMER}
+USE_GSTREAMER=	yes
 .else
 CMAKE_ARGS+=	-DWITH_GStreamer:Bool=Off
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

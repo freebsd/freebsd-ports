@@ -32,12 +32,14 @@ PLIST_SUB=	INCLUDEDIR=include/${LATEST_LINK} \
 STRIP_FILES=	lib/libqwt6.so.${PORTVERSION} \
 		lib/libqwtmathml.so.${PORTVERSION}
 
+.include <bsd.port.options.mk>
+
 do-configure:
 	(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS})
 
 post-install:
 	${STRIP_CMD} ${STRIP_FILES:S,^,${PREFIX}/,}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	(cd ${WRKSRC}/doc/html/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
 .endif
 
