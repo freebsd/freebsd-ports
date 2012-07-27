@@ -1,0 +1,13 @@
+LIB=	utp
+SHLIB_MAJOR=	0
+SRCS=	utp.cpp utp_utils.cpp
+
+CXXFLAGS+=	-fno-exceptions -fno-rtti
+CXXFLAGS+=	-I${.CURDIR} -I${.CURDIR}/utp_config_lib -DPOSIX
+CXXFLAGS+=	-Wall
+
+INCLUDEDIR=	${PREFIX}/include/libutp
+LIBDIR= 	${PREFIX}/lib
+INCS=  		utp.h utp_utils.h utypes.h
+
+.include <bsd.lib.mk>

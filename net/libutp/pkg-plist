@@ -1,0 +1,7 @@
+lib/libutp.so.0
+lib/libutp.so
+lib/libutp.a
+include/libutp/utp.h
+include/libutp/utp_utils.h
+include/libutp/utypes.h
+@dirrm include/libutp
