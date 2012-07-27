@@ -26,6 +26,7 @@ USE_GNOME=	gnomehack glib20 gtk20 pygtk2
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	build
 INSTALLS_ICONS=	yes
 USE_XORG=	x11 xproto xcomposite xrender
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GRaphics Over Miscellaneous Objects (Gromit)
 
 USE_GNOME=	gtk20
+USE_PKGCONFIG=	build
 
 DOCS=		AUTHORS ChangeLog README
 

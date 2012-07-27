@@ -21,6 +21,7 @@ COMMENT=	A dockapp which provides a drawer to launch applications
 
 USE_GNOME=	gdkpixbuf
 USE_GMAKE=	yes
+USE_PKGCONFIG=	build
 CONFIGURE_ENV+=	DOCSDIR=${DOCSDIR}
 MAKE_ENV+=	${CONFIGURE_ENV}
 

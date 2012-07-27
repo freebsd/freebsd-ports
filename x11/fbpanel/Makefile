@@ -21,6 +21,7 @@ USE_XORG=	x11 xmu xpm
 USE_GNOME=	gtk20
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_PKGCONFIG=	build
 
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 
