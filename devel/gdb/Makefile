@@ -7,7 +7,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	7.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -60,6 +60,10 @@ USE_PYTHON=	2.5-2.7
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MTHREADS}
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-gdb-configure.tgt ${FILESDIR}/extrapatch-gdb-Makefile.in
+.endif
 
 .if ${PORT_OPTIONS:MDEBUG}
 CFLAGS+=	-g

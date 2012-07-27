@@ -1,0 +1,29 @@
+--- gdb/Makefile.in.orig	2011-03-30 07:55:39.000000000 +0100
++++ gdb/Makefile.in	2011-10-29 08:02:29.600973609 +0100
+@@ -571,7 +571,7 @@
+ 	xstormy16-tdep.o \
+ 	xtensa-config.o xtensa-tdep.o xtensa-linux-tdep.o \
+ 	glibc-tdep.o \
+-	bsd-uthread.o \
++	fbsd-threads.o \
+ 	nbsd-tdep.o obsd-tdep.o \
+ 	sol2-tdep.o \
+ 	solib-frv.o solib-irix.o solib-svr4.o solib-target.o \
+@@ -782,7 +782,7 @@
+ gnulib/stdint.in.h remote.h gdb.h sparc-nat.h \
+ gdbthread.h dwarf2-frame.h dwarf2-frame-tailcall.h nbsd-nat.h dcache.h \
+ amd64-nat.h s390-tdep.h arm-linux-tdep.h exceptions.h macroscope.h \
+-gdbarch.h bsd-uthread.h gdb_stat.h memory-map.h	memrange.h \
++gdbarch.h gdb_stat.h memory-map.h	memrange.h \
+ mdebugread.h m88k-tdep.h stabsread.h hppa-linux-offsets.h linux-fork.h \
+ ser-unix.h inf-ptrace.h terminal.h ui-out.h frame-base.h \
+ f-lang.h dwarf2loc.h value.h sparc-tdep.h defs.h target-descriptions.h \
+@@ -1452,7 +1452,7 @@
+ 	armnbsd-nat.c armbsd-tdep.c armnbsd-tdep.c armobsd-tdep.c \
+ 	avr-tdep.c \
+ 	bfin-linux-tdep.c bfin-tdep.c \
+-	bsd-uthread.c bsd-kvm.c \
++	fbsd-threads.c bsd-kvm.c \
+ 	core-regset.c corelow.c \
+ 	dcache.c dicos-tdep.c darwin-nat.c \
+ 	exec.c \
