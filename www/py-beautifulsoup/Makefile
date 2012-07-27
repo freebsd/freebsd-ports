@@ -19,6 +19,4 @@ USE_PYTHON=	2.7
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	beautifulsoup4
 
-CONFLICTS=	py[0-9]*-beautifulsoup-3.*
-
 .include <bsd.port.mk>
