@@ -17,7 +17,7 @@ COMMENT=	A slider plugin to adjust and/or monitor any numeric variable
 LICENSE=	GPLv3
 
 USE_XFCE=	panel libutil libgui
-USE_GNOME=	pkgconfig
+USE_PKGCONFIG=	build
 
 CFLAGS+=	`pkg-config --cflags libxfce4panel-1.0 libxfcegui4-1.0`
 LDFLAGS+=	`pkg-config --libs libxfce4panel-1.0 libxfcegui4-1.0`
