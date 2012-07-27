@@ -20,6 +20,7 @@ LIB_DEPENDS=	gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtkmm20
 USE_XORG=	x11
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
+USE_PKGCONFIG=	build
 
 .include <bsd.port.pre.mk>
 

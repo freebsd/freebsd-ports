@@ -21,6 +21,7 @@ GTK1_DESC=	GTK1 support (Default is GTK2)
 
 USE_XORG=	x11 xv
 WANT_GNOME=	yes
+USE_PKGCONFIG=	build
 
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME} bin/g${PORTNAME}

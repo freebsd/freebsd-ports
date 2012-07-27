@@ -16,6 +16,7 @@ COMMENT=	Simple and powerful application launcher
 
 USE_GNOME=	gtk20 libxml2
 USE_GMAKE=	yes
+USE_PKGCONFIG=	build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 

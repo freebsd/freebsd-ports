@@ -24,6 +24,7 @@ USE_XORG=	sm ice
 USE_GNOME=	libglade2 vte
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
+USE_PKGCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_prog_HAVE_XMLTO=no ac_cv_prog_HAVE_PO4A=no
 INSTALLS_ICONS=	yes

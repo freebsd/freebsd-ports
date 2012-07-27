@@ -16,6 +16,7 @@ COMMENT=	A simple GTK-2 terminal with tabs
 
 USE_GNOME=	vte
 USE_GMAKE=	yes
+USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	libtool
 
 PORTDOCS=	README

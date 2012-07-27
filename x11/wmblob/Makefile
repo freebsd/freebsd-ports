@@ -17,6 +17,7 @@ COMMENT=	Showing moving blobs
 USE_XORG=	xpm
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
+USE_PKGCONFIG=	build
 GNU_CONFIGURE=	yes
 
 MAN1=		wmblob.1
