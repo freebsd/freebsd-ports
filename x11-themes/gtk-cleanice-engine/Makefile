@@ -20,6 +20,7 @@ COMMENT=	A simplistic GTK+ 2.x theme engine
 
 USE_GNOME=	gnomehack gtk20
 USE_AUTOTOOLS=	libtool
+USE_PKGCONFIG=	build
 
 THEME=		cleanice-theme-1.2.7
 THEMEDIR=	${WRKDIR}/${THEME}/Theme

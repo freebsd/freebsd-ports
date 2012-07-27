@@ -49,6 +49,8 @@ DISTFILES=	redhat-artwork-${PORTVERSION}-9.fc7.src.rpm
 
 EXTRACT_DEPENDS+=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
+USE_PKGCONFIG=	build
+
 WRKSRC=		${WRKDIR}/redhat-artwork-${PORTVERSION}
 
 # the slave ports use their own pkg files and dirs

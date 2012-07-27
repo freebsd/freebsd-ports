@@ -18,6 +18,7 @@ COMMENT?=	GTK+ 2.x engine based on Bluecurve
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
+USE_PKGCONFIG=	build
 INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
