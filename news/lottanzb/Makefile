@@ -27,7 +27,8 @@ RUN_DEPENDS=	SABnzbd.py:${PORTSDIR}/news/sabnzbdplus \
 		${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedparser \
 		${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl
 
-CONFLICTS=	shared-mime-info-[0-9]*
+BROKEN=		overwrite a file owned by misc/shared-mime-info: share/mime/application/x-nzb.xml
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_GNOME=	desktopfileutils intltool
