@@ -25,7 +25,7 @@ you update your ports collection, before attempting any port upgrades.
 
   # portmaster -o devel/pkgconf devel/pkg-config
   or
-  # portupgrade -o devel/pkgconf devel/pkg-config
+  # portupgrade -fo devel/pkgconf pkg-config-\*
 
 20120725:
   AFFECTS: users of chinese/fcitx
