@@ -13,7 +13,7 @@ MASTER_SITES=	SF/aa-project/aa-lib/1.4rc5
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	eadler@FreeBSD.org
-COMMENT=	An ascii art library
+COMMENT=	ASCII art library
 
 USE_AUTOTOOLS=	libtool
 USE_NCURSES=	yes

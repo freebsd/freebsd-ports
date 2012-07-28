@@ -13,7 +13,7 @@ MASTER_SITES=	http://quisp.sourceforge.net/${PORTNAME}/
 DISTNAME=	${PORTNAME}${PORTVERSION:C/\.//1}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A set of programs for working with tabular ascii data
+COMMENT=	Set of programs for working with tabular ASCII data
 
 OPTIONS=	LIBCHRON "Install libchron" Off
 

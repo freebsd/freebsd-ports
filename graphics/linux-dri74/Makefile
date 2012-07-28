@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	Mesa-based DRI libraries, drivers and binaries (Linux Ubuntu 9.0.4)
+COMMENT=	Mesa-based DRI libraries, drivers, and binaries (Linux Ubuntu 9.0.4)
 
 CONFLICTS=	linux_dri-6.5.2006* linux-libGLU-[0-9]* linux_dri-[0-9]* linux-f8-dri-[0-9]* linux-f10-dri-[0-9]* \
 		linux-f10-libGLU-[0-9]*

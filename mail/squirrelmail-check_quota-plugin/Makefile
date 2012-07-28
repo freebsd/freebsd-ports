@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION}-1.4.0
 DIST_SUBDIR=	squirrelmail
 
 MAINTAINER=	itetcu@FreeBSD.org
-COMMENT=	Check/display users' mail quota (filesystem, IMAP-based and cPanel)
+COMMENT=	Check/display users' mail quota (filesystem, IMAP-based, and cPanel)
 
 USE_SM_COMPAT=	YES
 

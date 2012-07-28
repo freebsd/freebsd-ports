@@ -13,7 +13,7 @@ MASTER_SITES=		http://xchat.org/files/source/1.8/ \
 			http://xchat.linuxpower.org/files/source/1.8/
 
 MAINTAINER?=		ports@FreeBSD.org
-COMMENT=	An X11 IRC client using the GTK+ toolkit, and optionally, GNOME
+COMMENT=	X11 IRC client using the GTK+ toolkit, and optionally, GNOME
 
 # This port has a slave port japanese/xchat.  Do not carelessly overwrite
 # the variables or the targets defined in it.  When you need to, please

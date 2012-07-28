@@ -12,7 +12,7 @@ CATEGORIES=	math finance
 MASTER_SITES=	SF
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	GNU Regression, Econometrics and Time-series Library
+COMMENT=	GNU Regression, Econometrics, and Time-series Library
 
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3
 

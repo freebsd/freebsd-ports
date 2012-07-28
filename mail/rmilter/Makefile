@@ -12,7 +12,7 @@ CATEGORIES=		mail
 MASTER_SITES=		http://highsecure.ru/
 
 MAINTAINER=		vsevolod@FreeBSD.org
-COMMENT=		Milter that performs spamd, clamav and spf checks
+COMMENT=		Milter that performs spamd, clamav, and spf checks
 
 PLIST_FILES=	sbin/rmilter etc/rc.d/rmilter.sh etc/rmilter.conf.sample
 

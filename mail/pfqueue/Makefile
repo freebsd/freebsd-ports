@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A console-based tool for handling Postfix 1, Postfix 2 and Exim queues
+COMMENT=	Console-based tool for handling Postfix 1, Postfix 2, and Exim queues
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes

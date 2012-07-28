@@ -17,7 +17,7 @@ DISTFILES=	${EBFILES} \
 EXTRACT_ONLY=	${EBFILES}
 
 MAINTAINER=	yasu@utahime.org
-COMMENT=	C library for accessing EB, EBG, EBXA and EPWING CD-ROM dictionaries
+COMMENT=	C library for accessing EB, EBG, EBXA, and EPWING CD-ROM dictionaries
 
 EBFILES=	${DISTNAME}${EXTRACT_SUFX}
 APPENDIXFILES=	appendix/cencro-1.0.tar.gz \

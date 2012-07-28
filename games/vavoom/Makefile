@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Vavoom-source/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Doom, Doom II, Heretic, Hexen and Strife source port
+COMMENT=	Doom, Doom II, Heretic, Hexen, and Strife source port
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png

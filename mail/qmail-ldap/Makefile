@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-ldap
 
-COMMENT=	A SECURE, reliable, and FAST MTA for UNIX systems WITH LDAP support
+COMMENT=	Secure, reliable, and fast MTA for UNIX systems with LDAP support
 
 RUN_DEPENDS=	${LOCALBASE}/bin/svscan:${PORTSDIR}/sysutils/daemontools \
 		${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp

@@ -11,7 +11,7 @@ CATEGORIES=	print
 MASTER_SITES=	SF/srezic/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	slaven@rezic.de
-COMMENT=	PostScript (created by dvips) to ascii converter
+COMMENT=	PostScript (created by dvips) to ASCII converter
 
 PLIST_FILES=	bin/dvips2ascii
 

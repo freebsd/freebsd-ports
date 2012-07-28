@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Mobipocket plugins for Strigi indexing, Okular and thumbnails
+COMMENT=	Mobipocket plugins for Strigi indexing, Okular, and thumbnails
 
 CONFLICTS=	kdegraphics-4.[0-6].*
 

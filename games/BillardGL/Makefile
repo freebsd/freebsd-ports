@@ -12,7 +12,7 @@ CATEGORIES=		games
 MASTER_SITES=		SF/${PORTNAME:L}/${PORTNAME:L}/${PORTNAME}%20${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An OpenGL billiard simulator
+COMMENT=	OpenGL billiards simulator
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 

@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-plugin
 DIST_SUBDIR=	squirrelmail
 
 MAINTAINER=	ports.maintainer@evilphi.com
-COMMENT=	Lets users change password, vacation and forwarding
+COMMENT=	Lets users change password, vacation, and forwarding
 
 RUN_DEPENDS=	ZendFramework>=1.9.0:${PORTSDIR}/www/zend-framework
 

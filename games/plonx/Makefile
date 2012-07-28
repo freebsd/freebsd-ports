@@ -10,7 +10,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://bilious.homelinux.org/~paxed/${PORTNAME}/
 
 MAINTAINER=	clive@darkarts.co.za
-COMMENT=	A small ascii puzzle game
+COMMENT=	Small ASCII puzzle game
 
 PLIST_FILES=	bin/plonx
 PORTDOCS=	README

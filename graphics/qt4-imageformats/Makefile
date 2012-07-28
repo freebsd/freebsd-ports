@@ -12,7 +12,7 @@ CATEGORIES?=	graphics
 PKGNAMEPREFIX=	qt4-
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt imageformat plugins for GIF, JPEG, MNG and SVG
+COMMENT=	Qt imageformat plugins for GIF, JPEG, MNG, and SVG
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		mng:${PORTSDIR}/graphics/libmng \

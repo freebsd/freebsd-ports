@@ -16,7 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} memx16.tar.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	Brain teasers, puzzle and memory games for kids in one pack
+COMMENT=	Brain teasers, puzzle, and memory games for kids in one pack
 
 LICENSE=	unknown GPLv2
 LICENSE_COMB=	dual

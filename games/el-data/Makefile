@@ -18,7 +18,7 @@ DISTFILES=	${EL_DATA}:data
 DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	Eternal Lands data, sound and music files
+COMMENT=	Eternal Lands data, sound, and music files
 
 USE_ZIP=	yes
 NO_PACKAGE=	Package will be 140MB, set FORCE_PACKAGE if you really want it

@@ -13,7 +13,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A GTK2 comic book viewer for .cbz, .cbr and .cbt files
+COMMENT=	GTK2 comic book viewer for .cbz, .cbr, and .cbt files
 
 RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \

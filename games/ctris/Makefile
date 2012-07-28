@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.hackl.dhs.org/data/download/files/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	Colorized, small and flexible Tetris(TM)-clone for the console
+COMMENT=	Colorized, small, and flexible Tetris(TM)-clone for the console
 
 LICENSE=	GPLv2
 

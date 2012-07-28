@@ -12,7 +12,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}${DISTVERSION}
 
 MAINTAINER=	graudeejs@gmail.com
-COMMENT=	Convert ascii-art diagrams into proper bitmap graphics
+COMMENT=	Convert ASCII art diagrams into proper bitmap graphics
 
 USE_ZIP=	yes
 USE_JAVA=	yes

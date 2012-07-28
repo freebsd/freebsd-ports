@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-tls
 
-COMMENT=	A SECURE, reliable, and FAST MTA for UNIX systems WITH TLS support
+COMMENT=	Secure, reliable, and fast MTA for UNIX systems with TLS support
 
 CONFLICTS=	qmail-[0-9]* qmail-ldap-[0-9]* qmail-mysql-[0-9]* qmail-spamcontrol-[0-9]*
 

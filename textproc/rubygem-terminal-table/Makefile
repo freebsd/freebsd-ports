@@ -11,7 +11,7 @@ CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	freebsdports@chillibear.com
-COMMENT=	Simple, feature rich ascii table generation library
+COMMENT=	Simple, feature rich ASCII table generation library
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
