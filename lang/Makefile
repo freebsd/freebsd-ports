@@ -331,7 +331,6 @@
     SUBDIR += sr
     SUBDIR += stalin
     SUBDIR += starlogo
-    SUBDIR += steptalk
     SUBDIR += stklos
     SUBDIR += stldoc
     SUBDIR += swi-pl
