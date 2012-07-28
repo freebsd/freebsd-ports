@@ -20,6 +20,7 @@ FETCH_ARGS=	-Fpr
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_PKGCONFIG=	build
 INSTALLS_ICONS=	yes
 USE_QT4=	moc_build opengl rcc_build
 
