@@ -1,2 +1,72 @@
-@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+%%PORTDOCS%%%%DOCSDIR%%/.buildinfo
+%%PORTDOCS%%%%DOCSDIR%%/_sources/comment-example.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/differences.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/do-it-yourself.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/file-example.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/jsonrpc-example.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/license.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/modules/client.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/modules/dec.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/modules/static.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/modules/webob.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/news.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/pycon2011/pycon-py3k-sprint.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/reference.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/test-file.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/test_dec.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/test_request.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/test_response.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/wiki-example.txt
+%%PORTDOCS%%%%DOCSDIR%%/_static/ajax-loader.gif
+%%PORTDOCS%%%%DOCSDIR%%/_static/basic.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/comment-bright.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/comment-close.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/comment.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/default.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/doctools.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/down-pressed.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/down.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/file.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/jquery.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/minus.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/plus.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/pygments.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/searchtools.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/sidebar.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/underscore.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/up-pressed.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/up.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/websupport.js
+%%PORTDOCS%%%%DOCSDIR%%/comment-example.html
+%%PORTDOCS%%%%DOCSDIR%%/differences.html
+%%PORTDOCS%%%%DOCSDIR%%/do-it-yourself.html
+%%PORTDOCS%%%%DOCSDIR%%/file-example.html
+%%PORTDOCS%%%%DOCSDIR%%/genindex.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/jsonrpc-example.html
+%%PORTDOCS%%%%DOCSDIR%%/license.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/client.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/dec.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/static.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/webob.html
+%%PORTDOCS%%%%DOCSDIR%%/news.html
+%%PORTDOCS%%%%DOCSDIR%%/objects.inv
+%%PORTDOCS%%%%DOCSDIR%%/py-modindex.html
+%%PORTDOCS%%%%DOCSDIR%%/pycon2011/pycon-py3k-sprint.html
+%%PORTDOCS%%%%DOCSDIR%%/reference.html
+%%PORTDOCS%%%%DOCSDIR%%/search.html
+%%PORTDOCS%%%%DOCSDIR%%/searchindex.js
+%%PORTDOCS%%%%DOCSDIR%%/test-file.html
+%%PORTDOCS%%%%DOCSDIR%%/test_dec.html
+%%PORTDOCS%%%%DOCSDIR%%/test_request.html
+%%PORTDOCS%%%%DOCSDIR%%/test_response.html
+%%PORTDOCS%%%%DOCSDIR%%/wiki-example.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pycon2011
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/modules
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_static
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources/pycon2011
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources/modules
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
