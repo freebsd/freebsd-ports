@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webob
-DISTVERSION=	1.2b3
+PORTVERSION=	1.2.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,9 +19,34 @@ LICENSE=	MIT
 
 PYDISTUTILS_PKGNAME=	WebOb
 PYDISTUTILS_PKGVERSION=	${DISTVERSION}
-USE_PYTHON=	2.6+
+# Python3 ready
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
 USE_ZIP=	yes
 
-.include <bsd.port.mk>
+OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
+OPTIONS_DEFINE=	DOCS TESTS
+
+TESTS_DESC=	Run tests with Nose
+
+.include <bsd.port.options.mk>
+
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
+PYDISTUTILS_BUILD_TARGET+=	build_sphinx -a -E
+
+post-install:
+	@cd ${WRKSRC}/build/sphinx/html && \
+	${COPYTREE_SHARE} . ${DOCSDIR}
+.endif
+
+.if ${PORT_OPTIONS:MTESTS}
+BUILD_DEPENDS+=	nosetests:${PORTSDIR}/devel/py-nose
+PYDISTUTILS_BUILD_TARGET+=	nosetests
+.endif
+
+.include <bsd.port.post.mk>
