@@ -9,7 +9,8 @@ PORTNAME=	fish
 DISTVERSION=	0.98
 PORTREVISION=	4
 CATEGORIES=	irc security
-MASTER_SITES=	http://fish.secure.la/xchat/
+MASTER_SITES=	http://fish.secure.la/xchat/ \
+		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
 PKGNAMEPREFIX=	xchat-
 DISTNAME=	FiSH-XChat.v${DISTVERSION}-source
 

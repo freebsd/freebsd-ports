@@ -9,7 +9,8 @@ PORTNAME=	mod_ruby
 PORTVERSION=	1.3.0
 PORTREVISION=	3
 CATEGORIES=	www ruby
-MASTER_SITES=	http://www.modruby.net/archive/
+MASTER_SITES=	http://www.modruby.net/archive/ \
+		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
