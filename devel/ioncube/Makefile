@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ioncube
-DISTVERSION=	4.2.1
+DISTVERSION=	4.2.2
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads2.ioncube.com/loader_downloads/ \
-		http://ls.fvds.ru/ioncube/${DISTVERSION}/
+		http://dl.ispsystem.info/ioncube/${DISTVERSION}/
 DISTNAME=	${PORTNAME}_loaders_fre_${VER}_${ARCH:S,i386,x86,:S,amd64,x86-64,}
 
 MAINTAINER=	svyatoslav.lempert@gmail.com
@@ -22,14 +22,17 @@ USE_PHP=	yes
 
 SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}
+DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
 
 .include <bsd.port.pre.mk>
 
 # Detect OS Version
+VER=	7
 .if ${OSVERSION} >= 800000
-VER=		8
-.else
-VER=		7
+VER=	8
+.endif
+.if ${OSVERSION} >= 900000
+VER=	9
 .endif
 
 PHP_INSTVER=	${PHP_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
