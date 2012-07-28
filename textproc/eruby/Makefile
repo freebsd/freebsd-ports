@@ -9,7 +9,8 @@ PORTNAME=	eruby
 PORTVERSION=	1.0.5
 PORTREVISION=	2
 CATEGORIES=	textproc www ruby
-MASTER_SITES=	http://www.modruby.net/archive/
+MASTER_SITES=	http://www.modruby.net/archive/ \
+		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
