@@ -85,4 +85,3 @@ if [ "$2" = "POST-INSTALL" ]; then
         fi
     fi
 fi
-
