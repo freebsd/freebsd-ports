@@ -1,7 +1,6 @@
 @comment $FreeBSD$
-@unexec %D/etc/rc.d/isc-dhcpd forcestop 2>/dev/null || true
-%%IPV6%%@unexec %D/etc/rc.d/isc-dhcpd6 forcestop 2>/dev/null || true
 @unexec if cmp -s %D/etc/dhcpd.conf.sample %D/etc/dhcpd.conf; then rm -f %D/etc/dhcpd.conf; fi
+@unexec echo "You should stop the dhcpd and dhcpd6 daemons if you are permanently removing this port."
 etc/dhcpd.conf.sample
 @exec if [ ! -f %D/etc/dhcpd.conf ] ; then cp -p %D/%F %B/dhcpd.conf; fi
 %%IPV6%%@unexec if cmp -s %D/etc/dhcpd6.conf.sample %D/etc/dhcpd6.conf; then rm -f %D/etc/dhcpd6.conf; fi
