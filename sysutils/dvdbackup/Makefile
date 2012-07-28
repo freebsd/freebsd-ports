@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dvdbackup
-PORTVERSION=	0.4.1
-PORTREVISION=	2
+PORTVERSION=	0.4.2
 CATEGORIES=	sysutils multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -16,7 +15,7 @@ COMMENT=	Backup content from DVD to hard disk
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS=	dvdread:${PORTSDIR}/multimedia/libdvdread
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -27,7 +26,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		dvdbackup.1
 PORTDOCS=	NEWS README
 
-DEFAULT_DVD_DEVICE?=	/dev/acd0
+DEFAULT_DVD_DEVICE?=	/dev/cd0
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
