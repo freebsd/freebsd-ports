@@ -1033,4 +1033,6 @@
 @exec mkdir -p %D/%%WWWDIR%%/xt
 @exec mkdir -p %D/%%WWWDIR%%/t
 @exec mkdir -p %D/%%WWWDIR%%/lib
+@exec mkdir -p %D/%%WWWDIR%%/graphs
+@exec mkdir -p %D/%%WWWDIR%%/data
 @exec mkdir -p %D/%%WWWDIR%%/contrib
