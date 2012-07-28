@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vidalia
-PORTVERSION=	0.2.10
+PORTVERSION=	0.2.20
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	https://archive.torproject.org/tor-package-archive/vidalia/ \
 		https://www.torproject.org/dist/vidalia/ \
