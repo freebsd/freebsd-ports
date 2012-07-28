@@ -40,6 +40,9 @@ SUB_FILES=	pkg-message
 
 DATA_DIRS_LIST=	images js skins
 
+# checksetup will fail if these directories are not present!
+EMPTY_DIRS_LIST=data graphs contrib lib t xt
+
 .include "${.CURDIR}/Makefile.common"
 .include "${.CURDIR}/Makefile.options"
 .include <bsd.port.options.mk>
@@ -177,14 +180,12 @@ do-install:	.SILENT
 	(cd ${WRKSRC}/${D} && ${COPYTREE_SHARE} . ${WWWDIR}/${D})
 .endfor
 	${TAR} -C ${WRKSRC} -cf - Bugzilla template | ${TAR} --unlink -C ${WWWDIR} -xf -
+	@${MKDIR} ${EMPTY_DIRS_LIST:S!^!${WWWDIR}/!}
 
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${DOCSDIR}/)
 .endif
-
-# checksetup will fail if these directories are not present!
-	${MKDIR} ${WWWDIR}/contrib ${WWWDIR}/lib ${WWWDIR}/t ${WWWDIR}/xt
 
 .if ${PORT_OPTIONS:MCONTRIB}
 	@cd ${WRKSRC}/contrib && \
