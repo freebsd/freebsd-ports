@@ -18,7 +18,7 @@ COMMENT=	German localization for Bugzilla
 
 RUN_DEPENDS=	bugzilla>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla3
 
-LATEST_LINK=	${PKGNAMEPREFIX}bugzilla3${PKGNAMESUFFIX}
+LATEST_LINK=	${PKGNAMEPREFIX}bugzilla3
 
 NO_WRKSUBDIR=	yes
 
@@ -28,7 +28,7 @@ LANGDIR=	${WWWDIR}/template/de
 
 # german template checks the bugzilla version number and displays
 # non supported bugzilla version, however there are no relevant
-# changes in the template between 3.6.8 and 3.6.9
+# changes in the template between 3.6.8 and 3.6.10
 post-patch:
 	@${SED} -i '' -e 's|3.6.8|3.6.10|' ${WRKDIR}/de/default/global/gzversion.html.tmpl
 	@${FIND} ${WRKDIR}/ -name \*.orig -delete

@@ -1,0 +1,193 @@
+====================================================
+This patch is fix security issues in the german
+bugzilla language templates (4.2.1 -> 4.2.2)
+
+--- ./de/default/admin/params/editparams.html.tmpl.orig	2012-07-28 11:54:15.000000000 +0200
++++ ./de/default/admin/params/editparams.html.tmpl	2012-07-28 11:55:48.000000000 +0200
+@@ -95,7 +95,7 @@
+       [% ELSE %]
+ 
+         <div class="contribute"><strong>Hinweis:</strong>
+-          [%+ terms.Bugzilla %] wird ausschließlich ehrenamtlich
++          B[% %]ugzilla wird ausschließlich ehrenamtlich
+           weiterentwickelt.
+           Die beste Weise, dem Projekt zu helfen, ist,
+           <a href="http://www.bugzilla.org/contribute/">selbst beizutragen</a>!
+--- ./de/default/bug/dependency-tree.html.tmpl.orig	2012-07-28 11:27:44.000000000 +0200
++++ ./de/default/bug/dependency-tree.html.tmpl	2012-07-28 11:50:21.000000000 +0200
+@@ -85,13 +85,28 @@
+     [% END %]
+   </h3>
+   [% IF ids.size %]
+-    ([% IF maxdepth -%]Bis Tiefe [% maxdepth %] | [% END -%]
+-    [%%]<a href="buglist.cgi?bug_id=[% ids.join(",") %]">Als
+-    [%+ terms.bug %]liste anzeigen</a>
++    [%# 27 chars is the length of buglist.cgi?tweak=&bug_id=" %]
++    [% use_post = (ids.join(",").length > constants.CGI_URI_LIMIT - 27 ) ? 1 : 0 %]
++    [% IF use_post %]
++      <form action="buglist.cgi" method="post">
++      <input type="hidden" name="bug_id" value="[% ids.join(",") %]">
++    [% END %]
++
++    [% IF maxdepth -%]Up to [% maxdepth %] level[% "s" IF maxdepth > 1 %] deep | [% END -%]
++    [% IF use_post %]
++      <button>view as [% terms.bug %] list</button>
++      [% IF user.in_group('editbugs') && ids.size > 1 %]
++        | <button type="submit" name="tweak" value="1">change several</button>
++      [% END %]
++      </form>
++    [% ELSE %]
++    [%%]<a href="buglist.cgi?bug_id=[% ids.join(",") %]">Als [%+ terms.bug %]liste anzeigen</a>
+     [% IF user.in_group('editbugs') && ids.size > 1 %]
+       | <a href="buglist.cgi?bug_id=[% ids.join(",") %]&amp;tweak=1">Mehrere
+       [% terms.bugs %] gleichzeitig ändern</a>
+-    [% END %])
++      [% END %]
++    [% END %]
++
+     <ul class="tree">
+       [% INCLUDE display_tree tree=$tree_name %]
+     </ul>
+--- ./de/default/email/bugmail.html.tmpl.orig	2012-07-28 11:01:28.000000000 +0200
++++ ./de/default/email/bugmail.html.tmpl	2012-07-28 11:26:34.000000000 +0200
+@@ -33,11 +33,12 @@
+       [% FOREACH comment = new_comments.reverse %]
+         <div>
+           [% IF comment.count %]
+-            <b>[% "Kommentar ${comment.count}" FILTER bug_link( bug,
+-              {comment_num => comment.count, full_url => 1}) FILTER none %]
++            <b>[% "Kommentar # ${comment.count}" FILTER bug_link(bug,
++              {comment_num => comment.count, full_url => 1, user => to_user}) FILTER none %]
++              on [% "$terms.bug $bug.id" FILTER bug_link(bug, { full_url => 1, user => to_user }) FILTER none %]
+               von [% INCLUDE global/user.html.tmpl who = comment.author %]</b>
+           [% END %]
+-        <pre>[% comment.body_full({ wrap => 1 }) FILTER quoteUrls(bug, comment) %]</pre>
++        <pre>[% comment.body_full({ wrap => 1 }) FILTER quoteUrls(bug, comment, to_user) %]</pre>
+         </div>
+       [% END %]
+       </p>
+@@ -70,13 +71,14 @@
+           [% SET in_table = 0 %]
+         [% END %]
+         [% IF change.blocker %]
+-              [% "${terms.Bug} ${bug.id}" FILTER bug_link(bug, full_url => 1) FILTER none  %]
+-              hängt von [% "${terms.bug_dat} ${change.blocker.id}"
+-                  FILTER bug_link(change.blocker, full_url => 1) FILTER none %]
++              [% "${terms.Bug} ${bug.id}" FILTER bug_link(bug, {full_url => 1, user => to_user}) FILTER none %]
++              hängt von
++              [%+ "${terms.bug} ${change.blocker.id}"
++                  FILTER bug_link(change.blocker, {full_url => 1, user => to_user}) FILTER none %],
+               ab, dessen Status sich geändert hat.
+         [% ELSE %]
+-              Änderung von [% INCLUDE global/user.html.tmpl who = change.who %]
+-              an [% "${terms.bug_dat} ${bug.id}" FILTER bug_link(bug, full_url => 1) FILTER none %]:
++              Änderung von [% INCLUDE global/user.html.tmpl who = change.who %] an
++              [%+ "${terms.bug} ${bug.id}" FILTER bug_link(bug, {full_url => 1, user => to_user}) FILTER none %]
+         [% END %]
+         <br>
+           [% IF in_table == 0 %]
+@@ -100,7 +102,7 @@
+           <th>[% field_label FILTER html %]</th>
+           <td>
+             [% IF change.field_name == "bug_id" %]
+-              [% new_value FILTER bug_link(bug, full_url => 1) FILTER none %]
++              [% new_value FILTER bug_link(bug, {full_url => 1, user => to_user}) FILTER none %]
+             [% ELSE %]
+               [% new_value FILTER html %]
+             [% END %]
+--- ./de/default/global/code-error.html.tmpl.orig	2012-07-28 10:57:03.000000000 +0200
++++ ./de/default/global/code-error.html.tmpl	2012-07-28 10:59:39.000000000 +0200
+@@ -500,6 +500,10 @@
+   [% ELSIF error == "invalid_post_bug_submit_action" %]
+     Ungültige Einstellung für post_bug_submit_action.
+ 
++  [% ELSIF error == "search_field_operator_unsupported" %]
++    [% terms.Bugzilla %] does not support the search type
++    "[% operator FILTER html %]".
++
+   [% ELSE %]
+     [%# Try to find hooked error messages %]
+     [% error_message = Hook.process("errors") %]
+--- ./de/default/global/confirm-user-match.html.tmpl.orig	2012-07-28 10:52:48.000000000 +0200
++++ ./de/default/global/confirm-user-match.html.tmpl	2012-07-28 10:56:09.000000000 +0200
+@@ -159,8 +159,6 @@
+                 [% ELSE %]
+                   passte zu
+                   <b>[% query.value.users.0.identity FILTER html %]</b>
+-                  <input type="hidden" name="[% field.key FILTER html %]"
+-                         value="[% query.value.users.0.login FILTER html %]">
+                 [% END %]
+             [% ELSE %]
+                 [% IF (query.key.length < 3) && !Param('emailsuffix') %]
+@@ -186,8 +184,10 @@
+ 
+ [% IF matchsuccess == 1 %]
+ 
+-  [% SET exclude_these =
+-           matches.keys.merge(['Bugzilla_login', 'Bugzilla_password']) %]
++  [% SET exclude_these = ['Bugzilla_login', 'Bugzilla_password'] %]
++  [% FOREACH key IN matches.keys %]
++    [% exclude_these.push(key) IF cgi.param(key) == '' %]
++  [% END %]
+   [% SET exclude = '^' _ exclude_these.join('|') _ '$' %]
+   [% PROCESS "global/hidden-fields.html.tmpl" exclude = exclude %]
+ 
+--- ./de/default/list/server-push.html.tmpl.orig	2012-07-28 10:49:41.000000000 +0200
++++ ./de/default/list/server-push.html.tmpl	2012-07-28 10:51:31.000000000 +0200
+@@ -36,15 +36,10 @@
+       die Arbeit der Datenbank ab…</h1>
+ 
+     [% IF debug %]
+-      <p>
+-        [% FOREACH debugline = debugdata %]
+-          <code>[% debugline FILTER html %]</code><br>
++      <p>[% query FILTER html %]</p>
++      [% IF query_explain.defined %]
++        <pre>[% query_explain FILTER html %]</pre>
+         [% END %]
+-      </p>
+-      <p>
+-        <code>[% query FILTER html %]</code>
+-      </p>
+     [% END %]
+-
+   </body>
+ </html>
+--- ./de/default/search/knob.html.tmpl.orig	2012-07-28 09:42:38.000000000 +0200
++++ ./de/default/search/knob.html.tmpl	2012-07-28 09:47:28.000000000 +0200
+@@ -42,6 +42,9 @@
+    "Last Changed" => "Zeitpunkt der letzten Änderung" } %]
+ 
+ <input type="hidden" name="cmdtype" value="doit">
++[% IF user.id %]
++  <input type="hidden" name="token" value="[% issue_hash_token(['searchknob']) FILTER html %]">
++[% END %]
+ 
+ <p>
+   <label for="order">Anfrageergebnisse sortieren nach</label>:
+@@ -70,7 +73,8 @@
+   [% END %]
+ </p>
+ 
+-<p>
++[% IF user.id %]
++  <p>
+   &nbsp;&nbsp;&nbsp;
+   <input type="checkbox" id="remasdefault"
+          name="remtype" value="asdefault">
+@@ -78,11 +82,13 @@
+     und verwende die Formulareinträge in Zukunft als meine
+     persönlichen Standard-Abfrageoptionen
+   </label>
+-</p>
++  </p>
++[% END %]
+ 
+ [% IF userdefaultquery %]
+   <p>
+-    <a href="query.cgi?nukedefaultquery=1">
++    <a href="query.cgi?nukedefaultquery=1&amp;token=
++       [%- issue_hash_token(['nukedefaultquery']) FILTER uri %]">
+       Setze meine persönlichen Standard-Suchoptionen
+       zurück auf die Systemvoreinstellung</a>.
+   </p>
