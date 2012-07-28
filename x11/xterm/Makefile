@@ -73,7 +73,7 @@ MAN1=		resize.1 koi8rxterm.1 uxterm.1 xterm.1
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900004
-LIB_DEPENDS=	utempter.0:${PORTSDIR}/sysutils/libutempter
+LIB_DEPENDS+=	utempter.0:${PORTSDIR}/sysutils/libutempter
 .endif
 
 post-install:
