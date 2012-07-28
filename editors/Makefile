@@ -57,7 +57,6 @@
     SUBDIR += emacs
     SUBDIR += emacs-devel
     SUBDIR += emacs-nox11
-    SUBDIR += emacs.app
     SUBDIR += emacs21
     SUBDIR += emacs22
     SUBDIR += f4l
