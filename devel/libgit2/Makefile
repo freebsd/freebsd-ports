@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libgit2
-PORTVERSION=	0.16.0
-PORTREVISION=	1
+PORTVERSION=	0.17.0
 CATEGORIES=	devel
 MASTER_SITES=	http://cloud.github.com/downloads/libgit2/libgit2/
 
@@ -16,10 +15,13 @@ COMMENT=	Portable, pure C implementation of the Git core
 
 LICENSE=	GPLv2
 
-USE_LDCONFIG=	yes
 USE_CMAKE=	yes
+USE_LDCONFIG=	yes
+USE_PYTHON_BUILD=	yes
 
 MAKE_JOBS_SAFE=	yes
+
+PLIST_SUB=	SHLIB_VER=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
