@@ -15,7 +15,6 @@ MASTER_SITES=	${MASTER_SITE_MYSQL_GRP} \
 		http://samm.kiev.ua/percona/:percsrc51,percsrc55
 DISTNAME=	percona-${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 DISTFILES=	mysql-${MYSQL51_SRCVER}.tar.gz:mysql51 mysql-${MYSQL55_SRCVER}.tar.gz:mysql55 \
-		mysql-${MYSQL55PERCONA_SRCVER}.tar.gz:mysql55 \
 		percona-xtrabackup-${PORTVERSION}.tar.gz:xtrabackup \
 		Percona-Server-5.1.59-13.0-patches.tar.gz:percsrc51 \
 		Percona-Server-5.5.16-22.0-patches.tar.gz:percsrc55
@@ -45,15 +44,13 @@ MASTER_SITE_SUBDIR=	MySQL-5.1/:mysql51 \
 
 # port needs MySQL sources to build
 MYSQL51_SRCVER=		5.1.59
-MYSQL55_SRCVER=		5.5.17
-MYSQL55PERCONA_SRCVER=	5.5.16
+MYSQL55_SRCVER=		5.5.16
 
 PLIST_FILES=	bin/xtrabackup bin/xtrabackup_51 bin/xtrabackup_55 bin/xbstream bin/innobackupex
 
 pre-build:
 	${CP} ${DISTDIR}/percona-xtrabackup-${PORTVERSION}.tar.gz \
 	${DISTDIR}/mysql-${MYSQL51_SRCVER}.tar.gz ${DISTDIR}/mysql-${MYSQL55_SRCVER}.tar.gz \
-	${DISTDIR}/mysql-${MYSQL55PERCONA_SRCVER}.tar.gz \
 	${DISTDIR}/Percona-Server-5.1.59-13.0-patches.tar.gz \
 	${DISTDIR}/Percona-Server-5.5.16-22.0-patches.tar.gz ${WRKSRC}
 

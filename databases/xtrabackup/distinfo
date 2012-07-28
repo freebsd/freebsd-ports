@@ -1,7 +1,5 @@
 SHA256 (mysql-5.1.59.tar.gz) = f87b99b73c0d936ed892326ebd4c90b1d5c7d5d2ac8832fc62f538db99fb04f7
 SIZE (mysql-5.1.59.tar.gz) = 24325443
-SHA256 (mysql-5.5.17.tar.gz) = 8b3c66d7ddb2c5b5fcda28964c1fcd83128d1d48efd7fb2b23338819a50911f1
-SIZE (mysql-5.5.17.tar.gz) = 24213337
 SHA256 (mysql-5.5.16.tar.gz) = 38a88d5f3a4e0ab1c6722662a2c858c63fd98f0925691400282cb23f1ea29b70
 SIZE (mysql-5.5.16.tar.gz) = 23816508
 SHA256 (percona-xtrabackup-2.0.1.tar.gz) = 975e18d5e9f8e28cc64e65971f813cd4ac9bd871a9b9329905b0c9ad7311222f
