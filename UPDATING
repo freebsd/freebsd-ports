@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20120726:
+  AFFECTS: users of www/firefox, www/seamonkey, mail/thunderbird, www/libxul
+  AUTHOR: gecko@FreeBSD.org
+
+  Gecko ports were switched to use system libraries. Some of them
+  must be built with certain options set (default).
+
+  - graphics/png has to be installed with APNG option
+  
+  - databases/sqlite3 has to be installed with SECURE_DELETE, THREADSAFE,
+    FTS3, UNLOCK_NOTIFY options
+
+20120726:
   AFFECTS: users of devel/pkg-config
   AUTHOR: bapt@FreeBSD.org
 
