@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	icinga
-PORTVERSION=	1.7.0
-PORTREVISION=	3
+PORTVERSION=	1.7.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
@@ -16,21 +15,13 @@ COMMENT=	Enterprise grade open source monitoring system based on nagios
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
 USE_ICONV=	yes
 USE_PERL5_BUILD=	yes
 USE_AUTOTOOLS=	autoconf libltdl
 USE_RC_SUBR=	icinga
-
-OPTIONS=	EMBEDDED_PERL "Enable embedded Perl" on \
-		NANOSLEEP "Use nanosleep in event timing" off \
-		UNHANDLED_HACK "Display passive checks in unhandled queries" off \
-		IDOUTILS "Enable IDOUtils" on \
-		PGSQL "Enable support for PostgreSQL" off \
-		MYSQL "Depend on MySQL" off \
-		APACHE "Depend on Apache and install webconfig" off
 
 GNU_CONFIGURE=	yes
 
@@ -45,8 +36,6 @@ ICINGAGID=	${ICINGAUID}
 ICINGAWWWDIR?=	www/icinga
 ICINGAHTMURL?=	/icinga
 ICINGACGIURL?=	${ICINGAHTMURL}/cgi-bin
-
-.include <bsd.port.pre.mk>
 
 CPPFLAGS+=	-I${LOCALBASE}/include -fPIC
 CFLAGS+=	${CPPFLAGS}
@@ -94,7 +83,17 @@ SUB_FILES=	pkg-install \
 SUB_LIST=	PREFIX=${PREFIX} \
 		${PLIST_SUB}
 
-.if defined(WITH_EMBEDDED_PERL)
+OPTIONS_DEFINE=		EMBEDDED_PERL NANOSLEEP UNHANDLED_HACK IDOUTILS PGSQL MYSQL APACHE
+OPTIONS_DEFAULT=	EMBEDDED_PERL IDOUTILS
+
+EMBEDDED_PERL_DESC=	Enable embedded Perl
+NANOSLEEP_DESC=		Use nanosleep in event timing
+UNHANDLED_HACK_DESC=	Display passive checks in unhandled queries
+APACHE_DESC=		Depend on Apache and install webconfig
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MEMBEDDED_PERL}
 USE_PERL5=	5.8.0+
 CONFIGURE_ARGS+=	--enable-embedded-perl \
 		--with-perlcache
@@ -103,12 +102,12 @@ PLIST_SUB+=	EMBEDDED_PERL=""
 PLIST_SUB+=	EMBEDDED_PERL="@comment "
 .endif
 
-.if defined(WITH_NANOSLEEP)
+.if ${PORT_OPTIONS:MNANOSLEEP}
 CONFIGURE_ARGS+=	--enable-nanosleep
 .endif
 
-.if defined(WITH_IDOUTILS)
-LIB_DEPENDS+=		dbi.1:${PORTSDIR}/databases/libdbi-drivers
+.if ${PORT_OPTIONS:MIDOUTILS}
+LIB_DEPENDS+=		dbi:${PORTSDIR}/databases/libdbi-drivers
 CONFIGURE_ARGS+=	--enable-idoutils \
 			--enable-ssl \
 			--with-dbi-lib=${LOCALBASE}/lib \
@@ -120,16 +119,16 @@ PLIST_SUB+=	IDOUTILS=""
 PLIST_SUB+=	IDOUTILS="@comment "
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=		yes
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--enable-pgsql
 .endif
 
-.if defined(WITH_APACHE)
+.if ${PORT_OPTIONS:MAPACHE}
 USE_APACHE=	22+
 CONFIGURE_ARGS+=	--with-httpd-conf=${LOCALBASE}/${APACHEETCDIR}/extra
 INSTALL_TARGET+=	install-webconf
@@ -142,7 +141,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#/bin/ping#/sbin/ping#' ${WRKSRC}/sample-config/cgi.cfg.in
 	@${REINPLACE_CMD} -e 's#Linux#FreeBSD#' ${WRKSRC}/sample-config/icinga.cfg.in
 	@${REINPLACE_CMD} -e 's#775#755#g; s#664#644#g' ${WRKSRC}/html/Makefile.in
-.if defined(WITH_UNHANDLED_HACK)
+.if ${PORT_OPTIONS:MUNHANDLED_HACK}
 	@${REINPLACE_CMD} -e 's#;serviceprops=42\&#;serviceprops=10\&#g' \
 		-e 's#;hostprops=42\"#;hostprops=10\"#g' ${WRKSRC}/html/menu.html.in
 .endif
@@ -165,4 +164,4 @@ post-install:
 	@${CHOWN} ${ICINGAUSER}:${WWWGRP} ${ICINGADIR}/rw
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
