@@ -47,7 +47,11 @@ GECKO_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip \
 .if defined(GECKO_EXTDIR)
 GECKO_WRKSRC=	${WRKDIR}/../../../${GECKO_PORTDIR}/work/${GECKO_EXTDIR}
 WRKSRC=		${WRKDIR}/${GECKO_EXTDIR}
+. if ${GECKO_PORTDIR:N*-esr}
+MOZSRC=		${WRKSRC}/obj-${CONFIGURE_TARGET:S/amd64/x86_64/}/mozilla
+. else
 MOZSRC=		${WRKSRC}/mozilla
+. endif
 .else
 GECKO_WRKSRC=	${WRKDIR}/../../../${GECKO_PORTDIR}/work/mozilla
 WRKSRC=		${WRKDIR}/mozilla
@@ -58,7 +62,7 @@ USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
-XPI_FILE=	${MOZSRC}/dist/bin/${DISTNAME}-freebsd-${ARCH}.xpi
+XPI_FILE=	${MOZSRC}/dist/bin/${DISTNAME}-freebsd-${ARCH:S/amd64/x86_64/}.xpi
 XPI_LIBDIR=	${PREFIX}/lib/xpi
 XPI_ORIG_ID=	{847b3a00-7ab1-11d4-8f02-006008948af5}
 XPI_ID=		${GECKO}@mozilla-enigmail.org
@@ -90,14 +94,23 @@ do-build:
 	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC} tier_base
 	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC} tier_nspr
 	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC} tier_js
-	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKSRC} export
+	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/.. export
 	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/modules/libreg
 	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/xpcom/string
 	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/xpcom
 .endif
+.if ${GECKO_PORTDIR:N*-esr}
+	cd ${WRKSRC}/mailnews/extensions/enigmail; \
+		./makemake -r -o $${objdir=${WRKSRC}/obj-${CONFIGURE_TARGET:S/amd64/x86_64/}}; \
+	${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} \
+			-C $$objdir/mailnews/extensions/enigmail; \
+	${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} xpi \
+			-C $$objdir/mailnews/extensions/enigmail
+.else
 	cd ${WRKSRC}/mailnews/extensions/enigmail && ./makemake -r
 	cd ${WRKSRC}/mailnews/extensions/enigmail && ${SETENV} ${MAKE_ENV} ${GMAKE}
 	cd ${WRKSRC}/mailnews/extensions/enigmail && ${SETENV} ${MAKE_ENV} ${GMAKE} xpi
+.endif
 
 do-install:
 	@${MKDIR} ${XPI_LIBDIR}/${XPI_ID} ${XPI_LIBDIR}/symlinks/${GECKO}
