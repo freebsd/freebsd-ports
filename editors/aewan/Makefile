@@ -11,7 +11,7 @@ CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Curses-based program for the creation and editing of ascii art
+COMMENT=	Curses-based program for the creation and editing of ASCII art
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

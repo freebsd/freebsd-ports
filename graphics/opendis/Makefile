@@ -14,7 +14,7 @@ MASTER_SITES=	SF/ods/ods/${PORTVERSION} \
 
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Access Flashpoint Digita-based cameras, download images and more
+COMMENT=	Access Flashpoint Digita-based cameras, download images, and more
 
 GNU_CONFIGURE=	yes
 

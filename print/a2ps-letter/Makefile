@@ -19,7 +19,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${I18N_PACKAGE}${EXTRACT_SUFX}
 .endif
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	Formats an ascii file for printing on a postscript printer
+COMMENT=	Formats an ASCII file for printing on a postscript printer
 
 LICENSE=	GPLv2
 

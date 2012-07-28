@@ -17,7 +17,7 @@ MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/Shared/ \
 DISTNAME=	FlightGear-data-${PORTVERSION}
 
 MAINTAINER=	martymac@FreeBSD.org
-COMMENT=	FlightGear scenery, textures and aircraft models
+COMMENT=	FlightGear scenery, textures, and aircraft models
 
 LICENSE=	GPLv2
 

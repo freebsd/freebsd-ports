@@ -19,7 +19,7 @@ MASTER_SITES=	SF/vavoom/Resources/vmodels-doom/1.4.3:vmd \
 		http://doomtextures.freelanzer.com/:dt
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Doom, Doom II, Heretic, Hexen and Strife source port (extras)
+COMMENT=	Doom, Doom II, Heretic, Hexen, and Strife source port (extras)
 
 RUN_DEPENDS=	vavoom:${PORTSDIR}/games/vavoom
 

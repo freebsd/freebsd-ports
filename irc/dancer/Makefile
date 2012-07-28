@@ -12,7 +12,7 @@ CATEGORIES=	irc
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An IRC bot written in C for UNIX, Windows, and AmigaOS
+COMMENT=	IRC bot written in C for UNIX, Windows, and AmigaOS
 
 PATCH_WRKSRC=		${WRKDIR}/${DISTNAME}
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

@@ -14,7 +14,7 @@ DISTNAME=	stable
 EXTRACT_SUFX=	.gz
 
 MAINTAINER=	tabmow@freenode.net
-COMMENT=	Qwebirc is a fast, easy to use, free and open source Web IRC client
+COMMENT=	Fast, easy to use, free, and open source web IRC client
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes

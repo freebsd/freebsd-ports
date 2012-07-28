@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 MASTER_SITE_SUBDIR=	support/xpdf
 
 MAINTAINER=	araujo@FreeBSD.org
-COMMENT=	Display PDF files, and convert them to other formats
+COMMENT=	Display PDF files and convert them to other formats
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 

@@ -7,7 +7,7 @@
 
 PKGNAMESUFFIX=	-examples
 
-COMMENT=	Visualization Toolkit: Examples in the C++, Tcl, Python and Java
+COMMENT=	Visualization Toolkit: Examples in the C++, Tcl, Python, and Java
 
 RUN_DEPENDS=	${VTKDATAROOT}/VTKData.readme:${PORTSDIR}/math/vtk-data
 

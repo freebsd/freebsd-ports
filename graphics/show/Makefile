@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.ibiblio.org/propaganda/ \
 		http://www.freebsdbrasil.com.br/~jmelo/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A fast, flexible, extensible and bloat-free image viewer for X11
+COMMENT=	Fast, flexible, extensible, and bloat-free image viewer for X11
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg	\
 		png15:${PORTSDIR}/graphics/png		\

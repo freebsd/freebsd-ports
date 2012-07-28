@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	dhn@FreeBSD.org
-COMMENT=	Receive, filter, read, compose and send mail at the text console
+COMMENT=	Receive, filter, read, compose, and send mail at the text console
 
 CONFLICTS=	elmo-devel-[0-9]*
 

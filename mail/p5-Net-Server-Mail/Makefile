@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	CPAN:GUIMARD
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
-COMMENT=	Implementation of SMTP, ESMTP and LMTP protocols
+COMMENT=	Implementation of SMTP, ESMTP, and LMTP protocols
 
 PERL_CONFIGURE=	yes
 

@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	chifeng@gmail.com
-COMMENT=	A "pure perl" implementation of mail spooling, unspooling and sending
+COMMENT=	"Pure Perl" implementation of mail spooling, unspooling, and sending
 
 BUILD_DEPENDS=	p5-File-NFSLock>=0:${PORTSDIR}/devel/p5-File-NFSLock \
 		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \

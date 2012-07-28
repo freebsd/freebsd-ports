@@ -15,7 +15,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.1 \
 		http://www.planetgloom.com/trem/
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Free FPS game featuring two opposing teams, humans and aliens
+COMMENT=	Free FPS game featuring two opposing teams, humans, and aliens
 
 USE_ZIP=	yes
 USE_GMAKE=	yes

@@ -12,7 +12,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	beyert@cs.ucr.edu
-COMMENT=	A simple, customizable and portable online hand recognition system
+COMMENT=	Simple, customizable, and portable online hand recognition system
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING

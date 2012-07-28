@@ -12,7 +12,7 @@ CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
-COMMENT=	Spatial dependence: weighting schemes, statistics and models
+COMMENT=	Spatial dependence: weighting schemes, statistics, and models
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

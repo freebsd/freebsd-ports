@@ -19,7 +19,7 @@ MASTER_SITES=	http://www.all-in-one.ee/~dersch/
 DISTNAME=	PanoTools
 
 MAINTAINER=	vd@FreeBSD.org
-COMMENT=	Software to View, Create, Edit and Remap Panoramic Images
+COMMENT=	Software to view, create, edit, and remap panoramic images
 
 NO_BUILD=	yes
 USE_LINUX_PREFIX=yes

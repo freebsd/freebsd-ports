@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TwistedMail-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	An SMTP, IMAP and POP protocol implementation with clients and servers
+COMMENT=	SMTP, IMAP, and POP protocol implementation with clients and servers
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

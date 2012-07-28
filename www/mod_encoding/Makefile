@@ -13,7 +13,7 @@ MASTER_SITES=	http://webdav.todo.gr.jp/download/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	apache@FreeBSD.org
-COMMENT=	Apache module for non-ascii filename interoperability
+COMMENT=	Apache module for non-ASCII filename interoperability
 
 MAKE_JOBS_SAFE=	yes
 

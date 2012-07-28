@@ -13,7 +13,7 @@ CATEGORIES=	mail
 MASTER_SITES=	SF
 
 MAINTAINER=	ashish@FreeBSD.org
-COMMENT=	Visual mail, user and print face server
+COMMENT=	Visual mail, user, and print face server
 
 OPTIONS=	X11 "X11/GTK support" on	\
 		NAS "NAS audio support" off	\

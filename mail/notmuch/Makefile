@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://notmuchmail.org/releases/
 
 MAINTAINER=	darwinsurvivor@gmail.com
-COMMENT=	A thread-based email index, search and tagging application
+COMMENT=	Thread-based email index, search, and tagging application
 
 LIB_DEPENDS=	gmime-2.4:${PORTSDIR}/mail/gmime24 \
 		xapian:${PORTSDIR}/databases/xapian-core \

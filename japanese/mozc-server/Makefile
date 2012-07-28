@@ -14,7 +14,7 @@ PKGNAMEPREFIX?=	ja-
 PKGNAMESUFFIX?=	-server
 
 MAINTAINER=	daichi@FreeBSD.org
-COMMENT?=	Mozc server for IBus, SCIM and others
+COMMENT?=	Mozc server for IBus, SCIM, and others
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		gtest.0:${PORTSDIR}/devel/googletest \

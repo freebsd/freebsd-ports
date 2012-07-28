@@ -13,7 +13,7 @@ MASTER_SITES=	http://static.blitzed.org/www.blitzed.org/bopm/files/ \
 		ftp://rusunix.org/pub/FreeBSD/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Open proxy and DNSBL monitor, designed for use with ircds
+COMMENT=	Open proxy and DNSBL monitor designed for use with ircds
 
 LOGDIR=		/var/log/${PORTNAME}
 

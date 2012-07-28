@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.fred.net/brv/chart/ \
 DISTNAME=	${PORTNAME}${PORTVERSION}dev
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Easy to use, fast C API for creating charts and graphs
+COMMENT=	Easy to use fast C API for creating charts and graphs
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		jpeg:${PORTSDIR}/graphics/jpeg \

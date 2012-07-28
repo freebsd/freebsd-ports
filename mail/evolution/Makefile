@@ -14,7 +14,7 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	An integrated mail, calendar and address book distributed suite
+COMMENT=	Integrated mail, calendar, and address book distributed suite
 
 LIB_DEPENDS=	nss3.1:${PORTSDIR}/security/nss \
 		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \

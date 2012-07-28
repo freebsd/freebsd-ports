@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	libs/graphics
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An easy to use, portable and powerful 2D graphics library
+COMMENT=	Easy to use, portable, and powerful 2D graphics library
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 

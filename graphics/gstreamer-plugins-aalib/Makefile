@@ -9,7 +9,7 @@
 PORTREVISION=	0
 CATEGORIES=	graphics
 
-COMMENT=	Gstreamer ascii art plugin
+COMMENT=	Gstreamer ASCII art plugin
 
 GST_PLUGIN=	aalib
 

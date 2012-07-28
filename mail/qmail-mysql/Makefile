@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-mysql
 
-COMMENT=	A SECURE, reliable, and FAST MTA for UNIX systems WITH MySQL support
+COMMENT=	Secure, reliable, and fast MTA for UNIX systems with MySQL support
 
 CONFLICTS=	qmail-[0-9]* qmail-ldap-[0-9]* qmail-spamcontrol-[0-9]* qmail-tls-[0-9]*
 

@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Test your typing speed, and get your fingers\' CPS
+COMMENT=	Test your typing speed and get your fingers\' CPS
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-highscoredir="/var/games/typespeed"

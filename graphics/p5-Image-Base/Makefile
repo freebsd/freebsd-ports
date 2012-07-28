@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Base class for loading, manipulating and saving images
+COMMENT=	Base class for loading, manipulating, and saving images
 
 PERL_CONFIGURE=	yes
 

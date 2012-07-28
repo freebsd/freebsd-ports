@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A Perl module for manipulating gray, color and rgba format images
+COMMENT=	Perl module for manipulating gray, color, and rgba format images
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

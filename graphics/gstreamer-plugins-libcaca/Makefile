@@ -9,7 +9,7 @@
 PORTREVISION=	0
 CATEGORIES=	graphics
 
-COMMENT=	Gstreamer color ascii art plugin
+COMMENT=	Gstreamer color ASCII art plugin
 
 GST_PLUGIN=	libcaca
 

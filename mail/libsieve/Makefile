@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://cloud.github.com/downloads/sodabrew/libsieve/
 
 MAINTAINER=	mark_sf@kikg.ifmo.ru
-COMMENT=	A library for parsing, sorting and filtering mail
+COMMENT=	Library for parsing, sorting, and filtering mail
 
 LICENSE=LGPL21
 

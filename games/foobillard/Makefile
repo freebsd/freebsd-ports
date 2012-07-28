@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://foobillard.sunsite.dk/dnl/
 
 MAINTAINER=	thomas@bsdunix.ch
-COMMENT=	A free OpenGL-billard game
+COMMENT=	Free OpenGL billiards game
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2

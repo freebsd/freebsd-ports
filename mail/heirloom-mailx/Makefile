@@ -13,7 +13,7 @@ MASTER_SITES=	SF/heirloom/heirloom-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	heirloom-
 
 MAINTAINER=	avl@FreeBSD.org
-COMMENT=	BSD mail utility with MIME, IMAP, POP3, SMTP and S/MIME extensions
+COMMENT=	BSD mail utility with MIME, IMAP, POP3, SMTP, and S/MIME extensions
 
 OPTIONS=	IPV6	"Enable IPv6 Support"	On
 

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.planetjahn.de/files/
 DISTNAME=	${PORTNAME}-099-pre22
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Another billiard simulator
+COMMENT=	Another billiards simulator
 
 USE_SDL=	sdl
 USE_GL=		gl
