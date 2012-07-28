@@ -100,13 +100,63 @@ send_devices () {
 send_ports () {
     case $(uname) in
 	FreeBSD )
-	    for line in `/usr/sbin/pkg_info | /usr/bin/awk '{print $1}' `
-	    do
-              category=`grep "@comment ORIGIN" /var/db/pkg/${line}/+CONTENTS | sed -E 's/^\@comment ORIGIN:(.+)\/.+/\1/g'`
-              line=$(uri_escape $line)
-              category=$(uri_escape $category)
-	      query_string=$query_string`echo \&port[]=${category}:${line}`
-	    done
+
+	############################################################################
+	# At the time of this writing (2012-07-24), FreeBSD is switching from
+	# pkg_* tools to pkgng.  Starting in FreeBSD 9.1, pkgng will become the
+	# default tool for package management.
+	#
+	# Until pkg_* tools are officially declared unsupported, they will need
+	# legacy support in ports like this one.  When the need for this support is
+	# officially discontinued, please do the following:
+	#
+	# 1. Delete the contents of this "LEGACY" section:
+	#
+	#-----BEGIN LEGACY-----
+	    # Detect pkgng
+	    if [ -e /var/db/pkg/local.sqlite ]; then
+
+	      # Use pkgng
+
+	      for line in `pkg info | awk '{ print $1 }'`
+	      do
+	        category=`pkg info -q -o ${line} | sed 's/\/.*//g'`
+	        line=$(uri_escape $line)
+	        category=$(uri_escape $category)
+	        query_string=$query_string`echo \&port[]=${category}:${line}`
+	      done
+
+	    else
+
+	      # Use pkg_* tools
+
+	      for line in `pkg_info | awk '{ print $1 }'`
+	      do
+	        category=`grep "@comment ORIGIN" /var/db/pkg/${line}/+CONTENTS | sed -E 's/^\@comment ORIGIN:(.+)\/.+/\1/g'`
+	        line=$(uri_escape $line)
+	        category=$(uri_escape $category)
+	        query_string=$query_string`echo \&port[]=${category}:${line}`
+	      done
+
+	    fi
+	#-----END LEGACY-----
+	#
+	# 2. Uncomment the contents of this "PKGNG" section:
+	#
+	#-----BEGIN PKGNG-----
+#	    for line in `pkg info | awk '{ print $1 }'`
+#	    do
+#	       category=`pkg info -q -o ${line} | sed 's/\/.*//g'`
+#	       line=$(uri_escape $line)
+#	       category=$(uri_escape $category)
+#	      query_string=$query_string`echo \&port[]=${category}:${line}`
+#	    done
+	#-----END PKGNG-----
+	#
+	# 3. Delete these comments.
+	#
+	# Thank you!
+	############################################################################
 
 	    report_ports
 	    ;;
