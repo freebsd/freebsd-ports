@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	igor
-PORTVERSION=	1.259
+PORTVERSION=	1.309
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.glenbarber.us/ports/${CATEGORIES}/${PORTNAME}/
 
-MAINTAINER=	gjb@FreeBSD.org
+MAINTAINER=	wblock@FreeBSD.org
 COMMENT=	FreeBSD Documentation Project sanity check script
 
 LICENSE=	BSD
