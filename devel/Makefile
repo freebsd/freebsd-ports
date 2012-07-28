@@ -3674,7 +3674,6 @@
     SUBDIR += ruby-gettext
     SUBDIR += ruby-gio2
     SUBDIR += ruby-glib2
-    SUBDIR += ruby-gnustep
     SUBDIR += ruby-intl
     SUBDIR += ruby-io-reactor
     SUBDIR += ruby-jttui
