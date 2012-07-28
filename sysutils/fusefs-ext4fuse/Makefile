@@ -22,6 +22,7 @@ LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs \
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
 USE_GMAKE=	yes
+USE_PKGCONFIG=	build
 
 MAKE_JOBS_SAFE=	yes
 
