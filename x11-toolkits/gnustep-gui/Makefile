@@ -29,8 +29,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libflite.a:${PORTSDIR}/audio/flite
 LICENSE_COMB=	multi
 LICENSE=	GPLv3 LGPL3
 
-BROKEN=		incorrect plist
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-tiff-library=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-tiff-include=${LOCALBASE}/include
@@ -46,6 +44,7 @@ USE_GNUSTEP_INSTALL=	yes
 USE_GNUSTEP_BASE=	yes
 USE_GNUSTEP_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
 USE_XORG=	x11 xt
+NOPORTDOCS=	dvi2pdf broken
 
 EXTRA_PATCHES+=	${FILESDIR}/GNUmakefile.patch
 EXTRA_PATCHES+=	${FILESDIR}/AudioOutputSink.m.patch
