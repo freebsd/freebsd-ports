@@ -1,0 +1,5 @@
+lib/libdht.so.0
+lib/libdht.so
+lib/libdht.a
+include/dht/dht.h
+@dirrm include/dht

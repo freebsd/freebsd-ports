@@ -1,0 +1,14 @@
+LIB=	dht
+SHLIB_MAJOR=	0
+SHLIB_MINOR=	21
+
+SRCS=	dht.c
+
+CFLAGS+=-DHAVE_MEMMEM
+WARNS=	3
+
+INCS=	dht.h
+INCLUDEDIR=${PREFIX}/include/dht
+LIBDIR=	${PREFIX}/lib
+
+.include <bsd.lib.mk>
