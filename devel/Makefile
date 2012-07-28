@@ -314,6 +314,7 @@
     SUBDIR += devhelp
     SUBDIR += devtodo
     SUBDIR += dfuife-curses
+    SUBDIR += jech-dht
     SUBDIR += dia2code
     SUBDIR += diffuse
     SUBDIR += ding-libs
