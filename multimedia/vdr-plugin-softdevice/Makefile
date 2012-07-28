@@ -19,7 +19,7 @@ COMMENT=	Video Disk Recorder - softdevice plugin
 LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
 
 USE_BZIP2=	yes
-USE_GNOME+=	pkgconfig
+USE_PKGCONFIG=	build
 USE_XORG+=	xv x11 xinerama
 PATCH_STRIP=	-p1
 HAVE_CONFIGURE=	yes

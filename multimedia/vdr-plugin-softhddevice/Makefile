@@ -22,7 +22,7 @@ LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg \
 		xcb-keysyms:${PORTSDIR}/x11/xcb-util-keysyms \
 		asound:${PORTSDIR}/audio/alsa-lib
 
-USE_GNOME+=	pkgconfig
+USE_PKGCONFIG=	build
 USE_XORG+=	xv x11 xinerama
 USE_GL+=	gl glu
 PATCH_STRIP=	-p1
