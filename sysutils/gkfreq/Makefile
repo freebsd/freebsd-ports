@@ -10,7 +10,8 @@ PORTVERSION=	1.0
 PORTREVISION=	7
 CATEGORIES=	sysutils
 DISTNAME=	gkrellm-gkfreq-${PORTVERSION}
-MASTER_SITES=	http://www.peakunix.net/downloads/
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=gkrellm-gkfreq/${PORTVERSION}
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	A plugin for gkrellm2 which displays the current CPU speed
