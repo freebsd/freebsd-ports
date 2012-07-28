@@ -1,14 +1,20 @@
 bin/dvdbackup
+%%NLS%%share/locale/da/LC_MESSAGES/dvdbackup.mo
 %%NLS%%share/locale/de/LC_MESSAGES/dvdbackup.mo
-%%NLS%%share/locale/en@quot/LC_MESSAGES/dvdbackup.mo
-%%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en@quot
 %%NLS%%share/locale/en@boldquot/LC_MESSAGES/dvdbackup.mo
-%%NLS%%@dirrmtry share/locale/en@boldquot/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en@boldquot
+%%NLS%%share/locale/en@quot/LC_MESSAGES/dvdbackup.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/dvdbackup.mo
 %%NLS%%share/locale/es/LC_MESSAGES/dvdbackup.mo
+%%NLS%%share/locale/et/LC_MESSAGES/dvdbackup.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/dvdbackup.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/dvdbackup.mo
 %%NLS%%share/locale/it/LC_MESSAGES/dvdbackup.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/dvdbackup.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/dvdbackup.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/dvdbackup.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/dvdbackup.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/dvdbackup.mo
+%%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en@quot
+%%NLS%%@dirrmtry share/locale/en@boldquot/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en@boldquot
