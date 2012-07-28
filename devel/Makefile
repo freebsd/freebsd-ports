@@ -379,11 +379,6 @@
     SUBDIR += esdl
     SUBDIR += esvn
     SUBDIR += etl
-    SUBDIR += etoile-collectionkit
-    SUBDIR += etoile-coreobject
-    SUBDIR += etoile-foundation
-    SUBDIR += etoile-serialize
-    SUBDIR += etoile-unitkit
     SUBDIR += eventxx
     SUBDIR += evolution-gconf-tools
     SUBDIR += exercisix
@@ -1043,7 +1038,6 @@
     SUBDIR += lion
     SUBDIR += llvm
     SUBDIR += llvm-devel
-    SUBDIR += llvm-etoile
     SUBDIR += llvm29
     SUBDIR += lmdbg
     SUBDIR += lndir

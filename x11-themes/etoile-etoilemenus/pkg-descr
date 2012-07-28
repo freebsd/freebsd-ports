@@ -1,6 +1,0 @@
-EtoileWildMenus - a fork of WildMenus engine to provide apps with menu
-display which plugs into the EtoileMenuServer looks. Compile, no
-need to install, just put it into the GSAppKitUserBundles defaults
-array (or run with -GSAppKitUserBundles argument, you know the story...).
-
-WWW: http://www.etoile-project.org/

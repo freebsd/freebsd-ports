@@ -1,7 +1,0 @@
-AZSwitch is an experimental application for window switching.
-The main challenge is how to track key and mouse input
-and show minimature window.
-Unlike AZDock, which is application-based, AZSwitch is window-based.
-Therefore, they are not compatible to each other in implementation.
-
-WWW: http://www.etoile-project.org/

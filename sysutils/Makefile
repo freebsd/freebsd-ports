@@ -216,10 +216,6 @@
     SUBDIR += eroaster
     SUBDIR += etcmerge
     SUBDIR += etcupdate
-    SUBDIR += etoile-behavior
-    SUBDIR += etoile-installer
-    SUBDIR += etoile-powermenulet
-    SUBDIR += etoile-system
     SUBDIR += eventlog
     SUBDIR += evtviewer
     SUBDIR += exfat-utils

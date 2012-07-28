@@ -57,12 +57,6 @@
     SUBDIR += eperl
     SUBDIR += erlang
     SUBDIR += erlang-lite
-    SUBDIR += etoile-compiler
-    SUBDIR += etoile-io
-    SUBDIR += etoile-languagekit
-    SUBDIR += etoile-lkplugins
-    SUBDIR += etoile-scriptkit
-    SUBDIR += etoile-smalltalkkit
     SUBDIR += execline
     SUBDIR += expect
     SUBDIR += expect-devel

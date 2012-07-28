@@ -52,9 +52,6 @@
     SUBDIR += dvts
     SUBDIR += emotion
     SUBDIR += emovix
-    SUBDIR += etoile-babbler
-    SUBDIR += etoile-mediakit
-    SUBDIR += etoile-multimediakit
     SUBDIR += ffmpeg
     SUBDIR += ffmpeg-devel
     SUBDIR += ffmpeg2theora

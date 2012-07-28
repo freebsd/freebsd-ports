@@ -1,9 +1,0 @@
-This Login.app is a simple "greeter" program you can use for XDM sessions.
-It is NOT a standalone XDM-like implementation, rather it takes advantage of
-the modularity of GDM. GDM use special clients (gdmlogin or gdmgreater), 
-called "greeter" clients, to do the graphical part of a login.
-The authentication, etc., is still done by the GDM daemon.
-GDM communicates through pipes and a simple protocol with the clients
-(check the GDMClient class and the list of opcodes to have a better idea).
-
-WWW: http://www.etoile-project.org/
