@@ -31,11 +31,6 @@
     SUBDIR += e17-theme-cthulhain
     SUBDIR += e17-theme-darkness
     SUBDIR += emerald-themes
-    SUBDIR += etoile-azbackground
-    SUBDIR += etoile-camaelon
-    SUBDIR += etoile-etoilemenus
-    SUBDIR += etoile-iconkit
-    SUBDIR += etoile-wildmenus
     SUBDIR += fluxbox-tenr-styles-pack
     SUBDIR += fvwm-themes
     SUBDIR += gnome-backgrounds

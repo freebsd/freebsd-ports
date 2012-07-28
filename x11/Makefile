@@ -53,10 +53,6 @@
     SUBDIR += emu
     SUBDIR += erun
     SUBDIR += eterm
-    SUBDIR += etoile
-    SUBDIR += etoile-idle
-    SUBDIR += etoile-iterm
-    SUBDIR += etoile-xwindowserverkit
     SUBDIR += evieext
     SUBDIR += evilvte
     SUBDIR += fbdesk
@@ -92,7 +88,6 @@
     SUBDIR += gnome2-fifth-toe
     SUBDIR += gnome2-lite
     SUBDIR += gnome2-power-tools
-    SUBDIR += gnustep-app
     SUBDIR += gpctool
     SUBDIR += grabc
     SUBDIR += gromit

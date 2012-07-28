@@ -1,6 +1,0 @@
-XWindowServerKit provides access to x window system.
-It allows GNUstep to integrate better with x window system.
-
-LICENSE: BSD
-
-WWW: http://www.etoile-project.org/

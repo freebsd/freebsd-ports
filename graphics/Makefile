@@ -768,7 +768,6 @@
     SUBDIR += poppler-glib
     SUBDIR += poppler-qt4
     SUBDIR += poppler-utils
-    SUBDIR += popplerkit
     SUBDIR += pornview
     SUBDIR += potrace
     SUBDIR += potracegui
@@ -988,7 +987,6 @@
     SUBDIR += view3ds
     SUBDIR += viewnior
     SUBDIR += vigra
-    SUBDIR += vindaloo
     SUBDIR += vips
     SUBDIR += visionworkbench
     SUBDIR += visprint

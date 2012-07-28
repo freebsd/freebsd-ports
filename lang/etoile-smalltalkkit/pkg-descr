@@ -1,7 +1,0 @@
-Etoile's Pragmatic Smalltalk, a Smalltalk JIT compiler which generates code
-binary-compatible with Objective-C, allowing classes to be written in a
-mixture of Smalltalk and Objective-C.
-
-LICENSE: BSD
-
-WWW: http://www.etoile-project.org/

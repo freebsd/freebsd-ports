@@ -1,7 +1,0 @@
-MultimediaKit provides common backend engine to play multimedia stream.
-Currently, it supports mplayer backend based on MPlayerOSX.
-
-MPlayer and MPlyaerOSX: http://www.sonappart.net/gnustep/mplayer/
-MPlayerPort: http://www.sonappart.net/gnustep/mplayer/
-
-WWW: http://www.etoile-project.org/

@@ -1,7 +1,0 @@
-Installer.app, a package installer for GNUstep.
-
-It aims to provide easy instalation of packages, be they the native
-packages of the underlying system (debs, rpms, etc) or, in the future,
-GNUstep packages (that follow the NeXTSTEP/MacOSX package format).
-
-WWW: http://www.etoile-project.org/

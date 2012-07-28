@@ -94,10 +94,6 @@
     SUBDIR += enlightenment
     SUBDIR += enlightenment-docs
     SUBDIR += epplets
-    SUBDIR += etoile-azalea
-    SUBDIR += etoile-azdock
-    SUBDIR += etoile-azswitch
-    SUBDIR += etoile-login
     SUBDIR += evilwm
     SUBDIR += fbcmd
     SUBDIR += fbpager

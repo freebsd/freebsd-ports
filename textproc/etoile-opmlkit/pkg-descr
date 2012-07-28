@@ -1,7 +1,0 @@
-This framework is a simple parser and exporter for OPML files.
-The main classes in this framework are OPMLDocument and OPMLOutline.
-OPML is a file format used to store all kinds of outlines. It's based
-on XML and also usually stores some meta information. This includes
-author and creation time information and a document title.
-
-WWW: http://www.etoile-project.org/

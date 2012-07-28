@@ -1,9 +1,0 @@
-GNUstep/System/Library/Headers/TrackerKit/TKCollection.h
-GNUstep/System/Library/Headers/TrackerKit/TKKeyValuePredicate.h
-GNUstep/System/Library/Headers/TrackerKit/TKObject.h
-GNUstep/System/Library/Headers/TrackerKit/TKQuery.h
-GNUstep/System/Library/Headers/TrackerKit/TKTracker.h
-GNUstep/System/Library/Libraries/libTrackerKit.so
-GNUstep/System/Library/Libraries/libTrackerKit.so.%%MAJORLIBVERSION%%
-GNUstep/System/Library/Libraries/libTrackerKit.so.%%LIBVERSION%%
-@dirrm GNUstep/System/Library/Headers/TrackerKit

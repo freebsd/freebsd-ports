@@ -1,6 +1,0 @@
-Io (GNUstep) is a module which provides Io language support in a convenient
-way for GNUstep developers or users (linking Objective-C bridge by default).
-The module is automatically built in various ready to use solutions:
-* ioobjc (tool you can run in your shell to use Io interactive environment)
-
-WWW: http://www.etoile-project.org/

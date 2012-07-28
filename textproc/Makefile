@@ -166,9 +166,6 @@
     SUBDIR += es-mythes
     SUBDIR += estraier
     SUBDIR += et-aspell
-    SUBDIR += etoile-lucenekit
-    SUBDIR += etoile-ogrekit
-    SUBDIR += etoile-opmlkit
     SUBDIR += exempi
     SUBDIR += exmpp
     SUBDIR += expat2

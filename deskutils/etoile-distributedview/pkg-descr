@@ -1,8 +1,0 @@
-UKDistributedView and UKFinderIconCell provides a very flexible icon view. 
-More precisely, UKDistributedView is an NSTableView-like class that allows 
-arbitrary positioning of evenly-sized items. This is intended for things 
-like the Workspace/Finder's "icon view", and even lets you snap items to a 
-grid in various ways, reorder them etc. Finally it can handle several 
-thousand of items smoothly.
-
-WWW: http://www.etoile-project.org/
