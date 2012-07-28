@@ -7,6 +7,7 @@
 
 PORTNAME=	bugzilla
 PORTVERSION=	4.2.1
+PORTREVISION=	1
 CATEGORIES=	german
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=bugzilla-de/${PORTVERSION:R}/${PORTVERSION}
@@ -17,7 +18,7 @@ COMMENT=	German localization for Bugzilla
 
 RUN_DEPENDS=	bugzilla>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla42
 
-LATEST_LINK=	${PKGNAMEPREFIX}bugzilla42${PKGNAMESUFFIX}
+LATEST_LINK=	${PKGNAMEPREFIX}bugzilla42
 
 NO_WRKSUBDIR=	yes
 
@@ -28,6 +29,7 @@ LANGDIR=	${WWWDIR}/template/de
 # german template checks the bugzilla version number and displays
 # non supported bugzilla version.
 post-patch:
+	@${SED} -i '' -e 's|4.2.1|4.2.2|' ${WRKDIR}/de/default/global/gzversion.html.tmpl
 	@${FIND} ${WRKDIR}/ -name \*.orig -delete
 
 do-install:
