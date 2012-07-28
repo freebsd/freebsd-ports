@@ -8,8 +8,6 @@ PORTNAME=	musicbrainz2
 PORTVERSION=	0.7.4
 CATEGORIES=	audio python
 MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/python-musicbrainz2/ \
-		http://uk.musicbrainz.org/pub/musicbrainz/python-musicbrainz2/ \
-		http://users.musicbrainz.org/~matt/ \
 		http://ftp.osuosl.org/pub/musicbrainz/python-musicbrainz2/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-musicbrainz2-${DISTVERSION}
@@ -17,13 +15,12 @@ DISTNAME=	python-musicbrainz2-${DISTVERSION}
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Next Generation Python bindings for MusicBrainz
 
-LIB_DEPENDS=	discid.0:${PORTSDIR}/audio/libdiscid
+LICENSE=	BSD
 
-USE_PYTHON=	yes
+LIB_DEPENDS=	discid:${PORTSDIR}/audio/libdiscid
+
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	python-musicbrainz2
-
-LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 .include <bsd.port.mk>
