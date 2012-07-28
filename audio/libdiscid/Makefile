@@ -16,13 +16,12 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	A library for creating MusicBrainz DiscIDs
 
+LICENSE=	LGPL21
+
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	ltverhack gnomehack pkgconfig
+USE_GNOME=	ltverhack gnomehack
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
-
-LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 .include <bsd.port.mk>
