@@ -25,7 +25,7 @@ LIB_DEPENDS+=	xine:${PORTSDIR}/multimedia/libxine \
 
 USE_BZIP2=	yes
 PATCH_STRIP=	-p1
-USE_GNOME+=	pkgconfig
+USE_PKGCONFIG=	build
 USE_XORG+=	xrandr xrender
 USE_GL=		gl glu glut
 PORTDOCS=	COPYING README HISTORY
