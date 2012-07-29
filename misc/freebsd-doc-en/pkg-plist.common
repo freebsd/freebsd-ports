@@ -46,7 +46,6 @@
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/imagelib/callouts
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/imagelib
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting
-@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/pxe
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/pr-guidelines
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild

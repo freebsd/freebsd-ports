@@ -588,8 +588,8 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/build-cluster.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/building.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/conflicts.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/cvsweb.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-after-port-mk.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-avoiding-linuxisms.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-cc.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-cflags.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-deprecated.html
@@ -659,6 +659,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/slow-user-input.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/slow.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/special.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/svnweb.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/testing-portlint.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/testing-porttools.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/testing-tinderbox.html
@@ -685,7 +686,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-x11.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-xfce.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/why-port.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/x5716.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/x5788.html
 %%DOCSDIR%%/%%DOCLANG%%/books/ppp-primer/c30.html
 %%DOCSDIR%%/%%DOCLANG%%/books/ppp-primer/c309.html
 %%DOCSDIR%%/%%DOCLANG%%/books/ppp-primer/c833.html

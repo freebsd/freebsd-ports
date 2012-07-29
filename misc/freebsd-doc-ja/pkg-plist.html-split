@@ -296,8 +296,10 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-portsnap.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/userppp.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-limiting-and-personalizing.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-groups.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-limiting.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-modifying.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-personalizing.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-superuser.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-system.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-user.html
@@ -313,10 +315,10 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-xdm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11-wm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x15516.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x32076.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x32120.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x32164.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x15539.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x32248.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x32292.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x32336.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/LEGALNOTICE.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/changes.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-after-port-mk.html
