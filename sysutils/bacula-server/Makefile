@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bacula
-DISTVERSION=	5.2.6
+DISTVERSION=	5.2.10
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 
