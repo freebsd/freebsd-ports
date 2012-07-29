@@ -8,7 +8,7 @@
 PORTNAME=	openssl
 PORTVERSION=	1.0.1
 DISTVERSIONSUFFIX=	c
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
@@ -1105,17 +1105,17 @@ PLIST_SUB+=	WITH_RC5="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPADLOCK}
-PATCH_DIST_STRIP= -p1
-PATCH_SITES+= http://git.alpinelinux.org/cgit/aports/plain/main/openssl/:padlock
-PATCHFILES+= 0001-crypto-hmac-support-EVP_MD_CTX_FLAG_ONESHOT-and-set-.patch:padlock \
-0003-engines-e_padlock-backport-cvs-head-changes.patch:padlock \
-0004-engines-e_padlock-implement-sha1-sha224-sha256-accel.patch:padlock \
-0005-crypto-engine-autoload-padlock-dynamic-engine.patch:padlock
+PATCH_DIST_STRIP=	-p1
+PATCH_SITES+=	http://git.alpinelinux.org/cgit/aports/plain/main/openssl/:padlock
+PATCHFILES+=	0001-crypto-hmac-support-EVP_MD_CTX_FLAG_ONESHOT-and-set-.patch:padlock \
+		0003-engines-e_padlock-backport-cvs-head-changes.patch:padlock \
+		0004-engines-e_padlock-implement-sha1-sha224-sha256-accel.patch:padlock \
+		0005-crypto-engine-autoload-padlock-dynamic-engine.patch:padlock
 .endif
 
 .if ${PORT_OPTIONS:MGMP}
 EXTRACONFIGURE+=	enable-gmp
-IGNORE=		GMP is LGPLv3 an can not be linked.
+IGNORE=	GMP is LGPLv3 and can not be linked
 .else
 EXTRACONFIGURE+=	no-gmp
 .endif
@@ -1146,15 +1146,16 @@ post-patch:
 do-configure:
 	@${REINPLACE_CMD} -e "s|options 386|options|" \
 		${WRKSRC}/config
+
 .if ${PORT_OPTIONS:MTHREADS}
 	cd ${WRKSRC} \
 	&& ${SETENV} CC="${CC}" FREEBSDCC="${CC}" CFLAGS="${CFLAGS}" PERL="${PERL}" \
+		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS} \
 	./config --prefix=${PREFIX} --openssldir=${OPENSSLDIR} \
 		-L${PREFIX}/lib ${EXTRACONFIGURE}
 .else
 	cd ${WRKSRC} \
 	&& ${SETENV} CC="${CC}" FREEBSDCC="${CC}" CFLAGS="${CFLAGS}" PERL="${PERL}" \
-		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS} \
 	./config --prefix=${PREFIX} --openssldir=${OPENSSLDIR} \
 		-L${PREFIX}/lib ${EXTRACONFIGURE}
 .endif
