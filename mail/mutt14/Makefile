@@ -13,7 +13,6 @@ MASTER_SITES=	ftp://ftp.mutt.org/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
 		ftp://ftp.demon.co.uk/pub/mirrors/mutt/
 
-PATCHVERSION?=	${PORTVERSION}
 PATCHVERSION=	1.4.2.2
 PATCH_SITES=	http://www.mutt.org.ua/download/mutt-${PATCHVERSION}/:vvv \
 		http://www2.mutt.org.ua/download/mutt-${PATCHVERSION}/:vvv \
@@ -28,6 +27,7 @@ MAINTAINER?=	udo.schweigert@siemens.com
 COMMENT?=	The Mongrel of Mail User Agents (part Elm, Pine, Mush, mh, etc.)
 
 CONFLICTS?=	ja-mutt-[0-9]* ja-mutt-devel-[0-9]* mutt-devel-[0-9]* mutt-devel-lite-[0-9]* mutt-lite-[0-9]* zh-mutt-devel-[0-9]* mutt-[^1].[^4]*
+LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}14${PKGNAMESUFFIX}
 
 OPTIONS=	NLS "Native Language Support via gettext utilities" on \
  SLANG "Adds display/screen management via S-Lang" off \
@@ -134,7 +134,7 @@ LIB_DEPENDS+=		gssapi_krb5:${PORTSDIR}/security/krb5
 CONFIGURE_ARGS+=	--with-gss=${LOCALBASE}
 .elif (defined(MAKE_KERBEROS5)) || exists(/usr/lib/libkrb5.a)
 CONFIGURE_ARGS+=	--with-gss
-USE_KRB5_SYS=YES
+WITH_MUTT_KRB5_SYS=YES
 .endif
 .endif
 MAN1=		mutt.1 mutt_dotlock.1
@@ -158,7 +158,7 @@ post-patch::
 
 pre-configure::
 	@(cd ${WRKSRC}; ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} -I m4)
-.if defined(USE_KRB5_SYS)
+.if defined(WITH_MUTT_KRB5_SYS)
 	@${ECHO_CMD} "#define HAVE_HEIMDAL" >> ${WRKSRC}/config.h.in
 	@${REINPLACE_CMD} -e 's|<gssapi/gssapi\.h>|<gssapi.h>|' \
 		${WRKSRC}/imap/auth_gss.c
