@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipv6toolkit
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://www.si6networks.com/research/
 DISTNAME=	ipv6-toolkit-v${PORTVERSION}
