@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	kde4-style-
 DISTFILES=	59031-skulpture-${PORTVERSION}.tar.bz2
 
 MAINTAINER=	swills@FreeBSD.org
-COMMENT=	KDE style featuring 3d artwork and enhanced the visual experience
+COMMENT=	KDE style featuring 3D artwork and enhanced the visual experience
 
 USE_BZIP2=	yes
 USE_KDE4=	kdelibs kdehier kdeprefix automoc4 workspace

@@ -11,7 +11,7 @@ CATEGORIES=	math www
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A Javascript tool for including mathematics in web pages
+COMMENT=	JavaScript tool for including mathematics in web pages
 
 USE_ZIP=	yes
 NO_BUILD=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/ftp/program/
 DISTFILES=	${PORTNAME}2.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Displays large japanese letters on the standard output
+COMMENT=	Displays large Japanese letters on the standard output
 
 WRKSRC=		${WRKDIR}/${PORTNAME}2
 ALL_TARGET=	kbanner

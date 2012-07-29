@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
-COMMENT=	Perl extension to concatenate javascripts
+COMMENT=	Perl extension to concatenate JavaScripts
 
 RUN_DEPENDS=	\
 	p5-IPC-Run3>0:${PORTSDIR}/devel/p5-IPC-Run3 \

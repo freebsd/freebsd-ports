@@ -12,7 +12,7 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_src-${PORTVERSION}
 
 MAINTAINER=	cyberbotx@cyberbotx.com
-COMMENT=	Library to convert clothoid splines into bezier splines
+COMMENT=	Library to convert clothoid splines into Bezier splines
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

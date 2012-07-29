@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	PECL ESMTP client extenion
+COMMENT=	PECL ESMTP client extension
 
 LIB_DEPENDS=	esmtp:${PORTSDIR}/mail/libesmtp
 

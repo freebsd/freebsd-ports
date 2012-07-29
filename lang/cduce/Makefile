@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.cduce.org/download/ \
 		ftp://ftp.stack.nl/pub/users/johans/cduce/
 
 MAINTAINER=	johans@FreeBSD.org
-COMMENT=	An efficient XML centric functionnal programming language
+COMMENT=	Efficient XML centric functional programming language
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 BUILD_DEPENDS=	${SITELIBDIR}/ulex/ulexing.a:${PORTSDIR}/devel/ocaml-ulex \

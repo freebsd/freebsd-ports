@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/FFFF%203.2.3
 DISTNAME=	FFFF${PORTVERSION}-src
 
 MAINTAINER=	rossiya@gmail.com
-COMMENT=	A fast mandelbrot fractal generator
+COMMENT=	Fast Mandelbrot fractal generator
 
 USE_XORG=	x11 xmu xext
 USE_DOS2UNIX=	yes

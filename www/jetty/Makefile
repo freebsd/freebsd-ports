@@ -11,7 +11,7 @@ CATEGORIES=	www java
 MASTER_SITES=	http://dist.codehaus.org/jetty/${PORTNAME}-${DISTVERSION}/
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	Full-featured web server implemented entirely in java
+COMMENT=	Full-featured web server implemented entirely in Java
 
 USE_RC_SUBR=	${PORTNAME}
 USE_ZIP=	yes

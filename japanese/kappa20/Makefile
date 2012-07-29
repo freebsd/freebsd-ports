@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:kappa20 \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ginga-freebsd@ginganet.org
-COMMENT=	X11 20-dot kanji font 'Kappa20dot + ayu font'
+COMMENT=	X11 20-dot Kanji font 'Kappa20dot + ayu font'
 
 USE_BZIP2=	yes
 AYUDISTNAME=	ayu20gothic-1.6

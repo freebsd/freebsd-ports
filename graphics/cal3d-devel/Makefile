@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	Skeletal based 3d character animation library written in C++ (devel)
+COMMENT=	Skeletal based 3D character animation library written in C++ (devel)
 
 CONFLICTS=	cal3d-[0-9]*
 

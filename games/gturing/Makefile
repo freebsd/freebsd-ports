@@ -12,7 +12,7 @@ CATEGORIES=	games gnome
 MASTER_SITES=	ftp://ftp.gnome.org/pub/gnome/sources/gturing/0.1/
 
 MAINTAINER=	sylvio@FreeBSD.org
-COMMENT=	A simple turing machine simulator for GNOME 2
+COMMENT=	Simple Turing machine simulator for GNOME 2
 
 USE_GNOME=	gnomeprefix gnomehack libgnomeui
 USE_GMAKE=	yes

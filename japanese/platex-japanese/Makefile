@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	latex
 
 MAINTAINER=	yokota@res.otaru-uc.ac.jp
-COMMENT=	pLaTeX package that literally provides japanese option to babel
+COMMENT=	pLaTeX package that literally provides Japanese option to babel
 
 BUILD_DEPENDS=	${LOCALBASE}/share/texmf:${PORTSDIR}/print/teTeX-texmf \
 		ptex:${PORTSDIR}/japanese/ptex \

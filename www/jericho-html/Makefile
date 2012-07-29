@@ -11,7 +11,7 @@ CATEGORIES=	www java
 MASTER_SITES=	SF/jerichohtml/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	saper@saper.info
-COMMENT=	A java library to analyse and manipulate HTML
+COMMENT=	Java library to analyse and manipulate HTML
 
 USE_ZIP=	yes
 USE_JAVA=	1.5+

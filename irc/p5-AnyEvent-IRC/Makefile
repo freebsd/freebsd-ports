@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	An event system independend IRC protocol module
+COMMENT=	Event system independent IRC protocol module
 
 BUILD_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-Object-Event>=0.7:${PORTSDIR}/devel/p5-Object-Event

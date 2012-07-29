@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	dhn
 DISTNAME=	sic-${PORTVERSION}
 
 MAINTAINER=	dhn@FreeBSD.org
-COMMENT=	An extremly simple IRC client
+COMMENT=	Extremely simple IRC client
 
 MAN1=		simpleirc.1
 PLIST_FILES=	bin/simpleirc

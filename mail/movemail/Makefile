@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://wolfram.schneider.org/src/
 
 MAINTAINER=	wosch@FreeBSD.org
-COMMENT=	Move your mail box to annother location
+COMMENT=	Move your mail box to another location
 
 MAN1=		movemail.1
 MANCOMPRESSED=	maybe

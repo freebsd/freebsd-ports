@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	gunter@six-two.net
-COMMENT=	A Perl module for using Google Spreadhseets API
+COMMENT=	Perl module for using Google Spreadsheets API
 
 BUILD_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-Mouse>=0.51:${PORTSDIR}/devel/p5-Mouse \

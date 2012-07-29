@@ -11,7 +11,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://cloud.github.com/downloads/ueno/libskk/
 
 MAINTAINER=	hiroto.kagotani@gmail.com
-COMMENT=	A library to deal with Japanese kana-to-kanji conversion method
+COMMENT=	Library to deal with Japanese Kana-to-Kanji conversion method
 
 BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 LIB_DEPENDS=	gee:${PORTSDIR}/devel/libgee \

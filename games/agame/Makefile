@@ -16,7 +16,7 @@ DISTNAME=	game-src-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A simple tetris-like game
+COMMENT=	Simple Tetris-like game
 
 LICENSE=	GPLv2
 

@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	claws-mail-
 DISTNAME=	${PORTNAME}-plugin-${PORTVERSION}
 
 MAINTAINER=	pawel@FreeBSD.org
-COMMENT=	Header insertation plugin for claws-mail
+COMMENT=	Header insertion plugin for claws-mail
 
 LICENSE=	GPLv3
 

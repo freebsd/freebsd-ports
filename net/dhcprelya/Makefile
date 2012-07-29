@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://semmy.ru/~sem/
 
 MAINTAINER=	sem@FreeBSD.org
-COMMENT=	Lightweigh DHCP relay agent. Yandex edition
+COMMENT=	Lightweight DHCP relay agent. Yandex edition
 
 USE_RC_SUBR=	dhcprelya
 

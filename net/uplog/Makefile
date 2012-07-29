@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.nerdlabs.org/downloads/${PORTNAME}/
 
 MAINTAINER=	jadawin@FreeBSD.org
-COMMENT=	UDP-based ping programm
+COMMENT=	UDP-based ping program
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"

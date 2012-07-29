@@ -15,7 +15,7 @@ DISTNAME=	bugsx108
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Breed bugs using genetic algorithims
+COMMENT=	Breed bugs using genetic algorithms
 
 USE_IMAKE=	yes
 USE_XORG=	x11 xext

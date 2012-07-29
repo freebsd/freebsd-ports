@@ -10,7 +10,7 @@ PORTVERSION=	1.3.4
 CATEGORIES=	security www pear
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	Encrypts text which is later decoded using javascript on the client side
+COMMENT=	Encrypts text which is later decoded using JavaScript on the client side
 
 BUILD_DEPENDS+=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS+=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

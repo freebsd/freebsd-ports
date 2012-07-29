@@ -11,7 +11,7 @@ CATEGORIES=	irc net-p2p
 MASTER_SITES=	SF
 
 MAINTAINER=	gelraen.ua@gmail.com
-COMMENT=	Provides intercomunication between DC++ hub and IRC channel
+COMMENT=	Provides intercommunication between DC++ hub and IRC channel
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes

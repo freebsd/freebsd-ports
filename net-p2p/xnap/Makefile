@@ -14,7 +14,7 @@ MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/2.5r3
 DISTNAME=	${PORTNAME:L}-${DISTVERSION}
 
 MAINTAINER=	conrads@cox.net
-COMMENT=	A pure java napster client; also, supports OpenNap & giFT (FastTrack)
+COMMENT=	Pure Java napster client; also, supports OpenNap & giFT (FastTrack)
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+

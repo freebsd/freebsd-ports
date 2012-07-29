@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Simple biorythm calculation program
+COMMENT=	Simple biorhythm calculation program
 
 LIB_DEPENDS=	shhmsg.1:${PORTSDIR}/devel/libshhmsg \
 		shhopt.1:${PORTSDIR}/devel/libshhopt

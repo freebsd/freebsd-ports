@@ -17,7 +17,7 @@ DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}-${E_VERSION:S/.//g}-src.zip
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Zangband (Zelazny Angband) with japanese, color, X11 support
+COMMENT=	Zangband (Zelazny Angband) with Japanese, color, X11 support
 
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-qa

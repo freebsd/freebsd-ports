@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}.src-${SRCDATE}
 DIST_SUBDIR=	sdpa
 
 MAINTAINER=	maho@FreeBSD.org
-COMMENT=	SDPA(SemiDefinite Programming Algorithm) Very efficent SDP Solver
+COMMENT=	SDPA(SemiDefinite Programming Algorithm) Very efficient SDP Solver
 
 .include <bsd.port.pre.mk>
 

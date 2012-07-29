@@ -10,7 +10,7 @@ CATEGORIES=	net www
 PKGNAMESUFFIX=	-mozjs
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Mozilla Javascript plug-in for libproxy
+COMMENT=	Mozilla JavaScript plug-in for libproxy
 
 LIB_DEPENDS=	proxy.1:${PORTSDIR}/net/libproxy
 

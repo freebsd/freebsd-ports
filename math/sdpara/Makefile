@@ -15,7 +15,7 @@ DIST_SUBDIR=	sdpa
 EXTRACT_ONLY=	${SRCFILE}
 
 MAINTAINER=	maho@FreeBSD.org
-COMMENT=	SDPARA paralell version of SDPA (math/sdpa)
+COMMENT=	SDPARA parallel version of SDPA (math/sdpa)
 
 LIB_DEPENDS=	scalapack:${PORTSDIR}/math/scalapack \
 		blacs:${PORTSDIR}/math/blacs \

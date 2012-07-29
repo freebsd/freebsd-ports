@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/AutoQ3D%20${PORTVERSION}
 DISTNAME=	AutoQ3DCommunity${PORTVERSION:C/\./-/}qt4source
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A complete QT quick 3d model editor program
+COMMENT=	Complete QT quick 3D model editor program
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

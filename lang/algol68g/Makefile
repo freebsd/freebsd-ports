@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://jmvdveer.home.xs4all.nl/
 
 MAINTAINER=	johans@FreeBSD.org
-COMMENT=	Alogol 68 Genie compiler
+COMMENT=	Algol 68 Genie compiler
 
 LIB_DEPENDS=	gsl:${PORTSDIR}/math/gsl
 

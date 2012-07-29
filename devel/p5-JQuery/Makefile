@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	CPAN:PETERG
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	gslin@gslin.org
-COMMENT=	Interface to Jquery, a language based on Javascript
+COMMENT=	Interface to Jquery, a language based on JavaScript
 
 RUN_DEPENDS=	p5-CGI-Application>=0:${PORTSDIR}/www/p5-CGI-Application \
 		p5-CSS>=0:${PORTSDIR}/textproc/p5-CSS \

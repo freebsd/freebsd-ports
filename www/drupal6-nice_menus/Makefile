@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	nick@foobar.org
-COMMENT=	CSS / Javascript pull-down menus for Drupal
+COMMENT=	CSS / JavaScript pull-down menus for Drupal
 
 USE_DRUPAL=	yes
 DRUPAL6_MODULE=	yes

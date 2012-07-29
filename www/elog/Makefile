@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://midas.psi.ch/elog/download/tar/
 
 MAINTAINER=	5u623l20@gmail.com
-COMMENT=	A fast and lightweight, extremly customizable weblog
+COMMENT=	Fast and lightweight, extremely customizable weblog
 
 LICENSE=	GPLv3
 

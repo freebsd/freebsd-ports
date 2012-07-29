@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/PySolFC/PySolFC-${PORTVERSION}
 DISTNAME=	PySolFC-${PORTVERSION}
 
 MAINTAINER=	mva@FreeBSD.org
-COMMENT=	Solitaire game, written in Python and the sucessor of PySol
+COMMENT=	Solitaire game, written in Python and the successor of PySol
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging

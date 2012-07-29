@@ -11,7 +11,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.13
 
 MAINTAINER=	zi@FreeBSD.org
-COMMENT=	Traffic visualizer, similiar to nettop
+COMMENT=	Traffic visualizer, similar to nettop
 
 MAN8=		jnettop.8
 

@@ -12,7 +12,7 @@ CATEGORIES=	graphics www
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A themable web picture album generator
+COMMENT=	Themeable web picture album generator
 
 RUN_DEPENDS=	${LOCALBASE}/bin/pnmscale:${PORTSDIR}/graphics/netpbm \
 		${LOCALBASE}/bin/djpeg:${PORTSDIR}/graphics/jpeg \

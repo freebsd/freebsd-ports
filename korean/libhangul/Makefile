@@ -11,7 +11,7 @@ CATEGORIES=	korean
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	hyogeollee@gmail.com
-COMMENT=	A library for hangul processing
+COMMENT=	Library for Hangul processing
 
 LICENSE=	LGPL21
 

@@ -12,7 +12,7 @@ CATEGORIES=	math
 MASTER_SITES=	SF/qalculate/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	sylvio@FreeBSD.org
-COMMENT=	A a multi-purpose desktop calculator (backend library)
+COMMENT=	Multi-purpose desktop calculator (backend library)
 
 LIB_DEPENDS=	cln.6:${PORTSDIR}/math/cln
 

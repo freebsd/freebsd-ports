@@ -24,7 +24,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX} \
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX}
 
 MAINTAINER=	jwbacon@tds.net
-COMMENT=	Object-oriented parallal programming language
+COMMENT=	Object-oriented parallel programming language
 
 USE_BZIP2=	yes
 USE_JAVA=	yes

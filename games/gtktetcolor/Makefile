@@ -13,7 +13,7 @@ MASTER_SITES=	SUNSITE/games \
 		http://canopus.iacp.dvo.ru/~panov/gtktetcolor/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A game for GNOME that resembles well-known tetris and columns
+COMMENT=	Game for GNOME that resembles well-known Tetris and Columns
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

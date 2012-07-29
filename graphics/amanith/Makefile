@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.amanith.org/download/files/ \
 DISTNAME=	${PORTNAME:S/$/_/}${PORTVERSION:S/.//}
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	C++ CrossPlatform framework designed for 2d & 3d vector graphics
+COMMENT=	C++ CrossPlatform framework designed for 2D & 3D vector graphics
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \

@@ -12,7 +12,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	changlp@cs.nctu.edu.tw
-COMMENT=	Compresses linked and inline javascript/CSS into a single cached file
+COMMENT=	Compresses linked and inline JavaScript/CSS into a single cached file
 
 LICENSE=	MIT
 

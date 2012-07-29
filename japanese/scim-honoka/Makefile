@@ -13,7 +13,7 @@ MASTER_SITES=	http://nop.net-p.org/files/honoka/
 DISTNAME=	honoka-${PORTVERSION}
 
 MAINTAINER=	chiba.masashi@gmail.com
-COMMENT=	SCIM IMEngine module using various Imput Methods
+COMMENT=	SCIM IMEngine module using various input methods
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 RUN_DEPENDS:=	${BUILD_DEPENDS}

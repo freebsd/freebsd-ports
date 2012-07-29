@@ -13,7 +13,7 @@ DISTNAME=	tinymce_2_1_3
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nick@foobar.org
-COMMENT=	An open source Javascript HTML WYSIWYG editor for web sites
+COMMENT=	Open source JavaScript HTML WYSIWYG editor for web sites
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

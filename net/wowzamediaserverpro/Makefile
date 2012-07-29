@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.wowzamedia.com/downloads/WowzaMediaServer-1-7-2/
 EXTRACT_SUFX=	.tar.bin
 
 MAINTAINER=	meritus@innervision.pl
-COMMENT=	Commercial flash media server written in java
+COMMENT=	Commercial flash media server written in Java
 
 RESTRICTED=	Redistribution not allowed
 

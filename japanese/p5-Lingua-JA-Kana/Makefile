@@ -11,7 +11,7 @@ CATEGORIES=	japanese perl5
 MASTER_SITES=	CPAN
 
 MAINTAINER=	kuriyama@FreeBSD.org
-COMMENT=	Converts between kanas and romaji
+COMMENT=	Converts between Kanas and Romaji
 
 PERL_CONFIGURE=	yes
 

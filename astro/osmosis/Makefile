@@ -12,7 +12,7 @@ MASTER_SITES=	http://bretth.dev.openstreetmap.org/osmosis-build/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	A command line java app for processing OpenStreetMap data
+COMMENT=	Command line Java app for processing OpenStreetMap data
 
 NO_BUILD=	yes
 

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	sada
 DISTNAME=	perl${PORTVERSION}${PORTNAME}-j
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Perl5 japanese manual
+COMMENT=	Perl5 Japanese manual
 
 NO_BUILD=	yes
 MANPREFIX=	${PREFIX}/man/ja

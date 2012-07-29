@@ -12,7 +12,7 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}${PORTVERSION}_src
 
 MAINTAINER=	pauls@utdallas.edu
-COMMENT=	A java extension of BSD YACC-compatible parser generator
+COMMENT=	Java extension of BSD YACC-compatible parser generator
 
 PLIST_FILES=	bin/byaccj
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/src

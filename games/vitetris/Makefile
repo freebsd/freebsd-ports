@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://victornils.net/tetris/
 
 MAINTAINER=	dhn@FreeBSD.org
-COMMENT=	Terminal-based tetris clone in vein of nintendo tetris
+COMMENT=	Terminal-based Tetris clone in vein of Nintendo Tetris
 
 HAS_CONFIGURE=	yes
 ALL_TARGET=	#

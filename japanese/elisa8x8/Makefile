@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.bsdbbq.org/~toshi/distfiles/
 DISTNAME=	elisat10
 
 MAINTAINER=	toshi@tea.forus.or.jp
-COMMENT=	X11 8-dot kanji font 'elisa font'
+COMMENT=	X11 8-dot Kanji font 'elisa font'
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \

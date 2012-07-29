@@ -12,7 +12,7 @@ CATEGORIES=	korean
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	jkim@FreeBSD.org
-COMMENT=	GTK+-2.0 hangul input module
+COMMENT=	GTK+-2.0 Hangul input module
 
 LICENSE=	GPLv2
 

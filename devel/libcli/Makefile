@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	 http://cloud.github.com/downloads/dparrish/libcli/
 
 MAINTAINER=	bapt@FreeBSD.org
-COMMENT=	Emulates a cisco style command-line interface
+COMMENT=	Emulates a Cisco style command-line interface
 
 LICENSE=	LGPL21
 

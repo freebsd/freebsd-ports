@@ -12,7 +12,7 @@ MASTER_SITES=	SF/open79xxdir/OpenXMLDir/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	PHP based XML menuing system for cisco 79xx IP phones
+COMMENT=	PHP based XML menuing system for Cisco 79xx IP phones
 
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES

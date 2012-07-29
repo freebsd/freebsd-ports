@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.brettnacher.org/users/dominik/FreeBSD/
 
 MAINTAINER=	domi@saargate.de
-COMMENT=	Small program that finds definitions of arbitrary (english) words
+COMMENT=	Small program that finds definitions of arbitrary (English) words
 
 USE_GNOME=	gtk12
 

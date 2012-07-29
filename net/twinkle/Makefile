@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.xs4all.nl/~mfnboer/twinkle/download/
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	Soft phone for your VoIP communcations using the SIP protocol
+COMMENT=	Soft phone for your VoIP communications using the SIP protocol
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 LIB_DEPENDS=	ccgnu2-1.7.0:${PORTSDIR}/devel/commoncpp \

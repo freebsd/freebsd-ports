@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}_source_${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	Free 3d real-time customizable strategy game
+COMMENT=	Free 3D real-time customizable strategy game
 
 LIB_DEPENDS=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2 \
 		vorbis.4:${PORTSDIR}/audio/libvorbis

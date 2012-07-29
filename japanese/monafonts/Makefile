@@ -14,7 +14,7 @@ MASTER_SITES=	SF/monafont/monafont/monafont-${PORTVERSION}
 DISTNAME=	monafont-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
-COMMENT=	X11 12,14,16-dot kanji fonts
+COMMENT=	X11 12,14,16-dot Kanji fonts
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir

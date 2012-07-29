@@ -23,7 +23,7 @@ MASTER_SITES=	http://aktuell.de.selfhtml.org/extras/ \
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Extensive german HTML reference
+COMMENT=	Extensive German HTML reference
 
 WRKSRC=		${WRKDIR}
 

@@ -9,7 +9,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://alex.bmg.gv.at/programs/
 
 MAINTAINER=	alex@hugo.bmg.gv.at
-COMMENT=	Interface Dependancy daemon
+COMMENT=	Interface Dependency daemon
 
 MAN8=		ifdepd.8
 

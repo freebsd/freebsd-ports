@@ -13,7 +13,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A fractal rendering program with nice 3d-display in realtime
+COMMENT=	Fractal rendering program with nice 3D-display in realtime
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 

@@ -16,7 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME:C/src/data/}${EXTRACT_SUFX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	2d arcade-puzzle game like KDiamonds
+COMMENT=	2D arcade-puzzle game like KDiamonds
 
 USE_ZIP=	yes
 USE_SDL=	sdl mixer

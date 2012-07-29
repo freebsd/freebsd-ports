@@ -12,7 +12,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.1.2-pre1
 DISTNAME=	${PORTNAME}-${VENDOR_VERSION}
 
 MAINTAINER=	mi@aldan.algebra.com
-COMMENT=	A java package containing a decompiler and an optimizer for java
+COMMENT=	Java package containing a decompiler and an optimizer for Java
 
 BUILD_DEPENDS=	${GETOPT_JAR}:${PORTSDIR}/java/java-getopt
 RUN_DEPENDS:=	${BUILD_DEPENDS}

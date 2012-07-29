@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://utenti.gufi.org/~gmarco/files/distfiles/
 
 MAINTAINER=	gmarco@gufi.org
-COMMENT=	A one or two player t*tris game
+COMMENT=	One or two player T*tris game
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-setgid=games

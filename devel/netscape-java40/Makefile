@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	thierry
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	thierry@FreeBSD.org
-COMMENT=	Classes to allow a Java applet access to Javascript objects
+COMMENT=	Classes to allow a Java applet access to JavaScript objects
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+

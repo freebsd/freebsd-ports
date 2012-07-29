@@ -11,7 +11,7 @@ MASTER_SITES=	http://snar.spb.ru/prog/bgpq/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sem@FreeBSD.org
-COMMENT=	Bgpq - lightweight access-list generator for cisco routers
+COMMENT=	Bgpq - lightweight access-list generator for Cisco routers
 
 MAN8=		bgpq.8
 PLIST_FILES=	bin/bgpq

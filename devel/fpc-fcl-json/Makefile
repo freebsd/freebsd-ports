@@ -10,7 +10,7 @@ CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-json
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	A JSON (Javascript Object Notation) implementation in FreePascal
+COMMENT=	JSON (JavaScript Object Notation) implementation in FreePascal
 
 USE_FPC=	fcl-base
 

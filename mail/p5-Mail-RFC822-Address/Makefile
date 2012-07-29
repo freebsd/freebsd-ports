@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Perl5 module to validate RFC822 conformance of email adresses
+COMMENT=	Perl5 module to validate RFC822 conformance of email addresses
 
 PERL_CONFIGURE=	yes
 
