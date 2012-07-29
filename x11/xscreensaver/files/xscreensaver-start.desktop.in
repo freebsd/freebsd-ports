@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=XScreenSaver Start
+Comment=Start XScreenSaver daemon
+Icon=%%PREFIX%%/share/pixmaps/xscreensaver.xpm
+Exec=%%PREFIX%%/bin/xscreensaver
+Categories=Settings;DesktopSettings;Security;X-XFCE;XScreenSaver;
+Terminal=false
+StartupNotify=false

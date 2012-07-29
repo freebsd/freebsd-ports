@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=XScreenSaver Blank
+Comment=Blank the screen with (activate) XScreenSaver
+Icon=%%PREFIX%%/share/xscreensaver/glade/screensaver-diagnostic.png
+Exec=%%PREFIX%%/bin/xscreensaver-command -activate
+Categories=Settings;DesktopSettings;Security;X-XFCE;XScreenSaver;
+Terminal=false
+StartupNotify=false

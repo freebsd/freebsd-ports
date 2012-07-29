@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	xscreensaver
-PORTVERSION=	5.18
-CATEGORIES?=	x11
-MASTER_SITES=	http://www.jwz.org/xscreensaver/ \
-		http://dougbarton.us/Downloads/
+PORTVERSION=	5.19
+CATEGORIES=	x11
+MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
-MAINTAINER?=	dougb@FreeBSD.org
+MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	Save your screen while you entertain your cat
 
+BUILD_DEPENDS=	pkgconf>0:${PORTSDIR}/devel/pkgconf
 LIB_DEPENDS=	gle.4:${PORTSDIR}/graphics/gle \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20 \
@@ -134,13 +134,16 @@ MAN6=	anemone.6 anemotaxis.6 antinspect.6 antmaze.6 antspotlight.6 \
 	companioncube.6 hilbert.6 tronbit.6 \
 	xscreensaver-gl-helper.6
 
+SUB_FILES=	xscreensaver-blank.desktop xscreensaver-lock.desktop \
+		xscreensaver-start.desktop xscreensaver-stop.desktop
+
 post-patch:
 	@ ${CP} ${WRKSRC}/configure ${WRKSRC}/configure.Patched
 	@ ${SED} -e 's#-lpthread#${PTHREAD_LIBS}#g' \
 		-e 's#malloc.h#stdlib.h#g' \
 		-e 's#/usr/X11R6#${LOCALBASE}#g' \
+		-e 's#pkg_config --list-all#pkg_config --help#' \
 		${WRKSRC}/configure.Patched > ${WRKSRC}/configure
-
 .if defined(WITH_PAM)
 .for f in driver/passwd-pam.c driver/xscreensaver.man
 	@ ${CP} ${WRKSRC}/${f} ${WRKSRC}/${f}.presed
@@ -161,5 +164,6 @@ post-install:
 		${ECHO} "bin/xscreensaver-hacks/webcollage-helper" | \
 			${CAT} - ${TMPPLIST} > ${TMPPLIST}.cat && \
 			${MV} ${TMPPLIST}.cat ${TMPPLIST}; fi)
+	${INSTALL_DATA} ${WRKDIR}/*.desktop ${PREFIX}/share/applications/
 
 .include <bsd.port.post.mk>
