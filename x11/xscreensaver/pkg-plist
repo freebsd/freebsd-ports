@@ -208,7 +208,11 @@ bin/xscreensaver-hacks/zoom
 bin/xscreensaver-text
 %%PAM%%etc/pam.d/xscreensaver
 lib/X11/app-defaults/XScreenSaver
+share/applications/xscreensaver-blank.desktop
+share/applications/xscreensaver-lock.desktop
 share/applications/xscreensaver-properties.desktop
+share/applications/xscreensaver-start.desktop
+share/applications/xscreensaver-stop.desktop
 share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/README
 %%DATADIR%%/config/abstractile.xml
