@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bugzilla
-PORTVERSION=	4.2.1
-PORTREVISION=	1
+PORTVERSION=	4.2.2
 CATEGORIES=	german
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=bugzilla-de/${PORTVERSION:R}/${PORTVERSION}
@@ -25,12 +24,6 @@ NO_WRKSUBDIR=	yes
 .include "${.CURDIR}/../../devel/bugzilla42/Makefile.common"
 
 LANGDIR=	${WWWDIR}/template/de
-
-# german template checks the bugzilla version number and displays
-# non supported bugzilla version.
-post-patch:
-	@${SED} -i '' -e 's|4.2.1|4.2.2|' ${WRKDIR}/de/default/global/gzversion.html.tmpl
-	@${FIND} ${WRKDIR}/ -name \*.orig -delete
 
 do-install:
 	@-${MKDIR} ${LANGDIR}
