@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pkgconf
-PORTVERSION=	0.8.3
-PORTREVISION=	1
+PORTVERSION=	0.8.4
 CATEGORIES=	devel
 MASTER_SITES=	http://nenolod.net/~nenolod/distfiles/
 
