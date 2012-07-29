@@ -22,6 +22,7 @@ RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/xcb.pc:${PORTSDIR}/x11/libxcb
 XORG_CAT=	lib
 USE_XORG=	bigreqsproto xau xcmiscproto xdmcp xextproto xtrans \
 		kbproto:both inputproto xf86bigfontproto xproto:both
+
 CONFIGURE_ARGS+=	--datadir=${PREFIX}/lib \
 			--without-xmlto \
 			--disable-specs
@@ -30,6 +31,8 @@ CONFIGURE_ENV+=	ac_cv_path_PS2PDF=""
 .include "${.CURDIR}/manpages"
 
 post-patch:
+	@${REINPLACE_CMD} 's/test.*-traditional.*;/true;/' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} '/^install-data-am:/,/^$$/ \
 		s/install-specDATA//' ${WRKSRC}/nls/Makefile.in
 

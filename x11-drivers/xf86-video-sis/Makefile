@@ -20,4 +20,8 @@ XORG_CAT=	driver
 USE_XORG=	xf86dgaproto xf86driproto xineramaproto videoproto xf86miscproto xextproto glproto
 MAN4=		sis.4x
 
+post-patch:
+	@${REINPLACE_CMD} 's/test.*-traditional.*;/true;/' \
+		${WRKSRC}/configure
+	
 .include <bsd.port.mk>
