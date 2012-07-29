@@ -1018,6 +1018,7 @@
     SUBDIR += p5-YAPE-Regex-Explain
     SUBDIR += p5-ack
     SUBDIR += p5-dTemplate
+    SUBDIR += p5-libsoldout
     SUBDIR += p5-libxml
     SUBDIR += p5-pod2pdf
     SUBDIR += p5-podlators
