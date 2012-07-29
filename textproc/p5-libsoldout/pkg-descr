@@ -1,0 +1,6 @@
+p5-libsoldout is a perl module to access the C library libsoldout.
+The initial version just implements functions to convert markdown
+input to html including strict markdown, discount markdown and 
+specific extensions only available in libsoldout.
+
+WWW: http://search.cpan.org/dist/libsoldout/
