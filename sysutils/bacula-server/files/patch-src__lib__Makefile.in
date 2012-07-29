@@ -4,7 +4,7 @@
  
  libbac.la: Makefile $(LIBBAC_LOBJS)
  	@echo "Making $@ ..."
--	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBAC_LOBJS) -export-dynamic -rpath $(libdir) -release $(LIBBAC_LT_RELEASE) $(WRAPLIBS) $(CAP_LIBS) $(ZLIBS) $(OPENSSL_LIBS) $(LIBS)
+-	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBAC_LOBJS) -export-dynamic -rpath $(libdir) -release $(LIBBAC_LT_RELEASE) $(WRAPLIBS) $(CAP_LIBS) $(ZLIBS) $(OPENSSL_LIBS) $(LIBS) $(DLLIBS)
 +	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBAC_LOBJS) -export-dynamic -rpath $(libdir) -version-info 5 $(WRAPLIBS) $(CAP_LIBS) $(ZLIBS) $(OPENSSL_LIBS) $(LIBS)
  
  libbaccfg.a: $(LIBBACCFG_OBJS) 
