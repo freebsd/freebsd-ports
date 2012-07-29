@@ -14,7 +14,7 @@ MASTER_SITES=	http://kbrandt.sdf-eu.org/FreeBSD/distfiles/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
 
 MAINTAINER=	kbrandt@sdf-eu.org
-COMMENT=	A tetris like game with multiplayer support
+COMMENT=	Tetris like game with multiplayer support
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 

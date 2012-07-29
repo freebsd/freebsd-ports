@@ -18,7 +18,7 @@ MASTER_SITES=	http://hanzubon.jp/mirrors/Vine/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	VinePlus/1.1/JG-0.9.1/sources
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Puzzle tama, a tetris like game
+COMMENT=	Puzzle tama, a Tetris like game
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_IMAKE=	yes

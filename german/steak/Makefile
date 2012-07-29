@@ -14,7 +14,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Steak%20${PORTVERSION} \
 DISTNAME=	Steak.${PORTVERSION}
 
 MAINTAINER=	conrads@cox.net
-COMMENT=	An english <-> german dictionary under the GPL
+COMMENT=	English <-> German dictionary under the GPL
 
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 

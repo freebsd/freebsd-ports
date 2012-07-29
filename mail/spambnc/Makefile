@@ -15,7 +15,7 @@ DIST_SUBDIR=	spambnc-${PORTVERSION}
 EXTRACT_ONLY=	sb.tar.gz
 
 MAINTAINER=	thierry@FreeBSD.org
-COMMENT=	Set of procmail recipies which handle known/suspected spam
+COMMENT=	Set of procmail recipes which handle known/suspected spam
 
 RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
 

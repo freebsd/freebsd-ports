@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 
 MAINTAINER=	glarkin@FreeBSD.org
-COMMENT=	Easily tweak Trac pages with Javascript expressions
+COMMENT=	Easily tweak Trac pages with JavaScript expressions
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 

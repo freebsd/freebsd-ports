@@ -10,7 +10,7 @@ PORTVERSION=	0.1.2
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Haskell implementation of a javascript minifier
+COMMENT=	Haskell implementation of a JavaScript minifier
 
 LICENSE=	BSD
 

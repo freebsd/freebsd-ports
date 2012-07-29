@@ -15,7 +15,7 @@ DIST_SUBDIR=	anthy
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	nobutaka@FreeBSD.org
-COMMENT=	Another kana-kanji conversion system
+COMMENT=	Another Kana-Kanji conversion system
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

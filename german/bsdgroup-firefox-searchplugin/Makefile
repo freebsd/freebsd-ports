@@ -15,7 +15,7 @@ DISTFILES=	bsdgroup.src bsdgroup.png bsdgroup-wiki.src bsdgroup-wiki.png
 EXTRACT_ONLY=	yes
 
 MAINTAINER=	stefan.tell@crashmail.de
-COMMENT=	Firefox searchplugins for the www.BSDGroup.de board
+COMMENT=	Firefox search plugins for the www.BSDGroup.de board
 
 USE_FIREFOX=	yes
 

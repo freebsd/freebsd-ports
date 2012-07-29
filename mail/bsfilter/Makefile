@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	bsfilter/49795
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	info@otsune.com
-COMMENT=	A bayesian spam filter written in Ruby
+COMMENT=	Bayesian spam filter written in Ruby
 
 RUN_DEPENDS=	${RUBY_ARCHLIBDIR}/gdbm.so:${PORTSDIR}/databases/ruby-gdbm
 

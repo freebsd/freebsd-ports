@@ -12,7 +12,7 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A version of the popular TetriNET multiplayer tetris clone
+COMMENT=	Version of the popular TetriNET multiplayer Tetris clone
 
 USE_GETTEXT=	yes
 USE_BZIP2=	yes

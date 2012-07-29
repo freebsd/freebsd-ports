@@ -13,7 +13,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/source/2004-08-22
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple 3d editor
+COMMENT=	Simple 3D editor
 
 LIB_DEPENDS=	3ds-1.3:${PORTSDIR}/graphics/lib3ds \
 		gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext

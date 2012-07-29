@@ -15,7 +15,7 @@ DIST_SUBDIR=	sdpa
 EXTRACT_ONLY=	${SRCFILE}
 
 MAINTAINER=	maho@FreeBSD.org
-COMMENT=	Multi pricision arithmetic version of math/sdpa
+COMMENT=	Multi precision arithmetic version of math/sdpa
 
 .include <bsd.port.pre.mk>
 

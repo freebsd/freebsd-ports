@@ -17,7 +17,7 @@ MASTER_SITE_SUBDIR=	mailfilter/Mailfilter/${PORTVERSION}
 DISTNAME=	mailfilter-${PORTVERSION}
 
 MAINTAINER=	sylvio@FreeBSD.org
-COMMENT=	Filter mail on a pop3 server: saves downloading spam
+COMMENT=	Filter mail on a POP3 server: saves downloading spam
 
 LICENSE=	GPLv3
 

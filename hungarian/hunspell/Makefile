@@ -12,7 +12,7 @@ MASTER_SITES=	SF/magyarispell/Magyar%20Ispell/${PORTVERSION}
 DISTNAME=	hu_HU-${PORTVERSION}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
-COMMENT=	Hunspell hungarian dictionary
+COMMENT=	Hunspell Hungarian dictionary
 
 LICENSE=	GPLv2 LGPL21 MPL
 LICENSE_COMB=	dual

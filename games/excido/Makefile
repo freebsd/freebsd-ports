@@ -14,7 +14,7 @@ MASTER_SITES=	http://offload2.icculus.org:9090/excido/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A portable fast-paced 3d shooter
+COMMENT=	Portable fast-paced 3D shooter
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

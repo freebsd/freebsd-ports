@@ -12,7 +12,7 @@ MASTER_SITES=	http://cloud.github.com/downloads/keithw/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	zi@FreeBSD.org
-COMMENT=	A mobile terminal that supports intermittant connectivity
+COMMENT=	Mobile terminal that supports intermittent connectivity
 
 LICENSE=	GPLv3
 

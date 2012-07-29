@@ -14,7 +14,7 @@ PKGNAMEPREFIX=		dojo-
 DISTNAME=		${PKGNAMEPREFIX}release-${PORTVERSION}-${PORTNAME}
 
 MAINTAINER=		glarkin@FreeBSD.org
-COMMENT=		A Javascript code compressor
+COMMENT=		JavaScript code compressor
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+

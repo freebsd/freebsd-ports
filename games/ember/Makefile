@@ -16,7 +16,7 @@ DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-media-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	oliver@FreeBSD.org
-COMMENT=	Ember is a WorldForge 3d client using the OGRE 3d library
+COMMENT=	Ember is a WorldForge 3D client using the OGRE 3D library
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.7.4:${PORTSDIR}/graphics/ogre3d
 RUN_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.7.4:${PORTSDIR}/graphics/ogre3d

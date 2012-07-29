@@ -14,7 +14,7 @@ DISTNAME=	SpreadModule-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	wenheping@gmail.com
-COMMENT=	A python extension module for the Spread group communcations package
+COMMENT=	Python extension module for the Spread group communications package
 
 LIB_DEPENDS=	spread.1:${PORTSDIR}/net/spread
 

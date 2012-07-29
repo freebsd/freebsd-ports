@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.Awfulhak.org/pub/jsl/ \
 EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	delphij@FreeBSD.org
-COMMENT=	Analyzes javascript code looking for bugs and signs of poor quality
+COMMENT=	Analyzes JavaScript code looking for bugs and signs of poor quality
 
 PLIST_FILES=	bin/jsl
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

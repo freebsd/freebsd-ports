@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	SF
 
 MAINTAINER=	oz@nixil.net
-COMMENT=	A highly configureble, secure, auto reply software
+COMMENT=	Highly configurable, secure, auto reply software
 
 MAN1=		rom.1
 

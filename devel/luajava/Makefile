@@ -12,7 +12,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	http://luaforge.net/frs/download.php/2105/
 
 MAINTAINER=	sunghyuk@gmail.com
-COMMENT=	Lua scripting tool for java
+COMMENT=	Lua scripting tool for Java
 
 USE_GMAKE=	yes
 USE_LUA=	5.1

@@ -10,7 +10,7 @@ PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	misc kde
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Croation messages and documentation for KDE4
+COMMENT=	Croatian messages and documentation for KDE4
 
 KDE4_L10N=	hr
 

@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Generate HTML and Javascript for the Prototype library
+COMMENT=	Generate HTML and JavaScript for the Prototype library
 
 BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree

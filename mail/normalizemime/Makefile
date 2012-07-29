@@ -14,7 +14,7 @@ EXTRACT_SUFX=
 EXTRACT_ONLY=
 
 MAINTAINER=	lioux@FreeBSD.org
-COMMENT=	A mime normalizer to be used as a preprocessor for email classication
+COMMENT=	Mime normalizer to be used as a preprocessor for email classification
 
 LICENSE=	GPLv2
 

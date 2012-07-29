@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.zero-based.org/software/jpegpixi/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Useful to correct images from digtal camera with CCD defects
+COMMENT=	Useful to correct images from digital camera with CCD defects
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 

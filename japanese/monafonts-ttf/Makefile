@@ -13,7 +13,7 @@ MASTER_SITES=	SF/monafont/monafont/monafont-${PORTVERSION}
 DISTNAME=	monafont-ttf-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
-COMMENT=	X11 TrueType kanji fonts
+COMMENT=	X11 TrueType Kanji fonts
 
 USE_ZIP=	yes
 NO_BUILD=	yes

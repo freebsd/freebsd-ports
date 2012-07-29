@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.gna.org/cal3d/sources/
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	Skeletal based 3d character animation library written in C++
+COMMENT=	Skeletal based 3D character animation library written in C++
 
 CONFLICTS=	cal3d-devel-[0-9]*
 

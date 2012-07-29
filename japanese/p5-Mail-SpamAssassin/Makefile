@@ -10,7 +10,7 @@ CATEGORIES=	japanese mail perl5
 PKGNAMEPREFIX=	ja-p5-
 
 MAINTAINER=	masaki@club.kyutech.ac.jp
-COMMENT=	SpamAssassin with paches to handle multibyte character
+COMMENT=	SpamAssassin with patches to handle multibyte character
 
 LICENSE=	AL2
 

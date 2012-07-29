@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	CPAN:VVELOX
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
-COMMENT=	Provides a methode for creating paths in LDAP simply
+COMMENT=	Provides a method for creating paths in LDAP simply
 
 RUN_DEPENDS=	 p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 

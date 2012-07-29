@@ -14,7 +14,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:main
 EXTRACT_ONLY=	gcin-${PORTVERSION}.tar.xz
 
 MAINTAINER=	vanilla@FreeBSD.org
-COMMENT=	A traditional chinese input utility in X
+COMMENT=	Traditional Chinese input utility in X
 
 LICENSE=	LGPL21
 

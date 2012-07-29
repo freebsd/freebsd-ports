@@ -12,7 +12,7 @@ CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/_${PORTVERSION}/
 
 MAINTAINER=	janos.mohacsi@bsd.hu
-COMMENT=	On-link IPv6 router advertisment monitoring and reporting daemon
+COMMENT=	On-link IPv6 router advertisement monitoring and reporting daemon
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE

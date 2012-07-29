@@ -15,7 +15,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-data-${PORTVERSION}${EXTRACT_SUFX}:data
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A 3d penguin racing game using OpenGL
+COMMENT=	3D penguin racing game using OpenGL
 
 USE_SDL=	mixer sdl
 USE_GL=		gl

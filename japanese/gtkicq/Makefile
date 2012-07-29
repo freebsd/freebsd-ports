@@ -16,7 +16,7 @@ PATCHFILES=	${DISTNAME}-ja.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	stanaka@bb.mbn.or.jp
-COMMENT=	Icq clone for japanese user
+COMMENT=	Icq clone for Japanese user
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libjcode.a:${PORTSDIR}/japanese/libjcode
 

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.der-fritz.de/ksteak/
 DISTNAME=	ksteak-1.0.0pre2
 
 MAINTAINER=	conrads@cox.net
-COMMENT=	KDE frontend for steak, an english - german dictionary
+COMMENT=	KDE frontend for steak, an English - German dictionary
 
 RUN_DEPENDS=	steak:${PORTSDIR}/german/steak
 

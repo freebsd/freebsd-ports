@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Plugins for KAdressbook
+COMMENT=	Plugins for KAddressbook
 
 LIB_DEPENDS=	kdepim:${PORTSDIR}/deskutils/kdepim3
 BUILD_DEPENDS=	kworldclock:${PORTSDIR}/x11-clocks/kdetoys3

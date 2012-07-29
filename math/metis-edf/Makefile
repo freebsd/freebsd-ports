@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	math
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	Meshes partionning tool used by Code_Aster
+COMMENT=	Meshes partitioning tool used by Code_Aster
 
 CONFLICTS=	metis-[0-9]*
 

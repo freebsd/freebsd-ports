@@ -13,7 +13,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/lgames/${PORTNAME}
 
 MAINTAINER=	davide.italiano@gmail.com
-COMMENT=	An another tetris clone but a good one with bunch of cool features
+COMMENT=	Another Tetris clone but a good one with bunch of cool features
 
 USE_SDL=	mixer sdl
 USE_GMAKE=	yes

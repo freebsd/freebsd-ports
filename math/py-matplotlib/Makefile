@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mainland@apeiron.net
-COMMENT=	A plotting library uses a syntax familiar to matlab users
+COMMENT=	Plotting library uses a syntax familiar to MATLAB users
 
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=1.4:${PORTSDIR}/devel/py-dateutil \

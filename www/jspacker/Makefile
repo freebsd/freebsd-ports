@@ -13,7 +13,7 @@ MASTER_SITES=	http://nivi.interfree.it/distfiles/${PORTNAME}/ \
 DISTNAME=	packer2.perl
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	Javascript Compressor/Obfuscator (Perl version)
+COMMENT=	JavaScript compressor/obfuscator (Perl version)
 
 JSPACKER=	jsPacker.pl
 

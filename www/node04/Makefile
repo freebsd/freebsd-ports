@@ -13,7 +13,7 @@ MASTER_SITES=	http://nodejs.org/dist/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	linpct@gmail.com
-COMMENT=	V8 javascript for client and server
+COMMENT=	V8 JavaScript for client and server
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 

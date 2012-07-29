@@ -13,7 +13,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	ume@FreeBSD.org
-COMMENT=	A sample implementaiton set of "L2TP-IPv6PD" client using mpd
+COMMENT=	Sample implementation set of "L2TP-IPv6PD" client using mpd
 
 IS_INTERACTIVE=	yes
 MANUAL_PACKAGE_BUILD=yes

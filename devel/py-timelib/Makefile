@@ -12,7 +12,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	Parse english textual date descriptions
+COMMENT=	Parse English textual date descriptions
 
 USE_ZIP=		yes
 USE_PYTHON=		yes

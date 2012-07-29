@@ -14,7 +14,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${dict}.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	wosch@FreeBSD.org
-COMMENT=	Simple english/german dictionary
+COMMENT=	Simple English/German dictionary
 
 RUN_DEPENDS=	agrep:${PORTSDIR}/textproc/agrep
 

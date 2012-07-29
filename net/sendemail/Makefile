@@ -14,7 +14,7 @@ MASTER_SITES=	http://caspian.dotconf.net/menu/Software/SendEmail/ \
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	itetcu@FreeBSD.org
-COMMENT=	Lightweight, completly command line based, SMTP email agent
+COMMENT=	Lightweight, completely command line based, SMTP email agent
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes

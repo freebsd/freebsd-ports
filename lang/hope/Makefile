@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.soi.city.ac.uk/~ross/Hope/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	lev@FreeBSD.org
-COMMENT=	Hope is lazy interpriter for HOPE applicative language
+COMMENT=	Hope is lazy interpreter for HOPE applicative language
 
 .if defined(WITH_DOCS)
 BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX \

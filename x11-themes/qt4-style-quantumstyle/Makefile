@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	qt4-style-
 DISTNAME=	QuantumStyle-${DISTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	SVG themable style for Qt 4 and KDE
+COMMENT=	SVG themeable style for Qt 4 and KDE
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

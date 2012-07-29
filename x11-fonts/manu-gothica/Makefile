@@ -14,7 +14,7 @@ DISTNAME=	manugot19
 EXTRACT_SUFX=	.ttf
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Old german blackletter handwriting (suetterlin)
+COMMENT=	Old German blackletter handwriting (Suetterlin)
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS:=	${BUILD_DEPENDS}

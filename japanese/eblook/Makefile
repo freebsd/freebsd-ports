@@ -13,7 +13,7 @@ MASTER_SITES=	http://openlab.ring.gr.jp/edict/eblook/dist/
 DIST_SUBDIR=	eb
 
 MAINTAINER=	yasu@utahime.org
-COMMENT=	Interactive EB interface command for seraching words in electoric dictionaries
+COMMENT=	Interactive EB interface command for searching words in electronic dictionaries
 
 LIB_DEPENDS=	eb.15:${PORTSDIR}/japanese/eb
 

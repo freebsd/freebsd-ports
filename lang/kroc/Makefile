@@ -14,7 +14,7 @@ MASTER_SITES=	http://ftp.i-scream.org/pub/kroc/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-r/}
 
 MAINTAINER=	tdb@FreeBSD.org
-COMMENT=	The Kent Retargettable occam-pi Compiler
+COMMENT=	The Kent Retargetable occam-pi Compiler
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png

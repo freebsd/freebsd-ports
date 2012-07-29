@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://www.angelfire.com/linux/linuxjeff/mtrxmath/files/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A small tool for matrix mathemetics
+COMMENT=	Small tool for matrix mathematics
 
 PORTDOCS=	README
 PLIST_FILES=	bin/mtrxmath

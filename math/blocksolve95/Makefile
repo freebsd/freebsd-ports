@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tar.Z
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	Sofware for the efficient solution of large, sparse linear systems
+COMMENT=	Software for the efficient solution of large, sparse linear systems
 
 BUILD_DEPENDS=	${MPIDIR}/lib/libmpich.a:${PORTSDIR}/net/mpich2
 LIB_DEPENDS=	f2c.2:${PORTSDIR}/lang/f2c

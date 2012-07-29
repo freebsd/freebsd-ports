@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Additonal plugins and features for Konqueror
+COMMENT=	Additional plugins and features for Konqueror
 
 KDE_SPLIT=	${KONQPLUGINS_PORTNAME:S/${KDE_SPLIT_DIST}-//}
 USE_KDEBASE_VER=3

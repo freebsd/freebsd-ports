@@ -13,7 +13,7 @@ MASTER_SITES=	http://www2s.biglobe.ne.jp/~yav/soft/xpx/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple pixel editing tool to make datas for KISS
+COMMENT=	Simple pixel editing tool to generate data for KISS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

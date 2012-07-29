@@ -20,7 +20,7 @@ DIST_SUBDIR=	crafty
 EXTRACT_ONLY=	crafty-${PORTVERSION}.zip
 
 MAINTAINER=	flo@FreeBSD.org
-COMMENT=	A chess programm for playing and analyzing games
+COMMENT=	Chess program for playing and analyzing games
 
 USE_ZIP=	yes
 USE_GMAKE=	yes

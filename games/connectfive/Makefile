@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-linux/${PORTNAME}-${PORTVERSION}
 DISTNAME=	connectFive
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	Place five pieces in a row on a 3d board
+COMMENT=	Place five pieces in a row on a 3D board
 
 MAKEFILE=	Makefile.linux
 LDFLAGS+=	-L${LOCALBASE}/lib

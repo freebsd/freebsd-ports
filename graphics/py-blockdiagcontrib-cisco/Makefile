@@ -12,7 +12,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kuriyama@FreeBSD.org
-COMMENT=	A networking shapes for blockdiag designed by cisco
+COMMENT=	Networking shapes for blockdiag designed by Cisco
 
 RUN_DEPENDS=	${PKGNAMEPREFIX}blockdiag>=0.8.0:${PORTSDIR}/graphics/py-blockdiag
 

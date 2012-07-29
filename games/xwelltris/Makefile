@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.xnc.dubna.su/xwelltris/src/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	lev@FreeBSD.org
-COMMENT=	3D tetris-like game
+COMMENT=	3D Tetris-like game
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PLIST_FILES=	bin/xwelltris \

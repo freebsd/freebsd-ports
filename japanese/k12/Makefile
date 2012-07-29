@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	knm_new_linux.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	X11 12-dot kanji font
+COMMENT=	X11 12-dot Kanji font
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \

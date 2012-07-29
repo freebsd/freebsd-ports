@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Python module implenting the netstring protocol
+COMMENT=	Python module implementing the netstring protocol
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

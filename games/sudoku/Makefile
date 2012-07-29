@@ -13,7 +13,7 @@ MASTER_SITES=	http://chipstips.com/download/
 EXTRACT_SUFX=	.tbz
 
 MAINTAINER=	sterling@camdensoftware.com
-COMMENT=	Console based sudoku games
+COMMENT=	Console based Sudoku games
 
 USE_BZIP2=	yes
 USE_NCURSES=	yes

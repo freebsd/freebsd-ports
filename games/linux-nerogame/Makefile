@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	nero2_linux_i386
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	Neuro envolving robotic operatives the game
+COMMENT=	Neuro evolving robotic operatives the game
 
 USE_LINUX=	yes
 USE_LINUX_APPS=	libvorbis sdl12 libtheora

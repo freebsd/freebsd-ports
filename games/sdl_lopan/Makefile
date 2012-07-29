@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME:S/_//}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nemysis@gmx.ch
-COMMENT=	SDL Lopan is a mahjong game remake
+COMMENT=	Mahjong game remake
 
 LICENSE=	GPLv2
 

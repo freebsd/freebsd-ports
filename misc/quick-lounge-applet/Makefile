@@ -14,7 +14,7 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	marcus@FreeBSD.org
-COMMENT=	Applet to orginize your preferred applications on the GNOME Panel
+COMMENT=	Applet to originize your preferred applications on the GNOME Panel
 
 USE_BZIP2=	yes
 INSTALLS_OMF=	yes

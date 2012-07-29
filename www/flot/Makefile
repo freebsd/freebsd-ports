@@ -11,7 +11,7 @@ CATEGORIES=	www devel
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	jgh@FreeBSD.org
-COMMENT=	Javascript plotting library for jQuery
+COMMENT=	JavaScript plotting library for jQuery
 
 LICENSE=	MIT
 

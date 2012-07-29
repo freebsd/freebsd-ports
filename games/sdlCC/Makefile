@@ -13,7 +13,7 @@ MASTER_SITES=	http://chinesecheckers.vegard2.no/ \
 		http://jcatki.no-ip.org/files/
 
 MAINTAINER=	frank@dynamical-systems.org
-COMMENT=	An extensible chinese checkers game using SDL
+COMMENT=	Extensible Chinese checkers game using SDL
 
 USE_AUTOTOOLS=	libtool
 USE_SDL=	image mixer sdl

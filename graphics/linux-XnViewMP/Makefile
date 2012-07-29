@@ -15,7 +15,7 @@ DISTNAME=	XnViewMP-linux
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	petr@petrovich.kiev.ua
-COMMENT=	XnView Multi Platform, graphics viewer and converer
+COMMENT=	XnView Multi Platform, graphics viewer and converter
 
 NO_CDROM=	For commercial use and distribution, it is necessary to register
 ONLY_FOR_ARCHS=	i386 amd64

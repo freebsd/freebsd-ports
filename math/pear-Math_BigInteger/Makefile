@@ -10,7 +10,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	math pear
 
 MAINTAINER=	meritus@innervision.pl
-COMMENT=	Pure-PHP arbitrary precission integer arithmetic library
+COMMENT=	Pure-PHP arbitrary precision integer arithmetic library
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS:=	${BUILD_DEPENDS}

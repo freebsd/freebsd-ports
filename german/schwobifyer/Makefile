@@ -11,7 +11,7 @@ CATEGORIES=	german
 MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A utility for translating german into the schwaebisch dialect
+COMMENT=	Utility for translating German into the Schwaebisch dialect
 
 MAKE_JOBS_UNSAFE=	yes
 

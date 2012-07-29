@@ -14,7 +14,7 @@ MASTER_SITES=	SF/jzipdotorg/jzipdotorg/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A WinZip like program written in java
+COMMENT=	WinZip like program written in Java
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 

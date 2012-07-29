@@ -13,7 +13,7 @@ MASTER_SITES=	http://cloud.github.com/downloads/${PORTNAME}/${PORTNAME}/ \
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	An open source Javascript HTML WYSIWYG editor for web sites
+COMMENT=	Open source JavaScript HTML WYSIWYG editor for web sites
 
 NO_BUILD=	yes
 USE_ZIP=	yes

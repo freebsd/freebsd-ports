@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-ircd/trircd-${PORTVERSION}-release
 DISTNAME=	${PORTNAME:S/-//}-release-${PORTVERSION}-r
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An irc daeemon based on Bahamut and hybrid-7
+COMMENT=	IRC daemon based on Bahamut and hybrid-7
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

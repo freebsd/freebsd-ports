@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Convert cubic and quadratic bezier each other
+COMMENT=	Convert cubic and quadratic Bezier each other
 
 PERL_CONFIGURE=	yes
 

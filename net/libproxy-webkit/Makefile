@@ -10,7 +10,7 @@ CATEGORIES=	net www
 PKGNAMESUFFIX=	-webkit
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	WebKit Javascript plug-in for libproxy
+COMMENT=	WebKit JavaScript plug-in for libproxy
 
 LIB_DEPENDS=	proxy.1:${PORTSDIR}/net/libproxy \
 		webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2

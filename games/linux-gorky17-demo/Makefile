@@ -14,7 +14,7 @@ DISTNAME=	gorky17_demo
 EXTRACT_SUFX=	.run
 
 MAINTAINER=	mva@FreeBSD.org
-COMMENT=	Gorky17 Demo - a tactical shooter similiar to Jagged Alliance
+COMMENT=	Tactical shooter similar to Jagged Alliance
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes

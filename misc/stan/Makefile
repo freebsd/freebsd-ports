@@ -12,7 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.roqe.org/stan/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Generate several statisical information of a stream
+COMMENT=	Generate several statistical informations of a stream
 
 GNU_CONFIGURE=	yes
 

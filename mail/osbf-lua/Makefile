@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://luaforge.net/frs/download.php/2094/
 
 MAINTAINER=	ricardo.katz@gmail.com
-COMMENT=	This tool is used as classifier for mails, primarly as Anti Spam
+COMMENT=	This tool is used as classifier for mails, primarily as Anti Spam
 
 USE_GMAKE=	YES
 USE_LDCONFIG=	YES

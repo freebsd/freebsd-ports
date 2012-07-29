@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.winnicki.net/morpheus/meat/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A library for loading (and saving) 3d modeller object files
+COMMENT=	Library for loading (and saving) 3D modeller object files
 
 CONFLICTS=	xmorph*
 

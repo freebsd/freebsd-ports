@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Additonal plugins and features for kate
+COMMENT=	Additional plugins and features for kate
 
 KDE_SPLIT=	kate
 KDE_DOC_SPLIT=	kate-plugins

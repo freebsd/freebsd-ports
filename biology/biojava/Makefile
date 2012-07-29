@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-all
 EXTRACT_SUFX=	.jar
 
 MAINTAINER=	wenheping@gmail.com
-COMMENT=	Open-source java tools for processing biological data
+COMMENT=	Open-source Java tools for processing biological data
 
 EXTRACT_DEPENDS+=	jar:${PORTSDIR}/java/diablo-jdk16
 
