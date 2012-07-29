@@ -1066,6 +1066,12 @@ EXTRACONFIGURE+=	enable-asm
 EXTRACONFIGURE+=	no-asm
 .endif
 
+.if ${PORT_OPTIONS:MTHREADS}
+EXTRACONFIGURE+=	threads
+.else
+EXTRACONFIGURE+=	no-threads
+.endif
+
 .if ${PORT_OPTIONS:MSHARED}
 PLIST_SUB+=	SHARED=""
 EXTRACONFIGURE+=	shared
@@ -1146,7 +1152,6 @@ post-patch:
 do-configure:
 	@${REINPLACE_CMD} -e "s|options 386|options|" \
 		${WRKSRC}/config
-
 .if ${PORT_OPTIONS:MTHREADS}
 	cd ${WRKSRC} \
 	&& ${SETENV} CC="${CC}" FREEBSDCC="${CC}" CFLAGS="${CFLAGS}" PERL="${PERL}" \
