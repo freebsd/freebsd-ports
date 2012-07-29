@@ -54,7 +54,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/rules.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/ssh.guide.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/subversion-primer.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/vcs.operations.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/compiz-fusion/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/compiz-fusion/compiz-fusion.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/compiz-fusion/compiz-troubleshooting.html
@@ -355,13 +354,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-problems.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-when.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-writing.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/TRADEMARKS.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/bootstrap-config.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/custom-postinst-package.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/index.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/install-setup.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/introduction.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/server-config.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/rcng-args.html
@@ -1083,8 +1075,8 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/build-cluster.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/building.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/conflicts.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/cvsweb.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-after-port-mk.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-avoiding-linuxisms.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-cc.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-cflags.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-deprecated.html
@@ -1144,6 +1136,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/portsmon.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/quick-porting.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/rc-scripts.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/requiring-kernel-sources.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/security-fix.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/security-notify.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/security.html
@@ -1154,6 +1147,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/slow-user-input.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/slow.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/special.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/svnweb.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/testing-portlint.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/testing-porttools.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/testing-tinderbox.html
@@ -1170,6 +1164,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-mozilla.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-perl.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-php.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-pkg-config.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-python.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-qt.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-ruby.html
@@ -1180,4 +1175,3 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-x11.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-xfce.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/why-port.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/x5802.html

@@ -4,9 +4,3 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch/stage_2.conf.default
 %%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch/stage_2.sh
 %%DOCSDIR%%/%%DOCLANG%%/articles/fbsd-from-scratch/stage_3.mk
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/dhcpd.conf
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/install.cfg
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/loader.rc
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/pkgmaker.sh
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/post
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/pre

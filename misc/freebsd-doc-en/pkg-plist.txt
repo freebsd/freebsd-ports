@@ -47,7 +47,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/pr-guidelines/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/article.txt
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/relaydelay/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng-packages/article.txt

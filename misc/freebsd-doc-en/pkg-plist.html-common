@@ -60,7 +60,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/pr-guidelines/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/imagelib/callouts/1.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/rc-scripting/imagelib/callouts/10.png
