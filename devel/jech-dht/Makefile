@@ -7,7 +7,7 @@
 
 PORTNAME=	dht
 PORTVERSION=	0.21
-CATEGORIES=	net devel
+CATEGORIES=	devel
 MASTER_SITES=	http://www.pps.univ-paris-diderot.fr/~jch/software/files/
 
 MAINTAINER=	mi@aldan.algebra.com
