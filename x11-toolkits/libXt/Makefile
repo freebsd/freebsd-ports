@@ -285,4 +285,8 @@ MAN3=	MenuPopdown.3 \
 	XtWindowOfObject.3 \
 	XtWindowToWidget.3
 
+post-patch:
+	@${REINPLACE_CMD} 's/test.*-traditional.*;/true;/' \
+		${WRKSRC}/configure
+
 .include <bsd.port.mk>

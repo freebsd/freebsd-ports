@@ -24,6 +24,7 @@ PLIST_DIRS=	lib/X11/xinit
 MAN1=		startx.1 xinit.1
 
 post-patch:
+	@${REINPLACE_CMD} 's/test.*-traditional.*;/true;/' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|hexdump|/usr/bin/hexdump|' ${WRKSRC}/startx.cpp
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/man/xinit.man
 

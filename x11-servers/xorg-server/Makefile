@@ -148,6 +148,10 @@ pre-everything::
 	@${ECHO_MSG} "xorg-server_UNSET=SUID in /etc/make.conf."
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} 's/test.*-traditional.*;/true;/' \
+		${WRKSRC}/configure
+
 .if defined(WITH_NEW_XORG)
 post-install:
 	@${MKDIR} ${PREFIX}/share/X11/xorg.conf.d
