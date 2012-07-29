@@ -9,8 +9,7 @@ PORTNAME?=	alpine
 PORTVERSION=	2.00
 PORTREVISION?=	3
 CATEGORIES?=	mail news ipv6
-MASTER_SITES=	ftp://ftp.cac.washington.edu/alpine/ \
-		http://dougbarton.us/Downloads/alpine-${PORTVERSION}/
+MASTER_SITES=	ftp://ftp.cac.washington.edu/alpine/
 DIST_SUBDIR=	alpine-${PORTVERSION}
 
 MAINTAINER=	dougb@FreeBSD.org
@@ -112,8 +111,7 @@ EXTRA_PATCHES=	${FILESDIR}/cons25-alpine_keymenu.c
 .endif
 
 .if defined(WITH_QUOTA) || defined(WITH_MAILDIR)
-PATCH_SITES=	http://dougbarton.us/Downloads/alpine-${PORTVERSION}/ \
-		${MASTER_SITE_LOCAL}
+PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	dougb/alpine-${PORTVERSION}/
 PATCH_DIST_ARGS+=	-E --quiet -d ${PATCH_WRKSRC} -p1
 .endif

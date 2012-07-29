@@ -12,8 +12,7 @@ PORTVERSION=	3.2.0
 # confirmed via testing that it is necessary
 PORTREVISION=	4
 CATEGORIES=	security
-MASTER_SITES=	http://www.cypherpunks.ca/otr/ \
-		http://dougbarton.us/Downloads/
+MASTER_SITES=	http://www.cypherpunks.ca/otr/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 

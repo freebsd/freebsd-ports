@@ -9,8 +9,7 @@ PORTNAME=	openbox
 PORTVERSION=	3.5.0
 PORTREVISION=	3
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://openbox.org/dist/openbox/ \
-		http://dougbarton.us/Downloads/
+MASTER_SITES=	http://openbox.org/dist/openbox/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Small, fast, standards compliant, extensible window manager
