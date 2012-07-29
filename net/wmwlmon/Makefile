@@ -8,8 +8,7 @@
 PORTNAME=	wmwlmon
 PORTVERSION=	1.0
 CATEGORIES=	net windowmaker
-MASTER_SITES=	http://www.nazgul.ch/dev/ \
-		http://dougbarton.us/Downloads/
+MASTER_SITES=	http://www.nazgul.ch/dev/
 DISTNAME=	wmwlmon-${PORTVERSION}
 
 MAINTAINER=	LukeD@pobox.com

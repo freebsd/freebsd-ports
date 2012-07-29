@@ -11,8 +11,7 @@ PORTVERSION=	3.2.1
 # Please do not bump PORTREVISION for this port unless you have
 # confirmed via testing that it is necessary
 CATEGORIES=	security net
-MASTER_SITES=	http://www.cypherpunks.ca/otr/ \
-		http://dougbarton.us/Downloads/
+MASTER_SITES=	http://www.cypherpunks.ca/otr/
 PKGNAMEPREFIX=	pidgin-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
