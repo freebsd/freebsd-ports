@@ -12,12 +12,11 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Truly asynchronous Berkeley db access
+COMMENT=	Truly asynchronous Berkeley DB access
 
 BUILD_DEPENDS=	p5-AnyEvent>=3.81:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-BDB>=1.5:${PORTSDIR}/databases/p5-BDB
-RUN_DEPENDS=	p5-AnyEvent>=3.81:${PORTSDIR}/devel/p5-AnyEvent \
-		p5-BDB>=1.5:${PORTSDIR}/databases/p5-BDB
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
