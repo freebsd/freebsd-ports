@@ -1,5 +1,14 @@
---- GetKp.orig	Fri Apr 16 15:08:21 1999
-+++ GetKp	Tue Apr 13 20:06:19 2004
+--- GetKp.orig	1999-02-12 06:42:01.000000000 +0100
++++ GetKp	2011-12-27 15:38:56.000000000 +0100
+@@ -5,7 +5,7 @@
+ #
+ 
+ 
+-    require "ctime.pl";
++    use Time::CTime;
+ 
+ 
+     ($Year, $Month, $Day) = &year_month_day();
 @@ -19,7 +19,7 @@
      }
  
