@@ -25,7 +25,7 @@ COMMENT=	A free RADIUS server implementation
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
 
 LOGDIR?=	/var/log
 KRB5_CONFIG?=	/usr/bin/krb5-config --libs
@@ -89,11 +89,11 @@ WITH_KERBEROS=	yes
 .ifdef(WITH_KERBEROS)
 .ifdef(WITH_HEIMDAL)
 .ifdef(WITH_HEIMDAL_PORT)
-LIB_DEPENDS+=	krb5.26:${PORTSDIR}/security/heimdal
+LIB_DEPENDS+=	krb5:${PORTSDIR}/security/heimdal
 .endif
 CONFIGURE_ARGS+=--enable-heimdal-krb5
 .else
-LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
+LIB_DEPENDS+=	krb5:${PORTSDIR}/security/krb5
 .endif
 CONFIGURE_ARGS+=--with-rlm_krb5
 .if defined (WITH_HEIMDAL) && !defined(WITH_HEIMDAL_PORT)
@@ -148,7 +148,7 @@ PLIST_SUB+=	PGSQL="@comment "
 .ifdef(WITH_UNIXODBC)
 CONFIGURE_ARGS+=--with-rlm_sql_unixodbc
 PLIST_SUB+=	UNIXODBC=""
-LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
 .else
 CONFIGURE_ARGS+=--without-rlm_sql_unixodbc
 PLIST_SUB+=	UNIXODBC="@comment "
@@ -215,7 +215,7 @@ EXPM=		yes
 
 # No SMB option yet; rlm_smb is still unbuildable
 .ifdef(WITH_SMB)
-LIB_DEPENDS=	smbclient.0:${PORTSDIR}/net/samba-libsmbclient
+LIB_DEPENDS=	smbclient:${PORTSDIR}/net/samba-libsmbclient
 CONFIGURE_ARGS+=--with-rlm_smb
 CONFIGURE_ARGS+=--with-rlm-smb-lib-dir=${LOCALBASE}/lib
 CONFIGURE_ARGS+=--with-rlm-smb-include-dir=${LOCALBASE}/include
@@ -363,6 +363,9 @@ post-patch:
 		-regex '.*/dictionary\.(orig|bak)$$' \
 		-delete
 .endif
+# Fix PgSQL statement
+	@${REINPLACE_CMD} -i '' -e 's|ius.rad||' \
+		${WRKSRC}/raddb/sql/postgresql/admin.sql
 # Patch scripts/Makefile not to install (unnecessary) rc.radiusd
 	@${REINPLACE_CMD} -Ee 's:^(.+rc\.radiusd.+)$$:#\1:g' \
 		${WRKSRC}/scripts/Makefile
