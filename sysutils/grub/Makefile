@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://alpha.gnu.org/gnu/grub/
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	GRand Unified Bootloader
 
+BROKEN=		does not build
+
 USE_AUTOTOOLS=	automake autoconf
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
