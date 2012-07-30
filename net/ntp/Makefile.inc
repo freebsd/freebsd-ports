@@ -9,7 +9,7 @@ OPTIONS=	NTPSNMPD	"Build and install ntpsnmpd" OFF \
   		ARBITER		"Enable Arbiter 1088A/B GPS receiver" OFF \
   		ARCRON_MSF	"Enable Arcron MSF receiver" OFF \
   		AS2201		"Enable Austron 2200A/2201A GPS receiver" OFF \
-  		ATOM		"Enable ATOM PPS interface" OFF \
+  		ATOM		"Enable ATOM PPS interface" ON \
   		CHRONOLOG	"Enable Chrono-log K-series WWVB receiver" OFF \
   		CHU		"Enable CHU modem/decoder" OFF \
   		AUDIO_CHU	"Enable CHU audio/decoder" OFF \
@@ -27,7 +27,7 @@ OPTIONS=	NTPSNMPD	"Build and install ntpsnmpd" OFF \
   		LOCAL_CLOCK	"Enable local clock reference" OFF \
   		MX4200		"Enable Magnavox MX4200 GPS receiver" OFF \
   		NEOCLOCK4X	"Enable NeoClock4X DCF77 / TDF receiver" OFF \
-  		NMEA		"Enable NMEA GPS receiver" OFF \
+  		NMEA		"Enable NMEA GPS receiver" ON \
   		ONCORE		"Enable Motorola VP/UT Oncore GPS receiver" OFF \
   		PALISADE	"Enable Palisade clock" OFF \
   		PCF		"Enable Conrad parallel port radio clock" OFF \
