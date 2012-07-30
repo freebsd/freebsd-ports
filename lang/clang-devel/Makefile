@@ -7,7 +7,7 @@
 
 PORTNAME=	clang
 PORTVERSION=	3.2.r${SVN_REV}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -92,6 +92,10 @@ RELTYPE=		Release
 BROKEN=		Does not compile on sparc64
 .endif
 
+.if ${OSVERSION} < 900033
+RUN_DEPENDS+=	${LOCALBASE}/bin/ld:${PORTSDIR}/devel/binutils
+.endif
+
 .if defined(BOOTSTRAP) || defined(SVN_FETCH)
 FETCH_DEPENDS+= svn:${PORTSDIR}/devel/subversion
 
@@ -131,10 +135,8 @@ pre-build:
 	${LN} -sf ${LOCALBASE}/lib/libLLVMSupport.a ${WRKSRC}/${RELTYPE}/lib/
 	cd ${WRKSRC}/utils/unittest && ${GMAKE}
 
-.if ${PORT_OPTIONS:MDOCS}
 post-build:
 	@cd ${WRKSRC}/tools/clang/docs/tools && ${GMAKE} clang.1
-.endif
 
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/tools/scan-build/ccc-analyzer \
@@ -151,10 +153,9 @@ post-install:
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/scanview.css ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/sorttable.js ${DATADIR}
-.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL_MAN} ${WRKSRC}/tools/clang/docs/tools/clang.1 \
 	    ${MANPREFIX}/man/man1/
-.else
+.if !${PORT_OPTIONS:MDOCS}
 	@${RMDIR} ${DOCSDIR}/html/img
 .endif
 
