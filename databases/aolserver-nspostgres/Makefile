@@ -14,7 +14,7 @@ MASTER_SITES=	SF/aolserver/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	aolserver-
 DIST_SUBDIR=	aolserver
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bryan@shatow.net
 COMMENT=	Internal PostgreSQL driver for AOLserver
 
 LICENSE=	MPL
@@ -26,8 +26,8 @@ BUILD_DEPENDS+=	${LOCALBASE}/${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver
 RUN_DEPENDS+=	${LOCALBASE}/${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver
 
 USE_PGSQL=	yes
-DEFAULT_PGSQL_VER=	82
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 
 MAKE_ARGS=	AOLSERVER="${LOCALBASE}/${AOLSERVERBASE}" \
 		PG_CONFIG="${LOCALBASE}/bin/pg_config" \
