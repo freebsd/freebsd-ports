@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libkface
-PORTVERSION=	2.6.0
+PORTVERSION=	2.7.0
 CATEGORIES=	graphics kde
 MASTER_SITES=	SF/digikam/digikam/${PORTVERSION}
 DISTNAME=	digikam-${PORTVERSION}

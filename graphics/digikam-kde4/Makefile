@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	digikam
-DISTVERSION=	2.6.0
+PORTVERSION=	2.7.0
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	SF
@@ -23,12 +23,14 @@ LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 		lensfun:${PORTSDIR}/graphics/lensfun \
 		lqr-1:${PORTSDIR}/graphics/liblqr-1 \
 		kface:${PORTSDIR}/graphics/libkface \
+		pgf:${PORTSDIR}/graphics/libpgf \
 		kgeomap:${PORTSDIR}/astro/libkgeomap
 
 LATEST_LINK=	${PORTNAME}-kde4
 
 OPTIONS_DEFINE=		NLS GPHOTO2 PIMLIBS MYSQL
 OPTIONS_DEFAULT=	GPHOTO2 PIMLIBS
+NO_OPTIONS_SORT=	yes
 
 GPHOTO2_DESC=		Enable gphoto2 camera support
 PIMLIBS_DESC=		Enable address book support

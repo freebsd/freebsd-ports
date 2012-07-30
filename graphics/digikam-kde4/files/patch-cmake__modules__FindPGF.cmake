@@ -1,0 +1,53 @@
+--- ./cmake/modules/FindPGF.cmake.orig	2012-07-07 19:25:02.000000000 -0400
++++ ./cmake/modules/FindPGF.cmake	2012-07-14 10:17:02.000000000 -0400
+@@ -4,27 +4,34 @@
+ #  PGF_FOUND            - system has libgf
+ #  PGF_INCLUDE_DIRS     - the libpgf include directory
+ #  PGF_LIBRARIES        - Link these to use libpgf
+-#  PGF_CODEC_VERSION_ID - PGF codec version ID.
+ 
+-# PKG-CONFIG is required.
+-INCLUDE(FindPkgConfig REQUIRED)
++INCLUDE(FindPkgConfig)
+ 
+ IF(PKG_CONFIG_FOUND)
+ 
+-    INCLUDE(FindPkgConfig)
++    PKG_CHECK_MODULES(PC_LIBPGF libpgf)
+ 
+-    PKG_CHECK_MODULES(PGF libpgf)
++ENDIF(PKG_CONFIG_FOUND)
+ 
+-    IF(PGF_FOUND)
+-        MESSAGE(STATUS "PGF_INCLUDE_DIRS     = ${PGF_INCLUDE_DIRS}")
+-        MESSAGE(STATUS "PGF_INCLUDEDIR       = ${PGF_INCLUDEDIR}")
+-        MESSAGE(STATUS "PGF_LIBRARIES        = ${PGF_LIBRARIES}")
+-        MESSAGE(STATUS "PGF_LDFLAGS          = ${PGF_LDFLAGS}")
+-        MESSAGE(STATUS "PGF_CFLAGS           = ${PGF_CFLAGS}")
+-        MESSAGE(STATUS "PGF_VERSION          = ${PGF_VERSION}")
++FIND_LIBRARY (PGF_LIBRARIES
++  NAMES
++  pgf
++  HINTS
++  ${PC_LIBPGF_LIBDIR}
++  ${PC_LIBPGF_LIBRARY_DIRS}
++  ${LIB_INSTALL_DIR}
++)
+ 
+-        STRING(REPLACE "." "" PGF_CODEC_VERSION_ID "${PGF_VERSION}")
+-        MESSAGE(STATUS "PGF_CODEC_VERSION_ID = ${PGF_CODEC_VERSION_ID}")
+-    ENDIF(PGF_FOUND)
++FIND_PATH (PGF_INCLUDE_DIRS
++  NAMES
++  PGFtypes.h
++  PATH_SUFFIXES
++  libpgf
++  HINTS
++  ${PC_LIBPGF_INCLUDEDIR}
++  ${PC_LIBPGF_INCLUDE_DIRS}
++  ${INCLUDE_INSTALL_DIR}
++)
+ 
+-ENDIF(PKG_CONFIG_FOUND)
++INCLUDE(FindPackageHandleStandardArgs)
++FIND_PACKAGE_HANDLE_STANDARD_ARGS(PGF DEFAULT_MSG PGF_LIBRARIES PGF_INCLUDE_DIRS)

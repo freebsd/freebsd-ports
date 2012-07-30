@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kipi-plugins
-PORTVERSION=	2.6.0
+PORTVERSION=	2.7.0
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	SF/digikam/digikam/${PORTVERSION}
@@ -25,6 +25,7 @@ LATEST_LINK=	${PORTNAME}-kde4
 
 OPTIONS_DEFINE=		NLS EXPOBLEND GPOD KGEOMAP KSANE KVKONTAKTE MEDIAWIKI OPENCV PIMLIBS
 OPTIONS_DEFAULT=	KGEOMAP KSANE OPENCV PIMLIBS
+NO_OPTIONS_SORT=	yes
 
 EXPOBLEND_DESC=		Add runtime deps for ExpoBlending plugin
 GPOD_DESC=		Enable Ipod Export plugin
@@ -42,6 +43,8 @@ USE_KDE4=	automoc4 kdehier kdeprefix kdelibs libkdcraw libkexiv2 libkipi
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
+
+CMAKE_ARGS=	-DCMAKE_PREFIX_PATH:PATH=${KDE4_PREFIX}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/extra/${PORTNAME}
 
