@@ -832,8 +832,8 @@
 @dirrmtry %%AOLSERVERBASE%%/servers/server1
 @dirrmtry %%AOLSERVERBASE%%/servers
 @dirrmtry %%AOLSERVERBASE%%
-@exec mkdir -p %%AOLSERVERBASE%%/log
-@exec mkdir -p %%AOLSERVERBASE%%/servers/server1/modules/nslog
+@exec mkdir -p %D/%%AOLSERVERBASE%%/log
+@exec mkdir -p %D/%%AOLSERVERBASE%%/servers/server1/modules/nslog
 %%TESTS%%%%EXAMPLESDIR%%/tests/adp/test1.adp
 %%TESTS%%%%EXAMPLESDIR%%/tests/adp/test2.adp
 %%TESTS%%%%EXAMPLESDIR%%/tests/adp/test3.adp
