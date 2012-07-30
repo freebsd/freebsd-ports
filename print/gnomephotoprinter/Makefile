@@ -23,8 +23,4 @@ USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -s "s/PKGCONFIG --version/PKGCONFIG --modversion pkg-config/g" \
-		${WRKSRC}/configure
-
 .include <bsd.port.mk>
