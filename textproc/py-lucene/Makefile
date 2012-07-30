@@ -22,6 +22,8 @@ BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
 		${PYTHON_PKGNAMEPREFIX}jcc>0:${PORTSDIR}/devel/py-jcc
 FETCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/textproc/lucene:extract
 
+BROKEN=		does not build
+
 USE_PYTHON=	2.5+
 USE_GCC=	4.2+
 USE_JAVA=	yes
