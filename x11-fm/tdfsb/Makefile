@@ -26,9 +26,9 @@ USE_PKGCONFIG=	yes
 PORTDOCS=	README
 PLIST_FILES=	bin/${PORTNAME}
 
-CPPFLAGS+=	`${pkgconfig_DETECT} --cflags SDL_image glut` \
+CPPFLAGS+=	`${LOCALBASE}/bin/pkgconf --cflags SDL_image glut` \
 		`${LOCALBASE}/bin/smpeg-config --cflags`
-LDFLAGS+=	`${pkgconfig_DETECT} --libs SDL_image glut` \
+LDFLAGS+=	`${LOCALBASE}/bin/pkgconf --libs SDL_image glut` \
 		`${LOCALBASE}/bin/smpeg-config --libs`
 
 .include <bsd.port.pre.mk>
