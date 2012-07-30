@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Safe/Isa.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Safe/Isa/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Safe/Isa
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Safe
+@dirrmtry %%SITE_PERL%%/Safe

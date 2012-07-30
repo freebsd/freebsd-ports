@@ -1,0 +1,14 @@
+Since Perl allows us to provide a subroutine reference or a method name to the
+-> operator when used as a method call, and a subroutine doesn't require the
+invocant to actually be an object, we can create safe versions of isa, can and
+friends by using a subroutine reference that only tries to call the method if
+it's used on an object.
+
+e.g. my $isa_Foo = $maybe_an_object->$_call_if_object(isa => 'Foo');
+
+Note that we don't handle trying class names, because many things are valid
+class names that you might not want to treat as one (like say "Matt") - the
+is_module_name function from Module::Runtime is a good way to check for
+something you might be able to call methods on if you want to do that.
+
+WWW: http://search.cpan.org/dist/Safe-Isa/
