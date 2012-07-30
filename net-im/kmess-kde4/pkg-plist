@@ -216,21 +216,21 @@ share/sounds/kmess_chat.ogg
 share/sounds/kmess_logoff.ogg
 share/sounds/kmess_logon.ogg
 share/sounds/kmess_msg.ogg
-@dirrm share/emoticons/KMess-new/
-@dirrm share/doc/HTML/en/kmess/
-@dirrm share/apps/kmess/styles/Pure/
-@dirrm share/apps/kmess/styles/Fresh/
-@dirrm share/apps/kmess/styles/Fresh-dark/
-@dirrm share/apps/kmess/styles/Efficient/
-@dirrm share/apps/kmess/styles/Dim/
-@dirrm share/apps/kmess/styles/Colourful-Enclosed/
-@dirrm share/apps/kmess/styles/Classic/
-@dirrm share/apps/kmess/styles/Classic-compact/
-@dirrm share/apps/kmess/styles/
-@dirrm share/apps/kmess/pics/
-@dirrm share/apps/kmess/icons/hicolor/16x16/apps/
-@dirrm share/apps/kmess/icons/hicolor/16x16/actions/
-@dirrm share/apps/kmess/icons/hicolor/16x16/
-@dirrm share/apps/kmess/icons/hicolor/
-@dirrm share/apps/kmess/icons/
-@dirrm share/apps/kmess/
+@dirrm share/emoticons/KMess-new
+@dirrm share/doc/HTML/en/kmess
+@dirrm share/apps/kmess/styles/Pure
+@dirrm share/apps/kmess/styles/Fresh-dark
+@dirrm share/apps/kmess/styles/Fresh
+@dirrm share/apps/kmess/styles/Efficient
+@dirrm share/apps/kmess/styles/Dim
+@dirrm share/apps/kmess/styles/Colourful-Enclosed
+@dirrm share/apps/kmess/styles/Classic-compact
+@dirrm share/apps/kmess/styles/Classic
+@dirrm share/apps/kmess/styles
+@dirrm share/apps/kmess/pics
+@dirrm share/apps/kmess/icons/hicolor/16x16/apps
+@dirrm share/apps/kmess/icons/hicolor/16x16/actions
+@dirrm share/apps/kmess/icons/hicolor/16x16
+@dirrm share/apps/kmess/icons/hicolor
+@dirrm share/apps/kmess/icons
+@dirrm share/apps/kmess
