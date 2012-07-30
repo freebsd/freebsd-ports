@@ -1,0 +1,42 @@
+--- configure.orig	2011-11-17 19:46:34.000000000 +0000
++++ configure	2012-06-28 12:53:09.000000000 +0000
+@@ -7817,10 +7817,35 @@
+             DEFINES="$DEFINES -DGLX_DIRECT_RENDERING"
+         fi
+ 
+-        if test "x$DRI_DIRS" = "xyes"; then
+-            DRI_DIRS="i810 i915 i965 mach64 mga nouveau r128 r200 r300 r600 \
+-                radeon tdfx unichrome savage sis swrast"
+-        fi
++        case "$host_cpu" in
++        x86_64)
++            # i810 is missing because there is no x86-64 system where it
++            # could *ever* be used.
++            if test "x$DRI_DIRS" = "xyes"; then
++                DRI_DIRS="i915 i965 mach64 mga nouveau r128 r200 r300 r600 \
++                    radeon savage tdfx unichrome sis swrast"
++            fi
++            ;;
++        i*86)
++            if test "x$DRI_DIRS" = "xyes"; then
++                DRI_DIRS="i810 i915 i965 mach64 mga nouveau r128 r200 r300 \
++                    r600 radeon savage tdfx unichrome sis swrast"
++            fi
++            ;;
++        powerpc*)
++            # Build only the drivers for cards that exist on PowerPC.
++            # At some point MGA will be added, but not yet.
++            if test "x$DRI_DIRS" = "xyes"; then
++                DRI_DIRS="mach64 r128 r200 r300 r600 radeon tdfx swrast"
++            fi
++            ;;
++        sparc*)
++            # Build only the drivers for cards that exist on SPARC.
++            if test "x$DRI_DIRS" = "xyes"; then
++                DRI_DIRS="mach64 r128 r200 r300 r600 radeon swrast"
++            fi
++            ;;
++        esac
+         ;;
+     gnu*)
+         DEFINES="$DEFINES -DUSE_EXTERNAL_DXTN_LIB=1 -DIN_DRI_DRIVER"

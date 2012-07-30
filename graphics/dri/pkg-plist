@@ -1,20 +1,20 @@
 include/GL/internal/dri_interface.h
-lib/dri/i810_dri.so
-lib/dri/i915_dri.so
-lib/dri/i965_dri.so
-lib/dri/mach64_dri.so
-lib/dri/mga_dri.so
-%%NEW%%lib/dri/nouveau_vieux_dri.so
-lib/dri/r128_dri.so
-lib/dri/r200_dri.so
-lib/dri/r300_dri.so
-lib/dri/r600_dri.so
-lib/dri/radeon_dri.so
-lib/dri/savage_dri.so
-lib/dri/sis_dri.so
-lib/dri/swrast_dri.so
-lib/dri/tdfx_dri.so
-lib/dri/unichrome_dri.so
+%%I810_DRIVER%%lib/dri/i810_dri.so
+%%I9X5_DRIVER%%lib/dri/i915_dri.so
+%%I9X5_DRIVER%%lib/dri/i965_dri.so
+%%MACH64_DRIVER%%lib/dri/mach64_dri.so
+%%MGA_DRIVER%%lib/dri/mga_dri.so
+%%NEW%%%%NOUVEAU_DRIVER%%lib/dri/nouveau_vieux_dri.so
+%%RADEON_DRIVERS%%lib/dri/r128_dri.so
+%%RADEON_DRIVERS%%lib/dri/r200_dri.so
+%%RADEON_DRIVERS%%lib/dri/r300_dri.so
+%%RADEON_DRIVERS%%lib/dri/r600_dri.so
+%%RADEON_DRIVERS%%lib/dri/radeon_dri.so
+%%SAVAGE_DRIVER%%lib/dri/savage_dri.so
+%%SIS_DRIVER%%lib/dri/sis_dri.so
+%%SWRAST_DRIVER%%lib/dri/swrast_dri.so
+%%TDFX_DRIVER%%lib/dri/tdfx_dri.so
+%%UNICHROME_DRIVER%%lib/dri/unichrome_dri.so
 libdata/pkgconfig/dri.pc
 @dirrm lib/dri
 @dirrmtry include/GL/internal

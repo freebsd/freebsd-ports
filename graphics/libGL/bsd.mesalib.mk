@@ -53,13 +53,18 @@ CONFIGURE_ARGS+=--enable-gallium-llvm=no --without-gallium-drivers \
 		--disable-egl
 
 .if defined(WITH_NEW_XORG)
-EXTRA_PATCHES+=	${PATCHDIR}/extra-mach64_context.h \
+EXTRA_PATCHES+=	${PATCHDIR}/extra-configure \
+		${PATCHDIR}/extra-mach64_context.h \
 		${PATCHDIR}/extra-sis_context.h \
 		${PATCHDIR}/extra-src-glsl_ir_constant_expression.cpp \
+		${PATCHDIR}/extra-src__gallium__include__pipe__p_config.h \
 		${PATCHDIR}/extra-src__mesa__drivers__dri__nouveau__nouveau_array.c \
-		${PATCHDIR}/extra-src__mesa__drivers__dri__nouveau__nouveau_render_t.c
+		${PATCHDIR}/extra-src__mesa__drivers__dri__nouveau__nouveau_render_t.c \
+		${PATCHDIR}/extra-src__mesa__drivers__dri__radeon__radeon_span.c
 .else
-EXTRA_PATCHES+=	${PATCHDIR}/extra-src__mesa__x86-64__glapi_x86-64.S \
+EXTRA_PATCHES+=	${PATCHDIR}/extra-configure-old \
+		${PATCHDIR}/extra-mach64_context.h-old \
+		${PATCHDIR}/extra-src__mesa__x86-64__glapi_x86-64.S \
 		${PATCHDIR}/extra-src__mesa__x86-64__xform4.S \
 		${PATCHDIR}/extra-src__mesa__x86__glapi_x86.S \
 		${PATCHDIR}/extra-src__mesa__x86__read_rgba_span_x86.S
@@ -110,6 +115,13 @@ post-patch:
 		${WRKSRC}/src/glw/Makefile \
 		${WRKSRC}/src/mesa/Makefile \
 		${WRKSRC}/src/mesa/drivers/dri/Makefile
+.if defined(WITH_NEW_XORG)
+# replace hardlinks with patched radeon_span.c
+.for i in r200 r300 r600
+	@${CP} -fp ${WRKSRC}/src/mesa/drivers/dri/radeon/radeon_span.c \
+		${WRKSRC}/src/mesa/drivers/dri/${i}/
+.endfor
+.endif
 .if ${COMPONENT:Mglut} != ""
 	@${REINPLACE_CMD} -e 's|[$$](INSTALL_LIB_DIR)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/src/glut/glx/Makefile
