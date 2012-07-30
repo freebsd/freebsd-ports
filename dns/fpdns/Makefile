@@ -7,7 +7,7 @@
 PORTNAME=	fpdns
 PORTVERSION=	0.9.3.20120719
 CATEGORIES=	dns net perl5
-MASTER_SITES=	https://github.com/kirei/fpdns/tarball/9eb38df/
+MASTER_SITES=	https://github.com/kirei/fpdns/tarball/${GITVERSION}/
 DISTNAME=	kirei-fpdns-${GITVERSION}
 
 MAINTAINER=	dougb@FreeBSD.org
