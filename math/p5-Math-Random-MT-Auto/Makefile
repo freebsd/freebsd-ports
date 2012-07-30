@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Math-Random-MT-Auto
-PORTVERSION=	6.18
+PORTVERSION=	6.19
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,6 @@ COMMENT=	Auto-seeded Mersenne Twister PRNGs
 BUILD_DEPENDS=	p5-Exception-Class>=1.32:${PORTSDIR}/devel/p5-Exception-Class \
 		p5-Object-InsideOut>=3.88:${PORTSDIR}/devel/p5-Object-InsideOut
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 TEST_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 PERL_CONFIGURE=	yes
