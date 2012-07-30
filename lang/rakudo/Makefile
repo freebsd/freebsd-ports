@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rakudo
-PORTVERSION=	2012.05
+PORTVERSION=	2012.07
 PORTEPOCH=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://cloud.github.com/downloads/rakudo/star/
@@ -25,7 +25,7 @@ LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu \
 
 CONFLICTS=	parrot-[0-9]*
 
-PARROT_VERSION=4.4.0
+PARROT_VERSION=4.6.0
 INSTALL_TARGET=	install
 CONFIGURE_SCRIPT=	Configure.pl
 CONFIGURE_PARROT_ARGS=	--cc=${CC} --cxx=${CXX} --ld=${CC} --ccflags="${CFLAGS}" \
@@ -68,7 +68,7 @@ do-build:
 do-install:
 	cd ${WRKSRC}/parrot-${PARROT_VERSION} \
 	&& ${MAKE} install-dev PREFIX=${PREFIX} \
-	&& cd ${WRKSRC}/nqp-2012.05 \
+	&& cd ${WRKSRC}/nqp-2012.07 \
 	&& ${PERL} ${CONFIGURE_SCRIPT} --with-parrot=${PREFIX}/bin/parrot \
 					--prefix=${PREFIX} \
 	&& ${MAKE} install PREFIX=${PREFIX} \
