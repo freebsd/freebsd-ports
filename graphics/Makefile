@@ -496,6 +496,7 @@
     SUBDIR += libpano12
     SUBDIR += libpano13
     SUBDIR += libpcd
+    SUBDIR += libpgf
     SUBDIR += libprojectm
     SUBDIR += libpuzzle
     SUBDIR += libqglviewer

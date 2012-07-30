@@ -1,0 +1,26 @@
+--- ./Makefile.am.orig	2012-06-05 08:24:12.000000000 -0400
++++ ./Makefile.am	2012-06-05 08:26:55.000000000 -0400
+@@ -1,9 +1,9 @@
+ 
+ SUBDIRS = src include
+ 
+-if HAS_DOXYGEN
+-SUBDIRS += doc
+-endif
++#if HAS_DOXYGEN
++#SUBDIRS += doc
++#endif
+ 
+ PACKAGE		= @PACKAGE@
+ VERSION		= @VERSION@
+@@ -20,8 +20,8 @@
+ RPMRELEASE=$(PACKAGE_RELEASE)
+ 
+ install-data-local:: $(PACKAGE).pc
+-	$(mkinstalldirs) $(DESTDIR)$(libdir)/pkgconfig
+-	$(INSTALL) -m 644 $(PACKAGE).pc $(DESTDIR)$(libdir)/pkgconfig/$(PACKAGE).pc
++	$(mkinstalldirs) $(DESTDIR)$(prefix)/libdata/pkgconfig
++	$(INSTALL) -m 644 $(PACKAGE).pc $(DESTDIR)$(prefix)/libdata/pkgconfig/$(PACKAGE).pc
+ 
+ 
+ .PHONY: ChangeLog

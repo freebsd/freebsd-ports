@@ -1,0 +1,10 @@
+include/libpgf/PGFimage.h
+include/libpgf/PGFplatform.h
+include/libpgf/PGFstream.h
+include/libpgf/PGFtypes.h
+lib/libpgf.a
+lib/libpgf.la
+lib/libpgf.so
+lib/libpgf.so.6
+libdata/pkgconfig/libpgf.pc
+@dirrm include/libpgf
