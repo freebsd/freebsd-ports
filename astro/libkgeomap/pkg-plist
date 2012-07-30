@@ -64,8 +64,10 @@ share/apps/libkgeomap/marker-icon-16x16.png
 %%NLS%%share/locale/fi/LC_MESSAGES/libkgeomap.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/libkgeomap.mo
 %%NLS%%share/locale/ga/LC_MESSAGES/libkgeomap.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/libkgeomap.mo
 %%NLS%%share/locale/it/LC_MESSAGES/libkgeomap.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/libkgeomap.mo
+%%NLS%%share/locale/km/LC_MESSAGES/libkgeomap.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/libkgeomap.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/libkgeomap.mo
 %%NLS%%share/locale/nds/LC_MESSAGES/libkgeomap.mo

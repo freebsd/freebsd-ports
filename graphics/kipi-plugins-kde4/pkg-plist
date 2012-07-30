@@ -54,6 +54,7 @@ share/applications/kde4/photolayoutseditor.desktop
 %%KGEOMAP%%share/apps/gpssync/bookmarks-marker.png
 %%KGEOMAP%%share/apps/gpssync/searchmarker-normal.png
 %%KGEOMAP%%share/apps/gpssync/searchmarker-selected.png
+share/apps/kipi/tips
 share/apps/kipiplugin_expoblending/pics/assistant-enfuse.png
 share/apps/kipiplugin_expoblending/pics/assistant-preprocessing.png
 share/apps/kipiplugin_expoblending/pics/assistant-stack.png
@@ -179,20 +180,17 @@ share/config.kcfg/PLEConfigSkeleton.kcfgc
 share/doc/HTML/en/kipi-plugins/acquire-savetargetpreview.png
 share/doc/HTML/en/kipi-plugins/acquire-screenshotpreview.png
 share/doc/HTML/en/kipi-plugins/acquireimages.docbook
-share/doc/HTML/en/kipi-plugins/calendar.docbook
 share/doc/HTML/en/kipi-plugins/colorimages.docbook
 share/doc/HTML/en/kipi-plugins/common
 share/doc/HTML/en/kipi-plugins/convertimages.docbook
 share/doc/HTML/en/kipi-plugins/effectimages.docbook
 share/doc/HTML/en/kipi-plugins/filterimages.docbook
-share/doc/HTML/en/kipi-plugins/findduplicateimages.docbook
 share/doc/HTML/en/kipi-plugins/flickrexport.docbook
 share/doc/HTML/en/kipi-plugins/flickrexportauthenticated.png
 share/doc/HTML/en/kipi-plugins/flickrexportcontinue.png
 share/doc/HTML/en/kipi-plugins/flickrexportsignup.png
 share/doc/HTML/en/kipi-plugins/flickrexportuploaddialog.png
 share/doc/HTML/en/kipi-plugins/flickrexportuploading.png
-share/doc/HTML/en/kipi-plugins/galleryexport.docbook
 share/doc/HTML/en/kipi-plugins/geolocation.docbook
 share/doc/HTML/en/kipi-plugins/geolocationcorrelate.png
 share/doc/HTML/en/kipi-plugins/geolocationcorrelate1.png
@@ -208,7 +206,6 @@ share/doc/HTML/en/kipi-plugins/imageviewer.docbook
 share/doc/HTML/en/kipi-plugins/index.cache.bz2
 share/doc/HTML/en/kipi-plugins/index.docbook
 share/doc/HTML/en/kipi-plugins/jpeglossless.docbook
-share/doc/HTML/en/kipi-plugins/kameraklient.docbook
 share/doc/HTML/en/kipi-plugins/metadataeditor.docbook
 share/doc/HTML/en/kipi-plugins/printwizard.docbook
 share/doc/HTML/en/kipi-plugins/raw_converter_batch.png
@@ -223,8 +220,6 @@ share/doc/HTML/en/kipi-plugins/sendimages_progress.png
 share/doc/HTML/en/kipi-plugins/slideshow.docbook
 share/doc/HTML/en/kipi-plugins/slideshow.png
 share/doc/HTML/en/kipi-plugins/slideshow_dialog.png
-share/doc/HTML/en/kipi-plugins/timeadjust.docbook
-share/doc/HTML/en/kipi-plugins/wallpaper.docbook
 share/icons/hicolor/128x128/actions/flash.png
 share/icons/hicolor/128x128/apps/dngconverter.png
 share/icons/hicolor/128x128/apps/photolayoutseditor.png
@@ -811,6 +806,9 @@ share/kde4/servicetypes/photolayoutseditoreffectplugin.desktop
 %%NLS%%share/locale/hr/LC_MESSAGES/kipiplugin_smug.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/kipiplugin_timeadjust.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/kipiplugins.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/kipiplugin_facebook.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/kipiplugin_imageviewer.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/kipiplugins.mo
 %%NLS%%share/locale/is/LC_MESSAGES/kipiplugin_acquireimages.mo
 %%NLS%%share/locale/is/LC_MESSAGES/kipiplugin_advancedslideshow.mo
 %%NLS%%share/locale/is/LC_MESSAGES/kipiplugin_batchprocessimages.mo
@@ -1254,6 +1252,11 @@ share/kde4/servicetypes/photolayoutseditoreffectplugin.desktop
 %%NLS%%share/locale/sk/LC_MESSAGES/kipiplugin_smug.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/kipiplugin_timeadjust.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/kipiplugins.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/kipiplugin_acquireimages.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/kipiplugin_advancedslideshow.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/kipiplugin_calendar.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/kipiplugin_dngconverter.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/kipiplugins.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/kipiplugin_acquireimages.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/kipiplugin_calendar.mo
