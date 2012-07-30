@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.8.0.20120722
+PORTVERSION=	4.8.0.20120729
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -40,13 +40,12 @@ MAKE_JOBS_SAFE=	yes
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure
 
-OPTIONS=	JAVA	"Enable the Java frontend (i386 and amd64 only)"	on
+OPTIONS_DEFINE_i386=	JAVA
+OPTIONS_DEFINE_amd64=	JAVA
+OPTIONS_DEFAULT_i386=	JAVA
+OPTIONS_DEFAULT_amd64=	JAVA
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != i386 && ${ARCH} != amd64
-WITHOUT_JAVA=	yes
-.endif
 
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
@@ -99,7 +98,7 @@ INFO+=		gcc${SUFFIX}/libquadmath	\
 		gcc${SUFFIX}/libitm
 .endif
 
-.if ! defined(WITHOUT_JAVA)
+.if ${PORT_OPTIONS:MJAVA}
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 EXTRA_PATCHES+=	${FILESDIR}/java-patch-hier
 CONFIGURE_ARGS+=--enable-languages=c,c++,objc,fortran,java
