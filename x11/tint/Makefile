@@ -46,7 +46,7 @@ CMAKE_ARGS+=	-DENABLE_TINT2CONF:BOOL=ON
 PLIST_FILES+=	bin/tint2conf bin/tintwizard.py \
 		share/applications/tint2conf.desktop \
 		share/pixmaps/tint2conf.png share/pixmaps/tint2conf.svg
-PLIST_DIRS+=	share/applications
+PLIST_DIRSTRY=	share/applications
 PYCONF_SRC=	${WRKSRC}/src/tint2conf
 .else
 CMAKE_ARGS+=	-DENABLE_TINT2CONF:BOOL=OFF
