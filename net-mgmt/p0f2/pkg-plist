@@ -1,0 +1,11 @@
+bin/p0f
+bin/p0fq
+bin/p0frep
+bin/sendack
+bin/sendack2
+bin/sendsyn
+etc/p0f/p0f.fp
+etc/p0f/p0fa.fp
+etc/p0f/p0fo.fp
+etc/p0f/p0fr.fp
+@dirrmtry etc/p0f
