@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scummvm
-DISTVERSION=	1.4.1
-PORTREVISION=	3
+DISTVERSION=	1.5.0
 CATEGORIES=	games emulators
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${DISTVERSION}
@@ -31,11 +30,10 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--disable-tremor
 LDFLAGS+=	${PTHREAD_LIBS}
 
-OPTIONS=	VORBIS "Enable Ogg Vorbis support" on \
-		MP3 "Enable MP3 support" on \
-		FLAC "Enable FLAC support" off \
-		FLUIDSYNTH "Enable FluidSynth MIDI synthesizer" off \
- 		MT32EMU "Enable MT-32 emulator" on \
+OPTIONS_DEFINE=	VORBIS MP3 FLAC FLUIDSYNTH MT32EMU
+FLUIDSYNTH_DESC=	FluidSynth MIDI synthesizer
+MT32EMU_DESC=	MT-32 emulator
+OPTIONS_DEFAULT=	VORBIS MP3 MT32EMU
 
 MAN6=		scummvm.6
 
@@ -63,45 +61,45 @@ PLIST_FILES=	bin/scummvm \
 		$(ENGINEDATA:S/^/%%DATADIR%%\/$$/)
 PLIST_DIRS=	%%DATADIR%%
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_VORBIS)
+.if ${PORT_OPTIONS:MVORBIS}
 LIB_DEPENDS+=	ogg:${PORTSDIR}/audio/libogg \
-		vorbis.4:${PORTSDIR}/audio/libvorbis
+		vorbis:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--with-ogg-prefix=${LOCALBASE} \
 		--with-vorbis-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--disable-vorbis
 .endif
 
-.if defined(WITH_MP3)
-LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
+.if ${PORT_OPTIONS:MMP3}
+LIB_DEPENDS+=	mad:${PORTSDIR}/audio/libmad
 CONFIGURE_ARGS+=--with-mad-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--disable-mad
 .endif
 
-.if defined(WITH_FLAC)
-LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
+.if ${PORT_OPTIONS:MFLAC}
+LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
 CONFIGURE_ARGS+=--with-flac-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--disable-flac
 .endif
 
-.if defined(WITH_FLUIDSYNTH)
-LIB_DEPENDS+=	fluidsynth.1:${PORTSDIR}/audio/fluidsynth
+.if ${PORT_OPTIONS:MFLUIDSYNTH}
+LIB_DEPENDS+=	fluidsynth:${PORTSDIR}/audio/fluidsynth
 CONFIGURE_ARGS+=--with-fluidsynth-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--disable-fluidsynth
 .endif
 
-.if defined(WITHOUT_MT32EMU)
+.if empty(PORT_OPTIONS:MMT32EMU)
 CONFIGURE_ARGS+=--disable-mt32emu
 .endif
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/scummvm ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/dists/scummvm.6 ${PREFIX}/man/man6
+	@${INSTALL_MAN} ${WRKSRC}/dists/scummvm.6 ${MAN6PREFIX}/man/man6
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/icons/scummvm.svg ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/gui/themes/scummmodern.zip ${DATADIR}
@@ -109,11 +107,11 @@ do-install:
 .for i in ${ENGINEDATA}
 	@${INSTALL_DATA} ${WRKSRC}/dists/engine-data/${i} ${DATADIR}
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
