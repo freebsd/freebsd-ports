@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	yajl
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.4
 CATEGORIES=	devel
-MASTER_SITES=	LOCAL/bapt \
-		http://files.etoilebsd.net/yajl/
+MASTER_SITES=	http://github.com/lloyd/yajl/tarball/${GITREF}/
+DISTNAME=	lloyd-${PORTNAME}-${GITREF}
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	A Portable JSON parsing and serialization library in ANSI C
 
-GITREF=		f4b2b1a
-DISTNAME=	lloyd-${PORTNAME}-${PORTVERSION}-g${GITREF}
-WRKSRC=		${WRKDIR}/lloyd-${PORTNAME}-${GITREF}
+FETCH_ARGS=	-Fpr
+GITREF=		fee1ebe
 PLIST_SUB=	VERSION=${PORTVERSION}
 
 LICENSE=	BSD
