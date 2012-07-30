@@ -1,0 +1,43 @@
+--- configure.orig	2009-12-22 03:31:30.000000000 +0100
++++ configure	2012-06-27 19:49:26.000000000 +0200
+@@ -6946,12 +6946,35 @@
+             CXXFLAGS="$CXXFLAGS -ansi -pedantic"
+         fi
+ 
+-        # ffb and gamma are missing because they have not been converted
+-        # to use the new interface.
+-        if test "x$DRI_DIRS" = "xyes"; then
+-            DRI_DIRS="i810 i915 i965 mach64 mga r128 r200 r300 r600 radeon tdfx \
++        case "$host_cpu" in
++        x86_64)
++            # i810 is missing because there is no x86-64 system where it
++            # could *ever* be used.
++            if test "x$DRI_DIRS" = "xyes"; then
++                DRI_DIRS="i915 i965 mach64 mga r128 r200 r300 r600 radeon tdfx \
+                 unichrome savage sis swrast"
+-        fi
++            fi
++            ;;
++        i*86)
++            if test "x$DRI_DIRS" = "xyes"; then
++                DRI_DIRS="i810 i915 i965 mach64 mga r128 r200 r300 r600 radeon tdfx \
++                unichrome savage sis swrast"
++            fi
++            ;;
++        powerpc*)
++            # Build only the drivers for cards that exist on PowerPC.
++            # At some point MGA will be added, but not yet.
++            if test "x$DRI_DIRS" = "xyes"; then
++                DRI_DIRS="mach64 r128 r200 r300 r600 radeon tdfx swrast"
++            fi
++            ;;
++        sparc*)
++            # Build only the drivers for cards that exist on SPARC.
++            if test "x$DRI_DIRS" = "xyes"; then
++                DRI_DIRS="mach64 r128 r200 r300 r600 radeon swrast"
++            fi
++            ;;
++        esac
+         ;;
+     gnu*)
+         DEFINES="$DEFINES -DUSE_EXTERNAL_DXTN_LIB=1 -DIN_DRI_DRIVER"
