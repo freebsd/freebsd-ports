@@ -1,4 +1,5 @@
 bin/cxfreeze
+bin/cxfreeze-quickstart
 %%PYTHON_SITELIBDIR%%/cx_Freeze/__init__.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/__init__.pyc
 %%PYTHON_SITELIBDIR%%/cx_Freeze/__init__.pyo
