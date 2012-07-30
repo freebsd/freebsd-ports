@@ -6,13 +6,18 @@
 
 PORTNAME=	wmspaceweather
 PORTVERSION=	1.04
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	astro windowmaker
-MASTER_SITES=	http://dockapps.org/files/15/22/
+MASTER_SITES=	https://api.opensuse.org/public/source/openSUSE:Factory/WindowMaker-applets/ \
+		ftp://ftp.canadatux.org/linux/windowmaker/
 DISTNAME=	wmSpaceWeather-${PORTVERSION}
 
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	A DockApp that shows the weather at geosynchronous orbit
+
+LICENSE=	GPLv2
+
+RUN_DEPENDS=	${SITE_PERL}/Time/CTime.pm:${PORTSDIR}/devel/p5-Time-modules
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmSpaceWeather
 
