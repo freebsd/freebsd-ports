@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Devel-PatchPerl
-PORTVERSION=	0.72
+PORTVERSION=	0.74
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,9 +22,9 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN1=	patchperl.1
-MAN3=	Devel::PatchPerl.3 \
-	Devel::PatchPerl::Hints.3 \
-	Devel::PatchPerl::Plugin.3
+MAN1=		patchperl.1
+MAN3=		Devel::PatchPerl.3 \
+		Devel::PatchPerl::Hints.3 \
+		Devel::PatchPerl::Plugin.3
 
 .include <bsd.port.mk>
