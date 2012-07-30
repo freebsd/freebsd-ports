@@ -7,6 +7,7 @@
 
 PORTNAME=	wildmidi
 PORTVERSION=	0.2.3.5
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -14,8 +15,9 @@ MAINTAINER=	liangtai.s4@gmail.com
 COMMENT=	A simple software midi player and a core softsynth library
 
 # player: GPLv3, library: LGPL3
-LICENSE_COMB=	multi
 LICENSE=	GPLv3 LGPL3
+LICENSE_COMB=	multi
+
 MAKE_JOBS_UNSAFE=	yes
 
 USE_GZIP=	yes
@@ -39,5 +41,7 @@ post-patch:
 		${REINPLACE_CMD} -e 's@/usr/local/share/wildmidi/@${DATADIR}/@' \
 			-e 's@default_timifityconf@default_wildmidiconf@' \
 			${WRKSRC}/configure
+		${REINPLACE_CMD} -e '/WM_MixerOptions/s/ \&\& / \& /' \
+			${WRKSRC}/src/wildmidi_lib.c
 
 .include <bsd.port.mk>
