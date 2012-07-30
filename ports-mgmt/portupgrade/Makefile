@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	2.4.9.5
+PORTVERSION=	2.4.9.6
 PORTEPOCH=	2
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	SF/portupgrade/pkgtools/${PORTVERSION}/ \
-		http://www.shatow.net/freebsd/
+MASTER_SITES=	SF/portupgrade/pkgtools/dist/ \
+		http://mirror.shatow.net/freebsd/pkgtools/
 DISTNAME=	pkgtools-${PORTVERSION}
 
 MAINTAINER=	bryan@shatow.net
@@ -18,10 +18,11 @@ COMMENT=	FreeBSD ports/packages administration and management tool suite
 
 LICENSE=	BSD
 
-OPTIONS_DEFINE=	DB_OVERRIDE
-OPTIONS_SINGLE= DB_OVERRIDE
+NO_OPTIONS_SORT=	yes
+OPTIONS_DEFINE=	DOCS DB_OVERRIDE
+OPTIONS_SINGLE=	DB_OVERRIDE
 OPTIONS_SINGLE_DB_OVERRIDE=	BDB4 BDB1
-OPTIONS_DEFAULT=	DB_OVERRIDE BDB4
+OPTIONS_DEFAULT=	DB_OVERRIDE BDB4 DOCS
 DB_OVERRIDE_DESC=	Override DB backend instead of default DBM
 BDB1_DESC=	Use Berkeley DB 1
 BDB4_DESC=	Use Berkeley DB >=2
