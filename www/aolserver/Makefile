@@ -26,6 +26,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 AOLSERVERBASE?=	${PORTNAME}
 AOLSERVERUSER?=	nobody
 AOLSERVERGROUP?=	nogroup
+USERS=	${AOLSERVERUSER}
+GROUPS=	${AOLSERVERGROUP}
 
 MANPREFIX=	${PREFIX}/${AOLSERVERBASE}
 USE_GMAKE=	yes
@@ -52,14 +54,10 @@ HTMLDOCS_DESC=	Install HTML documentation
 MANPAGES_DESC=	Install manpages
 TESTS_DESC=	Install tests in example directory
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 SUB_LIST+=	MKDIR="${MKDIR}" ECHO_CMD="${ECHO_CMD}" \
 		CHOWN="${CHOWN}" CHMOD="${CHMOD}"
-
-.if (${ARCH} == "ia64")
-BROKEN=		does not compile on ia64
-.endif
 
 CONFIGURE_ENV+=		TCLSH="${TCLSH}"
 CONFIGURE_ARGS+=	--prefix="${PREFIX}/${AOLSERVERBASE}" \
@@ -738,4 +736,4 @@ post-install:
 
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
