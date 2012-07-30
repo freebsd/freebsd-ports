@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-All
-PORTVERSION=	0.45
+PORTVERSION=	0.46
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	IO::All combines all of the best Perl IO modules
 
-BUILD_DEPENDS=	p5-IO-String>=1.08:${PORTSDIR}/devel/p5-IO-String
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-File-ReadBackwards>=0:${PORTSDIR}/devel/p5-File-ReadBackwards \
+		p5-IO-String>=1.08:${PORTSDIR}/devel/p5-IO-String
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
