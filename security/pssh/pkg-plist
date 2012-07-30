@@ -28,4 +28,7 @@ bin/pssh-askpass
 %%PYTHON_SITELIBDIR%%/psshlib/task.py
 %%PYTHON_SITELIBDIR%%/psshlib/task.pyc
 %%PYTHON_SITELIBDIR%%/psshlib/task.pyo
+%%PYTHON_SITELIBDIR%%/psshlib/version.py
+%%PYTHON_SITELIBDIR%%/psshlib/version.pyc
+%%PYTHON_SITELIBDIR%%/psshlib/version.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/psshlib
