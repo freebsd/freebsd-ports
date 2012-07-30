@@ -67,28 +67,28 @@ Note:  Please add new entries to the beginning of this file.
 	<h1>A Bugzilla Security Advisory reports:</h1>
 	<blockquote cite="http://www.bugzilla.org/security/3.6.9/">
 	  <p>The following security issues have been discovered in
-	    Bugzilla:</p>
+	     Bugzilla:</p>
 	  <h1>Information Leak</h1>
 	  <p>Versions: 4.1.1 to 4.2.1, 4.3.1</p>
 	  <p>In HTML bugmails, all bug IDs and attachment IDs are
-	   linkified, and hovering these links displays a tooltip
-	   with the bug summary or the attachment description if
-	   the user is allowed to see the bug or attachment.
-	   But when validating user permissions when generating the
-	   email, the permissions of the user who edited the bug were
-	   taken into account instead of the permissions of the
-	   addressee. This means that confidential information could
-	   be disclosed to the addressee if the other user has more
-	   privileges than the addressee.
-	   Plain text bugmails are not affected as bug and attachment
-	   IDs are not linkified.</p>
+	     linkified, and hovering these links displays a tooltip
+	     with the bug summary or the attachment description if
+	     the user is allowed to see the bug or attachment.
+	     But when validating user permissions when generating the
+	     email, the permissions of the user who edited the bug were
+	     taken into account instead of the permissions of the
+	     addressee. This means that confidential information could
+	     be disclosed to the addressee if the other user has more
+	     privileges than the addressee.
+	     Plain text bugmails are not affected as bug and attachment
+	     IDs are not linkified.</p>
 	  <h1>Information Leak</h1>
-           <p>Versions: 2.17.5 to 3.6.9, 3.7.1 to 4.0.6, 4.1.1 to
-            4.2.1, 4.3.1</p>
+          <p>Versions: 2.17.5 to 3.6.9, 3.7.1 to 4.0.6, 4.1.1 to
+              4.2.1, 4.3.1</p>
 	  <p>The description of a private attachment could be visible
-	   to a user who hasn't permissions to access this attachment
-	   if the attachment ID is mentioned in a public comment in
-	   a bug that the user can see.</p>
+	     to a user who hasn't permissions to access this attachment
+	     if the attachment ID is mentioned in a public comment in
+	     a bug that the user can see.</p>
 	</blockquote>
       </body>
     </description>
@@ -176,13 +176,13 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The RT development team reports:</p>
 	<blockquote cite="http://blog.bestpractical.com/2012/07/security-vulnerabilities-in-three-commonly-deployed-rt-extensions.html">
 	  <p>RT::Authen::ExternalAuth 0.10 and below (for all versions
-	  of RT) are vulnerable to an escalation of privilege attack
-	  where the URL of a RSS feed of the user can be used to
-	  acquire a fully logged-in session as that user.
-	  CVE-2012-2770 has been assigned to this vulnerability.</p>
+	     of RT) are vulnerable to an escalation of privilege attack
+	     where the URL of a RSS feed of the user can be used to
+	     acquire a fully logged-in session as that user.
+	     CVE-2012-2770 has been assigned to this vulnerability.</p>
 	  <p>Users of RT 3.8.2 and above should upgrade to
-	  RT::Authen::ExternalAuth 0.11, which resolves this
-	  vulnerability.</p>
+	     RT::Authen::ExternalAuth 0.11, which resolves this
+	     vulnerability.</p>
 	</blockquote>
       </body>
     </description>
@@ -199,6 +199,10 @@ Note:  Please add new entries to the beginning of this file.
   <vuln vid="c7fa3618-d5ff-11e1-90a2-000c299b62e1">
     <topic>isc-dhcp -- multiple vulnerabilities</topic>
     <affects>
+      <package>
+	<name>isc-dhcp41-server</name>
+	<range><lt>4.1.e_5,2</lt></range>
+      </package>
       <package>
 	<name>isc-dhcp42-server</name>
 	<range><lt>4.2.4_1</lt></range>
