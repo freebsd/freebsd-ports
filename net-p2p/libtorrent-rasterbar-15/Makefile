@@ -21,6 +21,7 @@ CONFLICTS+=	libtorrent-rasterbar-0.1[46789].*
 
 NO_LATEST_LINK=	yes
 
+BUILD_DEPENDS=	pkgconf>0:${PORTSDIR}/devel/pkgconf
 LIB_DEPENDS+=	boost_date_time.4:${PORTSDIR}/devel/boost-libs \
 		GeoIP.5:${PORTSDIR}/net/GeoIP
 
