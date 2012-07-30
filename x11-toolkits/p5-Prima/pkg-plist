@@ -37,6 +37,7 @@ bin/tmlink
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/CORE/unix/queue.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Calendar.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Classes.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/Clipboard.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/ColorDialog.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/ComboBox.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Config.pm
@@ -46,10 +47,12 @@ bin/tmlink
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/DetailedOutline.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/DockManager.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Docks.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/Drawable.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Edit.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/EditDialog.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/EventHook.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/ExtLists.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/File.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/FileDialog.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/FontDialog.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/FrameSet.pm
@@ -58,6 +61,7 @@ bin/tmlink
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Header.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/HelpViewer.fm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/HelpViewer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/Image.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Image/AnimateGIF.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Image/TransparencyControl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Image/gif.pm
@@ -73,8 +77,10 @@ bin/tmlink
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Label.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Lists.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/MDI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/Menu.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/MsgBox.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Notebooks.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/Object.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Outlines.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/PS/Drawable.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/PS/Encodings.pm
@@ -136,6 +142,7 @@ bin/tmlink
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/PS/setup.fm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/PodView.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/PrintDialog.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/Printer.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/RubberBand.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/ScrollBar.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/ScrollWidget.pm
@@ -148,6 +155,7 @@ bin/tmlink
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/TextView.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Themes.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Tie.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/Timer.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Utils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/VB/CfgMaint.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/VB/Classes.pm
@@ -161,7 +169,13 @@ bin/tmlink
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/VB/classes.gif
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/VB/examples/Sample.fm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/VB/examples/Widgety.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/Widget.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/Widget/pack.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/Widget/place.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Widgets.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/Window.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/X11.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/codecs.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/examples/Hand.gif
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/examples/amba.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/examples/animate.pl
@@ -214,40 +228,15 @@ bin/tmlink
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/examples/theme.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/examples/transparent.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/examples/triangle.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/faq.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/fontabc.gif
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/gettextbox.gif
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/gp-problems.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/image-load.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/internals.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/leadings.gif
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/noARGV.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/noX11.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/Clipboard.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/Drawable.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/File.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/Image.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/Menu.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/Object.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/Printer.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/Timer.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/Widget.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/Widget/pack.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/Widget/place.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/Window.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/X11.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/codecs.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/faq.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/fontabc.gif
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/gettextbox.gif
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/gp-problems.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/image-load.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/internals.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/leadings.gif
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/tutorial.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/tutorial/hello1.gif
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/tutorial/hello2.gif
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/tutorial/hello3.gif
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/tutorial/hello4.gif
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/tutorial/hello5.gif
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/tutorial/hello6.gif
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/tutorial/menu1.gif
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/tutorial/menu2.gif
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/tutorial/menu3.gif
-%%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/gencls.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/sys/gtk2/FileDialog.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/sys/win32/FileDialog.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/sys/win32/sysimage.gif
@@ -256,19 +245,26 @@ bin/tmlink
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/themes/round3d.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/themes/sysimage.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/themes/tabset.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/tutorial.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/tutorial/hello1.gif
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/tutorial/hello2.gif
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/tutorial/hello3.gif
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/tutorial/hello4.gif
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/tutorial/hello5.gif
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/tutorial/hello6.gif
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/tutorial/menu1.gif
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/tutorial/menu2.gif
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/tutorial/menu3.gif
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Prima/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Prima/Prima.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Prima/Prima.so
+%%SITE_PERL%%/%%PERL_ARCH%%/gencls.pod
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Prima
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/tutorial
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/themes
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/sys/win32
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/sys/gtk2
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/sys
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/tutorial
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima/Widget
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod/Prima
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/pod
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/examples
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Widget
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/VB/examples

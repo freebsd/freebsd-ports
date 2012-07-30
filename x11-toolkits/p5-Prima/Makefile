@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Prima
-PORTVERSION=	1.34
+PORTVERSION=	1.35
 CATEGORIES=	x11-toolkits graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -41,7 +41,6 @@ MAN3=		Prima.3 \
 		Prima::Buttons.3 \
 		Prima::Calendar.3 \
 		Prima::Classes.3 \
-		Prima::Clipboard.3 \
 		Prima::ColorDialog.3 \
 		Prima::ComboBox.3 \
 		Prima::Config.3 \
@@ -51,12 +50,10 @@ MAN3=		Prima.3 \
 		Prima::DetailedOutline.3 \
 		Prima::DockManager.3 \
 		Prima::Docks.3 \
-		Prima::Drawable.3 \
 		Prima::Edit.3 \
 		Prima::EditDialog.3 \
 		Prima::EventHook.3 \
 		Prima::ExtLists.3 \
-		Prima::File.3 \
 		Prima::FileDialog.3 \
 		Prima::FontDialog.3 \
 		Prima::FrameSet.3 \
@@ -64,7 +61,6 @@ MAN3=		Prima.3 \
 		Prima::Grids.3 \
 		Prima::Header.3 \
 		Prima::HelpViewer.3 \
-		Prima::Image.3 \
 		Prima::Image::AnimateGIF.3 \
 		Prima::Image::TransparencyControl.3 \
 		Prima::Image::gif.3 \
@@ -79,10 +75,8 @@ MAN3=		Prima.3 \
 		Prima::Label.3 \
 		Prima::Lists.3 \
 		Prima::MDI.3 \
-		Prima::Menu.3 \
 		Prima::MsgBox.3 \
 		Prima::Notebooks.3 \
-		Prima::Object.3 \
 		Prima::Outlines.3 \
 		Prima::PS::Drawable.3 \
 		Prima::PS::Encodings.3 \
@@ -91,7 +85,6 @@ MAN3=		Prima.3 \
 		Prima::PS::Setup.3 \
 		Prima::PodView.3 \
 		Prima::PrintDialog.3 \
-		Prima::Printer.3 \
 		Prima::RubberBand.3 \
 		Prima::ScrollBar.3 \
 		Prima::ScrollWidget.3 \
@@ -104,7 +97,6 @@ MAN3=		Prima.3 \
 		Prima::TextView.3 \
 		Prima::Themes.3 \
 		Prima::Tie.3 \
-		Prima::Timer.3 \
 		Prima::Utils.3 \
 		Prima::VB::CfgMaint.3 \
 		Prima::VB::Classes.3 \
@@ -113,17 +105,7 @@ MAN3=		Prima.3 \
 		Prima::VB::VBControls.3 \
 		Prima::VB::VBLoader.3 \
 		Prima::VB::examples::Widgety.3 \
-		Prima::Widget.3 \
-		Prima::Widget::pack.3 \
-		Prima::Widget::place.3 \
 		Prima::Widgets.3 \
-		Prima::Window.3 \
-		Prima::X11.3 \
-		Prima::codecs.3 \
-		Prima::faq.3 \
-		Prima::gp-problems.3 \
-		Prima::image-load.3 \
-		Prima::internals.3 \
 		Prima::noARGV.3 \
 		Prima::noX11.3 \
 		Prima::sys::gtk2::FileDialog.3 \
@@ -132,8 +114,26 @@ MAN3=		Prima.3 \
 		Prima::themes::round3d.3 \
 		Prima::themes::sysimage.3 \
 		Prima::themes::tabset.3 \
-		Prima::tutorial.3 \
-		gencls.3
+		pod::Prima::Clipboard.3 \
+		pod::Prima::Drawable.3 \
+		pod::Prima::File.3 \
+		pod::Prima::Image.3 \
+		pod::Prima::Menu.3 \
+		pod::Prima::Object.3 \
+		pod::Prima::Printer.3 \
+		pod::Prima::Timer.3 \
+		pod::Prima::Widget.3 \
+		pod::Prima::Widget::pack.3 \
+		pod::Prima::Widget::place.3 \
+		pod::Prima::Window.3 \
+		pod::Prima::X11.3 \
+		pod::Prima::codecs.3 \
+		pod::Prima::faq.3 \
+		pod::Prima::gp-problems.3 \
+		pod::Prima::image-load.3 \
+		pod::Prima::internals.3 \
+		pod::Prima::tutorial.3 \
+		pod::gencls.3
 
 .include <bsd.port.options.mk>
 
