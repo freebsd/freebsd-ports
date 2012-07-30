@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sabnzbdplus
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.2
 CATEGORIES=	news
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	SABnzbd-${PORTVERSION}-src
@@ -90,31 +90,32 @@ PORTDOCS=	ABOUT.txt \
 USERS=		_sabnzbd
 GROUPS=		_sabnzbd
 
-OPTIONS=	PAR2CMDLINE "Required for postprocessing of par files." on \
-		UNRAR "Often required for unpacking many downloads." on \
-		FEEDPARSER "rss-feed support." on \
-		YENC "yenc support." on \
-		OPENSSL "SSL support" on
+OPTIONS_DEFINE=	PAR2CMDLINE UNRAR FEEDPARSER YENC OPENSSL
+OPTIONS_DEFAULT=	PAR2CMDLINE UNRAR FEEDPARSER YENC OPENSSL
+PAR2CMDLINE_DESC=	Required for postprocessing of par files
+UNRAR_DESC=	Often required for unpacking many downloads
+FEEDPARSER_DESC=	rss-feed support
+YENC_DESC=	yenc support
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_PAR2CMDLINE)
+.if ${PORT_OPTIONS:MPAR2CMDLINE}
 RUN_DEPENDS+=	par2repair:${PORTSDIR}/archivers/par2cmdline-tbb
 .endif
 
-.if !defined(WITHOUT_FEEDPARSER)
+.if ${PORT_OPTIONS:MFEEDPARSER}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/OpenSSL/SSL.so:${PORTSDIR}/security/py-openssl
 .endif
 
-.if !defined(WITHOUT_YENC)
+.if ${PORT_OPTIONS:MYENC}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_yenc.so:${PORTSDIR}/news/py-yenc
 .endif
 
-.if !defined(WITHOUT_OPENSSL)
+.if ${PORT_OPTIONS:MOPENSSL}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedparser
 .endif
 
-.if !defined(WITHOUT_UNRAR)
+.if ${PORT_OPTIONS:MUNRAR}
 RUN_DEPENDS+=	unrar:${PORTSDIR}/archivers/unrar
 .endif
 
