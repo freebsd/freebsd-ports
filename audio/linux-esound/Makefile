@@ -24,7 +24,7 @@ USE_LINUX_APPS=	libaudiofile
 LINUX_DIST_VER=	4
 USE_LDCONFIG=	yes
 BRANDELF_DIRS=	usr/bin
-PLIST=		pkg-plist.${LINUX_RPM_ARCH}
+PLIST=		${PKGDIR}/pkg-plist.${LINUX_RPM_ARCH}
 PLIST_SUB+=	ESOUND_VERSION="${PORTVERSION}"
 
 .include <bsd.port.mk>

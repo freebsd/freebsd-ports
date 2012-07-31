@@ -23,7 +23,7 @@ LINUX_DIST_VER=	10
 RPMVERSION=	9.fc10
 BRANDELF_DIRS=	usr/bin
 USE_LDCONFIG=	yes
-PLIST=		pkg-plist.${LINUX_RPM_ARCH}
+PLIST=		${PKGDIR}/pkg-plist.${LINUX_RPM_ARCH}
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 

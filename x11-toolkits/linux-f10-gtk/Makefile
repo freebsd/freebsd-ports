@@ -24,6 +24,6 @@ LINUX_NAME=	${PORTNAME}+
 LINUX_DIST_VER=	10
 RPMVERSION=	66.fc10
 USE_LDCONFIG=	yes
-PLIST=		pkg-plist.${LINUX_RPM_ARCH}
+PLIST=		${PKGDIR}/pkg-plist.${LINUX_RPM_ARCH}
 
 .include <bsd.port.mk>
