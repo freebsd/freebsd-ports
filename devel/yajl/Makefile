@@ -8,7 +8,8 @@
 PORTNAME=	yajl
 PORTVERSION=	2.0.4
 CATEGORIES=	devel
-MASTER_SITES=	http://github.com/lloyd/yajl/tarball/${GITREF}/
+MASTER_SITES=	http://github.com/lloyd/yajl/tarball/${GITREF}/ \
+		http://files.etoilebsd.net/yajl/
 DISTNAME=	lloyd-${PORTNAME}-${GITREF}
 
 MAINTAINER=	bapt@FreeBSD.org
