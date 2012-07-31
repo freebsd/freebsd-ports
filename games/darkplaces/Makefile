@@ -83,7 +83,7 @@ do-install:
 .endfor
 	@${MKDIR} ${DATADIR}
 	@${TOUCH} ${DATADIR}/dummy
-.if !{PORT_OPTIONS:MDOCS}
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/darkplaces.txt ${DOCSDIR}
 .endif

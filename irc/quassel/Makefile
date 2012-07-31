@@ -79,7 +79,7 @@ PLIST_SUB+=	CLIENT="@comment "
 .endif
 
 pre-configure:
-.if ${PORT_OPTIONS:MNLS}
+.if !${PORT_OPTIONS:MNLS}
 	${REINPLACE_CMD} -e '/add_subdirectory(i18n)/d' \
 		${WRKSRC}/CMakeLists.txt
 .endif

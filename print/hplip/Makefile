@@ -144,7 +144,7 @@ CONFIGURE_ARGS+=	--disable-scan-build
 PLIST_SUB+=	SCAN="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
+.if !${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=	--enable-doc-build=no
 .endif
 
