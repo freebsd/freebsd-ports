@@ -82,6 +82,7 @@
     SUBDIR += gauche
     SUBDIR += gawk
     SUBDIR += gcc
+    SUBDIR += gcc-aux
     SUBDIR += gcc34
     SUBDIR += gcc42
     SUBDIR += gcc44

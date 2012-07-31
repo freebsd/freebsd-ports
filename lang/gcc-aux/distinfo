@@ -1,0 +1,6 @@
+SHA256 (gcc-4.7.1.tar.bz2) = 16093f6fa01732adf378d97fe338f113c933bdf56da22bf87c76beff13da406f
+SIZE (gcc-4.7.1.tar.bz2) = 82639660
+SHA256 (gnat-bootstrap.i386.freebsd.tar.bz2) = c38e1c960f651c3f248c1ef540b1df724058fa71c1d046af93ce975483abb645
+SIZE (gnat-bootstrap.i386.freebsd.tar.bz2) = 27973176
+SHA256 (gnat-bootstrap.x86_64.freebsd.tar.bz2) = c4abd6af1281785d47d99352e28e41b2a1455e25ff347eca0de5791cdede9ed8
+SIZE (gnat-bootstrap.x86_64.freebsd.tar.bz2) = 31565201
