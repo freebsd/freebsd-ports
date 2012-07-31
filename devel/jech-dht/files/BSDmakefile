@@ -1,6 +1,7 @@
 LIB=	dht
 SHLIB_MAJOR=	0
 SHLIB_MINOR=	21
+NO_PROFILE=	yes
 
 SRCS=	dht.c
 
