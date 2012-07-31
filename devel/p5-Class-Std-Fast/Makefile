@@ -7,7 +7,8 @@
 
 PORTNAME=	Class-Std-Fast
 PORTVERSION=	0.0.8
-DISTVERSION=	v0.0.8
+DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,12 +16,22 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Faster but less secure than Class::Std
 
-BUILD_DEPENDS=	p5-Test-Simple>=0.86:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS=	p5-version>=0:${PORTSDIR}/devel/p5-version \
-		p5-Class-Std>=0.0.9:${PORTSDIR}/devel/p5-Class-Std
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	YES
+BUILD_DEPENDS=	p5-Class-Std>=0.0.9:${PORTSDIR}/devel/p5-Class-Std
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=		Class::Std::Fast.3 Class::Std::Fast::Storable.3
+PERL_CONFIGURE=	yes
 
-.include <bsd.port.mk>
+MAN3=		Class::Std::Fast.3 \
+		Class::Std::Fast::Storable.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-version>=0:${PORTSDIR}/devel/p5-version
+RUN_DEPENDS+=	p5-version>=0:${PORTSDIR}/devel/p5-version
+.endif
+
+.include <bsd.port.post.mk>
