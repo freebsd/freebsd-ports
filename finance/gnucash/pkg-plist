@@ -95,6 +95,7 @@ include/gnucash/gnc-entry-quickfill.h
 include/gnucash/gnc-euro.h
 include/gnucash/gnc-event.h
 include/gnucash/gnc-exp-parser.h
+include/gnucash/gnc-features.h
 include/gnucash/gnc-file.h
 include/gnucash/gnc-frequency.h
 include/gnucash/gnc-general-search.h
@@ -655,6 +656,8 @@ share/gnucash/accounts/sk/acctchrt_renter.gnucash-xea
 share/gnucash/accounts/sk/acctchrt_retiremt.gnucash-xea
 share/gnucash/accounts/sk/acctchrt_spouseinc.gnucash-xea
 share/gnucash/accounts/sk/acctchrt_spouseretire.gnucash-xea
+share/gnucash/accounts/sv_SE/bas_2012.gnucash-xea
+share/gnucash/accounts/sv_SE/swedish_small_business.gnucash-xea
 share/gnucash/accounts/tr_TR/acctchrt_TEKDUZ.gnucash-xea
 share/gnucash/accounts/tr_TR/acctchrt_brokerage.gnucash-xea
 share/gnucash/accounts/tr_TR/acctchrt_carloan.gnucash-xea
@@ -1062,6 +1065,7 @@ share/locale/zh_TW/LC_MESSAGES/gnucash.mo
 @dirrm share/gnucash/checks
 @dirrm share/gnucash/accounts/zh_CN
 @dirrm share/gnucash/accounts/tr_TR
+@dirrm share/gnucash/accounts/sv_SE
 @dirrm share/gnucash/accounts/sk
 @dirrm share/gnucash/accounts/ru
 @dirrm share/gnucash/accounts/pt_PT
