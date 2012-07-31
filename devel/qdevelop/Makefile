@@ -70,7 +70,7 @@ post-patch:
 		${WRKSRC}/plugins/formatting-astyle/astyleplugin.cpp
 
 do-configure:
-.if !${PORT_OPTIONS:MNLS}
+.if ${PORT_OPTIONS:MNLS}
 	cd ${WRKSRC} && ${QT_LRELEASE} ${QMAKE_PRO}
 .endif
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS}
@@ -78,11 +78,11 @@ do-configure:
 post-install:
 	${STRIP_CMD} ${STRIP_FILES:S,^,${PREFIX}/,}
 	${INSTALL_DATA} ${WRKSRC}/resources/images/logo.png ${PREFIX}/share/pixmaps/qdevelop.png
-.if !${PORT_OPTIONS:MNLS}
+.if ${PORT_OPTIONS:MNLS}
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/resources/translations/ && ${COPYTREE_SHARE} '*.qm' ${DATADIR}/translations
 .endif
-.if !${PORT_OPTIONS:MDOCS}
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for doc in ChangeLog.txt README.txt
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}

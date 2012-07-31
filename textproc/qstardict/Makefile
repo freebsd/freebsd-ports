@@ -42,7 +42,7 @@ QMAKE_ARGS+=	NO_DBUS=1
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr|${PREFIX}|g" \
 		${WRKSRC}/qstardict.pri
-.if ${PORT_OPTIONS:MDOCS}
+.if !${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e "/^INSTALLS/s|docs||g" \
 		${WRKSRC}/qstardict.pro
 .endif
