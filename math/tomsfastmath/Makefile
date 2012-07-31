@@ -8,9 +8,7 @@
 PORTNAME=	tomsfastmath
 PORTVERSION=	0.12
 CATEGORIES=	math
-MASTER_SITES=	http://libtom.org/files/ \
-		http://www.atarininja.org/~wxs/distfiles/ \
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	http://libtom.org/files/
 MASTER_SITE_SUBDIR=	miwi
 DISTNAME=	tfm-${PORTVERSION}
 
@@ -23,9 +21,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	default
 MAKE_JOBS_SAFE=	yes
-
-DEPRECATED=	Upstream abandoned this project.
-EXPIRATION_DATE=	2012-08-24
 
 PLIST_FILES=	include/tfm.h lib/libtfm.a
 

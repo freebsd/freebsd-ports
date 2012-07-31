@@ -21,9 +21,6 @@ USE_GMAKE=	yes
 ALL_TARGET=	default
 MAKE_JOBS_SAFE=	yes
 
-DEPRECATED=	Upstream has abandoned the project.
-EXPIRATION_DATE=	2012-08-24
-
 PLIST_FILES=	include/tommath.h include/tommath_class.h \
 		include/tommath_superclass.h lib/libtommath.a
 
