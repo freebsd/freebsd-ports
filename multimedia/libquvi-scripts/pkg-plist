@@ -24,6 +24,7 @@ libdata/pkgconfig/libquvi-scripts.pc
 %%DATADIR%%/lua/website/golem.lua
 %%DATADIR%%/lua/website/guardian.lua
 %%DATADIR%%/lua/website/imdb.lua
+%%DATADIR%%/lua/website/justintv.lua
 %%DATADIR%%/lua/website/liveleak.lua
 %%DATADIR%%/lua/website/metacafe.lua
 %%DATADIR%%/lua/website/mgnetwork.lua
