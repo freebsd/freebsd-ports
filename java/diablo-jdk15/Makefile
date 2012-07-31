@@ -39,7 +39,7 @@ OPTIONS=	TZUPDATE	"Update the time zone data"	on
 
 SUB_FILES+=	pkg-install \
 		pkg-deinstall
-PKG_IGNORE_DEPENDS=	'^[^x|^j]'
+PKG_IGNORE_DEPENDS=	'^[^xj]'
 
 INSTALL_DIR=	${PREFIX}/${PKGNAMEPREFIX}jdk${JDK_VERSION}
 
