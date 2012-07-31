@@ -9,8 +9,8 @@
 %%SITE_PERL%%/Data/Phrasebook/SQL/Query.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Phrasebook/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Phrasebook
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
 @dirrmtry %%SITE_PERL%%/Data/Phrasebook/Loader
 @dirrmtry %%SITE_PERL%%/Data/Phrasebook/SQL
 @dirrmtry %%SITE_PERL%%/Data/Phrasebook
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
 @dirrmtry %%SITE_PERL%%/Data
