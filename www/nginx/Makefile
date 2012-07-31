@@ -668,8 +668,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-redis2-nginx-module-${GIT_REDIS2_
 .endif
 
 .if ${PORT_OPTIONS:MRTMP}
-NGINX_RTMP_VERSION=	0.1.10
-GIT_RTMP_VERSION=	0-g80db4c4
+NGINX_RTMP_VERSION=	0.2.3
+GIT_RTMP_VERSION=	0-gf7f24ba
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/arut/nginx-rtmp-module/tarball/v${NGINX_RTMP_VERSION}/:rtmp
 DISTFILES+=	arut-rtmp-nginx-module-v${NGINX_RTMP_VERSION}-${GIT_RTMP_VERSION}.tar.gz:rtmp
@@ -693,7 +693,8 @@ NGINX_SFLOW_VERSION=	0.9.6
 MASTER_SITES+=	http://nginx-sflow-module.googlecode.com/files/:sflow
 DISTFILES+=	nginx-sflow-module-${NGINX_SFLOW_VERSION}.tar.gz:sflow
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-sflow-module-${NGINX_SFLOW_VERSION}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_sflow_config.c
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_sflow_config.c \
+		${PATCHDIR}/extra-patch-ngx_http_sflow_config.h
 .endif
 
 .if ${PORT_OPTIONS:MSLOWFS_CACHE}
@@ -906,6 +907,11 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's!%%PREFIX%%!${LOCALBASE}!g' \
 		${WRKDIR}/ngx_postgres-${NGINX_POSTGRES_VERSION}/config
+.endif
+.if ${PORT_OPTIONS:MSFLOW}
+	@${REINPLACE_CMD} \
+		's!%%PREFIX%%!${LOCALBASE}!g' \
+		${WRKDIR}/nginx-sflow-module-${NGINX_SFLOW_VERSION}/ngx_http_sflow_config.h
 .endif
 .if ${PORT_OPTIONS:MSUPERVISORD}
 	( cd ${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION} && \
