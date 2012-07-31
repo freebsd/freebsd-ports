@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Load-Conditional
-PORTVERSION=	0.50
+PORTVERSION=	0.52
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,14 +23,6 @@ RUN_DEPENDS=	p5-Module-CoreList>=2.22:${PORTSDIR}/devel/p5-Module-CoreList
 PERL_CONFIGURE=	yes
 
 MAN3=		Module::Load::Conditional.3
-PORTDOCS=	README
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}/
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -43,6 +35,11 @@ RUN_DEPENDS+=	p5-Locale-Maketext-Simple>=0:${PORTSDIR}/devel/p5-Locale-Maketext-
 		p5-Module-Load>=0.11:${PORTSDIR}/devel/p5-Module-Load \
 		p5-Params-Check>=0:${PORTSDIR}/devel/p5-Params-Check \
 		p5-version>=0.69:${PORTSDIR}/devel/p5-version
+.endif
+
+.if ${PERL_LEVEL} < 501600
+BUILD_DEPENDS+=	p5-Module-Metadata>=1.000005:${PORTSDIR}/devel/p5-Module-Metadata
+RUN_DEPENDS+=	p5-Module-Metadata>=1.000005:${PORTSDIR}/devel/p5-Module-Metadata
 .endif
 
 .include <bsd.port.post.mk>
