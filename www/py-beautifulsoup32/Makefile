@@ -19,6 +19,8 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	BeautifulSoup
 
+LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}32
+
 CONFLICTS=	py[0-9]*-beautifulsoup-3.0.*
 
 .include <bsd.port.mk>
