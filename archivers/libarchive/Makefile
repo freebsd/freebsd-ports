@@ -6,6 +6,7 @@
 
 PORTNAME=	libarchive
 PORTVERSION=	3.0.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://cloud.github.com/downloads/${PORTNAME}/${PORTNAME}/
@@ -13,12 +14,16 @@ MASTER_SITES=	http://cloud.github.com/downloads/${PORTNAME}/${PORTNAME}/
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Library to create and read several streaming archive formats
 
-OPTIONS=	LIBXML2 "Support writing xar via libxml2" On \
-		NETTLE "Use nettle instad of OpenSSL" Off
+OPTIONS_DEFINE=	LIBXML2 NETTLE
+OPTIONS_DEFAULT=	LIBXML2
+
+LIBXML2_DESC=	Support writing xar via libxml2
+NETTLE_DESC=	Use Nettle instead of OpenSSL
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack
+PATCH_STRIP=	-p1
 
 CONFIGURE_ARGS+=	--without-expat
 
@@ -62,7 +67,7 @@ LDFLAGS+=	"-L${LOCALBASE}/lib"
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_LIBXML2)
+.if ${PORT_OPTIONS:MLIBXML2}
 USE_GNOME+=	libxml2
 CONFIGURE_ARGS+=	--with-xml2
 .else
@@ -71,7 +76,7 @@ LDFLAGS+=	-lbsdxml
 CONFIGURE_ARGS+=	--without-xml2
 .endif
 
-.if defined(WITH_NETTLE)
+.if ${PORT_OPTIONS:MNETTLE}
 LIB_DEPENDS+=	nettle.4:${PORTSDIR}/security/nettle
 CONFIGURE_ARGS+=	--without-openssl --with-nettle
 .else
