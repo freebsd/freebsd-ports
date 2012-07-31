@@ -1881,6 +1881,7 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/flatpages/admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/flatpages/admin.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/flatpages/admin.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/fixtures/example_site.json
 %%PYTHON_SITELIBDIR%%/django/contrib/flatpages/fixtures/sample_flatpages.json
 %%PYTHON_SITELIBDIR%%/django/contrib/flatpages/forms.py
 %%PYTHON_SITELIBDIR%%/django/contrib/flatpages/forms.pyc
@@ -5271,21 +5272,12 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/utils/safestring.py
 %%PYTHON_SITELIBDIR%%/django/utils/safestring.pyc
 %%PYTHON_SITELIBDIR%%/django/utils/safestring.pyo
-%%PYTHON_SITELIBDIR%%/django/utils/simplejson/__init__.py
-%%PYTHON_SITELIBDIR%%/django/utils/simplejson/__init__.pyc
-%%PYTHON_SITELIBDIR%%/django/utils/simplejson/__init__.pyo
-%%PYTHON_SITELIBDIR%%/django/utils/simplejson/decoder.py
-%%PYTHON_SITELIBDIR%%/django/utils/simplejson/decoder.pyc
-%%PYTHON_SITELIBDIR%%/django/utils/simplejson/decoder.pyo
-%%PYTHON_SITELIBDIR%%/django/utils/simplejson/encoder.py
-%%PYTHON_SITELIBDIR%%/django/utils/simplejson/encoder.pyc
-%%PYTHON_SITELIBDIR%%/django/utils/simplejson/encoder.pyo
-%%PYTHON_SITELIBDIR%%/django/utils/simplejson/scanner.py
-%%PYTHON_SITELIBDIR%%/django/utils/simplejson/scanner.pyc
-%%PYTHON_SITELIBDIR%%/django/utils/simplejson/scanner.pyo
-%%PYTHON_SITELIBDIR%%/django/utils/simplejson/tool.py
-%%PYTHON_SITELIBDIR%%/django/utils/simplejson/tool.pyc
-%%PYTHON_SITELIBDIR%%/django/utils/simplejson/tool.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/simplejson.py
+%%PYTHON_SITELIBDIR%%/django/utils/simplejson.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/simplejson.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/six.py
+%%PYTHON_SITELIBDIR%%/django/utils/six.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/six.pyo
 %%PYTHON_SITELIBDIR%%/django/utils/synch.py
 %%PYTHON_SITELIBDIR%%/django/utils/synch.pyc
 %%PYTHON_SITELIBDIR%%/django/utils/synch.pyo
@@ -5400,12 +5392,6 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/views/generic/base.py
 %%PYTHON_SITELIBDIR%%/django/views/generic/base.pyc
 %%PYTHON_SITELIBDIR%%/django/views/generic/base.pyo
-%%PYTHON_SITELIBDIR%%/django/views/generic/create_update.py
-%%PYTHON_SITELIBDIR%%/django/views/generic/create_update.pyc
-%%PYTHON_SITELIBDIR%%/django/views/generic/create_update.pyo
-%%PYTHON_SITELIBDIR%%/django/views/generic/date_based.py
-%%PYTHON_SITELIBDIR%%/django/views/generic/date_based.pyc
-%%PYTHON_SITELIBDIR%%/django/views/generic/date_based.pyo
 %%PYTHON_SITELIBDIR%%/django/views/generic/dates.py
 %%PYTHON_SITELIBDIR%%/django/views/generic/dates.pyc
 %%PYTHON_SITELIBDIR%%/django/views/generic/dates.pyo
@@ -5418,12 +5404,6 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/views/generic/list.py
 %%PYTHON_SITELIBDIR%%/django/views/generic/list.pyc
 %%PYTHON_SITELIBDIR%%/django/views/generic/list.pyo
-%%PYTHON_SITELIBDIR%%/django/views/generic/list_detail.py
-%%PYTHON_SITELIBDIR%%/django/views/generic/list_detail.pyc
-%%PYTHON_SITELIBDIR%%/django/views/generic/list_detail.pyo
-%%PYTHON_SITELIBDIR%%/django/views/generic/simple.py
-%%PYTHON_SITELIBDIR%%/django/views/generic/simple.pyc
-%%PYTHON_SITELIBDIR%%/django/views/generic/simple.pyo
 %%PYTHON_SITELIBDIR%%/django/views/i18n.py
 %%PYTHON_SITELIBDIR%%/django/views/i18n.pyc
 %%PYTHON_SITELIBDIR%%/django/views/i18n.pyo
@@ -5435,7 +5415,6 @@ bin/django-admin.py
 @dirrm %%PYTHON_SITELIBDIR%%/django/views
 @dirrm %%PYTHON_SITELIBDIR%%/django/utils/unittest
 @dirrm %%PYTHON_SITELIBDIR%%/django/utils/translation
-@dirrm %%PYTHON_SITELIBDIR%%/django/utils/simplejson
 @dirrm %%PYTHON_SITELIBDIR%%/django/utils
 @dirrm %%PYTHON_SITELIBDIR%%/django/test
 @dirrm %%PYTHON_SITELIBDIR%%/django/templatetags
