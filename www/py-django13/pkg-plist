@@ -2241,9 +2241,6 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/spatialite/client.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/spatialite/client.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/spatialite/client.pyo
-%%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/spatialite/compiler.py
-%%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/spatialite/compiler.pyc
-%%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/spatialite/compiler.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/spatialite/creation.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/spatialite/creation.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/spatialite/creation.pyo
