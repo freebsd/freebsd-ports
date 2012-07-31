@@ -1,14 +1,14 @@
 # I have checked all headers and don't think the shared library
 # bump is a needed one.  We patch it back to prevent large
 # rebuild need.
---- build/version.var.orig	2012-04-22 13:25:08.000000000 -0700
-+++ build/version.var	2012-04-23 10:51:05.079392065 -0700
+--- build/version.var.orig	2012-07-31 09:39:26.000000000 -0700
++++ build/version.var	2012-07-31 12:03:12.618025612 -0700
 @@ -17,7 +17,7 @@
  ol_minor=4
- ol_patch=31
- ol_api_inc=20431
+ ol_patch=32
+ ol_api_inc=20432
 -ol_api_current=10
 +ol_api_current=8
- ol_api_revision=3
+ ol_api_revision=4
  ol_api_age=8
- ol_release_date="2012/04/23"
+ ol_release_date="2012/07/31"
