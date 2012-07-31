@@ -1,5 +1,5 @@
 For the port to work properly you must copy the file
-%%PREFIX%%/%%SQUIRRELDIR%%/plugins/calendar/data/config.sample.php
+%%PREFIX%%/%%SQUIRRELDIR%%/plugins/shared_calendars/data/config.sample.php
 to
-%%PREFIX%%/%%SQUIRRELDIR%%/plugins/calendar/data/config.php
+%%PREFIX%%/%%SQUIRRELDIR%%/plugins/shared_calendars/data/config.php
 and edit the configuration to meet your needs.
