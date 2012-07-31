@@ -27,7 +27,7 @@ USE_LINUX_APPS=	jpeg
 LINUX_DIST_VER=	4
 USE_LDCONFIG=	yes
 BRANDELF_DIRS=	usr/bin
-PLIST=		pkg-plist.${LINUX_RPM_ARCH}
+PLIST=		${PKGDIR}/pkg-plist.${LINUX_RPM_ARCH}
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 .include <bsd.port.mk>

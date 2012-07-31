@@ -27,6 +27,6 @@ USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	xorglibs
 LINUX_DIST_VER=	4
 USE_LDCONFIG=	yes
-PLIST=		pkg-plist.${LINUX_RPM_ARCH}
+PLIST=		${PKGDIR}/pkg-plist.${LINUX_RPM_ARCH}
 
 .include <bsd.port.mk>

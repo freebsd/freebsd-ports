@@ -23,6 +23,6 @@ USE_LINUX_APPS=	fontconfig libmng png
 RPMVERSION=	15.5
 LINUX_DIST_VER=	4
 USE_LDCONFIG=	yes
-PLIST=		pkg-plist.${LINUX_RPM_ARCH}
+PLIST=		${PKGDIR}/pkg-plist.${LINUX_RPM_ARCH}
 
 .include <bsd.port.mk>
