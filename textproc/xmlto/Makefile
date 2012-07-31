@@ -63,7 +63,10 @@ CONFIGURE_ARGS+=	--with-backend=dblatex
 .endif
 
 post-patch:
+	# get rid of nonstandard "type" option -t:
 	cd ${WRKSRC} && ${FIND} . -type f -exec ${REINPLACE_CMD} -i '' -e 's/type -t/which/;' '{}' '+'
+	# get rid of GNU-make-ism (BSD make defines $< only in suffix rules)
+	${REINPLACE_CMD} -e '/^GEN_MANPAGE/{s/\$$</$$>/;}' ${WRKSRC}/Makefile.in
 
 .if !defined(NOPORTDOCS)
 post-install:
