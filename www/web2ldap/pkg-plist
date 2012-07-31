@@ -11,6 +11,8 @@
 %%DATADIR%%/etc/web2ldap/ldapoidreg.py
 %%DATADIR%%/etc/web2ldap/ldapoidreg.pyc
 %%DATADIR%%/etc/web2ldap/localschema.ldif
+%%DATADIR%%/etc/web2ldap/properties/attribute_select_demailMaxAuthLevel.properties
+%%DATADIR%%/etc/web2ldap/properties/attribute_select_demailMaxAuthLevel.properties.de
 %%DATADIR%%/etc/web2ldap/properties/attribute_select_gender.properties
 %%DATADIR%%/etc/web2ldap/properties/attribute_select_gender.properties.de
 %%DATADIR%%/etc/web2ldap/ssl/crt/trusted-certs.crt
@@ -26,6 +28,8 @@
 %%DATADIR%%/etc/web2ldap/templates/add_orgunit.ldif
 %%DATADIR%%/etc/web2ldap/templates/add_person.ldif
 %%DATADIR%%/etc/web2ldap/templates/add_user.ldif
+%%DATADIR%%/etc/web2ldap/templates/connect.html
+%%DATADIR%%/etc/web2ldap/templates/html_begin.html
 %%DATADIR%%/etc/web2ldap/templates/inputform_account.html
 %%DATADIR%%/etc/web2ldap/templates/inputform_eduPerson.html
 %%DATADIR%%/etc/web2ldap/templates/inputform_germanBankArrangement.html
@@ -56,6 +60,7 @@
 %%DATADIR%%/etc/web2ldap/templates/read_germanBankArrangement.html.de
 %%DATADIR%%/etc/web2ldap/templates/read_inetOrgPerson.html
 %%DATADIR%%/etc/web2ldap/templates/read_inetOrgPerson.html.de
+%%DATADIR%%/etc/web2ldap/templates/read_monitorConnection.html
 %%DATADIR%%/etc/web2ldap/templates/read_msOrganization.html
 %%DATADIR%%/etc/web2ldap/templates/read_msOrganization.html.de
 %%DATADIR%%/etc/web2ldap/templates/read_msPerson.html
@@ -68,6 +73,7 @@
 %%DATADIR%%/etc/web2ldap/templates/read_organization.html.de
 %%DATADIR%%/etc/web2ldap/templates/read_posixAccount.html
 %%DATADIR%%/etc/web2ldap/templates/read_pwdPolicy.html
+%%DATADIR%%/etc/web2ldap/templates/rename.html
 %%DATADIR%%/etc/web2ldap/templates/searchform_Base.html
 %%DATADIR%%/etc/web2ldap/templates/searchform_Base.html.de
 %%DATADIR%%/etc/web2ldap/templates/searchform_accesslog.html
@@ -77,6 +83,7 @@
 %%DATADIR%%/etc/web2ldap/templates/searchform_search_options.html
 %%DATADIR%%/etc/web2ldap/templates/searchform_search_options.html.de
 %%DATADIR%%/etc/web2ldap/templates/searchform_users.html
+%%DATADIR%%/etc/web2ldap/templates/status.html
 %%DATADIR%%/etc/web2ldap/templates/vcard_organization.txt
 %%DATADIR%%/etc/web2ldap/templates/vcard_person.txt
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/__init__.py
@@ -99,14 +106,16 @@
 %%DATADIR%%/fcgi/web2ldap.pyc
 %%DATADIR%%/pylib/ipadr.py
 %%DATADIR%%/pylib/ipadr.pyc
-%%DATADIR%%/pylib/ldapdns.py
-%%DATADIR%%/pylib/ldapdns.pyc
 %%DATADIR%%/pylib/ldapsession.py
 %%DATADIR%%/pylib/ldapsession.pyc
 %%DATADIR%%/pylib/ldaputil/__init__.py
 %%DATADIR%%/pylib/ldaputil/__init__.pyc
 %%DATADIR%%/pylib/ldaputil/base.py
 %%DATADIR%%/pylib/ldaputil/base.pyc
+%%DATADIR%%/pylib/ldaputil/controls.py
+%%DATADIR%%/pylib/ldaputil/controls.pyc
+%%DATADIR%%/pylib/ldaputil/dns.py
+%%DATADIR%%/pylib/ldaputil/dns.pyc
 %%DATADIR%%/pylib/ldaputil/extldapurl.py
 %%DATADIR%%/pylib/ldaputil/extldapurl.pyc
 %%DATADIR%%/pylib/ldaputil/modlist2.py
@@ -217,10 +226,14 @@
 %%DATADIR%%/pylib/w2lapp/schema/plugins/asn1objects.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/dds.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/dds.pyc
+%%DATADIR%%/pylib/w2lapp/schema/plugins/demail.py
+%%DATADIR%%/pylib/w2lapp/schema/plugins/demail.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/dhcp.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/dhcp.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/dirx.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/dirx.pyc
+%%DATADIR%%/pylib/w2lapp/schema/plugins/dyngroup.py
+%%DATADIR%%/pylib/w2lapp/schema/plugins/dyngroup.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/edirectory.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/edirectory.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/eduperson.py
