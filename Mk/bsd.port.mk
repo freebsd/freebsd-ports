@@ -5589,7 +5589,7 @@ _PRETTY_PRINT_DEPENDS_LIST=\
 
 .if !target(pretty-print-build-depends-list)
 pretty-print-build-depends-list:
-.if defined(PKG_PEPENDS) || defined(EXTRACT_DEPENDS) || defined(PATCH_DEPENDS) || \
+.if defined(PKG_DEPENDS) || defined(EXTRACT_DEPENDS) || defined(PATCH_DEPENDS) || \
 	defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || defined(LIB_DEPENDS)
 	@${_PRETTY_PRINT_DEPENDS_LIST}
 .endif
