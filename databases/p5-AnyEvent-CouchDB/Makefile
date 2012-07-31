@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	AnyEvent-CouchDB
-PORTVERSION=	1.28
+PORTVERSION=	1.29
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A non-blocking CouchDB client based on jquery.couch.js
+
+LICENSE=	MIT
 
 BUILD_DEPENDS=	couchdb>=0.9.0:${PORTSDIR}/databases/couchdb \
 		p5-AnyEvent-HTTP>=2.11:${PORTSDIR}/www/p5-AnyEvent-HTTP \
