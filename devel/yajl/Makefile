@@ -7,6 +7,7 @@
 
 PORTNAME=	yajl
 PORTVERSION=	2.0.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://github.com/lloyd/yajl/tarball/${GITREF}/ \
 		http://files.etoilebsd.net/yajl/
@@ -23,5 +24,9 @@ LICENSE=	BSD
 
 USE_LDCONFIG=	yes
 USE_CMAKE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e "s,share/pkgconfig,libdata/pkgconfig,g" \
+		${WRKSRC}/src/CMakeLists.txt
 
 .include <bsd.port.mk>
