@@ -7,7 +7,7 @@
 
 PORTNAME=	libextractor
 PORTVERSION=	0.6.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -62,7 +62,7 @@ BROKEN=	does not package
 # for it, if not present then it will not add support for it, but it cannot
 # be disabled if present
 .if !defined(WITHOUT_EXIV2) || exists(${LOCALBASE}/include/exiv2/exif.hpp)
-LIB_DEPENDS+=	exiv2.10:${PORTSDIR}/graphics/exiv2
+LIB_DEPENDS+=	exiv2.12:${PORTSDIR}/graphics/exiv2
 PLIST_SUB+=	EXIV2=""
 .else
 PLIST_SUB+=	EXIV2="@comment "

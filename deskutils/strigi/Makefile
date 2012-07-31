@@ -6,7 +6,7 @@
 
 PORTNAME=	strigi
 PORTVERSION=	0.7.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 MASTER_SITES=	http://rdieter.fedorapeople.org/strigi/
 #MASTER_SITES=	http://www.vandenoever.info/software/strigi/ \
@@ -18,7 +18,7 @@ COMMENT=	Desktop searching program
 LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		clucene.0:${PORTSDIR}/textproc/clucene \
 		dbus-1:${PORTSDIR}/devel/dbus \
-		exiv2.10:${PORTSDIR}/graphics/exiv2 \
+		exiv2.12:${PORTSDIR}/graphics/exiv2 \
 		boost_thread:${PORTSDIR}/devel/boost-libs
 
 USE_QT4=	corelib gui dbus moc_build uic_build qmake_build rcc_build

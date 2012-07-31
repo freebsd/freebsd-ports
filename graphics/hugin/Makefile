@@ -7,7 +7,7 @@
 
 PORTNAME=	hugin
 PORTVERSION=	2011.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
 		IlmImf:${PORTSDIR}/graphics/OpenEXR \
-		exiv2.10:${PORTSDIR}/graphics/exiv2 \
+		exiv2.12:${PORTSDIR}/graphics/exiv2 \
 		pano13:${PORTSDIR}/graphics/libpano13 \
 		boost_thread:${PORTSDIR}/devel/boost-libs \
 		IlmImf:${PORTSDIR}/graphics/OpenEXR \

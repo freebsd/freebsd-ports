@@ -7,6 +7,7 @@
 
 PORTNAME=	gwenview
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -18,7 +19,7 @@ COMMENT=	Image viewer and browser for KDE 4
 LATEST_LINK=	${PORTNAME}-kde4
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		exiv2.10:${PORTSDIR}/graphics/exiv2
+		exiv2.12:${PORTSDIR}/graphics/exiv2
 
 CONFLICTS=	kdegraphics-4.[0-6].*
 

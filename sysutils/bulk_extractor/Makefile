@@ -7,6 +7,7 @@
 
 PORTNAME=	bulk_extractor
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cloud.github.com/downloads/simsong/bulk_extractor/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	krename
 PORTVERSION=	4.0.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils kde
 MASTER_SITES=	SF/${PORTNAME}/KDE4%20${PORTNAME}-stable/${PORTVERSION}
 
@@ -15,7 +15,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Very powerful batch file renamer for KDE
 
 LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib \
-		exiv2.10:${PORTSDIR}/graphics/exiv2 \
+		exiv2.12:${PORTSDIR}/graphics/exiv2 \
 		podofo.0:${PORTSDIR}/graphics/podofo
 
 LATEST_LINK=	${PORTNAME}-kde4

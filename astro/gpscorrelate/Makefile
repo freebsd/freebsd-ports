@@ -6,14 +6,14 @@
 
 PORTNAME=	gpscorrelate
 PORTVERSION=	1.5.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	astro geography
 MASTER_SITES=	http://freefoote.dview.net/linux/
 
 MAINTAINER=	Iam@LukasMaly.NET
 COMMENT=	A gps file gpx correlate exif tag in photos
 
-LIB_DEPENDS=	exiv2.10:${PORTSDIR}/graphics/exiv2 \
+LIB_DEPENDS=	exiv2.12:${PORTSDIR}/graphics/exiv2 \
 		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24
 
 MAN1=		gpscorrelate.1 gpscorrelate-gui.1
