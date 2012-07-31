@@ -7,6 +7,7 @@ include/exiv2/crwimage.hpp
 include/exiv2/datasets.hpp
 include/exiv2/error.hpp
 include/exiv2/easyaccess.hpp
+include/exiv2/epsimage.hpp
 include/exiv2/exif.hpp
 include/exiv2/exv_conf.h
 include/exiv2/exiv2.hpp
@@ -37,7 +38,7 @@ include/exiv2/xmpsidecar.hpp
 lib/libexiv2.a
 lib/libexiv2.la
 lib/libexiv2.so
-lib/libexiv2.so.10
+lib/libexiv2.so.12
 libdata/pkgconfig/exiv2.pc
 share/locale/de/LC_MESSAGES/exiv2.mo
 share/locale/es/LC_MESSAGES/exiv2.mo

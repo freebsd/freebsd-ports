@@ -6,14 +6,14 @@
 
 PORTNAME=	libkexiv2
 PORTVERSION=	0.1.9
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF/kipi/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A wrapper library to manipulate pictures metadata
 
-LIB_DEPENDS=	exiv2.10:${PORTSDIR}/graphics/exiv2
+LIB_DEPENDS=	exiv2.12:${PORTSDIR}/graphics/exiv2
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3

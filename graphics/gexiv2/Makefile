@@ -7,7 +7,7 @@
 
 PORTNAME=	gexiv2
 PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://yorba.org/download/gexiv2/${PORTVERSION:R}/
 DISTNAME=	libgexiv2-${PORTVERSION}

@@ -7,7 +7,7 @@
 
 PORTNAME=	ufraw
 PORTVERSION=	0.18
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -52,7 +52,7 @@ CONFIGURE_ARGS+=	--enable-dst-correction
 .endif
 
 .if defined(WITH_EXIV2)
-LIB_DEPENDS+=	exiv2.10:${PORTSDIR}/graphics/exiv2
+LIB_DEPENDS+=	exiv2.12:${PORTSDIR}/graphics/exiv2
 .else
 PC_FALSE+=	exiv2
 .endif

@@ -8,7 +8,7 @@
 
 PORTNAME=	kde-runtime
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -19,7 +19,7 @@ COMMENT=	Basic applications for the KDE system
 
 LIB_DEPENDS=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		exiv2.10:${PORTSDIR}/graphics/exiv2 \
+		exiv2.12:${PORTSDIR}/graphics/exiv2 \
 		xine.2:${PORTSDIR}/multimedia/libxine \
 		slp.1:${PORTSDIR}/net/openslp \
 		smbclient.0:${PORTSDIR}/net/samba-libsmbclient \

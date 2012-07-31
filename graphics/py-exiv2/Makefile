@@ -7,6 +7,7 @@
 
 PORTNAME=	exiv2
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://launchpadlibrarian.net/61465005/ \
 		http://www.dindin.ru/download/
@@ -16,7 +17,7 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Python bindings for exiv2
 
-LIB_DEPENDS=	exiv2.10:${PORTSDIR}/graphics/exiv2\
+LIB_DEPENDS=	exiv2.12:${PORTSDIR}/graphics/exiv2\
 		boost_python.4:${PORTSDIR}/devel/boost-python-libs
 
 USE_PYTHON=	yes
