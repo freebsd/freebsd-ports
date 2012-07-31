@@ -1,4 +1,3 @@
-%%WWWDIR%%/Procfile
 %%WWWDIR%%/dot.htaccess
 %%WWWDIR%%/index.fcgi
 %%WWWDIR%%/index.rb
@@ -237,11 +236,23 @@
 %%WWWDIR%%/tdiary/lang/en.rb
 %%WWWDIR%%/tdiary/lang/ja.rb
 %%WWWDIR%%/tdiary/plugin.rb
+%%WWWDIR%%/tdiary/rack/auth/basic.rb
+%%WWWDIR%%/tdiary/rack/auth/omniauth.rb
+%%WWWDIR%%/tdiary/rack/html_anchor.rb
+%%WWWDIR%%/tdiary/rack/valid_request_path.rb
 %%WWWDIR%%/tdiary/referer_manager.rb
 %%WWWDIR%%/tdiary/request.rb
 %%WWWDIR%%/tdiary/response.rb
 %%WWWDIR%%/tdiary/style/tdiary_style.rb
 %%WWWDIR%%/tdiary/style/wiki_style.rb
+%%WWWDIR%%/tdiary/tasks/assets.rake
+%%WWWDIR%%/tdiary/tasks/auth.rake
+%%WWWDIR%%/tdiary/tasks/db.rake
+%%WWWDIR%%/tdiary/tasks/doc.rake
+%%WWWDIR%%/tdiary/tasks/heroku.rake
+%%WWWDIR%%/tdiary/tasks/rdoc.rake
+%%WWWDIR%%/tdiary/tasks/rspec.rake
+%%WWWDIR%%/tdiary/tasks/test.rake
 %%WWWDIR%%/theme/3minutes/3minutes.css
 %%WWWDIR%%/theme/3minutes/README
 %%WWWDIR%%/theme/3minutes/h3.png
@@ -1941,6 +1952,92 @@
 %%WWWDIR%%/vendor/json_pure-1.6.6/tests/test_json_unicode.rb
 %%WWWDIR%%/vendor/json_pure-1.6.6/tools/fuzz.rb
 %%WWWDIR%%/vendor/json_pure-1.6.6/tools/server.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/COPYING.txt
+%%WWWDIR%%/vendor/rdtool-0.6.33/Gemfile
+%%WWWDIR%%/vendor/rdtool-0.6.33/HISTORY
+%%WWWDIR%%/vendor/rdtool-0.6.33/LICENSE.txt
+%%WWWDIR%%/vendor/rdtool-0.6.33/README.html
+%%WWWDIR%%/vendor/rdtool-0.6.33/README.ja.html
+%%WWWDIR%%/vendor/rdtool-0.6.33/README.rd
+%%WWWDIR%%/vendor/rdtool-0.6.33/README.rd.ja
+%%WWWDIR%%/vendor/rdtool-0.6.33/Rakefile
+%%WWWDIR%%/vendor/rdtool-0.6.33/TODO
+%%WWWDIR%%/vendor/rdtool-0.6.33/bin/rd2
+%%WWWDIR%%/vendor/rdtool-0.6.33/bin/rdswap.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/block-element.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/complex-list-item.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/desclist.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/document-struct.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/dot.rd2rc
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/element.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/filter.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/inline-element.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/labeled-element.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/list.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/loose-struct.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/methodlist.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/output-format-visitor.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/package.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/parser-util.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/post-install
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/rbl-file.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/rbl-suite.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/rd-struct.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/rd2html-lib.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/rd2html-opt.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/rd2man-lib.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/rd2rdo-lib.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/rd2rmi-lib.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/rdblockparser.ry
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/rdblockparser.tab.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/rdfmt.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/rdinlineparser.ry
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/rdinlineparser.tab.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/rdvisitor.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/reference-resolver.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/search-file.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/tree.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/version.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd/visitor.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/rdtool.gemspec
+%%WWWDIR%%/vendor/rdtool-0.6.33/setup.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/dummy-observer.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/dummy.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/temp-dir.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/test-block-parser.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/test-desclist-item.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/test-document-element.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/test-document-struct.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/test-element.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/test-headline.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/test-inline-parser.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/test-list-item.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/test-list.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/test-methodlist-item.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/test-nonterminal-element.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/test-nonterminal-inline.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/test-output-format-visitor.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/test-parser-util.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/test-rbl-file.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/test-rbl-suite.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/test-rd2html-lib.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/test-rdtree.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/test-rdvisitor.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/test-reference-resolver.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/test-reference.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/test-search-file.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/test-terminal-inline.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/test-textblock.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/test-tree.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/test-version.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/test/test-visitor.rb
+%%WWWDIR%%/vendor/rdtool-0.6.33/utils/rd-mode.el
+@dirrm %%WWWDIR%%/vendor/rdtool-0.6.33/utils
+@dirrm %%WWWDIR%%/vendor/rdtool-0.6.33/test
+@dirrm %%WWWDIR%%/vendor/rdtool-0.6.33/lib/rd
+@dirrm %%WWWDIR%%/vendor/rdtool-0.6.33/lib
+@dirrm %%WWWDIR%%/vendor/rdtool-0.6.33/bin
+@dirrm %%WWWDIR%%/vendor/rdtool-0.6.33
 @dirrm %%WWWDIR%%/vendor/json_pure-1.6.6/tools
 @dirrm %%WWWDIR%%/vendor/json_pure-1.6.6/tests/fixtures
 @dirrm %%WWWDIR%%/vendor/json_pure-1.6.6/tests
@@ -2304,7 +2401,10 @@
 @dirrm %%WWWDIR%%/theme/3pink
 @dirrm %%WWWDIR%%/theme/3minutes
 @dirrm %%WWWDIR%%/theme
+@dirrm %%WWWDIR%%/tdiary/tasks
 @dirrm %%WWWDIR%%/tdiary/style
+@dirrm %%WWWDIR%%/tdiary/rack/auth
+@dirrm %%WWWDIR%%/tdiary/rack
 @dirrm %%WWWDIR%%/tdiary/lang
 @dirrm %%WWWDIR%%/tdiary/io/cache
 @dirrm %%WWWDIR%%/tdiary/io
