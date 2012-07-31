@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tdiary
-PORTVERSION=	3.1.3
+PORTVERSION=	3.1.4
 CATEGORIES?=	www ruby
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/ \
 		http://www.tdiary.org/download/
@@ -19,8 +19,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
 RUN_DEPENDS=	hikidoc:${PORTSDIR}/textproc/ruby-hikidoc \
-		rubygem-imagesize>=0.1.1:${PORTSDIR}/graphics/rubygem-imagesize \
-		rd2:${PORTSDIR}/textproc/ruby-rdtool
+		rubygem-imagesize>=0.1.1:${PORTSDIR}/graphics/rubygem-imagesize
 
 NO_BUILD=	yes
 USE_RUBY=	yes
@@ -37,13 +36,13 @@ RUBY_SHEBANG_FILES=	index.fcgi \
 			misc/plugin/xmlrpc/xmlrpc.rb \
 			misc/standalone_cgi/bin/server
 
-HTML=	HOWTO-make-io.html HOWTO-make-plugin.html HOWTO-make-theme.html \
-	HOWTO-testing-tDiary.html HOWTO-use-plugin.html \
-	HOWTO-write-tDiary.en.html HOWTO-write-tDiary.html \
-	INSTALL-heroku.html INSTALL.html README.en.html README.html \
-	UPGRADE.html
-MD=	${HTML:C|$|.md|}
-PORTDOCS=	ChangeLog LICENSE doc.css ${HTML} ${MD}
+MD=	HOWTO-authenticate-in-rack.html.md HOWTO-make-io.html.md \
+	HOWTO-make-plugin.html.md HOWTO-make-theme.html.md \
+	HOWTO-testing-tDiary.html.md HOWTO-use-plugin.html.md \
+	HOWTO-write-tDiary.en.html.md HOWTO-write-tDiary.html.md \
+	INSTALL-heroku.html.md INSTALL.html.md README.en.html.md \
+	README.html.md UPGRADE.html.md
+PORTDOCS=	ChangeLog LICENSE README.md doc.css ${MD}
 
 SUB_FILES=	pkg-message tdiaryinst.rb
 SUB_LIST+=	TDIARY_LANG=${TDIARY_LANG} \
@@ -85,6 +84,7 @@ post-extract:
 	@${RM} ${WRKSRC}/Capfile
 	@${RM} ${WRKSRC}/Gemfile
 	@${RM} ${WRKSRC}/Gemfile.lock
+	@${RM} ${WRKSRC}/Procfile
 	@${RM} ${WRKSRC}/Rakefile
 	@${RM} ${WRKSRC}/config.ru
 	@${RM} -r ${WRKSRC}/.bundle
@@ -93,7 +93,6 @@ post-extract:
 	@${RM} -r ${WRKSRC}/test
 	@${RM} -r ${WRKSRC}/vendor/hikidoc-0.0.6
 	@${RM} -r ${WRKSRC}/vendor/imagesize-0.1.1/*
-	@${RM} -r ${WRKSRC}/vendor/rdtool-0.6.33
 	@${MV} ${WRKSRC}/ChangeLog ${WRKSRC}/doc
 	@${MV} ${WRKSRC}/LICENSE ${WRKSRC}/doc
 	@${MV} ${WRKSRC}/README.md ${WRKSRC}/doc
