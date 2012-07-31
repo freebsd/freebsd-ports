@@ -21,7 +21,7 @@ COMMENT=	VLC backend for Phonon
 # Required in order to avoid conflicts with multimedia/phonon.
 LATEST_LINK=    ${PORTNAME}${PKGNAMESUFFIX}
 
-LIB_DEPENDS=	vlc.7:${PORTSDIR}/multimedia/vlc
+LIB_DEPENDS=	vlc:${PORTSDIR}/multimedia/vlc
 
 PHONON_BRANCH=	stable
 
