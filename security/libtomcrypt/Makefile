@@ -9,8 +9,7 @@ PORTNAME=	libtomcrypt
 PORTVERSION=	1.17
 PORTREVISION=	2
 CATEGORIES=	security
-MASTER_SITES=	http://libtom.org/files/ \
-		http://www.atarininja.org/~wxs/distfiles/
+MASTER_SITES=	http://libtom.org/files/
 DISTNAME=	crypt-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -24,9 +23,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	library
 MAKE_JOBS_SAFE=	yes
-
-DEPRECATED=	Upstream abandoned this project.
-EXPIRATION_DATE=	2012-08-24
 
 CFLAGS+=	-I${PREFIX}/include
 
