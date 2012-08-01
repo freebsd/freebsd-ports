@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- configure.orig
 +++ configure
-@@ -5806,159 +5806,6 @@
+@@ -8276,177 +8276,13 @@
    LIBSOUND=
  fi
  
@@ -18,7 +18,7 @@ $FreeBSD$
 -set dummy pkg-config; ac_word=$2
 -{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
 -$as_echo_n "checking for $ac_word... " >&6; }
--if test "${ac_cv_path_PKG_CONFIG+set}" = set; then :
+-if ${ac_cv_path_PKG_CONFIG+:} false; then :
 -  $as_echo_n "(cached) " >&6
 -else
 -  case $PKG_CONFIG in
@@ -107,9 +107,9 @@ $FreeBSD$
 -
 -  if test $HAVE_ALSA = yes; then
 -    SAVE_CFLAGS="$CFLAGS"
--    SAVE_LDFLAGS="$LDFLAGS"
+-    SAVE_LIBS="$LIBS"
 -    CFLAGS="$ALSA_CFLAGS $CFLAGS"
--    LDFLAGS="$ALSA_LIBS $LDFLAGS"
+-    LIBS="$ALSA_LIBS $LIBS"
 -    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 -/* end confdefs.h.  */
 -#include <asoundlib.h>
@@ -152,7 +152,7 @@ $FreeBSD$
 -    fi
 -
 -    CFLAGS="$SAVE_CFLAGS"
--    LDFLAGS="$SAVE_LDFLAGS"
+-    LIBS="$SAVE_LIBS"
 -    LIBSOUND="$LIBSOUND $ALSA_LIBS"
 -    CFLAGS_SOUND="$CFLAGS_SOUND $ALSA_CFLAGS"
 -
@@ -160,6 +160,25 @@ $FreeBSD$
 -
 -  fi
 -
+-        if test x$have_sound_header = xyes || test $HAVE_ALSA = yes; then
+-     case "$opsys" in
+-              gnu-linux|freebsd|netbsd)
+-
+-$as_echo "#define HAVE_SOUND 1" >>confdefs.h
+-
+-         ;;
+-     esac
+-  fi
+-
+-
  fi
  
- for ac_header in sys/select.h sys/timeb.h sys/time.h unistd.h utime.h \
+ for ac_header in sys/select.h sys/time.h unistd.h utime.h \
+   linux/version.h sys/systeminfo.h \
+   stdio_ext.h fcntl.h coff.h pty.h sys/mman.h \
+   sys/vlimit.h sys/resource.h locale.h sys/_mbstate_t.h \
+-  sys/utsname.h pwd.h utmp.h dirent.h util.h
++  sys/utsname.h pwd.h utmp.h dirent.h util.h libutil.h
+ do :
+   as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ ac_fn_c_check_header_mongrel "$LINENO" "$ac_header" "$as_ac_Header" "$ac_includes_default"

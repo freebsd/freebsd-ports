@@ -3,12 +3,13 @@ $FreeBSD$
 
 --- src/config.in.orig
 +++ src/config.in
-@@ -1183,6 +1183,8 @@
- #endif
- #ifdef HAVE_ALLOCA_H
- # include <alloca.h>
-+#elif defined __FreeBSD__
-+#include <stdlib.h>
- #elif defined __GNUC__
- # define alloca __builtin_alloca
- #elif defined _AIX
+@@ -468,6 +468,9 @@
+ /* Define to 1 if using SELinux. */
+ #undef HAVE_LIBSELINUX
+ 
++/* Define to 1 if you have the <libutil.h> header file. */
++#undef HAVE_LIBUTIL_H
++
+ /* Define to 1 if you have the `Xext' library (-lXext). */
+ #undef HAVE_LIBXEXT
+ 

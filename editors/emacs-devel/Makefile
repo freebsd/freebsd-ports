@@ -7,7 +7,6 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}.${EMACS_REV}
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	editors ipv6
 MASTER_SITES=	http://distfiles.pirateparty.in/%SUBDIR%/ \
@@ -27,8 +26,8 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* emacs-23.* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]* \
 		emacs-nox11-[0-9]*
 
-EMACS_VER=	24.0.93
-EMACS_REV=	107364
+EMACS_VER=	24.1.50
+EMACS_REV=	109364
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_NCURSES=	yes
@@ -43,45 +42,40 @@ EMACS_DIRS=	${DATADIR}/${EMACS_VER}/leim ${DATADIR}/${EMACS_VER}/lisp ${DATADIR}
 		${PREFIX}/libexec/${PORTNAME}
 
 MAN1=		ctags.1 ebrowse.1 emacs.1 emacsclient.1 etags.1 \
-		grep-changelog.1 rcs-checkin.1
+		grep-changelog.1
 MANCOMPRESSED=	yes
 PLIST_SUB=	EMACS_VER=${EMACS_VER}
 
 MAKE_ENV=	LC_ALL=C
 
 INFO=		ada-mode auth autotype calc ccmode cl dbus dired-x \
-		ebrowse ede ediff edt efaq eieio eintr elisp emacs-mime emacs epa \
+		ebrowse ede ediff edt efaq eieio eintr elisp emacs-mime emacs-gnutls emacs epa \
 		erc ert eshell eudc flymake forms gnus idlwave info \
 		mairix-el message mh-e newsticker nxml-mode \
 		org pcl-cvs pgg rcirc reftex remember sasl sc semantic ses sieve \
 		smtpmail speedbar tramp url vip viper widget woman
 
 LATEST_LINK=	emacs-devel
-OPTIONS=	DBUS	"DBus support"			ON \
-		GCONF	"GConf support"			ON \
-		GIF	"GIF Images support"		ON \
-		GTK2	"Use GTK+ widgets"		ON \
-		GTK3	"Use GTK+ 3 widgets"		OFF \
-		JPEG	"JPEG images support"		ON \
-		M17N	"M17N support for text-shaping"	ON \
-		MOTIF	"Use Motif widgets"		OFF \
-		OTF	"Opentype Font Support"		ON \
-		PNG	"PNG images support"		ON \
-		SOUND	"Sound support"			ON \
-		SOURCES	"Install source code"		ON \
-		SVG	"SVG images support"		ON \
-		TIFF	"TIFF images support"		ON \
-		XAW	"Use Athena widgets"		OFF \
-		XAW3D	"Use Athena3D widgets"		OFF \
-		SYNC_INPUT	"Synchronously process asynchronous input"	ON \
-		SCROLLBARS	"Without toolkit scroll-bars"			ON \
-		XFT	"Freetype fonts support"	ON \
-		XIM	"X Input Method support"	ON \
-		XML	"XML Parser support"		ON \
-		XPM	"XPM images support"		ON \
-		IMAGEMAGICK	"ImageMagick support"	ON \
-		GNUTLS	"GNUTLS support"		ON \
-		GSETTINGS	"GSettings support"	ON
+OPTIONS_DEFINE=	DBUS GCONF GIF JPEG M17N OTF PNG SOUND SOURCES SVG TIFF SYNC_INPUT SCROLLBARS XFT \
+		XIM XML XPM MAGICK GNUTLS GSETTINGS
+
+OPTIONS_SINGLE=	X11TOOLKIT
+
+GSETTINGS_DESC=		GSettings support
+SCROLLBARS_DESC=	Toolkit scroll-bars
+SOUND_DESC=		Sound support
+SOURCES_DESC=		Install sources
+SYNC_INPUT_DESC=	Synchronously process asynchronous input
+XAW_DESC=		Athena widgets
+XAW3D_DESC=		Athena3D widgets
+XIM_DESC=		X Input Method Support
+M17N_DESC=		M17N support for text-shaping
+OTF_DESC=		Opentype fonts suport
+
+OPTIONS_SINGLE_X11TOOLKIT=	GTK2 GTK3 XAW XAW3D MOTIF
+
+OPTIONS_DEFAULT=DBUS GCONF GIF GTK2 JPEG M17N OTF PNG SOUND SOURCES SVG TIFF SYNC_INPUT \
+		SCROLLBARS XFT XIM XML XPM MAGICK GNUTLS GSETTINGS
 
 .include <bsd.port.options.mk>
 
@@ -93,158 +87,147 @@ CONFIGURE_ARGS+=	--without-x
 USE_XORG=	x11
 USE_GNOME=
 
-.if defined(WITHOUT_SVG)
-CONFIGURE_ARGS+=	--without-rsvg
-.else
+.if ${PORT_OPTIONS:MSVG}
 USE_GNOME+=	librsvg2
+.else
+CONFIGURE_ARGS+=	--without-rsvg
 .endif
 
-.if defined(WITHOUT_GTK2) && defined(WITHOUT_GTK3)
-.if defined(WITH_XAW)
-.if defined(WITH_XAW3D) || defined(WITH_MOTIF)
-IGNORE=	please choose only one toolkit: GTK+/GTK+3/Motif/Xaw/Xaw3d
-.endif
-USE_XORG=	xaw
-CONFIGURE_ARGS+=	--with-x-toolkit=athena --without-xaw3d
-.elif defined(WITH_XAW3D)
-.if defined(WITH_MOTIF)
-IGNORE=	please choose only one toolkit: GTK+/GTK+3/Motif/Xaw/Xaw3d
-.endif
-LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
-CONFIGURE_ARGS+=	--with-x-toolkit=athena
-.elif defined(WITH_MOTIF)
-USE_MOTIF=	yes
-CONFIGURE_ARGS+=	--with-x-toolkit=motif
-.else
-IGNORE=	please choose a toolkit: GTK+/GTK+3/Motif/Xaw/Xaw3d, or build without X11 support
-.endif
-.else
-.if defined(WITH_XAW) || defined(WITH_XAW3D) || defined(WITH_MOTIF)
-IGNORE=	please choose only one toolkit: GTK+/GTK+3/Motif/Xaw/Xaw3d
-.endif
-INSTALLS_ICONS=	yes
-.if defined(WITH_GTK3) && defined(WITHOUT_GTK2)
-USE_GNOME+=	gtk30
-CONFIGURE_ARGS+=	--with-x-toolkit=gtk3
-.elif defined(WITH_GTK2) && defined(WITHOUT_GTK3)
+.if ${PORT_OPTIONS:MGTK2}
 USE_GNOME+=	gtk20
 CONFIGURE_ARGS+=	--with-x-toolkit=gtk
-.else
-IGNORE=	please choose only one toolkit: GTK+/GTK+3/Motif/Xaw/Xaw3d
-.endif
+.elif ${PORT_OPTIONS:MGTK3}
+USE_GNOME+=	gtk30
+CONFIGURE_ARGS+=	--with-x-toolkit=gtk3
+.elif ${PORT_OPTIONS:MXAW3D}
+LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
+CONFIGURE_ARGS+=	--with-x-toolkit=athena
+.elif ${PORT_OPTIONS:MXAW}
+USE_XORG=	xaw
+CONFIGURE_ARGS+=	--with-x-toolkit=athena --without-xaw3d
+.elif ${PORT_OPTIONS:MMOTIF}
+USE_MOTIF=	yes
+CONFIGURE_ARGS+=	--with-x-toolkit=motif
 .endif
 
-.if defined(WITHOUT_SCROLLBARS)
+.if !${PORT_OPTIONS:MSCROLLBARS}
 CONFIGURE_ARGS+=	--without-toolkit-scroll-bars
 .endif
 
-.if defined(WITHOUT_SYNC_INPUT)
+.if !${PORT_OPTIONS:MSYNC_INPUT}
 CONFIGURE_ARGS+=	--without-sync-input
 .endif
 
-.if defined(WITHOUT_JPEG)
-CONFIGURE_ARGS+=	--without-jpeg
-.else
+.if ${PORT_OPTIONS:MJPEG}
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
+.else
+CONFIGURE_ARGS+=	--without-jpeg
 .endif
 
-.if defined(WITHOUT_TIFF)
-CONFIGURE_ARGS+=	--without-tiff
-.else
+.if ${PORT_OPTIONS:MTIFF}
 LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
+.else
+CONFIGURE_ARGS+=	--without-tiff
 .endif
 
-.if defined(WITHOUT_GIF)
-CONFIGURE_ARGS+=	--without-gif
-.else
+.if ${PORT_OPTIONS:MGIF}
 LIB_DEPENDS+=   gif.5:${PORTSDIR}/graphics/giflib
+.else
+CONFIGURE_ARGS+=	--without-gif
 .endif
 
-.if defined(WITHOUT_PNG)
-CONFIGURE_ARGS+=	--without-png
-.else
+.if ${PORT_OPTIONS:MPNG}
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
+.else
+CONFIGURE_ARGS+=	--without-png
 .endif
 
-.if defined(WITHOUT_XPM)
-CONFIGURE_ARGS+=	--without-xpm
-.else
+.if ${PORT_OPTIONS:MXPM}
 USE_XORG+=	xpm
+.else
+CONFIGURE_ARGS+=	--without-xpm
 .endif
 
-.if defined(WITHOUT_XFT)
-.if defined(WITH_M17N)
-IGNORE=	m17n support requires Xft. Please run 'make config'
-.elif defined(WITH_OTF)
-IGNORE=	otf support requires Xft. Please run 'make config'
-.else
-CONFIGURE_ARGS+=	--without-xft
-.endif
-.else
+.if ${PORT_OPTIONS:MXFT}
 USE_XORG+=	xft
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
-.endif
-
-.if defined(WITHOUT_IMAGEMAGICK)
-CONFIGURE_ARGS+=	--without-imagemagick
-.else
-LIB_DEPENDS+=		MagickCore.5:${PORTSDIR}/graphics/ImageMagick
-.endif
-
-.if defined(WITHOUT_M17N)
-CONFIGURE_ARGS+=	--without-m17n-flt
-.else
-.if !defined(WITHOUT_XFT)
+CONFIGURE_ARGS+=	--with-xft
+.if ${PORT_OPTIONS:MM17N}
+CONFIGURE_ARGS+=	--with-m17n-flt
 LIB_DEPENDS+=	m17n.4:${PORTSDIR}/devel/m17n-lib
-.endif
-.endif
-
-.if defined(WITHOUT_OTF)
-CONFIGURE_ARGS+=	--without-libotf
 .else
-.if !defined(WITHOUT_XFT)
+CONFIGURE_ARGS+=	--without-m17n-flt
+.endif
+.if ${PORT_OPTIONS:MOTF}
+CONFIGURE_ARGS+=	--with-otf
 LIB_DEPENDS+=	otf.0:${PORTSDIR}/print/libotf
+.else
+CONFIGURE_ARGS+=	--without-libotf
 .endif
+.else
+CONFIGURE_ARGS+=	--without-xft
+.if ${PORT_OPTIONS:MM17N}
+IGNORE=	m17n support for text-shaping requires Xft. Please run 'make config'
+.elif ${PORT_OPTIONS:MOTF}
+IGNORE=	opentype fonts support requires Xft. Please run 'make config'
+.endif
+CONFIGURE_ARGS+=	--without-otf --without-m17n-flt
 .endif
 
-.if defined(WITHOUT_GSETTINGS)
-CONFIGURE_ARGS+=	--without-gsettings
+.if ${PORT_OPTIONS:MMAGICK}
+LIB_DEPENDS+=		MagickCore.5:${PORTSDIR}/graphics/ImageMagick
+CONFIGURE_ARGS+=	--with-imagemagick
 .else
+CONFIGURE_ARGS+=	--without-imagemagick
+.endif
+
+.if ${PORT_OPTIONS:MGSETTINGS}
 USE_GNOME+=	glib20
-.endif
-
-.if defined(WITHOUT_GCONF)
-CONFIGURE_ARGS+=	--without-gconf
+CONFIGURE_ARGS+=	--with-gsettings
 .else
-USE_GNOME+=	gconf2
+CONFIGURE_ARGS+=	--without-gsettings
 .endif
 
-.if defined(WITHOUT_XIM)
+.if ${PORT_OPTIONS:MGCONF}
+USE_GNOME+=	gconf2
+CONFIGURE_ARGS+=	--with-gconf
+.else
+CONFIGURE_ARGS+=	--without-gconf
+.endif
+
+.if ${PORT_OPTIONS:MXIM}
+CONFIGURE_ARGS+=	--with-xim
+.else
 CONFIGURE_ARGS+=	--without-xim
 .endif
 
 .endif
 
-.if defined(WITHOUT_SOUND)
+.if ${PORT_OPTIONS:MSOUND}
+CONFIGURE_ARGS+=	--with-sound
+.else
 CONFIGURE_ARGS+=	--without-sound
 .endif
 
-.if defined(WITHOUT_DBUS)
-CONFIGURE_ARGS+=	--without-dbus
-.else
+.if ${PORT_OPTIONS:MDBUS}
 LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
+CONFIGURE_ARGS+=	--with-dbus
+.else
+CONFIGURE_ARGS+=	--without-dbus
 .endif
 
-.if defined(WITHOUT_XML)
-CONFIGURE_ARGS+=	--without-xml2
-.else
+.if ${PORT_OPTIONS:MXML}
 USE_GNOME+=		libxml2
+CONFIGURE_ARGS+=	--with-xml2
+.else
+CONFIGURE_ARGS+=	--without-xml2
 .endif
 
-.if defined(WITHOUT_GNUTLS)
-CONFIGURE_ARGS+=	--without-gnutls
-.else
+.if ${PORT_OPTIONS:MGNUTLS}
 LIB_DEPENDS+=		gnutls.47:${PORTSDIR}/security/gnutls
+CONFIGURE_ARGS+=	--with-gnutls
+.else
+CONFIGURE_ARGS+=	--without-gnutls
 .endif
 
 .include <bsd.port.pre.mk>

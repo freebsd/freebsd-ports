@@ -1,6 +1,9 @@
---- Makefile.in.orig	Tue Jun 23 07:41:36 2009 +0300
-+++ Makefile.in	Tue Jun 23 07:39:33 2009 +0300
-@@ -461,14 +461,6 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig
++++ Makefile.in
+@@ -518,14 +518,6 @@
  
  install-arch-indep: mkdir info install-etc
  	-set ${COPYDESTS} ; \
@@ -15,25 +18,26 @@
  	mkdir ${COPYDESTS} ; \
  	chmod ugo+rx ${COPYDESTS} ; \
  	unset CDPATH; \
-@@ -570,9 +562,9 @@
+@@ -625,10 +617,10 @@
  	   cd ${srcdir}/info ; \
  	   for elt in $(INFO_FILES); do \
- 	      test "$(MAKEINFO)" = "off" && ! test -e $$elt && continue; \
+ 	      test "$(HAVE_MAKEINFO)" = "no" && test ! -f $$elt && continue; \
 -	      for f in `ls $$elt $$elt-[1-9] $$elt-[1-9][0-9] 2>/dev/null`; do \
--	        ${INSTALL_DATA} $$f $(DESTDIR)${infodir}/$$f; \
++  	      for f in `ls $$elt 2>/dev/null`; do \
+ 	       (cd $${thisdir}; \
+-	        ${INSTALL_DATA} ${srcdir}/info/$$f $(DESTDIR)${infodir}/$$f); \
 -	        chmod a+r $(DESTDIR)${infodir}/$$f; \
-+	      for f in `ls $$elt 2>/dev/null`; do \
-+	        ${INSTALL_DATA} $$f $(DESTDIR)${infodir}/$$f.info; \
-+	        chmod a+r $(DESTDIR)${infodir}/$$f.info; \
- 	      done; \
- 	   done); \
- 	else true; fi
-@@ -583,7 +575,7 @@
++  	        ${INSTALL_DATA} ${srcdir}/info/$$f $(DESTDIR)${infodir}/$$f.info); \
++  	        chmod a+r $(DESTDIR)${infodir}/$$f.info; \
+ 	        if [ -n "${GZIP_INFO}" ] && [ -n "${GZIP_PROG}" ]; then \
+ 	          rm -f $(DESTDIR)${infodir}/$$f.gz; \
+ 	          ${GZIP_PROG} -9n $(DESTDIR)${infodir}/$$f; \
+@@ -643,7 +635,7 @@
  	  for elt in $(INFO_FILES); do \
- 	    test "$(MAKEINFO)" = "off" && ! test -e $$elt && continue; \
+ 	    test "$(HAVE_MAKEINFO)" = "no" && test ! -f $$elt && continue; \
  	    (cd $${thisdir}; \
 -	     ${INSTALL_INFO} --info-dir=$(DESTDIR)${infodir} $(DESTDIR)${infodir}/$$elt); \
 +	     ${INSTALL_INFO} --info-dir=$(DESTDIR)${infodir} $(DESTDIR)${infodir}/$$elt.info); \
  	  done; \
  	else true; fi
- 	-chmod -R a+r $(DESTDIR)${datadir}/emacs/${version} $(DESTDIR)${datadir}/emacs/site-lisp ${COPYDESTS} $(DESTDIR)${infodir}
+ 	-chmod -R a+r $(DESTDIR)${datadir}/emacs/${version} ${COPYDESTS}

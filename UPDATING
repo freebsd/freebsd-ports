@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120801:
+  AFFECTS: users of editors/emacs
+  AUTHOR: ashish@FreeBSD.org
+
+  GNU Emacs port is updated to 24.1. Emacs 23 is moved to editors/emacs23.
+
+  If you prefer to stick with Emacs 23, please specify EMACS_PORT_NAME=emacs23
+  in /etc/make.conf, and do:
+
+  # portmaster -o editors/emacs23 editors/emacs
+
 20120726:
   AFFECTS: users of www/firefox, www/seamonkey, mail/thunderbird, www/libxul
   AUTHOR: gecko@FreeBSD.org
