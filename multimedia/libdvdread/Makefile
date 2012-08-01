@@ -7,7 +7,7 @@
 
 PORTNAME=	libdvdread
 PORTVERSION=	4.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 # Svn repository URL : svn://svn.mplayerhq.hu/dvdnav/trunk/libdvdread
 MASTER_SITES=	http://dvdnav.mplayerhq.hu/releases/ \
@@ -28,12 +28,11 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}" \
 		--shlibdir="${PREFIX}/lib" \
 		--incdir="${PREFIX}/include/dvdread" \
 		--disable-opts \
-		--disable-debug \
 		--cc="${CC}"
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DVDCSS
+OPTIONS_DEFINE=	DVDCSS DEBUG
 .if !defined(PACKAGE_BUILDING)
 OPTIONS_DEFAULT=	DVDCSS
 .endif
@@ -45,6 +44,12 @@ DVDCSS_LIBVERSION=	3
 
 .if ${PORT_OPTIONS:MDVDCSS}
 LIB_DEPENDS+=	dvdcss:${PORTSDIR}/multimedia/libdvdcss
+.endif
+
+.if ${PORT_OPTIONS:MDEBUG}
+CONFIGURE_ARGS+=	--enable-debug --disable-strip
+.else
+CONFIGURE_ARGS+=	--disable-debug
 .endif
 
 post-patch:
