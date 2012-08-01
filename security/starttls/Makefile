@@ -7,7 +7,7 @@
 
 PORTNAME=	starttls
 PORTVERSION=	0.10
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.opaopa.org/pub/elisp/
 

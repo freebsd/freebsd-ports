@@ -7,7 +7,7 @@
 
 PORTNAME=	irchat-jp
 PORTVERSION=	26.d
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	irc elisp
 MASTER_SITES=	http://www.ircnet.jp/dist/irchat/:master \
 		${MASTER_SITE_LOCAL:S/$/:backup/}

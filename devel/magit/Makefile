@@ -7,7 +7,7 @@
 
 PORTNAME=	magit
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel elisp
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://cloud.github.com/downloads/magit/magit/

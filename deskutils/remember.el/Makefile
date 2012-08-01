@@ -7,7 +7,7 @@
 
 PORTNAME=	remember.el
 PORTVERSION=	2.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	deskutils elisp
 MASTER_SITES=	http://download.gna.org/remember-el/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
