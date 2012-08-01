@@ -17,7 +17,7 @@ COMMENT=	GObject-based wrapper around the Exiv2 library
 
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool \
 		gm4:${PORTSDIR}/devel/m4
-LIB_DEPENDS=	exiv2.10:${PORTSDIR}/graphics/exiv2
+LIB_DEPENDS=	exiv2.12:${PORTSDIR}/graphics/exiv2
 
 USE_BZIP2=	yes
 USE_GNOME=	glib20
