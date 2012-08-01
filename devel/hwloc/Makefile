@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	hwloc
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5
 CATEGORIES=	devel
-MASTER_SITES=	http://www.open-mpi.org/software/hwloc/v1.4/downloads/ \
-		http://icl.cs.utk.edu/open-mpi/software/hwloc/v1.4/downloads/
+MASTER_SITES=	http://www.open-mpi.org/software/hwloc/v1.5/downloads/ \
+		http://icl.cs.utk.edu/open-mpi/software/hwloc/v1.5/downloads/
 
 MAINTAINER=	phd_kimberlite@yahoo.co.jp
 COMMENT=	The Portable Hardware Locality software package
@@ -38,7 +38,7 @@ CONFIGURE_ARGS+=	--disable-cairo \
 .else
 CONFIGURE_ARGS+=	--enable-cairo \
 			--with-x
-LIB_DEPENDS+=		cairo.2:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS+=		cairo:${PORTSDIR}/graphics/cairo
 USE_XORG=		x11
 .endif
 
@@ -58,7 +58,7 @@ post-install:
 	@(cd ${MAN1PREFIX}/man/man1/ ;\
 		${LN} -sf lstopo.1.gz hwloc-info.1.gz ; \
 		${LN} -sf lstopo.1.gz hwloc-ls.1.gz ;\
-		${LN} -sf hwloc-calc.1.gz hwloc-mask.1.gz )
+		${LN} -sf lstopo.1.gz lstopo-no-graphics.1.gz )
 .ifdef !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/html
 	@${INSTALL_DATA} ${WRKSRC}/doc/doxygen-doc/html/* ${DOCSDIR}/html/.

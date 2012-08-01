@@ -1,6 +1,6 @@
---- configure.orig	2012-02-28 06:06:52.000000000 +0900
-+++ configure	2012-05-06 14:26:15.000000000 +0900
-@@ -5569,7 +5569,7 @@
+--- configure.orig	2012-07-30 17:36:50.000000000 +0900
++++ configure	2012-08-01 19:12:58.000000000 +0900
+@@ -7001,7 +7001,7 @@
      { $as_echo "$as_me:${as_lineno-$LINENO}: checking which CPU support to include" >&5
  $as_echo_n "checking which CPU support to include... " >&6; }
      case ${target} in

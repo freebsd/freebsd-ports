@@ -1,5 +1,5 @@
-MAN1=		hwloc-assembler.1 \
-		hwloc-assembler-remote.1 \
+MAN1=		hwloc-assembler-remote.1 \
+		hwloc-assembler.1 \
 		hwloc-bind.1 \
 		hwloc-calc.1 \
 		hwloc-distances.1 \
@@ -28,6 +28,9 @@ MAN3=		HWLOC_API_VERSION.3 \
 		HWLOC_OBJ_BRIDGE_HOST.3 \
 		HWLOC_OBJ_BRIDGE_PCI.3 \
 		HWLOC_OBJ_CACHE.3 \
+		HWLOC_OBJ_CACHE_DATA.3 \
+		HWLOC_OBJ_CACHE_INSTRUCTION.3 \
+		HWLOC_OBJ_CACHE_UNIFIED.3 \
 		HWLOC_OBJ_CORE.3 \
 		HWLOC_OBJ_GROUP.3 \
 		HWLOC_OBJ_MACHINE.3 \
@@ -47,6 +50,7 @@ MAN3=		HWLOC_API_VERSION.3 \
 		HWLOC_RESTRICT_FLAG_ADAPT_DISTANCES.3 \
 		HWLOC_RESTRICT_FLAG_ADAPT_IO.3 \
 		HWLOC_RESTRICT_FLAG_ADAPT_MISC.3 \
+		HWLOC_TOPOLOGY_FLAG_ICACHES.3 \
 		HWLOC_TOPOLOGY_FLAG_IO_BRIDGES.3 \
 		HWLOC_TOPOLOGY_FLAG_IO_DEVICES.3 \
 		HWLOC_TOPOLOGY_FLAG_IS_THISSYSTEM.3 \
@@ -120,14 +124,12 @@ MAN3=		HWLOC_API_VERSION.3 \
 		hwloc_cpubind_flags_t.3 \
 		hwloc_cpuset_from_glibc_sched_affinity.3 \
 		hwloc_cpuset_from_linux_libnuma_bitmask.3 \
-		hwloc_cpuset_from_linux_libnuma_nodemask.3 \
 		hwloc_cpuset_from_linux_libnuma_ulongs.3 \
 		hwloc_cpuset_from_nodeset.3 \
 		hwloc_cpuset_from_nodeset_strict.3 \
 		hwloc_cpuset_t.3 \
 		hwloc_cpuset_to_glibc_sched_affinity.3 \
 		hwloc_cpuset_to_linux_libnuma_bitmask.3 \
-		hwloc_cpuset_to_linux_libnuma_nodemask.3 \
 		hwloc_cpuset_to_linux_libnuma_ulongs.3 \
 		hwloc_cpuset_to_nodeset.3 \
 		hwloc_cpuset_to_nodeset_strict.3 \
@@ -150,6 +152,7 @@ MAN3=		HWLOC_API_VERSION.3 \
 		hwloc_get_area_membind.3 \
 		hwloc_get_area_membind_nodeset.3 \
 		hwloc_get_cache_covering_cpuset.3 \
+		hwloc_get_cache_type_depth.3 \
 		hwloc_get_child_covering_cpuset.3 \
 		hwloc_get_closest_objs.3 \
 		hwloc_get_common_ancestor_obj.3 \
@@ -203,6 +206,7 @@ MAN3=		HWLOC_API_VERSION.3 \
 		hwloc_get_whole_distance_matrix_by_depth.3 \
 		hwloc_get_whole_distance_matrix_by_type.3 \
 		hwloc_ibv_get_device_cpuset.3 \
+		hwloc_ibv_get_device_osdev_by_name.3 \
 		hwloc_linux_get_tid_cpubind.3 \
 		hwloc_linux_parse_cpumap_file.3 \
 		hwloc_linux_set_tid_cpubind.3 \
@@ -211,11 +215,9 @@ MAN3=		HWLOC_API_VERSION.3 \
 		hwloc_mx_board_get_device_cpuset.3 \
 		hwloc_mx_endpoint_get_device_cpuset.3 \
 		hwloc_nodeset_from_linux_libnuma_bitmask.3 \
-		hwloc_nodeset_from_linux_libnuma_nodemask.3 \
 		hwloc_nodeset_from_linux_libnuma_ulongs.3 \
 		hwloc_nodeset_t.3 \
 		hwloc_nodeset_to_linux_libnuma_bitmask.3 \
-		hwloc_nodeset_to_linux_libnuma_nodemask.3 \
 		hwloc_nodeset_to_linux_libnuma_ulongs.3 \
 		hwloc_obj.3 \
 		hwloc_obj_add_info.3 \
@@ -228,6 +230,8 @@ MAN3=		HWLOC_API_VERSION.3 \
 		hwloc_obj_attr_u_hwloc_pcidev_attr_s.3 \
 		hwloc_obj_bridge_type_e.3 \
 		hwloc_obj_bridge_type_t.3 \
+		hwloc_obj_cache_type_e.3 \
+		hwloc_obj_cache_type_t.3 \
 		hwloc_obj_cpuset_snprintf.3 \
 		hwloc_obj_get_info_by_name.3 \
 		hwloc_obj_info_s.3 \
@@ -314,7 +318,6 @@ MAN3=		HWLOC_API_VERSION.3 \
 		hwlocality_information.3 \
 		hwlocality_linux.3 \
 		hwlocality_linux_libnuma_bitmask.3 \
-		hwlocality_linux_libnuma_nodemask.3 \
 		hwlocality_linux_libnuma_ulongs.3 \
 		hwlocality_membinding.3 \
 		hwlocality_myriexpress.3 \
