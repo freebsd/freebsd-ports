@@ -7,6 +7,7 @@
 
 PORTNAME=	libdvdnav
 PORTVERSION=	4.2.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 # Svn repository URL : svn://svn.mplayerhq.hu/dvdnav/trunk/libdvdnav
 MASTER_SITES=	http://dvdnav.mplayerhq.hu/releases/ \
@@ -18,7 +19,7 @@ COMMENT=	MPlayer version of the libdvdnav project
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS=	dvdread:${PORTSDIR}/multimedia/libdvdread
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
@@ -29,14 +30,23 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}" \
 		--shlibdir="${PREFIX}/lib" \
 		--incdir="${PREFIX}/include/dvdnav" \
 		--disable-opts \
-		--disable-debug \
 		--cc="${CC}"
 USE_GMAKE=	yes
 CONFLICTS=	libdvdnav-mplayer-[0-9]*
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	DEBUG
+
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MDEBUG}
+CONFIGURE_ARGS+=	--enable-debug --disable-strip
+.else
+CONFIGURE_ARGS+=	--disable-debug
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^threadlib="-lpthread"|threadlib="${PTHREAD_LIBS}"|g' \
 		${WRKSRC}/configure2
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
