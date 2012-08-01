@@ -228,7 +228,6 @@
  42.375,	-71.106,	"cracauer"			# Cambridge, MA, USA
  42.34,		-71.19,		"wollman"	align=right	# Brighton, MA, USA
  42.28,		-71.23,		"tmclaugh"	align=left	# Needham, MA, USA
--12.0500,	-77.0500,	"acm"				# Lima, Peru
  42.7430,	-71.5915,	"glarkin"			# Hollis, NH, USA 
  41.354,	-71.967,	"deischen"			# Mystic, CT, USA
  45.50,		-73.6666,	"bmilekic"			# Montreal, Quebec, Canada
@@ -244,6 +243,7 @@
  42.26785,	-76.28954,	"pat"				# Ithaca, NY, USA
  39.046,	-76.442,	"patrick"			# Annapolis, MD, USA
  44.229844,	-76.48019,	"adamw"				# Kingston, ON, Canada
+-12.0500,	-77.0500,	"acm"				# Lima, Peru
  38.836899,	-77.113810,	"pgollucci"			# Old Town, VA, USA
  38.882,	-77.171,	"trhodes"			# Falls Church, VA, USA
  39.128555,	-77.203029,	"   ,green"			# Gaithersburg, MD, USA
@@ -271,8 +271,8 @@
  43.19,		-89.38,		"jlemon"			# Madison, WI, USA
  43.063,	-89.452,	"nwhitehorn"			# Madison, WI, USA
  41.748,	-92.724,	"brooks"			# (CORE) Grinnell, IA, USA
- 37.104,	-121.606,	"jpaetzel"			# San Martin, CA, USA
  44.99,		-93.25,		"mpp"				# Minneapolis, MN, USA
+ 44.89,		-93.35,		"bdrewery"			# Minneapolis, MN, USA
  42.02,		-93.67,		"ghelmer"			# Ames, IA, USA
  29.834,	-95.00,		"     ,chris"			# Houston, TX, USA
  30.715833	-95.5525,	"ade"				# Huntsville, TX, USA
@@ -297,6 +297,7 @@
  33.979,	-118.439,	"                           dougb,"# Marina del Rey, CA USA
  35.383,	-120.659,	"jgh"				# San Luis Obispo, CA, USA
  39.25,		-121.02,	"truckman"			# Nevada City, CA, USA
+ 37.104,	-121.606,	"jpaetzel"			# San Martin, CA, USA
  38.54,		-121.76,	"mharo"				# Davis, CA, USA
  37.4014,	-121.9265,	"weongyo"			# San Jose, CA, USA
  37.40,		-121.94,	"alfred"			# Santa Clara, CA, USA
