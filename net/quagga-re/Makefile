@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quagga
-PORTVERSION=	0.99.17.10
+PORTVERSION=	0.99.17.11
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://cloud.github.com/downloads/Quagga-RE/quagga-RE/
 PKGNAMESUFFIX=	-re
@@ -21,6 +21,8 @@ USE_GMAKE=		yes
 USE_LDCONFIG=		yes
 USE_PERL5_BUILD=	yes
 BUILD_DEPENDS+=		gawk:${PORTSDIR}/lang/gawk
+LIB_DEPENDS+=		gcrypt:${PORTSDIR}/security/libgcrypt
+CONFIGURE_ARGS+=	--with-libgcrypt
 
 MAN1=		vtysh.1
 MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8
@@ -115,7 +117,7 @@ CONFIGURE_ARGS+=--enable-tcp-zebra
 .endif
 
 .if defined(WITH_DLMALLOC)
-LIB_DEPENDS+=dlmalloc.2:${PORTSDIR}/devel/libdlmalloc
+LIB_DEPENDS+=dlmalloc:${PORTSDIR}/devel/libdlmalloc
 LDFLAGS+=-ldlmalloc
 SUB_LIST=	RCLDCONFIG=ldconfig
 .else
