@@ -15,6 +15,7 @@ sbin/portsclean
 sbin/portsdb
 sbin/portupgrade
 sbin/portversion
+@exec /bin/mkdir -p %%RUBY_SITELIBDIR%%/pkgtools
 %%RUBY_SITELIBDIR%%/pkgtools/pkg.rb
 %%RUBY_SITELIBDIR%%/pkgtools/pkgdb.rb
 %%RUBY_SITELIBDIR%%/pkgtools/pkgdbtools.rb
