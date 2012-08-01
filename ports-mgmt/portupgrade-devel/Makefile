@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20120611
+PORTVERSION=	20120801
 PORTEPOCH=	3
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://github.com/pkgtools/pkgtools/tarball/${GITVERSION}/ \
-		http://www.shatow.net/freebsd/
+		http://mirror.shatow.net/freebsd/pkgtools/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	pkgtools-pkgtools-${GITVERSION}
 
-MAINTAINER=	bryan@shatow.net
+MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	FreeBSD ports/packages management tool (devel version)
 
 LICENSE=	BSD
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
 CONFLICTS_INSTALL=	portupgrade-[0-9]*
 
 FETCH_ARGS=	-Fpr
-GITVERSION=	b0761c8
+GITVERSION=	b381859
 
 DIST_SUBDIR=	${PORTNAME}
 USE_RUBY=	yes
