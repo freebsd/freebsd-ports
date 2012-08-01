@@ -5,7 +5,6 @@ bin/emacs-%%EMACS_VER%%
 bin/emacsclient
 bin/etags
 bin/grep-changelog
-bin/rcs-checkin
 share/applications/emacs.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/site-lisp/site-start.el
 %%DATADIR%%/%%EMACS_VER%%/site-lisp/subdirs.el

@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- configure.in.orig
-+++ configure.in
-@@ -1169,39 +1169,10 @@
+--- configure.ac.orig
++++ configure.ac
+@@ -1166,39 +1166,10 @@
    AC_CHECK_LIB(ossaudio, _oss_ioctl, LIBSOUND=-lossaudio, LIBSOUND=)
    AC_SUBST(LIBSOUND)
  
@@ -44,12 +44,30 @@ $FreeBSD$
       case "$opsys" in
         dnl defined __FreeBSD__ || defined __NetBSD__ || defined __linux__
         gnu-linux|freebsd|netbsd)
-@@ -1218,7 +1189,7 @@
-   linux/version.h sys/systeminfo.h \
-   stdio_ext.h fcntl.h coff.h pty.h sys/mman.h \
-   sys/vlimit.h sys/resource.h locale.h sys/_mbstate_t.h \
+@@ -1215,7 +1186,7 @@
+   linux/version.h sys/systeminfo.h
+   stdio_ext.h fcntl.h coff.h pty.h
+   sys/vlimit.h sys/resource.h
 -  sys/utsname.h pwd.h utmp.h dirent.h util.h)
 +  sys/utsname.h pwd.h utmp.h dirent.h util.h libutil.h)
-
+ 
  AC_MSG_CHECKING(if personality LINUX32 can be set)
  AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <sys/personality.h>]], [[personality (PER_LINUX32)]])],
+@@ -3378,7 +3349,7 @@
+     AC_DEFINE(PTY_TTY_NAME_SPRINTF, [] )
+     ;;
+ 
+-  darwin )
++  darwin | freebsd )
+     AC_DEFINE(PTY_ITERATION, [int i; for (i = 0; i < 1; i++)] )
+     dnl Not used, because PTY_ITERATION is defined.
+     AC_DEFINE(FIRST_PTY_LETTER, ['p'])
+@@ -3390,7 +3361,7 @@
+     AC_DEFINE(PTY_TTY_NAME_SPRINTF, [] )
+     ;;
+ 
+-  gnu | freebsd | netbsd | openbsd )
++  gnu | netbsd | openbsd )
+     AC_DEFINE(FIRST_PTY_LETTER, ['p'])
+     ;;
+ 

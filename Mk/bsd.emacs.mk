@@ -1,13 +1,13 @@
 #
-#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.89 2012-02-22 13:25:25 ashish Exp $
+#	$FreeBSD$
 #
 #	bsd.emacs.mk - 19990829 Shigeyuki Fukushima.
 #
 
 Emacs_Include=			bsd.emacs.mk
-Emacs_Include_MAINTAINER=	ports@FreeBSD.org
+Emacs_Include_MAINTAINER=	ashish@FreeBSD.org
 
-EMACS_PORT_NAME?=	emacs23
+EMACS_PORT_NAME?=	emacs24
 
 #
 # This file for ports which depend on emacs family.
@@ -114,10 +114,27 @@ DESCR?=			${PKGDIR}/pkg-descr.${EMACS_PORT_NAME}
 PLIST?=			${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 .endif
 
+# Emacs-24.x
+.elif (${EMACS_PORT_NAME} == "emacs24")
+EMACS_NAME=		emacs
+EMACS_VER=		24.1
+EMACS_MAJOR_VER=	24
+EMACS_LIBDIR?=		share/${EMACS_NAME}
+EMACS_LIBDIR_WITH_VER?=	share/${EMACS_NAME}/${EMACS_VER}
+EMACS_PORTSDIR=		${PORTSDIR}/editors/emacs
+EMACS_COMMON_PORT=	NO
+EMACS_HAS_MULE=		YES
+EMACS_NO_SUBDIRSEL=	NO
+.if (${EMACS_MASTERDIR_PKGFILES} == "YES")
+COMMENTFILE?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
+DESCR?=			${PKGDIR}/pkg-descr.${EMACS_PORT_NAME}
+PLIST?=			${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
+.endif
+
 # Emacs-24.x (development version)
 .elif (${EMACS_PORT_NAME} == "emacs-devel")
 EMACS_NAME=		emacs
-EMACS_VER=		24.0.93
+EMACS_VER=		24.1.50
 EMACS_MAJOR_VER=	24
 EMACS_LIBDIR?=		share/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	share/${EMACS_NAME}/${EMACS_VER}
@@ -208,7 +225,8 @@ PLIST?=                 ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 check-makevars::
 	@${ECHO} "Makefile error: Bad value of EMACS_PORT_NAME: ${EMACS_PORT_NAME}."
 	@${ECHO} "Valid values are:"
-	@${ECHO} "	Emacs  family: emacs21 emacs22 emacs23 emacs-devel"
+	@${ECHO} "	Emacs  family: emacs21 emacs22 emacs23 emacs24"
+	@${ECHO} "                     emacs-devel"
 	@${ECHO} "	XEmacs family: xemacs21 xemacs21-mule xemacs-devel"
 	@${ECHO} "	               xemacs-devel-mule xemacs-mule-xft"
 	@${FALSE}

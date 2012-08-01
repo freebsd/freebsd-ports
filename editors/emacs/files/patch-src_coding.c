@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- src/coding.c.orig
 +++ src/coding.c
-@@ -3853,8 +3853,20 @@
+@@ -3717,8 +3717,20 @@
  	      else
  		charset = CHARSET_FROM_ID (charset_id_2);
  	      ONE_MORE_BYTE (c1);
@@ -26,7 +26,7 @@ $FreeBSD$
  	      break;
  
  	    case 'O':		/* invocation of single-shift-3 */
-@@ -3867,8 +3879,20 @@
+@@ -3731,8 +3743,20 @@
  	      else
  		charset = CHARSET_FROM_ID (charset_id_3);
  	      ONE_MORE_BYTE (c1);

@@ -59,6 +59,7 @@
     SUBDIR += emacs-nox11
     SUBDIR += emacs21
     SUBDIR += emacs22
+    SUBDIR += emacs23
     SUBDIR += f4l
     SUBDIR += fb
     SUBDIR += flim

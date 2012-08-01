@@ -3,10 +3,10 @@ $FreeBSD$
 
 --- src/s/freebsd.h.orig
 +++ src/s/freebsd.h
-@@ -61,3 +61,17 @@
- 
- /* Use the GC_MAKE_GCPROS_NOOPS (see lisp.h) method for marking the stack.  */
- #define GC_MARK_STACK 	GC_MAKE_GCPROS_NOOPS
+@@ -58,3 +58,17 @@
+ /* Tell that garbage collector that setjmp is known to save all
+    registers relevant for conservative garbage collection in the jmp_buf.  */
+ #define GC_SETJMP_WORKS 1
 +
 +#define PTY_ITERATION	int i; for (i = 0; i < 1; i++)
 +#define PTY_NAME_SPRINTF	/* none */
