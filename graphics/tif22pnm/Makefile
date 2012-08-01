@@ -8,21 +8,21 @@
 
 PORTNAME=	tif22pnm
 PORTVERSION=	0.12
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://pts.szit.bme.hu/ \
 		GOOGLE_CODE
 
 MAINTAINER=	martymac@FreeBSD.org
-COMMENT=	Converts TIFF- sampled images to PNM image
+COMMENT=	Converts TIFF-sampled images to PNM image
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff
-
-USE_PKGCONFIG=	yes
+		tiff:${PORTSDIR}/graphics/tiff
 
 PROJECTHOST=	sam2p
-LICENSE=	GPLv2
+USE_PKGCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libtiff-ldir=${LOCALBASE}/lib \
