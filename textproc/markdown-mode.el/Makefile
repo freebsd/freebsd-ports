@@ -7,7 +7,7 @@
 
 PORTNAME=	markdown-mode.el
 PORTVERSION=	1.8.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	http://jblevins.org/projects/markdown-mode/
 DISTNAME=	markdown-mode.el

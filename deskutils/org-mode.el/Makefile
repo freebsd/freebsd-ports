@@ -7,6 +7,7 @@
 
 PORTNAME=	org-mode.el
 PORTVERSION=	7.8.11
+PORTREVISION=	1
 CATEGORIES=	deskutils elisp
 MASTER_SITES=	http://orgmode.org/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}

@@ -7,7 +7,7 @@
 
 PORTNAME=	lsdb
 PORTVERSION=	0.11
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases elisp
 MASTER_SITES=	SFJP/${PORTNAME}/7488
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -28,7 +28,7 @@ FLIM_COOKIE=   flim-${EMACS_PORT_NAME}-1.14.FreeBSD-packages
 .include <bsd.port.pre.mk>
 
 .if defined(EMACS_PORT_NAME)
-.if (${EMACS_PORT_NAME} == "emacs23") || (${EMACS_PORT_NAME} == "emacs-devel")
+.if (${EMACS_PORT_NAME} == "emacs23") || (${EMACS_PORT_NAME} == "emacs24") || (${EMACS_PORT_NAME} == "emacs-devel")
 DEPPORT_SUFFIX=
 .else
 DEPPORT_SUFFIX=	-${EMACS_PORT_NAME}
