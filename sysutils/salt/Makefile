@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	salt
-PORTVERSION=	0.10.1
+PORTVERSION=	0.10.2
 CATEGORIES=	sysutils python
 MASTER_SITES=	https://github.com/downloads/saltstack/salt/
 
@@ -15,7 +15,7 @@ COMMENT=	Distributed, remote execution and configuration management system
 
 LICENSE=	AL2
 
-LIB_DEPENDS=	zmq.1:${PORTSDIR}/devel/zmq
+LIB_DEPENDS=	zmq:${PORTSDIR}/devel/zmq
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}pyzmq>=2.1.9:${PORTSDIR}/devel/py-pyzmq \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>=0:${PORTSDIR}/security/py-pycrypto \
@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml \
 
 FETCH_ARGS=	-pRr
 USE_PYTHON=	-2.7
-USE_PYDISTUTILS=easy_install
+USE_PYDISTUTILS=yes
 
 USE_RC_SUBR=	salt_master \
 		salt_minion \
