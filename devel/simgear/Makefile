@@ -7,7 +7,7 @@
 
 PORTNAME=	simgear
 PORTVERSION=	2.6.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel games
 MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/simgear/ftp/Source/ \
 		ftp://ftp.de.flightgear.org/pub/simgear/Source/ \
@@ -21,9 +21,9 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		boost_thread.4:${PORTSDIR}/devel/boost-libs \
-		osg.80:${PORTSDIR}/graphics/osg
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
+		boost_thread:${PORTSDIR}/devel/boost-libs \
+		osg:${PORTSDIR}/graphics/osg
 
 USE_BZIP2=	yes
 USE_XORG=	ice sm x11 xext xi xt xmu
