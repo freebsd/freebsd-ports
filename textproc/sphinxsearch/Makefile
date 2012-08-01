@@ -9,7 +9,7 @@
 # See http://www.infracaninophile.co.uk/articles/sphinxse.html
 
 PORTNAME=	sphinxsearch
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	textproc databases
 MASTER_SITES=	http://sphinxsearch.com/files/
 DISTNAME=	sphinx-${PORTVERSION}-release
@@ -48,14 +48,18 @@ CONFLICTS=	sphinxsearch-devel-[0-9]* dpsearch-[0-9]* rdb-2.6d \
 # simultaneously.  Not sure how useful that is in practice though.
 
 .if ${PORT_OPTIONS:MMYSQL}
-CONFIGURE_ARGS+=	--with-mysql
+CONFIGURE_ARGS+=	--with-mysql \
+			--with-mysql-includes=${LOCALBASE}/include/mysql \
+			--with-mysql-libs=${LOCALBASE}/lib/mysql
 USE_MYSQL=		yes
 .else
 CONFIGURE_ARGS+=	--without-mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-CONFIGURE_ARGS+=	--with-pgsql
+CONFIGURE_ARGS+=	--with-pgsql \
+			--with-pgsql-includes=${LOCALBASE}/include \
+			--with-pgsql-libs=${LOCALBASE}/lib
 USE_PGSQL=		yes
 .else
 CONFIGURE_ARGS+=	--without-pgsql
