@@ -6,8 +6,7 @@
 #    $MCom: ports-experimental/devel/nspr/Makefile,v 1.6 2008/03/12 13:06:56 ahze Exp $
 
 PORTNAME=	nspr
-DISTVERSION=	4.9.1
-PORTREVISION=	1
+DISTVERSION=	4.9.2
 CATEGORIES=	devel
 MASTER_SITES=	MOZILLA
 MASTER_SITE_SUBDIR=	nspr/releases/v${PORTVERSION}/src
