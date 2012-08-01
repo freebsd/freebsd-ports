@@ -71,6 +71,7 @@
     SUBDIR += ubench
     SUBDIR += unixbench
     SUBDIR += webbench
+    SUBDIR += wrk
     SUBDIR += xdd
     SUBDIR += xengine
 
