@@ -7,17 +7,17 @@
 
 PORTNAME=	trackballs
 PORTVERSION=	1.1.4
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	games
 MASTER_SITES=	SF
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	SDL-based Marble Madness clone
 
-LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
-
 LICENSE=	GPLv2
+
+LIB_DEPENDS=	guile:${PORTSDIR}/lang/guile
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_GL=		gl
 USE_SDL=	image mixer sdl ttf
