@@ -1,10 +1,12 @@
---- utils/Makefile.in.orig	2012-05-15 23:05:42.000000000 +0900
-+++ utils/Makefile.in	2012-05-15 23:09:34.000000000 +0900
-@@ -1280,7 +1280,6 @@
- @HWLOC_BUILD_UTILS_TRUE@	rm -f $(DESTDIR)$(bindir)/hwloc-ls$(EXEEXT) $(DESTDIR)$(bindir)/hwloc-info$(EXEEXT) $(DESTDIR)$(bindir)/hwloc-mask$(EXEEXT)
- @HWLOC_BUILD_UTILS_TRUE@	cd $(DESTDIR)$(bindir) && $(LN_S) lstopo$(EXEEXT) hwloc-ls$(EXEEXT) && $(LN_S) lstopo$(EXEEXT) hwloc-info$(EXEEXT) && $(LN_S) hwloc-calc$(EXEEXT) hwloc-mask$(EXEEXT)
- @HWLOC_BUILD_UTILS_TRUE@	rm -f $(DESTDIR)$(man1dir)/hwloc-ls.1 $(DESTDIR)$(man1dir)/hwloc-info.1 $(DESTDIR)$(man1dir)/hwloc-mask.1
--@HWLOC_BUILD_UTILS_TRUE@	cd $(DESTDIR)$(man1dir) && $(LN_S) lstopo.1 hwloc-ls.1 && $(LN_S) lstopo.1 hwloc-info.1 && $(LN_S) hwloc-calc.1 hwloc-mask.1
+--- utils/Makefile.in.orig	2012-07-30 17:36:52.000000000 +0900
++++ utils/Makefile.in	2012-08-01 16:17:49.000000000 +0900
+@@ -1477,9 +1477,7 @@
+ @HWLOC_BUILD_UTILS_TRUE@@HWLOC_HAVE_CAIRO_FALSE@@HWLOC_HAVE_WINDOWS_FALSE@	rm -f $(DESTDIR)$(bindir)/lstopo
+ @HWLOC_BUILD_UTILS_TRUE@@HWLOC_HAVE_CAIRO_FALSE@@HWLOC_HAVE_WINDOWS_FALSE@	cd $(DESTDIR)$(bindir) && $(LN_S) lstopo-no-graphics$(EXEEXT) lstopo$(EXEEXT) || true
+ @HWLOC_BUILD_UTILS_TRUE@	rm -f $(DESTDIR)$(man1dir)/hwloc-ls.1 $(DESTDIR)$(man1dir)/hwloc-info.1
+-@HWLOC_BUILD_UTILS_TRUE@	cd $(DESTDIR)$(man1dir) && $(LN_S) lstopo.1 hwloc-ls.1 && $(LN_S) lstopo.1 hwloc-info.1
+ @HWLOC_BUILD_UTILS_TRUE@	rm -f $(DESTDIR)$(man1dir)/lstopo-no-graphics.1
+-@HWLOC_BUILD_UTILS_TRUE@	cd $(DESTDIR)$(man1dir) && $(LN_S) lstopo.1 lstopo-no-graphics.1
  @HWLOC_BUILD_UTILS_TRUE@	$(SED) -e 's/abs_top_builddir\/utils/bindir/' -e '/abs_top_builddir/d' $(DESTDIR)$(bindir)/hwloc-assembler-remote > $(DESTDIR)$(bindir)/hwloc-assembler-remote.tmp && mv -f $(DESTDIR)$(bindir)/hwloc-assembler-remote.tmp $(DESTDIR)$(bindir)/hwloc-assembler-remote
  @HWLOC_BUILD_UTILS_TRUE@	chmod +x $(DESTDIR)$(bindir)/hwloc-assembler-remote
  
