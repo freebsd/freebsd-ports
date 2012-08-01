@@ -7,7 +7,7 @@
 
 PORTNAME=	gnaural
 PORTVERSION=	1.0.20110606
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/Gnaural/
 
@@ -16,8 +16,8 @@ COMMENT=	Binaural beat generator
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	portaudio.2:${PORTSDIR}/audio/portaudio2 \
-		sndfile.1:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS=	portaudio:${PORTSDIR}/audio/portaudio2 \
+		sndfile:${PORTSDIR}/audio/libsndfile
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	libglade2 desktopfileutils
