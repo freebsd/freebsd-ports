@@ -38,6 +38,10 @@ you update your ports collection, before attempting any port upgrades.
   or
   # portupgrade -fo devel/pkgconf pkg-config-\*
 
+  pkgng:
+  # pkg set -o devel/pkg-config:devel/pkgconf
+  # pkg install -f devel/pkgconf
+
 20120725:
   AFFECTS: users of chinese/fcitx
   AUTHOR: lichray@gmail.com
