@@ -1,6 +1,6 @@
 %%PYTHON_SITELIBDIR%%/dbf.py
 %%PYTHON_SITELIBDIR%%/dbf.pyc
 %%PYTHON_SITELIBDIR%%/dbf.pyo
-%%PYTHON_SITELIBDIR%%/test_dbf.py
-%%PYTHON_SITELIBDIR%%/test_dbf.pyc
-%%PYTHON_SITELIBDIR%%/test_dbf.pyo
+%%PYTHON_SITELIBDIR%%/dbf_test.py
+%%PYTHON_SITELIBDIR%%/dbf_test.pyc
+%%PYTHON_SITELIBDIR%%/dbf_test.pyo
