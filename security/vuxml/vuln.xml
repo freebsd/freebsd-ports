@@ -227,30 +227,29 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="ae2fa87c-4bca-4138-8be1-67ce2a19b3a8">
-     <topic>rubygem-actionpack -- Denial of Service</topic>
-     <affects>
-        <package>
-           <name>rubygem-actionpack</name>
-           <range><lt>3.2.7</lt></range>
-        </package>
-     </affects>
-     <description>
-        <body xmlns="http://www.w3.org/1999/xhtml">
-           <blockquote cite="https://groups.google.com/forum/?fromgroups#!topic/rubyonrails-security/vxJjrc15qYM">
-	      <p>There is a DoS vulnerability in Action Pack digest
-                 authentication handling in
-                 authenticate_or_request_with_http_digest.</p>
-           </blockquote>
-        </body>
-     </description>
-     <references>
-        <cvename>CVE-2012-3424</cvename>
-        <url>https://groups.google.com/forum/?fromgroups#!topic/rubyonrails-security/vxJjrc15qYM</url>
-     </references>
-     <dates>
-        <discovery>2012-07-26</discovery>
-        <entry>2012-07-26</entry>
-     </dates>
+    <topic>rubygem-actionpack -- Denial of Service</topic>
+    <affects>
+      <package>
+	<name>rubygem-actionpack</name>
+	<range><lt>3.2.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="https://groups.google.com/forum/?fromgroups#!topic/rubyonrails-security/vxJjrc15qYM">
+	  <p>There is a DoS vulnerability in Action Pack digest authentication
+	    handling in authenticate_or_request_with_http_digest.</p>
+         </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-3424</cvename>
+      <url>https://groups.google.com/forum/?fromgroups#!topic/rubyonrails-security/vxJjrc15qYM</url>
+    </references>
+    <dates>
+      <discovery>2012-07-26</discovery>
+      <entry>2012-07-26</entry>
+    </dates>
   </vuln>
 
   <vuln vid="cdc4ff0e-d736-11e1-8221-e0cb4e266481">
