@@ -20,8 +20,8 @@
  endif
 +ifeq ($(uname_S),FreeBSD)
 +  CFLAGS?=$(CFLAGS)
-+  CCLINK?=-pthread
-+  LDFLAGS?=-L. -Wl,-rpath,.
++  CCLINK?=$(PTHREAD_LIBS)
++  LDFLAGS?=$(LDFLAGS)
 +  DYLIBNAME?=libhiredis.so
 +  DYLIB_MAKE_CMD?=$(CC) -o ${DYLIBNAME} ${OBJ}
 +  STLIBNAME?=libhiredis.a
