@@ -7,6 +7,7 @@
 
 PORTNAME=	astng
 PORTVERSION=	0.24.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	LOGILAB
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,4 +23,9 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	logilab-astng
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@${CHMOD} a+r ${WRKSRC}/brain/py2stdlib.py
+
+.include <bsd.port.post.mk>
