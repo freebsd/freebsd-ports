@@ -1,6 +1,6 @@
---- Makefile.orig	2011-08-25 21:08:04.000000000 +0200
-+++ Makefile	2011-08-31 21:21:45.000000000 +0200
-@@ -122,7 +122,7 @@
+--- Makefile.orig	2012-06-13 16:27:57.000000000 +0200
++++ Makefile	2012-08-02 00:02:38.030569971 +0200
+@@ -121,7 +121,7 @@
  OVERWRITE=y
  
  # Include debug and macro symbols in the executables (-g) and profiling info (-pg)
@@ -9,16 +9,16 @@
  
  # Asterisk.conf is located in ASTETCDIR or by using the -C flag
  # when starting Asterisk
-@@ -235,7 +237,7 @@
-     _ASTCFLAGS+=-march=i686
-   endif
+@@ -188,7 +188,7 @@
+ 
+ ifeq ($(OSARCH),FreeBSD)
    # -V is understood by BSD Make, not by GNU make.
 -  BSDVERSION=$(shell make -V OSVERSION -f /usr/share/mk/bsd.port.subdir.mk)
 +  BSDVERSION=$(OSVERSION)
    _ASTCFLAGS+=$(shell if test $(BSDVERSION) -lt 500016 ; then echo "-D_THREAD_SAFE"; fi)
  endif
  
-@@ -462,8 +464,13 @@
+@@ -415,8 +415,13 @@
  		$(INSTALL) -m 644 $$x "$(DESTDIR)$(ASTDATADIR)/static-http" ; \
  	done
  	$(INSTALL) -m 644 doc/core-en_US.xml "$(DESTDIR)$(ASTDATADIR)/static-http";
@@ -33,15 +33,16 @@
  	done
  	$(MAKE) -C sounds install
  
-@@ -523,6 +530,7 @@
- 	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/dictate"
- 	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/meetme"
- 	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/monitor"
-+	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/outgoing"
- 	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/system"
- 	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/tmp"
- 	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/voicemail"
-@@ -604,7 +612,7 @@
+@@ -475,7 +480,7 @@
+ 	"$(ASTDATADIR)/documentation/thirdparty" "$(ASTDATADIR)/firmware" \
+ 	"$(ASTDATADIR)/firmware/iax" "$(ASTDATADIR)/images" "$(ASTDATADIR)/keys" \
+ 	"$(ASTDATADIR)/phoneprov" "$(ASTDATADIR)/static-http" "$(ASTDATADIR)/sounds" \
+-	"$(ASTDATADIR)/moh" "$(ASTMANDIR)/man8" "$(AGI_DIR)" "$(ASTDBDIR)"
++	"$(ASTDATADIR)/moh" "$(ASTMANDIR)/man8" "$(AGI_DIR)" "$(ASTDBDIR)" "$(ASTSPOOLDIR)/outgoing"
+ 
+ installdirs:
+ 	@for i in $(INSTALLDIRS); do \
+@@ -542,7 +547,7 @@
  	@exit 1
  endif
  
@@ -50,7 +51,7 @@
  	@if [ -x /usr/sbin/asterisk-post-install ]; then \
  		/usr/sbin/asterisk-post-install "$(DESTDIR)" . ; \
  	fi
-@@ -646,29 +654,18 @@
+@@ -584,29 +589,18 @@
  		else \
  			echo "Installing $$x" ; \
  		fi ; \
@@ -86,7 +87,7 @@
  		echo "Updating asterisk.conf" ; \
  		sed -e 's|^astetcdir.*$$|astetcdir => $(ASTETCDIR)|' \
  			-e 's|^astmoddir.*$$|astmoddir => $(MODULES_DIR)|' \
-@@ -682,6 +679,7 @@
+@@ -620,6 +614,7 @@
  			-e 's|^astlogdir.*$$|astlogdir => $(ASTLOGDIR)|' \
  			"$(DESTDIR)$(ASTCONFPATH)" > "$(DESTDIR)$(ASTCONFPATH).tmp" ; \
  		$(INSTALL) -m 644 "$(DESTDIR)$(ASTCONFPATH).tmp" "$(DESTDIR)$(ASTCONFPATH)" ; \
