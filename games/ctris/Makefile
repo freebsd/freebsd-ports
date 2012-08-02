@@ -9,7 +9,6 @@ PORTNAME=	ctris
 PORTVERSION=	0.42
 CATEGORIES=	games
 MASTER_SITES=	http://www.hackl.dhs.org/data/download/files/ \
-		http://www.liquidx.org/distfiles/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
