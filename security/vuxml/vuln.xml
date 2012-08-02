@@ -52,6 +52,109 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="dbf338d0-dce5-11e1-b655-14dae9ebcf89">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><gt>11.0,1</gt><lt>14.0.1,1</lt></range>
+	<range><lt>10.0.6,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>10.0.6,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.11</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>10.0.6</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.11</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><gt>11.0</gt><lt>14.0</lt></range>
+	<range><lt>10.0.6</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><gt>1.9.2.*</gt><lt>10.0.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2012-42 Miscellaneous memory safety hazards (rv:14.0/
+	    rv:10.0.6)</p>
+	  <p>MFSA 2012-43 Incorrect URL displayed in addressbar through drag and
+	    drop</p>
+	  <p>MFSA 2012-44 Gecko memory corruption</p>
+	  <p>MFSA 2012-45 Spoofing issue with location</p>
+	  <p>MFSA 2012-46 XSS through data: URLs</p>
+	  <p>MFSA 2012-47 Improper filtering of javascript in HTML feed-view</p>
+	  <p>MFSA 2012-48 use-after-free in nsGlobalWindow::PageHidden</p>
+	  <p>MFSA 2012-49 Same-compartment Security Wrappers can be bypassed</p>
+	  <p>MFSA 2012-50 Out of bounds read in QCMS</p>
+	  <p>MFSA 2012-51 X-Frame-Options header ignored when duplicated</p>
+	  <p>MFSA 2012-52 JSDependentString::undepend string conversion results
+	    in memory corruption</p>
+	  <p>MFSA 2012-53 Content Security Policy 1.0 implementation errors
+	    cause data leakage</p>
+	  <p>MFSA 2012-54 Clickjacking of certificate warning page</p>
+	  <p>MFSA 2012-55 feed: URLs with an innerURI inherit security context
+	    of page</p>
+	  <p>MFSA 2012-56 Code execution through javascript: URLs</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2012-1949</cvename>
+	<cvename>CVE-2012-1950</cvename>
+	<cvename>CVE-2012-1951</cvename>
+	<cvename>CVE-2012-1952</cvename>
+	<cvename>CVE-2012-1953</cvename>
+	<cvename>CVE-2012-1954</cvename>
+	<cvename>CVE-2012-1955</cvename>
+	<cvename>CVE-2012-1957</cvename>
+	<cvename>CVE-2012-1958</cvename>
+	<cvename>CVE-2012-1959</cvename>
+	<cvename>CVE-2012-1960</cvename>
+	<cvename>CVE-2012-1961</cvename>
+	<cvename>CVE-2012-1962</cvename>
+	<cvename>CVE-2012-1963</cvename>
+	<cvename>CVE-2012-1964</cvename>
+	<cvename>CVE-2012-1965</cvename>
+	<cvename>CVE-2012-1966</cvename>
+	<cvename>CVE-2012-1967</cvename>
+	<url>http://www.mozilla.org/security/known-vulnerabilities/</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-42.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-43.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-44.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-45.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-46.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-47.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-48.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-49.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-50.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-51.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-52.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-53.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-54.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-55.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-56.html</url>
+    </references>
+    <dates>
+      <discovery>2012-07-17</discovery>
+      <entry>2012-08-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="de2bc01f-dc44-11e1-9f4d-002354ed89bc">
     <topic>Apache -- Insecure LD_LIBRARY_PATH handling</topic>
     <affects>
