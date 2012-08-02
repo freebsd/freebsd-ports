@@ -130,6 +130,9 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2012-3442</cvename>
+      <cvename>CVE-2012-3443</cvename>
+      <cvename>CVE-2012-3444</cvename>
       <url>https://www.djangoproject.com/weblog/2012/jul/30/security-releases-issued/</url>
     </references>
     <dates>
