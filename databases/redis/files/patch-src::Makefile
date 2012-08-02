@@ -6,7 +6,7 @@
    DEBUG?=-g -ggdb
 +else ifeq ($(uname_S),FreeBSD)
 +  CFLAGS?= $(CFLAGS)
-+  CCLINK?= -pthread -lm -L$(PREFIX)/lib -lexecinfo
++  CCLINK?= $(LDFLAGS)
  else
    CFLAGS?=-std=c99 -pedantic $(OPTIMIZATION) -Wall -W $(ARCH) $(PROF)
    CCLINK?=-lm -pthread

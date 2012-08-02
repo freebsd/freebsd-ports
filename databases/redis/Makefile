@@ -6,16 +6,19 @@
 #
 
 PORTNAME=	redis
-PORTVERSION=	2.4.15
+PORTVERSION=	2.4.16
 CATEGORIES=	databases
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	A persistent key-value database with built-in net interface
 
-LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+LICENSE=	BSD
+
+LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 
 CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lm -lexecinfo
 
 CONFLICTS?=	redis-devel-2.6.*
 
