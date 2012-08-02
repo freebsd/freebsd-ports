@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.thoughtcrime.org/software/sslstrip/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kitchetech@gmail.com
-COMMENT=	Python program for ssl stripping
+COMMENT=	Python program for SSL stripping
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

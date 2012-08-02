@@ -13,7 +13,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://havardk.xmms.org/plugins/arts_output/
 
 MAINTAINER=	fjoe@FreeBSD.org
-COMMENT=	aRts output plugin for XMMS.
+COMMENT=	aRts output plugin for XMMS
 
 DEPRECATED=	Outdated and distfile no longer available
 EXPIRATION_DATE=2012-07-01 

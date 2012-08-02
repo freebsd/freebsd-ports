@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	gslin@gslin.org
-COMMENT=	SVG extention to the popular XML::DOM2
+COMMENT=	SVG extension to the popular XML::DOM2
 
 PERL_CONFIGURE=	yes
 

@@ -12,7 +12,7 @@ CATEGORIES=	polish multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	pawel@FreeBSD.org
-COMMENT=	Unoffical napiprojekt.pl qt4 client
+COMMENT=	Unofficial napiprojekt.pl qt4 client
 
 LICENSE=	GPLv2
 

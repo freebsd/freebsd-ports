@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	${RUBY_PKGNAMEPREFIX:S|${RUBY_SUFFIX}-||}
 
 MAINTAINER=	tota@FreeBSD.org
-COMMENT=	A Ruby library provies HTML/URI/shell escaping functions
+COMMENT=	Ruby library provides HTML/URI/shell escaping functions
 
 USE_RUBY=	yes
 NO_BUILD=	yes

@@ -13,7 +13,7 @@ CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Extra anjuta plugins.
+COMMENT=	Extra anjuta plugins
 
 LIB_DEPENDS=	anjuta.0:${PORTSDIR}/devel/anjuta
 		

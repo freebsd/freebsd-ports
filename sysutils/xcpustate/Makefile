@@ -14,7 +14,7 @@ MASTER_SITES=	http://ftp.cs.toronto.edu/pub/jdd/xcpustate/
 EXTRACT_SUFX=	.shar
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	System monitoring utility graphicaly showing cpu load and status
+COMMENT=	System monitoring utility graphically showing cpu load and status
 
 EXTRACT_CMD=	${CAT}
 EXTRACT_BEFORE_ARGS=	# none

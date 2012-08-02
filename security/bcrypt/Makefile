@@ -12,7 +12,7 @@ MASTER_SITES=	http://bcrypt.sourceforge.net/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	A cross-plattform blowfish encryption utility
+COMMENT=	Cross-platform blowfish encryption utility
 
 MAKE_JOBS_SAFE=	yes
 

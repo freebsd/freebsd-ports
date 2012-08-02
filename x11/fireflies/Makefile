@@ -12,7 +12,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://somewhere.fscked.org/proj/fireflies/files/
 
 MAINTAINER=	umeno@rr.iij4u.or.jp
-COMMENT=	Fireflies is a extention of xscreensaver
+COMMENT=	Extension of xscreensaver
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

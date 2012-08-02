@@ -13,7 +13,7 @@ DISTNAME=	replay-${PORTVERSION}
 USE_BZIP2=	yes
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A program that helps you fix a build interactively.
+COMMENT=	Program that helps you fix a build interactively
 
 PLIST_FILES=	bin/replay
 

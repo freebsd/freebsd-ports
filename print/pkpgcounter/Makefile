@@ -12,7 +12,7 @@ CATEGORIES=	print python
 MASTER_SITES=	http://www.pykota.com/software/pkpgcounter/download/tarballs/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Count pages and ink coverage precent
+COMMENT=	Count pages and ink coverage percent
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
 RUN_DEPENDS:=	${BUILD_DEPENDS}

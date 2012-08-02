@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	cyrillic-${PORTVERSION}
 
 MAINTAINER=	pluknet@gmail.com
-COMMENT=	Routines for converting from one cyrillic charset to another
+COMMENT=	Routines for converting from one Cyrillic charset to another
 
 BUILD_DEPENDS=	p5-Unicode-Map8>=0:${PORTSDIR}/converters/p5-Unicode-Map8
 RUN_DEPENDS:=	${BUILD_DEPENDS}

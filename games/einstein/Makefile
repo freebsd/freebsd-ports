@@ -13,7 +13,7 @@ MASTER_SITES=	http://games.flowix.com/files/einstein/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	edwin@mavetju.org
-COMMENT=	Remake of old DOS game Sherlock, which was inspired by Albert Einstein's puzzle.
+COMMENT=	Remake of old DOS game Sherlock, which was inspired by Albert Einstein's puzzle
 
 USE_SDL=	sdl ttf mixer
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

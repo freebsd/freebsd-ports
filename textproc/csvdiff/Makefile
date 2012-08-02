@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}17
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sylvio@FreeBSD.org
-COMMENT=	Compare/diff two (comma) seperated files with each other
+COMMENT=	Compare/diff two (comma) separated files with each other
 
 NO_BUILD=	yes
 USE_PERL5=	yes

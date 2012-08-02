@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-fix
 
 MAINTAINER=	mor@WhiteLuna.com
-COMMENT=	Perl5 module for handles loading and saveing of .torrent file
+COMMENT=	Perl5 module for handles loading and saving of .torrent file
 
 RUN_DEPENDS=	p5-Convert-Bencode>=0:${PORTSDIR}/converters/p5-Convert-Bencode \
 		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1

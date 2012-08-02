@@ -11,7 +11,7 @@ DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
 MAINTAINER=	nork@FreeBSD.org
-COMMENT=	Default Full Zoom Level extention
+COMMENT=	Default Full Zoom Level extension
 
 XPI_NUM=	6965
 XPI_ID=		{D9A7CBEC-DE1A-444f-A092-844461596C4D}

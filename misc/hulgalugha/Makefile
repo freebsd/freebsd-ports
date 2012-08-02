@@ -12,7 +12,7 @@ MASTER_SITES=	http://people.freebsd.org/~alfred/sources/hulgalugha/
 USE_BZIP2=	yes
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A very jerky text filter.
+COMMENT=	Very jerky text filter
 
 PLIST_FILES=	bin/hulgalugha
 

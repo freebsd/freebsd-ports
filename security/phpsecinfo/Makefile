@@ -11,7 +11,7 @@ CATEGORIES=	security www
 MASTER_SITES=	LOCAL/chinsan
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A PHP environment security auditing toool
+COMMENT=	PHP environment security auditing tool
 
 USE_ZIP=	yes
 USE_PHP=	pcre

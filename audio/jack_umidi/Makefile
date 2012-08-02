@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://hselasky.homeunix.org:8192/distfiles/
 
 MAINTAINER=	hselasky@FreeBSD.org
-COMMENT=	A daemon that converts a raw MIDI device into a JACK MIDI device.
+COMMENT=	Daemon that converts a raw MIDI device into a JACK MIDI device
 
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack
 

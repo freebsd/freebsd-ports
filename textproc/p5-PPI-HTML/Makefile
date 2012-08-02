@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	CPAN:ADAMK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
-COMMENT=	Generate syntax-hightlighted HTML for Perl using PPI
+COMMENT=	Generate syntax-highlighted HTML for Perl using PPI
 
 BUILD_DEPENDS=	p5-PPI>=0.990:${PORTSDIR}/textproc/p5-PPI \
 		p5-CSS-Tiny>=0.10:${PORTSDIR}/textproc/p5-CSS-Tiny \

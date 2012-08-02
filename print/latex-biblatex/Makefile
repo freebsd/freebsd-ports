@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	latex-
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	idolum@users.sourceforge.net
-COMMENT=	A reimplementation of the LaTeX biliographic facilities
+COMMENT=	Reimplementation of the LaTeX bibliographic facilities
 
 BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
 		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal

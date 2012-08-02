@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.caomhin.org/ports/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@caomhin.org
-COMMENT=	Django app for writting pluggable reusable django applications
+COMMENT=	Django app for writing pluggable reusable django applications
 
 LICENSE=	BSD
 

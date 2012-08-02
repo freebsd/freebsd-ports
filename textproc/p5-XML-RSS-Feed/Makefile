@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Persistant XML RSS Encapsulation
+COMMENT=	Persistent XML RSS encapsulation
 
 BUILD_DEPENDS=	p5-XML-RSS>=0:${PORTSDIR}/textproc/p5-XML-RSS \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \

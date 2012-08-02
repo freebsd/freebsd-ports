@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	Sergey.Dyatko@gmail.com
-COMMENT=	Easy-to-use date/time formatting.
+COMMENT=	Easy-to-use date/time formatting
 
 PERL_CONFIGURE=	yes
 

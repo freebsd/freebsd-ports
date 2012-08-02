@@ -11,7 +11,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Extensions to RubyGems for managing gems and more on RubyGems.org.
+COMMENT=	Extensions to RubyGems for managing gems and more on RubyGems.org
 
 RUN_DEPENDS=	rubygem-rr>=0:${PORTSDIR}/devel/rubygem-rr \
   				rubygem-webmock>=0:${PORTSDIR}/www/rubygem-webmock \

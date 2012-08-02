@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jeffhung@mail2000.com.tw
-COMMENT=	Perl5 module that report exceptions with formatted text call-stack.
+COMMENT=	Perl module that report exceptions with formatted text call-stack
 
 PERL_CONFIGURE=	YES
 

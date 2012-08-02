@@ -11,7 +11,7 @@ CATEGORIES=	archivers rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	hhyou@cs.nctu.edu.tw
-COMMENT=	Ruby 1.9.1 compatible Zip library.
+COMMENT=	Ruby compatible Zip library
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jeffhung@mail2000.com.tw
-COMMENT=	Perl5 module that give your module classic AND OO interfaces.
+COMMENT=	Perl module that give your module classic AND OO interfaces
 
 PERL_CONFIGURE=	YES
 

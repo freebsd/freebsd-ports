@@ -11,7 +11,7 @@ CATEGORIES=	science graphics
 MASTER_SITES=	SF/niftilib/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jwbacon@tds.net
-COMMENT=	Neuroimaging Infoirmatics Technology Initiative data format
+COMMENT=	Neuroimaging Informatics Technology Initiative data format
 
 USE_GMAKE=	yes
 

@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=	.7z
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A free OS indipendent dictionary application
+COMMENT=	Free OS independent dictionary application
 
 EXTRACT_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
 

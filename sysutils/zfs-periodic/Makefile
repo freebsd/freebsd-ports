@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pean.org/zfs-periodic/
 
 MAINTAINER=	peter@pean.org
-COMMENT=	Simple way of maitaining zfs snapshots using the periodic system
+COMMENT=	Simple way of maintaining zfs snapshots using the periodic system
 
 NO_BUILD=	yes
 

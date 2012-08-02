@@ -14,7 +14,7 @@ EXTRACT_SUFX=
 EXTRACT_ONLY=
 
 MAINTAINER=	vvelox@vvelox.net
-COMMENT=	qar-bufo generates the Qmail assign and recipients file based on unix groups.
+COMMENT=	Generates the Qmail assign and recipients file based on unix groups
 
 USE_PERL5=	yes
 NO_WRKSUBDIR=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Define TRUE and FALSE constants.
+COMMENT=	Define TRUE and FALSE constants
 
 TEST_DEPENDS=	p5-Symol-Util>=0:${PORTSDIR}/devel/p5-Symbol-Util
 

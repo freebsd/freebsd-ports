@@ -11,6 +11,6 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://fdd.com/software/radeon/
 
 MAINTAINER=	takawata@jp.freebsd.org
-COMMENT=	ATI Radeon video card contoroling tool useful for laptops
+COMMENT=	ATI Radeon video card controlling tool useful for laptops
 
 .include <bsd.port.mk>

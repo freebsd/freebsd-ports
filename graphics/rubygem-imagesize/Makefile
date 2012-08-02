@@ -10,7 +10,7 @@ CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A RubyGem for finding the size of an image.
+COMMENT=	RubyGem for finding the size of an image
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	CPAN:ULPFR
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		perl@FreeBSD.org
-COMMENT=		German grundform reduction
+COMMENT=		German Grundform reduction
 
 PERL_CONFIGURE=		yes
 

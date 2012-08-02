@@ -11,7 +11,7 @@ CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Relational Algebra for Ruby.
+COMMENT=	Relational Algebra for Ruby
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

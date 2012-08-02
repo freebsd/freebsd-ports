@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://home.jp.freebsd.org/~gehenna/src/
 
 MAINTAINER=	nork@FreeBSD.org
-COMMENT=	udesc_dump, showes USB descriptors
+COMMENT=	Shows USB descriptors
 
 MAN8=		udesc_dump.8
 MANCOMPRESSED=	yes

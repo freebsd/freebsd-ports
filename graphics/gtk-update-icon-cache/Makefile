@@ -22,7 +22,7 @@ DISTNAME=	gtk+-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	gtk-update-icon-cache utility from the Gtk+ toolkit.
+COMMENT=	gtk-update-icon-cache utility from the Gtk+ toolkit
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

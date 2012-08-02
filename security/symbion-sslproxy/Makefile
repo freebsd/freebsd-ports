@@ -11,7 +11,7 @@ DISTNAME=	sslproxy-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An SSL proxy for securing unsecure connections
+COMMENT=	SSL proxy for securing insecure connections
 
 USE_OPENSSL=	YES
 USE_GMAKE=	YES

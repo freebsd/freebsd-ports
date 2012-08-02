@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.slavof.net/pub/FreeBSD/X11/cyrillic/ \
 		ftp://80.72.71.229/pub/FreeBSD/X11/cyrillic/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The bulgarian cyrillic keyboard layout manager for X11
+COMMENT=	The Bulgarian Cyrillic keyboard layout manager for X11
 
 PLIST_FILES=	bin/xcyrBGR
 USE_XORG=	x11 xpm

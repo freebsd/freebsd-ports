@@ -14,7 +14,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	garga@FreeBSD.org
-COMMENT=	Diff readability enhancher for color terminals
+COMMENT=	Diff readability enhancer for color terminals
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
