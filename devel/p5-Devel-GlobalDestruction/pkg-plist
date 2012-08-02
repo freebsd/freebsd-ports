@@ -1,10 +1,5 @@
-%%NEW_PERL_PLIST%%%%SITE_PERL%%/Devel/GlobalDestruction.pm
-%%OLD_PERL_PLIST%%%%SITE_PERL%%/%%PERL_ARCH%%/Devel/GlobalDestruction.pm
+%%SITE_PERL%%/Devel/GlobalDestruction.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/GlobalDestruction/.packlist
-%%OLD_PERL_PLIST%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/GlobalDestruction/GlobalDestruction.bs
-%%OLD_PERL_PLIST%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/GlobalDestruction/GlobalDestruction.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/GlobalDestruction
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-%%OLD_PERL_PLIST%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Devel/GlobalDestruction
-%%OLD_PERL_PLIST%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Devel
-%%NEW_PERL_PLIST%%@dirrmtry %%SITE_PERL%%/Devel
+@dirrmtry %%SITE_PERL%%/Devel
