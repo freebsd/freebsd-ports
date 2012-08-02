@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	backup
-PORTVERSION=	3.0.24
+PORTVERSION=	3.0.25
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perform backup operations on remote and local environment
 
 RUN_DEPENDS=	rubygem-open4>=1.3.0:${PORTSDIR}/devel/rubygem-open4 \
-		rubygem-thor>=0.14.6:${PORTSDIR}/devel/rubygem-thor
+		rubygem-thor>=0.15.4:${PORTSDIR}/devel/rubygem-thor
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
