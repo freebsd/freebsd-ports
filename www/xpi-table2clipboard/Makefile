@@ -11,7 +11,7 @@ DISTVERSIONSUFFIX=	-fx+tb+sm
 CATEGORIES=	www
 
 MAINTAINER=	nork@FreeBSD.org
-COMMENT=	Table to Clipboard extention with correct disposition
+COMMENT=	Table to Clipboard extension with correct disposition
 
 XPI_NUM=	1852
 XPI_ID=		{9ab67d74-ec41-4cb2-b417-df5d93ba1beb}

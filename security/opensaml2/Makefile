@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.shibboleth.net/downloads/c++-opensaml/${PORTVERSION}/
 DISTNAME=	opensaml-${PORTVERSION}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
-COMMENT=	Open source implentation of SAML2
+COMMENT=	Open source implementation of SAML2
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		log4shib.1:${PORTSDIR}/devel/log4shib \

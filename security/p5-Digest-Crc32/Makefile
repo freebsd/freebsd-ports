@@ -10,7 +10,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ashish@FreeBSD.org
-COMMENT=	Perl extension for calculating 32-bit CRC cheksums
+COMMENT=	Perl extension for calculating 32-bit CRC checksums
 
 PERL_CONFIGURE=	yes
 

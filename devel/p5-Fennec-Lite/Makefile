@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
-COMMENT=	Perl extension for minimalist Fennec, the commonly used bits.
+COMMENT=	Perl extension for minimalist Fennec, the commonly used bits
 
 PERL_MODBUILD=	yes
 

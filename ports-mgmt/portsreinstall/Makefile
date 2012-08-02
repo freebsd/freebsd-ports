@@ -12,7 +12,7 @@ MASTER_SITES=	SFJP/${PORTNAME}/55702/ \
 		http://www.mwghennndo.com/softwares/${PORTNAME}/
 
 MAINTAINER=	sakaue.mamoru@samurai.mwghennn.net
-COMMENT=	Ports upgrading utility for massive forced reinstalltion
+COMMENT=	Ports upgrading utility for massive forced reinstall
 
 LICENSE=	BSD
 

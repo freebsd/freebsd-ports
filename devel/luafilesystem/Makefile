@@ -12,7 +12,7 @@ MASTER_SITES=	http://luaforge.net/frs/download.php/3931/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	kelly.hays@jkhfamily.org
-COMMENT=	A library to access directory structure and file attributes.
+COMMENT=	Library to access directory structure and file attributes
 
 LICENSE=	MIT
 

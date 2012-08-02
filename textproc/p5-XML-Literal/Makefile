@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Syntax suppor for XML literals
+COMMENT=	Syntax support for XML literals
 
 RUN_DEPENDS=	p5-Sub-Override>=0:${PORTSDIR}/devel/p5-Sub-Override
 BUILD_DEPENDS:=	${RUN_DEPENDS}

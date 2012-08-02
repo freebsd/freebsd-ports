@@ -13,7 +13,7 @@ DISTNAME=	$(PORTNAME)-${PORTVERSION}
 USE_BZIP2=	yes
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A library to build an IP-netmask based mtrie.
+COMMENT=	Library to build an IP-netmask based mtrie
 
 USE_LDCONFIG= yes
 

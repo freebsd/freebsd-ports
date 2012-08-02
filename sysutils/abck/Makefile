@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tundraware.com/Software/abck/
 
 MAINTAINER=	tundra@tundraware.com
-COMMENT=	Manage intrusion attemps recorded in the system log
+COMMENT=	Manage intrusion attempts recorded in the system log
 
 USE_PYTHON=	yes
 

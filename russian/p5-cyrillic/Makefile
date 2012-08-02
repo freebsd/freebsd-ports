@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tolid@plab.ku.dk
-COMMENT=	Library for fast and easy cyrillic text manipulation
+COMMENT=	Library for fast and easy Cyrillic text manipulation
 
 PERL_CONFIGURE=	yes
 

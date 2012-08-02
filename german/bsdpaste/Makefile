@@ -12,7 +12,7 @@ MASTER_SITES=	http://people.bsdgroup.de/~as/bsdpaste/
 DISTNAME=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	as@bsdgroup.de
-COMMENT=	Pastebin web application to upload and read text on a webserver.
+COMMENT=	Pastebin web application to upload and read text on a webserver
 
 NO_BUILD=	yes
 USE_RUBY=	yes

@@ -10,7 +10,7 @@ CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/AIM%20Sniff/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	AOL Instant Messanger Sniffing and Reading Tool
+COMMENT=	AOL Instant Messenger Sniffing and Reading Tool
 
 RUN_DEPENDS=	p5-Net-Pcap>=0:${PORTSDIR}/net/p5-Net-Pcap\
 		p5-NetPacket>=0:${PORTSDIR}/net/p5-NetPacket\

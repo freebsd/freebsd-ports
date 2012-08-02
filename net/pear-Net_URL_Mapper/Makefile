@@ -10,7 +10,7 @@ PORTVERSION=	0.9.1
 CATEGORIES=	net www pear
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A simple and flexible way to build nice URLs for web applications.
+COMMENT=	Simple and flexible way to build nice URLs for web applications
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS:=	${BUILD_DEPENDS}

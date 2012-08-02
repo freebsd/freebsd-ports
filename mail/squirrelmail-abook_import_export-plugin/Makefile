@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION}-1.4.4
 DIST_SUBDIR=	squirrelmail
 
 MAINTAINER=	lambert@lambertfam.org
-COMMENT=	Allows for the importing of addressbooks from a CSV (comma separated values) file.
+COMMENT=	Allows for the importing of addressbooks from a CSV (comma separated values) file
 
 SQUIRREL_PLUGIN_NAME=	${PORTNAME:S/-/_/}
 

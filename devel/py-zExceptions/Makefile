@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
-COMMENT=	Contains common exceptions used in Zope2.
+COMMENT=	Contains common exceptions used in Zope2
 
 LICENSE=	ZPL21
 

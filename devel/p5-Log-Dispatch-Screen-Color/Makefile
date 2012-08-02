@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
-COMMENT=	Perl extension to suppor color for Log::Dispatch::Screen
+COMMENT=	Perl extension to support color for Log::Dispatch::Screen
 
 RUN_DEPENDS=	\
 	p5-Log-Dispatch>0:${PORTSDIR}/devel/p5-Log-Dispatch \

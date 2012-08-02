@@ -11,7 +11,7 @@ MASTER_SITES=	http://jprs.co.jp/idn/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	fbsd@grid.einherjar.de
-COMMENT=	Python bindings for Internationalized Domain Name toolkit 2.
+COMMENT=	Python bindings for Internationalized Domain Name toolkit 2
 
 LIB_DEPENDS=	idnkitlite.2:${PORTSDIR}/dns/idnkit2
 

@@ -10,7 +10,7 @@ PORTVERSION=	0.4.1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	Classes that represent and manipulate fractions.
+COMMENT=	Classes that represent and manipulate fractions
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

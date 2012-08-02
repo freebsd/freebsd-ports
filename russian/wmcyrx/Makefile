@@ -14,7 +14,7 @@ MASTER_SITES=	http://ozz.pp.ru/distfiles/ \
 DISTNAME=	cyrx-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The cyrillic keyboard layout manager for Window Maker
+COMMENT=	The Cyrillic keyboard layout manager for Window Maker
 
 USE_XORG=	x11 xpm
 NO_INSTALL_MANPAGES=	yes

@@ -13,7 +13,7 @@ PKGNAMEPREFIX=
 DISTNAME=	${PORTNAME:S/^lib//}-${PORTVERSION}
 
 MAINTAINER=	pavel@ext.by
-COMMENT=	Text manipulation and autodetection for 6 major cyrillic charsets
+COMMENT=	Text manipulation and autodetection for 6 major Cyrillic charsets
 
 MAKE_ENV=	WRKSRC="${WRKSRC}"
 MAKEFILE=	${FILESDIR}/Makefile.bsd

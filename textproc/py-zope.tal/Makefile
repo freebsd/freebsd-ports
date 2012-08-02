@@ -12,7 +12,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	zope@FreeBSD.org
-COMMENT=	Zope Template Application Languate (TAL)
+COMMENT=	Zope Template Application Language (TAL)
 
 LICENSE=	ZPL21
 

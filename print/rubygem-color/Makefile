@@ -10,7 +10,7 @@ CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Provides colour space definition and manpiulation
+COMMENT=	Provides colour space definition and manipulation
 
 RUN_DEPENDS=	rubygem-archive-tar-minitar>=0.5.1:${PORTSDIR}/archivers/rubygem-archive-tar-minitar \
 		rubygem-hoe>=1.3.0:${PORTSDIR}/devel/rubygem-hoe

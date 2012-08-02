@@ -11,7 +11,7 @@ CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	http://files.roorback.net/
 
 MAINTAINER=	magik@roorback.net
-COMMENT=	Sumbit system and ports statistics to fbsdmon.org
+COMMENT=	Submit system and ports statistics to fbsdmon.org
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		jansson.7:${PORTSDIR}/devel/jansson

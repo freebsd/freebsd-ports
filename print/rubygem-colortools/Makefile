@@ -11,7 +11,7 @@ MASTER_SITES=	RG
 DISTNAME=	color-tools-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Provides colour space definition and manpiulation
+COMMENT=	Provides colour space definition and manipulation
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

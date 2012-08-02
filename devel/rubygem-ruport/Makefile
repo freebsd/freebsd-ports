@@ -12,7 +12,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	 Ruby Reports (Ruport) is an extensible reporting system.
+COMMENT=	Ruby Reports (Ruport) is an extensible reporting system
 
 RUN_DEPENDS=	rubygem-transactionsimple>=1.4.0:${PORTSDIR}/devel/rubygem-transactionsimple \
   				rubygem-fastercsv>=1.1.0:${PORTSDIR}/devel/rubygem-fastercsv \

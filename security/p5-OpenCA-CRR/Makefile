@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Perl extention to handle CRR objects
+COMMENT=	Perl extension to handle CRR objects
 
 PERL_CONFIGURE=	yes
 

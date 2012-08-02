@@ -11,7 +11,7 @@ CATEGORIES=	news
 MASTER_SITES=	http://home.arcor.de/kaffeetisch/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Graphical configuation utility for the newsreader slrn
+COMMENT=	Graphical configuration utility for the newsreader slrn
 
 BUILD_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent

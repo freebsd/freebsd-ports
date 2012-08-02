@@ -14,7 +14,7 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Support library for gnome cups admistration
+COMMENT=	Support library for gnome cups administration
 
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-client
 

@@ -10,7 +10,7 @@ PORTVERSION=	0.2.2
 CATEGORIES=	net www pear
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A Pingback User-Agent class.
+COMMENT=	Pingback user-agent class
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

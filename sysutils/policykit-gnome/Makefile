@@ -14,7 +14,7 @@ MASTER_SITES=	http://hal.freedesktop.org/releases/
 DISTNAME=	PolicyKit-gnome-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	GNOME frontend to the PolicKit framework
+COMMENT=	GNOME frontend to the PolicyKit framework
 
 LIB_DEPENDS=	polkit.2:${PORTSDIR}/sysutils/policykit
 

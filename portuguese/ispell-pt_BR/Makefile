@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	pt_BR-
 DISTNAME=	br.ispell-2.4
 
 MAINTAINER=	jonny@jonny.eng.br
-COMMENT=	Ispell dictionary for brazilian portuguese
+COMMENT=	Ispell dictionary for Brazilian Portuguese
 
 BUILD_DEPENDS=	buildhash:${PORTSDIR}/textproc/ispell
 

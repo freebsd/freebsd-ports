@@ -11,7 +11,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Ruby CoffeeScript is a bridge to the JS CoffeeScript compiler.
+COMMENT=	Ruby CoffeeScript is a bridge to the JS CoffeeScript compiler
 
 RUN_DEPENDS=	rubygem-coffee-script-source>=0:${PORTSDIR}/devel/rubygem-coffee-script-source \
 		rubygem-execjs>=0:${PORTSDIR}/devel/rubygem-execjs

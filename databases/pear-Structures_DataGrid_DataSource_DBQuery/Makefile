@@ -10,7 +10,7 @@ PORTVERSION=	0.1.11
 CATEGORIES=	databases www pear
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	DataSource driver using PEAR::DB and an SQL query.
+COMMENT=	DataSource driver using PEAR::DB and an SQL query
 
 BUILD_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:${PORTSDIR}/devel/pear-Structures_DataGrid \
 		${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB

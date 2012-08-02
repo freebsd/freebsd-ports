@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	fjoe
 DISTNAME=	asr.pages
 
 MAINTAINER=	fjoe@FreeBSD.org
-COMMENT=	alt.sysadmin.recovery man page distribution.
+COMMENT=	alt.sysadmin.recovery man page distribution
 
 NO_BUILD=	yes
 MAN1=		c.1 lart.1 rtfm.1 slave.1 sysadmin.1 think.1 whack.1

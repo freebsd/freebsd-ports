@@ -11,7 +11,7 @@ CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Intended to work as a drop-in for Rails applications.
+COMMENT=	Intended to work as a drop-in for Rails applications
 
 RUN_DEPENDS=	rubygem-activerecord>=0:${PORTSDIR}/databases/rubygem-activerecord \
 			    rubygem-activesupport>=0:${PORTSDIR}/devel/rubygem-activesupport \
