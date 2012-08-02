@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	redis
-DISTVERSION=	2.6.0-rc5
+DISTVERSION=	2.6.0-rc6
 CATEGORIES=	databases
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-devel
@@ -14,9 +14,10 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	A persistent key-value database with built-in net interface
 
-LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 
 CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lm -lexecinfo
 
 CONFLICTS?=	redis-2.4.*
 

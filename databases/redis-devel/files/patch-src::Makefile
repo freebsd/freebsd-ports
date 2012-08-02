@@ -1,26 +1,16 @@
---- src/Makefile.orig	2012-06-15 15:44:17.000000000 +0400
-+++ src/Makefile	2012-07-02 04:11:38.000000000 +0400
-@@ -15,7 +15,7 @@
- release_hdr := $(shell sh -c './mkreleasehdr.sh')
- uname_S := $(shell sh -c 'uname -s 2>/dev/null || echo not')
- OPTIMIZATION?=-O2
--DEPENDENCY_TARGETS=hiredis linenoise lua
-+DEPENDENCY_TARGETS=hiredis linenoise lua
- 
- # Default settings
- STD= -std=c99 -pedantic
-@@ -50,6 +50,10 @@
+--- src/Makefile.orig	2012-08-01 14:06:03.000000000 +0400
++++ src/Makefile	2012-08-02 22:24:01.000000000 +0400
+@@ -50,6 +50,9 @@
    FINAL_LDFLAGS= $(LDFLAGS) $(REDIS_LDFLAGS) -g -ggdb
    FINAL_LIBS= -ldl -lnsl -lsocket -lm -lpthread
    DEBUG= -g -ggdb
 +else ifeq ($(uname_S),FreeBSD)
 +  FINAL_CFLAGS?= $(CFLAGS) $(REDIS_CFLAGS) -I${PREFIX}/include
-+  FINAL_LDFLAGS= -pthread -L$(PREFIX)/lib
-+  FINAL_LIBS= -lm -lexecinfo
++  FINAL_LDFLAGS= $(LDFLAGS)
  else
    FINAL_CFLAGS= $(STD) $(WARN) $(OPT) $(DEBUG) $(CFLAGS) $(REDIS_CFLAGS)
    FINAL_LDFLAGS= $(LDFLAGS) $(REDIS_LDFLAGS) -g -rdynamic -ggdb
-@@ -79,7 +83,7 @@
+@@ -79,7 +82,7 @@
  REDIS_CC=$(QUIET_CC)$(CC) $(FINAL_CFLAGS)
  REDIS_LD=$(QUIET_LINK)$(CC) $(FINAL_LDFLAGS)
  
