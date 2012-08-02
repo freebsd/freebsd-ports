@@ -152,6 +152,7 @@ print-index:	${INDEXDIR}/${INDEXFILE}
 	@awk -F\| '{ printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nB-deps:\t%s\nR-deps:\t%s\nE-deps:\t%s\nP-deps:\t%s\nF-deps:\t%s\nWWW:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9, $$11, $$12, $$13, $$10); }' < ${INDEXDIR}/${INDEXFILE}
 
 CVS?= cvs
+GIT?= git
 SVN?= svn
 SUP?= csup
 PORTSNAP?= portsnap
@@ -168,15 +169,19 @@ update:
 	@${SUP} ${SUPFLAGS} ${PORTSSUPFILE}
 .elif defined(CVS_UPDATE)
 	@echo "--------------------------------------------------------------"
-	@echo ">>> Updating ${.CURDIR} from cvs repository" ${CVSROOT}
+	@echo ">>> Updating ${.CURDIR} from CVS repository" ${CVSROOT}
 	@echo "--------------------------------------------------------------"
 	cd ${.CURDIR}; ${CVS} -R -q update -A -P -d -I!
-.else
-.if exists(${.CURDIR}/.svn)
+.elif exists(${.CURDIR}/.svn)
 	@echo "--------------------------------------------------------------"
-	@echo ">>> Updating ${.CURDIR} from svn repository"
+	@echo ">>> Updating ${.CURDIR} using Subversion"
 	@echo "--------------------------------------------------------------"
-	cd ${.CURDIR}; ${SVN} -q update
+	cd ${.CURDIR}; ${SVN} update
+.elif exists(${.CURDIR}/.git)
+	@echo "--------------------------------------------------------------"
+	@echo ">>> Updating ${.CURDIR} from git+svn repository"
+	@echo "--------------------------------------------------------------"
+	cd ${.CURDIR}; ${GIT} ${SVN} rebase
 .else
 	@echo "--------------------------------------------------------------"
 	@echo ">>> Running ${PORTSNAP}"
@@ -190,7 +195,6 @@ update:
 .else
 	@${PORTSNAP} ${PORTSNAP_FLAGS} fetch
 	@${PORTSNAP} ${PORTSNAP_FLAGS} update
-.endif
 .endif
 .endif
 .endif
