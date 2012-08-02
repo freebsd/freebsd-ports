@@ -9,11 +9,11 @@ PORTNAME=	miracl
 PORTVERSION=	5.6
 PORTEPOCH=	1
 CATEGORIES=	math
-MASTER_SITES=	http://www.shatow.net/freebsd/${PORTNAME}/ \
+MASTER_SITES=	http://mirror.shatow.net/freebsd/${PORTNAME}/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jase
 
-MAINTAINER=	bryan@shatow.net
+MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Multiprecision Integer and Rational Arithmetic C/C++ Library
 
 LICENSE=	AGPLv3 COMMERCIAL
