@@ -52,6 +52,52 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="de2bc01f-dc44-11e1-9f4d-002354ed89bc">
+    <topic>Apache -- Insecure LD_LIBRARY_PATH handling</topic>
+    <affects>
+      <package>
+	<name>apache</name>
+	<range><le>2.2.22_5</le></range>
+      </package>
+      <package>
+	<name>apache-event</name>
+	<range><le>2.2.22_5</le></range>
+      </package>
+      <package>
+	<name>apache-itk</name>
+	<range><le>2.2.22_5</le></range>
+      </package>
+      <package>
+	<name>apache-peruser</name>
+	<range><le>2.2.22_5</le></range>
+      </package>
+      <package>
+	<name>apache-worker</name>
+	<range><le>2.2.22_5</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Apache reports:</p>
+	<blockquote cite="http://httpd.apache.org/security/vulnerabilities_24.html">
+	  <p>Insecure handling of LD_LIBRARY_PATH was found that could lead to
+	    the current working directory to be searched for DSOs. This could
+	    allow a local user to execute code as root if an administrator runs
+	    apachectl from an untrusted directory.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-0883</cvename>
+      <url>http://httpd.apache.org/security/vulnerabilities_24.html</url>
+      <url>http://www.apache.org/dist/httpd/CHANGES_2.4.2</url>
+    </references>
+    <dates>
+      <discovery>2012-03-02</discovery>
+      <entry>2012-08-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f01292a0-db3c-11e1-a84b-00e0814cab4e">
     <topic>django -- multiple vulnerabilities</topic>
     <affects>
