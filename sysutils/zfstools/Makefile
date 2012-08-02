@@ -9,7 +9,7 @@ PORTVERSION=	0.2.1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	bryan@shatow.net
+MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	OpenSolaris-compatible auto snapshotting
 
 USE_RUBY=	yes

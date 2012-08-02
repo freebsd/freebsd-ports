@@ -14,7 +14,7 @@ MASTER_SITES=	SF/aolserver/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	aolserver-
 DIST_SUBDIR=	aolserver
 
-MAINTAINER=	bryan@shatow.net
+MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Internal PostgreSQL driver for AOLserver
 
 LICENSE=	MPL

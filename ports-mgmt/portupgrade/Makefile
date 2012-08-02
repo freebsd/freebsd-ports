@@ -13,7 +13,7 @@ MASTER_SITES=	SF/portupgrade/pkgtools/dist/ \
 		http://mirror.shatow.net/freebsd/pkgtools/
 DISTNAME=	pkgtools-${PORTVERSION}
 
-MAINTAINER=	bryan@shatow.net
+MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	FreeBSD ports/packages administration and management tool suite
 
 LICENSE=	BSD
