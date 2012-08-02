@@ -301,24 +301,27 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>ISC reports:</p>
 	<blockquote cite="https://www.isc.org/announcement/bind-and-dhcp-security-updates-released">
-	  <p>An unexpected client identifier parameter can cause the ISC DHCP daemon
-	     to segmentation fault when running in DHCPv6 mode, resulting in a denial
-	     of service to further client requests. In order to exploit this
-	     condition, an attacker must be able to send requests to the DHCP server.</p>
-	  <p>An error in the handling of malformed client identifiers can cause a DHCP
-	     server running affected versions (see "Impact") to enter a state where
-	     further client requests are not processed and the server process loops
-	     endlessly, consuming all available CPU cycles.
-	     Under normal circumstances this condition should not be triggered, but
-	     a non-conforming or malicious client could deliberately trigger it in a
-	     vulnerable server. In order to exploit this condition an attacker must
-	     be able to send requests to the DHCP server.</p>
+	  <p>An unexpected client identifier parameter can cause the ISC DHCP
+	     daemon to segmentation fault when running in DHCPv6 mode,
+	     resulting in a denial of service to further client requests. In
+	     order to exploit this condition, an attacker must be able to send
+	     requests to the DHCP server.</p>
+	  <p>An error in the handling of malformed client identifiers can cause
+	     a DHCP server running affected versions (see "Impact") to enter a
+	     state where further client requests are not processed and the
+	     server process loops endlessly, consuming all available CPU
+	     cycles.
+	     Under normal circumstances this condition should not be
+	     triggered, but a non-conforming or malicious client could
+	     deliberately trigger it in a vulnerable server. In order to
+	     exploit this condition an attacker must be able to send requests
+	     to the DHCP server.</p>
 	  <p>Two memory leaks have been found and fixed in ISC DHCP. Both are
 	     reproducible when running in DHCPv6 mode (with the -6 command-line
-	     argument.) The first leak is confirmed to only affect servers operating
-	     in DHCPv6 mode, but based on initial code analysis the second may
-	     theoretically affect DHCPv4 servers (though this has not been
-	     demonstrated.)</p>
+	     argument.) The first leak is confirmed to only affect servers
+	     operating in DHCPv6 mode, but based on initial code analysis the
+	     second may theoretically affect DHCPv4 servers (though this has
+	     not been demonstrated.)</p>
 	</blockquote>
       </body>
     </description>
