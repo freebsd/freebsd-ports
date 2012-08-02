@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	babeld
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.3
 CATEGORIES=	net
-MASTER_SITES=	http://www.pps.jussieu.fr/~jch/software/files/
+MASTER_SITES=	http://www.pps.univ-paris-diderot.fr/~jch/software/files/
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	A distance-vector routing protocol
