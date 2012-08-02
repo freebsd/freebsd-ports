@@ -556,11 +556,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/guides/layouts_and_containers/icon.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/localization/README.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/localization/README.md
-%%PORTDOCS%%%%DOCSDIR%%/guides/localization/combobox.png
-%%PORTDOCS%%%%DOCSDIR%%/guides/localization/datepicker.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/localization/icon.png
-%%PORTDOCS%%%%DOCSDIR%%/guides/localization/onfailure.png
-%%PORTDOCS%%%%DOCSDIR%%/guides/localization/tooltip.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt1/README.js
 %%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt1/README.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/mvc_pt1/balanced.png
@@ -656,6 +652,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.ComponentManager.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.ComponentQuery.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.Date.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.DomHelper.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.Editor.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.ElementLoader.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.Error.js
@@ -747,6 +744,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.ResultSet.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.SequentialIdGenerator.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.SortTypes.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.Store.PageMap.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.Store.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.StoreManager.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.data.Tree.js
@@ -1078,10 +1076,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.TabScrollerMenu.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.ToolbarDroppable.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.TreePicker.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.ajax.DataSimlet.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.ajax.JsonSimlet.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.ajax.SimManager.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.ajax.SimXhr.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.ajax.Simlet.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.ajax.XmlSimlet.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.data.PagingMemoryProxy.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.event.Driver.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.ux.event.Maker.js
@@ -1110,10 +1110,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.view.DropZone.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.view.Table.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.view.TableChunker.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.view.TableLayout.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.view.View.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.window.MessageBox.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.window.Window.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Function.js
+%%PORTDOCS%%%%DOCSDIR%%/output/Global_CSS.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Number.js
 %%PORTDOCS%%%%DOCSDIR%%/output/Object.js
 %%PORTDOCS%%%%DOCSDIR%%/output/RegExp.js
@@ -1304,6 +1306,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/DD2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/DDProxy.html
 %%PORTDOCS%%%%DOCSDIR%%/source/DDTarget.html
+%%PORTDOCS%%%%DOCSDIR%%/source/DataSimlet.html
 %%PORTDOCS%%%%DOCSDIR%%/source/DataViewModel.html
 %%PORTDOCS%%%%DOCSDIR%%/source/DataViewTransition.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Date.html
@@ -1608,6 +1611,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/Table2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Table3.html
 %%PORTDOCS%%%%DOCSDIR%%/source/TableChunker.html
+%%PORTDOCS%%%%DOCSDIR%%/source/TableLayout.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Target.html
 %%PORTDOCS%%%%DOCSDIR%%/source/TaskManager.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Template.html
@@ -1663,8 +1667,79 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/XTemplateParser.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Xml.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Xml2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/XmlSimlet.html
 %%PORTDOCS%%%%DOCSDIR%%/source/XmlStore.html
 %%PORTDOCS%%%%DOCSDIR%%/source/ZIndexManager.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_all.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_all.scss2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_background-gradient.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_boundlist.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_boundlist.scss2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_btn-group.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_btn-group.scss2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_button.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_button.scss2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_checkbox.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_checkboxgroup.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_color-by-background.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_colorpicker.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_core.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_core.scss2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_core.scss3.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_datepicker.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_dragdrop.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_drawcomponent.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_field.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_fieldset.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_file.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_focus.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_focus.scss2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_form.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_form.scss2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_frame.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_functions.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_grid.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_grid.scss2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_html.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_htmleditor.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_htmleditor.scss2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_inner-border.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_layout.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_layout.scss2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_loadmask.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_loadmask.scss2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_menu.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_menu.scss2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_messagebox.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_mixins.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_panel.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_panel.scss2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_pickers.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_progress-bar.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_progress-bar.scss2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_qtip.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_qtip.scss2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_reset-extras.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_reset.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_resizable.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_scroller.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_slider.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_splitter.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_tab.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_tabbar.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_tabs.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_theme-background-image.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_tool.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_toolbar.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_toolbar.scss2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_tree.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_tree.scss2.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_triggerfield.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_variables.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_viewport.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_widgets.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_window.scss.html
+%%PORTDOCS%%%%DOCSDIR%%/source/_window.scss2.html
 %%PORTDOCS%%%%DOCSDIR%%/source/statusbar.css.html
 %%PORTDOCS%%%%DOCSDIR%%/source/tail.html
 %%PORTDOCS%%%%DOCSDIR%%/source/validations.html
@@ -2148,6 +2223,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/locking-grid.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/locking-group-summary-grid.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/locking-group-summary-grid.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/locking-grp-summary-grp-hdrs-grid.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/locking-grp-summary-grp-hdrs-grid.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/locking-infinite-scroll.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/locking-infinite-scroll.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/locking-row-editing-grid.html
@@ -2165,6 +2242,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/remote-group-summary-grid-simjax.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/remote-group-summary-grid.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/remote-group-summary-grid.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/remotegroupgrid.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/remotegroupgrid.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/remove-all-recs.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/row-editing.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid/row-editing.js
@@ -2873,10 +2952,12 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/TabScrollerMenu.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/ToolbarDroppable.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/TreePicker.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/ajax/DataSimlet.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/ajax/JsonSimlet.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/ajax/SimManager.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/ajax/SimXhr.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/ajax/Simlet.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/ajax/XmlSimlet.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/css/CheckHeader.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/css/GroupTabPanel.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ux/css/ItemSelector.css
@@ -3085,6 +3166,7 @@
 %%WWWDIR%%/locale/ext-lang-en.js
 %%WWWDIR%%/locale/ext-lang-en_GB.js
 %%WWWDIR%%/locale/ext-lang-es.js
+%%WWWDIR%%/locale/ext-lang-et.js
 %%WWWDIR%%/locale/ext-lang-fa.js
 %%WWWDIR%%/locale/ext-lang-fi.js
 %%WWWDIR%%/locale/ext-lang-fr.js
@@ -5043,6 +5125,7 @@
 %%WWWDIR%%/src/view/DropZone.js
 %%WWWDIR%%/src/view/Table.js
 %%WWWDIR%%/src/view/TableChunker.js
+%%WWWDIR%%/src/view/TableLayout.js
 %%WWWDIR%%/src/view/View.js
 %%WWWDIR%%/src/window/MessageBox.js
 %%WWWDIR%%/src/window/Window-legacy.js
@@ -5141,9 +5224,11 @@
 @dirrm %%WWWDIR%%/src/diag
 @dirrm %%WWWDIR%%/src/dd
 @dirrm %%WWWDIR%%/src/data/writer
+@dirrm %%WWWDIR%%/src/data/soap
 @dirrm %%WWWDIR%%/src/data/reader
 @dirrm %%WWWDIR%%/src/data/proxy
 @dirrm %%WWWDIR%%/src/data/association
+@dirrm %%WWWDIR%%/src/data/amf
 @dirrm %%WWWDIR%%/src/data
 @dirrm %%WWWDIR%%/src/core/test/unit/spec/version
 @dirrm %%WWWDIR%%/src/core/test/unit/spec/util
@@ -5307,7 +5392,6 @@
 @dirrm %%WWWDIR%%/resources/themes/images/access
 @dirrm %%WWWDIR%%/resources/themes/images
 @dirrm %%WWWDIR%%/resources/themes
-@dirrm %%WWWDIR%%/resources/sass/.sass-cache
 @dirrm %%WWWDIR%%/resources/sass
 @dirrm %%WWWDIR%%/resources/css
 @dirrm %%WWWDIR%%/resources
@@ -5671,4 +5755,5 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs/resources
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/extjs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec mkdir -p %D/%%WWWDIR%%/resources/sass/.sass-cache
+@exec mkdir -p %D/%%WWWDIR%%/src/data/soap
+@exec mkdir -p %D/%%WWWDIR%%/src/data/amf

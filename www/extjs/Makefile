@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	extjs
-PORTVERSION=	4.1.0
+PORTVERSION=	4.1.1
 CATEGORIES=	www
 MASTER_SITES=	http://cdn.sencha.io/ \
 		http://extjs.cachefly.net/ \
