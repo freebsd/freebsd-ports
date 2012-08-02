@@ -12,7 +12,7 @@ PORTEPOCH=	2
 CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 
-MAINTAINER=	bryan@shatow.net
+MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	CGI program for administering Qmail with vchkpw/vpopmail
 
 LICENSE=	GPLv2 GPLv3
