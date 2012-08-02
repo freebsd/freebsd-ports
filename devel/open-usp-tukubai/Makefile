@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	open-usp-tukubai
-PORTVERSION=	20120503
+PORTVERSION=	20120802
 CATEGORIES=	devel
 MASTER_SITES=	https://uec.usp-lab.com/TUKUBAI/DOWNLOAD/
 
