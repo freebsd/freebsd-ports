@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Sub/Exporter/Progressive.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Exporter/Progressive/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Exporter/Progressive
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub/Exporter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sub
+@dirrmtry %%SITE_PERL%%/Sub/Exporter
+@dirrmtry %%SITE_PERL%%/Sub
