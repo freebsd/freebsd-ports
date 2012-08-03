@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://www2.mindrot.org/files/flowd/
 
 MAINTAINER=	janos.mohacsi@bsd.hu
-COMMENT=	The flowd is a small, fast and secure NetFlow collector
+COMMENT=	The flowd is a small, fast, and secure NetFlow collector
 
 OPTIONS=	PERL	"Install flowd perl module" on \
 		PYTHON	"Install flowd Python support" off

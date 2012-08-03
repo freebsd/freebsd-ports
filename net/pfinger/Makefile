@@ -13,7 +13,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.xelia.ch/unix/pfinger/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Highly configurable, secure and portable finger daemon
+COMMENT=	Highly configurable, secure, and portable finger daemon
 
 CONFLICTS=	gnu-finger-1.*
 

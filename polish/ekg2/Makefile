@@ -12,7 +12,7 @@ CATEGORIES=	polish net-im
 MASTER_SITES=	http://pl.ekg2.org/
 
 MAINTAINER=	pawel@FreeBSD.org
-COMMENT=	Text-mode Gadu-Gadu, Jabber and IRC client
+COMMENT=	Text-mode Gadu-Gadu, Jabber, and IRC client
 
 LIB_DEPENDS=	gadu.3:${PORTSDIR}/polish/libgadu \
 		expat.6:${PORTSDIR}/textproc/expat2

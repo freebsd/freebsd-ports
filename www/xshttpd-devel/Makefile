@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-${DISTVERSION:S/.//}
 
 MAINTAINER=	johans@FreeBSD.org
-COMMENT=	A webserver with CGI as own user and SSL suport
+COMMENT=	Webserver with CGI as own user and SSL support
 
 RUN_DEPENDS=	run-mailcap:${PORTSDIR}/misc/mime-support \
 		ppmtogif:${PORTSDIR}/graphics/netpbm

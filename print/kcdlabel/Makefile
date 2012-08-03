@@ -12,7 +12,7 @@ MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}-KDE3
 DISTNAME=		${PORTNAME}-${PORTVERSION}-KDE3
 
 MAINTAINER=		ports@FreeBSD.org
-COMMENT=		Create covers, labels and booklets for your CD cases
+COMMENT=		Create covers, labels, and booklets for your CD cases
 
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes

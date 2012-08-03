@@ -14,7 +14,7 @@ MASTER_SITES=	http://nivi.interfree.it/distfiles/${PORTNAME}/
 DISTNAME=	GeoGebra-FreeBSD-Installer-${DISTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A dynamic software that joins geometry, algebra and calculus
+COMMENT=	Dynamic software that joins geometry, algebra, and calculus
 
 RUN_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 

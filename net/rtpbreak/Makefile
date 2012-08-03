@@ -12,7 +12,7 @@ MASTER_SITES=	http://dallachiesa.com/code/rtpbreak/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	prudhvi-krishna-bsd@surapaneni.in
-COMMENT=	Detects, reconstructs and analyzes any RTP session
+COMMENT=	Detects, reconstructs, and analyzes any RTP session
 
 BUILD_DEPENDS=	libnet11-config:${PORTSDIR}/net/libnet
 

@@ -13,7 +13,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://graph.seul.org/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tool that allows you to create, manipulate and study graphs
+COMMENT=	Tool that allows you to create, manipulate, and study graphs
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

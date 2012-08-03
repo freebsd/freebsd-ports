@@ -12,7 +12,7 @@ CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	ftp://ftp.bieringer.de/pub/linux/IPv6/ipv6calc/
 
 MAINTAINER=	edwin@mavetju.org
-COMMENT=	Convert, change and calculate with IPv6 addresses
+COMMENT=	Convert, change, and calculate with IPv6 addresses
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

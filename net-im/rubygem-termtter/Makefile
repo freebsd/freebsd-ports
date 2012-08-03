@@ -11,7 +11,7 @@ CATEGORIES=	net-im rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	dhn@FreeBSD.org
-COMMENT=	A terminal based twitter client
+COMMENT=	Terminal based Twitter client
 
 RUN_DEPENDS=	rubygem-json>=1.1.3:${PORTSDIR}/devel/rubygem-json \
 		rubygem-termcolor>=1.0.0:${PORTSDIR}/textproc/rubygem-termcolor \

@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Utility to both test and create .sfv, .csv and md5sum files
+COMMENT=	Utility to both test and create .sfv, .csv, and md5sum files
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/fchksum.so:${PORTSDIR}/security/py-fchksum
 

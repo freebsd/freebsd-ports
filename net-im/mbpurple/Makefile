@@ -11,7 +11,7 @@ CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	dougb@FreeBSD.org
-COMMENT=	Integrate twitter with pidgin (AKA microblog-purple)
+COMMENT=	Integrate Twitter with Pidgin (AKA microblog-purple)
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/pidgin:${PORTSDIR}/net-im/pidgin \
 		pkgconf>0:${PORTSDIR}/devel/pkgconf

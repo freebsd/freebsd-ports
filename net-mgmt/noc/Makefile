@@ -12,7 +12,7 @@ CATEGORIES=	net-mgmt python
 MASTER_SITES=	http://redmine.nocproject.org/attachments/download/137/
 
 MAINTAINER=	count@211.ru
-COMMENT=	Operation Support System (OSS) for the Telco, SP and Enterprise NOC
+COMMENT=	Operation Support System (OSS) for the Telco, SP, and Enterprise NOC
 
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-sa_sae.py
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-0.6.4.rst

@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/
 
 MAINTAINER=	douglas@douglasthrift.net
-COMMENT=	A port of the Linux pstree, killall and pidof commands
+COMMENT=	Port of the Linux pstree, killall, and pidof commands
 
 LICENSE=	GPLv2
 

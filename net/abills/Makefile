@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	liettneff@bk.ru
-COMMENT=	Billing system for dialup, VPN and VoIP management
+COMMENT=	Billing system for dialup, VPN, and VoIP management
 
 LICENSE=	GPLv2
 

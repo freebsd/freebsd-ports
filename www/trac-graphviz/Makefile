@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 
 MAINTAINER=	brooks@FreeBSD.org
-COMMENT=	Graphviz pluging for Trac's wiki
+COMMENT=	Graphviz plugin for Trac's wiki
 
 RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/URW/fonts.dir:${PORTSDIR}/x11-fonts/urwfonts \
 		dot:${PORTSDIR}/graphics/graphviz \

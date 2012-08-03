@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
-COMMENT=	Perl extension to cache esponse to be polite
+COMMENT=	Perl extension to cache response to be polite
 
 RUN_DEPENDS=	\
 	p5-Cache-Cache>=1.02:${PORTSDIR}/devel/p5-Cache-Cache \

@@ -17,7 +17,7 @@ MASTER_SITES=	http://www.thundercache.com.br/dist/ \
 DISTNAME=	thundercache-6.1.201104260900-64bits-fbsd
 
 MAINTAINER=	eksffa@freebsdbrasil.com.br
-COMMENT=	High-performance and high-eficiency caching proxy system
+COMMENT=	High-performance and high-efficiency caching proxy system
 
 OPTIONS=	DEPENDACK "I have read and understood the depends needs" on \
 		APACHE "Install apache for reporting viewing" on \

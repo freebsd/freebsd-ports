@@ -14,7 +14,7 @@ MASTER_SITES=	http://monkey.org/~dugsong/fragroute/ \
 MASTER_SITE_SUBDIR=	UNIX/security
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tool for intercepting, modifying and rewriting egress traffic
+COMMENT=	Tool for intercepting, modifying, and rewriting egress traffic
 
 LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet \
 		event-1.4:${PORTSDIR}/devel/libevent

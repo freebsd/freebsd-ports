@@ -10,7 +10,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE:S/better/mysql/}
 
 MAINTAINER=	alexey@renatasystems.org
-COMMENT=	Better Cacti templates for MySQL, Apache, Memcached and more
+COMMENT=	Better Cacti templates for MySQL, Apache, Memcached, and more
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

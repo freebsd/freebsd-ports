@@ -14,7 +14,7 @@ MASTER_SITES=	http://www2e.biglobe.ne.jp/~isizaka/bin/ \
 DISTNAME=	Ngraph-${PORTVERSION}-src
 
 MAINTAINER=	sanpei@FreeBSD.org
-COMMENT=	A XY plotting tool for students, scientists and engineers
+COMMENT=	XY plotting tool for students, scientists, and engineers
 
 USE_MOTIF=	yes
 USE_GMAKE=	yes

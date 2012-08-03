@@ -12,7 +12,7 @@ CATEGORIES=	security net
 MASTER_SITES=	http://www.monkey.org/~provos/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Scans networks for open proxies, SSH, Web and SMTP servers
+COMMENT=	Scans networks for open proxies, SSH, web, and SMTP servers
 
 LIB_DEPENDS=	dnet:${PORTSDIR}/net/libdnet \
 		event-1.4:${PORTSDIR}/devel/libevent

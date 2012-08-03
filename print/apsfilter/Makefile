@@ -12,7 +12,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Magic print filter with print preview, duplex printing and more
+COMMENT=	Magic print filter with print preview, duplex printing, and more
 
 DIST_SUBDIR=	apsfilter
 

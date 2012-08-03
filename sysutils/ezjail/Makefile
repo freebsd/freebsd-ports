@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://erdgeist.org/arts/software/ezjail/
 
 MAINTAINER=	erdgeist@erdgeist.org
-COMMENT=	A framework to easily create, manipulate and run FreeBSD jails
+COMMENT=	Framework to easily create, manipulate, and run FreeBSD jails
 
 USE_BZIP2=	yes
 

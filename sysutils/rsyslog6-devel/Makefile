@@ -15,7 +15,7 @@ PKGNAMESUFFIX?=	-${MNAME}
 .endif
 
 MAINTAINER=	pgollucci@FreeBSD.org
-COMMENT?=	Syslogd supporting SQL, TCP and TLS
+COMMENT?=	Syslogd supporting SQL, TCP, and TLS
 
 USE_LDCONFIG=	yes
 

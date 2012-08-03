@@ -14,7 +14,7 @@ MASTER_SITES=	http://download.deluge-torrent.org/source/
 EXTRACT_SUFX=	.tar.lzma
 
 MAINTAINER=	rm@FreeBSD.org
-COMMENT=	Bittorrent client using Python, GTK+2 and libtorrent-rasterbar
+COMMENT=	Bittorrent client using Python, GTK+2, and libtorrent-rasterbar
 
 LICENSE=	GPLv3
 

@@ -11,7 +11,7 @@ CATEGORIES=	net mbone
 MASTER_SITES=	http://www.cs.columbia.edu/IRT/software/rtptools/download/
 
 MAINTAINER=	tut@nhamon.com.ua
-COMMENT=	A set of tools to record, playback and monitor RTPv2 data streams
+COMMENT=	Set of tools to record, playback, and monitor RTPv2 data streams
 
 GNU_CONFIGURE=	yes
 

@@ -13,7 +13,7 @@ MASTER_SITES=	http://oldhome.schmorp.de/data/marc/ \
 		http://distfiles.macports.org/${PORTNAME}/
 
 MAINTAINER=	stefan@FreeBSD.org
-COMMENT=	Portable, fast and featureful ZIP password cracker
+COMMENT=	Portable, fast, and featureful ZIP password cracker
 
 GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=yes

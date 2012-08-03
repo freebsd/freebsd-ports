@@ -14,7 +14,7 @@ DISTFILES=	pk${RESOLUTION}.tar.gz
 # see below for RESOLUTION definition
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	English PK fonts, for ghostscripts, xdvi and so on
+COMMENT=	English PK fonts, for ghostscripts, xdvi, and so on
 
 DIST_SUBDIR=	pkfonts
 EXTRACT_ONLY=	# extracted directly in install target

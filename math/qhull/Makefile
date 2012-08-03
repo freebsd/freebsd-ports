@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	stephen@FreeBSD.org
-COMMENT=	Qhull computes convex hulls, Delaunay triangulations and halfspaces
+COMMENT=	Qhull computes convex hulls, Delaunay triangulations, and halfspaces
 
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes

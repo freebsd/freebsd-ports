@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-0.9.4-1
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	Read, Modify and Write DICOM Files with Python Code
+COMMENT=	Read, modify, and write DICOM files with Python code
 
 USE_DOS2UNIX=	yes
 USE_PYTHON=	yes

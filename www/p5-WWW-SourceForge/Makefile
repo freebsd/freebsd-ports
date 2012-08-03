@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	ychsiao@ychsiao.org
-COMMENT=	Retrieve infromation from SourceForge site
+COMMENT=	Retrieve information from SourceForge site
 
 BUILD_DEPENDS=	p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize \
 		p5-HTML-TableExtract>=0:${PORTSDIR}/www/p5-HTML-TableExtract \

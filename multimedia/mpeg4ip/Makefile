@@ -16,7 +16,7 @@ MASTER_SITES=	LOCAL/ahze
 PKGNAMESUFFIX=	${PKG_NAME_SUFFIX}
 
 MAINTAINER=	multimedia@FreeBSD.org
-COMMENT=	Standards-based system to encode, stream and play MPEG-4 audio/video
+COMMENT=	Standards-based system to encode, stream, and play MPEG-4 audio/video
 
 BUILD_DEPENDS=	mp4v2>=1.9.1:${PORTSDIR}/multimedia/mp4v2 \
 		${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
