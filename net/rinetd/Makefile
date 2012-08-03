@@ -18,7 +18,6 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A simple TCP port redirector
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 
 WRKSRC=		${WRKDIR}/rinetd/
 

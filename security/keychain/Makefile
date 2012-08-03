@@ -16,7 +16,6 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A user-friendly front-end to ssh-agent(1)
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 
 USE_BZIP2=		yes
 USE_GMAKE=		yes

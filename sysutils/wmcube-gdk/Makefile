@@ -17,7 +17,6 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A modified version of the dockapp wmCube
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 
 USE_XORG=	xpm
 USE_GNOME=	gtk12

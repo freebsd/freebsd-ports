@@ -18,7 +18,6 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Window Maker dockapp that displays cpu load and a realtime 3D object
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/${PORTNAME}
 USE_XORG=	xpm

@@ -24,7 +24,6 @@ MAKE_JOBS_SAFE=	yes
 PORTDOCS=	README.txt INSTALL.txt mysql.sql
 
 OPTIONS_DEFINE=	MYSQL DOCS
-OPTIONS_DEFAULT=DOCS
 
 .include <bsd.port.pre.mk>
 

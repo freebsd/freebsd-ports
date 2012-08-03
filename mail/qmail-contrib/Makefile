@@ -19,7 +19,6 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Contributed programs for qmail
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 
 USE_QMAIL_RUN=	yes
 MAKE_JOBS_SAFE=	yes

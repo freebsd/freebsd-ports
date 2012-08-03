@@ -15,7 +15,6 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Tool to view and manage a qmail queue
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 
 USE_QMAIL_RUN=	yes
 
