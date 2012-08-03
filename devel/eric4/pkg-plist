@@ -192,6 +192,7 @@
 %%DOCSDIR%%/Source/eric4.Helpviewer.History.HistoryTreeModel.html
 %%DOCSDIR%%/Source/eric4.Helpviewer.JavaScriptResources.html
 %%DOCSDIR%%/Source/eric4.Helpviewer.Network.AboutAccessHandler.html
+%%DOCSDIR%%/Source/eric4.Helpviewer.Network.EmptyNetworkReply.html
 %%DOCSDIR%%/Source/eric4.Helpviewer.Network.NetworkAccessManager.html
 %%DOCSDIR%%/Source/eric4.Helpviewer.Network.NetworkAccessManagerProxy.html
 %%DOCSDIR%%/Source/eric4.Helpviewer.Network.NetworkDiskCache.html
@@ -1182,6 +1183,8 @@
 %%PYTHON_SITELIBDIR%%/eric4/Helpviewer/JavaScriptResources.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Helpviewer/Network/AboutAccessHandler.py
 %%PYTHON_SITELIBDIR%%/eric4/Helpviewer/Network/AboutAccessHandler.pyc
+%%PYTHON_SITELIBDIR%%/eric4/Helpviewer/Network/EmptyNetworkReply.py
+%%PYTHON_SITELIBDIR%%/eric4/Helpviewer/Network/EmptyNetworkReply.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Helpviewer/Network/NetworkAccessManager.py
 %%PYTHON_SITELIBDIR%%/eric4/Helpviewer/Network/NetworkAccessManager.pyc
 %%PYTHON_SITELIBDIR%%/eric4/Helpviewer/Network/NetworkAccessManagerProxy.py
