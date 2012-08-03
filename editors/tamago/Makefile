@@ -36,7 +36,7 @@ POSTPATCHES=	${FILESDIR}/post-patch-*
 
 .include <bsd.port.pre.mk>
 
-.if ${EMACS_PORT_NAME} == emacs21 || ${EMACS_PORT_NAME} == emacs22 || ${EMACS_PORT_NAME} == emacs23
+.if ${EMACS_PORT_NAME} == emacs21 || ${EMACS_PORT_NAME} == emacs22 || ${EMACS_PORT_NAME} == emacs23 || ${EMACS_PORT_NAME} == emacs24
 PLIST_SUB+=	HAS_JISX0213=""
 .else
 PLIST_SUB+=	HAS_JISX0213="@comment "
