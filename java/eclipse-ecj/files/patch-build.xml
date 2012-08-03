@@ -1,0 +1,11 @@
+--- ./build.xml	
++++ ./build.xml	
+@@ -44,6 +44,7 @@ 
+ 			<fileset dir="${basedir}">
+ 				<include name="about.html"/>
+ 				<include name="**/*.rsc"/>
++				<include name="**/readableNames.props"/>
+ 				<include name="META-INF/**"/>
+ 				<include name="**/*.properties"/>
+ 				<exclude name="META-INF/eclipse.inf"/>
+
