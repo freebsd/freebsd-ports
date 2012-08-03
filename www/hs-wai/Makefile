@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wai
-PORTVERSION=	1.2.0.2
+PORTVERSION=	1.2.0.3
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
