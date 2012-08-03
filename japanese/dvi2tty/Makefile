@@ -23,6 +23,8 @@ COMMENT=	Character-based DVI file previewer
 
 RUN_DEPENDS=	jless:${PORTSDIR}/japanese/less
 
+CONFLICTS=	dvi2tty-[0-9]*
+
 PLIST_FILES=	bin/jdvi2tty bin/dvi2tty bin/disdvi
 
 MAN1=		dvi2tty.1

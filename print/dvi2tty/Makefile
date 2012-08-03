@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dvi-file previewer for text only devices
 
+CONFLICTS=	ja-dvi2tty-[0-9]*
+
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${STRIP}"
 
 MAN1=		disdvi.1 dvi2tty.1
