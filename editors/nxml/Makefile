@@ -47,8 +47,8 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if (${EMACS_PORT_NAME} == "emacs23")
-IGNORE=     incorporated into Emacs 23
+.if ${EMACS_PORT_NAME} == "emacs23" || ${EMACS_PORT_NAME} == "emacs24"
+IGNORE=     incorporated into ${EMACS_PORT_NAME}
 .endif
 
 .include <bsd.port.post.mk>
