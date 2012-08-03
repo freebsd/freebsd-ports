@@ -14,7 +14,7 @@ MASTER_SITES=	http://paradox.lissyara.su/ \
 DISTNAME=	${PORTNAME}.8_${PORTVERSION:S/.//}
 
 MAINTAINER=	admin@lissyara.su
-COMMENT=	Kernel module and program for SkyStar2/SkyStar2.8A, ver. ${PORTVERSION}
+COMMENT=	Kernel module and program for SkyStar2/SkyStar2.8A
 
 USE_BZIP2=	yes
 

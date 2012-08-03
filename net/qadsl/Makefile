@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	SAVANNAH/alive
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Auto login/Keep-alive for Telia AB ADSL, COMHEM Cable and Tiscali Internet
+COMMENT=	Auto login/Keep-alive for Telia AB ADSL, COMHEM Cable, and Tiscali Internet
 
 LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING

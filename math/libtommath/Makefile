@@ -12,7 +12,7 @@ MASTER_SITES=	http://libtom.org/files/
 DISTNAME=	ltm-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Comprehensive, modular and portable mathematical routines
+COMMENT=	Comprehensive, modular, and portable mathematical routines
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	makefile

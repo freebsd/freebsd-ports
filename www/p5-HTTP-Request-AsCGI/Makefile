@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Setup a CGI enviroment from a HTTP::Request
+COMMENT=	Setup a CGI environment from a HTTP::Request
 
 BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \

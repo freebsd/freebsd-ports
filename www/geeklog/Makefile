@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.geeklog.net/filemgmt/upload_dir/
 
 MAINTAINER=	sahil@FreeBSD.org
-COMMENT=	GeekLog is a web content magagement system
+COMMENT=	Web content management system
 
 SUB_FILES=	pkg-message
 

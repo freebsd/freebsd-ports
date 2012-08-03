@@ -16,7 +16,7 @@ PATCHFILES=		poly.c-qh_gethash.patch
 PATCH_DIST_STRIP=	-p2
 
 MAINTAINER=	stephen@FreeBSD.org
-COMMENT=	Qhull computes convex hulls, Delaunay triangulations and halfspaces
+COMMENT=	Qhull computes convex hulls, Delaunay triangulations, and halfspaces
 
 LATEST_LINK=	qhull5
 CONFLICTS=	qhull-2011* afni-[0-9]*

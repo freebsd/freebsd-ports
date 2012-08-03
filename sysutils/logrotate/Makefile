@@ -11,7 +11,7 @@ CATEGORIES=		sysutils
 MASTER_SITES=		https://fedorahosted.org/releases/l/o/logrotate/
 
 MAINTAINER=		js@iksz.hu
-COMMENT=		Daemon to rotate, compress, remove and mail system log files
+COMMENT=		Daemon to rotate, compress, remove, and mail system log files
 
 LIB_DEPENDS=		popt.0:${PORTSDIR}/devel/popt
 

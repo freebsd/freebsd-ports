@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.gnome-look.org/CONTENT/content-files/
 DISTNAME=	6550-Jimmac
 
 MAINTAINER=	smyru@heron.pl
-COMMENT=	The beatiful Jimmac X cursor themes
+COMMENT=	The beautiful Jimmac X cursor themes
 
 NO_BUILD=	yes
 

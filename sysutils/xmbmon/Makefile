@@ -8,7 +8,7 @@
 PORTNAME=	xmbmon
 PORTREVISION=	9
 
-COMMENT=	A X motherboard monitor for LM78/79, W8378x, AS99127F, VT82C686 and ADM9240
+COMMENT=	X motherboard monitor for LM78/79, W8378x, AS99127F, VT82C686, and ADM9240
 
 MASTERDIR=	${.CURDIR}/../mbmon
 

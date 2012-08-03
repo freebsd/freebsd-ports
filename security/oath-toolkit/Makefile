@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	Library, tools and PAM module for OATH authentication
+COMMENT=	Library, tools, and PAM module for OATH authentication
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	NETBSD/LOCAL_PORTS
 
 MAINTAINER=	bapt@FreeBSD.org
-COMMENT=	PGP signing, verification, encryption and decryption program
+COMMENT=	PGP signing, verification, encryption, and decryption program
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/Licence

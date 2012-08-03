@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.imspector.org/downloads/ \
 		http://tsatsenko.ru/ports/distfiles/
 
 MAINTAINER=	m.tsatsenko@gmail.com
-COMMENT=	IM transparent proxy with monitoring, blocking and content-filtering
+COMMENT=	IM transparent proxy with monitoring, blocking, and content-filtering
 
 LICENSE=	GPLv2
 

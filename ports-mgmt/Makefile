@@ -1,7 +1,7 @@
 # $FreeBSD$
 #
 
-    COMMENT = Ports for managing, installing and developing FreeBSD ports and packages
+    COMMENT = Ports for managing, installing, and developing FreeBSD ports and packages
 
     SUBDIR += bpkg
     SUBDIR += bpm

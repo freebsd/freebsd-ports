@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	hartzell@alerce.com
-COMMENT=	Make tamper-resisistent links in CGI::Application
+COMMENT=	Make tamper-resistent links in CGI::Application
 
 BUILD_DEPENDS=	p5-CGI-Application>=0:${PORTSDIR}/www/p5-CGI-Application \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \

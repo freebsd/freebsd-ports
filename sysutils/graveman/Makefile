@@ -13,7 +13,7 @@ MASTER_SITES=	http://graveman.tuxfamily.org/sources/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/-\1/}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Another GTK2 frontend for cdrecord, mkisofs, readcd and sox
+COMMENT=	Another GTK2 frontend for cdrecord, mkisofs, readcd, and sox
 
 LIB_DEPENDS=	mng.1:${PORTSDIR}/graphics/libmng
 

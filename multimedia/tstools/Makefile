@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	tstools
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	fbsd@opal.com
-COMMENT=	MPEG Transport, Program and Elementary Stream tools
+COMMENT=	MPEG transport, program, and elementary stream tools
 
 USE_GMAKE=	yes
 

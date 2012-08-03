@@ -12,7 +12,7 @@ MASTER_SITES=	SF/fsp/fsp/2.8.1b26
 DISTNAME=	fsp-2.8.1b26
 
 MAINTAINER=	sylvio@FreeBSD.org
-COMMENT=	FSP daemon, clients and scanner
+COMMENT=	FSP daemon, clients, and scanner
 
 BUILD_DEPENDS=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 

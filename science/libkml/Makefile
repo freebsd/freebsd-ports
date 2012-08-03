@@ -11,7 +11,7 @@ CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	Library for parse, generate and operate on KML
+COMMENT=	Library for parse, generate, and operate on KML
 
 BUILD_DEPENDS=	${LOCALBASE}/include/expat.h:${PORTSDIR}/textproc/expat2 \
 		${LOCALBASE}/bin/curl-config:${PORTSDIR}/ftp/curl

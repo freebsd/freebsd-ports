@@ -22,7 +22,7 @@ PATCHFILES=	dss-6.0.3.patch
 PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	nork@FreeBSD.org
-COMMENT=	Darwin Streaming Server, a MP3, MPEG4 and QuickTime streaming server
+COMMENT=	Darwin Streaming Server, a MP3, MPEG4, and QuickTime streaming server
 
 RUN_DEPENDS=	p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay
 

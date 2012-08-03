@@ -11,7 +11,7 @@ CATEGORIES=	net-im rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	meta+ports@vmeta.jp
-COMMENT=	A terminal based twitter client with Twitter streaming API
+COMMENT=	Terminal based Twitter client with Twitter streaming API
 
 RUN_DEPENDS=	rubygem-twitter-stream>=0.1.15:${PORTSDIR}/net/rubygem-twitter-stream \
 		rubygem-notify>=0.2.1:${PORTSDIR}/devel/rubygem-notify \

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	tota/${PORTNAME}
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
-COMMENT=	A simple, powerful and moeful twitter client
+COMMENT=	Simple, powerful, and moeful Twitter client
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

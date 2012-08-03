@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.areski.net/${SITE_SUBDIR}/
 DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}
 
 MAINTAINER=	jfkimura@yahoo.co.jp
-COMMENT=	ASTERISK Call Detail Records Analizer
+COMMENT=	ASTERISK call detail records analyzer
 
 LIB_DEPENDS=	gd.[4-9]:${PORTSDIR}/graphics/gd
 

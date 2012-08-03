@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://pkg-isocodes.alioth.debian.org/downloads/
 
 MAINTAINER=	kwm@FreeBSD.org
-COMMENT=	Lists of the country, language and currency iso names
+COMMENT=	Lists of the country, language, and currency iso names
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -13,7 +13,7 @@ MASTER_SITES=	http://files.digital-digest.com/downloads/files/encode/
 DISTNAME=	vStrip_${DISTVERSION:C/\.//g}
 
 MAINTAINER=	multimedia@FreeBSD.org
-COMMENT=	A VOB de-multiplexing tool, splitter and VOB/IFO files processor
+COMMENT=	VOB de-multiplexing tool, splitter, and VOB/IFO files processor
 
 LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
 

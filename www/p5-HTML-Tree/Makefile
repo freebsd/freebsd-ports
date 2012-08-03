@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	A collection of modules to manupulate HTML syntax trees
+COMMENT=	Collection of modules to manipulate HTML syntax trees
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

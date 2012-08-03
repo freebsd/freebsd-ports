@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Retrieves metadata from mp3, ogg, avi, jpg and other formats
+COMMENT=	Retrieves metadata from mp3, ogg, avi, jpg, and other formats
 
 LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
 RUN_DEPENDS=	lsdvd:${PORTSDIR}/multimedia/lsdvd

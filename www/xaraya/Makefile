@@ -14,7 +14,7 @@ MASTER_SITES=	SF/${PORTNAME}/Core%20plus%20Modules/Xaraya%20${PORTVERSION}%20Cor
 DISTNAME=	${PORTNAME}-${PORTVERSION}-base
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	Framework to create fully dynamic Content Mangement Solutions
+COMMENT=	Framework to create fully dynamic Content Management Solutions
 
 .if defined(WITH_PGSQL)
 USE_PHP=	pgsql

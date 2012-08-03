@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Parse Apache refferer logs and extract search engine query strings
+COMMENT=	Parse Apache referer logs and extract search engine query strings
 
 RUN_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI
 BUILD_DEPENDS:=	${RUN_DEPENDS}

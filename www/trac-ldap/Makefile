@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 
 MAINTAINER=	glarkin@FreeBSD.org
-COMMENT=	LDAP extenstions for Trac
+COMMENT=	LDAP extensions for Trac
 
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \

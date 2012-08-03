@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://download.flashrom.org/releases/
 
 MAINTAINER=	nukama@gmail.com
-COMMENT=	A utility for reading, writing, verifying and erasing flash ROM chips
+COMMENT=	Utility for reading, writing, verifying, and erasing flash ROM chips
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

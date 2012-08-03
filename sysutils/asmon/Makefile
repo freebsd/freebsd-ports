@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_AFTERSTEP}
 MASTER_SITE_SUBDIR=	apps/asmon
 
 MAINTAINER=	5u623l20@gmail.com
-COMMENT=	A swallowable applet monitors the CPU usage, memory and swap, etc
+COMMENT=	Swallowable applet monitors the CPU usage, memory, and swap, etc
 
 USE_XORG=	xpm x11
 

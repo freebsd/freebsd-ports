@@ -11,7 +11,7 @@ CATEGORIES=	sysutils python
 MASTER_SITES=	https://github.com/downloads/saltstack/salt/
 
 MAINTAINER=	christer.edwards@gmail.com
-COMMENT=	Distributed, remote execution and configuration management system
+COMMENT=	Distributed remote execution and configuration management system
 
 LICENSE=	AL2
 

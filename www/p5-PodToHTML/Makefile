@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Pod
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	Generating HTML from several files containg POD documentation
+COMMENT=	Generating HTML from several files containing POD documentation
 
 BUILD_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \

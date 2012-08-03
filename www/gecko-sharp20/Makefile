@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.novell.com/pub/mono/sources/${PORTNAME}2/
 DISTNAME=	${PORTNAME}-2.0-${PORTVERSION}
 
 MAINTAINER=	mono@FreeBSD.org
-COMMENT=	Mono bindings for embeding mozilla
+COMMENT=	Mono bindings to embed Mozilla
 
 USE_GECKO=	libxul
 USE_GNOME=	gtksharp20

@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/3.%20ILIAS%203.10/ILIAS%20${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	A poweful, dynamic, PHP and MySQL based e-learning platform
+COMMENT=	Powerful, dynamic, PHP and MySQL based e-learning platform
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		zip:${PORTSDIR}/archivers/zip \

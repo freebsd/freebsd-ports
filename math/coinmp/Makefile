@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.coin-or.org/download/source/CoinMP/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	giffunip@tutopia.com
-COMMENT=	Optimization library with support for most of COIN-OR CLP, CBC and CGL
+COMMENT=	Optimization library with support for most of COIN-OR CLP, CBC, and CGL
 
 LICENSE=	CPL
 LICENSE_NAME=	Common Public License, Version 1.0
