@@ -7,7 +7,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	7.4.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -38,7 +38,8 @@ MAN1=	gdb${VER}.1
 
 ONLY_FOR_ARCHS=	i386 amd64	# untested elsewhere, might work
 
-# Forcing to use the readline.6
+# Forcing to use the readline from ports (readline in FreeBSD world is not
+# compatible anymore).
 LIB_DEPENDS+=	readline:${PORTSDIR}/devel/readline
 CFLAGS+=	-isystem ${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
