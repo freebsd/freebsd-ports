@@ -7,3 +7,10 @@
          %%PREFIX%%/%%RTHOME%%/%%INITIALDATA%%
 
   This only ever needs to be run once.
+
+  If you are upgrading from versions prior to 0.6 you will need to
+  apply a database schema update.
+
+     rt-setup-database --action insert --datafile \
+         %%PREFIX%%/%%RTHOME%%/%%SCHEMAUPGRADE%%
+

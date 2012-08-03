@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	RT-Extension-SLA
-PORTVERSION=	0.05
-PORTREVISION=	1
+PORTVERSION=	0.07
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -54,7 +53,8 @@ MAN3=		RT::Action::SLA.3                     \
 PLIST_SUB+=	RTHOME=share/rt${RT_VER}
 
 SUB_LIST+=	RTHOME=share/rt${RT_VER}
-SUB_LIST+=	INITIALDATA=plugins/RT-Extension-SLA/etc/initialdata
+SUB_LIST+=	INITIALDATA=plugins/RT-Extension-SLA/etc/initialdata \
+		SCHEMAUPGRADE=plugins/RT-Extension-SLA/etc/upgrade/0.06/content
 SUB_FILES+=	pkg-message
 
 # Note: You can install using an arbitrary $PREFIX but only if it

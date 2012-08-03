@@ -1,5 +1,6 @@
 man/auto/RT/Extension/SLA/.packlist
 %%RTHOME%%/plugins/RT-Extension-SLA/etc/initialdata
+%%RTHOME%%/plugins/RT-Extension-SLA/etc/upgrade/0.06/content
 %%RTHOME%%/plugins/RT-Extension-SLA/lib/RT/Action/SLA.pm
 %%RTHOME%%/plugins/RT-Extension-SLA/lib/RT/Action/SLA_SetDefault.pm
 %%RTHOME%%/plugins/RT-Extension-SLA/lib/RT/Action/SLA_SetDue.pm
@@ -9,6 +10,7 @@ man/auto/RT/Extension/SLA/.packlist
 %%RTHOME%%/plugins/RT-Extension-SLA/lib/RT/Condition/SLA_RequireDueSet.pm
 %%RTHOME%%/plugins/RT-Extension-SLA/lib/RT/Condition/SLA_RequireStartsSet.pm
 %%RTHOME%%/plugins/RT-Extension-SLA/lib/RT/Extension/SLA/Test.pm
+%%RTHOME%%/plugins/RT-Extension-SLA/lib/RT/Extension/SLA/Test.pm.in
 %%RTHOME%%/plugins/RT-Extension-SLA/lib/RT/Extension/SLA.pm
 %%RTHOME%%/plugins/RT-Extension-SLA/lib/RT/Queue_SLA.pm
 @dirrm %%RTHOME%%/plugins/RT-Extension-SLA/lib/RT/Extension/SLA
@@ -17,6 +19,8 @@ man/auto/RT/Extension/SLA/.packlist
 @dirrm %%RTHOME%%/plugins/RT-Extension-SLA/lib/RT/Action
 @dirrm %%RTHOME%%/plugins/RT-Extension-SLA/lib/RT
 @dirrm %%RTHOME%%/plugins/RT-Extension-SLA/lib
+@dirrm %%RTHOME%%/plugins/RT-Extension-SLA/etc/upgrade/0.06
+@dirrm %%RTHOME%%/plugins/RT-Extension-SLA/etc/upgrade
 @dirrm %%RTHOME%%/plugins/RT-Extension-SLA/etc
 @dirrm %%RTHOME%%/plugins/RT-Extension-SLA
 @dirrm man/auto/RT/Extension/SLA
