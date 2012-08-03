@@ -7,6 +7,7 @@
 
 PORTNAME=	SHA
 PORTVERSION=	1.5.0.1
+PORTREVISION=	1
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -16,21 +17,15 @@ LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
 
-OPTIONS=	TEST "Build the SHA test suite" off \
-		EXE  "Build a SHA2-384 executable similar to 'md5sum'" off
+OPTIONS_DEFINE=		EXE
 
-.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
+EXE_DESC=		Build a SHA2-384 executable similar to 'md5sum'
+
 .include <bsd.port.options.mk>
 
-.if defined(WITH_TEST)
-CONFIGURE_ARGS+=	--flags="Test"
-USE_CABAL+=		QuickCheck>=2 test-framework>=0.3 test-framework-quickcheck2>=0.2
-EXECUTABLE+=		test_sha
-.else
 CONFIGURE_ARGS+=	--flags="-Test"
-.endif
 
-.if defined(WITH_EXE)
+.if ${PORT_OPTIONS:MEXE}
 CONFIGURE_ARGS+=	--flags="exe"
 EXECUTABLE+=		sha1 sha384
 .else

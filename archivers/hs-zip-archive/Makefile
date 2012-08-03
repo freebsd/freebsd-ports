@@ -7,6 +7,7 @@
 
 PORTNAME=	zip-archive
 PORTVERSION=	0.1.1.8
+PORTREVISION=	1
 CATEGORIES=	archivers haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -16,18 +17,17 @@ LICENSE=	BSD
 
 USE_CABAL=	digest>=0.0.0.1 mtl utf8-string>=0.3.1 zlib
 
-OPTIONS=	EXECUTABLE "Build the Zip executable" off
+OPTIONS_DEFINE=		EXECUTABLE
 
-.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
+EXECUTABLE_DESC=	Build the Zip executable
+
 .include <bsd.port.options.mk>
 
-.if defined(WITH_EXECUTABLE)
+.if ${PORT_OPTIONS:MEXECUTABLE}
 CONFIGURE_ARGS+=	--flags="executable"
 EXECUTABLE=		Zip
-PLIST_SUB+=		MAYBE_EXECUTABLE=""
 .else
 CONFIGURE_ARGS+=	--flags="-executable"
-PLIST_SUB+=		MAYBE_EXECUTABLE="@comment "
 .endif
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

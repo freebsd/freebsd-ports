@@ -7,6 +7,7 @@
 
 PORTNAME=	ieee754
 PORTVERSION=	0.7.3
+PORTREVISION=	1
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -7,6 +7,7 @@
 
 PORTNAME=	IfElse
 PORTVERSION=	0.85
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -7,6 +7,7 @@
 
 PORTNAME=	temporary
 PORTVERSION=	1.1.2.3
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

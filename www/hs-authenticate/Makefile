@@ -7,6 +7,7 @@
 
 PORTNAME=	authenticate
 PORTVERSION=	1.2.1.1
+PORTREVISION=	1
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org

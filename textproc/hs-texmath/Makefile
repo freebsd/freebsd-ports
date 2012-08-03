@@ -7,6 +7,7 @@
 
 PORTNAME=	texmath
 PORTVERSION=	0.6.0.6
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -18,12 +19,13 @@ CABAL_SETUP=	Setup.hs
 
 USE_CABAL=	parsec>=3 syb xml
 
-OPTIONS=	CGI	"Compile CGI executable"	off
+OPTIONS_DEFINE=		CGI
 
-.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
+CGI_DESC=		Compile CGI executable
+
 .include <bsd.port.options.mk>
 
-.if defined(WITH_CGI)
+.if ${PORT_OPTIONS:MCGI}
 CONFIGURE_ARGS+=	--flags="cgi"
 USE_CABAL+=		cgi json utf8-string
 EXECUTABLE+=		texmath-cgi

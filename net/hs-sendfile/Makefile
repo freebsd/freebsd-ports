@@ -7,6 +7,7 @@
 
 PORTNAME=	sendfile
 PORTVERSION=	0.7.6
+PORTREVISION=	1
 CATEGORIES=	net haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -7,6 +7,7 @@
 
 PORTNAME=	RSA
 PORTVERSION=	1.2.1.0
+PORTREVISION=	1
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -17,20 +18,22 @@ LICENSE=	BSD
 CABAL_SETUP=	Setup.hs
 USE_CABAL=	crypto-api>=0.10 crypto-pubkey-types monadcryptorandom SHA
 
-OPTIONS=	MD5	"Include support for using MD5"			on \
-		BINARY	"Use the binary package for serialization"	on
+OPTIONS_DEFINE=		MD5 BINARY
+OPTIONS_DEFAULT=	MD5 BINARY
 
-.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
+MD5_DESC=		Include support for using MD5
+BINARY_DESC=		Use the binary package for serialization
+
 .include <bsd.port.options.mk>
 
-.if defined(WITH_MD5)
+.if ${PORT_OPTIONS:MMD5}
 CONFIGURE_ARGS+=	--flags="IncludeMD5"
 USE_CABAL+=		pureMD5
 .else
 CONFIGURE_ARGS+=	--flags="-IncludeMD5"
 .endif
 
-.if defined(WITH_BINARY)
+.if ${PORT_OPTIONS:MBINARY}
 CONFIGURE_ARGS+=	--flags="UseBinary"
 .else
 CONFIGURE_ARGS+=	--flags="-UseBinary"

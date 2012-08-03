@@ -7,7 +7,7 @@
 
 PORTNAME=	regex-pcre-builtin
 PORTVERSION=	0.94.2.1.7.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

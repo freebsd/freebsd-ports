@@ -7,11 +7,11 @@
 
 PORTNAME=	Agda
 PORTVERSION=	2.3.0.1
+PORTREVISION=	1
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A dependently typed functional programming language and proof assistant
-
 
 CABAL_SETUP=	Setup.hs
 
@@ -29,19 +29,20 @@ INSTALL_PORTDATA=	(cd ${WRKSRC} && ${INSTALL_DATA} README ${DATADIR}; \
 
 SHOW_PKGMSG=	yes
 
-OPTIONS=	USE_LOCALE "Use encoding specified by the locale" off \
-		EPIC       "Install the Epic compiler" off
+OPTIONS_DEFINE=		USE_LOCALE EPIC
 
-.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
+USE_LOCALE_DESC=	Use encoding specified by the locale
+EPIC_DESC=		Install the Epic compiler
+
 .include <bsd.port.options.mk>
 
-.if defined(WITH_USE_LOCALE)
+.if ${PORT_OPTIONS:MUSE_LOCALE}
 CONFIGURE_ARGS+=	--flags="use-locale"
 .else
 CONFIGURE_ARGS+=	--flags="-use-locale"
 .endif
 
-.if defined(WITH_EPIC)
+.if ${PORT_OPTIONS:MEPIC}
 CONFIGURE_ARGS+=	--flags="epic"
 USE_CABAL+=		epic>=0.1.13
 .else

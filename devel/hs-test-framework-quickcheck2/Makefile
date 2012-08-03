@@ -7,6 +7,7 @@
 
 PORTNAME=	test-framework-quickcheck2
 PORTVERSION=	0.2.12.2
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

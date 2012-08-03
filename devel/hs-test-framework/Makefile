@@ -7,6 +7,7 @@
 
 PORTNAME=	test-framework
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
