@@ -14,6 +14,8 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	A persistent key-value database with built-in net interface
 
+LICENSE=	BSD
+
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 
 CFLAGS+=	-I${LOCALBASE}/include
