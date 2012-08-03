@@ -791,6 +791,8 @@ lib/libprofile_rt.so
 %%PORTDOCS%%%%DOCSDIR%%/html/userguides.html
 %%PORTDOCS%%%%DOCSDIR%%/html/userguides.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/websupport.js
+%%PORTDOCS%%%%DOCSDIR%%/html/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/html.tar.gz
 @dirrm include/llvm/Transforms/Utils
 @dirrm include/llvm/Transforms/IPO
 @dirrm include/llvm/Transforms

@@ -7,6 +7,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.2.r${SVN_REV}
+PORTREVISON=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -21,6 +22,8 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 .if defined(MAINTAINER_MODE)
 BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .endif
+
+BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 
 CONFLICTS=	llvm-[23]* llvm-etoile-2*
 
@@ -63,7 +66,6 @@ CONFIGURE_ARGS+=	--enable-optimized
 
 .if ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=	--enable-docs
-BUILD_DEPENDS+=		sphinx-build:${PORTSDIR}/textproc/py-sphinx
 .else
 CONFIGURE_ARGS+=	--disable-docs
 .endif
@@ -125,9 +127,10 @@ post-patch:
 	${REINPLACE_CMD} -e 's|\(PROJ_mandir.*:=\).*$$|\1${MANPREFIX}/man|g' \
 	    ${WRKSRC}/Makefile.config.in
 
-.if ${PORT_OPTIONS:MDOCS}
 post-build:
-	@cd ${WRKSRC}/docs && ${GMAKE} -f Makefile.sphinx man html
+	@cd ${WRKSRC}/docs && ${GMAKE} -f Makefile.sphinx man
+.if ${PORT_OPTIONS:MDOCS}
+	@cd ${WRKSRC}/docs && ${GMAKE} -f Makefile.sphinx html
 .endif
 
 post-install:
@@ -137,11 +140,11 @@ post-install:
 	${MKDIR} ${DOCSDIR}/html
 	find ${WRKSRC}/docs/_build/html -type f | \
 	    xargs -I _DOC_ ${INSTALL_DATA} _DOC_ ${DOCSDIR}/html/
+.endif
 .for man in ${MAN1}
 	@${INSTALL_MAN} ${WRKSRC}/docs/_build/man/${man} \
 	     ${MANPREFIX}/man/man1/
 .endfor
-.endif
 
 TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} LD_LIBRARY_PATH=${WRKSRC}/Release/lib ${GMAKE} check-local-lit)'
 regression-test: ${BUILD_COOKIE}
