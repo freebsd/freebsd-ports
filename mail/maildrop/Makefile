@@ -25,7 +25,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	garga@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mail delivery agent (MDA) with filtering abilities
 
 LICENSE=	GPLv3
