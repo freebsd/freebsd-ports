@@ -6,28 +6,30 @@
 #
 
 PORTNAME=		rednotebook
-PORTVERSION=		1.4.0
-PORTREVISION=	1
+PORTVERSION=	1.5.0
 CATEGORIES=		deskutils python
 MASTER_SITES=		SF
 MASTER_SITE_SUBDIR=	rednotebook
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=		cheunghonyu@gmail.com
-COMMENT=		A modern journal written in python
+COMMENT=		Modern journal written in Python
 
 LICENSE=		GPLv2
 
-RUN_DEPENDS=		${PYTHON_SITELIBDIR}/yaml/__init__.py:${PORTSDIR}/devel/py-yaml \
+RUN_DEPENDS=${PYTHON_SITELIBDIR}/yaml/__init__.py:${PORTSDIR}/devel/py-yaml \
 			${PYTHON_SITELIBDIR}/webkit/__init__.py:${PORTSDIR}/www/py-webkitgtk \
 			${LOCALBASE}/bin/xdg-open:${PORTSDIR}/devel/xdg-utils \
 			${PYTHON_SITELIBDIR}/chardet/__init__.py:${PORTSDIR}/textproc/py-chardet
 
-USE_GETTEXT=		yes
+USE_GETTEXT=	yes
 
-INSTALLS_ICONS=		yes
+INSTALLS_ICONS=	yes
 USE_GNOME=		pygtk2
-USE_PYTHON=		2.5-2.7
-USE_PYDISTUTILS=	yes
+USE_PYTHON=		2.6-2.7
+USE_PYDISTUTILS=yes
+
+post-install:
+	(cp ${WRKSRC}/rednotebook/images/rednotebook-icon/rednotebook.svg ${PYTHON_SITELIBDIR}/${PORTNAME}/images/rednotebook-icon/)
 
 .include <bsd.port.mk>

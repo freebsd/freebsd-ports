@@ -78,73 +78,19 @@
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/t2t_highlight.py
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/t2t_highlight.pyc
 %%PYTHON_SITELIBDIR%%/rednotebook/gui/t2t_highlight.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/ar/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/ast/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/be/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/bg/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/bs/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/ca/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/cs/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/cy/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/da/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/de/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/el/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/en_GB/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/eo/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/es/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/eu/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/fi/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/fo/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/fr/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/gl/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/he/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/hr/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/hu/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/hy/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/id/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/it/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/ja/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/ka/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/kk/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/ko/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/lt/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/mn/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/ms/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/nb/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/nds/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/nl/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/nn/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/oc/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/pl/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/pt/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/pt_BR/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/ro/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/ru/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/si/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/sk/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/sr/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/sv/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/ta/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/te/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/tl/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/tr/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/ug/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/uk/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/uz/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/vi/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/wae/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/zh_CN/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/zh_HK/LC_MESSAGES/rednotebook.mo
-%%PYTHON_SITELIBDIR%%/rednotebook/i18n/zh_TW/LC_MESSAGES/rednotebook.mo
+%%PYTHON_SITELIBDIR%%/rednotebook/images/rednotebook-icon/rednotebook.svg
 %%PYTHON_SITELIBDIR%%/rednotebook/images/rednotebook-icon/rn-128.png
+%%PYTHON_SITELIBDIR%%/rednotebook/images/rednotebook-icon/rn-192.png
 %%PYTHON_SITELIBDIR%%/rednotebook/images/rednotebook-icon/rn-16.png
 %%PYTHON_SITELIBDIR%%/rednotebook/images/rednotebook-icon/rn-22.png
 %%PYTHON_SITELIBDIR%%/rednotebook/images/rednotebook-icon/rn-256.png
 %%PYTHON_SITELIBDIR%%/rednotebook/images/rednotebook-icon/rn-32.png
 %%PYTHON_SITELIBDIR%%/rednotebook/images/rednotebook-icon/rn-48.png
 %%PYTHON_SITELIBDIR%%/rednotebook/images/rednotebook-icon/rn-64.png
+%%PYTHON_SITELIBDIR%%/rednotebook/images/rednotebook-icon/rn-14.png
 %%PYTHON_SITELIBDIR%%/rednotebook/images/bulletlist.png
 %%PYTHON_SITELIBDIR%%/rednotebook/images/date.png
+%%PYTHON_SITELIBDIR%%/rednotebook/images/formula.png
 %%PYTHON_SITELIBDIR%%/rednotebook/images/insert-image-16.png
 %%PYTHON_SITELIBDIR%%/rednotebook/images/insert-image-22.png
 %%PYTHON_SITELIBDIR%%/rednotebook/images/line.png
@@ -172,132 +118,191 @@
 %%PYTHON_SITELIBDIR%%/rednotebook/util/utils.py
 %%PYTHON_SITELIBDIR%%/rednotebook/util/utils.pyc
 %%PYTHON_SITELIBDIR%%/rednotebook/util/utils.pyo
+share/locale/ar/LC_MESSAGES/rednotebook.mo
+share/locale/ast/LC_MESSAGES/rednotebook.mo
+share/locale/be/LC_MESSAGES/rednotebook.mo
+share/locale/bg/LC_MESSAGES/rednotebook.mo
+share/locale/bs/LC_MESSAGES/rednotebook.mo
+share/locale/ca/LC_MESSAGES/rednotebook.mo
+share/locale/cs/LC_MESSAGES/rednotebook.mo
+share/locale/cy/LC_MESSAGES/rednotebook.mo
+share/locale/da/LC_MESSAGES/rednotebook.mo
+share/locale/de/LC_MESSAGES/rednotebook.mo
+share/locale/el/LC_MESSAGES/rednotebook.mo
+share/locale/en_GB/LC_MESSAGES/rednotebook.mo
+share/locale/eo/LC_MESSAGES/rednotebook.mo
+share/locale/es/LC_MESSAGES/rednotebook.mo
+share/locale/eu/LC_MESSAGES/rednotebook.mo
+share/locale/fi/LC_MESSAGES/rednotebook.mo
+share/locale/fo/LC_MESSAGES/rednotebook.mo
+share/locale/fr/LC_MESSAGES/rednotebook.mo
+share/locale/gl/LC_MESSAGES/rednotebook.mo
+share/locale/he/LC_MESSAGES/rednotebook.mo
+share/locale/hr/LC_MESSAGES/rednotebook.mo
+share/locale/hu/LC_MESSAGES/rednotebook.mo
+share/locale/hy/LC_MESSAGES/rednotebook.mo
+share/locale/id/LC_MESSAGES/rednotebook.mo
+share/locale/it/LC_MESSAGES/rednotebook.mo
+share/locale/ja/LC_MESSAGES/rednotebook.mo
+share/locale/ka/LC_MESSAGES/rednotebook.mo
+share/locale/kk/LC_MESSAGES/rednotebook.mo
+share/locale/ko/LC_MESSAGES/rednotebook.mo
+share/locale/lt/LC_MESSAGES/rednotebook.mo
+share/locale/mn/LC_MESSAGES/rednotebook.mo
+share/locale/ms/LC_MESSAGES/rednotebook.mo
+share/locale/nb/LC_MESSAGES/rednotebook.mo
+share/locale/nds/LC_MESSAGES/rednotebook.mo
+share/locale/nl/LC_MESSAGES/rednotebook.mo
+share/locale/nn/LC_MESSAGES/rednotebook.mo
+share/locale/oc/LC_MESSAGES/rednotebook.mo
+share/locale/pl/LC_MESSAGES/rednotebook.mo
+share/locale/pt/LC_MESSAGES/rednotebook.mo
+share/locale/pt_BR/LC_MESSAGES/rednotebook.mo
+share/locale/ro/LC_MESSAGES/rednotebook.mo
+share/locale/ru/LC_MESSAGES/rednotebook.mo
+share/locale/si/LC_MESSAGES/rednotebook.mo
+share/locale/sk/LC_MESSAGES/rednotebook.mo
+share/locale/sr/LC_MESSAGES/rednotebook.mo
+share/locale/sv/LC_MESSAGES/rednotebook.mo
+share/locale/ta/LC_MESSAGES/rednotebook.mo
+share/locale/te/LC_MESSAGES/rednotebook.mo
+share/locale/tl/LC_MESSAGES/rednotebook.mo
+share/locale/tr/LC_MESSAGES/rednotebook.mo
+share/locale/ug/LC_MESSAGES/rednotebook.mo
+share/locale/uk/LC_MESSAGES/rednotebook.mo
+share/locale/uz/LC_MESSAGES/rednotebook.mo
+share/locale/vi/LC_MESSAGES/rednotebook.mo
+share/locale/wae/LC_MESSAGES/rednotebook.mo
+share/locale/zh_CN/LC_MESSAGES/rednotebook.mo
+share/locale/zh_HK/LC_MESSAGES/rednotebook.mo
+share/locale/zh_TW/LC_MESSAGES/rednotebook.mo
+share/applications/rednotebook.desktop
+share/icons/hicolor/48x48/apps/rednotebook.png
+share/icons/hicolor/scalable/apps/rednotebook.svg
+share/pixmaps/rednotebook.png
+bin/rednotebook
+@dirrmtry share/locale/ar/LC_MESSAGES
+@dirrmtry share/locale/ar
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be
+@dirrmtry share/locale/bg/LC_MESSAGES
+@dirrmtry share/locale/bg
+@dirrmtry share/locale/bs/LC_MESSAGES
+@dirrmtry share/locale/bs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/cy/LC_MESSAGES
+@dirrmtry share/locale/cy
+@dirrmtry share/locale/da/LC_MESSAGES
+@dirrmtry share/locale/da
+@dirrmtry share/locale/de/LC_MESSAGES
+@dirrmtry share/locale/de
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/en_GB/LC_MESSAGES
+@dirrmtry share/locale/en_GB
+@dirrmtry share/locale/eo/LC_MESSAGES
+@dirrmtry share/locale/eo
+@dirrmtry share/locale/es/LC_MESSAGES
+@dirrmtry share/locale/es
+@dirrmtry share/locale/eu/LC_MESSAGES
+@dirrmtry share/locale/eu
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/fo/LC_MESSAGES
+@dirrmtry share/locale/fo
+@dirrmtry share/locale/fr/LC_MESSAGES
+@dirrmtry share/locale/fr
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/he/LC_MESSAGES
+@dirrmtry share/locale/he
+@dirrmtry share/locale/hr/LC_MESSAGES
+@dirrmtry share/locale/hr
+@dirrmtry share/locale/hu/LC_MESSAGES
+@dirrmtry share/locale/hu
+@dirrmtry share/locale/hy/LC_MESSAGES
+@dirrmtry share/locale/hy
+@dirrmtry share/locale/id/LC_MESSAGES
+@dirrmtry share/locale/id
+@dirrmtry share/locale/it/LC_MESSAGES
+@dirrmtry share/locale/it
+@dirrmtry share/locale/ja/LC_MESSAGES
+@dirrmtry share/locale/ja
+@dirrmtry share/locale/ka/LC_MESSAGES
+@dirrmtry share/locale/ka
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/lt/LC_MESSAGES
+@dirrmtry share/locale/lt
+@dirrmtry share/locale/mn/LC_MESSAGES
+@dirrmtry share/locale/mn
+@dirrmtry share/locale/ms/LC_MESSAGES
+@dirrmtry share/locale/ms
+@dirrmtry share/locale/nb/LC_MESSAGES
+@dirrmtry share/locale/nb
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
+@dirrmtry share/locale/nl/LC_MESSAGES
+@dirrmtry share/locale/nl
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pt_BR/LC_MESSAGES
+@dirrmtry share/locale/pt_BR
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/ru/LC_MESSAGES
+@dirrmtry share/locale/ru
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sv/LC_MESSAGES
+@dirrmtry share/locale/sv
+@dirrmtry share/locale/ta/LC_MESSAGES
+@dirrmtry share/locale/ta
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/tl/LC_MESSAGES
+@dirrmtry share/locale/tl
+@dirrmtry share/locale/tr/LC_MESSAGES
+@dirrmtry share/locale/tr
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/uz/LC_MESSAGES
+@dirrmtry share/locale/uz
+@dirrmtry share/locale/vi/LC_MESSAGES
+@dirrmtry share/locale/vi
+@dirrmtry share/locale/wae/LC_MESSAGES
+@dirrmtry share/locale/wae
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/external
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/files
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/images/rednotebook-icon
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/images
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/gui
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/util
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ar/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ar
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ast/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ast
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/be/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/be
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/bg/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/bg
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/bs/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/bs
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ca/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ca
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/cs/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/cs
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/cy/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/cy
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/da/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/da
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/de/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/de
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/el/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/el
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/en_GB/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/en_GB
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/eo/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/eo
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/es/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/es
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/eu/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/eu
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/fi/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/fi
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/fo/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/fo
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/fr/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/fr
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/gl/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/gl
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/he/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/he
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/hr/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/hr
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/hu/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/hu
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/hy/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/hy
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/id/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/id
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/it/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/it
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ja/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ja
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ka/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ka
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/kk/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/kk
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ko/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ko
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/lt/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/lt
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/mn/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/mn
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ms/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ms
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/nb/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/nb
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/nds/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/nds
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/nl/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/nl
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/nn/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/nn
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/oc/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/oc
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/pl/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/pl
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/pt/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/pt
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/pt_BR/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/pt_BR
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ro/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ro
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ru/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ru
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/si/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/si
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/sk/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/sk
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/sr/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/sr
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/sv/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/sv
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ta/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ta
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/te/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/te
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/tl/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/tl
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/tr/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/tr
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ug/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/ug
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/uk/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/uk
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/uz/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/uz
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/vi/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/vi
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/wae/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/wae
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/zh_CN/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/zh_CN
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/zh_HK/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/zh_HK
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/zh_TW/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/zh_TW
-@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook
-share/applications/rednotebook.desktop
-share/icons/hicolor/48x48/apps/rednotebook.png
-share/pixmaps/rednotebook.png
-bin/rednotebook
 @dirrmtry share/applications
