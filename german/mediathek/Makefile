@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	mediathek
-PORTVERSION=	2.6.0
-PORTREVISION=	1
+PORTVERSION=	3.0.0
 CATEGORIES=	german java
 MASTER_SITES=	SF/zdfmediathk/Mediathek/Mediathek%20${PORTVERSION}
-DISTNAME=	Mediathek_${PORTVERSION}
+DISTNAME=	MediathekView_${PORTVERSION}
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Filme der oeff. rechtlichen Sender herunterladen und ansehen
@@ -23,27 +22,25 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 SUB_FILES=	mediathek
 
-OPTIONS=	MPLAYER "mplayer zum Aufnehmen verwenden" on \
-		VLC "VLC zum Abspielen verwenden" on
+INSTALLFILES=	MediathekView.jar
+INSTALLDOCS=	Anleitung.pdf
+INSTALLLIBS=	commons-compress-1.4.jar commons-lang3-3.1.jar \
+		jdom-2.0.0.jar
 
-INSTALLFILES=	Mediathek.jar
-INSTALLDOCS=	make.txt releases.txt Kurzanleitung.pdf
-INSTALLLIBS=	commons-compress-1.1.jar commons-lang-2.5.jar \
-		jdom.jar rome-1.0.jar
+OPTIONS_MULTI=		BACKEND
+OPTIONS_MULTI_BACKEND=	MPLAYER VLC
 
-.include <bsd.port.pre.mk>
+VLC_DESC=		VLC support
 
-pre-everything::
-.if !defined(WITH_MPLAYER) && !defined(WITH_VLC)
-	@${ECHO_MSG} "Es muss entweder mplayer oder VLC ausgewaehlt sein"
-	@${FALSE}
-.endif
+OPTIONS_DEFAULT=	VLC
 
-.if defined(WITH_MPLAYER)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMPLAYER}
 RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 .endif
 
-.if defined(WITH_VLC)
+.if ${PORT_OPTIONS:MVLC}
 RUN_DEPENDS+=	vlc:${PORTSDIR}/multimedia/vlc
 .endif
 
@@ -61,7 +58,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${INSTALLDOCS}
-		@${INSTALL_DATA} ${WRKSRC}/Anleitung/${i} ${DOCSDIR}/
+		@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
 .endfor
 .endif
 .for i in ${INSTALLLIBS}
@@ -69,4 +66,4 @@ do-install:
 .endfor
 	@${INSTALL_SCRIPT} ${WRKDIR}/mediathek ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
