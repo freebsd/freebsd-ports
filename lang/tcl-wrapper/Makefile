@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${TX_PORT}-
 DISTFILES=	# none
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shell wrapper for ${TX_SHELL} (${TX_PORT_U})
 
 BUILD_DEPENDS=	shc:${PORTSDIR}/misc/shc

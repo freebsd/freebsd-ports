@@ -7,7 +7,7 @@
 
 PORTNAME=	tcl
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool command language (threads support)
 
 BUILDING_TCL_THREADS=	yes
