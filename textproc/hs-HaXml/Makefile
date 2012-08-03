@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	HaXml
-PORTVERSION=	1.22.5
-PORTREVISION=	1
+PORTVERSION=	1.23.3
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -18,9 +17,8 @@ FILE_LICENSE=	COPYRIGHT
 CABAL_SETUP=	Setup.hs
 USE_CABAL=	polyparse>=1.5 random
 
-EXECUTABLE=	Canonicalise CanonicaliseLazy \
-		DtdToHaskell MkOneOf Validate \
-		XsdToHaskell Xtract
+EXECUTABLE=	Canonicalise CanonicaliseLazy DtdToHaskell FpMLToHaskell \
+		MkOneOf Validate XsdToHaskell Xtract
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
