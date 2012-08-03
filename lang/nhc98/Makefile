@@ -6,7 +6,7 @@
 
 PORTNAME=	nhc98
 PORTVERSION=	1.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang haskell
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/${PORTNAME}/
 DISTFILES=	${PORTNAME}src-${PORTVERSION}${EXTRACT_SUFX} ${PORTNAME}-${PORTVERSION}-library-interfaces${EXTRACT_SUFX}
@@ -25,8 +25,15 @@ USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--prefix=${PREFIX} --buildwith=gcc
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=		DOCS
+OPTIONS_DEFAULT=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR} +docs
+.else
+CONFIGURE_ARGS+=	-docs
 .endif
 
 MAN1=		harch.1 hmake.1 hp2graph.1 nhc98.1 hi.1
@@ -46,7 +53,7 @@ post-install:
 	       < ${WRKSRC}/man/nhc98.1 > ${WRKSRC}/man/nhc98.1.fix
 	${INSTALL_MAN} ${WRKSRC}/man/nhc98.1.fix ${PREFIX}/man/man1/nhc98.1
 	${RM} ${WRKSRC}/man/nhc98.1.fix
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 .for directory in . bugs examples hmake implementation-notes libs
 	${RM} -r ${DOCSDIR}/${directory}/CVS
 .endfor
