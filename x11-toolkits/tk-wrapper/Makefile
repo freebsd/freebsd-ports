@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILDING_TK_WRAPPER=	yes
 

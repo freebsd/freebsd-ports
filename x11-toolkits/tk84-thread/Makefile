@@ -7,7 +7,7 @@
 
 PORTNAME=	tk
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical toolkit for Tcl (threads support)
 
 BUILDING_TK_THREADS=	yes
