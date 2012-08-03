@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	dnscrypt-proxy
-PORTVERSION=	0.9.3
+PORTVERSION=	1.0
 CATEGORIES=	dns
 MASTER_SITES=	http://cloud.github.com/downloads/opendns/dnscrypt-proxy/ \
-		http://www.dns-lab.com/downloads/dnscrypt-proxy/
+		http://www.Awfulhak.org/dnscrypt-proxy/ \
+		http://people.FreeBSD.org/~brian/dnscrypt-proxy/
 
 MAINTAINER=	freebsd@dns-lab.com
 COMMENT=	Boost privacy and security of DNS
@@ -21,14 +22,14 @@ SUB_FILES=	pkg-message
 
 USE_RC_SUBR=	${PORTNAME}
 
-MAN8=		dnscrypt-proxy.8 dnscrypt-proxy.8.markdown
+MAN8=		dnscrypt-proxy.8 hostip.8
 
 PORTDOCS=	AUTHORS ChangeLog COPYING INSTALL NEWS \
 		README README.markdown TECHNOTES THANKS
 
 pre-install:
 	@${INSTALL_MAN} ${WRKSRC}/man/dnscrypt-proxy.8 ${MAN8PREFIX}/man/man8/
-	@${INSTALL_MAN} ${WRKSRC}/man/dnscrypt-proxy.8.markdown ${MAN8PREFIX}/man/man8/
+	@${INSTALL_MAN} ${WRKSRC}/man/hostip.8 ${MAN8PREFIX}/man/man8/
 
 post-install:
 .if !defined(NOPORTDOCS)

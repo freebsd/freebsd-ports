@@ -3,13 +3,19 @@
 # $FreeBSD$
 #
 # PROVIDE: dnscrypt-proxy
-# REQUIRE: LOGIN cleanvar
+# REQUIRE: SERVERS cleanvar
 # KEYWORD: shutdown
+# BEFORE: named
 #
 # Add the following lines to /etc/rc.conf to enable dnscrypt-proxy:
 #
 # dnscrypt_proxy_enable="YES":	Set to NO by default.
 #				Set it to YES to enable dnscrypt-proxy.
+#
+# To redirect a local resolver through dnscrypt-proxy, point it at 127.0.0.2
+# and add the following to rc.conf:
+# ifconfig_lo0_alias0="inet 127.0.0.2 netmask 0xffffffff"
+# dnscrypt_proxy_flags='-a 127.0.0.2'
 
 . /etc/rc.subr
 

@@ -1,2 +1,3 @@
 @stopdaemon dnscrypt-proxy
 sbin/dnscrypt-proxy
+bin/hostip
