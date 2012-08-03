@@ -16,6 +16,9 @@ COMMENT=	Improved network monitoring dock app (with tons of features)
 
 LICENSE=	GPLv2
 
+OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_DEFAULT=EXAMPLES
+
 USE_XORG=	ice sm x11 xext xpm
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -26,13 +29,15 @@ MAN1=		wmnd.1
 PORTEXAMPLES=	wmndrc
 PLIST_FILES=	bin/wmnd
 
+.include <bsd.port.pre.mk>
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/wmnd ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/wmnd.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/wmndrc ${EXAMPLESDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

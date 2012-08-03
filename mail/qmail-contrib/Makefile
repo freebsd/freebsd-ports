@@ -18,6 +18,9 @@ DISTFILES=	dot-forward-${DF_VER}.tar.gz \
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Contributed programs for qmail
 
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
+
 USE_QMAIL_RUN=	yes
 MAKE_JOBS_SAFE=	yes
 
@@ -59,7 +62,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|-O2|${CFLAGS}|" \
 		${WRKFF}/conf-cc \
 		${WRKDF}/conf-cc
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -E 's|^(.*${DOCSDIR})|// \1|g' \
 		${WRKFF}/hier.c
 .endif

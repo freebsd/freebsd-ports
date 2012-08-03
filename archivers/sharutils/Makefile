@@ -16,6 +16,9 @@ COMMENT=	Pack, send, and unpack shell archives; synchronize via e-mail
 
 LICENSE=	GPLv3
 
+OPTIONS_DEFINE=	NLS
+OPTIONS_DEFAULT=NLS
+
 USE_BZIP2=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

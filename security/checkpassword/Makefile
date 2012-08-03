@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A simple password-checking interface
 
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
+
 ALL_TARGET=	it
 INSTALL_TARGET=	setup
 
@@ -22,6 +25,8 @@ MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/checkpassword
 PORTDOCS=	CHANGES FILES README SYSDEPS TARGETS TODO VERSION
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,gcc,${CC},g" ${WRKSRC}/find-systype.sh
@@ -32,11 +37,11 @@ do-configure:
 	@${ECHO_CMD} ${PREFIX} >${WRKSRC}/conf-home
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

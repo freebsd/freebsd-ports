@@ -13,10 +13,15 @@ MASTER_SITES=	http://beautytech.googlecode.com/svn-history/r6/trunk/src/qmail/ta
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Checkpassword compatible authentication program that uses CRAM-MD5
 
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
+
 MAN8=		cmd5checkpw.8
 
 PORTDOCS=	CHANGES CREDITS INSTALL README rfc1321.txt rfc2104.txt
 PLIST_FILES=	bin/cmd5checkpw etc/poppasswd.dist
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/poppasswd|${LOCALBASE}/etc/poppasswd|' \
@@ -29,11 +34,11 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/cmd5checkpw ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/poppasswd ${PREFIX}/etc/poppasswd.dist
 	@${INSTALL_MAN}	${WRKSRC}/cmd5checkpw.8 ${MANPREFIX}/man/man8
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .    for f in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .    endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

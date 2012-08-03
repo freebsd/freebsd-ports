@@ -13,6 +13,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Unpack data in MS Outlook TNEF format
 
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
+
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
@@ -20,8 +23,10 @@ MAN1=		tnef.1
 PORTDOCS=	AUTHORS NEWS README THANKS TODO
 PLIST_FILES=	bin/tnef
 
+.include <bsd.port.pre.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
@@ -32,4 +37,4 @@ x-test: build
 	@cd ${WRKSRC}/tests/${dir} && ${MAKE} check-TESTS
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
