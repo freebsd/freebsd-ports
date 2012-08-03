@@ -128,6 +128,7 @@
     SUBDIR += giacxcas
     SUBDIR += givaro
     SUBDIR += glgraph
+    SUBDIR += glm
     SUBDIR += glpk
     SUBDIR += gmm++
     SUBDIR += gmp
