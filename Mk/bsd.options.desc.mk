@@ -214,6 +214,7 @@ PANGO_DESC?=		Pango rendering library support
 PCRE_DESC?=		Use Perl Compatible Regular Expressions
 PDF_DESC?=		PDF support
 PERL_DESC?=		Perl scripting language support
+PGO_DESC?=		Profile-Guided Optimization
 PGSQL_DESC?=		PostgreSQL backend
 PGSQL_JDBC_DESC?=	JDBC connection to PostgreSQL databases
 PHP_DESC?=		PHP binding/support

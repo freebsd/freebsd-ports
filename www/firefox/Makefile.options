@@ -16,5 +16,4 @@ GIO_DESC?=		GIO for file I/O # move to bsd.options.desc.mk
 GNOMEUI_DESC?=		libgnomeui support module
 LIGHTNING_DESC?=	Calendar extension
 LOGGING_DESC?=		Additional log messages
-PGO_DESC?=		Profile-Guided Optimization # move to bsd.options.desc.mk
 LIBPROXY_DESC?=		Proxy support via libproxy
