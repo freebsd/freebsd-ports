@@ -18,7 +18,7 @@ COMMENT=	Command line virus scanner written entirely in C
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	ARC ARJ LHA UNZOO UNRAR LLVM TESTS MILTER LDAP ICONV STDERR
+OPTIONS_DEFINE=	ARC ARJ LHA UNZOO UNRAR LLVM TESTS MILTER LDAP ICONV STDERR DOCS
 
 ARC_DESC=	Enable arch archives support
 ARJ_DESC=	Enable arj archives support
@@ -30,7 +30,7 @@ TESTS_DESC=	Run compile-time tests (req. python)
 MILTER_DESC=	Compile the milter interface
 STDERR_DESC=	Print logs to stderr instead of stdout
 
-OPTIONS_DEFAULT=	ARC ARJ LHA UNZOO UNRAR LLVM TESTS
+OPTIONS_DEFAULT=	ARC ARJ LHA UNZOO UNRAR LLVM TESTS DOCS
 
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes

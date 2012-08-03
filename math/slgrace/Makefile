@@ -20,6 +20,9 @@ COMMENT=	A SLang module to plot graphs with grace
 LIB_DEPENDS=	slang:${PORTSDIR}/devel/libslang2
 RUN_DEPENDS=	grace:${PORTSDIR}/math/grace
 
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
+
 SLANG_VER=	2.1
 
 GNU_CONFIGURE=	yes
@@ -28,7 +31,7 @@ PORTDOCS=	*
 PLIST_SUB=	VERSION=${PORTVERSION}
 
 post-patch:
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e 's, install_docfiles,,' \
 			  -e '/MKINSDIR.*DEST_DOC_FILES_INSTALL_DIR/d' \
 		${WRKSRC}/src/Makefile.in

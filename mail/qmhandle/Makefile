@@ -14,6 +14,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-1.3/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Tool to view and manage a qmail queue
 
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
+
 USE_QMAIL_RUN=	yes
 
 NO_BUILD=	yes
@@ -21,6 +24,8 @@ USE_PERL5=	yes
 USE_BZIP2=	yes
 
 PORTDOCS=	HISTORY README
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^#!/usr/bin/perl,#!${PERL},g' \
@@ -35,11 +40,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/qmHandle.conf.sample ${PREFIX}/etc
 	[ -f ${PREFIX}/etc/qmHandle.conf ] || \
 		${INSTALL_DATA} -m 0644 ${WRKSRC}/qmHandle.conf.sample ${PREFIX}/etc/qmHandle.conf
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -14,6 +14,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2.78_3.10%20build%2022
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Open-source ARJ
 
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
+
 USE_AUTOTOOLS=	autoconf
 USE_GMAKE=	yes
 MAKE_JOBS_UNSAFE=	yes
@@ -36,6 +39,8 @@ MAN1=		arj-register.1 arj.1 arjdisp.1 rearj.1
 
 PORTSCOUT=	skipv:3.10g
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's!/etc!${LOCALBASE}/etc!' \
 		 ${WRKSRC}/arj.c ${WRKSRC}/file_reg.c ${WRKSRC}/rearj.c
@@ -47,14 +52,12 @@ pre-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} prepare)
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} COPYING debug.txt ${DOCSDIR}
 	cd ${WRKSRC}/resource/en && \
 		${INSTALL_DATA} arjl.txt arjs.txt history.txt readme.txt unix.txt ${DOCSDIR}
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"
 BROKEN=		Does not install on powerpc

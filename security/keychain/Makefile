@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A user-friendly front-end to ssh-agent(1)
 
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
+
 USE_BZIP2=		yes
 USE_GMAKE=		yes
 USE_PERL5_BUILD=	yes
@@ -25,6 +28,8 @@ PLIST_FILES=	bin/keychain
 
 PORTDOCS=	ChangeLog README.rst
 
+.include <bsd.port.pre.mk>
+
 .if !exists(${LOCALBASE}/bin/ssh-agent) && !exists(/usr/bin/ssh-agent)
 RUN_DEPENDS+=	ssh-agent:${PORTSDIR}/security/openssh-portable
 .endif
@@ -32,11 +37,11 @@ RUN_DEPENDS+=	ssh-agent:${PORTSDIR}/security/openssh-portable
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/keychain ${PREFIX}/bin/keychain
 	${INSTALL_MAN} ${WRKSRC}/keychain.1 ${PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
