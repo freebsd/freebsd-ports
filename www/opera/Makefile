@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.opera.com/pub/opera/${MASTER_SITES_VER_PATH}/ \
 		http://ftp.ntua.gr/pub/www/Opera/${MASTER_SITES_VER_PATH}/ \
 		http://mirrors.dedipower.com/opera/${MASTER_SITES_VER_PATH}/ \
 		ftp://ftp.tiscali.nl/pub/mirrors/opera/${MASTER_SITES_VER_PATH}/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/opera/${MASTER_SITES_VER_PATH}&,}/ 
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/opera/${MASTER_SITES_VER_PATH}&,}/
 DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.${ARCH}.freebsd
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -26,8 +26,8 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 BUILD_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 RUN_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
-OPERA_VER?=	12.00
-OPERA_BUILD?=	1467
+OPERA_VER?=	12.01
+OPERA_BUILD?=	1532
 MASTER_SITES_VER_PATH=	unix/${OPERA_VER:S/.//}
 
 USE_XZ=		yes
@@ -72,7 +72,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 OPERA_ARCH=	${ARCH:S,i386,intel,}
 
 .if ${OSVERSION} < 700000
-IGNORE=		Only for FreeBSD 7.x and higher
+IGNORE=		only for FreeBSD 7.x and higher
 .endif
 
 post-extract:
