@@ -7,7 +7,7 @@
 #
 
 PORTNAME=		bash
-PATCHLEVEL=		28
+PATCHLEVEL=		37
 PORTVERSION=		4.2.${PATCHLEVEL:S/^0//g}
 PORTREVISION?=		0
 CATEGORIES=		shells
@@ -146,9 +146,14 @@ post-install:
 regress: build
 	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} test
 
+ckp:
+	${MAKE} -DPATCH_DEBUG clean patch
+
 cklatest:
+	@${ECHO} -n "Currently at: "
+	@${MAKE} -V PATCHLEVEL
 	-ncftpls \
 	    ftp://ftp.cwru.edu/pub/${PORTNAME}/${PORTNAME}-${PORTVERSION:C/\.[0-9a-z]*$//}-patches/ \
-		| ${TAIL}
+		| fgrep -v .sig | ${TAIL}
 
 .include <bsd.port.post.mk>
