@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jwasm
-PORTVERSION=	206
+PORTVERSION=	207a
 CATEGORIES=	devel
 MASTER_SITES=	http://www.japheth.de/Download/JWasm/
 DISTNAME=	JWasm${PORTVERSION}s
@@ -27,7 +27,9 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
-	@${GZIP_CMD} ${DOCSDIR}/*.txt
+	@${MKDIR} ${DOCSDIR}/manual
+	@${INSTALL_DATA} ${WRKSRC}/Doc/*.txt ${DOCSDIR}/manual
+	@${GZIP_CMD} ${DOCSDIR}/*.txt ${DOCSDIR}/manual/*.txt
 .endif
 
 .include <bsd.port.mk>

@@ -2,6 +2,10 @@
 bin/jwasm
 %%PORTDOCS%%%%DOCSDIR%%/History.txt.gz
 %%PORTDOCS%%%%DOCSDIR%%/License.txt.gz
-%%PORTDOCS%%%%DOCSDIR%%/Manual.txt.gz
 %%PORTDOCS%%%%DOCSDIR%%/Readme.txt.gz
+%%PORTDOCS%%%%DOCSDIR%%/manual/enh.txt.gz
+%%PORTDOCS%%%%DOCSDIR%%/manual/fixes.txt.gz
+%%PORTDOCS%%%%DOCSDIR%%/manual/gencode.txt.gz
+%%PORTDOCS%%%%DOCSDIR%%/manual/overview.txt.gz
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
