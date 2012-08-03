@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hscolour
-PORTVERSION=	1.19
-PORTREVISION=	2
+PORTVERSION=	1.20.2
 PORTEPOCH=	1
 CATEGORIES=	print haskell
 
@@ -21,13 +20,15 @@ CABAL_SETUP=	Setup.hs
 
 EXECUTABLE=	HsColour
 
-.if defined(WITH_HSCOLOUR_DOCS)
+.include <bsd.port.options.mk>
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
+.include <bsd.port.mk>
+
 pre-everything::
+.if ${PORT_OPTIONS:MHSCOLOUR}
 	@${ECHO_MSG} "================================================================="
 	@${ECHO_MSG} " Please note that you will not be able to build HsColour-enabled "
 	@${ECHO_MSG} " documentation without installing HsColour without that first.   "
 	@${ECHO_MSG} "================================================================="
+	@sleep 5
 .endif
-
-.include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
-.include <bsd.port.mk>
