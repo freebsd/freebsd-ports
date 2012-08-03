@@ -8,7 +8,7 @@ temperature differences between those temperature scales.
 The units are defined externally in an extensive, well annotated data file
 that defines over 2000 units. You can also provide your own data file. 
 
-WWW: http://www.gnu.org/directory/units.html
+WWW: http://www.gnu.org/software/units/
 
 Note that this port will install the utility with a 'g' prefix,
 e.g. gunits, but the texinfo documentation will refer to it without
