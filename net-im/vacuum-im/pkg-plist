@@ -1,7 +1,6 @@
 bin/vacuum
 include/vacuum/definitions/actiongroups.h
 include/vacuum/definitions/archivehandlerorders.h
-include/vacuum/definitions/archiveindextyperole.h
 include/vacuum/definitions/commandline.h
 include/vacuum/definitions/dataformtypes.h
 include/vacuum/definitions/discofeaturehandlerorders.h
@@ -48,6 +47,14 @@ include/vacuum/definitions/xmppdatahandlerorders.h
 include/vacuum/definitions/xmppfeatureorders.h
 include/vacuum/definitions/xmppstanzahandlerorders.h
 include/vacuum/definitions/xmppurihandlerorders.h
+include/vacuum/definitions/notificationtypeorders.h
+include/vacuum/definitions/rosteredithandlerorders.h
+include/vacuum/definitions/rosterkeyhookerorders.h
+include/vacuum/definitions/tabpagenotifypriorities.h
+include/vacuum/definitions/archivecapabilityorders.h
+include/vacuum/definitions/xmppfeaturepluginorders.h
+include/vacuum/definitions/rosternotifyorders.h
+include/vacuum/definitions/messageeditororders.h
 include/vacuum/interfaces/iaccountmanager.h
 include/vacuum/interfaces/iannotations.h
 include/vacuum/interfaces/iautostatus.h
@@ -97,9 +104,13 @@ include/vacuum/interfaces/itraymanager.h
 include/vacuum/interfaces/ivcard.h
 include/vacuum/interfaces/ixmppstreams.h
 include/vacuum/interfaces/ixmppuriqueries.h
+include/vacuum/interfaces/irosteritemexchange.h
+include/vacuum/interfaces/iurlprocessor.h
+include/vacuum/interfaces/ibirthdayreminder.h
+include/vacuum/interfaces/ifilemessagearchive.h
+include/vacuum/interfaces/iservermessagearchive.h
 include/vacuum/utils/action.h
 include/vacuum/utils/datetime.h
-include/vacuum/utils/errorhandler.h
 include/vacuum/utils/filestorage.h
 include/vacuum/utils/iconsetdelegate.h
 include/vacuum/utils/iconstorage.h
@@ -118,9 +129,12 @@ include/vacuum/utils/unzipfile.h
 include/vacuum/utils/utilsexport.h
 include/vacuum/utils/versionparser.h
 include/vacuum/utils/widgetmanager.h
+include/vacuum/utils/xmpperror.h
+include/vacuum/utils/animatedtextbrowser.h
+include/vacuum/utils/textmanager.h
 lib/libvacuumutils.so
-lib/libvacuumutils.so.1.7
-lib/libvacuumutils.so.1.7.1
+lib/libvacuumutils.so.1.17.0
+lib/libvacuumutils.so.1.17
 lib/vacuum/plugins/libaccountmanager.so
 lib/vacuum/plugins/libadiummessagestyle.so
 lib/vacuum/plugins/libannotations.so
@@ -180,6 +194,11 @@ lib/vacuum/plugins/libtraymanager.so
 lib/vacuum/plugins/libvcard.so
 lib/vacuum/plugins/libxmppstreams.so
 lib/vacuum/plugins/libxmppuriqueries.so
+lib/vacuum/plugins/libbirthdayreminder.so
+lib/vacuum/plugins/liburlprocessor.so
+lib/vacuum/plugins/librosteritemexchange.so
+lib/vacuum/plugins/libfilemessagearchive.so
+lib/vacuum/plugins/libservermessagearchive.so
 share/doc/vacuum/AUTHORS
 share/doc/vacuum/CHANGELOG
 share/doc/vacuum/COPYING
@@ -612,18 +631,6 @@ share/pixmaps/vacuum.png
 %%DATADIR%%/resources/menuicons/shared/history.def.xml
 %%DATADIR%%/resources/menuicons/shared/history.png
 %%DATADIR%%/resources/menuicons/shared/historydate.png
-%%DATADIR%%/resources/menuicons/shared/historydisablelogging.png
-%%DATADIR%%/resources/menuicons/shared/historyenablelogging.png
-%%DATADIR%%/resources/menuicons/shared/historyfilter.png
-%%DATADIR%%/resources/menuicons/shared/historygroups.png
-%%DATADIR%%/resources/menuicons/shared/historyoptions.png
-%%DATADIR%%/resources/menuicons/shared/historyreload.png
-%%DATADIR%%/resources/menuicons/shared/historyremove.png
-%%DATADIR%%/resources/menuicons/shared/historyrename.png
-%%DATADIR%%/resources/menuicons/shared/historyrequireotr.png
-%%DATADIR%%/resources/menuicons/shared/historysource.png
-%%DATADIR%%/resources/menuicons/shared/historyterminateotr.png
-%%DATADIR%%/resources/menuicons/shared/historyview.png
 %%DATADIR%%/resources/menuicons/shared/jsearch.def.xml
 %%DATADIR%%/resources/menuicons/shared/jsearch.png
 %%DATADIR%%/resources/menuicons/shared/mainwindow.def.xml
@@ -696,7 +703,6 @@ share/pixmaps/vacuum.png
 %%DATADIR%%/resources/menuicons/shared/rchangercopygroup.png
 %%DATADIR%%/resources/menuicons/shared/rchangercreategroup.png
 %%DATADIR%%/resources/menuicons/shared/rchangergroup.png
-%%DATADIR%%/resources/menuicons/shared/rchangermanagement.png
 %%DATADIR%%/resources/menuicons/shared/rchangermovegroup.png
 %%DATADIR%%/resources/menuicons/shared/rchangerremovecontact.png
 %%DATADIR%%/resources/menuicons/shared/rchangerremovecontacts.png
@@ -738,6 +744,11 @@ share/pixmaps/vacuum.png
 %%DATADIR%%/resources/menuicons/shared/vacuum.png
 %%DATADIR%%/resources/menuicons/shared/vcard.def.xml
 %%DATADIR%%/resources/menuicons/shared/vcard.png
+%%DATADIR%%/resources/menuicons/shared/gatewaysremove.png
+%%DATADIR%%/resources/menuicons/shared/rosterexchangerequest.png
+%%DATADIR%%/resources/menuicons/shared/rosterexchange.def.xml
+%%DATADIR%%/resources/menuicons/shared/birthdayreminder.def.xml
+%%DATADIR%%/resources/menuicons/shared/birthdayremindernotify.png
 %%DATADIR%%/resources/serviceicons/shared/_empty_.png
 %%DATADIR%%/resources/serviceicons/shared/_error_.png
 %%DATADIR%%/resources/serviceicons/shared/_service_.png
@@ -863,7 +874,16 @@ share/pixmaps/vacuum.png
 %%DATADIR%%/resources/sounds/shared/default.wav
 %%DATADIR%%/resources/sounds/shared/error.wav
 %%DATADIR%%/resources/sounds/shared/message.wav
-%%DATADIR%%/resources/sounds/shared/sound.def.xml
+%%DATADIR%%/resources/sounds/shared/captchaforms.def.xml
+%%DATADIR%%/resources/sounds/shared/normalmessagehandler.def.xml
+%%DATADIR%%/resources/sounds/shared/rchanger.def.xml
+%%DATADIR%%/resources/sounds/shared/rosterexchange.def.xml
+%%DATADIR%%/resources/sounds/shared/chatmessagehandler.def.xml
+%%DATADIR%%/resources/sounds/shared/filetransfer.def.xml
+%%DATADIR%%/resources/sounds/shared/schanger.def.xml
+%%DATADIR%%/resources/sounds/shared/snegotiation.def.xml
+%%DATADIR%%/resources/sounds/shared/birthdayreminder.def.xml
+%%DATADIR%%/resources/sounds/shared/muc.def.xml
 %%DATADIR%%/resources/statusicons/aim/ask.png
 %%DATADIR%%/resources/statusicons/aim/away.png
 %%DATADIR%%/resources/statusicons/aim/chatty.png
@@ -1060,6 +1080,18 @@ share/pixmaps/vacuum.png
 %%DATADIR%%/resources/statusicons/yaonline/perr.png
 %%DATADIR%%/resources/statusicons/yaonline/statusicons.def.xml
 %%DATADIR%%/resources/statusicons/yaonline/xa.png
+%%DATADIR%%/resources/statusicons/odnoklassniki/chatty.png
+%%DATADIR%%/resources/statusicons/odnoklassniki/dnd.png
+%%DATADIR%%/resources/statusicons/odnoklassniki/icon.def.xml
+%%DATADIR%%/resources/statusicons/odnoklassniki/online.png
+%%DATADIR%%/resources/statusicons/odnoklassniki/offline.png
+%%DATADIR%%/resources/statusicons/odnoklassniki/statusicons.def.xml
+%%DATADIR%%/resources/statusicons/odnoklassniki/perr.png
+%%DATADIR%%/resources/statusicons/odnoklassniki/away.png
+%%DATADIR%%/resources/statusicons/odnoklassniki/xa.png
+%%DATADIR%%/resources/statusicons/odnoklassniki/invisible.png
+%%DATADIR%%/resources/statusicons/odnoklassniki/noauth.png
+%%DATADIR%%/resources/statusicons/odnoklassniki/ask.png
 %%DATADIR%%/translations/de/accountmanager.qm
 %%DATADIR%%/translations/de/adiummessagestyle.qm
 %%DATADIR%%/translations/de/annotations.qm
@@ -1121,6 +1153,11 @@ share/pixmaps/vacuum.png
 %%DATADIR%%/translations/de/vcard.qm
 %%DATADIR%%/translations/de/xmppstreams.qm
 %%DATADIR%%/translations/de/xmppuriqueries.qm
+%%DATADIR%%/translations/de/birthdayreminder.qm
+%%DATADIR%%/translations/de/rosteritemexchange.qm
+%%DATADIR%%/translations/de/filemessagearchive.qm
+%%DATADIR%%/translations/de/servermessagearchive.qm
+%%DATADIR%%/translations/de/urlprocessor.qm
 %%DATADIR%%/translations/pl/accountmanager.qm
 %%DATADIR%%/translations/pl/adiummessagestyle.qm
 %%DATADIR%%/translations/pl/annotations.qm
@@ -1182,6 +1219,11 @@ share/pixmaps/vacuum.png
 %%DATADIR%%/translations/pl/vcard.qm
 %%DATADIR%%/translations/pl/xmppstreams.qm
 %%DATADIR%%/translations/pl/xmppuriqueries.qm
+%%DATADIR%%/translations/pl/servermessagearchive.qm
+%%DATADIR%%/translations/pl/urlprocessor.qm
+%%DATADIR%%/translations/pl/filemessagearchive.qm
+%%DATADIR%%/translations/pl/birthdayreminder.qm
+%%DATADIR%%/translations/pl/rosteritemexchange.qm
 %%DATADIR%%/translations/ru/accountmanager.qm
 %%DATADIR%%/translations/ru/adiummessagestyle.qm
 %%DATADIR%%/translations/ru/annotations.qm
@@ -1243,6 +1285,11 @@ share/pixmaps/vacuum.png
 %%DATADIR%%/translations/ru/vcard.qm
 %%DATADIR%%/translations/ru/xmppstreams.qm
 %%DATADIR%%/translations/ru/xmppuriqueries.qm
+%%DATADIR%%/translations/ru/birthdayreminder.qm
+%%DATADIR%%/translations/ru/urlprocessor.qm
+%%DATADIR%%/translations/ru/servermessagearchive.qm
+%%DATADIR%%/translations/ru/filemessagearchive.qm
+%%DATADIR%%/translations/ru/rosteritemexchange.qm
 %%DATADIR%%/translations/uk/accountmanager.qm
 %%DATADIR%%/translations/uk/adiummessagestyle.qm
 %%DATADIR%%/translations/uk/annotations.qm
@@ -1304,12 +1351,18 @@ share/pixmaps/vacuum.png
 %%DATADIR%%/translations/uk/vcard.qm
 %%DATADIR%%/translations/uk/xmppstreams.qm
 %%DATADIR%%/translations/uk/xmppuriqueries.qm
+%%DATADIR%%/translations/uk/filemessagearchive.qm
+%%DATADIR%%/translations/uk/rosteritemexchange.qm
+%%DATADIR%%/translations/uk/birthdayreminder.qm
+%%DATADIR%%/translations/uk/servermessagearchive.qm
+%%DATADIR%%/translations/uk/urlprocessor.qm
 %%DOCSDIR%%/TRANSLATORS
 @dirrm %%DATADIR%%/translations/uk
 @dirrm %%DATADIR%%/translations/ru
 @dirrm %%DATADIR%%/translations/pl
 @dirrm %%DATADIR%%/translations/de
 @dirrm %%DATADIR%%/translations
+@dirrm %%DATADIR%%/resources/statusicons/odnoklassniki
 @dirrm %%DATADIR%%/resources/statusicons/yaonline
 @dirrm %%DATADIR%%/resources/statusicons/yahoo
 @dirrm %%DATADIR%%/resources/statusicons/weather
