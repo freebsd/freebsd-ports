@@ -57,14 +57,14 @@ SUB_LIST+=	THREADS_SUFFIX="${THREADS_SUFFIX}" \
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${TCL_VER}
 
-.if !defined(WITHOUT_XFT)
+.if ${PORT_OPTIONS:MXFT}
 CONFIGURE_ARGS+=	--enable-xft
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 .else
 CONFIGURE_ARGS+=	--disable-xft
 .endif
 
-.if !defined(NO_INSTALL_MANPAGES)
+.if ${PORT_OPTIONS:MDOCS}
 MAN1=	wish${TCL_VER}${THREADS_SUFFIX}.1
 .endif
 
@@ -80,14 +80,14 @@ CONFIGURE_ARGS+=	--disable-threads --with-tcl=${LOCALBASE}/lib/tcl${TK_VER} \
 
 SUB_LIST+=		TK_PROVIDE=""
 
-.if defined(WITH_DEMOS)
+.if ${PORT_OPTIONS:MDEMOS}
 INSTALL_TARGET+=	install install-demos
 PLIST_SUB+=	DEMOS=""
 .else
 PLIST_SUB+=	DEMOS="@comment "
 .endif
 
-.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TK85_MAN)
+.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MTK85_MAN}
 
 MAN3=	3DBorder.3 AddOption.3 BindTable.3 CanvPsY.3 CanvTkwin.3 \
 	CanvTxtInfo.3 Clipboard.3 ClrSelect.3 ConfigWidg.3 ConfigWind.3 \
@@ -403,7 +403,7 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	text.n tk_textCut.n \
 	text.n tk_textPaste.n
 
-.endif	#!defined(NO_INSTALL_MANPAGES) && defined(WITH_TK85_MAN)
+.endif	# ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MTK85_MAN}
 
 .endif	# defined(BUILDING_TK_THREADS)
 
@@ -453,18 +453,18 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/pkgIndex.tcl ${PREFIX}/lib/tk${TK_VER}${THREADS_SUFFIX}/
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/man.macros ${DATADIR}
-.if !defined(NO_INSTALL_MANPAGES)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/../doc/wish.1 ${MANPREFIX}/man/man1/wish${TCL_VER}${THREADS_SUFFIX}.1
-.if !defined(BUILDING_TK_THREADS) && defined(WITH_TK85_MAN)
+.if !defined(BUILDING_TK_THREADS) && ${PORT_OPTIONS:MTK85_MAN}
 . for mp in ${MAN3} ${MANN}
 	@${REINPLACE_CMD} -e 's|^.so man.macros|.so ${DATADIR}/man.macros|'	\
 		${WRKSRC}/../doc/${mp}
 . endfor
 	@cd ${WRKSRC} && ${MAKE} -f Makefile install-doc ${MAKE_ENV}
-.endif # !defined(BUILDING_TK_THREADS) && defined(WITH_TK85_MAN)
+.endif # !defined(BUILDING_TK_THREADS) && ${PORT_OPTIONS:MTK85_MAN}
 
-.endif # !defined(NO_INSTALL_MANPAGES)
+.endif # ${PORT_OPTIONS:MDOCS}
 
 regression-test:	build
 	cd ${WRKSRC}; ${MAKE} test
