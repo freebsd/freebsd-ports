@@ -189,11 +189,12 @@ CC:=			gcc${V}
 CXX:=			g++${V}
 CPP:=			cpp${V}
 .   if ${_USE_GCC} != 3.4
-CFLAGS+=		-Wl,-rpath=${LOCALBASE}/lib/gcc${V}
-LDFLAGS+=		-Wl,-rpath=${LOCALBASE}/lib/gcc${V}
+_GCC_RUNTIME:=		${LOCALBASE}/lib/gcc${V}
+CFLAGS+=		-Wl,-rpath=${_GCC_RUNTIME}
+LDFLAGS+=		-Wl,-rpath=${_GCC_RUNTIME}
 .    if defined (USE_FORTRAN)
 .    if ${USE_FORTRAN} == yes
-FFLAGS+=		-Wl,-rpath=${LOCALBASE}/lib/gcc${V}
+FFLAGS+=		-Wl,-rpath=${_GCC_RUNTIME}
 .    endif
 .    endif
 # The following is for the sakes of some ports which use this without
