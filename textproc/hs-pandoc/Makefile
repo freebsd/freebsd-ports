@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pandoc
-PORTVERSION=	1.9.3
+PORTVERSION=	1.9.4.2
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -27,28 +27,27 @@ USE_CABAL=	base64-bytestring>=0.1 blaze-html>=0.4.3.0 citeproc-hs>=0.3.4 \
 MAN1=		pandoc.1
 MAN5=		pandoc_markdown.5
 
-OPTIONS=	EXECUTABLE   "Build the pandoc executable" on \
-		LIBRARY      "Build the pandoc library" on \
+OPTIONS_MULTI=		FORMAT
+OPTIONS_MULTI_FORMAT=	EXECUTABLE LIBRARY
+OPTIONS_DEFAULT=	EXECUTABLE LIBRARY
 
-.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
+EXECUTABLE_DESC=	Build the pandoc executable
+LIBRARY_DESC=		Build the pandoc library
+
 .include <bsd.port.options.mk>
 
-.if defined(WITH_EXECUTABLE)
+.if ${PORT_OPTIONS:MEXECUTABLE}
 CONFIGURE_ARGS+=	--flags="exectuable"
 EXECUTABLE+=		pandoc
 .else
 CONFIGURE_ARGS+=	--flags="-executable"
 .endif
 
-.if defined(WITH_LIBRARY)
+.if ${PORT_OPTIONS:MLIBRARY}
 CONFIGURE_ARGS+=	--flags="library"
 .else
 CONFIGURE_ARGS+=	--flags="-library"
 STANDALONE=		yes
-.endif
-
-.if !defined(WITH_EXECUTABLE) && !defined(WITH_LIBRARY)
-IGNORE=		cannot be compiled in this configuration.  Please (re)run 'make config' and choose either EXECUTABLE or LIBRARY or both
 .endif
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
