@@ -1,4 +1,4 @@
-/* $FreeBSD: /tmp/pcvs/ports/devel/gdb/files/fbsd-threads.c,v 1.4 2012-06-23 09:12:05 scheidell Exp $ */
+/* $FreeBSD$ */
 /* FreeBSD libthread_db assisted debugging support.
    Copyright 1999, 2000, 2001 Free Software Foundation, Inc.
 
@@ -747,8 +747,10 @@ fbsd_thread_wait (struct target_ops *ops,
       */
       if (!fbsd_thread_alive (ops, inferior_ptid) && !ptid_equal(inferior_ptid, ret))
         {
-          delete_thread (inferior_ptid);
+          ptid_t save_ptid;
+          save_ptid = inferior_ptid;
           inferior_ptid = ret;
+          delete_thread (save_ptid);
         }
     }
 
@@ -1176,7 +1178,7 @@ tsd_cb (thread_key_t key, void (*destructor)(void *), void *ignore)
   else
     name = SYMBOL_PRINT_NAME (ms);
 
-  printf_filtered ("Destructor %p <%s>\n", destructor, name);
+  printf_filtered ("Key %d, destructor %p <%s>\n", key, destructor, name);
   return 0;
 }
 
