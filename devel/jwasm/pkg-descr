@@ -9,7 +9,7 @@ JWasm Features:
 64-bit), Elf (32-and 64-bit), Bin and DOS MZ.
 - precompiled JWasm binaries are available for DOS, Windows and Linux. For 
 OS/2 and FreeBSD, makefiles are supplied.
-- Instructions up to SSSE3 are supported.
+- Instructions up to AVX are supported.
 - The JWasm source is portable and has successfully been tested with Open 
 Watcom, MS VC, GCC and more.
 - As far as programming for Windows is concerned, JWasm can be used with 
