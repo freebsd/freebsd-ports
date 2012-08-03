@@ -6,7 +6,7 @@
 
 PORTNAME=	drift
 PORTVERSION=	2.2.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://repetae.net/computer/haskell/DrIFT/drop/
 PKGNAMEPREFIX=	hs-
@@ -15,18 +15,28 @@ DISTNAME=	DrIFT-${PORTVERSION}
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A type sensitive preprocessor for Haskell
 
-OPTIONS=	NHC98 "Build with nhc98" off \
-		GHC   "Build with ghc"   on
+OPTIONS_SINGLE=			COMPILER
+OPTIONS_SINGLE_COMPILER=	NHC98 GHC
+OPTIONS_DEFAULT=		GHC
 
-.include <bsd.port.pre.mk>
+NHC98_DESC=	Build with NHC98
+GHC_DESC=	Build with GHC
 
-.if !defined(WITH_NHC98)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGHC}
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		hs-random>=0:${PORTSDIR}/devel/hs-random
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
-.else
+
+CONFIGURE_ARGS+=	--with-hc=ghc
+.endif
+
+.if ${PORT_OPTIONS:MNHC98}
 BUILD_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98
 BROKEN=		Does not build
+
+CONFIGURE_ARGS+=	--with-hc=nhc98
 .endif
 
 USE_GMAKE=	yes
@@ -35,20 +45,7 @@ GNU_CONFIGURE=	yes
 INFO=	drift
 PLIST_FILES=	bin/DrIFT bin/drift-ghc
 
-.if !defined(WITH_NHC98)
-CONFIGURE_ARGS+=	--with-hc=ghc
-.else
-CONFIGURE_ARGS+=	--with-hc=nhc98
-.endif
-
-.if !defined(WITH_GHC)
-pre-everything::
-	@${ECHO} ""
-	@${ECHO} " DrIFT will be build with ghc"
-	@${ECHO} " Define WITH_NHC98 to build with nhc98."
-	@${ECHO} ""
-
-.else
+.if ${PORT_OPTIONS:MGHC}
 post-patch:
 	@${REINPLACE_CMD} 's|import List|import Data.List| ; \
 		s|import Char|import Data.Char| ; \
@@ -63,4 +60,4 @@ post-patch:
 		`${FIND} ${WRKSRC} -name '*.*hs'`
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
