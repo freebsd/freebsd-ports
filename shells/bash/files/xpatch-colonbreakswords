@@ -1,6 +1,6 @@
 --- bashline.c.orig	2009-01-08 06:29:24.000000000 -0800
-+++ bashline.c	2009-03-08 01:00:50.000000000 -0800
-@@ -226,6 +226,11 @@ int bash_readline_initialized = 0;
++++ bashline.c	2012-07-30 15:07:10.000000000 -0500
+@@ -235,6 +235,11 @@ int bash_readline_initialized = 0;
     host list. */
  int perform_hostname_completion = 1;
  
@@ -12,7 +12,7 @@
  /* If non-zero, we don't do command completion on an empty line. */
  int no_empty_command_completion;
  
-@@ -239,7 +244,8 @@ int dircomplete_spelling = 0;
+@@ -252,7 +257,8 @@ int dircomplete_expand_relpath = 0;
  
  static char *bash_completer_word_break_characters = " \t\n\"'@><=;|&(:";
  static char *bash_nohostname_word_break_characters = " \t\n\"'><=;|&(:";
@@ -20,9 +20,9 @@
 +static char *bash_nocolon_word_break_characters = " \t\n\"'@><=;|&(";
 +/* ))) */
  
- static rl_hook_func_t *old_rl_startup_hook = (rl_hook_func_t *)NULL;
- 
-@@ -351,6 +357,80 @@ enable_hostname_completion (on_or_off)
+ static const char *default_filename_quote_characters = " \t\n\\\"'@<>=;|&()#$`?*[!:{~";	/*}*/
+ static char *custom_filename_quote_characters = 0;
+@@ -370,6 +376,80 @@ enable_hostname_completion (on_or_off)
    return (old_value);
  }
  
@@ -40,12 +40,12 @@
 +  if (on_or_off)
 +    {
 +      colon_is_wordbreak = 1;
-+      rl_filename_quote_characters = " \t\n\\\"'@<>=;|&()#$`?*[!:{";	/*}*/
++      rl_filename_quote_characters = default_filename_quote_characters;
 +    }
 +  else
 +    {
 +      colon_is_wordbreak = 0;
-+      rl_filename_quote_characters = " \t\n\\\"'@<>=;|&()#$`?*[!{";	/*}*/
++      rl_filename_quote_characters = " \t\n\\\"'@<>=;|&()#$`?*[!{~";	/*}*/
 +    }
 +
 +  /* Now we need to figure out how to appropriately modify and assign
@@ -103,7 +103,7 @@
  /* Called once from parse.y if we are going to use readline. */
  void
  initialize_readline ()
-@@ -517,7 +597,12 @@ initialize_readline ()
+@@ -538,8 +618,13 @@ initialize_readline ()
       completion is enabled. */
    enable_hostname_completion (perform_hostname_completion);
  
@@ -113,8 +113,9 @@
 +  enable_colon_wordbreak (colon_is_wordbreak);
 +
    /* characters that need to be quoted when appearing in filenames. */
--  rl_filename_quote_characters = " \t\n\\\"'@<>=;|&()#$`?*[!:{~";	/*}*/
-+//  rl_filename_quote_characters = " \t\n\\\"'@<>=;|&()#$`?*[!:{~";	/*}*/
+-  rl_filename_quote_characters = default_filename_quote_characters;
++//  rl_filename_quote_characters = default_filename_quote_characters;
+ 
    rl_filename_quoting_function = bash_quote_filename;
    rl_filename_dequoting_function = bash_dequote_filename;
 --- builtins/shopt.def.orig	2009-01-13 05:43:16.000000000 -0800
