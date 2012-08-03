@@ -178,29 +178,36 @@ _USE_GCC:=	${GCC_DEFAULT_VERSION}
 . if ${_USE_GCC} == ${_GCCVERSION_${v}_V}
 .  if ${OSVERSION} < ${_GCCVERSION_${v}_L} || ${OSVERSION} > ${_GCCVERSION_${v}_R}
 V:=			${_GCCVERSION_${v}_V:S/.//}
-_GCC_BUILD_DEPENDS:=	gcc${V}
 _GCC_PORT_DEPENDS:=	gcc${V}
+.   if ${_USE_GCC} == ${GCC_DEFAULT_VERSION}
+_GCC_PORT:=		gcc
+.   else
+_GCC_PORT:=		gcc${V}
+.   endif
 CC:=			gcc${V}
 CXX:=			g++${V}
 CPP:=			cpp${V}
 .   if ${_USE_GCC} != 3.4
-CFLAGS+=		-Wl,-rpath=${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}
-LDFLAGS+=		-Wl,-rpath=${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}
+CFLAGS+=		-Wl,-rpath=${LOCALBASE}/lib/gcc${V}
+LDFLAGS+=		-Wl,-rpath=${LOCALBASE}/lib/gcc${V}
 .    if defined (USE_FORTRAN)
 .    if ${USE_FORTRAN} == yes
-FFLAGS+=		-Wl,-rpath=${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}
+FFLAGS+=		-Wl,-rpath=${LOCALBASE}/lib/gcc${V}
 .    endif
 .    endif
+# The following is for the sakes of some ports which use this without
+# ever telling us; to be fixed.
+_GCC_BUILD_DEPENDS:=	${_GCC_PORT_DEPENDS}
 .   endif
 .  endif
 . endif
 .endfor
 .undef V
 
-.if defined(_GCC_BUILD_DEPENDS)
-BUILD_DEPENDS+=	${_GCC_PORT_DEPENDS}:${PORTSDIR}/lang/${_GCC_BUILD_DEPENDS}
+.if defined(_GCC_PORT_DEPENDS)
+BUILD_DEPENDS+=	${_GCC_PORT_DEPENDS}:${PORTSDIR}/lang/${_GCC_PORT}
 . if ${_USE_GCC} != 3.4
-RUN_DEPENDS+=	${_GCC_PORT_DEPENDS}:${PORTSDIR}/lang/${_GCC_BUILD_DEPENDS}
+RUN_DEPENDS+=	${_GCC_PORT_DEPENDS}:${PORTSDIR}/lang/${_GCC_PORT}
 .  if ${_USE_GCC} != 4.2
 # Later GCC ports already depend on binutils; make sure whatever we
 # build leverages this as well.
