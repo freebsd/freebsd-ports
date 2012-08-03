@@ -1,0 +1,6 @@
+bin/gunits
+bin/gunits_cur
+share/units/currency.units
+share/units/definitions.units
+share/units/locale.map
+@dirrm share/units
