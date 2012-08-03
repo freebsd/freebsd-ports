@@ -67,9 +67,7 @@ PLIST_SUB+=		TZDATA=""
 PLIST_SUB+=		TZDATA="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
 MAN1=	tclsh${TCL_VER}${THREADS_SUFFIX}.1
-.endif
 
 .if defined(BUILDING_TCL_THREADS)
 . if (${ARCH} == "ia64")
@@ -765,7 +763,6 @@ post-install:
 .endif
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/man.macros ${DATADIR}
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/../doc/tclsh.1 ${MANPREFIX}/man/man1/tclsh${TCL_VER}${THREADS_SUFFIX}.1
 .if !defined(BUILDING_TCL_THREADS) && ${PORT_OPTIONS:MTCL85_MAN}
@@ -776,8 +773,6 @@ post-install:
 	@cd ${WRKSRC} && ${MAKE} -f Makefile install-doc ${MAKE_ENV}
 
 .endif # !defined(BUILDING_TCL_THREADS) && ${PORT_OPTIONS:MTCL85_MAN}
-
-.endif # ${PORT_OPTIONS:MDOCS}
 
 regression-test:	build
 	cd ${WRKSRC} && LC_ALL=C ${MAKE} test

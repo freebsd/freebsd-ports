@@ -64,9 +64,7 @@ LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 CONFIGURE_ARGS+=	--disable-xft
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
 MAN1=	wish${TCL_VER}${THREADS_SUFFIX}.1
-.endif
 
 .if defined(BUILDING_TK_THREADS)
 CONFIGURE_ARGS+=	--enable-threads --with-tcl=${LOCALBASE}/lib/tcl${TK_VER}${THREADS_SUFFIX}
@@ -87,7 +85,7 @@ PLIST_SUB+=	DEMOS=""
 PLIST_SUB+=	DEMOS="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MTK85_MAN}
+.if ${PORT_OPTIONS:MTK85_MAN}
 
 MAN3=	3DBorder.3 AddOption.3 BindTable.3 CanvPsY.3 CanvTkwin.3 \
 	CanvTxtInfo.3 Clipboard.3 ClrSelect.3 ConfigWidg.3 ConfigWind.3 \
@@ -403,7 +401,7 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	text.n tk_textCut.n \
 	text.n tk_textPaste.n
 
-.endif	# ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MTK85_MAN}
+.endif	# ${PORT_OPTIONS:MTK85_MAN}
 
 .endif	# defined(BUILDING_TK_THREADS)
 
@@ -453,7 +451,6 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/pkgIndex.tcl ${PREFIX}/lib/tk${TK_VER}${THREADS_SUFFIX}/
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/man.macros ${DATADIR}
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/../doc/wish.1 ${MANPREFIX}/man/man1/wish${TCL_VER}${THREADS_SUFFIX}.1
 .if !defined(BUILDING_TK_THREADS) && ${PORT_OPTIONS:MTK85_MAN}
@@ -463,8 +460,6 @@ post-install:
 . endfor
 	@cd ${WRKSRC} && ${MAKE} -f Makefile install-doc ${MAKE_ENV}
 .endif # !defined(BUILDING_TK_THREADS) && ${PORT_OPTIONS:MTK85_MAN}
-
-.endif # ${PORT_OPTIONS:MDOCS}
 
 regression-test:	build
 	cd ${WRKSRC}; ${MAKE} test
