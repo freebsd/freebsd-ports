@@ -45,21 +45,14 @@ MAKE_ENV=	LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 # You can view below.
 GNU_CONFIGURE=	yes
 
-.if !defined(NOPORTDOCS)
-OPTIONS=	PROFILE "Compile for profiling as well" on \
-		DYNAMIC	"Compile for dynamic linking support"	on \
-		DOCS "Install HTML documentation" on
-.else
-OPTIONS=	PROFILE "Compile for profiling as well" on \
-		DYNAMIC	"Compile for dynamic linking support"	on
-.endif
+OPTIONS_DEFINE=		PROFILE DYNAMIC DOCS
+OPTIONS_DEFAULT=	PROFILE DYNAMIC DOCS
+
+PROFILE_DESC=		Add support for performance profiling
+DYNAMIC_DESC=		Add support for dynamic linking
+DOCS_DESC=		Install HTML documentation
 
 .include <bsd.port.options.mk>
-.include <bsd.port.pre.mk>
-
-.if defined(WITHOUT_DOCS)
-NOPORTDOCS=
-.endif
 
 .if ${ARCH} == "i386"
 
@@ -118,12 +111,12 @@ CFLAGS+=	-I${LOCALBASE}/include
 TMPDIR=		${WRKSRC}/tmp
 MAKE_ENV+=	TMPDIR=${TMPDIR}
 
-# Defining WITH_DOCS:
+# Defining with documentation:
 # An in place installation and registration of hscolour will be
 # activated. In this way it's possible to use it directly into
 # the build tree, without needing to install it. At the end
 # you could view the output of: ${BOOT_GHC} describe hscolour
-.if defined(WITH_DOCS)
+.if ${PORT_OPTIONS:MDOCS}
 
 MASTER_SITES+=	${HACKAGE_SITE}${HACKAGE_ARCH}hscolour/${HSCOLOUR_VERSION}/:docs
 DISTFILES+=	hscolour-${HSCOLOUR_VERSION}.tar.gz:docs
@@ -150,13 +143,13 @@ post-extract:
 	@${ECHO} >> ${WRKSRC}/mk/build.mk "mandir = ${PREFIX}/man"
 	@${ECHO} >> ${WRKSRC}/mk/build.mk "infodir = ${PREFIX}/info"
 	@${ECHO} >> ${WRKSRC}/mk/build.mk "GhcLibWays = v"
-.if !defined(WITHOUT_PROFILE)
+.if ${PORT_OPTIONS:MPROFILE}
 	@${ECHO} >> ${WRKSRC}/mk/build.mk "GhcLibWays += p"
 .endif
-.if !defined(WITHOUT_DYNAMIC)
+.if ${PORT_OPTIONS:MDYNAMIC}
 	@${ECHO} >> ${WRKSRC}/mk/build.mk "GhcLibWays += dyn"
 .endif
-.if defined(WITH_DOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO} >> ${WRKSRC}/mk/build.mk "XMLDocWays = html"
 	@${ECHO} >> ${WRKSRC}/mk/build.mk "HADDOCK_DOCS = YES"
 	@${ECHO} >> ${WRKSRC}/mk/build.mk "HSCOLOUR_SRCS = YES"
@@ -184,14 +177,14 @@ post-install-script:
 		'/^${DOCSDIR:C/\//\\\//g}\/html\/libraries\/index[^\/.]*\.html/d' -e \
 		'/^${DOCSDIR:C/\//\\\//g}\/html\/libraries\/[^\/]+\.png/d' -e \
 		's,^${PREFIX}/?,,' >> ${TMPPLIST}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	# Cleanup the indexen created by gen_contents_index
 	@${ECHO} "@unexec ${RM} -f %D/${DOCSDIR_REL}/html/libraries/doc-index-*.html" >> ${TMPPLIST}
 	@${ECHO} "@unexec ${RM} -f %D/${DOCSDIR_REL}/html/libraries/index*.html" >> ${TMPPLIST}
 	@${ECHO} "@unexec ${RM} -f %D/${DOCSDIR_REL}/html/libraries/*.png" >> ${TMPPLIST}
 .endif
 	@${ECHO} "@exec %D/bin/ghc-pkg recache" >>${TMPPLIST}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO} '@exec ${SH} -c "cd %D/${DOCSDIR_REL}/html/libraries && ./gen_contents_index"' >> ${TMPPLIST}
 .endif
 	@${ECHO} '@unexec ${RM} -f %D/${GHC_LIBDIR_REL}/package.conf.d/package.cache' >>${TMPPLIST}
@@ -224,10 +217,10 @@ pre-configure:
 	@(cd ${BOOT_DIR} && ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS_BOOT})
 	@(cd ${BOOT_DIR} && PACKAGES='' ${GMAKE} install)
 
-# Defining WITH_DOCS:
+# Defining with documentation:
 # Defining "SLAVE" in devel/hs-haddock and print/hs-hscolour flips the building process
 # functionally to this port.
-.if defined(WITH_DOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -e "\a"
 	@${ECHO_MSG} "======================================================================"
 	@${ECHO_MSG} "  WARNING: Now HsColour will be built, the respective port will not   "
@@ -255,13 +248,13 @@ post-install:
 	@${MKDIR} ${DOCSDIR}/cabal
 	@${MKDIR} ${EXAMPLESDIR}/cabal
 	@${MKDIR} ${DATADIR}/cabal
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	cd ${DOCSDIR}/html/libraries && ./gen_contents_index
 .endif
 	@${RM} -f ${PREFIX}/bin/haddock
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${LN} -sf ${PREFIX}/bin/haddock-ghc-${GHC_VERSION} ${PREFIX}/bin/haddock
 .endif
 	@${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
