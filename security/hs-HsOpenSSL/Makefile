@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HsOpenSSL
-PORTVERSION=	0.10.3.1
+PORTVERSION=	0.10.3.2
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org
