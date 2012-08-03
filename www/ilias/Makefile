@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ilias
-PORTVERSION=	4.2.3
-PORTREVISION=	1
+PORTVERSION=	4.2.5
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/1.%20ILIAS%204.2/ILIAS%20${PORTVERSION}
 
@@ -37,21 +36,19 @@ PLIST_SUB=	ILIASDATADIR=${ILIASDATADIR}
 SUB_FILES=	pkg-message
 SUB_LIST=	ILIASDATADIR=${ILIASDATADIR}
 
-OPTIONS=	SCORM2004 "Using SCORM2004 support" off	\
-		Checker "Link Checker" off \
-		Mail "Internet compliant E-Mail addresses" off
+OPTIONS_DEFINE=	SCORM2004 Checker Mail Docs
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_SCORM2004)
+.if ${PORT_OPTIONS:MSCORM2004}
 USE_PHP+=	json
 .endif
 
-.if defined(WITH_Checker)
+.if ${PORT_OPTIONS:MChecker}
 RUN_DEPENDS+=	 ${LOCALBASE}/share/pear/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
 .endif
 
-.if defined(WITH_Mail)
+.if ${PORT_OPTIONS:MMail}
 RUN_DEPENDS+=	${LOCALBASE}/share/pear/Mail.php:${PORTSDIR}/mail/pear-Mail
 .endif
 
@@ -77,10 +74,10 @@ do-install:
 		>> ${TMPPLIST}
 	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${PREFIX}/${ILIASDATADIR}' >>${TMPPLIST}
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@cd ${WRKDIR}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
