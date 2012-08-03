@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtk
-PORTVERSION=	0.12.3
+PORTVERSION=	0.12.3.1
 CATEGORIES=	x11-toolkits haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -17,7 +17,7 @@ FILE_LICENSE=	COPYING
 
 CABAL_SETUP=	Setup.hs
 
-USE_CABAL=	cairo>=0.12.0 glib>=0.12.0 mtl pango>=0.12.0
+USE_CABAL=	cairo>=0.12.0 gio>=0.12.0 glib>=0.12.0 mtl pango>=0.12.0
 USE_GNOME=	gtk20
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
