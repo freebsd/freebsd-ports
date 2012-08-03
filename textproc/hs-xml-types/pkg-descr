@@ -1,3 +1,4 @@
-The xml-types package.
+Basic types for representing XML.
 
-WWW:	http://hackage.haskell.org/package/xml-type
+WWW:	http://john-millikin.com/software/haskell-xml/
+
