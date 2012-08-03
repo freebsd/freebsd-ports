@@ -1,6 +1,6 @@
---- Makefile.in.orig	2010-09-02 20:12:14.000000000 +0200
-+++ Makefile.in	2010-09-17 16:52:49.592479499 +0200
-@@ -65,6 +65,8 @@
+--- Makefile.in.orig	2012-07-25 18:45:53.000000000 +0200
++++ Makefile.in	2012-08-02 15:34:29.280510279 +0200
+@@ -64,6 +64,8 @@
  
  # Directory in which to install the include file tk.h:
  INCLUDE_INSTALL_DIR	= $(INSTALL_ROOT)$(includedir)
@@ -9,7 +9,7 @@
  
  # Path to the private tk header dir:
  PRIVATE_INCLUDE_DIR	= @PRIVATE_INCLUDE_DIR@
-@@ -101,7 +103,7 @@
+@@ -100,7 +102,7 @@
  # The directory containing the Tcl sources and headers appropriate
  # for this version of Tk ("srcdir" will be replaced or has already
  # been replaced by the configure script):
@@ -18,7 +18,7 @@
  
  # The directory containing the platform specific Tcl sources and headers
  # appropriate for this version of Tk:
-@@ -115,7 +117,7 @@
+@@ -114,7 +116,7 @@
  TCL_LIB_FLAG		= @TCL_LIB_FLAG@
  
  # Flag, 1: we're building a shared lib, 0 we're not
@@ -27,7 +27,7 @@
  
  # Subdirectory of $(libdir) containing the pkgIndex.tcl file for loadable Tk
  TK_PKG_DIR		= @TK_PKG_DIR@
-@@ -138,7 +140,7 @@
+@@ -137,7 +139,7 @@
  #CFLAGS			= $(CFLAGS_DEBUG)
  #CFLAGS			= $(CFLAGS_OPTIMIZE)
  #CFLAGS			= $(CFLAGS_DEBUG) $(CFLAGS_OPTIMIZE)
@@ -36,7 +36,7 @@
  
  # Flags to pass to the linker
  LDFLAGS_DEBUG		= @LDFLAGS_DEBUG@
-@@ -271,7 +273,7 @@
+@@ -272,7 +274,7 @@
  STLIB_LD		= @STLIB_LD@
  SHLIB_LD		= @SHLIB_LD@
  SHLIB_LD_LIBS		= @SHLIB_LD_LIBS@
@@ -45,16 +45,16 @@
  
  # Additional search flags needed to find the various shared libraries
  # at run-time.  The first symbol is for use when creating a binary
-@@ -554,6 +556,8 @@
- 	$(GENERIC_DIR)/tkIntPlatDecls.h $(GENERIC_DIR)/tkPort.h \
- 	$(TTK_HDRS) $(@TK_WINDOWINGSYSTEM@_PRIVATE_HDRS)
+@@ -557,6 +559,8 @@
+ 
+ DEMOPROGS = browse hello ixset rmt rolodex square tcolor timer widget
  
 +INSTALL_HDRS = tk.h tkDecls.h tkInt.h tkIntDecls.h tkIntXlibDecls.h
 +
- DEMOPROGS = browse hello ixset rmt rolodex tcolor timer widget
- 
  SHELL_ENV = \
-@@ -579,6 +583,12 @@
+ 	@LD_LIBRARY_PATH_VAR@="`pwd`:${TCL_BIN_DIR}:$${@LD_LIBRARY_PATH_VAR@}"; \
+ 	export @LD_LIBRARY_PATH_VAR@; \
+@@ -580,6 +584,12 @@
  ${LIB_FILE}: ${OBJS} ${STUB_LIB_FILE} @LIB_RSRC_FILE@
  	rm -f $@
  	@MAKE_LIB@
@@ -67,51 +67,55 @@
  
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f $@
-@@ -685,7 +695,7 @@
- valgrindshell: tktest@EXEEXT@
- 	$(SHELL_ENV) valgrind $(VALGRINDARGS) ./tktest@EXEEXT@ $(SCRIPT)
+@@ -690,7 +700,7 @@
+ valgrindshell: $(TKTEST_EXE)
+ 	$(SHELL_ENV) valgrind $(VALGRINDARGS) ./$(TKTEST_EXE) $(SCRIPT)
  
 -INSTALL_TARGETS = install-binaries install-libraries install-demos install-doc @EXTRA_INSTALL@
 +INSTALL_TARGETS = install-binaries install-libraries @EXTRA_INSTALL@
  
  install: $(INSTALL_TARGETS)
  
-@@ -698,7 +708,7 @@
+@@ -703,7 +713,7 @@
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
--install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) wish@EXEEXT@
-+install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) wish@EXEEXT@ libtk${SHORT_TK_VER}.a
+-install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) ${WISH_EXE}
++install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) ${WISH_EXE} libtk${SHORT_TK_VER}.a
  	@for i in "$(LIB_INSTALL_DIR)" "$(BIN_INSTALL_DIR)" \
  	    "$(PKG_INSTALL_DIR)" "$(CONFIG_INSTALL_DIR)" ; \
  	    do \
-@@ -725,10 +735,15 @@
- 	@echo "Installing $(LIB_FILE) to $(LIB_INSTALL_DIR)/"
+@@ -738,14 +748,19 @@
+ 	@echo "Installing $(LIB_FILE) to $(DLL_INSTALL_DIR)/"
  	@@INSTALL_LIB@
- 	@chmod 555 "$(LIB_INSTALL_DIR)"/$(LIB_FILE)
-+	@ln -sf $(LIB_INSTALL_DIR)/$(TK_LIB_FILE) $(LIB_INSTALL_DIR)/libtk${SHORT_TK_VER}.so
+ 	@chmod 555 "$(DLL_INSTALL_DIR)/$(LIB_FILE)"
++	@ln -sf $(DLL_INSTALL_DIR)/$(TK_LIB_FILE) $(DLL_INSTALL_DIR)/libtk${SHORT_TK_VER}.so
 +	@echo "Installing libtk${SHORT_TK_VER}.a"
-+	@$(INSTALL_DATA) libtk${SHORT_TK_VER}.a $(LIB_INSTALL_DIR)/libtk${SHORT_TK_VER}.a
-+	@chmod 555 $(LIB_INSTALL_DIR)/libtk${SHORT_TK_VER}.a
- 	@echo "Installing wish@EXEEXT@ as $(BIN_INSTALL_DIR)/wish$(VERSION)@EXEEXT@"
- 	@$(INSTALL_PROGRAM) wish@EXEEXT@ "$(BIN_INSTALL_DIR)"/wish$(VERSION)@EXEEXT@
++	@$(INSTALL_DATA) libtk${SHORT_TK_VER}.a $(DLL_INSTALL_DIR)/libtk${SHORT_TK_VER}.a
++	@chmod 555 $(DLL_INSTALL_DIR)/libtk${SHORT_TK_VER}.a	
+ 	@if test -f "tk${MAJOR_VERSION}${MINOR_VERSION}.dll"; then \
+ 	    $(INSTALL_LIBRARY) "${TOP_DIR}/win/tk${MAJOR_VERSION}${MINOR_VERSION}.dll" "$(DLL_INSTALL_DIR)";\
+ 	    chmod 555 "$(DLL_INSTALL_DIR)/tk${MAJOR_VERSION}${MINOR_VERSION}.dll";\
+ 	fi
+ 	@echo "Installing ${WISH_EXE} as $(BIN_INSTALL_DIR)/wish$(VERSION)@EXEEXT@"
+ 	@$(INSTALL_PROGRAM) ${WISH_EXE} "$(BIN_INSTALL_DIR)/wish$(VERSION)@EXEEXT@"
 -	@echo "Installing tkConfig.sh to $(CONFIG_INSTALL_DIR)/"
--	@$(INSTALL_DATA) tkConfig.sh "$(CONFIG_INSTALL_DIR)"/tkConfig.sh
+-	@$(INSTALL_DATA) tkConfig.sh "$(CONFIG_INSTALL_DIR)/tkConfig.sh"
 +	@echo "Installing tkConfig.sh to $(CONFIG_INSTALL_DIR)/tk$(VERSION)"
 +	@mkdir -p "$(CONFIG_INSTALL_DIR)"/tk$(VERSION)
 +	@$(INSTALL_DATA) tkConfig.sh "$(LIB_INSTALL_DIR)"/tk$(VERSION)/tkConfig.sh
  	@if test "$(STUB_LIB_FILE)" != "" ; then \
  	    echo "Installing $(STUB_LIB_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    @INSTALL_STUB_LIB@ ; \
-@@ -739,6 +754,7 @@
+@@ -756,6 +771,7 @@
  	@if test "$(@TK_WINDOWINGSYSTEM@_XLIB_HDRS)" != ""; then \
- 	    XLIB_INCLUDE_INSTALL_DIR="$(INCLUDE_INSTALL_DIR)"/X11; fi; \
+ 	    XLIB_INCLUDE_INSTALL_DIR="$(INCLUDE_INSTALL_DIR)/X11"; fi; \
  	for i in "$(INCLUDE_INSTALL_DIR)" "$${XLIB_INCLUDE_INSTALL_DIR}" \
 +		"$(GENERIC_INCLUDE_INSTALL_DIR)" "$(UNIX_INCLUDE_INSTALL_DIR)" \
- 		"$(SCRIPT_INSTALL_DIR)" "$(SCRIPT_INSTALL_DIR)"/images \
- 		"$(SCRIPT_INSTALL_DIR)"/msgs "$(SCRIPT_INSTALL_DIR)"/ttk; \
+ 		"$(SCRIPT_INSTALL_DIR)" "$(SCRIPT_INSTALL_DIR)/images" \
+ 		"$(SCRIPT_INSTALL_DIR)/msgs" "$(SCRIPT_INSTALL_DIR)/ttk"; \
  	    do \
-@@ -753,10 +769,14 @@
+@@ -770,10 +786,14 @@
  	    chmod +x $(SRC_DIR)/install-sh; \
  	    fi
  	@echo "Installing header files";
@@ -128,8 +132,8 @@
 +	
  	@list='$(@TK_WINDOWINGSYSTEM@_XLIB_HDRS)'; for i in $$list ; \
  	    do \
- 	    $(INSTALL_DATA) $$i "$(INCLUDE_INSTALL_DIR)"/X11; \
-@@ -829,19 +849,15 @@
+ 	    $(INSTALL_DATA) $$i "$(INCLUDE_INSTALL_DIR)/X11"; \
+@@ -850,19 +870,15 @@
  		else true; \
  		fi; \
  	    done;

@@ -104,7 +104,6 @@ lib/tk%%TK_VER%%/console.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/sayings.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/search.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/spin.tcl
-%%DEMOS%%lib/tk%%TK_VER%%/demos/square
 %%DEMOS%%lib/tk%%TK_VER%%/demos/states.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/style.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/tclIndex
