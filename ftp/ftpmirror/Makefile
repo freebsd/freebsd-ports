@@ -17,7 +17,6 @@ COMMENT=	An utility to mirror directory hierarchy with FTP
 RUN_DEPENDS=	p5-Socket6>=0:${PORTSDIR}/net/p5-Socket6
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

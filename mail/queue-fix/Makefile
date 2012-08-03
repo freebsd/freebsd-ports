@@ -17,7 +17,6 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Repairs or generates a qmail queue structure
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 
 USE_QMAIL_RUN=	yes
 MAKE_JOBS_SAFE=	yes

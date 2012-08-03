@@ -14,7 +14,6 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Checkpassword compatible authentication program that uses CRAM-MD5
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 
 MAN8=		cmd5checkpw.8
 

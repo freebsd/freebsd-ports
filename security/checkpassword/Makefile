@@ -16,7 +16,6 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A simple password-checking interface
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup

@@ -17,7 +17,6 @@ COMMENT=	Improved network monitoring dock app (with tons of features)
 LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	EXAMPLES
-OPTIONS_DEFAULT=EXAMPLES
 
 USE_XORG=	ice sm x11 xext xpm
 USE_GMAKE=	yes
