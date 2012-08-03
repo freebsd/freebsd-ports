@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tk
-PORTVERSION=	8.5.11
+PORTVERSION=	8.5.12
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/tcl/Tcl/${PORTVERSION}
 PKGNAMESUFFIX?=	${THREADS_SUFFIX}
@@ -37,9 +37,12 @@ SUB_FILES=	pkgIndex.tcl
 .if !defined(BUILDING_TK_THREADS)
 USE_TCL=	${SHORT_TK_VER}
 
-OPTIONS=	TK85_MAN "Install tk 8.5 function manpages" off \
-		XFT "Use Xft fonts" on \
-		DEMOS "Install demos" off
+OPTIONS_DEFINE=	TK85_MAN XFT DEMOS
+OPTIONS_DEFAULT=	XFT
+TK85_MAN_DESC=	Install tk 8.5 function manpages
+XFT_DESC=	Use Xft fonts 
+DEMOS_DESC=	Install demos
+
 .else
 USE_TK=		${SHORT_TK_VER}
 PLIST=		${PKGDIR}/pkg-plist.threads

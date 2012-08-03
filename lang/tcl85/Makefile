@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	tcl
-PORTVERSION=	8.5.11
+PORTVERSION=	8.5.12
 CATEGORIES=	lang
 MASTER_SITES=	SF/tcl/Tcl/${PORTVERSION}
 PKGNAMESUFFIX?=		${THREADS_SUFFIX}${PKGNAMESUFFIX2}
@@ -34,9 +34,11 @@ PLIST_SUB=	TCL_VER=${TCL_VER} SHORT_TCL_VER=${SHORT_TCL_VER}
 EXTRACT_AFTER_ARGS=|${TAR} -xpf - --exclude compat/
 
 .if !defined(BUILDING_TCL_THREADS) && !defined(BUILDING_TCL_TM)
-OPTIONS=	TCL85_MAN "Install tcl 8.5 function manpages" off \
-		TZDATA "Install tcl timezone data" off \
-		TCL_MODULES "Install tcl common modules" on
+OPTIONS_DEFINE=	TCL85_MAN TZDATA TCL_MODULES
+OPTIONS_DEFAULT= TCL_MODULES
+TCL85_MAN_DESC=Install tcl 8.5 function manpages
+TZDATA_DESC=Install tcl timezone data
+TCL_MODULES_DESC=Install tcl common modules
 .elif defined(BUILDING_TCL_THREADS)
 USE_TCL=	${SHORT_TCL_VER}
 PLIST=		${PKGDIR}/pkg-plist.threads
@@ -53,19 +55,19 @@ PLIST=		${PKGDIR}/pkg-plist.tm
 
 .if !defined(BUILDING_TCL_TM)
 
-.if !defined(WITHOUT_TCL_MODULES)
-RUN_DEPENDS+=	${LOCALBASE}/lib/tcl8/8.5/tcltest-2.3.3.tm:${PORTSDIR}/lang/tcl-modules
+.if ${PORT_OPTIONS:MTCL_MODULES}
+RUN_DEPENDS+=	${LOCALBASE}/lib/tcl8/8.5/tcltest-2.3.4.tm:${PORTSDIR}/lang/tcl-modules
 .endif
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${TCL_VER}
 
-.if defined(WITH_TZDATA)
+.if ${PORT_OPTIONS:MTZDATA}
 PLIST_SUB+=		TZDATA=""
 .else
 PLIST_SUB+=		TZDATA="@comment "
 .endif
 
-.if !defined(NO_INSTALL_MANPAGES)
+.if ${PORT_OPTIONS:MDOCS}
 MAN1=	tclsh${TCL_VER}${THREADS_SUFFIX}.1
 .endif
 
@@ -758,24 +760,24 @@ do-install:
 .endif
 
 post-install:
-.if defined(WITH_TZDATA)
+.if ${PORT_OPTIONS:MTZDATA}
 	@cd ${WRKSRC} && ${MAKE} -f Makefile install-tzdata ${MAKE_ENV}
 .endif
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/man.macros ${DATADIR}
-.if !defined(NO_INSTALL_MANPAGES)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/../doc/tclsh.1 ${MANPREFIX}/man/man1/tclsh${TCL_VER}${THREADS_SUFFIX}.1
-.if !defined(BUILDING_TCL_THREADS) && defined(WITH_TCL85_MAN)
+.if !defined(BUILDING_TCL_THREADS) && ${PORT_OPTIONS:MTCL85_MAN}
 . for mp in ${MAN3} ${MANN}
 	@${REINPLACE_CMD} -e 's|^.so man.macros|.so ${DATADIR}/man.macros|'	\
 		${WRKSRC}/../doc/${mp}
 . endfor
 	@cd ${WRKSRC} && ${MAKE} -f Makefile install-doc ${MAKE_ENV}
 
-.endif # !defined(BUILDING_TCL_THREADS) && defined(WITH_TCL85_MAN)
+.endif # !defined(BUILDING_TCL_THREADS) && ${PORT_OPTIONS:MTCL85_MAN}
 
-.endif # !defined(NO_INSTALL_MANPAGES)
+.endif # ${PORT_OPTIONS:MDOCS}
 
 regression-test:	build
 	cd ${WRKSRC} && LC_ALL=C ${MAKE} test
