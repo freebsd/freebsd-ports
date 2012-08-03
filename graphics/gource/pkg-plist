@@ -1,12 +1,18 @@
 bin/gource
-%%DATADIR%%/no_photo.png
-%%DATADIR%%/file.png
 %%DATADIR%%/beam.png
 %%DATADIR%%/bloom.tga
 %%DATADIR%%/bloom_alpha.tga
-%%DATADIR%%/cursor.png
-%%DATADIR%%/gource.style
+%%DATADIR%%/file.png
 %%DATADIR%%/fonts/FreeSans.ttf
 %%DATADIR%%/fonts/README
+%%DATADIR%%/gource.style
+%%DATADIR%%/shaders/bloom.frag
+%%DATADIR%%/shaders/bloom.vert
+%%DATADIR%%/shaders/shadow.frag
+%%DATADIR%%/shaders/shadow.vert
+%%DATADIR%%/shaders/text.frag
+%%DATADIR%%/shaders/text.vert
+%%DATADIR%%/user.png
+@dirrm %%DATADIR%%/shaders
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%
