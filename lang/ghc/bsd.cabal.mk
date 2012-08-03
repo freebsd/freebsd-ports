@@ -346,10 +346,6 @@ post-install::
 	fi
 .endif
 
-.if !defined(STANDALONE)
-	${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
-.endif
-
 .if defined(EXECUTABLE)
 .for exe in ${EXECUTABLE}
 	@${STRIP_CMD} ${PREFIX}/bin/${exe}
