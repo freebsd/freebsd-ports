@@ -7,6 +7,7 @@
 
 PORTNAME=	git-annex
 PORTVERSION=	3.20120522
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	frase@frase.id.au

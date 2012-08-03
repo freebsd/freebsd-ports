@@ -7,6 +7,7 @@
 
 PORTNAME=	highlighting-kate
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -16,12 +17,13 @@ LICENSE=	GPLv2
 
 USE_CABAL=	blaze-html>=0.4.2 mtl parsec regex-pcre-builtin
 
-OPTIONS=	EXECUTABLE "Build the Highlight executable" off
+OPTIONS_DEFINE=		EXECUTABLE
 
-.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
+EXECUTABLE_DESC=	Build the Highlight executable
+
 .include <bsd.port.options.mk>
 
-.if defined(WITH_EXECUTABLE)
+.if ${PORT_OPTIONS:MEXECUTABLE}
 CONFIGURE_ARGS+=	--flags="executable"
 EXECUTABLE+=		Highlight
 .else

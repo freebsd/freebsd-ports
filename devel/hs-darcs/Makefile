@@ -7,6 +7,7 @@
 
 PORTNAME=	darcs
 PORTVERSION=	2.8.1
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -24,63 +25,63 @@ EXECUTABLE=	darcs
 
 MAN1=		darcs.1
 
-OPTIONS=	CURL            "Use libcurl for HTTP support" on \
-		HTTP            "Use the pure HTTP package" off \
-		STATIC          "Build static binary" off \
-		TERMINFO        "Use the terminfo package" off \
-		THREADED        "Use threading and SMP support" on \
-		COLOR           "Use ANSI color escapes" off \
-		MMAP            "Compile with mmap support" off
+OPTIONS_DEFINE=		STATIC TERMINFO THREADED COLOR MMAP
+OPTIONS_MULTI=		HTTP
+OPTIONS_MULTI_HTTP=	CURL HTTP
+OPTIONS_DEFAULT=	CURL THREADED
 
-.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
+CURL_DESC=		Use libcurl for HTTP support
+HTTP_DESC=		Use the pure HTTP package
+STATIC_DESC=		Build static binary
+TERMINFO_DESC=		Use the terminfo package
+THREADED_DESC=		Use threading and SMP support
+COLOR_DESC=		Use ANSI color escapes
+MMAP_DESC=		Compile with mmap support
+
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=	--flags="library executable"
 
-.if defined(WITH_CURL)
+.if ${PORT_OPTIONS:MCURL}
 CONFIGURE_ARGS+=	--flags="curl"
 LIB_DEPENDS+=		curl:${PORTSDIR}/ftp/curl
 .else
 CONFIGURE_ARGS+=	--flags="-curl"
 .endif
 
-.if defined(WITH_HTTP)
+.if ${PORT_OPTIONS:MHTTP}
 CONFIGURE_ARGS+=	--flags="http"
 USE_CABAL+=		HTTP>=4000.0.8 network>=2.2
 .else
 CONFIGURE_ARGS+=	--flags="-http"
 .endif
 
-.if !defined(WITH_CURL) && !defined(WITH_HTTP)
-IGNORE=	cannot be compiled without HTTP support.  Please (re)run 'make config' and choose either CURL or HTTP
-.endif
-
-.if defined(WITH_STATIC)
+.if ${PORT_OPTIONS:MSTATIC}
 CONFIGURE_ARGS+=	--flags="static"
 .else
 CONFIGURE_ARGS+=	--flags="-static"
 .endif
 
-.if defined(WITH_TERMINFO)
+.if ${PORT_OPTIONS:MTERMINFO}
 CONFIGURE_ARGS+=	--flags="terminfo"
 USE_CABAL+=		terminfo>=0.3
 .else
 CONFIGURE_ARGS+=	--flags="-terminfo"
 .endif
 
-.if defined(WITH_THREADED)
+.if ${PORT_OPTIONS:MTHREADED}
 CONFIGURE_ARGS+=	--flags="threaded"
 .else
 CONFIGURE_ARGS+=	--flags="-threaded"
 .endif
 
-.if defined(WITH_COLOR)
+.if ${PORT_OPTIONS:MCOLOR}
 CONFIGURE_ARGS+=	--flags="color"
 .else
 CONFIGURE_ARGS+=	--flags="-color"
 .endif
 
-.if defined(WITH_MMAP)
+.if ${PORT_OPTIONS:MMMAP}
 CONFIGURE_ARGS+=	--flags="mmap"
 USE_CABAL+=		mmap>=0.5
 .else

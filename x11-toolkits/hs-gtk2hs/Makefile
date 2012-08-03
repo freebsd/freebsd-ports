@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk2hs
 PORTVERSION=	0.12.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits haskell
 
@@ -17,52 +17,53 @@ COMMENT=	A GTK2 Binding for Haskell
 METAPORT=	yes
 USE_CABAL=	glib gio cairo pango gtk
 
-OPTIONS=	GCONF          "GConf2 configuration system" off \
-		GLADE          "libglade UI loader"          off \
-		GSTREAMER      "Media codec library"         off \
-		GTKGLEXT       "Gtk+ OpenGL extension"       off \
-		GTKSOURCEVIEW2 "Source code editor"          off \
-		SVGCAIRO       "Cairo SVG loader"            off \
-		VTE            "Terminal emulator"           off \
-		WEBKIT         "WebKit rendering engine"     off \
-		SOEGTK         "Examples for Haskell SoE"    off
+OPTIONS_DEFINE=		GCONF GLADE GSTREAMER GTKGLEXT GTKSOURCEVIEW2 SVGCAIRO VTE WEBKIT SOEGTK
 
-.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
+GCONF_DESC=		GConf2 configuration system
+GLADE_DESC=		libglade UI loader
+GSTREAMER_DESC=		Media codec library
+GTKGLEXT_DESC=		Gtk+ OpenGL extension
+GTKSOURCEVIEW2_DESC=	Source code editor
+SVGCAIRO_DESC=		Cairo SVG loader
+VTE_DESC=		Terminal emulator
+WEBKIT_DESC=		WebKit rendering engine
+SOEGTK_DESC=		Examples for Haskell SoE
+
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GCONF)
+.if ${PORT_OPTIONS:MGCONF}
 USE_CABAL+=		gconf
 .endif
 
-.if defined(WITH_GLADE)
+.if ${PORT_OPTIONS:MGLADE}
 USE_CABAL+=		glade
 .endif
 
-.if defined(WITH_GSTREAMER)
+.if ${PORT_OPTIONS:MGSTREAMER}
 USE_CABAL+=		gstreamer
 .endif
 
-.if defined(WITH_GTKGLEXT)
+.if ${PORT_OPTIONS:MGTKGLEXT}
 USE_CABAL+=		gtkglext
 .endif
 
-.if defined(WITH_GSOURCEVIEW2)
+.if ${PORT_OPTIONS:MGSOURCEVIEW2}
 USE_CABAL+=		gsourceview2
 .endif
 
-.if defined(WITH_SVGCAIRO)
+.if ${PORT_OPTIONS:MSVGCAIRO}
 USE_CABAL+=		svgcairo
 .endif
 
-.if defined(WITH_VTE)
+.if ${PORT_OPTIONS:MVTE}
 USE_CABAL+=		vte
 .endif
 
-.if defined(WITH_WEBKIT)
+.if ${PORT_OPTIONS:MWEBKIT}
 USE_CABAL+=		webkit
 .endif
 
-.if defined(WITH_SOEGTK)
+.if ${PORT_OPTIONS:MSOEGTK}
 USE_CABAL+=		soegtk
 .endif
 

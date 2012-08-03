@@ -7,6 +7,7 @@
 
 PORTNAME=	network
 PORTVERSION=	2.3.0.13
+PORTREVISION=	1
 CATEGORIES=	net haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -7,7 +7,7 @@
 
 PORTNAME=	hxt-regex-xmlschema
 PORTVERSION=	9.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

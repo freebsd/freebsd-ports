@@ -6,6 +6,7 @@
 
 PORTNAME=	haskeline
 PORTVERSION=	0.6.4.7
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

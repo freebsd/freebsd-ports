@@ -7,6 +7,7 @@
 
 PORTNAME=	cookie
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org

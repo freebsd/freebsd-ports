@@ -7,6 +7,7 @@
 
 PORTNAME=	json
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	converters haskell
 
 MAINTAINER=	haskell@FreeBSD.org

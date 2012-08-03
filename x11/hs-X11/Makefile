@@ -6,7 +6,7 @@
 
 PORTNAME=	X11
 PORTVERSION=	1.5.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -18,12 +18,14 @@ CABAL_SETUP=	Setup.hs
 USE_CABAL=	syb
 USE_XORG=	x11 xext sm
 
-OPTIONS=	XINERAMA "Build with Xinerama support" on
+OPTIONS_DEFINE=		XINERAMA
+OPTIONS_DEFAULT=	XINERAMA
 
-.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
+XINERAMA_DESC=		Build with Xinerama support
+
 .include <bsd.port.options.mk>
 
-.if defined(WITH_XINERAMA)
+.if ${PORT_OPTIONS:MXINERAMA}
 USE_XORG+=		xinerama
 CONFIGURE_ARGS+=	--configure-option="--with-xinerama"
 .else
