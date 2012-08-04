@@ -7,7 +7,7 @@
 
 PORTNAME=	psgml
 PORTVERSION=	1.3.2
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	editors elisp
 MASTER_SITES=	SF/${PORTNAME}/ALPHA%20${PORTNAME}/${PORTVERSION}
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -28,6 +28,8 @@ CONFIGURE_ARGS=	--lispdir=${PSGML_LISPDIR}
 CONFIGURE_ENV=	EMACS=${EMACS_CMD}
 USE_EMACS=	yes
 
+POSTPATCHES=	${FILESDIR}/post-patch-*
+
 INFO=		psgml psgml-api
 
 PSGML_STARTUPEL=	psgml-startup.el
@@ -42,6 +44,9 @@ PLIST_SUB+=	XEMACS="" \
 PLIST_SUB+=	XEMACS="@comment " \
 		NON_XEMACS=""
 .endif
+
+post-patch:
+	cd ${PATCH_WRKSRC} && ${CAT} ${POSTPATCHES} | ${PATCH}
 
 post-install:
 	cd ${WRKSRC} && ${MAKE} install-info
