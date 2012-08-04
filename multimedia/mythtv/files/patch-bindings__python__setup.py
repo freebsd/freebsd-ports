@@ -4,8 +4,8 @@
  
  setup(
          name='MythTV',
--        version='0.24.0',
-+        version='0.25.0',
+-        version='0.25.0',
++        version='0.25.2',
          description='MythTV Python bindings.',
          long_description='Provides canned database and protocol access to the MythTV database, mythproto, mythxml, and frontend remote control.',
          packages=['MythTV', 'MythTV/tmdb', 'MythTV/tmdb3', 'MythTV/ttvdb', 'MythTV/wikiscripts'],

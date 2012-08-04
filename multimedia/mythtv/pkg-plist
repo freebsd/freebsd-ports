@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/multimedia/mythtv/pkg-plist,v 1.12 2012-05-10 08:21:13 decke Exp $
+@comment $FreeBSD$
 bin/mythavtest
 bin/mythbackend
 bin/mythccextractor
@@ -469,6 +469,8 @@ include/mythtv/xmlparse.h
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/tmdb3/request.pyc
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/tmdb3/tmdb_api.py
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/tmdb3/tmdb_api.pyc
+%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/tmdb3/tmdb_auth.py
+%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/tmdb3/tmdb_auth.pyc
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/tmdb3/tmdb_exceptions.py
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/tmdb3/tmdb_exceptions.pyc
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/tmdb3/util.py
@@ -583,6 +585,14 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/MXML_scpd.xml
 %%DATADIR%%/backend-config/config_backend_database.xml
 %%DATADIR%%/backend-config/config_backend_general.xml
+%%DATADIR%%/bindings/php/MythBackend.php
+%%DATADIR%%/bindings/php/MythBase.php
+%%DATADIR%%/bindings/php/MythFrontend.php
+%%DATADIR%%/bindings/php/MythTVChannel.php
+%%DATADIR%%/bindings/php/MythTV.php
+%%DATADIR%%/bindings/php/MythTVProgram.php
+%%DATADIR%%/bindings/php/MythTVRecording.php
+%%DATADIR%%/bindings/php/MythTVStorageGroup.php
 %%DATADIR%%/database/mc.sql
 %%DATADIR%%/devicemaster.xml
 %%DATADIR%%/deviceslave.xml
@@ -2136,6 +2146,8 @@ lib/mythtv/filters/libyadif.so
 @dirrm %%DATADIR%%/hardwareprofile
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/database
+@dirrm %%DATADIR%%/bindings/php
+@dirrm %%DATADIR%%/bindings
 @dirrm %%DATADIR%%/backend-config
 @dirrmtry %%DATADIR%%
 @dirrm lib/mythtv/filters

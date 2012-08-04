@@ -7,8 +7,7 @@
 # $FreeBSD$
 
 PORTNAME=	mythtv
-PORTVERSION=	0.25
-PORTREVISION=	1
+PORTVERSION=	0.25.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.osuosl.org/pub/mythtv/old_releases/ \
@@ -57,7 +56,7 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}" --dvb-path="${LOCALBASE}/include" \
 
 QMAKESPEC?=	${LOCALBASE}/share/qt4/mkspecs/freebsd-g++
 
-OPTIONS=	BINDINGS	"Perl and Python bindings" off \
+OPTIONS=	BINDINGS	"Perl and Python bindings" on \
 		LIRC		"Native LIRC Support" off \
 		MYSQL_LOCAL	"RUN_DEPEND on selected MySQL server" off \
 		OPENGL		"OpenGL support" on \
@@ -71,18 +70,25 @@ SUB_FILES=	pkg-message
 USE_PYTHON=	yes
 INSTALLS_EGGINFO=yes
 PYDISTUTILS_PKGNAME=MythTV
-PYDISTUTILS_PKGVERSION=${PORTVERSION}.0
+PYDISTUTILS_PKGVERSION=${PORTVERSION}
 
 BUILD_DEPENDS+=	py*-lxml>=0:${PORTSDIR}/devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb \
-		${PYTHON_PKGNAMEPREFIX}urlgrabber>=3.1.0_1:${PORTSDIR}/www/py-urlgrabber
+		${PYTHON_PKGNAMEPREFIX}urlgrabber>=3.1.0_1:${PORTSDIR}/www/py-urlgrabber \
+		p5-HTTP-Request-Params>=0:${PORTSDIR}/www/p5-HTTP-Request-Params \
+		p5-LWP-UserAgent-Determined>=0:${PORTSDIR}/www/p5-LWP-UserAgent-Determined \
+		p5-Net-UPnP>=0:${PORTSDIR}/multimedia/p5-Net-UPnP \
+		p5-IO-Socket-INET6>=2.51:${PORTSDIR}/net/p5-IO-Socket-INET6
 RUN_DEPENDS+=	py*-lxml>=0:${PORTSDIR}/devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb \
-		${PYTHON_PKGNAMEPREFIX}urlgrabber>=3.1.0_1:${PORTSDIR}/www/py-urlgrabber
-CONFIGURE_ARGS+=--without-bindings=perl,php
+		${PYTHON_PKGNAMEPREFIX}urlgrabber>=3.1.0_1:${PORTSDIR}/www/py-urlgrabber \
+		p5-HTTP-Request-Params>=0:${PORTSDIR}/www/p5-HTTP-Request-Params \
+		p5-LWP-UserAgent-Determined>=0:${PORTSDIR}/www/p5-LWP-UserAgent-Determined \
+		p5-Net-UPnP>=0:${PORTSDIR}/multimedia/p5-Net-UPnP \
+		p5-IO-Socket-INET6>=2.51:${PORTSDIR}/net/p5-IO-Socket-INET6
 PLIST_SUB+=	BINDINGS=""
 .else
-CONFIGURE_ARGS+=--without-bindings=perl,python,php
+CONFIGURE_ARGS+=--without-bindings=perl,python
 PLIST_SUB+=	BINDINGS="@comment "
 .endif
 
