@@ -40,8 +40,8 @@ CONFLICTS=	bcc-[0-9]*
 CONFLICTS_BUILD=	kBuild-devel-[0-9]*
 CONFLICTS_INSTALL=	virtualbox-ose-kmod-[3,4]* virtualbox-ose-kmod-devel-[3,4]*
 
-OPTIONS=	DEBUG "Build with debugging symbols" off \
-		VIMAGE "VIMAGE virtual networking support" off
+OPTIONS_DEFINE=	DEBUG VIMAGE
+VIMAGE_DESC=	VIMAGE virtual networking support
 
 .include <bsd.port.options.mk>
 
@@ -56,7 +56,7 @@ KMK_BUILDTYPE=	release
 KMK_CONFIG=	VBOX_LIBPATH_X11=${LOCALBASE} VBOX_FREEBSD_SRC=${SRC_BASE}/sys
 KMK_FLAGS=	HostDrivers-src vboxdrv-mod VBoxNetFlt-src VBoxNetAdp-src
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 KMK_FLAGS+=	BUILD_TYPE=debug
 KMK_BUILDTYPE=	debug
 .endif
@@ -73,7 +73,7 @@ IGNORE=		requires kernel sources
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800500 && defined(WITH_VIMAGE)
+.if ${OSVERSION} < 800500 && !empty(PORT_OPTIONS:MVIMAGE)
 IGNORE=		newer kernel is required to build with VIMAGE
 .endif
 
@@ -82,7 +82,7 @@ post-patch:
 	@${ECHO} 'VBOX_WITH_NETFLT = 1' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_NETADP = 1' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_ADDITIONS =' >> ${WRKSRC}/LocalConfig.kmk
-.if defined(WITH_VIMAGE)
+.if ${PORT_OPTIONS:MVIMAGE}
 	@${ECHO} 'VBOX_WITH_NETFLT_VIMAGE = 1' >> ${WRKSRC}/LocalConfig.kmk
 .endif
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
