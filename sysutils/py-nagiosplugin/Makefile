@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	nagiosplugin
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	koobs.freebsd@gmail.com
 COMMENT=	Class library for writing Nagios (Icinga) plugins
 
 LICENSE=	ZPL21
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install

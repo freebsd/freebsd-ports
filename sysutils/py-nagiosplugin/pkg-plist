@@ -15,9 +15,33 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/cookie.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/cookie.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/cookie.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/errors.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/errors.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/errors.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/examples/check_disk_tutorial.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/examples/check_disk_tutorial.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/examples/check_disk_tutorial.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/examples/check_load.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/examples/check_load.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/examples/check_load.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/examples/check_users.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/examples/check_users.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/examples/check_users.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/examples/check_world.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/examples/check_world.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/examples/check_world.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/measure.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/measure.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/measure.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/platform/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/platform/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/platform/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/platform/nt.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/platform/nt.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/platform/nt.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/platform/posix.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/platform/posix.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/platform/posix.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/pluginoptparse.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/pluginoptparse.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/pluginoptparse.pyo
@@ -27,36 +51,33 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/state.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/state.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/state.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test/__main__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test/__main__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test/__main__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test/check_load.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test/check_users.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test/doctests.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test/doctests.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test/doctests.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test/test_controller.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test/test_controller.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test/test_controller.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test/test_cookie.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test/test_cookie.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test/test_cookie.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test/test_measure.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test/test_measure.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test/test_measure.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test/test_pluginoptparse.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test/test_pluginoptparse.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test/test_pluginoptparse.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test/test_range.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test/test_range.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test/test_range.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test/test_state.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test/test_state.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test/test_state.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/test
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/tests/doctests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/tests/doctests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/tests/doctests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/tests/test_controller.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/tests/test_controller.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/tests/test_controller.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/tests/test_cookie.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/tests/test_cookie.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/tests/test_cookie.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/tests/test_measure.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/tests/test_measure.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/tests/test_measure.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/tests/test_pluginoptparse.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/tests/test_pluginoptparse.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/tests/test_pluginoptparse.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/tests/test_range.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/tests/test_range.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/tests/test_range.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/tests/test_state.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/tests/test_state.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/tests/test_state.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/platform
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin/examples
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nagiosplugin
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
