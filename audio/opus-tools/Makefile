@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opus-tools
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/opus/ \
 		https://ftp.mozilla.org/pub/mozilla.org/opus/
