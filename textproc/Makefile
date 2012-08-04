@@ -1250,6 +1250,7 @@
     SUBDIR += rubygem-albino
     SUBDIR += rubygem-augeas
     SUBDIR += rubygem-coderay
+    SUBDIR += rubygem-colored
     SUBDIR += rubygem-compass
     SUBDIR += rubygem-diff-lcs
     SUBDIR += rubygem-escape_utils
