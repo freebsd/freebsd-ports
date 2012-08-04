@@ -1,19 +1,20 @@
---- build_rules.ml.orig	2012-06-11 14:51:35.000000000 -0500
-+++ build_rules.ml	2012-06-11 14:54:06.000000000 -0500
-@@ -397,6 +397,7 @@
-     |> filter_system_libs
+--- tools/build/build_rules.ml.orig	2012-08-01 21:43:40.000000000 -0500
++++ tools/build/build_rules.ml	2012-08-01 21:47:37.000000000 -0500
+@@ -452,6 +452,7 @@
+        else ".."/dir
+      )]
    in
-   let lib_dir s = [A"--ml";A"-I";A"--ml";P (if Pathname.exists s then ".." / s else ("+"^s))] in
-+  let custom_i = [A"--ml";A"-I";A"--ml";A"+site-lib/cryptokit"] in
++  let custom_i = [A"--ml";A"-I";A"--ml";A"+site-lib/cryptokit";A"--ml";A"-I";A"--ml";A"+site-lib/ssl";A"--ml";A"-I";A"--ml";A"+site-lib/ssl_threads"] in
    let include_dirs = List.flatten (List.map lib_dir caml_use_lib) in
    let clib s = [A"--ml";A"-cclib";A"--ml";A("-l"^s)] in
    let include_libs = List.flatten (List.map clib c_libs) in
-@@ -415,7 +416,7 @@
-       unsafe_js @ [A"--js-validator"] @ js_checker @ files_validation
-     )
+@@ -511,7 +512,8 @@
+   let version = get_version_buildinfos () in
+   let options = [A"--package-version"; A version; A"-o" ;
+     P((Pathname.basename (env opp)))] @ preprocess_js @ preprocess_ml @
+-    include_dirs @ include_libs @ js_validation @ files_lib @ options
++    custom_i @ include_dirs @ include_libs @ js_validation @ files_lib @
++    options
    in
--  let options = [A"--static" ; A"-o" ; P((Pathname.basename (env opp)))] @ include_dirs @ include_libs @js_validation @ files_lib in
-+  let options = [A"--static" ; A"-o" ; P((Pathname.basename (env opp)))] @ include_dirs @ custom_i @ include_libs @js_validation @ files_lib in
-   Seq[Cmd(S(opa_plugin_builder::options));
-       Cmd(S[A"touch"; P(env oppf) ] )]
- in
+   Seq[
+     Cmd(S(

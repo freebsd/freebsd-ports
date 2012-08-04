@@ -1,5 +1,5 @@
---- libnet/nattraversal/stubsnatpmp.idl.orig	2011-12-31 12:31:30.000000000 -0600
-+++ libnet/nattraversal/stubsnatpmp.idl	2011-12-31 12:32:12.000000000 -0600
+--- ocamllib/libnet/nattraversal/stubsnatpmp.idl.orig	2011-12-31 12:31:30.000000000 -0600
++++ ocamllib/libnet/nattraversal/stubsnatpmp.idl	2011-12-31 12:32:12.000000000 -0600
 @@ -26,8 +26,7 @@
  #include <arpa/inet.h>  \n\
  #endif");
