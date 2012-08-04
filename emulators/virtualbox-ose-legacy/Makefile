@@ -60,16 +60,14 @@ GROUPS=		${VBOXGROUP}
 VBOX_FRONTENDS=	VBoxHeadless
 VBOX_GUEST_VER=	${PORTVERSION}
 
-OPTIONS=	QT4 "Build with QT4 Frontend" on \
-		DEBUG "Build with debugging symbols" off \
-		GUESTADDITIONS "Build with Guest Additions" off \
-		DBUS "Build with D-Bus and HAL support" on \
-		PULSEAUDIO "Build with PulseAudio" off \
-		X11 "Build with X11 support" on \
-		VDE "Build with VDE support" off \
-		VNC "Build with VNC support" off \
-		WEBSERVICE "Build Webservice" off \
-		NLS "Native language support" on
+OPTIONS_DEFINE=	QT4 DEBUG GUESTADDITIONS DBUS PULSEAUDIO UDPTUNNEL VDE VNC WEBSERVICE NLS X11
+OPTIONS_DEFAULT=	QT4 DBUS X11 UDPTUNNEL
+QT4_DESC=	Build with QT4 Frontend
+GUESTADDITIONS_DESC=	Build with Guest Additions
+UDPTUNNEL_DESC=	Build with UDP tunnel support
+VDE_DESC=	Build with VDE support
+VNC_DESC=	Build with VNC support
+WEBSERVICE_DESC=	Build Webservice
 
 .include <bsd.port.options.mk>
 
@@ -84,15 +82,15 @@ KMK_BUILDTYPE=	release
 KMK_CONFIG=	VBOX_LIBPATH_X11=${LOCALBASE} VBOX_FREEBSD_SRC=${SRC_BASE}/sys
 KMK_FLAGS=
 
-.if defined(WITHOUT_QT4) && !defined(WITHOUT_NLS)
+.if empty(PORT_OPTIONS:MQT4) && !empty(PORT_OPTIONS:MNLS)
 BROKEN=		NLS support requires QT4 frontend. Run 'make config' again!
 .endif
 
-.if defined(WITHOUT_X11) && !defined(WITHOUT_QT4)
+.if empty(PORT_OPTIONS:MX11) && !empty(PORT_OPTIONS:MQT4)
 BROKEN=		QT4 frontend requires X11 support. Run 'make config' again!
 .endif
 
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 USE_SDL=	sdl
 USE_XORG=	xcursor xmu inputproto xinerama
 VBOX_FRONTENDS+=VBoxBFE VBoxSDL
@@ -102,7 +100,7 @@ CONFIGURE_ARGS+=--build-headless
 PLIST_SUB+=	X11="@comment "
 .endif
 
-.if !defined(WITHOUT_QT4)
+.if ${PORT_OPTIONS:MQT4}
 QT_NONSTANDARD=	yes
 USE_QT4=	gui network moc_build uic_build rcc_build linguist
 INSTALLS_ICONS=	yes
@@ -113,7 +111,7 @@ CONFIGURE_ARGS+=--disable-qt4
 PLIST_SUB+=	QT4="@comment "
 .endif
 
-.if defined(WITH_GUESTADDITIONS)
+.if ${PORT_OPTIONS:MGUESTADDITIONS}
 GUESTADDITIONS=	VBoxGuestAdditions_${VBOX_GUEST_VER}.iso
 GADISTFILES=	${GUESTADDITIONS}:guestadditions
 RESTRICTED=	for personal use only
@@ -124,39 +122,39 @@ PLIST_SUB+=	GUESTADDITIONS=""
 PLIST_SUB+=	GUESTADDITIONS="@comment "
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 KMK_FLAGS+=	BUILD_TYPE=debug
 KMK_BUILDTYPE=	debug
 .endif
 
-.if !defined(WITHOUT_DBUS)
+.if ${PORT_OPTIONS:MDBUS}
 LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
 .else
 CONFIGURE_ARGS+=--disable-dbus
 .endif
 
-.if !defined(WITH_PULSEAUDIO)
-CONFIGURE_ARGS+=--disable-pulse
-.else
+.if ${PORT_OPTIONS:MPULSEAUDIO}
 LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+.else
+CONFIGURE_ARGS+=--disable-pulse
 .endif
 
-.if defined(WITH_VNC)
+.if ${PORT_OPTIONS:MVNC}
 LIB_DEPENDS+=	vncserver.0:${PORTSDIR}/net/libvncserver
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITH_VDE)
+.if ${PORT_OPTIONS:MVDE}
 RUN_DEPENDS+=	vde_switch:${PORTSDIR}/net/vde2
 CONFIGURE_ARGS+=--enable-vde
 .endif
 
-.if defined(WITH_WEBSERVICE)
+.if ${PORT_OPTIONS:MWEBSERVICE}
 BUILD_DEPENDS+=	soapcpp2:${PORTSDIR}/devel/gsoap
 VBOX_WEB=	vboxwebsrv webtest
 USE_RC_SUBR+=	vboxwebsrv
@@ -209,13 +207,13 @@ post-patch:
 	@${ECHO} 'SDK_VBOX_LIBPNG_LIBS = png' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_ADDITIONS=' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_X11_ADDITIONS=' >> ${WRKSRC}/LocalConfig.kmk
-.if defined(WITH_VNC)
+.if ${PORT_OPTIONS:MVNC}
 	@${ECHO} 'VBOX_WITH_VNC = 1' >> ${WRKSRC}/LocalConfig.kmk
 .endif
 .if ${OSVERSION} < 800069
 	@${ECHO} 'VBOX_WITH_USB=' >> ${WRKSRC}/LocalConfig.kmk
 .endif
-.if defined(WITH_WEBSERVICE)
+.if ${PORT_OPTIONS:MWEBSERVICE}
 	@${ECHO} 'VBOX_WITH_WEBSERVICES = 1' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_GSOAP_INSTALLED = 1' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_PATH_GSOAP = ${PREFIX}/lib/gsoap' >> ${WRKSRC}/LocalConfig.kmk
@@ -247,7 +245,7 @@ do-install:
 	${MKDIR} ${PREFIX}/lib/virtualbox
 	(cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin && ${COPYTREE_SHARE} "*.so *.gc *.r0 *.fd components VBoxExtPackHelperApp" ${PREFIX}/lib/virtualbox)
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	${MKDIR} ${DATADIR}/nls
 	(cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/obj/VirtualBox/qtnls && ${COPYTREE_SHARE} "*.qm" ${DATADIR}/nls)
 .endif
@@ -266,14 +264,14 @@ do-install:
 	${CHMOD} 0711 ${PREFIX}/lib/virtualbox/${f}
 .endfor
 
-.if defined(WITH_WEBSERVICE)
+.if ${PORT_OPTIONS:MWEBSERVICE}
 	${MKDIR} -p ${DATADIR}/sdk/bindings/webservice
 .for f in vboxweb.wsdl vboxwebService.wsdl
 	${INSTALL_DATA} ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/sdk/bindings/webservice/${f} ${DATADIR}/sdk/bindings/webservice/
 .endfor
 .endif
 
-.if defined(WITH_GUESTADDITIONS)
+.if ${PORT_OPTIONS:MGUESTADDITIONS}
 	${MKDIR} ${PREFIX}/lib/virtualbox/additions
 	${INSTALL_DATA} ${DISTDIR}/${GUESTADDITIONS} ${PREFIX}/lib/virtualbox/additions/
 	${LN} -sf ${PREFIX}/lib/virtualbox/additions/${GUESTADDITIONS} ${PREFIX}/lib/virtualbox/additions/VBoxGuestAdditions.iso
@@ -295,7 +293,7 @@ post-install:
 	@${FIND} ${PREFIX}/include/virtualbox -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	@${FIND} ${PREFIX}/lib/virtualbox -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 
-.if !defined(WITHOUT_QT4)
+.if ${PORT_OPTIONS:MQT4}
 	${MKDIR} ${PREFIX}/share/pixmaps/
 	${INSTALL_DATA} ${WRKSRC}/src/VBox/Frontends/VirtualBox/images/OSE/VirtualBox_48px.png ${PREFIX}/share/pixmaps/VBox.png
 	${MKDIR} ${PREFIX}/share/applications/
