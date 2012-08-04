@@ -35,7 +35,6 @@ include/gmm/gmm_range_basis.h
 include/gmm/gmm_real_part.h
 include/gmm/gmm_ref.h
 include/gmm/gmm_scaled.h
-include/gmm/gmm_solver_Newton.h
 include/gmm/gmm_solver_Schwarz_additive.h
 include/gmm/gmm_solver_bfgs.h
 include/gmm/gmm_solver_bicgstab.h
