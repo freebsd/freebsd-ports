@@ -189,8 +189,8 @@
     SUBDIR += epiphany
     SUBDIR += epiphany-extensions
     SUBDIR += erwn
-    SUBDIR += etoile-grr
-    SUBDIR += etoile-rsskit
+    SUBDIR += grr
+    SUBDIR += rsskit
     SUBDIR += eventum
     SUBDIR += evolution-webcal
     SUBDIR += extjs
