@@ -6,6 +6,7 @@ share/apps/kconf_update/tellico.upd
 share/apps/tellico/MARC21slim2MODS3.xsl
 share/apps/tellico/MARC21slimUtils.xsl
 share/apps/tellico/UNIMARC2MODS3.xsl
+share/apps/tellico/allocine2tellico.xsl
 share/apps/tellico/amazon2tellico.xsl
 share/apps/tellico/arxiv2tellico.xsl
 share/apps/tellico/biblioshare2tellico.xsl
@@ -104,6 +105,7 @@ share/apps/tellico/report-templates/Title_Listing_(Horizontal).xsl
 share/apps/tellico/report-templates/Title_Listing_(Vertical).xsl
 share/apps/tellico/report-templates/Tri-Column.xsl
 share/apps/tellico/shadowAlpha.png
+share/apps/tellico/springer2tellico.xsl
 share/apps/tellico/srw2tellico.xsl
 share/apps/tellico/tellico-by-author.xsl
 share/apps/tellico/tellico-by-title.xsl
@@ -325,6 +327,7 @@ share/locale/hu/LC_MESSAGES/tellico.mo
 share/locale/ia/LC_MESSAGES/tellico.mo
 share/locale/it/LC_MESSAGES/tellico.mo
 share/locale/ja/LC_MESSAGES/tellico.mo
+share/locale/kk/LC_MESSAGES/tellico.mo
 share/locale/lt/LC_MESSAGES/tellico.mo
 share/locale/ms/LC_MESSAGES/tellico.mo
 share/locale/nb/LC_MESSAGES/tellico.mo
