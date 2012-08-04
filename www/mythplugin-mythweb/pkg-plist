@@ -709,8 +709,8 @@
 @dirrm %%WWWDIR%%/js/dialog
 @dirrm %%WWWDIR%%/js
 @dirrm %%WWWDIR%%/includes
-@dirrm %%WWWDIR%%/data/tv_icons
-@dirrm %%WWWDIR%%/data/cache
+@dirrmtry %%WWWDIR%%/data/tv_icons
+@dirrmtry %%WWWDIR%%/data/cache
 @dirrmtry %%WWWDIR%%/data
 @dirrm %%WWWDIR%%/configuration
 @dirrm %%WWWDIR%%/classes/UPnP
