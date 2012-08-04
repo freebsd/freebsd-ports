@@ -8,7 +8,7 @@
 PORTNAME=	ua
 PORTVERSION=	1.0.1
 CATEGORIES=	sysutils
-MASTER_SITES=	https://oss.euedge.com/downloads/
+MASTER_SITES=	ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Finds sets of identical files
