@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pmacct
-DISTVERSION=	0.14.0
+DISTVERSION=	0.14.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.pmacct.net/ \
 		http://mirrors.rit.edu/zi/
@@ -22,15 +22,15 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 LDFLAGS+=	"-L${LOCALBASE}/lib"
 
-OPTIONS=	MYSQL "Enable MySQL support" off \
-		PGSQL "Enable PostgreSQL support" off \
-		SQLITE "Enable SQLite support" off \
-		THREADS "Enable multi-threading" off \
-		MMAP  "Enable mmap(2) support" on \
-		LAYER2 "Enable Layer-2 support: MAC Adresses and VLANs" on \
-		IPV6  "Enable IPv6 support" on \
-		SHARED "Enable shared objects" on \
-		DEBUG "Enable debugging" off
+OPTIONS_DEFINE=	MYSQL PGSQL SQLITE THREADS MMAP LAYER2 IPV6 SHARED DEBUG
+OPTIONS_DEFAULT=MMAP LAYER2 IPV6 SHARED
+
+SQLITE_DESC=	Enable SQLite support
+MMAP_DESC=	Enable mmap(2) support
+LAYER2_DESC=	Enable Layer-2 support: MAC addresses and VLANs
+SHARED_DESC=	Enable shared objects
+
+.include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>
 
@@ -38,7 +38,7 @@ OPTIONS=	MYSQL "Enable MySQL support" off \
 CONFIGURE_ARGS+=--enable-64bit
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=--enable-mysql
 PLIST_SUB+=	WITH_MYSQL=""
@@ -47,7 +47,7 @@ CONFIGURE_ARGS+=--disable-mysql
 PLIST_SUB+=	WITH_MYSQL="@comment "
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=--enable-pgsql
 PLIST_SUB+=	WITH_PGSQL=""
@@ -56,7 +56,7 @@ CONFIGURE_ARGS+=--disable-pgsql
 PLIST_SUB+=	WITH_PGSQL="@comment "
 .endif
 
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 USE_SQLITE=	yes
 CONFIGURE_ARGS+=--enable-sqlite3 \
 		--with-sqlite3-includes=${LOCALBASE}/include
@@ -64,35 +64,35 @@ CONFIGURE_ARGS+=--enable-sqlite3 \
 CONFIGURE_ARGS+=--disable-sqlite3
 .endif
 
-.if defined(WITHOUT_MMAP)
-CONFIGURE_ARGS+=--disable-mmap
-.else
+.if ${PORT_OPTIONS:MMMAP}
 CONFIGURE_ARGS+=--enable-mmap
+.else
+CONFIGURE_ARGS+=--disable-mmap
 .endif
 
-.if defined(WITHOUT_LAYER2)
-CONFIGURE_ARGS+=--disable-l2
-.else
+.if ${PORT_OPTIONS:MLAYER2}
 CONFIGURE_ARGS+=--enable-l2
-.endif
-
-.if defined(WITHOUT_IPV6)
-CONFIGURE_ARGS+=--disable-ipv6
 .else
-CONFIGURE_ARGS+=--enable-ipv6
+CONFIGURE_ARGS+=--disable-l2
 .endif
 
-.if defined(WITH_THREADS)
+.if ${PORT_OPTIONS:MIPV6}
+CONFIGURE_ARGS+=--enable-ipv6
+.else
+CONFIGURE_ARGS+=--disable-ipv6
+.endif
+
+.if ${PORT_OPTIONS:MTHREADS}
 CONFIGURE_ARGS+=--enable-threads
 .else
 CONFIGURE_ARGS+=--disable-threads
 .endif
 
-.if defined(WITHOUT_SHARED)
+.if empty(PORT_OPTIONS:MSHARED)
 CONFIGURE_ARGS+=--disable-so
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--enable-debug
 .endif
 
@@ -107,7 +107,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
-.for i in ChangeLog EXAMPLES FAQS README TOOLS CONFIG-KEYS KNOWN-BUGS
+.for i in ChangeLog FAQS README TOOLS CONFIG-KEYS KNOWN-BUGS
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif

@@ -46,7 +46,6 @@ sbin/uacctd
 %%DATADIR%%/pmacct-grant-db.mysql
 @dirrmtry %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/EXAMPLES
 %%PORTDOCS%%%%DOCSDIR%%/FAQS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TOOLS
