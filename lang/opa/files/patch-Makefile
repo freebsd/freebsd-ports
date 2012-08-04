@@ -1,0 +1,11 @@
+--- Makefile.orig	2012-08-04 12:35:50.000000000 -0500
++++ Makefile	2012-08-04 12:36:10.000000000 -0500
+@@ -239,7 +239,7 @@
+ 	@if [ -d $(BUILD_DIR)/man/man1 ]; then \
+ 	  mkdir -p $(INSTALL_DIR)/share/man/man1; \
+ 	fi
+-	@$(if $(wildcard $(BUILD_DIR)/man/man1/*.1.gz),$(INSTALL) -r $(BUILD_DIR)/man/man1/*.1.gz $(INSTALL_DIR)/share/man/man1)
++	@$(if $(wildcard $(BUILD_DIR)/man/man1/*.1),$(INSTALL) -r $(BUILD_DIR)/man/man1/*.1 $(INSTALL_DIR)/share/man/man1)
+ 	@printf "Installation to $(INSTALL_DIR)/share/man done.[K\n"
+ 
+ install: install-lib install-share install-plugins install-packages install-node-packages install-man $(OPA_TOOLS) install-bin
