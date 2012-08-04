@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mythweb
-PORTVERSION=	0.25
+PORTVERSION=	0.25.2
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.osuosl.org/pub/mythtv/old_releases/ \
@@ -48,7 +48,7 @@ post-patch:
 do-install:
 	${MKDIR} ${WWWDIR}
 	${MKDIR} ${WWWDIR}/data
-	(cd ${WRKSRC}/mythweb/ && ${COPYTREE_SHARE} "*" ${WWWDIR})
+	(cd ${WRKSRC}/mythweb/ && ${COPYTREE_SHARE} "*" ${WWWDIR} "! -name *.orig")
 
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	${CHMOD} -R 775 ${WWWDIR}/data
