@@ -1,0 +1,31 @@
+--- tools/manpages/Makefile.orig	2012-08-04 11:56:25.000000000 -0500
++++ tools/manpages/Makefile	2012-08-04 11:57:01.000000000 -0500
+@@ -32,7 +32,6 @@
+ $(TARGETDIR)/%.1: %.man
+ 	@mkdir -p $(TARGETDIR)
+ 	cp $< $@
+-	gzip -f --best $@
+ 
+ # --
+ # second run specific manpage generation programs
+@@ -43,7 +42,6 @@
+ $(TARGETDIR)/opa.1: $(BLDDIR)/compiler/opa/gen_opa_manpage.native
+ 	@mkdir -p $(TARGETDIR)
+ 	$< > $@
+-	gzip -f --best $@
+ 
+ $(BLDDIR)/compiler/opatop/gen_opatop_manpage.native: ../../compiler/opatop/gen_opatop_manpage.ml
+ 	cd ../..; $(OCAMLBUILD) compiler/opatop/gen_opatop_manpage.native
+@@ -51,7 +49,6 @@
+ $(TARGETDIR)/opatop.1: $(BLDDIR)/compiler/opatop/gen_opatop_manpage.native
+ 	@mkdir -p $(TARGETDIR)
+ 	$< > $@
+-	gzip -f --best $@
+ 
+ # --
+ # third run our hackish conversion tool help->manpage
+@@ -72,4 +69,3 @@
+ $(TARGETDIR)/%.1: $(TARGETDIR)/%.help $(GENMAN)
+ 	@mkdir -p $(TARGETDIR)
+ 	$(GENMAN) $* $(TARGETDIR)/$* > $@
+-	gzip -f --best $@
