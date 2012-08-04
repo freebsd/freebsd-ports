@@ -189,8 +189,6 @@
     SUBDIR += epiphany
     SUBDIR += epiphany-extensions
     SUBDIR += erwn
-    SUBDIR += grr
-    SUBDIR += rsskit
     SUBDIR += eventum
     SUBDIR += evolution-webcal
     SUBDIR += extjs
@@ -255,6 +253,7 @@
     SUBDIR += grails
     SUBDIR += gregarius
     SUBDIR += groupoffice
+    SUBDIR += grr
     SUBDIR += gstreamer-plugins-neon
     SUBDIR += gtkhtml3
     SUBDIR += guile-www
@@ -1657,6 +1656,7 @@
     SUBDIR += rnews
     SUBDIR += roundup
     SUBDIR += rssowl
+    SUBDIR += rsskit
     SUBDIR += rsstail
     SUBDIR += rsstool
     SUBDIR += rt38
