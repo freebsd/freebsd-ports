@@ -1,0 +1,10 @@
+Starlink::AST provides a perl wrapper to the Starlink AST library.
+The Starlink AST library provides facilities for transforming coordinates
+from one system to another in an object oriented manner. Multiple
+coordinate frames can be associated with a data set and it is also
+possible to generate automatic mappings between frames.
+
+Coordinate frame objects can be imported from FITS headers and from
+NDF files.
+
+WWW: http://search.cpan.org/dist/Starlink-AST/
