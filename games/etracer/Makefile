@@ -7,7 +7,7 @@
 
 PORTNAME=		etracer
 PORTVERSION=		0.4
-PORTREVISION=	7
+PORTREVISION=		8
 CATEGORIES=		games
 MASTER_SITES=		SF/extremetuxracer/extreme-tuxracer/${PORTVERSION}
 DISTNAME=		extremetuxracer-${PORTVERSION}
@@ -19,6 +19,7 @@ LIB_DEPENDS=		png15:${PORTSDIR}/graphics/png \
 			freetype.9:${PORTSDIR}/print/freetype2
 
 USE_SDL=		mixer sdl
+USE_XORG=		x11 xi xext xmu xt
 USE_GL=			gl glu glut
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes

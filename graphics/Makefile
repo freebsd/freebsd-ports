@@ -469,7 +469,6 @@
     SUBDIR += libggimisc
     SUBDIR += libggiwmh
     SUBDIR += libgltext
-    SUBDIR += libglut
     SUBDIR += libgnomecanvas
     SUBDIR += libgnomecanvas-reference
     SUBDIR += libgnomecanvasmm

@@ -7,7 +7,7 @@
 
 PORTNAME=	grass
 PORTVERSION=	6.4.2
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	2
 CATEGORIES=	databases geography
 MASTER_SITES=	http://grass.osgeo.org/%SUBDIR%/ \
@@ -41,6 +41,7 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_PERL5=	yes
+USE_XORG=	sm ice xi x11 xt xmu xext
 USE_GL=		glut
 USE_TCL=	yes
 USE_TCL_BUILD=	yes

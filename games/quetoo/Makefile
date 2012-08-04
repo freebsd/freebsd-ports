@@ -7,7 +7,7 @@
 
 PORTNAME=	quetoo
 PORTVERSION=	0.6.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://jdolan.dyndns.org/jaydolan/files/ \
 		http://tastyspleen.net/~jdolan/ \

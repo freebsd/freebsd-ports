@@ -7,7 +7,7 @@
 
 PORTNAME=	stormbaancoureur
 PORTVERSION=	2.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://bram.creative4vision.nl/stormbaancoureur/download/ \
 		http://mirror.amdmi3.ru/distfiles/

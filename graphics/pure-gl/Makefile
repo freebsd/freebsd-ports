@@ -7,7 +7,7 @@
 
 PORTNAME=	pure-gl
 PORTVERSION=	0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	lichray@gmail.com

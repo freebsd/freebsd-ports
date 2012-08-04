@@ -1,0 +1,11 @@
+--- src/Makefile.am.orig	2012-07-22 11:54:01.000000000 +0200
++++ src/Makefile.am	2012-07-22 11:54:12.000000000 +0200
+@@ -11,7 +11,7 @@
+ 
+ kmatrix3d_kss_SOURCES = kmatrix3dui.ui kmatrix3d.cpp camera.cpp \
+ 	effet_particule.cpp ligne3d1.cpp vector3f.cpp
+-kmatrix3d_kss_LDADD = -lpng -lglut $(LIB_QT) $(LIB_KDECORE) $(LDADD) \
++kmatrix3d_kss_LDADD = -lpng -lGLU -lglut $(LIB_QT) $(LIB_KDECORE) $(LDADD) \
+ 	$(LIB_KSYCOCA)
+ 
+ #datadir = $(kde_datadir)/kmatrix3d

@@ -1,5 +1,5 @@
 --- src/gfx/vsimage.cpp.orig	2008-04-24 14:12:37.000000000 +0200
-+++ src/gfx/vsimage.cpp	2010-03-31 16:39:55.000000000 +0200
++++ src/gfx/vsimage.cpp	2012-06-15 21:20:32.000000000 +0200
 @@ -147,7 +147,7 @@
  	unsigned char sig[8];
  	file->Begin();
@@ -18,3 +18,12 @@
  
  	png_set_expand (png_ptr);
  	png_read_update_info (png_ptr,info_ptr);
+@@ -865,7 +865,7 @@
+     png_destroy_write_struct(&png_ptr, (png_infopp)NULL);
+     return BadFormat;
+   }
+-  if (setjmp(png_ptr->jmpbuf)) {
++  if (setjmp(png_jmpbuf( png_ptr ))) {
+     png_destroy_write_struct(&png_ptr, &info_ptr);
+     return BadFormat;
+   }

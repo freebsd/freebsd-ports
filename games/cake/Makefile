@@ -7,7 +7,7 @@
 
 PORTNAME=	cake
 PORTVERSION=	2005.12.26
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://www.calodox.scene.org/morbac/cake/download/ \
 		${MASTER_SITE_LOCAL} http://freebsd.nsu.ru/distfiles/
@@ -29,15 +29,8 @@ WRKSRC=		${WRKDIR}/cake_src
 
 PLIST_FILES=	bin/cake
 
-OPTIONS=	FREEGLUT "Build with alternative GLUT library, FreeGLUT" off
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_FREEGLUT)
-LIB_DEPENDS=	glut.12:${PORTSDIR}/graphics/freeglut
-.else
+USE_XORG=	x11 xext xmu xt xi sm ice
 USE_GL=		glut
-.endif
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 
 post-patch: .SILENT
@@ -60,4 +53,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

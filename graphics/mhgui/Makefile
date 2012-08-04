@@ -7,7 +7,7 @@
 
 PORTNAME=	mhgui
 PORTVERSION=	0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF/makehuman/MakeHuman%20Source/MakeHuman_091
 
@@ -21,6 +21,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
+USE_XORG=	xi xmu ice sm
 USE_GL=		glut
 
 CPPFLAGS+=	-I${LOCALBASE}/include

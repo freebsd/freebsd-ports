@@ -7,7 +7,7 @@
 
 PORTNAME=		kmatrix3d
 PORTVERSION=		0.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=		deskutils
 MASTER_SITES=		SF
 
@@ -20,7 +20,7 @@ DOCSDIR=		${PREFIX}/share/doc/HTML/en/kmatrix3d
 
 WRKSRC=			${WRKDIR}/${PORTNAME}
 
-USE_GL=			glut
+USE_GL=			glu glut
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 USE_AUTOTOOLS=		libtool automake:env autoheader:env

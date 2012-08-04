@@ -7,7 +7,7 @@
 
 PORTNAME=	knightcap
 PORTVERSION=	3.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.samba.org/pub/KnightCap/
 DISTNAME=	KnightCap-${PORTVERSION}
@@ -17,6 +17,7 @@ COMMENT=	Chess program with 3D interface for X Window System
 
 WRKSRC=		${WRKDIR}/Export
 
+USE_XORG=	xmu xt xext x11 xi
 USE_GL=		glut
 ALL_TARGET=	KnightCap
 

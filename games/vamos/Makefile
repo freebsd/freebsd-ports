@@ -7,7 +7,7 @@
 
 PORTNAME=	vamos
 PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -20,6 +20,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_OPENAL=	al alut
+USE_XORG=	sm ice x11 xi xext xmu
 USE_GL=		glut
 USE_SDL=	sdl
 USE_GMAKE=	yes

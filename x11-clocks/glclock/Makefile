@@ -7,7 +7,7 @@
 
 PORTNAME=	glclock
 DISTVERSION=	6.0b6.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.daionet.gr.jp/~masa/archives/
 

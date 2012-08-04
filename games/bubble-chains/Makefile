@@ -7,7 +7,7 @@
 
 PORTNAME=	bubble-chains
 PORTVERSION=	0.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://bubble-chains.sintegrial.com/files/
 DISTNAME=	chains-${DISTVERSION}

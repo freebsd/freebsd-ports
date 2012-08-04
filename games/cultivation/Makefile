@@ -7,7 +7,7 @@
 
 PORTNAME=	cultivation
 PORTVERSION=	8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/v${PORTVERSION}
 DISTNAME=	Cultivation_${PORTVERSION}_UnixSource
@@ -17,6 +17,7 @@ COMMENT=	Unique game of conflict and cooperation in a gardening community
 
 LIB_DEPENDS=	portaudio:${PORTSDIR}/audio/portaudio
 
+USE_XORG=	x11 xi xext xmu
 USE_GL=		glut
 USE_GMAKE=	yes
 
