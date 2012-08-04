@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	MooseX-Types-DateTime-MoreCoercions
-PORTVERSION=	0.09
+PORTVERSION=	0.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:ILMARI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extensions to MooseX::Types::DateTime
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-DateTime>=0.43.02:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTimeX-Easy>=0.085:${PORTSDIR}/devel/p5-DateTimeX-Easy \
@@ -23,9 +25,7 @@ BUILD_DEPENDS=	p5-DateTime>=0.43.02:${PORTSDIR}/devel/p5-DateTime \
 		p5-Time-Duration-Parse>=0.06:${PORTSDIR}/devel/p5-Time-Duration-Parse \
 		p5-namespace-clean>=0.08:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-TEST_DEPENDS=	p5-DateTime-Format-DateManip>=0:${PORTSDIR}/devel/p5-DateTime-Format-DateManip \
-		p5-Test-Exception>=0.27:${PORTSDIR}/devel/p5-Test-Exception \
+TEST_DEPENDS=	p5-Test-Exception>=0.27:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-use-ok>=0.02:${PORTSDIR}/devel/p5-Test-use-ok
 
 PERL_CONFIGURE=	yes
