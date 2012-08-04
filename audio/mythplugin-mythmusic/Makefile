@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mythmusic
-PORTVERSION=	0.25
-PORTREVISION=	2
+PORTVERSION=	0.25.2
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.osuosl.org/pub/mythtv/old_releases/ \
