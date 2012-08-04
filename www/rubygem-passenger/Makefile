@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	passenger
-PORTVERSION=	3.0.14
+PORTVERSION=	3.0.15
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
@@ -18,7 +18,7 @@ OPTIONS_SINGLE=	SERVER
 OPTIONS_SINGLE_SERVER=	APACHE22 NGINX
 APACHE22_DESC=	Build with apache22 support
 NGINX_DESC=	Build with nginx support
-SYMLINK_DESC= 	"Create passenger symlink"
+SYMLINK_DESC= 	Create passenger symlink
 OPTIONS_DEFAULT=	APACHE22
 
 USE_RUBY=	yes
