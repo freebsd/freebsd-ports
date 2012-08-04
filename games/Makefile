@@ -449,6 +449,7 @@
     SUBDIR += ktritoc
     SUBDIR += kuklomenos
     SUBDIR += kwappen
+    SUBDIR += kye
     SUBDIR += ladder
     SUBDIR += lander
     SUBDIR += lapispuzzle

@@ -1,0 +1,11 @@
+This is a clone of the game Kye for Windows, originally by Colin Garbutt. It
+is a puzzle game, which is a little like the old falling-rocks puzzle games,
+and perhaps also inspired a little by Sokoban. But Kye has more variety of
+objects, and so is capable of posing quite complex puzzles.
+
+This clone is written by Colin Phipps <cph@moria.org.uk> in Python and uses
+gtk. So it will run on modern Linux systems easily enough, and indeed should
+work on any system with working Python and pygtk. It works on Windows as well,
+for instance.
+
+WWW: http://games.moria.org.uk/kye/
