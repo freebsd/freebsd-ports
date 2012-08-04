@@ -1,6 +1,13 @@
---- psgml-edit.el.orig2	Tue Feb 21 07:02:29 2006
-+++ psgml-edit.el	Tue Feb 21 07:08:59 2006
-@@ -1876,18 +1876,22 @@
+--- psgml-edit.el.orig	2012-08-04 11:53:07.000000000 +0900
++++ psgml-edit.el	2012-08-04 11:55:00.000000000 +0900
+@@ -1870,24 +1870,28 @@
+    (invert
+     (or (looking-at "&#\\([0-9]+\\)[;\n]?")
+ 	(error "No character reference after point"))
+-    (let ((c (string-to-int (buffer-substring (match-beginning 1)
++    (let ((c (string-to-number (buffer-substring (match-beginning 1)
+ 					      (match-end 1)))))
+       (delete-region (match-beginning 0)
  		     (match-end 0))
        (if (fboundp 'decode-char)	; Emacs 21, Mule-UCS
  	  (setq c (decode-char 'ucs c))
