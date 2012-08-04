@@ -1,0 +1,25 @@
+===============================================================================
+
+Python Kye has been installed.
+
+This package does not include all Python Kye Levels.
+
+To obtain the original extra Levels use the "games/kye-data" Port.
+
+
+In addition, you can search for additional extra Levels here:
+
+    http://kye.8m.com/gfclevels.html
+
+    http://www.classicdosgames.com/game/Kye.html
+
+and other Sites and put it in:
+
+    %%DATADIR%%
+
+
+You could manually change Permissions these Levels with:
+
+    /bin/chmod 444 %%DATADIR%%/*.kye
+
+===============================================================================
