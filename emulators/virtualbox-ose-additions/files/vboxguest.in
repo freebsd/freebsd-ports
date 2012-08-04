@@ -24,7 +24,7 @@ stop_cmd="vboxguest_stop"
 
 vboxguest_start()
 {
-	if ! kldstat -q -m vboxguest;
+	if ! kldstat -q -m pci/vboxguest;
 	then
 		if ! kldload vboxguest > /dev/null 2>&1;
 		then
@@ -36,7 +36,7 @@ vboxguest_start()
 
 vboxguest_stop()
 {
-        if kldstat -q -m vboxguest;
+        if kldstat -q -m pci/vboxguest;
         then
                 if ! kldunload vboxguest > /dev/null 2>&1;
                 then
