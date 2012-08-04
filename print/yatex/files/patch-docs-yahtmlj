@@ -1,0 +1,12 @@
+--- docs/yahtmlj.orig	2012-08-05 01:01:53.000000000 +0900
++++ docs/yahtmlj	2012-08-05 01:02:14.000000000 +0900
+@@ -3,9 +3,6 @@
+ from file `yahtmlj.tex'
+ using `texinfmt.el' version 2.42 of  7 Jul 2006.
+ 
+-START-INFO-DIR-ENTRY
+-* yahtml: (yahtmlj).    Yet Another html-mode for Emacs (Japanese).
+-END-INFO-DIR-ENTRY
+ 
+ 
+ 

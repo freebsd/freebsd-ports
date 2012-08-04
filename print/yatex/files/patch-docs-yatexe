@@ -1,0 +1,12 @@
+--- docs/yatexe.orig	2012-08-05 01:01:58.000000000 +0900
++++ docs/yatexe	2012-08-05 01:02:22.000000000 +0900
+@@ -3,9 +3,6 @@
+ from file `yatexe.tex'
+ using `texinfmt.el' version 2.42 of  7 Jul 2006.
+ 
+-START-INFO-DIR-ENTRY
+-* YaTeX-e: (yatexe).    Yet Another tex-mode for Emacs (English).
+-END-INFO-DIR-ENTRY
+ 
+ 
+ 

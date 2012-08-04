@@ -1,0 +1,12 @@
+--- docs/yatexj.orig	2012-08-05 01:02:01.000000000 +0900
++++ docs/yatexj	2012-08-05 01:02:19.000000000 +0900
+@@ -3,9 +3,6 @@
+ from file `yatexj.tex'
+ using `texinfmt.el' version 2.42 of  7 Jul 2006.
+ 
+-START-INFO-DIR-ENTRY
+-* YaTeX: (yatexj).      Yet Another tex-mode for Emacs (Japanese).
+-END-INFO-DIR-ENTRY
+ 
+ 
+ 
