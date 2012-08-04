@@ -6,15 +6,12 @@
 #
 
 PORTNAME?=	proftpd
-PORTVERSION?=	1.3.4a
-PORTREVISION?=	3
+PORTVERSION?=	1.3.4b
+#PORTREVISION?=	0
 CATEGORIES?=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
-		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
-		ftp://ftp.dataguard.no/ftp/pub/proftpd/distrib/source/ \
-		ftp://spirit.bentel.sk/mirrors/Proftpd/distrib/source/ \
+		https://github.com/downloads/proftpd/proftpd.github.com/ \
 		ftp://proftpd.networkedsystems.co.uk/distrib/source/ \
-		http://mirrors.ibiblio.org/pub/mirrors/proftpd/distrib/source/ \
 		http://www.mirrorservice.org/sites/ftp.proftpd.org/distrib/source/ \
 		http://labratsoftware.com/mod_sql_tds/:sql_tds \
 		LOCAL/beech:sql_tds
@@ -56,7 +53,6 @@ PORTDOCS=	*
 
 MAKE_JOBS_UNSAFE=	yes
 USE_GMAKE=	yes
-USE_BZIP2=	yes
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 
@@ -182,8 +178,8 @@ CONFIGURE_ARGS+=	--disable-pcre
 .endif
 
 .if make(makesum) || defined(FETCH_ALL)
-DISTFILES+=	mod_sql_tds-4.13.tar.bz2:sql_tds
-EXTRACT_ONLY+=	mod_sql_tds-4.13.tar.bz2
+DISTFILES+=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
+		mod_sql_tds-4.13${EXTRACT_SUFX}:sql_tds
 .endif
 
 #.if ${PORT_OPTIONS:MCLAMAV} || make(makesum) || defined(FETCH_ALL)
