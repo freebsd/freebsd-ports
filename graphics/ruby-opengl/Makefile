@@ -7,7 +7,7 @@
 
 PORTNAME=	opengl
 PORTVERSION=	0.32b
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://www2.giganet.net/~yoshi/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -20,6 +20,7 @@ COMMENT=	OpenGL/GLU/GLUT interface modules for Ruby
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
+USE_XORG=	x11 xi xmu xext
 USE_GL=		glut
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

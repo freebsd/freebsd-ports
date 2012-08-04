@@ -7,6 +7,7 @@
 
 PORTNAME=	mesa-demos
 PORTVERSION=	7.6.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/${PORTVERSION}/
 DISTFILES=	MesaLib-${PORTVERSION}${EXTRACT_SUFX} \
@@ -21,7 +22,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_GL=		glu glut
-USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes dri2proto
+USE_XORG=	glproto x11 xext xt xxf86vm xdamage xfixes dri2proto
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--disable-gallium --with-demos=demos,xdemos

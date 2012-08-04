@@ -7,7 +7,7 @@
 
 PORTNAME=	hugs98
 PORTVERSION=	200609
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://cvs.haskell.org/Hugs/downloads/2006-09/
 DISTNAME=	${PORTNAME}-plus-${HUGS_DATE}
@@ -37,6 +37,7 @@ BROKEN=		dumps core during build on ${ARCH}
 
 .if !defined(WITHOUT_X11)
 USE_GL=	glut
+USE_XORG=	sm ice xmu xi x11
 PLIST_SUB+=	X11=""
 .else
 BROKEN=		not supported at the moment

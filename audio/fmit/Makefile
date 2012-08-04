@@ -7,7 +7,7 @@
 
 PORTNAME=	fmit
 PORTVERSION=	0.99.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/fmit/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-Source
@@ -23,6 +23,7 @@ OPTIONS_DEFINE=	OSS ALSA PORTAUDIO JACK
 OPTIONS_DEFAULT=	OSS JACK
 
 USE_BZIP2=	yes
+USE_XORG=	xmu
 USE_QT4=	corelib gui opengl \
 		linguist_build moc_build qmake_build rcc_build uic_build
 USE_GL=		glut

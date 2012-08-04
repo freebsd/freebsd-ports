@@ -1,6 +1,0 @@
-include/GL/glut.h
-include/GL/glutf90.h
-lib/libglut.so
-lib/libglut.so.3
-libdata/pkgconfig/glut.pc
-@dirrmtry include/GL

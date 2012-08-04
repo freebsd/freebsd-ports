@@ -9,7 +9,7 @@
 PORTNAME=	white_dune
 PORTVERSION=	${DISTVERSION:S/pl/./}
 DISTVERSION=	0.30pl5
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://vrml.cip.ica.uni-stuttgart.de/dune/ CENKES

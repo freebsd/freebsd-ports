@@ -7,6 +7,7 @@
 
 PORTNAME=	gl
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	graphics scheme
 MASTER_SITES=	SF/gauche/Gauche-gl
 PKGNAMEPREFIX=	gauche-
@@ -19,6 +20,7 @@ COMMENT=	OpenGL binding for Gauche
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+USE_XORG=	ice sm
 USE_GL=		glut
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes

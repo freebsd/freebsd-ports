@@ -40,7 +40,8 @@ UUID_DESC=	UUID support (required by GDAL)
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENGL}
-USE_GL=	glut
+USE_XORG=	x11 xmu xi xext
+USE_GL=		glut
 CONFIGURE_ARGS+=--enable-opengl
 PLIST_SUB+=	OPENGL=""
 .else

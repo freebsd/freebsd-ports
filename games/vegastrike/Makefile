@@ -7,7 +7,7 @@
 
 PORTNAME=	vegastrike
 PORTVERSION=	0.5.0
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
 DISTNAME=	vegastrike-source-${PORTVERSION}
@@ -26,6 +26,8 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_SDL=	sdl
+USE_XORG=	sm ice xi x11 xext xrender xinerama xi xrandr xcursor \
+		xcomposite xdamage xfixes 
 USE_GL=		gl glu glut
 USE_GNOME=	gtk20
 CPPFLAGS+=	-I${LOCALBASE}/include

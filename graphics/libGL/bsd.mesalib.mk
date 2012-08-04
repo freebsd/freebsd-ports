@@ -12,7 +12,6 @@
 #    - graphics/libGL
 #    - graphics/libGLU
 #    - graphics/libGLw
-#    - graphics/libglut
 #    - graphics/dri
 #
 # $FreeBSD$
@@ -50,7 +49,7 @@ MAKE_JOBS_SAFE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--enable-gallium-llvm=no --without-gallium-drivers \
-		--disable-egl
+		--disable-egl --disable-glut
 
 .if defined(WITH_NEW_XORG)
 EXTRA_PATCHES+=	${PATCHDIR}/extra-configure \
@@ -81,14 +80,8 @@ ARCH!=			uname -p
 
 COMPONENT=		${PORTNAME:L:C/^lib//:C/mesa-//}
 
-.if ${COMPONENT:Mglut} == ""
-. if ${COMPONENT:Mglu} == ""
-CONFIGURE_ARGS+=	--disable-glu --disable-glut
-. else
-CONFIGURE_ARGS+=	--disable-glut
-. endif
-.else
-DISTFILES+=		MesaGLUT-${MESADISTVERSION}${EXTRACT_SUFX}:glut
+.if ${COMPONENT:Mglu} == ""
+CONFIGURE_ARGS+=	--disable-glu
 .endif
 
 .if ${COMPONENT:Mglw} == ""

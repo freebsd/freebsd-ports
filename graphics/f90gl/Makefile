@@ -22,6 +22,8 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Official Fortran 90 bindings for OpenGL
 
+BROKEN=		doesn't build with freeglut
+
 USE_GL=		glut glu
 USE_XORG=	xaw
 USE_LDCONFIG=	yes

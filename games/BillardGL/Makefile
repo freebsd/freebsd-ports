@@ -7,7 +7,7 @@
 
 PORTNAME=		BillardGL
 PORTVERSION=		1.75
-PORTREVISION=		6
+PORTREVISION=		7
 CATEGORIES=		games
 MASTER_SITES=		SF/${PORTNAME:L}/${PORTNAME:L}/${PORTNAME}%20${PORTVERSION}
 
@@ -17,6 +17,7 @@ COMMENT=	OpenGL billiards simulator
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 USE_GMAKE=	yes
+USE_XORG=	xmu xext x11 xi
 USE_GL=		gl glut
 
 post-patch:

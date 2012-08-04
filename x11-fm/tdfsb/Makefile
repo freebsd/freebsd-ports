@@ -7,7 +7,7 @@
 
 PORTNAME=	tdfsb
 PORTVERSION=	0.0.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.determinate.net/webdata/data/
 
@@ -26,10 +26,12 @@ USE_PKGCONFIG=	yes
 PORTDOCS=	README
 PLIST_FILES=	bin/${PORTNAME}
 
-CPPFLAGS+=	`${LOCALBASE}/bin/pkgconf --cflags SDL_image glut` \
-		`${LOCALBASE}/bin/smpeg-config --cflags`
-LDFLAGS+=	`${LOCALBASE}/bin/pkgconf --libs SDL_image glut` \
-		`${LOCALBASE}/bin/smpeg-config --libs`
+CPPFLAGS+=	`${LOCALBASE}/bin/pkgconf --cflags SDL_image gl` \
+		`${LOCALBASE}/bin/smpeg-config --cflags` \
+		-I ${LOCALBASE}/include
+LDFLAGS+=	`${LOCALBASE}/bin/pkgconf --libs SDL_image gl` \
+		`${LOCALBASE}/bin/smpeg-config --libs` \
+		-L ${LOCALBASE}/lib -lGLU -lglut
 
 .include <bsd.port.pre.mk>
 

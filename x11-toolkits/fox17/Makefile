@@ -7,7 +7,7 @@
 
 PORTNAME=	fox
 PORTVERSION=	1.7.33
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.fox-toolkit.org/pub/ \
    		ftp://ftp.fox-toolkit.org/pub/
@@ -32,6 +32,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${MAJORVER}
 
 USE_GCC=	4.4+
 USE_GL=		glut
+USE_XORG=	sm
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 

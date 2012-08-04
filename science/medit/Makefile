@@ -6,6 +6,7 @@
 
 PORTNAME=	medit
 PORTVERSION=	2011.03.06
+PORTREVISION=	1
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.ann.jussieu.fr/~frey/ftp/archives/
 EXTRACT_SUFX=	.tgz

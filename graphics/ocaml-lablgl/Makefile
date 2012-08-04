@@ -7,6 +7,7 @@
 
 PORTNAME=	lablgl
 PORTVERSION=	20120306
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/lsl/dist/ \
 		https://forge.ocamlcore.org/frs/download.php/816/
@@ -18,6 +19,7 @@ COMMENT=	OpenGL interface for Objective Caml
 LICENSE=	BSD
 
 WRKSRC=		${WRKDIR}/lablGL
+USE_XORG=	x11 xext xmu
 USE_GL=		glut
 USE_GMAKE=	yes
 USE_OCAML=	yes

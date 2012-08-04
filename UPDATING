@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120804:
+  AFFECTS: users of libglut.
+  AUTHOR: x11@FreeBSD.org
+
+  The libglut library is replaced by the Freeglut library.
+  Due to shlib version bump all glut users should be rebuild.
+  Please follow the instructions below to upgrade.
+
+  portmaster -o graphics/freeglut graphics/libglut
+  portmaster -r freeglut
+
 20120801:
   AFFECTS: users of editors/emacs
   AUTHOR: ashish@FreeBSD.org

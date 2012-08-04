@@ -7,7 +7,7 @@
 
 PORTNAME=	glexcess
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.glexcess.com/files/
 DISTNAME=	${PORTNAME}
@@ -19,7 +19,7 @@ COMMENT=	An impressive OpenGL Demo
 USE_GL=		glut
 
 MAKE_ARGS=	'CXXFLAGS=${CXXFLAGS} -I${LOCALBASE}/include -pipe -s -O2' \
-		'LDFLAGS=-L${LOCALBASE}/lib -lGL -lglut'
+		'LDFLAGS=-L${LOCALBASE}/lib -lGL -lGLU -lglut'
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/|' ${WRKSRC}/scene*.cpp
