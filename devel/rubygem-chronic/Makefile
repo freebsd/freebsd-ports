@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	chronic
-PORTVERSION=	0.6.7
+PORTVERSION=	0.7.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
