@@ -3,6 +3,7 @@ sbin/ngircd
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/Bopm.txt
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/Capabilities.txt
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.txt
 %%PORTDOCS%%%%DOCSDIR%%/GIT.txt
