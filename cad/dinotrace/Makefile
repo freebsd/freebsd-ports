@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dinotrace
-DISTVERSION=	9.3f
-PORTREVISION=	1
+PORTVERSION=	9.4c
 CATEGORIES=	cad
 MASTER_SITES=	http://www.veripool.org/ftp/
 EXTRACT_SUFX=	.tgz
@@ -19,36 +18,36 @@ OPTIONS_DEFINE=	EMACS
 OPTIONS_DEFAULT=	EMACS
 EMACS_DESC=	Install Emacs supplimentary files
 
-GNU_CONFIGURE=	yes
+USE_XORG=	x11 sm ice xmu xt
 USE_MOTIF=	yes
 USE_PERL5_BUILD=	yes
-USE_XORG=	x11 sm ice xmu xt
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 INFO=		dinotrace
-
-VERILOGEL_FILE=	${LOCALBASE}/share/verilog-mode.el/verilog-mode.el
-ELFILES=	dinotrace.el sim-log.el
-EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
-XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
+PLIST_FILES=	bin/dinotrace
 
 .include <bsd.port.options.mk>
+
 .if ${PORT_OPTIONS:MEMACS}
-RUN_DEPENDS+=	${VERILOGEL_FILE}:${PORTSDIR}/cad/verilog-mode.el
-PLIST_SUB+=	EMACS=""
-.else
-PLIST_SUB+=	EMACS="@comment "
+RUN_DEPENDS+=	verilog-mode.el>0:${PORTSDIR}/cad/verilog-mode.el
+USE_EMACS=	yes
+EMACS_NO_BUILD_DEPENDS=	yes
+.for F in dinotrace.el sim-log.el
+PLIST_FILES+=	${EMACS_SITE_LISPDIR}/${F}
+.endfor
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|"-O3"|""|' ${WRKSRC}/configure
 
 post-install:
 .if ${PORT_OPTIONS:MEMACS}
-	${MKDIR} ${DATADIR}/
-	${MKDIR} ${XEMACSLISPDIR}
-. for FILE in ${ELFILES}
-	${INSTALL_DATA} ${WRKSRC}/lisp/${FILE} ${DATADIR}/
-	${LN} -sf ${DATADIR}/${FILE} ${EMACSLISPDIR}/${FILE}
-	${LN} -sf ${DATADIR}/${FILE} ${XEMACSLISPDIR}/${FILE}
-. endfor
+	@${MKDIR} ${PREFIX}/${EMACS_SITE_LISPDIR}
+.for F in dinotrace.el sim-log.el
+	${INSTALL_DATA} ${WRKSRC}/lisp/${F} ${PREFIX}/${EMACS_SITE_LISPDIR}
+.endfor
 	@${CAT} ${PKGMESSAGE}
 .endif
 
