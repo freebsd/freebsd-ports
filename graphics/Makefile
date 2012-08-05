@@ -824,6 +824,7 @@
     SUBDIR += py-opengl
     SUBDIR += py-openimageio
     SUBDIR += py-paint
+    SUBDIR += py-pillow
     SUBDIR += py-png
     SUBDIR += py-poppler
     SUBDIR += py-pycha

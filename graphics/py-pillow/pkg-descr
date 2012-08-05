@@ -1,0 +1,5 @@
+Pillow is the "friendly" PIL fork. PIL is the Python Imaging Library. Pillow
+was started for and is currently maintained by the Plone community. But it is
+used by many other folks in the Python web community.
+
+WWW:	http://github.com/collective/Pillow
