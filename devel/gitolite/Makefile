@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gitolite
-PORTVERSION=	3.03
+PORTVERSION=	3.04
 CATEGORIES=	devel
 MASTER_SITES=	http://milki.github.com/${PORTNAME}/ \
 		LOCAL/tdb
@@ -24,11 +24,13 @@ USE_PERL5=	yes
 
 SUB_FILES=	pkg-message
 
-OPTIONS=	GITUSER	"Create git user as gitolite provider" On
+OPTIONS_DEFINE=	GITUSER
+
+GITUSER_DESC=	Create git user as gitolite provider
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_GITUSER)
+.if ${PORT_OPTIONS:MGITUSER}
 USERS=		git
 GROUPS=		${USERS}
 PLIST_SUB+=	GITUSER=""
@@ -57,6 +59,16 @@ do-install:
 	@${LN} -s ${PREFIX}/libexec/gitolite/gitolite ${PREFIX}/bin/gitolite
 
 post-install:
+.if !defined(NOPORTDOCS)
+	-@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${DOCSDIR}
+.endif
+
 	@${CAT} ${PKGMESSAGE}
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	README.txt CHANGELOG
+.endif
 
 .include <bsd.port.mk>

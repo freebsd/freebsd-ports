@@ -16,6 +16,7 @@ bin/gitolite
 %%SITE_PERL%%/Gitolite/Triggers/Alias.pm
 %%SITE_PERL%%/Gitolite/Triggers/CpuTime.pm
 %%SITE_PERL%%/Gitolite/Triggers/Mirroring.pm
+%%SITE_PERL%%/Gitolite/Triggers/RepoUmask.pm
 %%SITE_PERL%%/Gitolite/Triggers/Shell.pm
 %%SITE_PERL%%/Gitolite/Triggers/Writable.pm
 libexec/gitolite/VERSION
@@ -24,8 +25,9 @@ libexec/gitolite/VREF/EMAIL-CHECK
 libexec/gitolite/VREF/FILETYPE
 libexec/gitolite/VREF/MAX_NEWBIN_SIZE
 libexec/gitolite/VREF/MERGE-CHECK
-libexec/gitolite/VREF/partial-copy
 libexec/gitolite/VREF/VOTES
+libexec/gitolite/VREF/lock
+libexec/gitolite/VREF/partial-copy
 libexec/gitolite/commands/D
 libexec/gitolite/commands/access
 libexec/gitolite/commands/creator
@@ -35,13 +37,17 @@ libexec/gitolite/commands/git-config
 libexec/gitolite/commands/help
 libexec/gitolite/commands/htpasswd
 libexec/gitolite/commands/info
+libexec/gitolite/commands/list-dangling-repos
+libexec/gitolite/commands/lock
 libexec/gitolite/commands/mirror
 libexec/gitolite/commands/perms
 libexec/gitolite/commands/print-default-rc
 libexec/gitolite/commands/push
 libexec/gitolite/commands/sshkeys-lint
 libexec/gitolite/commands/sskm
+libexec/gitolite/commands/sudo
 libexec/gitolite/commands/svnserve
+libexec/gitolite/commands/symbolic-ref
 libexec/gitolite/commands/writable
 libexec/gitolite/check-g2-compat
 libexec/gitolite/convert-gitosis-conf
@@ -50,7 +56,7 @@ libexec/gitolite/gitolite-shell
 libexec/gitolite/syntactic-sugar/continuation-lines
 libexec/gitolite/syntactic-sugar/keysubdirs-as-groups
 libexec/gitolite/triggers/partial-copy
-libexec/gitolite/triggers/new-normal-repos
+libexec/gitolite/triggers/upstream
 libexec/gitolite/triggers/post-compile/ssh-authkeys
 libexec/gitolite/triggers/post-compile/ssh-authkeys-shell-users
 libexec/gitolite/triggers/post-compile/update-git-configs
