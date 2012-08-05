@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail_Mime
-PORTVERSION=	1.8.4
+PORTVERSION=	1.8.5
 PORTEPOCH=	2
 CATEGORIES=	mail www pear
 
