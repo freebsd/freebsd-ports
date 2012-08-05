@@ -6,14 +6,17 @@
 #
 
 PORTNAME=	Image-PBMlib
-PORTVERSION=	1.05
+PORTVERSION=	2.00
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Image
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Helper functions for PBM/PGM/PPM image file formats
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
 
