@@ -23,6 +23,7 @@ SLAVEDIRS=	mail/gmime2-sharp
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_GNOME?=	gnomehack glib20
+USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 # www.freebsd.org/cgi/query-pr.cgi?pr=118092

@@ -25,6 +25,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}24
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_GNOME?=	gnomehack glib20
+USE_PKGCONFIG=	build
 USE_LDCONFIG=	yes
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
