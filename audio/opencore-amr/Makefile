@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	opencore-amr
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	audio
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	OpenCORE implementation of AMR Narrowband & Wideband speech codec
+
+LICENSE=	AL2
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
