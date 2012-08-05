@@ -1,3 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Spiffy/.packlist
 %%SITE_PERL%%/Spiffy.pm
+%%SITE_PERL%%/Spiffy.pod
+%%SITE_PERL%%/Spiffy/mixin.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Spiffy/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spiffy
+@dirrm %%SITE_PERL%%/Spiffy
