@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+bin/phantomjs
+lib/phantomjs/libQtWebKit.so.4
+lib/phantomjs/libQtGui.so.4
+lib/phantomjs/libQtNetwork.so.4
+lib/phantomjs/libQtCore.so.4
+@dirrm lib/phantomjs

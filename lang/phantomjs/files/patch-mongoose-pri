@@ -1,0 +1,10 @@
+$FreeBSD$
+
+--- src/mongoose/mongoose.pri.orig	2012-05-16 01:39:25.000000000 +0600
++++ src/mongoose/mongoose.pri	2012-05-16 03:08:39.000000000 +0600
+@@ -3,5 +3,4 @@
+ 
+ SOURCES += mongoose.c
+ HEADERS += mongoose.h
+-unix:LIBS += -ldl
+ win32:LIBS += -lWs2_32
