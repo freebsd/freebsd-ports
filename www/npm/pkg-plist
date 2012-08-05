@@ -106,7 +106,6 @@ lib/node_modules/npm/doc/cli/update.md
 lib/node_modules/npm/doc/cli/version.md
 lib/node_modules/npm/doc/cli/view.md
 lib/node_modules/npm/doc/cli/whoami.md
-lib/node_modules/npm/html/api/GubbleBum-Blocky.ttf
 lib/node_modules/npm/html/api/bin.html
 lib/node_modules/npm/html/api/bugs.html
 lib/node_modules/npm/html/api/commands.html
@@ -136,7 +135,6 @@ lib/node_modules/npm/html/api/search.html
 lib/node_modules/npm/html/api/shrinkwrap.html
 lib/node_modules/npm/html/api/start.html
 lib/node_modules/npm/html/api/stop.html
-lib/node_modules/npm/html/api/style.css
 lib/node_modules/npm/html/api/submodule.html
 lib/node_modules/npm/html/api/tag.html
 lib/node_modules/npm/html/api/test.html
@@ -146,7 +144,6 @@ lib/node_modules/npm/html/api/update.html
 lib/node_modules/npm/html/api/version.html
 lib/node_modules/npm/html/api/view.html
 lib/node_modules/npm/html/api/whoami.html
-lib/node_modules/npm/html/doc/GubbleBum-Blocky.ttf
 lib/node_modules/npm/html/doc/README.html
 lib/node_modules/npm/html/doc/adduser.html
 lib/node_modules/npm/html/doc/bin.html
@@ -194,7 +191,6 @@ lib/node_modules/npm/html/doc/shrinkwrap.html
 lib/node_modules/npm/html/doc/star.html
 lib/node_modules/npm/html/doc/start.html
 lib/node_modules/npm/html/doc/stop.html
-lib/node_modules/npm/html/doc/style.css
 lib/node_modules/npm/html/doc/submodule.html
 lib/node_modules/npm/html/doc/tag.html
 lib/node_modules/npm/html/doc/test.html
@@ -208,17 +204,10 @@ lib/node_modules/npm/html/docfoot.html
 lib/node_modules/npm/html/dochead.html
 lib/node_modules/npm/html/favicon.ico
 lib/node_modules/npm/html/index.html
-lib/node_modules/npm/html/n-64.png
-lib/node_modules/npm/html/n-large.png
-lib/node_modules/npm/html/npm-16.png
-lib/node_modules/npm/html/npm-256-square.png
-lib/node_modules/npm/html/npm-256w.png
-lib/node_modules/npm/html/npm-64-square.png
-lib/node_modules/npm/html/npm-fin.png
-lib/node_modules/npm/html/npm-large-trans.png
-lib/node_modules/npm/html/npm-large.png
-lib/node_modules/npm/html/npm-logo-white-trans.png
-lib/node_modules/npm/html/npm.png
+lib/node_modules/npm/html/style.css
+lib/node_modules/npm/html/webfonts/23242D_3_0.eot
+lib/node_modules/npm/html/webfonts/23242D_3_0.ttf
+lib/node_modules/npm/html/webfonts/23242D_3_0.woff
 lib/node_modules/npm/lib/adduser.js
 lib/node_modules/npm/lib/bin.js
 lib/node_modules/npm/lib/bugs.js
@@ -275,26 +264,10 @@ lib/node_modules/npm/lib/utils/error-handler.js
 lib/node_modules/npm/lib/utils/exec.js
 lib/node_modules/npm/lib/utils/fetch.js
 lib/node_modules/npm/lib/utils/find-prefix.js
-lib/node_modules/npm/lib/utils/find.js
 lib/node_modules/npm/lib/utils/gently-rm.js
 lib/node_modules/npm/lib/utils/ini.js
 lib/node_modules/npm/lib/utils/lifecycle.js
 lib/node_modules/npm/lib/utils/link.js
-lib/node_modules/npm/lib/utils/load-package-defaults.js
-lib/node_modules/npm/lib/utils/log.js
-lib/node_modules/npm/lib/utils/npm-registry-client/adduser.js
-lib/node_modules/npm/lib/utils/npm-registry-client/get.js
-lib/node_modules/npm/lib/utils/npm-registry-client/index.js
-lib/node_modules/npm/lib/utils/npm-registry-client/publish.js
-lib/node_modules/npm/lib/utils/npm-registry-client/request.js
-lib/node_modules/npm/lib/utils/npm-registry-client/star.js
-lib/node_modules/npm/lib/utils/npm-registry-client/tag.js
-lib/node_modules/npm/lib/utils/npm-registry-client/unpublish.js
-lib/node_modules/npm/lib/utils/output.js
-lib/node_modules/npm/lib/utils/promise-chain.js
-lib/node_modules/npm/lib/utils/read-installed.js
-lib/node_modules/npm/lib/utils/read-json.js
-lib/node_modules/npm/lib/utils/relativize.js
 lib/node_modules/npm/lib/utils/sha.js
 lib/node_modules/npm/lib/utils/tar.js
 lib/node_modules/npm/lib/version.js
@@ -395,30 +368,80 @@ lib/node_modules/npm/man/man3/update.3
 lib/node_modules/npm/man/man3/version.3
 lib/node_modules/npm/man/man3/view.3
 lib/node_modules/npm/man/man3/whoami.3
+lib/node_modules/npm/node_modules/.bin/beep
+lib/node_modules/npm/node_modules/.bin/clear
+lib/node_modules/npm/node_modules/.bin/imgcat
 lib/node_modules/npm/node_modules/.bin/node-gyp
 lib/node_modules/npm/node_modules/.bin/nopt
 lib/node_modules/npm/node_modules/.bin/semver
+lib/node_modules/npm/node_modules/.bin/starwars
 lib/node_modules/npm/node_modules/.bin/which
 lib/node_modules/npm/node_modules/abbrev/LICENSE
 lib/node_modules/npm/node_modules/abbrev/README.md
 lib/node_modules/npm/node_modules/abbrev/lib/abbrev.js
 lib/node_modules/npm/node_modules/abbrev/package.json
+lib/node_modules/npm/node_modules/ansi/.npmignore
+lib/node_modules/npm/node_modules/ansi/README.md
+lib/node_modules/npm/node_modules/ansi/examples/beep/index.js
+lib/node_modules/npm/node_modules/ansi/examples/clear/index.js
+lib/node_modules/npm/node_modules/ansi/examples/cursorPosition.js
+lib/node_modules/npm/node_modules/ansi/examples/imgcat/index.js
+lib/node_modules/npm/node_modules/ansi/examples/imgcat/yoshi.png
+lib/node_modules/npm/node_modules/ansi/examples/progress/index.js
+lib/node_modules/npm/node_modules/ansi/examples/starwars.js
+lib/node_modules/npm/node_modules/ansi/lib/ansi.js
+lib/node_modules/npm/node_modules/ansi/lib/newlines.js
+lib/node_modules/npm/node_modules/ansi/package.json
 lib/node_modules/npm/node_modules/archy/README.markdown
 lib/node_modules/npm/node_modules/archy/index.js
 lib/node_modules/npm/node_modules/archy/package.json
+lib/node_modules/npm/node_modules/block-stream/LICENCE
 lib/node_modules/npm/node_modules/block-stream/README.md
+lib/node_modules/npm/node_modules/block-stream/bench/block-stream-pause.js
+lib/node_modules/npm/node_modules/block-stream/bench/block-stream.js
+lib/node_modules/npm/node_modules/block-stream/bench/dropper-pause.js
+lib/node_modules/npm/node_modules/block-stream/bench/dropper.js
 lib/node_modules/npm/node_modules/block-stream/block-stream.js
 lib/node_modules/npm/node_modules/block-stream/package.json
+lib/node_modules/npm/node_modules/block-stream/test/basic.js
+lib/node_modules/npm/node_modules/block-stream/test/nopad-thorough.js
+lib/node_modules/npm/node_modules/block-stream/test/nopad.js
+lib/node_modules/npm/node_modules/block-stream/test/pause-resume.js
+lib/node_modules/npm/node_modules/block-stream/test/thorough.js
+lib/node_modules/npm/node_modules/block-stream/test/two-stream.js
+lib/node_modules/npm/node_modules/chownr/LICENCE
 lib/node_modules/npm/node_modules/chownr/README.md
 lib/node_modules/npm/node_modules/chownr/chownr.js
 lib/node_modules/npm/node_modules/chownr/package.json
+lib/node_modules/npm/node_modules/couch-login/README.md
+lib/node_modules/npm/node_modules/couch-login/couch-login.js
+lib/node_modules/npm/node_modules/couch-login/package.json
+lib/node_modules/npm/node_modules/couch-login/test/basic.js
+lib/node_modules/npm/node_modules/couch-login/test/registry.js
 lib/node_modules/npm/node_modules/fstream-npm/.npmignore
+lib/node_modules/npm/node_modules/fstream-npm/LICENCE
 lib/node_modules/npm/node_modules/fstream-npm/README.md
+lib/node_modules/npm/node_modules/fstream-npm/example/bundle.js
+lib/node_modules/npm/node_modules/fstream-npm/example/dir-tar.js
+lib/node_modules/npm/node_modules/fstream-npm/example/dir.js
+lib/node_modules/npm/node_modules/fstream-npm/example/example.js
+lib/node_modules/npm/node_modules/fstream-npm/example/ig-tar.js
+lib/node_modules/npm/node_modules/fstream-npm/example/tar.js
 lib/node_modules/npm/node_modules/fstream-npm/fstream-npm.js
 lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/.npmignore
 lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/README.md
+lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/example/basic.js
 lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/ignore.js
 lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/package.json
+lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/test/.ignore
+lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/test/.npmignore
+lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/test/00-setup.js
+lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/test/basic.js
+lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/test/common.js
+lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/test/ignore-most.js
+lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/test/nested-ignores.js
+lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/test/unignore-child.js
+lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/test/zz-cleanup.js
 lib/node_modules/npm/node_modules/fstream-npm/package.json
 lib/node_modules/npm/node_modules/fstream/.npmignore
 lib/node_modules/npm/node_modules/fstream/.travis.yml
@@ -440,6 +463,21 @@ lib/node_modules/npm/node_modules/fstream/lib/reader.js
 lib/node_modules/npm/node_modules/fstream/lib/socket-reader.js
 lib/node_modules/npm/node_modules/fstream/lib/writer.js
 lib/node_modules/npm/node_modules/fstream/package.json
+lib/node_modules/npm/node_modules/glob/.npmignore
+lib/node_modules/npm/node_modules/glob/.travis.yml
+lib/node_modules/npm/node_modules/glob/LICENCE
+lib/node_modules/npm/node_modules/glob/README.md
+lib/node_modules/npm/node_modules/glob/examples/g.js
+lib/node_modules/npm/node_modules/glob/examples/usr-local.js
+lib/node_modules/npm/node_modules/glob/glob.js
+lib/node_modules/npm/node_modules/glob/package.json
+lib/node_modules/npm/node_modules/glob/test/00-setup.js
+lib/node_modules/npm/node_modules/glob/test/bash-comparison.js
+lib/node_modules/npm/node_modules/glob/test/cwd-test.js
+lib/node_modules/npm/node_modules/glob/test/pause-resume.js
+lib/node_modules/npm/node_modules/glob/test/root-nomount.js
+lib/node_modules/npm/node_modules/glob/test/root.js
+lib/node_modules/npm/node_modules/glob/test/zz-cleanup.js
 lib/node_modules/npm/node_modules/graceful-fs/.npmignore
 lib/node_modules/npm/node_modules/graceful-fs/LICENSE
 lib/node_modules/npm/node_modules/graceful-fs/README.md
@@ -454,20 +492,77 @@ lib/node_modules/npm/node_modules/ini/LICENSE
 lib/node_modules/npm/node_modules/ini/README.md
 lib/node_modules/npm/node_modules/ini/ini.js
 lib/node_modules/npm/node_modules/ini/package.json
+lib/node_modules/npm/node_modules/init-package-json/README.md
+lib/node_modules/npm/node_modules/init-package-json/default-input.js
+lib/node_modules/npm/node_modules/init-package-json/example.js
+lib/node_modules/npm/node_modules/init-package-json/init-package-json.js
+lib/node_modules/npm/node_modules/init-package-json/node_modules/promzard/.npmignore
+lib/node_modules/npm/node_modules/init-package-json/node_modules/promzard/README.md
+lib/node_modules/npm/node_modules/init-package-json/node_modules/promzard/example/index.js
+lib/node_modules/npm/node_modules/init-package-json/node_modules/promzard/example/npm-init/README.md
+lib/node_modules/npm/node_modules/init-package-json/node_modules/promzard/example/npm-init/init-input.js
+lib/node_modules/npm/node_modules/init-package-json/node_modules/promzard/example/npm-init/init.js
+lib/node_modules/npm/node_modules/init-package-json/node_modules/promzard/example/npm-init/package.json
+lib/node_modules/npm/node_modules/init-package-json/node_modules/promzard/example/substack-input.js
+lib/node_modules/npm/node_modules/init-package-json/node_modules/promzard/package.json
+lib/node_modules/npm/node_modules/init-package-json/node_modules/promzard/promzard.js
+lib/node_modules/npm/node_modules/init-package-json/node_modules/promzard/test/basic.js
+lib/node_modules/npm/node_modules/init-package-json/node_modules/promzard/test/exports.input
+lib/node_modules/npm/node_modules/init-package-json/node_modules/promzard/test/exports.js
+lib/node_modules/npm/node_modules/init-package-json/node_modules/promzard/test/fn.input
+lib/node_modules/npm/node_modules/init-package-json/node_modules/promzard/test/fn.js
+lib/node_modules/npm/node_modules/init-package-json/node_modules/promzard/test/simple.input
+lib/node_modules/npm/node_modules/init-package-json/node_modules/promzard/test/simple.js
+lib/node_modules/npm/node_modules/init-package-json/package.json
+lib/node_modules/npm/node_modules/init-package-json/test/basic.input
+lib/node_modules/npm/node_modules/init-package-json/test/basic.js
+lib/node_modules/npm/node_modules/lockfile/LICENSE
+lib/node_modules/npm/node_modules/lockfile/README.md
+lib/node_modules/npm/node_modules/lockfile/lockfile.js
+lib/node_modules/npm/node_modules/lockfile/package.json
+lib/node_modules/npm/node_modules/lockfile/test/basic.js
+lib/node_modules/npm/node_modules/lockfile/test/fixtures/bad-child.js
+lib/node_modules/npm/node_modules/lockfile/test/fixtures/child.js
 lib/node_modules/npm/node_modules/lru-cache/.npmignore
+lib/node_modules/npm/node_modules/lru-cache/AUTHORS
 lib/node_modules/npm/node_modules/lru-cache/LICENSE
 lib/node_modules/npm/node_modules/lru-cache/README.md
 lib/node_modules/npm/node_modules/lru-cache/lib/lru-cache.js
 lib/node_modules/npm/node_modules/lru-cache/package.json
+lib/node_modules/npm/node_modules/lru-cache/test/basic.js
 lib/node_modules/npm/node_modules/minimatch/.travis.yml
 lib/node_modules/npm/node_modules/minimatch/LICENSE
 lib/node_modules/npm/node_modules/minimatch/README.md
 lib/node_modules/npm/node_modules/minimatch/minimatch.js
 lib/node_modules/npm/node_modules/minimatch/package.json
+lib/node_modules/npm/node_modules/minimatch/test/basic.js
+lib/node_modules/npm/node_modules/minimatch/test/brace-expand.js
+lib/node_modules/npm/node_modules/minimatch/test/caching.js
+lib/node_modules/npm/node_modules/minimatch/test/defaults.js
+lib/node_modules/npm/node_modules/mkdirp/.gitignore.orig
+lib/node_modules/npm/node_modules/mkdirp/.gitignore.rej
+lib/node_modules/npm/node_modules/mkdirp/.npmignore
+lib/node_modules/npm/node_modules/mkdirp/.travis.yml
 lib/node_modules/npm/node_modules/mkdirp/LICENSE
 lib/node_modules/npm/node_modules/mkdirp/README.markdown
+lib/node_modules/npm/node_modules/mkdirp/examples/pow.js
+lib/node_modules/npm/node_modules/mkdirp/examples/pow.js.orig
+lib/node_modules/npm/node_modules/mkdirp/examples/pow.js.rej
 lib/node_modules/npm/node_modules/mkdirp/index.js
 lib/node_modules/npm/node_modules/mkdirp/package.json
+lib/node_modules/npm/node_modules/mkdirp/test/chmod.js
+lib/node_modules/npm/node_modules/mkdirp/test/clobber.js
+lib/node_modules/npm/node_modules/mkdirp/test/mkdirp.js
+lib/node_modules/npm/node_modules/mkdirp/test/perm.js
+lib/node_modules/npm/node_modules/mkdirp/test/perm_sync.js
+lib/node_modules/npm/node_modules/mkdirp/test/race.js
+lib/node_modules/npm/node_modules/mkdirp/test/rel.js
+lib/node_modules/npm/node_modules/mkdirp/test/return.js
+lib/node_modules/npm/node_modules/mkdirp/test/return_sync.js
+lib/node_modules/npm/node_modules/mkdirp/test/root.js
+lib/node_modules/npm/node_modules/mkdirp/test/sync.js
+lib/node_modules/npm/node_modules/mkdirp/test/umask.js
+lib/node_modules/npm/node_modules/mkdirp/test/umask_sync.js
 lib/node_modules/npm/node_modules/node-gyp/.npmignore
 lib/node_modules/npm/node_modules/node-gyp/LICENSE
 lib/node_modules/npm/node_modules/node-gyp/README.md
@@ -539,19 +634,6 @@ lib/node_modules/npm/node_modules/node-gyp/lib/list.js
 lib/node_modules/npm/node_modules/node-gyp/lib/node-gyp.js
 lib/node_modules/npm/node_modules/node-gyp/lib/rebuild.js
 lib/node_modules/npm/node_modules/node-gyp/lib/remove.js
-lib/node_modules/npm/node_modules/node-gyp/lib/util/mkdirp.js
-lib/node_modules/npm/node_modules/node-gyp/node_modules/ansi/.npmignore
-lib/node_modules/npm/node_modules/node-gyp/node_modules/ansi/README.md
-lib/node_modules/npm/node_modules/node-gyp/node_modules/ansi/lib/ansi.js
-lib/node_modules/npm/node_modules/node-gyp/node_modules/ansi/nodejs.png
-lib/node_modules/npm/node_modules/node-gyp/node_modules/ansi/package.json
-lib/node_modules/npm/node_modules/node-gyp/node_modules/ansi/server.js
-lib/node_modules/npm/node_modules/node-gyp/node_modules/glob/.npmignore
-lib/node_modules/npm/node_modules/node-gyp/node_modules/glob/.travis.yml
-lib/node_modules/npm/node_modules/node-gyp/node_modules/glob/LICENCE
-lib/node_modules/npm/node_modules/node-gyp/node_modules/glob/README.md
-lib/node_modules/npm/node_modules/node-gyp/node_modules/glob/glob.js
-lib/node_modules/npm/node_modules/node-gyp/node_modules/glob/package.json
 lib/node_modules/npm/node_modules/node-gyp/package.json
 lib/node_modules/npm/node_modules/node-gyp/updateLegacy.sh
 lib/node_modules/npm/node_modules/node-uuid/.npmignore
@@ -563,27 +645,133 @@ lib/node_modules/npm/node_modules/nopt/.npmignore
 lib/node_modules/npm/node_modules/nopt/LICENSE
 lib/node_modules/npm/node_modules/nopt/README.md
 lib/node_modules/npm/node_modules/nopt/bin/nopt.js
+lib/node_modules/npm/node_modules/nopt/examples/my-program.js
 lib/node_modules/npm/node_modules/nopt/lib/nopt.js
 lib/node_modules/npm/node_modules/nopt/package.json
+lib/node_modules/npm/node_modules/npm-registry-client/.npmignore
+lib/node_modules/npm/node_modules/npm-registry-client/LICENSE
+lib/node_modules/npm/node_modules/npm-registry-client/README.md
+lib/node_modules/npm/node_modules/npm-registry-client/index.js
+lib/node_modules/npm/node_modules/npm-registry-client/lib/adduser.js
+lib/node_modules/npm/node_modules/npm-registry-client/lib/get.js
+lib/node_modules/npm/node_modules/npm-registry-client/lib/publish.js
+lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js
+lib/node_modules/npm/node_modules/npm-registry-client/lib/star.js
+lib/node_modules/npm/node_modules/npm-registry-client/lib/tag.js
+lib/node_modules/npm/node_modules/npm-registry-client/lib/unpublish.js
+lib/node_modules/npm/node_modules/npm-registry-client/lib/upload.js
+lib/node_modules/npm/node_modules/npm-registry-client/package.json
+lib/node_modules/npm/node_modules/npm-registry-client/test/00-setup.js
+lib/node_modules/npm/node_modules/npm-registry-client/test/adduser-new.js
+lib/node_modules/npm/node_modules/npm-registry-client/test/adduser-update.js
+lib/node_modules/npm/node_modules/npm-registry-client/test/basic.js
+lib/node_modules/npm/node_modules/npm-registry-client/test/fixtures/server.js
+lib/node_modules/npm/node_modules/npm-registry-client/test/fixtures/underscore/1.3.3/cache.json
+lib/node_modules/npm/node_modules/npm-registry-client/test/fixtures/underscore/cache.json
+lib/node_modules/npm/node_modules/npm-registry-client/test/retries.js
+lib/node_modules/npm/node_modules/npm-registry-client/test/zz-cleanup.js
+lib/node_modules/npm/node_modules/npmlog/LICENSE
+lib/node_modules/npm/node_modules/npmlog/README.md
+lib/node_modules/npm/node_modules/npmlog/example.js
+lib/node_modules/npm/node_modules/npmlog/log.js
+lib/node_modules/npm/node_modules/npmlog/package.json
+lib/node_modules/npm/node_modules/npmlog/test/basic.js
+lib/node_modules/npm/node_modules/osenv/LICENSE
+lib/node_modules/npm/node_modules/osenv/README.md
+lib/node_modules/npm/node_modules/osenv/osenv.js
+lib/node_modules/npm/node_modules/osenv/package.json
+lib/node_modules/npm/node_modules/osenv/test/unix.js
+lib/node_modules/npm/node_modules/osenv/test/windows.js
 lib/node_modules/npm/node_modules/proto-list/LICENSE
 lib/node_modules/npm/node_modules/proto-list/README.md
 lib/node_modules/npm/node_modules/proto-list/package.json
 lib/node_modules/npm/node_modules/proto-list/proto-list.js
+lib/node_modules/npm/node_modules/read-installed/README.md
+lib/node_modules/npm/node_modules/read-installed/package.json
+lib/node_modules/npm/node_modules/read-installed/read-installed.js
+lib/node_modules/npm/node_modules/read-installed/test/basic.js
+lib/node_modules/npm/node_modules/read-package-json/README.md
+lib/node_modules/npm/node_modules/read-package-json/package.json
+lib/node_modules/npm/node_modules/read-package-json/read-json.js
+lib/node_modules/npm/node_modules/read-package-json/test/basic.js
+lib/node_modules/npm/node_modules/read/.npmignore
 lib/node_modules/npm/node_modules/read/LICENCE
 lib/node_modules/npm/node_modules/read/README.md
+lib/node_modules/npm/node_modules/read/example/example.js
 lib/node_modules/npm/node_modules/read/lib/read.js
+lib/node_modules/npm/node_modules/read/node_modules/mute-stream/LICENSE
+lib/node_modules/npm/node_modules/read/node_modules/mute-stream/README.md
+lib/node_modules/npm/node_modules/read/node_modules/mute-stream/mute.js
+lib/node_modules/npm/node_modules/read/node_modules/mute-stream/package.json
+lib/node_modules/npm/node_modules/read/node_modules/mute-stream/test/basic.js
 lib/node_modules/npm/node_modules/read/package.json
+lib/node_modules/npm/node_modules/read/test/basic.js
+lib/node_modules/npm/node_modules/read/test/defaults.js
 lib/node_modules/npm/node_modules/request/LICENSE
 lib/node_modules/npm/node_modules/request/README.md
+lib/node_modules/npm/node_modules/request/aws.js
+lib/node_modules/npm/node_modules/request/aws2.js
 lib/node_modules/npm/node_modules/request/forever.js
 lib/node_modules/npm/node_modules/request/main.js
 lib/node_modules/npm/node_modules/request/mimetypes.js
 lib/node_modules/npm/node_modules/request/oauth.js
 lib/node_modules/npm/node_modules/request/package.json
+lib/node_modules/npm/node_modules/request/tests/googledoodle.png
+lib/node_modules/npm/node_modules/request/tests/run.js
+lib/node_modules/npm/node_modules/request/tests/server.js
+lib/node_modules/npm/node_modules/request/tests/squid.conf
+lib/node_modules/npm/node_modules/request/tests/ssl/ca/ca.cnf
+lib/node_modules/npm/node_modules/request/tests/ssl/ca/ca.crl
+lib/node_modules/npm/node_modules/request/tests/ssl/ca/ca.crt
+lib/node_modules/npm/node_modules/request/tests/ssl/ca/ca.csr
+lib/node_modules/npm/node_modules/request/tests/ssl/ca/ca.key
+lib/node_modules/npm/node_modules/request/tests/ssl/ca/ca.srl
+lib/node_modules/npm/node_modules/request/tests/ssl/ca/server.cnf
+lib/node_modules/npm/node_modules/request/tests/ssl/ca/server.crt
+lib/node_modules/npm/node_modules/request/tests/ssl/ca/server.csr
+lib/node_modules/npm/node_modules/request/tests/ssl/ca/server.js
+lib/node_modules/npm/node_modules/request/tests/ssl/ca/server.key
+lib/node_modules/npm/node_modules/request/tests/ssl/npm-ca.crt
+lib/node_modules/npm/node_modules/request/tests/ssl/test.crt
+lib/node_modules/npm/node_modules/request/tests/ssl/test.key
+lib/node_modules/npm/node_modules/request/tests/test-body.js
+lib/node_modules/npm/node_modules/request/tests/test-cookie.js
+lib/node_modules/npm/node_modules/request/tests/test-cookiejar.js
+lib/node_modules/npm/node_modules/request/tests/test-defaults.js
+lib/node_modules/npm/node_modules/request/tests/test-errors.js
+lib/node_modules/npm/node_modules/request/tests/test-headers.js
+lib/node_modules/npm/node_modules/request/tests/test-httpModule.js
+lib/node_modules/npm/node_modules/request/tests/test-https-strict.js
+lib/node_modules/npm/node_modules/request/tests/test-https.js
+lib/node_modules/npm/node_modules/request/tests/test-oauth.js
+lib/node_modules/npm/node_modules/request/tests/test-params.js
+lib/node_modules/npm/node_modules/request/tests/test-pipes.js
+lib/node_modules/npm/node_modules/request/tests/test-pool.js
+lib/node_modules/npm/node_modules/request/tests/test-proxy.js
+lib/node_modules/npm/node_modules/request/tests/test-qs.js
+lib/node_modules/npm/node_modules/request/tests/test-redirect.js
+lib/node_modules/npm/node_modules/request/tests/test-s3.js
+lib/node_modules/npm/node_modules/request/tests/test-timeout.js
+lib/node_modules/npm/node_modules/request/tests/test-toJSON.js
+lib/node_modules/npm/node_modules/request/tests/test-tunnel.js
 lib/node_modules/npm/node_modules/request/tunnel.js
 lib/node_modules/npm/node_modules/request/uuid.js
 lib/node_modules/npm/node_modules/request/vendor/cookie/index.js
 lib/node_modules/npm/node_modules/request/vendor/cookie/jar.js
+lib/node_modules/npm/node_modules/retry/.npmignore
+lib/node_modules/npm/node_modules/retry/License
+lib/node_modules/npm/node_modules/retry/Makefile
+lib/node_modules/npm/node_modules/retry/Readme.md
+lib/node_modules/npm/node_modules/retry/equation.gif
+lib/node_modules/npm/node_modules/retry/example/dns.js
+lib/node_modules/npm/node_modules/retry/index.js
+lib/node_modules/npm/node_modules/retry/lib/retry.js
+lib/node_modules/npm/node_modules/retry/lib/retry_operation.js
+lib/node_modules/npm/node_modules/retry/package.json
+lib/node_modules/npm/node_modules/retry/test/common.js
+lib/node_modules/npm/node_modules/retry/test/integration/test-retry-operation.js
+lib/node_modules/npm/node_modules/retry/test/integration/test-timeouts.js
+lib/node_modules/npm/node_modules/retry/test/runner.js
 lib/node_modules/npm/node_modules/rimraf/AUTHORS
 lib/node_modules/npm/node_modules/rimraf/LICENSE
 lib/node_modules/npm/node_modules/rimraf/README.md
@@ -619,6 +807,7 @@ lib/node_modules/npm/node_modules/tar/lib/pack.js
 lib/node_modules/npm/node_modules/tar/lib/parse.js
 lib/node_modules/npm/node_modules/tar/package.json
 lib/node_modules/npm/node_modules/tar/tar.js
+lib/node_modules/npm/node_modules/uid-number/LICENCE
 lib/node_modules/npm/node_modules/uid-number/README.md
 lib/node_modules/npm/node_modules/uid-number/get-uid-gid.js
 lib/node_modules/npm/node_modules/uid-number/package.json
@@ -634,8 +823,13 @@ lib/node_modules/npm/scripts/doc-build.sh
 lib/node_modules/npm/scripts/index-build.js
 lib/node_modules/npm/scripts/install.sh
 lib/node_modules/npm/scripts/release.sh
+lib/node_modules/npm/scripts/relocate.sh
 lib/node_modules/npm/test/common.js
 lib/node_modules/npm/test/disabled/bundlerecurs/package.json
+lib/node_modules/npm/test/disabled/change-bin-1/bin/foo
+lib/node_modules/npm/test/disabled/change-bin-1/package.json
+lib/node_modules/npm/test/disabled/change-bin-2/bin/bar
+lib/node_modules/npm/test/disabled/change-bin-2/package.json
 lib/node_modules/npm/test/disabled/failer/package.json
 lib/node_modules/npm/test/disabled/fast/package.json
 lib/node_modules/npm/test/disabled/package-bar/package.json
@@ -644,11 +838,22 @@ lib/node_modules/npm/test/disabled/package-config/test.js
 lib/node_modules/npm/test/disabled/package-foo/package.json
 lib/node_modules/npm/test/disabled/slow/package.json
 lib/node_modules/npm/test/disabled/startstop/package.json
+lib/node_modules/npm/test/packages/npm-test-array-bin/README
+lib/node_modules/npm/test/packages/npm-test-array-bin/bin/array-bin
+lib/node_modules/npm/test/packages/npm-test-array-bin/package.json
+lib/node_modules/npm/test/packages/npm-test-array-bin/test.js
+lib/node_modules/npm/test/packages/npm-test-blerg/README
 lib/node_modules/npm/test/packages/npm-test-blerg/package.json
 lib/node_modules/npm/test/packages/npm-test-blerg/test.js
+lib/node_modules/npm/test/packages/npm-test-bundled-git/README
 lib/node_modules/npm/test/packages/npm-test-bundled-git/minimatch-expected.json
 lib/node_modules/npm/test/packages/npm-test-bundled-git/package.json
 lib/node_modules/npm/test/packages/npm-test-bundled-git/test.js
+lib/node_modules/npm/test/packages/npm-test-dir-bin/README
+lib/node_modules/npm/test/packages/npm-test-dir-bin/bin/dir-bin
+lib/node_modules/npm/test/packages/npm-test-dir-bin/package.json
+lib/node_modules/npm/test/packages/npm-test-dir-bin/test.js
+lib/node_modules/npm/test/packages/npm-test-env-reader/README
 lib/node_modules/npm/test/packages/npm-test-env-reader/package.json
 lib/node_modules/npm/test/packages/npm-test-env-reader/test.js
 lib/node_modules/npm/test/packages/npm-test-files/.npmignore
@@ -658,27 +863,45 @@ lib/node_modules/npm/test/packages/npm-test-files/sub/include
 lib/node_modules/npm/test/packages/npm-test-files/sub/include2
 lib/node_modules/npm/test/packages/npm-test-files/sub/include4
 lib/node_modules/npm/test/packages/npm-test-files/test.sh
+lib/node_modules/npm/test/packages/npm-test-ignore-nested-nm/README
+lib/node_modules/npm/test/packages/npm-test-ignore-nested-nm/lib/node_modules/foo
+lib/node_modules/npm/test/packages/npm-test-ignore-nested-nm/package.json
+lib/node_modules/npm/test/packages/npm-test-ignore-nested-nm/test.js
 lib/node_modules/npm/test/packages/npm-test-ignore/.npmignore
+lib/node_modules/npm/test/packages/npm-test-ignore/README
 lib/node_modules/npm/test/packages/npm-test-ignore/include4
 lib/node_modules/npm/test/packages/npm-test-ignore/package.json
 lib/node_modules/npm/test/packages/npm-test-ignore/sub/include
 lib/node_modules/npm/test/packages/npm-test-ignore/sub/include2
 lib/node_modules/npm/test/packages/npm-test-ignore/sub/include4
 lib/node_modules/npm/test/packages/npm-test-ignore/test.sh
+lib/node_modules/npm/test/packages/npm-test-missing-bindir/README
 lib/node_modules/npm/test/packages/npm-test-missing-bindir/package.json
 lib/node_modules/npm/test/packages/npm-test-missing-bindir/test.js
+lib/node_modules/npm/test/packages/npm-test-optional-deps/README
 lib/node_modules/npm/test/packages/npm-test-optional-deps/package.json
 lib/node_modules/npm/test/packages/npm-test-optional-deps/test.js
+lib/node_modules/npm/test/packages/npm-test-platform-all/README
 lib/node_modules/npm/test/packages/npm-test-platform-all/package.json
+lib/node_modules/npm/test/packages/npm-test-platform/README
 lib/node_modules/npm/test/packages/npm-test-platform/package.json
+lib/node_modules/npm/test/packages/npm-test-private/README
 lib/node_modules/npm/test/packages/npm-test-private/package.json
+lib/node_modules/npm/test/packages/npm-test-shrinkwrap/README
 lib/node_modules/npm/test/packages/npm-test-shrinkwrap/npm-shrinkwrap.json
 lib/node_modules/npm/test/packages/npm-test-shrinkwrap/package.json
 lib/node_modules/npm/test/packages/npm-test-shrinkwrap/test.sh
+lib/node_modules/npm/test/packages/npm-test-test-package/README
 lib/node_modules/npm/test/packages/npm-test-test-package/package.json
+lib/node_modules/npm/test/packages/npm-test-url-dep/README
 lib/node_modules/npm/test/packages/npm-test-url-dep/package.json
 lib/node_modules/npm/test/run.js
+lib/node_modules/npm/test/tap/false_name.js
+lib/node_modules/npm/test/tap/false_name/index.js
+lib/node_modules/npm/test/tap/false_name/package.json
 lib/node_modules/npm/test/update-test.sh
+@dirrm lib/node_modules/npm/test/tap/false_name
+@dirrm lib/node_modules/npm/test/tap
 @dirrm lib/node_modules/npm/test/packages/npm-test-url-dep
 @dirrm lib/node_modules/npm/test/packages/npm-test-test-package
 @dirrm lib/node_modules/npm/test/packages/npm-test-shrinkwrap
@@ -688,12 +911,19 @@ lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/test/packages/npm-test-optional-deps
 @dirrm lib/node_modules/npm/test/packages/npm-test-missing-bindir
 @dirrm lib/node_modules/npm/test/packages/npm-test-ignore/sub
+@dirrm lib/node_modules/npm/test/packages/npm-test-ignore-nested-nm/lib/node_modules
+@dirrm lib/node_modules/npm/test/packages/npm-test-ignore-nested-nm/lib
+@dirrm lib/node_modules/npm/test/packages/npm-test-ignore-nested-nm
 @dirrm lib/node_modules/npm/test/packages/npm-test-ignore
 @dirrm lib/node_modules/npm/test/packages/npm-test-files/sub
 @dirrm lib/node_modules/npm/test/packages/npm-test-files
 @dirrm lib/node_modules/npm/test/packages/npm-test-env-reader
+@dirrm lib/node_modules/npm/test/packages/npm-test-dir-bin/bin
+@dirrm lib/node_modules/npm/test/packages/npm-test-dir-bin
 @dirrm lib/node_modules/npm/test/packages/npm-test-bundled-git
 @dirrm lib/node_modules/npm/test/packages/npm-test-blerg
+@dirrm lib/node_modules/npm/test/packages/npm-test-array-bin/bin
+@dirrm lib/node_modules/npm/test/packages/npm-test-array-bin
 @dirrm lib/node_modules/npm/test/packages
 @dirrm lib/node_modules/npm/test/disabled/startstop
 @dirrm lib/node_modules/npm/test/disabled/slow
@@ -702,6 +932,10 @@ lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/test/disabled/package-bar
 @dirrm lib/node_modules/npm/test/disabled/fast
 @dirrm lib/node_modules/npm/test/disabled/failer
+@dirrm lib/node_modules/npm/test/disabled/change-bin-2/bin
+@dirrm lib/node_modules/npm/test/disabled/change-bin-2
+@dirrm lib/node_modules/npm/test/disabled/change-bin-1/bin
+@dirrm lib/node_modules/npm/test/disabled/change-bin-1
 @dirrm lib/node_modules/npm/test/disabled/bundlerecurs
 @dirrm lib/node_modules/npm/test/disabled
 @dirrm lib/node_modules/npm/test
@@ -716,21 +950,44 @@ lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/node_modules/semver/bin
 @dirrm lib/node_modules/npm/node_modules/semver
 @dirrm lib/node_modules/npm/node_modules/rimraf
+@dirrm lib/node_modules/npm/node_modules/retry/test/integration
+@dirrm lib/node_modules/npm/node_modules/retry/test
+@dirrm lib/node_modules/npm/node_modules/retry/lib
+@dirrm lib/node_modules/npm/node_modules/retry/example
+@dirrm lib/node_modules/npm/node_modules/retry
 @dirrm lib/node_modules/npm/node_modules/request/vendor/cookie
 @dirrm lib/node_modules/npm/node_modules/request/vendor
+@dirrm lib/node_modules/npm/node_modules/request/tests/ssl/ca
+@dirrm lib/node_modules/npm/node_modules/request/tests/ssl
+@dirrm lib/node_modules/npm/node_modules/request/tests
 @dirrm lib/node_modules/npm/node_modules/request
+@dirrm lib/node_modules/npm/node_modules/read/test
+@dirrm lib/node_modules/npm/node_modules/read/node_modules/mute-stream/test
+@dirrm lib/node_modules/npm/node_modules/read/node_modules/mute-stream
+@dirrm lib/node_modules/npm/node_modules/read/node_modules
 @dirrm lib/node_modules/npm/node_modules/read/lib
+@dirrm lib/node_modules/npm/node_modules/read/example
+@dirrm lib/node_modules/npm/node_modules/read-package-json/test
+@dirrm lib/node_modules/npm/node_modules/read-package-json
+@dirrm lib/node_modules/npm/node_modules/read-installed/test
+@dirrm lib/node_modules/npm/node_modules/read-installed
 @dirrm lib/node_modules/npm/node_modules/read
 @dirrm lib/node_modules/npm/node_modules/proto-list
+@dirrm lib/node_modules/npm/node_modules/osenv/test
+@dirrm lib/node_modules/npm/node_modules/osenv
+@dirrm lib/node_modules/npm/node_modules/npmlog/test
+@dirrm lib/node_modules/npm/node_modules/npmlog
+@dirrm lib/node_modules/npm/node_modules/npm-registry-client/test/fixtures/underscore/1.3.3
+@dirrm lib/node_modules/npm/node_modules/npm-registry-client/test/fixtures/underscore
+@dirrm lib/node_modules/npm/node_modules/npm-registry-client/test/fixtures
+@dirrm lib/node_modules/npm/node_modules/npm-registry-client/test
+@dirrm lib/node_modules/npm/node_modules/npm-registry-client/lib
+@dirrm lib/node_modules/npm/node_modules/npm-registry-client
 @dirrm lib/node_modules/npm/node_modules/nopt/lib
+@dirrm lib/node_modules/npm/node_modules/nopt/examples
 @dirrm lib/node_modules/npm/node_modules/nopt/bin
 @dirrm lib/node_modules/npm/node_modules/nopt
 @dirrm lib/node_modules/npm/node_modules/node-uuid
-@dirrm lib/node_modules/npm/node_modules/node-gyp/node_modules/glob
-@dirrm lib/node_modules/npm/node_modules/node-gyp/node_modules/ansi/lib
-@dirrm lib/node_modules/npm/node_modules/node-gyp/node_modules/ansi
-@dirrm lib/node_modules/npm/node_modules/node-gyp/node_modules
-@dirrm lib/node_modules/npm/node_modules/node-gyp/lib/util
 @dirrm lib/node_modules/npm/node_modules/node-gyp/lib
 @dirrm lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/tools/Xcode/Specifications
 @dirrm lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/tools/Xcode
@@ -745,21 +1002,52 @@ lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/node_modules/node-gyp/legacy
 @dirrm lib/node_modules/npm/node_modules/node-gyp/bin
 @dirrm lib/node_modules/npm/node_modules/node-gyp
+@dirrm lib/node_modules/npm/node_modules/mkdirp/test
+@dirrm lib/node_modules/npm/node_modules/mkdirp/examples
 @dirrm lib/node_modules/npm/node_modules/mkdirp
+@dirrm lib/node_modules/npm/node_modules/minimatch/test
 @dirrm lib/node_modules/npm/node_modules/minimatch
+@dirrm lib/node_modules/npm/node_modules/lru-cache/test
 @dirrm lib/node_modules/npm/node_modules/lru-cache/lib
 @dirrm lib/node_modules/npm/node_modules/lru-cache
+@dirrm lib/node_modules/npm/node_modules/lockfile/test/fixtures
+@dirrm lib/node_modules/npm/node_modules/lockfile/test
+@dirrm lib/node_modules/npm/node_modules/lockfile
+@dirrm lib/node_modules/npm/node_modules/init-package-json/test
+@dirrm lib/node_modules/npm/node_modules/init-package-json/node_modules/promzard/test
+@dirrm lib/node_modules/npm/node_modules/init-package-json/node_modules/promzard/example/npm-init
+@dirrm lib/node_modules/npm/node_modules/init-package-json/node_modules/promzard/example
+@dirrm lib/node_modules/npm/node_modules/init-package-json/node_modules/promzard
+@dirrm lib/node_modules/npm/node_modules/init-package-json/node_modules
+@dirrm lib/node_modules/npm/node_modules/init-package-json
 @dirrm lib/node_modules/npm/node_modules/ini
 @dirrm lib/node_modules/npm/node_modules/inherits
 @dirrm lib/node_modules/npm/node_modules/graceful-fs
+@dirrm lib/node_modules/npm/node_modules/glob/test
+@dirrm lib/node_modules/npm/node_modules/glob/examples
+@dirrm lib/node_modules/npm/node_modules/glob
 @dirrm lib/node_modules/npm/node_modules/fstream/lib
+@dirrm lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/test
+@dirrm lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/example
 @dirrm lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore
 @dirrm lib/node_modules/npm/node_modules/fstream-npm/node_modules
+@dirrm lib/node_modules/npm/node_modules/fstream-npm/example
 @dirrm lib/node_modules/npm/node_modules/fstream-npm
 @dirrm lib/node_modules/npm/node_modules/fstream
+@dirrm lib/node_modules/npm/node_modules/couch-login/test
+@dirrm lib/node_modules/npm/node_modules/couch-login
 @dirrm lib/node_modules/npm/node_modules/chownr
+@dirrm lib/node_modules/npm/node_modules/block-stream/test
+@dirrm lib/node_modules/npm/node_modules/block-stream/bench
 @dirrm lib/node_modules/npm/node_modules/block-stream
 @dirrm lib/node_modules/npm/node_modules/archy
+@dirrm lib/node_modules/npm/node_modules/ansi/lib
+@dirrm lib/node_modules/npm/node_modules/ansi/examples/progress
+@dirrm lib/node_modules/npm/node_modules/ansi/examples/imgcat
+@dirrm lib/node_modules/npm/node_modules/ansi/examples/clear
+@dirrm lib/node_modules/npm/node_modules/ansi/examples/beep
+@dirrm lib/node_modules/npm/node_modules/ansi/examples
+@dirrm lib/node_modules/npm/node_modules/ansi
 @dirrm lib/node_modules/npm/node_modules/abbrev/lib
 @dirrm lib/node_modules/npm/node_modules/abbrev
 @dirrm lib/node_modules/npm/node_modules/.bin
@@ -767,10 +1055,10 @@ lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/man/man3
 @dirrm lib/node_modules/npm/man/man1
 @dirrm lib/node_modules/npm/man
-@dirrm lib/node_modules/npm/lib/utils/npm-registry-client
 @dirrm lib/node_modules/npm/lib/utils/completion
 @dirrm lib/node_modules/npm/lib/utils
 @dirrm lib/node_modules/npm/lib
+@dirrm lib/node_modules/npm/html/webfonts
 @dirrm lib/node_modules/npm/html/doc
 @dirrm lib/node_modules/npm/html/api
 @dirrm lib/node_modules/npm/html
