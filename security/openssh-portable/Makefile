@@ -161,8 +161,7 @@ CONFIGURE_ARGS+=	--localstatedir=/var
 EMPTYDIR=		/var/empty
 PREFIX=			/usr
 ETCSSH=			/etc/ssh
-USE_RC_SUBR=		yes
-SUB_FILES+=		openssh
+USE_RCORDER=		openssh
 PLIST_SUB+=		NOTBASE="@comment "
 PLIST_SUB+=		BASE=""
 PLIST_SUB+=		BASEPREFIX="${PREFIX}"
@@ -223,14 +222,7 @@ pre-su-install:
 post-install:
 	${INSTALL_DATA} -c ${WRKSRC}/ssh_config.out ${ETCSSH}/ssh_config-dist
 	${INSTALL_DATA} -c ${WRKSRC}/sshd_config.out ${ETCSSH}/sshd_config-dist
-.if defined(WITH_OVERWRITE_BASE)
-	@${ECHO_CMD} "===> Installing rc.d startup script(s)"
-	@${ECHO_CMD} "@cwd ${LOCALBASE}" >> ${TMPPLIST}
-	@${MKDIR} ${LOCALBASE}/etc/rc.d
-	@${INSTALL_SCRIPT} ${WRKDIR}/openssh ${LOCALBASE}/etc/rc.d/${RC_SCRIPT_NAME}
-	@${ECHO_CMD} "etc/rc.d/${RC_SCRIPT_NAME}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
-.endif
+
 	@${CAT} ${PKGMESSAGE}
 
 test:	build
