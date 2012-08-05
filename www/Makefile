@@ -2083,6 +2083,7 @@
     SUBDIR += xpi-passwordmaker
     SUBDIR += xpi-pdf_download
     SUBDIR += xpi-pencil
+    SUBDIR += xpi-pentadactyl
     SUBDIR += xpi-permatabs
     SUBDIR += xpi-prism
     SUBDIR += xpi-quick-locale-switcher
