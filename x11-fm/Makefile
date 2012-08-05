@@ -3,7 +3,6 @@
 
     COMMENT = X11 file managers
 
-    SUBDIR += FSViewer
     SUBDIR += asfiles
     SUBDIR += catseye-fm
     SUBDIR += dfm
