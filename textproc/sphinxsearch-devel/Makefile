@@ -100,7 +100,7 @@ SPHINX_LOG?=	/var/log/${PORTNAME}
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	${CXXFLAGS}
 CFGFILE=	${PREFIX}/etc/sphinx.conf
-USE_RC_SUBR=	sphinxsearch.sh
+USE_RC_SUBR=	sphinxsearch
 SUB_LIST+=	PORTNAME=${PORTNAME}	 \
 		CFGFILE=${CFGFILE}	 \
 		SPHINX_USR=${USERS}	 \

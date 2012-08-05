@@ -54,7 +54,7 @@ OPTIONS=	MYSQL "MySQL Database support" off \
 		ALSA "Enable ALSA channel support" off
 
 SUB_FILES=	pkg-message
-USE_RC_SUBR=	yate.sh
+USE_RC_SUBR=	yate
 
 USERS=	yate
 GROUPS=	yate

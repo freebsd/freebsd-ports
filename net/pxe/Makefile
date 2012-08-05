@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.kano.org.uk/projects/pxe/ \
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	PXE daemon, set up a boot menu for netbooting PXE enabled clients
 
-USE_RC_SUBR=	pxe.sh
+USE_RC_SUBR=	pxe
 SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-config=${PREFIX}/etc/pxe.conf \

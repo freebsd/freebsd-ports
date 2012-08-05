@@ -26,7 +26,7 @@ CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 CFLAGS+=		-I${LOCALBASE}/include
 
-USE_RC_SUBR=		jggtrans.sh
+USE_RC_SUBR=		jggtrans
 
 OPTIONS=		NODEBUG "Turn off debugging code" off \
 			EJABBERD "Use transport with ejabberd" off

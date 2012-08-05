@@ -32,7 +32,7 @@ USE_PERL5=	yes
 USE_PHP=	gd iconv json pcre simplexml sockets xml zlib
 
 WANT_PHP_WEB=	yes
-USE_RC_SUBR=	npcd.sh
+USE_RC_SUBR=	npcd
 MAN8=		npcd.8
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	'.*\.\(php\|js\|txt\)$$'

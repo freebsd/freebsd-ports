@@ -25,7 +25,7 @@ IGNOREFILES=	${DISTFILES}
 WRKSRC=		${WRKDIR}/vmware-tools-distrib
 
 ONLY_FOR_ARCHS=	i386
-USE_RC_SUBR=	vmware-guestd.sh
+USE_RC_SUBR=	vmware-guestd
 .if !defined(BATCH)
 IS_INTERACTIVE=	yes
 .endif

@@ -17,7 +17,7 @@ USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-rcp=scp
 USE_GMAKE=	yes
-USE_RC_SUBR=	pbs_server.sh pbs_sched.sh pbs_mom.sh
+USE_RC_SUBR=	pbs_server pbs_sched pbs_mom
 SUB_FILES=	pkg-message
 USE_PERL5=	yes
 USE_LDCONFIG=	yes

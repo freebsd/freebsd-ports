@@ -29,7 +29,7 @@ LATEST_LINK=	dbmail22
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/dbmail
-USE_RC_SUBR=	dbmail-pop3d.sh dbmail-lmtpd.sh dbmail-imapd.sh dbmail-timsieved.sh
+USE_RC_SUBR=	dbmail-pop3d dbmail-lmtpd dbmail-imapd dbmail-timsieved
 USE_GNOME=	glib20 pkgconfig
 USE_OPENSSL=	yes
 

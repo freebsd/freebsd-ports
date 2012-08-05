@@ -18,7 +18,7 @@ LIB_DEPENDS+=	prelude.20:${PORTSDIR}/security/libprelude \
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_RC_SUBR=	prelude-lml.sh
+USE_RC_SUBR=	prelude-lml
 CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc
 
 .include <bsd.port.pre.mk>

@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-USE_RC_SUBR=	frox.sh
+USE_RC_SUBR=	frox
 SUB_FILES=	pkg-message
 
 MAN1=		frox.1

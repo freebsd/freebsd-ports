@@ -18,7 +18,7 @@ LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
 OPTIONS=	CLAMAV "Enable CLAMAV support" off
 
-USE_RC_SUBR=	spybye.sh
+USE_RC_SUBR=	spybye
 GNU_CONFIGURE=	yes
 
 MAN1=		spybye.1

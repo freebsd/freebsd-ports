@@ -21,7 +21,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
-USE_RC_SUBR=	hudson.sh
+USE_RC_SUBR=	hudson
 
 HUDSON_HOME?=	/var/lib/hudson
 HUDSON_USER?=	www

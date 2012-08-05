@@ -32,7 +32,7 @@ P4LOG?=		/var/log/p4ftpd.log
 
 SUB_LIST=	P4LOG=${P4LOG}
 
-USE_RC_SUBR=	p4ftpd.sh
+USE_RC_SUBR=	p4ftpd
 
 .include <bsd.port.pre.mk>
 

@@ -27,7 +27,7 @@ RUNDIR=		/var/run/ircd
 LOGDIR=		/var/log/ircd
 
 HAS_CONFIGURE=	yes
-USE_RC_SUBR=	unrealircd.sh
+USE_RC_SUBR=	unrealircd
 
 USERS=		ircd
 GROUPS=		ircd

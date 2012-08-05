@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=		--with-config=${PREFIX}/etc/whoson.conf
 USE_LDCONFIG=	yes
 
-USE_RC_SUBR=	whoson.sh
+USE_RC_SUBR=	whoson
 
 MAN3=	whoson.3 wso_login.3 wso_logout.3 wso_query.3 wso_version.3
 MAN5=	whoson.conf.5

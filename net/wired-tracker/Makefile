@@ -22,7 +22,7 @@ WRKSRC=		${WRKDIR}/wired-tracker-${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir="${LOCALBASE}/lib" --includedir="${LOCALBASE}/include"
 USE_GMAKE=	yes
-USE_RC_SUBR=	trackerd.sh
+USE_RC_SUBR=	trackerd
 
 MAN1=		trackerdctl.1
 MAN5=		trackerd.conf.5

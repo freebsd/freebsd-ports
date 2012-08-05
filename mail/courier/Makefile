@@ -69,7 +69,7 @@ USE_OPENSSL=	yes
 USE_PERL5=	yes
 USE_SUBMAKE=	yes
 
-USE_RC_SUBR=	courier.sh
+USE_RC_SUBR=	courier
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

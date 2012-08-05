@@ -32,7 +32,7 @@ SUB_FILES=	pkg-deinstall
 SUB_LIST=	PKGNAME=${PKGNAME}
 
 GNU_CONFIGURE=	yes
-USE_RC_SUBR=	nessusd.sh
+USE_RC_SUBR=	nessusd
 WANT_GNOME=	yes
 .if defined(WITHOUT_NESSUS_GTK) || defined(WITHOUT_GTK)
 WITHOUT_GNOME=	yes

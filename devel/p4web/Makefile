@@ -32,7 +32,7 @@ P4LOG?=		/var/log/p4web.log
 
 SUB_LIST=	P4LOG=${P4LOG}
 
-USE_RC_SUBR=	p4web.sh
+USE_RC_SUBR=	p4web
 
 .include <bsd.port.pre.mk>
 

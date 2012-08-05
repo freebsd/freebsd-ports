@@ -29,7 +29,7 @@ CONFIGURE_ARGS=	--without-bdb --disable-docbook --with-confdir=${PREFIX}/etc/pop
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-USE_RC_SUBR=	pcheckd.sh pproxy.sh pserv.sh 0ringd.sh
+USE_RC_SUBR=	pcheckd pproxy pserv 0ringd
 
 MAN1=		pcheck.1 pcontrol.1 pdeliver.1 pstatus.1 ptestpdm.1
 MAN7=		popular-log.7

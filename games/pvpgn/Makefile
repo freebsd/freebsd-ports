@@ -40,7 +40,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/pvpgn \
 		--localstatedir=${DATADIR} \
 		--with-libraries=${LOCALBASE}/lib
 
-USE_RC_SUBR=	bnetd.sh
+USE_RC_SUBR=	bnetd
 
 MAN1=		bnbot.1 bnchat.1 bnetd.1 bnftp.1 bni2tga.1 bnibuild.1 \
 		bniextract.1 bnilist.1 bnpass.1 bnstat.1 bntrackd.1 tgainfo.1

@@ -55,7 +55,7 @@ USE_GNOME+=	glib12 gtk12
 PLIST_SUB+=	INSTALLXGTKTOOL="@comment "
 .endif
 .else
-USE_RC_SUBR=	vmware-guestd.sh
+USE_RC_SUBR=	vmware-guestd
 .endif
 .if ${OSVERSION} >= 700000
 LIB_DEPENDS+=	c.6:${PORTSDIR}/misc/compat6x

@@ -26,7 +26,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 
 USE_LDCONFIG=	yes
 
-USE_RC_SUBR=	sockd.sh
+USE_RC_SUBR=	sockd
 
 LICENSE=	BSD
 

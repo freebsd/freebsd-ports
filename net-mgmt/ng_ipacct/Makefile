@@ -32,7 +32,7 @@ MAN8=		ipacctctl.8
 MANLANG=	ru.KOI8-R
 MANCOMPRESSED=	yes
 
-USE_RC_SUBR=	ng_ipacct.sh
+USE_RC_SUBR=	ng_ipacct
 SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>

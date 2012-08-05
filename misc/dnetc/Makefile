@@ -25,7 +25,7 @@ DISTINFO_FILE=	${MASTERDIR}/distinfo.${ARCH}
 
 ONLY_FOR_ARCHS=	i386 sparc64 amd64 powerpc
 
-USE_RC_SUBR=	dnetc.sh
+USE_RC_SUBR=	dnetc
 NO_BUILD=	yes
 
 BINDIR=		${PREFIX}/distributed.net

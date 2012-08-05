@@ -23,7 +23,7 @@ OPTIONS=	SANCP "Include sancp sensor" off \
 		PADS "Include pads sensor" off
 
 NO_BUILD=	yes
-USE_RC_SUBR=	example_agent.sh pcap_agent.sh snort_agent.sh
+USE_RC_SUBR=	example_agent pcap_agent snort_agent
 TCLSH_CMD?=	tclsh8.4
 WRKSRC=		${WRKDIR}/sguil-${PORTVERSION}
 SUB_LIST=	SGUILDIR=${SGUILDIR}
@@ -41,7 +41,7 @@ WITH_PCRE=	true
 
 .if defined(WITH_SANCP)
 RUN_DEPENDS+=	sancp:${PORTSDIR}/security/sancp
-USE_RC_SUBR+=	sancp_agent.sh
+USE_RC_SUBR+=	sancp_agent
 SUB_FILES+=	sancp_agent.sh
 PLIST_SUB+=	USESANCP=
 .else
@@ -50,7 +50,7 @@ PLIST_SUB+=	USESANCP="@comment "
 
 .if defined(WITH_PADS)
 RUN_DEPENDS+=	pads:${PORTSDIR}/net-mgmt/pads
-USE_RC_SUBR+=	pads_agent.sh
+USE_RC_SUBR+=	pads_agent
 SUB_FILES+=	pads_agent.sh
 PLIST_SUB+=	USEPADS=
 .else

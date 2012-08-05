@@ -24,7 +24,7 @@ WOBINARCHIVE=	${DISTNAME}${EXTRACT_SUFX}
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-USE_RC_SUBR=	wotaskd.sh JavaMonitor.sh
+USE_RC_SUBR=	wotaskd JavaMonitor
 USE_JAVA=	1.4+
 EXTRACT_PRESERVE_OWNERSHIP=	yes
 

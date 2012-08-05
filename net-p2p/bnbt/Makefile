@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 USE_DOS2UNIX=	yes
 
 SUB_FILES=	pkg-message
-USE_RC_SUBR=	bnbt.sh
+USE_RC_SUBR=	bnbt
 
 PORTDOCS=	footer.html header.html
 

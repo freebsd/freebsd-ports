@@ -36,7 +36,7 @@ P4LOG?=		/var/log/p4p.log
 SUB_LIST=	P4CACHE=${P4CACHE} \
 		P4LOG=${P4LOG}
 
-USE_RC_SUBR=	p4p.sh
+USE_RC_SUBR=	p4p
 
 .include <bsd.port.pre.mk>
 

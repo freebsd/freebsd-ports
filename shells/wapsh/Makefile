@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A system to allow remote shell logins via a WAP phone or web browser
 
-USE_RC_SUBR=	htshd.sh
+USE_RC_SUBR=	htshd
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 

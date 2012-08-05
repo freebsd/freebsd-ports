@@ -29,7 +29,7 @@ SUB_LIST=	ACROBASE8=${ACROBASE8} \
 		LINUXSH=${LINUXBASE}/bin/sh \
 		PLUGINDIR=${PLUGINDIR} \
 		KMODDIR=${KMODDIR}
-USE_RC_SUBR=	linux_adobe.sh
+USE_RC_SUBR=	linux_adobe
 
 .include <bsd.port.pre.mk>
 

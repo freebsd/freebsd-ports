@@ -18,7 +18,7 @@ COMMENT=	A simple STUN (RFC 3489) server and client
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GMAKE=	yes
-USE_RC_SUBR=	stund.sh
+USE_RC_SUBR=	stund
 MAKE_ENV=	"CXX=${CXX}"
 
 do-install:

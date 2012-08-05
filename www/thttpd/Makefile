@@ -22,7 +22,7 @@ IGNOREFILES=	notes.html
 
 GNU_CONFIGURE=	yes
 
-USE_RC_SUBR=	thttpd.sh
+USE_RC_SUBR=	thttpd
 SUB_FILES=	pkg-message thttpd.conf.sample
 SUB_LIST=	WWWOWN=${WWWOWN}
 PORTDOCS=	notes.html

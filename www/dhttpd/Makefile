@@ -21,7 +21,7 @@ PLIST_FILES=	sbin/dhttpd
 
 MAN1=		dhttpd.1
 
-USE_RC_SUBR=	dhttpd.sh
+USE_RC_SUBR=	dhttpd
 
 pre-everything::
 	@${ECHO_MSG} "=============================================================="

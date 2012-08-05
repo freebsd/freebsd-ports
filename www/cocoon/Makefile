@@ -16,7 +16,7 @@ DISTNAME=	${PDISTNAME}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML Web Development Framework
 
-USE_RC_SUBR=		${PORTNAME}.sh
+USE_RC_SUBR=		${PORTNAME}
 USE_JAVA=		yes
 JAVA_VERSION=		1.5+
 USE_PYTHON=		1.6+

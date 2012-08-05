@@ -18,7 +18,7 @@ COMMENT=	Application that allows multiple users to watch serial consoles
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-master=${DEFAULTHOST} --with-port=${DEFAULTPORT} \
 		--with-pam --with-libwrap --with-openssl
-USE_RC_SUBR=	conserver.sh
+USE_RC_SUBR=	conserver
 
 MAN1=	console.1
 MAN5=	conserver.cf.5 conserver.passwd.5

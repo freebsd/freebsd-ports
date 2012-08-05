@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-Net-Netmask>=0:${PORTSDIR}/net-mgmt/p5-Net-Netmask \
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
-USE_RC_SUBR=	pop-before-smtp.sh
+USE_RC_SUBR=	pop-before-smtp
 SUB_FILES=	pkg-message
 SUB_LIST=	PERL=${PERL}
 

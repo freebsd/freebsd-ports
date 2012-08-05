@@ -22,7 +22,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 #		xmllint:${PORTSDIR}/textproc/libxml2 \
 #		${LOCALBASE}/share/xsl/docbook/lib/lib.xsl:${PORTSDIR}/textproc/docbook-xsl
 
-USE_RC_SUBR=	tinyproxy.sh
+USE_RC_SUBR=	tinyproxy
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes

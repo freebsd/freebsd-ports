@@ -21,7 +21,7 @@ OPTIONS=	IPFW	"checks if configured tables are available" on \
 
 .include <bsd.port.pre.mk>
 
-USE_RC_SUBR=	snortsam.sh
+USE_RC_SUBR=	snortsam
 SUB_FILES=	pkg-message \
 		pkg-install
 

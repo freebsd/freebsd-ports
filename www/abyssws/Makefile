@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/abyssws
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 
-USE_RC_SUBR=	abyssws.sh
+USE_RC_SUBR=	abyssws
 
 .include <bsd.port.pre.mk>
 

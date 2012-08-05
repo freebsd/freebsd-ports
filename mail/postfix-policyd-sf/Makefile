@@ -21,7 +21,7 @@ COMMENT=	Anti-spam plugin for Postfix (written in C)
 
 USE_MYSQL=	yes
 USE_GMAKE=	yes
-USE_RC_SUBR=	policyd.sh
+USE_RC_SUBR=	policyd
 
 REALNAME=	${PKGNAME:C/-${PORTVERSION}.*//}
 

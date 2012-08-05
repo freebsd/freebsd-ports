@@ -93,7 +93,7 @@ INFO=		dico
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 SUB_FILES+=	pkg-message
-USE_RC_SUBR=	dicod.sh
+USE_RC_SUBR=	dicod
 
 post-patch:
 	@${REINPLACE_CMD} 's/@bindir@/@sbindir@/' ${WRKSRC}/dicod/Makefile.in

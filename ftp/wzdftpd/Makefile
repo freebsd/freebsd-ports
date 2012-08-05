@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular FTP server configurable online using SITE commands
 
 USE_AUTOTOOLS=	libtool
-USE_RC_SUBR=	wzdftpd.sh
+USE_RC_SUBR=	wzdftpd
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

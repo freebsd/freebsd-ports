@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 MAINTAINER=	umq@ueo.co.jp
 COMMENT=	A milter for BATV (Bounce Address Tag Validation)
 
-USE_RC_SUBR=	milter-batv.sh
+USE_RC_SUBR=	milter-batv
 USE_OPENSSL=	TRUE
 
 SUB_FILES=	milter-batv.sh

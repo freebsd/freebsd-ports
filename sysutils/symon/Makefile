@@ -39,7 +39,7 @@ SUBDIR=		lib
 SUBDIR+=	symon
 MAN8+=		symon.8
 PLIST_SUB+=	SYMON=""
-USE_RC_SUBR+=	symon.sh
+USE_RC_SUBR+=	symon
 .else
 PLIST_SUB+=	SYMON="@comment "
 .endif
@@ -47,7 +47,7 @@ PLIST_SUB+=	SYMON="@comment "
 SUBDIR+=	symux
 MAN8+=		symux.8
 PLIST_SUB+=	SYMUX=""
-USE_RC_SUBR+=	symux.sh
+USE_RC_SUBR+=	symux
 .else
 PLIST_SUB+=	SYMUX="@comment "
 .endif

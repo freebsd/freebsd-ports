@@ -19,7 +19,7 @@ COMMENT=	Dynamic Tunnel Configuration Protocol daemon and client
 RUN_DEPENDS=	qpopauth:${PORTSDIR}/mail/qpopper
 .endif
 
-USE_RC_SUBR=	dtcpc.sh dtcps.sh
+USE_RC_SUBR=	dtcpc dtcps
 USE_RUBY=	yes
 RUBY_VER=	1.8
 MAKE_ENV+=	RUBY=${RUBY}

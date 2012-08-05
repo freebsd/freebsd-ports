@@ -22,7 +22,7 @@ RUN_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 NO_WRKSUBDIR=	yes
 USE_DOS2UNIX=	Makefile
 USE_ZIP=	yes
-USE_RC_SUBR=	wizd.sh
+USE_RC_SUBR=	wizd
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|./skin|${DATADIR}/skins|' ${WRKSRC}/wizd.conf

@@ -29,7 +29,7 @@ GROUPS=		mail maildrop postfix
 NO_LATEST_LINK=	yes
 USE_SUBMAKE=	yes
 USE_PERL5_BUILD=yes
-USE_RC_SUBR=	postfix.sh
+USE_RC_SUBR=	postfix
 SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
 
 # back compat pull in settings from POSTFIX_OPTIONS for convenience when

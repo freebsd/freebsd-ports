@@ -17,7 +17,7 @@ DIST_SUBDIR=	3dm2
 MAINTAINER=	ports.maintainer@evilphi.com
 COMMENT=	3ware RAID controller monitoring daemon and web server
 
-USE_RC_SUBR=	3dm2.sh
+USE_RC_SUBR=	3dm2
 
 OPTIONS=	SSLFIX "Install KB16625-patched binaries" On
 

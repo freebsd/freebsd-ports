@@ -26,7 +26,7 @@ MAINTAINER=		marius@FreeBSD.org
 COMMENT=		Sun AFB aka Sun Elite 3D microcode firmware loader
 
 ONLY_FOR_ARCHS=		sparc64
-USE_RC_SUBR=		afbinit.sh
+USE_RC_SUBR=		afbinit
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 PKGMESSAGE=		${WRKDIR}/pkg-message
 

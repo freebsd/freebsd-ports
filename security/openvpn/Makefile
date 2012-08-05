@@ -37,7 +37,7 @@ MAN8=		openvpn.8
 OPTIONS=	PW_SAVE "Interactive passwords may be read from a file" off \
 		PKCS11  "Use security/pkcs11-helper" off
 
-USE_RC_SUBR=	openvpn.sh
+USE_RC_SUBR=	openvpn
 USE_LDCONFIG=	${PREFIX}/lib
 
 SUB_FILES=	pkg-message

@@ -19,7 +19,7 @@ NOSTROMO_DIR?=		${PREFIX}/nostromo
 NOSTROMO_LOGDIR?=	${NOSTROMO_DIR}/logs
 NOSTROMO_LOGDIR_PERMS?=	0775
 
-USE_RC_SUBR=	nostromo.sh
+USE_RC_SUBR=	nostromo
 
 MAN8=		nhttpd.8
 

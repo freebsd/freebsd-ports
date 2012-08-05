@@ -75,7 +75,7 @@ CONFIGURE_ARGS+=	--without-icu
 LIB_DEPENDS+=		icuuc:${PORTSDIR}/devel/icu
 .endif
 
-USE_RC_SUBR=		vmware-guestd.sh vmware-kmod.sh
+USE_RC_SUBR=		vmware-guestd vmware-kmod
 
 .include <bsd.port.pre.mk>
 

@@ -35,7 +35,7 @@ OPTIONS=	IPV6 "Build with IPv6 support" on \
 MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
-USE_RC_SUBR=	snmpd.sh snmptrapd.sh
+USE_RC_SUBR=	snmpd snmptrapd
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 WANT_PERL=	yes

@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: hylafax
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# be sure to initialize the following:
+#   server: %%PREFIX%%/sbin/faxsetup
+#   modems: %%PREFIX%%/sbin/faxaddmodem
+#   incoming calls: /etc/ttys
+
+hylafax_enable=${hylafax_enable-"NO"}
+
+. /etc/rc.subr
+
+name="hylafax"
+rcvar="hylafax_enable"
+
+start_cmd="%%PREFIX%%/sbin/hylafax start"
+stop_cmd="%%PREFIX%%/sbin/hylafax stop"
+procname="%%PREFIX%%/sbin/faxq"
+
+load_rc_config $name
+run_rc_command "$1"

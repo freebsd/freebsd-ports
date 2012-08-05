@@ -17,8 +17,7 @@ LIB_DEPENDS=	spread.1:${PORTSDIR}/net/spread
 
 MAKEFILE=	makefile
 
-USE_RC_SUBR=	spreadlogd.sh
-SUB_FILES=	spreadlogd.sh
+USE_RC_SUBR=	spreadlogd
 
 PLIST_FILES=	sbin/spreadlogd etc/spreadlogd.conf.sample
 

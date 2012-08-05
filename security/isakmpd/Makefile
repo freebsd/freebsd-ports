@@ -25,7 +25,7 @@ BROKEN=		requires IPsec support
 BUILD_DEPENDS+=	keynote:${PORTSDIR}/security/keynote
 .endif
 
-USE_RC_SUBR=	isakmpd.sh
+USE_RC_SUBR=	isakmpd
 WRKSRC=		${WRKDIR}/isakmpd
 MAKE_ENV+=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man LC_ALL=C
 

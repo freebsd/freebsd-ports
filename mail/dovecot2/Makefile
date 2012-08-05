@@ -28,7 +28,7 @@ CONFLICTS=	dovecot-1.[0-9]*
 ######################################################################
 
 USE_ICONV=	yes
-USE_RC_SUBR=	dovecot.sh
+USE_RC_SUBR=	dovecot
 MAKE_JOBS_SAFE=	yes
 
 GNU_CONFIGURE=	yes

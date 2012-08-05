@@ -26,7 +26,7 @@ MAN8=		netdump.8 netdump-server.8
 NETDUMP_OWN?=	netdump
 NETDUMP_GRP?=	operator
 
-USE_RC_SUBR=	netdump-server.sh
+USE_RC_SUBR=	netdump-server
 PLIST_SUB+=	NETDUMP_OWN=${NETDUMP_OWN} \
 		NETDUMP_GRP=${NETDUMP_GRP}
 SUB_FILES+=	pkg-message

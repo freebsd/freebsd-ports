@@ -20,7 +20,7 @@ COMMENT=	The "Internet Relay Chat" Server
 CONFLICTS_INSTALL=	charybdis-[0-9]* ircd-hybrid-[0-9]* Nefarious-[0-9]* \
 			ru-ircd-hybrid-[0-9]* ircd-ru-[0-9]*
 
-USE_RC_SUBR=	ircd.sh
+USE_RC_SUBR=	ircd
 MAN5=		iauth.conf.5
 MAN8=		ircd.8 iauth.8 ircdwatch.8
 

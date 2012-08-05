@@ -34,7 +34,7 @@ AMAVISDIR?=	/var/amavis
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--localstatedir=${AMAVISDIR} --with-working-dir=tmp
-USE_RC_SUBR=	${PORTNAME}.sh
+USE_RC_SUBR=	${PORTNAME}
 
 SUB_FILES=	pkg-message
 SUB_LIST=	AMAVISUSER=${AMAVISUSER} \

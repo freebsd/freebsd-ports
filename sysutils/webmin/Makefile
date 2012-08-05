@@ -23,7 +23,7 @@ RUN_DEPENDS=	p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay \
 
 USE_PERL5=	yes
 USE_PYTHON=	yes
-USE_RC_SUBR=	webmin.sh
+USE_RC_SUBR=	webmin
 SUB_LIST=	PERL5=${PERL}
 SUB_FILES=	pkg-message
 

@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: gnump3d
+# REQUIRE: DAEMON NETWORKING LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+gnump3d_enable=${gnump3d_enable-"NO"}
+gnump3d_program=${gnump3d_program:-%%PREFIX%%/bin/gnump3d}
+gnump3d_flags=${gnump3d_flags-"--fast --quiet --background"}
+gnump3d_pidfile=${gnump3d_pidfile:-/var/run/gnump3d.pid}
+
+name="gnump3d"
+rcvar=gnump3d_enable
+command="%%PREFIX%%/bin/gnump3d"
+command_interpreter="%%PERL%%"
+pidfile="${gnump3d_pidfile}"
+
+load_rc_config $name
+
+start_cmd=gnump3d_start
+
+# hack to capture the PID
+gnump3d_start() {
+	pid=`check_process ${command} ${command_interpreter}`
+	if [ -z $pid ]; then
+		echo "Starting ${name}."
+		${command} ${gnump3d_flags}
+		pid=`check_process ${command} ${command_interpreter}`
+		echo $pid > ${gnump3d_pidfile}
+	else
+		echo "${name} already running? (pid = $pid)"
+	fi
+}
+
+run_rc_command "$1"

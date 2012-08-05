@@ -93,7 +93,7 @@ LATEST_LINK=	mysql41-server
 
 CONFLICTS=	mysql-server-[35].* mysql-server-4.[02-9].*
 
-USE_RC_SUBR=	mysql-server.sh
+USE_RC_SUBR=	mysql-server
 
 USERS=		mysql
 GROUPS=		mysql

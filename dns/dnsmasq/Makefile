@@ -71,7 +71,7 @@ CFLAGS+=	-DHAVE_LUASCRIPT
 USE_LUA=	5.1
 .endif
 
-USE_RC_SUBR=	dnsmasq.sh
+USE_RC_SUBR=	dnsmasq
 
 .include <bsd.port.pre.mk>
 

@@ -17,7 +17,7 @@ COMMENT=	A Unix SOCKS 4 and 5 proxy server
 
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
-USE_RC_SUBR=	nylon.sh
+USE_RC_SUBR=	nylon
 
 GNU_CONFIGURE=	yes
 # Necessary for $PREFIX to work:

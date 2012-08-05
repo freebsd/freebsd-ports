@@ -17,7 +17,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 
-USE_RC_SUBR=	proxsmtpd.sh
+USE_RC_SUBR=	proxsmtpd
 SUB_FILES=	pkg-message
 
 MAN5=		proxsmtpd.conf.5

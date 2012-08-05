@@ -20,7 +20,7 @@ LIB_DEPENDS=	evtlog.0:${PORTSDIR}/sysutils/eventlog
 MAN5=		syslog-ng.conf.5
 MAN8=		syslog-ng.8
 
-USE_RC_SUBR=	syslog-ng.sh
+USE_RC_SUBR=	syslog-ng
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 SUB_FILES=	pkg-message

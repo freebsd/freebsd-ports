@@ -29,7 +29,7 @@ MAN1=	openxpki-configure.1 \
 	openxpkictl.1
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_RC_SUBR=	openxpki.sh
+USE_RC_SUBR=	openxpki
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix ${PREFIX}
 

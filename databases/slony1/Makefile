@@ -22,7 +22,7 @@ USE_BISON=	build
 USE_PGSQL=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-USE_RC_SUBR=	slon.sh
+USE_RC_SUBR=	slon
 
 SUB_FILES=	pkg-message slon-mkservice.sh
 SUB_LIST+=	NAME=slon

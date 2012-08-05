@@ -19,7 +19,7 @@ COMMENT=	A Kana-to-Kanji conversion system, binary part
 
 LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/canna-lib
 
-USE_RC_SUBR=	canna.sh
+USE_RC_SUBR=	canna
 USE_BZIP2=	yes
 USE_IMAKE=	yes
 ALL_TARGET=	canna

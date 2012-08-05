@@ -19,7 +19,7 @@ PLIST_FILES=	sbin/fprobe
 PORTDOCS=	ChangeLog README
 SUB_LIST=	NAME=${PORTNAME}
 USE_BZIP2=	yes
-USE_RC_SUBR=	fprobe.sh
+USE_RC_SUBR=	fprobe
 
 MAN8=		fprobe.8
 

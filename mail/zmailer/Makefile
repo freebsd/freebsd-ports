@@ -62,7 +62,7 @@ MAN8=		hold.8zm router.8zm scheduler.8zm sendmail.8zm sm.8zm smtp.8zm \
 
 SUB_FILES=	pkg-install
 PKGINSTALL=	${WRKDIR}/pkg-install
-USE_RC_SUBR=	zmailer.sh
+USE_RC_SUBR=	zmailer
 
 # local variable (we can't use ${SED} here)
 DOMAIN!=	/bin/hostname | ${SED} -e "s:^"`/bin/hostname -s`"\.*::g"

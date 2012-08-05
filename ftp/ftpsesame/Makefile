@@ -17,7 +17,7 @@ COMMENT=	Helper for pf firewall to pass FTP protocol
 
 MAN8=		ftpsesame.8
 PLIST_FILES=	bin/ftpsesame
-USE_RC_SUBR=	ftpsesame.sh
+USE_RC_SUBR=	ftpsesame
 
 MAKE_ARGS=	PREFIX=${PREFIX} MANPREFIX=${MANPREFIX}
 

@@ -38,7 +38,7 @@ MAN5=		syslog-ng.conf.5
 MAN8=		syslog-ng.8
 
 USE_LDCONFIG=	yes
-USE_RC_SUBR=	syslog-ng.sh
+USE_RC_SUBR=	syslog-ng
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack

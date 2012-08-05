@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: dualserver
+# REQUIRE: SERVERS
+# BEFORE:
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="dualserver"
+rcvar=dualserver_enable
+start_cmd="dualserver_startcmd"
+stop_cmd="dualserver_stopcmd"
+
+dualserver_startcmd ()
+{
+%%PREFIX%%/sbin/dualserver
+}
+
+dualserver_stopcmd ()
+{
+killall dualserver
+}
+
+load_rc_config $name
+run_rc_command "$1"

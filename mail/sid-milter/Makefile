@@ -35,7 +35,7 @@ SITE+=		${FILESDIR}/site.config.m4
 MAN3=		ar.3
 PLIST_FILES+=	include/libar.h lib/libar.a
 .endif
-USE_RC_SUBR=	milter-sid.sh
+USE_RC_SUBR=	milter-sid
 
 .include <bsd.port.pre.mk>
 

@@ -22,7 +22,7 @@ RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 USE_BZIP2=	yes
 USE_PERL5_RUN=	5.8.0+
 NO_BUILD=	yes
-USE_RC_SUBR=	gnump3d.sh
+USE_RC_SUBR=	gnump3d
 SUB_LIST+=	PERL=${PERL}
 
 MAN1=		gnump3d-index.1 gnump3d-top.1 gnump3d.1 gnump3d.conf.1

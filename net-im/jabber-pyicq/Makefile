@@ -32,7 +32,7 @@ OPTIONS=	JABBER "Use with jabberd14 (net-im/jabber)" off \
 
 NO_BUILD=	yes
 USE_PYTHON=	yes
-USE_RC_SUBR=	jabber-pyicq-transport.sh
+USE_RC_SUBR=	jabber-pyicq-transport
 LOCAL_PYTHON=	${PYTHON_CMD}
 
 SUB_FILES=	pkg-message README.jabberd14 README.jabberd2 README.external

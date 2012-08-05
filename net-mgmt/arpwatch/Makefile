@@ -26,7 +26,7 @@ INSTALL_TARGET=	install install-man
 MAN8=		arpwatch.8 arpsnmp.8
 
 SUB_FILES=	pkg-message
-USE_RC_SUBR=	arpwatch.sh
+USE_RC_SUBR=	arpwatch
 
 .ifdef ARPDIR
 MAKE_ARGS=	ARPDIR=${ARPDIR}

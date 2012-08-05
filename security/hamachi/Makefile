@@ -20,7 +20,7 @@ PATCH_DEPENDS=	upx:${PORTSDIR}/archivers/upx
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 
-USE_RC_SUBR=	hamachi.sh
+USE_RC_SUBR=	hamachi
 PLIST_FILES=	bin/hamachi bin/hamachi-init sbin/hamachi-tuncfg
 PORTDOCS=	README CHANGES
 MAKE_ENV=	HAMACHI_DST=${PREFIX}/bin TUNCFG_DST=${PREFIX}/sbin

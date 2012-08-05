@@ -24,7 +24,7 @@ RUN_DEPENDS=	p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay \
 FETCH_CMD?=	/usr/bin/fetch -pRr
 NO_BUILD=	yes
 USE_PERL5=	yes
-USE_RC_SUBR=	usermin.sh
+USE_RC_SUBR=	usermin
 SUB_LIST=	PERL5=${PERL}
 
 USERMIN_MODULES=

@@ -46,7 +46,7 @@ EXILOGDIR?=	${PREFIX}/exilog
 .if defined(WITHOUT_AGENT)
 PLIST_SUB+=	AGENT="@comment "
 .else
-USE_RC_SUBR=	exilog.sh
+USE_RC_SUBR=	exilog
 PLIST_SUB+=	AGENT=""
 .endif
 

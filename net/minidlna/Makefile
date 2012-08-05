@@ -32,7 +32,7 @@ EXTRACT_AFTER_ARGS=|${TAR} -xpf - --exclude getifaddr.c
 
 PKGMESSAGE=	${WRKSRC}/pkg-message
 SUB_FILES+=	pkg-message
-USE_RC_SUBR=	minidlna.sh
+USE_RC_SUBR=	minidlna
 SUB_LIST+=	USER=${USERS}
 
 USERS=	dlna

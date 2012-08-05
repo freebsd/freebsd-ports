@@ -106,7 +106,7 @@ PLIST_SUB+=		AMULECMD="@comment "
 .if !defined(WITHOUT_AMULEDAEMON)
 CONFIGURE_ARGS+=	--enable-amule-daemon
 PLIST_SUB+=		AMULEDAEMON=""
-USE_RC_SUBR=		amuled.sh
+USE_RC_SUBR=		amuled
 .else
 CONFIGURE_ARGS+=	--disable-amule-daemon
 PLIST_SUB+=		AMULEDAEMON="@comment "

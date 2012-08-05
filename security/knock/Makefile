@@ -31,7 +31,7 @@ OPTIONS=	SERVER		"Install knockd server"		on \
 
 .if defined(WITH_SERVER)
 MAN1=		knockd.1
-USE_RC_SUBR=	knockd.sh
+USE_RC_SUBR=	knockd
 PLIST_FILES+=	bin/knockd
 PLIST_FILES+=	etc/knockd.conf.sample
 .endif

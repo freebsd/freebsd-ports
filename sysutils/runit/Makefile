@@ -14,7 +14,7 @@ MASTER_SITES=	http://smarden.org/${PORTNAME}/ \
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Service supervision tools compatible with DJB daemontools
 
-USE_RC_SUBR=	runsvdir.sh
+USE_RC_SUBR=	runsvdir
 WRKSRC=		${WRKDIR}/admin/${DISTNAME}
 
 SERVICE_DIR?=	/var/service

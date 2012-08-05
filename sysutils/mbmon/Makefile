@@ -29,7 +29,7 @@ PORTDOCS=	ChangeLog ChangeLog.jp ReadMe ReadMe.jp ReadMe.tech
 OPTIONS=	SMB "enable smb(4) support" on
 
 .if ${PORTNAME} == "mbmon"
-USE_RC_SUBR=	mbmon.sh
+USE_RC_SUBR=	mbmon
 .endif
 
 .include <bsd.port.pre.mk>

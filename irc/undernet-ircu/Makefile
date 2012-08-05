@@ -19,7 +19,7 @@ USERS=		undernet
 GROUPS=		${USERS}
 
 GNU_CONFIGURE=		yes
-USE_RC_SUBR=		undernet.sh
+USE_RC_SUBR=		undernet
 CONFIGURE_ARGS=		--with-dpath=${PREFIX}/etc/ --with-symlink=no
 
 PLIST_FILES=	bin/ircd bin/umkpasswd bin/convert-conf etc/ircd.conf.example

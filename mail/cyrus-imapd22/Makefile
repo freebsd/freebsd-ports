@@ -22,7 +22,7 @@ CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^2].*
 
 LATEST_LINK=	${PORTNAME}22
 
-USE_RC_SUBR=	imapd.sh
+USE_RC_SUBR=	imapd
 USE_OPENSSL=	yes
 USE_PERL5=	yes
 USE_BDB=	yes

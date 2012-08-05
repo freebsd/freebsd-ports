@@ -19,7 +19,7 @@ CFLAGS+=	-DCONFFILE=\\\"${PREFIX}/etc/yaunc.conf\\\"
 PLIST_FILES=	bin/yaunc \
 		etc/yaunc.conf.sample
 
-USE_RC_SUBR=	yaunc.sh
+USE_RC_SUBR=	yaunc
 
 MAN1=		yaunc.1
 

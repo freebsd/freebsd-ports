@@ -21,7 +21,7 @@ USE_TWISTED=	words web conch names
 
 PORTDOCS=	README.txt INSTALL.txt PKG-INFO
 
-USE_RC_SUBR=	punjab.sh
+USE_RC_SUBR=	punjab
 
 SUB_FILES=	pkg-message punjab.tac
 SUB_LIST+=	"PYTHON_CMD=${PYTHON_CMD}"

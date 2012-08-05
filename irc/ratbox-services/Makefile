@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	moggie@elasticmind.net
 COMMENT=	A highly configurable services package for use with ircd-ratbox
 
-USE_RC_SUBR=	ratbox-services.sh
+USE_RC_SUBR=	ratbox-services
 
 USERS=		ircservices
 GROUPS=		${USERS}

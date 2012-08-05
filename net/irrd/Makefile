@@ -24,7 +24,7 @@ MAN8=		irrd.8
 
 IRRD_CONFDIR=	${PREFIX}/etc
 
-USE_RC_SUBR=	irrd.sh
+USE_RC_SUBR=	irrd
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	YACC="${YACC}"
 #CONFIGURE_ARGS+=	--disable-thread

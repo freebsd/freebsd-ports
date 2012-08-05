@@ -22,7 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
 USE_PERL5=	yes
 
-USE_RC_SUBR=	snmptt.sh
+USE_RC_SUBR=	snmptt
 
 SCRIPTS=	snmptt snmptt-net-snmp-test snmpttconvert \
 		snmpttconvertmib snmptthandler

@@ -30,7 +30,7 @@ USE_PERL5=	yes
 NO_BUILD=	yes
 
 MAN1=		tircd.1
-USE_RC_SUBR=	tircd.sh
+USE_RC_SUBR=	tircd
 
 post-patch:
 	${REINPLACE_CMD} -e '1s,^#!/usr/bin/perl,#!${PREFIX}/bin/perl,' \

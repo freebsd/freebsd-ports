@@ -21,7 +21,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_RC_SUBR=	gkrellmd.sh
+USE_RC_SUBR=	gkrellmd
 WANT_GNOME=	yes
 USE_OPENSSL=	yes		# cannot set after bsd.port.pre.mk
 

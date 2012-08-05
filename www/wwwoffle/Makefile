@@ -19,7 +19,7 @@ LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_RC_SUBR=	${PORTNAME}d.sh
+USE_RC_SUBR=	${PORTNAME}d
 
 # $SPOOL seems like a common name which could be used for other things, so
 # use $WWWOFFLE_SPOOL as the overriding setting.

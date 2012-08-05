@@ -42,7 +42,7 @@ LIB_DEPENDS+=	c.6:${PORTSDIR}/misc/compat6x
 PLIST_SUB+=	INSTALLXGTKTOOL:="@comment "
 .endif
 .else
-USE_RC_SUBR=	vmware-guestd.sh
+USE_RC_SUBR=	vmware-guestd
 .endif
 
 RESTRICTED=	"Not sure if we can redistribute this."

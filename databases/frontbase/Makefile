@@ -22,7 +22,7 @@ LICENSE_PERMS=	no-auto-accept # nothing else allowed either
 
 NO_PACKAGE=	license requires confirmation
 
-USE_RC_SUBR=	frontbase.sh
+USE_RC_SUBR=	frontbase
 USE_LDCONFIG=	yes
 SUB_FILES+=	pkg-message
 

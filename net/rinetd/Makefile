@@ -28,7 +28,7 @@ MAN8=		rinetd.8
 PORTDOCS=	index.html
 PLIST_FILES=	sbin/rinetd
 
-USE_RC_SUBR=	rinetd.sh
+USE_RC_SUBR=	rinetd
 
 .include <bsd.port.pre.mk>
 

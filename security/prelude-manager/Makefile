@@ -19,7 +19,7 @@ LIB_DEPENDS+=	prelude.20:${PORTSDIR}/security/libprelude \
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf
-USE_RC_SUBR=	prelude-manager.sh
+USE_RC_SUBR=	prelude-manager
 CONFIGURE_ARGS=		--with-html-dir=${PREFIX}/share/doc \
 			--localstatedir=/var
 CONFIGURE_ENV=	LIBS="${LIBS} -L${LOCALBASE}/lib"

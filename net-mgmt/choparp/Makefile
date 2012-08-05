@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	Simple proxy arp daemon
 
-USE_RC_SUBR=	choparp.sh
+USE_RC_SUBR=	choparp
 
 MANCOMPRESSED=	yes
 MAN8=		choparp.8

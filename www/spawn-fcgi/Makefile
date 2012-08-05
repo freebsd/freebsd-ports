@@ -15,7 +15,7 @@ COMMENT=	spawn-fcgi is used to spawn fastcgi applications
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_RC_SUBR=	spawn-fcgi.sh
+USE_RC_SUBR=	spawn-fcgi
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

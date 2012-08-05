@@ -21,7 +21,7 @@ COMMENT=	A Japanese input method, binary part
 
 LIB_DEPENDS=	sj3lib.1:${PORTSDIR}/japanese/sj3-lib
 
-USE_RC_SUBR=	sj3.sh
+USE_RC_SUBR=	sj3
 USE_IMAKE=	yes
 SUB_FILES=	sj3_freebsd.tmpl
 SUB_LIST=	DESTDIR=${DESTDIR}

@@ -55,7 +55,7 @@ MAN1=	drizzle.1 \
 
 MAN8=	drizzled.8
 
-USE_RC_SUBR=	drizzle-server.sh
+USE_RC_SUBR=	drizzle-server
 
 .include <bsd.port.pre.mk>
 

@@ -24,7 +24,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN8=		bfilter.8
-USE_RC_SUBR=	bfilter.sh
+USE_RC_SUBR=	bfilter
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--enable-debug

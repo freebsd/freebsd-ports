@@ -16,7 +16,7 @@ MAINTAINER=	mikeg@bsd-box.net
 COMMENT=	Utility for administering filesystem changes
 
 USE_OPENSSL=	yes
-USE_RC_SUBR=	radmind.sh
+USE_RC_SUBR=	radmind
 MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes

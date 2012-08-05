@@ -24,7 +24,7 @@ USE_BZIP2=	yes
 USE_BISON=	build
 USE_GMAKE=	yes
 
-USE_RC_SUBR=	olsrd.sh
+USE_RC_SUBR=	olsrd
 MAN8=		olsrd.8
 MAN5=		olsrd.conf.5
 MANCOMPRESSED=	yes

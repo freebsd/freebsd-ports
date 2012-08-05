@@ -18,7 +18,7 @@ COMMENT=	High performance peer-to-peer hub for the ADC network
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 
-USE_RC_SUBR=	uhub.sh
+USE_RC_SUBR=	uhub
 USERS=		uhub
 GROUPS=		uhub
 SHAREGRP=	uhub

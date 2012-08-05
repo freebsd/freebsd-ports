@@ -22,7 +22,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 NO_BUILD=	YES
 
-USE_RC_SUBR=	tomcat6.sh
+USE_RC_SUBR=	tomcat6
 SUB_FILES=	pkg-install
 
 MAJOR_VER=	${PORTVERSION:R}

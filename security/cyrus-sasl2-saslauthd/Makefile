@@ -32,7 +32,7 @@ DOCSDIR=	${PREFIX}/share/doc/cyrus-sasl2
 
 MAN8=		saslauthd.8
 
-USE_RC_SUBR=	saslauthd.sh
+USE_RC_SUBR=	saslauthd
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes

@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	"--prefix=${PREFIX}"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_PERL5=	yes
-USE_RC_SUBR=	${PORTNAME}.sh
+USE_RC_SUBR=	${PORTNAME}
 
 .include <bsd.port.pre.mk>
 

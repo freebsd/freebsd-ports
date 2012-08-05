@@ -57,9 +57,9 @@ GMOND_CONF=	${WRKDIR}/gmond.conf
 
 .include <bsd.port.pre.mk>
 
-USE_RC_SUBR=	gmond.sh
+USE_RC_SUBR=	gmond
 .if defined (WITH_GMETAD)
-USE_RC_SUBR+=	gmetad.sh
+USE_RC_SUBR+=	gmetad
 .endif
 
 .if defined (WITH_GMETAD)

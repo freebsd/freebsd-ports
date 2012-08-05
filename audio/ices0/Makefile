@@ -26,7 +26,7 @@ USE_PERL5=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=  yes
 LATEST_LINK=	ices0
-USE_RC_SUBR=	ices0.sh
+USE_RC_SUBR=	ices0
 SUB_FILES+=	message message-bin
 CONFIGURE_ARGS+=--program-suffix=0
 

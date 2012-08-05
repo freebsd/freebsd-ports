@@ -17,7 +17,7 @@ COMMENT=	Dictionary server for the SKK Japanese-input software
 
 RUN_DEPENDS=	${LOCALBASE}/share/skk/${SKKJISYO}:${PORTSDIR}/japanese/skk-jisyo
 
-USE_RC_SUBR=	skkserv.sh
+USE_RC_SUBR=	skkserv
 WRKSRC=		${WRKDIR}/skk-${PORTVERSION}
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	SUBDIRS='skkserv'

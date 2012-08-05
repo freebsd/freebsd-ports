@@ -16,7 +16,7 @@ MASTER_SITES=	http://dyn.pl/client/UNIX/ez-ipupdate/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Update your host name on any dynamic DNS service
 
-USE_RC_SUBR=	ez-ipupdate.sh
+USE_RC_SUBR=	ez-ipupdate
 GNU_CONFIGURE=	yes
 
 post-install:
