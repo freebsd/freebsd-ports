@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	taint
-PORTVERSION=	0.5.3
+PORTVERSION=	1.0.0
 CATEGORIES=	security
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
