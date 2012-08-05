@@ -34,4 +34,9 @@ additional users and repositories can be configured.
 
 By default, the git user is created for use by gitolite.
 
+
+A quick-install guide can be found in:
+
+%%DOCSDIR%%/README.txt
+
 ==============================================================================
