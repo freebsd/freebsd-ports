@@ -17,11 +17,15 @@ COMMENT=	Python implementation of the RFC 4408 SPF protocol
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dns>=0:${PORTSDIR}/dns/py-dns
 
+OPTIONS_DEFINE=	DOCS
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	py${PORTNAME}
 
 PORTDOCS=	CHANGELOG README
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e '1 s|/usr/bin/python|${PYTHON_CMD}|' ${WRKSRC}/spf.py
@@ -29,7 +33,7 @@ post-patch:
 post-install:
 	${CHMOD} ${BINMODE} ${PYTHONPREFIX_SITELIBDIR}/spf.py
 	${LN} -s ${PYTHONPREFIX_SITELIBDIR}/spf.py ${PREFIX}/bin/
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
