@@ -16,8 +16,8 @@ MASTER_SITE_SUBDIR=	releases/gcc-${VERSIONSTRING}
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.4
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
-		mpfr.4:${PORTSDIR}/math/mpfr
+LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
+		mpfr:${PORTSDIR}/math/mpfr
 RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 
 DEPRECATED=	Superseded by GCC 4.6, only kept for the sake of cad/salome
@@ -52,7 +52,8 @@ LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ARGS+=--disable-nls \
+CONFIGURE_ARGS+=--disable-bootstrap \
+		--disable-nls \
 		--enable-languages=c,c++,fortran \
 		--libdir=${TARGLIB} \
 		--libexecdir=${LIBEXEC} \
@@ -65,7 +66,6 @@ CONFIGURE_ARGS+=--disable-nls \
 		--with-pkgversion="FreeBSD Ports Collection" \
 		--with-system-zlib
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
-ALL_TARGET=	bootstrap-lean
 USE_LDCONFIG=	${TARGLIB}
 PLIST_SUB=	GCC_VER=${PORTVERSION} \
 		GNU_HOST=${CONFIGURE_TARGET} \
