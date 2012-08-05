@@ -46,5 +46,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
-
+ 
 .include <bsd.port.mk>
