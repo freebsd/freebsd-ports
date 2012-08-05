@@ -1,9 +1,9 @@
 The MSRP protocol stack implementation for clients written in python.
 
-Message Session Relay Protocol (MSRP) is a protocol for transmitting a
-series of related instant messages in the context of a session. Message
-sessions are treated like any other media stream when set up via a
-rendezvous or session creation protocol such as the Session Initiation
-Protocol (SIP).
+Message Session Relay Protocol (MSRP) is a protocol for transmitting
+a series of related instant messages in the context of a session.
+Message sessions are treated like any other media stream
+when set up via a rendezvous or session creation protocol
+such as the Session Initiation Protocol (SIP).
 
-WWW:	http://sipsimpleclient.com/wiki/SipMSRPApi
+WWW:	http://mediaproxy.ag-projects.com/projects/msrp/wiki
