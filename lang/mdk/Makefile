@@ -7,25 +7,59 @@
 #
 
 PORTNAME=	mdk
-PORTVERSION=	1.2.1
-PORTREVISION=	12
+PORTVERSION=	1.2.6
 CATEGORIES=	lang gnome
-MASTER_SITES=	${MASTER_SITE_GNU:S/%SUBDIR%/${PORTNAME}\/v${PORTVERSION}/} \
-		SF
+MASTER_SITES=	GNU/${PORTNAME}/v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of utilities for developing programs using MIX and MIXAL
 
-LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile \
-		readline.6:${PORTSDIR}/devel/readline
+LICENSE=	GPLv3
 
-USE_GNOME=	libglade2
+OPTIONS_DEFINE=	GLADE GUILE
+OPTIONS_DEFAULT=GLADE GUILE
+
+USE_GNOME=	glib20 intltool
+USE_NCURSES=	yes
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-nls
+MAKE_JOBS_SAFE=	yes
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 INFO=		mdk
+PLIST_FILES=	bin/mixasm \
+		bin/mixvm \
+		share/locale/de/LC_MESSAGES/mdk.mo \
+		%%DATADIR%%/mixal-mode.el \
+		%%DATADIR%%/mixvm.el
+PLIST_DIRS=	%%DATADIR%%
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGLADE}
+USE_GNOME+=	libglade2
+PLIST_FILES+=	bin/gmixvm \
+		%%DATADIR%%/mixgtk.glade
+.else
+CONFIGURE_ARGS+=--disable-gui
+.endif
+
+.if ${PORT_OPTIONS:MGUILE}
+LIB_DEPENDS+=	guile:${PORTSDIR}/lang/guile
+PLIST_FILES+=	bin/mixguile \
+		%%DATADIR%%/mixguile.scm \
+		%%DATADIR%%/mixguile-commands.scm \
+		%%DATADIR%%/mixguile-vm-stat.scm
+.else
+CONFIGURE_ARGS+=--without-guile
+.endif
+
+.if exists(${LOCALBASE}/lib/libreadline.so)
+LIB_DEPENDS+=	readline:${PORTSDIR}/devel/readline
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \
