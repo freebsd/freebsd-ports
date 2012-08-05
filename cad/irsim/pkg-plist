@@ -1,6 +1,6 @@
+%%NOTCL%%bin/genspktbl
+%%NOTCL%%bin/gentbl
 bin/irsim
-%%SCHEME%%bin/gentbl
-%%SCHEME%%bin/genspktbl
 lib/irsim/doc/irsim-analyzer.doc
 lib/irsim/doc/irsim.doc
 lib/irsim/doc/netchange.doc
