@@ -1,0 +1,34 @@
+bin/qpdfview
+share/applications/qpdfview.desktop
+%%DATADIR%%/go-first.svg
+%%DATADIR%%/x-office-presentation.svg
+%%DATADIR%%/do-not-scale.svg
+%%DATADIR%%/tab-new.svg
+%%DATADIR%%/document-save.svg
+%%DATADIR%%/go-down.svg
+%%DATADIR%%/zoom-in.svg
+%%DATADIR%%/document-print.svg
+%%DATADIR%%/object-rotate-left.svg
+%%DATADIR%%/one-page.svg
+%%DATADIR%%/go-jump.svg
+%%DATADIR%%/fit-to-page-width.svg
+%%DATADIR%%/object-rotate-right.svg
+%%DATADIR%%/fit-to-page.svg
+%%DATADIR%%/edit-find.svg
+%%DATADIR%%/two-columns.svg
+%%DATADIR%%/go-next.svg
+%%DATADIR%%/two-pages.svg
+%%DATADIR%%/one-column.svg
+%%DATADIR%%/document-open.svg
+%%DATADIR%%/go-last.svg
+%%DATADIR%%/process-stop.svg
+%%DATADIR%%/qpdfview_de.qm
+%%DATADIR%%/zoom-out.svg
+%%DATADIR%%/go-up.svg
+%%DATADIR%%/go-previous.svg
+%%DATADIR%%/view-fullscreen.svg
+%%DATADIR%%/help.html
+%%DATADIR%%/qpdfview.svg
+%%DATADIR%%/view-refresh.svg
+@dirrmtry share/applications
+@dirrm %%DATADIR%%
