@@ -9,4 +9,4 @@ hull as well. The program is written in ANSI C++. It is highly portable,
 it should be very easy to compile and run on all major computer systems. 
 It can be also used as a library embedded into other applications.
 
-WWW:  http://tetgen.berlios.de/
+WWW:  http://tetgen.org/

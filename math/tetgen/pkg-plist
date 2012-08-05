@@ -1,5 +1,0 @@
-bin/tetgen
-include/tetgen.h
-lib/libtet.a
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.poly
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
