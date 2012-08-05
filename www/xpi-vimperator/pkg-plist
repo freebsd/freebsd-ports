@@ -44,10 +44,12 @@
 %%XPI_XPIDIR%%/common/content/sanitizer.js
 %%XPI_XPIDIR%%/common/content/services.js
 %%XPI_XPIDIR%%/common/content/statusline.js
+%%XPI_XPIDIR%%/common/content/statusline.js.orig
 %%XPI_XPIDIR%%/common/content/style.js
 %%XPI_XPIDIR%%/common/content/tabs.js
 %%XPI_XPIDIR%%/common/content/template.js
 %%XPI_XPIDIR%%/common/content/util.js
+%%XPI_XPIDIR%%/common/content/util.js.orig
 %%XPI_XPIDIR%%/common/content/x-click-but21.png
 %%XPI_XPIDIR%%/common/locale/en-US/all.xml
 %%XPI_XPIDIR%%/common/locale/en-US/autocommands.xml
