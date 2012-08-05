@@ -86,6 +86,7 @@ include/wine/windows/amstream.h
 include/wine/windows/amstream.idl
 include/wine/windows/amvideo.h
 include/wine/windows/amvideo.idl
+include/wine/windows/appcompatapi.h
 include/wine/windows/appmgmt.h
 include/wine/windows/asptlb.h
 include/wine/windows/asptlb.idl
@@ -197,6 +198,7 @@ include/wine/windows/dbs.idl
 include/wine/windows/dbt.h
 include/wine/windows/dciddi.h
 include/wine/windows/dciman.h
+include/wine/windows/dcommon.h
 include/wine/windows/dde.h
 include/wine/windows/dde.rh
 include/wine/windows/ddeml.h
@@ -253,6 +255,8 @@ include/wine/windows/dsound.h
 include/wine/windows/dsrole.h
 include/wine/windows/dvdmedia.h
 include/wine/windows/dwmapi.h
+include/wine/windows/dwrite.h
+include/wine/windows/dwrite.idl
 include/wine/windows/dxdiag.h
 include/wine/windows/dxerr8.h
 include/wine/windows/dxerr9.h
@@ -847,6 +851,7 @@ lib/wine/dsound.dll.so
 lib/wine/dssenh.dll.so
 lib/wine/dswave.dll.so
 lib/wine/dwmapi.dll.so
+lib/wine/dwrite.dll.so
 lib/wine/dxdiag.exe.so
 lib/wine/dxdiagn.dll.so
 lib/wine/dxgi.dll.so
@@ -988,6 +993,7 @@ lib/wine/fakedlls/dsound.dll
 lib/wine/fakedlls/dssenh.dll
 lib/wine/fakedlls/dswave.dll
 lib/wine/fakedlls/dwmapi.dll
+lib/wine/fakedlls/dwrite.dll
 lib/wine/fakedlls/dxdiag.exe
 lib/wine/fakedlls/dxdiagn.dll
 lib/wine/fakedlls/dxgi.dll
@@ -1443,6 +1449,7 @@ lib/wine/libdplayx.def
 lib/wine/libdpnet.def
 lib/wine/libdsound.def
 lib/wine/libdwmapi.def
+lib/wine/libdwrite.def
 lib/wine/libdxerr8.a
 lib/wine/libdxerr9.a
 lib/wine/libdxgi.def
