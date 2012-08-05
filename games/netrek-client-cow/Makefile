@@ -25,6 +25,8 @@ CONFIGURE_ARGS+=	NORSA='\#'
 post-patch:
 	${REINPLACE_CMD} -e 's|ushort  damage|unsigned short damage|' \
 		${WRKSRC}/short.c
+	${REINPLACE_CMD} -e 's|inline void|void|' \
+		${WRKSRC}/local.[ch]
 	${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' \
 		${WRKSRC}/x11sprite.c ${WRKSRC}/netrek-client-cow.desktop
 	${REINPLACE_CMD} -e 's|games|bin|' \
