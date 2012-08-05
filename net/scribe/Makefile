@@ -6,6 +6,7 @@
 
 PORTNAME=	scribe
 DISTVERSION=	2.2.2012.01.07
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/facebook/scribe/tarball/${GITVERSION}/
 DISTNAME=	facebook-scribe-${GITVERSION}
@@ -20,8 +21,6 @@ LIB_DEPENDS=	boost_system:${PORTSDIR}/devel/boost-libs \
 RUN_DEPENDS=	p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Thrift>0:${PORTSDIR}/devel/p5-Thrift \
 		${PYTHON_SITELIBDIR}/thrift/__init__.py:${PORTSDIR}/devel/py-thrift
-
-BROKEN=		does not compile
 
 GITVERSION=	63e4824
 FETCH_ARGS=	-pRr
