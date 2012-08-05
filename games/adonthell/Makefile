@@ -7,20 +7,20 @@
 
 PORTNAME=	adonthell
 PORTVERSION=	0.3.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	SAVANNAH
 DISTFILES=	${PORTNAME}-src-${PORTVERSION}${EXTRACT_SUFX} \
 	   	wastesedge-src-${WEDGE_VERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@bebik.net
 COMMENT=	A free role playing game
 
 LICENSE=	GPLv2
 LICENSE_DISTFILES=	${DISTFILES}
 
-LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
-		freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	vorbis:${PORTSDIR}/audio/libvorbis \
+		freetype:${PORTSDIR}/print/freetype2
 
 USE_SDL=	mixer ttf sdl
 USE_PYTHON=	yes
@@ -35,7 +35,7 @@ PLIST_SUB=	VERSION="${PORTVERSION:R}"
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-WEDGE_VERSION=	0.3.4
+WEDGE_VERSION=	0.3.5
 
 .include <bsd.port.pre.mk>
 
