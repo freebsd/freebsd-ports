@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Reader
-PORTVERSION=	0.42
+PORTVERSION=	0.44
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -31,8 +31,8 @@ MAN3=		XML::Reader.3 \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPP}
-BUILD_DEPENDS+=	p5-XML-Parsepp>=0:${PORTSDIR}/textproc/p5-XML-Parsepp
-RUN_DEPENDS+=	p5-XML-Parsepp>=0:${PORTSDIR}/textproc/p5-XML-Parsepp
+BUILD_DEPENDS+=	p5-XML-Parsepp>=0.04:${PORTSDIR}/textproc/p5-XML-Parsepp
+RUN_DEPENDS+=	p5-XML-Parsepp>=0.04:${PORTSDIR}/textproc/p5-XML-Parsepp
 .else
 BUILD_DEPENDS+=	p5-XML-Parser>=1:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS+=	p5-XML-Parser>=1:${PORTSDIR}/textproc/p5-XML-Parser
@@ -41,7 +41,7 @@ RUN_DEPENDS+=	p5-XML-Parser>=1:${PORTSDIR}/textproc/p5-XML-Parser
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} >= 501400
-TEST_DEPENDS+=	p5-XML-Parsepp>=0:${PORTSDIR}/textproc/p5-XML-Parsepp
+TEST_DEPENDS+=	p5-XML-Parsepp>=0.04:${PORTSDIR}/textproc/p5-XML-Parsepp
 .endif
 
 .include <bsd.port.post.mk>
