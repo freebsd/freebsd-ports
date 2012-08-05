@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libevent
-PORTVERSION=	0.0.4
+PORTVERSION=	0.0.5
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -16,9 +16,9 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	webmaster@kibab.com
 COMMENT=	Libevent extension for PHP
 
-LIB_DEPENDS=event:${PORTSDIR}/devel/libevent
-
 LICENSE=	PHP301
+
+LIB_DEPENDS=	event:${PORTSDIR}/devel/libevent
 
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
