@@ -3766,6 +3766,7 @@
     SUBDIR += rubygem-ffi
     SUBDIR += rubygem-file-tail
     SUBDIR += rubygem-filemagic
+    SUBDIR += rubygem-formatador
     SUBDIR += rubygem-gdata
     SUBDIR += rubygem-gem_plugin
     SUBDIR += rubygem-gemcutter
