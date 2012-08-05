@@ -18,6 +18,8 @@ LIB_DEPENDS+=	ical:${PORTSDIR}/devel/libical
 
 LICENSE=	GPLv2
 
+BROKEN=		does not build
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_CONFIGURE=	yes
 USE_GNUSTEP_BACK=	yes
