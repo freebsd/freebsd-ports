@@ -1,0 +1,36 @@
+$FreeBSD$
+
+diff -ur common/session-env.c.orig common/session-env.c
+--- common/session-env.c.orig	2012-03-27 01:00:37.000000000 -0700
++++ common/session-env.c	2012-07-29 18:35:08.000000000 -0700
+@@ -328,8 +328,12 @@
+   
+   /* Get the default value with and additional fallback for GPG_TTY.  */
+   defvalue = getenv (name);
+-  if ((!defvalue || !*defvalue) && !strcmp (name, "GPG_TTY") && ttyname (0))
+-    defvalue = ttyname (0);
++  if ((!defvalue || !*defvalue) && !strcmp (name, "GPG_TTY"))
++    {
++      defvalue = ttyname (0);
++      if (!defvalue)
++        defvalue = "/dev/tty";
++    }
+   if (defvalue)
+     {
+       /* Record the default value for later use so that we are safe
+diff -ur common/simple-pwquery.c.orig common/simple-pwquery.c
+--- common/simple-pwquery.c.orig	2012-03-27 01:00:37.000000000 -0700
++++ common/simple-pwquery.c	2012-07-29 18:37:38.000000000 -0700
+@@ -224,7 +224,11 @@
+   dft_ttyname = getenv ("GPG_TTY");
+ #ifndef HAVE_W32_SYSTEM
+   if ((!dft_ttyname || !*dft_ttyname) && ttyname (0))
+-    dft_ttyname = ttyname (0);
++    {
++      dft_ttyname = ttyname (0);
++      if (!dft_ttyname)
++        dft_ttyname = "/dev/tty";
++    }
+ #endif
+   if (dft_ttyname && *dft_ttyname)
+     {
