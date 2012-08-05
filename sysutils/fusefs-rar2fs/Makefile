@@ -6,29 +6,30 @@
 #
 
 PORTNAME=	rar2fs
-PORTVERSION=	1.13.0
+PORTVERSION=	1.15.1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}:rar2fs http://www.rarlab.com/rar/:unrarsrc
 PKGNAMEPREFIX=	fusefs-
-DISTFILES=	rar2fs-1.13.0.tar.gz:rar2fs unrarsrc-4.0.7.tar.gz:unrarsrc
+DISTFILES=	rar2fs-1.15.1.tar.gz:rar2fs unrarsrc-4.2.4.tar.gz:unrarsrc
 
 MAINTAINER=	joris@vandalon.nl
 COMMENT=	Mount rar archives as filesystem
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	unrar.3:${PORTSDIR}/archivers/libunrar4 \
-		fuse.2:${PORTSDIR}/sysutils/fusefs-libs
+LIB_DEPENDS=	unrar:${PORTSDIR}/archivers/libunrar4 \
+		fuse:${PORTSDIR}/sysutils/fusefs-libs
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-fuse-lib=${LOCALBASE}/lib \
+	--with-fuse=${LOCALBASE}/include/fuse \
+	--with-unrar=${WRKDIR}/unrar \
+	--with-unrar-lib=${LOCALBASE}/lib
 
 PLIST_FILES=	bin/${PORTNAME}
 MAN1=		rar2fs.1
 USE_GMAKE=	yes
-
-post-patch:
-	${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},' \
-		-e 's,%%PREFIX%%,${LOCALBASE},' \
-		${WRKSRC}/config.mk
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
