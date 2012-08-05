@@ -1,18 +1,22 @@
 #!/bin/sh
-# $FreeBSD$
 
+# $FreeBSD$
+#
 # PROVIDE: jscal
 # REQUIRE: linux_js
 # KEYWORD: shutdown
 
-jscal_enable=${jscal_enable-"NO"}
+. /etc/rc.subr
+
+name=jscal
+rcvar=jscal_enable
+
+load_rc_config $name
+
+jscal_enable=${jscal_enable:-"NO"}
 jscal_devices="${jscal_devices:-/dev/input/js*}"
 jscal_state="${jscal_state:-/var/db/jscal-state}"
 
-. /etc/rc.subr
-
-name="jscal"
-rcvar=jscal_enable
 command="%%PREFIX%%/bin/jscal"
 start_cmd="jscal_start"
 stop_cmd="jscal_stop"
@@ -38,5 +42,4 @@ jscal_stop()
 	done
 }
 
-load_rc_config $name
 run_rc_command "$1"
