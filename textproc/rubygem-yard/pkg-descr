@@ -6,5 +6,5 @@ exported to a number of formats very easily, and also supports extending for
 custom Ruby constructs such as custom class level definitions.
 
 WWW: http://yardoc.org/
-     https://github.com/lsegal/yard
+WWW: https://github.com/lsegal/yard
 RG:  https://rubygems.org/gems/yard
