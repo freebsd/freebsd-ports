@@ -1,36 +1,36 @@
-bin/piklab
+%%KDE4%%bin/piklab
 bin/piklab-coff
 bin/piklab-hex
 bin/piklab-prog
-share/applications/kde4/piklab.desktop
-share/apps/katepart/syntax/asm-pic.xml
-share/apps/katepart/syntax/coff-c-pic.xml
-share/apps/katepart/syntax/coff-pic.xml
-share/apps/katepart/syntax/jal-pic.xml
-share/apps/piklab/hexeditorpartui.rc
-share/apps/piklab/katepartui.rc
-share/apps/piklab/pics/breakpoint_active.png
-share/apps/piklab/pics/breakpoint_disabled.png
-share/apps/piklab/pics/breakpoint_invalid.png
-share/apps/piklab/pics/breakpoint_reached.png
-share/apps/piklab/pics/program_counter.png
-share/apps/piklab/pics/program_counter_disabled.png
-share/apps/piklab/piklabui.rc
-share/doc/HTML/en/piklab/index.docbook
-share/icons/hicolor/16x16/apps/piklab.png
-share/icons/hicolor/32x32/apps/piklab.png
-share/icons/hicolor/32x32/mimetypes/piklab_project.png
-share/icons/hicolor/48x48/apps/piklab.png
-share/icons/hicolor/64x64/apps/piklab.png
+%%KDE4%%share/applications/kde4/piklab.desktop
+%%KDE4%%share/apps/katepart/syntax/asm-pic.xml
+%%KDE4%%share/apps/katepart/syntax/coff-c-pic.xml
+%%KDE4%%share/apps/katepart/syntax/coff-pic.xml
+%%KDE4%%share/apps/katepart/syntax/jal-pic.xml
+%%KDE4%%share/apps/piklab/hexeditorpartui.rc
+%%KDE4%%share/apps/piklab/katepartui.rc
+%%KDE4%%share/apps/piklab/pics/breakpoint_active.png
+%%KDE4%%share/apps/piklab/pics/breakpoint_disabled.png
+%%KDE4%%share/apps/piklab/pics/breakpoint_invalid.png
+%%KDE4%%share/apps/piklab/pics/breakpoint_reached.png
+%%KDE4%%share/apps/piklab/pics/program_counter.png
+%%KDE4%%share/apps/piklab/pics/program_counter_disabled.png
+%%KDE4%%share/apps/piklab/piklabui.rc
+%%KDE4%%share/doc/HTML/en/piklab/index.docbook
+%%KDE4%%share/icons/hicolor/16x16/apps/piklab.png
+%%KDE4%%share/icons/hicolor/32x32/apps/piklab.png
+%%KDE4%%share/icons/hicolor/32x32/mimetypes/piklab_project.png
+%%KDE4%%share/icons/hicolor/48x48/apps/piklab.png
+%%KDE4%%share/icons/hicolor/64x64/apps/piklab.png
 share/locale/cs/LC_MESSAGES/piklab.mo
 share/locale/de/LC_MESSAGES/piklab.mo
 share/locale/es/LC_MESSAGES/piklab.mo
 share/locale/fr/LC_MESSAGES/piklab.mo
 share/locale/hu/LC_MESSAGES/piklab.mo
 share/locale/it/LC_MESSAGES/piklab.mo
-share/mime/packages/piklab.xml
-@dirrm share/doc/HTML/en/piklab
-@dirrm share/apps/piklab/pics
-@dirrm share/apps/piklab
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
+%%KDE4%%share/mime/packages/piklab.xml
+%%KDE4%%@dirrm share/doc/HTML/en/piklab
+%%KDE4%%@dirrm share/apps/piklab/pics
+%%KDE4%%@dirrm share/apps/piklab
+%%KDE4%%@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
+%%KDE4%%@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
