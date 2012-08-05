@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	yard
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.2.1
 CATEGORIES=	textproc devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A documentation generation tool for Ruby
+
+LICENSE=	MIT
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
