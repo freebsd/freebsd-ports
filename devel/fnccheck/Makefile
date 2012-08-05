@@ -6,35 +6,38 @@
 #
 
 PORTNAME=	fnccheck
-PORTVERSION=	1.2
+PORTVERSION=	3.2.0
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}
+DISTNAME=	FunctionCheck-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A profiling library/utilities for C/C++ programs
 
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
+
+USE_BINUTILS=	yes
+USE_AUTOTOOLS=	libtoolize aclocal automake autoconf
+LIBTOOLIZE_ARGS=--force
+ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
+AUTOMAKE_ARGS=	--force-missing --add-missing --foreign
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
-USE_CSTD=	gnu89
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-devel-${PORTVERSION}
+STRIP=		# none
 
-DOCS=		README.txt README1ST.txt CHANGES.txt \
-		doc/fncdump.info doc/html/fncdump_toc.html \
-		doc/html/fncdump.html
+INFO=		libfc
 
-STRIP=		#
-
-do-install:
-.for B in fncdump fncaverage
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/$B ${PREFIX}/bin
-.endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/libfnccheck.so ${PREFIX}/lib
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for D in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/$D ${DOCSDIR}
-.endfor
-.endif
+post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile.am" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|-ldl -lpthread|| ; \
+		 s|-lbfd$$|-lbfd -liberty| ; \
+		 s|-Wall -O3|-Wall|'
+	@${REINPLACE_CMD} -e \
+		'/^SUBDIRS/s|test||' ${WRKSRC}/Makefile.am
 
 .include <bsd.port.mk>
