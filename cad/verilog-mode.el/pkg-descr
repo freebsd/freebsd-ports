@@ -2,9 +2,9 @@ Verilog-mode.el is a Verilog mode for Emacs which provides context-sensitive
 highlighting, auto indenting, and provides macro expansion capabilities to
 greatly reduce Verilog coding time.
 
-Recent versions allow you to insert AUTOS in non-AUTO designs, so IP interconnect
-can be easily modified. You can also expand Verilog-2001 ".*" instantiations, to
-see what ports will be connected by simulators.
+Recent versions allow you to insert AUTOS in non-AUTO designs, so IP
+interconnect can be easily modified. You can also expand Verilog-2001 ".*"
+instantiations, to see what ports will be connected by simulators.
 
 Author:	Michael McNamara <mac@verilog.com>, Wilson Snyder <wsnyder@wsnyder.org>
 WWW:	http://www.veripool.org/wiki/verilog-mode

@@ -6,28 +6,30 @@
 #
 
 PORTNAME=	verilog-mode.el
-PORTVERSION=	790
+PORTVERSION=	801
 CATEGORIES=	cad elisp
 MASTER_SITES=	http://www.veripool.org/ftp/
-DISTNAME=	verilog-mode-${PORTVERSION}.el
+DISTNAME=	${PORTNAME:R}-${PORTVERSION}.${PORTNAME:E}
 EXTRACT_SUFX=	.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs lisp modules for the Verilog language
 
-NO_BUILD=	yes
-EXTRACT_AFTER_ARGS=	> ${ELFILE}
+LICENSE=	GPLv3 # (or later)
 
-ELFILE=		verilog-mode.el
-EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
-XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
+EXTRACT_AFTER_ARGS=	> ${PORTNAME}
+
+NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
+
+USE_EMACS=	yes
+EMACS_NO_BUILD_DEPENDS=	yes
+
+PLIST_FILES=	${EMACS_SITE_LISPDIR}/${PORTNAME}
 
 do-install:
-	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKDIR}/${ELFILE} ${DATADIR}/
-	${MKDIR} ${XEMACSLISPDIR}
-	${LN} -sf ${DATADIR}/${ELFILE} ${EMACSLISPDIR}/
-	${LN} -sf ${DATADIR}/${ELFILE} ${XEMACSLISPDIR}/
+	@${MKDIR} ${PREFIX}/${EMACS_SITE_LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME} ${PREFIX}/${EMACS_SITE_LISPDIR}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
