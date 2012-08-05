@@ -37,7 +37,7 @@ OPTIONS=	SERIAL		"SERIAL support"	on \
 		DEVEL		"Install header files"	off \
 		CGI		"Web CGI interface"	off \
 
-USE_RC_SUBR=	nut.sh nut_upsmon.sh nut_upslog.sh
+USE_RC_SUBR=	nut nut_upsmon nut_upslog
 SUB_LIST+=	STATEDIR=${STATEDIR}
 PLIST_SUB+=	STATEDIR=${STATEDIR}
 

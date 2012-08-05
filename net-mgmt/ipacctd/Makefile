@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.wuppy.net.ru/pub/FreeBSD/local/ipacctd/ \
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	IP accounting using divert socket
 
-USE_RC_SUBR=	ipacctd.sh
+USE_RC_SUBR=	ipacctd
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ENV+=	BINDIR="${PREFIX}/sbin"

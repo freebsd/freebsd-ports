@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_RC_SUBR=	msyslogd.sh
+USE_RC_SUBR=	msyslogd
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_LDCONFIG=	yes
 MANCOMPRESSED=	yes

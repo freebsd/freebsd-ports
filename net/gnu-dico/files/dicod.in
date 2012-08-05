@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: dicod
+# REQUIRE: DAEMON
+#
+# Add the following line to /etc/rc.conf to enable dicod:
+#
+# dicod_enable="YES"
+
+
+dicod_enable=${dicod_enable-"NO"}
+
+. /etc/rc.subr
+
+name=dicod
+rcvar=dicod_enable
+command=%%PREFIX%%/sbin/dicod
+
+load_rc_config $name
+run_rc_command "$1"

@@ -18,7 +18,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-2.3d-2.3.2.7
 MAN1=		stone.1
 MANLANG=	"" ja
 
-USE_RC_SUBR=	stone.sh
+USE_RC_SUBR=	stone
 USE_OPENSSL=	yes
 
 .include <bsd.port.pre.mk>

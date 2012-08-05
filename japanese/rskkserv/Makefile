@@ -30,7 +30,7 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/eb.so:${PORTSDIR}/japanese/ruby-eb
 USE_RUBY=	yes
 USE_AUTOTOOLS=	autoconf213
 USE_GMAKE=	yes
-USE_RC_SUBR=	rskkserv.sh
+USE_RC_SUBR=	rskkserv
 
 CONFIGURE_ARGS=	--with-ruby="${RUBY}" \
 		--with-dicfile="${SKKJISYO_BASE}/${SKKJISYO}" \

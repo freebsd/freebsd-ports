@@ -37,7 +37,7 @@ POOTLEDBDIR?=	/var/db/pootle
 POOTLELOGDIR?=	/var/log/pootle
 POOTLERUNDIR?=	/var/run/pootle
 
-USE_RC_SUBR=	pootle.sh
+USE_RC_SUBR=	pootle
 SUB_LIST+=	PYTHON_CMD="${PYTHON_CMD}" \
 		POOTLEDBDIR="${POOTLEDBDIR}" \
 		POOTLELOGDIR="${POOTLELOGDIR}" \

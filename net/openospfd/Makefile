@@ -26,7 +26,7 @@ CONFLICTS=	zebra-0* quagga-0*
 
 WRKSRC=		${WRKDIR}
 MANCOMPRESSED=	yes
-USE_RC_SUBR=	openospfd.sh
+USE_RC_SUBR=	openospfd
 MAKE_ENV=	BINDIR="${PREFIX}/sbin" \
 		MANDIR="${PREFIX}/man/man"
 COPTS=		-I${LOCALBASE}/include -DMD5_DIGEST_LENGTH=16

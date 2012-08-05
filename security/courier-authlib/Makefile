@@ -168,9 +168,9 @@ do-build:	#empty
 
 .if ${AUTHMOD} == authbase
 .if defined(WITH_RCORDER)
-USE_RCORDER=	courier-authdaemond.sh
+USE_RCORDER=	courier-authdaemond
 .else
-USE_RC_SUBR=	courier-authdaemond.sh
+USE_RC_SUBR=	courier-authdaemond
 .endif
 
 pre-everything::

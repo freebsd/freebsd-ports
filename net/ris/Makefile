@@ -16,7 +16,7 @@ COMMENT=	OpenSource alternative to Microsoft Windows RIS
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/in.tftpd:${PORTSDIR}/ftp/tftp-hpa
 
-USE_RC_SUBR=	binlsrv.sh
+USE_RC_SUBR=	binlsrv
 USE_PYTHON=	yes
 NO_BUILD=	yes
 

@@ -164,7 +164,7 @@ PKGMESSAGE=		${WRKSRC}/pkg-message.client
 
 USE_LDCONFIG=		${PREFIX}/libexec/openldap
 SUB_FILES+=		pkg-deinstall pkg-message pkg-install
-USE_RC_SUBR=		slapd.sh ${SLURPDSH}
+USE_RC_SUBR=		slapd ${SLURPDSH}
 
 EXTRA_PATCHES+=		${FILESDIR}/extrapatch-Makefile.in
 

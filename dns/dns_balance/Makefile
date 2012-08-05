@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dynamic load-balancing DNS server
 
 USE_RUBY=	yes
-USE_RC_SUBR=	dns_balance.sh
+USE_RC_SUBR=	dns_balance
 
 NO_BUILD=	yes
 

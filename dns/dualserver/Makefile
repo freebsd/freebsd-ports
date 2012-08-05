@@ -13,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Combined DHCP/DNS server for small LANs
 
 USE_DOS2UNIX=	yes
-USE_RC_SUBR=	dualserver.sh
+USE_RC_SUBR=	dualserver
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	sbin/dualserver etc/dualserver.conf.sample
 

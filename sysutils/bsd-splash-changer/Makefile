@@ -16,7 +16,7 @@ DISTFILES=	# none
 MAINTAINER=	gamato@users.sf.net
 COMMENT=	Boot Splash Image Changer
 
-USE_RC_SUBR=	change_splash.sh
+USE_RC_SUBR=	change_splash
 SUB_FILES=	pkg-message
 NO_BUILD=	yes
 

@@ -19,7 +19,7 @@ COMMENT=	Reverse proxy, load balancer and HTTP(S) frontend for web servers
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
-USE_RC_SUBR=	${PORTNAME}.sh
+USE_RC_SUBR=	${PORTNAME}
 
 SUB_LIST=	NAME=${PORTNAME}
 

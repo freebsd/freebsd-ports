@@ -31,7 +31,7 @@ DOVECOTVERSION=	1.2
 ######################################################################
 
 USE_ICONV=	yes
-USE_RC_SUBR=	dovecot.sh
+USE_RC_SUBR=	dovecot
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

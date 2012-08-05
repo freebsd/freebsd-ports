@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: qadsl 
+# REQUIRE: NETWORK
+# BEFORE: DAEMON SERVERS LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable qadsl:
+#
+#qadsl_enable="YES"
+#
+# Configuration flags can be set with qadsl_flags=""
+#
+# See qadsl(8) for flags.
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+# Default flags
+qadsl_enable=${qadsl_enable-"NO"}
+qadsl_flags=${qadsl_flags-"-l"}
+qadsl_pidfile=${qadsl_pidfile-"/var/run/qadsl.pid"}
+
+. /etc/rc.subr
+
+name="qadsl"
+rcvar=qadsl_enable
+command=%%PREFIX%%/sbin/qadsl
+load_rc_config $name
+
+pidfile=${qadsl_pidfile}
+required_files=%%PREFIX%%/etc/qadsl.conf
+
+qadsl_flags="${qadsl_flags} -p ${qadsl_pidfile}"
+
+run_rc_command "$1"

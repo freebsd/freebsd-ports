@@ -18,7 +18,7 @@ COMMENT=	Gateway6 Tunnel Setup Protocol Client - Free IPv6 tunnel
 
 CONFLICTS=	freenet6-[0-9]*
 
-USE_RC_SUBR=	gateway6.sh
+USE_RC_SUBR=	gateway6
 WRKSRC=		${WRKDIR}/gw6c-6_0_1
 ETCDIR=		${PREFIX}/etc
 

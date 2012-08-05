@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: spybye
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable spybye:
+# spybye_enable (bool):       Set to YES to enable spybye
+#                               Default: NO
+# spybye_flags (str):         Extra flags passed to spybye
+#                               Default: -x -p 8080 -l /var/log/spybye.log
+#       
+# spybye command arguments
+# spybye: [-P] [-p port] [-g good] [-b bad] [-l logfile] [-S shareurl] [-x]
+#	 -P disable private IP check; allows the proxy to fetch 127/8
+#	 -p port port number to create proxy server on
+#	 -g good_patterns a file or url containing the good patterns
+#	 -b bad_patterns a file or url containing the danger patterns
+#	 -l logfile a file to log dangerous site interactions to
+#	 -S shareurl host to log dangerous site interactions to
+#	 -x enable proxy mode
+
+. /etc/rc.subr
+
+name="spybye"
+load_rc_config ${name}
+rcvar=spybye_enable
+# set the defaults
+: ${spybye_enable="NO"}
+: ${spybye_flags="-x -p 8080 -l /var/log/spybye.log"}
+
+command=%%PREFIX%%/bin/${name}
+command_args="${spybye_flags} &"
+
+run_rc_command "$1"

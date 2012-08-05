@@ -146,7 +146,7 @@ DOCSSQL=	README README.awl README.bayes awl_mysql.sql awl_pg.sql bayes_mysql.sql
 DOCSLDAP=	README README.testing sa_test.ldif
 PORTDOCS=	${DOCS} sql ldap
 
-USE_RC_SUBR=	sa-spamd.sh
+USE_RC_SUBR=	sa-spamd
 
 .if defined(WITH_MYSQL) || defined(WITH_PGSQL)
 SUB_LIST+=	SQL_FLAG="-Q"

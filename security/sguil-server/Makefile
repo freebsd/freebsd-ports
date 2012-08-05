@@ -21,7 +21,7 @@ RUN_DEPENDS=	p0f:${PORTSDIR}/net-mgmt/p0f \
 LIB_DEPENDS=	tls:${PORTSDIR}/devel/tcltls
 
 NO_BUILD=	yes
-USE_RC_SUBR=	sguild.sh
+USE_RC_SUBR=	sguild
 TCLSH_CMD?=	${PREFIX}/bin/tclsh8.4
 SGUILDIR?=	sguil-server
 WRKSRC=		${WRKDIR}/sguil-${PORTVERSION}

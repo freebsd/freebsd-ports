@@ -22,7 +22,7 @@ PORTSCOUT=	site:http://pgfoundry.org/frs/?group_id=1000258
 USERS=		pgbouncer
 GROUPS=		pgbouncer
 
-USE_RC_SUBR=	pgbouncer.sh
+USE_RC_SUBR=	pgbouncer
 SUB_FILES=	pkg-message pkg-install pkg-deinstall
 
 GNU_CONFIGURE=	yes

@@ -87,7 +87,7 @@ SUB_FILES=	pkg-install \
 SUB_LIST=	PREFIX=${PREFIX} \
 		${PLIST_SUB}
 
-USE_RC_SUBR=	noc.sh
+USE_RC_SUBR=	noc
 
 NOC_CONF_FILES=	etc/noc-activator.defaults \
 		etc/noc-classifier.defaults \

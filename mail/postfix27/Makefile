@@ -238,10 +238,10 @@ PLIST_SUB+=	TEST="@comment "
 PKGNAMESUFFIX=	-base
 PREFIX=		/usr
 ETCDIR=		/etc/postfix
-USE_RCORDER=	postfix.sh
+USE_RCORDER=	postfix
 PLIST_SUB+=	BASE=""
 .else
-USE_RC_SUBR=	postfix.sh
+USE_RC_SUBR=	postfix
 PLIST_SUB+=	BASE="@comment "
 .endif
 

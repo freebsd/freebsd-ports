@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--with-gsm=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
 USE_GMAKE=	yes
 USE_BISON=	build
-USE_RC_SUBR=	asterisk.sh
+USE_RC_SUBR=	asterisk
 MAKE_ENV=	MKDIR="${MKDIR}" \
 		PWLIBDIR=${LOCALBASE}/share/pwlib \
 		OPENH323DIR=${LOCALBASE}/share/openh323 \

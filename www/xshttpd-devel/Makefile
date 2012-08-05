@@ -28,7 +28,7 @@ MAN5=		httpd.conf.5 xsauth.5 xsconf.5 xsscripts.5 xsredir.5
 MAN7=		httpd_cgi.7 httpd_ssi.7
 USE_OPENSSL=	yes
 USE_BZIP2=	yes
-USE_RC_SUBR=	xshttpd.sh
+USE_RC_SUBR=	xshttpd
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-hier=bsd

@@ -30,7 +30,7 @@ DEFAULTHOST?=	localhost
 DEFAULTPORT?=	782
 MAKE_ENV+=	DEFAULTHOST="${DEFAULTHOST}" DEFAULTPORT="${DEFAULTPORT}"
 #PKGMESSAGE=	${WRKDIR}/MESSAGE
-USE_RC_SUBR=	conserver.sh
+USE_RC_SUBR=	conserver
 
 do-build:
 	${REINPLACE_CMD} -e 's:/usr/local/lib:${PREFIX}/etc:g'  \

@@ -16,7 +16,7 @@ COMMENT=	A load balancer for simple TCP based protocols
 
 GNU_CONFIGURE=		yes
 USE_OPENSSL=		yes
-USE_RC_SUBR=		pen.sh
+USE_RC_SUBR=		pen
 CONFIGURE_ARGS=		--with-daemon --with-docdir=${DOCSDIR} \
 			--with-ssl=${OPENSSLBASE}
 

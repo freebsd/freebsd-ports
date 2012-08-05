@@ -97,7 +97,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 EXTRA_PATCHES+=${PATCHDIR}/extra-patch-auth_perl.c
 .endif
 
-USE_RC_SUBR=	tpop3d.sh
+USE_RC_SUBR=	tpop3d
 DEFAULT_CONFIG=	${PREFIX}/etc/tpop3d.conf.dist
 
 MAN5=		tpop3d.conf.5

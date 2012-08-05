@@ -20,7 +20,7 @@ LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
 SAMBA_PORT?=	net/samba34
 
-USE_RC_SUBR=	sams.sh
+USE_RC_SUBR=	sams
 
 OPTIONS=	NTLM	"NTLM autorization/ActiveDirectory support"	off \
 		INSTALLGD 	"Graphic reports"		on

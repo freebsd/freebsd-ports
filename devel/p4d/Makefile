@@ -36,7 +36,7 @@ P4LOG?=		/var/log/p4d.log
 SUB_LIST=	P4ROOT=${P4ROOT} \
 		P4LOG=${P4LOG}
 
-USE_RC_SUBR=	p4d.sh
+USE_RC_SUBR=	p4d
 
 .include <bsd.port.pre.mk>
 

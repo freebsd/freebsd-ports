@@ -28,7 +28,7 @@ MAN8=		openvpn.8
 
 OPTIONS=	PW_SAVE "Interactive passwords may be read from a file" off
 
-USE_RC_SUBR=	openvpn.sh
+USE_RC_SUBR=	openvpn
 USE_LDCONFIG=	${PREFIX}/lib
 
 LIB_DEPENDS+=	lzo2.2:${PORTSDIR}/archivers/lzo2

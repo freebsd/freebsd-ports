@@ -20,7 +20,7 @@ LICENSE_FILE=	${FILESDIR}/COPYRIGHT
 MAILUSER?=	mailnull
 MAN8=		milter-regex.8
 PLIST_FILES=	libexec/milter-regex
-USE_RC_SUBR=	milterregex.sh
+USE_RC_SUBR=	milterregex
 SPOOLDIR?=	/var/run/milter-regex
 SUB_LIST=	SPOOLDIR=${SPOOLDIR}
 

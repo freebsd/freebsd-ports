@@ -36,7 +36,7 @@ OPTIONS=	RC_SCRIPT	"install RC_SCRIPT"		on \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_RC_SCRIPT)
-USE_RC_SUBR=	vsftpd.sh
+USE_RC_SUBR=	vsftpd
 .endif
 
 .if defined(WITH_VSFTPD_SSL) && !defined(WITHOUT_SSL)

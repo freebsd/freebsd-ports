@@ -39,7 +39,7 @@ OPTIONS_DEFINE=	MINIMAL DEBUG UARTLIRC
 MINIMAL_DESC=	Build with minmal dependencies
 UARTLIRC_DESC=	Install serial LIRC driver
 
-USE_RC_SUBR=	lircd.sh
+USE_RC_SUBR=	lircd
 PORTDOCS=	html images irxevent.keys lirc.css lirc.hwdb
 PORTEXAMPLES=	remotes
 SUB_FILES=	pkg-message lircd.conf

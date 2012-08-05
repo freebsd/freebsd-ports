@@ -17,7 +17,7 @@ COMMENT=	Ftp server supporting FTP AUTH TLS
 
 GNU_CONFIGURE=	YES
 USE_OPENSSL=	YES
-USE_RC_SUBR=	ftpd-tls.sh
+USE_RC_SUBR=	ftpd-tls
 
 MAN8=		ftpd-tls.8
 

@@ -24,7 +24,7 @@ LATEST_LINK=	nagios-devel
 USE_ICONV=	yes
 USE_PERL5_BUILD=yes
 USE_AUTOTOOLS=	autoconf libltdl
-USE_RC_SUBR=	nagios.sh
+USE_RC_SUBR=	nagios
 
 CONFLICTS=	nagios-[123].*
 

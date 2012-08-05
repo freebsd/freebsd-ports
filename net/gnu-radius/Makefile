@@ -16,7 +16,7 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	GNU RADIUS server
 
 CONFLICTS=	freeradius-0.* openradius-0.* radiusd-cistron-1.*
-USE_RC_SUBR=	radiusd.sh
+USE_RC_SUBR=	radiusd
 USE_SUBMAKE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libltdl libtool

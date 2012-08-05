@@ -23,7 +23,7 @@ MAN8=		bogom.8
 MAKE_ARGS=	CPPFLAGS="-DDEF_CONF=\\\"${PREFIX}/etc/bogom.conf\\\" ${PTHREAD_CFLAGS}" \
 		LIBS="-lmilter ${PTHREAD_LIBS}"
 
-USE_RC_SUBR=	milter-bogom.sh
+USE_RC_SUBR=	milter-bogom
 SUB_FILES=	pkg-message
 
 PLIST_FILES=	sbin/bogom \

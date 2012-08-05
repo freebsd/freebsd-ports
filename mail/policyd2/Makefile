@@ -23,7 +23,7 @@ RUN_DEPENDS=	p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
 USE_PERL5=	yes
 USE_PHP=	yes
 NO_BUILD=	yes
-USE_RC_SUBR=	policyd2.sh
+USE_RC_SUBR=	policyd2
 BINMODE=	0755
 
 WEBUIDIR=	${PREFIX}/www/policyd

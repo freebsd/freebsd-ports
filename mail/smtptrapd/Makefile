@@ -15,7 +15,7 @@ COMMENT=	RFC 2821 compliant SMTP service that always returns a 4xx soft error
 
 CFLAGS+=	${PTHREAD_CFLAGS} ${PTHREAD_LIBS}
 
-USE_RC_SUBR=	smtptrapd.sh
+USE_RC_SUBR=	smtptrapd
 
 PLIST_FILES=	bin/smtptrapd
 

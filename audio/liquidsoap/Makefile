@@ -67,7 +67,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 USE_BZIP2=	yes
 
-USE_RC_SUBR=	liquidsoap.sh
+USE_RC_SUBR=	liquidsoap
 
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=	yes

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	ehaupt
 MAINTAINER=	bahamasfranks@gmail.com
 COMMENT=	Resolution tool for Intel i915 video cards
 
-USE_RC_SUBR=	915resolution.sh
+USE_RC_SUBR=	915resolution
 
 DOCS=		README.txt LICENSE.txt chipset_info.txt changes.log
 

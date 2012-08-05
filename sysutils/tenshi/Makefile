@@ -20,7 +20,7 @@ MAN8=			tenshi.8
 
 USE_PERL5=		yes
 NO_BUILD=		yes
-USE_RC_SUBR=		tenshi.sh
+USE_RC_SUBR=		tenshi
 SUB_LIST=		PERL=${PERL}
 
 PLIST_FILES=		bin/tenshi etc/tenshi.conf.sample

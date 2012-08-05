@@ -22,7 +22,7 @@ NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
 NO_INSTALL_MANPAGES=	yes
 SUB_FILES=	pkg-message
-USE_RC_SUBR=	be-agent.sh
+USE_RC_SUBR=	be-agent
 PLIST_FILES=	bin/agent.be \
 		etc/be-agent.cfg.sample
 

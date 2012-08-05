@@ -17,7 +17,7 @@ COMMENT=	The BPF Traffic Collector (IPv4/IPv6)
 MAKE_ENV+=	BINDIR="${PREFIX}/sbin" \
 		MANDIR="${MANPREFIX}/man/man"
 
-USE_RC_SUBR=	cnupm.sh
+USE_RC_SUBR=	cnupm
 MAN8=		cnupm.8 cnupmstat.8
 MANCOMPRESSED=	yes
 

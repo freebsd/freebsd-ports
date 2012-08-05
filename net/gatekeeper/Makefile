@@ -20,7 +20,7 @@ LIB_DEPENDS=	h323_r.1:${PORTSDIR}/net/openh323
 
 #WRKSRC=		${WRKDIR}/${MASTER_SITE_SUBDIR}-${DISTVERSION:C/-[0-9]$//}
 
-USE_RC_SUBR=	gnugk.sh
+USE_RC_SUBR=	gnugk
 USERS=		gnugk
 GROUPS=		${USERS}
 

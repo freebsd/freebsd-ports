@@ -25,7 +25,7 @@ MAKE_JOBS_UNSAFE=yes
 
 MAN8=		miniupnpd.8
 
-USE_RC_SUBR=	miniupnpd.sh
+USE_RC_SUBR=	miniupnpd
 
 OPTIONS=	PF_ENABLE_FILTER_RULES		"Enable pf generation of filter rules" off
 

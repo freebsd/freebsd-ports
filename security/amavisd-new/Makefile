@@ -83,14 +83,14 @@ PLIST_SUB+=	AMAVIS_NOP0F=${AMAVIS_NOP0F}
 
 .include <bsd.port.options.mk>
 
-USE_RC_SUBR+=	amavisd.sh
+USE_RC_SUBR+=	amavisd
 
 .if defined(WITH_IPV6)
 RUN_DEPENDS+=	p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
 .endif
 
 .if defined(WITH_SNMP) && defined(WITH_BDB)
-USE_RC_SUBR+=	amavisd-snmp.sh
+USE_RC_SUBR+=	amavisd-snmp
 RUN_DEPENDS+=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
 .endif
 
@@ -124,7 +124,7 @@ RUN_DEPENDS+=	p5-Mail-SpamAssassin>=0:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 
 .if defined(WITH_P0F)
 RUN_DEPENDS+=	${LOCALBASE}/bin/p0f:${PORTSDIR}/net-mgmt/p0f
-USE_RC_SUBR+=	amavis-p0fanalyzer.sh
+USE_RC_SUBR+=	amavis-p0fanalyzer
 .else
 AMAVIS_NOP0F=	"@comment "
 .endif

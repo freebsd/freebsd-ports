@@ -17,7 +17,7 @@ COMMENT=	Sendmail milter wich uses McAfee Virus Scan or clamav
 
 LICENSE=	BSD
 
-USE_RC_SUBR=	antivirus-milter.sh
+USE_RC_SUBR=	antivirus-milter
 
 CFLAGS+=	-Wall ${PTHREAD_CFLAGS:S=""==}
 LIBS+=		-lmilter ${PTHREAD_LIBS}

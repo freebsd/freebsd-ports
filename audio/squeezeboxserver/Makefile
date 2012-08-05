@@ -77,7 +77,7 @@ RUN_DEPENDS+=	shorten:${PORTSDIR}/audio/shorten
 RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox
 .endif
 
-USE_RC_SUBR=	squeezeboxserver.sh
+USE_RC_SUBR=	squeezeboxserver
 TMP_SLIMDIR=	${WRKDIR}/_squeezeboxserver
 TMP_DOCSDIR=	${WRKDIR}/doc
 DOCFILES=	Changelog.html Installation.txt License.txt

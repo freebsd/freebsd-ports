@@ -31,7 +31,7 @@ JAVA_VERSION?=	1.5+
 JAVA_VENDOR?=	freebsd
 NO_BUILD=	YES
 
-USE_RC_SUBR=	tomcat55.sh
+USE_RC_SUBR=	tomcat55
 SUB_FILES=	pkg-install pkg-deinstall
 
 MAJOR_VER=	${PORTVERSION:R}

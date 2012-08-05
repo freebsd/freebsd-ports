@@ -1,0 +1,46 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: ircd-ratbox
+# REQUIRE: DAEMON
+# BEFORE:  LOGIN
+
+. /etc/rc.subr
+
+name="ircd_ratbox"
+rcvar=ircd_ratbox_enable
+load_rc_config $name
+
+ircd_ratbox_enable=${ircd_ratbox_enable:-"NO"}
+ircd_ratbox_user=${ircd_ratbox_user:-"ircd"}
+ircd_ratbox_group=${ircd_ratbox_group:-"ircd"}
+
+conftest_cmd="ircd_ratbox_conftest"
+command="%%PREFIX%%/bin/ircd"
+pidfile=%%RUNDIR%%/ircd.pid
+required_files="%%PREFIX%%/etc/ircd-ratbox/ircd.conf"
+
+start_precmd=prestart
+stop_precmd=prestop
+
+prestart()
+{
+	touch $pidfile
+	chown $ircd_ratbox_user:$ircd_ratbox_group $pidfile
+}
+
+prestop()
+{
+	rm -f $pidfile
+}
+
+ircd_ratbox_conftest()
+{
+	echo "Starting ircd-ratbox in configuration test only mode."
+	command_args="-conftest"
+	run_rc_command "start"
+}
+
+extra_commands="conftest"
+run_rc_command "$1"

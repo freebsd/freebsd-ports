@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
-USE_RC_SUBR=	gearmand.sh
+USE_RC_SUBR=	gearmand
 CONFIGURE_ARGS+=--with-lib-prefix=${LOCALBASE} --with-boost=${LOCALBASE}
 
 OPTIONS=	DRIZZLE "Enable Drizzle support for persistent queue" off \

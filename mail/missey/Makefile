@@ -27,7 +27,7 @@ MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}" \
 PLIST_FILES=	sbin/bent sbin/mps etc/mps/pop3d.conf-dist
 PLIST_DIRS=	etc/mps
 
-USE_RC_SUBR=	mps.sh
+USE_RC_SUBR=	mps
 
 post-patch:
 	@${CP}	${FILESDIR}/Makefile ${WRKSRC}/Makefile

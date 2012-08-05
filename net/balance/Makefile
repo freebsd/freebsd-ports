@@ -14,7 +14,7 @@ MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	Simple but powerful generic TCP proxy with round robin features
 
 ALL_TARGET=	balance
-USE_RC_SUBR=	balance.sh
+USE_RC_SUBR=	balance
 
 MAN1=		balance.1
 

@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/DomainKeys%20Milter/${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Domainkeys milter for Sendmail
 
-USE_RC_SUBR=	milter-dk.sh
+USE_RC_SUBR=	milter-dk
 USE_OPENSSL=	yes
 
 .if !defined(BUILDING_INDEX)
@@ -59,7 +59,7 @@ SITE_SUB+=	-e '\|-static|s|%%STATIC%%||g'
 SITE_SUB+=	-e '\|-static|s|%%STATIC%%|dnl |g'
 .endif
 
-SUB_LIST=	"RC_SCRIPT=${PREFIX}/etc/rc.d/${USE_RC_SUBR:S/.sh$//}"
+SUB_LIST=	"RC_SCRIPT=${PREFIX}/etc/rc.d/${USE_RC_SUBR}"
 
 .if defined(WITH_DEBUG)
 SITE_SUB+=	-e '\|confOPTIMIZE.*-g|s/^dnl //g'

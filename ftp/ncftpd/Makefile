@@ -22,7 +22,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	YES
 RESTRICTED=	30 day evaluation license
 
-USE_RC_SUBR=	ncftpd.sh
+USE_RC_SUBR=	ncftpd
 SUB_FILES=	pkg-message
 
 PORTDOCS=	install.html README README.freebsd LICENSE

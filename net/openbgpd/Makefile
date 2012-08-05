@@ -31,7 +31,7 @@ BROKEN=		does not build
 
 WRKSRC=		${WRKDIR}
 MANCOMPRESSED=	yes
-USE_RC_SUBR=	${PORTNAME}.sh
+USE_RC_SUBR=	${PORTNAME}
 PLIST_FILES=	sbin/bgpctl sbin/bgpd
 SUB_FILES=	pkg-message
 USERS=		_bgpd

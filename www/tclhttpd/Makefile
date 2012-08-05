@@ -18,7 +18,7 @@ COMMENT=	An http-server implemented in TCL
 
 RUN_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib
 
-USE_RC_SUBR=	tclhttpd.sh
+USE_RC_SUBR=	tclhttpd
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl="${TCL_LIBDIR}"	\
 		--with-tclinclude="${TCL_INCLUDEDIR}"

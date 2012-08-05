@@ -196,7 +196,7 @@ USE_LDCONFIG=		yes
 
 USE_LDCONFIG=		${PREFIX}/libexec/openldap
 SUB_FILES+=		pkg-message pkg-deinstall
-USE_RC_SUBR=		slapd.sh
+USE_RC_SUBR=		slapd
 
 EXTRA_PATCHES+=		${FILESDIR}/extrapatch-Makefile.in
 

@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: htshd
+# REQUIRE: DAEMON
+# BEFORE:  LOGIN
+
+. /etc/rc.subr
+
+name="htshd"
+rcvar=htshd_enable
+load_rc_config $name
+
+htshd_enable=${htshd_enable:-"NO"}
+
+command="%%PREFIX%%/sbin/htshd"
+required_files="%%PREFIX%%/etc/wapsh/htshd.conf"
+
+run_rc_command "$1"

@@ -18,7 +18,7 @@ COMMENT=	Utility for ASUS USB OLED Display
 RUN_DEPENDS=	${FONTDIR}/TTF/luxisr.ttf:${PORTSDIR}/x11-fonts/font-bh-ttf
 
 USE_SDL=	image sdl ttf
-USE_RC_SUBR=	asusoled.sh oled_clock.sh
+USE_RC_SUBR=	asusoled oled_clock
 
 PORTDATA=	asus.png asus_clock.png
 PORTDOCS=	README.FreeBSD

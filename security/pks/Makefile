@@ -29,7 +29,7 @@ MAKE_ENV+=	SUBDIRS=
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	DBLIB="-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}" DBINC=-I${BDB_INCLUDE_DIR} DBHDR=db.h
 
-USE_RC_SUBR=	pksd.sh
+USE_RC_SUBR=	pksd
 MAN5=		pksd.conf.5
 MAN8=		pks-intro.8 pksclient.8 pksd.8 pksdctl.8 pks-mail.sh.8 \
 		pks-queue-run.sh.8 pgpsplit.8

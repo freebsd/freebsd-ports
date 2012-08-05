@@ -36,7 +36,7 @@ MAKE_ARGS+=	OPTIMIZER="" -EOPTIMIZER
 
 PORTDOCS=	RELEASENOTES-4.3.txt RELEASENOTES-4.4.txt RELEASENOTES-6.0.txt
 SUB_FILES=	pkg-message
-USE_RC_SUBR=	hylafax.sh
+USE_RC_SUBR=	hylafax
 
 MAN1=	edit-faxcover.1 faxalter.1 faxcover.1 faxmail.1 faxrm.1 faxstat.1 \
 	hylafax-client.1 sendfax.1 sendpage.1 sgi2fax.1 textfmt.1

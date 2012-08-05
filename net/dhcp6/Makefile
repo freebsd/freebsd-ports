@@ -22,7 +22,7 @@ CONFIGURE_ARGS+=	--sysconfdir=${LOCALBASE}/etc --with-localdbdir=/var/db
 MAN5=		dhcp6c.conf.5 dhcp6s.conf.5
 MAN8=		dhcp6c.8 dhcp6s.8 dhcp6relay.8 dhcp6ctl.8
 
-USE_RC_SUBR=	dhcp6c.sh dhcp6relay.sh dhcp6s.sh
+USE_RC_SUBR=	dhcp6c dhcp6relay dhcp6s
 
 post-install:
 .if !defined(NOPORTDOCS)

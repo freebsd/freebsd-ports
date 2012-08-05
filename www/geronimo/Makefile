@@ -19,7 +19,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 NO_BUILD=	YES
 
-USE_RC_SUBR=	geronimo3.sh
+USE_RC_SUBR=	geronimo3
 SUB_FILES=	pkg-deinstall
 
 OPTIONS=	TOMCAT7 "Use Tomcat instead of default Jetty" off

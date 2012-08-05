@@ -22,7 +22,7 @@ USE_MYSQL=	yes
 
 MYSQLARD_DIR?=	${PREFIX}/www/mysqlard
 
-USE_RC_SUBR=	mysqlard.sh
+USE_RC_SUBR=	mysqlard
 
 MAN1=		mysqlar_graph.1
 MAN8=		mysqlard.8

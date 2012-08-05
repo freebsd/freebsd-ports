@@ -33,7 +33,7 @@ KRB5_CONFIG?=	/usr/bin/krb5-config --libs
 CONFLICTS=	gnu-radius-[0-9].* openradius-[0-9].* radiusd-cistron-[0-9].* \
 		freeradius-mysql-[0-9].* freeradius-[013-9].*
 
-USE_RC_SUBR=	radiusd.sh
+USE_RC_SUBR=	radiusd
 USE_AUTOTOOLS=	libltdl libtool autoconf
 USE_GMAKE=	yes
 USE_BZIP2=	yes

@@ -47,7 +47,7 @@ PLIST_FILES=	sbin/netmond sbin/netmond_watchdog sbin/netmondctl \
 PLIST_FILES+=	sbin/ifgraph
 .endif
 
-USE_RC_SUBR=	netmond.sh
+USE_RC_SUBR=	netmond
 
 SUB_FILES+=	pkg-message netmond_watchdog netmondctl
 

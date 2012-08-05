@@ -41,7 +41,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if !defined(_BUILDING_LIGHTTPD_MODULE)
-USE_RC_SUBR=	lighttpd.sh
+USE_RC_SUBR=	lighttpd
 
 MAN8=		lighttpd.8
 

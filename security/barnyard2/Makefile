@@ -22,7 +22,7 @@ OPTIONS=	MYSQL "Enable MySQL support" on \
 OPTIONS+=	TCL "Enable TCL support" off
 .endif
 
-USE_RC_SUBR=	barnyard2.sh
+USE_RC_SUBR=	barnyard2
 GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
 

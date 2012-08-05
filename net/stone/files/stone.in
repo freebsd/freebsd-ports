@@ -1,0 +1,57 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: stone
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable stone:
+# stone_enable (bool):		Set it to "YES" to enable stone.
+#				Default: NO
+# Add at least one of the followings to /etc/rc.conf to give rules to stone:
+# stone_flags (str):		See stone(1).
+#				Default: "" (-D will be added automatically)
+# stone_conffile (str):		Stone config file
+#				Default: ""
+
+. /etc/rc.subr
+
+name="stone"
+rcvar=stone_enable
+
+command="%%PREFIX%%/bin/stone"
+start_precmd="stone_precmd"
+restart_precmd="stone_precmd"
+
+stone_enable=${stone_enable:-"NO"}
+
+load_rc_config $name
+
+stone_precmd()
+{
+    if [ -z "${stone_flags}" -a -z "${stone_conffile}" ]; then
+        warn "set at least stone_flags or stone_conffile."
+	return 1
+    fi
+
+    # doesn't use required_files because stone accepts only one conffile
+    if [ -n "${stone_conffile}" ]; then
+        if [ ! -r "${stone_conffile}" ]; then
+            warn "${stone_conffile} is not readable."
+            if [ -n "$stone_conffile" -a -n "$rc_force" ]; then
+		warn "start without ${stone_conffile} anyway."
+	    else
+	        return 1
+	    fi
+        else
+            rc_flags="-C ${stone_conffile} ${rc_flags}"
+	fi
+    fi
+
+    # make sure daemonize option will be given
+    rc_flags="-D ${rc_flags}"
+}
+
+run_rc_command "$1"

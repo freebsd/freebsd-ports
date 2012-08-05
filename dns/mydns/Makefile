@@ -19,7 +19,7 @@ CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc
 USE_ICONV=	yes
 USE_BZIP2=	yes
 
-USE_RC_SUBR=	mydns.sh
+USE_RC_SUBR=	mydns
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message

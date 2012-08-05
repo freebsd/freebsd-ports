@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: ircd-hybrid
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# To get ircd-hybrid enabled at boot, add the following lines to /etc/rc.conf :
+# ircd_hybrid_enable (bool):    Set to "NO" by default.
+#                               Set it to "YES" to enable ircd-hybrid.
+
+. /etc/rc.subr
+
+name="ircd_hybrid"
+rcvar=ircd_hybrid_enable
+
+command=/usr/local/bin/ircd
+pidfile=/var/run/ircd/ircd.pid
+required_files=/usr/local/etc/ircd-hybrid/ircd.conf
+
+start_precmd=pid_touch
+stop_postcmd=pid_rm
+
+[ -z "$ircd_hybrid_enable" ] && ircd_hybrid_enable=NO
+[ -z "$ircd_hybrid_user" ] && ircd_hybrid_user=ircd
+
+load_rc_config $name
+
+pid_touch ()
+{
+    touch $pidfile
+    chown $ircd_hybrid_user $pidfile
+}
+
+pid_rm ()
+{
+    rm $pidfile
+}
+
+run_rc_command "$1"

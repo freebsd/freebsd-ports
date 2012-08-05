@@ -113,7 +113,7 @@ CONFIGURE_ARGS+=--with-wx-config=${WX_CONFIG}
 USE_GMAKE=	yes
 USE_CSTD=	gnu89
 USE_PERL5=	yes
-USE_RC_SUBR=	epmd.sh
+USE_RC_SUBR=	epmd
 GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386 amd64 sparc64 powerpc
 REINPLACE_ARGS=	-i

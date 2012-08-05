@@ -1,0 +1,64 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: pureftpd
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable pure-ftpd:
+#
+# pureftpd_enable="YES"
+#
+# For launch uploadscript daemon define
+# pureftpd_upload_enable="YES"
+# pureftpd_uploadscript="/full/path/to/launch_script"
+
+. /etc/rc.subr
+
+name=pureftpd
+rcvar=pureftpd_enable
+
+load_rc_config $name
+
+command=%%PREFIX%%/sbin/pure-config.pl
+command_upload=%%PREFIX%%/sbin/pure-uploadscript
+pureftpd_uploadscript=${pureftpd_uploadscript:-"/usr/bin/touch"}
+pureftpd_config=${pureftpd_config:-"%%PREFIX%%/etc/pure-ftpd.conf"}
+required_files=${pureftpd_config}
+pidfile=/var/run/pure-ftpd.pid
+pidfile2=/var/run/pure-uploadscript.pid
+procname=pure-ftpd
+
+pureftpd_enable=${pureftpd_enable:-"NO"}
+command_args="${pureftpd_config} -g${pidfile}"
+command_upload_args="-B -r ${pureftpd_uploadscript}"
+
+start_postcmd=start_postcmd
+stop_postcmd=stop_postcmd
+
+start_postcmd()
+{
+       if test -n ${pureftpd_upload_enable:-""} && checkyesno pureftpd_upload_enable; then
+       echo "Starting ${command_upload}."
+       ${command_upload} ${command_upload_args}  
+       fi
+}
+
+stop_postcmd()
+{
+        if test -n ${pureftpd_upload_enable:-""} && checkyesno pureftpd_upload_enable; then
+        pid=$(check_pidfile ${pidfile2} ${command_upload})
+        if [ -z ${pid} ]; then
+        echo "Upload script not running? (check ${pidfile2})."
+        return 1
+        fi
+        echo "Stopping ${command_upload}."
+        kill -${sig_stop:-TERM} ${pid}
+        [ $? -ne 0 ] && [ -z "$rc_force" ] && return 1
+        wait_for_pids ${pid}
+        fi
+}
+
+run_rc_command "$1"

@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: milterbogom
+# REQUIRE: LOGIN
+# BEFORE: sendmail
+# KEYWORD: milterbogom
+
+. /etc/rc.subr
+
+name=milterbogom
+rcvar=milterbogom_enable
+command=%%PREFIX%%/sbin/bogom
+start_precmd="bogom_precmd"
+stop_postcmd="bogom_postcmd"
+
+load_rc_config $name
+
+milterbogom_enable=${milterbogom_enable-"NO"}
+milterbogom_socket=${milterbogom_socket-"unix:/var/run/bogom/milter.sock"}
+milterbogom_user=${milterbogom_user-"mailnull"}
+milterbogom_pid=${milterbogom_pid-"/var/run/bogom/bogom.pid"}
+milterbogom_flags=${milterbogom_flags-"-u ${milterbogom_user} \
+-s ${milterbogom_socket} -p ${milterbogom_pid}"}
+
+pidfile=${milterbogom_pid}
+
+bogom_precmd()
+{
+    if [ ! -d `dirname ${milterbogom_pid}` ]
+    then
+    	mkdir -p `dirname ${milterbogom_pid}`
+    fi
+    chown ${milterbogom_user} `dirname ${milterbogom_pid}`
+}
+
+bogom_postcmd()
+{
+    # just if the directory is empty
+    rmdir `dirname ${milterbogom_pid}` > /dev/null 2>&1
+}
+run_rc_command "$1"

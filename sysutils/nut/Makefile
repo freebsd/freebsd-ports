@@ -34,7 +34,7 @@ OPTIONS=	SERIAL		"SERIAL support" on \
 		CGI		"Web CGI interface" off \
 		BASH		"Bash Completion support" off
 
-USE_RC_SUBR=	nut.sh nut_upsmon.sh nut_upslog.sh
+USE_RC_SUBR=	nut nut_upsmon nut_upslog
 SUB_LIST+=	STATEDIR=${STATEDIR}
 PLIST_SUB+=	STATEDIR=${STATEDIR}
 

@@ -15,7 +15,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An attachment filter for Sendmail Milter
 
 GNU_CONFIGURE=	yes
-USE_RC_SUBR=    noattach.sh
+USE_RC_SUBR=    noattach
 
 CFLAGS+=	${PTHREAD_CFLAGS:S=""==}
 MAN8=		noattach.8

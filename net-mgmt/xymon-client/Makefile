@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 CONFIGURE_ENV=	MAKE=gmake
 MAKE_ENV+=	XYMONUSER="${XYMONUSER}"
 MAKE_ENV+=	XYMONHOSTIP="${XYMONHOSTIP}"
-USE_RC_SUBR=	xymon-client.sh
+USE_RC_SUBR=	xymon-client
 PLIST_SUB+=	XYMONUSER="${XYMONUSER}"
 CONFIG_FILES=	clientlaunch.cfg xymonclient.cfg localclient.cfg
 

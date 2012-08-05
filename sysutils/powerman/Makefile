@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--with-httppower --localstatedir=${DESTDIR}/var \
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
-USE_RC_SUBR=	powerman.sh
+USE_RC_SUBR=	powerman
 
 MAN1=		pm.1 powerman.1
 MAN3=		libpowerman.3

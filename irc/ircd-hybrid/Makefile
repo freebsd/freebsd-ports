@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 USERS=		ircd
 GROUPS=		${USERS}
 
-USE_RC_SUBR=	ircd-hybrid.sh
+USE_RC_SUBR=	ircd-hybrid
 SUB_FILES=	pkg-message
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 

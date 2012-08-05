@@ -29,7 +29,7 @@ OPTIONS=	MYSQL "Add MySQL support" on \
 
 .include <bsd.port.pre.mk>
 
-USE_RC_SUBR=	interchange.sh
+USE_RC_SUBR=	interchange
 
 .if defined(WITH_MYSQL)
 RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql

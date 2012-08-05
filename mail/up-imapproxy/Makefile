@@ -18,7 +18,7 @@ COMMENT=	A caching IMAP proxy server
 
 USE_AUTOTOOLS=	autoheader
 
-USE_RC_SUBR=	imapproxyd.sh
+USE_RC_SUBR=	imapproxyd
 DOCS=		COPYING ChangeLog README README.debian \
 		README.known_issues README.ssl
 SBINS=		in.imapproxyd pimpstat

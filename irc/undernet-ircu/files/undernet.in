@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: undernet
+# REQUIRE: LOGIN
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# undernet_enable (bool):   Set to NO by default.
+#               Set it to YES to enable undernet-ircu.
+# undernet_config (path):   Set to %%PREFIX%%/etc/ircd.conf
+#               by default.
+
+. /etc/rc.subr
+
+name=undernet
+rcvar=undernet_enable
+
+load_rc_config ${name}
+
+: ${undernet_enable="NO"}
+: ${undernet_config="%%PREFIX%%/etc/ircd.conf"}
+undernet_user="undernet"
+undernet_group="undernet"
+
+command="%%PREFIX%%/bin/ircd"
+pidfile="undernet.pid"
+piddir="/var/log/"
+required_files="${undernet_config}"
+
+command_args="-f ${undernet_config}"
+
+run_rc_command "$1"

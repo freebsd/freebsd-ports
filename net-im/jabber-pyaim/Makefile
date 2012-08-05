@@ -25,7 +25,7 @@ OPTIONS=	EJABBERD "Use transport with ejabberd" off \
 
 NO_BUILD=	yes
 USE_PYTHON=	yes
-USE_RC_SUBR=	jabber-pyaim-transport.sh
+USE_RC_SUBR=	jabber-pyaim-transport
 LOCAL_PYTHON=	${PYTHON_CMD}
 
 SUB_LIST=	PYTHON_CMD=${LOCAL_PYTHON}

@@ -21,7 +21,7 @@ RESTRICTED=	See http://www.mitsubishielectric.co.jp/frequps/f_down/keiyaku.html
 IGNORE=		${RESTRICTED}
 .endif
 
-USE_RC_SUBR=	freqshpd.sh 000.freqshpk.sh
+USE_RC_SUBR=	freqshpd 000.freqshpk
 PLIST_SUB=	PORTNAME=${PORTNAME} CONFDIR=${CONFDIR}
 SUB_LIST=	PORTNAME=${PORTNAME} CONFDIR=${CONFDIR}
 

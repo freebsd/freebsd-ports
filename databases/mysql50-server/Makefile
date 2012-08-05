@@ -104,7 +104,7 @@ LATEST_LINK=	mysql50-server
 
 CONFLICTS_INSTALL=	mysql-server-[34].* mysql-server-5.[1-9].*
 
-USE_RC_SUBR=	mysql-server.sh
+USE_RC_SUBR=	mysql-server
 
 USERS=		mysql
 GROUPS=		mysql

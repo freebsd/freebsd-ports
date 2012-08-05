@@ -18,7 +18,7 @@ COMMENT=	A high performance multi-threaded web server
 
 LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls
 
-USE_RC_SUBR=	hydra.sh
+USE_RC_SUBR=	hydra
 
 NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes

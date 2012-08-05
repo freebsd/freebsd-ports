@@ -1,0 +1,53 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: barnyard2
+# REQUIRE: DAEMON%%MYSQL%%%%PGSQL%%
+#
+# Add the following lines to /etc/rc.conf to enable barnyard2:
+# barnyard2_enable (bool):	Set to YES to enable barnyard2
+# 				Default: NO
+# barnyard2_flags (str):		Extra flags passed to barnyard2
+#				Default: -D
+# barnyard2_conf (str):		Barnyard configuration file
+#				Default: %%PREFIX%%/etc/barnyard2.conf
+# optional, multi-barnyard2:
+# barnyard2_rules="1 2 3"
+# barnyard2_1_flags="-D"
+# barnyard2_1_pidfile=""
+# #$command $flags $args
+#
+# USAGE: barnyard2 [-options]
+
+. /etc/rc.subr
+
+name="barnyard2"
+rcvar=barnyard2_enable
+# set some defaults
+: ${barnyard2_enable="NO"}
+: ${barnyard2_conf="%%PREFIX%%/etc/barnyard2.conf"}
+: ${barnyard2_flags="-D"}
+
+command="%%PREFIX%%/bin/barnyard2"
+command_args="-c ${barnyard2_conf} -D"
+
+load_rc_config $name
+
+if [ -n "${barnyard2_rules}" ];then
+  _1=$1
+  rc=0
+  if [ $# -gt 1 ];then shift; barnyard2_rules=$*; fi
+  for i in ${barnyard2_rules}; do
+    echo -n "$i:"
+    eval barnyard2_flags=\$barnyard2_${i}_flags
+    eval pidfile=\$barnyard2_${i}_pidfile
+    eval barnyard2_conf=\$barnyard2_${i}_conf
+    command_args="-c $barnyard2_conf -D"
+    run_rc_command "$_1"
+    if [ $? -ne 0 ];then rc=1 ; fi
+    unset _pidcmd _rc_restart_done
+  done
+else
+   run_rc_command "$1"
+fi

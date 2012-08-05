@@ -1,0 +1,73 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: dccgrey
+# REQUIRE: LOGIN
+# BEFORE: mail
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf:
+#
+#dccgrey_enable="YES"
+#
+# and in %%DCCHOME%%/dcc_conf change:
+#
+#GREY_ENABLE=
+#
+# to:
+#
+#GREY_ENABLE=on
+#
+#
+# See %%DCCHOME%%/dcc_conf to configure startup options
+
+. /etc/rc.subr
+
+name=dccgrey
+rcvar=dccgrey_enable
+
+load_rc_config $name
+
+# Set defaults
+: ${dccgrey_enable:="NO"}
+: ${dccgrey_home="%%DCCHOME%%"}
+: ${dccgrey_libexec="%%PREFIX%%/dcc/libexec"}
+: ${dccgrey_conf="$dccgrey_home/dcc_conf"}
+
+
+procname="${dccgrey_libexec}/dccd"
+required_dirs="${dccgrey_home} ${dccgrey_libexec}"
+required_files="${dccgrey_conf} ${dccgrey_libexec}/rcDCC"
+
+start_cmd="start_dccgrey"
+stop_cmd="stop_dccgrey"
+start_precmd="start_precmd"
+
+
+start_precmd()
+{
+X=`grep ^GREY_ENABLE ${dccgrey_conf}`
+eval $X
+if [ "$GREY_ENABLE" != "on" ]
+then
+	echo "Warning ${X} needs to be on in ${dccgrey_conf} to start the DCC greylisting server"
+	return 1
+fi
+}
+
+start_dccgrey()
+{
+	echo Starting dccgrey.
+	${dccgrey_libexec}/rcDCC -m grey start
+}
+
+stop_dccgrey()
+{
+	echo Stopping dccgrey.
+	${dccgrey_libexec}/rcDCC -m grey stop
+}
+
+run_rc_command "$1"
+

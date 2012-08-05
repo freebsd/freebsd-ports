@@ -122,7 +122,7 @@ CONFIGURE_ARGS+=	--with-sendmail=yes
 
 PLIST_SUB+=	WITH_DCCM=""
 
-USE_RC_SUBR+=	dccm.sh
+USE_RC_SUBR+=	dccm
 
 .else
 CONFIGURE_ARGS+=	--disable-dccm
@@ -136,7 +136,7 @@ CONFIGURE_ARGS+=	--disable-dccifd
 PLIST_SUB+=	WITH_DCCIFD="@comment "
 .else
 PLIST_SUB+=	WITH_DCCIFD=""
-USE_RC_SUBR+=	dccifd.sh
+USE_RC_SUBR+=	dccifd
 .endif
 
 ## dccd server support
@@ -163,11 +163,11 @@ PLIST_SUB+=	WITH_IFD_MILT=""
 .endif
 
 .if defined(WITH_DCCD)
-USE_RC_SUBR+=	dccd.sh
+USE_RC_SUBR+=	dccd
 .endif
 
 .if defined(WITH_DCCGREY)
-USE_RC_SUBR+=	dccgrey.sh
+USE_RC_SUBR+=	dccgrey
 PLIST_SUB+=	WITH_DCCGREY=""
 .else
 PLIST_SUB+=	WITH_DCCGREY="@comment "

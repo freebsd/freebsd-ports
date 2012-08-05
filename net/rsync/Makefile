@@ -24,7 +24,7 @@ COMMENT=	A network file distribution/synchronization utility
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
-USE_RC_SUBR=	rsyncd.sh
+USE_RC_SUBR=	rsyncd
 SUB_LIST=	NAME=rsyncd
 MAKE_JOBS_SAFE=	yes
 

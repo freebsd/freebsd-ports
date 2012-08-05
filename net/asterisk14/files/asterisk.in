@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: asterisk
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable asterisk:
+#
+# asterisk_enable="YES"
+
+. /etc/rc.subr
+
+stop_precmd=asterisk_shutdown
+sig_stop=KILL
+asterisk_shutdown () {
+  %%PREFIX%%/sbin/asterisk -qrx 'stop now'
+  sleep 1
+  return 0
+}
+
+name=asterisk
+rcvar=asterisk_enable
+
+command=%%PREFIX%%/sbin/asterisk
+
+load_rc_config $name
+
+pidfile=${asterisk_pidfile:-"/var/run/asterisk.pid"}
+
+asterisk_enable=${asterisk_enable:-"NO"}
+
+run_rc_command "$1"

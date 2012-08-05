@@ -22,7 +22,7 @@ CONFLICTS=	ircd-ratbox-[0-9]* charybdis-[0-9]*
 
 USE_BZIP2=	yes
 #MAN8=		ircd.8
-USE_RC_SUBR=	ircd-ratbox.sh
+USE_RC_SUBR=	ircd-ratbox
 USE_SQLITE=	3
 USE_PERL5_BUILD=	yes
 USE_LDCONFIG=	${PREFIX}/lib/ircd-ratbox

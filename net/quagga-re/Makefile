@@ -128,7 +128,7 @@ SUB_LIST=	RCLDCONFIG=
 CONFIGURE_ARGS+=--disable-bgp-announce
 .endif
 
-USE_RC_SUBR=	quagga.sh watchquagga.sh
+USE_RC_SUBR=	quagga watchquagga
 
 SUB_LIST+=	LOCALSTATE_DIR=${LOCALSTATE_DIR} \
 		SYSCONF_DIR=${SYSCONF_DIR}

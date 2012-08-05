@@ -30,7 +30,7 @@ NOT_FOR_ARCHS=	ia64 powerpc sparc64
 
 USE_PERL5_RUN=	yes
 USE_PERL5_BUILD=yes
-USE_RC_SUBR=	streamingadminserver.sh darwin_streaming_server.sh
+USE_RC_SUBR=	streamingadminserver darwin_streaming_server
 SUB_LIST+=	PERL=${PERL}
 
 PKGMESSAGE=	${WRKDIR}/pkg-message

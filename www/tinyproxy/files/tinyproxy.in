@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: tinyproxy
+# REQUIRE: LOGIN
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf to enable tinyproxy:
+# tinyproxy_enable (bool): Set to "NO" by default.
+#                          Set it to "YES" to enable tinyproxy 
+# tinyproxy_config (path): Set to "%%PREFIX%%/etc/tinyproxy.conf" by default.
+
+. /etc/rc.subr
+
+name="tinyproxy"
+rcvar=tinyproxy_enable
+
+load_rc_config $name
+
+# Make sure the pidfile matches what's in the config file.
+: ${tinyproxy_enable="NO"}
+: ${tinyproxy_pidfile="/var/run/tinyproxy.pid"}
+: ${tinyproxy_config="%%PREFIX%%/etc/tinyproxy.conf"}
+
+pidfile=${tinyproxy_pidfile}
+command=%%PREFIX%%/sbin/tinyproxy
+command_args="-c $tinyproxy_config 2> /dev/null"
+
+run_rc_command "$1"

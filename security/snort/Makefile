@@ -45,7 +45,7 @@ DBGSNORT_DESC=		Enable debugging symbols+core dumps
 
 .include <bsd.port.options.mk>
 
-USE_RC_SUBR=	snort.sh
+USE_RC_SUBR=	snort
 SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes

@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: smbftpd
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable pure-ftpd:
+#
+# smbftpd_enable="YES"
+
+. /etc/rc.subr
+
+name=smbftpd
+rcvar=smbftpd_enable
+
+load_rc_config $name
+
+command=%%PREFIX%%/sbin/smbftpd
+smbftpd_config=${smbftpd_config:-"%%PREFIX%%/etc/smbftpd/smbftpd.conf"}
+required_files=${smbftpd_config}
+pidfile=/var/run/smbftpd.pid
+procname=%%PREFIX%%/sbin/smbftpd
+
+smbftpd_enable=${smbftpd_enable:-"NO"}
+command_args="-D -s ${smbftpd_config}"
+
+run_rc_command "$1"

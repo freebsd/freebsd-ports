@@ -49,7 +49,7 @@ PLIST_SUB+=	SGE_BASE=${SGE_BASE}
 SUB_FILES=	pkg-message pkg-install
 SUB_LIST+=	SGE_BASE=${SGE_BASE}
 
-USE_RC_SUBR=	sge.sh
+USE_RC_SUBR=	sge
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGINSTALL=	${WRKDIR}/pkg-install

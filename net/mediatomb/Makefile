@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--with-search="${LOCALBASE}" \
 		--disable-inotify
 CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
-USE_RC_SUBR=	mediatomb.sh
+USE_RC_SUBR=	mediatomb
 
 # --- configurable variables ---
 MEDIATOMB_USER?=	mediatomb

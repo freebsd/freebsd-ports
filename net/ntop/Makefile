@@ -47,7 +47,7 @@ MAN8=		ntop.8
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 SUB_FILES=	pkg-deinstall
 SUB_LIST=	DBDIR=${DBDIR}
-USE_RC_SUBR=	ntop.sh
+USE_RC_SUBR=	ntop
 
 ##
 ## Available knobs:

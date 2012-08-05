@@ -470,7 +470,7 @@ SEDLIST+=	-e 's,^\# (WITH_OLD_DEMIME=),\1,'
 .endif
 
 .if !defined(EXIMON_ONLY) && !defined(WITHOUT_DAEMON)
-USE_RC_SUBR=	exim.sh
+USE_RC_SUBR=	exim
 PLIST_SUB+=	DAEMON=""
 SUB_LIST+=	LOGDIR="${LOGDIR}"
 .else

@@ -21,7 +21,7 @@ NO_BUILD=	true
 IS_INTERACTIVE=	true
 NO_PACKAGE=	too interactive
 
-USE_RC_SUBR=	cvsupd.sh
+USE_RC_SUBR=	cvsupd
 SUB_FILES=	update.sh
 
 base=${PREFIX}/etc/cvsup

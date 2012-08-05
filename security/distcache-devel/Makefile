@@ -20,7 +20,7 @@ COMMENT=	Distributed OpenSSL session caching tools - development version
 CONFLICTS=	distcache-1.4*
 
 USE_BZIP2=	yes
-USE_RC_SUBR=	dc_server.sh
+USE_RC_SUBR=	dc_server
 USE_AUTOTOOLS=	libtool
 USE_OPENSSL=	yes
 LIBTOOLFILES=	configure ssl/configure

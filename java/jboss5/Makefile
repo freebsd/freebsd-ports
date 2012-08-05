@@ -29,7 +29,7 @@ MANUAL_PACKAGE_BUILD=	fetches files in build phase
 
 MAKE_ARGS=	-buildfile build/build.xml
 
-USE_RC_SUBR=	jboss5.sh
+USE_RC_SUBR=	jboss5
 SUB_FILES=	pkg-install pkg-deinstall pkg-message
 
 PORTDATA=	*

@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.mahoroba.org/~ume/ipv6/ \
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Dynamic Tunnel Configuration Protocol client
 
-USE_RC_SUBR=	dtcpclient.sh
+USE_RC_SUBR=	dtcpclient
 
 MAN8=		dtcpclient.8
 MANCOMPRESSED=	yes

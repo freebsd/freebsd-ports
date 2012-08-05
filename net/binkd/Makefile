@@ -17,7 +17,7 @@ COMMENT=	Fidonet TCP/IP mailer
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_ZIP=	yes
-USE_RC_SUBR=	binkd.sh
+USE_RC_SUBR=	binkd
 GNU_CONFIGURE=	yes
 
 MAN8=		binkd.8

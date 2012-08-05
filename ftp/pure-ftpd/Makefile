@@ -19,7 +19,7 @@ SUB_FILES=	pkg-message
 SUB_LIST=	PAM_DIR=${PAM_DIR} PAM_TARGET=${PAM_TARGET}
 USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
-USE_RC_SUBR=	pure-ftpd.sh
+USE_RC_SUBR=	pure-ftpd
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--with-everything \

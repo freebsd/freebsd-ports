@@ -20,7 +20,7 @@ GNU_CONFIGURE=	yes
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
-USE_RC_SUBR=	pptpd.sh
+USE_RC_SUBR=	pptpd
 
 MAN5=		pptpd.conf.5
 MAN8=		pptpd.8 pptpctrl.8

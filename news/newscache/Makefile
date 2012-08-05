@@ -22,7 +22,7 @@ AUTOMAKE_ARGS=	--add-missing
 CPPFLAGS+=	${CFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc
-USE_RC_SUBR=	${PORTNAME}.sh
+USE_RC_SUBR=	${PORTNAME}
 
 MAN5=	newscache.conf.5
 MAN8=	newscache.8 newscacheclean.8 updatenews.8
