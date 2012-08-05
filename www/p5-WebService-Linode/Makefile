@@ -6,14 +6,17 @@
 #
 
 PORTNAME=	WebService-Linode
-PORTVERSION=	0.05
+PORTVERSION=	0.07
 CATEGORIES=	www
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	WebService
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Interface to the Linode.com API
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-Crypt-SSLeay>0:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-JSON>0:${PORTSDIR}/converters/p5-JSON \
