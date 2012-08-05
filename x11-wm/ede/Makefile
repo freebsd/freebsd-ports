@@ -28,6 +28,8 @@ LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
+BROKEN=		does not link
+
 OPTIONS_DEFINE=	HAL
 HAL_DESC=	Enable HAL support
 
