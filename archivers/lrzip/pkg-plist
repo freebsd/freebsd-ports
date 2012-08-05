@@ -24,5 +24,11 @@ bin/lrzcat
 bin/lrzip
 bin/lrztar
 bin/lrzuntar
+include/Lrzip.h
+lib/liblrzip.a
+lib/liblrzip.la
+lib/liblrzip.so
+lib/liblrzip.so.0
+libdata/pkgconfig/lrzip.pc
 @dirrm %%DOCSDIR%%/lzma
 @dirrm %%DOCSDIR%%
