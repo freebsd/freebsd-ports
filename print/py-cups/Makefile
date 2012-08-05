@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	cups
-PORTVERSION=	1.9.61
+PORTVERSION=	1.9.62
 CATEGORIES=	print python
-MASTER_SITES=	http://cyberelk.net/tim/data/pycups/ \
-		LOCAL/sunpoet
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	CUPS bindings for Python
 
-LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-client
+LIB_DEPENDS=	cups:${PORTSDIR}/print/cups-client
 
 CFLAGS+=	-I${LOCALBASE}/include -DVERSION=\\\"${PORTVERSION}\\\"
 LDFLAGS+=	-L${LOCALBASE}/lib -liconv
