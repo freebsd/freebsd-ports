@@ -1,10 +1,6 @@
-bin/fncaverage
-bin/fncdump
-lib/libfnccheck.so
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/README1ST.txt
-%%PORTDOCS%%%%DOCSDIR%%/fncdump.html
-%%PORTDOCS%%%%DOCSDIR%%/fncdump.info
-%%PORTDOCS%%%%DOCSDIR%%/fncdump_toc.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+bin/fcdump
+bin/fcmanager
+lib/libfc.a
+lib/libfc.la
+lib/libfc.so
+lib/libfc.so.0

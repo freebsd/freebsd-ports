@@ -4,4 +4,6 @@ time spend in functions, number of calls and other things.
 
 In order to use FncCheck, you have to compile your .o files
 with '-finstrument-functions -g' switches (gcc V2.95.2 and higher).
-You have then to link your executable with the library 'libfnccheck.so'.
+You have then to link your executable with the library 'libfc.so'.
+
+WWW: http://sourceforge.net/projects/fnccheck/
