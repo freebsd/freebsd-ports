@@ -24,6 +24,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 USE_CMAKE=	yes
 USE_XORG=	x11 xft xmu xorg-server xrender
 USE_GL=		glut
+USE_PKGCONFIG=	build
 USE_RC_SUBR=	slim.sh
 SUB_FILES=	pkg-message
 
