@@ -554,8 +554,6 @@ rapid-*			math/rapid		No commercial use
 dtiquery-*		science/dtiquery	License agreement is required
 clustalw-*		biology/clustalw	No commercial use
 nttcp-*			benchmarks/nttcp	No commercial use
-TW-*.ttf		chinese/CNS11643-font	No redistribution or
-						commercial use is allowed
 festlex-ogi		audio/festlex-ogi	No commercial use
 apache2/mod_h264_streaming-*	www/mod_h264_streaming	No commercial use
 pcsv*i3fb.tar.gz	lang/petite-chez	Must acknowledge license
