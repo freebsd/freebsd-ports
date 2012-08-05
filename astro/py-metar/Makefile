@@ -14,15 +14,17 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${REALPORTNAME}-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Python module that provides access to NOAA's METAR weather reports
+COMMENT=	Python module that provides access to NOAA METAR weather reports
 
 LICENSE=	GPLv2
 
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+OPTIONS_DEFINE=	DOCS
+
 PYDISTUTILS_PKGNAME=	${REALPORTNAME}
 USE_PYDISTUTILS=	yes
 USE_PYTHON=	-2.7
 
+DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 PLIST_FILES=	bin/${REALPORTNAME} \
 		%%PYTHON_SITELIBDIR%%/${REALPORTNAME}.py \
 		%%PYTHON_SITELIBDIR%%/${REALPORTNAME}.pyc \
@@ -31,10 +33,12 @@ PORTDOCS=	COPYING README THANKS librarydoc.txt
 
 REALPORTNAME=	pymetar
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -E '1 s|/usr/bin/(env *)?python|${PYTHON_CMD}|' \
 		${WRKSRC}/setup.py ${WRKSRC}/bin/${REALPORTNAME}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} \
 		-e 's|"share/doc/pymetar-%s/"%pymetar.__version__|"${DOCSDIR}"|' \
 		${WRKSRC}/setup.py
