@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pd
-DISTVERSION=	0.43-2
+DISTVERSION=	0.43-3
 DISTVERSIONSUFFIX=	.src
 CATEGORIES=	audio
 MASTER_SITES=	http://www-crca.ucsd.edu/~msp/Software/
@@ -73,6 +73,13 @@ post-patch:
 		's|PD_BASEDIR/LICENSE|${DOCSDIR}/LICENSE|g ; \
 		 s|PD_BASEDIR/doc/1|${DOCSDIR}/1|g' \
 			${WRKSRC}/../doc/1.manual/1.introduction.txt
+	@${REINPLACE_CMD} -e \
+		's|-O2 | | ; \
+		 s|-lc ||g' ${WRKSRC}/../extra/makefile.subdir
+	@${REINPLACE_CMD} -e \
+		's|-O2 |$$(CFLAGS) | ; \
+		 s|-g ||g ; \
+		 s|-lc ||g' ${WRKSRC}/../extra/expr~/makefile
 
 do-install:
 .for file in pd pdreceive pdsend
