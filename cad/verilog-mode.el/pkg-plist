@@ -1,6 +1,0 @@
-share/emacs/site-lisp/verilog-mode.el
-lib/xemacs/site-lisp/verilog-mode.el
-%%DATADIR%%/verilog-mode.el
-@dirrmtry lib/xemacs/site-lisp
-@dirrmtry lib/xemacs
-@dirrm %%DATADIR%%
