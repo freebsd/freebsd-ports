@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	irsim
-PORTVERSION=	9.7.72
-PORTREVISION=	0
+PORTVERSION=	9.7.74
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/irsim/archive/
 EXTRACT_SUFX=	.tgz
@@ -15,49 +14,62 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An event-driven logic-level simulator for MOS circuis
 
+LICENSE=	GPLv2
+
+OPTIONS_DEFINE=	INTERPRETER
+OPTIONS_SINGLE=	INTERPRETER
+OPTIONS_SINGLE_INTERPRETER=	SCHEME TCL
+OPTIONS_DEFAULT=	INTERPRETER SCHEME
+INTERPRETER_DESC=	Enable built-in interpreter support
+SCHEME_DESC=	Scheme interpreter
+TCL_DESC=	Tcl interpreter
+
+CONFIGURE_WRKSRC=	${WRKSRC}/scripts
+
 USE_XORG=	x11
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_WRKSRC=	${WRKSRC}/scripts/
+MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	PIC_CFLAGS="-fpic" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
-
-OPTIONS_SINGLE=	INTERPRETER
-OPTIONS_SINGLE_INTERPRETER=	TCL SCHEME
-OPTIONS_DEFAULT=	SCHEME
-SCHEME_DESC=	Enable built-in Scheme interpreter
-TCL_DESC=	Enable built-in Tcl interpreter
 
 MAN1=		irsim.1
 MAN3=		irsim-analyzer.3
 MAN5=		netchange.5
 
-TK_VER=		8.4
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTCL}
-LIB_DEPENDS+=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
-CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/lib/tcl${TK_VER} \
-			--with-tk=${LOCALBASE}/lib/tk${TK_VER} \
-			--with-tcllibs=${LOCALBASE}/lib/ \
-			--with-tklibs=${LOCALBASE}/lib/ \
-			--with-tclincls=${LOCALBASE}/include/tcl${TK_VER} \
-			--with-tkincls=${LOCALBASE}/include/tk${TK_VER} \
+USE_TK_BUILD=	yes
+USE_TK=		yes
+CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR} \
+			--with-tk=${TK_LIBDIR} \
+			--with-tclincls=${TCL_INCLUDEDIR} \
+			--with-tkincls=${TK_INCLUDEDIR} \
+			--with-tcllibs=${LOCALBASE}/lib \
+			--with-tklibs=${LOCALBASE}/lib \
 			--with-interpreter=tcl
-PLIST_SUB+=	TCL=""
+PLIST_SUB+=	TCL="" NOTCL="@comment "
 .else
-PLIST_SUB+=	TCL="@comment "
+WISH=		${FALSE}
+PLIST_SUB+=	TCL="@comment " NOTCL=""
 .endif
 
 .if ${PORT_OPTIONS:MSCHEME}
 CONFIGURE_ARGS+=	--with-interpreter=scheme
-PLIST_SUB+=	SCHEME=""
-.else
-PLIST_SUB+=	SCHEME="@comment "
 .endif
+
+.if empty(PORT_OPTIONS:MSCHEME) && empty(PORT_OPTIONS:MTCL)
+CONFIGURE_ARGS+=	--with-interpreter=no
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|FreeBSD-\*|*-*-freebsd*| ; \
+		 s|wish |${WISH:T} | ; \
+		 s|-lpthread|${PTHREAD_LIBS}| ; \
+		 s|"-fpic"|"-fPIC"| ; \
+		 /-l\/usr\/X11R6\/include/d' ${CONFIGURE_WRKSRC}/configure
 
 .include <bsd.port.mk>

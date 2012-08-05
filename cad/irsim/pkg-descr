@@ -4,3 +4,5 @@ To run irsim, users should set CAD_HOME to the base installation directory
 where magic was installed, e.g. /usr/local.  Alternatively, the system
 administrator can create a dummy user named 'cad' with its home
 directory set to the installation directory.
+
+WWW: http://opencircuitdesign.com/irsim/
