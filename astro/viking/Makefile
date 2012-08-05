@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	viking
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.3.1
 CATEGORIES=	astro
 MASTER_SITES=	SF
 
@@ -16,8 +15,8 @@ COMMENT=	Program to manage GPS data (tracks, waypoints, etc)
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
-		expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
+		expat:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	gpsbabel:${PORTSDIR}/astro/gpsbabel
 
 OPTIONS_DEFINE=	GEOTAR GPSD
@@ -40,13 +39,13 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGEOTAG}
-LIB_DEPENDS+=	exif.12:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS+=	exif:${PORTSDIR}/graphics/libexif
 .else
 CONFIGURE_ARGS+=	--disable-geotag
 .endif
 
 .if ${PORT_OPTIONS:MGPSD}
-LIB_DEPENDS+=	gps.20:${PORTSDIR}/astro/gpsd
+LIB_DEPENDS+=	gps:${PORTSDIR}/astro/gpsd
 .else
 CONFIGURE_ARGS+=	--disable-realtime-gps-tracking
 .endif
