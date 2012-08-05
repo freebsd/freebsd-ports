@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.250 2012/07/09 01:37:29 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.252 2012/08/05 22:18:57 marcus Exp $
 #
 
 use strict;
@@ -52,7 +52,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 13;
-my $micro = 11;
+my $micro = 12;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -342,7 +342,7 @@ if ($committer) {
 			$File::Find::prune = 1;
 		} elsif (-l) {
 			&perror("WARN", $fullname, -1, "this is a symlink. ".
-					"CVS will ignore it.");
+					"Please remove it.");
 		} elsif (-z) {
 			&perror("FATAL", $fullname, -1, "empty file and should be removed. ".
 				    "If it still needs to be there, put a dummy comment ".
@@ -365,6 +365,9 @@ if ($committer) {
 		} elsif (/README.html/) {
 			&perror("FATAL", $fullname, -1, "for safety, be sure to cleanup ".
 					"README.html files before committing the port.");
+		} elsif ($_ eq '.svn' && -d) {
+			&perror("FATAL", $fullname, -1, "for safety, be sure to cleanup ".
+				"Subversion files before committing the port.");
 		} elsif ($_ eq 'CVS' && -d) {
 			if ($newport) {
 				&perror("FATAL", $fullname, -1, "for safety, be sure to cleanup ".
@@ -2331,7 +2334,7 @@ EOF
 				    ($newport ? 'for new port, '
 					      : 'is it a new port? if so, ').
 				    "make \$$rcsidstr\$ tag in comment ".
-				    "section empty, to make CVS happy.");
+				    "section empty, to make SVN happy.");
 			}
 		}
 	}
