@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	msrplib
-PORTVERSION=	0.14.1
+PORTVERSION=	0.14.4
 CATEGORIES=	net python
 MASTER_SITES=	http://download.ag-projects.com/SipClient/ \
 		http://www.grosbein.net/python/
