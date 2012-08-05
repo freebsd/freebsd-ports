@@ -6,37 +6,36 @@
 #
 
 PORTNAME=	huc
-PORTVERSION=	3.20
-PORTREVISION=	3
+PORTVERSION=	3.21
+DISTVERSIONSUFFIX=	-src
 CATEGORIES=	lang emulators
 MASTER_SITES=	http://www.zeograd.com/download/
-DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/.//}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PC Engine C compiler which can create ROMs (hucard) or CD images
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+OPTIONS_DEFINE=	DOCS
 
+NO_WRKSUBDIR=	yes
+
+USE_ZIP=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" LD="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+MAKE_JOBS_SAFE=	yes
+
+.include <bsd.port.options.mk>
 
 do-install:
 .for file in huc isolink nesasm pceas pcxtool
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${file} ${PREFIX}/bin
 .endfor
 	@${MKDIR} ${PREFIX}/include/${PORTNAME}
-	${TAR} -C ${WRKSRC}/include --exclude "CVS" -cf - . | \
-		${TAR} -C ${PREFIX}/include/${PORTNAME} --unlink -xf -
-	@${CHOWN} -R ${SHAREOWN} ${PREFIX}/include/${PORTNAME}
-	@${FIND} ${PREFIX}/include/${PORTNAME}/ -type f -exec ${CHMOD} \
-		${SHAREMODE} {} \;
-.if !defined(NOPORTDOCS)
+	@(cd ${WRKSRC}/include \
+		&& ${COPYTREE_SHARE} . ${PREFIX}/include/${PORTNAME})
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${TAR} -C ${WRKSRC}/doc --exclude "CVS" -cf - . | \
-		${TAR} -C ${DOCSDIR} --unlink -xf -
-	@${CHOWN} -R ${SHAREOWN} ${DOCSDIR}
-	@${FIND} ${DOCSDIR}/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;
+	@(cd ${WRKSRC}/doc \
+		&& ${COPYTREE_SHARE} . ${DOCSDIR})
 .endif
 	@${CAT} ${PKGMESSAGE}
 
