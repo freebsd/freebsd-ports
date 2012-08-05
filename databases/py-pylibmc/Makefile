@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	pylibmc
-PORTVERSION=	1.2.2
-PORTREVISION=	2
+PORTVERSION=	1.2.3
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Python libmemcached wrapper
+
+LICENSE=	BSD
 
 LIB_DEPENDS=	memcached:${PORTSDIR}/databases/libmemcached
 
