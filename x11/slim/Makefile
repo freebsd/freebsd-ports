@@ -6,7 +6,7 @@
 
 PORTNAME=	slim
 PORTVERSION=	1.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://slim.berlios.de/releases/
 
@@ -23,9 +23,8 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 
 USE_CMAKE=	yes
 USE_XORG=	x11 xft xmu xorg-server xrender
-USE_GL=		glut
 USE_PKGCONFIG=	build
-USE_RC_SUBR=	slim.sh
+USE_RC_SUBR=	slim
 SUB_FILES=	pkg-message
 
 CMAKE_ARGS=	-DUSE_CONSOLEKIT=yes
