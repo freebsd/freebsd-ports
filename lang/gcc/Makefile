@@ -16,9 +16,9 @@ DISTFILES=	gcc-${VERSIONSTRING}${EXTRACT_SUFX}
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.6
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
-		mpfr.4:${PORTSDIR}/math/mpfr \
-		mpc.2:${PORTSDIR}/math/mpc
+LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
+		mpfr:${PORTSDIR}/math/mpfr \
+		mpc:${PORTSDIR}/math/mpc
 RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 
 .if defined(MAINTAINER_MODE)
@@ -64,7 +64,8 @@ TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
 LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ARGS+=--disable-nls \
+CONFIGURE_ARGS+=--disable-bootstrap \
+		--disable-nls \
 		--enable-languages=c,c++,objc,fortran \
 		--libdir=${TARGLIB} \
 		--libexecdir=${LIBEXEC} \
@@ -77,7 +78,6 @@ CONFIGURE_ARGS+=--disable-nls \
 		--with-pkgversion="FreeBSD Ports Collection" \
 		--with-system-zlib
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
-ALL_TARGET=	bootstrap-lean
 USE_LDCONFIG=	${TARGLIB}
 PLIST_SUB=	GCC_VERSION=${GCC_VERSION} \
 		GNU_HOST=${CONFIGURE_TARGET} \
