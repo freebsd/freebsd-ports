@@ -3754,6 +3754,7 @@
     SUBDIR += rubygem-elif
     SUBDIR += rubygem-errand
     SUBDIR += rubygem-eventmachine
+    SUBDIR += rubygem-excon
     SUBDIR += rubygem-execjs
     SUBDIR += rubygem-extlib
     SUBDIR += rubygem-facets
