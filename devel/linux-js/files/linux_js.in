@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: linux_js
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=linux_js
+rcvar=linux_js_enable
+
+load_rc_config $name
+
+linux_js_enable=${linux_js_enable:-"NO"}
+
+start_cmd="load_kld -m linux_js"
+stop_cmd="linux_js_stop"
+
+linux_js_stop()
+{
+	echo "Stopping ${name}."
+	kldunload linux_js
+}
+
+run_rc_command "$1"

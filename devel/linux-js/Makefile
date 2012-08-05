@@ -19,7 +19,7 @@ PROGRAMS=	jscal jstest
 MAN1=		${PROGRAMS:S|$|.1|}
 MAN4=		linux_js.4
 PORTDOCS=	joystick-api.txt
-USE_RCORDER=	jscal.sh linux_js.sh
+USE_RC_SUBR=	jscal linux_js
 
 OPTIONS_DEFINE=	LINUX JOY UHID DOCS
 OPTIONS_DEFAULT=	LINUX JOY UHID
