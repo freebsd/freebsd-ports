@@ -18,6 +18,8 @@ COMMENT=	A tool to make disk catalogs
 BUILD_DEPENDS=	plaympeg:${PORTSDIR}/multimedia/smpeg
 RUN_DEPENDS=	plaympeg:${PORTSDIR}/multimedia/smpeg
 
+BROKEN=		does not build
+
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomelibs gnomeprefix
 GNU_CONFIGURE=	yes
