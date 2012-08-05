@@ -6,30 +6,35 @@
 #
 
 PORTNAME=	apparix
-PORTVERSION=	20081026
+PORTVERSION=	20110303
 CATEGORIES=	misc
 MASTER_SITES=	http://micans.org/apparix/src/
-DISTNAME=	${PORTNAME}-08-331
+DISTNAME=	${PORTNAME}-11-062
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bookmark directories and apparate inside them
 
+LICENSE=	GPLv2
+
+OPTIONS_DEFINE=	DOCS
+
 GNU_CONFIGURE=	yes
-MANCOMPRESSED=	no
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		apparix.1
 PORTDOCS=	apparix.azm apparix.html apparix.ps
 PLIST_FILES=	bin/apparix
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|sig_atomic_t|int|g' ${WRKSRC}/util/err.c
+.include <bsd.port.options.mk>
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/${MAN1} ${MAN1PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+	${INSTALL_PROGRAM} ${WRKSRC}/src/apparix ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/apparix.1 ${MANPREFIX}/man/man1
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
