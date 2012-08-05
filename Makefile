@@ -181,7 +181,7 @@ update:
 	@echo "--------------------------------------------------------------"
 	@echo ">>> Updating ${.CURDIR} from git+svn repository"
 	@echo "--------------------------------------------------------------"
-	cd ${.CURDIR}; ${GIT} ${SVN} rebase
+	cd ${.CURDIR}; ${GIT} svn rebase
 .else
 	@echo "--------------------------------------------------------------"
 	@echo ">>> Running ${PORTSNAP}"
