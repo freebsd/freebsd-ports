@@ -336,6 +336,7 @@ bin/adonthell-wastesedge
 %%DATADIR%%/games/wastesedge/gfx/window/scrollbar/silverleaf/scroll_bar_top.pnm
 %%DATADIR%%/games/wastesedge/locale/it/LC_MESSAGES/wastesedge.mo
 %%DATADIR%%/games/wastesedge/locale/nl/LC_MESSAGES/wastesedge.mo
+%%DATADIR%%/games/wastesedge/locale/fr/LC_MESSAGES/wastesedge.mo
 %%DATADIR%%/games/wastesedge/mapengine.data
 %%DATADIR%%/games/wastesedge/maps/test.map
 %%DATADIR%%/games/wastesedge/quest.data
@@ -425,6 +426,8 @@ share/pixmaps/wastesedge_32x32.xpm
 @dirrm %%DATADIR%%/games/wastesedge/locale/nl
 @dirrm %%DATADIR%%/games/wastesedge/locale/it/LC_MESSAGES
 @dirrm %%DATADIR%%/games/wastesedge/locale/it
+@dirrm %%DATADIR%%/games/wastesedge/locale/fr/LC_MESSAGES
+@dirrm %%DATADIR%%/games/wastesedge/locale/fr
 @dirrm %%DATADIR%%/games/wastesedge/locale
 @dirrm %%DATADIR%%/games/wastesedge/gfx/window/scrollbar/silverleaf
 @dirrm %%DATADIR%%/games/wastesedge/gfx/window/scrollbar/original
