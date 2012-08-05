@@ -1,0 +1,121 @@
+%%XPI_XPIDIR%%/4ef02029/common/config.json
+%%XPI_XPIDIR%%/4ef02029/common/content/abbreviations.js
+%%XPI_XPIDIR%%/4ef02029/common/content/about.xul
+%%XPI_XPIDIR%%/4ef02029/common/content/autocommands.js
+%%XPI_XPIDIR%%/4ef02029/common/content/bindings.xml
+%%XPI_XPIDIR%%/4ef02029/common/content/bookmarks.js
+%%XPI_XPIDIR%%/4ef02029/common/content/browser.js
+%%XPI_XPIDIR%%/4ef02029/common/content/buffer.xhtml
+%%XPI_XPIDIR%%/4ef02029/common/content/commandline.js
+%%XPI_XPIDIR%%/4ef02029/common/content/dactyl.js
+%%XPI_XPIDIR%%/4ef02029/common/content/disable-acr.jsm
+%%XPI_XPIDIR%%/4ef02029/common/content/editor.js
+%%XPI_XPIDIR%%/4ef02029/common/content/eval.js
+%%XPI_XPIDIR%%/4ef02029/common/content/events.js
+%%XPI_XPIDIR%%/4ef02029/common/content/help.css
+%%XPI_XPIDIR%%/4ef02029/common/content/help.js
+%%XPI_XPIDIR%%/4ef02029/common/content/help.xsl
+%%XPI_XPIDIR%%/4ef02029/common/content/hints.js
+%%XPI_XPIDIR%%/4ef02029/common/content/history.js
+%%XPI_XPIDIR%%/4ef02029/common/content/key-processors.js
+%%XPI_XPIDIR%%/4ef02029/common/content/mappings.js
+%%XPI_XPIDIR%%/4ef02029/common/content/marks.js
+%%XPI_XPIDIR%%/4ef02029/common/content/modes.js
+%%XPI_XPIDIR%%/4ef02029/common/content/mow.js
+%%XPI_XPIDIR%%/4ef02029/common/content/preferences.xul
+%%XPI_XPIDIR%%/4ef02029/common/content/quickmarks.js
+%%XPI_XPIDIR%%/4ef02029/common/content/statusline.js
+%%XPI_XPIDIR%%/4ef02029/common/content/tabs.js
+%%XPI_XPIDIR%%/4ef02029/common/locale/en-US/all.xml
+%%XPI_XPIDIR%%/4ef02029/common/locale/en-US/autocommands.xml
+%%XPI_XPIDIR%%/4ef02029/common/locale/en-US/browsing.xml
+%%XPI_XPIDIR%%/4ef02029/common/locale/en-US/buffer.xml
+%%XPI_XPIDIR%%/4ef02029/common/locale/en-US/cmdline.xml
+%%XPI_XPIDIR%%/4ef02029/common/locale/en-US/developer.xml
+%%XPI_XPIDIR%%/4ef02029/common/locale/en-US/editing.xml
+%%XPI_XPIDIR%%/4ef02029/common/locale/en-US/eval.xml
+%%XPI_XPIDIR%%/4ef02029/common/locale/en-US/faq.xml
+%%XPI_XPIDIR%%/4ef02029/common/locale/en-US/gui.xml
+%%XPI_XPIDIR%%/4ef02029/common/locale/en-US/hints.xml
+%%XPI_XPIDIR%%/4ef02029/common/locale/en-US/index.xml
+%%XPI_XPIDIR%%/4ef02029/common/locale/en-US/intro.xml
+%%XPI_XPIDIR%%/4ef02029/common/locale/en-US/map.xml
+%%XPI_XPIDIR%%/4ef02029/common/locale/en-US/marks.xml
+%%XPI_XPIDIR%%/4ef02029/common/locale/en-US/message.xml
+%%XPI_XPIDIR%%/4ef02029/common/locale/en-US/messages.properties
+%%XPI_XPIDIR%%/4ef02029/common/locale/en-US/options.xml
+%%XPI_XPIDIR%%/4ef02029/common/locale/en-US/pattern.xml
+%%XPI_XPIDIR%%/4ef02029/common/locale/en-US/print.xml
+%%XPI_XPIDIR%%/4ef02029/common/locale/en-US/privacy.xml
+%%XPI_XPIDIR%%/4ef02029/common/locale/en-US/repeat.xml
+%%XPI_XPIDIR%%/4ef02029/common/locale/en-US/starting.xml
+%%XPI_XPIDIR%%/4ef02029/common/locale/en-US/styling.xml
+%%XPI_XPIDIR%%/4ef02029/common/locale/en-US/tabs.xml
+%%XPI_XPIDIR%%/4ef02029/common/locale/en-US/various.xml
+%%XPI_XPIDIR%%/4ef02029/common/modules/addons.jsm
+%%XPI_XPIDIR%%/4ef02029/common/modules/base.jsm
+%%XPI_XPIDIR%%/4ef02029/common/modules/bookmarkcache.jsm
+%%XPI_XPIDIR%%/4ef02029/common/modules/bootstrap.jsm
+%%XPI_XPIDIR%%/4ef02029/common/modules/buffer.jsm
+%%XPI_XPIDIR%%/4ef02029/common/modules/cache.jsm
+%%XPI_XPIDIR%%/4ef02029/common/modules/commands.jsm
+%%XPI_XPIDIR%%/4ef02029/common/modules/completion.jsm
+%%XPI_XPIDIR%%/4ef02029/common/modules/config.jsm
+%%XPI_XPIDIR%%/4ef02029/common/modules/contexts.jsm
+%%XPI_XPIDIR%%/4ef02029/common/modules/dom.jsm
+%%XPI_XPIDIR%%/4ef02029/common/modules/downloads.jsm
+%%XPI_XPIDIR%%/4ef02029/common/modules/finder.jsm
+%%XPI_XPIDIR%%/4ef02029/common/modules/help.jsm
+%%XPI_XPIDIR%%/4ef02029/common/modules/highlight.jsm
+%%XPI_XPIDIR%%/4ef02029/common/modules/io.jsm
+%%XPI_XPIDIR%%/4ef02029/common/modules/javascript.jsm
+%%XPI_XPIDIR%%/4ef02029/common/modules/main.jsm
+%%XPI_XPIDIR%%/4ef02029/common/modules/messages.jsm
+%%XPI_XPIDIR%%/4ef02029/common/modules/options.jsm
+%%XPI_XPIDIR%%/4ef02029/common/modules/overlay.jsm
+%%XPI_XPIDIR%%/4ef02029/common/modules/prefs.jsm
+%%XPI_XPIDIR%%/4ef02029/common/modules/protocol.jsm
+%%XPI_XPIDIR%%/4ef02029/common/modules/sanitizer.jsm
+%%XPI_XPIDIR%%/4ef02029/common/modules/services.jsm
+%%XPI_XPIDIR%%/4ef02029/common/modules/storage.jsm
+%%XPI_XPIDIR%%/4ef02029/common/modules/styles.jsm
+%%XPI_XPIDIR%%/4ef02029/common/modules/template.jsm
+%%XPI_XPIDIR%%/4ef02029/common/modules/util.jsm
+%%XPI_XPIDIR%%/4ef02029/common/skin/dactyl.css
+%%XPI_XPIDIR%%/4ef02029/common/skin/global-styles.css
+%%XPI_XPIDIR%%/4ef02029/common/skin/help-styles.css
+%%XPI_XPIDIR%%/4ef02029/pentadactyl/config.json
+%%XPI_XPIDIR%%/4ef02029/pentadactyl/content/config.js
+%%XPI_XPIDIR%%/4ef02029/pentadactyl/content/logo.png
+%%XPI_XPIDIR%%/4ef02029/pentadactyl/locale/en-US/all.xml
+%%XPI_XPIDIR%%/4ef02029/pentadactyl/locale/en-US/autocommands.xml
+%%XPI_XPIDIR%%/4ef02029/pentadactyl/locale/en-US/intro.xml
+%%XPI_XPIDIR%%/4ef02029/pentadactyl/locale/en-US/map.xml
+%%XPI_XPIDIR%%/4ef02029/pentadactyl/locale/en-US/messages.properties
+%%XPI_XPIDIR%%/4ef02029/pentadactyl/locale/en-US/tutorial.xml
+%%XPI_XPIDIR%%/4ef02029/pentadactyl/skin/about.css
+%%XPI_XPIDIR%%/4ef02029/pentadactyl/skin/icon.png
+%%XPI_XPIDIR%%/AUTHORS
+%%XPI_XPIDIR%%/Donors
+%%XPI_XPIDIR%%/LICENSE.txt
+%%XPI_XPIDIR%%/NEWS
+%%XPI_XPIDIR%%/TODO
+%%XPI_XPIDIR%%/bootstrap.js
+%%XPI_XPIDIR%%/chrome.manifest
+%%XPI_XPIDIR%%/components/commandline-handler.js
+%%XPI_XPIDIR%%/icon.png
+%%XPI_XPIDIR%%/icon64.png
+%%XPI_XPIDIR%%/install.rdf
+@dirrm %%XPI_XPIDIR%%/4ef02029/common/content
+@dirrm %%XPI_XPIDIR%%/4ef02029/common/locale/en-US
+@dirrm %%XPI_XPIDIR%%/4ef02029/common/locale
+@dirrm %%XPI_XPIDIR%%/4ef02029/common/modules
+@dirrm %%XPI_XPIDIR%%/4ef02029/common/skin
+@dirrm %%XPI_XPIDIR%%/4ef02029/common
+@dirrm %%XPI_XPIDIR%%/4ef02029/pentadactyl/content
+@dirrm %%XPI_XPIDIR%%/4ef02029/pentadactyl/locale/en-US
+@dirrm %%XPI_XPIDIR%%/4ef02029/pentadactyl/locale
+@dirrm %%XPI_XPIDIR%%/4ef02029/pentadactyl/skin
+@dirrm %%XPI_XPIDIR%%/4ef02029/pentadactyl
+@dirrm %%XPI_XPIDIR%%/4ef02029
+@dirrm %%XPI_XPIDIR%%/components
