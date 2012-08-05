@@ -6,14 +6,17 @@
 #
 
 PORTNAME=	Devel-ebug
-PORTVERSION=	0.52
+PORTVERSION=	0.53
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Devel
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A simple, extensible Perl debugger
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-PadWalker>0:${PORTSDIR}/devel/p5-PadWalker \
 		p5-YAML-Syck>0:${PORTSDIR}/textproc/p5-YAML-Syck \
