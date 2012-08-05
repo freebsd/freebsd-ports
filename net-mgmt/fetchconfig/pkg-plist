@@ -9,10 +9,12 @@ bin/fetchconfig
 %%SITE_PERL%%/fetchconfig/model/Detector.pm
 %%SITE_PERL%%/fetchconfig/model/DmSwitch.pm
 %%SITE_PERL%%/fetchconfig/model/FortiGate.pm
+%%SITE_PERL%%/fetchconfig/model/JunOS.pm
 %%SITE_PERL%%/fetchconfig/model/MikroTik.pm
 %%SITE_PERL%%/fetchconfig/model/Parks.pm
 %%SITE_PERL%%/fetchconfig/model/ProCurve.pm
 %%SITE_PERL%%/fetchconfig/model/Riverstone.pm
+%%SITE_PERL%%/fetchconfig/model/TellabsMSR.pm
 %%SITE_PERL%%/fetchconfig/model/Terayon.pm
 %%SITE_PERL%%/fetchconfig/Constants.pm
 %%SITE_PERL%%/fetchconfig/Logger.pm
