@@ -1042,6 +1042,7 @@
     SUBDIR += llvm29
     SUBDIR += lmdbg
     SUBDIR += lndir
+    SUBDIR += lockfree-malloc
     SUBDIR += log4c
     SUBDIR += log4cplus
     SUBDIR += log4cpp

@@ -1,0 +1,15 @@
+lockfree-malloc is a scalable drop-in replacement for malloc/free.
+
+* It's thread-friendly. It supports a practically-unlimited number of
+  concurrent threads, without locking or performance degradation.
+* It's efficient, especially in a multi-threaded environment. Compared to
+  a stock libc allocator, we see a significant performance boost.
+* It does NOT fragment or leak memory, unlike a stock libc allocator.
+* It wastes less memory. For small objects (less than 8kb in size), the
+  overhead is around 0 bytes. (!)
+* It is designed from the ground-up for 64-bit architectures.
+* It is elegant. The whole codebase is only around 800 lines of fairly
+  clean C++. (!)
+* It fully stand-alone; it does not rely on pthreads or libc at runtime.
+
+WWW:	https://github.com/Begun/lockfree-malloc
