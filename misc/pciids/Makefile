@@ -45,12 +45,11 @@ maketar: do-clean extract
 	(${DIFF} -u ${WRKSRC}/${MS_DISTFILES} ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}/${MS_DISTFILES} > ${MS_DIFF}) || ${TRUE}
 	if [ -s ${MS_DIFF} ]; then \
 		cd ${MS_WRKSRC}/ && ${TAR} -Jcf ${PORTNAME}-${MS_VERSION}.tar.xz ${PORTNAME}-${MS_VERSION}/; \
-		${SED} -i '' -e '/^PORTVERSION=/ s|${PORTVERSION}|'${MS_VERSION}'|; /^PORTREVISION=/d' ${.CURDIR}/Makefile; \
 		${INSTALL} -m 644 ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}.tar.xz ${DISTDIR}/; \
+		${SED} -i '' -e '/^PORTVERSION=/ s|${PORTVERSION}|'${MS_VERSION}'|; /^PORTREVISION=/d' ${.CURDIR}/Makefile; \
 		cd ${.CURDIR}/ && ${MAKE} makesum; \
 		${CP} -i ${MS_DIFF} ${.CURDIR}/${PORTNAME}-${MS_VERSION}.diff; \
-		${ECHO_MSG} "*** Update from ${PORTVERSION} to ${MS_VERSION} ***"; \
-		${ECHO_MSG} "*** Changes: ${.CURDIR}/${PORTNAME}-${MS_VERSION}.diff"; \
+		${ECHO_MSG} "*** Update from ${PORTVERSION} to ${MS_VERSION}, diff: ${.CURDIR}/${PORTNAME}-${MS_VERSION}.diff ***"; \
 	else \
 		${ECHO_MSG} "*** ${MS_MASTER_SITE}${MS_DISTFILES} is unchanged (${PORTVERSION}) ***"; \
 	fi
