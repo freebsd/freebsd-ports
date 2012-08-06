@@ -14,6 +14,11 @@ MASTER_SITES=	http://ffmpeg.org/releases/
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Realtime audio/video encoder/converter and streaming server
 
+LICENSE_COMB=		multi
+LICENSE=		GPLv2 LGPL21
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING.GPLv2
+LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPLv2.1
+
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils \
 		${LOCALBASE}/bin/texi2html:${PORTSDIR}/textproc/texi2html
@@ -377,21 +382,13 @@ CONFIGURE_ARGS+=	--disable-libxvid
 .if defined(FFMPEG_NONFREE)
 RESTRICTED=	linking to libfaac or libaacplus restricts redistribution
 CONFIGURE_ARGS+=	--enable-nonfree
-. if defined(FFMPEG_LICENSE_GPL3)
-CONFIGURE_ARGS+=	--enable-version3
-. endif
-.else
-LICENSE_COMB=	multi
-. if defined(FFMPEG_LICENSE_GPL3)
+.endif
+
+.if defined(FFMPEG_LICENSE_GPL3)
 LICENSE=		GPLv3 LGPL3
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING.GPLv3
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LGPLv3
 CONFIGURE_ARGS+=	--enable-version3
-. else
-LICENSE=		GPLv2 LGPL21
-LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING.GPLv2
-LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPLv2.1
-. endif
 .endif
 
 post-patch:
