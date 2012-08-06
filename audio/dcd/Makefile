@@ -7,15 +7,14 @@
 
 PORTNAME=	dcd
 PORTVERSION=	0.99.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}player/${PORTNAME}player/${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A simple, programmable, intelligent CD player
 
-LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
-    		cdaudio.1:${PORTSDIR}/audio/libcdaudio
+LIB_DEPENDS=	cdaudio:${PORTSDIR}/audio/libcdaudio
 
 USE_GMAKE=	yes
 
