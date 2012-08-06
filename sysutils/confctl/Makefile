@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	confctl
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cloud.github.com/downloads/trasz/confctl/ \
 		${MASTER_SITE_LOCAL}
