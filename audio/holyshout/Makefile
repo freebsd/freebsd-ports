@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://ftp.holywar.net/pub/FreeBSD/
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Streaming audio to Icecast/shoutcast supports multiple bitrate stream
 
+DEPRECATED=	Upstream has disappeared
+EXPIRATION_DATE=2012-09-06
+
 LIB_DEPENDS=	shout.5:${PORTSDIR}/audio/libshout2 \
 		mp3lame.0:${PORTSDIR}/audio/lame
 
