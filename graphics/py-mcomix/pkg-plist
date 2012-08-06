@@ -1,0 +1,412 @@
+@comment $FreeBSD$
+bin/mcomix
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/about_dialog.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/about_dialog.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/about_dialog.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive/archive_base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive/archive_base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive/archive_base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive/lha.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive/lha.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive/lha.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive/rar.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive/rar.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive/rar.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive/rarfile.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive/rarfile.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive/rarfile.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive/sevenzip.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive/sevenzip.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive/sevenzip.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive/tar.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive/tar.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive/tar.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive/zip.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive/zip.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive/zip.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive_extractor.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive_extractor.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive_extractor.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive_packer.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive_packer.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive_packer.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive_tools.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive_tools.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive_tools.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/bookmark_backend.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/bookmark_backend.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/bookmark_backend.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/bookmark_dialog.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/bookmark_dialog.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/bookmark_dialog.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/bookmark_menu.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/bookmark_menu.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/bookmark_menu.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/bookmark_menu_item.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/bookmark_menu_item.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/bookmark_menu_item.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/callback.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/callback.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/callback.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/clipboard.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/clipboard.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/clipboard.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/comment_dialog.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/comment_dialog.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/comment_dialog.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/constants.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/constants.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/constants.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/cursor_handler.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/cursor_handler.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/cursor_handler.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/dialog_handler.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/dialog_handler.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/dialog_handler.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/edit_comment_area.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/edit_comment_area.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/edit_comment_area.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/edit_dialog.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/edit_dialog.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/edit_dialog.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/edit_image_area.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/edit_image_area.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/edit_image_area.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/enhance_backend.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/enhance_backend.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/enhance_backend.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/enhance_dialog.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/enhance_dialog.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/enhance_dialog.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/event.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/event.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/event.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/file_chooser_base_dialog.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/file_chooser_base_dialog.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/file_chooser_base_dialog.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/file_chooser_library_dialog.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/file_chooser_library_dialog.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/file_chooser_library_dialog.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/file_chooser_main_dialog.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/file_chooser_main_dialog.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/file_chooser_main_dialog.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/file_chooser_simple_dialog.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/file_chooser_simple_dialog.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/file_chooser_simple_dialog.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/file_handler.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/file_handler.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/file_handler.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/file_provider.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/file_provider.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/file_provider.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/histogram.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/histogram.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/histogram.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/i18n.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/i18n.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/i18n.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/icons.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/icons.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/icons.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/image_handler.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/image_handler.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/image_handler.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/image_tools.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/image_tools.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/image_tools.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/16x16/mcomix.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/22x22/mcomix.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/24x24/mcomix.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/32x32/mcomix.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/48x48/mcomix.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/comments.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/double-page.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/fitbest.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/fitheight.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/fitmanual.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/fitsize.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/fitwidth.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/gimp-flip-horizontal.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/gimp-flip-vertical.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/gimp-rotate-180.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/gimp-rotate-270.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/gimp-rotate-90.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/gimp-thumbnails.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/gimp-transform.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/goto-first-page.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/goto-last-page.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/lens.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/library.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/manga.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/mcomix.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/next-archive.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/next-directory.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/next-page.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/previous-archive.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/previous-directory.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/previous-page.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/tango-add-bookmark.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/tango-archive.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/tango-enhance-image.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/tango-image.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/zoom.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/keybindings.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/keybindings.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/keybindings.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/labels.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/labels.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/labels.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/last_read_page.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/last_read_page.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/last_read_page.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/lens.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/lens.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/lens.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/add_progress_dialog.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/add_progress_dialog.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/add_progress_dialog.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/backend.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/backend.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/backend.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/backend_types.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/backend_types.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/backend_types.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/book_area.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/book_area.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/book_area.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/collection_area.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/collection_area.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/collection_area.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/control_area.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/control_area.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/control_area.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/main_dialog.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/main_dialog.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/main_dialog.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/pixbuf_cache.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/pixbuf_cache.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/pixbuf_cache.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/watchlist.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/watchlist.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library/watchlist.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/log.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/log.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/log.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/main.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/main.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/main.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/message_dialog.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/message_dialog.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/message_dialog.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/ca/LC_MESSAGES/mcomix.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/cs/LC_MESSAGES/mcomix.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/de/LC_MESSAGES/mcomix.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/el/LC_MESSAGES/mcomix.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/es/LC_MESSAGES/mcomix.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/fa/LC_MESSAGES/mcomix.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/fr/LC_MESSAGES/mcomix.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/gl/LC_MESSAGES/mcomix.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/he/LC_MESSAGES/mcomix.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/hr/LC_MESSAGES/mcomix.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/hu/LC_MESSAGES/mcomix.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/id/LC_MESSAGES/mcomix.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/it/LC_MESSAGES/mcomix.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/ja/LC_MESSAGES/mcomix.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/ko/LC_MESSAGES/mcomix.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/nl/LC_MESSAGES/mcomix.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/pl/LC_MESSAGES/mcomix.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/pt_BR/LC_MESSAGES/mcomix.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/ru/LC_MESSAGES/mcomix.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/sv/LC_MESSAGES/mcomix.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/uk/LC_MESSAGES/mcomix.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/zh_CN/LC_MESSAGES/mcomix.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/zh_TW/LC_MESSAGES/mcomix.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/osd.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/osd.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/osd.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/pageselect.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/pageselect.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/pageselect.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/portability.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/portability.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/portability.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/preferences.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/preferences.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/preferences.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/preferences_dialog.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/preferences_dialog.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/preferences_dialog.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/preferences_page.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/preferences_page.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/preferences_page.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/preferences_section.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/preferences_section.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/preferences_section.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/process.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/process.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/process.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/properties_dialog.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/properties_dialog.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/properties_dialog.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/properties_page.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/properties_page.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/properties_page.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/recent.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/recent.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/recent.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/run.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/run.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/run.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/slideshow.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/slideshow.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/slideshow.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/status.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/status.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/status.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/strings.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/strings.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/strings.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/thumbbar.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/thumbbar.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/thumbbar.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/thumbnail_tools.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/thumbnail_tools.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/thumbnail_tools.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/thumbnail_view.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/thumbnail_view.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/thumbnail_view.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/tools.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/tools.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/tools.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/ui.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/ui.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/ui.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/zoom.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/zoom.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/zoom.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/applications/mcomix.desktop
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/16x16/apps/mcomix.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/16x16/mimetypes/application-x-cbr.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/16x16/mimetypes/application-x-cbt.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/16x16/mimetypes/application-x-cbz.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/22x22/apps/mcomix.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/22x22/mimetypes/application-x-cbr.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/22x22/mimetypes/application-x-cbt.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/22x22/mimetypes/application-x-cbz.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/24x24/apps/mcomix.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/24x24/mimetypes/application-x-cbr.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/24x24/mimetypes/application-x-cbt.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/24x24/mimetypes/application-x-cbz.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/32x32/apps/mcomix.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/32x32/mimetypes/application-x-cbr.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/32x32/mimetypes/application-x-cbt.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/32x32/mimetypes/application-x-cbz.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/48x48/apps/mcomix.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/48x48/mimetypes/application-x-cbr.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/48x48/mimetypes/application-x-cbt.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/48x48/mimetypes/application-x-cbz.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/man/man1/mcomix.1.gz
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/mime/packages/mcomix.xml
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/mime/packages
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/mime
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/man/man1
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/man
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/48x48/mimetypes
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/48x48/apps
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/48x48
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/32x32/mimetypes
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/32x32/apps
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/32x32
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/24x24/mimetypes
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/24x24/apps
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/24x24
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/22x22/mimetypes
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/22x22/apps
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/22x22
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/16x16/mimetypes
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/16x16/apps
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/16x16
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/applications
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/zh_TW/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/zh_TW
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/zh_CN/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/zh_CN
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/uk/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/uk
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/sv/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/sv
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/ru/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/ru
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/pt_BR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/pt_BR
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/pl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/pl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/nl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/nl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/ko/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/ko
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/ja/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/ja
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/it/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/it
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/id/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/id
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/hu/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/hu
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/hr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/hr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/he/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/he
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/gl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/gl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/fr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/fr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/fa/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/fa
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/es/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/es
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/el/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/el
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/de/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/de
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/cs/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/cs
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/ca/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages/ca
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/messages
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/library
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/48x48
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/32x32
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/24x24
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/22x22
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images/16x16
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/images
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix/archive
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mcomix
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
