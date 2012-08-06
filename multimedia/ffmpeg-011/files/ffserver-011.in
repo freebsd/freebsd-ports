@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: ffserver-011
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable ffserver:
+#
+#ffserver_011_enable="YES"
+#
+ffserver_011_enable="${ffserver_011_enable-NO}"
+
+. /etc/rc.subr
+
+name=ffserver_011
+rcvar=ffserver_011_enable
+
+command="%%PREFIX%%/bin/${name} &"
+required_files=%%PREFIX%%/etc/ffserver-011.conf
+
+load_rc_config ${name}
+run_rc_command "$1"

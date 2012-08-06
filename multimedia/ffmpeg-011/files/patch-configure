@@ -1,0 +1,35 @@
+--- configure.orig	2012-01-22 14:41:15.000000000 +0100
++++ configure	2012-01-22 16:05:39.961156595 +0100
+@@ -1806,7 +1806,7 @@
+ nogas=":"
+ 
+ # machine
+-arch_default=$(uname -m)
++arch_default=$(uname -p)
+ cpu="generic"
+ 
+ # OS
+@@ -3176,10 +3176,10 @@
+ texi2html -version > /dev/null 2>&1 && enable texi2html || disable texi2html
+ makeinfo --version > /dev/null 2>&1 && enable makeinfo  || disable makeinfo
+ 
+-check_header linux/fb.h
+-check_header linux/videodev.h
+-check_header linux/videodev2.h
+-check_struct linux/videodev2.h "struct v4l2_frmivalenum" discrete
++#check_header linux/fb.h
++#check_header linux/videodev.h
++#check_header linux/videodev2.h
++#check_struct linux/videodev2.h "struct v4l2_frmivalenum" discrete
+ 
+ check_header sys/videoio.h
+ 
+@@ -3517,7 +3517,7 @@
+ SRC_PATH:=\$(SRC_PATH:.%=..%)
+ endif
+ CC_IDENT=$cc_ident
+-ARCH=$arch
++FFMPEG_ARCH=$arch
+ CC=$cc
+ CXX=$cxx
+ AS=$as
