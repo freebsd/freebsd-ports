@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine-gecko
-DISTVERSION=	1.6
+DISTVERSION=	1.7
 CATEGORIES=	emulators
 MASTER_SITES=	SF/wine/Wine%20Gecko/${DISTVERSION}
 DISTNAME=	wine_gecko-${DISTVERSION}-x86
