@@ -17,6 +17,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Reverse proxy, load balancer and HTTP(S) frontend for web servers
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/GPL.txt
+
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_RC_SUBR=	${PORTNAME}
@@ -28,7 +31,7 @@ MAN8=	pound.8 poundctl.8
 OPTIONS=	MSDAV		"With the Microsoft WebDAV extensions support" off \
 		PCRE		"Build with libpcre support" on
 
-CONFIGURE_ARGS=	--disable--tcmalloc --disable-hoard
+CONFIGURE_ARGS=	--disable-tcmalloc --disable-hoard
 PLIST_FILES=	sbin/pound sbin/poundctl
 PORTDOCS=	README FAQ CHANGELOG
 
