@@ -24,6 +24,7 @@ RESTRICTED=	unclear legal status, probably need licenses from 3GPP, Via Licensin
 
 CONFLICTS=	aacplusenc-0*
 
+USE_CSTD=	gnu89
 USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool libtoolize aclocal autoheader automake
