@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	virt-manager
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	deskutils net-mgmt
 MASTER_SITES=	http://virt-manager.et.redhat.com/download/sources/${PORTNAME}/
 
@@ -18,7 +18,7 @@ LICENSE=	LGPL3
 LIB_DEPENDS=	virt.9:${PORTSDIR}/devel/libvirt
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.2:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_PKGNAMEPREFIX}libxml2>=2.7.8:${PORTSDIR}/textproc/py-libxml2 \
-		${PYTHON_PKGNAMEPREFIX}virtinst>=0.600.2:${PORTSDIR}/net-mgmt/virtinst \
+		${PYTHON_PKGNAMEPREFIX}virtinst>=0.600.3:${PORTSDIR}/net-mgmt/virtinst \
 		${PYTHON_PKGNAMEPREFIX}vte>=0.26.2:${PORTSDIR}/x11-toolkits/py-vte \
 		gtk-vnc>=0.3.10:${PORTSDIR}/net/gtk-vnc \
 		librsvg2>=2.32.1:${PORTSDIR}/graphics/librsvg2
