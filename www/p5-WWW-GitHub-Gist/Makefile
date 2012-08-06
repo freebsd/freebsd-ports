@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-GitHub-Gist
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,15 +17,13 @@ COMMENT=	Perl interface to Gist
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
-		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI
+BUILD_DEPENDS=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
+		p5-Moo>=0:${PORTSDIR}/devel/p5-Moo
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		WWW::GitHub::Gist.3 \
-		WWW::GitHub::Gist::v2.3 \
 		WWW::GitHub::Gist::v3.3
 
 .include <bsd.port.pre.mk>
