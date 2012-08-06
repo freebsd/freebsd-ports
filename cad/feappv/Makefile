@@ -16,6 +16,8 @@ EXTRACT_ONLY=	${PORTNAME}${PORTVERSION:S/.//}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Finite Element Analysis Program "personal version"
 
+BROKEN=		size mismatch
+
 OPTIONS_DEFINE=	DOCS
 
 WRKSRC=		${WRKDIR}/ver${PORTVERSION:S/.//}
