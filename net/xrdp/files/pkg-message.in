@@ -6,7 +6,6 @@ There is an rc.d script, so the service can be enabled by adding this line
 in /etc/rc.conf:
 
 xrdp_enable="YES"
-xrdpsesman_enable="YES"
 
 Do not forget to edit the configuration files in "%%PREFIX%%/etc/xrdp"
 and the "%%PREFIX%%/etc/xrdp/startwm.sh" script.

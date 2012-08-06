@@ -1,3 +1,4 @@
+@stopdaemon xrdp
 bin/xrdp-genkeymap
 bin/xrdp-keygen
 bin/xrdp-sesadmin
