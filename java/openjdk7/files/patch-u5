@@ -1,0 +1,2985 @@
+diff -r 6a262c36caeb -r 2e5e8c37d787 src/share/classes/com/sun/corba/se/impl/interceptors/ClientRequestInfoImpl.java
+--- corba/src/share/classes/com/sun/corba/se/impl/interceptors/ClientRequestInfoImpl.java	Thu Feb 23 15:14:14 2012 -0800
++++ corba/src/share/classes/com/sun/corba/se/impl/interceptors/ClientRequestInfoImpl.java	Tue Feb 28 17:00:14 2012 +0000
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2000, 2010, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2000, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -217,7 +217,7 @@
+ 
+     // ClientRequestInfo validity table (see ptc/00-08-06 table 21-1).
+     // Note: These must be in the same order as specified in contants.
+-    protected static final boolean validCall[][] = {
++    private static final boolean validCall[][] = {
+         // LEGEND:
+         // s_req = send_request     r_rep = receive_reply
+         // s_pol = send_poll        r_exc = receive_exception
+diff -r 6a262c36caeb -r 2e5e8c37d787 src/share/classes/com/sun/corba/se/impl/interceptors/ServerRequestInfoImpl.java
+--- corba/src/share/classes/com/sun/corba/se/impl/interceptors/ServerRequestInfoImpl.java	Thu Feb 23 15:14:14 2012 -0800
++++ corba/src/share/classes/com/sun/corba/se/impl/interceptors/ServerRequestInfoImpl.java	Tue Feb 28 17:00:14 2012 +0000
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2000, 2003, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2000, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -195,7 +195,7 @@
+ 
+     // ServerRequestInfo validity table (see ptc/00-08-06 table 21-2).
+     // Note: These must be in the same order as specified in contants.
+-    protected static final boolean validCall[][] = {
++    private static final boolean validCall[][] = {
+         // LEGEND:
+         // r_rsc = receive_request_service_contexts
+         // r_req = receive_request
+diff -r 6a262c36caeb -r 2e5e8c37d787 src/share/classes/com/sun/corba/se/impl/javax/rmi/CORBA/Util.java
+--- corba/src/share/classes/com/sun/corba/se/impl/javax/rmi/CORBA/Util.java	Thu Feb 23 15:14:14 2012 -0800
++++ corba/src/share/classes/com/sun/corba/se/impl/javax/rmi/CORBA/Util.java	Tue Feb 28 17:00:14 2012 +0000
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1999, 2004, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1999, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -130,10 +130,23 @@
+     private UtilSystemException utilWrapper = UtilSystemException.get(
+                                                   CORBALogDomains.RPC_ENCODING);
+ 
+-    public static Util instance = null;
++    private static Util instance = null;
+ 
+     public Util() {
+-        instance = this;
++        setInstance(this);
++    }
++
++    private static void setInstance( Util util ) {
++        assert instance == null : "Instance already defined";
++        instance = util;
++    }
++
++    public static Util getInstance() {
++        return instance;
++    }
++
++    public static boolean isInstanceDefined() {
++        return instance != null;
+     }
+ 
+     // Used by TOAFactory.shutdown to unexport all targets for this
+diff -r 6a262c36caeb -r 2e5e8c37d787 src/share/classes/com/sun/corba/se/impl/oa/poa/POAPolicyMediatorBase_R.java
+--- corba/src/share/classes/com/sun/corba/se/impl/oa/poa/POAPolicyMediatorBase_R.java	Thu Feb 23 15:14:14 2012 -0800
++++ corba/src/share/classes/com/sun/corba/se/impl/oa/poa/POAPolicyMediatorBase_R.java	Tue Feb 28 17:00:14 2012 +0000
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2002, 2010, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2002, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -93,7 +93,7 @@
+ 
+         activeObjectMap.putServant( servant, entry ) ;
+ 
+-        if (Util.instance != null) {
++        if (Util.isInstanceDefined()) {
+             POAManagerImpl pm = (POAManagerImpl)poa.the_POAManager() ;
+             POAFactory factory = pm.getFactory() ;
+             factory.registerPOAForServant(poa, servant);
+@@ -129,7 +129,7 @@
+ 
+         activeObjectMap.remove(key);
+ 
+-        if (Util.instance != null) {
++        if (Util.isInstanceDefined()) {
+             POAManagerImpl pm = (POAManagerImpl)poa.the_POAManager() ;
+             POAFactory factory = pm.getFactory() ;
+             factory.unregisterPOAForServant(poa, s);
+diff -r 6a262c36caeb -r 2e5e8c37d787 src/share/classes/com/sun/corba/se/impl/oa/toa/TOAFactory.java
+--- corba/src/share/classes/com/sun/corba/se/impl/oa/toa/TOAFactory.java	Thu Feb 23 15:14:14 2012 -0800
++++ corba/src/share/classes/com/sun/corba/se/impl/oa/toa/TOAFactory.java	Tue Feb 28 17:00:14 2012 +0000
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2002, 2003, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2002, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -78,8 +78,8 @@
+ 
+     public void shutdown( boolean waitForCompletion )
+     {
+-        if (Util.instance != null) {
+-            Util.instance.unregisterTargetsForORB(orb);
++        if (Util.isInstanceDefined()) {
++            Util.getInstance().unregisterTargetsForORB(orb);
+         }
+     }
+ 
+diff -r 6a262c36caeb -r 2e5e8c37d787 src/share/classes/com/sun/corba/se/impl/orb/ParserTable.java
+--- corba/src/share/classes/com/sun/corba/se/impl/orb/ParserTable.java	Thu Feb 23 15:14:14 2012 -0800
++++ corba/src/share/classes/com/sun/corba/se/impl/orb/ParserTable.java	Tue Feb 28 17:00:14 2012 +0000
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2002, 2006, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2002, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -106,7 +106,9 @@
+ 
+     public ParserData[] getParserData()
+     {
+-        return parserData ;
++        ParserData[] parserArray = new ParserData[parserData.length];
++        System.arraycopy(parserData, 0, parserArray, 0, parserData.length);
++        return parserArray;
+     }
+ 
+     private ParserTable() {
+diff -r 6a262c36caeb -r 2e5e8c37d787 src/share/classes/com/sun/corba/se/impl/orbutil/RepositoryId_1_3.java
+--- corba/src/share/classes/com/sun/corba/se/impl/orbutil/RepositoryId_1_3.java	Thu Feb 23 15:14:14 2012 -0800
++++ corba/src/share/classes/com/sun/corba/se/impl/orbutil/RepositoryId_1_3.java	Tue Feb 28 17:00:14 2012 +0000
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2000, 2002, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2000, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -62,7 +62,7 @@
+     // legal use of '.' in a Java name.
+ 
+     public static final RepositoryIdCache_1_3 cache = new RepositoryIdCache_1_3();
+-    public static final byte[] IDL_IDENTIFIER_CHARS = {
++    private static final byte[] IDL_IDENTIFIER_CHARS = {
+ 
+         // 0 1 2 3  4 5 6 7  8 9 a b  c d e f
+         0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, // 00-0f
+@@ -180,7 +180,7 @@
+     public static final String kRemoteTypeStr = "";
+     public static final String kRemoteValueRepID = "";
+ 
+-    public static final Hashtable kSpecialArrayTypeStrings = new Hashtable();
++    private static final Hashtable kSpecialArrayTypeStrings = new Hashtable();
+ 
+     static {
+         kSpecialArrayTypeStrings.put("CORBA.WStringValue", new StringBuffer(java.lang.String.class.getName()));
+@@ -189,7 +189,7 @@
+ 
+     }
+ 
+-    public static final Hashtable kSpecialCasesRepIDs = new Hashtable();
++    private static final Hashtable kSpecialCasesRepIDs = new Hashtable();
+ 
+     static {
+         kSpecialCasesRepIDs.put(java.lang.String.class, kWStringValueRepID);
+@@ -197,7 +197,7 @@
+         kSpecialCasesRepIDs.put(java.rmi.Remote.class, kRemoteValueRepID);
+     }
+ 
+-    public static final Hashtable kSpecialCasesStubValues = new Hashtable();
++    private static final Hashtable kSpecialCasesStubValues = new Hashtable();
+ 
+     static {
+         kSpecialCasesStubValues.put(java.lang.String.class, kWStringStubValue);
+@@ -209,7 +209,7 @@
+     }
+ 
+ 
+-    public static final Hashtable kSpecialCasesVersions = new Hashtable();
++    private static final Hashtable kSpecialCasesVersions = new Hashtable();
+ 
+     static {
+         kSpecialCasesVersions.put(java.lang.String.class, kWStringValueHash);
+@@ -220,7 +220,7 @@
+         kSpecialCasesVersions.put(java.rmi.Remote.class, kRemoteValueHash);
+     }
+ 
+-    public static final Hashtable kSpecialCasesClasses = new Hashtable();
++    private static final Hashtable kSpecialCasesClasses = new Hashtable();
+ 
+     static {
+         kSpecialCasesClasses.put(kWStringTypeStr, java.lang.String.class);
+@@ -232,7 +232,7 @@
+         //kSpecialCasesClasses.put(kRemoteTypeStr, java.rmi.Remote.class);
+     }
+ 
+-    public static final Hashtable kSpecialCasesArrayPrefix = new Hashtable();
++    private static final Hashtable kSpecialCasesArrayPrefix = new Hashtable();
+ 
+     static {
+         kSpecialCasesArrayPrefix.put(java.lang.String.class, kValuePrefix + kSequencePrefix + kCORBAPrefix);
+@@ -243,7 +243,7 @@
+         kSpecialCasesArrayPrefix.put(java.rmi.Remote.class, kValuePrefix + kSequencePrefix + kCORBAPrefix);
+     }
+ 
+-    public static final Hashtable kSpecialPrimitives = new Hashtable();
++    private static final Hashtable kSpecialPrimitives = new Hashtable();
+ 
+     static {
+         kSpecialPrimitives.put("int","long");
+diff -r 6a262c36caeb -r 2e5e8c37d787 src/share/classes/com/sun/corba/se/impl/orbutil/RepositoryId_1_3_1.java
+--- corba/src/share/classes/com/sun/corba/se/impl/orbutil/RepositoryId_1_3_1.java	Thu Feb 23 15:14:14 2012 -0800
++++ corba/src/share/classes/com/sun/corba/se/impl/orbutil/RepositoryId_1_3_1.java	Tue Feb 28 17:00:14 2012 +0000
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2001, 2002, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2001, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -63,7 +63,7 @@
+     // uniformly, and is safe because that is the only
+     // legal use of '.' in a Java name.
+ 
+-    public static final byte[] IDL_IDENTIFIER_CHARS = {
++    private static final byte[] IDL_IDENTIFIER_CHARS = {
+ 
+         // 0 1 2 3  4 5 6 7  8 9 a b  c d e f
+         0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, // 00-0f
+@@ -198,7 +198,7 @@
+     public static final String kRemoteTypeStr = "";
+     public static final String kRemoteValueRepID = "";
+ 
+-    public static final Hashtable kSpecialArrayTypeStrings = new Hashtable();
++    private static final Hashtable kSpecialArrayTypeStrings = new Hashtable();
+ 
+     static {
+         kSpecialArrayTypeStrings.put("CORBA.WStringValue", new StringBuffer(java.lang.String.class.getName()));
+@@ -207,7 +207,7 @@
+ 
+     }
+ 
+-    public static final Hashtable kSpecialCasesRepIDs = new Hashtable();
++    private static final Hashtable kSpecialCasesRepIDs = new Hashtable();
+ 
+     static {
+         kSpecialCasesRepIDs.put(java.lang.String.class, kWStringValueRepID);
+@@ -215,7 +215,7 @@
+         kSpecialCasesRepIDs.put(java.rmi.Remote.class, kRemoteValueRepID);
+     }
+ 
+-    public static final Hashtable kSpecialCasesStubValues = new Hashtable();
++    private static final Hashtable kSpecialCasesStubValues = new Hashtable();
+ 
+     static {
+         kSpecialCasesStubValues.put(java.lang.String.class, kWStringStubValue);
+@@ -227,7 +227,7 @@
+     }
+ 
+ 
+-    public static final Hashtable kSpecialCasesVersions = new Hashtable();
++    private static final Hashtable kSpecialCasesVersions = new Hashtable();
+ 
+     static {
+         kSpecialCasesVersions.put(java.lang.String.class, kWStringValueHash);
+@@ -238,7 +238,7 @@
+         kSpecialCasesVersions.put(java.rmi.Remote.class, kRemoteValueHash);
+     }
+ 
+-    public static final Hashtable kSpecialCasesClasses = new Hashtable();
++    private static final Hashtable kSpecialCasesClasses = new Hashtable();
+ 
+     static {
+         kSpecialCasesClasses.put(kWStringTypeStr, java.lang.String.class);
+@@ -250,7 +250,7 @@
+         //kSpecialCasesClasses.put(kRemoteTypeStr, java.rmi.Remote.class);
+     }
+ 
+-    public static final Hashtable kSpecialCasesArrayPrefix = new Hashtable();
++    private static final Hashtable kSpecialCasesArrayPrefix = new Hashtable();
+ 
+     static {
+         kSpecialCasesArrayPrefix.put(java.lang.String.class, kValuePrefix + kSequencePrefix + kCORBAPrefix);
+@@ -261,7 +261,7 @@
+         kSpecialCasesArrayPrefix.put(java.rmi.Remote.class, kValuePrefix + kSequencePrefix + kCORBAPrefix);
+     }
+ 
+-    public static final Hashtable kSpecialPrimitives = new Hashtable();
++    private static final Hashtable kSpecialPrimitives = new Hashtable();
+ 
+     static {
+         kSpecialPrimitives.put("int","long");
+diff -r 6a262c36caeb -r 2e5e8c37d787 src/share/classes/com/sun/corba/se/impl/protocol/LocalClientRequestDispatcherBase.java
+--- corba/src/share/classes/com/sun/corba/se/impl/protocol/LocalClientRequestDispatcherBase.java	Thu Feb 23 15:14:14 2012 -0800
++++ corba/src/share/classes/com/sun/corba/se/impl/protocol/LocalClientRequestDispatcherBase.java	Tue Feb 28 17:00:14 2012 +0000
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2002, 2003, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2002, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -52,7 +52,7 @@
+ 
+     // If isNextIsLocalValid.get() == Boolean.TRUE,
+     // the next call to isLocal should be valid
+-    protected static ThreadLocal isNextCallValid = new ThreadLocal() {
++    private static final ThreadLocal isNextCallValid = new ThreadLocal() {
+             protected synchronized Object initialValue() {
+                 return Boolean.TRUE;
+             }
+diff -r 6a262c36caeb -r 2e5e8c37d787 src/share/classes/com/sun/corba/se/impl/util/RepositoryId.java
+--- corba/src/share/classes/com/sun/corba/se/impl/util/RepositoryId.java	Thu Feb 23 15:14:14 2012 -0800
++++ corba/src/share/classes/com/sun/corba/se/impl/util/RepositoryId.java	Tue Feb 28 17:00:14 2012 +0000
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1998, 2004, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1998, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -57,7 +57,7 @@
+     // uniformly, and is safe because that is the only
+     // legal use of '.' in a Java name.
+ 
+-    public static final byte[] IDL_IDENTIFIER_CHARS = {
++    private static final byte[] IDL_IDENTIFIER_CHARS = {
+ 
+         // 0 1 2 3  4 5 6 7  8 9 a b  c d e f
+         0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, // 00-0f
+@@ -95,7 +95,7 @@
+     private static IdentityHashtable classIDLToRepStr = new IdentityHashtable();
+     private static IdentityHashtable classSeqToRepStr = new IdentityHashtable();
+ 
+-    private static IdentityHashtable repStrToByteArray = new IdentityHashtable();
++    private static final IdentityHashtable repStrToByteArray = new IdentityHashtable();
+     private static Hashtable repStrToClass = new Hashtable();
+ 
+     private String repId = null;
+@@ -192,7 +192,7 @@
+     public static final String kRemoteTypeStr = "";
+     public static final String kRemoteValueRepID = "";
+ 
+-    public static final Hashtable kSpecialArrayTypeStrings = new Hashtable();
++    private static final Hashtable kSpecialArrayTypeStrings = new Hashtable();
+ 
+     static {
+         kSpecialArrayTypeStrings.put("CORBA.WStringValue", new StringBuffer(java.lang.String.class.getName()));
+@@ -201,7 +201,7 @@
+ 
+     }
+ 
+-    public static final Hashtable kSpecialCasesRepIDs = new Hashtable();
++    private static final Hashtable kSpecialCasesRepIDs = new Hashtable();
+ 
+     static {
+         kSpecialCasesRepIDs.put(java.lang.String.class, kWStringValueRepID);
+@@ -209,7 +209,7 @@
+         kSpecialCasesRepIDs.put(java.rmi.Remote.class, kRemoteValueRepID);
+     }
+ 
+-    public static final Hashtable kSpecialCasesStubValues = new Hashtable();
++    private static final Hashtable kSpecialCasesStubValues = new Hashtable();
+ 
+     static {
+         kSpecialCasesStubValues.put(java.lang.String.class, kWStringStubValue);
+@@ -221,7 +221,7 @@
+     }
+ 
+ 
+-    public static final Hashtable kSpecialCasesVersions = new Hashtable();
++    private static final Hashtable kSpecialCasesVersions = new Hashtable();
+ 
+     static {
+         kSpecialCasesVersions.put(java.lang.String.class, kWStringValueHash);
+@@ -232,7 +232,7 @@
+         kSpecialCasesVersions.put(java.rmi.Remote.class, kRemoteValueHash);
+     }
+ 
+-    public static final Hashtable kSpecialCasesClasses = new Hashtable();
++    private static final Hashtable kSpecialCasesClasses = new Hashtable();
+ 
+     static {
+         kSpecialCasesClasses.put(kWStringTypeStr, java.lang.String.class);
+@@ -244,7 +244,7 @@
+         //kSpecialCasesClasses.put(kRemoteTypeStr, java.rmi.Remote.class);
+     }
+ 
+-    public static final Hashtable kSpecialCasesArrayPrefix = new Hashtable();
++    private static final Hashtable kSpecialCasesArrayPrefix = new Hashtable();
+ 
+     static {
+         kSpecialCasesArrayPrefix.put(java.lang.String.class, kValuePrefix + kSequencePrefix + kCORBAPrefix);
+@@ -255,7 +255,7 @@
+         kSpecialCasesArrayPrefix.put(java.rmi.Remote.class, kValuePrefix + kSequencePrefix + kCORBAPrefix);
+     }
+ 
+-    public static final Hashtable kSpecialPrimitives = new Hashtable();
++    private static final Hashtable kSpecialPrimitives = new Hashtable();
+ 
+     static {
+         kSpecialPrimitives.put("int","long");
+diff -r 6a262c36caeb -r 2e5e8c37d787 src/share/classes/com/sun/corba/se/spi/logging/CORBALogDomains.java
+--- corba/src/share/classes/com/sun/corba/se/spi/logging/CORBALogDomains.java	Thu Feb 23 15:14:14 2012 -0800
++++ corba/src/share/classes/com/sun/corba/se/spi/logging/CORBALogDomains.java	Tue Feb 28 17:00:14 2012 +0000
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2003, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2003, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -58,7 +58,7 @@
+     private CORBALogDomains() {}
+ 
+     // Top level log domain for CORBA
+-    public static String TOP_LEVEL_DOMAIN  = "javax.enterprise.resource.corba";
++    public static final String TOP_LEVEL_DOMAIN  = "javax.enterprise.resource.corba";
+ 
+     public static final String RPC              = "rpc" ;
+ 
+diff -r 6a262c36caeb -r 2e5e8c37d787 src/share/classes/sun/rmi/rmic/iiop/IDLNames.java
+--- corba/src/share/classes/sun/rmi/rmic/iiop/IDLNames.java	Thu Feb 23 15:14:14 2012 -0800
++++ corba/src/share/classes/sun/rmi/rmic/iiop/IDLNames.java	Tue Feb 28 17:00:14 2012 +0000
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1998, 2007, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1998, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -71,6 +71,34 @@
+         (byte)'F',
+     };
+ 
++    // Legal IDL Identifier characters (1 = legal). Note
++    // that '.' (2E) is marked as legal even though it is
++    // not legal in IDL. This allows us to treat a fully
++    // qualified Java name with '.' package separators
++    // uniformly, and is safe because that is the only
++    // legal use of '.' in a Java name.
++
++    private static final byte[] IDL_IDENTIFIER_CHARS = {
++
++        // 0 1 2 3  4 5 6 7  8 9 a b  c d e f
++        0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, // 00-0f
++        0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, // 10-1f
++        0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,1,0, // 20-2f
++        1,1,1,1, 1,1,1,1, 1,1,0,0, 0,0,0,0, // 30-3f
++        0,1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1, // 40-4f
++        1,1,1,1, 1,1,1,1, 1,1,1,0, 0,0,0,1, // 50-5f
++        0,1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1, // 60-6f
++        1,1,1,1, 1,1,1,1, 1,1,1,0, 0,0,0,0, // 70-7f
++        0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, // 80-8f
++        0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, // 90-9f
++        0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, // a0-af
++        0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, // b0-bf
++        1,1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1, // c0-cf
++        0,1,1,1, 1,1,1,0, 1,1,1,1, 1,0,0,1, // d0-df
++        1,1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1, // e0-ef
++        0,1,1,1, 1,1,1,0, 1,1,1,1, 1,0,0,1, // f0-ff
++    };
++
+     //_____________________________________________________________________
+     // Public Interfaces
+     //_____________________________________________________________________
+@@ -139,7 +167,7 @@
+         result = replace(result,"x\\U","U");
+ 
+         // Now see if we have any remaining illegal characters (see
+-        // RepositoryId.IDL_IDENTIFIER_CHARS array)...
++        // IDL_IDENTIFIER_CHARS array)...
+ 
+         int length = result.length();
+         StringBuffer buffer = null;
+@@ -148,7 +176,7 @@
+ 
+             char c = result.charAt(i);
+ 
+-            if (c > 255 || RepositoryId.IDL_IDENTIFIER_CHARS[c] == 0) {
++            if (c > 255 || IDL_IDENTIFIER_CHARS[c] == 0) {
+ 
+                 // We gotta convert. Have we already started?
+ 
+diff -r 149b6bbf77ff -r 6a7aac2ae8db src/share/vm/compiler/compilerOracle.cpp
+--- hotspot/src/share/vm/compiler/compilerOracle.cpp	Fri Mar 23 10:43:32 2012 -0700
++++ hotspot/src/share/vm/compiler/compilerOracle.cpp	Thu Mar 29 13:22:24 2012 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1998, 2011, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1998, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -551,13 +551,22 @@
+ }
+ 
+ static const char* cc_file() {
+-  if (CompileCommandFile == NULL)
++#ifdef ASSERT
++  if (CompileCommandFile == NULL) {
+     return ".hotspot_compiler";
++  }
++#endif
+   return CompileCommandFile;
+ }
++
++bool CompilerOracle::has_command_file() {
++  return cc_file() != NULL;
++}
++
+ bool CompilerOracle::_quiet = false;
+ 
+ void CompilerOracle::parse_from_file() {
++  assert(has_command_file(), "command file must be specified");
+   FILE* stream = fopen(cc_file(), "rt");
+   if (stream == NULL) return;
+ 
+@@ -600,6 +609,7 @@
+ }
+ 
+ void CompilerOracle::append_comment_to_file(const char* message) {
++  assert(has_command_file(), "command file must be specified");
+   fileStream stream(fopen(cc_file(), "at"));
+   stream.print("# ");
+   for (int index = 0; message[index] != '\0'; index++) {
+@@ -610,6 +620,7 @@
+ }
+ 
+ void CompilerOracle::append_exclude_to_file(methodHandle method) {
++  assert(has_command_file(), "command file must be specified");
+   fileStream stream(fopen(cc_file(), "at"));
+   stream.print("exclude ");
+   Klass::cast(method->method_holder())->name()->print_symbol_on(&stream);
+@@ -624,7 +635,9 @@
+ void compilerOracle_init() {
+   CompilerOracle::parse_from_string(CompileCommand, CompilerOracle::parse_from_line);
+   CompilerOracle::parse_from_string(CompileOnly, CompilerOracle::parse_compile_only);
+-  CompilerOracle::parse_from_file();
++  if (CompilerOracle::has_command_file()) {
++    CompilerOracle::parse_from_file();
++  }
+   if (lists[PrintCommand] != NULL) {
+     if (PrintAssembly) {
+       warning("CompileCommand and/or .hotspot_compiler file contains 'print' commands, but PrintAssembly is also enabled");
+diff -r 149b6bbf77ff -r 6a7aac2ae8db src/share/vm/compiler/compilerOracle.hpp
+--- hotspot/src/share/vm/compiler/compilerOracle.hpp	Fri Mar 23 10:43:32 2012 -0700
++++ hotspot/src/share/vm/compiler/compilerOracle.hpp	Thu Mar 29 13:22:24 2012 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1998, 2011, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1998, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -36,6 +36,10 @@
+   static bool _quiet;
+ 
+  public:
++
++  // True if the command file has been specified or is implicit
++  static bool has_command_file();
++
+   // Reads from file and adds to lists
+   static void parse_from_file();
+ 
+diff -r 149b6bbf77ff -r 6a7aac2ae8db src/share/vm/opto/runtime.cpp
+--- hotspot/src/share/vm/opto/runtime.cpp	Fri Mar 23 10:43:32 2012 -0700
++++ hotspot/src/share/vm/opto/runtime.cpp	Thu Mar 29 13:22:24 2012 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1998, 2011, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1998, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -896,7 +896,8 @@
+       methodOop method = ((nmethod*)n)->method();
+       tty->print_cr("# Method where it happened %s.%s ", Klass::cast(method->method_holder())->name()->as_C_string(), method->name()->as_C_string());
+       tty->print_cr("#");
+-      if (ShowMessageBoxOnError && UpdateHotSpotCompilerFileOnError) {
++      if (ShowMessageBoxOnError && UpdateHotSpotCompilerFileOnError &&
++          CompilerOracle::has_command_file()) {
+         const char* title    = "HotSpot Runtime Error";
+         const char* question = "Do you want to exclude compilation of this method in future runs?";
+         if (os::message_box(title, question)) {
+diff -r 149b6bbf77ff -r 6a7aac2ae8db src/share/vm/runtime/arguments.cpp
+--- hotspot/src/share/vm/runtime/arguments.cpp	Fri Mar 23 10:43:32 2012 -0700
++++ hotspot/src/share/vm/runtime/arguments.cpp	Thu Mar 29 13:22:24 2012 -0400
+@@ -2997,12 +2997,14 @@
+     }
+   }
+ 
++#ifdef ASSERT
+   // Parse default .hotspotrc settings file
+   if (!settings_file_specified) {
+     if (!process_settings_file(".hotspotrc", false, args->ignoreUnrecognized)) {
+       return JNI_EINVAL;
+     }
+   }
++#endif
+ 
+   if (PrintVMOptions) {
+     for (index = 0; index < args->nOptions; index++) {
+diff -r 149b6bbf77ff -r 6a7aac2ae8db test/runtime/7110720/Test7110720.sh
+--- hotspot/test/runtime/7110720/Test7110720.sh	Thu Jan 01 00:00:00 1970 +0000
++++ hotspot/test/runtime/7110720/Test7110720.sh	Thu Mar 29 13:22:24 2012 -0400
+@@ -0,0 +1,122 @@
++#
++#  Copyright (c) 2012, Oracle and/or its affiliates. All rights reserved.
++#  DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++#
++
++
++#
++# @test Test7110720.sh
++# @bug 7110720
++# @summary improve VM configuration file loading
++# @run shell Test7110720.sh
++#
++
++if [ "${TESTSRC}" = "" ]
++  then TESTSRC=.
++fi
++
++if [ "${TESTJAVA}" = "" ]
++then
++  PARENT=`dirname \`which java\``
++  TESTJAVA=`dirname ${PARENT}`
++  echo "TESTJAVA not set, selecting " ${TESTJAVA}
++  echo "If this is incorrect, try setting the variable manually."
++fi
++
++if [ "${TESTCLASSES}" = "" ]
++then
++  echo "TESTCLASSES not set.  Test cannot execute.  Failed."
++  exit 1
++fi
++
++# Jtreg sets TESTVMOPTS which may include -d64 which is
++# required to test a 64-bit JVM on some platforms.
++# If another test harness still creates HOME/JDK64BIT,
++# we can recognise that.
++
++# set platform-dependent variables
++OS=`uname -s`
++case "$OS" in
++  SunOS | Linux )
++    FS="/"
++    RM=/bin/rm
++    CP=/bin/cp
++    MV=/bin/mv
++    ## for solaris, linux it's HOME
++    FILE_LOCATION=$HOME
++    if [ -f ${FILE_LOCATION}${FS}JDK64BIT -a ${OS} = "SunOS" ]
++    then
++        TESTVMOPTS=`cat ${FILE_LOCATION}${FS}JDK64BIT`
++    fi
++    ;;
++  Windows_* )
++    FS="\\"
++    RM=rm
++    CP=cp
++    MV=mv
++    ;;
++  * )
++    echo "Unrecognized system!"
++    exit 1;
++    ;;
++esac
++
++
++JAVA=${TESTJAVA}${FS}bin${FS}java
++
++# Don't test debug builds, they do read the config files:
++${JAVA} ${TESTVMOPTS} -version 2>&1 | grep "debug" >/dev/null
++if [ "$?" = "0" ]; then
++  echo Skipping test for debug build.
++  exit 0
++fi
++
++ok=yes
++
++$RM -f .hotspot_compiler .hotspotrc
++
++${JAVA} ${TESTVMOPTS} -version 2>&1 | grep "garbage in" >/dev/null
++if [ "$?" = "0" ]; then
++  echo "FAILED: base case failure"
++  exit 1
++fi
++
++
++echo "garbage in, garbage out" > .hotspot_compiler
++${JAVA} ${TESTVMOPTS} -version 2>&1 | grep "garbage in" >/dev/null
++if [ "$?" = "0" ]; then
++  echo "FAILED: .hotspot_compiler was read"
++  ok=no
++fi
++
++$MV .hotspot_compiler hs_comp.txt
++${JAVA} ${TESTVMOPTS} -XX:CompileCommandFile=hs_comp.txt -version 2>&1 | grep "garbage in" >/dev/null
++if [ "$?" = "1" ]; then
++  echo "FAILED: explicit compiler command file not read"
++  ok=no
++fi
++
++$RM -f .hotspot_compiler hs_comp.txt
++
++echo "garbage" > .hotspotrc
++${JAVA} ${TESTVMOPTS} -version 2>&1 | grep "garbage" >/dev/null
++if [ "$?" = "0" ]; then
++  echo "FAILED: .hotspotrc was read"
++  ok=no
++fi
++
++$MV .hotspotrc hs_flags.txt
++${JAVA} ${TESTVMOPTS} -XX:Flags=hs_flags.txt -version 2>&1 | grep "garbage" >/dev/null
++if [ "$?" = "1" ]; then
++  echo "FAILED: explicit flags file not read"
++  ok=no
++fi
++
++if [ "${ok}" = "no" ]; then 
++  echo "Some tests failed."
++  exit 1
++else 
++  echo "Passed"
++  exit 0
++fi
++
+diff -r 988706e33b26 -r 21aac3eb7c40 src/macosx/classes/apple/applescript/AppleScriptEngine.java
+--- jdk/src/macosx/classes/apple/applescript/AppleScriptEngine.java	Mon Feb 27 20:18:28 2012 +0200
++++ jdk/src/macosx/classes/apple/applescript/AppleScriptEngine.java	Tue Feb 28 15:44:47 2012 -0800
+@@ -26,6 +26,7 @@
+ package apple.applescript;
+ 
+ import java.io.*;
++import java.nio.file.Files;
+ import java.util.*;
+ import java.util.Map.Entry;
+ 
+@@ -297,7 +298,7 @@
+         File tmpfile;
+         FileWriter tmpwrite;
+         try {
+-            tmpfile = File.createTempFile("AppleScriptEngine.", ".scpt");
++            tmpfile = Files.createTempFile("AppleScriptEngine.", ".scpt").toFile();
+             tmpwrite = new FileWriter(tmpfile);
+ 
+             // read in our input and write directly to tmpfile
+diff -r 988706e33b26 -r 21aac3eb7c40 src/share/classes/com/sun/java/util/jar/pack/Driver.java
+--- jdk/src/share/classes/com/sun/java/util/jar/pack/Driver.java	Mon Feb 27 20:18:28 2012 +0200
++++ jdk/src/share/classes/com/sun/java/util/jar/pack/Driver.java	Tue Feb 28 15:44:47 2012 -0800
+@@ -35,6 +35,7 @@
+ import java.io.OutputStream;
+ import java.io.PrintStream;
+ import java.text.MessageFormat;
++import java.nio.file.Files;
+ import java.util.ArrayList;
+ import java.util.Arrays;
+ import java.util.HashMap;
+@@ -385,9 +386,7 @@
+         if ( base.getParentFile() == null && suffix.equals(".bak"))
+             where = new File(".").getAbsoluteFile();
+ 
+-
+-        File f = File.createTempFile(prefix, suffix, where);
+-        return f;
++        return Files.createTempFile(where.toPath(), prefix, suffix).toFile();
+     }
+ 
+     static private
+diff -r 988706e33b26 -r 21aac3eb7c40 src/share/classes/java/awt/Font.java
+--- jdk/src/share/classes/java/awt/Font.java	Mon Feb 27 20:18:28 2012 +0200
++++ jdk/src/share/classes/java/awt/Font.java	Tue Feb 28 15:44:47 2012 -0800
+@@ -36,6 +36,7 @@
+ import java.awt.peer.FontPeer;
+ import java.io.*;
+ import java.lang.ref.SoftReference;
++import java.nio.file.Files;
+ import java.security.AccessController;
+ import java.security.PrivilegedExceptionAction;
+ import java.text.AttributedCharacterIterator.Attribute;
+@@ -830,7 +831,7 @@
+         File f = null;
+         boolean hasPerm = false;
+         try {
+-            f = File.createTempFile("+~JT", ".tmp", null);
++            f = Files.createTempFile("+~JT", ".tmp").toFile();
+             f.delete();
+             f = null;
+             hasPerm = true;
+@@ -880,7 +881,7 @@
+             final File tFile = AccessController.doPrivileged(
+                 new PrivilegedExceptionAction<File>() {
+                     public File run() throws IOException {
+-                        return File.createTempFile("+~JF", ".tmp", null);
++                        return Files.createTempFile("+~JF", ".tmp").toFile();
+                     }
+                 }
+             );
+diff -r 988706e33b26 -r 21aac3eb7c40 src/share/classes/javax/imageio/stream/FileCacheImageInputStream.java
+--- jdk/src/share/classes/javax/imageio/stream/FileCacheImageInputStream.java	Mon Feb 27 20:18:28 2012 +0200
++++ jdk/src/share/classes/javax/imageio/stream/FileCacheImageInputStream.java	Tue Feb 28 15:44:47 2012 -0800
+@@ -29,6 +29,7 @@
+ import java.io.InputStream;
+ import java.io.IOException;
+ import java.io.RandomAccessFile;
++import java.nio.file.Files;
+ import com.sun.imageio.stream.StreamCloser;
+ import com.sun.imageio.stream.StreamFinalizer;
+ import sun.java2d.Disposer;
+@@ -97,8 +98,11 @@
+             throw new IllegalArgumentException("Not a directory!");
+         }
+         this.stream = stream;
+-        this.cacheFile =
+-            File.createTempFile("imageio", ".tmp", cacheDir);
++        if (cacheDir == null)
++            this.cacheFile = Files.createTempFile("imageio", ".tmp").toFile();
++        else
++            this.cacheFile = Files.createTempFile(cacheDir.toPath(), "imageio", ".tmp")
++                                  .toFile();
+         this.cache = new RandomAccessFile(cacheFile, "rw");
+ 
+         this.closeAction = StreamCloser.createCloseAction(this);
+diff -r 988706e33b26 -r 21aac3eb7c40 src/share/classes/javax/imageio/stream/FileCacheImageOutputStream.java
+--- jdk/src/share/classes/javax/imageio/stream/FileCacheImageOutputStream.java	Mon Feb 27 20:18:28 2012 +0200
++++ jdk/src/share/classes/javax/imageio/stream/FileCacheImageOutputStream.java	Tue Feb 28 15:44:47 2012 -0800
+@@ -29,6 +29,7 @@
+ import java.io.IOException;
+ import java.io.OutputStream;
+ import java.io.RandomAccessFile;
++import java.nio.file.Files;
+ import com.sun.imageio.stream.StreamCloser;
+ 
+ /**
+@@ -83,8 +84,11 @@
+             throw new IllegalArgumentException("Not a directory!");
+         }
+         this.stream = stream;
+-        this.cacheFile =
+-            File.createTempFile("imageio", ".tmp", cacheDir);
++        if (cacheDir == null)
++            this.cacheFile = Files.createTempFile("imageio", ".tmp").toFile();
++        else
++            this.cacheFile = Files.createTempFile(cacheDir.toPath(), "imageio", ".tmp")
++                                  .toFile();
+         this.cache = new RandomAccessFile(cacheFile, "rw");
+ 
+         this.closeAction = StreamCloser.createCloseAction(this);
+diff -r 988706e33b26 -r 21aac3eb7c40 src/share/classes/javax/management/loading/MLet.java
+--- jdk/src/share/classes/javax/management/loading/MLet.java	Mon Feb 27 20:18:28 2012 +0200
++++ jdk/src/share/classes/javax/management/loading/MLet.java	Tue Feb 28 15:44:47 2012 -0800
+@@ -44,6 +44,7 @@
+ import java.net.MalformedURLException;
+ import java.net.URL;
+ import java.net.URLStreamHandlerFactory;
++import java.nio.file.Files;
+ import java.security.AccessController;
+ import java.security.PrivilegedAction;
+ import java.util.ArrayList;
+@@ -1160,8 +1161,9 @@
+                  try {
+                      File directory = new File(libraryDirectory);
+                      directory.mkdirs();
+-                     File file = File.createTempFile(libname + ".", null,
+-                             directory);
++                     File file = Files.createTempFile(directory.toPath(),
++                                                      libname + ".", null)
++                                      .toFile();
+                      file.deleteOnExit();
+                      FileOutputStream fileOutput = new FileOutputStream(file);
+                      try {
+diff -r 988706e33b26 -r 21aac3eb7c40 src/share/classes/sun/print/PSPrinterJob.java
+--- jdk/src/share/classes/sun/print/PSPrinterJob.java	Mon Feb 27 20:18:28 2012 +0200
++++ jdk/src/share/classes/sun/print/PSPrinterJob.java	Tue Feb 28 15:44:47 2012 -0800
+@@ -93,6 +93,7 @@
+ import java.nio.charset.*;
+ import java.nio.CharBuffer;
+ import java.nio.ByteBuffer;
++import java.nio.file.Files;
+ 
+ //REMIND: Remove use of this class when IPPPrintService is moved to share directory.
+ import java.lang.reflect.Method;
+@@ -655,7 +656,7 @@
+                      * is not removed for some reason, request that it is
+                      * removed when the VM exits.
+                      */
+-                    spoolFile = File.createTempFile("javaprint", ".ps", null);
++                    spoolFile = Files.createTempFile("javaprint", ".ps").toFile();
+                     spoolFile.deleteOnExit();
+ 
+                 result = new FileOutputStream(spoolFile);
+diff -r 988706e33b26 -r 21aac3eb7c40 src/share/classes/sun/rmi/server/Activation.java
+--- jdk/src/share/classes/sun/rmi/server/Activation.java	Mon Feb 27 20:18:28 2012 +0200
++++ jdk/src/share/classes/sun/rmi/server/Activation.java	Tue Feb 28 15:44:47 2012 -0800
+@@ -43,6 +43,7 @@
+ import java.net.Socket;
+ import java.net.SocketAddress;
+ import java.net.SocketException;
++import java.nio.file.Files;
+ import java.nio.channels.Channel;
+ import java.nio.channels.ServerSocketChannel;
+ import java.rmi.AccessException;
+@@ -1937,7 +1938,7 @@
+                     new PrivilegedExceptionAction<Void>() {
+                         public Void run() throws IOException {
+                             File file =
+-                                File.createTempFile("rmid-err", null, null);
++                                Files.createTempFile("rmid-err", null).toFile();
+                             PrintStream errStream =
+                                 new PrintStream(new FileOutputStream(file));
+                             System.setErr(errStream);
+diff -r 988706e33b26 -r 21aac3eb7c40 src/share/classes/sun/tools/jar/Main.java
+--- jdk/src/share/classes/sun/tools/jar/Main.java	Mon Feb 27 20:18:28 2012 +0200
++++ jdk/src/share/classes/sun/tools/jar/Main.java	Tue Feb 28 15:44:47 2012 -0800
+@@ -137,7 +137,7 @@
+         File dir = file.getParentFile();
+         if (dir == null)
+             dir = new File(".");
+-        return File.createTempFile("jartmp", null, dir);
++        return Files.createTempFile(dir.toPath(), "jartmp", null).toFile();
+     }
+ 
+     private boolean ok;
+diff -r 988706e33b26 -r 21aac3eb7c40 src/share/classes/sun/tools/native2ascii/Main.java
+--- jdk/src/share/classes/sun/tools/native2ascii/Main.java	Mon Feb 27 20:18:28 2012 +0200
++++ jdk/src/share/classes/sun/tools/native2ascii/Main.java	Tue Feb 28 15:44:47 2012 -0800
+@@ -71,6 +71,7 @@
+ import java.nio.charset.CharsetEncoder;
+ import java.nio.charset.Charset;
+ import java.nio.charset.IllegalCharsetNameException;
++import java.nio.file.Files;
+ import java.io.UnsupportedEncodingException;
+ import java.nio.charset.UnsupportedCharsetException;
+ import sun.tools.native2ascii.A2NFilter;
+@@ -240,9 +241,7 @@
+             if (tempDir == null)
+                 tempDir = new File(System.getProperty("user.dir"));
+ 
+-            tempFile = File.createTempFile("_N2A",
+-                                           ".TMP",
+-                                            tempDir);
++            tempFile = Files.createTempFile(tempDir.toPath(), "_N2A", ".TMP").toFile();
+             tempFile.deleteOnExit();
+ 
+             try {
+@@ -292,9 +291,7 @@
+             File tempDir = f.getParentFile();
+             if (tempDir == null)
+                 tempDir = new File(System.getProperty("user.dir"));
+-            tempFile =  File.createTempFile("_N2A",
+-                                            ".TMP",
+-                                            tempDir);
++            tempFile =  Files.createTempFile(tempDir.toPath(), "_N2A", ".TMP").toFile();
+             tempFile.deleteOnExit();
+ 
+             try {
+diff -r 988706e33b26 -r 21aac3eb7c40 src/solaris/classes/sun/font/FcFontConfiguration.java
+--- jdk/src/solaris/classes/sun/font/FcFontConfiguration.java	Mon Feb 27 20:18:28 2012 +0200
++++ jdk/src/solaris/classes/sun/font/FcFontConfiguration.java	Tue Feb 28 15:44:47 2012 -0800
+@@ -33,6 +33,7 @@
+ import java.net.InetAddress;
+ import java.net.UnknownHostException;
+ import java.nio.charset.Charset;
++import java.nio.file.Files;
+ import java.util.HashMap;
+ import java.util.HashSet;
+ import java.util.Properties;
+@@ -387,7 +388,7 @@
+             File fcInfoFile = getFcInfoFile();
+             File dir = fcInfoFile.getParentFile();
+             dir.mkdirs();
+-            File tempFile = File.createTempFile("fcinfo", null, dir);
++            File tempFile = Files.createTempFile(dir.toPath(), "fcinfo", null).toFile();
+             FileOutputStream fos = new FileOutputStream(tempFile);
+             props.store(fos,
+                       "JDK Font Configuration Generated File: *Do Not Edit*");
+diff -r 988706e33b26 -r 21aac3eb7c40 src/solaris/classes/sun/print/UnixPrintJob.java
+--- jdk/src/solaris/classes/sun/print/UnixPrintJob.java	Mon Feb 27 20:18:28 2012 +0200
++++ jdk/src/solaris/classes/sun/print/UnixPrintJob.java	Tue Feb 28 15:44:47 2012 -0800
+@@ -40,6 +40,7 @@
+ import java.io.IOException;
+ import java.io.Reader;
+ import java.io.UnsupportedEncodingException;
++import java.nio.file.Files;
+ import java.util.Vector;
+ 
+ import javax.print.CancelablePrintJob;
+@@ -936,7 +937,7 @@
+                      * is not removed for some reason, request that it is
+                      * removed when the VM exits.
+                      */
+-                    spoolFile = File.createTempFile("javaprint", ".ps", null);
++                    spoolFile = Files.createTempFile("javaprint", ".ps").toFile();
+                     spoolFile.deleteOnExit();
+                 }
+                 result = new FileOutputStream(spoolFile);
+diff -r 988706e33b26 -r 21aac3eb7c40 src/solaris/classes/sun/print/UnixPrintServiceLookup.java
+--- jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java	Mon Feb 27 20:18:28 2012 +0200
++++ jdk/src/solaris/classes/sun/print/UnixPrintServiceLookup.java	Tue Feb 28 15:44:47 2012 -0800
+@@ -51,6 +51,7 @@
+ import java.io.File;
+ import java.io.FileReader;
+ import java.net.URL;
++import java.nio.file.Files;
+ 
+ /*
+  * Remind: This class uses solaris commands. We also need a linux
+@@ -714,7 +715,7 @@
+ 
+                         Process proc;
+                         BufferedReader bufferedReader = null;
+-                        File f = File.createTempFile("prn","xc");
++                        File f = Files.createTempFile("prn","xc").toFile();
+                         cmd[2] = cmd[2]+">"+f.getAbsolutePath();
+ 
+                         proc = Runtime.getRuntime().exec(cmd);
+diff -r 803475bf4582 -r 988706e33b26 src/share/classes/javax/swing/plaf/synth/SynthButtonUI.java
+--- jdk/src/share/classes/javax/swing/plaf/synth/SynthButtonUI.java	Fri Feb 24 10:25:55 2012 -0800
++++ jdk/src/share/classes/javax/swing/plaf/synth/SynthButtonUI.java	Mon Feb 27 20:18:28 2012 +0200
+@@ -152,8 +152,8 @@
+         if (!c.isEnabled()) {
+             state = DISABLED;
+         }
+-        if (SynthLookAndFeel.selectedUI == this) {
+-            return SynthLookAndFeel.selectedUIState | SynthConstants.ENABLED;
++        if (SynthLookAndFeel.getSelectedUI() == this) {
++            return SynthLookAndFeel.getSelectedUIState() | SynthConstants.ENABLED;
+         }
+         AbstractButton button = (AbstractButton) c;
+         ButtonModel model = button.getModel();
+diff -r 803475bf4582 -r 988706e33b26 src/share/classes/javax/swing/plaf/synth/SynthLabelUI.java
+--- jdk/src/share/classes/javax/swing/plaf/synth/SynthLabelUI.java	Fri Feb 24 10:25:55 2012 -0800
++++ jdk/src/share/classes/javax/swing/plaf/synth/SynthLabelUI.java	Mon Feb 27 20:18:28 2012 +0200
+@@ -97,9 +97,9 @@
+ 
+     private int getComponentState(JComponent c) {
+         int state = SynthLookAndFeel.getComponentState(c);
+-        if (SynthLookAndFeel.selectedUI == this &&
++        if (SynthLookAndFeel.getSelectedUI() == this &&
+                         state == SynthConstants.ENABLED) {
+-            state = SynthLookAndFeel.selectedUIState | SynthConstants.ENABLED;
++            state = SynthLookAndFeel.getSelectedUIState() | SynthConstants.ENABLED;
+         }
+         return state;
+     }
+diff -r 803475bf4582 -r 988706e33b26 src/share/classes/javax/swing/plaf/synth/SynthLookAndFeel.java
+--- jdk/src/share/classes/javax/swing/plaf/synth/SynthLookAndFeel.java	Fri Feb 24 10:25:55 2012 -0800
++++ jdk/src/share/classes/javax/swing/plaf/synth/SynthLookAndFeel.java	Mon Feb 27 20:18:28 2012 +0200
+@@ -77,27 +77,25 @@
+                   new StringBuffer("com.sun.java.swing.plaf.gtk.StyleCache");
+ 
+     /**
++     * AppContext key to get selectedUI.
++     */
++    private static final Object SELECTED_UI_KEY = new StringBuilder("selectedUI");
++
++    /**
++     * AppContext key to get selectedUIState.
++     */
++    private static final Object SELECTED_UI_STATE_KEY = new StringBuilder("selectedUIState");
++
++    /**
+      * The last SynthStyleFactory that was asked for from AppContext
+      * <code>lastContext</code>.
+      */
+     private static SynthStyleFactory lastFactory;
+     /**
+-     * If this is true it indicates there is more than one AppContext active
+-     * and that we need to make sure in getStyleCache the requesting
+-     * AppContext matches that of <code>lastContext</code> before returning
+-     * it.
+-     */
+-    private static boolean multipleApps;
+-    /**
+      * AppContext lastLAF came from.
+      */
+     private static AppContext lastContext;
+ 
+-    // Refer to setSelectedUI
+-    static ComponentUI selectedUI;
+-    // Refer to setSelectedUI
+-    static int selectedUIState;
+-
+     /**
+      * SynthStyleFactory for the this SynthLookAndFeel.
+      */
+@@ -111,6 +109,10 @@
+ 
+     private Handler _handler;
+ 
++    static ComponentUI getSelectedUI() {
++        return (ComponentUI) AppContext.getAppContext().get(SELECTED_UI_KEY);
++    }
++
+     /**
+      * Used by the renderers. For the most part the renderers are implemented
+      * as Labels, which is problematic in so far as they are never selected.
+@@ -122,8 +124,8 @@
+     static void setSelectedUI(ComponentUI uix, boolean selected,
+                               boolean focused, boolean enabled,
+                               boolean rollover) {
+-        selectedUI = uix;
+-        selectedUIState = 0;
++        int selectedUIState = 0;
++
+         if (selected) {
+             selectedUIState = SynthConstants.SELECTED;
+             if (focused) {
+@@ -140,19 +142,32 @@
+         else {
+             if (enabled) {
+                 selectedUIState |= SynthConstants.ENABLED;
+-                selectedUIState = SynthConstants.FOCUSED;
++                if (focused) {
++                    selectedUIState |= SynthConstants.FOCUSED;
++                }
+             }
+             else {
+                 selectedUIState |= SynthConstants.DISABLED;
+             }
+         }
++
++        AppContext context = AppContext.getAppContext();
++
++        context.put(SELECTED_UI_KEY, uix);
++        context.put(SELECTED_UI_STATE_KEY, Integer.valueOf(selectedUIState));
++    }
++
++    static int getSelectedUIState() {
++        Integer result = (Integer) AppContext.getAppContext().get(SELECTED_UI_STATE_KEY);
++
++        return result == null ? 0 : result.intValue();
+     }
+ 
+     /**
+      * Clears out the selected UI that was last set in setSelectedUI.
+      */
+     static void resetSelectedUI() {
+-        selectedUI = null;
++        AppContext.getAppContext().remove(SELECTED_UI_KEY);
+     }
+ 
+ 
+@@ -167,10 +182,6 @@
+         // for a particular AppContext.
+         synchronized(SynthLookAndFeel.class) {
+             AppContext context = AppContext.getAppContext();
+-            if (!multipleApps && context != lastContext &&
+-                                 lastContext != null) {
+-                multipleApps = true;
+-            }
+             lastFactory = cache;
+             lastContext = context;
+             context.put(STYLE_FACTORY_KEY, cache);
+@@ -184,17 +195,13 @@
+      */
+     public static SynthStyleFactory getStyleFactory() {
+         synchronized(SynthLookAndFeel.class) {
+-            if (!multipleApps) {
+-                return lastFactory;
+-            }
+             AppContext context = AppContext.getAppContext();
+ 
+             if (lastContext == context) {
+                 return lastFactory;
+             }
+             lastContext = context;
+-            lastFactory = (SynthStyleFactory)AppContext.getAppContext().get
+-                                           (STYLE_FACTORY_KEY);
++            lastFactory = (SynthStyleFactory) context.get(STYLE_FACTORY_KEY);
+             return lastFactory;
+         }
+     }
+diff -r 803475bf4582 -r 988706e33b26 test/javax/swing/plaf/synth/7143614/bug7143614.java
+--- jdk/test/javax/swing/plaf/synth/7143614/bug7143614.java	Thu Jan 01 00:00:00 1970 +0000
++++ jdk/test/javax/swing/plaf/synth/7143614/bug7143614.java	Mon Feb 27 20:18:28 2012 +0200
+@@ -0,0 +1,97 @@
++/*
++ * Copyright (c) 2012, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ */
++
++/*
++ * @test
++ * @bug 7143614
++ * @summary Issues with Synth Look&Feel
++ * @author Pavel Porvatov
++ */
++
++import sun.awt.SunToolkit;
++
++import javax.swing.plaf.ComponentUI;
++import javax.swing.plaf.basic.BasicButtonUI;
++import javax.swing.plaf.synth.SynthConstants;
++import javax.swing.plaf.synth.SynthLookAndFeel;
++import java.lang.reflect.Method;
++
++public class bug7143614 {
++    private static Method setSelectedUIMethod;
++
++    private static ComponentUI componentUI = new BasicButtonUI();
++
++    public static void main(String[] args) throws Exception {
++        setSelectedUIMethod = SynthLookAndFeel.class.getDeclaredMethod("setSelectedUI", ComponentUI.class,
++                boolean.class, boolean.class, boolean.class, boolean.class);
++        setSelectedUIMethod.setAccessible(true);
++
++        setSelectedUIMethod.invoke(null, componentUI, true, true, true, true);
++
++        validate();
++
++        Thread thread = new ThreadInAnotherAppContext();
++
++        thread.start();
++        thread.join();
++
++        validate();
++
++        System.out.println("Test bug7143614 passed.");
++    }
++
++    private static void validate() throws Exception {
++        Method getSelectedUIMethod = SynthLookAndFeel.class.getDeclaredMethod("getSelectedUI");
++
++        getSelectedUIMethod.setAccessible(true);
++
++        Method getSelectedUIStateMethod = SynthLookAndFeel.class.getDeclaredMethod("getSelectedUIState");
++
++        getSelectedUIStateMethod.setAccessible(true);
++
++        if (getSelectedUIMethod.invoke(null) != componentUI) {
++            throw new RuntimeException("getSelectedUI returns invalid value");
++        }
++        if (((Integer) getSelectedUIStateMethod.invoke(null)).intValue() !=
++                (SynthConstants.SELECTED | SynthConstants.FOCUSED)) {
++            throw new RuntimeException("getSelectedUIState returns invalid value");
++        }
++
++    }
++
++    private static class ThreadInAnotherAppContext extends Thread {
++        public ThreadInAnotherAppContext() {
++            super(new ThreadGroup("7143614"), "ThreadInAnotherAppContext");
++        }
++
++        public void run() {
++            SunToolkit.createNewAppContext();
++
++            try {
++                setSelectedUIMethod.invoke(null, null, false, false, false, false);
++            } catch (Exception e) {
++                throw new RuntimeException(e);
++            }
++        }
++    }
++}
+diff -r d568e85567cc -r eb3da9b13e3c src/share/native/sun/font/layout/LookupProcessor.cpp
+--- jdk/src/share/native/sun/font/layout/LookupProcessor.cpp	Mon Feb 06 17:10:46 2012 -0800
++++ jdk/src/share/native/sun/font/layout/LookupProcessor.cpp	Wed Feb 15 10:59:12 2012 +0400
+@@ -95,6 +95,10 @@
+ 
+         if (selectMask != 0) {
+             const LookupTable *lookupTable = lookupListTable->getLookupTable(lookup);
++
++            if (!lookupTable)
++                continue;
++
+             le_uint16 lookupFlags = SWAPW(lookupTable->lookupFlags);
+ 
+             glyphIterator.reset(lookupFlags, selectMask);
+@@ -136,6 +140,9 @@
+     for (le_uint16 lookup = 0; lookup < lookupCount; lookup += 1) {
+         le_uint16 lookupListIndex = SWAPW(featureTable->lookupListIndexArray[lookup]);
+ 
++        if (lookupListIndex >= lookupSelectCount)
++            continue;
++
+         lookupSelectArray[lookupListIndex] |= featureMask;
+         lookupOrderArray[store++] = lookupListIndex;
+     }
+@@ -147,7 +154,7 @@
+         Offset scriptListOffset, Offset featureListOffset, Offset lookupListOffset,
+         LETag scriptTag, LETag languageTag, const FeatureMap *featureMap, le_int32 featureMapCount, le_bool orderFeatures,
+         LEErrorCode& success)
+-    : lookupListTable(NULL), featureListTable(NULL), lookupSelectArray(NULL),
++    : lookupListTable(NULL), featureListTable(NULL), lookupSelectArray(NULL), lookupSelectCount(0),
+       lookupOrderArray(NULL), lookupOrderCount(0)
+ {
+     const ScriptListTable *scriptListTable = NULL;
+@@ -195,6 +202,8 @@
+         lookupSelectArray[i] = 0;
+     }
+ 
++    lookupSelectCount = lookupListCount;
++
+     le_int32 count, order = 0;
+     le_int32 featureReferences = 0;
+     const FeatureTable *featureTable = NULL;
+@@ -211,6 +220,10 @@
+         le_uint16 featureIndex = SWAPW(langSysTable->featureIndexArray[feature]);
+ 
+         featureTable = featureListTable->getFeatureTable(featureIndex, &featureTag);
++
++        if (!featureTable)
++            continue;
++
+         featureReferences += SWAPW(featureTable->lookupCount);
+     }
+ 
+diff -r d568e85567cc -r eb3da9b13e3c src/share/native/sun/font/layout/LookupProcessor.h
+--- jdk/src/share/native/sun/font/layout/LookupProcessor.h	Mon Feb 06 17:10:46 2012 -0800
++++ jdk/src/share/native/sun/font/layout/LookupProcessor.h	Wed Feb 15 10:59:12 2012 +0400
+@@ -90,6 +90,7 @@
+     const FeatureListTable  *featureListTable;
+ 
+     FeatureMask            *lookupSelectArray;
++    le_uint32              lookupSelectCount;
+ 
+     le_uint16               *lookupOrderArray;
+     le_uint32               lookupOrderCount;
+diff -r 2e5e8c37d787 -r b5eacf258d78 src/share/classes/sun/rmi/rmic/iiop/StubGenerator.java
+--- corba/src/share/classes/sun/rmi/rmic/iiop/StubGenerator.java	Tue Feb 28 17:00:14 2012 +0000
++++ corba/src/share/classes/sun/rmi/rmic/iiop/StubGenerator.java	Wed Feb 29 16:41:49 2012 +0000
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1998, 2007, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1998, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -425,7 +425,7 @@
+         // Write the _ids() method...
+ 
+         p.plnI("public String[] _ids() { ");
+-        p.pln("return _type_ids;");
++        p.pln("return (String[]) _type_ids.clone();");
+         p.pOln("}");
+ 
+         // Get all the methods and write each stub method...
+@@ -1860,11 +1860,11 @@
+     {
+         if(POATie){
+         p.plnI("public String[] _all_interfaces(org.omg.PortableServer.POA poa, byte[] objectId){");
+-        p.pln("return _type_ids;");
++        p.pln("return (String[]) _type_ids.clone();");
+         p.pOln("}");
+         } else {
+         p.plnI("public String[] _ids() { ");
+-        p.pln("return _type_ids;");
++        p.pln("return (String[]) _type_ids.clone();");
+         p.pOln("}");
+         }
+     }
+diff -r 5fc4da84eff8 -r 4b0c75c7ce73 make/com/sun/jmx/Makefile
+--- jdk/make/com/sun/jmx/Makefile	Wed Feb 29 14:06:00 2012 +0800
++++ jdk/make/com/sun/jmx/Makefile	Wed Feb 29 16:48:03 2012 +0000
+@@ -1,5 +1,5 @@
+ #
+-# Copyright (c) 2003, 2010, Oracle and/or its affiliates. All rights reserved.
++# Copyright (c) 2003, 2012, Oracle and/or its affiliates. All rights reserved.
+ # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ #
+ # This code is free software; you can redistribute it and/or modify it
+@@ -100,6 +100,23 @@
+ # so that *_tie classes are generated in package without the prefix
+ # org.omg.stub (6375696)
+ # 
++# To ensure the latest stub generator files are picked up from corba repo
++# when available, we need to run with latest rmic version available. rmic 
++# launch tool not built at this stage but we can invoke via rmi class.
++
++RMIC_JAVA = $(OUTPUTDIR)/bin/java
++# need to treat 64bit solaris differently
++ifeq ($(PLATFORM)-$(LIBARCH), solaris-amd64)
++RMIC_JAVA = $(OUTPUTDIR)/bin/amd64/java
++endif
++ifeq ($(PLATFORM)-$(LIBARCH), solaris-sparcv9)
++RMIC_JAVA = $(OUTPUTDIR)/bin/sparcv9/java
++endif
++
++ifeq ($(CROSS_COMPILE_ARCH),)
++RMIC = $(RMIC_JAVA) $(JAVA_TOOLS_FLAGS) -cp $(OUTPUTDIR)/classes sun.rmi.rmic.Main
++endif  
++
+ $(CLASSDESTDIR)/%_Stub.class: $(CLASSDESTDIR)/%.class
+ 	$(prep-target)
+ 	$(RMIC) -classpath "$(CLASSDESTDIR)"    \
+diff -r 21aac3eb7c40 -r 5fc4da84eff8 src/share/classes/sun/security/x509/CRLExtensions.java
+--- jdk/src/share/classes/sun/security/x509/CRLExtensions.java	Tue Feb 28 15:44:47 2012 -0800
++++ jdk/src/share/classes/sun/security/x509/CRLExtensions.java	Wed Feb 29 14:06:00 2012 +0800
+@@ -32,8 +32,10 @@
+ import java.security.cert.CRLException;
+ import java.security.cert.CertificateException;
+ import java.util.Collection;
++import java.util.Collections;
+ import java.util.Enumeration;
+-import java.util.Hashtable;
++import java.util.Map;
++import java.util.TreeMap;
+ 
+ import sun.security.util.*;
+ import sun.misc.HexDumpEncoder;
+@@ -62,7 +64,8 @@
+  */
+ public class CRLExtensions {
+ 
+-    private Hashtable<String,Extension> map = new Hashtable<String,Extension>();
++    private Map<String,Extension> map = Collections.synchronizedMap(
++            new TreeMap<String,Extension>());
+     private boolean unsupportedCritExt = false;
+ 
+     /**
+@@ -215,7 +218,7 @@
+      * @return an enumeration of the extensions in this CRL.
+      */
+     public Enumeration<Extension> getElements() {
+-        return map.elements();
++        return Collections.enumeration(map.values());
+     }
+ 
+     /**
+diff -r 21aac3eb7c40 -r 5fc4da84eff8 src/share/classes/sun/security/x509/CertificateExtensions.java
+--- jdk/src/share/classes/sun/security/x509/CertificateExtensions.java	Tue Feb 28 15:44:47 2012 -0800
++++ jdk/src/share/classes/sun/security/x509/CertificateExtensions.java	Wed Feb 29 14:06:00 2012 +0800
+@@ -57,7 +57,8 @@
+ 
+     private static final Debug debug = Debug.getInstance("x509");
+ 
+-    private Hashtable<String,Extension> map = new Hashtable<String,Extension>();
++    private Map<String,Extension> map = Collections.synchronizedMap(
++            new TreeMap<String,Extension>());
+     private boolean unsupportedCritExt = false;
+ 
+     private Map<String,Extension> unparseableExtensions;
+@@ -117,7 +118,7 @@
+             if (ext.isCritical() == false) {
+                 // ignore errors parsing non-critical extensions
+                 if (unparseableExtensions == null) {
+-                    unparseableExtensions = new HashMap<String,Extension>();
++                    unparseableExtensions = new TreeMap<String,Extension>();
+                 }
+                 unparseableExtensions.put(ext.getExtensionId().toString(),
+                         new UnparseableExtension(ext, e));
+@@ -218,6 +219,12 @@
+         return (obj);
+     }
+ 
++    // Similar to get(String), but throw no exception, might return null.
++    // Used in X509CertImpl::getExtension(OID).
++    Extension getExtension(String name) {
++        return map.get(name);
++    }
++
+     /**
+      * Delete the attribute value.
+      * @param name the extension name used in the lookup.
+@@ -245,7 +252,7 @@
+      * attribute.
+      */
+     public Enumeration<Extension> getElements() {
+-        return map.elements();
++        return Collections.enumeration(map.values());
+     }
+ 
+     /**
+diff -r 21aac3eb7c40 -r 5fc4da84eff8 src/share/classes/sun/security/x509/X509CRLEntryImpl.java
+--- jdk/src/share/classes/sun/security/x509/X509CRLEntryImpl.java	Tue Feb 28 15:44:47 2012 -0800
++++ jdk/src/share/classes/sun/security/x509/X509CRLEntryImpl.java	Wed Feb 29 14:06:00 2012 +0800
+@@ -32,13 +32,7 @@
+ import java.security.cert.CertificateException;
+ import java.security.cert.X509CRLEntry;
+ import java.math.BigInteger;
+-import java.util.Collection;
+-import java.util.Date;
+-import java.util.Enumeration;
+-import java.util.HashMap;
+-import java.util.Map;
+-import java.util.Set;
+-import java.util.HashSet;
++import java.util.*;
+ 
+ import javax.security.auth.x500.X500Principal;
+ 
+@@ -75,7 +69,8 @@
+  * @author Hemma Prafullchandra
+  */
+ 
+-public class X509CRLEntryImpl extends X509CRLEntry {
++public class X509CRLEntryImpl extends X509CRLEntry
++        implements Comparable<X509CRLEntryImpl> {
+ 
+     private SerialNumber serialNumber = null;
+     private Date revocationDate = null;
+@@ -196,9 +191,14 @@
+      * @exception CRLException if an encoding error occurs.
+      */
+     public byte[] getEncoded() throws CRLException {
++        return getEncoded0().clone();
++    }
++
++    // Called internally to avoid clone
++    private byte[] getEncoded0() throws CRLException {
+         if (revokedCert == null)
+             this.encode(new DerOutputStream());
+-        return revokedCert.clone();
++        return revokedCert;
+     }
+ 
+     @Override
+@@ -352,7 +352,7 @@
+         if (extensions == null) {
+             return null;
+         }
+-        Set<String> extSet = new HashSet<String>();
++        Set<String> extSet = new TreeSet<>();
+         for (Extension ex : extensions.getAllExtensions()) {
+             if (ex.isCritical()) {
+                 extSet.add(ex.getExtensionId().toString());
+@@ -373,7 +373,7 @@
+         if (extensions == null) {
+             return null;
+         }
+-        Set<String> extSet = new HashSet<String>();
++        Set<String> extSet = new TreeSet<>();
+         for (Extension ex : extensions.getAllExtensions()) {
+             if (!ex.isCritical()) {
+                 extSet.add(ex.getExtensionId().toString());
+@@ -501,13 +501,39 @@
+             getExtension(PKIXExtensions.CertificateIssuer_Id);
+     }
+ 
++    /**
++     * Returns all extensions for this entry in a map
++     * @return the extension map, can be empty, but not null
++     */
+     public Map<String, java.security.cert.Extension> getExtensions() {
++        if (extensions == null) {
++            return Collections.emptyMap();
++        }
+         Collection<Extension> exts = extensions.getAllExtensions();
+-        HashMap<String, java.security.cert.Extension> map =
+-            new HashMap<String, java.security.cert.Extension>(exts.size());
++        Map<String, java.security.cert.Extension> map = new TreeMap<>();
+         for (Extension ext : exts) {
+             map.put(ext.getId(), ext);
+         }
+         return map;
+     }
++
++    @Override
++    public int compareTo(X509CRLEntryImpl that) {
++        int compSerial = getSerialNumber().compareTo(that.getSerialNumber());
++        if (compSerial != 0) {
++            return compSerial;
++        }
++        try {
++            byte[] thisEncoded = this.getEncoded0();
++            byte[] thatEncoded = that.getEncoded0();
++            for (int i=0; i<thisEncoded.length && i<thatEncoded.length; i++) {
++                int a = thisEncoded[i] & 0xff;
++                int b = thatEncoded[i] & 0xff;
++                if (a != b) return a-b;
++            }
++            return thisEncoded.length -thatEncoded.length;
++        } catch (CRLException ce) {
++            return -1;
++        }
++    }
+ }
+diff -r 21aac3eb7c40 -r 5fc4da84eff8 src/share/classes/sun/security/x509/X509CRLImpl.java
+--- jdk/src/share/classes/sun/security/x509/X509CRLImpl.java	Tue Feb 28 15:44:47 2012 -0800
++++ jdk/src/share/classes/sun/security/x509/X509CRLImpl.java	Wed Feb 29 14:06:00 2012 +0800
+@@ -53,7 +53,7 @@
+ 
+ /**
+  * <p>
+- * An implmentation for X509 CRL (Certificate Revocation List).
++ * An implementation for X509 CRL (Certificate Revocation List).
+  * <p>
+  * The X.509 v2 CRL format is described below in ASN.1:
+  * <pre>
+@@ -104,7 +104,8 @@
+     private X500Principal    issuerPrincipal = null;
+     private Date             thisUpdate = null;
+     private Date             nextUpdate = null;
+-    private Map<X509IssuerSerial,X509CRLEntry> revokedCerts = new LinkedHashMap<X509IssuerSerial,X509CRLEntry>();
++    private Map<X509IssuerSerial,X509CRLEntry> revokedMap = new TreeMap<>();
++    private List<X509CRLEntry> revokedList = new LinkedList<>();
+     private CRLExtensions    extensions = null;
+     private final static boolean isExplicit = true;
+     private static final long YR_2050 = 2524636800000L;
+@@ -223,7 +224,8 @@
+                 badCert.setCertificateIssuer(crlIssuer, badCertIssuer);
+                 X509IssuerSerial issuerSerial = new X509IssuerSerial
+                     (badCertIssuer, badCert.getSerialNumber());
+-                this.revokedCerts.put(issuerSerial, badCert);
++                this.revokedMap.put(issuerSerial, badCert);
++                this.revokedList.add(badCert);
+                 if (badCert.hasExtensions()) {
+                     this.version = 1;
+                 }
+@@ -305,8 +307,8 @@
+                     tmp.putGeneralizedTime(nextUpdate);
+             }
+ 
+-            if (!revokedCerts.isEmpty()) {
+-                for (X509CRLEntry entry : revokedCerts.values()) {
++            if (!revokedList.isEmpty()) {
++                for (X509CRLEntry entry : revokedList) {
+                     ((X509CRLEntryImpl)entry).encode(rCerts);
+                 }
+                 tmp.write(DerValue.tag_Sequence, rCerts);
+@@ -490,14 +492,14 @@
+             sb.append("\nThis Update: " + thisUpdate.toString() + "\n");
+         if (nextUpdate != null)
+             sb.append("Next Update: " + nextUpdate.toString() + "\n");
+-        if (revokedCerts.isEmpty())
++        if (revokedList.isEmpty())
+             sb.append("\nNO certificates have been revoked\n");
+         else {
+-            sb.append("\nRevoked Certificates: " + revokedCerts.size());
++            sb.append("\nRevoked Certificates: " + revokedList.size());
+             int i = 1;
+-            for (Iterator<X509CRLEntry> iter = revokedCerts.values().iterator();
+-                                             iter.hasNext(); i++)
+-                sb.append("\n[" + i + "] " + iter.next().toString());
++            for (X509CRLEntry entry: revokedList) {
++                sb.append("\n[" + i++ + "] " + entry.toString());
++            }
+         }
+         if (extensions != null) {
+             Collection<Extension> allExts = extensions.getAllExtensions();
+@@ -543,12 +545,12 @@
+      * false otherwise.
+      */
+     public boolean isRevoked(Certificate cert) {
+-        if (revokedCerts.isEmpty() || (!(cert instanceof X509Certificate))) {
++        if (revokedMap.isEmpty() || (!(cert instanceof X509Certificate))) {
+             return false;
+         }
+         X509Certificate xcert = (X509Certificate) cert;
+         X509IssuerSerial issuerSerial = new X509IssuerSerial(xcert);
+-        return revokedCerts.containsKey(issuerSerial);
++        return revokedMap.containsKey(issuerSerial);
+     }
+ 
+     /**
+@@ -638,24 +640,24 @@
+      * @see X509CRLEntry
+      */
+     public X509CRLEntry getRevokedCertificate(BigInteger serialNumber) {
+-        if (revokedCerts.isEmpty()) {
++        if (revokedMap.isEmpty()) {
+             return null;
+         }
+         // assume this is a direct CRL entry (cert and CRL issuer are the same)
+         X509IssuerSerial issuerSerial = new X509IssuerSerial
+             (getIssuerX500Principal(), serialNumber);
+-        return revokedCerts.get(issuerSerial);
++        return revokedMap.get(issuerSerial);
+     }
+ 
+     /**
+      * Gets the CRL entry for the given certificate.
+      */
+     public X509CRLEntry getRevokedCertificate(X509Certificate cert) {
+-        if (revokedCerts.isEmpty()) {
++        if (revokedMap.isEmpty()) {
+             return null;
+         }
+         X509IssuerSerial issuerSerial = new X509IssuerSerial(cert);
+-        return revokedCerts.get(issuerSerial);
++        return revokedMap.get(issuerSerial);
+     }
+ 
+     /**
+@@ -667,10 +669,10 @@
+      * @see X509CRLEntry
+      */
+     public Set<X509CRLEntry> getRevokedCertificates() {
+-        if (revokedCerts.isEmpty()) {
++        if (revokedList.isEmpty()) {
+             return null;
+         } else {
+-            return new HashSet<X509CRLEntry>(revokedCerts.values());
++            return new TreeSet<X509CRLEntry>(revokedList);
+         }
+     }
+ 
+@@ -905,7 +907,7 @@
+         if (extensions == null) {
+             return null;
+         }
+-        Set<String> extSet = new HashSet<String>();
++        Set<String> extSet = new TreeSet<>();
+         for (Extension ex : extensions.getAllExtensions()) {
+             if (ex.isCritical()) {
+                 extSet.add(ex.getExtensionId().toString());
+@@ -926,7 +928,7 @@
+         if (extensions == null) {
+             return null;
+         }
+-        Set<String> extSet = new HashSet<String>();
++        Set<String> extSet = new TreeSet<>();
+         for (Extension ex : extensions.getAllExtensions()) {
+             if (!ex.isCritical()) {
+                 extSet.add(ex.getExtensionId().toString());
+@@ -1103,7 +1105,8 @@
+                 entry.setCertificateIssuer(crlIssuer, badCertIssuer);
+                 X509IssuerSerial issuerSerial = new X509IssuerSerial
+                     (badCertIssuer, entry.getSerialNumber());
+-                revokedCerts.put(issuerSerial, entry);
++                revokedMap.put(issuerSerial, entry);
++                revokedList.add(entry);
+             }
+         }
+ 
+@@ -1208,7 +1211,8 @@
+     /**
+      * Immutable X.509 Certificate Issuer DN and serial number pair
+      */
+-    private final static class X509IssuerSerial {
++    private final static class X509IssuerSerial
++            implements Comparable<X509IssuerSerial> {
+         final X500Principal issuer;
+         final BigInteger serial;
+         volatile int hashcode = 0;
+@@ -1287,5 +1291,13 @@
+             }
+             return hashcode;
+         }
++
++        @Override
++        public int compareTo(X509IssuerSerial another) {
++            int cissuer = issuer.toString()
++                    .compareTo(another.issuer.toString());
++            if (cissuer != 0) return cissuer;
++            return this.serial.compareTo(another.serial);
++        }
+     }
+ }
+diff -r 21aac3eb7c40 -r 5fc4da84eff8 src/share/classes/sun/security/x509/X509CertImpl.java
+--- jdk/src/share/classes/sun/security/x509/X509CertImpl.java	Tue Feb 28 15:44:47 2012 -0800
++++ jdk/src/share/classes/sun/security/x509/X509CertImpl.java	Wed Feb 29 14:06:00 2012 +0800
+@@ -1214,7 +1214,7 @@
+             if (exts == null) {
+                 return null;
+             }
+-            Set<String> extSet = new HashSet<String>();
++            Set<String> extSet = new TreeSet<>();
+             for (Extension ex : exts.getAllExtensions()) {
+                 if (ex.isCritical()) {
+                     extSet.add(ex.getExtensionId().toString());
+@@ -1244,7 +1244,7 @@
+             if (exts == null) {
+                 return null;
+             }
+-            Set<String> extSet = new HashSet<String>();
++            Set<String> extSet = new TreeSet<>();
+             for (Extension ex : exts.getAllExtensions()) {
+                 if (!ex.isCritical()) {
+                     extSet.add(ex.getExtensionId().toString());
+@@ -1278,10 +1278,14 @@
+             if (extensions == null) {
+                 return null;
+             } else {
+-                for (Extension ex : extensions.getAllExtensions()) {
+-                    if (ex.getExtensionId().equals(oid)) {
++                Extension ex = extensions.getExtension(oid.toString());
++                if (ex != null) {
++                    return ex;
++                }
++                for (Extension ex2: extensions.getAllExtensions()) {
++                    if (ex2.getExtensionId().equals((Object)oid)) {
+                         //XXXX May want to consider cloning this
+-                        return ex;
++                        return ex2;
+                     }
+                 }
+                 /* no such extension in this certificate */
+@@ -1480,10 +1484,10 @@
+         if (names.isEmpty()) {
+             return Collections.<List<?>>emptySet();
+         }
+-        Set<List<?>> newNames = new HashSet<List<?>>();
++        List<List<?>> newNames = new ArrayList<>();
+         for (GeneralName gname : names.names()) {
+             GeneralNameInterface name = gname.getName();
+-            List<Object> nameEntry = new ArrayList<Object>(2);
++            List<Object> nameEntry = new ArrayList<>(2);
+             nameEntry.add(Integer.valueOf(name.getType()));
+             switch (name.getType()) {
+             case GeneralNameInterface.NAME_RFC822:
+@@ -1541,12 +1545,12 @@
+             }
+         }
+         if (mustClone) {
+-            Set<List<?>> namesCopy = new HashSet<List<?>>();
++            List<List<?>> namesCopy = new ArrayList<>();
+             for (List<?> nameEntry : altNames) {
+                 Object nameObject = nameEntry.get(1);
+                 if (nameObject instanceof byte[]) {
+                     List<Object> nameEntryCopy =
+-                                        new ArrayList<Object>(nameEntry);
++                                        new ArrayList<>(nameEntry);
+                     nameEntryCopy.set(1, ((byte[])nameObject).clone());
+                     namesCopy.add(Collections.unmodifiableList(nameEntryCopy));
+                 } else {
+diff -r 21aac3eb7c40 -r 5fc4da84eff8 test/sun/security/x509/X509CRLImpl/OrderAndDup.java
+--- jdk/test/sun/security/x509/X509CRLImpl/OrderAndDup.java	Thu Jan 01 00:00:00 1970 +0000
++++ jdk/test/sun/security/x509/X509CRLImpl/OrderAndDup.java	Wed Feb 29 14:06:00 2012 +0800
+@@ -0,0 +1,99 @@
++/*
++ * Copyright (c) 2012, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ */
++
++/*
++ * @test
++ * @bug 7143872
++ * @summary Improve certificate extension processing
++ */
++import java.io.ByteArrayInputStream;
++import java.math.BigInteger;
++import java.security.KeyPairGenerator;
++import java.security.cert.CertificateFactory;
++import java.security.cert.X509CRLEntry;
++import java.util.Date;
++import sun.security.util.DerInputStream;
++import sun.security.util.DerValue;
++import sun.security.x509.*;
++
++public class OrderAndDup {
++    public static void main(String[] args) throws Exception {
++
++        // Generate 20 serial numbers with dup and a special order
++        int count = 20;
++        BigInteger[] serials = new BigInteger[count];
++        for (int i=0; i<count; i++) {
++            serials[i] = BigInteger.valueOf(i*7%10);
++        }
++
++        // Generates a CRL
++        X509CRLEntry[] badCerts = new X509CRLEntry[count];
++        for (int i=0; i<count; i++) {
++            badCerts[i] = new X509CRLEntryImpl(serials[i],
++                    new Date(System.currentTimeMillis()+i*1000));
++        }
++        X500Name owner = new X500Name("CN=CA");
++        X509CRLImpl crl = new X509CRLImpl(owner, new Date(), new Date(), badCerts);
++        KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
++        crl.sign(kpg.genKeyPair().getPrivate(), "SHA1withRSA");
++        byte[] data = crl.getEncodedInternal();
++
++        // Check the encoding
++        checkData(crl, data, serials);
++
++        // Load a CRL from raw data
++        CertificateFactory cf = CertificateFactory.getInstance("X.509");
++        X509CRLImpl crl2 = (X509CRLImpl)cf.generateCRL(new ByteArrayInputStream(data));
++
++        // Check the encoding again
++        data = crl2.getEncodedInternal();
++        checkData(crl2, data, serials);
++    }
++
++    // Check the raw data's ASN.1 structure to see if the revoked certs
++    // have the same number and correct order as inserted
++    static void checkData(X509CRLImpl c, byte[] data, BigInteger[] expected)
++            throws Exception {
++        if (c.getRevokedCertificates().size() != expected.length) {
++            throw new Exception("Wrong count in CRL object, now " +
++                    c.getRevokedCertificates().size());
++        }
++        DerValue d1 = new DerValue(data);
++        // revokedCertificates at 5th place of TBSCertList
++        DerValue[] d2 = new DerInputStream(
++                d1.data.getSequence(0)[4].toByteArray())
++                .getSequence(0);
++        if (d2.length != expected.length) {
++            throw new Exception("Wrong count in raw data, now " + d2.length);
++        }
++        for (int i=0; i<d2.length; i++) {
++            // Serial is first in revokedCertificates entry
++            BigInteger bi = d2[i].data.getBigInteger();
++            if (!bi.equals(expected[i])) {
++                throw new Exception("Entry at #" + i + " is " + bi
++                        + ", should be " + expected[i]);
++            }
++        }
++    }
++}
++
+diff -r d568e85567cc -r 1338c556c39b src/share/lib/security/java.security
+--- jdk/src/share/lib/security/java.security	Mon Feb 06 17:10:46 2012 -0800
++++ jdk/src/share/lib/security/java.security	Wed Feb 22 08:14:48 2012 -0500
+@@ -123,7 +123,7 @@
+ # passed to checkPackageAccess unless the
+ # corresponding RuntimePermission ("accessClassInPackage."+package) has
+ # been granted.
+-package.access=sun.,com.sun.xml.internal.ws.,com.sun.xml.internal.bind.,com.sun.imageio.,com.sun.org.apache.xerces.internal.utils.,com.sun.org.apache.xalan.internal.utils. 
++package.access=sun.,com.sun.xml.internal.ws.,com.sun.xml.internal.bind.,com.sun.imageio.,com.sun.org.apache.xerces.internal.utils.,com.sun.org.apache.xalan.internal.utils.
+ 
+ #
+ # List of comma-separated packages that start with or equal this string
+@@ -132,10 +132,10 @@
+ # corresponding RuntimePermission ("defineClassInPackage."+package) has
+ # been granted.
+ #
+-# by default, no packages are restricted for definition, and none of
+-# the class loaders supplied with the JDK call checkPackageDefinition.
++# by default, none of the class loaders supplied with the JDK call
++# checkPackageDefinition.
+ #
+-#package.definition=
++package.definition=sun.,com.sun.xml.internal.ws.,com.sun.xml.internal.bind.,com.sun.imageio.,com.sun.org.apache.xerces.internal.utils.,com.sun.org.apache.xalan.internal.utils.
+ 
+ #
+ # Determines whether this properties file can be appended to
+diff -r d568e85567cc -r 1338c556c39b src/share/lib/security/java.security-macosx
+--- jdk/src/share/lib/security/java.security-macosx	Mon Feb 06 17:10:46 2012 -0800
++++ jdk/src/share/lib/security/java.security-macosx	Wed Feb 22 08:14:48 2012 -0500
+@@ -133,10 +133,10 @@
+ # corresponding RuntimePermission ("defineClassInPackage."+package) has
+ # been granted.
+ #
+-# by default, no packages are restricted for definition, and none of
+-# the class loaders supplied with the JDK call checkPackageDefinition.
++# by default, none of the class loaders supplied with the JDK call
++# checkPackageDefinition.
+ #
+-#package.definition=
++package.definition=sun.,com.sun.xml.internal.ws.,com.sun.xml.internal.bind.,com.sun.imageio.,com.sun.org.apache.xerces.internal.utils.,com.sun.org.apache.xalan.internal.utils.,apple.
+ 
+ #
+ # Determines whether this properties file can be appended to
+diff -r d568e85567cc -r 1338c556c39b src/share/lib/security/java.security-solaris
+--- jdk/src/share/lib/security/java.security-solaris	Mon Feb 06 17:10:46 2012 -0800
++++ jdk/src/share/lib/security/java.security-solaris	Wed Feb 22 08:14:48 2012 -0500
+@@ -134,10 +134,10 @@
+ # corresponding RuntimePermission ("defineClassInPackage."+package) has
+ # been granted.
+ #
+-# by default, no packages are restricted for definition, and none of
+-# the class loaders supplied with the JDK call checkPackageDefinition.
++# by default, none of the class loaders supplied with the JDK call
++# checkPackageDefinition.
+ #
+-#package.definition=
++package.definition=sun.,com.sun.xml.internal.ws.,com.sun.xml.internal.bind.,com.sun.imageio.,com.sun.org.apache.xerces.internal.utils.,com.sun.org.apache.xalan.internal.utils.
+ 
+ #
+ # Determines whether this properties file can be appended to
+diff -r aa04a01605ea -r 549ba5646494 src/share/vm/ci/ciField.cpp
+--- hotspot/src/share/vm/ci/ciField.cpp	Fri Mar 30 11:34:42 2012 -0700
++++ hotspot/src/share/vm/ci/ciField.cpp	Wed Apr 04 20:44:37 2012 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1999, 2011, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1999, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -67,7 +67,7 @@
+ 
+ // ------------------------------------------------------------------
+ // ciField::ciField
+-ciField::ciField(ciInstanceKlass* klass, int index): _known_to_link_with(NULL) {
++ciField::ciField(ciInstanceKlass* klass, int index): _known_to_link_with_put(NULL), _known_to_link_with_get(NULL) {
+   ASSERT_IN_VM;
+   CompilerThread *thread = CompilerThread::current();
+ 
+@@ -143,7 +143,7 @@
+   initialize_from(&field_desc);
+ }
+ 
+-ciField::ciField(fieldDescriptor *fd): _known_to_link_with(NULL) {
++ciField::ciField(fieldDescriptor *fd): _known_to_link_with_put(NULL), _known_to_link_with_get(NULL) {
+   ASSERT_IN_VM;
+ 
+   _cp_index = -1;
+@@ -315,6 +315,10 @@
+ bool ciField::will_link(ciInstanceKlass* accessing_klass,
+                         Bytecodes::Code bc) {
+   VM_ENTRY_MARK;
++  assert(bc == Bytecodes::_getstatic || bc == Bytecodes::_putstatic ||
++         bc == Bytecodes::_getfield  || bc == Bytecodes::_putfield,
++         "unexpected bytecode");
++
+   if (_offset == -1) {
+     // at creation we couldn't link to our holder so we need to
+     // maintain that stance, otherwise there's no safe way to use this
+@@ -322,8 +326,21 @@
+     return false;
+   }
+ 
+-  if (_known_to_link_with == accessing_klass) {
+-    return true;
++  // Check for static/nonstatic mismatch
++  bool is_static = (bc == Bytecodes::_getstatic || bc == Bytecodes::_putstatic);
++  if (is_static != this->is_static()) {
++    return false;
++  }
++
++  // Get and put can have different accessibility rules
++  bool is_put    = (bc == Bytecodes::_putfield  || bc == Bytecodes::_putstatic);
++  if (is_put) {
++    if (_known_to_link_with_put == accessing_klass) {
++      return true;
++    }
++    if (_known_to_link_with_get == accessing_klass) {
++      return true;
++    }
+   }
+ 
+   FieldAccessInfo result;
+@@ -334,8 +351,13 @@
+                               true, false, KILL_COMPILE_ON_FATAL_(false));
+ 
+   // update the hit-cache, unless there is a problem with memory scoping:
+-  if (accessing_klass->is_shared() || !is_shared())
+-    _known_to_link_with = accessing_klass;
++  if (accessing_klass->is_shared() || !is_shared()) {
++    if (is_put) {
++      _known_to_link_with_put = accessing_klass;
++    } else {
++      _known_to_link_with_get = accessing_klass;
++    }
++  }
+ 
+   return true;
+ }
+diff -r 5b2d6cfb602b -r dcf91dc1f50e src/share/vm/ci/ciField.cpp
+--- hotspot/src/share/vm/ci/ciField.cpp	Fri Apr 06 14:00:31 2012 -0700
++++ hotspot/src/share/vm/ci/ciField.cpp	Wed Apr 11 17:38:20 2012 -0700
+@@ -338,6 +338,7 @@
+     if (_known_to_link_with_put == accessing_klass) {
+       return true;
+     }
++  } else {
+     if (_known_to_link_with_get == accessing_klass) {
+       return true;
+     }
+diff -r aa04a01605ea -r 549ba5646494 src/share/vm/ci/ciField.hpp
+--- hotspot/src/share/vm/ci/ciField.hpp	Fri Mar 30 11:34:42 2012 -0700
++++ hotspot/src/share/vm/ci/ciField.hpp	Wed Apr 04 20:44:37 2012 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1999, 2011, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1999, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -49,7 +49,8 @@
+   ciType*          _type;
+   int              _offset;
+   bool             _is_constant;
+-  ciInstanceKlass* _known_to_link_with;
++  ciInstanceKlass* _known_to_link_with_put;
++  ciInstanceKlass* _known_to_link_with_get;
+   ciConstant       _constant_value;
+ 
+   // Used for will_link
+diff -r 3f8b55667a6f -r abc9f6855a61 src/com/sun/org/apache/xerces/internal/impl/XMLScanner.java
+--- jaxp/src/com/sun/org/apache/xerces/internal/impl/XMLScanner.java	Fri Mar 30 09:06:09 2012 -0700
++++ jaxp/src/com/sun/org/apache/xerces/internal/impl/XMLScanner.java	Fri Apr 06 09:32:57 2012 -0700
+@@ -402,6 +402,16 @@
+ 
+         boolean dataFoundForTarget = false;
+         boolean sawSpace = fEntityScanner.skipSpaces();
++        // since pseudoattributes are *not* attributes,
++        // their quotes don't need to be preserved in external parameter entities.
++        // the XMLEntityScanner#scanLiteral method will continue to
++        // emit -1 in such cases when it finds a quote; this is
++        // fine for other methods that parse scanned entities,
++        // but not for the scanning of pseudoattributes.  So,
++        // temporarily, we must mark the current entity as not being "literal"
++        Entity.ScannedEntity currEnt = fEntityManager.getCurrentEntity();
++        boolean currLiteral = currEnt.literal;
++        currEnt.literal = false;
+         while (fEntityScanner.peekChar() != '?') {
+             dataFoundForTarget = true;
+             String name = scanPseudoAttribute(scanningTextDecl, fString);
+@@ -499,6 +509,9 @@
+             }
+             sawSpace = fEntityScanner.skipSpaces();
+         }
++        // restore original literal value
++        if(currLiteral)
++            currEnt.literal = true;
+         // REVISIT: should we remove this error reporting?
+         if (scanningTextDecl && state != STATE_DONE) {
+             reportFatalError("MorePseudoAttributes", null);
+diff -r add74a570ab2 -r bf2255796a93 src/share/vm/classfile/verifier.cpp
+--- hotspot/src/share/vm/classfile/verifier.cpp	Mon Apr 23 14:26:15 2012 -0700
++++ hotspot/src/share/vm/classfile/verifier.cpp	Thu May 03 15:57:16 2012 -0400
+@@ -1880,10 +1880,10 @@
+   VerificationType type = current_frame->pop_stack(
+     VerificationType::reference_check(), CHECK_VERIFY(this));
+   if (type == VerificationType::uninitialized_this_type()) {
+-    // The method must be an <init> method of either this class, or one of its
+-    // superclasses
++    // The method must be an <init> method of this class or its superclass
++    klassOop superk = current_class()->super();
+     if (ref_class_type.name() != current_class()->name() &&
+-        !name_in_supers(ref_class_type.name(), current_class())) {
++        ref_class_type.name() != superk->klass_part()->name()) {
+       verify_error(bci, "Bad <init> method call");
+       return;
+     }
+diff -r add74a570ab2 -r bf2255796a93 test/runtime/7160757/Test7160757.java
+--- hotspot/test/runtime/7160757/Test7160757.java	Thu Jan 01 00:00:00 1970 +0000
++++ hotspot/test/runtime/7160757/Test7160757.java	Thu May 03 15:57:16 2012 -0400
+@@ -0,0 +1,82 @@
++/*
++ * Copyright (c) 2012, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ */
++
++/*
++ * @test Test7160757.java
++ * @bug 7160757
++ * @summary Tests that superclass initialization is not skipped
++ */
++
++public class Test7160757 {
++
++    public static void main(String args[]) throws Exception {
++
++        ClassLoader loader = new SLoader();
++        try {
++            Class.forName("S", true, loader);
++            System.out.println("FAILED");
++            throw new Exception("Should have thrown a VerifyError.");
++        } catch (VerifyError e) {
++            System.out.println(e);
++            System.out.println("PASSED");
++        }
++    }
++
++    static class SLoader extends ClassLoader {
++
++        /**
++         * public class S extends Throwable {
++         *     public S() {
++         *         aload_0
++         *         invokespecial Object.<init>()
++         *         return
++         *     }
++         * }
++         */
++        static byte b(int i) { return (byte)i; }
++        static byte S_class[] = {
++            b(0xca), b(0xfe), b(0xba), b(0xbe), 0x00, 0x00, 0x00, 0x32,
++            0x00, 0x0c, 0x0a, 0x00, 0x0b, 0x00, 0x07, 0x07,
++            0x00, 0x08, 0x07, 0x00, 0x09, 0x01, 0x00, 0x06,
++            0x3c, 0x69, 0x6e, 0x69, 0x74, 0x3e, 0x01, 0x00,
++            0x03, 0x28, 0x29, 0x56, 0x01, 0x00, 0x04, 0x43,
++            0x6f, 0x64, 0x65, 0x0c, 0x00, 0x04, 0x00, 0x05,
++            0x01, 0x00, 0x01, 0x53, 0x01, 0x00, 0x13, 0x6a,
++            0x61, 0x76, 0x61, 0x2f, 0x6c, 0x61, 0x6e, 0x67,
++            0x2f, 0x54, 0x68, 0x72, 0x6f, 0x77, 0x61, 0x62,
++            0x6c, 0x65, 0x01, 0x00, 0x10, 0x6a, 0x61, 0x76,
++            0x61, 0x2f, 0x6c, 0x61, 0x6e, 0x67, 0x2f, 0x4f,
++            0x62, 0x6a, 0x65, 0x63, 0x74, 0x07, 0x00, 0x0a,
++            0x00, 0x21, 0x00, 0x02, 0x00, 0x03, 0x00, 0x00,
++            0x00, 0x00, 0x00, 0x01, 0x00, 0x01, 0x00, 0x04,
++            0x00, 0x05, 0x00, 0x01, 0x00, 0x06, 0x00, 0x00,
++            0x00, 0x11, 0x00, 0x01, 0x00, 0x01, 0x00, 0x00,
++            0x00, 0x05, 0x2a, b(0xb7), 0x00, 0x01, b(0xb1), 0x00,
++            0x00, 0x00, 0x00, 0x00, 0x00
++        };
++
++        public Class findClass(String name) throws ClassNotFoundException {
++            return defineClass(name, S_class, 0, S_class.length);
++        }
++    }
++}
+diff -r ba975a730f4b -r c91e36369a9f src/share/classes/java/lang/invoke/MethodHandles.java
+--- jdk/src/share/classes/java/lang/invoke/MethodHandles.java	Sun May 06 21:25:29 2012 +0100
++++ jdk/src/share/classes/java/lang/invoke/MethodHandles.java	Mon May 07 01:22:07 2012 -0700
+@@ -407,7 +407,7 @@
+          * an access$N method.
+          */
+         Lookup() {
+-            this(getCallerClassAtEntryPoint(), ALL_MODES);
++            this(getCallerClassAtEntryPoint(false), ALL_MODES);
+             // make sure we haven't accidentally picked up a privileged class:
+             checkUnprivilegedlookupClass(lookupClass);
+         }
+@@ -461,8 +461,8 @@
+                 && !VerifyAccess.isSamePackageMember(this.lookupClass, requestedLookupClass)) {
+                 newModes &= ~PRIVATE;
+             }
+-            if (newModes == PUBLIC
+-                && !VerifyAccess.isClassAccessible(requestedLookupClass, this.lookupClass)) {
++            if ((newModes & PUBLIC) != 0
++                && !VerifyAccess.isClassAccessible(requestedLookupClass, this.lookupClass, allowedModes)) {
+                 // The requested class it not accessible from the lookup class.
+                 // No permissions.
+                 newModes = 0;
+@@ -540,13 +540,17 @@
+             }
+         }
+ 
+-        // call this from an entry point method in Lookup with extraFrames=0.
+-        private static Class<?> getCallerClassAtEntryPoint() {
++        /* Obtain the external caller class, when called from Lookup.<init> or a first-level subroutine. */
++        private static Class<?> getCallerClassAtEntryPoint(boolean inSubroutine) {
+             final int CALLER_DEPTH = 4;
++            //  Stack for the constructor entry point (inSubroutine=false):
+             // 0: Reflection.getCC, 1: getCallerClassAtEntryPoint,
+             // 2: Lookup.<init>, 3: MethodHandles.*, 4: caller
++            //  The stack is slightly different for a subroutine of a Lookup.find* method:
++            // 2: Lookup.*, 3: Lookup.find*.*, 4: caller
+             // Note:  This should be the only use of getCallerClass in this file.
+-            assert(Reflection.getCallerClass(CALLER_DEPTH-1) == MethodHandles.class);
++            assert(Reflection.getCallerClass(CALLER_DEPTH-2) == Lookup.class);
++            assert(Reflection.getCallerClass(CALLER_DEPTH-1) == (inSubroutine ? Lookup.class : MethodHandles.class));
+             return Reflection.getCallerClass(CALLER_DEPTH);
+         }
+ 
+@@ -1086,7 +1090,7 @@
+ 
+         void checkSymbolicClass(Class<?> refc) throws IllegalAccessException {
+             Class<?> caller = lookupClassOrNull();
+-            if (caller != null && !VerifyAccess.isClassAccessible(refc, caller))
++            if (caller != null && !VerifyAccess.isClassAccessible(refc, caller, allowedModes))
+                 throw new MemberName(refc).makeAccessException("symbolic reference class is not public", this);
+         }
+ 
+@@ -1101,7 +1105,13 @@
+             // Step 1:
+             smgr.checkMemberAccess(refc, Member.PUBLIC);
+             // Step 2:
+-            if (!VerifyAccess.classLoaderIsAncestor(lookupClass, refc))
++            Class<?> callerClass = ((allowedModes & PRIVATE) != 0
++                                    ? lookupClass  // for strong access modes, no extra check
++                                    // next line does stack walk magic; do not refactor:
++                                    : getCallerClassAtEntryPoint(true));
++            if (!VerifyAccess.classLoaderIsAncestor(lookupClass, refc) ||
++                (callerClass != lookupClass &&
++                 !VerifyAccess.classLoaderIsAncestor(callerClass, refc)))
+                 smgr.checkPackageAccess(VerifyAccess.getPackageName(refc));
+             // Step 3:
+             if (m.isPublic()) return;
+@@ -1152,9 +1162,10 @@
+             int requestedModes = fixmods(mods);  // adjust 0 => PACKAGE
+             if ((requestedModes & allowedModes) != 0
+                 && VerifyAccess.isMemberAccessible(refc, m.getDeclaringClass(),
+-                                                   mods, lookupClass()))
++                                                   mods, lookupClass(), allowedModes))
+                 return;
+             if (((requestedModes & ~allowedModes) & PROTECTED) != 0
++                && (allowedModes & PACKAGE) != 0
+                 && VerifyAccess.isSamePackage(m.getDeclaringClass(), lookupClass()))
+                 // Protected members can also be checked as if they were package-private.
+                 return;
+@@ -1169,9 +1180,9 @@
+                                (defc == refc ||
+                                 Modifier.isPublic(refc.getModifiers())));
+             if (!classOK && (allowedModes & PACKAGE) != 0) {
+-                classOK = (VerifyAccess.isClassAccessible(defc, lookupClass()) &&
++                classOK = (VerifyAccess.isClassAccessible(defc, lookupClass(), ALL_MODES) &&
+                            (defc == refc ||
+-                            VerifyAccess.isClassAccessible(refc, lookupClass())));
++                            VerifyAccess.isClassAccessible(refc, lookupClass(), ALL_MODES)));
+             }
+             if (!classOK)
+                 return "class is not public";
+diff -r ba975a730f4b -r c91e36369a9f src/share/classes/sun/invoke/util/VerifyAccess.java
+--- jdk/src/share/classes/sun/invoke/util/VerifyAccess.java	Sun May 06 21:25:29 2012 +0100
++++ jdk/src/share/classes/sun/invoke/util/VerifyAccess.java	Mon May 07 01:22:07 2012 -0700
+@@ -37,6 +37,8 @@
+     private VerifyAccess() { }  // cannot instantiate
+ 
+     private static final int PACKAGE_ONLY = 0;
++    private static final int PACKAGE_ALLOWED = java.lang.invoke.MethodHandles.Lookup.PACKAGE;
++    private static final int PROTECTED_OR_PACKAGE_ALLOWED = (PACKAGE_ALLOWED|PROTECTED);
+     private static final int ALL_ACCESS_MODES = (PUBLIC|PRIVATE|PROTECTED|PACKAGE_ONLY);
+     private static final boolean ALLOW_NESTMATE_ACCESS = false;
+ 
+@@ -82,14 +84,19 @@
+     public static boolean isMemberAccessible(Class<?> refc,  // symbolic ref class
+                                              Class<?> defc,  // actual def class
+                                              int      mods,  // actual member mods
+-                                             Class<?> lookupClass) {
++                                             Class<?> lookupClass,
++                                             int      allowedModes) {
++        if (allowedModes == 0)  return false;
++        assert((allowedModes & PUBLIC) != 0 &&
++               (allowedModes & ~(ALL_ACCESS_MODES|PACKAGE_ALLOWED)) == 0);
+         // Usually refc and defc are the same, but if they differ, verify them both.
+         if (refc != defc) {
+-            if (!isClassAccessible(refc, lookupClass)) {
++            if (!isClassAccessible(refc, lookupClass, allowedModes)) {
+                 // Note that defc is verified in the switch below.
+                 return false;
+             }
+-            if ((mods & (ALL_ACCESS_MODES|STATIC)) == (PROTECTED|STATIC)) {
++            if ((mods & (ALL_ACCESS_MODES|STATIC)) == (PROTECTED|STATIC) &&
++                (allowedModes & PROTECTED_OR_PACKAGE_ALLOWED) != 0) {
+                 // Apply the special rules for refc here.
+                 if (!isRelatedClass(refc, lookupClass))
+                     return isSamePackage(defc, lookupClass);
+@@ -98,19 +105,28 @@
+                 // a superclass of the lookup class.
+             }
+         }
+-        if (defc == lookupClass)
++        if (defc == lookupClass &&
++            (allowedModes & PRIVATE) != 0)
+             return true;        // easy check; all self-access is OK
+         switch (mods & ALL_ACCESS_MODES) {
+         case PUBLIC:
+             if (refc != defc)  return true;  // already checked above
+-            return isClassAccessible(refc, lookupClass);
++            return isClassAccessible(refc, lookupClass, allowedModes);
+         case PROTECTED:
+-            return isSamePackage(defc, lookupClass) || isPublicSuperClass(defc, lookupClass);
+-        case PACKAGE_ONLY:
+-            return isSamePackage(defc, lookupClass);
++            if ((allowedModes & PROTECTED_OR_PACKAGE_ALLOWED) != 0 &&
++                isSamePackage(defc, lookupClass))
++                return true;
++            if ((allowedModes & PROTECTED) != 0 &&
++                isPublicSuperClass(defc, lookupClass))
++                return true;
++            return false;
++        case PACKAGE_ONLY:  // That is, zero.  Unmarked member is package-only access.
++            return ((allowedModes & PACKAGE_ALLOWED) != 0 &&
++                    isSamePackage(defc, lookupClass));
+         case PRIVATE:
+             // Loosened rules for privates follows access rules for inner classes.
+             return (ALLOW_NESTMATE_ACCESS &&
++                    (allowedModes & PRIVATE) != 0 &&
+                     isSamePackageMember(defc, lookupClass));
+         default:
+             throw new IllegalArgumentException("bad modifiers: "+Modifier.toString(mods));
+@@ -138,11 +154,16 @@
+      * @param refc the symbolic reference class to which access is being checked (C)
+      * @param lookupClass the class performing the lookup (D)
+      */
+-    public static boolean isClassAccessible(Class<?> refc, Class<?> lookupClass) {
++    public static boolean isClassAccessible(Class<?> refc, Class<?> lookupClass,
++                                            int allowedModes) {
++        if (allowedModes == 0)  return false;
++        assert((allowedModes & PUBLIC) != 0 &&
++               (allowedModes & ~(ALL_ACCESS_MODES|PACKAGE_ALLOWED)) == 0);
+         int mods = refc.getModifiers();
+         if (isPublic(mods))
+             return true;
+-        if (isSamePackage(lookupClass, refc))
++        if ((allowedModes & PACKAGE_ALLOWED) != 0 &&
++            isSamePackage(lookupClass, refc))
+             return true;
+         return false;
+     }
+@@ -157,7 +178,7 @@
+         assert(!class1.isArray() && !class2.isArray());
+         if (class1 == class2)
+             return true;
+-        if (!loadersAreRelated(class1.getClassLoader(), class2.getClassLoader(), false))
++        if (class1.getClassLoader() != class2.getClassLoader())
+             return false;
+         String name1 = class1.getName(), name2 = class2.getName();
+         int dot = name1.lastIndexOf('.');
+diff -r ba975a730f4b -r c91e36369a9f test/java/lang/invoke/AccessControlTest.java
+--- jdk/test/java/lang/invoke/AccessControlTest.java	Thu Jan 01 00:00:00 1970 +0000
++++ jdk/test/java/lang/invoke/AccessControlTest.java	Mon May 07 01:22:07 2012 -0700
+@@ -0,0 +1,495 @@
++/*
++ * Copyright (c) 2012, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Oracle designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Oracle in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ */
++
++/* @test
++ * @summary test access checking by java.lang.invoke.MethodHandles.Lookup
++ * @library ../../../..
++ * @build test.java.lang.invoke.AccessControlTest
++ * @build test.java.lang.invoke.AccessControlTest_subpkg.Acquaintance_remote
++ * @run junit/othervm test.java.lang.invoke.AccessControlTest
++ */
++
++package test.java.lang.invoke;
++
++import java.lang.invoke.*;
++import java.lang.reflect.*;
++import java.util.*;
++import org.junit.*;
++
++import static java.lang.invoke.MethodHandles.*;
++import static java.lang.invoke.MethodHandles.Lookup.*;
++import static java.lang.invoke.MethodType.*;
++import static org.junit.Assert.*;
++import test.java.lang.invoke.AccessControlTest_subpkg.Acquaintance_remote;
++
++
++/**
++ * Test many combinations of Lookup access and cross-class lookupStatic.
++ * @author jrose
++ */
++public class AccessControlTest {
++    static final Class<?> THIS_CLASS = AccessControlTest.class;
++    // How much output?
++    static int verbosity = 0;
++    static {
++        String vstr = System.getProperty(THIS_CLASS.getSimpleName()+".verbosity");
++        if (vstr == null)
++            vstr = System.getProperty(THIS_CLASS.getName()+".verbosity");
++        if (vstr != null)  verbosity = Integer.parseInt(vstr);
++    }
++
++    private class LookupCase implements Comparable<LookupCase> {
++        final Lookup   lookup;
++        final Class<?> lookupClass;
++        final int      lookupModes;
++        public LookupCase(Lookup lookup) {
++            this.lookup = lookup;
++            this.lookupClass = lookup.lookupClass();
++            this.lookupModes = lookup.lookupModes();
++            assert(lookupString().equals(lookup.toString()));
++            numberOf(lookupClass().getClassLoader()); // assign CL#
++        }
++        public LookupCase(Class<?> lookupClass, int lookupModes) {
++            this.lookup = null;
++            this.lookupClass = lookupClass;
++            this.lookupModes = lookupModes;
++            numberOf(lookupClass().getClassLoader()); // assign CL#
++        }
++
++        public final Class<?> lookupClass() { return lookupClass; }
++        public final int      lookupModes() { return lookupModes; }
++
++        public Lookup lookup() { lookup.getClass(); return lookup; }
++
++        @Override
++        public int compareTo(LookupCase that) {
++            Class<?> c1 = this.lookupClass();
++            Class<?> c2 = that.lookupClass();
++            if (c1 != c2) {
++                int cmp = c1.getName().compareTo(c2.getName());
++                if (cmp != 0)  return cmp;
++                cmp = numberOf(c1.getClassLoader()) - numberOf(c2.getClassLoader());
++                assert(cmp != 0);
++                return cmp;
++            }
++            return -(this.lookupModes() - that.lookupModes());
++        }
++
++        @Override
++        public boolean equals(Object that) {
++            return (that instanceof LookupCase && equals((LookupCase)that));
++        }
++        public boolean equals(LookupCase that) {
++            return (this.lookupClass() == that.lookupClass() &&
++                    this.lookupModes() == that.lookupModes());
++        }
++
++        @Override
++        public int hashCode() {
++            return lookupClass().hashCode() + (lookupModes() * 31);
++        }
++
++        /** Simulate all assertions in the spec. for Lookup.toString. */
++        private String lookupString() {
++            String name = lookupClass.getName();
++            String suffix = "";
++            if (lookupModes == 0)
++                suffix = "/noaccess";
++            else if (lookupModes == PUBLIC)
++                suffix = "/public";
++            else if (lookupModes == (PUBLIC|PACKAGE))
++                suffix = "/package";
++            else if (lookupModes == (PUBLIC|PACKAGE|PRIVATE))
++                suffix = "/private";
++            else if (lookupModes == (PUBLIC|PACKAGE|PRIVATE|PROTECTED))
++                suffix = "";
++            else
++                suffix = "/#"+Integer.toHexString(lookupModes);
++            return name+suffix;
++        }
++
++        /** Simulate all assertions from the spec. for Lookup.in:
++         * <hr/>
++         * Creates a lookup on the specified new lookup class.
++         * [A1] The resulting object will report the specified
++         * class as its own {@link #lookupClass lookupClass}.
++         * <p>
++         * [A2] However, the resulting {@code Lookup} object is guaranteed
++         * to have no more access capabilities than the original.
++         * In particular, access capabilities can be lost as follows:<ul>
++         * <li>[A3] If the new lookup class differs from the old one,
++         * protected members will not be accessible by virtue of inheritance.
++         * (Protected members may continue to be accessible because of package sharing.)
++         * <li>[A4] If the new lookup class is in a different package
++         * than the old one, protected and default (package) members will not be accessible.
++         * <li>[A5] If the new lookup class is not within the same package member
++         * as the old one, private members will not be accessible.
++         * <li>[A6] If the new lookup class is not accessible to the old lookup class,
++         * using the original access modes,
++         * then no members, not even public members, will be accessible.
++         * [A7] (In all other cases, public members will continue to be accessible.)
++         * </ul>
++         * Other than the above cases, the new lookup will have the same
++         * access capabilities as the original. [A8]
++         * <hr/>
++         */
++        public LookupCase in(Class<?> c2) {
++            Class<?> c1 = lookupClass();
++            int m1 = lookupModes();
++            int changed = 0;
++            boolean samePackage = (c1.getClassLoader() == c2.getClassLoader() &&
++                                   packagePrefix(c1).equals(packagePrefix(c2)));
++            boolean sameTopLevel = (topLevelClass(c1) == topLevelClass(c2));
++            boolean sameClass = (c1 == c2);
++            assert(samePackage  || !sameTopLevel);
++            assert(sameTopLevel || !sameClass);
++            boolean accessible = sameClass;  // [A6]
++            if ((m1 & PACKAGE) != 0)  accessible |= samePackage;
++            if ((m1 & PUBLIC ) != 0)  accessible |= (c2.getModifiers() & PUBLIC) != 0;
++            if (!accessible) {
++                // Different package and no access to c2; lose all access.
++                changed |= (PUBLIC|PACKAGE|PRIVATE|PROTECTED);  // [A6]
++            }
++            if (!samePackage) {
++                // Different package; lose PACKAGE and lower access.
++                changed |= (PACKAGE|PRIVATE|PROTECTED);  // [A4]
++            }
++            if (!sameTopLevel) {
++                // Different top-level class.  Lose PRIVATE and lower access.
++                changed |= (PRIVATE|PROTECTED);  // [A5]
++            }
++            if (!sameClass) {
++                changed |= (PROTECTED);     // [A3]
++            } else {
++                assert(changed == 0);       // [A8] (no deprivation if same class)
++            }
++            if (accessible)  assert((changed & PUBLIC) == 0);  // [A7]
++            int m2 = m1 & ~changed;
++            LookupCase l2 = new LookupCase(c2, m2);
++            assert(l2.lookupClass() == c2); // [A1]
++            assert((m1 | m2) == m1);        // [A2] (no elevation of access)
++            return l2;
++        }
++
++        @Override
++        public String toString() {
++            String s = lookupClass().getSimpleName();
++            String lstr = lookupString();
++            int sl = lstr.indexOf('/');
++            if (sl >= 0)  s += lstr.substring(sl);
++            ClassLoader cld = lookupClass().getClassLoader();
++            if (cld != THIS_LOADER)  s += "/loader#"+numberOf(cld);
++            return s;
++        }
++
++        /** Predict the success or failure of accessing this method. */
++        public boolean willAccess(Method m) {
++            Class<?> c1 = lookupClass();
++            Class<?> c2 = m.getDeclaringClass();
++            LookupCase lc = this.in(c2);
++            int m1 = lc.lookupModes();
++            int m2 = fixMods(m.getModifiers());
++            // privacy is strictly enforced on lookups
++            if (c1 != c2)  m1 &= ~PRIVATE;
++            // protected access is sometimes allowed
++            if ((m2 & PROTECTED) != 0) {
++                int prev = m2;
++                m2 |= PACKAGE;  // it acts like a package method also
++                if ((lookupModes() & PROTECTED) != 0 &&
++                    c2.isAssignableFrom(c1))
++                    m2 |= PUBLIC;  // from a subclass, it acts like a public method also
++            }
++            if (verbosity >= 2)
++                System.out.println(this+" willAccess "+lc+" m1="+m1+" m2="+m2+" => "+((m2 & m1) != 0));
++            return (m2 & m1) != 0;
++        }
++    }
++
++    private static Class<?> topLevelClass(Class<?> cls) {
++        Class<?> c = cls;
++        for (Class<?> ec; (ec = c.getEnclosingClass()) != null; )
++            c = ec;
++        assert(c.getEnclosingClass() == null);
++        assert(c == cls || cls.getEnclosingClass() != null);
++        return c;
++    }
++
++    private static String packagePrefix(Class<?> c) {
++        while (c.isArray())  c = c.getComponentType();
++        String s = c.getName();
++        assert(s.indexOf('/') < 0);
++        return s.substring(0, s.lastIndexOf('.')+1);
++    }
++
++
++    private final TreeSet<LookupCase> CASES = new TreeSet<>();
++    private final TreeMap<LookupCase,TreeSet<LookupCase>> CASE_EDGES = new TreeMap<>();
++    private final ArrayList<ClassLoader> LOADERS = new ArrayList<>();
++    private final ClassLoader THIS_LOADER = this.getClass().getClassLoader();
++    { if (THIS_LOADER != null)  LOADERS.add(THIS_LOADER); }  // #1
++
++    private LookupCase lookupCase(String name) {
++        for (LookupCase lc : CASES) {
++            if (lc.toString().equals(name))
++                return lc;
++        }
++        throw new AssertionError(name);
++    }
++
++    private int numberOf(ClassLoader cl) {
++        if (cl == null)  return 0;
++        int i = LOADERS.indexOf(cl);
++        if (i < 0) {
++            i = LOADERS.size();
++            LOADERS.add(cl);
++        }
++        return i+1;
++    }
++
++    private void addLookupEdge(LookupCase l1, Class<?> c2, LookupCase l2) {
++        TreeSet<LookupCase> edges = CASE_EDGES.get(l2);
++        if (edges == null)  CASE_EDGES.put(l2, edges = new TreeSet<>());
++        if (edges.add(l1)) {
++            Class<?> c1 = l1.lookupClass();
++            assert(l2.lookupClass() == c2); // [A1]
++            int m1 = l1.lookupModes();
++            int m2 = l2.lookupModes();
++            assert((m1 | m2) == m1);        // [A2] (no elevation of access)
++            LookupCase expect = l1.in(c2);
++            if (!expect.equals(l2))
++                System.out.println("*** expect "+l1+" => "+expect+" but got "+l2);
++            assertEquals(expect, l2);
++        }
++    }
++
++    private void makeCases(Lookup[] originalLookups) {
++        // make initial set of lookup test cases
++        CASES.clear(); LOADERS.clear(); CASE_EDGES.clear();
++        ArrayList<Class<?>> classes = new ArrayList<>();
++        for (Lookup l : originalLookups) {
++            CASES.add(new LookupCase(l));
++            classes.remove(l.lookupClass());  // no dups please
++            classes.add(l.lookupClass());
++        }
++        System.out.println("loaders = "+LOADERS);
++        int rounds = 0;
++        for (int lastCount = -1; lastCount != CASES.size(); ) {
++            lastCount = CASES.size();  // if CASES grow in the loop we go round again
++            for (LookupCase lc1 : CASES.toArray(new LookupCase[0])) {
++                for (Class<?> c2 : classes) {
++                    LookupCase lc2 = new LookupCase(lc1.lookup().in(c2));
++                    addLookupEdge(lc1, c2, lc2);
++                    CASES.add(lc2);
++                }
++            }
++            rounds++;
++        }
++        System.out.println("filled in "+CASES.size()+" cases from "+originalLookups.length+" original cases in "+rounds+" rounds");
++        if (false) {
++            System.out.println("CASES: {");
++            for (LookupCase lc : CASES) {
++                System.out.println(lc);
++                Set<LookupCase> edges = CASE_EDGES.get(lc);
++                if (edges != null)
++                    for (LookupCase prev : edges) {
++                        System.out.println("\t"+prev);
++                    }
++            }
++            System.out.println("}");
++        }
++    }
++
++    @Test public void test() {
++        makeCases(lookups());
++        if (verbosity > 0) {
++            verbosity += 9;
++            Method pro_in_self = targetMethod(THIS_CLASS, PROTECTED, methodType(void.class));
++            testOneAccess(lookupCase("AccessControlTest/public"),  pro_in_self, "find");
++            testOneAccess(lookupCase("Remote_subclass/public"),    pro_in_self, "find");
++            testOneAccess(lookupCase("Remote_subclass"),           pro_in_self, "find");
++            verbosity -= 9;
++        }
++        Set<Class<?>> targetClassesDone = new HashSet<>();
++        for (LookupCase targetCase : CASES) {
++            Class<?> targetClass = targetCase.lookupClass();
++            if (!targetClassesDone.add(targetClass))  continue;  // already saw this one
++            String targetPlace = placeName(targetClass);
++            if (targetPlace == null)  continue;  // Object, String, not a target
++            for (int targetAccess : ACCESS_CASES) {
++                MethodType methodType = methodType(void.class);
++                Method method = targetMethod(targetClass, targetAccess, methodType);
++                // Try to access target method from various contexts.
++                for (LookupCase sourceCase : CASES) {
++                    testOneAccess(sourceCase, method, "find");
++                    testOneAccess(sourceCase, method, "unreflect");
++                }
++            }
++        }
++        System.out.println("tested "+testCount+" access scenarios; "+testCountFails+" accesses were denied");
++    }
++
++    private int testCount, testCountFails;
++
++    private void testOneAccess(LookupCase sourceCase, Method method, String kind) {
++        Class<?> targetClass = method.getDeclaringClass();
++        String methodName = method.getName();
++        MethodType methodType = methodType(method.getReturnType(), method.getParameterTypes());
++        boolean willAccess = sourceCase.willAccess(method);
++        boolean didAccess = false;
++        ReflectiveOperationException accessError = null;
++        try {
++            switch (kind) {
++            case "find":
++                if ((method.getModifiers() & Modifier.STATIC) != 0)
++                    sourceCase.lookup().findStatic(targetClass, methodName, methodType);
++                else
++                    sourceCase.lookup().findVirtual(targetClass, methodName, methodType);
++                break;
++            case "unreflect":
++                sourceCase.lookup().unreflect(method);
++                break;
++            default:
++                throw new AssertionError(kind);
++            }
++            didAccess = true;
++        } catch (ReflectiveOperationException ex) {
++            accessError = ex;
++        }
++        if (willAccess != didAccess) {
++            System.out.println(sourceCase+" => "+targetClass.getSimpleName()+"."+methodName+methodType);
++            System.out.println("fail on "+method+" ex="+accessError);
++            assertEquals(willAccess, didAccess);
++        }
++        testCount++;
++        if (!didAccess)  testCountFails++;
++    }
++
++    static Method targetMethod(Class<?> targetClass, int targetAccess, MethodType methodType) {
++        String methodName = accessName(targetAccess)+placeName(targetClass);
++        if (verbosity >= 2)
++            System.out.println(targetClass.getSimpleName()+"."+methodName+methodType);
++        try {
++            Method method = targetClass.getDeclaredMethod(methodName, methodType.parameterArray());
++            assertEquals(method.getReturnType(), methodType.returnType());
++            int haveMods = method.getModifiers();
++            assert(Modifier.isStatic(haveMods));
++            assert(targetAccess == fixMods(haveMods));
++            return method;
++        } catch (NoSuchMethodException ex) {
++            throw new AssertionError(methodName, ex);
++        }
++    }
++
++    static String placeName(Class<?> cls) {
++        // return "self", "sibling", "nestmate", etc.
++        if (cls == AccessControlTest.class)  return "self";
++        String cln = cls.getSimpleName();
++        int under = cln.lastIndexOf('_');
++        if (under < 0)  return null;
++        return cln.substring(under+1);
++    }
++    static String accessName(int acc) {
++        switch (acc) {
++        case PUBLIC:     return "pub_in_";
++        case PROTECTED:  return "pro_in_";
++        case PACKAGE:    return "pkg_in_";
++        case PRIVATE:    return "pri_in_";
++        }
++        assert(false);
++        return "?";
++    }
++    private static final int[] ACCESS_CASES = {
++        PUBLIC, PACKAGE, PRIVATE, PROTECTED
++    };
++    /** Return one of the ACCESS_CASES. */
++    static int fixMods(int mods) {
++        mods &= (PUBLIC|PRIVATE|PROTECTED);
++        switch (mods) {
++        case PUBLIC: case PRIVATE: case PROTECTED: return mods;
++        case 0:  return PACKAGE;
++        }
++        throw new AssertionError(mods);
++    }
++
++    static Lookup[] lookups() {
++        ArrayList<Lookup> tem = new ArrayList<>();
++        Collections.addAll(tem,
++                           AccessControlTest.lookup_in_self(),
++                           Inner_nestmate.lookup_in_nestmate(),
++                           AccessControlTest_sibling.lookup_in_sibling());
++        if (true) {
++            Collections.addAll(tem,Acquaintance_remote.lookups());
++        } else {
++            try {
++                Class<?> remc = Class.forName("test.java.lang.invoke.AccessControlTest_subpkg.Acquaintance_remote");
++                Lookup[] remls = (Lookup[]) remc.getMethod("lookups").invoke(null);
++                Collections.addAll(tem, remls);
++            } catch (ReflectiveOperationException ex) {
++                throw new LinkageError("reflection failed", ex);
++            }
++        }
++        tem.add(publicLookup());
++        tem.add(publicLookup().in(String.class));
++        tem.add(publicLookup().in(List.class));
++        return tem.toArray(new Lookup[0]);
++    }
++
++    static Lookup lookup_in_self() {
++        return MethodHandles.lookup();
++    }
++    static public      void pub_in_self() { }
++    static protected   void pro_in_self() { }
++    static /*package*/ void pkg_in_self() { }
++    static private     void pri_in_self() { }
++
++    static class Inner_nestmate {
++        static Lookup lookup_in_nestmate() {
++            return MethodHandles.lookup();
++        }
++        static public      void pub_in_nestmate() { }
++        static protected   void pro_in_nestmate() { }
++        static /*package*/ void pkg_in_nestmate() { }
++        static private     void pri_in_nestmate() { }
++    }
++}
++class AccessControlTest_sibling {
++    static Lookup lookup_in_sibling() {
++        return MethodHandles.lookup();
++    }
++    static public      void pub_in_sibling() { }
++    static protected   void pro_in_sibling() { }
++    static /*package*/ void pkg_in_sibling() { }
++    static private     void pri_in_sibling() { }
++}
++
++// This guy tests access from outside the package:
++/*
++package test.java.lang.invoke.AccessControlTest_subpkg;
++public class Acquaintance_remote {
++    public static Lookup[] lookups() { ...
++    }
++    ...
++}
++*/
+diff -r ba975a730f4b -r c91e36369a9f test/java/lang/invoke/AccessControlTest_subpkg/Acquaintance_remote.java
+--- jdk/test/java/lang/invoke/AccessControlTest_subpkg/Acquaintance_remote.java	Thu Jan 01 00:00:00 1970 +0000
++++ jdk/test/java/lang/invoke/AccessControlTest_subpkg/Acquaintance_remote.java	Mon May 07 01:22:07 2012 -0700
+@@ -0,0 +1,42 @@
++package test.java.lang.invoke.AccessControlTest_subpkg;
++import test.java.lang.invoke.AccessControlTest;
++import java.lang.invoke.*;
++import static java.lang.invoke.MethodHandles.*;
++
++// This guy tests access from outside the package test.java.lang.invoke:
++public class Acquaintance_remote {
++    public static Lookup[] lookups() {
++        return new Lookup[] {
++            Acquaintance_remote.lookup_in_remote(),
++            Remote_subclass.lookup_in_subclass(),
++            Remote_hidden.lookup_in_hidden()
++        };
++    }
++
++    public static Lookup lookup_in_remote() {
++        return MethodHandles.lookup();
++    }
++    static public      void pub_in_remote() { }
++    static protected   void pro_in_remote() { }
++    static /*package*/ void pkg_in_remote() { }
++    static private     void pri_in_remote() { }
++
++    static public class Remote_subclass extends AccessControlTest {
++        static Lookup lookup_in_subclass() {
++            return MethodHandles.lookup();
++        }
++        static public      void pub_in_subclass() { }
++        static protected   void pro_in_subclass() { }
++        static /*package*/ void pkg_in_subclass() { }
++        static private     void pri_in_subclass() { }
++    }
++    static /*package*/ class Remote_hidden {
++        static Lookup lookup_in_hidden() {
++            return MethodHandles.lookup();
++        }
++        static public      void pub_in_hidden() { }
++        static protected   void pro_in_hidden() { }
++        static /*package*/ void pkg_in_hidden() { }
++        static private     void pri_in_hidden() { }
++    }
++}
