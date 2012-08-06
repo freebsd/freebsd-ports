@@ -15,7 +15,7 @@ COMMENT=	A Terminal Multiplexer
 
 LICENSE=	BSD
 
-USE_AUTOTOOLS=	autoconf
+GNU_CONFIGURE=	yes
 
 MAN1=		tmux.1
 
@@ -26,32 +26,29 @@ PLIST_DIRSTRY=	etc/bash_completion.d
 PORTDOCS=	CHANGES FAQ NOTES
 PORTEXAMPLES=	*
 
-OPTIONS=	LIBEVENT2	"Use libevent version 2" Off \
-		LIBEVENT_STATIC	"Build with static libevent" Off \
-		BACKSPACE 	"Build with tty/keys patch" Off
+OPTIONS_DEFINE=	LIBEVENT2 LIBEVENT_STATIC BACKSPACE
 
-CONFIGURE_ENV+=	"LIBEVENT_CFLAGS=${CFLAGS}" \
-		"LIBEVENT_LIBS=${LDFLAGS} -levent"
+LIBEVENT2_DESC=	Use libevent version 2
+LIBEVENT_STATIC_DESC=	Build with static libevent
+BACKSPACE_DESC=	Build wiht tty/keys patch
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_LIBEVENT2)
+.if ${PORT_OPTIONS:MLIBEVENT2}
 LIB_DEPENDS=	event-2.0:${PORTSDIR}/devel/libevent2
-CFLAGS+=	-I${LOCALBASE}/include/event2/compat -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib/event2
-. if defined(WITH_LIBEVENT_STATIC)
+. if ${PORT_OPTIONS:MLIBEVENT_STATIC}
 LESTATIC=	${LOCALBASE}/lib/event2/libevent.a
 . endif
 .else
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	LIBEVENT_CFLAGS="-I${LOCALBASE}/include" \
+		LIBEVENT_LIBS="-L${LOCALBASE}/lib -levent"
 . if defined(WITH_LIBEVENT_STATIC)
 LESTATIC=	${LOCALBASE}/lib/libevent.a
 . endif
 .endif
 
-.if defined(WITH_BACKSPACE)
+.if ${PORT_OPTIONS:MBACKSPACE}
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-tty-keys.c
 .endif
 
@@ -59,8 +56,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/tmux.conf|${PREFIX}/etc/tmux.conf|g' \
 		${WRKSRC}/tmux.1 ${WRKSRC}/tmux.h ${WRKSRC}/CHANGES
 	${REINPLACE_CMD} -e '/LIBS=/s/-lrt//' ${WRKSRC}/${CONFIGURE_SCRIPT}
+
+post-configure:
 .if defined(WITH_LIBEVENT_STATIC)
-	${REINPLACE_CMD} -e 's|$$LIBEVENT_LIBS |${LESTATIC} |' ${WRKSRC}/configure.ac
+	${REINPLACE_CMD} -e '/LIBS/s|-levent[^[:blank:]]*|${LESTATIC}|' \
+		${WRKSRC}/${MAKEFILE}
 .endif
 
 do-install:
@@ -82,4 +82,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
