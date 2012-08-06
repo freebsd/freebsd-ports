@@ -1,0 +1,11 @@
+include/fdk-aac/machine_type.h
+include/fdk-aac/genericStds.h
+include/fdk-aac/FDK_audio.h
+include/fdk-aac/aacenc_lib.h
+include/fdk-aac/aacdecoder_lib.h
+lib/libfdk-aac.a
+lib/libfdk-aac.la
+lib/libfdk-aac.so
+lib/libfdk-aac.so.0
+libdata/pkgconfig/fdk-aac.pc
+@dirrm include/fdk-aac
