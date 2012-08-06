@@ -20,11 +20,12 @@ BUILD_DEPENDS=		${LOCALBASE}/lib/postgresql/postgis-1.5.so:${PORTSDIR}/databases
 USE_BZIP2=		YES
 GNU_CONFIGURE=		YES
 
-OPTIONS=		FASTCGI "Support FASTCGI" on \
+OPTIONS_DEFINE=		FASTCGI
+OPTIONS_DEFAULT=	FASTCGI
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_FASTCGI)
+.if ${PORT_OPTIONS:MFASTCGI}
 BUILD_DEPENDS+=	${LOCALBASE}/bin/cgi-fcgi:${PORTSDIR}/www/fcgi
 CONFIGURE_ARGS+=	--with-fastcgi=${LOCALBASE}
 .endif
@@ -33,4 +34,4 @@ post-install:
 	${MKDIR} ${WWWDIR}/cgi-bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/tinyows ${WWWDIR}/cgi-bin/tinyows
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
