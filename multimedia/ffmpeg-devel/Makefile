@@ -455,7 +455,6 @@ CONFIGURE_ARGS+=	--disable-libxvid
 
 # License knobs
 .if defined(FFMPEG_NONFREE)
-LICENSE=
 RESTRICTED=	linking to libfaac or libaacplus restricts redistribution
 CONFIGURE_ARGS+=	--enable-nonfree
 .endif
