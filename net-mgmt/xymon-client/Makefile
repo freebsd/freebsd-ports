@@ -10,6 +10,7 @@ PORTVERSION=	4.3.10
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF/xymon/Xymon/${PORTVERSION}
 PKGNAMESUFFIX=	-client${PKGNAMESUFFIX2}
+DIST_SUBDIR=	repacked
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	System for monitoring servers and networks - Client
