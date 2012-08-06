@@ -4,7 +4,6 @@ PC/SC-Lite has been installed.
 You can fetch drivers from http://www.linuxnet.com/sourcedrivers.html
 or install one of the following ports:
 devel/libccid
-security/ifd-gempc410
 security/ifd-slb_rf60
 
 For cardreaders connected to the serial port: After installing the driver,
