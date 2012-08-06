@@ -22,8 +22,6 @@ USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME:C/\.app//}-${PORTVERSION}
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|linux/soundcard.h|sys/soundcard.h|g' \
 		${WRKSRC}/AppController.m
