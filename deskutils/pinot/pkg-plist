@@ -11,6 +11,79 @@ etc/pinot/textcat32_conf.txt
 etc/pinot/textcat3_conf.txt
 etc/pinot/textcat_conf.txt
 etc/xdg/autostart/pinot-dbus-daemon.desktop
+include/pinot/ActionQueue.h
+include/pinot/CommandLine.h
+include/pinot/CrawlHistory.h
+include/pinot/CurlDownloader.h
+include/pinot/DBusIndex.h
+include/pinot/DaemonState.h
+include/pinot/Document.h
+include/pinot/DocumentInfo.h
+include/pinot/DownloaderFactory.h
+include/pinot/DownloaderInterface.h
+include/pinot/FieldMapperInterface.h
+include/pinot/FileCollector.h
+include/pinot/FilterUtils.h
+include/pinot/FilterWrapper.h
+include/pinot/INotifyMonitor.h
+include/pinot/IndexInterface.h
+include/pinot/Languages.h
+include/pinot/MIMEScanner.h
+include/pinot/Memory.h
+include/pinot/MetaDataBackup.h
+include/pinot/ModuleFactory.h
+include/pinot/ModuleProperties.h
+include/pinot/MonitorEvent.h
+include/pinot/MonitorFactory.h
+include/pinot/MonitorHandler.h
+include/pinot/MonitorInterface.h
+include/pinot/NLS.h
+include/pinot/NeonDownloader.h
+include/pinot/OnDiskHandler.h
+include/pinot/OpenSearchParser.h
+include/pinot/PinotSettings.h
+include/pinot/PluginParsers.h
+include/pinot/PluginWebEngine.h
+include/pinot/QueryHistory.h
+include/pinot/QueryProperties.h
+include/pinot/ResultsExporter.h
+include/pinot/SQLDB.h
+include/pinot/SQLiteBase.h
+include/pinot/SearchEngineInterface.h
+include/pinot/SearchPluginProperties.h
+include/pinot/ServerThreads.h
+include/pinot/SherlockParser.h
+include/pinot/StringManip.h
+include/pinot/TextConverter.h
+include/pinot/TimeConverter.h
+include/pinot/Timer.h
+include/pinot/UniqueApplication.h
+include/pinot/Url.h
+include/pinot/ViewHistory.h
+include/pinot/Visibility.h
+include/pinot/WebEngine.h
+include/pinot/WorkerThreads.h
+include/pinot/filters/Filter.h
+include/pinot/filters/FilterFactory.h
+include/pinot/filters/HtmlFilter.h
+include/pinot/filters/HtmlParser.h
+include/pinot/filters/TextFilter.h
+include/pinot/filters/XmlFilter.h
+include/pinot/unac/unac.h
+include/pinot/xdgmime/xdgmime.c
+include/pinot/xdgmime/xdgmime.h
+include/pinot/xdgmime/xdgmimealias.c
+include/pinot/xdgmime/xdgmimealias.h
+include/pinot/xdgmime/xdgmimecache.c
+include/pinot/xdgmime/xdgmimecache.h
+include/pinot/xdgmime/xdgmimeglob.c
+include/pinot/xdgmime/xdgmimeglob.h
+include/pinot/xdgmime/xdgmimeint.c
+include/pinot/xdgmime/xdgmimeint.h
+include/pinot/xdgmime/xdgmimemagic.c
+include/pinot/xdgmime/xdgmimemagic.h
+include/pinot/xdgmime/xdgmimeparent.c
+include/pinot/xdgmime/xdgmimeparent.h
 lib/pinot/backends/libxapianbackend.so
 lib/pinot/backends/libxapianbackend.so.1
 lib/pinot/libBasicUtils.a
@@ -89,6 +162,10 @@ share/locale/zh_TW/LC_MESSAGES/pinot.mo
 @dirrm lib/pinot/filters
 @dirrm lib/pinot/backends
 @dirrm lib/pinot
+@dirrm include/pinot/xdgmime
+@dirrm include/pinot/unac
+@dirrm include/pinot/filters
+@dirrm include/pinot
 @dirrmtry etc/xdg/autostart
 @dirrmtry etc/xdg
 @dirrm etc/pinot
