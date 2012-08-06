@@ -15,7 +15,8 @@
 name="mailgraph"
 rcvar=mailgraph_enable
 
-command=%%PREFIX%%/sbin/${name}.pl > /dev/null 2>&1
+command=%%PREFIX%%/sbin/${name}.pl
+command_args='> /dev/null 2>&1'
 command_interpreter=/usr/bin/perl
 stop_postcmd=stop_postcmd
 
