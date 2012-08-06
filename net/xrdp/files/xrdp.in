@@ -16,13 +16,6 @@ xrdp_daemons="xrdp xrdpsesman"
 load_rc_config "$name"
 : ${xrdp_enable="NO"}
 
-# Enable/disable dependent daemon.
-if [ -n "${rcvar}" ] && checkyesno "${rcvar}"; then
-	: ${sesman_enable="YES"}
-else
-	: ${sesman_enable="NO"}
-fi
-
 # Commands.
 extra_commands="reload status"
 start_cmd="xrdp_cmd"
