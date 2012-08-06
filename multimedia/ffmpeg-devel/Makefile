@@ -15,8 +15,8 @@ DISTNAME=	ffmpeg-${GIT_SUFFIX}
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Realtime audio/video encoder/converter and streaming server
 
-LICENSE_COMB=		multi
 LICENSE=		GPLv2 LGPL21
+LICENSE_COMB=		multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING.GPLv2
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPLv2.1
 
