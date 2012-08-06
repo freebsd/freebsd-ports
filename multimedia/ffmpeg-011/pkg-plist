@@ -1,0 +1,135 @@
+bin/ffmpeg%%SUFF%%
+bin/ffprobe%%SUFF%%
+%%FFSERVER%%bin/ffserver%%SUFF%%
+%%FFSERVER%%@unexec if cmp -s %D/etc/ffserver%%SUFF%%.conf %D/etc/ffserver%%SUFF%%.conf-dist; then rm -f %D/etc/ffserver%%SUFF%%.conf; fi
+%%FFSERVER%%etc/ffserver%%SUFF%%.conf-dist
+%%FFSERVER%%@exec [ -f %B/ffserver%%SUFF%%.conf ] || cp %B/%f %B/ffserver%%SUFF%%.conf
+include/ffmpeg%%SUFF%%/libavcodec/avcodec.h
+include/ffmpeg%%SUFF%%/libavcodec/avfft.h
+include/ffmpeg%%SUFF%%/libavcodec/dxva2.h
+include/ffmpeg%%SUFF%%/libavcodec/vaapi.h
+include/ffmpeg%%SUFF%%/libavcodec/vda.h
+include/ffmpeg%%SUFF%%/libavcodec/vdpau.h
+include/ffmpeg%%SUFF%%/libavcodec/version.h
+include/ffmpeg%%SUFF%%/libavcodec/xvmc.h
+include/ffmpeg%%SUFF%%/libavdevice/avdevice.h
+include/ffmpeg%%SUFF%%/libavfilter/asrc_abuffer.h
+include/ffmpeg%%SUFF%%/libavfilter/avcodec.h
+include/ffmpeg%%SUFF%%/libavfilter/avfilter.h
+include/ffmpeg%%SUFF%%/libavfilter/avfiltergraph.h
+include/ffmpeg%%SUFF%%/libavfilter/buffersink.h
+include/ffmpeg%%SUFF%%/libavfilter/buffersrc.h
+include/ffmpeg%%SUFF%%/libavfilter/version.h
+include/ffmpeg%%SUFF%%/libavfilter/vsrc_buffer.h
+include/ffmpeg%%SUFF%%/libavformat/avformat.h
+include/ffmpeg%%SUFF%%/libavformat/avio.h
+include/ffmpeg%%SUFF%%/libavformat/version.h
+include/ffmpeg%%SUFF%%/libavutil/adler32.h
+include/ffmpeg%%SUFF%%/libavutil/aes.h
+include/ffmpeg%%SUFF%%/libavutil/attributes.h
+include/ffmpeg%%SUFF%%/libavutil/audio_fifo.h
+include/ffmpeg%%SUFF%%/libavutil/audioconvert.h
+include/ffmpeg%%SUFF%%/libavutil/avassert.h
+include/ffmpeg%%SUFF%%/libavutil/avconfig.h
+include/ffmpeg%%SUFF%%/libavutil/avstring.h
+include/ffmpeg%%SUFF%%/libavutil/avutil.h
+include/ffmpeg%%SUFF%%/libavutil/base64.h
+include/ffmpeg%%SUFF%%/libavutil/bprint.h
+include/ffmpeg%%SUFF%%/libavutil/bswap.h
+include/ffmpeg%%SUFF%%/libavutil/common.h
+include/ffmpeg%%SUFF%%/libavutil/cpu.h
+include/ffmpeg%%SUFF%%/libavutil/crc.h
+include/ffmpeg%%SUFF%%/libavutil/dict.h
+include/ffmpeg%%SUFF%%/libavutil/error.h
+include/ffmpeg%%SUFF%%/libavutil/eval.h
+include/ffmpeg%%SUFF%%/libavutil/fifo.h
+include/ffmpeg%%SUFF%%/libavutil/file.h
+include/ffmpeg%%SUFF%%/libavutil/imgutils.h
+include/ffmpeg%%SUFF%%/libavutil/intfloat.h
+include/ffmpeg%%SUFF%%/libavutil/intfloat_readwrite.h
+include/ffmpeg%%SUFF%%/libavutil/intreadwrite.h
+include/ffmpeg%%SUFF%%/libavutil/lfg.h
+include/ffmpeg%%SUFF%%/libavutil/log.h
+include/ffmpeg%%SUFF%%/libavutil/lzo.h
+include/ffmpeg%%SUFF%%/libavutil/mathematics.h
+include/ffmpeg%%SUFF%%/libavutil/md5.h
+include/ffmpeg%%SUFF%%/libavutil/mem.h
+include/ffmpeg%%SUFF%%/libavutil/opt.h
+include/ffmpeg%%SUFF%%/libavutil/parseutils.h
+include/ffmpeg%%SUFF%%/libavutil/pixdesc.h
+include/ffmpeg%%SUFF%%/libavutil/pixfmt.h
+include/ffmpeg%%SUFF%%/libavutil/random_seed.h
+include/ffmpeg%%SUFF%%/libavutil/rational.h
+include/ffmpeg%%SUFF%%/libavutil/samplefmt.h
+include/ffmpeg%%SUFF%%/libavutil/sha.h
+include/ffmpeg%%SUFF%%/libavutil/timecode.h
+include/ffmpeg%%SUFF%%/libavutil/timestamp.h
+include/ffmpeg%%SUFF%%/libpostproc/postprocess.h
+include/ffmpeg%%SUFF%%/libswresample/swresample.h
+include/ffmpeg%%SUFF%%/libswscale/swscale.h
+lib/ffmpeg%%SUFF%%/libavcodec.a
+lib/ffmpeg%%SUFF%%/libavcodec.so
+lib/ffmpeg%%SUFF%%/libavcodec.so.%%SHLIB_VER%%
+lib/ffmpeg%%SUFF%%/libavcodec.so.54.23.100
+lib/ffmpeg%%SUFF%%/libavdevice.a
+lib/ffmpeg%%SUFF%%/libavdevice.so
+lib/ffmpeg%%SUFF%%/libavdevice.so.%%SHLIB_VER%%
+lib/ffmpeg%%SUFF%%/libavdevice.so.54.0.100
+lib/ffmpeg%%SUFF%%/libavfilter.a
+lib/ffmpeg%%SUFF%%/libavfilter.so
+lib/ffmpeg%%SUFF%%/libavfilter.so.%%SHLIB_VER%%
+lib/ffmpeg%%SUFF%%/libavfilter.so.2.77.100
+lib/ffmpeg%%SUFF%%/libavformat.a
+lib/ffmpeg%%SUFF%%/libavformat.so
+lib/ffmpeg%%SUFF%%/libavformat.so.%%SHLIB_VER%%
+lib/ffmpeg%%SUFF%%/libavformat.so.54.6.100
+lib/ffmpeg%%SUFF%%/libavutil.a
+lib/ffmpeg%%SUFF%%/libavutil.so
+lib/ffmpeg%%SUFF%%/libavutil.so.%%SHLIB_VER%%
+lib/ffmpeg%%SUFF%%/libavutil.so.51.54.100
+lib/ffmpeg%%SUFF%%/libpostproc.a
+lib/ffmpeg%%SUFF%%/libpostproc.so
+lib/ffmpeg%%SUFF%%/libpostproc.so.%%SHLIB_VER%%
+lib/ffmpeg%%SUFF%%/libpostproc.so.52.0.100
+lib/ffmpeg%%SUFF%%/libswresample.a
+lib/ffmpeg%%SUFF%%/libswresample.so
+lib/ffmpeg%%SUFF%%/libswresample.so.%%SHLIB_VER%%
+lib/ffmpeg%%SUFF%%/libswresample.so.0.15.100
+lib/ffmpeg%%SUFF%%/libswscale.a
+lib/ffmpeg%%SUFF%%/libswscale.so
+lib/ffmpeg%%SUFF%%/libswscale.so.%%SHLIB_VER%%
+lib/ffmpeg%%SUFF%%/libswscale.so.2.1.100
+libdata/pkgconfig/libavcodec%%SUFF%%.pc
+libdata/pkgconfig/libavdevice%%SUFF%%.pc
+libdata/pkgconfig/libavfilter%%SUFF%%.pc
+libdata/pkgconfig/libavformat%%SUFF%%.pc
+libdata/pkgconfig/libavutil%%SUFF%%.pc
+libdata/pkgconfig/libpostproc%%SUFF%%.pc
+libdata/pkgconfig/libswresample%%SUFF%%.pc
+libdata/pkgconfig/libswscale%%SUFF%%.pc
+%%DATADIR%%/examples/Makefile
+%%DATADIR%%/examples/decoding_encoding.c
+%%DATADIR%%/examples/filtering_audio.c
+%%DATADIR%%/examples/filtering_video.c
+%%DATADIR%%/examples/metadata.c
+%%DATADIR%%/examples/muxing.c
+%%DATADIR%%/ffprobe.xsd
+%%DATADIR%%/libvpx-1080p.ffpreset
+%%DATADIR%%/libvpx-1080p50_60.ffpreset
+%%DATADIR%%/libvpx-360p.ffpreset
+%%DATADIR%%/libvpx-720p.ffpreset
+%%DATADIR%%/libvpx-720p50_60.ffpreset
+%%DATADIR%%/libx264-ipod320.ffpreset
+%%DATADIR%%/libx264-ipod640.ffpreset
+@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%/
+@dirrm lib/ffmpeg%%SUFF%%
+@dirrm include/ffmpeg%%SUFF%%/libswscale
+@dirrm include/ffmpeg%%SUFF%%/libswresample
+@dirrm include/ffmpeg%%SUFF%%/libpostproc
+@dirrm include/ffmpeg%%SUFF%%/libavutil
+@dirrm include/ffmpeg%%SUFF%%/libavformat
+@dirrm include/ffmpeg%%SUFF%%/libavfilter
+@dirrm include/ffmpeg%%SUFF%%/libavdevice
+@dirrm include/ffmpeg%%SUFF%%/libavcodec
+@dirrm include/ffmpeg%%SUFF%%

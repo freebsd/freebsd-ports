@@ -53,6 +53,7 @@
     SUBDIR += emotion
     SUBDIR += emovix
     SUBDIR += ffmpeg
+    SUBDIR += ffmpeg-011
     SUBDIR += ffmpeg-devel
     SUBDIR += ffmpeg2theora
     SUBDIR += ffmpegthumbnailer
