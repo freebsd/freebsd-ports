@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}_src_${DISTVERSION:S/./_/g}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Enterprise instant messaging server (development version)
 
+IGNORE=		No development version available right now. Please use net-im/openfire instead.
+
 RUN_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper
 
 CONFLICTS=	openfire-[0-9]*
