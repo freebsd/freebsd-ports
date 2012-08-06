@@ -817,6 +817,7 @@
     SUBDIR += py-graphy
     SUBDIR += py-gvgen
     SUBDIR += py-imaging
+    SUBDIR += py-mcomix
     SUBDIR += py-ming
     SUBDIR += py-nwdiag
     SUBDIR += py-opencv
