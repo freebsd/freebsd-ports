@@ -52,6 +52,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="10f38033-e006-11e1-9304-000000000000">
+    <topic>automake -- Insecure 'distcheck' recipe granted world-writable distdir</topic>
+    <affects>
+      <package>
+	<name>automake</name>
+	<range><lt>1.12.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GNU reports:</p>
+	<blockquote cite="https://lists.gnu.org/archive/html/automake/2012-07/msg00023.html">
+	  <p>The recipe of the 'distcheck' target granted temporary
+world-write permissions on the extracted distdir.  This introduced
+a locally exploitable race condition for those who run "make distcheck"
+with a non-restrictive umask (e.g., 022) in a directory that was
+accessible by others.  A successful exploit would result in arbitrary
+code execution with the privileges of the user running "make distcheck".</p>
+	  <p>It is important to stress that this vulnerability impacts not only
+the Automake package itself, but all packages with Automake-generated
+makefiles.  For an effective fix it is necessary to regenerate the
+Makefile.in files with a fixed Automake version.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2012-3386</cvename>
+	<url>https://lists.gnu.org/archive/html/automake/2012-07/msg00023.html</url>
+    </references>
+    <dates>
+      <discovery>2012-07-09</discovery>
+      <entry>2012-08-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dbf338d0-dce5-11e1-b655-14dae9ebcf89">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
