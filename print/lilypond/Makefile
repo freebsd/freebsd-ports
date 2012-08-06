@@ -75,7 +75,7 @@ post-patch:
 	${REINPLACE_CMD} -e '17,21d' ${WRKSRC}/po/GNUmakefile
 .endif
 
-pre-install:
+pre-su-install:
 .if exists(${PREFIX}/info/dir)
 	${REINPLACE_CMD} -i '' -e '/LilyPond/d' ${PREFIX}/info/dir
 .endif
