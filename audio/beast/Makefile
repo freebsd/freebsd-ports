@@ -55,6 +55,10 @@ post-patch:
 		/FLAGS=/ s/(-g|-ggdb3|-pipe|-O2|-ftracer|-finline-functions|-fno-keep-static-consts)//; \
 		s|echo aout|echo elf|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' \
+		${WRKSRC}/autotools/intltool-merge
+	@${REINPLACE_CMD} -e 's|/bin/bash|${SH}|' \
+		${WRKSRC}/mkrelease.sh
 	@${REINPLACE_CMD} -e 's|-DG_DISABLE_DEPRECATED||g' \
 		${WRKSRC}/bse/Makefile.in \
 		${WRKSRC}/bse/zintern/Makefile.in
