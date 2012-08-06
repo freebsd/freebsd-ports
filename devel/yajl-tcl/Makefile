@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	yajl-tcl
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://people.freebsd.org/~gahr/distfiles/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-${CLONEDATE}
-MASTER_SITE_SUBDIR=	gahr
+MASTER_SITES=	http://cloud.github.com/downloads/flightaware/yajl-tcl/
 
 MAINTAIER=	gahr@FreeBSD.org
 COMMENT=	Tcl bindings for Yet Another JSON Library
@@ -23,13 +20,10 @@ USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
 		--with-tclinclude=${TCL_INCLUDEDIR}
 
-PLIST_FILES=	lib/yajltcl1.2/libyajltcl.so.1 \
-		lib/yajltcl1.2/pkgIndex.tcl \
-		lib/yajltcl1.2/yajl.tcl
-PLIST_DIRS=	lib/yajltcl1.2
-
-CLONEDATE=	20120717
-WRKSRC=		${WRKDIR}/${PORTNAME}
+PLIST_FILES=	lib/yajltcl${PORTVERSION}/libyajltcl.so.1 \
+		lib/yajltcl${PORTVERSION}/pkgIndex.tcl \
+		lib/yajltcl${PORTVERSION}/yajl.tcl
+PLIST_DIRS=	lib/yajltcl${PORTVERSION}
 
 LIB_DEPENDS=	yajl:${PORTSDIR}/devel/yajl
 
