@@ -3088,7 +3088,7 @@
     SUBDIR += present
     SUBDIR += prettygo
     SUBDIR += privman
-    SUBDIR += projectcenter.app
+    SUBDIR += projectcenter
     SUBDIR += projectmanager
     SUBDIR += protobuf
     SUBDIR += protobuf-c
