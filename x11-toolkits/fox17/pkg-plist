@@ -238,6 +238,7 @@ include/fox-%%MAJORVER%%/FXRASImage.h
 include/fox-%%MAJORVER%%/FXRGBIcon.h
 include/fox-%%MAJORVER%%/FXRGBImage.h
 include/fox-%%MAJORVER%%/FXRadioButton.h
+include/fox-%%MAJORVER%%/FXRandom.h
 include/fox-%%MAJORVER%%/FXRangeSlider.h
 include/fox-%%MAJORVER%%/FXRanged.h
 include/fox-%%MAJORVER%%/FXRangef.h
