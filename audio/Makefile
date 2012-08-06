@@ -151,6 +151,7 @@
     SUBDIR += faad
     SUBDIR += fapg
     SUBDIR += fcplay
+    SUBDIR += fdk-aac
     SUBDIR += fdmf
     SUBDIR += festalon
     SUBDIR += festdoc
