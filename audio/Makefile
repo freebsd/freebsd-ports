@@ -758,7 +758,7 @@
     SUBDIR += vo-aacenc
     SUBDIR += vo-amrwbenc
     SUBDIR += voipong
-    SUBDIR += volumecontrol.app
+    SUBDIR += volumecontrol
     SUBDIR += vorbis-tools
     SUBDIR += vorbisgain
     SUBDIR += vsound
