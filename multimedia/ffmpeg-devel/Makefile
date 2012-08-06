@@ -7,6 +7,7 @@
 
 PORTNAME=	ffmpeg
 DISTVERSION=	2012-08-06
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://git.videolan.org/
 PKGNAMESUFFIX=	-devel
@@ -87,6 +88,8 @@ CONFIGURE_ARGS+=	--enable-x11grab
 
 .include <bsd.port.pre.mk>
 
+DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 
