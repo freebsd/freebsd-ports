@@ -6,7 +6,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.7.13
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -442,10 +442,10 @@ post-install:
 .endif
 	${MKDIR} ${PREFIX}/include/ffmpeg
 .for FILE in ${COMPAT_HEADERS}
-	${CP} -f ${PREFIX}/include/${FILE} ${PREFIX}/include/ffmpeg/${FILE:C,^[^/]+/([^/]+).*,\1,}
+	${LN} -sf ../${FILE} ${PREFIX}/include/ffmpeg/${FILE:C,^[^/]+/([^/]+).*,\1,}
 .endfor
 	${MKDIR} ${PREFIX}/include/postproc
-	${CP} -f ${PREFIX}/include/libpostproc/postprocess.h \
-		 ${PREFIX}/include/postproc/
+	${LN} -sf ../libpostproc/postprocess.h \
+		 ${PREFIX}/include/postproc/postprocess.h
 
 .include <bsd.port.post.mk>
