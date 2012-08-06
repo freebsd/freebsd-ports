@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fox
-PORTVERSION=	1.7.33
-PORTREVISION=	2
+PORTVERSION=	1.7.35
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.fox-toolkit.org/pub/ \
    		ftp://ftp.fox-toolkit.org/pub/
@@ -19,10 +18,8 @@ LIB_DEPENDS=	Xft:${PORTSDIR}/x11-fonts/libXft
 
 CONFLICTS=	fox-1.4.* fox-1.6.*
 
-OPTIONS=	JPEG	"Enable JPEG support" ON \
-		PNG	"Enable PNG support" ON \
-		TIFF	"Enable TIFF support" ON \
-		WEBP	"Enable WebP support" ON
+OPTIONS_DEFINE=	JPEG PNG TIFF WEBP
+OPTIONS_DEFAULT=JPEG PNG TIFF WEBP
 
 LATEST_LINK=	fox17
 
@@ -45,30 +42,30 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 MAN1=		reswrap.1 shutterbug.1 adie.1 PathFinder.1 calculator.1 \
 		ControlPanel.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_JPEG)
-CONFIGURE_ARGS+=--disable-jpeg
-.else
+.if ${PORT_OPTIONS:MJPEG}
 LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
+.else
+CONFIGURE_ARGS+=--disable-jpeg
 .endif
 
-.if defined(WITHOUT_PNG)
-CONFIGURE_ARGS+=--disable-png
-.else
+.if ${PORT_OPTIONS:MPNG}
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
+.else
+CONFIGURE_ARGS+=--disable-png
 .endif
 
-.if defined(WITHOUT_TIFF)
-CONFIGURE_ARGS+=--disable-tiff
-.else
+.if ${PORT_OPTIONS:MTIFF}
 LIB_DEPENDS+=	tiff:${PORTSDIR}/graphics/tiff
+.else
+CONFIGURE_ARGS+=--disable-tiff
 .endif
 
-.if defined(WITHOUT_WEBP)
-CONFIGURE_ARGS+=--disable-webp
-.else
+.if ${PORT_OPTIONS:MWEBP}
 LIB_DEPENDS+=	webp:${PORTSDIR}/graphics/webp
+.else
+CONFIGURE_ARGS+=--disable-webp
 .endif
 
 .if ${ARCH} == "powerpc"
@@ -81,4 +78,4 @@ post-patch:
 	${REINPLACE_CMD} -e '/^SUBDIRS/s/ doc//' ${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
