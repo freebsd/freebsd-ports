@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	arduino-mk
-PORTVERSION=	0.6
+PORTVERSION=	0.8
 CATEGORIES=	devel
 MASTER_SITES=	http://mjo.tc/atelier/2009/02/acli/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
