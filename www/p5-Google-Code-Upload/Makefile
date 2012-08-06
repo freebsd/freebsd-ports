@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Google-Code-Upload
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,6 +26,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
+MAN1=		googlecode_upload.pl.1
 MAN3=		Google::Code::Upload.3
 
 .include <bsd.port.pre.mk>
