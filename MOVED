@@ -3631,4 +3631,4 @@ graphics/libglut|graphics/freeglut|2012-08-04|replace libglut with freeglut
 x11-fm/FSViewer||2012-08-05|Broken, unmaintained, dead upstream
 games/gomoku.app|games/gomoku|2012-08-06|Project renamed
 devel/projectcenter.app|devel/projectcenter|2012-08-06|Project renamed
-audio/volumecontrol.app|audio/volumecontrol2012-08-06|Project renamed
+audio/volumecontrol.app|audio/volumecontrol|2012-08-06|Project renamed
