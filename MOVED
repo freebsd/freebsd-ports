@@ -3629,3 +3629,4 @@ www/etoile-rsskit|www/rsskit|2012-08-04|Project renamed
 www/etoile-grr|www/grr|2012-08-04|Project renamed
 graphics/libglut|graphics/freeglut|2012-08-04|replace libglut with freeglut
 x11-fm/FSViewer||2012-08-05|Broken, unmaintained, dead upstream
+games/gomoku.app|games/gomoku|2012-08-06|Project renamed
