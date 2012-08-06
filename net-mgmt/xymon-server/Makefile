@@ -10,16 +10,18 @@ PORTVERSION=	4.3.10
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF/xymon/Xymon/${PORTVERSION}
 PKGNAMESUFFIX=	-server${PKGNAMESUFFIX2}
+DIST_SUBDIR=	repacked
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	System for monitoring servers and networks
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		pcre:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
 
-LICENSE=	GPLv2
 MAKE_JOBS_UNSAFE=	yes
 
 # Options
@@ -77,7 +79,6 @@ USE_OPENLDAP=	yes
 MAKE_ENV+=	WITH_NETSNMP=1
 LIB_DEPENDS+=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 .endif
-
 
 post-patch:
 	${REINPLACE_CMD} -e 's|!/bin/bash|!/usr/local/bin/bash|' \
