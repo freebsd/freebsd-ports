@@ -6,7 +6,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.7.13
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -15,9 +15,8 @@ MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Realtime audio/video encoder/converter and streaming server
 
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
-		${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
-
-CONFLICTS=	ffmpeg-20*
+		${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils \
+		${LOCALBASE}/bin/texi2html:${PORTSDIR}/textproc/texi2html
 
 HAS_CONFIGURE=	yes
 CONFIGURE_LOG=	config.err
@@ -25,6 +24,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 WANT_SDL=	yes
+USE_PERL5_BUILD=	yes
 
 OPTIONS_DEFINE=	AACPLUS ALSA AMR_NB AMR_WB CELT DEBUG DIRAC FAAC \
 		FFSERVER FREETYPE FREI0R GSM LAME OPENCV OPENJPEG \
@@ -32,7 +32,7 @@ OPTIONS_DEFINE=	AACPLUS ALSA AMR_NB AMR_WB CELT DEBUG DIRAC FAAC \
 		VDPAU VO_AACENC VO_AMRWBENC VORBIS VPX X11GRAB X264 XVID
 
 OPTIONS_DEFAULT=	FFSERVER FREETYPE FREI0R OPENCV SCHROEDINGER THEORA \
-		VORBIS VPX X264 XVID
+			VORBIS VPX X264 XVID
 
 FFSERVER_DESC=	Build and install ffserver
 X11GRAB_DESC=	Enable x11 grabbing
@@ -64,18 +64,13 @@ COMPAT_HEADERS=libavcodec/avcodec.h \
 	libpostproc/postprocess.h \
 	libswscale/swscale.h
 
+MAN1+=		ffmpeg.1 ffprobe.1
+
 .include <bsd.port.options.mk>
 
 # PORTDOCS
-.if ${PORT_OPTIONS:MDOCS}
-USE_PERL5_BUILD=	yes
-BUILD_DEPENDS+=		${LOCALBASE}/bin/texi2html:${PORTSDIR}/textproc/texi2html
-MAN1+=		ffmpeg.1 ffprobe.1
 .if ${PORT_OPTIONS:MFFSERVER}
 MAN1+=		ffserver.1
-. endif
-.else
-CONFIGURE_ARGS+=	--disable-doc
 .endif
 
 # rtmp
@@ -289,9 +284,7 @@ CONFIGURE_ARGS+=	--disable-libschroedinger
 .if ${PORT_OPTIONS:MSDL}
 USE_SDL+=	sdl
 PLIST_FILES+=	bin/ffplay
-.if ${PORT_OPTIONS:MDOCS}
 MAN1+=	ffplay.1
-.endif
 .else
 CONFIGURE_ARGS+=	--disable-ffplay
 .endif
