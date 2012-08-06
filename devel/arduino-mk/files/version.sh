@@ -1,5 +1,5 @@
 #!/bin/sh
-# @(#) $Id: version.sh 5 2011-12-28 18:41:41Z leres $ (XSE)
+# @(#) $Id: version.sh 22 2012-08-05 06:24:24Z leres $ (XSE)
 
 # The ARDUINO version should (a) be in an include file and
 # (b) should (at a minimum) be cpp friendly
@@ -17,7 +17,15 @@ case "${version}" in
 	echo "${version}"
 	;;
 
-*)
+*.*.*)
+	echo "${version}" | /usr/bin/sed -e 's/\.//g'
+	;;
+
+*.*)
 	echo "${version}" | /usr/bin/awk '{ print 100 * $0 }'
+	;;
+
+*)
+	echo "${version}"
 	;;
 esac
