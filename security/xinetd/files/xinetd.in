@@ -15,7 +15,8 @@
 name=xinetd
 rcvar=xinetd_enable
 
-command=%%PREFIX%%/sbin/xinetd > /dev/null 2>&1
+command=%%PREFIX%%/sbin/xinetd
+command_args='> /dev/null 2>&1'
 pidfile=/var/run/xinetd.pid
 
 xinetd_enable=${xinetd_enable:-"NO"}

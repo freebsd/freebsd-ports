@@ -19,7 +19,8 @@
 name=amavisd
 rcvar=amavisd_enable
 
-command=%%PREFIX%%/sbin/amavisd > /dev/null 2>&1
+command=%%PREFIX%%/sbin/amavisd
+command_args='> /dev/null 2>&1'
 required_files=%%PREFIX%%/etc/amavisd.conf
 extra_commands="reload"
 
