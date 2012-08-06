@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	uhub
-PORTVERSION=	0.3.2
-PORTREVISION=	4
+PORTVERSION=	0.4.0
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.extatic.org/downloads/uhub/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX}
 
 MAINTAINER=	yashin.dm@gmail.com
 COMMENT=	High performance peer-to-peer hub for the ADC network
 
+LICENSE=	GPLv3
+
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
+USE_SQLITE=	yes
 
 USE_RC_SUBR=	uhub
 USERS=		uhub
@@ -24,19 +26,31 @@ GROUPS=		uhub
 SHAREGRP=	uhub
 SHAREMODE=	640
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	${WRKSRC}/GNUmakefile
 
-OPTIONS=	OPENSSL		"Enable SSL support (experimental)" off
+OPTIONS_DEFINE=	DEBUG OPENSSL
+OPENSSL_DESC=	Enable OpenSSL Support (experimental)
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MOPENSSL}
+USE_OPENSSL=	yes
+MAKE_ARGS+=	USE_SSL=YES
+.else
+MAKE_ARGS+=	USE_SSL=NO
+.endif
+
+.if ${PORT_OPTIONS:MDEBUG}
+CFLAGS+=	-ggdb -DDEBUG
+.else
+CFLAGS+=	-DNDEBUG
+.endif
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_OPENSSL)
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
-MAKE_ARGS=	USE_SSL=YES
-CFLAGS+=	-I${OPENSSLINC}
-LDFLAGS+=	-L${OPENSSLLIB}
-.endif
+CFLAGS+=	-I./src/ -I${LOCALBASE}/include
+MAKE_ARGS+=	UHUB_PREFIX="${PREFIX}" UHUB_CONF_DIR="${PREFIX}/etc/uhub" \
+		SILENT=NO CC="${CC}" CFLAGS="${CFLAGS}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/uhub/|${PREFIX}&|' ${WRKSRC}/doc/uhub.conf

@@ -1,36 +1,12 @@
---- GNUmakefile.orig	2010-06-02 09:48:21.000000000 +0400
-+++ GNUmakefile	2010-06-02 09:55:21.000000000 +0400
-@@ -5,7 +5,7 @@
- 
- -include Makefile.private
- 
--CC            = gcc
-+CC            ?= gcc
- LD            := $(CC)
- MV            := mv
- RANLIB        := ranlib
-@@ -44,10 +44,10 @@
- BIN_EXT       ?= .exe
- else
- DESTDIR       ?= /
--UHUB_CONF_DIR ?= $(DESTDIR)/etc/uhub
--UHUB_PREFIX   ?= $(DESTDIR)/usr/local
--CFLAGS        += -I/usr/local/include
--LDFLAGS       += -L/usr/local/lib
-+UHUB_PREFIX   ?= $(PREFIX)
-+UHUB_CONF_DIR ?= $(UHUB_PREFIX)/etc/uhub
-+CFLAGS        += -I$(LOCALBASE)/include
-+LDFLAGS       += -L$(LOCALBASE)/lib
- BIN_EXT       ?=
- endif
- 
-@@ -249,7 +249,8 @@
- 	@if [ ! -d $(UHUB_CONF_DIR) ]; then echo Creating $(UHUB_CONF_DIR); mkdir -p $(UHUB_CONF_DIR); fi
- 	@if [ ! -f $(UHUB_CONF_DIR)/uhub.conf ]; then cp doc/uhub.conf $(UHUB_CONF_DIR); fi
- 	@if [ ! -f $(UHUB_CONF_DIR)/users.conf ]; then cp doc/users.conf  $(UHUB_CONF_DIR); fi
--	@touch $(UHUB_CONF_DIR)/motd.txt
+--- ./GNUmakefile.orig	2012-06-09 00:35:21.000000000 +1000
++++ ./GNUmakefile	2012-06-09 00:37:17.000000000 +1000
+@@ -365,8 +365,8 @@
+ 	@if [ ! -f $(UHUB_CONF_DIR)/rules.txt ]; then cp doc/rules.txt $(UHUB_CONF_DIR); fi
+ 	@if [ ! -f $(UHUB_CONF_DIR)/plugins.conf ]; then cp doc/plugins.conf $(UHUB_CONF_DIR); fi
+ 	@if [ ! -d $(UHUB_MOD_DIR) ]; then echo Creating $(UHUB_MOD_DIR); mkdir -p $(UHUB_MOD_DIR); fi
 +	@if [ ! -f $(UHUB_CONF_DIR)/motd.txt ]; then touch $(UHUB_CONF_DIR)/motd.txt; fi
-+	@if [ ! -f $(UHUB_CONF_DIR)/rules.txt ]; then touch $(UHUB_CONF_DIR)/rules.txt; fi
+ 	@cp -f mod_*.so $(UHUB_MOD_DIR)
+-	@touch $(UHUB_CONF_DIR)/motd.txt
  	@echo done.
  endif
  
