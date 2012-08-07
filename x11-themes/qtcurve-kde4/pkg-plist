@@ -19,6 +19,7 @@ share/apps/color-schemes/QtCurve.colors
 share/apps/color-schemes/QtCurveAgua.colors
 share/apps/kstyle/themes/qtcurve.themerc
 share/apps/kwin/qtcurve.desktop
+share/locale/ko/LC_MESSAGES/qtcurve.mo
 share/locale/tr/LC_MESSAGES/qtcurve.mo
 share/locale/uk/LC_MESSAGES/qtcurve.mo
 share/locale/zh_CN/LC_MESSAGES/qtcurve.mo

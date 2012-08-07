@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qtcurve
-PORTVERSION=	1.8.9
-PORTREVISION=	1
+PORTVERSION=	1.8.13
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://craigd.wikispaces.com/file/view/
 PKGNAMEPREFIX=	qt4-style-
