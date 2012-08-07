@@ -265,7 +265,7 @@
     SUBDIR += texmacs
     SUBDIR += texmaker
     SUBDIR += texmakerx
-    SUBDIR += textedit.app
+    SUBDIR += textedit
     SUBDIR += textroom
     SUBDIR += texworks
     SUBDIR += the
