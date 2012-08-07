@@ -7,7 +7,7 @@
 
 PORTNAME=	ccache
 PORTVERSION=	3.1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.samba.org/ftp/ccache/ CRITICAL
 
@@ -63,7 +63,7 @@ post-build:
 .if !defined(TINDERBOX)
 	@${MKDIR} ${WRKDIR}/tb/opt
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${WRKDIR}/tb/opt
-.for l in gcc cc g++ c++
+.for l in ${CCACHE_COMPILERS}
 	@${LN} -sf ${PORTNAME} ${WRKDIR}/tb/opt/${l}
 .endfor
 	@${TAR} -C ${WRKDIR}/tb -cpf ${WRKSRC}/${PORTNAME}.tar opt
