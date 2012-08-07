@@ -87,7 +87,7 @@ Note:  Please add new entries to the beginning of this file.
     </dates>
   </vuln>
 
-  <vuln vid="10f38033-e006-11e1-9304-000000000000">
+  <vuln vid="36235c38-e0a8-11e1-9f4d-002354ed89bc">
     <topic>automake -- Insecure 'distcheck' recipe granted world-writable distdir</topic>
     <affects>
       <package>
@@ -100,15 +100,17 @@ Note:  Please add new entries to the beginning of this file.
 	<p>GNU reports:</p>
 	<blockquote cite="https://lists.gnu.org/archive/html/automake/2012-07/msg00023.html">
 	  <p>The recipe of the 'distcheck' target granted temporary
-world-write permissions on the extracted distdir.  This introduced
-a locally exploitable race condition for those who run "make distcheck"
-with a non-restrictive umask (e.g., 022) in a directory that was
-accessible by others.  A successful exploit would result in arbitrary
-code execution with the privileges of the user running "make distcheck".</p>
+	    world-write permissions on the extracted distdir.  This introduced
+	    a locally exploitable race condition for those who run "make
+	    distcheck" with a non-restrictive umask (e.g., 022) in a directory
+	    that was accessible by others.  A successful exploit would result
+	    in arbitrary code execution with the privileges of the user
+	    running "make distcheck".</p>
 	  <p>It is important to stress that this vulnerability impacts not only
-the Automake package itself, but all packages with Automake-generated
-makefiles.  For an effective fix it is necessary to regenerate the
-Makefile.in files with a fixed Automake version.</p>
+	    the Automake package itself, but all packages with
+	    Automake-generated makefiles.  For an effective fix it is necessary
+	    to regenerate the Makefile.in files with a fixed Automake
+	    version.</p>
 	</blockquote>
       </body>
     </description>
@@ -119,6 +121,7 @@ Makefile.in files with a fixed Automake version.</p>
     <dates>
       <discovery>2012-07-09</discovery>
       <entry>2012-08-06</entry>
+      <modified>2012-08-07</modified>
     </dates>
   </vuln>
 
