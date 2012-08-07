@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- lingucomponent/source/languageguessing/simpleguesser.cxx.orig	2012-01-10 19:42:30.000000000 +0900
++++ lingucomponent/source/languageguessing/simpleguesser.cxx	2012-08-07 11:14:45.000000000 +0900
+@@ -114,7 +114,7 @@
+         if(!h){return guesses;}
+ 
+         //calculate le number of unicode charcters (symbols)
+-        int len = utfstrlen(text);
++        int len = strlen(text);
+ 
+ 	if( len > MAX_STRING_LENGTH_TO_ANALYSE ){len = MAX_STRING_LENGTH_TO_ANALYSE ;}
+ 
