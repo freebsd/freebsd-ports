@@ -61,9 +61,9 @@
 %%WWWDIR%%/template/ja/default/admin/milestones/list.html.tmpl
 %%WWWDIR%%/template/ja/default/admin/milestones/select-product.html.tmpl
 %%WWWDIR%%/template/ja/default/admin/params/admin.html.tmpl
+%%WWWDIR%%/template/ja/default/admin/params/advanced.html.tmpl
 %%WWWDIR%%/template/ja/default/admin/params/attachment.html.tmpl
 %%WWWDIR%%/template/ja/default/admin/params/auth.html.tmpl
-%%WWWDIR%%/template/ja/default/admin/params/advanced.html.tmpl
 %%WWWDIR%%/template/ja/default/admin/params/bugchange.html.tmpl
 %%WWWDIR%%/template/ja/default/admin/params/bugfields.html.tmpl
 %%WWWDIR%%/template/ja/default/admin/params/bugmove.html.tmpl
@@ -274,7 +274,6 @@
 %%WWWDIR%%/template/ja/default/whine/mail.txt.tmpl
 %%WWWDIR%%/template/ja/default/whine/multipart-mime.txt.tmpl
 %%WWWDIR%%/template/ja/default/whine/schedule.html.tmpl
-@dirrmtry %%WWWDIR%%/template/ja/extension
 @dirrmtry %%WWWDIR%%/template/ja/default/whine
 @dirrmtry %%WWWDIR%%/template/ja/default/setup
 @dirrmtry %%WWWDIR%%/template/ja/default/search
@@ -316,5 +315,3 @@
 @dirrmtry %%WWWDIR%%/template/ja/default/account
 @dirrmtry %%WWWDIR%%/template/ja/default
 @dirrmtry %%WWWDIR%%/template/ja
-@dirrmtry %%WWWDIR%%/template
-@dirrmtry %%WWWDIR%%
