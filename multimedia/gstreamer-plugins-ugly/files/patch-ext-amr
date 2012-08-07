@@ -1,0 +1,40 @@
+--- ext/amrnb/amrnbdec.h.orig	2011-12-30 18:40:45.000000000 +0100
++++ ext/amrnb/amrnbdec.h	2012-08-07 16:21:06.000000000 +0200
+@@ -22,7 +22,8 @@
+ 
+ #include <gst/gst.h>
+ #include <gst/audio/gstaudiodecoder.h>
+-#include <interf_dec.h>
++
++#include <opencore-amrnb/interf_dec.h>
+ 
+ G_BEGIN_DECLS
+ 
+--- ext/amrnb/amrnbenc.h.orig	2011-12-30 18:40:45.000000000 +0100
++++ ext/amrnb/amrnbenc.h	2012-08-07 16:19:26.000000000 +0200
+@@ -21,9 +21,10 @@
+ #define __GST_AMRNBENC_H__
+ 
+ #include <gst/gst.h>
+-#include <interf_enc.h>
+ #include <gst/audio/gstaudioencoder.h>
+ 
++#include <opencore-amrnb/interf_enc.h>
++
+ G_BEGIN_DECLS
+ 
+ #define GST_TYPE_AMRNBENC \
+--- ext/amrwbdec/amrwbdec.h.orig	2011-12-30 18:40:45.000000000 +0100
++++ ext/amrwbdec/amrwbdec.h	2012-08-07 16:19:05.000000000 +0200
+@@ -22,8 +22,9 @@
+ 
+ #include <gst/gst.h>
+ #include <gst/audio/gstaudiodecoder.h>
+-#include <dec_if.h>
+-#include <if_rom.h>
++
++#include <opencore-amrwb/dec_if.h>
++#include <opencore-amrwb/if_rom.h>
+ 
+ G_BEGIN_DECLS
+ 
