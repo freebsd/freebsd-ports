@@ -1,0 +1,21 @@
+sbin/dnsmasq
+@exec if [ ! -f %D/etc/dnsmasq.conf ]; then cp -p %D/%F %B/dnsmasq.conf; fi
+@unexec if cmp -s %D/etc/dnsmasq.conf %D/etc/dnsmasq.conf.example ; then rm -f %D/etc/dnsmasq.conf ; fi
+etc/dnsmasq.conf.example
+%%EXAMPLESDIR%%/dnslist/dhcp.css
+%%EXAMPLESDIR%%/dnslist/dnslist.pl
+%%EXAMPLESDIR%%/dnslist/dnslist.tt2
+%%EXAMPLESDIR%%/dynamic-dnsmasq/dynamic-dnsmasq.pl
+@dirrm %%EXAMPLESDIR%%/dnslist
+@dirrm %%EXAMPLESDIR%%/dynamic-dnsmasq
+@dirrm %%EXAMPLESDIR%%
+%%NLS%%share/locale/de/LC_MESSAGES/dnsmasq.mo
+%%NLS%%share/locale/es/LC_MESSAGES/dnsmasq.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/dnsmasq.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/dnsmasq.mo
+%%NLS%%share/locale/id/LC_MESSAGES/dnsmasq.mo
+%%NLS%%share/locale/it/LC_MESSAGES/dnsmasq.mo
+%%NLS%%share/locale/no/LC_MESSAGES/dnsmasq.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/dnsmasq.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/dnsmasq.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/dnsmasq.mo
