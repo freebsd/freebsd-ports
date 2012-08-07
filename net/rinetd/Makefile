@@ -19,7 +19,7 @@ COMMENT=	A simple TCP port redirector
 
 OPTIONS_DEFINE=	DOCS
 
-WRKSRC=		${WRKDIR}/rinetd/
+WRKSRC=		${WRKDIR}/rinetd-${PORTVERSION}
 
 MAKE_JOBS_SAFE=	yes
 USE_DOS2UNIX=	yes
@@ -31,6 +31,9 @@ PLIST_FILES=	sbin/rinetd
 USE_RC_SUBR=	rinetd
 
 .include <bsd.port.pre.mk>
+
+post-extract:
+	@${MV} ${WRKDIR}/rinetd ${WRKSRC}
 
 post-patch:
 	@${REINPLACE_CMD} -E "s,(/etc/rinetd.conf),${PREFIX}\1," \
