@@ -13,7 +13,7 @@ MASTER_SITES=	http://mafft.cbrc.jp/alignment/software/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-without-extensions-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	fernan@iib.unsam.edu.ar
+MAINTAINER=	cartwright@asu.edu
 COMMENT=	Multiple alignment program for amino acid or nucleotide sequences
 
 LICENSE=	BSD
