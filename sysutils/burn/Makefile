@@ -36,7 +36,7 @@ HEADERS=	Burn/ExternalTools.h Burn/PreferencesModule.h \
 
 CDDB_BUNDLE_PORT?=	audio/cddb-bundle
 CDPLAYER_PORT?=		audio/gnustep-cdplayer
-PREFERENCES_PORT?=	deskutils/preferences.app
+PREFERENCES_PORT?=	deskutils/preferences
 GWORKSPACE_PORT?=	deskutils/gworkspace
 
 post-patch:
