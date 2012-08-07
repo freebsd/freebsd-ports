@@ -7,7 +7,7 @@
 
 PORTNAME=	kon2
 PORTVERSION=	0.3
-PORTREVISION=	5
+PORTREVISION=	6
 # '+=' is for slave ports
 CATEGORIES+=	japanese
 MASTER_SITES=	${MASTER_SITE_PORTS_JP}
@@ -18,7 +18,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 # '+=' is for slave ports
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	turutani@scphys.kyoto-u.ac.jp
 COMMENT=	Kanji On Console -- Display kanji characters on your own console
 
 ONLY_FOR_ARCHS=	i386 amd64
