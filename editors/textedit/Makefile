@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	textedit.app
+PORTNAME=	textedit
 PORTVERSION=	4.0
 PORTREVISION=	3
 CATEGORIES=	editors gnustep
