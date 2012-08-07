@@ -1,12 +1,26 @@
 --- a2ps-j.orig	2011-09-19 17:05:32.000000000 +0900
-+++ a2ps-j	2011-09-19 17:09:07.000000000 +0900
++++ a2ps-j	2012-08-07 08:58:02.000000000 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/local/bin/perl
 +#!/usr/bin/perl
  ;#
  ;# a2ps: ascii to ps
  ;#
-@@ -192,7 +192,8 @@
+@@ -56,9 +56,12 @@
+ @param_b4 = (10.15, 14.31, 1.40, 1.2, 8.50, 9.5, 0.29, 0.22, 0.08, 'b4');
+ sub paper {
+     local(*param) = 'param_' . $_[0];
+-    die "Unknown paper type: $_[0]\n" unless defined @param;
++    if (@param) {
+     ($width, $height, $lmargin, $smargin, $fontsize_l, $fontsize_p,
+      $portrait_header, $landscape_header, $paper_adjust, $paper_tray) = @param;
++    } else {
++	die "Unknown paper type: $_[0]\n";
++    }
+ }
+ &paper($default_paper);
+ 
+@@ -192,7 +195,8 @@
  
  if ($debug == 2) {
      require('dumpvar.pl');
@@ -16,7 +30,7 @@
      &dumpvar('main',
  	     'width', 'height', 'lmargin', 'smargin', 'font_size',
  	     'sheet_height', 'sheet_width', 'char_width', 'skip_column',
-@@ -208,8 +209,14 @@
+@@ -208,8 +212,14 @@
      $file = shift;
      if ($file && !-r $file) { warn "$file: $!\n"; next; }
      if ($jisconvert) {
@@ -33,7 +47,7 @@
  	open(F, "-|") || &jis($file);
      } else {
  	$file = '-' if $file eq '';
-@@ -476,10 +483,13 @@
+@@ -476,10 +486,13 @@
  }
  
  sub print_header {
@@ -49,7 +63,7 @@
      local($orientation) = $portrait ? "Portrait" : "Landscape";
  
      print <<"---";
-@@ -525,7 +535,8 @@
+@@ -525,7 +538,8 @@
      printf("/lines %d def\n", $linesperpage);
      printf("/columns %d def\n", $columnsperline);
      $sublabel = $default_sublabel unless defined $sublabel;
@@ -59,7 +73,7 @@
      if ($ascii_mag) {
  	printf("/doasciimag true def /asciimagsize %f def\n", $ascii_mag);
      } else {
-@@ -548,7 +559,8 @@
+@@ -548,7 +562,8 @@
      print "%%EndProlog\n\n";
  }
  
