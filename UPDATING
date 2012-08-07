@@ -6,10 +6,10 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20120804:
-  AFFECTS: users of libglut.
+  AFFECTS: users of graphics/libglut
   AUTHOR: x11@FreeBSD.org
 
-  The libglut library is replaced by the Freeglut library.
+  The libglut library is replaced by the freeglut library.
   Due to shlib version bump all glut users should be rebuild.
   Please follow the instructions below to upgrade.
 
