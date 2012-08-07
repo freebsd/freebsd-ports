@@ -50,8 +50,8 @@ bin/task
 %%DATADIR%%/scripts/add-ons/export-yaml.pl
 %%DATADIR%%/scripts/add-ons/import-todo.sh.pl
 %%DATADIR%%/scripts/add-ons/import-yaml.pl
+%%DATADIR%%/scripts/bash/task.sh
 %%DATADIR%%/scripts/add-ons/update-holidays.pl
-%%DATADIR%%/scripts/bash/task_completion.sh
 %%DATADIR%%/scripts/extensions/command.lua
 %%DATADIR%%/scripts/extensions/dom.lua
 %%DATADIR%%/scripts/extensions/format.lua
