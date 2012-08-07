@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-php-${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP wrapper for chinese/cconv
 
-LIB_DEPENDS=	cconv.0:${PORTSDIR}/chinese/cconv
+LIB_DEPENDS=	cconv:${PORTSDIR}/chinese/cconv
 
 CONFIGURE_ARGS=	--with-cconv-dir=${LOCALBASE}
 USE_PHP=	yes
