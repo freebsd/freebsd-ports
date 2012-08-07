@@ -1,6 +1,6 @@
 --- src/Makefile.FreeBSD.orig	1997-01-30 10:29:25.000000000 +0900
 +++ src/Makefile.FreeBSD	2012-05-10 02:50:12.820551080 +0900
-@@ -1,10 +1,17 @@
+@@ -1,12 +1,19 @@
  # FreeBSD makefile for kon
  # Tatsumi Hosokawa <hosokawa@jp.FreeBSD.org>
  
@@ -17,5 +17,8 @@
 +SRCS+=	utmp.c
 +.endif
  LIBS+=	-L${.CURDIR}/display -L${.CURDIR}/../lib -ldisplay -lgon
- NOMAN=	YES
+-NOMAN=	YES
++MK_MAN=	no
  CFLAGS+=	-I${.CURDIR}/../include
+ CLEANFILES=	Makefile
+
