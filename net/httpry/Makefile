@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	httpry
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.7
 CATEGORIES=	net
 MASTER_SITES=	http://dumpsterventures.com/jason/httpry/
 
@@ -18,11 +18,12 @@ MAN1=		httpry.1
 USE_RC_SUBR=	httpry
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	EXTRASCRIPTS "Install additional scripts" Off
+OPTIONS_DEFINE=	EXTRASCRIPTS
+EXTRASCRIPTS_DESC=	Install additional scripts
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_EXTRASCRIPTS)
+.if ${PORT_OPTIONS:MEXTRASCRIPTS}
 PLIST_SUB=	EXTRASCRIPTS=""
 USE_PERL5_RUN=	yes
 RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
@@ -36,7 +37,7 @@ PLIST_SUB=	EXTRASCRIPTS="@comment "
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
-.if defined(WITH_EXTRASCRIPTS)
+.if ${PORT_OPTIONS:MEXTRASCRIPTS}
 	${MKDIR} ${PREFIX}/bin/httpry-scripts
 	(cd ${WRKSRC}/scripts/ && \
 		${COPYTREE_BIN} \* ${PREFIX}/bin/httpry-scripts "! -name *.bak")
