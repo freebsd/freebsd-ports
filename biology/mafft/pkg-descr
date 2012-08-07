@@ -5,8 +5,12 @@ According to BAliBASE and other benchmark tests, L-INS-i is one of the
 most accurate methods currently available.
 
 MAFFT has been described:
+
+K. Katoh and H. Toh 2008 (Briefings in Bioinformatics 9:286-298)
+Recent developments in the MAFFT multiple sequence alignment program.
+
 K. Katoh, K. Misawa, K. Kuma and T. Miyata (Nucleic Acids Res. 30:
 3059-3066, 2002) MAFFT: a novel method for rapid multiple sequence
 alignment based on fast Fourier transform. 
 
-WWW: http://align.bmr.kyushu-u.ac.jp/mafft
+WWW: http://mafft.cbrc.jp/alignment/software/
