@@ -40,7 +40,6 @@ MAKE_JOBS_SAFE=	yes
 OPTIONS_DEFINE=	ASM DEBUG PGO GCC44 GPAC X11_OUTPUT
 OPTIONS_DEFAULT=	ASM PGO GPAC
 ASM_DESC=		Assembly optimizations (devel/binutils)
-PGO_DESC=		Enable Profile-Guided Optimization
 GCC44_DESC=		Use gcc 4.4+ (implies WITH_ASM)
 GPAC_DESC=		Enable MPEG-4 Output
 X11_OUTPUT_DESC=	Enable X11 Output
