@@ -212,7 +212,7 @@
     SUBDIR += plasma-applet-yawp
     SUBDIR += plopfolio
     SUBDIR += preferencepanes
-    SUBDIR += preferences.app
+    SUBDIR += preferences
     SUBDIR += py-dosage
     SUBDIR += py-vobject
     SUBDIR += pybookreader
