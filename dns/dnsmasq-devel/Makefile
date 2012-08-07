@@ -1,19 +1,15 @@
 # New ports collection makefile for:	dnsmasq
-# Date created:				1 June 2003
-# Whom:					Steven Honson
+# Date created:				2012-08-07
+# Whom:					Matthias Andree
 #
 # $FreeBSD$
 #
 
 PORTNAME=	dnsmasq
-DISTVERSION=	2.62
-PORTREVISION=	1
-PORTEPOCH=	1
+DISTVERSION=	2.63rc2
 CATEGORIES=	dns ipv6
-MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \
-		${MASTER_SITE_LOCAL}/
-#MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/release-candidates/
-MASTER_SITE_SUBDIR=	mandree
+MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/release-candidates/
+PKGNAMESUFFIX=	-devel
 EXTRACT_SUFX=	.tar.lzma
 
 MAINTAINER=	mandree@FreeBSD.org
@@ -21,7 +17,9 @@ COMMENT=	Lightweight DNS forwarder, DHCP, and TFTP server
 
 LICENSE=	GPLv2
 
-CONFLICTS_INSTALL=dnsmasq-devel-*
+NO_PACKAGE=	Package stable version instead
+
+CONFLICTS_INSTALL=dnsmasq-2*
 
 MAN8=		dnsmasq.8
 
