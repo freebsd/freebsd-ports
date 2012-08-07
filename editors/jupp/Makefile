@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	jupp
-PORTVERSION=	3.1.20
+PORTVERSION=	3.1.21
 CATEGORIES=	editors
 MASTER_SITES=	http://www.mirbsd.org/MirOS/dist/jupp/ \
 		http://pub.allbsd.org/MirOS/dist/jupp/
-DISTNAME=	joe-3.1jupp20
+DISTNAME=	joe-${PORTVERSION:C/([0-9]+\.[0-9]+)\.([0-9]+)/\1${PORTNAME}\2/}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	magik@roorback.net
