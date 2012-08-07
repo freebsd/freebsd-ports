@@ -317,5 +317,3 @@
 @dirrmtry %%WWWDIR%%/template/ja/default/account
 @dirrmtry %%WWWDIR%%/template/ja/default
 @dirrmtry %%WWWDIR%%/template/ja
-@dirrmtry %%WWWDIR%%/template
-@dirrmtry %%WWWDIR%%

@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	bugzilla
-PORTVERSION=	4.2.1
+PORTVERSION=	4.2.2
 CATEGORIES=	japanese
 MASTER_SITES=	http://bug-ja.org/releases/4.2/ \
 		LOCAL
 MASTER_SITE_SUBDIR=	tota/bugzilla-ja
-PKGNAMESUFFIX=	-ja
 DISTNAME=	Bugzilla-ja-${PORTVERSION}-template-rel01
 
 MAINTAINER=	tota@FreeBSD.org
@@ -19,7 +18,9 @@ COMMENT=	Japanese localization for Bugzilla
 
 RUN_DEPENDS=	bugzilla>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla42
 
-LATEST_LINK=	${PKGNAMEPREFIX}bugzilla42${PKGNAMESUFFIX}
+LATEST_LINK=	${PKGNAMEPREFIX}bugzilla42
+
+NO_WRKSUBDIR=	yes
 
 .include "${.CURDIR}/../../devel/bugzilla42/Makefile.common"
 
@@ -36,10 +37,14 @@ do-install:
 	@${ECHO_MSG}
 .endif
 
-x-generate-plist:
-	${FIND} ${LANGDIR} -type f | ${SORT} | ${SED} -e 's,${WWWDIR},%%WWWDIR%%,' > pkg-plist.new
-	${FIND} ${LANGDIR} -type d -depth | ${SORT} -r | ${SED} -e 's,${WWWDIR},@dirrmtry %%WWWDIR%%,' >> pkg-plist.new
-	${ECHO} "@dirrmtry %%WWWDIR%%/template" >> pkg-plist.new
-	${ECHO} "@dirrmtry %%WWWDIR%%" >> pkg-plist.new
+# Maintainer
+plist: patch
+	@( cd ${WRKDIR}/ && ${FIND} default -type f | ${AWK} '{print "%%WWWDIR%%/template/ja/"$$1}' | ${SORT} > ${PLIST}.new )
+	@( cd ${WRKDIR}/ && ${FIND} default -type d | ${AWK} '{print "@dirrmtry %%WWWDIR%%/template/ja/"$$1}' | ${SORT} -r >> ${PLIST}.new )
+	@${ECHO} "@dirrmtry %%WWWDIR%%/template/ja" >> ${PLIST}.new
+	@if ${DIFF} -u ${PLIST} ${PLIST}.new ; then \
+		${ECHO_MSG} no pkg-plist changes; \
+		${RM} ${PLIST}.new ; \
+	fi
 
 .include <bsd.port.mk>
