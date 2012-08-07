@@ -6,6 +6,7 @@
 
 PORTNAME=	passenger
 PORTVERSION=	3.0.15
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
@@ -54,7 +55,6 @@ SUB_FILES=	pkg-message
 PLIST_FILES=	bin/passenger \
 		bin/passenger-config \
 		bin/passenger-install-apache2-module \
-		bin/passenger-make-enterprisey \
 		bin/passenger-memory-stats \
 		bin/passenger-status \
 		bin/passenger-install-nginx-module
