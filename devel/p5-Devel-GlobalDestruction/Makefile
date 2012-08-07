@@ -27,7 +27,13 @@ MAN3=		Devel::GlobalDestruction.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501200
-BUILD_DEPENDS+=	p5-ExtUtils-CBuilder>=0.27:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
+BUILD_DEPENDS+=	p5-ExtUtils-CBuilder>=0.2700:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
+.endif
+
+.if ${PERL_LEVEL} < 501400
+PLIST_SUB+=	PP="@comment " XS=""
+.else
+PLIST_SUB+=	PP="" XS="@comment "
 .endif
 
 .include <bsd.port.post.mk>
