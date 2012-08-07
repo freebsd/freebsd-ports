@@ -16,10 +16,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A simple tool for doing everyday things with PDF documents
 
-# None of the base systems include gcjXX, so it's listed here to ensure
-# that the correct gcc port that includes it is built.
-BUILD_DEPENDS=	gcj${CSUFF}:${PORTSDIR}/lang/gcc${CSUFF}
-
 USE_ZIP=	yes
 
 # Get gcc version suffix without the dot in USE_GCC
