@@ -52,6 +52,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0f020b7b-e033-11e1-90a2-000c299b62e1">
+    <topic>FreeBSD -- named(8) DNSSEC validation Denial of Service</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>7.4</ge><lt>7.4_10</lt></range>
+	<range><ge>8.1</ge><lt>8.1_13</lt></range>
+	<range><ge>8.2</ge><lt>8.2_10</lt></range>
+	<range><ge>8.3</ge><lt>8.3_4</lt></range>
+	<range><ge>9.0</ge><lt>9.0_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Problem description:</p>
+	<blockquote cite="http://security.freebsd.org/advisories/FreeBSD-SA-12:05.bind.asc">
+	  <p>BIND 9 stores a cache of query names that are known to be failing
+	     due to misconfigured name servers or a broken chain of trust.
+	     Under high query loads, when DNSSEC validation is active, it is
+	     possible for a condition to arise in which data from this cache of
+	     failing queries could be used before it was fully initialized,
+	     triggering an assertion failure.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-12:05.bind</freebsdsa>
+      <cvename>CVE-2012-3817</cvename>
+    </references>
+    <dates>
+      <discovery>2012-07-24</discovery>
+      <entry>2012-08-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="10f38033-e006-11e1-9304-000000000000">
     <topic>automake -- Insecure 'distcheck' recipe granted world-writable distdir</topic>
     <affects>
