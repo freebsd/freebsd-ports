@@ -328,8 +328,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-echo-nginx-module-${GIT_ECHO_VERS
 .endif
 
 .if ${PORT_OPTIONS:MHEADERS_MORE}
-NGINX_HEADERS_MORE_VERSION=	0.17
-GIT_HEADERS_MORE_VERSION=	0-gb7c8cfc
+NGINX_HEADERS_MORE_VERSION=	0.18
+GIT_HEADERS_MORE_VERSION=	0-g6586984
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/agentzh/headers-more-nginx-module/tarball/v${NGINX_HEADERS_MORE_VERSION}/:headers_more
 DISTFILES+=	agentzh-headers-more-nginx-module-v${NGINX_HEADERS_MORE_VERSION}-${GIT_HEADERS_MORE_VERSION}.tar.gz:headers_more
@@ -540,8 +540,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-chunkin-nginx-module-${GIT_CHUNKI
 
 .if ${PORT_OPTIONS:MDRIZZLE}
 LIB_DEPENDS+=	drizzle:${PORTSDIR}/databases/drizzle
-NGINX_DRIZZLE_VERSION=	0.1.2rc7
-GIT_DRIZZLE_VERSION=	0-g272cabf
+NGINX_DRIZZLE_VERSION=	0.1.2
+GIT_DRIZZLE_VERSION=	0-gb05c67f
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/chaoslawful/drizzle-nginx-module/tarball/v${NGINX_DRIZZLE_VERSION}/:drizzle
 DISTFILES+=	chaoslawful-drizzle-nginx-module-v${NGINX_DRIZZLE_VERSION}-${GIT_DRIZZLE_VERSION}.tar.gz:drizzle
@@ -586,8 +586,8 @@ LIB_DEPENDS+=	luajit-5.1:${PORTSDIR}/lang/luajit
 CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
 CONFIGURE_ENV+=	"LUAJIT_LIB=${LOCALBASE}/lib"
 USE_NGINX_DEVEL_KIT=	yes
-NGINX_LUA_VERSION=	0.5.7
-GIT_LUA_VERSION=	0-g54c0a35
+NGINX_LUA_VERSION=	0.5.12
+GIT_LUA_VERSION=	0-g3388d42
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/chaoslawful/lua-nginx-module/tarball/v${NGINX_LUA_VERSION}/:lua
 DISTFILES+=	chaoslawful-lua-nginx-module-v${NGINX_LUA_VERSION}-${GIT_LUA_VERSION}.tar.gz:lua
