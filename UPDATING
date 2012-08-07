@@ -13,8 +13,14 @@ you update your ports collection, before attempting any port upgrades.
   Due to shlib version bump all glut users should be rebuild.
   Please follow the instructions below to upgrade.
 
-  portmaster -o graphics/freeglut graphics/libglut
-  portmaster -r freeglut
+  # portmaster -o graphics/freeglut graphics/libglut
+  # portmaster -r freeglut
+  or
+  # env DISABLE_CONFLICTS=1 portupgrade -fo graphics/freeglut graphics/libglut
+  # portupgrade -frx freeglut freeglut
+  or
+  # pkg set -o graphics/libglut:graphics/freeglut
+  # pkg install -Rf graphics/freeglut
 
 20120801:
   AFFECTS: users of editors/emacs
@@ -26,6 +32,10 @@ you update your ports collection, before attempting any port upgrades.
   in /etc/make.conf, and do:
 
   # portmaster -o editors/emacs23 editors/emacs
+  or
+  # env DISABLE_CONFLICTS=1 portupgrade -fo editors/emacs23 editors/emacs
+  or
+  # pkg set -o editors/emacs:editors/emacs23
 
 20120726:
   AFFECTS: users of www/firefox, www/seamonkey, mail/thunderbird, www/libxul
