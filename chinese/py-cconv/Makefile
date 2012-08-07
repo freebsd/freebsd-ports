@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-python-${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python wrapper for chinese/cconv
 
-LIB_DEPENDS=	cconv.0:${PORTSDIR}/chinese/cconv
+LIB_DEPENDS=	cconv:${PORTSDIR}/chinese/cconv
 
 CFLAGS+=	-I${LOCALBASE}/include
 USE_PYTHON=	yes
