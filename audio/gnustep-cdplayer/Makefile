@@ -30,6 +30,6 @@ WRKSRC=		${WRKDIR}/CDPlayer-${PORTVERSION}
 MAKE_ENV+=	GNUSTEP_INSTALLATION_DIR=${GNUSTEP_LOCAL_ROOT}
 
 CDDB_BUNDLE_PORT?=	audio/cddb-bundle
-PREFERENCES_PORT?=	deskutils/preferences.app
+PREFERENCES_PORT?=	deskutils/preferences
 
 .include <bsd.port.mk>
