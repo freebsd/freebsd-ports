@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libumidi
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://hselasky.homeunix.org:8192/distfiles/
