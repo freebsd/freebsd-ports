@@ -1,0 +1,20 @@
+#!/bin/sh
+if [ ! -d ${HOME}/.sahi ] && [ -z "${SAHI_USERDATA_DIR}" ]; then
+	cp -r %%DATADIR%%/userdata ${HOME}/.sahi
+	chmod u+w ${HOME}/.sahi/config/*
+	export SAHI_USERDATA_DIR=${HOME}/.sahi
+fi
+
+if [ -z "${BROWSER}" ]; then
+	export BROWSER=%%BROWSER%%
+fi
+
+if [ -z "${http_proxy}" ]; then
+	export http_proxy=http://localhost:9999
+fi
+
+if [ -z "${SAHI_USERDATA_DIR}" ]; then
+	export SAHI_USERDATA_DIR=${HOME}/.sahi
+fi
+
+exec /usr/bin/env JAVA_HOME=%%JAVA_HOME%% ${SAHI_USERDATA_DIR}/bin/start_dashboard.sh
