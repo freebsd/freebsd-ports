@@ -16,7 +16,7 @@ you update your ports collection, before attempting any port upgrades.
   # portmaster -o graphics/freeglut graphics/libglut
   # portmaster -r freeglut
   or
-  # env DISABLE_CONFLICTS=1 portupgrade -fo graphics/freeglut graphics/libglut
+  # env DISABLE_CONFLICTS=1 portupgrade -fo graphics/freeglut libglut\*
   # portupgrade -frx freeglut freeglut
   or
   # pkg set -o graphics/libglut:graphics/freeglut
