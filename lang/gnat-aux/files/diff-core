@@ -290,6 +290,150 @@
 +#define UINTPTR_TYPE      (LONG_TYPE_SIZE == 64 ? UINT64_TYPE : UINT32_TYPE)
 --- /dev/null
 +++ gcc/config/dragonfly.h
+@@ -0,0 +1,141 @@
++/* Base configuration file for all DragonFly targets.
++   Copyright (C) 1999, 2000, 2001, 2007, 2008 Free Software Foundation, Inc.
++   Copyright (C) 2010-2012 John R. Marino <www.dragonlace.net>
++
++This file is part of GCC.
++
++GCC is free software; you can redistribute it and/or modify
++it under the terms of the GNU General Public License as published by
++the Free Software Foundation; either version 3, or (at your option)
++any later version.
++
++GCC is distributed in the hope that it will be useful,
++but WITHOUT ANY WARRANTY; without even the implied warranty of
++MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++GNU General Public License for more details.
++
++You should have received a copy of the GNU General Public License
++along with GCC; see the file COPYING3.  If not see
++<http://www.gnu.org/licenses/>.  */
++
++/* Common DragonFly configuration.
++   All DragonFly architectures should include this file, which will specify
++   their commonalities.
++
++   Adapted from gcc/config/freebsd.h by
++   Joerg Sonnenberger <joerg@bec.de>
++
++   Adapted from gcc/config/i386/freebsd-elf.h by
++   David O'Brien <obrien@FreeBSD.org>.
++   Further work by David O'Brien <obrien@FreeBSD.org> and
++   Loren J. Rittle <ljrittle@acm.org>.  */
++
++/* JRM: 15 Nov 2010
++   SWITCH_TAKES_ARG & WORD_SWITCH_TAKES_ARG removed due to poisoning.
++   http://gcc.gnu.org/ml/gcc-patches/2010-10/msg02102.html
++   http://gcc.gnu.org/ml/gcc-patches/2010-10/msg02373.html */
++   
++#undef  TARGET_OS_CPP_BUILTINS
++#define TARGET_OS_CPP_BUILTINS()            \
++  do                                        \
++    {                                       \
++       builtin_define_std ("unix");         \
++       builtin_define ("__DragonFly__");    \
++       builtin_assert ("system=unix");      \
++       builtin_assert ("system=bsd");       \
++       builtin_assert ("system=DragonFly"); \
++    }                                       \
++  while (0)
++
++#undef  CPP_SPEC
++#define CPP_SPEC \
++ "%(cpp_cpu) %(cpp_arch) %{posix:-D_POSIX_SOURCE}"
++
++#undef  STARTFILE_SPEC
++#define STARTFILE_SPEC	\
++  "%{!shared: \
++     %{pg:gcrt1.o%s} \
++     %{!pg: \
++       %{p:gcrt1.o%s} \
++       %{!p: \
++         %{profile: gcrt1.o%s} \
++         %{!profile: \
++           %{pie: Scrt1.o%s;:crt1.o%s}}}}} \
++   crti.o%s \
++   %{shared|pie:crtbeginS.o%s;:crtbegin.o%s}"
++
++#undef  ENDFILE_SPEC
++#define ENDFILE_SPEC \
++  "%{shared|pie:crtendS.o%s;:crtend.o%s} crtn.o%s"
++
++#undef  LIB_SPEC
++#define LIB_SPEC \
++  "%{pthread:-lpthread} -lc"
++
++/* Provide a LINK_SPEC appropriate for DragonFly.  Here we provide support
++   for the special GCC options -static and -shared, which allow us to
++   link things in one of these three modes by applying the appropriate
++   combinations of options at link-time.
++
++   When the -shared link option is used a final link is not being
++   done.  */
++
++#define DFBSD_LINK_SPEC \
++ "%{p:%nconsider using '-pg' instead of '-p' with gprof(1)} \
++  %{v:-V} \
++  %{assert*} %{R*} %{rpath*} %{defsym*} \
++  %{shared:-Bshareable %{h*} %{soname*}} \
++  %{!shared: \
++   %{!static: \
++    %{rdynamic:-export-dynamic} \
++    -dynamic-linker %(dfbsd_dynamic_linker) \
++   } \
++  %{static:-Bstatic}} \
++  %{!static:--hash-style=both} \
++  %{symbolic:-Bsymbolic}"
++
++#undef  LINK_SPEC
++#define LINK_SPEC DFBSD_LINK_SPEC
++
++#define	DFBSD_DYNAMIC_LINKER "/usr/libexec/ld-elf.so.2"
++
++#if defined(HAVE_LD_EH_FRAME_HDR)
++#define LINK_EH_SPEC "--eh-frame-hdr"
++#endif
++
++/* Use --as-needed -lgcc_s for eh support.  */
++#ifdef HAVE_LD_AS_NEEDED
++#define USE_LD_AS_NEEDED 1
++#endif
++
++/************************[  Target stuff  ]***********************************/
++
++/* All DragonFly Architectures support the ELF object file format.  */
++#undef  OBJECT_FORMAT_ELF
++#define OBJECT_FORMAT_ELF
++
++/* Don't assume anything about the header files.  */
++#undef  NO_IMPLICIT_EXTERN_C
++#define NO_IMPLICIT_EXTERN_C	1
++
++/* Follow DragonFly's standard headers (<machine/stdint.h>, etc...).  */
++
++#undef  WCHAR_TYPE
++#define WCHAR_TYPE "int"
++
++#undef  WINT_TYPE
++#define WINT_TYPE "int"
++
++#define MATH_LIBRARY_PROFILE    "m_p"
++
++/* Code generation parameters.  */
++
++/* Use periods rather than dollar signs in special g++ assembler names.
++   This ensures the configuration knows our system correctly so we can link
++   with libraries compiled with the native cc.  */
++#undef NO_DOLLAR_IN_LABEL
++
++/* Used by libgcc2.c.  We support file locking with fcntl / F_SETLKW.
++   This enables the test coverage code to use file locking when exiting a
++   program, which avoids race conditions if the program has forked.  */
++#define TARGET_POSIX_IO
+--- /dev/null
++++ gcc/config/dragonfly.h.orig
 @@ -0,0 +1,139 @@
 +/* Base configuration file for all DragonFly targets.
 +   Copyright (C) 1999, 2000, 2001, 2007, 2008 Free Software Foundation, Inc.
@@ -904,52 +1048,25 @@
 +
 --- /dev/null
 +++ gcc/config/i386/freebsd-unwind.h
-@@ -0,0 +1,184 @@
+@@ -0,0 +1,179 @@
 +/* DWARF2 EH unwinding support for FreeBSD: AMD x86-64 and x86.
-+   Copyright (C) 2004, 2005, 2006 Free Software Foundation, Inc.
-+   Copyright (C) 2010 John Marino <draco@marino.st>
-+
-+This file is part of GCC.
-+
-+GCC is free software; you can redistribute it and/or modify
-+it under the terms of the GNU General Public License as published by
-+the Free Software Foundation; either version 2, or (at your option)
-+any later version.
-+
-+In addition to the permissions in the GNU General Public License, the
-+Free Software Foundation gives you unlimited permission to link the
-+compiled version of this file with other programs, and to distribute
-+those programs without any restriction coming from the use of this
-+file.  (The General Public License restrictions do apply in other
-+respects; for example, they cover modification of the file, and
-+distribution when not linked into another program.)
-+
-+GCC is distributed in the hope that it will be useful,
-+but WITHOUT ANY WARRANTY; without even the implied warranty of
-+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-+GNU General Public License for more details.
-+
-+You should have received a copy of the GNU General Public License
-+along with GCC; see the file COPYING.  If not, write to
-+the Free Software Foundation, 51 Franklin Street, Fifth Floor,
-+Boston, MA 02110-1301, USA.  */
++   Copyright (C) 2010, 2012 John Marino <draco@marino.st>
 +
 +/* Do code reading to identify a signal frame, and set the frame
 +   state data appropriately.  See unwind-dw2.c for the structs. */
 +
 +#include <sys/types.h>
-+#include <sys/sysctl.h>
 +#include <signal.h>
 +#include <sys/ucontext.h>
 +#include <machine/sigframe.h>
-+
 +
 +#define REG_NAME(reg)	sf_uc.uc_mcontext.mc_## reg
 +
 +#ifdef __x86_64__
 +#define MD_FALLBACK_FRAME_STATE_FOR x86_64_freebsd_fallback_frame_state
 +
-+
++#if (__FreeBSD__ < 9)
++#include <sys/sysctl.h>
 +static void
 +x86_64_sigtramp_range (unsigned char **start, unsigned char **end)
 +{
@@ -965,6 +1082,7 @@
 +  *start = (unsigned char *)ps_strings - 32;
 +  *end   = (unsigned char *)ps_strings;
 +}
++#endif
 +
 +
 +static _Unwind_Reason_Code
@@ -976,9 +1094,30 @@
 +  struct sigframe *sf;
 +  long new_cfa;
 +
++#if (__FreeBSD__ < 9)
 +  x86_64_sigtramp_range(&sigtramp_start, &sigtramp_end);
 +  if (pc >= sigtramp_end || pc < sigtramp_start)
 +    return _URC_END_OF_STACK;
++#else
++  /* Prior to FreeBSD 9, the signal trampoline was located immediately
++     before the ps_strings.  To support non-executable stacks on AMD64,
++     the sigtramp was moved to a shared page for FreeBSD 9.  We are
++     stuck looking for frame patterns again (sys/amd64/amd64/sigtramp.S):
++
++     <pc + 00>:  lea     0x10(%rsp),%rdi
++     <pc + 05>:  pushq   $0x0
++     <pc + 17>:  mov     $0x1a1,%rax
++     <pc + 14>:  syscall
++
++     If we can't find this pattern, we're at the end of the stack.
++  */
++
++  if (!(   *(unsigned int *)(context->ra)      == 0x247c8d48
++        && *(unsigned int *)(context->ra +  4) == 0x48006a10
++        && *(unsigned int *)(context->ra +  8) == 0x01a1c0c7
++        && *(unsigned int *)(context->ra + 12) == 0x050f0000 ))
++    return _URC_END_OF_STACK;
++#endif
 +
 +  sf = (struct sigframe *) context->cfa;
 +  new_cfa = sf->REG_NAME(rsp);
@@ -1029,7 +1168,7 @@
 +
 +#define MD_FALLBACK_FRAME_STATE_FOR x86_freebsd_fallback_frame_state
 +
-+
++#include <sys/sysctl.h>
 +static void
 +x86_sigtramp_range (unsigned char **start, unsigned char **end)
 +{
