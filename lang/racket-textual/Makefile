@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	racket-textual
-PORTVERSION=	5.2.1
+PORTVERSION=	5.3
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://download.racket-lang.org/installers/${PORTVERSION}/${PORTNAME}/ \
 		http://www.eecs.northwestern.edu/racket/${PORTVERSION}/${PORTNAME}/ \
@@ -23,12 +23,16 @@ COMMENT=	An interactive, integrated, graphical Scheme programming environment
 
 MAKE_JOBS_UNSAFE=yes
 
-OPTIONS=	RACKET_PLACES	"Enable Places" ON
+OPTIONS_DEFINE=		RACKET_PLACES
+RACKET_PLACES_DESC=	Enable Places
+OPTIONS_DEFAULT=	RACKET_PLACES
 
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--enable-shared --enable-pthread \
-			--enable-lt=${LIBTOOL}
-CONFIGURE_SCRIPT=	../configure
+CONFLICTS=	racket-[0-9]*
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-shared --enable-pthread \
+		--enable-lt=${LIBTOOL}
+CONFIGURE_SCRIPT=../configure
 
 .include <bsd.port.options.mk>
 
@@ -36,9 +40,9 @@ CONFIGURE_SCRIPT=	../configure
 MANUAL_PACKAGE_BUILD=	i386 requires kern.maxdsiz="640M" to build
 .endif
 
-LIB_DEPENDS+=	ffi.5:${PORTSDIR}/devel/libffi
+LIB_DEPENDS+=	ffi:${PORTSDIR}/devel/libffi
 
-.if defined(WITH_RACKET_PLACES)
+.if ${PORT_OPTIONS:MRACKET_PLACES}
 CONFIGURE_ARGS+=	--enable-places
 .else
 CONFIGURE_ARGS+=	--disable-places
