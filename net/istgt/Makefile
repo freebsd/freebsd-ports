@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	istgt
-PORTVERSION=	20120726
+PORTVERSION=	20120807
 CATEGORIES=	net
 MASTER_SITES=	http://www.peach.ne.jp/archives/istgt/
 
