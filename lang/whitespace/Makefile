@@ -7,7 +7,7 @@
 
 PORTNAME=	whitespace
 PORTVERSION=	0.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang
 MASTER_SITES=	http://compsoc.dur.ac.uk/whitespace/downloads/
 DISTNAME=	wspace-${PORTVERSION}
@@ -26,13 +26,23 @@ WRKSRC=	${WRKDIR}/WSpace
 USE_GMAKE=	yes
 ALL_TARGET=	${TARGET}
 
+OPTIONS_DEFINE=		DOCS EXAMPLES
+OPTIONS_DEFAULT=	DOCS EXAMPLES
+
+PORTEXAMPLES=		*
+PORTDOCS=		*
+
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wspace ${PREFIX}/bin
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+.endif
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/tutorial.html ${DOCSDIR}
 .endif
