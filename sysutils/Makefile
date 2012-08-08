@@ -489,6 +489,7 @@
     SUBDIR += lookupd
     SUBDIR += lookupd_ldap
     SUBDIR += lsof
+    SUBDIR += ltrace
     SUBDIR += luckybackup
     SUBDIR += luma
     SUBDIR += lxinput
