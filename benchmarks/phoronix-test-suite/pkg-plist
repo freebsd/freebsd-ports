@@ -55,6 +55,7 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/commands/module_info.php
 %%DATADIR%%/pts-core/commands/module_setup.php
 %%DATADIR%%/pts-core/commands/network_setup.php
+%%DATADIR%%/pts-core/commands/ob_test_profile_analyze.php
 %%DATADIR%%/pts-core/commands/openbenchmarking_changes.php
 %%DATADIR%%/pts-core/commands/openbenchmarking_launcher.php
 %%DATADIR%%/pts-core/commands/openbenchmarking_login.php
@@ -62,7 +63,6 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/commands/openbenchmarking_repositories.php
 %%DATADIR%%/pts-core/commands/pts_version.php
 %%DATADIR%%/pts-core/commands/rebuild_composite_xml.php
-%%DATADIR%%/pts-core/commands/recover_run.php
 %%DATADIR%%/pts-core/commands/refresh_graphs.php
 %%DATADIR%%/pts-core/commands/remove_from_result_file.php
 %%DATADIR%%/pts-core/commands/remove_installed_test.php
@@ -87,6 +87,7 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/commands/validate_result_file.php
 %%DATADIR%%/pts-core/commands/validate_test_profile.php
 %%DATADIR%%/pts-core/commands/validate_test_suite.php
+%%DATADIR%%/pts-core/commands/webui.php
 %%DATADIR%%/pts-core/external-test-dependencies/scripts/install-angstrom-packages.sh
 %%DATADIR%%/pts-core/external-test-dependencies/scripts/install-arch-packages.sh
 %%DATADIR%%/pts-core/external-test-dependencies/scripts/install-debian-packages.sh
@@ -195,6 +196,7 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/objects/phodevi/phodevi_device_interface.php
 %%DATADIR%%/pts-core/objects/phodevi/phodevi_device_property.php
 %%DATADIR%%/pts-core/objects/phodevi/phodevi_sensor.php
+%%DATADIR%%/pts-core/objects/phodevi/phodevi_vfs.php
 %%DATADIR%%/pts-core/objects/phodevi/sensors/cpu_fanspeed.php
 %%DATADIR%%/pts-core/objects/phodevi/sensors/cpu_freq.php
 %%DATADIR%%/pts-core/objects/phodevi/sensors/cpu_power.php
@@ -219,7 +221,9 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/objects/phodevi/sensors/sys_v12.php
 %%DATADIR%%/pts-core/objects/phodevi/sensors/sys_v3.php
 %%DATADIR%%/pts-core/objects/phodevi/sensors/sys_v5.php
+%%DATADIR%%/pts-core/objects/pts_Graph/pts_BlockDiagramGraph.php
 %%DATADIR%%/pts-core/objects/pts_Graph/pts_CandleStickGraph.php
+%%DATADIR%%/pts-core/objects/pts_Graph/pts_DetailedSystemComponentTable.php
 %%DATADIR%%/pts-core/objects/pts_Graph/pts_FilledLineGraph.php
 %%DATADIR%%/pts-core/objects/pts_Graph/pts_Graph.php
 %%DATADIR%%/pts-core/objects/pts_Graph/pts_HeatMapBarGraph.php
@@ -236,6 +240,7 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/objects/pts_Graph/pts_ResultFileSystemsTable.php
 %%DATADIR%%/pts-core/objects/pts_Graph/pts_ResultFileTable.php
 %%DATADIR%%/pts-core/objects/pts_Graph/pts_ScatterPlot.php
+%%DATADIR%%/pts-core/objects/pts_Graph/pts_SideViewTable.php
 %%DATADIR%%/pts-core/objects/pts_Graph/pts_Table.php
 %%DATADIR%%/pts-core/objects/pts_Graph/pts_TestCountPassGraph.php
 %%DATADIR%%/pts-core/objects/pts_Graph/pts_VerticalBarGraph.php
@@ -299,7 +304,8 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/results-viewer/horizontal-nav-bg-hover.png
 %%DATADIR%%/pts-core/results-viewer/horizontal-nav-bg.png
 %%DATADIR%%/pts-core/results-viewer/phoronix-test-suite.css
-%%DATADIR%%/pts-core/results-viewer/pts-header.png
+%%DATADIR%%/pts-core/results-viewer/pts-logo-bottom.png
+%%DATADIR%%/pts-core/results-viewer/pts-logo-top.png
 %%DATADIR%%/pts-core/results-viewer/pts-results-viewer.xsl
 %%DATADIR%%/pts-core/results-viewer/pts.js
 %%DATADIR%%/pts-core/static/certificates/openbenchmarking-server.pem

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phoronix-test-suite
-PORTVERSION=	3.8.0
+PORTVERSION=	4.0.0
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.phoronix-test-suite.com/releases/
 
@@ -16,10 +16,7 @@ COMMENT=	Phoronix Benchmarking Suite
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS=	BASH_COMPLETIONS "Install bash completions" off \
-		X11 "Install X11 icons and mimetypes" on
-
-USE_PHP=	zip json openssl gd zlib pcntl posix curl
+USE_PHP=	zip json openssl gd zlib pcntl posix curl ctype
 USE_PHP_BUILD=	yes
 WANT_PHP_CLI=	yes
 NO_BUILD=	yes
@@ -27,26 +24,31 @@ WRKSRC=		${WRKDIR}/phoronix-test-suite
 MAN1=		phoronix-test-suite.1
 
 PORTDOCS=	*
-
 DOCFILES1=	CHANGE-LOG AUTHORS
-
 DOCFILES2=	phoronix-test-suite.html
+
+OPTIONS_DEFINE=	BASH_COMPLETIONS X11
+OPTIONS_DEFAULT=	X11
+
+BASH_COMPLETIONS_DESC=	Install bash completions
+X11_DESC=		Install X11 icons and mimetypes
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_X11)
-X11_DEPENDS=	${LOCALBASE}/bin/xdg-mime:${PORTSDIR}/devel/xdg-utils \
+.if ${PORT_OPTIONS:MX11}
+BUILD_DEPENDS+=	${LOCALBASE}/bin/xdg-mime:${PORTSDIR}/devel/xdg-utils \
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
-BUILD_DEPENDS+=	${X11_DEPENDS}
-RUN_DEPENDS+=	${X11_DEPENDS}
+RUN_DEPENDS+=	${LOCALBASE}/bin/xdg-mime:${PORTSDIR}/devel/xdg-utils \
+		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
+		${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 PLIST_SUB+=	X11=""
 .else
 INSTALL_OPTS=	WITHOUT_X11=yes
 PLIST_SUB+=	X11="@comment "
 .endif
 
-.if defined(WITH_BASH_COMPLETIONS)
+.if ${PORT_OPTIONS:MBASH_COMPLETIONS}
 INSTALL_OPTS+=	WITH_BASH_COMPLETIONS=yes
 PLIST_SUB+=	BASH_COMPLETIONS=""
 .else
@@ -71,7 +73,7 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_OPTS} ./install-sh ${PREFIX}
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCFILES1}
 	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}/${FILE}
@@ -79,7 +81,7 @@ post-install:
 .for FILE in ${DOCFILES2}
 	@${INSTALL_DATA} ${WRKSRC}/documentation/${FILE} ${DOCSDIR}/${FILE}
 .endfor
-.for DIR in html_stubs includes
+.for DIR in stubs includes
 	@${CP} -rf ${WRKSRC}/documentation/${DIR} ${DOCSDIR}
 .endfor
 	@${ECHO_MSG} "===> Docs installed in ${DOCSDIR}."
