@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	openjazz
-PORTVERSION=	20110703
-PORTREVISION=	1
+PORTVERSION=	20120730
 CATEGORIES=	games
 MASTER_SITES=	http://alister.eu/jazz/oj/ \
 		LOCAL/martymac
-DISTNAME=	OpenJazz-src-030711
+DISTNAME=	OpenJazz-src-300712
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Free re-implementation of the Jazz Jackrabbit(tm) game engine
