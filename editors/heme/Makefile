@@ -10,8 +10,8 @@ PORTVERSION=	0.4.2
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Portable and fast console hex editor for Unix-like systems
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Small and fast console hex editor for Unix-like systems
 
 LICENSE=	GPLv2
 
