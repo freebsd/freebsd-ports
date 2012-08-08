@@ -63,11 +63,13 @@ USE_XORG=	xcursor xi xpm xrandr xrender
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-OPTIONS_DEFINE=	CUPS DOSBOX GNUTLS HAL LDAP LIBXSLT OPENAL WINEMAKER
+OPTIONS_DEFINE=	CUPS DOSBOX GNUTLS HAL LDAP LIBXSLT OPENAL WINEMAKER GECKO MONO
 
 DOSBOX_DESC=	Use DOSBox to run MS-DOS programs
 LIBXSLT_DESC=	Use libxslt (only used by msxml3.dll)
 WINEMAKER_DESC=	Fully support winemaker (requires Perl)
+GECKO_DESC=	Bundle Gecko MSI package for Wine
+MONO_DESC=	Bundle Mono MSI package for Wine
 
 PORTDATA=	fonts/ generic.ppd l_intl.nls wine.inf
 
@@ -123,6 +125,14 @@ PLIST_SUB+=		OPENAL="@comment "
 
 .if ${PORT_OPTIONS:MWINEMAKER}
 RUN_DEPENDS+=	p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML
+.endif
+
+.if ${PORT_OPTIONS:MGECKO}
+RUN_DEPENDS+=	${DATADIR}/gecko/wine_gecko-1.7-x86.msi:${PORTSDIR}/emulators/wine-gecko-devel
+.endif
+
+.if ${PORT_OPTIONS:MMONO}
+RUN_DEPENDS+=	${DATADIR}/mono/wine-mono-0.0.4.msi:${PORTSDIR}/emulators/wine-mono
 .endif
 
 .if ${OSVERSION} < 800000
