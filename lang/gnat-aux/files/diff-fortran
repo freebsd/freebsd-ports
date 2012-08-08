@@ -4,7 +4,7 @@
  
    gfc_define_builtin ("__builtin_cabsl", func_clongdouble_longdouble, 
  		      BUILT_IN_CABSL, "cabsl", ATTR_CONST_NOTHROW_LEAF_LIST);
-+#if defined(__NetBSD__) && (__NetBSD__ > 4)
++#if defined(__NetBSD__)
 +  gfc_define_builtin ("__builtin_cabs", func_cdouble_double, 
 +		      BUILT_IN_CABS, "__c99_cabs", ATTR_CONST_NOTHROW_LEAF_LIST);
 +  gfc_define_builtin ("__builtin_cabsf", func_cfloat_float, 
