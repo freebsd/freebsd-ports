@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asn1-modules
-PORTVERSION=	0.0.3
+PORTVERSION=	0.0.4
 CATEGORIES=	devel python
 MASTER_SITES=	SF/pyasn1/py${PORTNAME}/${PORTVERSION} \
 		CHEESESHOP
@@ -18,7 +18,7 @@ COMMENT=	Collection of ASN.1 data structures for py-asn1
 
 LICENSE=	BSD
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1>=0.1.1:${PORTSDIR}/devel/py-asn1
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1>=0.1.4:${PORTSDIR}/devel/py-asn1
 
 # Python3 ready
 USE_PYTHON=		yes
@@ -29,9 +29,9 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
 BASEDOCS=	CHANGES README
 
-TOOLS=		crldump.py crmfdump.py ocspclient.py ocspreqdump.py \
-		ocsprspdump.py pkcs10dump.py pkcs1dump.py pkcs7dump.py \
-		pkcs8dump.py snmpget.py x509dump.py
+TOOLS=		cmpdump.py crldump.py crmfdump.py ocspclient.py ocspreqdump.py \
+		ocsprspdump.py ocspserver.py pkcs10dump.py pkcs1dump.py \
+		pkcs7dump.py pkcs8dump.py snmpget.py x509dump.py
 
 post-install:
 .for t in ${TOOLS}
