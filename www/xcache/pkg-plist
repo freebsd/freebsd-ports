@@ -4,7 +4,8 @@ lib/php/%%PHP_EXT_DIR%%/xcache.so
 %%EXAMPLESDIR%%/admin/common-zh-simplified-utf-8.lang.php
 %%EXAMPLESDIR%%/admin/common-zh-traditional-utf-8.lang.php
 %%EXAMPLESDIR%%/admin/common.php
-%%EXAMPLESDIR%%/admin/config.php.example
+%%EXAMPLESDIR%%/admin/config.default.php
+%%EXAMPLESDIR%%/admin/config.example.php
 %%EXAMPLESDIR%%/admin/edit.php
 %%EXAMPLESDIR%%/admin/edit.tpl.php
 %%EXAMPLESDIR%%/admin/footer.tpl.php

@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	xcache
-DISTVERSION=	2.0.0
-PORTREVISION=	1
+DISTVERSION=	2.0.1
 CATEGORIES=	www
 MASTER_SITES=	http://xcache.lighttpd.net/pub/Releases/${DISTVERSION}/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A fast and stable php opcode cacher
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=	yes
 USE_PHP=	yes
@@ -20,15 +22,16 @@ USE_PHPIZE=	yes
 
 CONFIGURE_ARGS=	--enable-xcache=shared
 
-OPTIONS=	CONSTANT "Enable handling of compile time constants" off \
-		COVERAGER "Enable code coverage dumper" off
+OPTIONS_DEFINE=	CONSTANT COVERAGER
+CONSTANT_DESC=	Enable handling of compile time constants
+COVERAGER_DESC=	Enable code coverage dumper
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 ADMINFILES=	common-en.lang.php common-zh-simplified-utf-8.lang.php \
-		common-zh-traditional-utf-8.lang.php common.php config.php.example \
-		edit.php edit.tpl.php footer.tpl.php header.tpl.php \
+		common-zh-traditional-utf-8.lang.php common.php config.default.php \
+		config.example.php edit.php edit.tpl.php footer.tpl.php header.tpl.php \
 		help-en.lang.php help-zh-simplified-utf-8.lang.php \
 		help-zh-traditional-utf-8.lang.php help.php index.php \
 		mkpassword.php tablesort.js xcache.css xcache.php xcache.tpl.php
@@ -37,13 +40,13 @@ COVERAGERFILES=	common-en.lang.php common-zh-simplified-gb2312.lang.php \
 		common-zh-simplified-utf-8.lang.php common.php config.php.example \
 		coverager.css coverager.php coverager.tpl.php index.php
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_CONSTANT)
+.if ${PORT_OPTIONS:MCONSTANT}
 CONFIGURE_ARGS+=--enable-xcache-constant
 .endif
 
-.if defined(WITH_COVERAGER)
+.if ${PORT_OPTIONS:MCOVERAGER}
 CONFIGURE_ARGS+=--enable-xcache-coverager
 PLIST_SUB+=	COVERAGER=""
 .else
@@ -75,4 +78,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
