@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	racket
-PORTVERSION=	5.2.1
-PORTREVISION=	2
+PORTVERSION=	5.3
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://download.racket-lang.org/installers/${PORTVERSION}/${PORTNAME}/ \
 		http://www.eecs.northwestern.edu/racket/${PORTVERSION}/${PORTNAME}/ \
@@ -24,14 +23,16 @@ COMMENT=	An interactive, integrated, graphical Scheme programming environment
 
 MAKE_JOBS_UNSAFE=yes
 
-OPTIONS=	RACKET_PLACES	"Enable Places" ON
+OPTIONS_DEFINE=		RACKET_PLACES
+RACKET_PLACES_DESC=	Enable Places
+OPTIONS_DEFAULT=	RACKET_PLACES
 
 CONFLICTS=	racket-textual-[0-9]*
 
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--enable-shared --enable-pthread \
-			--enable-lt=${LIBTOOL}
-CONFIGURE_SCRIPT=	../configure
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-shared --enable-pthread \
+		--enable-lt=${LIBTOOL}
+CONFIGURE_SCRIPT=../configure
 
 .include <bsd.port.options.mk>
 
@@ -45,12 +46,12 @@ MANUAL_PACKAGE_BUILD=	i386 requires kern.maxdsiz="640M" to build
 
 USE_GNOME=	pango
 
-LIB_DEPENDS+=	ffi.5:${PORTSDIR}/devel/libffi		\
-		cairo.2:${PORTSDIR}/graphics/cairo	\
-		jpeg.11:${PORTSDIR}/graphics/jpeg	\
+LIB_DEPENDS+=	ffi:${PORTSDIR}/devel/libffi		\
+		cairo:${PORTSDIR}/graphics/cairo	\
+		jpeg:${PORTSDIR}/graphics/jpeg	\
 		png15:${PORTSDIR}/graphics/png
 
-.if defined(WITH_RACKET_PLACES)
+.if ${PORT_OPTIONS:MRACKET_PLACES}
 CONFIGURE_ARGS+=	--enable-places
 .else
 CONFIGURE_ARGS+=	--disable-places
@@ -66,7 +67,7 @@ USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:env
 
 MAN1=		drracket.1 gracket.1 mred.1 mzc.1 mzscheme.1 plt-help.1 \
-		racket.1 raco.1 setup-plt.1 tex2page.1
+		racket.1 raco.1 setup-plt.1
 
 ONLY_FOR_ARCHS=	i386 amd64
 
