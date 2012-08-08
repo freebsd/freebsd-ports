@@ -1,6 +1,6 @@
---- Makefile.orig	2011-10-12 06:48:52.000000000 +0800
-+++ Makefile	2011-10-12 06:54:09.000000000 +0800
-@@ -140,25 +140,14 @@
+--- Makefile.orig	2012-08-07 05:07:01.000000000 +0800
++++ Makefile	2012-08-07 05:12:48.000000000 +0800
+@@ -149,24 +149,16 @@
  	$E - $(MAKE) -C $(abspath fuse.xml)
  
  .PHONY: install
@@ -17,20 +17,21 @@
 -	$E install -D $(TARGET_LIB) $(DESTDIR)/usr/lib
 -	$E install -D $(TARGET_BIN) $(DESTDIR)/usr/bin
 -	$E install -D $(INC) $(DESTDIR)/usr/include
--	$E install -D LGPL.txt $(DESTDIR)/usr/share/doc/libroxml/
 -	$E install -D docs/roxml.1 $(DESTDIR)/usr/share/man/man1/
 -	$E [ ! -d docs/man/man3 ] || install -D docs/man/man3/* $(DESTDIR)/usr/share/man/man3/
 -	$E [ ! -d docs/html ] || install -D docs/html/* $(DESTDIR)/usr/share/doc/libroxml/html/
 -	$E install -m644 libroxml.pc $(DESTDIR)/usr/lib/pkgconfig
 -	$E cp -d $(TARGET_LN) $(DESTDIR)/usr/lib
-+install:
++install: 
 +	$E install $(TARGET_SLIB) $(DESTDIR)/lib
 +	$E install $(TARGET_LIB) $(DESTDIR)/lib
 +	$E install $(TARGET_BIN) $(DESTDIR)/bin
 +	$E install $(INC) $(DESTDIR)/include
 +	$E install docs/roxml.1 $(DESTDIR)/man/man1/
-+	$E install $(TARGET_LN) $(DESTDIR)/lib
++	$E [ ! -d docs/man/man3 ] || install docs/man/man3/* $(DESTDIR)/man/man3/
++	$E [ ! -d docs/html ] || install ocs/html/* $(DESTDIR)/share/doc/libroxml/html/
 +	$E install -m644 libroxml.pc $(DESTDIR)/libdata/pkgconfig
++	$E install $(TARGET_LN) $(DESTDIR)/lib
  
  .PHONY: uninstall
  uninstall:
