@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The MPRIS plugin for DeaDBeeF music player
 
 LICENSE=	GPLv3
