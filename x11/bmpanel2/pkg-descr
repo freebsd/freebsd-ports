@@ -1,5 +1,5 @@
-BMPanel (bitmap panel) is lightweight, nice NETWM-compatible panel for your
-X11 desktop.  It features:
+BMPanel (bitmap panel) is nice, lightweight, NETWM-compatible panel for your
+X11 desktop.  It currently features:
 
   - Look'n'feel customization via themes (20 of them included)
   - A bunch of widgets: desktop switcher, taskbar, launchbar, systray,

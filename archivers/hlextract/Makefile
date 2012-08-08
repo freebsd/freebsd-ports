@@ -11,12 +11,12 @@ CATEGORIES=	archivers games
 MASTER_SITES=	http://nemesis.thewavelength.net/files/files/
 DISTNAME=	hllib${PORTVERSION:S/.//g}
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to extract data from various Half-Life file formats
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	hl.2:${PORTSDIR}/games/hllib
+LIB_DEPENDS=	hl:${PORTSDIR}/games/hllib
 
 USE_ZIP=	yes
 USE_DOS2UNIX=	Main.c

@@ -10,8 +10,8 @@ DISTVERSION=	2.1pre1
 CATEGORIES=	x11
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Nice lightweight NETWM compliant panel for X
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Nice, lightweight NETWM compliant panel for X
 
 LICENSE=	MIT
 
