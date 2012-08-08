@@ -18,6 +18,9 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/dcpprofiles/Canon EOS 5D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 7D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS D60.dcp
+%%DATADIR%%/dcpprofiles/Canon EOS Digital Rebel XSi.dcp
+%%DATADIR%%/dcpprofiles/Canon EOS Digital Rebel XTi.dcp
+%%DATADIR%%/dcpprofiles/Canon EOS Rebel T2i.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS-1D Mark III.dcp
 %%DATADIR%%/dcpprofiles/Canon PowerShot G10.dcp
 %%DATADIR%%/dcpprofiles/Canon PowerShot G12.dcp
@@ -27,10 +30,13 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/dcpprofiles/Nikon D3100.dcp
 %%DATADIR%%/dcpprofiles/Nikon D3S.dcp
 %%DATADIR%%/dcpprofiles/Nikon D50.dcp
+%%DATADIR%%/dcpprofiles/Nikon D5100.dcp
 %%DATADIR%%/dcpprofiles/Nikon D700.dcp
+%%DATADIR%%/dcpprofiles/Nikon D7000.dcp
 %%DATADIR%%/dcpprofiles/Olympus E-1.dcp
 %%DATADIR%%/dcpprofiles/Olympus E-P2.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DMC-FZ150.dcp
+%%DATADIR%%/dcpprofiles/Panasonic DMC-FZ35.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DMC-FZ38.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DMC-G1.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DMC-G3.dcp
@@ -591,15 +597,15 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/profiles/BW-2.pp3
 %%DATADIR%%/profiles/BW-3.pp3
 %%DATADIR%%/profiles/BW-4.pp3
+%%DATADIR%%/profiles/Default-ISO-High.pp3
+%%DATADIR%%/profiles/Default-ISO-Medium.pp3
+%%DATADIR%%/profiles/Default.pp3
 %%DATADIR%%/profiles/Highkey-1.pp3
 %%DATADIR%%/profiles/Natural-1.pp3
 %%DATADIR%%/profiles/Natural-2.pp3
+%%DATADIR%%/profiles/Neutral.pp3
 %%DATADIR%%/profiles/Punchy-1.pp3
 %%DATADIR%%/profiles/Punchy-2.pp3
-%%DATADIR%%/profiles/default-ISO-high.pp3
-%%DATADIR%%/profiles/default-ISO-medium.pp3
-%%DATADIR%%/profiles/default.pp3
-%%DATADIR%%/profiles/neutral.pp3
 %%DATADIR%%/sounds/BatchComplete.wav
 %%DATADIR%%/sounds/Empty.wav
 %%DATADIR%%/sounds/ProcessComplete.wav

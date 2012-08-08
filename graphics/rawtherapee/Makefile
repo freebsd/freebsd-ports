@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rawtherapee
-PORTVERSION=	4.0.8
-PORTREVISION=	1
+PORTVERSION=	4.0.9
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 
@@ -16,12 +15,12 @@ COMMENT=	A powerful RAW image processing application
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		iptcdata.3:${PORTSDIR}/graphics/libiptcdata \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		lcms2.2:${PORTSDIR}/graphics/lcms2 \
+LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
+		iptcdata:${PORTSDIR}/graphics/libiptcdata \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		lcms2:${PORTSDIR}/graphics/lcms2 \
 		png15:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff \
+		tiff:${PORTSDIR}/graphics/tiff \
 		sigc-2.0:${PORTSDIR}/devel/libsigc++20
 
 USE_CMAKE=	yes
@@ -52,6 +51,11 @@ OPTIONS_DEFINE=	OPTIMIZED_CFLAGS OPENMP
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS OPENMP
 OPENMP_DESC=	Enable multicore processing using OpenMP
 
+post-patch:
+	@${REINPLACE_CMD} -e 's#<auto_ptr.h>#<memory>#g' \
+		${WRKSRC}/rtgui/darkframe.h ${WRKSRC}/rtgui/flatfield.h \
+		${WRKSRC}/rtgui/icmpanel.h
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"
@@ -62,10 +66,6 @@ CXXFLAGS+=	-O3 -ffast-math -fexpensive-optimizations \
 		-funroll-loops -msse
 .endif
 .endif
-
-#.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-#BROKEN=		Does not compile on ia64, powerpc, or sparc64
-#.endif
 
 .if ${PORT_OPTIONS:MOPENMP}
 CMAKE_ARGS+=	-DOPTION_OMP:BOOL=ON
