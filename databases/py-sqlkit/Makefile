@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sqlkit
-PORTVERSION=	0.9.4
-PORTREVISION=	2
+PORTVERSION=	0.9.5.1
 CATEGORIES=	databases python
 MASTER_SITES=	http://sqlkit.argolinux.org/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,12 +25,12 @@ USE_PYDISTUTILS=easy_install
 USE_GNOME=	pygtk2 desktopfileutils
 USE_GETTEXT=	yes
 
-OPTIONS=	FIREBIRD "support FireBird" off
-OPTIONS+=	MSSQL "support MS SQL Server" off
-OPTIONS+=	MYSQL "support MySql" on
-OPTIONS+=	POSTGRE "support PostGreSQL" on
-OPTIONS+=	SQLITE "support Sqlite" on
-OPTIONS+=	SYBASE "support Sybase" off
+OPTIONS_DEFINE=	FIREBIRD MSSQL MYSQL PGSQL SQLITE SYBASE
+OPTIONS_DEFAULT=MYSQL PGSQL SQLITE
+
+FIREBIRD_DESC=	FireBird support
+MSSQL_DESC=	MS SQL Server support
+SYBASE_DESC=	Sybase support
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
@@ -43,29 +42,29 @@ ALL_PORTDOCS=	*.html *.js
 ALL_PORTDOCS_SUBDIR=	_images _static debug layout misc printing sqlkit
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_FIREBIRD)
+.if ${PORT_OPTIONS:MFIREBIRD}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/kinterbasdb/__init__.py:${PORTSDIR}/databases/kinterbasdb
 .endif
 
-.if defined(WITH_MSSQL)
+.if ${PORT_OPTIONS:MMSSQL}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pymssql.py:${PORTSDIR}/databases/py-mssql
 .endif
 
-.if !defined(WITHOUT_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb
 .endif
 
-.if !defined(WITHOUT_POSTGRE)
+.if ${PORT_OPTIONS:MPOSTGRE}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.0.8:${PORTSDIR}/databases/py-psycopg2
 .endif
 
-.if !defined(WITHOUT_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 .endif
 
-.if !defined(WITHOUT_SYBASE)
+.if ${PORT_OPTIONS:MSYBASE}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Sybase.py:${PORTSDIR}/databases/py-sybase
 .endif
 
@@ -74,7 +73,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${DESKTOPDIR}
 	@-update-desktop-database > /dev/null
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in ${ALL_PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/doc/html/${i} ${DOCSDIR}
@@ -85,4 +84,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
