@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120808:
+  AFFECTS: users of www/libmicrohttpd
+  AUTHOR: bdrewery@FreeBSD.org
+
+  libmicrohttpd has been updated to version 0.9.21, with a shared library bump.
+  This requires dependent ports to be rebuilt.
+
+  # portmaster -r libmicrohttpd
+  or
+  # portupgrade -r www/libmicrohttpd
+  or
+  # pkg install -fR www/libmicrohttpd
+
 20120804:
   AFFECTS: users of graphics/libglut
   AUTHOR: x11@FreeBSD.org
