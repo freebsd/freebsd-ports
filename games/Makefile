@@ -555,6 +555,7 @@
     SUBDIR += miscom
     SUBDIR += mkgichessclub
     SUBDIR += mkhexgrid
+    SUBDIR += moagg
     SUBDIR += monkeybubble
     SUBDIR += monster-masher
     SUBDIR += monsterz
