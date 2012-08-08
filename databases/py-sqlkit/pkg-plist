@@ -325,6 +325,7 @@ share/applications/sqlkit.desktop
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/demo/sql/ex_99_sqledit.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/demo/sql/ex_99_sqledit.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/demo/sql/ex_99_sqledit.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/demo/sql/images/cantando.jpeg
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/demo/sql/images/la-ragazza-sul-ponte.jpg
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/demo/sql/images/le-vite-degli-altri.jpg
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/demo/sql/images/sostiene-pereira.jpg
@@ -592,6 +593,7 @@ share/applications/sqlkit.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_static/minus.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/plus.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/pygments.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/print.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/searchtools.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/sfondo-box.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/sphinx.png
