@@ -31,7 +31,7 @@ OPTIONS_DEFAULT=	DOCS
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
+.if empty(PORT_OPTIONS:MDOCS)
 INSTALL_TARGET=install-bin install-rc install-man
 .endif
 
