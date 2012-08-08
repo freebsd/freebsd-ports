@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmicrohttpd
-PORTVERSION=	0.9.20
+PORTVERSION=	0.9.21
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -36,7 +36,7 @@ MAKE_ARGS+=	pkgconfigdir=${PREFIX}/libdata/pkgconfig
 MAN3=		libmicrohttpd.3
 INFO=		microhttpd microhttpd-tutorial
 
-PLIST_FILES=	lib/libmicrohttpd.so.25 \
+PLIST_FILES=	lib/libmicrohttpd.so.26 \
 		lib/libmicrohttpd.la \
 		lib/libmicrohttpd.so \
 		lib/libmicrohttpd.a \
