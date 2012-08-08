@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hg-git
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ COMMENT=	Mercurial extension to pull from or push to a Git repository
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PKGNAMEPREFIX}dulwich>=0.8.3:${PORTSDIR}/devel/dulwich \
+RUN_DEPENDS=	${PKGNAMEPREFIX}dulwich>=0.8.5:${PORTSDIR}/devel/dulwich \
 		mercurial>=2.0.2:${PORTSDIR}/devel/mercurial
 
 MAKE_JOBS_SAFE=	yes
