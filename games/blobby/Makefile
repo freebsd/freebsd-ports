@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	blobby
-PORTVERSION=	0.9c
-PORTREVISION=	2
+PORTVERSION=	1.0r1
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/Blobby%20Volley%202%20%28Linux%29/Beta%20${PORTVERSION}
-DISTNAME=	blobby2-linux-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/Blobby%20Volley%202%20%28Linux%29/1.0RC1/
+DISTNAME=	blobby2-linux-1.0rc1
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Official continuation of the famous Blobby Volley 1.x game
@@ -27,7 +26,7 @@ USE_SDL=	sdl
 USE_GL=		glu
 USE_CMAKE=	yes
 CMAKE_ARGS+=	-DDATADIR:PATH="${DATADIR}"
-WRKSRC=		${WRKDIR}/blobby-beta-${PORTVERSION}
+WRKSRC=		${WRKDIR}/blobby-1.0rc1
 
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(c|h|cpp)
