@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	osdlyrics
-PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTVERSION=	0.4.3
 CATEGORIES=	audio deskutils
 MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	osd-lyrics
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	On-screen lyrics display program for various media players
 
 LICENSE=	GPLv3
