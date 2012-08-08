@@ -1,0 +1,3 @@
+@comment $FreeBSD$
+bin/ltrace
+etc/ltrace.conf
