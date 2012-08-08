@@ -664,6 +664,7 @@
     SUBDIR += hs-hdoc
     SUBDIR += hs-hint
     SUBDIR += hs-hlibev
+    SUBDIR += hs-hlint
     SUBDIR += hs-hoogle
     SUBDIR += hs-hslogger
     SUBDIR += hs-hspec

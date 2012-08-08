@@ -142,6 +142,7 @@ highlighting-kate_port=		textproc/hs-highlighting-kate
 hint_port=			devel/hs-hint
 hjsmin_port=			www/hs-hjsmin
 hlibev_port=			devel/hs-hlibev		# lib_depends
+hlint_port=			devel/hs-hlint		# executable
 hoogle_port=			devel/hs-hoogle		# executable
 hostname_port=			net/hs-hostname
 hs-bibutils_port=		textproc/hs-hs-bibutils
