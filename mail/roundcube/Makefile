@@ -41,13 +41,13 @@ PLIST_SUB+=	MAIL=${MAIL}
 
 OPTIONS=	MYSQL "Use MySQL backend" on \
 		PGSQL "Use PostgreSQL backend" off \
-		SQLITE "Use SQLite backend" off \
+		SQLITE "Use SQLite backend (needs PHP 5.3 or below)" off \
 		SSL "Enable SSL support (imaps or google spellcheck)" off \
 		LDAP "Enable LDAP support (address book)" off \
 		PSPELL "Enable PSpell support (internal spellcheck)" off \
 		NSC "Install network spellchecker" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITHOUT_MYSQL) && !defined(WITH_PGSQL) && !defined(WITH_SQLITE)
 IGNORE=		needs a database backend
@@ -154,4 +154,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
