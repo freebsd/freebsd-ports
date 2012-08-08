@@ -1,0 +1,32 @@
+--- ./config/browser_types/linux.xml.orig	2012-08-06 23:58:57.000000000 +0200
++++ ./config/browser_types/linux.xml	2012-08-07 00:00:07.000000000 +0200
+@@ -3,7 +3,7 @@
+ 		<name>firefox</name> 
+ 		<displayName>Firefox</displayName>
+ 		<icon>firefox.png</icon>
+-		<path>/usr/bin/firefox</path>  
++		<path>%%FIREFOX%%</path>  
+ 		<options>-profile "$userDir/browser/ff/profiles/sahi$threadNo" -no-remote</options>  
+ 		<processName>firefox</processName> 
+ 		<capacity>5</capacity>  
+@@ -13,9 +13,18 @@
+ 		<name>chrome</name>  
+ 		<displayName>Chrome</displayName>
+ 		<icon>chrome.png</icon>
+-		<path>/usr/bin/google-chrome</path>  
++		<path>%%CHROME%%</path>  
+ 		<options>--user-data-dir=$userDir/browser/chrome/profiles/sahi$threadNo --proxy-server=localhost:9999 --disable-popup-blocking</options>  
+ 		<processName>chrome</processName> 
+ 		<capacity>5</capacity>  
+ 	</browserType>	
+-</browserTypes>
++
++	<browserType>
++		<name>opera</name>
++		<displayName>Opera</displayName>
++		<icon>opera.png</icon>
++		<path>%%OPERA%%</path>
++		<options>-personaldir $userDir/browser/opera/profiles/sahi$threadNo</options>
++		<processName>opera</processName>
++	</browserType>
++ </browserTypes>

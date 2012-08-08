@@ -1756,6 +1756,7 @@
     SUBDIR += rubygem-webrobots
     SUBDIR += rubygem-yapra
     SUBDIR += runsomebrowser
+    SUBDIR += sahi
     SUBDIR += sakai
     SUBDIR += samidare
     SUBDIR += sams

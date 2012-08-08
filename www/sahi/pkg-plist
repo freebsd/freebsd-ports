@@ -1,0 +1,541 @@
+bin/sahi
+%%DATADIR%%/NOTICE.htm
+%%DATADIR%%/NOTICE.txt
+%%DATADIR%%/batch_runners/README.txt
+%%DATADIR%%/batch_runners/ant/sample.properties
+%%DATADIR%%/batch_runners/ant/sample.xml
+%%DATADIR%%/batch_runners/ruby/default_props.rb
+%%DATADIR%%/batch_runners/ruby/sahi.rake
+%%DATADIR%%/bin/dashboard.sh
+%%DATADIR%%/bin/sahi.sh
+%%DATADIR%%/bin/web.sh
+%%DATADIR%%/config/browser_types/linux.xml
+%%DATADIR%%/config/browser_types/mac.xml
+%%DATADIR%%/config/browser_types/win32.xml
+%%DATADIR%%/config/browser_types/win64.xml
+%%DATADIR%%/config/ff_profile_template/prefs.js
+%%DATADIR%%/config/inject_bottom.txt
+%%DATADIR%%/config/inject_top.txt
+%%DATADIR%%/config/license.txt
+%%DATADIR%%/config/license_html.txt
+%%DATADIR%%/config/mime-types.mapping
+%%DATADIR%%/config/normal_functions.txt
+%%DATADIR%%/config/os.properties
+%%DATADIR%%/config/proxy.pac
+%%DATADIR%%/config/sahi.properties
+%%DATADIR%%/config/scheduler.properties
+%%DATADIR%%/config/scheduler_functions.txt
+%%DATADIR%%/config/ssl.txt
+%%DATADIR%%/config/userdata_template/config/download_contenttypes.txt
+%%DATADIR%%/config/userdata_template/config/download_urls.txt
+%%DATADIR%%/config/userdata_template/config/exclude_inject.txt
+%%DATADIR%%/config/userdata_template/config/jira.properties
+%%DATADIR%%/config/userdata_template/config/log.properties
+%%DATADIR%%/config/userdata_template/config/userdata.properties
+%%DATADIR%%/config/version.txt
+%%DATADIR%%/demo.xml
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/TODO.txt
+%%PORTDOCS%%%%DOCSDIR%%/ant.html
+%%PORTDOCS%%%%DOCSDIR%%/apis.html
+%%PORTDOCS%%%%DOCSDIR%%/changelog.txt
+%%PORTDOCS%%%%DOCSDIR%%/contributors.txt
+%%PORTDOCS%%%%DOCSDIR%%/devnotes.html
+%%PORTDOCS%%%%DOCSDIR%%/extend.html
+%%PORTDOCS%%%%DOCSDIR%%/ide.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/install.html
+%%PORTDOCS%%%%DOCSDIR%%/java_client/net/sf/sahi/client/Browser.html
+%%PORTDOCS%%%%DOCSDIR%%/licenses/apc/LICENSE.txt
+%%PORTDOCS%%%%DOCSDIR%%/licenses/rhino/LICENSE.txt
+%%PORTDOCS%%%%DOCSDIR%%/licenses/sahi/license.htm
+%%PORTDOCS%%%%DOCSDIR%%/licenses/sahi/license.txt
+%%PORTDOCS%%%%DOCSDIR%%/problems.html
+%%PORTDOCS%%%%DOCSDIR%%/props.html
+%%PORTDOCS%%%%DOCSDIR%%/releasenotes.txt
+%%PORTDOCS%%%%DOCSDIR%%/sahi.TCL
+%%PORTDOCS%%%%DOCSDIR%%/sahi.css
+%%PORTDOCS%%%%DOCSDIR%%/sahi.jpg
+%%PORTDOCS%%%%DOCSDIR%%/sahi.syn
+%%PORTDOCS%%%%DOCSDIR%%/sahi.xml
+%%PORTDOCS%%%%DOCSDIR%%/sahi_architecture.gif
+%%PORTDOCS%%%%DOCSDIR%%/sahi_controller.jpg
+%%PORTDOCS%%%%DOCSDIR%%/sahi_playback_help.jpg
+%%PORTDOCS%%%%DOCSDIR%%/sahi_recorder_help.htm
+%%PORTDOCS%%%%DOCSDIR%%/sahi_recorder_help.jpg
+%%PORTDOCS%%%%DOCSDIR%%/sahi_recording.jpg
+%%PORTDOCS%%%%DOCSDIR%%/sahi_textpad.zip
+%%PORTDOCS%%%%DOCSDIR%%/screenshots.html
+%%PORTDOCS%%%%DOCSDIR%%/scripting.html
+%%PORTDOCS%%%%DOCSDIR%%/ssl.txt
+%%PORTDOCS%%%%DOCSDIR%%/ssl_alert.gif
+%%PORTDOCS%%%%DOCSDIR%%/ssl_alert.htm
+%%PORTDOCS%%%%DOCSDIR%%/ssl_alert.html
+%%PORTDOCS%%%%DOCSDIR%%/timeout.html
+%%PORTDOCS%%%%DOCSDIR%%/using.html
+%%DATADIR%%/editors/notepad++/README.txt
+%%DATADIR%%/editors/notepad++/plugin/APIs/sahi.xml
+%%DATADIR%%/editors/notepad++/sahi_syn.xml
+%%DATADIR%%/editors/textpad/README.txt
+%%DATADIR%%/editors/textpad/sahi.TCL
+%%DATADIR%%/editors/textpad/sahi.syn
+%%DATADIR%%/extlib/README.txt
+%%DATADIR%%/extlib/apc/commons-codec-1.3.jar
+%%DATADIR%%/extlib/rhino/js.jar
+%%DATADIR%%/htdocs/404.htm
+%%DATADIR%%/htdocs/demo/EventViewer.htm
+%%DATADIR%%/htdocs/demo/RegExp_toString_Fix.htm
+%%DATADIR%%/htdocs/demo/add.gif
+%%DATADIR%%/htdocs/demo/ajax1.htm
+%%DATADIR%%/htdocs/demo/ajax1iframes.htm
+%%DATADIR%%/htdocs/demo/ajax5xx.htm
+%%DATADIR%%/htdocs/demo/ajaxResponse1.htm
+%%DATADIR%%/htdocs/demo/alertTest.htm
+%%DATADIR%%/htdocs/demo/base.html
+%%DATADIR%%/htdocs/demo/blank.htm
+%%DATADIR%%/htdocs/demo/callee.htm
+%%DATADIR%%/htdocs/demo/checkbox_onchange.htm
+%%DATADIR%%/htdocs/demo/clickCombo.htm
+%%DATADIR%%/htdocs/demo/clicks.htm
+%%DATADIR%%/htdocs/demo/common.js
+%%DATADIR%%/htdocs/demo/confirmTest.htm
+%%DATADIR%%/htdocs/demo/containTest.htm
+%%DATADIR%%/htdocs/demo/count.htm
+%%DATADIR%%/htdocs/demo/cryllic_lang.htm
+%%DATADIR%%/htdocs/demo/css_selector.htm
+%%DATADIR%%/htdocs/demo/diffDomain.htm
+%%DATADIR%%/htdocs/demo/diffDomainExt.htm
+%%DATADIR%%/htdocs/demo/diffDomain_dummy1.htm
+%%DATADIR%%/htdocs/demo/diffDomain_dummy2.htm
+%%DATADIR%%/htdocs/demo/diffDomain_iframe.htm
+%%DATADIR%%/htdocs/demo/diffDomain_traverse.htm
+%%DATADIR%%/htdocs/demo/docWriteFramesTest.htm
+%%DATADIR%%/htdocs/demo/docWriteIFrame.htm
+%%DATADIR%%/htdocs/demo/doc_written_popup.htm
+%%DATADIR%%/htdocs/demo/docdomain.htm
+%%DATADIR%%/htdocs/demo/docdomain_dummy1.htm
+%%DATADIR%%/htdocs/demo/docdomain_dummy2.htm
+%%DATADIR%%/htdocs/demo/docwrite.htm
+%%DATADIR%%/htdocs/demo/docwrite.js
+%%DATADIR%%/htdocs/demo/docwriteframes.htm
+%%DATADIR%%/htdocs/demo/docwritten.htm
+%%DATADIR%%/htdocs/demo/domRel.htm
+%%DATADIR%%/htdocs/demo/error.htm
+%%DATADIR%%/htdocs/demo/errorPages.htm
+%%DATADIR%%/htdocs/demo/euro.htm
+%%DATADIR%%/htdocs/demo/eventSequence.htm
+%%DATADIR%%/htdocs/demo/events.htm
+%%DATADIR%%/htdocs/demo/fileUpload.htm
+%%DATADIR%%/htdocs/demo/focusTest.htm
+%%DATADIR%%/htdocs/demo/formTest.htm
+%%DATADIR%%/htdocs/demo/formTest2.htm
+%%DATADIR%%/htdocs/demo/framesTest.htm
+%%DATADIR%%/htdocs/demo/framesTestWithTitle.htm
+%%DATADIR%%/htdocs/demo/greek.htm
+%%DATADIR%%/htdocs/demo/headingsTest.htm
+%%DATADIR%%/htdocs/demo/html5_form_fields.htm
+%%DATADIR%%/htdocs/demo/htmlUnit.htm
+%%DATADIR%%/htdocs/demo/ifTest.htm
+%%DATADIR%%/htdocs/demo/iframesTest.htm
+%%DATADIR%%/htdocs/demo/iframesTest_inc.htm
+%%DATADIR%%/htdocs/demo/index.htm
+%%DATADIR%%/htdocs/demo/inputImage.htm
+%%DATADIR%%/htdocs/demo/jseval.htm
+%%DATADIR%%/htdocs/demo/keyevent.htm
+%%DATADIR%%/htdocs/demo/keypress.htm
+%%DATADIR%%/htdocs/demo/label.htm
+%%DATADIR%%/htdocs/demo/lang.htm
+%%DATADIR%%/htdocs/demo/lang_back.htm
+%%DATADIR%%/htdocs/demo/linkByContent.htm
+%%DATADIR%%/htdocs/demo/linkByHtml.htm
+%%DATADIR%%/htdocs/demo/linkInTd.htm
+%%DATADIR%%/htdocs/demo/linkTest.htm
+%%DATADIR%%/htdocs/demo/map.htm
+%%DATADIR%%/htdocs/demo/map.png
+%%DATADIR%%/htdocs/demo/menu.htm
+%%DATADIR%%/htdocs/demo/method_delete.htm
+%%DATADIR%%/htdocs/demo/method_put.htm
+%%DATADIR%%/htdocs/demo/modal.htm
+%%DATADIR%%/htdocs/demo/mouseover.htm
+%%DATADIR%%/htdocs/demo/nestedTds.htm
+%%DATADIR%%/htdocs/demo/onBeforeUnloadTest.htm
+%%DATADIR%%/htdocs/demo/onLoadTest.htm
+%%DATADIR%%/htdocs/demo/onchange.htm
+%%DATADIR%%/htdocs/demo/php/500.php
+%%DATADIR%%/htdocs/demo/php/delayedLoad.php
+%%DATADIR%%/htdocs/demo/php/delayedLoadInner.php
+%%DATADIR%%/htdocs/demo/php/fileUpload.htm
+%%DATADIR%%/htdocs/demo/php/fileUpload.php
+%%DATADIR%%/htdocs/demo/php/method_delete.php
+%%DATADIR%%/htdocs/demo/php/method_put.php
+%%DATADIR%%/htdocs/demo/php/status.php
+%%DATADIR%%/htdocs/demo/plain/clickSimulTest.htm
+%%DATADIR%%/htdocs/demo/plain/close.htm
+%%DATADIR%%/htdocs/demo/plain/codes.htm
+%%DATADIR%%/htdocs/demo/plain/diffDomain.htm
+%%DATADIR%%/htdocs/demo/plain/diffDomain2.htm
+%%DATADIR%%/htdocs/demo/plain/event.htm
+%%DATADIR%%/htdocs/demo/plain/event2.htm
+%%DATADIR%%/htdocs/demo/plain/iframeLoadTest.htm
+%%DATADIR%%/htdocs/demo/plain/interact.htm
+%%DATADIR%%/htdocs/demo/plain/modifier.htm
+%%DATADIR%%/htdocs/demo/plain/sel.htm
+%%DATADIR%%/htdocs/demo/plain/sim2.htm
+%%DATADIR%%/htdocs/demo/poundTest.htm
+%%DATADIR%%/htdocs/demo/promptTest.htm
+%%DATADIR%%/htdocs/demo/regexp.htm
+%%DATADIR%%/htdocs/demo/regression/jquery_onchange.htm
+%%DATADIR%%/htdocs/demo/rel.htm
+%%DATADIR%%/htdocs/demo/safariClickBug.htm
+%%DATADIR%%/htdocs/demo/sanity.htm
+%%DATADIR%%/htdocs/demo/saveAs.htm
+%%DATADIR%%/htdocs/demo/selectTest.htm
+%%DATADIR%%/htdocs/demo/showModal.htm
+%%DATADIR%%/htdocs/demo/showModal_Modal.htm
+%%DATADIR%%/htdocs/demo/spandiv.htm
+%%DATADIR%%/htdocs/demo/strict_visible.htm
+%%DATADIR%%/htdocs/demo/tableTest.htm
+%%DATADIR%%/htdocs/demo/temp.js
+%%DATADIR%%/htdocs/demo/temp2.js
+%%DATADIR%%/htdocs/demo/testStart.htm
+%%DATADIR%%/htdocs/demo/testapp.htm
+%%DATADIR%%/htdocs/demo/testapploggedin.htm
+%%DATADIR%%/htdocs/demo/testsaveas.zip
+%%DATADIR%%/htdocs/demo/training/books.htm
+%%DATADIR%%/htdocs/demo/training/common.css
+%%DATADIR%%/htdocs/demo/training/index.htm
+%%DATADIR%%/htdocs/demo/training/login.htm
+%%DATADIR%%/htdocs/demo/training/register.htm
+%%DATADIR%%/htdocs/demo/training/v2/books.htm
+%%DATADIR%%/htdocs/demo/training/v2/common.css
+%%DATADIR%%/htdocs/demo/training/v2/index.htm
+%%DATADIR%%/htdocs/demo/training/v2/login.htm
+%%DATADIR%%/htdocs/demo/training/v2/register.htm
+%%DATADIR%%/htdocs/demo/under.htm
+%%DATADIR%%/htdocs/demo/visible.htm
+%%DATADIR%%/htdocs/demo/waitCondition1.htm
+%%DATADIR%%/htdocs/demo/waitCondition2.htm
+%%DATADIR%%/htdocs/demo/waitCondition3.htm
+%%DATADIR%%/htdocs/demo/waitFor.htm
+%%DATADIR%%/htdocs/demo/window_opener.htm
+%%DATADIR%%/htdocs/demo/window_opener_close.htm
+%%DATADIR%%/htdocs/demo/window_opener_close_1.htm
+%%DATADIR%%/htdocs/demo/window_opener_iframe.htm
+%%DATADIR%%/htdocs/favicon.ico
+%%DATADIR%%/htdocs/spr/401.htm
+%%DATADIR%%/htdocs/spr/5xx.htm
+%%DATADIR%%/htdocs/spr/Copy of concat.js
+%%DATADIR%%/htdocs/spr/auto.htm
+%%DATADIR%%/htdocs/spr/blank.htm
+%%DATADIR%%/htdocs/spr/cannotConnect.htm
+%%DATADIR%%/htdocs/spr/close.htm
+%%DATADIR%%/htdocs/spr/common.js
+%%DATADIR%%/htdocs/spr/concat.js
+%%DATADIR%%/htdocs/spr/concat.zip
+%%DATADIR%%/htdocs/spr/concat3.js
+%%DATADIR%%/htdocs/spr/controller2.htm
+%%DATADIR%%/htdocs/spr/controller2.js
+%%DATADIR%%/htdocs/spr/controller3.htm
+%%DATADIR%%/htdocs/spr/controller4.htm
+%%DATADIR%%/htdocs/spr/controller4.js
+%%DATADIR%%/htdocs/spr/controller7.htm
+%%DATADIR%%/htdocs/spr/controller7.js
+%%DATADIR%%/htdocs/spr/controllertw.htm
+%%DATADIR%%/htdocs/spr/controllertw.js
+%%DATADIR%%/htdocs/spr/cookie.js
+%%DATADIR%%/htdocs/spr/cookies.htm
+%%DATADIR%%/htdocs/spr/css/consolidated_log_format.css
+%%DATADIR%%/htdocs/spr/css/error.css
+%%DATADIR%%/htdocs/spr/css/playback_log_format.css
+%%DATADIR%%/htdocs/spr/domainfix.js
+%%DATADIR%%/htdocs/spr/dummyFunctions.js
+%%DATADIR%%/htdocs/spr/editor.htm
+%%DATADIR%%/htdocs/spr/event.js
+%%DATADIR%%/htdocs/spr/exception.js
+%%DATADIR%%/htdocs/spr/ext/javascript-xpath/README.txt
+%%DATADIR%%/htdocs/spr/ext/javascript-xpath/javascript-xpath.js
+%%DATADIR%%/htdocs/spr/ext/selenium/README.txt
+%%DATADIR%%/htdocs/spr/ext/selenium/locatorBuilders.js
+%%DATADIR%%/htdocs/spr/ext_player.htm
+%%DATADIR%%/htdocs/spr/ext_player.js
+%%DATADIR%%/htdocs/spr/extensions.js
+%%DATADIR%%/htdocs/spr/favicon.ico
+%%DATADIR%%/htdocs/spr/favicon.jpg
+%%DATADIR%%/htdocs/spr/footer.htm
+%%DATADIR%%/htdocs/spr/getFocus.htm
+%%DATADIR%%/htdocs/spr/history.htm
+%%DATADIR%%/htdocs/spr/images/document-new.png
+%%DATADIR%%/htdocs/spr/images/document-open.png
+%%DATADIR%%/htdocs/spr/images/edit-clear.png
+%%DATADIR%%/htdocs/spr/images/folder.png
+%%DATADIR%%/htdocs/spr/images/go-next.png
+%%DATADIR%%/htdocs/spr/images/go-previous.png
+%%DATADIR%%/htdocs/spr/images/go-up.png
+%%DATADIR%%/htdocs/spr/images/installer_logo.png
+%%DATADIR%%/htdocs/spr/images/installer_logo_sq.png
+%%DATADIR%%/htdocs/spr/images/list-add.png
+%%DATADIR%%/htdocs/spr/images/list-remove.png
+%%DATADIR%%/htdocs/spr/images/mail-send-receive.png
+%%DATADIR%%/htdocs/spr/images/media-floppy.png
+%%DATADIR%%/htdocs/spr/images/media-playback-pause.png
+%%DATADIR%%/htdocs/spr/images/media-playback-start.png
+%%DATADIR%%/htdocs/spr/images/media-playback-stop.png
+%%DATADIR%%/htdocs/spr/images/media-record.png
+%%DATADIR%%/htdocs/spr/images/media-skip-forward.png
+%%DATADIR%%/htdocs/spr/images/process-stop.png
+%%DATADIR%%/htdocs/spr/images/sahi_logo_web.png
+%%DATADIR%%/htdocs/spr/images/sahi_logo_web_alpha.png
+%%DATADIR%%/htdocs/spr/images/sahi_os_icon.ico
+%%DATADIR%%/htdocs/spr/images/sahi_os_icon.png
+%%DATADIR%%/htdocs/spr/images/sahi_os_logo1.png
+%%DATADIR%%/htdocs/spr/images/sahi_os_logo2.png
+%%DATADIR%%/htdocs/spr/images/sahi_pro_logo1.png
+%%DATADIR%%/htdocs/spr/images/sahi_pro_logo2.png
+%%DATADIR%%/htdocs/spr/images/view-refresh.png
+%%DATADIR%%/htdocs/spr/initialized.htm
+%%DATADIR%%/htdocs/spr/json.js
+%%DATADIR%%/htdocs/spr/language_pack.js
+%%DATADIR%%/htdocs/spr/launch.htm
+%%DATADIR%%/htdocs/spr/lib.js
+%%DATADIR%%/htdocs/spr/link.js
+%%DATADIR%%/htdocs/spr/manage.htm
+%%DATADIR%%/htdocs/spr/manage/configureUI.htm
+%%DATADIR%%/htdocs/spr/manage/ssl/green.png
+%%DATADIR%%/htdocs/spr/manage/ssl/manager.htm
+%%DATADIR%%/htdocs/spr/manage/ssl/red.png
+%%DATADIR%%/htdocs/spr/manage/ssl/success.htm
+%%DATADIR%%/htdocs/spr/mock.gif
+%%DATADIR%%/htdocs/spr/parsed.js
+%%DATADIR%%/htdocs/spr/playback.htm
+%%DATADIR%%/htdocs/spr/playback.js
+%%DATADIR%%/htdocs/spr/probe.htm
+%%DATADIR%%/htdocs/spr/recorder.htm
+%%DATADIR%%/htdocs/spr/rte.htm
+%%DATADIR%%/htdocs/spr/runner/android.htm
+%%DATADIR%%/htdocs/spr/runner/runner.htm
+%%DATADIR%%/htdocs/spr/runner/runner2.htm
+%%DATADIR%%/htdocs/spr/sahi_playback_help.jpg
+%%DATADIR%%/htdocs/spr/sahi_recorder_help.htm
+%%DATADIR%%/htdocs/spr/sahi_recorder_help.jpg
+%%DATADIR%%/htdocs/spr/sahiextjs.js
+%%DATADIR%%/htdocs/spr/script.htm
+%%DATADIR%%/htdocs/spr/settings.htm
+%%DATADIR%%/htdocs/spr/simpleMock.htm
+%%DATADIR%%/htdocs/spr/state.js
+%%DATADIR%%/htdocs/spr/suggest.js
+%%DATADIR%%/htdocs/spr/tabs.htm
+%%DATADIR%%/htdocs/spr/test/ultratextarea.htm
+%%DATADIR%%/htdocs/spr/util.js
+%%DATADIR%%/htdocs/spr/viewlogs.htm
+%%DATADIR%%/lib/ant-sahi.jar
+%%DATADIR%%/lib/sahi.jar
+%%DATADIR%%/ruby/README.txt
+%%DATADIR%%/ruby/cucumber/example/login.feature
+%%DATADIR%%/ruby/cucumber/example/login.rb
+%%DATADIR%%/ruby/lib/sahi.rb
+%%DATADIR%%/ruby/nbproject/project.properties
+%%DATADIR%%/ruby/nbproject/project.xml
+%%DATADIR%%/ruby/sahi-1.0.0.gem
+%%DATADIR%%/ruby/sahi-1.0.1.gem
+%%DATADIR%%/ruby/sahi.gemspec
+%%DATADIR%%/ruby/test/elementstub_test.rb
+%%DATADIR%%/ruby/test/learn.rb
+%%DATADIR%%/ruby/test/sahi_test.rb
+%%DATADIR%%/sample_java_project/.classpath
+%%DATADIR%%/sample_java_project/.project
+%%DATADIR%%/sample_java_project/DriverClientTest.java
+%%DATADIR%%/sample_java_project/README.txt
+%%DATADIR%%/sample_java_project/SahiTestCase.java
+%%DATADIR%%/sample_java_project/myuserdata/config/download_urls.txt
+%%DATADIR%%/sample_java_project/myuserdata/config/exclude_inject.txt
+%%DATADIR%%/sample_java_project/myuserdata/config/log.properties
+%%DATADIR%%/sample_java_project/myuserdata/config/userdata.properties
+%%DATADIR%%/sample_java_project/src/in/co/sahi/JavaClientTest.java
+%%DATADIR%%/tools/backup_proxy_config.exe
+%%DATADIR%%/tools/proxy.properties
+%%DATADIR%%/tools/proxy_config.exe
+%%DATADIR%%/tools/toggle_IE_proxy.exe
+%%DATADIR%%/userdata/bin/start_dashboard.sh
+%%DATADIR%%/userdata/bin/start_sahi.sh
+%%DATADIR%%/userdata/bin/start_web.sh
+%%DATADIR%%/userdata/bin/testrunner.sh
+%%DATADIR%%/userdata/config/block_ssl_domains.txt
+%%DATADIR%%/userdata/config/browser_types.xml
+%%DATADIR%%/userdata/config/domainfix.txt
+%%DATADIR%%/userdata/config/download_contenttypes.txt
+%%DATADIR%%/userdata/config/download_urls.txt
+%%DATADIR%%/userdata/config/exclude_inject.txt
+%%DATADIR%%/userdata/config/jira.properties
+%%DATADIR%%/userdata/config/log.properties
+%%DATADIR%%/userdata/config/userdata.properties
+%%DATADIR%%/userdata/scripts/apis.sah
+%%DATADIR%%/userdata/scripts/demo/204.sah
+%%DATADIR%%/userdata/scripts/demo/RegExp_toString_Fix.sah
+%%DATADIR%%/userdata/scripts/demo/alert.sah
+%%DATADIR%%/userdata/scripts/demo/blank.sah
+%%DATADIR%%/userdata/scripts/demo/browser.sah
+%%DATADIR%%/userdata/scripts/demo/clickCombo.sah
+%%DATADIR%%/userdata/scripts/demo/clickNative.sah
+%%DATADIR%%/userdata/scripts/demo/clicksTest.sah
+%%DATADIR%%/userdata/scripts/demo/close_window.sah
+%%DATADIR%%/userdata/scripts/demo/collect.sah
+%%DATADIR%%/userdata/scripts/demo/confirm.sah
+%%DATADIR%%/userdata/scripts/demo/csv.sah
+%%DATADIR%%/userdata/scripts/demo/db.sah
+%%DATADIR%%/userdata/scripts/demo/delayedLoad.sah
+%%DATADIR%%/userdata/scripts/demo/demo.suite
+%%DATADIR%%/userdata/scripts/demo/docWriteIFrame.sah
+%%DATADIR%%/userdata/scripts/demo/doc_written_popup.sah
+%%DATADIR%%/userdata/scripts/demo/dragDrop.sah
+%%DATADIR%%/userdata/scripts/demo/dragDropXY.sah
+%%DATADIR%%/userdata/scripts/demo/errorPages.sah
+%%DATADIR%%/userdata/scripts/demo/evalOnRhino.sah
+%%DATADIR%%/userdata/scripts/demo/events.sah
+%%DATADIR%%/userdata/scripts/demo/execute.sah
+%%DATADIR%%/userdata/scripts/demo/executeTimeout.sah
+%%DATADIR%%/userdata/scripts/demo/extjs1.sah
+%%DATADIR%%/userdata/scripts/demo/fetchAPIs.sah
+%%DATADIR%%/userdata/scripts/demo/fetch_table_data.sah
+%%DATADIR%%/userdata/scripts/demo/fileUpload.sah
+%%DATADIR%%/userdata/scripts/demo/find_in_google.sah
+%%DATADIR%%/userdata/scripts/demo/globalget.sah
+%%DATADIR%%/userdata/scripts/demo/globalset.sah
+%%DATADIR%%/userdata/scripts/demo/globalvar.suite
+%%DATADIR%%/userdata/scripts/demo/google_search_dd.sah
+%%DATADIR%%/userdata/scripts/demo/greek.sah
+%%DATADIR%%/userdata/scripts/demo/headingsTest.sah
+%%DATADIR%%/userdata/scripts/demo/hidden.sah
+%%DATADIR%%/userdata/scripts/demo/if.sah
+%%DATADIR%%/userdata/scripts/demo/if_include.sah
+%%DATADIR%%/userdata/scripts/demo/in.sah
+%%DATADIR%%/userdata/scripts/demo/includes/sahi_demo_include.sah
+%%DATADIR%%/userdata/scripts/demo/includes/values.txt
+%%DATADIR%%/userdata/scripts/demo/integration.sah
+%%DATADIR%%/userdata/scripts/demo/is_visible.sah
+%%DATADIR%%/userdata/scripts/demo/keypress.sah
+%%DATADIR%%/userdata/scripts/demo/label.sah
+%%DATADIR%%/userdata/scripts/demo/language.sah
+%%DATADIR%%/userdata/scripts/demo/libTest.sah
+%%DATADIR%%/userdata/scripts/demo/link_test.sah
+%%DATADIR%%/userdata/scripts/demo/local_stack.sah
+%%DATADIR%%/userdata/scripts/demo/map.sah
+%%DATADIR%%/userdata/scripts/demo/modal.sah
+%%DATADIR%%/userdata/scripts/demo/onchange.sah
+%%DATADIR%%/userdata/scripts/demo/opener.sah
+%%DATADIR%%/userdata/scripts/demo/opentest.sah
+%%DATADIR%%/userdata/scripts/demo/popup_title.sah
+%%DATADIR%%/userdata/scripts/demo/popup_title_name_mix.sah
+%%DATADIR%%/userdata/scripts/demo/prompt.sah
+%%DATADIR%%/userdata/scripts/demo/promptUserInput.sah
+%%DATADIR%%/userdata/scripts/demo/readURL.sah
+%%DATADIR%%/userdata/scripts/demo/readfile.sah
+%%DATADIR%%/userdata/scripts/demo/regexp.sah
+%%DATADIR%%/userdata/scripts/demo/reset.sah
+%%DATADIR%%/userdata/scripts/demo/sahi_demo.sah
+%%DATADIR%%/userdata/scripts/demo/sahi_demo_frames.sah
+%%DATADIR%%/userdata/scripts/demo/sahi_demo_include.sah
+%%DATADIR%%/userdata/scripts/demo/save_as.sah
+%%DATADIR%%/userdata/scripts/demo/select.sah
+%%DATADIR%%/userdata/scripts/demo/sencha_combobox.sah
+%%DATADIR%%/userdata/scripts/demo/set.sah
+%%DATADIR%%/userdata/scripts/demo/set_array.sah
+%%DATADIR%%/userdata/scripts/demo/set_included.sah
+%%DATADIR%%/userdata/scripts/demo/set_included2.sah
+%%DATADIR%%/userdata/scripts/demo/shouldfail/click_null.sah
+%%DATADIR%%/userdata/scripts/demo/shouldfail/fail.suite
+%%DATADIR%%/userdata/scripts/demo/shouldfail/fail_missing.suite
+%%DATADIR%%/userdata/scripts/demo/shouldfail/log_browser_exception_as_failure.sah
+%%DATADIR%%/userdata/scripts/demo/shouldfail/log_exception_as_failure.sah
+%%DATADIR%%/userdata/scripts/demo/shouldfail/set_recovery.sah
+%%DATADIR%%/userdata/scripts/demo/shouldfail/stop_on_error.sah
+%%DATADIR%%/userdata/scripts/demo/shouldfail/syntax_error_line_number.sah
+%%DATADIR%%/userdata/scripts/demo/spandiv.sah
+%%DATADIR%%/userdata/scripts/demo/strict_visible.sah
+%%DATADIR%%/userdata/scripts/demo/table_2darray.sah
+%%DATADIR%%/userdata/scripts/demo/table_cell.sah
+%%DATADIR%%/userdata/scripts/demo/testuff.sah
+%%DATADIR%%/userdata/scripts/demo/textarea.sah
+%%DATADIR%%/userdata/scripts/demo/trycatch.sah
+%%DATADIR%%/userdata/scripts/demo/under.sah
+%%DATADIR%%/userdata/scripts/demo/uploadme.txt
+%%DATADIR%%/userdata/scripts/demo/uploadme2.txt
+%%DATADIR%%/userdata/scripts/demo/verify_shorthands.sah
+%%DATADIR%%/userdata/scripts/demo/verify_shorthands_gen.sah
+%%DATADIR%%/userdata/scripts/demo/verify_shorthands_inc.sah
+%%DATADIR%%/userdata/scripts/demo/wait_for.sah
+%%DATADIR%%/userdata/scripts/demo/wait_for_with_reload.sah
+%%DATADIR%%/userdata/scripts/demo/wait_long.sah
+%%DATADIR%%/userdata/scripts/demo/while.sah
+%%DATADIR%%/userdata/scripts/demo/window_opener_close.sah
+%%DATADIR%%/userdata/scripts/demo/zk_speed.sah
+@dirrm %%DATADIR%%/userdata/scripts/demo/shouldfail
+@dirrm %%DATADIR%%/userdata/scripts/demo/includes
+@dirrm %%DATADIR%%/userdata/scripts/demo
+@dirrm %%DATADIR%%/userdata/scripts
+@dirrm %%DATADIR%%/userdata/logs
+@dirrm %%DATADIR%%/userdata/config
+@dirrm %%DATADIR%%/userdata/bin
+@dirrm %%DATADIR%%/userdata
+@dirrm %%DATADIR%%/tools
+@dirrm %%DATADIR%%/sample_java_project/src/in/co/sahi
+@dirrm %%DATADIR%%/sample_java_project/src/in/co
+@dirrm %%DATADIR%%/sample_java_project/src/in
+@dirrm %%DATADIR%%/sample_java_project/src
+@dirrm %%DATADIR%%/sample_java_project/myuserdata/config
+@dirrm %%DATADIR%%/sample_java_project/myuserdata
+@dirrm %%DATADIR%%/sample_java_project
+@dirrm %%DATADIR%%/ruby/test
+@dirrm %%DATADIR%%/ruby/nbproject
+@dirrm %%DATADIR%%/ruby/lib/sahi
+@dirrm %%DATADIR%%/ruby/lib
+@dirrm %%DATADIR%%/ruby/cucumber/example
+@dirrm %%DATADIR%%/ruby/cucumber
+@dirrm %%DATADIR%%/ruby
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/htdocs/spr/test
+@dirrm %%DATADIR%%/htdocs/spr/runner
+@dirrm %%DATADIR%%/htdocs/spr/manage/ssl
+@dirrm %%DATADIR%%/htdocs/spr/manage
+@dirrm %%DATADIR%%/htdocs/spr/images
+@dirrm %%DATADIR%%/htdocs/spr/ext/selenium
+@dirrm %%DATADIR%%/htdocs/spr/ext/javascript-xpath
+@dirrm %%DATADIR%%/htdocs/spr/ext
+@dirrm %%DATADIR%%/htdocs/spr/css
+@dirrm %%DATADIR%%/htdocs/spr
+@dirrm %%DATADIR%%/htdocs/demo/training/v2
+@dirrm %%DATADIR%%/htdocs/demo/training
+@dirrm %%DATADIR%%/htdocs/demo/regression
+@dirrm %%DATADIR%%/htdocs/demo/plain
+@dirrm %%DATADIR%%/htdocs/demo/php
+@dirrm %%DATADIR%%/htdocs/demo
+@dirrm %%DATADIR%%/htdocs
+@dirrm %%DATADIR%%/extlib/rhino
+@dirrm %%DATADIR%%/extlib/apc
+@dirrm %%DATADIR%%/extlib
+@dirrm %%DATADIR%%/editors/textpad
+@dirrm %%DATADIR%%/editors/notepad++/plugin/APIs
+@dirrm %%DATADIR%%/editors/notepad++/plugin
+@dirrm %%DATADIR%%/editors/notepad++
+@dirrm %%DATADIR%%/editors
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/licenses/sahi
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/licenses/rhino
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/licenses/apc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/licenses
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/java_client/net/sf/sahi/client
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/java_client/net/sf/sahi
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/java_client/net/sf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/java_client/net
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/java_client
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/config/userdata_template/config
+@dirrm %%DATADIR%%/config/userdata_template
+@dirrm %%DATADIR%%/config/ff_profile_template
+@dirrm %%DATADIR%%/config/browser_types
+@dirrm %%DATADIR%%/config
+@dirrm %%DATADIR%%/bin
+@dirrm %%DATADIR%%/batch_runners/ruby
+@dirrm %%DATADIR%%/batch_runners/ant
+@dirrm %%DATADIR%%/batch_runners
+@dirrm %%DATADIR%%
+@exec mkdir -p %D/%%DATADIR%%/userdata/logs
+@exec mkdir -p %D/%%DATADIR%%/ruby/lib/sahi
