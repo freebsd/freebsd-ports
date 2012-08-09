@@ -15,6 +15,8 @@ MAINTAINER=		cy@FreeBSD.org
 COMMENT=		Third version of the sudo shell
 CONFLICTS=		sudosh-*
 
+FORBIDDEN=		Secunia Advisory SA38292, ISS X-Force sudosh-replay-bo (55903), replay() function buffer overflow.
+
 RUN_DEPENDS=		sudo:${PORTSDIR}/security/sudo
 
 GNU_CONFIGURE=		yes
