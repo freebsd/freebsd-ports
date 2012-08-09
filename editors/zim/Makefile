@@ -7,7 +7,7 @@
 
 PORTNAME=	zim
 PORTVERSION=	0.56
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors python
 MASTER_SITES=	http://www.zim-wiki.org/downloads/
 
@@ -70,6 +70,7 @@ RUN_DEPENDS+=	ditaa:${PORTSDIR}/graphics/ditaa
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e "s|decode('utf-8')|decode('utf-8','replace')|g" ${WRKSRC}/zim/utils.py
 
 post-install:
 	-@update-desktop-database
