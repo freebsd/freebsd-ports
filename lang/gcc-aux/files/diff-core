@@ -199,7 +199,7 @@
 +#define UINTPTR_TYPE      (LONG_TYPE_SIZE == 64 ? UINT64_TYPE : UINT32_TYPE)
 --- /dev/null
 +++ gcc/config/dragonfly.h
-@@ -0,0 +1,135 @@
+@@ -0,0 +1,136 @@
 +/* Base configuration file for all DragonFly targets.
 +   Copyright (C) 1999, 2000, 2001, 2007, 2008 Free Software Foundation, Inc.
 +
@@ -286,8 +286,9 @@
 +    %{rdynamic:-export-dynamic} \
 +    -dynamic-linker %(dfbsd_dynamic_linker) \
 +   } \
-+  %{static:-Bstatic}} \
-+  %{!static:--hash-style=both} \
++   %{static:-Bstatic} \
++  } \
++  %{!static:--hash-style=both -rpath @PREFIX@/gcc-aux/lib} \
 +  %{symbolic:-Bsymbolic}"
 +
 +#undef  LINK_SPEC
@@ -572,15 +573,54 @@
 +
 --- gcc/config/i386/freebsd.h.orig
 +++ gcc/config/i386/freebsd.h
-@@ -148,3 +148,5 @@
+@@ -91,6 +91,12 @@
+    When the -shared link option is used a final link is not being
+    done.  */
+ 
++#if FBSD_MAJOR < 9
++#define ELF_HASH_STYLE ""
++#else
++#define ELF_HASH_STYLE "--hash-style=both "
++#endif
++
+ #undef	LINK_SPEC
+ #define LINK_SPEC "\
+   %{p:%nconsider using '-pg' instead of '-p' with gprof(1)} \
+@@ -102,6 +108,7 @@
+         %{rdynamic:-export-dynamic} \
+         -dynamic-linker %(fbsd_dynamic_linker) } \
+     %{static:-Bstatic}} \
++  %{!static:" ELF_HASH_STYLE "-rpath @PREFIX@/gcc-aux/lib} \
+   %{symbolic:-Bsymbolic}"
+ 
+ /* A C statement to output to the stdio stream FILE an assembler
+@@ -148,3 +155,5 @@
  
  #define TARGET_ASM_FILE_END file_end_indicate_exec_stack
  
 +/* Compile in __enable_execute_stack (void *) (see config.host) */
 +#define HAVE_ENABLE_EXECUTE_STACK
+--- gcc/config/i386/freebsd64.h.orig
++++ gcc/config/i386/freebsd64.h
+@@ -41,4 +41,5 @@
+         %{rdynamic:-export-dynamic} \
+ 	-dynamic-linker %(fbsd_dynamic_linker) } \
+     %{static:-Bstatic}} \
++  %{!static:" ELF_HASH_STYLE "-rpath @PREFIX@/gcc-aux/lib} \
+   %{symbolic:-Bsymbolic}"
 --- gcc/config/i386/netbsd-elf.h.orig
 +++ gcc/config/i386/netbsd-elf.h
-@@ -119,3 +119,9 @@
+@@ -38,7 +38,8 @@
+ /* Provide a LINK_SPEC appropriate for a NetBSD/i386 ELF target.  */
+ 
+ #undef LINK_SPEC
+-#define LINK_SPEC NETBSD_LINK_SPEC_ELF
++#define LINK_SPEC NETBSD_LINK_SPEC_ELF \
++"%{!static:-rpath @PREFIX@/gcc-aux/lib}"
+ 
+ #define NETBSD_ENTRY_POINT "__start"
+ 
+@@ -119,3 +120,9 @@
  #define DEFAULT_PCC_STRUCT_RETURN 1
  
  #define HAVE_ENABLE_EXECUTE_STACK

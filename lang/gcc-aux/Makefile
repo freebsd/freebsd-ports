@@ -7,6 +7,7 @@
 
 PORTNAME=	gcc-aux
 PORTVERSION=	${SNAPSHOT}
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/src/:boot \
 		http://dragonlace.mirrors.ada.cx/src/:boot \
@@ -200,6 +201,12 @@ post-extract:
 	@${ECHO} "Applying composite patch diff-${suffix}"
 	@${PATCH} -d ${WRKSRC} -s -E < ${FILESDIR}/diff-${suffix}
 .endfor
+
+	# Update LINK_SPEC to add gcc-aux lib runpath in every binary
+	@${ECHO} "Configuring LINK_SPEC runpath"
+	@perl -pi -e 's;\@PREFIX\@;${PREFIX};' \
+	  ${WRKSRC}/gcc/config/i386/freebsd64.h \
+	  ${WRKSRC}/gcc/config/i386/freebsd.h
 
 .if defined(WITH_STATIC)
 	@${ECHO} "Reconfiguring GCC Makefile to build compiler statically"
