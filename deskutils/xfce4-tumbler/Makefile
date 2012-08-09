@@ -7,7 +7,7 @@
 
 PORTNAME=	tumbler
 PORTVERSION=	0.1.25
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 PKGNAMEPREFIX=	xfce4-
@@ -23,10 +23,10 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool
-USE_GNOME=	glib20 gnomehack intltool intlhack pkgconfig
+USE_GNOME=	glib20 gnomehack intltool intlhack
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv
+USE_PKGCONFIG=	build
 
 CONFIGURE_ARGS=	--enable-xdg-cache \
 		--disable-gtk-doc-html
@@ -124,6 +124,11 @@ PLIST_SUB+=	RAW=""
 .else
 CONFIGURE_ARGS+=--disable-raw-thumbnailer
 PLIST_SUB+=	RAW="@comment "
+.endif
+
+.if empty(PORT_OPTIONS:MNLS)
+post-patch:
+	@${REINPLACE_CMD} -e 's|	po||' ${WRKSRC}/Makefile.in
 .endif
 
 .include <bsd.port.mk>
