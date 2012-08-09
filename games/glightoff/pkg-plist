@@ -4,7 +4,7 @@ share/applications/glightoff.desktop
 %%NLS%%share/locale/fr/LC_MESSAGES/glightoff.mo
 %%NLS%%share/locale/it/LC_MESSAGES/glightoff.mo
 share/pixmaps/glightoff.png
-share/pixmaps/glightoff/bulb_on.svg
 share/pixmaps/glightoff/bulb_off.svg
+share/pixmaps/glightoff/bulb_on.svg
 @dirrm share/pixmaps/glightoff
 @dirrmtry share/applications

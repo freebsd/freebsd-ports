@@ -17,7 +17,7 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	glib20 gtk20 intltool pkgconfig
+USE_GNOME=	glib20 gtk20 intltool
 USE_XORG=	x11
 
 CFLAGS+=	-I${LOCALBASE}/include
@@ -42,12 +42,12 @@ post-configure:
 .endif
 
 post-install:
-# Documentations
-.if !defined(NOPORTDOCS)
+# Documentation
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
+.  for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+.  endfor
 .endif
 
 .include <bsd.port.mk>
