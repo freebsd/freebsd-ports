@@ -16,6 +16,6 @@ include/mysql_connection.h
 include/mysql_driver.h
 lib/libmysqlcppconn-static.a
 lib/libmysqlcppconn.so
-lib/libmysqlcppconn.so.5.%%PORTVERSION%%
-lib/libmysqlcppconn.so.5
+lib/libmysqlcppconn.so.6.%%PORTVERSION%%
+lib/libmysqlcppconn.so.6
 @dirrm include/cppconn
