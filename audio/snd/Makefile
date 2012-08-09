@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snd
-PORTVERSION=	12.12
+PORTVERSION=	13.0
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ccrma-ftp.stanford.edu/pub/Lisp/ \
 		http://mirror.mcx2.org/
