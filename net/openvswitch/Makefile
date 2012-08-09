@@ -6,17 +6,9 @@
 #
 
 PORTNAME=	openvswitch
-DISTVERSION=	1.1.0pre2
+PORTVERSION=	1.7.0
 CATEGORIES=	net
 MASTER_SITES=	http://openvswitch.org/releases/
-#MASTER_SITE_SUBDIR=
-#PKGNAMEPREFIX=
-#PKGNAMESUFFIX=
-#DISTNAME=
-#EXTRACT_SUFX=
-#DISTFILES=
-#DIST_SUBDIR=	${PORTNAME}
-#EXTRACT_ONLY=
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	A production quality, multilayer virtual switch
@@ -30,11 +22,13 @@ USE_AUTOTOOLS=	autoconf automake
 USE_GNOME=	pkgconfig
 USE_PYTHON=	yes
 USE_RC_SUBR=	ovs-vswitchd ovsdb-server
-MAN1=		ovsdb-tool.1 ovsdb-client.1 ovsdb-server.1
+MAN1=		ovs-benchmark.1 ovs-pcap.1 ovs-tcpundump.1 ovsdb-client.1 \
+		ovsdb-server.1 ovsdb-tool.1
 MAN5=		ovs-vswitchd.conf.db.5
-MAN8=		ovs-appctl.8 ovs-controller.8 ovs-discover.8 ovs-dpctl.8 \
-		ovs-kill.8 ovs-ofctl.8 ovs-openflowd.8 ovs-parse-leaks.8 \
-		ovs-pki.8 ovs-vsctl.8 ovs-vswitchd.8 ovs-brcompatd.8
+MAN8=		ovs-appctl.8 ovs-brcompatd.8 ovs-bugtool.8 ovs-controller.8 \
+		ovs-ctl.8 ovs-dpctl.8 ovs-ofctl.8 ovs-parse-leaks.8 ovs-pki.8 \
+		ovs-test.8 ovs-vsctl.8 ovs-vswitchd.8 \
+		ovs-vlan-bug-workaround.8 ovs-vlan-test.8
 
 .include <bsd.port.pre.mk>
 
@@ -48,6 +42,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|1.11.1|%%AUTOMAKE_APIVER%%|g' \
 			  -e 's|2.65|%%AUTOCONF_VERSION%%|g' \
 			  ${WRKSRC}/aclocal.m4
+	# Workaround for a makefile bug; if it builds without this line, remove it.
+	#${TOUCH} ${WRKSRC}/INSTALL
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/vswitchd/vswitch.ovsschema ${PREFIX}/share/openvswitch/
