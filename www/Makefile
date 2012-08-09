@@ -1849,7 +1849,6 @@
     SUBDIR += trac-calendar
     SUBDIR += trac-ccselector
     SUBDIR += trac-codetags
-    SUBDIR += trac-ctxtnavadd
     SUBDIR += trac-customfieldadmin
     SUBDIR += trac-customroadmap
     SUBDIR += trac-datefield

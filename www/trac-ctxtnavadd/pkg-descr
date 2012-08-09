@@ -1,5 +1,0 @@
-This plugin provides an interface (ICtxtnavAdder) to alter the ctxtnav bar of
-other plugins, most notably the wiki. For those of you asking what a ctxtnav
-bar is, its the row of links below the main navigation bar.
-
-WWW: http://trac-hacks.org/wiki/CtxtnavAddPlugin
