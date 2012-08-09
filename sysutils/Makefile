@@ -456,6 +456,7 @@
     SUBDIR += lfm
     SUBDIR += libcdio
     SUBDIR += libchk
+    SUBDIR += libfvde
     SUBDIR += libgksu
     SUBDIR += libieee1284
     SUBDIR += libpcbsd

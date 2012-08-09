@@ -1,0 +1,17 @@
+@comment $FreeBSD$
+bin/fvdeinfo
+bin/fvdemount
+include/libfvde.h
+include/libfvde/codepage.h
+include/libfvde/definitions.h
+include/libfvde/error.h
+include/libfvde/extern.h
+include/libfvde/features.h
+include/libfvde/types.h
+lib/libfvde.so.1
+lib/libfvde.so
+lib/libfvde.la
+lib/libfvde.a
+libdata/pkgconfig/libfvde.pc
+@dirrmtry lib/pkgconfig
+@dirrm include/libfvde
