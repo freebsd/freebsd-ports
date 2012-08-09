@@ -71,6 +71,8 @@ pre-patch:
 		`${FIND} ${WRKSRC} -name autoconf.mk`
 
 post-patch:
+	${REINPLACE_CMD} "s,/usr/bin/perl,${PERL}," \
+		${WRKSRC}/mailnews/extensions/enigmail/makemake
 	${REINPLACE_CMD} "s/^XPI_MODULE_VERS = [0-9.]*/XPI_MODULE_VERS = ${PORTVERSION}/" \
 		${WRKSRC}/mailnews/extensions/enigmail/Makefile.in
 	${REINPLACE_CMD} "s,<em:version>[0-9.a-z]*</em:version>,<em:version>${PORTVERSION}</em:version>," \
