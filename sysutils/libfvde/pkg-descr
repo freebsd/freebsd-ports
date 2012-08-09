@@ -1,0 +1,14 @@
+Library and tools for reading FileVault2 Drive Encryption (FVDE) encrypted
+volumes. The FVDE format is used by MacOS-X, as of Lion, to encrypt data
+on a storage media volume.
+
+Supported FVDE formats:
+
+    FileVault2 Lion 
+
+Supported protection methods:
+
+    password
+    recovery password 
+
+WWW:	https://code.google.com/p/libfvde/
