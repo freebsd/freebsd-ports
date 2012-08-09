@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cfengine.org/tarballs/
 
 MAINTAINER=	cy@FreeBSD.org
+#		gjb@FreeBSD.org is also committer for this port
 COMMENT=	A systems administration tool for networks
 
 CONFLICTS=	cfengine-3*

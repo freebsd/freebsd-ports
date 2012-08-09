@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://cfengine.com/source-code/download?file=
 
 MAINTAINER=	cy@FreeBSD.org
+#		gjb@FreeBSD.org is also committer for this port
 COMMENT=	A systems administration tool for networks
 LATEST_LINK=	cfengine3
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
