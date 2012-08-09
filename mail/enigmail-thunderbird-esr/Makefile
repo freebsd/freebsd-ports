@@ -5,7 +5,6 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	1.4
 PKGNAMEPREFIX=	${GECKO}-esr-
 
 COMMENT=	A GnuPG extension for the Thunderbird mail client

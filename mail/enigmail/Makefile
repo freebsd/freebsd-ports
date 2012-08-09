@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	enigmail
-PORTVERSION?=	1.4.2
+PORTVERSION?=	1.4.3
 PORTREVISION?=	0
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.mozilla-enigmail.org/download/source/
@@ -29,49 +29,34 @@ GECKO_PORTDIR=	www/${GECKO}
 IGNORE=		is an abstract port: use one of the slave ports
 .endif
 
-GECKO_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${GECKO_PORTDIR}:${GECKO_TARGET} \
+GECKO_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${GECKO_PORTDIR}:build \
 		${GECKO}:${PORTSDIR}/${GECKO_PORTDIR} \
 		autoconf-2.13:${PORTSDIR}/devel/autoconf213 \
 		gmake:${PORTSDIR}/devel/gmake \
 		intltool-extract:${PORTSDIR}/textproc/intltool \
-		${LOCALBASE}/libdata/pkgconfig/printproto.pc:${PORTSDIR}/x11/printproto
-
-.if ${PORTVERSION} == "1.1.2"
-GECKO_TARGET=	configure
-.else
-GECKO_TARGET=	build
-GECKO_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip \
+		${LOCALBASE}/libdata/pkgconfig/printproto.pc:${PORTSDIR}/x11/printproto \
+		unzip:${PORTSDIR}/archivers/unzip \
 		yasm:${PORTSDIR}/devel/yasm
-.endif
 
-.if defined(GECKO_EXTDIR)
 GECKO_WRKSRC=	${WRKDIR}/../../../${GECKO_PORTDIR}/work/${GECKO_EXTDIR}
 WRKSRC=		${WRKDIR}/${GECKO_EXTDIR}
-. if ${GECKO_PORTDIR:N*-esr}
-MOZSRC=		${WRKSRC}/obj-${CONFIGURE_TARGET:S/amd64/x86_64/}/mozilla
-. else
-MOZSRC=		${WRKSRC}/mozilla
-. endif
+.if ${GECKO_PORTDIR:N*-esr}
+MOZOBJ=		${WRKSRC}/obj-${CONFIGURE_TARGET:S/amd64/x86_64/}
 .else
-GECKO_WRKSRC=	${WRKDIR}/../../../${GECKO_PORTDIR}/work/mozilla
-WRKSRC=		${WRKDIR}/mozilla
-MOZSRC=		${WRKSRC}
+MOZOBJ=		${WRKSRC}
 .endif
 
 USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
-XPI_FILE=	${MOZSRC}/dist/bin/${DISTNAME}-freebsd-${ARCH:S/amd64/x86_64/}.xpi
+XPI_FILE=	${MOZOBJ}/mozilla/dist/bin/${DISTNAME}-freebsd-${ARCH:S/amd64/x86_64/}.xpi
 XPI_LIBDIR=	${PREFIX}/lib/xpi
 XPI_ORIG_ID=	{847b3a00-7ab1-11d4-8f02-006008948af5}
 XPI_ID=		${GECKO}@mozilla-enigmail.org
-XPI_ID_RFILES=	${XPI_LIBDIR}/${XPI_ID}/install.rdf
-.if ${PORTVERSION} == "1.1.2"
-XPI_ID_RFILES+=	${XPI_LIBDIR}/${XPI_ID}/components/enigmail.js
-.else
-XPI_ID_RFILES+=	${XPI_LIBDIR}/${XPI_ID}/components/enigmail.js ${XPI_LIBDIR}/${XPI_ID}/modules/enigmailCommon.jsm
-.endif
+XPI_ID_RFILES=	${XPI_LIBDIR}/${XPI_ID}/install.rdf \
+		${XPI_LIBDIR}/${XPI_ID}/components/enigmail.js \
+		${XPI_LIBDIR}/${XPI_ID}/modules/enigmailCommon.jsm
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
@@ -88,29 +73,20 @@ pre-patch:
 post-patch:
 	${REINPLACE_CMD} "s/^XPI_MODULE_VERS = [0-9.]*/XPI_MODULE_VERS = ${PORTVERSION}/" \
 		${WRKSRC}/mailnews/extensions/enigmail/Makefile.in
+	${REINPLACE_CMD} "s,<em:version>[0-9.a-z]*</em:version>,<em:version>${PORTVERSION}</em:version>," \
+		${WRKSRC}/mailnews/extensions/enigmail/package/install.rdf
+.if ${GECKO_PORTDIR:M*-esr}
+	${REINPLACE_CMD} "s,<em:minVersion>12.0</em:minVersion>,<em:minVersion>10.0</em:minVersion>," \
+		${WRKSRC}/mailnews/extensions/enigmail/package/install.rdf
+.endif
 
 do-build:
-.if ${GECKO_TARGET} == "configure"
-	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC} tier_base
-	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC} tier_nspr
-	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC} tier_js
-	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/.. export
-	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/modules/libreg
-	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/xpcom/string
-	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/xpcom
-.endif
-.if ${GECKO_PORTDIR:N*-esr}
-	cd ${WRKSRC}/mailnews/extensions/enigmail; \
-		./makemake -r -o $${objdir=${WRKSRC}/obj-${CONFIGURE_TARGET:S/amd64/x86_64/}}; \
-	${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} \
-			-C $$objdir/mailnews/extensions/enigmail; \
-	${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} xpi \
-			-C $$objdir/mailnews/extensions/enigmail
-.else
-	cd ${WRKSRC}/mailnews/extensions/enigmail && ./makemake -r
-	cd ${WRKSRC}/mailnews/extensions/enigmail && ${SETENV} ${MAKE_ENV} ${GMAKE}
-	cd ${WRKSRC}/mailnews/extensions/enigmail && ${SETENV} ${MAKE_ENV} ${GMAKE} xpi
-.endif
+	cd ${WRKSRC}/mailnews/extensions/enigmail && \
+		./makemake -r -o ${MOZOBJ} && \
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} \
+			-C ${MOZOBJ}/mailnews/extensions/enigmail && \
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} xpi \
+			-C ${MOZOBJ}/mailnews/extensions/enigmail
 
 do-install:
 	@${MKDIR} ${XPI_LIBDIR}/${XPI_ID} ${XPI_LIBDIR}/symlinks/${GECKO}
