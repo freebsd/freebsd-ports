@@ -1,21 +1,17 @@
---- CMakeLists.txt.orig	2010-09-10 11:47:48.000000000 +0200
-+++ CMakeLists.txt	2011-11-21 16:42:10.000000000 +0100
-@@ -225,7 +225,6 @@
+--- CMakeLists.txt.orig	2012-08-09 10:44:22.000000000 +0200
++++ CMakeLists.txt	2012-08-09 10:46:37.000000000 +0200
+@@ -252,14 +252,6 @@
  SET( LICENSE_FILENAME "${CPACK_RESOURCE_FILE_LICENSE}")")
  ENDIF(WIN32)
  
--INSTALL(FILES ${CPACK_RESOURCE_FILE_README} ${CPACK_RESOURCE_FILE_LICENSE} "${CMAKE_SOURCE_DIR}/ANNOUNCEMENT" DESTINATION "." OPTIONAL)
- 
+-INSTALL(FILES
+-	${CPACK_RESOURCE_FILE_README}
+-	${CPACK_RESOURCE_FILE_INSTALL}
+-	${CPACK_RESOURCE_FILE_LICENSE}
+-	"${CMAKE_SOURCE_DIR}/Licenses_for_Third-Party_Components.txt"
+-	"${CMAKE_SOURCE_DIR}/ANNOUNCEMENT"
+-	DESTINATION "." OPTIONAL)
+-
  SET(COMMON_IGNORE_FILES "/CMakeFiles/" "/Testing/" "/.bzr/" "_CPack_Packages/"
      ".cmake$" "~" ".swp" ".log" ".gz" ".directory$" "CMakeCache.txt" "Makefile"
-@@ -252,6 +252,10 @@
- ENDIF(WIN32)
- MESSAGE(STATUS "Installation path is: ${CMAKE_INSTALL_PREFIX}   (overwrite with -DCMAKE_INSTALL_PREFIX=/your/path)")
- 
-+# this is where generated config.h files are placed
-+INCLUDE_DIRECTORIES(${MYSQLCPPCONN_BINARY_DIR})
-+INCLUDE_DIRECTORIES(${MYSQLCPPCONN_BINARY_DIR}/cppconn)
-+INCLUDE_DIRECTORIES(${MYSQLCPPCONN_BINARY_DIR}/driver/nativeapi)
- 
- ADD_SUBDIRECTORY(cppconn)
- ADD_SUBDIRECTORY(driver)
+ 	"install_manifest.txt")
