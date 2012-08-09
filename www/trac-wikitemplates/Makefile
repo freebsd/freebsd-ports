@@ -17,8 +17,8 @@ DISTNAME=	${PORTNAME}plugin-${PORTVERSION:S/p/rc/}
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Templates for the Trac wiki
 
-RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
-		${PYTHON_SITELIBDIR}/TracCtxtnavAdd-2.0-py${_PYTHON_VERSION}.egg:${PORTSDIR}/www/trac-ctxtnavadd
+RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
+#		${PYTHON_SITELIBDIR}/TracCtxtnavAdd-2.0-py${_PYTHON_VERSION}.egg:${PORTSDIR}/www/trac-ctxtnavadd
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin
 USE_PYTHON=	yes
