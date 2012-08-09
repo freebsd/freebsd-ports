@@ -540,6 +540,7 @@
     SUBDIR += mongrel2
     SUBDIR += moodle
     SUBDIR += moodle2
+    SUBDIR += moodle22
     SUBDIR += moonshine
     SUBDIR += mozplugger
     SUBDIR += multisort
