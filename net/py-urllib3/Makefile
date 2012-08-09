@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	urllib3
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	duchateau.olivier@gmail.com
+MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	Enhance HTTP Python's standard library
 
 LICENSE=	MIT
@@ -23,7 +23,6 @@ USE_PYDISTUTILS=	easy_install
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
 post-patch:
-	@cd ${WRKSRC} && \
-		${FIND} . -type f -name '*.orig' -exec ${RM} -f \{\} \;
+	@${REINPLACE_CMD} -e "s|'dummyserver', ||" ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
