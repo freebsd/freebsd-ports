@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-conf
 PORTVERSION=	4.10.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DISTNAME=	xfconf-${PORTVERSION}
@@ -19,15 +19,15 @@ COMMENT=	D-Bus-based configuration storage system
 BUILD_DEPENDS=	p5-XML-Parser>0:${PORTSDIR}/textproc/p5-XML-Parser
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	glib20 gnomehack gtk20 intltool intlhack pkgconfig
+USE_GNOME=	glib20 gnomehack gtk20 intltool intlhack
 USE_LDCONFIG=	yes
 USE_PERL5_BUILD=	yes
 USE_XFCE=	configenv libutil
 USE_XORG=	x11
+USE_PKGCONFIG=	build
 
 CONFIGURE_ARGS+=--disable-gtk-doc-html
 
@@ -65,6 +65,11 @@ PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if empty(PORT_OPTIONS:MNLS)
+post-patch:
+	@${REINPLACE_CMD} -e 's|po ||' ${WRKSRC}/Makefile.in
 .endif
 
 .include <bsd.port.mk>

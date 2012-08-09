@@ -4,7 +4,6 @@ include/xfce4/xfconf-0/xfconf/xfconf-channel.h
 include/xfce4/xfconf-0/xfconf/xfconf-errors.h
 include/xfce4/xfconf-0/xfconf/xfconf-types.h
 include/xfce4/xfconf-0/xfconf/xfconf.h
-lib/libxfconf-0.a
 lib/libxfconf-0.la
 lib/libxfconf-0.so
 lib/libxfconf-0.so.2
