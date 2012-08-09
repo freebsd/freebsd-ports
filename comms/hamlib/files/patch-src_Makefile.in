@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2012-02-02 21:47:04.000000000 -0500
-+++ src/Makefile.in	2012-02-03 15:12:35.000000000 -0500
-@@ -104,7 +104,7 @@
+--- src/Makefile.in.orig	2012-08-05 09:10:08.000000000 -0500
++++ src/Makefile.in	2012-08-07 06:59:39.000000000 -0500
+@@ -103,7 +103,7 @@
  libhamlib_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(libhamlib_la_CFLAGS) \
  	$(CFLAGS) $(libhamlib_la_LDFLAGS) $(LDFLAGS) -o $@
@@ -9,7 +9,7 @@
  depcomp = $(SHELL) $(top_srcdir)/depcomp
  am__depfiles_maybe = depfiles
  am__mv = mv -f
-@@ -194,7 +194,7 @@
+@@ -193,7 +193,7 @@
  LDFLAGS = @LDFLAGS@
  LIBLTDL = @LIBLTDL@
  LIBOBJS = @LIBOBJS@
