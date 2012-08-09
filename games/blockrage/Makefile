@@ -7,6 +7,7 @@
 
 PORTNAME=	blockrage
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
@@ -15,36 +16,45 @@ COMMENT=	Block Rage is falling blocks game with a 2-player hotseat mode
 
 LICENSE=	GPLv2
 
+OPTIONS_DEFINE=	DATA
+OPTIONS_DEFAULT=	DATA
+
 GNU_CONFIGURE=	yes
 ALL_TARGET=	${PORTNAME}
 USE_SDL=	sdl image mixer
 MAKE_JOBS_SAFE=	yes
 
-PLIST_FILES=	bin/blockrage
+PLIST_FILES=	bin/${PORTNAME}
 
-MAN6=		blockrage.6
+MAN6=		${PORTNAME}.6
 
 PORTDATA=	*
 PORTDOCS=	ChangeLog KNOWN_BUGS README TODO
 
+SUB_FILES=	${PORTNAME}
+
+.include <bsd.port.options.mk>
+
 do-install:
 # Scripts
-	@${PRINTF} "#!/bin/sh\n\ncd ${DATADIR} &&\
-		./blockrage\n" > ${WRKDIR}/blockrage.sh
-	@${INSTALL_SCRIPT} ${WRKDIR}/blockrage.sh ${PREFIX}/bin/blockrage
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
+
 # Executable
 	${MKDIR} ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/blockrage ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${DATADIR}
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/${MAN6} ${MAN6PREFIX}/man/man6
+
 # Data
-.for d in data blockrage-fhs.rc blockrage.cfg blockrage.rc
+.if ${PORT_OPTIONS:MDATA}
+.  for d in data blockrage-fhs.rc blockrage.cfg blockrage.rc
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${DATADIR})
-.endfor
+.  endfor
+.endif
 
 # Documentations
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .  for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
