@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	dnsmasq
-DISTVERSION=	2.63rc2
+DISTVERSION=	2.63rc3
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/release-candidates/
 PKGNAMESUFFIX=	-devel
-EXTRACT_SUFX=	.tar.lzma
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Lightweight DNS forwarder, DHCP, and TFTP server
