@@ -7,6 +7,7 @@
 
 PORTNAME=	pcsc-lite
 PORTVERSION=	1.8.5
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	devel security
 MASTER_SITES=	https://alioth.debian.org/frs/download.php/3741/
@@ -27,8 +28,7 @@ USE_RC_SUBR=	pcscd
 USE_LDCONFIG=	yes
 CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ENV=	LIBS="${LIBS} ${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--enable-ipcdir=/var/tmp/ \
-		--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers/
+CONFIGURE_ARGS=	--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers/
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
