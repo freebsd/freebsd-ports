@@ -7,7 +7,7 @@
 
 PORTNAME=	firebird
 PORTVERSION=	2.5.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	databases
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:S/.0//}-Release/
 PKGNAMESUFFIX?=	-server
@@ -82,7 +82,7 @@ USE_RC_SUBR=	firebird
 SUB_FILES=	pkg-install pkg-message
 
 UTIL_SBIN=	fb_inet_server fb_lock_print fb_smp_server
-UTIL_BIN=	fbguard fbstat fbsvcmgr fbtracemgr gbak gdef gfix gsec gsplit \
+UTIL_BIN=	fbguard fbsplit fbstat fbsvcmgr fbtracemgr gbak gdef gfix gsec \
 		nbackup
 UDF_SO=		ib_udf.so fbudf.so
 UDF_SQL=	src/extlib/ib_udf2.sql src/extlib/fbudf/fbudf.sql
@@ -111,7 +111,8 @@ post-patch:
 	${FIND} ${WRKSRC} -name "*.sh" -exec ${CHMOD} +x {} \+
 	${REINPLACE_CMD} -e \
 			's|/isql|/isql-fb|g' -e \
-			's|/gstat|/fbstat|g' ${WRKSRC}/builds/posix/make.defaults
+			's|/gstat|/fbstat|g' -e \
+			's|/gsplit|/fbsplit|g' ${WRKSRC}/builds/posix/make.defaults
 
 .include <bsd.port.pre.mk>
 

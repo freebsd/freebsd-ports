@@ -26,6 +26,12 @@ before doing anything serious with Firebird.
 
 5) See documentation in %%DOCSDIR%%/ for more information.
 
-6) Enjoy it ;)
+6) Some firebird tools were renamed for avoid conflicts with some other ports
+
+	%%PREFIX%%/bin/isql	-> 	%%PREFIX%%/bin/isql-fb
+	%%PREFIX%%/bin/gstat	->	%%PREFIX%%/bin/fbstat
+	%%PREFIX%%/bin/gsplit	->	%%PREFIX%%/bin/fbsplit
+
+7) Enjoy it ;)
 
 ################################################################################
