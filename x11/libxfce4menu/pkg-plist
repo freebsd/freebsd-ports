@@ -13,11 +13,9 @@ include/xfce4/libxfce4ui-1/libxfce4ui/xfce-gtk-extensions.h
 include/xfce4/libxfce4ui-1/libxfce4ui/xfce-sm-client.h
 include/xfce4/libxfce4ui-1/libxfce4ui/xfce-spawn.h
 include/xfce4/libxfce4ui-1/libxfce4ui/xfce-titled-dialog.h
-lib/libxfce4kbd-private-2.a
 lib/libxfce4kbd-private-2.la
 lib/libxfce4kbd-private-2.so
 lib/libxfce4kbd-private-2.so.0
-lib/libxfce4ui-1.a
 lib/libxfce4ui-1.la
 lib/libxfce4ui-1.so
 lib/libxfce4ui-1.so.0

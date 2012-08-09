@@ -7,7 +7,7 @@
 
 PORTNAME=	libxfce4menu
 PORTVERSION=	4.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DISTNAME=	libxfce4ui-${PORTVERSION}
@@ -16,14 +16,14 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Widgets library for the Xfce desktop environment
 
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	glib20 gnomehack gtk20 intltool intlhack pkgconfig desktopfileutils
+USE_GNOME=	glib20 gnomehack gtk20 intltool intlhack desktopfileutils
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libutil xfconf
 INSTALLS_ICONS=	yes
+USE_PKGCONFIG=	build
 
 CONFIGURE_ARGS=	--disable-gtk-doc-html \
 		--with-vendor-info=FreeBSD
@@ -62,6 +62,12 @@ LIB_DEPENDS+=	gladeui-1.10:${PORTSDIR}/devel/glade3
 CONFIGURE_ARGS+=--enable-gladeui
 .else
 CONFIGURE_ARGS+=--disable-gladeui
+.endif
+
+.if empty(PORT_OPTIONS:MNLS)
+post-patch:
+	@${REINPLACE_CMD} -e 's|docs \\|docs|| ; \
+		s|po||' ${WRKSRC}/Makefile.in
 .endif
 
 .include <bsd.port.mk>
