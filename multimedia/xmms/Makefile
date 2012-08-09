@@ -10,6 +10,7 @@ PORTVERSION=	1.2.11
 PORTREVISION=	16
 CATEGORIES+=	multimedia audio ipv6
 MASTER_SITES=	http://www.xmms.org/files/1.2.x/ \
+		http://legacy.xmms2.org/ \
 		LOCAL/beech
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
