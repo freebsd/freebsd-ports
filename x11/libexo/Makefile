@@ -7,7 +7,7 @@
 
 PORTNAME=	libexo
 PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DISTNAME=	exo-${PORTVERSION}
@@ -26,12 +26,12 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack glib20 gtk20 intltool intlhack pkgconfig \
-		desktopfileutils
+USE_GNOME=	gnomehack glib20 gtk20 intltool intlhack desktopfileutils
 USE_LDCONFIG=	yes
 USE_PERL5=	yes
 USE_XFCE=	configenv libmenu libutil
 USE_XORG=	x11
+USE_PKGCONFIG=	build
 
 CONFIGURE_ARGS+=--enable-gio-unix \
 		--disable-gtk-doc-html
@@ -57,6 +57,11 @@ PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if empty(PORT_OPTIONS:MNLS)
+post-patch:
+	@${REINPLACE_CMD} -e 's|	po||' ${WRKSRC}/Makefile.in
 .endif
 
 post-install:
