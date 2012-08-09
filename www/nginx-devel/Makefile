@@ -764,7 +764,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-xss-nginx-module-${GIT_XSS_VERSIO
 .if ${PORT_OPTIONS:MSPDY}
 USE_OPENSSL_PORT=	yes
 USE_HTTP_SSL=	yes
-NGINX_SPDY_VERSION=	48
+NGINX_SPDY_VERSION=	51
 PATCH_SITES=	http://nginx.org/patches/spdy/:spdy
 PATCHFILES=	patch.spdy-${NGINX_SPDY_VERSION}.txt:spdy
 .endif
