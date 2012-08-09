@@ -17,10 +17,14 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	gjc@alum.mit.edu
 COMMENT=	A tool to test an operating system's robustness
 
+# according to license.rtf, and using the most restrictive one:
+LICENSE=	LGPL21
+
 USE_GMAKE=	yes
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 MAN1=		crashme.1
+PLIST_FILES=	bin/crashme bin/pddet
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/crashme ${PREFIX}/bin

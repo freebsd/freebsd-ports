@@ -4,4 +4,4 @@ procedure. The standard signals are caught and handled with a setjmp
 back to a loop which will try again to produce a fault by executing
 random data. Some people call this stress testing.  
 
-WWW: http://people.delphiforums.com/gjc/crashme.html
+WWW: http://crashme.codeplex.com/
