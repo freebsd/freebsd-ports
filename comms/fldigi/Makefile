@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fldigi
-PORTVERSION=	3.21.41
-PORTREVISION=	1
+PORTVERSION=	3.21.50
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/downloads/fldigi/\
 		${MASTER_SITE_LOCAL}
@@ -107,13 +106,8 @@ CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	NLS=""
 USE_GETTEXT=	yes
 .endif
-.if	!defined(NOPORTDOCS)
+# Always need asciidoc for man pages
 CONFIGURE_ARGS+=--with-asciidoc
-PLIST_SUB	+=ASCIIDOC=""
-.else
-CONFIGURE_ARGS+=--without-asciidoc
-PLIST_SUB+=	ASCIIDOC="@comment "
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|png_infopp_NULL|NULL|' \
