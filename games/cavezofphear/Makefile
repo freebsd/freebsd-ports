@@ -8,7 +8,8 @@
 PORTNAME=	cavezofphear
 PORTVERSION=	0.5.1
 CATEGORIES=	games
-MASTER_SITES=	http://www.x86.no/cavezofphear/
+MASTER_SITES=	http://www.x86.no/cavezofphear/ \
+		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	phear-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
