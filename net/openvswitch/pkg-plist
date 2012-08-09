@@ -1,17 +1,33 @@
 bin/ovs-appctl
 bin/ovs-controller
-bin/ovs-discover
 bin/ovs-dpctl
-bin/ovs-kill
 bin/ovs-ofctl
-bin/ovs-openflowd
 bin/ovs-vsctl
+bin/ovs-benchmark
 bin/ovsdb-tool
 bin/ovsdb-client
 bin/ovs-pki
+bin/ovs-parse-leaks
+bin/ovs-pcap
+bin/ovs-tcpundump
+bin/ovs-test
+bin/ovs-vlan-test
 sbin/ovs-vswitchd
 sbin/ovsdb-server
+sbin/ovs-bugtool
+share/openvswitch/bugtool-plugins/kernel-info/openvswitch.xml
+share/openvswitch/bugtool-plugins/network-status/openvswitch.xml
+share/openvswitch/bugtool-plugins/system-configuration.xml
+share/openvswitch/bugtool-plugins/system-logs/openvswitch.xml
+share/openvswitch/bugtool-plugins/system-configuration/openvswitch.xml
 share/openvswitch/python/ovs/dirs.py
+share/openvswitch/python/ovs/db/__init__.py
+share/openvswitch/python/ovs/db/data.py
+share/openvswitch/python/ovs/db/error.py
+share/openvswitch/python/ovs/db/idl.py
+share/openvswitch/python/ovs/db/parser.py
+share/openvswitch/python/ovs/db/schema.py
+share/openvswitch/python/ovs/db/types.py
 share/openvswitch/python/ovs/__init__.py
 share/openvswitch/python/ovs/daemon.py
 share/openvswitch/python/ovs/fatal_signal.py
@@ -24,23 +40,41 @@ share/openvswitch/python/ovs/reconnect.py
 share/openvswitch/python/ovs/socket_util.py
 share/openvswitch/python/ovs/stream.py
 share/openvswitch/python/ovs/timeval.py
+share/openvswitch/python/ovs/unixctl.py
 share/openvswitch/python/ovs/util.py
-share/openvswitch/python/ovs/db/__init__.py
-share/openvswitch/python/ovs/db/data.py
-share/openvswitch/python/ovs/db/error.py
-share/openvswitch/python/ovs/db/idl.py
-share/openvswitch/python/ovs/db/parser.py
-share/openvswitch/python/ovs/db/schema.py
-share/openvswitch/python/ovs/db/types.py
+share/openvswitch/python/ovs/version.py
+share/openvswitch/python/ovs/vlog.py
+share/openvswitch/python/ovstest/__init__.py
+share/openvswitch/python/ovstest/args.py
+share/openvswitch/python/ovstest/rpcserver.py
+share/openvswitch/python/ovstest/tcp.py
+share/openvswitch/python/ovstest/udp.py
+share/openvswitch/python/ovstest/util.py
+share/openvswitch/python/ovstest/vswitch.py
 share/openvswitch/vswitch.ovsschema
-@dirrmtry var/run/openvswitch
-@dirrmtry var/run
+share/openvswitch/scripts/ovs-lib
+share/openvswitch/scripts/ovs-ctl
+share/openvswitch/scripts/ovs-save
+share/openvswitch/scripts/ovs-bugtool-cfm-show
+share/openvswitch/scripts/ovs-bugtool-lacp-show
+share/openvswitch/scripts/ovs-bugtool-tc-class-show
+share/openvswitch/scripts/ovs-bugtool-ovsdb-dump
+share/openvswitch/scripts/ovs-check-dead-ifs
+share/openvswitch/scripts/ovs-bugtool-coverage-show
+share/openvswitch/scripts/ovs-bugtool-vsctl-show
+share/openvswitch/scripts/ovs-bugtool-daemons-ver
+share/openvswitch/scripts/ovs-bugtool-bond-show
 @dirrmtry var/log/openvswitch
-@dirrmtry var/log
-@dirrmtry etc/openvswitch
-@dirrm share/openvswitch/python/ovs/db
-@dirrm share/openvswitch/python/ovs
-@dirrm share/openvswitch/python
-@dirrm share/openvswitch/pki
-@dirrm share/openvswitch/ovsdbmonitor
-@dirrm share/openvswitch
+@dirrmtry var/lib/openvswitch/pki
+@dirrmtry var/lib/openvswitch
+@dirrmtry share/openvswitch/scripts
+@dirrmtry share/openvswitch/python/ovstest
+@dirrmtry share/openvswitch/python/ovs/db
+@dirrmtry share/openvswitch/python/ovs
+@dirrmtry share/openvswitch/python
+@dirrmtry share/openvswitch/bugtool-plugins/system-logs
+@dirrmtry share/openvswitch/bugtool-plugins/system-configuration
+@dirrmtry share/openvswitch/bugtool-plugins/network-status
+@dirrmtry share/openvswitch/bugtool-plugins/kernel-info
+@dirrmtry share/openvswitch/bugtool-plugins
+@dirrmtry share/openvswitch
