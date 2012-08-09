@@ -2,6 +2,7 @@ libexec/xfce4/panel-plugins/xfce4-netload-plugin
 share/icons/hicolor/24x24/apps/xfce4-netload-plugin.png
 share/icons/hicolor/48x48/apps/xfce4-netload-plugin.png
 share/icons/hicolor/scalable/apps/xfce4-netload-plugin.svg
+%%NLS%%share/locale/ar/LC_MESSAGES/xfce4-netload-plugin.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfce4-netload-plugin.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/xfce4-netload-plugin.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/xfce4-netload-plugin.mo
@@ -41,6 +42,7 @@ share/icons/hicolor/scalable/apps/xfce4-netload-plugin.svg
 %%NLS%%share/locale/ur_PK/LC_MESSAGES/xfce4-netload-plugin.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/xfce4-netload-plugin.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfce4-netload-plugin.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-netload-plugin.mo
 share/xfce4/panel-plugins/netload.desktop
 @dirrmtry share/xfce4/panel-plugins
 @dirrmtry share/xfce4

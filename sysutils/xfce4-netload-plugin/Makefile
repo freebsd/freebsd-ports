@@ -6,28 +6,28 @@
 #
 
 PORTNAME=	xfce4-netload-plugin
-PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTVERSION=	1.2.0
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	demon@FreeBSD.org
-COMMENT=	Network Load plugin for XFce4
+COMMENT=	Network Load plugin for Xfce4
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack intltool intlhack pkgconfig
+USE_GNOME=	gnomehack intltool intlhack
 USE_XFCE=	configenv libmenu panel
 INSTALLS_ICONS=	yes
+USE_PKGCONFIG=	build
 
-OPTIONS=	NLS "Enable Native Language Support" on
+OPTIONS_DEFINE=	NLS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=  yes
 CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+= NLS=""
@@ -37,11 +37,13 @@ PLIST_SUB+= NLS="@comment "
 .endif
 
 do-patch:
-	@${REINPLACE_CMD} -e 's|#  include <net/if_ppp.h>||' \
-		${WRKSRC}/panel-plugin/os.h
 	@${REINPLACE_CMD} -e 's, || __FreeBSD_kernel__,,' \
 		${WRKSRC}/panel-plugin/net.c \
 		${WRKSRC}/panel-plugin/net.h \
 		${WRKSRC}/panel-plugin/os.h
 
-.include <bsd.port.post.mk>
+.if empty(PORT_OPTIONS:MNLS)
+	@${REINPLACE_CMD} -e 's|po ||' ${WRKSRC}/Makefile.in
+.endif
+
+.include <bsd.port.mk>
