@@ -8,6 +8,7 @@
     SUBDIR += aspell
     SUBDIR += bugzilla
     SUBDIR += bugzilla3
+    SUBDIR += bugzilla42
     SUBDIR += calligra-l10n
     SUBDIR += d1489
     SUBDIR += eric4
