@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.linux-games.com/black-box/
 
 MAINTAINER=	nemysis@gmx.ch
-COMMENT=	You can shoot in and watch where the shot leaves the box
+COMMENT=	Shoot in and watch where the shot leaves the box
 
 LICENSE=	GPLv2
 
@@ -19,10 +19,15 @@ GNU_CONFIGURE=	yes
 USE_SDL=	sdl image mixer
 MAKE_JOBS_SAFE=	yes
 
+PLIST_FILES=	bin/${PORTNAME}
+
+PORTDATA=	*
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .  for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
