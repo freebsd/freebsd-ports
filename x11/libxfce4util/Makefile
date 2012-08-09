@@ -7,6 +7,7 @@
 
 PORTNAME=	libxfce4util
 PORTVERSION=	4.10.0
+PORTREVISION=	1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DIST_SUBDIR=	xfce4
@@ -14,14 +15,14 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Extension library for the Xfce desktop environment
 
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	glib20 gnomehack intltool intlhack pkgconfig
+USE_GNOME=	glib20 gnomehack intltool intlhack
 USE_PERL5=	yes
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv
+USE_PKGCONFIG=	build
 
 CONFIGURE_ARGS+=--disable-gtk-doc-html
 
@@ -44,6 +45,11 @@ PLIST_SUB+=	APIDOCS=""
 .else
 CONFIGURE_ARGS+=--without-html-dir
 PLIST_SUB+=	APIDOCS="@comment "
+.endif
+
+.if empty(PORT_OPTIONS:MNLS)
+post-patch:
+	@${REINPLACE_CMD} -e 's|po||' ${WRKSRC}/Makefile.in
 .endif
 
 .include <bsd.port.mk>

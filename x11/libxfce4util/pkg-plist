@@ -11,7 +11,6 @@ include/xfce4/libxfce4util/xfce-posix-signal-handler.h
 include/xfce4/libxfce4util/xfce-rc.h
 include/xfce4/libxfce4util/xfce-resource.h
 include/xfce4/libxfce4util/xfce-utf8.h
-lib/libxfce4util.a
 lib/libxfce4util.la
 lib/libxfce4util.so
 lib/libxfce4util.so.6
