@@ -6,9 +6,12 @@ share/applications/fldigi.desktop
 %%NLS%%share/locale/es/LC_MESSAGES/fldigi.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/fldigi.mo
 %%NLS%%share/locale/it/LC_MESSAGES/fldigi.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/fldigi.mo
 %%FLARQ%%share/pixmaps/flarq.xpm
+share/fldigi/NAVTEX_Stations.csv
 share/pixmaps/fldigi.xpm
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%ASCIIDOC%%%%DOCSDIR%%/guide.html
+%%PORTDOCS%%%%DOCSDIR%%/guide.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/fldigi
 @dirrmtry share/applications
