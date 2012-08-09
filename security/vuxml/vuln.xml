@@ -52,6 +52,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8675efd5-e22c-11e1-a808-002354ed89bc">
+    <topic>sudosh -- buffer overflow</topic>
+    <affects>
+      <package>
+	<name>sudosh2</name>
+	<range><le>1.0.2</le></range>
+      </package>
+      <package>
+	<name>sudosh3</name>
+	<range><le>3.2.0_2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISS reports:</p>
+	<blockquote cite="http://xforce.iss.net/xforce/xfdb/55903">
+	  <p>sudosh2 and sudosh3 are vulnerable to a stack-based buffer
+	    overflow, caused by improper bounds checking by the replay()
+	    function. By persuading a victim to replay a specially-crafted
+	    recorded sudo session, a local attacker could overflow a buffer
+	    and execute arbitrary code on the system with elevated privileges
+	    or cause the application to crash.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<url>http://xforce.iss.net/xforce/xfdb/55903</url>
+	<url>http://secunia.com/advisories/38349</url>
+	<url>http://secunia.com/advisories/38292</url>
+    </references>
+    <dates>
+      <discovery>2010-01-17</discovery>
+      <entry>2012-08-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0f020b7b-e033-11e1-90a2-000c299b62e1">
     <topic>FreeBSD -- named(8) DNSSEC validation Denial of Service</topic>
     <affects>
