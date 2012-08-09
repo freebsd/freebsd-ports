@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=kris
 DISTNAME=	crashme
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gjc@alum.mit.edu
 COMMENT=	A tool to test an operating system's robustness
 
 USE_GMAKE=	yes
