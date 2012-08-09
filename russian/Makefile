@@ -6,8 +6,8 @@
     SUBDIR += MT
     SUBDIR += artwiz-ru
     SUBDIR += aspell
-    SUBDIR += bugzilla-ru
-    SUBDIR += bugzilla3-ru
+    SUBDIR += bugzilla
+    SUBDIR += bugzilla3
     SUBDIR += calligra-l10n
     SUBDIR += d1489
     SUBDIR += eric4
