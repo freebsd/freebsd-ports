@@ -19,6 +19,10 @@ RUN_DEPENDS=	transmission-cli:${PORTSDIR}/net-p2p/transmission-cli \
 		transmission-daemon:${PORTSDIR}/net-p2p/transmission-daemon \
 		transmission-gtk:${PORTSDIR}/net-p2p/transmission-gtk2
 
+CONFLICTS_INSTALL=      ${PORTNAME}${PKGNAMESUFFIX}-2.6*
+
+BROKEN=		Depends on GTK 2.0 frontend; use net-p2p/transmission25 for now
+
 NO_BUILD=	yes
 
 do-install:

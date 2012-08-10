@@ -1,0 +1,10 @@
+bin/transmission-daemon
+bin/transmission-remote
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry etc/transmission/home/Downloads
+@dirrmtry etc/transmission/home
+@dirrmtry etc/transmission

@@ -1906,6 +1906,7 @@
     SUBDIR += trac-xmlrpc
     SUBDIR += trafficserver
     SUBDIR += transmission-web
+    SUBDIR += transmission25-web
     SUBDIR += transproxy
     SUBDIR += tt-rss
     SUBDIR += ttf2eot

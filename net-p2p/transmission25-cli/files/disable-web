@@ -1,0 +1,19 @@
+--- Makefile.in.orig	2010-10-23 15:56:02.000000000 -0500
++++ Makefile.in	2010-10-23 15:56:55.000000000 -0500
+@@ -303,15 +303,13 @@
+ @BUILD_GTK_TRUE@GTK_DIR = gtk po
+ @BUILD_MAC_TRUE@MAC_DIR = macosx
+ SUBDIRS = \
+-  extras \
+   third-party \
+   libtransmission \
+   utils \
+   $(DAEMON_DIR) \
+   $(CLI_DIR) \
+   $(GTK_DIR) \
+-  $(MAC_DIR) \
+-  web
++  $(MAC_DIR)
+ 
+ EXTRA_DIST = \
+   qt \

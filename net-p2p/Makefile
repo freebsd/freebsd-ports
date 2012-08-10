@@ -101,6 +101,11 @@
     SUBDIR += transmission-daemon
     SUBDIR += transmission-gtk2
     SUBDIR += transmission-qt4
+    SUBDIR += transmission25
+    SUBDIR += transmission25-cli
+    SUBDIR += transmission25-daemon
+    SUBDIR += transmission25-gtk2
+    SUBDIR += transmission25-qt4
     SUBDIR += transmission-remote-gui
     SUBDIR += tribler
     SUBDIR += uhub

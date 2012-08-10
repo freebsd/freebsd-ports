@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120810:
+  AFFECTS: users of net-p2p/transmission-gtk2
+  AUTHOR: crees@FreeBSD.org
+
+  Unfortunately Transmission 2.61 moved the requirement for GTK to version
+  3.2.0, which is not yet in our tree.
+
+  Those who wish to have a graphical client can either choose transmission-qt4
+  in the meantime, or switch to the transmission25 ports.
+
+  A script to generate appropriate commands can be found at:
+  http://people.FreeBSD.org/~crees/scripts/transmission25.sh
+
 20120808:
   AFFECTS: users of www/libmicrohttpd
   AUTHOR: bdrewery@FreeBSD.org
