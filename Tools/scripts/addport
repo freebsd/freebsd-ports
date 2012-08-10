@@ -245,8 +245,7 @@ foreach my $thisdir (@dirs) {
 			} while (prompt("Is the new category $category OK? "));
 		}
 	}
-	chomp(my $svn_category = $category);
-	$svn_category =~ s/-/_/g;
+	chomp $category;
 
 	# Do commitfile checking but only if the user did not request automatic filling.
 	if (!$autofill) {
@@ -321,7 +320,7 @@ foreach my $thisdir (@dirs) {
 
 	# let's get our hands dirty.
 	if (! -d $category) {
-		system("svn co --depth files $repo/$svn_category $category") && errx(1, "can't get temporary category directory, aborting.");
+		system("svn co --depth files $repo/$category $category") && errx(1, "can't get temporary category directory, aborting.");
 	}
 	chdir $category or err(1,"$category");
 	system("$cp -PRp $thisdir .");
