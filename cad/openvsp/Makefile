@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	openvsp
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	2.1.0
 CATEGORIES=	cad
-MASTER_SITES=	https://nodeload.github.com/OpenVSP/OpenVSP/tarball/OpenVSP_${PORTVERSION}_Community
+MASTER_SITES=	https://nodeload.github.com/OpenVSP/OpenVSP/tarball/OpenVSP_${PORTVERSION}
 
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Create a 3D model of an aircraft defined by engineering parameters
@@ -19,7 +18,7 @@ LIB_DEPENDS+=	fltk:${PORTSDIR}/x11-toolkits/fltk
 LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 
-WRKSRC=		${WRKDIR}/OpenVSP-OpenVSP-574d7c3/src
+WRKSRC=		${WRKDIR}/OpenVSP-OpenVSP-fabd23a/src
 
 USE_CMAKE=	yes
 USE_DOS2UNIX=	yes
