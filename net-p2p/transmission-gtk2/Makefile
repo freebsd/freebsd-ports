@@ -10,6 +10,8 @@ PKGNAMESUFFIX=	-gtk2
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	A fast and lightweight GTK+2 BitTorrent client
 
+BROKEN=		Relies on GTK 3.0 version > 3.2.0
+
 LIB_DEPENDS=	${GEN_LIB_DEPENDS} \
 		notify.4:${PORTSDIR}/devel/libnotify \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
