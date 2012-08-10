@@ -39,30 +39,35 @@ SECUREXYMONCGIURL = /xymon-seccgi
 # Webserver group-ID
 HTTPDGID=80
 
+# PCRE settings
+PCREINCDIR = -I${LOCALBASE}/include
+PCRELIBS = -L${LOCALBASE}/lib -lpcre
+RPATHVAL += ${LOCALBASE}/lib
+
 # RRDtool settings
 RRDDEF = -DRRDTOOL12
 RRDINCDIR = -I${LOCALBASE}/include
 RRDLIBS = -L${LOCALBASE}/lib -lrrd -L${LOCALBASE}/lib -lpng
 RPATHVAL += ${LOCALBASE}/lib
-
-# PCRE settings
-PCREINCDIR = -I${LOCALBASE}/include
-PCRELIBS = -L${LOCALBASE}/lib -lpcre
-RPATHVAL += ${LOCALBASE}/lib
+DORRD = yes
 #
 # OpenSSL settings
-SSLFLAGS = -DHAVE_OPENSSL=1
+SSLFLAGS = -DHAVE_OPENSSL -DHAVE_SSLV2_SUPPORT
 SSLINCDIR = -I${OPENSSLINC}
 SSLLIBS = -L${OPENSSLLIB} -lssl -lcrypto
 RPATHVAL += ${OPENSSLLIB}
+DOSSL = yes
 #
 ifdef WITH_LDAP
 # OpenLDAP settings
 LDAPFLAGS = -DXYMON_LDAP -DXYMON_LDAP_USESTARTTLS
 LDAPINCDIR = -I${PREFIX}/include
-LDAPLIBS = -L${PREFIX}/lib -lldap -llber
+LDAPLIBS = -L${PREFIX}/lib -lldap
 RPATHVAL += ${PREFIX}/lib
+RPATHVAL += /usr/local/lib
+DOLDAP = yes
 endif
+#
 # clock_gettime() settings
 LIBRTDEF = 
 

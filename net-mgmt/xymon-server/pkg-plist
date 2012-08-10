@@ -19,8 +19,10 @@
 %%WWWDIR%%/cgi-bin/hostlist.sh
 %%WWWDIR%%/cgi-bin/nongreen.sh
 %%WWWDIR%%/cgi-bin/notifications.sh
+%%WWWDIR%%/cgi-bin/perfdata.sh
 %%WWWDIR%%/cgi-bin/report.sh
 %%WWWDIR%%/cgi-bin/reportlog.sh
+%%WWWDIR%%/cgi-bin/showgraph.sh
 %%WWWDIR%%/cgi-bin/snapshot.sh
 %%WWWDIR%%/cgi-bin/svcstatus.sh
 %%WWWDIR%%/cgi-bin/topchanges.sh
@@ -55,10 +57,12 @@
 %%WWWDIR%%/server/bin/hostlist.cgi
 %%WWWDIR%%/server/bin/moverrd.sh
 %%WWWDIR%%/server/bin/notifications.cgi
+%%WWWDIR%%/server/bin/perfdata.cgi
 %%WWWDIR%%/server/bin/renamevars
 %%WWWDIR%%/server/bin/report.cgi
 %%WWWDIR%%/server/bin/reportlog.cgi
 %%WWWDIR%%/server/bin/rrdcachectl
+%%WWWDIR%%/server/bin/showgraph.cgi
 %%WWWDIR%%/server/bin/snapshot.cgi
 %%WWWDIR%%/server/bin/statusreport.cgi
 %%WWWDIR%%/server/bin/svcstatus.cgi
@@ -81,6 +85,7 @@
 %%WWWDIR%%/server/bin/xymond_history
 %%WWWDIR%%/server/bin/xymond_hostdata
 %%WWWDIR%%/server/bin/xymond_locator
+%%WWWDIR%%/server/bin/xymond_rrd
 %%WWWDIR%%/server/bin/xymond_sample
 %%WWWDIR%%/server/bin/xymondigest
 %%WWWDIR%%/server/bin/xymonfetch
