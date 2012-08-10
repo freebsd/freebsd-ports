@@ -24,7 +24,7 @@ USE_EMACS=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${EMACS_PORT_NAME} == "emacs23" || ${EMACS_PORT_NAME} == "emacs24"
+.if ${EMACS_MAJOR_VER} >= 23
 IGNORE=		does not build with Emacs 23 and later
 .endif
 
