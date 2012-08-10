@@ -1,6 +1,3 @@
-bin/bzadmin
-bin/bzflag
-bin/bzfs
 %%DATADIR%%/automatic_icon.png
 %%DATADIR%%/blend_flash.png
 %%DATADIR%%/blue_basetop.png
@@ -33,6 +30,7 @@ bin/bzfs
 %%DATADIR%%/flag_lost.wav
 %%DATADIR%%/flag_won.wav
 %%DATADIR%%/flap.wav
+%%DATADIR%%/fonts/DejaVu.License
 %%DATADIR%%/fonts/DejaVuSansCondensedBold_12.fmt
 %%DATADIR%%/fonts/DejaVuSansCondensedBold_12.png
 %%DATADIR%%/fonts/DejaVuSansCondensedBold_16.fmt
@@ -67,7 +65,6 @@ bin/bzfs
 %%DATADIR%%/fonts/DejaVuSerifBold_6.png
 %%DATADIR%%/fonts/DejaVuSerifBold_8.fmt
 %%DATADIR%%/fonts/DejaVuSerifBold_8.png
-%%DATADIR%%/fonts/DejaVu.License
 %%DATADIR%%/fonts/readme
 %%DATADIR%%/frog.png
 %%DATADIR%%/green_basetop.png
@@ -79,6 +76,9 @@ bin/bzfs
 %%DATADIR%%/green_tank.png
 %%DATADIR%%/hunt.wav
 %%DATADIR%%/hunt_select.wav
+%%DATADIR%%/hunter_bolt.png
+%%DATADIR%%/hunter_laser.png
+%%DATADIR%%/hunter_super_bolt.png
 %%DATADIR%%/hunter_tank.png
 %%DATADIR%%/jump.wav
 %%DATADIR%%/jumpjets.png
@@ -112,10 +112,13 @@ bin/bzfs
 %%DATADIR%%/mountain1.png
 %%DATADIR%%/mountain2.png
 %%DATADIR%%/mountain3.png
+%%DATADIR%%/mountain4.png
+%%DATADIR%%/mountain5.png
 %%DATADIR%%/observer_icon.png
 %%DATADIR%%/phantom.wav
 %%DATADIR%%/pop.wav
 %%DATADIR%%/puddle.png
+%%DATADIR%%/puffs.png
 %%DATADIR%%/purple_basetop.png
 %%DATADIR%%/purple_basewall.png
 %%DATADIR%%/purple_bolt.png
@@ -145,6 +148,7 @@ bin/bzfs
 %%DATADIR%%/rogue_tank.png
 %%DATADIR%%/roof.png
 %%DATADIR%%/shock.wav
+%%DATADIR%%/shot_tail.png
 %%DATADIR%%/snowflake.png
 %%DATADIR%%/spree1.wav
 %%DATADIR%%/spree2.wav
@@ -159,9 +163,66 @@ bin/bzfs
 %%DATADIR%%/thief.png
 %%DATADIR%%/thief.wav
 %%DATADIR%%/title.png
+%%DATADIR%%/treads.png
 %%DATADIR%%/wall.png
 %%DATADIR%%/water.png
 %%DATADIR%%/zone_ground.png
-@dirrm %%DATADIR%%/l10n
+bin/bzadmin
+bin/bzflag
+bin/bzfs
+lib/bzflag/HoldTheFlag.la
+lib/bzflag/HoldTheFlag.so
+lib/bzflag/Phoenix.la
+lib/bzflag/Phoenix.so
+lib/bzflag/RogueGenocide.la
+lib/bzflag/RogueGenocide.so
+lib/bzflag/SAMPLE_PLUGIN.la
+lib/bzflag/SAMPLE_PLUGIN.so
+lib/bzflag/TimeLimit.la
+lib/bzflag/TimeLimit.so
+lib/bzflag/airspawn.la
+lib/bzflag/airspawn.so
+lib/bzflag/chathistory.la
+lib/bzflag/chathistory.so
+lib/bzflag/customflagsample.la
+lib/bzflag/customflagsample.so
+lib/bzflag/flagStay.la
+lib/bzflag/flagStay.so
+lib/bzflag/hiddenAdmin.la
+lib/bzflag/hiddenAdmin.so
+lib/bzflag/keepaway.la
+lib/bzflag/keepaway.so
+lib/bzflag/killall.la
+lib/bzflag/killall.so
+lib/bzflag/koth.la
+lib/bzflag/koth.so
+lib/bzflag/logDetail.la
+lib/bzflag/logDetail.so
+lib/bzflag/nagware.la
+lib/bzflag/nagware.so
+lib/bzflag/playHistoryTracker.la
+lib/bzflag/playHistoryTracker.so
+lib/bzflag/pushstats.la
+lib/bzflag/pushstats.so
+lib/bzflag/rabbitTimer.la
+lib/bzflag/rabbitTimer.so
+lib/bzflag/rabidRabbit.la
+lib/bzflag/rabidRabbit.so
+lib/bzflag/recordmatch.la
+lib/bzflag/recordmatch.so
+lib/bzflag/regFlag.la
+lib/bzflag/regFlag.so
+lib/bzflag/serverControl.la
+lib/bzflag/serverControl.so
+lib/bzflag/shockwaveDeath.la
+lib/bzflag/shockwaveDeath.so
+lib/bzflag/teamflagreset.la
+lib/bzflag/teamflagreset.so
+lib/bzflag/timedctf.la
+lib/bzflag/timedctf.so
+lib/bzflag/wwzones.la
+lib/bzflag/wwzones.so
 @dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%/l10n
 @dirrm %%DATADIR%%
+@dirrm lib/bzflag
