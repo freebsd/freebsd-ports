@@ -10,7 +10,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pkix.net/mirror/fy.chalmers.se/ \
 		http://fy.chalmers.se/~appro/linux/DVD+RW/tools/
 
-MAINTAINER=	chuck@pkix.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DVD burning software
 
 USE_CDRTOOLS=	yes
