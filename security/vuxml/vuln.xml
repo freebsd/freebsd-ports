@@ -84,6 +84,116 @@ Note:  Please add new entries to the beginning of this file.
     </dates>
   </vuln>
 
+  <vuln vid="ce84e136-e2f6-11e1-a8ca-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>21.0.1180.60</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/search/label/Stable%20updates">
+	  <p>[Linux only] [125225] Medium CVE-2012-2846: Cross-process
+	    interference in renderers. Credit to Google Chrome Security Team
+	    (Julien Tinnes).</p>
+	  <p>[127522] Low CVE-2012-2847: Missing re-prompt to user upon
+	    excessive downloads. Credit to Matt Austin of Aspect Security.</p>
+	  <p>[127525] Medium CVE-2012-2848: Overly broad file access granted
+	    after drag+drop. Credit to Matt Austin of Aspect Security.</p>
+	  <p>[128163] Low CVE-2012-2849: Off-by-one read in GIF decoder. Credit
+	    to Atte Kettunen of OUSPG.</p>
+	  <p>[130251] [130592] [130611] [131068] [131237] [131252] [131621]
+	    [131690] [132860] Medium CVE-2012-2850: Various lower severity
+	    issues in the PDF viewer. Credit to Mateusz Jurczyk of Google
+	    Security Team, with contributions by Gynvael Coldwind of Google
+	    Security Team.</p>
+	  <p>[132585] [132694] [132861] High CVE-2012-2851: Integer overflows in
+	    PDF viewer.  Credit to Mateusz Jurczyk of Google Security Team, with
+	    contributions by Gynvael Coldwind of Google Security Team.</p>
+	  <p>[134028] High CVE-2012-2852: Use-after-free with bad object linkage
+	    in PDF.  Credit to Alexey Samsonov of Google.</p>
+	  <p>[134101] Medium CVE-2012-2853: webRequest can interfere with the
+	    Chrome Web Store. Credit to Trev of Adblock.</p>
+	  <p>[134519] Low CVE-2012-2854: Leak of pointer values to WebUI
+	    renderers. Credit to Nasko Oskov of the Chromium development
+	    community.</p>
+	  <p>[134888] High CVE-2012-2855: Use-after-free in PDF viewer. Credit
+	    to Mateusz Jurczyk of Google Security Team, with contributions by
+	    Gynvael Coldwind of Google Security Team.</p>
+	  <p>[134954] [135264] High CVE-2012-2856: Out-of-bounds writes in PDF
+	    viewer. Credit to Mateusz Jurczyk of Google Security Team, with
+	    contributions by Gynvael Coldwind of Google Security Team.</p>
+	  <p>[136235] High CVE-2012-2857: Use-after-free in CSS DOM. Credit to
+	    Arthur Gerkis.</p>
+	  <p>[136894] High CVE-2012-2858: Buffer overflow in WebP decoder.
+	    Credit to Juri Aedla.</p>
+	  <p>[Linux only] [137541] Critical CVE-2012-2859: Crash in tab
+	    handling. Credit to Jeff Roberts of Google Security Team.</p>
+	  <p>[137671] Medium CVE-2012-2860: Out-of-bounds access when clicking
+	    in date picker. Credit to Chamal de Silva.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-2846</cvename>
+      <cvename>CVE-2012-2847</cvename>
+      <cvename>CVE-2012-2848</cvename>
+      <cvename>CVE-2012-2849</cvename>
+      <cvename>CVE-2012-2850</cvename>
+      <cvename>CVE-2012-2851</cvename>
+      <cvename>CVE-2012-2852</cvename>
+      <cvename>CVE-2012-2853</cvename>
+      <cvename>CVE-2012-2854</cvename>
+      <cvename>CVE-2012-2855</cvename>
+      <cvename>CVE-2012-2856</cvename>
+      <cvename>CVE-2012-2857</cvename>
+      <cvename>CVE-2012-2858</cvename>
+      <cvename>CVE-2012-2859</cvename>
+      <cvename>CVE-2012-2860</cvename>
+      <url>http://googlechromereleases.blogspot.com/search/label/Stable%20updates</url>
+    </references>
+    <dates>
+      <discovery>2012-07-31</discovery>
+      <entry>2012-08-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2092a45b-e2f6-11e1-a8ca-00262d5ed8ee">
+    <topic>www/chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>20.0.1132.57</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/search/label/Stable%20updates">
+	  <p>[129898] High CVE-2012-2842: Use-after-free in counter handling.
+	    Credit to miaubiz.</p>
+	  <p>[130595] High CVE-2012-2843: Use-after-free in layout height
+	    tracking. Credit to miaubiz.</p>
+	  <p>[133450] High CVE-2012-2844: Bad object access with JavaScript in
+	    PDF. Credit to Alexey Samsonov of Google.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-2842</cvename>
+      <cvename>CVE-2012-2843</cvename>
+      <cvename>CVE-2012-2844</cvename>
+      <url>http://googlechromereleases.blogspot.com/search/label/Stable%20updates</url>
+    </references>
+    <dates>
+      <discovery>2012-07-11</discovery>
+      <entry>2012-08-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="31db9a18-e289-11e1-a57d-080027a27dbf">
     <topic>rubygem-rails -- multiple vulnerabilities</topic>
     <affects>
