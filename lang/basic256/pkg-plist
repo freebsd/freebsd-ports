@@ -1,32 +1,68 @@
 bin/BASIC256
+share/basic256/Examples/15puzzle.kbs
+share/basic256/Examples/BASICtest1.kbs
+share/basic256/Examples/arrays.kbs
+share/basic256/Examples/ballaccel.kbs
+share/basic256/Examples/ballanim.kbs
+share/basic256/Examples/basic256_icon.kbs
+share/basic256/Examples/card_suites.kbs
+share/basic256/Examples/cards_deal5.kbs
+share/basic256/Examples/checkerboard.kbs
+share/basic256/Examples/collision.kbs
+share/basic256/Examples/collision3.kbs
+share/basic256/Examples/databasefoo.kbs
+share/basic256/Examples/db_quote.kbs
 share/basic256/Examples/dice/dice.kbs
 share/basic256/Examples/dice/dicewood.wav
+share/basic256/Examples/errortrapping.kbs
+share/basic256/Examples/hangman.kbs
+share/basic256/Examples/hello.kbs
 share/basic256/Examples/imgload/animatedhelp.kbs
+share/basic256/Examples/imgload/help.png
 share/basic256/Examples/imgload/imgload.kbs
 share/basic256/Examples/imgload/rotate.kbs
-share/basic256/Examples/imgload/help.png
 share/basic256/Examples/imgload/test.bmp
+share/basic256/Examples/mandelbrot.kbs
+share/basic256/Examples/mousedoodle.kbs
+share/basic256/Examples/moving_squares.kbs
 share/basic256/Examples/networking/netclient.kbs
 share/basic256/Examples/networking/netgethomepage.kbs
 share/basic256/Examples/networking/netgetmany.kbs
 share/basic256/Examples/networking/netgoogle.kbs
 share/basic256/Examples/networking/netserver.kbs
-share/basic256/Examples/sprites/bounce.kbs
-share/basic256/Examples/sprites/breakout.kbs
-share/basic256/Examples/sprites/spriteslice.kbs
-share/basic256/Examples/sprites/spritetest1.kbs
-share/basic256/Examples/sprites/spritetest2.kbs
-share/basic256/Examples/sprites/spritetest3.kbs
+share/basic256/Examples/paddle.kbs
+share/basic256/Examples/ping.kbs
+share/basic256/Examples/plot.kbs
+share/basic256/Examples/plot2.kbs
+share/basic256/Examples/poly.kbs
+share/basic256/Examples/polytest.kbs
+share/basic256/Examples/quotations.kbs
+share/basic256/Examples/rainbow.kbs
+share/basic256/Examples/ring_01.kbs
+share/basic256/Examples/rotating3dcube.kbs
+share/basic256/Examples/sliceanimation.kbs
+share/basic256/Examples/snowflakes.kbs
 share/basic256/Examples/sprites/3062__SpeedY__bleep.wav
 share/basic256/Examples/sprites/4359__NoiseCollector__PongBlipF4.wav
 share/basic256/Examples/sprites/4361__NoiseCollector__pongblipA_3.wav
 share/basic256/Examples/sprites/ball.png
 share/basic256/Examples/sprites/block.png
+share/basic256/Examples/sprites/bounce.kbs
+share/basic256/Examples/sprites/breakout.kbs
 share/basic256/Examples/sprites/help.png
 share/basic256/Examples/sprites/paddle.png
+share/basic256/Examples/sprites/spriteslice.kbs
+share/basic256/Examples/sprites/spritetest1.kbs
+share/basic256/Examples/sprites/spritetest2.kbs
+share/basic256/Examples/sprites/spritetest3.kbs
 share/basic256/Examples/sprites/test.bmp
+share/basic256/Examples/sqrt.kbs
+share/basic256/Examples/stamp.kbs
+share/basic256/Examples/stamp_flower.kbs
+share/basic256/Examples/story.kbs
 share/basic256/Examples/testing/2darraytest.kbs
 share/basic256/Examples/testing/2dstrarraytest.kbs
+share/basic256/Examples/testing/KalRGB.kbs
 share/basic256/Examples/testing/arraylistassign.kbs
 share/basic256/Examples/testing/beautifytest.kbs
 share/basic256/Examples/testing/counttest.kbs
@@ -35,7 +71,6 @@ share/basic256/Examples/testing/fontdemo.kbs
 share/basic256/Examples/testing/input_numeric_test.kbs
 share/basic256/Examples/testing/input_string_test.kbs
 share/basic256/Examples/testing/instrtest.kbs
-share/basic256/Examples/testing/KalRGB.kbs
 share/basic256/Examples/testing/random_one.kbs
 share/basic256/Examples/testing/replacetest.kbs
 share/basic256/Examples/testing/tes_oo.kbs
@@ -52,41 +87,6 @@ share/basic256/Examples/testing/testmodulo.kbs
 share/basic256/Examples/testing/testtextfont.kbs
 share/basic256/Examples/testing/testtime.kbs
 share/basic256/Examples/testing/uaarray.kbs
-share/basic256/Examples/15puzzle.kbs
-share/basic256/Examples/arrays.kbs
-share/basic256/Examples/ballaccel.kbs
-share/basic256/Examples/ballanim.kbs
-share/basic256/Examples/basic256_icon.kbs
-share/basic256/Examples/BASICtest1.kbs
-share/basic256/Examples/card_suites.kbs
-share/basic256/Examples/cards_deal5.kbs
-share/basic256/Examples/checkerboard.kbs
-share/basic256/Examples/collision.kbs
-share/basic256/Examples/collision3.kbs
-share/basic256/Examples/databasefoo.kbs
-share/basic256/Examples/db_quote.kbs
-share/basic256/Examples/errortrapping.kbs
-share/basic256/Examples/hangman.kbs
-share/basic256/Examples/hello.kbs
-share/basic256/Examples/mandelbrot.kbs
-share/basic256/Examples/mousedoodle.kbs
-share/basic256/Examples/moving_squares.kbs
-share/basic256/Examples/paddle.kbs
-share/basic256/Examples/ping.kbs
-share/basic256/Examples/plot.kbs
-share/basic256/Examples/plot2.kbs
-share/basic256/Examples/poly.kbs
-share/basic256/Examples/polytest.kbs
-share/basic256/Examples/quotations.kbs
-share/basic256/Examples/rainbow.kbs
-share/basic256/Examples/ring_01.kbs
-share/basic256/Examples/rotating3dcube.kbs
-share/basic256/Examples/sliceanimation.kbs
-share/basic256/Examples/snowflakes.kbs
-share/basic256/Examples/sqrt.kbs
-share/basic256/Examples/stamp.kbs
-share/basic256/Examples/stamp_flower.kbs
-share/basic256/Examples/story.kbs
 share/basic256/Examples/tictactoe.kbs
 share/basic256/Examples/tictactoe_comp.kbs
 share/basic256/Examples/trig.kbs
@@ -96,53 +96,59 @@ share/basic256/basic256_en_US.qm
 share/basic256/basic256_es.qm
 share/basic256/basic256_nl.qm
 share/basic256/basic256_ru_RU.qm
-share/basic256/help/en/style.css
+share/basic256/help/de/fonttext.png
+share/basic256/help/de/stamp.png
+share/basic256/help/de/style.css
 share/basic256/help/en/cir.png
 share/basic256/help/en/color.png
+share/basic256/help/en/cos.jpg
 share/basic256/help/en/fonttext.png
 share/basic256/help/en/line.png
 share/basic256/help/en/poly.png
 share/basic256/help/en/rect.png
-share/basic256/help/en/stamp.png
-share/basic256/help/en/cos.jpg
 share/basic256/help/en/sin.jpg
+share/basic256/help/en/stamp.png
+share/basic256/help/en/style.css
 share/basic256/help/en/tan.jpg
-share/basic256/help/de/style.css
-share/basic256/help/de/fonttext.png
-share/basic256/help/de/stamp.png
-share/basic256/help/es/style.css
 share/basic256/help/es/cir.png
 share/basic256/help/es/color.png
+share/basic256/help/es/cos.jpg
 share/basic256/help/es/fonttext.png
 share/basic256/help/es/line.png
 share/basic256/help/es/poly.png
 share/basic256/help/es/rect.png
-share/basic256/help/es/stamp.png
-share/basic256/help/es/cos.jpg
 share/basic256/help/es/sin.jpg
+share/basic256/help/es/stamp.png
+share/basic256/help/es/style.css
 share/basic256/help/es/tan.jpg
-share/basic256/help/fr/style.css
 share/basic256/help/fr/cir.png
 share/basic256/help/fr/color.png
+share/basic256/help/fr/cos.jpg
 share/basic256/help/fr/fonttext.png
 share/basic256/help/fr/line.png
 share/basic256/help/fr/poly.png
 share/basic256/help/fr/rect.png
-share/basic256/help/fr/stamp.png
-share/basic256/help/fr/cos.jpg
 share/basic256/help/fr/sin.jpg
+share/basic256/help/fr/stamp.png
+share/basic256/help/fr/style.css
 share/basic256/help/fr/tan.jpg
+share/basic256/help/ru/cir.png
+share/basic256/help/ru/color.png
+share/basic256/help/ru/fonttext.png
+share/basic256/help/ru/poly.png
+share/basic256/help/ru/radians.png
+share/basic256/help/ru/stamp.png
 share/basic256/help/ru/style.css
-@dirrm share/basic256/Examples/dice/
-@dirrm share/basic256/Examples/imgload/
-@dirrm share/basic256/Examples/networking/
-@dirrm share/basic256/Examples/sprites/
-@dirrm share/basic256/Examples/testing/
-@dirrm share/basic256/Examples/
-@dirrm share/basic256/help/en/
-@dirrm share/basic256/help/de/
-@dirrm share/basic256/help/es/
-@dirrm share/basic256/help/fr/
-@dirrm share/basic256/help/ru/
-@dirrm share/basic256/help/
-@dirrm share/basic256/
+@dirrm share/basic256/help/ru
+@dirrm share/basic256/help/fr
+@dirrm share/basic256/help/es
+@dirrm share/basic256/help/en
+@dirrm share/basic256/help/de
+@dirrm share/basic256/help
+@dirrm share/basic256/Examples/testing
+@dirrm share/basic256/Examples/sprites
+@dirrm share/basic256/Examples/networking
+@dirrm share/basic256/Examples/imgload
+@dirrm share/basic256/Examples/dice
+@dirrm share/basic256/Examples
+@dirrm share/basic256
