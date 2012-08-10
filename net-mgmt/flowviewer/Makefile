@@ -6,7 +6,7 @@
 
 PORTNAME=	flowviewer
 PORTVERSION=	3.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://ensight.eos.nasa.gov/FlowViewer/
 DISTNAME=	FlowViewer_${DISTVERSION}
@@ -32,9 +32,7 @@ SUB_FILES=	pkg-message
 USE_PERL5=	yes
 NO_BUILD=	yes
 
-.if !defined(NOPORTDOCS)
-PORTDOC_FILES=	README
-.endif
+PORTDOCS=	README
 
 post-patch:
 	@${REINPLACE_CMD} -E \
@@ -48,10 +46,14 @@ do-install:
 	@${MKDIR} ${FLOWVIEWERDIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/FlowGrapher.cgi ${FLOWVIEWERDIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/FlowGrapher_Main.cgi ${FLOWVIEWERDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/FlowGrapher_Relay.cgi ${FLOWVIEWERDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/FlowGrapher_Sort.cgi ${FLOWVIEWERDIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/FlowTracker.cgi ${FLOWVIEWERDIR}
-	@${INSTALL_SCRIPT} ${WRKSRC}/FlowTracker_Main.cgi ${FLOWVIEWERDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/FlowTracker_Dumper.cgi ${FLOWVIEWERDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/FlowTracker_Relay.cgi ${FLOWVIEWERDIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/FlowViewer.cgi ${FLOWVIEWERDIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/FlowViewer_Main.cgi ${FLOWVIEWERDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/FlowViewer_Relay.cgi ${FLOWVIEWERDIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/FlowViewer_Save.cgi ${FLOWVIEWERDIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/FlowTracker_Group.cgi ${FLOWVIEWERDIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/FlowViewer_Utilities.pm ${FLOWVIEWERDIR}
@@ -74,6 +76,6 @@ do-install:
 .endif
 
 post-install:
-	${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

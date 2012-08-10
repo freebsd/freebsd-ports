@@ -1,23 +1,25 @@
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%FLOWVIEWERDIR%%/FlowGrapher.cgi
 %%FLOWVIEWERDIR%%/FlowGrapher.png
 %%FLOWVIEWERDIR%%/FlowGrapher_Colors
 %%FLOWVIEWERDIR%%/FlowGrapher_Main.cgi
+%%FLOWVIEWERDIR%%/FlowGrapher_Relay.cgi
+%%FLOWVIEWERDIR%%/FlowGrapher_Sort.cgi
 %%FLOWVIEWERDIR%%/FlowTracker.cgi
 %%FLOWVIEWERDIR%%/FlowTracker.png
 %%FLOWVIEWERDIR%%/FlowTracker_Collector
+%%FLOWVIEWERDIR%%/FlowTracker_Dumper.cgi
 %%FLOWVIEWERDIR%%/FlowTracker_Grapher
 %%FLOWVIEWERDIR%%/FlowTracker_Group.cgi
-%%FLOWVIEWERDIR%%/FlowTracker_Main.cgi
+%%FLOWVIEWERDIR%%/FlowTracker_Relay.cgi
 %%FLOWVIEWERDIR%%/FlowViewer.cgi
 %%FLOWVIEWERDIR%%/FlowViewer.png
 %%FLOWVIEWERDIR%%/FlowViewer_Configuration.pm.dist
 %%FLOWVIEWERDIR%%/FlowViewer_Main.cgi
 %%FLOWVIEWERDIR%%/FlowViewer_Save.cgi
+%%FLOWVIEWERDIR%%/FlowViewer_Relay.cgi
 %%FLOWVIEWERDIR%%/FlowViewer_Utilities.pm
 @dirrm %%FLOWVIEWERDIR%%/tracker
 @dirrm %%FLOWVIEWERDIR%%/tmp
 @dirrm %%FLOWVIEWERDIR%%/reports
 @dirrm %%FLOWVIEWERDIR%%/graphs
 @dirrm %%FLOWVIEWERDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
