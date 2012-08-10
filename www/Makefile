@@ -1964,6 +1964,7 @@
     SUBDIR += vdr-plugin-live
     SUBDIR += vdradmin-am
     SUBDIR += vee
+    SUBDIR += vertx
     SUBDIR += videocache
     SUBDIR += visitors
     SUBDIR += volta

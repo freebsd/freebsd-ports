@@ -1,0 +1,14 @@
+**************************************************************
+
+ If you want to use Ruby with Vert.x you will need to install
+ the json Ruby Gem since this is used in Vert.x.
+ You can do this by running
+
+	jruby -S gem install json
+
+ When you deinstall Vert.x, you can then remove that Ruby Gem
+ by running
+
+	jruby -S gem uninstall json
+
+**************************************************************
