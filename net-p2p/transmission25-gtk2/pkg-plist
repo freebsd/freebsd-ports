@@ -1,0 +1,139 @@
+bin/transmission-gtk
+share/applications/transmission-gtk.desktop
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+share/icons/hicolor/16x16/apps/transmission.png
+share/icons/hicolor/22x22/apps/transmission.png
+share/icons/hicolor/24x24/apps/transmission.png
+share/icons/hicolor/256x256/apps/transmission.png
+share/icons/hicolor/32x32/apps/transmission.png
+share/icons/hicolor/48x48/apps/transmission.png
+share/icons/hicolor/scalable/apps/transmission.svg
+share/locale/an/LC_MESSAGES/transmission-gtk.mo
+share/locale/ar/LC_MESSAGES/transmission-gtk.mo
+share/locale/ast/LC_MESSAGES/transmission-gtk.mo
+share/locale/az/LC_MESSAGES/transmission-gtk.mo
+share/locale/be/LC_MESSAGES/transmission-gtk.mo
+share/locale/be@latin/LC_MESSAGES/transmission-gtk.mo
+share/locale/bg/LC_MESSAGES/transmission-gtk.mo
+share/locale/bn/LC_MESSAGES/transmission-gtk.mo
+share/locale/bo/LC_MESSAGES/transmission-gtk.mo
+share/locale/br/LC_MESSAGES/transmission-gtk.mo
+share/locale/bs/LC_MESSAGES/transmission-gtk.mo
+share/locale/ca/LC_MESSAGES/transmission-gtk.mo
+share/locale/ca@valencia/LC_MESSAGES/transmission-gtk.mo
+share/locale/ceb/LC_MESSAGES/transmission-gtk.mo
+share/locale/ckb/LC_MESSAGES/transmission-gtk.mo
+share/locale/cs/LC_MESSAGES/transmission-gtk.mo
+share/locale/da/LC_MESSAGES/transmission-gtk.mo
+share/locale/de/LC_MESSAGES/transmission-gtk.mo
+share/locale/el/LC_MESSAGES/transmission-gtk.mo
+share/locale/en_AU/LC_MESSAGES/transmission-gtk.mo
+share/locale/en_CA/LC_MESSAGES/transmission-gtk.mo
+share/locale/en_GB/LC_MESSAGES/transmission-gtk.mo
+share/locale/eo/LC_MESSAGES/transmission-gtk.mo
+share/locale/es/LC_MESSAGES/transmission-gtk.mo
+share/locale/et/LC_MESSAGES/transmission-gtk.mo
+share/locale/eu/LC_MESSAGES/transmission-gtk.mo
+share/locale/fa/LC_MESSAGES/transmission-gtk.mo
+share/locale/fi/LC_MESSAGES/transmission-gtk.mo
+share/locale/fil/LC_MESSAGES/transmission-gtk.mo
+share/locale/fo/LC_MESSAGES/transmission-gtk.mo
+share/locale/fr/LC_MESSAGES/transmission-gtk.mo
+share/locale/ga/LC_MESSAGES/transmission-gtk.mo
+share/locale/gl/LC_MESSAGES/transmission-gtk.mo
+share/locale/gv/LC_MESSAGES/transmission-gtk.mo
+share/locale/he/LC_MESSAGES/transmission-gtk.mo
+share/locale/hi/LC_MESSAGES/transmission-gtk.mo
+share/locale/hr/LC_MESSAGES/transmission-gtk.mo
+share/locale/hy/LC_MESSAGES/transmission-gtk.mo
+share/locale/hu/LC_MESSAGES/transmission-gtk.mo
+share/locale/ia/LC_MESSAGES/transmission-gtk.mo
+share/locale/id/LC_MESSAGES/transmission-gtk.mo
+share/locale/is/LC_MESSAGES/transmission-gtk.mo
+share/locale/it/LC_MESSAGES/transmission-gtk.mo
+share/locale/ja/LC_MESSAGES/transmission-gtk.mo
+share/locale/ka/LC_MESSAGES/transmission-gtk.mo
+share/locale/kk/LC_MESSAGES/transmission-gtk.mo
+share/locale/ko/LC_MESSAGES/transmission-gtk.mo
+share/locale/ku/LC_MESSAGES/transmission-gtk.mo
+share/locale/li/LC_MESSAGES/transmission-gtk.mo
+share/locale/lt/LC_MESSAGES/transmission-gtk.mo
+share/locale/lv/LC_MESSAGES/transmission-gtk.mo
+share/locale/mk/LC_MESSAGES/transmission-gtk.mo
+share/locale/ml/LC_MESSAGES/transmission-gtk.mo
+share/locale/mr/LC_MESSAGES/transmission-gtk.mo
+share/locale/ms/LC_MESSAGES/transmission-gtk.mo
+share/locale/mt/LC_MESSAGES/transmission-gtk.mo
+share/locale/nb/LC_MESSAGES/transmission-gtk.mo
+share/locale/nds/LC_MESSAGES/transmission-gtk.mo
+share/locale/nl/LC_MESSAGES/transmission-gtk.mo
+share/locale/nn/LC_MESSAGES/transmission-gtk.mo
+share/locale/oc/LC_MESSAGES/transmission-gtk.mo
+share/locale/pa/LC_MESSAGES/transmission-gtk.mo
+share/locale/pl/LC_MESSAGES/transmission-gtk.mo
+share/locale/pt/LC_MESSAGES/transmission-gtk.mo
+share/locale/pt_BR/LC_MESSAGES/transmission-gtk.mo
+share/locale/ro/LC_MESSAGES/transmission-gtk.mo
+share/locale/ru/LC_MESSAGES/transmission-gtk.mo
+share/locale/si/LC_MESSAGES/transmission-gtk.mo
+share/locale/sk/LC_MESSAGES/transmission-gtk.mo
+share/locale/sl/LC_MESSAGES/transmission-gtk.mo
+share/locale/sq/LC_MESSAGES/transmission-gtk.mo
+share/locale/sr/LC_MESSAGES/transmission-gtk.mo
+share/locale/sv/LC_MESSAGES/transmission-gtk.mo
+share/locale/ta_LK/LC_MESSAGES/transmission-gtk.mo
+share/locale/te/LC_MESSAGES/transmission-gtk.mo
+share/locale/th/LC_MESSAGES/transmission-gtk.mo
+share/locale/tl/LC_MESSAGES/transmission-gtk.mo
+share/locale/tr/LC_MESSAGES/transmission-gtk.mo
+share/locale/ug/LC_MESSAGES/transmission-gtk.mo
+share/locale/uk/LC_MESSAGES/transmission-gtk.mo
+share/locale/ur/LC_MESSAGES/transmission-gtk.mo
+share/locale/uz/LC_MESSAGES/transmission-gtk.mo
+share/locale/vi/LC_MESSAGES/transmission-gtk.mo
+share/locale/zh_CN/LC_MESSAGES/transmission-gtk.mo
+share/locale/zh_TW/LC_MESSAGES/transmission-gtk.mo
+share/pixmaps/transmission.png
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/tl/LC_MESSAGES
+@dirrmtry share/locale/tl
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/ta_LK/LC_MESSAGES
+@dirrmtry share/locale/ta_LK
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrmtry share/locale/gv/LC_MESSAGES
+@dirrmtry share/locale/gv
+@dirrmtry share/locale/fo/LC_MESSAGES
+@dirrmtry share/locale/fo
+@dirrmtry share/locale/fil/LC_MESSAGES
+@dirrmtry share/locale/fil
+@dirrmtry share/locale/ckb/LC_MESSAGES
+@dirrmtry share/locale/ckb
+@dirrmtry share/locale/ceb/LC_MESSAGES
+@dirrmtry share/locale/ceb
+@dirrmtry share/locale/bo/LC_MESSAGES
+@dirrmtry share/locale/bo
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/an/LC_MESSAGES
+@dirrmtry share/locale/an
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/applications
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

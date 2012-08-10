@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	transmission
-PORTVERSION=	2.61
+PORTVERSION=	2.51
 PORTREVISION?=	0
 CATEGORIES?=	net-p2p
-#MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
+#MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/ \
 MASTER_SITES=	http://transmission.cachefly.net/
 PKGNAMESUFFIX?=	-cli
 
 MAINTAINER?=	crees@FreeBSD.org
-COMMENT?=	A lightweight CLI (command line) BitTorrent client and utilities
+COMMENT?=	The last version of Transmission that still supports GTK 2.0
+
+LATEST_LINK=	${PORTNAME}25${PKGNAMESUFFIX}
+CONFLICTS_INSTALL=	${PORTNAME}${PKGNAMESUFFIX}-2.6*
 
 SLAVEPORT?=	cli
-
-CONFLICTS_INSTALL=	${PORTNAME}${PKGNAMESUFFIX}-2.5*
-
 .if ${SLAVEPORT}!="web"
 LIB_DEPENDS?=	${GEN_LIB_DEPENDS}
 
