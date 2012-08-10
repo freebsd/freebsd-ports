@@ -54,9 +54,10 @@ CONFIGURE_ARGS+=--without-html-dir
 PLIST_SUB+=	APIDOCS="@comment "
 .endif
 
+post-patch:
 .if empty(PORT_OPTIONS:MNLS)
-	@${REINPLACE_CMD} -e 's|	icons \\|	icons| ; \
-		s|	po||' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|	icons \\|	icons|' \
+	    -e 's|	po||' ${WRKSRC}/Makefile.in
 .endif
 
 post-install:
