@@ -575,6 +575,7 @@
     SUBDIR += naev-data
     SUBDIR += nazghul
     SUBDIR += nehquake
+    SUBDIR += nelly
     SUBDIR += nethack32
     SUBDIR += nethack33
     SUBDIR += nethack33-gnome

@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+echo "Nelly's Rooftop Garden: Starting up..."
+cd "%%DATADIR%%"
+./nelly.py
