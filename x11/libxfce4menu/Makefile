@@ -64,10 +64,10 @@ CONFIGURE_ARGS+=--enable-gladeui
 CONFIGURE_ARGS+=--disable-gladeui
 .endif
 
-.if empty(PORT_OPTIONS:MNLS)
 post-patch:
-	@${REINPLACE_CMD} -e 's|docs \\|docs|| ; \
-		s|po||' ${WRKSRC}/Makefile.in
+.if empty(PORT_OPTIONS:MNLS)
+	@${REINPLACE_CMD} -e 's|docs \\|docs|' \
+		-e 's|po||' ${WRKSRC}/Makefile.in
 .endif
 
 .include <bsd.port.mk>
