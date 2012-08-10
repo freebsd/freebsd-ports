@@ -30,10 +30,17 @@ MAN8=		ovs-appctl.8 ovs-brcompatd.8 ovs-bugtool.8 ovs-controller.8 \
 		ovs-test.8 ovs-vsctl.8 ovs-vswitchd.8 \
 		ovs-vlan-bug-workaround.8 ovs-vlan-test.8
 
+OPTIONS_DEFINE=	THREADED
+THREADED_DESC=	Experimental high-performance threading patch
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000
 BROKEN=		does not compile
+.endif
+
+.if ${PORT_OPTIONS:MTHREADED}
+CONFIGURE_ARGS+=--enable-threaded=yes
 .endif
 
 AUTOTOOLSFILES=	aclocal.m4
@@ -42,8 +49,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|1.11.1|%%AUTOMAKE_APIVER%%|g' \
 			  -e 's|2.65|%%AUTOCONF_VERSION%%|g' \
 			  ${WRKSRC}/aclocal.m4
-	# Workaround for a makefile bug; if it builds without this line, remove it.
-	#${TOUCH} ${WRKSRC}/INSTALL
+.if ${PORT_OPTIONS:MTHREADED}
+	@# We can't use EXTRA_PATCHES, since we need to apply this one
+	@# after files/patch-bsd-netdef.diff, not before.
+	${PATCH} ${PATCH_ARGS} < ${FILESDIR}/threaded.diff
+.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/vswitchd/vswitch.ovsschema ${PREFIX}/share/openvswitch/
