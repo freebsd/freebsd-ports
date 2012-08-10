@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		basic256
-PORTVERSION=		0.9.6.66
-PORTREVISION=	1
+PORTVERSION=		0.9.6.69a
 CATEGORIES=		lang
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kidbasic/basic256
@@ -24,7 +23,7 @@ WRKSRC=			${WRKDIR}
 
 USE_SDL=		sdl mixer
 
-USE_QT4= 		corelib gui network xml webkit moc_build qmake_build rcc_build uic_build
+USE_QT4=		corelib gui network xml webkit moc_build qmake_build rcc_build uic_build
 
 USE_DOS2UNIX=		yes
 
