@@ -52,6 +52,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="60bbe12c-e2c1-11e1-a8ca-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>21.0.1180.75</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/search/label/Stable%20updates">
+	  <p>[136643] [137721] [137957] High CVE-2012-2862: Use-after-free in
+	    PDF viewer. Credit to Mateusz Jurczyk of Google Security Team, with
+	    contributions by Gynvael Coldwind of Google Security Team.</p>
+	  <p>[136968] [137361] High CVE-2012-2863: Out-of-bounds writes in PDF
+	    viewer. Credit to Mateusz Jurczyk of Google Security Team, with
+	    contributions by Gynvael Coldwind of Google Security Team.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-2862</cvename>
+      <cvename>CVE-2012-2863</cvename>
+      <url>http://googlechromereleases.blogspot.com/search/label/Stable%20updates</url>
+    </references>
+    <dates>
+      <discovery>2012-08-08</discovery>
+      <entry>2012-08-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="31db9a18-e289-11e1-a57d-080027a27dbf">
     <topic>rubygem-rails -- multiple vulnerabilities</topic>
     <affects>
