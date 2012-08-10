@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linux-eagle5
-EAGLEBASEVERSION?=	5.11
+EAGLEBASEVERSION?=	5.12
 EAGLEBUGFIX?=	0
 EAGLEVERSION=	${EAGLEBASEVERSION}.${EAGLEBUGFIX}
 PORTVERSION=	${EAGLEVERSION:S/r/./}
@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.cadsoft.de/eagle/program/${EAGLEBASEVERSION}/
 DISTNAME=	eagle-${EAGLEVERSION}
 DISTFILES=	eagle-lin-${EAGLEVERSION}.run
 
-MAINTAINER?=	riggs@rrr.de
+MAINTAINER?=	thomas.e.zander@googlemail.com
 COMMENT?=	An easy to use, yet powerful tool for designing printed circuit boards
 
 ONLY_FOR_ARCHS=	i386 amd64

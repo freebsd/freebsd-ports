@@ -144,6 +144,7 @@ share/eagle5/lbr/con-ptr500.lbr
 share/eagle5/lbr/con-pulse.lbr
 share/eagle5/lbr/con-rib.lbr
 share/eagle5/lbr/con-samtec.lbr
+share/eagle5/lbr/con-shallin.lbr
 share/eagle5/lbr/con-shiua-chyuan.lbr
 share/eagle5/lbr/con-stewart.lbr
 share/eagle5/lbr/con-stocko.lbr
@@ -369,6 +370,7 @@ share/eagle5/lbr/transistor-power.lbr
 share/eagle5/lbr/transistor-small-signal.lbr
 share/eagle5/lbr/transistor.lbr
 share/eagle5/lbr/triac.lbr
+share/eagle5/lbr/trimble.lbr
 share/eagle5/lbr/tripas.lbr
 share/eagle5/lbr/u-blox.lbr
 share/eagle5/lbr/uln-udn.lbr
@@ -377,7 +379,6 @@ share/eagle5/lbr/v-reg.lbr
 share/eagle5/lbr/varistor.lbr
 share/eagle5/lbr/wafer-scale-psd.lbr
 share/eagle5/lbr/wirepad.lbr
-share/eagle5/lbr/wuerth-elektronik.lbr
 share/eagle5/lbr/xicor.lbr
 share/eagle5/lbr/xilinx-virtex-v5.lbr
 share/eagle5/lbr/xilinx-xc18v.lbr
@@ -432,6 +433,7 @@ share/eagle5/ulp/change-pad-in-lbr-x.bmp
 share/eagle5/ulp/change-pad-in-lbr.ulp
 share/eagle5/ulp/change-prefix-sch.ulp
 share/eagle5/ulp/change-via-by-stack.ulp
+share/eagle5/ulp/check-used-lbrs.ulp
 share/eagle5/ulp/clear-layer-in-lbr.ulp
 share/eagle5/ulp/cmd-change-brd-width.ulp
 share/eagle5/ulp/cmd-change-class.ulp
@@ -576,13 +578,14 @@ share/eagle5/ulp/length.ulp
 share/eagle5/ulp/make-symbol-device-package-bsdl.ulp
 share/eagle5/ulp/make-value-consistent.ulp
 share/eagle5/ulp/make_bga_package.bmp
+share/eagle5/ulp/make-group2pac.ulp
+share/eagle5/ulp/make-package-consistent-brd-sch.ulp
 share/eagle5/ulp/make_package_dual.bmp
 share/eagle5/ulp/make_package_meass_pacinfo.bmp
 share/eagle5/ulp/make_package_meass_pacinfo2.bmp
 share/eagle5/ulp/make_package_meass_padinfo-oct.bmp
 share/eagle5/ulp/make_package_meass_padinfo-round.bmp
 share/eagle5/ulp/make_package_meass_padinfo-sqr.bmp
-share/eagle5/ulp/make_package_meass_padinfo.bmp
 share/eagle5/ulp/make_package_meass_smdinfo.bmp
 share/eagle5/ulp/make_package_quad_left.bmp
 share/eagle5/ulp/make_package_quad_middle.bmp
@@ -619,6 +622,7 @@ share/eagle5/ulp/mill-outlines-top.bmp
 share/eagle5/ulp/mill-outlines-via.bmp
 share/eagle5/ulp/mill-outlines.ulp
 share/eagle5/ulp/mirror-board.ulp
+share/eagle5/ulp/mirror-board-remirror-element-swap-layer.ulp
 share/eagle5/ulp/mount-marks-smd.ulp
 share/eagle5/ulp/mount-marks.ulp
 share/eagle5/ulp/mount-trace.ulp
@@ -638,6 +642,7 @@ share/eagle5/ulp/print-inductor-ulp.bmp
 share/eagle5/ulp/print-inductor.ulp
 share/eagle5/ulp/print-spiral.bmp
 share/eagle5/ulp/remove-dev-sym-pac.ulp
+share/eagle5/ulp/remove-unused-packages.ulp
 share/eagle5/ulp/rename-signal.ulp
 share/eagle5/ulp/renamnet-suffix.ulp
 share/eagle5/ulp/renumber-sch.ulp
