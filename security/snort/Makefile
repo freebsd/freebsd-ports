@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	2.9.3
+PORTVERSION=	2.9.3.1
 CATEGORIES=	security
 MASTER_SITES=	SF/snort/snort \
 		http://mirrors.rit.edu/zi/
