@@ -10,7 +10,7 @@ PORTVERSION=	2.4.0
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20source/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kevinz5000@gmail.com
 COMMENT=	A multiplayer 3D tank battle game
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
