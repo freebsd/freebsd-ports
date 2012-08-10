@@ -14,8 +14,8 @@ if [ $? -ne 0 ]; then
     echo $F is corrupt
     exit 1
 fi
-l1=$((l-1))
-l2=$((l+13))
+l1=$(($l-1))
+l2=$(($l+13))
 sed -i.bak "${l1},${l2}d" $F # sed wants the braces
 rm $F.bak
 
