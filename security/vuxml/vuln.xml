@@ -52,6 +52,51 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="31db9a18-e289-11e1-a57d-080027a27dbf">
+    <topic>rubygem-rails -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>rubygem-rails</name>
+	<range><lt>3.2.8</lt></range>
+      </package>
+      <package>
+	<name>rubygem-actionpack</name>
+	<range><lt>3.2.8</lt></range>
+      </package>
+      <package>
+	<name>rubygem-activesupport</name>
+	<range><lt>3.2.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Rails core team reports:</p>
+	<blockquote cite="http://weblog.rubyonrails.org/2012/8/9/ann-rails-3-2-8-has-been-released/">
+	  <p>This version contains three important security fixes, please upgrade immediately.</p>
+	  <p>One of security fixes impacts all users and is related to HTML escaping code. The
+	     other two fixes impacts people using select_tag's prompt option and strip_tags
+	     helper from ActionPack.</p>
+	  <p>CVE-2012-3463 Potential XSS Vulnerability in select_tag prompt.</p>
+	  <p>CVE-2012-3464 Potential XSS Vulnerability in the HTML escaping code.</p>
+	  <p>CVE-2012-3465 XSS Vulnerability in strip_tags.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-3463</cvename>
+      <cvename>CVE-2012-3464</cvename>
+      <cvename>CVE-2012-3465</cvename>
+      <url>https://groups.google.com/d/msg/rubyonrails-security/fV3QUToSMSw/eHBSFOUYHpYJ</url>
+      <url>https://groups.google.com/d/msg/rubyonrails-security/kKGNeMrnmiY/r2yM7xy-G48J</url>
+      <url>https://groups.google.com/d/msg/rubyonrails-security/FgVEtBajcTY/tYLS1JJTu38J</url>
+      <url>http://weblog.rubyonrails.org/2012/8/9/ann-rails-3-2-8-has-been-released/</url>
+    </references>
+    <dates>
+      <discovery>2012-08-08</discovery>
+      <entry>2012-08-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8675efd5-e22c-11e1-a808-002354ed89bc">
     <topic>sudosh -- buffer overflow</topic>
     <affects>
