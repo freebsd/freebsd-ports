@@ -182,10 +182,16 @@ lib/bzflag/TimeLimit.la
 lib/bzflag/TimeLimit.so
 lib/bzflag/airspawn.la
 lib/bzflag/airspawn.so
+lib/bzflag/autoFlagReset.la
+lib/bzflag/autoFlagReset.so
 lib/bzflag/chathistory.la
 lib/bzflag/chathistory.so
 lib/bzflag/customflagsample.la
 lib/bzflag/customflagsample.so
+lib/bzflag/fairCTF.la
+lib/bzflag/fairCTF.so
+lib/bzflag/fastmap.la
+lib/bzflag/fastmap.so
 lib/bzflag/flagStay.la
 lib/bzflag/flagStay.so
 lib/bzflag/hiddenAdmin.la
@@ -202,8 +208,6 @@ lib/bzflag/nagware.la
 lib/bzflag/nagware.so
 lib/bzflag/playHistoryTracker.la
 lib/bzflag/playHistoryTracker.so
-lib/bzflag/pushstats.la
-lib/bzflag/pushstats.so
 lib/bzflag/rabbitTimer.la
 lib/bzflag/rabbitTimer.so
 lib/bzflag/rabidRabbit.la
@@ -218,6 +222,8 @@ lib/bzflag/shockwaveDeath.la
 lib/bzflag/shockwaveDeath.so
 lib/bzflag/teamflagreset.la
 lib/bzflag/teamflagreset.so
+lib/bzflag/thiefControl.la
+lib/bzflag/thiefControl.so
 lib/bzflag/timedctf.la
 lib/bzflag/timedctf.so
 lib/bzflag/wwzones.la
