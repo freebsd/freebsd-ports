@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	node
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.6
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	-devel
@@ -34,7 +34,6 @@ REINPLACE_ARGS=	-i ''
 
 post-patch:
 	@${RM} ${WRKSRC}/tools/wafadmin/Node.py.orig
-	@${REINPLACE_CMD} -e 's|share/man/man1/|man/man1|' ${WRKSRC}/tools/installer.js
 
 post-install:
 	${MKDIR} ${PREFIX}/lib/node_modules/
