@@ -27,7 +27,7 @@ USE_RC_SUBR=	example_agent pcap_agent snort_agent
 TCLSH_CMD?=	tclsh8.4
 WRKSRC=		${WRKDIR}/sguil-${PORTVERSION}
 SUB_LIST=	SGUILDIR=${SGUILDIR}
-SUB_FILES=	pkg-message example_agent.sh pcap_agent.sh snort_agent.sh
+SUB_FILES=	pkg-message
 PLIST_SUB=	SGUILDIR=${SGUILDIR}
 SGUILDIR?=	sguil-sensor
 AGENTS=		example_agent.tcl pads_agent.tcl pcap_agent.tcl sancp_agent.tcl snort_agent.tcl
@@ -42,7 +42,6 @@ WITH_PCRE=	true
 .if defined(WITH_SANCP)
 RUN_DEPENDS+=	sancp:${PORTSDIR}/security/sancp
 USE_RC_SUBR+=	sancp_agent
-SUB_FILES+=	sancp_agent.sh
 PLIST_SUB+=	USESANCP=
 .else
 PLIST_SUB+=	USESANCP="@comment "
@@ -51,7 +50,6 @@ PLIST_SUB+=	USESANCP="@comment "
 .if defined(WITH_PADS)
 RUN_DEPENDS+=	pads:${PORTSDIR}/net-mgmt/pads
 USE_RC_SUBR+=	pads_agent
-SUB_FILES+=	pads_agent.sh
 PLIST_SUB+=	USEPADS=
 .else
 PLIST_SUB+=	USEPADS="@comment "
