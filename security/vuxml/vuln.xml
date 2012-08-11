@@ -52,6 +52,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a14dee30-e3d7-11e1-a084-50e5492bd3dc">
+    <topic>libcloud -- possible SSL MITM due to invalid regexp used to validate target server hostname</topic>
+    <affects>
+      <package>
+	<name>py-libcloud</name>
+	<range><lt>0.11.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The libcloud development team reports:</p>
+	<blockquote cite="http://libcloud.apache.org/security.html">
+	  <p>When establishing a secure (SSL / TLS) connection to a target server an invalid regular
+	    expression has been used for performing the hostname verification. Subset instead of the
+	    full target server hostname has been marked an an acceptable match for the given hostname.
+	  
+	    For example, certificate with a hostname field of "aexample.com" was considered a valid
+	    certificate for domain "example.com".</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-3446</cvename>
+      <url>http://seclists.org/fulldisclosure/2012/Aug/55</url>
+    </references>
+    <dates>
+      <discovery>2012-08-01</discovery>
+      <entry>2012-08-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="aca0d7e0-e38a-11e1-999b-e0cb4e266481">
     <topic>phpMyAdmin -- Path disclosure due to missing library</topic>
     <affects>
