@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Reader
-PORTVERSION=	0.46
+PORTVERSION=	0.49
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,7 +26,8 @@ PERL_CONFIGURE=	yes
 
 MAN3=		XML::Reader.3 \
 		XML::Reader_de.3 \
-		XML::Reader_fr.3
+		XML::Reader_fr.3 \
+		XML::Reader::Testcases.3
 
 .include <bsd.port.options.mk>
 

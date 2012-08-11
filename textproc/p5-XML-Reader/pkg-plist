@@ -1,7 +1,9 @@
 %%SITE_PERL%%/XML/Reader.pm
 %%SITE_PERL%%/XML/Reader_de.pod
 %%SITE_PERL%%/XML/Reader_fr.pod
+%%SITE_PERL%%/XML/Reader/Testcases.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Reader/.packlist
+@dirrmtry %%SITE_PERL%%/XML/Reader
 @dirrmtry %%SITE_PERL%%/XML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Reader
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
