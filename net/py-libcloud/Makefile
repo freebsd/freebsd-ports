@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libcloud
-PORTVERSION=	0.10.1
+PORTVERSION=	0.11.1
 CATEGORIES=	net python
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,5 +24,9 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
 PYDISTUTILS_EGGINFO=	apache_${PORTNAME}-${PORTVERSION}-py${PYTHON_VER}.egg-info
+
+post-extract:
+	@${MV} ${WRKSRC}/libcloud/test ${WRKSRC}/test # no need to install tests
+	@${FIND} ${WRKSRC} -name "*.rej" -delete
 
 .include <bsd.port.mk>
