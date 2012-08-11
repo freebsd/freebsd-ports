@@ -52,6 +52,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="aca0d7e0-e38a-11e1-999b-e0cb4e266481">
+    <topic>phpMyAdmin -- Path disclosure due to missing library</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><lt>3.5.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2012-3.php">
+	  <p>The show_config_errors.php script does not include a
+	     library, so an error message shows the full path of this
+	     file, leading to possible further attacks.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-4219</cvename>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2012-3.php</url>
+    </references>
+    <dates>
+      <discovery>2012-08-03</discovery>
+      <entry>2012-08-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="60bbe12c-e2c1-11e1-a8ca-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
