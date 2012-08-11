@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tarsnap
-PORTVERSION=	1.0.31
+PORTVERSION=	1.0.33
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tarsnap.com/download-http/
 DISTNAME=	${PORTNAME}-autoconf-${PORTVERSION}
@@ -24,11 +24,12 @@ MAN1=		tarsnap.1 tarsnap-keygen.1 tarsnap-keymgmt.1	\
 		tarsnap-keyregen.1 tarsnap-recrypt.1
 MAN5=		tarsnap.conf.5
 
-OPTIONS=	SSE2 "Use SSE2-optimized code" Off
+OPTIONS_DEFINE=	SSE2
+SSE2_DESC=	Use SSE2-optimized code
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_SSE2)
+.if ${PORT_OPTIONS:MSSE2}
 CONFIGURE_ARGS+=	--enable-sse2
 CFLAGS+=		-msse2
 .else
