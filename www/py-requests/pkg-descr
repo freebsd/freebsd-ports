@@ -1,3 +1,17 @@
-Requests: HTTP for Humans. It's an elegand and simple HTTP library for Python.
+Requests is an ISC Licensed HTTP library, written in Python, for human beings.
 
-WWW: http://python-requests.org/
+Features
+- International Domains and URLs
+- Keep-Alive & Connection Pooling
+- Sessions with Cookie Persistence
+- Browser-style SSL Verification
+- Basic/Digest Authentication
+- Elegant Key/Value Cookies
+- Automatic Decompression
+- Unicode Response Bodies
+- Multipart File Uploads
+- Connection Timeouts
+- .netrc support
+- Thread-safe
+
+WWW:	http://python-requests.org/

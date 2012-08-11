@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	requests
-PORTVERSION=	0.13.5
+PORTVERSION=	0.13.6
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs.freebsd@gmail.com
-COMMENT=	Requests is an elegant and simple HTTP library for Python
+COMMENT=	Requests is a HTTP library, written in Python, for human beings
 
 LICENSE=	ISCL
 
