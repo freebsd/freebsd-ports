@@ -1768,9 +1768,9 @@ bin/sstablekeys
 %%CQL%%%%DATADIR%%/pylib/cqlshlib/wcwidth.pyc
 %%CQL%%%%DATADIR%%/pylib/cqlshlib/wcwidth.py
 %%DATADIR%%/lib/antlr-3.2.jar
-%%DATADIR%%/lib/apache-cassandra-1.0.10.jar
-%%DATADIR%%/lib/apache-cassandra-clientutil-1.0.10.jar
-%%DATADIR%%/lib/apache-cassandra-thrift-1.0.10.jar
+%%DATADIR%%/lib/apache-cassandra-1.0.11.jar
+%%DATADIR%%/lib/apache-cassandra-clientutil-1.0.11.jar
+%%DATADIR%%/lib/apache-cassandra-thrift-1.0.11.jar
 %%DATADIR%%/lib/avro-1.4.0-fixes.jar
 %%DATADIR%%/lib/avro-1.4.0-sources-fixes.jar
 %%DATADIR%%/lib/commons-cli-1.1.jar
