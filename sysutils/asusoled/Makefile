@@ -23,7 +23,7 @@ USE_RC_SUBR=	asusoled oled_clock
 PORTDATA=	asus.png asus_clock.png
 PORTDOCS=	README.FreeBSD
 PLIST_FILES=	sbin/asusoled
-SUB_FILES=	asusoled.sh oled_clock.sh pkg-message
+SUB_FILES=	pkg-message
 
 MAKE_ARGS+=	TTF_FONT=${FONTDIR}/TTF/luxisr.ttf
 
