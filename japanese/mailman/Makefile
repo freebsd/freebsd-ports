@@ -24,6 +24,8 @@ LICENSE_FILE=	${WRKSRC}/gnu-COPYING-GPL
 
 CONFLICTS=	mailman-2.1.*
 
+PORTSCOUT=	limit:.*\.j\d+$$
+
 USE_AUTOTOOLS=	autoconf
 USE_GETTEXT=	yes
 USE_PYTHON=	yes
