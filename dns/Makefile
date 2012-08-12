@@ -16,6 +16,7 @@
     SUBDIR += bindgraph
     SUBDIR += c-ares
     SUBDIR += checkdns
+    SUBDIR += credns
     SUBDIR += crossip
     SUBDIR += curvedns
     SUBDIR += ddclient

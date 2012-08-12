@@ -1,0 +1,19 @@
+#!/bin/sh
+# $FreeBSD: ports/dns/nsd/files/pkg-install.in,v 1.1 2010/02/11 19:37:10 pgollucci Exp $
+
+PATH="/bin:/sbin:/usr/bin:/usr/sbin"
+
+CREDNSUSER=%%CREDNSUSER%%
+CREDNSGROUP=%%CREDNSGROUP%%
+CREDNSDBDIR=%%CREDNSDBDIR%%
+CREDNSRUNDIR=%%CREDNSRUNDIR%%
+
+CHOWN="chown"
+INSTALL_DIR="install -d -o ${CREDNSUSER} -g ${CREDNSGROUP} -m 0755"
+
+if [ "$2" = "POST-INSTALL" ]; then
+	${INSTALL_DIR} ${CREDNSDBDIR} ${CREDNSRUNDIR}
+	${CHOWN} -R ${CREDNSUSER}:${CREDNSGROUP} ${CREDNSDBDIR} ${CREDNSRUNDIR}
+fi
+
+exit 0
