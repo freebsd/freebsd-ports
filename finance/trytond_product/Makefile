@@ -14,7 +14,6 @@ MAINTAINER=	matthias@petermann.it
 COMMENT=	The Product Module for Tryton
 
 RUN_DEPENDS=	trytond>=2.4.0:${PORTSDIR}/finance/trytond
-#RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
