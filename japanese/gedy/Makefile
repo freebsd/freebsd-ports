@@ -5,23 +5,24 @@
 # $FreeBSD$
 
 PORTNAME=	gedy
-PORTVERSION=	0.02
-PORTREVISION=	1
+PORTVERSION=	0.9.0
+#PORTREVISION=	0
 CATEGORIES=	japanese ruby
 MASTER_SITES=	http://homepage3.nifty.com/slokar/pasori/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	# empty
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	GNOME Edy Viewer
 
-#RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gnome2.so:${PORTSDIR}/x11/ruby-gnome2 \
-#		${RUBY_SITEARCHLIBDIR}/gconf2.so:${PORTSDIR}/devel/ruby-gconf2 \
-#		${RUBY_SITEARCHLIBDIR}/pasori.so:${PORTSDIR}/devel/libpafe-ruby
+LICENSE=	GPLv2
 
-BROKEN=		Dependencies removed in ruby-gnome update
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
+		${RUBY_SITEARCHLIBDIR}/pasori.so:${PORTSDIR}/devel/libpafe-ruby
 
 USE_RUBY=		yes
+RUBY_VER=		1.9
 
 EXTRACT_CMD=		${CP}
 EXTRACT_BEFORE_ARGS=	-p
@@ -30,6 +31,10 @@ NO_WRKSUBDIR=		yes
 NO_BUILD=		yes
 
 PLIST_FILES=	bin/${PORTNAME}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,#! /usr/bin/ruby1.9.3,#!${RUBY},g' \
+			  ${WRKSRC}/${PORTNAME}
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
