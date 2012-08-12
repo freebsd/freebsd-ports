@@ -1,0 +1,10 @@
+**************************************************************************
+*                                                                        *
+*   To run credns from startup, add credns_enable="YES"                  *
+*   to your /etc/rc.conf                                                 *
+*                                                                        *
+*   Take good care when using credns commands, since they often need to  *
+*   be executed as user dedicated to credns, in order for the files it   *
+*   touches or creates to have the proper permissions.                   *
+*                                                                        *
+**************************************************************************

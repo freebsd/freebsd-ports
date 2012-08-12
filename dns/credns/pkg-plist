@@ -1,0 +1,8 @@
+sbin/credns
+sbin/credns-checkconf
+sbin/credns-notify
+sbin/credns-patch
+sbin/credns-xfer
+sbin/crednsc
+etc/credns/credns.conf.sample
+@dirrmtry etc/credns

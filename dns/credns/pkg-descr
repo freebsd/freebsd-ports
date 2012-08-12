@@ -1,0 +1,4 @@
+Credns is a software program aimed at fortifying DNSSEC by performing
+validation in the DNS notify/transfer-chain.
+
+WWW:	http://www.nlnetlabs.nl/projects/credns/

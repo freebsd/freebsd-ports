@@ -1,0 +1,59 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: credns
+# REQUIRE: DAEMON
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable credns
+#
+# credns_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=credns
+rcvar=credns_enable
+
+required_files=%%PREFIX%%/etc/credns/credns.conf
+
+command=%%PREFIX%%/sbin/crednsc
+command_args="start"
+pidfile=`%%PREFIX%%/sbin/credns-checkconf -o pidfile %%PREFIX%%/etc/credns/credns.conf`
+procname=%%PREFIX%%/sbin/${name}
+
+load_rc_config ${name}
+
+credns_enable=${credns_enable-"NO"}
+
+extra_commands="reload"
+start_precmd="credns_precmd"
+reload_cmd="credns_reload"
+stop_cmd="credns_stop"
+
+credns_precmd()
+{
+	db=`%%PREFIX%%/sbin/credns-checkconf -o database %%PREFIX%%/etc/credns/credns.conf`
+	if [ ! -f "$db" ]; then
+		${command} rebuild
+	fi
+}
+
+credns_reload()
+{
+	${command} rebuild && ${command} reload
+}
+
+credns_stop()
+{
+	echo "Merging credns zone transfer changes to zone files."
+	${command} patch
+
+	echo "Stopping ${name}."
+	${command} stop
+}
+
+run_rc_command "$1"
+
