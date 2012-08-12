@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xfce4-fsguard-plugin
-PORTVERSION=	1.0.0
-PORTREVISION=	3
+PORTVERSION=	1.0.1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -20,17 +19,16 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gtk20 intltool intlhack pkgconfig
-USE_XFCE=	configenv libgui libutil panel
+USE_GNOME=	gnomehack gtk20 intltool intlhack
+USE_XFCE=	configenv libmenu libutil panel
 USE_XORG=	x11
+USE_PKGCONFIG=	build
 
-CONFIGURE_ARGS=	--disable-debug
+OPTIONS_DEFINE= NLS
 
-OPTIONS=	NLS "Enable Native Language Support" on
+.include <bsd.port.options.mk>
 
-.include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	NLS=""
@@ -39,4 +37,9 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+post-patch:
+.if empty(PORT_OPTIONS:MNLS)
+	@${REINPLACE_CMD} -e 's|	po||' ${WRKSRC}/Makefile.in
+.endif
+
+.include <bsd.port.mk>

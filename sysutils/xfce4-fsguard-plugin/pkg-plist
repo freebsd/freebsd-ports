@@ -1,4 +1,5 @@
-libexec/xfce4/panel-plugins/xfce4-fsguard-plugin
+lib/xfce4/panel/plugins/libfsguard.la
+lib/xfce4/panel/plugins/libfsguard.so
 share/icons/hicolor/16x16/apps/xfce4-fsguard-plugin-urgent.png
 share/icons/hicolor/16x16/apps/xfce4-fsguard-plugin-warning.png
 share/icons/hicolor/16x16/apps/xfce4-fsguard-plugin.png
@@ -20,6 +21,7 @@ share/icons/hicolor/48x48/apps/xfce4-fsguard-plugin.png
 share/icons/hicolor/scalable/apps/xfce4-fsguard-plugin-urgent.svg
 share/icons/hicolor/scalable/apps/xfce4-fsguard-plugin-warning.svg
 share/icons/hicolor/scalable/apps/xfce4-fsguard-plugin.svg
+%%NLS%%share/locale/ar/LC_MESSAGES/xfce4-fsguard-plugin.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfce4-fsguard-plugin.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/xfce4-fsguard-plugin.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/xfce4-fsguard-plugin.mo
@@ -32,6 +34,7 @@ share/icons/hicolor/scalable/apps/xfce4-fsguard-plugin.svg
 %%NLS%%share/locale/fi/LC_MESSAGES/xfce4-fsguard-plugin.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/xfce4-fsguard-plugin.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/xfce4-fsguard-plugin.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/xfce4-fsguard-plugin.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/xfce4-fsguard-plugin.mo
 %%NLS%%share/locale/id/LC_MESSAGES/xfce4-fsguard-plugin.mo
 %%NLS%%share/locale/it/LC_MESSAGES/xfce4-fsguard-plugin.mo
@@ -47,6 +50,7 @@ share/icons/hicolor/scalable/apps/xfce4-fsguard-plugin.svg
 %%NLS%%share/locale/pt/LC_MESSAGES/xfce4-fsguard-plugin.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/xfce4-fsguard-plugin.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/xfce4-fsguard-plugin.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/xfce4-fsguard-plugin.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/xfce4-fsguard-plugin.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/xfce4-fsguard-plugin.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/xfce4-fsguard-plugin.mo
@@ -57,8 +61,9 @@ share/icons/hicolor/scalable/apps/xfce4-fsguard-plugin.svg
 %%NLS%%share/locale/vi/LC_MESSAGES/xfce4-fsguard-plugin.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfce4-fsguard-plugin.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-fsguard-plugin.mo
-share/xfce4/panel-plugins/fsguard.desktop
-@dirrmtry share/xfce4/panel-plugins
+share/xfce4/panel/plugins/fsguard.desktop
+@dirrmtry share/xfce4/panel/plugins
+@dirrmtry share/xfce4/panel
 @dirrmtry share/xfce4
 %%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ur_PK
@@ -70,5 +75,6 @@ share/xfce4/panel-plugins/fsguard.desktop
 %%NLS%%@dirrmtry share/locale/kk
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast
-@dirrmtry libexec/xfce4/panel-plugins
-@dirrmtry libexec/xfce4
+@dirrmtry lib/xfce4/panel/plugins
+@dirrmtry lib/xfce4/panel
+@dirrmtry lib/xfce4
