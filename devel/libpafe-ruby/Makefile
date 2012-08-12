@@ -6,9 +6,10 @@
 
 PORTNAME=	libpafe-ruby
 PORTVERSION=	0.0.8
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://homepage3.nifty.com/slokar/pasori/
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Ruby binding for libpafe
