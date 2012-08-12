@@ -54,3 +54,11 @@
      return rval;
  }
  
+@@ -155,6 +158,6 @@
+                 return;
+             snprintf(buf, len, "%p\n", buffer[i]);
+         }
+-        write(fd, buf, len - 1);
++        write(fd, buf, strlen(buf));
+     }
+ }
