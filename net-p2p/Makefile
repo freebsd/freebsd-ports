@@ -84,8 +84,8 @@
     SUBDIR += py-py2play
     SUBDIR += py-transmissionrpc
     SUBDIR += py-vertex
-    SUBDIR += qbittorrent-29
-    SUBDIR += qbittorrent-29-nox11
+    SUBDIR += qbittorrent
+    SUBDIR += qbittorrent-nox11
     SUBDIR += qtella
     SUBDIR += qtorrent
     SUBDIR += retroshare

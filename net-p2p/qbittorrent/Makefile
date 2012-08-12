@@ -1,12 +1,12 @@
-# New ports collection makefile for:	qbittorrent-29
-# Date created:				1 October 2011
+# New ports collection makefile for:	qbittorrent
+# Date created:				11 August 2012
 # Whom:					Doug Barton <dougb@FreeBSD.org>
 #
 # $FreeBSD$
 
 PORTNAME=	qbittorrent
-PORTVERSION=	2.9.11
-PORTREVISION?=	1
+PORTVERSION=	3.0.0
+PORTREVISION?=	0
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 
@@ -19,11 +19,11 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 
 MAKE_JOBS_SAFE=	yes
 
-CONFLICTS=	qbittorrent-2.[2345678].* qbittorrent-3.[0-9].*
+CONFLICTS=	qbittorrent-2.* qbittorrent-4.[0-9].*
 
 USE_QT4=	corelib network qmake_build moc_build rcc_build
 
-.if !defined(QB29_NOX_SLAVE)
+.if !defined(QB_NOX_SLAVE)
 .if defined(WITHOUT_X11)
 BROKEN=	Use net-p2p/${PORTNAME}-nox11 for the non-GUI version
 .endif
@@ -49,7 +49,7 @@ CONFIGURE_ARGS+=	--disable-qt-dbus
 .endif
 
 post-install:
-.if !defined(QB29_NOX_SLAVE)
+.if !defined(QB_NOX_SLAVE)
 	@${STRIP_CMD} ${PREFIX}/bin/qbittorrent
 	@${CAT} ${PKGMESSAGE}
 .else
