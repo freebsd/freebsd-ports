@@ -103,6 +103,7 @@
     SUBDIR += sql-ledger
     SUBDIR += tinyerp-server
     SUBDIR += trytond
+    SUBDIR += trytond_product
     SUBDIR += venice
     SUBDIR += weberp
     SUBDIR += wmstock
