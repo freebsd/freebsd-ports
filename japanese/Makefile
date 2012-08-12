@@ -105,6 +105,7 @@
     SUBDIR += grep
     SUBDIR += groff
     SUBDIR += gskk
+    SUBDIR += gsuica
     SUBDIR += gtkicq
     SUBDIR += guesswork-classic
     SUBDIR += gxditview
