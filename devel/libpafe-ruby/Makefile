@@ -13,6 +13,9 @@ MASTER_SITES=	http://homepage3.nifty.com/slokar/pasori/
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Ruby binding for libpafe
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	pafe:${PORTSDIR}/devel/libpafe
 
 USE_RUBY=		yes
