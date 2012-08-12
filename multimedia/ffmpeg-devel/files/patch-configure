@@ -1,6 +1,6 @@
---- configure.orig	2012-01-22 14:41:15.000000000 +0100
-+++ configure	2012-01-22 16:05:39.961156595 +0100
-@@ -1806,7 +1806,7 @@
+--- configure.orig	2012-08-06 10:06:26.000000000 +0200
++++ configure	2012-08-12 09:48:55.838509614 +0200
+@@ -1924,7 +1924,7 @@
  nogas=":"
  
  # machine
@@ -9,9 +9,9 @@
  cpu="generic"
  
  # OS
-@@ -3176,10 +3176,10 @@
- texi2html -version > /dev/null 2>&1 && enable texi2html || disable texi2html
+@@ -3506,10 +3506,10 @@
  makeinfo --version > /dev/null 2>&1 && enable makeinfo  || disable makeinfo
+ pod2man --help > /dev/null 2>&1 && enable pod2man || disable pod2man
  
 -check_header linux/fb.h
 -check_header linux/videodev.h
@@ -24,7 +24,7 @@
  
  check_header sys/videoio.h
  
-@@ -3517,7 +3517,7 @@
+@@ -3897,7 +3897,7 @@
  SRC_PATH:=\$(SRC_PATH:.%=..%)
  endif
  CC_IDENT=$cc_ident
@@ -33,3 +33,63 @@
  CC=$cc
  CXX=$cxx
  AS=$as
+@@ -4093,13 +4093,13 @@
+ requires=$5
+ enabled ${name#lib} || return 0
+ mkdir -p $name
+-cat <<EOF > $name/$name.pc
++cat <<EOF > $name/${name}${build_suffix}.pc
+ prefix=$prefix
+ exec_prefix=\${prefix}
+ libdir=$libdir
+ includedir=$incdir
+ 
+-Name: $name
++Name: ${name}${build_suffix}
+ Description: $comment
+ Version: $version
+ Requires: $(enabled shared || echo $requires)
+@@ -4113,7 +4113,7 @@
+ mkdir -p doc/examples/pc-uninstalled
+ includedir=${source_path}
+ [ "$includedir" = . ] && includedir="\${pcfiledir}/../../.."
+-cat <<EOF > doc/examples/pc-uninstalled/$name.pc
++cat <<EOF > doc/examples/pc-uninstalled/${name}${build_suffix}.pc
+ prefix=
+ exec_prefix=
+ libdir=\${pcfiledir}/../../../$name
+@@ -4130,22 +4130,22 @@
+ }
+ 
+ libavfilter_pc_deps=""
+-enabled libavfilter_deps_avcodec    && prepend libavfilter_pc_deps "libavcodec = $LIBAVCODEC_VERSION,"
+-enabled libavfilter_deps_avformat   && prepend libavfilter_pc_deps "libavformat = $LIBAVFORMAT_VERSION,"
+-enabled libavfilter_deps_swscale    && prepend libavfilter_pc_deps "libswscale = $LIBSWSCALE_VERSION,"
+-enabled libavfilter_deps_swresample && prepend libavfilter_pc_deps "libswresample = $LIBSWRESAMPLE_VERSION,"
+-enabled libavfilter_deps_postproc   && prepend libavfilter_pc_deps "libpostproc = $LIBPOSTPROC_VERSION,"
++enabled libavfilter_deps_avcodec    && prepend libavfilter_pc_deps "libavcodec${build_suffix} = $LIBAVCODEC_VERSION,"
++enabled libavfilter_deps_avformat   && prepend libavfilter_pc_deps "libavformat${build_suffix} = $LIBAVFORMAT_VERSION,"
++enabled libavfilter_deps_swscale    && prepend libavfilter_pc_deps "libswscale${build_suffix} = $LIBSWSCALE_VERSION,"
++enabled libavfilter_deps_swresample && prepend libavfilter_pc_deps "libswresample${build_suffix} = $LIBSWRESAMPLE_VERSION,"
++enabled libavfilter_deps_postproc   && prepend libavfilter_pc_deps "libpostproc${build_suffix} = $LIBPOSTPROC_VERSION,"
+ libavfilter_pc_deps=${libavfilter_pc_deps%, }
+ 
+-libavdevice_pc_deps="libavformat = $LIBAVFORMAT_VERSION"
+-enabled lavfi_indev && prepend libavdevice_pc_deps "libavfilter = $LIBAVFILTER_VERSION,"
++libavdevice_pc_deps="libavformat${build_suffix} = $LIBAVFORMAT_VERSION"
++enabled lavfi_indev && prepend libavdevice_pc_deps "libavfilter${build_suffix} = $LIBAVFILTER_VERSION,"
+ 
+ pkgconfig_generate libavutil "FFmpeg utility library" "$LIBAVUTIL_VERSION" "$LIBM"
+-pkgconfig_generate libavcodec "FFmpeg codec library" "$LIBAVCODEC_VERSION" "$extralibs" "libavutil = $LIBAVUTIL_VERSION"
+-pkgconfig_generate libavformat "FFmpeg container format library" "$LIBAVFORMAT_VERSION" "$extralibs" "libavcodec = $LIBAVCODEC_VERSION"
++pkgconfig_generate libavcodec "FFmpeg codec library" "$LIBAVCODEC_VERSION" "$extralibs" "libavutil${build_suffix} = $LIBAVUTIL_VERSION"
++pkgconfig_generate libavformat "FFmpeg container format library" "$LIBAVFORMAT_VERSION" "$extralibs" "libavcodec${build_suffix} = $LIBAVCODEC_VERSION"
+ pkgconfig_generate libavdevice "FFmpeg device handling library" "$LIBAVDEVICE_VERSION" "$extralibs" "$libavdevice_pc_deps"
+ pkgconfig_generate libavfilter "FFmpeg video filtering library" "$LIBAVFILTER_VERSION" "$extralibs" "$libavfilter_pc_deps"
+-pkgconfig_generate libpostproc "FFmpeg postprocessing library" "$LIBPOSTPROC_VERSION" "" "libavutil = $LIBAVUTIL_VERSION"
++pkgconfig_generate libpostproc "FFmpeg postprocessing library" "$LIBPOSTPROC_VERSION" "" "libavutil${build_suffix} = $LIBAVUTIL_VERSION"
+ pkgconfig_generate libavresample "Libav audio resampling library" "$LIBAVRESAMPLE_VERSION" "$extralibs"
+-pkgconfig_generate libswscale "FFmpeg image rescaling library" "$LIBSWSCALE_VERSION" "$LIBM" "libavutil = $LIBAVUTIL_VERSION"
+-pkgconfig_generate libswresample "FFmpeg audio rescaling library" "$LIBSWRESAMPLE_VERSION" "$LIBM" "libavutil = $LIBAVUTIL_VERSION"
++pkgconfig_generate libswscale "FFmpeg image rescaling library" "$LIBSWSCALE_VERSION" "$LIBM" "libavutil${build_suffix} = $LIBAVUTIL_VERSION"
++pkgconfig_generate libswresample "FFmpeg audio rescaling library" "$LIBSWRESAMPLE_VERSION" "$LIBM" "libavutil${build_suffix} = $LIBAVUTIL_VERSION"

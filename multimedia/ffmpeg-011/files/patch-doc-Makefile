@@ -1,0 +1,11 @@
+--- doc/Makefile.orig	2012-08-12 09:52:01.464511585 +0200
++++ doc/Makefile	2012-08-12 09:52:10.248048618 +0200
+@@ -54,7 +54,7 @@
+ 
+ $(DOCS): | doc/
+ 
+-install-progs-$(CONFIG_DOC): install-man
++#install-progs-$(CONFIG_DOC): install-man
+ 
+ install-man: $(MANPAGES)
+ 	$(Q)mkdir -p "$(MANDIR)/man1"
