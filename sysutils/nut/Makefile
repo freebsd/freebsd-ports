@@ -40,7 +40,13 @@ USE_RC_SUBR=	nut nut_upsmon nut_upslog
 SUB_LIST+=	STATEDIR=${STATEDIR}
 PLIST_SUB+=	STATEDIR=${STATEDIR}
 
-MAN3=		upscli_connect.3 upscli_disconnect.3 upscli_fd.3 \
+MAN3=		nutscan.3 nutscan_add_device_to_device.3 \
+		nutscan_add_option_to_device.3 nutscan_cidr_to_ip.3 \
+		nutscan_display_parsable.3 nutscan_display_ups_conf.3 \
+		nutscan_free_device.3 nutscan_init.3 nutscan_new_device.3 \
+		nutscan_scan_avahi.3 nutscan_scan_ipmi.3 nutscan_scan_nut.3 \
+		nutscan_scan_snmp.3 nutscan_scan_usb.3 nutscan_scan_xml_http.3 \
+		upscli_connect.3 upscli_disconnect.3 upscli_fd.3 \
 		upscli_get.3 upscli_list_next.3 upscli_list_start.3 \
 		upscli_readline.3 upscli_sendline.3 upscli_splitaddr.3 \
 		upscli_splitname.3 upscli_ssl.3 upscli_strerror.3 \
@@ -49,8 +55,8 @@ MAN3=		upscli_connect.3 upscli_disconnect.3 upscli_fd.3 \
 MAN5=		nut.conf.5 ups.conf.5 upsd.conf.5 upsd.users.5 upsmon.conf.5 \
 		upssched.conf.5
 
-MAN8=		nutupsdrv.8 upsc.8 upscmd.8 upsd.8 upsdrvctl.8 \
-		upslog.8 upsmon.8 upsrw.8 upssched.8
+MAN8=		apcsmart-old.8 nut-recorder.8 nut-scanner.8 nutupsdrv.8 upsc.8 \
+		upscmd.8 upsd.8 upsdrvctl.8 upslog.8 upsmon.8 upsrw.8 upssched.8
 
 PORTDOCS=	*
 
