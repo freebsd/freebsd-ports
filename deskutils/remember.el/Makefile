@@ -26,8 +26,8 @@ OPTIONS+=	PLANNER "Planner.el support" off
 
 .include <bsd.port.pre.mk>
 
-.if (${EMACS_PORT_NAME} == "emacs23")
-IGNORE=		incorporated into Emacs 23
+.if (${EMACS_PORT_NAME} == "emacs23") || (${EMACS_PORT_NAME} == "emacs24") || (${EMACS_PORT_NAME} == "emacs-devel")
+IGNORE=		incorporated into Emacs 23/24
 .endif
 
 .if !defined(WITHOUT_BBDB)
