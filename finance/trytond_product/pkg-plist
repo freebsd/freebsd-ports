@@ -1,50 +1,50 @@
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/EGG-INFO/PKG-INFO
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/EGG-INFO/SOURCES.txt
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/EGG-INFO/dependency_links.txt
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/EGG-INFO/entry_points.txt
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/EGG-INFO/not-zip-safe
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/EGG-INFO/requires.txt
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/EGG-INFO/top_level.txt
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/__init__.py
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/__init__.pyc
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/__init__.pyo
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/__tryton__.py
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/__tryton__.pyc
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/__tryton__.pyo
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/category.py
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/category.pyc
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/category.pyo
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/category.xml
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/icons/tryton-product.svg
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/locale/bg_BG.po
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/locale/ca_ES.po
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/locale/cs_CZ.po
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/locale/de_DE.po
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/locale/es_AR.po
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/locale/es_CO.po
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/locale/es_ES.po
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/locale/fr_FR.po
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/locale/nl_NL.po
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/locale/ru_RU.po
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/product.py
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/product.pyc
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/product.pyo
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/product.xml
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/tests/__init__.py
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/tests/__init__.pyc
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/tests/__init__.pyo
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/tests/test_product.py
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/tests/test_product.pyc
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/tests/test_product.pyo
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/uom.py
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/uom.pyc
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/uom.pyo
-lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/uom.xml
-@dirrm lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/tests
-@dirrm lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/locale
-@dirrm lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product/icons
-@dirrm lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules/product
-@dirrm lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond/modules
-@dirrm lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/trytond
-@dirrm lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg/EGG-INFO
-@dirrm lib/python2.7/site-packages/trytond_product-2.4.0-py2.7.egg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/__tryton__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/__tryton__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/__tryton__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/category.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/category.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/category.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/category.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/icons/tryton-product.svg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/locale/bg_BG.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/locale/ca_ES.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/locale/cs_CZ.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/locale/de_DE.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/locale/es_AR.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/locale/es_CO.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/locale/es_ES.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/locale/fr_FR.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/locale/nl_NL.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/locale/ru_RU.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/product.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/product.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/product.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/product.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/tests/test_product.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/tests/test_product.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/tests/test_product.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/uom.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/uom.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/uom.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/uom.xml
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/locale
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product/icons
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules/product
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/modules
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
