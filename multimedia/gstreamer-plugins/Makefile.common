@@ -406,12 +406,6 @@ gst_musepack_PLIST_FILES=	${GST_LIB_DIR}/libgstmusepack.la \
 		${GST_LIB_DIR}/libgstmusepack.so
 gst_musepack_DIST=	bad
 
-# musicbrainz
-gst_musicbrainz_LIB_DEPENDS+=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz
-gst_musicbrainz_PLIST_FILES=	${GST_LIB_DIR}/libgsttrm.so \
-		${GST_LIB_DIR}/libgsttrm.la
-gst_musicbrainz_DIST=	bad
-
 # nas
 gst_nas_LIB_DEPENDS+=	audio.2:${PORTSDIR}/audio/nas
 gst_nas_DIST=	bad
