@@ -1,5 +1,5 @@
-qBittorrent v2 is the closest open source (GNU GPL v2 license) equivalent
-to utorrent.  It is based on the Qt4 toolkit and libtorrent-rasterbar.
+qBittorrent is the closest open source (GNU GPL v2 license) equivalent
+to uTorrent.  It is based on the Qt4 toolkit and libtorrent-rasterbar.
 
 Features:
 
@@ -7,7 +7,7 @@ Features:
 	Simultaneous search in most famous BitTorrent search sites
 	Per-category-specific search requests (e.g. Books, Music, Movies)
 	All Bittorrent extensions
-		* DHT, Peer Exchange, Full encryption, Magnet URI
+		* DHT, Peer Exchange, Full encryption, Magnet URI, uTP
 	Remote control through a Web user interface
 		* Nearly identical to the regular UI, all in Ajax
 	Advanced control over trackers, peers and torrents
