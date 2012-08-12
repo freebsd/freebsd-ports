@@ -1,3 +1,22 @@
+%%NUT_CGI%%%%CGIDIR%%/upsimage.cgi
+%%NUT_CGI%%%%CGIDIR%%/upsset.cgi
+%%NUT_CGI%%%%CGIDIR%%/upsstats.cgi
+%%NUT_CGI%%%%CGIETCDIR%%/hosts.conf.sample
+%%NUT_CGI%%%%CGIETCDIR%%/upsset.conf.sample
+%%NUT_CGI%%%%CGIETCDIR%%/upsstats.html.sample
+%%NUT_CGI%%%%CGIETCDIR%%/upsstats-single.html.sample
+%%NUT_CGI%%%%WWWDIR%%/bottom.html
+%%NUT_CGI%%%%WWWDIR%%/header.html
+%%NUT_CGI%%%%WWWDIR%%/index.html
+%%NUT_CGI%%%%WWWDIR%%/nut-banner.png
+%%ETCDIR%%/cmdvartab
+%%ETCDIR%%/driver.list
+%%ETCDIR%%/nut.conf.sample
+%%ETCDIR%%/ups.conf.sample
+%%ETCDIR%%/upsd.conf.sample
+%%ETCDIR%%/upsd.users.sample
+%%ETCDIR%%/upsmon.conf.sample
+%%ETCDIR%%/upssched.conf.sample
 @stopdaemon nut_upsmon
 @stopdaemon nut_upslog
 @stopdaemon nut
@@ -7,31 +26,30 @@ bin/upslog
 bin/upsrw
 bin/upssched-cmd
 %%BASH%%etc/bash_completion.d/nut.bash_completion
-etc/nut/cmdvartab
-etc/nut/driver.list
-etc/nut/nut.conf.sample
-etc/nut/ups.conf.sample
-etc/nut/upsd.conf.sample
-etc/nut/upsd.users.sample
-etc/nut/upsmon.conf.sample
-etc/nut/upssched.conf.sample
+include/nut-scan.h
+include/nutscan-device.h
+include/nutscan-init.h
+include/nutscan-ip.h
 include/parseconf.h
 include/upsclient.h
 lib/libupsclient.a
-lib/libupsclient.so.1
-lib/libupsclient.so
 lib/libupsclient.la
-%%NUT_HAL%%libexec/hald-addon-blazer_usb
+lib/libupsclient.so
+lib/libupsclient.so.2
+libdata/pkgconfig/libnutscan.pc
+libdata/pkgconfig/libupsclient.pc
 %%NUT_HAL%%libexec/hald-addon-bcmxcp_usb
+%%NUT_HAL%%libexec/hald-addon-blazer_usb
 %%NUT_HAL%%libexec/hald-addon-tripplite_usb
 %%NUT_HAL%%libexec/hald-addon-usbhid-ups
 %%NUT_SERIAL%%libexec/nut/apcsmart
-%%NUT_SERIAL%%libexec/nut/bestfortress
+%%NUT_SERIAL%%libexec/nut/apcsmart-old
 %%NUT_SERIAL%%libexec/nut/bcmxcp
 %%NUT_USB%%libexec/nut/bcmxcp_usb
 %%NUT_SERIAL%%libexec/nut/belkin
 %%NUT_SERIAL%%libexec/nut/belkinunv
 %%NUT_SERIAL%%libexec/nut/bestfcom
+%%NUT_SERIAL%%libexec/nut/bestfortress
 %%NUT_SERIAL%%libexec/nut/bestuferrups
 %%NUT_SERIAL%%libexec/nut/bestups
 %%NUT_SERIAL%%libexec/nut/blazer_ser
@@ -62,8 +80,8 @@ lib/libupsclient.la
 %%NUT_SERIAL%%libexec/nut/rhino
 %%NUT_USB%%libexec/nut/richcomm_usb
 %%NUT_SERIAL%%libexec/nut/safenet
-%%NUT_SNMP%%libexec/nut/snmp-ups
 %%NUT_SERIAL%%libexec/nut/skel
+%%NUT_SNMP%%libexec/nut/snmp-ups
 %%NUT_SERIAL%%libexec/nut/solis
 %%NUT_SERIAL%%libexec/nut/tripplite
 %%NUT_USB%%libexec/nut/tripplite_usb
@@ -72,26 +90,13 @@ lib/libupsclient.la
 libexec/nut/upsdrvctl
 %%NUT_USB%%libexec/nut/usbhid-ups
 %%NUT_SERIAL%%libexec/nut/victronups
-libdata/pkgconfig/libupsclient.pc
 sbin/upsd
 sbin/upsmon
 sbin/upssched
 %%NUT_HAL%%share/hal/fdi/information/20thirdparty/20-ups-nut-device.fdi
-%%NUT_CGI%%%%CGIDIR%%/upsimage.cgi
-%%NUT_CGI%%%%CGIDIR%%/upsset.cgi
-%%NUT_CGI%%%%CGIDIR%%/upsstats.cgi
-%%NUT_CGI%%%%CGIETCDIR%%/hosts.conf.sample
-%%NUT_CGI%%%%CGIETCDIR%%/upsset.conf.sample
-%%NUT_CGI%%%%CGIETCDIR%%/upsstats.html.sample
-%%NUT_CGI%%%%CGIETCDIR%%/upsstats-single.html.sample
-%%NUT_CGI%%%%WWWDIR%%/bottom.html
-%%NUT_CGI%%%%WWWDIR%%/header.html
-%%NUT_CGI%%%%WWWDIR%%/index.html
-%%NUT_CGI%%%%WWWDIR%%/nut-banner.png
-@dirrmtry etc/nut
-@dirrmtry libdata/pkgconfig
+@dirrmtry share/hal/fdi/information/20thirdparty
+@dirrmtry %%CGIDIR%%
+@dirrmtry %%ETCDIR%%
+@dirrmtry %%WWWDIR%%
+@dirrmtry etc/bash_completion.d
 @dirrmtry libexec/nut
-@dirrmtry %%STATEDIR%%
-%%NUT_CGI%%@dirrm %%CGIDIR%%
-%%NUT_CGI%%@dirrmtry www/cgi-bin
-%%NUT_CGI%%@dirrm %%WWWDIR%%

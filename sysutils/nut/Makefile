@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	2.6.1
+PORTVERSION=	2.6.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
@@ -25,14 +25,16 @@ NUT_USER?=	uucp
 NUT_GROUP?=	uucp
 STATEDIR?=	/var/db/nut
 
-OPTIONS=	SERIAL		"SERIAL support" on \
-		USB		"USB support" on \
-		SNMP		"SNMP support" on \
-		NEON		"NEON XML/HTTP support"	on \
-		PDU		"Powerman PDU support" off \
-		HAL		"HAL support" off \
-		CGI		"Web CGI interface" off \
-		BASH		"Bash Completion support" off
+OPTIONS_DEFINE=	SERIAL USB SNMP NEON PDU HAL CGI BASH
+OPTIONS_DEFAULT=SERIAL USB SNMP NEON
+
+SERIAL_DESC=	SERIAL support
+USB_DESC=	USB support
+SNMP_DESC=	SNMP support
+NEON_DESC=	NEON XML/HTTP support
+PDU_DESC=	Powerman PDU support
+CGI_DESC=	Web CGI interface
+BASH_DESC=	Bash Completion support
 
 USE_RC_SUBR=	nut nut_upsmon nut_upslog
 SUB_LIST+=	STATEDIR=${STATEDIR}
@@ -67,7 +69,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 		--with-group=${NUT_GROUP} \
 		--with-dev
 
-.if defined(WITH_CGI)
+.if ${PORT_OPTIONS:MCGI}
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 MAN5+=		hosts.conf.5 upsset.conf.5 upsstats.html.5
 MAN8+=		upsset.cgi.8 upsstats.cgi.8 upsimage.cgi.8
@@ -85,7 +87,7 @@ CONFIGURE_ARGS+=	--without-cgi
 PLIST_SUB+=	NUT_CGI="@comment "
 .endif
 
-.if !defined(WITHOUT_SERIAL)
+.if ${PORT_OPTIONS:MSERIAL}
 CONFIGURE_ARGS+=	--with-serial
 MAN8+=		apcsmart.8 bestfortress.8 bcmxcp.8 belkin.8 belkinunv.8 \
 		bestuferrups.8 bestups.8 bestfcom.8 blazer.8 clone.8 \
@@ -100,7 +102,7 @@ CONFIGURE_ARGS+=	--without-serial
 PLIST_SUB+=	NUT_SERIAL="@comment "
 .endif
 
-.if !defined(WITHOUT_USB)
+.if ${PORT_OPTIONS:MUSB}
 . if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
 . else
@@ -114,7 +116,7 @@ CONFIGURE_ARGS+=	--without-usb
 PLIST_SUB+=	NUT_USB="@comment "
 .endif
 
-.if !defined(WITHOUT_SNMP)
+.if ${PORT_OPTIONS:MSNMP}
 LIB_DEPENDS+=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=	--with-snmp
 MAN8+=		snmp-ups.8
@@ -124,7 +126,7 @@ CONFIGURE_ARGS+=	--without-snmp
 PLIST_SUB+=	NUT_SNMP="@comment "
 .endif
 
-.if !defined(WITHOUT_NEON)
+.if ${PORT_OPTIONS:MNEON}
 LIB_DEPENDS+=	neon.27:${PORTSDIR}/www/neon29
 CONFIGURE_ARGS+=	--with-neonxml
 MAN8+=		netxml-ups.8
@@ -134,7 +136,7 @@ CONFIGURE_ARGS+=	--without-neonxml
 PLIST_SUB+=	NUT_NEON="@comment "
 .endif
 
-.if defined(WITH_PDU)
+.if ${PORT_OPTIONS:MPDU}
 LIB_DEPENDS+=	powerman.0:${PORTSDIR}/sysutils/powerman
 CONFIGURE_ARGS+=	--with-powerman
 MAN8+=		powerman-pdu.8
@@ -144,8 +146,8 @@ CONFIGURE_ARGS+=	--without-powerman
 PLIST_SUB+=	NUT_PDU="@comment "
 .endif
 
-.if defined(WITH_HAL)
-. if defined(WITHOUT_USB)
+.if ${PORT_OPTIONS:MHAL}
+. if empty(PORT_OPTIONS:MUSB)
 BROKEN=		HAL is only usable with USB support enabled. Run 'make config' again!
 . endif
 LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
@@ -158,7 +160,7 @@ CONFIGURE_ARGS+=	--without-hal
 PLIST_SUB+=	NUT_HAL="@comment "
 .endif
 
-.if defined(WITH_BASH)
+.if ${PORT_OPTIONS:MBASH}
 RUN_DEPENDS+=	${LOCALBASE}/bin/bash_completion.sh:${PORTSDIR}/shells/bash-completion
 PLIST_SUB+=	BASH=""
 .else
@@ -177,7 +179,8 @@ pre-install:
 
 .if !defined(NOPORTDOCS)
 post-install:
-.if defined(WITH_BASH)
+.if ${PORT_OPTIONS:MBASH}
+	@${MKDIR} ${PREFIX}/etc/bash_completion.d/
 	${INSTALL_DATA} ${WRKSRC}/scripts/misc/nut.bash_completion ${PREFIX}/etc/bash_completion.d/
 .endif
 	@${MKDIR} ${DOCSDIR}/cables
