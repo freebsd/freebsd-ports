@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Moo
-PORTVERSION=	1.000002
+PORTVERSION=	1.000003
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:MSTROUT
+MASTER_SITE_SUBDIR=	CPAN:ILMARI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -19,7 +19,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Class-Method-Modifiers>=1.04:${PORTSDIR}/devel/p5-Class-Method-Modifiers \
-		p5-Devel-GlobalDestruction>=0.08:${PORTSDIR}/devel/p5-Devel-GlobalDestruction \
+		p5-Devel-GlobalDestruction>=0.09:${PORTSDIR}/devel/p5-Devel-GlobalDestruction \
 		p5-Module-Runtime>=0.012:${PORTSDIR}/devel/p5-Module-Runtime \
 		p5-Role-Tiny>=1.001.003:${PORTSDIR}/devel/p5-Role-Tiny \
 		p5-strictures>=1.001001:${PORTSDIR}/devel/p5-strictures
