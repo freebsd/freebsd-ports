@@ -13,6 +13,9 @@ MASTER_SITES=	http://homepage3.nifty.com/slokar/pasori/
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	FeliCa read/write library for Sony RC-S320 USB FeliCa R/W(PaSoRi)
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	yes
