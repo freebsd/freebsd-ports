@@ -6,6 +6,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.11.1
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
 PKGNAMESUFFIX=	-011
@@ -52,15 +53,11 @@ OPENAL_DESC=	OpenAL 1.1 capture support
 X11GRAB_DESC=	Enable x11 grabbing
 
 FFPROGS=	ffmpeg ffprobe
-FFLIBS=		libavcodec libavdevice libavfilter libavformat \
-		libavutil libpostproc libswresample libswscale
-INSTALL_TARGET=	install-data install-libs install-headers
+INSTALL_TARGET=	install-progs install-data install-libs install-headers
 FFMPEG_SUFFIX=	-011
 PLIST_SUB+=	SUFF="${FFMPEG_SUFFIX}"
 MAN1=		ffmpeg${FFMPEG_SUFFIX}.1 ffprobe${FFMPEG_SUFFIX}.1
 
-SHLIB_VER=	11
-PLIST_SUB+=	SHLIB_VER=${SHLIB_VER}
 USE_LDCONFIG=	${PREFIX}/lib/ffmpeg${FFMPEG_SUFFIX}
 
 .include <bsd.port.options.mk>
@@ -90,6 +87,8 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--libdir="${PREFIX}/lib/ffmpeg${FFMPEG_SUFFIX}" \
 		--shlibdir="${PREFIX}/lib/ffmpeg${FFMPEG_SUFFIX}" \
 		--datadir="${DATADIR}" \
+		--build-suffix="${FFMPEG_SUFFIX}" \
+		--progs-suffix="${FFMPEG_SUFFIX}" \
 		--enable-shared \
 		--enable-gpl \
 		--enable-postproc \
@@ -345,7 +344,7 @@ CONFIGURE_ARGS+=	--disable-libschroedinger
 # sdl
 .if ${PORT_OPTIONS:MSDL}
 USE_SDL+=	sdl
-PLIST_FILES+=	bin/ffplay
+PLIST_FILES+=	bin/ffplay${FFMPEG_SUFFIX}
 FFPROGS+=	ffplay
 MAN1+=	ffplay${FFMPEG_SUFFIX}.1
 .if ${PORT_OPTIONS:MDOCS}
@@ -463,7 +462,7 @@ post-patch:
 		s|-pthread|${PTHREAD_LIBS}|g; \
 		s|gsm/gsm.h|gsm.h|g" \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e 's|-ldl||; s|$$(LIBMAJOR)|${SHLIB_VER}|g;' \
+	@${REINPLACE_CMD} -e 's|-ldl||' \
 		-e 's|opencv opencv/cxcore.h|opencv-core opencv2/core/core_c.h|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL5}|g' \
@@ -484,18 +483,7 @@ post-configure:
 		${WRKSRC}/config.mak
 .endif
 
-pre-install:
-.for PROG in ${FFPROGS}
-	@${MKDIR} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/${PROG} ${PREFIX}/bin/${PROG}${FFMPEG_SUFFIX}
-.endfor
-
 post-install:
-.for LIB in ${FFLIBS}
-	@${MKDIR} ${PREFIX}/libdata/pkgconfig
-	@${INSTALL_DATA} ${WRKSRC}/${LIB}/${LIB}.pc \
-		${PREFIX}/libdata/pkgconfig/${LIB}${FFMPEG_SUFFIX}.pc
-.endfor
 .for PROG in ${FFPROGS}
 	@${MKDIR} ${MAN1PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/${PROG}.1 ${MAN1PREFIX}/man/man1/${PROG}${FFMPEG_SUFFIX}.1
