@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	construct
-PORTVERSION=	2.00
+PORTVERSION=	2.06
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	construct-${PORTVERSION}
 
 MAINTAINER=	p.florczyk@adminworkshop.pl
 COMMENT=	Python module for parsing and building of data structures
