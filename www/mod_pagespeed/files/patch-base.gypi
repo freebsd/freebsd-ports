@@ -1,14 +1,14 @@
---- base/base.gypi.orig	2011-09-29 19:59:56.000000000 +0000
-+++ base/base.gypi	2011-09-29 20:00:44.000000000 +0000
-@@ -8,6 +8,7 @@
+--- base/base.gypi.orig	2012-07-11 20:16:43.000000000 -0400
++++ base/base.gypi	2012-07-11 21:12:00.214510822 -0400
+@@ -7,6 +7,7 @@
+     'variables': {
        'base_target': 0,
-       'base_extra_target': 0,
        'chromium_root': '<(DEPTH)/third_party/chromium/src',
 +      'system_include_path_execinfo%': '%%LOCALBASE%%/include',
-     },
-     'target_conditions': [
-       # This part is shared between the targets defined below. Only files and
-@@ -110,6 +111,7 @@
+       'conditions': [
+         # The default stack_trace_posix.cc is not compatible with NaCL newlib
+         # toolchain, so we provide a stubbed version when building for NaCL.
+@@ -117,6 +118,7 @@
          'include_dirs': [
            '<(chromium_root)',
            '<(DEPTH)',

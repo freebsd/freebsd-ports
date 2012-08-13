@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mod_pagespeed
-PORTVERSION=	0.10.21.2
-PORTREVISION=	3
+PORTVERSION=	0.10.22.4
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -23,10 +22,10 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		svn:${PORTSDIR}/devel/subversion \
 		flock:${PORTSDIR}/sysutils/flock
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		icutu.48:${PORTSDIR}/devel/icu \
-		opencv_legacy.2:${PORTSDIR}/graphics/opencv \
-		execinfo.1:${PORTSDIR}/devel/libexecinfo
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		icutu:${PORTSDIR}/devel/icu \
+		opencv_legacy:${PORTSDIR}/graphics/opencv \
+		execinfo:${PORTSDIR}/devel/libexecinfo
 
 USE_XZ=		yes
 USE_BINUTILS=	yes
@@ -34,6 +33,11 @@ USE_APACHE=	22+
 USE_PYTHON=	2.6+
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
+
+# debugging
+#MAKE_ENV+=     V=1
+#MAKE_JOBS_UNSAFE=      yes
+
 ONLY_FOR_ARCHS=	amd64 i386
 LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
@@ -46,14 +50,23 @@ GYP_DEFINES+=	\
 		use_system_zlib=1 \
 		use_system_icu=1 \
 		use_system_opencv=1 \
-		system_include_path_httpd=${LOCALBASE}/include/apache22 \
+		target_arch=${ARCH} \
 		system_include_path_apr=${LOCALBASE}/include/apr-1 \
 		system_include_path_aprutil=${LOCALBASE}/include/apr-1 \
+		system_include_path_httpd=${LOCALBASE}/include/apache22 \
 		system_include_path_execinfo=${LOCALBASE}/include \
 		system_include_path_icu=${LOCALBASE}/include \
 		include_dirs=${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
+
+# testing
+#USE_GCC=	4.6+
+#.if ${OSVERSION} > 1000000
+#CC=		clang
+#CXX=		clang++
+#GYP_DEFINES+=	clang=1
+#.endif
 
 .if ${OSVERSION} < 802517 || ${OSVERSION} < 900502
 EXTRA_PATCHES=		${FILESDIR}/extra-gperf.gypi
@@ -61,12 +74,21 @@ BUILD_DEPENDS+=		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf
 .endif
 
 post-patch:
+	( cd ${BUILD_WRKSRC}/third_party/gflags/gen/arch && ${CP} -R linux freebsd && \
+		cd ${BUILD_WRKSRC}/third_party/gflags/gen/arch/freebsd && ${MV} ia32 i386 && ${MV} x64 amd64 )
+	( cd ${BUILD_WRKSRC}/third_party/google-sparsehash/gen/arch && ${CP} -R linux freebsd && \
+		cd ${BUILD_WRKSRC}/third_party/google-sparsehash/gen/arch/freebsd && ${MV} ia32 i386 && ${MV} x64 amd64 )
+	( cd ${BUILD_WRKSRC}/third_party/opencv/gen/arch && ${CP} -R linux freebsd && \
+		cd ${BUILD_WRKSRC}/third_party/opencv/gen/arch/freebsd && ${MV} ia32 i386 && ${MV} x64 amd64 )
 	${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" \
 		${WRKSRC}/base/base.gypi
+	${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" \
+		-e "s,%%CC%%,${CC},g" \
+		-e "s,%%CXX%%,${CXX},g" \
+		${WRKSRC}/tools/gyp/pylib/gyp/generator/make.py
 .if ${OSVERSION} < 802517 || ${OSVERSION} < 900502
 	${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" \
 		${WRKSRC}/net/instaweb/gperf.gypi
-
 .endif
 
 do-configure:

@@ -1,11 +1,11 @@
---- net/instaweb/instaweb_core.gyp.orig	2012-02-06 13:07:36.864338902 -0500
-+++ net/instaweb/instaweb_core.gyp	2012-02-06 13:08:32.614375339 -0500
-@@ -170,54 +170,4 @@
+--- net/instaweb/instaweb_core.gyp.orig	2012-07-11 21:12:43.400191212 -0400
++++ net/instaweb/instaweb_core.gyp	2012-07-11 21:13:29.815181464 -0400
+@@ -175,54 +175,4 @@
        ],
      },
    ],
 -  'conditions': [
--    ['OS=="linux"', {
+-    ['OS=="linux" and use_system_icu==0', {
 -      'targets': [
 -        # We build this target to make sure that we don't accidentially
 -        # introduce dependencies from the core libraries to non-core
