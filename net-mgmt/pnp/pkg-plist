@@ -3,6 +3,8 @@
 %%ETCDIR%%/check_commands/check_nrpe.cfg-sample
 %%ETCDIR%%/check_commands/check_nwstat.cfg-sample
 %%ETCDIR%%/config.php
+%%ETCDIR%%/config.php-sample
+%%ETCDIR%%/config_local.php-sample
 %%ETCDIR%%/misccommands.cfg-sample
 %%ETCDIR%%/nagios.cfg-sample
 %%ETCDIR%%/npcd.cfg-sample
@@ -15,11 +17,13 @@
 %%WWWDIR%%/application/config/routes.php
 %%WWWDIR%%/application/config/session.php
 %%WWWDIR%%/application/controllers/ajax.php
+%%WWWDIR%%/application/controllers/color.php
 %%WWWDIR%%/application/controllers/debug.php
 %%WWWDIR%%/application/controllers/docs.php
 %%WWWDIR%%/application/controllers/graph.php
 %%WWWDIR%%/application/controllers/image.php
 %%WWWDIR%%/application/controllers/json.php
+%%WWWDIR%%/application/controllers/mobile.php
 %%WWWDIR%%/application/controllers/page.php
 %%WWWDIR%%/application/controllers/pdf.php
 %%WWWDIR%%/application/controllers/popup.php
@@ -46,6 +50,7 @@
 %%WWWDIR%%/application/lib/jsonwrapper.php
 %%WWWDIR%%/application/lib/jsonwrapper_inner.php
 %%WWWDIR%%/application/models/auth.php
+%%WWWDIR%%/application/models/auth_multisite.php
 %%WWWDIR%%/application/models/config.php
 %%WWWDIR%%/application/models/data.php
 %%WWWDIR%%/application/models/rrdtool.php
@@ -73,6 +78,8 @@
 %%WWWDIR%%/application/vendor/fpdf/pdf_context.php
 %%WWWDIR%%/application/vendor/fpdf/pdf_parser.php
 %%WWWDIR%%/application/views/basket_box.php
+%%WWWDIR%%/application/views/color.php
+%%WWWDIR%%/application/views/color_box.php
 %%WWWDIR%%/application/views/debug.php
 %%WWWDIR%%/application/views/docs.php
 %%WWWDIR%%/application/views/docs_box.php
@@ -84,6 +91,16 @@
 %%WWWDIR%%/application/views/icon_box.php
 %%WWWDIR%%/application/views/kohana_error_page.php
 %%WWWDIR%%/application/views/logo_box.php
+%%WWWDIR%%/application/views/mobile.php
+%%WWWDIR%%/application/views/mobile_about.php
+%%WWWDIR%%/application/views/mobile_graph.php
+%%WWWDIR%%/application/views/mobile_graph_special.php
+%%WWWDIR%%/application/views/mobile_home.php
+%%WWWDIR%%/application/views/mobile_host.php
+%%WWWDIR%%/application/views/mobile_overview.php
+%%WWWDIR%%/application/views/mobile_pages.php
+%%WWWDIR%%/application/views/mobile_search.php
+%%WWWDIR%%/application/views/mobile_special.php
 %%WWWDIR%%/application/views/multisite_box.php
 %%WWWDIR%%/application/views/page.php
 %%WWWDIR%%/application/views/pages_box.php
@@ -102,6 +119,12 @@
 %%WWWDIR%%/documents/_media/bulk-npcd.png
 %%WWWDIR%%/documents/_media/bulk-npcdmod.png
 %%WWWDIR%%/documents/_media/bulk.png
+%%WWWDIR%%/documents/_media/gearman.png
+%%WWWDIR%%/documents/_media/mobile-graphs.png
+%%WWWDIR%%/documents/_media/mobile-home.png
+%%WWWDIR%%/documents/_media/mobile-hostlist.png
+%%WWWDIR%%/documents/_media/mobile-loading.png
+%%WWWDIR%%/documents/_media/mobile-servicelist.png
 %%WWWDIR%%/documents/_media/nagiospowered-72x72.png
 %%WWWDIR%%/documents/_media/pnp-preview-05-08-2009.png
 %%WWWDIR%%/documents/_media/popup.png
@@ -113,6 +136,7 @@
 %%WWWDIR%%/documents/de_DE/doc_complete.html
 %%WWWDIR%%/documents/de_DE/dwnld.html
 %%WWWDIR%%/documents/de_DE/install.html
+%%WWWDIR%%/documents/de_DE/mobile.html
 %%WWWDIR%%/documents/de_DE/modes.html
 %%WWWDIR%%/documents/de_DE/new-features.html
 %%WWWDIR%%/documents/de_DE/npcd.html
@@ -140,6 +164,7 @@
 %%WWWDIR%%/documents/en_US/doc_complete.html
 %%WWWDIR%%/documents/en_US/dwnld.html
 %%WWWDIR%%/documents/en_US/install.html
+%%WWWDIR%%/documents/en_US/mobile.html
 %%WWWDIR%%/documents/en_US/modes.html
 %%WWWDIR%%/documents/en_US/new-features.html
 %%WWWDIR%%/documents/en_US/npcd.html
@@ -194,23 +219,32 @@
 %%WWWDIR%%/index.php
 %%WWWDIR%%/install.php
 %%WWWDIR%%/media/css/autocomplete.css
+%%WWWDIR%%/media/css/border-h.gif
+%%WWWDIR%%/media/css/border-v.gif
 %%WWWDIR%%/media/css/common.css
+%%WWWDIR%%/media/css/imgareaselect-default.css
+%%WWWDIR%%/media/css/jquery.mobile.min.css
+%%WWWDIR%%/media/css/mobile.css
 %%WWWDIR%%/media/css/shadow.png
-%%WWWDIR%%/media/css/ui-lightness/images/ui-anim_basic_16x16.gif
-%%WWWDIR%%/media/css/ui-lightness/images/ui-bg_diagonals-thick_18_b81900_40x40.png
-%%WWWDIR%%/media/css/ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png
-%%WWWDIR%%/media/css/ui-lightness/images/ui-bg_flat_10_000000_40x100.png
-%%WWWDIR%%/media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png
-%%WWWDIR%%/media/css/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png
+%%WWWDIR%%/media/css/images/icons-36-black.png
+%%WWWDIR%%/media/css/images/ajax-loader.png
+%%WWWDIR%%/media/css/images/icons-18-black.png
+%%WWWDIR%%/media/css/images/icons-36-white.png
+%%WWWDIR%%/media/css/images/icons-18-white.png
+%%WWWDIR%%/media/css/images/icon-search-black.png
+%%WWWDIR%%/media/css/ui-lightness/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%WWWDIR%%/media/css/ui-lightness/images/ui-bg_flat_75_ffffff_40x100.png
+%%WWWDIR%%/media/css/ui-lightness/images/ui-bg_glass_55_fbf9ee_1x400.png
 %%WWWDIR%%/media/css/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png
-%%WWWDIR%%/media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png
-%%WWWDIR%%/media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
-%%WWWDIR%%/media/css/ui-lightness/images/ui-bg_highlight-soft_75_ffe45c_1x100.png
+%%WWWDIR%%/media/css/ui-lightness/images/ui-bg_glass_75_dadada_1x400.png
+%%WWWDIR%%/media/css/ui-lightness/images/ui-bg_glass_75_e6e6e6_1x400.png
+%%WWWDIR%%/media/css/ui-lightness/images/ui-bg_glass_95_fef1ec_1x400.png
+%%WWWDIR%%/media/css/ui-lightness/images/ui-bg_highlight-soft_75_cccccc_1x100.png
 %%WWWDIR%%/media/css/ui-lightness/images/ui-icons_222222_256x240.png
-%%WWWDIR%%/media/css/ui-lightness/images/ui-icons_228ef1_256x240.png
-%%WWWDIR%%/media/css/ui-lightness/images/ui-icons_ef8c08_256x240.png
-%%WWWDIR%%/media/css/ui-lightness/images/ui-icons_ffd27a_256x240.png
-%%WWWDIR%%/media/css/ui-lightness/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/media/css/ui-lightness/images/ui-icons_2e83ff_256x240.png
+%%WWWDIR%%/media/css/ui-lightness/images/ui-icons_454545_256x240.png
+%%WWWDIR%%/media/css/ui-lightness/images/ui-icons_888888_256x240.png
+%%WWWDIR%%/media/css/ui-lightness/images/ui-icons_cd0a0a_256x240.png
 %%WWWDIR%%/media/css/ui-lightness/jquery-ui.css
 %%WWWDIR%%/media/css/ui-multisite/images/contentframe_background.jpg
 %%WWWDIR%%/media/css/ui-multisite/images/ui-bg_flat_0_aaaaaa_40x100.png
@@ -226,24 +260,20 @@
 %%WWWDIR%%/media/css/ui-multisite/images/ui-icons_888888_256x240.png
 %%WWWDIR%%/media/css/ui-multisite/images/ui-icons_cd0a0a_256x240.png
 %%WWWDIR%%/media/css/ui-multisite/jquery-ui.css
-%%WWWDIR%%/media/css/ui-redmond/images/ui-anim_basic_16x16.gif
 %%WWWDIR%%/media/css/ui-redmond/images/ui-bg_flat_0_aaaaaa_40x100.png
-%%WWWDIR%%/media/css/ui-redmond/images/ui-bg_flat_55_fbec88_40x100.png
-%%WWWDIR%%/media/css/ui-redmond/images/ui-bg_glass_75_d0e5f5_1x400.png
-%%WWWDIR%%/media/css/ui-redmond/images/ui-bg_glass_85_dfeffc_1x400.png
+%%WWWDIR%%/media/css/ui-redmond/images/ui-bg_flat_75_ffffff_40x100.png
+%%WWWDIR%%/media/css/ui-redmond/images/ui-bg_glass_55_fbf9ee_1x400.png
+%%WWWDIR%%/media/css/ui-redmond/images/ui-bg_glass_65_ffffff_1x400.png
+%%WWWDIR%%/media/css/ui-redmond/images/ui-bg_glass_75_dadada_1x400.png
+%%WWWDIR%%/media/css/ui-redmond/images/ui-bg_glass_75_e6e6e6_1x400.png
 %%WWWDIR%%/media/css/ui-redmond/images/ui-bg_glass_95_fef1ec_1x400.png
-%%WWWDIR%%/media/css/ui-redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png
-%%WWWDIR%%/media/css/ui-redmond/images/ui-bg_inset-hard_100_f5f8f9_1x100.png
-%%WWWDIR%%/media/css/ui-redmond/images/ui-bg_inset-hard_100_fcfdfd_1x100.png
-%%WWWDIR%%/media/css/ui-redmond/images/ui-icons_217bc0_256x240.png
+%%WWWDIR%%/media/css/ui-redmond/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+%%WWWDIR%%/media/css/ui-redmond/images/ui-icons_222222_256x240.png
 %%WWWDIR%%/media/css/ui-redmond/images/ui-icons_2e83ff_256x240.png
-%%WWWDIR%%/media/css/ui-redmond/images/ui-icons_469bdd_256x240.png
-%%WWWDIR%%/media/css/ui-redmond/images/ui-icons_6da8d5_256x240.png
+%%WWWDIR%%/media/css/ui-redmond/images/ui-icons_454545_256x240.png
+%%WWWDIR%%/media/css/ui-redmond/images/ui-icons_888888_256x240.png
 %%WWWDIR%%/media/css/ui-redmond/images/ui-icons_cd0a0a_256x240.png
-%%WWWDIR%%/media/css/ui-redmond/images/ui-icons_d8e7f3_256x240.png
-%%WWWDIR%%/media/css/ui-redmond/images/ui-icons_f9bd01_256x240.png
 %%WWWDIR%%/media/css/ui-redmond/jquery-ui.css
-%%WWWDIR%%/media/css/ui-smoothness/images/ui-anim_basic_16x16.gif
 %%WWWDIR%%/media/css/ui-smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png
 %%WWWDIR%%/media/css/ui-smoothness/images/ui-bg_flat_75_ffffff_40x100.png
 %%WWWDIR%%/media/css/ui-smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png
@@ -258,14 +288,18 @@
 %%WWWDIR%%/media/css/ui-smoothness/images/ui-icons_888888_256x240.png
 %%WWWDIR%%/media/css/ui-smoothness/images/ui-icons_cd0a0a_256x240.png
 %%WWWDIR%%/media/css/ui-smoothness/jquery-ui.css
+%%WWWDIR%%/media/images/1x1.gif
 %%WWWDIR%%/media/images/add.png
 %%WWWDIR%%/media/images/back.png
-%%WWWDIR%%/media/images/calendar.gif
 %%WWWDIR%%/media/images/calendar.png
+%%WWWDIR%%/media/images/color.png
 %%WWWDIR%%/media/images/de_DE.png
 %%WWWDIR%%/media/images/docs.png
 %%WWWDIR%%/media/images/en_US.png
 %%WWWDIR%%/media/images/favicon.ico
+%%WWWDIR%%/media/images/go-left.png
+%%WWWDIR%%/media/images/go-now.png
+%%WWWDIR%%/media/images/go-right.png
 %%WWWDIR%%/media/images/graph.png
 %%WWWDIR%%/media/images/home.png
 %%WWWDIR%%/media/images/int.gif
@@ -280,28 +314,46 @@
 %%WWWDIR%%/media/images/special.png
 %%WWWDIR%%/media/images/stats.png
 %%WWWDIR%%/media/images/trends.gif
+%%WWWDIR%%/media/images/view-calendar.png
 %%WWWDIR%%/media/images/xml.png
 %%WWWDIR%%/media/images/zoom.png
 %%WWWDIR%%/media/js/jquery-min.js
 %%WWWDIR%%/media/js/jquery-ui.min.js
+%%WWWDIR%%/media/js/jquery-ui-timepicker-addon.js
 %%WWWDIR%%/media/js/jquery.cluetip.js
-%%WWWDIR%%/media/js/zoom.js
+%%WWWDIR%%/media/js/jquery.imgareaselect.min.js
+%%WWWDIR%%/media/js/jquery.mobile.min.js
 %%WWWDIR%%/templates.dist/check-host-alive.php
+%%WWWDIR%%/templates.dist/check_apachestatus.php
+%%WWWDIR%%/templates.dist/check_apachestatus_auto.php
 %%WWWDIR%%/templates.dist/check_dell_bladechassis.php
 %%WWWDIR%%/templates.dist/check_disk.php
 %%WWWDIR%%/templates.dist/check_dns.php
 %%WWWDIR%%/templates.dist/check_esx3.php
 %%WWWDIR%%/templates.dist/check_fping.php
+%%WWWDIR%%/templates.dist/check_gearman.php
 %%WWWDIR%%/templates.dist/check_hp_bladechassis.php
 %%WWWDIR%%/templates.dist/check_hpasm.php
 %%WWWDIR%%/templates.dist/check_http.php
 %%WWWDIR%%/templates.dist/check_icmp.php
 %%WWWDIR%%/templates.dist/check_iftraffic_counter.php
 %%WWWDIR%%/templates.dist/check_iftraffic_pct.php
+%%WWWDIR%%/templates.dist/check_jmx4perl_connector_errors.php
+%%WWWDIR%%/templates.dist/check_jmx4perl_connector_nr_requests.php
+%%WWWDIR%%/templates.dist/check_jmx4perl_connector_proc_time.php
+%%WWWDIR%%/templates.dist/check_jmx4perl_connector_received.php
+%%WWWDIR%%/templates.dist/check_jmx4perl_connector_sent.php
+%%WWWDIR%%/templates.dist/check_jmx4perl_connector_threads.php
+%%WWWDIR%%/templates.dist/check_jmx4perl_memory_gc_count.php
+%%WWWDIR%%/templates.dist/check_jmx4perl_memory_gc_time.php
+%%WWWDIR%%/templates.dist/check_jmx4perl_memory_heap.php
+%%WWWDIR%%/templates.dist/check_jmx4perl_thread_count.php
+%%WWWDIR%%/templates.dist/check_jmx4perl_thread_increase.php
 %%WWWDIR%%/templates.dist/check_load.php
 %%WWWDIR%%/templates.dist/check_local_disk.php
 %%WWWDIR%%/templates.dist/check_local_load.php
 %%WWWDIR%%/templates.dist/check_messpc_temp.php
+%%WWWDIR%%/templates.dist/check_mssql_health.php
 %%WWWDIR%%/templates.dist/check_multi.php
 %%WWWDIR%%/templates.dist/check_multi_nagiostats.php
 %%WWWDIR%%/templates.dist/check_mysql_health.php
@@ -600,7 +652,7 @@ lib/npcdmod.o
 libexec/check_pnp_rrds.pl
 libexec/process_perfdata.pl
 libexec/rrd_convert.pl
-libexec/verify_pnp_config.pl
+libexec/rrd_modify.pl
 @dirrm %%WWWDIR%%/media/js
 @dirrm %%WWWDIR%%/media/images
 @dirrm %%WWWDIR%%/media/css/ui-smoothness/images
@@ -611,6 +663,7 @@ libexec/verify_pnp_config.pl
 @dirrm %%WWWDIR%%/media/css/ui-multisite
 @dirrm %%WWWDIR%%/media/css/ui-lightness/images
 @dirrm %%WWWDIR%%/media/css/ui-lightness
+@dirrm %%WWWDIR%%/media/css/images
 @dirrm %%WWWDIR%%/media/css
 @dirrm %%WWWDIR%%/media
 @dirrm %%WWWDIR%%/documents/_media
@@ -668,6 +721,7 @@ libexec/verify_pnp_config.pl
 @dirrm lib/kohana/system/config
 @dirrm lib/kohana/system
 @dirrm lib/kohana
+@dirrmtry %%ETCDIR%%/config.d
 @dirrmtry %%ETCDIR%%/check_commands
 @dirrmtry %%ETCDIR%%/pages
 @dirrmtry %%ETCDIR%%

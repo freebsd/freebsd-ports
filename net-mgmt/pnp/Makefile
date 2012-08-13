@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pnp
-PORTVERSION=	0.6.10
-PORTREVISION=	2
+PORTVERSION=	0.6.18
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=pnp4nagios/PNP-0.6
@@ -15,6 +14,8 @@ DISTNAME=	pnp4nagios-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Nagios performance data collector and grapher
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/rrdtool:${PORTSDIR}/databases/rrdtool
 RUN_DEPENDS=	${LOCALBASE}/bin/rrdtool:${PORTSDIR}/databases/rrdtool \
@@ -26,8 +27,6 @@ OPTIONS=	PDF "Use built-in fpdf library to produce PDF views" ON
 
 .include <bsd.port.options.mk>
 
-LICENSE=	GPLv2
-PATCH_STRIP=	-p1
 USE_PERL5=	yes
 USE_PHP=	gd iconv json pcre simplexml sockets xml zlib
 

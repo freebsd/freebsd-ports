@@ -1,0 +1,24 @@
+--- scripts/Makefile.in.orig	2012-05-25 11:58:21.680778254 +0200
++++ scripts/Makefile.in	2012-05-25 12:05:19.843873179 +0200
+@@ -25,7 +25,7 @@
+ devclean: distclean
+ 
+ install-init: 
+-	$(INSTALL) -m 755 $(INIT_OPTS) -d $(DESTDIR)$(INIT_DIR)
++	[ -d "$(DESTDIR)$(INIT_DIR)" ] || $(INSTALL) -m 755 $(INIT_OPTS) -d $(DESTDIR)$(INIT_DIR)
+ 	$(INSTALL) -m 755 $(INIT_OPTS) rc.npcd $(DESTDIR)$(INIT_DIR)/npcd
+ 	$(INSTALL) -m 755 $(INIT_OPTS) rc.pnp_gearman_worker $(DESTDIR)$(INIT_DIR)/pnp_gearman_worker
+ 
+@@ -39,9 +39,9 @@
+ 	$(INSTALL) -m 755 $(INSTALL_OPTS) rrd_convert.pl $(DESTDIR)$(LIBEXECDIR)
+ 
+ install: 
+-	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(PERFDATADIR)
+-	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(LIBEXECDIR)
+-	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(LOGDIR)/stats
++	[ -d "$(DESTDIR)$(PERFDATADIR)" ] || $(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(PERFDATADIR)
++	[ -d "$(DESTDIR)$(LIBEXECDIR)" ] || $(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(LIBEXECDIR)
++	[ -d "$(DESTDIR)$(LOGDIR)"/stats ] || $(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(LOGDIR)/stats
+ 	$(MAKE) install-processperfdata
+ 	$(MAKE) install-plugins
+ 	$(MAKE) install-rrdconvert

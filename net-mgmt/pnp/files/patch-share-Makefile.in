@@ -1,0 +1,11 @@
+--- share/Makefile.in.orig	2012-05-25 12:06:05.132777002 +0200
++++ share/Makefile.in	2012-05-25 12:06:26.484777320 +0200
+@@ -22,7 +22,7 @@
+ devclean: distclean
+ 
+ install:
+-	$(INSTALL) -m 777 $(INSTALL_OPTS) -d $(DESTDIR)$(LOGDIR)/kohana
++	[ -d "$(DESTDIR)$(LOGDIR)"/kohana ] || $(INSTALL) -m 777 $(INSTALL_OPTS) -d $(DESTDIR)$(LOGDIR)/kohana
+ 	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(DATAROOTDIR)
+ 	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(DATAROOTDIR)/documents
+ 	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(DATAROOTDIR)/documents/_media
