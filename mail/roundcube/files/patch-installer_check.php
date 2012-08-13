@@ -1,10 +1,10 @@
---- installer/check.php.orig	2010-12-13 17:38:24.000000000 +0100
-+++ installer/check.php	2010-12-13 17:38:36.000000000 +0100
-@@ -37,7 +37,6 @@
+--- installer/check.php.orig	2012-08-06 18:18:13.000000000 +0200
++++ installer/check.php	2012-08-13 12:36:52.000000000 +0200
+@@ -39,7 +39,6 @@
      'session.auto_start'            => 0,
      'zend.ze1_compatibility_mode'   => 0,
      'mbstring.func_overload'        => 0,
 -    'suhosin.session.encrypt'       => 0,
+     'magic_quotes_runtime'          => 0,
+     'magic_quotes_sybase'           => 0,
  );
- 
- $optional_checks = array(
