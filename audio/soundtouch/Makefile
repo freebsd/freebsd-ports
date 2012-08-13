@@ -25,6 +25,9 @@ PORTDOCS=	README.html
 .endif
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+ONLY_FOR_ARCHS=	amd64 i386 ia64
+ONLY_FOR_ARCHS_REASON="uses -msse2 directive to CC"
+
 post-patch:
 	@${REINPLACE_CMD} -E 's|-O3 ?||' \
 		${WRKSRC}/source/SoundStretch/Makefile.am \
