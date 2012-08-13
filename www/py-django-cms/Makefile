@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	django-cms
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	www python
-MASTER_SITES=	${MASTER_SITE_CHEESESHOP}
-MASTER_SITE_SUBDIR=	source/d/${PORTNAME}
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	xenophon+fbsdports@irtnog.org
@@ -21,10 +20,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}south>=0.7.3:${PORTSDIR}/databases/py-south 
 		${PYTHON_PKGNAMEPREFIX}django>=1.3.1:${PORTSDIR}/www/py-django \
 		${PYTHON_PKGNAMEPREFIX}django-classy-tags>=0.3.4.1:${PORTSDIR}/www/py-django-classy-tags \
 		${PYTHON_PKGNAMEPREFIX}django-mptt>=0.4.2:${PORTSDIR}/www/py-django-mptt \
-		${PYTHON_PKGNAMEPREFIX}django-sekizai>=0.5:${PORTSDIR}/www/py-django-sekizai \
+		${PYTHON_PKGNAMEPREFIX}django-sekizai>=0.6.1:${PORTSDIR}/www/py-django-sekizai \
 		${PYTHON_PKGNAMEPREFIX}html5lib>=0.90:${PORTSDIR}/www/py-html5lib
 
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
 
 post-install:

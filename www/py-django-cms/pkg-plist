@@ -139,6 +139,10 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/es_AR/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/es_AR/LC_MESSAGES/djangojs.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/es_AR/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/es_BO/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/es_BO/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/es_BO/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/es_BO/LC_MESSAGES/djangojs.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/et/LC_MESSAGES/django.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/et/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/et/LC_MESSAGES/djangojs.mo
@@ -171,6 +175,10 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/hi/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/hi/LC_MESSAGES/djangojs.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/hi/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/hr/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/hr/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/hr/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/hr/LC_MESSAGES/djangojs.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/hu/LC_MESSAGES/django.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/hu/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/hu/LC_MESSAGES/djangojs.mo
@@ -183,10 +191,14 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ja/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ja/LC_MESSAGES/djangojs.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ja/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ka/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ka/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/km/LC_MESSAGES/django.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/km/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/km/LC_MESSAGES/djangojs.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/km/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ku_IQ/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ku_IQ/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/nl/LC_MESSAGES/django.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/nl/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/nl/LC_MESSAGES/djangojs.mo
@@ -223,6 +235,10 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/sl_SI/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/sl_SI/LC_MESSAGES/djangojs.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/sl_SI/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/sr@latin/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/sr@latin/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/sr@latin/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/sr@latin/LC_MESSAGES/djangojs.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/sv/LC_MESSAGES/django.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/sv/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/sv/LC_MESSAGES/djangojs.mo
@@ -860,7 +876,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/css/plugins/cms.toolbar.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/css/rte.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/css/tinymce_toolbar.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/css/toolbar.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/css/wymeditor.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/images/bold.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/images/changelist-filter-button-bg.jpg
@@ -986,6 +1001,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/js/plugins/admincompat.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/js/plugins/cms.base.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/js/plugins/cms.placeholders.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/js/plugins/cms.setup.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/js/plugins/cms.toolbar.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/js/tinymce.placeholdereditor.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/js/wymeditor.placeholdereditor.js
@@ -1112,6 +1128,8 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/admin/cms/page/dialog/base.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/admin/cms/page/dialog/copy.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/admin/cms/page/includes/fieldset.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/admin/cms/page/lazy_child_menu.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/admin/cms/page/lazy_menu.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/admin/cms/page/loading.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/admin/cms/page/menu.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/admin/cms/page/menu_item.html
@@ -1147,18 +1165,24 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templatetags/cms_admin.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templatetags/cms_admin.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templatetags/cms_admin.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templatetags/cms_js_tags.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templatetags/cms_js_tags.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templatetags/cms_js_tags.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templatetags/cms_tags.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templatetags/cms_tags.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templatetags/cms_tags.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templatetags/js.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templatetags/js.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templatetags/js.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templatetags/placeholder_tags.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templatetags/placeholder_tags.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templatetags/placeholder_tags.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/cli.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/cli.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/cli.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/compat.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/compat.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/compat.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/fixtures/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/fixtures/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/fixtures/__init__.pyo
@@ -1174,9 +1198,108 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/fixtures/templatetags.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/fixtures/templatetags.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/fixtures/templatetags.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/cms_urls_for_apphook_tests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/cms_urls_for_apphook_tests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/cms_urls_for_apphook_tests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/fakemlng/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/fakemlng/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/fakemlng/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/fakemlng/models.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/fakemlng/models.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/fakemlng/models.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/fileapp/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/fileapp/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/fileapp/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/fileapp/models.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/fileapp/models.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/fileapp/models.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/models.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/models.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/models.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/noadmin_urls.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/noadmin_urls.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/noadmin_urls.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/nonroot_urls.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/nonroot_urls.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/nonroot_urls.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/placeholderapp/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/placeholderapp/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/placeholderapp/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/placeholderapp/admin.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/placeholderapp/admin.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/placeholderapp/admin.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/placeholderapp/models.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/placeholderapp/models.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/placeholderapp/models.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/placeholderapp/views.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/placeholderapp/views.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/placeholderapp/views.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/pluginapp/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/pluginapp/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/pluginapp/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/pluginapp/models.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/pluginapp/models.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/pluginapp/models.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/pluginapp/plugins/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/pluginapp/plugins/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/pluginapp/plugins/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/pluginapp/plugins/manytomany_rel/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/pluginapp/plugins/manytomany_rel/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/pluginapp/plugins/manytomany_rel/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/pluginapp/plugins/manytomany_rel/cms_plugins.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/pluginapp/plugins/manytomany_rel/cms_plugins.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/pluginapp/plugins/manytomany_rel/cms_plugins.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/pluginapp/plugins/manytomany_rel/models.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/pluginapp/plugins/manytomany_rel/models.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/pluginapp/plugins/manytomany_rel/models.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/sampleapp/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/sampleapp/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/sampleapp/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/sampleapp/admin.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/sampleapp/admin.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/sampleapp/admin.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/sampleapp/cms_app.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/sampleapp/cms_app.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/sampleapp/cms_app.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/sampleapp/menu.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/sampleapp/menu.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/sampleapp/menu.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/sampleapp/models.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/sampleapp/models.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/sampleapp/models.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/sampleapp/urls.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/sampleapp/urls.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/sampleapp/urls.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/sampleapp/urls_extra.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/sampleapp/urls_extra.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/sampleapp/urls_extra.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/sampleapp/views.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/sampleapp/views.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/sampleapp/views.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/second_cms_urls_for_apphook_tests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/second_cms_urls_for_apphook_tests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/second_cms_urls_for_apphook_tests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/second_urls_for_apphook_tests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/second_urls_for_apphook_tests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/second_urls_for_apphook_tests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/urls.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/urls.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/urls.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/urls_for_apphook_tests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/urls_for_apphook_tests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/urls_for_apphook_tests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/runners.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/runners.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/runners.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/testcases.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/testcases.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/testcases.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/tmpdir.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/tmpdir.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/tmpdir.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/util/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/util/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/util/__init__.pyo
@@ -1192,6 +1315,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/util/request_factory.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/util/request_factory.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/util/request_factory.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/util/urls.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/util/urls.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/util/urls.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/tests/__init__.pyo
@@ -1219,6 +1345,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/tests/menu.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/tests/menu.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/tests/menu.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/tests/menu_page_viewperm.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/tests/menu_page_viewperm.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/tests/menu_page_viewperm.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/tests/menu_page_viewperm_staff.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/tests/menu_page_viewperm_staff.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/tests/menu_page_viewperm_staff.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/tests/menu_utils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/tests/menu_utils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/tests/menu_utils.pyo
@@ -1231,6 +1363,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/tests/navextender.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/tests/navextender.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/tests/navextender.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/tests/nested_plugins.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/tests/nested_plugins.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/tests/nested_plugins.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/tests/nonroot.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/tests/nonroot.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/tests/nonroot.pyo
@@ -1384,221 +1519,237 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/menus/utils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/menus/utils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/menus/utils.pyo
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templatetags
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/management/commands/subcommands
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/management/commands
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/management
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/sitemaps
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/publisher
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/cache
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/tests
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/fixtures
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/util
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/css/jquery/cupertino/images
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/css/jquery/cupertino
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/css/jquery
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/css/plugins
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/css
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/js/wymeditor/skins/django
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/js/wymeditor/skins
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/js/wymeditor
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/js/libs
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/js/plugins
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/js
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/jstree/themes/classic
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/jstree/themes/default
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/jstree/themes
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/jstree/_lib
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/jstree
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/images/jquery
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/images/plugins
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/images/toolbar/icons
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/images/toolbar
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/images/file_icons
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/images
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/swf
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/plugins/fullscreen
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/plugins/resizable
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/plugins/embed
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/plugins/hovertools
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/plugins
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/skins/silver/images
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/skins/silver
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/skins/minimal/images
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/skins/minimal
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/skins/compact
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/skins/twopanels
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/skins/default
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/skins
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/lang
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/iframe/default
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/iframe
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/da/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/da
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/sk/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/sk
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/tr/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/tr
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/hi/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/hi
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ca/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ca
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ro/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ro
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/it/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/it
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ru/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ru
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/fi/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/fi
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/sv/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/sv
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/pt/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/pt
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/eu/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/eu
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/pt_BR/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/pt_BR
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/el/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/el
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/de/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/de
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ja/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ja
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/nl/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/nl
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/en/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/en
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/fr/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/fr
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/sl_SI/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/sl_SI
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ar/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ar
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/he/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/he
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/fa/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/fa
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/bn/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/bn
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/km/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/km
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/cy/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/cy
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/cs/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/cs
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/zh_CN/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/zh_CN
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/no/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/no
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/pl/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/pl
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/es/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/es
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/hu/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/hu
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/es_AR/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/es_AR
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/zh_TW/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/zh_TW
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/bg/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/bg
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/et/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/et
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/gu/LC_MESSAGES
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/gu
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/admin/dialog
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/admin
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/toolbar
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/admin/cms/page/dialog
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/admin/cms/page/widgets
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/admin/cms/page/includes
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/admin/cms/page
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/admin/cms/mail
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/admin/cms
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/admin
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/cms/toolbar/items
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/cms/toolbar
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/cms
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/tests/rendering
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/tests
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/utils
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/video/migrations
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/video/templates/cms/plugins
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/video/templates/cms
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/video/templates
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/video
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/picture/templates/cms/plugins
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/picture/templates/cms
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/picture/templates
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/picture/migrations
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/picture
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/googlemap/migrations
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/googlemap/templates/cms/plugins
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/googlemap/templates/cms
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/googlemap/templates
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/googlemap
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/link/migrations
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/link/templates/cms/plugins
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/link/templates/cms
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/link/templates
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/link
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/file/templates/cms/plugins
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/file/templates/cms
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/file/templates
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/file/migrations
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/file
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/flash/migrations
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/flash/templates/cms/plugins
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/flash/templates/cms
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/flash/templates
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/flash
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/snippet/templates/cms/plugins
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/snippet/templates/cms
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/snippet/templates
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/snippet/migrations
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/snippet
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/text/migrations
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/text/widgets
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/text/templates/cms/plugins/widgets
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/text/templates/cms/plugins
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/text/templates/cms
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/text/templates
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/text
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/twitter/migrations
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/twitter/templates/cms/plugins
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/twitter/templates/cms
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/twitter/templates
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/twitter
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/teaser/migrations
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/teaser/templates/cms/plugins
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/teaser/templates/cms
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/teaser/templates
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/teaser
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/inherit/templates/cms/plugins
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/inherit/templates/cms
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/inherit/templates
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/inherit/migrations
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/inherit
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/models
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/forms
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/migrations
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/conf
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/middleware
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/menus/templates/menu
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/menus/templates
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/menus/migrations
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/menus/templatetags
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/menus
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/menus/templatetags
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/menus/templates/menu
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/menus/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/menus/migrations
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/menus
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/utils
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/toolbar
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/util
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/sampleapp
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/pluginapp/plugins/manytomany_rel
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/pluginapp/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/pluginapp
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/placeholderapp
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/fileapp
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project/fakemlng
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/project
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils/fixtures
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/test_utils
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templatetags
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/tests/rendering
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/cms/toolbar/items
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/cms/toolbar
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/cms
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/admin/cms/page/widgets
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/admin/cms/page/includes
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/admin/cms/page/dialog
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/admin/cms/page
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/admin/cms/mail
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/admin/cms
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates/admin
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/skins/twopanels
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/skins/silver/images
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/skins/silver
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/skins/minimal/images
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/skins/minimal
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/skins/default
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/skins/compact
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/skins
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/plugins/resizable
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/plugins/hovertools
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/plugins/fullscreen
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/plugins/embed
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/lang
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/iframe/default
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor/iframe
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/wymeditor
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/swf
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/jstree/themes/default
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/jstree/themes/classic
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/jstree/themes
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/jstree/_lib
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/jstree
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/js/wymeditor/skins/django
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/js/wymeditor/skins
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/js/wymeditor
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/js/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/js/libs
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/js
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/images/toolbar/icons
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/images/toolbar
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/images/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/images/jquery
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/images/file_icons
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/images
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/css/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/css/jquery/cupertino/images
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/css/jquery/cupertino
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/css/jquery
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms/css
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static/cms
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/static
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/sitemaps
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/publisher
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/video/templates/cms/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/video/templates/cms
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/video/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/video/migrations
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/video
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/twitter/templates/cms/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/twitter/templates/cms
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/twitter/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/twitter/migrations
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/twitter
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/text/widgets
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/text/templates/cms/plugins/widgets
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/text/templates/cms/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/text/templates/cms
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/text/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/text/migrations
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/text
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/teaser/templates/cms/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/teaser/templates/cms
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/teaser/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/teaser/migrations
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/teaser
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/snippet/templates/cms/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/snippet/templates/cms
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/snippet/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/snippet/migrations
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/snippet
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/picture/templates/cms/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/picture/templates/cms
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/picture/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/picture/migrations
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/picture
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/link/templates/cms/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/link/templates/cms
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/link/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/link/migrations
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/link
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/inherit/templates/cms/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/inherit/templates/cms
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/inherit/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/inherit/migrations
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/inherit
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/googlemap/templates/cms/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/googlemap/templates/cms
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/googlemap/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/googlemap/migrations
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/googlemap
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/flash/templates/cms/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/flash/templates/cms
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/flash/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/flash/migrations
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/flash
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/file/templates/cms/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/file/templates/cms
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/file/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/file/migrations
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins/file
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/models
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/migrations
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/middleware
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/management/commands/subcommands
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/management/commands
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/management
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/zh_TW/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/zh_TW
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/zh_CN/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/zh_CN
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/tr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/tr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/sv/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/sv
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/sr@latin/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/sr@latin
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/sl_SI/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/sl_SI
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/sk/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/sk
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ru/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ru
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ro/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ro
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/pt_BR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/pt_BR
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/pt/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/pt
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/pl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/pl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/no/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/no
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/nl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/nl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ku_IQ/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ku_IQ
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/km/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/km
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ka/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ka
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ja/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ja
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/it/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/it
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/hu/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/hu
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/hr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/hr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/hi/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/hi
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/he/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/he
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/gu/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/gu
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/fr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/fr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/fi/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/fi
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/fa/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/fa
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/eu/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/eu
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/et/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/et
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/es_BO/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/es_BO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/es_AR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/es_AR
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/es/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/es
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/en/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/en
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/el/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/el
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/de/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/de
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/da/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/da
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/cy/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/cy
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/cs/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/cs
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ca/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ca
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/bn/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/bn
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/bg/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/bg
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ar/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale/ar
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/locale
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/forms
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/conf
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/cache
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/admin/dialog
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms/admin
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cms
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

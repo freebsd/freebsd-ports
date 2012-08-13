@@ -3,7 +3,7 @@
 To try out django CMS, open a shell and run the following commands:
 
     django-admin.py startproject mycmsproject
-    cd mycmsproject
+    cd mycmsproject/mycmsproject
     rm settings.py
     rm urls.py
     fetch https://gist.github.com/raw/1125918/settings.py
@@ -11,7 +11,7 @@ To try out django CMS, open a shell and run the following commands:
     mkdir templates
     cd templates
     fetch https://gist.github.com/raw/1125918/example.html
-    cd ..
+    cd ../..
     python manage.py syncdb --all
     python manage.py migrate --fake
     python manage.py runserver
