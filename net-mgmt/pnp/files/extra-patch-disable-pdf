@@ -1,71 +1,50 @@
-From 689736f288253fdbaff816910317f5c532a583fe Mon Sep 17 00:00:00 2001
-From: Eygene Ryabinkin <rea-fbsd@codelabs.ru>
-Date: Thu, 18 Nov 2010 15:47:59 +0300
-Subject: [PATCH 3/4] Disable PDF generation
-
-This patch allows to completely disable generation of PDF files
-via any means.  It used to support WITHOUT_PDF knob of FreeBSD port.
-
-Signed-off-by: Eygene Ryabinkin <rea-fbsd@codelabs.ru>
----
- share/pnp/application/controllers/pdf.php |    4 ++++
- share/pnp/application/models/rrdtool.php  |    1 +
- share/pnp/application/views/icon_box.php  |    9 ---------
- 3 files changed, 5 insertions(+), 9 deletions(-)
-
-diff --git a/share/pnp/application/controllers/pdf.php b/share/pnp/application/controllers/pdf.php
-index 330e341..6ff172c 100644
---- a/share/pnp/application/controllers/pdf.php
-+++ b/share/pnp/application/controllers/pdf.php
-@@ -10,6 +10,7 @@ class Pdf_Controller extends System_Controller  {
+--- share/pnp/application/controllers/pdf.php.orig	2012-05-25 13:14:03.968357306 +0200
++++ share/pnp/application/controllers/pdf.php	2012-05-25 13:15:02.528359378 +0200
+@@ -10,6 +10,7 @@
  
      public function __construct(){
          parent::__construct();
-+        exit;
++	exit;
  
-         $this->use_bg = 0;
-         $this->bg = $this->config->conf['background_pdf'];
-@@ -30,6 +31,7 @@ class Pdf_Controller extends System_Controller  {
+         $this->use_bg           = 0;
+         $this->bg               = $this->config->conf['background_pdf'];
+@@ -34,6 +35,7 @@
      }
  
      public function index(){
-+        exit;
++	exit;
  
          $this->tpl       = $this->input->get('tpl');
          $this->view      = "";
-@@ -137,6 +139,7 @@ class Pdf_Controller extends System_Controller  {
+@@ -141,6 +143,7 @@
      }
  
      public function page($page){
-+        exit;
++	exit;
          $this->start     = $this->input->get('start');
          $this->end       = $this->input->get('end');
          $this->view      = "";
-@@ -199,6 +202,7 @@ class Pdf_Controller extends System_Controller  {
+@@ -203,6 +206,7 @@
      }
  
      public function basket(){
-+        exit;
++	exit;
          $this->start     = $this->input->get('start');
          $this->end       = $this->input->get('end');
          $this->view      = "";
-diff --git a/share/pnp/application/models/rrdtool.php b/share/pnp/application/models/rrdtool.php
-index 308ab77..344478c 100644
---- a/share/pnp/application/models/rrdtool.php
-+++ b/share/pnp/application/models/rrdtool.php
-@@ -79,6 +79,7 @@ class Rrdtool_Model extends System_Model
+--- share/pnp/application/models/rrdtool.php.orig	2012-05-25 13:16:39.002532608 +0200
++++ share/pnp/application/models/rrdtool.php	2012-05-25 13:17:02.170472975 +0200
+@@ -79,6 +79,7 @@
          $width = 0;
          $height = 0;
          if ($out == 'PDF'){
-+            exit;
++	    exit;
              if($conf['pdf_graph_opt']){
                  $command .= $conf['pdf_graph_opt'];
              }
-diff --git a/share/pnp/application/views/icon_box.php b/share/pnp/application/views/icon_box.php
-index 7ce5301..838b474 100644
---- a/share/pnp/application/views/icon_box.php
-+++ b/share/pnp/application/views/icon_box.php
-@@ -9,15 +9,6 @@ $qsa  = pnp::addToUri(array('start' => $this->start,'end' => $this->end, 'view'
+--- share/pnp/application/views/icon_box.php.orig	2012-05-25 13:15:31.817359837 +0200
++++ share/pnp/application/views/icon_box.php	2012-05-25 13:16:21.953358137 +0200
+@@ -9,15 +9,6 @@
  if($this->config->conf['use_calendar']){
  	echo "<a title=\"".Kohana::lang('common.title-calendar-link')."\" href=\"#\" id=\"button\"><img class=\"icon\" src=\"".url::base()."media/images/calendar.png\"></a>"; 
  }
@@ -78,9 +57,6 @@ index 7ce5301..838b474 100644
 -if($this->config->conf['use_fpdf'] == 1 && $position == "page"){
 -	echo "<a title=\"".Kohana::lang('common.title-pdf-link')."\" href=\"".url::base(TRUE)."pdf/page/".$this->page.$qsa."\"><img class=\"icon\" src=\"".url::base()."media/images/pdf.png\"></a>\n";
 -}
- if($this->config->conf['show_xml_icon'] == 1 && $position == "graph"){
+ if($this->config->conf['show_xml_icon'] == 1 && $position == "graph" && $xml_icon == TRUE){
  	$qsa  = pnp::addToUri(array(), False);
  	echo "<a title=\"".Kohana::lang('common.title-xml-link')."\" href=\"".url::base(TRUE)."xml".$qsa."\"><img class=\"icon\" src=\"".url::base()."media/images/xml.png\"></a>\n";
--- 
-1.7.3.2
-

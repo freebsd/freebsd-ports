@@ -1,0 +1,11 @@
+--- lib/Makefile.in.orig	2012-05-25 11:56:37.407786228 +0200
++++ lib/Makefile.in	2012-05-25 11:57:20.247777075 +0200
+@@ -22,7 +22,7 @@
+ 
+ install:
+ 
+-	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(LIBDIR)      
++	[ -d "$(DESTDIR)$(LIBDIR)" ] || $(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(LIBDIR)      
+ 	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(LIBDIR)/kohana
+ 	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(LIBDIR)/kohana/system
+ 	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(LIBDIR)/kohana/system/controllers

@@ -1,0 +1,54 @@
+--- sample-config/Makefile.in.orig	2012-03-25 17:30:16.000000000 +0200
++++ sample-config/Makefile.in	2012-05-25 17:15:14.898727335 +0200
+@@ -35,39 +35,27 @@
+ install:
+ 	-rm -f $(DESTDIR)$(HTMLDIR)/conf/config.php
+ 
+-	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(SYSCONFDIR)
+-	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(SYSCONFDIR)/config.d
+-	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(SYSCONFDIR)/check_commands
++	[ -d "$(DESTDIR)$(SYSCONFDIR)" ] || $(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(SYSCONFDIR)
++	[ -d "$(DESTDIR)$(SYSCONFDIR)"/check_commands ] || $(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(SYSCONFDIR)/config.d
++	[ -d "$(DESTDIR)$(SYSCONFDIR)"/pages ] || $(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(SYSCONFDIR)/check_commands
+ 	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(SYSCONFDIR)/pages
+ 	$(INSTALL) -m 644 $(INSTALL_OPTS)  pnp/pnp4nagios_release $(DESTDIR)$(SYSCONFDIR)
+-	$(INSTALL) -m 644 $(INSTALL_OPTS)  pnp/background.pdf $(DESTDIR)$(SYSCONFDIR)
+-	$(INSTALL) -m 644 $(INSTALL_OPTS)  pnp/config.php $(DESTDIR)$(SYSCONFDIR)/config.php.$(PKG_VERSION); \
+-	$(INSTALL) -m 644 $(INSTALL_OPTS)  pnp/config.php $(DESTDIR)$(SYSCONFDIR); \
++	$(INSTALL) -m 644 $(INSTALL_OPTS)  pnp/background.pdf $(DESTDIR)$(SYSCONFDIR)/background.pdf-sample
++	$(INSTALL) -m 644 $(INSTALL_OPTS)  pnp/config.php $(DESTDIR)$(SYSCONFDIR)
+ 
+ install-config: 
+ 
+-	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(SYSCONFDIR)
+-	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(SYSCONFDIR)/check_commands
+-	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(SYSCONFDIR)/pages
++	[ -d "$(DESTDIR)$(SYSCONFDIR)" ] || $(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(SYSCONFDIR)
++	[ -d "$(DESTDIR)$(SYSCONFDIR)"/check_commands ] || $(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(SYSCONFDIR)/check_commands
++	[ -d "$(DESTDIR)$(SYSCONFDIR)"/pages ] || $$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(SYSCONFDIR)/pages
+ 	
+-	$(INSTALL) -m 644 $(INSTALL_OPTS)  pnp/config.php $(DESTDIR)$(SYSCONFDIR)/config.php.$(PKG_VERSION); \
+-	$(INSTALL) -m 644 $(INSTALL_OPTS)  pnp/config.php $(DESTDIR)$(SYSCONFDIR); \
++	$(INSTALL) -m 644 $(INSTALL_OPTS)  pnp/config.php $(DESTDIR)$(SYSCONFDIR)/config.php-sample
+ 		
+-	if [ ! -e $(DESTDIR)$(SYSCONFDIR)/config_local.php ] ;then \
+-		$(INSTALL) -m 644 $(INSTALL_OPTS)  pnp/config.php $(DESTDIR)$(SYSCONFDIR)/config_local.php; \
+-	fi
++	$(INSTALL) -m 644 $(INSTALL_OPTS)  pnp/config.php $(DESTDIR)$(SYSCONFDIR)/config_local.php-sample
+ 		
+-	if [ -e $(DESTDIR)$(SYSCONFDIR)/process_perfdata.cfg ] ;then \
+-		$(INSTALL) -m 644 $(INSTALL_OPTS)  pnp/process_perfdata.cfg-sample $(DESTDIR)$(SYSCONFDIR)/process_perfdata.cfg.$(PKG_VERSION); \
+-	else\
+-		$(INSTALL) -m 644 $(INSTALL_OPTS)  pnp/process_perfdata.cfg-sample $(DESTDIR)$(SYSCONFDIR)/process_perfdata.cfg; \
+-	fi
++	$(INSTALL) -m 644 $(INSTALL_OPTS)  pnp/process_perfdata.cfg-sample $(DESTDIR)$(SYSCONFDIR)
+ 		
+-	if [ -e $(DESTDIR)$(SYSCONFDIR)/npcd.cfg ] ;then \
+-		$(INSTALL) -m 644 $(INSTALL_OPTS)  pnp/npcd.cfg-sample $(DESTDIR)$(SYSCONFDIR)/npcd.cfg.$(PKG_VERSION); \
+-	else\
+-		$(INSTALL) -m 644 $(INSTALL_OPTS)  pnp/npcd.cfg-sample $(DESTDIR)$(SYSCONFDIR)/npcd.cfg; \
+-	fi
++	$(INSTALL) -m 644 $(INSTALL_OPTS)  pnp/npcd.cfg-sample $(DESTDIR)$(SYSCONFDIR)
+ 		
+ 	$(INSTALL) -m 644 $(INSTALL_OPTS)  pnp/rra.cfg-sample $(DESTDIR)$(SYSCONFDIR)
+ 	$(INSTALL) -m 644 $(INSTALL_OPTS)  misccommands.cfg-sample $(DESTDIR)$(SYSCONFDIR)
