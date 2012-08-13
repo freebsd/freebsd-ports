@@ -7,14 +7,14 @@
 
 PORTNAME=	irssi
 PORTVERSION=	0.8.15
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES?=	irc
 MASTER_SITES=	http://mirror.irssi.org/
 
 MAINTAINER?=	vanilla@FreeBSD.org
 COMMENT?=	A modular IRC client with many features
 
-LIB_DEPENDS=	glib-2.0:${PORTSDIR}/devel/glib20
+LIB_DEPENDS=	glib-2:${PORTSDIR}/devel/glib20
 
 CONFLICTS=	irssi-devel-[0-9]* zh-irssi-[0-9]*
 
@@ -26,11 +26,14 @@ WANT_PERL=	yes
 
 MAN1=		irssi.1
 
-OPTIONS=	PERL "Enable perl support" on \
-		PROXY "Enable proxy support" off \
-		SOCKS "Enable socks proxy support" off \
-		IPV6 "Enable IPv6" on \
-		BOT "Enable bot" off
+OPTIONS_DEFINE=	PERL PROXY SOCKS IPV6 BOT
+PERL_DESC=	Perl support
+PROXY_DESC=	Proxy support
+SOCKS_DESC=	Socks proxy support
+IPV6_DESC=	IPV6 support
+BOT_DESC=	Bot support
+OPTIONS_DEFAULT=	PERL IPV6
+
 # USE_OPENSSL must be defined before bsd.port.pre.mk so use old schema
 # for WITH_SSL option
 
@@ -40,11 +43,11 @@ CONFIGURE_ARGS+=	--disable-ssl
 USE_OPENSSL=	yes
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # Process options.
 
-.if !defined(WITHOUT_PERL)
+.if ${PORT_OPTIONS:MPERL}
 USE_PERL5=	yes
 CONFIGURE_ARGS+=	--with-perl-lib=site
 PLIST_SUB+=	WITH_PERL=""
@@ -53,23 +56,23 @@ CONFIGURE_ARGS+=	--without-perl
 PLIST_SUB+=	WITH_PERL="@comment "
 .endif
 
-.if defined(WITH_PROXY)
+.if ${PORT_OPTIONS:MPROXY}
 CONFIGURE_ARGS+=	--with-proxy
 PLIST_SUB+=	WITH_PROXY=""
 .else
 PLIST_SUB+=	WITH_PROXY="@comment "
 .endif
 
-.if defined(WITH_SOCKS)
+.if ${PORT_OPTIONS:MSOCKS}
 CONFIGURE_ARGS+=	--with-socks
 .endif
 
-.if defined(WITHOUT_IPV6)
+.if !${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--disable-ipv6
 CATEGORIES+=	ipv6
 .endif
 
-.if defined(WITH_BOT)
+.if ${PORT_OPTIONS:MBOT}
 CONFIGURE_ARGS+=	--with-bot
 PLIST_SUB+=	WITH_BOT=""
 .else
@@ -92,4 +95,4 @@ post-install:
 	@${ECHO_MSG} "You may install x11-themes/irssi-themes for"
 	@${ECHO_MSG} " additional themes."
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

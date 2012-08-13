@@ -1,0 +1,38 @@
+#
+# $FreeBSD$
+#
+--- src/fe-common/core/utf8.h	(revision 5189)
++++ src/fe-common/core/utf8.h	(working copy)
+@@ -12,5 +12,6 @@
+ int mk_wcwidth(unichar c);
+ 
+ #define unichar_isprint(c) (((c) & ~0x80) >= 32)
++#define is_utf8_leading(c) (((c) & 0xc0) != 0x80)
+ 
+ #endif
+--- src/fe-text/textbuffer.c	(revision 5189)
++++ src/fe-text/textbuffer.c	(working copy)
+@@ -23,6 +23,7 @@
+ #include "module.h"
+ #include "misc.h"
+ #include "formats.h"
++#include "utf8.h"
+ 
+ #include "textbuffer.h"
+ 
+@@ -157,6 +158,16 @@
+ 		if (left > 0 && data[left-1] == 0)
+ 			left--; /* don't split the commands */
+ 
++		/* don't split utf-8 character. (assume we can split non-utf8 anywhere. */
++		if (left < TEXT_CHUNK_USABLE_SIZE && !is_utf8_leading(data[left])) {
++			int i;
++			for (i = 1; i < 4 && left >= i; i++)
++				if (is_utf8_leading(data[left - i])) {
++					left -= i;
++					break;
++				}
++		}
++
+ 		memcpy(chunk->buffer + chunk->pos, data, left);
+ 		chunk->pos += left;
