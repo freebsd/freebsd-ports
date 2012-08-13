@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	holidays
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
