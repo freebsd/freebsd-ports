@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ucommon
-PORTVERSION=	5.2.2
+PORTVERSION=	5.5.0
 CATEGORIES=	devel
-MASTER_SITES=	GNU
-MASTER_SITE_SUBDIR=	commoncpp
+MASTER_SITES=	http://www.gnutelephony.org/dist/tarballs/ \
+    		http://www.da3m0n8t3r.com/gnutelephony/www.gnutelephony.org/dist/tarballs/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A very lightweight C++ design patternlibrary
