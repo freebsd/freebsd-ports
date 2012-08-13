@@ -7,7 +7,7 @@
 
 PORTNAME=	ccaudio2
 PORTVERSION=	2.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.gnutelephony.org/dist/tarballs/
 
