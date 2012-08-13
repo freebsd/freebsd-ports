@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	roundcube
-DISTVERSION=	0.7.2
+DISTVERSION=	0.8.0
 PORTEPOCH=	1
 CATEGORIES?=	mail www
 MASTER_SITES=	SF/${PORTNAME}mail/${PORTNAME}mail/${DISTVERSION:U}
@@ -15,13 +15,13 @@ DISTNAME=	${PORTNAME}mail-${DISTVERSION}
 MAINTAINER?=	ale@FreeBSD.org
 COMMENT=	Fully skinnable XHTML/CSS webmail written in PHP
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3
 
 NO_BUILD=	yes
 CONFLICTS=	ja-roundcube-[0-9]*
 
 RCUBECOMP=	.htaccess SQL config index.php installer logs plugins program robots.txt skins temp
-PORTDOCS=	CHANGELOG INSTALL README UPGRADING
+PORTDOCS=	CHANGELOG INSTALL README.md UPGRADING
 
 SCRIPTS_ENV=	SHAREOWN=${SHAREOWN} SHAREGRP=${SHAREGRP} \
 		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} \
@@ -31,53 +31,51 @@ WANT_PHP_WEB=	yes
 USE_PHP=	pcre mbstring session iconv dom xml json intl
 IGNORE_WITH_PHP=4
 
-REINPLACE_ARGS=	-i ""
-.if defined(WITH_REPLACE_MAIL_URL) && !empty(WITH_REPLACE_MAIL_URL)
-MAIL=		${WITH_REPLACE_MAIL_URL}
-.else
-MAIL=		mail
-.endif
-PLIST_SUB+=	MAIL=${MAIL}
+OPTIONS_DEFINE=	SSL LDAP GD PSPELL NSC
+OPTIONS_SINGLE=	DB
+OPTIONS_SINGLE_DB=	MYSQL PGSQL SQLITE
+OPTIONS_DEFAULT=MYSQL
 
-OPTIONS=	MYSQL "Use MySQL backend" on \
-		PGSQL "Use PostgreSQL backend" off \
-		SQLITE "Use SQLite backend (needs PHP 5.3 or below)" off \
-		SSL "Enable SSL support (imaps or google spellcheck)" off \
-		LDAP "Enable LDAP support (address book)" off \
-		PSPELL "Enable PSpell support (internal spellcheck)" off \
-		NSC "Install network spellchecker" off
+MYSQL_DESC=	Use MySQL backend
+PGSQL_DESC=	Use PostgreSQL backend
+SQLITE_DESC=	Use SQLite backend (needs PHP 5.3 or below)
+SSL_DESC=	Enable SSL support (imaps or google spellcheck)
+LDAP_DESC=	Enable LDAP support (address book)
+GD_DESC=	Enable GD support (image convertion)
+PSPELL_DESC=	Enable PSpell support (internal spellcheck)
+NSC_DESC=	Install network spellchecker
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_MYSQL) && !defined(WITH_PGSQL) && !defined(WITH_SQLITE)
-IGNORE=		needs a database backend
-.endif
-
-.if !defined(WITHOUT_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	mysql
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pgsql
 .endif
 
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 USE_PHP+=	sqlite
 .endif
 
-.if defined(WITH_SSL)
+.if ${PORT_OPTIONS:MSSL}
 USE_PHP+=	openssl
 .endif
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_PHP+=	ldap
 .endif
 
-.if defined(WITH_PSPELL) || defined(WITH_NSC)
+.if ${PORT_OPTIONS:MGD}
+USE_PHP+=	gd
+.endif
+
+.if ${PORT_OPTIONS:MPSPELL} || ${PORT_OPTIONS:MNSC}
 USE_PHP+=	pspell
 .endif
 
-.if defined(WITH_NSC)
+.if ${PORT_OPTIONS:MNSC}
 RCUBECOMP+=	spellchecker.php
 USE_PHP+=	simplexml
 PLIST_SUB+=	SPELLCHECK=""
@@ -85,52 +83,13 @@ PLIST_SUB+=	SPELLCHECK=""
 PLIST_SUB+=	SPELLCHECK="@comment "
 .endif
 
-.if defined(WITH_NSC)
+.if ${PORT_OPTIONS:MNSC}
 post-extract:
 	@${CP} ${FILESDIR}/spellchecker.php ${WRKSRC}
 .endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -type f -delete
-.if defined(WITH_REPLACE_MAIL_URL)
-	@${REINPLACE_CMD} "s/'mail'/'${MAIL}'/g" ${WRKSRC}/index.php \
-		${WRKSRC}/plugins/*/*.php \
-		${WRKSRC}/program/include/rcmail.php \
-		${WRKSRC}/program/js/editor.js \
-		${WRKSRC}/program/localization/*/labels.inc \
-		${WRKSRC}/program/steps/addressbook/mailto.inc \
-		${WRKSRC}/skins/default/functions.js \
-		${WRKSRC}/skins/default/includes/links.html
-	@${REINPLACE_CMD} "s/'mail|/'${MAIL}|/g" ${WRKSRC}/plugins/*/*.php
-	@${REINPLACE_CMD} "s/|mail'/|${MAIL}'/g" ${WRKSRC}/plugins/*/*.php
-	@${REINPLACE_CMD} "s/_task=mail/_task=${MAIL}/g" \
-		${WRKSRC}/program/js/app.js
-	@${REINPLACE_CMD} "s/\"mail\"/\"${MAIL}\"/g" \
-		${WRKSRC}/program/js/app.js \
-		${WRKSRC}/skins/default/includes/taskbar.html
-	@${REINPLACE_CMD} "s/\"mail\//\"${MAIL}\//g" \
-		${WRKSRC}/program/js/app.js
-	@${REINPLACE_CMD} "s/mail_footer/${MAIL}_footer/g" \
-		${WRKSRC}/skins/default/*.css \
-		${WRKSRC}/skins/default/templates/login.html
-	@${REINPLACE_CMD} "s/mail_toolbar/${MAIL}_toolbar/g" \
-		${WRKSRC}/skins/default/*.css \
-		${WRKSRC}/skins/default/templates/login.html
-	@${MV} ${WRKSRC}/program/steps/mail \
-		${WRKSRC}/program/steps/${MAIL}
-	@${MV} ${WRKSRC}/skins/default/images/mail_footer.gif \
-		${WRKSRC}/skins/default/images/${MAIL}_footer.gif
-	@${MV} ${WRKSRC}/skins/default/images/mail_footer.png \
-		${WRKSRC}/skins/default/images/${MAIL}_footer.png
-	@${MV} ${WRKSRC}/skins/default/images/mail_toolbar.gif \
-		${WRKSRC}/skins/default/images/${MAIL}_toolbar.gif
-	@${MV} ${WRKSRC}/skins/default/images/mail_toolbar.png \
-		${WRKSRC}/skins/default/images/${MAIL}_toolbar.png
-	@${MV} ${WRKSRC}/skins/default/mail.css \
-		${WRKSRC}/skins/default/${MAIL}.css
-	@${MV} ${WRKSRC}/skins/default/templates/mail.html \
-		${WRKSRC}/skins/default/templates/${MAIL}.html
-.endif
 
 do-install:
 	-${MKDIR} ${WWWDIR}
@@ -139,7 +98,7 @@ do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${WWWDIR}
 .endfor
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/logs ${WWWDIR}/temp
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
