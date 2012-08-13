@@ -13,7 +13,7 @@ lib/libwireshark.so
 lib/libwireshark.so.2
 lib/libwiretap.la
 lib/libwiretap.so
-lib/libwiretap.so.2
+lib/libwiretap.so.3
 lib/libwsutil.la
 lib/libwsutil.so
 lib/libwsutil.so.2

@@ -7,6 +7,7 @@
 
 PORTNAME?=	wireshark
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
 		http://ftp.uni-kl.de/pub/wireshark/src/ \
