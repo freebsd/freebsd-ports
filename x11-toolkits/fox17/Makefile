@@ -7,6 +7,7 @@
 
 PORTNAME=	fox
 PORTVERSION=	1.7.35
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.fox-toolkit.org/pub/ \
    		ftp://ftp.fox-toolkit.org/pub/
@@ -15,8 +16,6 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Fast and extensive C++ GUI toolkit -- devel version
 
 LIB_DEPENDS=	Xft:${PORTSDIR}/x11-fonts/libXft
-
-CONFLICTS=	fox-1.4.* fox-1.6.*
 
 OPTIONS_DEFINE=	JPEG PNG TIFF WEBP
 OPTIONS_DEFAULT=JPEG PNG TIFF WEBP
@@ -34,13 +33,17 @@ USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-opengl=yes
+CONFIGURE_ARGS=	--with-opengl=yes \
+		--bindir=${PREFIX}/bin/${PORTNAME}-${MAJORVER}
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-MAN1=		reswrap.1 shutterbug.1 adie.1 PathFinder.1 calculator.1 \
-		ControlPanel.1
+MAN1=		reswrap-17.1 shutterbug-17.1 adie-17.1 PathFinder-17.1 \
+		calculator-17.1 ControlPanel-17.1
+.for man1 in ${MAN1}
+MAN_REPLACE+=	s|${man1:S/-17//}|${man1}|;
+.endfor
 
 .include <bsd.port.options.mk>
 
@@ -73,6 +76,13 @@ BROKEN=		Does not link on powerpc
 .endif
 
 post-patch:
+	for f in ${MAN1}; do \
+	    old=$$(echo $$f | sed -e 's|-17||'); \
+	    dir=$$(dirname $$(find ${WRKSRC} -name $$old)); \
+	    mv $$dir/$$old $$dir/$$f; \
+	done
+	${FIND} ${WRKSRC} -name Makefile.am -o -name Makefile.in | ${XARGS} \
+	    ${REINPLACE_CMD} -i '' -e '${MAN_REPLACE}'
 	${REINPLACE_CMD} -e '/^Libs:/s|$$| ${PTHREAD_LIBS}|; s|"||g' ${WRKSRC}/fox17.pc.in
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e '/^SUBDIRS/s/ doc//' ${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in

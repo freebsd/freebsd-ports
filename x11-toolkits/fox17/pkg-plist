@@ -1,10 +1,10 @@
-bin/reswrap
-bin/shutterbug
-bin/adie
-bin/Adie.stx
-bin/PathFinder
-bin/calculator
-bin/ControlPanel
+bin/fox-%%MAJORVER%%/reswrap
+bin/fox-%%MAJORVER%%/shutterbug
+bin/fox-%%MAJORVER%%/adie
+bin/fox-%%MAJORVER%%/Adie.stx
+bin/fox-%%MAJORVER%%/PathFinder
+bin/fox-%%MAJORVER%%/calculator
+bin/fox-%%MAJORVER%%/ControlPanel
 libdata/pkgconfig/fox17.pc
 lib/libCHART-%%MAJORVER%%.a
 lib/libCHART-%%MAJORVER%%.la
@@ -350,6 +350,7 @@ include/fox-%%MAJORVER%%/fxver.h
 include/fox-%%MAJORVER%%/xincs.h
 @dirrm include/fox-%%MAJORVER%%/chart
 @dirrm include/fox-%%MAJORVER%%
+@dirrm bin/fox-%%MAJORVER%%
 %%PORTDOCS%%%%DOCSDIR%%/html/adie.html
 %%PORTDOCS%%%%DOCSDIR%%/html/app.html
 %%PORTDOCS%%%%DOCSDIR%%/html/art/bigpenguin.png
