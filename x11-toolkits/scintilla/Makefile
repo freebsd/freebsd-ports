@@ -6,8 +6,7 @@
 #    $MCom: ports/x11-toolkits/scintilla/Makefile,v 1.3 2006/09/17 21:58:56 marcus Exp $
 
 PORTNAME=	scintilla
-PORTVERSION=	3.1.0
-PORTREVISION=	1
+PORTVERSION=	3.2.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/scintilla/SciTE/${PORTVERSION}
 DISTNAME=	scite${PORTVERSION:S/.//g}

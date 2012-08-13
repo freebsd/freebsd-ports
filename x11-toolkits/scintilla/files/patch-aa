@@ -1,12 +1,15 @@
---- makefile.orig	2012-01-27 18:52:23.000000000 -0500
-+++ makefile	2012-02-12 14:28:24.000000000 -0500
-@@ -7,14 +7,7 @@
+--- makefile.orig	2012-06-01 04:26:24.000000000 -0400
++++ makefile	2012-08-12 14:34:52.000000000 -0400
+@@ -7,17 +7,7 @@
  # Also works with ming32-make on Windows.
  
  .SUFFIXES: .cxx .c .o .h .a
 -ifdef CLANG
--CC = clang
--CCOMP = clang
+-ifdef CLANG_ANALYZE
+-ANALYZE=--analyze
+-endif
+-CC = clang $(ANALYZE)
+-CCOMP = clang $(ANALYZE)
 -else
 -CC = g++
 -CCOMP = gcc
@@ -16,7 +19,7 @@
  RANLIB = touch
  
  ifdef GTK3
-@@ -36,7 +29,8 @@
+@@ -39,7 +29,8 @@
  COMPLIB=..\bin\scintilla.a
  else
  DEL = rm -f
@@ -26,7 +29,7 @@
  endif
  
  vpath %.h ../src ../include ../lexlib
-@@ -63,6 +57,7 @@
+@@ -66,6 +57,7 @@
  CFLAGS:=$(CXXTFLAGS)
  
  CONFIGFLAGS:=$(shell pkg-config --cflags $(GTKVERSION))
@@ -34,7 +37,7 @@
  MARSHALLER=scintilla-marshal.o
  
  .cxx.o:
-@@ -72,7 +67,7 @@
+@@ -75,7 +67,7 @@
  
  LEXOBJS:=$(addsuffix .o,$(basename $(notdir $(wildcard ../lexers/Lex*.cxx))))
  
@@ -43,7 +46,7 @@
  
  clean:
  	$(DEL) *.o $(COMPLIB)
-@@ -85,9 +80,11 @@
+@@ -88,9 +80,11 @@
  	ScintillaBase.o ContractionState.o Editor.o ExternalLexer.o PropSetSimple.o PlatGTK.o \
  	KeyMap.o LineMarker.o PositionCache.o ScintillaGTK.o CellBuffer.o ViewStyle.o \
  	RESearch.o RunStyles.o Selection.o Style.o Indicator.o AutoComplete.o UniConversion.o XPM.o \
