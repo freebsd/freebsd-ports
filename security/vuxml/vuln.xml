@@ -52,6 +52,55 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="55b498e2-e56c-11e1-bbd5-001c25e46b1d">
+    <topic>Several vulnerabilities found in IcedTea-Web</topic>
+    <affects>
+      <package>
+	<name>icedtea-web</name>
+	<range><lt>1.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The IcedTea project team reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=840592">
+	  <p>CVE-2012-3422: Use of uninitialized instance pointers</p>
+	  <p>An uninitialized pointer use flaw was found in IcedTea-Web web
+	    browser plugin.  A malicious web page could use this flaw make
+	    IcedTea-Web browser plugin pass invalid pointer to a web browser.
+	    Depending on the browser used, it may cause the browser to crash
+	    or possibly execute arbitrary code.</p>
+	  <p>The get_cookie_info() and get_proxy_info() call
+	    getFirstInTableInstance() with the instance_to_id_map hash as
+	    a parameter.  If instance_to_id_map is empty (which can happen
+	    when plugin was recently removed), getFirstInTableInstance()
+	    returns an uninitialized pointer.</p>
+	</blockquote>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=841345">
+	  <p>CVE-2012-3423: Incorrect handling of non 0-terminated strings</p>
+	  <p>It was discovered that the IcedTea-Web web browser plugin
+	    incorrectly assumed that all strings provided by browser are NUL
+	    terminated, which is not guaranteed by the NPAPI (Netscape Plugin
+	    Application Programming Interface).  When used in a browser that
+	    does not NUL terminate NPVariant NPStrings, this could lead to
+	    buffer over-read or over-write, resulting in possible information
+	    leak, crash, or code execution.</p>
+	  <p>Mozilla browsers currently NUL terminate strings, however recent
+	    Chrome versions are known not to provide NUL terminated data.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-3422</cvename>
+      <cvename>CVE-2012-3423</cvename>
+      <mlist>http://mail.openjdk.java.net/pipermail/distro-pkg-dev/2012-July/019580.html</mlist>
+    </references>
+    <dates>
+      <discovery>2012-07-31</discovery>
+      <entry>2012-08-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a14dee30-e3d7-11e1-a084-50e5492bd3dc">
     <topic>libcloud -- possible SSL MITM due to invalid regexp used to validate target server hostname</topic>
     <affects>
