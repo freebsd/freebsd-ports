@@ -186,7 +186,7 @@ pre-everything::
 	@${ECHO_MSG}    "  You can check your modules configuration by using make show-modules"
 	@${ECHO_MSG}	""
 	@${ECHO_MSG}    "To save apache.org bandwidth, please use the closest"
-	@${ECHO_MSG}    "mirror. Hit Ctrl+C now and do a "make print-closest-mirrors."
+	@${ECHO_MSG}    "mirror. Hit Ctrl+C now and do a \"make print-closest-mirrors\"."
 	@${ECHO_MSG}	"To automatically update /etc/make.conf do:"
 	@${ECHO_MSG}	"make print-closest-mirrors >> /etc/make.conf"
 	@${ECHO_MSG}	""

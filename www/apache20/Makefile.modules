@@ -42,7 +42,7 @@ PKGNAMESUFFIX=		-${WITH_MPM:L}
 .if ${WITH_MPM:L} == "worker" || ${WITH_MPM:L} == "perchild" || ${WITH_MPM:L} == "threadpool"
 WITH_THREADS=		yes
 WITH_THREADS_MODULES=	yes
-WITHOUT_MODULES+=	cgi
+WITHOUT_MODULES+=	CGI
 .endif
 
 # xDBM section
@@ -55,9 +55,9 @@ WITH_DBM=	bdb
 
 .if defined(WITH_BERKELEYDB) && !defined(WITH_BDB_VER)
 .   if ${WITH_BERKELEYDB} == "FreeBSD"
-WITH_BDB_BASE=YES
+WITH_BDB_BASE=	yes
 .   else
-WITH_BDB_VER=${WITH_BERKELEYDB:S/db//}
+WITH_BDB_VER=	${WITH_BERKELEYDB:S/db//}
 .   endif
 .endif
 
@@ -92,23 +92,23 @@ WITH_SSL_MODULES=	yes
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 .endif
 
-AUTH_MODULES=		access auth auth_anon auth_dbm auth_digest
-DAV_MODULES=		dav dav_fs
-EXPERIMENTAL_MODULES=	bucketeer case_filter case_filter_in ext_filter charset_lite \
-			optional_hook_export optional_hook_import \
-			optional_fn_import optional_fn_export \
-			cache file_cache disk_cache mem_cache \
-			dumpio
-LDAP_MODULES=		ldap auth_ldap
-MISC_MODULES=		actions alias asis autoindex cache cern_meta \
-			cgi charset_lite deflate dir disk_cache env expires \
-			file_cache headers imap include info log_config logio mime \
-			mime_magic negotiation rewrite setenvif speling status \
-			unique_id userdir usertrack vhost_alias
-PROXY_MODULES=		proxy proxy_connect proxy_ftp proxy_http
-SSL_MODULES=		ssl
-SUEXEC_MODULES=		suexec
-THREADS_MODULES=	cgid
+AUTH_MODULES=		ACCESS AUTH AUTH_ANON AUTH_DBM AUTH_DIGEST
+DAV_MODULES=		DAV DAV_FS
+EXPERIMENTAL_MODULES=	BUCKETEER CASE_FILTER CASE_FILTER_IN EXT_FILTER CHARSET_LITE \
+			OPTIONAL_HOOK_EXPORT OPTIONAL_HOOK_IMPORT \
+			OPTIONAL_FN_IMPORT OPTIONAL_FN_EXPORT \
+			CACHE FILE_CACHE DISK_CACHE MEM_CACHE \
+			DUMPIO
+LDAP_MODULES=		LDAP AUTH_LDAP
+MISC_MODULES=		ACTIONS ALIAS ASIS AUTOINDEX CACHE CERN_META \
+			CGI CHARSET_LITE DEFLATE DIR DISK_CACHE ENV EXPIRES \
+			FILE_CACHE HEADERS IMAP INCLUDE INFO LOG_CONFIG LOGIO MIME \
+			MIME_MAGIC NEGOTIATION REWRITE SETENVIF SPELING STATUS \
+			UNIQUE_ID USERDIR USERTRACK VHOST_ALIAS
+PROXY_MODULES=		PROXY PROXY_CONNECT PROXY_FTP PROXY_HTTP
+SSL_MODULES=		SSL
+SUEXEC_MODULES=		SUEXEC
+THREADS_MODULES=	CGID
 
 DEFAULT_MODULES_CATEGORIES= \
 			AUTH DAV MISC

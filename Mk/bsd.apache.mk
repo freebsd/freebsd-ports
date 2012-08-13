@@ -92,9 +92,9 @@ _ERROR_MSG=	: Error from bsd.apache.mk.
 #  two versions or in combination with range!
 .if defined(USE_APACHE) && !empty(USE_APACHE)
 .	if ${USE_APACHE:Mcommon*} != ""
-AP_PORT_IS_SERVER=	YES
+AP_PORT_IS_SERVER=	yes
 .	elif ${USE_APACHE:C/\-//:S/^20//:S/^22//:C/\+$//} == ""
-AP_PORT_IS_MODULE=	YES
+AP_PORT_IS_MODULE=	yes
 .		if ${USE_APACHE:C/\-//:S/^20//:S/^22//} == "+"
 AP_PLUS=	yes
 .		endif
@@ -115,12 +115,16 @@ IGNORE=	${_ERROR_MSG} Illegal use of USE_APACHE ( no version specified )
 
 # ===============================================================
 .if defined(AP_PORT_IS_SERVER)
+# MFC TODO: remove this check
+# used only in apache22-peruser-mpm, remved in rev. 253708
+#  http://svnweb.freebsd.org/ports?view=revision&revision=253708
 # For slave ports:
 .if defined(SLAVE_DESIGNED_FOR) && ${PORTVERSION} != ${SLAVE_DESIGNED_FOR}
 IGNORE=	Sorry, ${SLAVENAME} and ${PORTNAME} versions are out of sync ${PORTVERSION} != ${SLAVE_DESIGNED_FOR}
 .endif
 
-# used by www/cakeph* ports
+# MFC TODO: remove this check
+# used only by www/cakephp* ports
 .if defined(SLAVE_PORT_MODULES)
 DEFAULT_MODULES_CATEGORIES+=	SLAVE_PORT
 ALL_MODULES_CATEGORIES+=		SLAVE_PORT
@@ -129,71 +133,75 @@ ALL_MODULES_CATEGORIES+=		SLAVE_PORT
 # Module selection
 .for category in ${DEFAULT_MODULES_CATEGORIES}
 DEFAULT_MODULES+=			${${category}_MODULES}
-WITH_${category}_MODULES= 	YES
+WITH_${category}_MODULES= 	yes
 .endfor
 
 .for category in ${ALL_MODULES_CATEGORIES}
 AVAILABLE_MODULES+=			${${category}_MODULES}
 .endfor
 
+# == start convert param to UPPERCASE
+# detect lowercase params in make.conf, users should them to UPPERCASE
+# In near future we will throw an IGNORE message
+#_ERROR_DLCM=	... detected (make.conf), please convert apache releated params to UPPERCASE
+.if defined(WITH_MODULES) && ${WITH_MODULES:M[a-z]*}
+#IGNNORE=	lowercase WITH_MODULES=  ${_ERROR_DLCM}
+WITH_MODULES:=${WITH_MODULES:U}
+.endif
+.if defined(WITHOUT_MODULES) && ${WITHOUT_MODULES:M[a-z]*}
+#IGNORE=		lowercase WITHOUT_MODULES= ${_ERROR_DLCM}
+WITHOUT_MODULES:=${WITHOUT_MODULES:U}
+.endif
+.if defined(WITH_STATIC_MODULES) && ${WITH_STATIC_MODULES:M[a-z]*}
+#IGNORE=		lowercase WITH_STATIC_MODULES= ${_ERROR_DLCM}
+WITH_STATIC_MODULES:=${WITH_STATIC_MODULES:U}
+.endif
+# == end convert param to UPPERCASE
+
 # Setting "@comment " as default.
-.for module in ${AVAILABLE_MODULES}
-${module}_PLIST_SUB=		"@comment "
+.for module in ${AVAILABLE_MODULES:O}
+${module}_PLIST_SUB=	"@comment "
+_DISABLE_MODULES+=		--disable-${module:L}
 .endfor
 
 # Configure
 # dirty hacks to make sure all modules are disabled before we select them
-.if ${USE_APACHE} == common20
-CONFIGURE_ARGS+=	--disable-access --disable-auth \
-			--disable-charset-lite --disable-include \
-			--disable-log-config --disable-env --disable-setenvif \
-			--disable-mime --disable-status --disable-autoindex \
-			--disable-asis --disable-cgid --disable-cgi \
-			--disable-negotiation --disable-dir --disable-imap \
-			--disable-actions --disable-userdir --disable-alias
-.elif ${USE_APACHE} == common22
-CONFIGURE_ARGS+=	--disable-authn-file --disable-authn-default \
-			--disable-authz-host --disable-authz-groupfile \
-			--disable-authz-user --disable-authz-default \
-			--disable-auth-basic --disable-charset-lite \
-			--disable-include --disable-log-config --disable-env \
-			--disable-setenvif --disable-mime --disable-status \
-			--disable-autoindex --disable-asis --disable-cgid \
-			--disable-cgi --disable-negotiation --disable-dir \
-			--disable-imagemap --disable-actions --disable-userdir \
-			--disable-alias --disable-filter --disable-substitute \
-			--disable-proxy --disable-proxy-connect \
-			--disable-proxy-ftp --disable-proxy-http \
-			--disable-proxy-ajp --disable-proxy-balancer \
-			--disable-proxy-scgi --disable-reqtimeout
+.if ${USE_APACHE:Mcommon2*}
+CONFIGURE_ARGS+= 		${_DISABLE_MODULES:O:u}
 .endif
 
-.if defined(OPTIONS) && !(make(make-options-list))
+.if ( defined(OPTIONS) || defined(OPTIONS_DEFINE) ) && !(make(make-options-list))
 .for module in ${AVAILABLE_MODULES}
-.	if defined(WITH_${module:U})
+.	if defined(WITH_${module})
 _APACHE_MODULES+=	${module}
 .	endif
-.	if defined(WITHOUT_${module:U})
+.	if defined(WITHOUT_${module})
 WITHOUT_MODULES+=	 ${module}
 .	endif
 .endfor
+
+# MFC TODO: remove together with apache20
 .elif defined(WITH_MODULES)
 _APACHE_MODULES+=	${WITH_MODULES}
 .else
+# MFC TODO: remove together with apache20
 .for category in ${ALL_MODULES_CATEGORIES}
 .	if defined (WITHOUT_${category}_MODULES) || defined (WITH_CUSTOM_${category})
 .		if defined(WITH_${category}_MODULES})
 .			undef WITH_${category}_MODULES
 .		endif
 .		if defined (WITH_CUSTOM_${category})
-_APACHE_MODULES+=	${WITH_CUSTOM_${category}}
+_APACHE_MODULES+=	${WITH_CUSTOM_${category}:U}
 .		endif
 .	elif defined(WITH_${category}_MODULES)
-_APACHE_MODULES+=	${${category}_MODULES}
+_APACHE_MODULES+=	${${category}_MODULES:U}
 .	endif
 .endfor
+# MFC TODO: remove this check
+# last usage of WITH_EXTRA_MODULES in apache22/Makefile.modules
+# http://www.freebsd.org/cgi/cvsweb.cgi/ports/www/apache22/Makefile.modules.diff?r1=text&tr1=1.1&r2=text&tr2=1.3
 .if defined(WITH_EXTRA_MODULES)
-_APACHE_MODULES+=	${WITH_EXTRA_MODULES}
+_APACHE_MODULES+=	${WITH_EXTRA_MODULES:U}
 .endif
 .endif
 
@@ -207,7 +215,7 @@ CONFIGURE_ARGS+=	--enable-so
 .	if ${USE_APACHE:Mcommon2*} != ""
 CONFIGURE_ARGS+=	--disable-so
 .	endif
-WITH_ALL_STATIC_MODULES=	YES
+WITH_ALL_STATIC_MODULES=	yes
 .endif
 
 .if defined(WITH_SUEXEC) || defined(WITH_SUEXEC_MODULES)
@@ -243,39 +251,36 @@ CONFIGURE_ARGS+=		--${SUEXEC_CONFARGS}-umask=${SUEXEC_UMASK}
 .if !defined(WITHOUT_MODULES)
 APACHE_MODULES=		${_APACHE_MODULES}
 .else
-APACHE_MODULES!=	\
-			for module in ${_APACHE_MODULES}; do \
-				${ECHO_CMD} ${WITHOUT_MODULES} | ${GREP} -wq $${module} 2> /dev/null || \
-				${ECHO_CMD} $${module}; \
-			done
+.for module in ${_APACHE_MODULES:O:u}
+.	if !${WITHOUT_MODULES:M${module}}
+APACHE_MODULES+=	${module}
+.	endif
+.endfor
 .endif
 
 .if defined(WITH_STATIC_MODULES)
-STATIC_MODULE_CONFARG=	--enable-$${module}
-DSO_MODULE_CONFARG=		--enable-$${module}=shared
-_CONFIGURE_ARGS!=	\
-			for module in ${APACHE_MODULES} ; do \
-				${ECHO_CMD} ${WITH_STATIC_MODULES} | \
-					${GREP} -wq $${module} 2> /dev/null ; \
-				if [ "$${?}" = "0" ] ; then \
-						${ECHO_CMD} "${STATIC_MODULE_CONFARG}"; \
-					else \
-						${ECHO_CMD} "${DSO_MODULE_CONFARG}"; \
-					fi; done
-CONFIGURE_ARGS+=	${_CONFIGURE_ARGS}
+.  for module in ${APACHE_MODULES}
+.    if ${WITH_STATIC_MODULES:M${module}}
+_CONFIGURE_ARGS+=	--enable-${module:L}
+.    else
+_CONFIGURE_ARGS+=	--enable-${module:L}=shared
+.    endif
+.  endfor
+CONFIGURE_ARGS+=	${_CONFIGURE_ARGS:O}
 .elif defined(WITH_STATIC_APACHE) || defined(WITH_ALL_STATIC_MODULES)
 WITH_STATIC_MODULES=	${APACHE_MODULES}
-CONFIGURE_ARGS+=	--enable-modules="${APACHE_MODULES}"
+CONFIGURE_ARGS+=	--enable-modules="${APACHE_MODULES:O:L}"
 .else
-CONFIGURE_ARGS+=	--enable-mods-shared="${APACHE_MODULES}"
+CONFIGURE_ARGS+=	--enable-mods-shared="${APACHE_MODULES:O:L}"
 .endif
 
 .if defined(WITH_STATIC_MODULES)
-_SHARED_MODULES!=	\
-			for module in ${APACHE_MODULES} ; do \
-				${ECHO_CMD} ${WITH_STATIC_MODULES} | ${GREP} -wq $${module} 2> /dev/null || \
-				${ECHO_CMD} $${module}; \
-			done
+.for module in ${APACHE_MODULES}
+.	if !${WITH_STATIC_MODULES:M${module}}
+_SHARED_MODULES+=	${module}
+.	endif
+.endfor
+
 SHARED_MODULES=		${_SHARED_MODULES}
 .elif !defined(WITH_ALL_STATIC_MODULES)
 SHARED_MODULES=		${APACHE_MODULES}
@@ -285,8 +290,8 @@ SHARED_MODULES=		${APACHE_MODULES}
 ${module}_PLIST_SUB=	""
 .endfor
 
-.for module in ${AVAILABLE_MODULES}
-PLIST_SUB+=	MOD_${module:U}=${${module}_PLIST_SUB}
+.for module in ${AVAILABLE_MODULES:O:u}
+PLIST_SUB+=	MOD_${module}=${${module}_PLIST_SUB}
 .endfor
 #### End of AP_PORT_IS_SERVER ####
 
@@ -301,6 +306,7 @@ SRC_FILE?=	${MODULENAME}.c
 
 .if exists(${HTTPD})
 _APACHE_VERSION!=	${HTTPD} -V | ${SED} -ne 's/^Server version: Apache\/\([0-9]\)\.\([0-9]*\).*/\1\2/p'
+# XXX see mod_perl-2.0.6/Changes
 # Apache 2.4 and onwards doesn't require linking the MPM module
 # directly in the httpd binary anymore. APXS lost the MPM_NAME query,
 # so we can't assume a given MPM anymore.
@@ -457,36 +463,32 @@ show-categories:
 
 .if !target(show-modules)
 show-modules:
-	@for module in ${AVAILABLE_MODULES} ; do \
-	${ECHO_MSG} -n "$${module}: "; \
-	if ${ECHO_CMD} ${APACHE_MODULES} | ${GREP} -wq $${module} 2> /dev/null ; \
-	then \
-		${ECHO_CMD} -n "enabled "; \
-			if ${ECHO_CMD} ${WITH_STATIC_MODULES} | ${GREP} -wq $${module} 2> /dev/null ; then \
-				${ECHO_CMD} "(static)" ; \
-			else \
-				${ECHO_CMD} "(shared)" ;\
-			fi;\
-	else \
-		${ECHO_CMD} disabled ;\
-	fi;\
-	done
+.for module in ${AVAILABLE_MODULES}
+	@${PRINTF} "%-20s : " ${module}
+.	if ${APACHE_MODULES:M${module}}
+		@${ECHO} -n "enabled "
+.		if !empty(WITH_STATIC_MODULES) && ${WITH_STATIC_MODULES:M${module}}
+				@${ECHO_CMD} " (static)"
+.		else
+				@${ECHO_CMD} "(shared)"
+.		endif
+.	else
+		@${ECHO_CMD} disabled
+.	endif
+.endfor
 .endif
 
+# MFC TODO: remove this target it's useless with options NG
 .if !target(make-options-list)
 make-options-list:
 	@${ECHO_CMD} OPTIONS+= \\;
-	@for module in ${AVAILABLE_MODULES} ; do \
-	if ${ECHO_CMD} ${APACHE_MODULES} | ${GREP} -wq $${module} 2> /dev/null ; \
-	then \
-		${PRINTF} "\t `${ECHO_CMD} $${module} | ${TR} '[:lower:]' '[:upper:]'` \"Enable mod_$${module}\" ON \\"; \
-		${ECHO_CMD}; \
-	else \
-		${PRINTF} "\t `${ECHO_CMD} $${module} | ${TR} '[:lower:]' '[:upper:]'` \"Enable mod_$${module}\" OFF \\";\
-		${ECHO_CMD}; \
-	fi;\
-	done; \
-	${ECHO_CMD};
+.for module in ${AVAILABLE_MODULES}
+.	if ${APACHE_MODULES:M${module}}
+		@${ECHO} -e "\t ${module} \"mod_${module:L}\" on \\"
+.	else
+		@${ECHO} -e "\t ${module} \"mod_${module:L}\" off \\"
+.	endif
+.endfor
 .endif
 
 .elif defined(AP_PORT_IS_MODULE)
