@@ -2,6 +2,7 @@ bin/SciTE
 share/applications/SciTE.desktop
 share/pixmaps/Sci48M.png
 %%PORTDOCS%%%%DOCSDIR%%/CommandValues.html
+%%PORTDOCS%%%%DOCSDIR%%/PaneAPI.html
 %%PORTDOCS%%%%DOCSDIR%%/PrintHi.png
 %%PORTDOCS%%%%DOCSDIR%%/SciBreak2.jpg
 %%PORTDOCS%%%%DOCSDIR%%/SciTE.html
@@ -68,6 +69,7 @@ share/pixmaps/Sci48M.png
 %%DATADIR%%/nncrontab.properties
 %%DATADIR%%/nsis.properties
 %%DATADIR%%/opal.properties
+%%DATADIR%%/oscript.properties
 %%DATADIR%%/others.properties
 %%DATADIR%%/pascal.properties
 %%DATADIR%%/perl.properties
