@@ -20,9 +20,10 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 CONFLICTS=	musicbrainz-1.*
 
 DEPRECATED=	MusicBrainz RDF webservice no longer functions
+EXPIRATION_DATE=2012-09-12
 
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
