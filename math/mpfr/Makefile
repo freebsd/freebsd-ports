@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mpfr
-PORTVERSION=	3.1.0
-PORTREVISION=	3
+PORTVERSION=	3.1.1
 CATEGORIES=	math devel
 MASTER_SITES=	http://www.mpfr.org/mpfr-current/
 DIST_SUBDIR=	${DISTNAME}
@@ -20,25 +19,31 @@ COMMENT=	A library for multiple-precision floating-point computations
 
 LICENSE=	LGPL3
 
-PATCH_DEPENDS=	gpatch:${PORTSDIR}/devel/patch
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
+#PATCH_DEPENDS=	gpatch:${PORTSDIR}/devel/patch
+LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
 
-PATCHLEVEL=	10
-PATCHFILES!=	/usr/bin/jot -s " " -w patch%02d ${PATCHLEVEL} 1 ${PATCHLEVEL}
-PATCH=		${LOCALBASE}/bin/gpatch
+#PATCHLEVEL=	10
+#PATCHFILES!=	/usr/bin/jot -s " " -w patch%02d ${PATCHLEVEL} 1 ${PATCHLEVEL}
+#PATCH=		${LOCALBASE}/bin/gpatch
 
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	ltverhack
 
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gmp=${LOCALBASE} \
-		--disable-thread-safe
+CONFIGURE_ARGS=	--with-gmp=${LOCALBASE}
+
 USE_LDCONFIG=	yes
 
 INFO=		mpfr
 
 PORTDOCS=	*
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 803000
+CONFIGURE_ARGS+=	--disable-thread-safe
+.endif
 
 .if defined(NOPORTDOCS)
 post-patch:
@@ -51,4 +56,4 @@ post-patch:
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
