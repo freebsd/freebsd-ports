@@ -95,7 +95,7 @@ CONFIGURE_ARGS+=	--enable-static-support
 DEBUG_FLAGS?=	-O0 -g -ggdb3
 CFLAGS=		${DEBUG_FLAGS}
 CONFIGURE_ARGS+=	--enable-maintainer-mode
-WITH_EXCEPTION_HOOK=	YES
+WITH_EXCEPTION_HOOK=	yes
 .endif
 
 .if defined(WITH_EXCEPTION_HOOK)
@@ -155,17 +155,9 @@ CONFIGURE_ARGS+=	--with-mpm=${WITH_MPM:L}
 
 pre-everything::
 	@${ECHO_MSG}	""
-	@${ECHO_MSG}	" To enable a module category: WITH_<CATEGORY>_MODULES"
-	@${ECHO_MSG}	" To disable a module category: WITHOUT_<CATEGORY>_MODULES"
-	@${ECHO_MSG}	""
-	@${ECHO_MSG}	" Per default categories are:"
-	@${ECHO_MSG}	"  ${DEFAULT_MODULES_CATEGORIES}"
-	@${ECHO_MSG}	" Categories available:"
-	@${ECHO_MSG}	"  ${ALL_MODULES_CATEGORIES}"
-	@${ECHO_MSG}	""
+	@${ECHO_MSG}    "  You can check your modules configuration by using make show-modules"
 	@${ECHO_MSG}	"  To see all available knobs, type make show-options"
 	@${ECHO_MSG}	"  To see all modules in different categories, type make show-categories"
-	@${ECHO_MSG}    "  You can check your modules configuration by using make show-modules"
 	@${ECHO_MSG}	""
 
 show-options:

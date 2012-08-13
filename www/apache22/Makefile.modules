@@ -15,26 +15,26 @@
 .if !defined(Module_inc)
 Module_inc=		done
 
-AUTH_MODULES=		auth_basic auth_digest
-AUTHN_MODULES=		authn_file authn_dbd authn_dbm authn_anon authn_default \
-			authn_alias
-AUTHZ_MODULES=		authz_host authz_groupfile authz_user authz_dbm \
-			authz_owner authz_default
-CACHE_MODULES=		cache disk_cache file_cache mem_cache
-DAV_MODULES=		dav dav_fs
-EXPERIMENTAL_MODULES=	bucketeer case_filter case_filter_in ext_filter \
-			log_forensic optional_hook_export optional_hook_import \
-			optional_fn_import optional_fn_export 
-LDAP_MODULES=		ldap authnz_ldap
-MISC_MODULES+=		actions alias asis autoindex cern_meta \
-			cgi charset_lite dbd deflate dir dumpio env expires \
-			headers imagemap include info log_config logio mime \
-			mime_magic negotiation rewrite setenvif speling status substitute \
-			unique_id userdir usertrack vhost_alias filter version reqtimeout
-PROXY_MODULES=		proxy proxy_connect proxy_ftp proxy_http proxy_ajp proxy_balancer proxy_scgi
-SSL_MODULES=		ssl
-SUEXEC_MODULES=		suexec
-THREADS_MODULES=	cgid
+AUTH_MODULES=		AUTH_BASIC AUTH_DIGEST
+AUTHN_MODULES=		AUTHN_FILE AUTHN_DBD AUTHN_DBM AUTHN_ANON AUTHN_DEFAULT \
+			AUTHN_ALIAS
+AUTHZ_MODULES=		AUTHZ_HOST AUTHZ_GROUPFILE AUTHZ_USER AUTHZ_DBM \
+			AUTHZ_OWNER AUTHZ_DEFAULT
+CACHE_MODULES=		CACHE DISK_CACHE FILE_CACHE MEM_CACHE
+DAV_MODULES=		DAV DAV_FS
+EXPERIMENTAL_MODULES=	BUCKETEER CASE_FILTER CASE_FILTER_IN EXT_FILTER \
+			LOG_FORENSIC OPTIONAL_HOOK_EXPORT OPTIONAL_HOOK_IMPORT \
+			OPTIONAL_FN_IMPORT OPTIONAL_FN_EXPORT 
+LDAP_MODULES=		LDAP AUTHNZ_LDAP
+MISC_MODULES+=		ACTIONS ALIAS ASIS AUTOINDEX CERN_META \
+			CGI CHARSET_LITE DBD DEFLATE DIR DUMPIO ENV EXPIRES \
+			HEADERS IMAGEMAP INCLUDE INFO LOG_CONFIG LOGIO MIME \
+			MIME_MAGIC NEGOTIATION REWRITE SETENVIF SPELING STATUS SUBSTITUTE \
+			UNIQUE_ID USERDIR USERTRACK VHOST_ALIAS FILTER VERSION REQTIMEOUT
+PROXY_MODULES=		PROXY PROXY_CONNECT PROXY_FTP PROXY_HTTP PROXY_AJP PROXY_BALANCER PROXY_SCGI
+SSL_MODULES=		SSL
+SUEXEC_MODULES=		SUEXEC
+THREADS_MODULES=	CGID
 
 DEFAULT_MODULES_CATEGORIES= \
 			AUTH AUTHN AUTHZ DAV CACHE MISC
@@ -79,11 +79,13 @@ LATEST_LINK=		apache22-${WITH_MPM:L}-mpm
 .if ${WITH_MPM:L} == "worker" || ${WITH_MPM:L} == "event"
 WITH_THREADS=		yes
 WITH_THREADS_MODULES=	yes
-WITHOUT_MODULES+=	cgi
+WITHOUT_MODULES+=	CGI
 .endif
 
 # xDBM section
 #
+# XXX WITH_BERKELEYDB is deprecated
+# this section need rewrite
 .if !defined(WITH_DBM)
 .   if defined(WITH_BDB) || defined(WITH_BDB_BASE) || defined(WITH_BERKELEYDB)
 WITH_DBM=	bdb
@@ -95,9 +97,9 @@ PLIST_SUB+=	BDB="@comment "
 
 .if defined(WITH_BERKELEYDB) && !defined(WITH_BDB_VER)
 .   if ${WITH_BERKELEYDB} == "FreeBSD"
-WITH_BDB_BASE=YES
+WITH_BDB_BASE=	yes
 .   else
-WITH_BDB_VER=${WITH_BERKELEYDB:S/db//}
+WITH_BDB_VER=	${WITH_BERKELEYDB:S/db//}
 .   endif
 .endif
 
@@ -124,16 +126,16 @@ CONFIGURE_ARGS+=	--with-dbm=sdbm
 .endif
 
 .if defined(WITH_MYSQL)
-USE_MYSQL=	YES
-WITH_THREADS=	YES
+USE_MYSQL=	yes
+WITH_THREADS=	yes
 .endif
 
 .if defined(WITH_PGSQL)
-USE_PGSQL=	YES
+USE_PGSQL=	yes
 .endif
 
 .if defined(WITH_SQLITE)
-USE_SQLITE=	YES
+USE_SQLITE=	yes
 .endif
 
 .if !defined(WITHOUT_SSL)
@@ -142,7 +144,7 @@ CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 .endif
 
 .if !defined(WITH_THREADS)
-WITHOUT_MODULES+=	mem_cache
+WITHOUT_MODULES+=	MEM_CACHE
 .   if !defined(WITHOUT_APACHE_OPTIONS) && defined(WITH_MEM_CACHE)
 IGNORE+=	mod_mem_cache requires WITH_THREADS
 .   endif
@@ -152,7 +154,7 @@ LDFLAGS+=	${PTHREAD_LIBS}
 .endif
 
 .if !defined(WITH_MYSQL) && !defined(WITH_PGSQL) && !defined(WITH_SQLITE)
-WITHOUT_MODULES+=	authn_dbd dbd
+WITHOUT_MODULES+=	AUTHN_DBD DBD
 .   if !defined(WITHOUT_APACHE_OPTIONS) && (defined(WITH_DBD) || defined(WITH_AUTHN_DBD))
 IGNORE+=	You need to enable at least one DBD backend
 .   endif

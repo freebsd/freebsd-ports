@@ -79,10 +79,10 @@
 ##      show-categories:          prints list of modules sorted by category
 ##
 ## Examples:
-##      make WITH_STATIC_MODULES="ssl rewrite include" WITH_EXPERIMENTAL_MODULES=yes \
-##           WITH_CUSTOM_AUTH="auth auth_dbm"
-##      make WITHOUT_MODULES="access speling status" WITH_PROXY_MODULES=yes
-##      make WITH_MODULES="include rewrite auth"
+##      make WITH_STATIC_MODULES="SSL REWRITE INCLUDE" WITH_EXPERIMENTAL_MODULES=yes \
+##           WITH_CUSTOM_AUTH="AUTH AUTH_DBM"
+##      make WITHOUT_MODULES="ACCESS SPELING STATUS" WITH_PROXY_MODULES=yes
+##      make WITH_MODULES="INCLUDE REWRITE AUTH"
 ##
 ##      Note: If you define your custom options in /etc/make.conf, don't forget
 ##            to do not use quotes.
