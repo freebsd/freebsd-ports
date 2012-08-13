@@ -25,7 +25,7 @@ OPTIONS=	MEM_ZONE "Use UMA zone allocator (>= 5.x only)" on
 KMODDIR=	/boot/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR:S!^/!!}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_ENV=	BINDIR="${PREFIX}/sbin" KMODDIR=${KMODDIR}
 
 MAN8=		ipacctctl.8
@@ -40,6 +40,9 @@ SUB_FILES=	pkg-message
 .ifdef WITH_MEM_ZONE
 CFLAGS+=	-DMEM_USE_ZONE
 .endif
+
+post-extract:
+	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 post-install:
 	@${MKDIR} ${PREFIX}/include/netgraph
