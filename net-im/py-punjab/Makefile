@@ -12,7 +12,7 @@ CATEGORIES=	net-im python
 MASTER_SITES=	http://code.stanziq.com/punjab/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@c0decafe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP XMPP client interface
 
 USE_PYTHON=	2.5+

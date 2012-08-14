@@ -10,7 +10,7 @@ PORTVERSION=	0.2.2.r552
 CATEGORIES=	net security
 MASTER_SITES=	http://www.cypherpunk.at/ocat/download/Source/stable/
 
-MAINTAINER=	ports@c0decafe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An IP-Transparent Tor Hidden Service Connector
 
 RUN_DEPENDS=	tor:${PORTSDIR}/security/tor

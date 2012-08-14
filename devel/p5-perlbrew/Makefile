@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	CPAN:GUGOD
 PKGNAMEPREFIX=	p5-
 DISTNAME=	App-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@c0decafe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl Environment manager
 
 BUILD_DEPENDS=	p5-CPAN-Perl-Releases>=0:${PORTSDIR}/devel/p5-CPAN-Perl-Releases \

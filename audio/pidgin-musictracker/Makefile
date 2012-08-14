@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	pidgin-
 
-MAINTAINER=	ports@c0decafe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin for Pidgin to displays the music track currently playing
 
 BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:${PORTSDIR}/net-im/pidgin

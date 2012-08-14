@@ -10,7 +10,7 @@ PORTVERSION=	0.2.2
 CATEGORIES=	misc
 MASTER_SITES=	http://swapoff.org/files/${PORTNAME}/
 
-MAINTAINER=	ports@c0decafe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatically executes scripts as you traverse directories
 
 ALL_TARGET=	${PORTNAME}

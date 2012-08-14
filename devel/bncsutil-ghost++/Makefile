@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMESUFFIX=	-ghost++
 DISTNAME=	${PROJECTHOST}_${PROJECTVERSION}
 
-MAINTAINER=	ports@c0decafe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility library for Battle.net clients in C++
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp

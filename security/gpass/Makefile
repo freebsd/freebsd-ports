@@ -11,7 +11,7 @@ PORTREVISION=	10
 CATEGORIES=	security gnome
 MASTER_SITES=	http://projects.netlab.jp/gpass/release/
 
-MAINTAINER=	ports@c0decafe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A password manager for GNOME2
 
 LIB_DEPENDS=	mcrypt:${PORTSDIR}/security/mcrypt \

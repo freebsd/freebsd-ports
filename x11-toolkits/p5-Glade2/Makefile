@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 PKGNAMESUFFIX=	2
 DISTNAME=	Gtk2-GladeXML-${PORTVERSION}
 
-MAINTAINER=	ports@c0decafe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk2-Perl bindings to libglade2
 
 EXTRACT_DEPENDS=p5-ExtUtils-Depends>=0:${PORTSDIR}/devel/p5-ExtUtils-Depends

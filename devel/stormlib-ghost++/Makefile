@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMESUFFIX=	-ghost++
 DISTNAME=	${PROJECTHOST}_${PROJECTVERSION}
 
-MAINTAINER=	ports@c0decafe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library to read and write MPQ archives
 
 PROJECTHOST=	ghostplusplus

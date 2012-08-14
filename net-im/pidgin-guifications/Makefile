@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	net-im
 MASTER_SITES=	http://downloads.guifications.org/plugins/Guifications2/
 
-MAINTAINER=	ports@c0decafe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin to add msn style "toaster" popups to Pidgin
 
 BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:${PORTSDIR}/net-im/pidgin
