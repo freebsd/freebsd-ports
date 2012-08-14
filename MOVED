@@ -3635,3 +3635,6 @@ deskutils/preferences.app|deskutils/preferences|2012-08-07|Project renamed
 www/trac-ctxtnavadd||2012-08-09|Functionality of this plugin merged into Trac itself - see trac.web.chrome.add_ctxtnav function
 net-p2p/qbittorrent-29|net-p2p/qbittorrent|2012-08-11|Moved to match port name
 net-p2p/qbittorrent-29-nox11|net-p2p/qbittorrent-nox11|2012-08-11|Moved to match port name
+sysutils/cfengine|sysutils/cfengine22|2012-08-14|Standardize port naming
+sysutils/cfengine-legacy|sysutils/cfengine32|2012-08-14|Standardize port naming
+sysutils/cfengine3|sysutils/cfengine33|2012-08-14|Standardize port naming
