@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MogileFS-Utils
-PORTVERSION=	2.25
+PORTVERSION=	2.26
 CATEGORIES=	sysutils net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DORMANDO
@@ -17,8 +17,7 @@ COMMENT=	MogileFS tools
 
 BUILD_DEPENDS=	p5-MogileFS-Client>=1.16:${PORTSDIR}/sysutils/p5-MogileFS-Client \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS=	p5-MogileFS-Client>=1.16:${PORTSDIR}/sysutils/p5-MogileFS-Client \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -38,6 +37,7 @@ MAN3=		MogileFS::Utils.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress
 RUN_DEPENDS+=	p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress
 .endif
 
