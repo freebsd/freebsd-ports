@@ -63,8 +63,8 @@ bin/netaddr
 %%PYTHON_SITELIBDIR%%/netaddr/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/netaddr/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/netaddr/tests/__init__.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/netaddr/tests
-@dirrm %%PYTHON_SITELIBDIR%%/netaddr/strategy
-@dirrm %%PYTHON_SITELIBDIR%%/netaddr/ip
 @dirrm %%PYTHON_SITELIBDIR%%/netaddr/eui
-@dirrm %%PYTHON_SITELIBDIR%%/netaddr
+@dirrm %%PYTHON_SITELIBDIR%%/netaddr/ip
+@dirrm %%PYTHON_SITELIBDIR%%/netaddr/strategy
+@dirrm %%PYTHON_SITELIBDIR%%/netaddr/tests
+@dirrmtry %%PYTHON_SITELIBDIR%%/netaddr
