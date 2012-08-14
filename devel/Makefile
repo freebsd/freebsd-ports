@@ -1170,6 +1170,7 @@
     SUBDIR += node-thrift
     SUBDIR += notify-sharp
     SUBDIR += noweb
+    SUBDIR += npth
     SUBDIR += nspr
     SUBDIR += nxt-python
     SUBDIR += oaf
