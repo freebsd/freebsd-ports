@@ -1,5 +1,5 @@
-This is a python extension module to enable python scripts to
-attach to sendmail's libmilter functionality.  Additional python
-modules provide for navigating and modifying MIME parts.
+This is a python extension module to enable python scripts to attach to
+sendmail's libmilter functionality. Additional python modules provide for
+navigating and modifying MIME parts, and sending DSNs or doing CBVs. 
 
 WWW: http://www.bmsi.com/python/milter.html

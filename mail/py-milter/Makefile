@@ -6,23 +6,27 @@
 #
 
 PORTNAME=	milter
-PORTVERSION=	0.8.7
-PORTREVISION=	1
+PORTVERSION=	0.9.5
 CATEGORIES=	mail python
-MASTER_SITES=	SF/py${PORTNAME}/OldFiles \
-		http://www.bmsi.com/python/
-
+MASTER_SITES=	SOURCEFORGE
+MASTER_SITE_SUBDIR=	${PYPORTNAME}/${PYPORTNAME}/${DISTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PYPORTNAME}-${PORTVERSION}
 
 MAINTAINER=	georg@graf.priv.at
-COMMENT=	Python interface to sendmail-8.1x milter API
+COMMENT=	Python interface to Sendmail milter API
+
+LICENSE=	GPLv2
 
 .if !exists(/usr/lib/libmilter.so)
-LIB_DEPENDS=	milter.2:${PORTSDIR}/mail/sendmail
+LIB_DEPENDS=	milter:${PORTSDIR}/mail/sendmail
 .endif
 
+PYPORTNAME=	${PKGNAMEPREFIX:C/[0-9]+-//}${PORTNAME}
+
 DIST_SUBDIR=	python
-USE_PYTHON=	2.5-2.9
-USE_PYDISTUTILS=yes
+USE_PYTHON=	2.6-2.9
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	${PYPORTNAME}
 
 .include <bsd.port.mk>
