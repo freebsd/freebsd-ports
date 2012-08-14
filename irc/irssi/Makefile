@@ -27,10 +27,7 @@ WANT_PERL=	yes
 MAN1=		irssi.1
 
 OPTIONS_DEFINE=	PERL PROXY SOCKS IPV6 BOT
-PERL_DESC=	Perl support
-PROXY_DESC=	Proxy support
 SOCKS_DESC=	Socks proxy support
-IPV6_DESC=	IPV6 support
 BOT_DESC=	Bot support
 OPTIONS_DEFAULT=	PERL IPV6
 
