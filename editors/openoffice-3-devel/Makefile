@@ -73,15 +73,17 @@ FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 OOOSRC=			ApacheOpenOffice.r${SVNREVISION}${EXTRACT_SUFX}
 EXTSRC=			ApacheOpenOffice.ext_sources.r${SVNREVISION}${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SVNREVISION=		1356713
+SVNREVISION=		1371027
 INSTALLATION_BASEDIR?=	openoffice-r${SVNREVISION}
 EXECBASE?=		openoffice-r${SVNREVISION}
 DIST_SUBDIR=		openoffice
 SIMPLEOSVER=		${OSREL:C/\.//g}
+
+PACKAGE_PREFIX=		Apache_OpenOffice_incubating
 .if ${ARCH} == amd64
-PACKAGE_BASENAME=	ApacheOpenOffice_${OPSYS}_${PORTREVISION}_x86-64
+PACKAGE_MIDDLE=		${PORTVERSION}_${OPSYS}_x86-64
 .else
-PACKAGE_BASENAME=	ApacheOpenOffice_${OPSYS}_${PORTREVISION}_x86
+PACKAGE_MIDDLE=		${PORTVERSION}_${OPSYS}_x86
 .endif
 
 LOCALIZED_LANG?=	en-US
@@ -94,13 +96,9 @@ PKGNAMESUFFIX=		-${LANG_SUFFIX}
 
 RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		${JAVALIBDIR}/commons-httpclient.jar:${PORTSDIR}/java/jakarta-commons-httpclient \
-		${JAVALIBDIR}/commons-lang.jar:${PORTSDIR}/java/jakarta-commons-lang \
 		${JAVALIBDIR}/bsh.jar:${PORTSDIR}/lang/bsh \
 		${JAVALIBDIR}/saxon9.jar:${PORTSDIR}/textproc/saxon-devel \
-		${LOCALBASE}/lib/X11/fonts/ChromeOS/Arimo-Bold.ttf.ttf:${PORTSDIR}/x11-fonts/croscorefonts-fonts-ttf \
-		${LOCALBASE}/lib/X11/fonts/LinLibertineG/LinLibertine_DR_G.ttf:${PORTSDIR}/x11-fonts/linuxlibertine-g \
-		${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu \
-		${LOCALBASE}/lib/X11/fonts/gentium-basic/GenBasI.ttf:${PORTSDIR}/x11-fonts/gentium-basic
+		${LOCALBASE}/lib/X11/fonts/ChromeOS/Arimo-Bold.ttf:${PORTSDIR}/x11-fonts/croscorefonts-fonts-ttf
 
 .if defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
@@ -126,7 +124,19 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		apr-1.4:${PORTSDIR}/devel/apr1 \
 		CoinMP.7:${PORTSDIR}/math/coinmp \
-		serf-1.0:${PORTSDIR}/www/serf
+		serf-1.0:${PORTSDIR}/www/serf \
+		freetype.9:${PORTSDIR}/print/freetype2
+
+.if exists(${LOCALBASE}/include/libexttextcat/textcat.h)
+.if exists(${LOCALBASE}/include/textcat.h)
+LIB_DEPENDS+=	exttextcat-1.0.0:${PORTSDIR}/textproc/libexttextcat
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libexttextcat-lingucomponent
+.else
+IGNORE= textproc/libexttextcat needs COMPAT_TEXTCAT enabled
+.endif
+.else
+LIB_DEPENDS+=	textcat.0:${PORTSDIR}/textproc/libtextcat
+.endif
 
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip \
@@ -179,6 +189,8 @@ CONFIGURE_ARGS+=	--enable-verbose \
 			--with-system-curl		\
 			--with-system-poppler \
 			--with-system-redland \
+			--with-system-libtextcat \
+			--with-system-libtextcat-data=${LOCALBASE}/share/libtextcat \
 			--with-system-vigra \
 			--with-system-stdlibs \
 			--with-system-apr \
@@ -235,6 +247,9 @@ pre-everything::
 
 post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/unowinreg.dll ${WRKSRC}/external/unowinreg/
+#	@${MKDIR} ${WRKSRC}/../ext_sources
+#	@${MV} ${WRKDIR}/ooo/ext_sources/* ${WRKSRC}/../ext_sources/
+#	@${RM} -rf ${WRKSRC}/l10n
 
 post-patch:
 .if defined (USE_GCC)
@@ -253,7 +268,7 @@ do-build:
 	@cd ${WRKDIR}/ooo ; ${PRINTF} "main=active\n" >> source_config
 	@cd ${WRKDIR}/ooo ; ${PRINTF} "extras=active\n" >> source_config
 	@cd ${WRKSRC} ; ./bootstrap
-	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${BASH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native ; build.pl --checkmodules ; build.pl --all -P${MAKE_JOBS_NUMBER} -- -P${MAKE_JOBS_NUMBER}"
+	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${BASH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native/util  ; build.pl --all -P${MAKE_JOBS_NUMBER} -- -P${MAKE_JOBS_NUMBER}"
 
 do-install:
 	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/archive/install/${LOCALIZED_LANG}/ ; ${LS} *.tar.?z > ${WRKDIR}/INSTALLFILES
