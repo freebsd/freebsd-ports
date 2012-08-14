@@ -6,31 +6,35 @@
 #
 
 PORTNAME=	gpa
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gpa
 
 MAINTAINER=	bsdkaffee@gmail.com
-COMMENT=	A graphical frontend for the GNU Privacy Guard
+COMMENT=	GTK2+ frontend for the GNU Privacy Guard
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	assuan.0:${PORTSDIR}/security/libassuan \
-		gpgme.19:${PORTSDIR}/security/gpgme
+LIB_DEPENDS=	assuan:${PORTSDIR}/security/libassuan \
+		gpgme:${PORTSDIR}/security/gpgme
 BUILD_DEPENDS=	gpgv2:${PORTSDIR}/security/gnupg
 RUN_DEPENDS=	gpgv2:${PORTSDIR}/security/gnupg
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_PKGCONFIG=	build
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	GPGKEYS_LDAP="${LOCALBASE}/libexec/gpg2keys_ldap"
+CONFIGURE_ENV+=	GPGKEYS_LDAP="${LOCALBASE}/libexec/gpg2keys_ldap" \
+		GPG="${LOCALBASE}/bin/gpgv2"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		gpa.1
 
-OPTIONS=	NLS "Native language support" on
+OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.pre.mk>
 
@@ -38,7 +42,7 @@ OPTIONS=	NLS "Native language support" on
 IGNORE=		requires gpgsm. (Re)Install security/gnupg with the GPGSM option ON, then rebuild security/gpgme if installed
 .endif
 
-.if defined(WITHOUT_NLS)
+.if empty(PORT_OPTIONS:MNLS)
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
