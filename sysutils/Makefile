@@ -721,6 +721,7 @@
     SUBDIR += py-filelike
     SUBDIR += py-nagiosplugin
     SUBDIR += py-psutil
+    SUBDIR += py-ranger
     SUBDIR += py-stdiff
     SUBDIR += py-supervisor
     SUBDIR += py-zdaemon
