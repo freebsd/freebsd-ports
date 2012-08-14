@@ -1,0 +1,24 @@
+--- configure.orig	2012-08-11 14:24:17.000000000 -0500
++++ configure	2012-08-11 14:28:58.000000000 -0500
+@@ -4601,7 +4601,7 @@
+ 
+ checkwxdir(){
+   if test -z "$WXDIR"; then
+-    if test -e "$1/bin/wx-config"; then
++    if test -e "%%WX_CONFIG%%"; then
+       WXDIR="$1"
+     fi
+   fi
+@@ -4813,10 +4813,10 @@
+ fi
+ 
+ 
+-wxwin_libs=`$WXDIR/bin/wx-config --libs`
++wxwin_libs=`%%WX_CONFIG%% --libs`
+ # Check whether --enable-wxwin-static was given.
+ if test "${enable_wxwin_static+set}" = set; then
+-  enableval=$enable_wxwin_static;  if test "$enableval" = "yes"; then wxwin_libs=`$WXDIR/bin/wx-config --static --libs`; fi
++  enableval=$enable_wxwin_static;  if test "$enableval" = "yes"; then wxwin_libs=`%%WX_CONFIG%% --static --libs`; fi
+ fi
+ 
+ 

@@ -6,68 +6,39 @@
 #
 
 PORTNAME=	trustedqsl
-PORTVERSION=	1.11
-PORTREVISION=	9
+PORTVERSION=	1.13
 CATEGORIES=	comms hamradio
-MASTER_SITES=	SF/${PORTNAME}/tqsllib/V2.0
-DISTFILES=	tqsllib-2.0.tar.gz TrustedQSL-1.11.tar.gz
+MASTER_SITES=	SF/${PORTNAME}/TrustedQSL/V1.13/
+DISTFILES=	TrustedQSL-1.13.tar.gz
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio Station electronic trusted logbook
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	tqsllib:${PORTSDIR}/comms/tqsllib
 
+GNU_CONFIGURE=	yes
+USE_WX=		2.8+
+WX_UNICODE=	yes
+CONFIGURE_ARGS=	--with-wxwindows=${WX_CONFIG}
 USE_PERL5=	yes
-USE_WX=		2.6
 USE_LDCONFIG=	yes
 MAKE_ENV=	INCDIR="-I${LOCALBASE}/include"
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/TrustedQSL-1.13
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800000
-BROKEN=		does not compile on FreeBSD 7.X
-.endif
-
-post-patch:
-	@${CP} ${FILESDIR}/Makefile  ${WRKSRC}
-	@${REINPLACE_CMD} -e 's|%%INSTALL%%|${INSTALL_PROGRAM}|' \
-		-e 's|%%PREFIX%%|${PREFIX}|' \
-		${WRKSRC}/Makefile
-	@${CP} ${FILESDIR}/Makefile.TrustedQSL-1.11  ${WRKSRC}/TrustedQSL-1.11/Makefile
-	@${CP} ${FILESDIR}/sysconfig.h.TrustedQSL-1.11  ${WRKSRC}/TrustedQSL-1.11/sysconfig.h
-
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
-	@${MKDIR} ${WRKSRC}
-	@for f in ${EXTRACT_ONLY}; do  \
-		if ! (cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$f ${EXTRACT_AFTER_ARGS});\
-		then \
-			exit 1; \
-		fi \
-	done
+pre-configure:
+	@${REINPLACE_CMD} -e 's|%%WX_CONFIG%%|${WX_CONFIG}|g' \
+		 ${WRKSRC}/configure
 
 post-install:
-	${MKDIR} ${PREFIX}/etc/tqsl
-	${INSTALL_DATA} ${WRKSRC}/tqsllib-2.0/config.xml ${PREFIX}/etc/tqsl/config.xml
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/tqslcert
-	@${MKDIR} ${PREFIX}/share/doc/tqslapp
-	@${INSTALL_DATA} ${WRKSRC}/TrustedQSL-1.11/help/tqslcert/* ${PREFIX}/share/doc/tqslcert/
-	@${INSTALL_DATA} ${WRKSRC}/TrustedQSL-1.11/help/tqslapp/* ${PREFIX}/share/doc/tqslapp/
-	@${INSTALL_DATA} ${WRKSRC}/tqsllib-2.0/LICENSE ${PREFIX}/share/doc/tqsllib
-	@${INSTALL_DATA} ${WRKSRC}/tqsllib-2.0/ChangeLog ${PREFIX}/share/doc/tqsllib
-.endif
-	@${ECHO}
-	@${ECHO} trustedqsl is now installed.
-	@${ECHO} You will have to create a directory .tqsl in your
-	@${ECHO} home directory and setup a copy of
-	@${ECHO} ${PREFIX}/etc/tqsl/config.xml here
-	@${ECHO} before this program will run correctly.
-	@${ECHO}
+	@${ECHO_MSG}
+	@${ECHO_MSG} trustedqsl is now installed. You will have to create a directory .tqsl in
+	@${ECHO_MSG} your home directory and setup a copy of ${PREFIX}/share/tqsl/config.xml here
+	@${ECHO_MSG} before this program will run correctly.
+	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>
