@@ -62,9 +62,7 @@
 %%PYTHON_SITELIBDIR%%/thrift/transport/__init__.py
 %%PYTHON_SITELIBDIR%%/thrift/transport/__init__.pyc
 %%PYTHON_SITELIBDIR%%/thrift/transport/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%
 @dirrm %%PYTHON_SITELIBDIR%%/thrift/transport
 @dirrm %%PYTHON_SITELIBDIR%%/thrift/server
 @dirrm %%PYTHON_SITELIBDIR%%/thrift/protocol
 @dirrm %%PYTHON_SITELIBDIR%%/thrift
-@dirrmtry %%PYTHON_SITELIBDIR%%
