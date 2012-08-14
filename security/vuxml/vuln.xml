@@ -52,6 +52,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="83f9e943-e664-11e1-a66d-080027ef73ec">
+    <topic>fetchmail -- two vulnerabilities in NTLM authentication</topic>
+    <affects>
+      <package>
+	<name>fetchmail</name>
+	<range><ge>5.0.8</ge><lt>6.3.22</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matthias Andree reports:</p>
+	<blockquote cite="http://gitorious.org/fetchmail/fetchmail/blobs/raw/legacy_63/fetchmail-SA-2012-02.txt">
+	  <p>With NTLM support enabled, fetchmail might mistake a server-side
+	    error message during NTLM protocol exchange for protocol data,
+	    leading to a SIGSEGV.</p>
+	  <p>Also, with a carefully crafted NTLM challenge, a malicious server
+	    might cause fetchmail to read from a bad memory location, betraying
+	    confidential data. It is deemed hard, although not impossible, to
+	    steal other accounts' data.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-3482</cvename>
+    </references>
+    <dates>
+      <discovery>2012-08-12</discovery>
+      <entry>2012-08-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="55b498e2-e56c-11e1-bbd5-001c25e46b1d">
     <topic>Several vulnerabilities found in IcedTea-Web</topic>
     <affects>
