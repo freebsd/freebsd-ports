@@ -10,8 +10,6 @@ include/ecl/ecl-cmp.h
 include/ecl/ecl-inl.h
 include/ecl/ecl.h
 include/ecl/external.h
-include/ecl/ffi.h
-include/ecl/ffitarget.h
 include/ecl/impl/math_dispatch.h
 include/ecl/impl/math_dispatch2.h
 include/ecl/impl/math_fenv.h
@@ -23,6 +21,50 @@ include/ecl/object.h
 include/ecl/page.h
 include/ecl/stacks.h
 include/ecl/unify.h
+%%THREADS%%include/ecl/atomic_ops.h
+%%THREADS%%include/ecl/atomic_ops/generalize-small.h
+%%THREADS%%include/ecl/atomic_ops/generalize.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/acquire_release_volatile.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/aligned_atomic_load_store.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/all_acquire_release_volatile.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/all_aligned_atomic_load_store.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/all_atomic_load_store.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/ao_t_is_int.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/atomic_load_store.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/char_acquire_release_volatile.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/char_atomic_load_store.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/emul_cas.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/gcc/alpha.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/gcc/arm.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/gcc/cris.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/gcc/hppa.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/gcc/ia64.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/gcc/m68k.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/gcc/powerpc.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/gcc/s390.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/gcc/sparc.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/gcc/x86.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/gcc/x86_64.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/generic_pthread.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/hpc/hppa.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/hpc/ia64.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/ibmc/powerpc.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/icc/ia64.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/int_acquire_release_volatile.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/int_aligned_atomic_load_store.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/int_atomic_load_store.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/msftc/x86.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/msftc/x86_64.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/ordered.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/ordered_except_wr.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/read_ordered.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/short_acquire_release_volatile.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/short_aligned_atomic_load_store.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/short_atomic_load_store.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/standard_ao_double_t.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/sunc/sparc.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/test_and_set_t_is_ao_t.h
+%%THREADS%%include/ecl/atomic_ops/sysdeps/test_and_set_t_is_char.h
 %%LIB32DIR%%/ecl-%%VERSION%%/Copyright
 %%LIB32DIR%%/ecl-%%VERSION%%/LGPL
 %%LIB32DIR%%/ecl-%%VERSION%%/TAGS
@@ -43,9 +85,12 @@ include/ecl/unify.h
 %%SOCKETS%%%%LIB32DIR%%/ecl-%%VERSION%%/ecl-curl.fas
 %%LIB32DIR%%/ecl-%%VERSION%%/ecl-help.asd
 %%LIB32DIR%%/ecl-%%VERSION%%/ecl-help.fas
+%%SOCKETS%%%%LIB32DIR%%/ecl-%%VERSION%%/ecl-quicklisp.asd
+%%SOCKETS%%%%LIB32DIR%%/ecl-%%VERSION%%/ecl-quicklisp.fas
 %%LIB32DIR%%/ecl-%%VERSION%%/ecl_min
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/arabic
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/ascii
+%%LIB32DIR%%/ecl-%%VERSION%%/encodings/asmo-708
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/atarist.bin
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/cp-856.bin
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/cp819
@@ -73,8 +118,10 @@ include/ecl/unify.h
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/dos-cp866.bin
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/dos-cp869.bin
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/dos-cp874.bin
+%%LIB32DIR%%/ecl-%%VERSION%%/encodings/ecma-114
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/ecma-118
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/greek
+%%LIB32DIR%%/ecl-%%VERSION%%/encodings/greek8
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/hebrew
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/ibm437
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/ibm819
@@ -107,16 +154,26 @@ include/ecl/unify.h
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/iso-8859-7.bin
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/iso-8859-8.bin
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/iso-8859-9.bin
+%%LIB32DIR%%/ecl-%%VERSION%%/encodings/iso8859-1
+%%LIB32DIR%%/ecl-%%VERSION%%/encodings/iso8859-10
+%%LIB32DIR%%/ecl-%%VERSION%%/encodings/iso8859-13
+%%LIB32DIR%%/ecl-%%VERSION%%/encodings/iso8859-14
+%%LIB32DIR%%/ecl-%%VERSION%%/encodings/iso8859-15
+%%LIB32DIR%%/ecl-%%VERSION%%/encodings/iso8859-2
+%%LIB32DIR%%/ecl-%%VERSION%%/encodings/iso8859-3
+%%LIB32DIR%%/ecl-%%VERSION%%/encodings/iso8859-4
+%%LIB32DIR%%/ecl-%%VERSION%%/encodings/iso8859-5
+%%LIB32DIR%%/ecl-%%VERSION%%/encodings/iso8859-6
+%%LIB32DIR%%/ecl-%%VERSION%%/encodings/iso8859-7
+%%LIB32DIR%%/ecl-%%VERSION%%/encodings/iso8859-8
+%%LIB32DIR%%/ecl-%%VERSION%%/encodings/iso8859-9
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/jisx0201.bin
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/jisx0208.bin
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/jisx0212.bin
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/koi8-r.bin
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/koi8-u.bin
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/koi8r
-%%LIB32DIR%%/ecl-%%VERSION%%/encodings/latin-0
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/latin-1
-%%LIB32DIR%%/ecl-%%VERSION%%/encodings/latin-10
-%%LIB32DIR%%/ecl-%%VERSION%%/encodings/latin-11
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/latin-2
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/latin-3
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/latin-4
@@ -125,10 +182,6 @@ include/ecl/unify.h
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/latin-7
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/latin-8
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/latin-9
-%%LIB32DIR%%/ecl-%%VERSION%%/encodings/latin0
-%%LIB32DIR%%/ecl-%%VERSION%%/encodings/latin1
-%%LIB32DIR%%/ecl-%%VERSION%%/encodings/latin10
-%%LIB32DIR%%/ecl-%%VERSION%%/encodings/latin11
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/latin2
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/latin3
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/latin4
@@ -145,7 +198,6 @@ include/ecl/unify.h
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/ms-hebr
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/ms-turk
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/shift-jis.bin
-%%LIB32DIR%%/ecl-%%VERSION%%/encodings/thai
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/tools.lisp
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/ucs2
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/ucs2be
@@ -160,7 +212,9 @@ include/ecl/unify.h
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/utf-32
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/utf-32be
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/utf-32le
-%%LIB32DIR%%/ecl-%%VERSION%%/encodings/utf-8
+%%LIB32DIR%%/ecl-%%VERSION%%/encodings/utf16
+%%LIB32DIR%%/ecl-%%VERSION%%/encodings/utf32
+%%LIB32DIR%%/ecl-%%VERSION%%/encodings/utf8
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/winbaltrim
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/windows-1250
 %%LIB32DIR%%/ecl-%%VERSION%%/encodings/windows-1251
@@ -197,6 +251,7 @@ include/ecl/unify.h
 %%LIB32DIR%%/ecl-%%VERSION%%/libecl-cdb.a
 %%SOCKETS%%%%LIB32DIR%%/ecl-%%VERSION%%/libecl-curl.a
 %%LIB32DIR%%/ecl-%%VERSION%%/libecl-help.a
+%%SOCKETS%%%%LIB32DIR%%/ecl-%%VERSION%%/libecl-quicklisp.a
 %%LIB32DIR%%/ecl-%%VERSION%%/libprofile.a
 %%SOCKETS%%%%LIB32DIR%%/ecl-%%VERSION%%/libql-minitar.a
 %%LIB32DIR%%/ecl-%%VERSION%%/librt.a
@@ -218,11 +273,19 @@ include/ecl/unify.h
 %%SOCKETS%%%%LIB32DIR%%/ecl-%%VERSION%%/sockets.fas
 %%LIB32DIR%%/libecl.so
 %%LIB32DIR%%/libecl.so.12
-%%LIB32DIR%%/libecl.so.12.2
-%%LIB32DIR%%/libecl.so.12.2.1
+%%LIB32DIR%%/libecl.so.12.7
+%%LIB32DIR%%/libecl.so.12.7.1
 @dirrm %%LIB32DIR%%/ecl-%%VERSION%%/encodings
 @dirrm %%LIB32DIR%%/ecl-%%VERSION%%
 @dirrm include/ecl/impl
 @dirrm include/ecl/gc/private
 @dirrm include/ecl/gc
+%%THREADS%%@dirrm include/ecl/atomic_ops/sysdeps/sunc
+%%THREADS%%@dirrm include/ecl/atomic_ops/sysdeps/msftc
+%%THREADS%%@dirrm include/ecl/atomic_ops/sysdeps/icc
+%%THREADS%%@dirrm include/ecl/atomic_ops/sysdeps/ibmc
+%%THREADS%%@dirrm include/ecl/atomic_ops/sysdeps/hpc
+%%THREADS%%@dirrm include/ecl/atomic_ops/sysdeps/gcc
+%%THREADS%%@dirrm include/ecl/atomic_ops/sysdeps
+%%THREADS%%@dirrm include/ecl/atomic_ops
 @dirrm include/ecl
