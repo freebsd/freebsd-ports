@@ -59,7 +59,7 @@ pre-su-install:
 post-install:
 	${LN} -sf ${PREFIX}/lib/kde4/plugins/phonon_backend/phonon_gstreamer.so \
 		${QT_PLUGINDIR}/phonon_backend/libphonon_gstreamer.so
-.if empty(${PORT_OPTIONS:MPLUGINS})
+.if empty(PORT_OPTIONS:MPLUGINS)
 	@${CAT} ${PKGMESSAGE}
 .endif
 
