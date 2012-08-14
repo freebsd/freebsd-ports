@@ -6,7 +6,7 @@ in a Java virtual machine. It provides a runtime system, a compiler that
 compiles Lisp source to JVM bytecode, and an interactive REPL for program
 development.
 
-ABCL runs on platforms that support Java 1.4 (or later), including Linux,
+ABCL runs on platforms that support Java 1.5 (or later), including Linux,
 Windows, and Mac OS X.
 
 WWW: http://common-lisp.net/project/armedbear/
