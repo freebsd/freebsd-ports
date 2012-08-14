@@ -1,0 +1,9 @@
+Implementation of an html and javascript context scanner with no
+lookahead. Its purpose is to scan an html document and provide context
+information at any point within the input stream. An example of a user
+of this scanner would be an auto escaping templating system, which would
+require html context information at very specific points within the html
+stream. The implementation is based on a simplified state machine of
+HTML4.1 and javascript. The code also contains C++ and python bindings.
+
+WWW: http://code.google.com/p/streamhtmlparser/

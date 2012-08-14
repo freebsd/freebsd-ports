@@ -1,0 +1,18 @@
+%%PYBINDINGS%%%%PYTHON_SITELIBDIR%%/py_streamhtmlparser.so
+%%STATIC%%lib/libstreamhtmlparser.a
+lib/libstreamhtmlparser.so
+lib/libstreamhtmlparser.so.0
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@unexec %D/%%DOCSDIR%% 2>/dev/null || true
+include/streamhtmlparser/statemachine.h
+include/streamhtmlparser/jsparser.h
+include/streamhtmlparser/htmlparser.h
+include/streamhtmlparser/htmlparser_cpp.h
+@dirrm include/streamhtmlparser
+@unexec %D/include/streamhtmlparser 2>/dev/null || true
