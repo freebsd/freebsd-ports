@@ -134,6 +134,7 @@
     SUBDIR += colorcode
     SUBDIR += columns
     SUBDIR += concentration
+    SUBDIR += connectagram
     SUBDIR += connectfive
     SUBDIR += conquest
     SUBDIR += construo
