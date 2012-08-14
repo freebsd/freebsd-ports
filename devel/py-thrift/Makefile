@@ -9,27 +9,20 @@ PORTNAME=	thrift
 PORTVERSION=	${THRIFT_PORTVERSION} # to keep in sync with thrift
 PORTEPOCH=	1
 CATEGORIES=	devel python
+MASTER_SITES=	APACHE/thrift/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTFILES=
 
 MAINTAINER=	komarov@valerka.net
 COMMENT=	Python interface to Thrift
 
-FETCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/devel/thrift:extract
+DISTINFO_FILE=	${.CURDIR}/../thrift/distinfo
 
-USE_PYTHON=		yes
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+WRKSRC=		${WRKDIR}/${DISTNAME}/lib/py
 
-PLIST_SUB+=		PYDISTUTILS_EGGINFO=${PYDISTUTILS_EGGINFO}
-post-extract:
-	@${LN} -sfh \
-	`cd ${PORTSDIR}/devel/thrift && ${MAKE} -V WRKSRC`/lib/py ${WRKSRC}
-
-do-patch:
-	${REINPLACE_CMD} "/name = '/s/Thrift/thrift/" \
-	    ${WRKSRC}/setup.py
-	${REINPLACE_CMD} "/version = '/s/0\.1/${PORTVERSION}/" \
-	    ${WRKSRC}/setup.py
+post-patch:
+	@${REINPLACE_CMD} -e 's|setuptools|do_not_use_&|' ${WRKSRC}/${PYSETUP}
 
 .include "../thrift/bsd.thrift.mk"
 .include <bsd.port.mk>
