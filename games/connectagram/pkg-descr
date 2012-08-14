@@ -1,0 +1,14 @@
+Connectagram is a word unscrambling game. The board consists
+of several scrambled words that are joined together.
+You can choose the length of the words, the amount of words,
+and the pattern that the words are arranged in.
+The game provides a hint option for times when you are stuck,
+and features an online word lookup that fetches the definitions
+of each word from www.dict.org. Your current progress is automatically saved.
+
+Note that this game involves a large and varied word list,
+some of which may be considered inappropriate for children.
+You can edit the file containing the word list if you wish
+to remove words from your game. The location of this file varies by platform.
+
+WWW: http://gottcode.org/connectagram/
