@@ -1,0 +1,7 @@
+bin/npth-config
+include/npth.h
+lib/libnpth.a
+lib/libnpth.la
+lib/libnpth.so
+lib/libnpth.so.0
+share/aclocal/npth.m4
