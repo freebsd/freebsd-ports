@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sterm
-PORTVERSION=	0.2
+PORTVERSION=	0.2.1
 CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/st/
 DISTNAME=	st-${PORTVERSION}
@@ -15,7 +15,6 @@ MAINTAINER=	kitche@kitchetech.com
 COMMENT=	A simple X terminal
 
 LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${LOCALBASE}/share/misc/terminfo.db:${PORTSDIR}/devel/ncurses
 
