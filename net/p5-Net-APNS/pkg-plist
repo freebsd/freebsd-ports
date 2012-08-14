@@ -1,0 +1,6 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/APNS/.packlist
+%%SITE_PERL%%/Net/APNS.pm
+%%SITE_PERL%%/Net/APNS/Notification.pm
+@dirrm %%SITE_PERL%%/Net/APNS
+@dirrmtry %%SITE_PERL%%/Net
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/APNS

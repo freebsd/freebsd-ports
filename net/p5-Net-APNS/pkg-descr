@@ -1,0 +1,4 @@
+Net::APNS is Apple Push Notification Service.  Push message to iPhone
+and get unavalble-devicetoken.
+
+WWW: http://search.cpan.org/dist/Net-APNS/
