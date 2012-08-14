@@ -2,12 +2,10 @@ bin/node
 bin/node-waf
 include/node/ares.h
 include/node/ares_version.h
-include/node/c-ares/ares.h
-include/node/c-ares/ares_version.h
-include/node/config.h
+include/node/eio-emul.h
+include/node/ev-emul.h
 include/node/node.h
 include/node/node_buffer.h
-include/node/node_config.h
 include/node/node_object_wrap.h
 include/node/node_version.h
 include/node/uv-private/eio.h
@@ -17,12 +15,13 @@ include/node/uv-private/tree.h
 include/node/uv-private/uv-unix.h
 include/node/uv-private/uv-win.h
 include/node/uv.h
-%%SHARED_V8%%include/node/v8-debug.h
-%%SHARED_V8%%include/node/v8-preparser.h
-%%SHARED_V8%%include/node/v8-profiler.h
-%%SHARED_V8%%include/node/v8-testing.h
-%%SHARED_V8%%include/node/v8.h
-%%SHARED_V8%%include/node/v8stdint.h
+include/node/v8-debug.h
+include/node/v8-preparser.h
+include/node/v8-profiler.h
+include/node/v8-testing.h
+include/node/v8.h
+include/node/v8stdint.h
+lib/dtrace/node.d
 lib/node/wafadmin/Build.py
 lib/node/wafadmin/Configure.py
 lib/node/wafadmin/Constants.py
@@ -77,8 +76,6 @@ lib/node_modules/.keepme
 @dirrm lib/node/wafadmin/Tools
 @dirrm lib/node/wafadmin
 @dirrm lib/node
+@dirrm lib/dtrace
 @dirrm include/node/uv-private
-@dirrm include/node/ev
-@dirrm include/node/c-ares
 @dirrm include/node
-@exec mkdir -p %D/include/node/ev

@@ -1,5 +1,5 @@
---- tools/wafadmin/Node.py.orig	2011-04-02 11:21:17.000000000 +0800
-+++ tools/wafadmin/Node.py	2011-04-02 11:22:37.000000000 +0800
+--- tools/wafadmin/Node.py.orig	2011-08-03 16:32:55.000000000 +0800
++++ tools/wafadmin/Node.py	2011-08-03 16:56:11.000000000 +0800
 @@ -349,6 +349,12 @@
  		if self == from_node: return '.'
  		if from_node.parent == self: return '..'
