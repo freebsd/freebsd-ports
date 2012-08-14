@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Mojolicious-Plugin-Database
-PORTVERSION=	1.05
-PORTREVISION=	1
+PORTVERSION=	1.06
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,11 +25,13 @@ TEST_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Mojolicious::Plugin::Database.3
+MAN3=		Mojolicious::Plugin::Database.3 \
+		Mojolicious::Plugin::README.3
 
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-version>=0:${PORTSDIR}/devel/p5-version
 RUN_DEPENDS+=	p5-version>=0:${PORTSDIR}/devel/p5-version
 .endif
 
