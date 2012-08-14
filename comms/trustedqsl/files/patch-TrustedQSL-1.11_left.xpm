@@ -1,9 +1,0 @@
---- TrustedQSL-1.11/left.xpm.orig	Mon Nov 21 21:27:38 2005
-+++ TrustedQSL-1.11/left.xpm	Mon Nov 21 21:33:47 2005
-@@ -1,5 +1,5 @@
- /* XPM */
--static char *left[]={
-+static char *left_i[]={
- "10 10 29 1",
- ". c None",
- "d c #000000",
