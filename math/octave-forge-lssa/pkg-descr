@@ -1,0 +1,13 @@
+The octave-forge package is the result of The GNU Octave Repositry project,
+which is intended to be a central location for custom scripts, functions and
+extensions for GNU Octave. contains the source for all the functions plus
+build and install scripts.
+
+This is lssa.
+
+ A package implementing tools to compute spectral decompositions of
+ irregularly-spaced time series.  Currently includes functions based off the
+ Lomb-Scargle periodogram and Adolf Mathias' implementation for R and C (see
+ http://www.jstatsoft.org/v11/i02).
+
+WWW: http://octave.sourceforge.net/
