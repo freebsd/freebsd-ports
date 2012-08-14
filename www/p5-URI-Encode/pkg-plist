@@ -1,5 +1,5 @@
 %%SITE_PERL%%/URI/Encode.pm
-@dirrmtry %%SITE_PERL%%/URI
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/Encode/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/Encode
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI
+@dirrmtry %%SITE_PERL%%/URI
