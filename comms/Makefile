@@ -149,6 +149,7 @@
     SUBDIR += tkhylafax
     SUBDIR += tkscanfax
     SUBDIR += tlf
+    SUBDIR += tqsllib
     SUBDIR += trustedqsl
     SUBDIR += twpsk
     SUBDIR += uarduno
