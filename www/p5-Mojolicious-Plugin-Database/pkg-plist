@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Mojolicious/Plugin/Database.pm
+%%SITE_PERL%%/Mojolicious/Plugin/README.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious/Plugin/Database/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious/Plugin/Database
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious/Plugin
