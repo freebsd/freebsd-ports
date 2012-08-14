@@ -3995,6 +3995,7 @@
     SUBDIR += stormlib-ghost++
     SUBDIR += str
     SUBDIR += strace
+    SUBDIR += streamhtmlparser
     SUBDIR += stringencoders
     SUBDIR += styx
     SUBDIR += subclipse
