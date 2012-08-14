@@ -1,0 +1,19 @@
+bin/converter
+bin/dumptqsldata
+bin/gen_crq
+bin/load_cert
+bin/station_loc
+include/tqsllib.h
+include/tqslerrno.h
+include/cabrillo.h
+include/adif.h
+include/tqslconvert.h
+lib/libtqsllib.so.1
+lib/libtqsllib.so
+lib/libtqsllib.la
+lib/libtqsllib.a
+share/tqsl/config.xml
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/tqsl
