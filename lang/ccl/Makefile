@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ccl
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	lang lisp
 MASTER_SITES=	ftp://ftp.clozure.com/pub/release/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsdx86
@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsdx86
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Clozure CL is a free Common Lisp implementation
 
-WRKSRC=		${WRKDIR}/ccl-${PORTVERSION}
+WRKSRC=		${WRKDIR}/ccl
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -25,7 +25,8 @@ EXCLUDE=	cocoa-ide lisp-kernel scripts
 
 USE_ASDF=	yes
 
-.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
+.include "/usr/ports/devel/cl-asdf/bsd.cl-asdf.mk"
+# .include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 
 .include <bsd.port.pre.mk>
 
@@ -54,10 +55,6 @@ post-patch:
 do-build:
 	@${RM} -f ${WRKSRC}/fx86cl ${WRKSRC}/fx86cl64
 	@cd ${WRKSRC}/lisp-kernel/freebsd${LISP_ARCH} && ${MAKE} && ${RM} -f *.o
-	@cd ${WRKSRC} && if ! ${ECHO_CMD} | ${SETENV} -u CCL_DEFAULT_DIRECTORY ./${FX86CL} --batch --quiet >/dev/null 2>&1; then \
-		${ECHO_MSG} "===>  This CPU doesn't support the SSE2 instruction set: cannot build port."; \
-		exit 1; \
-	fi
 	@cd ${WRKSRC} && ${ECHO_CMD} | ${SETENV} -u CCL_DEFAULT_DIRECTORY ./${FX86CL} --no-init --batch --quiet \
 		--eval "(ccl:rebuild-ccl :full t)" \
 		--eval "(quit)"
