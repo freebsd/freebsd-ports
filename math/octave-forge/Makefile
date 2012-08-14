@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave-forge
-PORTVERSION=	20120720
+PORTVERSION=	20120814
 CATEGORIES=	math
 MASTER_SITES=	#none
 DISTFILES=	#none
@@ -52,6 +52,7 @@ OPTIONS=	\
 	IRSA "Install package: irsa" On \
 	JAVA "Install package: java" On \
 	LINEAR_ALGEBRA "Install package: linear-algebra" On \
+	LSSA "Install package: lssa" On \
 	MAPPING "Install package: mapping" On \
 	MECHANICS "Install package: mechanics" On \
 	MISCELLANEOUS "Install package: miscellaneous" On \
@@ -211,6 +212,9 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/java.tar.gz:${PORTSDIR}/math/octave-forge-java
 .endif
 .if defined(WITH_LINEAR_ALGEBRA)
 RUN_DEPENDS+=	${TARBALLS_DIR}/linear-algebra.tar.gz:${PORTSDIR}/math/octave-forge-linear-algebra
+.endif
+.if defined(WITH_LSSA)
+RUN_DEPENDS+=	${TARBALLS_DIR}/lssa.tar.gz:${PORTSDIR}/math/octave-forge-lssa
 .endif
 .if defined(WITH_MAPPING)
 RUN_DEPENDS+=	${TARBALLS_DIR}/mapping.tar.gz:${PORTSDIR}/math/octave-forge-mapping
