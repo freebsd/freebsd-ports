@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	codeigniter
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.codeigniter.com/reactor/ \
-	http://www.codeigniter.org.tw/download_files/
+		http://www.codeigniter.org.tw/download_files/
 DISTNAME=	CodeIgniter_${PORTVERSION}
 
 MAINTAINER=	appleboy.tw@gmail.com
@@ -25,8 +25,8 @@ WANT_PHP_WEB=	yes
 
 CI_SYS_DIR=	system
 CI_CONF_DIR=	application/config
-WRKSRC=	${WRKDIR}/${DISTNAME}
-WWWDIR=	${PREFIX}/www/codeigniter
+WRKSRC=		${WRKDIR}/${DISTNAME}
+WWWDIR=		${PREFIX}/www/codeigniter
 PORTDOCS=	*
 
 LATEST_LINK=	codeigniter-devel
