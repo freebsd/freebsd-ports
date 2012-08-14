@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	phonon
-PORTVERSION=	4.6.1
+PORTVERSION=	4.6.2
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${PHONON_BRANCH}/${PORTNAME}/${PORTNAME}-backend${PKGNAMESUFFIX}/${PORTVERSION}/src
@@ -40,11 +40,14 @@ PLIST_SUB+=	QT_PREFIX=${QT_PREFIX}
 IGNORE=		conflicts with Qt 4 Phonon. Please, deinstall qt4-phonon-gst and unset WITH_QT_PHONON to continue
 .endif
 
-OPTIONS=	PLUGINS "Install GStreamer plugins" off
+OPTIONS_DEFINE=	PLUGINS
+PLUGINS_DESC=	Install GStreamer plugins
+
+OPTIONS_DEFAULT=
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PLUGINS)
+.if ${PORT_OPTIONS:MPLUGINS}
 RUN_DEPENDS+=	gstreamer-plugins-all>=0:${PORTSDIR}/multimedia/gstreamer-plugins-all
 .else
 SUB_FILES=	pkg-message
@@ -56,7 +59,7 @@ pre-su-install:
 post-install:
 	${LN} -sf ${PREFIX}/lib/kde4/plugins/phonon_backend/phonon_gstreamer.so \
 		${QT_PLUGINDIR}/phonon_backend/libphonon_gstreamer.so
-.if !defined(WITH_PLUGINS)
+.if empty(${PORT_OPTIONS:MPLUGINS})
 	@${CAT} ${PKGMESSAGE}
 .endif
 
