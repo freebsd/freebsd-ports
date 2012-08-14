@@ -22,21 +22,22 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-appconf>=0.4:${PORTSDIR}/www/py-djang
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
 
-OPTIONS=	BEAUTIFULSOUP "Enable BeautifulSoupParser" Off \
-		LXML "Enable LxmlParser" Off \
-		HTML5LIB "Enable Html5LibParser" Off
+OPTIONS_DEFINE=	BEAUTIFULSOUP LXML HTML5LIB
+BEAUTIFULSOUP_DESC=	Enable BeautifulSoupParser
+LXML_DESC=		Enable LxmlParser
+HTML5LIB_DESC=		Enable Html5LibParser
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_BEAUTIFULSOUP)
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>0:${PORTSDIR}/www/py-beautifulsoup
+.if ${PORT_OPTIONS:MBEAUTIFULSOUP}
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/BeautifulSoup.py:${PORTSDIR}/www/py-beautifulsoup32
 .endif
 
-.if defined(WITH_LXML)
+.if ${PORT_OPTIONS:MLXML}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml
 .endif
 
-.if defined(WITH_HTML5LIB)
+.if ${PORT_OPTIONS:MHTML5LIB}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}html5lib>0:${PORTSDIR}/www/py-html5lib
 .endif
 
