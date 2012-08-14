@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	netaddr
-PORTVERSION=	0.7.6
+PORTVERSION=	0.7.7
 CATEGORIES=	net python
 MASTER_SITES=	https://github.com/drkjam/${PORTNAME}/downloads/ \
 		CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yzlin@FreeBSD.org
-COMMENT=	A python library for the manipulation of network address manipulation
+COMMENT=	A python library for the manipulation of network addresses
 
 LICENSE=	BSD
 
