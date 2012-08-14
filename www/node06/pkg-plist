@@ -1,0 +1,84 @@
+bin/node
+bin/node-waf
+include/node/ares.h
+include/node/ares_version.h
+include/node/c-ares/ares.h
+include/node/c-ares/ares_version.h
+include/node/config.h
+include/node/node.h
+include/node/node_buffer.h
+include/node/node_config.h
+include/node/node_object_wrap.h
+include/node/node_version.h
+include/node/uv-private/eio.h
+include/node/uv-private/ev.h
+include/node/uv-private/ngx-queue.h
+include/node/uv-private/tree.h
+include/node/uv-private/uv-unix.h
+include/node/uv-private/uv-win.h
+include/node/uv.h
+%%SHARED_V8%%include/node/v8-debug.h
+%%SHARED_V8%%include/node/v8-preparser.h
+%%SHARED_V8%%include/node/v8-profiler.h
+%%SHARED_V8%%include/node/v8-testing.h
+%%SHARED_V8%%include/node/v8.h
+%%SHARED_V8%%include/node/v8stdint.h
+lib/node/wafadmin/Build.py
+lib/node/wafadmin/Configure.py
+lib/node/wafadmin/Constants.py
+lib/node/wafadmin/Environment.py
+lib/node/wafadmin/Logs.py
+lib/node/wafadmin/Node.py
+lib/node/wafadmin/Options.py
+lib/node/wafadmin/Runner.py
+lib/node/wafadmin/Scripting.py
+lib/node/wafadmin/Task.py
+lib/node/wafadmin/TaskGen.py
+lib/node/wafadmin/Tools/__init__.py
+lib/node/wafadmin/Tools/ar.py
+lib/node/wafadmin/Tools/cc.py
+lib/node/wafadmin/Tools/ccroot.py
+lib/node/wafadmin/Tools/compiler_cc.py
+lib/node/wafadmin/Tools/compiler_cxx.py
+lib/node/wafadmin/Tools/compiler_d.py
+lib/node/wafadmin/Tools/config_c.py
+lib/node/wafadmin/Tools/cxx.py
+lib/node/wafadmin/Tools/d.py
+lib/node/wafadmin/Tools/dmd.py
+lib/node/wafadmin/Tools/gas.py
+lib/node/wafadmin/Tools/gcc.py
+lib/node/wafadmin/Tools/gdc.py
+lib/node/wafadmin/Tools/gnu_dirs.py
+lib/node/wafadmin/Tools/gob2.py
+lib/node/wafadmin/Tools/gxx.py
+lib/node/wafadmin/Tools/icc.py
+lib/node/wafadmin/Tools/icpc.py
+lib/node/wafadmin/Tools/intltool.py
+lib/node/wafadmin/Tools/libtool.py
+lib/node/wafadmin/Tools/misc.py
+lib/node/wafadmin/Tools/nasm.py
+lib/node/wafadmin/Tools/node_addon.py
+lib/node/wafadmin/Tools/osx.py
+lib/node/wafadmin/Tools/preproc.py
+lib/node/wafadmin/Tools/python.py
+lib/node/wafadmin/Tools/suncc.py
+lib/node/wafadmin/Tools/suncxx.py
+lib/node/wafadmin/Tools/unittestw.py
+lib/node/wafadmin/Tools/winres.py
+lib/node/wafadmin/Tools/xlc.py
+lib/node/wafadmin/Tools/xlcxx.py
+lib/node/wafadmin/Utils.py
+lib/node/wafadmin/__init__.py
+lib/node/wafadmin/ansiterm.py
+lib/node/wafadmin/pproc.py
+lib/node/wafadmin/py3kfixes.py
+lib/node_modules/.keepme
+@dirrm lib/node_modules
+@dirrm lib/node/wafadmin/Tools
+@dirrm lib/node/wafadmin
+@dirrm lib/node
+@dirrm include/node/uv-private
+@dirrm include/node/ev
+@dirrm include/node/c-ares
+@dirrm include/node
+@exec mkdir -p %D/include/node/ev
