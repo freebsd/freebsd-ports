@@ -1,3 +1,5 @@
 Tk::FileDialog is a perl5 package which implements a File Selector
 widget.  To use Tk::FileDialog, you will need Perl version 5.002
 or better, and Tk.
+
+WWW: http://search.cpan.org/dist/Tk-FileDialog/
