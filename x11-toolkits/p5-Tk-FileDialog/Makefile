@@ -9,6 +9,7 @@ PORTVERSION=	1.3
 PORTREVISION=	4
 CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	minter@lunenburg.org
 COMMENT=	Tk::FileDialog - A file selector dialog for perl/Tk
