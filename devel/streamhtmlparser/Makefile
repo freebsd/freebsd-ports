@@ -13,6 +13,8 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	itechbear@gmail.com
 COMMENT=	C/C++/Python streaming HTML parser library from Google
 
+LICENSE=	BSD
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
