@@ -10,7 +10,7 @@ PORTVERSION=	0.2.1
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}
 
-MAINTAINER=	ports@c0decafe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small note taking program for the terminal
 
 LICENSE=	GPLv3

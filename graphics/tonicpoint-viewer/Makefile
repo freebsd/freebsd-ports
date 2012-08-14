@@ -15,7 +15,7 @@ DISTNAME=	tonicpoint-${PORTVERSION}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
-MAINTAINER=	ports@c0decafe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PowerPoint presentations viewer
 
 NO_CDROM=	free for non-commercial use

@@ -10,7 +10,7 @@ PORTVERSION=	0.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@c0decafe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides notification functionalities on cross platforms
 
 USE_RUBY=		yes

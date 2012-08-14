@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TEAM
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@c0decafe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Asynchronous XMPP client and server
 
 RUN_DEPENDS=	p5-IO-Async>=0.37:${PORTSDIR}/devel/p5-IO-Async \

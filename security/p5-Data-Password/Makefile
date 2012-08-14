@@ -11,7 +11,7 @@ CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@c0decafe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Perl extension for assessing password quality
 
 PERL_CONFIGURE=	yes

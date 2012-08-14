@@ -10,7 +10,7 @@ PORTVERSION=	0.12
 CATEGORIES=	graphics converters
 MASTER_SITES=	http://koan.studentenweb.org/software/
 
-MAINTAINER=	ports@c0decafe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts a directory of JPEG (JPG) files to a PDF file
 
 USE_BZIP2=	yes

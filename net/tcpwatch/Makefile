@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	http://hathawaymix.org/Software/TCPWatch/
 
-MAINTAINER=	ports@c0decafe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TCP monitoring and logging tool with support for HTTP 1.1
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter

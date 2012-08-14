@@ -11,7 +11,7 @@ PORTREVISION=	11
 CATEGORIES=	security gnome
 MASTER_SITES=	ftp://oss.codepoet.no/revelation/
 
-MAINTAINER=	ports@c0decafe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Password manager for the GNOME 2 desktop
 
 LIB_DEPENDS=	crack:${PORTSDIR}/security/cracklib
