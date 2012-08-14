@@ -564,6 +564,7 @@
     SUBDIR += node
     SUBDIR += node-devel
     SUBDIR += node04
+    SUBDIR += node06
     SUBDIR += nostromo
     SUBDIR += notftp
     SUBDIR += npapi-xine
