@@ -1,35 +1,104 @@
-%%BINDING_PHP%%lib/php/%%PHP_EXT_DIR%%/xapian.so
-%%BINDING_PHP%%%%DATADIR%%/php5/xapian.php
-%%BINDING_PHP%%%%PORTDOCS%%%%DOCSDIR%%/php/examples/simpleexpand.php5
-%%BINDING_PHP%%%%PORTDOCS%%%%DOCSDIR%%/php/examples/simpleindex.php5
-%%BINDING_PHP%%%%PORTDOCS%%%%DOCSDIR%%/php/examples/simplematchdecider.php5
-%%BINDING_PHP%%%%PORTDOCS%%%%DOCSDIR%%/php/examples/simplesearch.php5
-%%BINDING_PHP%%%%PORTDOCS%%%%DOCSDIR%%/php/index.html
-%%BINDING_PHP%%%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/php/examples
-%%BINDING_PHP%%%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/php
-%%BINDING_PHP%%@dirrmtry %%DATADIR%%/php5
-%%BINDING_PHP%%@dirrmtry %%DATADIR%%
-%%BINDING_PHP%%@dirrmtry lib/php/%%PHP_EXT_DIR%%
-%%BINDING_PYTHON%%%%PYTHON_SITELIBDIR%%/xapian/__init__.py
-%%BINDING_PYTHON%%%%PYTHON_SITELIBDIR%%/xapian/__init__.pyc
-%%BINDING_PYTHON%%%%PYTHON_SITELIBDIR%%/xapian/__init__.pyo
-%%BINDING_PYTHON%%%%PYTHON_SITELIBDIR%%/xapian/_xapian.so
-%%BINDING_PYTHON%%%%PORTDOCS%%%%DOCSDIR%%/python/examples/simpleexpand.py
-%%BINDING_PYTHON%%%%PORTDOCS%%%%DOCSDIR%%/python/examples/simpleindex.py
-%%BINDING_PYTHON%%%%PORTDOCS%%%%DOCSDIR%%/python/examples/simplematchdecider.py
-%%BINDING_PYTHON%%%%PORTDOCS%%%%DOCSDIR%%/python/examples/simplesearch.py
-%%BINDING_PYTHON%%%%PORTDOCS%%%%DOCSDIR%%/python/index.html
-%%BINDING_PYTHON%%%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/python/examples
-%%BINDING_PYTHON%%%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/python
-%%BINDING_PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%/xapian
-%%BINDING_RUBY%%%%RUBY_SITELIBDIR%%/xapian.rb
-%%BINDING_RUBY%%%%RUBY_SITEARCHLIBDIR%%/_xapian.so
-%%BINDING_RUBY%%%%PORTDOCS%%%%DOCSDIR%%/ruby/examples/simpleexpand.rb
-%%BINDING_RUBY%%%%PORTDOCS%%%%DOCSDIR%%/ruby/examples/simpleindex.rb
-%%BINDING_RUBY%%%%PORTDOCS%%%%DOCSDIR%%/ruby/examples/simplematchdecider.rb
-%%BINDING_RUBY%%%%PORTDOCS%%%%DOCSDIR%%/ruby/examples/simplesearch.rb
-%%BINDING_RUBY%%%%PORTDOCS%%%%DOCSDIR%%/ruby/index.html
-%%BINDING_RUBY%%%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/ruby/examples
-%%BINDING_RUBY%%%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/ruby
-%%BINDING_RUBY%%@dirrmtry %%RUBY_SITELIBDIR%%
+%%LUA%%%%LUA_MODLIBDIR%%/xapian.so
+%%LUA%%%%PORTDOCS%%%%DOCSDIR%%/lua/examples/simpleexpand.lua
+%%LUA%%%%PORTDOCS%%%%DOCSDIR%%/lua/examples/simpleindex.lua
+%%LUA%%%%PORTDOCS%%%%DOCSDIR%%/lua/examples/simplematchdecider.lua
+%%LUA%%%%PORTDOCS%%%%DOCSDIR%%/lua/examples/simplesearch.lua
+%%LUA%%%%PORTDOCS%%%%DOCSDIR%%/lua/index.html
+%%LUA%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/lua/examples
+%%LUA%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/lua
+%%PERL%%%%SITE_PERL%%/Search/Xapian.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/AssertionError.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/BM25Weight.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/BoolWeight.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/Database.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/DatabaseCorruptError.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/DatabaseCreateError.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/DatabaseError.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/DatabaseLockError.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/DatabaseModifiedError.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/DatabaseOpeningError.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/DatabaseVersionError.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/DocNotFoundError.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/Document.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/ESet.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/ESetIterator.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/Enquire.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/Error.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/FeatureUnavailableError.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/InternalError.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/InvalidArgumentError.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/InvalidOperationError.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/LogicError.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/MSet.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/MSetIterator.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/MultiValueSorter.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/NetworkError.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/NetworkTimeoutError.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/PerlStopper.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/PositionIterator.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/PostingIterator.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/Query.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/QueryParser.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/QueryParserError.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/RSet.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/RangeError.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/RuntimeError.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/SimpleStopper.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/Stem.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/Stopper.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/TermGenerator.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/TermIterator.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/TradWeight.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/UnimplementedError.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/ValueIterator.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/Weight.pm
+%%PERL%%%%SITE_PERL%%/Search/Xapian/WritableDatabase.pm
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Xapian/Xapian.so
+%%PERL%%%%PORTDOCS%%%%DOCSDIR%%/perl/examples/full-indexer.pl
+%%PERL%%%%PORTDOCS%%%%DOCSDIR%%/perl/examples/full-searcher.pl
+%%PERL%%%%PORTDOCS%%%%DOCSDIR%%/perl/examples/simpleexpand.pl
+%%PERL%%%%PORTDOCS%%%%DOCSDIR%%/perl/examples/simpleindex.pl
+%%PERL%%%%PORTDOCS%%%%DOCSDIR%%/perl/examples/simplematchdecider.pl
+%%PERL%%%%PORTDOCS%%%%DOCSDIR%%/perl/examples/simplesearch.pl
+%%PERL%%%%PORTDOCS%%%%DOCSDIR%%/perl/index.html
+%%PERL%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/perl/examples
+%%PERL%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/perl
+%%PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/Xapian
+%%PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search
+%%PERL%%@dirrm %%SITE_PERL%%/Search/Xapian
+%%PERL%%@dirrm %%SITE_PERL%%/Search
+%%PHP%%lib/php/%%PHP_EXT_DIR%%/xapian.so
+%%PHP%%%%DATADIR%%/php5/xapian.php
+%%PHP%%%%PORTDOCS%%%%DOCSDIR%%/php/examples/simpleexpand.php5
+%%PHP%%%%PORTDOCS%%%%DOCSDIR%%/php/examples/simpleindex.php5
+%%PHP%%%%PORTDOCS%%%%DOCSDIR%%/php/examples/simplematchdecider.php5
+%%PHP%%%%PORTDOCS%%%%DOCSDIR%%/php/examples/simplesearch.php5
+%%PHP%%%%PORTDOCS%%%%DOCSDIR%%/php/index.html
+%%PHP%%%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/php/examples
+%%PHP%%%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/php
+%%PHP%%@dirrmtry %%DATADIR%%/php5
+%%PHP%%@dirrmtry %%DATADIR%%
+%%PHP%%@dirrmtry lib/php/%%PHP_EXT_DIR%%
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/xapian/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/xapian/__init__.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/xapian/__init__.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/xapian/_xapian.so
+%%PYTHON%%%%PORTDOCS%%%%DOCSDIR%%/python/examples/simpleexpand.py
+%%PYTHON%%%%PORTDOCS%%%%DOCSDIR%%/python/examples/simpleindex.py
+%%PYTHON%%%%PORTDOCS%%%%DOCSDIR%%/python/examples/simplematchdecider.py
+%%PYTHON%%%%PORTDOCS%%%%DOCSDIR%%/python/examples/simplesearch.py
+%%PYTHON%%%%PORTDOCS%%%%DOCSDIR%%/python/index.html
+%%PYTHON%%%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/python/examples
+%%PYTHON%%%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/python
+%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%/xapian
+%%RUBY%%%%RUBY_SITELIBDIR%%/xapian.rb
+%%RUBY%%%%RUBY_SITEARCHLIBDIR%%/_xapian.so
+%%RUBY%%%%PORTDOCS%%%%DOCSDIR%%/ruby/examples/simpleexpand.rb
+%%RUBY%%%%PORTDOCS%%%%DOCSDIR%%/ruby/examples/simpleindex.rb
+%%RUBY%%%%PORTDOCS%%%%DOCSDIR%%/ruby/examples/simplematchdecider.rb
+%%RUBY%%%%PORTDOCS%%%%DOCSDIR%%/ruby/examples/simplesearch.rb
+%%RUBY%%%%PORTDOCS%%%%DOCSDIR%%/ruby/index.html
+%%RUBY%%%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/ruby/examples
+%%RUBY%%%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/ruby
+%%RUBY%%@dirrmtry %%RUBY_SITELIBDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
