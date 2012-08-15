@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: smtpd mail
-# REQUIRE: %%REQUIRE%%
+# REQUIRE: LOGIN
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf to enable smtpd:
