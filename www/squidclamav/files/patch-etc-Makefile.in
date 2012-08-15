@@ -1,0 +1,10 @@
+--- etc/Makefile.in.orig	2012-08-15 03:15:12.431509933 +0200
++++ etc/Makefile.in	2012-08-15 03:15:29.685506098 +0200
+@@ -338,6 +338,7 @@
+ 
+ install-data-local:
+ 	$(mkinstalldirs) $(DESTDIR)$(CFGINST)
++	$(INSTALL_DATA) $(srcdir)/squidclamav.conf $(DESTDIR)$(CFGINST)/squidclamav.conf.default
+ 	@if test -f "$(DESTDIR)$(CFGINST)/squidclamav.conf" ; then \
+ 		echo "$@ will not overwrite existing $(DESTDIR)$(CFGINST)/squidclamav.conf" ; \
+ 	else \

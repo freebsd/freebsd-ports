@@ -1,0 +1,27 @@
+From the SquidClamav homepage:
+
+SquidClamav is an antivirus for Squid proxy based on the Awards winnings
+ClamAv anti-virus toolkit. Using it will help you securing your home or
+enterprise network web traffic. SquidClamav is the most efficient Squid
+Redirector and ICAP service antivirus tool for HTTP traffic available for
+free, it is written in C and can handle thousand of connections. The way
+to add more securing on your network for free is here.
+
+SquidClamav is build for speed and security in mind, it is first used
+and tested to secure a network with 2,500 and more users. It is also known
+to working fast with 15000+ users. 
+
+SquidClamav since version 6.x works as an ICAP service through the c-icap
+server. 
+
+With SquidClamav You have full control of what kind of HTTP stream must be
+scanned by Clamav antivirus, this control operate at 3 different levels:
+
+- At URL level, you can disable virus scanning for a set of web site,
+  filename extension or anything that can be matched in an URL.
+- At client side by disabling virus scan and other redirector call
+  to a set of username, source Ip addresses or computer DNS name.
+- At HTTP header level, where you can disable virus scanning following
+  the content type or file size.
+
+WWW: http://squidclamav.darold.net
