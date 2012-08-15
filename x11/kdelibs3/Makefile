@@ -8,7 +8,7 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11 kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -37,7 +37,6 @@ RUN_DEPENDS=	kdehier>0:${PORTSDIR}/misc/kdehier \
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		iceauth:${PORTSDIR}/x11/iceauth
 
-CONFLICTS_BUILD=	openssl-1.*
 CONFLICTS+=	kdeadmin-3.[0-3].* kdeadmin-3.4.[0-1]* kdeartwork-3.[2-3]* kdebase-3.[0-4]* kdepim-3.2*
 .if defined(WITHOUT_CUPS) || defined(KDE_WITHOUT_CUPS)
 CONFLICTS+=	kdelibs-[0-9]*
@@ -75,6 +74,14 @@ FONTENCOD=	${LOCALBASE}/lib/X11/fonts/encodings/encodings.dir
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 1000014
+PATCH_SITES=		http://oschtan.academ.org/oschtan-overlay/kde-base/kdelibs/files/
+PATCHFILES=		kdelibs-3.5-openssl-1.0.0.patch
+PATCH_DIST_STRIP=	-p1
+.else
+CONFLICTS_BUILD=       openssl-1.*
+.endif
 
 # bzip2 is required as a libdepend for the help: kioslave
 .if !exists(/usr/bin/bzip2)
