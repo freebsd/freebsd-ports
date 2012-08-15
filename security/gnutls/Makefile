@@ -7,6 +7,7 @@
 
 PORTNAME=	gnutls
 PORTVERSION=	2.12.18
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		${MASTER_SITE_GNUPG}
@@ -15,15 +16,16 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
 
-LIB_DEPENDS=	nettle.4:${PORTSDIR}/security/nettle \
-		gpg-error.0:${PORTSDIR}/security/libgpg-error \
-		p11-kit.0:${PORTSDIR}/security/p11-kit
+LIB_DEPENDS=	nettle:${PORTSDIR}/security/nettle \
+		gpg-error:${PORTSDIR}/security/libgpg-error \
+		p11-kit:${PORTSDIR}/security/p11-kit
 
 CONFLICTS=	gnutls-devel-[0-9]*
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
-USE_GNOME=	pkgconfig ltverhack gnomehack
+USE_PKGCONFIG=	build
+USE_GNOME=	ltverhack gnomehack
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
@@ -36,17 +38,15 @@ MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>
 
-.if (defined(WITH_LIBTASN1) || exists(${LOCALBASE}/lib/libtasn1.so.4)) && !defined(WITHOUT_LIBTASN1)
-LIB_DEPENDS+=	tasn1.4:${PORTSDIR}/security/libtasn1
+.if defined(WITH_LIBTASN1)
+LIB_DEPENDS+=	tasn1:${PORTSDIR}/security/libtasn1
 .else
 CONFIGURE_ARGS+=	--with-included-libtasn1
 .endif
 
-.if (defined(WITH_LZO) || exists(${LOCALBASE}/lib/liblzo2.so)) && !defined(WITHOUT_LZO)
+.if defined(WITH_LZO)
 LIB_DEPENDS+=		lzo2:${PORTSDIR}/archivers/lzo2
 CONFIGURE_ARGS+=	--with-lzo
-.else
-CONFIGURE_ARGS+=	--with-lzo=no
 .endif
 
 .if defined(WITHOUT_CXX)
@@ -66,6 +66,10 @@ PLIST_SUB+=		NLS=""
 
 PORTDOCS=		AUTHORS NEWS README THANKS
 PORTEXAMPLES=		*.c
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile.in" -type f | ${XARGS} ${REINPLACE_CMD} \
+		-e 's|[$$][(]LTLIBPTHREAD[)]||g'
 
 post-install:
 .if !defined (NOPORTEXAMPLES)
