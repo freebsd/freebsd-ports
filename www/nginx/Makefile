@@ -585,8 +585,8 @@ LIB_DEPENDS+=	luajit-5.1:${PORTSDIR}/lang/luajit
 CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
 CONFIGURE_ENV+=	"LUAJIT_LIB=${LOCALBASE}/lib"
 USE_NGINX_DEVEL_KIT=	yes
-NGINX_LUA_VERSION=	0.5.13
-GIT_LUA_VERSION=	0-ga70c1e4
+NGINX_LUA_VERSION=	0.5.14
+GIT_LUA_VERSION=	0-g7b363ee
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/chaoslawful/lua-nginx-module/tarball/v${NGINX_LUA_VERSION}/:lua
 DISTFILES+=	chaoslawful-lua-nginx-module-v${NGINX_LUA_VERSION}-${GIT_LUA_VERSION}.tar.gz:lua
@@ -705,8 +705,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_VER
 .endif
 
 .if ${PORT_OPTIONS:MSRCACHE}
-NGINX_SRCACHE_VERSION=	0.13rc8
-GIT_SRCACHE_VERSION=	0-g5237f26
+NGINX_SRCACHE_VERSION=	0.14
+GIT_SRCACHE_VERSION=	0-gbee0276
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/agentzh/srcache-nginx-module/tarball/v${NGINX_SRCACHE_VERSION}/:srcache
 DISTFILES+=	agentzh-srcache-nginx-module-v${NGINX_SRCACHE_VERSION}-${GIT_SRCACHE_VERSION}.tar.gz:srcache
