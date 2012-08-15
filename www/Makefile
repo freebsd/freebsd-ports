@@ -1796,6 +1796,7 @@
     SUBDIR += squid
     SUBDIR += squid31
     SUBDIR += squid_radius_auth
+    SUBDIR += squidclamav
     SUBDIR += squidguard
     SUBDIR += squidpurge
     SUBDIR += squidstats

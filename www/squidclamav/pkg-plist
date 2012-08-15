@@ -1,0 +1,15 @@
+@unexec if cmp -s %D/etc/c-icap/squidclamav.conf %D/etc/c-icap/squidclamav.conf.default; then rm -f %D/etc/c-icap/squidclamav.conf; fi
+etc/c-icap/squidclamav.conf.default
+@exec [ -f %B/squidclamav.conf ] || cp %B/%f %B/squidclamav.conf
+%%DATADIR%%/README
+lib/c_icap/squidclamav.a
+lib/c_icap/squidclamav.la
+lib/c_icap/squidclamav.so
+libexec/squidclamav/clwarn.cgi
+libexec/squidclamav/clwarn.cgi.de_DE
+libexec/squidclamav/clwarn.cgi.en_EN
+libexec/squidclamav/clwarn.cgi.fr_FR
+libexec/squidclamav/clwarn.cgi.pt_BR
+libexec/squidclamav/clwarn.cgi.ru_RU
+@dirrm libexec/squidclamav
+@dirrm %%DATADIR%%
