@@ -6,6 +6,21 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20120815:
+  AFFECTS: users of lang/erlang
+  AUTHOR: olgeni@FreeBSD.org
+
+  The lang/erlang port was updated to R15B01. Some port options
+  were updated, so be sure to run "make config" in the port directory
+  and check your configuration before upgrading.
+
+  To upgrade Erlang and rebuild all of the dependent ports under
+  the new environment:
+
+  # portmaster -r erlang
+  or
+  # portupgrade -r lang/erlang 
+
+20120815:
   AFFECTS: users of lang/erlang-lite
   AUTHOR: olgeni@FreeBSD.org
 
