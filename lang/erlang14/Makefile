@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	erlang
-PORTVERSION=	r14b04
-PORTREVISION=	3
+DISTVERSION=	R14B04
+PORTVERSION=	14.b.04
 PORTEPOCH=	1
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
@@ -24,6 +24,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:erlangorg	\
 		${DOC_DISTFILES}
 DIST_SUBDIR=	erlang
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+
+CONFLICTS=	erlang-15*
 
 PATCH_SITES=	http://www.erlang.org/download
 
