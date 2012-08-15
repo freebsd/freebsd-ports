@@ -1,6 +1,6 @@
 --- ./source3/lib/fault.c.orig	2010-04-01 15:26:22.000000000 +0200
 +++ ./source3/lib/fault.c	2010-04-23 01:08:35.000000000 +0200
-@@ -25,6 +25,10 @@
+@@ -26,6 +26,10 @@
  #endif
  
  
@@ -11,7 +11,7 @@
  #ifdef HAVE_SYS_PRCTL_H
  #include <sys/prctl.h>
  #endif
-@@ -143,52 +147,93 @@
+@@ -144,52 +148,93 @@
   * before dump_core() calls abort.
   */
  #if (defined(FREEBSD) && defined(HAVE_SYSCTLBYNAME))
@@ -143,9 +143,9 @@
  }
  #endif
  
-@@ -204,8 +249,7 @@
- 	/* @todo: Add support for the linux corepath. */
- 
+@@ -248,8 +293,7 @@
+ {
+ #if (defined(FREEBSD) && defined(HAVE_SYSCTLBYNAME))
  	char *tmp_corepath = NULL;
 -	tmp_corepath = get_freebsd_corepath();
 -
@@ -153,7 +153,7 @@
  	/* If this has been set correctly, we're done. */
  	if (tmp_corepath) {
  		return tmp_corepath;
-@@ -281,7 +325,7 @@
+@@ -327,7 +371,7 @@
  	SAFE_FREE(logbase);
  }
  

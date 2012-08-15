@@ -8,7 +8,7 @@
     Copyright (C) James Peach				2006
     
     This program is free software; you can redistribute it and/or modify
-@@ -47,9 +48,42 @@
+@@ -49,9 +50,42 @@
  	}
  	return result;
  }
@@ -18,8 +18,7 @@
 +{
 +	struct statfs statfs_buf;
 +	int result;
- 
--#if defined(DARWINOS)
++
 +	result = statfs(path, &statfs_buf);
 +	if(result != 0) {
 +		return result;
@@ -45,7 +44,8 @@
 +		statbuf->FsCapabilities |= FILE_VOLUME_QUOTAS;
 +	if(statfs_buf.f_flags & MNT_RDONLY)
 +		statbuf->FsCapabilities |= FILE_READ_ONLY_VOLUME;
-+
+ 
+-#if defined(DARWINOS)
 +	return 0;
 +}
 +
@@ -53,7 +53,7 @@
  
  #include <sys/attr.h>
  
-@@ -135,6 +169,8 @@
+@@ -137,6 +171,8 @@
  {
  #if defined(LINUX) && defined(HAVE_FSID_INT)
  	return linux_statvfs(path, statbuf);

@@ -40,7 +40,7 @@ sbin/nmbd
 %%EXAMPLESDIR%%/LDAP/ol-schema-migrate.pl
 %%EXAMPLESDIR%%/LDAP/samba-nds.schema
 %%EXAMPLESDIR%%/LDAP/samba-schema-FDS.ldif
-%%EXAMPLESDIR%%/LDAP/samba-schema-netscapeds5.x
+%%EXAMPLESDIR%%/LDAP/samba-schema-netscapeds5.x.README
 %%EXAMPLESDIR%%/LDAP/samba-schema.IBMSecureWay
 %%EXAMPLESDIR%%/LDAP/samba.ldif
 %%EXAMPLESDIR%%/LDAP/samba.schema
@@ -52,8 +52,10 @@ sbin/nmbd
 %%EXAMPLESDIR%%/VFS/autogen.sh
 %%EXAMPLESDIR%%/VFS/config.guess
 %%EXAMPLESDIR%%/VFS/config.sub
+%%EXAMPLESDIR%%/VFS/configure
 %%EXAMPLESDIR%%/VFS/configure.in
 %%EXAMPLESDIR%%/VFS/install-sh
+%%EXAMPLESDIR%%/VFS/module_config.h.in
 %%EXAMPLESDIR%%/VFS/shadow_copy_test.c
 %%EXAMPLESDIR%%/VFS/skel_opaque.c
 %%EXAMPLESDIR%%/VFS/skel_transparent.c
