@@ -20,7 +20,6 @@
 %%WWWDIR%%-46/uploads/media/index.html
 %%WWWDIR%%-46/uploads/pics/index.html
 %%WWWDIR%%-46/uploads/tf/index.html
-%%WWWDIR%%_src-%%PORTVERSION%%/.travis.yml
 %%WWWDIR%%_src-%%PORTVERSION%%/ChangeLog
 %%WWWDIR%%_src-%%PORTVERSION%%/GPL.txt
 %%WWWDIR%%_src-%%PORTVERSION%%/INSTALL.txt
