@@ -16,7 +16,6 @@ COMMENT=	A milter for BATV (Bounce Address Tag Validation)
 USE_RC_SUBR=	milter-batv
 USE_OPENSSL=	TRUE
 
-SUB_FILES=	milter-batv.sh
 WCONF=		${WRKSRC}/devtools/Site
 MAN8=		batv-filter.8
 PLIST_FILES=	bin/batv-filter
