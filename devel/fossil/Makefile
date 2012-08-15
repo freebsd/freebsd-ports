@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fossil
-PORTVERSION=	20120317175325
+PORTVERSION=	20120808112557
 PORTEPOCH=	1
 CATEGORIES=	devel www
 MASTER_SITES=	http://www.fossil-scm.org/download/
@@ -24,6 +24,15 @@ PLIST_FILES=	bin/fossil
 HAS_CONFIGURE=	yes
 
 USE_GMAKE=	yes
+
+OPTIONS_DEFINE=	JSON
+JSON_DESC=	JSON API support
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MJSON}
+CONFIGURE_ARGS+=	--json
+.endif
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/fossil ${PREFIX}/bin/fossil
