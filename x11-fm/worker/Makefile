@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	worker
-PORTVERSION=	2.16.5
+PORTVERSION=	2.19.4
 CATEGORIES=	x11-fm
-MASTER_SITES=	http://www.boomerangsworld.de/worker/downloads/
+MASTER_SITES=	http://www.boomerangsworld.de/cms/worker/downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -25,12 +25,11 @@ MANLANG=	"" fr it
 MAN1=		worker.1
 
 CFLAGS+=	${PTHREAD_CFLAGS}
-CONFIGURE_ARGS=	--disable-libxpkmaster
-OPTIONS=	XFT "Enable experimental xft support" Off
+OPTIONS_DEFINE=	XFT
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_XFT)
+.if ${PORT_OPTIONS:MXFT}
 USE_XORG+=	xft
 CONFIGURE_ARGS+=	--enable-xft
 .endif
@@ -44,8 +43,8 @@ pre-configure:
 
 post-patch:
 .for f in aa.pattern_rename.sh cd2flac.sh cd2mp3.sh cd2ogg.sh cd2wav.sh xeditor
-	${REINPLACE_CMD} -e 's|/bin/bash|/usr/local/bin/bash|g' \
+	${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|g' \
 		${WRKSRC}/scripts/${f}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
