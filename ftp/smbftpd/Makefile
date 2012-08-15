@@ -24,7 +24,6 @@ HAS_CONFIGURE=	yes
 MAKE_ENV=	OSTYPE=FreeBSD
 CONFIGURE_ARGS=	"--prefix=${PREFIX}"
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_PERL5=	yes
 USE_RC_SUBR=	${PORTNAME}
 
@@ -48,6 +47,9 @@ CONFIGURE_ARGS+=	"--with-iconv"
 .if ${PORT_OPTIONS:MSSL}
 CONFIGURE_ARGS+=	"--with-ssl"
 .endif
+
+post-extract:
+	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^CONFIGS = / s|\.conf|&.sample|g' ${WRKSRC}/Makefile

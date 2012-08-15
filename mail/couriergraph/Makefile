@@ -20,7 +20,6 @@ RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool	\
 
 NO_BUILD=	yes
 USE_PERL5=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 DATADIR?=	/var/db/couriergraph
 COURIERGRAPH_USER?=	${WWWOWN}
@@ -41,6 +40,9 @@ pre-everything::
 	@${ECHO_MSG} "COURIERGRAPH_USER=www			User to run couriergraph (Default: ${WWWOWN})"
 	@${ECHO_MSG} "COURIERGRAPH_GROUP=www			Group to run couriergraph (Default: ${WWWGRP})"
 	@${ECHO_MSG}
+
+post-extract:
+	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%DATADIR%%,${DATADIR}," ${WRKSRC}/couriergraph.cgi

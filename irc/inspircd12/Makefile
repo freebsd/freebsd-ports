@@ -18,7 +18,6 @@ CONFLICTS=	inspircd-2.*
 
 LATEST_LINK=	inspircd12
 
-WRKSRC=	${WRKDIR}/inspircd
 USE_BZIP2=	yes
 USE_LDCONFIG=	${PREFIX}/lib/inspircd
 USE_RC_SUBR=	inspircd
@@ -177,6 +176,9 @@ PLIST_SUB+=	ZIPLINK="@comment "
 .endif
 
 CXXFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+
+post-extract:
+	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 post-patch:
 	${REINPLACE_CMD} -e '/INSTMODE/s|700|755|;/install -d.*BINPATH/d'\

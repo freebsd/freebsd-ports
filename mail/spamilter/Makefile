@@ -23,7 +23,6 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--have-resn
 USE_RC_SUBR=	spamilter
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 CFLAGS+=	${PTHREAD_CFLAGS:S=""==}
 LDFLAGS+=	${PTHREAD_LIBS}
 MAKE_ENV+=	__MAKE_CONF=/dev/null
@@ -63,6 +62,9 @@ PLIST_FILES+=	bin/dnsblchk bin/dnsblupd bin/ipfwmtad bin/mxlookup \
 		bin/spamilter-system-report bin/spamilter-user-report
 PORTDOCS=	Changelog INSTALL LICENSE docs.html docs.txt db.rcpt \
 		db.rdnsbl db.sndr policy.html spamilter.rc
+
+post-extract:
+	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 pre-configure:
 	${REINPLACE_CMD} \
