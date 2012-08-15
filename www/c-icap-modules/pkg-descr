@@ -1,0 +1,10 @@
+c-icap server modules:
+
+virus_scan:
+This is an antivirus service which uses the open source
+clamav antivirus.
+
+srv_url_check:
+This is an URL blacklist/whitelist icap service
+
+WWW: http://c-icap.sourceforge.net/

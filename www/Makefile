@@ -60,6 +60,7 @@
     SUBDIR += bozohttpd
     SUBDIR += bugmenot-firefox
     SUBDIR += c-icap
+    SUBDIR += c-icap-modules
     SUBDIR += cacheboy15-devel
     SUBDIR += cacheboy16
     SUBDIR += cadaver
