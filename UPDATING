@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120815:
+  AFFECTS: users of lang/erlang-lite
+  AUTHOR: olgeni@FreeBSD.org
+
+  The lang/erlang-lite port uses the same default options as
+  lang/erlang, which were changed some time ago.
+
+  The couchdb, rabbitmq, freeswitch-core and freeswitch-core-devel
+  ports have been updated to use lang/erlang rather than lang/erlang-lite.
+
+  Please check that your lang/erlang options are configured as you
+  wish (especially X11 support), then follow the instructions below
+  to update your dependencies.
+
+  # portmaster -o lang/erlang lang/erlang-lite
+  or
+  # portupgrade -fo lang/erlang erlang-lite  
+
 20120810:
   AFFECTS: users of net-p2p/transmission-gtk2
   AUTHOR: crees@FreeBSD.org
