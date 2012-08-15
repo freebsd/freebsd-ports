@@ -14,12 +14,12 @@ DISTNAME=	${PORTNAME}-server-${PORTVERSION}
 MAINTAINER=	pneumann@gmail.com
 COMMENT=	RabbitMQ is an implementation of AMQP
 
-BUILD_DEPENDS=	erl:${PORTSDIR}/lang/erlang-lite \
+BUILD_DEPENDS=	erl:${PORTSDIR}/lang/erlang \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:${PORTSDIR}/devel/py-simplejson \
 		xmlto:${PORTSDIR}/textproc/xmlto \
 		unzip:${PORTSDIR}/archivers/unzip \
 		zip:${PORTSDIR}/archivers/zip
-RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang-lite
+RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
 USE_GMAKE=	yes
 USE_PYTHON=	yes

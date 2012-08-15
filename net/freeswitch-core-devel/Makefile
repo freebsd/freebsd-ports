@@ -202,7 +202,7 @@ LIB_DEPENDS+=	gdbm:${PORTSDIR}/databases/gdbm \
 .endif
 
 .if defined(WITH_MODERLANGEVENT)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/erlang/usr/include/erl_driver.h:${PORTSDIR}/lang/erlang-lite
+BUILD_DEPENDS+=	${LOCALBASE}/lib/erlang/usr/include/erl_driver.h:${PORTSDIR}/lang/erlang
 .endif
 
 .if defined(WITH_MODPYTHON)
