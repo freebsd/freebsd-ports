@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	nork
 PATCH_SITES=	http://defan.zenon.net/freebsd/
 PATCHFILES=	patch-nppdf-acroread-7.0.8
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A wrapper allowing use of linux-plugins with native applications
 
 OPTIONS=	REALPLAYER	"install linux-realplayer"	off

@@ -11,7 +11,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.tsg.ne.jp/GANA/S/pcf2bdf/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert X font from PCF to BDF
 
 NO_WRKSUBDIR=	YES

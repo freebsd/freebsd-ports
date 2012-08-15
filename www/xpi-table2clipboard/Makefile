@@ -10,7 +10,7 @@ PORTVERSION=	1.5.1
 DISTVERSIONSUFFIX=	-fx+tb+sm
 CATEGORIES=	www
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Table to Clipboard extension with correct disposition
 
 XPI_NUM=	1852

@@ -12,7 +12,7 @@ CATEGORIES+=	audio
 MASTER_SITES=	SF/timidity/TiMidity%2B%2B/TiMidity%2B%2B-${PORTVERSION}
 DISTNAME=	TiMidity++-${PORTVERSION}
 
-MAINTAINER?=	nork@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Software MIDI player
 
 .if !defined(PKGNAMESUFFIX)

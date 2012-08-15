@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple proxy arp daemon
 
 USE_RC_SUBR=	choparp

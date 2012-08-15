@@ -11,7 +11,7 @@ CATEGORIES=	japanese perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	ja-p5-
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module to validate Japanese phone numbers
 
 RUN_DEPENDS=	p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require

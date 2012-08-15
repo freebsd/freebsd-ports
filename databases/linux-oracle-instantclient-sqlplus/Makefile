@@ -15,7 +15,7 @@ PKGNAMESUFFIX=		-sqlplus
 DISTNAME=		${PORTNAME}${PKGNAMESUFFIX}-${LINUXARCH}-${ORACLEVERSION}-${DISTDATE}
 DIST_SUBDIR=		oracle
 
-MAINTAINER=		nork@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Oracle 10 InstantClient SQLPlus. Works with Oracle RDBMS 8.1.2+
 
 RUN_DEPENDS=		${LINUXBASE}/usr/lib/oracle/${ORACLEVERSION}/client/lib/libocci.so.10.1:${PORTSDIR}/databases/linux-oracle-instantclient-basic

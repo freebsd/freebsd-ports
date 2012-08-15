@@ -11,7 +11,7 @@ CATEGORIES=	graphics devel
 MASTER_SITES=	SF/${PORTNAME:L}/ctl/${PORTVERSION}
 DISTNAME=	ctl-${PORTVERSION}
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Color Transformation Language interpreter
 
 LIB_DEPENDS=	Half.6:${PORTSDIR}/graphics/ilmbase

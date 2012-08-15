@@ -25,7 +25,7 @@ PATCHFILES=	${DISTNAME}-iso258.patch.gz \
 		${DISTNAME}-iso261-${PORTVERSION:E}.patch.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Less + zcat + ISO-2022 - a pager similar to more and pg
 
 MAKE_JOBS_SAFE=	yes

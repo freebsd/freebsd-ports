@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	-man
 DISTNAME=	man
 DIST_SUBDIR=	postgresql/${PORTVERSION}
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese online manual pages for PostgreSQL
 
 MANLANG=	ja

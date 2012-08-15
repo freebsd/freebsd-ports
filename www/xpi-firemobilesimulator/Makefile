@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	https://ss1.xrea.com/poly.s49.xrea.com/dev/firefox/
 DISTNAME=	${XPI_DISTNAME}_${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese Mobile Browser(NTT docomo/au/SoftBank) Simulator
 
 XPI_ID=		{77cc852e-6b45-11dd-929f-d30256d89593}

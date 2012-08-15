@@ -13,7 +13,7 @@ MASTER_SITES=	http://ccm.sherry.jp/tmp/
 PKGNAMEPREFIX=	bmp-
 DISTNAME=	${PORTNAME}-CVS-${PORTVERSION}-with-bmp-plugin
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FLAC input plugin for beep-media-player
 
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player \

@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.ipflow.utc.fr/dynamips/
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cisco 3600/7200 Simulator
 
 LIB_DEPENDS=	elf.0:${PORTSDIR}/devel/libelf

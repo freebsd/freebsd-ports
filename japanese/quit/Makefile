@@ -7,7 +7,7 @@
 
 CATEGORIES=	japanese games
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../../games/quit
 

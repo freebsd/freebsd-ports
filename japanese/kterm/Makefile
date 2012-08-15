@@ -35,7 +35,7 @@ PATCHFILES=	${DISTNAME}.NFS-xauth.patch:nfs \
 		${DISTNAME}-termios-0.2.patch.gz:termios
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An xterm variant with Japanese support
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf

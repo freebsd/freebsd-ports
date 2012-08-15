@@ -10,7 +10,7 @@ PORTVERSION=	2.7.6
 DISTVERSIONSUFFIX=	-fx+tb
 CATEGORIES=	www
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adobe Acrobat-style grab and drag scrolling
 
 XPI_NUM=	1250
