@@ -5,9 +5,9 @@
 # $FreeBSD$
 #
 
-PORTNAME=	zabbix
+PORTNAME=	zabbix2
 PKGNAMESUFFIX=	-proxy
 
-MASTERDIR=	${.CURDIR}/../zabbix-server
+MASTERDIR=	${.CURDIR}/../zabbix2-server
 
 .include "${MASTERDIR}/Makefile"

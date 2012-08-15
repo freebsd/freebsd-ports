@@ -5,10 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	zabbix
+PORTNAME=	zabbix2
 PKGNAMESUFFIX=	-frontend
 
-MASTERDIR=	${.CURDIR}/../zabbix-server
+MASTERDIR=	${.CURDIR}/../zabbix2-server
 
 NO_BUILD=	yes
 PATCHDIR=
@@ -20,26 +20,26 @@ IGNORE_WITH_PHP=	4
 WANT_PHP_WEB=	yes
 
 OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}${PKGNAMESUFFIX}/options
-OPTIONS=	MYSQL "Use MySQL backend" on \
-		PGSQL "Use PostgreSQL backend" off \
-		SQLITE "Use SQLite backend" off
+OPTIONS_DEFINE=	MYSQL MYSQLI PGSQL SQLITE
+OPTIONS_DEFAULT=	MYSQL MYSQLI
+MYSQLI_DESC=	MySQLI backend
 
 .include <bsd.port.options.mk>
 
-.ifndef WITHOUT_MYSQL
+.if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	mysql
 .endif
 
-.ifdef WITH_MYSQLI
+.if ${PORT_OPTIONS:MMYSQLI}
 USE_PHP+=	mysqli
 .endif
 
-.ifdef WITH_PGSQL
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pgsql
 .endif
 
-.ifdef WITH_SQLITE
-RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/sqlite3.so:${PORTSDIR}/databases/php-sqlite3
+.if ${PORT_OPTIONS:MSQLITE}
+USE_PHP+=	sqlite3
 .endif
 
 do-install:
