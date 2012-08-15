@@ -6,34 +6,31 @@
 #
 
 PORTNAME=	fontforge
-PORTVERSION=	20110222
-PORTREVISION=	5
+DISTVERSION=	20120731-b
 CATEGORIES=	print
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source
 DISTFILES=	${EXTRACT_ONLY}
-EXTRACT_ONLY=	${PORTNAME}_full-${PORTVERSION}.tar.bz2
+EXTRACT_ONLY=	${PORTNAME}_full-${DISTVERSION}.tar.bz2
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Type 1/TrueType/OpenType/bitmap font editor
 
-LIB_DEPENDS=	uninameslist.0:${PORTSDIR}/textproc/libuninameslist \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	uninameslist:${PORTSDIR}/textproc/libuninameslist \
+		tiff:${PORTSDIR}/graphics/tiff \
+		jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
-		gif.5:${PORTSDIR}/graphics/giflib \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		spiro.0:${PORTSDIR}/graphics/libspiro
+		gif:${PORTSDIR}/graphics/giflib \
+		freetype:${PORTSDIR}/print/freetype2 \
+		xml2:${PORTSDIR}/textproc/libxml2 \
+		spiro:${PORTSDIR}/graphics/libspiro
 
 .if defined(FONTFORGE_WITH_TTF_DEBUGGER)
-FREETYPE_VERSION=	2.4.4
+FREETYPE_VERSION=	2.4.9
 EXTRACT_ONLY+=	freetype-${FREETYPE_VERSION}.tar.bz2
 .endif
 
 .if !defined(NOPORTDOCS)
-#DOC_VERSION=	${PORTVERSION}
-# This version of Fontforge has a different version number for the docs as opposed to the actual source
-DOC_VERSION=	20110221
+DOC_VERSION=	${DISTVERSION}
 MASTER_SITES+=	SF/${PORTNAME}/${PORTNAME}-docs:docs
 DOCFILES=	${PORTNAME}_htdocs-${DOC_VERSION}.tar.bz2
 DISTFILES+=	${DOCFILES:C/$/:docs/}
@@ -88,7 +85,7 @@ CONFIGURE_ARGS+=	--without-python
 .endif
 
 .if defined(WITH_CAIRO)
-LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS+=	cairo:${PORTSDIR}/graphics/cairo
 CONFIGURE_ARGS+=	--with-cairo
 .else
 CONFIGURE_ARGS+=	--without-cairo
