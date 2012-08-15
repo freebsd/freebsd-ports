@@ -241,4 +241,5 @@ hadoop:*:955:955::0:0:hadoop user:/nonexistent:/usr/sbin/nologin
 pandora:*:956:956::0:0:Pandora FMS user:/usr/local/etc/pandora/home:/usr/sbin/nologin
 razorback:*:957:957::0:0:Razorback user:/var/run/razorback:/usr/sbin/nologin
 gnunet:*:958:958::0:0:GNUnet daemon:/var/lib/gnunet:/usr/sbin/nologin
+c_icap:*:959:959::0:0:c-icap daemon:/var/empty:/usr/sbin/nologin
 nobody:*:65534:65534::0:0:Unprivileged user:/nonexistent:/usr/sbin/nologin

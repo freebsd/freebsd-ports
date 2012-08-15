@@ -1,16 +1,29 @@
 #!/bin/sh
 # $FreeBSD$
 
+LOG_DIR=$DEST_DIR%%LOG_DIR%%
+RUN_DIR=$DEST_DIR%%RUN_DIR%%
+
 if [ "$2" != "POST-DEINSTALL" ]; then
 	exit 0
 fi
 
-CICAP_USER=cicap
+if [ -d "$LOG_DIR" ]; then
+	rmdir $LOG_DIR > /dev/null 2> /dev/null
+fi
 
-if pw usershow "$CICAP_USER" 2>/dev/null 1>&2; then
-	echo "==============================================================================="
-	echo "To delete $CICAP_USER user permanently, use 'pw userdel \"$CICAP_USER\"'"
-	echo "==============================================================================="
+if [ -d "$RUN_DIR" ]; then
+	rmdir $RUN_DIR > /dev/null 2> /dev/null
+fi
+
+if [ -d "$LOG_DIR" -o -d "$RUN_DIR" ]; then
+	echo "You may want to delete the following directories:"
+	if [ -d "$LOG_DIR" ]; then
+		echo "$LOG_DIR"
+	fi
+	if [ -d "$RUN_DIR" ]; then
+		echo "$RUN_DIR"
+	fi
 fi
 
 exit 0

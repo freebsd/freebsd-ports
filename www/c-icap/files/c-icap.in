@@ -18,18 +18,27 @@
 
 . /etc/rc.subr
 
-name="c_icap"
+name=c_icap
 rcvar=c_icap_enable
 
 command="%%PREFIX%%/bin/c-icap"
-pidfile="%%RUN_DIR%%/c-icap.pid"
-required_dirs="%%TMP_DIR%%"
-required_files="%%PREFIX%%/etc/c-icap.conf"
 
 stop_postcmd="rm -f $pidfile"
 
 # read settings, set default values
 load_rc_config "$name"
 : ${c_icap_enable="NO"}
+: ${c_icap_conf="%%PREFIX%%/etc/c-icap.conf"}
+: ${c_icap_pidfile="%%RUN_DIR%%/c-icap.pid"}
+: ${c_icap_user="%%CICAP_USER%%"}
+
+pidfile="${c_icap_pidfile}"
+required_files="${c_icap_conf}"
+command_args="-f ${c_icap_conf}"
+stop_postcmd=stop_postcmd
+
+stop_postcmd() {
+	rm -f %%RUN_DIR%%/c-icap.ctl
+}
 
 run_rc_command "$1"

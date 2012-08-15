@@ -6,40 +6,91 @@
 #
 
 PORTNAME=	c-icap
-PORTVERSION=	060708
-PORTREVISION=	2
-PORTEPOCH=	1
+PORTVERSION=	0.2.1
+PORTEPOCH=	2
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/OldFiles
-DISTNAME=	c_icap-${PORTVERSION}rc2
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.2.x/
+DISTNAME=	c_icap-${PORTVERSION}
 
-MAINTAINER=	tofig@freebsd.az
-COMMENT=	An implementation of an ICAP server
+MAINTAINER=	mm@FreeBSD.org
+COMMENT=	ICAP server implementation
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_RC_SUBR=	c_icap
-USE_AUTOTOOLS=	libtool
+USE_RC_SUBR=	c-icap
 
 SUB_FILES=	pkg-install pkg-deinstall
 
-OPTIONS=	CLAMAV "Build with srv_clamav service" on \
-		LARGE_FILES "Enable large files support" off \
-		IPV6 "Enable IPv6 support" off \
-		PERL "With Perl support" off
+OPTIONS_DEFINE=	BDB IPV6 LDAP PERL POSIXSEM LARGE_FILES
+OPTIONS_DEFAULT=	IPV6
+LARGE_FILES_DESC=	Enable large files support
+POSIXSEM_DESC=		Use POSIX Semaphores instead of SYSV IPC
+
+CICAP_USER=	c_icap
+CICAP_GROUP=	c_icap
+
+USERS=		${CICAP_USER}
+GROUPS=		${CICAP_GROUP}
+
+MAN8=		c-icap-client.8 \
+		c-icap-config.8 \
+		c-icap-libicapapi-config.8 \
+		c-icap-mkbdb.8 \
+		c-icap-stretch.8 \
+		c-icap.8
+
+CONFIGURE_ARGS+=	--enable-static
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MBDB}
+USE_BDB=	yes
+.endif
+
+.if ${PORT_OPTIONS:MIPV6}
+CONFIGURE_ARGS+=	--enable-ipv6
+.else
+CONFIGURE_ARGS+=	--disable-ipv6
+.endif
+
+.if ${PORT_OPTIONS:MLARGE_FILES}
+CONFIGURE_ARGS+=	--enable-large-files
+.else
+CONFIGURE_ARGS+=	--disable-large-files
+.endif
+
+.if ${PORT_OPTIONS:MLDAP}
+USE_OPENLDAP=	YES
+.endif
+
+.if ${PORT_OPTIONS:MPERL}
+USE_PERL5=	yes
+.endif
 
 .include <bsd.port.pre.mk>
 
-LOG_DIR=	/var/log/c_icap
-TMP_DIR=	/var/tmp
-RUN_DIR=	/var/run
-PLIST_SUB+=	LOG_DIR=${LOG_DIR} RUN_DIR=${RUN_DIR}
+.if ${PORT_OPTIONS:MBDB}
+CFLAGS+=	-I${BDB_INCLUDE_DIR}
+LDFLAGS+=	-L${BDB_LIB_DIR}
+CONFIGURE_ARGS+=	--with-bdb=yes
+PLIST_SUB+=	BDB=""
+.else
+CONFIGURE_ARGS+=	--with-bdb=no
+PLIST_SUB+=	BDB="@comment "
+.endif
 
-SUB_FILES=	pkg-install pkg-deinstall
-SUB_LIST=	LOG_DIR=${LOG_DIR} TMP_DIR=${TMP_DIR} RUN_DIR=${RUN_DIR}
+.if ${PORT_OPTIONS:MLDAP}
+CONFIGURE_ARGS+=	--with-ldap=yes
+PLIST_SUB+=	LDAP=""
+.else
+CONFIGURE_ARGS+=	--with-ldap=no
+PLIST_SUB+=	LDAP="@comment "
+.endif
 
-.if defined(WITH_PERL)
-USE_PERL5=	yes
+.if ${PORT_OPTIONS:MPERL}
 PLIST_SUB+=	PERL=""
 CONFIGURE_ARGS+=	--with-perl=${PERL}
 .else
@@ -47,51 +98,26 @@ PLIST_SUB+=	PERL="@comment "
 CONFIGURE_ARGS+=	--without-perl
 .endif
 
-.if !defined(WITHOUT_CLAMAV)
-LIB_DEPENDS+=	clamav.7:${PORTSDIR}/security/clamav
-PLIST_SUB+=	CLAMAV=""
-CONFIGURE_ARGS+=	--with-clamav
-LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
-.else
-PLIST_SUB+=	CLAMAV="@comment "
-CONFIGURE_ARGS+=	--without-clamav
-.endif
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if defined(WITH_LARGE_FILES)
-CONFIGURE_ARGS+=	--enable-large-files
-.else
-CONFIGURE_ARGS+=	--disable-large-files
-.endif
+LOG_DIR=	/var/log/c-icap
+RUN_DIR=	/var/run/c-icap
+PLIST_SUB+=	LOG_DIR=${LOG_DIR} RUN_DIR=${RUN_DIR}
 
-.if defined(WITH_IPV6)
-CONFIGURE_ARGS+=	--enable-ipv6
-.else
-CONFIGURE_ARGS+=	--disable-ipv6
-.endif
+SUB_FILES=	pkg-install pkg-deinstall
+SUB_LIST=	CICAP_USER=${CICAP_USER} CICAP_GROUP=${CICAP_GROUP} \
+		LOG_DIR=${LOG_DIR} RUN_DIR=${RUN_DIR}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|User wwwrun|User cicap|g' \
-		-e 's|Group nobody|Group cicap|g' \
-		-e 's|/var/run|${RUN_DIR}|g' \
-		-e 's|/var/tmp|${TMP_DIR}|g' \
-		-e 's|/var/log/c_icap|${LOG_DIR}|g' \
-		${WRKSRC}/c-icap.conf ${WRKSRC}/c-icap.conf.in
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
-		-e 's|icap_stretch_CFLAGS = -Iinclude/|icap_stretch_CFLAGS = -Iinclude/ ${PTHREAD_CFLAGS}|g' \
-		${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.am
-.if !defined(WITH_PERL)
-	@${REINPLACE_CMD} -e 's|\(^Module perl\)|\#\1|g' \
-	${WRKSRC}/c-icap.conf.in
-.endif
-.if !defined(WITH_CLAMAV)
-	@${REINPLACE_CMD} -e 's|\(^Service antivirus\)|\#\1|g' \
-		-e 's|\(^srv_clamav\)|\#\1|g' \
+	@${REINPLACE_CMD} \
+		-e 's|@prefix@/var/log|/var/log/c-icap|g' \
 		${WRKSRC}/c-icap.conf.in
+.if ${PORT_OPTIONS:MPOSIXSEM}
+	@${REINPLACE_CMD} \
+		-e 's|@SYSV_IPC@|0|g' \
+		${WRKSRC}/include/c-icap-conf.h.in
 .endif
-
-pre-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@[ -f ${PREFIX}/etc/c-icap.conf ] || \

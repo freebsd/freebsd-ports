@@ -237,5 +237,6 @@ hadoop:*:955:
 pandora:*:956:
 razorback:*:957:
 gnunet:*:958:
+c_icap:*:959:
 nogroup:*:65533:
 nobody:*:65534:
