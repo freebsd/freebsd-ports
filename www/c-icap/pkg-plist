@@ -5,13 +5,12 @@ bin/c-icap-config
 bin/c-icap-libicapapi-config
 %%BDB%%bin/c-icap-mkbdb
 bin/c-icap-stretch
-@unexec if cmp -s %D/etc/c-icap.conf %D/etc/c-icap.conf.default; then rm -f %D/etc/c-icap.conf; fi
-etc/c-icap.conf.default
-@exec [ -f %B/c-icap.conf ] || cp -p %%PREFIX%%/%F %B/c-icap.conf
-@unexec if cmp -s %D/etc/c-icap.magic %D/etc/c-icap.magic.default; then rm -f %D/etc/c-icap.magic; fi
-etc/c-icap.magic.default
-@exec [ -f %B/c-icap.magic ] || cp -p %%PREFIX%%/%F %B/c-icap.magic
-@unexec [ ! -f %%RUN_DIR%%/c-icap.pid ] || %D/etc/rc.d/c_icap stop
+@unexec if cmp -s %D/etc/c-icap/c-icap.conf %D/etc/c-icap/c-icap.conf.default; then rm -f %D/etc/c-icap/c-icap.conf; fi
+etc/c-icap/c-icap.conf.default
+@exec [ -f %B/c-icap.conf ] || cp %B/%f %B/c-icap.conf
+@unexec if cmp -s %D/etc/c-icap/c-icap.magic %D/etc/c-icap/c-icap.magic.default; then rm -f %D/etc/c-icap/c-icap.magic; fi
+etc/c-icap/c-icap.magic.default
+@exec [ -f %B/c-icap.magic ] || cp %B/%f %B/c-icap.magic
 include/c_icap/access.h
 include/c_icap/acl.h
 include/c_icap/array.h
@@ -69,3 +68,4 @@ lib/c_icap/sys_logger.so
 lib/libicapapi.la
 lib/libicapapi.so.2
 lib/libicapapi.so
+@dirrmtry etc/c-icap
