@@ -15,10 +15,10 @@ PKGNAMESUFFIX=	-legacy
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A systems administration tool for networks
-LATEST_LINK=	cfengine3-legacy
+LATEST_LINK=	cfengine32
 FETCH_BEFORE_ARGS=   -o ${DISTDIR}/${DISTFILES}
 
-CONFLICTS=      cfengine-[23]*
+CONFLICTS=      cfengine-[2]* cfengine-3.[34]* cfengine-devel-*
 
 USE_RC_SUBR=	cf-execd cf-serverd
 
