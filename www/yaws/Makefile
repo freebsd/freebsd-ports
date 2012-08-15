@@ -26,10 +26,6 @@ ONLY_FOR_ARCHS=	i386 amd64 sparc64
 MAN1=		yaws.1
 MAN5=		yaws.conf.5 yaws_api.5 yaws_soap_lib.5
 
-OPTIONS_DEFINE=	SENDFILE
-SENDFILE_DESC=	Use native sendfile(2) interface
-OPTIONS_DEFAULT=SENDFILE
-
 APPDIR=${PREFIX}/lib/erlang/lib/yaws-${PORTVERSION}
 
 SUB_FILES=      pkg-message
@@ -37,14 +33,6 @@ SUB_FILES=      pkg-message
 CONFIGURE_ARGS+=--prefix=${PREFIX} --localstatedir=/var
 
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MSENDFILE}
-PLIST_SUB+=	SENDFILE=""
-CONFIGURE_ARGS+=--enable-sendfile
-.else
-CONFIGURE_ARGS+=--disable-sendfile
-PLIST_SUB+=	SENDFILE="@comment "
-.endif
 
 post-extract:
 	@${FIND} ${WRKSRC} -name .empty -delete
