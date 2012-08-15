@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	typo3
-PORTVERSION=	4.7.2
+PORTVERSION=	4.7.4
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
 
@@ -31,31 +31,30 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 DISTFILES+=	${TYPO3SRC}${EXTRACT_SUFX} ${TYPO3DUMMY}${EXTRACT_SUFX}
 
-OPTIONS=	CURL "Configure with cURL support" off \
-		GD "Configure with GDlib/freetype support" off \
-		IMAGICK "Configure with ImageMagick support" off \
-		MBSTRING "Configure with mbstring support" off \
-		ZLIB "Configure with zlib support" off
+OPTIONS_DEFINE=	CURL GD IMAGICK MBSTRING ZLIB
+IMAGICK_DESC=	${IMAGEMAGICK_DESC}
+MBSTRING_DESC=	${MULTIBYTE_DESC}
+GD_DESC=	GDlib/freetype support
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_CURL)
+.if ${PORT_OPTIONS:MCURL}
 USE_PHP+=	curl
 .endif
 
-.if defined(WITH_GD)
+.if ${PORT_OPTIONS:MGD}
 USE_PHP+=	gd
 .endif
 
-.if defined(WITH_IMAGICK)
+.if ${PORT_OPTIONS:MIMAGICK}
 RUN_DEPENDS+=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 
-.if defined(WITH_MBSTRING)
+.if ${PORT_OPTIONS:MMBSTRING}
 USE_PHP+=	mbstring
 .endif
 
-.if defined(WITH_ZLIB)
+.if ${PORT_OPTIONS:MZLIB}
 USE_PHP+=	zlib
 .endif
 

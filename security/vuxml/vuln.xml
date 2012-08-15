@@ -52,6 +52,56 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="48bcb4b2-e708-11e1-a59d-000d601460a4">
+    <topic>typo3 -- Multiple vulernabilities in TYPO3 Core</topic>
+    <affects>
+      <package>
+	<name>typo3</name>
+	<range><ge>4.5.0</ge><lt>4.5.19</lt></range>
+	<range><ge>4.6.0</ge><lt>4.6.12</lt></range>
+	<range><ge>4.7.0</ge><lt>4.7.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Typo Security Team reports:</p>
+	<blockquote cite="https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2012-004/">
+	  <p>It has been discovered that TYPO3 Core is vulnerable to Cross-Site
+	    Scripting, Information Disclosure, Insecure Unserialize leading to
+	    Arbitrary Code Execution.</p>
+	  <p>TYPO3 Backend Help System - Due to a missing signature (HMAC) for a
+	    parameter in the view_help.php file, an attacker could unserialize
+	    arbitrary objects within TYPO3. We are aware of a working exploit,
+	    which can lead to arbitrary code execution. A valid backend user
+	    login or multiple successful cross site request forgery attacks are
+	    required to exploit this vulnerability.</p>
+	  <p>TYPO3 Backend - Failing to properly HTML-encode user input in
+	    several places, the TYPO3 backend is susceptible to Cross-Site
+	    Scripting. A valid backend user is required to exploit these
+	    vulnerabilities.</p>
+	  <p>TYPO3 Backend - Accessing the configuration module discloses the
+	    Encryption Key. A valid backend user with access to the
+	    configuration module is required to exploit this vulnerability.</p>
+	  <p>TYPO3 HTML Sanitizing API - By not removing several HTML5
+	    JavaScript events, the API method t3lib_div::RemoveXSS() fails to
+	    filter specially crafted HTML injections, thus is susceptible to
+	    Cross-Site Scripting. Failing to properly encode for JavaScript the
+	    API method t3lib_div::quoteJSvalue(), it is susceptible to Cross-Site
+	    Scripting.</p>
+	  <p>TYPO3 Install Tool - Failing to properly sanitize user input, the
+	    Install Tool is susceptible to Cross-Site Scripting.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2012-004/</url>
+    </references>
+    <dates>
+      <discovery>2012-08-15</discovery>
+      <entry>2012-08-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="83f9e943-e664-11e1-a66d-080027ef73ec">
     <topic>fetchmail -- two vulnerabilities in NTLM authentication</topic>
     <affects>
