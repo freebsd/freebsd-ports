@@ -1,7 +1,9 @@
-libexec/xfce4/panel-plugins/xfce4-weather-plugin
+lib/xfce4/panel/plugins/libweather.la
+lib/xfce4/panel/plugins/libweather.so
 share/icons/hicolor/48x48/apps/xfce4-weather.png
 share/locale/ar/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/ast/LC_MESSAGES/xfce4-weather-plugin.mo
+share/locale/be/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/ca/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/da/LC_MESSAGES/xfce4-weather-plugin.mo
@@ -13,14 +15,18 @@ share/locale/eu/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/fi/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/fr/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/gl/LC_MESSAGES/xfce4-weather-plugin.mo
+share/locale/he/LC_MESSAGES/xfce4-weather-plugin.mo
+share/locale/hr/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/hu/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/id/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/it/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/ja/LC_MESSAGES/xfce4-weather-plugin.mo
+share/locale/ko/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/lt/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/lv/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/nb/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/nl/LC_MESSAGES/xfce4-weather-plugin.mo
+share/locale/nn/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/pa/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/pl/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/pt/LC_MESSAGES/xfce4-weather-plugin.mo
@@ -29,6 +35,7 @@ share/locale/ru/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/sk/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/sq/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/sv/LC_MESSAGES/xfce4-weather-plugin.mo
+share/locale/te/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/tr/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/ug/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/uk/LC_MESSAGES/xfce4-weather-plugin.mo
@@ -36,60 +43,39 @@ share/locale/ur/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/ur_PK/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-weather-plugin.mo
-share/xfce4/panel-plugins/weather.desktop
-share/xfce4/weather/icons/liquid/0.png
-share/xfce4/weather/icons/liquid/1.png
-share/xfce4/weather/icons/liquid/10.png
-share/xfce4/weather/icons/liquid/11.png
-share/xfce4/weather/icons/liquid/12.png
-share/xfce4/weather/icons/liquid/13.png
-share/xfce4/weather/icons/liquid/14.png
-share/xfce4/weather/icons/liquid/15.png
-share/xfce4/weather/icons/liquid/16.png
-share/xfce4/weather/icons/liquid/17.png
-share/xfce4/weather/icons/liquid/18.png
-share/xfce4/weather/icons/liquid/19.png
-share/xfce4/weather/icons/liquid/2.png
-share/xfce4/weather/icons/liquid/20.png
-share/xfce4/weather/icons/liquid/21.png
-share/xfce4/weather/icons/liquid/22.png
-share/xfce4/weather/icons/liquid/23.png
-share/xfce4/weather/icons/liquid/24.png
-share/xfce4/weather/icons/liquid/25.png
-share/xfce4/weather/icons/liquid/26.png
-share/xfce4/weather/icons/liquid/27.png
-share/xfce4/weather/icons/liquid/28.png
-share/xfce4/weather/icons/liquid/29.png
-share/xfce4/weather/icons/liquid/3.png
-share/xfce4/weather/icons/liquid/30.png
-share/xfce4/weather/icons/liquid/31.png
-share/xfce4/weather/icons/liquid/32.png
-share/xfce4/weather/icons/liquid/33.png
-share/xfce4/weather/icons/liquid/34.png
-share/xfce4/weather/icons/liquid/35.png
-share/xfce4/weather/icons/liquid/36.png
-share/xfce4/weather/icons/liquid/37.png
-share/xfce4/weather/icons/liquid/38.png
-share/xfce4/weather/icons/liquid/39.png
-share/xfce4/weather/icons/liquid/4.png
-share/xfce4/weather/icons/liquid/40.png
-share/xfce4/weather/icons/liquid/41.png
-share/xfce4/weather/icons/liquid/42.png
-share/xfce4/weather/icons/liquid/43.png
-share/xfce4/weather/icons/liquid/44.png
-share/xfce4/weather/icons/liquid/45.png
-share/xfce4/weather/icons/liquid/46.png
-share/xfce4/weather/icons/liquid/47.png
-share/xfce4/weather/icons/liquid/5.png
-share/xfce4/weather/icons/liquid/6.png
-share/xfce4/weather/icons/liquid/7.png
-share/xfce4/weather/icons/liquid/8.png
-share/xfce4/weather/icons/liquid/9.png
-share/xfce4/weather/icons/liquid/99.png
+share/xfce4/panel/plugins/weather.desktop
+share/xfce4/weather/icons/liquid/CLOUD-night.png
+share/xfce4/weather/icons/liquid/CLOUD.png
+share/xfce4/weather/icons/liquid/FOG.png
+share/xfce4/weather/icons/liquid/LIGHTCLOUD-night.png
+share/xfce4/weather/icons/liquid/LIGHTCLOUD.png
+share/xfce4/weather/icons/liquid/LIGHTRAIN.png
+share/xfce4/weather/icons/liquid/LIGHTRAINSUN-night.png
+share/xfce4/weather/icons/liquid/LIGHTRAINSUN.png
+share/xfce4/weather/icons/liquid/LIGHTRAINTHUNDER.png
+share/xfce4/weather/icons/liquid/LIGHTRAINTHUNDERSUN-night.png
+share/xfce4/weather/icons/liquid/LIGHTRAINTHUNDERSUN.png
+share/xfce4/weather/icons/liquid/NODATA.png
+share/xfce4/weather/icons/liquid/PARTLYCLOUD-night.png
+share/xfce4/weather/icons/liquid/PARTLYCLOUD.png
+share/xfce4/weather/icons/liquid/RAIN.png
+share/xfce4/weather/icons/liquid/RAINTHUNDER.png
+share/xfce4/weather/icons/liquid/SLEET.png
+share/xfce4/weather/icons/liquid/SLEETSUN.png
+share/xfce4/weather/icons/liquid/SLEETSUNTHUNDER.png
+share/xfce4/weather/icons/liquid/SLEETTHUNDER.png
+share/xfce4/weather/icons/liquid/SNOW.png
+share/xfce4/weather/icons/liquid/SNOWSUN-night.png
+share/xfce4/weather/icons/liquid/SNOWSUN.png
+share/xfce4/weather/icons/liquid/SNOWSUNTHUNDER.png
+share/xfce4/weather/icons/liquid/SNOWTHUNDER.png
+share/xfce4/weather/icons/liquid/SUN-night.png
+share/xfce4/weather/icons/liquid/SUN.png
 @dirrm share/xfce4/weather/icons/liquid
 @dirrm share/xfce4/weather/icons
 @dirrm share/xfce4/weather
-@dirrmtry share/xfce4/panel-plugins
+@dirrmtry share/xfce4/panel/plugins
+@dirrmtry share/xfce4/panel
 @dirrmtry share/xfce4
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
@@ -99,5 +85,8 @@ share/xfce4/weather/icons/liquid/99.png
 @dirrmtry share/locale/ur_PK
 @dirrmtry share/locale/ur/LC_MESSAGES
 @dirrmtry share/locale/ur
-@dirrmtry libexec/xfce4/panel-plugins
-@dirrmtry libexec/xfce4
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry lib/xfce4/panel/plugins
+@dirrmtry lib/xfce4/panel
+@dirrmtry lib/xfce4
