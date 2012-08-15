@@ -1,7 +1,22 @@
-c-icap is an implementation of an ICAP server. It can be used with HTTP proxies
-that support the ICAP protocol such as the Shweby or Squid proxy server.
-c-icap allows the addition of modules, which can extend its functionality and
-services. For instance, such modules can be loggers, authenticators and
-authentication methods or access controlers.
+From the c-icap homepage:
 
-WWW: http://www.chtsanti.net/c-icap
+c-icap is an implementation of an ICAP server. It can be used with HTTP
+proxies that support the ICAP protocol to implement content adaptation and
+filtering services.
+
+Most of the commercial HTTP proxies must support the ICAP protocol. The open
+source Squid 3.x proxy server supports it. 
+
+Major features:
+
+    basic C API for developing custom content adaptation and filtering services
+    plugins interface
+    LDAP integration
+    simple ICAP client API
+
+Currently the following services have been implemented for the c-icap server:
+
+    Web antivirus service, using the clamav open-source antivirus engine
+    basic URL filtering service
+
+WWW: http://c-icap.sourceforge.net/

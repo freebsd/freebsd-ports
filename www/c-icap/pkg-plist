@@ -1,7 +1,10 @@
 @comment $FreeBSD$
 bin/c-icap
-bin/icap-client
-bin/icap-stretch
+bin/c-icap-client
+bin/c-icap-config
+bin/c-icap-libicapapi-config
+%%BDB%%bin/c-icap-mkbdb
+bin/c-icap-stretch
 @unexec if cmp -s %D/etc/c-icap.conf %D/etc/c-icap.conf.default; then rm -f %D/etc/c-icap.conf; fi
 etc/c-icap.conf.default
 @exec [ -f %B/c-icap.conf ] || cp -p %%PREFIX%%/%F %B/c-icap.conf
@@ -10,17 +13,22 @@ etc/c-icap.magic.default
 @exec [ -f %B/c-icap.magic ] || cp -p %%PREFIX%%/%F %B/c-icap.magic
 @unexec [ ! -f %%RUN_DIR%%/c-icap.pid ] || %D/etc/rc.d/c_icap stop
 include/c_icap/access.h
+include/c_icap/acl.h
+include/c_icap/array.h
 include/c_icap/body.h
-include/c_icap/c-icap.h
 include/c_icap/c-icap-conf.h
+include/c_icap/c-icap.h
+include/c_icap/cache.h
 include/c_icap/cfg_param.h
 include/c_icap/ci_threads.h
 include/c_icap/commands.h
 include/c_icap/debug.h
 include/c_icap/dlib.h
 include/c_icap/filetype.h
+include/c_icap/hash.h
 include/c_icap/header.h
 include/c_icap/log.h
+include/c_icap/lookup_table.h
 include/c_icap/mem.h
 include/c_icap/module.h
 include/c_icap/net_io.h
@@ -30,26 +38,34 @@ include/c_icap/request.h
 include/c_icap/service.h
 include/c_icap/shared_mem.h
 include/c_icap/simple_api.h
+include/c_icap/stats.h
+include/c_icap/txtTemplate.h
+include/c_icap/txt_format.h
+include/c_icap/types_ops.h
 include/c_icap/util.h
 @dirrm include/c_icap
+%%BDB%%lib/c_icap/bdb_tables.a
+%%BDB%%lib/c_icap/bdb_tables.la
+%%BDB%%lib/c_icap/bdb_tables.so
+lib/c_icap/dnsbl_tables.a
+lib/c_icap/dnsbl_tables.la
+lib/c_icap/dnsbl_tables.so
+%%LDAP%%lib/c_icap/ldap_module.a
+%%LDAP%%lib/c_icap/ldap_module.la
+%%LDAP%%lib/c_icap/ldap_module.so
 %%PERL%%lib/c_icap/perl_handler.a
 %%PERL%%lib/c_icap/perl_handler.la
 %%PERL%%lib/c_icap/perl_handler.so
-%%CLAMAV%%lib/c_icap/srv_clamav.a
-%%CLAMAV%%lib/c_icap/srv_clamav.la
-%%CLAMAV%%lib/c_icap/srv_clamav.so
 lib/c_icap/srv_echo.a
 lib/c_icap/srv_echo.la
 lib/c_icap/srv_echo.so
+lib/c_icap/srv_ex206.a
+lib/c_icap/srv_ex206.la
+lib/c_icap/srv_ex206.so
 lib/c_icap/sys_logger.a
 lib/c_icap/sys_logger.la
 lib/c_icap/sys_logger.so
-lib/c_icap/srv_url_check.a
-lib/c_icap/srv_url_check.so
-lib/c_icap/srv_url_check.la
 @dirrm lib/c_icap
 lib/libicapapi.la
-lib/libicapapi.so.0
+lib/libicapapi.so.2
 lib/libicapapi.so
-@unexec rmdir %%RUN_DIR%%/c-icap 2>/dev/null || true
-@unexec rmdir %%LOG_DIR%% 2>/dev/null || true
