@@ -14,6 +14,7 @@ MASTER_SITES=	http://cfengine.com/source-code/download?file=
 PKGNAMESUFFIX=	-legacy
 
 MAINTAINER=	cy@FreeBSD.org
+#		gjb@FreeBSD.org is an alternate committer for this port
 COMMENT=	A systems administration tool for networks
 LATEST_LINK=	cfengine32
 FETCH_BEFORE_ARGS=   -o ${DISTDIR}/${DISTFILES}
