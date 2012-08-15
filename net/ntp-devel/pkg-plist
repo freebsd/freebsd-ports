@@ -34,7 +34,6 @@ sbin/sntp
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver16.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver18.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver19.html
-%%PORTDOCS%%%%DOCSDIR%%/drivers/driver2.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver20.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver22.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver26.html
