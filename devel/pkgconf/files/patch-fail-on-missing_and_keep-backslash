@@ -1,0 +1,63 @@
+diff --git argvsplit.c argvsplit.c
+index cbfb55d..e9ed7b6 100644
+--- argvsplit.c
++++ argvsplit.c
+@@ -92,6 +92,8 @@ pkg_argv_split(const char *src, int *argc, char ***argv)
+ 					free(argv);
+ 					free(buf);
+ 					return -1;
++				} else {
++					*dst_iter++ = '\\';
+ 				}
+ 			default:
+ 				*dst_iter++ = *src_iter;
+diff --git fileio.c fileio.c
+index f1247c9..2c6b9e9 100644
+--- fileio.c
++++ fileio.c
+@@ -73,7 +73,14 @@ pkg_fgetline(char *line, size_t size, FILE *stream)
+ 			break;
+ 		}
+ 		else
++		{
++			if (quoted) {
++				*s++ = '\\';
++				quoted = false;
++			}
+ 			*s++ = c;
++		}
++
+ 	}
+ 
+ 	*s = '\0';
+diff --git tests/lib1/quotes.pc tests/lib1/quotes.pc
+new file mode 100644
+index 0000000..1aee256
+--- /dev/null
++++ tests/lib1/quotes.pc
+@@ -0,0 +1,10 @@
++prefix=/usr
++exec_prefix=${prefix}
++libdir=${prefix}/lib
++includedir=${prefix}/include
++
++Name: quotes
++Description: A testing pkg-config file
++Version: 1.2.3
++Libs: -L${libdir} -lfoo
++Cflags: -DQUOTED=\"bla\"
+diff --git tests/run.sh.in tests/run.sh.in
+index 231af22..ee50b3d 100644
+--- tests/run.sh.in
++++ tests/run.sh.in
+@@ -167,6 +167,10 @@ run_test "PKG_CONFIG_PATH=${selfdir}/lib1 ${1} --max-version 2.0 'foo '; echo \$
+ run_test "PKG_CONFIG_PATH=${selfdir}/lib1 ${1} --cflags missing-require; echo \$?" \
+ 	'1'
+ 
++# test quoted #35
++run_test "PKG_CONFIG_PATH=${selfdir}/lib1 ${1} --cflags quotes" \
++	"-DQUOTED=\\\"bla\\\""
++
+ # 10) tests for internal getopt implementation with options at the end
+ if [ "x@STRICT_MODE@" = "xno" ]; then
+ 	run_test "PKG_CONFIG_PATH=${selfdir}/lib1 ${1} foo --libs" \
