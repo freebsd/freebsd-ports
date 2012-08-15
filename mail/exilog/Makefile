@@ -20,7 +20,6 @@ RUN_DEPENDS=	p5-Net-Netmask>=0:${PORTSDIR}/net-mgmt/p5-Net-Netmask
 
 USE_PERL5=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 # Default sql backend
 WITH_SQL_BACKEND?=	mysql
@@ -58,6 +57,9 @@ PORTDOC_FILES=	doc/Changelog \
 		doc/mysql-db-script.sql \
 		doc/pgsql-db-script.sql
 .endif
+
+post-extract:
+	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's,$$RealBin/exilog.conf,${PREFIX}/etc/exilog.conf,' ${WRKSRC}/exilog_config.pm

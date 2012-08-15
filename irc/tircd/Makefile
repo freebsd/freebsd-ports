@@ -24,13 +24,14 @@ RUN_DEPENDS=	p5-JSON-Any>=0:${PORTSDIR}/converters/p5-JSON-Any \
 		p5-POE>=0:${PORTSDIR}/devel/p5-POE \
 		p5-POE-Filter-IRCD>=0:${PORTSDIR}/irc/p5-POE-Filter-IRCD
 
-WRKSRC=		${WRKDIR}/tircd
-
 USE_PERL5=	yes
 NO_BUILD=	yes
 
 MAN1=		tircd.1
 USE_RC_SUBR=	tircd
+
+post-extract:
+	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 post-patch:
 	${REINPLACE_CMD} -e '1s,^#!/usr/bin/perl,#!${PREFIX}/bin/perl,' \

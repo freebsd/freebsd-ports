@@ -14,10 +14,12 @@ COMMENT=	Combined DHCP/DNS server for small LANs
 
 USE_DOS2UNIX=	yes
 USE_RC_SUBR=	dualserver
-WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	sbin/dualserver etc/dualserver.conf.sample
 
 .include <bsd.port.pre.mk>
+
+post-extract:
+	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 pre-patch:
 	${REINPLACE_CMD} 's|/etc/dualserver.ini|${PREFIX}/etc/dualserver.conf|' ${WRKSRC}/dualserver.cpp
