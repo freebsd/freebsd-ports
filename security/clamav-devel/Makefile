@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20120629
+PORTVERSION=	20120815
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		LOCAL/garga/clamav-devel
