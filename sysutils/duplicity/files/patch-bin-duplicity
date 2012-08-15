@@ -1,0 +1,11 @@
+--- bin/duplicity.orig	2012-05-22 15:58:53.000000000 +0100
++++ bin/duplicity	2012-08-12 14:32:01.920372871 +0100
+@@ -321,6 +321,8 @@
+ 
+         # Settings are same, let's check passphrase itself if we are encrypted
+         if globals.encryption:
++            if not globals.gpg_profile.passphrase:
++                globals.gpg_profile.passphrase = get_passphrase(1, "verify")
+             fileobj = restore_get_enc_fileobj(globals.backend, vol1_filename,
+                                               manifest.volume_info_dict[1])
+             fileobj.close()
