@@ -37,8 +37,6 @@ DOC_DISTFILES=	armstrong_thesis_2003.pdf:joe		\
 		mnesia_overview.pdf:publications	\
 		programming_rules.pdf:erlangse
 
-CONFLICTS?=	erlang-lite-r[0-9]*
-
 SUB_FILES=	pkg-message
 SUB_LIST=	TOOLS_VSN=${TOOLS_VSN}
 
