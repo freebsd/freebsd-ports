@@ -21,7 +21,7 @@ you update your ports collection, before attempting any port upgrades.
 
   # portmaster -o lang/erlang lang/erlang-lite
   or
-  # portupgrade -fo lang/erlang erlang-lite  
+  # portupgrade -fo lang/erlang erlang-lite
 
 20120810:
   AFFECTS: users of net-p2p/transmission-gtk2
@@ -89,7 +89,7 @@ you update your ports collection, before attempting any port upgrades.
   must be built with certain options set (default).
 
   - graphics/png has to be installed with APNG option
-  
+
   - databases/sqlite3 has to be installed with SECURE_DELETE, THREADSAFE,
     FTS3, UNLOCK_NOTIFY options
 
