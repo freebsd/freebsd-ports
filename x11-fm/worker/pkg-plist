@@ -3,6 +3,7 @@ share/pixmaps/WorkerIcon.xpm
 share/pixmaps/WorkerIcon16.xpm
 share/pixmaps/WorkerIcon32.xpm
 share/pixmaps/WorkerIcon48.xpm
+share/applications/worker.desktop
 %%DATADIR%%/catalogs/cesky.catalog
 %%DATADIR%%/catalogs/cesky.catalog.utf8
 %%DATADIR%%/catalogs/cesky.catalog.coms
@@ -57,6 +58,20 @@ share/pixmaps/WorkerIcon48.xpm
 %%DATADIR%%/catalogs/nederlands.catalog.coms.utf8
 %%DATADIR%%/catalogs/nederlands.catalog.flags
 %%DATADIR%%/catalogs/nederlands.catalog.flags.utf8
+%%DATADIR%%/catalogs/latvian.catalog
+%%DATADIR%%/catalogs/latvian.catalog.utf8
+%%DATADIR%%/catalogs/latvian.catalog.coms
+%%DATADIR%%/catalogs/latvian.catalog.coms.utf8
+%%DATADIR%%/catalogs/latvian.catalog.flags
+%%DATADIR%%/catalogs/latvian.catalog.flags.utf8
+%%DATADIR%%/catalogs/ukrainian.catalog
+%%DATADIR%%/catalogs/ukrainian.catalog.utf8
+%%DATADIR%%/catalogs/ukrainian.catalog.coms
+%%DATADIR%%/catalogs/ukrainian.catalog.coms.utf8
+%%DATADIR%%/catalogs/ukrainian.catalog.flags
+%%DATADIR%%/catalogs/ukrainian.catalog.flags.utf8
+%%DATADIR%%/hints-english
+%%DATADIR%%/hints-english.utf8
 %%DATADIR%%/config-slovensky
 %%DATADIR%%/config-slovensky.utf8
 %%DATADIR%%/config-deutsch
@@ -70,6 +85,7 @@ share/pixmaps/WorkerIcon48.xpm
 %%DATADIR%%/scripts/displaywrapper_worker
 %%DATADIR%%/scripts/xeditor
 %%DATADIR%%/scripts/xliwrapper_worker
+@dirrmtry share/applications
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/catalogs
 @dirrm %%DATADIR%%
