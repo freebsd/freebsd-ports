@@ -1,10 +1,10 @@
---- cmake/FindPython.cmake.orig	2010-12-20 18:43:34.102131358 +0000
-+++ cmake/FindPython.cmake	2010-12-20 19:16:11.918184057 +0000
+--- cmake/FindPython.cmake.orig	2012-08-11 14:06:55.086663842 +0100
++++ cmake/FindPython.cmake	2012-08-11 14:23:55.301504695 +0100
 @@ -34,8 +34,7 @@
  ENDIF(PYTHON_FOUND)
  
  FIND_PROGRAM(PYTHON_EXECUTABLE
--  NAMES python python2.7 python2.6 python2.5 python2.4 python2.3 python2.2
+-  NAMES python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python
 -  PATHS /usr/bin /usr/local/bin /usr/pkg/bin
 +  NAMES ${BSD_PYTHON_CMD}
    )
@@ -12,9 +12,9 @@
  IF(PYTHON_EXECUTABLE)
 @@ -65,7 +64,7 @@
      )
-   
+ 
    FIND_LIBRARY(PYTHON_LIBRARY
--    NAMES python python2.7 python2.6 python2.5 python2.4 python2.3 python2.2
+-    NAMES python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python
 +    NAMES ${BSD_PYTHON_VER}
      PATHS ${PYTHON_POSSIBLE_LIB_PATH}
      )

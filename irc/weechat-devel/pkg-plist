@@ -48,6 +48,7 @@ libdata/pkgconfig/weechat.pc
 %%DOCUMENTATION%%share/doc/weechat/weechat_user.en.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_user.fr.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_user.it.html
+%%DOCUMENTATION%%share/doc/weechat/weechat_user.ja.html
 %%NLS%%share/locale/cs/LC_MESSAGES/weechat.mo
 %%NLS%%share/locale/de/LC_MESSAGES/weechat.mo
 %%NLS%%share/locale/es/LC_MESSAGES/weechat.mo
