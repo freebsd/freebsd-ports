@@ -20,8 +20,8 @@ LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu \
 		js:${PORTSDIR}/lang/spidermonkey \
 		curl:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	${LOCALBASE}/bin/help2man:${PORTSDIR}/misc/help2man \
-		erlc:${ERLANG_PORT}
-RUN_DEPENDS=	erl:${ERLANG_PORT}
+		erlc:${PORTSDIR}/lang/erlang
+RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
 USERS=		couchdb
 GROUPS=		couchdb
@@ -38,18 +38,9 @@ CONFIGURE_ARGS=	--with-erlang=${LOCALBASE}/lib/erlang/usr/include \
 		--with-js-lib=${LOCALBASE}/lib
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
-OPTIONS_DEFINE=	ERLANG
-ERLANG_DESC=	Use lang/erlang instead of lang/erlang-lite
-
 MAN1=	couchdb.1 couchjs.1
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MERLANG}
-ERLANG_PORT=	${PORTSDIR}/lang/erlang
-.else
-ERLANG_PORT=	${PORTSDIR}/lang/erlang-lite
-.endif
 
 # This stanza could be removed around version 1.7
 pre-everything::
