@@ -7,7 +7,7 @@
 
 PORTNAME=	weechat
 PORTVERSION=	0.3.8
-PORTREVISION=	1
+PORTREVISION=	2	
 CATEGORIES=	irc
 MASTER_SITES=	http://weechat.org/files/src/
 
@@ -21,15 +21,13 @@ CONFLICTS=	weechat-devel-0.*
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_NCURSES=	yes
-WITH_NCURSES_PORT=	yes
 USE_CMAKE=	yes
-CMAKE_ARGS+=	-DNCURSES_INCLUDE_PATH=${LOCALBASE}/include/ncurses
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 WANT_PERL=	yes
 
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 
-OPTIONS_DEFINE=	RUBY PYTHON PERL TCL LUA GUILE CHARSET BACKTRACE ASPELL GNUTLS NLS DOCUMENTATION SASL
+OPTIONS_DEFINE=	RUBY PYTHON PERL TCL LUA GUILE CHARSET BACKTRACE ASPELL GNUTLS NLS DOCUMENTATION SASL COLOR256
 OPTIONS_DEFAULT=CHARSET
 
 BACKTRACE_DESC=	Provide crash backtraces
@@ -41,6 +39,8 @@ PERL_DESC=	Perl scripting support
 PYTHON_DESC=	Python scripting support
 RUBY_DESC=	Ruby scripting support
 TCL_DESC=	Tcl scripting support
+SASL_DESC=	SASL with DH-Blowfish support
+COLOR256_DESC=	Use ncurses port for 256 color support
 
 .include <bsd.port.options.mk>
 
@@ -150,9 +150,14 @@ LIB_DEPENDS+=	execinfo:${PORTSDIR}/devel/libexecinfo
 LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
 PLIST_SUB+=	SASL=""
 .else
-CMAKE_ARGS+=	-DENABLE_SASL=no
+CMAKE_ARGS+=	-DENABLE_GCRYPT=no
 PLIST_SUB+=	SASL="@comment "
 .endif
+
+.if ${PORT_OPTIONS:MCOLOR256}                                      
+WITH_NCURSES_PORT=	yes                                        
+CMAKE_ARGS+=	-DNCURSES_INCLUDE_PATH=${LOCALBASE}/include/ncurses
+.endif                                                             
 
 MAN1=	weechat-curses.1
 
@@ -165,6 +170,17 @@ post-patch:
 .if empty(PORT_OPTIONS:MBACKTRACE)
 	@${REINPLACE_CMD} -e '/IF.*FreeBSD/,/ENDIF.*FreeBSD/d' ${WRKSRC}/src/core/CMakeLists.txt
 .endif
+
+pre-configure:                                                                                                            
+.if ${PORT_OPTIONS:MCOLOR256}                                                                                         
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "==> You have selected the ncurses 256 color option. Please ensure that"
+	@${ECHO_MSG} "==> the devel/ncurses port is built with the EXTCOLORS option enabled."                                                                                    
+	@${ECHO_MSG} "==>"                                                                                               
+	@${ECHO_MSG} "==> Press CTRL-C now if you would like to re-configure."                                                       
+	@${ECHO_MSG} ""                                                                                               
+	@sleep 5                                                                                                      
+.endif                                                                                                                
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/weechat-curses.1 ${MAN1PREFIX}/man/man1
