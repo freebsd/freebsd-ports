@@ -1,28 +1,29 @@
-From 6178c758c99bf6b1d9402489e8974ee3598675cf Mon Sep 17 00:00:00 2001
+From 79ef76d5538871a08ecec829f2332bd0e4399cbd Mon Sep 17 00:00:00 2001
 From: Alexander V. Chernikov <melifaro@ipfw.ru>
-Date: Thu, 22 Mar 2012 15:28:02 +0000
-Subject: [PATCH 1/1] * Implement general aggregation protocol, v5
+Date: Wed, 15 Aug 2012 08:32:08 +0000
+Subject: [PATCH 1/1] Implement general aggregation protocol,v6
 
 ---
  configure.in          |    4 +-
  doc/bird.conf.example |    9 +
+ doc/bird.sgml         |   56 +++
  filter/config.Y       |    2 +-
  filter/filter.h       |    7 +-
- filter/trie.c         |  111 +++++++-
+ filter/trie.c         |  111 +++++-
  nest/proto-hooks.c    |   11 +
  nest/proto.c          |    3 +
- nest/protocol.h       |    9 +-
+ nest/protocol.h       |   10 +-
  nest/rt-table.c       |   19 +-
  proto/agg/Doc         |    1 +
  proto/agg/Makefile    |    6 +
- proto/agg/agg.c       |  720 +++++++++++++++++++++++++++++++++++++++++++++++
- proto/agg/agg.h       |   87 ++++++
- proto/agg/config.Y    |  108 +++++++
- proto/bgp/attrs.c     |  748 +++++++++++++++++++++++++++++++++++++++++++++++++
- proto/bgp/bgp.c       |    7 +-
- proto/bgp/bgp.h       |    2 +
+ proto/agg/agg.c       |  847 +++++++++++++++++++++++++++++++++++++++
+ proto/agg/agg.h       |  123 ++++++
+ proto/agg/config.Y    |  117 ++++++
+ proto/bgp/attrs.c     | 1057 +++++++++++++++++++++++++++++++++++++++++++++++++
+ proto/bgp/bgp.c       |    8 +-
+ proto/bgp/bgp.h       |    5 +
  sysdep/autoconf.h.in  |    1 +
- 18 files changed, 1831 insertions(+), 24 deletions(-)
+ 19 files changed, 2373 insertions(+), 24 deletions(-)
  create mode 100644 proto/agg/Doc
  create mode 100644 proto/agg/Makefile
  create mode 100644 proto/agg/agg.c
@@ -30,23 +31,23 @@ Subject: [PATCH 1/1] * Implement general aggregation protocol, v5
  create mode 100644 proto/agg/config.Y
 
 diff --git a/configure.in b/configure.in
-index 46a6ecd..aff445a 100644
+index dd57ab5..ca9d72d 100644
 --- configure.in
 +++ configure.in
-@@ -43,11 +43,11 @@ AC_SUBST(srcdir_rel_mf)
+@@ -47,11 +47,11 @@ AC_SUBST(runtimedir)
  if test "$enable_ipv6" = yes ; then
  	ip=ipv6
- 	SUFFIX6=6
+ 	SUFFIX=6
 -	all_protocols=bgp,ospf,pipe,radv,rip,static
 +	all_protocols=bgp,ospf,pipe,radv,rip,static,agg
  else
  	ip=ipv4
- 	SUFFIX6=""
+ 	SUFFIX=""
 -	all_protocols=bgp,ospf,pipe,rip,static
 +	all_protocols=bgp,ospf,pipe,rip,static,agg
  fi
  
- if test "$with_protocols" = all ; then
+ if test "$given_suffix" = yes ; then
 diff --git a/doc/bird.conf.example b/doc/bird.conf.example
 index 5e07ab5..2cab8be 100644
 --- doc/bird.conf.example
@@ -67,8 +68,75 @@ index 5e07ab5..2cab8be 100644
  
  #protocol bgp {
  #	disabled;
+diff --git a/doc/bird.sgml b/doc/bird.sgml
+index 087a4eb..4be00c8 100644
+--- doc/bird.sgml
++++ doc/bird.sgml
+@@ -1115,6 +1115,62 @@ undefined value is regarded as empty clist for most purposes.
+ 
+ <chapt>Protocols
+ 
++<sect>Aggregator
++
++<p>Aggregator protocol is not a real routing protocol. It generates summary routes of
++given protocol type. Currently the only supported protocol is BGP.
++
++<sect1>Configuration
++
++<p>Main part of configuration contains one or more definitions of
++BGP ID and AS to generate summarized routes.
++
++<p> Nested aggregation routes are supported with the following limitations:
++Routes are always aggregated into longest-match summary route only. Summary routes
++does not aggregate more specific summary routes within the same protocol. If you need
++complex nested aggregation scenario you have to use several aggregation protocol instances
++to achieve this.
++
++
++<code>
++protocol aggregator &lt;name&gt; {
++	bgp id &lt;id&gt; as &lt;as&lt; {
++		aggregate address &lt;prefix&gt;;
++		aggregate address &lt;prefix&lt; mandatory list {
++			&lt;prefix&lt;,
++			&lt;prefix&lt;,
++			&lt;prefix&lt;
++			};
++		aggregate address &lt;prefix&gt; save attributes;
++	};
++}
++
++<p><descrip>
++	<tag>bgp id <M>id</M> as <m/number/</tag>
++	 This defines BGP route base attributes to use in summary routes.
++	 Note that protocol can aggregate routes with different local AS and
++	 BGP router id by default.
++
++	<tag>aggregate address <m/prefix/</tag> Announce given prefix if any
++	of more specific routes exists. Additionally, you can specify
++	<cf/save attributes/ to save maximum information from every route.
++	Turning this flag on makes BGP aggregate AS-PATH per RFC 4271.
++	Another option that can be used is <cf/mandatory list { }/
++	Prefix is announced IFF all of the mandatory prefixes currently exists
++	in route table.
++</descrip>
++
++<p>Example configuration looks like this:
++
++<p><code>
++protocol aggregator {
++	bgp id 198.51.100.130 as 65000 {
++		aggregate address 198.51.100.0/24;
++		aggregate address 192.168.0.0/16 mandatory list { 192.168.1.1/32 };
++	}
++}
++</code>
++
+ <sect>BGP
+ 
+ <p>The Border Gateway Protocol is the routing protocol used for backbone
 diff --git a/filter/config.Y b/filter/config.Y
-index 2e8b522..a13f33c 100644
+index 0eeb2ce..7aff013 100644
 --- filter/config.Y
 +++ filter/config.Y
 @@ -558,7 +558,7 @@ fprefix:
@@ -109,7 +177,7 @@ index 2386fc9..f2a5d06 100644
  };
  
 diff --git a/filter/trie.c b/filter/trie.c
-index 581332c..12d7755 100644
+index 581332c..17ac896 100644
 --- filter/trie.c
 +++ filter/trie.c
 @@ -75,23 +75,24 @@
@@ -205,8 +273,8 @@ index 581332c..12d7755 100644
 + * @plen: prefix length
 + *
 + * Tries to find a matching prefix pattern in the trie such that
-+ * prefix @px/@plen matches that prefix pattern. Returns 1 if there
-+ * is such prefix pattern in the trie.
++ * prefix @px/@plen matches that prefix pattern. Returns prefix pointer
++ * or NULL.
 + */
 +void *
 +trie_match_longest_prefix(struct f_trie *t, ip_addr px, int plen)
@@ -242,7 +310,7 @@ index 581332c..12d7755 100644
 +  /*
 +   * parent is either
 +   * 1) NULL (if the first non-null node does not exist oris out of path)
-+   * or 
++   * or
 +   * 2) points to the last entry that match
 +   *
 +   * In former case we check if catch-all prefix really exists and return
@@ -262,7 +330,7 @@ index 581332c..12d7755 100644
 +
 +  if (n->c[0])
 +    trie_walk_call(n->c[0], func, data);
-+ 
++
 +  if (n->c[1])
 +    trie_walk_call(n->c[1], func, data);
 +}
@@ -285,10 +353,10 @@ index 581332c..12d7755 100644
  trie_node_same(struct f_trie_node *t1, struct f_trie_node *t2)
  {
 diff --git a/nest/proto-hooks.c b/nest/proto-hooks.c
-index 2582c48..1b59fbb 100644
+index e80f87e..22f22ca 100644
 --- nest/proto-hooks.c
 +++ nest/proto-hooks.c
-@@ -150,6 +150,17 @@ int get_attr(eattr *a, byte *buf, int buflen)
+@@ -161,6 +161,17 @@ int get_attr(eattr *a, byte *buf, int buflen)
  { DUMMY; }
  
  /**
@@ -307,10 +375,10 @@ index 2582c48..1b59fbb 100644
   * @p: protocol instance
   * @flags: interface change flags
 diff --git a/nest/proto.c b/nest/proto.c
-index 0fc72ce..a48656c 100644
+index 887d3e5..4ebc9d6 100644
 --- nest/proto.c
 +++ nest/proto.c
-@@ -633,6 +633,9 @@ protos_build(void)
+@@ -705,6 +705,9 @@ protos_build(void)
  #ifdef CONFIG_BGP
    proto_build(&proto_bgp);
  #endif
@@ -319,9 +387,9 @@ index 0fc72ce..a48656c 100644
 +#endif
    proto_pool = rp_new(&root_pool, "Protocols");
    proto_flush_event = ev_new(proto_pool);
-   proto_flush_event->hook = proto_flush_all;
+   proto_flush_event->hook = proto_flush_loop;
 diff --git a/nest/protocol.h b/nest/protocol.h
-index a83c4ff..e61b8d3 100644
+index 8a63271..0a0d8f7 100644
 --- nest/protocol.h
 +++ nest/protocol.h
 @@ -28,6 +28,10 @@ struct event;
@@ -335,19 +403,20 @@ index a83c4ff..e61b8d3 100644
  
  /*
   *	Routing Protocol
-@@ -53,8 +57,11 @@ struct protocol {
+@@ -54,8 +58,12 @@ struct protocol {
    void (*get_status)(struct proto *, byte *buf); /* Get instance status (for `show protocols' command) */
    void (*get_route_info)(struct rte *, byte *buf, struct ea_list *attrs); /* Get route information (for `show route' command) */
    int (*get_attr)(struct eattr *, byte *buf, int buflen);	/* ASCIIfy dynamic attribute (returns GA_*) */
 +  void (*create_sumroute)(struct agg_proto *, struct agg_sumroute *);	/* Create summary route */
 +  void (*update_sumroute)(struct agg_proto *, struct agg_sumroute *, struct agg_route *, struct rta *, struct rta *);	/* Update summary route */
++  int (*check_sumroute)(struct agg_proto *, struct agg_sumroute *, struct agg_sumroute *);	/* Check sumroute parameters  */
    void (*show_proto_info)(struct proto *);	/* Show protocol info (for `show protocols all' command) */
    void (*copy_config)(struct proto_config *, struct proto_config *);	/* Copy config from given protocol instance */
 +  void (*get_route_ainfo)(struct cli *, int, struct rte *); /* Print additional information (for `show route' command) */
  };
  
  void protos_build(void);
-@@ -74,7 +81,7 @@ void protos_dump_all(void);
+@@ -75,7 +83,7 @@ void protos_dump_all(void);
  
  extern struct protocol
    proto_device, proto_radv, proto_rip, proto_static,
@@ -357,10 +426,10 @@ index a83c4ff..e61b8d3 100644
  /*
   *	Routing Protocol Instance
 diff --git a/nest/rt-table.c b/nest/rt-table.c
-index 377687d..4709544 100644
+index 165f42b..f224cc4 100644
 --- nest/rt-table.c
 +++ nest/rt-table.c
-@@ -1440,7 +1440,7 @@ rt_init_hostcache(rtable *tab)
+@@ -1719,7 +1719,7 @@ rt_init_hostcache(rtable *tab)
    hc->slab = sl_new(rt_table_pool, sizeof(struct hostentry));
  
    hc->lp = lp_new(rt_table_pool, 1008);
@@ -369,7 +438,7 @@ index 377687d..4709544 100644
  
    tab->hostcache = hc;
  }
-@@ -1587,7 +1587,7 @@ rt_update_hostcache(rtable *tab)
+@@ -1866,7 +1866,7 @@ rt_update_hostcache(rtable *tab)
  
    /* Reset the trie */
    lp_flush(hc->lp);
@@ -378,7 +447,7 @@ index 377687d..4709544 100644
  
    WALK_LIST_DELSAFE(n, x, hc->hostentries)
      {
-@@ -1634,7 +1634,7 @@ rta_set_recursive_next_hop(rtable *dep, rta *a, rtable *tab, ip_addr *gw, ip_add
+@@ -1913,7 +1913,7 @@ rta_set_recursive_next_hop(rtable *dep, rta *a, rtable *tab, ip_addr *gw, ip_add
   *  CLI commands
   */
  
@@ -387,7 +456,7 @@ index 377687d..4709544 100644
  rt_format_via(rte *e, byte *via)
  {
    rta *a = e->attrs;
-@@ -1660,6 +1660,7 @@ rt_show_rte(struct cli *c, byte *ia, rte *e, struct rt_show_data *d, ea_list *tm
+@@ -1939,6 +1939,7 @@ rt_show_rte(struct cli *c, byte *ia, rte *e, struct rt_show_data *d, ea_list *tm
    int primary = (e->net->routes == e);
    int sync_error = (e->net->n.flags & KRF_SYNC_ERROR);
    struct mpnh *nh;
@@ -395,7 +464,7 @@ index 377687d..4709544 100644
  
    rt_format_via(e, via);
    tm_format_datetime(tm, &config->tf_route, e->lastmod);
-@@ -1667,7 +1668,7 @@ rt_show_rte(struct cli *c, byte *ia, rte *e, struct rt_show_data *d, ea_list *tm
+@@ -1946,7 +1947,7 @@ rt_show_rte(struct cli *c, byte *ia, rte *e, struct rt_show_data *d, ea_list *tm
      bsprintf(from, " from %I", a->from);
    else
      from[0] = 0;
@@ -404,7 +473,7 @@ index 377687d..4709544 100644
      {
        /* Need to normalize the extended attributes */
        ea_list *t = tmpa;
-@@ -1676,8 +1677,8 @@ rt_show_rte(struct cli *c, byte *ia, rte *e, struct rt_show_data *d, ea_list *tm
+@@ -1955,8 +1956,8 @@ rt_show_rte(struct cli *c, byte *ia, rte *e, struct rt_show_data *d, ea_list *tm
        ea_merge(t, tmpa);
        ea_sort(tmpa);
      }
@@ -415,7 +484,7 @@ index 377687d..4709544 100644
    else
      bsprintf(info, " (%d)", e->pref);
    cli_printf(c, -1007, "%-18s %s [%s %s%s]%s%s", ia, via, a->proto->name,
-@@ -1685,7 +1686,11 @@ rt_show_rte(struct cli *c, byte *ia, rte *e, struct rt_show_data *d, ea_list *tm
+@@ -1964,7 +1965,11 @@ rt_show_rte(struct cli *c, byte *ia, rte *e, struct rt_show_data *d, ea_list *tm
    for (nh = a->nexthops; nh; nh = nh->next)
      cli_printf(c, -1007, "\tvia %I on %s weight %d", nh->gw, nh->iface->name, nh->weight + 1);
    if (d->verbose)
@@ -449,12 +518,12 @@ index 0000000..3039207
 +
 diff --git a/proto/agg/agg.c b/proto/agg/agg.c
 new file mode 100644
-index 0000000..5b9cae1
+index 0000000..8b6fc2e
 --- /dev/null
 +++ proto/agg/agg.c
-@@ -0,0 +1,720 @@
+@@ -0,0 +1,847 @@
 +/*
-+ *	BIRD -- BGP route aggregation
++ *	BIRD -- Generic route aggregation
 + *
 + *	(c) 2012 Yandex LLC
 + *	(c) 2012 Alexander V. Chernikov <melifaro@yandex-team.ru>
@@ -465,13 +534,12 @@ index 0000000..5b9cae1
 +/**
 + * DOC: Route aggregation
 + *
-+ * Firewall protocol is very simple. It adds or removes exported routes to given firewall
-+ * table with zero (or filter-specified) value. Table can be flushed on startup to
-+ * avoid error messages on bird restart.
++ * Aggregation protocol provides general protocol-independent api for
++ * summarizing routes based on config-file defined criteria.
 + */
 +
 +
-+#undef LOCAL_DEBUG
++#define LOCAL_DEBUG
 +
 +#include "nest/bird.h"
 +#include "nest/iface.h"
@@ -495,7 +563,7 @@ index 0000000..5b9cae1
 +static int
 +agg_import_control(struct proto *P, rte **ee, ea_list **ea UNUSED, struct linpool *p UNUSED)
 +{
-+  struct proto *pp = (*ee)->sender;
++  struct proto *pp = (*ee)->sender->proto;
 +
 +  if (pp == P)
 +    return -1;	/* Avoid local loops automatically */
@@ -508,42 +576,43 @@ index 0000000..5b9cae1
 +  return 1;
 +}
 +
++/*
++ * FIB callback on new route creation
++ */
 +static void
 +agg_initroute(struct fib_node *fn)
 +{
 +  struct agg_route *ar = (struct agg_route *)fn;
 +
 +  memset((byte *)ar + sizeof(struct fib_node), 0, sizeof(struct agg_route) - sizeof(struct fib_node));
-+  ar->flags = AGG_FLAG_NEW;
++  /* Init various lists */
++  init_list(&ar->membership_list);
 +}
 +
 +static int
 +agg_can_announce(struct agg_sumroute *asr)
 +{
-+  return (asr->mandatory_current == asr->mandatory_total);
++  return ((asr->mandatory_current == asr->mandatory_total) && (!(asr->flags & AGG_FLAG_DELETED)));
 +}
 +
 +/*
-+ * agg_make_route - create new route
-+ * @p: protocol instance
-+ * @addr: pointer to network address
-+ * @plen: prefix length
-+ *
-+ * Adds mandatory route to fib and links it to 
++ * Delete route if it is not used in any role
 + */
-+static struct agg_route *
-+agg_make_route(struct agg_proto *p, ip_addr *addr, int plen)
++static void
++agg_try_gc_route(struct agg_proto *p, struct agg_route *ar)
 +{
-+  struct agg_route *ar = fib_get(&p->route_fib, addr, plen);
++  if (AGG_IS_USED(ar))
++    return;
 +
-+  if (ar->flags & AGG_FLAG_NEW)
++  if (ar->attrs)
 +    {
-+      /* New route. Do init */
-+      init_list(&ar->sum_membership);
-+      ar->flags &= ~AGG_FLAG_NEW;
++      /* Remove cloned rta */
++      rta_free(ar->attrs);
 +    }
 +
-+  return ar;
++  //ADBG("GC route %I/%d", ar->fn.prefix, ar->fn.pxlen);
++
++  fib_delete(&p->route_fib, ar);
 +}
 +
 +static void
@@ -557,10 +626,13 @@ index 0000000..5b9cae1
 +
 +  ADBG("Linking mandatory route %I/%d to summary %I/%d", ar->fn.prefix, ar->fn.pxlen, asr->tn.addr, asr->tn.plen);
 +
-+  add_tail(&ar->sum_membership, &ms->n_mandatory);
++  add_tail(&ar->membership_list, &ms->n_route);
 +  add_tail(&asr->mandatory_list, &ms->n_sumroute);
 +}
 +
++/*
++ * Unlink membership structure from summary route. Mandatory route is checked for validness after that.
++ */
 +static void
 +agg_unlink_mroute(struct agg_proto *p, struct agg_membership *ms)
 +{
@@ -568,63 +640,53 @@ index 0000000..5b9cae1
 +
 +  ADBG("Unlinking mandatory route %I/%d from summary %I/%d", ar->fn.prefix, ar->fn.pxlen, ms->asr->tn.addr, ms->asr->tn.plen);
 +
-+  rem_node(&ms->n_mandatory);
++  rem_node(&ms->n_route);
 +  rem_node(&ms->n_sumroute);
 +  mb_free(ms);
 +
 +  /* Check if we need to free route iself */
-+  if (!EMPTY_LIST(ar->sum_membership))
++  if (!EMPTY_LIST(ar->membership_list))
 +    return;
 +
-+  if (ar->attrs)
-+    return;
++  /* No membership structures. Unset mandatory role and check if route can be deleted */
++  AGG_UNSET_MANDATORY(ar);
 +
-+  /* No other mandatory routes, no route entry. We can safely free node */
-+  fib_delete(&p->route_fib, ar);
++  agg_try_gc_route(p, ar);
 +}
 +
++static void
++agg_link_childroute(struct agg_proto *p, struct agg_sumroute *asr, struct agg_route *ar)
++{
++  ar->asr = asr;
++  add_tail(&asr->routes, &ar->n_sumroute);
++}
++
++/*
++ * Remove child role from route
++ */
++static void
++agg_remove_childrole(struct agg_proto *p, struct agg_route *ar)
++{
++  ar->asr = NULL;
++  AGG_UNSET_CHILD(ar);
++
++  agg_try_gc_route(p, ar);
++}
++
++/*
++ * Trie callback function.
++ * Init newly-created summary routes.
++ */
 +static void
 +agg_walk_sumroutes_initial(struct f_trie_node *n, void *data)
 +{
 +  struct agg_sumroute *asr = (struct agg_sumroute *)n;
 +  struct agg_proto *p = (struct agg_proto *)data;
 +
-+  if (!(asr->flags & AGG_FLAG_PREPARED))
++  if (!AGG_VALID_NODE(asr))
 +    return;
 +
 +  agg_init_sumroute(p, asr);
-+}
-+
-+static int
-+agg_start(struct proto *P)
-+{
-+  struct agg_proto *p = (struct agg_proto *)P;
-+  struct agg_config *cf = (struct agg_config *)P->cf;
-+
-+  fib_init(&p->route_fib, P->pool, sizeof(struct agg_route), 0, agg_initroute);
-+  p->summary_trie = cf->summary_trie;
-+
-+  /* Import mandatory routes if any */
-+  trie_walk(p->summary_trie, agg_walk_sumroutes_initial, p);
-+
-+  /* Allocate by 16k blocks (while BGP requests 1k block) */
-+  p->lp = lp_new(P->pool, 16384 - 16);
-+
-+  return PS_UP;
-+}
-+
-+/*
-+ * Mark given summary route as deleted
-+ */
-+static void
-+agg_mark_sumroute(struct f_trie_node *n, void *data UNUSED)
-+{
-+  struct agg_sumroute *asr = (struct agg_sumroute *)n;
-+
-+  if (!(asr->flags & AGG_FLAG_PREPARED))
-+    return;
-+
-+  asr->flags |= AGG_FLAG_DELETED;
 +}
 +
 +/*
@@ -649,26 +711,23 @@ index 0000000..5b9cae1
 +      asr->mandatory_total++;
 +
 +      /* Get or create new route entry */
-+      ar = agg_make_route(p, &cr->px.addr, cr->px.len);
++      ar = fib_get(&p->route_fib, &cr->px.addr, cr->px.len);
 +
 +      /* Increate current counter IFF we have real best rte associated with entry */
-+      if (ar->attrs)
-+	{
++      if (AGG_IS_INSTALLED(ar))
 +	  asr->mandatory_current++;
-+	  /* Set installed flag */
-+	  ar->flags |= AGG_FLAG_INSTALLED;
-+	}
 +
 +      /* Add link */
 +      agg_link_mroute(p, asr, ar);
 +  }
++
++  /* Indicate we need refeeed to populate this route */
++  p->need_refeed = 1;
 +}
 +
 +static void
 +agg_announce_sumroute(struct agg_proto *p, struct agg_sumroute *asr)
 +{
-+  //net *n;
-+
 +  if (!agg_can_announce(asr))
 +    return;
 +
@@ -676,14 +735,7 @@ index 0000000..5b9cae1
 +    return;
 +
 +  /* Generate summary route */
-+  switch (asr->route_src)
-+    {
-+#ifdef CONFIG_BGP
-+    case RTS_BGP:
-+      proto_bgp.create_sumroute(p, asr);
-+      break;
-+#endif
-+    }
++  asr->proto->create_sumroute(p, asr);
 +}
 +
 +static void
@@ -707,17 +759,26 @@ index 0000000..5b9cae1
 +static void
 +agg_update_sumroute(struct agg_proto *p, struct agg_sumroute *asr, struct agg_route *ar, rta *old, rta *new)
 +{
-+  switch (asr->route_src)
-+    {
-+#ifdef CONFIG_BGP
-+    case RTS_BGP:
-+      proto_bgp.update_sumroute(p, asr, ar, old, new);
-+      break;
-+#endif
-+    }
++  asr->proto->update_sumroute(p, asr, ar, old, new);
 +}
 +
 +/*
++ * Trie callback function.
++ * Mark given summary route as deleted
++ */
++static void
++agg_mark_sumroute(struct f_trie_node *n, void *data UNUSED)
++{
++  struct agg_sumroute *asr = (struct agg_sumroute *)n;
++
++  if (!AGG_VALID_NODE(asr))
++    return;
++
++  asr->flags |= AGG_FLAG_DELETED;
++}
++
++/*
++ * Trie callback function.
 + * Remove non-config data associated with summary route
 + */
 +static void
@@ -725,11 +786,12 @@ index 0000000..5b9cae1
 +{
 +  struct agg_proto *p = (struct agg_proto *)P;
 +  struct agg_sumroute *asr = (struct agg_sumroute *)tn;
++  struct agg_sumroute *asr_n = NULL;
 +  struct agg_membership *ms;
 +  struct agg_route *ar;
 +  node *n, *n_next;
 +
-+  if (!(asr->flags & AGG_FLAG_PREPARED))
++  if (!AGG_VALID_NODE(asr))
 +    return;
 +
 +  if (!(asr->flags & AGG_FLAG_DELETED))
@@ -743,28 +805,62 @@ index 0000000..5b9cae1
 +      agg_unlink_mroute(p, ms);
 +    }
 +
++  asr->mandatory_total = 0;
++  asr->mandatory_current = 0;
++
++  /*
++   * Check if we have some nested aggregation routes.
++   * E.g:
++   * 192.168.0.0/16
++   *   192.168.0.0/17 (Removed)
++   *
++   * Or even
++   * 192.168.0.0/16
++   *   192.168.0.0/17 (Removed)
++   *     192.168.0.0/18 (Removed) (*)
++   *
++   * Here we simply find the most specific route matching
++   * our current aggregated route and move all child routes
++   * to the new location.
++   *
++   * Use this logic IFF we're not shutting down (e.g. summary_trie is
++   * pointing to the new configuration).
++   */
++  if ((!p->going_down) && (asr->tn.plen))
++    asr_n = trie_match_longest_prefix(p->summary_trie, asr->tn.addr, asr->tn.plen - 1);
++
 +  WALK_LIST_DELSAFE(n, n_next, asr->routes)
 +    {
 +      ar = SKIP_BACK(struct agg_route, n_sumroute, n);
-+
++      /* Unlink from old summary */
 +      rem_node(&ar->n_sumroute);
 +
-+      if (ar->attrs)
-+	rta_free(ar->attrs);
-+      ar->attrs = NULL;
-+      ar->asr = NULL;
-+
-+      /* Check if we can delete route */
-+      if (!EMPTY_LIST(ar->sum_membership))
-+	continue;
-+
-+      /* Node can be safely deleted */
-+      fib_delete(&p->route_fib, ar);
++      /* Re-link child route to the new summary if exists */
++      if (asr_n)
++	{
++	  agg_link_childroute(p, asr_n, ar);
++	  ADBG("Moving child route %I/%d from summary %I/%d to %I/%d",
++		ar->fn.prefix, ar->fn.pxlen,
++		asr->tn.addr, asr->tn.plen,
++		asr_n->tn.addr, asr_n->tn.plen);
++	  /* Call route update */
++	  if (agg_can_announce(asr_n))
++	    agg_update_sumroute(p, asr_n, ar, NULL, ar->attrs);
++	}
++      else
++	agg_remove_childrole(p, ar);
 +    }
 +
 +  agg_withdraw_sumroute(p, asr);
++
++  /* Unset deleted flag to make the route exactly as at the beginning */
++  asr->flags &= ~AGG_FLAG_DELETED;
 +}
 +
++/*
++ * Trie callback function.
++ * Reconfigures summary route
++ */
 +static void
 +agg_reconfig_sumroute(struct f_trie_node *tn, void *P)
 +{
@@ -777,7 +873,7 @@ index 0000000..5b9cae1
 +  node *nn, *nn_next;
 +  int found;
 +
-+  if (!(asr->flags & AGG_FLAG_PREPARED))
++  if (!AGG_VALID_NODE(asr))
 +    return;
 +
 +  /* Find old corresponding route */
@@ -786,21 +882,30 @@ index 0000000..5b9cae1
 +  if ((!asr_o) || (!ipa_equal(asr_o->tn.addr, asr->tn.addr)) || (asr_o->tn.plen != asr->tn.plen) || 
 +	(asr_o->route_src != asr->route_src))
 +    {
-+      /* New summary route */
++      /*
++       * Old route is either not found (no candidate, different prefix) or has different type.
++       * Ignore and create new summary.
++       */
 +      agg_init_sumroute(p, asr);
 +      return;      
 +    }
 +
-+  /* Should we move this to protocol-specific hook? */
-+  switch (asr->route_src)
++  /*
++   * Route found. Let's check if generic and protocol-dependent data has changed:
++   */
++  if (((asr->flags & AGG_CONFIG_FLAGS) != (asr_o->flags & AGG_CONFIG_FLAGS)) ||
++	(asr->route_src != asr_o->route_src) || (asr->proto != asr_o->proto))
 +    {
-+    case RTS_BGP:
-+      if ((asr_o->u.bgp.local_id != asr->u.bgp.local_id) || (asr_o->u.bgp.local_as != asr->u.bgp.local_as))
-+	{
-+	  agg_init_sumroute(p, asr);
-+	  return;
-+	}
-+      break;
++      /* Reinit route due to changed config flags */
++      agg_init_sumroute(p, asr);
++      return;
++    }
++
++  /* Check if protocol-specific data has changed */
++  if (!asr->proto->check_sumroute(p, asr_o, asr))
++    {
++      agg_init_sumroute(p, asr);
++      return;
 +    }
 +
 +  ADBG("Reconfiguring summary route %I/%d", asr->tn.addr, asr->tn.plen);
@@ -810,29 +915,22 @@ index 0000000..5b9cae1
 +   * 1) remove DELETED flag
 +   * 2) move every route to new list
 +   * 3) compare mandatory routes
++   * 4) save announced route pointer if any
 +   */
 +
 +  asr_o->flags &= ~AGG_FLAG_DELETED;
 +
 +  /* 
-+   * Move usual routes to new list.
++   * Move child routes to new list.
 +   * Update ther pointer to summary route
 +   */
-+
 +  WALK_LIST_DELSAFE(n, n_next, asr_o->routes)
 +    {
 +      ar = SKIP_BACK(struct agg_route, n_sumroute, n);
 +
 +      ar->asr = asr;
++      rem_node(&ar->n_sumroute);
 +      add_tail(&asr->routes, &ar->n_sumroute);
-+    }
-+
-+  /* Mark old mandatory routes (instead of membership structurs) as deleted */
-+  WALK_LIST_DELSAFE(n, n_next, asr_o->mandatory_list)
-+    {
-+      ms = SKIP_BACK(struct agg_membership, n_sumroute, n);
-+      ar = ms->ar;
-+      ar->flags |= AGG_FLAG_DELETED;
 +    }
 +
 +  /* Walk all new mandatory routes */
@@ -847,17 +945,27 @@ index 0000000..5b9cae1
 +      ar = fib_find(&p->route_fib, &cr->px.addr, cr->px.len);
 +
 +      if (!ar)
-+	  ar = agg_make_route(p, &cr->px.addr, cr->px.len);
-+
-+      /* Increate current counter IFF we have real best rte associated with entry */
-+      if (ar->attrs)
 +	{
-+	  asr->mandatory_current++;
-+	  ar->flags |= AGG_FLAG_INSTALLED;
++	  ar = fib_get(&p->route_fib, &cr->px.addr, cr->px.len);
++	  /*
++	   * FIXME: Use some direcct method (like applying protocol 
++	   * filter and import control to the best route)
++	   */
++	  p->need_refeed = 1;
 +	}
 +
++      /* Increate current counter IFF we have real best rte associated with entry */
++      if (AGG_IS_INSTALLED(ar))
++	{
++	  asr->mandatory_current++;
++	  ADBG("Mandatory route %I/%d [re]marked as used", ar->fn.prefix, ar->fn.pxlen);
++	}
++
++      /* Indicate that this route is used as mandatory */
++      AGG_SET_MANDATORY(ar);
++
 +      /*
-+       * Check if we have summary membership with current asr (e.g.
++       * Check if we have summary membership with current (old) asr (e.g.
 +       * if we already are mandatory route for this asr). In this case
 +       * we have to update asr pointer.
 +       *
@@ -866,17 +974,18 @@ index 0000000..5b9cae1
 +       */
 +
 +      found = 0;
-+      WALK_LIST_DELSAFE(nn, nn_next, ar->sum_membership)
++      WALK_LIST_DELSAFE(nn, nn_next, ar->membership_list)
 +	{
-+	  ms = SKIP_BACK(struct agg_membership, n_mandatory, nn);
++	  ms = SKIP_BACK(struct agg_membership, n_route, nn);
 +	  if (ms->asr != asr_o)
 +	    continue;
 +
 +	  ADBG("Mandatory route %I/%d remains as is, removing deleted flag", ar->fn.prefix, ar->fn.pxlen);
 +	  /* Update pointers and relink */
 +	  ms->asr = asr;
++	  rem_node(&ms->n_sumroute);
 +	  add_tail(&asr->mandatory_list, &ms->n_sumroute);
-+	  ar->flags &= ~AGG_FLAG_DELETED;
++	  ms->flags &= ~AGG_FLAG_DELETED;
 +	  found = 1;
 +	  break;
 +	}
@@ -888,24 +997,15 @@ index 0000000..5b9cae1
 +      agg_link_mroute(p, asr, ar);
 +    }
 +
-+  /* Delete old mandatory routes */
++  /* Delete remaining membership structures */
 +  WALK_LIST_DELSAFE(n, n_next, asr_o->mandatory_list)
 +    {
 +      ms = SKIP_BACK(struct agg_membership, n_sumroute, n);
-+      ar = ms->ar;
-+      if (!(ar->flags & AGG_FLAG_DELETED))
-+	continue;
-+
-+      /* 
-+       * This route is not mandatory for new asr.
-+       * No need to update old configuration so
-+       * we need to unlink node from ar and free it
-+       */
-+
 +      agg_unlink_mroute(p, ms);
 +    }
 +
-+  /* XXX: we can possibly check new mandatory routes */
++  /* Finally, save pointer to announced rta */
++  asr->attrs = asr_o->attrs;
 +}
 +
 +static int
@@ -914,7 +1014,6 @@ index 0000000..5b9cae1
 +  struct agg_config *o = (struct agg_config *)P->cf;
 +  struct agg_config *n = (struct agg_config *)new;
 +  struct agg_proto *p = (struct agg_proto *)P;
-+  //struct agg_sumroute *;
 +
 +  ADBG("Reconfiguting..");
 +
@@ -924,18 +1023,43 @@ index 0000000..5b9cae1
 +  /* Walk new trie */
 +  trie_walk(n->summary_trie, agg_reconfig_sumroute, p);
 +
++  /*
++   * Update trie pointer. We need new summary trie pointer
++   * since agg_clear_sumroute() can possibly move child
++   * routes to new summary route. On the other way,
++   * agg_reconfig_sumroute() needs old pointer to find
++   * old summary route corresponding to new.
++   */
++  p->summary_trie = n->summary_trie;
++
 +  /* Cleanup all old summary routes */
 +  trie_walk(o->summary_trie, agg_clear_sumroute, p);
 +
-+  /* 
-+   * XXX: we possibly have to determine if summary routes configuration
-+   * is changed and we hate to request refeeding
-+   */
-+
-+  /* Update trie pointer */
-+  p->summary_trie = n->summary_trie;
++  /* Request feeding if some new summary routes appeared */
++  if (p->need_refeed)
++    {
++      ADBG("Refeeding due to new summary routes configured");
++      proto_request_feeding(P);
++      p->need_refeed = 0;
++    }
 +
 +  return 1;
++}
++
++static void
++agg_unlink_childroute(struct agg_proto *p, struct agg_sumroute *asr, struct agg_route *ar)
++{
++  /* Delete item from summary route child list */
++  rem_node(&ar->n_sumroute);
++
++  /* Update or withdraw summary route */
++  if (agg_can_announce(asr))
++    {
++      if (!EMPTY_LIST(asr->routes))
++	agg_update_sumroute(p, asr, ar, ar->attrs, NULL);
++      else
++	agg_withdraw_sumroute(p, asr);
++    }
 +}
 +
 +
@@ -944,7 +1068,7 @@ index 0000000..5b9cae1
 +{
 +  struct agg_proto *p = (struct agg_proto *) P;
 +  struct agg_sumroute *asr;
-+  struct agg_route *ar;
++  struct agg_route *ar = NULL, *ar_child = NULL;
 +  struct agg_membership *ms;
 +  node *nn, *nn_next;
 +  rta *old_rta = NULL, *new_rta;
@@ -965,9 +1089,10 @@ index 0000000..5b9cae1
 +   * Search trie to determine summary route.
 +   * We use 1 bit less specific prefix to deal with the following 2 cases:
 +   * 1) if announced X/Y prefix is the same as summary route this is clearly not the case for summarization
-+   * 2) if nested summary routes are congigured and 1) is in action we got wrong asr pointer.
++   * 2) if nested summary routes are configured and 1) is in action we got wrong asr pointer.
 +   *
-+   * We skip 0/0 and :: due to it can'be summarized
++   * We skip 0/0 and :: due to it can'be summarized.
++   * We also assume trie_match() to normalize address with network mask
 +   */
 +  if ((n->n.pxlen) && ((asr = trie_match_longest_prefix(p->summary_trie, n->n.prefix, n->n.pxlen - 1))))
 +    {
@@ -979,7 +1104,7 @@ index 0000000..5b9cae1
 +	ADBG("Found matched summary route %I/%d", asr->tn.addr, asr->tn.plen);
 +      
 +	/* Summary route found. Let's find/create route node */
-+	ar = agg_make_route(p, &n->n.prefix, n->n.pxlen);
++	ar = fib_get(&p->route_fib, &n->n.prefix, n->n.pxlen);
 +      
 +	/* (new route, route update) */
 +	if (new)
@@ -1015,78 +1140,120 @@ index 0000000..5b9cae1
 +		new_rta->aflags = 0;
 +		ar->attrs = rta_clone(rta_lookup(new_rta));
 +	      }
++
++	    /*
++	     * We can't mark ar as installed since this can interfere with mandatory routes
++	     * checking later. We save ar into new pointer and set installed flag in the end
++	     * instead.
++	     */
++	    ar_child = ar;
 +      
 +	    /* Add link to summary route if route is new */
-+	    if (!ar->asr)
++	    if (!AGG_IS_CHILD(ar))
 +	      {
-+		ar->asr = asr;
-+		add_tail(&asr->routes, &ar->n_sumroute);
++		AGG_SET_CHILD(ar);
++		agg_link_childroute(p, asr, ar);
 +	      }
++	    else if (ar->asr != asr)
++	    {
++	      /*
++	       * Route is a child of different summary route.
++	       * Let's make withdraw for the old summary
++	       * and send route update to the new one
++	       */
++	      ADBG("Moving route %I/%d from %I/%d to %I/%d", n->n.prefix, n->n.pxlen,
++		ar->asr->tn.addr, ar->asr->tn.plen, asr->tn.addr, asr->tn.plen);
++	      agg_unlink_childroute(p, ar->asr, ar);
++	      agg_link_childroute(p, asr, ar);
++
++	      /* From current asr point of view, this is new route */
++	      if (old_rta)
++		rta_free(old_rta);
++	      old_rta = NULL;
++	    }
 +      
 +	    /* Call route update */
 +	    if (agg_can_announce(asr))
 +	      agg_update_sumroute(p, asr, ar, old_rta, ar->attrs);
 +      
-+	    /* Remove old rte */
++	    /* Free old attributes */
 +	    if (old_rta)
 +	      rta_free(old_rta);
 +	  }
 +	else
 +	  {
-+	    /* route withdrawal */
-+	    rem_node(&ar->n_sumroute);
-+
-+	    /* Take into account that create_sumroute() callback can be called from here */
-+	    if (agg_can_announce(asr))
-+	      agg_update_sumroute(p, asr, ar, ar->attrs, NULL);
-+      
-+	    if (ar->attrs)
-+	      rta_free(ar->attrs);
-+	    ar->attrs = NULL;
-+	    ar->asr = NULL;
-+
-+	    /* INSTALLED flag is removed later */
-+
-+	    if (EMPTY_LIST(ar->sum_membership))
-+	      fib_delete(&p->route_fib, ar);
++	    /* Route withdrawal.
++	     * Note that we route we find can be
++	     * 1) mandatory only
++	     * 2) newly-created route (by fib_get)
++	     */
++	    if (AGG_IS_CHILD(ar))
++	      {
++		/* We have to provide saved ar to agg_update_sumroute() */
++		
++		/* Unlink item from summary route */
++		agg_unlink_childroute(p, asr, ar);
++		/* Remove child role */
++		agg_remove_childrole(p, ar);
++	      }
++	    else
++	      {
++		/* Check if this is false positive from fib_get() */
++		agg_try_gc_route(p, ar);
++	      }
 +	  }
 +    }
 +
 +  /* Check if network is from our mandatory list */
-+  if ((ar = fib_find(&p->route_fib, &n->n.prefix, n->n.pxlen)))
++  if (!ar)
++    ar = fib_find(&p->route_fib, &n->n.prefix, n->n.pxlen);
++  if (!ar || !AGG_IS_MANDATORY(ar))
 +    {
-+      ADBG("FIB record found for route %I/%d", n->n.prefix, n->n.pxlen);
-+      /* Check if we need to change summary routes */
-+      if ((new && (!(ar->flags & AGG_FLAG_INSTALLED))) || (!new && (ar->flags & AGG_FLAG_INSTALLED)))
++      if (ar_child)
++	AGG_SET_INSTALLED(ar_child);
++      return;
++    }
++
++  ADBG("Mandatory route %I/%d found, checking", n->n.prefix, n->n.pxlen);
++  /* Check if installed flag is changed */
++  if ((new && AGG_IS_INSTALLED(ar)) || (!new && !AGG_IS_INSTALLED(ar)))
++    {
++      if (ar_child)
++	AGG_SET_INSTALLED(ar_child);
++      return;
++    }
++
++  /* Flag is changed, let's check summary routes */
++
++  if (new)
++    AGG_SET_INSTALLED(ar);
++  else
++    AGG_UNSET_INSTALLED(ar);
++
++  WALK_LIST_DELSAFE(nn, nn_next, ar->membership_list)
++    {
++      ms = SKIP_BACK(struct agg_membership, n_route, nn);
++      asr = ms->asr;
++
++      ADBG("Found membership with summary route %I/%d", asr->tn.addr, asr->tn.plen);
++      if (new)
 +	{
-+	  if (new)
-+	    ar->flags |= AGG_FLAG_INSTALLED;
-+	  else
-+	    ar->flags &= ~AGG_FLAG_INSTALLED;
-+
-+	  WALK_LIST_DELSAFE(nn, nn_next, ar->sum_membership)
-+	    {
-+	      ms = SKIP_BACK(struct agg_membership, n_mandatory, nn);
-+	      asr = ms->asr;
-+
-+	      ADBG("Found membership with summary route %I/%d", asr->tn.addr, asr->tn.plen);
-+
-+	      if (new)
-+	        {
-+		  asr->mandatory_current++;
-+		  /* Possible route announce */
-+		  agg_announce_sumroute(p, asr);
-+		}
-+	      else
-+		{
-+		  /* Possible route withdrawal */
-+		  if (agg_can_announce(asr))
-+		    agg_withdraw_sumroute(p, asr);
-+		  asr->mandatory_current--;
-+		}
-+	    }
++	  asr->mandatory_current++;
++	  /* Possible route announce */
++	  agg_announce_sumroute(p, asr);
++	}
++      else
++	{
++	  /* Possible route withdrawal */
++	  if (agg_can_announce(asr))
++	    agg_withdraw_sumroute(p, asr);
++	  asr->mandatory_current--;
 +	}
 +    }
++
++  /* Mark route as installed if needed */
++  if (ar_child)
++    AGG_SET_INSTALLED(ar_child);
 +}
 +
 +
@@ -1104,15 +1271,44 @@ index 0000000..5b9cae1
 +}
 +
 +static int
++agg_start(struct proto *P)
++{
++  struct agg_proto *p = (struct agg_proto *)P;
++  struct agg_config *cf = (struct agg_config *)P->cf;
++
++  p->going_down = 0;
++
++  fib_init(&p->route_fib, P->pool, sizeof(struct agg_route), 0, agg_initroute);
++  p->summary_trie = cf->summary_trie;
++
++  /* Import mandatory routes if any */
++  trie_walk(p->summary_trie, agg_walk_sumroutes_initial, p);
++
++  /* Allocate by 16k blocks (while BGP requests 1k block) */
++  p->lp = lp_new(P->pool, 16384 - 16);
++
++  return PS_UP;
++}
++
++static int
 +agg_shutdown(struct proto *P)
 +{
 +  struct agg_proto *p = (struct agg_proto *)P;
 +
++  /* Indicate we're not reconfiguring */
++  p->going_down = 1;
++
 +  /* Mark all summary routes as deleted */
 +  trie_walk(p->summary_trie, agg_mark_sumroute, NULL);
 +
-+  /* Cleanup all (now marked) summary routes */
++  /* Cleanup marked (all) summary routes */
 +  trie_walk(p->summary_trie, agg_clear_sumroute, p);
++
++  /* Free old fib */
++  fib_free(&p->route_fib);
++
++  /* Flush all contents */
++  lp_flush(p->lp);
 +
 +  return PS_DOWN;
 +}
@@ -1175,12 +1371,12 @@ index 0000000..5b9cae1
 +};
 diff --git a/proto/agg/agg.h b/proto/agg/agg.h
 new file mode 100644
-index 0000000..d3e6f65
+index 0000000..97e8426
 --- /dev/null
 +++ proto/agg/agg.h
-@@ -0,0 +1,87 @@
+@@ -0,0 +1,123 @@
 +/*
-+ *	BIRD -- BGP route aggregation
++ *	BIRD -- Generic route aggregation
 + *
 + *	(c) 2012 Yandex LLC
 + *	(c) 2012 Alexander V. Chernikov <melifaro@yandex-team.ru>
@@ -1196,6 +1392,8 @@ index 0000000..d3e6f65
 +  struct f_trie *summary_trie;		/* Trie with summary routes */
 +  struct fib route_fib;			/* Fib with original/mandatory routes */
 +  struct linpool *lp;			/* Linear pool used by aggregation functions */
++  int need_refeed;			/* Set if refeed is required */
++  int going_down;			/* Set if shutdown is requested */
 +};
 +
 +struct agg_config {
@@ -1209,22 +1407,45 @@ index 0000000..d3e6f65
 +/* route flags */
 +#define AGG_FLAG_DELETED	0x0010	/* Summary/mandatory route is candidate for deletion */
 +#define AGG_FLAG_MANDATORY	0x0020	/* Existance of this route is mandatory to advertise summary */
-+#define AGG_FLAG_INSTALLED	0x0040	/* Route is installed */
-+#define AGG_FLAG_NEW		0x0080	/* Newly allocated route */
++#define AGG_FLAG_CHILD		0x0040	/* Child route */
++#define AGG_FLAG_INSTALLED	0x0080	/* Route is installed */
++#define AGG_FLAG_NEW		0x0100	/* Newly allocated route */
++
++#define	AGG_IS_INSTALLED(x)	((x)->flags & AGG_FLAG_INSTALLED)
++#define	AGG_SET_INSTALLED(x)	((x)->flags |= AGG_FLAG_INSTALLED)
++#define	AGG_UNSET_INSTALLED(x)	((x)->flags &= ~AGG_FLAG_INSTALLED)
++
++#define	AGG_IS_MANDATORY(x)	((x)->flags & AGG_FLAG_MANDATORY)
++#define	AGG_IS_CHILD(x)		((x)->flags & AGG_FLAG_CHILD)
++
++#define	AGG_SET_MANDATORY(x)	((x)->flags |= AGG_FLAG_MANDATORY)
++#define	AGG_SET_CHILD(x)	((x)->flags |= AGG_FLAG_CHILD)
++
++#define	AGG_UNSET_MANDATORY(x)	((x)->flags &= ~AGG_FLAG_MANDATORY)
++#define	AGG_UNSET_CHILD(x)	((x)->flags &= ~AGG_FLAG_CHILD)
++
++/* Used by garbage collector to determine if we can wipe route */
++#define	AGG_FLAG_USED		(AGG_FLAG_MANDATORY|AGG_FLAG_CHILD)
++#define	AGG_IS_USED(x)		((x)->flags & AGG_FLAG_USED)
 +
 +/* Summary route flags */
-+#define AGG_FLAG_PREPARED	0x0100	/* Entry is set up (ised in trie checking) */
++#define AGG_FLAG_PREPARED	0x0100	/* Entry is set up (used in trie checking) */
 +#define AGG_FLAG_SUMONLY	0x0200	/* Advertise summary route only */
 +#define AGG_FLAG_MAXINFO	0x0400	/* Save as much info as possible */
++
++#define	AGG_CONFIG_FLAGS	(AGG_FLAG_SUMONLY|AGG_FLAG_MAXINFO)
 +
 +/* Masks */
 +#define AGG_FLAG_RMASK		0x00F0	/* Mask for route flags */
 +#define AGG_FLAG_SUMMASK	0xFF00	/* Flags for summary rouutes */
 +
++#define	AGG_VALID_NODE(x)	((x)->flags & AGG_FLAG_PREPARED)	/* Protect from branching nodes */
++
 +/* Aggregated route information */
 +struct agg_sumroute {
 +  struct f_trie_node tn;		/* Information about network */
-+  u16 route_src;			/* Route source type (RTS_). XXX: Note field MUST not be zero */
++  struct protocol *proto;		/* Pointer to route source protocol */
++  u16 route_src;			/* Route source type (RTS_*) */
 +  u16 flags;				/* Aggregation flags */
 +  u16 mandatory_total;			/* Number of mandatory routes */
 +  u16 mandatory_current;		/* Number of currently advertised mandatory routes */
@@ -1232,23 +1453,33 @@ index 0000000..d3e6f65
 +    struct {
 +      u32 local_id;			/* BGP router id */
 +      u32 local_as;			/* BGP local ASn */
++      u32 as_path_common;		/* Length of common data in current AS_PATH */
 +    } bgp;
 +  } u;
 +  struct rta *attrs;			/* Aggregated route attributes */
 +  list routes;				/* Networks summarized */
 +  list mandatory_list;			/* List of mandatory2summary structures */
 +  list cf_routes;			/* List of mandatory routes (used in config parsing) */
++  node cf_sumroute;			/* Member of summary route list (used in config parsin) */
 +};
 +
 +
-+/* Route entry. Used by mandatory and "casual" routes */
++/*
++ * We have to store prefixes for different tasks in our FIB.
++ * This structure is used as one-for-all route entry accumulating all
++ * fields for evey needed type.
++ *
++ * Currently it is used to store
++ * 1) mandatory routes
++ * 2) child routes for summary records
++ */
 +struct agg_route {
 +  struct fib_node fn;			/* Network node (both) */
 +  u16 flags;				/* Route flafs (both) */
-+  struct agg_sumroute *asr;		/* Pointer to summary route (casual) */
-+  struct rta *attrs;			/* Attributes of best current rte (casual) */
-+  list sum_membership;			/* List with mandatory route membership info (mandatory) */
-+  node n_sumroute;			/* Per-sumroute list node (casual) */
++  struct agg_sumroute *asr;		/* Pointer to summary route (child) */
++  struct rta *attrs;			/* Attributes of best current rte (child) */
++  node n_sumroute;			/* Per-sumroute list node (child) */
++  list membership_list;			/* List for membership structures (mandatory) */
 +};
 +
 +/* Mandatory route */
@@ -1261,19 +1492,20 @@ index 0000000..d3e6f65
 +struct agg_membership {
 +  struct agg_sumroute *asr;		/* Pointer to summary route */
 +  struct agg_route *ar;			/* Pointer to mandatory route */
-+  node n_mandatory;			/* agg_mandatory node */
++  u16 flags;				/* Route flafs (both) */
++  node n_route;				/* agg_route node */
 +  node n_sumroute;			/* agg_summary node */
 +};
 +
 +#endif
 diff --git a/proto/agg/config.Y b/proto/agg/config.Y
 new file mode 100644
-index 0000000..652b461
+index 0000000..8a02083
 --- /dev/null
 +++ proto/agg/config.Y
-@@ -0,0 +1,108 @@
+@@ -0,0 +1,117 @@
 +/*
-+ *	BIRD -- BGP route aggregation
++ *	BIRD -- Generic route aggregation
 + *
 + *	(c) 2012 Yandex LLC
 + *	(c) 2012 Alexander V. Chernikov <melifaro@yandex-team.ru>
@@ -1287,9 +1519,11 @@ index 0000000..652b461
 +
 +CF_DEFINES
 +
-+#define LOCAL_DEBUG
++#undef LOCAL_DEBUG
++
 +#define AGG_CFG ((struct agg_config *) this_proto)
 +int current_rtype = 0;
++struct protocol *current_rproto = NULL;
 +u32 bgp_id = 0, bgp_as = 0;
 +struct agg_sumroute *asr;
 +
@@ -1330,10 +1564,14 @@ index 0000000..652b461
 +
 +agg_route_entry:
 +  AGGREGATE ADDRESS prefix {
++    if (current_rproto == NULL)
++      cf_error("Unknown base protocol for prefix %I/%d", $3.addr, $3.len);
++
 +    asr = (struct agg_sumroute *)trie_add_prefix(AGG_CFG->summary_trie, $3.addr, $3.len, $3.len + 1, MAX_PREFIX_LENGTH);
 +    if (asr->flags & AGG_FLAG_PREPARED)
 +      cf_error("Prefix %I/%d already exists", $3.addr, $3.len);
 +
++    asr->proto = current_rproto;
 +    asr->route_src = current_rtype;
 +    switch (current_rtype)
 +      {
@@ -1345,7 +1583,7 @@ index 0000000..652b461
 +    init_list(&asr->routes);
 +    init_list(&asr->mandatory_list);
 +    init_list(&asr->cf_routes);
-+    asr->flags = AGG_FLAG_PREPARED;
++    asr->flags = AGG_FLAG_PREPARED;	/* Indicate node is not branching */
 +  } agg_options
 +  ;
 +
@@ -1371,9 +1609,12 @@ index 0000000..652b461
 +  ;
 +
 +agg_route_type:
-+   BGP ID idval AS expr { current_rtype = RTS_BGP; bgp_id = $3; bgp_as = $5; }
-+ | OSPF E1 { current_rtype = RTS_OSPF_EXT1; }
-+ | OSPF E2 { current_rtype = RTS_OSPF_EXT2; }
++   BGP ID idval AS expr {
++     current_rproto = &proto_bgp;
++     current_rtype = RTS_BGP;
++     bgp_id = $3;
++     bgp_as = $5;
++   }
 + ; 
 + 
 + 
@@ -1381,10 +1622,10 @@ index 0000000..652b461
 +
 +CF_END
 diff --git a/proto/bgp/attrs.c b/proto/bgp/attrs.c
-index 4495c03..9b068a8 100644
+index e5bc84d..4ad1129 100644
 --- proto/bgp/attrs.c
 +++ proto/bgp/attrs.c
-@@ -19,9 +19,14 @@
+@@ -19,9 +19,18 @@
  #include "lib/resource.h"
  #include "lib/string.h"
  #include "lib/unaligned.h"
@@ -1396,18 +1637,24 @@ index 4495c03..9b068a8 100644
  #include "bgp.h"
  
 +#define BDBG(msg, ...)	log("%s:%d " msg, __FUNCTION__, __LINE__, ##__VA_ARGS__)
++#ifdef LOCAL_DEBUG
++#else
++//#define BDBG(msg, ...)
++#endif
  /*
   *   UPDATE message error handling
   *
-@@ -1516,6 +1521,749 @@ bgp_remove_as4_attrs(struct bgp_proto *p, rta *a)
+@@ -1517,6 +1526,1054 @@ bgp_remove_as4_attrs(struct bgp_proto *p, rta *a)
      }
  }
  
++#ifdef CONFIG_AGG
++
 +#define BGP_AS_MAX_NUMBER	256
 +#define BGP_AS_MAX_LEN		1024	/* 256 4-byte ASNs (maximum tuple size) */
 +#define BGP_AS_MAX_PTRS		64	/* 64 tuples max */
 +/*
-+ * bgp_append_as_tuple - add item to sorted array of fixed size
++ * bgp_sorted_add_as4 - add item to sorted array of fixed size
 + * @number: item
 + * @pbuf: pointer to start of array
 + * @count: pointer to current iterms count
@@ -1423,7 +1670,7 @@ index 4495c03..9b068a8 100644
 +
 +  if (*count == 0)
 +    {
-+      *count = (*count) + 1;
++      *count = 1;
 +      *pbuf = number;
 +      return 1;
 +    }
@@ -1465,13 +1712,14 @@ index 4495c03..9b068a8 100644
 + * bgp_append_as_tuple - append ASNs from one or more AS_SEQ/AS_SET tuples to an array
 + * @src_buf: buffer with chain of AS_SEQUNCE or AS_SET tuples
 + * @src_len: buffer length
++ * @asn_skip: number of ASNs to skip in first tuple
 + * @as_set_ptrs: pointer to array of pointers to sorted u32 arrays of ASNs
 + * @as_set_len: pointer to array of length of given arrays
 + * @as_set_index: current array index
 + * @lp: linear pool to allocate data from
 + */
 +static void
-+bgp_append_as_tuple(byte *src_buf, int src_len, byte **as_set_ptrs, byte *as_set_length, int *as_set_index, struct linpool *lp)
++bgp_append_as_tuple(byte *src_buf, int src_len, int asn_skip, byte **as_set_ptrs, byte *as_set_length, int *as_set_index, struct linpool *lp)
 +{
 +  u32 asn;
 +  int asn_count, i = *as_set_index;
@@ -1485,7 +1733,12 @@ index 4495c03..9b068a8 100644
 +    {
 +      asn_count = src_buf[1];
 +      src_len -= 2 + 4 * asn_count;
-+      src_buf += 2;
++      src_buf += 2 + 4 * asn_skip;
++      if (asn_skip)
++	{
++	  asn_count -= asn_skip;
++	  asn_skip = 0;
++	}
 +      while (asn_count)
 +	{
 +	  asn = get_u32(src_buf);
@@ -1504,12 +1757,12 @@ index 4495c03..9b068a8 100644
 +	      set_ptr = (u32 *)as_set_ptrs[i];
 +	      cnt_ptr = &as_set_length[i];
 +
-+	      BDBG("Index increased to %d", i);
++	      BDBG("Index increased to %d on asn %d count %d", i, asn, as_set_length[i - 1]);
 +
 +	      /* Add to empty array */
 +	      bgp_sorted_add_as4(asn, set_ptr, cnt_ptr);
 +	    }
-+  
++
 +	  //BDBG("Index: %d asn_count: %d cnt: %d curr_asn=%u", i, asn_count, *cnt_ptr, asn);
 +
 +	  src_buf += 4;
@@ -1572,6 +1825,78 @@ index 4495c03..9b068a8 100644
 +}
 +
 +/*
++ * bgp_split_aspath - split AS_PATH into common and 'summary' paths
++ * @ea: new AS_PATH attribuye
++ * @as_data_ptr: pointer to pointer to store common data
++ * @as_len: common data length
++ * @as_set_ptrs: pointer to array of pointers to sorted u32 arrays of ASNs
++ * @as_set_len: pointer to array of length of given arrays
++ * @as_set_index: current array index
++ * @lp: linear pool to allocate data from
++ */
++static void
++bgp_split_aspath(eattr *ea, byte **as_data_ptr, int as_len, byte ***_as_set_ptrs, byte **_as_set_len, int *as_set_index, struct linpool *lp)
++{
++  int sum_len, asn_count, i;
++  byte *src_buf;
++  u32 *set_ptr;
++  byte **as_set_ptrs, *as_set_len;
++
++  /* Allocate and copy common part */
++  *as_data_ptr = lp_alloc(lp, as_len);
++  memcpy(*as_data_ptr, ea->u.ptr->data, as_len);
++
++  /* Allocate indexes */
++  as_set_ptrs = lp_allocz(lp, BGP_AS_MAX_PTRS * sizeof(byte *));
++  as_set_len = lp_allocz(lp, BGP_AS_MAX_PTRS * sizeof(byte *));
++  *_as_set_ptrs = as_set_ptrs;
++  *_as_set_len = as_set_len;
++
++  /* Determine size and beginning of summary data */
++  sum_len = ea->u.ptr->length - as_len;
++  src_buf = ea->u.ptr->data + as_len;
++  i = 0;
++
++  BDBG("Split AS-PATH: common=%d summary=%d", as_len, sum_len);
++
++  if (sum_len == 0)
++    {
++      as_set_ptrs[i] = lp_alloc(lp, BGP_AS_MAX_LEN);
++      *as_set_index = 0;
++      return;
++    }
++
++  /* Parse remaining summary path */
++  while (sum_len)
++    {
++      asn_count = src_buf[1];
++      sum_len -= 2 + 4 * asn_count;
++      src_buf += 2;
++
++      BDBG("Splitting argument of lenght %d, current index %d", asn_count, i);
++      as_set_ptrs[i] = lp_alloc(lp, BGP_AS_MAX_LEN);
++      as_set_len[i] = asn_count;
++      set_ptr = (u32 *)as_set_ptrs[i];
++      /* We use the fact that we store sorted list of ASNs */
++      while (asn_count)
++	{
++	  *set_ptr++ = get_u32(src_buf);
++	  src_buf += 4;
++	  asn_count--;
++	}
++
++      i++;
++    }
++
++  /* Decrement index to reflect last used tuple */
++  if (i > 0)
++    i--;
++
++  /* Store number of indexes used */
++  *as_set_index = i;
++}
++
++/*
 + * bgp_sum_origin - update summary ORIGIN attribute
 + * @attrs: pointer to new route attributes
 + * @origin: pointer to current ORIGIN value
@@ -1606,10 +1931,56 @@ index 4495c03..9b068a8 100644
 +    *origin = ORIGIN_EGP;
 +}
 +
++void
++bgp_print_as_path(byte *buf, int buflen, struct adata *ad, int as_len)
++{
++  int l, tuple_type, as_count, src_len = ad->length;
++  byte *asn_ptr, *src_data = ad->data;
++
++  while (src_len)
++    {
++      as_count = src_data[1];
++      asn_ptr = src_data + 2;
++      tuple_type = src_data[0];
++      src_len -= 2 + 4 * as_count;
++      src_data += 2 + 4 * as_count;
++      as_len -= 2 + 4 * as_count;
++
++      switch (tuple_type)
++	{
++	case AS_PATH_SEQUENCE:
++	case AS_PATH_SET:
++	  l = bsnprintf(buf, buflen, "."); buf += l; buflen -= l;
++	  if (tuple_type == AS_PATH_SET)
++	    {
++	      l = bsnprintf(buf, buflen, " {"); buf += l; buflen -= l;
++	    }
++
++	  while (as_count)
++	    {
++	      l = bsnprintf(buf, buflen, " %d", get_u32(asn_ptr));
++	      buf += l;
++	      buflen -= l;
++	      asn_ptr += 4;
++	      as_count--;
++	    }
++
++	  if (tuple_type == AS_PATH_SET)
++	    {
++	      l = bsnprintf(buf, buflen, "} "); buf += l; buflen -= l;
++	    }
++	}
++
++      if (as_len == 0)
++	{
++	  l = bsnprintf(buf, buflen, "| "); buf += l; buflen -= l;
++	}
++    }
++}
++
 +/*
 + * bgp_sum_aspath - update summary AS_PATH attribute
-+ * @ea: new AS_PATH attribuye
-+ * @as_differs: are we already in 'differ' mode
++ * @ea: new AS_PATH attribute, can be NULL
 + * @as_data_ptr: pointer to common data for all routes
 + * @as_len: common data length
 + * @as_set_ptrs: pointer to array of pointers to sorted u32 arrays of ASNs
@@ -1618,70 +1989,122 @@ index 4495c03..9b068a8 100644
 + * @lp: linear pool to allocate data from
 + */
 +void
-+bgp_sum_aspath(eattr *ea, int *as_differs, byte *as_data_ptr, int *as_len, byte **as_set_ptrs, byte *as_set_len, int *as_set_index, struct linpool *lp)
++bgp_sum_aspath(eattr *ea, byte *as_data_ptr, int *as_len, byte **as_set_ptrs, byte *as_set_len, int *as_set_index, struct linpool *lp)
 +{
-+  int new_len, mlen, slen;
-+  byte *sum_off, *new_off, *new_ptr;
++  int new_len, mlen, slen, asn_cnt, asn_skip = 0;
++  byte *sum_ptr, *new_ptr, *new_ptr_start;
 +
-+  new_len = ea->u.ptr->length;
-+  new_ptr = ea->u.ptr->data;
++  new_len = ea ? ea->u.ptr->length : 0;
++  new_ptr_start = ea ? ea->u.ptr->data : NULL;
 +
 +  /* Check if new AS_PATH is the same */
-+  if ((*as_differs == 0) && (*as_len == new_len) && (memcmp(as_data_ptr, new_ptr, new_len) == 0))
++  if ((*as_len == new_len) && (memcmp(as_data_ptr, new_ptr_start, new_len) == 0))
 +    return;
 +
-+  /* 
++  /*
 +   * New AS_PATH differs. We use easy and naive implementation
 +   * from RFC4271 9.2.2.2:
-+   * 1) Find as much as possible AS_SEQ / AS_SET segments at the 
++   * 1) Find as much as possible AS_SEQ / AS_SET segments at the
 +   * beginning (usually zero)
++   * 1.5) Try to find some common ASNs within the beginning of first
++   * different segment
 +   * 2) put the rest into huge sorted AS_SET (or several AS_SETs)
 +   */
-+  *as_differs = 1;
 +
-+  /* 
++  /*
 +   * Compare AS_SET / AS_SEQ tuples one by one.
 +   * We assume both SETs to be validated
 +   */
 +
 +  mlen = MIN(*as_len, new_len);
-+  sum_off = as_data_ptr;
-+  new_off = new_ptr;
++  sum_ptr = as_data_ptr;
++  new_ptr = new_ptr_start;
 +
 +  while (mlen > 0)
 +    {
-+      /* Check if segment type and length is the same */
-+      if (memcmp(sum_off, new_off, 2))
-+	break;
++      /* Check if segment type is the same */
++      if (sum_ptr[0] != new_ptr[0])
++	  break;
 +
-+      slen = 2 + 4 * new_off[1];
-+      if (memcmp(sum_off, new_off, slen))
-+	break;
++      asn_cnt = MIN(sum_ptr[1], new_ptr[1]);
++      slen = 2 + 4 * asn_cnt;
++      if ((memcmp(sum_ptr, new_ptr, slen)) || (sum_ptr[1] != new_ptr[1]))
++	{
++	  //BDBG("Checking of we can save some common ASNs (max %d) from last segment", asn_cnt);
++	  /*
++	   * Check if we can save at least part of AS_SEQ.
++	   * Probably the most we can save is just several
++	   * first ASNs, so currently we don't bother doing
++	   * binary search.
++	   */
++	  if (new_ptr[0] != AS_PATH_SEQUENCE)
++	    break;
++
++	  while (asn_cnt)
++	    {
++	      if (memcmp(sum_ptr + 2 + 4 * asn_skip, new_ptr + 2 + 4 * asn_skip, 4))
++		break;
++	      asn_skip++;
++	      asn_cnt--;
++	    }
++	  //BDBG("Saved %d/%d ASNs", asn_skip, new_ptr[1]);
++	  break;
++	}
 +
 +      /* Segment is the same, moving to the next  */
-+      sum_off += slen;
-+      new_off += slen;
++      sum_ptr += slen;
++      new_ptr += slen;
 +      mlen -= slen;
 +    }
 +
-+  //BDBG("MIN=%d mlen=%d", MIN(*as_len, new_len), mlen);
++  //BDBG("MIN=%d common_length=%d as_len=%d asn_skip=%d", MIN(*as_len, new_len), MIN(*as_len, new_len) - mlen, *as_len, asn_skip);
 +
-+  /*
-+   * 1) If xlen is > 0 we need to put to AS_SET buffer ALL different tuples from sum_off and new_off.
-+   * 2) If xlen is zero but new_len is larger, we need to put to AS_SET buffer tuples from new_off
-+   * 3) If xlen is zero but sum_len is larger, we need to put to AS_SET buffer tuples from sum_off
-+   */
-+  if (sum_off != as_data_ptr + *as_len)
++  if (sum_ptr != as_data_ptr + *as_len)
 +    {
-+      BDBG("Move ASNs from summary to AS-SET, length=%d", as_data_ptr + *as_len - sum_off);
-+      bgp_append_as_tuple(sum_off, as_data_ptr + *as_len - sum_off, as_set_ptrs, as_set_len, as_set_index, lp);
-+      *as_len = sum_off - as_data_ptr;
++      /*
++       * 1) new path length  < current path length (and new path is the same as beginning of summary path) e.g.
++       * start_mlen = '.'
++       * new: XXXXXXX.
++       * sum: XXXXXXX.ZZZ
++       * 2) common path is smaller than mlen:
++       * start_mlen = '.'
++       * new: XXXXMMMM.M
++       * sum: XXXXZZZZ.
++       *
++       * Anyway, we have to
++       * 1) move part of common as-path to summarized AS-SET fragment
++       * 2) decrease common path length
++       */
++      //BDBG("Move ASNs from summary to AS-SET, length=%d", as_data_ptr + *as_len - sum_ptr);
++      bgp_append_as_tuple(sum_ptr, as_data_ptr + *as_len - sum_ptr, asn_skip, as_set_ptrs, as_set_len, as_set_index, lp);
++      *as_len = sum_ptr - as_data_ptr;
++      if (asn_skip)
++	{
++	  /* Add part of AS_SEQ into summary ptr */
++	  //BDBG("Increasing as_len %d->%d", *as_len, *as_len + 2 + 4 * asn_skip);
++	  *as_len += 2 + 4 * asn_skip;
++	  /* Correct number of prefixes in last AS_SEQ */
++	  sum_ptr[1] = asn_skip;
++	}
 +    }
 +
-+  if (new_off != new_ptr + new_len)
++  if (new_ptr != new_ptr_start + new_len)
 +    {
-+      BDBG("Move ASNs from new to AS-SET, length=%d", new_ptr + new_len - new_off);
-+      bgp_append_as_tuple(new_off, new_ptr + new_len - new_off, as_set_ptrs, as_set_len, as_set_index, lp);
++      /*
++       * 2) common path is smaller than mlen:
++       * start_mlen = '.'
++       * new: XXXXMMMM.M
++       * sum: XXXXZZZZ.
++       *
++       * 3) new path length > current path length (and summary path is the same as beginning of new path) e.g.
++       * start_mlen = '.'
++       * new: XXXXXXX.ZZZ
++       * sum: XXXXXXX.
++       *
++       * Here we have to move end of new path to summarized AS-SET fragment
++       */
++      //BDBG("Move ASNs from new to AS-SET, length=%d", new_ptr_start + new_len - new_ptr);
++      bgp_append_as_tuple(new_ptr, new_ptr_start + new_len - new_ptr, asn_skip, as_set_ptrs, as_set_len, as_set_index, lp);
 +    }
 +}
 +
@@ -1761,7 +2184,11 @@ index 4495c03..9b068a8 100644
 +  asr->attrs = attrs;
 +}
 +
-+
++/*
++ * Create and announce summary route
++ * @p: pointer to protocol instance
++ * @asr: pointer to summary route
++ */
 +void
 +bgp_create_sumroute(struct agg_proto *p, struct agg_sumroute *asr)
 +{
@@ -1773,10 +2200,8 @@ index 4495c03..9b068a8 100644
 +  int origin = ORIGIN_IGP, atomic_agg = 0;
 +  u32 agg_as, agg_id;
 +  byte *new_ptr;
-+  int as_differs = 0;
 +  int as_set_index = 0;
 +  int agg_count = 0;
-+  struct bgp_proto *bgp_p;
 +  byte *as_data_ptr = NULL;
 +  struct adata *ad, *as_path;
 +  byte *as_set_ptrs[BGP_AS_MAX_PTRS], as_set_len[BGP_AS_MAX_PTRS];
@@ -1799,20 +2224,20 @@ index 4495c03..9b068a8 100644
 +
 +  agg_as = asr->u.bgp.local_as;
 +  agg_id = asr->u.bgp.local_id;
-+  BDBG("Summary route ASN/ID set to %d/%R", agg_as, agg_id);
++  //BDBG("Summary route ASN/ID set to %d/%R", agg_as, agg_id);
 +
 +  WALK_LIST_DELSAFE(n, n_next, asr->routes)
 +    {
 +      ar = SKIP_BACK(struct agg_route, n_sumroute, n);
 +
 +      attrs = ar->attrs;
-+      BDBG("Working on route %I/%d source=%d", ar->fn.prefix, ar->fn.pxlen, attrs->source);
++      //BDBG("Working on route %I/%d source=%d", ar->fn.prefix, ar->fn.pxlen, attrs->source);
 +
 +      /*
 +       * FIXME: Routes with different MED should not be aggregated.
-+       * However this is another non-deterministic place
 +       */
-+      /* Save ASN & BGP router id from first BGP route */
++      /* Check every BGP route for valid AS and router ID */
++#if 0
 +      if (attrs->source == RTS_BGP)
 +	{
 +	  bgp_p = (struct bgp_proto *)attrs->proto;
@@ -1823,6 +2248,7 @@ index 4495c03..9b068a8 100644
 +	      continue;
 +	    }
 +	}
++#endif
 +
 +      /*
 +       * Check AS_PATH. AS_PATH is normalized to 4b ASNs in bgp_decode_attr().
@@ -1851,7 +2277,7 @@ index 4495c03..9b068a8 100644
 +	      as_set = 1;
 +	    }
 +	  else if (new_ptr)
-+	    bgp_sum_aspath(ea, &as_differs, as_data_ptr, &as_len, as_set_ptrs, as_set_len, &as_set_index, p->lp);
++	    bgp_sum_aspath(ea, as_data_ptr, &as_len, as_set_ptrs, as_set_len, &as_set_index, p->lp);
 +	}
 +
 +      /* Check ORIGIN () */
@@ -1867,9 +2293,12 @@ index 4495c03..9b068a8 100644
 +  /* Skip route? */
 +  if (!agg_count)
 +    {
-+      log(L_ERR "%s: Route %I/%d cannot be summarized due to conflicting Router Id/ASN", p->p.name, asr->tn.addr, asr->tn.plen);
++      log(L_ERR "%s: Route %I/%d cannot be summarized (no candidates)", p->p.name, asr->tn.addr, asr->tn.plen);
 +      return;
 +    }
++
++  /* Save current common AS_PATH length */
++  asr->u.bgp.as_path_common = as_len;
 +
 +  /*
 +   * Make out list sorted by default
@@ -1897,7 +2326,16 @@ index 4495c03..9b068a8 100644
 +}
 +
 +
++
 +#define DBG_UPD(x)  BDBG("Summary route update requires reannounce due to changed " x " attribute")
++/*
++ * Update and reannounce summary route
++ * @p: pointer to protocol instance
++ * @asr: pointer to summary route
++ * @ar: changed route
++ * @old: old attributes
++ * @new: new attributes
++ */
 +void
 +bgp_update_sumroute(struct agg_proto *p, struct agg_sumroute *asr, struct agg_route *ar, struct rta *old, struct rta *new)
 +{
@@ -1927,22 +2365,28 @@ index 4495c03..9b068a8 100644
 +   */
 +  if (!new)
 +    {
++      /*
++       * Route withdrawal.
++       * Note this is definitely not the last route
++       */
 +
-+      /* route witdrawal */
 +      /* Check if we can skip rebuilding */
-+      BDBG("Widrawing route %I/%d from summary %I/%d", ar->fn.prefix, ar->fn.pxlen, asr->tn.addr, asr->tn.plen);
++      BDBG("Withdrawing route %I/%d from summary %I/%d", ar->fn.prefix, ar->fn.pxlen, asr->tn.addr, asr->tn.plen);
 +
 +      /*
 +       * AS_PATH
-+       * If MAXINFO flag is not set we don't care (AS_PATH is empty)
++       * If MAXINFO flag is NOT set we don't care (AS_PATH is empty)
 +       * if MAXINFO is set but attribute length is zero we don't care, too
-+       * Overwise, full rebuild is requires
++       * if this is not BGP route we don't care (yes, we CAN possibly optimize AS_PATH but we skip this for prefix stability)
++       * Otherwise, full rebuild is requires
 +       */
-+      if ((asr->flags & AGG_FLAG_MAXINFO) && (ea = ea_find(a->eattrs, EA_CODE(EAP_BGP, BA_AS_PATH))))
++      if ((asr->flags & AGG_FLAG_MAXINFO) && (ea = ea_find(old->eattrs, EA_CODE(EAP_BGP, BA_AS_PATH))))
 +	{
-+	  if (ea->u.ptr->length > 0)
++	  if ((ea) && (ea->u.ptr->length > 0))
 +	    {
-+	      /* We have to save every AS in AS_PATH and it is not empty. */
++	      /*
++	       * We have to save every AS in AS_PATH and it is not empty.
++	       */
 +	      DBG_UPD("AS_PATH");
 +	      bgp_create_sumroute(p, asr);
 +	      return;
@@ -1980,13 +2424,14 @@ index 4495c03..9b068a8 100644
 +	    }
 +	}
 +
-+      if (ea = ea_find(a->eattrs, EA_CODE(EAP_BGP, BA_ATOMIC_AGGR)))
++      /*
++       * ATOMIC_AGG attrbiute can only disappear (since we're not generating it locally)
++       * So, we should compare current value (by ea_find) and new value of atomic_agg
++       */
++      if ((ea = ea_find(a->eattrs, EA_CODE(EAP_BGP, BA_ATOMIC_AGGR))) && (atomic_agg == 0))
 +	{
-+	  if ((ea->u.data != atomic_agg))
-+	    {
-+	      DBG_UPD("ATOMIC_AGG");
-+	      rebuild = 1;
-+	    }
++	  DBG_UPD("ATOMIC_AGG");
++	  rebuild = 1;
 +	}
 +
 +      if (!rebuild)
@@ -2004,8 +2449,9 @@ index 4495c03..9b068a8 100644
 +       * AGGREGATOR value cannot change (so we import it from current summary route)
 +       */
 +
-+      /* Create empty AS_PATH */
-+      as_path = bgp_alloc_adata(p->lp, 0);
++      /* AS_PATH is unchanged. Copy from current attribute */
++      ea = ea_find(a->eattrs, EA_CODE(EAP_BGP, BA_AS_PATH));
++      as_path = ea->u.ptr;
 +
 +      /* Create AGGREGATOR attribute */
 +      aggregator = bgp_alloc_adata(p->lp, 8);
@@ -2018,9 +2464,9 @@ index 4495c03..9b068a8 100644
 +      return;
 +    }
 +
-+   /************************************************
-+   *         New route or route update.            *
-+   ************************************************/
++  /************************************************
++  *         New route or route update.            *
++  ************************************************/
 +  /* Check ORIGIN */
 +  if (ea = ea_find(a->eattrs, EA_CODE(EAP_BGP, BA_ORIGIN)))
 +    {
@@ -2036,9 +2482,10 @@ index 4495c03..9b068a8 100644
 +  /* Check AS_PATH */
 +  ea = ea_find(a->eattrs, EA_CODE(EAP_BGP, BA_AS_PATH));
 +
-+  byte *as_set_ptrs[BGP_AS_MAX_PTRS], as_set_len[BGP_AS_MAX_PTRS];
-+  int as_differs, as_len, as_set_index;
++  byte **as_set_ptrs, *as_set_len;
++  int as_len, as_set_index;
 +  byte *as_data_ptr;
++  struct eattr *ea_old;
 +
 +  /*
 +   * Check if new route:
@@ -2048,23 +2495,101 @@ index 4495c03..9b068a8 100644
 +   */
 +  as_path = NULL;
 +
-+  if ((asr->flags & AGG_FLAG_MAXINFO) && (ea_new = ea_find(new->eattrs, EA_CODE(EAP_BGP, BA_AS_PATH))) && (ea_new->u.ptr->length))
++  if (asr->flags & AGG_FLAG_MAXINFO)
 +    {
-+      if ((ea->u.ptr->length != ea_new->u.ptr->length) || (memcmp(ea->u.ptr->data, ea_new->u.ptr->data, ea_new->u.ptr->length)))
++
++      /* BGP new route/route update */
++      ea_new = ea_find(new->eattrs, EA_CODE(EAP_BGP, BA_AS_PATH));
++      if (old)
 +	{
-+	  /* AS_PATH differs */
-+	  as_len = ea->u.ptr->length;
-+	  as_data_ptr = lp_alloc(p->lp, as_len ? as_len : 4);
-+	  memcpy(as_data_ptr, ea->u.ptr->data, as_len);
++	 /*
++	  *  Route update
++	  *
++	  *    4 different cases here:
++	  *
++	  *             NEW RTE
++	  *           RTS_*  RTS_BGP
++	  *         +---------------+
++	  *         |       |       |
++	  *  RTS_*  | 1 OK  | 2 R   |
++	  *         |       |       |
++	  *  OLD    +----------------
++	  *         |       |       |
++	  * RTS_BGP | 3 R   | 3 OK* |
++	  *         |       |       |
++	  *         +---------------+
++	  *
++	  * 1) Non-BGP route update. Nothing changes
++	  * 2) Non-BGP to BGP route update. Do rebuild
++	  * 3) Vise versa. Do rebuild
++	  * 4) Skip rebuild IFF paths are the same
++	  *
++	  */
 +
-+	  as_differs = 1;
-+	  memset(&as_set_len, 0, sizeof(as_set_len));
-+	  as_set_ptrs[0] = lp_alloc(p->lp, BGP_AS_MAX_LEN);
-+	  as_set_index = 0;
++	  ea_old = ea_find(old->eattrs, EA_CODE(EAP_BGP, BA_AS_PATH));
 +
-+	  bgp_sum_aspath(ea_new, &as_differs, as_data_ptr, &as_len, as_set_ptrs, as_set_len, &as_set_index, p->lp);
++	  /*
++	   * Check for case 2 and case 3
++	   */
++	  if ((!ea_old && ea_new) || (ea_old && !ea_new))
++	    {
++	      bgp_create_sumroute(p, asr);
++	      return;
++	    }
++
++	  /*
++	   * Case 4
++	   * We can skip rebuilding IFF AS_PATH is not changed.
++	   * Otherwise, we have to to rebuild since we don't want to keep heavy logic here.
++	   * Good example for doing rebuild is the folllowing:
++	   * old: XXXX YYYY ZZZZ MMMM
++	   * new: XXXX ZZZZ MMMM
++	   */
++	  if ((ea_new && ea_old) && ((ea_new->u.ptr->length != ea_old->u.ptr->length) ||
++		(memcmp(ea_new->u.ptr->data, ea_old->u.ptr->data, ea_new->u.ptr->length))))
++	    {
++	      bgp_create_sumroute(p, asr);
++	      return;
++	    }
++	}
++      else
++	{
++	  /*
++	   * New route.
++	   *
++	   * Let's check if we need to update AS_PATH.
++	   *
++	   * Summary attribute consists of 2 parts:
++	   * 1) common part for all AS_PATHS
++	   * 2) several AS_SETS with evey other ASes (possibly empty)
++	   *
++	   * sum: XXXX YYYY ZZZZ | { AAAA BBBB CCCC }
++	   *      \- as_length -/
++	   * new: KKKK BBBB DDDD
++	   *
++	   * We can skip rebuilding IFF
++	   * 0) This is BGP route
++	   * 1) new length == as_length AND
++	   * 2) these pieces are the same
++	   */
++	  as_len = asr->u.bgp.as_path_common;
++	  if ((!ea_new) || (as_len != ea_new->u.ptr->length) || (memcmp(ea->u.ptr->data, ea_new->u.ptr->data, as_len)))
++	    rebuild = 1;
++	}
++
++      if (rebuild)
++	{
++	  /*
++	   * Either new as-path length is smaller than common path length in aggregated route
++	   * or common part differs between new and aggregated. We have to update attribute (and reannounce route)
++	   */
++	  /* Split summary as_path to 'common' and 'summary' part in proper format */
++	  bgp_split_aspath(ea, &as_data_ptr, as_len, &as_set_ptrs, &as_set_len, &as_set_index, p->lp);
++	  /* Merge new path (NULL path is OK) */
++	  bgp_sum_aspath(ea_new, as_data_ptr, &as_len, as_set_ptrs, as_set_len, &as_set_index, p->lp);
++	  /* Compile resulting path */
 +	  as_path = bgp_compile_sum_aspath(as_data_ptr, as_len, as_set_ptrs, as_set_len, &as_set_index, p->lp);
-+
++	  /* Note we have to store upfated as_len below. */
 +	  DBG_UPD("AS_PATH");
 +	  rebuild = 1;
 +	}
@@ -2074,10 +2599,9 @@ index 4495c03..9b068a8 100644
 +  if (ea = ea_find(new->eattrs, EA_CODE(EAP_BGP, BA_ATOMIC_AGGR)))
 +    atomic_agg = 1;
 +
-+  if ((ea_find(a->eattrs, EA_CODE(EAP_BGP, BA_ATOMIC_AGGR))) && (!atomic_agg))
++  if ((ea_find(a->eattrs, EA_CODE(EAP_BGP, BA_ATOMIC_AGGR)) == NULL) && (atomic_agg))
 +    {
 +      DBG_UPD("ATOMIC_AGGREGATE");
-+      atomic_agg = 1;
 +      rebuild = 1;
 +    }
 +
@@ -2094,6 +2618,7 @@ index 4495c03..9b068a8 100644
 +    }
 +
 +  /* Check AGGREGATOR */
++#if 0
 +  struct bgp_proto *bgp_p = NULL;
 +  byte agg[8];
 +  if (new->source == RTS_BGP)
@@ -2112,6 +2637,7 @@ index 4495c03..9b068a8 100644
 +	  return;
 +	}
 +    }
++#endif
 +
 +  if (!rebuild)
 +    {
@@ -2119,7 +2645,7 @@ index 4495c03..9b068a8 100644
 +      return;
 +    }
 +
-+  DBG("New route %I/%d require summary route to be updated", ar->fn.prefix, ar->fn.pxlen);
++  DBG("New route %I/%d requires summary route to be updated", ar->fn.prefix, ar->fn.pxlen);
 +
 +  /* Copy current AS_PATH if not set */
 +  if (!as_path)
@@ -2129,31 +2655,55 @@ index 4495c03..9b068a8 100644
 +      as_path = bgp_alloc_adata(p->lp, as_len);
 +      memcpy(as_path->data, ea->u.ptr->data, as_len);
 +    }
++  else
++    {
++      /* Update summary route delimiter */
++      asr->u.bgp.as_path_common = as_len;
++    }
 +
 +  /* Copy AGGREGATOR attribute */
 +  aggregator = bgp_alloc_adata(p->lp, 8);
 +
-+  if (bgp_p)
-+    memcpy(aggregator + 1, agg, 8);
-+  else
-+    {
-+      if (ea = ea_find(a->eattrs, EA_CODE(EAP_BGP, BA_AGGREGATOR)))
-+	memcpy(aggregator + 1, ea->u.ptr->data, 8);
-+    }
++  /*
++   * We ALWAYS create AGGREGATOR attribute (RFC 4271, 9.2.2.2 / 5.1.7)
++   * and it is ALWAYS the same.
++   */
++  ea = ea_find(a->eattrs, EA_CODE(EAP_BGP, BA_AGGREGATOR));
++  memcpy(aggregator + 1, ea->u.ptr->data, 8);
 +
 +  bgp_update_sum_rte(p, asr, origin, as_path, atomic_agg, aggregator);
 +  lp_flush(p->lp);
 +}
 +#undef BGP_UPD
 +
++/*
++ * bgp_check_sumroute - checks if protocol specific parameters are the same
++ * @p: pointer to protocol instance
++ * @asr_o: old summary route
++ * @asr: new summary route
++ *
++ * Returns 1 if parameters are the same, 0 otherwise.
++ */
++int
++bgp_check_sumroute(struct agg_proto *p, struct agg_sumroute *asr_o, struct agg_sumroute *asr)
++{
++  if ((asr_o->u.bgp.local_id != asr->u.bgp.local_id) ||
++	(asr_o->u.bgp.local_as != asr->u.bgp.local_as))
++    return 0;
++
++  return 1;
++}
++
++#endif /* CONFIG_AGG */
++
  /**
   * bgp_decode_attrs - check and decode BGP attributes
   * @conn: connection
 diff --git a/proto/bgp/bgp.c b/proto/bgp/bgp.c
-index 4d3c32f..b23e21a 100644
+index 0b52ded..1d89950 100644
 --- proto/bgp/bgp.c
 +++ proto/bgp/bgp.c
-@@ -1174,6 +1174,7 @@ bgp_show_proto_info(struct proto *P)
+@@ -1203,6 +1203,7 @@ bgp_show_proto_info(struct proto *P)
      }
  }
  
@@ -2161,7 +2711,7 @@ index 4d3c32f..b23e21a 100644
  struct protocol proto_bgp = {
    name:			"BGP",
    template:		"bgp%d",
-@@ -1188,5 +1189,9 @@ struct protocol proto_bgp = {
+@@ -1217,5 +1218,10 @@ struct protocol proto_bgp = {
    get_status:		bgp_get_status,
    get_attr:		bgp_get_attr,
    get_route_info:	bgp_get_route_info,
@@ -2169,24 +2719,28 @@ index 4d3c32f..b23e21a 100644
 +  show_proto_info:	bgp_show_proto_info,
 +#ifdef CONFIG_AGG
 +  create_sumroute:	bgp_create_sumroute,
-+  update_sumroute:	bgp_update_sumroute
++  update_sumroute:	bgp_update_sumroute,
++  check_sumroute:	bgp_check_sumroute
 +#endif
  };
 diff --git a/proto/bgp/bgp.h b/proto/bgp/bgp.h
-index a8c5818..21ace7b 100644
+index c3adf25..ae62c30 100644
 --- proto/bgp/bgp.h
 +++ proto/bgp/bgp.h
-@@ -184,6 +184,8 @@ static inline void set_next_hop(byte *b, ip_addr addr) { ((ip_addr *) b)[0] = ad
+@@ -183,6 +183,11 @@ static inline void set_next_hop(byte *b, ip_addr addr) { ((ip_addr *) b)[0] = ad
  
  void bgp_attach_attr(struct ea_list **to, struct linpool *pool, unsigned attr, uintptr_t val);
  byte *bgp_attach_attr_wa(struct ea_list **to, struct linpool *pool, unsigned attr, unsigned len);
++#ifdef CONFIG_AGG
 +void bgp_create_sumroute(struct agg_proto *p, struct agg_sumroute *asr);
 +void bgp_update_sumroute(struct agg_proto *p, struct agg_sumroute *asr, struct agg_route *ar, struct rta *old, struct rta *new);
++int bgp_check_sumroute(struct agg_proto *p, struct agg_sumroute *asr_o, struct agg_sumroute *asr);
++#endif
  struct rta *bgp_decode_attrs(struct bgp_conn *conn, byte *a, unsigned int len, struct linpool *pool, int mandatory);
  int bgp_get_attr(struct eattr *e, byte *buf, int buflen);
  int bgp_rte_better(struct rte *, struct rte *);
 diff --git a/sysdep/autoconf.h.in b/sysdep/autoconf.h.in
-index d029e2a..d10b409 100644
+index ac6f7a8..4d4dba5 100644
 --- sysdep/autoconf.h.in
 +++ sysdep/autoconf.h.in
 @@ -42,6 +42,7 @@
@@ -2200,2205 +2754,19 @@ index d029e2a..d10b409 100644
 -- 
 1.7.3.2
 
-From 6178c758c99bf6b1d9402489e8974ee3598675cf Mon Sep 17 00:00:00 2001
-From: Alexander V. Chernikov <melifaro@ipfw.ru>
-Date: Thu, 22 Mar 2012 15:28:02 +0000
-Subject: [PATCH 1/1] * Implement general aggregation protocol, v5
-
----
- configure.in          |    4 +-
- doc/bird.conf.example |    9 +
- filter/config.Y       |    2 +-
- filter/filter.h       |    7 +-
- filter/trie.c         |  111 +++++++-
- nest/proto-hooks.c    |   11 +
- nest/proto.c          |    3 +
- nest/protocol.h       |    9 +-
- nest/rt-table.c       |   19 +-
- proto/agg/Doc         |    1 +
- proto/agg/Makefile    |    6 +
- proto/agg/agg.c       |  720 +++++++++++++++++++++++++++++++++++++++++++++++
- proto/agg/agg.h       |   87 ++++++
- proto/agg/config.Y    |  108 +++++++
- proto/bgp/attrs.c     |  748 +++++++++++++++++++++++++++++++++++++++++++++++++
- proto/bgp/bgp.c       |    7 +-
- proto/bgp/bgp.h       |    2 +
- sysdep/autoconf.h.in  |    1 +
- 18 files changed, 1831 insertions(+), 24 deletions(-)
- create mode 100644 proto/agg/Doc
- create mode 100644 proto/agg/Makefile
- create mode 100644 proto/agg/agg.c
- create mode 100644 proto/agg/agg.h
- create mode 100644 proto/agg/config.Y
-
-diff --git a/configure.in b/configure.in
-index 46a6ecd..aff445a 100644
---- configure.in
-+++ configure.in
-@@ -43,11 +43,11 @@ AC_SUBST(srcdir_rel_mf)
+--- configure.orig	2012-08-07 13:28:04.000000000 +0400
++++ configure	2012-08-15 15:54:05.000000000 +0400
+@@ -2355,11 +2355,11 @@
  if test "$enable_ipv6" = yes ; then
  	ip=ipv6
- 	SUFFIX6=6
+ 	SUFFIX=6
 -	all_protocols=bgp,ospf,pipe,radv,rip,static
 +	all_protocols=bgp,ospf,pipe,radv,rip,static,agg
  else
  	ip=ipv4
- 	SUFFIX6=""
+ 	SUFFIX=""
 -	all_protocols=bgp,ospf,pipe,rip,static
 +	all_protocols=bgp,ospf,pipe,rip,static,agg
  fi
  
- if test "$with_protocols" = all ; then
-diff --git a/doc/bird.conf.example b/doc/bird.conf.example
-index 5e07ab5..2cab8be 100644
---- doc/bird.conf.example
-+++ doc/bird.conf.example
-@@ -163,6 +163,15 @@ protocol static {
- #	};
- #}
- 		
-+#protocol agg {
-+#	bgp id 198.51.100.1 as 65000 {
-+#		aggregate address 198.51.100.64/26;
-+#		aggregate address 198.51.100.0/26 save attributes; # Aggregate AS_PATH
-+#		aggregate address 198.51.100.128/16 mandatory list {
-+#			198.51.100.12/32;
-+#		}; # Announce summary IFF all prefixes from mandatory list exists
-+#	}
-+#}
- 
- #protocol bgp {
- #	disabled;
-diff --git a/filter/config.Y b/filter/config.Y
-index 2e8b522..a13f33c 100644
---- filter/config.Y
-+++ filter/config.Y
-@@ -558,7 +558,7 @@ fprefix:
-  ;
- 
- fprefix_set:
--   fprefix { $$ = f_new_trie(cfg_mem); trie_add_fprefix($$, &($1.val.px)); }
-+   fprefix { $$ = f_new_trie(cfg_mem, sizeof(struct f_trie_node)); trie_add_fprefix($$, &($1.val.px)); }
-  | fprefix_set ',' fprefix { $$ = $1; trie_add_fprefix($$, &($3.val.px)); }
-  ;
- 
-diff --git a/filter/filter.h b/filter/filter.h
-index 2386fc9..f2a5d06 100644
---- filter/filter.h
-+++ filter/filter.h
-@@ -79,11 +79,13 @@ struct f_tree *build_tree(struct f_tree *);
- struct f_tree *find_tree(struct f_tree *t, struct f_val val);
- int same_tree(struct f_tree *t1, struct f_tree *t2);
- 
--struct f_trie *f_new_trie(linpool *lp);
--void trie_add_prefix(struct f_trie *t, ip_addr px, int plen, int l, int h);
-+struct f_trie *f_new_trie(linpool *lp, size_t node_size);
-+void *trie_add_prefix(struct f_trie *t, ip_addr px, int plen, int l, int h);
- int trie_match_prefix(struct f_trie *t, ip_addr px, int plen);
-+void *trie_match_longest_prefix(struct f_trie *t, ip_addr px, int plen);
- int trie_same(struct f_trie *t1, struct f_trie *t2);
- void trie_print(struct f_trie *t);
-+void trie_walk(struct f_trie *t, void *func, void *data);
- 
- void fprefix_get_bounds(struct f_prefix *px, int *l, int *h);
- 
-@@ -186,6 +188,7 @@ struct f_trie
- {
-   linpool *lp;
-   int zero;
-+  size_t node_size;
-   struct f_trie_node root;
- };
- 
-diff --git a/filter/trie.c b/filter/trie.c
-index 581332c..12d7755 100644
---- filter/trie.c
-+++ filter/trie.c
-@@ -75,23 +75,24 @@
- #include "filter/filter.h"
- 
- /**
-- * f_new_trie
-- *
-- * Allocates and returns a new empty trie.
-+ * f_new_trie - Allocates and returns a new empty trie.
-+ * @lp: linear pool to allocate items from
-+ * @node_size: element size to allocate
-  */
- struct f_trie *
--f_new_trie(linpool *lp)
-+f_new_trie(linpool *lp, size_t node_size)
- {
-   struct f_trie * ret;
--  ret = lp_allocz(lp, sizeof(struct f_trie));
-+  ret = lp_allocz(lp, sizeof(struct f_trie) + node_size - sizeof(struct f_trie_node));
-   ret->lp = lp;
-+  ret->node_size = node_size;
-   return ret;
- }
- 
- static inline struct f_trie_node *
- new_node(struct f_trie *t, int plen, ip_addr paddr, ip_addr pmask, ip_addr amask)
- {
--  struct f_trie_node *n = lp_allocz(t->lp, sizeof(struct f_trie_node));
-+  struct f_trie_node *n = lp_allocz(t->lp, t->node_size);
-   n->plen = plen;
-   n->addr = paddr;
-   n->mask = pmask;
-@@ -116,9 +117,13 @@ attach_node(struct f_trie_node *parent, struct f_trie_node *child)
-  * Adds prefix (prefix pattern) @px/@plen to trie @t.  @l and @h are lower
-  * and upper bounds on accepted prefix lengths, both inclusive.
-  * 0 <= l, h <= 32 (128 for IPv6).
-+ *
-+ * Returns pointer to allocated node. Function can return pointer to
-+ * existing node if @px and @plen are the same. If px/plen == 0/0 (or ::/0)
-+ * pointer to root node is returned
-  */
- 
--void
-+void *
- trie_add_prefix(struct f_trie *t, ip_addr px, int plen, int l, int h)
- {
-   if (l == 0)
-@@ -156,7 +161,7 @@ trie_add_prefix(struct f_trie *t, ip_addr px, int plen, int l, int h)
- 	  attach_node(o, b);
- 	  attach_node(b, n);
- 	  attach_node(b, a);
--	  return;
-+	  return a;
- 	}
- 
-       if (plen < n->plen)
-@@ -166,14 +171,14 @@ trie_add_prefix(struct f_trie *t, ip_addr px, int plen, int l, int h)
- 	  struct f_trie_node *a = new_node(t, plen, paddr, pmask, amask);
- 	  attach_node(o, a);
- 	  attach_node(a, n);
--	  return;
-+	  return a;
- 	}
- 	
-       if (plen == n->plen)
- 	{
- 	  /* We already found added node in trie. Just update accept mask */
- 	  n->accept = ipa_or(n->accept, amask);
--	  return;
-+	  return n;
- 	}
- 
-       /* Update accept mask part M2 and go deeper */
-@@ -187,6 +192,8 @@ trie_add_prefix(struct f_trie *t, ip_addr px, int plen, int l, int h)
-   /* We add new tail node 'a' after node 'o' */
-   struct f_trie_node *a = new_node(t, plen, paddr, pmask, amask);
-   attach_node(o, a);
-+
-+  return a;
- }
- 
- /**
-@@ -234,6 +241,90 @@ trie_match_prefix(struct f_trie *t, ip_addr px, int plen)
-   return 0;
- }
- 
-+#define NODE_IS_BRANCHING(x)	(*((u32 *)(((struct f_trie_node *)(x)) + 1)) == 0)
-+/**
-+ * trie_match_longest_prefix - find longest prefix match
-+ * @t: trie
-+ * @px: prefix address
-+ * @plen: prefix length
-+ *
-+ * Tries to find a matching prefix pattern in the trie such that
-+ * prefix @px/@plen matches that prefix pattern. Returns 1 if there
-+ * is such prefix pattern in the trie.
-+ */
-+void *
-+trie_match_longest_prefix(struct f_trie *t, ip_addr px, int plen)
-+{
-+  ip_addr pmask = ipa_mkmask(plen);
-+  ip_addr paddr = ipa_and(px, pmask);
-+  ip_addr cmask;
-+  struct f_trie_node *n = &t->root, *parent = NULL;
-+
-+  /* Skip root node since it is cath-all node */
-+  n = n->c[(ipa_getbit(paddr, 0)) ? 1 : 0];
-+
-+  while (n)
-+    {
-+      cmask = ipa_and(n->mask, pmask);
-+
-+      /* We are out of path */
-+      if (ipa_compare(ipa_and(paddr, cmask), ipa_and(n->addr, cmask)))
-+	break;
-+
-+      /* Mask is too specific */
-+      if (n->plen > plen)
-+	break;
-+
-+      /* Do not save pointer to branching nodes */
-+      if (!NODE_IS_BRANCHING(n))
-+	parent = n;
-+
-+      /* Choose children */
-+      n = n->c[(ipa_getbit(paddr, n->plen)) ? 1 : 0];
-+    }
-+
-+  /*
-+   * parent is either
-+   * 1) NULL (if the first non-null node does not exist oris out of path)
-+   * or 
-+   * 2) points to the last entry that match
-+   *
-+   * In former case we check if catch-all prefix really exists and return
-+   * either pointer to root node or NULL. In latter case we simply return parent.
-+   */
-+
-+  return parent ? parent : (t->zero ? &t->root : NULL);
-+}
-+
-+static void
-+trie_walk_call(struct f_trie_node *n, void *func, void *data)
-+{
-+  void (*f)(struct f_trie_node *, void *) = func;
-+
-+  if (n)
-+    f(n, data);
-+
-+  if (n->c[0])
-+    trie_walk_call(n->c[0], func, data);
-+ 
-+  if (n->c[1])
-+    trie_walk_call(n->c[1], func, data);
-+}
-+
-+void
-+trie_walk(struct f_trie *t, void *func, void *data)
-+{
-+  void (*f)(struct f_trie_node *, void *) = func;
-+
-+  if (t->zero)
-+    f(&t->root, data);
-+
-+  if (t->root.c[0])
-+    trie_walk_call(t->root.c[0], func, data);
-+  if (t->root.c[1])
-+  trie_walk_call(t->root.c[1], func, data);
-+}
-+
- static int
- trie_node_same(struct f_trie_node *t1, struct f_trie_node *t2)
- {
-diff --git a/nest/proto-hooks.c b/nest/proto-hooks.c
-index 2582c48..1b59fbb 100644
---- nest/proto-hooks.c
-+++ nest/proto-hooks.c
-@@ -150,6 +150,17 @@ int get_attr(eattr *a, byte *buf, int buflen)
- { DUMMY; }
- 
- /**
-+ * get_route_ainfo - get additional route information
-+ * @c: pointer to cli
-+ * @cli_val: cli format value
-+ * @e: a route entry
-+ *
-+ * This hook is called after printing extended route attributes
-+ */
-+void get_route_ainfo(struct cli *c, int cli_val, rte *e)
-+{ DUMMY; }
-+
-+/**
-  * if_notify - notify instance about interface changes
-  * @p: protocol instance
-  * @flags: interface change flags
-diff --git a/nest/proto.c b/nest/proto.c
-index 0fc72ce..a48656c 100644
---- nest/proto.c
-+++ nest/proto.c
-@@ -633,6 +633,9 @@ protos_build(void)
- #ifdef CONFIG_BGP
-   proto_build(&proto_bgp);
- #endif
-+#ifdef CONFIG_AGG
-+  proto_build(&proto_agg);
-+#endif
-   proto_pool = rp_new(&root_pool, "Protocols");
-   proto_flush_event = ev_new(proto_pool);
-   proto_flush_event->hook = proto_flush_all;
-diff --git a/nest/protocol.h b/nest/protocol.h
-index a83c4ff..e61b8d3 100644
---- nest/protocol.h
-+++ nest/protocol.h
-@@ -28,6 +28,10 @@ struct event;
- struct ea_list;
- struct eattr;
- struct symbol;
-+struct agg_sumroute;
-+struct agg_route;
-+struct agg_proto;
-+struct cli;
- 
- /*
-  *	Routing Protocol
-@@ -53,8 +57,11 @@ struct protocol {
-   void (*get_status)(struct proto *, byte *buf); /* Get instance status (for `show protocols' command) */
-   void (*get_route_info)(struct rte *, byte *buf, struct ea_list *attrs); /* Get route information (for `show route' command) */
-   int (*get_attr)(struct eattr *, byte *buf, int buflen);	/* ASCIIfy dynamic attribute (returns GA_*) */
-+  void (*create_sumroute)(struct agg_proto *, struct agg_sumroute *);	/* Create summary route */
-+  void (*update_sumroute)(struct agg_proto *, struct agg_sumroute *, struct agg_route *, struct rta *, struct rta *);	/* Update summary route */
-   void (*show_proto_info)(struct proto *);	/* Show protocol info (for `show protocols all' command) */
-   void (*copy_config)(struct proto_config *, struct proto_config *);	/* Copy config from given protocol instance */
-+  void (*get_route_ainfo)(struct cli *, int, struct rte *); /* Print additional information (for `show route' command) */
- };
- 
- void protos_build(void);
-@@ -74,7 +81,7 @@ void protos_dump_all(void);
- 
- extern struct protocol
-   proto_device, proto_radv, proto_rip, proto_static,
--  proto_ospf, proto_pipe, proto_bgp;
-+  proto_ospf, proto_pipe, proto_bgp, proto_agg;
- 
- /*
-  *	Routing Protocol Instance
-diff --git a/nest/rt-table.c b/nest/rt-table.c
-index 377687d..4709544 100644
---- nest/rt-table.c
-+++ nest/rt-table.c
-@@ -1440,7 +1440,7 @@ rt_init_hostcache(rtable *tab)
-   hc->slab = sl_new(rt_table_pool, sizeof(struct hostentry));
- 
-   hc->lp = lp_new(rt_table_pool, 1008);
--  hc->trie = f_new_trie(hc->lp);
-+  hc->trie = f_new_trie(hc->lp, sizeof(struct f_trie_node));
- 
-   tab->hostcache = hc;
- }
-@@ -1587,7 +1587,7 @@ rt_update_hostcache(rtable *tab)
- 
-   /* Reset the trie */
-   lp_flush(hc->lp);
--  hc->trie = f_new_trie(hc->lp);
-+  hc->trie = f_new_trie(hc->lp, sizeof(struct f_trie_node));
- 
-   WALK_LIST_DELSAFE(n, x, hc->hostentries)
-     {
-@@ -1634,7 +1634,7 @@ rta_set_recursive_next_hop(rtable *dep, rta *a, rtable *tab, ip_addr *gw, ip_add
-  *  CLI commands
-  */
- 
--static void
-+void
- rt_format_via(rte *e, byte *via)
- {
-   rta *a = e->attrs;
-@@ -1660,6 +1660,7 @@ rt_show_rte(struct cli *c, byte *ia, rte *e, struct rt_show_data *d, ea_list *tm
-   int primary = (e->net->routes == e);
-   int sync_error = (e->net->n.flags & KRF_SYNC_ERROR);
-   struct mpnh *nh;
-+  struct protocol *P = a->proto->proto;
- 
-   rt_format_via(e, via);
-   tm_format_datetime(tm, &config->tf_route, e->lastmod);
-@@ -1667,7 +1668,7 @@ rt_show_rte(struct cli *c, byte *ia, rte *e, struct rt_show_data *d, ea_list *tm
-     bsprintf(from, " from %I", a->from);
-   else
-     from[0] = 0;
--  if (a->proto->proto->get_route_info || d->verbose)
-+  if (P->get_route_info || d->verbose)
-     {
-       /* Need to normalize the extended attributes */
-       ea_list *t = tmpa;
-@@ -1676,8 +1677,8 @@ rt_show_rte(struct cli *c, byte *ia, rte *e, struct rt_show_data *d, ea_list *tm
-       ea_merge(t, tmpa);
-       ea_sort(tmpa);
-     }
--  if (a->proto->proto->get_route_info)
--    a->proto->proto->get_route_info(e, info, tmpa);
-+  if (P->get_route_info)
-+    P->get_route_info(e, info, tmpa);
-   else
-     bsprintf(info, " (%d)", e->pref);
-   cli_printf(c, -1007, "%-18s %s [%s %s%s]%s%s", ia, via, a->proto->name,
-@@ -1685,7 +1686,11 @@ rt_show_rte(struct cli *c, byte *ia, rte *e, struct rt_show_data *d, ea_list *tm
-   for (nh = a->nexthops; nh; nh = nh->next)
-     cli_printf(c, -1007, "\tvia %I on %s weight %d", nh->gw, nh->iface->name, nh->weight + 1);
-   if (d->verbose)
--    rta_show(c, a, tmpa);
-+    {
-+      rta_show(c, a, tmpa);
-+      if (P->get_route_ainfo)
-+	P->get_route_ainfo(c, -1007, e);
-+    }
- }
- 
- static void
-diff --git a/proto/agg/Doc b/proto/agg/Doc
-new file mode 100644
-index 0000000..486cd10
---- /dev/null
-+++ proto/agg/Doc
-@@ -0,0 +1 @@
-+S agg.c
-diff --git a/proto/agg/Makefile b/proto/agg/Makefile
-new file mode 100644
-index 0000000..3039207
---- /dev/null
-+++ proto/agg/Makefile
-@@ -0,0 +1,6 @@
-+source=agg.c
-+root-rel=../../
-+dir-name=proto/agg
-+
-+include ../../Rules
-+
-diff --git a/proto/agg/agg.c b/proto/agg/agg.c
-new file mode 100644
-index 0000000..5b9cae1
---- /dev/null
-+++ proto/agg/agg.c
-@@ -0,0 +1,720 @@
-+/*
-+ *	BIRD -- BGP route aggregation
-+ *
-+ *	(c) 2012 Yandex LLC
-+ *	(c) 2012 Alexander V. Chernikov <melifaro@yandex-team.ru>
-+ *
-+ *	Can be freely distributed and used under the terms of the GNU GPL.
-+ */
-+
-+/**
-+ * DOC: Route aggregation
-+ *
-+ * Firewall protocol is very simple. It adds or removes exported routes to given firewall
-+ * table with zero (or filter-specified) value. Table can be flushed on startup to
-+ * avoid error messages on bird restart.
-+ */
-+
-+
-+#undef LOCAL_DEBUG
-+
-+#include "nest/bird.h"
-+#include "nest/iface.h"
-+#include "nest/protocol.h"
-+#include "nest/route.h"
-+#include "conf/conf.h"
-+#include "nest/cli.h"
-+#include "filter/filter.h"
-+#include "lib/string.h"
-+#include "lib/alloca.h"
-+
-+#include "proto/agg/agg.h"
-+
-+#define ADBG(msg, ...)	DBG("%s:%d " msg "\n", __FUNCTION__, __LINE__, ##__VA_ARGS__)
-+
-+static void agg_init_sumroute(struct agg_proto *p, struct agg_sumroute *asr);
-+static void agg_mark_sumroute(struct f_trie_node *n, void *data UNUSED);
-+static void agg_update_sumroute(struct agg_proto *p, struct agg_sumroute *asr, struct agg_route *ar, rta *old, rta *new);
-+static void agg_announce_sumroute(struct agg_proto *p, struct agg_sumroute *asr);
-+
-+static int
-+agg_import_control(struct proto *P, rte **ee, ea_list **ea UNUSED, struct linpool *p UNUSED)
-+{
-+  struct proto *pp = (*ee)->sender;
-+
-+  if (pp == P)
-+    return -1;	/* Avoid local loops automatically */
-+  return 0;
-+}
-+
-+static int
-+agg_reload_routes(struct proto *P)
-+{
-+  return 1;
-+}
-+
-+static void
-+agg_initroute(struct fib_node *fn)
-+{
-+  struct agg_route *ar = (struct agg_route *)fn;
-+
-+  memset((byte *)ar + sizeof(struct fib_node), 0, sizeof(struct agg_route) - sizeof(struct fib_node));
-+  ar->flags = AGG_FLAG_NEW;
-+}
-+
-+static int
-+agg_can_announce(struct agg_sumroute *asr)
-+{
-+  return (asr->mandatory_current == asr->mandatory_total);
-+}
-+
-+/*
-+ * agg_make_route - create new route
-+ * @p: protocol instance
-+ * @addr: pointer to network address
-+ * @plen: prefix length
-+ *
-+ * Adds mandatory route to fib and links it to 
-+ */
-+static struct agg_route *
-+agg_make_route(struct agg_proto *p, ip_addr *addr, int plen)
-+{
-+  struct agg_route *ar = fib_get(&p->route_fib, addr, plen);
-+
-+  if (ar->flags & AGG_FLAG_NEW)
-+    {
-+      /* New route. Do init */
-+      init_list(&ar->sum_membership);
-+      ar->flags &= ~AGG_FLAG_NEW;
-+    }
-+
-+  return ar;
-+}
-+
-+static void
-+agg_link_mroute(struct agg_proto *p, struct agg_sumroute *asr, struct agg_route *ar)
-+{
-+  struct agg_membership *ms;
-+  
-+  ms = mb_alloc(p->p.pool, sizeof(struct agg_membership));
-+  ms->ar = ar;
-+  ms->asr = asr;
-+
-+  ADBG("Linking mandatory route %I/%d to summary %I/%d", ar->fn.prefix, ar->fn.pxlen, asr->tn.addr, asr->tn.plen);
-+
-+  add_tail(&ar->sum_membership, &ms->n_mandatory);
-+  add_tail(&asr->mandatory_list, &ms->n_sumroute);
-+}
-+
-+static void
-+agg_unlink_mroute(struct agg_proto *p, struct agg_membership *ms)
-+{
-+  struct agg_route *ar = ms->ar;
-+
-+  ADBG("Unlinking mandatory route %I/%d from summary %I/%d", ar->fn.prefix, ar->fn.pxlen, ms->asr->tn.addr, ms->asr->tn.plen);
-+
-+  rem_node(&ms->n_mandatory);
-+  rem_node(&ms->n_sumroute);
-+  mb_free(ms);
-+
-+  /* Check if we need to free route iself */
-+  if (!EMPTY_LIST(ar->sum_membership))
-+    return;
-+
-+  if (ar->attrs)
-+    return;
-+
-+  /* No other mandatory routes, no route entry. We can safely free node */
-+  fib_delete(&p->route_fib, ar);
-+}
-+
-+static void
-+agg_walk_sumroutes_initial(struct f_trie_node *n, void *data)
-+{
-+  struct agg_sumroute *asr = (struct agg_sumroute *)n;
-+  struct agg_proto *p = (struct agg_proto *)data;
-+
-+  if (!(asr->flags & AGG_FLAG_PREPARED))
-+    return;
-+
-+  agg_init_sumroute(p, asr);
-+}
-+
-+static int
-+agg_start(struct proto *P)
-+{
-+  struct agg_proto *p = (struct agg_proto *)P;
-+  struct agg_config *cf = (struct agg_config *)P->cf;
-+
-+  fib_init(&p->route_fib, P->pool, sizeof(struct agg_route), 0, agg_initroute);
-+  p->summary_trie = cf->summary_trie;
-+
-+  /* Import mandatory routes if any */
-+  trie_walk(p->summary_trie, agg_walk_sumroutes_initial, p);
-+
-+  /* Allocate by 16k blocks (while BGP requests 1k block) */
-+  p->lp = lp_new(P->pool, 16384 - 16);
-+
-+  return PS_UP;
-+}
-+
-+/*
-+ * Mark given summary route as deleted
-+ */
-+static void
-+agg_mark_sumroute(struct f_trie_node *n, void *data UNUSED)
-+{
-+  struct agg_sumroute *asr = (struct agg_sumroute *)n;
-+
-+  if (!(asr->flags & AGG_FLAG_PREPARED))
-+    return;
-+
-+  asr->flags |= AGG_FLAG_DELETED;
-+}
-+
-+/*
-+ * Initialize newly-allocated summary route. Add all mandatory routes
-+ * to protocol FIB
-+ */
-+static void
-+agg_init_sumroute(struct agg_proto *p, struct agg_sumroute *asr)
-+{
-+  struct cf_route *cr;
-+  struct agg_route *ar;
-+  node *n, *n_next;
-+
-+  ADBG("New summary route %I/%d", asr->tn.addr, asr->tn.plen);
-+
-+  /* New summary route. Let's add mandatory routes to our fib */
-+  WALK_LIST_DELSAFE(n, n_next, asr->cf_routes)
-+    {
-+      cr = (struct cf_route *)n;
-+
-+      /* In any case, we need to increase count of mandatory routes */
-+      asr->mandatory_total++;
-+
-+      /* Get or create new route entry */
-+      ar = agg_make_route(p, &cr->px.addr, cr->px.len);
-+
-+      /* Increate current counter IFF we have real best rte associated with entry */
-+      if (ar->attrs)
-+	{
-+	  asr->mandatory_current++;
-+	  /* Set installed flag */
-+	  ar->flags |= AGG_FLAG_INSTALLED;
-+	}
-+
-+      /* Add link */
-+      agg_link_mroute(p, asr, ar);
-+  }
-+}
-+
-+static void
-+agg_announce_sumroute(struct agg_proto *p, struct agg_sumroute *asr)
-+{
-+  //net *n;
-+
-+  if (!agg_can_announce(asr))
-+    return;
-+
-+  if (EMPTY_LIST(asr->routes))
-+    return;
-+
-+  /* Generate summary route */
-+  switch (asr->route_src)
-+    {
-+#ifdef CONFIG_BGP
-+    case RTS_BGP:
-+      proto_bgp.create_sumroute(p, asr);
-+      break;
-+#endif
-+    }
-+}
-+
-+static void
-+agg_withdraw_sumroute(struct agg_proto *p, struct agg_sumroute *asr)
-+{
-+  net *n;
-+
-+  /* Withdraw route if any */
-+  if (asr->attrs)
-+    {
-+      ADBG("Withdraw summary %I/%d", asr->tn.addr, asr->tn.plen);
-+      if (n = fib_find(&p->p.table->fib, &asr->tn.addr, asr->tn.plen))
-+	rte_update(p->p.table, n, &p->p, &p->p, NULL);
-+
-+      /* Free rta */
-+      rta_free(asr->attrs);
-+      asr->attrs = NULL;
-+    }
-+}
-+
-+static void
-+agg_update_sumroute(struct agg_proto *p, struct agg_sumroute *asr, struct agg_route *ar, rta *old, rta *new)
-+{
-+  switch (asr->route_src)
-+    {
-+#ifdef CONFIG_BGP
-+    case RTS_BGP:
-+      proto_bgp.update_sumroute(p, asr, ar, old, new);
-+      break;
-+#endif
-+    }
-+}
-+
-+/*
-+ * Remove non-config data associated with summary route
-+ */
-+static void
-+agg_clear_sumroute(struct f_trie_node *tn, void *P)
-+{
-+  struct agg_proto *p = (struct agg_proto *)P;
-+  struct agg_sumroute *asr = (struct agg_sumroute *)tn;
-+  struct agg_membership *ms;
-+  struct agg_route *ar;
-+  node *n, *n_next;
-+
-+  if (!(asr->flags & AGG_FLAG_PREPARED))
-+    return;
-+
-+  if (!(asr->flags & AGG_FLAG_DELETED))
-+    return;
-+
-+  ADBG("Removing summary %I/%d", asr->tn.addr, asr->tn.plen);
-+  /* Remove mandatory routes  (allocated from protocol pool) */
-+  WALK_LIST_DELSAFE(n, n_next, asr->mandatory_list)
-+    {
-+      ms = SKIP_BACK(struct agg_membership, n_sumroute, n);
-+      agg_unlink_mroute(p, ms);
-+    }
-+
-+  WALK_LIST_DELSAFE(n, n_next, asr->routes)
-+    {
-+      ar = SKIP_BACK(struct agg_route, n_sumroute, n);
-+
-+      rem_node(&ar->n_sumroute);
-+
-+      if (ar->attrs)
-+	rta_free(ar->attrs);
-+      ar->attrs = NULL;
-+      ar->asr = NULL;
-+
-+      /* Check if we can delete route */
-+      if (!EMPTY_LIST(ar->sum_membership))
-+	continue;
-+
-+      /* Node can be safely deleted */
-+      fib_delete(&p->route_fib, ar);
-+    }
-+
-+  agg_withdraw_sumroute(p, asr);
-+}
-+
-+static void
-+agg_reconfig_sumroute(struct f_trie_node *tn, void *P)
-+{
-+  struct agg_proto *p = (struct agg_proto *)P;
-+  struct agg_sumroute *asr_o, *asr = (struct agg_sumroute *)tn;
-+  struct agg_route *ar;
-+  struct agg_membership *ms;
-+  struct cf_route *cr;
-+  node *n, *n_next;
-+  node *nn, *nn_next;
-+  int found;
-+
-+  if (!(asr->flags & AGG_FLAG_PREPARED))
-+    return;
-+
-+  /* Find old corresponding route */
-+  asr_o = trie_match_longest_prefix(p->summary_trie, asr->tn.addr, asr->tn.plen);
-+
-+  if ((!asr_o) || (!ipa_equal(asr_o->tn.addr, asr->tn.addr)) || (asr_o->tn.plen != asr->tn.plen) || 
-+	(asr_o->route_src != asr->route_src))
-+    {
-+      /* New summary route */
-+      agg_init_sumroute(p, asr);
-+      return;      
-+    }
-+
-+  /* Should we move this to protocol-specific hook? */
-+  switch (asr->route_src)
-+    {
-+    case RTS_BGP:
-+      if ((asr_o->u.bgp.local_id != asr->u.bgp.local_id) || (asr_o->u.bgp.local_as != asr->u.bgp.local_as))
-+	{
-+	  agg_init_sumroute(p, asr);
-+	  return;
-+	}
-+      break;
-+    }
-+
-+  ADBG("Reconfiguring summary route %I/%d", asr->tn.addr, asr->tn.plen);
-+
-+  /*
-+   * Old summary route exists. We need to:
-+   * 1) remove DELETED flag
-+   * 2) move every route to new list
-+   * 3) compare mandatory routes
-+   */
-+
-+  asr_o->flags &= ~AGG_FLAG_DELETED;
-+
-+  /* 
-+   * Move usual routes to new list.
-+   * Update ther pointer to summary route
-+   */
-+
-+  WALK_LIST_DELSAFE(n, n_next, asr_o->routes)
-+    {
-+      ar = SKIP_BACK(struct agg_route, n_sumroute, n);
-+
-+      ar->asr = asr;
-+      add_tail(&asr->routes, &ar->n_sumroute);
-+    }
-+
-+  /* Mark old mandatory routes (instead of membership structurs) as deleted */
-+  WALK_LIST_DELSAFE(n, n_next, asr_o->mandatory_list)
-+    {
-+      ms = SKIP_BACK(struct agg_membership, n_sumroute, n);
-+      ar = ms->ar;
-+      ar->flags |= AGG_FLAG_DELETED;
-+    }
-+
-+  /* Walk all new mandatory routes */
-+  WALK_LIST_DELSAFE(n, n_next, asr->cf_routes)
-+    {
-+      cr = (struct cf_route *)n;
-+
-+      /* In any case, we need to increase count of mandatory routes */
-+      asr->mandatory_total++;
-+
-+      /* Check if prefix exists */
-+      ar = fib_find(&p->route_fib, &cr->px.addr, cr->px.len);
-+
-+      if (!ar)
-+	  ar = agg_make_route(p, &cr->px.addr, cr->px.len);
-+
-+      /* Increate current counter IFF we have real best rte associated with entry */
-+      if (ar->attrs)
-+	{
-+	  asr->mandatory_current++;
-+	  ar->flags |= AGG_FLAG_INSTALLED;
-+	}
-+
-+      /*
-+       * Check if we have summary membership with current asr (e.g.
-+       * if we already are mandatory route for this asr). In this case
-+       * we have to update asr pointer.
-+       *
-+       * No need to update summary route:
-+       * no new routes are announced, mandatory route limit is not hit
-+       */
-+
-+      found = 0;
-+      WALK_LIST_DELSAFE(nn, nn_next, ar->sum_membership)
-+	{
-+	  ms = SKIP_BACK(struct agg_membership, n_mandatory, nn);
-+	  if (ms->asr != asr_o)
-+	    continue;
-+
-+	  ADBG("Mandatory route %I/%d remains as is, removing deleted flag", ar->fn.prefix, ar->fn.pxlen);
-+	  /* Update pointers and relink */
-+	  ms->asr = asr;
-+	  add_tail(&asr->mandatory_list, &ms->n_sumroute);
-+	  ar->flags &= ~AGG_FLAG_DELETED;
-+	  found = 1;
-+	  break;
-+	}
-+
-+      if (found)
-+	continue;
-+
-+      /* Add link to mandatory list of summary route */
-+      agg_link_mroute(p, asr, ar);
-+    }
-+
-+  /* Delete old mandatory routes */
-+  WALK_LIST_DELSAFE(n, n_next, asr_o->mandatory_list)
-+    {
-+      ms = SKIP_BACK(struct agg_membership, n_sumroute, n);
-+      ar = ms->ar;
-+      if (!(ar->flags & AGG_FLAG_DELETED))
-+	continue;
-+
-+      /* 
-+       * This route is not mandatory for new asr.
-+       * No need to update old configuration so
-+       * we need to unlink node from ar and free it
-+       */
-+
-+      agg_unlink_mroute(p, ms);
-+    }
-+
-+  /* XXX: we can possibly check new mandatory routes */
-+}
-+
-+static int
-+agg_reconfigure(struct proto *P, struct proto_config *new)
-+{
-+  struct agg_config *o = (struct agg_config *)P->cf;
-+  struct agg_config *n = (struct agg_config *)new;
-+  struct agg_proto *p = (struct agg_proto *)P;
-+  //struct agg_sumroute *;
-+
-+  ADBG("Reconfiguting..");
-+
-+  /* Mark all old summary routes as deleted */
-+  trie_walk(o->summary_trie, agg_mark_sumroute, NULL);
-+
-+  /* Walk new trie */
-+  trie_walk(n->summary_trie, agg_reconfig_sumroute, p);
-+
-+  /* Cleanup all old summary routes */
-+  trie_walk(o->summary_trie, agg_clear_sumroute, p);
-+
-+  /* 
-+   * XXX: we possibly have to determine if summary routes configuration
-+   * is changed and we hate to request refeeding
-+   */
-+
-+  /* Update trie pointer */
-+  p->summary_trie = n->summary_trie;
-+
-+  return 1;
-+}
-+
-+
-+static void
-+agg_rt_notify(struct proto *P, rtable *src_table, net *n, rte *new, rte *old, ea_list *attrs)
-+{
-+  struct agg_proto *p = (struct agg_proto *) P;
-+  struct agg_sumroute *asr;
-+  struct agg_route *ar;
-+  struct agg_membership *ms;
-+  node *nn, *nn_next;
-+  rta *old_rta = NULL, *new_rta;
-+
-+  /* Ignore unreachable routes */
-+  if ((new) && (new->attrs->dest == RTD_UNREACHABLE))
-+    new = NULL;
-+
-+  if ((old) && (old->attrs->dest == RTD_UNREACHABLE))
-+    old = NULL;
-+
-+  if (!new && !old)
-+    return;
-+
-+
-+  //ADBG("RT event about %I/%d", n->n.prefix, n->n.pxlen);
-+  /* 
-+   * Search trie to determine summary route.
-+   * We use 1 bit less specific prefix to deal with the following 2 cases:
-+   * 1) if announced X/Y prefix is the same as summary route this is clearly not the case for summarization
-+   * 2) if nested summary routes are congigured and 1) is in action we got wrong asr pointer.
-+   *
-+   * We skip 0/0 and :: due to it can'be summarized
-+   */
-+  if ((n->n.pxlen) && ((asr = trie_match_longest_prefix(p->summary_trie, n->n.prefix, n->n.pxlen - 1))))
-+    {
-+	/*
-+	 * TODO: Find longest-match asr for found ar in new trie.
-+	 * If asr changes this means hieharchical summary is in action
-+	 */
-+      
-+	ADBG("Found matched summary route %I/%d", asr->tn.addr, asr->tn.plen);
-+      
-+	/* Summary route found. Let's find/create route node */
-+	ar = agg_make_route(p, &n->n.prefix, n->n.pxlen);
-+      
-+	/* (new route, route update) */
-+	if (new)
-+	  {
-+	    old_rta = ar->attrs;
-+	    /*
-+	     * We want to get stable attribute copy.
-+	     *
-+	     * Base attributes (direct next hop) can be changed in rta directly,
-+	     * imposing COW in some cases.)
-+	     * Extended attributes can be added or updated in:
-+	     * * make_tmp_attrs() import hook
-+	     * * export filter
-+	     * * import/export pipe filter.
-+	     *
-+	     * So, if either
-+	     * * new is not cached OR
-+	     * * tmpa != new->attrs->eattrs (see end of do_rte_announce)
-+	     *
-+	     * we have to create and lookup new rta.
-+	     */
-+	    if ((new->attrs->aflags & RTAF_CACHED) && (attrs == new->attrs->eattrs))
-+	      ar->attrs = rta_clone(new->attrs);
-+	    else
-+	      {
-+		/* 
-+		 * Attributes or extended attributes are modified by filter,
-+		 * we need to create stable storage
-+		 */
-+		new_rta = alloca(sizeof(rta));
-+		memcpy(new_rta, new->attrs, sizeof(rta));
-+		new_rta->eattrs = attrs;
-+		new_rta->aflags = 0;
-+		ar->attrs = rta_clone(rta_lookup(new_rta));
-+	      }
-+      
-+	    /* Add link to summary route if route is new */
-+	    if (!ar->asr)
-+	      {
-+		ar->asr = asr;
-+		add_tail(&asr->routes, &ar->n_sumroute);
-+	      }
-+      
-+	    /* Call route update */
-+	    if (agg_can_announce(asr))
-+	      agg_update_sumroute(p, asr, ar, old_rta, ar->attrs);
-+      
-+	    /* Remove old rte */
-+	    if (old_rta)
-+	      rta_free(old_rta);
-+	  }
-+	else
-+	  {
-+	    /* route withdrawal */
-+	    rem_node(&ar->n_sumroute);
-+
-+	    /* Take into account that create_sumroute() callback can be called from here */
-+	    if (agg_can_announce(asr))
-+	      agg_update_sumroute(p, asr, ar, ar->attrs, NULL);
-+      
-+	    if (ar->attrs)
-+	      rta_free(ar->attrs);
-+	    ar->attrs = NULL;
-+	    ar->asr = NULL;
-+
-+	    /* INSTALLED flag is removed later */
-+
-+	    if (EMPTY_LIST(ar->sum_membership))
-+	      fib_delete(&p->route_fib, ar);
-+	  }
-+    }
-+
-+  /* Check if network is from our mandatory list */
-+  if ((ar = fib_find(&p->route_fib, &n->n.prefix, n->n.pxlen)))
-+    {
-+      ADBG("FIB record found for route %I/%d", n->n.prefix, n->n.pxlen);
-+      /* Check if we need to change summary routes */
-+      if ((new && (!(ar->flags & AGG_FLAG_INSTALLED))) || (!new && (ar->flags & AGG_FLAG_INSTALLED)))
-+	{
-+	  if (new)
-+	    ar->flags |= AGG_FLAG_INSTALLED;
-+	  else
-+	    ar->flags &= ~AGG_FLAG_INSTALLED;
-+
-+	  WALK_LIST_DELSAFE(nn, nn_next, ar->sum_membership)
-+	    {
-+	      ms = SKIP_BACK(struct agg_membership, n_mandatory, nn);
-+	      asr = ms->asr;
-+
-+	      ADBG("Found membership with summary route %I/%d", asr->tn.addr, asr->tn.plen);
-+
-+	      if (new)
-+	        {
-+		  asr->mandatory_current++;
-+		  /* Possible route announce */
-+		  agg_announce_sumroute(p, asr);
-+		}
-+	      else
-+		{
-+		  /* Possible route withdrawal */
-+		  if (agg_can_announce(asr))
-+		    agg_withdraw_sumroute(p, asr);
-+		  asr->mandatory_current--;
-+		}
-+	    }
-+	}
-+    }
-+}
-+
-+
-+static struct proto *
-+agg_init(struct proto_config *C)
-+{
-+  struct proto *P = proto_new(C, sizeof(struct agg_proto));
-+
-+  P->accept_ra_types = RA_OPTIMAL;
-+  P->reload_routes = agg_reload_routes;
-+  P->import_control = agg_import_control;
-+  P->rt_notify = agg_rt_notify;
-+
-+  return P;
-+}
-+
-+static int
-+agg_shutdown(struct proto *P)
-+{
-+  struct agg_proto *p = (struct agg_proto *)P;
-+
-+  /* Mark all summary routes as deleted */
-+  trie_walk(p->summary_trie, agg_mark_sumroute, NULL);
-+
-+  /* Cleanup all (now marked) summary routes */
-+  trie_walk(p->summary_trie, agg_clear_sumroute, p);
-+
-+  return PS_DOWN;
-+}
-+
-+static void
-+agg_format_dest(struct rta *a, byte *via)
-+{
-+  switch (a->dest)
-+    {
-+    case RTD_ROUTER:	bsprintf(via, "via %I on %s", a->gw, a->iface->name); break;
-+    case RTD_DEVICE:	bsprintf(via, "dev %s", a->iface->name); break;
-+    case RTD_BLACKHOLE:	bsprintf(via, "blackhole"); break;
-+    case RTD_UNREACHABLE:	bsprintf(via, "unreachable"); break;
-+    case RTD_PROHIBIT:	bsprintf(via, "prohibited"); break;
-+    case RTD_MULTIPATH:	bsprintf(via, "multipath"); break;
-+    default:		bsprintf(via, "???");
-+    }
-+}
-+
-+static void
-+agg_get_route_ainfo(struct cli *c, int cli_val, struct rte *e)
-+{
-+  struct agg_proto *p = (struct agg_proto *)e->attrs->proto;
-+  node *n, *n_next;
-+  struct rta *a;
-+  struct agg_sumroute *asr;
-+  struct agg_route *ar;
-+  byte via[STD_ADDRESS_P_LENGTH+32], from[STD_ADDRESS_P_LENGTH+8];
-+  byte ia[STD_ADDRESS_P_LENGTH+8];
-+
-+
-+  if (!(asr = trie_match_longest_prefix(p->summary_trie, e->net->n.prefix, e->net->n.pxlen)))
-+    return;
-+
-+  WALK_LIST_DELSAFE(n, n_next, asr->routes)
-+    {
-+      ar = SKIP_BACK(struct agg_route, n_sumroute, n);
-+      a = ar->attrs;
-+
-+      bsprintf(ia, "%I/%d", ar->fn.prefix, ar->fn.pxlen);
-+      agg_format_dest(a, via);
-+      if (ipa_nonzero(a->from) && !ipa_equal(a->from, a->gw))
-+	bsprintf(from, " from %I", a->from);
-+      else
-+	from[0] = 0;
-+
-+      cli_printf(c, cli_val, " + %-18s %s [%s%s]", ia, via, a->proto->name, from);
-+    }
-+}
-+
-+struct protocol proto_agg = {
-+  name:		"AGG",
-+  template:	"agg%d",
-+  preference:	0,
-+  init:		agg_init,
-+  start:	agg_start,
-+  reconfigure:	agg_reconfigure,
-+  shutdown:	agg_shutdown,
-+  get_route_ainfo:	agg_get_route_ainfo,
-+};
-diff --git a/proto/agg/agg.h b/proto/agg/agg.h
-new file mode 100644
-index 0000000..d3e6f65
---- /dev/null
-+++ proto/agg/agg.h
-@@ -0,0 +1,87 @@
-+/*
-+ *	BIRD -- BGP route aggregation
-+ *
-+ *	(c) 2012 Yandex LLC
-+ *	(c) 2012 Alexander V. Chernikov <melifaro@yandex-team.ru>
-+ *
-+ *	Can be freely distributed and used under the terms of the GNU GPL.
-+ */
-+
-+#ifndef _BIRD_RT_AGG_H_
-+#define _BIRD_RT_AGG_H_
-+
-+struct agg_proto {
-+  struct proto p;
-+  struct f_trie *summary_trie;		/* Trie with summary routes */
-+  struct fib route_fib;			/* Fib with original/mandatory routes */
-+  struct linpool *lp;			/* Linear pool used by aggregation functions */
-+};
-+
-+struct agg_config {
-+  struct proto_config c;
-+  struct f_trie *summary_trie;		/* Trie for holding summary/mandatory route */
-+  list temp_list[BITS_PER_IP_ADDRESS];	/* Pre-sort lists */
-+};
-+
-+extern struct protocol proto_agg;
-+
-+/* route flags */
-+#define AGG_FLAG_DELETED	0x0010	/* Summary/mandatory route is candidate for deletion */
-+#define AGG_FLAG_MANDATORY	0x0020	/* Existance of this route is mandatory to advertise summary */
-+#define AGG_FLAG_INSTALLED	0x0040	/* Route is installed */
-+#define AGG_FLAG_NEW		0x0080	/* Newly allocated route */
-+
-+/* Summary route flags */
-+#define AGG_FLAG_PREPARED	0x0100	/* Entry is set up (ised in trie checking) */
-+#define AGG_FLAG_SUMONLY	0x0200	/* Advertise summary route only */
-+#define AGG_FLAG_MAXINFO	0x0400	/* Save as much info as possible */
-+
-+/* Masks */
-+#define AGG_FLAG_RMASK		0x00F0	/* Mask for route flags */
-+#define AGG_FLAG_SUMMASK	0xFF00	/* Flags for summary rouutes */
-+
-+/* Aggregated route information */
-+struct agg_sumroute {
-+  struct f_trie_node tn;		/* Information about network */
-+  u16 route_src;			/* Route source type (RTS_). XXX: Note field MUST not be zero */
-+  u16 flags;				/* Aggregation flags */
-+  u16 mandatory_total;			/* Number of mandatory routes */
-+  u16 mandatory_current;		/* Number of currently advertised mandatory routes */
-+  union {
-+    struct {
-+      u32 local_id;			/* BGP router id */
-+      u32 local_as;			/* BGP local ASn */
-+    } bgp;
-+  } u;
-+  struct rta *attrs;			/* Aggregated route attributes */
-+  list routes;				/* Networks summarized */
-+  list mandatory_list;			/* List of mandatory2summary structures */
-+  list cf_routes;			/* List of mandatory routes (used in config parsing) */
-+};
-+
-+
-+/* Route entry. Used by mandatory and "casual" routes */
-+struct agg_route {
-+  struct fib_node fn;			/* Network node (both) */
-+  u16 flags;				/* Route flafs (both) */
-+  struct agg_sumroute *asr;		/* Pointer to summary route (casual) */
-+  struct rta *attrs;			/* Attributes of best current rte (casual) */
-+  list sum_membership;			/* List with mandatory route membership info (mandatory) */
-+  node n_sumroute;			/* Per-sumroute list node (casual) */
-+};
-+
-+/* Mandatory route */
-+struct cf_route {
-+  node n;				/* Node from cf_entries */
-+  struct prefix px;			/* Prefix */
-+};
-+
-+/* Mandatory-2-Summary membership */
-+struct agg_membership {
-+  struct agg_sumroute *asr;		/* Pointer to summary route */
-+  struct agg_route *ar;			/* Pointer to mandatory route */
-+  node n_mandatory;			/* agg_mandatory node */
-+  node n_sumroute;			/* agg_summary node */
-+};
-+
-+#endif
-diff --git a/proto/agg/config.Y b/proto/agg/config.Y
-new file mode 100644
-index 0000000..652b461
---- /dev/null
-+++ proto/agg/config.Y
-@@ -0,0 +1,108 @@
-+/*
-+ *	BIRD -- BGP route aggregation
-+ *
-+ *	(c) 2012 Yandex LLC
-+ *	(c) 2012 Alexander V. Chernikov <melifaro@yandex-team.ru>
-+ *
-+ *	Can be freely distributed and used under the terms of the GNU GPL.
-+ */
-+
-+CF_HDR
-+
-+#include "proto/agg/agg.h"
-+
-+CF_DEFINES
-+
-+#define LOCAL_DEBUG
-+#define AGG_CFG ((struct agg_config *) this_proto)
-+int current_rtype = 0;
-+u32 bgp_id = 0, bgp_as = 0;
-+struct agg_sumroute *asr;
-+
-+CF_DECLS
-+
-+CF_KEYWORDS(AGGREGATOR, AGGREGATE, ADDRESS, SUMMARY, ONLY, SAVE, ATTRIBUTES, MANDATORY, LIST, BGP, OSPF, E1, E2)
-+CF_KEYWORDS(ID, AS)
-+
-+%type <i> agg_route_type
-+CF_GRAMMAR
-+
-+CF_ADDTO(proto, agg_proto '}')
-+
-+agg_proto_start: proto_start AGGREGATOR {
-+     this_proto = proto_config_new(&proto_agg, sizeof(struct agg_config), $1);
-+     AGG_CFG->summary_trie = f_new_trie(cfg_mem, sizeof(struct agg_sumroute));
-+  }
-+ ;
-+
-+agg_proto:
-+   agg_proto_start proto_name '{'
-+ | agg_proto agg_proto_item ';'
-+ ;
-+
-+agg_proto_item:
-+   proto_item
-+ | agg_sum_routes
-+ ;
-+
-+agg_sum_routes:
-+   agg_route_type '{' agg_routes_entries '}'
-+ ;
-+
-+agg_routes_entries:
-+   agg_route_entry ';'
-+ | agg_routes_entries agg_route_entry ';'
-+ ;
-+
-+agg_route_entry:
-+  AGGREGATE ADDRESS prefix {
-+    asr = (struct agg_sumroute *)trie_add_prefix(AGG_CFG->summary_trie, $3.addr, $3.len, $3.len + 1, MAX_PREFIX_LENGTH);
-+    if (asr->flags & AGG_FLAG_PREPARED)
-+      cf_error("Prefix %I/%d already exists", $3.addr, $3.len);
-+
-+    asr->route_src = current_rtype;
-+    switch (current_rtype)
-+      {
-+      case RTS_BGP:
-+	asr->u.bgp.local_id = bgp_id;
-+	asr->u.bgp.local_as = bgp_as;
-+	break;
-+      }
-+    init_list(&asr->routes);
-+    init_list(&asr->mandatory_list);
-+    init_list(&asr->cf_routes);
-+    asr->flags = AGG_FLAG_PREPARED;
-+  } agg_options
-+  ;
-+
-+agg_options:
-+    SUMMARY ONLY { asr->flags |= AGG_FLAG_SUMONLY; }
-+  | SAVE ATTRIBUTES { asr->flags |= AGG_FLAG_MAXINFO; }
-+  | MANDATORY LIST '{' agg_option_mlist '}'
-+  |
-+  ;
-+
-+agg_option_mlist:
-+    agg_option_mlist_entry
-+  | agg_option_mlist ',' agg_option_mlist_entry
-+  ;
-+
-+agg_option_mlist_entry:
-+    prefix {
-+      /* Simply add to cf_routes */
-+      struct cf_route *mr = cfg_allocz(sizeof(struct cf_route));
-+      mr->px = $1;
-+      add_tail(&asr->cf_routes, &mr->n);
-+    }
-+  ;
-+
-+agg_route_type:
-+   BGP ID idval AS expr { current_rtype = RTS_BGP; bgp_id = $3; bgp_as = $5; }
-+ | OSPF E1 { current_rtype = RTS_OSPF_EXT1; }
-+ | OSPF E2 { current_rtype = RTS_OSPF_EXT2; }
-+ ; 
-+ 
-+ 
-+CF_CODE
-+
-+CF_END
-diff --git a/proto/bgp/attrs.c b/proto/bgp/attrs.c
-index 4495c03..9b068a8 100644
---- proto/bgp/attrs.c
-+++ proto/bgp/attrs.c
-@@ -19,9 +19,14 @@
- #include "lib/resource.h"
- #include "lib/string.h"
- #include "lib/unaligned.h"
-+#ifdef CONFIG_AGG
-+#include "filter/filter.h"
-+#include "proto/agg/agg.h"
-+#endif
- 
- #include "bgp.h"
- 
-+#define BDBG(msg, ...)	log("%s:%d " msg, __FUNCTION__, __LINE__, ##__VA_ARGS__)
- /*
-  *   UPDATE message error handling
-  *
-@@ -1516,6 +1521,749 @@ bgp_remove_as4_attrs(struct bgp_proto *p, rta *a)
-     }
- }
- 
-+#define BGP_AS_MAX_NUMBER	256
-+#define BGP_AS_MAX_LEN		1024	/* 256 4-byte ASNs (maximum tuple size) */
-+#define BGP_AS_MAX_PTRS		64	/* 64 tuples max */
-+/*
-+ * bgp_append_as_tuple - add item to sorted array of fixed size
-+ * @number: item
-+ * @pbuf: pointer to start of array
-+ * @count: pointer to current iterms count
-+ *
-+ * Returns: 1 if item is added (@count is incremented)
-+ * 0 if item already exists
-+ * -1 if array size is exceeded
-+ */
-+static int
-+bgp_sorted_add_as4(u32 number, u32 *pbuf, byte *count)
-+{
-+  int min, max, mid, shift;
-+
-+  if (*count == 0)
-+    {
-+      *count = (*count) + 1;
-+      *pbuf = number;
-+      return 1;
-+    }
-+
-+  /* Binary search */
-+  min = 0;
-+  max = *count - 1;
-+  mid = 0;
-+  while (min <= max)
-+    {
-+      mid = (min + max) / 2;
-+      if (pbuf[mid] == number)
-+	  return 0;
-+
-+      if (pbuf[mid] > number)
-+	  max = mid - 1;
-+      else
-+	  min = mid + 1;
-+    }
-+
-+  /* Not found. */
-+  if (*count == BGP_AS_MAX_NUMBER - 1)
-+    return -1;
-+
-+  if (pbuf[mid] < number)
-+    shift = mid + 1;
-+  else
-+    shift = mid;
-+
-+  if (*count > shift)
-+    memmove(pbuf + shift + 1, pbuf + shift, (*count - shift) * sizeof(u32));
-+  pbuf[shift] = number;
-+  *count = *count + 1;
-+
-+  return 1;
-+}
-+
-+/*
-+ * bgp_append_as_tuple - append ASNs from one or more AS_SEQ/AS_SET tuples to an array
-+ * @src_buf: buffer with chain of AS_SEQUNCE or AS_SET tuples
-+ * @src_len: buffer length
-+ * @as_set_ptrs: pointer to array of pointers to sorted u32 arrays of ASNs
-+ * @as_set_len: pointer to array of length of given arrays
-+ * @as_set_index: current array index
-+ * @lp: linear pool to allocate data from
-+ */
-+static void
-+bgp_append_as_tuple(byte *src_buf, int src_len, byte **as_set_ptrs, byte *as_set_length, int *as_set_index, struct linpool *lp)
-+{
-+  u32 asn;
-+  int asn_count, i = *as_set_index;
-+  u32 *set_ptr;
-+  byte *cnt_ptr;
-+
-+  set_ptr = (u32 *)as_set_ptrs[i];
-+  cnt_ptr = &as_set_length[i];
-+
-+  while (src_len)
-+    {
-+      asn_count = src_buf[1];
-+      src_len -= 2 + 4 * asn_count;
-+      src_buf += 2;
-+      while (asn_count)
-+	{
-+	  asn = get_u32(src_buf);
-+
-+	  /* Append number to array */
-+	  if (bgp_sorted_add_as4(asn, set_ptr, cnt_ptr) == -1)
-+	    {
-+	      /* This tuple is full, let's advance to the next */
-+
-+	      /* We have to leave room for other BGP data */
-+	      if (i == BGP_AS_MAX_PTRS - 2)
-+		return;
-+
-+	      *as_set_index = ++i;
-+	      as_set_ptrs[i] = lp_alloc(lp, BGP_AS_MAX_LEN);
-+	      set_ptr = (u32 *)as_set_ptrs[i];
-+	      cnt_ptr = &as_set_length[i];
-+
-+	      BDBG("Index increased to %d", i);
-+
-+	      /* Add to empty array */
-+	      bgp_sorted_add_as4(asn, set_ptr, cnt_ptr);
-+	    }
-+  
-+	  //BDBG("Index: %d asn_count: %d cnt: %d curr_asn=%u", i, asn_count, *cnt_ptr, asn);
-+
-+	  src_buf += 4;
-+	  asn_count--;
-+	}
-+    }
-+}
-+
-+/*
-+ * bgp_compile_sum_aspath - make adata attribute for AS_PATH
-+ * @as_data_ptr: pointer to common data for all routes
-+ * @as_len: common data length
-+ * @as_set_ptrs: pointer to array of pointers to sorted u32 arrays of ASNs
-+ * @as_set_len: pointer to array of length of given arrays
-+ * @as_set_index: current array index
-+ * @lp: linear pool to allocate data from
-+ *
-+ * Function gets 'common' data (possibly consisting of one or more AS_SEQUNCE / AS_SET tuples) and
-+ * several arrays with sorted list of ASNs. Each array is converted to AS_SET tuple, All these AS_SET
-+ * tuples are added to the end of 'common' data.
-+ *
-+ */
-+static struct adata *
-+bgp_compile_sum_aspath(byte *as_data_ptr, int as_len, byte **as_set_ptrs, byte *as_set_len, int *as_set_index, struct linpool *lp)
-+{
-+  int i, j, len = 0;
-+  u32 *asn;
-+  byte *q;
-+  struct adata *a;
-+
-+  for (i = 0; i <= *as_set_index; i++)
-+    {
-+      if (as_set_len[i])
-+	len += 2 + 4 * as_set_len[i];
-+    }
-+
-+  //BDBG("bgp_compile_sum_aspath(): Len=%d as_len=%d", len, as_len);
-+
-+  /* Merge both paths to contiguous storage */
-+  a = bgp_alloc_adata(lp, len + as_len);
-+  q = a->data;
-+  /* Copy 'common' part */
-+  memcpy(q, as_data_ptr, as_len);
-+
-+  if (!len)
-+    return a;
-+
-+  q += as_len;
-+  /* For each array, write AS_SET header and data */
-+  for (i = 0; i <= *as_set_index; i++)
-+    {
-+      *q++ = AS_PATH_SET;
-+      *q++ = as_set_len[i];
-+      asn = (u32 *)as_set_ptrs[i];
-+      for (j = 0; j < as_set_len[i]; j++, q += sizeof(u32))
-+	put_u32(q, *asn++);
-+    }
-+
-+  return a;
-+}
-+
-+/*
-+ * bgp_sum_origin - update summary ORIGIN attribute
-+ * @attrs: pointer to new route attributes
-+ * @origin: pointer to current ORIGIN value
-+ */
-+inline void
-+bgp_sum_origin(rta *attrs, int *origin)
-+{
-+  struct eattr *ea;
-+  int new_origin;
-+
-+  if (ea = ea_find(attrs->eattrs, EA_CODE(EAP_BGP, BA_ORIGIN)))
-+    new_origin = ea->u.data;
-+  else
-+    {
-+      switch (attrs->source)
-+	{
-+	case RTS_OSPF:
-+	case RTS_OSPF_IA:
-+	case RTS_OSPF_EXT1:
-+	case RTS_OSPF_EXT2:
-+	  new_origin = ORIGIN_IGP;
-+	  break;
-+
-+	default:
-+	  new_origin = ORIGIN_INCOMPLETE;
-+	}
-+    }
-+
-+  if (new_origin == ORIGIN_INCOMPLETE)
-+    *origin = ORIGIN_INCOMPLETE;
-+  else if ((new_origin == ORIGIN_EGP) && (*origin == ORIGIN_IGP))
-+    *origin = ORIGIN_EGP;
-+}
-+
-+/*
-+ * bgp_sum_aspath - update summary AS_PATH attribute
-+ * @ea: new AS_PATH attribuye
-+ * @as_differs: are we already in 'differ' mode
-+ * @as_data_ptr: pointer to common data for all routes
-+ * @as_len: common data length
-+ * @as_set_ptrs: pointer to array of pointers to sorted u32 arrays of ASNs
-+ * @as_set_len: pointer to array of length of given arrays
-+ * @as_set_index: current array index
-+ * @lp: linear pool to allocate data from
-+ */
-+void
-+bgp_sum_aspath(eattr *ea, int *as_differs, byte *as_data_ptr, int *as_len, byte **as_set_ptrs, byte *as_set_len, int *as_set_index, struct linpool *lp)
-+{
-+  int new_len, mlen, slen;
-+  byte *sum_off, *new_off, *new_ptr;
-+
-+  new_len = ea->u.ptr->length;
-+  new_ptr = ea->u.ptr->data;
-+
-+  /* Check if new AS_PATH is the same */
-+  if ((*as_differs == 0) && (*as_len == new_len) && (memcmp(as_data_ptr, new_ptr, new_len) == 0))
-+    return;
-+
-+  /* 
-+   * New AS_PATH differs. We use easy and naive implementation
-+   * from RFC4271 9.2.2.2:
-+   * 1) Find as much as possible AS_SEQ / AS_SET segments at the 
-+   * beginning (usually zero)
-+   * 2) put the rest into huge sorted AS_SET (or several AS_SETs)
-+   */
-+  *as_differs = 1;
-+
-+  /* 
-+   * Compare AS_SET / AS_SEQ tuples one by one.
-+   * We assume both SETs to be validated
-+   */
-+
-+  mlen = MIN(*as_len, new_len);
-+  sum_off = as_data_ptr;
-+  new_off = new_ptr;
-+
-+  while (mlen > 0)
-+    {
-+      /* Check if segment type and length is the same */
-+      if (memcmp(sum_off, new_off, 2))
-+	break;
-+
-+      slen = 2 + 4 * new_off[1];
-+      if (memcmp(sum_off, new_off, slen))
-+	break;
-+
-+      /* Segment is the same, moving to the next  */
-+      sum_off += slen;
-+      new_off += slen;
-+      mlen -= slen;
-+    }
-+
-+  //BDBG("MIN=%d mlen=%d", MIN(*as_len, new_len), mlen);
-+
-+  /*
-+   * 1) If xlen is > 0 we need to put to AS_SET buffer ALL different tuples from sum_off and new_off.
-+   * 2) If xlen is zero but new_len is larger, we need to put to AS_SET buffer tuples from new_off
-+   * 3) If xlen is zero but sum_len is larger, we need to put to AS_SET buffer tuples from sum_off
-+   */
-+  if (sum_off != as_data_ptr + *as_len)
-+    {
-+      BDBG("Move ASNs from summary to AS-SET, length=%d", as_data_ptr + *as_len - sum_off);
-+      bgp_append_as_tuple(sum_off, as_data_ptr + *as_len - sum_off, as_set_ptrs, as_set_len, as_set_index, lp);
-+      *as_len = sum_off - as_data_ptr;
-+    }
-+
-+  if (new_off != new_ptr + new_len)
-+    {
-+      BDBG("Move ASNs from new to AS-SET, length=%d", new_ptr + new_len - new_off);
-+      bgp_append_as_tuple(new_off, new_ptr + new_len - new_off, as_set_ptrs, as_set_len, as_set_index, lp);
-+    }
-+}
-+
-+/*
-+ * bgp_update_sum_rte - create and announce updated summary rte
-+ * @p: pointer to protocol instance
-+ * @asr: pointer to summary route
-+ * @origin: value of ORIGIN attribute
-+ * @as_part: pointer to AS_PATH attribute data
-+ * @atomic_agg: value of ATOMIC_AGGREGATE attribute
-+ * @aggregator: pointer to AGGREGATOR attribute value
-+ *
-+ * Function creates stable rta (via rta_clone) and announces it
-+ */
-+static void
-+bgp_update_sum_rte(struct agg_proto *p, struct agg_sumroute *asr, int origin, struct adata *as_path, int atomic_agg, struct adata *aggregator)
-+{
-+  int i, slen;
-+  struct ea_list *eal;
-+  rta a, *attrs;
-+  rte *route;
-+  struct adata *atomic_ad;
-+
-+  slen = atomic_agg ? 4 : 3;
-+  eal = lp_allocz(p->lp, sizeof(struct ea_list) + sizeof(eattr) * slen);
-+  eal->flags = EALF_SORTED;
-+  eal->count = slen;
-+
-+  i = 0;
-+
-+  /* ORIGIN */
-+  bgp_set_attr(&eal->attrs[i++], BA_ORIGIN, origin);
-+
-+  /* AS_PATH */
-+  bgp_set_attr(&eal->attrs[i++], BA_AS_PATH, (uintptr_t)as_path);
-+
-+  /* ATOMIC_AGGREGATE */
-+  if (atomic_agg)
-+    {
-+      atomic_ad = bgp_alloc_adata(p->lp, 0);
-+      bgp_set_attr(&eal->attrs[i++], BA_ATOMIC_AGGR, (uintptr_t)atomic_ad);
-+    }
-+
-+  /* AGGREGATOR */
-+  bgp_set_attr(&eal->attrs[i++], BA_AGGREGATOR, (uintptr_t)aggregator);
-+
-+  /* Fill in temporary rta */
-+  bzero(&a, sizeof(a));
-+  a.proto = &p->p;
-+  a.source = RTS_BGP;
-+  a.scope = SCOPE_UNIVERSE;
-+  a.cast = RTC_UNICAST;
-+  a.dest = RTD_BLACKHOLE;
-+/*
-+  a.gw = r->via;
-+  a.iface = NULL;
-+*/
-+  a.eattrs = eal;
-+
-+  attrs = rta_lookup(&a);
-+
-+  route = rte_get_temp(attrs);
-+
-+  /* Save copy of attributes */
-+  attrs = rta_clone(attrs);
-+
-+  route->net = net_get(p->p.table, asr->tn.addr, asr->tn.plen);
-+  route->pflags = 0;
-+
-+  /* Update summary route */
-+  rte_update(p->p.table, route->net, &p->p, &p->p, route);
-+
-+  /* Free old attrs if any */
-+  if (asr->attrs)
-+    rta_free(asr->attrs);
-+  /* Save copy of attributes */
-+  asr->attrs = attrs;
-+}
-+
-+
-+void
-+bgp_create_sumroute(struct agg_proto *p, struct agg_sumroute *asr)
-+{
-+  int as_set = 0, as_len = 0, new_len;
-+  struct agg_route *ar;
-+  struct eattr *ea;
-+  struct rta *attrs;
-+  node *n, *n_next;
-+  int origin = ORIGIN_IGP, atomic_agg = 0;
-+  u32 agg_as, agg_id;
-+  byte *new_ptr;
-+  int as_differs = 0;
-+  int as_set_index = 0;
-+  int agg_count = 0;
-+  struct bgp_proto *bgp_p;
-+  byte *as_data_ptr = NULL;
-+  struct adata *ad, *as_path;
-+  byte *as_set_ptrs[BGP_AS_MAX_PTRS], as_set_len[BGP_AS_MAX_PTRS];
-+
-+  BDBG("bgp_create_sumroute() called for %I/%d", asr->tn.addr, asr->tn.plen);
-+
-+  /*
-+   * Do route aggregation per RFC4271 9.2.2.2 rules
-+   *
-+   * [0] NEXT_HOP (4 or 16 or 2x16)
-+   * [1] ORIGIN (internal, u32)
-+   * [2] AS_PATH (variable)
-+   * [3] AGGREGATOR (8 bytes)
-+   * [4] ATOMIC_AGGREGATE (opt, 6 bytes)
-+   *
-+   */
-+  /* Zero set length */
-+  memset(&as_set_len, 0, sizeof(as_set_len));
-+  as_set_ptrs[0] = lp_alloc(p->lp, BGP_AS_MAX_LEN);
-+
-+  agg_as = asr->u.bgp.local_as;
-+  agg_id = asr->u.bgp.local_id;
-+  BDBG("Summary route ASN/ID set to %d/%R", agg_as, agg_id);
-+
-+  WALK_LIST_DELSAFE(n, n_next, asr->routes)
-+    {
-+      ar = SKIP_BACK(struct agg_route, n_sumroute, n);
-+
-+      attrs = ar->attrs;
-+      BDBG("Working on route %I/%d source=%d", ar->fn.prefix, ar->fn.pxlen, attrs->source);
-+
-+      /*
-+       * FIXME: Routes with different MED should not be aggregated.
-+       * However this is another non-deterministic place
-+       */
-+      /* Save ASN & BGP router id from first BGP route */
-+      if (attrs->source == RTS_BGP)
-+	{
-+	  bgp_p = (struct bgp_proto *)attrs->proto;
-+	  if ((agg_as != bgp_p->local_as) || (agg_id != bgp_p->local_id))
-+	    {
-+	      log(L_ERR "%s: Cannot aggregate route %I/%d into %I/%d, skipping",
-+		p->p.name, asr->tn.addr, asr->tn.plen, ar->fn.prefix, ar->fn.pxlen);
-+	      continue;
-+	    }
-+	}
-+
-+      /*
-+       * Check AS_PATH. AS_PATH is normalized to 4b ASNs in bgp_decode_attr().
-+       * We assume all AS_PATH attributes BGP routes are encoded in 4b format
-+       */
-+      if (ea = ea_find(attrs->eattrs, EA_CODE(EAP_BGP, BA_AS_PATH)))
-+	{
-+	  /* BGP route */
-+	  new_len = ea->u.ptr->length;
-+	  new_ptr = ea->u.ptr->data;
-+	}
-+      else
-+	{
-+	  /* Non-BGP route, let's set empty attribute */
-+	  new_len = 0;
-+	  new_ptr = NULL;
-+	}
-+
-+      if (asr->flags & AGG_FLAG_MAXINFO)
-+	{
-+	  if (!as_set)
-+	    {
-+	      as_len = new_len;
-+	      as_data_ptr = lp_alloc(p->lp, as_len ? as_len : 4);
-+	      memcpy(as_data_ptr, new_ptr, as_len);
-+	      as_set = 1;
-+	    }
-+	  else if (new_ptr)
-+	    bgp_sum_aspath(ea, &as_differs, as_data_ptr, &as_len, as_set_ptrs, as_set_len, &as_set_index, p->lp);
-+	}
-+
-+      /* Check ORIGIN () */
-+      bgp_sum_origin(attrs, &origin);
-+
-+      /* Check ATOMIC_AGGREGATE */
-+      if (ea = ea_find(attrs->eattrs, EA_CODE(EAP_BGP, BA_ATOMIC_AGGR)))
-+	atomic_agg = 1;
-+
-+      agg_count++;
-+    }
-+
-+  /* Skip route? */
-+  if (!agg_count)
-+    {
-+      log(L_ERR "%s: Route %I/%d cannot be summarized due to conflicting Router Id/ASN", p->p.name, asr->tn.addr, asr->tn.plen);
-+      return;
-+    }
-+
-+  /*
-+   * Make out list sorted by default
-+   *
-+   * [0] ORIGIN (V=1) (internal, u32)
-+   * [1] AS_PATH (V=2) (variable)
-+   * [2] ATOMIC_AGGREGATE (V=6) (opt, zero)
-+   * [3] AGGREGATOR (V=7) (8 bytes)
-+   *
-+   */
-+
-+  /* Prepare AS_PATH */
-+  as_path = bgp_compile_sum_aspath(as_data_ptr, as_len, as_set_ptrs, as_set_len, &as_set_index, p->lp);
-+
-+  /* Prepare AGGREGATOR */
-+  ad = bgp_alloc_adata(p->lp, 8);
-+  new_ptr = ad->data;
-+  put_u32(new_ptr, agg_as);
-+  put_u32(new_ptr + 4, agg_id);
-+
-+  /* Create stable attributes with rte */
-+  bgp_update_sum_rte(p, asr, origin, as_path, atomic_agg, ad);
-+
-+  lp_flush(p->lp);
-+}
-+
-+
-+#define DBG_UPD(x)  BDBG("Summary route update requires reannounce due to changed " x " attribute")
-+void
-+bgp_update_sumroute(struct agg_proto *p, struct agg_sumroute *asr, struct agg_route *ar, struct rta *old, struct rta *new)
-+{
-+  struct eattr *ea, *ea_new;
-+  rta *a;
-+  int origin = ORIGIN_IGP, atomic_agg = 0, rebuild = 0;
-+  struct adata *as_path, *aggregator;
-+  node *n, *n_next;
-+
-+  BDBG("bgp_update_sumroute: route %I/%d , summary %I/%d", ar->fn.prefix, ar->fn.pxlen, asr->tn.addr, asr->tn.plen);
-+
-+  if (!(a = asr->attrs))
-+    {
-+      if (!new)
-+	return;
-+
-+      bgp_create_sumroute(p, asr);
-+      return;
-+    }
-+
-+  /*
-+   * [0] ORIGIN (V=1) (internal, u32)
-+   * [1] AS_PATH (V=2) (variable)
-+   * [3] ATOMIC_AGGREGATE (V=6) (opt, zero)
-+   * [4] AGGREGATOR (V=7) (8 bytes)
-+   *
-+   */
-+  if (!new)
-+    {
-+
-+      /* route witdrawal */
-+      /* Check if we can skip rebuilding */
-+      BDBG("Widrawing route %I/%d from summary %I/%d", ar->fn.prefix, ar->fn.pxlen, asr->tn.addr, asr->tn.plen);
-+
-+      /*
-+       * AS_PATH
-+       * If MAXINFO flag is not set we don't care (AS_PATH is empty)
-+       * if MAXINFO is set but attribute length is zero we don't care, too
-+       * Overwise, full rebuild is requires
-+       */
-+      if ((asr->flags & AGG_FLAG_MAXINFO) && (ea = ea_find(a->eattrs, EA_CODE(EAP_BGP, BA_AS_PATH))))
-+	{
-+	  if (ea->u.ptr->length > 0)
-+	    {
-+	      /* We have to save every AS in AS_PATH and it is not empty. */
-+	      DBG_UPD("AS_PATH");
-+	      bgp_create_sumroute(p, asr);
-+	      return;
-+	    }
-+	}
-+
-+      /* Summary AS_PATH is not changed */
-+
-+      /*
-+       * ORIGIN
-+       * In most cases we got INCOMPLETE in both summary route and witdrawn attribute,
-+       * so we simply cycle thru all more specific routes to determine new origin attribute
-+       *
-+       * ATOMIC_AGGREGATE
-+       * Check for its new value, too
-+       */
-+
-+      WALK_LIST_DELSAFE(n, n_next, asr->routes)
-+	{
-+	  ar = SKIP_BACK(struct agg_route, n_sumroute, n);
-+
-+	  BDBG("Working on route %I/%d", ar->fn.prefix, ar->fn.pxlen);
-+	  bgp_sum_origin(ar->attrs, &origin);
-+
-+	  if (ea = ea_find(ar->attrs->eattrs, EA_CODE(EAP_BGP, BA_ATOMIC_AGGR)))
-+	    atomic_agg = 1;
-+	}
-+
-+      if (ea = ea_find(a->eattrs, EA_CODE(EAP_BGP, BA_ORIGIN)))
-+	{
-+	  if ((ea->u.data != origin))
-+	    {
-+	      DBG_UPD("ORIGIN");
-+	      rebuild = 1;
-+	    }
-+	}
-+
-+      if (ea = ea_find(a->eattrs, EA_CODE(EAP_BGP, BA_ATOMIC_AGGR)))
-+	{
-+	  if ((ea->u.data != atomic_agg))
-+	    {
-+	      DBG_UPD("ATOMIC_AGG");
-+	      rebuild = 1;
-+	    }
-+	}
-+
-+      if (!rebuild)
-+	{
-+	  BDBG("Withdrawal of route %I/%d does not require summary route to be updated", ar->fn.prefix, ar->fn.pxlen);
-+	  return;
-+	}
-+
-+      BDBG("Withdrawal of route %I/%d require summary route to be updated", ar->fn.prefix, ar->fn.pxlen);
-+
-+      /*
-+       * We don't need full update here since we already know all summarized attributes data:
-+       * AS_PATH is empty
-+       * ORIGIN / ATOMIC_AGGREGATE values are known
-+       * AGGREGATOR value cannot change (so we import it from current summary route)
-+       */
-+
-+      /* Create empty AS_PATH */
-+      as_path = bgp_alloc_adata(p->lp, 0);
-+
-+      /* Create AGGREGATOR attribute */
-+      aggregator = bgp_alloc_adata(p->lp, 8);
-+
-+      if (ea = ea_find(a->eattrs, EA_CODE(EAP_BGP, BA_AGGREGATOR)))
-+	memcpy(aggregator + 1, ea->u.ptr->data, 8);
-+
-+      bgp_update_sum_rte(p, asr, origin, as_path, atomic_agg, aggregator);
-+      lp_flush(p->lp);
-+      return;
-+    }
-+
-+   /************************************************
-+   *         New route or route update.            *
-+   ************************************************/
-+  /* Check ORIGIN */
-+  if (ea = ea_find(a->eattrs, EA_CODE(EAP_BGP, BA_ORIGIN)))
-+    {
-+      origin = ea->u.data;
-+      bgp_sum_origin(new, &origin);
-+      if (origin != ea->u.data)
-+	{
-+	  DBG_UPD("ORIGIN");
-+	  rebuild = 1;
-+	}
-+    }
-+
-+  /* Check AS_PATH */
-+  ea = ea_find(a->eattrs, EA_CODE(EAP_BGP, BA_AS_PATH));
-+
-+  byte *as_set_ptrs[BGP_AS_MAX_PTRS], as_set_len[BGP_AS_MAX_PTRS];
-+  int as_differs, as_len, as_set_index;
-+  byte *as_data_ptr;
-+
-+  /*
-+   * Check if new route:
-+   * 1) is BGP route (contains AS_PATH)
-+   * 2) New AS_PATH is not empty
-+   * 3) New AS_PATH is different
-+   */
-+  as_path = NULL;
-+
-+  if ((asr->flags & AGG_FLAG_MAXINFO) && (ea_new = ea_find(new->eattrs, EA_CODE(EAP_BGP, BA_AS_PATH))) && (ea_new->u.ptr->length))
-+    {
-+      if ((ea->u.ptr->length != ea_new->u.ptr->length) || (memcmp(ea->u.ptr->data, ea_new->u.ptr->data, ea_new->u.ptr->length)))
-+	{
-+	  /* AS_PATH differs */
-+	  as_len = ea->u.ptr->length;
-+	  as_data_ptr = lp_alloc(p->lp, as_len ? as_len : 4);
-+	  memcpy(as_data_ptr, ea->u.ptr->data, as_len);
-+
-+	  as_differs = 1;
-+	  memset(&as_set_len, 0, sizeof(as_set_len));
-+	  as_set_ptrs[0] = lp_alloc(p->lp, BGP_AS_MAX_LEN);
-+	  as_set_index = 0;
-+
-+	  bgp_sum_aspath(ea_new, &as_differs, as_data_ptr, &as_len, as_set_ptrs, as_set_len, &as_set_index, p->lp);
-+	  as_path = bgp_compile_sum_aspath(as_data_ptr, as_len, as_set_ptrs, as_set_len, &as_set_index, p->lp);
-+
-+	  DBG_UPD("AS_PATH");
-+	  rebuild = 1;
-+	}
-+    }
-+
-+  /* Check ATOMIC_AGGREGATE */
-+  if (ea = ea_find(new->eattrs, EA_CODE(EAP_BGP, BA_ATOMIC_AGGR)))
-+    atomic_agg = 1;
-+
-+  if ((ea_find(a->eattrs, EA_CODE(EAP_BGP, BA_ATOMIC_AGGR))) && (!atomic_agg))
-+    {
-+      DBG_UPD("ATOMIC_AGGREGATE");
-+      atomic_agg = 1;
-+      rebuild = 1;
-+    }
-+
-+  /* Check ORIGIN */
-+  if (ea = ea_find(a->eattrs, EA_CODE(EAP_BGP, BA_ORIGIN)))
-+    {
-+      origin = ea->u.data;
-+      bgp_sum_origin(new, &origin);
-+      if (origin != ea->u.data)
-+	{
-+	  DBG_UPD("ORIGIN");
-+	  rebuild = 1;
-+	}
-+    }
-+
-+  /* Check AGGREGATOR */
-+  struct bgp_proto *bgp_p = NULL;
-+  byte agg[8];
-+  if (new->source == RTS_BGP)
-+    {
-+      bgp_p = (struct bgp_proto *)new->proto;
-+      put_u32(agg, bgp_p->local_as);
-+      put_u32(agg + 4, bgp_p->local_id);
-+      ea = ea_find(a->eattrs, EA_CODE(EAP_BGP, BA_AGGREGATOR));
-+      if (memcmp(agg, ea->u.ptr->data, 8))
-+	{
-+	  BDBG("New route %I/%d %d/%R ASN/BGP ID differs from summary route (%d/%R). Ignoring",
-+	    ar->fn.prefix, ar->fn.pxlen, bgp_p->local_as, bgp_p->local_id,
-+	    get_u32(ea->u.ptr->data), get_u32(ea->u.ptr->data + 4));
-+	  if (rebuild)
-+	    lp_flush(p->lp);
-+	  return;
-+	}
-+    }
-+
-+  if (!rebuild)
-+    {
-+      BDBG("New route %I/%d does not require summary route to be updated", ar->fn.prefix, ar->fn.pxlen);
-+      return;
-+    }
-+
-+  DBG("New route %I/%d require summary route to be updated", ar->fn.prefix, ar->fn.pxlen);
-+
-+  /* Copy current AS_PATH if not set */
-+  if (!as_path)
-+    {
-+      ea = ea_find(a->eattrs, EA_CODE(EAP_BGP, BA_AS_PATH));
-+      as_len = ea->u.ptr->length;
-+      as_path = bgp_alloc_adata(p->lp, as_len);
-+      memcpy(as_path->data, ea->u.ptr->data, as_len);
-+    }
-+
-+  /* Copy AGGREGATOR attribute */
-+  aggregator = bgp_alloc_adata(p->lp, 8);
-+
-+  if (bgp_p)
-+    memcpy(aggregator + 1, agg, 8);
-+  else
-+    {
-+      if (ea = ea_find(a->eattrs, EA_CODE(EAP_BGP, BA_AGGREGATOR)))
-+	memcpy(aggregator + 1, ea->u.ptr->data, 8);
-+    }
-+
-+  bgp_update_sum_rte(p, asr, origin, as_path, atomic_agg, aggregator);
-+  lp_flush(p->lp);
-+}
-+#undef BGP_UPD
-+
- /**
-  * bgp_decode_attrs - check and decode BGP attributes
-  * @conn: connection
-diff --git a/proto/bgp/bgp.c b/proto/bgp/bgp.c
-index 4d3c32f..b23e21a 100644
---- proto/bgp/bgp.c
-+++ proto/bgp/bgp.c
-@@ -1174,6 +1174,7 @@ bgp_show_proto_info(struct proto *P)
-     }
- }
- 
-+
- struct protocol proto_bgp = {
-   name:			"BGP",
-   template:		"bgp%d",
-@@ -1188,5 +1189,9 @@ struct protocol proto_bgp = {
-   get_status:		bgp_get_status,
-   get_attr:		bgp_get_attr,
-   get_route_info:	bgp_get_route_info,
--  show_proto_info:	bgp_show_proto_info
-+  show_proto_info:	bgp_show_proto_info,
-+#ifdef CONFIG_AGG
-+  create_sumroute:	bgp_create_sumroute,
-+  update_sumroute:	bgp_update_sumroute
-+#endif
- };
-diff --git a/proto/bgp/bgp.h b/proto/bgp/bgp.h
-index a8c5818..21ace7b 100644
---- proto/bgp/bgp.h
-+++ proto/bgp/bgp.h
-@@ -184,6 +184,8 @@ static inline void set_next_hop(byte *b, ip_addr addr) { ((ip_addr *) b)[0] = ad
- 
- void bgp_attach_attr(struct ea_list **to, struct linpool *pool, unsigned attr, uintptr_t val);
- byte *bgp_attach_attr_wa(struct ea_list **to, struct linpool *pool, unsigned attr, unsigned len);
-+void bgp_create_sumroute(struct agg_proto *p, struct agg_sumroute *asr);
-+void bgp_update_sumroute(struct agg_proto *p, struct agg_sumroute *asr, struct agg_route *ar, struct rta *old, struct rta *new);
- struct rta *bgp_decode_attrs(struct bgp_conn *conn, byte *a, unsigned int len, struct linpool *pool, int mandatory);
- int bgp_get_attr(struct eattr *e, byte *buf, int buflen);
- int bgp_rte_better(struct rte *, struct rte *);
-diff --git a/sysdep/autoconf.h.in b/sysdep/autoconf.h.in
-index d029e2a..d10b409 100644
---- sysdep/autoconf.h.in
-+++ sysdep/autoconf.h.in
-@@ -42,6 +42,7 @@
- #undef CONFIG_BGP
- #undef CONFIG_OSPF
- #undef CONFIG_PIPE
-+#undef CONFIG_AGG
- 
- /* We have <syslog.h> and syslog() */
- #undef HAVE_SYSLOG
--- 
-1.7.3.2
-
+ if test "$given_suffix" = yes ; then

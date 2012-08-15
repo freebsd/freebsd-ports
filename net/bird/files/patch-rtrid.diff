@@ -1,0 +1,103 @@
+diff --git a/doc/bird.sgml b/doc/bird.sgml
+index 087a4eb..16de68e 100644
+--- doc/bird.sgml
++++ doc/bird.sgml
+@@ -317,7 +317,7 @@ protocol rip {
+ 	Besides, there are some predefined numeric constants based on /etc/iproute2/rt_* files.
+ 	A list of defined constants can be seen (together with other symbols) using 'show symbols' command.
+ 
+-	<tag>router id <m/IPv4 address/</tag> Set BIRD's router ID. It's a world-wide unique identification of your router, usually one of router's IPv4 addresses. Default: in IPv4 version, the lowest IP address of a non-loopback interface. In IPv6 version, this option is mandatory. 
++	<tag>router id <m/IPv4 address|"interface"/</tag> Set BIRD's router ID. It's a world-wide unique identification of your router, usually one of router's IPv4 addresses. Default: in IPv4 version, the lowest IP address of a non-loopback interface. In IPv6 version, this option is mandatory. 
+ 
+ 	<tag>listen bgp [address <m/address/] [port <m/port/] [dual]</tag>
+ 	This option allows to specify address and port where BGP
+@@ -421,7 +421,7 @@ to zero to disable it. An empty <cf><m/switch/</cf> is equivalent to <cf/on/
+ 	state changes and <cf/messages/ logs received BGP messages.
+ 	Other protocols does not support MRTdump yet.
+ 
+-	<tag>router id <m/IPv4 address/</tag> This option can be used
++	<tag>router id <m/IPv4 address|"interface"/</tag> This option can be used
+ 	to override global router id for a given protocol. Default:
+ 	uses global router id.
+ 
+diff --git a/nest/config.Y b/nest/config.Y
+index a75dd0c..1cb3e27 100644
+--- nest/config.Y
++++ nest/config.Y
+@@ -90,6 +90,10 @@ idval:
+      cf_error("Router IDs must be entered as hexadecimal numbers or IPv4 addresses in IPv6 version");
+ #endif
+    }
++ | TEXT {
++    if (($$ = sysio_get_rtrid($1)) == 0)
++      cf_error("Unable to get primary IPv4 address for interface %s", $1);
++ }
+  ;
+ 
+ 
+diff --git a/sysdep/unix/io.c b/sysdep/unix/io.c
+index f91b527..1f73c4a 100644
+--- sysdep/unix/io.c
++++ sysdep/unix/io.c
+@@ -17,11 +17,13 @@
+ #include <sys/time.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
++#include <sys/ioctl.h>
+ #include <sys/fcntl.h>
+ #include <sys/uio.h>
+ #include <sys/un.h>
+ #include <unistd.h>
+ #include <errno.h>
++#include <net/if.h>
+ #include <netinet/in.h>
+ #include <netinet/icmp6.h>
+ 
+@@ -669,6 +671,35 @@ get_sockaddr(struct sockaddr_in *sa, ip_addr *a, struct iface **ifa, unsigned *p
+ 
+ #endif
+ 
++/**
++ * sysio_get_rtrid - get main IPv4 interface address as router id
++ * @iface - interface name
++ * Returns router id or 0 in case of error
++ */
++u32
++sysio_get_rtrid(char *iface)
++{
++  int s;
++  struct ifreq ifr;
++  struct sockaddr_in *sin;
++
++  memset(&ifr, 0, sizeof(struct ifreq));
++  strncpy(ifr.ifr_name, iface, sizeof(ifr.ifr_name) - 1);
++
++  if ((s = socket(AF_INET, SOCK_DGRAM, 0)) == -1) {
++    return 0;
++  }
++
++  if (ioctl(s, SIOCGIFADDR, &ifr) != 0) {
++    return 0;
++  }
++
++  close(s);
++
++  sin = (struct sockaddr_in *)&ifr.ifr_addr;
++  return ntohl(sin->sin_addr.s_addr);
++}
++
+ 
+ #ifdef IPV6
+ 
+diff --git a/sysdep/unix/unix.h b/sysdep/unix/unix.h
+index 3e85c85..4c9990f 100644
+--- sysdep/unix/unix.h
++++ sysdep/unix/unix.h
+@@ -28,6 +28,7 @@ volatile int async_config_flag;
+ volatile int async_dump_flag;
+ volatile int async_shutdown_flag;
+ 
++u32 sysio_get_rtrid(char *iface);
+ #ifdef IPV6
+ #define BIRD_PF PF_INET6
+ #define BIRD_AF AF_INET6
