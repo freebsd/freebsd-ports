@@ -317,6 +317,10 @@
     SUBDIR += zabbix-frontend
     SUBDIR += zabbix-proxy
     SUBDIR += zabbix-server
+    SUBDIR += zabbix2-agent
+    SUBDIR += zabbix2-frontend
+    SUBDIR += zabbix2-proxy
+    SUBDIR += zabbix2-server
     SUBDIR += zenoss
     SUBDIR += zenpack-apachemonitor
     SUBDIR += zenpack-checkping

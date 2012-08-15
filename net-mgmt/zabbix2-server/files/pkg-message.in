@@ -1,11 +1,43 @@
 ======================================================================
-Zabbix requires a database.  If you are using SQLite, one will be
-created automatically.  Otherwise you can install one as follows (<db>
-is your database engine and <db_client> is its client program):
+For Zabbix server and proxy daemons, as well as Zabbix frontend, a database is required. It is not needed to run Zabbix agent. 
+% cd %%DATADIR%%/%%ZABBIX_BUILD%%/database
 
-% cd %%DATADIR%%/%%ZABBIX_BUILD%%/create
-% cat schema/<db>.sql data/data.sql data/images_<db>.sql | <db_client>
+PostgreSQL: 
+shell> psql -U <username>
+psql> create database zabbix; 
+psql> \q 
+shell> cd database/postgresql
+shell> psql -U <username> zabbix < schema.sql
+shell> psql -U <username> zabbix < images.sql
+shell> psql -U <username> zabbix < data.sql
+
+MySQL: 
+shell> mysql -u<username> -p<password>
+mysql> create database zabbix character set utf8;
+mysql> quit;
+shell> mysql -u<username> -p<password> zabbix < database/mysql/schema.sql
+shell> mysql -u<username> -p<password> zabbix < database/mysql/images.sql
+shell> mysql -u<username> -p<password> zabbix < database/mysql/data.sql
+
+SQLite: 
+shell> cd database/sqlite3
+shell> sqlite3 /var/lib/sqlite/zabbix.db < schema.sql
+shell> sqlite3 /var/lib/sqlite/zabbix.db < images.sql
+shell> sqlite3 /var/lib/sqlite/zabbix.db < data.sql
+
+
+IBM DB2: 
+shell> db2 "create database zabbix using codeset utf-8 territory us pagesize 32768"
+shell> cd database/ibm_db2
+shell> db2batch -d zabbix -f schema.sql
+shell> db2batch -d zabbix -f images.sql
+shell> db2batch -d zabbix -f data.sql 
+
 
 To upgrade an existing database, see the scripts in
 %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades.
+
+Please see http://www.zabbix.com/documentation/2.0/manual/installation/install for installation instructions.
+
+For use NMAP please edit sudoers
 ======================================================================

@@ -5,47 +5,55 @@
 # $FreeBSD$
 #
 
-PORTNAME=	zabbix
-PORTVERSION=	1.8.13
-PORTEPOCH=	2
+PORTNAME=	zabbix2
+PORTVERSION=	2.0.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
 PKGNAMESUFFIX?=	-server
+DISTNAME=	zabbix-${PORTVERSION}
 
-MAINTAINER=	ports@christianserving.org
+MAINTAINER=	pakhom706@gmail.com
 COMMENT=	Enterprise-class open source distributed monitoring (${PKGNAMESUFFIX:S/^-//})
 
 LICENSE=	GPLv2
 
-CONFLICTS=	${PKGBASE}-1.[0-6]*
+CONFLICTS=	${PKGBASE}-1.[0-8]*
 
 .if ${PKGNAMESUFFIX} != "-agent"
-CONFLICTS+=	${PORTNAME}-1.[0-6]*
+CONFLICTS+=	${PORTNAME}-1.[0-8]*
 .endif
 
 ZABBIX_BUILD=	${PKGNAMESUFFIX:S/^-//}
 
 .if ${ZABBIX_BUILD} != "frontend" # frontend only needs the version/distribution settings
 .if ${ZABBIX_BUILD} != "agent"
-USE_ICONV=	yes
-MAN8+=		${PORTNAME}_${ZABBIX_BUILD}.8
-USE_RC_SUBR=	${PORTNAME}_${ZABBIX_BUILD}
+MAN8+=		zabbix_${ZABBIX_BUILD}.8
+USE_RC_SUBR=	zabbix_${ZABBIX_BUILD}
 .else
-USE_ICONV=	yes
-MAN1+=		${PORTNAME}_get.1 ${PORTNAME}_sender.1
-MAN8+=		${PORTNAME}_${ZABBIX_BUILD}d.8
-USE_RC_SUBR=	${PORTNAME}_${ZABBIX_BUILD}d
+MAN1+=		zabbix_get.1 zabbix_sender.1
+MAN8+=		zabbix_${ZABBIX_BUILD}d.8
+USE_RC_SUBR=	zabbix_${ZABBIX_BUILD}d
 .endif
+
+USE_ICONV=	yes
 
 USERS=		zabbix
 GROUPS=		zabbix
 
-PLIST_SUB=	ZABBIX_BUILD=${ZABBIX_BUILD}
+.if ${ZABBIX_BUILD} != "proxy"
+PLIST_SUB=	PROXY="@comment "
+.else
+PLIST_SUB=	PROXY=""
+.endif
+
+PLIST_SUB+=	ZABBIX_BUILD=${ZABBIX_BUILD}
 SUB_LIST=	ZABBIX_BUILD=${ZABBIX_BUILD} ZABBIX_REQUIRE=${ZABBIX_REQUIRE}
 
 MAKE_ARGS+=	ARCH=freebsd
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--enable-${ZABBIX_BUILD}
+CONFIGURE_ARGS+=	--enable-${ZABBIX_BUILD} \
+			--sysconfdir=${ETCDIR} \
+			--datadir=${ETCDIR}
 
 .if ${ZABBIX_BUILD} != "agent"
 LIB_DEPENDS=	netsnmp:${PORTSDIR}/net-mgmt/net-snmp \
@@ -56,108 +64,119 @@ SUB_FILES=	pkg-message
 CONFIGURE_ARGS+=	--with-net-snmp
 
 OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}${PKGNAMESUFFIX}/options
-OPTIONS=	MYSQL "Use MySQL backend" on \
-		PGSQL "Use PostgreSQL backend" off \
-		SQLITE "Use SQLite backend" off \
-		IPV6 "Support for IPv6" on \
-		FPING "Use fping for pinging hosts" on \
-		JABBER "Support for jabber media type" on \
-		CURL "Support web monitoring with cURL" on \
-		LDAP "Support for checking LDAP servers" on \
-		IPMI "Support for IPMI" off \
-		SSH "Support for SSH-based checks" off \
-		IODBC "Support for iODBC" off \
-		UNIXODBC "Support for unixODBC" off
+
+OPTIONS_DEFINE=	IPV6 FPING JABBER CURL LDAP IPMI SSH NMAP ODBC
+OPTIONS_DEFAULT=	MYSQL IPV6 FPING JABBER CURL LDAP
+
+CURL_DESC=	Support for web monitoring
+FPING_DESC=	Build/install fping for ping checks
+IPMI_DESC=	Support for IPMI checks
+JABBER_DESC=	Support for Jabber media type
+LDAP_DESC=	Support for LDAP server checks
+NMAP_DESC=	Build/install nmap for o/s detection
+SSH_DESC=	Support for SSH-based checks
+ODBC_DESC=	Support for database checks via ODBC
+IODBC_DESC=	Use iODBC for ODBC support
+UNIXODBC_DESC=	Use UnixODBC for ODBC support
+
+OPTIONS_SINGLE=	DB ODBC
+OPTIONS_SINGLE_DB=	MYSQL PGSQL SQLITE
+OPTIONS_SINGLE_ODBC=	IODBC UNIXODBC
 
 .include <bsd.port.options.mk>
 
-.ifndef WITHOUT_MYSQL
+.if ${PORT_OPTIONS:MMYSQL}
 ZABBIX_REQUIRE=	" mysql"
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql
-.elifdef WITH_PGSQL
+.endif
+
+.if ${PORT_OPTIONS:MPGSQL}
 ZABBIX_REQUIRE=	" postgresql"
 USE_PGSQL=	yes
-CONFIGURE_ARGS+=	--with-pgsql
-.elifdef WITH_SQLITE
+CONFIGURE_ARGS+=	--with-postgresql
+.endif
+
+.if ${PORT_OPTIONS:MSQLITE}
 ZABBIX_REQUIRE=
 USE_SQLITE=	3
 CONFIGURE_ARGS+=	--with-sqlite3
-.else
-IGNORE=		zabbix requires a database backend
 .endif
 
-.ifdef WITH_CURL
+.if ${PORT_OPTIONS:MCURL}
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-libcurl
 .endif
 
-.ifndef WITHOUT_LDAP
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=	--with-ldap
 .endif
 
-.ifdef WITH_IPMI
+.if ${PORT_OPTIONS:MIPMI}
 LIB_DEPENDS+=	OpenIPMI:${PORTSDIR}/sysutils/openipmi
 CONFIGURE_ARGS+=	--with-openipmi
 .endif
 
-.ifndef WITHOUT_JABBER
+.if ${PORT_OPTIONS:MJABBER}
 LIB_DEPENDS+=	iksemel:${PORTSDIR}/textproc/iksemel
 CONFIGURE_ARGS+=	--with-jabber
 .endif
 
-.ifndef WITHOUT_FPING
+.if ${PORT_OPTIONS:MFPING}
 RUN_DEPENDS+=	fping:${PORTSDIR}/net/fping
 .endif
 
-.ifdef WITH_SSH
+.if ${PORT_OPTIONS:MSSH}
 LIB_DEPENDS+=	ssh2:${PORTSDIR}/security/libssh2
 CONFIGURE_ARGS+=	--with-ssh2
 .endif
 
-.if defined(WITH_IODBC) && defined(WITH_UNIXODBC)
-IGNORE=	cannot build with both iODBC and unixODBC
-.endif
-
-.ifdef WITH_IODBC
+.if ${PORT_OPTIONS:MIODBC}
 LIB_DEPENDS+=	iodbc:${PORTSDIR}/databases/libiodbc
 CONFIGURE_ARGS+=	--with-iodbc
 .endif
 
-.ifdef WITH_UNIXODBC
+.if ${PORT_OPTIONS:MUNIXODBC}
 LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-unixodbc
 .endif
 .endif # if ${ZABBIX_BUILD} != "agent"
 
-.ifdef WITH_IPV6
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-ipv6
+.endif
+
+.if ${PORT_OPTIONS:MNMAP}
+RUN_DEPENDS+=	nmap:${PORTSDIR}/security/nmap \
+		sudo:${PORTSDIR}/security/sudo
 .endif
 
 post-patch:
 	@${GREP} -rl "/etc/zabbix" ${WRKSRC} \
 	  | ${XARGS} ${REINPLACE_CMD} -e 's#/etc/zabbix#${ETCDIR}#g'
-	@${REINPLACE_CMD} -e 's#/usr/sbin/fping#${LOCALBASE}/sbin/fping#g' ${WRKSRC}/misc/conf/${PORTNAME}_*.conf
+	@${REINPLACE_CMD} -e 's#/usr/sbin/fping#${LOCALBASE}/sbin/fping#g' ${WRKSRC}/conf/zabbix_*.conf
+
+.if ${ZABBIX_BUILD} != "agent"
+.if empty(PORT_OPTIONS:MFPING)
+	@${ECHO} 'DisablePinger=yes' >> ${WRKSRC}/conf/zabbix_${ZABBIX_BUILD}.conf
+.endif
+.for d in mysql oracle postgresql sqlite3
+	@${REINPLACE_CMD} -e 's|/bin/ping|/sbin/ping|g; \
+	                      s|/usr/bin/traceroute|/usr/sbin/traceroute|g; \
+	                      s|sudo /usr/bin/nmap|sudo ${LOCALBASE}/bin/nmap|g;' \
+	                      ${WRKSRC}/database/${d}/data.sql
+.endfor
+.endif
+	@${REINPLACE_CMD} -Ee 's|(@sysconfdir@/(\$$\([A-Z]*_CONFIG\)))" ([|][|] cp "../../conf/\$$\([A-Z]*_CONFIG\)" "\$$\(DESTDIR\)@sysconfdir@)"|\1.sample" \3/\2.sample"|;' \
+		${WRKSRC}/src/zabbix_${ZABBIX_BUILD}/Makefile.in
 	@${FIND} ${WRKSRC} -type f \( -name '*.bak' -or -name '*.orig' \) -exec ${RM} -f {} +
 
-.if ${ZABBIX_BUILD} != "agent"
-.ifdef WITHOUT_FPING
-	@${ECHO} 'DisablePinger=yes' >> ${WRKSRC}/misc/conf/${PORTNAME}_${ZABBIX_BUILD}.conf
-.endif
-.endif
-
 post-install:
-	@${INSTALL} -d ${ETCDIR}
-	@${INSTALL_DATA} ${WRKSRC}/misc/conf/${PORTNAME}_${ZABBIX_BUILD}.conf ${ETCDIR}/${PORTNAME}_${ZABBIX_BUILD}.conf.sample
-
-.if ${ZABBIX_BUILD} == "agent"
-	@${INSTALL_DATA} ${WRKSRC}/misc/conf/${PORTNAME}_${ZABBIX_BUILD}d.conf ${ETCDIR}/${PORTNAME}_${ZABBIX_BUILD}d.conf.sample
-.endif
-
 .if ${ZABBIX_BUILD} != "agent"
+	@${MKDIR} "${DATADIR}/${ZABBIX_BUILD}/database"
 	@cd ${WRKSRC}/upgrades/ && ${COPYTREE_SHARE} dbpatches ${DATADIR}/${ZABBIX_BUILD}/upgrades/
-	@cd ${WRKSRC}/create/ && ${COPYTREE_SHARE} "data schema" ${DATADIR}/${ZABBIX_BUILD}/create/
+	@cd ${WRKSRC}/database/ && ${COPYTREE_SHARE} "ibm_db2 mysql oracle postgresql sqlite3" ${DATADIR}/${ZABBIX_BUILD}/database/
 	@${CAT} ${PKGMESSAGE}
 .endif
 .endif # if ${ZABBIX_BUILD} != "frontend"
