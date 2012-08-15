@@ -20,7 +20,6 @@
 %%WWWDIR%%-45/uploads/media/index.html
 %%WWWDIR%%-45/uploads/pics/index.html
 %%WWWDIR%%-45/uploads/tf/index.html
-%%WWWDIR%%_src-%%PORTVERSION%%/.travis.yml
 %%WWWDIR%%_src-%%PORTVERSION%%/ChangeLog
 %%WWWDIR%%_src-%%PORTVERSION%%/GPL.txt
 %%WWWDIR%%_src-%%PORTVERSION%%/INSTALL.txt
@@ -241,6 +240,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/js/extjs/util.js
 %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/js/extjs/ux/Ext.app.SearchField.js
 %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/js/extjs/ux/Ext.grid.RowExpander.js
+%%WWWDIR%%_src-%%PORTVERSION%%/t3lib/js/extjs/ux/Ext.ux.DateTimePicker.js
 %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/js/extjs/ux/Ext.ux.FitToParent.js
 %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/js/extjs/ux/ext.resizable.js
 %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/js/extjs/ux/ext.ux.tabclosemenu.js
