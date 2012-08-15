@@ -19,8 +19,6 @@ COMMENT=	A simple TCP port redirector
 
 OPTIONS_DEFINE=	DOCS
 
-WRKSRC=		${WRKDIR}/rinetd-${PORTVERSION}
-
 MAKE_JOBS_SAFE=	yes
 USE_DOS2UNIX=	yes
 

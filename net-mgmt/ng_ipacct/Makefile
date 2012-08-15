@@ -25,7 +25,6 @@ OPTIONS=	MEM_ZONE "Use UMA zone allocator (>= 5.x only)" on
 KMODDIR=	/boot/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR:S!^/!!}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_ENV=	BINDIR="${PREFIX}/sbin" KMODDIR=${KMODDIR}
 
 MAN8=		ipacctctl.8
