@@ -1,0 +1,24 @@
+@unexec if cmp -s %D/etc/c-icap/srv_url_check.conf %D/etc/c-icap/srv_url_check.conf.default; then rm -f %D/etc/c-icap/srv_url_check.conf; fi
+etc/c-icap/srv_url_check.conf.default
+@exec [ -f %B/srv_url_check.conf ] || cp %B/%f %B/srv_url_check.conf
+@unexec if cmp -s %D/etc/c-icap/virus_scan.conf %D/etc/c-icap/virus_scan.conf.default; then rm -f %D/etc/c-icap/virus_scan.conf; fi
+etc/c-icap/virus_scan.conf.default
+@exec [ -f %B/virus_scan.conf ] || cp %B/%f %B/virus_scan.conf
+lib/c_icap/srv_url_check.a
+lib/c_icap/srv_url_check.la
+lib/c_icap/srv_url_check.so
+lib/c_icap/virus_scan.a
+lib/c_icap/virus_scan.la
+lib/c_icap/virus_scan.so
+%%DATADIR%%/templates/srv_url_check/en/DENY
+%%DATADIR%%/templates/virus_scan/en/VIR_MODE_HEAD
+%%DATADIR%%/templates/virus_scan/en/VIR_MODE_PROGRESS
+%%DATADIR%%/templates/virus_scan/en/VIR_MODE_TAIL
+%%DATADIR%%/templates/virus_scan/en/VIR_MODE_VIRUS_FOUND
+%%DATADIR%%/templates/virus_scan/en/VIRUS_FOUND
+@dirrm %%DATADIR%%/templates/srv_url_check/en
+@dirrm %%DATADIR%%/templates/srv_url_check
+@dirrm %%DATADIR%%/templates/virus_scan/en
+@dirrm %%DATADIR%%/templates/virus_scan
+@dirrmtry %%DATADIR%%/templates
+@dirrmtry %%DATADIR%%
