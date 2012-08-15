@@ -7,7 +7,7 @@
 
 PORTNAME=	duplicity
 PORTVERSION=	0.6.19
-PORTREVISION=	1
+PORTREVISION=	2	
 CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpad.net/duplicity/0.6-series/${PORTVERSION}/+download/
 
