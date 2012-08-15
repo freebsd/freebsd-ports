@@ -1,6 +1,6 @@
 --- ./source3/m4/aclocal.m4.orig	2011-08-09 13:17:47.000000000 +0200
 +++ ./source3/m4/aclocal.m4	2011-10-05 22:59:19.000000000 +0200
-@@ -379,11 +379,15 @@
+@@ -385,11 +385,15 @@
    ac_new_flags=""
    for i in [$]$1; do
      case [$]i in
@@ -18,7 +18,7 @@
  ])
  
  dnl Removes '-L/usr/lib[/]', '-Wl,-rpath,/usr/lib[/]'
-@@ -431,104 +435,81 @@
+@@ -437,104 +441,81 @@
    dnl those with the standalone portable libiconv installed).
    AC_MSG_CHECKING(for iconv in $1)
      jm_cv_func_iconv="no"

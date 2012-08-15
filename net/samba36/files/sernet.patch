@@ -16,7 +16,7 @@ diff --git a/lib/util/util_net.c b/lib/util/util_net.c
 index 0ce495e..0511a28 100644
 --- a/lib/util/util_net.c
 +++ b/lib/util/util_net.c
-@@ -351,13 +351,11 @@ bool is_broadcast_addr(const struct sockaddr *pss)
+@@ -353,13 +353,11 @@
  }
  
  /**

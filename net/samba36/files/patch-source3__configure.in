@@ -1,6 +1,18 @@
 --- ./source3/configure.in.orig	2011-08-09 13:17:47.000000000 +0200
 +++ ./source3/configure.in	2011-10-13 23:29:28.000000000 +0200
-@@ -831,9 +831,13 @@
+@@ -756,9 +756,9 @@
+ if test x"$ac_cv_header_md5_h" = x"yes"; then
+ 	AC_DEFINE(HAVE_MD5_H, 1,
+ 		[Whether md5.h is available.])
+-	AC_CHECK_LIB(md5, MD5Update,
++	AC_CHECK_LIB(md, MD5Update,
+ 	    [
+-		LIBS="${LIBS} -lmd5"
++		LIBS="${LIBS} -lmd"
+ 		CRYPTO_MD5_OBJ=
+ 		AC_DEFINE(HAVE_LIBMD5, 1,
+ 		    [Whether libmd5 conformant to rfc1321 is available.])],
+@@ -852,9 +852,13 @@
  	AC_PATH_PROG(CUPS_CONFIG, cups-config)
  
          if test "x$CUPS_CONFIG" != x; then
@@ -15,7 +27,7 @@
  		AC_CHECK_HEADERS(cups/cups.h cups/language.h)
  
  		if test x"$ac_cv_header_cups_cups_h" = xyes -a \
-@@ -842,7 +846,7 @@
+@@ -863,7 +867,7 @@
  			# underlinked. With cups-config --libs we pull in unwanted and unneeded
  			# dendencies including thread libraries - use cups-config only if really
  			# required. 
@@ -24,7 +36,7 @@
  				[PRINT_LIBS="$ac_save_PRINT_LIBS -lcups"],
  				[AC_MSG_WARN([your cups library doesn't link with -lcups alone, it might be underlinked.]) ;
  				 PRINT_LIBS="$ac_save_PRINT_LIBS `$CUPS_CONFIG --libs`"])
-@@ -852,10 +856,10 @@
+@@ -873,10 +877,10 @@
  			AC_CHECK_LIB_EXT(cups, PRINT_LIBS, httpConnectEncrypt)
  		else
  			AC_MSG_WARN([cups-config around but cups-devel not installed])
@@ -37,7 +49,7 @@
  
  	elif test x"$enable_cups" = x"yes"; then
  		AC_MSG_ERROR(Cups support required but cups-config not located.  Make sure cups-devel related files are installed.)
-@@ -1943,9 +1947,6 @@
+@@ -1964,9 +1968,6 @@
  AC_MSG_CHECKING([PICFLAG])
  AC_MSG_RESULT([$PICFLAG])
  
@@ -47,7 +59,7 @@
  AC_CACHE_CHECK([whether building shared libraries actually works],
                 [ac_cv_shlib_works],[
     # try building a trivial shared library
-@@ -4601,15 +4602,51 @@
+@@ -4624,15 +4625,51 @@
  		x"$ac_cv_header_pam_pam_modules_h" = x"no" ; then
  		if test x"${try_pam}" = x"yes";then
  			AC_MSG_ERROR([--with-pam=yes but pam_modules.h not found])
@@ -103,7 +115,7 @@
  
  		if test x"$create_pam_modules" = x"yes"; then
  			AC_DEFINE(WITH_PAM_MODULES,1,[Whether to include PAM MODULES support])
-@@ -4619,7 +4656,7 @@
+@@ -4642,7 +4679,7 @@
  			AC_CHECK_HEADERS(pam/pam_ext.h pam/_pam_macros.h)
  			AC_CHECK_FUNC_EXT(pam_vsyslog,$PAM_LIBS)
  		else
@@ -112,7 +124,7 @@
  		fi
  	fi
  	AC_MSG_CHECKING(whether to use PAM support)
-@@ -5821,9 +5858,17 @@
+@@ -5844,9 +5881,17 @@
  [AC_MSG_RESULT(no)])
  
  			AC_MSG_CHECKING(for aio_suspend)
@@ -133,7 +145,7 @@
  [AC_MSG_RESULT(no)])
  		fi
  
-@@ -6276,12 +6321,13 @@
+@@ -6299,12 +6344,13 @@
  		NSSSONAMEVERSIONSUFFIX=".2"
  		WINBIND_NSS_EXTRA_OBJS="../nsswitch/winbind_nss_linux.o"
  		;;
@@ -148,7 +160,7 @@
  		WINBIND_NSS="../nsswitch/nss_winbind.$SHLIBEXT"
  		WINBIND_WINS_NSS="../nsswitch/nss_wins.$SHLIBEXT"
  		;;
-@@ -6426,10 +6474,14 @@
+@@ -6451,10 +6497,14 @@
          AC_MSG_RESULT(no$winbind_no_reason)
  fi
  
@@ -163,7 +175,7 @@
  AC_SUBST(NSSSONAMEVERSIONSUFFIX)
  
  AC_SUBST(WINBIND_KRB5_LOCATOR)
-@@ -6745,13 +6797,21 @@
+@@ -6773,13 +6823,21 @@
  # Start
  AC_CHECK_FUNC(getmntent)
  
@@ -186,7 +198,7 @@
  		int main(void)
  		{
  			struct statfs fsd;
-@@ -7050,6 +7110,16 @@
+@@ -7079,6 +7137,16 @@
  	LIBS="$LIBS -ldmalloc"
  fi
  
