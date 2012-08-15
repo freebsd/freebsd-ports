@@ -1,20 +1,21 @@
-share/cmake/Modules/CMakeVersion.cmake
 share/cmake/Modules/DateTimeFormat.cmake
+share/cmake/Modules/ManageAPIDoc.cmake
+share/cmake/Modules/ManageArchive.cmake
 share/cmake/Modules/ManageEnvironment.cmake
-share/cmake/Modules/ManageMaintainerTargets.cmake
+share/cmake/Modules/ManageGConf.cmake
+share/cmake/Modules/ManageInstall.cmake
 share/cmake/Modules/ManageMessage.cmake
+share/cmake/Modules/ManageRPM.cmake
 share/cmake/Modules/ManageRelease.cmake
-share/cmake/Modules/ManageReleaseOnFedora.cmake
+share/cmake/Modules/ManageReleaseFedora.cmake
 share/cmake/Modules/ManageSourceVersionControl.cmake
 share/cmake/Modules/ManageString.cmake
+share/cmake/Modules/ManageTarget.cmake
 share/cmake/Modules/ManageTranslation.cmake
 share/cmake/Modules/ManageUninstall.cmake
+share/cmake/Modules/ManageUpload.cmake
 share/cmake/Modules/ManageVariable.cmake
 share/cmake/Modules/ManageVersion.cmake
-share/cmake/Modules/PackRPM.cmake
-share/cmake/Modules/PackSource.cmake
-share/cmake/Modules/UseDoxygen.cmake
-share/cmake/Modules/UseGConf.cmake
 share/cmake/Modules/cmake_uninstall.cmake.in
 @dirrmtry share/cmake/Modules
 @dirrmtry share/cmake

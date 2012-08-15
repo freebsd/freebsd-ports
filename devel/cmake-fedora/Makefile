@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cmake-fedora
-PORTVERSION=	0.8.1
+PORTVERSION=	1.0.3
 CATEGORIES=	devel
 MASTER_SITES=	https://fedorahosted.org/releases/c/m/cmake-fedora/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-modules-only
@@ -18,6 +18,9 @@ LICENSE=	BSD
 
 WRKSRC=		${WRKDIR}/Modules
 NO_BUILD=	yes
+
+post-patch:
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 do-install:
 	${MKDIR} ${PREFIX}/share/cmake/Modules
