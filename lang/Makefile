@@ -56,6 +56,7 @@
     SUBDIR += embryo
     SUBDIR += eperl
     SUBDIR += erlang
+    SUBDIR += erlang14
     SUBDIR += execline
     SUBDIR += expect
     SUBDIR += expect-devel
