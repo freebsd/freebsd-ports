@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	server
-PORTVERSION=	2.4.0
+PORTVERSION=	${GLPI_VER}.${FUNV_VER}
+PORTEPOCH=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://forge.fusioninventory.org/attachments/download/456/
+MASTER_SITES=	http://forge.fusioninventory.org/attachments/download/668/
 PKGNAMEPREFIX=	glpi-plugins-fusioninventory-
-DISTNAME=	fusioninventory-for-glpi-metapackage_${PORTVERSION}
+DISTNAME=	fusioninventory-for-glpi-metapackage_${GLPI_VER}+${FUNV_VER}
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Plugin of glpi to get information of networking devices
@@ -19,26 +20,32 @@ RUN_DEPENDS=	glpi>=0.80:${PORTSDIR}/www/glpi
 
 USE_PHP=	simplexml wddx
 
+GLPI_VER=	0.80
+FUNV_VER=	1.5
 WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
 
 GLPIPLUGINDIR?=	www/glpi/plugins
 
-OPTIONS=	INVENTORY "Additional features" on \
-		SNMP "SNMP support" off
+OPTIONS_DEFINE=	INVENTORY SNMP
+
+INVENTORY_DESC=	Additional features
+SNMP_DESC=	SNMP support
+
+OPTIONS_DEFAULT=INVENTORY
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_INVENTORY)
-PLIST_SUB+=	INVENTORY="@comment "
-.else
+.if ${PORT_OPTIONS:MINVENTORY}
 PLIST_SUB+=	INVENTORY=""
+.else
+PLIST_SUB+=	INVENTORY="@comment "
 .endif
 
-.if defined(WITHOUT_SNMP)
-PLIST_SUB+=	SNMP="@comment "
-.else
+.if ${PORT_OPTIONS:MSNMP}
 PLIST_SUB+=	SNMP=""
+.else
+PLIST_SUB+=	SNMP="@comment "
 .endif
 
 do-install:
@@ -46,12 +53,12 @@ do-install:
 	@${CP} -R ${WRKSRC}/fusioninventory ${PREFIX}/${GLPIPLUGINDIR}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${GLPIPLUGINDIR}/fusioninventory
 
-.if !defined(WITHOUT_INVENTORY)
+.if ${PORT_OPTIONS:MINVENTORY}
 	@${CP} -R ${WRKSRC}/fusinvinventory ${PREFIX}/${GLPIPLUGINDIR}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${GLPIPLUGINDIR}/fusinvinventory
 .endif
 
-.if !defined(WITHOUT_SNMP)
+.if ${PORT_OPTIONS:MSNMP}
 	@${CP} -R ${WRKSRC}/fusinvsnmp ${PREFIX}/${GLPIPLUGINDIR}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${GLPIPLUGINDIR}/fusinvsnmp
 .endif
