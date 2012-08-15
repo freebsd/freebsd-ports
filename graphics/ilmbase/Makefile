@@ -12,7 +12,7 @@ CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	openexr
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ILM Base libraries a.k.a. Half, IlmThread, Imath, and Iex
 
 CONFLICTS=	OpenEXR-1.[0-4].*

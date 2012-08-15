@@ -7,7 +7,7 @@
 
 CATEGORIES=	japanese www
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 CONFLICTS=	awffull-[0-9]*
 MASTERDIR=	${.CURDIR}/../../www/awffull

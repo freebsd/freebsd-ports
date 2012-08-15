@@ -10,7 +10,7 @@ PORTVERSION=	0.9.7
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display PageRank for active URL
 
 XPI_NUM=	2007

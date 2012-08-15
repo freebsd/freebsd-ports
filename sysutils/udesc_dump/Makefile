@@ -10,7 +10,7 @@ PORTVERSION=	1.3.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://home.jp.freebsd.org/~gehenna/src/
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shows USB descriptors
 
 MAN8=		udesc_dump.8

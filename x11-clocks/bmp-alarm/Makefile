@@ -11,7 +11,7 @@ PORTREVISION=	7
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.snika.uklinux.net/xmms-alarm/
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alarm timer plugin for beep-media-player
 
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player

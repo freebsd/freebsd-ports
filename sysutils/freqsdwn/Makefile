@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME:C/freq//}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	freqship
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FREQSHIP-mini Mitsubishi Electric UPS controller daemon
 
 RESTRICTED=	See http://www.mitsubishielectric.co.jp/frequps/f_down/keiyaku.html

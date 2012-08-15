@@ -11,7 +11,7 @@ CATEGORIES=	mail security
 MASTER_SITES=	http://www.dv8.ro/Synonym/Synonym/source/
 DISTNAME=	${PORTNAME}-0.4-3
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Synonym, the email message archiver
 
 USE_GMAKE=	yes

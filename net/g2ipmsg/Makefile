@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.ipmsg.org/archive/ \
 MASTER_SITE_SUBDIR=	nork
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A popup style message communication tool for GNOME2
 
 USE_GETTEXT=	yes

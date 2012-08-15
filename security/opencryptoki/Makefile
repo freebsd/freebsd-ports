@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open PKCS\#11 implementation library
 
 LIB_DEPENDS=	tspi.2:${PORTSDIR}/security/trousers

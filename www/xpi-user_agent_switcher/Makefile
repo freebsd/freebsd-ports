@@ -10,7 +10,7 @@ PORTVERSION=	0.7.3
 DISTVERSIONSUFFIX=	-fx+sm
 CATEGORIES=	www
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The User Agent Switcher extension
 
 XPI_NUM=	59

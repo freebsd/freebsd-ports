@@ -12,7 +12,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://labs.gree.jp/data/source/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flare - distributed and persistent key-value storage
 
 LIB_DEPENDS=	boost_program_options.4:${PORTSDIR}/devel/boost-libs \

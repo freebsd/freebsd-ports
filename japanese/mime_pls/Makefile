@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	ja-p5-
 DISTNAME=	${PORTNAME}${PORTVERSION:C/\.//}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl Library for MIME encode/decode
 
 USE_PERL5=	yes

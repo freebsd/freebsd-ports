@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	${PORTNAME}/53171
 PKGNAMEPREFIX?=	ja-
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Network Kanji code conversion Filter
 
 .if ${PKGNAMEPREFIX} != "ja-p5-"

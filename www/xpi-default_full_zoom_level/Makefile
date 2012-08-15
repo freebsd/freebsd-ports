@@ -10,7 +10,7 @@ PORTVERSION=	4.3
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Default Full Zoom Level extension
 
 XPI_NUM=	6965

@@ -11,7 +11,7 @@ CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	openexr
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simplified OpenEXR interface to CTL
 
 LIB_DEPENDS+=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR \

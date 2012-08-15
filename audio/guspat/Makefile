@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	nork
 DISTFILES=	${PORTNAME}-${PORTVERSION}-required${EXTRACT_SUFX} \
 		${PORTNAME}-${PORTVERSION}-optional${EXTRACT_SUFX}
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Izumo collection of Gravis Ultrasound MIDI patches
 
 # Not useful without timidity.

@@ -15,7 +15,7 @@ PKGNAMESUFFIX=		-basic
 DISTNAME=		${PORTNAME}${PKGNAMESUFFIX}-${LINUXARCH}-${ORACLEVERSION}-${DISTDATE}
 DIST_SUBDIR=		oracle
 
-MAINTAINER=		nork@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Oracle 10 InstantClient basics. Works with Oracle RDBMS 8.1.2+
 
 ONLY_FOR_ARCHS=		i386	# amd64(not yet on own)

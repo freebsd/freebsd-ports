@@ -10,7 +10,7 @@ PORTVERSION=	2.7
 CATEGORIES=	japanese mail
 MASTER_SITES=	http://0xcc.net/mobileimap/
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An IMAP-based webmail system for mobile-phones
 
 USE_RUBY=	yes

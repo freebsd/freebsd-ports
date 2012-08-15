@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.orangesoft.co.jp/index.php/download_file/-/192/
 DISTNAME=	${PORTNAME}pkg${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	xGate webmail system implemented by Servlet over IMAP4/POP3
 
 RUN_DEPENDS=	${APP_HOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6

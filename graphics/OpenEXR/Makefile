@@ -13,7 +13,7 @@ CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A high dynamic-range (HDR) image file format
 
 LIB_DEPENDS=	Half.6:${PORTSDIR}/graphics/ilmbase
