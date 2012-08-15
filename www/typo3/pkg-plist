@@ -20,7 +20,6 @@
 %%WWWDIR%%/uploads/media/index.html
 %%WWWDIR%%/uploads/pics/index.html
 %%WWWDIR%%/uploads/tf/index.html
-%%WWWDIR%%_src-%%PORTVERSION%%/.travis.yml
 %%WWWDIR%%_src-%%PORTVERSION%%/ChangeLog
 %%WWWDIR%%_src-%%PORTVERSION%%/GPL.txt
 %%WWWDIR%%_src-%%PORTVERSION%%/INSTALL.txt
@@ -136,6 +135,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/class.t3lib_userauth.php
 %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/class.t3lib_userauthgroup.php
 %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/class.t3lib_xml.php
+%%WWWDIR%%_src-%%PORTVERSION%%/t3lib/codec/class.t3lib_codec_javascriptencoder.php
 %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/collection/AbstractRecordCollection.php
 %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/collection/RecordCollectionRepository.php
 %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/collection/StaticRecordCollection.php
@@ -9251,6 +9251,7 @@
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/contextmenu
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/collection/interfaces
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/collection
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/codec
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/cache/frontend/interfaces
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/cache/frontend
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/cache/exception

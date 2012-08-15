@@ -136,6 +136,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/class.t3lib_userauth.php
 %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/class.t3lib_userauthgroup.php
 %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/class.t3lib_xml.php
+%%WWWDIR%%_src-%%PORTVERSION%%/t3lib/codec/class.t3lib_codec_javascriptencoder.php
 %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/config_default.php
 %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/contextmenu/class.t3lib_contextmenu_abstractcontextmenu.php
 %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/contextmenu/class.t3lib_contextmenu_abstractdataprovider.php
@@ -8994,6 +8995,7 @@
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/contextmenu/pagetree
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/contextmenu/extdirect
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/contextmenu
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/codec
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/cache/frontend/interfaces
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/cache/frontend
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/t3lib/cache/exception
