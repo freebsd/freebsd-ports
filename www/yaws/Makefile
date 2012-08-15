@@ -44,13 +44,13 @@ PLIST_SUB+=	WITH_SENDFILE="@comment "
 .endif
 
 post-extract:
-	@${FIND} ${WRKSRC} -name .empty | ${XARGS} ${RM}
+	@${FIND} ${WRKSRC} -name .empty -delete
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|!!PREFIX!!|${PREFIX}|g' \
 		${WRKSRC}/man/yaws_api.5 ${WRKSRC}/man/yaws.conf.5 \
 		${WRKSRC}/README
-	@${FIND} ${WRKSRC} -name \*.orig -or -name \*.bak | ${XARGS} ${RM}
+	@${FIND} ${WRKSRC} \( -name \*.orig -or -name \*.bak \) -delete
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/yaws ${PREFIX}/bin
