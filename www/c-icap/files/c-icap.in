@@ -28,7 +28,7 @@ stop_postcmd="rm -f $pidfile"
 # read settings, set default values
 load_rc_config "$name"
 : ${c_icap_enable="NO"}
-: ${c_icap_conf="%%PREFIX%%/etc/c-icap.conf"}
+: ${c_icap_conf="%%PREFIX%%/etc/c-icap/c-icap.conf"}
 : ${c_icap_pidfile="%%RUN_DIR%%/c-icap.pid"}
 : ${c_icap_user="%%CICAP_USER%%"}
 

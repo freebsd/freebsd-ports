@@ -7,6 +7,7 @@
 
 PORTNAME=	c-icap
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.2.x/
@@ -42,7 +43,8 @@ MAN8=		c-icap-client.8 \
 		c-icap-stretch.8 \
 		c-icap.8
 
-CONFIGURE_ARGS+=	--enable-static
+CONFIGURE_ARGS+=	--enable-static \
+			--sysconfdir="${PREFIX}/etc/c-icap"
 
 .include <bsd.port.options.mk>
 
@@ -112,6 +114,7 @@ SUB_LIST=	CICAP_USER=${CICAP_USER} CICAP_GROUP=${CICAP_GROUP} \
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|@prefix@/var/log|/var/log/c-icap|g' \
+		-e 's|@prefix@/etc/|@sysconfdir@/|g' \
 		${WRKSRC}/c-icap.conf.in
 .if ${PORT_OPTIONS:MPOSIXSEM}
 	@${REINPLACE_CMD} \
@@ -120,10 +123,10 @@ post-patch:
 .endif
 
 post-install:
-	@[ -f ${PREFIX}/etc/c-icap.conf ] || \
-		${CP} -p ${PREFIX}/etc/c-icap.conf.default ${PREFIX}/etc/c-icap.conf
-	@[ -f ${PREFIX}/etc/c-icap.magic ] || \
-		${CP} -p ${PREFIX}/etc/c-icap.magic.default ${PREFIX}/etc/c-icap.magic
+	@${CP} -np ${PREFIX}/etc/c-icap/c-icap.conf.default \
+		${PREFIX}/etc/c-icap/c-icap.conf
+	@${CP} -np ${PREFIX}/etc/c-icap/c-icap.magic.default \
+		${PREFIX}/etc/c-icap/c-icap.magic
 	@${SH} ${PKGINSTALL} ${PREFIX} POST-INSTALL
 
 .include <bsd.port.post.mk>
