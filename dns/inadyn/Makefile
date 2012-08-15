@@ -17,7 +17,6 @@ DISTNAME=	${PORTNAME}.v${PORTVERSION}
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	INADYN - Simple DYNAMIC DNS client
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_RC_SUBR=	inadyn
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
@@ -33,7 +32,7 @@ PORTDOCS=	readme.html
 PLIST_FILES=	bin/inadyn
 
 post-extract:
-	@${MV} ${WRKDIR}/${PORTNAME} ${WRKDIR}/${PORTNAME}-${PORTVERSION}
+	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|$$\(CC\)|g' ${WRKSRC}/makefile
