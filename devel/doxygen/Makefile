@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	doxygen
-PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTVERSION=	1.8.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/ \
 		http://ftp.stack.nl/pub/users/dimitri/
@@ -44,8 +43,9 @@ TMPDOCDEST=	${WRKDIR}/tmpdocdest
 
 PLIST_FILES=	bin/doxygen
 
-OPTIONS=	DOXYWIZARD "Enable doxywizard" on \
-		LATEX "Enable LaTeX support" on
+OPTIONS_DEFINE=	DOXYWIZARD LATEX
+OPTIONS_DEFAULT=DOXYWIZARD LATEX
+DOXYWIZARD_DESC=	Doxywizard support (requires QT4)
 
 .include <bsd.port.options.mk>
 
@@ -54,31 +54,31 @@ ALL_TARGET+=	docs
 USE_PYTHON_BUILD=	yes
 BUILD_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 
-.if !defined(WITHOUT_LATEX)
+.if ${PORT_OPTIONS:MLATEX}
 ALL_TARGET+=	pdf
 BUILD_DEPENDS+=	dvips:${PORTSDIR}/print/dvipsk-tetex \
 		latex:${PORTSDIR}/print/teTeX
 USE_GHOSTSCRIPT_BUILD=	yes
 MAKE_ARGS+=	HAVE_LATEX=yes
-.endif # !defined(WITHOUT_LATEX)
+.endif # LATEX
 .endif # !defined(NOPORTDOCS)
 
-.if !defined(WITHOUT_DOXYWIZARD)
+.if ${PORT_OPTIONS:MDOXYWIZARD}
 USE_QT4=	corelib gui xml qmake_build moc_build rcc_build
 
 # Need this in env for build
 QTDIR?=		${QT_PREFIX}
 CONFIGURE_ENV=	QTDIR="${QTDIR}"
 CONFIGURE_ARGS+=--with-doxywizard
-.endif # !defined(WITHOUT_DOXYWIZARD)
+.endif # DOXYWIZARD
 
 .if ${MACHINE_ARCH:L} == alpha
 CONFIGURE_ARGS+=	--enable-langs no
 .endif
 
-.if !defined(WITHOUT_DOXYWIZARD)
+.if ${PORT_OPTIONS:MDOXYWIZARD}
 PLIST_FILES+=	bin/doxywizard
-.endif # !defined(WITHOUT_DOXYWIZARD)
+.endif # DOXYWIZARD
 
 pre-configure:
 	@cd ${WRKSRC};for pro in src/*.pro.in addon/doxywizard/doxywizard.pro.in;do \
@@ -124,9 +124,9 @@ pre-install:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxygen ${PREFIX}/bin/
-.if !defined(WITHOUT_DOXYWIZARD)
+.if ${PORT_OPTIONS:MDOXYWIZARD}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxywizard ${PREFIX}/bin/
-.endif # !defined(WITHOUT_DOXYWIZARD)
+.endif # DOXYWIZARD
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/doxygen
 	${TAR} -C ${TMPDOCDEST} -cf - doxygen \
