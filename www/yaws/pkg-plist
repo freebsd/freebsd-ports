@@ -128,7 +128,7 @@ bin/yaws
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_websockets.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_xmlrpc.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_zlib.erl
-%%WITH_SENDFILE%%%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/lib/yaws_sendfile_drv.so
+%%SENDFILE%%%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/lib/yaws_sendfile_drv.so
 %%WWWDIR%%/END
 %%WWWDIR%%/END2
 %%WWWDIR%%/HEAD
