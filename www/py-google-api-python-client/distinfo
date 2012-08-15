@@ -1,2 +1,4 @@
-SHA256 (google-api-python-client-1.0beta8.zip) = 53852343bc5bdef476c8b7aa9fda504963b6480d187661a17236ca40177700f2
-SIZE (google-api-python-client-1.0beta8.zip) = 631072
+SHA256 (google-api-python-client-1.0c2.tar.gz) = 78572281fc28b49f495def8a8769e9b8e39b7aa9db41a3bdcfe4328d497c6d94
+SIZE (google-api-python-client-1.0c2.tar.gz) = 94739
+SHA256 (google-api-python-client-samples-1.0c2.tar.gz) = 4d41b1d656ad2920bfd8fd45c45d500479931d4a4be337d6dbb7c48c6996664d
+SIZE (google-api-python-client-samples-1.0c2.tar.gz) = 130434
