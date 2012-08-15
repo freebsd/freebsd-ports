@@ -11,9 +11,6 @@ SquidClamav is build for speed and security in mind, it is first used
 and tested to secure a network with 2,500 and more users. It is also known
 to working fast with 15000+ users. 
 
-SquidClamav since version 6.x works as an ICAP service through the c-icap
-server. 
-
 With SquidClamav You have full control of what kind of HTTP stream must be
 scanned by Clamav antivirus, this control operate at 3 different levels:
 
