@@ -1,7 +1,7 @@
-From c99266ef16e66f94f22a2f78dcea82c795c4611f Mon Sep 17 00:00:00 2001
+From f610486180e7ba5a0f7b7127edfdcfaf704353a1 Mon Sep 17 00:00:00 2001
 From: Alexander V. Chernikov <melifaro@ipfw.ru>
-Date: Fri, 23 Dec 2011 13:47:59 +0000
-Subject: [PATCH 1/1] * Add firewall support, v2
+Date: Wed, 15 Aug 2012 16:09:21 +0000
+Subject: [PATCH 1/1] Add firewall support v2
 
 ---
  configure.in              |    6 +-
@@ -25,20 +25,20 @@ Subject: [PATCH 1/1] * Add firewall support, v2
  create mode 100644 proto/firewall/firewall.h
  create mode 100644 sysdep/bsd/fw.c
 
-diff --git configure.in configure.in
-index 46a6ecd..bb5f445 100644
+diff --git a/configure.in b/configure.in
+index 54993df..51b7cc2 100644
 --- configure.in
 +++ configure.in
-@@ -47,7 +47,7 @@ if test "$enable_ipv6" = yes ; then
+@@ -51,7 +51,7 @@ if test "$enable_ipv6" = yes ; then
  else
  	ip=ipv4
- 	SUFFIX6=""
+ 	SUFFIX=""
 -	all_protocols=bgp,ospf,pipe,rip,static
 +	all_protocols=bgp,ospf,pipe,rip,static,firewall
  fi
  
- if test "$with_protocols" = all ; then
-@@ -126,10 +126,13 @@ else
+ if test "$given_suffix" = yes ; then
+@@ -137,10 +137,13 @@ else
  		ipv4:netbsd*)	sysdesc=bsd
  				CPPFLAGS="$CPPFLAGS -I/usr/pkg/include"
  				LDFLAGS="$LDFLAGS -L/usr/pkg/lib -R/usr/pkg/lib"
@@ -50,9 +50,9 @@ index 46a6ecd..bb5f445 100644
 +				AC_DEFINE(CONFIG_FIREWALL_IPFW, 1)
 +				AC_DEFINE(CONFIG_FIREWALL_PF, 1)
  				;;
- 		ipv6:kfreebsd*) sysdesc=bsd-v6
+ 		ipv6:dragonfly*)	sysdesc=bsd-v6
  				;;
-@@ -138,6 +141,7 @@ else
+@@ -153,6 +156,7 @@ else
  		ipv6:openbsd*)	sysdesc=bsd-v6
  				;;
  		ipv4:openbsd*)	sysdesc=bsd
@@ -60,41 +60,11 @@ index 46a6ecd..bb5f445 100644
  				;;
  		*)		AC_MSG_ERROR([Cannot determine correct system configuration. Please use --with-sysconfig to set it manually.])
  				;;
---- configure.orig	2012-01-20 21:04:39.000000000 +0400
-+++ configure	2012-01-26 17:37:43.000000000 +0400
-@@ -2336,7 +2336,7 @@
- else
- 	ip=ipv4
- 	SUFFIX6=""
--	all_protocols=bgp,ospf,pipe,rip,static
-+	all_protocols=bgp,ospf,pipe,rip,static,firewall
- fi
- 
- if test "$with_protocols" = all ; then
-@@ -4372,10 +4372,13 @@
- 		ipv4:netbsd*)	sysdesc=bsd
- 				CPPFLAGS="$CPPFLAGS -I/usr/pkg/include"
- 				LDFLAGS="$LDFLAGS -L/usr/pkg/lib -R/usr/pkg/lib"
-+				$as_echo "#define CONFIG_FIREWALL_PF 1" >>confdefs.h
- 				;;
- 		ipv6:freebsd*)	sysdesc=bsd-v6
- 				;;
- 		ipv4:freebsd*)	sysdesc=bsd
-+				$as_echo "#define CONFIG_FIREWALL_IPFW 1" >>confdefs.h
-+				$as_echo "#define CONFIG_FIREWALL_PF 1" >>confdefs.h
- 				;;
- 		ipv6:kfreebsd*) sysdesc=bsd-v6
- 				;;
-@@ -4384,6 +4387,7 @@
- 		ipv6:openbsd*)	sysdesc=bsd-v6
- 				;;
- 		ipv4:openbsd*)	sysdesc=bsd
-+				$as_echo "#define CONFIG_FIREWALL_PF 1" >>confdefs.h
- 				;;
- 		*)		as_fn_error $? "Cannot determine correct system configuration. Please use --with-sysconfig to set it manually." "$LINENO" 5
- 				;;--- doc/bird.sgml
+diff --git a/doc/bird.sgml b/doc/bird.sgml
+index 24bc302..a01ec99 100644
+--- doc/bird.sgml
 +++ doc/bird.sgml
-@@ -2490,6 +2490,40 @@ protocol static {
+@@ -2743,6 +2743,40 @@ protocol static {
  }
  </code>
  
@@ -135,11 +105,11 @@ index 46a6ecd..bb5f445 100644
  <chapt>Conclusions
  
  <sect>Future work
-diff --git nest/proto.c nest/proto.c
-index d55c348..85bdb19 100644
+diff --git a/nest/proto.c b/nest/proto.c
+index 53d3f1a..78d7600 100644
 --- nest/proto.c
 +++ nest/proto.c
-@@ -632,6 +632,9 @@ protos_build(void)
+@@ -707,6 +707,9 @@ protos_build(void)
  #ifdef CONFIG_BGP
    proto_build(&proto_bgp);
  #endif
@@ -148,12 +118,12 @@ index d55c348..85bdb19 100644
 +#endif
    proto_pool = rp_new(&root_pool, "Protocols");
    proto_flush_event = ev_new(proto_pool);
-   proto_flush_event->hook = proto_flush_all;
-diff --git nest/protocol.h nest/protocol.h
-index a7518c2..d09a556 100644
+   proto_flush_event->hook = proto_flush_loop;
+diff --git a/nest/protocol.h b/nest/protocol.h
+index 11fcb16..c7275d6 100644
 --- nest/protocol.h
 +++ nest/protocol.h
-@@ -73,7 +73,7 @@ void protos_dump_all(void);
+@@ -75,7 +75,7 @@ void protos_dump_all(void);
  
  extern struct protocol
    proto_device, proto_radv, proto_rip, proto_static,
@@ -162,11 +132,11 @@ index a7518c2..d09a556 100644
  
  /*
   *	Routing Protocol Instance
-diff --git nest/route.h nest/route.h
-index a4c0154..e5f18dd 100644
+diff --git a/nest/route.h b/nest/route.h
+index 524e69b..f3062a2 100644
 --- nest/route.h
 +++ nest/route.h
-@@ -349,7 +349,8 @@ typedef struct eattr {
+@@ -361,7 +361,8 @@ typedef struct eattr {
  #define EAP_RIP 2			/* RIP */
  #define EAP_OSPF 3			/* OSPF */
  #define EAP_KRT 4			/* Kernel route attributes */
@@ -176,14 +146,14 @@ index a4c0154..e5f18dd 100644
  
  #define EA_CODE(proto,id) (((proto) << 8) | (id))
  #define EA_PROTO(ea) ((ea) >> 8)
-diff --git proto/firewall/Doc proto/firewall/Doc
+diff --git a/proto/firewall/Doc b/proto/firewall/Doc
 new file mode 100644
 index 0000000..5779342
 --- /dev/null
 +++ proto/firewall/Doc
 @@ -0,0 +1 @@
 +S firewall.c
-diff --git proto/firewall/Makefile proto/firewall/Makefile
+diff --git a/proto/firewall/Makefile b/proto/firewall/Makefile
 new file mode 100644
 index 0000000..a322ab6
 --- /dev/null
@@ -195,7 +165,7 @@ index 0000000..a322ab6
 +
 +include ../../Rules
 +
-diff --git proto/firewall/config.Y proto/firewall/config.Y
+diff --git a/proto/firewall/config.Y b/proto/firewall/config.Y
 new file mode 100644
 index 0000000..aefc606
 --- /dev/null
@@ -278,7 +248,7 @@ index 0000000..aefc606
 +CF_CODE
 +
 +CF_END
-diff --git proto/firewall/firewall.c proto/firewall/firewall.c
+diff --git a/proto/firewall/firewall.c b/proto/firewall/firewall.c
 new file mode 100644
 index 0000000..e447470
 --- /dev/null
@@ -482,7 +452,7 @@ index 0000000..e447470
 +  get_status:	firewall_get_status,
 +  get_attr:	firewall_get_attr,
 +};
-diff --git proto/firewall/firewall.h proto/firewall/firewall.h
+diff --git a/proto/firewall/firewall.h b/proto/firewall/firewall.h
 new file mode 100644
 index 0000000..c97ed38
 --- /dev/null
@@ -542,8 +512,8 @@ index 0000000..c97ed38
 +#define FW_ERR(x, y...)	log_rl(&rl_fw_err, L_ERR x, ##y)
 +
 +#endif
-diff --git sysdep/autoconf.h.in sysdep/autoconf.h.in
-index d029e2a..c1fcdf7 100644
+diff --git a/sysdep/autoconf.h.in b/sysdep/autoconf.h.in
+index ac6f7a8..2d5af5c 100644
 --- sysdep/autoconf.h.in
 +++ sysdep/autoconf.h.in
 @@ -42,6 +42,11 @@
@@ -558,16 +528,16 @@ index d029e2a..c1fcdf7 100644
  
  /* We have <syslog.h> and syslog() */
  #undef HAVE_SYSLOG
-diff --git sysdep/bsd/Modules sysdep/bsd/Modules
-index 84abffd..77f26e3 100644
+diff --git a/sysdep/bsd/Modules b/sysdep/bsd/Modules
+index 3729587..0607321 100644
 --- sysdep/bsd/Modules
 +++ sysdep/bsd/Modules
-@@ -4,3 +4,4 @@ sysio.h
- krt-set.h
+@@ -1,3 +1,4 @@
  krt-sock.c
- krt-sock.h
+ krt-sys.h
+ sysio.h
 +fw.c
-diff --git sysdep/bsd/fw.c sysdep/bsd/fw.c
+diff --git a/sysdep/bsd/fw.c b/sysdep/bsd/fw.c
 new file mode 100644
 index 0000000..e841e06
 --- /dev/null
@@ -980,3 +950,19 @@ index 0000000..e841e06
 -- 
 1.7.3.2
 
+--- configure.orig	2012-08-07 13:28:04.000000000 +0400
++++ configure	2012-08-15 15:54:05.000000000 +0400
+@@ -2355,11 +2355,11 @@
+ if test "$enable_ipv6" = yes ; then
+ 	ip=ipv6
+ 	SUFFIX=6
+-	all_protocols=bgp,ospf,pipe,radv,rip,static
++	all_protocols=bgp,ospf,pipe,radv,rip,static,firewall
+ else
+ 	ip=ipv4
+ 	SUFFIX=""
+-	all_protocols=bgp,ospf,pipe,rip,static
++	all_protocols=bgp,ospf,pipe,rip,static,firewall
+ fi
+ 
+ if test "$given_suffix" = yes ; then
