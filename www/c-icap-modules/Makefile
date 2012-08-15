@@ -7,10 +7,10 @@
 
 PORTNAME=	c-icap
 PORTVERSION=	0.2.1
-CATEGORIES=	www
+CATEGORIES=	www security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/0.2.x/
-DISTNAME=	c_icap_modules-${PORTVERSION}
 PKGNAMESUFFIX=	-modules
+DISTNAME=	c_icap_modules-${PORTVERSION}
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	c-icap modules virus_scan and srv_url_check
