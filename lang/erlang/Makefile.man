@@ -134,10 +134,8 @@ MAN3=	CosEventChannelAdmin.3 \
 	digraph_utils.3 \
 	disk_log.3 \
 	disksup.3 \
-	docb_gen.3 \
-	docb_transform.3 \
-	docb_xml_check.3 \
 	driver_entry.3 \
+	dyntrace.3 \
 	edoc.3 \
 	edoc_doclet.3 \
 	edoc_extract.3 \
@@ -147,6 +145,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	egd.3 \
 	ei.3 \
 	ei_connect.3 \
+	eldap.3 \
 	epp.3 \
 	epp_dodger.3 \
 	eprof.3 \
@@ -215,6 +214,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	glu.3 \
 	gs.3 \
 	heart.3 \
+	http_uri.3 \
 	httpc.3 \
 	httpd.3 \
 	httpd_conf.3 \
@@ -274,8 +274,8 @@ MAN3=	CosEventChannelAdmin.3 \
 	net_adm.3 \
 	net_kernel.3 \
 	nteventlog.3 \
+	observer.3 \
 	odbc.3 \
-	old_ssl.3 \
 	orber.3 \
 	orber_acl.3 \
 	orber_diagnostics.3 \
@@ -304,7 +304,6 @@ MAN3=	CosEventChannelAdmin.3 \
 	random.3 \
 	rb.3 \
 	re.3 \
-	regexp.3 \
 	registry.3 \
 	release_handler.3 \
 	reltool.3 \
@@ -567,7 +566,10 @@ MAN3=	CosEventChannelAdmin.3 \
 	wxStyledTextCtrl.3 \
 	wxStyledTextEvent.3 \
 	wxSysColourChangedEvent.3 \
+	wxSystemOptions.3 \
 	wxSystemSettings.3 \
+	wxTaskBarIcon.3 \
+	wxTaskBarIconEvent.3 \
 	wxTextAttr.3 \
 	wxTextCtrl.3 \
 	wxTextDataObject.3 \
@@ -601,7 +603,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	zlib.3 \
 	zlib_stub.3
 
-MAN4=	app.4 \
+MAN4= 	app.4 \
 	appup.4 \
 	config.4 \
 	diameter_dict.4 \
@@ -611,7 +613,7 @@ MAN4=	app.4 \
 
 MAN6=	common_test.6 \
 	crypto.6 \
-	docbuilder.6 \
+	erl_docgen.6 \
 	kernel.6 \
 	observer.6 \
 	os_mon.6 \

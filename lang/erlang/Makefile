@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	erlang
-PORTVERSION=	r14b04
-PORTREVISION=	3
-PORTEPOCH=	1
+DISTVERSION=	R15B01
+PORTVERSION=	15.b.01
+PORTEPOCH=	2
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -17,7 +17,7 @@ MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://www.erlang.se/publications/:publications		\
 		http://www.sics.se/~joe/thesis/:joe			\
 		${MASTER_SITE_LOCAL:S/$/:local/:S,%SUBDIR%/,olgeni/,}
-DISTNAME=	otp_src_R14B04
+DISTNAME=	otp_src_${DISTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:erlangorg	\
 		${ERLANG_MAN}:erlangorg			\
 		${ERLANG_DOCS}:erlangorg		\
@@ -42,46 +42,32 @@ SUB_LIST=	TOOLS_VSN=${TOOLS_VSN}
 
 MAKE_JOBS_UNSAFE=yes
 
-OPTIONS_DEFINE=	HIPE JAVA KQUEUE ODBC OPENSSL SCTP SMP THREADS WX X11
+OPTIONS_DEFINE=	DOCS GS HIPE JAVA KQUEUE ODBC OPENSSL SCTP SMP THREADS WX
 OPTIONS_SINGLE=	ODBC
 OPTIONS_SINGLE_ODBC=	IODBC UNIXODBC
 
 HIPE_DESC=	Build native HiPE compiler
 KQUEUE_DESC=	Enable Kernel Poll (kqueue) support
-UNIXODBC_DESC=	Build with unixODBC support
-IODBC_DESC=	Build with libiodbc support
 SCTP_DESC=	Enable SCTP support
 SMP_DESC=	Enable SMP support
-WX_DESC=	Enable WX extensions
+WX_DESC=	Enable WX application
+GS_DESC=	Enable GS application (deprecated)
 
-OPTIONS_DEFAULT=	SMP OPENSSL THREADS SCTP KQUEUE
+OPTIONS_DEFAULT=SMP OPENSSL THREADS SCTP KQUEUE
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENSSL}
-USE_OPENSSL=YES
-CONFIGURE_ARGS+=--enable-ssl=${OPENSSLBASE} --enable-dynamic-ssl-lib
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=--with-ssl=${OPENSSLBASE}
 .else
-CONFIGURE_ARGS+=--disable-ssl
+CONFIGURE_ARGS+=--without-ssl
 .endif
-
-.include <bsd.port.pre.mk>
-
-# The Java applications that are part of the Erlang distribution are
-# not strictly necessary - it is included for completeness sake. A
-# problem with the Erlang build procedure is that it only checks if
-# javac is in the regular path - and then assumes that all of the jdk
-# utilities is in the path as well. The only way to make sure that
-# this is the case (that I could think of at least) was to make sure
-# ${JAVA_HOME}/bin is added to the PATH, using the *_ENV macros.
 
 .if ${PORT_OPTIONS:MJAVA}
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
-# Make sure ${JAVA_HOME}/bin is in the path
-CONFIGURE_ENV+=	PATH=${PATH}:${JAVA_HOME}/bin
-MAKE_ENV+=	PATH=${PATH}:${JAVA_HOME}/bin
-SCRIPT_ENV+=	PATH=${PATH}:${JAVA_HOME}/bin
+CONFIGURE_ARGS+=--with-javac
+CONFIGURE_ENV+=	ac_cv_prog_JAVAC="${JAVAC}"
 .else
 CONFIGURE_ARGS+=--without-javac
 .endif
@@ -98,14 +84,15 @@ CONFIGURE_ARGS+=--enable-kernel-poll
 CONFIGURE_ARGS+=--disable-kernel-poll
 .endif
 
-.if ${PORT_OPTIONS:MX11}
+.if ${PORT_OPTIONS:MGS}
 USE_TK_RUN=	yes
+.endif
+
 .if ${PORT_OPTIONS:MWX}
 USE_WX=		2.8+
 WX_COMPS=	wx contrib
 WX_UNICODE=	yes
 CONFIGURE_ARGS+=--with-wx-config=${WX_CONFIG}
-.endif
 .endif
 
 USE_GMAKE=	yes
@@ -114,27 +101,20 @@ USE_PERL5=	yes
 USE_RC_SUBR=	epmd
 GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386 amd64 sparc64 powerpc
-REINPLACE_ARGS=	-i
-
-.if (${OSVERSION} < 700000)
-USE_GCC=	4.2+
-.endif
 
 .if ${PORT_OPTIONS:MODBC}
 CONFIGURE_ARGS+=--with-odbc
 .if ${PORT_OPTIONS:MUNIXODBC}
-LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
 .elif ${PORT_OPTIONS:MIODBC}
-LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
+LIB_DEPENDS+=	iodbc:${PORTSDIR}/databases/libiodbc
 .endif
 .else
 CONFIGURE_ARGS+=--without-odbc
 .endif
 
-ERLANG_MAN=	otp_doc_man_R14B04.tar.gz
-.if !defined(NOPORTDOCS)
-ERLANG_DOCS=	otp_doc_html_R14B04.tar.gz
-.endif
+ERLANG_MAN=	otp_doc_man_${DISTVERSION}.tar.gz
+ERLANG_DOCS=	otp_doc_html_${DISTVERSION}.tar.gz
 ERLANG_PLIST=	${WRKDIR}/pkg-plist
 
 .if ${PORT_OPTIONS:MTHREADS}
@@ -144,23 +124,20 @@ CONFIGURE_ARGS+=--disable-threads
 .endif
 
 .if ${PORT_OPTIONS:MSCTP}
-CONFIGURE_ARGS+=--with-sctp
+CONFIGURE_ARGS+=--enable-sctp
 .else
-CONFIGURE_ARGS+=--without-sctp
+CONFIGURE_ARGS+=--disable-sctp
 .endif
 
 # enabling --enable-smp-support crashes the OS when
 # net_kernel:start([node_name, shortnames]) invoked repeatedly
+# TODO verify if it still applies
 
 .if ${PORT_OPTIONS:MSMP}
 CONFIGURE_ARGS+=--enable-smp-support
 .else
 CONFIGURE_ARGS+=--disable-smp-support
 .endif
-
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-PLIST_SUB+=	TOOLS_VSN=${TOOLS_VSN}
 
 .if ${ARCH} == i386
 MAKE_ARGS+=	ARCH=x86
@@ -178,27 +155,6 @@ MAN3PREFIX=	${PREFIX}/lib/erlang
 MAN4PREFIX=	${PREFIX}/lib/erlang
 MAN6PREFIX=	${PREFIX}/lib/erlang
 
-pre-configure:
-	@${REINPLACE_CMD} -e 's#%%CFLAGS%%#${CFLAGS}#g' ${WRKSRC}/lib/wx/configure
-
-# Check if ${JAVAC} exists.
-.if ${PORT_OPTIONS:MJAVA}
-	@if [ ! -x ${JAVAC} ]; then \
-		${ECHO_MSG} ">> Error: cannot find ${JAVAC}."; \
-		exit 1; \
-	fi
-.endif
-
-# If X11 is not used, skip the gs application.
-.if defined(WITHOUT_X11)
-	@${ECHO_CMD} "WITHOUT_X11 defined" > ${WRKSRC}/lib/gs/SKIP
-.endif
-
-# If ODBC is not used, skip the odbc application.
-.if defined(WITHOUT_ODBC)
-	@${ECHO_CMD} "WITHOUT_ODBC defined" > ${WRKSRC}/lib/odbc/SKIP
-.endif
-
 # Install documentation. (HTML docs need to be in same dir as the
 # rest, not in share/doc/erlang as it should, because of relative
 # links in the documentation.
@@ -210,7 +166,7 @@ post-install:
 			"man/man$${SECTION}/*.$${SECTION}" || ${TRUE}; \
 	done
 	@${RM} -rf ${PREFIX}/lib/erlang/man/cat?
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_DOCS} \
 		-C ${PREFIX}/lib/erlang
 	@${INSTALL_DATA} ${WRKSRC}/lib/dialyzer/doc/*.txt \
@@ -287,4 +243,4 @@ buildplt:
 .include "Makefile.lib"
 .include "Makefile.man"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
