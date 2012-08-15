@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	FusionInventory-Agent
-PORTVERSION=	2.1.13
-PORTREVISION=	1
+PORTVERSION=	2.2.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:FUSINV
@@ -39,19 +38,49 @@ RUN_DEPENDS+=	dmidecode:${PORTSDIR}/sysutils/dmidecode \
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes
+MAN3PREFIX=	${PREFIX}
 
-MAN1=		fusioninventory-agent-config.1 \
-		fusioninventory-agent.1 \
+MAN1=		fusioninventory-agent.1 \
 		fusioninventory-injector.1
-MAN3=		FusionInventory::Agent::Network.3 \
-		FusionInventory::Agent::RPC.3 \
+
+MAN3=		FusionInventory::Agent.3 \
+		FusionInventory::Agent::Config.3 \
+		FusionInventory::Agent::HTTP::Client.3 \
+		FusionInventory::Agent::HTTP::Client::Fusion.3 \
+		FusionInventory::Agent::HTTP::Client::OCS.3 \
+		FusionInventory::Agent::HTTP::Protocol::https.3 \
+		FusionInventory::Agent::HTTP::Server.3 \
+		FusionInventory::Agent::Logger.3 \
+		FusionInventory::Agent::Logger::Backend.3 \
+		FusionInventory::Agent::Logger::File.3 \
+		FusionInventory::Agent::Logger::Stderr.3 \
+		FusionInventory::Agent::Logger::Syslog.3 \
+		FusionInventory::Agent::Scheduler.3 \
 		FusionInventory::Agent::Storage.3 \
+		FusionInventory::Agent::Target.3 \
+		FusionInventory::Agent::Target::Local.3 \
+		FusionInventory::Agent::Target::Server.3 \
+		FusionInventory::Agent::Target::Stdout.3 \
+		FusionInventory::Agent::Task.3 \
 		FusionInventory::Agent::Task::Inventory.3 \
+		FusionInventory::Agent::Task::Inventory::Inventory.3 \
+		FusionInventory::Agent::Task::WakeOnLan.3 \
 		FusionInventory::Agent::Tools.3 \
+		FusionInventory::Agent::Tools::AIX.3 \
+		FusionInventory::Agent::Tools::Generic.3 \
+		FusionInventory::Agent::Tools::HPUX.3 \
+		FusionInventory::Agent::Tools::Hostname.3 \
+		FusionInventory::Agent::Tools::Linux.3 \
 		FusionInventory::Agent::Tools::MacOS.3 \
+		FusionInventory::Agent::Tools::Network.3 \
+		FusionInventory::Agent::Tools::Screen.3 \
+		FusionInventory::Agent::Tools::Solaris.3 \
+		FusionInventory::Agent::Tools::Unix.3 \
 		FusionInventory::Agent::Tools::Win32.3 \
+		FusionInventory::Agent::XML::Query.3 \
 		FusionInventory::Agent::XML::Query::Inventory.3 \
-		FusionInventory::Agent::XML::Query::SimpleMessage.3
+		FusionInventory::Agent::XML::Query::Prolog.3 \
+		FusionInventory::Agent::XML::Response.3
 
 .include <bsd.port.pre.mk>
 
