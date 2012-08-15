@@ -17,7 +17,7 @@ MASTER_SITES=	http://common-lisp.net/pub/project/cmucl/release/${PORTVERSION}/ \
 		ftp://ftp.tepus.com/pub/project/cmucl/release/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-x86-freebsd_6.3-release
 
-MAINTAINER=	cracauer@cons.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The CMU implementation of Common Lisp
 
 LIB_DEPENDS=	c.6:${PORTSDIR}/misc/compat6x

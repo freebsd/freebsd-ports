@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.cons.org/freebsd-distfiles/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	cracauer
 
-MAINTAINER=	cracauer@cons.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sets the clock of the local host to the time of another host
 
 MAN8=		rdate.8

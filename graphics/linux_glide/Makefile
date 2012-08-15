@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	cracauer
 PKGNAMEPREFIX=	linux_
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}_2_4
 
-MAINTAINER=	cracauer@cons.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux library implementing the GLIDE interface to 3dfx video cards
 
 ONLY_FOR_ARCHS=	i386
