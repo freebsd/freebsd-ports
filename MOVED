@@ -3638,3 +3638,4 @@ net-p2p/qbittorrent-29-nox11|net-p2p/qbittorrent-nox11|2012-08-11|Moved to match
 sysutils/cfengine|sysutils/cfengine22|2012-08-14|Standardize port naming
 sysutils/cfengine-legacy|sysutils/cfengine32|2012-08-14|Standardize port naming
 sysutils/cfengine3|sysutils/cfengine33|2012-08-14|Standardize port naming
+lang/erlang-lite|lang/erlang|2012-08-15|Redundant port removed
