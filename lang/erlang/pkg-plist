@@ -1,3 +1,4 @@
+bin/ct_run
 bin/dialyzer
 bin/epmd
 bin/erl
