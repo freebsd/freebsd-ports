@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	cfengine
-PORTVERSION=	3.3.5
+PORTVERSION=	3.4.0b1
 CATEGORIES=	sysutils
+PKGNAMESUFFIX=	-devel
 MASTER_SITES=	http://cfengine.com/source-code/download?file=
 
 MAINTAINER=	cy@FreeBSD.org
 #		gjb@FreeBSD.org is also committer for this port
 COMMENT=	A systems administration tool for networks
-LATEST_LINK=	cfengine33
+LATEST_LINK=	cfengine-devel
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
-CONFLICTS=	cfengine-2* cfengine-3.[24]* cfengine-devel-*
+CONFLICTS=	cfengine-[23]*
 
 USE_RC_SUBR=	cf-execd cf-serverd
 

@@ -14,7 +14,7 @@ MAINTAINER=	cy@FreeBSD.org
 #		gjb@FreeBSD.org is also committer for this port
 COMMENT=	A systems administration tool for networks
 
-CONFLICTS=	cfengine-3*
+CONFLICTS=	cfengine-3* cfengine-devel-*
 
 USE_RC_SUBR=	cfexecd cfservd
 

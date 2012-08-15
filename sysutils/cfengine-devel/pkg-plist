@@ -16,17 +16,16 @@ share/cfengine/CoreBase/cfengine_stdlib.cf
 share/cfengine/CoreBase/promises.cf
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/README
-%%DOCSDIR%%/example_config/cfengine_stdlib.cf
-%%DOCSDIR%%/example_config/failsafe.cf
-%%DOCSDIR%%/example_config/promises.cf
-%%DOCSDIR%%/example_config/site.cf
-%%DOCSDIR%%/example_config/update.cf
 %%DOCSDIR%%/examples/active_directory.cf
 %%DOCSDIR%%/examples/app_baseline.cf
 %%DOCSDIR%%/examples/guest_environment_kvm.cf
 %%DOCSDIR%%/examples/hostswithclass.cf
+%%DOCSDIR%%/examples/motd.cf
 %%DOCSDIR%%/examples/package_windows_feature.cf
 %%DOCSDIR%%/examples/promise_knowledge.cf
+%%DOCSDIR%%/examples/service_catalogue.cf
+%%DOCSDIR%%/examples/service_catalogue_separate.cf
+%%DOCSDIR%%/examples/sql_table_structure.cf
 %%DOCSDIR%%/examples/unit_abort.cf
 %%DOCSDIR%%/examples/unit_accessed_before.cf
 %%DOCSDIR%%/examples/unit_accumulated_time.cf
@@ -64,6 +63,7 @@ share/cfengine/CoreBase/promises.cf
 %%DOCSDIR%%/examples/unit_create_filedir.cf
 %%DOCSDIR%%/examples/unit_createdb.cf
 %%DOCSDIR%%/examples/unit_customize_by_named_list.cf
+%%DOCSDIR%%/examples/unit_defaults.cf
 %%DOCSDIR%%/examples/unit_definitions.cf
 %%DOCSDIR%%/examples/unit_deletelines.cf
 %%DOCSDIR%%/examples/unit_disable.cf
@@ -124,6 +124,7 @@ share/cfengine/CoreBase/promises.cf
 %%DOCSDIR%%/examples/unit_hostsseen.cf
 %%DOCSDIR%%/examples/unit_hub.cf
 %%DOCSDIR%%/examples/unit_id.cf
+%%DOCSDIR%%/examples/unit_inherit.cf
 %%DOCSDIR%%/examples/unit_insert_users.cf
 %%DOCSDIR%%/examples/unit_intarray.cf
 %%DOCSDIR%%/examples/unit_inventory_cpu.cf
@@ -150,6 +151,7 @@ share/cfengine/CoreBase/promises.cf
 %%DOCSDIR%%/examples/unit_measure_log.cf
 %%DOCSDIR%%/examples/unit_measurements.cf
 %%DOCSDIR%%/examples/unit_menu.cf
+%%DOCSDIR%%/examples/unit_meta.cf
 %%DOCSDIR%%/examples/unit_method.cf
 %%DOCSDIR%%/examples/unit_method_polymorph.cf
 %%DOCSDIR%%/examples/unit_method_validate.cf
@@ -160,9 +162,20 @@ share/cfengine/CoreBase/promises.cf
 %%DOCSDIR%%/examples/unit_monitord.cf
 %%DOCSDIR%%/examples/unit_mount_fs.cf
 %%DOCSDIR%%/examples/unit_multipassvars.cf
+%%DOCSDIR%%/examples/unit_namespace.cf
+%%DOCSDIR%%/examples/unit_namespace1.cf
+%%DOCSDIR%%/examples/unit_namespace2.cf
+%%DOCSDIR%%/examples/unit_namespace3.cf
 %%DOCSDIR%%/examples/unit_neighbourhood_watch.cf
 %%DOCSDIR%%/examples/unit_null_config.cf
 %%DOCSDIR%%/examples/unit_occurrences.cf
+%%DOCSDIR%%/examples/unit_orchestrate_chain1.cf
+%%DOCSDIR%%/examples/unit_orchestrate_chain2.cf
+%%DOCSDIR%%/examples/unit_orchestrate_dominoes1.cf
+%%DOCSDIR%%/examples/unit_orchestrate_dominoes2.cf
+%%DOCSDIR%%/examples/unit_orchestrate_dragon.cf
+%%DOCSDIR%%/examples/unit_orchestrate_dragon_load_balancer.cf
+%%DOCSDIR%%/examples/unit_orchestrate_n_of_m.cf
 %%DOCSDIR%%/examples/unit_orchestration_hostlist.cf
 %%DOCSDIR%%/examples/unit_ordering.cf
 %%DOCSDIR%%/examples/unit_package_apt.cf
@@ -200,6 +213,8 @@ share/cfengine/CoreBase/promises.cf
 %%DOCSDIR%%/examples/unit_regline.cf
 %%DOCSDIR%%/examples/unit_reglist.cf
 %%DOCSDIR%%/examples/unit_remoteclasses.cf
+%%DOCSDIR%%/examples/unit_remoteclasses2.cf
+%%DOCSDIR%%/examples/unit_remotescalar.cf
 %%DOCSDIR%%/examples/unit_remove_deadlinks.cf
 %%DOCSDIR%%/examples/unit_rename.cf
 %%DOCSDIR%%/examples/unit_repairedcommand.cf
@@ -229,7 +244,6 @@ share/cfengine/CoreBase/promises.cf
 %%DOCSDIR%%/examples/unit_software_dist.cf
 %%DOCSDIR%%/examples/unit_software_update_version_yum.cf
 %%DOCSDIR%%/examples/unit_splitstring.cf
-%%DOCSDIR%%/examples/unit_sql.cf
 %%DOCSDIR%%/examples/unit_storage.cf
 %%DOCSDIR%%/examples/unit_strcmp.cf
 %%DOCSDIR%%/examples/unit_stringarray.cf
@@ -257,7 +271,6 @@ share/cfengine/CoreBase/promises.cf
 %%DOCSDIR%%/examples/win_registry.cf
 %%DOCSDIR%%/examples/win_schedule.cf
 @dirrm %%DOCSDIR%%/examples
-@dirrm %%DOCSDIR%%/example_config
 @dirrm %%DOCSDIR%%
 @dirrm share/cfengine/CoreBase
 @dirrm share/cfengine
