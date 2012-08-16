@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120816:
+  AFFECTS: users of sysutils/cfengine*
+  AUTHOR:  gjb@FreeBSD.org
+
+  The sysutils/cfengine* ports have been renamed as follows:
+  
+  o sysutils/cfengine         -> sysutils/cfengine22
+  o sysutils/cfengine3-legacy -> sysutils/cfengine32
+  o sysutils/cfengine3        -> sysutils/cfengine33
+
+  Users are reminded to update the port origins, for example:
+
+  # portmaster -o sysutils/cfengine22 sysutils/cfengine
+  or
+  # portupgrade -fo sysutils/cfengine22 sysutils/cfengine
+  or
+  # pkg set -o sysutils/cfengine:sysutils/cfengine22
+
 20120815:
   AFFECTS: users of lang/erlang
   AUTHOR: olgeni@FreeBSD.org
