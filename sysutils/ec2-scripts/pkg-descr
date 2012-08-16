@@ -1,0 +1,11 @@
+This package provides boot scripts used to enable FreeBSD to run on the
+Amazon EC2 cloud computing platform.  These include:
+ * Downloading the SSH public key which will be used to log in to a
+   newly-launched virtual machine,
+ * Printing SSH host key fingerprints to the console in a standard
+   format used by other EC2 images,
+ * Automatically configuring swap space on EC2 "ephemeral" disks, and
+ * Sending email when an virtual machine first boots and when rebooting
+   after a kernel panic.
+
+WWW: http://www.daemonology.net/freebsd-on-ec2/

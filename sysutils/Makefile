@@ -206,6 +206,7 @@
     SUBDIR += dwatch
     SUBDIR += e2fsprogs
     SUBDIR += easypbi
+    SUBDIR += ec2-scripts
     SUBDIR += edid-decode
     SUBDIR += eiciel
     SUBDIR += eject
