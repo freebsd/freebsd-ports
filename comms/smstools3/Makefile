@@ -11,7 +11,7 @@ CATEGORIES=	comms
 MASTER_SITES=	http://smstools3.kekekasvi.com/packages/
 DISTNAME=	smstools3-${PORTVERSION}
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SMS Gateway software for GSM modems and mobile phones
 
 CONFLICTS=	gnokii-[0-9]* smstools-2.* sendsms-[0-9]*
