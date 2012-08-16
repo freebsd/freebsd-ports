@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pekwm
-PORTVERSION=	0.1.14
-PORTREVISION=	1
+PORTVERSION=	0.1.15
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://pekwm.org/projects/3/files/

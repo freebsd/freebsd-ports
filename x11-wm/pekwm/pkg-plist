@@ -7,6 +7,10 @@ bin/pekwm
 %%ETCDIR%%/mouse
 %%ETCDIR%%/start
 %%ETCDIR%%/vars
+%%ETCDIR%%/config_system
+%%ETCDIR%%/mouse_click
+%%ETCDIR%%/mouse_sloppy
+%%ETCDIR%%/mouse_system
 %%DATADIR%%/themes/default-plain/theme
 %%DATADIR%%/themes/default/arrow.png
 %%DATADIR%%/themes/default/arrow_focus.png
