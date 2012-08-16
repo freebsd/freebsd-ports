@@ -12,7 +12,7 @@
 
 PORTNAME=	pulseaudio
 PORTVERSION=	0.9.23
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://freedesktop.org/software/pulseaudio/releases/
 
@@ -20,6 +20,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Sound server for UNIX
 
 LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
+		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		speexdsp.1:${PORTSDIR}/audio/speex \
 		dbus-1.3:${PORTSDIR}/devel/dbus \
 		gdbm.4:${PORTSDIR}/databases/gdbm \
