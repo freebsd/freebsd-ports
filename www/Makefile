@@ -1851,6 +1851,7 @@
     SUBDIR += trac-bzr
     SUBDIR += trac-calendar
     SUBDIR += trac-ccselector
+    SUBDIR += trac-childtickets
     SUBDIR += trac-codetags
     SUBDIR += trac-customfieldadmin
     SUBDIR += trac-customroadmap
