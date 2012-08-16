@@ -10,7 +10,7 @@ PORTVERSION=	1.7.0
 CATEGORIES=	net
 MASTER_SITES=	http://openvswitch.org/releases/
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	emaste@FreeBSD.org
 COMMENT=	A production quality, multilayer virtual switch
 
 LICENSE=	AL2
