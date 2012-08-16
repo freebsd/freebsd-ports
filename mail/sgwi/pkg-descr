@@ -1,5 +1,5 @@
-sgwi is a web interface to SQLGrey written in PHP. 
-It allows you to edit the white- and blacklists as 
+sgwi is a web interface to SQLGrey written in PHP.
+It allows you to edit the white- and blacklists as
 well as the current state of the greylist.
 
-WWW:	http://www.vanheusden.com/sgwi/
+WWW: http://www.vanheusden.com/sgwi/
