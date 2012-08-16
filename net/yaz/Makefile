@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yaz
-PORTVERSION=	4.2.34
+PORTVERSION=	4.2.35
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/
 
@@ -18,6 +18,7 @@ LIB_DEPENDS=	icuuc:${PORTSDIR}/devel/icu
 USE_ICONV=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
+USE_PKGCONFIG=	build
 USE_GNOME=	libxml2 libxslt gnomehack
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
@@ -40,8 +41,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extrapatch-doc__Makefile.in
 .endif
 
 post-configure:
-	@cd ${WRKSRC}/doc && \
-		${REINPLACE_CMD} -e 's,[$$]{datarootdir}/man,${PREFIX}/man,' \
-		Makefile
+	${REINPLACE_CMD} -e 's,[$$]{datarootdir}/man,${PREFIX}/man,' \
+		${WRKSRC}/doc/Makefile
 
 .include <bsd.port.mk>
