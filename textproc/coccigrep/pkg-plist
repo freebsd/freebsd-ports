@@ -1,30 +1,30 @@
 bin/coccigrep
-%%PYTHON_SITELIBDIR%%/coccigrep-1.8-py2.7.egg/coccigrep/coccigrep.py
-%%PYTHON_SITELIBDIR%%/coccigrep-1.8-py2.7.egg/coccigrep/__init__.py
-%%PYTHON_SITELIBDIR%%/coccigrep-1.8-py2.7.egg/coccigrep/coccigrep.cfg
-%%PYTHON_SITELIBDIR%%/coccigrep-1.8-py2.7.egg/coccigrep/coccigrep.pyc
-%%PYTHON_SITELIBDIR%%/coccigrep-1.8-py2.7.egg/coccigrep/__init__.pyc
-%%PYTHON_SITELIBDIR%%/coccigrep-1.8-py2.7.egg/coccigrep/data/set.cocci
-%%PYTHON_SITELIBDIR%%/coccigrep-1.8-py2.7.egg/coccigrep/data/deref.cocci
-%%PYTHON_SITELIBDIR%%/coccigrep-1.8-py2.7.egg/coccigrep/data/test.cocci
-%%PYTHON_SITELIBDIR%%/coccigrep-1.8-py2.7.egg/coccigrep/data/used.cocci
-%%PYTHON_SITELIBDIR%%/coccigrep-1.8-py2.7.egg/coccigrep/data/func.cocci
-%%PYTHON_SITELIBDIR%%/coccigrep-1.8-py2.7.egg/coccigrep/coccigrep.pyo
-%%PYTHON_SITELIBDIR%%/coccigrep-1.8-py2.7.egg/coccigrep/__init__.pyo
-%%PYTHON_SITELIBDIR%%/coccigrep-1.8-py2.7.egg/EGG-INFO/PKG-INFO
-%%PYTHON_SITELIBDIR%%/coccigrep-1.8-py2.7.egg/EGG-INFO/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/coccigrep-1.8-py2.7.egg/EGG-INFO/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/coccigrep-1.8-py2.7.egg/EGG-INFO/top_level.txt
-%%PYTHON_SITELIBDIR%%/coccigrep-1.8-py2.7.egg/EGG-INFO/not-zip-safe
-%%PYTHON_SITELIBDIR%%/coccigrep-1.8-py2.7.egg/EGG-INFO/scripts/coccigrep
+%%PYTHON_SITELIBDIR%%/coccigrep-%%VERSION%%-py%%PY_VER%%.egg/coccigrep/coccigrep.py
+%%PYTHON_SITELIBDIR%%/coccigrep-%%VERSION%%-py%%PY_VER%%.egg/coccigrep/__init__.py
+%%PYTHON_SITELIBDIR%%/coccigrep-%%VERSION%%-py%%PY_VER%%.egg/coccigrep/coccigrep.cfg
+%%PYTHON_SITELIBDIR%%/coccigrep-%%VERSION%%-py%%PY_VER%%.egg/coccigrep/coccigrep.pyc
+%%PYTHON_SITELIBDIR%%/coccigrep-%%VERSION%%-py%%PY_VER%%.egg/coccigrep/__init__.pyc
+%%PYTHON_SITELIBDIR%%/coccigrep-%%VERSION%%-py%%PY_VER%%.egg/coccigrep/data/set.cocci
+%%PYTHON_SITELIBDIR%%/coccigrep-%%VERSION%%-py%%PY_VER%%.egg/coccigrep/data/deref.cocci
+%%PYTHON_SITELIBDIR%%/coccigrep-%%VERSION%%-py%%PY_VER%%.egg/coccigrep/data/test.cocci
+%%PYTHON_SITELIBDIR%%/coccigrep-%%VERSION%%-py%%PY_VER%%.egg/coccigrep/data/used.cocci
+%%PYTHON_SITELIBDIR%%/coccigrep-%%VERSION%%-py%%PY_VER%%.egg/coccigrep/data/func.cocci
+%%PYTHON_SITELIBDIR%%/coccigrep-%%VERSION%%-py%%PY_VER%%.egg/coccigrep/coccigrep.pyo
+%%PYTHON_SITELIBDIR%%/coccigrep-%%VERSION%%-py%%PY_VER%%.egg/coccigrep/__init__.pyo
+%%PYTHON_SITELIBDIR%%/coccigrep-%%VERSION%%-py%%PY_VER%%.egg/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/coccigrep-%%VERSION%%-py%%PY_VER%%.egg/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/coccigrep-%%VERSION%%-py%%PY_VER%%.egg/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/coccigrep-%%VERSION%%-py%%PY_VER%%.egg/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/coccigrep-%%VERSION%%-py%%PY_VER%%.egg/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/coccigrep-%%VERSION%%-py%%PY_VER%%.egg/EGG-INFO/scripts/coccigrep
 %%DATADIR%%/cocci-grep.el
 %%DATADIR%%/cocci-grep.vim
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README.rst
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/coccigrep-1.8-py2.7.egg/coccigrep/data
-@dirrm %%PYTHON_SITELIBDIR%%/coccigrep-1.8-py2.7.egg/coccigrep
-@dirrm %%PYTHON_SITELIBDIR%%/coccigrep-1.8-py2.7.egg/EGG-INFO/scripts
-@dirrm %%PYTHON_SITELIBDIR%%/coccigrep-1.8-py2.7.egg/EGG-INFO
-@dirrm %%PYTHON_SITELIBDIR%%/coccigrep-1.8-py2.7.egg
+@dirrm %%PYTHON_SITELIBDIR%%/coccigrep-%%VERSION%%-py%%PY_VER%%.egg/coccigrep/data
+@dirrm %%PYTHON_SITELIBDIR%%/coccigrep-%%VERSION%%-py%%PY_VER%%.egg/coccigrep
+@dirrm %%PYTHON_SITELIBDIR%%/coccigrep-%%VERSION%%-py%%PY_VER%%.egg/EGG-INFO/scripts
+@dirrm %%PYTHON_SITELIBDIR%%/coccigrep-%%VERSION%%-py%%PY_VER%%.egg/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/coccigrep-%%VERSION%%-py%%PY_VER%%.egg
