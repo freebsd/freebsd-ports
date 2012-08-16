@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsdconv
-PORTVERSION=	7.3
+PORTVERSION=	7.5
 CATEGORIES=	converters
 MASTER_SITES=	https://github.com/buganini/${PORTNAME}/tarball/${PORTVERSION}/
 DISTNAME=	buganini-${PORTNAME}-${PORTVERSION}-0-g${GITVERSION}
@@ -16,11 +16,12 @@ COMMENT=	BSD licensed charset/encoding converter library
 
 LICENSE=	BSD
 
-GITVERSION=	500f86a
+GITVERSION=	cf1989b
 FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/buganini-${PORTNAME}-${GITVERSION}
 
-OPTIONS=	EXTRA "Extra codecs (Chinese specifics)" off
+OPTIONS_DEFINE=	EXTRA
+EXTRA_DESC=	Extra codecs (Chinese specifics)
 
 USE_LDCONFIG=	yes
 
@@ -31,7 +32,7 @@ INSTALL_TARGET=	installdir install_main install_basic
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_EXTRA)
+.if ${PORT_OPTIONS:MEXTRA}
 ALL_TARGET+=	codecs_extra
 INSTALL_TARGET+=install_extra
 PLIST_SUB+=	EXTRA=""
