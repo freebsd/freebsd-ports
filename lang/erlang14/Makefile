@@ -26,6 +26,7 @@ DIST_SUBDIR=	erlang
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 CONFLICTS=	erlang-15*
+LATEST_LINK=	erlang14
 
 PATCH_SITES=	http://www.erlang.org/download
 
