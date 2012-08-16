@@ -50,6 +50,7 @@ lib/seed7/hashsetof.s7i
 lib/seed7/html.s7i
 lib/seed7/html_ent.s7i
 lib/seed7/idxarray.s7i
+lib/seed7/image.s7i
 lib/seed7/inifile.s7i
 lib/seed7/integer.s7i
 lib/seed7/keybd.s7i
@@ -57,6 +58,7 @@ lib/seed7/line.s7i
 lib/seed7/listener.s7i
 lib/seed7/lower.s7i
 lib/seed7/mahjng32.s7i
+lib/seed7/make.s7i
 lib/seed7/math.s7i
 lib/seed7/modern27.s7i
 lib/seed7/more.s7i
@@ -70,6 +72,8 @@ lib/seed7/pixmapfont.s7i
 lib/seed7/poll.s7i
 lib/seed7/progs.s7i
 lib/seed7/rational.s7i
+lib/seed7/ref_list.s7i
+lib/seed7/reference.s7i
 lib/seed7/reverse.s7i
 lib/seed7/s7_comp.a
 lib/seed7/s7_con.a
@@ -97,6 +101,7 @@ lib/seed7/strifile.s7i
 lib/seed7/string.s7i
 lib/seed7/stritext.s7i
 lib/seed7/struct.s7i
+lib/seed7/subrange.s7i
 lib/seed7/syntax.s7i
 lib/seed7/tar.s7i
 lib/seed7/tee.s7i
