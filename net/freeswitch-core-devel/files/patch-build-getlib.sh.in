@@ -1,16 +1,16 @@
---- build/getlib.sh.in.orig	2011-11-03 00:15:31.000000000 -0400
-+++ build/getlib.sh.in	2011-11-03 02:05:01.000000000 -0400
-@@ -7,10 +7,10 @@
+--- build/getlib.sh.in
++++ build/getlib.sh.in
+@@ -8,10 +8,10 @@ XZ=@XZ@
  WGET=@WGET@
  CURL=@CURL@
  
 -if [ -f "$WGET" ]; then
--    DOWNLOAD_CMD=$WGET
+-  DOWNLOAD_CMD=$WGET
 -elif [ -f "$CURL" ]; then
 +if [ -f "$CURL" ]; then
-     DOWNLOAD_CMD="$CURL -O"
+   DOWNLOAD_CMD="$CURL -O"
 +elif [ -f "$WGET" ]; then
-+    DOWNLOAD_CMD=$WGET
++  DOWNLOAD_CMD=$WGET
  fi
  
  if [ -n "`echo $1 | grep '://'`" ]; then

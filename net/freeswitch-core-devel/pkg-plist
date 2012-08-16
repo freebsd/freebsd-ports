@@ -184,8 +184,8 @@ lib/freeswitch/mod/mod_hash.so
 %%MODHTTAPI%%lib/freeswitch/mod/mod_httapi.so
 %%MODHTTPCACHE%%lib/freeswitch/mod/mod_http_cache.la
 %%MODHTTPCACHE%%lib/freeswitch/mod/mod_http_cache.so
-lib/freeswitch/mod/mod_ilbc.la
-lib/freeswitch/mod/mod_ilbc.so
+%%MODILBC%%lib/freeswitch/mod/mod_ilbc.la
+%%MODILBC%%lib/freeswitch/mod/mod_ilbc.so
 %%MODISAC%%lib/freeswitch/mod/mod_isac.la
 %%MODISAC%%lib/freeswitch/mod/mod_isac.so
 %%MODLADSPA%%lib/freeswitch/mod/mod_ladspa.la
@@ -254,8 +254,8 @@ lib/freeswitch/mod/mod_native_file.so
 %%MODSHOUT%%lib/freeswitch/mod/mod_shout.so
 %%MODSILK%%lib/freeswitch/mod/mod_silk.la
 %%MODSILK%%lib/freeswitch/mod/mod_silk.so
-lib/freeswitch/mod/mod_siren.la
-lib/freeswitch/mod/mod_siren.so
+%%MODSIREN%%lib/freeswitch/mod/mod_siren.la
+%%MODSIREN%%lib/freeswitch/mod/mod_siren.so
 %%MODSKINNY%%lib/freeswitch/mod/mod_skinny.la
 %%MODSKINNY%%lib/freeswitch/mod/mod_skinny.so
 lib/freeswitch/mod/mod_sms.la
@@ -308,12 +308,16 @@ lib/freeswitch/mod/mod_voicemail.la
 lib/freeswitch/mod/mod_voicemail.so
 %%MODVOICEMAILIVR%%lib/freeswitch/mod/mod_voicemail_ivr.la
 %%MODVOICEMAILIVR%%lib/freeswitch/mod/mod_voicemail_ivr.so
+lib/freeswitch/mod/mod_vp8.la
+lib/freeswitch/mod/mod_vp8.so
 lib/freeswitch/mod/mod_xml_cdr.la
 lib/freeswitch/mod/mod_xml_cdr.so
 %%MODXMLCURL%%lib/freeswitch/mod/mod_xml_curl.la
 %%MODXMLCURL%%lib/freeswitch/mod/mod_xml_curl.so
 lib/freeswitch/mod/mod_xml_rpc.la
 lib/freeswitch/mod/mod_xml_rpc.so
+lib/freeswitch/mod/mod_xml_scgi.la
+lib/freeswitch/mod/mod_xml_scgi.so
 %%MODPYTHON%%lib/python2.7/site-packages/freeswitch.py
 libdata/pkgconfig/freeswitch.pc
 %%MODFREETDM%%libdata/pkgconfig/freetdm.pc
@@ -327,15 +331,16 @@ www/freeswitch/htdocs/slimtest.htm.sample
 @dirrm www/freeswitch
 @dirrmtry share/freeswitch/sounds
 @dirrmtry share/freeswitch
-%%MODPERL%%@dirrm perl
+%%MODPYTHON%%@dirrmtry lib/python2.7/site-packages 
+%%MODPERL%%@dirrmtry perl
 @dirrm lib/freeswitch/mod
 @dirrm lib/freeswitch/lib
 @dirrm lib/freeswitch
 @dirrm include/freeswitch
 @dirrm %%ETCDIR%%/scripts
-%%MODPOCKETSPHINX%%@dirrm %%ETCDIR%%/grammar/model/communicator
-%%MODPOCKETSPHINX%%@dirrm %%ETCDIR%%/grammar/model
-@dirrm %%ETCDIR%%/grammar
+%%MODPOCKETSPHINX%%@dirrmtry %%ETCDIR%%/grammar/model/communicator
+%%MODPOCKETSPHINX%%@dirrmtry %%ETCDIR%%/grammar/model
+@dirrmtry %%ETCDIR%%/grammar
 @dirrmtry %%ETCDIR%%/conf/directory/default
 @dirrmtry %%ETCDIR%%/conf/directory/
 @dirrmtry %%ETCDIR%%/conf/autoload_configs

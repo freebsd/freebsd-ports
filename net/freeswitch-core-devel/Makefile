@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freeswitch
-DISTVERSION=	1.2.rc2
-PORTREVISION=	2
+DISTVERSION=	1.2.1
 CATEGORIES=	net
 MASTER_SITES=	http://files.freeswitch.org/ \
 		http://files.freeswitch.org/downloads/libs/:2 \
@@ -55,7 +54,7 @@ USE_RC_SUBR=	freeswitch
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
-INCLUDES=	-I${LOCALBASE}/include
+INCLUDES+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--bindir=${PREFIX}/bin \
 		--datadir=${VARBASE}/db/${PORTNAME} \
@@ -78,6 +77,7 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 CONFIGURE_ENV+=	INCLUDES="${INCLUDES}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 FREESWITCH_USER?=	freeswitch
 FREESWITCH_GROUP?=	${FREESWITCH_USER}
@@ -96,76 +96,97 @@ WWWDIR=	${PREFIX}/www/${PORTNAME}
 
 SAMPLESDIR=	conf conf/autoload_configs
 
-OPTIONS=	REBOOTSTRAP     	"Rebootstrap freeswitch build" on \
-		MODABSTRACTION		"Simplify/Standarize API" on \
-		MODAVMD			"Detects voicemail generalized approach" on \
-		MODCALLCENTER		"Call queuing application" on \
-		MODCIDLOOKUP		"Lookup CID via database, url" on\
-		MODBLACKLIST		"Blacklisk phone numbers" on \
-		MODCURL			"Allows scripts to make HTTP requests" off \
-		MODDISTRIBUTOR		"Simple round-robin style distributions" on \
-		MODEASYROUTE		"DID Database lookup" off \
-		MODFSK			"FSK (Frequency-Shift Keying) data transfer" on \
-		MODHTTAPI		"HTTP API" on \
-		MODHTTPCACHE		"HTTP GET with caching" off \
-		MODDIRECTORY		"Dial by name directory" on \
- 		MODLADSPA		"use Auto-tune on your call" off \
-		MODLCR			"Least Cost Routing" off \
-		MODMEMCACHE		"Memcached API" off \
-		MODNIBBLEBILL		"Billing Module" off \
-		MODRSS			"RSS feed text to speech" on \
-		MODSNOM			"Controlling softkeys on Snom phones" on \
-		MODSPY			"Extension/Call Spy tool" on \
-		MODSOUNDTOUCH		"Pitch shifting audio effects" on \
-		MODSTRESS		"Detect Stress in voice" off \
-		MODSNAPSHOT		"Audio/Disk Snapshot Tool" off \
-		MODVMD			"Voicemail Beep Detection" on \
-		MODVOICEMAILIVR		"IVR Based Voicemail(NEW)" on \
-		MODAMRWB		"GSM-AMRWB (ARM Wide Band) codec" on \
-		MODCELT			"Celt ultra-low delay audio codec" on \
-		MODCODEC2		"Freeswitch Codec2 Module" on \
-		MODISAC			"Isac Codec (New Codec)" on \
-		MODOPUS			"OPUS ultra-low delay audio codec" on \
-		MODSILK			"Skype Silk Codec (Broken/BUILD ISSUES)" off \
-		MODDPASTERISK		"Asterisk Dialplan (Old School Dialplan)" off \
-		MODDPDIRECTORY		"obtain dialplan from a directory resource" off \
-		MODDINGALING		"Jabber/Google Talk integration module" on \
-		MODFREETDM		"Interface to Zaptel hardware End Points" off \
-		MODPORTAUDIO		"Portaudio API" on \
-		MODRTMP			"Real time media protocol" on \
-		MODSKINNY		"Skinny/SCCP" on \
-		MODFLITE		"Free open source Text to Speech" on \
-		MODPOCKETSPHINX		"Free open source Speech Recognition" on \
-		MODTTSCMDLINE		"Play Sounds via commandline" on \
-		MODUNIMRCP		"Open MRCP implementation ASR/Text" off \
-		MODCDRPGCSV		"Asterisk Compatible CDR PostgreSQL" off \
-		MODERLANGEVENT		"send/receive events/commands in Erlang" off \
-		MODMULTICAST		"Broadcasts events to netmask" on \
-		MODEVENTZMQ		"Zeroconf config socket" off \
-		MODSNMP			"SNMP AgentX module" off \
-		MODVLC			"Play local mp3 files any rate(NEW Testing)" off \
-		MODPASTREAM		"PortAudio Streaming Module" on \
-		MODSHELLSTREAM		"Stream audio via shell command" on \
-		MODSHOUT		"Play local mp3 files any rate(Build Error)" off \
-		MODMANAGED		"Common Language Infrastructure API" off \
-		MODPERL			"Perl Lang Support" on \
-		MODPYTHON		"Python Lang Suppot" on \
-		MODPOSIXTIMER		"Posix timer (New/Testing)" on \
-		MODXMLCURL		"XML dynamically control of FreeSWITCH" on \
-		MODXMLODBC		"XML ODBC Module" on \
-		MODXMLRPC		"XML Remote Procedure Calls" on \
-		MODSAYDE		"German Voice Prompts" off \
-		MODSAYES		"Spanish Voice Prompts" off \
-		MODSAYEN		"English Voice Prompts" on \
-		MODSAYFR		"French Voice Prompts" off \
-		MODSAYHE		"Hebrew Voice Prompts" off \
-		MODSAYHU		"Hungarian Voice Propmts" off \
-		MODSAYIT		"Italian Voice Propmts" off \
-		MODSAYNL		"Dutch Voice Propmts" off \
-		MODSAYPT		"Portuguese Voice Propmts" off \
-		MODSAYRU		"Russian Voice Propmts" off \
-		MODSAYTH		"Thai Voice Propmts" off \
-		MODSAYZH		"Chinese Voice Propmts" off
+OPTIONS_DEFINE=	REBOOTSTRAP MODABSTRACTION MODAVMD MODCALLCENTER MODCIDLOOKUP MODBLACKLIST MODCURL \
+		MODDISTRIBUTOR MODEASYROUTE MODFSK MODHTTAPI MODHTTPCACHE MODDIRECTORY MODLADSPA \
+		MODLCR MODMEMCACHE MODNIBBLEBILL MODRSS MODSNOM MODSPY MODSOUNDTOUCH MODSTRESS MODSNAPSHOT \
+		MODVMD MODVOICEMAILIVR MODAMRWB MODCELT MODCODEC2 MODILBC MODISAC MODOPUS MODSILK MODSIREN MODDPASTERISK \
+		MODDPDIRECTORY MODDINGALING MODFREETDM MODPORTAUDIO MODRTMP MODSKINNY MODFLITE MODPOCKETSPHINX \
+		MODTTSCMDLINE MODUNIMRCP MODCDRPGCSV MODERLANGEVENT MODMULTICAST MODEVENTZMQ MODSNMP MODVLC \
+		MODPASTREAM MODSHELLSTREAM MODSHOUT MODMANAGED MODPERL MODPYTHON MODPOSIXTIMER MODXMLCURL \
+		MODXMLODBC MODXMLRPC MODSAYDE MODSAYES MODSAYEN MODSAYFR MODSAYHE MODSAYHU MODSAYIT MODSAYNL \
+		MODSAYPT MODSAYRU MODSAYTH MODSAYZH
+
+REBOOTSTRAP_DESC=	Rebootstrap freeswitch build
+MODABSTRACTION_DESC=	Simplify/Standarize API
+MODAVMD_DESC=		Detects voicemail generalized approach
+MODCALLCENTER_DESC=	Call queuing application
+MODCIDLOOKUP_DESC=	Lookup CID via database, url
+MODBLACKLIST_DESC=	Blacklisk phone numbers
+MODCURL_DESC=		Allows scripts to make HTTP requests
+MODDISTRIBUTOR_DESC=	Simple round-robin style distributions
+MODEASYROUTE_DESC=	DID Database lookup
+MODFSK_DESC=		FSK (Frequency-Shift Keying) data transfer
+MODHTTAPI_DESC=		HTTP API
+MODHTTPCACHE_DESC=	HTTP GET with caching
+MODDIRECTORY_DESC=	Dial by name directory
+MODLADSPA_DESC=		use Auto-tune on your call
+MODLCR_DESC=		Least Cost Routing
+MODMEMCACHE_DESC=	Memcached API
+MODNIBBLEBILL_DESC=	Billing Module
+MODRSS_DESC=		RSS feed text to speech
+MODSNOM_DESC=		Controlling softkeys on Snom phones
+MODSPY_DESC=		Extension/Call Spy tool
+MODSOUNDTOUCH_DESC=	Pitch shifting audio effects
+MODSTRESS_DESC=		Detect Stress in voice
+MODSNAPSHOT_DESC=	Audio/Disk Snapshot Tool
+MODVMD_DESC=		Voicemail Beep Detection
+MODVOICEMAILIVR_DESC=	IVR Based Voicemail(NEW)
+MODAMRWB_DESC=		GSM-AMRWB (ARM Wide Band) codec
+MODCELT_DESC=		Celt ultra-low delay audio codec
+MODCODEC2_DESC=		Freeswitch Codec2 Module
+MODILBC_DESC=		ILBX Codec
+MODISAC_DESC=		Isac Codec (New Codec)
+MODOPUS_DESC=		OPUS ultra-low delay audio codec
+MODSILK_DESC=		Skype Silk Codec (Broken/BUILD ISSUES)
+MODSIREN_DESC=		Siren Codec
+MODDPASTERISK_DESC=	Asterisk Dialplan (Old School Dialplan)
+MODDPDIRECTORY_DESC=	obtain dialplan from a directory resource
+MODDINGALING_DESC=	Jabber/Google Talk integration module
+MODFREETDM_DESC=	Interface to Zaptel hardware End Points
+MODPORTAUDIO_DESC=	Portaudio API
+MODRTMP_DESC=		Real time media protocol
+MODSKINNY_DESC=		Skinny/SCCP
+MODFLITE_DESC=		Free open source Text to Speech
+MODPOCKETSPHINX_DESC=	Free open source Speech Recognition
+MODTTSCMDLINE_DESC=	Play Sounds via commandline
+MODUNIMRCP_DESC=	Open MRCP implementation ASR/Text
+MODCDRPGCSV_DESC=	Asterisk Compatible CDR PostgreSQL
+MODERLANGEVENT_DESC=	send/receive events/commands in Erlang
+MODMULTICAST_DESC=	Broadcasts events to netmask
+MODEVENTZMQ_DESC=	Zeroconf config socket
+MODSNMP_DESC=		SNMP AgentX module
+MODVLC_DESC=		Play local mp3 files any rate(NEW Testing)
+MODPASTREAM_DESC=	PortAudio Streaming Module
+MODSHELLSTREAM_DESC=	Stream audio via shell command
+MODSHOUT_DESC=		Play local mp3/shoutcast (Build Error)
+MODMANAGED_DESC=	Common Language Infrastructure API
+MODPERL_DESC=		Perl Lang Support
+MODPYTHON_DESC=		Python Lang Suppot
+MODPOSIXTIMER_DESC=	Posix timer (New/Testing)
+MODXMLCURL_DESC=	XML dynamically control of FreeSWITCH
+MODXMLODBC_DESC=	XML ODBC Module
+MODXMLRPC_DESC=		XML Remote Procedure Calls
+MODSAYDE_DESC=		German Voice Prompts
+MODSAYES_DESC=		Spanish Voice Prompts
+MODSAYEN_DESC=		English Voice Prompts
+MODSAYFR_DESC=		French Voice Prompts
+MODSAYHE_DESC=		Hebrew Voice Prompts
+MODSAYHU_DESC=		Hungarian Voice Propmts
+MODSAYIT_DESC=		Italian Voice Propmts
+MODSAYNL_DESC=		Dutch Voice Propmts
+MODSAYPT_DESC=		Portuguese Voice Propmts
+MODSAYRU_DESC=		Russian Voice Propmts
+MODSAYTH_DESC=		Thai Voice Propmts
+MODSAYZH_DESC=		Chinese Voice Propmts"
+
+OPTIONS_DEFAULT=	REBOOTSTRAP MODABSTRACTION MODAVMD MODCALLCENTER MODCIDLOOKUP MODBLACKLIST MODCURL \
+			MODDISTRIBUTOR MODEASYROUTE MODFSK MODHTTAPI MODHTTPCACHE MODDIRECTORY MODLADSPA MODLCR MODMEMCACHE \
+			MODNIBBLEBILL MODRSS MODSNOM MODSPY MODVMD MODVOICEMAILIVR MODAMRWB MODCELT MODCODEC2 MODISAC MODILBC MODOPUS \
+			MODSIREN MODDPDIRECTORY MODDINGALING MODPORTAUDIO MODRTMP MODSKINNY MODFLITE MODPOCKETSPHINX MODTTSCMDLINE MODUNIMRCP \
+			MODMULTICAST MODEVENTZMQ MODPASTREAM MODSHELLSTREAM MODPERL MODPYTHON MODPOSIXTIMER MODXMLCURL MODXMLODBC \
+			MODXMLRPC MODSAYEN
+
+NO_OPTIONS_SORT=	yes
 
 .include <bsd.port.options.mk>
 
@@ -173,15 +194,15 @@ OPTIONS=	REBOOTSTRAP     	"Rebootstrap freeswitch build" on \
 CFLAGS+=	-fPIC
 .endif
 
-.for i in  ${OPTIONS:Non:Noff:N"*"}
-.if defined(WITH_${i})
-PLIST_SUB+=	${i}=""
+.for opt in ${ALL_OPTIONS}
+.if $(PORT_OPTIONS:M${opt})
+PLIST_SUB+=	${opt}=""
 .else
-PLIST_SUB+=	${i}="@comment "
+PLIST_SUB+=	${opt}="@comment "
 .endif
 .endfor
 
-.if defined(WITH_MODFREETDM)
+.if ${PORT_OPTIONS:MMODFREETDM}
 .if ${OSVERSION} < 703000 || (${OSVERSION} >= 800000 && ${OSVERSION} < 800108)
 IGNORE=	sorry you can not use mod_freetdm on this version of freebsd ( dahdi support broken ) please update
 .else
@@ -192,33 +213,33 @@ RUN_DEPENDS+=	${LOCALBASE}/include/dahdi/wctdm_user.h:${PORTSDIR}/misc/dahdi
 .endif
 .endif
 
-.if defined(WITH_MODSHOUT)
+.if ${PORT_OPTIONS:MMODSHOUT}
 LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
 .endif
 
-.if defined(WITH_MODPERL)
+.if ${PORT_OPTIONS:MMODPERL}
 LIB_DEPENDS+=	gdbm:${PORTSDIR}/databases/gdbm \
 		db:${PORTSDIR}/databases/db42
 .endif
 
-.if defined(WITH_MODERLANGEVENT)
+.if ${PORT_OPTIONS:MMODERLANGEVENT}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/erlang/usr/include/erl_driver.h:${PORTSDIR}/lang/erlang
 .endif
 
-.if defined(WITH_MODPYTHON)
+.if ${PORT_OPTIONS:MMODPYTHON}
 USE_PYTHON=	yes
 .endif
 
-.if defined(WITH_MODCDRPGCSV)
+.if ${PORT_OPTIONS:MMODCDRPGCSV}
 USE_PGSQL=	yes
 .endif
 
-.if defined(WITH_MODSNMP)
+.if ${PORT_OPTIONS:MMODSNMP}
 BUILD_DEPENDS+=	${LOCALBASE}/include/net-snmp/definitions.h:${PORTSDIR}/net-mgmt/net-snmp
 RUN_DEPENDS+=	${LOCALBASE}/include/net-snmp/definitions.h:${PORTSDIR}/net-mgmt/net-snmp
 .endif
 
-.if defined(WITH_MODLADSPA)
+.if ${PORT_OPTIONS:MMODLADSPA}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/ladspa/amp.so:${PORTSDIR}/audio/ladspa \
 		${LOCALBASE}/lib/ladspa/tap_autopan.so:${PORTSDIR}/audio/tap-plugins \
 		${LOCALBASE}/lib/ladspa/cmt.so:${PORTSDIR}/audio/cmt \
@@ -231,7 +252,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/ladspa/amp.so:${PORTSDIR}/audio/ladspa \
 		${LOCALBASE}/lib/ladspa/autotalent.so:${PORTSDIR}/audio/autotalent
 .endif
 
-.if defined(WITH_MODVLC)
+.if ${PORT_OPTIONS:MMODVLC}
 LIB_DEPENDS+=	vlc:/${PORTSDIR}/multimedia/vlc
 RUN_DEPENDS+=	vlc:/${PORTSDIR}/multimedia/vlc
 .endif
@@ -246,87 +267,88 @@ BROKEN=	Requires lrintl, which is not present on FreeBSD 7
 pre-configure:
 	@${REINPLACE_CMD} -e 's|base=http://files.freeswitch.org/downloads/libs/|base=file://${DISTDIR}/${DIST_SUBDIR}/|g' ${WRKSRC}/build/getlib.sh.in
 	@${REINPLACE_CMD} -e 's|2.1.9|2.1.11|g' ${WRKSRC}/src/mod/event_handlers/mod_event_zmq/Makefile
+	@${REINPLACE_CMD} -e 's|ZMQ_BASEURL=http://download.zeromq.org|ZMQ_BASEURL=file://${DISTDIR}/${DIST_SUBDIR}/|g' ${WRKSRC}/src/mod/event_handlers/mod_event_zmq/Makefile
 	@${REINPLACE_CMD} -e 's|\$$(MAKE) samples-conf|##\$$(MAKE) samples-conf|g' ${WRKSRC}/Makefile.am
-.if defined(WITH_REBOOTSTRAP)
+.if ${PORT_OPTIONS:MREBOOTSTRAP}
 	cd ${WRKSRC} && ./rebootstrap.sh
 .endif
 
 post-configure:
 .for i in mod_unimrcp mod_flite mod_pocketsphinx
-.if defined(WITH_${i:S/_//g:U})
+.if ${PORT_OPTIONS:M${i:S/_//g:U}}
 	@${REINPLACE_CMD} -e 's|#\(asr_tts/${i}\)|\1|g' ${WRKSRC}/modules.conf
 .endif
 .endfor
-.if defined(WITH_MODTTSCMDLINE)
+.if ${PORT_OPTIONS:MMODTTSCMDLINE}}
 	@${REINPLACE_CMD} -e 's|#asr_tts/mod_tts_commandline|asr_tts/mod_tts_commandline|g' ${WRKSRC}/modules.conf
 .endif
 .for i in mod_cidlookup mod_easyroute mod_lcr mod_soundtouch mod_rss mod_snom \
 	mod_vmd mod_avmd mod_spy mod_curl mod_nibblebill mod_memcache mod_directory mod_distributor \
 	mod_snapshot mod_callcenter mod_fsk mod_ladspa mod_blacklist mod_http_cache mod_abstraction \
 	mod_voicemail_ivr mod_httapi
-.if defined(WITH_${i:S/_//g:U})
+.if ${PORT_OPTIONS:M${i:S/_//g:U}}
 	@${REINPLACE_CMD} -e 's|#\(applications/${i}\)|\1|g' ${WRKSRC}/modules.conf
 .endif
 .endfor
-.for i in mod_amrwb mod_celt mod_silk mod_codec2 mod_opus mod_isac
-.if defined(WITH_${i:S/_//g:U})
+.for i in mod_amrwb mod_celt mod_silk mod_codec2 mod_opus mod_isac mod_ilbc mod_siren
+.if ${PORT_OPTIONS:M${i:S/_//g:U}}
 	@${REINPLACE_CMD} -e 's|#\(codecs/${i}\)|\1|g' ${WRKSRC}/modules.conf
 .endif
 .endfor
 .for i in  mod_shell_stream mod_shout mod_vlc
-.if defined(WITH_${i:S/_//g:U})
+.if ${PORT_OPTIONS:M${i:S/_//g:U}}
 	@${REINPLACE_CMD} -e 's|#\(formats/${i}\)|\1|g' ${WRKSRC}/modules.conf
 .endif
 .endfor
-.if defined(WITH_MODPASTREAM)
+.if ${PORT_OPTIONS:MMODPASTREAM}}
 	@${REINPLACE_CMD} -e 's|#formats/mod_portaudio_stream|formats/mod_portaudio_stream|g' ${WRKSRC}/modules.conf
 .endif
 .for i in mod_say_de mod_say_es mod_say_en mod_say_fr mod_say_he mod_say_hu mod_say_it mod_say_nl mod_say_pt mod_say_ru mod_say_th mod_say_zh
-.if defined(WITH_${i:S/_//g:U})
+.if ${PORT_OPTIONS:M${i:S/_//g:U}}
 	@${REINPLACE_CMD} -e 's|#\(say/${i}\)|\1|g' ${WRKSRC}/modules.conf
 .endif
 .endfor
 .for i in mod_perl mod_python
-.if defined(WITH_${i:S/_//g:U})
+.if ${PORT_OPTIONS:M${i:S/_//g:U}}
 	@${REINPLACE_CMD} -e 's|#\(languages/${i}\)|\1|g' ${WRKSRC}/modules.conf
 .endif
 .endfor
 .for i in mod_skinny mod_portaudio mod_dingaling mod_rtmp mod_khomp
-.if defined(WITH_${i:S/_//g:U})
+.if ${PORT_OPTIONS:M${i:S/_//g:U}}
 	@${REINPLACE_CMD} -e 's|#\(endpoints/${i}\)|\1|g' ${WRKSRC}/modules.conf
 .endif
 .endfor
-.if defined(WITH_MODDPDIRECTORY)
+.if ${PORT_OPTIONS:MMODDPDIRECTORY}
 	@${REINPLACE_CMD} -e 's|#dialplans/mod_dialplan_directory|dialplans/mod_dialplan_directory|g' ${WRKSRC}/modules.conf
 .endif
-.if defined(WITH_MODFREETDM)
+.if ${PORT_OPTIONS:MMODFREETDM}
 	@${REINPLACE_CMD} -e 's|#../../libs/freetdm/mod_freetdm|../../libs/freetdm/mod_freetdm|g' ${WRKSRC}/modules.conf
 .endif
-.if defined(WITH_MODMULTICAST)
+.if ${PORT_OPTIONS:MMODMULTICAST}
 	@${REINPLACE_CMD} -e 's|#event_handlers/mod_event_multicast|event_handlers/mod_event_multicast|g' ${WRKSRC}/modules.conf
 .endif
-.if defined(WITH_MODERLANGEVENT)
+.if ${PORT_OPTIONS:MMODERLANGEVENT}
 	@${REINPLACE_CMD} -e 's|#event_handlers/mod_erlang_event|event_handlers/mod_erlang_event|g' ${WRKSRC}/modules.conf
 .endif
-.if defined(WITH_MODCDRPGCSV)
+.if ${PORT_OPTIONS:MMODCDRPGCSV}
 	@${REINPLACE_CMD} -e 's|#event_handlers/mod_cdr_pg_csv|event_handlers/mod_cdr_pg_csv|g' ${WRKSRC}/modules.conf
 .endif
-.if defined(WITH_MODSNMP)
+.if ${PORT_OPTIONS:MMODSNMP}
 	@${REINPLACE_CMD} -e 's|#event_handlers/mod_snmp|event_handlers/mod_snmp|g' ${WRKSRC}/modules.conf
 .endif
-.if defined(WITH_MODXMLCURL)
+.if ${PORT_OPTIONS:MMODXMLCURL}
 	@${REINPLACE_CMD} -e 's|#xml_int/mod_xml_curl|xml_int/mod_xml_curl|g' ${WRKSRC}/modules.conf
 .endif
-.if !defined(WITH_MODDPASTERISK)
+.if empty(PORT_OPTIONS:MMODDPASTERISK)
 	@${REINPLACE_CMD} -e 's|dialplans/mod_dialplan_asterisk|#dialplans/mod_dialplan_asterisk|g' ${WRKSRC}/modules.conf
 .endif
-.if defined(WITH_MODEVENTZMQ)
+.if ${PORT_OPTIONS:MMODEVENTZMQ}
 	@${REINPLACE_CMD} -e 's|#event_handlers/mod_event_zmq|event_handlers/mod_event_zmq|g' ${WRKSRC}/modules.conf
 .endif
-.if defined(WITH_MODXMLODBC)
+.if ${PORT_OPTIONS:MMODXMLODBC}
 	@${REINPLACE_CMD} -e 's|#../../contrib/mod/xml_int/mod_xml_odbc|../../contrib/mod/xml_int/mod_xml_odbc|g' ${WRKSRC}/modules.conf
 .endif
-.if defined(WITH_MODPOSIXTIMER)
+.if ${PORT_OPTIONS:MMODPOSIXTIMER}
 	@${REINPLACE_CMD} -e 's|#timers/mod_posix_timer|timers/mod_posix_timer|g' ${WRKSRC}/modules.conf
 .endif
 
@@ -334,7 +356,7 @@ pre-install:
 	@${CHMOD} 664 ${WRKSRC}/libs/freetdm/conf/*
 	@${MKDIR} ${ETCDIR}/conf
 	@${TOUCH} ${ETCDIR}/conf/.freeswitch-core-devel
-.if defined(WITH_MODFREETDM)
+.if ${PORT_OPTIONS:MMODFREETDM)
 	@${MKDIR} ${ETCDIR}/conf/autoload_configs
 .endif
 
