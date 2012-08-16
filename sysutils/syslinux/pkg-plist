@@ -35,4 +35,5 @@ bin/syslinux
 %%DATADIR%%/vesainfo.c32
 %%DATADIR%%/vpdtest.c32
 %%DATADIR%%/whichsys.c32
+%%DATADIR%%/zzjson.c32
 @dirrm %%DATADIR%%
