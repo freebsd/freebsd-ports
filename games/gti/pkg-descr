@@ -1,0 +1,13 @@
+It's a program that displays a badly made ASCII-art animation to
+punish you for your typing error - and after that magically launches
+the command you meant to launch.
+
+The code is available under an MIT-like license on github - though
+of course anybody can write his or her own version in a couple of
+minutes.
+
+This whole thing is heavily inspired by sl, which displays a steam
+locomotive. However, gti is actually nicer than sl as it at least
+executes git after the animation. :-)
+
+WWW:	http://r-wos.org/hacks/gti
