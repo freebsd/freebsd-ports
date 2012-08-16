@@ -355,6 +355,7 @@
     SUBDIR += grubinvaders
     SUBDIR += gshisen
     SUBDIR += gtetrinet
+    SUBDIR += gti
     SUBDIR += gtkatlantic
     SUBDIR += gtkballs
     SUBDIR += gtklife
