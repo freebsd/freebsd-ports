@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SF/alleg/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	cyberbotx@cyberbotx.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cross-platform library for games and multimedia programming
 
 USE_AUTOTOOLS=	autoconf
