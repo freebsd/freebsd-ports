@@ -29,8 +29,9 @@ CONFIGURE_ARGS=	--disable-csharp --prefix=${PREFIX}
 
 PORT_CLASSPATH=	${WRKSRC}/antlrall.jar:.
 
-.include <bsd.port.options.mk>
 EXAMPLES=	cpp java
+
+.include <bsd.port.options.mk>
 .if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	ANTLRException.gif closure.gif cpp-runtime.html \
 		csharp-runtime.html err.html glossary.html hidden.stream.gif \
@@ -41,8 +42,6 @@ PORTDOCS=	ANTLRException.gif closure.gif cpp-runtime.html \
 		stream.splitter.gif streams.html subrule.gif trees.html \
 		vocab.html
 .endif
-
-.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	2.2+
