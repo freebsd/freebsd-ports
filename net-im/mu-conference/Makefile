@@ -11,7 +11,7 @@ CATEGORIES=	net-im
 MASTER_SITES=	http://download.gna.org/mu-conference/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-User Conferencing component for Jabber
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \

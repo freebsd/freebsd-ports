@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-transport
 DISTNAME=	${PORTNAME}t-${PORTVERSION}
 DIST_SUBDIR=	jabber
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python ICQ-Transport for Jabber
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl \
