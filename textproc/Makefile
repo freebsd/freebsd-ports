@@ -1105,6 +1105,7 @@
     SUBDIR += ppower4
     SUBDIR += print-n-times
     SUBDIR += prosper
+    SUBDIR += publican
     SUBDIR += pure-csv
     SUBDIR += pure-xml
     SUBDIR += py-4suite
