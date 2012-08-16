@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cssutils
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.9
 PORTEPOCH=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
@@ -17,7 +17,7 @@ MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	CSS Cascading Style Sheets library for Python
 
 USE_ZIP=	yes
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
