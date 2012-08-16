@@ -1,0 +1,17 @@
+--- com32/lib/Makefile.orig	2012-08-16 10:07:43.054505830 +0200
++++ com32/lib/Makefile	2012-08-16 10:08:00.669820080 +0200
+@@ -183,12 +183,12 @@
+ 
+ # These files are performance critical, and doesn't compile well with -Os
+ sys/vesa/drawtxt.o: sys/vesa/drawtxt.c
+-	$(CC) $(MAKEDEPS) $(CFLAGS) -O3 -c -o $@ $<
++	$(CC) $(MAKEDEPS) $(filter-out -std=gnu99, $(CFLAGS)) -O3 -c -o $@ $<
+ 
+ sys/vesa/alphatbl.c: sys/vesa/alphatbl.pl
+ 	$(PERL) $< > $@
+ 
+ jpeg/jidctflt.o: jpeg/jidctflt.c
+-	$(CC) $(MAKEDEPS) $(CFLAGS) -O3 -c -o $@ $<
++	$(CC) $(MAKEDEPS) $(filter-out -std=gnu99, $(CFLAGS)) -O3 -c -o $@ $<
+ 
+ -include .*.d */.*.d */*/.*.d

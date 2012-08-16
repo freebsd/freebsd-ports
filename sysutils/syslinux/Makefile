@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	syslinux
-PORTVERSION=	4.04
+PORTVERSION=	4.05
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
-MASTER_SITE_SUBDIR=	linux/boot/syslinux
+MASTER_SITE_SUBDIR=	linux/utils/boot/syslinux
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Syslinux for FreeBSD
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
