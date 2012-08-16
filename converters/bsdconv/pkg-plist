@@ -35,6 +35,7 @@ lib/libbsdconv.so.7
 %%DATADIR%%/from/UTF-32LE.so
 %%DATADIR%%/from/_CP1251
 %%DATADIR%%/from/_CP1252
+%%DATADIR%%/from/_CP1253
 %%DATADIR%%/from/_CP874
 %%DATADIR%%/from/_CP949
 %%DATADIR%%/from/_GB18030
@@ -139,6 +140,7 @@ lib/libbsdconv.so.7
 %%DATADIR%%/to/UTF-32LE.so
 %%DATADIR%%/to/_CP1251
 %%DATADIR%%/to/_CP1252
+%%DATADIR%%/to/_CP1253
 %%DATADIR%%/to/_CP874
 %%DATADIR%%/to/_CP936
 %%DATADIR%%/to/_CP949
