@@ -46,6 +46,7 @@ OPTIONS=	NTPSNMPD	"Build and install ntpsnmpd" OFF \
   		RAWDCF		"Enable DCF77 raw time code" OFF \
   		RCC8000		"Enable RCC 8000 clock" OFF \
   		SCHMID		"Enable Schmid DCF77 clock" OFF \
+		SEL240X		"Enable SEL 240X clocks" OFF \
   		TRIMTAIP	"Enable Trimble GPS receiver/TAIP protocol" OFF \
   		TRIMTSIP	"Enable Trimble GPS receiver/TSIP protocol" OFF \
   		WHARTON		"Enable WHARTON 400A Series clock" OFF \
@@ -98,6 +99,7 @@ NTP_DRIVERS= \
   		RAWDCF \
   		RCC8000 \
   		SCHMID \
+		SEL240X \
   		TRIMTAIP \
   		TRIMTSIP \
   		WHARTON \
