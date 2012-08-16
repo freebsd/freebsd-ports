@@ -1,0 +1,4 @@
+%%SITE_PERL%%/HTML/FormatText/WithLinks/AndTables.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormatText/WithLinks/AndTables/.packlist
+@dirrm %%SITE_PERL%%/HTML/FormatText/WithLinks
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormatText/WithLinks/AndTables
