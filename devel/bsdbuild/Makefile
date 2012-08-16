@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsdbuild
-PORTVERSION=	2.9
+PORTVERSION=	3.0
 CATEGORIES=	devel
 MASTER_SITES=	http://stable.hypertriton.com/bsdbuild/
 
@@ -31,7 +31,6 @@ MAN5=	build.www.mk.5 \
 	build.prog.mk.5 \
 	build.lib.mk.5 \
 	build.dep.mk.5 \
-	build.den.mk.5 \
 	build.common.mk.5
 
 .include <bsd.port.mk>
