@@ -75,6 +75,7 @@
     SUBDIR += portupgrade
     SUBDIR += portupgrade-devel
     SUBDIR += poudriere
+    SUBDIR += poudriere-devel
     SUBDIR += psearch
     SUBDIR += pver
     SUBDIR += qtpkg
