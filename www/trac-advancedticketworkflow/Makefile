@@ -13,7 +13,7 @@ MASTER_SITES=	http://people.freebsd.org/~mm/trac/
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced Ticket Workflow Plugin for Trac
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac

@@ -13,7 +13,7 @@ MASTER_SITES=	http://people.freebsd.org/~mm/trac/
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Custom roadmap plugin for trac
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
