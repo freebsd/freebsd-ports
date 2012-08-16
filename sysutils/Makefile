@@ -770,6 +770,15 @@
     SUBDIR += rsyslog5-relp
     SUBDIR += rsyslog5-rfc3195
     SUBDIR += rsyslog5-snmp
+    SUBDIR += rsyslog6
+    SUBDIR += rsyslog6-dbi
+    SUBDIR += rsyslog6-gnutls
+    SUBDIR += rsyslog6-gssapi
+    SUBDIR += rsyslog6-mysql
+    SUBDIR += rsyslog6-pgsql
+    SUBDIR += rsyslog6-relp
+    SUBDIR += rsyslog6-rfc3195
+    SUBDIR += rsyslog6-snmp
     SUBDIR += rsyslog6-devel
     SUBDIR += rsyslog6-devel-dbi
     SUBDIR += rsyslog6-devel-gnutls
