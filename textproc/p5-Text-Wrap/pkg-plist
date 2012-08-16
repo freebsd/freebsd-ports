@@ -1,5 +1,0 @@
-%%SITE_PERL%%/Text/Tabs.pm
-%%SITE_PERL%%/Text/Wrap.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/.packlist
-@dirrm %%SITE_PERL%%/Text
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text

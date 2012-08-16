@@ -850,7 +850,6 @@
     SUBDIR += p5-Text-WikiCreole
     SUBDIR += p5-Text-WikiFormat
     SUBDIR += p5-Text-WordDiff
-    SUBDIR += p5-Text-Wrap
     SUBDIR += p5-Text-Wrapper
     SUBDIR += p5-Text-Xslate
     SUBDIR += p5-Text-vCard
