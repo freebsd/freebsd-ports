@@ -8,10 +8,12 @@
 PORTNAME=	trytond_product
 PORTVERSION=	2.4.0
 CATEGORIES=	finance python
-MASTER_SITES=	http://downloads2.tryton.org/2.4/
+MASTER_SITES=	http://downloads2.tryton.org/${PORTVERSION:R}/
 
 MAINTAINER=	matthias@petermann.it
 COMMENT=	The Product Module for Tryton
+
+LICENSE=	GPLv3
 
 RUN_DEPENDS=	trytond>=2.4.0:${PORTSDIR}/finance/trytond
 
