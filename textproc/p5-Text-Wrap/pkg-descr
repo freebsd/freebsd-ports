@@ -1,0 +1,4 @@
+Perl module for line wrapping to form simple paragraphs and expand and unexpand
+tabs per the unix expand(1) and unexpand(1).
+
+WWW:	http://search.cpan.org/dist/Text-Tabs%2BWrap/
