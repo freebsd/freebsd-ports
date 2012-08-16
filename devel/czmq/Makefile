@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	czmq
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	devel net
 MASTER_SITES=	http://download.zeromq.org/
 

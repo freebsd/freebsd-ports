@@ -17,6 +17,6 @@ include/zthread.h
 lib/libczmq.a
 lib/libczmq.la
 lib/libczmq.so
-lib/libczmq.so.0
+lib/libczmq.so.1
 libdata/pkgconfig/libczmq.pc
 @dirrmtry libdata/pkgconfig
