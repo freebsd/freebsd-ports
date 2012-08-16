@@ -1,0 +1,11 @@
+===
+Note that the following ports are not strict dependencies but are highly
+recommended to get the most out of pandas. Install them as needed.
+
+scipy		science/py-scipy
+pytables	devel/py-tables
+matplotlib	math/py-matplotlib
+
+Also recommended, but not yet available as a port is scikits.statsmodels.
+http://statsmodels.sourceforge.net/
+===
