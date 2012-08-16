@@ -22,6 +22,7 @@ CONFIGURE_ENV+=	TCL_INC_DIR=${TCL_INCLUDEDIR}
 
 PLIST_FILES=	lib/signal/signal.so \
 		lib/signal/pkgIndex.tcl
+PLIST_DIRS=	lib/signal
 
 post-patch:
 	${REINPLACE_CMD} -e 's|\.\./lib||' ${WRKSRC}/${CONFIGURE_SCRIPT}
