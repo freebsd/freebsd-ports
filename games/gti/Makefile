@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gti
-PORTVERSION=	0.0.2012.08.16
+PORTVERSION=	1.0.3
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/rwos/gti/tarball/master/
-DISTNAME=	${GITNAME}-${GITVERSION}
+DISTNAME=	${GITNAME}-v${PORTVERSION}-g${GITVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Just a silly git launcher, basically. Inspired by sl
@@ -17,7 +17,9 @@ COMMENT=	Just a silly git launcher, basically. Inspired by sl
 GITUSER=	rwos
 GITREPONAME=	${PORTNAME}
 GITNAME=	${GITUSER}-${GITREPONAME}
-GITVERSION=	ef5c4d8
+GITVERSION=	0b77b60
+
+WRKSRC=	${WRKDIR}/${GITNAME}-${GITVERSION}
 
 FETCH_ARGS=	-pRr
 ALL_TARGET=	${PORTNAME}
