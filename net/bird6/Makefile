@@ -8,7 +8,8 @@
 PORTNAME=	bird6
 PORTVERSION=	1.3.8
 CATEGORIES=	net
-MASTER_SITES=	ftp://bird.network.cz/pub/bird/
+MASTER_SITES=	ftp://bird.network.cz/pub/bird/ \
+		http://bird.mpls.in/distfiles/bird/
 DISTNAME=	bird-${PORTVERSION}
 
 MAINTAINER=	melifaro@ipfw.ru
