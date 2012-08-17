@@ -1,4 +1,21 @@
 bin/inspircd
+etc/inspircd/examples/opers.conf.example
+etc/inspircd/examples/modules/modules.conf.unreal
+etc/inspircd/examples/modules/modules.conf.charybdis
+etc/inspircd/examples/modules.conf.example
+etc/inspircd/examples/links.conf.example
+etc/inspircd/examples/inspircd.rules.example
+etc/inspircd/examples/inspircd.quotes.example
+etc/inspircd/examples/inspircd.motd.example
+etc/inspircd/examples/inspircd.helpop.example
+etc/inspircd/examples/inspircd.helpop-full.example
+etc/inspircd/examples/inspircd.filter.example
+etc/inspircd/examples/inspircd.conf.example
+etc/inspircd/examples/inspircd.censor.example
+etc/inspircd/examples/aliases/neostats.conf.example
+etc/inspircd/examples/aliases/ircservices.conf.example
+etc/inspircd/examples/aliases/atheme.conf.example
+etc/inspircd/examples/aliases/anope.conf.example
 lib/inspircd/.gdbargs
 lib/inspircd/inspircd
 lib/inspircd/modules/cmd_admin.so
@@ -117,6 +134,7 @@ lib/inspircd/modules/m_httpd_config.so
 lib/inspircd/modules/m_httpd_stats.so
 lib/inspircd/modules/m_ident.so
 lib/inspircd/modules/m_inviteexception.so
+lib/inspircd/modules/m_ircv3.so
 lib/inspircd/modules/m_joinflood.so
 lib/inspircd/modules/m_jumpserver.so
 lib/inspircd/modules/m_kicknorejoin.so
@@ -125,6 +143,7 @@ lib/inspircd/modules/m_lockserv.so
 lib/inspircd/modules/m_maphide.so
 lib/inspircd/modules/m_md5.so
 lib/inspircd/modules/m_messageflood.so
+lib/inspircd/modules/m_mlock.so
 lib/inspircd/modules/m_muteban.so
 lib/inspircd/modules/m_namedmodes.so
 lib/inspircd/modules/m_namesx.so
@@ -182,12 +201,15 @@ lib/inspircd/modules/m_silence.so
 lib/inspircd/modules/m_spanningtree.so
 lib/inspircd/modules/m_sqlauth.so
 lib/inspircd/modules/m_sqloper.so
-%%LDAP%%lib/inspircd/modules/m_ldapauth.so
+%%LDAPAUTH%%lib/inspircd/modules/m_ldapauth.so
+%%LDAPOPER%%lib/inspircd/modules/m_ldapoper.so
 %%MYSQL%%lib/inspircd/modules/m_mysql.so
 %%PGSQL%%lib/inspircd/modules/m_pgsql.so
 %%SQLITE%%lib/inspircd/modules/m_sqlite3.so
 %%GNUTLS%%lib/inspircd/modules/m_ssl_gnutls.so
 %%OPENSSL%%lib/inspircd/modules/m_ssl_openssl.so
+%%PCRE%%lib/inspircd/modules/m_regex_pcre.so
+%%POSIX%%lib/inspircd/modules/m_regex_posix.so
 lib/inspircd/modules/m_sslinfo.so
 lib/inspircd/modules/m_sslmodes.so
 lib/inspircd/modules/m_stripcolor.so
@@ -202,42 +224,45 @@ lib/inspircd/modules/m_userip.so
 lib/inspircd/modules/m_vhost.so
 lib/inspircd/modules/m_watch.so
 lib/inspircd/modules/m_xline_db.so
+@dirrm etc/inspircd/examples/aliases
+@dirrm etc/inspircd/examples/modules
+@dirrm etc/inspircd/examples
 @dirrm lib/inspircd/modules
 @dirrm lib/inspircd/logs
 @dirrm lib/inspircd/data
 @dirrm lib/inspircd
-@unexec if cmp -s %D/%%ETCDIR%%/inspircd.censor.example %D/%%ETCDIR%%/inspircd.censor; then rm -f %D/%%ETCDIR%%/inspircd.censor; fi
-%%ETCDIR%%/inspircd.censor.example
+@unexec if cmp -s %D/%%ETCDIR%%/examples/inspircd.censor.example %D/%%ETCDIR%%/inspircd.censor; then rm -f %D/%%ETCDIR%%/inspircd.censor; fi
+%%ETCDIR%%/examples/inspircd.censor.example
 @exec if [ ! -f %B/inspircd.censor ] ; then cp -p %D/%F %B/inspircd.censor; fi
-@unexec if cmp -s %D/%%ETCDIR%%/inspircd.conf.example %D/%%ETCDIR%%/inspircd.conf; then rm -f %D/%%ETCDIR%%/inspircd.conf; fi
-%%ETCDIR%%/inspircd.conf.example
+@unexec if cmp -s %D/%%ETCDIR%%/examples/inspircd.conf.example %D/%%ETCDIR%%/inspircd.conf; then rm -f %D/%%ETCDIR%%/inspircd.conf; fi
+%%ETCDIR%%/examples/inspircd.conf.example
 @exec if [ ! -f %B/inspircd.conf ] ; then cp -p %D/%F %B/inspircd.conf; fi
-@unexec if cmp -s %D/%%ETCDIR%%/inspircd.filter.example %D/%%ETCDIR%%/inspircd.filter; then rm -f %D/%%ETCDIR%%/inspircd.filter; fi
-%%ETCDIR%%/inspircd.filter.example
+@unexec if cmp -s %D/%%ETCDIR%%/examples/inspircd.filter.example %D/%%ETCDIR%%/inspircd.filter; then rm -f %D/%%ETCDIR%%/inspircd.filter; fi
+%%ETCDIR%%/examples/inspircd.filter.example
 @exec if [ ! -f %B/inspircd.filter ] ; then cp -p %D/%F %B/inspircd.filter; fi
-@unexec if cmp -s %D/%%ETCDIR%%/inspircd.helpop.example %D/%%ETCDIR%%/inspircd.helpop; then rm -f %D/%%ETCDIR%%/inspircd.helpop; fi
-%%ETCDIR%%/inspircd.helpop.example
+@unexec if cmp -s %D/%%ETCDIR%%/examples/inspircd.helpop.example %D/%%ETCDIR%%/inspircd.helpop; then rm -f %D/%%ETCDIR%%/inspircd.helpop; fi
+%%ETCDIR%%/examples/inspircd.helpop.example
 @exec if [ ! -f %B/inspircd.helpop ] ; then cp -p %D/%F %B/inspircd.helpop; fi
-@unexec if cmp -s %D/%%ETCDIR%%/inspircd.helpop-full.example %D/%%ETCDIR%%/inspircd.helpop-full; then rm -f %D/%%ETCDIR%%/inspircd.helpop-full; fi
-%%ETCDIR%%/inspircd.helpop-full.example
+@unexec if cmp -s %D/%%ETCDIR%%/examples/inspircd.helpop-full.example %D/%%ETCDIR%%/inspircd.helpop-full; then rm -f %D/%%ETCDIR%%/inspircd.helpop-full; fi
+%%ETCDIR%%/examples/inspircd.helpop-full.example
 @exec if [ ! -f %B/inspircd.helpop-full ] ; then cp -p %D/%F %B/inspircd.helpop-full; fi
-@unexec if cmp -s %D/%%ETCDIR%%/inspircd.motd.example %D/%%ETCDIR%%/inspircd.motd; then rm -f %D/%%ETCDIR%%/inspircd.motd; fi
-%%ETCDIR%%/inspircd.motd.example
+@unexec if cmp -s %D/%%ETCDIR%%/examples/inspircd.motd.example %D/%%ETCDIR%%/inspircd.motd; then rm -f %D/%%ETCDIR%%/inspircd.motd; fi
+%%ETCDIR%%/examples/inspircd.motd.example
 @exec if [ ! -f %B/inspircd.motd ] ; then cp -p %D/%F %B/inspircd.motd; fi
-@unexec if cmp -s %D/%%ETCDIR%%/inspircd.quotes.example %D/%%ETCDIR%%/inspircd.quotes; then rm -f %D/%%ETCDIR%%/inspircd.quotes; fi
-%%ETCDIR%%/inspircd.quotes.example
+@unexec if cmp -s %D/%%ETCDIR%%/examples/inspircd.quotes.example %D/%%ETCDIR%%/inspircd.quotes; then rm -f %D/%%ETCDIR%%/inspircd.quotes; fi
+%%ETCDIR%%/examples/inspircd.quotes.example
 @exec if [ ! -f %B/inspircd.quotes ] ; then cp -p %D/%F %B/inspircd.quotes; fi
-@unexec if cmp -s %D/%%ETCDIR%%/inspircd.rules.example %D/%%ETCDIR%%/inspircd.rules; then rm -f %D/%%ETCDIR%%/inspircd.rules; fi
-%%ETCDIR%%/inspircd.rules.example
+@unexec if cmp -s %D/%%ETCDIR%%/examples/inspircd.rules.example %D/%%ETCDIR%%/inspircd.rules; then rm -f %D/%%ETCDIR%%/inspircd.rules; fi
+%%ETCDIR%%/examples/inspircd.rules.example
 @exec if [ ! -f %B/inspircd.rules ] ; then cp -p %D/%F %B/inspircd.rules; fi
-@unexec if cmp -s %D/%%ETCDIR%%/links.conf.example %D/%%ETCDIR%%/links.conf; then rm -f %D/%%ETCDIR%%/links.conf; fi
-%%ETCDIR%%/links.conf.example
-@exec if [ ! -f %B/links.conf.example ] ; then cp -p %D/%F %B/links.conf.example; fi
-@unexec if cmp -s %D/%%ETCDIR%%/modules.conf.example %D/%%ETCDIR%%/modules.conf; then rm -f %D/%%ETCDIR%%/modules.conf; fi
-%%ETCDIR%%/modules.conf.example
-@exec if [ ! -f %B/modules.conf.example ] ; then cp -p %D/%F %B/modules.conf.example; fi
-@unexec if cmp -s %D/%%ETCDIR%%/opers.conf.example %D/%%ETCDIR%%/opers.conf; then rm -f %D/%%ETCDIR%%/opers.conf; fi
-%%ETCDIR%%/opers.conf.example
-@exec if [ ! -f %B/opers.conf.example ] ; then cp -p %D/%F %B/opers.conf.example; fi
-@unexec echo "If permanently removing software, you may wish to remove the configuration directory by running \"rm -rf %%LOCALBASE%%/%%ETCDIR%%\""
+@unexec if cmp -s %D/%%ETCDIR%%/examples/links.conf.example %D/%%ETCDIR%%/links.conf; then rm -f %D/%%ETCDIR%%/links.conf; fi
+%%ETCDIR%%/examples/links.conf.example
+@exec if [ ! -f %B/links.conf ] ; then cp -p %D/%F %B/links.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/examples/modules.conf.example %D/%%ETCDIR%%/modules.conf; then rm -f %D/%%ETCDIR%%/modules.conf; fi
+%%ETCDIR%%/examples/modules.conf.example
+@exec if [ ! -f %B/modules.conf ] ; then cp -p %D/%F %B/modules.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/examples/opers.conf.example %D/%%ETCDIR%%/opers.conf; then rm -f %D/%%ETCDIR%%/opers.conf; fi
+%%ETCDIR%%/examples/opers.conf.example
+@exec if [ ! -f %B/opers.conf ] ; then cp -p %D/%F %B/opers.conf; fi
 @dirrmtry %%ETCDIR%%
+@unexec echo "If permanently removing software, you may wish to remove the configuration directory by running \"rm -rf %%LOCALBASE%%/%%ETCDIR%%\""
