@@ -6,6 +6,7 @@
 %%DATADIR%%/dictionary.compat
 %%DATADIR%%/dictionary.livingston
 %%DATADIR%%/dictionary.quintum
+%%DATADIR%%/dictionary.rfc2869
 %%DATADIR%%/dictionary.shiva
 %%DATADIR%%/dictionary.tunnel
 %%DATADIR%%/dictionary.usr
