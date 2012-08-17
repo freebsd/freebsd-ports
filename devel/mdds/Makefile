@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mdds
-PORTVERSION=	0.5.4
-PORTREVISION=	1
+PORTVERSION=	0.6.0
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -24,9 +23,11 @@ NO_BUILD=	yes
 
 do-install:
 	@${MKDIR} ${PREFIX}/include/mdds
-	@${MKDIR} ${PREFIX}/include//mdds/hash_container
+	@${MKDIR} ${PREFIX}/include/mdds/compat
+	@${MKDIR} ${PREFIX}/include/mdds/hash_container
 	@${INSTALL_DATA} ${WRKSRC}/include/mdds/*.hpp ${PREFIX}/include/mdds
 	@${INSTALL_DATA} ${WRKSRC}/include/mdds/*.inl ${PREFIX}/include/mdds
+	@${INSTALL_DATA} ${WRKSRC}/include/mdds/compat/*.hpp ${PREFIX}/include/mdds/compat
 	@${INSTALL_DATA} ${WRKSRC}/include/mdds/hash_container/*.hpp ${PREFIX}/include/mdds/hash_container
 
 .include <bsd.port.mk>
