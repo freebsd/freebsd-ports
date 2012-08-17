@@ -24,35 +24,40 @@ SHAREOWN=	${USERS}
 SHAREGRP=	${SHAREOWN}
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
-OPTIONS=	8K           "Install 8000Hz Music" on \
-		16K          "Install 16000Hz Music" on \
-		32K          "Install 32000Hz Music" on \
-		48K          "Install 48000Hz Music" on
+OPTIONS_DEFINE=	8K 16K 32K 48K
+
+8K_DESC=	8000Hz Music
+16K_DESC=	16000Hz Music
+32K_DESC=	32000Hz Music
+48K_DESC=	48000Hz Music
+
+OPTIONS_DEFAULT=	8K 16K
+NO_OPTIONS_SORT=	yes
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_8K)
+.if ${PORT_OPTIONS:M8K}
 DISTFILES+=	freeswitch-sounds-music-8000-${DISTVERSION}${EXTRACT_SUFX}
 .endif
 
-.if defined(WITH_16K)
+.if ${PORT_OPTIONS:M16K}
 DISTFILES+=	freeswitch-sounds-music-16000-${DISTVERSION}${EXTRACT_SUFX}
 .endif
 
-.if defined(WITH_32K)
+.if ${PORT_OPTIONS:M32K}
 DISTFILES+=	freeswitch-sounds-music-32000-${DISTVERSION}${EXTRACT_SUFX}
 .endif
 
-.if defined(WITH_48K)
+.if ${PORT_OPTIONS:M48K}
 DISTFILES+=	freeswitch-sounds-music-48000-${DISTVERSION}${EXTRACT_SUFX}
 .endif
 
-.for i in 8K 16K 32K 48K
-.  if !defined(WITH_${i})
-PLIST_SUB+=	WITH_${i}="@comment "
-.  else
-PLIST_SUB+=	WITH_${i}=""
-.  endif
+.for opt in ${ALL_OPTIONS}
+.if $(PORT_OPTIONS:M${opt})
+PLIST_SUB+=	${opt}=""
+.else
+PLIST_SUB+=	${opt}="@comment "
+.endif
 .endfor
 
 do-install:
