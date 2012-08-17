@@ -26,6 +26,8 @@ AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 PORTDOCS=	${PORTNAME}.html
 
+PORTSCOUT=	limit:^1\.1\.
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/
