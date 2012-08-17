@@ -145,6 +145,8 @@ lib/lives/plugins/effects/realtime/weed/tone_gen.la
 lib/lives/plugins/effects/realtime/weed/tone_gen.so
 lib/lives/plugins/effects/realtime/weed/tvpic.la
 lib/lives/plugins/effects/realtime/weed/tvpic.so
+lib/lives/plugins/effects/realtime/weed/vector_visualiser.la
+lib/lives/plugins/effects/realtime/weed/vector_visualiser.so
 lib/lives/plugins/effects/realtime/weed/vertigo.la
 lib/lives/plugins/effects/realtime/weed/vertigo.so
 lib/lives/plugins/effects/realtime/weed/videowall.la
