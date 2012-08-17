@@ -6,6 +6,7 @@ lib/weechat/plugins/irc.so
 lib/weechat/plugins/logger.so
 lib/weechat/plugins/relay.so
 lib/weechat/plugins/rmodifier.so
+lib/weechat/plugins/script.so
 lib/weechat/plugins/xfer.so
 libdata/pkgconfig/weechat.pc
 %%ASPELL%%lib/weechat/plugins/aspell.so
