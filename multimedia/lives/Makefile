@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lives
-PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTVERSION=	1.6.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://salsaman.home.xs4all.nl/lives/current/
 DISTNAME=	LiVES-${PORTVERSION}
@@ -18,16 +17,30 @@ COMMENT=	Video editing system
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
-		oil-0.3.0:${PORTSDIR}/devel/liboil \
-		visual-0.4.0:${PORTSDIR}/graphics/libvisual04 \
-		dv.4:${PORTSDIR}/multimedia/libdv \
-		theora.0:${PORTSDIR}/multimedia/libtheora \
-		mjpegutils-2.0.0:${PORTSDIR}/multimedia/mjpegtools \
+LIB_DEPENDS=	asound:${PORTSDIR}/audio/alsa-lib \
+		jack:${PORTSDIR}/audio/jack \
+		ogg:${PORTSDIR}/audio/libogg \
+		vorbis:${PORTSDIR}/audio/libvorbis \
 		pulse:${PORTSDIR}/audio/pulseaudio \
+		oil-0.3.0:${PORTSDIR}/devel/liboil \
+		pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
+		orc-0.4:${PORTSDIR}/devel/orc \
+		pcre:${PORTSDIR}/devel/pcre \
+		aa:${PORTSDIR}/graphics/aalib \
+		cairo:${PORTSDIR}/graphics/cairo \
+		visual-0.4.0:${PORTSDIR}/graphics/libvisual04 \
+		png15:${PORTSDIR}/graphics/png \
+		avcodec:${PORTSDIR}/multimedia/ffmpeg \
+		dv:${PORTSDIR}/multimedia/libdv \
+		theora:${PORTSDIR}/multimedia/libtheora \
+		vpx:${PORTSDIR}/multimedia/libvpx \
+		mjpegutils-2.0.0:${PORTSDIR}/multimedia/mjpegtools \
 		schroedinger-1.0:${PORTSDIR}/multimedia/schroedinger \
-		asound:${PORTSDIR}/audio/alsa-lib \
-		avcodec:${PORTSDIR}/multimedia/ffmpeg
+		xvidcore:${PORTSDIR}/multimedia/xvid \
+		freetype:${PORTSDIR}/print/freetype2 \
+		expat:${PORTSDIR}/textproc/expat2 \
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
+		xcb:${PORTSDIR}/x11/libxcb
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 		sox:${PORTSDIR}/audio/sox \
 		ogg123:${PORTSDIR}/audio/vorbis-tools \
@@ -45,13 +58,17 @@ WRKSRC=		${WRKDIR}/${DISTNAME:L}
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gtk20 gnomehack
+USE_ICONV=	yes
+USE_GNOME=	gtk20 gnomehack gdkpixbuf2
 USE_SDL=	sdl
 USE_PYTHON=	yes
 USE_PERL5=	yes
 USE_CDRTOOLS=	yes
 USE_GHOSTSCRIPT_RUN=	yes
 GNU_CONFIGURE=	yes
+USE_PKGCONFIG=	build
+USE_XORG=	pixman x11 xau xcomposite xcursor xdamage xdmcp xext xfixes \
+		xi xinerama xrandr xrender
 MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--disable-ldvgrab
