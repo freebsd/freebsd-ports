@@ -1,19 +1,12 @@
-
-$FreeBSD$
-
---- setup.py.orig
-+++ setup.py
-@@ -37,13 +37,8 @@
-     url = "http://www.bpython-interpreter.org/",
-     long_description = """bpython is a fancy interface to the Python
-     interpreter for Unix-like operating systems.""",
--    install_requires = [
--        'pygments'
--    ],
-     packages = ["bpython", "bpdb"],
-     data_files = [
--        (os.path.join(man_dir, 'man1'), ['doc/bpython.1']),
--        (os.path.join(man_dir, 'man5'), ['doc/bpython-config.5']),
-         ('share/applications', ['data/bpython.desktop'])
-     ],
-     package_data = {'bpython': ['logo.png']},
+--- setup.py.orig	2012-04-20 19:35:36.898907237 +0600
++++ setup.py	2012-04-20 19:35:49.460978953 +0600
+@@ -56,9 +56,6 @@
+     man_dir = 'share/man'
+ 
+ data_files = [
+-    # man pages
+-    (os.path.join(man_dir, 'man1'), ['doc/bpython.1']),
+-    (os.path.join(man_dir, 'man5'), ['doc/bpython-config.5']),
+     # desktop shortcut
+     (os.path.join('share', 'applications'), ['data/bpython.desktop'])
+ ]
