@@ -102,6 +102,7 @@
     SUBDIR += skrooge
     SUBDIR += sql-ledger
     SUBDIR += tinyerp-server
+    SUBDIR += tryton
     SUBDIR += trytond
     SUBDIR += trytond_product
     SUBDIR += venice
