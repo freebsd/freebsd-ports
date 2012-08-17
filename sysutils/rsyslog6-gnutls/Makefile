@@ -14,6 +14,8 @@ MNAME=	gnutls
 LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls \
 		gcrypt.18:${PORTSDIR}/security/libgcrypt
 
+USE_PKGCONFIG=	yes
+
 CONFIGURE_ARGS+=--enable-gnutls
 
 PLIST_FILES+=	lib/rsyslog/lmnsd_gtls.la \
