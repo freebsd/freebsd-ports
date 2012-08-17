@@ -1021,6 +1021,7 @@
     SUBDIR += xflame
     SUBDIR += xfrisk
     SUBDIR += xgalaga
+    SUBDIR += xgalaga++
     SUBDIR += xglk
     SUBDIR += xgospel
     SUBDIR += xhexagons
