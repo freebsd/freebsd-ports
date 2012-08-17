@@ -7,7 +7,7 @@
 
 PORTNAME=	weechat
 PORTVERSION=	0.3.8
-PORTREVISION=	2	
+PORTREVISION=	3	
 CATEGORIES=	irc
 MASTER_SITES=	http://weechat.org/files/src/
 
