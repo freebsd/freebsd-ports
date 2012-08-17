@@ -44,7 +44,7 @@ SUB_LIST=	TOOLS_VSN=${TOOLS_VSN}
 
 MAKE_JOBS_UNSAFE=yes
 
-OPTIONS_DEFINE=	DOCS GS HIPE JAVA KQUEUE ODBC OPENSSL SCTP SMP THREADS WX
+OPTIONS_DEFINE=	DOCS GS HIPE JAVA KQUEUE ODBC OPENSSL SCTP SMP THREADS WX DTRACE
 OPTIONS_SINGLE=	ODBC
 OPTIONS_SINGLE_ODBC=	IODBC UNIXODBC
 
@@ -54,10 +54,25 @@ SCTP_DESC=	Enable SCTP support
 SMP_DESC=	Enable SMP support
 WX_DESC=	Enable WX application
 GS_DESC=	Enable GS application (deprecated)
+DTRACE_DESC=	Enable DTrace support (experimental)
 
 OPTIONS_DEFAULT=SMP OPENSSL THREADS SCTP KQUEUE
 
 .include <bsd.port.options.mk>
+
+# See http://wiki.freebsd.org/DTrace to learn how to enable DTrace
+# on your system. You will need to configure STRIP, WITH_CTF and
+# CFLAGS in your make.conf before building.
+
+# If you run Erlang and get a message resembling "WARNING: number of
+# probes fixed does not match the number of defined probes (54 != 132,
+# respectively)" you probably misconfigured DTrace in some way.
+
+.if ${PORT_OPTIONS:MDTRACE}
+CONFIGURE_ARGS+=--with-dynamic-trace=dtrace
+.else
+CONFIGURE_ARGS+=--without-dynamic-trace
+.endif
 
 .if ${PORT_OPTIONS:MOPENSSL}
 USE_OPENSSL=	yes
