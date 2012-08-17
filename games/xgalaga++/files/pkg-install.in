@@ -1,0 +1,7 @@
+#!/bin/sh
+
+FILE="/var/games/xgalaga++.scores"
+
+touch $FILE
+chgrp games $FILE
+chmod 664 $FILE
