@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120817:
+  AFFECTS: users of games/unnethack
+  AUTHOR:  knu@FreeBSD.org
+
+  The place for variable files has changed from
+  $PREFIX/share/unnethack to $PREFIX/var/games/unnethack.  To keep
+  your saved files and game records, please manually move the
+  following files and directories to the new directory after
+  upgrading.
+
+    logfile
+    perm
+    record
+    xlogfile
+    bones/
+    level/
+    saves/
+
 20120816:
   AFFECTS: users of sysutils/cfengine*
   AUTHOR:  gjb@FreeBSD.org

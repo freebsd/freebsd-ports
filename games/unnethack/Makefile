@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unnethack
-PORTVERSION=	3.5.3.20101010
+PORTVERSION=	4.0.0.20120401
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 
@@ -17,28 +17,31 @@ COMMENT=	A new variant of NetHack
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+MAKE_JOBS_UNSAFE=	yes
+
+VARDIR_REL=	var/games/${PORTNAME}
+VARDIR=		${PREFIX}/${VARDIR_REL}
+CONFIGURE_ARGS=	--datadir="${DATADIR:H}" --localstatedir="${VARDIR:H}" --docdir="${DOCSDIR:H}" \
+		--with-owner=games --with-group=games \
+		--enable-data-librarian
+MAKE_ARGS=	FILEPERM=0664 \
+		VARFILEPERM=0664 \
+		VARDIRPERM=0775
+INSTALL_TARGET=	install manpages
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-SUB_FILES+=	pkg-deinstall
+SUB_FILES=	pkg-deinstall
+SUB_LIST=	VARDIR="${VARDIR}"
+PLIST_SUB=	VARDIR="${VARDIR_REL}"
 # This port accually conflicts with other nethack variant ports on
 # these commands that are only significant for those who want to
 # "hack" the game in deep.
 MAN6=		dgn_comp.6 dlb.6 lev_comp.6 recover.6 ${PORTNAME}.6
-MAKE_JOBS_UNSAFE=	yes
-
-MAKE_ENV+=	DATADIR="${DATADIR}"
 
 post-patch:
-	${REINPLACE_CMD} -e \
-		"s@%%DATADIR%%@${DATADIR}@g" ${WRKSRC}/include/config.h
 	${MV} ${WRKSRC}/doc/nethack.6 ${WRKSRC}/doc/${PORTNAME}.6
 
 post-install:
-	@cd ${WRKSRC}/doc; ${CHMOD} 644 *.6
-	@(cd ${WRKSRC}/doc; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
-		${MAKEFILE} ${MAKE_ARGS} manpages)
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${LN} -sf ${PREFIX}/share/${PORTNAME}/Guidebook.txt ${DOCSDIR}/
 	${INSTALL_DATA} ${FILESDIR}/sample.unnethackrc ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
