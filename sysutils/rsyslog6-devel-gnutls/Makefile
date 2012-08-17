@@ -5,14 +5,14 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	2
-
 COMMENT=	GNUTLS module for rsyslog
 MASTERDIR=	${.CURDIR}/../rsyslog6-devel
 
 MNAME=	gnutls
 LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls \
 		gcrypt.18:${PORTSDIR}/security/libgcrypt
+
+USE_PKGCONFIG=	yes
 
 CONFIGURE_ARGS+=--enable-gnutls
 
