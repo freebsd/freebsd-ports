@@ -1,5 +1,6 @@
 %%WWWDIR%%/LEGALNOTICE
 %%WWWDIR%%/README
+%%WWWDIR%%/composer.json
 %%WWWDIR%%/config/config.ini.sample.php
 %%WWWDIR%%/config/global.ini.php
 %%WWWDIR%%/config/manifest.inc.php
@@ -166,6 +167,7 @@
 %%WWWDIR%%/core/Tracker/Action.php
 %%WWWDIR%%/core/Tracker/Config.php
 %%WWWDIR%%/core/Tracker/Db.php
+%%WWWDIR%%/core/Tracker/Db/Exception.php
 %%WWWDIR%%/core/Tracker/Db/Mysqli.php
 %%WWWDIR%%/core/Tracker/Db/Pdo/Mysql.php
 %%WWWDIR%%/core/Tracker/Db/Pdo/Pgsql.php
@@ -223,6 +225,7 @@
 %%WWWDIR%%/core/Updates/1.7-b1.php
 %%WWWDIR%%/core/Updates/1.7.2-rc5.php
 %%WWWDIR%%/core/Updates/1.7.2-rc7.php
+%%WWWDIR%%/core/Updates/1.8.3-b1.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/Version.php
 %%WWWDIR%%/core/View.php
@@ -967,6 +970,8 @@
 %%WWWDIR%%/libs/tcpdf/fonts/helveticabi.php
 %%WWWDIR%%/libs/tcpdf/fonts/helveticai.php
 %%WWWDIR%%/libs/tcpdf/fonts/hysmyeongjostdmedium.php
+%%WWWDIR%%/libs/tcpdf/fonts/kozminproregular.php
+%%WWWDIR%%/libs/tcpdf/fonts/kozgopromedium.php
 %%WWWDIR%%/libs/tcpdf/fonts/msungstdlight.php
 %%WWWDIR%%/libs/tcpdf/fonts/stsongstdlight.php
 %%WWWDIR%%/libs/tcpdf/fonts/symbol.php
@@ -995,6 +1000,24 @@
 %%WWWDIR%%/misc/cron/archive.sh
 %%WWWDIR%%/misc/cron/archive.windows.ps1
 %%WWWDIR%%/misc/crossdomain.xml
+%%WWWDIR%%/misc/deploy/puppet/modules/piwik/CHANGELOG
+%%WWWDIR%%/misc/deploy/puppet/modules/piwik/LICENSE
+%%WWWDIR%%/misc/deploy/puppet/modules/piwik/Modulefile
+%%WWWDIR%%/misc/deploy/puppet/modules/piwik/README.md
+%%WWWDIR%%/misc/deploy/puppet/modules/piwik/files/etc/php5/conf.d/mysqli.ini
+%%WWWDIR%%/misc/deploy/puppet/modules/piwik/files/etc/php5/conf.d/pdo.ini
+%%WWWDIR%%/misc/deploy/puppet/modules/piwik/files/etc/php5/conf.d/pdo_mysql.ini
+%%WWWDIR%%/misc/deploy/puppet/modules/piwik/manifests/apache.pp
+%%WWWDIR%%/misc/deploy/puppet/modules/piwik/manifests/base.pp
+%%WWWDIR%%/misc/deploy/puppet/modules/piwik/manifests/db.pp
+%%WWWDIR%%/misc/deploy/puppet/modules/piwik/manifests/init.pp
+%%WWWDIR%%/misc/deploy/puppet/modules/piwik/manifests/loganalytics.pp
+%%WWWDIR%%/misc/deploy/puppet/modules/piwik/manifests/nginx.pp
+%%WWWDIR%%/misc/deploy/puppet/modules/piwik/manifests/params.pp
+%%WWWDIR%%/misc/deploy/puppet/modules/piwik/manifests/php.pp
+%%WWWDIR%%/misc/deploy/puppet/modules/piwik/manifests/repo.pp
+%%WWWDIR%%/misc/deploy/puppet/site.pp
+%%WWWDIR%%/misc/deploy/vagrant/precise64/Vagrantfile
 %%WWWDIR%%/misc/download-count.txt
 %%WWWDIR%%/misc/generateDoc.bat
 %%WWWDIR%%/misc/generateDoc.sh
@@ -1247,6 +1270,23 @@
 %%WWWDIR%%/plugins/Login/templates/lostPassword.tpl
 %%WWWDIR%%/plugins/Login/templates/passwordchanged.tpl
 %%WWWDIR%%/plugins/Login/templates/passwordsent.tpl
+%%WWWDIR%%/plugins/MobileMessaging/API.php
+%%WWWDIR%%/plugins/MobileMessaging/APIException.php
+%%WWWDIR%%/plugins/MobileMessaging/Controller.php
+%%WWWDIR%%/plugins/MobileMessaging/CountryCallingCodes.php
+%%WWWDIR%%/plugins/MobileMessaging/GSMCharset.php
+%%WWWDIR%%/plugins/MobileMessaging/MobileMessaging.php
+%%WWWDIR%%/plugins/MobileMessaging/ReportRenderer/Exception.php
+%%WWWDIR%%/plugins/MobileMessaging/ReportRenderer/Sms.php
+%%WWWDIR%%/plugins/MobileMessaging/SMSProvider/Clockwork.php
+%%WWWDIR%%/plugins/MobileMessaging/SMSProvider.php
+%%WWWDIR%%/plugins/MobileMessaging/images/Clockwork.png
+%%WWWDIR%%/plugins/MobileMessaging/images/phone.png
+%%WWWDIR%%/plugins/MobileMessaging/lang/en.php
+%%WWWDIR%%/plugins/MobileMessaging/scripts/MobileMessagingSettings.js
+%%WWWDIR%%/plugins/MobileMessaging/templates/ReportParameters.tpl
+%%WWWDIR%%/plugins/MobileMessaging/templates/SMSReport.tpl
+%%WWWDIR%%/plugins/MobileMessaging/templates/Settings.tpl
 %%WWWDIR%%/plugins/Login/templates/resetPassword.tpl
 %%WWWDIR%%/plugins/MultiSites/API.php
 %%WWWDIR%%/plugins/MultiSites/CalculateEvolutionFilter.php
@@ -1275,6 +1315,7 @@
 %%WWWDIR%%/plugins/PDFReports/templates/index.tpl
 %%WWWDIR%%/plugins/PDFReports/templates/list.tpl
 %%WWWDIR%%/plugins/PDFReports/templates/pdf.js
+%%WWWDIR%%/plugins/PDFReports/templates/report_parameters.tpl
 %%WWWDIR%%/plugins/PrivacyManager/Controller.php
 %%WWWDIR%%/plugins/PrivacyManager/PrivacyManager.php
 %%WWWDIR%%/plugins/PrivacyManager/LogDataPurger.php
@@ -2057,6 +2098,7 @@
 %%WWWDIR%%/themes/default/images/ok.png
 %%WWWDIR%%/themes/default/images/page_border_grad.png
 %%WWWDIR%%/themes/default/images/plus.png
+%%WWWDIR%%/themes/default/images/refresh.png
 %%WWWDIR%%/themes/default/images/row_evolution.png
 %%WWWDIR%%/themes/default/images/search_bg.png
 %%WWWDIR%%/themes/default/images/search_ico.png
@@ -2142,6 +2184,13 @@
 @dirrm %%WWWDIR%%/plugins/MultiSites/templates
 @dirrm %%WWWDIR%%/plugins/MultiSites/images
 @dirrm %%WWWDIR%%/plugins/MultiSites
+@dirrm %%WWWDIR%%/plugins/MobileMessaging/templates
+@dirrm %%WWWDIR%%/plugins/MobileMessaging/scripts
+@dirrm %%WWWDIR%%/plugins/MobileMessaging/lang
+@dirrm %%WWWDIR%%/plugins/MobileMessaging/images
+@dirrm %%WWWDIR%%/plugins/MobileMessaging/SMSProvider
+@dirrm %%WWWDIR%%/plugins/MobileMessaging/ReportRenderer
+@dirrm %%WWWDIR%%/plugins/MobileMessaging
 @dirrm %%WWWDIR%%/plugins/Login/templates
 @dirrm %%WWWDIR%%/plugins/Login
 @dirrm %%WWWDIR%%/plugins/Live/templates/scripts
@@ -2197,8 +2246,19 @@
 @dirrm %%WWWDIR%%/plugins/API
 @dirrm %%WWWDIR%%/plugins
 @dirrm %%WWWDIR%%/misc/proxy-hide-piwik-url
-@dirrm %%WWWDIR%%/misc/cron
 @dirrm %%WWWDIR%%/misc/log-analytics
+@dirrm %%WWWDIR%%/misc/deploy/vagrant/precise64
+@dirrm %%WWWDIR%%/misc/deploy/vagrant
+@dirrm %%WWWDIR%%/misc/deploy/puppet/modules/piwik/manifests
+@dirrm %%WWWDIR%%/misc/deploy/puppet/modules/piwik/files/etc/php5/conf.d
+@dirrm %%WWWDIR%%/misc/deploy/puppet/modules/piwik/files/etc/php5
+@dirrm %%WWWDIR%%/misc/deploy/puppet/modules/piwik/files/etc
+@dirrm %%WWWDIR%%/misc/deploy/puppet/modules/piwik/files
+@dirrm %%WWWDIR%%/misc/deploy/puppet/modules/piwik
+@dirrm %%WWWDIR%%/misc/deploy/puppet/modules
+@dirrm %%WWWDIR%%/misc/deploy/puppet
+@dirrm %%WWWDIR%%/misc/deploy
+@dirrm %%WWWDIR%%/misc/cron
 @dirrm %%WWWDIR%%/misc
 @dirrm %%WWWDIR%%/libs/upgradephp
 @dirrm %%WWWDIR%%/libs/tcpdf/fonts
