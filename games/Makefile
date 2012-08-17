@@ -345,6 +345,7 @@
     SUBDIR += gomoku
     SUBDIR += gondola
     SUBDIR += goonies
+    SUBDIR += gottet
     SUBDIR += gracer
     SUBDIR += greed
     SUBDIR += gretools
