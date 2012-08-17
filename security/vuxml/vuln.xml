@@ -52,6 +52,43 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="db1d3340-e83b-11e1-999b-e0cb4e266481">
+    <topic>phpMyAdmin -- Multiple XSS in Table operations, Database structure, Trigger and Visualize GIS data pages</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><lt>3.5.2.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2012-4.php">
+	  <p>Using a crafted table name, it was possible to produce a
+	    XSS : 1) On the Database Structure page, creating a new
+	    table with a crafted name 2) On the Database Structure page,
+	    using the Empty and Drop links of the crafted table name 3)
+	    On the Table Operations page of a crafted table, using the
+	    'Empty the table (TRUNCATE)' and 'Delete the table (DROP)'
+	    links 4) On the Triggers page of a database containing
+	    tables with a crafted name, when opening the 'Add Trigger'
+	    popup 5) When creating a trigger for a table with a crafted
+	    name, with an invalid definition. Having crafted data in a
+	    database table, it was possible to produce a XSS : 6) When
+	    visualizing GIS data, having a crafted label name.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-4345</cvename>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2012-4.php</url>
+    </references>
+    <dates>
+      <discovery>2012-08-12</discovery>
+      <entry>2012-08-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="48bcb4b2-e708-11e1-a59d-000d601460a4">
     <topic>typo3 -- Multiple vulernabilities in TYPO3 Core</topic>
     <affects>
