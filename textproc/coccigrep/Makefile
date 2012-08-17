@@ -20,8 +20,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/spatch:${PORTSDIR}/devel/coccinelle
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 MANCOMPRESSED=	no
-PLIST_SUB=	VERSION=${PORTVERSION} \
-		PY_VER=${PYTHON_VERSION:S/python//}
 
 MAN1=		coccigrep.1
 
