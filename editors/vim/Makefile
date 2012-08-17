@@ -156,7 +156,7 @@ USE_GNOME=	libgnomeui
 PKGNAMESUFFIX=	-gnome2
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gnome2" ${I18N}
 MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
-USE_XORG+=	xt
+USE_XORG+=	xt glproto
 .  elif defined(WITH_MOTIF)
 USE_MOTIF=	yes
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=motif --with-motif-lib=\"${MOTIFLIB}\"" MOTIFHOME=${LOCALBASE} ${I18N}
