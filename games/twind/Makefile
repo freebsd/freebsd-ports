@@ -15,14 +15,19 @@ COMMENT=	Match and remove all of the blocks before time runs out
 
 LICENSE=	GPLv2
 
+OPTIONS_DEFINE=	DATA
+OPTIONS_DEFAULT=	DATA
+
 USE_SDL=	sdl image mixer
 MAKE_JOBS_SAFE=	yes
 
-PLIST_FILES=	bin/twind \
+PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png
 
 PORTDATA=	*
 PORTDOCS=	AUTHORS CREDITS ChangeLog NEWS README TODO
+
+.include <bsd.port.options.mk>
 
 do-build:
 	cd ${WRKSRC} && ${CC} -o ${PORTNAME} ${CFLAGS} \
@@ -31,17 +36,22 @@ do-build:
 do-install:
 # Executable
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-# Pixmaps
-	${INSTALL_DATA} ${WRKSRC}/graphics/twind.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
+
 # Data
+.if ${PORT_OPTIONS:MDATA}
 	${MKDIR} ${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "graphics music sound" ${DATADIR})
+.endif
+
+# Pixmaps
+	${INSTALL_DATA} ${WRKSRC}/graphics/${PORTNAME}.png ${PREFIX}/share/pixmaps/
+
 # Documentation
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
+.  for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+.  endfor
 .endif
 
 .include <bsd.port.mk>
