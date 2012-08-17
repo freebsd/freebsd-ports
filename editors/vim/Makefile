@@ -10,10 +10,10 @@ PORTNAME?=	vim
 #		! _NEVER_ reduce or lower PATCHLEVEL, even if the PATCHLEVEL
 #		! value # is added to BADPATCHES.  Doing otherwise will cause
 #		! PORTEPOCH to be needed, which we do NOT want.
-PATCHLEVEL=	556
+PATCHLEVEL=	632
 PORTVERSION=	7.3.${PATCHLEVEL}
 RELEASE=	vim-${PORTVERSION:C/\.[0-9a-z]*$//}
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES?=	editors
 MASTER_SITES=	${MASTER_SITE_VIM}
 DISTFILES=	${RELEASE}${EXTRACT_SUFX}
@@ -23,7 +23,7 @@ PATCH_SITES=	${MASTER_SITES:S|unix|patches/${PORTVERSION:C/\.[0-9a-z]*$//}|}\
 PATCHFILES!=	/usr/bin/jot -s " " -w ${PORTVERSION:C/\.[0-9]*$//}.%03d  \
 			${PATCHLEVEL} 1 ${PATCHLEVEL}
 #	bits to remove
-BADPATCHES=	122 225 235 246 247 252 253 336 386 387 400 434 487 491 527
+BADPATCHES=	122 225 235 246 247 252 253 336 386 387 400 434 487 491 527 569 578 579 580 581 583 584 603 611 629
 .for p in ${BADPATCHES}
 PATCHFILES:=	${PATCHFILES:N7.3.${p}}
 .endfor
@@ -260,7 +260,7 @@ find-bad-patches:
 		vim/${PORTVERSION:C/\.[0-9a-z]*$//}*
 
 ckp:
-	${MAKE} -DPATCH_DEBUG clean patch
+	/usr/bin/time -h ${MAKE} -DPATCH_DEBUG clean patch
 
 ckmtree:
 	${MTREE_CMD} -f ${MTREE_FILE} -p ${PREFIX}
