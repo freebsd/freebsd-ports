@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	poudriere
-PORTVERSION=	1.5.99.20120816
+PORTVERSION=	1.5.99.20120817
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://fossil.etoilebsd.net/poudriere/tarball/
 
@@ -15,7 +15,7 @@ COMMENT=	Port build and test system
 
 LICENSE=	BSD
 
-FSL_CHKIN=	3f24277d18
+FSL_CHKIN=	d000cd0980
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz?uuid=${FSL_CHKIN}
 PKGNAMESUFFIX=	-devel
 
