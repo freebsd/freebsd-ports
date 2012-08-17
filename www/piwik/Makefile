@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	piwik
-PORTVERSION=	1.8.2
+PORTVERSION=	1.8.3
 CATEGORIES=	www
 MASTER_SITES=	http://builds.piwik.org/
 
@@ -14,7 +14,6 @@ MAINTAINER=	hans@nordhaug.priv.no
 COMMENT=	A Open Source Web Analytics Software Program
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/misc/gpl-3.0.txt
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
@@ -37,7 +36,9 @@ USE_PHP+=	pdo_mysql
 .endif
 
 post-patch:
-	@cd ${WRKSRC}/misc/log-analytics && ${RM} -rf import_logs.py.orig
+	@${REINPLACE_CMD} -e 's|/usr/bin/python|${LOCALBASE}/bin/python|' \
+		${WRKSRC}/misc/log-analytics/import_logs.py
+	@${RM} ${WRKSRC}/misc/log-analytics/import_logs.py.bak
 
 pre-install:
 	@if [ ! -f ${LOCALBASE}/bin/php ]; then \
