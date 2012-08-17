@@ -52,6 +52,52 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="07234e78-e899-11e1-b38d-0023ae8e59f0">
+    <topic>databases/postgresql*-server -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>postgresql-server</name>
+	<range><gt>8.3.*</gt><lt>8.3.20</lt></range>
+	<range><gt>8.4.*</gt><lt>8.4.13</lt></range>
+	<range><gt>9.0.*</gt><lt>9.0.9</lt></range>
+	<range><gt>9.1.*</gt><lt>9.1.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PostgreSQL Global Development Group reports:</p>
+	<blockquote cite="http://www.postgresql.org/about/news/1407/">
+	  <p>The PostgreSQL Global Development Group today released
+	    security updates for all active branches of the PostgreSQL
+	    database system, including versions 9.1.5, 9.0.9, 8.4.13 and
+	    8.3.20. This update patches security holes associated with
+	    libxml2 and libxslt, similar to those affecting other open
+	    source projects. All users are urged to update their
+	    installations at the first available opportunity</p>
+	  <p>Users who are relying on the built-in XML functionality to
+	    validate external DTDs will need to implement a workaround, as
+	    this security patch disables that functionality. Users who are
+	    using xslt_process() to fetch documents or stylesheets from
+	    external URLs will no longer be able to do so. The PostgreSQL
+	    project regrets the need to disable both of these features in
+	    order to maintain our security standards. These security issues
+	    with XML are substantially similar to issues patched recently
+	    by the Webkit (CVE-2011-1774), XMLsec (CVE-2011-1425) and PHP5
+	    (CVE-2012-0057) projects.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-3488</cvename>
+      <cvename>CVE-2012-3489</cvename>
+      <url>http://www.postgresql.org/about/news/1407/</url>
+    </references>
+    <dates>
+      <discovery>2012-08-17</discovery>
+      <entry>2012-08-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="db1d3340-e83b-11e1-999b-e0cb4e266481">
     <topic>phpMyAdmin -- Multiple XSS in Table operations, Database structure, Trigger and Visualize GIS data pages</topic>
     <affects>
