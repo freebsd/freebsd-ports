@@ -1,6 +1,8 @@
---- include/config.h.orig	2010-10-10 21:46:00.000000000 +0900
-+++ include/config.h	2011-01-22 01:34:41.205152954 +0900
-@@ -188,7 +188,7 @@
+$FreeBSD$
+
+--- include/config.h.orig	2012-04-01 23:34:10.000000000 +0900
++++ include/config.h	2012-08-17 16:37:54.135991792 +0900
+@@ -191,7 +191,7 @@
  /* #define COMPRESS "/usr/bin/compress" */	/* Lempel-Ziv compression */
  /* #define COMPRESS_EXTENSION ".Z"	*/	/* compress's extension */
  /* An example of one alternative you might want to use: */
@@ -9,21 +11,3 @@
  #define COMPRESS_EXTENSION ".gz"		/* normal gzip extension */
  #endif
  
-@@ -202,7 +202,7 @@
-  *	a tar-like file, thus making a neater installation.  See *conf.h
-  *	for detailed configuration.
-  */
--/* #define DLB */	/* not supported on all platforms */
-+#define DLB	/* not supported on all platforms */
- 
- /*
-  *	Defining INSURANCE slows down level changes, but allows games that
-@@ -221,7 +221,7 @@
-  * otherwise it will be the current directory.
-  */
- # ifndef HACKDIR
--#  define HACKDIR "/usr/games/lib/unnethackdir"
-+#  define HACKDIR "%%DATADIR%%"
- # endif
- 
- /*

@@ -1,19 +1,16 @@
 bin/unnethack
-%%DATADIR%%/Guidebook.txt
-%%DATADIR%%/license
-%%DATADIR%%/logfile
 %%DATADIR%%/nhdat
-%%DATADIR%%/perm
-%%DATADIR%%/record
 %%DATADIR%%/recover
 %%DATADIR%%/unnethack
-%%DATADIR%%/xlogfile
-@exec mkdir %D/%%DATADIR%%/save
-@exec chmod -R 775 %D/%%DATADIR%%
-@exec chmod 2755 %D/%%DATADIR%%/save
-@exec chown games:games %D/%%DATADIR%%/save
-@dirrmtry %%DATADIR%%/save
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%%%DOCSDIR%%/Guidebook.txt
+%%VARDIR%%/logfile
+%%VARDIR%%/perm
+%%VARDIR%%/record
+%%VARDIR%%/xlogfile
+@dirrmtry %%VARDIR%%/bones
+@dirrmtry %%VARDIR%%/level
+@dirrmtry %%VARDIR%%/saves
+@unexec rmdir -p %D/%%VARDIR%% 2>/dev/null || true
+%%DOCSDIR%%/Guidebook.txt
+%%DOCSDIR%%/license
 %%PORTDOCS%%%%DOCSDIR%%/sample.unnethackrc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DOCSDIR%%
