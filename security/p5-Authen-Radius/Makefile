@@ -7,6 +7,7 @@
 
 PORTNAME=	Authen-Radius
 PORTVERSION=	0.20
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -28,6 +29,7 @@ RADDBFILES=	dictionary \
 		dictionary.compat \
 		dictionary.livingston \
 		dictionary.quintum \
+		dictionary.rfc2869 \
 		dictionary.shiva \
 		dictionary.tunnel \
 		dictionary.usr \
