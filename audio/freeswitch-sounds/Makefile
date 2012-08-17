@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	freeswitch
-DISTVERSION=	1.0.18
-PORTREVISION=	1
+DISTVERSION=	1.0.20
 CATEGORIES=	audio
 MASTER_SITES=	http://files.freeswitch.org/
 PKGNAMESUFFIX=	-sounds
-DIST_SUBDIR=	freeswitch-sounds
+DIST_SUBDIR=	${PORTNAME}${PORTNAMESUFFIX}
 
 MAINTAINER=	r.neese@gmail.com
 COMMENT=	FreeSwitch Sounds (All Bitrates)
@@ -24,36 +23,47 @@ USERS=		${PORTNAME}
 GROUPS=		${USERS}
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
-OPTIONS=	DOWNLOAD	"Don't resample, download all." off \
-		8K		"Compile sounds for 8K" on \
-		16K		"Compile sounds for 16K" on \
-		32K		"Compile sounds for 32K" on \
-		48K		"Compile sounds for 48K" on \
-		ENGLISH		"Compile US English Language Sounds" on \
-		FRENCH		"Compile French Canadian Language Sounds" off \
-		RUSSIAN		"Compile Russian Language Sounds" off
-		
+DOWNLOAD_DESC=	Download Sounds
+8K_DESC=	8000Hz Audio Files
+16K_DESC=	16000Hz Audio Files
+32K_DESC=	32000Hz Audio Files
+48K_DESC=	48000Hz Audio Files
+ENGLISH_DESC=	Compile US English Language Sounds
+FRENCH_DESC=	Compile French Canadian Language Sounds
+RUSSIAN_DESC=	Compile Russian Language Sounds
+
+OPTIONS_DEFINE=	DOWNLOAD
+
+OPTIONS_SINGLE=	LANG
+OPTIONS_SINGLE_LANG=	ENGLISH FRENCH RUSSIAN
+
+OPTIONS_MULTI=	AUDIO
+OPTIONS_MULTI_AUDIO=	8K 16K 32K 48K
+
+OPTIONS_DEFAULT=	8K 16K ENGLISH
+NO_OPTIONS_SORT=	yes
+
 .include <bsd.port.options.mk>
 
-.if ! defined(WITH_DOWNLOAD)
+.if empty(PORT_OPTIONS:MDOWNLOAD)
 BUILD_DEPENDS+=	sox:${PORTSDIR}/audio/sox
 .endif
 
-.if defined(WITH_8K)
+.if ${PORT_OPTIONS:M8K}
 BITRATES+=	8000
 .endif
-.if defined(WITH_16K)
+.if ${PORT_OPTIONS:M16K}
 BITRATES+=	16000
 .endif
-.if defined(WITH_32K)
+.if ${PORT_OPTIONS:M32K}
 BITRATES+=	32000
 .endif
-.if defined(WITH_48K)
+.if ${PORT_OPTIONS:M48K}
 BITRATES+=	48000
 .endif
 
-.if defined(WITH_ENGLISH)
-.if defined(WITH_DOWNLOAD)
+.if ${PORT_OPTIONS:MENGLISH}
+.if ${PORT_OPTIONS:MDOWNLOAD}
 .for rate in ${BITRATES}
 DISTFILES+=	${PORTNAME}${PKGNAMESUFFIX}-en-us-callie-${rate}-${DISTVERSION}${EXTRACT_SUFX}
 .endfor
@@ -61,32 +71,23 @@ DISTFILES+=	${PORTNAME}${PKGNAMESUFFIX}-en-us-callie-${rate}-${DISTVERSION}${EXT
 DISTFILES+=	${PORTNAME}${PKGNAMESUFFIX}-en-us-callie-48000-${DISTVERSION}${EXTRACT_SUFX}
 .endif
 .endif
-.if defined(WITH_FRENCH)
-.if defined(WITH_DOWNLOAD)
+.if ${PORT_OPTIONS:MFRENCH}
+.if ${PORT_OPTIONS:MDOWNLOAD}
 .for rate in ${BITRATES}
-DISTFILES+=	${PORTNAME}${PKGNAMESUFFIX}-fr-ca-june-${rate}-1.0.14${EXTRACT_SUFX}
+DISTFILES+=	${PORTNAME}${PKGNAMESUFFIX}-fr-ca-june-${rate}-1.0.16${EXTRACT_SUFX}
 .endfor
 .else
-DISTFILES+=     ${PORTNAME}${PKGNAMESUFFIX}-fr-ca-june-48000-1.0.14${EXTRACT_SUFX}
+DISTFILES+=	${PORTNAME}${PKGNAMESUFFIX}-fr-ca-june-48000-1.0.16${EXTRACT_SUFX}
 .endif
 .endif
-.if defined(WITH_RUSSIAN)
-.if defined(WITH_DOWNLOAD)
+.if ${PORT_OPTIONS:MRUSSIAN}
+.if ${PORT_OPTIONS:MDOWNLOAD}
 .for rate in ${BITRATES}
-DISTFILES+=	${PORTNAME}${PKGNAMESUFFIX}-ru-RU-elena-${rate}-1.0.12${EXTRACT_SUFX}
+DISTFILES+=	${PORTNAME}${PKGNAMESUFFIX}-ru-RU-elena-${rate}-1.0.13${EXTRACT_SUFX}
 .endfor
 .else
-DISTFILES+=	${PORTNAME}${PKGNAMESUFFIX}-ru-RU-elena-48000-1.0.12${EXTRACT_SUFX}
+DISTFILES+=	${PORTNAME}${PKGNAMESUFFIX}-ru-RU-elena-48000-1.0.13${EXTRACT_SUFX}
 .endif
-.endif
-
-.if ! defined(WITH_ENGLISH) && ! defined(WITH_FRENCH) && ! defined(WITH_RUSSIAN)
-BROKEN=	you must build with atleast English or French or Russian, 
-.endif
-
-.if ! defined(WITH_8K) && ! defined(WITH_16K) && ! defined(WITH_32K) && \
-	! defined(WITH_48K)
-BROKEN=	you must build with at least one of 8K, 16K, 32K, or 48K sounds
 .endif
 
 .if defined(FREESWITCH_VSCALE)
@@ -95,11 +96,19 @@ SCALE=${FREESWITCH_VSCALE}
 SCALE=0.2
 .endif
 
+.for opt in ${ALL_OPTIONS}
+.if $(PORT_OPTIONS:M${opt})
+PLIST_SUB+=     ${opt}=""
+.else
+PLIST_SUB+=     ${opt}="@comment "
+.endif
+.endfor
+
 do-build:
 	@${ECHO_MSG} "===> Building for bitrates: ${BITRATES}"
-	@${ECHO_MSG} "===> Download >>>${WITH_DOWNLOAD}<<<"
+	@${ECHO_MSG} "===> Download >>>${PORT_OPTIONS:MDOWNLOAD}<<<"
 	@${ECHO_MSG} "===> Scaling audio to ${SCALE}"
-	if [ "${WITH_ENGLISH}" != "" -a ! -e "${WRKDIR}/ENGLISH.done" ]; then \
+	if [ -n "${PORT_OPTIONS:MENGLISH}" -a ! -e "${WRKDIR}/ENGLISH.done" ]; then \
 		${ECHO_MSG} "====> English selected."; \
 		for rate in ${BITRATES}; do \
 			${ECHO_MSG} "WORKING on $${rate}!"; \
@@ -108,7 +117,7 @@ do-build:
 				for filename in `ls ${WRKSRC}/en/us/callie/$${dir}/48000`; do \
 					echo "${DATADIR_REL}/sounds/en/us/callie/$${dir}/$${rate}/$${filename}" >> ${PLIST}; \
 					if [ ! -e "${WRKDIR}/tmp/en/us/callie/$${dir}/$${rate}/$${filename}" ]; then \
-						if [ "${WITH_DOWNLOAD}" = "true" ]; then \
+						if [ "${PORT_OPTIONS:MDOWNLOAD}" = "true" ]; then \
 							${ECHO} -n "."; \
 							${MV} ${WRKSRC}/en/us/callie/$${dir}/$${rate}/$${filename} ${WRKDIR}/tmp/en/us/callie/$${dir}/$${rate}/$${filename} ; \
 						else \
@@ -124,7 +133,7 @@ do-build:
 		${TOUCH} ${WRKDIR}/ENGLISH.done; \
 	fi
 
-	if [ "${WITH_FRENCH}" != "" -a ! -e "${WRKDIR}/FRENCH.done" ]; then \
+	if [ -n "${PORT_OPTIONS:MFRENCH}"  -a ! -e "${WRKDIR}/FRENCH.done" ]; then \
 		${ECHO_MSG} "====> French selected."; \
 		for rate in ${BITRATES}; do \
 			${ECHO_MSG} "WORKING on $${rate}!"; \
@@ -133,7 +142,7 @@ do-build:
 					 for filename in `ls ${WRKSRC}/fr/ca/june/$${dir}/48000`; do \
 					echo "${DATADIR_REL}/sounds/fr/ca/june/$${dir}/$${rate}/$${filename}" >> ${PLIST}; \
 					if [ ! -e "${WRKDIR}/tmp/fr/ca/june/$${dir}/$${rate}/$${filename}" ]; then \
-						if [ "${WITH_DOWNLOAD}" = "true" ]; then \
+						if [ "${PORT_OPTIONS:MDOWNLOAD}" = "true" ]; then \
 							${ECHO} -n "."; \
 							${MV} ${WRKSRC}/fr/ca/june/$${dir}/$${rate}/$${filename} ${WRKDIR}/tmp/fr/ca/june/$${dir}/$${rate}/$${filename} ; \
 						else \
@@ -149,7 +158,7 @@ do-build:
 		${TOUCH} ${WRKDIR}/FRENCH.done; \
 	fi
 
-	if [ "${WITH_RUSSIAN}" != "" -a ! -e "${WRKDIR}/RUSSIAN.done" ]; then \
+	if [ -n "${PORT_OPTIONS:MRUSSIAN}" -a ! -e "${WRKDIR}/RUSSIAN.done" ]; then \
 		${ECHO_MSG} "====> Russian selected."; \
 		for rate in ${BITRATES}; do \
 			${ECHO_MSG} "WORKING on $${rate}!"; \
@@ -158,7 +167,7 @@ do-build:
 				for filename in `ls ${WRKSRC}/ru/RU/elena/$${dir}/48000`; do \
 					echo "share/${DATADIR_REL}/sounds/ru/RU/elena/$${dir}/$${rate}/$${filename}" >> ${PLIST}; \
 					if [ ! -e "${WRKDIR}/tmp/ru/RU/elena/$${dir}/$${rate}/$${filename}" ]; then \
-						if [ "${WITH_DOWNLOAD}" = "true" ]; then \
+						if [ "${PORT_OPTIONS:MDOWNLOAD}" = "true" ]; then \
 							${ECHO} -n "."; \
 							${MV} ${WRKSRC}/ru/RU/elena/$${dir}/$${rate}/$${filename} ${WRKDIR}/tmp/ru/RU/elena/$${dir}/$${rate}/$${filename}; \
 						else \
