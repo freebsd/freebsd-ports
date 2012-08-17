@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	weechat
-PORTVERSION=	20120808
+PORTVERSION=	20120817
 CATEGORIES=	irc
 MASTER_SITES=	http://perturb.me.uk/distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -30,7 +30,7 @@ WANT_PERL=	yes
 
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 
-GITREV=	3c615a9
+GITREV=	e59c181
 WRKSRC=	${WRKDIR}/${PORTNAME}-${GITREV}
 
 # Please note: the DEBUG option is *NOT* empty, it is utilised by
@@ -134,7 +134,6 @@ PLIST_SUB+=	LUA="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGUILE}
-IGNORE=		guile support currently causes a segfault on exit. Please re-run 'make config' and disable GUILE
 LIB_DEPENDS+=	guile:${PORTSDIR}/lang/guile
 PLIST_SUB+=	GUILE=""
 .else
