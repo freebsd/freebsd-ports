@@ -8,35 +8,33 @@
 
 PORTNAME=	redland
 PORTVERSION=	1.0.15
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.librdf.org/source/
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	A high-level interface for RDF
+COMMENT=	High-level interface for RDF
 
 LIB_DEPENDS=	raptor2.0:${PORTSDIR}/textproc/raptor2 \
 		rasqal.3:${PORTSDIR}/textproc/rasqal
 
-USE_BDB=	yes
-WITH_BDB_HIGHEST=	yes
-INVALID_BDB_VER=2
-USE_GNOME=	gnomehack lthack pkgconfig libxml2
 USE_AUTOTOOLS=	libltdl
+USE_GNOME=	gnomehack libxml2 lthack
 USE_OPENSSL=	yes
-USE_GMAKE=	yes
+USE_PERL5_BUILD=	yes
+USE_PKGCONFIG=	both
 GNU_CONFIGURE=	yes
-
 CONFIGURE_ARGS=	--with-raptor=system \
 		--with-threestore=no
-
+USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_PERL5_BUILD=	yes
 
 MAN1=		rdfproc.1 redland-config.1 \
 		redland-db-upgrade.1
 MAN3=		redland.3
 
-OPTIONS+=	THREADS "Enable Threads" off
+OPTIONS_DEFINE=	BDB THREADS
+OPTIONS_DEFAULT=	BDB
 #		MYSQL "Use MySQL instead of BDB" off \
 #		PGSQL "Use PgSQL instead of BDB" off \
 #		SQLITE "Use SQLite instead of BDB" off \
@@ -44,10 +42,18 @@ OPTIONS+=	THREADS "Enable Threads" off
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_THREADS)
-CONFIGURE_ARGS+=	--disable-threads
+.if ${PORT_OPTIONS:MBDB}
+USE_BDB=	yes
+WITH_BDB_HIGHEST=	yes
+INVALID_BDB_VER=	2
 .else
+CONFIGURE_ARGS+=	--with-bdb=no
+.endif
+
+.if ${PORT_OPTIONS:MTHREADS}
 CONFIGURE_ARGS+=	--enable-threads
+.else
+CONFIGURE_ARGS+=	--disable-threads
 .endif
 
 #.if defined(WITH_MYSQL)
@@ -90,8 +96,10 @@ PLIST_SUB+=	VIRTUOSO="@comment "
 #.endif
 
 pre-everything::
+.	if ${PORT_OPTIONS:MBDB}
 	@${ECHO_CMD} "You can choose BDB version by setting WITH_BDB_VER to one off:"
 	@${ECHO_CMD} "3 40 41 42 43 44 3+ 40+ 41+ 42+ 43+ 44+ (current: ${BDB_VER})"
+.	endif
 .	if defined(WITH_MYSQL)
 	@${ECHO_CMD} "MySQL version to be used: ${MYSQL_VER}"
 	@${ECHO_CMD} "If you don't have MySQL installed you can stop the build now"
