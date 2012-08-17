@@ -6,8 +6,6 @@ lib/rsyslog/immark.la
 lib/rsyslog/immark.so
 lib/rsyslog/imtcp.la
 lib/rsyslog/imtcp.so
-lib/rsyslog/imtemplate.la
-lib/rsyslog/imtemplate.so
 lib/rsyslog/imudp.la
 lib/rsyslog/imudp.so
 lib/rsyslog/imuxsock.la
@@ -141,7 +139,6 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/rsyslog_secure_tls.html
 %%PORTDOCS%%%%DOCSDIR%%/rsyslog_stunnel.html
 %%PORTDOCS%%%%DOCSDIR%%/rsyslog_tls.html
-%%PORTDOCS%%%%DOCSDIR%%/scoping.html
 %%PORTDOCS%%%%DOCSDIR%%/syslog_parsing.html
 %%PORTDOCS%%%%DOCSDIR%%/syslog_protocol.html
 %%PORTDOCS%%%%DOCSDIR%%/tls_cert.jpg

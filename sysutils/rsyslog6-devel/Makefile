@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsyslog
-PORTVERSION=	6.3.6
+PORTVERSION=	6.3.12
 PORTREVISION?=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
@@ -14,13 +14,14 @@ MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 PKGNAMESUFFIX?=	-${MNAME}
 .endif
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	brd@FreeBSD.org
 COMMENT?=	Syslogd supporting SQL, TCP, and TLS
 
 USE_LDCONFIG=	yes
 
 LIB_DEPENDS+=	ee:${PORTSDIR}/devel/libee \
-		estr:${PORTSDIR}/devel/libestr
+		estr:${PORTSDIR}/devel/libestr \
+		sysinfo:${PORTSDIR}/devel/libsysinfo
 
 .ifdef MNAME
 RUN_DEPENDS=	rsyslog>=${PORTVERSION}:${PORTSDIR}/sysutils/rsyslog6-devel
@@ -56,7 +57,7 @@ CONFIGURE_ARGS+=--enable-rtinst --enable-debug
 CPPFLAGS+=-march=i686
 .endif
 
-CONFIGURE_ENV+=	LIBESTR_CFLAGS="${CFLAGS}" LIBESTR_LIBS="${LDFLAGS} -lestr" LIBEE_CFLAGS="${CFLAGS}" LIBEE_LIBS="${LDFLAGS} -lee"
+CONFIGURE_ENV+=	LIBESTR_CFLAGS="${CFLAGS}" LIBESTR_LIBS="${LDFLAGS} -lestr" LIBEE_CFLAGS="${CFLAGS}" LIBEE_LIBS="${LDFLAGS} -lee -lsysinfo -lkvm"
 CFLAGS+=	${CPPFLAGS}
 
 .ifndef MNAME
