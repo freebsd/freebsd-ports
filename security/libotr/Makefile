@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	libotr
-PORTVERSION=	3.2.0
+PORTVERSION=	3.2.1
 # Please do not bump PORTREVISION for this port unless you have
 # confirmed via testing that it is necessary
-PORTREVISION=	4
+PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	http://www.cypherpunks.ca/otr/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
