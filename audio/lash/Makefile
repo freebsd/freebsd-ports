@@ -1,6 +1,6 @@
 # New ports collection makefile for:	lash
-# Date created:		2007-01-13
-# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
+# Date created:				2007-01-13
+# Whom:			Edward Tomasz Napierala <trasz@pin.if.uz.zgora.pl>
 #
 # $FreeBSD$
 #
@@ -21,17 +21,17 @@ LIB_DEPENDS=	jack:${PORTSDIR}/audio/jack \
 		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid \
 		dssialsacompat:${PORTSDIR}/audio/libdssialsacompat
 
-USE_GNOME=	gnomehack gtk20 libxml2
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 CONFIGURE_ARGS=	--disable-alsa-midi
+USE_GNOME=	gnomehack gtk20 libxml2
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include/dssi -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PORTDOCS=	lash-manual.html
+PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
@@ -43,10 +43,12 @@ post-extract:
 	@${REINPLACE_CMD} -e 's|texi2html --number|texi2html|' \
 		${WRKSRC}/docs/Makefile.in
 
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/lash-manual-html-one-page/lash-manual.html ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} \
+		${WRKSRC}/docs/lash-manual-html-one-page/lash-manual.html \
+		${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
