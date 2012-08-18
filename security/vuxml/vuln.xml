@@ -52,6 +52,93 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4cdfe875-e8d6-11e1-bea0-002354ed89bc">
+    <topic>Wireshark -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>wireshark</name>
+	<range><lt>1.8.2</lt></range>
+      </package>
+      <package>
+	<name>wireshark-lite</name>
+	<range><lt>1.8.2</lt></range>
+      </package>
+      <package>
+	<name>tshark</name>
+	<range><lt>1.8.2</lt></range>
+      </package>
+      <package>
+	<name>tshark-lite</name>
+	<range><lt>1.8.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Wireshark reports:</p>
+	<blockquote cite="http://www.wireshark.org/docs/relnotes/wireshark-1.8.2.html">
+	  <p>It may be possible to make Wireshark crash by injecting a
+	    malformed packet onto the wire or by convincing someone to read a
+	    malformed packet trace file.</p>
+	  <p>It may be possible to make Wireshark consume excessive CPU
+	    resources by injecting a malformed packet onto the wire or by
+	    convincing someone to read a malformed packet trace file.</p>
+	  <p>The PPP dissector could crash.</p>
+	  <p>The NFS dissector could use excessive amounts of CPU.</p>
+	  <p>The DCP ETSI dissector could trigger a zero division.</p>
+	  <p>The MongoDB dissector could go into a large loop.</p>
+	  <p>The XTP dissector could go into an infinite loop.</p>
+	  <p>The ERF dissector could overflow a buffer.</p>
+	  <p>The AFP dissector could go into a large loop.</p>
+	  <p>The RTPS2 dissector could overflow a buffer.</p>
+	  <p>The GSM RLC MAC dissector could overflow a buffer.</p>
+	  <p>The CIP dissector could exhaust system memory.</p>
+	  <p>The STUN dissector could crash.</p>
+	  <p>The EtherCAT Mailbox dissector could abort.</p>
+	  <p>The CTDB dissector could go into a large loop.</p>
+	  <p>The pcap-ng file parser could trigger a zero division.</p>
+	  <p>The Ixia IxVeriWave file parser could overflow a buffer.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-4048</cvename>
+      <cvename>CVE-2012-4049</cvename>
+      <cvename>CVE-2012-4285</cvename>
+      <cvename>CVE-2012-4286</cvename>
+      <cvename>CVE-2012-4287</cvename>
+      <cvename>CVE-2012-4288</cvename>
+      <cvename>CVE-2012-4289</cvename>
+      <cvename>CVE-2012-4290</cvename>
+      <cvename>CVE-2012-4291</cvename>
+      <cvename>CVE-2012-4292</cvename>
+      <cvename>CVE-2012-4293</cvename>
+      <cvename>CVE-2012-4294</cvename>
+      <cvename>CVE-2012-4295</cvename>
+      <cvename>CVE-2012-4296</cvename>
+      <cvename>CVE-2012-4297</cvename>
+      <cvename>CVE-2012-4298</cvename>
+      <url>http://www.wireshark.org/security/wnpa-sec-2012-11.html</url>
+      <url>http://www.wireshark.org/security/wnpa-sec-2012-12.html</url>
+      <url>http://www.wireshark.org/security/wnpa-sec-2012-13.html</url>
+      <url>http://www.wireshark.org/security/wnpa-sec-2012-14.html</url>
+      <url>http://www.wireshark.org/security/wnpa-sec-2012-15.html</url>
+      <url>http://www.wireshark.org/security/wnpa-sec-2012-16.html</url>
+      <url>http://www.wireshark.org/security/wnpa-sec-2012-17.html</url>
+      <url>http://www.wireshark.org/security/wnpa-sec-2012-18.html</url>
+      <url>http://www.wireshark.org/security/wnpa-sec-2012-19.html</url>
+      <url>http://www.wireshark.org/security/wnpa-sec-2012-20.html</url>
+      <url>http://www.wireshark.org/security/wnpa-sec-2012-21.html</url>
+      <url>http://www.wireshark.org/security/wnpa-sec-2012-22.html</url>
+      <url>http://www.wireshark.org/security/wnpa-sec-2012-23.html</url>
+      <url>http://www.wireshark.org/security/wnpa-sec-2012-24.html</url>
+      <url>http://www.wireshark.org/security/wnpa-sec-2012-25.html</url>
+    </references>
+    <dates>
+      <discovery>2012-07-22</discovery>
+      <entry>2012-08-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="07234e78-e899-11e1-b38d-0023ae8e59f0">
     <topic>databases/postgresql*-server -- multiple vulnerabilities</topic>
     <affects>
