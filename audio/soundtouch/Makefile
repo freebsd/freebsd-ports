@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.surina.net/soundtouch/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An open-source audio processing library
+COMMENT=	Open-source audio processing library
 
 LICENSE=	LGPL21
 
@@ -25,17 +25,27 @@ PORTDOCS=	README.html
 .endif
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-ONLY_FOR_ARCHS=	amd64 i386 ia64
-ONLY_FOR_ARCHS_REASON="uses -msse2 directive to CC"
+OPTIONS_DEFINE=	INTEGER_SAMPLES
+INTEGER_SAMPLES_DESC=	Use integer sample format
+
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MINTEGER_SAMPLES}
+CONFIGURE_ARGS+=	--enable-integer-samples
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -E 's|-O3 ?||' \
 		${WRKSRC}/source/SoundStretch/Makefile.am \
 		${WRKSRC}/source/SoundTouch/Makefile.am
+.if ${ARCH} != "i386" && ${ARCH} != "amd64" && ${ARCH} != "ia64"
+	@${REINPLACE_CMD} '/AM_CXXFLAGS=/s|-msse2 ||' \
+		${WRKSRC}/source/SoundTouch/Makefile.am
+.endif
 
 run-autotools:	# see ${WRKSRC}/bootstrap for reference
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} \
 		AUTOMAKE="${AUTOMAKE} --add-missing --foreign --copy" \
 		${AUTORECONF} -fisv)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
