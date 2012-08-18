@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cuse4bsd-kmod
-PORTVERSION=	0.1.24
+PORTVERSION=	0.1.26
 CATEGORIES=	multimedia kld
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://hselasky.homeunix.org:8192/distfiles/
@@ -38,6 +38,8 @@ OPTIONS=	DEBUG "Build with debugging support" Off
 .if ${OSVERSION} < 800000
 IGNORE=		requires FreeBSD 8.0-RELEASE or later
 .endif
+
+MAKE_ARGS+=" PTHREAD_LIBS=${PTHREAD_LIBS}"
 
 .if defined(WITH_DEBUG)
 MAKE_ARGS+=" HAVE_DEBUG=YES"
