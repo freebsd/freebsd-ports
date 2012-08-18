@@ -7,8 +7,9 @@
 
 PORTNAME=	trytond
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	finance python
-MASTER_SITES=	http://downloads2.tryton.org/2.4/
+MASTER_SITES=	http://downloads2.tryton.org/${PORTVERSION:R}/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A three-tiers high-level general purpose application platform
