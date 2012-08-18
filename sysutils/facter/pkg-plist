@@ -21,8 +21,12 @@ bin/facter
 %%RUBY_SITELIBDIR%%/facter/kernelmajversion.rb
 %%RUBY_SITELIBDIR%%/facter/kernelrelease.rb
 %%RUBY_SITELIBDIR%%/facter/kernelversion.rb
-%%RUBY_SITELIBDIR%%/facter/lsb.rb
+%%RUBY_SITELIBDIR%%/facter/lsbdistcodename.rb
+%%RUBY_SITELIBDIR%%/facter/lsbdistdescription.rb
+%%RUBY_SITELIBDIR%%/facter/lsbdistid.rb
+%%RUBY_SITELIBDIR%%/facter/lsbdistrelease.rb
 %%RUBY_SITELIBDIR%%/facter/lsbmajdistrelease.rb
+%%RUBY_SITELIBDIR%%/facter/lsbrelease.rb
 %%RUBY_SITELIBDIR%%/facter/macaddress.rb
 %%RUBY_SITELIBDIR%%/facter/macosx.rb
 %%RUBY_SITELIBDIR%%/facter/manufacturer.rb
@@ -64,6 +68,7 @@ bin/facter
 %%RUBY_SITELIBDIR%%/facter/util/plist/generator.rb
 %%RUBY_SITELIBDIR%%/facter/util/plist/parser.rb
 %%RUBY_SITELIBDIR%%/facter/util/processor.rb
+%%RUBY_SITELIBDIR%%/facter/util/registry.rb
 %%RUBY_SITELIBDIR%%/facter/util/resolution.rb
 %%RUBY_SITELIBDIR%%/facter/util/uptime.rb
 %%RUBY_SITELIBDIR%%/facter/util/values.rb
