@@ -26,7 +26,7 @@ ONLY_FOR_ARCHS=		i386 amd64
 USE_XZ=			yes
 USE_GNOME=		intltool
 USE_GETTEXT=		build
-USE_PYTHON=		yes
+USE_PYTHON=		-2.7
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	UnknownHorizons
 
@@ -35,15 +35,15 @@ MAN6=			unknown-horizons.6
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386
-PLIST_SUB+=     X86_ONLY=""
+PLIST_SUB+=	X86_ONLY=""
 .else
-PLIST_SUB+=     X86_ONLY="@comment "
+PLIST_SUB+=	X86_ONLY="@comment "
 .endif
 
 .if ${ARCH} == amd64
-PLIST_SUB+=     X64_ONLY=""
+PLIST_SUB+=	X64_ONLY=""
 .else
-PLIST_SUB+=     X64_ONLY="@comment "
+PLIST_SUB+=	X64_ONLY="@comment "
 .endif
 
 post-patch:
