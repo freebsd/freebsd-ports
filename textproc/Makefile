@@ -1267,6 +1267,7 @@
     SUBDIR += rubygem-itextomml
     SUBDIR += rubygem-kramdown
     SUBDIR += rubygem-kwalify
+    SUBDIR += rubygem-libxml-ruby
     SUBDIR += rubygem-linguistics
     SUBDIR += rubygem-liquid
     SUBDIR += rubygem-loofah
