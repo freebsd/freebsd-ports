@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	node
-PORTVERSION=	0.8.6
+PORTVERSION=	0.9.0
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	linpct@gmail.com
-COMMENT=	V8 JavaScript for client and server
+COMMENT=	V8 javascript for client and server
 
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 
@@ -34,6 +34,7 @@ REINPLACE_ARGS=	-i ''
 
 post-patch:
 	@${RM} ${WRKSRC}/tools/wafadmin/Node.py.orig
+	@${REINPLACE_CMD} -e 's|share/man/man1/|man/man1|' ${WRKSRC}/tools/installer.js
 
 post-install:
 	${MKDIR} ${PREFIX}/lib/node_modules/
