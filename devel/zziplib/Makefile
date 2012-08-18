@@ -69,7 +69,7 @@ PLIST_SUB+=	SDL="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800000 && ${ARCH} == "amd64"
+.if ${OSVERSION} < 740000 && ${ARCH} == "amd64"
 BROKEN=		segfaults during build
 .endif
 
