@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libumidi
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://hselasky.homeunix.org:8192/distfiles/
@@ -23,6 +23,8 @@ OPTIONS=	DEBUG "Build with debugging support" Off \
 		JACK "Build with Jack support" On
 
 .include <bsd.port.options.mk>
+
+MAKE_ARGS+=" PTHREAD_LIBS=${PTHREAD_LIBS}"
 
 .if defined(WITH_JACK)
 MAKE_ARGS+=" HAVE_JACK=YES"
