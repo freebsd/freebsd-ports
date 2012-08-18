@@ -6,7 +6,6 @@
 #
 
 PORTNAME=	erlang
-DISTVERSION=	R15B01
 PORTVERSION=	15.b.01
 PORTEPOCH=	2
 CATEGORIES=	lang parallel java
@@ -17,7 +16,7 @@ MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://www.erlang.se/publications/:publications		\
 		http://www.sics.se/~joe/thesis/:joe			\
 		${MASTER_SITE_LOCAL:S/$/:local/:S,%SUBDIR%/,olgeni/,}
-DISTNAME=	otp_src_${DISTVERSION}
+DISTNAME=	otp_src_${ERL_RELEASE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:erlangorg	\
 		${ERLANG_MAN}:erlangorg			\
 		${ERLANG_DOCS}:erlangorg		\
@@ -25,12 +24,12 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:erlangorg	\
 DIST_SUBDIR=	erlang
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-CONFLICTS=	erlang-14*
-
 PATCH_SITES=	http://www.erlang.org/download
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A functional programming language from Ericsson
+
+CONFLICTS=	erlang-14*
 
 DOC_DISTFILES=	armstrong_thesis_2003.pdf:joe		\
 		bjarnelic.pdf:publications		\
@@ -57,6 +56,8 @@ GS_DESC=	Enable GS application (deprecated)
 DTRACE_DESC=	Enable DTrace support (experimental)
 
 OPTIONS_DEFAULT=SMP OPENSSL THREADS SCTP KQUEUE
+
+ERL_RELEASE=	R${PORTVERSION:S/.//g:U}
 
 .include <bsd.port.options.mk>
 
@@ -130,8 +131,8 @@ LIB_DEPENDS+=	iodbc:${PORTSDIR}/databases/libiodbc
 CONFIGURE_ARGS+=--without-odbc
 .endif
 
-ERLANG_MAN=	otp_doc_man_${DISTVERSION}.tar.gz
-ERLANG_DOCS=	otp_doc_html_${DISTVERSION}.tar.gz
+ERLANG_MAN=	otp_doc_man_${ERL_RELEASE}.tar.gz
+ERLANG_DOCS=	otp_doc_html_${ERL_RELEASE}.tar.gz
 ERLANG_PLIST=	${WRKDIR}/pkg-plist
 
 .if ${PORT_OPTIONS:MTHREADS}
