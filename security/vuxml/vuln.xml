@@ -52,6 +52,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0f62be39-e8e0-11e1-bea0-002354ed89bc">
+    <topic>OpenTTD -- Denial of Service</topic>
+    <affects>
+      <package>
+	<name>openttd</name>
+	<range><le>1.2.1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenTTD reports:</p>
+	<blockquote cite="http://security.openttd.org/en/CVE-2012-3436">
+	  <p>Denial of service (server) using ships on half tiles and
+	    landscaping.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-3436</cvename>
+      <url>http://security.openttd.org/en/CVE-2012-3436</url>
+    </references>
+    <dates>
+      <discovery>2012-07-25</discovery>
+      <entry>2012-08-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4cdfe875-e8d6-11e1-bea0-002354ed89bc">
     <topic>Wireshark -- Multiple vulnerabilities</topic>
     <affects>
