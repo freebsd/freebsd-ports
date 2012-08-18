@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	facter
-PORTVERSION=	1.6.8
+PORTVERSION=	1.6.11
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	http://downloads.puppetlabs.com/facter/
 
@@ -17,15 +17,18 @@ NO_BUILD=	yes
 
 USE_RUBY=	yes
 
+MAN8=		facter.8
+MANCOMPRESSED=	yes
+
 .include <bsd.port.pre.mk>
+
+# Restrict dmidecode dependency to i386 and amd64 systems
+.if ${ARCH} == "amd64" || ${ARCH} == "i386"
+RUN_DEPENDS=    dmidecode:${PORTSDIR}/sysutils/dmidecode
+.endif
 
 do-install:
 	cd ${WRKSRC} && \
 	${SETENV} PREFIX=${PREFIX} ${RUBY} ${WRKSRC}/install.rb
-
-# Restrict dmidecode dependency to i386 and amd64 systems
-.if ${ARCH} == "amd64" || ${ARCH} == "i386"
-RUN_DEPENDS=	dmidecode:${PORTSDIR}/sysutils/dmidecode
-.endif
 
 .include <bsd.port.post.mk>
