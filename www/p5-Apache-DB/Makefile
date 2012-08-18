@@ -20,7 +20,7 @@ RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2
 MAKE_JOBS_SAFE=  yes
 
 PERL_CONFIGURE=	yes
-USE_APACHE_RUN=	20+
+USE_APACHE_RUN=	22+
 
 MAN3=		Apache::DB.3 Apache::DProf.3 Apache::perl5db.3 \
 		Apache::SmallProf.3

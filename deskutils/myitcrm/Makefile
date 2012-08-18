@@ -43,7 +43,7 @@ WANT_PHP_CGI=	yes
 .endif
 
 .if !defined(WITHOUT_APACHE)
-USE_APACHE=	22+
+USE_APACHE_RUN=	22+
 .endif
 .if defined(WITH_LIGHTTPD)
 RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd

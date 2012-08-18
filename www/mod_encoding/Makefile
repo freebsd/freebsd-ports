@@ -21,12 +21,10 @@ MAKE_JOBS_SAFE=	yes
 # Mostly because of the dependency of mod_dav.
 #APACHE_VERSION=	1.3.6
 
-USE_APACHE=	20+
+USE_APACHE=	22+
 USE_ICONV=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
-
-.include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--bindir=${PREFIX}/bin \
@@ -42,22 +40,14 @@ CPPFLAGS+=	-I${APACHEINCLUDEDIR} -I${LOCALBASE}/include
 
 PLIST_FILES=	${APACHEMODDIR}/mod_encoding.so
 
-.if ${APACHE_VERSION} == 20
-EXTRA_PATCHES=	${PATCHDIR}/apache20_patch
-.elif ${APACHE_VERSION} >= 22
 EXTRA_PATCHES=	${PATCHDIR}/apache22_patch
-.endif
 
 .if !defined(WITHOUT_ICONV_FIX)
 EXTRA_PATCHES+=	${PATCHDIR}/iconv_hook-20040430.patch
 .endif
 
 .if defined(WITH_QUERYSTRING_FIX)
-.if ${APACHE_VERSION} <= 20
-EXTRA_PATCHES+=	${PATCHDIR}/queryfix-patch13
-.elif ${APACHE_VERSION} >= 22
 EXTRA_PATCHES+=	${PATCHDIR}/queryfix-patch22
 .endif
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

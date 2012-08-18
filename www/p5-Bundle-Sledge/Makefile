@@ -36,7 +36,7 @@ BUILD_DEPENDS=	p5-libapreq2>=0:${PORTSDIR}/www/p5-libapreq2 \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_APACHE=	20+
+USE_APACHE=	22+
 PERL_CONFIGURE=	yes
 
 MAN3=		Bundle::Sledge.3

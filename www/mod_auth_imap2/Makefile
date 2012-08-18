@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ben.brillat.net/files/projects/mod_auth_imap2/
 DISTNAME=	mod_auth_imap2-${PORTVERSION}
-DIST_SUBDIR=	apache20
+DIST_SUBDIR=	apache2
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache 2 module to provide authentication via an IMAP mail server
@@ -19,10 +19,10 @@ COMMENT=	An Apache 2 module to provide authentication via an IMAP mail server
 MAKE_JOBS_SAFE=  yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}2-${PORTVERSION}
-USE_APACHE=	20+
+USE_APACHE=	22+
 LATEST_LINK=	mod_auth_imap2
-AP_FAST_BUILD=	YES
-AP_GENPLIST=	YES
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 
 PORTDOCS=	htaccess-example httpd.conf-append-example
 

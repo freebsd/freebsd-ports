@@ -10,7 +10,7 @@ PORTVERSION=	3.1.2
 PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-DIST_SUBDIR=	apache22
+DIST_SUBDIR=	apache2
 
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	Allows users authentication based on external mechanisms on apache 2.2
@@ -18,8 +18,8 @@ COMMENT=	Allows users authentication based on external mechanisms on apache 2.2
 MAKE_JOBS_SAFE=	yes
 
 USE_APACHE=	22
-AP_FAST_BUILD=	YES
-AP_GENPLIST=	YES
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 SHORTMODNAME=	authnz_external
 PROJECTHOST=	mod-auth-external
 

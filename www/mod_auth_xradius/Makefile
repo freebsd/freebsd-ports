@@ -16,7 +16,7 @@ COMMENT=	Enables RADIUS authentication
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	20+
+USE_APACHE=	22+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 

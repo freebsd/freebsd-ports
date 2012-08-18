@@ -17,7 +17,7 @@ COMMENT=	Lightweight single-sign-on authentication module for apache
 
 USE_APACHE=	22+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
-AP_FAST_BUILD=	YES
+AP_FAST_BUILD=	yes
 SRC_FILE=	${PORTNAME}.c sha2.c
 AP_EXTRAS=	-DAPACHE22
 

@@ -15,7 +15,7 @@ MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Is a commandline scoreboard viewer for the Apache server
 
 GNU_CONFIGURE=	yes
-USE_APACHE=	20+
+USE_APACHE=	22+
 
 PLIST_FILES=	sbin/ftasv
 SUB_FILES=	pkg-message

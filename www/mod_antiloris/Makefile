@@ -17,7 +17,7 @@ COMMENT=	Protect Apache 2.x against the Slowloris HTTP DoS attack
 MAKE_JOBS_SAFE=	yes
 
 USE_BZIP2=	yes
-USE_APACHE=	20+
+USE_APACHE=	22+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 AP_EXTRAS+=	-a

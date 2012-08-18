@@ -35,7 +35,7 @@ USE_PHP+=	pgsql
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_pgsql.so:${PORTSDIR}/databases/php5-pdo_pgsql
 .endif
 .if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE=	22
+USE_APACHE_RUN=	22
 .endif
 .if ${PORT_OPTIONS:MLIGHTTPD}
 RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd

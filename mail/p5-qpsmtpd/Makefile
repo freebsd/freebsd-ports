@@ -32,7 +32,7 @@ MOD_PERL_DESC=	"Apache Support via mod_perl"
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMODPERL}
-USE_APACHE=	20+
+USE_APACHE_RUN=	22+
 RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2
 .endif
 

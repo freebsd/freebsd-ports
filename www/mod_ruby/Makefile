@@ -19,7 +19,7 @@ COMMENT=	An Apache module that embeds Ruby interpreter within
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	20+
+USE_APACHE=	22+
 USE_RUBY=	yes
 USE_PERL5_BUILD=	yes
 

@@ -18,7 +18,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 USE_PHP=	gd mysql session zlib
 WANT_PHP_WEB=	yes
-USE_APACHE=	20+
+USE_APACHE=	22+
 
 SUB_FILES=	pkg-message
 

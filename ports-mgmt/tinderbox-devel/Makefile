@@ -75,7 +75,7 @@ RUN_DEPENDS+=	p5-DBD-mysql${MYSQL_VER}>=0:${PORTSDIR}/databases/p5-DBD-mysql${MY
 .endif
 
 .if !defined(WITHOUT_APACHE) && defined(WITH_WEBUI)
-USE_APACHE=	20+
+USE_APACHE_RUN=	22+
 .elif defined(WITH_LIGHTTPD) && defined(WITH_WEBUI)
 RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
 .elif defined(WITH_HIAWATHA) && defined(WITH_WEBUI)

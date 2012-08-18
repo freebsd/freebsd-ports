@@ -36,8 +36,9 @@ CONFIGURE_ARGS=	--enable-apache-22 --with-apxs22=${APXS}
 PLIST_SUB+=	WITH_APACHE_22=""
 PLIST_SUB+=	WITH_APACHE_20="@comment "
 .else
-USE_APACHE=	20
-CONFIGURE_ARGS=	--enable-apache-20 --with-apxs2=${APXS} --with-apr=${PREFIX}/lib/apache2/apr-config --with-apu=${PREFIX}/lib/apache2/apu-config
+IGNORE=	apache20 is no longer available
+#USE_APACHE=	20
+#CONFIGURE_ARGS=	--enable-apache-20 --with-apxs2=${APXS} --with-apr=${PREFIX}/lib/apache2/apr-config --with-apu=${PREFIX}/lib/apache2/apu-config
 PLIST_SUB+=	WITH_APACHE_22="@comment "
 PLIST_SUB+=	WITH_APACHE_20=""
 .endif

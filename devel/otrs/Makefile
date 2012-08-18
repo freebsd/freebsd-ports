@@ -74,7 +74,7 @@ CLEAN_FILES=	scripts/suse* scripts/redhat* \
 		var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/_source \
 		var/httpd/htdocs/skins/Agent/*/img/source
 
-USE_APACHE=	20+
+USE_APACHE_RUN=	22+
 USE_PERL5=	yes
 
 PLIST_SUB+=	VER_CKEDITOR="3.6.3"

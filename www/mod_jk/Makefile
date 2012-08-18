@@ -20,7 +20,7 @@ COMMENT?=	Apache JK module for connecting to Tomcat using AJP1X
 
 MAKE_JOBS_SAFE=	yes
 
-USE_APACHE?=	20+
+USE_APACHE?=	22+
 
 .include <bsd.port.pre.mk>
 
@@ -33,8 +33,8 @@ APACHE_VER=	1.3
 
 WRKSRC=		${WRKDIR}/tomcat-connectors-${PORTVERSION}-src/native
 
-USE_GMAKE=	YES
-GNU_CONFIGURE=	YES
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-apxs=${APXS}
 
 SUB_FILES+=	mod_jk.conf.sample pkg-message

@@ -19,7 +19,7 @@ RUN_DEPENDS=	anytopnm:${PORTSDIR}/graphics/netpbm\
 		p5-Image-Info>=0:${PORTSDIR}/graphics/p5-Image-Info\
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
-USE_APACHE=	20+
+USE_APACHE_RUN=	22+
 USE_PERL5=	yes
 NO_BUILD=	yes
 

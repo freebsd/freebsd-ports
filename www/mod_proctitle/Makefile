@@ -17,21 +17,17 @@ COMMENT=	Set httpd process titles to reflect currently processed request
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	20+
+USE_APACHE=	22+
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-CFLAGS+=	-I${LOCALBASE}/include
-PLIST_FILES=	${APACHEMODDIR}/${PORTNAME}.so
 
-.include <bsd.port.pre.mk>
-.if ${APACHE_VERSION} == 20
-CFLAGS+=	-I${LOCALBASE}/include/apr-0
-.else
-CFLAGS+=	-I${LOCALBASE}/include/apr-1
-.endif
+CFLAGS+=	-I${LOCALBASE}/include \
+		-I${LOCALBASE}/include/apr-1
+
+PLIST_FILES=	${APACHEMODDIR}/${PORTNAME}.so
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/.libs/mod_proctitle.so \
 		${PREFIX}/${APACHEMODDIR}/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.heuer.org/mod_auth_mysql/old/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	apache22
+DIST_SUBDIR=	apache2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MySQL-based authentication module with VirtualHost support
@@ -23,10 +23,10 @@ LATEST_LINK=	mod_auth_mysql2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_JOBS_SAFE=  yes
-USE_MYSQL=	YES
-USE_APACHE=	20+
-AP_FAST_BUILD=	YES
-AP_GENPLIST=	YES
+USE_MYSQL=	yes
+USE_APACHE=	22+
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 AP_INC+=	${LOCALBASE}/include/mysql
 AP_LIB+=	${LOCALBASE}/lib/mysql -lmysqlclient
 

@@ -22,8 +22,16 @@ SAMBA_PORT?=	net/samba34
 
 USE_RC_SUBR=	sams
 
-OPTIONS=	NTLM	"NTLM autorization/ActiveDirectory support"	off \
-		INSTALLGD 	"Graphic reports"		on
+OPTIONS_DEFINE=	APACHE NTLM GD
+OPTIONS_DEFAULT=GD 
+
+INSTALLGD_DESC=	Graphic reports
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MAPACHE}
+USE_APACHE=	22+
+.endif
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -45,16 +53,12 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_NTLM)
+.if ${PORT_OPTIONS:MNTLM}
 RUN_DEPENDS=	${LOCALBASE}/bin/ntlm_auth:${PORTSDIR}/${SAMBA_PORT}
 USE_PHP+=	ldap
 .endif
 
-.if defined(WITH_APACHE)
-USE_APACHE=	20+
-.endif
-
-.if defined(WITH_INSTALLGD)
+.if ${PORT_OPTIONS:MGD}
 USE_PHP+=	pdf gd
 .endif
 

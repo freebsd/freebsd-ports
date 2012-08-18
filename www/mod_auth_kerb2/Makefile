@@ -22,7 +22,7 @@ MAKE_JOBS_SAFE=  yes
 
 LATEST_LINK=   mod_auth_kerb2
 
-USE_APACHE=	20+
+USE_APACHE=	22+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

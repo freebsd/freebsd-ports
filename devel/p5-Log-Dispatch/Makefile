@@ -50,7 +50,7 @@ MAIL_SENDER_DESC=		Mail::Sender support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPACHELOG}
-USE_APACHE=	20+
+USE_APACHE=	22+
 .endif
 
 .include <bsd.port.pre.mk>

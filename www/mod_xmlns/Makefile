@@ -20,7 +20,7 @@ COMMENT=	Apache module for XML namespaces
 MAKE_JOBS_SAFE=  yes
 
 USE_GNOME=	libxml2
-USE_APACHE=	20+
+USE_APACHE=	22+
 
 XML2_INC=	${LOCALBASE}/include/libxml2
 XML2_LIB=	${LOCALBASE}/lib

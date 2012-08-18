@@ -19,9 +19,9 @@ COMMENT=	Logs a report when a child process crashes
 MAKE_JOBS_SAFE=	yes
 MANUAL_PACKAGE_BUILD=	yes
 
-USE_APACHE=	20+
-AP_FAST_BUILD=	YES
-AP_GENPLIST=	YES
+USE_APACHE=	22+
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 SHORTMODNAME=	whatkilledus
 
 WRKSRC=		${WRKDIR}

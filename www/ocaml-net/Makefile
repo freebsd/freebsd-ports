@@ -100,7 +100,7 @@ CONFIGURE_ARGS+=	-disable-gtk2
 .endif
 
 .if defined(WITH_APACHE)
-USE_APACHE=		20+
+USE_APACHE=		22+
 CONFIGURE_ARGS+=	-enable-apache -apxs ${APXS} -apache ${HTTPD}
 OCAML_PKGDIRS+=		netcgi_apache
 .else

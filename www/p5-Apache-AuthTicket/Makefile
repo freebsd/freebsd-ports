@@ -24,7 +24,7 @@ RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
 		p5-ModPerl-VersionUtil>=0:${PORTSDIR}/www/p5-ModPerl-VersionUtil \
 		p5-SQL-Abstract>=0:${PORTSDIR}/databases/p5-SQL-Abstract
 
-USE_APACHE=	20+
+USE_APACHE=	22+
 PERL_CONFIGURE=	yes
 
 MAN3=		Apache::AuthTicket.3 \

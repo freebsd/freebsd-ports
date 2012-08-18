@@ -18,7 +18,7 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A CGI script that lets you embed LaTeX math in your HTML pages
 
 NO_WRKSUBDIR=	yes
-USE_APACHE=	20+
+USE_APACHE=	22+
 USE_ZIP=	yes
 
 .include <bsd.port.pre.mk>

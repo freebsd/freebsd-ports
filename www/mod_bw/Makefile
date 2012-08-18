@@ -19,9 +19,9 @@ COMMENT=	Bandwidth and Connection control per Virtual Host or Directory
 MAKE_JOBS_SAFE=  yes
 
 WRKSRC=		${WRKDIR}/mod_bw
-USE_APACHE=	20+
-AP_FAST_BUILD=	YES
-AP_GENPLIST=	YES
+USE_APACHE=	22+
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 
 SRC_FILE=	mod_bw.c
 PORTDOCS=	LICENSE mod_bw.txt

@@ -18,7 +18,7 @@ COMMENT=	A perl module to provide custom forms for reauthentication
 BUILD_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_APACHE=	20+
+USE_APACHE=	22+
 
 .include <bsd.port.pre.mk>
 

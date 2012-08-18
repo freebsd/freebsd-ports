@@ -36,7 +36,7 @@ OPTIONS=	POSTGRE "Use PostgreSQL Database" off \
 USE_PHP+=	pgsql
 .endif
 .if defined(WITH_APACHE)
-USE_APACHE=	22
+USE_APACHE_RUN=	22
 .endif
 .if defined(WITH_LIGHTTPD)
 RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd

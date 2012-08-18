@@ -52,7 +52,7 @@ PERL_CONFIGURE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMODPERL2}
-USE_APACHE_RUN=	20+
+USE_APACHE_RUN=	22+
 BUILD_DEPENDS+=	p5-libapreq2>=0:${PORTSDIR}/www/p5-libapreq2
 .endif
 

@@ -18,7 +18,7 @@ COMMENT=	An alternative FastCGI module for Apache2
 
 MAKE_JOBS_SAFE=	yes
 
-USE_APACHE=	20+
+USE_APACHE=	22+
 
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	configure.apxs
@@ -29,19 +29,10 @@ SUB_FILES=	pkg-message
 SUB_LIST+=	APACHEMODDIR=${APACHEMODDIR}
 PLIST_SUB+=	APACHEMODDIR=${APACHEMODDIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${APACHE_VERSION} >= 22
 MAKE_ARGS+=	top_dir="${LOCALBASE}/share/apache${APACHE_VERSION}"
 MAKE_ARGS+=	INCLUDES="-I${LOCALBASE}/include/apache${APACHE_VERSION} -I${LOCALBASE}/include/apr-1"
 INSTALL_TARGET=	install-modules-yes
 DOCSDIR=	${PREFIX}/share/doc/apache22/mod
-.else
-MAKE_ARGS+=	top_dir="${LOCALBASE}/share/apache${APACHE_VERSION:S/20/2/}"
-MAKE_ARGS+=	INCLUDES="-I${LOCALBASE}/include/apache${APACHE_VERSION:S/20/2/}"
-INSTALL_TARGET=	install-modules
-DOCSDIR=	${PREFIX}/share/doc/apache2/mod
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -53,4 +44,4 @@ post-install:
 	${CHOWN} www:www /var/run/fcgidsock
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

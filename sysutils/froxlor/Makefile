@@ -38,7 +38,7 @@ OPTIONS=	APACHE "Use Apache (2.2) as http server" On \
 .include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_APACHE)
-USE_APACHE=	22
+USE_APACHE_RUN=	22
 .endif
 
 .if !defined(WITHOUT_MYSQL)

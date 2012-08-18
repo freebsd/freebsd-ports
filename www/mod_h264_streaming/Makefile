@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://h264.code-shop.com/download/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 DISTNAME=	apache_${PORTNAME}-${PORTVERSION}
-DIST_SUBDIR=	apache22
+DIST_SUBDIR=	apache2
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Apache H264 streaming module

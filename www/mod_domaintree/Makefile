@@ -18,9 +18,9 @@ COMMENT=	Hostname to filesystem mapper for Apache 2
 MAKE_JOBS_SAFE=  yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_APACHE=	20+
-AP_FAST_BUILD=	YES
-AP_GENPLIST=	YES
+USE_APACHE=	22+
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 
 PORTDOCS=	LICENSE.txt ChangeLog
 

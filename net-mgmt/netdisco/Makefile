@@ -36,7 +36,7 @@ GROUPS=		netdisco
 
 USE_PERL5=	yes
 USE_PGSQL=	yes
-USE_APACHE=	20+
+USE_APACHE=	22+
 
 USE_RC_SUBR=	netdisco
 

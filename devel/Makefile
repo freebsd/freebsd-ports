@@ -46,7 +46,6 @@
     SUBDIR += apache-ant
     SUBDIR += api-sanity-autotest
     SUBDIR += apiextractor
-    SUBDIR += apr0
     SUBDIR += apr1
     SUBDIR += apr2
     SUBDIR += arduino

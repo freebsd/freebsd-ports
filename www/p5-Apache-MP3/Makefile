@@ -23,7 +23,7 @@ BUILD_DEPENDS=	p5-Audio-Wav>=0:${PORTSDIR}/audio/p5-Audio-Wav \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
-USE_APACHE=	20+
+USE_APACHE=	22+
 
 MAN3=		Apache::MP3.3 \
 		Apache::MP3::L10N.3 \

@@ -20,7 +20,7 @@ RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
-USE_APACHE=	20+
+USE_APACHE=	22+
 
 MAN3=		Apache::GopherHandler.3 \
 		Apache::GopherHandler::TiedSocket.3

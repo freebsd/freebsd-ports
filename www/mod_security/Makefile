@@ -21,7 +21,7 @@ MAKE_JOBS_SAFE=	yes
 LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre \
 		apr-1:${PORTSDIR}/devel/apr1
 
-USE_APACHE=	20+
+USE_APACHE=	22+
 GNU_CONFIGURE=	yes
 AP_GENPLIST=	yes
 AP_INC=	${LOCALBASE}/include/libxml2

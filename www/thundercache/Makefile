@@ -51,7 +51,7 @@ DISTNAME=	thundercache-6.1.201104260900-32bits-fbsd
 WRKSRC=		${WRKDIR}/thunder
 
 .if defined (WITH_APACHE)
-USE_APACHE=	20+
+USE_APACHE=	22+
 .endif
 
 .if defined (WITH_PGSQL)

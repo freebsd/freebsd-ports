@@ -26,7 +26,7 @@ APACHE2X=	""
 PLIST_SUB+=	SSL=${SSL_PLIST} APACHE2X=${APACHE2X}
 
 USE_MYSQL=	yes
-USE_APACHE=	20+
+USE_APACHE=	22+
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql"
 
 .include <bsd.port.pre.mk>

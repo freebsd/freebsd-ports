@@ -17,10 +17,10 @@ COMMENT=	Allows you to keep your virtual host configuration in a LDAP directory
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	20+
-USE_OPENLDAP=	YES
-AP_FAST_BUILD=	YES
-AP_GENPLIST=	YES
+USE_APACHE=	22+
+USE_OPENLDAP=	yes
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 
 LDAP_INC?=	${LOCALBASE}/include
 LDAP_LIB?=	${LOCALBASE}/lib -lldap
