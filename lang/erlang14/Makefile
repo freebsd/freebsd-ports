@@ -6,7 +6,6 @@
 #
 
 PORTNAME=	erlang
-DISTVERSION=	R14B04
 PORTVERSION=	14.b.04
 PORTEPOCH=	1
 CATEGORIES=	lang parallel java
@@ -17,7 +16,7 @@ MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://www.erlang.se/publications/:publications		\
 		http://www.sics.se/~joe/thesis/:joe			\
 		${MASTER_SITE_LOCAL:S/$/:local/:S,%SUBDIR%/,olgeni/,}
-DISTNAME=	otp_src_R14B04
+DISTNAME=	otp_src_${ERL_RELEASE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:erlangorg	\
 		${ERLANG_MAN}:erlangorg			\
 		${ERLANG_DOCS}:erlangorg		\
@@ -25,13 +24,13 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:erlangorg	\
 DIST_SUBDIR=	erlang
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-CONFLICTS=	erlang-15*
-LATEST_LINK=	erlang14
-
 PATCH_SITES=	http://www.erlang.org/download
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A functional programming language from Ericsson
+
+CONFLICTS=	erlang-15*
+LATEST_LINK=	erlang14
 
 DOC_DISTFILES=	armstrong_thesis_2003.pdf:joe		\
 		bjarnelic.pdf:publications		\
@@ -58,6 +57,8 @@ SMP_DESC=	Enable SMP support
 WX_DESC=	Enable WX extensions
 
 OPTIONS_DEFAULT=	SMP OPENSSL THREADS SCTP KQUEUE
+
+ERL_RELEASE=	R${PORTVERSION:S/.//g:U}
 
 .include <bsd.port.options.mk>
 
@@ -126,18 +127,16 @@ USE_GCC=	4.2+
 .if ${PORT_OPTIONS:MODBC}
 CONFIGURE_ARGS+=--with-odbc
 .if ${PORT_OPTIONS:MUNIXODBC}
-LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
 .elif ${PORT_OPTIONS:MIODBC}
-LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
+LIB_DEPENDS+=	iodbc:${PORTSDIR}/databases/libiodbc
 .endif
 .else
 CONFIGURE_ARGS+=--without-odbc
 .endif
 
-ERLANG_MAN=	otp_doc_man_R14B04.tar.gz
-.if !defined(NOPORTDOCS)
-ERLANG_DOCS=	otp_doc_html_R14B04.tar.gz
-.endif
+ERLANG_MAN=	otp_doc_man_${ERL_RELEASE}.tar.gz
+ERLANG_DOCS=	otp_doc_html_${ERL_RELEASE}.tar.gz
 ERLANG_PLIST=	${WRKDIR}/pkg-plist
 
 .if ${PORT_OPTIONS:MTHREADS}
@@ -213,7 +212,7 @@ post-install:
 			"man/man$${SECTION}/*.$${SECTION}" || ${TRUE}; \
 	done
 	@${RM} -rf ${PREFIX}/lib/erlang/man/cat?
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_DOCS} \
 		-C ${PREFIX}/lib/erlang
 	@${INSTALL_DATA} ${WRKSRC}/lib/dialyzer/doc/*.txt \
