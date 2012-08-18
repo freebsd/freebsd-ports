@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jack_umidi
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://hselasky.homeunix.org:8192/distfiles/
@@ -29,6 +29,7 @@ OPTIONS=	DEBUG "Build with debugging support" Off
 .include <bsd.port.options.mk>
 
 MAKE_ARGS+=" HAVE_MAN=YES"
+MAKE_ARGS+=" PTHREAD_LIBS=${PTHREAD_LIBS}"
 
 .if defined(WITH_DEBUG)
 MAKE_ARGS+=" HAVE_DEBUG=YES"
