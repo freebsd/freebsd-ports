@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openttd
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	games
 MASTER_SITES=	http://gb.binaries.openttd.org/binaries/releases/${PORTVERSION}/ \
 		http://ftp.snt.utwente.nl/pub/games/openttd/binaries/releases/${PORTVERSION}/ \
@@ -85,7 +85,7 @@ pre-everything::
 	@${ECHO_MSG} "Define WITH_DEDICATED_SERVER_ONLY to build CLI-based dedicated server"
 .endif
 .if !defined(WITH_OPEN_GAME_FILES)
-	@${ECHO_MSG} "Define WITH_OPEN_GAME_FILES to install with libre graphics, music, and sound"
+	@${ECHO_MSG} "Define WITH_OPEN_GAME_FILES to install with libre graphics, music, and sounds"
 .endif
 
 post-patch:
