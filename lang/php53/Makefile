@@ -109,7 +109,7 @@ PLIST_SUB+=	FPM="@comment "
 
 .if ${PORT_OPTIONS:MAPACHE}
 PHP_SAPI+=	mod
-USE_APACHE=	20+
+USE_APACHE=	22+
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
 .if ${PORT_OPTIONS:MAP2FILTER}
 CONFIGURE_ARGS+=--with-apxs2filter=${APXS}

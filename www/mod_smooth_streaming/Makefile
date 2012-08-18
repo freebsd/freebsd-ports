@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://smoothstreaming.code-shop.com/download/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 DISTNAME=	apache_${PORTNAME}-${PORTVERSION}
-DIST_SUBDIR=	apache22
+DIST_SUBDIR=	apache2
 
 MAINTAINER=	bmhermansson@gmail.com
 COMMENT=	Apache smooth streaming module

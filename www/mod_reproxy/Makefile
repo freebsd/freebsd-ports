@@ -15,7 +15,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Apache module to support x-reproxy-url header
 
 WRKSRC=		${WRKDIR}/lestrrat-mod_reproxy-0f945ff
-USE_APACHE=	20+
+USE_APACHE=	22+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 

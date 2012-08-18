@@ -91,7 +91,7 @@ USE_MYSQL=	yes
 .if defined(WITH_FASTCGI)
 RUN_DEPENDS+=	p5-FCGI>=0:${PORTSDIR}/www/p5-FCGI
 . if !defined(WITHOUT_APACHE)
-USE_APACHE=	20+
+USE_APACHE_RUN=	22+
 RUN_DEPENDS+=   ${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
 . endif
 .endif

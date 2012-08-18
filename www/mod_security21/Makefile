@@ -17,7 +17,7 @@ COMMENT=	An intrusion detection and prevention engine
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	20+
+USE_APACHE=	22+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 AP_EXTRAS+=	-DWITH_LIBXML2

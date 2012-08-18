@@ -17,8 +17,8 @@ COMMENT=	A unix group access control module for Apache 2.1 and later
 MAKE_JOBS_SAFE=  yes
 
 USE_APACHE=	22+
-AP_FAST_BUILD=	YES
-AP_GENPLIST=	YES
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 SHORTMODNAME=	authz_unixgroup
 
 .include <bsd.port.mk>

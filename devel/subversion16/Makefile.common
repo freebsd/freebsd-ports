@@ -91,16 +91,14 @@ SVNUSER?=	svn
 .endif
 
 .if defined(WITH_APACHE)
-USE_APACHE=   20+
+USE_APACHE=   22+
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
 .if ${APACHE_VERSION} > 20
 LIB_DEPENDS+= apr-1:${PORTSDIR}/devel/apr1
 APR_CONFIG=   ${LOCALBASE}/bin/apr-1-config
 APU_CONFIG=   ${LOCALBASE}/bin/apu-1-config
 .else
-LIB_DEPENDS+= apr-0:${PORTSDIR}/devel/apr0
-APR_CONFIG=   ${LOCALBASE}/bin/apr-config
-APU_CONFIG=   ${LOCALBASE}/bin/apu-config
+IGNORE=	please update to apache22
 .endif
 .else
 LIB_DEPENDS+= apr-1:${PORTSDIR}/devel/apr1

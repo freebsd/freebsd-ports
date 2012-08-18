@@ -26,7 +26,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output
 
-USE_APACHE_RUN=	20+
+USE_APACHE_RUN=	22+
 PERL_MODBUILD=	yes
 
 MAN3=		MasonX::WebApp.3

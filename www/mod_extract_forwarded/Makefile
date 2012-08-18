@@ -15,7 +15,7 @@ DISTNAME=	extract_forwarded-${DISTVERSION}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	An Apache module that can make proxied requests appear with client IP
 
-USE_APACHE=	20+
+USE_APACHE=	22+
 WRKSRC=		${WRKDIR}/extract_forwarded
 PORTDOCS=	INSTALL README
 MAKE_JOBS_SAFE=	yes

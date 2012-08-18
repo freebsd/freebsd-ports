@@ -45,7 +45,7 @@ EMPTY_DIRS_LIST=data graphs contrib lib t xt
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMODPERL}
-USE_APACHE_RUN=	20+
+USE_APACHE_RUN=	22+
 .endif
 
 .include <bsd.port.pre.mk>

@@ -35,7 +35,7 @@ LIGHTTPD_DESC=	Use Lighttpd webserver
 USE_PHP+=	pgsql
 .endif
 .if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE=	22
+USE_APACHE_RUN=	22
 .endif
 .if ${PORT_OPTIONS:MLIGHTTPD}
 RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd

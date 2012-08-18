@@ -17,11 +17,11 @@ COMMENT=	Apache 1.3.x/2.0.xx module to enable an easy alternative to mod_chroot
 MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/mod_jail-0.5.1
-USE_APACHE=	20+
-AP_FAST_BUILD=	YES
-AP_GENPLIST=	YES
+USE_APACHE=	22+
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 
-NOPORTDOCS=	YES
+NOPORTDOCS=	yes
 PORTDOCS=	changelog.html documentation.html download.html \
 		index.html
 

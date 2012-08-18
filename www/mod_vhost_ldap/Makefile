@@ -18,12 +18,12 @@ COMMENT=	Virtual Hosting from ldap built on top of mod_ldap
 
 MAKE_JOBS_SAFE=	yes
 
-USE_BZIP2=	YES
-USE_OPENLDAP=	YES
+USE_BZIP2=	yes
+USE_OPENLDAP=	yes
 
-USE_APACHE=	20+
-AP_FAST_BUILD=	YES
-AP_GENPLIST=	YES
+USE_APACHE=	22+
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 AP_LIB+=	${LOCALBASE}/lib -lldap
 AP_EXTRAS+=	-DMOD_VHOST_LDAP_VERSION=\\\"mod_vhost_ldap/${PORTVERSION}\\\"
 

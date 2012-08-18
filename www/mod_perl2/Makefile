@@ -24,7 +24,7 @@ MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	pkg-message
 SUB_LIST=	APACHEMODDIR=${APACHEMODDIR}
-USE_APACHE=	20+
+USE_APACHE=	22+
 PERL_CONFIGURE=	yes
 GMAKE=		yes
 USE_CSTD=	gnu89
@@ -73,9 +73,6 @@ MAN3=		APR.3 APR::Base64.3 APR::Brigade.3 APR::Bucket.3 \
 .if exists(${LOCALBASE}/include/apr-1/apr.h)
 APR_H=		${LOCALBASE}/include/apr-1/apr.h
 APR_MAJ_V!=	${ECHO_CMD} `${LOCALBASE}/bin/apr-1-config --version | ${SED} -e 's,\..*,,'`
-.elif exists(${LOCALBASE}/include/apr-0/apr.h)
-APR_H=		${LOCALBASE}/include/apr-0/apr.h
-APR_MAJ_V!=	${ECHO_CMD} `${LOCALBASE}/bin/apr-config --version | ${SED} -e 's,\..*,,'`
 .endif
 
 .if defined(APR_H)

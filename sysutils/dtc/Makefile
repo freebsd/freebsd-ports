@@ -53,7 +53,7 @@ NO_BUILD=	yes
 USE_PHP=	mysql pcre session
 MAN8=		dtc-chroot-shell.8 dtc-chroot-wrapper.8
 MANCOMPRESSED=	no
-USE_APACHE=	22+
+USE_APACHE_RUN=	22+
 
 .if defined(WITH_PHP5)
 DEFAULT_PHP_VER=5

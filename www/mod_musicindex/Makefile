@@ -16,7 +16,7 @@ COMMENT=	Apache module that allows downloading and streaming of audio
 
 LICENSE=	LGPL21
 
-USE_APACHE=	20+
+USE_APACHE=	22+
 
 .include <bsd.port.pre.mk>
 

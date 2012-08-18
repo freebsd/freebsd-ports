@@ -19,7 +19,6 @@
     SUBDIR += aolserver-xotcl
     SUBDIR += apache-forrest
     SUBDIR += apache-mode.el
-    SUBDIR += apache20
     SUBDIR += apache22
     SUBDIR += apache22-event-mpm
     SUBDIR += apache22-itk-mpm

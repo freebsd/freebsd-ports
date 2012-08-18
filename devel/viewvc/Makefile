@@ -57,7 +57,7 @@ RUN_DEPENDS+=	${PYTHON_LIBDIR}/site-packages/svn/__init__.py:${PORTSDIR}/devel/p
 .endif
 
 .if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE_RUN=	20+
+USE_APACHE_RUN=	22+
 .endif
 
 .if ${PORT_OPTIONS:MLIGHTTPD}

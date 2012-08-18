@@ -77,13 +77,13 @@ CONFIGURE_ARGS+=	--with-pdf=${LOCALBASE} --with-tiff=${LOCALBASE} --with-png=${L
 .endif
 
 .if defined(WITH_WMS)
-WITH_CURL=		YES
+WITH_CURL=		yes
 CONFIGURE_ARGS+=	--with-wms --with-wmsclient
 .endif
 
 .if defined(WITH_WFS)
-WITH_CURL=		YES
-WITH_GDAL=		YES
+WITH_CURL=		yes
+WITH_GDAL=		yes
 CONFIGURE_ARGS+=	--with-wfs --with-wfsclient
 .endif
 
@@ -99,13 +99,13 @@ CONFIGURE_ARGS+=	--with-geos=${LOCALBASE}/bin/geos-config
 .endif
 
 .if defined(WITH_MYGIS)
-USE_MYSQL=		YES
+USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--with-mygis=${LOCALBASE}/bin/mysql_config
 .endif
 
 .if defined(WITH_POSTGIS)
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libpgport.a:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
-USE_PGSQL=		YES
+USE_PGSQL=		yes
 DEFAULT_PGSQL_VER=	83
 CONFIGURE_ARGS+=	--with-postgis=${LOCALBASE}/bin/pg_config
 .endif

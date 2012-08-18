@@ -32,8 +32,7 @@ OPTIONS=\
 		CRAWLER "With crawler deps (nmap, p5-libwww)" on \
 		SAMBA "crawler with SAMBA (file://)" on \
 		RSYNC " crawler with RSYNC " off \
-		APACH22 "With web server apache2.2+" on \
-		APACH20 "With web server apache2.0+" off \
+		APACHE "With web server apache2.2+" on \
 		MOD_PERL2 "With MOD_PERL2" off \
 		MOD_FASTCGI "With MOD_FASTCGI" off \
 		DB "With database server deps" on \
@@ -69,12 +68,8 @@ RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba-smbclient
 RUN_DEPENDS+=	rsync:${PORTSDIR}/net/rsync
 .endif
 
-.if defined(WITH_APACH22)
+.if defined(WITH_APACHE)
 USE_APACHE=	22+
-.endif
-
-.if defined(WITH_APACH20)
-USE_APACHE=	20+
 .endif
 
 .if defined(WITH_NGINX)

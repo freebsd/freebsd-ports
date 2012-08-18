@@ -16,14 +16,14 @@ COMMENT=	Allows users to use PostgreSQL databases for user authentication
 MAKE_JOBS_SAFE=  yes
 
 USE_PGSQL=	yes
-USE_APACHE=	20+
+USE_APACHE=	22+
 
 LATEST_LINK=	mod_auth_pgsql2
 
 AP_INC?=	${LOCALBASE}/include
 AP_LIB?=	${LOCALBASE}/lib -lpq
-AP_FAST_BUILD=	YES
-AP_GENPLIST=	YES
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 PORTDOCS=	mod_auth_pgsql.html
 
 post-install:

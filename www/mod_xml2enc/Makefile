@@ -18,10 +18,10 @@ COMMENT=	Apache module for converting encoding before and/or after a filter run
 MAKE_JOBS_SAFE=	yes
 
 USE_APACHE=	22+
-AP_FAST_BUILD=	YES
-AP_GENPLIST=	YES
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 SHORTMODNAME=	xml2enc
-USE_BZIP2=	YES
+USE_BZIP2=	yes
 USE_GNOME=	libxml2
 
 AP_INC+=	${LOCALBASE}/include/libxml2 -I${WRKSRC}

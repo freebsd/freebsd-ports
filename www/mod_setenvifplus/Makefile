@@ -17,9 +17,9 @@ COMMENT=	Allows setting environment variables based on request attributes
 
 LICENSE=	AL2
 
-USE_APACHE=	20+
-AP_FAST_BUILD=	YES
-AP_GENPLIST=	YES
+USE_APACHE=	22+
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 SRC_FILE=	${WRKSRC}/apache2/${MODULENAME}.c
 
 .include <bsd.port.mk>

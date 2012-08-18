@@ -28,7 +28,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME:R}
 .include <bsd.port.pre.mk>
 
 .if defined (WITH_APACHE)
-USE_APACHE=	20+
+USE_APACHE=	22+
 .endif
 
 .if defined (WITH_PGSQL)

@@ -19,7 +19,7 @@ COMMENT=	Log the time between request and the first byte of the response served
 
 MAKE_JOBS_SAFE=	yes
 
-USE_APACHE=	20+
+USE_APACHE=	22+
 
 PROJECTHOST=	mod-log-firstbyte
 PKGMESSAGE=	${WRKSRC}/readme.txt

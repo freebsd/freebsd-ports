@@ -20,8 +20,8 @@ COMMENT=	A per-virtualhost bandwidth limiter module for Apache 2
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	20+
-GNU_CONFIGURE=	YES
+USE_APACHE=	22+
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-apxs=${APXS}
 ALL_TARGET=	#
 PORTDOCS=	libpatricia.copyright documentation.txt faq.txt

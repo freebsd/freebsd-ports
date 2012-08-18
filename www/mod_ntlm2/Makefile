@@ -22,7 +22,7 @@ SAMBA_PORT?=	net/samba34
 
 MAKE_JOBS_SAFE=	yes
 
-USE_APACHE=	20+
+USE_APACHE=	22+
 MAKE_ENV=	APXS=${APXS}
 
 .include <bsd.port.mk>

@@ -143,7 +143,7 @@ CONFIGURE_ARGS+=--disable-cgi
 
 .if defined(WITH_APACHE)
 PHP_SAPI+=	mod
-USE_APACHE=	20+
+USE_APACHE=	22+
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
 CONFIGURE_ARGS+=--with-apxs2=${APXS}
 PKGMESSAGE=	${PKGDIR}/pkg-message.mod

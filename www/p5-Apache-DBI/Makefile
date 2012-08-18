@@ -25,7 +25,7 @@ MAKE_JOBS_SAFE=	yes
 MAN3=		Apache::DBI.3 Apache::AuthDBI.3
 
 PERL_CONFIGURE=	yes
-USE_APACHE?=	20+
+USE_APACHE?=	22+
 
 .include <bsd.port.pre.mk>
 

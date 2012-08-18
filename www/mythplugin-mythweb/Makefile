@@ -32,7 +32,7 @@ OPTIONS=	APACHE "Enable Apache Support" on \
 .include <bsd.port.options.mk>
 
 .if defined(WITH_APACHE)
-USE_APACHE=	22+
+USE_APACHE_RUN=	22+
 .endif
 
 .if defined(WITH_LIGHTTPD)

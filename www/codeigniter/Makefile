@@ -80,7 +80,7 @@ SQLITE_DESC=	Install SQLite support for PHP
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE=	20+
+USE_APACHE_RUN=	22+
 
 PLIST_SUB+=	NOAPACHE="" CONFDIR=${CONFDIR_REL}
 CONFDIR=	${PREFIX}/${CONFDIR_REL}

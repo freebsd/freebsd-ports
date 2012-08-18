@@ -17,9 +17,9 @@ COMMENT=	Make proxied requests appear with client IP
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	20+
-AP_FAST_BUILD=	YES
-AP_GENPLIST=	YES
+USE_APACHE=	22+
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 SHORTMODNAME=	rpaf
 
 SRC_FILE=	mod_rpaf-2.0.c

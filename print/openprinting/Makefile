@@ -59,8 +59,9 @@ CONFIGURE_ARGS+=\
 
 # NOTE: This has only been tested with www/apache20, with integrated APR.
 .if defined(WITH_MOD_IPP)
-USE_APACHE=	20
-CONFIGURE_ARGS+=--with-apache=${LOCALBASE}
+IGNORE=	no supported apache versions available
+#USE_APACHE=	20
+#CONFIGURE_ARGS+=--with-apache=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--without-apache
 .endif

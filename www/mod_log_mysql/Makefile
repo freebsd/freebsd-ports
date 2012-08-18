@@ -25,10 +25,10 @@ RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_log_config-st.so:${PORTSDIR}/www/
 
 MAKE_JOBS_SAFE=	yes
 
-USE_APACHE=	20+
-AP_FAST_BUILD=	YES
-AP_GENPLIST=	YES
-USE_MYSQL=	YES
+USE_APACHE=	22+
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
+USE_MYSQL=	yes
 
 AP_INC+=	${LOCALBASE}/include/mysql
 AP_LIB+=	${LOCALBASE}/lib/mysql -lmysqlclient

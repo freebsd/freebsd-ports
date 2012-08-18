@@ -30,7 +30,7 @@ BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2
 
 PERL_CONFIGURE=	yes
-USE_APACHE=	20+
+USE_APACHE=	22+
 
 MAN3=		Pushmi.3 \
 		Pushmi::Command::Mirror.3 \

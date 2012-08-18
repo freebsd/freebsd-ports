@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	aclocal:env automake:env autoconf:env libtool:env
 
 # Maintainer has not tested suPHP 0.6.x on Apache 1.3.
-USE_APACHE=	20+
+USE_APACHE=	22+
 CFLAGS+=	-I${LOCALBASE}/include
 USE_CSTD=	gnu89
 USE_PHP=	yes

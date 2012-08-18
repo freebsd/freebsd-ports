@@ -25,7 +25,7 @@ RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
-USE_APACHE_RUN=	20+
+USE_APACHE_RUN=	22+
 
 .include <bsd.port.pre.mk>
 

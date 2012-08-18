@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=libapreq
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Generic Apache2 Request Library
 
-USE_APACHE=	20+
+USE_APACHE=	22+
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf libtool
@@ -23,6 +23,7 @@ CONFIGURE_ARGS+=	--with-apache2-apxs=${APXS} --with-expat=${LOCALBASE}
 
 MAKE_ENV+=     MAKE=${GMAKE} ## MakeMaker blows it without this
 
+SHLIB_MAJOR=	11
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
 .if defined (WITH_MODPERL2)
@@ -59,12 +60,4 @@ post-patch:
 PLIST_SUB+=	WITH_MODPERL2="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${APACHE_VERSION} == 20
-SHLIB_MAJOR=	10
-.else
-SHLIB_MAJOR=	11
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

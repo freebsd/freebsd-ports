@@ -18,8 +18,9 @@ COMMENT=	A modified version of mod_log_config for apache2
 
 MAKE_JOBS_SAFE=	yes
 
-USE_APACHE=	20+
-AP_FAST_BUILD=	YES
+USE_APACHE=	22+
+
+AP_FAST_BUILD=	yes
 SRC_FILE=	mod_log_config.c
 SHORTMODNAME=	log_config
 MODULENAME=	mod_log_config-st
