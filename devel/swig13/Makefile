@@ -10,7 +10,7 @@ PORTVERSION=	1.3.40
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	rafan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simplified Wrapper and Interface Generator
 
 USE_AUTOTOOLS=	autoconf:env libtool
@@ -28,17 +28,19 @@ CFLAGS+=	-fPIC -DPIC
 ALL_TARGET=	swig
 PLIST_SUB+=	VER="${VER}"
 
-WANT_LUA=	yes
-WANT_LUA_VER=	5.0+
+OPTIONS_DEFINE=	LUA
+LUA_DESC=	Enable Lua support
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_LUA:Mlua-5.*} != ""
-USE_LUA=	yes
+.if ${PORT_OPTIONS:MLUA}
+USE_LUA=	5.0+
 LUA_COMPS=	lua:build
 CONFIGURE_ARGS+=--with-lua=${LUA_BINDIR}/lua \
 		--with-luaincl=${LUA_INCDIR} \
 		--with-lualib=${LUA_LIBDIR}
+.else
+CONFIGURE_ARGS+=--without-lua
 .endif
 
 OCTAVE_VER_CMD=	${LOCALBASE}/bin/octave-config -v 2>/dev/null || ${TRUE}
