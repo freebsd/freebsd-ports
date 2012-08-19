@@ -3,4 +3,4 @@ Comes with scripts for irssi. Enter "/script load insub"
 within the irssi client. Or, use the handy command-line
 "insub" program.
 
-WWW:	http://gruntle.org/projects/irssi/insub/
+WWW:	https://github.com/cjones/insub
