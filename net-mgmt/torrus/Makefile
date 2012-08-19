@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	torrus
-PORTVERSION=	2.01
-PORTREVISION=	2
+PORTVERSION=	2.04
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF
+MASTER_SITES=	SF/torrus/torrus/
 
 MAINTAINER=	corsmith@gmail.com
 COMMENT=	The Data Series Processing Framework - think mrtg with xml configs
