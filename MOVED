@@ -3641,3 +3641,5 @@ sysutils/cfengine3|sysutils/cfengine33|2012-08-14|Standardize port naming
 lang/erlang-lite|lang/erlang|2012-08-15|Redundant port removed
 devel/apr0|devel/apr1|2012-08-18|Has expired
 www/apache20|www/apache22|2012-08-18|Has expired
+www/django-mezzanine-filebrowser|www/py-django-mezzanine-filebrowser|2012-08-19|Rename to consistency with other Python ports
+www/django-mezzanine-grappelli|www/py-django-mezzanine-grappelli|2012-08-19|Rename to consistency with other Python ports

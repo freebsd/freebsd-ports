@@ -125,8 +125,6 @@
     SUBDIR += dillo
     SUBDIR += dillo-i18n
     SUBDIR += dillo2
-    SUBDIR += django-mezzanine-filebrowser
-    SUBDIR += django-mezzanine-grappelli
     SUBDIR += docebo
     SUBDIR += dojo
     SUBDIR += dojo-shrinksafe
@@ -324,8 +322,8 @@
     SUBDIR += hs-yesod-form
     SUBDIR += hs-yesod-json
     SUBDIR += hs-yesod-persistent
-    SUBDIR += hs-yesod-routes
     SUBDIR += hs-yesod-platform
+    SUBDIR += hs-yesod-routes
     SUBDIR += hs-yesod-static
     SUBDIR += hs-yesod-test
     SUBDIR += htdump
@@ -1469,6 +1467,8 @@
     SUBDIR += py-django-json-rpc
     SUBDIR += py-django-keyedcache
     SUBDIR += py-django-livesettings
+    SUBDIR += py-django-mezzanine-filebrowser
+    SUBDIR += py-django-mezzanine-grappelli
     SUBDIR += py-django-mptt
     SUBDIR += py-django-openid-auth
     SUBDIR += py-django-photologue
@@ -1657,8 +1657,8 @@
     SUBDIR += reviewboard
     SUBDIR += rnews
     SUBDIR += roundup
-    SUBDIR += rssowl
     SUBDIR += rsskit
+    SUBDIR += rssowl
     SUBDIR += rsstail
     SUBDIR += rsstool
     SUBDIR += rt38
