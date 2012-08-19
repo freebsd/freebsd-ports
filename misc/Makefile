@@ -391,6 +391,7 @@
     SUBDIR += p5-Bot-Training
     SUBDIR += p5-Bot-Training-MegaHAL
     SUBDIR += p5-Bot-Training-StarCraft
+    SUBDIR += p5-Business-EDI
     SUBDIR += p5-Business-Hours
     SUBDIR += p5-Business-ISBN
     SUBDIR += p5-Business-ISBN-Data
