@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freeswitch
-DISTVERSION=	1.2.rc2
+DISTVERSION=	1.2.1
 CATEGORIES=	misc
 MASTER_SITES=	http://files.freeswitch.org/
 PKGNAMESUFFIX=	-pizzademo-devel
@@ -28,6 +28,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTVERSION}/scripts/javascript
 
 SHAREOWN=	${PORTNAME}
 SHAREGRP=	${SHAREOWN}
+LATEST_LINK=    ${PORTNAME}${PKGNAMESUFFIX}
 
 pre-install:
 	@${REINPLACE_CMD} -e 's|include("js_modules/SpeechTools.jm")|include("javascript/js_modules/SpeechTools.jm")|g' ${WRKSRC}/ps_pizza.js
