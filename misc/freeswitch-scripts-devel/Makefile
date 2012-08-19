@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freeswitch
-DISTVERSION=	1.2.rc2
+DISTVERSION=	1.2.1
 CATEGORIES=	misc
 MASTER_SITES=	http://files.freeswitch.org/
 PKGNAMESUFFIX=	-scripts-devel
