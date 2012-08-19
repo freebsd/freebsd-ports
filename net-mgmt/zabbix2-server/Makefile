@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zabbix2
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
 PKGNAMESUFFIX?=	-server
@@ -36,6 +36,7 @@ USE_RC_SUBR=	zabbix_${ZABBIX_BUILD}d
 .endif
 
 USE_ICONV=	yes
+USE_PKGCONFIG=	build
 
 USERS=		zabbix
 GROUPS=		zabbix
