@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qmmp
-PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTVERSION=	0.6.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://qmmp.ylsoftware.com/files/ \
 		${MASTER_SITE_GOOGLE_CODE}
@@ -22,6 +21,7 @@ USE_CMAKE=	yes
 USE_QT4=	corelib gui network xml \
 		qmake_build rcc_build uic_build moc_build linguist_build
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	build
 
 OPTIONS_DEFINE=	SKINNEDUI DIR_ASSOC APIDOC PULSEAUDIO ALSA OSS OSS4 \
 		JACK NULLOUT FLAC MUSEPACK FFMPEG MODPLUG WILDMIDI GME MAD \
