@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	istgt
-PORTVERSION=	20120807
+PORTVERSION=	20120811
 CATEGORIES=	net
 MASTER_SITES=	http://www.peach.ne.jp/archives/istgt/
 
 MAINTAINER=	aoyama@peach.ne.jp
-COMMENT=	An iSCSI target for FreeBSD
+COMMENT=	An iSCSI target for Debian/NetBSD/FreeBSD
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -33,11 +33,28 @@ PORTDOCS=	${DOCS:T}
 
 DOCS=		ChangeLog.jp README doc/QUICKSTART doc/QUICKSTART.jp
 
+OPTIONS_DEFINE=	SYMLNKDEV VBOXVD
+OPTIONS_DEFAULT=
+SYMLNKDEV_DESC=	Allow symbolic link for device file
+VBOXVD_DESC=	Build with VBox VirtualDisk support
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSYMLNKDEV}
+CONFIGURE_ARGS+=	--enable-symlink-device
+.endif
+
+.if ${PORT_OPTIONS:MVBOXVD}
+RUN_DEPENDS+=	${LOCALBASE}/lib/virtualbox/VBoxRT.so:${PORTSDIR}/emulators/virtualbox-ose
+BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/emulators/virtualbox-ose:patch
+CONFIGURE_ARGS+=	--with-vbox
+.endif
+
 post-extract:
 	@${REINPLACE_CMD} -e '/\/doc\/istgt/d' ${WRKSRC}/doc/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_MAN} ${DOCS} ${DOCSDIR}
 .endif
