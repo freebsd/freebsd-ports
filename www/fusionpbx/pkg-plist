@@ -134,8 +134,20 @@
 %%WWWDIR%%/app/dialplan/resources/xml/dialplan/450_park_in.xml
 %%WWWDIR%%/app/dialplan/resources/xml/dialplan/455_park_out.xml
 %%WWWDIR%%/app/dialplan/resources/xml/dialplan/460_park_slots.xml
+%%WWWDIR%%/app/dialplan/resources/xml/dialplan/480_operator.xml
+%%WWWDIR%%/app/dialplan/resources/xml/dialplan/485_operator-forward.xml
+%%WWWDIR%%/app/dialplan/resources/xml/dialplan/490_do-not-disturb.xml
 %%WWWDIR%%/app/dialplan/resources/xml/dialplan/999_local_extension.xml
 %%WWWDIR%%/app/dialplan/root.php
+%%WWWDIR%%/app/dialplan_features/app_config.php
+%%WWWDIR%%/app/dialplan_features/resources/xml/dialplan/300_dx.xml
+%%WWWDIR%%/app/dialplan_features/resources/xml/dialplan/310_att_xfer.xml
+%%WWWDIR%%/app/dialplan_features/resources/xml/dialplan/320_xfer_vm.xml
+%%WWWDIR%%/app/dialplan_features/resources/xml/dialplan/330_is_transfer.xml
+%%WWWDIR%%/app/dialplan_features/resources/xml/dialplan/340_cf.xml
+%%WWWDIR%%/app/dialplan_features/resources/xml/dialplan/350_please_hold.xml
+%%WWWDIR%%/app/dialplan_features/resources/xml/dialplan/360_is_zrtp_secure.xml
+%%WWWDIR%%/app/dialplan_features/resources/xml/dialplan/370_is_secure.xml
 %%WWWDIR%%/app/dialplan_inbound/app_config.php
 %%WWWDIR%%/app/dialplan_inbound/app_defaults.php
 %%WWWDIR%%/app/dialplan_inbound/dialplan_inbound_add.php
@@ -155,11 +167,12 @@
 %%WWWDIR%%/app/extensions/v_extensions_delete.php
 %%WWWDIR%%/app/extensions/v_extensions_edit.php
 %%WWWDIR%%/app/fax/app_config.php
+%%WWWDIR%%/app/fax/fax.php
+%%WWWDIR%%/app/fax/fax_copy.php
+%%WWWDIR%%/app/fax/fax_delete.php
+%%WWWDIR%%/app/fax/fax_edit.php
+%%WWWDIR%%/app/fax/fax_view.php
 %%WWWDIR%%/app/fax/root.php
-%%WWWDIR%%/app/fax/v_fax.php
-%%WWWDIR%%/app/fax/v_fax_delete.php
-%%WWWDIR%%/app/fax/v_fax_edit.php
-%%WWWDIR%%/app/fax/v_fax_view.php
 %%WWWDIR%%/app/fifo/app_config.php
 %%WWWDIR%%/app/fifo/root.php
 %%WWWDIR%%/app/fifo/v_fifo.php
@@ -259,6 +272,13 @@
 %%WWWDIR%%/app/hardware_phones/v_hardware_phones.php
 %%WWWDIR%%/app/hardware_phones/v_hardware_phones_delete.php
 %%WWWDIR%%/app/hardware_phones/v_hardware_phones_edit.php
+%%WWWDIR%%/app/hot_desking/app_config.php
+%%WWWDIR%%/app/hot_desking/extension_delete.php
+%%WWWDIR%%/app/hot_desking/extension_edit.php
+%%WWWDIR%%/app/hot_desking/index.php
+%%WWWDIR%%/app/hot_desking/resources/xml/dialplan/470_hot-desk-login.xml
+%%WWWDIR%%/app/hot_desking/resources/xml/dialplan/475_hot-desk-logout.xml
+%%WWWDIR%%/app/hot_desking/root.php
 %%WWWDIR%%/app/hunt_group/app_config.php
 %%WWWDIR%%/app/hunt_group/root.php
 %%WWWDIR%%/app/hunt_group/v_hunt_group.php
@@ -336,6 +356,7 @@
 %%WWWDIR%%/app/php_service/v_php_service_delete.php
 %%WWWDIR%%/app/php_service/v_php_service_edit.php
 %%WWWDIR%%/app/provision/app_config.php
+%%WWWDIR%%/app/provision/app_defaults.php
 %%WWWDIR%%/app/provision/index.php
 %%WWWDIR%%/app/provision/provision_write.php
 %%WWWDIR%%/app/provision/root.php
@@ -436,6 +457,7 @@
 %%WWWDIR%%/app/services/v_services_delete.php
 %%WWWDIR%%/app/services/v_services_edit.php
 %%WWWDIR%%/app/settings/app_config.php
+%%WWWDIR%%/app/settings/app_defaults.php
 %%WWWDIR%%/app/settings/root.php
 %%WWWDIR%%/app/settings/v_settings_edit.php
 %%WWWDIR%%/app/signup/app_config.php
@@ -451,6 +473,7 @@
 %%WWWDIR%%/app/sip_profiles/resources/xml/sip_profiles/internal-ipv6.xml
 %%WWWDIR%%/app/sip_profiles/resources/xml/sip_profiles/internal.xml
 %%WWWDIR%%/app/sip_profiles/root.php
+%%WWWDIR%%/app/sip_profiles/sip_profile_copy.php
 %%WWWDIR%%/app/sip_profiles/sip_profile_settings.php
 %%WWWDIR%%/app/sip_profiles/sip_profile_settings_delete.php
 %%WWWDIR%%/app/sip_profiles/sip_profile_settings_edit.php
@@ -594,6 +617,7 @@
 %%WWWDIR%%/core/backup/backupandrestore.php
 %%WWWDIR%%/core/backup/root.php
 %%WWWDIR%%/core/databases/app_config.php
+%%WWWDIR%%/core/databases/app_defaults.php
 %%WWWDIR%%/core/databases/database_delete.php
 %%WWWDIR%%/core/databases/database_edit.php
 %%WWWDIR%%/core/databases/databases.php
@@ -690,13 +714,13 @@
 %%WWWDIR%%/includes/classes/array_order.php
 %%WWWDIR%%/includes/classes/call_forward.php
 %%WWWDIR%%/includes/classes/database.php
-%%WWWDIR%%/includes/classes/dialplan.php
 %%WWWDIR%%/includes/classes/do_not_disturb.php
 %%WWWDIR%%/includes/classes/follow_me.php
 %%WWWDIR%%/includes/classes/install.php
 %%WWWDIR%%/includes/classes/menu.php
 %%WWWDIR%%/includes/classes/root.php
 %%WWWDIR%%/includes/classes/schema.php
+%%WWWDIR%%/includes/classes/switch_dialplan.php
 %%WWWDIR%%/includes/classes/switch_directory.php
 %%WWWDIR%%/includes/classes/switch_fax.php
 %%WWWDIR%%/includes/classes/switch_ivr_menu.php
@@ -838,6 +862,7 @@
 %%WWWDIR%%/includes/install/lang/en/wakeup/sounds.xml
 %%WWWDIR%%/includes/install/scripts/call_broadcast_originate.js
 %%WWWDIR%%/includes/install/scripts/call_forward.lua
+%%WWWDIR%%/includes/install/scripts/dial_string.lua
 %%WWWDIR%%/includes/install/scripts/disa.lua
 %%WWWDIR%%/includes/install/scripts/eavesdrop.lua
 %%WWWDIR%%/includes/install/scripts/fax_retry.lua
@@ -853,6 +878,7 @@
 %%WWWDIR%%/includes/install/scripts/ring_group.lua
 %%WWWDIR%%/includes/install/scripts/roku.lua
 %%WWWDIR%%/includes/install/scripts/wakeup.lua
+%%WWWDIR%%/includes/install/scripts/xml_handler.lua
 %%WWWDIR%%/includes/install/sounds/en/us/callie/custom/16000/4.wav
 %%WWWDIR%%/includes/install/sounds/en/us/callie/custom/16000/a.wav
 %%WWWDIR%%/includes/install/sounds/en/us/callie/custom/16000/accept.wav
@@ -1034,6 +1060,7 @@
 %%WWWDIR%%/includes/templates/conf/autoload_configs/event_socket.conf.xml
 %%WWWDIR%%/includes/templates/conf/autoload_configs/fax.conf.xml
 %%WWWDIR%%/includes/templates/conf/autoload_configs/fifo.conf.xml
+%%WWWDIR%%/includes/templates/conf/autoload_configs/freetdm.conf.xml
 %%WWWDIR%%/includes/templates/conf/autoload_configs/hash.conf.xml
 %%WWWDIR%%/includes/templates/conf/autoload_configs/httapi.conf.xml
 %%WWWDIR%%/includes/templates/conf/autoload_configs/http_cache.conf.xml
@@ -1097,6 +1124,7 @@
 %%WWWDIR%%/includes/templates/conf/directory/default/skinny-example.xml.noload
 %%WWWDIR%%/includes/templates/conf/extensions.conf
 %%WWWDIR%%/includes/templates/conf/freeswitch.xml
+%%WWWDIR%%/includes/templates/conf/freetdm.conf
 %%WWWDIR%%/includes/templates/conf/fur_elise.ttml
 %%WWWDIR%%/includes/templates/conf/ivr_menus/demo_ivr.xml
 %%WWWDIR%%/includes/templates/conf/jingle_profiles/client.xml
@@ -1401,6 +1429,10 @@
 @dirrm %%WWWDIR%%/app/log_viewer
 @dirrm %%WWWDIR%%/app/ivr_menu
 @dirrm %%WWWDIR%%/app/hunt_group
+@dirrm %%WWWDIR%%/app/hot_desking/resources/xml/dialplan
+@dirrm %%WWWDIR%%/app/hot_desking/resources/xml
+@dirrm %%WWWDIR%%/app/hot_desking/resources
+@dirrm %%WWWDIR%%/app/hot_desking
 @dirrm %%WWWDIR%%/app/hardware_phones
 @dirrm %%WWWDIR%%/app/grammar_edit/images/thumbnails
 @dirrm %%WWWDIR%%/app/grammar_edit/images
@@ -1419,6 +1451,10 @@
 @dirrm %%WWWDIR%%/app/exec
 @dirrm %%WWWDIR%%/app/dialplan_outbound
 @dirrm %%WWWDIR%%/app/dialplan_inbound
+@dirrm %%WWWDIR%%/app/dialplan_features/resources/xml/dialplan
+@dirrm %%WWWDIR%%/app/dialplan_features/resources/xml
+@dirrm %%WWWDIR%%/app/dialplan_features/resources
+@dirrm %%WWWDIR%%/app/dialplan_features
 @dirrm %%WWWDIR%%/app/dialplan/resources/xml/dialplan
 @dirrm %%WWWDIR%%/app/dialplan/resources/xml
 @dirrm %%WWWDIR%%/app/dialplan/resources
@@ -1440,9 +1476,3 @@
 @exec mkdir -p %D/%%WWWDIR%%/includes/templates/provision/grandstream
 @exec mkdir -p %D/%%WWWDIR%%/includes/templates/provision/cisco/7960
 @exec mkdir -p %D/%%WWWDIR%%/includes/templates/provision/cisco/7940
-@exec chown -R www:www /usr/local/www/fusionpbx
-@dirrmtry www/fusionpbx/ 2> /dev/null || /usr/bin/true
-@cwd /var
-@dirrmtry db/fusionpbx
-@exec mkdir -p %D/db/fusionpbx
-@exec chown www:www %D/db/fusionpbx
