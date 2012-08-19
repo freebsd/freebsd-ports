@@ -22,11 +22,12 @@ LIB_DEPENDS=	samplerate:${PORTSDIR}/audio/libsamplerate \
 		lash:${PORTSDIR}/audio/lash
 
 GNU_CONFIGURE=	yes
+# --disable-complex: does not compile due to missing carg(3) et al.
+CONFIGURE_ARGS=	--disable-complex
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
+
 CPPFLAGS+=	-I${LOCALBASE}/include
-# --disable-complex: does not compile due to missing carg(3) et al.
-CONFIGURE_ARGS=	--disable-complex
 
 .include <bsd.port.mk>
