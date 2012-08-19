@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	insub
-PORTVERSION=	13.0
+PORTVERSION=	15.0
 CATEGORIES=	irc
-MASTER_SITES=	http://gruntle.org/projects/irssi/insub/
+MASTER_SITES=	http://cloud.github.com/downloads/cjones/insub/
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Some scripts for expressing how you feel on IRC and the web
@@ -30,6 +30,6 @@ do-install:
 		${PREFIX}/share/irssi/scripts/${SCRIPT}
 	${MKDIR} ${PREFIX}/share/cows/
 	cd ${WRKSRC} && \
-		${FIND} cows | ${CPIO} -pdmvu ${PREFIX}/share/
+		${FIND} cows | ${CPIO} -pdmu ${PREFIX}/share/
 
 .include <bsd.port.mk>
