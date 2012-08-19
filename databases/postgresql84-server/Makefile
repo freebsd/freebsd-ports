@@ -303,11 +303,6 @@ SUB_LIST+=	PG_GROUP=${PG_GROUP} \
 		PG_USER=${PG_USER} \
 		PG_UID=${PG_UID}
 
-.if defined(SERVER_ONLY)
-pre-everything::
-	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
-.endif
-
 .if !defined(NO_BUILD)
 
 pre-configure:
@@ -319,6 +314,9 @@ pre-configure:
 
 .if !target(pre-build)
 pre-build:
+.  if defined(SERVER_ONLY)
+	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
+.  endif
 	@ cd ${WRKSRC}/src/backend && ${SETENV} ${MAKE_ENV} ${GMAKE} symlinks
 .endif
 

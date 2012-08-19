@@ -37,6 +37,9 @@ MAN7=		alter_operator_family.7 alter_text_search_configuration.7 \
 
 .if !defined(NO_BUILD)
 pre-build:
+.  if defined(SERVER_ONLY)
+	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
+.  endif
 	@ cd ${WRKSRC}/src/backend ;\
 	    ${GMAKE} ../../src/include/parser/parse.h \
 		     ../../src/include/utils/fmgroids.h

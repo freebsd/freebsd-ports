@@ -330,7 +330,7 @@ SUB_LIST+=	PG_GROUP=${PG_GROUP} \
 		PG_UID=${PG_UID}
 
 .if defined(SERVER_ONLY)
-pre-everything::
+pre-build:
 	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 .endif
 
