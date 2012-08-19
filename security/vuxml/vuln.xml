@@ -51,44 +51,6 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
-  <vuln vid="c651c898-e90d-11e1-b230-0024e830109b">
-    <topic>libotr -- buffer overflows</topic>
-    <affects>
-      <package>
-	<name>libotr</name>
-	<range><lt>3.2.1</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>OTR developers report:</p>
-	<blockquote cite="http://lists.cypherpunks.ca/pipermail/otr-dev/2012-July/001347.html">
-	  <p>The otrl_base64_otr_decode() function and similar functions within OTR
-	  suffer from buffer overflows in the case of malformed input;
-	  specifically if a message of the format of "?OTR:===." is received
-	  then a zero-byte allocation is performed without a similar correlation
-	  between the subsequent base64 decoding write, as such it becomes
-	  possible to write between zero and three bytes incorrectly to the
-	  heap, albeit only with a value of '='.</p>
-	  <p>Because this code path is highly utilized, specifically in the
-	  reception of instant messages over pidgin or similar, this
-	  vulnerability is considered severe even though in many platforms and
-	  circumstances the bug would yield an unexploitable state and result
-	  simply in denial of service.</p>
-	  <p>The developers of OTR promptly fixed the errors and users of OTR are
-	  advised to upgrade the software at the next release cycle.</p>
-	</blockquote>
-      </body>
-    </description>
-    <references>
-      <cvename>CVE-2012-3461</cvename>
-    </references>
-    <dates>
-      <discovery>2012-07-27</discovery>
-      <entry>2012-08-18</entry>
-    </dates>
-  </vuln>
-
   <vuln vid="0f62be39-e8e0-11e1-bea0-002354ed89bc">
     <topic>OpenTTD -- Denial of Service</topic>
     <affects>
