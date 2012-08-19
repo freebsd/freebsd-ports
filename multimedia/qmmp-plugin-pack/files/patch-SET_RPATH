@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2012-07-23 03:56:51.000000000 +0900
++++ CMakeLists.txt	2012-07-24 07:13:44.000000000 +0900
+@@ -3,6 +3,7 @@
+ #freebsd include
+ include_directories(SYSTEM /usr/include /usr/local/include)
+ 
++SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+ 
+ CONFIGURE_FILE(
+   "${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in"
