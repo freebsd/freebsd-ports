@@ -7,6 +7,7 @@
 
 PORTNAME=	viewnior
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://cloud.github.com/downloads/xsisqox/Viewnior/
 
@@ -21,29 +22,31 @@ RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf
 USE_GMAKE=	yes
-USE_GNOME=	glib20 gtk20 intltool pkgconfig
+USE_GNOME=	glib20 gtk20
 INSTALLS_ICONS=	yes
 
 MAN1=		viewnior.1
 
-PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README TODO
+PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 
-OPTIONS=	NLS		"Enable gettext support" on
+OPTIONS_DEFINE=	NLS
+NLS_DESC=	Native Language Support via gettext
+OPTIONS_DEFAULT=	NLS
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/${MAN1} ${MAN1PREFIX}/man/man1
-# Documentations
-.if !defined(NOPORTDOCS)
+# Documentation
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .  for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
