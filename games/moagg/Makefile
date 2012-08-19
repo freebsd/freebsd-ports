@@ -20,9 +20,6 @@ COMMENT=	Pilot a small space ship
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	DATA
-OPTIONS_DEFAULT=	DATA
-
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
@@ -47,7 +44,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/run.sh.new ${PREFIX}/bin/${PORTNAME}
 
 # Data
-.if ${PORT_OPTIONS:MDATA}
+.if !defined (NOPORTDATA)
 	${MKDIR} ${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "data ghosts jar" ${DATADIR})
 .  for d in hiscores.dat log4j.properties
