@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	slf4j
-PORTVERSION=	1.5.8
-PORTREVISION=	1
+PORTVERSION=	1.6.6
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.slf4j.org/dist/
 
@@ -17,16 +16,17 @@ COMMENT=	Simple facade or abstraction for various logging frameworks
 USE_JAVA=	1.4+
 NO_BUILD=	YES
 
-JARFILES=	jcl-over-slf4j.jar \
-		jul-to-slf4j.jar \
+JARFILES=	slf4j-migrator.jar \
+		slf4j-simple.jar \
+		jcl-over-slf4j.jar \
 		log4j-over-slf4j.jar \
 		slf4j-ext.jar \
-		slf4j-jcl.jar \
 		slf4j-jdk14.jar \
-		slf4j-log4j12.jar \
-		slf4j-migrator.jar \
 		slf4j-nop.jar \
-		slf4j-simple.jar
+		jul-to-slf4j.jar \
+		slf4j-jcl.jar \
+		slf4j-log4j12.jar
+
 
 PLIST_FILES=	%%JAVAJARDIR%%/slf4j-api.jar \
 		${JARFILES:S,^,%%DATADIR%%/,}
