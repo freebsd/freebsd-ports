@@ -17,6 +17,8 @@ COMMENT=	XML Aware Indexing and Retrieval Architecture
 LIB_DEPENDS=	xerces-c:${PORTSDIR}/textproc/xerces-c2 \
 		icuio:${PORTSDIR}/devel/icu
 
+BROKEN=		leaves files behind on deinstallation
+
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	aclocal autoconf libtool
 ACLOCAL_ARGS=	-I ${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal -I .
