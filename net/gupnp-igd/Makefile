@@ -22,6 +22,8 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pygobject-2.0.pc:${PORTSDIR}/devel
 LIB_DEPENDS=	gupnp-1.0:${PORTSDIR}/net/gupnp
 RUN_DEPENDS=	gupnp>=0.18:${PORTSDIR}/net/gupnp
 
+BROKEN=		does not package
+
 CONFIGURE_ARGS=	--enable-introspection=yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
