@@ -104,6 +104,7 @@
     SUBDIR += tinyerp-server
     SUBDIR += tryton
     SUBDIR += trytond
+    SUBDIR += trytond_company
     SUBDIR += trytond_country
     SUBDIR += trytond_currency
     SUBDIR += trytond_party
