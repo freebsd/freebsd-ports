@@ -21,6 +21,8 @@ COMMENT=	Fronted (GUI) for gngeo
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
 		gngeo:${PORTSDIR}/emulators/gngeo
 
+BROKEN=		does not build
+
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
