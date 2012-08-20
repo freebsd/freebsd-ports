@@ -2026,6 +2026,7 @@
     SUBDIR += xcache
     SUBDIR += xfce4-smartbookmark-plugin
     SUBDIR += xist
+    SUBDIR += xombrero
     SUBDIR += xoops
     SUBDIR += xpi-adblock
     SUBDIR += xpi-adblock_plus
@@ -2126,7 +2127,6 @@
     SUBDIR += xshttpd
     SUBDIR += xshttpd-devel
     SUBDIR += xsp
-    SUBDIR += xxxterm
     SUBDIR += yabb
     SUBDIR += yahoo-ui
     SUBDIR += yanopaste
