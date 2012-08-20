@@ -10,6 +10,28 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20120820:
+AUTHOR: gahr@FreeBSD.org
+
+  * GitHub support has been integrated into bsd.sites.mk. In order to
+    fetch distfiles from GitHub, a port must define USE_GITHUB along
+    with the following variables:
+
+    GH_ACCOUNT  - account name of the GitHub user hosting the project
+                  default: not set, mandatory
+   
+    GH_PROJECT  - name of the project on GitHub
+                  default: ${PORTNAME}
+   
+    GH_TAGNAME  - name of the tag to download (master, 2.0.1, ...)
+                  default: ${DISTVERSION}
+   
+    GH_COMMIT   - first 7 digits of the commit that generated GH_TAGNAME
+                  (man git-describe(1))
+                  default: not set, mandatory
+
+    The port www/tivoka is an example how to use this mechanism.
+
 20120726:
 AUTHOR: bapt@FreeBSD.org
 
