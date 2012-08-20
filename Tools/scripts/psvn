@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/sh -eu
 #
 # psvn - Wrapper to set Subversion properties automatically
 #
@@ -27,52 +27,62 @@
 #
 # $FreeBSD$
 #
-# MAINTAINER=	beat@FreeBSD.org
+# MAINTAINER=	mandree@FreeBSD.org
+# beat@ has implicit approval to change this script.
 #
 
 #
 # The psvn wrapper checkes from replaced, conflicting, missing or
-# untracked files. When committing it adds the needed Subversion 
+# untracked files. When committing it adds the needed Subversion
 # properties and removes unneeded ones.
 # There is also adds a check subcommand which just executes the
 # checks.
-# 
+#
 
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:${PATH}
 export PATH
 
-SVN=`which svn`
+SVN="$(which svn)"
+LF="$(printf '\nX')"
+LF="${LF%X}"
 
-VERSION=`${SVN} --version --quiet | sed -e 's,^\(.*\)\.\(.*\)\..*,\1\2,'`
+VERSION=$("${SVN}" --version --quiet | sed -e 's,^\(.*\)\.\(.*\)\..*,\1\2,')
 if [ ${VERSION} -lt 17 ] ;
 then
-	echo "===> Please consider upgrading to Subversion 1.7"
+	echo "===> Please consider upgrading to Subversion 1.7 (or newer)"
 fi
 
 checkstatus () {
+	local IFS _error _file _status _statusline -
 	_error=0
- 
-	_files="${@}"
+	eval "set -- $@"
+	IFS="$LF"
+	set -- $("${SVN}" status -- "$@")
 
-	for _file in `echo ${_files}`
+	for _statusline
 	do
-		_status=`${SVN} status ${_file} | awk '{ print $1 }'`
+		_status="$(printf '%.7s' "${_statusline}")"
+		_file="${_statusline##????????}"
 
 		case "${_status}" in
-			R?|R)
-				echo "===> Do not replace files as this will break the CVS exporter: ${_file}"
+			R*)
+				printf >&2 '===> Do not replace files as this will break the CVS exporter: "%s"\n' "${_file}"
 				_error=1
 			;;
-			C|?C)
-				echo "===> Conflict detected: ${_file}"
+			C*|?C*)
+				printf >&2 '===> Conflict detected: \"%s\"\n' "${_file}"
 				_error=1
 			;;
-			\?)
-				echo "===> Untracked file. Consider svn adding or deleting this file: ${_file}"
+			\~*)
+				printf >&2 '===> Versioned item \"%s\" obstructed.\n' "${_file}"
 				_error=1
 			;;
-			\!)
-				echo "===> Removed file. Consider readding or svn deleting this file: ${_file}"
+			\?*)
+				printf >&2 '===> Untracked new file "%s". Consider svn adding or deleting it.\n' "${_file}"
+				_error=1
+			;;
+			\!*)
+				printf >&2 '===> Missing file "%s". Consider re-adding or svn deleting it.\n' "${_file}"
 				_error=1
 			;;
 		esac
@@ -85,61 +95,96 @@ checkstatus () {
 }
 
 setprop () {
-	_files="${@}"
+	local _file -
+	eval "set -- $1"
 
-	for _file in `echo ${_files}`
+	for _file
 	do
-		if [ -d ${_file} ] ;
+		if [ -d "${_file}" -o ! -e "${_file}" ] ;
 		then
 			continue
 		fi
-		if [ `${SVN} status ${_file} | head -1 | awk '{ print $1 }'` = 'D' ] ;
-		then
-			continue
+		printf >&2 '=> Adding svn keywords to "%s"\n' "${_file}"
+		case $(egrep -- '\$FreeBSD\$|\$[BDFSer]+:' "${_file}" >/dev/null || echo $?) in
+		"")	# matched pattern
+			"${SVN}" -q -- propset svn:keywords "FreeBSD=%H" "${_file}"
+			"${SVN}" -q -- propdel fbsd:nokeywords "${_file}"
+			;;
+		1)	# no match
+			"${SVN}" -q -- propset fbsd:nokeywords 1 "${_file}"
+			"${SVN}" -q -- propdel svn:keywords "${_file}"
+			;;
+		*)	# egrep failed
+			exit 1
+			;;
+		esac
+		if [ "${_file##/*}" != "bsd.port.mk" ] ; then
+			"${SVN}" -q -- propset svn:eol-style native "${_file}"
 		fi
-		echo "=> Adding svn keywords to ${_file}"
-		if egrep '\$FreeBSD\$|\$[BDFSer]+:' ${_file} > /dev/null ;
-		then
-			${SVN} -q propset svn:keywords "FreeBSD=%H" ${_file}
-			${SVN} -q propdel fbsd:nokeywords ${_file}
-		else
-			${SVN} -q propset fbsd:nokeywords 1 ${_file}
-			${SVN} -q propdel svn:keywords ${_file}
-		fi
-		if [ `basename ${_file}` != "bsd.port.mk" ] ;
-		then
-			${SVN} -q propset svn:eol-style native ${_file}
-		fi
-		${SVN} -q propset svn:mime-type text/plain ${_file}
-		${SVN} -q propdel cvs2svn:cvs-rev ${_file}
+		"${SVN}" -q -- propset svn:mime-type text/plain "${_file}"
+		"${SVN}" -q -- propdel cvs2svn:cvs-rev "${_file}"
 	done
 }
 
+# taken from "Rich's sh (POSIX shell) tricks",
+# a "Programming Guide[...]" at http://www.etalabs.net/sh_tricks.html
+savearray() {
+    for i do
+	printf %s\\n "$i" | sed -e "s/'/'\\\\''/g;1s/^/'/;\$s/\$/' \\\\/"
+    done
+    echo " "
+}
 
-case "${1}" in
+getfilequotedarray() {
+	local varname IFS
+	varname="$1"
+	shift
+	IFS="$LF"
+	set -- $("${SVN}" status -- "$@" | sed 's/^....... //')
+	eval "$varname=\$(savearray "\$@")"
+}
+
+for opt ; do
+    case "${opt}" in
+	-*) continue ;;
+    esac
+    case "${opt}" in
 	check)
-		files=`${SVN} status | awk '{ print $NF }'`
+		shift
+		if [ $# -gt 0 ] ; then
+		    echo >&2 "===> Unsupported option before, or garbage after command"
+		    exit 1
+		fi
+		getfilequotedarray "files" "$@"
 		checkstatus "${files}"
 		exit 0
 	;;
 	ci|commit)
-		opts=${@}
+		savedargs=$(savearray "$@")
 		shift
-		while getopts qm:F: opt
+		while getopts :qm:F: opt
 		do
 			case "$opt" in
 				q) ;;
 				m) ;;
 				F) ;;
+				\?) echo >&2 "===> Unsupported option -$OPTARG encountered. Abort."
+				    exit 1 ;;
+				:)  echo >&2 "===> Missing argument to option -$OPTARG. Abort."
+				    exit 1 ;;
 			esac
 		done
-		shift `expr $OPTIND - 1`
-		files=`${SVN} status "${@}" | awk '{ print $NF }'`
+		shift $(($OPTIND - 1))
+
+		getfilequotedarray "files" "$@"
 		checkstatus "${files}"
 		setprop "${files}"
-		${SVN} ${opts}
+
+		eval "set -- $savedargs"
+		"${SVN}" "$@"
 	;;
 	*)
-		${SVN} $@
+		"${SVN}" "$@"
 	;;
-esac
+    esac
+done
