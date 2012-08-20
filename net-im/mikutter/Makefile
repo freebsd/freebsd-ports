@@ -28,6 +28,8 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
 		rubygem-oauth>=0:${PORTSDIR}/net/rubygem-oauth \
 		${RUBY_SITELIBDIR}/bsearch.rb:${PORTSDIR}/devel/ruby-bsearch
 
+BROKEN=		does not build
+
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
 USE_RUBY=	yes
