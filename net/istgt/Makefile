@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.peach.ne.jp/archives/istgt/
 
 MAINTAINER=	aoyama@peach.ne.jp
-COMMENT=	An iSCSI target for Debian/NetBSD/FreeBSD
+COMMENT=	iSCSI target for Debian/NetBSD/FreeBSD
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -45,9 +45,10 @@ CONFIGURE_ARGS+=	--enable-symlink-device
 .endif
 
 .if ${PORT_OPTIONS:MVBOXVD}
+VBOX_WRKSRC=	`${MAKE} -C ${PORTSDIR}/emulators/virtualbox-ose -V WRKSRC`
 RUN_DEPENDS+=	${LOCALBASE}/lib/virtualbox/VBoxRT.so:${PORTSDIR}/emulators/virtualbox-ose
 BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/emulators/virtualbox-ose:patch
-CONFIGURE_ARGS+=	--with-vbox
+CONFIGURE_ARGS+=	--with-vbox=${VBOX_WRKSRC}/include
 .endif
 
 post-extract:
