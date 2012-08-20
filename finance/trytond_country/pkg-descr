@@ -1,0 +1,7 @@
+trytond_country is the country module for tryton.
+
+The country module defines the concepts of country and
+subdivision and comes preloaded with the ISO 3166 list of
+countries and subdivisions thanks to the pycountry module.
+
+WWW: http://www.tryton.org/
