@@ -1832,6 +1832,7 @@
     SUBDIR += tinymce3
     SUBDIR += tinyproxy
     SUBDIR += tinytinyhttpd
+    SUBDIR += tivoka
     SUBDIR += tntnet
     SUBDIR += tokyopromenade
     SUBDIR += tomcat-native

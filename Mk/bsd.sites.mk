@@ -515,6 +515,33 @@ MASTER_SITE_GET_E+= \
 	http://www5.get-e.org/%SUBDIR%/_files/
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_GITHUB)
+#
+# In order to use GitHub your port must define USE_GITHUB and the following
+# variables:
+#
+# GH_ACCOUNT    - account name of the GitHub user hosting the project
+#                 default: not set, mandatory
+#
+# GH_PROJECT    - name of the project on GitHub
+#                 default: ${PORTNAME}
+#
+# GH_TAGNAME    - name of the tag to download (master, 2.0.1, ...)
+#                 default: ${DISTVERSION}
+#
+# GH_COMMIT     - first 7 digits of the commit that generated GH_TAGNAME
+#                 (man git-describe(1))
+#                 default: not set, mandatory
+#            
+.if defined(USE_GITHUB)
+MASTER_SITE_GITHUB+= https://nodeload.github.com/%SUBDIR%
+MASTER_SITES+=	GH
+GH_PROJECT?=	${PORTNAME}
+GH_TAGNAME?=	${DISTVERSION}
+WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}
+.endif
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_GNOME)
 MASTER_SITE_GNOME+= \
 	ftp://ftp.belnet.be/mirror/ftp.gnome.org/%SUBDIR%/ \
@@ -1461,6 +1488,7 @@ MASTER_SITE_KERNEL_ORG+= \
 # Macro magic
 
 MASTER_SITES_ABBREVS=	CPAN:PERL_CPAN \
+			GH:GITHUB \
 			NL:NETLIB \
 			SF:SOURCEFORGE \
 			SFJP:SOURCEFORGE_JP \
@@ -1474,6 +1502,7 @@ MASTER_SITES_SUBDIRS=	\
 			CSME:myports \
 			DEBIAN:pool/main/${PORTNAME:C/^((lib)?.).*$/\1/}/${PORTNAME} \
 			GCC:releases/${DISTNAME} \
+			GITHUB:${GH_ACCOUNT}/${GH_PROJECT}/tarball/${GH_TAGNAME}?dummy=/ \
 			GNOME:sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/} \
 			GNU:${PORTNAME} \
 			HORDE:${PORTNAME} \
