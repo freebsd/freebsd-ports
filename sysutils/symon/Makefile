@@ -16,7 +16,6 @@ MASTER_SITE_SUBDIR=	uqs
 MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Performance and information monitoring tool
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message
 
 USE_PERL5_BUILD=	yes
@@ -56,6 +55,9 @@ SUBDIR+=	client
 MAKE_ARGS+=	SUBDIR="${SUBDIR}" RRDDIR="${LOCALBASE}"
 
 .include <bsd.port.pre.mk>
+
+post-extract:
+	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 .if ${OSVERSION} < 700000
 post-patch:
