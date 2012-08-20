@@ -44,13 +44,11 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/run.sh.new ${PREFIX}/bin/${PORTNAME}
 
 # Data
-.if !defined (NOPORTDATA)
 	${MKDIR} ${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "data ghosts jar" ${DATADIR})
-.  for d in hiscores.dat log4j.properties
+.for d in hiscores.dat log4j.properties
 	${INSTALL_DATA} ${WRKSRC}/${d} ${DATADIR}
-.  endfor
-.endif
+.endfor
 
 # Pixmaps
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/crates.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
