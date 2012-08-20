@@ -72,6 +72,8 @@ CONFIGURE_ARGS+=	--enable-weak-threads
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e '/CXXFLAGS=/s/-ansi//' \
+		${WRKSRC}/configure
 .if defined(WITHOUT_THREADS)
 	@${REINPLACE_CMD} -e 's,\(THREADSC.*FLAGS\).*,\1=${PTHREAD_CFLAGS},g' ${WRKSRC}/config/mh-bsd-gcc
 .endif
