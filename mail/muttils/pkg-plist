@@ -70,9 +70,4 @@ bin/wrap
 %%PYTHON_SITELIBDIR%%/muttils/wrapcommand.py
 %%PYTHON_SITELIBDIR%%/muttils/wrapcommand.pyc
 %%PYTHON_SITELIBDIR%%/muttils/wrapcommand.pyo
-%%EXAMPLESDIR%%/example-mail.vim
-%%EXAMPLESDIR%%/example-muttilsrc
-%%EXAMPLESDIR%%/example-muttrc
-%%EXAMPLESDIR%%/example-screenrc
-@dirrm %%EXAMPLESDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/muttils
