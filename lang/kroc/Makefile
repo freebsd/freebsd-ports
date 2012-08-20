@@ -21,6 +21,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 ONLY_FOR_ARCHS=	i386
+BROKEN=		does not build
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
