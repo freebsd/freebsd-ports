@@ -285,6 +285,7 @@
     SUBDIR += viewklass
     SUBDIR += vte
     SUBDIR += vte-reference
+    SUBDIR += vtkfox
     SUBDIR += wmapp
     SUBDIR += wxd
     SUBDIR += wxgtk24
