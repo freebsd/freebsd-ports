@@ -61,7 +61,6 @@ SUB_FILES=	\
 		pkg-install \
 		pkg-deinstall \
 		${APP_NAME}ctl \
-		${APP_NAME}.sh \
 		upstreams-cocoon.sh \
 		message \
 		message-advanced
