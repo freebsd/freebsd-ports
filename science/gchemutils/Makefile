@@ -24,6 +24,8 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/bodr.pc:${PORTSDIR}/science/bodr \
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/bodr.pc:${PORTSDIR}/science/bodr \
 		${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:${PORTSDIR}/science/chemical-mime-data
 
+PORTSCOUT=	limitw:1,even
+
 USE_BZIP2=	yes
 USE_XORG=	x11
 USE_GNOME=	gnomehack intlhack gnomedocutils gtk20 libgsf
