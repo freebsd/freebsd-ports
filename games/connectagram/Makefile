@@ -7,6 +7,7 @@
 
 PORTNAME=	connectagram
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
@@ -15,9 +16,6 @@ MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Word unscrambling game
 
 LICENSE=	GPLv3
-
-OPTIONS_DEFINE=	DATA
-OPTIONS_DEFAULT=	DATA
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -29,11 +27,11 @@ INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
 
 PORTDATA=	*
-PORTDOCS=	ChangeLog INSTALL
+PORTDOCS=	ChangeLog
 
-PLIST_FILES=	bin/connectagram \
-	share/applications/connectagram.desktop \
-	share/icons/hicolor/48x48/apps/connectagram.png
+PLIST_FILES=	bin/${PORTNAME} \
+	share/applications/${PORTNAME}.desktop \
+	share/icons/hicolor/48x48/apps/${PORTNAME}.png
 
 PLIST_DIRSTRY=	share/icons/hicolor/48x48/apps \
 	share/icons/hicolor/48x48 \
