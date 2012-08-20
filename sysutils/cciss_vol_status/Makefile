@@ -10,7 +10,7 @@ PORTVERSION=	1.10
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/cciss/${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fw@moov.de
 COMMENT=	Reports status of logical drives on ciss(4) controllers
 
 LICENSE=	GPLv2
