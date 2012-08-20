@@ -164,8 +164,6 @@
     SUBDIR += gonvert
     SUBDIR += gopod
     SUBDIR += gplink
-    SUBDIR += gpt
-    SUBDIR += gpt31
     SUBDIR += granulate
     SUBDIR += grc
     SUBDIR += gregexp

@@ -3643,3 +3643,5 @@ devel/apr0|devel/apr1|2012-08-18|Has expired
 www/apache20|www/apache22|2012-08-18|Has expired
 www/django-mezzanine-filebrowser|www/py-django-mezzanine-filebrowser|2012-08-19|Rename to consistency with other Python ports
 www/django-mezzanine-grappelli|www/py-django-mezzanine-grappelli|2012-08-19|Rename to consistency with other Python ports
+misc/gpt31||2012-08-20|Has expired: was a dependency for net/globus4, which was removed 2008-12-07, unmaintained upstream since 2004
+misc/gpt||2012-08-20|Has expired: was a dependency for net/globus4, which was removed 2008-12-07, unmaintained upstream since 2004
