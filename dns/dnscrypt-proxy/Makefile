@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dnscrypt-proxy
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	dns
 MASTER_SITES=	http://cloud.github.com/downloads/opendns/dnscrypt-proxy/ \
 		http://www.Awfulhak.org/dnscrypt-proxy/ \
