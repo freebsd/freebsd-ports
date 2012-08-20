@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	muttils
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	mail python
 MASTER_SITES=	https://bitbucket.org/blacktrash/${PORTNAME}/get/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ COMMENT=	Python utilities for console mail clients (eg. mutt)
 
 CONFLICTS=	zh-wenju-[0-9]* talkfilters-[0-9]* reed-[0-9]*
 
-CHANGESET=	42b380758b70
+CHANGESET=	8bb26094df06
 WRKSRC=		${WRKDIR}/blacktrash-${PORTNAME}-${CHANGESET}
 USE_PYTHON_BUILD=	yes
 USE_PYTHON_RUN=		yes
