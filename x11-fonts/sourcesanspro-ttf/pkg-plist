@@ -1,0 +1,16 @@
+%%FONTDIR%%/SourceSansPro-Black.ttf
+%%FONTDIR%%/SourceSansPro-BlackIt.ttf
+%%FONTDIR%%/SourceSansPro-Bold.ttf
+%%FONTDIR%%/SourceSansPro-BoldIt.ttf
+%%FONTDIR%%/SourceSansPro-ExtraLight.ttf
+%%FONTDIR%%/SourceSansPro-ExtraLightIt.ttf
+%%FONTDIR%%/SourceSansPro-It.ttf
+%%FONTDIR%%/SourceSansPro-Light.ttf
+%%FONTDIR%%/SourceSansPro-LightIt.ttf
+%%FONTDIR%%/SourceSansPro-Regular.ttf
+%%FONTDIR%%/SourceSansPro-Semibold.ttf
+%%FONTDIR%%/SourceSansPro-SemiboldIt.ttf
+%%FONTDIR%%/fonts.dir
+%%FONTDIR%%/fonts.scale
+@unexec rm %D/%%FONTDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
+@dirrm %%FONTDIR%%
