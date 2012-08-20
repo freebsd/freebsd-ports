@@ -104,6 +104,7 @@
     SUBDIR += tinyerp-server
     SUBDIR += tryton
     SUBDIR += trytond
+    SUBDIR += trytond_currency
     SUBDIR += trytond_product
     SUBDIR += venice
     SUBDIR += weberp

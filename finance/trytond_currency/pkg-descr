@@ -1,0 +1,6 @@
+trytond_currency is the currency module for trytond.
+
+It define currencies and exchange rate. Allow to customize the
+formatting of the currency amount.
+
+WWW: http://www.tryton.org/
