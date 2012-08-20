@@ -46,6 +46,10 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "i386"
+BROKEN=		leaves files behind on deinstallation
+.endif
+
 .if ${OSVERSION} < 700104
 IGNORE=	your FreeBSD version is not supported
 .endif
