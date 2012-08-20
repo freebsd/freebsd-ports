@@ -1,0 +1,6 @@
+trytond_company is the company module for tryton.
+
+The company module defines the concepts of company and employee
+and extend the user model.
+
+WWW: http://www.tryton.org/
