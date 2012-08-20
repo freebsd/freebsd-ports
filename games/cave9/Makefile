@@ -22,6 +22,7 @@ DATAVER=	4
 USE_GMAKE=	yes
 USE_SDL=	sdl ttf image
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/src
 
 MAKEFILE=	GNUmakefile
@@ -30,7 +31,7 @@ CFLAGS+=	-DDATADIR=\\\"${DATADIR}\\\"
 PORTDOCS=	*
 
 post-extract:
-	@${MV} ${WRKDIR}/data ${WRKSRC}
+	@${MV} ${WRKDIR}/data ${WRKSRC}/
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cave9 ${PREFIX}/bin
