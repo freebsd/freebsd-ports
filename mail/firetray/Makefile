@@ -17,6 +17,8 @@ COMMENT=	System tray add-on for firefox, thunderbird, seamonkey, etc
 
 PATCH_DEPENDS=	nspr>=4.8:${PORTSDIR}/devel/nspr
 
+BROKEN=		does not build
+
 USE_ZIP=	yes
 USE_GECKO=	libxul
 USE_SCONS=	yes
