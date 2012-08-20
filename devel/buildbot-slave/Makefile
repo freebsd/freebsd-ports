@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	buildbot-slave
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.6p1
 CATEGORIES=	devel python
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Slave part of Buildbot, an continuous integration system
 
 PROJECTHOST=	buildbot
