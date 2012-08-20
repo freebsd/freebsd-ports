@@ -106,6 +106,7 @@
     SUBDIR += trytond
     SUBDIR += trytond_country
     SUBDIR += trytond_currency
+    SUBDIR += trytond_party
     SUBDIR += trytond_product
     SUBDIR += venice
     SUBDIR += weberp
