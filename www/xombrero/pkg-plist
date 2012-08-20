@@ -1,0 +1,24 @@
+bin/xombrero
+bin/xombrero-bin
+share/applications/xombrero.desktop
+share/icons/hicolor/128x128/apps/xombreroicon128.png
+share/icons/hicolor/16x16/apps/xombreroicon16.png
+share/icons/hicolor/32x32/apps/xombreroicon32.png
+share/icons/hicolor/48x48/apps/xombreroicon48.png
+share/icons/hicolor/64x64/apps/xombreroicon64.png
+%%DATADIR%%/style.css
+%%DATADIR%%/tld-rules
+@dirrm %%DATADIR%%
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications
