@@ -3646,3 +3646,4 @@ www/django-mezzanine-grappelli|www/py-django-mezzanine-grappelli|2012-08-19|Rena
 misc/gpt31||2012-08-20|Has expired: was a dependency for net/globus4, which was removed 2008-12-07, unmaintained upstream since 2004
 misc/gpt||2012-08-20|Has expired: was a dependency for net/globus4, which was removed 2008-12-07, unmaintained upstream since 2004
 www/xxxterm/|www/xombrero|2012-08-20|Project renamed
+www/cakephp2|www/cakephp21|2012-08-21|Moved to match port version
