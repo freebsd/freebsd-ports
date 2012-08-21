@@ -45,13 +45,13 @@ PLIST_SUB+=	${opt}="@comment "
 .endif
 .endfor
 
-.if ${PORT_OPTIONS:MPDOPGSQL)
+.if ${PORT_OPTIONS:MPDOPGSQL}
 USE_PGSQL=	yes
 USE_PHP+=	pgsql pdo_pgsql
 PLIST_SUB+=	WITH_PDOPGSQL=""
 .endif
 
-.if ${PORT_OPTIONS:MPDOMYSQL)
+.if ${PORT_OPTIONS:MPDOMYSQL}
 USE_MYSQL=	client
 USE_PHP+=	mysql pdo_mysql
 PLIST_SUB+=	WITH_PDOMYSQL=""
