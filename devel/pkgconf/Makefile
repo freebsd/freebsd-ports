@@ -8,7 +8,8 @@
 PORTNAME=	pkgconf
 PORTVERSION=	0.8.7
 CATEGORIES=	devel
-MASTER_SITES=	http://tortois.es/~nenolod/distfiles/
+MASTER_SITES=	http://tortois.es/~nenolod/distfiles/ \
+		http://files.etoilebsd.net/pkgconf/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	pkg-config compatible utility which does not depend on glib
