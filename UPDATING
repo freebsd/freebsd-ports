@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120820:
+  AFFECTS: users of ports-mgmt/portupgrade-devel
+  AUTHOR:  bdrewery@FreeBSD.org
+
+  Due to a bug introduced in 20120601, portupgrade is unable to
+  upgrade itself on FreeBSD 7.x. This has been fixed in 20120820.
+  ports-mgmt/portupgrade is not affected. To upgrade, execute the following:
+
+  # cd /usr/ports/ports-mgmt/portupgrade-devel && make deinstall install clean
+
 20120817:
   AFFECTS: users of games/unnethack
   AUTHOR:  knu@FreeBSD.org

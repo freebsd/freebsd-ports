@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20120801
+PORTVERSION=	20120820
 PORTEPOCH=	3
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://github.com/pkgtools/pkgtools/tarball/${GITVERSION}/ \
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
 CONFLICTS_INSTALL=	portupgrade-[0-9]*
 
 FETCH_ARGS=	-Fpr
-GITVERSION=	b381859
+GITVERSION=	08890a8
 
 DIST_SUBDIR=	${PORTNAME}
 USE_RUBY=	yes
