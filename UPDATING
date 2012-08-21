@@ -5,6 +5,29 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20101128:
+  AFFECTS: users of net/asterisk16, net/asterisk16-addons
+  AUTHOR: Florian Smeets <flo@FreeBSD.org>
+
+  asterisk16 has been unsupported upstream for a while now and has known
+  security vulnerabilities therefor it was removed from the ports tree.
+  People still running net/asterisk16 should upgrade to net/asterisk.
+
+  First delete the asterisk addons, as they are part of asterisk now.
+
+  # pkg_delete -f asterisk16-addons\*
+
+  after that you can run one of the following
+
+  # portmaster -o net/asterisk net/asterisk16
+  or
+  # portupgrade -o net/asterisk net/asterisk16
+
+  After that you need to update your configuration. Take a look at the following
+  URL for the changes between 1.6 and 1.8
+
+  http://svnview.digium.com/svn/asterisk/branches/1.8/UPGRADE.txt
+
 20120820:
   AFFECTS: users of ports-mgmt/portupgrade-devel
   AUTHOR:  bdrewery@FreeBSD.org
