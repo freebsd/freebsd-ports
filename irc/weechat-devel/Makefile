@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	weechat
-PORTVERSION=	20120817
+PORTVERSION=	20120820
 CATEGORIES=	irc
 MASTER_SITES=	http://perturb.me.uk/distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -28,16 +28,17 @@ USE_CMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 WANT_PERL=	yes
 
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl \
+		gcrypt:${PORTSDIR}/security/libgcrypt
 
-GITREV=	e59c181
+GITREV=	2944adc
 WRKSRC=	${WRKDIR}/${PORTNAME}-${GITREV}
 
 # Please note: the DEBUG option is *NOT* empty, it is utilised by
 # bsd.cmake.mk to set the cmake build type to Debug instead of
 # Release.
 
-OPTIONS_DEFINE=	RUBY PYTHON PERL TCL LUA GUILE CHARSET BACKTRACE DEBUG ASPELL GNUTLS NLS DOCUMENTATION SASL COLOR256
+OPTIONS_DEFINE=	RUBY PYTHON PERL TCL LUA GUILE CHARSET BACKTRACE DEBUG ASPELL GNUTLS NLS DOCUMENTATION COLOR256
 OPTIONS_DEFAULT=CHARSET BACKTRACE DEBUG
 
 BACKTRACE_DESC=	Provide crash backtraces
@@ -49,7 +50,6 @@ PERL_DESC=	Perl scripting support
 PYTHON_DESC=	Python scripting support
 RUBY_DESC=	Ruby scripting support
 TCL_DESC=	Tcl scripting support
-SASL_DESC=	SASL with DH-Blowfish support
 COLOR256_DESC=	Use ncurses port for 256 color support
 
 .include <bsd.port.options.mk>
@@ -152,14 +152,6 @@ PLIST_SUB+=	DOCUMENTATION="@comment "
 
 .if ${PORT_OPTIONS:MBACKTRACE}
 LIB_DEPENDS+=	execinfo:${PORTSDIR}/devel/libexecinfo
-.endif
-
-.if ${PORT_OPTIONS:MSASL}
-LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
-PLIST_SUB+=	SASL=""
-.else
-CMAKE_ARGS+=	-DENABLE_GCRYPT=no
-PLIST_SUB+=	SASL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCOLOR256}
