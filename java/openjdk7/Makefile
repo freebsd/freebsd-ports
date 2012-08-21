@@ -17,9 +17,6 @@ MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}u${JDK_MIN
 		http://icedtea.classpath.org/download/drops/:jaf \
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,}
 DISTFILES=	${JDK_SRC_DISTFILE}${EXTRACT_SUFX} \
-		${JAXPFILE}:jaxp \
-		${JAXWSFILE}:jaxws \
-		${JAFFILE}:jaf \
 		${ANT_DISTFILE}${EXTRACT_SUFX}:ant
 EXTRACT_ONLY=	${JDK_SRC_DISTFILE}${EXTRACT_SUFX} \
 		${ANT_DISTFILE}${EXTRACT_SUFX}
@@ -37,16 +34,16 @@ MAKE_JOBS_UNSAFE=	YES
 OPTIONS=	POLICY   "Install the Unlimited Strength Policy Files"      on \
 		TZUPDATE "Update the time zone data"                        on
 
-PORT_MINOR_VERSION=	5
-PORT_BUILD_NUMBER=	06
+PORT_MINOR_VERSION=	${JDK_MINOR_VERSION}
+PORT_BUILD_NUMBER=	${JDK_BUILD_NUMBER}
 JDK_MAJOR_VERSION=	7
-JDK_MINOR_VERSION=	4
-JDK_BUILD_NUMBER=	22
-JDK_BUILD_DATE=		02_may_2012
+JDK_MINOR_VERSION=	6
+JDK_BUILD_NUMBER=	24
+JDK_BUILD_DATE=		09_aug_2012
 JDK_SRC_DISTFILE=	${PORTNAME}-${JDK_MAJOR_VERSION}u${JDK_MINOR_VERSION}-fcs-src-b${JDK_BUILD_NUMBER}-${JDK_BUILD_DATE}
 
 # Use our own version of ant to avoid circular dependencies
-ANT_VERSION=		1.8.3
+ANT_VERSION=		1.8.4
 ANT_DISTFILE=		apache-ant-${ANT_VERSION}-bin
 
 LATEST_LINK=		openjdk7
@@ -55,10 +52,6 @@ USE_GMAKE=	YES
 USE_ICONV=	YES
 USE_XORG+=	x11 xext xi xrender xt xtst
 MAKE_JOBS_UNSAFE=	yes
-
-JAXPFILE=	jaxp145_01.zip
-JAXWSFILE=	jdk7-jaxws2_2_4-b04-2011_06_01.zip
-JAFFILE=	jdk7-jaf-2010_08_19.zip
 
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2 \
 		asound.2:${PORTSDIR}/audio/alsa-lib
@@ -88,7 +81,6 @@ MAKE_ENV+=	LANG="C" \
 		ALT_X11_PATH="${LOCALBASE}" \
 		ALT_PKG_PATH="${LOCALBASE}" \
 		ALT_PACKAGE_PATH="${LOCALBASE}" \
-		ALT_DROPS_DIR="${DISTDIR}" \
 		ANT_HOME="${WRKDIR}/apache-ant-${ANT_VERSION}" \
 		X11DIR="${LOCALBASE}" \
 		LOCALDIR="${LOCALBASE}" \
@@ -96,6 +88,8 @@ MAKE_ENV+=	LANG="C" \
 		SKIP_COMPARE_IMAGES="true" \
 		SKIP_FASTDEBUG_BUILD="true" \
 		SKIP_DEBUG_BUILD="true" \
+		ZIP_DEBUGINFO_FILES=0 \
+		ENABLE_FULL_DEBUG_SYMBOLS=0 \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		MILESTONE="fcs" \
 		JDK_MICRO_VERSION="0_0${PORT_MINOR_VERSION}" \
