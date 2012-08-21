@@ -15,6 +15,8 @@ COMMENT=	A tool which helps searching/browsing/writing the Japanese Ruby docs
 
 RUN_DEPENDS=	rubygem-launchy>=2.0.5:${PORTSDIR}/devel/rubygem-launchy
 
+BROKEN=		unable to resolve dependencies
+
 USE_RUBY=	yes
 USE_RAKE=	yes
 USE_RUBYGEMS=	yes
