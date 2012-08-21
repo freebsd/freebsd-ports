@@ -119,19 +119,19 @@ CONFIGURE_ARGS+=	--without-gtk2
 CONFIGURE_ARGS+=	--enable-xlock-group
 .endif
 
-.if ${PORT_OPTIONS:MTIME_BOMB)
+.if ${PORT_OPTIONS:MTIME_BOMB}
 CONFIGURE_ARGS+=	--enable-bomb
 .else
 CONFIGURE_ARGS+=	--disable-bomb
 .endif
 
-.if ${PORT_OPTIONS:MCUSTOMIZATION)
+.if ${PORT_OPTIONS:MCUSTOMIZATION}
 CONFIGURE_ARGS+=	--enable-customization
 .endif
 
 CONFIGURE_ENV+=		XLOCKLIBS="${KRB5LIB} ${KRB4LIB} ${MESALIB}"
 
-.if ${PORT_OPTIONS:MDISABLE_ALLOW_ROOT)
+.if ${PORT_OPTIONS:MDISABLE_ALLOW_ROOT}
 CONFIGURE_ARGS+=	--disable-allow-root
 .endif
 
