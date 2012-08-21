@@ -7,6 +7,7 @@
 
 PORTNAME=	asteroids3d
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/a3d/${PORTVERSION}/ \
 		LOCAL/madpilot/asteroids3d/:icons
@@ -44,17 +45,20 @@ pre-configure:
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|g' ${WRKSRC}/autogen.sh
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME:S/3d/3D/} ${PREFIX}/bin/${PORTNAME}
-# Pixmaps
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}*.png ${PREFIX}/share/pixmaps
+
 # Data
-.if !defined(NOPORTDATA)
 	${MKDIR} ${DATADIR}
 	@(cd ${WRKSRC}/src && ${COPYTREE_SHARE}  "*.ub *.ppm" ${DATADIR})
-.endif
+
+# Pixmaps
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}*.png ${PREFIX}/share/pixmaps
+
 # Documentation
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.html ${DOCSDIR}
 .endif
