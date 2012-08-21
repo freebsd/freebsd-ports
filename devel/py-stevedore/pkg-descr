@@ -1,0 +1,8 @@
+Python makes loading code dynamically easy, allowing you to configure
+and extend your application by discovering and loading extensions
+("plugins") at runtime. Many applications implement their own library
+for doing this, using __import__ or importlib. Stevedore avoids
+creating yet another extension mechanism by building on top of setuptools
+entry points.
+
+WWW: https://github.com/dreamhost/stevedore
