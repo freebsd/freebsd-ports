@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	termit
-PORTVERSION=	2.9.4
+PORTVERSION=	2.9.5
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	http://cloud.github.com/downloads/nonstop/termit/
 
@@ -15,10 +15,23 @@ COMMENT=	Small terminal emulator
 
 LICENSE=	GPLv2
 
+LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
+		pcre:${PORTSDIR}/devel/pcre \
+		cairo:${PORTSDIR}/graphics/cairo \
+		png15:${PORTSDIR}/graphics/png \
+		freetype:${PORTSDIR}/print/freetype2 \
+		expat:${PORTSDIR}/textproc/expat2 \
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
+		xcb:${PORTSDIR}/x11/libxcb
+
 USE_BZIP2=	yes
-USE_GNOME=	vte
+USE_GNOME=	gdkpixbuf2 vte
 USE_LUA=	yes
 USE_CMAKE=	yes
+USE_PKGCONFIG=	build
+USE_ICONV=	yes
+USE_XORG=	pixman x11 xau xcomposite xcursor xdamage xdmcp xext xfixes \
+		xi xinerama xrandr xrender
 MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-I${LUA_INCDIR}
