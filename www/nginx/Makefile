@@ -456,12 +456,11 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_response-${NGINX_RESPONSE_VERSIO
 
 .if ${PORT_OPTIONS:MHTTP_SUBS_FILTER}
 USE_HTTP_REWRITE=	yes
-NGINX_HTTP_SUBS_FILTER_VERSION=	0.5.2.r59
-MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:subs_filter/}
-MASTER_SITE_SUBDIR+=	osa/:subs_filter
-DISTFILES+=	ngx_http_subs_filter_module-${NGINX_HTTP_SUBS_FILTER_VERSION}.tar.gz:subs_filter
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_subs_filter_module-${NGINX_HTTP_SUBS_FILTER_VERSION}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_subs_filter_module.c
+GIT_HTTP_SUBS_FILTER_VERSION=	0-gb32237d
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/yaoweibin/ngx_http_substitutions_filter_module/tarball/master/:subs_filter
+DISTFILES+=	yaoweibin-ngx_http_substitutions_filter_module-${GIT_HTTP_SUBS_FILTER_VERSION}.tar.gz:subs_filter
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/yaoweibin-ngx_http_substitutions_filter_module-${GIT_HTTP_SUBS_FILTER_VERSION:S/^0-g//}
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_SECURE_LINK}
@@ -845,7 +844,7 @@ USE_OPENSSL=	yes
 
 pre-everything::
 	@${ECHO_MSG}
-.if ${PORT_OPTIONS:MHTTP_UPSTREAM_FAIR)
+.if ${PORT_OPTIONS:MHTTP_UPSTREAM_FAIR}
 	@${ECHO_MSG} "Enable http_ssl module to build upstream_fair with SSL support"
 .endif
 .if ${PORT_OPTIONS:MPASSENGER}
