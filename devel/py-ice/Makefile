@@ -7,11 +7,11 @@
 
 PORTNAME=	Ice
 PORTVERSION=	3.4.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://download.zeroc.com/Ice/3.4/ \
 		http://www.dirk.sh/dirk/Ice/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	Ice-${PORTVERSION}
 
 MAINTAINER=	tonymaher@optusnet.com.au
 COMMENT=	An Ice (Internet Communications Engine) language mapping for Python
@@ -44,7 +44,7 @@ BROKEN=		does not compile on ia64
 MAKE_ENV=	LP64=yes
 .endif
 
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 MAKE_ENV+=	NOPORTDOCS=yes
 .endif
 
