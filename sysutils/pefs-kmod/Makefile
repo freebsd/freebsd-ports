@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pefs
-DISTVERSION=	2012-06-21
+DISTVERSION=	2012-08-20
 CATEGORIES=	sysutils kld
 MASTER_SITES=	http://cloud.github.com/downloads/glk/${PORTNAME}/
 PKGNAMESUFFIX=	-kmod
