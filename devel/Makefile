@@ -3434,6 +3434,7 @@
     SUBDIR += py-speaklater
     SUBDIR += py-sqlcc
     SUBDIR += py-statgrab
+    SUBDIR += py-stevedore
     SUBDIR += py-subversion
     SUBDIR += py-subvertpy
     SUBDIR += py-sysv_ipc

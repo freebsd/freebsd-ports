@@ -1,0 +1,101 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/namespace_packages.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/dispatch.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/dispatch.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/dispatch.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/driver.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/driver.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/driver.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/enabled.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/enabled.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/enabled.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/extension.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/extension.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/extension.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/hook.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/hook.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/hook.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/named.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/named.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/named.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_dispatch.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_dispatch.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_dispatch.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_driver.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_driver.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_driver.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_enabled.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_enabled.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_enabled.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_extension.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_extension.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_extension.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_hook.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_hook.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_hook.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_named.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_named.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests/test_named.pyo
+%%PORTDOCS%%%%DOCSDIR%%/.buildinfo
+%%PORTDOCS%%%%DOCSDIR%%/_images/graphviz-08fe6220bc1dbd26a74e2669d53a297aa22af2f3.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/graphviz-08fe6220bc1dbd26a74e2669d53a297aa22af2f3.png.map
+%%PORTDOCS%%%%DOCSDIR%%/_images/graphviz-3af069098c975cf4ccc9b878bd4ecfce2f485b8b.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/graphviz-3af069098c975cf4ccc9b878bd4ecfce2f485b8b.png.map
+%%PORTDOCS%%%%DOCSDIR%%/_images/graphviz-c58c2e8e4126e434dc2251649dea48f116f08b19.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/graphviz-c58c2e8e4126e434dc2251649dea48f116f08b19.png.map
+%%PORTDOCS%%%%DOCSDIR%%/_sources/history.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/install.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/managers.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/patterns_enabling.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/patterns_loading.txt
+%%PORTDOCS%%%%DOCSDIR%%/_static/ajax-loader.gif
+%%PORTDOCS%%%%DOCSDIR%%/_static/basic.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/comment-bright.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/comment-close.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/comment.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/default.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/doctools.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/down-pressed.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/down.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/file.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/jquery.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/minus.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/plus.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/pygments.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/searchtools.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/sidebar.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/underscore.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/up-pressed.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/up.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/websupport.js
+%%PORTDOCS%%%%DOCSDIR%%/genindex.html
+%%PORTDOCS%%%%DOCSDIR%%/history.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/install.html
+%%PORTDOCS%%%%DOCSDIR%%/managers.html
+%%PORTDOCS%%%%DOCSDIR%%/objects.inv
+%%PORTDOCS%%%%DOCSDIR%%/patterns_enabling.html
+%%PORTDOCS%%%%DOCSDIR%%/patterns_loading.html
+%%PORTDOCS%%%%DOCSDIR%%/search.html
+%%PORTDOCS%%%%DOCSDIR%%/searchindex.js
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_static
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/stevedore
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
