@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Rose-DB-Object
-PORTVERSION=	0.7980
+PORTVERSION=	0.7990
 PORTEPOCH=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extensible, high performance RDBMS-OO mapper
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Bit-Vector>=0:${PORTSDIR}/math/p5-Bit-Vector \
 		p5-Clone>=0.29:${PORTSDIR}/devel/p5-Clone \
@@ -26,7 +29,6 @@ BUILD_DEPENDS=	p5-Bit-Vector>=0:${PORTSDIR}/math/p5-Bit-Vector \
 		p5-Rose-Object>=0.854:${PORTSDIR}/devel/p5-Rose-Object \
 		p5-Time-Clock>=1:${PORTSDIR}/devel/p5-Time-Clock
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 TEST_DEPENDS=	p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle
 
 PERL_CONFIGURE=	yes
