@@ -7,17 +7,14 @@
 
 PORTNAME=	blockrage
 PORTVERSION=	0.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	nemysis@gmx.ch
-COMMENT=	Block Rage is falling blocks game with a 2-player hotseat mode
+COMMENT=	Falling blocks game with 2-player hotseat mode
 
 LICENSE=	GPLv2
-
-OPTIONS_DEFINE=	DATA
-OPTIONS_DEFAULT=	DATA
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	${PORTNAME}
@@ -47,13 +44,11 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/${MAN6} ${MAN6PREFIX}/man/man6
 
 # Data
-.if ${PORT_OPTIONS:MDATA}
 .  for d in data blockrage-fhs.rc blockrage.cfg blockrage.rc
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${DATADIR})
 .  endfor
-.endif
 
-# Documentations
+# Documentation
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .  for f in ${PORTDOCS}
