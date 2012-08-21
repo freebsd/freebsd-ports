@@ -21,6 +21,8 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-ca
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo
 LIB_DEPENDS=	clutter-glx-1.0:${PORTSDIR}/graphics/clutter
 
+BROKEN=		bad plist
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
