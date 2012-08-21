@@ -2234,6 +2234,7 @@
     SUBDIR += p5-Multiplex-CMD
     SUBDIR += p5-NEXT
     SUBDIR += p5-Net-DBus
+    SUBDIR += p5-Net-ZooKeeper
     SUBDIR += p5-Number-Bytes-Human
     SUBDIR += p5-Number-Tolerant
     SUBDIR += p5-OLE-Storage_Lite
