@@ -1,6 +1,6 @@
---- gtk2_ardour/ardour_ui.cc.orig	Sat Mar 17 02:55:45 2007
-+++ gtk2_ardour/ardour_ui.cc	Sun Mar 18 14:44:03 2007
-@@ -28,6 +28,8 @@
+--- gtk2_ardour/ardour_ui.cc.orig
++++ gtk2_ardour/ardour_ui.cc
+@@ -31,6 +31,8 @@
  #include <iostream>
  
  #include <sys/resource.h>
@@ -9,7 +9,7 @@
  
  #include <gtkmm/messagedialog.h>
  #include <gtkmm/accelmap.h>
-@@ -456,8 +458,11 @@
+@@ -696,8 +698,11 @@ ARDOUR_UI::check_memory_locking ()
  		struct rlimit limits;
  		int64_t ram;
  		long pages, page_size;
@@ -22,12 +22,12 @@
  			ram = 0;
  		} else {
  			ram = (int64_t) pages * (int64_t) page_size;
-@@ -476,7 +481,7 @@
- 						     "This might cause Ardour to run out of memory before your system "
- 						     "runs out of memory. \n\n"
- 						     "You can view the memory limit with 'ulimit -l', "
--						     "and it is normally controlled by /etc/security/limits.conf"));
-+						     "and it is normally controlled by /etc/login.conf"));
- 				
+@@ -716,7 +721,7 @@ ARDOUR_UI::check_memory_locking ()
+ 								     "This might cause %1 to run out of memory before your system "
+ 								     "runs out of memory. \n\n"
+ 								     "You can view the memory limit with 'ulimit -l', "
+-								     "and it is normally controlled by /etc/security/limits.conf"), PROGRAM_NAME));
++								     "and it is normally controlled by /etc/login.conf"), PROGRAM_NAME));
+ 						   
  				VBox* vbox = msg.get_vbox();
  				HBox hbox;
