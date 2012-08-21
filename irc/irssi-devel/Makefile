@@ -16,6 +16,8 @@ COMMENT=	A modular IRC client with many features
 
 LIB_DEPENDS=	glib-2.0:${PORTSDIR}/devel/glib20
 
+BROKEN=		size mismatch
+
 CONFLICTS=	irssi-0.8*
 
 GNU_CONFIGURE=	yes
