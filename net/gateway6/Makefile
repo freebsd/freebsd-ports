@@ -32,7 +32,7 @@ GW6C_DATA=	\
 		HEX_DC_0007_Gateway6_Client_Release_Notes.pdf
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
-SUB_FILES=	gateway6.sh pkg-message
+SUB_FILES=	pkg-message
 
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
