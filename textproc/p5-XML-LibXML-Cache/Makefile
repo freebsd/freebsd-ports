@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-LibXML-Cache
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,13 +14,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Document cache for XML::LibXML
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-XML-LibXML>=1.59:${PORTSDIR}/textproc/p5-XML-LibXML \
 		p5-XML-LibXSLT>=1.59:${PORTSDIR}/textproc/p5-XML-LibXSLT
-RUN_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-XML-LibXML>=1.59:${PORTSDIR}/textproc/p5-XML-LibXML \
-		p5-XML-LibXSLT>=1.59:${PORTSDIR}/textproc/p5-XML-LibXSLT
-
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-File-Touch>=0:${PORTSDIR}/devel/p5-File-Touch \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 
