@@ -20,9 +20,11 @@ USE_GMAKE=	yes
 ALL_TARGET=	${PORTNAME}
 USE_SDL=	sdl image
 
-PLIST_FILES=	bin/sets
+PLIST_FILES=	bin/${PORTNAME}
 
 PORTDOCS=	README
+
+.include <bsd.port.options.mk>
 
 do-install:
 # Executable
@@ -30,11 +32,9 @@ do-install:
 
 post-install:
 # Documentation
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-.  for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.  endfor
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
