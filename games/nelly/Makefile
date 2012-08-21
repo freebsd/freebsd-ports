@@ -7,6 +7,7 @@
 
 PORTNAME=	nelly
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games python
 MASTER_SITES=	http://www.partiallydisassembled.net/nelly/ \
 		http://media.pyweek.org/dl/2/rushed/
@@ -16,9 +17,6 @@ COMMENT=	Nelly's Rooftop Garden, physics-based puzzle game
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>=0:${PORTSDIR}/devel/py-game \
 		${PYTHON_PKGNAMEPREFIX}opengl>=0:${PORTSDIR}/graphics/py-opengl
-
-OPTIONS_DEFINE=	DATA
-OPTIONS_DEFAULT=	DATA
 
 USE_PYTHON_RUN=	yes
 NO_BUILD=	yes
@@ -47,11 +45,9 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/*.py ${DATADIR}
 
 # Data
-.if ${PORT_OPTIONS:MDATA}
 .  for d in fonts levels textures
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${DATADIR})
 .  endfor
-.endif
 
 # Pixmaps
 	${INSTALL_DATA} ${WRKSRC}/textures/menu.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
