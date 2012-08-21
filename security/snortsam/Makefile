@@ -28,7 +28,6 @@ SUB_FILES=	pkg-message \
 HAS_CONFIGURE=	yes
 NO_BUILD=	yes
 CONFIGURE_SCRIPT=	src/Makefile
-WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}
 
 CONFIG_DIR?=	${PREFIX}/etc/snortsam
 
@@ -54,6 +53,9 @@ EXTRA_PATCHES+=	${FILESDIR}/ssp_ipfw2_no_table_check.patch
 .if defined(WITH_DEBUG)
 DEBUG=-DDEBUG
 .endif
+
+post-extract:
+	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 pre-configure:
 	@${REINPLACE_CMD} -e "s|/etc/snortsam.conf|${CONFIG_DIR}/snortsam.conf|g" ${WRKSRC}/conf/snortsam.conf.sample
