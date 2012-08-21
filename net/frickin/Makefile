@@ -15,11 +15,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	asm@asm.kiev.ua
 COMMENT=	Frickin PPTP Proxy
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_RC_SUBR=	frickin
 SUB_FILES=	pkg-message
 PORTDOCS=	INSTALL LICENSE
 PLIST_FILES=	sbin/frickin2 etc/frickin.conf.sample
+
+post-extract:
+	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g;' \

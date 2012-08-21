@@ -15,8 +15,6 @@ COMMENT=	Flexible rsync resource manager daemon written in ruby
 
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	ruby18
 
@@ -26,6 +24,9 @@ PORTDOCS=	README
 
 USE_RC_SUBR=	${PORTNAME}
 SUB_LIST=	RUBY_WITHOUT_SUFFIX="${RUBY_WITHOUT_SUFFIX}"
+
+post-extract:
+	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME}.rb ${PREFIX}/bin

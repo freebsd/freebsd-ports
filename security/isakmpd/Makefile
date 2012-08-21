@@ -26,7 +26,6 @@ BUILD_DEPENDS+=	keynote:${PORTSDIR}/security/keynote
 .endif
 
 USE_RC_SUBR=	isakmpd
-WRKSRC=		${WRKDIR}/isakmpd
 MAKE_ENV+=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man LC_ALL=C
 
 MAN5=		isakmpd.conf.5 isakmpd.policy.5
@@ -40,6 +39,9 @@ USE_OPENSSL=	yes
 OPENSSLINC?=	/usr/include
 OPENSSLLIB?=	/usr/lib
 MAKE_ENV+=	OPENSSLINC="${OPENSSLINC}" OPENSSLLIB="${OPENSSLLIB}"
+
+post-extract:
+	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 post-patch:
 .for f in conf.h ike_auth.c isakmpd.8 isakmpd.conf.5 isakmpd.policy.5 policy.h

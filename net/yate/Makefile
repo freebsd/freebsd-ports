@@ -25,8 +25,6 @@ USE_LDCONFIG=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 
-WRKSRC=		${WRKDIR}/yate
-
 CONFIGURE_ARGS=	--without-fdsize \
 		--without-libqt4 \
 		--with-zlib=/usr
@@ -161,6 +159,9 @@ PLIST_SUB+=	WITH_ALSA="@comment "
 .if defined(NOPORTDOCS)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-noportdocs
 .endif
+
+post-extract:
+	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 post-install:
 	@cd ${PREFIX}/etc/${PORTNAME}; \

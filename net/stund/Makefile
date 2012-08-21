@@ -15,11 +15,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	A simple STUN (RFC 3489) server and client
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
 USE_GMAKE=	yes
 USE_RC_SUBR=	stund
 MAKE_ENV=	"CXX=${CXX}"
+
+post-extract:
+	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/server ${PREFIX}/sbin/stund

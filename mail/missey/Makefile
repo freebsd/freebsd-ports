@@ -29,6 +29,7 @@ USE_RC_SUBR=	mps
 
 post-extract:
 	@${MV} ${WRKDIR}/mps/src ${WRKSRC}
+	@${RM} -r ${WRKDIR}/mps
 
 post-patch:
 	@${CP}	${FILESDIR}/Makefile ${WRKSRC}/Makefile

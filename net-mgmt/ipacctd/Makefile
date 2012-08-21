@@ -16,12 +16,14 @@ COMMENT=	IP accounting using divert socket
 
 USE_RC_SUBR=	ipacctd
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ENV+=	BINDIR="${PREFIX}/sbin"
 
 MAN8=		ipacctd.8
 MANLANG=	"" ru.KOI8-R
 MANCOMPRESSED=	yes
+
+post-extract:
+	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 post-install:
 .ifndef(NOPORTDOCS)
