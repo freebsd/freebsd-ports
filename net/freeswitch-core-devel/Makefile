@@ -356,7 +356,7 @@ pre-install:
 	@${CHMOD} 664 ${WRKSRC}/libs/freetdm/conf/*
 	@${MKDIR} ${ETCDIR}/conf
 	@${TOUCH} ${ETCDIR}/conf/.freeswitch-core-devel
-.if ${PORT_OPTIONS:MMODFREETDM)
+.if ${PORT_OPTIONS:MMODFREETDM}
 	@${MKDIR} ${ETCDIR}/conf/autoload_configs
 .endif
 
