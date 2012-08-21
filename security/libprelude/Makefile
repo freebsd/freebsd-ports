@@ -18,6 +18,8 @@ LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls \
 OPTIONS=	PERL "Include Perl bindings" off \
 		PYTHON "Include Python bindings" off
 
+BROKEN=		does not configure
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
