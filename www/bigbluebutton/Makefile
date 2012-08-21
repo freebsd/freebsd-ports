@@ -7,7 +7,7 @@
 
 PORTNAME=	bigbluebutton
 PORTVERSION=	0.71
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www java
 MASTER_SITES=	http://bigbluebutton.org/downloads/${PORTVERSION}/ \
 		http://bigbluebutton.org/downloads/0.70/:2 \
@@ -82,10 +82,10 @@ SUB_FILES=	pkg-message openoffice nginx.conf-dist bbb-conf
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MEETME) || defined(WITH_KONFERENCE)
-BUILD_DEPENDS+=${LOCALBASE}/sbin/asterisk:${PORTSDIR}/net/asterisk16
+BUILD_DEPENDS+=${LOCALBASE}/sbin/asterisk:${PORTSDIR}/net/asterisk
 .if  defined(WITH_MEETME)
 .if !exists(${LOCALBASE}/lib/asterisk/modules/app_meetme.so)
-IGNORE=Option meetme requires app_meetme.so from asterisk port. Rebuild net/asterisk16 with WITH_ZAPTEL=yes
+IGNORE=Option meetme requires app_meetme.so from asterisk port. Rebuild net/asterisk with WITH_DAHDI=yes
 .endif
 .endif
 .if  defined(WITH_KONFERENCE)
