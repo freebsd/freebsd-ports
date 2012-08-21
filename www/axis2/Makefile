@@ -6,6 +6,7 @@
 
 PORTNAME=	axis2
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	axis/${PORTNAME}/java/core/${PORTVERSION}/
@@ -80,7 +81,8 @@ do-install:
 		${ECHO_MSG} "	Preserving local configuration file: ${APPHOME}/webapps/${PORTNAME}/WEB-INF/web.xml"; \
 	fi;
 		${INSTALL_DATA} ${WRKSRC}/webapp/WEB-INF/web.xml.${CONF_EXT} ${APPHOME}/webapps/${PORTNAME}/WEB-INF
-.if $(PORT_OPTIONS:MEXAMPLES}
+.if ${PORT_OPTIONS:MEXAMPLES}
+	${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/samples && ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} \;
 	cd ${WRKSRC}/samples && ${FIND} . -type f -not -name '*.class' -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} \;
 .endif
