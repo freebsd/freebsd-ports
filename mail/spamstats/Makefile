@@ -7,14 +7,17 @@
 
 PORTNAME=	spamstats
 PORTVERSION=	0.6c
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
-MASTER_SITES=	http://www.inl.fr/download/
+#MASTER_SITES=	http://www.inl.fr/download/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	leeym
 
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	A tool to generate statistics for spamd of Mail::SpamAssassin
 
-RUN_DEPENDS=	p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip
+RUN_DEPENDS=	p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
+		p5-Compress-Bzip2>=2.08:${PORTSDIR}/archivers/p5-Compress-Bzip2
 
 USE_PERL5=	yes
 NO_BUILD=	yes
