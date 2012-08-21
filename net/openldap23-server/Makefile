@@ -356,7 +356,7 @@ LIB_DEPENDS+=		slp.1:${PORTSDIR}/net/openslp
 .endif
 
 .if defined(WANT_OPENLDAP_THREADS) && !defined(WITHOUT_SLURPD)
-SLURPDSH=		slurpd.sh
+SLURPDSH=		slurpd
 PLIST_SUB+=		SLURPD=""
 .else
 PLIST_SUB+=		SLURPD="@comment "
