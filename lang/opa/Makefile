@@ -29,8 +29,6 @@ RUN_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/ssl/ssl.a:${PORTSDIR}/security/oca
 		${LOCALBASE}/bin/node:${PORTSDIR}/www/node \
 		${LOCALBASE}/bin/npm:${PORTSDIR}/www/npm
 
-BROKEN=		checksum mismatch
-
 GITVER=		2988
 USE_JAVA=	yes
 JAVA_BUILD=	yes
