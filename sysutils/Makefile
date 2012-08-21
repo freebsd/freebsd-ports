@@ -65,6 +65,7 @@
     SUBDIR += battmond
     SUBDIR += battray
     SUBDIR += bbapm
+    SUBDIR += bbcp
     SUBDIR += bchunk
     SUBDIR += be_agent
     SUBDIR += beadm
