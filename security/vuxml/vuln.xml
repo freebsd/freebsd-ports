@@ -51,6 +51,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="65b25acc-e63b-11e1-b81c-001b77d09812">
+    <topic>rssh -- arbitrary command execution</topic>
+    <affects>
+      <package>
+        <name>rssh</name>
+        <range><lt>2.3.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Derek Martin (rssh maintainer) reports:</p>
+        <blockquote
+          cite="http://sourceforge.net/mailarchive/message.php?msg_id=29235647">
+          <p>Henrik Erkkonen has discovered that, through clever
+          manipulation of environment variables on the ssh command
+          line, it is possible to circumvent rssh.  As far as I can
+          tell, there is no way to effect a root compromise, except of
+          course if the root account is the one you're attempting to
+          protect with rssh...</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>53430</bid>
+      <cvename>CVE-2012-3478</cvename>
+      <url>http://sourceforge.net/mailarchive/message.php?msg_id=29235647</url>
+    </references>
+    <dates>
+      <discovery>2012-05-08</discovery>
+      <entry>2012-08-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c651c898-e90d-11e1-b230-0024e830109b">
     <topic>libotr -- buffer overflows</topic>
     <affects>
