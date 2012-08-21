@@ -24,7 +24,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
-SUB_FILES=	radiusd.sh
 DATADIR=	${PREFIX}/share/radius
 
 INFO=		radius
