@@ -41,6 +41,7 @@
 use Cwd "abs_path";
 use Getopt::Std;
 use Sys::Hostname;
+use LWP::Simple;
 use locale;
 use strict;
 
@@ -94,6 +95,7 @@ my %l10nprefix = (
 my $tmpdir;
 my $repo;
 my $portsdir = $ENV{PORTSDIR} ? $ENV{PORTSDIR} : '/usr/ports';
+my $repo = $ENV{ADDPSVNROOT}? $ENV{ADDPSVNROOT} : "svn+ssh://$u\@$h/ports/head";
 my $make = "make";
 my $portlint = `which portlint`; chomp $portlint;
 my $plint_args = "-N -a -c -t";
@@ -106,16 +108,11 @@ my $keyword = '\$FreeBSD\\\$';
 my $descr; my $portversion; my $pkgcomment;
 my $tmp; my $pkgcommentlen; my $comment; my $orig;
 my $tmp2; my $offset; my $commitfile = "";
+my $moved = "";
 $tmp = $tmp2 = $offset = 0;
 
 chomp(my $myhost = lc(hostname()));
 $moduleshost = $myhost if ($moduleshost eq "");
-
-if ($ENV{ADDPSVNROOT}) {
-	$repo = "$ENV{ADDPSVNROOT}";
-} else {
-	$repo = "svn+ssh://$u\@$h/ports/head";
-}
 
 # Check the editor.
 my $edit = "/usr/bin/vi";
@@ -319,18 +316,82 @@ foreach my $thisdir (@dirs) {
 	chdir $tmpdir or err(1, "$tmpdir");
 
 	# let's get our hands dirty.
-	if (! -d $category) {
-		system("svn co --depth files $repo/$category $category") && errx(1, "can't get temporary category directory, aborting.");
+	if (! -d "ports") {
+		system("svn co --depth empty $repo ports") && errx(1, "can't get ports root, aborting.");
+		chdir "ports" or err(1,"ports");
+		system("svn up --depth files $category") && errx(1, "can't get temporary category directory, aborting.");
 	}
 	chdir $category or err(1,"$category");
-	system("$cp -PRp $thisdir .");
-	system("svn add --depth empty `find $portname -type d | grep -v '^$portname/work'`") && errx(1, "svn add for dirs failed, aborting.");
 
-	system("svn add `find $portname -type f | grep -v '^$portname/work'`") && errx(1, "svn add for files failed, aborting.");
+	# check for previous existence of port -- on the way use filthy
+	# home-made XML parser.
+	# Until svn revs are in the database, we'll use dates.
+	print "Checking for previous versions of $category/$portname... \n";
+	my $previous_incarnation = "bogus";
+	my $oldportlist;
+	if ($oldportlist = get('http://people.FreeBSD.org/~crees/removed_ports/index.xml')) {
+		foreach (split("\n", $oldportlist)) {
+			if (/^ +\<port\>$category\/$portname\<removed_date\>([^<]*)/) {
+				$previous_incarnation = $1;
+				$previous_incarnation =~ s,/,-,g;
+				print "Found one!\n";
+				print "This port was last alive on $previous_incarnation.\n";
+				last;
+			}
+		}
+	} else {
+		print "Could not fetch list-- perhaps the site is down.";
+	}
+	if ($previous_incarnation ne "bogus") {
+		print "Fetching older version... ";
+		system("svn cp -q '$repo/$category/$portname\@{$previous_incarnation}' .");
+		print "[DONE]\n";
+		print "Removing irrelevant files and directories... ";
+		my @oldfiles = split("\0", `cd $portname && find . -type f -print0`);
+		my @olddirs = split("\0", `cd $portname && find . -type d -print0 | sort -r`);
+		my @newfiles = split("\0", `cd $thisdir && find . -type f -print0`);
+		my @newdirs = split("\0", `cd $thisdir && find . -type d -print0| sort -r`);
+
+		foreach my $file (@oldfiles) {
+			system("cd $portname && svn rm $file")
+				if !($file ~~ @newfiles)
+		}
+
+		foreach my $directory (@olddirs) {
+			system("cd $portname && svn rm $directory")
+				if !($directory ~~ @newdirs);
+		}
+
+		print "[DONE]\n";
+
+		# Remove cvs2svn props if present
+		print "Removing cvs2svn props...\n";
+		system("svn propdel -qR cvs2svn:cvs-rev $portname");
+
+		$moved = "MOVED";
+		print "Removing port's entry from $moved...\n";
+		system("cd .. && svn up -q $moved && sed -i '' -e '\\,^$category/$portname\|\|,d' $moved");
+
+		# Add note to log about readdition
+		system("echo '(Readdition of $category/$portname which was removed on $previous_incarnation)\n' > $tmpdir/commitfile.tmp && cat $tmpdir/commitfile >> $tmpdir/commitfile.tmp && mv $tmpdir/commitfile.tmp $tmpdir/commitfile") unless ($commitfile eq "");
+
+	} else {
+		print "[none found]\n";
+	}
+	system("$cp -PRp $thisdir .");
+	system("svn add --force --depth empty `find $portname -type d | grep -v '^$portname/work'`") && errx(1, "svn add for dirs failed, aborting.");
+
+	system("svn add --force `find $portname -type f | grep -v '^$portname/work'`") && errx(1, "svn add for files failed, aborting.");
+
+	# Find keywords in old files and strip
+	print "Stripping any keywords...\n";
+	system("sed -i '' -e 's,\\\$Free" . "BSD:[^\$]*\\\$,\$Free" . "BSD\$,' \$(find $portname -type f)");
 
 	# find files with keywords in and propset
 
-	my @portfiles = split("\n", `find $portname -type f`);
+	print "Setting correct properties on files...\n";
+
+	my @portfiles = split("\0", `find $portname -type f -print0`);
 	my $portfiles = join(" ", @portfiles);
 	my @keywordfiles = split("\n", `grep -l $keyword $portfiles`);
 	foreach (@portfiles) {
@@ -339,6 +400,7 @@ foreach my $thisdir (@dirs) {
 			system("svn -q propdel fbsd:nokeywords $_");
 		} else {
 			system("svn -q propset fbsd:nokeywords on $_");
+			system("svn -q propdel svn:keywords $_");
 		}
 	}
 
@@ -378,11 +440,11 @@ foreach my $thisdir (@dirs) {
 		close(ED);
 
 	# commit the actual port.
-	chdir "$tmpdir/$category" or err(1, "$tmpdir/$category");
+	chdir "$tmpdir/ports" or err(1, "$tmpdir/ports");
 	if ($opts{'n'}) {
 		print "Faking commit....\n";
 	} else {
-		system("svn ci $commitfile Makefile $portname") && errx(1, "svn commit failed, aborting.");
+		system("svn ci $commitfile $moved $category/Makefile $category/$portname") && errx(1, "svn commit failed, aborting.");
 	}
 }
 
