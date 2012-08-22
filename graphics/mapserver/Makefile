@@ -144,7 +144,7 @@ CONFIGURE_ARGS+=	--with-curl=${LOCALBASE}
 .endif
 
 .if defined(WITH_MAPSERV)
-USE_APACHE=		20+
+USE_APACHE=		22+
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
 PLIST_SUB+=		WITH_MAPSERV=""
 PLIST_DIRSTRY=		www/cgi-bin
