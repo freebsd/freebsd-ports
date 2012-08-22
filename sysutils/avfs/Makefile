@@ -17,6 +17,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/fuse.h:${PORTSDIR}/sysutils/fusefs-libs \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
+BROKEN=		does not package
+
 NO_INSTALL_MANPAGES=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -liconv
