@@ -1,0 +1,10 @@
+sqldf is an R package for runing SQL statements on R data frames, optimized for
+convenience. The user simply specifies an SQL statement in R using data frame
+names in place of table names and a database with appropriate table
+layouts/schema is automatically created, the data frames are automatically
+loaded into the database, the specified SQL statement is performed, the result
+is read back into R and the database is deleted all automatically behind the
+scenes making the database's existence transparent to the user who only
+specifies the SQL statement.
+
+WWW:    https://code.google.com/p/sqldf/

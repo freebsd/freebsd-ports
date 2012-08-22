@@ -7,6 +7,7 @@
     SUBDIR += R-cran-RMySQL
     SUBDIR += R-cran-RSQLite
     SUBDIR += R-cran-RSQLite.extfuns
+    SUBDIR += R-cran-sqldf
     SUBDIR += WWWdb
     SUBDIR += adminer
     SUBDIR += adodb
