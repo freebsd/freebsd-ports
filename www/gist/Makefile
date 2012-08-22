@@ -7,26 +7,27 @@
 
 PORTNAME=	gist
 PORTVERSION=	3.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www net
-MASTER_SITES=	https://github.com/${GITAUTHOR}/${PORTNAME}/tarball/v${PORTVERSION}/
-DISTNAME=	${GITAUTHOR}-${PORTNAME}-v${PORTVERSION}-0-g${GITCOMMIT}
 
 MAINTAINER=	changlp@cs.nctu.edu.tw
 COMMENT=	A gist pastebin posting command
 
 CONFLICTS=	p5-App-gist-[0-9]*
 
-GITCOMMIT=	82ffb80
-GITAUTHOR=	defunkt
+USE_GITHUB=	yes
+GH_ACCOUNT=	defunkt
+GH_TAGNAME=	v${PORTVERSION}
+GH_COMMIT=	82ffb80
+
+MAN1=		gist.1
 
 USE_RUBY=	YES
 NO_BUILD=	YES
-FETCH_ARGS=	-r
-WRKSRC=	${WRKDIR}/${GITAUTHOR}-${PORTNAME}-${GITCOMMIT}
 PLIST_FILES=	bin/gist
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/gist ${PREFIX}/bin/gist
+	${INSTALL_MAN} ${WRKSRC}/man/gist.1 ${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
