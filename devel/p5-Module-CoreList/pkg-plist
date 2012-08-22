@@ -1,6 +1,8 @@
 %%SITE_PERL%%/Module/CoreList.pm
 %%SITE_PERL%%/Module/CoreList.pod
+%%SITE_PERL%%/Module/CoreList/TieHashDelta.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/CoreList/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/CoreList
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
+@dirrm %%SITE_PERL%%/Module/CoreList
 @dirrmtry %%SITE_PERL%%/Module
