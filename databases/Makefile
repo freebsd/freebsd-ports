@@ -5,6 +5,7 @@
 
     SUBDIR += R-cran-DBI
     SUBDIR += R-cran-RMySQL
+    SUBDIR += R-cran-RSQLite
     SUBDIR += WWWdb
     SUBDIR += adminer
     SUBDIR += adodb
