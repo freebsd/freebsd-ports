@@ -9,7 +9,7 @@ libdata/pkgconfig/libquvi-scripts.pc
 %%DATADIR%%/lua/website/academicearth.lua
 %%DATADIR%%/lua/website/arte.lua
 %%DATADIR%%/lua/website/audioboo.lua
-%%DATADIR%%/lua/website/bloomberg.lua
+%%DATADIR%%/lua/website/bbc.lua
 %%DATADIR%%/lua/website/break.lua
 %%DATADIR%%/lua/website/canalplus.lua
 %%DATADIR%%/lua/website/cbsnews.lua
@@ -25,6 +25,7 @@ libdata/pkgconfig/libquvi-scripts.pc
 %%DATADIR%%/lua/website/guardian.lua
 %%DATADIR%%/lua/website/imdb.lua
 %%DATADIR%%/lua/website/justintv.lua
+%%DATADIR%%/lua/website/lego.lua
 %%DATADIR%%/lua/website/liveleak.lua
 %%DATADIR%%/lua/website/metacafe.lua
 %%DATADIR%%/lua/website/mgnetwork.lua
