@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	node
-PORTVERSION=	0.6.19
+PORTVERSION=	0.6.21
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -19,6 +19,8 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 OPTIONS=	SHARED_V8 "Build with lang/v8" off
 
 CONFLICTS=	node-0.[0-57-9]* node-devel-0.[0-9]*
+
+LATEST_LINK=	node06
 
 CONFIGURE_ARGS=	--no-ssl2 \
 		--openssl-includes=${OPENSSLINC} \
