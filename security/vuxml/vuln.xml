@@ -51,6 +51,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a4598875-ec91-11e1-8bd8-0022156e8794">
+    <topic>rssh -- configuration restrictions bypass</topic>
+    <affects>
+      <package>
+        <name>rssh</name>
+        <range><lt>2.3.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Derek Martin (rssh maintainer) reports:</p>
+        <blockquote cite="http://www.pizzashack.org/rssh/security.shtml">
+          <p>John Barber reported a problem where, if the system
+          administrator misconfigures rssh by providing too few access
+          bits in the configuration file, the user will be given
+          default permissions (scp) to the entire system, potentially
+          circumventing any configured chroot.  Fixing this required a
+          behavior change: in the past, using rssh without a config
+          file would give all users default access to use scp on an
+          unchrooted system.  In order to correct the reported bug,
+          this feature has been eliminated, and you must now have a
+          valid configuration file.  If no config file exists, all
+          users will be locked out.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.pizzashack.org/rssh/security.shtml</url>
+    </references>
+    <dates>
+      <discovery>2010-08-01</discovery>
+      <entry>2012-08-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="65b25acc-e63b-11e1-b81c-001b77d09812">
     <topic>rssh -- arbitrary command execution</topic>
     <affects>
