@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-DBHResolver
-PORTVERSION=	0.13
+PORTVERSION=	0.16
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,7 +25,9 @@ RUN_DEPENDS=	\
 	p5-YAML>0:${PORTSDIR}/textproc/p5-YAML
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-DBD-SQLite>0:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-Sub-Uplevel>=0:${PORTSDIR}/devel/p5-Sub-Uplevel
+# TODO: fix test.
 
 PERL_CONFIGURE=	yes
 
