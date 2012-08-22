@@ -6,15 +6,15 @@
 #
 
 PORTNAME=		pkg_install
-PORTVERSION=		20090902
-PORTREVISION=		0
+PORTVERSION=		20120822
 CATEGORIES=		ports-mgmt
-MASTER_SITES=		${MASTER_SITE_LOCAL} \
-			http://people.FreeBSD.org/~flz/distfiles/pkg_install/
-MASTER_SITE_SUBDIR=	flz/pkg_install
+MASTER_SITES=		LOCAL/bapt \
+			http://people.FreeBSD.org/~bapt/distfiles/
 
 MAINTAINER=		portmgr@FreeBSD.org
 COMMENT=		FreeBSD -STABLE version of the package tools
+
+LICENSE=		BSD
 
 MANCOMPRESSED=		yes
 MAN1=			pkg_add.1 pkg_create.1 pkg_delete.1 \
@@ -22,11 +22,13 @@ MAN1=			pkg_add.1 pkg_create.1 pkg_delete.1 \
 
 MAKE_ARGS=		-DNO_OBJ -DNO_CRYPT -DNO_OPENSSL
 
-OPTIONS=		WRAPPER "Use ports version instead of base if more recent" on
+OPTIONS_DEFINE=	WRAPPER
+OPTIONS_DEFAULT=	WRAPPER
+WRAPPER_DESC=	Use ports version instead of base if more recent
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_WRAPPER)
+.if ${PORT_OPTIONS:MWRAPPER}
 PLIST_SUB+=	WRAPPER=""
 .else
 PLIST_SUB+=	WRAPPER="@comment "
@@ -38,7 +40,7 @@ pre-configure:
 		${FILESDIR}/Makefile.inc > ${WRKDIR}/Makefile.inc
 
 # This enables the wrapper 
-.if !defined(WITHOUT_WRAPPER)
+.if ${PORT_OPTIONS:MWRAPPER}
 post-install:
 	${ECHO} "${PORTVERSION} ${PREFIX}/sbin" > /var/db/${PORTNAME}.conf
 .endif
@@ -51,4 +53,4 @@ deinstall:
 	fi
 	@${RM} -f ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
