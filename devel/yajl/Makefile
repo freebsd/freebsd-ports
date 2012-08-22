@@ -22,6 +22,8 @@ LICENSE=	BSD
 USE_LDCONFIG=	yes
 USE_CMAKE=	yes
 
+PLIST_SUB=	VERSION=${PORTVERSION}
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,share/pkgconfig,libdata/pkgconfig,g" \
 		${WRKSRC}/src/CMakeLists.txt
