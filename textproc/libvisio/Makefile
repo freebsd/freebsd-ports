@@ -28,5 +28,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	build
 
 .include <bsd.port.mk>
