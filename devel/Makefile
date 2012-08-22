@@ -11,6 +11,7 @@
     SUBDIR += R-cran-Defaults
     SUBDIR += R-cran-bitops
     SUBDIR += R-cran-caret
+    SUBDIR += R-cran-chron
     SUBDIR += R-cran-foreach
     SUBDIR += R-cran-gsubfn
     SUBDIR += R-cran-iterators
