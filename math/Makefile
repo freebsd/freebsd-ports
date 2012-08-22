@@ -22,6 +22,7 @@
     SUBDIR += R-cran-labeling
     SUBDIR += R-cran-memisc
     SUBDIR += R-cran-mvtnorm
+    SUBDIR += R-cran-nnls
     SUBDIR += R-cran-psych
     SUBDIR += R-cran-sandwich
     SUBDIR += R-cran-sm
