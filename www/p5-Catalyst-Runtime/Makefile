@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Runtime
-PORTVERSION=	5.90014
+PORTVERSION=	5.90016
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JJNAPIORK
@@ -39,9 +39,10 @@ BUILD_DEPENDS=	p5-CGI-Simple>=1.109:${PORTSDIR}/www/p5-CGI-Simple \
 		p5-MooseX-Types-Common>=0:${PORTSDIR}/devel/p5-MooseX-Types-Common \
 		p5-MooseX-Types-LoadableClass>=0.003:${PORTSDIR}/devel/p5-MooseX-Types-LoadableClass \
 		p5-Path-Class>=0.09:${PORTSDIR}/devel/p5-Path-Class \
-		p5-Plack>=0.9974:${PORTSDIR}/www/p5-Plack \
+		p5-Plack>=0.9991:${PORTSDIR}/www/p5-Plack \
 		p5-Plack-Middleware-ReverseProxy>=0.04:${PORTSDIR}/www/p5-Plack-Middleware-ReverseProxy \
 		p5-Plack-Test-ExternalServer>=0:${PORTSDIR}/www/p5-Plack-Test-ExternalServer \
+		p5-Safe-Isa>=0:${PORTSDIR}/devel/p5-Safe-Isa \
 		p5-String-RewritePrefix>=0.004:${PORTSDIR}/textproc/p5-String-RewritePrefix \
 		p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
