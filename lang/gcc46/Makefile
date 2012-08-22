@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.6.4.20120608
+PORTVERSION=	4.6.4.20120817
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -16,9 +16,9 @@ DISTFILES=	gcc-${VERSIONSTRING}${EXTRACT_SUFX}
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.6
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
-		mpfr.4:${PORTSDIR}/math/mpfr \
-		mpc.2:${PORTSDIR}/math/mpc
+LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
+		mpfr:${PORTSDIR}/math/mpfr \
+		mpc:${PORTSDIR}/math/mpc
 RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 
 .if defined(MAINTAINER_MODE)
@@ -45,13 +45,12 @@ MAKE_JOBS_SAFE=	yes
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure
 
-OPTIONS=	JAVA	"Enable the Java frontend (i386 and amd64 only)"	on
+OPTIONS_DEFINE_i386=	JAVA
+OPTIONS_DEFINE_amd64=	JAVA
+OPTIONS_DEFAULT_i386=	JAVA
+OPTIONS_DEFAULT_amd64=	JAVA
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != i386 && ${ARCH} != amd64
-WITHOUT_JAVA=	yes
-.endif
 
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
@@ -99,7 +98,7 @@ INFO=		gcc${SUFFIX}/cpp \
 INFO+=		gcc${SUFFIX}/libquadmath
 .endif
 
-.if ! defined(WITHOUT_JAVA)
+.if ${PORT_OPTIONS:MJAVA}
 ECJ_JAR=	ecj-4.5.jar
 MASTER_SITES+=	${MASTER_SITE_SOURCEWARE:S|$|:ecj|}
 MASTER_SITE_SUBDIR+=	java/:ecj
