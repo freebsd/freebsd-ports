@@ -167,7 +167,7 @@ PLIST_SUB+=		WITH_PDFTOPS=""
 PLIST_SUB+=		WITH_PDFTOPS="@comment "
 .endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MPYTHON)}
+.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ${PORT_OPTIONS:MPYTHON}
 CONFIGURE_ARGS+=	--with-python
 USE_PYTHON=		yes
 .include "${PORTSDIR}/Mk/bsd.python.mk"
