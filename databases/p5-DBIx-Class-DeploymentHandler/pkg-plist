@@ -9,6 +9,7 @@
 %%SITE_PERL%%/DBIx/Class/DeploymentHandler/HandlesDeploy.pm
 %%SITE_PERL%%/DBIx/Class/DeploymentHandler/HandlesVersionStorage.pm
 %%SITE_PERL%%/DBIx/Class/DeploymentHandler/HandlesVersioning.pm
+%%SITE_PERL%%/DBIx/Class/DeploymentHandler/LogImporter.pm
 %%SITE_PERL%%/DBIx/Class/DeploymentHandler/Logger.pm
 %%SITE_PERL%%/DBIx/Class/DeploymentHandler/Manual/CatalystIntro.pod
 %%SITE_PERL%%/DBIx/Class/DeploymentHandler/Manual/Intro.pod
