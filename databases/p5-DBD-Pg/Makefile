@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBD-Pg
-PORTVERSION=	2.19.2
+PORTVERSION=	2.19.3
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,20 +18,12 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-DBI>=1.52:${PORTSDIR}/databases/p5-DBI
-RUN_DEPENDS=	p5-DBI>=1.52:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 USE_PGSQL=	yes
 
 MAN3=		DBD::Pg.3 Bundle::DBD::Pg.3
-PORTDOCS=	Changes README TODO
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-.endif
 
 .include <bsd.port.pre.mk>
 
