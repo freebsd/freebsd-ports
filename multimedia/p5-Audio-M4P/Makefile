@@ -11,7 +11,7 @@ CATEGORIES=	multimedia perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cjk32@cam.ac.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	M4P / MP4 / m4a Quicktime audio and video tools
 
 BUILD_DEPENDS=	p5-Crypt-Rijndael>=0:${PORTSDIR}/security/p5-Crypt-Rijndael \

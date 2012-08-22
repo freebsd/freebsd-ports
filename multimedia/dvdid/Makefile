@@ -10,7 +10,7 @@ PORTVERSION=	0.1.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.srcf.ucam.org/~cjk32/dvdid/
 
-MAINTAINER=	cjk32@cam.ac.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for calculating dvdids
 
 GNU_CONFIGURE=	yes

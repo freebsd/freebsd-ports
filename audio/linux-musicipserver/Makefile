@@ -16,7 +16,7 @@ DISTFILES=		${DISTNAME}.tgz:musicip
 DIST_SUBDIR=		musicip
 EXTRACT_ONLY=		${DISTNAME}.tgz
 
-MAINTAINER=		cjk32@cam.ac.uk
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Application for generating playlists based upon musical content
 
 LICENSE=		EULA
