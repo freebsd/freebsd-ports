@@ -7,7 +7,7 @@
 
 PORTNAME=	Ice
 PORTVERSION=	3.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	http://download.zeroc.com/Ice/3.4/ \
 		http://www.dirk.sh/dirk/Ice/
@@ -44,7 +44,7 @@ BROKEN=		does not compile on ia64
 MAKE_ENV=	LP64=yes
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
+.if empty(PORT_OPTIONS:MDOCS)
 MAKE_ENV+=	NOPORTDOCS=yes
 .endif
 
