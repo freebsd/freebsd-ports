@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cjk32@cam.ac.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl interface to IMDb
 
 RUN_DEPENDS=	p5-Cache-Cache>=0:${PORTSDIR}/devel/p5-Cache-Cache \

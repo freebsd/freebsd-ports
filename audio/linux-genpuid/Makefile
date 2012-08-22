@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}_linux_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	cjk32@cam.ac.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application for generating MusicIP puids
 
 USE_LINUX=		yes

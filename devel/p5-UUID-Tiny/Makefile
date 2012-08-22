@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cjk32@cam.ac.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pure Perl UUID Support With Functional Interface
 
 BUILD_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
