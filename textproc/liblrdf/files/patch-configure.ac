@@ -1,0 +1,13 @@
+--- configure.ac~	2012-08-22 17:58:12.000000000 -0300
++++ configure.ac	2012-08-22 17:58:36.000000000 -0300
+@@ -34,8 +34,8 @@
+ AC_FUNC_VPRINTF
+ AC_CHECK_FUNCS([getcwd strcasecmp strchr strdup strerror strncasecmp strrchr])
+ 
+-LIBS="$LIBS $RAPTOR_LIBS"
+-AM_CFLAGS="$CFLAGS $RAPTOR_CFLAGS"
++LIBS="$RAPTOR_LIBS $LIBS" 
++AM_CFLAGS="$RAPTOR_CFLAGS $CFLAGS"
+ 
+ AC_SUBST(AM_CFLAGS)
+ AC_SUBST(LIBS)
