@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Brew/.packlist
+%%SITE_PERL%%/Text/Brew.pm
+@dirrmtry %%SITE_PERL%%/Text
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Brew
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
