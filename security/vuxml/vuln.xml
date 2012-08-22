@@ -97,8 +97,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
         <p>Derek Martin (rssh maintainer) reports:</p>
-        <blockquote
-          cite="http://sourceforge.net/mailarchive/message.php?msg_id=29235647">
+        <blockquote cite="http://sourceforge.net/mailarchive/message.php?msg_id=29235647">
           <p>Henrik Erkkonen has discovered that, through clever
           manipulation of environment variables on the ssh command
           line, it is possible to circumvent rssh.  As far as I can
