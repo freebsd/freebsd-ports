@@ -51,6 +51,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4d1d2f6d-ec94-11e1-8bd8-0022156e8794">
+    <topic>jabberd -- domain spoofing in server dialback protocol</topic>
+    <affects>
+      <package>
+        <name>jabberd</name>
+        <range><lt>2.2.16_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>XMPP Standards Foundation reports:</p>
+        <blockquote cite="http://xmpp.org/resources/security-notices/server-dialback/">
+          <p>Some implementations of the XMPP Server Dialback protocol
+          (RFC 3920/XEP-0220) have not been checking dialback
+          responses to ensure that validated results are correlated
+          with requests.</p>
+          <p>An attacking server could spoof one or more domains in
+          communicating with a vulnerable server implementation,
+          thereby avoiding the protections built into the Server
+          Dialback protocol.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-3525</cvename>
+      <url>http://xmpp.org/resources/security-notices/server-dialback/</url>
+    </references>
+    <dates>
+      <discovery>2012-08-21</discovery>
+      <entry>2012-08-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a4598875-ec91-11e1-8bd8-0022156e8794">
     <topic>rssh -- configuration restrictions bypass</topic>
     <affects>
