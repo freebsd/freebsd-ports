@@ -757,6 +757,7 @@
     SUBDIR += p5-Text-Bastardize
     SUBDIR += p5-Text-BibTeX
     SUBDIR += p5-Text-Bind
+    SUBDIR += p5-Text-Brew
     SUBDIR += p5-Text-CSV
     SUBDIR += p5-Text-CSV-Encoded
     SUBDIR += p5-Text-CSV-Simple
