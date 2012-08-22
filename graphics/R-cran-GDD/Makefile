@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	GDD
-PORTVERSION=	0.1.13.1
+DISTVERSION=	0.1-13.1
 CATEGORIES=	graphics
-DISTNAME=	${PORTNAME}_0.1-13.1
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Graphics device for R for creating bitmap output
