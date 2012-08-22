@@ -17,6 +17,8 @@ COMMENT=	Fast and portable Forth system
 LIB_DEPENDS=	ffi:${PORTSDIR}/devel/libffi
 BUILD_DEPENDS=	${LOCALBASE}/include/avcall.h:${PORTSDIR}/devel/ffcall
 
+BROKEN=		does not package
+
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -41,10 +43,6 @@ INFO=		gforth vmgen
 PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-BROKEN=		Does not build on FreeBSD < 8.x
-.endif
 
 .if ${ARCH} == i386 || ${ARCH} == "powerpc"
 WORDSIZE=32
