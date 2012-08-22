@@ -16,6 +16,7 @@
     SUBDIR += ImageMagick-nox11
     SUBDIR += O2-tools
     SUBDIR += OpenEXR
+    SUBDIR += R-cran-GDD
     SUBDIR += R-cran-RColorBrewer
     SUBDIR += R-cran-colorspace
     SUBDIR += R-cran-diagram
