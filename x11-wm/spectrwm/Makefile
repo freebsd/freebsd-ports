@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spectrwm
-PORTVERSION=	1.1.2
+PORTVERSION=	2.0.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://opensource.conformal.com/snapshots/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
@@ -16,12 +16,13 @@ COMMENT=	A small, dynamic tiling window manager for X11
 
 LICENSE=	ISCL
 
-OPTIONS_DEFINE=	DMENU_BOTTOM
-DMENU_BOTTOM_DESC=	dmenu at screen bottom (instead of top)
+LIB_DEPENDS+=	xcb:${PORTSDIR}/x11/libxcb \
+		xcb-util:${PORTSDIR}/x11/xcb-util \
+		xcb-icccm:${PORTSDIR}/x11/xcb-util-wm \
+		xcb-keysyms:${PORTSDIR}/x11/xcb-util-keysyms
+RUN_DEPENDS+=	dmenu:${PORTSDIR}/x11/dmenu
 
-.include <bsd.port.options.mk>
-
-USE_XORG=	x11 xproto xrandr xt xtst
+USE_XORG=	x11 xft xrandr xt
 
 MAN1=		spectrwm.1
 USE_LDCONFIG=	yes
@@ -32,19 +33,15 @@ PORTEXAMPLES=	spectrwm_cz.conf \
 		spectrwm_se.conf \
 		spectrwm_us.conf
 
-RUN_DEPENDS+=	dmenu:${PORTSDIR}/x11/dmenu
-
-.if ${PORT_OPTIONS:MDMENU_BOTTOM}
-EXTRA_PATCHES+=	${FILESDIR}/spawn_menu_atbottom.patch
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/spectrwm.*
 
 do-build:
 	${CC} ${CFLAGS} -I${LOCALBASE}/include \
-		-I${WRKSRC}/freebsd -lutil -L${LOCALBASE}/lib -lX11 -lXrandr \
-		-lXtst -DSWM_LIB=\"${PREFIX}/lib/libswmhack.so\" \
+		-I${LOCALBASE}/include/freetype2 -I${WRKSRC}/freebsd \
+		-lutil -L${LOCALBASE}/lib -lX11 -lX11-xcb -lxcb -lxcb-icccm \
+		-lxcb-keysyms -lxcb-randr -lxcb-util -lxcb-xtest -lXft \
+		-lXrandr -DSWM_LIB=\"${PREFIX}/lib/libswmhack.so\" \
 		-o ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.c
 	${CC} ${CFLAGS} -I${LOCALBASE}/include -shared -fpic -DPIC \
 		-o ${WRKSRC}/libswmhack.so ${WRKSRC}/lib/swm_hack.c
