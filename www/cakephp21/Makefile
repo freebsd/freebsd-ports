@@ -16,6 +16,8 @@ COMMENT=	A framework for developing PHP web applications
 
 LICENSE=	MIT
 
+LATEST_LINK=	cakephp21
+
 GITVERSION=	0-gc26df70
 FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-4b81775
