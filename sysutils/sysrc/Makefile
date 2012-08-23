@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sysrc
-PORTVERSION=	3.2.2
+PORTVERSION=	4.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://druidbsd.sourceforge.net/download/
 
-MAINTAINER=	dteske@vicor.com
+MAINTAINER=	dteske@FreeBSD.org
 COMMENT=	Utility to get or set rc.conf(5) values
 
 NO_BUILD=	yes
