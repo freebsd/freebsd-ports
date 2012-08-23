@@ -1,5 +1,4 @@
 bin/c++-analyzer
-bin/c-index-test
 bin/ccc-analyzer
 bin/clang
 bin/clang++
@@ -31,6 +30,7 @@ include/clang/AST/CanonicalType.h
 include/clang/AST/CharUnits.h
 include/clang/AST/Comment.h
 include/clang/AST/CommentBriefParser.h
+include/clang/AST/CommentCommandTraits.h
 include/clang/AST/CommentDiagnostic.h
 include/clang/AST/CommentLexer.h
 include/clang/AST/CommentNodes.inc
@@ -92,7 +92,6 @@ include/clang/ASTMatchers/ASTMatchFinder.h
 include/clang/ASTMatchers/ASTMatchers.h
 include/clang/ASTMatchers/ASTMatchersInternal.h
 include/clang/ASTMatchers/ASTMatchersMacros.h
-include/clang/ASTMatchers/RefactoringCallbacks.h
 include/clang/Analysis/Analyses/CFGReachabilityAnalysis.h
 include/clang/Analysis/Analyses/Dominators.h
 include/clang/Analysis/Analyses/FormatString.h
@@ -327,7 +326,6 @@ include/clang/Serialization/ModuleManager.h
 include/clang/Serialization/SerializationDiagnostic.h
 include/clang/StaticAnalyzer/Checkers/ClangCheckers.h
 include/clang/StaticAnalyzer/Checkers/CommonBugCategories.h
-include/clang/StaticAnalyzer/Checkers/DereferenceChecker.h
 include/clang/StaticAnalyzer/Checkers/LocalCheckers.h
 include/clang/StaticAnalyzer/Core/BugReporter/BugReporter.h
 include/clang/StaticAnalyzer/Core/BugReporter/BugReporterVisitor.h
@@ -342,7 +340,7 @@ include/clang/StaticAnalyzer/Core/PathSensitive/APSIntType.h
 include/clang/StaticAnalyzer/Core/PathSensitive/AnalysisManager.h
 include/clang/StaticAnalyzer/Core/PathSensitive/BasicValueFactory.h
 include/clang/StaticAnalyzer/Core/PathSensitive/BlockCounter.h
-include/clang/StaticAnalyzer/Core/PathSensitive/Calls.h
+include/clang/StaticAnalyzer/Core/PathSensitive/CallEvent.h
 include/clang/StaticAnalyzer/Core/PathSensitive/CheckerContext.h
 include/clang/StaticAnalyzer/Core/PathSensitive/CheckerHelpers.h
 include/clang/StaticAnalyzer/Core/PathSensitive/ConstraintManager.h
@@ -368,9 +366,10 @@ include/clang/StaticAnalyzer/Core/PathSensitive/WorkList.h
 include/clang/StaticAnalyzer/Frontend/CheckerRegistration.h
 include/clang/StaticAnalyzer/Frontend/FrontendActions.h
 include/clang/Tooling/ArgumentsAdjusters.h
-include/clang/Tooling/CommandLineClangTool.h
+include/clang/Tooling/CommonOptionsParser.h
 include/clang/Tooling/CompilationDatabase.h
 include/clang/Tooling/Refactoring.h
+include/clang/Tooling/RefactoringCallbacks.h
 include/clang/Tooling/Tooling.h
 lib/clang/%%CLANG_RELEASE%%/include/ammintrin.h
 lib/clang/%%CLANG_RELEASE%%/include/arm_neon.h
@@ -414,11 +413,14 @@ lib/libclangTooling.a
 %%PORTDOCS%%%%DOCSDIR%%/html/AnalyzerRegions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/AutomaticReferenceCounting.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ClangPlugins.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ClangTools.html
 %%PORTDOCS%%%%DOCSDIR%%/html/DriverInternals.html
 %%PORTDOCS%%%%DOCSDIR%%/html/HowToSetupToolingForLLVM.html
 %%PORTDOCS%%%%DOCSDIR%%/html/InternalsManual.html
+%%PORTDOCS%%%%DOCSDIR%%/html/IntroductionToTheClangAST.html
 %%PORTDOCS%%%%DOCSDIR%%/html/JSONCompilationDatabase.html
 %%PORTDOCS%%%%DOCSDIR%%/html/LanguageExtensions.html
+%%PORTDOCS%%%%DOCSDIR%%/html/LibASTMatchersReference.html
 %%PORTDOCS%%%%DOCSDIR%%/html/LibTooling.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ObjectiveCLiterals.html
 %%PORTDOCS%%%%DOCSDIR%%/html/PCHInternals.html

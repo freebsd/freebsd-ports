@@ -7,7 +7,6 @@
 
 PORTNAME=	clang
 PORTVERSION=	3.2.r${SVN_REV}
-PORTREVISION=	2
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -54,9 +53,10 @@ MAKE_ARGS=	CLANG_TBLGEN=${WRKSRC}/${RELTYPE}/bin/clang-tblgen \
 		LLVMToolDir=${LOCALBASE}/bin \
 		LLVMLibDir=${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	ASSERTS DOCS
+OPTIONS_DEFINE=	ASSERTS DOCS MIPS_FPHACK
 
 ASSERTS_DESC=	Enable assertions (thread unsafe)
+MIPS_FPHACK_DESC=	MIPS long double hack (breaks ABI)
 
 MAN1=		clang.1
 
@@ -82,6 +82,10 @@ RELTYPE=		Release+Asserts
 .else
 CONFIGURE_ARGS+=	--disable-assertions
 RELTYPE=		Release
+.endif
+
+.if ${PORT_OPTIONS:MMIPS_FPHACK}
+EXTRA_PATCHES=	${FILESDIR}/mips-long-double-hack.diff
 .endif
 
 .include <bsd.port.pre.mk>
@@ -170,7 +174,6 @@ PLIST_FILE_LIST=	bin/ccc-analyzer \
 			bin/clang \
 			bin/clang++ \
 			bin/clang-tblgen \
-			bin/c-index-test \
 			bin/scan-build \
 			bin/scan-view \
 			lib/libclang*

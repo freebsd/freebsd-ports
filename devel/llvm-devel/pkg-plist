@@ -295,7 +295,6 @@ include/llvm/IntrinsicsHexagon.td
 include/llvm/IntrinsicsMips.td
 include/llvm/IntrinsicsNVVM.td
 include/llvm/IntrinsicsPowerPC.td
-include/llvm/IntrinsicsR600.td
 include/llvm/IntrinsicsX86.td
 include/llvm/IntrinsicsXCore.td
 include/llvm/LLVMContext.h
@@ -319,6 +318,7 @@ include/llvm/MC/MCDwarf.h
 include/llvm/MC/MCELFObjectWriter.h
 include/llvm/MC/MCELFSymbolFlags.h
 include/llvm/MC/MCExpr.h
+include/llvm/MC/MCFixedLenDisassembler.h
 include/llvm/MC/MCFixup.h
 include/llvm/MC/MCFixupKindInfo.h
 include/llvm/MC/MCInst.h
@@ -409,6 +409,7 @@ include/llvm/Support/Endian.h
 include/llvm/Support/Errno.h
 include/llvm/Support/ErrorHandling.h
 include/llvm/Support/FEnv.h
+include/llvm/Support/FileOutputBuffer.h
 include/llvm/Support/FileSystem.h
 include/llvm/Support/FileUtilities.h
 include/llvm/Support/Format.h
@@ -423,6 +424,7 @@ include/llvm/Support/InstIterator.h
 include/llvm/Support/InstVisitor.h
 include/llvm/Support/IntegersSubset.h
 include/llvm/Support/IntegersSubsetMapping.h
+include/llvm/Support/LEB128.h
 include/llvm/Support/LICENSE.TXT
 include/llvm/Support/LeakDetector.h
 include/llvm/Support/Locale.h
@@ -532,6 +534,7 @@ include/llvm/Transforms/Utils/ValueMapper.h
 include/llvm/Transforms/Vectorize.h
 include/llvm/Type.h
 include/llvm/TypeBuilder.h
+include/llvm/TypeFinder.h
 include/llvm/Use.h
 include/llvm/User.h
 include/llvm/Value.h
@@ -540,9 +543,6 @@ lib/BugpointPasses.so
 lib/LLVMHello.so
 lib/libLLVM-%%LLVM_RELEASE%%svn.so
 lib/libLLVM-%%LLVM_RELEASE%%svn.so.0
-lib/libLLVMAMDGPUCodeGen.a
-lib/libLLVMAMDGPUDesc.a
-lib/libLLVMAMDGPUInfo.a
 lib/libLLVMARMAsmParser.a
 lib/libLLVMARMAsmPrinter.a
 lib/libLLVMARMCodeGen.a
@@ -629,6 +629,7 @@ lib/libLTO.a
 lib/libLTO.so
 lib/libprofile_rt.a
 lib/libprofile_rt.so
+%%PORTDOCS%%%%DOCSDIR%%/html.tar.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/.buildinfo
 %%PORTDOCS%%%%DOCSDIR%%/html/AliasAnalysis.html
 %%PORTDOCS%%%%DOCSDIR%%/html/AliasAnalysis.txt
@@ -643,9 +644,11 @@ lib/libprofile_rt.so
 %%PORTDOCS%%%%DOCSDIR%%/html/CMake.html
 %%PORTDOCS%%%%DOCSDIR%%/html/CMake.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/CodeGenerator.html
+%%PORTDOCS%%%%DOCSDIR%%/html/CodeGenerator.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/CodingStandards.html
 %%PORTDOCS%%%%DOCSDIR%%/html/CodingStandards.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/CommandLine.html
+%%PORTDOCS%%%%DOCSDIR%%/html/CommandLine.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/CompilerWriterInfo.html
 %%PORTDOCS%%%%DOCSDIR%%/html/DebuggingJITedCode.html
 %%PORTDOCS%%%%DOCSDIR%%/html/DeveloperPolicy.html
@@ -724,6 +727,7 @@ lib/libprofile_rt.so
 %%PORTDOCS%%%%DOCSDIR%%/html/doctools.js
 %%PORTDOCS%%%%DOCSDIR%%/html/down-pressed.png
 %%PORTDOCS%%%%DOCSDIR%%/html/down.png
+%%PORTDOCS%%%%DOCSDIR%%/html/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/html/file.png
 %%PORTDOCS%%%%DOCSDIR%%/html/genindex.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
@@ -791,8 +795,8 @@ lib/libprofile_rt.so
 %%PORTDOCS%%%%DOCSDIR%%/html/userguides.html
 %%PORTDOCS%%%%DOCSDIR%%/html/userguides.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/websupport.js
-%%PORTDOCS%%%%DOCSDIR%%/html/doxygen.css
-%%PORTDOCS%%%%DOCSDIR%%/html.tar.gz
+%%PORTDOCS%%%%DOCSDIR%%/html/yaml2obj.html
+%%PORTDOCS%%%%DOCSDIR%%/html/yaml2obj.txt
 @dirrm include/llvm/Transforms/Utils
 @dirrm include/llvm/Transforms/IPO
 @dirrm include/llvm/Transforms
