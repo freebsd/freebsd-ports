@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+echo "XDG-Menu: Starting up..."
+cd "%%DATADIR%%"
+./AppRun
