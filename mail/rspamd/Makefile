@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	rspamd
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.2
 CATEGORIES=	mail
-MASTER_SITES=	http://highsecure.ru/
+MASTER_SITES=	https://bitbucket.org/vstakhov/rspamd/downloads/
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Fast spam filtering system
