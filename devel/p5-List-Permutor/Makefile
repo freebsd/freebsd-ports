@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Alow you to process all possible permutations of a list
+COMMENT=	Allow you to process all possible permutations of a list
 
 PERL_CONFIGURE=	yes
 

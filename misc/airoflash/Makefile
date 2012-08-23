@@ -13,7 +13,7 @@ DISTNAME=	airoflash.c
 EXTRACT_SUFX=
 
 MAINTAINER=	ambrisko@FreeBSD.org
-COMMENT=	Flash utiltity for Cisco/Aironet 802.11 wireless cards
+COMMENT=	Flash utility for Cisco/Aironet 802.11 wireless cards
 
 DEPRECATED=	BROKEN for more than 6 month
 EXPIRATION_DATE=	2012-05-10

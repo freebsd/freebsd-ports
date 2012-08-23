@@ -11,7 +11,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://waterdeep.physics.upatras.gr/~eelvex/files/
 
 MAINTAINER=	mplekos@physics.upatras.gr
-COMMENT=	A LaTeX package for switching between greek/latintext automaticaly
+COMMENT=	A LaTeX package for switching between greek/latintext automatically
 
 BUILD_DEPENDS=	updmap-sys:${PORTSDIR}/print/teTeX-base \
 		mktexlsr:${PORTSDIR}/print/teTeX-base \
