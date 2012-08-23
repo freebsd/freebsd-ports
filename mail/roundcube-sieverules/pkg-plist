@@ -16,6 +16,7 @@
 %%WWWDIR%%/localization/es_AR.inc
 %%WWWDIR%%/localization/es_ES.inc
 %%WWWDIR%%/localization/et_EE.inc
+%%WWWDIR%%/localization/fi_FI.inc
 %%WWWDIR%%/localization/fr_FR.inc
 %%WWWDIR%%/localization/hu_HU.inc
 %%WWWDIR%%/localization/it_IT.inc
@@ -29,22 +30,36 @@
 %%WWWDIR%%/localization/sl_SI.inc
 %%WWWDIR%%/localization/sv_SE.inc
 %%WWWDIR%%/localization/zh_TW.inc
+%%WWWDIR%%/package.xml
 %%WWWDIR%%/sieverules.js
 %%WWWDIR%%/sieverules.php
-%%WWWDIR%%/skins/default/help.gif
-%%WWWDIR%%/skins/default/icons.gif
-%%WWWDIR%%/skins/default/icons.png
-%%WWWDIR%%/skins/default/ie6hacks.css
-%%WWWDIR%%/skins/default/iehacks.css
-%%WWWDIR%%/skins/default/safari.css
-%%WWWDIR%%/skins/default/sieverules.css
-%%WWWDIR%%/skins/default/templates/advancededitor.html
-%%WWWDIR%%/skins/default/templates/editsieverule.html
-%%WWWDIR%%/skins/default/templates/setupsieverules.html
-%%WWWDIR%%/skins/default/templates/sieverules.html
-%%WWWDIR%%/package.xml
-@dirrm %%WWWDIR%%/skins/default/templates
-@dirrm %%WWWDIR%%/skins/default
+%%WWWDIR%%/skins/classic/help.gif
+%%WWWDIR%%/skins/classic/icons.gif
+%%WWWDIR%%/skins/classic/icons.png
+%%WWWDIR%%/skins/classic/ie6hacks.css
+%%WWWDIR%%/skins/classic/iehacks.css
+%%WWWDIR%%/skins/classic/safari.css
+%%WWWDIR%%/skins/classic/sieverules.css
+%%WWWDIR%%/skins/classic/tabstyles.css
+%%WWWDIR%%/skins/classic/templates/advancededitor.html
+%%WWWDIR%%/skins/classic/templates/editsieverule.html
+%%WWWDIR%%/skins/classic/templates/setupsieverules.html
+%%WWWDIR%%/skins/classic/templates/sieverules.html
+%%WWWDIR%%/skins/larry/help.png
+%%WWWDIR%%/skins/larry/icons.png
+%%WWWDIR%%/skins/larry/iehacks.css
+%%WWWDIR%%/skins/larry/listicons.png
+%%WWWDIR%%/skins/larry/safari.css
+%%WWWDIR%%/skins/larry/sieverules.css
+%%WWWDIR%%/skins/larry/tabstyles.css
+%%WWWDIR%%/skins/larry/templates/advancededitor.html
+%%WWWDIR%%/skins/larry/templates/editsieverule.html
+%%WWWDIR%%/skins/larry/templates/setupsieverules.html
+%%WWWDIR%%/skins/larry/templates/sieverules.html
+@dirrm %%WWWDIR%%/skins/larry/templates
+@dirrm %%WWWDIR%%/skins/larry
+@dirrm %%WWWDIR%%/skins/classic/templates
+@dirrm %%WWWDIR%%/skins/classic
 @dirrm %%WWWDIR%%/skins
 @dirrm %%WWWDIR%%/localization
 @dirrm %%WWWDIR%%/lib/Net
