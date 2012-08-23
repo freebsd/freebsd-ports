@@ -3,19 +3,19 @@ transcoder with rich selection of features.
 
 Supported sources:
 
-    * Any DVD-like source: VIDEO_TS folder, DVD image or real DVD
-      (unencrypted: protection methods including CSS are not supported
-      internally and must be handled externally with third-party software
-      and libraries), and some .VOB and .TS files
-    * Most any multimedia file it can get libavformat to read and
-      libavcodec to decode.
+  * Most common multimedia files that libavformat and libavcodec support
+  * Any DVD or Bluray-like source which is NOT copy-protected (removal of
+    copy protection is not supported)
 
 Outputs:
 
-    * File format: MP4, MKV, AVI, or OGM
-    * Video: MPEG-4, H.264, or Theora (1 or 2 passes or constant
-      quantizer/rate encoding)
-    * Audio: AAC, MP3, Vorbis or AC-3 pass-through (supports encoding
-      of several audio tracks)
+  * File format: MP4 (M4V) and MKV
+  * Video: H.264 (x264), MPEG-2/MPEG-4 (ffmpeg), or Theora (libtheora)
+  * Audio: AAC, CoreAudio AAC/HE-AAC (OS X only), MP3, Flac, AC3, or Vorbis;
+    AC-3, DTS, DTS-HD, AAC, and MP3 pass-thru
+
+HandBrake also includes support for chapters, subtitles, advanced video
+filters, and more.  It is also useful for making videos compatible with
+portable video devices such as the Apple iPod/iPhone.
 
 WWW: http://handbrake.fr/
