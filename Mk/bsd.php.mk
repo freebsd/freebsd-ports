@@ -241,7 +241,8 @@ _USE_PHP_ALL=	apc bcmath bitset bz2 calendar ctype curl dba dom \
 		exif fileinfo filter ftp gd gettext gmp \
 		hash iconv imap interbase intl json ldap mbstring mcrypt \
 		memcache mssql mysql mysqli odbc \
-		openssl pcntl pcre pdf pdo pdo_mysql pdo_pgsql pdo_sqlite pgsql posix \
+		openssl pcntl pcre pdf pdo pdo_dblib pdo_firebird pdo_mysql \
+		pdo_odbc pdo_pgsql pdo_sqlite pgsql posix \
 		pspell radius readline recode session shmop simplexml snmp soap\
 		sockets spl sybase_ct sysvmsg sysvsem sysvshm \
 		tidy tokenizer wddx xml xmlreader xmlrpc xmlwriter xsl zip zlib
@@ -293,7 +294,10 @@ pcntl_DEPENDS=	devel/php${PHP_VER}-pcntl
 pcre_DEPENDS=	devel/php${PHP_VER}-pcre
 pdf_DEPENDS=	print/pecl-pdflib
 pdo_DEPENDS=	databases/php${PHP_VER}-pdo
+pdo_dblib_DEPENDS=	databases/php${PHP_VER}-pdo_dblib
+pdo_firebird_DEPENDS=	databases/php${PHP_VER}-pdo_firebird
 pdo_mysql_DEPENDS=	databases/php${PHP_VER}-pdo_mysql
+pdo_odbc_DEPENDS=	databases/php${PHP_VER}-pdo_odbc
 pdo_pgsql_DEPENDS=	databases/php${PHP_VER}-pdo_pgsql
 pdo_sqlite_DEPENDS=	databases/php${PHP_VER}-pdo_sqlite
 pgsql_DEPENDS=	databases/php${PHP_VER}-pgsql
