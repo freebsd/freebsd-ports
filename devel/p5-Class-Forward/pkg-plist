@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Forward/.packlist
+%%SITE_PERL%%/Class/Forward.pm
+@dirrmtry %%SITE_PERL%%/Class
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Forward
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
