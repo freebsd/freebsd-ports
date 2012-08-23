@@ -2271,6 +2271,9 @@ bin/remote_api_shell.pyo
 %%DATADIR%%/google/appengine/dist27/httplib.py
 %%DATADIR%%/google/appengine/dist27/httplib.pyc
 %%DATADIR%%/google/appengine/dist27/httplib.pyo
+%%DATADIR%%/google/appengine/dist27/threading.py
+%%DATADIR%%/google/appengine/dist27/threading.pyc
+%%DATADIR%%/google/appengine/dist27/threading.pyo
 %%DATADIR%%/google/appengine/dist27/urllib.py
 %%DATADIR%%/google/appengine/dist27/urllib.pyc
 %%DATADIR%%/google/appengine/dist27/urllib.pyo
@@ -2325,6 +2328,32 @@ bin/remote_api_shell.pyo
 %%DATADIR%%/google/appengine/ext/admin_redirect/main.py
 %%DATADIR%%/google/appengine/ext/admin_redirect/main.pyc
 %%DATADIR%%/google/appengine/ext/admin_redirect/main.pyo
+%%DATADIR%%/google/appengine/ext/analytics/__init__.py
+%%DATADIR%%/google/appengine/ext/analytics/__init__.pyc
+%%DATADIR%%/google/appengine/ext/analytics/__init__.pyo
+%%DATADIR%%/google/appengine/ext/analytics/app.yaml
+%%DATADIR%%/google/appengine/ext/analytics/entity.py
+%%DATADIR%%/google/appengine/ext/analytics/entity.pyc
+%%DATADIR%%/google/appengine/ext/analytics/entity.pyo
+%%DATADIR%%/google/appengine/ext/analytics/main.py
+%%DATADIR%%/google/appengine/ext/analytics/main.pyc
+%%DATADIR%%/google/appengine/ext/analytics/main.pyo
+%%DATADIR%%/google/appengine/ext/analytics/process.py
+%%DATADIR%%/google/appengine/ext/analytics/process.pyc
+%%DATADIR%%/google/appengine/ext/analytics/process.pyo
+%%DATADIR%%/google/appengine/ext/analytics/standaloneapp.py
+%%DATADIR%%/google/appengine/ext/analytics/standaloneapp.pyc
+%%DATADIR%%/google/appengine/ext/analytics/standaloneapp.pyo
+%%DATADIR%%/google/appengine/ext/analytics/static/analytics_css.css
+%%DATADIR%%/google/appengine/ext/analytics/static/analytics_js.js
+%%DATADIR%%/google/appengine/ext/analytics/static/pix.gif
+%%DATADIR%%/google/appengine/ext/analytics/stats.py
+%%DATADIR%%/google/appengine/ext/analytics/stats.pyc
+%%DATADIR%%/google/appengine/ext/analytics/stats.pyo
+%%DATADIR%%/google/appengine/ext/analytics/templates/drill.html
+%%DATADIR%%/google/appengine/ext/analytics/templates/error.html
+%%DATADIR%%/google/appengine/ext/analytics/templates/main.html
+%%DATADIR%%/google/appengine/ext/analytics/templates/showPklFiles.html
 %%DATADIR%%/google/appengine/ext/appstats/__init__.py
 %%DATADIR%%/google/appengine/ext/appstats/__init__.pyc
 %%DATADIR%%/google/appengine/ext/appstats/__init__.pyo
@@ -2426,6 +2455,9 @@ bin/remote_api_shell.pyo
 %%DATADIR%%/google/appengine/ext/datastore_admin/backup_handler.py
 %%DATADIR%%/google/appengine/ext/datastore_admin/backup_handler.pyc
 %%DATADIR%%/google/appengine/ext/datastore_admin/backup_handler.pyo
+%%DATADIR%%/google/appengine/ext/datastore_admin/backup_pb2.py
+%%DATADIR%%/google/appengine/ext/datastore_admin/backup_pb2.pyc
+%%DATADIR%%/google/appengine/ext/datastore_admin/backup_pb2.pyo
 %%DATADIR%%/google/appengine/ext/datastore_admin/copy_handler.py
 %%DATADIR%%/google/appengine/ext/datastore_admin/copy_handler.pyc
 %%DATADIR%%/google/appengine/ext/datastore_admin/copy_handler.pyo
@@ -2991,19 +3023,15 @@ bin/remote_api_shell.pyo
 %%DATADIR%%/lib/PyAMF/cpyamf/__init__.pyo
 %%DATADIR%%/lib/PyAMF/cpyamf/amf0.c
 %%DATADIR%%/lib/PyAMF/cpyamf/amf0.pyx
-%%DATADIR%%/lib/PyAMF/cpyamf/amf0.so
 %%DATADIR%%/lib/PyAMF/cpyamf/amf3.c
 %%DATADIR%%/lib/PyAMF/cpyamf/amf3.pxd
 %%DATADIR%%/lib/PyAMF/cpyamf/amf3.pyx
-%%DATADIR%%/lib/PyAMF/cpyamf/amf3.so
 %%DATADIR%%/lib/PyAMF/cpyamf/codec.c
 %%DATADIR%%/lib/PyAMF/cpyamf/codec.pxd
 %%DATADIR%%/lib/PyAMF/cpyamf/codec.pyx
-%%DATADIR%%/lib/PyAMF/cpyamf/codec.so
 %%DATADIR%%/lib/PyAMF/cpyamf/util.c
 %%DATADIR%%/lib/PyAMF/cpyamf/util.pxd
 %%DATADIR%%/lib/PyAMF/cpyamf/util.pyx
-%%DATADIR%%/lib/PyAMF/cpyamf/util.so
 %%DATADIR%%/lib/PyAMF/distribute_setup.py
 %%DATADIR%%/lib/PyAMF/distribute_setup.pyc
 %%DATADIR%%/lib/PyAMF/distribute_setup.pyo
@@ -18671,7 +18699,7 @@ bin/remote_api_shell.pyo
 %%DATADIR%%/lib/httplib2/httplib2/test/test_no_socket.py
 %%DATADIR%%/lib/httplib2/httplib2/test/test_no_socket.pyc
 %%DATADIR%%/lib/httplib2/httplib2/test/test_no_socket.pyo
-%%DATADIR%%/lib/ipaddr/ipaddr/COPYING
+%%DATADIR%%/lib/ipaddr/ipaddr/LICENSE
 %%DATADIR%%/lib/ipaddr/ipaddr/README
 %%DATADIR%%/lib/ipaddr/ipaddr/__init__.py
 %%DATADIR%%/lib/ipaddr/ipaddr/__init__.pyc
@@ -23505,6 +23533,9 @@ bin/remote_api_shell.pyo
 @dirrm %%DATADIR%%/google/appengine/ext/appstats/templates
 @dirrm %%DATADIR%%/google/appengine/ext/appstats/static
 @dirrm %%DATADIR%%/google/appengine/ext/appstats
+@dirrm %%DATADIR%%/google/appengine/ext/analytics/templates
+@dirrm %%DATADIR%%/google/appengine/ext/analytics/static
+@dirrm %%DATADIR%%/google/appengine/ext/analytics
 @dirrm %%DATADIR%%/google/appengine/ext/admin_redirect
 @dirrm %%DATADIR%%/google/appengine/ext/admin/templates/js
 @dirrm %%DATADIR%%/google/appengine/ext/admin/templates/images
