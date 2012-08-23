@@ -435,6 +435,7 @@
 %%WWWDIR%%/lib/ajax.php
 %%WWWDIR%%/lib/authinterface.php
 %%WWWDIR%%/lib/auth/Builtin.php
+%%WWWDIR%%/lib/auth/LDAP.php
 %%WWWDIR%%/lib/auth/OpenMediaVault.php
 %%WWWDIR%%/lib/auth/WebAuth.php
 %%WWWDIR%%/lib/cache.php
