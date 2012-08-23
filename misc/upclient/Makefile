@@ -14,23 +14,17 @@ MASTER_SITES=	http://uptimes.hostingwired.com/files/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The Uptimes project client
-
-# Global variables
-#
+COMMENT=	Uptimes project client
 
 USE_GETTEXT=	yes
 USE_RC_SUBR=	upclient
 ALL_TARGET=	bsd
 BUILD_WRKSRC=	${WRKSRC}/src
 
-SUB_FILES=	pkg-message  upclient.sh
-PKGMESSAGE=	${WRKDIR}/pkg-message upclient.sh
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN8=		upclient.8
-
-# Local variables
-#
 
 REINPLACE_SUB=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE}
 
@@ -40,25 +34,16 @@ DOC_FILES+=	HISTORY-BETA
 
 .include <bsd.port.pre.mk>
 
-# Post-extract
-#
-
 post-extract: rename-doc
 
 rename-doc:
 	@${MV} ${WRKSRC}/doc/"Uptimes Protocol 5" ${WRKSRC}/doc/UptimesProtocol5
-
-# Post-patch
-#
 
 post-patch:
 	@${REINPLACE_CMD} ${REINPLACE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${WRKSRC}/scripts/upchk ${WRKSRC}/scripts/clientchk \
 		${WRKSRC}/src/Makefile
 	${REINPLACE_CMD} -e 's/CC=gcc/CC=${CC}/' ${WRKSRC}/src/Makefile
-
-# Install
-#
 
 do-install: install-program install-man install-sample install-script \
 	install-locale
@@ -81,9 +66,6 @@ install-script:
 
 install-locale:
 	@cd ${WRKSRC}/src; ${MAKE} install-locales
-
-# Post-install
-#
 
 post-install: install-conf install-doc display-message
 

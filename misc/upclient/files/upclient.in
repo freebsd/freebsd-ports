@@ -1,14 +1,31 @@
 #!/bin/sh
-#
+
 # $FreeBSD$
 #
 # PROVIDE: upclient
-# REQUIRE: DAEMON
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf to enable upclient:
 #
 # upclient_enable="YES"
 # upclient_flags="<set as needed>"
+
+. /etc/rc.subr
+
+name=upclient
+rcvar=upclient_enable
+
+load_rc_config ${name}
+
+upclient_enable="${upclient_enable:-NO}"
+
+command=%%PREFIX%%/sbin/${name}
+pidfile=/var/run/${name}.pid
+configfile=%%PREFIX%%/etc/${name}.conf
+required_files=${configfile}
+samplefile=${configfile}.sample
+start_precmd=${name}_precmd
 
 upclient_precmd ()
 {
@@ -25,26 +42,6 @@ upclient_precmd ()
 	kw="IdleTime|OS|(OS|CPU)Level"
 	egrep -qs "^[$ws]*Send($kw)[$ws]*=" ${configfile} &&
 	err 1 "${configfile} needs to be updated from ${samplefile}."
-
-	:
 }
 
-upclient_enable="${upclient_enable-NO}"
-
-. /etc/rc.subr
-
-name=upclient
-rcvar=upclient_enable
-
-# private
-configfile=%%PREFIX%%/etc/${name}.conf
-samplefile=${configfile}.sample
-
-# public
-command=%%PREFIX%%/sbin/${name}
-pidfile=/var/run/${name}.pid
-required_files=${configfile}
-start_precmd=${name}_precmd
-
-load_rc_config ${name}
 run_rc_command "$1"
