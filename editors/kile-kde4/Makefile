@@ -30,7 +30,7 @@ OKULAR_DESC=	Use Okular for viewing
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MOKULAR)
+.if ${PORT_OPTIONS:MOKULAR}
 USE_KDE4+=	okular_run
 .endif
 
