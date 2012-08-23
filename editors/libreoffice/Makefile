@@ -25,9 +25,8 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
 		${LOCALBASE}/lib/libboost_regex.a:${PORTSDIR}/devel/boost-libs \
+		${LOCALBASE}/include/mdds/global.hpp:${PORTSDIR}/devel/mdds \
 		vigra-config:${PORTSDIR}/graphics/vigra
-
-#		${LOCALBASE}/include/mdds/global.hpp:${PORTSDIR}/devel/mdds
 
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
@@ -82,8 +81,7 @@ DISTFILES+=	${PORTNAME}-${components}-${LOVERSION}${EXTRACT_SUFX}
 
 EXTRACT_ONLY:=	${DISTFILES}
 
-DISTFILES+=	0ff7d225d087793c8c2c680d77aac3e7-mdds_0.5.3.tar.bz2:ext
-#		f02578f5218f217a9f20e9c30e119c6a-boost_1_44_0.tar.bz2:ext
+#DISTFILES+=	f02578f5218f217a9f20e9c30e119c6a-boost_1_44_0.tar.bz2:ext
 
 USE_BDB=	yes
 USE_PERL5_BUILD=	yes
@@ -97,6 +95,7 @@ USE_XORG=	xaw xrandr
 USE_GL=		gl glu
 MAKE_JOBS_UNSAFE=	yes
 USE_GETTEXT=	yes
+USE_PKGCONFIG=	build
 
 OPTIONS_DEFINE=	WEBDAV KDE4 GTK2 GTK3 GNOME JAVA SYSTRAY MMEDIA SDK SVG DEBUG PGSQL
 OPTIONS_DEFAULT=	GTK2 SVG
@@ -113,7 +112,6 @@ CONFIGURE_ENV=		GPERF=${LOCALBASE}/bin/gperf \
 			OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 			OPENSSL_LIBS="-L${OPENSSLLIB} -lssl"
 
-#			--with-system-mdds
 CONFIGURE_ARGS+=	--with-unix-wrapper="libreoffice" \
 			--disable-fetch-external \
 			--with-build-version="FreeBSD ports ${PKGVERSION}" \
@@ -122,6 +120,7 @@ CONFIGURE_ARGS+=	--with-unix-wrapper="libreoffice" \
 			--with-gnu-patch=${LOCALBASE}/bin/gpatch \
 			--with-external-tar=${DISTDIR}/${DIST_SUBDIR} \
 			--with-system-boost \
+			--with-system-mdds \
 			--with-system-libxml \
 			--with-system-cairo \
 			--enable-cairo-canvas \
@@ -222,6 +221,7 @@ CC=	${LOCALBASE}/bin/clang
 CPP=	${CC} -E
 CXX=	${LOCALBASE}/bin/clang++
 CXXCPP=	${CXX} -E
+CONFIGURE_ARGS+=	--with-linker-hash-style=sysv
 .endif
 CONFIGURE_ENV+=		CXXCPP="${CXXCPP}"
 CONFIGURE_ARGS+=	--with-system-cppunit
@@ -387,11 +387,11 @@ post-patch:
 .if defined(WITH_GCC)
 	@${REINPLACE_CMD} -e "s|^LINKFLAGSDEFS:=|LINKFLAGSDEFS:=-Wl,-rpath=${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}|" \
 		${WRKSRC}/solenv/inc/unxfbsd.mk
-.else
-	#Visibility is broken with clang
-	@${REINPLACE_CMD} -e "s|HAVE_GCC_VISIBILITY_FEATURE=TRUE|HAVE_GCC_VISIBILITY_FEATURE=FALSE|g" \
+.endif
+.if ${CC} == /usr/bin/clang && ${OSVERSION} < 900506
+#Visibility is broken with clang
+	@${REINPLACE_CMD} -e "s|HAVE_GCC_VISIBILITY_FEATURE=TRUE|HAVE_GCC_VISIBILITY_FEATURE=|g" \
 		${WRKSRC}/configure
-		
 .endif
 
 .if ${PORT_OPTIONS:MJAVA}
