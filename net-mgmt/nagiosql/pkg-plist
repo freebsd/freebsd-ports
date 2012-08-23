@@ -5,12 +5,14 @@
 %%WWWDIR%%/admin/checkcommands.php
 %%WWWDIR%%/admin/commandline.php
 %%WWWDIR%%/admin/commands.php
+%%WWWDIR%%/admin/configtargets.php
 %%WWWDIR%%/admin/contactgroups.php
 %%WWWDIR%%/admin/contacts.php
+%%WWWDIR%%/admin/contacts.php.orig
 %%WWWDIR%%/admin/contacttemplates.php
+%%WWWDIR%%/admin/datadomain.php
 %%WWWDIR%%/admin/delbackup.php
 %%WWWDIR%%/admin/delconfig.php
-%%WWWDIR%%/admin/domain.php
 %%WWWDIR%%/admin/download.php
 %%WWWDIR%%/admin/group.php
 %%WWWDIR%%/admin/groupusers.php
@@ -20,6 +22,7 @@
 %%WWWDIR%%/admin/hostextinfo.php
 %%WWWDIR%%/admin/hostgroups.php
 %%WWWDIR%%/admin/hosts.php
+%%WWWDIR%%/admin/hosts.php.orig
 %%WWWDIR%%/admin/hosttemplates.php
 %%WWWDIR%%/admin/import.php
 %%WWWDIR%%/admin/index.html
@@ -35,16 +38,21 @@
 %%WWWDIR%%/admin/serviceextinfo.php
 %%WWWDIR%%/admin/servicegroups.php
 %%WWWDIR%%/admin/services.php
+%%WWWDIR%%/admin/services.php.orig
 %%WWWDIR%%/admin/servicetemplates.php
 %%WWWDIR%%/admin/settings.php
 %%WWWDIR%%/admin/specials.php
+%%WWWDIR%%/admin/support.php
 %%WWWDIR%%/admin/templatedefinitions.php
+%%WWWDIR%%/admin/templatedefinitions.php.orig
 %%WWWDIR%%/admin/timedefinitions.php
 %%WWWDIR%%/admin/timeperiods.php
 %%WWWDIR%%/admin/tools.php
 %%WWWDIR%%/admin/user.php
 %%WWWDIR%%/admin/variabledefinitions.php
 %%WWWDIR%%/admin/verify.php
+%%WWWDIR%%/admin/versioncheck.php
+%%WWWDIR%%/config/content.css
 %%WWWDIR%%/config/fieldvars.php
 %%WWWDIR%%/config/locale/da_DK/LC_MESSAGES/da_DK.mo
 %%WWWDIR%%/config/locale/da_DK/LC_MESSAGES/da_DK.po
@@ -58,10 +66,6 @@
 %%WWWDIR%%/config/locale/en_GB/LC_MESSAGES/en_GB.po
 %%WWWDIR%%/config/locale/en_GB/LC_MESSAGES/index.html
 %%WWWDIR%%/config/locale/en_GB/index.html
-%%WWWDIR%%/config/locale/es_AR/LC_MESSAGES/es_AR.mo
-%%WWWDIR%%/config/locale/es_AR/LC_MESSAGES/es_AR.po
-%%WWWDIR%%/config/locale/es_AR/LC_MESSAGES/index.html
-%%WWWDIR%%/config/locale/es_AR/index.html
 %%WWWDIR%%/config/locale/es_ES/LC_MESSAGES/es_ES.mo
 %%WWWDIR%%/config/locale/es_ES/LC_MESSAGES/es_ES.po
 %%WWWDIR%%/config/locale/es_ES/LC_MESSAGES/index.html
@@ -74,18 +78,10 @@
 %%WWWDIR%%/config/locale/it_IT/LC_MESSAGES/it_IT.mo
 %%WWWDIR%%/config/locale/it_IT/LC_MESSAGES/it_IT.po
 %%WWWDIR%%/config/locale/it_IT/index.html
-%%WWWDIR%%/config/locale/ja_JP/LC_MESSAGES/index.html
-%%WWWDIR%%/config/locale/ja_JP/LC_MESSAGES/ja_JP.mo
-%%WWWDIR%%/config/locale/ja_JP/LC_MESSAGES/ja_JP.po
-%%WWWDIR%%/config/locale/ja_JP/index.html
 %%WWWDIR%%/config/locale/nl_NL/LC_MESSAGES/index.html
 %%WWWDIR%%/config/locale/nl_NL/LC_MESSAGES/nl_NL.mo
 %%WWWDIR%%/config/locale/nl_NL/LC_MESSAGES/nl_NL.po
 %%WWWDIR%%/config/locale/nl_NL/index.html
-%%WWWDIR%%/config/locale/pl_PL/LC_MESSAGES/index.html
-%%WWWDIR%%/config/locale/pl_PL/LC_MESSAGES/pl_PL.mo
-%%WWWDIR%%/config/locale/pl_PL/LC_MESSAGES/pl_PL.po
-%%WWWDIR%%/config/locale/pl_PL/index.html
 %%WWWDIR%%/config/locale/pt_BR/LC_MESSAGES/index.html
 %%WWWDIR%%/config/locale/pt_BR/LC_MESSAGES/pt_BR.mo
 %%WWWDIR%%/config/locale/pt_BR/LC_MESSAGES/pt_BR.po
@@ -99,14 +95,26 @@
 %%WWWDIR%%/config/locale/zh_CN/LC_MESSAGES/zh_CN.po
 %%WWWDIR%%/config/locale/zh_CN/index.html
 %%WWWDIR%%/config/main.css
+%%WWWDIR%%/doc/CHANGELOG
+%%WWWDIR%%/doc/INSTALLATION_deDE.txt
+%%WWWDIR%%/doc/INSTALLATION_enGB.txt
+%%WWWDIR%%/doc/LICENSE
+%%WWWDIR%%/doc/LIZENZ
+%%WWWDIR%%/doc/README_SSH_KEY
 %%WWWDIR%%/favicon.ico
 %%WWWDIR%%/functions/common.js
 %%WWWDIR%%/functions/config_class.php
+%%WWWDIR%%/functions/config_class.php.orig
+%%WWWDIR%%/functions/content_class.php
 %%WWWDIR%%/functions/data_class.php
 %%WWWDIR%%/functions/import_class.php
+%%WWWDIR%%/functions/import_class.php.orig
 %%WWWDIR%%/functions/mysql_class.php
 %%WWWDIR%%/functions/nag_class.php
 %%WWWDIR%%/functions/prepend_adm.php
+%%WWWDIR%%/functions/prepend_adm.php.orig
+%%WWWDIR%%/functions/prepend_content.php
+%%WWWDIR%%/functions/prepend_content.php.orig
 %%WWWDIR%%/functions/prepend_scripting.php
 %%WWWDIR%%/functions/tinyMCE/jscripts/tiny_mce/langs/en.js
 %%WWWDIR%%/functions/tinyMCE/jscripts/tiny_mce/license.txt
@@ -208,13 +216,21 @@
 %%WWWDIR%%/functions/yui/build/container/assets/tip16_1.gif
 %%WWWDIR%%/functions/yui/build/container/assets/warn16_1.gif
 %%WWWDIR%%/functions/yui/build/container/container-min.js
+%%WWWDIR%%/functions/yui/build/datasource/datasource-min.js
+%%WWWDIR%%/functions/yui/build/datatable/assets/skins/sam/datatable.css
+%%WWWDIR%%/functions/yui/build/datatable/assets/skins/sam/dt-arrow-dn.png
+%%WWWDIR%%/functions/yui/build/datatable/assets/skins/sam/dt-arrow-up.png
+%%WWWDIR%%/functions/yui/build/datatable/datatable-min.js
 %%WWWDIR%%/functions/yui/build/element/element-min.js
+%%WWWDIR%%/functions/yui/build/event-delegate/event-delegate-min.js
 %%WWWDIR%%/functions/yui/build/fonts/fonts-min.css
+%%WWWDIR%%/functions/yui/build/json/json-min.js
+%%WWWDIR%%/functions/yui/build/paginator/assets/skins/sam/paginator.css
+%%WWWDIR%%/functions/yui/build/paginator/paginator-min.js
 %%WWWDIR%%/functions/yui/build/tabview/assets/skins/sam/tabview.css
 %%WWWDIR%%/functions/yui/build/tabview/tabview-min.js
 %%WWWDIR%%/functions/yui/build/utilities/utilities.js
 %%WWWDIR%%/functions/yui/build/yahoo-dom-event/yahoo-dom-event.js
-%%WWWDIR%%/images/admin.png
 %%WWWDIR%%/images/bg_menu_aktiv.png
 %%WWWDIR%%/images/bg_menu_inaktiv.png
 %%WWWDIR%%/images/bg_submenu.png
@@ -223,67 +239,51 @@
 %%WWWDIR%%/images/copy.gif
 %%WWWDIR%%/images/del.png
 %%WWWDIR%%/images/delete.gif
+%%WWWDIR%%/images/donate.png
+%%WWWDIR%%/images/donate_2.png
 %%WWWDIR%%/images/down.gif
 %%WWWDIR%%/images/download.gif
 %%WWWDIR%%/images/edit.gif
 %%WWWDIR%%/images/exclude_01.gif
-%%WWWDIR%%/images/exclude_02.gif
-%%WWWDIR%%/images/exclude_03.gif
 %%WWWDIR%%/images/info.gif
 %%WWWDIR%%/images/input.png
 %%WWWDIR%%/images/inputlock.png
 %%WWWDIR%%/images/inputmust.png
-%%WWWDIR%%/images/left.gif
-%%WWWDIR%%/images/login-form.png
-%%WWWDIR%%/images/logo_top.png
+%%WWWDIR%%/images/loader.gif
 %%WWWDIR%%/images/lupe.gif
 %%WWWDIR%%/images/menu.gif
-%%WWWDIR%%/images/menu_bg.png
-%%WWWDIR%%/images/menu_bg2.png
-%%WWWDIR%%/images/menusub_bg.png
 %%WWWDIR%%/images/mut.gif
 %%WWWDIR%%/images/nagiosql_logo.png
 %%WWWDIR%%/images/pfeil_l.gif
 %%WWWDIR%%/images/pfeil_r.gif
-%%WWWDIR%%/images/pfeil_r_red.gif
 %%WWWDIR%%/images/pixel.gif
-%%WWWDIR%%/images/right.gif
+%%WWWDIR%%/images/sort_asc.png
+%%WWWDIR%%/images/sort_desc.png
 %%WWWDIR%%/images/tip.gif
-%%WWWDIR%%/images/tip.png
 %%WWWDIR%%/images/up.gif
-%%WWWDIR%%/images/upArrow.png
 %%WWWDIR%%/images/write.gif
 %%WWWDIR%%/index.php
-%%WWWDIR%%/install/css/cmxform.css
-%%WWWDIR%%/install/css/core.css
-%%WWWDIR%%/install/css/index.html
 %%WWWDIR%%/install/css/install.css
-%%WWWDIR%%/install/css/reset.css
-%%WWWDIR%%/install/css/screen.css
-%%WWWDIR%%/install/doc/INSTALLATION_deDE.txt
-%%WWWDIR%%/install/doc/INSTALLATION_enGB.txt
-%%WWWDIR%%/install/doc/README_SSH_KEY
-%%WWWDIR%%/install/functions/func_installer.php
-%%WWWDIR%%/install/functions/index.html
+%%WWWDIR%%/install/functions/initial_settings.php
+%%WWWDIR%%/install/functions/install_class.php
+%%WWWDIR%%/install/functions/prepend_install.php
 %%WWWDIR%%/install/images/background.png
 %%WWWDIR%%/install/images/body_background.png
-%%WWWDIR%%/install/images/cmxform-divider.gif
-%%WWWDIR%%/install/images/cmxform-fieldset.gif
 %%WWWDIR%%/install/images/favicon.ico
 %%WWWDIR%%/install/images/index-install.png
 %%WWWDIR%%/install/images/index-update.png
 %%WWWDIR%%/install/images/index.html
+%%WWWDIR%%/install/images/input.png
+%%WWWDIR%%/install/images/inputlock.png
+%%WWWDIR%%/install/images/inputmust.png
 %%WWWDIR%%/install/images/install.png
 %%WWWDIR%%/install/images/invalid.png
-%%WWWDIR%%/install/images/minus.png
 %%WWWDIR%%/install/images/nagiosql.png
 %%WWWDIR%%/install/images/next.png
 %%WWWDIR%%/install/images/onlinehelp.png
 %%WWWDIR%%/install/images/pixel.gif
-%%WWWDIR%%/install/images/plus.png
 %%WWWDIR%%/install/images/previous.png
 %%WWWDIR%%/install/images/reload.png
-%%WWWDIR%%/install/images/skip.png
 %%WWWDIR%%/install/images/step1_active.png
 %%WWWDIR%%/install/images/step1_deactive.png
 %%WWWDIR%%/install/images/step2_active.png
@@ -296,47 +296,41 @@
 %%WWWDIR%%/install/images/warning.png
 %%WWWDIR%%/install/index.php
 %%WWWDIR%%/install/install.php
-%%WWWDIR%%/install/js/cmxform.js
-%%WWWDIR%%/install/js/index.html
-%%WWWDIR%%/install/js/jquery.js
-%%WWWDIR%%/install/js/prototype.js
-%%WWWDIR%%/install/js/validation.js
-%%WWWDIR%%/install/js/yh_tooltip.js
 %%WWWDIR%%/install/sql/import_nagios_sample.sql
-%%WWWDIR%%/install/sql/index.html
-%%WWWDIR%%/install/sql/nagiosQL_v31_db_mysql.sql
-%%WWWDIR%%/install/sql/update_200_202.sql
-%%WWWDIR%%/install/sql/update_202_302.sql
+%%WWWDIR%%/install/sql/nagiosQL_v32_db_mysql.sql
 %%WWWDIR%%/install/sql/update_300_301.sql
-%%WWWDIR%%/install/sql/update_300b1_300b2.sql
-%%WWWDIR%%/install/sql/update_300b2_300rc1.sql
-%%WWWDIR%%/install/sql/update_300rc1_300.sql
+%%WWWDIR%%/install/sql/update_300_310.sql
 %%WWWDIR%%/install/sql/update_301_302.sql
 %%WWWDIR%%/install/sql/update_302_303.sql
 %%WWWDIR%%/install/sql/update_303_304.sql
 %%WWWDIR%%/install/sql/update_304_310.sql
-%%WWWDIR%%/install/sql/update_304_310b1.sql
 %%WWWDIR%%/install/sql/update_310_311.sql
-%%WWWDIR%%/install/sql/update_310b1_310b2.sql
-%%WWWDIR%%/install/sql/update_310b2_310b3.sql
-%%WWWDIR%%/install/sql/update_310b3_310rc1.sql
-%%WWWDIR%%/install/sql/update_310rc1_310.sql
-%%WWWDIR%%/install/status.php
+%%WWWDIR%%/install/sql/update_310_320.sql
+%%WWWDIR%%/install/sql/update_311_320.sql
 %%WWWDIR%%/install/step1.php
 %%WWWDIR%%/install/step2.php
 %%WWWDIR%%/install/step3.php
+%%WWWDIR%%/install/templates/index.tpl.htm
+%%WWWDIR%%/install/templates/install.tpl.htm
+%%WWWDIR%%/install/templates/step1.tpl.htm
+%%WWWDIR%%/install/templates/step2.tpl.htm
+%%WWWDIR%%/install/templates/step3.tpl.htm
 %%WWWDIR%%/libraries/pear/HTML/Template/IT.php
 %%WWWDIR%%/libraries/pear/HTML/Template/ITX.php
 %%WWWDIR%%/libraries/pear/HTML/Template/IT_Error.php
+%%WWWDIR%%/libraries/pear/JSON/JSON.php
+%%WWWDIR%%/libraries/pear/JSON/index.html
 %%WWWDIR%%/libraries/pear/PEAR.php
 %%WWWDIR%%/libraries/pear/PEAR5.php
 %%WWWDIR%%/libraries/pear/index.html
 %%WWWDIR%%/scripts/do_config.php
 %%WWWDIR%%/templates/admin/admin_master.tpl.htm
 %%WWWDIR%%/templates/admin/checkcommands.tpl.htm
+%%WWWDIR%%/templates/admin/configtargets.tpl.htm
 %%WWWDIR%%/templates/admin/contactgroups.tpl.htm
 %%WWWDIR%%/templates/admin/contacts.tpl.htm
 %%WWWDIR%%/templates/admin/contacttemplates.tpl.htm
+%%WWWDIR%%/templates/admin/datadomain.tpl.htm
 %%WWWDIR%%/templates/admin/delbackup.tpl.htm
 %%WWWDIR%%/templates/admin/domain.tpl.htm
 %%WWWDIR%%/templates/admin/group.tpl.htm
@@ -358,8 +352,10 @@
 %%WWWDIR%%/templates/admin/services.tpl.htm
 %%WWWDIR%%/templates/admin/servicetemplates.tpl.htm
 %%WWWDIR%%/templates/admin/settings.tpl.htm
+%%WWWDIR%%/templates/admin/support.tpl.htm
 %%WWWDIR%%/templates/admin/timeperiods.tpl.htm
 %%WWWDIR%%/templates/admin/user.tpl.htm
+%%WWWDIR%%/templates/admin/user.tpl.htm.orig
 %%WWWDIR%%/templates/admin/verify.tpl.htm
 %%WWWDIR%%/templates/files/commands.tpl.dat
 %%WWWDIR%%/templates/files/contactgroups.tpl.dat
@@ -384,15 +380,15 @@
 @dirrm %%WWWDIR%%/templates/admin
 @dirrm %%WWWDIR%%/templates
 @dirrm %%WWWDIR%%/scripts
+@dirrm %%WWWDIR%%/libraries/pear/JSON
 @dirrm %%WWWDIR%%/libraries/pear/HTML/Template
 @dirrm %%WWWDIR%%/libraries/pear/HTML
 @dirrm %%WWWDIR%%/libraries/pear
 @dirrm %%WWWDIR%%/libraries
+@dirrm %%WWWDIR%%/install/templates
 @dirrm %%WWWDIR%%/install/sql
-@dirrm %%WWWDIR%%/install/js
 @dirrm %%WWWDIR%%/install/images
 @dirrm %%WWWDIR%%/install/functions
-@dirrm %%WWWDIR%%/install/doc
 @dirrm %%WWWDIR%%/install/css
 @dirrm %%WWWDIR%%/install
 @dirrm %%WWWDIR%%/images
@@ -402,8 +398,19 @@
 @dirrm %%WWWDIR%%/functions/yui/build/tabview/assets/skins
 @dirrm %%WWWDIR%%/functions/yui/build/tabview/assets
 @dirrm %%WWWDIR%%/functions/yui/build/tabview
+@dirrm %%WWWDIR%%/functions/yui/build/paginator/assets/skins/sam
+@dirrm %%WWWDIR%%/functions/yui/build/paginator/assets/skins
+@dirrm %%WWWDIR%%/functions/yui/build/paginator/assets
+@dirrm %%WWWDIR%%/functions/yui/build/paginator
+@dirrm %%WWWDIR%%/functions/yui/build/json
 @dirrm %%WWWDIR%%/functions/yui/build/fonts
+@dirrm %%WWWDIR%%/functions/yui/build/event-delegate
 @dirrm %%WWWDIR%%/functions/yui/build/element
+@dirrm %%WWWDIR%%/functions/yui/build/datatable/assets/skins/sam
+@dirrm %%WWWDIR%%/functions/yui/build/datatable/assets/skins
+@dirrm %%WWWDIR%%/functions/yui/build/datatable/assets
+@dirrm %%WWWDIR%%/functions/yui/build/datatable
+@dirrm %%WWWDIR%%/functions/yui/build/datasource
 @dirrm %%WWWDIR%%/functions/yui/build/container/assets/skins/sam
 @dirrm %%WWWDIR%%/functions/yui/build/container/assets/skins
 @dirrm %%WWWDIR%%/functions/yui/build/container/assets
@@ -449,26 +456,21 @@
 @dirrm %%WWWDIR%%/functions/tinyMCE/jscripts
 @dirrm %%WWWDIR%%/functions/tinyMCE
 @dirrm %%WWWDIR%%/functions
+@dirrm %%WWWDIR%%/doc
 @dirrm %%WWWDIR%%/config/locale/zh_CN/LC_MESSAGES
 @dirrm %%WWWDIR%%/config/locale/zh_CN
 @dirrm %%WWWDIR%%/config/locale/ru_RU/LC_MESSAGES
 @dirrm %%WWWDIR%%/config/locale/ru_RU
 @dirrm %%WWWDIR%%/config/locale/pt_BR/LC_MESSAGES
 @dirrm %%WWWDIR%%/config/locale/pt_BR
-@dirrm %%WWWDIR%%/config/locale/pl_PL/LC_MESSAGES
-@dirrm %%WWWDIR%%/config/locale/pl_PL
 @dirrm %%WWWDIR%%/config/locale/nl_NL/LC_MESSAGES
 @dirrm %%WWWDIR%%/config/locale/nl_NL
-@dirrm %%WWWDIR%%/config/locale/ja_JP/LC_MESSAGES
-@dirrm %%WWWDIR%%/config/locale/ja_JP
 @dirrm %%WWWDIR%%/config/locale/it_IT/LC_MESSAGES
 @dirrm %%WWWDIR%%/config/locale/it_IT
 @dirrm %%WWWDIR%%/config/locale/fr_FR/LC_MESSAGES
 @dirrm %%WWWDIR%%/config/locale/fr_FR
 @dirrm %%WWWDIR%%/config/locale/es_ES/LC_MESSAGES
 @dirrm %%WWWDIR%%/config/locale/es_ES
-@dirrm %%WWWDIR%%/config/locale/es_AR/LC_MESSAGES
-@dirrm %%WWWDIR%%/config/locale/es_AR
 @dirrm %%WWWDIR%%/config/locale/en_GB/LC_MESSAGES
 @dirrm %%WWWDIR%%/config/locale/en_GB
 @dirrm %%WWWDIR%%/config/locale/de_DE/LC_MESSAGES
