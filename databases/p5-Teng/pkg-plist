@@ -4,9 +4,11 @@
 %%SITE_PERL%%/Teng/Plugin/BulkInsert.pm
 %%SITE_PERL%%/Teng/Plugin/Count.pm
 %%SITE_PERL%%/Teng/Plugin/FindOrCreate.pm
+%%SITE_PERL%%/Teng/Plugin/Lookup.pm
 %%SITE_PERL%%/Teng/Plugin/Pager.pm
 %%SITE_PERL%%/Teng/Plugin/Pager/MySQLFoundRows.pm
 %%SITE_PERL%%/Teng/Plugin/Replace.pm
+%%SITE_PERL%%/Teng/Plugin/SingleBySQL.pm
 %%SITE_PERL%%/Teng/QueryBuilder.pm
 %%SITE_PERL%%/Teng/Row.pm
 %%SITE_PERL%%/Teng/Schema.pm
