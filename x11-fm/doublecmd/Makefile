@@ -33,26 +33,35 @@ LAZBUILD_CMD=	${LOCALBASE}/bin/lazbuild
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 DOCSRC=		${WRKDIR}/${PORTNAME}-help-0.5.1
 
-OPTIONS=	GTK2	"Use gtk20 interface" on \
-		QT4	"Use qt4 interface" off
+OPTIONS_DEFINE=		DEBUG
+OPTIONS_SINGLE=		LCL
+OPTIONS_SINGLE_LCL=	GTK2 QT4
+
+GTK2_DESC=		Use gtk20 interface
+QT4_DESC=		Use qt4 interface
+DEBUG_DESC=		Build with complete symbolic debug information
+
+OPTIONS_DEFAULT=	GTK2
 
 .include <bsd.port.pre.mk>
 
-.if (defined(WITH_GTK2) && defined(WITH_QT4)) || (!defined(WITH_GTK2) && !defined(WITH_QT4))
-IGNORE=		please select one option: QT4 or GTK2
-.endif
-
-.if defined(WITH_GTK2)
+.if ${PORT_OPTIONS:MGTK2}
 USE_FPC+=	gtk2
 USE_GNOME=	gtk20 gdkpixbuf
 LCL_PLATFORM=	gtk2
 BUILD_DEPENDS+=	${LOCALBASE}/share/lazarus/lcl/units/${BUILDNAME}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
 .endif
 
-.if defined(WITH_QT4)
-LIB_DEPENDS+=	Qt4Pas.5:${PORTSDIR}/x11-toolkits/qt4pas
+.if ${PORT_OPTIONS:MQT4}
+LIB_DEPENDS+=	Qt4Pas:${PORTSDIR}/x11-toolkits/qt4pas
 LCL_PLATFORM=	qt
 BUILD_DEPENDS+=	${LOCALBASE}/share/lazarus/lcl/units/${BUILDNAME}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-qt
+.endif
+
+.if ${PORT_OPTIONS:MDEBUG}
+BUILD_MODE=	Debug
+.else
+BUILD_MODE=	NoDebug Full Optimizations
 .endif
 
 post-patch:
@@ -65,7 +74,7 @@ do-build:
 	@cd ${WRKSRC}/components && \
 		${FIND} * -name *.lpk -exec ${LAZBUILD_CMD} --ws=${LCL_PLATFORM} "{}" \;
 	@cd ${WRKSRC} && \
-		${LAZBUILD_CMD} --ws=${LCL_PLATFORM} ${PROJECT_FILE}
+		${LAZBUILD_CMD} --ws=${LCL_PLATFORM} --bm="${BUILD_MODE}" ${PROJECT_FILE}
 
 post-build:
 	@${RM} -rf ${DOCSRC}/*/dev-help
@@ -96,7 +105,7 @@ pre-install:
 	@${ECHO_CMD} "@dirrm %%DATADIR%%/sdk" >> ${PLIST}
 	@${ECHO_CMD} "@dirrm %%DATADIR%%" >> ${PLIST}
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@cd ${DOCSRC} && \
 		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DOCSDIR%%/|' >> ${PLIST} && \
 			${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm %%DOCSDIR%%/|' >> ${PLIST}
@@ -115,7 +124,7 @@ do-install:
 			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/${DIRE}/{}" \;
 .endfor
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@cd ${DOCSRC} && \
 		${FIND} * -type d -exec ${MKDIR} "${DOCSDIR}/{}" \; && \
 			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/{}" \;
