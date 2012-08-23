@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nagiosql
-PORTVERSION=	3.1.1
+PORTVERSION=	3.2.0
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/NagiosQL%20${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/.//g}
@@ -14,10 +14,10 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/.//g}
 MAINTAINER=	chris@smartt.com
 COMMENT=	A web based administration tool for Nagios
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	nagios:${PORTSDIR}/net-mgmt/nagios \
 		${PEARDIR}/HTML/Template/IT.php:${PORTSDIR}/devel/pear-HTML_Template_IT
-
-LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 USE_MYSQL=	yes
@@ -48,7 +48,7 @@ USE_PHP+=	ssh2
 
 do-install:
 	${MKDIR} ${WWWDIR}
-	${CP} -R ${WRKSRC}/${PORTNAME}/ ${WWWDIR}
+	${CP} -R ${WRKSRC}/${PORTNAME}32/ ${WWWDIR}
 	${CHOWN} ${WWWOWN}:${WWWGROUP} ${WWWDIR}/config
 
 post-install:
