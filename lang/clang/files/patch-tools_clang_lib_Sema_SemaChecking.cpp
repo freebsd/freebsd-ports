@@ -1,5 +1,5 @@
 
-$FreeBSD: /tmp/pcvs/ports/lang/clang/files/patch-tools_clang_lib_Sema_SemaChecking.cpp,v 1.1 2010-10-08 14:00:31 brooks Exp $
+$FreeBSD$
 
 --- tools/clang/lib/Sema/SemaChecking.cpp.orig
 +++ tools/clang/lib/Sema/SemaChecking.cpp
