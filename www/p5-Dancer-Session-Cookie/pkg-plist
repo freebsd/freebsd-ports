@@ -1,0 +1,4 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Session/Cookie/.packlist
+%%SITE_PERL%%/Dancer/Session/Cookie.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Session/Cookie
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Session
