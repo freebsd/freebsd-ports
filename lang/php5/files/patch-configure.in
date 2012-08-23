@@ -39,7 +39,7 @@
  PHP_SUBST(install_targets)
  
 -PHP_INSTALL_HEADERS([Zend/ TSRM/ include/ main/ main/streams/])
-+PHP_INSTALL_HEADERS([Zend/ TSRM/ main/ main/streams/ sapi/cli/cli.h])
++PHP_INSTALL_HEADERS([Zend/ TSRM/ main/ main/streams/])
  
  PHP_ADD_SOURCES(TSRM, TSRM.c tsrm_strtok_r.c tsrm_virtual_cwd.c)
  
