@@ -60,19 +60,9 @@ bin/plackup
 %%SITE_PERL%%/Plack/Middleware/SimpleLogger.pm
 %%SITE_PERL%%/Plack/Middleware/StackTrace.pm
 %%SITE_PERL%%/Plack/Middleware/Static.pm
-%%SITE_PERL%%/Plack/Middleware/Writer.pm
 %%SITE_PERL%%/Plack/Middleware/XFramework.pm
 %%SITE_PERL%%/Plack/Middleware/XSendfile.pm
 %%SITE_PERL%%/Plack/Runner.pm
-%%SITE_PERL%%/Plack/Server.pm
-%%SITE_PERL%%/Plack/Server/Apache1.pm
-%%SITE_PERL%%/Plack/Server/Apache2.pm
-%%SITE_PERL%%/Plack/Server/CGI.pm
-%%SITE_PERL%%/Plack/Server/FCGI.pm
-%%SITE_PERL%%/Plack/Server/README
-%%SITE_PERL%%/Plack/Server/ServerSimple.pm
-%%SITE_PERL%%/Plack/Server/Standalone.pm
-%%SITE_PERL%%/Plack/Server/Standalone/Prefork.pm
 %%SITE_PERL%%/Plack/TempBuffer.pm
 %%SITE_PERL%%/Plack/TempBuffer/Auto.pm
 %%SITE_PERL%%/Plack/TempBuffer/File.pm
@@ -90,8 +80,6 @@ bin/plackup
 @dirrm %%SITE_PERL%%/Plack/Util
 @dirrm %%SITE_PERL%%/Plack/Test
 @dirrm %%SITE_PERL%%/Plack/TempBuffer
-@dirrm %%SITE_PERL%%/Plack/Server/Standalone
-@dirrm %%SITE_PERL%%/Plack/Server
 @dirrm %%SITE_PERL%%/Plack/Request
 @dirrm %%SITE_PERL%%/Plack/Middleware/Auth
 @dirrm %%SITE_PERL%%/Plack/Middleware/AccessLog

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Plack
-PORTVERSION=	1.0000
+PORTVERSION=	1.0002
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -104,21 +104,12 @@ MAN3=	HTTP::Message::PSGI.3 \
 	Plack::Middleware::SimpleLogger.3 \
 	Plack::Middleware::StackTrace.3 \
 	Plack::Middleware::Static.3 \
-	Plack::Middleware::Writer.3 \
 	Plack::Middleware::XFramework.3 \
 	Plack::Middleware::XSendfile.3 \
 	Plack::Request.3 \
 	Plack::Request::Upload.3 \
 	Plack::Response.3 \
 	Plack::Runner.3 \
-	Plack::Server.3 \
-	Plack::Server::Apache1.3 \
-	Plack::Server::Apache2.3 \
-	Plack::Server::CGI.3 \
-	Plack::Server::FCGI.3 \
-	Plack::Server::ServerSimple.3 \
-	Plack::Server::Standalone.3 \
-	Plack::Server::Standalone::Prefork.3 \
 	Plack::TempBuffer.3 \
 	Plack::Test.3 \
 	Plack::Test::MockHTTP.3 \
