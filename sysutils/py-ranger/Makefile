@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ranger
-PORTVERSION=	1.5.4
+PORTVERSION=	1.5.5
 CATEGORIES=	sysutils python
-MASTER_SITES=	http://git.savannah.gnu.org/cgit/ranger.git/snapshot/
+MASTER_SITES=	http://ranger.nongnu.org/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	linpct@gmail.com
