@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sieverules
-PORTVERSION=	1.16
+PORTVERSION=	1.17
 CATEGORIES=	mail
 MASTER_SITES=	http://www.tehinterweb.co.uk/roundcube/plugins/
 PKGNAMEPREFIX=	roundcube-
@@ -15,13 +15,13 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	anes@anes.su
 COMMENT=	Roundcube webmail sieve plugin
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3
 
-RUN_DEPENDS=	roundcube>=0.6:${PORTSDIR}/mail/roundcube
+RUN_DEPENDS=	roundcube>=0.8:${PORTSDIR}/mail/roundcube
 
 NO_BUILD=	yes
 
-WWWDIR?=	${PREFIX}/www/roundcube/plugins/sieverules
+WWWDIR=		${PREFIX}/www/roundcube/plugins/sieverules
 
 # This target is only meant to be used by the port maintainer.
 x-generate-plist: build
