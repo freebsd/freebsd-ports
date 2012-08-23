@@ -109,7 +109,7 @@ CONFIGURE_ARGS+=	--disable-full-prehash
 CONFIGURE_ARGS+=	--enable-mmap
 .endif
 
-.if ${PORT_OPTIONS:MMAXIPS)
+.if ${PORT_OPTIONS:MMAXIPS}
 CONFIGURE_ARGS+=	--with-max-ips=${NSDMAX_IPS}
 .endif
 
