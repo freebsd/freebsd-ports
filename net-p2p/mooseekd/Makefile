@@ -12,7 +12,7 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	http://files.backtrace.info/releases/mooseekd/
 
 MAINTAINER=	novel@FreeBSD.org
-COMMENT=	A deamon to connect to the Soulseek network
+COMMENT=	A daemon to connect to the Soulseek network
 
 LIB_DEPENDS=	xml\\+\\+-2.6.2:${PORTSDIR}/textproc/libxml++26
 

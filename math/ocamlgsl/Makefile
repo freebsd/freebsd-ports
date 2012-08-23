@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://oandrieu.nerim.net/ocaml/gsl/
 
 MAINTAINER=	aehlig@linta.de
-COMMENT=	An interface to GSL for the Objective Caml langage
+COMMENT=	An interface to GSL for the Objective Caml language
 
 LIB_DEPENDS=	gsl:${PORTSDIR}/math/gsl
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk \
