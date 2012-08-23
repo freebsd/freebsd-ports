@@ -1,5 +1,5 @@
 
-$FreeBSD: /tmp/pcvs/ports/lang/clang/files/patch-tools_clang_include_clang_Analysis_Analyses_FormatString.h,v 1.2 2012-06-26 10:10:40 fluffy Exp $
+$FreeBSD$
 
 --- tools/clang/include/clang/Analysis/Analyses/FormatString.h.orig
 +++ tools/clang/include/clang/Analysis/Analyses/FormatString.h
