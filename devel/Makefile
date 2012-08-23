@@ -1432,6 +1432,7 @@
     SUBDIR += p5-Class-Factory-Util
     SUBDIR += p5-Class-Field
     SUBDIR += p5-Class-Fields
+    SUBDIR += p5-Class-Forward
     SUBDIR += p5-Class-Generate
     SUBDIR += p5-Class-Gomor
     SUBDIR += p5-Class-Handle
