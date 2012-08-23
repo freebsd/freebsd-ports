@@ -5,12 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	menu
+PORTNAME=	xdg-menu
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	misc
-MASTER_SITES=	SF/xdg-menu/xdg-menu/${PORTVERSION}
-PKGNAMEPREFIX=	xdg-
-DISTNAME=	XDG-Menu-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
+DISTNAME=	XDG-Menu-${DISTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nemysis@gmx.ch
@@ -30,11 +30,14 @@ USE_PYTHON=	yes
 ALL_TARGET=
 NO_BUILD=	yes
 
-OPTIONS=	ROX	"Enable ROX panel applet support" no
+OPTIONS_DEFINE=	ROX
+ROX_DESC=	Enable ROX panel applet support
+
+SUB_FILES=	${PORTNAME}
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_ROX)
+.if !${PORT_OPTIONS:MROX}
 post-patch:
 	@${REINPLACE_CMD} -i '' '/if not rox.confirm/,/sys.exit/s/^/#/' ${WRKSRC}/AppRun
 	@${ECHO_MSG}
@@ -45,9 +48,8 @@ post-patch:
 
 do-install:
 # Scripts
-	@${PRINTF} "#!/bin/sh\n\ncd ${DATADIR} &&\
-		./AppRun\n" > ${WRKDIR}/xdg-menu.sh
-	@${INSTALL_SCRIPT} ${WRKDIR}/xdg-menu.sh ${PREFIX}/bin/xdg-menu
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
+
 # Executable and Data
 	${MKDIR} ${DATADIR}
 	@cd ${WRKSRC} && ${FIND} . | ${CPIO} -pdmu ${DATADIR}
