@@ -7,11 +7,11 @@
 
 PORTNAME=	virtio
 PORTVERSION=	0.${SVN_REV}
-PORTREVISION=	1
 CATEGORIES=	emulators kld
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kuriyama
-PKGNAMESUFFIX=	-kmod
+PKGNAMESUFFIX=	-kmod-${OSBRANCH}
+DISTFILES=	${FILE_8} ${FILE_9}
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	virtio kernel modules port for 8.[23]/9.0
@@ -19,7 +19,6 @@ COMMENT=	virtio kernel modules port for 8.[23]/9.0
 ONLY_FOR_ARCHS=	amd64 i386
 
 WRKSRC=		${WRKDIR}
-SVN_REV=	234349
 KMODDIR?=	/boot/modules
 PLIST_SUB=	KMODDIR=${KMODDIR:C,^/,,}
 NEEDSUBDIRS=	amd64 conf contrib dev/pci geom i386 kern net netinet netinet6 \
@@ -31,21 +30,28 @@ NEEDSUBDIRS=	amd64 conf contrib dev/pci geom i386 kern net netinet netinet6 \
 IGNORE=		requires kernel source to be installed
 .endif
 
-.if ${OSREL} != "8.2" && ${OSREL} != "8.3" && ${OSREL} != "9.0"
+SVN_REV=	239473
+FILE_8=		${PORTNAME}-8-0.${SVN_REV}${EXTRACT_SUFX}
+FILE_9=		${PORTNAME}-9-0.${SVN_REV}${EXTRACT_SUFX}
+.if ${OSREL} == "8.2" || ${OSREL} == "8.3"
+OSBRANCH=	8
+EXTRACT_ONLY=	${FILE_8}
+.elif ${OSREL} == "9.0" || ${OSREL} == "9.1"
+OSBRANCH=	9
+EXTRACT_ONLY=	${FILE_9}
+.else
 IGNORE=		not supported $${OSREL} (${OSREL})
-.endif
-.if ${OSREL} == "8.2"
-SVN_REV=	228301
-#SVN_REV=	232470
-#SVN_REV=	228301
 .endif
 
 post-extract:
 	cd ${WRKSRC} && ${MKDIR} sys/dev tmp && ${MV} dev modules tmp/
 .for d in ${NEEDSUBDIRS}
-	${CP} -Rp ${SRC_BASE}/sys/${d} ${WRKSRC}/sys/${d}
+	[ ! -d ${SRC_BASE}/sys/${d} ] || ${CP} -Rp ${SRC_BASE}/sys/${d} ${WRKSRC}/sys/${d}
 .endfor
 	${CP} -Rp ${WRKSRC}/tmp/* ${WRKSRC}/sys/
+.if ${OSREL} == "8.1" || ${OSREL} == "8.2"
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-virtio.h
+.endif
 
 do-build:
 	cd ${WRKSRC}/sys/modules/virtio; ${MAKE} DEBUG_FLAGS=-g
@@ -65,13 +71,17 @@ SVN_MIRROR?=	http://svn.freebsd.org/base
 EXPDIR=		${WRKSRC}/src/sys
 maintainer-tar:
 	${MKDIR} ${EXPDIR}
-	cd ${EXPDIR} && svn export -r ${SVN_REV} ${SVN_MIRROR}/head/sys/dev/virtio dev/virtio
-	cd ${EXPDIR} && svn export -r ${SVN_REV} ${SVN_MIRROR}/head/sys/modules/virtio modules/virtio
-	cd ${EXPDIR} && ${TAR} cfvz ${DISTDIR}/${DISTFILES} dev modules
+	cd ${EXPDIR} && svn export -r ${SVN_REV} ${SVN_MIRROR}/stable/9/sys/dev/virtio dev/virtio
+	cd ${EXPDIR} && svn export -r ${SVN_REV} ${SVN_MIRROR}/stable/9/sys/modules/virtio modules/virtio
+	cd ${EXPDIR} && ${TAR} cfvz ${DISTDIR}/${FILE_9} dev modules
+	cd ${EXPDIR} && ${RM} -rf dev modules
+	cd ${EXPDIR} && svn export -r ${SVN_REV} ${SVN_MIRROR}/stable/8/sys/dev/virtio dev/virtio
+	cd ${EXPDIR} && svn export -r ${SVN_REV} ${SVN_MIRROR}/stable/8/sys/modules/virtio modules/virtio
+	cd ${EXPDIR} && ${TAR} cfvz ${DISTDIR}/${FILE_8} dev modules
 
 maintainer-check:
-	@new=`svn log -ql 1 ${SVN_MIRROR}@HEAD head/sys/dev/virtio | ${GREP} -v ^- | ${SED} -e 's| .*||'`;\
-	old="r${SVN_REV}";\
-	if [ "$${new}" != "$${old}" ]; then ${ECHO_MSG} "New virtio rev: $${new}"; fi
+	@new=`svn log -ql 1 ${SVN_MIRROR}@HEAD head/sys/dev/virtio | ${GREP} -v ^- | ${SED} -e 's| .*||; s|r||'`;\
+	old="${SVN_REV}";\
+	if [ "$${new}" -gt "$${old}" ]; then ${ECHO_MSG} "New virtio rev: r$${new}"; fi
 
 .include <bsd.port.post.mk>
