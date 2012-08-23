@@ -40,6 +40,7 @@
 %%SITE_PERL%%/SNMP/Info/Layer2/HP.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/HPVC.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/HP4000.pm
+%%SITE_PERL%%/SNMP/Info/Layer2/Kentrox.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/N2270.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/NAP222x.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/Netgear.pm
@@ -53,6 +54,7 @@
 %%SITE_PERL%%/SNMP/Info/Layer3/AlteonAD.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Altiga.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/BayRS.pm
+%%SITE_PERL%%/SNMP/Info/Layer3/BlueCoatSG.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/C3550.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/C4000.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/C6500.pm
@@ -73,14 +75,18 @@
 %%SITE_PERL%%/SNMP/Info/Layer3/PacketFront.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Pf.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Sun.pm
+%%SITE_PERL%%/SNMP/Info/Layer3/SonicWALL.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Timetra.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/HP9300.pm
+%%SITE_PERL%%/SNMP/Info/Layer7.pm
+%%SITE_PERL%%/SNMP/Info/Layer7/APC.pm
 %%SITE_PERL%%/SNMP/Info/MAU.pm
 %%SITE_PERL%%/SNMP/Info/NortelStack.pm
 %%SITE_PERL%%/SNMP/Info/PowerEthernet.pm
 %%SITE_PERL%%/SNMP/Info/RapidCity.pm
 %%SITE_PERL%%/SNMP/Info/SONMP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/Info/.packlist
+@dirrm %%SITE_PERL%%/SNMP/Info/Layer7
 @dirrm %%SITE_PERL%%/SNMP/Info/Layer3
 @dirrm %%SITE_PERL%%/SNMP/Info/Layer2
 @dirrm %%SITE_PERL%%/SNMP/Info/Layer1
