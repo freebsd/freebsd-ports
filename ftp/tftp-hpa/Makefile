@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	tftp-hpa
-PORTVERSION=	5.1
+PORTVERSION=	5.2
 CATEGORIES=	ftp
 MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
-MASTER_SITE_SUBDIR=	software/network/tftp
+MASTER_SITE_SUBDIR=	software/network/tftp/tftp-hpa
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	An advanced tftp server
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_RC_SUBR=	tftpd
