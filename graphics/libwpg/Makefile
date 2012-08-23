@@ -23,6 +23,7 @@ USE_GNOME=	gnomeprefix gnomehack ltverhack
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--disable-werror
 
 PORTDOCS=	*
 
