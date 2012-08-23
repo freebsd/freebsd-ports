@@ -8,23 +8,12 @@
 # $FreeBSD$
 #
 
-## Available knobs:
-##   WITHOUT_APACHE_OPTIONS:      Don't use OPTIONS and will allow you to use
-##                                those knobs directly to select modules.
-##                                Knobs with (*) are working only if 
-##                                WITHOUT_APACHE_OPTIONS is defined.
 ##
 ## By default, modules are compiled as dynamically loadable modules (DSO).
 ##
 ## Modules knobs philosophy:
-## Modules are split in categories, "make show-categories" shows you 
-## which modules they contain. You can enable/disable/customize a category (*):
-## - To enable a category: WITH_<CATEGORY>_MODULES=yes
-##                            [WITH_PROXY_MODULES=yes]
-## - To disable a category: WITHOUT_<CATEGORY>_MODULES=yes 
-##                            [WITHOUT_DAV_MODULES=yes]
-## - To customize a category: WITH_CUSTOM_<CATEGORY>
-##                            [WITH_CUSTOM_PROXY="proxy proxy_http"]
+##  Note: Use this only for special builds, modules should be selected by
+##  #> make config
 ##
 ##   Apache-related
 ##      WITH_MPM:                 prefork (default)
@@ -32,20 +21,9 @@
 ##                                event
 ##                                itk
 ##      WITH_HTTP_PORT:           default: 80
-##      WITH_LDAP:                Enable LDAP support (mod_auth_ldap) (implies WITH_LDAP_MODULES)
-##      WITH_(MYSQL|PGSQL|SQLITE): Enable SQL backend for dbd and apr_dbd.
-##                                 When MySQL is chosen, threads are enabled.
 ##      WITHOUT_V4MAPPED
 ##      WITH_IPV6_V6ONLY:         Don't allow IPv6 sockets to handle IPv4 
 ##                                connections
-##      WITHOUT_SSL:              Disable SSL support
-##      WITH_THREADS:             Enable threads support
-##      WITH_DBM:                 Choose your DBM: bdb (Berkeley DB), gdbm or
-##                                ndbm (default)
-##          WITH_BDB:             Define to select bdb via bsd.database.mk
-##                                desired version may be set with
-##                                WITH_BDB_VER or APACHE22_WITH_BDB_VER
-##          WITH_BDB_BASE:        Define to use bdb from base (1.85)
 ##      WITH_STATIC_SUPPORT:      Build statically linked support binaries
 ##      WITH_STATIC_APACHE:       Build a static version of httpd (implies 
 ##                                WITH_STATIC_MODULES)
@@ -56,8 +34,6 @@
 ##                                WITH_MODULES or with default configuration
 ##                                use 'make show-modules', to check if they are
 ##                                enabled)
-##      WITH_MODULES (*):         List of modules you choose
-##      WITHOUT_MODULES (*):      Disable selected modules
 ##      WITH_SUEXEC:              Enable suExec support
 ##            SUEXEC_DOCROOT:     SuExec root directory
 ##            SUEXEC_USERDIR:     User subdirectory (default public_html)
@@ -75,21 +51,17 @@
 ##      WITH_EXCEPTION_HOOK:      Enable fatal exception hook
 ##
 ##  Optional patches:  
-##      WITH_EXPERIMENTAL_PATCHES Add performance patches (generally backported
-##                                from apr/httpd SVN repositories)
 ##	WITH_ITK_PERDIR_REGEX     Add the per-directory setting AssignUserFromPath for mpm-itk
 ##                                as described on http://www.pvv.ntnu.no/~knuta/mpm-itk/
 ##
 ## Available make targets:
+##      config:                   open the configure dialog
+##      show config:              prints configured options
 ##      show-options:             prints this message
 ##      show-modules:             prints list of available modules
-##      show-categories:          prints list of modules sorted by category
 ##
 ## Examples (*):
-##      make WITH_STATIC_MODULES="SSL REWRITE INCLUDE" WITH_EXPERIMENTAL_MODULES=yes \
-##           WITH_CUSTOM_AUTH="AUTH AUTH_DBM"
-##      make WITHOUT_MODULES="ACCESS SPELING STATUS" WITH_PROXY_MODULES=yes
-##      make WITH_MODULES="INCLUDE REWRITE AUTH"
+##      make WITH_STATIC_MODULES="SSL REWRITE INCLUDE" WITH_EXPERIMENTAL_MODULES=yes
 ##      Note: If you define your custom options in /etc/make.conf, don't forget
 ##            to do not use quotes.
 ##

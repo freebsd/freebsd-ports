@@ -1,50 +1,50 @@
 @comment $FreeBSD$
-@exec mkdir -p %D/etc/apache22/extra 2> /dev/null
-@exec mkdir -p %D/etc/apache22/Includes 2> /dev/null || true
-@exec mkdir -p %D/etc/apache22/envvars.d 2> /dev/null || true
-@unexec if cmp %D/etc/apache22/httpd.conf %D/%%EXAMPLESDIR%%/httpd.conf; then rm -f %D/etc/apache22/httpd.conf; fi
+@exec mkdir -p %D/%%ETCDIR%%/extra 2> /dev/null
+@exec mkdir -p %D/%%ETCDIR%%/Includes 2> /dev/null || true
+@exec mkdir -p %D/%%ETCDIR%%/envvars.d 2> /dev/null || true
+@unexec if cmp %D/%%ETCDIR%%/httpd.conf %D/%%EXAMPLESDIR%%/httpd.conf; then rm -f %D/%%ETCDIR%%/httpd.conf; fi
 %%EXAMPLESDIR%%/httpd.conf
-@exec [ -f %D/etc/apache22/httpd.conf ] || cp %D/%%EXAMPLESDIR%%/httpd.conf %D/etc/apache22/httpd.conf
-@unexec if cmp -s %D/etc/apache22/magic %D/%%EXAMPLESDIR%%/magic; then rm -f %D/etc/apache22/magic; fi
+@exec [ -f %D/%%ETCDIR%%/httpd.conf ] || cp %D/%%EXAMPLESDIR%%/httpd.conf %D/%%ETCDIR%%/httpd.conf
+@unexec if cmp -s %D/%%ETCDIR%%/magic %D/%%EXAMPLESDIR%%/magic; then rm -f %D/%%ETCDIR%%/magic; fi
 %%EXAMPLESDIR%%/magic
-@exec [ -f %D/etc/apache22/magic ] || cp %D/%%EXAMPLESDIR%%/magic %D/etc/apache22/magic
-@unexec if cmp -s %D/etc/apache22/mime.types %D/%%EXAMPLESDIR%%/mime.types; then rm -f %D/etc/apache22/mime.types; fi
+@exec [ -f %D/%%ETCDIR%%/magic ] || cp %D/%%EXAMPLESDIR%%/magic %D/%%ETCDIR%%/magic
+@unexec if cmp -s %D/%%ETCDIR%%/mime.types %D/%%EXAMPLESDIR%%/mime.types; then rm -f %D/%%ETCDIR%%/mime.types; fi
 %%EXAMPLESDIR%%/mime.types
-@exec [ -f %D/etc/apache22/mime.types ] || cp %D/%%EXAMPLESDIR%%/mime.types %D/etc/apache22/mime.types
-@unexec if cmp -s %D/etc/apache22/extra/httpd-autoindex.conf %D/%%EXAMPLESDIR%%/extra/httpd-autoindex.conf; then rm -f %D/etc/apache22/extra/httpd-autoindex.conf; fi
+@exec [ -f %D/%%ETCDIR%%/mime.types ] || cp %D/%%EXAMPLESDIR%%/mime.types %D/%%ETCDIR%%/mime.types
+@unexec if cmp -s %D/%%ETCDIR%%/extra/httpd-autoindex.conf %D/%%EXAMPLESDIR%%/extra/httpd-autoindex.conf; then rm -f %D/%%ETCDIR%%/extra/httpd-autoindex.conf; fi
 %%EXAMPLESDIR%%/extra/httpd-autoindex.conf
-@exec [ -f %D/etc/apache22/extra/httpd-autoindex.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-autoindex.conf %D/etc/apache22/extra/httpd-autoindex.conf
-@unexec if cmp -s %D/etc/apache22/extra/httpd-dav.conf %D/%%EXAMPLESDIR%%/extra/httpd-dav.conf; then rm -f %D/etc/apache22/extra/httpd-dav.conf; fi
+@exec [ -f %D/%%ETCDIR%%/extra/httpd-autoindex.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-autoindex.conf %D/%%ETCDIR%%/extra/httpd-autoindex.conf
+@unexec if cmp -s %D/%%ETCDIR%%/extra/httpd-dav.conf %D/%%EXAMPLESDIR%%/extra/httpd-dav.conf; then rm -f %D/%%ETCDIR%%/extra/httpd-dav.conf; fi
 %%EXAMPLESDIR%%/extra/httpd-dav.conf
-@exec [ -f %D/etc/apache22/extra/httpd-dav.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-dav.conf %D/etc/apache22/extra/httpd-dav.conf
-@unexec if cmp -s %D/etc/apache22/extra/httpd-default.conf %D/%%EXAMPLESDIR%%/extra/httpd-default.conf; then rm -f %D/etc/apache22/extra/httpd-default.conf; fi
+@exec [ -f %D/%%ETCDIR%%/extra/httpd-dav.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-dav.conf %D/%%ETCDIR%%/extra/httpd-dav.conf
+@unexec if cmp -s %D/%%ETCDIR%%/extra/httpd-default.conf %D/%%EXAMPLESDIR%%/extra/httpd-default.conf; then rm -f %D/%%ETCDIR%%/extra/httpd-default.conf; fi
 %%EXAMPLESDIR%%/extra/httpd-default.conf
-@exec [ -f %D/etc/apache22/extra/httpd-default.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-default.conf %D/etc/apache22/extra/httpd-default.conf
-@unexec if cmp -s %D/etc/apache22/extra/httpd-info.conf %D/%%EXAMPLESDIR%%/extra/httpd-info.conf; then rm -f %D/etc/apache22/extra/httpd-info.conf; fi
+@exec [ -f %D/%%ETCDIR%%/extra/httpd-default.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-default.conf %D/%%ETCDIR%%/extra/httpd-default.conf
+@unexec if cmp -s %D/%%ETCDIR%%/extra/httpd-info.conf %D/%%EXAMPLESDIR%%/extra/httpd-info.conf; then rm -f %D/%%ETCDIR%%/extra/httpd-info.conf; fi
 %%EXAMPLESDIR%%/extra/httpd-info.conf
-@exec [ -f %D/etc/apache22/extra/httpd-info.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-info.conf %D/etc/apache22/extra/httpd-info.conf
-@unexec if cmp -s %D/etc/apache22/extra/httpd-languages.conf %D/%%EXAMPLESDIR%%/extra/httpd-languages.conf; then rm -f %D/etc/apache22/extra/httpd-languages.conf; fi
+@exec [ -f %D/%%ETCDIR%%/extra/httpd-info.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-info.conf %D/%%ETCDIR%%/extra/httpd-info.conf
+@unexec if cmp -s %D/%%ETCDIR%%/extra/httpd-languages.conf %D/%%EXAMPLESDIR%%/extra/httpd-languages.conf; then rm -f %D/%%ETCDIR%%/extra/httpd-languages.conf; fi
 %%EXAMPLESDIR%%/extra/httpd-languages.conf
-@exec [ -f %D/etc/apache22/extra/httpd-languages.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-languages.conf %D/etc/apache22/extra/httpd-languages.conf
-@unexec if cmp -s %D/etc/apache22/extra/httpd-manual.conf %D/%%EXAMPLESDIR%%/extra/httpd-manual.conf; then rm -f %D/etc/apache22/extra/httpd-manual.conf; fi
+@exec [ -f %D/%%ETCDIR%%/extra/httpd-languages.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-languages.conf %D/%%ETCDIR%%/extra/httpd-languages.conf
+@unexec if cmp -s %D/%%ETCDIR%%/extra/httpd-manual.conf %D/%%EXAMPLESDIR%%/extra/httpd-manual.conf; then rm -f %D/%%ETCDIR%%/extra/httpd-manual.conf; fi
 %%EXAMPLESDIR%%/extra/httpd-manual.conf
-@exec [ -f %D/etc/apache22/extra/httpd-manual.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-manual.conf %D/etc/apache22/extra/httpd-manual.conf
-@unexec if cmp -s %D/etc/apache22/extra/httpd-mpm.conf %D/%%EXAMPLESDIR%%/extra/httpd-mpm.conf; then rm -f %D/etc/apache22/extra/httpd-mpm.conf; fi
+@exec [ -f %D/%%ETCDIR%%/extra/httpd-manual.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-manual.conf %D/%%ETCDIR%%/extra/httpd-manual.conf
+@unexec if cmp -s %D/%%ETCDIR%%/extra/httpd-mpm.conf %D/%%EXAMPLESDIR%%/extra/httpd-mpm.conf; then rm -f %D/%%ETCDIR%%/extra/httpd-mpm.conf; fi
 %%EXAMPLESDIR%%/extra/httpd-mpm.conf
-@exec [ -f %D/etc/apache22/extra/httpd-mpm.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-mpm.conf %D/etc/apache22/extra/httpd-mpm.conf
-@unexec if cmp -s %D/etc/apache22/extra/httpd-multilang-errordoc.conf %D/%%EXAMPLESDIR%%/extra/httpd-multilang-errordoc.conf; then rm -f %D/etc/apache22/extra/httpd-multilang-errordoc.conf; fi
+@exec [ -f %D/%%ETCDIR%%/extra/httpd-mpm.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-mpm.conf %D/%%ETCDIR%%/extra/httpd-mpm.conf
+@unexec if cmp -s %D/%%ETCDIR%%/extra/httpd-multilang-errordoc.conf %D/%%EXAMPLESDIR%%/extra/httpd-multilang-errordoc.conf; then rm -f %D/%%ETCDIR%%/extra/httpd-multilang-errordoc.conf; fi
 %%EXAMPLESDIR%%/extra/httpd-multilang-errordoc.conf
-@exec [ -f %D/etc/apache22/extra/httpd-multilang-errordoc.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-multilang-errordoc.conf %D/etc/apache22/extra/httpd-multilang-errordoc.conf
-@unexec if cmp -s %D/etc/apache22/extra/httpd-ssl.conf %D/%%EXAMPLESDIR%%/extra/httpd-ssl.conf; then rm -f %D/etc/apache22/extra/httpd-ssl.conf; fi
+@exec [ -f %D/%%ETCDIR%%/extra/httpd-multilang-errordoc.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-multilang-errordoc.conf %D/%%ETCDIR%%/extra/httpd-multilang-errordoc.conf
+@unexec if cmp -s %D/%%ETCDIR%%/extra/httpd-ssl.conf %D/%%EXAMPLESDIR%%/extra/httpd-ssl.conf; then rm -f %D/%%ETCDIR%%/extra/httpd-ssl.conf; fi
 %%EXAMPLESDIR%%/extra/httpd-ssl.conf
-@exec [ -f %D/etc/apache22/extra/httpd-ssl.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-ssl.conf %D/etc/apache22/extra/httpd-ssl.conf
-@unexec if cmp -s %D/etc/apache22/extra/httpd-userdir.conf %D/%%EXAMPLESDIR%%/extra/httpd-userdir.conf; then rm -f %D/etc/apache22/extra/httpd-userdir.conf; fi
+@exec [ -f %D/%%ETCDIR%%/extra/httpd-ssl.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-ssl.conf %D/%%ETCDIR%%/extra/httpd-ssl.conf
+@unexec if cmp -s %D/%%ETCDIR%%/extra/httpd-userdir.conf %D/%%EXAMPLESDIR%%/extra/httpd-userdir.conf; then rm -f %D/%%ETCDIR%%/extra/httpd-userdir.conf; fi
 %%EXAMPLESDIR%%/extra/httpd-userdir.conf
-@exec [ -f %D/etc/apache22/extra/httpd-userdir.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-userdir.conf %D/etc/apache22/extra/httpd-userdir.conf
-@unexec if cmp -s %D/etc/apache22/extra/httpd-vhosts.conf %D/%%EXAMPLESDIR%%/extra/httpd-vhosts.conf; then rm -f %D/etc/apache22/extra/httpd-vhosts.conf; fi
+@exec [ -f %D/%%ETCDIR%%/extra/httpd-userdir.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-userdir.conf %D/%%ETCDIR%%/extra/httpd-userdir.conf
+@unexec if cmp -s %D/%%ETCDIR%%/extra/httpd-vhosts.conf %D/%%EXAMPLESDIR%%/extra/httpd-vhosts.conf; then rm -f %D/%%ETCDIR%%/extra/httpd-vhosts.conf; fi
 %%EXAMPLESDIR%%/extra/httpd-vhosts.conf
-@exec [ -f %D/etc/apache22/extra/httpd-vhosts.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-vhosts.conf %D/etc/apache22/extra/httpd-vhosts.conf
-etc/apache22/Includes/no-accf.conf
+@exec [ -f %D/%%ETCDIR%%/extra/httpd-vhosts.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-vhosts.conf %D/%%ETCDIR%%/extra/httpd-vhosts.conf
+%%ETCDIR%%/Includes/no-accf.conf
 include/apache22/ap_compat.h
 include/apache22/ap_config.h
 include/apache22/ap_config_auto.h
@@ -99,21 +99,21 @@ libexec/apache22/httpd.exp
 %%MOD_ACTIONS%%libexec/apache22/mod_actions.so
 %%MOD_ALIAS%%libexec/apache22/mod_alias.so
 %%MOD_ASIS%%libexec/apache22/mod_asis.so
-%%MOD_AUTH_BASIC%%libexec/apache22/mod_auth_basic.so
-%%MOD_AUTH_DIGEST%%libexec/apache22/mod_auth_digest.so
+%%MOD_AUTHNZ_LDAP%%libexec/apache22/mod_authnz_ldap.so
 %%MOD_AUTHN_ALIAS%%libexec/apache22/mod_authn_alias.so
 %%MOD_AUTHN_ANON%%libexec/apache22/mod_authn_anon.so
 %%MOD_AUTHN_DBD%%libexec/apache22/mod_authn_dbd.so
 %%MOD_AUTHN_DBM%%libexec/apache22/mod_authn_dbm.so
 %%MOD_AUTHN_DEFAULT%%libexec/apache22/mod_authn_default.so
 %%MOD_AUTHN_FILE%%libexec/apache22/mod_authn_file.so
-%%MOD_AUTHNZ_LDAP%%libexec/apache22/mod_authnz_ldap.so
 %%MOD_AUTHZ_DBM%%libexec/apache22/mod_authz_dbm.so
 %%MOD_AUTHZ_DEFAULT%%libexec/apache22/mod_authz_default.so
 %%MOD_AUTHZ_GROUPFILE%%libexec/apache22/mod_authz_groupfile.so
 %%MOD_AUTHZ_HOST%%libexec/apache22/mod_authz_host.so
 %%MOD_AUTHZ_OWNER%%libexec/apache22/mod_authz_owner.so
 %%MOD_AUTHZ_USER%%libexec/apache22/mod_authz_user.so
+%%MOD_AUTH_BASIC%%libexec/apache22/mod_auth_basic.so
+%%MOD_AUTH_DIGEST%%libexec/apache22/mod_auth_digest.so
 %%MOD_AUTOINDEX%%libexec/apache22/mod_autoindex.so
 %%MOD_BUCKETEER%%libexec/apache22/mod_bucketeer.so
 %%MOD_CACHE%%libexec/apache22/mod_cache.so
@@ -140,17 +140,17 @@ libexec/apache22/httpd.exp
 %%MOD_INCLUDE%%libexec/apache22/mod_include.so
 %%MOD_INFO%%libexec/apache22/mod_info.so
 %%MOD_LDAP%%libexec/apache22/mod_ldap.so
+%%MOD_LOGIO%%libexec/apache22/mod_logio.so
 %%MOD_LOG_CONFIG%%libexec/apache22/mod_log_config.so
 %%MOD_LOG_FORENSIC%%libexec/apache22/mod_log_forensic.so
-%%MOD_LOGIO%%libexec/apache22/mod_logio.so
 %%MOD_MEM_CACHE%%libexec/apache22/mod_mem_cache.so
 %%MOD_MIME%%libexec/apache22/mod_mime.so
 %%MOD_MIME_MAGIC%%libexec/apache22/mod_mime_magic.so
 %%MOD_NEGOTIATION%%libexec/apache22/mod_negotiation.so
+%%MOD_OPTIONAL_FN_EXPORT%%libexec/apache22/mod_optional_fn_export.so
+%%MOD_OPTIONAL_FN_IMPORT%%libexec/apache22/mod_optional_fn_import.so
 %%MOD_OPTIONAL_HOOK_EXPORT%%libexec/apache22/mod_optional_hook_export.so
 %%MOD_OPTIONAL_HOOK_IMPORT%%libexec/apache22/mod_optional_hook_import.so
-%%MOD_OPTIONAL_FN_IMPORT%%libexec/apache22/mod_optional_fn_import.so
-%%MOD_OPTIONAL_FN_EXPORT%%libexec/apache22/mod_optional_fn_export.so
 %%MOD_PROXY%%libexec/apache22/mod_proxy.so
 %%MOD_PROXY_AJP%%libexec/apache22/mod_proxy_ajp.so
 %%MOD_PROXY_BALANCER%%libexec/apache22/mod_proxy_balancer.so
@@ -158,14 +158,14 @@ libexec/apache22/httpd.exp
 %%MOD_PROXY_FTP%%libexec/apache22/mod_proxy_ftp.so
 %%MOD_PROXY_HTTP%%libexec/apache22/mod_proxy_http.so
 %%MOD_PROXY_SCGI%%libexec/apache22/mod_proxy_scgi.so
-%%MOD_REWRITE%%libexec/apache22/mod_rewrite.so
 %%MOD_REQTIMEOUT%%libexec/apache22/mod_reqtimeout.so
+%%MOD_REWRITE%%libexec/apache22/mod_rewrite.so
 %%MOD_SETENVIF%%libexec/apache22/mod_setenvif.so
 %%MOD_SPELING%%libexec/apache22/mod_speling.so
 %%MOD_SSL%%libexec/apache22/mod_ssl.so
 %%MOD_STATUS%%libexec/apache22/mod_status.so
-%%MOD_SUEXEC%%libexec/apache22/mod_suexec.so
 %%MOD_SUBSTITUTE%%libexec/apache22/mod_substitute.so
+%%MOD_SUEXEC%%libexec/apache22/mod_suexec.so
 %%MOD_UNIQUE_ID%%libexec/apache22/mod_unique_id.so
 %%MOD_USERDIR%%libexec/apache22/mod_userdir.so
 %%MOD_USERTRACK%%libexec/apache22/mod_usertrack.so
@@ -188,8 +188,8 @@ sbin/logresolve
 sbin/rotatelogs
 sbin/split-logfile
 %%MOD_SUEXEC%%sbin/suexec
-share/apache22/build/config_vars.mk
 share/apache22/build/config.nice
+share/apache22/build/config_vars.mk
 share/apache22/build/instdso.sh
 share/apache22/build/library.mk
 share/apache22/build/ltlib.mk
@@ -197,261 +197,262 @@ share/apache22/build/mkdir.sh
 share/apache22/build/program.mk
 share/apache22/build/rules.mk
 share/apache22/build/special.mk
-www/apache22/cgi-bin/printenv
-www/apache22/cgi-bin/test-cgi
-@unexec if cmp -s %D/www/apache22/data/index.html %D/%%EXAMPLESDIR%%/index.html; then rm -f %D/www/apache22/data/index.html; fi
+%%WWWDIR%%/cgi-bin/printenv
+%%WWWDIR%%/cgi-bin/test-cgi
+@unexec if cmp -s %D/%%WWWDIR%%/data/index.html %D/%%EXAMPLESDIR%%/index.html; then rm -f %D/%%WWWDIR%%/data/index.html; fi
 %%EXAMPLESDIR%%/index.html
-@exec [ -d %D/www/apache22/data ] || mkdir -p %D/www/apache22/data
-@exec [ -f %D/www/apache22/data/index.html ] || cp %D/%%EXAMPLESDIR%%/index.html %D/www/apache22/data/index.html
-www/apache22/error/HTTP_BAD_GATEWAY.html.var
-www/apache22/error/HTTP_BAD_REQUEST.html.var
-www/apache22/error/HTTP_FORBIDDEN.html.var
-www/apache22/error/HTTP_GONE.html.var
-www/apache22/error/HTTP_INTERNAL_SERVER_ERROR.html.var
-www/apache22/error/HTTP_LENGTH_REQUIRED.html.var
-www/apache22/error/HTTP_METHOD_NOT_ALLOWED.html.var
-www/apache22/error/HTTP_NOT_FOUND.html.var
-www/apache22/error/HTTP_NOT_IMPLEMENTED.html.var
-www/apache22/error/HTTP_PRECONDITION_FAILED.html.var
-www/apache22/error/HTTP_REQUEST_ENTITY_TOO_LARGE.html.var
-www/apache22/error/HTTP_REQUEST_TIME_OUT.html.var
-www/apache22/error/HTTP_REQUEST_URI_TOO_LARGE.html.var
-www/apache22/error/HTTP_SERVICE_UNAVAILABLE.html.var
-www/apache22/error/HTTP_UNAUTHORIZED.html.var
-www/apache22/error/HTTP_UNSUPPORTED_MEDIA_TYPE.html.var
-www/apache22/error/HTTP_VARIANT_ALSO_VARIES.html.var
-www/apache22/error/README
-www/apache22/error/contact.html.var
-www/apache22/error/include/bottom.html
-www/apache22/error/include/spacer.html
-www/apache22/error/include/top.html
-www/apache22/icons/README
-www/apache22/icons/README.html
-www/apache22/icons/a.gif
-www/apache22/icons/a.png
-www/apache22/icons/alert.black.gif
-www/apache22/icons/alert.black.png
-www/apache22/icons/alert.red.gif
-www/apache22/icons/alert.red.png
-www/apache22/icons/apache_pb.gif
-www/apache22/icons/apache_pb.png
-www/apache22/icons/apache_pb2.gif
-www/apache22/icons/apache_pb2.png
-www/apache22/icons/apache_pb2_ani.gif
-www/apache22/icons/back.gif
-www/apache22/icons/back.png
-www/apache22/icons/ball.gray.gif
-www/apache22/icons/ball.gray.png
-www/apache22/icons/ball.red.gif
-www/apache22/icons/ball.red.png
-www/apache22/icons/binary.gif
-www/apache22/icons/binary.png
-www/apache22/icons/binhex.gif
-www/apache22/icons/binhex.png
-www/apache22/icons/blank.gif
-www/apache22/icons/blank.png
-www/apache22/icons/bomb.gif
-www/apache22/icons/bomb.png
-www/apache22/icons/box1.gif
-www/apache22/icons/box1.png
-www/apache22/icons/box2.gif
-www/apache22/icons/box2.png
-www/apache22/icons/broken.gif
-www/apache22/icons/broken.png
-www/apache22/icons/burst.gif
-www/apache22/icons/burst.png
-www/apache22/icons/c.gif
-www/apache22/icons/c.png
-www/apache22/icons/comp.blue.gif
-www/apache22/icons/comp.blue.png
-www/apache22/icons/comp.gray.gif
-www/apache22/icons/comp.gray.png
-www/apache22/icons/compressed.gif
-www/apache22/icons/compressed.png
-www/apache22/icons/continued.gif
-www/apache22/icons/continued.png
-www/apache22/icons/dir.gif
-www/apache22/icons/dir.png
-www/apache22/icons/diskimg.gif
-www/apache22/icons/diskimg.png
-www/apache22/icons/down.gif
-www/apache22/icons/down.png
-www/apache22/icons/dvi.gif
-www/apache22/icons/dvi.png
-www/apache22/icons/f.gif
-www/apache22/icons/f.png
-www/apache22/icons/folder.gif
-www/apache22/icons/folder.open.gif
-www/apache22/icons/folder.open.png
-www/apache22/icons/folder.png
-www/apache22/icons/folder.sec.gif
-www/apache22/icons/folder.sec.png
-www/apache22/icons/forward.gif
-www/apache22/icons/forward.png
-www/apache22/icons/generic.gif
-www/apache22/icons/generic.png
-www/apache22/icons/generic.red.gif
-www/apache22/icons/generic.red.png
-www/apache22/icons/generic.sec.gif
-www/apache22/icons/generic.sec.png
-www/apache22/icons/hand.right.gif
-www/apache22/icons/hand.right.png
-www/apache22/icons/hand.up.gif
-www/apache22/icons/hand.up.png
-www/apache22/icons/icon.sheet.gif
-www/apache22/icons/icon.sheet.png
-www/apache22/icons/image1.gif
-www/apache22/icons/image1.png
-www/apache22/icons/image2.gif
-www/apache22/icons/image2.png
-www/apache22/icons/image3.gif
-www/apache22/icons/image3.png
-www/apache22/icons/index.gif
-www/apache22/icons/index.png
-www/apache22/icons/layout.gif
-www/apache22/icons/layout.png
-www/apache22/icons/left.gif
-www/apache22/icons/left.png
-www/apache22/icons/link.gif
-www/apache22/icons/link.png
-www/apache22/icons/movie.gif
-www/apache22/icons/movie.png
-www/apache22/icons/p.gif
-www/apache22/icons/p.png
-www/apache22/icons/patch.gif
-www/apache22/icons/patch.png
-www/apache22/icons/pdf.gif
-www/apache22/icons/pdf.png
-www/apache22/icons/pie0.gif
-www/apache22/icons/pie0.png
-www/apache22/icons/pie1.gif
-www/apache22/icons/pie1.png
-www/apache22/icons/pie2.gif
-www/apache22/icons/pie2.png
-www/apache22/icons/pie3.gif
-www/apache22/icons/pie3.png
-www/apache22/icons/pie4.gif
-www/apache22/icons/pie4.png
-www/apache22/icons/pie5.gif
-www/apache22/icons/pie5.png
-www/apache22/icons/pie6.gif
-www/apache22/icons/pie6.png
-www/apache22/icons/pie7.gif
-www/apache22/icons/pie7.png
-www/apache22/icons/pie8.gif
-www/apache22/icons/pie8.png
-www/apache22/icons/portal.gif
-www/apache22/icons/portal.png
-www/apache22/icons/ps.gif
-www/apache22/icons/ps.png
-www/apache22/icons/quill.gif
-www/apache22/icons/quill.png
-www/apache22/icons/right.gif
-www/apache22/icons/right.png
-www/apache22/icons/screw1.gif
-www/apache22/icons/screw1.png
-www/apache22/icons/screw2.gif
-www/apache22/icons/screw2.png
-www/apache22/icons/script.gif
-www/apache22/icons/script.png
-www/apache22/icons/small/back.gif
-www/apache22/icons/small/back.png
-www/apache22/icons/small/binary.gif
-www/apache22/icons/small/binary.png
-www/apache22/icons/small/binhex.gif
-www/apache22/icons/small/binhex.png
-www/apache22/icons/small/blank.gif
-www/apache22/icons/small/blank.png
-www/apache22/icons/small/broken.gif
-www/apache22/icons/small/broken.png
-www/apache22/icons/small/burst.gif
-www/apache22/icons/small/burst.png
-www/apache22/icons/small/comp1.gif
-www/apache22/icons/small/comp1.png
-www/apache22/icons/small/comp2.gif
-www/apache22/icons/small/comp2.png
-www/apache22/icons/small/compressed.gif
-www/apache22/icons/small/compressed.png
-www/apache22/icons/small/continued.gif
-www/apache22/icons/small/continued.png
-www/apache22/icons/small/dir.gif
-www/apache22/icons/small/dir.png
-www/apache22/icons/small/dir2.gif
-www/apache22/icons/small/dir2.png
-www/apache22/icons/small/doc.gif
-www/apache22/icons/small/doc.png
-www/apache22/icons/small/forward.gif
-www/apache22/icons/small/forward.png
-www/apache22/icons/small/generic.gif
-www/apache22/icons/small/generic.png
-www/apache22/icons/small/generic2.gif
-www/apache22/icons/small/generic2.png
-www/apache22/icons/small/generic3.gif
-www/apache22/icons/small/generic3.png
-www/apache22/icons/small/image.gif
-www/apache22/icons/small/image.png
-www/apache22/icons/small/image2.gif
-www/apache22/icons/small/image2.png
-www/apache22/icons/small/index.gif
-www/apache22/icons/small/index.png
-www/apache22/icons/small/key.gif
-www/apache22/icons/small/key.png
-www/apache22/icons/small/movie.gif
-www/apache22/icons/small/movie.png
-www/apache22/icons/small/patch.gif
-www/apache22/icons/small/patch.png
-www/apache22/icons/small/ps.gif
-www/apache22/icons/small/ps.png
-www/apache22/icons/small/rainbow.gif
-www/apache22/icons/small/rainbow.png
-www/apache22/icons/small/sound.gif
-www/apache22/icons/small/sound.png
-www/apache22/icons/small/sound2.gif
-www/apache22/icons/small/sound2.png
-www/apache22/icons/small/tar.gif
-www/apache22/icons/small/tar.png
-www/apache22/icons/small/text.gif
-www/apache22/icons/small/text.png
-www/apache22/icons/small/transfer.gif
-www/apache22/icons/small/transfer.png
-www/apache22/icons/small/unknown.gif
-www/apache22/icons/small/unknown.png
-www/apache22/icons/small/uu.gif
-www/apache22/icons/small/uu.png
-www/apache22/icons/sound1.gif
-www/apache22/icons/sound1.png
-www/apache22/icons/sound2.gif
-www/apache22/icons/sound2.png
-www/apache22/icons/sphere1.gif
-www/apache22/icons/sphere1.png
-www/apache22/icons/sphere2.gif
-www/apache22/icons/sphere2.png
-www/apache22/icons/tar.gif
-www/apache22/icons/tar.png
-www/apache22/icons/tex.gif
-www/apache22/icons/tex.png
-www/apache22/icons/text.gif
-www/apache22/icons/text.png
-www/apache22/icons/transfer.gif
-www/apache22/icons/transfer.png
-www/apache22/icons/unknown.gif
-www/apache22/icons/unknown.png
-www/apache22/icons/up.gif
-www/apache22/icons/up.png
-www/apache22/icons/uu.gif
-www/apache22/icons/uu.png
-www/apache22/icons/uuencoded.gif
-www/apache22/icons/uuencoded.png
-www/apache22/icons/world1.gif
-www/apache22/icons/world1.png
-www/apache22/icons/world2.gif
-www/apache22/icons/world2.png
-@dirrm www/apache22/icons/small
-@dirrm www/apache22/icons
-@dirrm www/apache22/error/include
-@dirrm www/apache22/error
-@dirrmtry www/apache22/data
-@dirrmtry www/apache22/cgi-bin
+@exec [ -d %D/%%WWWDIR%%/data ] || mkdir -p %D/%%WWWDIR%%/data
+@exec [ -f %D/%%WWWDIR%%/data/index.html ] || cp %D/%%EXAMPLESDIR%%/index.html %D/%%WWWDIR%%/data/index.html
+%%WWWDIR%%/error/HTTP_BAD_GATEWAY.html.var
+%%WWWDIR%%/error/HTTP_BAD_REQUEST.html.var
+%%WWWDIR%%/error/HTTP_FORBIDDEN.html.var
+%%WWWDIR%%/error/HTTP_GONE.html.var
+%%WWWDIR%%/error/HTTP_INTERNAL_SERVER_ERROR.html.var
+%%WWWDIR%%/error/HTTP_LENGTH_REQUIRED.html.var
+%%WWWDIR%%/error/HTTP_METHOD_NOT_ALLOWED.html.var
+%%WWWDIR%%/error/HTTP_NOT_FOUND.html.var
+%%WWWDIR%%/error/HTTP_NOT_IMPLEMENTED.html.var
+%%WWWDIR%%/error/HTTP_PRECONDITION_FAILED.html.var
+%%WWWDIR%%/error/HTTP_REQUEST_ENTITY_TOO_LARGE.html.var
+%%WWWDIR%%/error/HTTP_REQUEST_TIME_OUT.html.var
+%%WWWDIR%%/error/HTTP_REQUEST_URI_TOO_LARGE.html.var
+%%WWWDIR%%/error/HTTP_SERVICE_UNAVAILABLE.html.var
+%%WWWDIR%%/error/HTTP_UNAUTHORIZED.html.var
+%%WWWDIR%%/error/HTTP_UNSUPPORTED_MEDIA_TYPE.html.var
+%%WWWDIR%%/error/HTTP_VARIANT_ALSO_VARIES.html.var
+%%WWWDIR%%/error/README
+%%WWWDIR%%/error/contact.html.var
+%%WWWDIR%%/error/include/bottom.html
+%%WWWDIR%%/error/include/spacer.html
+%%WWWDIR%%/error/include/top.html
+%%WWWDIR%%/icons/README
+%%WWWDIR%%/icons/README.html
+%%WWWDIR%%/icons/a.gif
+%%WWWDIR%%/icons/a.png
+%%WWWDIR%%/icons/alert.black.gif
+%%WWWDIR%%/icons/alert.black.png
+%%WWWDIR%%/icons/alert.red.gif
+%%WWWDIR%%/icons/alert.red.png
+%%WWWDIR%%/icons/apache_pb.gif
+%%WWWDIR%%/icons/apache_pb.png
+%%WWWDIR%%/icons/apache_pb2.gif
+%%WWWDIR%%/icons/apache_pb2.png
+%%WWWDIR%%/icons/apache_pb2_ani.gif
+%%WWWDIR%%/icons/back.gif
+%%WWWDIR%%/icons/back.png
+%%WWWDIR%%/icons/ball.gray.gif
+%%WWWDIR%%/icons/ball.gray.png
+%%WWWDIR%%/icons/ball.red.gif
+%%WWWDIR%%/icons/ball.red.png
+%%WWWDIR%%/icons/binary.gif
+%%WWWDIR%%/icons/binary.png
+%%WWWDIR%%/icons/binhex.gif
+%%WWWDIR%%/icons/binhex.png
+%%WWWDIR%%/icons/blank.gif
+%%WWWDIR%%/icons/blank.png
+%%WWWDIR%%/icons/bomb.gif
+%%WWWDIR%%/icons/bomb.png
+%%WWWDIR%%/icons/box1.gif
+%%WWWDIR%%/icons/box1.png
+%%WWWDIR%%/icons/box2.gif
+%%WWWDIR%%/icons/box2.png
+%%WWWDIR%%/icons/broken.gif
+%%WWWDIR%%/icons/broken.png
+%%WWWDIR%%/icons/burst.gif
+%%WWWDIR%%/icons/burst.png
+%%WWWDIR%%/icons/c.gif
+%%WWWDIR%%/icons/c.png
+%%WWWDIR%%/icons/comp.blue.gif
+%%WWWDIR%%/icons/comp.blue.png
+%%WWWDIR%%/icons/comp.gray.gif
+%%WWWDIR%%/icons/comp.gray.png
+%%WWWDIR%%/icons/compressed.gif
+%%WWWDIR%%/icons/compressed.png
+%%WWWDIR%%/icons/continued.gif
+%%WWWDIR%%/icons/continued.png
+%%WWWDIR%%/icons/dir.gif
+%%WWWDIR%%/icons/dir.png
+%%WWWDIR%%/icons/diskimg.gif
+%%WWWDIR%%/icons/diskimg.png
+%%WWWDIR%%/icons/down.gif
+%%WWWDIR%%/icons/down.png
+%%WWWDIR%%/icons/dvi.gif
+%%WWWDIR%%/icons/dvi.png
+%%WWWDIR%%/icons/f.gif
+%%WWWDIR%%/icons/f.png
+%%WWWDIR%%/icons/folder.gif
+%%WWWDIR%%/icons/folder.open.gif
+%%WWWDIR%%/icons/folder.open.png
+%%WWWDIR%%/icons/folder.png
+%%WWWDIR%%/icons/folder.sec.gif
+%%WWWDIR%%/icons/folder.sec.png
+%%WWWDIR%%/icons/forward.gif
+%%WWWDIR%%/icons/forward.png
+%%WWWDIR%%/icons/generic.gif
+%%WWWDIR%%/icons/generic.png
+%%WWWDIR%%/icons/generic.red.gif
+%%WWWDIR%%/icons/generic.red.png
+%%WWWDIR%%/icons/generic.sec.gif
+%%WWWDIR%%/icons/generic.sec.png
+%%WWWDIR%%/icons/hand.right.gif
+%%WWWDIR%%/icons/hand.right.png
+%%WWWDIR%%/icons/hand.up.gif
+%%WWWDIR%%/icons/hand.up.png
+%%WWWDIR%%/icons/icon.sheet.gif
+%%WWWDIR%%/icons/icon.sheet.png
+%%WWWDIR%%/icons/image1.gif
+%%WWWDIR%%/icons/image1.png
+%%WWWDIR%%/icons/image2.gif
+%%WWWDIR%%/icons/image2.png
+%%WWWDIR%%/icons/image3.gif
+%%WWWDIR%%/icons/image3.png
+%%WWWDIR%%/icons/index.gif
+%%WWWDIR%%/icons/index.png
+%%WWWDIR%%/icons/layout.gif
+%%WWWDIR%%/icons/layout.png
+%%WWWDIR%%/icons/left.gif
+%%WWWDIR%%/icons/left.png
+%%WWWDIR%%/icons/link.gif
+%%WWWDIR%%/icons/link.png
+%%WWWDIR%%/icons/movie.gif
+%%WWWDIR%%/icons/movie.png
+%%WWWDIR%%/icons/p.gif
+%%WWWDIR%%/icons/p.png
+%%WWWDIR%%/icons/patch.gif
+%%WWWDIR%%/icons/patch.png
+%%WWWDIR%%/icons/pdf.gif
+%%WWWDIR%%/icons/pdf.png
+%%WWWDIR%%/icons/pie0.gif
+%%WWWDIR%%/icons/pie0.png
+%%WWWDIR%%/icons/pie1.gif
+%%WWWDIR%%/icons/pie1.png
+%%WWWDIR%%/icons/pie2.gif
+%%WWWDIR%%/icons/pie2.png
+%%WWWDIR%%/icons/pie3.gif
+%%WWWDIR%%/icons/pie3.png
+%%WWWDIR%%/icons/pie4.gif
+%%WWWDIR%%/icons/pie4.png
+%%WWWDIR%%/icons/pie5.gif
+%%WWWDIR%%/icons/pie5.png
+%%WWWDIR%%/icons/pie6.gif
+%%WWWDIR%%/icons/pie6.png
+%%WWWDIR%%/icons/pie7.gif
+%%WWWDIR%%/icons/pie7.png
+%%WWWDIR%%/icons/pie8.gif
+%%WWWDIR%%/icons/pie8.png
+%%WWWDIR%%/icons/portal.gif
+%%WWWDIR%%/icons/portal.png
+%%WWWDIR%%/icons/ps.gif
+%%WWWDIR%%/icons/ps.png
+%%WWWDIR%%/icons/quill.gif
+%%WWWDIR%%/icons/quill.png
+%%WWWDIR%%/icons/right.gif
+%%WWWDIR%%/icons/right.png
+%%WWWDIR%%/icons/screw1.gif
+%%WWWDIR%%/icons/screw1.png
+%%WWWDIR%%/icons/screw2.gif
+%%WWWDIR%%/icons/screw2.png
+%%WWWDIR%%/icons/script.gif
+%%WWWDIR%%/icons/script.png
+%%WWWDIR%%/icons/small/back.gif
+%%WWWDIR%%/icons/small/back.png
+%%WWWDIR%%/icons/small/binary.gif
+%%WWWDIR%%/icons/small/binary.png
+%%WWWDIR%%/icons/small/binhex.gif
+%%WWWDIR%%/icons/small/binhex.png
+%%WWWDIR%%/icons/small/blank.gif
+%%WWWDIR%%/icons/small/blank.png
+%%WWWDIR%%/icons/small/broken.gif
+%%WWWDIR%%/icons/small/broken.png
+%%WWWDIR%%/icons/small/burst.gif
+%%WWWDIR%%/icons/small/burst.png
+%%WWWDIR%%/icons/small/comp1.gif
+%%WWWDIR%%/icons/small/comp1.png
+%%WWWDIR%%/icons/small/comp2.gif
+%%WWWDIR%%/icons/small/comp2.png
+%%WWWDIR%%/icons/small/compressed.gif
+%%WWWDIR%%/icons/small/compressed.png
+%%WWWDIR%%/icons/small/continued.gif
+%%WWWDIR%%/icons/small/continued.png
+%%WWWDIR%%/icons/small/dir.gif
+%%WWWDIR%%/icons/small/dir.png
+%%WWWDIR%%/icons/small/dir2.gif
+%%WWWDIR%%/icons/small/dir2.png
+%%WWWDIR%%/icons/small/doc.gif
+%%WWWDIR%%/icons/small/doc.png
+%%WWWDIR%%/icons/small/forward.gif
+%%WWWDIR%%/icons/small/forward.png
+%%WWWDIR%%/icons/small/generic.gif
+%%WWWDIR%%/icons/small/generic.png
+%%WWWDIR%%/icons/small/generic2.gif
+%%WWWDIR%%/icons/small/generic2.png
+%%WWWDIR%%/icons/small/generic3.gif
+%%WWWDIR%%/icons/small/generic3.png
+%%WWWDIR%%/icons/small/image.gif
+%%WWWDIR%%/icons/small/image.png
+%%WWWDIR%%/icons/small/image2.gif
+%%WWWDIR%%/icons/small/image2.png
+%%WWWDIR%%/icons/small/index.gif
+%%WWWDIR%%/icons/small/index.png
+%%WWWDIR%%/icons/small/key.gif
+%%WWWDIR%%/icons/small/key.png
+%%WWWDIR%%/icons/small/movie.gif
+%%WWWDIR%%/icons/small/movie.png
+%%WWWDIR%%/icons/small/patch.gif
+%%WWWDIR%%/icons/small/patch.png
+%%WWWDIR%%/icons/small/ps.gif
+%%WWWDIR%%/icons/small/ps.png
+%%WWWDIR%%/icons/small/rainbow.gif
+%%WWWDIR%%/icons/small/rainbow.png
+%%WWWDIR%%/icons/small/sound.gif
+%%WWWDIR%%/icons/small/sound.png
+%%WWWDIR%%/icons/small/sound2.gif
+%%WWWDIR%%/icons/small/sound2.png
+%%WWWDIR%%/icons/small/tar.gif
+%%WWWDIR%%/icons/small/tar.png
+%%WWWDIR%%/icons/small/text.gif
+%%WWWDIR%%/icons/small/text.png
+%%WWWDIR%%/icons/small/transfer.gif
+%%WWWDIR%%/icons/small/transfer.png
+%%WWWDIR%%/icons/small/unknown.gif
+%%WWWDIR%%/icons/small/unknown.png
+%%WWWDIR%%/icons/small/uu.gif
+%%WWWDIR%%/icons/small/uu.png
+%%WWWDIR%%/icons/sound1.gif
+%%WWWDIR%%/icons/sound1.png
+%%WWWDIR%%/icons/sound2.gif
+%%WWWDIR%%/icons/sound2.png
+%%WWWDIR%%/icons/sphere1.gif
+%%WWWDIR%%/icons/sphere1.png
+%%WWWDIR%%/icons/sphere2.gif
+%%WWWDIR%%/icons/sphere2.png
+%%WWWDIR%%/icons/tar.gif
+%%WWWDIR%%/icons/tar.png
+%%WWWDIR%%/icons/tex.gif
+%%WWWDIR%%/icons/tex.png
+%%WWWDIR%%/icons/text.gif
+%%WWWDIR%%/icons/text.png
+%%WWWDIR%%/icons/transfer.gif
+%%WWWDIR%%/icons/transfer.png
+%%WWWDIR%%/icons/unknown.gif
+%%WWWDIR%%/icons/unknown.png
+%%WWWDIR%%/icons/up.gif
+%%WWWDIR%%/icons/up.png
+%%WWWDIR%%/icons/uu.gif
+%%WWWDIR%%/icons/uu.png
+%%WWWDIR%%/icons/uuencoded.gif
+%%WWWDIR%%/icons/uuencoded.png
+%%WWWDIR%%/icons/world1.gif
+%%WWWDIR%%/icons/world1.png
+%%WWWDIR%%/icons/world2.gif
+%%WWWDIR%%/icons/world2.png
+@dirrm %%WWWDIR%%/icons/small
+@dirrm %%WWWDIR%%/icons
+@dirrm %%WWWDIR%%/error/include
+@dirrm %%WWWDIR%%/error
+@dirrmtry %%WWWDIR%%/data
+@dirrmtry %%WWWDIR%%/cgi-bin
+@dirrmtry %%WWWDIR%%
 @dirrm %%EXAMPLESDIR%%/extra
 @dirrm %%EXAMPLESDIR%%
 @dirrmtry %%DOCSDIR%%
@@ -459,9 +460,8 @@ www/apache22/icons/world2.png
 @dirrm share/apache22
 @dirrmtry libexec/apache22
 @dirrmtry include/apache22
-@dirrmtry www/apache22
-@dirrmtry etc/apache22/Includes
-@unexec rm -f %D/etc/apache22/httpd.conf.bak 2> /dev/null || true
-@dirrmtry etc/apache22/envvars.d
-@dirrmtry etc/apache22/extra
-@dirrmtry etc/apache22
+@unexec rm -f %D/%%ETCDIR%%/httpd.conf.bak 2> /dev/null || true
+@dirrmtry %%ETCDIR%%/extra
+@dirrmtry %%ETCDIR%%/envvars.d
+@dirrmtry %%ETCDIR%%/Includes
+@dirrmtry %%ETCDIR%%

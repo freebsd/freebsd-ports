@@ -37,8 +37,8 @@
 #
 # Examples:
 #  USE_APACHE= 22       # specify exact version
-#  USE_APACHE= 20+      # specify [min] version, no [max] version
-#  USE_APACHE= 20-22    # specify [min]-[max] range
+#  USE_APACHE= 22+      # specify [min] version, no [max] version
+#  USE_APACHE= 22-24    # specify [min]-[max] range
 #  USE_APACHE= -22      # specify [max] version, no [min] version
 #
 # Note:
@@ -50,7 +50,7 @@
 #
 #  - The following values for USE_APACHE are reserverd and only valid
 #    in apache-server ports!
-#      USE_APACHE= common20, and common22
+#      USE_APACHE= common22
 #
 #
 # The following variables can be used (ro) in ports Makefile
@@ -81,7 +81,7 @@
 Apache_Pre_Include=		bsd.apache.mk
 
 DEFAULT_APACHE_VERSION=		22
-APACHE_SUPPORTED_VERSION=	22 20 # preferred version first
+APACHE_SUPPORTED_VERSION=	22 # preferred version first
 
 # Print warnings
 _ERROR_MSG=	: Error from bsd.apache.mk.
@@ -93,9 +93,9 @@ _ERROR_MSG=	: Error from bsd.apache.mk.
 .if defined(USE_APACHE) && !empty(USE_APACHE)
 .	if ${USE_APACHE:Mcommon*} != ""
 AP_PORT_IS_SERVER=	yes
-.	elif ${USE_APACHE:C/\-//:S/^20//:S/^22//:C/\+$//} == ""
+.	elif ${USE_APACHE:C/\-//:S/^22//:C/\+$//} == ""
 AP_PORT_IS_MODULE=	yes
-.		if ${USE_APACHE:C/\-//:S/^20//:S/^22//} == "+"
+.		if ${USE_APACHE:C/\-//:S/^22//} == "+"
 AP_PLUS=	yes
 .		endif
 .	else
@@ -133,7 +133,6 @@ ALL_MODULES_CATEGORIES+=		SLAVE_PORT
 # Module selection
 .for category in ${DEFAULT_MODULES_CATEGORIES}
 DEFAULT_MODULES+=			${${category}_MODULES}
-WITH_${category}_MODULES= 	yes
 .endfor
 
 .for category in ${ALL_MODULES_CATEGORIES}
@@ -179,30 +178,6 @@ _APACHE_MODULES+=	${module}
 WITHOUT_MODULES+=	 ${module}
 .	endif
 .endfor
-
-# MFC TODO: remove together with apache20
-.elif defined(WITH_MODULES)
-_APACHE_MODULES+=	${WITH_MODULES}
-.else
-# MFC TODO: remove together with apache20
-.for category in ${ALL_MODULES_CATEGORIES}
-.	if defined (WITHOUT_${category}_MODULES) || defined (WITH_CUSTOM_${category})
-.		if defined(WITH_${category}_MODULES})
-.			undef WITH_${category}_MODULES
-.		endif
-.		if defined (WITH_CUSTOM_${category})
-_APACHE_MODULES+=	${WITH_CUSTOM_${category}:U}
-.		endif
-.	elif defined(WITH_${category}_MODULES)
-_APACHE_MODULES+=	${${category}_MODULES:U}
-.	endif
-.endfor
-# MFC TODO: remove this check
-# last usage of WITH_EXTRA_MODULES in apache22/Makefile.modules
-# http://www.freebsd.org/cgi/cvsweb.cgi/ports/www/apache22/Makefile.modules.diff?r1=text&tr1=1.1&r2=text&tr2=1.3
-.if defined(WITH_EXTRA_MODULES)
-_APACHE_MODULES+=	${WITH_EXTRA_MODULES:U}
-.endif
 .endif
 
 .if !defined(WITH_STATIC_APACHE)
@@ -365,13 +340,7 @@ IGNORE?=	PREFIX must be equal to APXS_PREFIX.
 .	endif
 .endif
 
-.if ${APACHE_VERSION} == 20
-AP_BUILDEXT=	la
-APACHEMODDIR=	libexec/apache2
-APACHEINCLUDEDIR=include/apache2
-APACHEETCDIR=	etc/apache2
-APACHE_PORT?=	www/apache${APACHE_VERSION}
-.elif ${APACHE_VERSION} >= 22
+.if ${APACHE_VERSION} >= 22
 AP_BUILDEXT=	la
 APACHEMODDIR=	libexec/apache${APACHE_VERSION}
 APACHEINCLUDEDIR=include/apache${APACHE_VERSION}
@@ -418,7 +387,7 @@ AP_EXTRAS+=	-L ${AP_LIB}
 Apache_Post_Include=	bsd.apache.mk
 
 .if defined(USE_APACHE_RUN) && !empty(USE_APACHE_RUN)
-.	if ${USE_APACHE_RUN:C/\-//:S/^20//:S/^22//:C/\+$//} != ""
+.	if ${USE_APACHE_RUN:C/\-//:S/^22//:C/\+$//} != ""
 IGNORE=	${_ERROR_MSG} Illegal use of USE_APACHE_RUN ( ${USE_APACHE_RUN} )
 .	endif
 .elif defined(USE_APACHE_RUN)
@@ -426,7 +395,7 @@ IGNORE=	${_ERROR_MSG} Illegal use of USE_APACHE_RUN ( no valid version specified
 .endif
 
 .if defined(USE_APACHE_BUILD) && !empty(USE_APACHE_BUILD)
-.	if ${USE_APACHE_BUILD:C/\-//:S/^20//:S/^22//:C/\+$//} != ""
+.	if ${USE_APACHE_BUILD:C/\-//:S/^22//:C/\+$//} != ""
 IGNORE=	${_ERROR_MSG} Illegal use of USE_APACHE_BUILD ( ${USE_APACHE_BUILD} )
 .	endif
 .elif defined(USE_APACHE_BUILD)
@@ -499,7 +468,7 @@ ap-gen-plist:
 .if defined(AP_GENPLIST)
 .	if !exists(${PLIST})
 	@${ECHO} "===>  Generating apache plist"
-# apache22/20
+# apache22
 	@${ECHO} "@unexec ${SED} -i '' -E '/LoadModule[[:blank:]]+%%AP_NAME%%_module/d' %D/%%APACHEETCDIR%%/httpd.conf" >> ${PLIST}
 	@${ECHO} "%%APACHEMODDIR%%/%%AP_MODULE%%" >> ${PLIST}
 	@${ECHO} "@exec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%F" >> ${PLIST}
