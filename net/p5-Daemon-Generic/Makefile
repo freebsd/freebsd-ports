@@ -11,7 +11,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	freebsd-ports@bluepex.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework to provide start/stop/reload for a daemon
 
 RUN_DEPENDS=	p5-File-Flock>=0:${PORTSDIR}/devel/p5-File-Flock \
