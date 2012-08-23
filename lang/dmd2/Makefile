@@ -7,8 +7,7 @@
 
 PORTNAME=	dmd
 PKGNAMESUFFIX=	2
-PORTVERSION=	2.059
-PORTREVISION=	1
+PORTVERSION=	2.060
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.digitalmars.com/
 DISTNAME=	dmd.${PORTVERSION}
@@ -26,10 +25,7 @@ DOCSDIR=	${PREFIX}/share/doc/dmd2
 PORTDOCS=	*.txt druntime/ html/ phobos/
 WRKSRC=		${WRKDIR}/dmd2/src/${PORTNAME}
 LICENSE_COMB=	multi
-LICENSE=	ART10 ZLIB DMD BSL
-LICENSE_NAME_ZLIB=	zlib license
-LICENSE_PERMS_ZLIB=	${_LICENSE_PERMS_DEFAULT}
-LICENSE_FILE_ZLIB=	${WRKSRC}/../phobos/phoboslicense.txt
+LICENSE=	ART10 DMD BSL
 LICENSE_NAME_DMD=	Digital Mars license
 LICENSE_FILE_DMD=	${WRKSRC}/backendlicense.txt
 LICENSE_PERMS_DMD=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
@@ -63,8 +59,6 @@ BUILD=		release
 MODULEDIR=	${PREFIX}/include/d/phobos2
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|gcc|${CC}|" ${WRKSRC}/posix.mak \
-		${WRKSRC}/../phobos/etc/c/zlib/freebsd.mak
 	@${REINPLACE_CMD} -e "s|g++|${CXX}|" ${WRKSRC}/posix.mak
 	@${REINPLACE_CMD} -e "s|cc|${CC}|" ${WRKSRC}/../phobos/posix.mak
 	@${REINPLACE_CMD} -e "s|/etc|${PREFIX}/etc|"	\
@@ -112,11 +106,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
 	cd ${WRKDIR}/dmd2 && ${COPYTREE_SHARE} html ${DOCSDIR}
 	${MKDIR} ${DOCSDIR}/druntime
-	${INSTALL_DATA} ${WRKSRC}/../druntime/LICENSE_1_0.txt ${DOCSDIR}/druntime
-	${INSTALL_DATA} ${WRKSRC}/../druntime/README.txt ${DOCSDIR}/druntime
+	${INSTALL_DATA} ${WRKSRC}/../druntime/LICENSE ${DOCSDIR}/druntime
+	${INSTALL_DATA} ${WRKSRC}/../druntime/README ${DOCSDIR}/druntime
 	cd ${WRKSRC}/../druntime && ${COPYTREE_SHARE} doc ${DOCSDIR}/druntime
 	${MKDIR} ${DOCSDIR}/phobos
-	${INSTALL_DATA} ${WRKSRC}/../phobos/phoboslicense.txt ${DOCSDIR}/phobos
 	${INSTALL_DATA} ${WRKSRC}/../phobos/std.ddoc ${DOCSDIR}/phobos
 .endif
 
