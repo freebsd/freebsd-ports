@@ -12,42 +12,9 @@
 # $FreeBSD$
 #
 
-.if !defined(Module_inc)
-Module_inc=		done
-
-AUTH_MODULES=		AUTH_BASIC AUTH_DIGEST
-AUTHN_MODULES=		AUTHN_FILE AUTHN_DBD AUTHN_DBM AUTHN_ANON AUTHN_DEFAULT \
-			AUTHN_ALIAS
-AUTHZ_MODULES=		AUTHZ_HOST AUTHZ_GROUPFILE AUTHZ_USER AUTHZ_DBM \
-			AUTHZ_OWNER AUTHZ_DEFAULT
-CACHE_MODULES=		CACHE DISK_CACHE FILE_CACHE MEM_CACHE
-DAV_MODULES=		DAV DAV_FS
-EXPERIMENTAL_MODULES=	BUCKETEER CASE_FILTER CASE_FILTER_IN EXT_FILTER \
-			LOG_FORENSIC OPTIONAL_HOOK_EXPORT OPTIONAL_HOOK_IMPORT \
-			OPTIONAL_FN_IMPORT OPTIONAL_FN_EXPORT 
-LDAP_MODULES=		LDAP AUTHNZ_LDAP
-MISC_MODULES+=		ACTIONS ALIAS ASIS AUTOINDEX CERN_META \
-			CGI CHARSET_LITE DBD DEFLATE DIR DUMPIO ENV EXPIRES \
-			HEADERS IMAGEMAP INCLUDE INFO LOG_CONFIG LOGIO MIME \
-			MIME_MAGIC NEGOTIATION REWRITE SETENVIF SPELING STATUS SUBSTITUTE \
-			UNIQUE_ID USERDIR USERTRACK VHOST_ALIAS FILTER VERSION REQTIMEOUT
-PROXY_MODULES=		PROXY PROXY_CONNECT PROXY_FTP PROXY_HTTP PROXY_AJP PROXY_BALANCER PROXY_SCGI
-SSL_MODULES=		SSL
-SUEXEC_MODULES=		SUEXEC
-THREADS_MODULES=	CGID
-
-DEFAULT_MODULES_CATEGORIES= \
-			AUTH AUTHN AUTHZ DAV CACHE MISC
-
-ALL_MODULES_CATEGORIES=	AUTH AUTHN AUTHZ CACHE DAV EXPERIMENTAL LDAP \
-			MISC PROXY SSL SUEXEC THREADS
-
-.endif
-
-# =============================================
 .if defined(_PREMKINCLUDED)
+# =============================================
 # MPM's: prefork worker event itk peruser
-
 .if ${WITH_MPM:L} == "prefork"
 PLIST_SUB+=		WORKER="@comment " EVENT="@comment "
 
@@ -78,74 +45,47 @@ LATEST_LINK=		apache22-${WITH_MPM:L}-mpm
 
 .if ${WITH_MPM:L} == "worker" || ${WITH_MPM:L} == "event"
 WITH_THREADS=		yes
-WITH_THREADS_MODULES=	yes
+WITH_MODULES+=		CGID
 WITHOUT_MODULES+=	CGI
 .endif
+# =============================================
 
-# xDBM section
-#
-# XXX WITH_BERKELEYDB is deprecated
-# this section need rewrite
-.if !defined(WITH_DBM)
-.   if defined(WITH_BDB) || defined(WITH_BDB_BASE) || defined(WITH_BERKELEYDB)
-WITH_DBM=	bdb
-PLIST_SUB+=	BDB=""
-.   else
-PLIST_SUB+=	BDB="@comment "
-.   endif
+# XXX WITH_STATIC_SUPPORT : make.conf, or command line parameter
+.if defined(WITH_STATIC_SUPPORT)
+CONFIGURE_ARGS+=	--enable-static-support
 .endif
 
-.if defined(WITH_BERKELEYDB) && !defined(WITH_BDB_VER)
-.   if ${WITH_BERKELEYDB} == "FreeBSD"
-WITH_BDB_BASE=	yes
-.   else
-WITH_BDB_VER=	${WITH_BERKELEYDB:S/db//}
-.   endif
+# XXX WITH_DEBUG : make.conf, or command line parameter
+# debug overrides CFLAGS
+.if defined(WITH_DEBUG)
+DEBUG_FLAGS?=	-O0 -g -ggdb3
+CFLAGS=		${DEBUG_FLAGS}
+CONFIGURE_ARGS+=	--enable-maintainer-mode
+WITH_EXCEPTION_HOOK=	yes
 .endif
 
-.if defined(WITH_DBM)
-.   if ${WITH_DBM:L} == "sdbm"
-CONFIGURE_ARGS+=	--with-dbm=sdbm
-.   elif ${WITH_DBM:L} == "gdbm"
-LIB_DEPENDS+=		gdbm:${PORTSDIR}/databases/gdbm
-CONFIGURE_ARGS+=	--with-gdbm=${LOCALBASE}
-.   elif ${WITH_DBM:L} == "db" || ${WITH_DBM:L} == "bdb"
-.	if defined(WITH_BDB_BASE)
-CONFIGURE_ARGS+=	--with-dbm=db185 \
-			--with-berkeley-db=/usr
-.	else
-USE_BDB=		yes
-CONFIGURE_ARGS+=	--with-dbm=db${BDB_VER:S/40/4/} \
-			--with-berkeley-db=${LOCALBASE}
-.	endif
-.   else
-IGNORE=		"Unknown DBM"
-.   endif
-.else
-CONFIGURE_ARGS+=	--with-dbm=sdbm
-.endif
-
-.if defined(WITH_MYSQL)
-USE_MYSQL=	yes
-WITH_THREADS=	yes
-.endif
-
-.if defined(WITH_PGSQL)
-USE_PGSQL=	yes
-.endif
-
-.if defined(WITH_SQLITE)
-USE_SQLITE=	yes
+# WITH_EXCEPTION_HOOK: parameter for command line or make.conf
+.if defined(WITH_EXCEPTION_HOOK)
+CONFIGURE_ARGS+=	--enable-exception-hook
 .endif
 
 .if !defined(WITHOUT_SSL)
-WITH_SSL_MODULES=	yes
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
+.endif
+
+.if defined (WITH_AUTHNZ_LDAP)
+CONFIGURE_ARGS+=	--enable-authnz-ldap
+.endif
+
+.if defined (WITH_LDAP)
+CONFIGURE_ARGS+=	--enable-ldap=shared
 .endif
 
 .if !defined(WITH_THREADS)
 WITHOUT_MODULES+=	MEM_CACHE
-.   if !defined(WITHOUT_APACHE_OPTIONS) && defined(WITH_MEM_CACHE)
+.   if defined(WITH_MEM_CACHE)
 IGNORE+=	mod_mem_cache requires WITH_THREADS
 .   endif
 .else
@@ -155,9 +95,22 @@ LDFLAGS+=	${PTHREAD_LIBS}
 
 .if !defined(WITH_MYSQL) && !defined(WITH_PGSQL) && !defined(WITH_SQLITE)
 WITHOUT_MODULES+=	AUTHN_DBD DBD
-.   if !defined(WITHOUT_APACHE_OPTIONS) && (defined(WITH_DBD) || defined(WITH_AUTHN_DBD))
+.   if defined(WITH_DBD) || defined(WITH_AUTHN_DBD)
 IGNORE+=	You need to enable at least one DBD backend
 .   endif
 .endif
+
+.if defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--disable-ipv6
+.else
+CATEGORIES+=		ipv6
+.   if defined(WITH_IPV6_V6ONLY) || defined(WITHOUT_V4MAPPED)
+CONFIGURE_ARGS+=	--disable-v4-mapped
+.   else
+CONFIGURE_ARGS+=	--enable-v4-mapped
+.   endif
+.endif
+
+CONFIGURE_ARGS+=	--with-mpm=${WITH_MPM:L}
 
 .endif	# _PREMKINCLUDED

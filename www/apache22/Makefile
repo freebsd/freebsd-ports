@@ -24,24 +24,25 @@ LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 
 MAKE_JOBS_SAFE=	yes
 
+# to be removed if port is renamed to apache22
+ETCDIR=		${PREFIX}/etc/${PORTNAME}22
+WWWDIR=		${PREFIX}/www/${PORTNAME}22
 LATEST_LINK?=	apache22
 
 CONFLICTS=	caudium14-1.* \
 		apache-2.0.* apache-*-2.0.* \
 		apache-*-2.2.*
 
-USE_APACHE=		common22
-USE_BZIP2=		yes
-USE_ICONV=		yes
-USE_AUTOTOOLS=		autoconf libtool
-USE_PERL5=		yes
-USE_RC_SUBR=		apache22 htcacheclean
+USE_APACHE=	common22
+USE_BZIP2=	yes
+USE_ICONV=	yes
+USE_AUTOTOOLS=	autoconf libtool
+USE_PERL5=	yes
+USE_RC_SUBR=	apache22 htcacheclean
 LIBTOOLFILES=	configure.in
 
-USERS=	www
-GROUPS=	www
-
-MPM_ITK_VERSION?=	20110321-01
+USERS=		www
+GROUPS=		www
 
 # for slave ports
 .if !defined(MASTERDIR)
@@ -50,17 +51,15 @@ APACHEDIR=	${.CURDIR}
 APACHEDIR=	${MASTERDIR}
 .endif
 
-.if !defined(WITHOUT_APACHE_OPTIONS)
-.include "${APACHEDIR}/Makefile.options"
-.endif
+WITH_MPM?=		prefork # or worker, event, itk
+WITH_HTTP_PORT?=	80
 
-.if defined(WITH_SUEXEC_RSRCLIMIT)
-EXTRA_PATCHES+= ${FILESDIR}/extra-patch-suexec_rsrclimit
-.if !defined(WITH_SUEXEC)
-IGNORE=         suEXEC resource limit patch requires mod_suexec.\
-		Please (re)run 'make config' and choose SUEXEC option also
-.endif
-.endif
+MPM_ITK_VERSION?=	20110321-01
+
+.include "${APACHEDIR}/Makefile.options"
+.include <bsd.port.options.mk>
+
+APU_CONFIG?=	${LOCALBASE}/bin/apu-1-config
 
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--enable-layout=FreeBSD \
@@ -71,7 +70,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--enable-http \
 		--with-pcre=${LOCALBASE} \
 		--with-apr=${LOCALBASE}/bin/apr-1-config \
-		--with-apr-util=${LOCALBASE}/bin/apu-1-config
+		--with-apr-util=${APU_CONFIG}
 
 CONFIGURE_ENV=	\
 		CONFIG_SHELL="${SH}" \
@@ -82,80 +81,52 @@ PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 MAKE_ENV+=	EXPR_COMPAT=yes \
 		INSTALL_MAN="${INSTALL_MAN}"
 
-WITH_MPM?=	prefork # or worker, event, itk
+# =============================================
+# CONFIGURE_ARGS willl be handled in Makefile.modules,
+# here we do only OPTIONS fixups
 
-WITH_HTTP_PORT?=	80
-
-.if defined(WITH_STATIC_SUPPORT)
-CONFIGURE_ARGS+=	--enable-static-support
+.if defined(WITH_SUEXEC_RSRCLIMIT)
+EXTRA_PATCHES+= ${FILESDIR}/extra-patch-suexec_rsrclimit
+.if !defined(WITH_SUEXEC)
+IGNORE=		suEXEC resource limit patch requires mod_suexec.\
+		Please (re)run 'make config' and choose SUEXEC option also
+.endif
 .endif
 
-# debug overrides CFLAGS
-.if defined(WITH_DEBUG)
-DEBUG_FLAGS?=	-O0 -g -ggdb3
-CFLAGS=		${DEBUG_FLAGS}
-CONFIGURE_ARGS+=	--enable-maintainer-mode
-WITH_EXCEPTION_HOOK=	yes
+.if !defined(WITHOUT_SSL)
+USE_OPENSSL=	yes
+WITH_MODULES+=	SSL
 .endif
 
-.if defined(WITH_EXCEPTION_HOOK)
-CONFIGURE_ARGS+=	--enable-exception-hook
-.endif
-
-.include "${APACHEDIR}/Makefile.doc"
-.include "${APACHEDIR}/Makefile.modules"
-.include <bsd.port.pre.mk>
-
-# OPTIONS fixups
-.if defined (WITH_AUTHNZ_LDAP)
+.if defined(WITH_AUTHNZ_LDAP)
 WITH_LDAP=	yes
 .endif
 
+.if defined (WITH_LDAP)
+USE_OPENLDAP=	yes
+WITH_AUTHNZ_LDAP=yes
+.endif
+
+.if defined(WITH_MYSQL)
+USE_MYSQL=	yes
+WITH_THREADS=	yes
+.endif
+
+.if defined(WITH_PGSQL)
+USE_PGSQL=	yes
+.endif
+
+.if defined(WITH_SQLITE)
+USE_SQLITE=	yes
+.endif
+
+.include "${APACHEDIR}/Makefile.doc"
+.include <bsd.port.pre.mk>
 .include "${APACHEDIR}/Makefile.modules"
-
-.if (defined(WITH_SSL)|| !defined(WITHOUT_SSL_MODULES))
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
-CFLAGS+=	-I${OPENSSLINC}
-LDFLAGS+=	-L${OPENSSLLIB}
-.endif
-
-.if defined (WITH_LDAP) || defined (WITH_LDAP_MODULES)
-USE_OPENLDAP=		yes
-CONFIGURE_ARGS+=	--enable-ldap=shared --with-ldap --enable-authnz-ldap \
-			--with-ldap-lib="${LOCALBASE}/lib" \
-			--with-ldap-include="${LOCALBASE}/include"
-.endif
-
-.if defined(WITHOUT_IPV6)
-CONFIGURE_ARGS+=	--disable-ipv6
-.else
-CATEGORIES+=		ipv6
-.   if defined(WITH_IPV6_V6ONLY) || defined(WITHOUT_V4MAPPED)
-CONFIGURE_ARGS+=	--disable-v4-mapped
-.   else
-CONFIGURE_ARGS+=	--enable-v4-mapped
-.   endif
-.endif
-
-.if defined(WITH_THREADS)
-CONFIGURE_ARGS+=	--enable-threads
-.   if ${ARCH} == i386
-CONFIGURE_ARGS+=	--enable-nonportable-atomics
-.   endif
-.endif
-
-.if defined(WITH_AUTH_DIGEST)
-WITH_DEVRANDOM=	yes
-.endif
-.if defined(WITH_DEVRANDOM)
-CONFIGURE_ARGS+=	--with-devrandom
-.endif
-
-CONFIGURE_ARGS+=	--with-mpm=${WITH_MPM:L}
 
 pre-everything::
 	@${ECHO_MSG}	""
-	@${ECHO_MSG}    "  You can check your modules configuration by using make show-modules"
+	@${ECHO_MSG}	"  You can check your modules configuration by using make show-modules"
 	@${ECHO_MSG}	"  To see all available knobs, type make show-options"
 	@${ECHO_MSG}	"  To see all modules in different categories, type make show-categories"
 	@${ECHO_MSG}	""
@@ -178,9 +149,11 @@ post-install:
 	@${MKDIR} ${PREFIX}/etc/apache22/envvars.d
 	@${MKDIR} ${PREFIX}/etc/apache22/Includes
 	@${INSTALL_DATA} ${FILESDIR}/no-accf.conf ${PREFIX}/etc/apache22/Includes
+
 .if defined(WITH_LOG_FORENSIC)
 	@${INSTALL_SCRIPT} ${WRKSRC}/support/check_forensic ${PREFIX}/sbin
 .endif
+
 .if !defined(NOPORTDOCS)
 .for dir in style/lang style/xsl/util style/xsl
 	@[ -d ${DOCSDIR}/${dir}/ ] && ${TOUCH} ${DOCSDIR}/${dir}/.keepme
