@@ -6,7 +6,9 @@
 #
 
 PORTNAME=	cfengine
-PORTVERSION=	3.4.0b1
+PORTVERSION=	3.4.0a2
+PORTREVISION=
+PORTEPOCH=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 MASTER_SITES=	http://cfengine.com/source-code/download?file=
@@ -14,6 +16,7 @@ MASTER_SITES=	http://cfengine.com/source-code/download?file=
 MAINTAINER=	cy@FreeBSD.org
 #		gjb@FreeBSD.org is also committer for this port
 COMMENT=	A systems administration tool for networks
+
 LATEST_LINK=	cfengine-devel
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
@@ -81,7 +84,7 @@ LIB_DEPENDS+=		virt:${PORTSDIR}/devel/libvirt
 
 MAN8=	cf-agent.8	cf-key.8	cf-monitord.8	\
 	cf-report.8	cf-serverd.8	cf-execd.8	\
-	cf-know.8	cf-promises.8	cf-runagent.8
+	cf-promises.8	cf-runagent.8
 
 post-patch:
 		@${REINPLACE_CMD} -e '/^htmldir/s!=.*!= @htmldir@!'\
