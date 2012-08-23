@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Validation-Class
-PORTVERSION=	7.76
+PORTVERSION=	7.83
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:AWNCORP
@@ -16,6 +16,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for centralized input validation for any application
 
 RUN_DEPENDS=	\
+	p5-Class-Forward>=0.04:${PORTSDIR}/devel/p5-Class-Forward \
 	p5-Hash-Flatten>0:${PORTSDIR}/devel/p5-Hash-Flatten \
 	p5-Hash-Merge>0:${PORTSDIR}/textproc/p5-Hash-Merge \
 	p5-Module-Find>0:${PORTSDIR}/devel/p5-Module-Find \
