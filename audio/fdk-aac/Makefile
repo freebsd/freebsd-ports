@@ -13,6 +13,9 @@ MASTER_SITES=	SF/opencore-amr/${PORTNAME}
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Port of the Fraunhofer FDK AAC Codec Library
 
+NOT_FOR_ARCHS=		sparc64
+NOT_FOR_ARCHS_REASON=	not yet ported to this architecture
+
 LICENSE=	FRAUNHOFER_FDK_AAC
 LICENSE_NAME=	Software License for The Fraunhofer FDK AAC Codec Library for Android
 LICENSE_FILE=	${WRKSRC}/COPYING
