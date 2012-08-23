@@ -1,0 +1,83 @@
+GETPATCH(1)		FreeBSD General Commands Manual 	 GETPATCH(1)
+
+NAME
+     getpatch - An utility to download patch attachments on Bug Tracking Systems
+
+SYNOPSIS
+     getpatch [-h] [--mode gnats|bz] [--last] [--stdout] <pr-id>
+
+DESCRIPTION
+     getpatch is an utility to download patch attachments on Bug Tracking
+     Systems such Gnats and Bugzilla. It currently supports retrieving multiple
+     attachments from the command line.
+
+     Its written in python witout any extra dependencies. Compare to getpr
+     utility it does web scrapping on BTS web interface in order to retrieve
+     patchs attached.
+
+     The following command line options are supported:
+
+	   -h	      Prints a multi-line help message and exits
+
+	   --mode     Specify BTS mode. Supported are "gnats" or "bz".
+
+           --last     Only retrieve last iteration patch attached.
+
+	   --stdout   Output patch to stdout file descriptor.
+
+     Options can be used after or before the <pr-id> on the command line.
+
+FILES
+     ${PORTSDIR}/Tools/scripts/getpatch
+
+EXAMPLES
+     Retrieve all patchs attached on pr ports/166692 on a Gnats BTS:
+
+	   getpatch --mode gnats ports/166692
+
+	   or
+
+	   getpatch 166692
+
+     Gnats is the default mode and category isn't mandatory.
+
+     Retrieve all patchs on a Bugzilla BTS:
+
+	   getpatch --mode bz ports/166692
+
+     Retrieve only last iteration of the patch:
+
+	   getpatch --last ports/166692
+
+     Retrieve patch on standard output
+
+	   getpatch --stdout ports/166692
+
+     On fly patching can be done in a port directory this way:
+
+     For a diff
+
+           cd ${PORTSDIR}/category/port
+           patch -p0 < <(getpatch 166692 --stdout)
+
+     For a shar
+
+           cd ${PORTSDIR}/category/port
+           sh <(getpatch 166692 --stdout)
+
+     Redirection <() depends on the shell you're using, validated with zsh and bash.
+
+DIAGNOSTICS
+     getpatch exits 0 on success or 1 if a help message was output.
+
+SEE ALSO
+     getpr, prpatch
+
+AUTHORS
+     Sofian Brabez <sbz@freebsd.org>
+
+BUGS
+     If you're using getpatch and you encounter a bug or want an improvement
+     don't hesitate to mail me.
+
+FreeBSD 			 14 August 2012	                         FreeBSD
