@@ -48,14 +48,17 @@ share/locale/ru/LC_MESSAGES/clamtk.mo
 share/locale/sk/LC_MESSAGES/clamtk.mo
 share/locale/sl/LC_MESSAGES/clamtk.mo
 share/locale/sv/LC_MESSAGES/clamtk.mo
+share/locale/te/LC_MESSAGES/clamtk.mo
 share/locale/th/LC_MESSAGES/clamtk.mo
 share/locale/tr/LC_MESSAGES/clamtk.mo
 share/locale/ug/LC_MESSAGES/clamtk.mo
 share/locale/uk/LC_MESSAGES/clamtk.mo
+share/locale/uz/LC_MESSAGES/clamtk.mo
 share/locale/zh_CN/LC_MESSAGES/clamtk.mo
 share/locale/zh_TW/LC_MESSAGES/clamtk.mo
 share/pixmaps/clamtk.png
 share/pixmaps/clamtk.xpm
+share/pixmaps/clamtk-loader.gif
 @dirrmtry share/locale/nl_BE/LC_MESSAGES
 @dirrmtry share/locale/nl_BE
 @dirrmtry share/locale/fo/LC_MESSAGES
