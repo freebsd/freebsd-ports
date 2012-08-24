@@ -529,7 +529,7 @@ resume_thread_callback (const td_thrhandle_t *th_p, void *data)
 
 static void
 fbsd_thread_resume (struct target_ops *ops,
-		    ptid_t ptid, int step, enum target_signal signo)
+		    ptid_t ptid, int step, enum gdb_signal signo)
 {
   struct target_ops *beneath = find_target_beneath (ops);
   td_thrhandle_t th;
@@ -584,7 +584,7 @@ fbsd_thread_resume (struct target_ops *ops,
   if (lwp)
     {
       int req = step ? PT_SETSTEP : PT_CLEARSTEP;
-      if (ptrace (req, (pid_t) lwp, (caddr_t) 1, target_signal_to_host(signo)))
+      if (ptrace (req, (pid_t) lwp, (caddr_t) 1, gdb_signal_to_host(signo)))
         perror_with_name ("PT_SETSTEP/PT_CLEARSTEP");
     }
 
@@ -623,7 +623,7 @@ fbsd_thread_resume (struct target_ops *ops,
 
   /* now continue the process, suspended thread wont run */
   if (ptrace (PT_CONTINUE, proc_handle.pid , (caddr_t)1,
-	      target_signal_to_host(signo)))
+	      gdb_signal_to_host(signo)))
     perror_with_name ("PT_CONTINUE");
 }
 
@@ -734,7 +734,7 @@ fbsd_thread_wait (struct target_ops *ops,
 	 */
         attach_thread(ret, &th, &ti, 1);
       }
-      if (ourstatus->value.sig == TARGET_SIGNAL_TRAP)
+      if (ourstatus->value.sig == GDB_SIGNAL_TRAP)
         check_event(ret);
       /* this is a hack, if an event won't cause gdb to stop, for example,
          SIGALRM, gdb resumes the process immediatly without setting
