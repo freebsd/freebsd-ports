@@ -1,5 +1,5 @@
 bin/teredo-mire
-lib/miredo/miredo-privproc
+libexec/miredo/miredo-privproc
 sbin/miredo
 sbin/miredo-server
 sbin/miredo-checkconf
@@ -28,6 +28,6 @@ etc/miredo/client-hook
 @dirrmtry etc/miredo
 @dirrm include/libtun6
 @dirrm include/libteredo
-@dirrm lib/miredo
+@dirrm libexec/miredo
 %%POLICYTABLE%%@cwd /
 %%POLICYTABLE%%/etc/ip6addrctl.conf
