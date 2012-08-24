@@ -1,7 +1,8 @@
 # Do not edit!  Auto-generated file.
 # See build-plist target in Makefile.
 #
-MLINKS=mpic++.1 mpiCC.1
+MLINKS+=mpic++.1 mpiCC.1
+MLINKS+=ortec++.1 orteCC.1
 MAN1+=mpic++.1
 MAN1+=mpicc.1
 MAN1+=mpicxx.1
@@ -11,13 +12,17 @@ MAN1+=mpif90.1
 MAN1+=mpirun.1
 MAN1+=ompi-clean.1
 MAN1+=ompi-iof.1
+MAN1+=ompi-probe.1
+MAN1+=ompi-profiler.1
 MAN1+=ompi-ps.1
 MAN1+=ompi-server.1
+MAN1+=ompi-top.1
 MAN1+=ompi_info.1
 MAN1+=opal_wrapper.1
 MAN1+=orte-clean.1
 MAN1+=orte-iof.1
 MAN1+=orte-ps.1
+MAN1+=orte-top.1
 MAN1+=orted.1
 MAN1+=orterun.1
 MAN3+=MPI.3
@@ -225,6 +230,7 @@ MAN3+=MPI_Query_thread.3
 MAN3+=MPI_Recv.3
 MAN3+=MPI_Recv_init.3
 MAN3+=MPI_Reduce.3
+MAN3+=MPI_Reduce_local.3
 MAN3+=MPI_Reduce_scatter.3
 MAN3+=MPI_Register_datarep.3
 MAN3+=MPI_Request_c2f.3

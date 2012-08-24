@@ -9,14 +9,16 @@
 #  - etc/*.sample support
 
 PORTNAME=	openmpi
-DISTVERSION=	1.4.3
+DISTVERSION=	1.6.1
 CATEGORIES=	net parallel
-MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.4/downloads/
+MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.6/downloads/
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	A High Performance Message Passing Library
 
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
+		hwloc:${PORTSDIR}/devel/hwloc \
+		ltdl:${PORTSDIR}/devel/libltdl
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
@@ -31,6 +33,9 @@ PLIST_SUB+=	MPIDIR=${MPIDIR}
 
 CONFIGURE_ARGS+=	--prefix=${PREFIX}/${MPIDIR} \
 			--mandir=${PREFIX}/${MPIDIR}/man \
+			--program-prefix= \
+			--with-hwloc=${LOCALBASE} \
+			--with-libltdl=${LOCALBASE} \
 		 	${CONFIGURE_TARGET}
 
 USE_LDCONFIG=	${PREFIX}/${MPIDIR}/lib \
@@ -39,22 +44,26 @@ USE_LDCONFIG=	${PREFIX}/${MPIDIR}/lib \
 MANPREFIX=	${PREFIX}/${MPIDIR}
 .include "${.CURDIR}/Makefile.man"
 
-OPTIONS=	TORQUE "Enable Torque support" off \
-		SGE "Enable SGE support" off
+OPTIONS_DEFINE=	IPV6 SGE TORQUE
 
-.include <bsd.port.pre.mk>
+SGE_DESC=	Enable SGE support
+TORQUE_DESC=	Enable Torque support
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
+OPTIONS_DEFAULT=	IPV6
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSGE}
+CONFIGURE_ARGS+=	--enable-ipv6
+.else
+CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-USE_FORTRAN=	yes
-
-.if defined(WITH_SGE)
+.if ${PORT_OPTIONS:MSGE}
 SGE_BASE?=	sge
 SGE_ROOT=	${LOCALBASE}/${SGE_BASE}
 SGE_ARCH=	fbsd-${ARCH}
-RUN_DEPENDS+=	${SGE_ROOT}/fbsd-${ARCH}/qrsh:${PORTSDIR}/sysutils/sge62
+RUN_DEPENDS+=	${SGE_ROOT}/bin/fbsd-${ARCH}/qrsh:${PORTSDIR}/sysutils/sge62
 CONFIGURE_ARGS+=	--with-sge
 CONFIGURE_ENV+=	SGE_ROOT=${SGE_ROOT}
 PLIST_FILES+=	${MPIDIR}/lib/openmpi/mca_ras_gridengine.la \
@@ -64,8 +73,8 @@ PLIST_FILES+=	${MPIDIR}/lib/openmpi/mca_ras_gridengine.la \
 CONFIGURE_ARGS+=	--without-sge
 .endif
 
-.if defined(WITH_TORQUE)
-LIB_DEPENDS+=	torque.2:${PORTSDIR}/sysutils/torque
+.if ${PORT_OPTIONS:MTORQUE}
+LIB_DEPENDS+=	torque:${PORTSDIR}/sysutils/torque
 CONFIGURE_ARGS+=	--with-tm=${LOCALBASE}
 PLIST_FILES+=	${MPIDIR}/lib/openmpi/mca_plm_tm.so \
 		${MPIDIR}/lib/openmpi/mca_plm_tm.la \
@@ -76,6 +85,14 @@ PLIST_FILES+=	${MPIDIR}/lib/openmpi/mca_plm_tm.so \
 .else
 CONFIGURE_ARGS+=	--without-tm
 .endif
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
+USE_FORTRAN=	yes
 
 #######################################################################
 # The following targets are for the port maintainer.  Use at your own #
@@ -105,7 +122,8 @@ build-plist:
 	@echo "# Do not edit!  Auto-generated file." > ${.CURDIR}/Makefile.man
 	@echo "# See build-plist target in Makefile." >> ${.CURDIR}/Makefile.man
 	@echo "#" >> ${.CURDIR}/Makefile.man
-	@echo "MLINKS=mpic++.1 mpiCC.1" >> ${.CURDIR}/Makefile.man
+	@echo "MLINKS+=mpic++.1 mpiCC.1" >> ${.CURDIR}/Makefile.man
+	@echo "MLINKS+=ortec++.1 orteCC.1" >> ${.CURDIR}/Makefile.man
 	${FIND} ${PREFIX}/${MPIDIR}/man -type f | \
 	    ${SED} -e 's|.*man\([0-9LN]\)/\(.*\)|MAN\1+=\2|' -e 's/\.gz$$//' | \
 	    ${SORT} >> ${.CURDIR}/Makefile.man
