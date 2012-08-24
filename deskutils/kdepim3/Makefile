@@ -59,7 +59,7 @@ PORT_OPTIONS+=	GNOKII
 .	endif
 .endif
 
-.if ${PORT_OPTIONS:MGNOKII)
+.if ${PORT_OPTIONS:MGNOKII}
 LIB_DEPENDS+=	gnokii:${PORTSDIR}/comms/gnokii
 .endif
 
