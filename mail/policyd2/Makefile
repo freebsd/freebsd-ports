@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	policyd2
-PORTVERSION=	2.0.11
-PORTREVISION=	1
+PORTVERSION=	2.0.12
 CATEGORIES=	mail
-MASTER_SITES=	http://devlabs.linuxassist.net/attachments/download/187/
+MASTER_SITES=	http://devlabs.linuxassist.net/attachments/download/${DOWNLOAD_FOLDER}/
 DISTNAME=	cluebringer-${PORTVERSION}
 
 MAINTAINER=	chifeng@gmail.com
@@ -25,24 +24,24 @@ USE_PHP=	yes
 NO_BUILD=	yes
 USE_RC_SUBR=	policyd2
 BINMODE=	0755
+DOWNLOAD_FOLDER=	222
 
 WEBUIDIR=	${PREFIX}/www/policyd
 PORTDOCS=	AUTHORS ChangeLog INSTALL TODO WISHLIST
 PORTDATA=	*
 
-OPTIONS=	MYSQL "Use MySQL support" On \
-		PostgreSQL "Use PostgreSQL support" Off \
-		SQLite "Use SQLite support" Off
+OPTIONS_DEFINE=	MYSQL PGSQL SQLITE
+OPTIONS_DEFAULT=	MYSQL
 
 .include <bsd.port.pre.mk>
 USE_PHP=	pdo_mysql
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
-.if defined(WITH_SQLite)
+.if ${PORT_OPTIONS:MSQLITE}
 RUN_DEPENDS+=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 .endif
-.if defined(WITH_PostgreSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
@@ -69,7 +68,7 @@ post-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} database ${DATADIR}
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -d ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
