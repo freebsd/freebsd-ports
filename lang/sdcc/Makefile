@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sdcc
-PORTVERSION=	3.1.0
+PORTVERSION=	3.2.0
 DISTVERSIONPREFIX=	src-
 CATEGORIES=	lang
 MASTER_SITES=	SF
@@ -18,101 +18,81 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/graph/adjacency_list.hpp:${PORTSDIR}/devel/boost-libs
 
-WRKSRC=		${WRKDIR}/sdcc
-
+CONFLICTS=	sdcc-3.1.*
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
-OPTIONS=	MCS51   "Intel 8051 port" on \
-		Z80	"Zilog Z80/Z180, Rabbit 2000 port" on \
-		DS390   "Maxim 80DS390/DS400 port" on \
-		PIC14	"Microchip PIC16 series port" on \
-		PIC16   "Microchip PIC18 series port" on \
-		HC08    "Motorola 68HC08 port" on \
-		DEVLIB  "Device libraries" on \
-		UCSIM	"The ucSim simulator" on
+OPTIONS_DEFINE= DEVLIB DOCS HC08 MCS51 PIC UCSIM Z80
+OPTIONS_DEFAULT=${OPTIONS_DEFINE:NDOCS}
+DEVLIB_DESC=	Device libraries
+HC08_DESC=	Freescale 68HC08/S08
+MCS51_DESC=	Intel MCS51, Maxim DS80C390/DS80C400
+PIC_DESC=	Microchip PIC
+UCSIM_DESC=	The ucSim simulator
+Z80_DESC=	Zilog Z80/Z180/GBZ80, Rabbit 2000/3000/3000A
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--disable-avr --docdir=${DOCSDIR} --enable-new-pics
+CONFIGURE_ARGS= --disable-avr --disable-install-libbfd --enable-new-pics
 CONFIGURE_ENV=	ARCH=""
+WRKSRC= 	${WRKDIR}/sdcc
+
+ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS_REASON=	Project only supports FreeBSD on i386
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_MCS51) && defined(WITHOUT_DS390)
-CONFIGURE_ARGS+=	--disable-51
-PLIST_SUB+=		MCS51DS390="@comment "
+.if ${PORT_OPTIONS:MDEVLIB}
+PLIST_SUB+=	DEVLIB=""
 .else
-USE_AUTOTOOLS+=		autoconf
-PLIST_SUB+=		MCS51DS390=""
+CONFIGURE_ARGS+=--disable-device-lib
+PLIST_SUB+=	DEVLIB="@comment "
 .endif
 
-.if defined(WITHOUT_MCS51)
-CONFIGURE_ARGS+=	--disable-mcs51-port
-PLIST_SUB+=		MCS51="@comment "
+.if ${PORT_OPTIONS:MHC08}
+PLIST_SUB+=	HC08=""
 .else
-PLIST_SUB+=		MCS51=""
+CONFIGURE_ARGS+=--disable-hc08 --disable-hc08-port --disable-s08-port
+PLIST_SUB+=	HC08="@comment "
 .endif
 
-.if defined(WITHOUT_Z80)
-CONFIGURE_ARGS+=	--disable-gbz80-port --disable-r2k-port \
-			--disable-z180-port --disable-z80-port --disable-z80
-PLIST_SUB+=		Z80="@comment "
+.if ${PORT_OPTIONS:MMCS51}
+PLIST_SUB+=	MCS51=""
 .else
-PLIST_SUB+=		Z80=""
+CONFIGURE_ARGS+=--disable-51 --disable-mcs51-port \
+		--disable-ds390-port --disable-ds400-port
+PLIST_SUB+=	MCS51="@comment "
 .endif
 
-.if defined(WITHOUT_DS390)
-CONFIGURE_ARGS+=	--disable-ds390-port --disable-ds400-port
-PLIST_SUB+=		DS390="@comment "
+.if ${PORT_OPTIONS:MPIC}
+BUILD_DEPENDS+= gputils>=0.14.2:${PORTSDIR}/devel/gputils
+RUN_DEPENDS+=	gputils>=0.14.2:${PORTSDIR}/devel/gputils
+PLIST_SUB+=	PIC=""
 .else
-PLIST_SUB+=		DS390=""
+CONFIGURE_ARGS+=--disable-pic14-port --disable-pic16-port
+PLIST_SUB+=	PIC="@comment "
 .endif
 
-.if defined(WITHOUT_PIC14)
-CONFIGURE_ARGS+=	--disable-pic14-port
-PLIST_SUB+=		PIC14="@comment "
+.if ${PORT_OPTIONS:MUCSIM}
+PLIST_SUB+=	UCSIM=""
 .else
-BUILD_DEPENDS+=		gputils>=0.14.1:${PORTSDIR}/devel/gputils
-RUN_DEPENDS+=		gputils>=0.14.1:${PORTSDIR}/devel/gputils
-PLIST_SUB+=		PIC14=""
+CONFIGURE_ARGS+=--disable-ucsim
+PLIST_SUB+=	UCSIM="@comment "
 .endif
 
-.if defined(WITHOUT_PIC16)
-CONFIGURE_ARGS+=	--disable-pic16-port
-PLIST_SUB+=		PIC16="@comment "
+.if ${PORT_OPTIONS:MZ80}
+PLIST_SUB+=	Z80=""
 .else
-BUILD_DEPENDS+=		gputils>=0.14.1:${PORTSDIR}/devel/gputils
-RUN_DEPENDS+=		gputils>=0.14.1:${PORTSDIR}/devel/gputils
-PLIST_SUB+=		PIC16=""
-.endif
-
-.if defined(WITHOUT_HC08)
-CONFIGURE_ARGS+=	--disable-hc08-port --disable-hc08
-PLIST_SUB+=		HC08="@comment "
-.else
-PLIST_SUB+=		HC08=""
-.endif
-
-.if defined(WITHOUT_DEVLIB)
-CONFIGURE_ARGS+=	--disable-device-lib
-PLIST_SUB+=		DEVLIB="@comment "
-.else
-PLIST_SUB+=		DEVLIB=""
-.endif
-
-.if defined(WITHOUT_UCSIM)
-CONFIGURE_ARGS+=	--disable-ucsim
-PLIST_SUB+=		UCSIM="@comment "
-.else
-USE_AUTOTOOLS+=		libtool
-LIBTOOLFILES=		sim/ucsim/configure
-PLIST_SUB+=		UCSIM=""
+CONFIGURE_ARGS+=--disable-z80 --disable-z80-port --disable-z180-port \
+		--disable-gbz80-port --disable-r2k-port --disable-r3ka-port
+PLIST_SUB+=	Z80="@comment "
 .endif
 
 post-patch:
-.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} '/install:/s/:.*/:/' \
+		${WRKSRC}/support/sdbinutils/libiberty/Makefile.in
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} 's, [a-z-]*doc,,' \
 		${WRKSRC}/Makefile.in \
 		${WRKSRC}/sim/ucsim/packages_in.mk
