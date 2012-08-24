@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	audio
 
 COMMENT=	Gstreamer flite run-time speech synthesis engine plugin

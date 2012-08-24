@@ -285,10 +285,10 @@ gst_flac_PLIST_FILES=	${GST_LIB_DIR}/libgstflac.la \
 			${GST_LIB_DIR}/libgstflac.so
 
 # flite
-gst_flite_BUILD_DEPENDS+=	${LOCALBASE}/lib/libflite.a:${PORTSDIR}/audio/flite
-gst_flite_PLIST_FILES=		${GST_LIB_DIR}/libgstflite.la \
-				${GST_LIB_DIR}/libgstflite.so
-gst_flite_DIST=			bad
+gst_flite_LIB_DEPENDS+=	flite.1:${PORTSDIR}/audio/flite
+gst_flite_PLIST_FILES=	${GST_LIB_DIR}/libgstflite.la \
+			${GST_LIB_DIR}/libgstflite.so
+gst_flite_DIST=		bad
 
 # gconf
 gst_gconf_USE_GNOME+=	gnomeprefix gconf2
