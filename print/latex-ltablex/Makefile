@@ -8,8 +8,12 @@ PORTNAME=	ltablex
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
-MASTER_SITE_SUBDIR=	macros/latex/contrib
+# As of 2012-08-24, some mirrors are returning a tarball with a
+# different checksum, so I am mirroring it locally instead.
+# MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
+# MASTER_SITE_SUBDIR=	macros/latex/contrib
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	rakuco/latex
 PKGNAMEPREFIX=	latex-
 DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	latex
@@ -19,8 +23,6 @@ COMMENT=	Combines the features of both the tabularx and longtable packages
 
 BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
-
-BROKEN=		fails to install; incorrect checksum
 
 USE_ZIP=	YES
 NO_BUILD=	YES
