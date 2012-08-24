@@ -181,10 +181,10 @@ for opt ; do
 		setprop "${files}"
 
 		eval "set -- $savedargs"
-		"${SVN}" "$@"
+		exec "${SVN}" "$@"
 	;;
 	*)
-		"${SVN}" "$@"
+		exec "${SVN}" "$@"
 	;;
     esac
 done
