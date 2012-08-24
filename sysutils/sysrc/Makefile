@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sysrc
-PORTVERSION=	4.0
+PORTVERSION=	4.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://druidbsd.sourceforge.net/download/
 
