@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gdb
-PORTVERSION=	7.4.1
-PORTREVISION=	4
+PORTVERSION=	7.5
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -95,7 +94,6 @@ post-patch:
 .if ${PORT_OPTIONS:MTHREADS}
 	@${CP} ${FILESDIR}/fbsd-threads.c ${WRKSRC}/gdb/
 .endif
-	@${CP} ${FILESDIR}/amd64bsd-nat.h ${WRKSRC}/gdb
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb ${PREFIX}/bin/gdb${VER}
