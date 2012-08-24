@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	parole
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.0.2
 CATEGORIES=	multimedia xfce
-MASTER_SITES=	XFCE/src/apps/${PORTNAME}/${PORTVERSION:R}/
+MASTER_SITES=	XFCE/src/apps/${PORTNAME}/0.3/
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
@@ -16,9 +16,9 @@ COMMENT=	Lightweight media player for Xfce4 based on gstreamer
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib \
-		notify.4:${PORTSDIR}/devel/libnotify \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
+		notify:${PORTSDIR}/devel/libnotify \
+		dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
@@ -62,12 +62,10 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
-# Fix installation directory plugins
-	${FIND} ${WRKSRC}/src -name 'Makefile.in' -type f \
-		| ${XARGS} ${REINPLACE_CMD} -e \
-		's|(datadir)/src/misc|(datadir)/${PORTNAME}|'
+# Downgrade Glib version
+	@${REINPLACE_CMD} -e 's|2\.32|2\.28|g' ${WRKSRC}/configure
 # Fix .rc file path
-	${REINPLACE_CMD} -e 's|src/misc|${PORTNAME}|g' \
+	@${REINPLACE_CMD} -e 's|xfce4/src/misc|${PORTNAME}|g' \
 		${WRKSRC}/src/common/parole-rc-utils.h
 
 post-install:
