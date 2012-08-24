@@ -37,13 +37,13 @@ post-install:
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MGOD_MODE} || !empty{PORT_OPTIONS:MOPTIMIZED_CFLAGS}
+.if ${PORT_OPTIONS:MGOD_MODE} || !empty(PORT_OPTIONS:MOPTIMIZED_CFLAGS)
 post-patch:
 .   if ${PORT_OPTIONS:MGOD_MODE}
 	@${REINPLACE_CMD} -e 's|\(#define GOD_MODE\) 0|\1 1|' \
 		${WRKSRC}/src/Game.h
 .   endif
-.   if empty(PORT_OPTIONS:MOPTIMIZED_CFLAGS}
+.   if empty(PORT_OPTIONS:MOPTIMIZED_CFLAGS)
 	@${REINPLACE_CMD} -e 's|-O2||g ; \
 		s|-fomit-frame-pointer||g ; \
 		s|-ffast-math||g ; \

@@ -29,7 +29,7 @@ PKGDEINSTALL=	${PKGINSTALL}
 
 .include <bsd.port.pre.mk>
 
-.if defined(A4) || !empty(PORT_OPTIONS:MA4SIZE}
+.if defined(A4) || !empty(PORT_OPTIONS:MA4SIZE)
 RUN_DEPENDS=	enscript:${PORTSDIR}/print/enscript-a4
 .else
 RUN_DEPENDS=	enscript:${PORTSDIR}/print/enscript-letter

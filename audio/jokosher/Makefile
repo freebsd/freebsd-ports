@@ -60,7 +60,7 @@ PLIST_SUB+=	OMF="@comment "
 .endif
 
 .for plugin in flac gconf jack ladspa lame mp3 pulse vorbis
-. if ${PORT_OPTIONS:M${plugin:U})
+. if ${PORT_OPTIONS:M${plugin:U}}
 USE_GSTREAMER+=${plugin}
 . endif
 .endfor
