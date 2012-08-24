@@ -20,6 +20,8 @@ COMMENT=	Combines the features of both the tabularx and longtable packages
 BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
 
+BROKEN=		fails to install; incorrect checksum
+
 USE_ZIP=	YES
 NO_BUILD=	YES
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} \
