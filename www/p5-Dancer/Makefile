@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Dancer
-PORTVERSION=	1.3097
-PORTREVISION=	1
+PORTVERSION=	1.3099
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:XSAWYERX
@@ -37,6 +36,8 @@ TEST_DEPENDS=	\
 	p5-HTTP-Parser-XS>0:${PORTSDIR}/www/p5-HTTP-Parser-XS \
 	p5-Template-Toolkit>0:${PORTSDIR}/www/p5-Template-Toolkit \
 	p5-Test-Output>0:${PORTSDIR}/devel/p5-Test-Output
+# XXX: test wants p5-Dancer-Session-Cookie, but this causes cyclic dependency.
+#	p5-Dancer-Session-Cookie>0:${PORTSDIR}/www/p5-Dancer-Session-Cookie
 
 OPTIONS_DEFINE=	YAML
 OPTIONS_DEFAULT=	YAML
