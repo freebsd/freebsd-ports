@@ -61,22 +61,22 @@ ALL_TARGET=	#
 
 NOPRECIOUSMAKEVARS=	yes			# for ffmpeg and x264
 
-OPTIONS_DEFINE=	GUI
-GUI_DESC=	Build GTK+2 based GUI program
-OPTIONS_DEFAULT=	GUI
+OPTIONS_DEFINE=	X11
+X11_DESC=	Build GTK+2 based GUI program
+OPTIONS_DEFAULT=	X11
 
 .include <bsd.port.pre.mk>
 
 # Recent GNU binutils are required to handle inline SSSE3 asm (in x264), and
 # to support --exclude-libs option for ld(1) when building GUI program
-.if ${PORT_OPTIONS:MGUI} || ${OSVERSION} < 802509 || \
+.if ${PORT_OPTIONS:MX11} || ${OSVERSION} < 802509 || \
 	${OSVERSION} >= 900000 && ${OSVERSION} < 900033
 BUILD_DEPENDS+=	as:${PORTSDIR}/devel/binutils
 CONFIGURE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
 
-.if ${PORT_OPTIONS:MGUI}
+.if ${PORT_OPTIONS:MX11}
 CONFIGURE_ARGS+=	--disable-gtk-update-checks --disable-gst
 LIB_DEPENDS+=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		notify:${PORTSDIR}/devel/libnotify
@@ -131,7 +131,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/HandBrakeCLI ${PREFIX}/bin
-.if ${PORT_OPTIONS:MGUI}
+.if ${PORT_OPTIONS:MX11}
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/gtk/src/ghb ${PREFIX}/bin/HandBrake
 .endif
 
