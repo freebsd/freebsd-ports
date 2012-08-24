@@ -13,6 +13,8 @@ MASTER_SITES=	SF
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	A Restricted Secure SHell only for sftp or/and scp
 
+FORBIDDEN=	http://www.vuxml.org/freebsd/65b25acc-e63b-11e1-b81c-001b77d09812.html (vulnerability)
+
 GNU_CONFIGURE=	yes
 
 MAN1=		rssh.1
