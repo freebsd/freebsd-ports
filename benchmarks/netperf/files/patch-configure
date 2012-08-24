@@ -13,7 +13,7 @@
  			enable_cpuutil="kstat - auto"
  			NETCPU_SOURCE="kstat"
  			;;
--                     *-*-freebsd[4-7].* | *-*-netbsd[1-9].* )
+-                     *-*-freebsd[4-8].* | *-*-netbsd[1-9].* )
 +                     *-*-freebsd[4-9].* | *-*-netbsd[1-9].* )
  			use_cpuutil=true
  
@@ -22,7 +22,7 @@
  			enable_rtlookup="rtmget - auto"
  			NETRTLKUP_SOURCE="rtmget"
  			;;
--                     *-*-freebsd[4-7].* | *-*-darwin*)
+-                     *-*-freebsd[4-8].* | *-*-darwin*)
 +                     *-*-freebsd[4-9].* | *-*-darwin*)
  			use_rtlookup=true
  			enable_rtlookup="rtmget - auto"

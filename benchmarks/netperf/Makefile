@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	netperf
-PORTVERSION=	2.5.0
-PORTREVISION=	2
+PORTVERSION=	2.6.0
 CATEGORIES=	benchmarks ipv6
 MASTER_SITES=	ftp://ftp.netperf.org/netperf/ \
 		http://fossies.org/unix/misc/
