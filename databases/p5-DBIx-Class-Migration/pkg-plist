@@ -27,6 +27,7 @@ bin/dbic-migration
 %%SITE_PERL%%/DBIx/Class/Migration/Tutorial/Setup.pod
 %%SITE_PERL%%/DBIx/Class/Migration/Tutorial/Testing.pod
 %%SITE_PERL%%/DBIx/Class/Migration/Tutorial/ThirdMigration.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Types.pm
 %%SITE_PERL%%/Test/DBIx/Class/FixtureCommand/Population.pm
 @dirrm %%SITE_PERL%%/Test/DBIx/Class/FixtureCommand
 @dirrmtry %%SITE_PERL%%/Test/DBIx/Class
