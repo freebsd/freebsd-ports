@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Text-Original
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Find original, non-quoted text in a message
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
 
