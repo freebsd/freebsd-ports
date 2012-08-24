@@ -23,6 +23,9 @@ USE_QMAIL=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 VPOPMAILDIR?=	${PREFIX}/vpopmail
 
+DEPRECATED=	mail/qmail-spamcontrol replaces this port
+EXPIRATION_DATE=2012-11-23
+
 DOCS=		README CHANGELOG
 
 post-install:
