@@ -12,7 +12,7 @@ CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kappa@rambler-co.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reference implementation of OpenID server
 
 BUILD_DEPENDS=	p5-Crypt-DH>=0:${PORTSDIR}/security/p5-Crypt-DH \
