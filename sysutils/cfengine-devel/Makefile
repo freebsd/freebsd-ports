@@ -7,7 +7,7 @@
 
 PORTNAME=	cfengine
 PORTVERSION=	3.4.0a2
-PORTREVISION=
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
@@ -33,6 +33,7 @@ DOCSDIR=	${PREFIX}/share/doc/cfengine
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--htmldir=${DOCSDIR}/html \
 		--mandir=${PREFIX}/man \
+		--with-workdir=/var/cfengine \
 		--with-pcre=${LOCALBASE} \
 		--enable-fhs
 
