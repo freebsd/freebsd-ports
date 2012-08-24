@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	rsyslog
-PORTVERSION=	5.8.12
+PORTVERSION=	5.8.13
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 .ifdef MNAME
 PKGNAMESUFFIX?=	-${MNAME}
 .endif
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	brd@FreeBSD.org
 COMMENT?=	Syslogd supporting SQL, TCP and TLS
 
 .ifdef MNAME
@@ -39,6 +39,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	${PREFIX}/lib/rsyslog
 GNU_CONFIGURE=	yes
+USE_PKGCONFIG=	yes
 
 OPTIONS=	DEBUG	"Enable debugging"	off
 
