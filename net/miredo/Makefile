@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		miredo
-PORTVERSION=	 	1.2.2
-PORTREVISION=	3
+PORTVERSION=	 	1.2.5
 CATEGORIES=		net ipv6
 MASTER_SITES=		http://www.remlab.net/files/miredo/archive/
 
@@ -16,7 +15,7 @@ COMMENT=		Opensource Teredo (IPv6 tunneling) implementation
 
 LIB_DEPENDS=		Judy.1:${PORTSDIR}/devel/judy
 
-USE_BZIP2=		yes
+USE_XZ=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--localstatedir=/var
 USE_LDCONFIG=		yes
