@@ -24,28 +24,24 @@ USE_RC_SUBR=	chillispot
 SUB_FILES=	pkg-message installguide.txt
 MAN8=		chilli.8
 
-OPTIONS=	RAW "Latest Release Of Apache & mySQL" Off \
-		MATURE "Stable Releases of Apache with mod_ssl &  MySQL" Off \
-		FREE "freeRADIUS" Off \
-		OPENR "openradius" Off
+OPTIONS_DEFINE=	APACHE RADIUS
+OPTIONS_SINGLE=	RADIUS
+OPTIONS_SINGLE_RADIUS= FREERADIUS OPENRADIUS
 
-.include <bsd.port.pre.mk>
+FREERADIUS_DESC=depend on FreeRADIUS
+OPENRADIUS_DESC=depend on OpenRADIUS
 
-.if defined(WITH_RAW)
-RUN_DEPENDS+=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache20 \
-	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql50-server
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MAPACHE}
+USE_APACHE_RUN=	22+
 .endif
 
-.if defined(WITH_MATURE)
-RUN_DEPENDS+=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13-modssl \
-	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql41-server
-.endif
-
-.if defined(WITH_FREE)
+.if ${PORT_OPTIONS:MFREERADIUS}
 RUN_DEPENDS+=	radiusd:${PORTSDIR}/net/freeradius
 .endif
 
-.if defined(WITH_OPENR)
+.if ${PORT_OPTIONS:MOPENRADIUS}
 RUN_DEPENDS+=	radiusd:${PORTSDIR}/net/openradius
 .endif
 
@@ -62,4 +58,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
