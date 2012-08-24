@@ -22,6 +22,8 @@ FETCH_ARGS=	-pRr
 NO_BUILD=	yes
 USE_MYSQL=	yes
 
+BROKEN=		fails to fetch
+
 PLIST_FILES=	bin/${PORTNAME}
 
 pre-fetch:
