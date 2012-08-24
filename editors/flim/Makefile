@@ -16,8 +16,6 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER?=	nobutaka@FreeBSD.org
 COMMENT?=	FLIM, message representation or encoding elisp library for emacs
 
-BROKEN=		does not package
-
 PORTCLASS?=	master
 
 # distfile version
