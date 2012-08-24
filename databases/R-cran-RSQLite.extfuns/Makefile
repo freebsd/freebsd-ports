@@ -15,7 +15,7 @@ COMMENT=	SQLite extension functions for RSQLite
 
 LICENSE=	AL2
 
-BUILD_DEPENDS=	R-cran-RSQLite>=0.11.1:${PORTSDIR}/databases/R-cran-DBI
+BUILD_DEPENDS=	R-cran-RSQLite>=0.11.1:${PORTSDIR}/databases/R-cran-RSQLite
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_R_MOD=	yes
