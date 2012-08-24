@@ -7,6 +7,7 @@
 
 PORTNAME=	feappv
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	cad science
 MASTER_SITES=	http://www.ce.berkeley.edu/projects/feap/feappv/
 DISTFILES=	${PORTNAME}${PORTVERSION:S/.//}${EXTRACT_SUFX} ${PDF_MANUAL}
@@ -15,8 +16,6 @@ EXTRACT_ONLY=	${PORTNAME}${PORTVERSION:S/.//}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Finite Element Analysis Program "personal version"
-
-BROKEN=		size mismatch
 
 OPTIONS_DEFINE=	DOCS
 
@@ -35,7 +34,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lX11 -lm
 
 PORTDOCS=	*
-PLIST_FILES=	bin/feappv lib/libfeappv.a
+PLIST_FILES=	bin/feappv lib/Feappv_gnu.a
 
 .include <bsd.port.options.mk>
 
@@ -56,7 +55,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/main/feappv ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/libfeappv.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/Feappv_gnu.a ${PREFIX}/lib
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/manual.pdf ${DOCSDIR}
