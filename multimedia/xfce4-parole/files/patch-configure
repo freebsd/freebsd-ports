@@ -1,6 +1,6 @@
---- configure.orig	2010-01-25 12:47:28.000000000 +0100
-+++ configure	2011-03-11 17:11:27.000000000 +0100
-@@ -18550,7 +18550,6 @@
+--- configure.orig	2012-08-18 13:14:45.000000000 +0000
++++ configure	2012-08-18 16:12:17.000000000 +0000
+@@ -18761,7 +18761,6 @@
  
      fi
    fi
@@ -8,16 +8,7 @@
  
  
      gt_cv_have_gettext=no
-@@ -21388,17 +21387,17 @@
- if test "x${prefix}" = "xNONE"; then
- 
- cat >>confdefs.h <<_ACEOF
--#define PIXMAPS_DIR "${ac_default_prefix}/${DATADIRNAME}/${PACKAGE}/pixmaps"
-+#define PIXMAPS_DIR "${ac_default_prefix}/${DATADIRNAME}/pixmaps"
- _ACEOF
- 
--  pixmapsdir="${ac_default_prefix}/${DATADIRNAME}/${PACKAGE}/pixmaps"
-+  pixmapsdir="${ac_default_prefix}/${DATADIRNAME}/pixmaps"
+@@ -23214,10 +23213,10 @@
  else
  
  cat >>confdefs.h <<_ACEOF
