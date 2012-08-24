@@ -10,7 +10,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: Florian Smeets <flo@FreeBSD.org>
 
   asterisk16 has been unsupported upstream for a while now and has known
-  security vulnerabilities therefor it was removed from the ports tree.
+  security vulnerabilities, therefore it was removed from the ports tree.
   People still running net/asterisk16 should upgrade to net/asterisk.
 
   First delete the asterisk addons, as they are part of asterisk now.
