@@ -833,6 +833,7 @@
 %%WWWDIR%%/_nginx.conf
 %%WWWDIR%%/index.php
 %%WWWDIR%%/install/sqlite.sql.php
+%%WWWDIR%%/install/sqlite3.php
 %%WWWDIR%%/install/css/setup.css
 %%WWWDIR%%/install/sqlsrv.sql.php
 %%WWWDIR%%/install/pgsql.sql.php
@@ -854,6 +855,7 @@
 %%WWWDIR%%/writecomment.php
 %%WWWDIR%%/sitemap.google.php
 %%WWWDIR%%/show.php
+%%WWWDIR%%/rewrite.script
 %%WWWDIR%%/add.php
 %%WWWDIR%%/news.php
 %%WWWDIR%%/pdf.php
