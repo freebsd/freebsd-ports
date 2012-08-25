@@ -19,7 +19,8 @@ USE_QT4=	qmake_build moc_build gui xml designer
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
-OPTIONS=	NLS "Build with NLS support" on
+OPTIONS_DEFINE=	NLS
+OPTIONS_DEFAULT=	NLS
 
 BUILD_WRKSRC=		${WRKSRC}/Qt4
 INSTALL_WRKSRC=		${BUILD_WRKSRC}
@@ -32,7 +33,7 @@ PORTEXAMPLES=	*
 .include "../py-sip/files/bsd.pyqt.mk"
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
@@ -46,7 +47,7 @@ post-patch:
 		s|$$$$\[QT_INSTALL_DATA\]|${PREFIX}/share/qt4|' \
 		qscintilla.pro
 
-.if defined(WITHOUT_NLS)
+.if empty(PORT_OPTIONS:MNLS)
 	cd ${BUILD_WRKSRC} && ${REINPLACE_CMD} -e \
 		's|trans qsci|qsci|' qscintilla.pro
 .endif
@@ -63,14 +64,14 @@ post-configure:
 		${BUILD_WRKSRC}/Makefile
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	cd ${WRKSRC} &&\
 		${MKDIR} ${DOCSDIR}/html ${DOCSDIR}/Scintilla &&\
 		${INSTALL_DATA} NEWS README ${DOCSDIR} &&\
 		${INSTALL_DATA} doc/html-Qt4/* ${DOCSDIR}/html &&\
 		${INSTALL_DATA} doc/Scintilla/* ${DOCSDIR}/Scintilla
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	cd ${WRKSRC}/example-Qt4 &&\
 		${MKDIR} ${EXAMPLESDIR}/images &&\
 		${INSTALL_DATA} *.* ${EXAMPLESDIR} &&\
