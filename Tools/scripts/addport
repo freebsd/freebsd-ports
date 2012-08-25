@@ -169,9 +169,9 @@ if ($dir eq "") {
 
 if ($checkexist) {
 	my $found = 0;
-	print ">> Checking out modules file to scan for duplicates...";
-#	system("$cvs -q co -p modules > $tmpdir/modules") && errx(1, "Could not checkout CVSROOT/modules.");
-	print " [DONE]\n";
+	print ">> Fetching INDEX to scan for duplicates...\n";
+	my $indexfile = "$tmpdir/" . `$make -C $portsdir -V INDEXFILE`;
+	system("$make -C /usr/ports INDEXDIR=$tmpdir fetchindex") && errx(1, "Could not fetch INDEX file.");
 	my @namepart;
 	foreach (split(/\,/, $dir)) {
 		s/^.*\///;
@@ -180,9 +180,10 @@ if ($checkexist) {
 			push(@namepart, $_);
 		}
 	}
-	open(MODULES_FILE, "< $tmpdir/modules") or errx(1, "Modules file in $tmpdir unreadable.");
-	while (my $line = <MODULES_FILE>) {
-		next if $line =~ /^#/;
+	open(INDEXFILE, "< $indexfile") or errx(1, "$indexfile unreadable.");
+	while (my $line = <INDEXFILE>) {
+		$line =~ m,^[^|]*\|/usr/ports/[^/]*/([^|]*)\|,;
+		$line = $1;
 		foreach my $dpart (@namepart) {
 			if ($line =~ /^[^ ]*\b$dpart\b/i) {
 				$line =~ s/\s+/ /g;
