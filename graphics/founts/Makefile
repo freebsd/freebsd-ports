@@ -18,9 +18,11 @@ LICENSE=	GPLv2
 
 USE_SDL=	sdl
 
-PLIST_FILES=	bin/founts
+PLIST_FILES=	bin/${PORTNAME}
 
 PORTDOCS=	Changelog README
+
+.include <bsd.port.options.mk>
 
 do-build:
 	cd ${WRKSRC} && ${CC} -o ${PORTNAME} ${CFLAGS} \
@@ -29,8 +31,9 @@ do-build:
 do-install:
 # Executable
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+
 # Documentation
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .  for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
