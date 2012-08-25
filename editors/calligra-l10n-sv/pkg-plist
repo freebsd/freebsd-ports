@@ -4,7 +4,6 @@ share/doc/HTML/sv/calligra/index.docbook
 share/doc/HTML/sv/kexi/common
 share/doc/HTML/sv/kexi/index.cache.bz2
 share/doc/HTML/sv/kexi/index.docbook
-share/doc/HTML/sv/sheets/a11y.docbook
 share/doc/HTML/sv/sheets/advanced.docbook
 share/doc/HTML/sv/sheets/basics.docbook
 share/doc/HTML/sv/sheets/cellformat0.png
@@ -29,7 +28,6 @@ share/doc/HTML/sv/sheets/configure4.png
 share/doc/HTML/sv/sheets/configure5.png
 share/doc/HTML/sv/sheets/configure6.png
 share/doc/HTML/sv/sheets/copy1.png
-share/doc/HTML/sv/sheets/faq.docbook
 share/doc/HTML/sv/sheets/format.docbook
 share/doc/HTML/sv/sheets/functions.docbook
 share/doc/HTML/sv/sheets/hideformula1.png
@@ -37,7 +35,6 @@ share/doc/HTML/sv/sheets/hideformula2.png
 share/doc/HTML/sv/sheets/hideformula3.png
 share/doc/HTML/sv/sheets/hideformula4.png
 share/doc/HTML/sv/sheets/hideformula5.png
-share/doc/HTML/sv/sheets/importexport.docbook
 share/doc/HTML/sv/sheets/index.cache.bz2
 share/doc/HTML/sv/sheets/index.docbook
 share/doc/HTML/sv/sheets/kbd-focus-ext.png
@@ -50,7 +47,6 @@ share/doc/HTML/sv/sheets/shortcut3.png
 share/doc/HTML/sv/sheets/sort1.png
 share/doc/HTML/sv/sheets/starting1.png
 share/doc/HTML/sv/sheets/tts.png
-share/doc/HTML/sv/stage/a11y.docbook
 share/doc/HTML/sv/stage/autocorrection1.png
 share/doc/HTML/sv/stage/autocorrection2.png
 share/doc/HTML/sv/stage/autocorrection3.png
@@ -75,7 +71,6 @@ share/doc/HTML/sv/stage/configure6c.png
 share/doc/HTML/sv/stage/configure6d.png
 share/doc/HTML/sv/stage/configure6e.png
 share/doc/HTML/sv/stage/configure7.png
-share/doc/HTML/sv/stage/faq.docbook
 share/doc/HTML/sv/stage/great-presentations.docbook
 share/doc/HTML/sv/stage/guides.docbook
 share/doc/HTML/sv/stage/htmlshow1.png
@@ -97,7 +92,6 @@ share/doc/HTML/sv/stage/msexport2b.png
 share/doc/HTML/sv/stage/msexport3.png
 share/doc/HTML/sv/stage/options.docbook
 share/doc/HTML/sv/stage/properties.png
-share/doc/HTML/sv/stage/screen.docbook
 share/doc/HTML/sv/stage/settings01.png
 share/doc/HTML/sv/stage/settings03.png
 share/doc/HTML/sv/stage/settings04.png
@@ -137,9 +131,6 @@ share/doc/HTML/sv/stage/tut23.png
 share/doc/HTML/sv/stage/tut24.png
 share/doc/HTML/sv/stage/tut26.png
 share/doc/HTML/sv/stage/tutorial.docbook
-share/doc/HTML/sv/thesaurus/common
-share/doc/HTML/sv/thesaurus/index.cache.bz2
-share/doc/HTML/sv/thesaurus/index.docbook
 share/locale/sv/LC_MESSAGES/ArtisticTextShape.mo
 share/locale/sv/LC_MESSAGES/AutocorrectPlugin.mo
 share/locale/sv/LC_MESSAGES/CalendarTool.mo
@@ -147,19 +138,16 @@ share/locale/sv/LC_MESSAGES/ChangecasePlugin.mo
 share/locale/sv/LC_MESSAGES/ChartShape.mo
 share/locale/sv/LC_MESSAGES/CommentShape.mo
 share/locale/sv/LC_MESSAGES/FormulaShape.mo
-share/locale/sv/LC_MESSAGES/FreOffice.mo
 share/locale/sv/LC_MESSAGES/KarbonTools.mo
 share/locale/sv/LC_MESSAGES/KexiRelationDesignShapePlugin.mo
-share/locale/sv/LC_MESSAGES/MapShape.mo
 share/locale/sv/LC_MESSAGES/MusicShape.mo
-share/locale/sv/LC_MESSAGES/ParagraphTool.mo
 share/locale/sv/LC_MESSAGES/PathShapes.mo
 share/locale/sv/LC_MESSAGES/PictureShape.mo
 share/locale/sv/LC_MESSAGES/PluginShape.mo
 share/locale/sv/LC_MESSAGES/SpellCheckPlugin.mo
 share/locale/sv/LC_MESSAGES/TableShape.mo
+share/locale/sv/LC_MESSAGES/TemplateShape.mo
 share/locale/sv/LC_MESSAGES/TextShape.mo
-share/locale/sv/LC_MESSAGES/TreeShape.mo
 share/locale/sv/LC_MESSAGES/VariablesPlugin.mo
 share/locale/sv/LC_MESSAGES/VectorShape.mo
 share/locale/sv/LC_MESSAGES/VideoShape.mo
@@ -176,22 +164,17 @@ share/locale/sv/LC_MESSAGES/karbon.mo
 share/locale/sv/LC_MESSAGES/kexi.mo
 share/locale/sv/LC_MESSAGES/kformdesigner_mapbrowser.mo
 share/locale/sv/LC_MESSAGES/kformdesigner_webbrowser.mo
-share/locale/sv/LC_MESSAGES/koabstraction.mo
 share/locale/sv/LC_MESSAGES/kocolorspaces.mo
 share/locale/sv/LC_MESSAGES/koconverter.mo
 share/locale/sv/LC_MESSAGES/koproperty.mo
 share/locale/sv/LC_MESSAGES/koreport_barcodeplugin.mo
 share/locale/sv/LC_MESSAGES/koreport_chartplugin.mo
 share/locale/sv/LC_MESSAGES/koreport_mapsplugin.mo
-share/locale/sv/LC_MESSAGES/koreport_shapeplugin.mo
 share/locale/sv/LC_MESSAGES/koreport_webplugin.mo
-share/locale/sv/LC_MESSAGES/kounavail.mo
 share/locale/sv/LC_MESSAGES/krita.mo
 share/locale/sv/LC_MESSAGES/krossmoduleplan.mo
 share/locale/sv/LC_MESSAGES/krossmoduletables.mo
 share/locale/sv/LC_MESSAGES/krossmodulewords.mo
-share/locale/sv/LC_MESSAGES/kscan_plugin.mo
-share/locale/sv/LC_MESSAGES/kthesaurus.mo
 share/locale/sv/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/sv/LC_MESSAGES/plan.mo
 share/locale/sv/LC_MESSAGES/planlibs.mo
@@ -203,7 +186,6 @@ share/locale/sv/LC_MESSAGES/stage.mo
 share/locale/sv/LC_MESSAGES/tablessolver.mo
 share/locale/sv/LC_MESSAGES/thesaurus_tool.mo
 share/locale/sv/LC_MESSAGES/words.mo
-@dirrm share/doc/HTML/sv/thesaurus
 @dirrm share/doc/HTML/sv/stage
 @dirrm share/doc/HTML/sv/sheets
 @dirrm share/doc/HTML/sv/kexi

@@ -1,21 +1,3 @@
-share/doc/HTML/da/calligra/common
-share/doc/HTML/da/calligra/index.cache.bz2
-share/doc/HTML/da/calligra/index.docbook
-share/doc/HTML/da/sheets/a11y.docbook
-share/doc/HTML/da/sheets/advanced.docbook
-share/doc/HTML/da/sheets/basics.docbook
-share/doc/HTML/da/sheets/commands.docbook
-share/doc/HTML/da/sheets/common
-share/doc/HTML/da/sheets/config.docbook
-share/doc/HTML/da/sheets/configdialog.docbook
-share/doc/HTML/da/sheets/faq.docbook
-share/doc/HTML/da/sheets/format.docbook
-share/doc/HTML/da/sheets/importexport.docbook
-share/doc/HTML/da/sheets/index.cache.bz2
-share/doc/HTML/da/sheets/index.docbook
-share/doc/HTML/da/thesaurus/common
-share/doc/HTML/da/thesaurus/index.cache.bz2
-share/doc/HTML/da/thesaurus/index.docbook
 share/locale/da/LC_MESSAGES/ArtisticTextShape.mo
 share/locale/da/LC_MESSAGES/AutocorrectPlugin.mo
 share/locale/da/LC_MESSAGES/CalendarTool.mo
@@ -23,19 +5,16 @@ share/locale/da/LC_MESSAGES/ChangecasePlugin.mo
 share/locale/da/LC_MESSAGES/ChartShape.mo
 share/locale/da/LC_MESSAGES/CommentShape.mo
 share/locale/da/LC_MESSAGES/FormulaShape.mo
-share/locale/da/LC_MESSAGES/FreOffice.mo
 share/locale/da/LC_MESSAGES/KarbonTools.mo
 share/locale/da/LC_MESSAGES/KexiRelationDesignShapePlugin.mo
-share/locale/da/LC_MESSAGES/MapShape.mo
 share/locale/da/LC_MESSAGES/MusicShape.mo
-share/locale/da/LC_MESSAGES/ParagraphTool.mo
 share/locale/da/LC_MESSAGES/PathShapes.mo
 share/locale/da/LC_MESSAGES/PictureShape.mo
 share/locale/da/LC_MESSAGES/PluginShape.mo
 share/locale/da/LC_MESSAGES/SpellCheckPlugin.mo
 share/locale/da/LC_MESSAGES/TableShape.mo
+share/locale/da/LC_MESSAGES/TemplateShape.mo
 share/locale/da/LC_MESSAGES/TextShape.mo
-share/locale/da/LC_MESSAGES/TreeShape.mo
 share/locale/da/LC_MESSAGES/VariablesPlugin.mo
 share/locale/da/LC_MESSAGES/VectorShape.mo
 share/locale/da/LC_MESSAGES/VideoShape.mo
@@ -52,22 +31,17 @@ share/locale/da/LC_MESSAGES/karbon.mo
 share/locale/da/LC_MESSAGES/kexi.mo
 share/locale/da/LC_MESSAGES/kformdesigner_mapbrowser.mo
 share/locale/da/LC_MESSAGES/kformdesigner_webbrowser.mo
-share/locale/da/LC_MESSAGES/koabstraction.mo
 share/locale/da/LC_MESSAGES/kocolorspaces.mo
 share/locale/da/LC_MESSAGES/koconverter.mo
 share/locale/da/LC_MESSAGES/koproperty.mo
 share/locale/da/LC_MESSAGES/koreport_barcodeplugin.mo
 share/locale/da/LC_MESSAGES/koreport_chartplugin.mo
 share/locale/da/LC_MESSAGES/koreport_mapsplugin.mo
-share/locale/da/LC_MESSAGES/koreport_shapeplugin.mo
 share/locale/da/LC_MESSAGES/koreport_webplugin.mo
-share/locale/da/LC_MESSAGES/kounavail.mo
 share/locale/da/LC_MESSAGES/krita.mo
 share/locale/da/LC_MESSAGES/krossmoduleplan.mo
 share/locale/da/LC_MESSAGES/krossmoduletables.mo
 share/locale/da/LC_MESSAGES/krossmodulewords.mo
-share/locale/da/LC_MESSAGES/kscan_plugin.mo
-share/locale/da/LC_MESSAGES/kthesaurus.mo
 share/locale/da/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/da/LC_MESSAGES/plan.mo
 share/locale/da/LC_MESSAGES/planlibs.mo
@@ -79,6 +53,3 @@ share/locale/da/LC_MESSAGES/stage.mo
 share/locale/da/LC_MESSAGES/tablessolver.mo
 share/locale/da/LC_MESSAGES/thesaurus_tool.mo
 share/locale/da/LC_MESSAGES/words.mo
-@dirrm share/doc/HTML/da/thesaurus
-@dirrm share/doc/HTML/da/sheets
-@dirrm share/doc/HTML/da/calligra

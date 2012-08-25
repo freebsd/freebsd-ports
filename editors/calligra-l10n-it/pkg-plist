@@ -13,9 +13,6 @@ share/doc/HTML/it/stage/index.docbook
 share/doc/HTML/it/stage/menus.docbook
 share/doc/HTML/it/stage/options.docbook
 share/doc/HTML/it/stage/tutorial.docbook
-share/doc/HTML/it/thesaurus/common
-share/doc/HTML/it/thesaurus/index.cache.bz2
-share/doc/HTML/it/thesaurus/index.docbook
 share/locale/it/LC_MESSAGES/ArtisticTextShape.mo
 share/locale/it/LC_MESSAGES/AutocorrectPlugin.mo
 share/locale/it/LC_MESSAGES/CalendarTool.mo
@@ -23,19 +20,16 @@ share/locale/it/LC_MESSAGES/ChangecasePlugin.mo
 share/locale/it/LC_MESSAGES/ChartShape.mo
 share/locale/it/LC_MESSAGES/CommentShape.mo
 share/locale/it/LC_MESSAGES/FormulaShape.mo
-share/locale/it/LC_MESSAGES/FreOffice.mo
 share/locale/it/LC_MESSAGES/KarbonTools.mo
 share/locale/it/LC_MESSAGES/KexiRelationDesignShapePlugin.mo
-share/locale/it/LC_MESSAGES/MapShape.mo
 share/locale/it/LC_MESSAGES/MusicShape.mo
-share/locale/it/LC_MESSAGES/ParagraphTool.mo
 share/locale/it/LC_MESSAGES/PathShapes.mo
 share/locale/it/LC_MESSAGES/PictureShape.mo
 share/locale/it/LC_MESSAGES/PluginShape.mo
 share/locale/it/LC_MESSAGES/SpellCheckPlugin.mo
 share/locale/it/LC_MESSAGES/TableShape.mo
+share/locale/it/LC_MESSAGES/TemplateShape.mo
 share/locale/it/LC_MESSAGES/TextShape.mo
-share/locale/it/LC_MESSAGES/TreeShape.mo
 share/locale/it/LC_MESSAGES/VariablesPlugin.mo
 share/locale/it/LC_MESSAGES/VectorShape.mo
 share/locale/it/LC_MESSAGES/VideoShape.mo
@@ -52,22 +46,17 @@ share/locale/it/LC_MESSAGES/karbon.mo
 share/locale/it/LC_MESSAGES/kexi.mo
 share/locale/it/LC_MESSAGES/kformdesigner_mapbrowser.mo
 share/locale/it/LC_MESSAGES/kformdesigner_webbrowser.mo
-share/locale/it/LC_MESSAGES/koabstraction.mo
 share/locale/it/LC_MESSAGES/kocolorspaces.mo
 share/locale/it/LC_MESSAGES/koconverter.mo
 share/locale/it/LC_MESSAGES/koproperty.mo
 share/locale/it/LC_MESSAGES/koreport_barcodeplugin.mo
 share/locale/it/LC_MESSAGES/koreport_chartplugin.mo
 share/locale/it/LC_MESSAGES/koreport_mapsplugin.mo
-share/locale/it/LC_MESSAGES/koreport_shapeplugin.mo
 share/locale/it/LC_MESSAGES/koreport_webplugin.mo
-share/locale/it/LC_MESSAGES/kounavail.mo
 share/locale/it/LC_MESSAGES/krita.mo
 share/locale/it/LC_MESSAGES/krossmoduleplan.mo
 share/locale/it/LC_MESSAGES/krossmoduletables.mo
 share/locale/it/LC_MESSAGES/krossmodulewords.mo
-share/locale/it/LC_MESSAGES/kscan_plugin.mo
-share/locale/it/LC_MESSAGES/kthesaurus.mo
 share/locale/it/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/it/LC_MESSAGES/plan.mo
 share/locale/it/LC_MESSAGES/planlibs.mo
@@ -79,7 +68,6 @@ share/locale/it/LC_MESSAGES/stage.mo
 share/locale/it/LC_MESSAGES/tablessolver.mo
 share/locale/it/LC_MESSAGES/thesaurus_tool.mo
 share/locale/it/LC_MESSAGES/words.mo
-@dirrm share/doc/HTML/it/thesaurus
 @dirrm share/doc/HTML/it/stage
 @dirrm share/doc/HTML/it/kexi
 @dirrm share/doc/HTML/it/calligra

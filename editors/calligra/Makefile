@@ -7,7 +7,6 @@
 
 PORTNAME=	calligra
 PORTVERSION=	${CALLIGRA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${CALLIGRA_BRANCH}/${PORTNAME}-${PORTVERSION}/
@@ -25,14 +24,16 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		wpd-0.9.9:${PORTSDIR}/textproc/libwpd \
-		wpg-0.2:${PORTSDIR}/graphics/libwpg \
+		wpg-0.2.2:${PORTSDIR}/graphics/libwpg \
 		poppler-qt4.3:${PORTSDIR}/graphics/poppler-qt4 \
 		openjpeg.2:${PORTSDIR}/graphics/openjpeg \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		dcmdata.3:${PORTSDIR}/devel/dcmtk \
 		fftw3.6:${PORTSDIR}/math/fftw3 \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		gsl.16:${PORTSDIR}/math/gsl
+		gsl.16:${PORTSDIR}/math/gsl \
+		wps-0.2.2:${PORTSDIR}/textproc/libwps \
+		visio-0.0.0:${PORTSDIR}/textproc/libvisio
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2
 
 CONFLICTS=	koffice-kde4-2.*

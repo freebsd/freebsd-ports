@@ -2,26 +2,8 @@ share/doc/HTML/nl/calligra/common
 share/doc/HTML/nl/calligra/index.cache.bz2
 share/doc/HTML/nl/calligra/index.docbook
 share/doc/HTML/nl/kexi/common
-share/doc/HTML/nl/kexi/contact-example.png
 share/doc/HTML/nl/kexi/index.cache.bz2
 share/doc/HTML/nl/kexi/index.docbook
-share/doc/HTML/nl/kexi/kexi_create_tab.png
-share/doc/HTML/nl/kexi/kexi_data_tab.png
-share/doc/HTML/nl/kexi/kexi_external_data_tab.png
-share/doc/HTML/nl/kexi/kexi_form_design_tab.png
-share/doc/HTML/nl/kexi/kexi_kexi_tab.png
-share/doc/HTML/nl/kexi/kexi_mainwindow.png
-share/doc/HTML/nl/kexi/kexi_openproject.png
-share/doc/HTML/nl/kexi/kexi_projectnavigator.png
-share/doc/HTML/nl/kexi/kexi_propertyeditor.png
-share/doc/HTML/nl/kexi/kexi_report_design_tab.png
-share/doc/HTML/nl/kexi/kexi_tabbedtoolbar.png
-share/doc/HTML/nl/kexi/kexi_tools_tab.png
-share/doc/HTML/nl/kexi/kexi_windowtabs.png
-share/doc/HTML/nl/kexi/newproject.png
-share/doc/HTML/nl/kexi/projectfilename.png
-share/doc/HTML/nl/kexi/projectstorage.png
-share/doc/HTML/nl/sheets/a11y.docbook
 share/doc/HTML/nl/sheets/advanced.docbook
 share/doc/HTML/nl/sheets/basics.docbook
 share/doc/HTML/nl/sheets/celformat0.png
@@ -36,10 +18,8 @@ share/doc/HTML/nl/sheets/common
 share/doc/HTML/nl/sheets/config.docbook
 share/doc/HTML/nl/sheets/configdialog.docbook
 share/doc/HTML/nl/sheets/copy1.png
-share/doc/HTML/nl/sheets/faq.docbook
 share/doc/HTML/nl/sheets/format.docbook
 share/doc/HTML/nl/sheets/functions.docbook
-share/doc/HTML/nl/sheets/importexport.docbook
 share/doc/HTML/nl/sheets/index.cache.bz2
 share/doc/HTML/nl/sheets/index.docbook
 share/doc/HTML/nl/sheets/shortcut1.png
@@ -47,7 +27,6 @@ share/doc/HTML/nl/sheets/shortcut2.png
 share/doc/HTML/nl/sheets/shortcut3.png
 share/doc/HTML/nl/sheets/sort1.png
 share/doc/HTML/nl/sheets/starting1.png
-share/doc/HTML/nl/stage/a11y.docbook
 share/doc/HTML/nl/stage/barstyle1.png
 share/doc/HTML/nl/stage/barstyle2.png
 share/doc/HTML/nl/stage/barstyle3.png
@@ -56,7 +35,6 @@ share/doc/HTML/nl/stage/barstyle5.png
 share/doc/HTML/nl/stage/barstyle6.png
 share/doc/HTML/nl/stage/barstyle7.png
 share/doc/HTML/nl/stage/common
-share/doc/HTML/nl/stage/faq.docbook
 share/doc/HTML/nl/stage/great-presentations.docbook
 share/doc/HTML/nl/stage/guides.docbook
 share/doc/HTML/nl/stage/htmlshow00.png
@@ -75,7 +53,6 @@ share/doc/HTML/nl/stage/msexport2.png
 share/doc/HTML/nl/stage/msexport3.png
 share/doc/HTML/nl/stage/msexport4.png
 share/doc/HTML/nl/stage/options.docbook
-share/doc/HTML/nl/stage/screen.docbook
 share/doc/HTML/nl/stage/settings01.png
 share/doc/HTML/nl/stage/settings03.png
 share/doc/HTML/nl/stage/settings04.png
@@ -117,9 +94,6 @@ share/doc/HTML/nl/stage/tut21.png
 share/doc/HTML/nl/stage/tut22.png
 share/doc/HTML/nl/stage/tut23.png
 share/doc/HTML/nl/stage/tutorial.docbook
-share/doc/HTML/nl/thesaurus/common
-share/doc/HTML/nl/thesaurus/index.cache.bz2
-share/doc/HTML/nl/thesaurus/index.docbook
 share/locale/nl/LC_MESSAGES/ArtisticTextShape.mo
 share/locale/nl/LC_MESSAGES/AutocorrectPlugin.mo
 share/locale/nl/LC_MESSAGES/CalendarTool.mo
@@ -127,19 +101,16 @@ share/locale/nl/LC_MESSAGES/ChangecasePlugin.mo
 share/locale/nl/LC_MESSAGES/ChartShape.mo
 share/locale/nl/LC_MESSAGES/CommentShape.mo
 share/locale/nl/LC_MESSAGES/FormulaShape.mo
-share/locale/nl/LC_MESSAGES/FreOffice.mo
 share/locale/nl/LC_MESSAGES/KarbonTools.mo
 share/locale/nl/LC_MESSAGES/KexiRelationDesignShapePlugin.mo
-share/locale/nl/LC_MESSAGES/MapShape.mo
 share/locale/nl/LC_MESSAGES/MusicShape.mo
-share/locale/nl/LC_MESSAGES/ParagraphTool.mo
 share/locale/nl/LC_MESSAGES/PathShapes.mo
 share/locale/nl/LC_MESSAGES/PictureShape.mo
 share/locale/nl/LC_MESSAGES/PluginShape.mo
 share/locale/nl/LC_MESSAGES/SpellCheckPlugin.mo
 share/locale/nl/LC_MESSAGES/TableShape.mo
+share/locale/nl/LC_MESSAGES/TemplateShape.mo
 share/locale/nl/LC_MESSAGES/TextShape.mo
-share/locale/nl/LC_MESSAGES/TreeShape.mo
 share/locale/nl/LC_MESSAGES/VariablesPlugin.mo
 share/locale/nl/LC_MESSAGES/VectorShape.mo
 share/locale/nl/LC_MESSAGES/VideoShape.mo
@@ -156,22 +127,17 @@ share/locale/nl/LC_MESSAGES/karbon.mo
 share/locale/nl/LC_MESSAGES/kexi.mo
 share/locale/nl/LC_MESSAGES/kformdesigner_mapbrowser.mo
 share/locale/nl/LC_MESSAGES/kformdesigner_webbrowser.mo
-share/locale/nl/LC_MESSAGES/koabstraction.mo
 share/locale/nl/LC_MESSAGES/kocolorspaces.mo
 share/locale/nl/LC_MESSAGES/koconverter.mo
 share/locale/nl/LC_MESSAGES/koproperty.mo
 share/locale/nl/LC_MESSAGES/koreport_barcodeplugin.mo
 share/locale/nl/LC_MESSAGES/koreport_chartplugin.mo
 share/locale/nl/LC_MESSAGES/koreport_mapsplugin.mo
-share/locale/nl/LC_MESSAGES/koreport_shapeplugin.mo
 share/locale/nl/LC_MESSAGES/koreport_webplugin.mo
-share/locale/nl/LC_MESSAGES/kounavail.mo
 share/locale/nl/LC_MESSAGES/krita.mo
 share/locale/nl/LC_MESSAGES/krossmoduleplan.mo
 share/locale/nl/LC_MESSAGES/krossmoduletables.mo
 share/locale/nl/LC_MESSAGES/krossmodulewords.mo
-share/locale/nl/LC_MESSAGES/kscan_plugin.mo
-share/locale/nl/LC_MESSAGES/kthesaurus.mo
 share/locale/nl/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/nl/LC_MESSAGES/plan.mo
 share/locale/nl/LC_MESSAGES/planlibs.mo
@@ -183,7 +149,6 @@ share/locale/nl/LC_MESSAGES/stage.mo
 share/locale/nl/LC_MESSAGES/tablessolver.mo
 share/locale/nl/LC_MESSAGES/thesaurus_tool.mo
 share/locale/nl/LC_MESSAGES/words.mo
-@dirrm share/doc/HTML/nl/thesaurus
 @dirrm share/doc/HTML/nl/stage
 @dirrm share/doc/HTML/nl/sheets
 @dirrm share/doc/HTML/nl/kexi

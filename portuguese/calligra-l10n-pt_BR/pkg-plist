@@ -17,23 +17,16 @@ share/doc/HTML/pt_BR/sheets/functions.docbook
 share/doc/HTML/pt_BR/sheets/index.cache.bz2
 share/doc/HTML/pt_BR/sheets/index.docbook
 share/doc/HTML/pt_BR/sheets/shortcut1.png
-share/doc/HTML/pt_BR/sheets/shortcut2.png
 share/doc/HTML/pt_BR/sheets/sort1.png
 share/doc/HTML/pt_BR/sheets/starting1.png
-share/doc/HTML/pt_BR/stage/a11y.docbook
 share/doc/HTML/pt_BR/stage/common
-share/doc/HTML/pt_BR/stage/faq.docbook
 share/doc/HTML/pt_BR/stage/great-presentations.docbook
 share/doc/HTML/pt_BR/stage/guides.docbook
 share/doc/HTML/pt_BR/stage/index.cache.bz2
 share/doc/HTML/pt_BR/stage/index.docbook
 share/doc/HTML/pt_BR/stage/menus.docbook
 share/doc/HTML/pt_BR/stage/options.docbook
-share/doc/HTML/pt_BR/stage/screen.docbook
 share/doc/HTML/pt_BR/stage/tutorial.docbook
-share/doc/HTML/pt_BR/thesaurus/common
-share/doc/HTML/pt_BR/thesaurus/index.cache.bz2
-share/doc/HTML/pt_BR/thesaurus/index.docbook
 share/locale/pt_BR/LC_MESSAGES/ArtisticTextShape.mo
 share/locale/pt_BR/LC_MESSAGES/AutocorrectPlugin.mo
 share/locale/pt_BR/LC_MESSAGES/CalendarTool.mo
@@ -41,19 +34,16 @@ share/locale/pt_BR/LC_MESSAGES/ChangecasePlugin.mo
 share/locale/pt_BR/LC_MESSAGES/ChartShape.mo
 share/locale/pt_BR/LC_MESSAGES/CommentShape.mo
 share/locale/pt_BR/LC_MESSAGES/FormulaShape.mo
-share/locale/pt_BR/LC_MESSAGES/FreOffice.mo
 share/locale/pt_BR/LC_MESSAGES/KarbonTools.mo
 share/locale/pt_BR/LC_MESSAGES/KexiRelationDesignShapePlugin.mo
-share/locale/pt_BR/LC_MESSAGES/MapShape.mo
 share/locale/pt_BR/LC_MESSAGES/MusicShape.mo
-share/locale/pt_BR/LC_MESSAGES/ParagraphTool.mo
 share/locale/pt_BR/LC_MESSAGES/PathShapes.mo
 share/locale/pt_BR/LC_MESSAGES/PictureShape.mo
 share/locale/pt_BR/LC_MESSAGES/PluginShape.mo
 share/locale/pt_BR/LC_MESSAGES/SpellCheckPlugin.mo
 share/locale/pt_BR/LC_MESSAGES/TableShape.mo
+share/locale/pt_BR/LC_MESSAGES/TemplateShape.mo
 share/locale/pt_BR/LC_MESSAGES/TextShape.mo
-share/locale/pt_BR/LC_MESSAGES/TreeShape.mo
 share/locale/pt_BR/LC_MESSAGES/VariablesPlugin.mo
 share/locale/pt_BR/LC_MESSAGES/VectorShape.mo
 share/locale/pt_BR/LC_MESSAGES/VideoShape.mo
@@ -70,22 +60,17 @@ share/locale/pt_BR/LC_MESSAGES/karbon.mo
 share/locale/pt_BR/LC_MESSAGES/kexi.mo
 share/locale/pt_BR/LC_MESSAGES/kformdesigner_mapbrowser.mo
 share/locale/pt_BR/LC_MESSAGES/kformdesigner_webbrowser.mo
-share/locale/pt_BR/LC_MESSAGES/koabstraction.mo
 share/locale/pt_BR/LC_MESSAGES/kocolorspaces.mo
 share/locale/pt_BR/LC_MESSAGES/koconverter.mo
 share/locale/pt_BR/LC_MESSAGES/koproperty.mo
 share/locale/pt_BR/LC_MESSAGES/koreport_barcodeplugin.mo
 share/locale/pt_BR/LC_MESSAGES/koreport_chartplugin.mo
 share/locale/pt_BR/LC_MESSAGES/koreport_mapsplugin.mo
-share/locale/pt_BR/LC_MESSAGES/koreport_shapeplugin.mo
 share/locale/pt_BR/LC_MESSAGES/koreport_webplugin.mo
-share/locale/pt_BR/LC_MESSAGES/kounavail.mo
 share/locale/pt_BR/LC_MESSAGES/krita.mo
 share/locale/pt_BR/LC_MESSAGES/krossmoduleplan.mo
 share/locale/pt_BR/LC_MESSAGES/krossmoduletables.mo
 share/locale/pt_BR/LC_MESSAGES/krossmodulewords.mo
-share/locale/pt_BR/LC_MESSAGES/kscan_plugin.mo
-share/locale/pt_BR/LC_MESSAGES/kthesaurus.mo
 share/locale/pt_BR/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/pt_BR/LC_MESSAGES/plan.mo
 share/locale/pt_BR/LC_MESSAGES/planlibs.mo
@@ -97,7 +82,6 @@ share/locale/pt_BR/LC_MESSAGES/stage.mo
 share/locale/pt_BR/LC_MESSAGES/tablessolver.mo
 share/locale/pt_BR/LC_MESSAGES/thesaurus_tool.mo
 share/locale/pt_BR/LC_MESSAGES/words.mo
-@dirrm share/doc/HTML/pt_BR/thesaurus
 @dirrm share/doc/HTML/pt_BR/stage
 @dirrm share/doc/HTML/pt_BR/sheets
 @dirrm share/doc/HTML/pt_BR/kexi
