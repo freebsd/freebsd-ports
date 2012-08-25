@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DMAKI
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	vvatlin@masterhost.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl implementation of JSON-RPC 1.1 protocol
 
 BUILD_DEPENDS=	p5-Class-Accessor-Lite>=0:${PORTSDIR}/devel/p5-Class-Accessor-Lite \

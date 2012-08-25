@@ -11,7 +11,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	vvatlin@masterhost.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Escape and unescape Unicode characters other than ASCII
 
 BUILD_DEPENDS=	p5-Unicode-String>=0:${PORTSDIR}/converters/p5-Unicode-String
