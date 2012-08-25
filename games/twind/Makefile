@@ -7,6 +7,7 @@
 
 PORTNAME=	twind
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
@@ -14,9 +15,6 @@ MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Match and remove all of the blocks before time runs out
 
 LICENSE=	GPLv2
-
-OPTIONS_DEFINE=	DATA
-OPTIONS_DEFAULT=	DATA
 
 USE_SDL=	sdl image mixer
 MAKE_JOBS_SAFE=	yes
@@ -38,10 +36,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
 # Data
-.if ${PORT_OPTIONS:MDATA}
 	${MKDIR} ${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "graphics music sound" ${DATADIR})
-.endif
 
 # Pixmaps
 	${INSTALL_DATA} ${WRKSRC}/graphics/${PORTNAME}.png ${PREFIX}/share/pixmaps/
