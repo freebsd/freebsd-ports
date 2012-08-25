@@ -7,6 +7,7 @@
 
 PORTNAME=	syobon
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://download.zapek.com/software/${PORTNAME}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -30,13 +31,18 @@ PORTDATA=	*
 
 MAKE_ENV=	GAMEDATA="${DATADIR}"
 
+.include <bsd.port.options.mk>
+
 do-install:
+# Executable
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-.if !defined(NOPORTDATA)
+
+# Data
 	${MKDIR} ${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "BGM SE res" ${DATADIR})
-.endif
-.if !defined(NOPORTDOCS)
+
+# Documentation
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
 .endif
