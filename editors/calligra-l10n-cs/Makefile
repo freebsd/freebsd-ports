@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	calligra-l10n
-PORTVERSION=	${CALLIGRA_VERSION}
+PORTVERSION=	2.4.3
 CATEGORIES?=	editors kde
 
 MAINTAINER=	kde@FreeBSD.org

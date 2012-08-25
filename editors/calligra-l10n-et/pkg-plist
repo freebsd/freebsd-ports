@@ -1,7 +1,9 @@
 share/doc/HTML/et/calligra/common
 share/doc/HTML/et/calligra/index.cache.bz2
 share/doc/HTML/et/calligra/index.docbook
-share/doc/HTML/et/sheets/a11y.docbook
+share/doc/HTML/et/kexi/common
+share/doc/HTML/et/kexi/index.cache.bz2
+share/doc/HTML/et/kexi/index.docbook
 share/doc/HTML/et/sheets/advanced.docbook
 share/doc/HTML/et/sheets/basics.docbook
 share/doc/HTML/et/sheets/chart1.png
@@ -10,29 +12,22 @@ share/doc/HTML/et/sheets/common
 share/doc/HTML/et/sheets/config.docbook
 share/doc/HTML/et/sheets/configdialog.docbook
 share/doc/HTML/et/sheets/copy1.png
-share/doc/HTML/et/sheets/faq.docbook
 share/doc/HTML/et/sheets/format.docbook
-share/doc/HTML/et/sheets/importexport.docbook
+share/doc/HTML/et/sheets/functions.docbook
 share/doc/HTML/et/sheets/index.cache.bz2
 share/doc/HTML/et/sheets/index.docbook
 share/doc/HTML/et/sheets/shortcut1.png
 share/doc/HTML/et/sheets/shortcut2.png
 share/doc/HTML/et/sheets/sort1.png
 share/doc/HTML/et/sheets/starting1.png
-share/doc/HTML/et/stage/a11y.docbook
 share/doc/HTML/et/stage/common
-share/doc/HTML/et/stage/faq.docbook
 share/doc/HTML/et/stage/great-presentations.docbook
 share/doc/HTML/et/stage/guides.docbook
 share/doc/HTML/et/stage/index.cache.bz2
 share/doc/HTML/et/stage/index.docbook
 share/doc/HTML/et/stage/menus.docbook
 share/doc/HTML/et/stage/options.docbook
-share/doc/HTML/et/stage/screen.docbook
 share/doc/HTML/et/stage/tutorial.docbook
-share/doc/HTML/et/thesaurus/common
-share/doc/HTML/et/thesaurus/index.cache.bz2
-share/doc/HTML/et/thesaurus/index.docbook
 share/locale/et/LC_MESSAGES/ArtisticTextShape.mo
 share/locale/et/LC_MESSAGES/AutocorrectPlugin.mo
 share/locale/et/LC_MESSAGES/CalendarTool.mo
@@ -40,19 +35,16 @@ share/locale/et/LC_MESSAGES/ChangecasePlugin.mo
 share/locale/et/LC_MESSAGES/ChartShape.mo
 share/locale/et/LC_MESSAGES/CommentShape.mo
 share/locale/et/LC_MESSAGES/FormulaShape.mo
-share/locale/et/LC_MESSAGES/FreOffice.mo
 share/locale/et/LC_MESSAGES/KarbonTools.mo
 share/locale/et/LC_MESSAGES/KexiRelationDesignShapePlugin.mo
-share/locale/et/LC_MESSAGES/MapShape.mo
 share/locale/et/LC_MESSAGES/MusicShape.mo
-share/locale/et/LC_MESSAGES/ParagraphTool.mo
 share/locale/et/LC_MESSAGES/PathShapes.mo
 share/locale/et/LC_MESSAGES/PictureShape.mo
 share/locale/et/LC_MESSAGES/PluginShape.mo
 share/locale/et/LC_MESSAGES/SpellCheckPlugin.mo
 share/locale/et/LC_MESSAGES/TableShape.mo
+share/locale/et/LC_MESSAGES/TemplateShape.mo
 share/locale/et/LC_MESSAGES/TextShape.mo
-share/locale/et/LC_MESSAGES/TreeShape.mo
 share/locale/et/LC_MESSAGES/VariablesPlugin.mo
 share/locale/et/LC_MESSAGES/VectorShape.mo
 share/locale/et/LC_MESSAGES/VideoShape.mo
@@ -69,22 +61,17 @@ share/locale/et/LC_MESSAGES/karbon.mo
 share/locale/et/LC_MESSAGES/kexi.mo
 share/locale/et/LC_MESSAGES/kformdesigner_mapbrowser.mo
 share/locale/et/LC_MESSAGES/kformdesigner_webbrowser.mo
-share/locale/et/LC_MESSAGES/koabstraction.mo
 share/locale/et/LC_MESSAGES/kocolorspaces.mo
 share/locale/et/LC_MESSAGES/koconverter.mo
 share/locale/et/LC_MESSAGES/koproperty.mo
 share/locale/et/LC_MESSAGES/koreport_barcodeplugin.mo
 share/locale/et/LC_MESSAGES/koreport_chartplugin.mo
 share/locale/et/LC_MESSAGES/koreport_mapsplugin.mo
-share/locale/et/LC_MESSAGES/koreport_shapeplugin.mo
 share/locale/et/LC_MESSAGES/koreport_webplugin.mo
-share/locale/et/LC_MESSAGES/kounavail.mo
 share/locale/et/LC_MESSAGES/krita.mo
 share/locale/et/LC_MESSAGES/krossmoduleplan.mo
 share/locale/et/LC_MESSAGES/krossmoduletables.mo
 share/locale/et/LC_MESSAGES/krossmodulewords.mo
-share/locale/et/LC_MESSAGES/kscan_plugin.mo
-share/locale/et/LC_MESSAGES/kthesaurus.mo
 share/locale/et/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/et/LC_MESSAGES/plan.mo
 share/locale/et/LC_MESSAGES/planlibs.mo
@@ -96,7 +83,7 @@ share/locale/et/LC_MESSAGES/stage.mo
 share/locale/et/LC_MESSAGES/tablessolver.mo
 share/locale/et/LC_MESSAGES/thesaurus_tool.mo
 share/locale/et/LC_MESSAGES/words.mo
-@dirrm share/doc/HTML/et/thesaurus
 @dirrm share/doc/HTML/et/stage
 @dirrm share/doc/HTML/et/sheets
+@dirrm share/doc/HTML/et/kexi
 @dirrm share/doc/HTML/et/calligra
