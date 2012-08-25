@@ -7,37 +7,40 @@
 
 PORTNAME=	glightoff
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	nemysis@gmx.ch
-COMMENT=	GLightOff is a simple (but not so easy to solve!) puzzle game
+COMMENT=	Simple (but not so easy to solve!) puzzle game
 
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	glib20 gtk20 intltool
+USE_GNOME=	glib20 gtk20
 USE_XORG=	x11
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README TODO
+PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 
-OPTIONS=	NLS	"Enable gettext support" on
+OPTIONS_DEFINE=	NLS
+NLS_DESC=	Native Language Support via gettext
+OPTIONS_DEFAULT=	NLS
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_NLS)
-PLIST_SUB+=	NLS="@comment "
-.else
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-configure:
-.if defined(WITHOUT_NLS)
+.if empty(PORT_OPTIONS:MNLS)
 	@${REINPLACE_CMD} 's|src po|src|' ${WRKSRC}/Makefile
 .endif
 
