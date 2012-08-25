@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	skrooge
-PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTVERSION=	1.3.2
 CATEGORIES=	finance kde
 MASTER_SITES=	http://skrooge.org/files/
 
@@ -23,10 +22,13 @@ USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_QT4=	qmake_build moc_build uic_build rcc_build \
 		corelib dbus gui script xml sql sql-sqlite3_run
-USE_KDE4=	kdelibs kdeprefix automoc4
+USE_KDE4=	automoc4 kdehier kdelibs kdeprefix sharedmime
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 PLIST_SUB=	VERSION=${PORTVERSION}
+
+post-install:
+	@-update-mime-database ${KDE4_PREFIX}/share/mime
 
 .include <bsd.port.mk>

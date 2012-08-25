@@ -273,9 +273,6 @@ share/doc/HTML/en/skrooge/zoom_graph.png
 share/doc/HTML/es/skrooge/common
 share/doc/HTML/es/skrooge/index.cache.bz2
 share/doc/HTML/es/skrooge/index.docbook
-share/doc/HTML/fr/skrooge/common
-share/doc/HTML/fr/skrooge/index.cache.bz2
-share/doc/HTML/fr/skrooge/index.docbook
 share/doc/HTML/lt/skrooge/after_mass_update.png
 share/doc/HTML/lt/skrooge/bank_accounts.png
 share/doc/HTML/lt/skrooge/before_mass_update.png
@@ -527,6 +524,7 @@ share/locale/en_GB/LC_MESSAGES/skrooge.mo
 share/locale/eo/LC_MESSAGES/skrooge.mo
 share/locale/es/LC_MESSAGES/skrooge.mo
 share/locale/et/LC_MESSAGES/skrooge.mo
+share/locale/fi/LC_MESSAGES/skrooge.mo
 share/locale/fr/LC_MESSAGES/skrooge.mo
 share/locale/ga/LC_MESSAGES/skrooge.mo
 share/locale/gl/LC_MESSAGES/skrooge.mo
@@ -560,7 +558,6 @@ share/mime/packages/x-skg.xml
 @dirrm share/doc/HTML/pt/skrooge
 @dirrm share/doc/HTML/nl/skrooge
 @dirrm share/doc/HTML/lt/skrooge
-@dirrm share/doc/HTML/fr/skrooge
 @dirrm share/doc/HTML/es/skrooge
 @dirrm share/doc/HTML/en/skrooge
 @dirrm share/apps/skrooge_unit
