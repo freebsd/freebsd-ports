@@ -1,0 +1,5 @@
+@unexec sed -i '' -E '/LoadModule[[:blank:]]+authn_otp_module/d' %D/%%APACHEETCDIR%%/httpd.conf
+%%APACHEMODDIR%%/mod_authn_otp.so
+@exec %D/sbin/apxs -e -A -n authn_otp %D/%F
+@unexec echo \"Don\'t forget to remove all mod_authn_otp-related directives in your httpd.conf\"
+bin/otptool
