@@ -9,8 +9,6 @@ lib/libgcrypt.so
 lib/libgcrypt.so.18
 share/aclocal/libgcrypt.m4
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/COPYING.LIB
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/HACKING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL

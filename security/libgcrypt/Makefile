@@ -6,6 +6,7 @@
 
 PORTNAME=	libgcrypt
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +16,6 @@ COMMENT=	General purpose crypto library based on code used in GnuPG
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
-LICENSE_FILE=	${WRKSRC}/COPYING ${WRKSRC}/COPYING.LIB
 
 BUILD_DEPENDS=	libgpg-error>=1.8:${PORTSDIR}/security/libgpg-error
 RUN_DEPENDS=	libgpg-error>=1.8:${PORTSDIR}/security/libgpg-error
@@ -27,7 +27,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 USE_LDCONFIG=	yes
 
-DOCS=	AUTHORS COPYING COPYING.LIB ChangeLog INSTALL NEWS README README.SVN \
+DOCS=	AUTHORS ChangeLog INSTALL NEWS README README.SVN \
 	THANKS TODO doc/HACKING doc/README.apichanges
 INFO=	gcrypt
 
