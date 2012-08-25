@@ -11,7 +11,7 @@ CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A gem that colorizes text on the console
+COMMENT=	Colorize text on the console
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

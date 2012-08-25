@@ -12,7 +12,7 @@ MASTER_SITES=	RG
 DISTNAME=	${GEM_NAME}
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A gem to mirror rubygems
+COMMENT=	Mirror rubygems
 
 RUN_DEPENDS=	rubygem-net-http-persistent>=2.1:${PORTSDIR}/www/rubygem-net-http-persistent
 

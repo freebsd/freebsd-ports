@@ -12,7 +12,7 @@ MASTER_SITES=	RG
 DISTNAME=	${GEM_NAME}
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A gem to run automated tests
+COMMENT=	Run automated tests
 
 USE_RUBY=		yes
 USE_RAKE=		yes
