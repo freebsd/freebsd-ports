@@ -51,6 +51,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ce680f0a-eea6-11e1-8bd8-0022156e8794">
+    <topic>squidclamav -- cross-site scripting in default virus warning pages</topic>
+    <affects>
+      <package>
+        <name>squidclamav</name>
+        <range><lt>5.8</lt></range>
+        <range><ge>6.0</ge><lt>6.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>SquidClamav developers report:</p>
+        <blockquote cite="http://squidclamav.darold.net/news.html">
+          <p>This release fix several security issues by escaping CGI
+          parameters.</p>
+        </blockquote>
+        <p>Prior to versions 6.7 and 5.8, CGI script clwarn.cgi was not
+        properly sanitizing input variables, so they could be used to
+        inject arbitrary strings to the generated page, leading
+        to the cross-site scripting attacks.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-4667</cvename>
+      <url>http://squidclamav.darold.net/news.html</url>
+    </references>
+    <dates>
+      <discovery>2012-07-24</discovery>
+      <entry>2012-08-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8defa0f9-ee8a-11e1-8bd8-0022156e8794">
     <topic>squidclamav -- Denial of Service</topic>
     <affects>
