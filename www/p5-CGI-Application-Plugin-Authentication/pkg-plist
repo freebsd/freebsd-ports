@@ -1,4 +1,7 @@
 %%SITE_PERL%%/CGI/Application/Plugin/Authentication.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authentication/Display/Basic.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authentication/Display/Classic.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Authentication/Display.pm
 %%SITE_PERL%%/CGI/Application/Plugin/Authentication/Driver.pm
 %%SITE_PERL%%/CGI/Application/Plugin/Authentication/Driver/Authen/Simple.pm
 %%SITE_PERL%%/CGI/Application/Plugin/Authentication/Driver/DBI.pm
@@ -18,6 +21,7 @@
 @dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/Authentication/Driver/Filter
 @dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/Authentication/Driver/Authen
 @dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/Authentication/Driver
+@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/Authentication/Display
 @dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/Authentication
 @dirrmtry %%SITE_PERL%%/CGI/Application/Plugin
 @dirrmtry %%SITE_PERL%%/CGI/Application

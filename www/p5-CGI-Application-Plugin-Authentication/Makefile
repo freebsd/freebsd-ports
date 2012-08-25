@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CGI-Application-Plugin-Authentication
-PORTVERSION=	0.14
+PORTVERSION=	0.20
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,7 +25,10 @@ BUILD_DEPENDS+=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 
 PERL_MODBUILD=	yes
 
-MAN3=	CGI::Application::Plugin::Authentication::Driver.3 \
+MAN3=	CGI::Application::Plugin::Authentication::Display.3 \
+	CGI::Application::Plugin::Authentication::Display::Basic.3 \
+	CGI::Application::Plugin::Authentication::Display::Classic.3 \
+	CGI::Application::Plugin::Authentication::Driver.3 \
 	CGI::Application::Plugin::Authentication::Driver::Filter::strip.3 \
 	CGI::Application::Plugin::Authentication::Driver::DBI.3 \
 	CGI::Application::Plugin::Authentication::Driver::Filter::sha1.3 \
