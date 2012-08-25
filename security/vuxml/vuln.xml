@@ -51,6 +51,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8defa0f9-ee8a-11e1-8bd8-0022156e8794">
+    <topic>squidclamav -- Denial of Service</topic>
+    <affects>
+      <package>
+        <name>squidclamav</name>
+        <range><lt>5.8</lt></range>
+        <range><ge>6.0</ge><lt>6.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>SquidClamav developers report:</p>
+        <blockquote cite="http://squidclamav.darold.net/news.html">
+          <p>Add a workaround for a squidGuard bug that unescape
+          the URL and send it back unescaped.  This result in garbage
+          staying into pipe of the system command call and could crash
+          squidclamav on next read or return false information.
+          This is specially true with URL containing the %0D or %0A
+          character.</p>
+        </blockquote>
+        <p>This vulnerability can be triggered only in configurations
+        where external chained URL checker is configured via
+        "squidguard" directive.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-3501</cvename>
+      <url>http://squidclamav.darold.net/news.html</url>
+    </references>
+    <dates>
+      <discovery>2012-07-24</discovery>
+      <entry>2012-08-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a7975581-ee26-11e1-8bd8-0022156e8794">
     <topic>inn -- plaintext command injection into encrypted channel</topic>
     <affects>
