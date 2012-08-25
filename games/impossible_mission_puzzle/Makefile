@@ -26,6 +26,8 @@ PLIST_FILES=	bin/impossible_mission_puzzle
 
 PORTDOCS=	README
 
+.include <bsd.port.options.mk>
+
 do-build:
 	@cd ${WRKSRC} && ${CC} -o ${PORTNAME} ${CFLAGS} \
 	`${SDL_CONFIG} --cflags --libs` puzzle.c
@@ -35,7 +37,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
 # Documentation
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
