@@ -7,6 +7,7 @@
 
 PORTNAME=	kye
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games python
 MASTER_SITES=	http://games.moria.org.uk/kye/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,9 +17,6 @@ MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Puzzle game with arcade game elements
 
 LICENSE=	GPLv2
-
-OPTIONS_DEFINE=	DATA
-OPTIONS_DEFAULT=	DATA
 
 USE_GNOME=	pygtk2 librsvg2
 USE_PYTHON=	yes
@@ -34,10 +32,8 @@ SUB_FILES=	pkg-message
 
 post-install:
 # Data
-.if ${PORT_OPTIONS:MDATA}
 	${INSTALL_DATA} ${WRKSRC}/kye-icon.png ${PREFIX}/share/pixmaps/Kye.png
 	${INSTALL_DATA} ${WRKSRC}/kye-edit-icon.png ${PREFIX}/share/pixmaps/Kye-edit.png
-.endif
 
 # Documentation
 .if ${PORT_OPTIONS:MDOCS}
