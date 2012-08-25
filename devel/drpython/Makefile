@@ -7,6 +7,7 @@
 
 PORTNAME=	drpython
 PORTVERSION=	3.11.3
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	SF/${PORTNAME}/DrPython%20%283.x%29/${PORTVERSION}
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -25,6 +26,10 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	DrPython
 USE_WX=		2.6+
 WX_COMPS=	python:lib
+
+DESKTOP_ENTRIES=	"DrPython" "Python editor and IDE" \
+			"${PYTHONPREFIX_SITELIBDIR}/drpython/bitmaps/drpython.png" \
+			"drpython" "Development;IDE;" "false"
 
 post-install:
 	@${ECHO_CMD} '#!/bin/sh' > ${WRKDIR}/drpython.sh
