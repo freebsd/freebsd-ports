@@ -499,6 +499,7 @@
     SUBDIR += mod_log_sql2-dtc
     SUBDIR += mod_macro22
     SUBDIR += mod_memcache
+    SUBDIR += mod_memcache_block
     SUBDIR += mod_mono
     SUBDIR += mod_musicindex
     SUBDIR += mod_myvhost
