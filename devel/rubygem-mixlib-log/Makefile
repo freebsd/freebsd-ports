@@ -11,7 +11,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	renchap@cocoa-x.com
-COMMENT=	A gem that provides a simple mixin for log functionality
+COMMENT=	Provides a simple mixin for log functionality
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

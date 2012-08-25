@@ -11,7 +11,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A gem for asynchronously executing longer tasks in the background
+COMMENT=	Asynchronously executing longer tasks in the background
 
 RUN_DEPENDS=	rubygem-activesupport>=3.0:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-daemons>=0:${PORTSDIR}/devel/rubygem-daemons

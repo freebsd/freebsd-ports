@@ -12,7 +12,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	freebsdports@chillibear.com
-COMMENT=	A gem wrapper to the ncurses library with wide character support
+COMMENT=	Wrapper to the ncurses library with wide character support
 
 BROKEN=		does not install
 

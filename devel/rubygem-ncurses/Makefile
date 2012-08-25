@@ -11,7 +11,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	freebsdports@chillibear.com
-COMMENT=	A gem wrapper to the ncurses library
+COMMENT=	Wrapper to the ncurses library
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
