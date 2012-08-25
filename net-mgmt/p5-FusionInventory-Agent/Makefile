@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	FusionInventory-Agent
-PORTVERSION=	2.2.4
+PORTVERSION=	2.2.5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:FUSINV
@@ -15,34 +15,41 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Agent for OCS Inventory server and FusionInventory for GLPI servers
 
+OPTIONS=	CUPS "Enable CUPS" OFF \
+		HTTP "Enable HTTP daemon mode" OFF \
+		ZLIB "Enable Zlib compression" ON \
+		SSL "Enable SSL" OFF \
+		DMIDECODE "Enable dmidecode hardware information" ON \
+		PCIUTILS "Enable pciutils hardware information" ON \
+		NMAP "Enable NMAP network inventory" OFF
+
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
-		p5-File-ShareDir>=0:${PORTSDIR}/devel/p5-File-ShareDir \
-		p5-HTTP-Daemon>=0:${PORTSDIR}/www/p5-HTTP-Daemon \
+USE_GMAKE=	yes
+
+BUILD_DEPENDS=	p5-Text-Template>=0:${PORTSDIR}/textproc/p5-Text-Template \
+		p5-ExtUtils-MakeMaker>=6.59:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker \
+		p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require \
+		p5-Net-IP>=0:${PORTSDIR}/net-mgmt/p5-Net-IP \
+		p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5 \
+		p5-XML-TreePP>=0:${PORTSDIR}/textproc/p5-XML-TreePP \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-File-Which>=0:${PORTSDIR}/sysutils/p5-File-Which
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-MockModule>=0:${PORTSDIR}/devel/p5-Test-MockModule \
 		p5-HTTP-Server-Simple>=0:${PORTSDIR}/www/p5-HTTP-Server-Simple \
 		p5-HTTP-Server-Simple-Authen>=0:${PORTSDIR}/www/p5-HTTP-Server-Simple-Authen \
-		p5-Net-CUPS>=0.6:${PORTSDIR}/print/p5-Net-CUPS \
-		p5-Net-IP>=0:${PORTSDIR}/net-mgmt/p5-Net-IP \
-		p5-Proc-Daemon>=0:${PORTSDIR}/devel/p5-Proc-Daemon \
-		p5-Proc-PID-File>=0:${PORTSDIR}/devel/p5-Proc-PID-File \
-		p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require \
-		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
-		p5-XML-TreePP>=0:${PORTSDIR}/textproc/p5-XML-TreePP \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-RUN_DEPENDS+=	dmidecode:${PORTSDIR}/sysutils/dmidecode \
-		lspci:${PORTSDIR}/sysutils/pciutils \
-		nmap:${PORTSDIR}/security/nmap
-
-TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+		p5-HTTP-Proxy>=0:${PORTSDIR}/www/p5-HTTP-Proxy \
+		p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
+		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
+		p5-IO-Capture>=0:${PORTSDIR}/devel/p5-IO-Capture \
 
 PERL_CONFIGURE=	yes
-MAN3PREFIX=	${PREFIX}
 
 MAN1=		fusioninventory-agent.1 \
 		fusioninventory-injector.1
-
 MAN3=		FusionInventory::Agent.3 \
 		FusionInventory::Agent::Config.3 \
 		FusionInventory::Agent::HTTP::Client.3 \
@@ -84,9 +91,38 @@ MAN3=		FusionInventory::Agent.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501000
-BUILD_DEPENDS+=	p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress
-RUN_DEPENDS+=	p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress
+.if defined(WITH_CUPS)
+RUN_DEPENDS+=		p5-Net-CUPS>=0.6:${PORTSDIR}/print/p5-Net-CUPS
 .endif
+
+.if defined(WITH_HTTP)
+RUN_DEPENDS+=		p5-HTTP-Daemon>=0:${PORTSDIR}/www/p5-HTTP-Daemon
+.endif
+
+.if defined(WITH_ZLIB)
+RUN_DEPENDS+=		p5-Compress-Raw-Zlib>=0:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib
+.endif
+
+.if defined(WITH_SSL)
+RUN_DEPENDS+=		p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
+			p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https
+.endif
+
+.if defined(WITH_DMIDECODE)
+RUN_DEPENDS+=	dmidecode:${PORTSDIR}/sysutils/dmidecode
+.endif
+
+.if defined(WITH_PCIUTILS)
+RUN_DEPENDS+=	lspci:${PORTSDIR}/sysutils/pciutils
+.endif
+
+.if defined(WITH_NMAP)
+RUN_DEPENDS+=	nmap:${PORTSDIR}/security/nmap
+.endif
+
+post-patch-script:
+	@${ECHO_MSG} -n ">> Removing unneeded patched files..."
+	@${FIND} ${WRKSRC} -type f \( -name '*.orig' \) -delete
+	@${ECHO_MSG} " [ DONE ]"
 
 .include <bsd.port.post.mk>

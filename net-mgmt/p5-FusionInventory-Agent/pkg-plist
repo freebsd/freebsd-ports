@@ -1,12 +1,5 @@
 bin/fusioninventory-agent
 bin/fusioninventory-injector
-etc/fusioninventory/agent.cfg
-share/fusioninventory/html/favicon.ico
-share/fusioninventory/html/index.tpl
-share/fusioninventory/html/inventory.tpl
-share/fusioninventory/html/logo.png
-share/fusioninventory/html/now.tpl
-share/fusioninventory/html/site.css
 share/fusioninventory/lib/FusionInventory/Agent.pm
 share/fusioninventory/lib/FusionInventory/Agent/Config.pm
 share/fusioninventory/lib/FusionInventory/Agent/HTTP/Client.pm
@@ -52,6 +45,7 @@ share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/BSD/Drives.
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/BSD/Memory.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/BSD/Networks.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/BSD/Softwares.pm
+share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/BSD/Storages/Megaraid.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/BSD/Storages.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/BSD/Uptime.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Generic.pm
@@ -80,6 +74,7 @@ share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Generic/Sof
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Generic/Softwares/RPM.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Generic/Softwares/Slackware.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Generic/Storages.pm
+share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Generic/Storages/3ware.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Generic/Storages/HP.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Generic/USB.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Generic/Users.pm
@@ -113,7 +108,6 @@ share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Linux/LVM.p
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Linux/Memory.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Linux/Networks.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Linux/Storages.pm
-share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Linux/Storages/3ware.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Linux/Storages/Adaptec.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Linux/Storages/Lsilogic.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Linux/Storages/ServeRaid.pm
@@ -146,6 +140,7 @@ share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Solaris/Sof
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Solaris/Storages.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Virtualization.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Virtualization/Hpvm.pm
+share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Virtualization/Jails.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Virtualization/Libvirt.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Virtualization/Lxc.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Virtualization/Parallels.pm
@@ -199,7 +194,14 @@ share/fusioninventory/lib/FusionInventory/Agent/XML/Query.pm
 share/fusioninventory/lib/FusionInventory/Agent/XML/Query/Inventory.pm
 share/fusioninventory/lib/FusionInventory/Agent/XML/Query/Prolog.pm
 share/fusioninventory/lib/FusionInventory/Agent/XML/Response.pm
+share/fusioninventory/html/favicon.ico
+share/fusioninventory/html/index.tpl
+share/fusioninventory/html/inventory.tpl
+share/fusioninventory/html/logo.png
+share/fusioninventory/html/now.tpl
+share/fusioninventory/html/site.css
 share/fusioninventory/pci.ids
+@dirrm share/fusioninventory/html
 @dirrm share/fusioninventory/lib/FusionInventory/Agent/XML/Query
 @dirrm share/fusioninventory/lib/FusionInventory/Agent/XML
 @dirrm share/fusioninventory/lib/FusionInventory/Agent/Tools
@@ -218,6 +220,7 @@ share/fusioninventory/pci.ids
 @dirrm share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Generic/Dmidecode
 @dirrm share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/Generic
 @dirrm share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/BSD/Archs
+@dirrm share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/BSD/Storages
 @dirrm share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/BSD
 @dirrm share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input/AIX
 @dirrm share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Input
@@ -231,6 +234,5 @@ share/fusioninventory/pci.ids
 @dirrm share/fusioninventory/lib/FusionInventory/Agent
 @dirrm share/fusioninventory/lib/FusionInventory
 @dirrm share/fusioninventory/lib
-@dirrm share/fusioninventory/html
 @dirrm share/fusioninventory
 @dirrmtry etc/fusioninventory
