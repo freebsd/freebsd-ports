@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plan9port
-PORTVERSION=	20110901
+PORTVERSION=	20120820
 CATEGORIES=	devel plan9
 MASTER_SITES=	http://swtch.com/plan9port/
 EXTRACT_SUFX=	.tgz
@@ -83,7 +83,7 @@ MAN7=		utf.7 regexp.7 0intro.7 color.7 face.7 font.7 image.7 \
 		keyboard.7 mpictures.7 venti.7 mhtml.7 htmlroff.7
 
 MAN8=		listen1.8 vbackup.8 venti-backup.8 venti-fmt.8 venti.8 \
-		getflags.8
+		getflags.8 mkfs.8
 
 MAN9=		0intro.9p attach.9p clunk.9p error.9p flush.9p open.9p \
 		openfd.9p read.9p remove.9p stat.9p version.9p walk.9p
