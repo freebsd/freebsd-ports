@@ -7,7 +7,7 @@ DIST_SUBDIR=	${PORTNAME}
 CONFLICTS=	bugzilla-3.* \
 		bugzilla-4.2.*
 
-PORTSCOUT=	limitw:1,even
+PORTSCOUT=	limit:^4\.0\.
 
 WWWDIR=	${PREFIX}/www/bugzilla
 
