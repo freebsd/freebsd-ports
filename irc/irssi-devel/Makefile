@@ -7,16 +7,15 @@
 
 PORTNAME=	irssi
 PORTVERSION=	20120624
+PORTREVISION=	1
 CATEGORIES=	irc
-MASTER_SITES=	http://mirror.irssi.org/snapshots/
+MASTER_SITES=	http://bsdcrew.de/distfiles/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A modular IRC client with many features
 
 LIB_DEPENDS=	glib-2.0:${PORTSDIR}/devel/glib20
-
-BROKEN=		size mismatch
 
 CONFLICTS=	irssi-0.8*
 
