@@ -127,6 +127,7 @@ include/eigen3/Eigen/src/Core/util/MKL_support.h
 include/eigen3/Eigen/src/Core/util/Macros.h
 include/eigen3/Eigen/src/Core/util/Memory.h
 include/eigen3/Eigen/src/Core/util/Meta.h
+include/eigen3/Eigen/src/Core/util/NonMPL2.h
 include/eigen3/Eigen/src/Core/util/ReenableStupidWarnings.h
 include/eigen3/Eigen/src/Core/util/StaticAssert.h
 include/eigen3/Eigen/src/Core/util/XprHelper.h
