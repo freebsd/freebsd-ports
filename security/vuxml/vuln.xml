@@ -939,7 +939,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>automake</name>
-	<range><lt>1.12.2</lt></range>
+	<range><ge>1.5.0</ge><lt>1.12.2</lt></range>
       </package>
     </affects>
     <description>
@@ -968,7 +968,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2012-07-09</discovery>
       <entry>2012-08-06</entry>
-      <modified>2012-08-07</modified>
+      <modified>2012-08-25</modified>
     </dates>
   </vuln>
 
