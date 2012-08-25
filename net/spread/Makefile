@@ -7,12 +7,12 @@
 
 PORTNAME=	spread
 PORTVERSION=	3.17.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net perl5
 MASTER_SITES=	http://www.edu-linux.org/down/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	apache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Spread Group Communication System, a network toolkit
 
 MAKE_JOBS_UNSAFE=	yes
