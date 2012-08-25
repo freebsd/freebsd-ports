@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Inspector
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOKUHIROM
@@ -19,8 +19,10 @@ RUN_DEPENDS=	\
 	p5-Class-Accessor-Lite>0:${PORTSDIR}/devel/p5-Class-Accessor-Lite \
 	p5-DBI>0:${PORTSDIR}/databases/p5-DBI
 BUILD_DEPENDS:=	${RUN_DEPENDS}
-TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
-		p5-Test-Simple>=0.94:${PORTSDIR}/devel/p5-Test-Simple
+TEST_DEPENDS=	\
+	p5-DBD-SQLite>0:${PORTSDIR}/databases/p5-DBD-SQLite \
+	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
+	p5-Test-Simple>=0.94:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_MODBUILD=	yes
 
