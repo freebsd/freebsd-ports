@@ -3,6 +3,6 @@
 %%SITE_PERL%%/Mozilla/CA/cacert.pem
 %%SITE_PERL%%/Mozilla/mk-ca-bundle.pl
 @dirrm %%SITE_PERL%%/Mozilla/CA
-@dirrm %%SITE_PERL%%/Mozilla
+@dirrmtry %%SITE_PERL%%/Mozilla
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mozilla/CA
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mozilla
