@@ -7,6 +7,7 @@
 
 PORTNAME=	tanglet
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/
 EXTRACT_SUFX=	-src.tar.bz2
@@ -23,7 +24,9 @@ INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
 
 PORTDATA=	*
-PORTDOCS=	CREDITS ChangeLog INSTALL
+PORTDOCS=	CREDITS ChangeLog
+
+.include <bsd.port.options.mk>
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
@@ -32,6 +35,9 @@ do-configure:
 do-install:
 # Executable
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+
+# Data
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "data translations" ${DATADIR})
 
 # Icons
 	cd ${WRKSRC}/icons && ${FIND} hicolor -type d -name apps -exec \
@@ -44,13 +50,8 @@ do-install:
 	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/icons/${PORTNAME}.desktop ${PREFIX}/share/applications/
 
-# Data
-.if !defined(NOPORTDATA)
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "data translations" ${DATADIR})
-.endif
-
 # Documentation
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .  for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
