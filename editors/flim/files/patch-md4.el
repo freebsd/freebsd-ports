@@ -1,6 +1,22 @@
---- md4.el.orig	2007-09-06 08:39:48.000000000 +0900
-+++ md4.el	2012-08-23 00:42:35.000000000 +0900
-@@ -88,11 +88,10 @@
+Index: md4.el
+===================================================================
+--- md4.el	(revision 2)
++++ md4.el	(working copy)
+@@ -78,21 +78,20 @@
+       (setq m (md4-copy64 (substring buf 64)))
+       (md4-64 m)))
+ 
+-    (concat (md4-pack-int32 (aref md4-buffer 0))
+-	    (md4-pack-int32 (aref md4-buffer 1))
+-	    (md4-pack-int32 (aref md4-buffer 2))
+-	    (md4-pack-int32 (aref md4-buffer 3))))
++  (concat (md4-pack-int32 (aref md4-buffer 0))
++	  (md4-pack-int32 (aref md4-buffer 1))
++	  (md4-pack-int32 (aref md4-buffer 2))
++	  (md4-pack-int32 (aref md4-buffer 3))))
+ 
+ (defsubst md4-F (x y z) (logior (logand x y) (logand (lognot x) z)))
+ (defsubst md4-G (x y z) (logior (logand x y) (logand x z) (logand y z)))
  (defsubst md4-H (x y z) (logxor x y z))
  
  (defmacro md4-make-step (name func)
