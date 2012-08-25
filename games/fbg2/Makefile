@@ -41,8 +41,10 @@ PLIST_DIRSTRY=	share/applications
 PORTDATA=	*
 PORTDOCS=	ChangeLog
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
 .endif
