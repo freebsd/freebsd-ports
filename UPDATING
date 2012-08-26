@@ -5,7 +5,7 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20101128:
+20120822:
   AFFECTS: users of net/asterisk16, net/asterisk16-addons
   AUTHOR: Florian Smeets <flo@FreeBSD.org>
 
