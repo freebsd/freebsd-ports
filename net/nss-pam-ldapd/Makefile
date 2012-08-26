@@ -8,7 +8,7 @@
 #
 
 PORTNAME=		nss-pam-ldapd
-PORTVERSION=		0.8.9
+PORTVERSION=		0.8.10
 CATEGORIES=		net
 MASTER_SITES=		http://arthurdejong.org/nss-pam-ldapd/
 
