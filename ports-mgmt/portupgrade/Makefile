@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	2.4.9.7
+PORTVERSION=	2.4.9.8
 PORTEPOCH=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	SF/portupgrade/pkgtools/dist/ \
@@ -29,12 +29,13 @@ BDB4_DESC=	Use Berkeley DB >=2
 
 CONFLICTS_INSTALL=	portupgrade-devel-*
 
+DIST_SUBDIR=	${PORTNAME}
 USE_BZIP2=	yes
 USE_RUBY=	yes
 
 USE_LDCONFIG=	${PREFIX}/lib/compat/pkg
 
-MAKE_ARGS=	PREFIX="${PREFIX}" RUBY="${RUBY}"
+MAKE_ARGS=	PREFIX="${PREFIX}" RUBY="${RUBY}" RUBY_SITELIBDIR="${RUBY_SITELIBDIR}" MKDIR="${MKDIR}"
 
 MAN1=		pkg_deinstall.1 \
 		pkg_fetch.1 \
@@ -74,6 +75,14 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/bdb1.so:${PORTSDIR}/databases/ruby-bdb1
 # parsedate is needed for date globbing
 .if ${RUBY_VER} == 1.9
 RUN_DEPENDS+=	${RUBY_SITELIBDIR}/parsedate.rb:${PORTSDIR}/devel/ruby-date2
+.endif
+
+# Need to install working script(1)
+.if ${OSVERSION} < 801000
+PLIST_SUB+=	SCRIPT=""
+MAKE_ENV+=	NEED_COMPAT_SCRIPT=yes
+.else
+PLIST_SUB+=	SCRIPT="@comment "
 .endif
 
 pre-extract:

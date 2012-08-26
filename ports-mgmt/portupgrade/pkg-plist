@@ -26,6 +26,12 @@ sbin/portversion
 %%RUBY_SITELIBDIR%%/portinfo.rb
 %%RUBY_SITELIBDIR%%/ports.rb
 %%RUBY_SITELIBDIR%%/portsdb.rb
+@dirrmtry %%RUBY_SITELIBDIR%%
+@dirrmtry lib/ruby/site_ruby
+@dirrmtry lib/ruby
+%%SCRIPT%%@exec mkdir -p %D/libexec/pkgtools 2> /dev/null
+%%SCRIPT%%libexec/pkgtools/script
+%%SCRIPT%%@dirrm libexec/pkgtools
 @unexec if cmp -s %D/etc/pkgtools.conf %D/etc/pkgtools.conf.sample; then rm -f %D/etc/pkgtools.conf; fi
 etc/pkgtools.conf.sample
 @exec [ -f %B/pkgtools.conf ] || cp %B/%f %B/pkgtools.conf
