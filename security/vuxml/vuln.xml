@@ -163,7 +163,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
         <name>inn</name>
-        <range><lt>2.5.3</lt></range>
+        <range><lt>2.5.2_2</lt></range>
       </package>
     </affects>
     <description>
