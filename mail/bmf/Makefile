@@ -14,40 +14,35 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast Bayesian Mail Filter compatible with maildrop and procmail
 
-.if defined(WITH_BDB41)
-LIB_DEPENDS=	db41.1:${PORTSDIR}/databases/db41
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	DB_LIBNAME=-ldb41
-.elif defined(WITH_BDB4)
-LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	DB_LIBNAME=-ldb4
-.elif defined(WITH_BDB3)
-LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	DB_LIBNAME=-ldb3
+OPTIONS_DEFINE=		BDB MYSQL DEBUG
+OPTIONS_DEFAULT=	BDB
+BDB_DESC=			Berkeley DB support (may specify w/ WITH_BDB_VER)
+MYSQL_DESC=			Adds MySQL Support
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MBDB}
+USE_BDB=	40+
+CFLAGS+=	-I${BDB_INCLUDE_DIR}
+LDFLAGS+=	-L${BDB_LIB_DIR}
+CONFIGURE_ARGS+=--with-libdb=yes
+CONFIGURE_ENV+=	DB_LIBNAME=-l${BDB_LIB_NAME}
+.else
+CONFIGURE_ARGS+=--with-libdb=no
+.endif
+.if ${PORT_OPTIONS:MMYSQL}
+USE_MYSQL=	client
+CONFIGURE_ARGS+=--with-mysql
 .endif
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-package
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--debug=yes
 .endif
 
 MAN1=	bmf.1 bmfconv.1
-
-pre-everything::
-	@${ECHO} ""
-	@${ECHO} "${PORTNAME} has several tunables available:"
-	@${ECHO} ""
-	@${ECHO} "	WITH_BDB4		Builds with BDB4 support"
-	@${ECHO} "	WITH_BDB41		Builds with BDB4.1 support"
-	@${ECHO} "	WITH_DEBUG		Builds with debugging arguments"
-	@${ECHO} "	WITH_MYSQL		Builds with MySQL support"
-	@${ECHO} ""
-	@${ECHO} "	Note: the default database is BDB3"
-	@${ECHO} ""
 
 post-install:
 	@ ${MKDIR} ${PREFIX}/share/bmf
