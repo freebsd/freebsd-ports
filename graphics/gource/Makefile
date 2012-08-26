@@ -19,7 +19,7 @@ LIB_DEPENDS=	SDL_image:${PORTSDIR}/graphics/sdl_image \
 		ftgl:${PORTSDIR}/graphics/ftgl \
 		pcre:${PORTSDIR}/devel/pcre \
 		GLEW:${PORTSDIR}/graphics/glew \
-		libboost_filesystem:${PORTSDIR}/devel/boost-libs
+		boost_filesystem:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:${PORTSDIR}/math/glm
 
 GNU_CONFIGURE=	yes
