@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	RT-Client-REST
-PORTVERSION=	0.41
+PORTVERSION=	0.43
 PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -27,6 +27,7 @@ PERL_CONFIGURE=	yes
 MAN3=	RT::Client::REST.3 \
 	RT::Client::REST::Attachment.3 \
 	RT::Client::REST::Exception.3 \
+	RT::Client::REST::Group.3 \
 	RT::Client::REST::Object.3 \
 	RT::Client::REST::Queue.3 \
 	RT::Client::REST::SearchResult.3 \
