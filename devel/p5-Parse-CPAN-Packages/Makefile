@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Parse-CPAN-Packages
-PORTVERSION=	2.36
+PORTVERSION=	2.37
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -31,7 +31,7 @@ MAN3=	Parse::CPAN::Packages.3 \
 	Parse::CPAN::Packages::Package.3
 
 regression-test: build
-	cd ${WRKSRC}/ && ${MAKE} test
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test
 
 .include <bsd.port.pre.mk>
 
