@@ -42,9 +42,6 @@
     SUBDIR += e17-module-diskio
     SUBDIR += e17-module-drawer
     SUBDIR += e17-module-e-tiling
-    SUBDIR += e17-module-efm_nav
-    SUBDIR += e17-module-efm_path
-    SUBDIR += e17-module-efm_pathbar
     SUBDIR += e17-module-elfe
     SUBDIR += e17-module-empris
     SUBDIR += e17-module-engage
@@ -69,7 +66,6 @@
     SUBDIR += e17-module-mpdule
     SUBDIR += e17-module-net
     SUBDIR += e17-module-news
-    SUBDIR += e17-module-notification
     SUBDIR += e17-module-penguins
     SUBDIR += e17-module-photo
     SUBDIR += e17-module-places

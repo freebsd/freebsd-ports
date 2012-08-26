@@ -158,9 +158,7 @@
     SUBDIR += evas-engine-opengl
     SUBDIR += evas-engine-sdl
     SUBDIR += evas-engine-x11
-    SUBDIR += evas-engine-xrender
     SUBDIR += evas-loader-bmp
-    SUBDIR += evas-loader-edb
     SUBDIR += evas-loader-eet
     SUBDIR += evas-loader-generic
     SUBDIR += evas-loader-gif
