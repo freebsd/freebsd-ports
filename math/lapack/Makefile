@@ -6,11 +6,9 @@
 #
 
 PORTNAME?=	lapack
-PORTVERSION=	3.4.0
-PORTREVISION?=	2
+PORTVERSION=	3.4.1
 CATEGORIES=	math
-MASTER_SITES=	NL/lapack/ \
-		http://service-spi.web.cern.ch/service-spi/external/tarFiles/
+MASTER_SITES=	NL/lapack/
 DISTFILES=	lapack-${PORTVERSION}.tgz
 .if make(makesum) || !(defined(BLAS_SLAVEPORT) || defined(XLAPACK_SLAVEPORT))
 DISTFILES+=		manpages-${PORTVERSION}.tgz
