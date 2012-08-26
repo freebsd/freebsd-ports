@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Shorten
-PORTVERSION=	3.02
+PORTVERSION=	3.03
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,7 +30,11 @@ MAN3=		WWW::Shorten.3 \
 		WWW::Shorten::TinyClick.3 \
 		WWW::Shorten::TinyURL.3 \
 		WWW::Shorten::Tinylink.3 \
+		WWW::Shorten::UserAgent.3 \
 		WWW::Shorten::_dead.3 \
 		WWW::Shorten::generic.3
+
+regression-test: build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test
 
 .include <bsd.port.mk>
