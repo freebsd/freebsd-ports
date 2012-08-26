@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.2.37
+DISTVERSION=	0.2.2.38
 CATEGORIES=	security net ipv6
 MASTER_SITES=	https://www.torproject.org/dist/ \
 		ftp://ftp.bit.nl/mirror/tor/ \
@@ -36,7 +36,6 @@ MASTER_SITES=	https://www.torproject.org/dist/ \
 		http://tor.searchprivate.com/dist/ \
 		http://tor.spline.de/dist/ \
 		http://tor.taiga-san.net/dist/ \
-		http://tor.unregistered.eu/dist/ \
 		http://tor.vesta.nu/dist/ \
 		http://tordistua.reactor-xg.kiev.ua/ \
 		http://torproj.xpdm.us/dist/ \
@@ -70,7 +69,7 @@ CONFIGURE_ENV=	TOR_CPPFLAGS_libevent="-I${LOCALBASE}/include/event2 -I${LOCALBAS
 		TOR_LDFLAGS_libevent="-L${LOCALBASE}/lib/event2" \
 		TOR_LIBEVENT_LIBS="-levent-2.0"
 
-OPTIONS_DEFINE= BUFFREELISTS GMAKE INSTR_DOWNLOADS TCMALLOC THREADS TRANSPARENT
+OPTIONS_DEFINE =	BUFFREELISTS GMAKE INSTR_DOWNLOADS TCMALLOC THREADS TRANSPARENT
 
 BUFFREELISTS_DESC=	Freelists for buffer RAM
 GMAKE_DESC=		Parallel build safety via GNU make
