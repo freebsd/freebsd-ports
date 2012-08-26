@@ -3651,3 +3651,11 @@ databases/libudbc||2012-08-21|Has expired: Does not fetch and no vendor support 
 net/asterisk16||2012-08-22|Unsupported upstream, please use net/asterisk instead.
 net/asterisk16-addons||2012-08-22|Unsupported upstream, now part of net/asterisk.
 databases/edb||2012-08-26|Has expired: Deprecated by enlightenment.org team
+databases/php5-rrdtool||2012-08-26|Has expired: deprecated via upstream please use databases/pecl-rrd.
+graphics/evas-engine-xrender||2012-08-26|Has expired: Deprecated by enlightenment.org
+graphics/evas-loader-edb||2012-08-26|Has expired: Deprecated by enlightenment.org
+www/linux-f10-flashplugin10||2012-08-26|Has expired: has vulnerabilities and is EOL
+x11-wm/e17-module-efm_nav||2012-08-26|Has expired: Deprecated by enlightenment.org
+x11-wm/e17-module-efm_path||2012-08-26|Has expired: Deprecated by enlightenment.org
+x11-wm/e17-module-efm_pathbar||2012-08-26|Has expired: Deprecated by enlightenment.org
+x11-wm/e17-module-notification||2012-08-26|Has expired: Merged into x11-wm/enlightenment

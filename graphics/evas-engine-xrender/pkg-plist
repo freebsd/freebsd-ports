@@ -1,9 +1,0 @@
-include/evas-1/Evas_Engine_XRender_X11.h
-lib/evas/modules/engines/xrender_x11/%%E17_ARCH%%/module.so
-libdata/pkgconfig/evas-xrender-x11.pc
-@dirrm lib/evas/modules/engines/xrender_x11/%%E17_ARCH%%
-@dirrm lib/evas/modules/engines/xrender_x11
-@dirrmtry lib/evas/modules/engines
-@dirrmtry lib/evas/modules
-@dirrmtry lib/evas
-@dirrmtry include/evas-1
