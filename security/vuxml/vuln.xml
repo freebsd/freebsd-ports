@@ -51,6 +51,46 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="aa4d3d73-ef17-11e1-b593-00269ef07d24">
+    <topic>Calligra, KOffice -- input validation failure</topic>
+    <affects>
+      <package>
+	<name>koffice</name>
+	<range><le>1.6.3_18,2</le></range>
+      </package>
+      <package>
+	<name>koffice-kde4</name>
+	<range><le>2.3.3_7</le></range>
+      </package>
+      <package>
+	<name>calligra</name>
+	<range><lt>2.5.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>KDE Security Advisory reports:</p>
+	<blockquote cite="http://www.kde.org/info/security/advisory-20120810-1.txt">
+	  <p>A flaw has been found which can allow malicious code to take
+	    advantage of an input validation failure in the Microsoft import
+	    filter in Calligra and KOffice. Exploitation can allow the attacker
+	    to gain control of the running process and execute code on its
+	    behalf.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-3455</cvename>
+      <cvename>CVE-2012-3456</cvename>
+      <url>http://www.kde.org/info/security/advisory-20120810-1.txt</url>
+      <url>http://media.blackhat.com/bh-us-12/Briefings/C_Miller/BH_US_12_Miller_NFC_attack_surface_WP.pdf</url>
+    </references>
+    <dates>
+      <discovery>2012-08-10</discovery>
+      <entry>2012-08-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ce680f0a-eea6-11e1-8bd8-0022156e8794">
     <topic>squidclamav -- cross-site scripting in default virus warning pages</topic>
     <affects>
