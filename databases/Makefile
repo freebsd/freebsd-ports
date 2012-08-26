@@ -60,7 +60,6 @@
     SUBDIR += dbtool
     SUBDIR += dbview
     SUBDIR += drizzle
-    SUBDIR += edb
     SUBDIR += embedded_innodb
     SUBDIR += emma
     SUBDIR += erlang-mysql
