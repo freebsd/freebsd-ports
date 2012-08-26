@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.3.19-rc
+DISTVERSION=	0.2.3.20-rc
 CATEGORIES=	security net ipv6
 MASTER_SITES=	https://www.torproject.org/dist/ \
 		ftp://ftp.bit.nl/mirror/tor/ \
@@ -36,7 +36,6 @@ MASTER_SITES=	https://www.torproject.org/dist/ \
 		http://tor.searchprivate.com/dist/ \
 		http://tor.spline.de/dist/ \
 		http://tor.taiga-san.net/dist/ \
-		http://tor.unregistered.eu/dist/ \
 		http://tor.vesta.nu/dist/ \
 		http://tordistua.reactor-xg.kiev.ua/ \
 		http://torproj.xpdm.us/dist/ \
