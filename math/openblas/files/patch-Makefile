@@ -1,0 +1,84 @@
+--- Makefile.orig	2012-07-06 23:09:12.000000000 +0900
++++ Makefile	2012-07-12 00:25:31.000000000 +0900
+@@ -34,7 +34,7 @@
+ 	@echo " OpenBLAS build complete."
+ 	@echo
+ 	@echo "  OS               ... $(OSNAME)             "
+-	@echo "  Architecture     ... $(ARCH)               "
++	@echo "  Architecture     ... $(ARCH_)               "
+ ifndef BINARY64
+ 	@echo "  BINARY           ... 32bit                 "
+ else
+@@ -203,7 +203,7 @@
+ netlib : 
+ 
+ else
+-netlib : lapack-3.4.1 patch.for_lapack-3.4.1 $(NETLIB_LAPACK_DIR)/make.inc
++netlib : lapack-%%LAPACKVER%% patch.for_lapack-%%LAPACKVER%% $(NETLIB_LAPACK_DIR)/make.inc
+ ifndef NOFORTRAN
+ 	-@$(MAKE) -C $(NETLIB_LAPACK_DIR) lapacklib
+ endif
+@@ -212,7 +212,7 @@
+ endif
+ endif
+ 
+-prof_lapack : lapack-3.4.1 $(NETLIB_LAPACK_DIR)/make.inc
++prof_lapack : lapack-%%LAPACKVER%% $(NETLIB_LAPACK_DIR)/make.inc
+ 	-@$(MAKE) -C $(NETLIB_LAPACK_DIR) lapack_prof
+ 
+ $(NETLIB_LAPACK_DIR)/make.inc :
+@@ -225,7 +225,7 @@
+ 	-@echo "LOADOPTS    = $(FFLAGS) $(EXTRALIB)" >> $(NETLIB_LAPACK_DIR)/make.inc
+ 	-@echo "CC          = $(CC)" >> $(NETLIB_LAPACK_DIR)/make.inc
+ 	-@echo "CFLAGS      = $(CFLAGS)" >> $(NETLIB_LAPACK_DIR)/make.inc
+-	-@echo "ARCH        = $(AR)" >> $(NETLIB_LAPACK_DIR)/make.inc
++	-@echo "ARCH_        = $(AR)" >> $(NETLIB_LAPACK_DIR)/make.inc
+ 	-@echo "ARCHFLAGS   = -ru" >> $(NETLIB_LAPACK_DIR)/make.inc
+ 	-@echo "RANLIB      = $(RANLIB)" >> $(NETLIB_LAPACK_DIR)/make.inc
+ 	-@echo "LAPACKLIB   = ../$(LIBNAME)" >> $(NETLIB_LAPACK_DIR)/make.inc
+@@ -237,24 +237,17 @@
+ 	-@cat  make.inc >> $(NETLIB_LAPACK_DIR)/make.inc
+ endif
+ 
+-lapack-3.4.1 : lapack-3.4.1.tgz
++lapack-%%LAPACKVER%% : lapack-%%LAPACKVER%%.tgz
+ ifndef NOFORTRAN
+ ifndef NO_LAPACK
+-	@if test `$(MD5SUM) lapack-3.4.1.tgz | $(AWK) '{print $$1}'` = 44c3869c38c8335c2b9c2a8bb276eb55; then \
+-		echo $(TAR) zxf $< ;\
+-		$(TAR) zxf $< && (cd $(NETLIB_LAPACK_DIR); $(PATCH) -p1 < ../patch.for_lapack-3.4.1) ;\
+-		rm -f $(NETLIB_LAPACK_DIR)/lapacke/make.inc ;\
+-	else \
+-		rm -rf $(NETLIB_LAPACK_DIR) ;\
+-		echo "	Cannot download lapack-3.4.1.tgz or the MD5 check sum is wrong (Please use orignal)."; \
+-		exit 1; \
+-	fi
++	echo $(TAR) zxf $< ;\
++	$(TAR) zxf $< && (cd $(NETLIB_LAPACK_DIR); $(PATCH) -p1 < ../patch.for_lapack-%%LAPACKVER%%)
+ endif
+ endif
+ 
+-LAPACK_URL=http://www.netlib.org/lapack/lapack-3.4.1.tgz
++LAPACK_URL=http://www.netlib.org/lapack/lapack-%%LAPACKVER%%.tgz
+ 
+-lapack-3.4.1.tgz :
++lapack-%%LAPACKVER%%.tgz :
+ ifndef NOFORTRAN
+ #http://stackoverflow.com/questions/7656425/makefile-ifeq-logical-or
+ ifeq ($(OSNAME), $(filter $(OSNAME),Darwin NetBSD))
+@@ -278,7 +271,7 @@
+ 	-wget http://www.netlib.org/lapack/timing/timing.tgz
+ endif
+ 
+-lapack-timing : lapack-3.4.1 large.tgz timing.tgz
++lapack-timing : lapack-%%LAPACKVER%% large.tgz timing.tgz
+ ifndef NOFORTRAN
+ 	(cd $(NETLIB_LAPACK_DIR); $(TAR) zxf ../timing.tgz TIMING)
+ 	(cd $(NETLIB_LAPACK_DIR)/TIMING; $(TAR) zxf ../../large.tgz )
+@@ -316,4 +309,4 @@
+ 	rm -rf $(NETLIB_LAPACK_DIR) ;\
+ 	fi
+ 	@rm -f *.grd Makefile.conf_last config_last.h
+-	@echo Done.
+\ No newline at end of file
++	@echo Done.
