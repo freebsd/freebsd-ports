@@ -456,10 +456,11 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_response-${NGINX_RESPONSE_VERSIO
 
 .if ${PORT_OPTIONS:MHTTP_SUBS_FILTER}
 USE_HTTP_REWRITE=	yes
-GIT_HTTP_SUBS_FILTER_VERSION=	0-g183b4a1
+NGINX_HTTP_SUBS_FILTER_VERSION=	0.6.2
+GIT_HTTP_SUBS_FILTER_VERSION=	0-g27a01b3
 FETCH_ARGS=	-pRr
-MASTER_SITES+=	https://github.com/yaoweibin/ngx_http_substitutions_filter_module/tarball/master/:subs_filter
-DISTFILES+=	yaoweibin-ngx_http_substitutions_filter_module-${GIT_HTTP_SUBS_FILTER_VERSION}.tar.gz:subs_filter
+MASTER_SITES+=	https://github.com/yaoweibin/ngx_http_substitutions_filter_module/tarball/${NGINX_HTTP_SUBS_FILTER_VERSION}/:subs_filter
+DISTFILES+=	yaoweibin-ngx_http_substitutions_filter_module-${NGINX_HTTP_SUBS_FILTER_VERSION}-${GIT_HTTP_SUBS_FILTER_VERSION}.tar.gz:subs_filter
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/yaoweibin-ngx_http_substitutions_filter_module-${GIT_HTTP_SUBS_FILTER_VERSION:S/^0-g//}
 .endif
 
