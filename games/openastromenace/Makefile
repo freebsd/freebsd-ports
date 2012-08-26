@@ -9,18 +9,18 @@ PORTNAME=	openastromenace
 PORTVERSION=	1.2.0
 PORTREVISION=	11
 CATEGORIES=	games
-MASTER_SITES=	SF
-DISTFILES=	openamenace-src-${PORTVERSION}${EXTRACT_SUFX} \
-		oamenace-data-${PORTVERSION}${EXTRACT_SUFX} \
-		oamenace-lang-${LANGPACK}-${PORTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:source,data/}
+DISTFILES=	openamenace-src-${PORTVERSION}${EXTRACT_SUFX}:source \
+		oamenace-data-1.2.0.tar.bz2:data \
+		oamenace-lang-${LANGPACK}-${PORTVERSION}${EXTRACT_SUFX}:data
+MASTER_SITE_SUBDIR=     openastromenace/openastromenace/1.2.0/:source \
+                        openastromenace/openastromenace%20vfs/1.2.0/:data
 
 MAINTAINER=	proler@gmail.com
 COMMENT=	Hardcore 3D space shooter with spaceship upgrade possibilities
 
 LIB_DEPENDS+=	vorbisfile:${PORTSDIR}/audio/libvorbis \
 		jpeg:${PORTSDIR}/graphics/jpeg
-
-BROKEN=		does not compile
 
 USE_BZIP2=	yes
 USE_GL=		gl glu
@@ -31,20 +31,22 @@ USE_CMAKE=	yes
 WRKSRC=		${WRKDIR}/OpenAstroMenaceSVN
 USE_DOS2UNIX=	yes
 
-OPTIONS=	EN	"English language pack"	on \
-		DE	"German language pack"	off \
-		RU	"Russian language pack"	off
+OPTIONS_SINGLE=	LANG
+OPTIONS_SINGLE_LANG=	EN DE RU
+OPTIONS_DEFAULT=EN
+
+EN_DESC=	"English language pack"
+DE_DESC=	"German language pack"
+RU_DESC=	"Russian language pack"
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_EN)
+.if ${PORT_OPTIONS:MEN}
 LANGPACK=	en
-.elif defined(WITH_DE)
+.elif ${PORT_OPTIONS:MDE}
 LANGPACK=	de
-.elif defined(WITH_RU)
+.elif ${PORT_OPTIONS:MRU}
 LANGPACK=	ru
-.else
-IGNORE=		cannot be build without/with multiple language packs. Please rerun 'make config' and select single language pack
 .endif
 
 .if !defined(WITHOUT_NOUVEAU)
