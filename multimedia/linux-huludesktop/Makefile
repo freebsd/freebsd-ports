@@ -7,7 +7,7 @@
 
 PORTNAME=	huludesktop
 PORTVERSION=	0.9.8
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	multimedia linux
 MASTER_SITES=	http://download.hulu.com/
 PKGNAMEPREFIX=	linux-
@@ -28,7 +28,7 @@ RPM2CPIO?=	${LOCALBASE}/bin/rpm2cpio
 FLASHPLUGIN=	linux-${USE_LINUX}-flashplugin
 FLASHPATH=	${LOCALBASE}/lib/npapi/${FLASHPLUGIN}/libflashplayer.so
 EXTRACT_DEPENDS+=	${RPM2CPIO}:${PORTSDIR}/archivers/rpm
-RUN_DEPENDS+=	${FLASHPATH}:${PORTSDIR}/www/${FLASHPLUGIN}10
+RUN_DEPENDS+=	${FLASHPATH}:${PORTSDIR}/www/${FLASHPLUGIN}11
 
 RESTRICTED=	Non-redistributable, non-commercial, export controlled
 
