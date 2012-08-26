@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kdesvn
-DISTVERSION=	1.5.5
-PORTREVISION=	2
+DISTVERSION=	1.6.0
 CATEGORIES=	devel kde
 MASTER_SITES=	http://kdesvn.alwins-world.de/downloads/
 
@@ -22,7 +21,6 @@ CONFLICTS=	qsvn-[0-9]*
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 CMAKE_ARGS+=	-DSUBVERSION_INCLUDE_DIR=${LOCALBASE}/include/subversion-1
-USE_GETTEXT=	yes
 USE_KDE4=	kdelibs kdeprefix automoc4
 USE_LDCONFIG=	yes
 USE_QT4=	corelib gui xml network dbus svg qt3support sql \
@@ -31,17 +29,26 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		kdesvn.1 kdesvnaskpass.1
 
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
+.endif
+
 post-patch:
 	${RM} ${WRKSRC}/src/kiosvn/svn*.protocol
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${ECHO} "ADD_SUBDIRECTORY(man)" > ${WRKSRC}/doc/CMakeLists.txt
-.else
-#Fix build with kdelibs>=4.5.0
-	${REINPLACE_CMD} -e 's,V4.1.2-Based,V4.2-Based,g' \
-		${WRKSRC}/doc/nl/index.docbook
+.endif
+.if empty(PORT_OPTIONS:MNLS)
+	${REINPLACE_CMD} -e 's,ADD_SUBDIRECTORY(po), ,g' \
+		${WRKSRC}/CMakeLists.txt
 .endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
