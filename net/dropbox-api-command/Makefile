@@ -6,13 +6,9 @@
 #
 
 PORTNAME=	dropbox-api-command
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	https://github.com/s-aska/${PORTNAME}/raw/${PORTVERSION}/
-DISTNAME=	dropbox-api
-EXTRACT_SUFX=	# empty
-EXTRACT_ONLY=	# empty
 
 MAINTAINER=	changlp@cs.nctu.edu.tw
 COMMENT=	Dropbox API wrapper command
@@ -23,13 +19,21 @@ RUN_DEPENDS=	p5-DateTime-Format-Strptime>=0:${PORTSDIR}/devel/p5-DateTime-Format
 		p5-WebService-Dropbox>=0:${PORTSDIR}/net/p5-WebService-Dropbox \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class
 
-FETCH_ARGS=	-pRr
+USE_GITHUB=	yes
+GH_ACCOUNT=	s-aska
+GH_TAGNAME=	${PORTVERSION}
+GH_COMMIT=	b29aaad
+
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
-PLIST_FILES=	bin/dropbox-api
+PLIST_FILES=	bin/dropbox-api bin/upload-to-dropbox
+
+post-patch:
+	${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|g' ${WRKSRC}/upload-to-dropbox
 
 do-install:
-	${INSTALL_SCRIPT} ${DISTDIR}/dropbox-api ${PREFIX}/bin/dropbox-api
+	${INSTALL_SCRIPT} ${WRKSRC}/dropbox-api ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/upload-to-dropbox ${PREFIX}/bin/
 
 .include <bsd.port.mk>
