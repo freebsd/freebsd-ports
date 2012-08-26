@@ -6,7 +6,7 @@
 
 PORTNAME=	boinc-setiathome-enhanced
 PORTVERSION=	6.12
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	astro
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
 DISTNAME=	setiathome-svn-1008
@@ -25,7 +25,7 @@ USE_XZ=		yes
 USE_AUTOTOOLS=	autoconf:env automake:env
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	pkgconfig
+USE_PKGCONFIG=	build
 
 CFLAGS+=	-O2 -I${LOCALBASE}/include/boinc -I${LOCALBASE}/include \
 		-L${LOCALBASE}/lib
