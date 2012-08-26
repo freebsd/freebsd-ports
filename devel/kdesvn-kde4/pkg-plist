@@ -11,6 +11,7 @@ include/svnqt/check.h
 include/svnqt/client.h
 include/svnqt/client_annotate_parameter.h
 include/svnqt/client_commit_parameter.h
+include/svnqt/client_update_parameter.h
 include/svnqt/client_parameter.h
 include/svnqt/commititem.h
 include/svnqt/conflictdescription.h
@@ -31,6 +32,7 @@ include/svnqt/repoparameter.cpp
 include/svnqt/repoparameter.h
 include/svnqt/repository.h
 include/svnqt/repositorylistener.h
+include/svnqt/reposnotify.h
 include/svnqt/revision.h
 include/svnqt/shared_pointer.h
 include/svnqt/smart_pointer.h
@@ -48,8 +50,8 @@ lib/kde4/kded_kdesvnd.so
 lib/kde4/kdesvnpart.so
 lib/kde4/kio_ksvn.so
 lib/libsvnqt.so
-lib/libsvnqt.so.6
-lib/libsvnqt.so.6.0.3
+lib/libsvnqt.so.7
+lib/libsvnqt.so.7.0.1
 share/applications/kde4/kdesvn.desktop
 share/apps/kconf_update/kdesvn-use-external-update.sh
 share/apps/kconf_update/kdesvnpartrc-use-external.upd
@@ -372,13 +374,17 @@ share/kde4/services/ksvn+http.protocol
 share/kde4/services/ksvn+https.protocol
 share/kde4/services/ksvn+ssh.protocol
 share/kde4/services/ksvn.protocol
-share/locale/de/LC_MESSAGES/kdesvn.mo
-share/locale/es/LC_MESSAGES/kdesvn.mo
-share/locale/fr/LC_MESSAGES/kdesvn.mo
-share/locale/ja/LC_MESSAGES/kdesvn.mo
-share/locale/lt/LC_MESSAGES/kdesvn.mo
-share/locale/pt_BR/LC_MESSAGES/kdesvn.mo
-share/locale/ro/LC_MESSAGES/kdesvn.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/kdesvn.mo
+%%NLS%%share/locale/de/LC_MESSAGES/kdesvn.mo
+%%NLS%%share/locale/el/LC_MESSAGES/kdesvn.mo
+%%NLS%%share/locale/es/LC_MESSAGES/kdesvn.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/kdesvn.mo
+%%NLS%%share/locale/it/LC_MESSAGES/kdesvn.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/kdesvn.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/kdesvn.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/kdesvn.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/kdesvn.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/kdesvn.mo
 share/svnqt/i18n/svnqt_de.qm
 share/svnqt/i18n/svnqt_en_GB.qm
 @dirrm share/svnqt/i18n
