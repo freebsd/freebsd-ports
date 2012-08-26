@@ -7,7 +7,7 @@
 
 PORTNAME=	rxvt-unicode
 PORTVERSION=	9.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
@@ -26,7 +26,7 @@ USE_GNOME=		pkgconfig
 USE_XORG=		xpm xft xrender
 GNU_CONFIGURE=		yes
 CPPFLAGS+=		-I${LOCALBASE}/include
-CONFIGURE_ENV=		LIBS="-lutil"
+CONFIGURE_ENV=		LIBS="-lstdc++ -lutil"
 CONFIGURE_ARGS=		--enable-everything --with-term=rxvt	\
 			--with-terminfo=${LOCALBASE}/share/misc/terminfo.db
 USE_BZIP2=		yes
@@ -48,6 +48,7 @@ OPTIONS=	\
 	IMLOCALE_FIX	"imlocale encoding conversion fix" 		On	\
 	GDK_PIXBUF	"Use gdk-pixbuf for background images"		On	\
 	AFTERIMAGE	"Use libAfterImage for background images"	Off	\
+	NOTIFY		"Freedesktop startup notification support"	Off	\
 	256_COLOR	"Support for 256 colors"			Off
 
 .include <bsd.port.pre.mk>
@@ -139,12 +140,20 @@ CONFIGURE_ARGS+=	--disable-pixbuf
 . if defined(WITHOUT_AFTERIMAGE)
 CONFIGURE_ARGS+=	--disable-afterimage	# To be upgraded
 . else
-LIB_DEPENDS+=		AfterImage.0:${PORTSDIR}/graphics/libafterimage
+LIB_DEPENDS+=		AfterImage:${PORTSDIR}/graphics/libafterimage
 CONFIGURE_ARGS+=	--enable-afterimage
 . endif
 .else
 USE_GNOME+=		gdkpixbuf2
 CONFIGURE_ARGS+=	--enable-pixbuf
+.endif
+
+# enable startup notification
+.if defined(WITHOUT_NOTIFY)
+CONFIGURE_ARGS+=	--disable-startup-notification
+.else
+CONFIGURE_ARGS+=	--enable-startup-notification
+LIB_DEPENDS+=		startup-notification-1:${PORTSDIR}/x11/startup-notification
 .endif
 
 # enable support for 256 colors
