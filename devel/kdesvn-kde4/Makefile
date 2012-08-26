@@ -40,7 +40,7 @@ PLIST_SUB+=	NLS="@comment "
 
 post-patch:
 	${RM} ${WRKSRC}/src/kiosvn/svn*.protocol
-.if ${PORT_OPTIONS:MDOCS}
+.if empty(PORT_OPTIONS:MDOCS)
 	${ECHO} "ADD_SUBDIRECTORY(man)" > ${WRKSRC}/doc/CMakeLists.txt
 .endif
 .if empty(PORT_OPTIONS:MNLS)
