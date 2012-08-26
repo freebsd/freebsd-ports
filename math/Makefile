@@ -351,6 +351,7 @@
     SUBDIR += octave-forge-zenity
     SUBDIR += oleo
     SUBDIR += open-axiom
+    SUBDIR += openblas
     SUBDIR += orpie
     SUBDIR += p5-AI-DecisionTree
     SUBDIR += p5-AI-Genetic

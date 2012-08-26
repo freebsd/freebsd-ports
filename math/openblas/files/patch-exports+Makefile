@@ -1,0 +1,10 @@
+--- exports/Makefile.orig	2012-02-05 16:32:13.000000000 +0900
++++ exports/Makefile	2012-02-05 16:33:32.000000000 +0900
+@@ -107,6 +107,7 @@
+ endif
+ 
+ ifeq ($(OSNAME), FreeBSD)
++EXTRALIB += -lgfortran
+ 
+ so : ../$(LIBSONAME)
+ 
