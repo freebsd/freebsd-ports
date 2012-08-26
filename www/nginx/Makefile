@@ -456,7 +456,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_response-${NGINX_RESPONSE_VERSIO
 
 .if ${PORT_OPTIONS:MHTTP_SUBS_FILTER}
 USE_HTTP_REWRITE=	yes
-GIT_HTTP_SUBS_FILTER_VERSION=	0-gb32237d
+GIT_HTTP_SUBS_FILTER_VERSION=	0-g183b4a1
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/yaoweibin/ngx_http_substitutions_filter_module/tarball/master/:subs_filter
 DISTFILES+=	yaoweibin-ngx_http_substitutions_filter_module-${GIT_HTTP_SUBS_FILTER_VERSION}.tar.gz:subs_filter
