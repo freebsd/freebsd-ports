@@ -104,8 +104,6 @@
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/standalone.pyc
 %%DATADIR%%/fcgi/web2ldap.py
 %%DATADIR%%/fcgi/web2ldap.pyc
-%%DATADIR%%/pylib/ipadr.py
-%%DATADIR%%/pylib/ipadr.pyc
 %%DATADIR%%/pylib/ldapsession.py
 %%DATADIR%%/pylib/ldapsession.pyc
 %%DATADIR%%/pylib/ldaputil/__init__.py
