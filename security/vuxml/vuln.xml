@@ -51,6 +51,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c906e0a4-efa6-11e1-8fbf-001b77d09812">
+    <topic>roundcube -- cross-site scripting in HTML email messages</topic>
+    <affects>
+      <package>
+        <name>roundcube</name>
+        <range><ge>0.8.0</ge><lt>0.8.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>RoundCube branch 0.8.x prior to the version 0.8.1 is prone
+        to the cross-scripting attack (XSS) originating from incoming
+        HTML e-mails: due to the lack of proper sanitization
+        of JavaScript code inside the "href" attribute, sender
+        could launch XSS attack when recipient opens the message
+        in RoundCube interface.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-3508</cvename>
+      <url>http://trac.roundcube.net/wiki/Changelog</url>
+      <url>http://trac.roundcube.net/ticket/1488613</url>
+    </references>
+    <dates>
+      <discovery>2012-08-14</discovery>
+      <entry>2012-08-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="aa4d3d73-ef17-11e1-b593-00269ef07d24">
     <topic>Calligra, KOffice -- input validation failure</topic>
     <affects>
