@@ -7,7 +7,7 @@
 
 PORTNAME?=	tcl
 PORTVERSION=	8.5.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	SF/tcl/Tcl/${PORTVERSION}
 PKGNAMESUFFIX?=		${THREADS_SUFFIX}${PKGNAMESUFFIX2}
@@ -719,6 +719,7 @@ post-patch:
 		-e 's|tclsh\\fR|tclsh${TCL_VER}${THREADS_SUFFIX}\\fR|g' -e 's|Tclsh\\fR|Tclsh${TCL_VER}${THREADS_SUFFIX}\\fR|g' \
 		-e 's|^.so man.macros|.so ${DATADIR}/man.macros|' \
 		${WRKSRC}/../doc/tclsh.1
+	@${FIND} ${WRKDIR} -name \*.orig -delete
 .if defined(BUILDING_TCL_THREADS)
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		-e 's|$${TCL_TRIM_DOTS}|$${TCL_TRIM_DOTS}${THREADS_SUFFIX}|g' \
