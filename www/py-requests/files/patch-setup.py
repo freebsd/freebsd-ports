@@ -1,5 +1,5 @@
---- ./setup.py.orig	2012-07-27 17:22:56.000000000 +1000
-+++ ./setup.py	2012-07-28 10:46:43.000000000 +1000
+--- setup.py.orig	2012-08-06 14:46:03.000000000 +0800
++++ setup.py	2012-08-27 20:18:56.000000000 +0800
 @@ -15,8 +15,6 @@
      os.system('python setup.py sdist upload')
      sys.exit()
@@ -29,9 +29,10 @@
      install_requires=requires,
      license=open('LICENSE').read(),
      classifiers=(
-@@ -66,4 +60,5 @@
+@@ -66,4 +60,6 @@
          'Programming Language :: Python :: 3.0',
          'Programming Language :: Python :: 3.1',
      ),
 +    zip_safe=False,
++    test_suite='tests',
  )

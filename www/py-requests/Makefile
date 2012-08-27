@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	requests
-PORTVERSION=	0.13.7
+PORTVERSION=	0.13.9
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,5 +21,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>0:${PORTSDIR}/security/py-certify \
 
 USE_PYTHON=	-3.1
 USE_PYDISTUTILS=	easy_install
+
+test: build
+	${TOUCH} ${WRKSRC}/tests/__init__.py
+	cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
 
 .include <bsd.port.mk>
