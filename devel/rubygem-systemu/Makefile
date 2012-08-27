@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	systemu
-PORTVERSION=	2.2.0
+PORTVERSION=	2.5.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
