@@ -10,7 +10,7 @@
 # Define these tincd_* variables in one of these files:
 #	/etc/rc.conf
 #	/etc/rc.conf.local
-#	/etc/rc.conf.d/threeproxy
+#	/etc/rc.conf.d/tincd
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 
