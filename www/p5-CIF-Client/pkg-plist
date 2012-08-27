@@ -1,6 +1,7 @@
 bin/cif
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CIF/Client/.packlist
 %%SITE_PERL%%/CIF/Client.pm
+%%SITE_PERL%%/CIF/Client/Support.pm
 %%SITE_PERL%%/CIF/Client/Plugin/Raw.pm
 %%SITE_PERL%%/CIF/Client/Plugin/Pcapfilter.pm
 %%SITE_PERL%%/CIF/Client/Plugin/Csv.pm
