@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	money
-PORTVERSION=	4.0.1
+PORTVERSION=	5.0.0
 CATEGORIES=	finance rubygems
 MASTER_SITES=	RG
 
