@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	test-unit
-PORTVERSION=	2.4.3
+PORTVERSION=	2.5.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
