@@ -39,6 +39,8 @@ include/boinc/parse.h
 include/boinc/prefs.h
 include/boinc/procinfo.h
 include/boinc/proxy_info.h
+include/boinc/reduce.h
+include/boinc/shmem.h
 include/boinc/stackwalker_imports.h
 include/boinc/stackwalker_win.h
 include/boinc/std_fixes.h
@@ -51,7 +53,6 @@ include/boinc/win_util.h
 %%X11%%include/boinc/boinc_gl.h
 %%X11%%include/boinc/graphics_api.h
 %%X11%%include/boinc/graphics_data.h
-%%X11%%include/boinc/reduce.h
 %%X11%%include/boinc/txf_util.h
 lib/libboinc.a
 lib/libboinc.la
@@ -73,9 +74,6 @@ lib/libboinc_zip.so.7
 %%X11%%lib/libboinc_graphics2.la
 %%X11%%lib/libboinc_graphics2.so
 %%X11%%lib/libboinc_graphics2.so.7
-%%BOINC_MANAGER%%share/boinc/boincmgr.16x16.png
-%%BOINC_MANAGER%%share/boinc/boincmgr.32x32.png
-%%BOINC_MANAGER%%share/boinc/boincmgr.48x48.png
 %%SKINS%%share/boinc/skins/Charity Engine/graphic/arwLeft.png
 %%SKINS%%share/boinc/skins/Charity Engine/graphic/arwLeftClick.png
 %%SKINS%%share/boinc/skins/Charity Engine/graphic/arwRight.png
@@ -135,7 +133,6 @@ lib/libboinc_zip.so.7
 %%BOINC_MANAGER%%share/boinc/skins/Default/workunit_running_image.png
 %%BOINC_MANAGER%%share/boinc/skins/Default/workunit_suspended_image.png
 %%BOINC_MANAGER%%share/boinc/skins/Default/workunit_waiting_image.png
-%%SKINS%%share/boinc/skins/GridRepublic/graphic/Thumbs.db
 %%SKINS%%share/boinc/skins/GridRepublic/graphic/arwLeft.png
 %%SKINS%%share/boinc/skins/GridRepublic/graphic/arwLeftClick.png
 %%SKINS%%share/boinc/skins/GridRepublic/graphic/arwRight.png
