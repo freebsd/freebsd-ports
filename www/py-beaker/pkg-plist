@@ -26,6 +26,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/crypto/pycrypto.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/crypto/pycrypto.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/crypto/pycrypto.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/crypto/nsscrypto.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/crypto/nsscrypto.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/crypto/nsscrypto.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/crypto/util.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/crypto/util.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/crypto/util.pyo
