@@ -1,0 +1,22 @@
+--- gdb/configure.orig	2012-08-24 14:03:52.000000000 +0200
++++ gdb/configure	2012-08-24 14:05:06.000000000 +0200
+@@ -10590,7 +10590,8 @@
+ 
+ # See if <machine/reg.h> supports the %fs and %gs i386 segment registers.
+ # Older i386 BSD's don't have the r_fs and r_gs members of `struct reg'.
+-ac_fn_c_check_member "$LINENO" "struct reg" "r_fs" "ac_cv_member_struct_reg_r_fs" "#include <machine/reg.h>
++ac_fn_c_check_member "$LINENO" "struct reg" "r_fs" "ac_cv_member_struct_reg_r_fs" "#include <sys/types.h>
++#include <machine/reg.h>
+ "
+ if test "x$ac_cv_member_struct_reg_r_fs" = x""yes; then :
+ 
+@@ -10600,7 +10601,8 @@
+ 
+ 
+ fi
+-ac_fn_c_check_member "$LINENO" "struct reg" "r_gs" "ac_cv_member_struct_reg_r_gs" "#include <machine/reg.h>
++ac_fn_c_check_member "$LINENO" "struct reg" "r_gs" "ac_cv_member_struct_reg_r_gs" "#include <sys/types.h>
++#include <machine/reg.h>
+ "
+ if test "x$ac_cv_member_struct_reg_r_gs" = x""yes; then :
+ 

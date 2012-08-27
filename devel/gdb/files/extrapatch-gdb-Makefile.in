@@ -1,5 +1,5 @@
 --- gdb/Makefile.in.orig	2012-07-02 17:29:33.000000000 +0200
-+++ gdb/Makefile.in	2012-08-22 16:50:26.000000000 +0200
++++ gdb/Makefile.in	2012-08-26 21:01:45.589052997 +0200
 @@ -572,7 +572,7 @@
  	xstormy16-tdep.o \
  	xtensa-config.o xtensa-tdep.o xtensa-linux-tdep.o \
@@ -18,6 +18,15 @@
  mdebugread.h m88k-tdep.h stabsread.h hppa-linux-offsets.h linux-fork.h \
  ser-unix.h inf-ptrace.h terminal.h ui-out.h frame-base.h \
  f-lang.h dwarf2loc.h value.h sparc-tdep.h defs.h target-descriptions.h \
+@@ -1164,7 +1164,7 @@
+ # Removing the old gdb first works better if it is running, at least on SunOS.
+ gdb$(EXEEXT): gdb.o $(LIBGDB_OBS) $(ADD_DEPS) $(CDEPS) $(TDEPLIBS)
+ 	rm -f gdb$(EXEEXT)
+-	$(CC_LD) $(INTERNAL_LDFLAGS) $(WIN32LDAPP) \
++	$(CC_LD) $(INTERNAL_LDFLAGS) $(WIN32LDAPP) -Wl,-E \
+ 		-o gdb$(EXEEXT) gdb.o $(LIBGDB_OBS) \
+ 		$(TDEPLIBS) $(TUI_LIBRARY) $(CLIBS) $(LOADLIBES)
+ 
 @@ -1429,7 +1429,7 @@
  	armnbsd-nat.c armbsd-tdep.c armnbsd-tdep.c armobsd-tdep.c \
  	avr-tdep.c \

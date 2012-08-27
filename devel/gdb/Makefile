@@ -7,6 +7,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	7.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -30,7 +31,8 @@ CONFIGURE_ARGS=	--program-suffix=${PORTVERSION:S/.//g} \
 CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
 CFLAGS+=	-DRL_NO_COMPAT
 EXCLUDE=	dejagnu expect readline sim texinfo intl
-EXTRACT_AFTER_ARGS=| ${TAR} -xf - ${EXCLUDE:S/^/--exclude /}
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - ${EXCLUDE:S/^/--exclude /} \
+			--no-same-owner --no-same-permissions
 VER=	${PORTVERSION:S/.//g}
 PLIST_SUB=	VER=${VER}
 MAN1=	gdb${VER}.1
