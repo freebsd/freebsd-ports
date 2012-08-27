@@ -10,7 +10,7 @@ PORTVERSION=	2.0
 PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_LOCAL:S/$/:freebsd/} \
-		http://www.void.irq.org/:original
+		http://www.irq.org/:original
 MASTER_SITE_SUBDIR=	flz/${PORTNAME}/:freebsd
 DISTFILES=	bofh-fortune-mod${PORTVERSION}${EXTRACT_SUFX}:original,freebsd
 
