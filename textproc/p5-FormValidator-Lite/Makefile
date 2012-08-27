@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	FormValidator-Lite
-PORTVERSION=	0.28
+PORTVERSION=	0.29
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,9 +18,9 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Class-Accessor-Lite>=0.05:${PORTSDIR}/devel/p5-Class-Accessor-Lite \
-		p5-UNIVERSAL-require>=0.11:${PORTSDIR}/devel/p5-UNIVERSAL-require
+		p5-Class-Load>=0.11:${PORTSDIR}/devel/p5-Class-Load
 RUN_DEPENDS=	p5-Class-Accessor-Lite>=0.05:${PORTSDIR}/devel/p5-Class-Accessor-Lite \
-		p5-UNIVERSAL-require>=0.11:${PORTSDIR}/devel/p5-UNIVERSAL-require
+		p5-Class-Load>=0.11:${PORTSDIR}/devel/p5-Class-Load
 
 TEST_DEPENDS=	p5-Test-Base>=0:${PORTSDIR}/devel/p5-Test-Base \
 		p5-Test-Requires>=0.05:${PORTSDIR}/devel/p5-Test-Requires \
