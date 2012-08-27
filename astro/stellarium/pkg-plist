@@ -222,13 +222,26 @@ bin/stellarium
 %%DATADIR%%/nebulae/default/ngc2000names.dat
 %%DATADIR%%/nebulae/default/pleiades.png
 %%DATADIR%%/nebulae/default/textures.json
+%%DATADIR%%/scripts/analemma.ssc
 %%DATADIR%%/scripts/common_objects.inc
+%%DATADIR%%/scripts/constellations_tour.ssc
+%%DATADIR%%/scripts/earth_1.ssc
 %%DATADIR%%/scripts/landscapes.ssc
 %%DATADIR%%/scripts/lunar_partial.ssc
 %%DATADIR%%/scripts/lunar_total.ssc
+%%DATADIR%%/scripts/phobos_phun_1.ssc
+%%DATADIR%%/scripts/phobos_phun_2.ssc
+%%DATADIR%%/scripts/phobos_phun_3.ssc
+%%DATADIR%%/scripts/phobos_phun_4.ssc
+%%DATADIR%%/scripts/phobos_phun_5.ssc
 %%DATADIR%%/scripts/screensaver.ssc
 %%DATADIR%%/scripts/solar_eclipse.ssc
+%%DATADIR%%/scripts/solar_system_screensaver.ssc
 %%DATADIR%%/scripts/startup.ssc
+%%DATADIR%%/scripts/sun.ssc
+%%DATADIR%%/scripts/supernova.ssc
+%%DATADIR%%/scripts/transit_of_venus.ssc
+%%DATADIR%%/scripts/triple_sunrise_and_sunsets.ssc
 %%DATADIR%%/scripts/zodiac.ssc
 %%DATADIR%%/skycultures/arabic/Bearer-of-the-Demons-Head.png
 %%DATADIR%%/skycultures/arabic/Book_of_Fixed_Stars3.png
@@ -847,6 +860,8 @@ share/locale/ro/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/ro/LC_MESSAGES/stellarium.mo
 share/locale/ru/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/ru/LC_MESSAGES/stellarium.mo
+share/locale/sah/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/sah/LC_MESSAGES/stellarium.mo
 share/locale/sco/LC_MESSAGES/stellarium.mo
 share/locale/se/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/se/LC_MESSAGES/stellarium.mo
@@ -917,6 +932,8 @@ share/pixmaps/stellarium.xpm
 @dirrmtry share/locale/se
 @dirrmtry share/locale/sco/LC_MESSAGES
 @dirrmtry share/locale/sco
+@dirrmtry share/locale/sah/LC_MESSAGES
+@dirrmtry share/locale/sah
 @dirrmtry share/locale/os/LC_MESSAGES
 @dirrmtry share/locale/os
 @dirrmtry share/locale/nan/LC_MESSAGES
