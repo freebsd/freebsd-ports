@@ -70,6 +70,7 @@
 %%WWWDIR%%/include/views/configuration.triggers.edit.php
 %%WWWDIR%%/include/views/administration.general.gui.edit.php
 %%WWWDIR%%/include/views/configuration.action.edit.php
+%%WWWDIR%%/include/views/configuration.action.list.php
 %%WWWDIR%%/include/views/configuration.host.edit.php
 %%WWWDIR%%/include/views/configuration.slideconf.edit.php
 %%WWWDIR%%/include/views/conf.import.php
@@ -92,6 +93,7 @@
 %%WWWDIR%%/include/views/js/configuration.slideconf.edit.js.php
 %%WWWDIR%%/include/views/js/configuration.discovery.edit.js.php
 %%WWWDIR%%/include/views/js/administration.general.valuemapping.edit.js.php
+%%WWWDIR%%/include/views/js/administration.general.gui.php
 %%WWWDIR%%/include/views/js/administration.script.edit.js.php
 %%WWWDIR%%/include/views/js/administration.general.triggerDisplayOptions.js.php
 %%WWWDIR%%/include/views/js/configuration.host.edit.macros.js.php
@@ -204,6 +206,7 @@
 %%WWWDIR%%/include/classes/core/Z.php
 %%WWWDIR%%/include/classes/core/CAutoloader.php
 %%WWWDIR%%/include/classes/core/ZBase.php
+%%WWWDIR%%/include/classes/core/CSession.php
 %%WWWDIR%%/include/classes/class.cstringparser.php
 %%WWWDIR%%/include/classes/class.cpagefilter.php
 %%WWWDIR%%/include/classes/class.ctabview.php
@@ -226,7 +229,6 @@
 %%WWWDIR%%/include/classes/sysmaps/CMapPainter.php
 %%WWWDIR%%/include/classes/sysmaps/CCanvas.php
 %%WWWDIR%%/include/classes/class.ccol.php
-%%WWWDIR%%/include/classes/class.cformelement.php
 %%WWWDIR%%/include/classes/class.ctag.php
 %%WWWDIR%%/include/classes/class.chttp_request.php
 %%WWWDIR%%/include/classes/class.cuiwidget.php
@@ -248,10 +250,16 @@
 %%WWWDIR%%/include/classes/class.ctableinfo.php
 %%WWWDIR%%/include/classes/class.cdiv.php
 %%WWWDIR%%/include/classes/class.cflashembed.php
+%%WWWDIR%%/include/classes/helpers/trigger/CTriggerHelper.php
+%%WWWDIR%%/include/classes/helpers/trigger/CTriggerDescription.php
+%%WWWDIR%%/include/classes/helpers/trigger/CEventHelper.php
+%%WWWDIR%%/include/classes/helpers/trigger/CEventDescription.php
 %%WWWDIR%%/include/classes/helpers/CJs.php
 %%WWWDIR%%/include/classes/helpers/CUploadFile.php
 %%WWWDIR%%/include/classes/helpers/CHtml.php
 %%WWWDIR%%/include/classes/helpers/CArrayHelper.php
+%%WWWDIR%%/include/classes/validators/CValidator.php
+%%WWWDIR%%/include/classes/validators/CTimePeriodValidator.php
 %%WWWDIR%%/include/classes/class.cbar.php
 %%WWWDIR%%/include/classes/class.cimagetexttable.php
 %%WWWDIR%%/include/classes/class.cpassbox.php
@@ -332,6 +340,7 @@
 %%WWWDIR%%/api/classes/CItemGeneral.php
 %%WWWDIR%%/api/classes/CTriggerExpression.php
 %%WWWDIR%%/api/classes/CGraph.php
+%%WWWDIR%%/api/classes/CGraphGeneral.php
 %%WWWDIR%%/api/classes/CTrigger.php
 %%WWWDIR%%/api/classes/CHistory.php
 %%WWWDIR%%/api/classes/CHostInterface.php
@@ -632,6 +641,7 @@
 %%WWWDIR%%/js/functions.js
 %%WWWDIR%%/js/common.js
 %%WWWDIR%%/js/class.cdebug.js
+%%WWWDIR%%/js/servercheck.js
 %%WWWDIR%%/popup_trexpr.php
 %%WWWDIR%%/chart2.php
 %%WWWDIR%%/items.php
@@ -733,6 +743,8 @@
 @dirrm %%WWWDIR%%/include/classes/core
 @dirrm %%WWWDIR%%/include/classes/sysmaps
 @dirrm %%WWWDIR%%/include/classes/db
+@dirrm %%WWWDIR%%/include/classes/validators
+@dirrm %%WWWDIR%%/include/classes/helpers/trigger
 @dirrm %%WWWDIR%%/include/classes/helpers
 @dirrm %%WWWDIR%%/include/classes
 @dirrm %%WWWDIR%%/include
