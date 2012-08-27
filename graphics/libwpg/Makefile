@@ -23,11 +23,16 @@ USE_GNOME=	gnomeprefix gnomehack ltverhack
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	yes
 CONFIGURE_ARGS=	--disable-werror
+
+OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	*
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 .else
 post-patch:
