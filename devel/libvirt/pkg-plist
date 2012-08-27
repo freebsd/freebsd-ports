@@ -79,6 +79,7 @@ share/augeas/lenses/tests/test_libvirtd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/drvhyperv.html
 %%DOCSDIR%%%%PORTVERSION%%/html/drvlxc.html
 %%DOCSDIR%%%%PORTVERSION%%/html/drvopenvz.html
+%%DOCSDIR%%%%PORTVERSION%%/html/drvparallels.html
 %%DOCSDIR%%%%PORTVERSION%%/html/drvqemu.html
 %%DOCSDIR%%%%PORTVERSION%%/html/drvremote.html
 %%DOCSDIR%%%%PORTVERSION%%/html/drvtest.html
