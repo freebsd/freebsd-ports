@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 USE_JAVA=	yes
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk
-JAVA_VERSION=	1.6
+JAVA_VERSION=	1.6+
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	PLUGIN RHINO TEST
@@ -90,12 +90,14 @@ post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 	    ${WRKSRC}/launcher/javaws.in
 
+.if ${JAVA_PORT_VERSION} == "1.6.0"
 pre-extract:
 	@${ECHO_MSG}
 	@${ECHO_MSG} "IMPORTANT: To build IcedTea-Web ${PORTVERSION}, you have to turn on 'ICEDTEA' option"
-	@${ECHO_MSG} "for java/openjdk6 (default).  Otherwise, it will neither build nor work."
+	@${ECHO_MSG} "for ${JAVA_PORT} (default).  Otherwise, it will neither build nor work."
 	@${ECHO_MSG}
 	@sleep 10
+.endif
 
 .if ${PORT_OPTIONS:MTEST}
 post-build:
