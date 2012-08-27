@@ -6,7 +6,7 @@
 
 PORTNAME=	boinc-astropulse
 PORTVERSION=	6.01
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	astro
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
 DISTNAME=	astropulse-svn-1280
@@ -26,7 +26,7 @@ USE_XZ=		yes
 USE_AUTOTOOLS=	autoconf:env automake:env libtool
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	pkgconfig
+USE_PKGCONFIG=	build
 WRKSRC=		${WRKDIR}/${DISTNAME}/client
 
 CFLAGS+=	-O2 -I${LOCALBASE}/include/boinc -I${LOCALBASE}/include \
@@ -40,7 +40,11 @@ BOINC_CLIENT_USER?=	boinc
 BOINC_CLIENT_GROUP?=	nobody
 BOINC_CLIENT_HOME?=	/var/db/boinc
 
-#OPTIONS=	X11		"Build screensaver (requires net/boinc-client with X11)" on
+OPTIONS_DEFINE=	X11
+
+X11_DESC=	Build screensaver (requires net/boinc-client with X11)
+
+OPTIONS_DEFAULT=
 
 .include <bsd.port.pre.mk>
 # stolen and adapted from bsd.port.mk
@@ -48,12 +52,7 @@ BOINC_CLIENT_HOME?=	/var/db/boinc
 BUILD_DEPENDS+=	${LOCALBASE}/bin/xz:${PORTSDIR}/archivers/xz
 .endif
 
-# TODO fix upstream
-.if defined(WITHOUT_X11)
-BROKEN=Currently Astropulse requires X11 to build
-.endif
-
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
 		xcb:${PORTSDIR}/x11/libxcb
 USE_GL=		gl glu glut
@@ -101,7 +100,7 @@ do-install:
 	    ${BOINC_CLIENT_HOME}/projects/${SETI_SITE}
 	${INSTALL_PROGRAM} -o ${BOINC_CLIENT_USER} -g ${BOINC_CLIENT_GROUP} \
 	    ${WRKSRC}/${AP_BINARY} ${BOINC_CLIENT_HOME}/projects/${SETI_SITE}/
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 	${INSTALL_PROGRAM} -o ${BOINC_CLIENT_USER} -g ${BOINC_CLIENT_GROUP} \
 	    ${WRKSRC}/ap_graphics ${BOINC_CLIENT_HOME}/projects/${SETI_SITE}/
 .endif
