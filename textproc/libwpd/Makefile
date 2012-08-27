@@ -22,7 +22,7 @@ USE_GNOME=	gnomehack libgsf
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
-CONFIGURE_ARGS+=--without-docs
+CONFIGURE_ARGS+=--disable-werror --without-docs
 PLIST_SUB=	MAJVER=${PORTVERSION:R}
 
 post-patch:
