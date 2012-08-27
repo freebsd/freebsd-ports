@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	boinc-client
-PORTVERSION=	7.0.25
-PORTREVISION=	5
+PORTVERSION=	7.0.28
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	pav
@@ -151,9 +150,10 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MMANAGER}
+	${MKDIR} ${PREFIX}/share/boinc
 	${MKDIR} ${LOCALBASE}/share/pixmaps
 . for name in 16 32 48
-	cd ${LOCALBASE}/share/pixmaps ; ${LN} -sf ${PREFIX}/share/boinc/boincmgr.${name}x${name}.png
+	${INSTALL_DATA} ${WRKSRC}/clientgui/res/boincmgr.${name}x${name}.png ${LOCALBASE}/share/pixmaps
 . endfor
 . if ${PORT_OPTIONS:MSKINS}
 	${CP} -R ${WRKSRC}/clientgui/skins ${PREFIX}/share/boinc
@@ -162,9 +162,9 @@ post-install:
 	${CP} -R ${WRKSRC}/clientgui/skins/Default ${PREFIX}/share/boinc/skins
 . endif
 .endif
-	${INSTALL_DATA} ${WRKSRC}/config.h ${PREFIX}/include/boinc
-	${INSTALL_DATA} ${WRKSRC}/lib/std_fixes.h ${PREFIX}/include/boinc
-	${INSTALL_DATA} ${WRKSRC}/api/reduce.h ${PREFIX}/include/boinc
+. for name in config.h api/reduce.h lib/shmem.h lib/std_fixes.h
+	${INSTALL_DATA} ${WRKSRC}/${name} ${PREFIX}/include/boinc
+. endfor
 .if ${PORT_OPTIONS:MX11}
 . for name in api/boinc_gl.h api/graphics_api.h api/graphics_data.h \
 	api/txf_util.h
