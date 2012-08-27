@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	parole
-PORTVERSION=	0.3.0.2
+PORTVERSION=	0.3.0.3
 CATEGORIES=	multimedia xfce
 MASTER_SITES=	XFCE/src/apps/${PORTNAME}/0.3/
 DIST_SUBDIR=	xfce4
