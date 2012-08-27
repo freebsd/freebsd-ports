@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	stellarium
-PORTVERSION=	0.11.3
-PORTREVISION=	1
+PORTVERSION=	0.11.4
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Stellarium-sources/${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}a${EXTRACT_SUFX}
 EXTRACT_ONLY:=	${DISTFILES}
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	A 3D photo-realistic sky renderer (planetarium)
+COMMENT=	3D photo-realistic sky renderer (planetarium)
 
 LICENSE=	GPLv2
 
@@ -26,7 +25,7 @@ USE_QT4=	moc_build rcc_build uic_build qmake_build \
 		corelib gui network opengl script
 MAKE_JOBS_SAFE=	yes
 
-MAN1=		stellarium.1
+MAN1=		${PORTNAME}.1
 PORTDOCS=	AUTHORS ChangeLog README
 
 OPTIONS=	MORE_STARS	"Install extra star catalogs (1.2GB)"	off
@@ -46,14 +45,7 @@ PLIST_SUB+=	MORE_STARS="@comment "
 .endif
 
 post-patch: .SILENT
-	${REINPLACE_CMD} -e '/typedef.*void.*__GLXextFuncPtr/d' \
-		${WRKSRC}/src/core/external/GLee.h
 	${REINPLACE_CMD} -e '/QTTEST/d' ${WRKSRC}/CMakeLists.txt
-	${REINPLACE_CMD} -e 's|share/man/man1|man/man1|' \
-		${WRKSRC}/doc/CMakeLists.txt
-# Remove options which our old GCC does not know about (GCC 4.6 specific)
-	${REINPLACE_CMD} -e 's| -Wno-unused-but-set-[[:alpha:]]*||g' \
-		${WRKSRC}/plugins/Satellites/src/CMakeLists.txt
 # Avoid picking up the wrong `fixx11h.h' (`x11/kdelibs3' port installs one
 # that does not handle FontChange)
 	${GREP} -Rl --null fixx11h\\.h ${WRKSRC}/src ${WRKSRC}/plugins | \
