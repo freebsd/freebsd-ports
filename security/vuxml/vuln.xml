@@ -611,7 +611,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>fetchmail</name>
-	<range><ge>5.0.8</ge><lt>6.3.22</lt></range>
+	<range><ge>5.0.8</ge><lt>6.3.21_1</lt></range>
       </package>
     </affects>
     <description>
@@ -634,6 +634,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2012-08-12</discovery>
       <entry>2012-08-14</entry>
+      <modified>2012-08-27</modified>
     </dates>
   </vuln>
 
