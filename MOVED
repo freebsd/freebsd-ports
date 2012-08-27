@@ -3654,7 +3654,7 @@ databases/edb||2012-08-26|Has expired: Deprecated by enlightenment.org team
 databases/php5-rrdtool||2012-08-26|Has expired: deprecated via upstream please use databases/pecl-rrd.
 graphics/evas-engine-xrender||2012-08-26|Has expired: Deprecated by enlightenment.org
 graphics/evas-loader-edb||2012-08-26|Has expired: Deprecated by enlightenment.org
-www/linux-f10-flashplugin10||2012-08-26|Has expired: has vulnerabilities and is EOL
+www/linux-f10-flashplugin10|www/linux-f10-flashplugin11|2012-08-26|Has expired: has vulnerabilities and is EOL
 x11-wm/e17-module-efm_nav||2012-08-26|Has expired: Deprecated by enlightenment.org
 x11-wm/e17-module-efm_path||2012-08-26|Has expired: Deprecated by enlightenment.org
 x11-wm/e17-module-efm_pathbar||2012-08-26|Has expired: Deprecated by enlightenment.org
