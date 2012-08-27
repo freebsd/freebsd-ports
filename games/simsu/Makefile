@@ -7,6 +7,7 @@
 
 PORTNAME=	simsu
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/
 EXTRACT_SUFX=	-src.tar.bz2
@@ -32,29 +33,31 @@ USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
 PORTDATA=	*
-PORTDOCS=	CREDITS ChangeLog INSTALL
+PORTDOCS=	CREDITS ChangeLog
+
+.include <bsd.port.options.mk>
 
 do-install:
 # Executable
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
+# Data
+	${MKDIR} ${DATADIR}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "symmetry translations" ${DATADIR})
+
 # Icons
-	${CP} -R ${WRKSRC}/icons/hicolor ${PREFIX}/share/icons/
+	${MKDIR} ${PREFIX}/share/icons/hicolor
+.for d in incons
+	@(cd ${WRKSRC}/${d} && ${COPYTREE_SHARE} hicolor ${PREFIX}/share/icons/)
+.endfor
 
 # Pixmaps and Desktop
 	${INSTALL_DATA} ${WRKSRC}/icons/${PORTNAME}_32.xpm ${PREFIX}/share/pixmaps/
 	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/icons/${PORTNAME}.desktop ${PREFIX}/share/applications/
 
-post-install:
-# Data
-.if !defined (NOPORTDATA)
-	${MKDIR} ${DATADIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "symmetry translations" ${DATADIR})
-.endif
-
-# Documentations
-.if !defined(NOPORTDOCS)
+# Documentation
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .  for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
