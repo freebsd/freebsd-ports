@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icinga
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
@@ -89,6 +89,7 @@ OPTIONS_DEFAULT=	EMBEDDED_PERL IDOUTILS
 EMBEDDED_PERL_DESC=	Enable embedded Perl
 NANOSLEEP_DESC=		Use nanosleep in event timing
 UNHANDLED_HACK_DESC=	Display passive checks in unhandled queries
+IDOUTILS_DESC=		Enable Icinga Data Objects support
 APACHE_DESC=		Depend on Apache and install webconfig
 
 .include <bsd.port.options.mk>
