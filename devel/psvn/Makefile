@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	psvn
-PORTVERSION=	915036
-PORTREVISION=	7
+PORTVERSION=	20120326.212349
 CATEGORIES=	devel elisp
-MASTER_SITES=	http://svn.apache.org/viewvc/subversion/trunk/contrib/client-side/emacs/
+MASTER_SITES=	http://www.xsteve.at/prg/emacs/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
-DISTNAME=	psvn.el\?revision=${PORTVERSION}\&view=co
+DISTNAME=	psvn.el
 EXTRACT_SUFX=	# empty
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Subversion interface for Emacs
 
 RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion
