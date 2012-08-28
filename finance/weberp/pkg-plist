@@ -25,6 +25,7 @@
 %%WWWDIR%%/ContractCosting.php
 %%WWWDIR%%/ContractOtherReqts.php
 %%WWWDIR%%/Contracts.php
+%%WWWDIR%%/CopyBOM.php
 %%WWWDIR%%/CounterSales.php
 %%WWWDIR%%/CreditItemsControlled.php
 %%WWWDIR%%/CreditStatus.php
@@ -44,11 +45,13 @@
 %%WWWDIR%%/DailySalesInquiry.php
 %%WWWDIR%%/DebtorsAtPeriodEnd.php
 %%WWWDIR%%/DeliveryDetails.php
+%%WWWDIR%%/Departments.php
 %%WWWDIR%%/DiscountCategories.php
 %%WWWDIR%%/DiscountMatrix.php
 %%WWWDIR%%/EDIMessageFormat.php
 %%WWWDIR%%/EDIProcessOrders.php
 %%WWWDIR%%/EDISendInvoices.php
+%%WWWDIR%%/EDISendInvoices_Reece.php
 %%WWWDIR%%/EmailConfirmation.php
 %%WWWDIR%%/EmailCustTrans.php
 %%WWWDIR%%/ExchangeRateTrend.php
@@ -80,6 +83,9 @@
 %%WWWDIR%%/GetStockImage.php
 %%WWWDIR%%/GoodsReceived.php
 %%WWWDIR%%/GoodsReceivedControlled.php
+%%WWWDIR%%/InternalStockRequest.php
+%%WWWDIR%%/InternalStockRequestAuthorisation.php
+%%WWWDIR%%/InternalStockRequestFulfill.php
 %%WWWDIR%%/InventoryPlanning.php
 %%WWWDIR%%/InventoryPlanningPrefSupplier.php
 %%WWWDIR%%/InventoryQuantities.php
@@ -100,6 +106,7 @@
 %%WWWDIR%%/MailInventoryValuation.php
 %%WWWDIR%%/MailSalesReport.php
 %%WWWDIR%%/MailSalesReport_csv.php
+%%WWWDIR%%/NoSalesItems.php
 %%WWWDIR%%/OffersReceived.php
 %%WWWDIR%%/OrderDetails.php
 %%WWWDIR%%/OutstandingGRNs.php
@@ -238,6 +245,7 @@
 %%WWWDIR%%/SupplierCredit.php
 %%WWWDIR%%/SupplierInquiry.php
 %%WWWDIR%%/SupplierInvoice.php
+%%WWWDIR%%/SupplierPriceList.php
 %%WWWDIR%%/SupplierTenderCreate.php
 %%WWWDIR%%/SupplierTenders.php
 %%WWWDIR%%/SupplierTransInquiry.php
@@ -264,17 +272,17 @@
 %%WWWDIR%%/WorkOrderIssue.php
 %%WWWDIR%%/WorkOrderReceive.php
 %%WWWDIR%%/WorkOrderStatus.php
-%%WWWDIR%%/Z_AccountCodeTo20Digits.php
 %%WWWDIR%%/Z_BottomUpCosts.php
 %%WWWDIR%%/Z_ChangeBranchCode.php
 %%WWWDIR%%/Z_ChangeCustomerCode.php
+%%WWWDIR%%/Z_ChangeLocationCode.php
 %%WWWDIR%%/Z_ChangeStockCategory.php
 %%WWWDIR%%/Z_ChangeStockCode.php
+%%WWWDIR%%/Z_ChangeSupplierCode.php
 %%WWWDIR%%/Z_CheckAllocationsFrom.php
 %%WWWDIR%%/Z_CheckAllocs.php
 %%WWWDIR%%/Z_CheckDebtorsControl.php
 %%WWWDIR%%/Z_CheckGLTransBalance.php
-%%WWWDIR%%/Z_CopyBOM.php
 %%WWWDIR%%/Z_CreateChartDetails.php
 %%WWWDIR%%/Z_CreateCompany.php
 %%WWWDIR%%/Z_CreateCompanyTemplateFile.php
@@ -309,7 +317,6 @@
 %%WWWDIR%%/Z_Upgrade_3.11-4.00.php
 %%WWWDIR%%/Z_UploadForm.php
 %%WWWDIR%%/Z_UploadResult.php
-%%WWWDIR%%/Z_index.php
 %%WWWDIR%%/Z_poAddLanguage.php
 %%WWWDIR%%/Z_poAdmin.php
 %%WWWDIR%%/Z_poEditLangHeader.php
@@ -354,6 +361,7 @@
 %%WWWDIR%%/companies/weberpdemo/FormDesigns/PickingList.xml
 %%WWWDIR%%/companies/weberpdemo/FormDesigns/PurchaseOrder.xml
 %%WWWDIR%%/companies/weberpdemo/logo.jpg
+%%WWWDIR%%/companies/weberpdemo/part_pics/BREAD.jpg
 %%WWWDIR%%/companies/weberpdemo/part_pics/webERPsmall.png
 %%WWWDIR%%/companies/weberpdemo/reportwriter/labels.xml
 %%WWWDIR%%/config.distrib.php
@@ -408,6 +416,7 @@
 %%WWWDIR%%/css/aguapop/images/stripe.png
 %%WWWDIR%%/css/aguapop/images/supplier.png
 %%WWWDIR%%/css/aguapop/images/tab_bg.png
+%%WWWDIR%%/css/aguapop/images/tick.png
 %%WWWDIR%%/css/aguapop/images/top.png
 %%WWWDIR%%/css/aguapop/images/top_bg.png
 %%WWWDIR%%/css/aguapop/images/transactions.gif
@@ -472,6 +481,7 @@
 %%WWWDIR%%/css/default/images/security.png
 %%WWWDIR%%/css/default/images/stripe.png
 %%WWWDIR%%/css/default/images/supplier.png
+%%WWWDIR%%/css/default/images/tick.png
 %%WWWDIR%%/css/default/images/transactions.gif
 %%WWWDIR%%/css/default/images/transactions.png
 %%WWWDIR%%/css/default/images/user.png
@@ -533,6 +543,7 @@
 %%WWWDIR%%/css/fresh/images/security.png
 %%WWWDIR%%/css/fresh/images/stripe.png
 %%WWWDIR%%/css/fresh/images/supplier.png
+%%WWWDIR%%/css/fresh/images/tick.png
 %%WWWDIR%%/css/fresh/images/transactions.gif
 %%WWWDIR%%/css/fresh/images/transactions.png
 %%WWWDIR%%/css/fresh/images/user.png
@@ -590,6 +601,7 @@
 %%WWWDIR%%/css/gel/images/security.png
 %%WWWDIR%%/css/gel/images/stripe.png
 %%WWWDIR%%/css/gel/images/supplier.png
+%%WWWDIR%%/css/gel/images/tick.png
 %%WWWDIR%%/css/gel/images/transactions.gif
 %%WWWDIR%%/css/gel/images/transactions.png
 %%WWWDIR%%/css/gel/images/user.png
@@ -651,6 +663,7 @@
 %%WWWDIR%%/css/jelly/images/security.png
 %%WWWDIR%%/css/jelly/images/stripe.png
 %%WWWDIR%%/css/jelly/images/supplier.png
+%%WWWDIR%%/css/jelly/images/tick.png
 %%WWWDIR%%/css/jelly/images/transactions.gif
 %%WWWDIR%%/css/jelly/images/transactions.png
 %%WWWDIR%%/css/jelly/images/user.png
@@ -715,6 +728,7 @@
 %%WWWDIR%%/css/professional/images/security.png
 %%WWWDIR%%/css/professional/images/stripe.png
 %%WWWDIR%%/css/professional/images/supplier.png
+%%WWWDIR%%/css/professional/images/tick.png
 %%WWWDIR%%/css/professional/images/transactions.gif
 %%WWWDIR%%/css/professional/images/transactions.png
 %%WWWDIR%%/css/professional/images/user.png
@@ -775,6 +789,7 @@
 %%WWWDIR%%/css/professional-rtl/images/security.png
 %%WWWDIR%%/css/professional-rtl/images/stripe.png
 %%WWWDIR%%/css/professional-rtl/images/supplier.png
+%%WWWDIR%%/css/professional-rtl/images/tick.png
 %%WWWDIR%%/css/professional-rtl/images/transactions.gif
 %%WWWDIR%%/css/professional-rtl/images/transactions.png
 %%WWWDIR%%/css/professional-rtl/images/user.png
@@ -833,6 +848,7 @@
 %%WWWDIR%%/css/silverwolf/images/stripe-original.png
 %%WWWDIR%%/css/silverwolf/images/stripe.png
 %%WWWDIR%%/css/silverwolf/images/supplier.png
+%%WWWDIR%%/css/silverwolf/images/tick.png
 %%WWWDIR%%/css/silverwolf/images/transactions-original.png
 %%WWWDIR%%/css/silverwolf/images/transactions.png
 %%WWWDIR%%/css/silverwolf/images/user.png
@@ -1107,6 +1123,7 @@
 %%WWWDIR%%/includes/DefineShiptClass.php
 %%WWWDIR%%/includes/DefineSpecialOrderClass.php
 %%WWWDIR%%/includes/DefineStockAdjustment.php
+%%WWWDIR%%/includes/DefineStockRequestClass.php
 %%WWWDIR%%/includes/DefineStockTransfers.php
 %%WWWDIR%%/includes/DefineSuppAllocsClass.php
 %%WWWDIR%%/includes/DefineSuppTransClass.php
@@ -1128,6 +1145,7 @@
 %%WWWDIR%%/includes/LanguageSetup.php
 %%WWWDIR%%/includes/LanguagesArray.php
 %%WWWDIR%%/includes/Login.php
+%%WWWDIR%%/includes/MainMenuLinksArray.php
 %%WWWDIR%%/includes/MiscFunctions.php
 %%WWWDIR%%/includes/OutputSerialItems.php
 %%WWWDIR%%/includes/PDFAgedDebtorsPageHeader.inc
@@ -1183,6 +1201,15 @@
 %%WWWDIR%%/includes/SQL_CommonFunctions.inc
 %%WWWDIR%%/includes/SelectOrderItems_IntoCart.inc
 %%WWWDIR%%/includes/UserLogin.php
+%%WWWDIR%%/includes/Z_POSDataCreation.php
+%%WWWDIR%%/includes/barcodepack/class.barcode.php
+%%WWWDIR%%/includes/barcodepack/class.code128.php
+%%WWWDIR%%/includes/barcodepack/class.ean13.php
+%%WWWDIR%%/includes/barcodepack/class.i2of5.php
+%%WWWDIR%%/includes/barcodepack/class.linearBarcode.php
+%%WWWDIR%%/includes/barcodepack/class.qrCode.php
+%%WWWDIR%%/includes/barcodepack/class.s2of5.php
+%%WWWDIR%%/includes/barcodepack/class.upc.php
 %%WWWDIR%%/includes/class.pdf.php
 %%WWWDIR%%/includes/footer.inc
 %%WWWDIR%%/includes/header.inc
@@ -1222,6 +1249,7 @@
 %%WWWDIR%%/includes/tcpdf/config/lang/ita.php
 %%WWWDIR%%/includes/tcpdf/config/tcpdf_config.php
 %%WWWDIR%%/includes/tcpdf/config/tcpdf_config_alt.php
+%%WWWDIR%%/includes/tcpdf/encodings_maps.php
 %%WWWDIR%%/includes/tcpdf/fonts/helvetica.php
 %%WWWDIR%%/includes/tcpdf/fonts/helveticab.php
 %%WWWDIR%%/includes/tcpdf/fonts/helveticabi.php
@@ -1242,6 +1270,8 @@
 %%WWWDIR%%/install/timezone.csv
 %%WWWDIR%%/install/timezone.php
 %%WWWDIR%%/javascripts/MiscFunctions.js
+%%WWWDIR%%/locale/ar_EG.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/ar_EG.utf8/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/cs_CZ.utf8/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/cs_CZ.utf8/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/de_DE.utf8/LC_MESSAGES/messages.mo
@@ -1358,8 +1388,6 @@
 %%WWWDIR%%/locale/vi_VN.utf8/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/zh_CN.utf8/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/zh_CN.utf8/LC_MESSAGES/messages.po
-%%WWWDIR%%/locale/zh_TW.utf8/LC_MESSAGES/messages.mo
-%%WWWDIR%%/locale/zh_TW.utf8/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualAPIFunctions.php
 %%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualARInquiries.html
 %%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualARReports.html
@@ -1440,6 +1468,8 @@
 %%WWWDIR%%/locale/zh_HK.utf8/Manual/ManualSpecialUtilities.html
 %%WWWDIR%%/locale/zh_HK.utf8/Manual/ManualSystemConventions.html
 %%WWWDIR%%/locale/zh_HK.utf8/Manual/ManualTax.html
+%%WWWDIR%%/locale/zh_TW.utf8/zh_TW.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/zh_TW.utf8/zh_TW.utf8/LC_MESSAGES/messages.po
 %%WWWDIR%%/logo_server.jpg
 %%WWWDIR%%/report_runner.php
 %%WWWDIR%%/reportwriter/FormMaker.php
@@ -1509,11 +1539,8 @@
 %%WWWDIR%%/sql/mysql/upgrade4.04.5-4.05.sql
 %%WWWDIR%%/sql/mysql/upgrade4.05-4.06.sql
 %%WWWDIR%%/sql/mysql/upgrade4.06-4.07.sql
-%%WWWDIR%%/sql/mysql/upgrade4.07-4.07.1.sql
-%%WWWDIR%%/sql/mysql/upgrade4.07.1-4.07.2.sql
-%%WWWDIR%%/sql/mysql/upgrade4.07.2-4.07.3
-%%WWWDIR%%/sql/mysql/upgrade4.07.2-4.07.3.sql
 %%WWWDIR%%/sql/mysql/upgrade4.07-4.08.sql
+%%WWWDIR%%/sql/mysql/upgrade4.08-4.09.sql
 %%WWWDIR%%/sql/mysql/weberp-demo.sql
 %%WWWDIR%%/sql/mysql/weberp-new.sql
 %%WWWDIR%%/xmlrpc/ChangeLog
@@ -1622,9 +1649,11 @@
 @dirrm %%WWWDIR%%/doc/Manual
 @dirrm %%WWWDIR%%/doc
 @dirrm %%WWWDIR%%/flags
+@dirrm %%WWWDIR%%/includes/barcodepack
 @dirrm %%WWWDIR%%/includes/php-gettext
 @dirrm %%WWWDIR%%/includes/phplot/contrib
 @dirrm %%WWWDIR%%/includes/phplot
+@dirrm %%WWWDIR%%/includes/tcpdf/cache
 @dirrm %%WWWDIR%%/includes/tcpdf/config/lang
 @dirrm %%WWWDIR%%/includes/tcpdf/config
 @dirrm %%WWWDIR%%/includes/tcpdf/fonts
@@ -1632,6 +1661,8 @@
 @dirrm %%WWWDIR%%/includes
 @dirrm %%WWWDIR%%/install
 @dirrm %%WWWDIR%%/javascripts
+@dirrm %%WWWDIR%%/locale/ar_EG.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/ar_EG.utf8
 @dirrm %%WWWDIR%%/locale/cs_CZ.utf8/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/cs_CZ.utf8
 @dirrm %%WWWDIR%%/locale/de_DE.utf8/LC_MESSAGES
@@ -1697,7 +1728,8 @@
 @dirrm %%WWWDIR%%/locale/zh_HK.utf8/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/zh_HK.utf8/Manual
 @dirrm %%WWWDIR%%/locale/zh_HK.utf8
-@dirrm %%WWWDIR%%/locale/zh_TW.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/zh_TW.utf8/zh_TW.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/zh_TW.utf8/zh_TW.utf8
 @dirrm %%WWWDIR%%/locale/zh_TW.utf8
 @dirrm %%WWWDIR%%/locale
 @dirrm %%WWWDIR%%/reportwriter/admin/forms
