@@ -31,6 +31,8 @@ PORTDOCS=	CREDITS DOC NEW_FEATURES README STRATEGY
 
 ALL_TARGET=
 
+.include <bsd.port.options.mk>
+
 post-patch:
 		@${REINPLACE_CMD} -e 's|data:/usr/local/games/scavenger|data:${DATADIR}/data|' \
 			${WRKSRC}/names.h
@@ -39,15 +41,15 @@ do-install:
 # Executable
 	${INSTALL_PROGRAM} ${WRKSRC}/sdlscav ${PREFIX}/bin/sdlscavenger
 
-# Pixmaps
-	${CP} ${WRKSRC}/data/scav.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
-
 # Data
 	${MKDIR} ${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} data ${DATADIR})
 
-# Documentations
-.if !defined(NOPORTDOCS)
+# Pixmaps
+	${INSTALL_DATA} ${WRKSRC}/data/scav.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
+
+# Documentation
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
