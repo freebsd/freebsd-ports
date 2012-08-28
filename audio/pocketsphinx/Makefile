@@ -6,26 +6,37 @@
 #
 
 PORTNAME=	pocketsphinx
-PORTVERSION=	0.4.1
+PORTVERSION=	0.7
 CATEGORIES=	audio accessibility
 MASTER_SITES=	SF/cmusphinx/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	r.neese@gmail.com
 COMMENT=	Speech recognition system
 
-LIB_DEPENDS=	sphinxfe.0:${PORTSDIR}/audio/sphinxbase
+LIB_DEPENDS=	sphinxad:${PORTSDIR}/audio/sphinxbase
 
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
+USE_PKGCONFIG=	build
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/sphinxbase
+CONFIGURE_ARGS+=	--without-python
+CONFIGURE_ENV+=	HAVE_DOXYGEN=no
+
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAKE_ENV=	MKDIR="${MKDIR}" \
 		OSVERSION=${OSVERSION}
 
+MAN1=	pocketsphinx_batch.1 \
+	pocketsphinx_continuous.1 \
+	pocketsphinx_mdef_convert.1
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -E -e 's|^([[:space:]]+programs )\\$$|\1|;' \
+		-e '/[[:space:]]+gst-plugin$$/D;' \
+		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
