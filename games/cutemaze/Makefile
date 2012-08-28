@@ -7,13 +7,13 @@
 
 PORTNAME=	cutemaze
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/
 EXTRACT_SUFX=	-src.tar.bz2
 
 MAINTAINER=	nemysis@gmx.ch
-COMMENT=	Is a simple, top-down game in which mazes are randomly generated
+COMMENT=	A simple, top-down game in which mazes are randomly generated
 
 LICENSE=	GPLv3
 
@@ -26,6 +26,8 @@ MAKE_JOBS_SAFE=	yes
 PORTDATA=	*
 PORTDOCS=	ChangeLog README
 
+.include <bsd.port.options.mk>
+
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		${QMAKE} ${QMAKEFLAGS}
@@ -33,6 +35,10 @@ do-configure:
 do-install:
 # Executable
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+
+# Data
+	${MKDIR} ${DATADIR}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "preview themes" ${DATADIR})
 
 # Icons
 	${MKDIR} ${PREFIX}/share/icons/oxygen
@@ -46,14 +52,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/icons/${PORTNAME}.desktop \
 		${PREFIX}/share/applications/
 
-# Data
-.if !defined (NOPORTDATA)
-	${MKDIR} ${DATADIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "preview themes" ${DATADIR})
-.endif
-
 # Documentation
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .  for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
