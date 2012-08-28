@@ -8,6 +8,7 @@
 PORTNAME=	sdcc
 PORTVERSION=	3.2.0
 DISTVERSIONPREFIX=	src-
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	SF
 
@@ -18,7 +19,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/graph/adjacency_list.hpp:${PORTSDIR}/devel/boost-libs
 
-CONFLICTS=	sdcc-3.1.*
+CONFLICTS=	sdcc-[0-9]*
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -34,14 +35,15 @@ Z80_DESC=	Zilog Z80/Z180/GBZ80, Rabbit 2000/3000/3000A
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS= --disable-avr --disable-install-libbfd --enable-new-pics
+CONFIGURE_ARGS= --disable-avr --disable-install-libbfd
 CONFIGURE_ENV=	ARCH=""
 WRKSRC= 	${WRKDIR}/sdcc
 
-ONLY_FOR_ARCHS=	i386
-ONLY_FOR_ARCHS_REASON=	Project only supports FreeBSD on i386
-
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
+.endif
 
 .if ${PORT_OPTIONS:MDEVLIB}
 PLIST_SUB+=	DEVLIB=""
