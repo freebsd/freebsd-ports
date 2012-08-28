@@ -1,13 +1,7 @@
---- chrome/chrome_browser.gypi.orig	2012-06-13 10:02:23.000000000 +0300
-+++ chrome/chrome_browser.gypi	2012-06-14 22:36:41.000000000 +0300
-@@ -4541,11 +4541,17 @@
+--- chrome/chrome_browser.gypi.orig	2012-07-25 22:44:49.000000000 +0300
++++ chrome/chrome_browser.gypi	2012-07-25 22:45:48.000000000 +0300
+@@ -4769,6 +4769,12 @@
              ['exclude', '^browser/usb/'],
-           ],
-         }],
--        ['OS!="android"', {
-+        ['OS!="android" and OS!="freebsd"', {
-           'dependencies': [
-             '../third_party/libusb/libusb.gyp:libusb',
            ],
          }],
 +        ['os_bsd==1', {

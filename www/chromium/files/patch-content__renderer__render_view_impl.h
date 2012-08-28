@@ -1,8 +1,8 @@
---- content/renderer/render_view_impl.h.orig	2011-11-01 10:42:35.000000000 +0200
-+++ content/renderer/render_view_impl.h	2011-11-22 00:49:03.000000000 +0200
-@@ -260,12 +260,12 @@
-   // Request updated policy regarding firewall NAT traversal being enabled.
-   void RequestRemoteAccessClientFirewallTraversal();
+--- content/renderer/render_view_impl.h.orig	2012-07-18 10:01:27.000000000 +0300
++++ content/renderer/render_view_impl.h	2012-07-25 21:21:32.000000000 +0300
+@@ -341,12 +341,12 @@
+   void SimulateImeConfirmComposition(const string16& text,
+                                      const ui::Range& replacement_range);
  
 -#if defined(OS_MACOSX) || defined(OS_WIN)
 +#if defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_FREEBSD)
@@ -15,16 +15,16 @@
    // Starts plugin IME.
    void StartPluginIme();
  
-@@ -670,7 +670,7 @@
-   FRIEND_TEST_ALL_PREFIXES(RenderViewImplTest, OnUpdateWebPreferences);
-   FRIEND_TEST_ALL_PREFIXES(RenderViewImplTest, StaleNavigationsIgnored);
+@@ -788,7 +788,7 @@
    FRIEND_TEST_ALL_PREFIXES(RenderViewImplTest, UpdateTargetURLWithInvalidURL);
+   FRIEND_TEST_ALL_PREFIXES(RenderViewImplTest,
+                            GetCompositionCharacterBoundsTest);
 -#if defined(OS_MACOSX)
 +#if defined(OS_MACOSX) || defined(OS_FREEBSD)
    FRIEND_TEST_ALL_PREFIXES(RenderViewTest, MacTestCmdUp);
  #endif
    FRIEND_TEST_ALL_PREFIXES(RenderViewImplTest, SetHistoryLengthAndPrune);
-@@ -1097,7 +1097,7 @@
+@@ -1258,7 +1258,7 @@
    bool cached_has_main_frame_horizontal_scrollbar_;
    bool cached_has_main_frame_vertical_scrollbar_;
  

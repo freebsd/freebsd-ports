@@ -7,7 +7,7 @@
 
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
-DISTVERSION=	20.0.1132.57
+DISTVERSION=	21.0.1180.81
 CATEGORIES=	www
 MASTER_SITES=	http://download.goodking.org/downloads/ \
 		ftp://rene-ladan.nl/pub/distfiles/ \
@@ -22,12 +22,10 @@ LICENSE_COMB=	multi
 
 CFLAGS+=	-Wno-error
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
-		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
+BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
 		bash:${PORTSDIR}/shells/bash \
 		yasm:${PORTSDIR}/devel/yasm \
 		flock:${PORTSDIR}/sysutils/flock \
-		svnversion:${PORTSDIR}/devel/subversion \
 		v4l_compat>=1.0.20110603:${PORTSDIR}/multimedia/v4l_compat
 
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
@@ -65,6 +63,7 @@ GYP_DEFINES+=	use_cups=1 \
 		use_system_yasm=1 \
 		use_system_libxml=1 \
 		use_system_ffmpeg=0 \
+		use_system_libusb=1 \
 		use_system_libevent=1 \
 		linux_strip_binary=1 \
 		linux_use_tcmalloc=0 \
@@ -73,6 +72,7 @@ GYP_DEFINES+=	use_cups=1 \
 		disable_nacl=1 \
 		enable_webrtc=0 \
 		enable_openmax=1 \
+		enable_one_click_signin=1 \
 		os_ver=${OSVERSION} \
 		prefix_dir=${LOCALBASE} \
 		python_ver=${PYTHON_VER}
@@ -137,7 +137,8 @@ BUILDTYPE=	Debug
 BUILDTYPE=	Release
 .endif
 
-MAKE_ENV+=	BUILDTYPE=${BUILDTYPE}
+MAKE_ENV+=	BUILDTYPE=${BUILDTYPE} \
+		GPERF=${LOCALBASE}/bin/gperf
 MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
@@ -157,22 +158,12 @@ post-patch:
 		${WRKSRC}/base/base.gypi \
 		${WRKSRC}/build/common.gypi \
 		${WRKSRC}/third_party/libvpx/libvpx.gyp \
-		${WRKSRC}/third_party/WebKit/Source/WebCore/gyp/WebCore.gyp \
 		${WRKSRC}/third_party/WebKit/Source/WebCore/plugins/PluginDatabase.cpp \
 		${WRKSRC}/crypto/crypto.gyp \
 		${WRKSRC}/v8/tools/gyp/v8.gyp \
 		${WRKSRC}/v8/build/common.gypi
 	@${REINPLACE_CMD} -e "s|linux|freebsd|" \
 		${WRKSRC}/tools/gyp/pylib/gyp/generator/make.py
-	@${REINPLACE_CMD} -e 's|/usr/bin/gcc|${CC}|' \
-		${WRKSRC}/third_party/WebKit/Source/WebCore/bindings/scripts/IDLParser.pm \
-		${WRKSRC}/third_party/WebKit/Source/WebCore/dom/make_names.pl
-	@${REINPLACE_CMD} -e "s|'flex'|'${LOCALBASE}/bin/flex'|" \
-		${WRKSRC}/third_party/angle/src/build_angle.gyp
-	@${REINPLACE_CMD} -e 's|gperf --key-positions|${LOCALBASE}/bin/gperf --key-positions|' \
-		${WRKSRC}/third_party/WebKit/Source/WebCore/css/makeprop.pl \
-		${WRKSRC}/third_party/WebKit/Source/WebCore/css/makevalues.pl \
-		${WRKSRC}/third_party/WebKit/Source/WebCore/make-hash-tools.pl
 
 pre-configure:
 	@${CP} -R ${WRKSRC}/third_party/libvpx/source/config/linux \
