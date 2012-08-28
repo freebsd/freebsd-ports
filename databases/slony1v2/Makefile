@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	slony1v2
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	databases
 MASTER_SITES=	http://main.slony.info/downloads/2.1/source/
 DISTNAME=	slony1-${PORTVERSION}
@@ -29,7 +29,8 @@ USE_RC_SUBR=	slon
 SUB_FILES=	pkg-message slon-mkservice.sh
 SUB_LIST+=	NAME=slon
 
-OPTIONS=	PERLTOOLS "Install perl configuration tools" Off
+OPTIONS_DEFINE=	PERLTOOLS
+PERLTOOLS_DESC=	Install perl configuration tools
 
 CONFLICTS?=	slony1-1*
 
@@ -39,7 +40,7 @@ IGNORE_WITH_PGSQL=	82
 
 CONFIGURE_ENV=	FLEX=${LOCALBASE}/bin/flex
 
-.if defined(WITH_PERLTOOLS)
+.if ${PORT_OPTIONS:MPERLTOOLS}
 USE_PERL5=	yes
 CONFIGURE_ARGS+=--with-perltools=${LOCALBASE}/sbin
 RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
@@ -63,8 +64,6 @@ CONFIGURE_ARGS+=--with-pgconfigdir=${LOCALBASE}/bin \
 .if !defined(NO_INSTALL_MANPAGES)
 MAN1=	slon.1 slonik.1
 .endif
-
-DEFAULT_PGSQL_VER?=83
 
 # Setting/finding PostgreSQL version we want.
 .if exists(${LOCALBASE}/bin/postmaster)
@@ -91,7 +90,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/adminguide/*.html ${WRKSRC}/doc/adminguide/*.png ${DOCSDIR}/adminguide/
 .endif
 .if ! defined(NO_INSTALL_MANPAGES)
-	${INSTALL_MAN} ${WRKSRC}/doc/adminguide/man1/*.1 ${MAN1PREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/doc/adminguide/man1/*.1 ${MAN1PREFIX}/man/man1
 .endif
 	@${INSTALL_SCRIPT} ${WRKDIR}/slon-mkservice.sh ${PREFIX}/sbin/slon-mkservice
 	@${INSTALL_DATA} ${FILESDIR}/slon.conf-sample ${PREFIX}/etc/
