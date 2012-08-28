@@ -7,7 +7,7 @@
 
 PORTNAME=	bsdstats
 PORTVERSION=	5.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 DISTFILES=
 
@@ -22,13 +22,8 @@ do-install:
 	${MKDIR} ${PREFIX}/etc/periodic/monthly
 	${INSTALL_SCRIPT} ${WRKDIR}/300.statistics ${PREFIX}/etc/periodic/monthly
 post-install:
-	@${CAT} ${PKGMESSAGE}
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
-	@${ECHO_MSG} "	To activate monthly statistics reporting in /etc/periodic.conf,"
-	@${ECHO_MSG} "	execute the following as root user:"
-	@${ECHO_MSG}
-	@${ECHO_MSG} "PKG_PREFIX=\"${PREFIX}\" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL"
-	@${ECHO_MSG}
+	@${CAT} ${PKGMESSAGE}
 .else
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
