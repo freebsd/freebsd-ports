@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pythontidy
-PORTVERSION=	1.22
+PORTVERSION=	1.23
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.lacusveris.com/PythonTidy/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,6 +16,8 @@ DIST_SUBDIR=	python
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Cleans up, regularizes, and reformats the text of Python scripts
+
+LICENSE=	GPLv2
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
