@@ -8,49 +8,61 @@
 #
 
 PORTNAME=	lilypond
-PORTVERSION=	2.14.2
-PORTREVISION=	2
+PORTVERSION=	2.16.0
 CATEGORIES=	print audio
-MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v2.14/
+MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v${PORTVERSION:R}/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	The GNU music typesetter
 
-BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
-    		mftrace:${PORTSDIR}/print/mftrace \
-		rarian-sk-config:${PORTSDIR}/textproc/rarian \
-		texi2html:${PORTSDIR}/textproc/texi2html \
+BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 		pdftexi2dvi:${PORTSDIR}/print/texinfo \
-		zip:${PORTSDIR}/archivers/zip \
-		gsed:${PORTSDIR}/textproc/gsed \
+		t1ascii:${PORTSDIR}/print/t1utils \
+		bash:${PORTSDIR}/shells/bash \
+		fontforge:${PORTSDIR}/print/fontforge \
 		${LOCALBASE}/share/ghostscript/fonts/c059033l.pfb:${PORTSDIR}/print/gsfonts
-LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile \
-    		gmp.10:${PORTSDIR}/math/gmp
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
+
+LIB_DEPENDS=	guile:${PORTSDIR}/lang/guile \
+    		gmp:${PORTSDIR}/math/gmp \
+		freetype:${PORTSDIR}/print/freetype2
+
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
     		mftrace:${PORTSDIR}/print/mftrace \
+		gs:${PORTSDIR}/print/ghostscript9 \
 		${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans-Bold.ttf:${PORTSDIR}/x11-fonts/dejavu
 
 MAN1=		lilymidi.1 lilypond-book.1 lilypond-invoke-editor.1 \
 		lilypond.1 lilysong.1 convert-ly.1 abc2ly.1 etf2ly.1 \
 		midi2ly.1 musicxml2ly.1
-INFO=		lilypond-changes lilypond-contributor lilypond-essay \
-		lilypond-extending lilypond-internals lilypond-learning \
-		lilypond-notation lilypond-usage lilypond-web \
-		music-glossary
 
-USE_AUTOTOOLS=	autoconf
+INFO=		lilypond-notation \
+		lilypond-usage \
+		lilypond-internals \
+		lilypond-learning \
+		lilypond-changes \
+		lilypond-contributor \
+		lilypond-essay \
+		lilypond-extending \
+		lilypond-snippets \
+		lilypond-web \
+		music-glossary \
+		internals
+
 USE_BISON=	build
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
+USE_PERL5_BUILD=yes
 USE_GNOME=	pango
+
 MAKEFILE=	GNUmakefile
 GNU_MAKEFILE=	yes
 MAKE_JOBS_UNSAFE=	yes
+
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-ncsb-dir=${LOCALBASE}/share/ghostscript/fonts
-CONFIGURE_ENV+=	MAKEINFO="${LOCALBASE}/bin/makeinfo" \
-		FLEX=${FLEX} \
-		YACC=${YACC}
+CONFIGURE_ENV+=	ac_cv_prog_MAKEINFO="${LOCALBASE}/bin/makeinfo" \
+		FLEX=${FLEX} YACC=${YACC}
 
 ALL_TARGET=	all
 
@@ -67,20 +79,13 @@ PLIST_SUB+=	NLS=""
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|makeinfo|${LOCALBASE}/bin/makeinfo|; s|find -maxdepth|find . -maxdepth|g' \
-	    ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|<FlexLexer.h>|"/usr/include/FlexLexer.h"|' \
 	    ${WRKSRC}/lily/include/includable-lexer.hh
 .if defined(WITHOUT_NLS)
-	${REINPLACE_CMD} -e '17,21d' ${WRKSRC}/po/GNUmakefile
-.endif
-
-pre-su-install:
-.if exists(${PREFIX}/info/dir)
-	${REINPLACE_CMD} -i '' -e '/LilyPond/d' ${PREFIX}/info/dir
+	${REINPLACE_CMD} -e '/^PO_FILES/s|= |= #|' ${WRKSRC}/${MAKEFILE}
 .endif
 
 post-install:
-	@${LN} -s ${DATADIR}/${PORTVERSION} ${DATADIR}/current
+	@${LN} -fs ${DATADIR}/${PORTVERSION} ${DATADIR}/current
 
 .include <bsd.port.post.mk>
