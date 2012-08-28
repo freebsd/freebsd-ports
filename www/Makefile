@@ -523,6 +523,7 @@
     SUBDIR += mod_spdy
     SUBDIR += mod_tidy
     SUBDIR += mod_tsa
+    SUBDIR += mod_mask
     SUBDIR += mod_uid
     SUBDIR += mod_vhost_ldap
     SUBDIR += mod_vhs
