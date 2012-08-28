@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spectrwm
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://opensource.conformal.com/snapshots/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
@@ -22,7 +22,7 @@ LIB_DEPENDS+=	xcb:${PORTSDIR}/x11/libxcb \
 		xcb-keysyms:${PORTSDIR}/x11/xcb-util-keysyms
 RUN_DEPENDS+=	dmenu:${PORTSDIR}/x11/dmenu
 
-USE_XORG=	x11 xft xrandr xt
+USE_XORG=	x11 xcursor xft xrandr xt
 
 MAN1=		spectrwm.1
 USE_LDCONFIG=	yes
@@ -40,8 +40,8 @@ do-build:
 	${CC} ${CFLAGS} -I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/freetype2 -I${WRKSRC}/freebsd \
 		-lutil -L${LOCALBASE}/lib -lX11 -lX11-xcb -lxcb -lxcb-icccm \
-		-lxcb-keysyms -lxcb-randr -lxcb-util -lxcb-xtest -lXft \
-		-lXrandr -DSWM_LIB=\"${PREFIX}/lib/libswmhack.so\" \
+		-lxcb-keysyms -lxcb-randr -lxcb-util -lxcb-xtest -lXcursor \
+		-lXft -lXrandr -DSWM_LIB=\"${PREFIX}/lib/libswmhack.so\" \
 		-o ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.c
 	${CC} ${CFLAGS} -I${LOCALBASE}/include -shared -fpic -DPIC \
 		-o ${WRKSRC}/libswmhack.so ${WRKSRC}/lib/swm_hack.c
