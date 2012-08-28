@@ -1,14 +1,15 @@
---- jasperserver/buildomatic/bin/dev.xml.orig	2011-03-14 02:07:47.000000000 -0700
-+++ jasperserver/buildomatic/bin/dev.xml	2011-03-14 02:15:47.000000000 -0700
-@@ -44,6 +44,7 @@
-             <exec executable="${maven}" dir="@{dir}" failonerror="true">
-                 <env key="MAVEN_OPTS" value="-Xms128m -Xmx512m -XX:PermSize=32m -XX:MaxPermSize=128m"/>
-                 <arg value="-s"/>
-+                <arg value="-o"/>
+--- ./jasperserver/buildomatic/bin/dev.xml.orig	2012-08-21 17:14:07.000000000 -0700
++++ ./jasperserver/buildomatic/bin/dev.xml	2012-08-21 17:14:14.000000000 -0700
+@@ -47,7 +47,7 @@
                  <arg value="${currentConf}/maven_settings.xml"/>
                  <!-- <arg value="-e"/> --> <!-- ERROR INFO MODE -->
                  <!-- <arg value="-X"/> --> <!-- DETAILED DEBUG MODE -->
-@@ -111,16 +112,6 @@
+-                <!-- <arg value="-o"/> --> <!-- OFFLINE MODE -->
++                <arg value="-o"/>
+                 <args/>
+             </exec>
+         </sequential>
+@@ -111,15 +111,6 @@
          </sequential>
      </macrodef>
    
@@ -21,19 +22,19 @@
 -            </exec>
 -        </sequential>
 -    </macrodef>
--
-     <macrodef name="run-export-test">
-       <attribute name="edition" />
-       <sequential>
-@@ -161,6 +152,7 @@
+ 
+ 
+     <!-- ======================================================================= -->
+@@ -138,7 +129,7 @@
              <arg value="-Dversion=${maven.jdbc.version}"/>
              <arg value="-Dpackaging=jar"/>
              <arg value="-Dfile=${currentDbDir}/jdbc/${jdbcJar}"/>
-+	    <arg value="-o"/>
-             <!-- <arg value="-o"/> --> <!-- OFFLINE MODE -->
+-            <!-- <arg value="-o"/> --> <!-- OFFLINE MODE -->
++            <arg value="-o"/>
          </runmaven>
      </target>
-@@ -242,102 +234,6 @@
+ 
+@@ -222,101 +213,6 @@
        <echo> </echo>
      </target>
  
@@ -132,25 +133,28 @@
 -        </else>
 -        </if>
 -    </target>
--
+ 
      <target name="build-src-all"
              depends="build-ce, build-pro"
-             description="Builds JasperServer CE/Pro and copies WAR files to install resources">
-@@ -549,7 +445,7 @@
+@@ -324,7 +220,7 @@
      </target>
  
-     <target name="build-all"
--            depends="update-all,build-all-no-svn"
-+            depends="build-all-no-svn"
-             description="update all src, clean build all src, drop-recreate db, build ddl pro, init db pro, run unit test pro">
+     <target name="build-ce"
+-            depends="init-source-paths, set-ce-webapp-name, install-jdbc-dep"
++            depends="init-source-paths, set-ce-webapp-name"
+             description="Builds JasperServer CE and copies WAR to install resources">
+ 
+         <!-- set these values to package avoid runtime error on windows. these two     -->
+@@ -598,12 +494,6 @@
+                          build ddl pro, init js db pro, run integration tests pro, run production data pro">
      </target>
  
-@@ -569,7 +465,7 @@
-     </target>
- 
-     <target name="update-build-all"
--            depends="update-repo, update-ce, update-pro, build-ce, build-pro"
-+            depends="build-ce, build-pro"
-             description="update and build os and pro"/>
- 
-     <target name="clean-pro-unit-test"
+-    <target name="build-all-svn-update"
+-            depends="update-all,build-src-all,build-init-js-db-pro,run-integration-tests-pro,run-production-data-pro"
+-            description="(do not do svn update), clean build all src, drop-recreate db, 
+-                         build ddl pro, init js db pro, run integration tests pro, run production data pro">
+-    </target>
+-
+     <target name="build-all-deploy"
+             depends="build-all,deploy-webapp-pro"
+             description="call build-all target, deploy webapp pro">

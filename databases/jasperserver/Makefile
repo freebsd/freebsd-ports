@@ -6,22 +6,21 @@
 #
 
 PORTNAME=	jasperserver
-PORTVERSION=	4.5.0
+PORTVERSION=	4.7.0
 CATEGORIES=	databases print java
-MASTER_SITES=	SF/${PORTNAME}/JasperServer/JasperServer%20${PORTVERSION}/:source1
+MASTER_SITES=	SF/${PORTNAME}/JasperServer/JasperReports%20Server%20${PORTVERSION}/:source1 \
+		SF/bsdsrc/:source2
 DISTFILES=	jasperreports-server-${PORTVERSION}-src.zip:source1 \
-		jasperreports-server-cp-${PORTVERSION}-maven-repository.zip:source1
+		FreeBSD-jasperreports-server-cp-${PORTVERSION}-maven-repository.zip:source2
 EXTRACT_ONLY=	jasperreports-server-${PORTVERSION}-src.zip
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Open Source Java Reporting Library
 
-LICENSE=	GPLv2 MIT AL2
+LICENSE=	GPLv3 MIT AL2
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	mvn:${PORTSDIR}/devel/maven2
-
-MANUAL_PACKAGE_BUILD=	distfile exceeds pointyhat filesize limit
 
 SRCDIR=		${WRKDIR}/jasperreports-server-${PORTVERSION}-src
 PATCH_WRKSRC=	${SRCDIR}
@@ -30,8 +29,8 @@ WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
 SQLSRC=		${WRKSRC}/install_resources/sql
 JS=		${SRCDIR}/${PORTNAME}
 JSREPO=		${JS}-repo
-JSMAVENARCH=	jasperreports-server-cp-${PORTVERSION}-maven-repository.zip
-JSUPDATE=	4.2.1-4.5.0
+JSMAVENARCH=	FreeBSD-jasperreports-server-cp-${PORTVERSION}-maven-repository.zip
+JSUPDATE=	4.5.0-${PORTVERSION}
 
 NO_WRKSUBDIR=	yes
 USE_JAVA=	yes
@@ -68,6 +67,8 @@ PLIST_SUB=	DATABASE=${DATABASE} \
 		JDBCLOC=${JDBCLOC} \
 		JSUPDATE=${JSUPDATE} \
 		PORTNAME=${PORTNAME}
+
+PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
@@ -161,6 +162,8 @@ post-patch:
 	@${SED} ${REPLACE_LIST_TEMP} ${file} > ${WRKDIR}/`basename ${file}`
 	@${ECHO_MSG} " [ DONE ]"
 .endfor
+	@${REINPLACE_CMD} -e 's|--DROP|-- DROP|' ${SQLSRC}/mysql/quartz.ddl
+
 .if ${PORT_OPTIONS:MXLS}
 	@${ECHO} "Applying alternative patches for Xls."
 	@cd ${PATCH_WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/alt-patch-jasperserver__common__shared-config__applicationContext.xml
@@ -202,9 +205,9 @@ pre-build:
 .endif
 
 do-build:
+# although log will show Downloading, maven is in offline mode and can't download
 	@( cd ${WRKSRC} && ./js-ant clean-config )
 	@( cd ${WRKSRC} && ./js-ant gen-config )
-	@( cd ${WRKSRC} && ./js-ant add-jdbc-driver )
 	@( ${CP} ${WRKDIR}/web.xml ${JS}/jasperserver-war/src/main/webappAdditions/WEB-INF/web.xml )
 	@( cd ${WRKSRC} && ./js-ant build-ce )
 
@@ -238,12 +241,16 @@ do-install:
 #removed shipped driver from vendor
 .if empty(PORT_OPTIONS:MMYSQL)
 	${INSTALL_DATA} ${DISTDIR}/${JDBC} ${APPHOME}/${JDBCLOC}
-	@${RM} ${APPHOME}/${JDBCLOC}/postgresql-9.0-801.jdbc3.jar
+	@${RM} ${APPHOME}/${JDBCLOC}/postgresql-9.0-801.jdbc4.jar
 .else
 	${LN} -s ${JAVAJARDIR}/mysql-connector-java.jar ${APPHOME}/${JDBCLOC}
 .endif
 
-post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+	( cd ${SRCDIR}/${PORTNAME}/docs && ${COPYTREE_SHARE} \* ${DOCSDIR} )
+.endif	
+
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
