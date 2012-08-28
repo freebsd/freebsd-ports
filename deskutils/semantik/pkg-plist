@@ -133,6 +133,7 @@ share/apps/semantik/templates/html/def.css
 share/apps/semantik/templates/html/index.html
 share/apps/semantik/templates/java.sem.py
 share/apps/semantik/templates/java/Kadapplet.java
+share/apps/semantik/templates/java/Makefile
 share/apps/semantik/templates/java/Mapview.java
 share/apps/semantik/templates/java/main.html
 share/apps/semantik/templates/odp.sem.py
@@ -167,6 +168,7 @@ share/apps/semantik/templates/waf
 share/apps/semantik/tips
 share/icons/hicolor/128x128/apps/semantik.png
 share/icons/hicolor/22x22/apps/semantik.png
+share/icons/hicolor/32x32/apps/semantik.png
 share/icons/hicolor/48x48/apps/semantik.png
 share/icons/hicolor/64x64/apps/semantik.png
 share/icons/oxygen/128x128/actions/semantik_sort.png
@@ -184,8 +186,14 @@ share/icons/oxygen/32x32/actions/semantik_point.png
 share/icons/oxygen/32x32/actions/semantik_sort.png
 share/icons/oxygen/48x48/actions/semantik_move.png
 share/icons/oxygen/64x64/actions/semantik_sort.png
-share/locale/es/LC_MESSAGES/semantik.mo
-share/locale/fr/LC_MESSAGES/semantik.mo
+%%NLS%%share/locale/cz/LC_MESSAGES/semantik.mo
+%%NLS%%share/locale/el/LC_MESSAGES/semantik.mo
+%%NLS%%share/locale/es/LC_MESSAGES/semantik.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/semantik.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/semantik.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/semantik.mo
+%%NLS%%@dirrmtry share/locale/cz/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cz
 @dirrm share/apps/semantik/templates/s5/ui/default
 @dirrm share/apps/semantik/templates/s5/ui
 @dirrm share/apps/semantik/templates/s5
