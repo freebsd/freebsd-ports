@@ -105,6 +105,7 @@
     SUBDIR += tryton
     SUBDIR += trytond
     SUBDIR += trytond_account
+    SUBDIR += trytond_account_invoice
     SUBDIR += trytond_company
     SUBDIR += trytond_country
     SUBDIR += trytond_currency
