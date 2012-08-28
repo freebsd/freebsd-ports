@@ -6,18 +6,25 @@
 #
 
 PORTNAME=	libhtp
-PORTVERSION=	0.2.8
+PORTVERSION=	0.3.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.openinfosecfoundation.org/download/
-DISTNAME=	htp-${PORTVERSION}
+#MASTER_SITES=	# This port uses github
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Security-aware parser for the HTTP protocol
 
-WRKSRC=	${WRKDIR}/htp-${PORTVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	ironbee
+GH_COMMIT=	a334539
 
+USE_AUTOTOOLS=	libtool autoheader aclocal
+ACLOCAL_ARGS=	-Im4
 USE_LDCONFIG=	yes
 USE_GNOME=	pkgconfig gnomehack
-GNU_CONFIGURE=	yes
+USE_ICONV=	yes
+
+pre-configure:
+	${REINPLACE_CMD} -Ee 's,^(pkgconfigdir = ).*,\1$$(exec_prefix)/libdata/pkgconfig,' ${WRKSRC}/Makefile.am
+	@cd ${WRKSRC} && ${SH} ./autogen.sh
 
 .include <bsd.port.mk>
