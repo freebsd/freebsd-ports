@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	simutrans
-PORTVERSION=	111.2.2
+PORTVERSION=	111.3.1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${SIMUTRANS_VERSION} \
 		SF/${PORTNAME}/pak64/${SIMUTRANS_PAK64}:pak64
@@ -20,9 +20,10 @@ LICENSE=	ART10
 LICENSE_FILE=	${WRKSRC}/simutrans/license.txt
 
 SIMUTRANS_VERSION=	${PORTVERSION:S,.,-,g}
-SIMUTRANS_REVISION=	5583
-SIMUTRANS_PAK64=	111-2
+SIMUTRANS_REVISION=	5843
+SIMUTRANS_PAK64=	111-3
 
+OPTIONS_DEFINE= DOCS
 MAKE_ARGS=	BACKEND=mixer_sdl \
 		COLOUR_DEPTH=16 \
 		OSTYPE=freebsd \
@@ -39,20 +40,23 @@ PLIST_FILES=	bin/simutrans \
 		share/applications/simutrans.desktop
 PORTDATA=	*
 
+.include <bsd.port.options.mk>
+
 post-patch:
+	@${REINPLACE_CMD} 's/-O[^ ]*//' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} 's/simutrans/.simutrans/' ${WRKSRC}/simsys.cc
 
 do-install:
 	cd ${WRKSRC}/simutrans && ${COPYTREE_SHARE} \
 		"config font music pak skin text" ${DATADIR}
-.ifndef NOPORTDOCS
+.if ${PORT_OPTIONS:MDOCS}
 	${INSTALL_DATA} ${WRKSRC}/simutrans/readme.txt ${DATADIR}
 .endif
 	${INSTALL_PROGRAM} ${WRKSRC}/build/default/sim \
 		${PREFIX}/bin/simutrans-bin
 	${INSTALL_SCRIPT} ${FILESDIR}/simutrans ${PREFIX}/bin/simutrans
 	${MKDIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${FILESDIR}/simutrans.desktop \
+	${INSTALL_SCRIPT} ${FILESDIR}/simutrans.desktop \
 		${PREFIX}/share/applications/simutrans.desktop
 
 .include <bsd.port.mk>
