@@ -24,7 +24,7 @@ USE_GNOME=	pkgconfig gnomehack
 USE_ICONV=	yes
 
 pre-configure:
-	${REINPLACE_CMD} -Ee 's,^(pkgconfigdir = ).*,\1$$(exec_prefix)/libdata/pkgconfig,' ${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -Ee 's,^(pkgconfigdir = ).*,\1$$(exec_prefix)/libdata/pkgconfig,' ${WRKSRC}/Makefile.am
 	@cd ${WRKSRC} && ${SH} ./autogen.sh
 
 .include <bsd.port.mk>
