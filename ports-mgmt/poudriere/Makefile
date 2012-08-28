@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	poudriere
-PORTVERSION=	1.5.4
-PORTREVISION=	1
+PORTVERSION=	2.0.0
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://files.etoilebsd.net/poudriere/
 
@@ -27,6 +26,7 @@ CONFLICTS_INSTALL=	poudriere-devel-*
 
 PLIST_FILES=	etc/poudriere.conf.sample \
 		bin/poudriere \
+		share/poudriere/clean.sh \
 		share/poudriere/common.sh \
 		share/poudriere/test_ports.sh \
 		share/poudriere/ports.sh \
@@ -35,11 +35,8 @@ PLIST_FILES=	etc/poudriere.conf.sample \
 		share/poudriere/bulk.sh \
 		share/poudriere/cron.sh \
 		share/poudriere/queue.sh \
-		poudriere/cron/.keep
 
-PLIST_DIRS=	share/poudriere \
-		poudriere/cron \
-		poudriere
+PLIST_DIRS=	share/poudriere
 
 .include <bsd.port.options.mk>
 
@@ -53,7 +50,6 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
 post-install:
-	@${TOUCH} ${PREFIX}/poudriere/cron/.keep
 .if defined(WITH_ZSH)
 	@${MKDIR} ${PREFIX}/share/zsh/site-functions/
 	@${INSTALL_DATA} ${WRKSRC}/zsh-completions ${PREFIX}/share/zsh/site-functions/_poudriere
