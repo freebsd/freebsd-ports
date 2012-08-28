@@ -1,0 +1,9 @@
+trytond_account is a account module for tryton.
+
+The account module defines fundamentals for most of accounting needs.
+It include: General accounting, Fiscal year management, Taxes management,
+Journal entries, Reconciliation. And with reports: General ledger,  Trial
+balance, Balance sheet, Income statement, Third party balance, Aged
+balance and General journal.
+
+WWW: http://www.tryton.org/
