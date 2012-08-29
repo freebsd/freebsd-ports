@@ -111,10 +111,10 @@ CONFIGURE_ARGS+=--enable-install-setuid=no
 .endif
 
 .if ${ARCH} == ia64
-PLIST_SUB+=     IA64_NA="@comment "
-EXTRA_PATCHES=  ${.CURDIR}/files/extra-arch-ia64
+PLIST_SUB+=	IA64_NA="@comment "
+EXTRA_PATCHES=	${.CURDIR}/files/extra-arch-ia64
 .else
-PLIST_SUB+=     IA64_NA=""
+PLIST_SUB+=	IA64_NA=""
 .endif
 
 .if ${ARCH} == powerpc || ${ARCH} == powerpc64
@@ -155,10 +155,6 @@ post-patch:
 .if defined(WITH_NEW_XORG)
 post-install:
 	@${MKDIR} ${PREFIX}/share/X11/xorg.conf.d
-
-PLIST_SUB+=	OLD="@comment " NEW=""
-.else
-PLIST_SUB+=	OLD="" NEW="@comment "
 .endif
 
 .include <bsd.port.post.mk>
