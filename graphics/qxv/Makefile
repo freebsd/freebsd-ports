@@ -7,6 +7,7 @@
 
 PORTNAME=	qxv
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES+=	graphics
 MASTER_SITES=	http://labs.freehackers.org/attachments/download/422/
 
@@ -30,7 +31,8 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 
 USE_BZIP2=	yes
 USE_XORG=	sm xrender xext x11 xau xdmcp ice
-USE_QT4=	corelib gui qmake_build
+USE_QT4=	corelib gui qmake_build moc_build uic_build rcc_build
+MAKE_JOBS_UNSAFE=	yes
 HAS_CONFIGURE=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
