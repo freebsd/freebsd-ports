@@ -7,6 +7,7 @@
 
 PORTNAME=	knock
 PORTVERSION=	0.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.zeroflux.org/proj/knock/files/ \

@@ -27,7 +27,6 @@ load_rc_config $name
 : ${knockd_flags="-d"}
 
 command="%%PREFIX%%/bin/knockd"
-command_args=${knockd_flags}
 pidfile="/var/run/knockd.pid"
 required_files=${knockd_conf}
 
