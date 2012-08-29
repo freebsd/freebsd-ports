@@ -30,7 +30,7 @@ MAN3=		DBM::Deep.3 DBM::Deep::Cookbook.3 DBM::Deep::Internals.3 \
 		DBM::Deep::Iterator.3 DBM::Deep::Storage::File.3 \
 		DBM::Deep::Engine.3 DBM::Deep::Storage.3 \
 		DBM::Deep::Iterator::File::Index.3 DBM::Deep::Null.3 \
-		DBM::Deep::Engine::File.3 DBM::Deep::Sector::File.3
+		DBM::Deep::Engine::File.3
 
 .include <bsd.port.pre.mk>
 
