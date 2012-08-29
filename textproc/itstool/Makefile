@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	itstool
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://files.itstool.org/itstool/
 
@@ -16,7 +16,7 @@ COMMENT=	Make XML documents translatable through po files
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
 
 USE_BZIP2=	yes
-USE_PYTHON=	yes
+USE_PYTHON_RUN=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		itstool.1
