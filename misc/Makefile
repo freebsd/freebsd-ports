@@ -62,6 +62,7 @@
     SUBDIR += cwish
     SUBDIR += dahdi
     SUBDIR += dahdi-kmod
+    SUBDIR += dahdi-kmod26
     SUBDIR += ddate
     SUBDIR += deco
     SUBDIR += dejagnu
