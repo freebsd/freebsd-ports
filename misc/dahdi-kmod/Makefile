@@ -22,6 +22,8 @@ COMMENT=	Digium/Asterisk Hardware Device Interface
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/dahdi_cfg:${PORTSDIR}/misc/dahdi
 
+CONFLICTS=	dahdi-kmod26-*
+
 DAHDI_VERSION=		2.4.0-rc5
 DAHDI_TOOLS_VERSION=	2.4.0-rc1
 OSLEC_VERSION=		2.6.35.4
