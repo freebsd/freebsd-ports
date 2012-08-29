@@ -25,6 +25,8 @@ include/wx-2.9/wx/aui/auibook.h
 include/wx-2.9/wx/aui/dockart.h
 include/wx-2.9/wx/aui/floatpane.h
 include/wx-2.9/wx/aui/framemanager.h
+include/wx-2.9/wx/aui/tabart.h
+include/wx-2.9/wx/aui/tabartgtk.h
 include/wx-2.9/wx/aui/tabmdi.h
 include/wx-2.9/wx/bannerwindow.h
 include/wx-2.9/wx/base64.h
@@ -247,10 +249,6 @@ include/wx-2.9/wx/gtk/dataform.h
 include/wx-2.9/wx/gtk/dataobj.h
 include/wx-2.9/wx/gtk/dataobj2.h
 include/wx-2.9/wx/gtk/dataview.h
-include/wx-2.9/wx/gtk/dc.h
-include/wx-2.9/wx/gtk/dcclient.h
-include/wx-2.9/wx/gtk/dcmemory.h
-include/wx-2.9/wx/gtk/dcscreen.h
 include/wx-2.9/wx/gtk/dialog.h
 include/wx-2.9/wx/gtk/dirdlg.h
 include/wx-2.9/wx/gtk/dnd.h
@@ -284,7 +282,6 @@ include/wx-2.9/wx/gtk/notebook.h
 include/wx-2.9/wx/gtk/pen.h
 include/wx-2.9/wx/gtk/popupwin.h
 include/wx-2.9/wx/gtk/print.h
-include/wx-2.9/wx/gtk/private/win_gtk.h
 include/wx-2.9/wx/gtk/radiobox.h
 include/wx-2.9/wx/gtk/radiobut.h
 include/wx-2.9/wx/gtk/region.h
@@ -699,50 +696,53 @@ include/wx-2.9/wx/xtixml.h
 include/wx-2.9/wx/zipstrm.h
 include/wx-2.9/wx/zstream.h
 lib/libwx_baseu-2.9.so
-lib/libwx_baseu-2.9.so.3
-lib/libwx_baseu-2.9.so.3.0.0
+lib/libwx_baseu-2.9.so.4
+lib/libwx_baseu-2.9.so.4.0.0
 lib/libwx_baseu_net-2.9.so
-lib/libwx_baseu_net-2.9.so.3
-lib/libwx_baseu_net-2.9.so.3.0.0
+lib/libwx_baseu_net-2.9.so.4
+lib/libwx_baseu_net-2.9.so.4.0.0
 lib/libwx_baseu_xml-2.9.so
-lib/libwx_baseu_xml-2.9.so.3
-lib/libwx_baseu_xml-2.9.so.3.0.0
+lib/libwx_baseu_xml-2.9.so.4
+lib/libwx_baseu_xml-2.9.so.4.0.0
 lib/libwx_gtk2u_adv-2.9.so
-lib/libwx_gtk2u_adv-2.9.so.3
-lib/libwx_gtk2u_adv-2.9.so.3.0.0
+lib/libwx_gtk2u_adv-2.9.so.4
+lib/libwx_gtk2u_adv-2.9.so.4.0.0
 lib/libwx_gtk2u_aui-2.9.so
-lib/libwx_gtk2u_aui-2.9.so.3
-lib/libwx_gtk2u_aui-2.9.so.3.0.0
+lib/libwx_gtk2u_aui-2.9.so.4
+lib/libwx_gtk2u_aui-2.9.so.4.0.0
 lib/libwx_gtk2u_core-2.9.so
-lib/libwx_gtk2u_core-2.9.so.3
-lib/libwx_gtk2u_core-2.9.so.3.0.0
+lib/libwx_gtk2u_core-2.9.so.4
+lib/libwx_gtk2u_core-2.9.so.4.0.0
 lib/libwx_gtk2u_gl-2.9.so
-lib/libwx_gtk2u_gl-2.9.so.3
-lib/libwx_gtk2u_gl-2.9.so.3.0.0
+lib/libwx_gtk2u_gl-2.9.so.4
+lib/libwx_gtk2u_gl-2.9.so.4.0.0
 lib/libwx_gtk2u_html-2.9.so
-lib/libwx_gtk2u_html-2.9.so.3
-lib/libwx_gtk2u_html-2.9.so.3.0.0
+lib/libwx_gtk2u_html-2.9.so.4
+lib/libwx_gtk2u_html-2.9.so.4.0.0
 %%GSTREAMER%%lib/libwx_gtk2u_media-2.9.so
-%%GSTREAMER%%lib/libwx_gtk2u_media-2.9.so.3
-%%GSTREAMER%%lib/libwx_gtk2u_media-2.9.so.3.0.0
+%%GSTREAMER%%lib/libwx_gtk2u_media-2.9.so.4
+%%GSTREAMER%%lib/libwx_gtk2u_media-2.9.so.4.0.0
 lib/libwx_gtk2u_propgrid-2.9.so
-lib/libwx_gtk2u_propgrid-2.9.so.3
-lib/libwx_gtk2u_propgrid-2.9.so.3.0.0
+lib/libwx_gtk2u_propgrid-2.9.so.4
+lib/libwx_gtk2u_propgrid-2.9.so.4.0.0
 lib/libwx_gtk2u_qa-2.9.so
-lib/libwx_gtk2u_qa-2.9.so.3
-lib/libwx_gtk2u_qa-2.9.so.3.0.0
+lib/libwx_gtk2u_qa-2.9.so.4
+lib/libwx_gtk2u_qa-2.9.so.4.0.0
 lib/libwx_gtk2u_ribbon-2.9.so
-lib/libwx_gtk2u_ribbon-2.9.so.3
-lib/libwx_gtk2u_ribbon-2.9.so.3.0.0
+lib/libwx_gtk2u_ribbon-2.9.so.4
+lib/libwx_gtk2u_ribbon-2.9.so.4.0.0
 lib/libwx_gtk2u_richtext-2.9.so
-lib/libwx_gtk2u_richtext-2.9.so.3
-lib/libwx_gtk2u_richtext-2.9.so.3.0.0
+lib/libwx_gtk2u_richtext-2.9.so.4
+lib/libwx_gtk2u_richtext-2.9.so.4.0.0
 lib/libwx_gtk2u_stc-2.9.so
-lib/libwx_gtk2u_stc-2.9.so.3
-lib/libwx_gtk2u_stc-2.9.so.3.0.0
+lib/libwx_gtk2u_stc-2.9.so.4
+lib/libwx_gtk2u_stc-2.9.so.4.0.0
+lib/libwx_gtk2u_webview-2.9.so
+lib/libwx_gtk2u_webview-2.9.so.4
+lib/libwx_gtk2u_webview-2.9.so.4.0.0
 lib/libwx_gtk2u_xrc-2.9.so
-lib/libwx_gtk2u_xrc-2.9.so.3
-lib/libwx_gtk2u_xrc-2.9.so.3.0.0
+lib/libwx_gtk2u_xrc-2.9.so.4
+lib/libwx_gtk2u_xrc-2.9.so.4.0.0
 lib/wx/include/gtk2-unicode-2.9/wx/setup.h
 share/aclocal/wxwin29.m4
 share/bakefile/presets/wx29.bkl
@@ -767,7 +767,6 @@ share/bakefile/presets/wx29_xrc.bkl
 @dirrm include/wx-2.9/wx/persist
 @dirrm include/wx-2.9/wx/meta
 @dirrm include/wx-2.9/wx/html
-@dirrm include/wx-2.9/wx/gtk/private
 @dirrm include/wx-2.9/wx/gtk/hildon
 @dirrm include/wx-2.9/wx/gtk/gnome
 @dirrm include/wx-2.9/wx/gtk
