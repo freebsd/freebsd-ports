@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wx
-PORTVERSION=	2.9.3
-PORTREVISION?=	1
+PORTVERSION=	2.9.4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/wxwindows/${PORTVERSION}
 PKGNAMESUFFIX=	gtk2
@@ -23,7 +22,7 @@ LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png\
 		inotify.0:${PORTSDIR}/devel/libinotify
 
 USE_BZIP2=	yes
-USE_XORG=	x11 sm xxf86vm xinerama 
+USE_XORG=	x11 sm xxf86vm xinerama
 USE_GL=		glu
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
@@ -57,10 +56,10 @@ OPTIONS=	GSTREAMER "media support" on\
 CONFIGURE_ARGS+=--enable-mediactrl
 USE_GNOME+=	gconf2
 USE_GSTREAMER=	yes
-PLIST_SUB+=     GSTREAMER=""
+PLIST_SUB+=	GSTREAMER=""
 .else
 CONFIGURE_ARGS+=--disable-mediactrl
-PLIST_SUB+=     GSTREAMER="@comment "
+PLIST_SUB+=	GSTREAMER="@comment "
 .endif
 
 .if defined(WITH_MSPACK)
