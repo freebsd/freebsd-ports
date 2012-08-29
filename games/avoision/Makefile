@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/avsn/
 
 MAINTAINER=	nemysis@gmx.ch
-COMMENT=	Avoision is a simple collect-dots-avoid-blocks game
+COMMENT=	A simple collect-dots-avoid-blocks game
 
 LICENSE=	GPLv2 CCbyNCSA3
 LICENSE_COMB=	dual
@@ -21,11 +21,11 @@ LICENSE_FILE=	${WRKSRC}/License.txt
 LICENSE_FILE_CCbyNCSA3=${WRKSRC}/License.txt
 LICENSE_PERMS_CCbyNCSA3=dist-mirror pkg-mirror auto-accept
 
-LIB_DEPENDS=	radius:${PORTSDIR}/graphics/radius-engine \
-		lua-5.1:${PORTSDIR}/lang/lua \
+LIB_DEPENDS=	lua-5.1:${PORTSDIR}/lang/lua \
 		png15:${PORTSDIR}/graphics/png \
 		physfs.1:${PORTSDIR}/devel/physfs
-RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+BUILD_DEPENDS=	${LOCALBASE}/include/radius.h:${PORTSDIR}/graphics/radius-engine \
+		zip:${PORTSDIR}/archivers/zip
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	${PORTNAME}
@@ -41,8 +41,10 @@ PLIST_DIRSTRY=	share/applications
 PORTDATA=	*
 PORTDOCS=	ChangeLog
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
 .endif
