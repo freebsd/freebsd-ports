@@ -34,7 +34,7 @@ DFFI_DESC=	Dynamic foreign-function support
 
 MAN1=		ecl.1 ecl-config.1
 
-PLIST_SUB=      VERSION="${PORTVERSION}"
+PLIST_SUB=	VERSION="${PORTVERSION}"
 
 .include <bsd.port.pre.mk>
 
