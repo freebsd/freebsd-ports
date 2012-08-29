@@ -28,7 +28,7 @@ MAN5=		yaws.conf.5 yaws_api.5 yaws_soap_lib.5
 
 APPDIR=${PREFIX}/lib/erlang/lib/yaws-${PORTVERSION}
 
-SUB_FILES=      pkg-message
+SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS+=--prefix=${PREFIX} --localstatedir=/var
 
