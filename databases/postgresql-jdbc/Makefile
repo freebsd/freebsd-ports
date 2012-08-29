@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgresql
-PORTVERSION=	9.1.901
+PORTVERSION=	9.1.902
 DISTVERSIONSUFFIX=.src
 CATEGORIES=	databases java
 MASTER_SITES=	http://jdbc.postgresql.org/download/
