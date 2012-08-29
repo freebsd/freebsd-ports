@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fusionpbx
-DISTVERSION=	3.1
+DISTVERSION=	3.1.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.fusionpbx.com/downloads/ \
 		${MASTER_SITE_GOOGLE_CODE}
