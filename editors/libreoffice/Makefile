@@ -377,7 +377,7 @@ post-extract:
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f -print0 | \
-	    ${XARGS} -0 ${REINPLACE_CMD} -i '' -e 's#-Wl,-rpath,#-Wl,-z,origin -Wl,-rpath,#g'
+	    ${XARGS} -0 ${REINPLACE_CMD} -i '' -e 's#-Wl,-rpath,#-Wl,-z,origin,-rpath,#g'
 	@${REINPLACE_CMD} -e 's#5.1 5.0#${BDB_VER}#g' \
 		 -e 's,-ldb$$dash$$dbver,-l${BDB_LIB_NAME},g' \
 		 -e 's,"Linux" \&\& test "z$$enable_graphite","FreeBSD" \&\& test "z$$enable_graphite",g' \
