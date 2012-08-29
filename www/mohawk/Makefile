@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	mohawk
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	2.0.1
 CATEGORIES=	www ipv6
-MASTER_SITES=	http://files.etoilebsd.net/mohawk/ \
-		http://mohawk.bsdsx.fr/
+MASTER_SITES=	http://fossil.etoilebsd.net/mohawk/tarball/ \
+		http://fossil.bsdsx.fr/mohawk/tarball/
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}?uuid=${PORTVERSION}
 
 MAINTAINER=	mohawk@bsdsx.fr
 COMMENT=	Simple and lightweight HTTP daemon
 
 LICENSE=	BSD
+
+LIB_DEPENDS=    event-2.0:${PORTSDIR}/devel/libevent2
 
 PLIST_FILES+=	bin/mhtpasswd \
 		sbin/mohawk \
@@ -35,7 +37,6 @@ MAN8=	mhtpasswd.8 \
 BROKEN=		does not build
 .endif
 
-LIB_DEPENDS=    event-2.0:${PORTSDIR}/devel/libevent2
 CFLAGS+=        -I${LOCALBASE}/include/event2/compat -I${LOCALBASE}/include
 LDFLAGS+=       -L${LOCALBASE}/lib/event2
 
@@ -45,6 +46,6 @@ post-install:
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/examples/*.conf ${EXAMPLESDIR}
-.endif 
+.endif
 
 .include <bsd.port.post.mk>
