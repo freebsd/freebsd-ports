@@ -22,8 +22,6 @@ COMMENT=	Digium/Asterisk Hardware Device Interface
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/dahdi_cfg:${PORTSDIR}/misc/dahdi
 
-CONFLICTS=	dahdi-kmod26-*
-
 DAHDI_VERSION=		2.4.0-rc5
 DAHDI_TOOLS_VERSION=	2.4.0-rc1
 OSLEC_VERSION=		2.6.35.4
@@ -48,7 +46,7 @@ MAKE_ARGS=	ADDITIONAL_DRIVERS="wcb1xxp" NO_FETCH=yes
 GROUPS=		dahdi
 
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
-CONFLICTS=	zaptel-[0-9]*
+CONFLICTS=	zaptel-[0-9]* dahdi-kmod26-*
 
 .include <bsd.port.pre.mk>
 
