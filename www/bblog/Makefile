@@ -27,20 +27,21 @@ SUB_FILES=	pkg-message
 SUB_LIST=	BBLOGURL=${BBLOGURL} BBLOGDIR=${BBLOGDIR}
 PLIST_SUB=	WWWDOCROOT=${WWWDOCROOT} BBLOGURL=${BBLOGURL}
 
-OPTIONS=	GD		"With GD Support" on \
-		IMAGICK		"With ImageMagick Support" off
+OPTIONS_DEFINE=	GD IMAGICK
+OPTIONS_DEFAULT=GD
+IMAGICK_DESC=	${IMAGEMAGICK_DESC}
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_GD)
+.if ${PORT_OPTIONS:MGD}
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/gd.so:${PORTSDIR}/${gd_DEPENDS}
 .endif
 
-.if defined(WITH_IMAGICK)
+.if ${PORT_OPTIONS:MIMAGICK}
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:${PORTSDIR}/${imagick_DEPENDS}
 .endif
 
-.if defined(WITHOUT_GD) && !defined(WITH_IMAGICK)
+.if empty(PORT_OPTIONS:MGD) && empty(PORT_OPTIONS:MIMAGICK)
 pre-patch:
 	@${ECHO_CMD} "Without GD or ImageMagick support. No thumbnails will be generated at all."
 .endif
