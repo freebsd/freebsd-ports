@@ -19,6 +19,11 @@ MAN1=		cgdb.1
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
+# we need this for openpty(3) . It sucks,
+# but since cgdb include a libutil itself,
+# we have to specify the full path.
+LDFLAGS+=    /usr/lib/libutil.so
+
 .include <bsd.port.pre.mk>
 
 # at this time we can not use LIB_DEPENDS, please read ports/99327
