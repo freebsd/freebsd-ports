@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_auth_imap
 PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://ben.brillat.net/files/projects/mod_auth_imap2/
 DISTNAME=	mod_auth_imap2-${PORTVERSION}
@@ -15,6 +15,8 @@ DIST_SUBDIR=	apache2
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache 2 module to provide authentication via an IMAP mail server
+
+LICENSE=	GPLv2
 
 MAKE_JOBS_SAFE=  yes
 
