@@ -19,7 +19,6 @@ LICENSE=	MIT
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_TK=		82+
-USE_TK_NO_THREADS=	yes
 USE_XORG=	xext
 
 USE_AUTOTOOLS=	autoconf
@@ -36,6 +35,10 @@ PORTDOCS=	${DOCS:S/doc\///}
 
 CFLAGS+=	-DHAVE_UNISTD_H
 CONFIGURE_ARGS+=	--with-tcl-ver=${TCL_VER} --with-tk-ver=${TK_VER}
+
+.if ${USE_TCL} > 85
+CFLAGS+=	-DUSE_INTERP_ERRORLINE -DUSE_INTERP_RESULT
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
