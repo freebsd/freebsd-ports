@@ -545,6 +545,7 @@
     SUBDIR += mount.app
     SUBDIR += mountsmb2
     SUBDIR += mpiexec
+    SUBDIR += msktutil
     SUBDIR += msyslog
     SUBDIR += mtpfs
     SUBDIR += mtxorbd
