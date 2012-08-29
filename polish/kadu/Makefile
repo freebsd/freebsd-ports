@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kadu
-PORTVERSION=	0.12.0
+PORTVERSION=	0.12.1
 PORTEPOCH=	1
 CATEGORIES=	polish net-im
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/:kadu \
@@ -23,13 +23,21 @@ COMMENT=	Internet communicator supporting Gadu-Gadu and Jabber/XMPP
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		pl-libgadu>=1.11.0:${PORTSDIR}/polish/libgadu
-LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant \
-		gadu.3:${PORTSDIR}/polish/libgadu \
-		idn.17:${PORTSDIR}/dns/libidn \
-		mpdclient.2:${PORTSDIR}/audio/libmpdclient \
-		qca.2:${PORTSDIR}/devel/qca \
-		sndfile.1:${PORTSDIR}/audio/libsndfile
+		pl-libgadu>=1.11.1:${PORTSDIR}/polish/libgadu
+LIB_DEPENDS=	mpdclient:${PORTSDIR}/audio/libmpdclient \
+		sndfile:${PORTSDIR}/audio/libsndfile \
+		pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
+		pcre:${PORTSDIR}/devel/pcre \
+		qca:${PORTSDIR}/devel/qca \
+		idn:${PORTSDIR}/dns/libidn \
+		png15:${PORTSDIR}/graphics/png \
+		gadu:${PORTSDIR}/polish/libgadu \
+		freetype:${PORTSDIR}/print/freetype2 \
+		qzeitgeist:${PORTSDIR}/sysutils/qzeitgeist \
+		enchant:${PORTSDIR}/textproc/enchant \
+		expat:${PORTSDIR}/textproc/expat2 \
+		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
+		xcb:${PORTSDIR}/x11/libxcb
 RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl
 # TODO enable devel/libexecinfo
 # TODO ntrack and ntrack-qt (needs porting) ?
@@ -40,14 +48,18 @@ GG7_EMOTS_DISTFILE=	dodatkowe_emoty_GG7.tar.gz
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
-USE_XORG=	xscrnsaver
+USE_PKGCONFIG=	build
+USE_ICONV=	yes
+USE_GETTEXT=	yes
+USE_XORG=	ice sm x11 xau xdmcp xext xfixes xrender xscrnsaver
 CMAKE_ARGS=	-DKADU_VERSION:STRING="${DISTVERSION}" -DWITH_ENCHANT=ON
 # Setting KADU_VERSION disables git invocation
 MAKE_JOBS_SAFE=	yes
 
-USE_QT4=	dbus gui network script scripttools webkit xml phonon \
-		linguist_build moc_build qmake_build rcc_build uic_build \
-		imageformats_run sql-sqlite3_run
+USE_QT4=	corelib dbus declarative gui network phonon qtestlib script \
+		scripttools svg webkit xml xmlpatterns linguist_build \
+		moc_build qmake_build rcc_build uic_build imageformats_run \
+		sql-sqlite3_run
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 
@@ -60,7 +72,6 @@ GG_EMOTS_DESC=	Install GG-compatible emoticons
 PLIST_SUB+=	GG_EMOTS=""
 DISTFILES+=	${GG6_EMOTS_DISTFILE}:additions \
 		${GG7_EMOTS_DISTFILE}:additions
-EXTRA_PATCHES+=	${FILESDIR}/emoticons-CMakeLists.txt
 .else
 PLIST_SUB+=	GG_EMOTS="@comment "
 .endif
@@ -72,11 +83,15 @@ post-patch:
 	@${FIND} ${WRKSRC} -exec ${GREP} -q "#!/bin/bash" {} \; \
 		-exec ${REINPLACE_CMD} -e 's|#!/bin/bash|#!/usr/bin/env bash|g' {} \;
 
+post-install:
 .if ${PORT_OPTIONS:MGG_EMOTS}
 	@cd ${WRKSRC}/varia/themes/emoticons && \
 	${TAR} -zxf ${_DISTDIR}/${GG6_EMOTS_DISTFILE} && \
 	${MV} kompatybilne_z_GG6 gg6_compatible && \
 	cd gg6_compatible && ${TAR} -zxf ${_DISTDIR}/${GG7_EMOTS_DISTFILE}
+	@cd ${WRKSRC}/varia/themes/emoticons && \
+	${COPYTREE_SHARE} gg6_compatible ${DATADIR}/themes/emoticons
+		
 .endif
 
 .include <bsd.port.mk>
