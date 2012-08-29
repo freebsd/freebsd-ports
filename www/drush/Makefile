@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drush
-PORTVERSION=	5.3
+PORTVERSION=	5.7
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 DISTNAME=	drush-7.x-${PORTVERSION}

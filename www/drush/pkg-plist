@@ -100,6 +100,10 @@ bin/drush
 %%DATADIR%%/tests/siteIntallD6Test.php
 %%DATADIR%%/tests/completeTest.php
 %%DATADIR%%/tests/filesystemTest.php
+%%DATADIR%%/tests/makefiles/bz2-singlefile.make
+%%DATADIR%%/tests/makefiles/gzip.make
+%%DATADIR%%/tests/makefiles/bz2.make
+%%DATADIR%%/tests/makefiles/defaults.make
 %%DATADIR%%/tests/makefiles/contrib-destination.make
 %%DATADIR%%/tests/makefiles/svn.make
 %%DATADIR%%/tests/makefiles/translations-inside7.make
