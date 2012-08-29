@@ -69,7 +69,6 @@ include/pinot/filters/HtmlFilter.h
 include/pinot/filters/HtmlParser.h
 include/pinot/filters/TextFilter.h
 include/pinot/filters/XmlFilter.h
-include/pinot/unac/unac.h
 include/pinot/xdgmime/xdgmime.c
 include/pinot/xdgmime/xdgmime.h
 include/pinot/xdgmime/xdgmimealias.c
@@ -163,7 +162,6 @@ share/locale/zh_TW/LC_MESSAGES/pinot.mo
 @dirrm lib/pinot/backends
 @dirrm lib/pinot
 @dirrm include/pinot/xdgmime
-@dirrm include/pinot/unac
 @dirrm include/pinot/filters
 @dirrm include/pinot
 @dirrmtry etc/xdg/autostart

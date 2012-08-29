@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pinot
-PORTVERSION=	1.0
-PORTREVISION=	4
+PORTVERSION=	1.01
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 #MASTER_SITES=	http://colinf.chez.com/pinot/
@@ -63,8 +62,10 @@ CONFIGURE_ARGS+=	--enable-debug=yes
 
 .if defined(WITH_CHMLIB)
 CONFIGURE_ARGS+=	--enable-chmlib=yes
+LIB_DEPENDS+=	chm:${PORTSDIR}/misc/chmlib
 PLIST_SUB+=	CHMLIB=""
 .else
+CONFIGURE_ARGS+=	--disable-chmlib
 PLIST_SUB+=	CHMLIB="@comment "
 .endif
 
