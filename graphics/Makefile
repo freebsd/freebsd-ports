@@ -863,6 +863,7 @@
     SUBDIR += quesa
     SUBDIR += quesoglc
     SUBDIR += qvplay
+    SUBDIR += qxv
     SUBDIR += radius-engine
     SUBDIR += raster3d
     SUBDIR += rawstudio
