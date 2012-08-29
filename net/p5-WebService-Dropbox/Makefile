@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WebService-Dropbox
-PORTVERSION=	1.07
+PORTVERSION=	1.09
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ASKADNA
@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	changlp@cs.nctu.edu.tw
 COMMENT=	Perl interface to Dropbox API
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 		p5-Net-OAuth>=0.27:${PORTSDIR}/net/p5-Net-OAuth \
