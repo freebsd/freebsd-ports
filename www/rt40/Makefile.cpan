@@ -1,19 +1,19 @@
 ###############################################################################
-### File::Find       1.10                 core
-### File::Glob       1.05                 core
-### File::Spec       3.12         0.08    core
-### Pod::Usage       1.33                 core
-### Scalar::Util     1.18                 core
-### Text::ParseWords 3.24                 core
-### Term::ReadLine	 		  core
+### File::Find	     1.10		  core
+### File::Glob	     1.05		  core
+### File::Spec	     3.12	  0.08	  core
+### Pod::Usage	     1.33		  core
+### Scalar::Util     1.18		  core
+### Text::ParseWords 3.24		  core
+### Term::ReadLine			  core
 ###
-### Digest::base                          core
-### Time::HiRes                           core
-### Errno                                 core
-### CGI					  core
-### CGI::Cookie                           core
-### Storable                              core
-### Getopt::Long			  core
+### Digest::base			  core
+### Time::HiRes				  core
+### Errno				  core
+### CGI				3.38	  core
+### CGI::Cookie			1.20	  core
+### Storable			2.08	  core
+### Getopt::Long		2.24	  core
 ### Pod::Usage				  core
 ### File::Find				  core
 ### Net::SMTP				  core
@@ -128,7 +128,7 @@ DASHBOARDS_DEPS=	p5-HTML-RewriteAttributes>=0.04:${PORTSDIR}/textproc/p5-HTML-Re
 		p5-MIME-Types>0:${PORTSDIR}/mail/p5-MIME-Types
 
 GRAPHVIZ_DEPS=	p5-GraphViz>0:${PORTSDIR}/graphics/p5-GraphViz \
-		p5-IPC-Run>0:${PORTSDIR}/devel/p5-IPC-Run
+		p5-IPC-Run>=0.90:${PORTSDIR}/devel/p5-IPC-Run
 
 GD_DEPS=	p5-GD>0:${PORTSDIR}/graphics/p5-GD \
 		p5-GD-Graph>0:${PORTSDIR}/graphics/p5-GD-Graph \

@@ -908,6 +908,7 @@ share/rt40/html/NoAuth/css/base/forms.css
 share/rt40/html/NoAuth/css/base/history-folding.css
 share/rt40/html/NoAuth/css/base/jquery-ui.css
 share/rt40/html/NoAuth/css/base/jquery-ui.custom.modified.css
+share/rt40/html/NoAuth/css/base/jquery-ui-timepicker-addon.css
 share/rt40/html/NoAuth/css/base/login.css
 share/rt40/html/NoAuth/css/base/main.css
 share/rt40/html/NoAuth/css/base/misc.css
@@ -1019,6 +1020,7 @@ share/rt40/html/NoAuth/js/history-folding.js
 share/rt40/html/NoAuth/js/jquery-1.4.2.min.js
 share/rt40/html/NoAuth/js/jquery-ui-1.8.4.custom.min.js
 share/rt40/html/NoAuth/js/jquery-ui-patch-datepicker.js
+share/rt40/html/NoAuth/js/jquery-ui-timepicker-addon.js
 share/rt40/html/NoAuth/js/jquery.event.hover-1.0.js
 share/rt40/html/NoAuth/js/jquery.supposition.js
 share/rt40/html/NoAuth/js/jquery.tablesorter.min.js
