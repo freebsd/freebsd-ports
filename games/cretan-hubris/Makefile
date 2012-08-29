@@ -7,7 +7,7 @@
 
 PORTNAME=	cretan-hubris
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/radius-engine/egp/
 
@@ -21,8 +21,8 @@ LICENSE_FILE=	${WRKSRC}/License.txt
 LICENSE_FILE_CCbyNCSA3=${WRKSRC}/License.txt
 LICENSE_PERMS_CCbyNCSA3=dist-mirror pkg-mirror auto-accept
 
-LIB_DEPENDS=	radius:${PORTSDIR}/graphics/radius-engine \
-		lua-5.1:${PORTSDIR}/lang/lua \
+BUILD_DEPENDS=	${LOCALBASE}/include/radius.h:${PORTSDIR}/graphics/radius-engine
+LIB_DEPENDS=	lua-5.1:${PORTSDIR}/lang/lua \
 		png15:${PORTSDIR}/graphics/png \
 		physfs.1:${PORTSDIR}/devel/physfs
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
