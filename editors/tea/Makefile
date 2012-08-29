@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	tea
-DISTVERSION=	33.2.0
+DISTVERSION=	33.3.0
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}-editor/${PORTNAME}-editor/${PORTVERSION} \
 		http://semiletov.ho.ua/${PORTNAME}-releases/
 
 MAINTAINER=	davide.italiano@gmail.com
-COMMENT=	A simple and powerful Qt4-based text editor
+COMMENT=	Simple and powerful Qt4-based text editor
 
 LICENSE=	GPLv3
 
@@ -21,11 +21,12 @@ USE_QT4=	qmake_build moc_build rcc_build gui xml
 
 PLIST_FILES=	bin/${PORTNAME}
 
-OPTIONS=	ASPELL	"Build with GNU Aspell support"	on
+OPTIONS_DEFINE=	ASPELL
+OPTIONS_DEFAULT=	ASPELL
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_ASPELL)
+.if ${PORT_OPTIONS:MASPELL}
 LIB_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 QMAKEFLAGS=	USE_ASPELL=true
 .else
