@@ -55,7 +55,7 @@ IGNORE=		requires firmware(9) support for kernel modules with hyphens
 .endif
 
 .if !exists(${SRC_BASE}/sys/Makefile)
-IGNORE= requires kernel source present in ${SRC_BASE}/sys
+IGNORE=		requires kernel source present in ${SRC_BASE}/sys
 .endif
 
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
