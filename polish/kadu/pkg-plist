@@ -691,6 +691,7 @@ share/icons/hicolor/32x32/apps/kadu.png
 share/icons/hicolor/48x48/apps/kadu.png
 share/icons/hicolor/64x64/apps/kadu.png
 share/icons/hicolor/128x128/apps/kadu.png
+share/icons/hicolor/256x256/apps/kadu.png
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/COPYING
 %%DATADIR%%/ChangeLog
@@ -4104,6 +4105,8 @@ share/icons/hicolor/128x128/apps/kadu.png
 @dirrmtry share/icons/hicolor/64x64
 @dirrmtry share/icons/hicolor/128x128/apps
 @dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor/256x256/apps
+@dirrmtry share/icons/hicolor/256x256
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 @dirrmtry share/cmake/Modules
