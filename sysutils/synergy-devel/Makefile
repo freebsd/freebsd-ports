@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	synergy
-PORTVERSION=	1.4.7
+PORTVERSION=	1.4.10
 DISTVERSIONSUFFIX=	-Source
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
-PKGNAMESUFFIX=  -devel
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	gnn@FreeBSD.org
 COMMENT=	Mouse and keyboard sharing utility
