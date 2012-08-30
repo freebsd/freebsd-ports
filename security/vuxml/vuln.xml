@@ -51,6 +51,129 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2b8cad90-f289-11e1-a215-14dae9ebcf89">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><gt>11.0,1</gt><lt>15.0,1</lt></range>
+	<range><lt>10.0.7,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>10.0.7,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.12</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>10.0.7</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.12</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><gt>11.0</gt><lt>15.0</lt></range>
+	<range><lt>10.0.7</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><gt>1.9.2.*</gt><lt>10.0.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2012-57 Miscellaneous memory safety hazards (rv:15.0/
+	    rv:10.0.7)</p>
+	  <p>MFSA 2012-58 Use-after-free issues found using Address
+	    Sanitizer</p>
+	  <p>MFSA 2012-59 Location object can be shadowed using
+	    Object.defineProperty</p>
+	  <p>MFSA 2012-60 Escalation of privilege through about:newtab</p>
+	  <p>MFSA 2012-61 Memory corruption with bitmap format images with
+	    negative height</p>
+	  <p>MFSA 2012-62 WebGL use-after-free and memory corruption</p>
+	  <p>MFSA 2012-63 SVG buffer overflow and use-after-free issues</p>
+	  <p>MFSA 2012-64 Graphite 2 memory corruption</p>
+	  <p>MFSA 2012-65 Out-of-bounds read in format-number in XSLT</p>
+	  <p>MFSA 2012-66 HTTPMonitor extension allows for remote debugging
+	    without explicit activation</p>
+	  <p>MFSA 2012-67 Installer will launch incorrect executable following
+	    new installation</p>
+	  <p>MFSA 2012-68 DOMParser loads linked resources in extensions when
+	    parsing text/html</p>
+	  <p>MFSA 2012-69 Incorrect site SSL certificate data display</p>
+	  <p>MFSA 2012-70 Location object security checks bypassed by chrome
+	    code</p>
+	  <p>MFSA 2012-71 Insecure use of __android_log_print</p>
+	  <p>MFSA 2012-72 Web console eval capable of executing
+	    chrome-privileged code</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2012-1956</cvename>
+	<cvename>CVE-2012-1970</cvename>
+	<cvename>CVE-2012-1971</cvename>
+	<cvename>CVE-2012-1972</cvename>
+	<cvename>CVE-2012-1973</cvename>
+	<cvename>CVE-2012-1974</cvename>
+	<cvename>CVE-2012-1975</cvename>
+	<cvename>CVE-2012-1976</cvename>
+	<cvename>CVE-2012-3956</cvename>
+	<cvename>CVE-2012-3957</cvename>
+	<cvename>CVE-2012-3958</cvename>
+	<cvename>CVE-2012-3959</cvename>
+	<cvename>CVE-2012-3960</cvename>
+	<cvename>CVE-2012-3961</cvename>
+	<cvename>CVE-2012-3962</cvename>
+	<cvename>CVE-2012-3963</cvename>
+	<cvename>CVE-2012-3964</cvename>
+	<cvename>CVE-2012-3965</cvename>
+	<cvename>CVE-2012-3966</cvename>
+	<cvename>CVE-2012-3967</cvename>
+	<cvename>CVE-2012-3968</cvename>
+	<cvename>CVE-2012-3969</cvename>
+	<cvename>CVE-2012-3970</cvename>
+	<cvename>CVE-2012-3971</cvename>
+	<cvename>CVE-2012-3972</cvename>
+	<cvename>CVE-2012-3973</cvename>
+	<cvename>CVE-2012-3974</cvename>
+	<cvename>CVE-2012-3975</cvename>
+	<cvename>CVE-2012-3976</cvename>
+	<cvename>CVE-2012-3978</cvename>
+	<cvename>CVE-2012-3979</cvename>
+	<cvename>CVE-2012-3980</cvename>
+	<url>http://www.mozilla.org/security/known-vulnerabilities/</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-57.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-58.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-59.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-60.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-61.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-62.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-63.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-64.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-65.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-66.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-67.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-68.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-69.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-70.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-71.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-72.html</url>
+    </references>
+    <dates>
+      <discovery>2012-08-28</discovery>
+      <entry>2012-08-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6dd5e45c-f084-11e1-8d0f-406186f3d89d">
     <topic>coppermine -- Multiple vulnerabilites</topic>
     <affects>

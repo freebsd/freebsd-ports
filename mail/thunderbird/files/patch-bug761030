@@ -1,0 +1,25 @@
+commit 8bc9e15
+Author: Stephen Moehle <stephen.moehle@gmail.com>
+Date:   Tue Jun 5 11:31:13 2012 +1200
+
+    Bug 761030 - Fix crash with HTML 5 video with GStreamer enabled - r=kinetik
+    
+    --HG--
+    extra : rebase_source : 5e884550f9870bd2fda247d50bebd472e8368588
+---
+ content/media/gstreamer/nsGStreamerReader.cpp | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git mozilla/content/media/gstreamer/nsGStreamerReader.cpp mozilla/content/media/gstreamer/nsGStreamerReader.cpp
+index 17374a3..6a50e09 100644
+--- mozilla/content/media/gstreamer/nsGStreamerReader.cpp
++++ mozilla/content/media/gstreamer/nsGStreamerReader.cpp
+@@ -452,6 +452,8 @@ bool nsGStreamerReader::DecodeVideoFrame(bool &aKeyFrameSkip,
+         i, height);
+     b.mPlanes[i].mWidth = gst_video_format_get_component_width(format,
+         i, width);
++    b.mPlanes[i].mOffset = 0;
++    b.mPlanes[i].mSkip = 0;
+   }
+ 
+   bool isKeyframe = !GST_BUFFER_FLAG_IS_SET(buffer,

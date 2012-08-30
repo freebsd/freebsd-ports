@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thunderbird
-DISTVERSION=	14.0
+DISTVERSION=	15.0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
@@ -17,13 +17,13 @@ COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
 
 BUILD_DEPENDS=	nspr>=4.9:${PORTSDIR}/devel/nspr \
 		nss>=3.13.2:${PORTSDIR}/security/nss \
-		sqlite3>=3.7.11:${PORTSDIR}/databases/sqlite3 \
+		sqlite3>=3.7.12.1:${PORTSDIR}/databases/sqlite3 \
+		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
 		cairo>=1.10.2_1,1:${PORTSDIR}/graphics/cairo \
 		unzip:${PORTSDIR}/archivers/unzip
 
-CONFLICTS_BUILD=	spidermonkey-*
-
 USE_AUTOTOOLS=	autoconf213:env
+USE_PYTHON_BUILD=yes
 USE_GECKO=	gecko
 CONFLICTS=	thunderbird-10.*
 USE_MOZILLA=	# empty
@@ -34,7 +34,6 @@ USE_QT4=	# empty
 QT_NONSTANDARD=	yes
 ALL_TARGET=	default
 GNU_CONFIGURE=	yes
-OBJDIR_BUILD=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GL=		gl
@@ -74,10 +73,6 @@ CFLAGS+=	-mminimal-toc
 
 .if ${ARCH} == amd64 || ${ARCH} == i386
 BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
-.endif
-
-.if !empty(CXX:M*clang++*)
-CFLAGS+=	-Wno-return-type-c-linkage
 .endif
 
 .if ${PORT_OPTIONS:MLIGHTNING}

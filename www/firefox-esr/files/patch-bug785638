@@ -1,0 +1,168 @@
+diff --git configure.in configure.in
+index cef992b..3bd39ca 100644
+--- configure.in
++++ configure.in
+@@ -5353,22 +5353,6 @@ if test -n "$MOZ_VP8" -a -z "$MOZ_NATIVE_LIBVPX"; then
+ 
+     dnl See if we have assembly on this platform.
+     case "$OS_ARCH:$CPU_ARCH" in
+-    Linux:x86)
+-      VPX_ASFLAGS="-f elf32 -rnasm -pnasm"
+-      VPX_X86_ASM=1
+-    ;;
+-    Linux:x86_64)
+-      VPX_ASFLAGS="-f elf64 -rnasm -pnasm -DPIC"
+-      VPX_X86_ASM=1
+-    ;;
+-    SunOS:x86)
+-      VPX_ASFLAGS="-f elf32 -rnasm -pnasm"
+-      VPX_X86_ASM=1
+-    ;;
+-    SunOS:x86_64)
+-      VPX_ASFLAGS="-f elf64 -rnasm -pnasm -DPIC"
+-      VPX_X86_ASM=1
+-    ;;
+     Darwin:x86)
+       VPX_ASFLAGS="-f macho32 -rnasm -pnasm -DPIC"
+       VPX_X86_ASM=1
+@@ -5412,6 +5388,19 @@ if test -n "$MOZ_VP8" -a -z "$MOZ_NATIVE_LIBVPX"; then
+         VPX_ASM_SUFFIX="$ASM_SUFFIX"
+         VPX_ARM_ASM=1
+       fi
++    ;;
++    *:x86)
++      if $CC -E -dM -</dev/null | grep -q __ELF__; then
++        VPX_ASFLAGS="-f elf32 -rnasm -pnasm"
++        VPX_X86_ASM=1
++      fi
++    ;;
++    *:x86_64)
++      if $CC -E -dM -</dev/null | grep -q __ELF__; then
++        VPX_ASFLAGS="-f elf64 -rnasm -pnasm -DPIC"
++        VPX_X86_ASM=1
++      fi
++    ;;
+     esac
+ 
+     if test -n "$COMPILE_ENVIRONMENT" -a -n "$VPX_X86_ASM" -a -z "$VPX_AS"; then
+@@ -5843,22 +5832,6 @@ if test -n "$MOZ_LIBJPEG_TURBO"; then
+ 
+   dnl Do we support libjpeg-turbo on this platform?
+   case "$OS_ARCH:$OS_TEST" in
+-  Linux:x86|Linux:i?86)
+-    LIBJPEG_TURBO_ASFLAGS="-f elf32 -rnasm -pnasm -DPIC -DELF"
+-    LIBJPEG_TURBO_X86_ASM=1
+-  ;;
+-  Linux:x86_64)
+-    LIBJPEG_TURBO_ASFLAGS="-f elf64 -rnasm -pnasm -D__x86_64__ -DPIC -DELF"
+-    LIBJPEG_TURBO_X64_ASM=1
+-  ;;
+-  SunOS:i?86)
+-    LIBJPEG_TURBO_ASFLAGS="-f elf32 -rnasm -pnasm -DPIC -DELF"
+-    LIBJPEG_TURBO_X86_ASM=1
+-  ;;
+-  SunOS:x86_64)
+-    LIBJPEG_TURBO_ASFLAGS="-f elf64 -rnasm -pnasm -D__x86_64__ -DPIC -DELF"
+-    LIBJPEG_TURBO_X64_ASM=1
+-  ;;
+   Darwin:i?86)
+     LIBJPEG_TURBO_ASFLAGS="-f macho32 -rnasm -pnasm -DPIC -DMACHO"
+     LIBJPEG_TURBO_X86_ASM=1
+@@ -5879,6 +5852,18 @@ if test -n "$MOZ_LIBJPEG_TURBO"; then
+     LIBJPEG_TURBO_ASFLAGS="-march=armv7-a -mfpu=neon"
+     LIBJPEG_TURBO_ARM_ASM=1
+   ;;
++  *:x86|*:i?86)
++    if $CC -E -dM -</dev/null | grep -q __ELF__; then
++      LIBJPEG_TURBO_ASFLAGS="-f elf32 -rnasm -pnasm -DPIC -DELF"
++      LIBJPEG_TURBO_X86_ASM=1
++    fi
++  ;;
++  *:x86_64)
++    if $CC -E -dM -</dev/null | grep -q __ELF__; then
++      LIBJPEG_TURBO_ASFLAGS="-f elf64 -rnasm -pnasm -D__x86_64__ -DPIC -DELF"
++      LIBJPEG_TURBO_X64_ASM=1
++    fi
++  ;;
+   esac
+ 
+ fi
+diff --git media/libvpx/update.sh media/libvpx/update.sh
+index 79e0fb1..51956af 100755
+--- media/libvpx/update.sh
++++ media/libvpx/update.sh
+@@ -363,12 +363,12 @@ cp $1/objdir/x86-win32-vs8/vpx_config.h vpx_config_x86-win32-vs8.h
+ # Should be same for all platforms...
+ cp $1/objdir/x86-win32-vs8/vpx_version.h vpx_version.h
+ 
+-# Config files for x86-linux-gcc and Solaris x86
++# Config files for x86-linux-gcc and other x86 elf platforms
+ cp $1/objdir/x86-linux-gcc/vpx_config.c vpx_config_x86-linux-gcc.c
+ cp $1/objdir/x86-linux-gcc/vpx_config.asm vpx_config_x86-linux-gcc.asm
+ cp $1/objdir/x86-linux-gcc/vpx_config.h vpx_config_x86-linux-gcc.h
+ 
+-# Config files for x86_64-linux-gcc and Solaris x86_64
++# Config files for x86_64-linux-gcc and other x86_64 elf platforms
+ cp $1/objdir/x86_64-linux-gcc/vpx_config.c vpx_config_x86_64-linux-gcc.c
+ cp $1/objdir/x86_64-linux-gcc/vpx_config.asm vpx_config_x86_64-linux-gcc.asm
+ cp $1/objdir/x86_64-linux-gcc/vpx_config.h vpx_config_x86_64-linux-gcc.h
+diff --git media/libvpx/vpx_config.h media/libvpx/vpx_config.h
+index 55433f3..36e1780 100644
+--- media/libvpx/vpx_config.h
++++ media/libvpx/vpx_config.h
+@@ -16,20 +16,12 @@
+ /* 32 bit MacOS. */
+ #include "vpx_config_x86-darwin9-gcc.h"
+ 
+-#elif defined(__linux__) && defined(__i386__)
+-/* 32 bit Linux. */
++#elif defined(__ELF__) && (defined(__i386) || defined(__i386__))
++/* 32 bit ELF platforms. */
+ #include "vpx_config_x86-linux-gcc.h"
+ 
+-#elif defined(__linux__) && defined(__x86_64__)
+-/* 64 bit Linux. */
+-#include "vpx_config_x86_64-linux-gcc.h"
+-
+-#elif defined(__sun) && defined(__i386)
+-/* 32 bit Solaris. */
+-#include "vpx_config_x86-linux-gcc.h"
+-
+-#elif defined(__sun) && defined(__x86_64)
+-/* 64 bit Solaris. */
++#elif defined(__ELF__) && (defined(__x86_64) || defined(__x86_64__))
++/* 64 bit ELF platforms. */
+ #include "vpx_config_x86_64-linux-gcc.h"
+ 
+ #else
+diff --git media/libvpx/vpx_config_c.c media/libvpx/vpx_config_c.c
+index eedd515..c8b5375 100644
+--- media/libvpx/vpx_config_c.c
++++ media/libvpx/vpx_config_c.c
+@@ -12,22 +12,14 @@
+ /* 32 bit MacOS. */
+ #include "vpx_config_x86-darwin9-gcc.c"
+ 
+-#elif defined(__linux__) && defined(__i386__)
+-/* 32 bit Linux. */
++#elif defined(__ELF__) && (defined(__i386) || defined(__i386__))
++/* 32 bit ELF platforms. */
+ #include "vpx_config_x86-linux-gcc.c"
+ 
+-#elif defined(__linux__) && defined(__x86_64__)
+-/* 64 bit Linux. */
++#elif defined(__ELF__) && (defined(__x86_64) || defined(__x86_64__))
++/* 64 bit ELF platforms. */
+ #include "vpx_config_x86_64-linux-gcc.c"
+ 
+-#elif defined(__sun) && defined(__i386)
+-/* 32 bit Solaris. */
+-#include "vpx_config_x86-linux-gcc.h"
+-
+-#elif defined(__sun) && defined(__x86_64)
+-/* 64 bit Solaris. */
+-#include "vpx_config_x86_64-linux-gcc.h"
+-
+ #elif defined(_MSC_VER) && defined(_M_X64)
+ #include "vpx_config_x86_64-win64-vs8.c"
+ 

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	firefox
-DISTVERSION=	14.0.1
-PORTREVISION=	1
+DISTVERSION=	15.0
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -19,13 +18,13 @@ COMMENT=	Web browser based on the browser portion of Mozilla
 
 BUILD_DEPENDS=	nspr>=4.9:${PORTSDIR}/devel/nspr \
 		nss>=3.13.2:${PORTSDIR}/security/nss \
-		sqlite3>=3.7.11:${PORTSDIR}/databases/sqlite3 \
+		sqlite3>=3.7.12.1:${PORTSDIR}/databases/sqlite3 \
+		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
 		cairo>=1.10.2_1,1:${PORTSDIR}/graphics/cairo \
 		unzip:${PORTSDIR}/archivers/unzip
 
-CONFLICTS_BUILD=	spidermonkey-*
-
 USE_AUTOTOOLS=	autoconf213:env
+USE_PYTHON_BUILD=yes
 USE_GECKO=	gecko
 CONFLICTS=	firefox-10.*
 MOZ_PKGCONFIG_FILES=	# empty
@@ -38,7 +37,6 @@ USE_QT4=	# empty
 QT_NONSTANDARD=	yes
 ALL_TARGET=	default
 GNU_CONFIGURE=	yes
-OBJDIR_BUILD=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GL=		gl
@@ -78,8 +76,8 @@ USE_DISPLAY=		yes
 MOZ_OPTIONS+=	${CONFIGURE_TARGET}
 MAKEFILE=	${WRKSRC}/client.mk
 ALL_TARGET=	profiledbuild
-MOZ_MK_OPTIONS+=PROFILE_GEN_SCRIPT='"${PYTHON_CMD} \
-		@MOZ_OBJDIR@/_profile/pgo/profileserver.py"'
+MOZ_MK_OPTIONS+=PROFILE_GEN_SCRIPT="${PYTHON_CMD} \
+		@MOZ_OBJDIR@/_profile/pgo/profileserver.py"
 .endif
 
 .if ${ARCH} == amd64 || ${ARCH} == i386

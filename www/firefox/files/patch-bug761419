@@ -1,0 +1,22 @@
+commit f0a73aa
+Author: Paul Adenot <paul@paul.cx>
+Date:   Thu Jun 21 20:44:39 2012 -0400
+
+    Bug 761419 - Build failure in content/media/gstreamer/nsGStreamerReader.cpp when using clang r=kinetik
+---
+ content/media/gstreamer/nsGStreamerReader.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git content/media/gstreamer/nsGStreamerReader.cpp content/media/gstreamer/nsGStreamerReader.cpp
+index 06a09b5..c48f92e 100644
+--- content/media/gstreamer/nsGStreamerReader.cpp
++++ content/media/gstreamer/nsGStreamerReader.cpp
+@@ -191,7 +191,7 @@ nsresult nsGStreamerReader::ReadMetadata(nsVideoInfo* aInfo)
+    * stream but that are otherwise decodeable.
+    */
+   guint flags[3] = {GST_PLAY_FLAG_VIDEO|GST_PLAY_FLAG_AUDIO,
+-    ~GST_PLAY_FLAG_AUDIO, ~GST_PLAY_FLAG_VIDEO};
++    static_cast<guint>(~GST_PLAY_FLAG_AUDIO), static_cast<guint>(~GST_PLAY_FLAG_VIDEO)};
+   guint default_flags, current_flags;
+   g_object_get(mPlayBin, "flags", &default_flags, NULL);
+ 

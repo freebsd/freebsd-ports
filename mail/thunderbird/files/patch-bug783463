@@ -1,0 +1,34 @@
+--- mozilla/gfx/skia/Makefile.in~
++++ mozilla/gfx/skia/Makefile.in
+@@ -339,10 +339,9 @@ CPPSRCS += \
+ 	SkMMapStream.cpp \
+ 	SkOSFile.cpp \
+ 	$(NULL)
+-ifeq (Linux,$(OS_TARGET))
++ifneq (,$(or $(MOZ_X11),$(filter Linux,$(OS_TARGET))))
+ CPPSRCS += \
+ 	SkFontHost_linux.cpp \
+-	SkFontHost_tables.cpp \
+ 	SkTime_Unix.cpp \
+ 	$(NULL)
+ endif
+--- mozilla/widget/qt/nsNativeThemeQt.cpp~
++++ mozilla/widget/qt/nsNativeThemeQt.cpp
+@@ -25,7 +25,6 @@
+ #include "nsThemeConstants.h"
+ #include "nsIServiceManager.h"
+ #include "nsIDOMHTMLInputElement.h"
+-#include <malloc.h>
+ 
+ 
+ #include "gfxASurface.h"
+--- mozilla/widget/qt/nsSound.cpp~
++++ mozilla/widget/qt/nsSound.cpp
+@@ -40,6 +40,7 @@
+ #include <QSound>
+ 
+ #include <string.h>
++#include <unistd.h>
+ 
+ #include "nscore.h"
+ #include "plstr.h"

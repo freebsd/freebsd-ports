@@ -32,7 +32,6 @@ MOZ_OPTIONS=	${CONFIGURE_TARGET} \
 		--enable-xinerama \
 		--disable-xprint \
 		--enable-application=composer
-PORT_MOZCONFIG=	${WRKSRC}/composer/config/mozconfig.linux
 
 DESKTOP_ENTRIES="Kompozer" "${COMMENT}" \
 		"${PREFIX}/lib/kompozer/icons/mozicon50.xpm" "${PORTNAME}" \
