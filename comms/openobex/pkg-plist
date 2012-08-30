@@ -1,6 +1,6 @@
 include/openobex/obex.h
 include/openobex/obex_const.h
-lib/libopenobex.so.5
+lib/libopenobex.so.2
 lib/libopenobex.a
 lib/libopenobex.la
 lib/libopenobex.so
