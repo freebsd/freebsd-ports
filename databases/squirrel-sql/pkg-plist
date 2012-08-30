@@ -308,7 +308,7 @@ share/java/squirrel-sql/plugins/hibernate/hibernate-sources.jar
 share/java/squirrel-sql/plugins/hibernate/hibernate.jpg
 share/java/squirrel-sql/plugins/hibernate/licence.txt
 share/java/squirrel-sql/plugins/hibernate/readme.html
-share/java/squirrel-sql/plugins/hibernate/session.jpg
+share/java/squirrel-sql/plugins/hibernate/session.png
 share/java/squirrel-sql/plugins/i18n.jar
 share/java/squirrel-sql/plugins/i18n/changes.txt
 share/java/squirrel-sql/plugins/i18n/i18n-sources.jar
@@ -367,6 +367,28 @@ share/java/squirrel-sql/plugins/mssql/changes.txt
 share/java/squirrel-sql/plugins/mssql/licence.txt
 share/java/squirrel-sql/plugins/mssql/mssql-sources.jar
 share/java/squirrel-sql/plugins/mssql/readme.html
+share/java/squirrel-sql/plugins/multisource.jar
+share/java/squirrel-sql/plugins/multisource/changes.txt
+share/java/squirrel-sql/plugins/multisource/img/add_alias_prompt.png
+share/java/squirrel-sql/plugins/multisource/img/add_mssql.png
+share/java/squirrel-sql/plugins/multisource/img/add_mysql.png
+share/java/squirrel-sql/plugins/multisource/img/add_oracle.png
+share/java/squirrel-sql/plugins/multisource/img/add_oracle_with_schema.png
+share/java/squirrel-sql/plugins/multisource/img/add_postgres.png
+share/java/squirrel-sql/plugins/multisource/img/after_add_mssql.png
+share/java/squirrel-sql/plugins/multisource/img/before_add_mssql.png
+share/java/squirrel-sql/plugins/multisource/img/create_unity.png
+share/java/squirrel-sql/plugins/multisource/img/example_four_sources.png
+share/java/squirrel-sql/plugins/multisource/img/install_after_unzip.png
+share/java/squirrel-sql/plugins/multisource/img/install_before_unzip.png
+share/java/squirrel-sql/plugins/multisource/img/register_driver.png
+share/java/squirrel-sql/plugins/multisource/img/trim_translation_example.png
+share/java/squirrel-sql/plugins/multisource/img/two_source_join.png
+share/java/squirrel-sql/plugins/multisource/licence.txt
+share/java/squirrel-sql/plugins/multisource/multisource-sources.jar
+share/java/squirrel-sql/plugins/multisource/readme.html
+share/java/squirrel-sql/plugins/multisource/readme.txt
+share/java/squirrel-sql/plugins/multisource/unityjdbc.jar
 share/java/squirrel-sql/plugins/mysql.jar
 share/java/squirrel-sql/plugins/mysql/changes.txt
 share/java/squirrel-sql/plugins/mysql/images/create-table.png
@@ -512,6 +534,11 @@ share/java/squirrel-sql/plugins/sqlval/licence.txt
 share/java/squirrel-sql/plugins/sqlval/readme.html
 share/java/squirrel-sql/plugins/sqlval/sqlval-sources.jar
 share/java/squirrel-sql/plugins/sqlval/wsdl.xml
+share/java/squirrel-sql/plugins/swingViolations.jar
+share/java/squirrel-sql/plugins/swingViolations/changes.txt
+share/java/squirrel-sql/plugins/swingViolations/licence.txt
+share/java/squirrel-sql/plugins/swingViolations/readme.txt
+share/java/squirrel-sql/plugins/swingViolations/swingViolations-sources.jar
 share/java/squirrel-sql/plugins/sybase.jar
 share/java/squirrel-sql/plugins/sybase/changes.txt
 share/java/squirrel-sql/plugins/sybase/licence.txt
@@ -536,6 +563,7 @@ share/java/squirrel-sql/update/release.xml
 @dirrm share/java/squirrel-sql/plugins/wikiTableConfigurations
 @dirrm share/java/squirrel-sql/plugins/syntax
 @dirrm share/java/squirrel-sql/plugins/sybase
+@dirrm share/java/squirrel-sql/plugins/swingViolations
 @dirrm share/java/squirrel-sql/plugins/sqlval
 @dirrm share/java/squirrel-sql/plugins/sqlscript
 @dirrm share/java/squirrel-sql/plugins/sqlreplace
@@ -569,6 +597,8 @@ share/java/squirrel-sql/update/release.xml
 @dirrm share/java/squirrel-sql/plugins/netezza
 @dirrm share/java/squirrel-sql/plugins/mysql/images
 @dirrm share/java/squirrel-sql/plugins/mysql
+@dirrm share/java/squirrel-sql/plugins/multisource/img
+@dirrm share/java/squirrel-sql/plugins/multisource
 @dirrm share/java/squirrel-sql/plugins/mssql
 @dirrm share/java/squirrel-sql/plugins/laf/skinlf-theme-packs
 @dirrm share/java/squirrel-sql/plugins/laf/lafs

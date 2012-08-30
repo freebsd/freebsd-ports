@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	squirrel-sql
-PORTVERSION=	3.3.0
+PORTVERSION=	3.4.0
 CATEGORIES=	databases java
 MASTER_SITES=	SF/${PORTNAME}/1-stable/${PORTVERSION}-plainzip
 DISTNAME=	${PORTNAME}-${PORTVERSION}-optional
