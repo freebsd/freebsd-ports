@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	msktutil
-PORTVERSION=	0.4
+PORTVERSION=	0.4.1
 CATEGORIES=	sysutils
-MASTER_SITES=	https://fuhm.net/software/msktutil/releases/ \
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
     		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	zi@FreeBSD.org

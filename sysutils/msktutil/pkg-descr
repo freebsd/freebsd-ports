@@ -5,4 +5,4 @@ Msktutil is a program for interoperability with Active Directory that can:
     Add and remove principals to and from that keytab
     Change the computer account's password
 
-WWW: https://fuhm.net/software/msktutil/
+WWW: https://code.google.com/p/msktutil/
