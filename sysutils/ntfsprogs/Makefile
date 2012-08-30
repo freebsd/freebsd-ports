@@ -11,10 +11,14 @@ PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/linux-ntfs/NTFS%20Tools%20and%20Library/${PORTVERSION}
 
-MAINTAINER=	faust64@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities and library to manipulate NTFS partitions
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	fusefs-libs>2.5:${PORTSDIR}/sysutils/fusefs-libs
+
+CONFLICTS_INSTALL=	fusefs-ntfs-*
 
 USE_GNOME=	pkgconfig
 USE_BZIP2=	yes
@@ -23,10 +27,13 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	GNOMEVFS2 "Install GnomeVFS 2.0 libntfs interface" off \
-		LOCK "Lock the device when mounting (avoids access)" on \
-		UBLIO "Enable user space cache for improved speed" on \
-		UUID "Generate DCE compliant UUIDs" off
+OPTIONS_DEFINE=	GNOMEVFS2 LOCK UBLIO UUID
+OPTIONS_DEFAULT=LOCK UBLIO
+
+GNOMEVFS2_DESC=	Install GnomeVFS 2.0 libntfs interface
+LOCK_DESC=	Lock the device when mounting (avoids access)
+UBLIO_DESC=	Enable user space cache for improved speed
+UUID_DESC=	Generate DCE compliant UUIDs
 
 MAN8=	libntfs.8 libntfs-gnomevfs.8 mkntfs.8 \
 	ntfscat.8 ntfsclone.8 ntfscluster.8 ntfscmp.8 \
@@ -42,7 +49,7 @@ SUB_FILES=	pkg-message
 CFLAGS:=	${CFLAGS:C/-O.?/-O0/g}
 .endif
 
-.if defined(WITH_GNOMEVFS2)
+.if ${PORT_OPTIONS:MGNOMEVFS2}
 CONFIGURE_ARGS+=--enable-gnome-vfs
 USE_GNOME=	gnomevfs2
 PLIST_SUB+=	GNOMEVFS2=""
@@ -51,19 +58,19 @@ CONFIGURE_ARGS+=--disable-gnome-vfs
 PLIST_SUB+=	GNOMEVFS2="@comment "
 .endif
 
-.if defined(WITH_LOCK)
+.if ${PORT_OPTIONS:MLOCK}
 CFLAGS+=	-DUSE_LOCK
 .endif
 
-.if defined(WITH_UUID)
-LIB_DEPENDS+=	uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid
+.if ${PORT_OPTIONS:MUUID}
+LIB_DEPENDS+=	uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
 CONFIGURE_ARGS+=--enable-uuid
 .else
 CONFIGURE_ARGS+=--disable-uuid
 .endif
 
-.if defined(WITH_UBLIO)
-LIB_DEPENDS+=	ublio.1:${PORTSDIR}/devel/libublio
+.if ${PORT_OPTIONS:MUBLIO}
+LIB_DEPENDS+=	ublio:${PORTSDIR}/devel/libublio
 CFLAGS+=	-DUSE_UBLIO
 .else
 pre-everything::
@@ -72,7 +79,7 @@ pre-everything::
 	@${ECHO_MSG}
 .endif
 
-.if defined(WITH_UBLIO)
+.if ${PORT_OPTIONS:MUBLIO}
 post-patch:
 	@${REINPLACE_CMD} -e 's|^libntfs_la_LIBADD =|& -lublio|' \
 		${WRKSRC}/libntfs/Makefile.in

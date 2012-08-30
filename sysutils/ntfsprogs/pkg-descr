@@ -9,4 +9,4 @@ ntfsprogs: various tools for managing ntfs, namely mkntfs, ntfsresize,
            ntfsclone, ntfsfix, ntfsundelete, ntfswipe and ntfsdecrypt.
 
 
-WWW: http://www.linux-ntfs.org/
+WWW: https://sourceforge.net/projects/linux-ntfs/
