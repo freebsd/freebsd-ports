@@ -10,6 +10,22 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20120830:
+AUTHOR: beat@FreeBSD.org
+
+  * CCACHE support for building ports has been added (depends on
+    devel/ccache). Therefore new user settable variables are available:
+
+    WITH_CCACHE_BUILD - Enable CCACHE support (Default off)
+
+    NO_CCACHE         - Disable CCACHE support for example for certain
+                        ports if CCACHE is enabled.
+
+    By default CCACHE uses $HOME/.ccache as cache directory. To use
+    a non-default cache directory this could be overwritten like:
+
+    MAKE_ENV+= CCACHE_DIR=/var/cache/ccache
+
 20120820:
 AUTHOR: gahr@FreeBSD.org
 

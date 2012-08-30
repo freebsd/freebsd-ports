@@ -833,6 +833,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Default: none
 # FETCH_REGET	- Times to retry fetching of files on checksum errors.
 #				  Default: 1
+# CLEAN_FETCH_ENV		
+#				- Disable package dependency in fetch target for mass
+#				  fetching.  User settable.
 #
 # For extract:
 #
@@ -934,6 +937,13 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  that are explicitly marked MAKE_JOBS_UNSAFE.  User settable.
 # MAKE_JOBS_NUMBER
 #				- Override the number of make jobs to be used.  User settable.
+## cacche
+#
+# WITH_CCACHE_BUILD
+# 				- Enable CCACHE support (devel/ccache).  User settable.
+# NO_CCACHE
+#				- Disable CCACHE support for example for certain ports if
+#				  CCACHE is enabled.  User settable.
 #
 # For install:
 #
@@ -1626,7 +1636,9 @@ PLIST_SUB+=	LIB32DIR=${LIB32DIR}
 
 .if defined(WITH_PKGNG)
 .if !defined(PKG_DEPENDS)
+.if !defined(CLEAN_FETCH_ENV)
 PKG_DEPENDS+=		${LOCALBASE}/sbin/pkg:${PORTSDIR}/ports-mgmt/pkg
+.endif
 .endif
 .endif
 
@@ -2215,6 +2227,19 @@ _MAKE_JOBS?=		-j${MAKE_JOBS_NUMBER}
 BUILD_FAIL_MESSAGE+=	"You have chosen to use multiple make jobs (parallelization) for all ports.  This port was not tested for this setting.  Please remove FORCE_MAKE_JOBS and retry the build before reporting the failure to the maintainer."
 .endif
 .endif
+.endif
+
+# ccache support
+# Support NO_CCACHE for common setups, require WITH_CCACHE_BUILD, and
+# don't use if ccache already set in CC
+.if !defined(NO_CCACHE) && defined(WITH_CCACHE_BUILD) && !${CC:M*ccache*}
+# Avoid depends loops between pkg and ccache
+.	if !${.CURDIR:M*/devel/ccache} && !${.CURDIR:M*/ports-mgmt/pkg}
+BUILD_DEPENDS+=		${LOCALBASE}/bin/ccache:${PORTSDIR}/devel/ccache
+.	endif
+
+# Prepend the ccache dir into the PATH and setup ccache env
+MAKE_ENV+=	PATH=${LOCALBASE}/libexec/ccache:${PATH}
 .endif
 
 PTHREAD_CFLAGS?=
@@ -2908,7 +2933,7 @@ CONFIGURE_TARGET:=	${CONFIGURE_TARGET:S/--build=//}
 CONFIGURE_LOG?=		config.log
 
 # A default message to print if do-configure fails.
-CONFIGURE_FAIL_MESSAGE?=	"Please report the problem to ${MAINTAINER} [maintainer] and attach the \"${CONFIGURE_WRKSRC}/${CONFIGURE_LOG}\" including the output of the failure of your make command. Also, it might be a good idea to provide an overview of all packages installed on your system (e.g. an \`ls ${PKG_DBDIR}\`)."
+CONFIGURE_FAIL_MESSAGE?=	"Please report the problem to ${MAINTAINER} [maintainer] and attach the \"${CONFIGURE_WRKSRC}/${CONFIGURE_LOG}\" including the output of the failure of your make command. Also, it might be a good idea to provide an overview of all packages installed on your system (e.g. a ${PKG_INFO} -Ea)."
 
 .if defined(GNU_CONFIGURE)
 # Maximum command line length
@@ -4474,7 +4499,7 @@ deinstall:
 			check_name=`${ECHO_CMD} $${p} | ${SED} -e 's/-[^-]*$$//'`; \
 			if [ "$${check_name}" = "${PKGBASE}" ]; then \
 					prfx=`${PKG_INFO} -q -p $${p} 2> /dev/null | ${SED} -ne '1s|^@cwd ||p'`; \
-					if [ "x${PREFIX}" = "x$${prfx}" ]; then \
+					if [ "x`${READLINK_CMD} -f ${PREFIX}`" = "x$${prfx}" ]; then \
 							${ECHO_MSG} "===>   Deinstalling $${p}"; \
 							${PKG_DELETE} -f $${p}; \
 					else \
