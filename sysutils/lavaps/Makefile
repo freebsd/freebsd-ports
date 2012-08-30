@@ -21,15 +21,16 @@ USE_XORG=	x11 xext sm ice
 
 MAN1=		lavaps.1
 
-OPTIONS=	GTK	"Build with GTK frontend instead of the default TK" off
+OPTIONS_DEFINE=	GTK
+GTK_DESC=	Build with GTK frontend instead of the default TK
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GTK)
+.if ${PORT_OPTIONS:MGTK}
 PKGNAMESUFFIX=	-gtk2
 USE_GNOME+=	gtk20 libgnomeui
 USE_GETTEXT=	yes
@@ -45,4 +46,4 @@ CONFIGURE_ARGS+=	--with-tcltk --disable-nls \
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
