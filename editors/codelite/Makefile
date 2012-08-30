@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	codelite
-DISTVERSION=	4.0.${SVN_REVISION}
+DISTVERSION=	4.1.${SVN_REVISION}
 CATEGORIES=	editors devel
 MASTER_SITES=	SF/${PORTNAME}/Releases/${PORTNAME}-${PORTVERSION:R}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-gtk.src
@@ -14,13 +14,15 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-gtk.src
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	An Open Source IDE for C/C++
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm
 
-OPTIONS=	CSCOPE	"Enable CScope integration" OFF \
-		CLANG "Enable clang code-completion" OFF \
-		MYSQL "Enable MySQL in DB Explorer plugin" OFF \
-		POSTGRES "Enable PostgreSQL in DB Explorer plugin" OFF
+OPTIONS_DEFINE=	CSCOPE CLANG MYSQL PGSQL
+
+CSCOPE_DESC=	CScope integration
+CLANG_DESC=	Clang code-completion
 
 USE_WX=		2.8
 WX_UNICODE=	yes
@@ -30,15 +32,15 @@ CONFIGURE_ARGS+=--enable-debug
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.include <bsd.port.pre.mk>
+SVN_REVISION=	5770
 
-SVN_REVISION=	5589
+.include <bsd.port.options.mk>
 
-.if defined(WITH_CSCOPE)
+.if ${PORT_OPTIONS:MCSCOPE}
 RUN_DEPENDS+=	cscope:${PORTSDIR}/devel/cscope
 .endif
 
-.if defined(WITH_CLANG)
+.if ${PORT_OPTIONS:MCLANG}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libclang.so:${PORTSDIR}/lang/clang
 RUN_DEPENDS+=	${LOCALBASE}/lib/libclang.so:${PORTSDIR}/lang/clang
 PLIST_SUB+=	CLANG=""
@@ -47,7 +49,7 @@ ENABLE_CLANG=	\#
 PLIST_SUB+=	CLANG="@comment "
 .endif
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 CONFIGURE_ARGS+=--enable-mysql
 USE_MYSQL=	client
 PLIST_SUB+=	MYSQL=""
@@ -55,7 +57,7 @@ PLIST_SUB+=	MYSQL=""
 PLIST_SUB+=	MYSQL="@comment "
 .endif
 
-.if defined(WITH_POSTGRES)
+.if ${PORT_OPTIONS:MPGSQL}
 CONFIGURE_ARGS+=--enable-postgres
 USE_PGSQL=	yes
 PLIST_SUB+=	POSTGRES=""
@@ -77,4 +79,4 @@ post-patch:
 	${RM} ${WRKSRC}/CodeLite/readtags.h
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
