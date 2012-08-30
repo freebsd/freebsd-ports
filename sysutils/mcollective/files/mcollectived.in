@@ -25,6 +25,6 @@ load_rc_config "${name}"
 pidfile="/var/run/${name}.pid"
 command="%%PREFIX%%/sbin/${name}"
 command_args="-p $pidfile"
-procname="ruby"
+command_interpreter=%%RUBY%%
 
 run_rc_command "$1"

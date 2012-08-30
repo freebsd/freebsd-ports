@@ -7,7 +7,7 @@
 
 PORTNAME=	mcollective
 PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
@@ -27,6 +27,8 @@ RUBY_SHEBANG_FILES=	bin/mcollectived bin/mco bin/mc-call-agent
 REINPLACE_ARGS=	-i ""
 
 SCRIPTS=	mco mc-call-agent
+
+SUB_LIST+=	RUBY=${RUBY}
 
 do-patch:
 	@${REINPLACE_CMD} -e "s|/etc/mcollective|${ETCDIR}|" \
