@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	netty
-PORTVERSION=	3.2.3
+PORTVERSION=	3.5.5
 DISTVERSIONSUFFIX=.Final-dist
 CATEGORIES=	java devel
-MASTER_SITES=	SF/jboss/Netty%20Project/Netty%20${PORTVERSION}.Final/
+MASTER_SITES=	https://github.com/downloads/netty/netty/
 
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Java NIO client server framework
 
 LICENSE=	AL2
+
+FETCH_ARGS=	-Fpr
 
 USE_JAVA=	yes
 USE_BZIP2=	yes
@@ -24,7 +26,8 @@ DATADIR=	${PREFIX}/share/${UNIQUENAME}
 DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.Final
 
-PLIST_FILES=	%%JAVAJARDIR%%/netty-${PORTVERSION}.jar
+PLIST_FILES=	%%JAVAJARDIR%%/netty-${PORTVERSION}.jar \
+		%%JAVAJARDIR%%/netty.jar
 
 PORTDATA=	*
 .if !defined(NOPORTDOCS)
@@ -37,6 +40,7 @@ do-install:
 	${MKDIR} ${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKSRC}/jar/netty-${PORTVERSION}.Final.jar ${JAVAJARDIR}/netty-${PORTVERSION}.jar
 	cd ${WRKSRC} && ${COPYTREE_SHARE} src ${DATADIR}
+	${LN} -nfs ${JAVAJARDIR}/netty-${PORTVERSION}.jar ${JAVAJARDIR}/netty.jar
 
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
