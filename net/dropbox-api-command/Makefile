@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dropbox-api-command
-PORTVERSION=	1.03
+PORTVERSION=	1.05
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -16,13 +16,13 @@ COMMENT=	Dropbox API wrapper command
 RUN_DEPENDS=	p5-DateTime-Format-Strptime>=0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
 		p5-Encode-Locale>=0:${PORTSDIR}/converters/p5-Encode-Locale \
 		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
-		p5-WebService-Dropbox>=0:${PORTSDIR}/net/p5-WebService-Dropbox \
+		p5-WebService-Dropbox>=1.09:${PORTSDIR}/net/p5-WebService-Dropbox \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	s-aska
 GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	b29aaad
+GH_COMMIT=	cd3a707
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
