@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	coppermine
-PORTVERSION=	1.5.18
+PORTVERSION=	1.5.20
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/Coppermine/${PORTVERSION:R}.x/
+MASTER_SITES=	SF/eenemeenemuu.u
 DISTNAME=	cpg${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web picture gallery script
 
-OPTIONS=	IMAGEMAGICK "Use ImageMagick instead of php5-gd" off
+OPTIONS_DEFINE=	DOCS IMAGEMAGICK
+IMAGEMAGICK_DESC=	Use ImageMagick instead of PHP GD extension
 
 USE_PHP=	mysql pcre
 USE_ZIP=	yes
@@ -28,8 +29,8 @@ SUB_FILES+=	pkg-message
 
 .include <bsd.port.options.mk>
 
-.if defined (WITH_IMAGEMAGICK)
-RUN_DEPENDS+=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
+.if ${PORT_OPTIONS:MIMAGEMAGICK}
+RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .else
 USE_PHP+=	gd
 .endif
@@ -37,14 +38,14 @@ USE_PHP+=	gd
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "By default, coppermine depends on PHP with GD support."
-	@${ECHO_MSG} "You may define WITH_IMAGEMAGICK to depend on ImageMagick instead of GD."
+	@${ECHO_MSG} "You may select IMAGEMAGICK to depend on ImageMagick instead of GD."
 	@${ECHO_MSG} ""
 
 post-extract:
 	@${CHMOD} -R o-w ${WRKSRC}/
 
 do-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCFILES} ${DOCSDIR}
 .endif
