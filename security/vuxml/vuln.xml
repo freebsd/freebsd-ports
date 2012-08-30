@@ -51,6 +51,53 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ee68923d-f2f5-11e1-8014-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>21.0.1180.89</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/search/label/Stable%20updates">
+	  <p>[121347] Medium CVE-2012-2865: Out-of-bounds read in line breaking.
+	    Credit to miaubiz.</p>
+	  <p>[134897] High CVE-2012-2866: Bad cast with run-ins. Credit to
+	    miaubiz.</p>
+	  <p>[135485] Low CVE-2012-2867: Browser crash with SPDY.</p>
+	  <p>[136881] Medium CVE-2012-2868: Race condition with workers and XHR.
+	    Credit to miaubiz.</p>
+	  <p>[137778] High CVE-2012-2869: Avoid stale buffer in URL loading.
+	    Credit to Fermin Serna of the Google Security Team.</p>
+	  <p>[138672] [140368] Low CVE-2012-2870: Lower severity memory
+	    management issues in XPath. Credit to Nicolas Gregoire.</p>
+	  <p>[138673] High CVE-2012-2871: Bad cast in XSL transforms. Credit to
+	    Nicolas Gregoire.</p>
+	  <p>[142956] Medium CVE-2012-2872: XSS in SSL interstitial. Credit to
+	    Emmanuel Bronshtein.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2012-2865</cvename>
+	<cvename>CVE-2012-2866</cvename>
+	<cvename>CVE-2012-2867</cvename>
+	<cvename>CVE-2012-2868</cvename>
+	<cvename>CVE-2012-2869</cvename>
+	<cvename>CVE-2012-2870</cvename>
+	<cvename>CVE-2012-2871</cvename>
+	<cvename>CVE-2012-2872</cvename>
+	<url>http://googlechromereleases.blogspot.nl/search/label/Stable%20updates</url>
+    </references>
+    <dates>
+      <discovery>2012-08-30</discovery>
+      <entry>2012-08-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4c53f007-f2ed-11e1-a215-14dae9ebcf89">
     <topic>asterisk -- multiple vulnerabilities</topic>
     <affects>
