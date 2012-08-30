@@ -1,22 +1,29 @@
---- LiteEditor/clang_pch_maker_thread.cpp.orig	2012-06-18 14:58:00.000000000 +0200
-+++ LiteEditor/clang_pch_maker_thread.cpp	2012-06-18 14:58:08.000000000 +0200
-@@ -385,7 +385,6 @@
- 		        | CXTranslationUnit_CXXChainedPCH;
- 	} else {
- 		flags = CXTranslationUnit_Incomplete
--		        | CXTranslationUnit_SkipFunctionBodies
- 		        | CXTranslationUnit_DetailedPreprocessingRecord;
- 	}
- 
---- codelite_clang/clang.cpp.orig	2012-06-18 14:44:20.000000000 +0200
-+++ codelite_clang/clang.cpp	2012-06-18 14:44:27.000000000 +0200
-@@ -204,8 +204,7 @@
- 	                       | CXTranslationUnit_PrecompiledPreamble
- 	                       | CXTranslationUnit_Incomplete
- 	                       | CXTranslationUnit_DetailedPreprocessingRecord
--	                       | CXTranslationUnit_CXXChainedPCH
--	                       | CXTranslationUnit_SkipFunctionBodies);
-+	                       | CXTranslationUnit_CXXChainedPCH);
- 	if(TU) {
- 
- 		//ClangUtils::printDiagnosticsToLog(TU);
+--- LiteEditor/clang_driver.cpp.orig	2012-08-30 10:23:36.000000000 +0200
++++ LiteEditor/clang_driver.cpp	2012-08-30 10:24:08.000000000 +0200
+@@ -670,6 +670,7 @@
+         tag->SetSignature (entrySignature);
+         
+         // Add support for clang comment parsing
++        /*
+         CXString BriefComment = clang_getCompletionBriefComment(str);
+         const char* comment = clang_getCString(BriefComment);
+         if( comment && comment[0] != '\0' ) {
+@@ -677,6 +678,7 @@
+         }
+         
+         clang_disposeString(BriefComment);
++        */
+         
+         switch(kind) {
+         case CXCursor_EnumConstantDecl:
+--- LiteEditor/clang_pch_maker_thread.cpp.orig	2012-08-30 10:24:32.000000000 +0200
++++ LiteEditor/clang_pch_maker_thread.cpp	2012-08-30 10:24:51.000000000 +0200
+@@ -130,7 +130,7 @@
+ 		                                      task->GetColumn(),
+ 		                                      usf.GetUnsavedFiles(),
+ 		                                      usf.GetCount(),
+-		                                      clang_defaultCodeCompleteOptions() | CXCodeComplete_IncludeBriefComments);
++		                                      clang_defaultCodeCompleteOptions() /*| CXCodeComplete_IncludeBriefComments*/);
+ 		
+ 		cacheEntry.lastReparse = time(NULL);
+ 		

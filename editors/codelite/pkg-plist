@@ -1,4 +1,5 @@
 bin/codelite
+bin/codelitegcc
 %%CLANG%%bin/codelite-clang
 bin/codelite_cppcheck
 bin/codelite_exec
@@ -34,10 +35,10 @@ bin/codelite_xterm
 %%DATADIR%%/plugins/DatabaseExplorer.so
 %%DATADIR%%/plugins/ExternalTools.so
 %%DATADIR%%/plugins/Gizmos.so
+%%DATADIR%%/plugins/Outline.so
 %%DATADIR%%/plugins/QmakePlugin.so
 %%DATADIR%%/plugins/SnipWiz.so
 %%DATADIR%%/plugins/Subversion2.so
-%%DATADIR%%/plugins/SymbolView.so
 %%DATADIR%%/plugins/UnitTestCPP.so
 %%DATADIR%%/plugins/abbreviation.so
 %%DATADIR%%/plugins/cscope.so
@@ -152,6 +153,26 @@ bin/codelite_xterm
 %%DATADIR%%/templates/projects/executable-wx-frame/icon.png
 %%DATADIR%%/templates/projects/executable-wx-frame/main.cpp
 %%DATADIR%%/templates/projects/executable-wx-frame/main.h
+%%DATADIR%%/templates/projects/executable-wxcrafter-dialog/MainDialog.cpp
+%%DATADIR%%/templates/projects/executable-wxcrafter-dialog/MainDialog.h
+%%DATADIR%%/templates/projects/executable-wxcrafter-dialog/icon.png
+%%DATADIR%%/templates/projects/executable-wxcrafter-dialog/main.cpp
+%%DATADIR%%/templates/projects/executable-wxcrafter-dialog/win_resources.rc
+%%DATADIR%%/templates/projects/executable-wxcrafter-dialog/wxCrafter_MainDialog.project
+%%DATADIR%%/templates/projects/executable-wxcrafter-dialog/wxcrafter.cpp
+%%DATADIR%%/templates/projects/executable-wxcrafter-dialog/wxcrafter.h
+%%DATADIR%%/templates/projects/executable-wxcrafter-dialog/wxcrafter.wxcp
+%%DATADIR%%/templates/projects/executable-wxcrafter-dialog/wxcrafter_bitmaps.cpp
+%%DATADIR%%/templates/projects/executable-wxcrafter-frame/MainFrame.cpp
+%%DATADIR%%/templates/projects/executable-wxcrafter-frame/MainFrame.h
+%%DATADIR%%/templates/projects/executable-wxcrafter-frame/icon.png
+%%DATADIR%%/templates/projects/executable-wxcrafter-frame/main.cpp
+%%DATADIR%%/templates/projects/executable-wxcrafter-frame/win_resources.rc
+%%DATADIR%%/templates/projects/executable-wxcrafter-frame/wxCrafter_MainFrame.project
+%%DATADIR%%/templates/projects/executable-wxcrafter-frame/wxcrafter.cpp
+%%DATADIR%%/templates/projects/executable-wxcrafter-frame/wxcrafter.h
+%%DATADIR%%/templates/projects/executable-wxcrafter-frame/wxcrafter.wxcp
+%%DATADIR%%/templates/projects/executable-wxcrafter-frame/wxcrafter_bitmaps.cpp
 %%DATADIR%%/templates/projects/executable/executable.project
 %%DATADIR%%/templates/projects/executable/icon.png
 %%DATADIR%%/templates/projects/executable/main.cpp
@@ -183,6 +204,8 @@ share/applications/codelite.desktop
 @dirrm %%DATADIR%%/templates/projects/qmake-gui
 @dirrm %%DATADIR%%/templates/projects/qmake-console
 @dirrm %%DATADIR%%/templates/projects/non-code-project
+@dirrm %%DATADIR%%/templates/projects/executable-wxcrafter-frame
+@dirrm %%DATADIR%%/templates/projects/executable-wxcrafter-dialog
 @dirrm %%DATADIR%%/templates/projects/executable-wx-frame
 @dirrm %%DATADIR%%/templates/projects/executable-wx-enabled
 @dirrm %%DATADIR%%/templates/projects/executable-wx-dialog
