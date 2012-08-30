@@ -158,16 +158,16 @@ class BzGetPatch(GetPatch):
 def main():
 
     parser = argparse.ArgumentParser(
-            description='Gets patch attachments from Bug Tracking System'
+            description='Gets patch attachments from a Bug Tracking System'
     )
     parser.add_argument('pr', metavar='pr', type=str, nargs=1,
             help='Pr id number')
     parser.add_argument('--mode', type=str, choices=['gnats','bz'],
             default='gnats', help='available modes to retrieve patch')
     parser.add_argument('--last', action='store_true',
-            help='only retrieve last iteration of the patch')
+            help='only retrieve the latest iteration of a patch')
     parser.add_argument('--stdout', action='store_true',
-            help='output patch on stdout')
+            help='dump patch on stdout')
 
     if len(sys.argv) == 1:
         parser.print_help()
@@ -179,13 +179,11 @@ def main():
     pr = str(args.pr[0])
 
     if '/' in pr and pr is not None:
-        category = pr.split('/')[0]
-        pr = pr.split('/')[1]
+        category, pr = pr.split('/')
 
     Clazz = globals()['%sGetPatch' % args.mode.capitalize()]
     gp = Clazz(pr, category)
     gp.get(only_last=args.last, output_stdout=args.stdout)
 
 if __name__ == '__main__':
-
     main()
