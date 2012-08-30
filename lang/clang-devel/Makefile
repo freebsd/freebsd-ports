@@ -7,7 +7,7 @@
 
 PORTNAME=	clang
 PORTVERSION=	3.2.r${SVN_REV}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -174,6 +174,7 @@ PLIST_FILE_LIST=	bin/ccc-analyzer \
 			bin/c++-analyzer \
 			bin/clang \
 			bin/clang++ \
+			bin/clang-check \
 			bin/clang-tblgen \
 			bin/scan-build \
 			bin/scan-view \
