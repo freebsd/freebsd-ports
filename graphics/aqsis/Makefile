@@ -7,11 +7,9 @@
 #
 
 PORTNAME=	aqsis
-PORTVERSION=	1.8.0
-PORTREVISION=	3
+PORTVERSION=	1.8.2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/${PORTVERSION}
-DISTNAME=	Aqsis-${PORTVERSION}-Source
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A photorealistic rendering system
