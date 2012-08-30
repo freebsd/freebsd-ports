@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	openobex
-PORTVERSION=	1.4
+PORTVERSION=	1.6
 CATEGORIES=	comms net
-MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
-MASTER_SITE_SUBDIR=	linux/bluetooth
+MASTER_SITES=	http://www.hendrik-sattler.de/downloads/${PORTNAME}/${PORTVERSION}/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-Source
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Open source implementation of the OBEX protocol
@@ -28,7 +28,7 @@ USB_DESC=	Enable OBEX over USB
 
 .if ${PORT_OPTIONS:MUSB}
 . if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
+LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
 CFLAGS+=	-I${PREFIX}/include
 . else
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-configure
