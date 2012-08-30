@@ -15,7 +15,7 @@ DISTNAME=	gateway-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WAP / SMS Gateway
 
-LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
 USE_RC_SUBR=	kannel
 USE_GNOME=	libxml2
@@ -31,30 +31,28 @@ CONFIGURE_ARGS=	--with-cflags="${CPPFLAGS}" --with-libs="${LDFLAGS}" \
 MAN1=		mtbatch.1 seewbmp.1 wmlsc.1 wmlsdasm.1
 MAN8=		kannel.8 run_kannel_box.8
 
-OPTIONS=	MYSQL	"Enable MySQL support"		off \
-		PGSQL	"Enable PostgreSQL support"	off \
-		SQLITE3	"Enable SQLite support"		off
+OPTIONS_DEFINE=	MYSQL PGSQL SQLITE3
 
 .include <bsd.port.options.mk>
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-mysql
 .else
 CONFIGURE_ARGS+=--without-mysql
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=--with-pgsql
 .else
 CONFIGURE_ARGS+=--without-pgsql
 .endif
 
-.if defined(WITH_SQLITE3)
+.if ${PORT_OPTIONS:MSQLITE3}
 USE_SQLITE=	3
 CONFIGURE_ARGS+=--with-sqlite3
 .else
