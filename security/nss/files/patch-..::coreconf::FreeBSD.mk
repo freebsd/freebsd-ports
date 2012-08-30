@@ -13,33 +13,19 @@
  RANLIB			= ranlib
  
  CPU_ARCH		= $(OS_TEST)
-@@ -50,7 +50,26 @@
- CPU_ARCH		= x86
- endif
+@@ -52,6 +52,12 @@ endif
  ifeq ($(CPU_ARCH),amd64)
  CPU_ARCH		= x86_64
-+USE_64			= 1
-+endif
-+ifeq ($(OS_TEST),alpha)
-+CPU_ARCH		= alpha
-+endif
-+ifeq ($(OS_TEST),powerpc64)
-+CPU_ARCH		= powerpc
-+USE_64			= 1
-+endif
-+ifeq ($(OS_TEST),powerpc)
-+CPU_ARCH		= powerpc
-+endif
-+ifeq ($(OS_TEST),sparc64)
-+CPU_ARCH		= sparc64
-+USE_64			= 1
-+endif
-+ifeq ($(OS_TEST),ia64)
-+CPU_ARCH		= ia64
-+USE_64			= 1
  endif
++ifneq (,$(filter powerpc%, $(CPU_ARCH)))
++CPU_ARCH		= ppc
++endif
++ifneq (,$(filter %64, $(CPU_ARCH)))
++USE_64			= 1
++endif
  
  OS_CFLAGS		= $(DSO_CFLAGS) -ansi -Wall -Wno-switch -DFREEBSD -DHAVE_STRERROR -DHAVE_BSD_FLOCK
+ 
 @@ -65,20 +80,18 @@
  USE_PTHREADS		= 1
  DEFINES			+= -D_THREAD_SAFE -D_REENTRANT

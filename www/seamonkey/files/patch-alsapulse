@@ -1,46 +1,46 @@
---- mozilla/config/autoconf.mk.in~
+diff --git mozilla/config/autoconf.mk.in mozilla/config/autoconf.mk.in
+index 44c0b06..748511b 100644
+--- mozilla/config/autoconf.mk.in
 +++ mozilla/config/autoconf.mk.in
-@@ -568,8 +568,13 @@ MOZ_LIBNOTIFY_CFLAGS	= @MOZ_LIBNOTIFY_CF
+@@ -536,9 +536,14 @@ MOZ_LIBNOTIFY_CFLAGS	= @MOZ_LIBNOTIFY_CFLAGS@
  MOZ_LIBNOTIFY_LIBS	= @MOZ_LIBNOTIFY_LIBS@
  MOZ_ENABLE_LIBNOTIFY	= @MOZ_ENABLE_LIBNOTIFY@
  
 +MOZ_ALSA                = @MOZ_ALSA@
  MOZ_ALSA_LIBS           = @MOZ_ALSA_LIBS@
  MOZ_ALSA_CFLAGS         = @MOZ_ALSA_CFLAGS@
-+
+ 
 +MOZ_PULSEAUDIO          = @MOZ_PULSEAUDIO@
 +MOZ_PULSEAUDIO_LIBS     = @MOZ_PULSEAUDIO_LIBS@
 +MOZ_PULSEAUDIO_CFLAGS   = @MOZ_PULSEAUDIO_CFLAGS@
- 
++
  GLIB_CFLAGS	= @GLIB_CFLAGS@
  GLIB_LIBS	= @GLIB_LIBS@
---- mozilla/configure.in~
+ GLIB_GMODULE_LIBS	= @GLIB_GMODULE_LIBS@
+diff --git mozilla/configure.in mozilla/configure.in
+index 5980b76..11f5f77 100644
+--- mozilla/configure.in
 +++ mozilla/configure.in
-@@ -5758,17 +5775,47 @@ dnl ====================================
+@@ -5600,13 +5600,45 @@ dnl ========================================================
  dnl = Check alsa availability on Linux if using sydneyaudio
  dnl ========================================================
  
 +MOZ_ARG_ENABLE_BOOL(alsa,
-+[  --enable-alsa          Enable Alsa support],
++[  --enable-alsa          Enable Alsa support (default on Linux)],
 +MOZ_ALSA=1,
 +MOZ_ALSA= MOZ_ALSA_FORCE=$enableval)
 +
  dnl If using sydneyaudio with Linux, ensure that the alsa library is available
--if test -n "$MOZ_SYDNEYAUDIO"; then
-+if test -n "$MOZ_SYDNEYAUDIO" -a "$MOZ_ALSA_FORCE" != "no"; then
-    case "$target_os" in
- linux*)
-+      MOZ_ALSA=1
-+      ;;
-+   esac
+-if test -n "$MOZ_SYDNEYAUDIO" -a "$OS_TARGET" = "Linux"; then
++if test -n "$MOZ_SYDNEYAUDIO" -a "$OS_TARGET" = "Linux" -a "$MOZ_ALSA_FORCE" != "no"; then
++    MOZ_ALSA=1
 +fi
 +
 +if test -n "$MOZ_ALSA"; then
-       PKG_CHECK_MODULES(MOZ_ALSA, alsa, ,
++    AC_DEFINE(MOZ_CUBEB)
+     PKG_CHECK_MODULES(MOZ_ALSA, alsa, ,
           [echo "$MOZ_ALSA_PKG_ERRORS"
            AC_MSG_ERROR([Need alsa for Ogg, Wave or WebM decoding on Linux.  Disable with --disable-ogg --disable-wave --disable-webm.  (On Ubuntu, you might try installing the package libasound2-dev.)])])
--      ;;
--   esac
  fi
  
 +AC_SUBST(MOZ_ALSA)
@@ -55,6 +55,7 @@
 +MOZ_PULSEAUDIO=)
 +
 +if test -n "$MOZ_PULSEAUDIO"; then
++    AC_DEFINE(MOZ_CUBEB)
 +    PKG_CHECK_MODULES(MOZ_PULSEAUDIO, libpulse, ,
 +         [echo "$MOZ_PULSEAUDIO_PKG_ERRORS"
 +          AC_MSG_ERROR([pulseaudio audio backend requires libpulse package])])
@@ -65,9 +66,55 @@
 +AC_SUBST(MOZ_PULSEAUDIO)
 +
  dnl ========================================================
- dnl Permissions System
+ dnl = Enable GStreamer
  dnl ========================================================
---- mozilla/media/libsydneyaudio/src/Makefile.in~
+diff --git mozilla/media/libcubeb/src/Makefile.in mozilla/media/libcubeb/src/Makefile.in
+index 5ab4dd8..c8df26f 100644
+--- mozilla/media/libcubeb/src/Makefile.in
++++ mozilla/media/libcubeb/src/Makefile.in
+@@ -24,10 +24,6 @@ endif
+ 
+ ifeq ($(OS_TARGET),Android)
+ # No Android implementation of libcubeb yet.
+-else ifeq ($(OS_TARGET),Linux)
+-CSRCS         = \
+-              cubeb_alsa.c \
+-              $(NULL)
+ endif
+ 
+ ifeq ($(OS_TARGET),Darwin)
+@@ -42,4 +38,16 @@ CSRCS           = \
+                 $(NULL)
+ endif
+ 
++ifdef MOZ_ALSA
++CSRCS         = \
++              cubeb_alsa.c \
++              $(NULL)
++endif
++
++ifdef MOZ_PULSEAUDIO
++CSRCS		= \
++		cubeb_pulse.c \
++		$(NULL)
++endif
++
+ include $(topsrcdir)/config/rules.mk
+diff --git mozilla/media/libcubeb/src/cubeb_alsa.c media/libcubeb/src/cubeb_alsa.c
+index 599aea2..41fd5af 100644
+--- mozilla/media/libcubeb/src/cubeb_alsa.c
++++ mozilla/media/libcubeb/src/cubeb_alsa.c
+@@ -6,6 +6,6 @@
+ #undef NDEBUG
+ #define _BSD_SOURCE
+-#define _POSIX_SOURCE
++#define _XOPEN_SOURCE 500
+ #include <pthread.h>
+ #include <sys/time.h>
+ #include <assert.h>
+diff --git mozilla/media/libsydneyaudio/src/Makefile.in mozilla/media/libsydneyaudio/src/Makefile.in
+index 8dda8ce..b19641d 100644
+--- mozilla/media/libsydneyaudio/src/Makefile.in
 +++ mozilla/media/libsydneyaudio/src/Makefile.in
 @@ -30,10 +30,6 @@ else ifeq ($(MOZ_WIDGET_TOOLKIT),android)
  CSRCS		= \
@@ -99,20 +146,23 @@
  ifeq ($(OS_ARCH),WINNT)
  OS_LIBS += winmm.lib
  endif
---- mozilla/toolkit/library/Makefile.in~
+diff --git mozilla/toolkit/library/Makefile.in mozilla/toolkit/library/Makefile.in
+index 43384e9..e46a6e3 100644
+--- mozilla/toolkit/library/Makefile.in
 +++ mozilla/toolkit/library/Makefile.in
-@@ -375,10 +375,12 @@ endif
+@@ -379,10 +379,13 @@ endif
  
  EXTRA_DSO_LDOPTS += $(call EXPAND_LIBNAME_PATH,gkmedias,$(DIST)/lib) 
  
 -ifdef MOZ_SYDNEYAUDIO
 -ifeq ($(OS_ARCH),Linux)
++ifneq (,$(MOZ_CUBEB)$(MOZ_SYDNEYAUDIO))
 +ifdef MOZ_ALSA
  EXTRA_DSO_LDOPTS += $(MOZ_ALSA_LIBS)
  endif
-+
 +ifdef MOZ_PULSEAUDIO
 +EXTRA_DSO_LDOPTS += $(MOZ_PULSEAUDIO_LIBS)
++endif
  endif
  
  ifdef HAVE_CLOCK_MONOTONIC

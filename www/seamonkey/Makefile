@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	seamonkey
-DISTVERSION=	2.11
+DISTVERSION=	2.12
 CATEGORIES?=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	seamonkey/releases/${DISTVERSION}/source
@@ -17,11 +17,12 @@ COMMENT=	The open source, standards compliant web browser
 
 BUILD_DEPENDS=	nspr>=4.9:${PORTSDIR}/devel/nspr \
 		nss>=3.13.2:${PORTSDIR}/security/nss \
-		sqlite3>=3.7.11:${PORTSDIR}/databases/sqlite3 \
+		sqlite3>=3.7.12.1:${PORTSDIR}/databases/sqlite3 \
+		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
 		unzip:${PORTSDIR}/archivers/unzip
 
 USE_AUTOTOOLS=	autoconf213:env
-CONFLICTS_BUILD=	spidermonkey-1.[0-7]*
+USE_PYTHON_BUILD=yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GECKO=	gecko
@@ -30,7 +31,6 @@ USE_QT4=	# empty
 QT_NONSTANDARD=	yes
 WANT_PERL=	yes
 GNU_CONFIGURE=	yes
-OBJDIR_BUILD=	yes
 ALL_TARGET=	default
 USE_GL=		gl
 MAKE_JOBS_SAFE=	yes
@@ -41,7 +41,6 @@ MOZ_OPTIONS+=	--program-transform-name='s/seamonkey/${MOZILLA}/' \
 		--enable-application=suite
 
 USE_MOZILLA=	# empty
-MOZILLA_PLIST_DIRS=	bin lib
 MOZ_PKGCONFIG_FILES=
 
 NOT_FOR_ARCHS=	ia64
@@ -96,10 +95,6 @@ MOZ_OPTIONS+=	--disable-composer
 BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
 .endif
 
-.if !empty(CXX:M*clang++*)
-CFLAGS+=	-Wno-return-type-c-linkage
-.endif
-
 .if ${PORT_OPTIONS:MLIGHTNING}
 MOZ_OPTIONS+=	--enable-calendar
 MOZ_MK_OPTIONS+=	MOZ_CO_PROJECT=calendar
@@ -117,14 +112,6 @@ post-patch:
 		${WRKSRC}/suite/app/nsSuiteApp.cpp
 	@${REINPLACE_CMD} -e '/accessibility.typeaheadfind.enablesound/s/true/false/' \
 		${WRKSRC}/mozilla/modules/libpref/src/init/all.js
-	@${REINPLACE_CMD} -e 's|libgnome-2.so.0|libgnome-2.so|' \
-		${WRKSRC}/mozilla/toolkit/xre/nsNativeAppSupportUnix.cpp \
-		${WRKSRC}/mozilla/image/decoders/icon/gtk/nsIconChannel.cpp
-	@${REINPLACE_CMD} -e 's|libgnomeui-2.so.0|libgnomeui-2.so|' \
-		${WRKSRC}/mozilla/toolkit/xre/nsNativeAppSupportUnix.cpp \
-		${WRKSRC}/mozilla/image/decoders/icon/gtk/nsIconChannel.cpp
-	@${REINPLACE_CMD} -e 's|libgnomevfs-2.so.0|libgnomevfs-2.so|' \
-		${WRKSRC}/mozilla/image/decoders/icon/gtk/nsIconChannel.cpp
 	@${SED} -e 's|%%MOZILLA%%|${MOZILLA}|g' \
 		< ${FILESDIR}/seamonkey.desktop.in > \
 		${WRKDIR}/${MOZILLA}.desktop

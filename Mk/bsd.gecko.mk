@@ -182,7 +182,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         is given by the maintainer via the port or by the
 #                         user via defined variable try to find the highest
 #                         stable installed version.
-#                         Available values: yes 10+ 14+ 10 14+
+#                         Available values: yes 10+ 15+ 10 15+
 #                         NOTE:
 #                         default value 10 is used in case of USE_FIREFOX=yes
 #
@@ -193,9 +193,9 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         version is given by the maintainer via the port 
 #                         or by the user via defined variable try to find
 #                         the highest stable installed version.
-#                         Available values: yes 11+ 11
+#                         Available values: yes 12+ 12
 #                         NOTE:
-#                         default value 11 is used in case of USE_SEAMONKEY=yes
+#                         default value 12 is used in case of USE_SEAMONKEY=yes
 #
 # USE_SEAMONKEY_BUILD     Add buildtime dependency on SeaMonkey.
 #                         Available values: see USE_SEAMONKEY
@@ -204,7 +204,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         version is given by the maintainer via the port 
 #                         or by the user via defined variable try to find 
 #                         the highest stable installed version.
-#                         Available values: yes 10+ 14+ 10 14
+#                         Available values: yes 10+ 15+ 10 15
 #                         NOTE:
 #                         default value 10 is used in case of USE_THUNDERBIRD=yes
 #
@@ -224,11 +224,11 @@ _FIREFOX_BUILD_DEPENDS=		yes
 .endif
 
 _FIREFOX_DEFAULT_VERSION=	10
-_FIREFOX_VERSIONS=			10 14
-_FIREFOX_RANGE_VERSIONS=	10+ 14+
+_FIREFOX_VERSIONS=			10 15
+_FIREFOX_RANGE_VERSIONS=	10+ 15+
 
 # For specifying [10, ..]+
-_FIREFOX_14P=	14 ${_FIREFOX_10P}
+_FIREFOX_15P=	15 ${_FIREFOX_10P}
 _FIREFOX_10P=	10
 
 # Set the default Firefox version and check if USE_FIREFOX=yes was given
@@ -275,7 +275,7 @@ IGNORE=			cannot install: unknown Firefox version: firefox-${USE_FIREFOX:C/([0-9
 
 # Dependence lines for different Firefox versions
 10_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox-esr
-14_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
+15_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
 
 # Add dependencies
 .if defined(USE_FIREFOX)
@@ -297,12 +297,12 @@ USE_SEAMONKEY:=				${USE_SEAMONKEY_BUILD}
 _SEAMONKEY_BUILD_DEPENDS=	yes
 .endif
 
-_SEAMONKEY_DEFAULT_VERSION=	11
-_SEAMONKEY_VERSIONS=		11
-_SEAMONKEY_RANGE_VERSIONS=	11+
+_SEAMONKEY_DEFAULT_VERSION=	12
+_SEAMONKEY_VERSIONS=		12
+_SEAMONKEY_RANGE_VERSIONS=	12+
 
-# For specifying [11, ..]+
-_SEAMONKEY_11P=	11
+# For specifying [12, ..]+
+_SEAMONKEY_12P=	12
 
 # Set the default SeaMonkey version and check if USE_SEAMONKEY=yes was given
 .if ${USE_SEAMONKEY} == "yes"
@@ -344,7 +344,7 @@ IGNORE=			cannot install: unknown SeaMonkey version: seamonkey-2.${USE_SEAMONKEY
 .endif
 
 # Dependence lines for different SeaMonkey versions
-11_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey
+12_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey
 
 # Add dependencies
 .if defined(USE_SEAMONKEY)
@@ -367,11 +367,11 @@ _THUNDERBIRD_BUILD_DEPENDS=		yes
 .endif
 
 _THUNDERBIRD_DEFAULT_VERSION=	10
-_THUNDERBIRD_VERSIONS=			10 14
-_THUNDERBIRD_RANGE_VERSIONS=	10+ 14+
+_THUNDERBIRD_VERSIONS=			10 15
+_THUNDERBIRD_RANGE_VERSIONS=	10+ 15+
 
 # For specifying [10, ..]+
-_THUNDERBIRD_14P=	14 ${_THUNDERBIRD_10P}
+_THUNDERBIRD_15P=	15 ${_THUNDERBIRD_10P}
 _THUNDERBIRD_10P=	10
 
 # Set the default Thunderbird version and check if USE_THUNDERBIRD=yes was given
@@ -417,7 +417,7 @@ IGNORE=			cannot install: unknown Thunderbird version: thunderbird-${USE_THUNDER
 
 # Dependence lines for different Thunderbird versions
 10_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird-esr
-14_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird
+15_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird
 
 # Add dependencies
 .if defined(USE_THUNDERBIRD)
@@ -526,13 +526,9 @@ MASTER_DIR?=	${.CURDIR}/../../www/seamonkey
 
 MOZ_PIS_DIR?=		lib/${MOZILLA}/init.d
 
-ESD_LIB?=	libesd.so.2
-FREETYPE_LIB?=	libfreetype.so.9
-
-GENERIC_MOZCONFIG?=	${.CURDIR}/../../www/seamonkey/files/mozconfig-generic.in
 PORT_MOZCONFIG?=	${FILESDIR}/mozconfig.in
 MOZCONFIG?=		${WRKSRC}/.mozconfig
-MOZILLA_PLIST_DIRS?=	bin include lib share/idl
+MOZILLA_PLIST_DIRS?=	bin lib
 PKGINSTALL?=	${WRKDIR}/pkg-install
 PKGDEINSTALL?=	${WRKDIR}/pkg-deinstall
 MASTER_MOZDIR?=	${PORTSDIR}/www/seamonkey
@@ -547,8 +543,12 @@ EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --exclude */CVS/*	\
 MOZ_PKGCONFIG_FILES?=	${MOZILLA}-gtkmozembed ${MOZILLA}-js \
 			${MOZILLA}-xpcom ${MOZILLA}-plugin
 
-CFLAGS+=		${PTHREAD_CFLAGS}
-LIBS+=			${PTHREAD_LIBS} -L${LOCALBASE}/lib -liconv
+MOZ_EXPORT+=	${CONFIGURE_ENV} \
+				LIBS="${LIBS}" PERL="${PERL}"
+MOZ_OPTIONS+=	--prefix="${FAKEDIR}"
+
+CPPFLAGS+=		-isystem${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib
 
 # Standard depends
 _ALL_DEPENDS=	cairo dbm event ffi hunspell jpeg nspr nss png sqlite vpx zip
@@ -579,7 +579,8 @@ nspr_MOZ_OPTIONS=	--with-system-nspr
 
 nss_LIB_DEPENDS=	nss3:${PORTSDIR}/security/nss
 nss_MOZ_OPTIONS=	--with-system-nss
-#nss_EXTRACT_AFTER_ARGS=	--exclude mozilla*/security/nss
+nss_EXTRACT_AFTER_ARGS=	--exclude mozilla*/security/coreconf \
+						--exclude mozilla*/security/nss
 nss_CPPFLAGS+=		-I${LOCALBASE}/include/nss -I${LOCALBASE}/include/nss/nss
 nss_LDFLAGS+=		-L${LOCALBASE}/lib/nss -Wl,-rpath,${PREFIX}/lib/${MOZ_RPATH}
 
@@ -622,8 +623,6 @@ MOZ_OPTIONS+=	--disable-tests 	\
 		--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
 		--with-pthreads
 # Configure options for install
-MOZ_OPTIONS+=	--x-includes=${LOCALBASE}/include \
-		--x-libraries=${LOCALBASE}/lib
 .if !defined(MOZ_EXTENSIONS)
 MOZ_OPTIONS+=	--enable-extensions=default
 .else
@@ -637,18 +636,14 @@ MOZ_OPTIONS+=	--enable-necko-protocols=${MOZ_PROTOCOLS}
 # others 
 MOZ_OPTIONS+=	--with-system-zlib		\
 		--with-system-bz2		\
-		--disable-auto-deps		\
 		--disable-debug-symbols		\
 		--disable-glibtest		\
 		--disable-gtktest		\
 		--disable-freetypetest		\
 		--disable-installer		\
-		--disable-md			\
 		--disable-necko-wifi		\
 		--disable-updater		\
 		--disable-pedantic
-MOZ_MK_OPTIONS+=	XP_UNIX=1		\
-			PERL=${PERL}
 
 .if ${CXXFLAGS:M-stdlib=libc++}
 LIBS+=		-lcxxrt
@@ -669,7 +664,7 @@ USE_GNOME+=	gtk20
 .endif
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-MOZ_EXPORT+=	MOZ_OPTIMIZE_FLAGS='"${CFLAGS:M-O*}"'
+MOZ_EXPORT+=	MOZ_OPTIMIZE_FLAGS="${CFLAGS:M-O*}"
 MOZ_OPTIONS+=	--enable-optimize
 .else
 MOZ_OPTIONS+=	--disable-optimize
@@ -729,6 +724,9 @@ MOZ_OPTIONS+=	--disable-libproxy
 LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
 RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
 MOZ_OPTIONS+=	--enable-alsa
+. if exists(${FILESDIR}/extra-bug780531)
+EXTRA_PATCHES+=	${FILESDIR}/extra-bug780531
+. endif
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
@@ -804,20 +802,17 @@ gecko-post-patch:
 .endif
 	@${RM} -f ${MOZCONFIG}
 .if !defined(NOMOZCONFIG)
-.if exists(${GENERIC_MOZCONFIG})
-	@${MOZCONFIG_SED} < ${GENERIC_MOZCONFIG} >> ${MOZCONFIG}
-.endif
 	@if [ -e ${PORT_MOZCONFIG} ] ; then \
 		${MOZCONFIG_SED} < ${PORT_MOZCONFIG} >> ${MOZCONFIG} ; \
 	fi
 .for arg in ${MOZ_OPTIONS}
-	@${ECHO_CMD} ac_add_options ${arg} >> ${MOZCONFIG}
+	@${ECHO_CMD} ac_add_options ${arg:Q} >> ${MOZCONFIG}
 .endfor
 .for arg in ${MOZ_MK_OPTIONS}
-	@${ECHO_CMD} mk_add_options ${arg} >> ${MOZCONFIG}
+	@${ECHO_CMD} mk_add_options ${arg:Q} >> ${MOZCONFIG}
 .endfor
 .for var in ${MOZ_EXPORT}
-	@${ECHO_CMD} "export ${var}" >> ${MOZCONFIG}
+	@${ECHO_CMD} export ${var:Q} >> ${MOZCONFIG}
 .endfor
 .endif # .if !defined(NOMOZCONFIG)
 .if exists(${MOZSRC}/build/unix/mozilla-config.in)
@@ -828,12 +823,19 @@ gecko-post-patch:
 .endif
 .for subdir in "" nsprpub js/src
 	@if [ -f ${MOZSRC}/${subdir}/config/system-headers ] ; then \
-		${ECHO_CMD} "cairo-qt.h" >> ${MOZSRC}/${subdir}/config/system-headers ; \
-		${ECHO_CMD} "fenv.h" >> ${MOZSRC}/${subdir}/config/system-headers ; \
-		${ECHO_CMD} "malloc_np.h" >> ${MOZSRC}/${subdir}/config/system-headers ; \
-		${ECHO_CMD} "pthread_np.h" >> ${MOZSRC}/${subdir}/config/system-headers ; \
-		${ECHO_CMD} "pulse/pulseaudio.h" >> ${MOZSRC}/${subdir}/config/system-headers ; \
-		${ECHO_CMD} "unwind.h" >> ${MOZSRC}/${subdir}/config/system-headers ; \
+	for f in \
+			cairo-qt.h \
+			fenv.h \
+			kvm.h \
+			malloc_np.h \
+			pthread_np.h \
+			pulse/pulseaudio.h \
+			spawn.h \
+			sys/thr.h \
+			sys/user.h \
+			unwind.h; do \
+		${ECHO_CMD} "$$f" >> ${MOZSRC}/${subdir}/config/system-headers ; \
+	done; \
 	fi
 .endfor
 	@for f in \
@@ -862,17 +864,11 @@ gecko-post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g' \
 			${MOZSRC}/build/unix/run-mozilla.sh
-	@if [ -f ${MOZSRC}/widget/src/gtk2/nsSound.cpp ] ; then \
-		${REINPLACE_CMD} -E -e 's|libesd\.so\.[0-9]+|libesd.so|g' \
-			${MOZSRC}/widget/src/gtk2/nsSound.cpp ; \
-	fi
-	@if ! [ -f ${MOZSRC}/widget/gtk2/nsDeviceContextSpecG.cpp ] ; then \
-		${REINPLACE_CMD} -E -e 's|libcups\.so\.[0-9]+|libcups.so|g' \
-			${MOZSRC}/*/*/*/nsDeviceContextSpecG.cpp ; \
-	fi
 	@${REINPLACE_CMD} -e 's|/usr/local/netscape|${LOCALBASE}|g ; \
 		s|/usr/local/lib/netscape|${LOCALBASE}/lib|g' \
 		${MOZSRC}/xpcom/*/SpecialSystemDirectory.cpp
+	@${GREP} -lr 'PR_LoadLibrary.*\.so\.[0-9]' ${WRKSRC} | ${XARGS} \
+		${REINPLACE_CMD} -Ee '/PR_LoadLibrary/s/(\.so)\.[0-9]+/\1/'
 
 # handles mozilla pis scripts.
 gecko-moz-pis-patch:
@@ -950,7 +946,6 @@ gecko-create-plist:
 .endfor
 	${CAT} ${PLISTF} | ${SORT} >> ${PLIST}
 	${CAT} ${PLISTD} | ${SORT} -r >> ${PLIST}
-	${ECHO_CMD} "@dirrmtry share/idl" >> ${PLIST}
 	${ECHO_CMD} "@exec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${PLIST}
 	${ECHO_CMD} "@unexec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${PLIST}
 .endif # !defined(NOGECKO_PLIST)

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thunderbird
-DISTVERSION=	10.0.6
+DISTVERSION=	10.0.7
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}esr/source
@@ -20,8 +20,6 @@ BUILD_DEPENDS=	nspr>=4.8.8:${PORTSDIR}/devel/nspr \
 		sqlite3>=3.7.7.1:${PORTSDIR}/databases/sqlite3 \
 		cairo>=1.10.2_1,1:${PORTSDIR}/graphics/cairo \
 		unzip:${PORTSDIR}/archivers/unzip
-
-CONFLICTS_BUILD=	spidermonkey-*
 
 USE_AUTOTOOLS=	autoconf213:env
 LATEST_LINK=	thunderbird-esr

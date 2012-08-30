@@ -14,10 +14,10 @@
 # Documentation and examples:
 #
 # Makefile.webplugins will create symlinks automatically for each supported
-# applications that supports the webplugins framework.  Also, it will remove
+# application that supports the webplugins framework.  Also, it will remove
 # these symlinks when the plug-in port is uninstalled.
 #
-# USE_WEBPLUGINS	- Specify a list of application(s) that this plug-in
+# USE_WEBPLUGINS	- Specify a list of applications that this plug-in
 # 			  port supports.  For each of these applications, a
 # 			  symlink will be created in
 # 			  lib/browser_plugins/symlinks.  See
@@ -26,13 +26,13 @@
 #			  Default: USE_WEBPLUGINS=${WEBPLUGINS_APPS_ALL} (all
 #			  applications)
 #
-# WEBPLUGINS_NAME	- If your port installs file(s) in ${WEBPLUGINS_DIR},
+# WEBPLUGINS_NAME	- If your port installs files in ${WEBPLUGINS_DIR},
 # 			  then you can tweak WEBPLUGINS_NAME to change the
 # 			  name of the directory
 # 			  (lib/browser_plugins/symlinks/WEBPLUGINS_NAME).
 #			  Default: WEBPLUGINS_NAME=${PKGBASE}
 #
-# WEBPLUGINS_FILES	- The plug-in file(s) that are going to be linked
+# WEBPLUGINS_FILES	- The plug-in files that are going to be linked
 #			  in lib/browser_plugins/symlinks/*/. It cannot
 #			  be empty or the port will set IGNORE.
 #
@@ -40,9 +40,9 @@
 # 			  found.  Each plug-in file in WEBPLUGINS_FILES
 # 			  must be found in WEBPLUGINS_DIR.  If your port
 # 			  does not install in WEBPLUGINS_DIR, but in its own
-# 			  path. You will need to specify that here or
+# 			  path, you will need to specify that here or
 # 			  symlinks will be created to non-existent files.
-#			  Default: WEBPLUGINS_DIR?=${WEBPLUGINS_LIBDIR}/${WEBPLUGINS_NAME}
+#			  Default: WEBPLUGINS_DIR=${WEBPLUGINS_LIBDIR:S,^${LOCALBASE}/,${PREFIX}/,}/${WEBPLUGINS_NAME}
 #
 #
 # The USE_WEBPLUGINS supports wildcards, native, and linux; so you can do any
@@ -53,8 +53,8 @@
 #	USE_WEBPLUGINS=linux (Supports linux-*)
 #	USE_WEBPLUGINS=opera webkit-gtk2
 #
-# Example to add in Makefile and pkg-plist if the plug-in file(s) install in
-# WEBPLUGINS_DIR, and if your port does this manually:
+# Example to add in Makefile and pkg-plist if the plug-in files are installled
+# to WEBPLUGINS_DIR, and if your port does this manually:
 #
 #	Makefile:
 #	------------------------------------------------------
@@ -104,7 +104,7 @@
 #	------------------------------------------------------
 #	[...]
 # 	USE_WEBPLUGINS=gecko*
-#	WEBPLUGINS_DIR=#{PREFIX}/lib/application
+#	WEBPLUGINS_DIR=${PREFIX}/lib/application
 #	WEBPLUGINS_FILES=fooplugin.so fooplugin.xpi
 #
 #	.include <bsd.port.pre.mk>
@@ -155,7 +155,7 @@ USE_WEBPLUGINS=	${WEBPLUGINS_APPS_ALL}
 
 .if !defined(WEBPLUGINS_FILES) || ${WEBPLUGINS_FILES} == "empty" || \
 	${WEBPLUGINS_FILES} == ""
-IGNORE=	cannot install: the WEBPLUGINS_FILES is empty, please add plugins file in it and see in www/firefox/Makefile.webplugins for document
+IGNORE=	can't be installed: WEBPLUGINS_FILES is empty. Please, add plug-in files to it and check www/firefox/Makefile.webplugins for documentation
 .endif
 
 .for _TEMP_APP__ in ${WEBPLUGINS_APPS_ALL}
@@ -178,28 +178,28 @@ WEBPLUGINS_APPS=		${USE_WEBPLUGINS_EXP:S.^.${LOCALBASE}/lib/.:S.$./plugins.:N*op
 WEBPLUGINS_SLDIRS=		${USE_WEBPLUGINS_EXP:S.^.${WEBPLUGINS_SLDIR}/.}
 WEBPLUGINS_LINKFARMS=	${WEBPLUGINS_APPS} ${WEBPLUGINS_SLDIRS}
 
-WEBPLUGINS_LIBDIR=		${PREFIX}/lib/browser_plugins
+WEBPLUGINS_LIBDIR=		${LOCALBASE}/lib/browser_plugins
 WEBPLUGINS_SLDIR=		${WEBPLUGINS_LIBDIR}/symlinks
-WEBPLUGINS_DIR?=		${WEBPLUGINS_LIBDIR}/${WEBPLUGINS_NAME}
+WEBPLUGINS_DIR?=		${WEBPLUGINS_LIBDIR:S,^${LOCALBASE}/,${PREFIX}/,}/${WEBPLUGINS_NAME}
 
 PLIST_SUB+=		WEBPLUGINS_DIR="${WEBPLUGINS_DIR:S,^${PREFIX}/,,}"
 
 _LNWF=		${WEBPLUGINS_FILES:S,^,${WEBPLUGINS_DIR}/,}
 _Q=	2>/dev/null || true
-_WLD=		${WEBPLUGINS_LIBDIR:S,^${PREFIX},%D,}
-_WLF=		${WEBPLUGINS_LINKFARMS:S,${PREFIX},%D,}
-_WSD=		${WEBPLUGINS_SLDIR:S,^${PREFIX},%D,}
+_WLD=		${WEBPLUGINS_LIBDIR:S,^${LOCALBASE},%D,}
+_WLF=		${WEBPLUGINS_LINKFARMS:S,${LOCALBASE},%D,}
+_WSD=		${WEBPLUGINS_SLDIR:S,^${LOCALBASE},%D,}
 
 webplugins-post-install:
 	@if [ ! -d ${WEBPLUGINS_DIR} ]; then \
 		${ECHO_CMD}; \
-		${ECHO_CMD} "ERROR: The \"${WEBPLUGINS_DIR}\" in WEBPLUGINS_DIR is either a typo or no longer exists. Please make a bug report to ${MAINTAINER} (maintainer)."; \
+		${ECHO_CMD} "ERROR: \"${WEBPLUGINS_DIR}\" in WEBPLUGINS_DIR is either a typo or no longer exists. Please, file a bug report to ${MAINTAINER} (maintainer)."; \
 		${ECHO_CMD}; \
 	else \
 		for _f in ${WEBPLUGINS_FILES}; do \
 			if [ ! -f ${WEBPLUGINS_DIR}/$${_f} ]; then \
 				${ECHO_CMD}; \
-				${ECHO_CMD} "ERROR: The \"$${_f}\" in WEBPLUGINS_FILES is either a typo or no longer exists. Please make a bug report to ${MAINTAINER} (maintainer)."; \
+				${ECHO_CMD} "ERROR: \"$${_f}\" in WEBPLUGINS_FILES is either a typo or no longer exists. Please, file a bug report to ${MAINTAINER} (maintainer)."; \
 				${ECHO_CMD}; \
 			fi; \
 		done; \
@@ -210,6 +210,10 @@ webplugins-post-install:
 			${LN} -sf $${_l} $${_d}/ ${_Q}; \
 		done; \
 	done; \
+	if [ "${PREFIX}" != "${LOCALBASE}" ]; then \
+		${ECHO_CMD} "@unexec rmdir ${_WLD} ${_Q}" >> ${TMPPLIST}; \
+	fi; \
+	${ECHO_CMD} "@cwd ${LOCALBASE}" >> ${TMPPLIST}; \
 	for _d in ${_WLF}; do \
 		${ECHO_CMD} "@exec ${INSTALL} -d $$_d" >> ${TMPPLIST}; \
 		for _l in ${_LNWF}; do \

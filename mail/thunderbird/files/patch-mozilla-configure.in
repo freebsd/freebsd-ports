@@ -23,33 +23,3 @@
  CFLAGS=$_SAVE_CFLAGS
  LDFLAGS=$_SAVE_LDFLAGS
  LIBS=$_SAVE_LIBS
-@@ -5903,6 +5903,14 @@
-       VPX_ASFLAGS="-f elf64 -rnasm -pnasm -DPIC"
-       VPX_X86_ASM=1
-     ;;
-+    FreeBSD:i386)
-+      VPX_ASFLAGS="-f elf32 -rnasm -pnasm"
-+      VPX_X86_ASM=1
-+    ;;
-+    FreeBSD:x86_64)
-+      VPX_ASFLAGS="-f elf64 -rnasm -pnasm -DPIC"
-+      VPX_X86_ASM=1
-+    ;;
-     SunOS:x86)
-       VPX_ASFLAGS="-f elf32 -rnasm -pnasm"
-       VPX_X86_ASM=1
-@@ -6297,6 +6305,14 @@
-     LIBJPEG_TURBO_ASFLAGS="-f elf64 -rnasm -pnasm -D__x86_64__ -DPIC -DELF"
-     LIBJPEG_TURBO_X64_ASM=1
-   ;;
-+  FreeBSD:i386)
-+    LIBJPEG_TURBO_ASFLAGS="-f elf32 -rnasm -pnasm -DPIC -DELF"
-+    LIBJPEG_TURBO_X86_ASM=1
-+  ;;
-+  FreeBSD:x86_64)
-+    LIBJPEG_TURBO_ASFLAGS="-f elf64 -rnasm -pnasm -D__x86_64__ -DPIC -DELF"
-+    LIBJPEG_TURBO_X64_ASM=1
-+  ;;
-   SunOS:i?86)
-     LIBJPEG_TURBO_ASFLAGS="-f elf32 -rnasm -pnasm -DPIC -DELF"
-     LIBJPEG_TURBO_X86_ASM=1

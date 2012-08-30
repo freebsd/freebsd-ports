@@ -4,7 +4,7 @@
  nsresult
  nsThreadManager::Init()
  {
-+#ifdef NS_TLS && (__FreeBSD_version < 802513 \
++#if defined(NS_TLS) && (__FreeBSD_version < 802513 \
 +  || (__FreeBSD_version >= 900000 && __FreeBSD_version < 900045))
 +  if (!gTLSThreadID)
 +    gTLSThreadID = mozilla::threads::Generic;

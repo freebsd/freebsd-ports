@@ -1,0 +1,50 @@
+--- content/media/MediaEngineDefault.cpp~
++++ content/media/MediaEngineDefault.cpp
+@@ -232,12 +232,12 @@ nsresult
+ MediaEngineDefaultAudioSource::Start(SourceMediaStream* aStream, TrackID aID)
+ {
+   if (mState != kAllocated) {
+-    return NULL;
++    return 0;
+   }
+ 
+   mTimer = do_CreateInstance(NS_TIMER_CONTRACTID);
+   if (!mTimer) {
+-    return NULL;
++    return 0;
+   }
+ 
+   mSource = aStream;
+--- gfx/layers/opengl/ImageLayerOGL.cpp~
++++ gfx/layers/opengl/ImageLayerOGL.cpp
+@@ -936,7 +936,7 @@ ShadowImageLayerOGL::CleanupResources()
+ {
+   if (mSharedHandle) {
+     gl()->ReleaseSharedHandle(mShareType, mSharedHandle);
+-    mSharedHandle = NULL;
++    mSharedHandle = 0;
+   }
+ 
+   mYUVTexture[0].Release();
+--- intl/locale/src/unix/nsDateTimeFormatUnix.cpp~
++++ intl/locale/src/unix/nsDateTimeFormatUnix.cpp
+@@ -100,7 +100,7 @@ void nsDateTimeFormatUnix::LocalePreferr
+   struct tm *tmc;
+   int i;
+ 
+-  tt = time((time_t)NULL);
++  tt = time(NULL);
+   tmc = localtime(&tt);
+ 
+   tmc->tm_hour=22;    // put the test sample hour to 22:00 which is 10PM
+--- ipc/glue/CrossProcessMutex_unimplemented.cpp~
++++ ipc/glue/CrossProcessMutex_unimplemented.cpp
+@@ -40,7 +40,7 @@ CrossProcessMutexHandle
+ CrossProcessMutex::ShareToProcess(base::ProcessHandle aHandle)
+ {
+   NS_RUNTIMEABORT("Cross-process mutices not allowed on this platform - woah! We should've aborted by now!");
+-  return NULL;
++  return 0;
+ }
+ 
+ }

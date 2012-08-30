@@ -1,0 +1,24 @@
+commit 4d0c5b9
+Author: Marco Perez <bugmail@millibyte.net>
+Date:   Sat Jun 9 12:24:56 2012 -0400
+
+    Bug 759459 - Build broken on FreeBSD since patch for bug 745034 landed. r=terrence
+---
+ js/src/gc/Memory.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git js/src/gc/Memory.cpp js/src/gc/Memory.cpp
+index 815e90b..10c1a91 100644
+--- js/src/gc/Memory.cpp
++++ js/src/gc/Memory.cpp
+@@ -292,9 +292,9 @@ GetPageFaultCount()
+ #elif defined(XP_UNIX) || defined(XP_MACOSX) || defined(DARWIN)
+ 
+ #include <sys/mman.h>
+-#include <unistd.h>
+ #include <sys/time.h>
+ #include <sys/resource.h>
++#include <unistd.h>
+ 
+ void
+ InitMemorySubsystem()

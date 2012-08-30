@@ -4,15 +4,14 @@ $NetBSD: patch-dom_plugins_ipc_PluginModuleChild.cpp,v 1.1 2012/03/06 12:34:09 r
 
 --- dom/plugins/ipc/PluginModuleChild.cpp.orig	2011-12-20 23:28:14.000000000 +0000
 +++ dom/plugins/ipc/PluginModuleChild.cpp
-@@ -33,6 +33,8 @@
- #include "nsPluginsDir.h"
- #include "nsXULAppAPI.h"
+@@ -5,6 +5,7 @@
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
  
-+#include <unistd.h>
-+
- #ifdef MOZ_X11
- # include "mozilla/X11Util.h"
- #endif
+ #ifdef MOZ_WIDGET_QT
++#include <unistd.h> // for _exit()
+ #include <QtCore/QTimer>
+ #include "nsQAppInstance.h"
+ #include "NestedLoopTimer.h"
 @@ -228,7 +228,7 @@ PluginModuleChild::Init(const std::strin
  
      // TODO: use PluginPRLibrary here
@@ -65,7 +64,7 @@ $NetBSD: patch-ipc_chromium_Makefile.in,v 1.1 2012/03/06 12:34:09 ryoon Exp $
 +
 +CPPSRCS += \
 +  atomicops_internals_x86_gcc.cc \
-+  file_util_bsd.cc \
++  file_util_linux.cc \
 +  process_util_bsd.cc \
 +  time_posix.cc \
 +  $(NULL)
@@ -218,21 +217,23 @@ $NetBSD: patch-ipc_chromium_src_base_debug__util__posic.cc,v 1.3 2012/04/01 15:1
  
  #include <errno.h>
  #include <fcntl.h>
-@@ -17,8 +17,13 @@
+@@ -17,9 +17,16 @@
  #include <unistd.h>
  #if MOZ_HAVE_EXECINFO_H
  #include <execinfo.h>
--#include <sys/sysctl.h>
++#endif
++
++#if defined(OS_MACOSX) || defined(OS_BSD)
+ #include <sys/sysctl.h>
  #endif
+ 
 +#if defined(OS_DRAGONFLY) || defined(OS_FREEBSD)
 +#include <sys/user.h>
-+#elif defined(OS_FREEBSD)
-+#include <sys/proc.h>
 +#endif
-+#include <sys/sysctl.h>
- 
++
  #include "base/basictypes.h"
  #include "base/eintr_wrapper.h"
+ #include "base/logging.h"
 @@ -32,7 +37,7 @@ bool DebugUtil::SpawnDebuggerOnProcess(u
    return false;
  }
@@ -242,7 +243,7 @@ $NetBSD: patch-ipc_chromium_src_base_debug__util__posic.cc,v 1.3 2012/04/01 15:1
  
  // Based on Apple's recommended method as described in
  // http://developer.apple.com/qa/qa2004/qa1361.html
-@@ -71,7 +76,13 @@ bool DebugUtil::BeingDebugged() {
+@@ -71,7 +76,15 @@ bool DebugUtil::BeingDebugged() {
  
    // This process is being debugged if the P_TRACED flag is set.
    is_set = true;
@@ -250,6 +251,8 @@ $NetBSD: patch-ipc_chromium_src_base_debug__util__posic.cc,v 1.3 2012/04/01 15:1
 +  being_debugged = (info.kp_flags & P_TRACED) != 0;
 +#elif defined(OS_FREEBSD)
 +  being_debugged = (info.ki_flag & P_TRACED) != 0;
++#elif defined(OS_OPENBSD)
++  being_debugged = (info.p_flag & P_TRACED) != 0;
 +#else
    being_debugged = (info.kp_proc.p_flag & P_TRACED) != 0;
 +#endif
@@ -392,105 +395,19 @@ index 9a34492..62b280c 100644
  #else
  typedef DirReaderFallback DirReaderPosix;
  #endif
-$NetBSD: patch-ipc_chromium_src_base_file__util.h,v 1.2 2012/03/06 12:34:09 ryoon Exp $
-
---- ipc/chromium/src/base/file_util.h.orig	2011-12-20 23:28:19.000000000 +0000
-+++ ipc/chromium/src/base/file_util.h
-@@ -16,8 +16,8 @@
- #include <sys/stat.h>
- #elif defined(OS_POSIX) 
- #include <sys/types.h>
--#include <fts.h>
- #include <sys/stat.h>
-+#include <fts.h>
- #endif
+diff --git ipc/chromium/src/base/file_util_linux.cc ipc/chromium/src/base/file_util_linux.cc
+index 171e44f..0c6dfcc 100644
+--- ipc/chromium/src/base/file_util_linux.cc
++++ ipc/chromium/src/base/file_util_linux.cc
+@@ -28,7 +28,7 @@ bool GetTempDir(FilePath* path) {
+ }
  
- #include <stdio.h>
-$NetBSD: patch-ipc_chromium_src_base_file__util__bsd.cc,v 1.1 2012/03/06 12:34:09 ryoon Exp $
-
---- ipc/chromium/src/base/file_util_bsd.cc.orig	2012-01-07 18:21:18.000000000 +0000
-+++ ipc/chromium/src/base/file_util_bsd.cc
-@@ -0,0 +1,80 @@
-+// Copyright (c) 2006-2008 The Chromium Authors. All rights reserved.
-+// Use of this source code is governed by a BSD-style license that can be
-+// found in the LICENSE file.
-+
-+// this is a derivative of file_util_linux.cc
-+
-+#include "base/file_util.h"
-+
-+#include <fcntl.h>
-+#include <unistd.h>
-+
-+#include <string>
-+#include <vector>
-+
-+#include "base/eintr_wrapper.h"
-+#include "base/file_path.h"
-+#include "base/string_util.h"
-+
-+namespace file_util {
-+
-+bool GetTempDir(FilePath* path) {
-+  const char* tmp = getenv("TMPDIR");
-+  if (tmp)
-+    *path = FilePath(tmp);
-+  else
-+    *path = FilePath("/tmp");
-+  return true;
-+}
-+
-+bool GetShmemTempDir(FilePath* path) {
-+  return GetTempDir(path);
-+}
-+
-+bool CopyFile(const FilePath& from_path, const FilePath& to_path) {
-+  int infile = open(from_path.value().c_str(), O_RDONLY);
-+  if (infile < 0)
-+    return false;
-+
-+  int outfile = creat(to_path.value().c_str(), 0666);
-+  if (outfile < 0) {
-+    close(infile);
-+    return false;
-+  }
-+
-+  const size_t kBufferSize = 32768;
-+  std::vector<char> buffer(kBufferSize);
-+  bool result = true;
-+
-+  while (result) {
-+    ssize_t bytes_read = HANDLE_EINTR(read(infile, &buffer[0], buffer.size()));
-+    if (bytes_read < 0) {
-+      result = false;
-+      break;
-+    }
-+    if (bytes_read == 0)
-+      break;
-+    // Allow for partial writes
-+    ssize_t bytes_written_per_read = 0;
-+    do {
-+      ssize_t bytes_written_partial = HANDLE_EINTR(write(
-+          outfile,
-+          &buffer[bytes_written_per_read],
-+          bytes_read - bytes_written_per_read));
-+      if (bytes_written_partial < 0) {
-+        result = false;
-+        break;
-+      }
-+      bytes_written_per_read += bytes_written_partial;
-+    } while (bytes_written_per_read < bytes_read);
-+  }
-+
-+  if (HANDLE_EINTR(close(infile)) < 0)
-+    result = false;
-+  if (HANDLE_EINTR(close(outfile)) < 0)
-+    result = false;
-+
-+  return result;
-+}
-+
-+}  // namespace file_util
+ bool GetShmemTempDir(FilePath* path) {
+-#ifdef ANDROID
++#if defined(ANDROID) || defined(OS_BSD)
+   return GetTempDir(path);
+ #else
+   *path = FilePath("/dev/shm");
 $NetBSD: patch-ipc_chromium_src_base_file__util__posix.cc,v 1.2 2012/03/06 12:34:09 ryoon Exp $
 
 --- ipc/chromium/src/base/file_util_posix.cc.orig	2011-12-20 23:28:19.000000000 +0000
@@ -500,7 +417,7 @@ $NetBSD: patch-ipc_chromium_src_base_file__util__posix.cc,v 1.2 2012/03/06 12:34
  
  // FreeBSD/OpenBSD lacks stat64, but its stat handles files >2GB just fine
 -#if defined(OS_FREEBSD) || defined(OS_OPENBSD)
-+#ifndef OS_LINUX
++#ifndef HAVE_STAT64
  #define stat64 stat
  #endif
  
@@ -526,27 +443,19 @@ $NetBSD: patch-ipc_chromium_src_base_message__loop.cc,v 1.1 2012/03/06 12:34:09 
      pump_ = new base::MessagePumpForUI();
  #endif  // OS_LINUX
    } else if (type_ == TYPE_IO) {
-$NetBSD: patch-ipc_chromium_src_base_platform__file__posix.cc,v 1.1 2011/07/12 15:12:36 tnn Exp $
-
---- ipc/chromium/src/base/platform_file_posix.cc.orig	2011-06-15 21:57:27.000000000 +0000
-+++ ipc/chromium/src/base/platform_file_posix.cc
-@@ -9,6 +9,7 @@
- #ifdef ANDROID
- #include <linux/stat.h>
- #endif
-+#include <sys/stat.h> /* for S_IRUSR */
- 
- #include "base/logging.h"
- #include "base/string_util.h"
 $NetBSD: patch-ipc_chromium_src_base_platform__thread.h,v 1.1 2012/03/06 12:34:09 ryoon Exp $
 
 --- ipc/chromium/src/base/platform_thread.h.orig	2011-12-20 23:28:19.000000000 +0000
 +++ ipc/chromium/src/base/platform_thread.h
-@@ -25,6 +25,8 @@ typedef pthread_t PlatformThreadHandle;
- #if defined(OS_LINUX)
+@@ -22,9 +22,11 @@ typedef void* PlatformThreadHandle;  // HANDLE
+ #elif defined(OS_POSIX)
+ #include <pthread.h>
+ typedef pthread_t PlatformThreadHandle;
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
  #include <unistd.h>
  typedef pid_t PlatformThreadId;
-+#elif defined(OS_FREEBSD) || defined(OS_DRAGONFLY) || defined (OS_NETBSD)
++#elif defined(OS_BSD)
 +typedef lwpid_t PlatformThreadId;
  #elif defined(OS_MACOSX)
  #include <mach/mach.h>
@@ -555,7 +464,7 @@ $NetBSD: patch-ipc_chromium_src_base_platform__thread__posix.cc,v 1.4 2012/04/01
 
 --- ipc/chromium/src/base/platform_thread_posix.cc.orig	2012-03-13 01:36:53.000000000 +0000
 +++ ipc/chromium/src/base/platform_thread_posix.cc
-@@ -9,9 +9,18 @@
+@@ -9,9 +9,23 @@
  
  #if defined(OS_MACOSX)
  #include <mach/mach.h>
@@ -567,14 +476,19 @@ $NetBSD: patch-ipc_chromium_src_base_platform__thread__posix.cc,v 1.4 2012/04/01
 +#elif defined(OS_DRAGONFLY)
 +#include <unistd.h>
 +#elif defined(OS_FREEBSD)
++#include <sys/param.h>
++#if __FreeBSD_version > 802500
++#include <sys/thr.h>
++#else
 +_Pragma("GCC visibility push(default)")
-+extern "C" int thr_self(long *); // XXX #include <sys/thr.h>
++extern "C" int thr_self(long *);
 +_Pragma("GCC visibility pop")
++#endif
 +#include <pthread_np.h>
  #endif
  
  #if defined(OS_MACOSX)
-@@ -38,7 +45,19 @@
+@@ -38,9 +45,20 @@
    // into the kernel.
  #if defined(OS_MACOSX)
    return mach_thread_self();
@@ -592,9 +506,12 @@ $NetBSD: patch-ipc_chromium_src_base_platform__thread__posix.cc,v 1.4 2012/04/01
 +    return lwpid;
 +#  endif
 +#elif defined(OS_OPENBSD)
-   // TODO(BSD): find a better thread ID
-   return (intptr_t)(pthread_self());
+-  // TODO(BSD): find a better thread ID
+-  return (intptr_t)(pthread_self());
++  return (intptr_t) (pthread_self());
  #elif defined(OS_LINUX)
+   return syscall(__NR_gettid);
+ #endif
 $NetBSD: patch-ipc_chromium_src_base_process__util.h,v 1.1 2012/03/06 12:34:09 ryoon Exp $
 
 --- ipc/chromium/src/base/process_util.h.orig	2011-12-21 00:28:19.000000000 +0100
@@ -636,7 +553,7 @@ $NetBSD: patch-ipc_chromium_src_base_process__util__bsd.cc,v 1.4 2012/04/01 15:1
 
 --- ipc/chromium/src/base/process_util_bsd.cc.orig	2012-04-01 00:04:28.000000000 +0000
 +++ ipc/chromium/src/base/process_util_bsd.cc
-@@ -0,0 +1,326 @@
+@@ -0,0 +1,318 @@
 +// Copyright (c) 2008 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -645,35 +562,19 @@ $NetBSD: patch-ipc_chromium_src_base_process__util__bsd.cc,v 1.4 2012/04/01 15:1
 +
 +#include "base/process_util.h"
 +
++#include <sys/param.h>
++#include <sys/sysctl.h>
++#include <sys/wait.h>
++#if defined(OS_DRAGONFLY) || defined(OS_FREEBSD)
++#include <sys/user.h>
++#endif
++
 +#include <ctype.h>
 +#include <fcntl.h>
-+#include <unistd.h>
-+#include <string>
-+#if defined(OS_DRAGONFLY) || defined(OS_FREEBSD)
-+/* DragonFly, as of v3.0.1, and FreeBSD 9.0-RELEASE do not explicitly mark symbols public */
-+#define PRE_SYS_INCLUDE		_Pragma("GCC visibility push(default)")
-+#define POST_SYS_INCLUDE	_Pragma("GCC visibility pop")
-+#else
-+#define PRE_SYS_INCLUDE
-+#define POST_SYS_INCLUDE
-+#endif
-+PRE_SYS_INCLUDE
 +#include <kvm.h>
-+POST_SYS_INCLUDE
-+#include <sys/sysctl.h>
-+#include <sys/types.h>
-+#include <sys/wait.h>
-+#if defined(OS_DRAGONFLY)
-+PRE_SYS_INCLUDE
-+#include <sys/user.h>
-+POST_SYS_INCLUDE
-+#define HAVE_POSIX_SPAWN	1
-+#endif
-+#if defined(OS_FREEBSD)
-+PRE_SYS_INCLUDE
-+#include <sys/user.h>
-+POST_SYS_INCLUDE
-+#endif
++#include <unistd.h>
++
++#include <string>
 +
 +#include "base/debug_util.h"
 +#include "base/eintr_wrapper.h"
@@ -682,17 +583,21 @@ $NetBSD: patch-ipc_chromium_src_base_process__util__bsd.cc,v 1.4 2012/04/01 15:1
 +#include "base/string_tokenizer.h"
 +#include "base/string_util.h"
 +
-+#if defined(OS_NETBSD)
-+#include <sys/param.h>
-+#if __NetBSD_Version__ >= 600000000
++#if (defined(_POSIX_SPAWN) && _POSIX_SPAWN > 0) \
++  || (defined(OS_NETBSD) && __NetBSD_Version__ >= 599006500)
 +#define HAVE_POSIX_SPAWN	1
 +#endif
++
++#ifndef __dso_public
++# ifdef __exported
++#  define __dso_public	__exported
++# else
++#  define __dso_public	__attribute__((__visibility__("default")))
++# endif
 +#endif
 +
 +#ifdef HAVE_POSIX_SPAWN
-+PRE_SYS_INCLUDE
 +#include <spawn.h>
-+POST_SYS_INCLUDE
 +extern "C" char **environ __dso_public;
 +#endif
 +
@@ -933,7 +838,11 @@ $NetBSD: patch-ipc_chromium_src_base_process__util__bsd.cc,v 1.4 2012/04/01 15:1
 +#  endif
 +#else
 +  kvm  = kvm_open(NULL, NULL, NULL, KVM_NO_FILES, NULL);
++#if defined(OS_OPENBSD)
++  struct kinfo_proc* procs = kvm_getprocs(kvm, KERN_PROC_UID, getuid(), sizeof(struct kinfo_proc), &numEntries);
++#else
 +  struct kinfo_proc2* procs = kvm_getproc2(kvm, KERN_PROC_UID, getuid(), sizeof(struct kinfo_proc2), &numEntries);
++#endif
 +  if (procs != NULL && numEntries > 0) {
 +    for (int i = 0; i < numEntries; i++) {
 +    if (exe != procs[i].p_comm) continue;
@@ -1105,24 +1014,30 @@ $NetBSD: patch-ipc_chromium_src_build_build__config.h,v 1.4 2012/04/01 15:18:45 
 
 --- ipc/chromium/src/build/build_config.h.orig	2012-03-13 01:36:53.000000000 +0000
 +++ ipc/chromium/src/build/build_config.h
-@@ -19,17 +19,23 @@
+@@ -19,6 +19,12 @@
  #define OS_MACOSX 1
  #elif defined(__linux__) || defined(ANDROID)
  #define OS_LINUX 1
-+#elif defined(__NetBSD__)
-+#define OS_NETBSD 1
 +#elif defined(__DragonFly__)
 +#define OS_DRAGONFLY 1
++#elif defined(__FreeBSD__)
++#define OS_FREEBSD 1
++#elif defined(__NetBSD__)
++#define OS_NETBSD 1
  #elif defined(__OpenBSD__)
  #define OS_OPENBSD 1
  #elif defined(_WIN32)
- #define OS_WIN 1
-+#elif defined(__FreeBSD__)
-+#define OS_FREEBSD 1
- #else
+@@ -27,9 +33,16 @@
  #error Please add support for your platform in build/build_config.h
  #endif
  
++// For access to standard BSD features, use OS_BSD instead of a
++// more specific macro.
++#if defined(OS_DRAGONFLY) || defined(OS_FREEBSD)	\
++  || defined(OS_NETBSD) || defined(OS_OPENBSD)
++#define OS_BSD 1
++#endif
++
  // For access to standard POSIX features, use OS_POSIX instead of a more
  // specific macro.
 -#if defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_OPENBSD)
@@ -1164,7 +1079,7 @@ $NetBSD: patch-ipc_chromium_src_chrome_common_ipc__message__utils.h,v 1.1 2012/0
  #endif
  
 -#if !(defined(OS_MACOSX) || defined(OS_OPENBSD) || defined(OS_WIN) || (defined(OS_LINUX) && defined(ARCH_CPU_64_BITS)) || defined(ARCH_CPU_S390))
-+#if !(defined(OS_MACOSX) || defined(OS_OPENBSD) || defined(OS_WIN) || ((defined(OS_FREEBSD) || defined(OS_DRAGONFLY) || defined(OS_NETBSD) || defined(OS_LINUX)) && defined(ARCH_CPU_64_BITS)) || defined(ARCH_CPU_S390))
++#if !(defined(OS_MACOSX) || defined(OS_OPENBSD) || defined(OS_WIN) || ((defined(OS_BSD) || defined(OS_LINUX)) && defined(ARCH_CPU_64_BITS)) || defined(ARCH_CPU_S390))
  // There size_t is a synonym for |unsigned long| ...
  template <>
  struct ParamTraits<size_t> {
@@ -1173,7 +1088,7 @@ $NetBSD: patch-ipc_chromium_src_chrome_common_ipc__message__utils.h,v 1.1 2012/0
  #endif  // defined(OS_MACOSX)
  
 -#if !(defined(OS_LINUX) && defined(ARCH_CPU_64_BITS))
-+#if !((defined(OS_FREEBSD) || defined(OS_DRAGONFLY) || defined(OS_NETBSD) || defined(OS_LINUX)) && defined(ARCH_CPU_64_BITS))
++#if !((defined(OS_BSD) || defined(OS_LINUX)) && defined(ARCH_CPU_64_BITS))
  // int64 is |long int| on 64-bit systems, uint64 is |unsigned long|
  template <>
  struct ParamTraits<int64> {
@@ -1195,7 +1110,7 @@ $NetBSD: patch-ipc_chromium_src_chrome_common_transport__dib.h,v 1.1 2012/03/06 
    };
    typedef HandleAndSequenceNum Id;
 -#elif defined(OS_MACOSX)
-+#elif defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_BSD)
++#elif defined(OS_MACOSX) || defined(OS_BSD)
    typedef base::SharedMemoryHandle Handle;
    // On Mac, the inode number of the backing file is used as an id.
    typedef base::SharedMemoryId Id;
@@ -1250,16 +1165,31 @@ $NetBSD: patch-ipc_glue_GeckoChildProcessHost.cpp,v 1.2 2012/03/15 08:30:06 ryoo
                    newEnvVars,
  #endif
                    false, &process, arch);
+diff --git ipc/glue/SharedMemorySysV.h ipc/glue/SharedMemorySysV.h
+index f37998d..b05dc7b 100644
+--- ipc/glue/SharedMemorySysV.h
++++ ipc/glue/SharedMemorySysV.h
+@@ -8,7 +8,7 @@
+ #ifndef mozilla_ipc_SharedMemorySysV_h
+ #define mozilla_ipc_SharedMemorySysV_h
+ 
+-#if defined(OS_LINUX) && !defined(ANDROID)
++#if (defined(OS_LINUX) && !defined(ANDROID)) || defined(OS_BSD)
+ 
+ // SysV shared memory isn't available on Windows, but we define the
+ // following macro so that #ifdefs are clearer (compared to #ifdef
 $NetBSD: patch-mm,v 1.13 2012/06/05 18:09:21 ryoon Exp $
 
 --- toolkit/library/Makefile.in.orig	2012-05-23 18:57:09.000000000 +0000
 +++ toolkit/library/Makefile.in
-@@ -534,6 +538,10 @@ EXTRA_DSO_LDOPTS += -lelf -ldemangle
+@@ -534,6 +538,12 @@ EXTRA_DSO_LDOPTS += -lelf -ldemangle
  endif
  endif
  
 +ifneq (,$(filter DragonFly FreeBSD NetBSD OpenBSD,$(OS_ARCH)))
 +OS_LIBS += $(call EXPAND_LIBNAME,kvm)
++# keep `environ' unresolved, see bug 14426 for binutils
++EXTRA_DSO_LDOPTS += -Wl,--warn-unresolved-symbols
 +endif
 +
  ifeq ($(OS_ARCH),WINNT)

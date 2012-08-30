@@ -33,13 +33,15 @@ MAKE_ENV=	SKIP_GRE_REGISTRATION=1 mozappdir=${PREFIX}/lib/${MOZILLA}
 LDFLAGS+=	-Wl,-rpath,${PREFIX}/lib/${MOZ_RPATH}
 USE_LDCONFIG=	${PREFIX}/lib/${MOZILLA}
 
-PORT_MOZCONFIG=	${WRKSRC}/xulrunner/config/mozconfig
-MOZ_OPTIONS?=	--disable-ipc
+MOZ_OPTIONS?=	--enable-application=xulrunner \
+		--disable-ipc
 MOZ_EXTENSIONS=	default,cookie,permissions
 USE_GECKO=	gecko
 MOZILLA_EXEC_NAME=xulrunner
 USE_MOZILLA=	-event -ffi -vpx
 MOZ_CHROME=	jar
+MOZILLA_PLIST_DIRS=	bin include lib share/idl
+PLIST_DIRSTRY=	share/idl
 MOZ_PKGCONFIG_FILES=	libxul-embedding libxul mozilla-gtkmozembed-embedding \
 		mozilla-gtkmozembed mozilla-js mozilla-plugin
 

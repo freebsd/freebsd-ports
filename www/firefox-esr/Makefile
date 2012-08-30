@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	firefox
-DISTVERSION=	10.0.6
-PORTREVISION=	1
+DISTVERSION=	10.0.7
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -22,8 +21,6 @@ BUILD_DEPENDS=	nspr>=4.8.8:${PORTSDIR}/devel/nspr \
 		sqlite3>=3.7.7.1:${PORTSDIR}/databases/sqlite3 \
 		cairo>=1.10.2_1,1:${PORTSDIR}/graphics/cairo \
 		unzip:${PORTSDIR}/archivers/unzip
-
-CONFLICTS_BUILD=	spidermonkey-*
 
 USE_AUTOTOOLS=	autoconf213:env
 LATEST_LINK=	firefox-esr
@@ -78,8 +75,8 @@ USE_DISPLAY=		yes
 MOZ_OPTIONS+=	${CONFIGURE_TARGET}
 MAKEFILE=	${WRKSRC}/client.mk
 ALL_TARGET=	profiledbuild
-MOZ_MK_OPTIONS+=PROFILE_GEN_SCRIPT='"${PYTHON_CMD} \
-		@MOZ_OBJDIR@/_profile/pgo/profileserver.py"'
+MOZ_MK_OPTIONS+=PROFILE_GEN_SCRIPT="${PYTHON_CMD} \
+		@MOZ_OBJDIR@/_profile/pgo/profileserver.py"
 .endif
 
 .if ${ARCH} == amd64 || ${ARCH} == i386

@@ -1,0 +1,43 @@
+diff --git js/src/Makefile.in js/src/Makefile.in
+index 8eb385f..01bd8e3 100644
+--- js/src/Makefile.in
++++ js/src/Makefile.in
+@@ -323,6 +323,7 @@ endif
+ 
+ ifneq (,$(filter arm% sparc %86 x86_64 mips%,$(TARGET_CPU)))
+ ENABLE_YARR_JIT = 1
++DEFINES += -DENABLE_YARR_JIT=1
+ 
+ VPATH += 	$(srcdir)/assembler/assembler \
+ 		$(srcdir)/methodjit \
+diff --git js/src/assembler/wtf/Platform.h js/src/assembler/wtf/Platform.h
+index 6570f2d..0c84896 100644
+--- js/src/assembler/wtf/Platform.h
++++ js/src/assembler/wtf/Platform.h
+@@ -1102,9 +1102,7 @@
+ #if WTF_PLATFORM_CHROMIUM
+ #define ENABLE_YARR_JIT 0
+ 
+-#elif ENABLE_JIT && !defined(ENABLE_YARR_JIT)
+-#define ENABLE_YARR_JIT 1
+-
++#elif ENABLE_YARR_JIT
+ /* Setting this flag compares JIT results with interpreter results. */
+ #define ENABLE_YARR_JIT_DEBUG 0
+ #endif
+diff --git js/src/configure.in js/src/configure.in
+index c142eb7..34f98b9 100644
+--- js/src/configure.in
++++ js/src/configure.in
+@@ -3347,7 +3347,10 @@ MOZ_ARG_ENABLE_STRING(debug,
+                            (using compiler flags DBG)],
+ [ if test "$enableval" != "no"; then
+     MOZ_DEBUG=1
+-    ENABLE_METHODJIT_SPEW=1
++    if test "$ENABLE_METHODJIT"; then
++         # needs MethodJIT or YarrJIT
++         ENABLE_METHODJIT_SPEW=1
++    fi
+     if test -n "$enableval" -a "$enableval" != "yes"; then
+         MOZ_DEBUG_FLAGS=`echo $enableval | sed -e 's|\\\ | |g'`
+         _MOZ_DEBUG_FLAGS_SET=1

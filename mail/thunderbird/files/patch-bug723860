@@ -1,0 +1,54 @@
+commit 4e07587
+Author: Matthew Gregan <kinetik@flim.org>
+Date:   Wed Jun 6 17:58:07 2012 +1200
+
+    Bug 723860 - Early bail from reader's GetBuffered() if not yet initialized.  r=doublec
+---
+ content/media/gstreamer/nsGStreamerReader.cpp | 4 ++++
+ content/media/ogg/nsOggReader.cpp             | 3 +--
+ content/media/wave/nsWaveReader.cpp           | 3 +++
+ 3 files changed, 8 insertions(+), 2 deletions(-)
+
+diff --git mozilla/content/media/gstreamer/nsGStreamerReader.cpp mozilla/content/media/gstreamer/nsGStreamerReader.cpp
+index 164fb2e..06a09b5 100644
+--- mozilla/content/media/gstreamer/nsGStreamerReader.cpp
++++ mozilla/content/media/gstreamer/nsGStreamerReader.cpp
+@@ -505,6 +505,10 @@ nsresult nsGStreamerReader::Seek(PRInt64 aTarget,
+ nsresult nsGStreamerReader::GetBuffered(nsTimeRanges* aBuffered,
+                                         PRInt64 aStartTime)
+ {
++  if (!mInfo.mHasVideo && !mInfo.mHasAudio) {
++    return NS_OK;
++  }
++
+   GstFormat format = GST_FORMAT_TIME;
+   MediaResource* resource = mDecoder->GetResource();
+   gint64 resourceLength = resource->GetLength();
+diff --git mozilla/content/media/ogg/nsOggReader.cpp mozilla/content/media/ogg/nsOggReader.cpp
+index c6ff008..8d40e2c 100644
+--- mozilla/content/media/ogg/nsOggReader.cpp
++++ mozilla/content/media/ogg/nsOggReader.cpp
+@@ -1532,8 +1532,7 @@ nsresult nsOggReader::GetBuffered(nsTimeRanges* aBuffered, PRInt64 aStartTime)
+ {
+   // HasAudio and HasVideo are not used here as they take a lock and cause
+   // a deadlock. Accessing mInfo doesn't require a lock - it doesn't change
+-  // after metadata is read and GetBuffered isn't called before metadata is
+-  // read.
++  // after metadata is read.
+   if (!mInfo.mHasVideo && !mInfo.mHasAudio) {
+     // No need to search through the file if there are no audio or video tracks
+     return NS_OK;
+diff --git mozilla/content/media/wave/nsWaveReader.cpp mozilla/content/media/wave/nsWaveReader.cpp
+index 7242eb5..60fc1e1 100644
+--- mozilla/content/media/wave/nsWaveReader.cpp
++++ mozilla/content/media/wave/nsWaveReader.cpp
+@@ -239,6 +239,9 @@ static double RoundToUsecs(double aSeconds) {
+ 
+ nsresult nsWaveReader::GetBuffered(nsTimeRanges* aBuffered, PRInt64 aStartTime)
+ {
++  if (!mInfo.mHasAudio) {
++    return NS_OK;
++  }
+   PRInt64 startOffset = mDecoder->GetResource()->GetNextCachedData(mWavePCMOffset);
+   while (startOffset >= 0) {
+     PRInt64 endOffset = mDecoder->GetResource()->GetCachedDataEnd(startOffset);

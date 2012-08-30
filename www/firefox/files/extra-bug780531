@@ -1,0 +1,34 @@
+--- configure.in~
++++ configure.in
+@@ -5585,10 +5585,13 @@ if test -n "$MOZ_OGG"; then
+     MOZ_SYDNEYAUDIO=1
+     MOZ_CUBEB=1
+     MOZ_MEDIA=1
+-    case "$target_cpu" in
+-    arm*)
++    case "$target" in
++    arm-*-linux*)
+         MOZ_TREMOR=1
+     ;;
++    *-freebsd*)
++        MOZ_TREMOR=1
++    ;;
+     *)
+         MOZ_VORBIS=1
+     ;;
+@@ -5715,10 +5720,13 @@ if test -n "$MOZ_WEBM" -a -z "$MOZ_NATIV
+     MOZ_SYDNEYAUDIO=1
+     MOZ_CUBEB=1
+     MOZ_MEDIA=1
+-    case "$target_cpu" in
+-    arm*)
++    case "$target" in
++    arm-*-linux*)
+         MOZ_TREMOR=1
+     ;;
++    *-freebsd*)
++        MOZ_TREMOR=1
++    ;;
+     *)
+         MOZ_VORBIS=1
+     ;;
