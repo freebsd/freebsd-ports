@@ -8,7 +8,7 @@
 PORTNAME=	sdcc
 PORTVERSION=	3.2.0
 DISTVERSIONPREFIX=	src-
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	SF
 
@@ -19,7 +19,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/graph/adjacency_list.hpp:${PORTSDIR}/devel/boost-libs
 
-CONFLICTS=	sdcc-[0-9]*
+CONFLICTS_INSTALL=	sdcc-[0-9]*
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
