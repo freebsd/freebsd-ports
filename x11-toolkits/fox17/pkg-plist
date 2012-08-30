@@ -1,10 +1,11 @@
+bin/fox-%%MAJORVER%%/Adie.stx
+bin/fox-%%MAJORVER%%/ControlPanel
+bin/fox-%%MAJORVER%%/PathFinder
+bin/fox-%%MAJORVER%%/adie
+bin/fox-%%MAJORVER%%/calculator
+bin/fox-%%MAJORVER%%/fox-config
 bin/fox-%%MAJORVER%%/reswrap
 bin/fox-%%MAJORVER%%/shutterbug
-bin/fox-%%MAJORVER%%/adie
-bin/fox-%%MAJORVER%%/Adie.stx
-bin/fox-%%MAJORVER%%/PathFinder
-bin/fox-%%MAJORVER%%/calculator
-bin/fox-%%MAJORVER%%/ControlPanel
 libdata/pkgconfig/fox17.pc
 lib/libCHART-%%MAJORVER%%.a
 lib/libCHART-%%MAJORVER%%.la
