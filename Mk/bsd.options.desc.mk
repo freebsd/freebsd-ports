@@ -255,6 +255,7 @@ SPANDSP_DESC?=		Spandsp faxing support
 SPEEX_DESC?=		Speex audio format support
 SQL_DESC?=		SQL database backend
 SQLITE_DESC?=		SQLite backend
+SQLITE3_DESC?=		SQLite3 backend
 SSE_DESC?=		Use SSE optimized routines
 SSH_DESC?=		SSH support
 SSL_DESC?=		SSL support
