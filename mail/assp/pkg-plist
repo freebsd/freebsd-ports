@@ -59,9 +59,13 @@ sbin/assplog
 %%DATADIR%%/images/project-support.jpg
 %%DATADIR%%/images/shutdown.css
 %%DATADIR%%/images/sourceforge-logo.gif
+%%DATADIR%%/images/stylesheet.css
 %%DATADIR%%/images/valid-xhtml10.gif
 %%DATADIR%%/images/village.gif
 %%DATADIR%%/images/xml-pill.gif
+%%DATADIR%%/images/CVS/Entries
+%%DATADIR%%/images/CVS/Repository
+%%DATADIR%%/images/CVS/Root
 %%DATADIR%%/rebuildspamdb.pl
 %%DATADIR%%/reports/analyzereport.txt
 %%DATADIR%%/reports/blackremovereport.txt
@@ -89,6 +93,7 @@ sbin/assplog
 %%PORTDOCS%%%%DOCSDIR%%/Regular Expression Tutorial.htm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/reports
+@dirrm %%DATADIR%%/images/CVS
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/files
 @dirrm %%DATADIR%%
