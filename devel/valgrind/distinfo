@@ -1,2 +1,4 @@
 SHA256 (valgrind-freebsd-3.7.0-3.tar.bz2) = 0a11ebf01634f148b0be637a34d48420093dbe1c194b57f4ca948c1f3d556b21
 SIZE (valgrind-freebsd-3.7.0-3.tar.bz2) = 6069934
+SHA256 (valgrind-freebsd-3.7.0-3-manpages.tar.bz2) = a48c3e7e52349691a8dd176de623fc60721e296cadc79ae705963b31c988901d
+SIZE (valgrind-freebsd-3.7.0-3-manpages.tar.bz2) = 22639

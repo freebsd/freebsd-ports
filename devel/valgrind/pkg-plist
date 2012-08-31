@@ -105,8 +105,8 @@ lib/valgrind/64bit-linux.xml
 lib/valgrind/64bit-sse-valgrind-s1.xml
 lib/valgrind/64bit-sse-valgrind-s2.xml
 lib/valgrind/64bit-sse.xml
-%%AMD64%%lib/valgrind/amd64-coresse-valgrind.xml
-%%AMD64%%lib/valgrind/amd64-linux-valgrind.xml
+lib/valgrind/amd64-coresse-valgrind.xml
+lib/valgrind/amd64-linux-valgrind.xml
 lib/valgrind/arm-core-valgrind-s1.xml
 lib/valgrind/arm-core-valgrind-s2.xml
 lib/valgrind/arm-core.xml

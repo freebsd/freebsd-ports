@@ -1,23 +1,28 @@
-# Ports collection makefile for:	valgrind
-# Date created:				April 19 2004
-# Whom:					Simon Barner <barner@gmx.de>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	valgrind
 PORTVERSION=	3.7.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
+MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/:dist \
+		http://mirror.shatow.net/freebsd/${PORTNAME}/:manpages
 DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}-3
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:dist \
+		${DISTNAME}-manpages${EXTRACT_SUFX}:manpages
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	A (memory) debugging and profiling tool
 
 CONFLICTS=	valgrind-snapshot-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
+
+MAN1=		callgrind_control.1 \
+		callgrind_annotate.1 \
+		valgrind.1 \
+		ms_print.1 \
+		cg_annotate.1
 
 OPTIONS_DEFINE=	MPI
 MPI_DESC=	Enable build of MPI wrappers
@@ -42,13 +47,10 @@ PLIST_SUB+=	MPI="@comment "
 .endif
 
 post-install:
+	(cd ${WRKDIR}/valgrind-manpages/ && ${COPYTREE_SHARE} \* ${MANPREFIX}/man/man1)
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386"
-BROKEN=		leaves files behind on deinstallation
-.endif
 
 .if ${OSVERSION} < 700104
 IGNORE=	your FreeBSD version is not supported
