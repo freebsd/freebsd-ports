@@ -3659,3 +3659,4 @@ x11-wm/e17-module-efm_nav||2012-08-26|Has expired: Deprecated by enlightenment.o
 x11-wm/e17-module-efm_path||2012-08-26|Has expired: Deprecated by enlightenment.org
 x11-wm/e17-module-efm_pathbar||2012-08-26|Has expired: Deprecated by enlightenment.org
 x11-wm/e17-module-notification||2012-08-26|Has expired: Merged into x11-wm/enlightenment
+www/py-django12||2012-08-31|Has expired: Unsupported version
