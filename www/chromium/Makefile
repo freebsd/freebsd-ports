@@ -7,7 +7,7 @@
 
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
-DISTVERSION=	21.0.1180.81
+DISTVERSION=	21.0.1180.89
 CATEGORIES=	www
 MASTER_SITES=	http://download.goodking.org/downloads/ \
 		ftp://rene-ladan.nl/pub/distfiles/ \
@@ -37,11 +37,11 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
 		nss3:${PORTSDIR}/security/nss \
 		gnome-keyring:${PORTSDIR}/security/libgnome-keyring \
 		cups:${PORTSDIR}/print/cups-client \
-		event-1:${PORTSDIR}/devel/libevent
+		event-1:${PORTSDIR}/devel/libevent \
+		gcrypt:${PORTSDIR}/security/libgcrypt
 
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins \
-		${LOCALBASE}/lib/X11/fonts/Droid/fonts.dir:${PORTSDIR}/x11-fonts/droid-fonts-ttf \
-		${LOCALBASE}/lib/libgcrypt.so:${PORTSDIR}/security/libgcrypt
+		${LOCALBASE}/lib/X11/fonts/Droid/fonts.dir:${PORTSDIR}/x11-fonts/droid-fonts-ttf 
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_XZ=		yes
@@ -50,7 +50,8 @@ USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
 USE_PYTHON_BUILD=	2.6+
 USE_XORG=	scrnsaverproto x11 xproto xscrnsaver xtst
-USE_GNOME=	glib20 gtk20 dconf libxslt pkgconfig
+USE_GNOME=	glib20 gtk20 dconf libxslt
+USE_PKGCONFIG=	build
 MAN1=		chrome.1
 
 DESKTOP_ENTRIES="Chromium" "${COMMENT}" "${DATADIR}/product_logo_48.png" \
