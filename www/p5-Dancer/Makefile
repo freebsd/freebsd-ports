@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Dancer
-PORTVERSION=	1.3099
+PORTVERSION=	1.3100
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:XSAWYERX
@@ -20,6 +20,7 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
 	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
+	p5-Clone>0:${PORTSDIR}/devel/p5-Clone \
 	p5-HTTP-Body>=1.07:${PORTSDIR}/www/p5-HTTP-Body \
 	p5-HTTP-Server-Simple-PSGI>=0.11:${PORTSDIR}/www/p5-HTTP-Server-Simple-PSGI \
 	p5-MIME-Types>0:${PORTSDIR}/mail/p5-MIME-Types \
