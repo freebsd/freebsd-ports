@@ -7,7 +7,7 @@
 
 PORTNAME=	fancytasks
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	plasma-applet-
@@ -18,13 +18,10 @@ COMMENT=	Plasmoid fancy representation of your tasks and launchers
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	qimageblitz.4:${PORTSDIR}/x11/qimageblitz
-
 USE_BZIP2=	yes
 USE_CMAKE=	yes
-USE_KDE4=	automoc4 kdeprefix kdelibs kdebase workspace
-USE_QT4=	gui dbus network opengl svg phonon webkit xml \
-		qmake_build moc_build rcc_build uic_build
+USE_KDE4=	automoc4 kdeprefix kdelibs workspace qimageblitz
+USE_QT4=	qmake_build moc_build rcc_build uic_build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
