@@ -75,7 +75,7 @@ include/syslog-ng/utils.h
 include/syslog-ng/value-pairs.h
 lib/libsyslog-ng.la
 lib/libsyslog-ng.so
-lib/libsyslog-ng-3.3.5.so
+lib/libsyslog-ng-3.3.6.so
 libdata/pkgconfig/syslog-ng.pc
 lib/syslog-ng/libaffile.la
 lib/syslog-ng/libaffile.so
@@ -116,6 +116,7 @@ share/tools/merge-grammar.pl
 share/xsd/patterndb-1.xsd
 share/xsd/patterndb-2.xsd
 share/xsd/patterndb-3.xsd
+share/xsd/patterndb-4.xsd
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
