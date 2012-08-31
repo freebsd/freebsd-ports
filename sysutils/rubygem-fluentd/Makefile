@@ -7,7 +7,7 @@
 
 PORTNAME=	fluentd
 PORTVERSION=	0.10.25
-CATEGORIES=	devel rubygems
+CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	kuriyama@FreeBSD.org
