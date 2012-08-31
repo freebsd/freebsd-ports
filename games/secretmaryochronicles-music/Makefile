@@ -22,6 +22,10 @@ WRKSRC=		${WRKDIR}
 DATADIR=	${PREFIX}/share/smc
 NO_BUILD=	yes
 
+PORTDOCS=	Addon_-_Music_Readme.txt
+
+.include <bsd.port.options.mk>
+
 post-patch:
 # The pointyhat build system doesn't like spaces in $PORTDOCS,
 # so this makes it happier
@@ -32,10 +36,8 @@ do-install:
 	cd ${WRKSRC}/data && \
 		${FIND} music | ${CPIO} -pdmvu ${DATADIR}
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	Addon_-_Music_Readme.txt
-
 post-install:
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${DOCSDIR}
