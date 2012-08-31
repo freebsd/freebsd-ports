@@ -1,12 +1,7 @@
-# New ports collection makefile for:	poudriere
-# Date created:		2012-01-31
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	poudriere
-PORTVERSION=	2.0.99.20120828
+PORTVERSION=	2.0.99.20120831
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://fossil.etoilebsd.net/poudriere/tarball/
 
@@ -15,7 +10,7 @@ COMMENT=	Port build and test system
 
 LICENSE=	BSD
 
-FSL_CHKIN=	443d190388
+FSL_CHKIN=	1516db8bc5
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz?uuid=${FSL_CHKIN}
 PKGNAMESUFFIX=	-devel
 
