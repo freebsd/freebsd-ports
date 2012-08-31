@@ -344,11 +344,11 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>linux-sun-jdk</name>
-	<range><ge>7.0</ge></range>
+	<range><ge>7.0</ge><lt>7.7</lt></range>
       </package>
       <package>
 	<name>linux-sun-jre</name>
-	<range><ge>7.0</ge></range>
+	<range><ge>7.0</ge><lt>7.7</lt></range>
       </package>
     </affects>
     <description>
@@ -377,6 +377,7 @@ Note:  Please add new entries to the beginning of this file.
       <certvu>636312</certvu>
       <url>http://www.deependresearch.org/2012/08/java-7-vulnerability-analysis.html</url>
       <url>http://mail.openjdk.java.net/pipermail/distro-pkg-dev/2012-August/020065.html</url>
+      <url>http://www.oracle.com/technetwork/topics/security/alert-cve-2012-4681-1835715.html</url>
     </references>
     <dates>
       <discovery>2012-08-27</discovery>
