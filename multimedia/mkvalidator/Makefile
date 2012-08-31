@@ -1,12 +1,7 @@
-# New ports collection makefile for:	mkvalidator
-# Date created:		2011-09-28
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mkvalidator
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/matroska/${PORTNAME}/
 
