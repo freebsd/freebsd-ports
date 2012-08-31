@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+PREFIX="${PKG_PREFIX-/usr/local}"
+
+case $2 in
+DEINSTALL)
+	/bin/rm -f ${PREFIX}/lib/libGL.so*
+	;;
+esac

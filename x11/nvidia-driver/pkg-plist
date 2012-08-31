@@ -1,11 +1,6 @@
-@exec mv -f %D/%%MODULESDIR%%/extensions/libglx.la %D/%%MODULESDIR%%/extensions/XXX-libglx.la.%%%%.%%XSERVVERSION%%
-@unexec mv -f %D/%%MODULESDIR%%/extensions/XXX-libglx.la.%%%%.%%XSERVVERSION%% %D/%%MODULESDIR%%/extensions/libglx.la
-@exec mv -f %D/%%MODULESDIR%%/extensions/libglx.so %D/%%MODULESDIR%%/extensions/XXX-libglx.so.%%%%.%%XSERVVERSION%%
-%%MODULESDIR%%/extensions/libglx.so
-@unexec mv -f %D/%%MODULESDIR%%/extensions/XXX-libglx.so.%%%%.%%XSERVVERSION%% %D/%%MODULESDIR%%/extensions/libglx.so
-@exec mv -f %D/lib/libGL.so.1 %D/lib/XXX-libGL.so.1.%%%%.%%LIBGLVERSION%%
-lib/libGL.so.1
-@unexec mv -f %D/lib/XXX-libGL.so.1.%%%%.%%LIBGLVERSION%% %D/lib/libGL.so.1
+lib/.nvidia/libGL.so
+lib/.nvidia/libGL.so.1
+@dirrm lib/.nvidia
 lib/libnvidia-tls.so.1
 lib/libnvidia-tls.so
 lib/libnvidia-cfg.so.1
@@ -21,8 +16,9 @@ lib/libXvMCNVIDIA_dynamic.so.1
 @dirrmtry lib/vdpau
 %%MODULESDIR%%/libnvidia-wfb.so.1
 %%MODULESDIR%%/drivers/nvidia_drv.so
-%%MODULESDIR%%/extensions/libglx.so.1
-@exec ln -sf libglx.so.1 %D/%%MODULESDIR%%/extensions/libglx.so
+%%MODULESDIR%%/extensions/.nvidia/libglx.so
+%%MODULESDIR%%/extensions/.nvidia/libglx.so.1
+@dirrm %%MODULESDIR%%/extensions/.nvidia
 @dirrmtry %%MODULESDIR%%/drivers
 @cwd /boot/modules
 nvidia.ko

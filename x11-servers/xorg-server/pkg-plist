@@ -180,10 +180,9 @@ lib/xorg/modules/extensions/libdri2.la
 lib/xorg/modules/extensions/libdri2.so
 lib/xorg/modules/extensions/libextmod.la
 lib/xorg/modules/extensions/libextmod.so
-lib/xorg/modules/extensions/libglx.la
-lib/xorg/modules/extensions/libglx.so
 lib/xorg/modules/extensions/librecord.la
 lib/xorg/modules/extensions/librecord.so
+lib/xorg/modules/extensions/.xorg/libglx.so
 lib/xorg/modules/libexa.la
 lib/xorg/modules/libexa.so
 lib/xorg/modules/libfb.la
@@ -228,18 +227,11 @@ share/aclocal/xorg-server.m4
 %%NEW%%@exec /bin/mkdir -p %D/share/X11/xorg.conf.d
 %%NEW%%@dirrm share/doc/xorg-server
 @dirrm include/xorg
+@dirrm lib/xorg/modules/extensions/.xorg
 @dirrm lib/xorg/modules/extensions
 @dirrm lib/xorg/modules/multimedia
 %%OLD%%@dirrm lib/xorg/modules/linux
 @dirrm lib/xorg/modules
 @dirrm lib/xorg
-@dirrmtry include/X11/bitmaps
-@dirrmtry include/X11/pixmaps
-@dirrmtry lib/X11/doc
-@dirrmtry lib/X11/etc
-@dirrmtry lib/X11/xserver
-@dirrmtry lib/xorg/modules
-@dirrmtry lib/xorg
 %%NEW%%@dirrmtry share/X11/xorg.conf.d
-@dirrmtry share/X11/app-defaults
 @dirrmtry share/X11
