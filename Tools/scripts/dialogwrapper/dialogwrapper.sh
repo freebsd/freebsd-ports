@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# $FreeBSD$
+
 # dialog wrapper script
 
 AWK="/usr/bin/awk"
