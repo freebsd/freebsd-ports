@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	syslog-ng
-PORTVERSION=	3.3.5
-PORTREVISION=	1
+PORTVERSION=	3.3.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/$(PORTVERSION)/source/
 DISTFILES=	$(PORTNAME)_$(PORTVERSION).tar.gz
@@ -129,11 +128,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's:libnet-config:libnet116-config:g' ${WRKSRC}/configure
 	@${LN} ${WRKSRC}/scl/syslog-ng.conf ${WRKSRC}/scl/syslog-ng.conf.dist
 .if ${OSVERSION} >= 900007
-	@${REINPLACE_CMD} \
-		-e 's|utmp|utmpx|' -e 's|getutent|getutxent|' \
-		-e 's|ut_name|ut_user|' \
-		${WRKSRC}/configure ${WRKSRC}/modules/afuser/afuser.c \
-		${WRKSRC}/lib/utils.c ${WRKSRC}/lib/utils.h
 .endif
 
 
