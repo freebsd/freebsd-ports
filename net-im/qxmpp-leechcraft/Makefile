@@ -20,8 +20,7 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	speex:${PORTSDIR}/audio/speex
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui moc_build network qmake_build rcc_build uic_build xml
+USE_QT4=	gui moc_build network qmake_build rcc_build uic_build xml
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
