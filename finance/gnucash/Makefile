@@ -99,7 +99,7 @@ CONFIGURE_ARGS+=--disable-dbi
 PLIST_SUB+=	DATABASE="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MLOCALE_TAX)
+.if ${PORT_OPTIONS:MLOCALE_TAX}
 CONFIGURE_ARGS+=--enable-locale-specific-tax
 .endif
 
