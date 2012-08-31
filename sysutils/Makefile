@@ -802,6 +802,7 @@
     SUBDIR += rubygem-chef-expander
     SUBDIR += rubygem-chef-server
     SUBDIR += rubygem-chef-solr
+    SUBDIR += rubygem-fluentd
     SUBDIR += rubygem-fssm
     SUBDIR += rubygem-god
     SUBDIR += rubygem-guard
