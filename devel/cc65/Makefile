@@ -1,13 +1,7 @@
-# Ports collection makefile for:	cc65
-# Date created:			8 May 2000
-# Whom:				Tim Vanderhoek <hoek@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	cc65
-PORTVERSION=	2.13.2
-PORTREVISION=	1
+PORTVERSION=	2.13.3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.musoftware.de/pub/uz/cc65/ \
 		http://www.funet.fi/pub/cbm/programming/cc65/ \
@@ -23,6 +17,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/cc65-${PORTVERSION}
 MAKEFILE=	${WRKSRC}/make/gcc.mak
+USE_PERL5_BUILD=yes
 MAKE_JOBS_UNSAFE=	yes
 
 SUB_FILES=	pkg-message
