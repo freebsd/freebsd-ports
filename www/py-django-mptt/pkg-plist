@@ -19,6 +19,8 @@
 %%PYTHON_SITELIBDIR%%/mptt/locale/dk/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/mptt/locale/fr/LC_MESSAGES/django.mo
 %%PYTHON_SITELIBDIR%%/mptt/locale/fr/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/mptt/locale/nb/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/mptt/locale/nb/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/mptt/locale/pl/LC_MESSAGES/django.mo
 %%PYTHON_SITELIBDIR%%/mptt/locale/pl/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/mptt/managers.py
@@ -44,13 +46,15 @@
 @dirrm %%PYTHON_SITELIBDIR%%/mptt/templatetags
 @dirrm %%PYTHON_SITELIBDIR%%/mptt/templates/admin
 @dirrm %%PYTHON_SITELIBDIR%%/mptt/templates
-@dirrm %%PYTHON_SITELIBDIR%%/mptt/locale/pl/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/mptt/locale/pl
-@dirrm %%PYTHON_SITELIBDIR%%/mptt/locale/fr/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/mptt/locale/fr
-@dirrm %%PYTHON_SITELIBDIR%%/mptt/locale/dk/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/mptt/locale/dk
 @dirrm %%PYTHON_SITELIBDIR%%/mptt/locale/de/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/mptt/locale/de
+@dirrm %%PYTHON_SITELIBDIR%%/mptt/locale/dk/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/mptt/locale/dk
+@dirrm %%PYTHON_SITELIBDIR%%/mptt/locale/fr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/mptt/locale/fr
+@dirrm %%PYTHON_SITELIBDIR%%/mptt/locale/nb/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/mptt/locale/nb
+@dirrm %%PYTHON_SITELIBDIR%%/mptt/locale/pl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/mptt/locale/pl
 @dirrm %%PYTHON_SITELIBDIR%%/mptt/locale
 @dirrm %%PYTHON_SITELIBDIR%%/mptt

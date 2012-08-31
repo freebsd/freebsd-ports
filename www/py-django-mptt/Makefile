@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	django-mptt
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.4
 CATEGORIES=	www python
 MASTER_SITES=	https://github.com/django-mptt/django-mptt/tarball/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ LICENSE=	BSD
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django
 
-GITVERSION=	8ab6a85
+GITVERSION=	4310e7e 
 
 FETCH_ARGS=	-Fpr
 USE_GETTEXT=	yes
