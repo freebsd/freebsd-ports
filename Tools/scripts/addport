@@ -106,7 +106,7 @@ my $rm = "rm";
 my $keyword = '\$FreeBSD\\\$';
 # vars required for commitfile
 my $descr; my $portversion; my $pkgcomment;
-my $tmp; my $pkgcommentlen; my $comment; my $orig;
+my $tmp; my $pkgcommentlen; my $comment; my $maintainer;
 my $tmp2; my $offset; my $commitfile = "";
 my $moved = "";
 $tmp = $tmp2 = $offset = 0;
@@ -271,7 +271,7 @@ foreach my $thisdir (@dirs) {
 		open(MAKEFILE, "Makefile") or die("Can't open Makefile for reading: $!");
 		while(<MAKEFILE>) {
 			chomp;
-			($orig) = (m/^# Whom:\s+(\w.*)$/) if (/^# Whom:/);
+			($maintainer) = (m/^MAINTAINER=\s+(\w.*)$/) if (/^MAINTAINER=/);
 			($portversion) = (m/^PORTVERSION=\s+(\w.*)$/) if (/^PORTVERSION=/);
 		}
 		close(MAKEFILE);
@@ -293,7 +293,7 @@ foreach my $thisdir (@dirs) {
 		}
 		print AUTOFILL $tmp;
 		print AUTOFILL "PR:		ports/$autofill\n" if ($autofill != -1);
-		print AUTOFILL "Submitted by:	$orig" if ($autofill != -1);
+		print AUTOFILL "Submitted by:	$maintainer" if ($autofill != -1);
 		close(AUTOFILL);
 		print "Okay, a commit log message was automatically generated for you.\n";
 		print "Now you will have a chance to edit it to make sure it's OK to use.\n";
