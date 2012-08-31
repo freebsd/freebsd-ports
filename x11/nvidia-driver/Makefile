@@ -7,7 +7,7 @@
 
 PORTNAME=	nvidia-driver
 DISTVERSION?=	295.71
-PORTREVISION?=	0			# As a reminder it can be overridden
+PORTREVISION?=	1			# As a reminder it can be overridden
 CATEGORIES=	x11 kld
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
 # MASTER_SITE_SUBDIR has to be set later because it depends on NVVERSION
@@ -33,7 +33,7 @@ USE_LDCONFIG=	yes
 # hack below to universally set NVIDIA_ROOT.  Also provide X11BASE value
 # since it is going away from `Mk/bsd.port.mk' as deprecated.
 MAKE_ENV=	NVIDIA_ROOT=${WRKSRC} X11BASE=${LOCALBASE}
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-deinstall pkg-install pkg-message
 DOCSDIR=	${PREFIX}/share/doc/NVIDIA_GLX-1.0
 MODULESDIR=	lib/xorg/modules
 PORTDOCS=	*
@@ -72,11 +72,7 @@ OPTIONS+=	WBINVD		"Enable heavy-weight cache-flush logic" off
 
 .include <bsd.port.pre.mk>
 
-XSERVVERSION!=	${PKG_INFO} -qO x11-servers/xorg-server 2>/dev/null || true
-LIBGLVERSION!=	${PKG_INFO} -qO graphics/libGL 2>/dev/null || true
-
-PLIST_SUB+=	XSERVVERSION=${XSERVVERSION} LIBGLVERSION=${LIBGLVERSION} \
-		LINUXBASE=${LINUXBASE} SHLIB_VERSION=${PORTVERSION} \
+PLIST_SUB+=	LINUXBASE=${LINUXBASE} SHLIB_VERSION=${PORTVERSION} \
 		MODULESDIR=${MODULESDIR}
 
 .if !defined(WITHOUT_LINUX)
@@ -148,8 +144,16 @@ post-patch: .SILENT
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -E 's/(x11).*/\1/ ; /doc/d' ${WRKSRC}/Makefile
 .endif
+# Adjust installation paths of some conflicting files (shared also between
+# libGL and xorg-server) to ease package manager work, esp. with pkgng
+	${REINPLACE_CMD} -e '/LIBDIR/s:xorg/modules/extensions:&/.nvidia:' \
+		${WRKSRC}/x11/extension/Makefile
+	${REINPLACE_CMD} -e '/LIBDIR/s:lib:&/.nvidia:' \
+		${WRKSRC}/lib/libGL/Makefile
 # Do not execute afterinstall target (prevent automatic module registration)
 	${REINPLACE_CMD} -e 's/afterinstall/dontexecute/' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's/beforeinstall/dontexecute/' \
+		${WRKSRC}/lib/Makefile ${WRKSRC}/src/Makefile
 
 pre-su-install:
 # While this port silently assumes PREFIX == LOCALBASE, at least try to
@@ -184,6 +188,7 @@ post-install: .SILENT
 	${REINPLACE_CMD} -e '26,27d' ${PKGMESSAGE}
 . endif
 .endif
+	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	${ECHO_MSG}
 	${CAT} ${PKGMESSAGE}
 	${ECHO_MSG}
