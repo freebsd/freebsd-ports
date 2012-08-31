@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	spiped
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	sysutils security
 MASTER_SITES=	http://www.tarsnap.com/spiped/
 EXTRACT_SUFX=	.tgz
@@ -18,8 +17,9 @@ COMMENT=	Daemon for creating secure symmetric pipes
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-PLIST_FILES=	bin/spiped
+PLIST_FILES=	bin/spiped bin/spipe
 PORTDOCS=	BUILDING CHANGELOG COPYRIGHT README STYLE
+READMES=	spiped spipe
 
 USE_RC_SUBR=	spiped
 
@@ -27,6 +27,9 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_MAN} ${PORTDOCS} ${DOCSDIR})
+.for README in ${READMES}
+	${INSTALL_MAN} ${WRKSRC}/${README}/README ${DOCSDIR}/README-${README}
+.endfor
 .endif
 
 .include <bsd.port.mk>
