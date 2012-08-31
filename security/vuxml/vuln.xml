@@ -51,6 +51,51 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5415f1b3-f33d-11e1-8bd8-0022156e8794">
+    <topic>wireshark -- denial of service in DRDA dissector</topic>
+    <affects>
+      <package>
+	<name>wireshark</name>
+	<range><ge>1.5</ge><lt>1.9</lt></range>
+      </package>
+      <package>
+	<name>wireshark-lite</name>
+	<range><ge>1.5</ge><lt>1.9</lt></range>
+      </package>
+      <package>
+	<name>tshark</name>
+	<range><ge>1.5</ge><lt>1.9</lt></range>
+      </package>
+      <package>
+	<name>tshark-lite</name>
+	<range><ge>1.5</ge><lt>1.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>RedHat security team reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=849926">
+	  <p>A denial of service flaw was found in the way Distributed
+	  Relational Database Architecture (DRDA) dissector of
+	  Wireshark, a network traffic analyzer, performed processing
+	  of certain DRDA packet capture files.  A remote attacker
+	  could create a specially-crafted capture file that, when
+	  opened could lead to wireshark executable to consume
+	  excessive amount of CPU time and hang with an infinite
+	  loop.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-3548</cvename>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=849926</url>
+    </references>
+    <dates>
+      <discovery>2012-08-21</discovery>
+      <entry>2012-08-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ee68923d-f2f5-11e1-8014-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
