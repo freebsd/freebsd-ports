@@ -88,7 +88,6 @@ OPTIONS=	BETTERENCODING "Better Encoding detection Support" on \
 		HATENARSS "Subscription::HatenaRSS Support" off \
 		SUBSCRFOAF "Subscription::FOAF Support" off \
 		NOTIFYIRC "Notify::IRC Support" off \
-		AGRXANGO "Aggregator::Xango Support" off \
 		HATENADIARY "Filter::HatenaDiaryKeywordLink Support" off \
 		LIVEDOOR "Subscription::LivedoorReader Support" off \
 		PINGSERVER "Subscription::PingServer Support" off \
@@ -294,14 +293,6 @@ BUILD_DEPENDS+=	p5-XML-FOAF>=0:${PORTSDIR}/textproc/p5-XML-FOAF
 .if defined(WITH_NOTIFYIRC)
 BUILD_DEPENDS+=	p5-POE-Component-IRC>=0:${PORTSDIR}/irc/p5-POE-Component-IRC \
 		p5-POE-Component-IKC>=0:${PORTSDIR}/devel/p5-POE-Component-IKC
-.endif
-
-.if defined(WITH_AGRXANGO)
-BUILD_DEPENDS+=	p5-Cache-FastMmap>=0:${PORTSDIR}/devel/p5-Cache-FastMmap \
-		p5-POE-Component-Client-DNS>=0:${PORTSDIR}/dns/p5-POE-Component-Client-DNS \
-		p5-POE-Component-Client-HTTP>=0:${PORTSDIR}/www/p5-POE-Component-Client-HTTP \
-		p5-Xango>=0:${PORTSDIR}/www/p5-Xango \
-		p5-POE>=0:${PORTSDIR}/devel/p5-POE
 .endif
 
 .if defined(WITH_HATENADIARY)
