@@ -23,9 +23,9 @@ OPTIONS=	REALPLAYER	"install linux-realplayer"	off
 
 .include <bsd.port.pre.mk>
 
-.if		 ${OSVERSION} >= 700009
+DEPRECATED=	doesn't support ELF symbol versioning, yet.
+EXPIRATION_DATE=	2012-09-20
 IGNORE=		doesn't support ELF symbol versioning, yet.
-.endif
 
 # I will remove WITH_PLUGINS knob.
 .if		defined(WITH_REALPLAYER)
