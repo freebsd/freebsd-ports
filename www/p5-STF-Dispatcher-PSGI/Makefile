@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	STF-Dispatcher-PSGI
-PORTVERSION=	1.09
+PORTVERSION=	1.10
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DMAKI
@@ -21,6 +21,9 @@ RUN_DEPENDS=	\
 	p5-Plack>0:${PORTSDIR}/www/p5-Plack \
 	p5-Plack-Middleware-Header>0:${PORTSDIR}/www/p5-Plack-Middleware-Header
 BUILD_DEPENDS:=	${RUN_DEPENDS}
+TEST_DEPENDS=	\
+	p5-Net-STF-Client>0:${PORTSDIR}/www/p5-Net-STF-Client \
+	p5-Test-TCP>0:${PORTSDIR}/devel/p5-Test-TCP
 
 PERL_CONFIGURE=	yes
 
