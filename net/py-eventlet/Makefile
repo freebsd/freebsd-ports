@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eventlet
-PORTVERSION=	0.9.16
+PORTVERSION=	0.9.17
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP \
 		http://www.c-s.li/ports/
