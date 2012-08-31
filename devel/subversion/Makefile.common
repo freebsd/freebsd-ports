@@ -130,7 +130,8 @@ PLIST_SUB+=	SERF="@comment "
 LIB_DEPENDS+=	svn_client-1:${PORTSDIR}/devel/subversion
 .endif
 
-.if !defined(WITHOUT_NLS)
+# KWallet requires NLS to be enabled.
+.if !defined(WITHOUT_NLS) || defined(WITH_KDE_KWALLET)
 USE_GETTEXT=	yes
 PLIST_SUB+=	WITHOUT_GETTEXT=""
 .else
