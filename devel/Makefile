@@ -3776,6 +3776,7 @@
     SUBDIR += rubygem-ffi
     SUBDIR += rubygem-file-tail
     SUBDIR += rubygem-filemagic
+    SUBDIR += rubygem-fluentd
     SUBDIR += rubygem-fog
     SUBDIR += rubygem-formatador
     SUBDIR += rubygem-gdata
