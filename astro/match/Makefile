@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	match
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	astro
 MASTER_SITES=	http://spiff.rit.edu/match/ \
 		http://www.c-s.li/ports/
 
 MAINTAINER=	cs@FreeBSD.org
-COMMENT=	A program for matching star lists
+COMMENT=	Program for matching star lists
 
 LICENSE=	GPLv2
 
