@@ -1,14 +1,10 @@
-# New ports collection makefile for:	poudriere
-# Date created:		2012-01-31
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	poudriere
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	http://files.etoilebsd.net/poudriere/
+MASTER_SITES=	http://fossil.etoilebsd.net/poudriere/tarball/
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}?uuid=${PORTVERSION}
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Port build and test system
