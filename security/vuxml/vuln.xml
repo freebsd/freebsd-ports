@@ -396,16 +396,14 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Matthias Andree reports:</p>
 	<blockquote cite="http://www.fetchmail.info/fetchmail-SA-2012-01.txt">
-	  <p>Fetchmail version 6.3.9 enabled "all SSL workarounds" (SSL_OP_ALL) which
-	    contains a switch to disable a countermeasure against certain attacks
-	    against block ciphers that permit guessing the initialization vectors,
-	    providing that an attacker can make the application (fetchmail) encrypt
-	    some data for him -- which is not easily the case.
-	  
-	    Stream ciphers (such as RC4) are unaffected.
-	    </p><p>
-	    Credits to Apple Product Security for reporting this.
-	  </p>
+	  <p>Fetchmail version 6.3.9 enabled "all SSL workarounds" (SSL_OP_ALL)
+	    which contains a switch to disable a countermeasure against certain
+	    attacks against block ciphers that permit guessing the
+	    initialization vectors, providing that an attacker can make the
+	    application (fetchmail) encrypt some data for him -- which is not
+	    easily the case.</p>
+	  <p>Stream ciphers (such as RC4) are unaffected.</p>
+	  <p>Credits to Apple Product Security for reporting this.</p>
 	</blockquote>
       </body>
     </description>
