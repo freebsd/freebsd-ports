@@ -7,6 +7,7 @@
 
 PORTNAME=	kmess
 PORTVERSION=	2.0.6.2
+PORTREVISION=	1
 CATEGORIES=	net-im kde
 MASTER_SITES=	SF/${PORTNAME}/Latest%20versions/${PORTVERSION}/
 
@@ -14,18 +15,15 @@ MAINTAINER=	syncer@gmail.com
 COMMENT=	MSN Messenger client for KDE
 
 LIB_DEPENDS=	qca.2:${PORTSDIR}/devel/qca
-BUILD_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl
 RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl
 
-USE_LDCONFIG=	${PREFIX}/lib/kde4
 LATEST_LINK=	${PORTNAME}-kde4
 MAKE_JOBS_SAFE=	yes
 
 USE_BZIP2=	yes
 USE_GNOME=	libxml2 libxslt
-USE_KDE4=	kdehier kdeprefix kdebase automoc4
-USE_QT4=	corelib gui network opengl script svg webkit \
-		qmake_build moc_build rcc_build uic_build phonon
+USE_KDE4=	kdehier kdeprefix kdelibs libkonq automoc4
+USE_QT4=	qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
 USE_GETTEXT=	yes
 
