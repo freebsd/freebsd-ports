@@ -7,16 +7,14 @@
 #
 
 PORTNAME=	gmetadom
-PORTVERSION=	0.2.4
-PORTREVISION=	1
+PORTVERSION=	0.2.6
 CATEGORIES=	textproc
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-${PORTVERSION}b
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Collection of DOM Implementations
 
-LIB_DEPENDS=	gdome.8:${PORTSDIR}/textproc/gdome2
+LIB_DEPENDS=	gdome:${PORTSDIR}/textproc/gdome2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GNOME=	glib20 gnomehack libxml2
@@ -27,16 +25,34 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	yes
 
-OPTIONS=	OCAML "OCAML language support" off
+OPTIONS_DEFINE=	OCAML
 
-.include <bsd.port.pre.mk>
+OCAML_DESC=	OCAML language support
 
-.if defined(WITH_OCAML)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MOCAML}
 BUILD_DEPENDS+=	ocamlfind:${PORTSDIR}/devel/ocaml-findlib \
 		ocamlc:${PORTSDIR}/lang/ocaml
-PLIST_SUB+=	WITH_OCAML=""
+PLIST_SUB+=	OCAML=""
 .else
-PLIST_SUB+=	WITH_OCAML="@comment "
+CONFIGURE_ARGS+=	HAVE_OCAMLDEP=no HAVE_OCAMLFIND=no HAVE_OCAMLOPT=no
+PLIST_SUB+=	OCAML="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+# Shim to clean-up a previous bad install - this can be removed
+# PORTVERSION > 0.2.6 along with the associated pkg-plist @exec
+# entries.
+pre-install:
+	@if [ -d ${LOCALBASE}/lib/ocaml/gdome2 ]; then \
+		${RM} -f ${LOCALBASE}/lib/ocaml/gdome2/* 2>/dev/null && \
+		${RMDIR} ${LOCALBASE}/lib/ocaml/gdome2 2>/dev/null; \
+	fi
+	@if [ -f ${LOCALBASE}/lib/ocaml/stublibs/dllmlgdome.so ]; then \
+		${RM} -f ${LOCALBASE}/lib/ocaml/stublibs/dllmlgdome.so 2>/dev/null; \
+	fi
+	@if [ -f ${LOCALBASE}/lib/ocaml/stublibs/dllmlgdome.so.owner ]; then \
+		${RM} -f ${LOCALBASE}/lib/ocaml/stublibs/dllmlgdome.so.owner 2>/dev/null; \
+	fi
+
+.include <bsd.port.mk>
