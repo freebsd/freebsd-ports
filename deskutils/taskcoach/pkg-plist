@@ -89,9 +89,6 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/base/attribute.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/base/attribute.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/base/attribute.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/domain/base/changetracker.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/domain/base/changetracker.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/domain/base/changetracker.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/base/collection.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/base/collection.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/base/collection.pyo
@@ -134,9 +131,6 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/date/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/date/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/date/__init__.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/domain/date/clock.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/domain/date/clock.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/domain/date/clock.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/date/date.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/date/date.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/date/date.pyo
@@ -146,6 +140,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/date/recurrence.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/date/recurrence.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/date/recurrence.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/domain/date/scheduler.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/domain/date/scheduler.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/domain/date/scheduler.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/date/snooze.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/date/snooze.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/date/snooze.pyo
@@ -221,6 +218,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/attributesync.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/attributesync.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/attributesync.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/developer_message.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/developer_message.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/developer_message.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/editor.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/editor.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/editor.pyo
@@ -353,6 +353,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/i18n/ar.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/i18n/ar.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/i18n/ar.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/i18n/be.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/i18n/be.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/i18n/be.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/i18n/bg.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/i18n/bg.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/i18n/bg.pyo
@@ -539,6 +542,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/meta/debug.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/meta/debug.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/meta/debug.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/meta/developermessagechecker.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/meta/developermessagechecker.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/meta/developermessagechecker.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/meta/gpl.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/meta/gpl.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/meta/gpl.pyo
@@ -719,6 +725,60 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/_sendkeys.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/_sendkeys.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/_sendkeys.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/__init__.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/__init__.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/__init__.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/events.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/events.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/events.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/job.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/job.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/job.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/__init__.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/__init__.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/__init__.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/base.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/base.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/base.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/mongodb_store.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/mongodb_store.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/mongodb_store.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/ram_store.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/ram_store.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/ram_store.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/shelve_store.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/shelve_store.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/shelve_store.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/sqlalchemy_store.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/sqlalchemy_store.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores/sqlalchemy_store.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/scheduler.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/scheduler.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/scheduler.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/threadpool.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/threadpool.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/threadpool.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/__init__.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/__init__.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/cron/__init__.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/cron/__init__.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/cron/__init__.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/cron/expressions.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/cron/expressions.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/cron/expressions.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/cron/fields.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/cron/fields.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/cron/fields.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/interval.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/interval.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/interval.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/simple.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/simple.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/simple.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/util.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/util.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/util.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/aui/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/aui/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/aui/__init__.pyo
@@ -944,6 +1004,177 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/lockfile/setup.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/lockfile/setup.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/lockfile/setup.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/ntlm/HTTPNtlmAuthHandler.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/ntlm/HTTPNtlmAuthHandler.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/ntlm/HTTPNtlmAuthHandler.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/ntlm/IMAPNtlmAuthHandler.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/ntlm/IMAPNtlmAuthHandler.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/ntlm/IMAPNtlmAuthHandler.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/ntlm/U32.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/ntlm/U32.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/ntlm/U32.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/ntlm/__init__.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/ntlm/__init__.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/ntlm/__init__.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/ntlm/des.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/ntlm/des.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/ntlm/des.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/ntlm/des_c.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/ntlm/des_c.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/ntlm/des_c.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/ntlm/des_data.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/ntlm/des_data.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/ntlm/des_data.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/ntlm/ntlm.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/ntlm/ntlm.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/ntlm/ntlm.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/__init__.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/__init__.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/__init__.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/_autosetuppubsubv1.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/_autosetuppubsubv1.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/_autosetuppubsubv1.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/__init__.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/__init__.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/__init__.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/arg1/__init__.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/arg1/__init__.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/arg1/__init__.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/arg1/listenerimpl.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/arg1/listenerimpl.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/arg1/listenerimpl.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/arg1/publisher.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/arg1/publisher.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/arg1/publisher.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/arg1/publishermixin.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/arg1/publishermixin.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/arg1/publishermixin.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/arg1/topicargspecimpl.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/arg1/topicargspecimpl.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/arg1/topicargspecimpl.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/arg1/topicmgrimpl.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/arg1/topicmgrimpl.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/arg1/topicmgrimpl.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/callables.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/callables.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/callables.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/datamsg.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/datamsg.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/datamsg.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/imp2.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/imp2.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/imp2.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/kwargs/__init__.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/kwargs/__init__.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/kwargs/__init__.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/kwargs/listenerimpl.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/kwargs/listenerimpl.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/kwargs/listenerimpl.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/kwargs/publisher.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/kwargs/publisher.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/kwargs/publisher.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/kwargs/publishermixin.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/kwargs/publishermixin.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/kwargs/publishermixin.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/kwargs/topicargspecimpl.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/kwargs/topicargspecimpl.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/kwargs/topicargspecimpl.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/kwargs/topicmgrimpl.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/kwargs/topicmgrimpl.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/kwargs/topicmgrimpl.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/listener.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/listener.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/listener.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/listenerbase.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/listenerbase.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/listenerbase.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/notificationmgr.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/notificationmgr.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/notificationmgr.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/policies.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/policies.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/policies.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/publisherbase.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/publisherbase.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/publisherbase.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/topicargspec.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/topicargspec.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/topicargspec.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/topicdefnprovider.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/topicdefnprovider.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/topicdefnprovider.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/topicexc.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/topicexc.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/topicexc.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/topicmgr.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/topicmgr.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/topicmgr.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/topicobj.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/topicobj.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/topicobj.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/topictreetraverser.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/topictreetraverser.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/topictreetraverser.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/topicutils.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/topicutils.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/topicutils.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/treeconfig.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/treeconfig.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/treeconfig.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/validatedefnargs.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/validatedefnargs.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/validatedefnargs.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/weakmethod.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/weakmethod.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/weakmethod.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pub.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pub.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pub.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsub1/__init__.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsub1/__init__.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsub1/__init__.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsub1/pub.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsub1/pub.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsub1/pub.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsub1/sphinx.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsub1/sphinx.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsub1/sphinx.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsub1/utils.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsub1/utils.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsub1/utils.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsubconf.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsubconf.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsubconf.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/setuparg1.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/setuparg1.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/setuparg1.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/setupkwargs.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/setupkwargs.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/setupkwargs.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/setupv1.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/setupv1.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/setupv1.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/setupv2.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/setupv2.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/setupv2.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils/__init__.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils/__init__.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils/exchandling.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils/exchandling.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils/exchandling.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils/intraimport.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils/intraimport.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils/intraimport.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils/misc.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils/misc.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils/misc.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils/notification.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils/notification.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils/notification.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils/topictreeprinter.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils/topictreeprinter.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils/topictreeprinter.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pybonjour.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pybonjour.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pybonjour.pyo
@@ -1100,6 +1331,13 @@ share/pixmaps/taskcoach.png
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/timeline
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/squaremap
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/utils
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/pubsub1
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/kwargs
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core/arg1
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub/core
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pubsub
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/ntlm
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/lockfile
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/util
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/keyring/backends
@@ -1109,6 +1347,10 @@ share/pixmaps/taskcoach.png
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/chardet
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/aui
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers/cron
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/triggers
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler/jobstores
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/apscheduler
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/syncml
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/powermgt
