@@ -1,13 +1,7 @@
-# New ports collection makefile for:	mkclean
-# Date created:		2010-10-24
-# Whom:			Peter Johnson <johnson.peter@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mkclean
-PORTVERSION=	0.8.6
-PORTREVISION=	1
+PORTVERSION=	0.8.7
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/matroska/${PORTNAME}/
 
