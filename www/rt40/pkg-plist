@@ -923,8 +923,6 @@ share/rt40/html/NoAuth/css/base/theme-editor.css
 share/rt40/html/NoAuth/css/base/ticket-form.css
 share/rt40/html/NoAuth/css/base/ticket.css
 share/rt40/html/NoAuth/css/base/tools.css
-share/rt40/html/NoAuth/css/base/ui.timepickr.css
-share/rt40/html/NoAuth/css/base/ui.timepickr.custom.css
 share/rt40/html/NoAuth/css/base/yui-fonts.css
 share/rt40/html/NoAuth/css/dhandler
 share/rt40/html/NoAuth/css/images/arrows-ffffff.gif
@@ -1030,7 +1028,6 @@ share/rt40/html/NoAuth/js/list.js
 share/rt40/html/NoAuth/js/superfish.js
 share/rt40/html/NoAuth/js/supersubs.js
 share/rt40/html/NoAuth/js/titlebox-state.js
-share/rt40/html/NoAuth/js/ui.timepickr.js
 share/rt40/html/NoAuth/js/userautocomplete.js
 share/rt40/html/NoAuth/js/util.js
 share/rt40/html/NoAuth/rss/dhandler
