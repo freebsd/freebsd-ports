@@ -3598,6 +3598,7 @@
     SUBDIR += qmake
     SUBDIR += qmake4
     SUBDIR += qprog
+    SUBDIR += qross
     SUBDIR += qsa
     SUBDIR += qscintilla2
     SUBDIR += qscintilla2-designerplugin
