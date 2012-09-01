@@ -51,6 +51,73 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7c0fecd6-f42f-11e1-b17b-000c2977ec30">
+    <topic>mediawiki -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mediawiki</name>
+	<range><lt>1.19.2</lt></range>
+      </package>
+      <package>
+	<name>mediawiki118</name>
+	<range><lt>1.18.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Mediawiki reports:</p>
+        <blockquote cite="http://lists.wikimedia.org/pipermail/mediawiki-announce/2012-August/000119.html">
+          <p>(Bug 39700) Wikipedia administrator Writ Keeper discovered
+            a stored XSS (HTML injection) vulnerability. This was 
+            possible due to the handling of link text on File: links for
+            nonexistent files. MediaWiki 1.16 and later is affected.</p>
+          <p>(Bug 39180) User Fomafix reported several DOM-based XSS
+            vulnerabilities, made possible by a combination of loose
+            filtering of the uselang parameter, and JavaScript gadgets
+            on various language Wikipedias.</p>
+          <p>(Bug 39180) During internal review, it was discovered that
+            CSRF tokens, available via the api, were not protected with
+            X-Frame-Options headers. This could lead to a CSRF vulnerability
+            if the API response is embedded in an external website using
+            using an iframe.</p>
+          <p>(Bug 39824) During internal review, it was discovered extensions
+            were not always allowed to prevent the account creation action.
+            This allowed users blocked by the GlobalBlocking extension to
+            create accounts.</p>
+          <p>(Bug 39184) During internal review, it was discovered that
+            password data was always saved to the local MediaWiki database
+            even if authentication was handled by an extension, such as LDAP.
+            This could allow a compromised MediaWiki installation to leak
+            information about user's LDAP passwords. Additionally, in situations
+            when an authentication plugin returned false in its strict
+            function, this would allow old passwords to be used for accounts
+            that did not exist in the external system, indefinitely.</p>
+          <p>(Bug 39823) During internal review, it was discovered that metadata
+            about blocks, hidden by a user with suppression rights, was visible
+            to administrators.</p> 
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://bugzilla.wikimedia.org/show_bug.cgi?id=39700</url>
+      <url>https://bugzilla.wikimedia.org/show_bug.cgi?id=37587</url>
+      <url>https://bugzilla.wikimedia.org/show_bug.cgi?id=39180</url>
+      <url>https://bugzilla.wikimedia.org/show_bug.cgi?id=39824</url>
+      <url>https://bugzilla.wikimedia.org/show_bug.cgi?id=39184</url>
+      <url>https://bugzilla.wikimedia.org/show_bug.cgi?id=39823</url>
+      <cvename>CVE-2012-4377</cvename>
+      <cvename>CVE-2012-4378</cvename>
+      <cvename>CVE-2012-4379</cvename>
+      <cvename>CVE-2012-4380</cvename>
+      <cvename>CVE-2012-4381</cvename>
+      <cvename>CVE-2012-4382</cvename>
+    </references>
+    <dates>
+      <discovery>2012-08-27</discovery>
+      <entry>2012-09-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5415f1b3-f33d-11e1-8bd8-0022156e8794">
     <topic>wireshark -- denial of service in DRDA dissector</topic>
     <affects>
