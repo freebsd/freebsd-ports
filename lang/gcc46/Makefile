@@ -1,13 +1,7 @@
-# ex:ts=8
-# Ports collection makefile for:	gcc46
-# Date created:				2010-04-25
-# Whom:					Gerald Pfeifer <gerald@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gcc
-PORTVERSION=	4.6.4.20120817
+PORTVERSION=	4.6.4.20120831
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
