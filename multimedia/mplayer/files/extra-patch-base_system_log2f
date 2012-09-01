@@ -1,15 +1,15 @@
---- configure.orig	2011-12-15 15:01:05.000000000 +0100
-+++ configure	2012-01-28 17:33:54.674887100 +0100
-@@ -3107,7 +3107,7 @@
+--- configure.orig	2012-07-24 20:47:24.721531229 +0200
++++ configure	2012-07-24 20:49:56.207569906 +0200
+@@ -3130,7 +3130,7 @@
  echores "$_kstat"
  
  
--for func in cbrtf exp2 exp2f llrint llrintf log2 log2f lrint lrintf round roundf trunc truncf; do
-+for func in cbrtf exp2 exp2f llrint llrintf lrint lrintf round roundf trunc truncf; do
+-for func in cbrtf exp2 exp2f isnan isinf llrint llrintf log2 log2f lrint lrintf rint round roundf trunc truncf; do
++for func in cbrtf exp2 exp2f isnan isinf llrint llrintf lrint lrintf rint round roundf trunc truncf; do
  echocheck $func
  eval _$func=no
  statement_check math.h "${func}(2.0)" -D_ISOC99_SOURCE && eval _$func=yes
-@@ -3119,7 +3119,9 @@
+@@ -3142,7 +3142,9 @@
    echores no
  fi
  done

@@ -17,6 +17,15 @@
      ;;
  
    esac
+@@ -1533,7 +1533,7 @@
+ fi
+ 
+ extra_cflags="-I. -Iffmpeg $extra_cflags"
+-extra_ldflags="-lm $extra_ldflags"
++extra_ldflags="-lm $extra_ldflags -L$_prefix/lib"
+ _timer=timer-linux.c
+ _getch=getch2.c
+ 
 @@ -3576,7 +3575,7 @@
  if linux ; then
    THREAD_CFLAGS=-D_REENTRANT

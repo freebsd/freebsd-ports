@@ -7,7 +7,6 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	2
 
 COMMENT=	High performance media player supporting many formats
 
@@ -16,7 +15,7 @@ COMMENT=	High performance media player supporting many formats
 OPTIONS=	DEBUG "Include debug symbols in mplayer's binaries" off
 OPTIONS+=	RTCPU "Allow runtime CPU detection" on
 OPTIONS+=	OCFLAGS "Use optimized compiler flags" on
-OPTIONS+=	OTCHAIN "Use up-to-date toolchain (gcc 4.6)" on
+OPTIONS+=	OTCHAIN "Use gcc 4.6+ toolchain on legacy systems" off
 OPTIONS+=	IPV6 "Include inet6 network support" on
 OPTIONS+=	X11 "Enable X11 support for mplayer's video output" on
 OPTIONS+=	X11XV "X11 video drivers: XV" on
@@ -129,7 +128,7 @@ CONFIGURE_ARGS+=--disable-dga1 --disable-dga2
 .endif
 .if !defined(WITHOUT_X11GL)
 USE_XORG+=	glproto
-LIB_DEPENDS+=	GL.1:${PORTSDIR}/graphics/libGL
+LIB_DEPENDS+=	GL:${PORTSDIR}/graphics/libGL
 .else
 CONFIGURE_ARGS+=--disable-gl
 .endif
@@ -153,7 +152,7 @@ CONFIGURE_ARGS+=--disable-x11 \
 .endif
 
 .if defined(WITH_VDPAU)
-LIB_DEPENDS+=	vdpau.1:${PORTSDIR}/multimedia/libvdpau
+LIB_DEPENDS+=	vdpau:${PORTSDIR}/multimedia/libvdpau
 .else
 CONFIGURE_ARGS+=	--disable-vdpau
 .endif
@@ -167,19 +166,19 @@ CONFIGURE_ARGS+=	--disable-rtc
 .endif
 
 .if defined(WITH_ARTS)
-LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
+LIB_DEPENDS+=		artsc:${PORTSDIR}/audio/arts
 .else
 CONFIGURE_ARGS+=	--disable-arts
 .endif
 
 .if defined(WITH_LIBCACA)
-LIB_DEPENDS+=caca.0:${PORTSDIR}/graphics/libcaca
+LIB_DEPENDS+=		caca:${PORTSDIR}/graphics/libcaca
 .else
 CONFIGURE_ARGS+=	--disable-caca
 .endif
 
 .if defined(WITH_LIRC)
-LIB_DEPENDS+=	lirc_client.2:${PORTSDIR}/comms/lirc
+LIB_DEPENDS+=		lirc_client:${PORTSDIR}/comms/lirc
 .else
 CONFIGURE_ARGS+=	--disable-lirc
 .endif
@@ -193,13 +192,13 @@ CONFIGURE_ARGS+=	--disable-sdl
 .endif
 
 .if defined(WITH_SVGALIB)
-LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
+LIB_DEPENDS+=		vga:${PORTSDIR}/graphics/svgalib
 .else
 CONFIGURE_ARGS+=	--disable-svga
 .endif
 
 .if defined(WITH_AALIB)
-LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
+LIB_DEPENDS+=		aa:${PORTSDIR}/graphics/aalib
 .else
 CONFIGURE_ARGS+=	--disable-aa
 .endif
@@ -224,7 +223,7 @@ CONFIGURE_ARGS+=--disable-joystick
 .endif
 
 .if defined(WITH_ENCA)
-LIB_DEPENDS+=	enca.5:${PORTSDIR}/converters/enca
+LIB_DEPENDS+=		enca:${PORTSDIR}/converters/enca
 .else
 CONFIGURE_ARGS+=	--disable-enca
 .endif
