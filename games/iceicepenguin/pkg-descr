@@ -1,0 +1,21 @@
+Ice Ice Penguin is a remake of an old SEGA Dreamcast game called Chu Chu Rocket.
+
+Two to four players try to steer penguins from the safety of the central igloo
+to the player's water hole. To do this, each player can place up to three of the
+five random direction arrows assigned to him on the gamefield.
+Arrows can be chosen using the control cursor in the lower part of the screen,
+and be placed on any free field using the field cursor and the action key.
+Each arrow will disappear after after a given time (15 seconds by default) and
+a new arrow will automagically appear in the control field.
+
+Bears eat penguins (at least in this game). If a bear enter a player's target
+area, the player loses up to 15 points (the score can not become negative)
+Special penguins, marked by a colored ring, score 10 points and launch a
+10 second long special event. See below for a list of events.
+
+The game ends when the ice on the right side of the screen has reached
+the bottom (after 3 minutes by default)
+
+Winner is the player who gathered the most penguins.
+
+WWW: https://sourceforge.net/projects/iceicepenguin/
