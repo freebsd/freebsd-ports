@@ -17,13 +17,15 @@ COMMENT=	Audio tag editor
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/configobj.py:${PORTSDIR}/devel/py-configobj \
-		${LOCALBASE}/bin/mb-submit-disc:${PORTSDIR}/audio/py-musicbrainz2 \
+RUN_DEPENDS=	${LOCALBASE}/bin/mb-submit-disc:${PORTSDIR}/audio/py-musicbrainz2 \
 		${LOCALBASE}/bin/moggsplit:${PORTSDIR}/audio/py-mutagen \
+		${PYTHON_SITELIBDIR}/configobj.py:${PORTSDIR}/devel/py-configobj \
 		${PYTHON_SITELIBDIR}/pyparsing.py:${PORTSDIR}/devel/py-parsing \
+		${PYTHON_SITELIBDIR}/PyQt4/Qt.py:${PORTSDIR}/devel/py-qt4-core \
+		${PYTHON_SITELIBDIR}/PyQt4/QtSvg.so:${PORTSDIR}/graphics/py-qt4-svg \
 		${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	2.6-2.7
 USE_PYDISTUTILS=yes
 INSTALLS_ICONS=	yes
 NO_BUILD=	yes
