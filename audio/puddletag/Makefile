@@ -1,13 +1,7 @@
-# New ports collection makefile for:	puddletag
-# Date created:		2010-10-23
-# Whom:			Pawel Pekala <c0rn@o2.pl>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	puddletag
-PORTVERSION=	0.10.6
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	audio python
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=${PORTNAME}
