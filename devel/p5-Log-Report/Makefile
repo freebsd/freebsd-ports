@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log-Report
-PORTVERSION=	0.94
+PORTVERSION=	0.96
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MARKOV
@@ -28,7 +28,9 @@ MAN3=	Log::Report.3 \
 	Log::Report::Dispatcher::Syslog.3 \
 	Log::Report::Dispatcher::Try.3 \
 	Log::Report::Exception.3 \
+	Log::Report::Extract.3 \
 	Log::Report::Extract::PerlPPI.3 \
+	Log::Report::Extract::Template.3 \
 	Log::Report::Lexicon::Index.3 \
 	Log::Report::Lexicon::PO.3 \
 	Log::Report::Lexicon::POT.3 \
