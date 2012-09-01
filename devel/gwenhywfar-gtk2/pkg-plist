@@ -1,0 +1,7 @@
+include/gwenhywfar4/gwen-gui-gtk2/gtk2_gui.h
+lib/libgwengui-gtk2.a
+lib/libgwengui-gtk2.la
+lib/libgwengui-gtk2.so
+lib/libgwengui-gtk2.so.0
+libdata/pkgconfig/gwengui-gtk2.pc
+@dirrm include/gwenhywfar4/gwen-gui-gtk2

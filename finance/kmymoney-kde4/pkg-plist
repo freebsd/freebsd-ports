@@ -70,12 +70,12 @@ include/kmymoney/transactioneditorcontainer.h
 include/kmymoney/transactionform.h
 include/kmymoney/transactionsortoptionimpl.h
 include/kmymoney/viewinterface.h
-%%WITH_CALENDAR%%lib/kde4/kcm_kmm_icalendarexport.so
+%%CALENDAR%%lib/kde4/kcm_kmm_icalendarexport.so
 lib/kde4/kcm_kmm_printcheck.so
 lib/kde4/kmm_csvimport.so
-%%WITH_CALENDAR%%lib/kde4/kmm_icalendarexport.so
-%%WITH_KBANKING%%lib/kde4/kmm_kbanking.so
-%%WITH_OFX%%lib/kde4/kmm_ofximport.so
+%%CALENDAR%%lib/kde4/kmm_icalendarexport.so
+%%KBANKING%%lib/kde4/kmm_kbanking.so
+%%OFX%%lib/kde4/kmm_ofximport.so
 lib/kde4/kmm_printcheck.so
 lib/kde4/kmm_reconciliationreport.so
 lib/libkmm_kdchart.so
@@ -92,9 +92,9 @@ lib/libkmm_widgets.so.5
 lib/libkmm_widgets.so.5.0.1
 share/applications/kde4/kmymoney.desktop
 share/apps/kmm_csvimport/kmm_csvimport.rc
-%%WITH_CALENDAR%%share/apps/kmm_icalendarexport/kmm_icalendarexport.rc
-%%WITH_KBANKING%%share/apps/kmm_kbanking/kmm_kbanking.rc
-%%WITH_OFX%%share/apps/kmm_ofximport/kmm_ofximport.rc
+%%CALENDAR%%share/apps/kmm_icalendarexport/kmm_icalendarexport.rc
+%%KBANKING%%share/apps/kmm_kbanking/kmm_kbanking.rc
+%%OFX%%share/apps/kmm_ofximport/kmm_ofximport.rc
 share/apps/kmm_printcheck/check_template.html
 share/apps/kmm_printcheck/check_template_green_linen.html
 share/apps/kmm_printcheck/kmm_printcheck.rc
@@ -1251,12 +1251,12 @@ share/icons/hicolor/64x64/apps/kmymoney.png
 share/icons/hicolor/64x64/mimetypes/kmy.png
 share/icons/locolor/16x16/apps/kmymoney.png
 share/icons/locolor/32x32/apps/kmymoney.png
-%%WITH_CALENDAR%%share/kde4/services/kcm_kmm_icalendarexport.desktop
+%%CALENDAR%%share/kde4/services/kcm_kmm_icalendarexport.desktop
 share/kde4/services/kcm_kmm_printcheck.desktop
 share/kde4/services/kmm_csvimport.desktop
-%%WITH_CALENDAR%%share/kde4/services/kmm_icalendarexport.desktop
-%%WITH_KBANKING%%share/kde4/services/kmm_kbanking.desktop
-%%WITH_OFX%%share/kde4/services/kmm_ofximport.desktop
+%%CALENDAR%%share/kde4/services/kmm_icalendarexport.desktop
+%%KBANKING%%share/kde4/services/kmm_kbanking.desktop
+%%OFX%%share/kde4/services/kmm_ofximport.desktop
 share/kde4/services/kmm_printcheck.desktop
 share/kde4/services/kmm_reconciliationreport.desktop
 share/kde4/servicetypes/kmymoneyimporterplugin.desktop
@@ -1383,9 +1383,9 @@ share/mime/packages/x-kmymoney.xml
 @dirrm share/apps/kmymoney/html
 @dirrm share/apps/kmymoney
 @dirrm share/apps/kmm_printcheck
-%%WITH_OFX%%@dirrm share/apps/kmm_ofximport
-%%WITH_KBANKING%%@dirrm share/apps/kmm_kbanking
-%%WITH_CALENDAR%%@dirrm share/apps/kmm_icalendarexport
+%%OFX%%@dirrm share/apps/kmm_ofximport
+%%KBANKING%%@dirrm share/apps/kmm_kbanking
+%%CALENDAR%%@dirrm share/apps/kmm_icalendarexport
 @dirrm share/apps/kmm_csvimport
 @dirrm include/kmymoney
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

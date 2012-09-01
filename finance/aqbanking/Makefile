@@ -1,33 +1,30 @@
-# New ports collection makefile for:	aqbanking
-# Date created:		June 2005
-# Whom:                 Sam Lawrance <lawrance@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	aqbanking
-PORTVERSION=	5.0.23
-PORTREVISION=	1
+PORTVERSION=	5.0.25
 CATEGORIES=	finance
-MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=03&release=93&file=01&dummy=/
+MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=03&release=95&file=01&dummy=/
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Online banking interface and financial data framework
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
-LIB_DEPENDS=	gwenhywfar.63:${PORTSDIR}/devel/gwenhywfar \
-		gmp.10:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	gwenhywfar:${PORTSDIR}/devel/gwenhywfar \
+		gmp:${PORTSDIR}/math/gmp
+
+OPTIONS_DEFINE=		DOCS KTOBLZCHECK PAYPAL
+OPTIONS_DEFAULT=	KTOBLZCHECK
+
+KTOBLZCHECK_DESC=	Enable KtoBlzCheck support
+PAYPAL_DESC=		Build PayPal backend (separate license)
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
+USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack pkgconfig
-
-OPTIONS=	APIDOC "Full API documentation (requires Doxygen)" off \
-		KTOBLZCHECK "KtoBlzCheck support" off \
-		PAYPAL "Build PayPal backend (separate license)" off
+USE_GNOME=	gnomehack
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-release="yes"
@@ -39,23 +36,23 @@ PLIST_SUB=	AQB_SHLIB_VER="${AQB_SHLIB_VER}" \
 		GWEN_SHLIB_VER="${GWEN_SHLIB_VER}"
 USE_LDCONFIG=	yes
 
-AQB_SHLIB_VER=	33
+AQB_SHLIB_VER=	34
 GWEN_SHLIB_VER=	60
 
 .include <bsd.port.options.mk>
 
-.if !defined(NOPORTDOCS) && defined(WITH_APIDOC)
+.if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		dot:${PORTSDIR}/graphics/graphviz
 CONFIGURE_ARGS+=--enable-full-doc
 PORTDOCS=	apidoc
 .endif
 
-.if defined(WITH_KTOBLZCHECK) || exists(${LOCALBASE}/lib/libktoblzcheck.so)
+.if ${PORT_OPTIONS:MKTOBLZCHECK} || exists(${LOCALBASE}/lib/libktoblzcheck.so)
 LIB_DEPENDS+=	ktoblzcheck:${PORTSDIR}/finance/ktoblzcheck
 .endif
 
-.if defined(WITH_PAYPAL)
+.if ${PORT_OPTIONS:MPAYPAL}
 CONFIGURE_ARGS+=--with-backends="aqhbci aqnone aqofxconnect aqpaypal"
 PLIST_SUB+=	WITH_PAYPAL=""
 .else
@@ -67,12 +64,12 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 post-build:
-.if !defined(NOPORTDOCS) && defined(WITH_APIDOC)
+.if ${PORT_OPTIONS:MDOCS}
 	@cd ${WRKSRC} && ${GMAKE} srcdoc
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS) && defined(WITH_APIDOC)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/apidoc
 	cd ${WRKSRC}/apidoc && \
 		${COPYTREE_SHARE} \* ${DOCSDIR}/apidoc
