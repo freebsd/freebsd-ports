@@ -4499,7 +4499,7 @@ deinstall:
 			check_name=`${ECHO_CMD} $${p} | ${SED} -e 's/-[^-]*$$//'`; \
 			if [ "$${check_name}" = "${PKGBASE}" ]; then \
 					prfx=`${PKG_INFO} -q -p $${p} 2> /dev/null | ${SED} -ne '1s|^@cwd ||p'`; \
-					if [ "x`${READLINK_CMD} -f ${PREFIX}`" = "x$${prfx}" ]; then \
+					if [ "x${PREFIX}" = "x$${prfx}" ]; then \
 							${ECHO_MSG} "===>   Deinstalling $${p}"; \
 							${PKG_DELETE} -f $${p}; \
 					else \
