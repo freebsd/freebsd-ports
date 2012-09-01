@@ -7,6 +7,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	2.0.3
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/p/-pre/}/ \
@@ -191,6 +192,10 @@ IGNORE=		base clang version too old, set NO_IGNORE to override
 
 .if ${ARCH} == "powerpc64"
 CONFIGURE_ARGS+=--enable-altivec # VLC's config script doesn't know to do this
+.endif
+
+.if ${ARCH} == "i386"
+CONFIGURE_ARGS+=--disable-sse # sometimes(?) misdetected causing build failure
 .endif
 
 # End OS specific hacks
@@ -765,7 +770,7 @@ pre-install:
 	cd ${FAKEDIR}/share/locale && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's|^|share/locale/|' >> ${PLIST}
 .endif
-.for locale in ach cgg ckb co ff fur kk km lg my oc ps tet tl zu kmr
+.for locale in ach cgg ckb co ff fur gd kk km lg my oc ps tet tl zu kmr
 	${ECHO_CMD} "@dirrmtry share/locale/${locale}/LC_MESSAGES" >> ${PLIST}
 	${ECHO_CMD} "@dirrmtry share/locale/${locale}" >> ${PLIST}
 .endfor
