@@ -1,0 +1,7 @@
+include/gwenhywfar4/gwen-gui-qt4/qt4_gui.hpp
+lib/libgwengui-qt4.a
+lib/libgwengui-qt4.la
+lib/libgwengui-qt4.so
+lib/libgwengui-qt4.so.0
+libdata/pkgconfig/gwengui-qt4.pc
+@dirrm include/gwenhywfar4/gwen-gui-qt4

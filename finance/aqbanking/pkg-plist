@@ -315,6 +315,7 @@ share/aqbanking/imexporters/csv/profiles/sparda.conf
 share/aqbanking/imexporters/csv/profiles/spk-aachen.conf
 share/aqbanking/imexporters/csv/profiles/spk-steiermark.conf
 share/aqbanking/imexporters/csv/profiles/tonline-banking.conf
+share/aqbanking/imexporters/csv/profiles/transfers.conf
 share/aqbanking/imexporters/csv/profiles/vrnetworld.conf
 share/aqbanking/imexporters/ctxfile/profiles/default.conf
 share/aqbanking/imexporters/dtaus/profiles/debitnote.conf

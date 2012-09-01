@@ -1,42 +1,36 @@
-# New ports collection makefile for:	gwenhywfar
-# Date created:		2005-05-05
-# Whom:			Peter Cornelius <pcc.at.gmx.net>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gwenhywfar
 PORTVERSION=	4.3.3
-PORTREVISION=	1
+PORTREVISION?=	2
 CATEGORIES=	devel net security
 MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=01&release=67&file=01&dummy=/
 
-MAINTAINER=	bsdkaffee@gmail.com
-COMMENT=	Multi-platform helper library for networking and security applications
+MAINTAINER?=	bsdkaffee@gmail.com
+COMMENT?=	Multi-platform helper library for networking and security applications
 
 LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt \
-		gnutls.47:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt \
+		gnutls:${PORTSDIR}/security/gnutls
+
+.if !defined(SLAVEPORT)
+OPTIONS_DEFINE=	DOC MEMDEBUG
+
+MEMDEBUG_DESC=	Enable memory debugger statistic
+.endif
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_OPENSSL=	yes
+USE_PKGCONFIG=	build
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack pkgconfig
-
-OPTIONS=	APIDOC "Full API documentation (requires Doxygen)" off \
-		MEMDEBUG "Enable memory debugger statistic" off \
-		FOX16 "Build FOX 1.6 GUI" off \
-		GTK2 "Build GTK 2.x GUI (for GnuCash)" on \
-		QT4 "Build Qt 4.x GUI (for KMyMoney)" on
+USE_GNOME=	gnomehack
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-release="yes" \
-		--with-guis="${_GWEN_GUIS}"
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+		--with-guis="${SLAVEPORT}"
+CPPFLAGS+=	-DGCRYPT_NO_DEPRECATED
 MAKE_JOBS_SAFE=	yes
 
 PLIST_SUB=	GWEN_SHLIB_VER="${GWEN_SHLIB_VER}"
@@ -46,49 +40,51 @@ GWEN_SHLIB_VER=	60
 
 .include <bsd.port.options.mk>
 
-.if !defined(NOPORTDOCS) && defined(WITH_APIDOC)
+.if ${PORT_OPTIONS:MDOC}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		dot:${PORTSDIR}/graphics/graphviz
 CONFIGURE_ARGS+=--enable-full-doc
 PORTDOCS=	apidoc
 .endif
 
-.if defined(WITH_MEMDEBUG)
+.if ${PORT_OPTIONS:MMEMDEBUG}
 CONFIGURE_ARGS+=--enable-memtrace
 .endif
 
-.if defined(WITH_FOX16)
+.if defined(SLAVEPORT)
+LIB_DEPENDS+=	gwenhywfar:${PORTSDIR}/devel/gwenhywfar
+BUILD_WRKSRC=	${WRKSRC}/gui
+INSTALL_WRKSRC=	${WRKSRC}/gui/${SLAVEPORT}
+
+.if ${SLAVEPORT}=="fox16"
 LIB_DEPENDS+=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16
-PLIST_SUB+=	WITH_FOX16=""
-_GWEN_GUIS+=	fox16
-.else
-PLIST_SUB+=	WITH_FOX16="@comment "
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 .endif
 
-.if defined(WITH_GTK2)
+.if ${SLAVEPORT}=="gtk2"
 USE_GNOME+=	gtk20
-PLIST_SUB+=	WITH_GTK2=""
-_GWEN_GUIS+=	gtk2
-.else
-PLIST_SUB+=	WITH_GTK2="@comment "
 .endif
 
-.if defined(WITH_QT4)
+.if ${SLAVEPORT}=="qt4"
 USE_QT4=	gui moc_build uic_build
 QT_NONSTANDARD=	yes
-PLIST_SUB+=	WITH_QT4=""
-_GWEN_GUIS+=	qt4
-.else
-PLIST_SUB+=	WITH_QT4="@comment "
+.endif
+.endif
+
+post-patch:
+.if defined(SLAVEPORT)
+	@${FIND} ${BUILD_WRKSRC} -name "Makefile.in" -type f | ${XARGS} \
+	${REINPLACE_CMD} -e 's|[$$][(]top_builddir[)]/src/[$$][(]gwenhywfar_internal_libname[)]|$$(gwenhywfar_libs)|g'
 .endif
 
 post-build:
-.if !defined(NOPORTDOCS) && defined(WITH_APIDOC)
+.if ${PORT_OPTIONS:MDOC}
 	@cd ${WRKSRC} && ${GMAKE} srcdoc
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS) && defined(WITH_APIDOC)
+.if ${PORT_OPTIONS:MDOC}
 	${MKDIR} ${DOCSDIR}/apidoc
 	cd ${WRKSRC}/apidoc && \
 		${COPYTREE_SHARE} \* ${DOCSDIR}/apidoc

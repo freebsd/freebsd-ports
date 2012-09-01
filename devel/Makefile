@@ -560,6 +560,9 @@
     SUBDIR += guiloader-c++
     SUBDIR += gvfs
     SUBDIR += gwenhywfar
+    SUBDIR += gwenhywfar-fox16
+    SUBDIR += gwenhywfar-gtk2
+    SUBDIR += gwenhywfar-qt4
     SUBDIR += gzstream
     SUBDIR += hachoir-core
     SUBDIR += hachoir-parser

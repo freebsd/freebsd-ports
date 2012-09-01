@@ -8,16 +8,6 @@ bin/xmlmerge
 include/gwenhywfar4/gwen-gui-cpp/cppdialog.hpp
 include/gwenhywfar4/gwen-gui-cpp/cppgui.hpp
 include/gwenhywfar4/gwen-gui-cpp/cppwidget.hpp
-%%WITH_FOX16%%include/gwenhywfar4/gwen-gui-fox16/api.h
-%%WITH_FOX16%%include/gwenhywfar4/gwen-gui-fox16/cppdialog.hpp
-%%WITH_FOX16%%include/gwenhywfar4/gwen-gui-fox16/cppgui.hpp
-%%WITH_FOX16%%include/gwenhywfar4/gwen-gui-fox16/fox16_gui.hpp
-%%WITH_FOX16%%include/gwenhywfar4/gwen-gui-fox16/fox16_htmlctx.hpp
-%%WITH_FOX16%%include/gwenhywfar4/gwen-gui-fox16/fox16_htmllabel.hpp
-%%WITH_FOX16%%include/gwenhywfar4/gwen-gui-fox16/fox16_htmltext.hpp
-%%WITH_FOX16%%include/gwenhywfar4/gwen-gui-fox16/theme.h
-%%WITH_GTK2%%include/gwenhywfar4/gwen-gui-gtk2/gtk2_gui.h
-%%WITH_QT4%%include/gwenhywfar4/gwen-gui-qt4/qt4_gui.hpp
 include/gwenhywfar4/gwenhywfar/args.h
 include/gwenhywfar4/gwenhywfar/base64.h
 include/gwenhywfar4/gwenhywfar/buffer.h
@@ -151,25 +141,10 @@ lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/dbio/xmldb.la
 lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/dbio/xmldb.so
 lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/dbio/xmldb.so.0
 lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/dbio/xmldb.xml
-%%WITH_FOX16%%lib/libgwengui-fox16.a
-%%WITH_FOX16%%lib/libgwengui-fox16.la
-%%WITH_FOX16%%lib/libgwengui-fox16.so
-%%WITH_FOX16%%lib/libgwengui-fox16.so.0
-%%WITH_GTK2%%lib/libgwengui-gtk2.a
-%%WITH_GTK2%%lib/libgwengui-gtk2.la
-%%WITH_GTK2%%lib/libgwengui-gtk2.so
-%%WITH_GTK2%%lib/libgwengui-gtk2.so.0
-%%WITH_QT4%%lib/libgwengui-qt4.a
-%%WITH_QT4%%lib/libgwengui-qt4.la
-%%WITH_QT4%%lib/libgwengui-qt4.so
-%%WITH_QT4%%lib/libgwengui-qt4.so.0
 lib/libgwenhywfar.a
 lib/libgwenhywfar.la
 lib/libgwenhywfar.so
 lib/libgwenhywfar.so.63
-%%WITH_FOX16%%libdata/pkgconfig/gwengui-fox16.pc
-%%WITH_GTK2%%libdata/pkgconfig/gwengui-gtk2.pc
-%%WITH_QT4%%libdata/pkgconfig/gwengui-qt4.pc
 libdata/pkgconfig/gwenhywfar.pc
 share/aclocal/gwenhywfar.m4
 share/gwenhywfar/ca-bundle.crt
@@ -206,8 +181,5 @@ share/locale/de/LC_MESSAGES/gwenhywfar.mo
 @dirrm lib/gwenhywfar/plugins
 @dirrm lib/gwenhywfar
 @dirrm include/gwenhywfar4/gwenhywfar
-%%WITH_QT4%%@dirrm include/gwenhywfar4/gwen-gui-qt4
-%%WITH_GTK2%%@dirrm include/gwenhywfar4/gwen-gui-gtk2
-%%WITH_FOX16%%@dirrm include/gwenhywfar4/gwen-gui-fox16
 @dirrm include/gwenhywfar4/gwen-gui-cpp
 @dirrm include/gwenhywfar4
