@@ -56,11 +56,8 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>mediawiki</name>
-	<range><lt>1.19.2</lt></range>
-      </package>
-      <package>
-	<name>mediawiki118</name>
-	<range><lt>1.18.5</lt></range>
+	<range><ge>1.19</ge><lt>1.19.2</lt></range>
+	<range><ge>1.18</ge><lt>1.18.5</lt></range>
       </package>
     </affects>
     <description>
