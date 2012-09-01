@@ -34,7 +34,8 @@ INSTALL_TARGET=	site-install install
 DOCS=		COPYING.LIB README
 
 post-patch:
-	@${RM} ${WRKSRC}/lib/gnome2-win32-binary-downloader.rb
+	@${RM} ${WRKSRC}/lib/gnome2-win32-binary-download-task.rb \
+		${WRKSRC}/lib/gnome2-win32-binary-build-task.rb
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
