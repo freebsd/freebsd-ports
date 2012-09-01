@@ -65,9 +65,6 @@ bin/puddletag
 %%PYTHON_SITELIBDIR%%/puddlestuff/helperwin.py
 %%PYTHON_SITELIBDIR%%/puddlestuff/helperwin.pyc
 %%PYTHON_SITELIBDIR%%/puddlestuff/helperwin.pyo
-%%PYTHON_SITELIBDIR%%/puddlestuff/image.py
-%%PYTHON_SITELIBDIR%%/puddlestuff/image.pyc
-%%PYTHON_SITELIBDIR%%/puddlestuff/image.pyo
 %%PYTHON_SITELIBDIR%%/puddlestuff/libraries/__init__.py
 %%PYTHON_SITELIBDIR%%/puddlestuff/libraries/__init__.pyc
 %%PYTHON_SITELIBDIR%%/puddlestuff/libraries/__init__.pyo
@@ -131,9 +128,9 @@ bin/puddletag
 %%PYTHON_SITELIBDIR%%/puddlestuff/pluginloader.py
 %%PYTHON_SITELIBDIR%%/puddlestuff/pluginloader.pyc
 %%PYTHON_SITELIBDIR%%/puddlestuff/pluginloader.pyo
-%%PYTHON_SITELIBDIR%%/puddlestuff/plugins.py
-%%PYTHON_SITELIBDIR%%/puddlestuff/plugins.pyc
-%%PYTHON_SITELIBDIR%%/puddlestuff/plugins.pyo
+%%PYTHON_SITELIBDIR%%/puddlestuff/plugins/__init__.py
+%%PYTHON_SITELIBDIR%%/puddlestuff/plugins/__init__.pyc
+%%PYTHON_SITELIBDIR%%/puddlestuff/plugins/__init__.pyo
 %%PYTHON_SITELIBDIR%%/puddlestuff/puddleobjects.py
 %%PYTHON_SITELIBDIR%%/puddlestuff/puddleobjects.pyc
 %%PYTHON_SITELIBDIR%%/puddlestuff/puddleobjects.pyo
@@ -143,9 +140,6 @@ bin/puddletag
 %%PYTHON_SITELIBDIR%%/puddlestuff/puddletag.py
 %%PYTHON_SITELIBDIR%%/puddlestuff/puddletag.pyc
 %%PYTHON_SITELIBDIR%%/puddlestuff/puddletag.pyo
-%%PYTHON_SITELIBDIR%%/puddlestuff/quodlibetlib.py
-%%PYTHON_SITELIBDIR%%/puddlestuff/quodlibetlib.pyc
-%%PYTHON_SITELIBDIR%%/puddlestuff/quodlibetlib.pyo
 %%PYTHON_SITELIBDIR%%/puddlestuff/releasewidget.py
 %%PYTHON_SITELIBDIR%%/puddlestuff/releasewidget.pyc
 %%PYTHON_SITELIBDIR%%/puddlestuff/releasewidget.pyo
@@ -164,6 +158,12 @@ bin/puddletag
 %%PYTHON_SITELIBDIR%%/puddlestuff/tagsources/__init__.py
 %%PYTHON_SITELIBDIR%%/puddlestuff/tagsources/__init__.pyc
 %%PYTHON_SITELIBDIR%%/puddlestuff/tagsources/__init__.pyo
+%%PYTHON_SITELIBDIR%%/puddlestuff/tagsources/_acoustid.py
+%%PYTHON_SITELIBDIR%%/puddlestuff/tagsources/_acoustid.pyc
+%%PYTHON_SITELIBDIR%%/puddlestuff/tagsources/_acoustid.pyo
+%%PYTHON_SITELIBDIR%%/puddlestuff/tagsources/acoust_id.py
+%%PYTHON_SITELIBDIR%%/puddlestuff/tagsources/acoust_id.pyc
+%%PYTHON_SITELIBDIR%%/puddlestuff/tagsources/acoust_id.pyo
 %%PYTHON_SITELIBDIR%%/puddlestuff/tagsources/amazon.py
 %%PYTHON_SITELIBDIR%%/puddlestuff/tagsources/amazon.pyc
 %%PYTHON_SITELIBDIR%%/puddlestuff/tagsources/amazon.pyo
@@ -196,9 +196,9 @@ bin/puddletag
 %%PYTHON_SITELIBDIR%%/puddlestuff/webdb.pyo
 share/applications/puddletag.desktop
 share/pixmaps/puddletag.png
-share/pixmaps/puddletag.xpm
 @dirrm %%PYTHON_SITELIBDIR%%/puddlestuff/tagsources/mp3tag
 @dirrm %%PYTHON_SITELIBDIR%%/puddlestuff/tagsources
+@dirrm %%PYTHON_SITELIBDIR%%/puddlestuff/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/puddlestuff/masstag
 @dirrm %%PYTHON_SITELIBDIR%%/puddlestuff/mainwin
 @dirrm %%PYTHON_SITELIBDIR%%/puddlestuff/libraries
