@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iniparser
-PORTVERSION=	3.0
+PORTVERSION=	3.1
 CATEGORIES=	devel
 MASTER_SITES=	http://ndevilla.free.fr/iniparser/
 
