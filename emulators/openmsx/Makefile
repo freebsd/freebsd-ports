@@ -1,13 +1,7 @@
-# New ports collection makefile for:	openmsx
-# Date created:				20 January 2006
-# Whom:					Johan van Selst <johans@stack.nl>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	openmsx
-PORTVERSION=	0.8.2
-PORTREVISION=	3
+PORTVERSION=	0.9.0
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -32,12 +26,22 @@ USE_TCL=	85+
 USE_SDL=	sdl ttf
 USE_PYTHON=	2.5+
 
-.ifdef(NOPORTDOCS)
+PLIST_FILES=	bin/openmsx
+PORTDATA=	*
+PORTDOCS=	*
+
+.ifdef	NOPORTDATA
+IGNORE=		opemsx requires port data, unset NOPORTDATA to install
+.endif
+
+.ifdef	NOPORTDOCS
 # Use dummy target rather than rewriting makefile
 MAKE_ARGS+=	INSTALL_DOC_DIR=${WRKSRC}/dummy
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's/{TCL_LIB_SPEC}/& $${TCL_LD_FLAGS}/' \
+		${WRKSRC}/build/libraries.py
 	@${REINPLACE_CMD} -e '/^SYMLINK_FOR_BINARY/s/true/false/' \
 		${WRKSRC}/build/custom.mk
 
