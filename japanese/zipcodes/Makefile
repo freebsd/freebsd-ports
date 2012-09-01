@@ -1,12 +1,7 @@
-# New ports collection makefile for:	ja-zipcodes
-# Date created:		5 Nov 1997
-# Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	zipcodes
-PORTVERSION=	20120629
+PORTVERSION=	20120831
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kuriyama
