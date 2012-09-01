@@ -6,17 +6,15 @@
 
 PORTNAME=	mencoder
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	3
 
 COMMENT=	Convenient video file and movie encoder
-RESTRICTED=	Port has restricted dependencies
 
 .include "${.CURDIR}/../mplayer/Makefile.shared"
 
 OPTIONS=	DEBUG "Include debug symbols in mencoder's binary" off
 OPTIONS+=	RTCPU "Allow runtime CPU detection" on
 OPTIONS+=	OCFLAGS "Use optimized compiler flags" on
-OPTIONS+=	OTCHAIN "Use up-to-date toolchain (gcc 4.6)" on
+OPTIONS+=	OTCHAIN "Use gcc 4.6+ toolchain on legacy systems" off
 OPTIONS+=	IPV6 "Include inet6 network support" on
 OPTIONS+=	JACK "Enable JackIt audio server support" off
 OPTIONS+=	NAS "Enable NAS sound server support" off
@@ -55,6 +53,8 @@ OPTIONS+=	LIBRTMP "Enable RTMPDump Streaming Media support" off
 
 MAN1=		mencoder.1
 
+RESTRICTED=	Port has restricted dependencies
+
 PATCHDIR=	${.CURDIR}/../mplayer/files
 FILESDIR=	${PATCHDIR}
 DATADIR=	${PREFIX}/share/mplayer
@@ -70,7 +70,7 @@ TOOLFILES=	aconvert.sh binary_codecs.sh calcbpp.pl \
 
 .include <bsd.port.pre.mk>
 
-LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
+LIB_DEPENDS+=	mp3lame:${PORTSDIR}/audio/lame
 
 CONFIGURE_ARGS+=	--disable-mplayer \
 			--disable-libdca \
@@ -95,37 +95,37 @@ ALL_TARGET=	mencoder
 .include "${.CURDIR}/../mplayer/Makefile.options"
 
 .if defined(WITH_FONTCONFIG)
-LIB_DEPENDS+=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS+=		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 .else
 CONFIGURE_ARGS+=	--disable-fontconfig
 .endif
 
 .if defined(WITH_TWOLAME)
-LIB_DEPENDS+=	twolame.0:${PORTSDIR}/audio/twolame
+LIB_DEPENDS+=		twolame:${PORTSDIR}/audio/twolame
 .else
 CONFIGURE_ARGS+=	--disable-twolame
 .endif
 
 .if defined(WITH_FAAC)
-LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
+LIB_DEPENDS+=		faac:${PORTSDIR}/audio/faac
 .else
 CONFIGURE_ARGS+=	--disable-faac
 .endif
 
 .if !defined(WITHOUT_X264)
-LIB_DEPENDS+=	x264.125:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=		x264.125:${PORTSDIR}/multimedia/x264
 .else
 CONFIGURE_ARGS+=	--disable-x264
 .endif
 
 .if !defined(WITHOUT_XVID)
-LIB_DEPENDS+=		xvidcore.4:${PORTSDIR}/multimedia/xvid
+LIB_DEPENDS+=		xvidcore:${PORTSDIR}/multimedia/xvid
 .else
 CONFIGURE_ARGS+=	--disable-xvid
 .endif
 
 .ifdef(WITH_DIRAC)
-LIB_DEPENDS+=		dirac_encoder.1:${PORTSDIR}/multimedia/dirac
+LIB_DEPENDS+=		dirac_encoder:${PORTSDIR}/multimedia/dirac
 .else
 CONFIGURE_ARGS+=	--disable-libdirac-lavc
 .endif
