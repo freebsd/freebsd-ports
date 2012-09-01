@@ -131,8 +131,6 @@ CONFIGURE_ARGS+=        --disable-linux-caps
 post-patch:
 	@${REINPLACE_CMD} -e 's:libnet-config:libnet116-config:g' ${WRKSRC}/configure
 	@${LN} ${WRKSRC}/scl/syslog-ng.conf ${WRKSRC}/scl/syslog-ng.conf.dist
-.if ${OSVERSION} >= 900007
-.endif
 
 
 post-install:
