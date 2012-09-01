@@ -1,12 +1,8 @@
-# New ports collection makefile for:    wine
-# Date created:         Sa   9 Nov 1996 00:52:22 MET
-# Whom:			se
-#
 # $FreeBSD$
-#
 
 PORTNAME=	wine
 DISTVERSION=	1.4.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -85,7 +81,7 @@ CONFIGURE_ARGS+=	--without-cups
 RUN_DEPENDS+=	dosbox:${PORTSDIR}/emulators/dosbox
 .endif
 
-.if ${PORT_OPTIONS:MGNU_TLS}
+.if ${PORT_OPTIONS:MGNUTLS}
 CONFIGURE_ARGS+=	--with-gnutls
 LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 .else
