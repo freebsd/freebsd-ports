@@ -34,7 +34,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 JDK_VERSION=		7
 JDK_INTERNAL_VERSION=	1.7.0
-JDK_UPDATE_VERSION=	6
+JDK_UPDATE_VERSION=	7
 DL_JDK_VERSION=		${JDK_INTERNAL_VERSION}_0${JDK_UPDATE_VERSION}
 DOWNLOAD_URL=		http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
@@ -49,10 +49,16 @@ IGNORE?=You must manually fetch the J2SE SDK download for the Linux platform (${
 .endif
 
 .if defined(WITH_DEMO)
-.if !exists(${DISTDIR}/${DISTNAME}-demos${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
-IGNORE?=You must manually fetch the J2SE demos and samples for the Linux platform (${DISTNAME}-demos${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
+#DEMO_UPDATE_VERSION=	${JDK_UPDATE_VERSION}
+DEMO_UPDATE_VERSION=	6
+#DEMO_DISTNAME=	${DISTNAME}-demos
+DEMO_DISTNAME=	jdk-7u${DEMO_UPDATE_VERSION}-linux-i586-demos
+#DEMO_WRKSRC=	${WRKSRC}
+DEMO_WRKSRC=	${WRKDIR}/jdk${JDK_INTERNAL_VERSION}_0${DEMO_UPDATE_VERSION}
+.if !exists(${DISTDIR}/${DEMO_DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+IGNORE?=You must manually fetch the J2SE demos and samples for the Linux platform (${DEMO_DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-demos${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DEMO_DISTNAME}${EXTRACT_SUFX}
 PLIST_SUB+=	DEMO=""
 .else
 PLIST_SUB+=	DEMO="@comment "
@@ -60,6 +66,12 @@ PLIST_SUB+=	DEMO="@comment "
 
 pre-everything::
 	@${CAT} ${PKGMESSAGE}
+
+.if defined(WITH_DEMO) && ${DEMO_WRKSRC} != ${WRKSRC}
+post-extract:
+	@${MV} ${DEMO_WRKSRC}/demo ${WRKSRC}/
+	@${MV} ${DEMO_WRKSRC}/sample ${WRKSRC}/
+.endif
 
 post-patch:
 .for script in ${SCRIPT_FILES}
