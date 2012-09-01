@@ -1,9 +1,4 @@
-# New ports collection makefile for:    koffice-kde4-l10n-nl
-# Date created:                         28 November 2009
-# Whom:                                 Dima Panov <fluffy@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	calligra-l10n
 PORTVERSION=	${CALLIGRA_VERSION}

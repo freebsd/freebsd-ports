@@ -1,9 +1,4 @@
-# New ports collection makefile for:    koffice-i18n-ru
-# Date created:                         27 April 2003
-# Whom:                                 Michael Nottebrock <michaelnottebrock@gmx.net>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	calligra-l10n
 PORTVERSION=	${CALLIGRA_VERSION}

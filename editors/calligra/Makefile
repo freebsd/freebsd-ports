@@ -1,9 +1,4 @@
-# New ports collection makefile for:	calligra
-# Date created:				28 May 2011
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	calligra
 PORTVERSION=	${CALLIGRA_VERSION}

@@ -1193,6 +1193,7 @@ share/apps/calligra/icons/hicolor/scalable/actions/format-line-spacing-normal.sv
 share/apps/calligra/icons/hicolor/scalable/actions/format-line-spacing-triple.svgz
 share/apps/calligra/icons/hicolor/scalable/actions/send_backward.svgz
 share/apps/calligra/icons/oxygen/16x16/actions/animation-stage.png
+share/apps/calligra/icons/oxygen/16x16/actions/snap-boundingbox.png
 share/apps/calligra/icons/oxygen/16x16/actions/snap-extension.png
 share/apps/calligra/icons/oxygen/16x16/actions/snap-guideline.png
 share/apps/calligra/icons/oxygen/16x16/actions/snap-intersection.png
