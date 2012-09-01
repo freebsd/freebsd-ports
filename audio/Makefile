@@ -58,6 +58,7 @@
     SUBDIR += autocd
     SUBDIR += autotalent
     SUBDIR += autozen
+    SUBDIR += baresip
     SUBDIR += baudline
     SUBDIR += beast
     SUBDIR += bebocd
