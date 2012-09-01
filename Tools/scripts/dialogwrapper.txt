@@ -29,15 +29,9 @@ more features:
 
 Installation
 
-Download http://www.wonkity.com/~wblock/dialogwrapper/dialogwrapper.sh
-to /usr/ports/Tools/scripts.
-
-Make it executable.
-
 Edit /etc/make.conf:
 
   DIALOG="/usr/ports/Tools/scripts/dialogwrapper.sh"
-
 
 
 Testing long descriptions
@@ -64,8 +58,6 @@ Open a terminal window and resize it, making it taller than the default
 
   # cd /usr/ports/print/ghostscript9
   # make config
-
-
 
 Work remaining to be done
 
