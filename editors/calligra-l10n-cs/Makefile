@@ -1,9 +1,4 @@
-# New ports collection makefile for:	calligra-l10n-cs
-# Date created:				16 October 2011
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	calligra-l10n
 PORTVERSION=	2.4.3
