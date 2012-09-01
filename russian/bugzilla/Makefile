@@ -1,18 +1,14 @@
-# New ports collection makefile for:	bugzilla-ru
-# Date created:	   28 Jul 2008
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	bugzilla
 PORTVERSION=	4.0.7
+PORTREVISION=	1
 CATEGORIES=	russian
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=bugzilla-ru/bugzilla-${PORTVERSION:R}-ru/${PORTVERSION}
 DISTNAME=	bugzilla-${PORTVERSION}-ru-20120809
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	bugzilla@FreeBSD.org
 COMMENT=	Russian localization for Bugzilla
 
 RUN_DEPENDS=	bugzilla>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla
@@ -20,6 +16,12 @@ RUN_DEPENDS=	bugzilla>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.ru
 
 .include "${.CURDIR}/../../devel/bugzilla/Makefile.common"
+
+post-patch:
+	${REINPLACE_CMD} -i '' -e '/abbrev/d' \
+		${WRKSRC}/template/ru-RU/default/filterexceptions.pl
+	${REINPLACE_CMD} -i '' -e 's/column.title -%/column.title FILTER html -%/' \
+		${WRKSRC}/template/ru-RU/default/list/table.html.tmpl
 
 do-install:
 	${MKDIR} ${WWWDIR}

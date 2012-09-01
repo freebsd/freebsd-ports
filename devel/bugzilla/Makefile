@@ -1,17 +1,12 @@
-# New ports collection makefile for:	bugzilla
-# Date created:				28 September 2001
-# Whom:					Alexey Zelkin <phantom@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	bugzilla
-PORTVERSION=	4.0.7
+PORTVERSION=	4.0.8
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	bugzilla@FreeBSD.org
 COMMENT=	Bug-tracking system developed by Mozilla Project
 
 LICENSE=	MPL

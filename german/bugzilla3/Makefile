@@ -1,18 +1,14 @@
-# New ports collection makefile for:	de-bugzilla
-# Date created:		2011-06-11
-# Whom:			Olli Hauer <ohauer@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	bugzilla
 PORTVERSION=	3.6.10
+PORTREVISION=	1
 CATEGORIES=	german
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=bugzilla-de/${PORTVERSION:R}/${PORTVERSION}
 DISTNAME=	germzilla-${PORTVERSION}-1.utf-8
 
-MAINTAINER=	ohauer@FreeBSD.org
+MAINTAINER=	bugzilla@FreeBSD.org
 COMMENT=	German localization for Bugzilla
 
 RUN_DEPENDS=	bugzilla>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla3
@@ -24,6 +20,14 @@ NO_WRKSUBDIR=	yes
 .include "${.CURDIR}/../../devel/bugzilla3/Makefile.common"
 
 LANGDIR=	${WWWDIR}/template/de
+
+post-patch:
+	${REINPLACE_CMD} -i '' -e '/abbrev/d' \
+		${WRKDIR}/de/default/filterexceptions.pl
+	${REINPLACE_CMD} -i '' -e 's/column.title -%/column.title FILTER html -%/' \
+		${WRKDIR}/de/default/list/table.html.tmpl
+	${REINPLACE_CMD} -i '' -e 's/3.6.10/3.6.11/' \
+		${WRKDIR}/de/default/global/gzversion.html.tmpl
 
 do-install:
 	@-${MKDIR} ${LANGDIR}

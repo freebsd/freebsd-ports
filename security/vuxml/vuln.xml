@@ -51,6 +51,56 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6ad18fe5-f469-11e1-920d-20cf30e32f6d">
+    <topic>bugzilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>bugzilla</name>
+	<range><ge>3.6.0</ge><lt>3.6.11</lt></range>
+	<range><ge>4.0.0</ge><lt>4.0.8</lt></range>
+	<range><ge>4.2.0</ge><lt>4.2.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>A Bugzilla Security Advisory reports:</h1>
+	<blockquote cite="http://www.bugzilla.org/security/3.6.10/">
+	  <p>The following security issues have been discovered in
+	     Bugzilla:</p>
+	  <h1>LDAP Injection</h1>
+	  <p>When the user logs in using LDAP, the username is not
+	     escaped when building the uid=$username filter which is
+	     used to query the LDAP directory. This could potentially
+	     lead to LDAP injection.</p>
+	  <h1>Directory Browsing</h1>
+	  <p>Extensions are not protected against directory browsing
+	     and users can access the source code of the templates
+	     which may contain sensitive data.
+	     Directory browsing is blocked in Bugzilla 4.3.3 only,
+	     because it requires a configuration change in the Apache
+	     httpd.conf file to allow local .htaccess files to use
+	     Options -Indexes. To not break existing installations,
+	     this fix has not been backported to stable branches.
+	     The access to templates is blocked for all supported
+	     branches except the old 3.6 branch, because this branch
+	     doesn't have .htaccess in the bzr repository and cannot
+	     be fixed easily for existing installations without
+	     potentially conflicting with custom changes.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-3981</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=785470</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=785522</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=785511</url>
+    </references>
+    <dates>
+      <discovery>2012-08-30</discovery>
+      <entry>2012-09-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="342176a8-f464-11e1-8bd8-0022156e8794">
     <topic>GNU gatekeeper -- denial of service</topic>
     <affects>
