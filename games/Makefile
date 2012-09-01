@@ -385,6 +385,7 @@
     SUBDIR += holotz-castle
     SUBDIR += icbm3d
     SUBDIR += icebreaker
+    SUBDIR += iceicepenguin
     SUBDIR += ifm
     SUBDIR += imaze
     SUBDIR += impossible_mission_puzzle
