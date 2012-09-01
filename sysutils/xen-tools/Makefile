@@ -9,7 +9,7 @@ PORTVERSION=	4.0.1
 CATEGORIES=	sysutils
 DISTNAME=	xen-${PORTVERSION}
 
-MAINTAINER=	esarmiento@wayfair.com
+MAINTAINER=	feld@feld.me
 COMMENT=	Xen tools within FreeBSD domU
 
 MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/
