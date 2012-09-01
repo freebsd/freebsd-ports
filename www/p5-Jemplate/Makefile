@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	Jemplate
-PORTVERSION=	0.262
+PORTVERSION=	0.270
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:FREW
+MASTER_SITE_SUBDIR=	CPAN:INGY
 PKGNAMEPREFIX=	p5-
+DISTNAME=	Jemplate-0.27
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	JavaScript Templating with Template Toolkit
@@ -27,8 +28,5 @@ MAN3=	Jemplate.3 \
 	Jemplate::Parser.3 \
 	Jemplate::Runtime.3 \
 	Jemplate::Runtime::Compact.3
-
-post-patch:
-	@${RM} ${WRKSRC}/bin/README
 
 .include <bsd.port.mk>
