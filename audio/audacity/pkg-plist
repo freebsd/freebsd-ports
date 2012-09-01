@@ -1,4 +1,5 @@
 bin/audacity
+man/man1/audacity.1.gz
 share/applications/audacity.desktop
 %%DATADIR%%/EQDefaultCurves.xml
 %%DATADIR%%/nyquist/bug.lsp
@@ -68,6 +69,9 @@ share/icons/hicolor/24x24/apps/audacity.png
 share/icons/hicolor/32x32/apps/audacity.png
 share/icons/hicolor/48x48/apps/audacity.png
 share/icons/hicolor/scalable/apps/audacity.svg
+share/licenses/audacity-2.0.2/GPLv2
+share/licenses/audacity-2.0.2/LICENSE
+share/licenses/audacity-2.0.2/catalog.mk
 share/locale/af/LC_MESSAGES/audacity.mo
 share/locale/ar/LC_MESSAGES/audacity.mo
 share/locale/be/LC_MESSAGES/audacity.mo
@@ -138,6 +142,8 @@ share/pixmaps/gnome-mime-application-x-audacity-project.xpm
 @dirrmtry share/locale/km
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
+@dirrmtry share/licenses/audacity-2.0.2
+@dirrmtry share/licenses
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor/48x48/apps
