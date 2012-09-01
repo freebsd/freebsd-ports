@@ -1,0 +1,16 @@
+include/rem/rem_aubuf.h
+include/rem/rem_g711.h
+include/rem/rem_dsp.h
+include/rem/rem_video.h
+include/rem/rem.h
+include/rem/rem_fir.h
+include/rem/rem_vid.h
+include/rem/rem_auresamp.h
+include/rem/rem_vidmix.h
+include/rem/rem_aumix.h
+include/rem/rem_audio.h
+include/rem/rem_autone.h
+include/rem/rem_vidconv.h
+lib/librem.so
+lib/librem.a
+@dirrm include/rem

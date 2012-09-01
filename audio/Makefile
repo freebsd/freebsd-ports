@@ -628,6 +628,7 @@
     SUBDIR += rawrec
     SUBDIR += re
     SUBDIR += rebot3
+    SUBDIR += rem
     SUBDIR += resid
     SUBDIR += rexima
     SUBDIR += rezound
