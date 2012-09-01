@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	blimpy
-PORTVERSION=	0.5.1
+PORTVERSION=	0.6.1
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 
