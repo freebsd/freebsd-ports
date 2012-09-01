@@ -1,9 +1,4 @@
-# New ports collection makefile for:	ja-bugzilla
-# Date created:		2004-01-19
-# Whom:			TAKATSU Tomonari <tota@rtfm.jp>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	bugzilla
 PORTVERSION=	4.2.2

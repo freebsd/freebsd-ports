@@ -1,9 +1,4 @@
-# New ports collection makefile for:	bugzilla-ru
-# Date created:	   28 Jul 2008
-# Whom:		   Sergey Skvortsov <skv@protey.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	bugzilla
 PORTVERSION=	4.2.2

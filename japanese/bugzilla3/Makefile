@@ -1,19 +1,15 @@
-# New ports collection makefile for:	ja-bugzilla
-# Date created:		2004-01-19
-# Whom:			TAKATSU Tomonari <tota@rtfm.jp>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	bugzilla
 PORTVERSION=	3.6.10
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://bug-ja.org/releases/3.6/ \
 		LOCAL
 MASTER_SITE_SUBDIR=	tota/bugzilla-ja
 DISTNAME=	Bugzilla-ja-${PORTVERSION}-template-rel01
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	bugzilla@FreeBSD.org
 COMMENT=	Japanese localization for Bugzilla
 
 RUN_DEPENDS=	bugzilla>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla3
@@ -27,6 +23,12 @@ NO_WRKSUBDIR=	yes
 USE_BZIP2=	yes
 
 LANGDIR=	${WWWDIR}/template/ja
+
+post-patch:
+	${REINPLACE_CMD} -i '' -e '/abbrev/d' \
+		${WRKDIR}/default/filterexceptions.pl
+	${REINPLACE_CMD} -i '' -e 's/column.title -%/column.title FILTER html -%/' \
+		${WRKDIR}/default/list/table.html.tmpl
 
 do-install:
 	@-${MKDIR} ${LANGDIR}/default
