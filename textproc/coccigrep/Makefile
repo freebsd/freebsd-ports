@@ -1,12 +1,7 @@
-# New ports collection makefile for:	coccigrep
-# Date created:		2012-04-14
-# Whom:			Pawel Pekala <pawel@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	coccigrep
-PORTVERSION=	1.9
+PORTVERSION=	1.10
 CATEGORIES=	textproc
 MASTER_SITES=	http://home.regit.org/wp-content/uploads/2011/08/
 
