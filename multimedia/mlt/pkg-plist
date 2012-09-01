@@ -72,7 +72,7 @@ lib/mlt/libmltnormalize.so
 lib/mlt/libmltoldfilm.so
 lib/mlt/libmltplus.so
 %%QT4%%lib/mlt/libmltqimage.so
-%%RESAMPLE%%lib/mlt/libmltresample.so
+%%SAMPLERATE%%lib/mlt/libmltresample.so
 lib/mlt/libmltrotoscoping.so
 lib/mlt/libmltsdl.so
 %%SOX%%lib/mlt/libmltsox.so
@@ -219,7 +219,16 @@ libdata/pkgconfig/mlt-framework.pc
 %%DATADIR%%/plus/filter_invert.yml
 %%DATADIR%%/plus/filter_sepia.yml
 %%DATADIR%%/plus/transition_affine.yml
+%%DATADIR%%/presets/consumer/avformat/AAC
+%%DATADIR%%/presets/consumer/avformat/Flash
+%%DATADIR%%/presets/consumer/avformat/MJPEG
+%%DATADIR%%/presets/consumer/avformat/MP3
+%%DATADIR%%/presets/consumer/avformat/MPEG-2
+%%DATADIR%%/presets/consumer/avformat/MPEG-4
+%%DATADIR%%/presets/consumer/avformat/MPEG-4-ASP
 %%DATADIR%%/presets/consumer/avformat/Sony-PSP
+%%DATADIR%%/presets/consumer/avformat/Vorbis
+%%DATADIR%%/presets/consumer/avformat/WAV
 %%DATADIR%%/presets/consumer/avformat/XDCAM-HD422
 %%DATADIR%%/presets/consumer/avformat/atsc_1080i_50/DNxHD
 %%DATADIR%%/presets/consumer/avformat/atsc_1080i_5994/DNxHD
@@ -251,6 +260,28 @@ libdata/pkgconfig/mlt-framework.pc
 %%DATADIR%%/presets/consumer/avformat/dv_pal_wide/DV
 %%DATADIR%%/presets/consumer/avformat/dv_pal_wide/DVCPRO50
 %%DATADIR%%/presets/consumer/avformat/dv_pal_wide/DVD
+%%DATADIR%%/presets/consumer/avformat/hdv_1080_25p/HDV
+%%DATADIR%%/presets/consumer/avformat/hdv_1080_30p/HDV
+%%DATADIR%%/presets/consumer/avformat/hdv_1080_50i/HDV
+%%DATADIR%%/presets/consumer/avformat/hdv_1080_60i/HDV
+%%DATADIR%%/presets/consumer/avformat/hdv_720_25p/HDV
+%%DATADIR%%/presets/consumer/avformat/hdv_720_30p/HDV
+%%DATADIR%%/presets/consumer/avformat/hdv_720_50p/HDV
+%%DATADIR%%/presets/consumer/avformat/hdv_720_60p/HDV
+%%DATADIR%%/presets/consumer/avformat/lossless/FFV1
+%%DATADIR%%/presets/consumer/avformat/lossless/H.264
+%%DATADIR%%/presets/consumer/avformat/lossless/HuffYUV
+%%DATADIR%%/presets/consumer/avformat/lossless/MJPEG
+%%DATADIR%%/presets/consumer/avformat/lossless/MPEG-2
+%%DATADIR%%/presets/consumer/avformat/lossless/MPEG-4
+%%DATADIR%%/presets/consumer/avformat/lossless/ProRes
+%%DATADIR%%/presets/consumer/avformat/stills/BMP
+%%DATADIR%%/presets/consumer/avformat/stills/DPX
+%%DATADIR%%/presets/consumer/avformat/stills/JPEG
+%%DATADIR%%/presets/consumer/avformat/stills/PNG
+%%DATADIR%%/presets/consumer/avformat/stills/PPM
+%%DATADIR%%/presets/consumer/avformat/stills/TGA
+%%DATADIR%%/presets/consumer/avformat/stills/TIFF
 %%DATADIR%%/presets/consumer/avformat/webm
 %%DATADIR%%/presets/consumer/avformat/x264-medium
 %%DATADIR%%/presets/consumer/avformat/x264-medium-baseline
@@ -319,7 +350,7 @@ libdata/pkgconfig/mlt-framework.pc
 %%QT4%%%%DATADIR%%/qimage/producer_kdenlivetitle.yml
 %%QT4%%%%DATADIR%%/qimage/producer_qimage.yml
 %%QT4%%%%DATADIR%%/qimage/transition_vqm.yml
-%%RESAMPLE%%%%DATADIR%%/resample/filter_resample.yml
+%%SAMPLERATE%%%%DATADIR%%/resample/filter_resample.yml
 %%DATADIR%%/rotoscoping/filter_rotoscoping.yml
 %%DATADIR%%/sdl/consumer_sdl.yml
 %%DATADIR%%/sdl/consumer_sdl_audio.yml
@@ -349,12 +380,22 @@ libdata/pkgconfig/mlt-framework.pc
 %%SOX%%@dirrm %%DATADIR%%/sox
 @dirrm %%DATADIR%%/sdl
 @dirrm %%DATADIR%%/rotoscoping
-%%RESAMPLE%%@dirrm %%DATADIR%%/resample
+%%SAMPLERATE%%@dirrm %%DATADIR%%/resample
 %%QT4%%@dirrm %%DATADIR%%/qimage
 @dirrm %%DATADIR%%/profiles
 @dirrm %%DATADIR%%/presets/filter/volume
 @dirrm %%DATADIR%%/presets/filter/brightness
 @dirrm %%DATADIR%%/presets/filter
+@dirrm %%DATADIR%%/presets/consumer/avformat/stills
+@dirrm %%DATADIR%%/presets/consumer/avformat/lossless
+@dirrm %%DATADIR%%/presets/consumer/avformat/hdv_720_60p
+@dirrm %%DATADIR%%/presets/consumer/avformat/hdv_720_50p
+@dirrm %%DATADIR%%/presets/consumer/avformat/hdv_720_30p
+@dirrm %%DATADIR%%/presets/consumer/avformat/hdv_720_25p
+@dirrm %%DATADIR%%/presets/consumer/avformat/hdv_1080_60i
+@dirrm %%DATADIR%%/presets/consumer/avformat/hdv_1080_50i
+@dirrm %%DATADIR%%/presets/consumer/avformat/hdv_1080_30p
+@dirrm %%DATADIR%%/presets/consumer/avformat/hdv_1080_25p
 @dirrm %%DATADIR%%/presets/consumer/avformat/dv_pal_wide
 @dirrm %%DATADIR%%/presets/consumer/avformat/dv_pal
 @dirrm %%DATADIR%%/presets/consumer/avformat/dv_ntsc_wide
