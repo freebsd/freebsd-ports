@@ -26,4 +26,8 @@ PLIST_FILES=	bin/xclip bin/xclip-copyfile bin/xclip-cutfile bin/xclip-pastefile
 pre-configure:
 	@cd ${WRKSRC}; ./bootstrap
 
+post-patch:
+	${REINPLACE_CMD} 's,mktemp,mktemp -t xclip,' \
+		${WRKSRC}/xclip-copyfile
+
 .include <bsd.port.mk>
