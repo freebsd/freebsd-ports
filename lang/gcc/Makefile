@@ -1,10 +1,4 @@
-# ex:ts=8
-# Ports collection makefile for:	gcc
-# Date created:				2011-09-25
-# Whom:					Gerald Pfeifer <gerald@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gcc
 PORTVERSION=	4.6.3
@@ -44,13 +38,12 @@ MAKE_JOBS_SAFE=	yes
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure
 
-OPTIONS=	JAVA	"Enable the Java frontend (i386 and amd64 only)"	on
+OPTIONS_DEFINE_i386=	JAVA
+OPTIONS_DEFINE_amd64=	JAVA
+OPTIONS_DEFAULT_i386=	JAVA
+OPTIONS_DEFAULT_amd64=	JAVA
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != i386 && ${ARCH} != amd64
-WITHOUT_JAVA=	yes
-.endif
 
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
@@ -98,7 +91,7 @@ INFO=		gcc${SUFFIX}/cpp \
 INFO+=		gcc${SUFFIX}/libquadmath
 .endif
 
-.if ! defined(WITHOUT_JAVA)
+.if ${PORT_OPTIONS:MJAVA}
 ECJ_JAR=	ecj-4.5.jar
 MASTER_SITES+=	${MASTER_SITE_SOURCEWARE:S|$|:ecj|}
 MASTER_SITE_SUBDIR+=	java/:ecj
