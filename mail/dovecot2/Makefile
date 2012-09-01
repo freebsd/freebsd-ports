@@ -82,7 +82,7 @@ PORTEXAMPLES=	*
 
 ## kqueue(2) support
 #
-.if ${PORT_OPTIONS:MKQUEUE)
+.if ${PORT_OPTIONS:MKQUEUE}
 CONFIGURE_ARGS+=--with-ioloop=kqueue
 .endif
 
