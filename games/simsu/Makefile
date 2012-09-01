@@ -47,7 +47,7 @@ do-install:
 
 # Icons
 	${MKDIR} ${PREFIX}/share/icons/hicolor
-.for d in incons
+.for d in icons
 	@(cd ${WRKSRC}/${d} && ${COPYTREE_SHARE} hicolor ${PREFIX}/share/icons/)
 .endfor
 
