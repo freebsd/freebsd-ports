@@ -7,7 +7,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=bugzilla-ru/bugzilla-${PORTVERSION:R}-ru/${PORTVERSION}
 DISTNAME=	bugzilla-${PORTVERSION}-ru-20120809
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	bugzilla@FreeBSD.org
 COMMENT=	Russian localization for Bugzilla
 
 RUN_DEPENDS=	bugzilla>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla42
