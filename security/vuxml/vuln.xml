@@ -51,6 +51,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="342176a8-f464-11e1-8bd8-0022156e8794">
+    <topic>GNU gatekeeper -- denial of service</topic>
+    <affects>
+      <package>
+	<name>gatekeeper</name>
+	<range><lt>3.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jan Willamowius reports:</p>
+	<blockquote cite="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-3534">
+	  <p>GNU Gatekeeper before 3.1 does not limit the number
+	  of connections to the status port, which allows remote
+	  attackers to cause a denial of service (connection and
+	  thread consumption) via a large number of connections.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-3534</cvename>
+      <url>http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-3534</url>
+      <url>http://www.openwall.com/lists/oss-security/2012/08/25/4</url>
+      <url>http://www.gnugk.org/gnugk-3.1.html</url>
+    </references>
+    <dates>
+      <discovery>2012-08-15</discovery>
+      <entry>2012-09-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7c0fecd6-f42f-11e1-b17b-000c2977ec30">
     <topic>mediawiki -- multiple vulnerabilities</topic>
     <affects>
