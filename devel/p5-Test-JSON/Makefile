@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Test-JSON
-PORTVERSION=	0.10
-PORTREVISION=	1
+PORTVERSION=	0.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Test
@@ -18,7 +17,7 @@ MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Test JSON data
 
 RUN_DEPENDS=	p5-Test-Differences>=0.47:${PORTSDIR}/devel/p5-Test-Differences \
-		p5-Test-Tester>=0.10.3:${PORTSDIR}/devel/p5-Test-Tester \
+		p5-Test-Tester>=0.10.7:${PORTSDIR}/devel/p5-Test-Tester \
 		p5-JSON-Any>=1.20:${PORTSDIR}/converters/p5-JSON-Any
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
