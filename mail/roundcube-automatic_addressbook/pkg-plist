@@ -1,0 +1,34 @@
+%%WWWDIR%%/package.xml
+%%WWWDIR%%/Changelog
+%%WWWDIR%%/INSTALL
+%%WWWDIR%%/LICENSE
+%%WWWDIR%%/README
+%%WWWDIR%%/SQL/mssql.initial.sql
+%%WWWDIR%%/SQL/mssql.update.sql
+%%WWWDIR%%/SQL/mysql.initial.sql
+%%WWWDIR%%/SQL/mysql.update.sql
+%%WWWDIR%%/SQL/postgres.initial.sql
+%%WWWDIR%%/SQL/postgres.update.sql
+%%WWWDIR%%/SQL/sqlite.initial.sql
+%%WWWDIR%%/SQL/sqlite.update.sql
+%%WWWDIR%%/automatic_addressbook.php
+%%WWWDIR%%/automatic_addressbook_backend.php
+%%WWWDIR%%/config/config.inc.php.dist
+%%WWWDIR%%/localization/bg_BG.inc
+%%WWWDIR%%/localization/de_DE.inc
+%%WWWDIR%%/localization/el_GR.inc
+%%WWWDIR%%/localization/en_EN.inc
+%%WWWDIR%%/localization/en_US.inc
+%%WWWDIR%%/localization/es_ES.inc
+%%WWWDIR%%/localization/fr_FR.inc
+%%WWWDIR%%/localization/gl_ES.inc
+%%WWWDIR%%/localization/hu_HU.inc
+%%WWWDIR%%/localization/it_IT.inc
+%%WWWDIR%%/localization/nl_NL.inc
+%%WWWDIR%%/localization/ru_RU.inc
+%%WWWDIR%%/localization/vi_VN.inc
+%%WWWDIR%%/localization/zh_CN.inc
+@dirrm %%WWWDIR%%/localization
+@dirrm %%WWWDIR%%/SQL
+@dirrmtry %%WWWDIR%%/config
+@dirrmtry %%WWWDIR%%
