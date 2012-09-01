@@ -1,12 +1,7 @@
-# New ports collection makefile for:	ajaxzip2-data
-# Date created:		4 Mar 2012
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ajaxzip2
-PORTVERSION=	20120629
+PORTVERSION=	20120831
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kuriyama
