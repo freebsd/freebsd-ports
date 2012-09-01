@@ -4,12 +4,11 @@
 #
 # $FreeBSD$
 
-MPLAYER_SNAPSHOT_DATE=	2012-03-22
-MPLAYER_PORT_VERSION=	1.0.r${MPLAYER_SNAPSHOT_DATE:S/-//g}
+MPLAYER_SNAPSHOT_DATE=	2012-07-21
+MPLAYER_PORT_VERSION=	1.1.r${MPLAYER_SNAPSHOT_DATE:S/-//g}
 CATEGORIES?=	multimedia audio
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
-		http://www.rrr.de/~riggs/mplayer/
-DISTNAME=	mplayer-${MPLAYER_PORT_VERSION:S/.r/rc/g}
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+DISTNAME=	mplayer-${MPLAYER_PORT_VERSION:S/.r/./g}
 WRKSRC=		${WRKDIR}/mplayer-export-${MPLAYER_SNAPSHOT_DATE}
 
 PROJECTHOST=	bsdistfiles
@@ -19,7 +18,7 @@ MAINTAINER?=	thomas.e.zander@googlemail.com
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		freetype.9:${PORTSDIR}/print/freetype2
+		freetype:${PORTSDIR}/print/freetype2
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/yasm:${PORTSDIR}/devel/yasm
 

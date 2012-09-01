@@ -11,15 +11,6 @@
  
 --- configure.orig	2011-12-31 00:40:03.990976000 +0100
 +++ configure	2011-12-31 01:33:51.407685009 +0100
-@@ -1533,7 +1533,7 @@
- fi
- 
- extra_cflags="-I. -Iffmpeg $extra_cflags"
--extra_ldflags="-lm $extra_ldflags"
-+extra_ldflags="-lm $extra_ldflags -L$_prefix/lib"
- _timer=timer-linux.c
- _getch=getch2.c
- 
 @@ -2683,10 +2683,6 @@
  def_ebx_available='#define HAVE_EBX_AVAILABLE 0'
  def_xmm_clobbers='#define HAVE_XMM_CLOBBERS 0'
