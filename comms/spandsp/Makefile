@@ -18,7 +18,7 @@ COMMENT=	A DSP library and software FAX machine
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool
+USE_AUTOTOOLS=	libtool autoconf
 USE_GMAKE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
