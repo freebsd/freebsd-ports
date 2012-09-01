@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-Pager
-PORTVERSION=	0.06
+PORTVERSION=	0.24
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,8 +21,5 @@ MAN3=		IO::Pager::Buffered.3 \
 		IO::Pager::Page.3 \
 		IO::Pager::Unbuffered.3 \
 		IO::Pager.3
-
-post-patch:
-	@${RM} ${WRKSRC}/lib/IO/Pager.pm~
 
 .include <bsd.port.mk>
