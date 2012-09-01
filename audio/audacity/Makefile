@@ -1,12 +1,7 @@
-# New ports collection makefile for:	audacity
-# Date created:				21 Jul 2001
-# Whom:					Marc van Woerkom <3d@freebsd.org>
-#
 # $FreeBSD$
 
 PORTNAME=	audacity
-PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTVERSION=	2.0.2
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE \
 		SF/${PORTNAME}/${PORTNAME}-unstable/${PORTVERSION}
