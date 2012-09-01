@@ -22,7 +22,7 @@ OPTIONS=	SYS_SSL "Build with OpenSSL support (from system)" off \
 		PORTS_SSL "Build with OpenSSL support (from ports)" on \
 		TCP_WRAPPERS "Build with TCP Wrappers" off \
 		SQL "Build with database (libdbi) support" off \
-		SPOOF "Build with spoof source support" off \
+		SPOOF "Build with spoof source support" on \
 		IPV6 "Build with IPV6 support" on \
 		PCRE "Build with PCRE support" on \
 		JSON_C "Build with JSON-C support" off \
@@ -45,6 +45,10 @@ SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 		--enable-dynamic-linking
+
+.if !defined(WITH_SPOOF)
+BROKEN= 	Fails to build without SPOOF support.
+.endif
 
 .if defined(WITH_SYS_SSL) && defined(WITH_PORTS_SSL)
 BROKEN=		SYS_SSL and PORTS_SSL are mutually exclusive
