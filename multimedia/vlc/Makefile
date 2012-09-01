@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	1.1.13
-PORTREVISION=	12
+DISTVERSION=	2.0.3
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
-MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
+MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/p/-pre/}/ \
 		http://ftp.snt.utwente.nl/pub/software/videolan/${PORTNAME}/${DISTVERSION}/ \
 		ftp://ftp.crans.org/pub/videolan/${PORTNAME}/${DISTVERSION}/
+DISTNAME=	${PORTNAME}-${DISTVERSION:S/p/-pre/}
 
 MAINTAINER=	jsa@FreeBSD.org
 COMMENT=	Qt4 based multimedia player and streaming server
@@ -20,22 +20,23 @@ COMMENT=	Qt4 based multimedia player and streaming server
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	avcodec:${PORTSDIR}/multimedia/ffmpeg \
-		gcrypt:${PORTSDIR}/security/libgcrypt \
+LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt \
 		proxy:${PORTSDIR}/net/libproxy
+BUILD_DEPENDS=	ffmpeg${FFMPEG_SUFFIX}>0.11:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFFIX}
+RUN_DEPENDS=	ffmpeg${FFMPEG_SUFFIX}>0.11:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFFIX}
 
-OPTIONS_DEFINE=	A52 AALIB ASS AVAHI CACA DBUS DIRAC DOCS DTS DVB DVDREAD \
-		DVDNAV FAAD FLAC FLUID FRIBIDI GGI GLX GNOMEVFS GNUTLS GOOM \
+OPTIONS_DEFINE=	A52 AALIB ASS AVAHI CACA DBUS DIRAC DOCS DTS DVDREAD \
+		DVDNAV FAAD FLAC FLUID FRIBIDI GLX GNOMEVFS GNUTLS GOOM \
 		HTTPD JACK LIVEMEDIA LUA MAD MATROSKA MODPLUG MPEG2 MTP \
-		MUSEPACK NCURSES NLS NOTIFY OPTIMIZED_CFLAGS OGG OPENGL PLUGIN \
-		PNG PORTAUDIO PROJM PULSEAUDIO QT4 REALAUDIO REMOTEOSD RUNROOT \
+		MUSEPACK NCURSES NLS NOTIFY OPTIMIZED_CFLAGS OGG \
+		PNG PORTAUDIO PROJM PULSEAUDIO QT4 REALAUDIO RUNROOT \
 		SAMBA SCHROED SDL SHOUTCAST SKINS STREAM SPEEX SQLITE SVG \
-		SVGALIB TAGLIB THEORA TREMOR TWOLAME UPNP V4L VAAPI VCD \
+		TAGLIB THEORA TREMOR TWOLAME UPNP V4L VAAPI VCD \
 		VORBIS X11 X264 XCB XOSD XVIDEO ZVBI SERVER_ONLY DEBUG \
 		UNSAFE_PLUGINS
-OPTIONS_DEFAULT=A52 AVAHI DBUS DTS DVB DVDREAD DVDNAV FAAD FLAC GLX GNUTLS \
-		HTTPD LIVEMEDIA LUA MAD MATROSKA MPEG2 OGG PNG QT4 REALAUDIO \
-		REMOTEOSD SDL SKINS STREAM SPEEX TAGLIB THEORA TWOLAME V4L \
+OPTIONS_DEFAULT=A52 AVAHI DBUS DTS DVDREAD DVDNAV FAAD FLAC GLX GNUTLS \
+		HTTPD LUA MAD MATROSKA MPEG2 OGG PNG QT4 REALAUDIO \
+		SDL SKINS STREAM SPEEX TAGLIB THEORA TWOLAME V4L \
 		VCD VORBIS X11 X264 XCB XVIDEO
 A52_DESC=	A52 DVD audio decoder
 AALIB_DESC=	Aalib Console Graphics Support
@@ -44,14 +45,12 @@ CACA_DESC=	libcaca Console Graphics Support
 DBUS_DESC=	D-Bus control support
 DIRAC_DESC=	Dirac support
 DTS_DESC=	DTS DVD audio decoder
-DVB_DESC=	Digital Video Broadcasting support
 DVDREAD_DESC=	DVD Playback support
 DVDNAV_DESC=	DVD menu navigation
 FAAD_DESC=	Faad audio decoder (mp4/aac) support
 FLAC_DESC=	Flac audio codec support
 FLUID_DESC=	Fluidsynth MIDI support
 FRIBIDI_DESC=	FriBidi bidirectional unicode support
-GGI_DESC=	General Graphic Interface support
 GLX_DESC=	X11 OpenGL rendering
 GNOMEVFS_DESC=	Gnome VFS support
 GOOM_DESC=	the Goom visual effect library
@@ -61,20 +60,16 @@ MPEG2_DESC=	Mpeg-2 audio/video decoder Support
 MTP_DESC=	support for the Music Transport Protocol
 NCURSES_DESC=	ncurses (console) interface
 OGG_DESC=	Ogg audio decoder support
-OPENGL_DESC=	OpenGL acceleration support
-PLUGIN_DESC=	VLC Mozilla Plugin
 PNG_DESC=	PNG graphics format support
 PROJM_DESC=	ProjectM visualizations
 QT4_DESC=	Qt4 Interface
 REALAUDIO_DESC=	Real Audio(R) support
-REMOTEOSD_DESC=	Remote OSD support
 RUNROOT_DESC=	Enable running as root
 SAMBA_DESC=	SAMBA Access module
 SCHROED_DESC=	Schroedinger decoder
 SKINS_DESC=	winamp skins interface
 STREAM_DESC=	stream output
 SQLITE_DESC=	SQLite database support
-SVGALIB_DESC=	SVGALIB video output
 TAGLIB_DESC=	ID3 tag and Ogg comment support
 THEORA_DESC=	OGG/Vorbis video codec support
 TREMOR_DESC=	Tremor voice audio (redundant with Vorbis)
@@ -83,17 +78,18 @@ UPNP_DESC=	UPnP network device control
 V4L_DESC=	Video4Linux video capture compatibility
 VAAPI_DESC=	Support hardware decoding via VAAPI
 VCD_DESC=	Video CD support
-XCB_DESC=Use X C Bindings for X11 output
-XOSD_DESC=X11 On Screen Display support
-XVIDEO_DESC=X11 video rendering
-ZVBI_DESC=VBI decoding support
+XCB_DESC=	Use X C Bindings for X11 output
+XOSD_DESC=	X11 On Screen Display support
+XVIDEO_DESC=	X11 video rendering
+ZVBI_DESC=	VBI decoding support
 SERVER_ONLY_DESC=	Only build server parts
 UNSAFE_PLUGINS_DESC=	Install unsafe, unsupported plugins
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_PERL5_BUILD=yes
+USE_GL=yes
 MAKE_JOBS_SAFE=	yes
 WANT_GNOME=	yes
 
@@ -102,12 +98,19 @@ PLIST=		${WRKDIR}/plist
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+FFMPEG_SUFFIX=	-011
+FFMPEG_INCDIR=	${LOCALBASE}/include/ffmpeg${FFMPEG_SUFFIX}
+FFMPEG_LIBDIR=	${LOCALBASE}/lib/ffmpeg${FFMPEG_SUFFIX}
 CPPFLAGS+=	-I${FAKEDIR}/include -I${WRKSRC}/include \
-		-I${LOCALBASE}/include -I${LOCALBASE}/ffmpeg \
+		-I${FFMPEG_INCDIR} \
 		${PTHREAD_CFLAGS}
 CONFIGURE_ENV=	LIBS="-lc"
 LDFLAGS+=	-L${FAKEDIR}/lib \
-		-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lc
+		${PTHREAD_LIBS} -lc
+CONFIGURE_ENV+=	AVCODEC_CFLAGS="-I${FFMPEG_INCDIR}" AVCODEC_LIBS="-L${FFMPEG_LIBDIR} -Wl,-rpath -Wl,${FFMPEG_LIBDIR} -lavcodec${FFMPEG_SUFFIX}"
+CONFIGURE_ENV+=	AVFORMAT_CFLAGS="-I${FFMPEG_INCDIR}" AVFORMAT_LIBS="-L${FFMPEG_LIBDIR} -Wl,-rpath -Wl,${FFMPEG_LIBDIR} -lavformat${FFMPEG_SUFFIX}"
+CONFIGURE_ENV+=	POSTPROC_CFLAGS="-I${FFMPEG_INCDIR}" POSTPROC_LIBS="-L${FFMPEG_LIBDIR} -Wl,-rpath -Wl,${FFMPEG_LIBDIR} -lpostproc${FFMPEG_SUFFIX}"
+CONFIGURE_ENV+=	SWSCALE_CFLAGS="-I${FFMPEG_INCDIR}" SWSCALE_LIBS="-L${FFMPEG_LIBDIR} -Wl,-rpath -Wl,${FFMPEG_LIBDIR} -lswscale${FFMPEG_SUFFIX}"
 
 CONFIGURE_ARGS+=	--enable-vlc \
 			--enable-avcodec \
@@ -120,16 +123,12 @@ CONFIGURE_ARGS+=	--enable-vlc \
 			--disable-dc1394 \
 			--disable-directfb \
 			--disable-dv \
-			--disable-hd1000a \
-			--disable-hd1000v \
 			--disable-loader \
-			--disable-osso_screensaver \
 			--disable-telx \
 			--disable-udev \
 			--disable-update-check
 
 MAN1=		vlc.1 \
-		vlc-config.1 \
 		vlc-wrapper.1
 
 .include <bsd.port.options.mk>
@@ -138,7 +137,7 @@ MAN1=		vlc.1 \
 # Use these for batch control of certain types of builds
 
 # Disable DVD specific features
-.if !${PORT_OPTIONS:MDVD}
+.if empty(PORT_OPTIONS:MDVD)
 WITHOUT_A52=yes
 WITHOUT_DTS=yes
 WITHOUT_DVDREAD=yes
@@ -184,6 +183,12 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules__misc__inhibit__xdg.c \
 		${FILESDIR}/extra-patch-modules__misc__inhibit__xscreensaver.c
 .endif
 
+# base clang in 9.0 builds a corrupted lib/vlc/plugins/gui/libqt4_plugin.so
+.if (${CC:T:Mclang} == "clang") && \
+	(${OSVERSION} >= 900014) && (${OSVERSION} < 900506)
+IGNORE=		base clang version too old, set NO_IGNORE to override
+.endif
+
 .if ${ARCH} == "powerpc64"
 CONFIGURE_ARGS+=--enable-altivec # VLC's config script doesn't know to do this
 .endif
@@ -204,7 +209,8 @@ WITH_DVD_DEVICE?=/dev/acd0
 
 # If you change this value, the dependancy will not be recorded
 .if !defined(WITH_VLC_DEFAULT_FONT)
-WITH_VLC_DEFAULT_FONT=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
+WITH_VLC_DEFAULT_FONT=		${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
+WITH_VLC_DEFAULT_MONO_FONT=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/VeraMono.ttf
 RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 .endif
 
@@ -272,18 +278,6 @@ CONFIGURE_ARGS+=--enable-dca
 CONFIGURE_ARGS+=--disable-dca
 .endif
 
-.if ${PORT_OPTIONS:MDVB}
-.if ${PORT_OPTIONS:MV4L}
-LIB_DEPENDS+=	dvbpsi:${PORTSDIR}/multimedia/libdvbpsi
-CONFIGURE_ARGS+=--enable-dvb --enable-dvbpsi \
-		--with-dvbpsi=${LOCALBASE}
-.else
-IGNORE=	DVB option requires V4L option
-.endif
-.else
-CONFIGURE_ARGS+=--disable-dvb --disable-dvbpsi
-.endif
-
 .if ${PORT_OPTIONS:MDVDREAD}
 LIB_DEPENDS+=	dvdread:${PORTSDIR}/multimedia/libdvdread
 CONFIGURE_ARGS+=--enable-dvdread
@@ -324,13 +318,6 @@ LIB_DEPENDS+=	fribidi:${PORTSDIR}/converters/fribidi
 CONFIGURE_ARGS+=--enable-fribidi
 .else
 CONFIGURE_ARGS+=--disable-fribidi
-.endif
-
-.if ${PORT_OPTIONS:MGGI}
-LIB_DEPENDS+=	ggi:${PORTSDIR}/graphics/libggi
-CONFIGURE_ARGS+=--enable-ggi
-.else
-CONFIGURE_ARGS+=--disable-ggi
 .endif
 
 .if ${PORT_OPTIONS:MGLX}
@@ -379,8 +366,15 @@ CONFIGURE_ARGS+=--disable-jack
 
 .if ${PORT_OPTIONS:MLIVEMEDIA}
 BUILD_DEPENDS+=	${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
-CONFIGURE_ARGS+=--enable-live555 \
-		--with-live555-tree=${LOCALBASE}/live
+CONFIGURE_ARGS+=--enable-live555
+CPPFLAGS+=	-I${LOCALBASE}/live/liveMedia/include \
+		-I${LOCALBASE}/live/BasicUsageEnvironment/include \
+		-I${LOCALBASE}/live/UsageEnvironment/include \
+		-I${LOCALBASE}/live/groupsock/include
+LDFLAGS+=	-L${LOCALBASE}/live/groupsock \
+		-L${LOCALBASE}/live/liveMedia \
+		-L${LOCALBASE}/live/UsageEnvironment \
+		-L${LOCALBASE}/live/BasicUsageEnvironment
 .else
 CONFIGURE_ARGS+=--disable-live555
 .endif
@@ -389,7 +383,7 @@ CONFIGURE_ARGS+=--disable-live555
 .if ${PORT_OPTIONS:MLUA}
 USE_LUA=5.1+
 WANT_LUA_VER=5.1
-CONFIGURE_ENV=	LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua"
+CONFIGURE_ENV+=	LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua"
 CONFIGURE_ARGS+=--enable-lua LUAC=luac-${WANT_LUA_VER}
 .else
 CONFIGURE_ARGS+=--disable-lua
@@ -470,24 +464,6 @@ WITHOUT_VORBIS=	yes
 CONFIGURE_ARGS+=--disable-ogg
 .endif
 
-.if ${PORT_OPTIONS:MOPENGL}
-USE_GL=yes
-CONFIGURE_ARGS+=--enable-opengl
-.else
-CONFIGURE_ARGS+=--disable-opengl
-.endif
-
-.if ${PORT_OPTIONS:MPLUGIN}
-USE_GECKO=	libxul
-USE_WEBPLUGINS=	gecko*
-WEBPLUGINS_FILES=libvlcplugin.so
-.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
-CONFIGURE_ARGS+=--enable-mozilla	\
-		--with-mozilla-pkg=${LOCALBASE}/libdata/pkgconfig/mozilla-plugin.pc
-.else
-CONFIGURE_ARGS+=--disable-mozilla
-.endif
-
 .if ${PORT_OPTIONS:MPNG}
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=--enable-png
@@ -513,7 +489,7 @@ CONFIGURE_ARGS+=--disable-projectm
 LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
 CONFIGURE_ARGS+=--enable-pulse
 .else
-CONFIGURE_ARGS+=--disable-pulse
+CONFIGURE_ARGS+=--enable-pulse=no
 .endif
 
 # WITHOUT_QT4
@@ -523,12 +499,6 @@ CONFIGURE_ARGS+=--disable-pulse
 CONFIGURE_ARGS+=--enable-real --enable-realrtsp
 .else
 CONFIGURE_ARGS+=--disable-real --disable-realrtsp
-.endif
-
-.if ${PORT_OPTIONS:MREMOTEOSD}
-CONFIGURE_ARGS+=--enable-remoteosd
-.else
-CONFIGURE_ARGS+=--disable-remoteosd
 .endif
 
 .if ${PORT_OPTIONS:MRUNROOT}
@@ -603,13 +573,6 @@ CONFIGURE_ARGS+=--enable-svg
 CONFIGURE_ARGS+=--disable-svg
 .endif
 
-.if ${PORT_OPTIONS:MSVGALIB}
-LIB_DEPENDS+=	vga:${PORTSDIR}/graphics/svgalib
-CONFIGURE_ARGS+=--enable-svgalib
-.else
-CONFIGURE_ARGS+=--disable-svgalib
-.endif
-
 .if ${PORT_OPTIONS:MTAGLIB}
 LIB_DEPENDS+=	tag:${PORTSDIR}/audio/taglib
 CONFIGURE_ARGS+=--enable-taglib
@@ -647,10 +610,11 @@ CONFIGURE_ARGS+=--disable-upnp
 .endif
 
 .if ${PORT_OPTIONS:MV4L} || ${PORT_OPTIONS:MDVB}
-LIB_DEPENDS+=	v4l1:${PORTSDIR}/multimedia/libv4l
-CONFIGURE_ARGS+=--enable-v4l --enable-v4l2
+LIB_DEPENDS+=	v4l1:${PORTSDIR}/multimedia/libv4l \
+		dvbpsi:${PORTSDIR}/multimedia/libdvbpsi
+CONFIGURE_ARGS+=--enable-v4l2
 .else
-CONFIGURE_ARGS+=--disable-v4l --disable-v4l2
+CONFIGURE_ARGS+=--disable-v4l2
 .endif
 
 .if ${PORT_OPTIONS:MVAAPI}
@@ -724,12 +688,16 @@ post-patch:
 		-e '\|LIBS|s|-lrt||' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf|${WITH_VLC_DEFAULT_FONT}|' \
-		${WRKSRC}/modules/misc/freetype.c
+		${WRKSRC}/modules/text_renderer/freetype.c
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${WITH_CDROM_DEVICE}|g' \
 		-e 's|/dev/dvd|${WITH_DVD_DEVICE}|g' \
 		${WRKSRC}/include/vlc_config.h
 	${REINPLACE_CMD} -e 's|portaudio\.h|portaudio2/&|g' \
 		${WRKSRC}/modules/audio_output/portaudio.c
+	${REINPLACE_CMD} -e "s|/usr/share/projectM|${LOCALBASE}/share/projectM|g" \
+		-e "s|/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf|${WITH_VLC_DEFAULT_FONT}|g" \
+		-e "s|/usr/share/fonts/truetype/ttf-dejavu/DejaVuSansMono.ttf|${WITH_VLC_DEFAULT_MONO_FONT}|g" \
+		${WRKSRC}/modules/visualization/projectm.cpp
 
 pre-configure:
 .if ${PORT_OPTIONS:MPLUGIN}
@@ -797,7 +765,7 @@ pre-install:
 	cd ${FAKEDIR}/share/locale && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's|^|share/locale/|' >> ${PLIST}
 .endif
-.for locale in ach cgg ckb co ff fur kk km lg my oc ps tet tl zu
+.for locale in ach cgg ckb co ff fur kk km lg my oc ps tet tl zu kmr
 	${ECHO_CMD} "@dirrmtry share/locale/${locale}/LC_MESSAGES" >> ${PLIST}
 	${ECHO_CMD} "@dirrmtry share/locale/${locale}" >> ${PLIST}
 .endfor
@@ -818,7 +786,6 @@ do-install:
 	cd ${FAKEDIR}/share && ${FIND} . | \
 		${CPIO} -vpdm -L -R ${SHAREOWN} ${PREFIX}/share
 	${INSTALL_MAN} ${WRKSRC}/doc/vlc.1 ${MANPREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/doc/vlc-config.1 ${MANPREFIX}/man/man1/
 	if [ ! -d ${PREFIX}/share/applications ]; then \
 		${MKDIR} ${PREFIX}/share/applications ; \
 	fi
