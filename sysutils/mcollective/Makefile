@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mcollective
-PORTVERSION=	2.1.0
-PORTREVISION=	2
+PORTVERSION=	2.1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
