@@ -1,0 +1,13 @@
+--- src/qt/qtipcserver.cpp.orig	2012-06-19 16:44:55.000000000 -0400
++++ src/qt/qtipcserver.cpp	2012-09-02 09:39:34.034704891 -0400
+@@ -50,6 +50,10 @@
+     // TODO: implement bitcoin: URI handling the Mac Way
+     return;
+ #endif
++#ifdef __FreeBSD__
++    // TODO: implement bitcoin: URI handling the Mac Way
++    return;
++#endif
+ #ifdef WIN32
+     // TODO: THOROUGHLY test boost::interprocess fix,
+     // and make sure there are no Windows argument-handling exploitable

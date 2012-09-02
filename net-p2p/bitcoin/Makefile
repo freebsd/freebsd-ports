@@ -7,6 +7,7 @@
 
 PORTNAME=	bitcoin
 PORTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	ports@FreeBSD.org
