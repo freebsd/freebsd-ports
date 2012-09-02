@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	rhaamo@gruik.at
 COMMENT=	XML parser library mainly designed for Jabber applications
 
-LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls
 
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtool
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
+USE_PKGCONFIG=	build
 
 INFO=	iksemel
 
