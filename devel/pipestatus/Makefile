@@ -10,7 +10,7 @@ PORTVERSION=	0.6.0
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	UNIX/POSIX shell helper for running pipes safely
 
 NO_BUILD=	yes
