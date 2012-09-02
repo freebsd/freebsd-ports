@@ -1,13 +1,7 @@
-# New ports collection makefile for:	R-cran-spdep
-# Date created:		2011-09-17
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	spdep
-DISTVERSION=	0.5-46
-PORTREVISION=	1
+DISTVERSION=	0.5-50
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
