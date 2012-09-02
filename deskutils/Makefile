@@ -82,6 +82,7 @@
     SUBDIR += google-gadgets
     SUBDIR += gourmet
     SUBDIR += griffith
+    SUBDIR += growl-for-linux
     SUBDIR += gruler
     SUBDIR += gtg
     SUBDIR += gtimer
