@@ -1,12 +1,7 @@
-# New ports collection makefile for:	cppi
-# Date created:		2006-11-05
-# Whom:			trasz <trasz@pin.if.uz.zgora.pl>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	cppi
-PORTVERSION=	1.16
+PORTVERSION=	1.17
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}

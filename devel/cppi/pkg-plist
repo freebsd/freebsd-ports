@@ -1,7 +1,9 @@
 bin/cppi
+%%NLS%%share/locale/de/LC_MESSAGES/cppi.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/cppi.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/cppi.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/cppi.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/cppi.mo
 %%NLS%%share/locale/it/LC_MESSAGES/cppi.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/cppi.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/cppi.mo
