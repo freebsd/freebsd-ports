@@ -29,6 +29,8 @@ USE_XFCE=	configenv libgui libutil panel xfconf
 USE_XORG=	xproto x11 xrender xext xinerama xrandr xcursor xcomposite \
 		xdamage xfixes xi xau xdmcp
 
+MAKE_JOBS_UNSAFE=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
 

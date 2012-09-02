@@ -17,6 +17,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small applications for KDE
 
+MAKE_JOBS_UNSAFE=	yes
+
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
 
