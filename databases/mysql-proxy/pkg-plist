@@ -29,6 +29,7 @@ include/lua-scope.h
 include/my_rdtsc.h
 include/network-address-lua.h
 include/network-address.h
+include/network-asn1.h
 include/network-backend-lua.h
 include/network-backend.h
 include/network-conn-pool-lua.h
@@ -42,9 +43,11 @@ include/network-mysqld-masterinfo.h
 include/network-mysqld-packet.h
 include/network-mysqld-proto.h
 include/network-mysqld.h
+include/network-packet.h
 include/network-queue.h
 include/network-socket-lua.h
 include/network-socket.h
+include/network-spnego.h
 include/network_mysqld_proto_binary.h
 include/network_mysqld_type.h
 include/string-len.h
