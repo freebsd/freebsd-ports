@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jmref
-PORTVERSION=	18.3
+PORTVERSION=	18.4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://iphome.hhi.de/suehring/tml/download/
 DISTNAME=	jm${PORTVERSION}
@@ -20,6 +20,9 @@ WRKSRC=		${WRKDIR}/JM
 
 PLIST_FILES=	bin/ldecod bin/lencod \
 		bin/rtp_loss bin/rtpdump
+
+USE_DOS2UNIX=	Makefile
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/ldecod.exe ${PREFIX}/bin/ldecod
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/lencod.exe ${PREFIX}/bin/lencod

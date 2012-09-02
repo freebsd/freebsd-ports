@@ -1,0 +1,11 @@
+--- Makefile.orig	2012-09-02 12:58:20.533707959 -0400
++++ Makefile	2012-09-02 12:58:32.071710098 -0400
+@@ -20,8 +20,6 @@
+ LLVM = $(shell $(CC) --version | grep LLVM)
+ ifneq ($(LLVM),)
+ 	CFLAGS+=-Qunused-arguments
+-else
+-	CFLAGS+=-Wno-unused-but-set-variable
+ endif
+ 
+ export DBG
