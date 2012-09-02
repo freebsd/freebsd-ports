@@ -1,12 +1,7 @@
-# New ports collection makefile for:	flex
-# Date created:		13 August 2006
-# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	flex
-PORTVERSION=	2.5.36
+PORTVERSION=	2.5.37
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}
 
