@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR= biblio/bibtex/utils/bibview-2.0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical interface for manipulating BibTeX bibliography databases
 
+MAKE_JOBS_SAFE=	yes
+
 USE_IMAKE=	yes
 USE_XORG=	ice sm x11 xaw xext xmu xt
 WRKSRC=		${WRKDIR}/bibview-${PORTVERSION}
