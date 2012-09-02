@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Test/File/ShareDir/TempDirObject.pm
+%%SITE_PERL%%/Test/File/ShareDir.pm
+@dirrmtry %%SITE_PERL%%/Test/File/ShareDir
+@dirrmtry %%SITE_PERL%%/Test/File
+@dirrmtry %%SITE_PERL%%/Test
