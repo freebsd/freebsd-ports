@@ -1,11 +1,7 @@
-# New ports collection makefile for:	qbittorrent
-# Date created:				11 August 2012
-# Whom:					Doug Barton <dougb@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	qbittorrent
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.2
 PORTREVISION?=	0
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
