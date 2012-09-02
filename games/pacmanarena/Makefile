@@ -10,15 +10,15 @@ DISTFILES=	${DISTNAME:S/na/n-a/}.tar.bz2 \
 		${PORTNAME}_icons.tar.gz:icons
 
 MAINTAINER=	nemysis@gmx.ch
-COMMENT=	A Pacman clone in full 3D with a few surprises
+COMMENT=	Pacman clone in full 3D with a few surprises
 
 LICENSE=	GPLv2
 
-EXTRACT_DEPENDS=zip:${PORTSDIR}/archivers/zip
+EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S/arena//}
 
-USE_AUTOTOOLS=	aclocal ${AUTOMAKE} ${AUTOCONF}
+GNU_CONFIGURE=	yes
 USE_SDL=	mixer net sdl
 
 PLIST_FILES=	bin/${PORTNAME} \
