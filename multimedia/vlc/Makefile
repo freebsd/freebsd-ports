@@ -15,7 +15,7 @@ MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSIO
 		ftp://ftp.crans.org/pub/videolan/${PORTNAME}/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION:S/p/-pre/}
 
-MAINTAINER=	jsa@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Qt4 based multimedia player and streaming server
 
 LICENSE=	GPLv2
@@ -194,8 +194,9 @@ IGNORE=		base clang version too old, set NO_IGNORE to override
 CONFIGURE_ARGS+=--enable-altivec # VLC's config script doesn't know to do this
 .endif
 
+# sometimes(?) misdetected causing build failure
 .if ${ARCH} == "i386"
-CONFIGURE_ARGS+=--disable-sse # sometimes(?) misdetected causing build failure
+CONFIGURE_ARGS+=--disable-sse --disable-mmx
 .endif
 
 # End OS specific hacks
