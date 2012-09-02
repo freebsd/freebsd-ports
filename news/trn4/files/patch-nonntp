@@ -1,0 +1,45 @@
+Fix compilation errors when building without NNTP support
+- Sean Eric Fagan <sef@Kithrup.COM>
+
+diff -ubr trn-4.0-test77/bits.c /usr/ports/news/trn4/work/trn-4.0-test77/bits.c
+--- bits.c	2010-09-01 23:12:26.000000000 -0700
++++ bits.c	2012-08-18 10:58:57.000000000 -0700
+@@ -623,8 +623,10 @@
+     char* xref_buf, *curxref;
+     char tmpbuf[128];
+ 
++#ifdef DF_NOXREFS
+     if (datasrc->flags & DF_NOXREFS)
+ 	return 0;
++#endif
+ 
+     if (inbackground())
+ 	spin(10);
+@@ -771,8 +773,10 @@
+     char* curxref;
+     char tmpbuf[128];
+ 
++#ifdef DF_NOXREFS
+     if (datasrc->flags & DF_NOXREFS)
+ 	return;
++#endif
+ 
+     if (inbackground())
+ 	spin(10);
+diff -ubr trn-4.0-test77/cache.c /usr/ports/news/trn4/work/trn-4.0-test77/cache.c
+--- cache.c	2001-02-14 15:53:26.000000000 -0800
++++ cache.c	2012-08-18 10:59:35.000000000 -0700
+@@ -821,8 +821,12 @@
+ {
+     register ART_NUM an;
+ 
+-    if (olden_days || (datasrc->flags & DF_NOXREFS) || xref_to_get > lastart)
++    if (olden_days || xref_to_get > lastart)
+ 	return TRUE;
++#ifdef DF_NOXREFS
++    if (datasrc->flags & DF_NOXREFS)
++	return TRUE;
++#endif
+     setspin(SPIN_BACKGROUND);
+     for (an=article_first(xref_to_get); an <= lastart; an=article_next(an)) {
+ 	if (input_pending())
