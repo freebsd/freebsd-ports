@@ -24,6 +24,7 @@
 %%DATADIR%%/dvorak_eo_eurokeys.kbd
 %%DATADIR%%/dvorak_eo_nativo.kbd
 %%DATADIR%%/dvorak_eo_uk.kbd
+%%DATADIR%%/dvorak_es_nativo.kbd
 %%DATADIR%%/dvorak_es_us.kbd
 %%DATADIR%%/dvorak_fr.kbd
 %%DATADIR%%/dvorak_fr_bepo.kbd
@@ -103,6 +104,8 @@
 %%DATADIR%%/qwerty_uk.kbd
 %%DATADIR%%/qwerty_us.kbd
 %%DATADIR%%/qwerty_us_2.kbd
+%%DATADIR%%/qwertz_ch_de.kbd
+%%DATADIR%%/qwertz_ch_fr.kbd
 %%DATADIR%%/qwertz_cz.kbd
 %%DATADIR%%/qwertz_de.kbd
 %%DATADIR%%/qwertz_hu.kbd
@@ -148,6 +151,7 @@ share/locale/sv/LC_MESSAGES/klavaro.mo
 share/locale/uk/LC_MESSAGES/klavaro.mo
 share/locale/ur/LC_MESSAGES/klavaro.mo
 share/locale/vi/LC_MESSAGES/klavaro.mo
+share/locale/wo/LC_MESSAGES/klavaro.mo
 share/locale/zh_CN/LC_MESSAGES/klavaro.mo
 @dirrmtry share/locale/ur/LC_MESSAGES
 @dirrmtry share/locale/ur
