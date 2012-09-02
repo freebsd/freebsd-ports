@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Date-Manip
-PORTVERSION=	6.32
+PORTVERSION=	6.33
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SBECK
@@ -21,6 +21,7 @@ TEST_DEPENDS=	p5-Test-Inter>=0:${PORTSDIR}/devel/p5-Test-Inter
 
 PERL_CONFIGURE=	YES
 
+MAN1=	dm_date.1 dm_zdump.1
 MAN3=	Date::Manip.3 Date::Manip::Base.3 Date::Manip::Calc.3 \
 	Date::Manip::Changes5.3 Date::Manip::Changes5to6.3 \
 	Date::Manip::Changes6.3 Date::Manip::Config.3 \

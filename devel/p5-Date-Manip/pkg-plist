@@ -1,3 +1,5 @@
+bin/dm_date
+bin/dm_zdump
 %%SITE_PERL%%/Date/Manip/Lang/catalan.pm
 %%SITE_PERL%%/Date/Manip/Lang/catalan.pod
 %%SITE_PERL%%/Date/Manip/Lang/danish.pm
