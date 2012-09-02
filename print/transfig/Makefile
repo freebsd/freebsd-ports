@@ -18,6 +18,8 @@ COMMENT=	Tools to convert Xfig's .fig files
 RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
+MAKE_JOBS_SAFE=	yes
+
 USE_GHOSTSCRIPT_RUN=	yes
 USE_IMAKE=	yes
 USE_XORG=	xpm
