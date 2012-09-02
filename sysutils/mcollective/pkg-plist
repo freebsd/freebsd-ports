@@ -4,6 +4,9 @@ sbin/mcollectived
 %%DATADIR%%/agent/discovery.rb
 %%DATADIR%%/agent/rpcutil.ddl
 %%DATADIR%%/agent/rpcutil.rb
+%%DATADIR%%/aggregate/average.rb
+%%DATADIR%%/aggregate/sum.rb
+%%DATADIR%%/aggregate/summary.rb
 %%DATADIR%%/application/completion.rb
 %%DATADIR%%/application/facts.rb
 %%DATADIR%%/application/find.rb
@@ -15,6 +18,8 @@ sbin/mcollectived
 %%DATADIR%%/audit/logfile.rb
 %%DATADIR%%/connector/activemq.rb
 %%DATADIR%%/connector/stomp.rb
+%%DATADIR%%/data/agent_data.ddl
+%%DATADIR%%/data/agent_data.rb
 %%DATADIR%%/data/fstat_data.ddl
 %%DATADIR%%/data/fstat_data.rb
 %%DATADIR%%/discovery/flatfile.ddl
@@ -38,142 +43,197 @@ sbin/mcollectived
 %%DATADIR%%/security/ssl.rb
 %%ETCDIR%%/client.cfg.dist
 %%ETCDIR%%/server.cfg.dist
-%%PORTDOCS%%%%DOCSDIR%%/classes/Array.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/Dir.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Agents.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Application.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Applications.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Client.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Config.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Connector.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Connector/Base.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/DDL.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/DDLValidationError.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Data.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Data/Base.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Data/Result.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Discovery.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Facts.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Facts/Base.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Generators.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Generators/AgentGenerator.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Generators/Base.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Generators/DataGenerator.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/InvalidRPCData.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Log.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Logger.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Logger/Base.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Logger/Console_logger.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Logger/File_logger.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Logger/Syslog_logger.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Matcher.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Matcher/Parser.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Matcher/Scanner.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Message.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/MissingRPCData.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/MsgDoesNotMatchRequestID.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/MsgTTLExpired.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/NotTargettedAtUs.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Optionparser.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/PluginManager.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/PluginPackager.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/PluginPackager/AgentDefinition.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/PluginPackager/StandardDefinition.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RPC.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RPC/ActionRunner.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RPC/Agent.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RPC/Audit.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RPC/Client.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RPC/Helpers.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RPC/Progress.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RPC/Reply.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RPC/Request.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RPC/Result.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RPC/Stats.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RPCAborted.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RPCError.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Registration.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Registration/Base.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Runner.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RunnerStats.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/SSL.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Security.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Security/Base.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/SecurityValidationFailed.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Shell.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/UnixDaemon.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/UnknownRPCAction.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/UnknownRPCError.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Util.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/WindowsDaemon.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/String.html
-%%PORTDOCS%%%%DOCSDIR%%/classes/Symbol.html
+%%PORTDOCS%%%%DOCSDIR%%/Array.html
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.html
+%%PORTDOCS%%%%DOCSDIR%%/Dir.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Agent.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Agents.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Aggregate.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Aggregate/Base.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Aggregate/Result.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Aggregate/Result/Base.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Aggregate/Result/CollectionResult.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Aggregate/Result/NumericResult.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Application.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Applications.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Client.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Config.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Connector.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Connector/Base.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/DDL.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/DDLValidationError.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Data.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Data/Base.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Data/Result.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Discovery.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Facts.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Facts/Base.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Generators.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Generators/AgentGenerator.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Generators/Base.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Generators/DataGenerator.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/InvalidRPCData.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Log.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Logger.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Logger/Base.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Logger/Console_logger.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Logger/File_logger.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Logger/Syslog_logger.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Matcher.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Matcher/Parser.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Matcher/Scanner.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Message.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/MissingRPCData.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/MsgDoesNotMatchRequestID.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/MsgTTLExpired.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/NotTargettedAtUs.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Optionparser.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/PluginManager.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/PluginPackager.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/PluginPackager/AgentDefinition.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/PluginPackager/StandardDefinition.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/RPC.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/RPC/ActionRunner.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/RPC/Agent.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/RPC/Audit.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/RPC/Client.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/RPC/Helpers.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/RPC/Progress.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/RPC/Reply.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/RPC/Request.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/RPC/Result.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/RPC/Stats.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/RPCAborted.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/RPCError.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Registration.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Registration/Base.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Runner.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/RunnerStats.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/SSL.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Security.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Security/Base.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/SecurityValidationFailed.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Shell.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/UnixDaemon.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/UnknownRPCAction.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/UnknownRPCError.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/Util.html
+%%PORTDOCS%%%%DOCSDIR%%/MCollective/WindowsDaemon.html
+%%PORTDOCS%%%%DOCSDIR%%/Object.html
+%%PORTDOCS%%%%DOCSDIR%%/README.html
+%%PORTDOCS%%%%DOCSDIR%%/Rakefile.html
+%%PORTDOCS%%%%DOCSDIR%%/String.html
+%%PORTDOCS%%%%DOCSDIR%%/Symbol.html
+%%PORTDOCS%%%%DOCSDIR%%/bin/mc-call-agent.html
+%%PORTDOCS%%%%DOCSDIR%%/bin/mco.html
+%%PORTDOCS%%%%DOCSDIR%%/bin/mcollectived.html
 %%PORTDOCS%%%%DOCSDIR%%/created.rid
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/agents_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/application_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/applications_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/client_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/config_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/connector/base_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/connector_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/data/base_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/data/result_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/data_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/ddl_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/discovery_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/facts/base_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/facts_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/generators/agent_generator_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/generators/base_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/generators/data_generator_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/generators_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/log_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/logger/base_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/logger/console_logger_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/logger/file_logger_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/logger/syslog_logger_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/logger_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/matcher/parser_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/matcher/scanner_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/matcher_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/message_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/monkey_patches_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/optionparser_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/pluginmanager_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/pluginpackager/agent_definition_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/pluginpackager/standard_definition_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/pluginpackager_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/registration/base_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/registration_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/rpc/actionrunner_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/rpc/agent_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/rpc/audit_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/rpc/client_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/rpc/helpers_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/rpc/progress_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/rpc/reply_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/rpc/request_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/rpc/result_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/rpc/stats_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/rpc_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/runner_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/runnerstats_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/security/base_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/security_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/shell_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/ssl_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/unix_daemon_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/util_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/windows_daemon_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/etc/ssl/PLACEHOLDER.html
+%%PORTDOCS%%%%DOCSDIR%%/etc/ssl/clients/PLACEHOLDER.html
 %%PORTDOCS%%%%DOCSDIR%%/fr_class_index.html
 %%PORTDOCS%%%%DOCSDIR%%/fr_file_index.html
 %%PORTDOCS%%%%DOCSDIR%%/fr_method_index.html
+%%PORTDOCS%%%%DOCSDIR%%/images/brick.png
+%%PORTDOCS%%%%DOCSDIR%%/images/brick_link.png
+%%PORTDOCS%%%%DOCSDIR%%/images/bug.png
+%%PORTDOCS%%%%DOCSDIR%%/images/bullet_black.png
+%%PORTDOCS%%%%DOCSDIR%%/images/bullet_toggle_minus.png
+%%PORTDOCS%%%%DOCSDIR%%/images/bullet_toggle_plus.png
+%%PORTDOCS%%%%DOCSDIR%%/images/date.png
+%%PORTDOCS%%%%DOCSDIR%%/images/find.png
+%%PORTDOCS%%%%DOCSDIR%%/images/loadingAnimation.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/macFFBgHack.png
+%%PORTDOCS%%%%DOCSDIR%%/images/package.png
+%%PORTDOCS%%%%DOCSDIR%%/images/page_green.png
+%%PORTDOCS%%%%DOCSDIR%%/images/page_white_text.png
+%%PORTDOCS%%%%DOCSDIR%%/images/page_white_width.png
+%%PORTDOCS%%%%DOCSDIR%%/images/plugin.png
+%%PORTDOCS%%%%DOCSDIR%%/images/ruby.png
+%%PORTDOCS%%%%DOCSDIR%%/images/tag_green.png
+%%PORTDOCS%%%%DOCSDIR%%/images/wrench.png
+%%PORTDOCS%%%%DOCSDIR%%/images/wrench_orange.png
+%%PORTDOCS%%%%DOCSDIR%%/images/zoom.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/js/darkfish.js
+%%PORTDOCS%%%%DOCSDIR%%/js/jquery.js
+%%PORTDOCS%%%%DOCSDIR%%/js/quicksearch.js
+%%PORTDOCS%%%%DOCSDIR%%/js/thickbox-compressed.js
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/agent_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/agents_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/aggregate/base_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/aggregate/result/base_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/aggregate/result/collection_result_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/aggregate/result/numeric_result_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/aggregate/result_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/aggregate_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/application_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/applications_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/client_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/config_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/connector/base_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/connector_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/data/base_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/data/result_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/data_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/ddl_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/discovery_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/facts/base_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/facts_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/generators/agent_generator_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/generators/base_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/generators/data_generator_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/generators_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/log_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/logger/base_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/logger/console_logger_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/logger/file_logger_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/logger/syslog_logger_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/logger_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/matcher/parser_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/matcher/scanner_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/matcher_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/message_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/monkey_patches_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/optionparser_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/pluginmanager_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/pluginpackager/agent_definition_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/pluginpackager/standard_definition_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/pluginpackager_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/registration/base_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/registration_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/rpc/actionrunner_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/rpc/agent_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/rpc/audit_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/rpc/client_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/rpc/helpers_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/rpc/progress_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/rpc/reply_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/rpc/request_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/rpc/result_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/rpc/stats_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/rpc_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/runner_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/runnerstats_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/security/base_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/security_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/shell_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/ssl_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/unix_daemon_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/util_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/windows_daemon_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/mcollective_rb.html
 %%PORTDOCS%%%%DOCSDIR%%/rdoc-style.css
+%%PORTDOCS%%%%DOCSDIR%%/rdoc.css
 %%RUBY_SITELIBDIR%%/mcollective.rb
+%%RUBY_SITELIBDIR%%/mcollective/agent.rb
 %%RUBY_SITELIBDIR%%/mcollective/agents.rb
+%%RUBY_SITELIBDIR%%/mcollective/aggregate.rb
+%%RUBY_SITELIBDIR%%/mcollective/aggregate/base.rb
+%%RUBY_SITELIBDIR%%/mcollective/aggregate/result.rb
+%%RUBY_SITELIBDIR%%/mcollective/aggregate/result/base.rb
+%%RUBY_SITELIBDIR%%/mcollective/aggregate/result/collection_result.rb
+%%RUBY_SITELIBDIR%%/mcollective/aggregate/result/numeric_result.rb
 %%RUBY_SITELIBDIR%%/mcollective/application.rb
 %%RUBY_SITELIBDIR%%/mcollective/applications.rb
 %%RUBY_SITELIBDIR%%/mcollective/client.rb
@@ -233,7 +293,6 @@ sbin/mcollectived
 %%RUBY_SITELIBDIR%%/mcollective/unix_daemon.rb
 %%RUBY_SITELIBDIR%%/mcollective/util.rb
 %%RUBY_SITELIBDIR%%/mcollective/vendor.rb
-%%RUBY_SITELIBDIR%%/mcollective/windows_daemon.rb
 %%RUBY_SITELIBDIR%%/mcollective/vendor/json/.gitignore
 %%RUBY_SITELIBDIR%%/mcollective/vendor/json/CHANGES
 %%RUBY_SITELIBDIR%%/mcollective/vendor/json/COPYING
@@ -389,7 +448,9 @@ sbin/mcollectived
 %%RUBY_SITELIBDIR%%/mcollective/vendor/systemu/samples/e.rb
 %%RUBY_SITELIBDIR%%/mcollective/vendor/systemu/samples/f.rb
 %%RUBY_SITELIBDIR%%/mcollective/vendor/systemu/systemu.gemspec
+%%RUBY_SITELIBDIR%%/mcollective/windows_daemon.rb
 @dirrm %%DATADIR%%/agent
+@dirrm %%DATADIR%%/aggregate
 @dirrm %%DATADIR%%/application
 @dirrm %%DATADIR%%/audit
 @dirrm %%DATADIR%%/connector
@@ -403,6 +464,8 @@ sbin/mcollectived
 @dirrm %%DATADIR%%/registration
 @dirrm %%DATADIR%%/security
 @dirrm %%DATADIR%%
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/aggregate/result
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/aggregate
 @dirrm %%RUBY_SITELIBDIR%%/mcollective/connector
 @dirrm %%RUBY_SITELIBDIR%%/mcollective/data
 @dirrm %%RUBY_SITELIBDIR%%/mcollective/facts
@@ -444,30 +507,38 @@ sbin/mcollectived
 @dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/systemu
 @dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor
 @dirrm %%RUBY_SITELIBDIR%%/mcollective
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/classes/MCollective/Connector
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/classes/MCollective/Data
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/classes/MCollective/Facts
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/classes/MCollective/Generators
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/classes/MCollective/Logger
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/classes/MCollective/Matcher
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/classes/MCollective/PluginPackager
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/classes/MCollective/RPC
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/classes/MCollective/Registration
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/classes/MCollective/Security
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/classes/MCollective
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/classes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/lib/mcollective/connector
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/lib/mcollective/data
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/lib/mcollective/facts
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/lib/mcollective/generators
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/lib/mcollective/logger
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/lib/mcollective/matcher
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/lib/mcollective/pluginpackager
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/lib/mcollective/registration
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/lib/mcollective/rpc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/lib/mcollective/security
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/lib/mcollective
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/lib
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/files
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/MCollective/Aggregate/Result
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/MCollective/Aggregate
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/MCollective/Connector
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/MCollective/Data
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/MCollective/Facts
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/MCollective/Generators
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/MCollective/Logger
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/MCollective/Matcher
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/MCollective/PluginPackager
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/MCollective/RPC
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/MCollective/Registration
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/MCollective/Security
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/MCollective
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/bin
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/etc/ssl/clients
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/etc/ssl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/etc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/js
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/lib/mcollective/aggregate/result
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/lib/mcollective/aggregate
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/lib/mcollective/connector
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/lib/mcollective/data
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/lib/mcollective/facts
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/lib/mcollective/generators
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/lib/mcollective/logger
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/lib/mcollective/matcher
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/lib/mcollective/pluginpackager
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/lib/mcollective/registration
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/lib/mcollective/rpc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/lib/mcollective/security
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/lib/mcollective
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/lib
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry %%ETCDIR%%
