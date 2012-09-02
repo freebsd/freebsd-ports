@@ -18,6 +18,7 @@ USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile.linux
+USE_CSTD=	gnu89
 USE_LDCONFIG=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
