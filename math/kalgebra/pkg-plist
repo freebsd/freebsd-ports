@@ -3,7 +3,6 @@ bin/kalgebramobile
 lib/kde4/plasma_applet_kalgebra.so
 share/applications/kde4/kalgebra.desktop
 share/applications/kde4/kalgebramobile.desktop
-share/apps/cmake/modules/FindAnalitza.cmake
 share/apps/kalgebra/plugins/Console.qml
 share/apps/kalgebra/plugins/Graph2D.qml
 share/apps/kalgebra/plugins/Plot2D.qml

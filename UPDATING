@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120902:
+  AFFECTS: users of math/cantor and math/kalgebra
+  AUTHOR: kde@FreeBSD.org
+
+  If you have both cantor and kalgebra installed, chances are that
+  your cantor installation is corrupted. If the file
+  ${KDE4_PREFIX}/lib/kde4/cantor_kalgebrabackend.so is missing on
+  your system, rebuild cantor after updating kalgebra to 4.8.4_1 (or
+  later).
+
 20120822:
   AFFECTS: users of net/asterisk16, net/asterisk16-addons
   AUTHOR: Florian Smeets <flo@FreeBSD.org>
