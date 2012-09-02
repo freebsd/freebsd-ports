@@ -7,6 +7,7 @@
 
 PORTNAME=	qt4pas
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://users.telenet.be/Jan.Van.hijfte/qtforfpc/V${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/^/V/}_Qt${QT4_VER_MIN}
@@ -22,12 +23,13 @@ QT4_VER_MIN=	4.5.3
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == i386
-BROKEN=		does not build
-.endif
-
 .if  ${QT4_VERSION:S/.//g} < ${QT4_VER_MIN:S/.//g}
 IGNORE=	Please update your current qt4 version to ${QT4_VER_MIN}
+.endif
+
+post-patch:
+.if ${OSVERSION} >= 1000000
+	@${REINPLACE_CMD} -e 's|-mincoming-stack-boundary=2||g' ${WRKSRC}/Qt4Pas.pro
 .endif
 
 pre-build:
