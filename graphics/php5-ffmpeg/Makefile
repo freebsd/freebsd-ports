@@ -25,7 +25,6 @@ USE_BZIP2=	yes
 USE_PHP=	yes
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
-DEFAULT_PHP_VER=54
 
 CONFIGURE_ARGS+=	--with-ffmpeg=${LOCALBASE}/include
 
