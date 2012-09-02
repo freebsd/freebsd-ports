@@ -1,12 +1,7 @@
-# New ports collection makefile for:	R-cran-rgdal
-# Date created:		2012-01-04
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	rgdal
-DISTVERSION=	0.7-16
+DISTVERSION=	0.7-18
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
