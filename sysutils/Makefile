@@ -902,6 +902,7 @@
     SUBDIR += sysrc
     SUBDIR += system-tools-backends
     SUBDIR += sysupdate
+    SUBDIR += tai64nfrac
     SUBDIR += tarsnap
     SUBDIR += tbku
     SUBDIR += tclsyslog
