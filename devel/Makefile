@@ -1772,6 +1772,7 @@
     SUBDIR += p5-Dist-CheckConflicts
     SUBDIR += p5-Dist-Joseki
     SUBDIR += p5-Dist-Metadata
+    SUBDIR += p5-Dist-Zilla
     SUBDIR += p5-DynaLoader-Functions
     SUBDIR += p5-EV
     SUBDIR += p5-Env-PS1

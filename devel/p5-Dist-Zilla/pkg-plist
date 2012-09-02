@@ -1,0 +1,162 @@
+bin/dzil
+%%SITE_PERL%%/Dist/Zilla.pm
+%%SITE_PERL%%/Dist/Zilla/App.pm
+%%SITE_PERL%%/Dist/Zilla/App/Command.pm
+%%SITE_PERL%%/Dist/Zilla/App/Command/add.pm
+%%SITE_PERL%%/Dist/Zilla/App/Command/authordeps.pm
+%%SITE_PERL%%/Dist/Zilla/App/Command/build.pm
+%%SITE_PERL%%/Dist/Zilla/App/Command/clean.pm
+%%SITE_PERL%%/Dist/Zilla/App/Command/install.pm
+%%SITE_PERL%%/Dist/Zilla/App/Command/listdeps.pm
+%%SITE_PERL%%/Dist/Zilla/App/Command/new.pm
+%%SITE_PERL%%/Dist/Zilla/App/Command/nop.pm
+%%SITE_PERL%%/Dist/Zilla/App/Command/release.pm
+%%SITE_PERL%%/Dist/Zilla/App/Command/run.pm
+%%SITE_PERL%%/Dist/Zilla/App/Command/setup.pm
+%%SITE_PERL%%/Dist/Zilla/App/Command/smoke.pm
+%%SITE_PERL%%/Dist/Zilla/App/Command/test.pm
+%%SITE_PERL%%/Dist/Zilla/App/Tester.pm
+%%SITE_PERL%%/Dist/Zilla/Chrome/Term.pm
+%%SITE_PERL%%/Dist/Zilla/Chrome/Test.pm
+%%SITE_PERL%%/Dist/Zilla/Dist/Builder.pm
+%%SITE_PERL%%/Dist/Zilla/Dist/Minter.pm
+%%SITE_PERL%%/Dist/Zilla/File/FromCode.pm
+%%SITE_PERL%%/Dist/Zilla/File/InMemory.pm
+%%SITE_PERL%%/Dist/Zilla/File/OnDisk.pm
+%%SITE_PERL%%/Dist/Zilla/MVP/Assembler.pm
+%%SITE_PERL%%/Dist/Zilla/MVP/Assembler/GlobalConfig.pm
+%%SITE_PERL%%/Dist/Zilla/MVP/Assembler/Zilla.pm
+%%SITE_PERL%%/Dist/Zilla/MVP/Reader/Finder.pm
+%%SITE_PERL%%/Dist/Zilla/MVP/Reader/Perl.pm
+%%SITE_PERL%%/Dist/Zilla/MVP/RootSection.pm
+%%SITE_PERL%%/Dist/Zilla/MVP/Section.pm
+%%SITE_PERL%%/Dist/Zilla/MintingProfile/Default.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/AutoPrereq.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/AutoPrereqs.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/AutoVersion.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/BumpVersion.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/CPANFile.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/ConfirmRelease.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/DistINI.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/ExecDir.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/ExtraTests.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/FakeRelease.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/FileFinder/ByName.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/FileFinder/Filter.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/FinderCode.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/GatherDir.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/GatherDir/Template.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/GenerateFile.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/InlineFiles.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/License.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/MakeMaker.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/MakeMaker/Runner.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/Manifest.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/ManifestSkip.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/MetaConfig.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/MetaJSON.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/MetaNoIndex.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/MetaResources.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/MetaTests.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/MetaYAML.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/ModuleBuild.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/ModuleShareDirs.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/NextRelease.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/PkgDist.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/PkgVersion.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/PodCoverageTests.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/PodSyntaxTests.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/PodVersion.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/Prereq.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/Prereqs.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/PruneCruft.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/PruneFiles.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/Readme.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/RemovePrereqs.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/ShareDir.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/TemplateModule.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/TestRelease.pm
+%%SITE_PERL%%/Dist/Zilla/Plugin/UploadToCPAN.pm
+%%SITE_PERL%%/Dist/Zilla/PluginBundle/Basic.pm
+%%SITE_PERL%%/Dist/Zilla/PluginBundle/Classic.pm
+%%SITE_PERL%%/Dist/Zilla/PluginBundle/FakeClassic.pm
+%%SITE_PERL%%/Dist/Zilla/PluginBundle/Filter.pm
+%%SITE_PERL%%/Dist/Zilla/Prereqs.pm
+%%SITE_PERL%%/Dist/Zilla/Role/AfterBuild.pm
+%%SITE_PERL%%/Dist/Zilla/Role/AfterMint.pm
+%%SITE_PERL%%/Dist/Zilla/Role/AfterRelease.pm
+%%SITE_PERL%%/Dist/Zilla/Role/BeforeArchive.pm
+%%SITE_PERL%%/Dist/Zilla/Role/BeforeBuild.pm
+%%SITE_PERL%%/Dist/Zilla/Role/BeforeMint.pm
+%%SITE_PERL%%/Dist/Zilla/Role/BeforeRelease.pm
+%%SITE_PERL%%/Dist/Zilla/Role/BuildPL.pm
+%%SITE_PERL%%/Dist/Zilla/Role/BuildRunner.pm
+%%SITE_PERL%%/Dist/Zilla/Role/Chrome.pm
+%%SITE_PERL%%/Dist/Zilla/Role/ConfigDumper.pm
+%%SITE_PERL%%/Dist/Zilla/Role/ExecFiles.pm
+%%SITE_PERL%%/Dist/Zilla/Role/File.pm
+%%SITE_PERL%%/Dist/Zilla/Role/FileFinder.pm
+%%SITE_PERL%%/Dist/Zilla/Role/FileFinderUser.pm
+%%SITE_PERL%%/Dist/Zilla/Role/FileGatherer.pm
+%%SITE_PERL%%/Dist/Zilla/Role/FileInjector.pm
+%%SITE_PERL%%/Dist/Zilla/Role/FileMunger.pm
+%%SITE_PERL%%/Dist/Zilla/Role/FilePruner.pm
+%%SITE_PERL%%/Dist/Zilla/Role/InstallTool.pm
+%%SITE_PERL%%/Dist/Zilla/Role/MetaProvider.pm
+%%SITE_PERL%%/Dist/Zilla/Role/MintingProfile.pm
+%%SITE_PERL%%/Dist/Zilla/Role/MintingProfile/ShareDir.pm
+%%SITE_PERL%%/Dist/Zilla/Role/ModuleMaker.pm
+%%SITE_PERL%%/Dist/Zilla/Role/PPI.pm
+%%SITE_PERL%%/Dist/Zilla/Role/Plugin.pm
+%%SITE_PERL%%/Dist/Zilla/Role/PluginBundle.pm
+%%SITE_PERL%%/Dist/Zilla/Role/PluginBundle/Easy.pm
+%%SITE_PERL%%/Dist/Zilla/Role/PrereqSource.pm
+%%SITE_PERL%%/Dist/Zilla/Role/Releaser.pm
+%%SITE_PERL%%/Dist/Zilla/Role/ShareDir.pm
+%%SITE_PERL%%/Dist/Zilla/Role/Stash.pm
+%%SITE_PERL%%/Dist/Zilla/Role/Stash/Authors.pm
+%%SITE_PERL%%/Dist/Zilla/Role/Stash/Login.pm
+%%SITE_PERL%%/Dist/Zilla/Role/TestRunner.pm
+%%SITE_PERL%%/Dist/Zilla/Role/TextTemplate.pm
+%%SITE_PERL%%/Dist/Zilla/Role/VersionProvider.pm
+%%SITE_PERL%%/Dist/Zilla/Stash/PAUSE.pm
+%%SITE_PERL%%/Dist/Zilla/Stash/Rights.pm
+%%SITE_PERL%%/Dist/Zilla/Stash/User.pm
+%%SITE_PERL%%/Dist/Zilla/Tester.pm
+%%SITE_PERL%%/Dist/Zilla/Tutorial.pm
+%%SITE_PERL%%/Dist/Zilla/Types.pm
+%%SITE_PERL%%/Dist/Zilla/Util.pm
+%%SITE_PERL%%/Dist/Zilla/Util/AuthorDeps.pm
+%%SITE_PERL%%/Test/DZil.pm
+%%SITE_PERL%%/auto/share/module/Dist-Zilla-MintingProfile-Default/default/extra-dist.ini
+%%SITE_PERL%%/auto/share/module/Dist-Zilla-MintingProfile-Default/default/profile.ini
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Dist/Zilla/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dist/Zilla
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dist
+@dirrmtry %%SITE_PERL%%/auto/share/module/Dist-Zilla-MintingProfile-Default/default
+@dirrmtry %%SITE_PERL%%/auto/share/module/Dist-Zilla-MintingProfile-Default
+@dirrmtry %%SITE_PERL%%/auto/share/module
+@dirrmtry %%SITE_PERL%%/auto/share
+@dirrmtry %%SITE_PERL%%/Test
+@dirrmtry %%SITE_PERL%%/Dist/Zilla/Util
+@dirrmtry %%SITE_PERL%%/Dist/Zilla/Stash
+@dirrmtry %%SITE_PERL%%/Dist/Zilla/Role/Stash
+@dirrmtry %%SITE_PERL%%/Dist/Zilla/Role/PluginBundle
+@dirrmtry %%SITE_PERL%%/Dist/Zilla/Role/MintingProfile
+@dirrmtry %%SITE_PERL%%/Dist/Zilla/Role
+@dirrmtry %%SITE_PERL%%/Dist/Zilla/PluginBundle
+@dirrmtry %%SITE_PERL%%/Dist/Zilla/Plugin/MakeMaker
+@dirrmtry %%SITE_PERL%%/Dist/Zilla/Plugin/GatherDir
+@dirrmtry %%SITE_PERL%%/Dist/Zilla/Plugin/FileFinder
+@dirrmtry %%SITE_PERL%%/Dist/Zilla/Plugin
+@dirrmtry %%SITE_PERL%%/Dist/Zilla/MintingProfile
+@dirrmtry %%SITE_PERL%%/Dist/Zilla/MVP/Reader
+@dirrmtry %%SITE_PERL%%/Dist/Zilla/MVP/Assembler
+@dirrmtry %%SITE_PERL%%/Dist/Zilla/MVP
+@dirrmtry %%SITE_PERL%%/Dist/Zilla/File
+@dirrmtry %%SITE_PERL%%/Dist/Zilla/Dist
+@dirrmtry %%SITE_PERL%%/Dist/Zilla/Chrome
+@dirrmtry %%SITE_PERL%%/Dist/Zilla/App/Command
+@dirrmtry %%SITE_PERL%%/Dist/Zilla/App
+@dirrmtry %%SITE_PERL%%/Dist/Zilla
+@dirrmtry %%SITE_PERL%%/Dist
