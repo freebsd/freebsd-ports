@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libtorrent-rasterbar
-PORTVERSION=	0.16.2
+PORTVERSION=	0.16.3
 CATEGORIES?=	net-p2p ipv6
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	libtorrent
@@ -58,6 +58,9 @@ post-patch:
 	@${CP} ${WRKSRC}/Jamfile ${WRKSRC}/Jamfile.presed
 	@${SED} -e 's#<include>/usr/local/include#<include>${LOCALBASE}/include#' \
 		${WRKSRC}/Jamfile.presed > ${WRKSRC}/Jamfile
+	${CP} ${WRKSRC}/include/libtorrent/file.hpp ${WRKSRC}/include/libtorrent/file.hpp.presed
+	${SED} -e "35s,.*,#include <sys/stat.h>," ${WRKSRC}/include/libtorrent/file.hpp.presed > \
+		${WRKSRC}/include/libtorrent/file.hpp
 .endif
 
 .if defined(SLAVE_PORT) && ${SLAVE_PORT:L}=="yes"
