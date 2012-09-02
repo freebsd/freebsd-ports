@@ -6,6 +6,7 @@ include/apr-1/apr_anylock.h
 include/apr-1/apr_atomic.h
 include/apr-1/apr_base64.h
 include/apr-1/apr_buckets.h
+include/apr-1/apr_crypto.h
 include/apr-1/apr_date.h
 include/apr-1/apr_dbd.h
 include/apr-1/apr_dbm.h
@@ -65,6 +66,7 @@ include/apr-1/apr_want.h
 include/apr-1/apr_xlate.h
 include/apr-1/apr_xml.h
 include/apr-1/apu.h
+include/apr-1/apu_errno.h
 include/apr-1/apu_version.h
 include/apr-1/apu_want.h
 %%MYSQL%%lib/apr-util-1/apr_dbd_mysql-1.so
