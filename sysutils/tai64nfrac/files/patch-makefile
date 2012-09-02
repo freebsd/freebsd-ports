@@ -1,0 +1,28 @@
+--- Makefile	2003-03-10 03:33:41.000000000 +0100
++++ Makefile.new	2012-09-02 14:58:41.920363626 +0200
+@@ -4,10 +4,9 @@
+ prefix		= /usr/local
+ exec_prefix	= /usr/local
+ bindir		= $(prefix)/bin
+-mandir		= $(prefix)/man
+-man1dir		= $(mandir)/man1
++mandir		= $(prefix)/man/man1
+ 
+-CC		= gcc
++CC		?= gcc
+ CFLAGS		= -g -O
+ LDFLAGS		=
+ LIBS		=
+@@ -25,10 +24,8 @@
+ 	    --section=1 $< > $@
+ 
+ install: tai64nfrac tai64nfrac.1
+-	mkdir -p $(bindir)
+-	cp tai64nfrac $(bindir)
+-	mkdir -p $(man1dir)
+-	cp tai64nfrac.1 $(man1dir)
++	install -c -g 0 -o 0 -m 0555 tai64nfrac $(bindir)
++	install -c -g 0 -o 0 -m 0444 tai64nfrac.1 $(mandir)
+ 
+ clean:
+ 	rm -f *.o tai64nfrac
