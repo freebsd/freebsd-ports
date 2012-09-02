@@ -4,7 +4,7 @@
 #
 # $FreeBSD$
 
-PORTNAME=	spidermonkey
+PORTNAME=	spidermonkey17
 DISTVERSION=	1.7.0
 PORTREVISION=	1
 CATEGORIES=	lang

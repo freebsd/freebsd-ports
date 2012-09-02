@@ -325,7 +325,7 @@
     SUBDIR += sml-nj
     SUBDIR += sml-nj-devel
     SUBDIR += snobol4
-    SUBDIR += spidermonkey
+    SUBDIR += spidermonkey17
     SUBDIR += spl
     SUBDIR += squeak
     SUBDIR += squirrel
