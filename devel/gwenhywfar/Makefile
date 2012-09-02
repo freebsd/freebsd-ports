@@ -2,7 +2,7 @@
 
 PORTNAME=	gwenhywfar
 PORTVERSION=	4.3.3
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	devel net security
 MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=01&release=67&file=01&dummy=/
 
@@ -15,7 +15,7 @@ LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt \
 		gnutls:${PORTSDIR}/security/gnutls
 
 .if !defined(SLAVEPORT)
-OPTIONS_DEFINE=	DOC MEMDEBUG
+OPTIONS_DEFINE=	DOXYGEN MEMDEBUG
 
 MEMDEBUG_DESC=	Enable memory debugger statistic
 .endif
@@ -40,7 +40,7 @@ GWEN_SHLIB_VER=	60
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOC}
+.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		dot:${PORTSDIR}/graphics/graphviz
 CONFIGURE_ARGS+=--enable-full-doc
@@ -79,12 +79,12 @@ post-patch:
 .endif
 
 post-build:
-.if ${PORT_OPTIONS:MDOC}
+.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
 	@cd ${WRKSRC} && ${GMAKE} srcdoc
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOC}
+.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MDOXYGEN}
 	${MKDIR} ${DOCSDIR}/apidoc
 	cd ${WRKSRC}/apidoc && \
 		${COPYTREE_SHARE} \* ${DOCSDIR}/apidoc
