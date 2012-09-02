@@ -1,0 +1,196 @@
+# $FreeBSD$
+
+PORTNAME=	Dist-Zilla
+PORTVERSION=	4.300021
+CATEGORIES=	devel perl5
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	Dist
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	lth@FreeBSD.org
+COMMENT=	Distribution builder
+
+BUILD_DEPENDS=	p5-App-Cmd>=0.309:${PORTSDIR}/devel/p5-App-Cmd \
+		p5-CPAN-Meta-Requirements>=2.121:${PORTSDIR}/devel/p5-CPAN-Meta-Requirements \
+		p5-CPAN-Uploader>=0.101550:${PORTSDIR}/devel/p5-CPAN-Uploader \
+		p5-Class-Load>=0.17:${PORTSDIR}/devel/p5-Class-Load \
+		p5-Config-MVP-Reader-INI>=2:${PORTSDIR}/devel/p5-Config-MVP-Reader-INI \
+		p5-Config-MVP>=2.200002:${PORTSDIR}/devel/p5-Config-MVP \
+		p5-Data-Section>=0.004:${PORTSDIR}/devel/p5-Data-Section \
+		p5-DateTime>=0.44:${PORTSDIR}/devel/p5-DateTime \
+		p5-File-Copy-Recursive>=0:${PORTSDIR}/devel/p5-File-Copy-Recursive \
+		p5-File-Find-Rule>=0:${PORTSDIR}/devel/p5-File-Find-Rule \
+		p5-File-HomeDir>=0:${PORTSDIR}/devel/p5-File-HomeDir \
+		p5-File-ShareDir-Install>=0.03:${PORTSDIR}/devel/p5-File-ShareDir-Install \
+		p5-File-ShareDir>=0:${PORTSDIR}/devel/p5-File-ShareDir \
+		p5-File-pushd>=0:${PORTSDIR}/devel/p5-File-pushd \
+		p5-Hash-Merge-Simple>=0:${PORTSDIR}/devel/p5-Hash-Merge-Simple \
+		p5-JSON>=2:${PORTSDIR}/converters/p5-JSON \
+		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-Log-Dispatchouli>=1.102220:${PORTSDIR}/devel/p5-Log-Dispatchouli \
+		p5-Moose-Autobox>=0.10:${PORTSDIR}/devel/p5-Moose-Autobox \
+		p5-Moose>=0.92:${PORTSDIR}/devel/p5-Moose \
+		p5-MooseX-LazyRequire>=0:${PORTSDIR}/devel/p5-MooseX-LazyRequire \
+		p5-MooseX-Role-Parameterized>=0:${PORTSDIR}/devel/p5-MooseX-Role-Parameterized \
+		p5-MooseX-SetOnce>=0:${PORTSDIR}/devel/p5-MooseX-SetOnce \
+		p5-MooseX-Types-Path-Class>=0:${PORTSDIR}/devel/p5-MooseX-Types-Path-Class \
+		p5-MooseX-Types-Perl>=0:${PORTSDIR}/devel/p5-MooseX-Types-Perl \
+		p5-MooseX-Types>=0:${PORTSDIR}/devel/p5-MooseX-Types \
+		p5-PPI>=0:${PORTSDIR}/textproc/p5-PPI \
+		p5-Params-Util>=0:${PORTSDIR}/devel/p5-Params-Util \
+		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
+		p5-Perl-PrereqScanner>=1.005:${PORTSDIR}/devel/p5-Perl-PrereqScanner \
+		p5-Perl-Version>=0:${PORTSDIR}/devel/p5-Perl-Version \
+		p5-Pod-Eventual>=0.091480:${PORTSDIR}/textproc/p5-Pod-Eventual \
+		p5-Software-License>=0.101370:${PORTSDIR}/misc/p5-Software-License \
+		p5-String-Formatter>=0.100680:${PORTSDIR}/devel/p5-String-Formatter \
+		p5-String-RewritePrefix>=0.005:${PORTSDIR}/textproc/p5-String-RewritePrefix \
+		p5-Sub-Exporter-ForMethods>=0:${PORTSDIR}/devel/p5-Sub-Exporter-ForMethods \
+		p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \
+		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
+		p5-Text-Glob>=0.08:${PORTSDIR}/textproc/p5-Text-Glob \
+		p5-Text-Template>=0:${PORTSDIR}/textproc/p5-Text-Template \
+		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
+		p5-YAML-Tiny>=0:${PORTSDIR}/textproc/p5-YAML-Tiny \
+		p5-autobox>=2.53:${PORTSDIR}/devel/p5-autobox \
+		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
+
+PERL_CONFIGURE=	yes
+
+MAN1=	dzil.1
+MAN3=	Dist::Zilla.3 \
+	Dist::Zilla::App.3 \
+	Dist::Zilla::App::Command.3 \
+	Dist::Zilla::App::Command::add.3 \
+	Dist::Zilla::App::Command::authordeps.3 \
+	Dist::Zilla::App::Command::build.3 \
+	Dist::Zilla::App::Command::clean.3 \
+	Dist::Zilla::App::Command::install.3 \
+	Dist::Zilla::App::Command::listdeps.3 \
+	Dist::Zilla::App::Command::new.3 \
+	Dist::Zilla::App::Command::nop.3 \
+	Dist::Zilla::App::Command::release.3 \
+	Dist::Zilla::App::Command::run.3 \
+	Dist::Zilla::App::Command::setup.3 \
+	Dist::Zilla::App::Command::smoke.3 \
+	Dist::Zilla::App::Command::test.3 \
+	Dist::Zilla::App::Tester.3 \
+	Dist::Zilla::Chrome::Term.3 \
+	Dist::Zilla::Chrome::Test.3 \
+	Dist::Zilla::Dist::Builder.3 \
+	Dist::Zilla::Dist::Minter.3 \
+	Dist::Zilla::File::FromCode.3 \
+	Dist::Zilla::File::InMemory.3 \
+	Dist::Zilla::File::OnDisk.3 \
+	Dist::Zilla::MVP::Assembler.3 \
+	Dist::Zilla::MVP::Assembler::GlobalConfig.3 \
+	Dist::Zilla::MVP::Assembler::Zilla.3 \
+	Dist::Zilla::MVP::Reader::Finder.3 \
+	Dist::Zilla::MVP::Reader::Perl.3 \
+	Dist::Zilla::MVP::RootSection.3 \
+	Dist::Zilla::MVP::Section.3 \
+	Dist::Zilla::MintingProfile::Default.3 \
+	Dist::Zilla::Plugin::AutoPrereq.3 \
+	Dist::Zilla::Plugin::AutoPrereqs.3 \
+	Dist::Zilla::Plugin::AutoVersion.3 \
+	Dist::Zilla::Plugin::BumpVersion.3 \
+	Dist::Zilla::Plugin::CPANFile.3 \
+	Dist::Zilla::Plugin::ConfirmRelease.3 \
+	Dist::Zilla::Plugin::DistINI.3 \
+	Dist::Zilla::Plugin::ExecDir.3 \
+	Dist::Zilla::Plugin::ExtraTests.3 \
+	Dist::Zilla::Plugin::FakeRelease.3 \
+	Dist::Zilla::Plugin::FileFinder::ByName.3 \
+	Dist::Zilla::Plugin::FileFinder::Filter.3 \
+	Dist::Zilla::Plugin::FinderCode.3 \
+	Dist::Zilla::Plugin::GatherDir.3 \
+	Dist::Zilla::Plugin::GatherDir::Template.3 \
+	Dist::Zilla::Plugin::GenerateFile.3 \
+	Dist::Zilla::Plugin::InlineFiles.3 \
+	Dist::Zilla::Plugin::License.3 \
+	Dist::Zilla::Plugin::MakeMaker.3 \
+	Dist::Zilla::Plugin::MakeMaker::Runner.3 \
+	Dist::Zilla::Plugin::Manifest.3 \
+	Dist::Zilla::Plugin::ManifestSkip.3 \
+	Dist::Zilla::Plugin::MetaConfig.3 \
+	Dist::Zilla::Plugin::MetaJSON.3 \
+	Dist::Zilla::Plugin::MetaNoIndex.3 \
+	Dist::Zilla::Plugin::MetaResources.3 \
+	Dist::Zilla::Plugin::MetaTests.3 \
+	Dist::Zilla::Plugin::MetaYAML.3 \
+	Dist::Zilla::Plugin::ModuleBuild.3 \
+	Dist::Zilla::Plugin::ModuleShareDirs.3 \
+	Dist::Zilla::Plugin::NextRelease.3 \
+	Dist::Zilla::Plugin::PkgDist.3 \
+	Dist::Zilla::Plugin::PkgVersion.3 \
+	Dist::Zilla::Plugin::PodCoverageTests.3 \
+	Dist::Zilla::Plugin::PodSyntaxTests.3 \
+	Dist::Zilla::Plugin::PodVersion.3 \
+	Dist::Zilla::Plugin::Prereq.3 \
+	Dist::Zilla::Plugin::Prereqs.3 \
+	Dist::Zilla::Plugin::PruneCruft.3 \
+	Dist::Zilla::Plugin::PruneFiles.3 \
+	Dist::Zilla::Plugin::Readme.3 \
+	Dist::Zilla::Plugin::RemovePrereqs.3 \
+	Dist::Zilla::Plugin::ShareDir.3 \
+	Dist::Zilla::Plugin::TemplateModule.3 \
+	Dist::Zilla::Plugin::TestRelease.3 \
+	Dist::Zilla::Plugin::UploadToCPAN.3 \
+	Dist::Zilla::PluginBundle::Basic.3 \
+	Dist::Zilla::PluginBundle::Classic.3 \
+	Dist::Zilla::PluginBundle::FakeClassic.3 \
+	Dist::Zilla::PluginBundle::Filter.3 \
+	Dist::Zilla::Prereqs.3 \
+	Dist::Zilla::Role::AfterBuild.3 \
+	Dist::Zilla::Role::AfterMint.3 \
+	Dist::Zilla::Role::AfterRelease.3 \
+	Dist::Zilla::Role::BeforeArchive.3 \
+	Dist::Zilla::Role::BeforeBuild.3 \
+	Dist::Zilla::Role::BeforeMint.3 \
+	Dist::Zilla::Role::BeforeRelease.3 \
+	Dist::Zilla::Role::BuildPL.3 \
+	Dist::Zilla::Role::BuildRunner.3 \
+	Dist::Zilla::Role::Chrome.3 \
+	Dist::Zilla::Role::ConfigDumper.3 \
+	Dist::Zilla::Role::ExecFiles.3 \
+	Dist::Zilla::Role::File.3 \
+	Dist::Zilla::Role::FileFinder.3 \
+	Dist::Zilla::Role::FileFinderUser.3 \
+	Dist::Zilla::Role::FileGatherer.3 \
+	Dist::Zilla::Role::FileInjector.3 \
+	Dist::Zilla::Role::FileMunger.3 \
+	Dist::Zilla::Role::FilePruner.3 \
+	Dist::Zilla::Role::InstallTool.3 \
+	Dist::Zilla::Role::MetaProvider.3 \
+	Dist::Zilla::Role::MintingProfile.3 \
+	Dist::Zilla::Role::MintingProfile::ShareDir.3 \
+	Dist::Zilla::Role::ModuleMaker.3 \
+	Dist::Zilla::Role::PPI.3 \
+	Dist::Zilla::Role::Plugin.3 \
+	Dist::Zilla::Role::PluginBundle.3 \
+	Dist::Zilla::Role::PluginBundle::Easy.3 \
+	Dist::Zilla::Role::PrereqSource.3 \
+	Dist::Zilla::Role::Releaser.3 \
+	Dist::Zilla::Role::ShareDir.3 \
+	Dist::Zilla::Role::Stash.3 \
+	Dist::Zilla::Role::Stash::Authors.3 \
+	Dist::Zilla::Role::Stash::Login.3 \
+	Dist::Zilla::Role::TestRunner.3 \
+	Dist::Zilla::Role::TextTemplate.3 \
+	Dist::Zilla::Role::VersionProvider.3 \
+	Dist::Zilla::Stash::PAUSE.3 \
+	Dist::Zilla::Stash::Rights.3 \
+	Dist::Zilla::Stash::User.3 \
+	Dist::Zilla::Tester.3 \
+	Dist::Zilla::Tutorial.3 \
+	Dist::Zilla::Types.3 \
+	Dist::Zilla::Util.3 \
+	Dist::Zilla::Util::AuthorDeps.3 \
+	Test::DZil.3
+
+regression-test: build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test
+
+.include <bsd.port.mk>
