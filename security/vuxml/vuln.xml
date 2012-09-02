@@ -51,6 +51,32 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b50913ce-f4a7-11e1-b135-003067b2972c">
+    <topic>bitcoin -- denial of service</topic>
+    <affects>
+      <package>
+	<name>bitcoin</name>
+	<range><lt>0.6.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="https://bitcointalk.org/?topic=88734">
+	  <p>A unspecified denial-of-service attack that could cause the
+	  bitcoin process to become unresponsive was found.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-3789</cvename>
+      <url>https://bitcointalk.org/?topic=88734</url>
+    </references>
+    <dates>
+      <discovery>2012-07-20</discovery>
+      <entry>2012-09-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6ad18fe5-f469-11e1-920d-20cf30e32f6d">
     <topic>bugzilla -- multiple vulnerabilities</topic>
     <affects>
