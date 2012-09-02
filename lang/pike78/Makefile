@@ -1,12 +1,7 @@
-# New ports collection makefile for:	pike78
-# Date created:		17 May 2009
-# Whom:			johans@stack.nl
-#
 # $FreeBSD$
-#
 
 PORTNAME=	pike78
-PORTVERSION=	7.8.686
+PORTVERSION=	7.8.700
 CATEGORIES=	lang
 MASTER_SITES=	http://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 		ftp://pike.ida.liu.se/pub/pike/beta/${PORTVERSION}/ \
