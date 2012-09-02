@@ -1,14 +1,8 @@
-# ex:ts=8
-# Ports collection makefile for:	shishi
-# Date created:			Oct 19, 2003
-# Whom:				ijliao
-#
 # $FreeBSD$
-#
 
 PORTNAME=	shishi
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	GNU
 
