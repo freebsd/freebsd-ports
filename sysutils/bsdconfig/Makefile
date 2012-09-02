@@ -206,7 +206,7 @@ PLIST_DIRS=	${BSDCFG_LIBE}/020.docsinstall/include \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900030
-IGNORE=		libdialog 20100428 or newer required.
+IGNORE=		requires FreeBSD 9.0 or later
 .endif
 
 post-patch:
