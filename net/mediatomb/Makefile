@@ -7,7 +7,7 @@
 
 PORTNAME=	mediatomb
 PORTVERSION=	0.12.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net multimedia
 MASTER_SITES=	SF/${PORTNAME}/MediaTomb/${PORTVERSION}
 
@@ -88,8 +88,7 @@ CONFIGURE_ARGS+=	--disable-mysql
 CONFIGURE_ARGS+=	--enable-libjs \
 			--with-js-h="${LOCALBASE}/include" \
 			--with-js-libs="${LOCALBASE}/lib"
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libjs.so:${PORTSDIR}/lang/spidermonkey
-RUN_DEPENDS+=		${LOCALBASE}/lib/libjs.so:${PORTSDIR}/lang/spidermonkey
+LIB_DEPENDS+=		js:${PORTSDIR}/lang/spidermonkey17
 .else
 CONFIGURE_ARGS+=	--disable-libjs
 .endif

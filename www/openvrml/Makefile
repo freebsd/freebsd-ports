@@ -7,7 +7,7 @@
 
 PORTNAME=	openvrml
 PORTVERSION=	0.18.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www graphics
 MASTER_SITES=	SF
 
@@ -16,7 +16,7 @@ COMMENT=	VRML97 runtime and browser
 
 BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone
 LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig		\
-		js.1:${PORTSDIR}/lang/spidermonkey			\
+		js.1:${PORTSDIR}/lang/spidermonkey17			\
 		jpeg.11:${PORTSDIR}/graphics/jpeg			\
 		png15:${PORTSDIR}/graphics/png				\
 		curl.6:${PORTSDIR}/ftp/curl				\

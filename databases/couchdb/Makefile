@@ -8,6 +8,7 @@
 PORTNAME=	couchdb
 PORTVERSION=	1.2.0
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	couchdb/releases/${PORTVERSION}
@@ -17,7 +18,7 @@ MAINTAINER=	till@php.net
 COMMENT=	A document database server, accessible via a RESTful JSON API
 
 LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu \
-		js:${PORTSDIR}/lang/spidermonkey \
+		js:${PORTSDIR}/lang/spidermonkey17 \
 		curl:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	${LOCALBASE}/bin/help2man:${PORTSDIR}/misc/help2man \
 		erlc:${PORTSDIR}/lang/erlang
