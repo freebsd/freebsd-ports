@@ -7,6 +7,7 @@
 
 PORTNAME=	mongodb
 PORTVERSION=	2.0.6
+PORTREVISION=	1
 CATEGORIES=	databases net
 MASTER_SITES=	http://downloads.mongodb.org/src/
 DISTNAME=	${PORTNAME}-src-r${PORTVERSION}
@@ -50,7 +51,7 @@ SCONS_ARGS+=	--usev8
 LIB_DEPENDS+=	v8:${PORTSDIR}/lang/v8
 .else
 SCONS_ARGS+=	--usesm
-LIB_DEPENDS+=	js:${PORTSDIR}/lang/spidermonkey
+LIB_DEPENDS+=	js:${PORTSDIR}/lang/spidermonkey17
 .endif
 
 post-install:
