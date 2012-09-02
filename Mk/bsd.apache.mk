@@ -116,14 +116,6 @@ IGNORE=	${_ERROR_MSG} Illegal use of USE_APACHE ( no version specified )
 # ===============================================================
 .if defined(AP_PORT_IS_SERVER)
 # MFC TODO: remove this check
-# used only in apache22-peruser-mpm, remved in rev. 253708
-#  http://svnweb.freebsd.org/ports?view=revision&revision=253708
-# For slave ports:
-.if defined(SLAVE_DESIGNED_FOR) && ${PORTVERSION} != ${SLAVE_DESIGNED_FOR}
-IGNORE=	Sorry, ${SLAVENAME} and ${PORTNAME} versions are out of sync ${PORTVERSION} != ${SLAVE_DESIGNED_FOR}
-.endif
-
-# MFC TODO: remove this check
 # used only by www/cakephp* ports
 .if defined(SLAVE_PORT_MODULES)
 DEFAULT_MODULES_CATEGORIES+=	SLAVE_PORT
@@ -139,23 +131,12 @@ DEFAULT_MODULES+=			${${category}_MODULES}
 AVAILABLE_MODULES+=			${${category}_MODULES}
 .endfor
 
-# == start convert param to UPPERCASE
-# detect lowercase params in make.conf, users should them to UPPERCASE
-# In near future we will throw an IGNORE message
-#_ERROR_DLCM=	... detected (make.conf), please convert apache releated params to UPPERCASE
-.if defined(WITH_MODULES) && ${WITH_MODULES:M[a-z]*}
-#IGNNORE=	lowercase WITH_MODULES=  ${_ERROR_DLCM}
-WITH_MODULES:=${WITH_MODULES:U}
-.endif
-.if defined(WITHOUT_MODULES) && ${WITHOUT_MODULES:M[a-z]*}
-#IGNORE=		lowercase WITHOUT_MODULES= ${_ERROR_DLCM}
-WITHOUT_MODULES:=${WITHOUT_MODULES:U}
-.endif
+# detect invalid lowercase params in make.conf
+# keep this check until end of 2012
 .if defined(WITH_STATIC_MODULES) && ${WITH_STATIC_MODULES:M[a-z]*}
-#IGNORE=		lowercase WITH_STATIC_MODULES= ${_ERROR_DLCM}
-WITH_STATIC_MODULES:=${WITH_STATIC_MODULES:U}
+IGNORE=		lowercase WITH_STATIC_MODULES="${WITH_STATIC_MODULES}"\
+		detected (make.conf), they shoud be UPPERCASE
 .endif
-# == end convert param to UPPERCASE
 
 # Setting "@comment " as default.
 .for module in ${AVAILABLE_MODULES:O}
@@ -169,40 +150,38 @@ _DISABLE_MODULES+=		--disable-${module:L}
 CONFIGURE_ARGS+= 		${_DISABLE_MODULES:O:u}
 .endif
 
-.if ( defined(OPTIONS) || defined(OPTIONS_DEFINE) ) && !(make(make-options-list))
+# OPTIONS handling
 .for module in ${AVAILABLE_MODULES}
-.	if defined(WITH_${module})
+.	if ${PORT_OPTIONS:M${module}}
 _APACHE_MODULES+=	${module}
-.	endif
-.	if defined(WITHOUT_${module})
+.	else
 WITHOUT_MODULES+=	 ${module}
 .	endif
 .endfor
-.endif
 
 .if !defined(WITH_STATIC_APACHE)
-.	if ${USE_APACHE:Mcommon2*} != ""
 # FYI
 #DYNAMIC_MODULES=	so
 CONFIGURE_ARGS+=	--enable-so
-.	endif
 .else
-.	if ${USE_APACHE:Mcommon2*} != ""
 CONFIGURE_ARGS+=	--disable-so
-.	endif
 WITH_ALL_STATIC_MODULES=	yes
 .endif
 
-.if defined(WITH_SUEXEC) || defined(WITH_SUEXEC_MODULES)
-.	if ${USE_APACHE:Mcommon2*} != ""
+.if ${PORT_OPTIONS:MSUEXEC}
 _APACHE_MODULES+=		${SUEXEC_MODULES}
 SUEXEC_CONFARGS=	with-suexec
-.	endif
 
-# From now we're defaulting to apache 2.*
+# SUEXEC_DOCROOT should exist
 SUEXEC_DOCROOT?=		${PREFIX}/www/data
+#SUEXEC_DOCROOT?=		${WWWDIR}
 SUEXEC_USERDIR?=		public_html
+# avoid duplicate search paths
+.if ${LOCALBASE} == ${PREFIX}
+SUEXEC_SAFEPATH?=		${LOCALBASE}/bin:/usr/bin:/bin
+.else	
 SUEXEC_SAFEPATH?=		${PREFIX}/bin:${LOCALBASE}/bin:/usr/bin:/bin
+.endif	
 SUEXEC_LOGFILE?=		/var/log/httpd-suexec.log
 SUEXEC_UIDMIN?=			1000
 SUEXEC_GIDMIN?=			1000
@@ -213,10 +192,8 @@ CONFIGURE_ARGS+=		--${SUEXEC_CONFARGS}-caller=${SUEXEC_CALLER} \
 				--${SUEXEC_CONFARGS}-userdir="${SUEXEC_USERDIR}" \
 				--${SUEXEC_CONFARGS}-docroot="${SUEXEC_DOCROOT}" \
 				--${SUEXEC_CONFARGS}-safepath="${SUEXEC_SAFEPATH}" \
-				--${SUEXEC_CONFARGS}-logfile="${SUEXEC_LOGFILE}"
-.	if ${USE_APACHE:Mcommon2*} != ""
-CONFIGURE_ARGS+=	--${SUEXEC_CONFARGS}-bin="${PREFIX}/sbin/suexec"
-.	endif
+				--${SUEXEC_CONFARGS}-logfile="${SUEXEC_LOGFILE}" \
+				--${SUEXEC_CONFARGS}-bin="${PREFIX}/sbin/suexec"
 
 .	if defined(WITH_SUEXEC_UMASK)
 CONFIGURE_ARGS+=		--${SUEXEC_CONFARGS}-umask=${SUEXEC_UMASK}
@@ -249,6 +226,8 @@ CONFIGURE_ARGS+=	--enable-modules="${APACHE_MODULES:O:L}"
 CONFIGURE_ARGS+=	--enable-mods-shared="${APACHE_MODULES:O:L}"
 .endif
 
+# ====================================
+# start pkg-plist adjustments
 .if defined(WITH_STATIC_MODULES)
 .for module in ${APACHE_MODULES}
 .	if !${WITH_STATIC_MODULES:M${module}}
@@ -268,6 +247,22 @@ ${module}_PLIST_SUB=	""
 .for module in ${AVAILABLE_MODULES:O:u}
 PLIST_SUB+=	MOD_${module}=${${module}_PLIST_SUB}
 .endfor
+
+# pkg-plist workaround STATIC support
+.if ${PORT_OPTIONS:MSUEXEC}
+PLIST_SUB+=	SUEXEC=""
+.else
+PLIST_SUB+=	SUEXEC="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MLOG_FORENSIC}
+PLIST_SUB+=	FORENSIC=""
+.else
+PLIST_SUB+=	FORENSIC="@comment "
+.endif
+
+# end pkg-plist adjustments
+
 #### End of AP_PORT_IS_SERVER ####
 
 # ===============================================================
@@ -409,6 +404,10 @@ IGNORE=	${_ERROR_MSG} specify only one of: USE_APACHE USE_APACHE_BUILD USE_APACH
 IGNORE= ${_ERROR_MSG} use USE_APACHE instead of USE_APACHE_BUILD and USE_APACHE_RUN together
 .endif
 
+.if defined(NO_BUILD) && defined(USE_APACHE)
+IGNORE=	If NO_BUILD is used, then USE_APACHE_RUN is sufficient. Please fix your Makefile
+.endif
+
 .if defined(AP_PORT_IS_SERVER)
 .if !target(print-closest-mirrors)
 print-closest-mirrors:
@@ -420,14 +419,6 @@ print-closest-mirrors:
 	${ECHO_MSG} -n "MASTER_SITE_APACHE_HTTPD?= ";\
 	${ECHO_MSG} $$MIRRORS; else \
 	${ECHO_MSG} "No mirrors found!">&2 ; fi
-.endif
-
-.if !target(show-categories)
-show-categories:
-.for category in ${ALL_MODULES_CATEGORIES}
-	@${ECHO_MSG} "${category} contains these modules:"
-	@${ECHO_MSG} "  ${${category}_MODULES}"
-.endfor
 .endif
 
 .if !target(show-modules)
@@ -443,19 +434,6 @@ show-modules:
 .		endif
 .	else
 		@${ECHO_CMD} disabled
-.	endif
-.endfor
-.endif
-
-# MFC TODO: remove this target it's useless with options NG
-.if !target(make-options-list)
-make-options-list:
-	@${ECHO_CMD} OPTIONS+= \\;
-.for module in ${AVAILABLE_MODULES}
-.	if ${APACHE_MODULES:M${module}}
-		@${ECHO} -e "\t ${module} \"mod_${module:L}\" on \\"
-.	else
-		@${ECHO} -e "\t ${module} \"mod_${module:L}\" off \\"
 .	endif
 .endfor
 .endif

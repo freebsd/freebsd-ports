@@ -1,61 +1,101 @@
-# Makefile.modules
-# Author:			Clement Laforet <clement@FreeBSD.org>
+# $FreeBSD$
 #
-# This file is used to build modules list, DBM dependencies and MPM selection.
-# I hope it can easily handle external modules (such as mod_perl) or MPMs, like
-# muxmpm.
-#
-# Note to myself: (to generate PLIST_SUB entries for modules)
+# Note by Clement Laforet: (to generate PLIST_SUB entries for modules)
 #	gsed 's/^\(.*\)mod\(.*\)\.so/%%\MOD\U\2%%\L\1mod\2\.so/' pkg-plist > tmp
 #	mv tmp pkg-plist
 #
-# $FreeBSD$
-#
+
+# =============================================
+# Maintainer note for OPTION handling:
+# To set additional option use
+#    PORT_OPTIONS+=
+# To unset an OPTION, even the OPTION is set in OPTIONSFILE use
+#    WITHOUT_MODULES+=
+#  Using OPTIONS_EXCLUDE and OPTIONS_OVERRIDE do not work as expected
+#  if the OPTION is enabled by the user, therefore we calculate
+#  them in bsd.apache.mk with help of WITHOUT_MODULES
+#  The other methode is to set IGNORE's and force the user to adjust OPTIONS
 
 .if defined(_PREMKINCLUDED)
+
+# check if APR was build with thread support
+.if exists(${APR_CONFIG})
+APR_LIBS!=	${SH} ${APR_CONFIG} --libs | ${SED} -e 's/-//g'
+.  if defined(APR_LIBS) && !empty(APR_LIBS)
+_T=pthread
+.    for lib in ${APR_LIBS}
+. 	if ${_T:M${lib}}
+APR_HAS_THREADS=	yes
+.	endif
+.    endfor
+.  endif
+.endif	# exists APR_CONFIG
+
+# check if APR-util module exists
+.if exists(${APU_CONFIG})
+.  if ${PORT_OPTIONS:MLDAP} || ${PORT_OPTIONS:MAUTHNZ_LDAP}
+.    if !exists(${APU_LDAP})
+IGNORE=	LDAP and AUTHNZ_LDAP requires APR-util to have LDAP support built in.\
+	Please rebuild APR with LDAP support
+.    endif
+.  endif
+
+.  if ${PORT_OPTIONS:MDBD} || ${PORT_OPTIONS:MAUTHN_DBD}
+.    if !exists(${APU_DBD_MYSQL}) && !exists(${APU_DBD_PGSQL}) && !exists(${APU_DBD_SQLITE3})
+IGNORE=	AUTHN_DBD and DBD requires APR-util to have DBD support build in.\
+	Please rebuild APR at last with one DBD backend
+.    endif
+.  endif
+.endif	# exists APU_CONFIG
+
 # =============================================
 # MPM's: prefork worker event itk peruser
-.if ${WITH_MPM:L} == "prefork"
+.if ${WITH_MPM} == "prefork"
 PLIST_SUB+=		WORKER="@comment " EVENT="@comment "
-
-.elif ${WITH_MPM:L} == "worker"
-PLIST_SUB+=		WORKER="" EVENT="@comment "
-
-.elif ${WITH_MPM:L} == "event"
+.elif ${WITH_MPM} == "worker"
+PLIST_SUB+=		WORKER=""          EVENT="@comment "
+.elif ${WITH_MPM} == "event"
 PLIST_SUB+=		WORKER="@comment " EVENT=""
-
-.elif ${WITH_MPM:L} == "peruser"
+.elif ${WITH_MPM} == "peruser"
 PLIST_SUB+=		WORKER="@comment " EVENT="@comment "
-
-.elif ${WITH_MPM:L} == "itk"
+.elif ${WITH_MPM} == "itk"
 PLIST_SUB+=		WORKER="@comment " EVENT="@comment "
 EXTRA_PATCHES+=		${PATCHDIR}/mpm-itk-${MPM_ITK_VERSION}
-.   if defined (WITH_ITK_PERDIR_REGEX)
-EXTRA_PATCHES+= 	${PATCHDIR}/mpm-itk-perdir-regex
-.   endif
-
+.  if defined (WITH_ITK_PERDIR_REGEX) && defined (WITH_ITK_LIMITS)
+IGNORE=	Use only one patch option not both (WITH_ITK_PERDIR_REGEX or WITH_ITK_LIMITS)
+.  endif
+.  if defined (WITH_ITK_PERDIR_REGEX)
+EXTRA_PATCHES+=		${PATCHDIR}/mpm-itk-perdir-regex
+.  endif
+.  if defined (WITH_ITK_LIMITS)
+EXTRA_PATCHES+=		${PATCHDIR}/mpm-itk-limits
+.  endif
 .else
-IGNORE=			"Unknown MPM: ${WITH_MPM}"
+IGNORE=	Unknown MPM: ${WITH_MPM}
 .endif	# MPM prefork
 
-.if ${WITH_MPM:L} != "prefork"
-PKGNAMESUFFIX=		-${WITH_MPM:L}
-LATEST_LINK=		apache22-${WITH_MPM:L}-mpm
+.if ${WITH_MPM} != "prefork"
+PKGNAMESUFFIX=		-${WITH_MPM}-mpm
+LATEST_LINK=		apache22-${WITH_MPM}-mpm
 .endif
 
-.if ${WITH_MPM:L} == "worker" || ${WITH_MPM:L} == "event"
-WITH_THREADS=		yes
-WITH_MODULES+=		CGID
-WITHOUT_MODULES+=	CGI
+.if ${WITH_MPM} == "worker" || ${WITH_MPM} == "event"
+PORT_OPTIONS+=		CGID
+.if ${PORT_OPTIONS:MCGI}
+IGNORE=	does not build with CGI. Please de-select CGI and select CGID instead
+.endif
+.if exists(${APR_CONFIG}) && !defined(APR_HAS_THREADS)
+IGNORE=	requires APR threads. Please rebuild APR with THREAD support
+.  endif
 .endif
 # =============================================
 
-# XXX WITH_STATIC_SUPPORT : make.conf, or command line parameter
+# The next three params are not converted to an option,
+# they should be used only for special builds.
 .if defined(WITH_STATIC_SUPPORT)
 CONFIGURE_ARGS+=	--enable-static-support
 .endif
 
-# XXX WITH_DEBUG : make.conf, or command line parameter
 # debug overrides CFLAGS
 .if defined(WITH_DEBUG)
 DEBUG_FLAGS?=	-O0 -g -ggdb3
@@ -64,53 +104,57 @@ CONFIGURE_ARGS+=	--enable-maintainer-mode
 WITH_EXCEPTION_HOOK=	yes
 .endif
 
-# WITH_EXCEPTION_HOOK: parameter for command line or make.conf
 .if defined(WITH_EXCEPTION_HOOK)
 CONFIGURE_ARGS+=	--enable-exception-hook
 .endif
 
-.if !defined(WITHOUT_SSL)
+.if ${PORT_OPTIONS:MSSL}
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 .endif
 
-.if defined (WITH_AUTHNZ_LDAP)
+.if ${PORT_OPTIONS:MAUTHNZ_LDAP}
 CONFIGURE_ARGS+=	--enable-authnz-ldap
 .endif
 
-.if defined (WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 CONFIGURE_ARGS+=	--enable-ldap=shared
 .endif
 
-.if !defined(WITH_THREADS)
-WITHOUT_MODULES+=	MEM_CACHE
-.   if defined(WITH_MEM_CACHE)
-IGNORE+=	mod_mem_cache requires WITH_THREADS
-.   endif
-.else
+.if ${PORT_OPTIONS:MAUTH_BASIC} || ${PORT_OPTIONS:MAUTH_DIGEST}
+.  if !${APACHE_MODULES:MAUTHN*}
+IGNORE=	AUTH_BASIC and AUTH_DIGEST need at last one AUTHN provider	
+.  endif	
+.endif
+
+.if ${PORT_OPTIONS:MAUTH_BASIC}
+.  if !${APACHE_MODULES:MAUTHZ*}
+IGNORE=	AUTH_BASIC need at last one AUTHZ provider	
+.  endif	
+.endif
+
+.if defined(APR_HAS_THREADS)
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
+.else
+.  if exists(${APR_CONFIG}) && ${PORT_OPTIONS:MMEM_CACHE}
+IGNORE=	MEM_CACHE requires APR threads. Please rebuild APR with THREAD support
+.  endif
 .endif
 
-.if !defined(WITH_MYSQL) && !defined(WITH_PGSQL) && !defined(WITH_SQLITE)
-WITHOUT_MODULES+=	AUTHN_DBD DBD
-.   if defined(WITH_DBD) || defined(WITH_AUTHN_DBD)
-IGNORE+=	You need to enable at least one DBD backend
-.   endif
-.endif
-
-.if defined(WITHOUT_IPV6)
+.if empty(PORT_OPTIONS:MIPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
 .else
 CATEGORIES+=		ipv6
-.   if defined(WITH_IPV6_V6ONLY) || defined(WITHOUT_V4MAPPED)
+EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-server__config.c
+.  if ${PORT_OPTIONS:MIPV6_V6ONLY}
 CONFIGURE_ARGS+=	--disable-v4-mapped
-.   else
+.  else
 CONFIGURE_ARGS+=	--enable-v4-mapped
-.   endif
+.  endif
 .endif
 
-CONFIGURE_ARGS+=	--with-mpm=${WITH_MPM:L}
+CONFIGURE_ARGS+=	--with-mpm=${WITH_MPM}
 
 .endif	# _PREMKINCLUDED

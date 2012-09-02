@@ -1,22 +1,15 @@
-# New ports collection makefile for:	apache22
-# Date created:				Dec 11 2004
-# Whom:					Clement Laforet <clement@FreeBSD.org>
-#
 # $FreeBSD$
-#
-# For more information, please read Makefile.doc
-#
 
-PORTNAME=	apache
+PORTNAME=	apache22
 PORTVERSION=	2.2.22
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
 DIST_SUBDIR=	apache22
 
 MAINTAINER?=	apache@FreeBSD.org
-COMMENT?=	Version 2.2.x of Apache web server with ${WITH_MPM:L} MPM.
+COMMENT?=	Version 2.2.x of Apache web server with ${WITH_MPM} MPM.
 
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 		apr-1:${PORTSDIR}/devel/apr1 \
@@ -24,14 +17,11 @@ LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 
 MAKE_JOBS_SAFE=	yes
 
-# to be removed if port is renamed to apache22
-ETCDIR=		${PREFIX}/etc/${PORTNAME}22
-WWWDIR=		${PREFIX}/www/${PORTNAME}22
 LATEST_LINK?=	apache22
 
 CONFLICTS=	caudium14-1.* \
 		apache-2.0.* apache-*-2.0.* \
-		apache-*-2.2.*
+		apache-*-2.2.* apache22-*-2.2.*
 
 USE_APACHE=	common22
 USE_BZIP2=	yes
@@ -58,8 +48,17 @@ MPM_ITK_VERSION?=	20110321-01
 
 .include "${APACHEDIR}/Makefile.options"
 .include <bsd.port.options.mk>
+.include "${APACHEDIR}/Makefile.doc"
 
-APU_CONFIG?=	${LOCALBASE}/bin/apu-1-config
+APR_CONFIG?=		${LOCALBASE}/bin/apr-1-config
+APU_CONFIG?=		${LOCALBASE}/bin/apu-1-config
+
+# APU modules used by AUTHN_DBD DBD
+APU_DBD_MYSQL?=		${LOCALBASE}/lib/apr-util-1/apr_dbd_mysql.so
+APU_DBD_PGSQL?=		${LOCALBASE}/lib/apr-util-1/apr_dbd_pgsql.so
+APU_DBD_SQLITE3?=	${LOCALBASE}/lib/apr-util-1/apr_dbd_sqlite3.so
+# APU module used by AUTHNZ_LDAP LDAP
+APU_LDAP?=		${LOCALBASE}/lib/apr-util-1/apr_ldap.so
 
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--enable-layout=FreeBSD \
@@ -69,7 +68,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--with-iconv=${LOCALBASE} \
 		--enable-http \
 		--with-pcre=${LOCALBASE} \
-		--with-apr=${LOCALBASE}/bin/apr-1-config \
+		--with-apr=${APR_CONFIG} \
 		--with-apr-util=${APU_CONFIG}
 
 CONFIGURE_ENV=	\
@@ -81,54 +80,36 @@ PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 MAKE_ENV+=	EXPR_COMPAT=yes \
 		INSTALL_MAN="${INSTALL_MAN}"
 
-# =============================================
+#=====================================================
 # CONFIGURE_ARGS willl be handled in Makefile.modules,
 # here we do only OPTIONS fixups
 
-.if defined(WITH_SUEXEC_RSRCLIMIT)
-EXTRA_PATCHES+= ${FILESDIR}/extra-patch-suexec_rsrclimit
-.if !defined(WITH_SUEXEC)
+.if ${PORT_OPTIONS:MSSL}
+USE_OPENSSL=	yes
+.endif
+
+.if ${PORT_OPTIONS:MSUEXEC_RSRCLIMIT}
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-suexec_rsrclimit
+.  if empty(PORT_OPTIONS:MSUEXEC)
 IGNORE=		suEXEC resource limit patch requires mod_suexec.\
 		Please (re)run 'make config' and choose SUEXEC option also
-.endif
-.endif
-
-.if !defined(WITHOUT_SSL)
-USE_OPENSSL=	yes
-WITH_MODULES+=	SSL
+.  endif
 .endif
 
-.if defined(WITH_AUTHNZ_LDAP)
-WITH_LDAP=	yes
+.if ${PORT_OPTIONS:MSUEXEC_USERDIR}
+EXTRA_PATCHES+= ${FILESDIR}/extra-patch-suexec_userdir
+.  if empty(PORT_OPTIONS:MSUEXEC)
+IGNORE=		suEXEC UserDir patch requires mod_suexec.\
+		Please (re)run 'make config' and choose SUEXEC option also
+.  endif
 .endif
 
-.if defined (WITH_LDAP)
-USE_OPENLDAP=	yes
-WITH_AUTHNZ_LDAP=yes
-.endif
-
-.if defined(WITH_MYSQL)
-USE_MYSQL=	yes
-WITH_THREADS=	yes
-.endif
-
-.if defined(WITH_PGSQL)
-USE_PGSQL=	yes
-.endif
-
-.if defined(WITH_SQLITE)
-USE_SQLITE=	yes
-.endif
-
-.include "${APACHEDIR}/Makefile.doc"
 .include <bsd.port.pre.mk>
 .include "${APACHEDIR}/Makefile.modules"
 
-pre-everything::
+pre-configure::
 	@${ECHO_MSG}	""
 	@${ECHO_MSG}	"  You can check your modules configuration by using make show-modules"
-	@${ECHO_MSG}	"  To see all available knobs, type make show-options"
-	@${ECHO_MSG}	"  To see all modules in different categories, type make show-categories"
 	@${ECHO_MSG}	""
 
 show-options:
@@ -146,19 +127,28 @@ post-configure:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/support/envvars-std
 
 post-install:
-	@${MKDIR} ${PREFIX}/etc/apache22/envvars.d
-	@${MKDIR} ${PREFIX}/etc/apache22/Includes
-	@${INSTALL_DATA} ${FILESDIR}/no-accf.conf ${PREFIX}/etc/apache22/Includes
+	@${MKDIR} ${ETCDIR}/envvars.d
+	@${MKDIR} ${ETCDIR}/Includes
+	@${INSTALL_DATA} ${FILESDIR}/no-accf.conf ${ETCDIR}/Includes/
 
-.if defined(WITH_LOG_FORENSIC)
+.if ${PORT_OPTIONS:MLOG_FORENSIC}
 	@${INSTALL_SCRIPT} ${WRKSRC}/support/check_forensic ${PREFIX}/sbin
 .endif
 
-.if !defined(NOPORTDOCS)
-.for dir in style/lang style/xsl/util style/xsl
+.if ${PORT_OPTIONS:MDOCS}
+.  for dir in style/lang style/xsl/util style/xsl
 	@[ -d ${DOCSDIR}/${dir}/ ] && ${TOUCH} ${DOCSDIR}/${dir}/.keepme
-.endfor
+.  endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
+
+# maintainer only, check for new modules
+modlist: extract
+	@${AWK} '/: checking whether to enable mod_/ \
+		{printf "%%%%%s%%%%libexec/apache22/%s.so\n", \
+		toupper($$8), $$8}' ${WRKSRC}/configure \
+		| ${TR} -d '"' \
+		| ${GREP} -E -v 'MOD_(ECHO|EXAMPLE|HTTP|IDENT|ISAPI|SO)' \
+		| ${SORT} -u
 
 .include <bsd.port.post.mk>

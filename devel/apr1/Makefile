@@ -31,8 +31,8 @@ NDBM_DESC=	NDBM support
 
 .include <bsd.port.options.mk>
 
-APR_VERSION=	1.4.5
-APU_VERSION=	1.3.12
+APR_VERSION=	1.4.6
+APU_VERSION=	1.4.1
 
 USE_ICONV=		yes
 USE_AUTOTOOLS=	automake autoconf libtool:env
@@ -49,7 +49,7 @@ APU_WRKDIR=	${WRKDIR}/apr-util-${APU_VERSION}
 
 PLIST_SUB=	SHLIB_APR_MAJOR="${SHLIB_APR_MAJOR}" SHLIB_APU_MAJOR="${SHLIB_APU_MAJOR}"
 SHLIB_APR_MAJOR=	4
-SHLIB_APU_MAJOR=	3
+SHLIB_APU_MAJOR=	4
 
 APR_CONF_ARGS=	--with-installbuilddir=${DATADIR}/build-1
 APU_CONF_ARGS=	--with-apr=${APR_WRKDIR} \
@@ -61,31 +61,16 @@ APU_CONF_ARGS=	--with-apr=${APR_WRKDIR} \
 APR_CONF_ARGS+=	--enable-threads
 .else
 APR_CONF_ARGS+=	--disable-threads
-. if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nothr
-. else
-PKGNAMESUFFIX=	-nothr
-. endif
 .endif
 
 .if ${PORT_OPTIONS:MIPV6}
 APR_CONF_ARGS+=	--enable-ipv6
-. if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-ipv6
-. else
-PKGNAMESUFFIX=	-ipv6
-. endif
 .else
 APR_CONF_ARGS+=	--disable-ipv6
 .endif
 
 .if ${PORT_OPTIONS:MDEVRANDOM}
 APR_CONF_ARGS+=	--with-devrandom
-. if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-devrandom
-. else
-PKGNAMESUFFIX=	-devrandom
-. endif
 .else
 APR_CONF_ARGS+=	--without-devrandom
 .endif
@@ -96,11 +81,6 @@ PLIST_SUB+=	GDBM=""
 APU_EXTRAS=	yes
 LIB_DEPENDS+=	gdbm:${PORTSDIR}/databases/gdbm
 APU_CONF_ARGS+=	--with-gdbm=${LOCALBASE}
-. if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gdbm
-. else
-PKGNAMESUFFIX=	-gdbm
-. endif
 .else
 PLIST_SUB+=	GDBM="@comment "
 APU_CONF_ARGS+=	--without-gdbm
@@ -111,11 +91,6 @@ APU_EXTRAS=	yes
 PLIST_SUB+=	BDB=""
 USE_BDB=	42+
 APU_CONF_ARGS+=	--with-berkeley-db=${BDB_INCLUDE_DIR}:${BDB_LIB_DIR}
-. if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-${BDB_INCLUDE_DIR:S,^${LOCALBASE}/include/,,}
-. else
-PKGNAMESUFFIX=	-${BDB_INCLUDE_DIR:S,^${LOCALBASE}/include/,,}
-. endif
 .else
 PLIST_SUB+=	BDB="@comment "
 APU_CONF_ARGS+=	--without-berkeley-db
@@ -125,11 +100,6 @@ APU_CONF_ARGS+=	--without-berkeley-db
 APU_EXTRAS=	yes
 PLIST_SUB+=	NDBM=""
 APU_CONF_ARGS+=	--with-ndbm=/usr
-. if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-ndbm
-. else
-PKGNAMESUFFIX=	-ndbm
-. endif
 .else
 PLIST_SUB+=	NDBM="@comment "
 APU_CONF_ARGS+=	--without-ndbm
@@ -141,11 +111,6 @@ PLIST_SUB+=	LDAP=""
 USE_OPENLDAP=	yes
 APU_CONF_ARGS+=	--with-ldap-include=${LOCALBASE}/include \
 	--with-ldap-lib=${LOCALBASE}/lib --with-ldap=ldap
-. if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-ldap${OPENLDAP_VER}
-. else
-PKGNAMESUFFIX=	-ldap
-. endif
 .else
 PLIST_SUB+=	LDAP="@comment "
 APU_CONF_ARGS+=	--without-ldap
@@ -159,11 +124,6 @@ APU_CONF_ARGS+=	--with-mysql=${LOCALBASE}
 CONFIGURE_ENV+=	LIBS="${LIBS}"
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/mysql -DHAVE_MYSQL_H
 LDFLAGS+=	-L${LOCALBASE}/lib/mysql
-. if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-mysql${MYSQL_VER}
-. else
-PKGNAMESUFFIX=	-mysql
-. endif
 .else
 PLIST_SUB+=	MYSQL="@comment "
 APU_CONF_ARGS+=	--without-mysql
@@ -175,11 +135,6 @@ PLIST_SUB+=	PGSQL=""
 USE_PGSQL=	YES
 APU_CONF_ARGS+=	--with-pgsql=${LOCALBASE}
 CONFIGURE_ENV+=	ac_cv_path_PGSQL_CONFIG=""
-. if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-pgsql${PGSQL_VER}
-. else
-PKGNAMESUFFIX=	-pgsql
-. endif
 .else
 PLIST_SUB+=	PGSQL="@comment "
 APU_CONF_ARGS+=	--without-pgsql
@@ -190,11 +145,6 @@ APU_EXTRAS=	yes
 PLIST_SUB+=	SQLITE3=""
 USE_SQLITE=	YES
 APU_CONF_ARGS+=	--with-sqlite3=${LOCALBASE}
-. if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-sqlite3
-. else
-PKGNAMESUFFIX=	-sqlite3
-. endif
 .else
 APU_CONF_ARGS+=	--without-sqlite3
 PLIST_SUB+=	SQLITE3="@comment "
@@ -217,6 +167,9 @@ post-patch:
 	${REINPLACE_CMD} -e '1 s/python/${PYTHON_VERSION}/' \
 		${APR_WRKDIR}/build/gen-build.py
 	${REINPLACE_CMD} -e 's/void main/int main/' ${APR_WRKDIR}/build/apr_network.m4
+
+# http://svn.apache.org/viewvc?view=revision&revision=1362895
+	${REINPLACE_CMD} -e 's|sql = apr_palloc|sql = apr_pcalloc|' ${APU_WRKDIR}/dbd/apr_dbd_freetds.c	
 
 run-autotools::
 	cd ${APR_WRKDIR} ; \
@@ -248,8 +201,8 @@ do-install:
 	cd ${APU_WRKDIR}; ${SETENV} ${MAKE_ENV} ${MAKE} ${INSTALL_TARGET}
 
 test: build
-	@(cd ${APR_WRKDIR}; ${MAKE} test)
-	@(cd ${APU_WRKDIR}; ${MAKE} test)
+	-@(cd ${APR_WRKDIR}; ${MAKE} test)
+	-@(cd ${APU_WRKDIR}; ${MAKE} test)
 
 #regression-test: test
 

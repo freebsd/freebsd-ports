@@ -1,13 +1,7 @@
-# Makefile.doc
-# Author:				Clement Laforet <clement@FreeBSD.org>
-#
-# This files contains:
-#      - make options output
-#      - apache22 man/docs routines
-#
 # $FreeBSD$
 #
-
+# Author:				Clement Laforet <clement@FreeBSD.org>
+#
 ##
 ## By default, modules are compiled as dynamically loadable modules (DSO).
 ##
@@ -21,11 +15,9 @@
 ##                                event
 ##                                itk
 ##      WITH_HTTP_PORT:           default: 80
-##      WITHOUT_V4MAPPED
-##      WITH_IPV6_V6ONLY:         Don't allow IPv6 sockets to handle IPv4 
-##                                connections
+##
 ##      WITH_STATIC_SUPPORT:      Build statically linked support binaries
-##      WITH_STATIC_APACHE:       Build a static version of httpd (implies 
+##      WITH_STATIC_APACHE:       Build a static version of httpd (implies
 ##                                WITH_STATIC_MODULES)
 ##      WITH_ALL_STATIC_MODULES:  All modules will be statically linked.
 ##      WITH_STATIC_MODULES (*):  List of modules to build modules statics
@@ -34,25 +26,26 @@
 ##                                WITH_MODULES or with default configuration
 ##                                use 'make show-modules', to check if they are
 ##                                enabled)
-##      WITH_SUEXEC:              Enable suExec support
-##            SUEXEC_DOCROOT:     SuExec root directory
+##      WITH_SUEXEC:              Enable suEXEC support
+##            SUEXEC_DOCROOT:     suEXEC root directory
 ##            SUEXEC_USERDIR:     User subdirectory (default public_html)
 ##            SUEXEC_SAFEPATH:    Set the safepath
-##            SUEXEC_LOGFILE:     Set log file for suexec (default: /var/log/httpd-suexec.log)
+##            SUEXEC_LOGFILE:     Set log file for suEXEC (default: /var/log/httpd-suexec.log)
 ##            SUEXEC_UIDMIN:      Minimal allowed UID (default 1000)
 ##            SUEXEC_GIDMIN:      Minimal allowed GID (default 1000)
-##            SUEXEC_CALLER:      User allowed to call SuExec (default
+##            SUEXEC_CALLER:      User allowed to call suEXEC (default
 ##                                ${WWWOWN} (www))
-##            SUEXEC_UMASK:       Defines umask for suexec'd process(default:
+##            SUEXEC_UMASK:       Defines umask for suEXEC'd process(default:
 ##                                unset)
-##	WITH_DEBUG:               Build a debug versoin of apache (set CFLAGS
+##	WITH_DEBUG:               Build a debug version of apache (set CFLAGS
 ##                                to "-O0 -g -ggdb3" or ${DEBUG_FLAGS} and
 ##                                defines WITH_EXCEPTION_HOOK too)
 ##      WITH_EXCEPTION_HOOK:      Enable fatal exception hook
 ##
-##  Optional patches:  
+##  Optional patches without option:
 ##	WITH_ITK_PERDIR_REGEX     Add the per-directory setting AssignUserFromPath for mpm-itk
 ##                                as described on http://www.pvv.ntnu.no/~knuta/mpm-itk/
+##	WITH_ITK_LIMITS           Add rlimits based on login class for mpm-itk
 ##
 ## Available make targets:
 ##      config:                   open the configure dialog
@@ -61,16 +54,14 @@
 ##      show-modules:             prints list of available modules
 ##
 ## Examples (*):
-##      make WITH_STATIC_MODULES="SSL REWRITE INCLUDE" WITH_EXPERIMENTAL_MODULES=yes
+##      make WITH_STATIC_MODULES="SSL REWRITE INCLUDE"
 ##      Note: If you define your custom options in /etc/make.conf, don't forget
 ##            to do not use quotes.
 ##
 
-DOCSDIR=	${PREFIX}/share/doc/apache22
-EXAMPLESDIR=	${PREFIX}/share/examples/apache22
 MAKE_ENV+=	EXAMPLESDIR=${EXAMPLESDIR}
 
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 MAKE_ENV+=	NOPORTDOCS=yes
 .endif
 

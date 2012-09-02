@@ -125,6 +125,7 @@ libexec/apache22/httpd.exp
 %%MOD_CHARSET_LITE%%libexec/apache22/mod_charset_lite.so
 %%MOD_DAV%%libexec/apache22/mod_dav.so
 %%MOD_DAV_FS%%libexec/apache22/mod_dav_fs.so
+%%MOD_DAV_LOCK%%libexec/apache22/mod_dav_lock.so
 %%MOD_DBD%%libexec/apache22/mod_dbd.so
 %%MOD_DEFLATE%%libexec/apache22/mod_deflate.so
 %%MOD_DIR%%libexec/apache22/mod_dir.so
@@ -175,7 +176,7 @@ sbin/ab
 sbin/apachectl
 sbin/apxs
 sbin/checkgid
-%%MOD_LOG_FORENSIC%%sbin/check_forensic
+%%FORENSIC%%sbin/check_forensic
 sbin/dbmmanage
 sbin/envvars
 sbin/htcacheclean
@@ -187,16 +188,16 @@ sbin/httxt2dbm
 sbin/logresolve
 sbin/rotatelogs
 sbin/split-logfile
-%%MOD_SUEXEC%%sbin/suexec
-share/apache22/build/config.nice
-share/apache22/build/config_vars.mk
-share/apache22/build/instdso.sh
-share/apache22/build/library.mk
-share/apache22/build/ltlib.mk
-share/apache22/build/mkdir.sh
-share/apache22/build/program.mk
-share/apache22/build/rules.mk
-share/apache22/build/special.mk
+%%SUEXEC%%sbin/suexec
+%%DATADIR%%/build/config.nice
+%%DATADIR%%/build/config_vars.mk
+%%DATADIR%%/build/instdso.sh
+%%DATADIR%%/build/library.mk
+%%DATADIR%%/build/ltlib.mk
+%%DATADIR%%/build/mkdir.sh
+%%DATADIR%%/build/program.mk
+%%DATADIR%%/build/rules.mk
+%%DATADIR%%/build/special.mk
 %%WWWDIR%%/cgi-bin/printenv
 %%WWWDIR%%/cgi-bin/test-cgi
 @unexec if cmp -s %D/%%WWWDIR%%/data/index.html %D/%%EXAMPLESDIR%%/index.html; then rm -f %D/%%WWWDIR%%/data/index.html; fi
@@ -456,8 +457,8 @@ share/apache22/build/special.mk
 @dirrm %%EXAMPLESDIR%%/extra
 @dirrm %%EXAMPLESDIR%%
 @dirrmtry %%DOCSDIR%%
-@dirrm share/apache22/build
-@dirrm share/apache22
+@dirrm %%DATADIR%%/build
+@dirrm %%DATADIR%%
 @dirrmtry libexec/apache22
 @dirrmtry include/apache22
 @unexec rm -f %D/%%ETCDIR%%/httpd.conf.bak 2> /dev/null || true
