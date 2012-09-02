@@ -837,6 +837,8 @@ share/applications/gajim.desktop
 %%DATADIR%%/icons/hicolor/16x16/status/audio-mic-volume-low.png
 %%DATADIR%%/icons/hicolor/16x16/status/audio-mic-volume-medium.png
 %%DATADIR%%/icons/hicolor/16x16/status/audio-mic-volume-muted.png
+%%DATADIR%%/icons/hicolor/32x32/actions/gajim-security_high.png
+%%DATADIR%%/icons/hicolor/32x32/actions/gajim-security_low.png
 %%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-aim.png
 %%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-bytestreams.png
 %%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-conference.png
@@ -868,8 +870,6 @@ share/applications/gajim.desktop
 %%DATADIR%%/icons/hicolor/48x48/actions/gajim-gc_invitation.png
 %%DATADIR%%/icons/hicolor/48x48/actions/gajim-new_email_recv.png
 %%DATADIR%%/icons/hicolor/48x48/actions/gajim-priv_msg_recv.png
-%%DATADIR%%/icons/hicolor/48x48/actions/gajim-security_high.png
-%%DATADIR%%/icons/hicolor/48x48/actions/gajim-security_low.png
 %%DATADIR%%/icons/hicolor/48x48/actions/gajim-single_msg_recv.png
 %%DATADIR%%/icons/hicolor/48x48/actions/gajim-subscription_request.png
 %%DATADIR%%/icons/hicolor/48x48/actions/gajim-unsubscribed.png
@@ -879,6 +879,7 @@ share/applications/gajim.desktop
 %%DATADIR%%/plugins/plugin_installer/__init__.py
 %%DATADIR%%/plugins/plugin_installer/config_dialog.ui
 %%DATADIR%%/plugins/plugin_installer/manifest.ini
+%%DATADIR%%/plugins/plugin_installer/plugin_installer.png
 %%DATADIR%%/plugins/plugin_installer/plugin_installer.py
 %%DATADIR%%/src/adhoc_commands.py
 %%DATADIR%%/src/adhoc_commands.pyc
@@ -1319,7 +1320,9 @@ share/icons/hicolor/scalable/apps/gajim.svg
 %%NLS%%share/locale/eu/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/he/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/gajim.mo
@@ -1335,10 +1338,10 @@ share/icons/hicolor/scalable/apps/gajim.svg
 %%NLS%%share/locale/sr/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/sr@Latn/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gajim.mo
-@dirrmtry share/applications
 %%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/kk
 %%NLS%%@dirrmtry share/locale/be@latin/LC_MESSAGES
@@ -1360,6 +1363,7 @@ share/icons/hicolor/scalable/apps/gajim.svg
 @dirrm %%DATADIR%%/icons/hicolor/48x48/actions
 @dirrm %%DATADIR%%/icons/hicolor/48x48
 @dirrm %%DATADIR%%/icons/hicolor/32x32/categories
+@dirrm %%DATADIR%%/icons/hicolor/32x32/actions
 @dirrm %%DATADIR%%/icons/hicolor/32x32
 @dirrm %%DATADIR%%/icons/hicolor/16x16/status
 @dirrm %%DATADIR%%/icons/hicolor/16x16/actions
@@ -1466,3 +1470,4 @@ share/icons/hicolor/scalable/apps/gajim.svg
 @dirrm %%DATADIR%%/data/activities
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
