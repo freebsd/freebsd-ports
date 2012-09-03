@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	hotcrp
-PORTVERSION=	2.50
+PORTVERSION=	2.52
 CATEGORIES=	www
 MASTER_SITES=	http://www.read.seas.harvard.edu/~kohler/hotcrp/
 
 MAINTAINER=	kevlo@FreeBSD.org
-COMMENT=	A web based conference management software
+COMMENT=	Web based conference management software
 
 RUN_DEPENDS=	${PEARDIR}/Mail.php:${PORTSDIR}/mail/pear-Mail \
 		${PEARDIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime \
