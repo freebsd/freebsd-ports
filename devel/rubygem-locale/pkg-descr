@@ -1,4 +1,5 @@
 Ruby Locale is a pure ruby library to support locales.
 
-Author:	Masao Mutoh <mutomasa@gmail.com>
-WWW: http://locale.rubyforge.org/
+Authors:	Kouhei Sutou <kou@clear-code.com>
+		Masao Mutoh <mutomasa@gmail.com>
+WWW:	http://ruby-gettext.github.com/
