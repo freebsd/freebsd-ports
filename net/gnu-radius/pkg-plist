@@ -1,4 +1,4 @@
-@unexec %D/etc/rc.d/radiusd.sh forcestop 2>/dev/null || true
+@stopdaemon radiusd
 bin/builddbm
 bin/radgrep
 bin/radlast
@@ -44,7 +44,6 @@ etc/raddb/realms-dist
 etc/raddb/sqlserver-dist
 @unexec if cmp -s %D/etc/raddb/users %D/etc/raddb/users-dist; then rm -f %D/etc/raddb/users; fi
 etc/raddb/users-dist
-etc/rc.d/radiusd.sh
 include/radius/argcv.h
 include/radius/debug.h
 include/radius/dictionary.h
