@@ -126,7 +126,6 @@ post-patch:
 	${REINPLACE_CMD}  -e '889s,], || 1 ],' ${WRKSRC}/raddb/Makefile.in
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/radiusd.sh ${PREFIX}/etc/rc.d/radiusd.sh
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 . for ex_file in ${EXAMPLE_FILES}
