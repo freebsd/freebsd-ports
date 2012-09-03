@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thunderbird_labels
-PORTVERSION=	0.4
+PORTVERSION=	0.8
 CATEGORIES=	mail
 MASTER_SITES=	http://rcmail-thunderbird-labels.googlecode.com/files/
 PKGNAMEPREFIX=	roundcube-
