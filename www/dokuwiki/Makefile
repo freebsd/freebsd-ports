@@ -7,7 +7,7 @@
 
 PORTNAME=	dokuwiki
 PORTVERSION=	${DIST_VER:S/${PORTNAME}//:S/-//g}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.splitbrain.org/_media/projects/dokuwiki/ \
 		LOCAL/chinsan/${PORTNAME}
@@ -26,6 +26,8 @@ DOKUWIKI_DIR?=	www/${PORTNAME}
 WRKSRC=		${WRKDIR}/${DIST_VER}
 PLIST_SUB=	DOKUWIKI_DIR=${DOKUWIKI_DIR}
 TEMP_PLIST=	${WRKDIR}/temp-pkg-plist
+SUB_FILES=	pkg-message
+SUB_LIST+=	PORTNAME=${PORTNAME} DOKUWIKI_DIR=${DOKUWIKI_DIR}
 
 REINPLACE_ARGS=	-i ''
 
@@ -51,7 +53,6 @@ do-install:
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${DOKUWIKI_DIR}
 
 post-install:
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|; s|%%PORTNAME%%|${PORTNAME}|' \
-		-e 's|%%DOKUWIKI_DIR%%|${DOKUWIKI_DIR}|' ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
