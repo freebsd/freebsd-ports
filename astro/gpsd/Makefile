@@ -7,6 +7,7 @@
 
 PORTNAME=	gpsd
 PORTVERSION=	3.6
+PORTREVISION=	1
 CATEGORIES=	astro geography
 MASTER_SITES=	SAVANNAH
 
@@ -191,6 +192,10 @@ SCONS_ARGS+=	ntpshm=no
 
 .if defined(WITHOUT_PPS)
 SCONS_ARGS+=	pps=no
+.else
+.	if defined(WITHOUT_NTPSHM)
+IGNORE=		PPS requires NTPSHM
+.	endif
 .endif
 
 .if defined(WITH_PPSONCTS)
@@ -267,6 +272,9 @@ PLIST_SUB+=	CURSES=""
 .if defined(WITH_PROFILING)
 SCONS_ARGS+=	profiling=yes
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/Qgpsmm.pc.in
 
 # generates .py[co] files for installed modules
 # if that's not done, ${PYTHON_SITELIBDIR}/gps will be polluted
