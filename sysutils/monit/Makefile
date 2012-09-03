@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monit
-PORTVERSION=	5.4
+PORTVERSION=	5.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.mmonit.com/monit/dist/
 
@@ -23,7 +23,8 @@ USE_RC_SUBR=	${PORTNAME}
 CONFIGURE_ENV=	CONFIG_SHELL="${SH}" \
 		LOCALBASE="${LOCALBASE}"
 
-OPTIONS=	SSL "Enable SSL support" on
+OPTIONS_DEFINE=	SSL
+OPTIONS_DEFAULT=SSL
 
 PLIST_FILES=	bin/monit \
 		etc/monitrc.sample
@@ -35,7 +36,7 @@ PORTDOCS=	${DOCS:T}
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_SSL)
+.if empty(PORT_OPTIONS:MSSL)
 CONFIGURE_ARGS+=	--without-ssl
 .endif
 
