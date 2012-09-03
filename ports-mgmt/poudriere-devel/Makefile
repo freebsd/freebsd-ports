@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	poudriere
-PORTVERSION=	2.0.99.20120831
+PORTVERSION=	2.0.99.20120903
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://fossil.etoilebsd.net/poudriere/tarball/
 
@@ -10,7 +10,7 @@ COMMENT=	Port build and test system
 
 LICENSE=	BSD
 
-FSL_CHKIN=	1516db8bc5
+FSL_CHKIN=	abeb0b8b2b
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz?uuid=${FSL_CHKIN}
 PKGNAMESUFFIX=	-devel
 
@@ -34,6 +34,7 @@ PLIST_FILES=	etc/poudriere.conf.sample \
 		share/poudriere/bulk.sh \
 		share/poudriere/cron.sh \
 		share/poudriere/queue.sh \
+		share/poudriere/options.sh \
 
 PLIST_DIRS=	share/poudriere \
 
