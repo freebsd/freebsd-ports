@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gettext
-PORTVERSION=	2.2.1
+PORTVERSION=	2.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -18,6 +18,6 @@ RUN_DEPENDS=	rubygem-locale>=2.0.5:${PORTSDIR}/devel/rubygem-locale
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-PLIST_FILES=	bin/rgettext bin/rmsgfmt bin/rmsgmerge
+PLIST_FILES=	bin/rmsgfmt bin/rmsginit bin/rmsgmerge bin/rxgettext
 
 .include <bsd.port.mk>
