@@ -27,6 +27,8 @@ CONFIGURE_ARGS=	--with-sys-gd=no \
 		--with-gsfontdir=${LOCALBASE}/share/ghostscript/fonts
 USE_LDCONFIG=	yes
 
+MAKE_JOBS_SAFE=	yes
+
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-nox11
 CONFIGURE_ARGS+=	--with-x=no

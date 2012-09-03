@@ -21,6 +21,8 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	yes
 
+MAKE_JOBS_SAFE=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|: install-docsDATA|:|g' ${WRKSRC}/Makefile.in
 

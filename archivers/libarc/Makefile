@@ -20,6 +20,8 @@ SOVERSION=	1
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I." LN="${LN} -sf" \
 		SOLIB="${SOLIB}" SOVERSION="${SOVERSION}"
 
+MAKE_JOBS_SAFE=	yes
+
 USE_LDCONFIG=	yes
 
 do-install:

@@ -16,6 +16,8 @@ COMMENT=	A low level console graphics library
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+MAKE_JOBS_SAFE=	yes
+
 USE_DOS2UNIX=	utils/gtf/gtf.h utils/gtf/scitech.h
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
