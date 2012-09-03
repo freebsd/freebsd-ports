@@ -19,12 +19,24 @@ CONFIGURE_ARGS=--with-freebsd-ports
 CONFLICTS_INSTALL=heirloom-doctools-[0-9]*
 
 MAN1=		grap.1
+PORTDOCS=	README CHANGES COPYRIGHT grap.man
 
 .include <bsd.port.options.mk>
 
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.doc \
+		${MAN1PREFIX}/man/man1/${PORTNAME}.1
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/grap.defines ${WRKSRC}/grap.tex.defines \
+		${DATADIR}
 .if ${PORT_OPTIONS:MDOCS}
-post-install:
-	${RM} -rf ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
+.  for d in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/$d ${DOCSDIR}
+.  endfor
 .endif
+	${MKDIR} ${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 
 .include <bsd.port.mk>

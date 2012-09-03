@@ -1,8 +1,4 @@
 bin/grap
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
-%%PORTDOCS%%%%DOCSDIR%%/grap.man
 %%DATADIR%%/grap.defines
 %%DATADIR%%/grap.tex.defines
 %%EXAMPLESDIR%%/400mpairs.d
@@ -24,4 +20,3 @@ bin/grap
 %%EXAMPLESDIR%%/result.SQ_MESH.Fail1.S3.R0.Hybrid.Random1500.succ.result
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
