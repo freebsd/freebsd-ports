@@ -878,6 +878,7 @@
     SUBDIR += py-GeoIP
     SUBDIR += py-amqplib
     SUBDIR += py-avahi
+    SUBDIR += py-pybeanstalk
     SUBDIR += py-beanstalkc
     SUBDIR += py-cloudfiles
     SUBDIR += py-dpkt
