@@ -13,7 +13,6 @@ CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/p/-pre/}/ \
 		http://ftp.snt.utwente.nl/pub/software/videolan/${PORTNAME}/${DISTVERSION}/ \
 		ftp://ftp.crans.org/pub/videolan/${PORTNAME}/${DISTVERSION}/
-DISTNAME=	${PORTNAME}-${DISTVERSION:S/p/-pre/}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Qt4 based multimedia player and streaming server
@@ -194,9 +193,8 @@ IGNORE=		base clang version too old, set NO_IGNORE to override
 CONFIGURE_ARGS+=--enable-altivec # VLC's config script doesn't know to do this
 .endif
 
-# sometimes(?) misdetected causing build failure
 .if ${ARCH} == "i386"
-CONFIGURE_ARGS+=--disable-sse --disable-mmx
+USE_GCC?=	4.6+ # sse/3dnow detection on i386 needs newer gcc
 .endif
 
 # End OS specific hacks
@@ -610,7 +608,6 @@ CONFIGURE_ARGS+=	--disable-twolame
 .if ${PORT_OPTIONS:MUPNP}
 LIB_DEPENDS+=	upnp:${PORTSDIR}/devel/upnp
 CONFIGURE_ARGS+=--enable-upnp
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules__services_discovery__upnp_intel.cpp
 .else
 CONFIGURE_ARGS+=--disable-upnp
 .endif
