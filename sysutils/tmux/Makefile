@@ -31,7 +31,7 @@ OPTIONS_DEFINE=	LIBEVENT2 LIBEVENT_STATIC BACKSPACE
 
 LIBEVENT2_DESC=	Use libevent version 2
 LIBEVENT_STATIC_DESC=	Build with static libevent
-BACKSPACE_DESC=	Build wiht tty/keys patch
+BACKSPACE_DESC=	Build with tty/keys patch
 
 .include <bsd.port.options.mk>
 
