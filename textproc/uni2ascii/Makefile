@@ -25,18 +25,10 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 MAN1=		uni2ascii.1 ascii2uni.1
 PLIST_FILES=	bin/uni2ascii bin/ascii2uni
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800067
-LIB_DEPENDS=	getline.1:${PORTSDIR}/devel/libgetline
-LDFLAGS+=	-lgetline
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
-.endif
-
 do-install:
 .for f in ${PORTNAME} ascii2uni
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${f}.1 ${MAN1PREFIX}/man/man1
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
