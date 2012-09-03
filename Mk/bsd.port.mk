@@ -383,6 +383,12 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_SDL		- If set, this port uses the sdl libraries.
 #				  See bsd.sdl.mk for more information.
 ##
+# USE_READLINE	- If set, this port uses libreadline.
+# 				  Legal values are: yes, base, port
+#				  yes, base: use base system libreadline on FreeBSD 9 or earlier,
+#				  	use ports/devel/readline on FreeBSD 10.0+
+#				  port: always use ports/devel/readline
+##
 # USE_OPENAL	- If set, this port relies on the OpenAL package.
 #				  Legal values are: al, soft, si, alut.
 #				  If set to an unknown value, the port is marked broken.
@@ -1259,7 +1265,7 @@ GID_OFFSET?=	0
 
 # predefined accounts from src/etc/master.passwd
 # alpha numeric sort order
-USERS_BLACKLIST=	_dhcp _pflogd bin bind daemon games kmem mailnull man news nobody operator pop proxy root smmsp sshd toor tty uucp www
+USERS_BLACKLIST=	_dhcp _pflogd bin bind daemon games hast kmem mailnull man news nobody operator pop proxy root smmsp sshd toor tty uucp www
 
 LDCONFIG_DIR=	libdata/ldconfig
 LDCONFIG32_DIR=	libdata/ldconfig32
@@ -1695,6 +1701,15 @@ MAKE_ENV+=	${b}="${${b}}"
 
 .if defined(USE_OPENLDAP) || defined(WANT_OPENLDAP_VER)
 .include "${PORTSDIR}/Mk/bsd.ldap.mk"
+.endif
+
+.if defined(USE_READLINE)
+.if ${USE_READLINE} == "port" || ${OSVERSION} > 1000000
+LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
+CPPFLAGS+=		-I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib -lreadline
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+.endif
 .endif
 
 .if defined(USE_OPENAL)
@@ -4454,7 +4469,7 @@ pretty-print-www-site:
 	if [ -n "$${www_site}" ]; then \
 		${ECHO_MSG} -n " and/or visit the "; \
 		${ECHO_MSG} -n "<a href=\"$${www_site}\">web site</a>"; \
-		${ECHO_MSG} " for futher informations"; \
+		${ECHO_MSG} " for further information"; \
 	fi
 .endif
 
