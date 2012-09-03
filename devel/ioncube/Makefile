@@ -13,7 +13,7 @@ MASTER_SITES=	http://downloads2.ioncube.com/loader_downloads/ \
 DISTNAME=	${PORTNAME}_loaders_fre_${VER}_${ARCH:S,i386,x86,:S,amd64,x86-64,}
 
 MAINTAINER=	svyatoslav.lempert@gmail.com
-COMMENT=	An ionCube loader for PHP code
+COMMENT=	ionCube loader for PHP code
 
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
@@ -33,6 +33,10 @@ VER=	8
 .endif
 .if ${OSVERSION} >= 900000
 VER=	9
+.endif
+
+.if empty(PHP_VERSION)
+PHP_VERSION!=	${MAKE} -C ${PORTSDIR}/${PHP_PORT} -V PORTVERSION
 .endif
 
 PHP_INSTVER=	${PHP_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
