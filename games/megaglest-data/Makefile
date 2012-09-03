@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	megaglest
-PORTVERSION=	3.5.2
+PORTVERSION=	3.6.0.3
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/current_release/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}_${PORTVERSION}/
 PKGNAMESUFFIX=	-data
-DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}.3
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	smoeller@nichthelfer.de
+MAINTAINER=	rnejdl@ringofsaturn.com
 COMMENT=	MegaGlest data files
 
 USE_XZ=		yes
@@ -39,7 +39,7 @@ pre-install:
 
 .if !defined(NOPORTDOCS)
 	@cd ${WRKSRC}/docs && \
-		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%PORTDOCS%%%%DOCSDIR%%/|' >> ${PLIST} && \
+		${FIND} * -type f | ${GREP} -v CHANGELOG.txt | ${GREP} -v README.txt | ${SORT} | ${SED} -e 's|^|%%PORTDOCS%%%%DOCSDIR%%/|' >> ${PLIST} && \
 			${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|%%PORTDOCS%%@dirrm %%DOCSDIR%%/|' >> ${PLIST}
 	@${ECHO_CMD} "%%PORTDOCS%%@dirrm %%DOCSDIR%%" >> ${PLIST}
 .endif
