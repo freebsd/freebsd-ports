@@ -9,8 +9,7 @@
 PORTNAME=	glimpse
 PORTVERSION=	4.13.1
 CATEGORIES=	textproc databases
-MASTER_SITES=	ftp://ftp.polito.it/pub/tools/unix/harvest/ \
-		LOCAL/beech
+MASTER_SITES=	LOCAL/beech
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text search engine
