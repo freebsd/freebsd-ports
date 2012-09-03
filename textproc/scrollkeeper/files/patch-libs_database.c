@@ -1,12 +1,12 @@
---- libs/database.c.orig	Sat May 25 23:17:10 2002
-+++ libs/database.c	Sat May 25 23:18:01 2002
-@@ -73,7 +73,8 @@
+--- libs/database.c.orig	2002-06-02 06:03:10.000000000 +0000
++++ libs/database.c	2012-09-03 22:39:28.000000000 +0000
+@@ -131,7 +131,8 @@
      
      /* create locale directories and symlinks */
      
 -    dir = opendir(data_dir);
 +    if ((dir = opendir(data_dir)) == NULL)
-+	return;
++	return 1;
      
      while((dir_ent = readdir(dir)) != NULL)
      {
