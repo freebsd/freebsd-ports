@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	istgt
-PORTVERSION=	20120811
+PORTVERSION=	20120901
 CATEGORIES=	net
 MASTER_SITES=	http://www.peach.ne.jp/archives/istgt/
 
@@ -36,7 +36,7 @@ DOCS=		ChangeLog.jp README doc/QUICKSTART doc/QUICKSTART.jp
 OPTIONS_DEFINE=	SYMLNKDEV VBOXVD
 OPTIONS_DEFAULT=
 SYMLNKDEV_DESC=	Allow symbolic link for device file
-VBOXVD_DESC=	Build with VBox VirtualDisk support
+VBOXVD_DESC=	Build with VBox VD support(no X11 required)
 
 .include <bsd.port.options.mk>
 
@@ -45,10 +45,17 @@ CONFIGURE_ARGS+=	--enable-symlink-device
 .endif
 
 .if ${PORT_OPTIONS:MVBOXVD}
+. if ${OSVERSION} < 802000
+VBOX_WRKSRC=	`${MAKE} -C ${PORTSDIR}/emulators/virtualbox-ose-legacy -V WRKSRC`
+RUN_DEPENDS+=	${LOCALBASE}/lib/virtualbox/VBoxRT.so:${PORTSDIR}/emulators/virtualbox-ose-legacy
+BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/emulators/virtualbox-ose-legacy:patch
+CONFIGURE_ARGS+=	--with-vbox=${VBOX_WRKSRC}/include
+. else
 VBOX_WRKSRC=	`${MAKE} -C ${PORTSDIR}/emulators/virtualbox-ose -V WRKSRC`
 RUN_DEPENDS+=	${LOCALBASE}/lib/virtualbox/VBoxRT.so:${PORTSDIR}/emulators/virtualbox-ose
 BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/emulators/virtualbox-ose:patch
 CONFIGURE_ARGS+=	--with-vbox=${VBOX_WRKSRC}/include
+. endif
 .endif
 
 post-extract:
