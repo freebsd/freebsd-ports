@@ -1,13 +1,10 @@
-# New ports collection makefile for:	irssi
-# Date created:			14 Apr 1999
-# Whom:				Jim Mock <jim@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	irssi
 PORTVERSION=	0.8.15
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES?=	irc
 MASTER_SITES=	http://mirror.irssi.org/
 
