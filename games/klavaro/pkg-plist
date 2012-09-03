@@ -153,6 +153,8 @@ share/locale/ur/LC_MESSAGES/klavaro.mo
 share/locale/vi/LC_MESSAGES/klavaro.mo
 share/locale/wo/LC_MESSAGES/klavaro.mo
 share/locale/zh_CN/LC_MESSAGES/klavaro.mo
+@dirrmtry share/locale/wo/LC_MESSAGES
+@dirrmtry share/locale/wo
 @dirrmtry share/locale/ur/LC_MESSAGES
 @dirrmtry share/locale/ur
 @dirrmtry share/icons/hicolor/48x48/apps
