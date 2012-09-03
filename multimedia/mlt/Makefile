@@ -10,11 +10,8 @@ COMMENT=	Multimedia framework for TV broadcasting
 
 LICENSE=	GPLv2 GPLv3 LGPL21
 LICENSE_COMB=	multi
-LICENSE_FILE_GPLv2=	${WRKSRC}/GPL
-LICENSE_FILE_GPLv3=	${WRKSRC}/GPLv3
-LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
 # They both install bin/melt.
 CONFLICTS_INSTALL=	freeze-[0-9]*
@@ -68,8 +65,7 @@ PLIST_SUB+=	DV="@comment "
 
 .if ${PORT_OPTIONS:MFFMPEG} || ${PORT_OPTIONS:MVDPAU}
 LIB_DEPENDS+=	avformat:${PORTSDIR}/multimedia/ffmpeg
-CONFIGURE_ARGS+=	--enable-avformat \
-			--avformat-swscale
+CONFIGURE_ARGS+=	--enable-avformat --avformat-swscale
 PLIST_SUB+=	FFMPEG=""
 .else
 CONFIGURE_ARGS+=	--disable-avformat
@@ -171,18 +167,18 @@ PLIST_SUB+=	VORBIS="@comment "
 .endif
 
 pre-configure:
-	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
+	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},' \
 		${WRKSRC}/src/modules/avformat/vdpau.c \
 		${WRKSRC}/src/modules/frei0r/factory.c \
 		${WRKSRC}/src/modules/jackrack/plugin_mgr.c \
 		${WRKSRC}/src/modules/linsys/Makefile
-	${REINPLACE_CMD} -e 's,-pthread,${PTHREAD_LIBS},g' \
+	${REINPLACE_CMD} -e 's,-pthread,${PTHREAD_LIBS},' \
 		${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},g' \
+	${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},' \
 		${WRKSRC}/src/framework/Makefile \
 		${WRKSRC}/src/melt/Makefile \
 		${WRKSRC}/src/modules/*/Makefile
-	${REINPLACE_CMD} -e 's,$$(libdir)/pkgconfig,${PREFIX}/libdata/pkgconfig,g' \
+	${REINPLACE_CMD} -e 's,$$(libdir)/pkgconfig,${PREFIX}/libdata/pkgconfig,' \
 		${WRKSRC}/Makefile
 
 post-install:
