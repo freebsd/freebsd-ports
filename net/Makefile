@@ -409,6 +409,7 @@
     SUBDIR += net-http
     SUBDIR += net6
     SUBDIR += netatalk
+    SUBDIR += netatalk3
     SUBDIR += netcat
     SUBDIR += netclasses
     SUBDIR += netdude

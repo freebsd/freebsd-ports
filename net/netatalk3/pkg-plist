@@ -1,0 +1,71 @@
+%%ATFUNCS%%bin/ad
+bin/afpldaptest
+bin/afppasswd
+bin/apple_dump
+bin/asip-status.pl
+bin/cnid2_create
+bin/dbd
+bin/macusers
+bin/netatalk-config
+bin/uniconv
+@unexec if cmp -s %D/etc/afp.conf %D/etc/afp.conf.dist; then rm -f %D/etc/afp.conf; fi
+etc/afp.conf.dist
+@exec [ ! -f %B/afp.conf ] && cp %B/%f %B/afp.conf
+libexec/netatalk-uams/uams_clrtxt.so
+libexec/netatalk-uams/uams_dhx.so
+libexec/netatalk-uams/uams_dhx2.so
+%%NETATALKPAM%%libexec/netatalk-uams/uams_dhx2_pam.a
+%%NETATALKPAM%%libexec/netatalk-uams/uams_dhx2_pam.la
+%%NETATALKPAM%%libexec/netatalk-uams/uams_dhx2_pam.so
+libexec/netatalk-uams/uams_dhx2_passwd.a
+libexec/netatalk-uams/uams_dhx2_passwd.la
+libexec/netatalk-uams/uams_dhx2_passwd.so
+%%NETATALKPAM%%libexec/netatalk-uams/uams_dhx_pam.a
+%%NETATALKPAM%%libexec/netatalk-uams/uams_dhx_pam.la
+%%NETATALKPAM%%libexec/netatalk-uams/uams_dhx_pam.so
+libexec/netatalk-uams/uams_dhx_passwd.a
+libexec/netatalk-uams/uams_dhx_passwd.la
+libexec/netatalk-uams/uams_dhx_passwd.so
+%%NETATALKKRB5%%libexec/netatalk-uams/uams_gss.a
+%%NETATALKKRB5%%libexec/netatalk-uams/uams_gss.la
+%%NETATALKKRB5%%libexec/netatalk-uams/uams_gss.so
+libexec/netatalk-uams/uams_guest.a
+libexec/netatalk-uams/uams_guest.la
+libexec/netatalk-uams/uams_guest.so
+%%NETATALKPAM%%libexec/netatalk-uams/uams_pam.a
+%%NETATALKPAM%%libexec/netatalk-uams/uams_pam.la
+%%NETATALKPAM%%libexec/netatalk-uams/uams_pam.so
+libexec/netatalk-uams/uams_passwd.a
+libexec/netatalk-uams/uams_passwd.la
+libexec/netatalk-uams/uams_passwd.so
+libexec/netatalk-uams/uams_randnum.a
+libexec/netatalk-uams/uams_randnum.la
+libexec/netatalk-uams/uams_randnum.so
+include/atalk/acl.h
+include/atalk/adouble.h
+include/atalk/afp.h
+include/atalk/cnid.h
+include/atalk/ea.h
+include/atalk/logger.h
+include/atalk/netatalk_conf.h
+include/atalk/paths.h
+include/atalk/unicode.h
+include/atalk/unix.h
+include/atalk/util.h
+include/atalk/vfs.h
+include/atalk/volume.h
+lib/libatalk.a
+lib/libatalk.la
+lib/libatalk.so
+lib/libatalk.so.1
+sbin/afpd
+sbin/cnid_dbd
+sbin/cnid_metad
+sbin/netatalk
+share/aclocal/netatalk.m4
+@dirrm include/atalk
+@dirrm libexec/netatalk-uams
+@unexec rm -f /var/netatalk/CNID/README
+@unexec rm -f /var/netatalk/README
+@unexec rmdir /var/netatalk/CNID 2>/dev/null || true
+@unexec rmdir /var/netatalk 2>/dev/null || true
