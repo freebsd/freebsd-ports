@@ -10,9 +10,9 @@ bin/pip-%%PYTHON_VER%%
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/_pkgutil.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/_pkgutil.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/_pkgutil.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/__main__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/__main__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/__main__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/backwardcompat.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/backwardcompat.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/backwardcompat.pyo
