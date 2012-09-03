@@ -20,9 +20,9 @@ PLIST_FILES=	bin/baresip
 PORTDATA=	*
 PORTDOCS=	*
 
-#OPTIONS_NOT_YET_WORKING=	ALSA BV32 G722_1 PLC PORTAUDIO V4L2
+#OPTIONS_NOT_YET_WORKING=	ALSA BV32 G722_1 PLC
 OPTIONS_DEFINE=	CELT CONS DOCS FFMPEG G711 G722 GSM GSTREAMER ILBC L16 OPUS \
-		OSS SDL SNDFILE SPEEX SRTP STDIO UUID V4L X11
+		OSS PORTAUDIO SDL SNDFILE SPEEX SRTP STDIO UUID V4L V4L2 X11
 OPTIONS_DEFAULT=CONS G711 G722 L16
 
 BV32_DESC=	BroadVoice32 Wideband Audio codec
@@ -76,6 +76,10 @@ post-patch:
 	${ECHO_CMD} ".PHONY: showmodules" >> ${WRKSRC}/Makefile
 	${ECHO_CMD} "showmodules:" >> ${WRKSRC}/Makefile
 	${ECHO_CMD} '	@${ECHO_CMD} $$(MODULES)' >> ${WRKSRC}/Makefile
+	${REINPLACE_CMD} 's,-lcelt[0-9]*,$$(pkg-config --libs celt),' \
+		${WRKSRC}/modules/celt/module.mk
+	${REINPLACE_CMD} 's,-lportaudio[0-9]*,-L${LOCALBASE}/lib/portaudio2 -lportaudio,' \
+		${WRKSRC}/modules/portaudio/module.mk
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
