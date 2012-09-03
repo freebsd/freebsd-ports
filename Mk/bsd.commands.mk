@@ -52,6 +52,7 @@ GZIP_CMD?=	/usr/bin/gzip -nf ${GZIP}
 HEAD?=		/usr/bin/head
 ID?=		/usr/bin/id
 IDENT?=		/usr/bin/ident
+JOT?=		/usr/bin/jot
 LDCONFIG?=	/sbin/ldconfig
 LN?=		/bin/ln
 LS?=		/bin/ls
