@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	yaml-mode.el
-PORTVERSION=	0.0.3
-PORTREVISION=	10
+PORTVERSION=	0.0.8
 CATEGORIES=	textproc elisp
-MASTER_SITES=	http://yaml-mode.clouder.jp/attachment/wiki/WikiStart/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
-DISTNAME=	${PORTNAME:S/.el$//}-${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}?format=raw
 
 MAINTAINER=	yasu@utahime.org
 COMMENT=	Simple major mode to edit YAML file for Emacsen
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	yoshiki
+GH_PROJECT=	yaml-mode
+GH_TAGNAME=	release-${PORTVERSION}
+GH_COMMIT=	c2ac933
 
 USE_EMACS=	yes
 
