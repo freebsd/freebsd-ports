@@ -1,6 +1,7 @@
 bin/caph
 %%DATADIR%%/brush.png
 %%DATADIR%%/caph.conf
+%%DATADIR%%/icon.png
 %%DATADIR%%/maps/bend.map
 %%DATADIR%%/maps/car.map
 %%DATADIR%%/maps/cave.map
