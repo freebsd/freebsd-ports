@@ -54,4 +54,10 @@ pre-configure:
 pre-build:
 	cd ${BUILD_WRKSRC}/../bootstrap && ${MAKE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "arm"
+BROKEN=		Does not configure on arm
+.endif
+
+.include <bsd.port.post.mk>

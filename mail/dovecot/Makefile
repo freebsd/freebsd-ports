@@ -70,6 +70,10 @@ OPTIONS=	KQUEUE		"kqueue(2) support"	on  \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "arm"
+BROKEN=		Does not build on arm
+.endif
+
 # Default requirement for dovecot rc script
 _REQUIRE=	LOGIN
 

@@ -58,6 +58,10 @@ SOLR_DESC=	Solr FTS support
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "arm"
+BROKEN=		Does not build on arm
+.endif
+
 # sed script for dovecot.conf
 REINPLACE=	s!%%PROTOCOLS%%!${PROTOCOLS}!g;\
 		s!/usr/!${PREFIX}/!g;\

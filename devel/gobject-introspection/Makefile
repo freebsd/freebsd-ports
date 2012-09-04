@@ -42,4 +42,10 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|'cc'|'${CC:Q:C/[[:space:]]+/', '/g}'|g" \
 		${WRKSRC}/giscanner/sourcescanner.py
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "arm"
+BROKEN=		Does not compile on arm
+.endif
+
+.include <bsd.port.post.mk>

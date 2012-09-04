@@ -31,6 +31,10 @@ LIBS=		libnspr4.so.1 libplc4.so.1 libplds4.so.1
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "arm"
+BROKEN=		Does not compile on arm
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},g ; s,echo aout,echo elf,g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
