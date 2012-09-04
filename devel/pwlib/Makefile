@@ -34,6 +34,9 @@ MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "arm"
+BROKEN=		Does not install on arm: mtree
+.endif
 
 CFLAGS=		-O1
 CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
