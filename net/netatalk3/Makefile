@@ -7,6 +7,7 @@
 
 PORTNAME=	netatalk
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
 
@@ -26,6 +27,7 @@ USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_GNOME=	pkgconfig
 WANT_GNOME=	yes
+USE_LDCONFIG=	yes
 USE_RC_SUBR=	netatalk
 
 CONFIGURE_ARGS+=	--enable-tcp-wrappers \
