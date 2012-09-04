@@ -7,6 +7,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.3.6
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/$(PORTVERSION)/source/
 DISTFILES=	$(PORTNAME)_$(PORTVERSION).tar.gz
@@ -46,8 +47,6 @@ SUB_FILES=	pkg-message
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 		--enable-dynamic-linking
 
-BROKEN=		Fails to build without SPOOF support and hangs with SPOOF support.
-
 .if defined(WITH_SYS_SSL) && defined(WITH_PORTS_SSL)
 BROKEN=		SYS_SSL and PORTS_SSL are mutually exclusive
 .endif
@@ -78,8 +77,8 @@ CONFIGURE_ARGS+=	--disable-tcp-wrapper
 BUILD_DEPENDS=		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet-devel
 LIBNET_CONFIG?=		${LOCALBASE}/bin/libnet116-config
 CONFIGURE_ARGS+=	--enable-spoof-source --with-libnet=${LOCALBASE}/bin
-CFLAGS+=		`${LIBNET_CONFIG} --cflags` -I${LOCALBASE}/include
-LDFLAGS+=		`${LIBNET_CONFIG} --libs`
+CFLAGS+=		-g `${LIBNET_CONFIG} --cflags` -I${LOCALBASE}/include
+LDFLAGS+=		-g `${LIBNET_CONFIG} --libs`
 .else
 CONFIGURE_ARGS+=	--disable-spoof-source
 .endif
@@ -129,7 +128,6 @@ CONFIGURE_ARGS+=        --disable-linux-caps
 post-patch:
 	@${REINPLACE_CMD} -e 's:libnet-config:libnet116-config:g' ${WRKSRC}/configure
 	@${LN} ${WRKSRC}/scl/syslog-ng.conf ${WRKSRC}/scl/syslog-ng.conf.dist
-
 
 post-install:
 .if !defined(NOPORTDOCS)
