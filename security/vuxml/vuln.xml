@@ -695,7 +695,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
         <name>squidclamav</name>
-        <range><lt>5.8</lt></range>
+        <range><lt>5.7_1</lt></range>
         <range><ge>6.0</ge><lt>6.7</lt></range>
       </package>
     </affects>
@@ -722,6 +722,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2012-07-24</discovery>
       <entry>2012-08-25</entry>
+      <modified>2012-09-04</modified>
     </dates>
   </vuln>
 
