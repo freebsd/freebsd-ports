@@ -131,9 +131,6 @@ sbin/mcollectived
 %%PORTDOCS%%%%DOCSDIR%%/created.rid
 %%PORTDOCS%%%%DOCSDIR%%/etc/ssl/PLACEHOLDER.html
 %%PORTDOCS%%%%DOCSDIR%%/etc/ssl/clients/PLACEHOLDER.html
-%%PORTDOCS%%%%DOCSDIR%%/fr_class_index.html
-%%PORTDOCS%%%%DOCSDIR%%/fr_file_index.html
-%%PORTDOCS%%%%DOCSDIR%%/fr_method_index.html
 %%PORTDOCS%%%%DOCSDIR%%/images/brick.png
 %%PORTDOCS%%%%DOCSDIR%%/images/brick_link.png
 %%PORTDOCS%%%%DOCSDIR%%/images/bug.png
@@ -223,7 +220,6 @@ sbin/mcollectived
 %%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/util_rb.html
 %%PORTDOCS%%%%DOCSDIR%%/lib/mcollective/windows_daemon_rb.html
 %%PORTDOCS%%%%DOCSDIR%%/lib/mcollective_rb.html
-%%PORTDOCS%%%%DOCSDIR%%/rdoc-style.css
 %%PORTDOCS%%%%DOCSDIR%%/rdoc.css
 %%RUBY_SITELIBDIR%%/mcollective.rb
 %%RUBY_SITELIBDIR%%/mcollective/agent.rb
