@@ -40,7 +40,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/${SRCBALL_NAME}
 .endif
 
 USE_BZIP2=	yes
-USE_GCC=	yes
 HAS_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
