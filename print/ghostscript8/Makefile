@@ -36,8 +36,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/fonts/a010013l.pfb:${PORTSDIR}/print
 CONFLICTS_INSTALL=	gambc-[0-9]* ghostscript[79]-[0-9]* \
 			ghostscript[79]-*-[0-9]*
 
-MAKE_JOBS_UNSAFE=	yes
-
 USE_XZ=		yes
 USE_GMAKE=	yes
 WANT_GNOME=	yes
