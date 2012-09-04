@@ -30,6 +30,10 @@ PYDISTUTILS_NOEGGINFO=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "arm"
+BROKEN=		Does not install on arm
+.endif
+
 post-extract:
 .if ${PYTHON_REL} < 300
 	@${CP} ${FILESDIR}/setup.py ${WRKSRC}

@@ -64,6 +64,10 @@ PLIST_SUB+=	ICUMAJOR=${ICUMAJOR} ICUMINOR=${ICUMINOR} ICUVER=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "arm"
+BROKEN=		Does not compile on arm
+.endif
+
 .if defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--enable-threads=no
 .else

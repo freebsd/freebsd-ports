@@ -49,6 +49,10 @@ OPTIONS+=	GL "Enable OpenGL Support" Off \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "arm"
+BROKEN=		Does not compile on arm
+.endif
+
 .if defined(WITH_GL)
 USE_GL=		gl
 CONFIGURE_ARGS+=	--enable-gl

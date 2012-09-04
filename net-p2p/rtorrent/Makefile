@@ -37,6 +37,10 @@ OPTIONS=	XMLRPC "Compile with xmlrpc-c support" on \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "arm"
+BROKEN=		Does not configure on arm
+.endif
+
 .if !defined(WITHOUT_XMLRPC)
 CONFIGURE_ARGS+=	--with-xmlrpc-c
 LIB_DEPENDS+=	xmlrpc.3:${PORTSDIR}/net/xmlrpc-c-devel

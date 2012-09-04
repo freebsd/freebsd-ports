@@ -44,6 +44,10 @@ PREFIX=${REALVNC_BASE}
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "arm"
+BROKEN=		Does not compile on arm
+.endif
+
 .if !defined(WITHOUT_SERVER)
 MASTER_SITES+=	${MASTER_SITE_XORG:S/$/:x/}
 MASTER_SITE_SUBDIR+=	4.3.0/:x
