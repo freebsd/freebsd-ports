@@ -1,12 +1,12 @@
---- ./freebsd/Makefile.orig	2012-07-25 17:37:55.000000000 -0400
-+++ ./freebsd/Makefile	2012-07-31 08:13:02.000000000 -0400
+--- freebsd/Makefile.orig	2012-08-28 19:18:30.000000000 +0100
++++ freebsd/Makefile	2012-08-31 13:57:54.000000000 +0100
 @@ -9,8 +9,8 @@
  LDADD= -lutil -lgcrypt
  GTK_CFLAGS!= pkg-config --cflags $(LIBS)
  GTK_LDFLAGS!= pkg-config --libs $(LIBS)
--CFLAGS+= $(GTK_CFLAGS) -O2 -Wall -pthread
+-CFLAGS+= $(GTK_CFLAGS) -O2 -Wall -pthread -I. -I..
 -LDFLAGS+= $(GTK_LDFLAGS) -pthread
-+CFLAGS+= $(GTK_CFLAGS) -Wall -D_GCRYPT_IN_LIBGCRYPT=1 -I.. ${PTHREAD_CFLAGS}
++CFLAGS+= $(GTK_CFLAGS) -Wall ${PTHREAD_CFLAGS} -I. -I..
 +LDFLAGS+= $(GTK_LDFLAGS) ${PTHREAD_LIBS}
  
  PREFIX?= /usr/local
