@@ -40,9 +40,14 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/${SRCBALL_NAME}
 .endif
 
 USE_BZIP2=	yes
+USE_GCC=	yes
 HAS_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "arm"
+BROKEN=		Does not compile on arm
+.endif
 
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	-n freebsd

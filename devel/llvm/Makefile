@@ -80,7 +80,9 @@ PLIST_FILES+=		lib/LLVMgold.so
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
+.if ${ARCH} == "arm"
+BROKEN=		Does not compile on arm
+.elif ${ARCH} == "sparc64"
 BROKEN=		does not compile on sparc64
 .endif
 

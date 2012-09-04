@@ -67,6 +67,10 @@ CONFIGURE_ARGS+=--with-collation=${WITH_COLLATION}
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "arm"
+BROKEN=		Does not compile on arm
+.endif
+
 .if ${ARCH} == "i386"
 CONFIGURE_ARGS+=--enable-assembler
 .endif

@@ -54,4 +54,10 @@ post-install:
 .endfor
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "arm"
+BROKEN=		Does not configure on arm
+.endif
+
+.include <bsd.port.post.mk>
