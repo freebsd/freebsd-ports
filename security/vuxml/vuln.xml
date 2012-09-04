@@ -22529,7 +22529,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Matthias Andree reports:</p>
-	<blockquote cite="http://fetchmail.berlios.de/fetchmail-SA-2009-01.txt">
+	<blockquote cite="http://www.fetchmail.info/fetchmail-SA-2009-01.txt">
 	  <p>Moxie Marlinspike demonstrated in July 2009 that some CAs would
 	    sign certificates that contain embedded NUL characters in the
 	    Common Name or subjectAltName fields of ITU-T X.509
@@ -22546,7 +22546,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2009-2666</cvename>
-      <url>http://fetchmail.berlios.de/fetchmail-SA-2009-01.txt</url>
+      <url>http://www.fetchmail.info/fetchmail-SA-2009-01.txt</url>
     </references>
     <dates>
       <discovery>2009-08-06</discovery>
@@ -31014,7 +31014,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Matthias Andree reports:</p>
-	<blockquote cite="http://fetchmail.berlios.de/fetchmail-SA-2008-01.txt">
+	<blockquote cite="http://www.fetchmail.info/fetchmail-SA-2008-01.txt">
 	  <p>2008-06-24 1.2  also fixed issue in report_complete (reported by
 	    Petr Uzel)</p>
 	</blockquote>
@@ -31022,7 +31022,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2008-2711</cvename>
-      <url>http://fetchmail.berlios.de/fetchmail-SA-2008-01.txt</url>
+      <url>http://www.fetchmail.info/fetchmail-SA-2008-01.txt</url>
     </references>
     <dates>
       <discovery>2008-06-24</discovery>
@@ -31214,7 +31214,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Matthias Andree reports:</p>
-	<blockquote cite="http://fetchmail.berlios.de/fetchmail-SA-2008-01.txt">
+	<blockquote cite="http://www.fetchmail.info/fetchmail-SA-2008-01.txt">
 	  <p>Gunter Nau reported fetchmail crashing on some messages; further
 	    debugging by Petr Uzel and Petr Cerny at Novell/SUSE Czech Republic
 	    dug up that this happened when fetchmail was trying to print, in
@@ -31229,7 +31229,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2008-2711</cvename>
-      <url>http://fetchmail.berlios.de/fetchmail-SA-2008-01.txt</url>
+      <url>http://www.fetchmail.info/fetchmail-SA-2008-01.txt</url>
     </references>
     <dates>
       <discovery>2008-06-13</discovery>
@@ -38779,7 +38779,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Matthias Andree reports:</p>
-	<blockquote cite="http://fetchmail.berlios.de/fetchmail-SA-2007-01.txt">
+	<blockquote cite="http://www.fetchmail.info/fetchmail-SA-2007-01.txt">
 	  <p>The POP3 standard, currently RFC-1939, has specified an optional,
 	    MD5-based authentication scheme called "APOP" which no longer
 	    should be considered secure.</p>
@@ -38795,7 +38795,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2007-1558</cvename>
-      <url>http://fetchmail.berlios.de/fetchmail-SA-2007-01.txt</url>
+      <url>http://www.fetchmail.info/fetchmail-SA-2007-01.txt</url>
     </references>
     <dates>
       <discovery>2007-04-06</discovery>
@@ -39934,7 +39934,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Matthias Andree reports:</p>
-	<blockquote cite="http://fetchmail.berlios.de/fetchmail-SA-2006-03.txt">
+	<blockquote cite="http://www.fetchmail.info/fetchmail-SA-2006-03.txt">
 	  <p>When delivering messages to a message delivery agent by means
 	    of the "mda" option, fetchmail can crash (by passing
 	    a NULL pointer to ferror() and fflush()) when refusing a message.
@@ -39944,7 +39944,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2006-5974</cvename>
-      <url>http://fetchmail.berlios.de/fetchmail-SA-2006-03.txt</url>
+      <url>http://www.fetchmail.info/fetchmail-SA-2006-03.txt</url>
     </references>
     <dates>
       <discovery>2007-01-04</discovery>
@@ -39963,7 +39963,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Matthias Andree reports:</p>
-	<blockquote cite="http://fetchmail.berlios.de/fetchmail-SA-2006-02.txt">
+	<blockquote cite="http://www.fetchmail.info/fetchmail-SA-2006-02.txt">
 	  <p>Fetchmail has had several longstanding password disclosure
 	    vulnerabilities.</p>
 	  <ul>
@@ -39990,7 +39990,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2006-5867</cvename>
-      <url>http://fetchmail.berlios.de/fetchmail-SA-2006-02.txt</url>
+      <url>http://www.fetchmail.info/fetchmail-SA-2006-02.txt</url>
     </references>
     <dates>
       <discovery>2007-01-04</discovery>
@@ -48611,7 +48611,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Matthias Andree reports:</p>
-	<blockquote cite="http://fetchmail.berlios.de/fetchmail-SA-2006-01.txt">
+	<blockquote cite="http://www.fetchmail.info/fetchmail-SA-2006-01.txt">
 	  <p>Fetchmail contains a bug that causes itself to crash when
 	    bouncing a message to the originator or to the local
 	    postmaster. The crash happens after the bounce message has
@@ -48623,7 +48623,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2006-0321</cvename>
-      <url>http://fetchmail.berlios.de/fetchmail-SA-2006-01.txt</url>
+      <url>http://www.fetchmail.info/fetchmail-SA-2006-01.txt</url>
       <url>http://bugs.debian.org/348747</url>
     </references>
     <dates>
@@ -48964,7 +48964,7 @@ Note:  Please add new entries to the beginning of this file.
       <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The fetchmail team reports:</p>
-	<blockquote cite="http://fetchmail.berlios.de/fetchmail-SA-2005-03.txt">
+	<blockquote cite="http://www.fetchmail.info/fetchmail-SA-2005-03.txt">
 	  <p>Fetchmail contains a bug that causes an application crash
 	    when fetchmail is configured for multidrop mode and the
 	    upstream mail server sends a message without headers.  As
@@ -48977,7 +48977,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2005-4348</cvename>
-      <url>http://fetchmail.berlios.de/fetchmail-SA-2005-03.txt</url>
+      <url>http://www.fetchmail.info/fetchmail-SA-2005-03.txt</url>
       <url>http://article.gmane.org/gmane.mail.fetchmail.user/7573</url>
       <url>http://bugs.debian.org/343836</url>
     </references>
@@ -50103,7 +50103,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The fetchmail team reports:</p>
-	<blockquote cite="http://fetchmail.berlios.de/fetchmail-SA-2005-02.txt">
+	<blockquote cite="http://www.fetchmail.info/fetchmail-SA-2005-02.txt">
 	  <p>The fetchmailconf program before and excluding version
 	    1.49 opened the run control file, wrote the configuration
 	    to it, and only then changed the mode to 0600 (rw-------).
@@ -50115,7 +50115,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2005-3088</cvename>
-      <url>http://fetchmail.berlios.de/fetchmail-SA-2005-02.txt</url>
+      <url>http://www.fetchmail.info/fetchmail-SA-2005-02.txt</url>
     </references>
     <dates>
       <discovery>2005-10-21</discovery>
@@ -52938,7 +52938,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <mlist msgid="20050721172317.GB3071@amilo.ms.mff.cuni.cz">http://lists.berlios.de/pipermail/fetchmail-devel/2005-July/000397.html</mlist>
-      <url>http://fetchmail.berlios.de/fetchmail-SA-2005-01.txt</url>
+      <url>http://www.fetchmail.info/fetchmail-SA-2005-01.txt</url>
     </references>
     <dates>
       <discovery>2005-07-21</discovery>
@@ -53031,7 +53031,7 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2005-2335</cvename>
       <freebsdpr>ports/83805</freebsdpr>
       <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=212762</url>
-      <url>http://fetchmail.berlios.de/fetchmail-SA-2005-01.txt</url>
+      <url>http://www.fetchmail.info/fetchmail-SA-2005-01.txt</url>
     </references>
     <dates>
       <discovery>2005-07-20</discovery>
@@ -71074,7 +71074,7 @@ misc.c:
   </vuln>
 
   <vuln vid="ac4b9d18-67a9-11d8-80e3-0020ed76ef5a">
-    <topic>fetchmail denial-of-service vulnerability</topic>
+    <topic>fetchmail -- denial-of-service vulnerability</topic>
     <affects>
       <package>
 	<name>fetchmail</name>
@@ -71101,7 +71101,7 @@ misc.c:
     <dates>
       <discovery>2003-10-16</discovery>
       <entry>2004-02-25</entry>
-      <modified>2004-03-05</modified>
+      <modified>2012-09-04</modified>
     </dates>
   </vuln>
 
@@ -72011,7 +72011,7 @@ misc.c:
   </vuln>
 
   <vuln vid="af0296be-2455-11d8-82e5-0020ed76ef5a">
-    <topic>Fetchmail address parsing vulnerability</topic>
+    <topic>fetchmail -- address parsing vulnerability</topic>
     <affects>
       <package>
 	<name>fetchmail</name>
@@ -72029,6 +72029,7 @@ misc.c:
     <dates>
       <discovery>2003-10-25</discovery>
       <entry>2003-10-25</entry>
+      <modified>2012-09-04</modified>
     </dates>
   </vuln>
 
