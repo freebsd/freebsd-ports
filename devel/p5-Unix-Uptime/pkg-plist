@@ -1,8 +1,13 @@
-%%SITE_PERL%%/Unix/Uptime.pm
-%%SITE_PERL%%/Unix/Uptime/BSD.pm
-%%SITE_PERL%%/Unix/Uptime/FreeBSD.pm
-%%SITE_PERL%%/Unix/Uptime/Linux.pm
-%%SITE_PERL%%/Unix/Uptime/BSD/Load.pm
-@dirrm %%SITE_PERL%%/Unix/Uptime/BSD
-@dirrm %%SITE_PERL%%/Unix/Uptime
-@dirrmtry %%SITE_PERL%%/Unix
+%%SITE_PERL%%/%%PERL_ARCH%%/Unix/Uptime/BSD/XS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Unix/Uptime/Linux.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Unix/Uptime/BSD.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Unix/Uptime.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/Uptime/BSD/XS/XS.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/Uptime/BSD/XS/XS.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/Uptime/BSD/XS
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/Uptime/BSD
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/Uptime
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unix/Uptime/BSD
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Unix/Uptime
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unix
