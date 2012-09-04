@@ -13,9 +13,11 @@ MASTER_SITES=	SF
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Web-based network management tool for moderate to large networks
 
-OPTIONS=	GRAPHVIZ "Install GraphViz for network map support"	on \
-		OUIDL "Download oui.txt file"   off \
-		MIBS "depend on net-mgmt/netdisco-mibs" on
+OPTIONS_DEFINE=	GRAPHVIZ OUIDL MIBS
+OPTIONS_DEFAULT=GRAPHVIZ MIBS
+MIBS_DESC=	Depend on net-mgmt/netdisco-mibs
+OUIDL_DESC=	Download oui.txt file
+GRAPHVIZ_DESC=	Install GraphViz for network map support
 
 RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
 		p5-Apache-DBI>=0:${PORTSDIR}/www/p5-Apache-DBI	\
@@ -36,7 +38,7 @@ GROUPS=		netdisco
 
 USE_PERL5=	yes
 USE_PGSQL=	yes
-USE_APACHE=	22+
+USE_APACHE_RUN=	22+
 
 USE_RC_SUBR=	netdisco
 
@@ -62,7 +64,7 @@ DOCS=		doc/*.pod doc/*.html INSTALL README* UPGRADE
 .include <bsd.port.pre.mk>
 
 MIBSDIR=	${PREFIX}/share/netdisco-mibs
-.if defined(WITH_MIBS)
+.if ${PORT_OPTIONS:MMIBS}
 RUN_DEPENDS+=	${MIBSDIR}/mib_index.txt:${PORTSDIR}/net-mgmt/netdisco-mibs
 BUILD_DEPENDS+=	${MIBSDIR}/mib_index.txt:${PORTSDIR}/net-mgmt/netdisco-mibs
 . include 	"${.CURDIR}/../netdisco-mibs/bsd.port.netdisco.mk"
@@ -83,12 +85,12 @@ RUN_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
 RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
 .endif
 
-.if defined(WITH_GRAPHVIZ)
+.if ${PORT_OPTIONS:MGRAPHVIZ}
 RUN_DEPENDS+=	p5-Graph>=0:${PORTSDIR}/math/p5-Graph	\
 		p5-GraphViz>=0:${PORTSDIR}/graphics/p5-GraphViz
 .endif
 
-.if defined(WITH_OUIDL)
+.if ${PORT_OPTIONS:MOUIDL}
 PLIST_SUB+=	OUIDL=""
 .else
 PLIST_SUB+=	OUIDL="@comment "
@@ -161,7 +163,7 @@ do-install:
 		fi)
 .	endif
 
-.	if defined(WITH_OUIDL)
+.	if ${PORT_OPTIONS:MOUIDL}
 		${FETCH_CMD} -q -o ${DATADIR}/oui.txt http://standards.ieee.org/develop/regauth/oui/oui.txt
 .	endif
 
