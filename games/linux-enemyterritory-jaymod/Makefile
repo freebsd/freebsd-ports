@@ -19,7 +19,8 @@ RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 
 USE_LINUX=	yes
 
-OPTIONS=	OMNIBOT "Install Omni-Bot for bot support" off
+OPTIONS_DEFINE=	OMNIBOT
+OMNIBOT_DESC=	Install Omni-Bot for bot support
 
 DATADIR=	${PREFIX}/lib/enemyterritory/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/enemyterritory-${PORTNAME}
@@ -27,9 +28,9 @@ DOCSDIR=	${PREFIX}/share/doc/enemyterritory-${PORTNAME}
 CLIENT_PK3=	${PORTNAME}-${PORTVERSION}.pk3
 PLIST_SUB=	CLIENT_PK3="${CLIENT_PK3}"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_OMNIBOT)
+.if ${PORT_OPTIONS:MOMNIBOT}
 RUN_DEPENDS+=	et-omni-bot:${PORTSDIR}/games/linux-enemyterritory-omni-bot
 .endif
 
@@ -64,4 +65,4 @@ post-install:
 		${CP} -p ${DATADIR}/server.cfg.sample ${DATADIR}/server.cfg ; \
 	fi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
