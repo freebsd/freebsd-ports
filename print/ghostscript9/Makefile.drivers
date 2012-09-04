@@ -13,11 +13,9 @@ OPTIONS_X11= \
 	GS_x11rg16x \
 	GS_x11rg32x
 
-.if ${ARCH:Mamd64} || ${ARCH:Mi386}
 OPTIONS_SVGALIB= \
 	GS_lvga256 \
 	GS_vgalib
-.endif
 
 OPTIONS_ICONV= \
 	GS_oprp \
