@@ -7,7 +7,7 @@
 
 PORTNAME=	secretmaryochronicles
 PORTVERSION=	1.10.git20120512
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 #		SF/smclone/Secret%20Maryo%20Chronicles/${PORTVERSION}
@@ -46,7 +46,7 @@ run-autotools:
 		${WRKSRC}/src/Makefile.in
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	controls.html style.css
+PORTDOCS=	controls.html history.html style.css
 
 post-install:
 	${MKDIR} ${DOCSDIR}
