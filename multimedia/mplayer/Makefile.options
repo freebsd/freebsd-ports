@@ -51,17 +51,25 @@ CFLAGS+=	-O3 -fomit-frame-pointer -ffast-math
 .endif
 .endif #WITH_DEBUG
 
+#Supported architectures for clang
+.if ${ARCH} == "amd64"
+MPLAYER_CLANG_SUPPORTED_ARCH=	yes
+.endif
+
 .if !defined(WITHOUT_RTCPU)
 CONFIGURE_ARGS+=--enable-runtime-cpudetection
 .endif
 
-.if ${OSVERSION} >= 900033
+.if ${OSVERSION} >= 900033 \
+	&& exists(/usr/bin/clang) \
+	&& defined(MPLAYER_CLANG_SUPPORTED_ARCH)
 WITH_BASE_CLANG=yes
 .endif
 
 .if defined(WITH_BASE_CLANG)
 CC=		clang
 CXX=		clang++
+CPP=		clang-cpp
 .else
 .if defined(WITH_OTCHAIN)
 USE_GCC?=	4.6+
@@ -232,7 +240,7 @@ DEFAULT_CDROM_DEVICE=/dev/acd0
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
 .if !defined(WITHOUT_WIN32) && !defined(PACKAGE_BUILDING) && ${ARCH} == "i386"
 RUN_DEPENDS+=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
-CONFIGURE_ARGS+=	--win32codecsdir=${LOCALBASE}/lib/win32
+CONFIGURE_ARGS+=	--codecsdir=${LOCALBASE}/lib/win32
 CODEC_PORT=	${PORTSDIR}/multimedia/win32-codecs
 CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
 .else
