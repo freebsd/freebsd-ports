@@ -36,4 +36,10 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/libmysac-static.a ${PREFIX}/lib/libmysac-static.a
 	${INSTALL_DATA} ${WRKSRC}/mysac.h ${PREFIX}/include/mysac.h
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ia64, powerpc, or sparc64
+.endif
+
+.include <bsd.port.post.mk>
