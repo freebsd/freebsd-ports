@@ -7,7 +7,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.3.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/$(PORTVERSION)/source/
 DISTFILES=	$(PORTNAME)_$(PORTVERSION).tar.gz
@@ -28,6 +28,7 @@ OPTIONS=	SYS_SSL "Build with OpenSSL support (from system)" off \
 		PCRE "Build with PCRE support" on \
 		JSON_C "Build with JSON-C support" off \
 		JSON_GLIB "Build with JSON-GLIB support" off \
+		SYSLOG2NG "Install syslog2ng script" off
 
 .include <bsd.port.options.mk>
 
@@ -125,14 +126,20 @@ CONFIGURE_ARGS+=	--disable-json
 CONFIGURE_ARGS+=        --disable-linux-caps
 .endif
 
+.if defined(WITH_SYSLOG2NG)
+PLIST_FILES+=		sbin/syslog2ng
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's:libnet-config:libnet116-config:g' ${WRKSRC}/configure
 	@${LN} ${WRKSRC}/scl/syslog-ng.conf ${WRKSRC}/scl/syslog-ng.conf.dist
 
 post-install:
+.if defined(WITH_SYSLOG2NG)
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/syslog2ng ${PREFIX}/sbin
+.endif
 .if !defined(NOPORTDOCS)
 	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} \
-			${PREFIX}/share/doc/syslog-ng \
 			${PREFIX}/share/doc/syslog-ng
 	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${PREFIX}/share/doc/syslog-ng
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/syslog-ng
