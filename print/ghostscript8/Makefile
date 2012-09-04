@@ -90,8 +90,8 @@ MLINKS=		gslp.1 gsbj.1 \
 CIDFONTDIR=	${DATADIR}/${PORTVERSION}/Resource
 EXCLUDE_DIRS=	jbig2dec jpeg expat jasper libpng tiff zlib
 
-.include "Makefile.drivers"
 .include <bsd.port.pre.mk>
+.include "Makefile.drivers"
 .include "${FILESDIR}/Makefile.drivers_post"
 
 .for D in ${OPTIONS_DEFINE:MGS_*:S/^GS_//}
