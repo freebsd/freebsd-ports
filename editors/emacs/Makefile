@@ -24,11 +24,11 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* emacs-23.* \
 		xemacs-[0-9]* xemacs-devel-[0-9]* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
 
-EMACS_VER=	24.1
+EMACS_VER=	24.2
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_BZIP2=	yes
 USE_NCURSES=	yes
+USE_XZ=		yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--localstatedir=/var
