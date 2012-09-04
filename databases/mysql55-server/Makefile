@@ -90,4 +90,10 @@ post-install:
 post-patch:
 	@${REINPLACE_CMD} 's/*.1/${MAN1}/' ${WRKSRC}/man/CMakeLists.txt
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "arm"
+BROKEN=		Does not compile on arm
+.endif
+
+.include <bsd.port.post.mk>

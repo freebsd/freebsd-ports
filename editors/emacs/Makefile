@@ -242,7 +242,9 @@ CONFIGURE_ARGS+=	--without-gnutls
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64"
+.if ${ARCH} == "arm"
+BROKEN=	Emacs 24.X does not currently build on arm
+.elif ${ARCH} == "ia64"
 BROKEN=	Emacs 24.X does not currently build on ia64
 .endif
 
