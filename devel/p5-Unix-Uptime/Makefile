@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Unix-Uptime
-PORTVERSION=	0.36
+PORTVERSION=	0.3701
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -19,8 +19,6 @@ PERL_MODBUILD=	yes
 
 MAN3=		Unix::Uptime.3 \
 		Unix::Uptime::BSD.3 \
-		Unix::Uptime::FreeBSD.3 \
-		Unix::Uptime::Linux.3 \
-		Unix::Uptime::BSD::Load.3
+		Unix::Uptime::Linux.3
 
 .include <bsd.port.mk>
