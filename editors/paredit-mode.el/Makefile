@@ -7,7 +7,7 @@
 
 PORTNAME=	paredit-mode.el
 PORTVERSION=	22
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://mumble.net/~campbell/emacs/
 DISTNAME=	paredit-22.el

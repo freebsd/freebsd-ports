@@ -7,7 +7,7 @@
 
 PORTNAME=	nxml-mode
 PORTVERSION=	${NXML_VER}
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://www.thaiopensource.com/download/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}

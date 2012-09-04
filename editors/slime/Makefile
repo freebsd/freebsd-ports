@@ -7,7 +7,7 @@
 
 PORTNAME=	slime
 PORTVERSION=	20110714
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/

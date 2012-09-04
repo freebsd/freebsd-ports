@@ -7,6 +7,7 @@
 
 PORTNAME=	verilog-mode.el
 PORTVERSION=	801
+PORTREVISION=	1
 CATEGORIES=	cad elisp
 MASTER_SITES=	http://www.veripool.org/ftp/
 DISTNAME=	${PORTNAME:R}-${PORTVERSION}.${PORTNAME:E}

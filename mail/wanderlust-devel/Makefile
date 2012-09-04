@@ -7,7 +7,7 @@
 
 PORTNAME=	wanderlust
 PORTVERSION=	2.15.9.b.${SNAPDATE}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail elisp
 MASTER_SITES=	http://www.jpl.org/elips/wl/snapshots/ \
 		${MASTER_SITE_LOCAL}
