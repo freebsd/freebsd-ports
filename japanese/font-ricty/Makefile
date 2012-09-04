@@ -7,7 +7,7 @@
 
 PORTNAME=	ricty
 PORTVERSION=	3.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	https://nodeload.github.com/yascentur/Ricty/tarball/${PORTVERSION}?dummy=/
 PKGNAMEPREFIX=	ja-font-
@@ -36,11 +36,14 @@ WRKSRC=	${WRKDIR}/yascentur-Ricty-${TAG}
 LOCAL_FONTSDIR=	share/fonts
 X_FONTSDIR=	lib/X11/fonts
 
-OPTIONS=	DISCORD "Install Ricty-Discord" On
+OPTIONS_DEFINE=	DISCORD
+DISCORD_DESC=	Install Ricty-Discord
+
+OPTIONS_DEFAULT=	DISCORD
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_DISCORD)
+.if ${PORT_OPTIONS:MDISCORD}
 PLIST_SUB+=	DISCORD=""
 SUB_LIST+=	DISCORD=""
 .else
