@@ -47,6 +47,10 @@ LATEST_LINK=	tcl86${THREADS_SUFFIX}
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "arm"
+BROKEN=		Does not build on arm
+.endif
+
 .if !defined(WITHOUT_TCL_MODULES)
 RUN_DEPENDS+=	${LOCALBASE}/lib/tcl8/8.5/tcltest-2.3.4.tm:${PORTSDIR}/lang/tcl-modules
 .endif
