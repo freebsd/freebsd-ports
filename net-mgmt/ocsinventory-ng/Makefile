@@ -1,7 +1,3 @@
-# New ports collection makefile for:   	ocsinventory-ng
-# Date created:                         28 Sep 2007
-# Whom:                                	araujo
-#
 # $FreeBSD$
 
 PORTNAME=	ocsinventory-ng
@@ -24,7 +20,7 @@ RUN_DEPENDS=	p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
 		p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite \
 		p5-XML-Entities>=0:${PORTSDIR}/textproc/p5-XML-Entities
 
-USE_APACHE=	22+
+USE_APACHE_RUN=	22+
 USE_MYSQL=	41+
 USE_PERL5=	5.8.0+
 WANT_PHP_WEB=	yes

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	rtgui
-# Date created:				14 December 2008
-# Whom:					Philippe Audeoud <jadawin@tuxaco.net>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	rtgui
 PORTVERSION=	0.2.7
@@ -23,7 +18,7 @@ BUILD_DEPENDS+=	xmlrpc-c-config:${PORTSDIR}/net/xmlrpc-c
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_APACHE)
-USE_APACHE=	22+
+USE_APACHE_RUN=	22+
 BUILD_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_scgi.so:${PORTSDIR}/www/mod_scgi
 .elif defined(WITH_LIGHTTPD)
 RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd

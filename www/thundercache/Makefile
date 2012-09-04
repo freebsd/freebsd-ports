@@ -1,9 +1,4 @@
-# New ports collection makefile for:	thundercache
-# Date created:		2010-03-15
-# Whom:			Patrick Tracanelli <eksffa@freebsdbrasil.com.br>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	thundercache
 PORTVERSION=	6.1
@@ -51,7 +46,7 @@ DISTNAME=	thundercache-6.1.201104260900-32bits-fbsd
 WRKSRC=		${WRKDIR}/thunder
 
 .if defined (WITH_APACHE)
-USE_APACHE=	22+
+USE_APACHE_RUN=	22+
 .endif
 
 .if defined (WITH_PGSQL)

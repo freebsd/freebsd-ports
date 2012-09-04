@@ -1,9 +1,4 @@
-# New ports collection makefile for:	yahoo-ui
-# Date created:		2008-01-29
-# Whom:			Greg Larkin <glarkin@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	yahoo
 PORTVERSION=	2.8.2
@@ -33,7 +28,7 @@ NOPORTEXAMPLES=	yes
 .endif
 
 .if defined(WITH_APACHE)
-USE_APACHE=	22+
+USE_APACHE_RUN=	22+
 CONFDIR=	${PREFIX}/${CONFDIR_REL}
 CONFDIR_REL=	${APACHEETCDIR}/Includes
 PLIST_SUB+=	NOAPACHE="" CONFDIR=${CONFDIR_REL}
