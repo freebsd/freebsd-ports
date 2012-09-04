@@ -7,6 +7,7 @@
 
 PORTNAME=	wx
 PORTVERSION=	2.9.4
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/wxwindows/${PORTVERSION}
 PKGNAMESUFFIX=	gtk2
@@ -19,7 +20,8 @@ LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png\
 		jpeg.11:${PORTSDIR}/graphics/jpeg\
 		tiff.4:${PORTSDIR}/graphics/tiff\
 		expat.6:${PORTSDIR}/textproc/expat2\
-		inotify.0:${PORTSDIR}/devel/libinotify
+		inotify.0:${PORTSDIR}/devel/libinotify\
+		webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2
 
 USE_BZIP2=	yes
 USE_XORG=	x11 sm xxf86vm xinerama
