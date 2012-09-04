@@ -82,7 +82,9 @@ LATEST_LINK=		apache22-${WITH_MPM}-mpm
 .if ${WITH_MPM} == "worker" || ${WITH_MPM} == "event"
 PORT_OPTIONS+=		CGID
 .if ${PORT_OPTIONS:MCGI}
-IGNORE=	does not build with CGI. Please de-select CGI and select CGID instead
+IGNORE= When using a multi-threaded MPM, the module CGID should be used in place CGI. \
+	Please de-select CGI and select CGID instead. \
+	See http://httpd.apache.org/docs/2.2/mod/mod_cgi.html
 .endif
 .if exists(${APR_CONFIG}) && !defined(APR_HAS_THREADS)
 IGNORE=	requires APR threads. Please rebuild APR with THREAD support
@@ -143,16 +145,11 @@ IGNORE=	MEM_CACHE requires APR threads. Please rebuild APR with THREAD support
 .  endif
 .endif
 
-.if empty(PORT_OPTIONS:MIPV6)
-CONFIGURE_ARGS+=	--disable-ipv6
-.else
-CATEGORIES+=		ipv6
-EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-server__config.c
-.  if ${PORT_OPTIONS:MIPV6_V6ONLY}
-CONFIGURE_ARGS+=	--disable-v4-mapped
-.  else
+# http://httpd.apache.org/docs/2.2/bind.html
+.if ${PORT_OPTIONS:MIPV4_MAPPED}
 CONFIGURE_ARGS+=	--enable-v4-mapped
-.  endif
+.else
+CONFIGURE_ARGS+=	--disable-v4-mapped
 .endif
 
 CONFIGURE_ARGS+=	--with-mpm=${WITH_MPM}

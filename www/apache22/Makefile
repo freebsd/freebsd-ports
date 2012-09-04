@@ -2,8 +2,8 @@
 
 PORTNAME=	apache22
 PORTVERSION=	2.2.22
-PORTREVISION=	7
-CATEGORIES=	www
+PORTREVISION=	8
+CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
 DIST_SUBDIR=	apache22
@@ -116,6 +116,8 @@ show-options:
 	@${SED} -ne 's/^##//p' ${APACHEDIR}/Makefile.doc
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|freebsd5|freebsd|' \
+		${WRKSRC}/configure.in ${WRKSRC}/configure
 	@${RM} -f ${WRKSRC}/docs/docroot/*.bak
 	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' ${WRKSRC}/server/core.c
 	@${INSTALL_DATA} ${WRKSRC}/NOTICE ${WRKSRC}/docs/manual
