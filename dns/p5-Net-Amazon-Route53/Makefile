@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Amazon-Route53
-PORTVERSION=	0.111300
+PORTVERSION=	0.122310
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,6 +29,7 @@ MAN1=		route53.1
 MAN3=		Net::Amazon::Route53.3 \
 		Net::Amazon::Route53::HostedZone.3 \
 		Net::Amazon::Route53::ResourceRecordSet.3 \
+		Net::Amazon::Route53::ResourceRecordSet::Change.3 \
 		Net::Amazon::Route53::Change.3
 
 .include <bsd.port.mk>
