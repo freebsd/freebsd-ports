@@ -41,7 +41,7 @@
     SUBDIR += gnucap
     SUBDIR += gplcver
     SUBDIR += gspiceui
-    SUBDIR += gtkwave3
+    SUBDIR += gtkwave
     SUBDIR += gwave
     SUBDIR += impact
     SUBDIR += irsim
