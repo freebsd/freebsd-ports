@@ -1,9 +1,4 @@
-# New ports collection makefile for:	WebCalendar
-# Date created:				08 Jan 2008
-# Whom:					glarkin
-#
 # $FreeBSD$
-#
 
 PORTNAME=	WebCalendar
 PORTVERSION=	1.2.5
@@ -48,7 +43,7 @@ OPTIONS=	APACHE "Configure for Apache-2.x" off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_APACHE)
-USE_APACHE=	22+
+USE_APACHE_RUN=	22+
 
 PLIST_SUB+=	NOAPACHE="" CONFDIR=${CONFDIR_REL}
 CONFDIR=	${PREFIX}/${CONFDIR_REL}

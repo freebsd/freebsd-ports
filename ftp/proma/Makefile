@@ -1,9 +1,4 @@
-# New ports collection makefile for:    proma
-# Date created:         25.08.2003
-# Whom:                 HSIN-HSIUNG CHANG <sexbear@tmu.edu.tw>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	proma
 PORTVERSION=	0.8.3
@@ -35,7 +30,7 @@ SUB_FILES=	pkg-message
 RUN_DEPENDS+=	${LOCALBASE}/libexec/proftpd/mod_sql_mysql.so:${PORTSDIR}/databases/proftpd-mod_sql_mysql
 .endif
 .if defined(WITH_APACHE)
-USE_APACHE=	22
+USE_APACHE_RUN=	22
 .endif
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes

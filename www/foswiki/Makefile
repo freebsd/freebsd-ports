@@ -1,9 +1,4 @@
-# New ports collection makefile for:	foswiki
-# Date created:		2009-04-13
-# Whom:			Greg Larkin <glarkin@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	foswiki
 PORTVERSION=	1.1.5
@@ -50,7 +45,7 @@ RUN_DEPENDS+=	p5-Apache-Htpasswd>=0:${PORTSDIR}/security/p5-Apache-Htpasswd \
 .endif
 
 .if defined(WITH_APACHE)
-USE_APACHE?=	22+
+USE_APACHE_RUN?=22+
 PLIST_SUB+=	NOAPACHE=""
 PKGMESSAGE=	pkg-message-apache
 SUB_FILES+=	pkg-message-apache

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	thundersnarf
-# Date created:		2010-05-20
-# Whom:			Patrick Tracanelli <eksffa@freebsdbrasil.com.br>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	thundersnarf
 PORTVERSION=	1.3
@@ -28,7 +23,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME:R}
 .include <bsd.port.pre.mk>
 
 .if defined (WITH_APACHE)
-USE_APACHE=	22+
+USE_APACHE_RUN=	22+
 .endif
 
 .if defined (WITH_PGSQL)

@@ -1,7 +1,3 @@
-# New ports collection makefile for:	rt38
-# Date created:							26 December 2008
-# Whom:									Philip M. Gollucci <pgollucci@p6m7g8.com>
-#
 # $FreeBSD$
 
 # TODO:
@@ -63,7 +59,7 @@ RUN_DEPENDS+=	${STANDALONE_DEPS}
 .endif
 
 .if !empty(PORT_OPTIONS:MAPACHE) || !empty(PORT_OPTIONS:MFASTCGI) || !empty(PORT_OPTIONS:MMODPERL)
-USE_APACHE=	22+
+USE_APACHE_RUN=	22+
 .endif
 
 .if ${PORT_OPTIONS:MFASTCGI}

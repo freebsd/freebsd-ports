@@ -1,9 +1,4 @@
-# New ports collection makefile for: prosearch
-# Date created:		20 May 2006
-# Whom:			Oleg Alexeenkov <proler@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	prosearch
 PORTVERSION=	0.19.2
@@ -69,7 +64,7 @@ RUN_DEPENDS+=	rsync:${PORTSDIR}/net/rsync
 .endif
 
 .if defined(WITH_APACHE)
-USE_APACHE=	22+
+USE_APACHE_RUN=	22+
 .endif
 
 .if defined(WITH_NGINX)

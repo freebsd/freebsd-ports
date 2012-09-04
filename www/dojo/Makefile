@@ -1,9 +1,4 @@
-# New ports collection makefile for:	dojo
-# Date created:		2008-01-29
-# Whom:			Greg Larkin <glarkin@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=		dojo
 PORTVERSION=		1.5.0
@@ -22,7 +17,7 @@ OPTIONS=		APACHE  "Configure for Apache-2.x" off
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_APACHE)
-USE_APACHE=		22+
+USE_APACHE_RUN=		22+
 CONFDIR=		${PREFIX}/${CONFDIR_REL}
 CONFDIR_REL=		${APACHEETCDIR}/Includes
 PLIST_SUB+=		NOAPACHE="" CONFDIR=${CONFDIR_REL}

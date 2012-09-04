@@ -1,9 +1,4 @@
-# New ports collection makefile for:   hlstatsx
-# Date created:        2006-06-12
-# Whom:                Babak Farrokhi <babak@farrokhi.net>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	hlstatsx
 DISTVERSION=	1.20RC2
@@ -16,7 +11,7 @@ MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Real-time player and clan rankings and statistics for HL2 and mods
 
 NO_BUILD=	yes
-USE_APACHE=	22+
+USE_APACHE_RUN=	22+
 USE_PHP=	gd mysql
 USE_PERL5_RUN=	yes
 USE_ZIP=	yes

@@ -1,7 +1,3 @@
-# New ports collection makefile for:	rt38
-# Date created:							26 December 2008
-# Whom:									Philip M. Gollucci <pgollucci@p6m7g8.com>
-#
 # $FreeBSD$
 
 PORTNAME=	rt
@@ -85,7 +81,7 @@ RUN_DEPENDS+=	${MODPERL2_DEPS}
 .endif
 
 .if ${PORT_OPTIONS:MAP_MODFASTCGI}
-USE_APACHE=	22+
+USE_APACHE_RUN=	22+
 BUILD_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
 RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi \
 		${FASTCGI_DEPS}
