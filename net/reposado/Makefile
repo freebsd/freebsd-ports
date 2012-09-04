@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	reposado
-PORTVERSION=	0.0.20120620
+PORTVERSION=	0.0.20120810
 CATEGORIES=	net
 MASTER_SITES=	https://nodeload.github.com/wdas/reposado/zipball/${TAG}?dummy=/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/0.0.//}
