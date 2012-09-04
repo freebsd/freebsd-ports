@@ -52,7 +52,11 @@ VGA_DEVS= lvga256 vgalib
 
 .for D in ${VGA_DEVS}
 .if ${PORT_OPTIONS:MGS_${D}}
+.if ${ARCH:Mamd64} || ${ARCH:Mi386}
 _VGA_DEVS+= ${D}
+.else
+OPTIONS_UNSET+=	${PORT_OPTIONS:MGS_${D}}
+.endif
 .endif
 .endfor
 

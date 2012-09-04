@@ -90,8 +90,8 @@ MLINKS=		gslp.1 gsbj.1 \
 CIDFONTDIR=	${DATADIR}/${PORTVERSION}/Resource
 EXCLUDE_DIRS=	jbig2dec jpeg expat jasper libpng tiff zlib
 
-.include <bsd.port.pre.mk>
 .include "Makefile.drivers"
+.include <bsd.port.pre.mk>
 .include "${FILESDIR}/Makefile.drivers_post"
 
 .for D in ${OPTIONS_DEFINE:MGS_*:S/^GS_//}
@@ -171,9 +171,11 @@ pre-build-drivers.mak:
 .for D in ${OPTIONS_DEFINE:MGS_*:S/^GS_//}
 .for N in ${DEVS_LIST}
 .if ${PORT_OPTIONS:MGS_${D}}
+.if !defined(OPTIONS_UNSET) || !${OPTIONS_UNSET:MGS_${D}}
 .for X in ${DEVICE_${N}:M${D}.dev}
 	@${ECHO_CMD} 'DEVICE_${N}+= $$(DD)${D}.dev'  >> ${WRKSRC}/base/drivers.mak
 .endfor
+.endif
 .endif
 .endfor
 .endfor
