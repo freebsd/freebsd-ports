@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	contextmenu
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	mail
 MASTER_SITES=	http://www.tehinterweb.co.uk/roundcube/plugins/
 PKGNAMEPREFIX=	roundcube-

@@ -25,15 +25,22 @@
 %%WWWDIR%%/localization/tr_TR.inc
 %%WWWDIR%%/localization/uk_UA.inc
 %%WWWDIR%%/localization/zh_TW.inc
-%%WWWDIR%%/skins/default/contexticons.gif
-%%WWWDIR%%/skins/default/contexticons.png
-%%WWWDIR%%/skins/default/contextmenu.css
-%%WWWDIR%%/skins/default/folders.gif
-%%WWWDIR%%/skins/default/folders.png
-%%WWWDIR%%/skins/default/ie6hacks.css
-%%WWWDIR%%/skins/default/messageactions.gif
-%%WWWDIR%%/skins/default/messageactions.png
-@dirrm %%WWWDIR%%/skins/default
+%%WWWDIR%%/package.xml
+%%WWWDIR%%/skins/classic/contexticons.gif
+%%WWWDIR%%/skins/classic/contexticons.png
+%%WWWDIR%%/skins/classic/contextmenu.css
+%%WWWDIR%%/skins/classic/folders.gif
+%%WWWDIR%%/skins/classic/folders.png
+%%WWWDIR%%/skins/classic/ie6hacks.css
+%%WWWDIR%%/skins/classic/messageactions.gif
+%%WWWDIR%%/skins/classic/messageactions.png
+%%WWWDIR%%/skins/larry/contexticons.png
+%%WWWDIR%%/skins/larry/contextmenu.css
+%%WWWDIR%%/skins/larry/folders.png
+%%WWWDIR%%/skins/larry/ie6hacks.css
+%%WWWDIR%%/skins/larry/messageactions.png
+@dirrm %%WWWDIR%%/skins/larry
+@dirrm %%WWWDIR%%/skins/classic
 @dirrm %%WWWDIR%%/skins
 @dirrm %%WWWDIR%%/localization
 @dirrmtry %%WWWDIR%%
