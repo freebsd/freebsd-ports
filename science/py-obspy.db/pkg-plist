@@ -10,12 +10,16 @@ bin/obspy-indexer
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/db/CHANGELOG.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/db/LICENSE.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/db/README.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/db/VERSION.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/db/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/db/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/db/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/db/client.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/db/client.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/db/client.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/db/db.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/db/db.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/db/db.pyo
@@ -34,6 +38,9 @@ bin/obspy-indexer
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/db/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/db/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/db/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/db/tests/test_client.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/db/tests/test_client.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/db/tests/test_client.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/db/tests/test_util.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/db/tests/test_util.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/db/tests/test_util.pyo
