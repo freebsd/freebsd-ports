@@ -1,21 +1,26 @@
---- cmake/FindPython.cmake.orig	2012-08-11 14:06:55.086663842 +0100
-+++ cmake/FindPython.cmake	2012-08-11 14:23:55.301504695 +0100
+--- cmake/FindPython.cmake.orig	2012-09-03 15:43:03.205462582 +0100
++++ cmake/FindPython.cmake	2012-09-03 15:46:06.564072755 +0100
 @@ -34,8 +34,7 @@
  ENDIF(PYTHON_FOUND)
  
  FIND_PROGRAM(PYTHON_EXECUTABLE
--  NAMES python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python
+-  NAMES python2.7 python2.6 python2.5 python
 -  PATHS /usr/bin /usr/local/bin /usr/pkg/bin
 +  NAMES ${BSD_PYTHON_CMD}
    )
  
  IF(PYTHON_EXECUTABLE)
-@@ -65,7 +64,7 @@
+@@ -60,11 +59,11 @@
      )
  
    FIND_LIBRARY(PYTHON_LIBRARY
--    NAMES python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python
+-    NAMES python2.7 python2.6 python2.5 python
 +    NAMES ${BSD_PYTHON_VER}
      PATHS ${PYTHON_POSSIBLE_LIB_PATH}
      )
  
+-  IF(PYTHON_LIBRARY AND PYTHON_INCLUDE_PATH)
++  IF(0)
+     EXECUTE_PROCESS(
+       COMMAND ${PYTHON_EXECUTABLE} -c "import sys; sys.stdout.write(sys.version[:3])"
+       OUTPUT_VARIABLE PYTHON_VERSION
