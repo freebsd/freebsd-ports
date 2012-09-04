@@ -1,12 +1,9 @@
-# New ports collection makefile for:		node
-# Date created:					2010-04-12
-# Whom:						Jin-Sih Lin <linpct@gmail.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	node
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	-devel
@@ -22,19 +19,16 @@ MAN1=		node.1
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	2.7
+USE_OPENSSL=	yes
 USE_GMAKE=	yes
 
 CONFLICTS=	node-0.[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 MAKE_JOBS_SAFE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} --without-npm
+CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} --without-npm --shared-openssl --shared-zlib
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 REINPLACE_ARGS=	-i ''
-
-post-patch:
-	@${RM} ${WRKSRC}/tools/wafadmin/Node.py.orig
-	@${REINPLACE_CMD} -e 's|share/man/man1/|man/man1|' ${WRKSRC}/tools/installer.js
 
 post-install:
 	${MKDIR} ${PREFIX}/lib/node_modules/
