@@ -21,7 +21,7 @@
 ##                                WITH_STATIC_MODULES)
 ##      WITH_ALL_STATIC_MODULES:  All modules will be statically linked.
 ##      WITH_STATIC_MODULES (*):  List of modules to build modules statics
-##                                (usefull for slave ports)
+##                                (useful for slave ports)
 ##                                (They must be already enabled (i.e.
 ##                                WITH_MODULES or with default configuration
 ##                                use 'make show-modules', to check if they are
@@ -37,7 +37,7 @@
 ##                                ${WWWOWN} (www))
 ##            SUEXEC_UMASK:       Defines umask for suEXEC'd process(default:
 ##                                unset)
-##	WITH_DEBUG:               Build a debug version of apache (set CFLAGS
+##	WITH_DEBUG:               Build a debug version of Apache (set CFLAGS
 ##                                to "-O0 -g -ggdb3" or ${DEBUG_FLAGS} and
 ##                                defines WITH_EXCEPTION_HOOK too)
 ##      WITH_EXCEPTION_HOOK:      Enable fatal exception hook
@@ -58,6 +58,12 @@
 ##      Note: If you define your custom options in /etc/make.conf, don't forget
 ##            to do not use quotes.
 ##
+## Note about OPTION IPV4_MAPPED
+##  For security reasons this OPTION is disabled.
+##  You can find more information about IP binding and configuration
+##  on the Apache website: http://httpd.apache.org/docs/2.2/bind.html
+##  To find out which binding was used to build httpd use the command
+##   $> httpd -V
 
 MAKE_ENV+=	EXAMPLESDIR=${EXAMPLESDIR}
 
