@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	menu-cache
-PORTVERSION=	0.3.2
-PORTREVISION=	3
+PORTVERSION=	0.3.3
 CATEGORIES=	x11
 MASTER_SITES=	SF/lxde/menu-cache/menu-cache%20${PORTVERSION}/
 
