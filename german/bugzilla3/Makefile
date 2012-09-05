@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	bugzilla
-PORTVERSION=	3.6.10
-PORTREVISION=	1
+PORTVERSION=	3.6.11
+#PORTREVISION=	1
 CATEGORIES=	german
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=bugzilla-de/${PORTVERSION:R}/${PORTVERSION}
@@ -21,13 +21,9 @@ NO_WRKSUBDIR=	yes
 
 LANGDIR=	${WWWDIR}/template/de
 
-post-patch:
-	${REINPLACE_CMD} -i '' -e '/abbrev/d' \
-		${WRKDIR}/de/default/filterexceptions.pl
-	${REINPLACE_CMD} -i '' -e 's/column.title -%/column.title FILTER html -%/' \
-		${WRKDIR}/de/default/list/table.html.tmpl
-	${REINPLACE_CMD} -i '' -e 's/3.6.10/3.6.11/' \
-		${WRKDIR}/de/default/global/gzversion.html.tmpl
+#post-patch:
+#	${REINPLACE_CMD} -i '' -e 's/3.6.10/3.6.11/' \
+#		${WRKDIR}/de/default/global/gzversion.html.tmpl
 
 do-install:
 	@-${MKDIR} ${LANGDIR}
