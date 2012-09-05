@@ -259,6 +259,7 @@
     SUBDIR += cut
     SUBDIR += cutils
     SUBDIR += cutter
+    SUBDIR += cvs
     SUBDIR += cvs+ipv6
     SUBDIR += cvs-devel
     SUBDIR += cvs-syncmail
