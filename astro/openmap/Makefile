@@ -1,9 +1,4 @@
-# New ports collection makefile for:	openmap
-# Date created:				2005-07-30
-# Whom:					des
-#
 # $FreeBSD$
-#
 
 PORTNAME=	openmap
 PORTVERSION=	4.6.4

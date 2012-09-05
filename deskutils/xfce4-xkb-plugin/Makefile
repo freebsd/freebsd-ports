@@ -1,9 +1,4 @@
-# New ports collection makefile for:	xfce4-xkb-plugin
-# Date created:				2004-08-27
-# Whom:					des
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xfce4-xkb-plugin
 PORTVERSION=	0.5.4.3

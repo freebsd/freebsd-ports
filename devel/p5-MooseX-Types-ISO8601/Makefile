@@ -1,9 +1,4 @@
-# New ports collection makefile for:	devel/p5-MooseX-Types-ISO8601
-# Date created:				23 Jun 2009
-# Whom:					Dag-Erling Smørgrav <des@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	MooseX-Types-ISO8601
 PORTVERSION=	0.10

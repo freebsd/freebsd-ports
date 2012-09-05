@@ -1,9 +1,4 @@
-# New ports collection makefile for:	qucs
-# Date created:				2005-06-11
-# Whom:					des
-#
 # $FreeBSD$
-#
 
 PORTNAME=	qucs
 PORTVERSION=	0.0.16

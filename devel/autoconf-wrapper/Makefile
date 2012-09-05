@@ -1,9 +1,4 @@
-# New ports collection makefile for:	autoconf-wrapper
-# Date created:				4th April 2007
-# Whom:					des
-#
 # $FreeBSD$
-#
 
 PORTNAME?=	autoconf-wrapper
 PORTVERSION=	20101119

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	javanns
-# Date created:				7 January 2002
-# Whom:					des
-#
 # $FreeBSD$
-#
 
 PORTNAME=	javanns
 PORTVERSION=	1.1

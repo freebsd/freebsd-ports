@@ -1,9 +1,4 @@
-# Ports collection makefile for:	pear-Auth_HTTP
-# Date created:				2004-10-25
-# Whom:					des
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Auth_HTTP
 PORTVERSION=	2.1.8

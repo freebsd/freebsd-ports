@@ -1,9 +1,4 @@
-# New ports collection makefile for:	linux-dislin
-# Date created:				2003-12-14
-# Whom:					des
-#
 # $FreeBSD$
-#
 
 PORTNAME=	dislin
 PORTVERSION=	10.1

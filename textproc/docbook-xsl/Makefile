@@ -1,9 +1,4 @@
-# New ports collection makefile for:   docbook-xml
-# Date created:        17 January 2002
-# Whom:                des
-#
 # $FreeBSD$
-#
 
 PORTNAME=	docbook-xsl
 PORTVERSION=	1.76.1
