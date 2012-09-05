@@ -1,0 +1,23 @@
+bin/cvs
+bin/cvsbug
+bin/rcs2log
+%%DATADIR%%/contrib/README
+%%DATADIR%%/contrib/check_cvs
+%%DATADIR%%/contrib/clmerge
+%%DATADIR%%/contrib/cln_hist
+%%DATADIR%%/contrib/commit_prep
+%%DATADIR%%/contrib/cvs2vendor
+%%DATADIR%%/contrib/cvs_acls
+%%DATADIR%%/contrib/cvscheck
+%%DATADIR%%/contrib/debug_check_log
+%%DATADIR%%/contrib/intro.doc
+%%DATADIR%%/contrib/log
+%%DATADIR%%/contrib/log_accum
+%%DATADIR%%/contrib/mfpipe
+%%DATADIR%%/contrib/pvcs2rcs
+%%DATADIR%%/contrib/rcs-to-cvs
+%%DATADIR%%/contrib/rcs2log
+%%DATADIR%%/contrib/rcslock
+%%DATADIR%%/contrib/sccs2rcs
+@dirrm %%DATADIR%%/contrib
+@dirrm %%DATADIR%%
