@@ -3144,6 +3144,7 @@
     SUBDIR += py-InlineEgg
     SUBDIR += py-Jinja
     SUBDIR += py-Jinja2
+    SUBDIR += py-Jinja2-doc
     SUBDIR += py-Missing
     SUBDIR += py-MultiMapping
     SUBDIR += py-PEAK-Rules
