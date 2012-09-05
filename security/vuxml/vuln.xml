@@ -51,6 +51,49 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="918f38cd-f71e-11e1-8bd8-0022156e8794">
+    <topic>php5 -- header splitting attack via carriage-return character</topic>
+    <affects>
+      <package>
+	<name>php5</name>
+	<range><ge>5.2</ge><lt>5.3.11</lt></range>
+	<range><ge>5.4</ge><lt>5.4.1</lt></range>
+      </package>
+      <package>
+	<name>php52</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>php53</name>
+	<range><lt>5.3.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Rui Hirokawa reports:</p>
+	<blockquote cite="https://bugs.php.net/bug.php?id=60227">
+	  <p>As of PHP 5.1.2, header() can no longer be used to send
+	  multiple response headers in a single call to prevent the
+	  HTTP Response Splitting Attack.  header() only checks the
+	  linefeed (LF, 0x0A) as line-end marker, it doesn't check the
+	  carriage-return (CR, 0x0D).</p>
+	  <p>However, some browsers including Google Chrome, IE also
+	  recognize CR as the line-end.</p>
+	  <p>The current specification of header() still has the
+	  vulnerability against the HTTP header splitting attack.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-1398</cvename>
+      <url>https://bugs.php.net/bug.php?id=60227</url>
+    </references>
+    <dates>
+      <discovery>2011-11-06</discovery>
+      <entry>2012-09-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b50913ce-f4a7-11e1-b135-003067b2972c">
     <topic>bitcoin -- denial of service</topic>
     <affects>
