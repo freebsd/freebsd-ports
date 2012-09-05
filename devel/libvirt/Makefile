@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libvirt
-PORTVERSION=	0.9.13
+PORTVERSION=	0.10.1
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/
 
@@ -45,7 +45,7 @@ USE_GNOME=	gnomehack
 GNOME_MAKEFILEIN=	Makefile.am
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=	yes
-SHLIB_VER=	9
+SHLIB_VER=	10
 PLIST_SUB=	PORTVERSION="-${PORTVERSION}" \
 		SHLIB_VER=${SHLIB_VER}
 
@@ -65,8 +65,8 @@ MAN8=		libvirtd.8
 AUTOTOOLSFILES=	aclocal.m4
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|1.11.1|%%AUTOMAKE_APIVER%%|g' \
-			  ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|1.11.3|%%AUTOMAKE_APIVER%%|g' \
+		${WRKSRC}/aclocal.m4
 	@${MV} ${WRKSRC}/daemon/libvirtd.conf ${WRKSRC}/daemon/libvirtd.conf.sample
 	@${REINPLACE_CMD} -e 's|libvirtd\.conf|libvirtd.conf.sample|' \
 		${WRKSRC}/daemon/Makefile.am \
