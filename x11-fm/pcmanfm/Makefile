@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	pcmanfm
-PORTVERSION=	0.9.10
-PORTREVISION=	1
+PORTVERSION=	1.0
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/${PORTNAME}/PCManFM%20%2B%20Libfm%20%28tarball%20release%29/PCManFM/
 
@@ -16,7 +15,7 @@ MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	PCMan File Manager
 
 LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification \
-		fm-gtk.1:${PORTSDIR}/x11/libfm
+		fm-gtk.3:${PORTSDIR}/x11/libfm
 
 USE_GNOME=	gtk20
 USE_AUTOTOOLS=	libtool
@@ -24,6 +23,8 @@ USE_GMAKE=	yes
 USE_FAM=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+MAN1=		pcmanfm.1
 
 OPTIONS=	NLS "Native Language Support (devel/gettext)" on
 
@@ -36,9 +37,5 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|pcmanfm %U|pcmanfm ~|g' \
-		${WRKSRC}/data/pcmanfm.desktop
 
 .include <bsd.port.post.mk>
