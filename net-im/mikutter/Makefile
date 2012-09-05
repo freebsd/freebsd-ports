@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mikutter
-PORTVERSION=	0.1.1.814
+PORTVERSION=	0.1.1.863
 CATEGORIES=	net-im ruby
 MASTER_SITES=	http://mikutter.hachune.net/bin/ \
 		LOCAL
@@ -27,8 +27,6 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
 		${RUBY_SITELIBDIR}/memoize.rb:${PORTSDIR}/devel/ruby-memoize \
 		rubygem-oauth>=0:${PORTSDIR}/net/rubygem-oauth \
 		${RUBY_SITELIBDIR}/bsearch.rb:${PORTSDIR}/devel/ruby-bsearch
-
-BROKEN=		does not build
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
@@ -56,7 +54,11 @@ NOTIFY_DESC=		notify-send support
 
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_DEFAULT_VER} == 1.8
+BROKEN=	does not build
+.endif
 
 .if ${PORT_OPTIONS:MHTTPCLIENT}
 RUN_DEPENDS+=	rubygem-httpclient>=0:${PORTSDIR}/www/rubygem-httpclient
@@ -94,7 +96,6 @@ x-generate-plist:
 	${FIND} ${RUBY_SITELIBDIR}/mikutter -type f | ${SORT} | ${SED} -e 's,${RUBY_SITELIBDIR},%%RUBY_SITELIBDIR%%,' >> pkg-plist.new
 	${ECHO} share/applications/mikutter.desktop >> pkg-plist.new
 	${ECHO} '@dirrmtry share/applications' >> pkg-plist.new
-	${ECHO} @exec ${MKDIR:S|/bin/||} %D/%%RUBY_SITELIBDIR%%/mikutter/core/hatsunelisp >> pkg-plist.new
 	${FIND} ${RUBY_SITELIBDIR}/mikutter -type d -depth | ${SORT} -r | ${SED} -e 's,${RUBY_SITELIBDIR},@dirrm %%RUBY_SITELIBDIR%%,' >> pkg-plist.new
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
