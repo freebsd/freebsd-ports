@@ -1,13 +1,7 @@
-# New ports collection makefile for:	R-cran-scales
-# Date created:		2012-02-08
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	scales
-PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTVERSION=	0.2.2
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
