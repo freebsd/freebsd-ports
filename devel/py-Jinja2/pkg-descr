@@ -1,7 +1,6 @@
-Jinja is a sandboxed  template engine written in pure Python  licensed
+Jinja is a sandboxed template engine written in pure Python licensed
 under the BSD license. It provides a Django-like non-XML syntax and
 compiles templates into executable python code. It's basically a
 combination of Django templates and python code.
 
-Author: Armin Ronacher
-WWW:	http://jinja.pocoo.org/2/
+WWW: http://jinja.pocoo.org/
