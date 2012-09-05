@@ -1,9 +1,4 @@
-# Ports collection makefile for:	j2sdkee13
-# Date created:				2003-06-27
-# Whom:					des
-#
 # $FreeBSD$
-#
 
 PORTNAME=	j2sdkee
 PORTVERSION=	1.3.1

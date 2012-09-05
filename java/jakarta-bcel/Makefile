@@ -1,8 +1,4 @@
-# Ports collection makefile for:	jakarta-bcel
-# Date created:				6 May 2002
-# Whom:					des
 # $FreeBSD$
-#
 
 PORTNAME=	bcel
 PORTVERSION=	5.2

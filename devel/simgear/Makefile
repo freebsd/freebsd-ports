@@ -1,9 +1,4 @@
-# New ports collection makefile for:	SimGear
-# Date created:				2003-01-21
-# Whom:					des
-#
 # $FreeBSD$
-#
 
 PORTNAME=	simgear
 PORTVERSION=	2.6.0

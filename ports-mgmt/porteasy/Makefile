@@ -1,11 +1,4 @@
-# New ports collection makefile for:		porteasy
-# Date created:					September 19th 2000
-# Whom:						des
-#
 # $FreeBSD$
-#
-# This port is self contained in the src directory.
-#
 
 PORTNAME=	porteasy
 PORTVERSION=	2.8.5

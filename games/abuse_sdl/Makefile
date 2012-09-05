@@ -1,9 +1,4 @@
-# New ports collection makefile for:	abuse_sdl
-# Date created:				11 May 2002
-# Whom:					des
-#
 # $FreeBSD$
-#
 
 PORTNAME=	abuse_sdl
 PORTVERSION=	0.8

@@ -1,9 +1,4 @@
-# New ports collection makefile for:		doscmd
-# Date created:					2004-03-23
-# Whom:						des
-#
 # $FreeBSD$
-#
 
 PORTNAME=	doscmd
 PORTVERSION=	20110826

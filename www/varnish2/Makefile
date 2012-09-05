@@ -1,9 +1,4 @@
-# New ports collection makefile for:	varnish
-# Date created:				2006-08-11
-# Whom:					des
-#
 # $FreeBSD$
-#
 
 PORTNAME=	varnish
 PORTVERSION=	2.1.5

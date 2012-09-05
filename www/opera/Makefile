@@ -1,9 +1,4 @@
-# New ports collection makefile for:		opera
-# Date created:					November 5th 2000
-# Whom:						des
-#
 # $FreeBSD$
-#
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}

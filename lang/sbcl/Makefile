@@ -1,7 +1,3 @@
-# New ports collection makefile for:	sbcl
-# Date created:				2002-11-26
-# Whom:					des
-#
 # $FreeBSD$
 #
 # Note: If you update this port make sure you create the distfinfo for all
