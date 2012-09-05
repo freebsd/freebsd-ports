@@ -346,19 +346,19 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>wireshark</name>
-	<range><ge>1.5</ge><lt>1.9</lt></range>
+	<range><ge>1.5</ge><lt>1.8.2_1</lt></range>
       </package>
       <package>
 	<name>wireshark-lite</name>
-	<range><ge>1.5</ge><lt>1.9</lt></range>
+	<range><ge>1.5</ge><lt>1.8.2_1</lt></range>
       </package>
       <package>
 	<name>tshark</name>
-	<range><ge>1.5</ge><lt>1.9</lt></range>
+	<range><ge>1.5</ge><lt>1.8.2_1</lt></range>
       </package>
       <package>
 	<name>tshark-lite</name>
-	<range><ge>1.5</ge><lt>1.9</lt></range>
+	<range><ge>1.5</ge><lt>1.8.2_1</lt></range>
       </package>
     </affects>
     <description>
