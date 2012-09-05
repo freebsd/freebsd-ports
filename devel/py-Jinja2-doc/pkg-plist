@@ -1,0 +1,53 @@
+@comment $FreeBSD$
+%%DOCSDIR%%/.buildinfo
+%%DOCSDIR%%/_sources/api.txt
+%%DOCSDIR%%/_sources/changelog.txt
+%%DOCSDIR%%/_sources/extensions.txt
+%%DOCSDIR%%/_sources/faq.txt
+%%DOCSDIR%%/_sources/index.txt
+%%DOCSDIR%%/_sources/integration.txt
+%%DOCSDIR%%/_sources/intro.txt
+%%DOCSDIR%%/_sources/latexindex.txt
+%%DOCSDIR%%/_sources/sandbox.txt
+%%DOCSDIR%%/_sources/switching.txt
+%%DOCSDIR%%/_sources/templates.txt
+%%DOCSDIR%%/_sources/tricks.txt
+%%DOCSDIR%%/_static/ajax-loader.gif
+%%DOCSDIR%%/_static/basic.css
+%%DOCSDIR%%/_static/comment-bright.png
+%%DOCSDIR%%/_static/comment-close.png
+%%DOCSDIR%%/_static/comment.png
+%%DOCSDIR%%/_static/doctools.js
+%%DOCSDIR%%/_static/down-pressed.png
+%%DOCSDIR%%/_static/down.png
+%%DOCSDIR%%/_static/file.png
+%%DOCSDIR%%/_static/jinja-small.png
+%%DOCSDIR%%/_static/jinja.css
+%%DOCSDIR%%/_static/jquery.js
+%%DOCSDIR%%/_static/minus.png
+%%DOCSDIR%%/_static/plus.png
+%%DOCSDIR%%/_static/pygments.css
+%%DOCSDIR%%/_static/searchtools.js
+%%DOCSDIR%%/_static/underscore.js
+%%DOCSDIR%%/_static/up-pressed.png
+%%DOCSDIR%%/_static/up.png
+%%DOCSDIR%%/_static/websupport.js
+%%DOCSDIR%%/api.html
+%%DOCSDIR%%/changelog.html
+%%DOCSDIR%%/extensions.html
+%%DOCSDIR%%/faq.html
+%%DOCSDIR%%/genindex.html
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/integration.html
+%%DOCSDIR%%/intro.html
+%%DOCSDIR%%/latexindex.html
+%%DOCSDIR%%/objects.inv
+%%DOCSDIR%%/sandbox.html
+%%DOCSDIR%%/search.html
+%%DOCSDIR%%/searchindex.js
+%%DOCSDIR%%/switching.html
+%%DOCSDIR%%/templates.html
+%%DOCSDIR%%/tricks.html
+@dirrm %%DOCSDIR%%/_static
+@dirrm %%DOCSDIR%%/_sources
+@dirrm %%DOCSDIR%%
