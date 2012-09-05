@@ -1,9 +1,4 @@
-# New ports collection makefile for:	mikutter
-# Date created:		2011-03-27
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mikutter
 PORTVERSION=	0.1.1.863
