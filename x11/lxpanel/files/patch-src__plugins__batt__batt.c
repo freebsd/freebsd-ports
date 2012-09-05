@@ -1,5 +1,5 @@
---- src/plugins/batt/batt.c.o	2011-09-16 11:13:43.000000000 -0400
-+++ src/plugins/batt/batt.c	2011-09-16 11:36:21.000000000 -0400
+--- src/plugins/batt/batt.c.orig	2012-05-20 09:57:39.000000000 -0400
++++ src/plugins/batt/batt.c	2012-09-05 13:18:22.428078608 -0400
 @@ -71,7 +71,7 @@
      GdkPixmap *pixmap;
      GtkWidget *drawingArea;
@@ -9,59 +9,64 @@
          border,
          height,
          length,
-@@ -120,15 +120,15 @@
+@@ -120,16 +120,16 @@
      char tooltip[ 256 ];
      battery *b = lx_b->b;
      /* unit: mW */
--    int rate = lx_b->b->present_rate;
+-    int rate;
+     gboolean isCharging;
  
      if (! lx_b->pixmap )
          return;
  
      /* no battery is found */
 -    if( b == NULL ) 
-+    if( b == NULL || b->percentage < 0 ) 
++    if( b == NULL || b->percentage < 0 )
      {
  	gtk_widget_set_tooltip_text( lx_b->drawingArea, _("No batteries found") );
-+	gdk_draw_rectangle(lx_b->pixmap, lx_b->bg, TRUE, 0, 0, lx_b->width, lx_b->height);
++        gdk_draw_rectangle(lx_b->pixmap, lx_b->bg, TRUE, 0, 0, lx_b->width, lx_b->height);
  	return;
      }
      
-@@ -145,8 +145,8 @@
+@@ -138,12 +138,11 @@
+ 
+     /* fixme: only one battery supported */
+ 
+-    rate = lx_b->b->current_now;
      isCharging = battery_is_charging ( b );
      
      /* Consider running the alarm command */
--    if (! isCharging && rate && 
+-    if ( !isCharging && rate > 0 &&
 -	( ( battery_get_remaining( b ) / 60 ) < lx_b->alarmTime ) )
-+    if (! isCharging &&
++    if ( !isCharging &&
 +	( ( b->percentage ) < lx_b->alarmPercentage ) )
      {
  	/* Shrug this should be done using glibs process functions */
  	/* Alarms should not run concurrently; determine whether an alarm is
-@@ -176,7 +176,7 @@
- 	    int left_seconds = b->seconds -= 3600 * hours;
+@@ -173,7 +172,7 @@
+ 	int left_seconds = b->seconds - 3600 * hours;
+ 	int minutes = left_seconds / 60;
+ 	snprintf(tooltip, 256,
+-		_("Battery: %d%% charged, %d:%02d until full"),
++		_("Battery: %d%% charged"),
+ 		lx_b->b->percentage,
+ 		hours,
+ 		minutes );
+@@ -184,10 +183,10 @@
+ 	    int left_seconds = b->seconds - 3600 * hours;
  	    int minutes = left_seconds / 60;
  	    snprintf(tooltip, 256,
--		     _("Battery: %d%% charged, %d:%02d until full"),
-+		     _("Battery: %d%% charged"),
- 		     lx_b->b->percentage,
- 		     hours,
- 		     minutes );
-@@ -187,10 +187,10 @@
- 		int left_seconds = b->seconds -= 3600 * hours;
- 		int minutes = left_seconds / 60;
-                 snprintf(tooltip, 256,
--                        _("Battery: %d%% charged, %d:%02d left"),
-+                        _("Battery: %d%% charged, %d:%02dh left"),
- 			 lx_b->b->percentage,
--			 hours,
--			 minutes );
-+			 lx_b->b->minutes / 60,
-+			 lx_b->b->minutes % 60 );
-             } else {
-                 snprintf(tooltip, 256,
-                         _("Battery: %d%% charged"),
-@@ -374,7 +374,7 @@
+-		    _("Battery: %d%% charged, %d:%02d left"),
++		    _("Battery: %d%% charged, %d:%02dh left"),
+ 		    lx_b->b->percentage,
+-		    hours,
+-		    minutes );
++                    hours,
++                    minutes);
+ 	} else {
+ 	    snprintf(tooltip, 256,
+ 		    _("Battery: %d%% charged"),
+@@ -367,7 +366,7 @@
              = lx_b->dischargingColor1 = lx_b->dischargingColor2 = NULL;
  
      /* Set default values for integers */
@@ -70,7 +75,7 @@
      lx_b->requestedBorder = 1;
  
      line s;
-@@ -403,8 +403,8 @@
+@@ -396,8 +395,8 @@
                      lx_b->dischargingColor1 = g_strdup(s.t[1]);
                  else if (!g_ascii_strcasecmp(s.t[0], "DischargingColor2"))
                      lx_b->dischargingColor2 = g_strdup(s.t[1]);
@@ -81,7 +86,7 @@
                  else if (!g_ascii_strcasecmp(s.t[0], "BorderWidth"))
                      lx_b->requestedBorder = atoi(s.t[1]);
                  else if (!g_ascii_strcasecmp(s.t[0], "Size")) {
-@@ -580,7 +580,7 @@
+@@ -573,7 +572,7 @@
              _("Hide if there is no battery"), &b->hide_if_no_battery, CONF_TYPE_BOOL,
  #endif
              _("Alarm command"), &b->alarmCommand, CONF_TYPE_STR,
@@ -90,7 +95,7 @@
              _("Background color"), &b->backgroundColor, CONF_TYPE_STR,
              _("Charging color 1"), &b->chargingColor1, CONF_TYPE_STR,
              _("Charging color 2"), &b->chargingColor2, CONF_TYPE_STR,
-@@ -600,7 +600,7 @@
+@@ -593,7 +592,7 @@
  
      lxpanel_put_bool(fp, "HideIfNoBattery",lx_b->hide_if_no_battery);
      lxpanel_put_str(fp, "AlarmCommand", lx_b->alarmCommand);

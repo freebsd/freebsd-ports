@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lxpanel
-PORTVERSION=	0.5.8
-PORTREVISION=	2
+PORTVERSION=	0.5.10
 CATEGORIES=	x11
 MASTER_SITES=	SF/lxde/LXPanel%20%28desktop%20panel%29/LXPanel%20${PORTVERSION}
 
@@ -21,7 +20,7 @@ OPTIONS=	ALSA "enable ALSA audio architecture support" Off \
 		NLS "NLS support" On
 
 USE_XORG=	x11 xmu
-USE_GNOME=	gnomehack gtk20 pkgconfig
+USE_GNOME=	gnomehack gtk20 pkgconfig libwnck
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake:env
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
