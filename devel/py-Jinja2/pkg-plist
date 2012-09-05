@@ -140,18 +140,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/visitor.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/visitor.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/visitor.pyo
-%%PORTDOCS%%%%DOCSDIR%%/api.rst
-%%PORTDOCS%%%%DOCSDIR%%/changelog.rst
-%%PORTDOCS%%%%DOCSDIR%%/extensions.rst
-%%PORTDOCS%%%%DOCSDIR%%/faq.rst
-%%PORTDOCS%%%%DOCSDIR%%/index.rst
-%%PORTDOCS%%%%DOCSDIR%%/integration.rst
-%%PORTDOCS%%%%DOCSDIR%%/intro.rst
-%%PORTDOCS%%%%DOCSDIR%%/latexindex.rst
-%%PORTDOCS%%%%DOCSDIR%%/sandbox.rst
-%%PORTDOCS%%%%DOCSDIR%%/switching.rst
-%%PORTDOCS%%%%DOCSDIR%%/templates.rst
-%%PORTDOCS%%%%DOCSDIR%%/tricks.rst
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic/cycle.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic/cycle.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic/cycle.pyo
@@ -212,7 +200,6 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/basic/templates
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/basic
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/testsuite/res/templates/foo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/testsuite/res/templates
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/testsuite/res
