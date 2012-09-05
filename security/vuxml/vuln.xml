@@ -51,6 +51,50 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4f99e2ef-f725-11e1-8bd8-0022156e8794">
+    <topic>moinmoin -- wrong processing of group membership</topic>
+    <affects>
+      <package>
+	<name>moinmoin</name>
+	<range><ge>1.9</ge><lt>1.9.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MoinMoin developers report:</p>
+	<blockquote cite="http://hg.moinmo.in/moin/1.9/rev/7b9f39289e16">
+	  <p>If you have group NAMES containing "All" or "Known" or
+	  "Trusted", they behaved wrong until now (they erroneously
+	  included All/Known/Trusted users even if you did not list
+	  them as members), but will start working correctly with this
+	  changeset.</p>
+	  <p>E.g. AllFriendsGroup:</p>
+	  <ul>
+	    <li>JoeDoe</li>
+	  </ul>
+	  <p>AllFriendsGroup will now (correctly) include only JoeDoe.
+	  It (erroneously) contained all users (including JoeDoe)
+	  before.</p>
+	  <p>E.g. MyTrustedFriendsGroup:</p>
+	  <ul>
+	    <li>JoeDoe</li>
+	  </ul>
+	  <p>MyTrustedFriendsGroup will now (correctly) include only
+	  JoeDoe.  It (erroneously) contained all trusted users and
+	  JoeDoe before.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-4404</cvename>
+      <url>http://hg.moinmo.in/moin/1.9/rev/7b9f39289e16</url>
+    </references>
+    <dates>
+      <discovery>2012-09-03</discovery>
+      <entry>2012-09-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="918f38cd-f71e-11e1-8bd8-0022156e8794">
     <topic>php5 -- header splitting attack via carriage-return character</topic>
     <affects>
