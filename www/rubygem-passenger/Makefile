@@ -29,7 +29,7 @@ RUBYGEM_AUTOPLIST=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPACHE22}
-USE_APACHE=	22+
+USE_APACHE_RUN=	22+
 .endif
 
 .if ${PORT_OPTIONS:MNGINX}
