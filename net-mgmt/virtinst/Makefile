@@ -7,6 +7,7 @@
 
 PORTNAME=	virtinst
 PORTVERSION=	0.600.3
+PORTREVSION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://virt-manager.org/download/sources/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Module to help in starting installations inside of virtual machines
 
-LIB_DEPENDS=	virt.9:${PORTSDIR}/devel/libvirt
+LIB_DEPENDS=	virt.10:${PORTSDIR}/devel/libvirt
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urlgrabber>=3.9.1:${PORTSDIR}/www/py-urlgrabber
 
 USE_GETTEXT=	yes
