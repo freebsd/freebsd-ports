@@ -1,0 +1,29 @@
+--- modules/Makefile.orig	2012-09-05 15:46:26.000000000 +0800
++++ modules/Makefile	2012-09-05 15:49:16.000000000 +0800
+@@ -3,15 +3,18 @@ include ../suffixes-rule
+ 
+ CFLAGS+=-I.. -I../IMdkit/include
+ GCIN_MODULE=intcode-module.so
++SOURCES=intcode.cpp win-int.cpp
+ 
+ ifeq ($(USE_ANTHY),Y)
+ GCIN_MODULE+=anthy-module.so
++SOURCES+=anthy.cpp
+ endif
+ 
+ ifeq ($(USE_CHEWING),Y)
+ GCIN_MODULE+=chewing-module.so
+ CHEWING_DATADIR=$(shell pkg-config --variable=datadir chewing)
+ CFLAGS += -DCHEWING_DATADIR=\"$(CHEWING_DATADIR)\"
++SOURCES+=chewing-conf.cpp chewing.cpp gcin-setup-chewing.cpp
+ endif
+ 
+ all:	$(GCIN_MODULE)
+@@ -35,6 +38,6 @@ install:
+ clean:
+ 	rm -f *.pico *.so *.o .depend
+ .depend:
+-	$(CCX) $(CFLAGS) -MM *.cpp > $@
++	$(CCX) $(CFLAGS) -MM $(SOURCES) > $@
+ 
+ include .depend
