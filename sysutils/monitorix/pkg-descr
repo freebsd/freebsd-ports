@@ -1,8 +1,22 @@
-Monitorix is a free, open source, lightweight system monitoring tool
-designed to monitorize as many services as possible. At this time it
-monitors from the CPU load and temperatures to the users using the system.
-Network devices activity, network services demand and even the devices'
-interrupt activity are also monitored, and more. The current status of any
-corporate server with Monitorix installed can be accessed via a web browser.
+Monitorix is a free, open source, lightweight system monitoring tool designed
+to monitor as many services and system resources as possible. It has been
+created to be used under production UNIX/Linux servers, but due to its
+simplicity and small size may also be used to monitor embedded devices as
+well.
+
+It mainly consists mainly of two programs: a collector, called monitorix, which
+is a Perl daemon that is started automatically like any other system service,
+and a CGI script called monitorix.cgi.
+
+Every time 'monitorix' is started it reads the configuration file from the path
+specified in the command line (using the -c option), and once checked, it
+creates the 'index.html' file that will act as the Monitorix main page.
+
+It also creates a file called '$BASE_DIR/cgi-bin/monitorix.conf.path' that
+includes the absolute path of the configuration file. This file will be read
+by 'monitorix.cgi' to determine the exact location of the configuration file.
+If for any reason it is unable to locate this file, Monitorix will try two
+alternative locations: '/etc/monitorix.conf' and
+'/usr/local/etc/monitorix.conf'.
 
 WWW: http://www.monitorix.org/
