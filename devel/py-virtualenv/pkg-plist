@@ -16,7 +16,36 @@ bin/virtualenv-%%PYVER%%
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv_support/distribute-%%DISTRIBUTEVER%%.tar.gz
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv_support/pip-%%PIPVER%%.tar.gz
 %%PY2X%%%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv_support/setuptools-0.6c11-py%%PYVER%%.egg
-%%PORTDOCS%%%%DOCSDIR%%/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/.buildinfo
+%%PORTDOCS%%%%DOCSDIR%%/_sources/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/news.txt
+%%PORTDOCS%%%%DOCSDIR%%/_static/ajax-loader.gif
+%%PORTDOCS%%%%DOCSDIR%%/_static/basic.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/comment-bright.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/comment-close.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/comment.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/doctools.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/down-pressed.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/down.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/file.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/jquery.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/minus.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/nature.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/plus.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/pygments.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/searchtools.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/underscore.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/up-pressed.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/up.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/websupport.js
+%%PORTDOCS%%%%DOCSDIR%%/genindex.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/news.html
+%%PORTDOCS%%%%DOCSDIR%%/objects.inv
+%%PORTDOCS%%%%DOCSDIR%%/search.html
+%%PORTDOCS%%%%DOCSDIR%%/searchindex.js
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_static
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv_support
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
