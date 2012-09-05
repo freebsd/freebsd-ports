@@ -1,12 +1,7 @@
-# New ports collection makefile for:	xpi-gdata_provider
-# Date created:			21 Nov 2011
-# Whom:				Alex Dupre <ale@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gdata_provider
-PORTVERSION=	0.13
+PORTVERSION=	0.16
 DISTVERSIONSUFFIX=	-sm+tb
 CATEGORIES=	www deskutils
 
