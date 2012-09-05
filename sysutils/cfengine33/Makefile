@@ -7,6 +7,7 @@
 
 PORTNAME=	cfengine
 PORTVERSION=	3.3.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cfengine.com/source-code/download?file=
 

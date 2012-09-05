@@ -7,6 +7,7 @@
 
 PORTNAME=	libvirt
 PORTVERSION=    1.96
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=   https://github.com/zenoss/${ZPACKPREFIX}${PORTNAME}/tarball/master/
 DISTNAME=       zenoss-${ZPACKPREFIX}${PORTNAME}-${TAG}
