@@ -38,7 +38,9 @@ include/lxpanel/plugin.h
 %%DATADIR%%/images/scrllock-off.png
 %%DATADIR%%/images/scrllock-on.png
 %%DATADIR%%/images/stock_volume.png
-%%DATADIR%%/images/volume.png
+%%DATADIR%%/images/volume-high.png
+%%DATADIR%%/images/volume-low.png
+%%DATADIR%%/images/volume-medium.png
 %%DATADIR%%/images/window-manager.png
 %%DATADIR%%/images/xkb-flags/ae.png
 %%DATADIR%%/images/xkb-flags/am.png
@@ -119,6 +121,9 @@ include/lxpanel/plugin.h
 %%DATADIR%%/ui/panel-pref.ui
 %%DATADIR%%/profile/default/config
 %%DATADIR%%/profile/default/panels/panel
+%%DATADIR%%/profile/two_panels/config
+%%DATADIR%%/profile/two_panels/panels/bottom
+%%DATADIR%%/profile/two_panels/panels/top
 %%NLS%%share/locale/af/LC_MESSAGES/lxpanel.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/lxpanel.mo
 %%NLS%%share/locale/be/LC_MESSAGES/lxpanel.mo
@@ -147,6 +152,7 @@ include/lxpanel/plugin.h
 %%NLS%%share/locale/id/LC_MESSAGES/lxpanel.mo
 %%NLS%%share/locale/it/LC_MESSAGES/lxpanel.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/lxpanel.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/lxpanel.mo
 %%NLS%%share/locale/km/LC_MESSAGES/lxpanel.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/lxpanel.mo
@@ -172,6 +178,7 @@ include/lxpanel/plugin.h
 %%NLS%%share/locale/th/LC_MESSAGES/lxpanel.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/lxpanel.mo
 %%NLS%%share/locale/tt_RU/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/ug/LC_MESSAGES/lxpanel.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/lxpanel.mo
 %%NLS%%share/locale/ur/LC_MESSAGES/lxpanel.mo
 %%NLS%%share/locale/ur_PK/LC_MESSAGES/lxpanel.mo
@@ -182,6 +189,8 @@ include/lxpanel/plugin.h
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/profile/default/panels
 @dirrm %%DATADIR%%/profile/default
+@dirrm %%DATADIR%%/profile/two_panels/panels
+@dirrm %%DATADIR%%/profile/two_panels
 @dirrm %%DATADIR%%/profile
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%
@@ -192,6 +201,8 @@ include/lxpanel/plugin.h
 @dirrmtry share/locale/fo
 @dirrmtry share/locale/frp/LC_MESSAGES
 @dirrmtry share/locale/frp
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
 @dirrmtry share/locale/km/LC_MESSAGES
 @dirrmtry share/locale/km
 @dirrmtry share/locale/lg/LC_MESSAGES
@@ -204,6 +215,8 @@ include/lxpanel/plugin.h
 @dirrmtry share/locale/te
 @dirrmtry share/locale/tt_RU/LC_MESSAGES
 @dirrmtry share/locale/tt_RU
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/ur_PK/LC_MESSAGES
 @dirrmtry share/locale/ur_PK
 @dirrmtry lib/lxpanel/plugins

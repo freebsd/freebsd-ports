@@ -1,23 +1,34 @@
---- src/plugins/batt/batt_sys.c.o	2011-09-16 11:13:37.000000000 -0400
-+++ src/plugins/batt/batt_sys.c	2011-09-16 11:40:08.000000000 -0400
-@@ -46,15 +46,6 @@
- 
- void battery_reset( battery * b) {
+--- src/plugins/batt/batt_sys.c.orig	2012-04-16 15:53:13.000000000 -0400
++++ src/plugins/batt/batt_sys.c	2012-09-05 13:21:28.945076259 -0400
+@@ -39,26 +39,10 @@
+     static int battery_num = 1;
+     battery * b = g_new0 ( battery, 1 );
      b->type_battery = TRUE;
 -    b->capacity_unit = "mAh";
--    b->last_capacity_unit = -1;
--    b->last_capacity = -1;
--    b->voltage = -1;
--    b->design_capacity_unit = -1;
--    b->design_capacity = -1;
--    b->remaining_energy = -1;
--    b->remaining_capacity = -1;
--    b->present_rate = -1;
+-    b->energy_full = -1;
+-    b->charge_full = -1;
+-    b->voltage_now = -1;
+-    b->energy_full_design = -1;
+-    b->charge_full_design = -1;
+-    b->energy_now = -1;
+-    b->charge_now = -1;
+-    b->current_now = -1;
+-    b->power_now = -1;
      b->state = NULL;
+-    b->battery_num = battery_num;
+-    b->seconds = -1;
+-    b->percentage = -1;
+-    b->poststr = NULL;
+-    battery_num++;
+     return b;
  }
  
-@@ -79,7 +70,7 @@
-     return n;
+-
+ static gchar* parse_info_file(battery *b, char *sys_file)
+ {
+     char *buf = NULL;
+@@ -97,7 +81,7 @@
+     return parse_info_file(b, sys_file);
  }
  
 -void battery_print(battery *b, int show_capacity)
@@ -25,57 +36,132 @@
  {
      if ( b->type_battery )
      {
-@@ -93,195 +84,65 @@
- 		b->seconds -= 3600 * b->hours;
- 		b->minutes = b->seconds / 60;
- 		b->seconds -= 60 * b->minutes;
--		printf(", %02d:%02d:%02d%s", b->hours, b->minutes, b->seconds, b->poststr);
-+		printf(", %02d:%02d:%02d", b->hours, b->minutes, b->seconds);
+@@ -110,34 +94,13 @@
+ 		int seconds = b->seconds - 3600 * hours;
+ 		int minutes = seconds / 60;
+ 		seconds -= 60 * minutes;
+-		printf(", %02d:%02d:%02d%s", hours, minutes, seconds,
+-			b->poststr);
++                printf(", %02d:%02d:%02d", hours, minutes, seconds);
  	    } else if (b->poststr != NULL) {
  		printf(", %s", b->poststr);
  	    }
  
--
  	    printf("\n");
  	    
--	    if (show_capacity && b->design_capacity > 0) {
--		if (b->last_capacity <= 100) {
+-	    if (show_capacity && b->charge_full_design > 0) {
+-		int percentage = -1;
+-		int charge_full = -1;
+-		if (b->charge_full <= 100) {
 -		    /* some broken systems just give a percentage here */
--		    b->percentage = b->last_capacity;
--		    b->last_capacity = b->percentage * b->design_capacity / 100;
+-		    percentage = b->charge_full;
+-		    charge_full = percentage * b->charge_full_design / 100;
 -		} else {
--		    b->percentage = b->last_capacity * 100 / b->design_capacity;
+-		    percentage = b->charge_full * 100 / b->charge_full_design;
+-		    charge_full = b->charge_full;
 -		}
--		if (b->percentage > 100)
--		    b->percentage = 100;
+-		if (percentage > 100)
+-		    percentage = 100;
 -
--		printf ("%s %d: design capacity %d %s, last full capacity %d %s = %d%%\n",
--			BATTERY_DESC, b->battery_num - 1, b->design_capacity, b->capacity_unit, b->last_capacity, b->capacity_unit, b->percentage);
+-		printf ("%s %d: design capacity %d %s, "
+-			"last full capacity %d %s = %d%%\n",
+-			BATTERY_DESC, b->battery_num - 1, b->charge_full_design,
+-			b->capacity_unit, charge_full, b->capacity_unit,
+-			percentage);
 -	    }
  	}
      }
- }    
+ }
+@@ -145,143 +108,48 @@
  
- 
- void battery_update( battery *b ) {
--    int i = 0;
--    const gchar *sys_list[] = {
--	"current_now",
--	"charge_now",
--	"energy_now",
--	"voltage_now",
--	"voltage_min_design",
--	"charge_full",
--	"energy_full",
--	"charge_full_design",
--	"energy_full_design",
--	"online",
--	"status",
--	"type",
--	NULL
--    };
--    const gchar *sys_file;
-+
+ void battery_update(battery *b)
+ {
+-    gchar *gctmp;
+-
+-    /* read from sysfs */
+-    b->charge_now = get_gint_from_infofile(b, "charge_now");
+-    b->energy_now = get_gint_from_infofile(b, "energy_now");
+-
+-    b->current_now = get_gint_from_infofile(b, "current_now");
+-    b->power_now   = get_gint_from_infofile(b, "power_now");
+-    /* FIXME: Some battery drivers report -1000 when the discharge rate is
+-     * unavailable. Others use negative values when discharging. Best we can do
+-     * is to treat -1 as an error, and take the absolute value otherwise.
+-     * Ideally the kernel would not export the sysfs file when the value is not
+-     * available. */
+-    if (b->current_now < -1)
+-	    b->current_now = - b->current_now;
+-    if (b->power_now < -1)
+-	    b->power_now = - b->power_now;
+-
+-    b->charge_full = get_gint_from_infofile(b, "charge_full");
+-    b->energy_full = get_gint_from_infofile(b, "energy_full");
+-
+-    b->charge_full_design = get_gint_from_infofile(b, "charge_full_design");
+-    b->energy_full_design = get_gint_from_infofile(b, "energy_full_design");
+-
+-    b->voltage_now = get_gint_from_infofile(b, "voltage_now");
+-
+-    gctmp = get_gchar_from_infofile(b, "type");
+-    b->type_battery = gctmp ? (strcasecmp(gctmp, "battery") == 0) : TRUE;
+-
+-    b->state = get_gchar_from_infofile(b, "status");
+-    if (!b->state)
+-	b->state = get_gchar_from_infofile(b, "state");
+-    if (!b->state) {
+-	if (b->charge_now != -1 || b->energy_now != -1
+-		|| b->charge_full != -1 || b->energy_full != -1)
+-	    b->state = "available";
+-	else
+-	    b->state = "unavailable";
+-    }
+-
+-
+-    /* convert energy values (in mWh) to charge values (in mAh) if needed and possible */
+-
+-    if (b->energy_full != -1 && b->charge_full == -1) {
+-	if (b->voltage_now != -1) {
+-	    b->charge_full = b->energy_full * 1000 / b->voltage_now;
+-	} else {
+-	    b->charge_full = b->energy_full;
+-	    b->capacity_unit = "mWh";
+-	}
+-    }
+-
+-    if (b->energy_full_design != -1 && b->charge_full_design == -1) {
+-	if (b->voltage_now != -1) {
+-	    b->charge_full_design = b->energy_full_design * 1000 / b->voltage_now;
+-	} else {
+-	    b->charge_full_design = b->energy_full_design;
+-	    b->capacity_unit = "mWh";
+-	}
+-    }
+-
+-    if (b->energy_now != -1 && b->charge_now == -1) {
+-	if (b->voltage_now != -1) {
+-	    b->charge_now = b->energy_now * 1000 / b->voltage_now;
+-	    if (b->current_now != -1)
+-		b->current_now = b->current_now * 1000 / b->voltage_now;
+-	} else {
+-	    b->charge_now = b->energy_now;
+-	}
+-    }
+-
+-    if (b->power_now != -1 && b->current_now == -1) {
+-	if (b->voltage_now != -1 && b->voltage_now != 0)
+-	    b->current_now = b->power_now * 1000 / b->voltage_now;
+-    }
+-
+-
+-    if (b->charge_full < MIN_CAPACITY)
+-	b->percentage = 0;
+-    else {
+-	int promille = (b->charge_now * 1000) / b->charge_full;
+-	b->percentage = (promille + 5) / 10; /* round properly */
+-    }
+-    if (b->percentage > 100)
+-	b->percentage = 100;
+-
 +    char sstmp[ 100 ];
 +    int c, state;
 +    size_t intlen = sizeof c;
@@ -83,95 +169,10 @@
 +    snprintf(sstmp, sizeof(sstmp), "hw.acpi.battery.life");
 +    sysctlbyname(sstmp, &c, &intlen, NULL, 0);
 +    b->percentage = c;
- 
-     battery_reset(b);
- 
--    while ( (sys_file = sys_list[i]) != NULL ) {
--    
--	gchar *file_content;
--	GString *filename = g_string_new( ACPI_PATH_SYS_POWER_SUPPY );
--	g_string_append_printf ( filename, "/%s/%s", b->path, 
--				 sys_file );
--	if ((file_content = parse_info_file(filename->str)) != NULL) {
--	    
--	    if ( strcmp("charge_now", sys_file ) == 0 ) {
--		b->remaining_capacity = get_unit_value((gchar*) file_content) / 1000;
--		if (!b->state)
--		    b->state = "available";
--	    }
--	    else if ( strcmp("energy_now", sys_file ) == 0 ) {
--		b->remaining_energy = get_unit_value((gchar*) file_content) / 1000;
--		if (!b->state)
--		    b->state = "available";
--	    }
--	    else if ( strcmp("current_now", sys_file ) == 0 ) {
--		b->present_rate = get_unit_value((gchar*) file_content) / 1000;
--	    }
--	    else if ( strcmp("charge_full", sys_file ) == 0 ) {
--		b->last_capacity = get_unit_value((gchar*) file_content) / 1000;
--		if (!b->state)
--		    b->state = ("available");
--	    }
--	    else if ( strcmp("energy_full", sys_file ) == 0 ) {
--		b->last_capacity_unit = get_unit_value((gchar*) file_content) / 1000;
--		if (!b->state)
--		    b->state = ("available");
--	    }
--	    else if ( strcmp("charge_full_design", sys_file ) == 0 ) {
--		b->design_capacity = get_unit_value((gchar*) file_content) / 1000;
--	    }
--	    else if ( strcmp("energy_full_design", sys_file ) == 0 ) {
--		b->design_capacity_unit = get_unit_value((gchar*) file_content) / 1000;
--	    }
--	    else if ( strcmp("type", sys_file ) == 0 ) {
--		b->type_battery = (strcasecmp(file_content, "battery") == 0 );
--	    }
--	    else if ( ( strcmp("status", sys_file ) == 0 ) || strcmp("state", sys_file ) == 0 ) 
--		b->state = file_content;
--	    else if ( strcmp("voltage_now", sys_file ) == 0 ) {
--		b->voltage = get_unit_value((gchar*) file_content) / 1000;
--	    }
--
--	    g_string_free( filename, TRUE );
--	}
--	i++;
--    }
--    
--    /* convert energy values (in mWh) to charge values (in mAh) if needed and possible */
--    if (b->last_capacity_unit != -1 && b->last_capacity == -1) {
--	if (b->voltage != -1) {
--	    b->last_capacity = b->last_capacity_unit * 1000 / b->voltage;
--	} else {
--	    b->last_capacity = b->last_capacity_unit;
--	    b->capacity_unit = "mWh";
--	}
--    }
--    if (b->design_capacity_unit != -1 && b->design_capacity == -1) {
--	if (b->voltage != -1) {
--	    b->design_capacity = b->design_capacity_unit * 1000 / b->voltage;
--	} else {
--	    b->design_capacity = b->design_capacity_unit;
--	    b->capacity_unit = "mWh";
--	}
--    }
--    if (b->remaining_energy != -1 && b->remaining_capacity == -1) {
--	if (b->voltage != -1) {
--	    b->remaining_capacity = b->remaining_energy * 1000 / b->voltage;
--	    b->present_rate = b->present_rate * 1000 / b->voltage;
--	} else {
--	    b->remaining_capacity = b->remaining_energy;
--	}
--    }
--    if (b->last_capacity < MIN_CAPACITY)
--	b->percentage = 0;
--    else
--	b->percentage = ((float) b->remaining_energy * 100.0) / (float) b->last_capacity_unit;
--	    
--    if (b->percentage > 100)
--	b->percentage = 100;
++  
 +    snprintf(sstmp, sizeof(sstmp), "hw.acpi.battery.state");
 +    sysctlbyname(sstmp, &state, &intlen, NULL, 0);
- 
++
 +    switch(state) {
 +           case BATT_FULL:
 +                   b->state = "Full";
@@ -183,30 +184,35 @@
 +                   b->state = "Charging";
 +                   break;
 +           case BATT_CRITICAL:
-+                   b->state = "Critical";
-+                   break;
++                    b->state = "Critical";
++                    break;
 +           case BATT_NONE:
-+                   b->state = "Unavailable";
-+                   break;
++                    b->state = "Unavailable";
++                    break;
 +            default:
-+                   b->state = "Unknown";
-+                   break;
++                    b->state = "Unknown";
++                    break;
++  
++      }
++  
++    snprintf(sstmp, sizeof(sstmp), "hw.acpi.battery.time");
++    sysctlbyname(sstmp, &c, &intlen, NULL, 0);
++    b->seconds = c * 60;
  
--	    
--    if (b->present_rate == -1) {
+-    if (b->current_now == -1) {
 -	b->poststr = "rate information unavailable";
 -	b->seconds = -1;
 -    } else if (!strcasecmp(b->state, "charging")) {
--	if (b->present_rate > MIN_PRESENT_RATE) {
--	    b->seconds = 3600 * (b->last_capacity - b->remaining_capacity) / b->present_rate;
+-	if (b->current_now > MIN_PRESENT_RATE) {
+-	    b->seconds = 3600 * (b->charge_full - b->charge_now) / b->current_now;
 -	    b->poststr = " until charged";
 -	} else {
 -	    b->poststr = "charging at zero rate - will never fully charge.";
 -	    b->seconds = -1;
 -	}
 -    } else if (!strcasecmp(b->state, "discharging")) {
--	if (b->present_rate > MIN_PRESENT_RATE) {
--	    b->seconds = 3600 * b->remaining_capacity / b->present_rate;
+-	if (b->current_now > MIN_PRESENT_RATE) {
+-	    b->seconds = 3600 * b->charge_now / b->current_now;
 -	    b->poststr = " remaining";
 -	} else {
 -	    b->poststr = "discharging at zero rate - will never fully discharge.";
@@ -215,21 +221,11 @@
 -    } else {
 -	b->poststr = NULL;
 -	b->seconds = -1;
-     }
--	    
--}
- 
--static battery* acpi_sys_get_battery_from_dir (const gchar *device_name ) {
--    battery *b = battery_new();
--    b->path = g_strdup( device_name );    
--    return b;
-+    snprintf(sstmp, sizeof(sstmp), "hw.acpi.battery.time");
-+    sysctlbyname(sstmp, &c, &intlen, NULL, 0);
-+    b->minutes = c;
-+    b->seconds = c * 60;
-+
+-    }
  }
- 
+-
+-
++  
  battery *battery_get() {
 -    GError * error = NULL;
 -    const gchar *entry;
@@ -242,7 +238,8 @@
 -    }
 -    while ( ( entry = g_dir_read_name (dir) ) != NULL )  
 -    {
--	b = acpi_sys_get_battery_from_dir(entry);
+-	b = battery_new();
+-	b->path = g_strdup( entry );
 -	battery_update ( b );
 -	if ( b->type_battery == TRUE ) 
 -	    break;
@@ -258,7 +255,7 @@
      return b;
  }
  
-@@ -291,10 +152,3 @@
+@@ -293,10 +161,3 @@
  	     strcasecmp( b->state, "Full" ) == 0
  	     || strcasecmp( b->state, "Charging" ) == 0 );
  }
