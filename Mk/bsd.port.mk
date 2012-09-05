@@ -1496,6 +1496,8 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 .include "${PORTSDIR}/Mk/bsd.ncurses.mk"
 .endif
 
+.include "${PORTSDIR}/Mk/bsd.pbi.mk"
+
 # You can force skipping these test by defining IGNORE_PATH_CHECKS
 .if !defined(IGNORE_PATH_CHECKS)
 .if (${PREFIX:C,(^.).*,\1,} != "/")
