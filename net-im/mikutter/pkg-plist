@@ -237,7 +237,6 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/plugin/WHATSTHIS
 share/applications/mikutter.desktop
 @dirrmtry share/applications
-@exec mkdir -p %D/%%RUBY_SITELIBDIR%%/mikutter/core/hatsunelisp
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/plugin
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/test
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/skin/data/sounds/sources/retweeted_data/e00/d00
