@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libfm
-PORTVERSION=	0.1.17
-PORTREVISION=	1
+PORTVERSION=	1.0
 CATEGORIES=	x11
 MASTER_SITES=	SF/pcmanfm/PCManFM%20%2B%20Libfm%20%28tarball%20release%29/libfm%20%28required%20by%20PCManFM%29/
 
@@ -26,6 +25,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--prefix=${LOCALBASE} --sysconfdir=${LOCALBASE}/etc
 
+MAN1=		libfm-pref-apps.1
+
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
@@ -39,6 +40,9 @@ PLIST_SUB+=	NLS="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|-DG_DISABLE_DEPRECATED||g' \
 		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|-Wno-unused-but-set-variable||' \
+		${WRKSRC}/src/actions/Makefile.am ${WRKSRC}/src/actions/Makefile.in
 
 pre-install:
 	cd ${WRKDIR}/libfm-${PORTVERSION} && ${CHMOD} 755 install-sh
