@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	paintown
-PORTVERSION=	3.5.0
-PORTREVISION=	2
+PORTVERSION=	3.6.0
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -21,6 +20,7 @@ LIB_DEPENDS+=	alleg.42:${PORTSDIR}/devel/allegro \
 		png15:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2
 
+USE_BZIP2=	yes
 USE_SCONS=	yes
 USE_SDL=	yes
 INSTALLS_ICONS=	yes

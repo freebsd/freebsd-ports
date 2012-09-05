@@ -1,5 +1,98 @@
 @comment $FreeBSD$
 bin/paintown
+%%DATADIR%%/data/asteroids/explode/explode01.png
+%%DATADIR%%/data/asteroids/explode/explode02.png
+%%DATADIR%%/data/asteroids/explode/explode03.png
+%%DATADIR%%/data/asteroids/explode/explode04.png
+%%DATADIR%%/data/asteroids/explode/explode05.png
+%%DATADIR%%/data/asteroids/explode/explode06.png
+%%DATADIR%%/data/asteroids/explode/explode07.png
+%%DATADIR%%/data/asteroids/explode/explode08.png
+%%DATADIR%%/data/asteroids/explode/explode09.png
+%%DATADIR%%/data/asteroids/explode/explode10.png
+%%DATADIR%%/data/asteroids/explode/explode11.png
+%%DATADIR%%/data/asteroids/explode/explode12.png
+%%DATADIR%%/data/asteroids/explode/explode13.png
+%%DATADIR%%/data/asteroids/explode/explode14.png
+%%DATADIR%%/data/asteroids/explode/explode15.png
+%%DATADIR%%/data/asteroids/large/asteroidBig01.png
+%%DATADIR%%/data/asteroids/large/asteroidBig02.png
+%%DATADIR%%/data/asteroids/large/asteroidBig03.png
+%%DATADIR%%/data/asteroids/large/asteroidBig04.png
+%%DATADIR%%/data/asteroids/large/asteroidBig05.png
+%%DATADIR%%/data/asteroids/large/asteroidBig06.png
+%%DATADIR%%/data/asteroids/large/asteroidBig07.png
+%%DATADIR%%/data/asteroids/large/asteroidBig08.png
+%%DATADIR%%/data/asteroids/large/asteroidBig09.png
+%%DATADIR%%/data/asteroids/large/asteroidBig10.png
+%%DATADIR%%/data/asteroids/large/asteroidBig11.png
+%%DATADIR%%/data/asteroids/large/asteroidBig12.png
+%%DATADIR%%/data/asteroids/large/asteroidBig13.png
+%%DATADIR%%/data/asteroids/large/asteroidBig14.png
+%%DATADIR%%/data/asteroids/large/asteroidBig15.png
+%%DATADIR%%/data/asteroids/large/asteroidBig16.png
+%%DATADIR%%/data/asteroids/large/asteroidBig17.png
+%%DATADIR%%/data/asteroids/large/asteroidBig18.png
+%%DATADIR%%/data/asteroids/large/asteroidBig19.png
+%%DATADIR%%/data/asteroids/large/asteroidBig20.png
+%%DATADIR%%/data/asteroids/large/asteroidBig21.png
+%%DATADIR%%/data/asteroids/large/asteroidBig22.png
+%%DATADIR%%/data/asteroids/large/asteroidBig23.png
+%%DATADIR%%/data/asteroids/medium/asteroidMid01.png
+%%DATADIR%%/data/asteroids/medium/asteroidMid02.png
+%%DATADIR%%/data/asteroids/medium/asteroidMid03.png
+%%DATADIR%%/data/asteroids/medium/asteroidMid04.png
+%%DATADIR%%/data/asteroids/medium/asteroidMid05.png
+%%DATADIR%%/data/asteroids/medium/asteroidMid06.png
+%%DATADIR%%/data/asteroids/medium/asteroidMid07.png
+%%DATADIR%%/data/asteroids/medium/asteroidMid08.png
+%%DATADIR%%/data/asteroids/medium/asteroidMid09.png
+%%DATADIR%%/data/asteroids/medium/asteroidMid10.png
+%%DATADIR%%/data/asteroids/medium/asteroidMid11.png
+%%DATADIR%%/data/asteroids/medium/asteroidMid12.png
+%%DATADIR%%/data/asteroids/medium/asteroidMid13.png
+%%DATADIR%%/data/asteroids/medium/asteroidMid14.png
+%%DATADIR%%/data/asteroids/medium/asteroidMid15.png
+%%DATADIR%%/data/asteroids/medium/asteroidMid16.png
+%%DATADIR%%/data/asteroids/medium/asteroidMid17.png
+%%DATADIR%%/data/asteroids/medium/asteroidMid18.png
+%%DATADIR%%/data/asteroids/medium/asteroidMid19.png
+%%DATADIR%%/data/asteroids/ships/ship1.png
+%%DATADIR%%/data/asteroids/small-explode/explodeSmall01.png
+%%DATADIR%%/data/asteroids/small-explode/explodeSmall02.png
+%%DATADIR%%/data/asteroids/small-explode/explodeSmall03.png
+%%DATADIR%%/data/asteroids/small-explode/explodeSmall04.png
+%%DATADIR%%/data/asteroids/small-explode/explodeSmall05.png
+%%DATADIR%%/data/asteroids/small-explode/explodeSmall06.png
+%%DATADIR%%/data/asteroids/small-explode/explodeSmall07.png
+%%DATADIR%%/data/asteroids/small-explode/explodeSmall08.png
+%%DATADIR%%/data/asteroids/small-explode/explodeSmall09.png
+%%DATADIR%%/data/asteroids/small-explode/explodeSmall10.png
+%%DATADIR%%/data/asteroids/small-explode/explodeSmall11.png
+%%DATADIR%%/data/asteroids/small-explode/explodeSmall12.png
+%%DATADIR%%/data/asteroids/small-explode/explodeSmall13.png
+%%DATADIR%%/data/asteroids/small-explode/explodeSmall14.png
+%%DATADIR%%/data/asteroids/small-explode/explodeSmall15.png
+%%DATADIR%%/data/asteroids/small/asteroid01.png
+%%DATADIR%%/data/asteroids/small/asteroid02.png
+%%DATADIR%%/data/asteroids/small/asteroid03.png
+%%DATADIR%%/data/asteroids/small/asteroid04.png
+%%DATADIR%%/data/asteroids/small/asteroid05.png
+%%DATADIR%%/data/asteroids/small/asteroid06.png
+%%DATADIR%%/data/asteroids/small/asteroid07.png
+%%DATADIR%%/data/asteroids/small/asteroid08.png
+%%DATADIR%%/data/asteroids/small/asteroid09.png
+%%DATADIR%%/data/asteroids/small/asteroid10.png
+%%DATADIR%%/data/asteroids/small/asteroid11.png
+%%DATADIR%%/data/asteroids/small/asteroid12.png
+%%DATADIR%%/data/asteroids/small/asteroid13.png
+%%DATADIR%%/data/asteroids/small/asteroid14.png
+%%DATADIR%%/data/asteroids/small/asteroid15.png
+%%DATADIR%%/data/asteroids/small/asteroid16.png
+%%DATADIR%%/data/asteroids/sounds/crash.wav
+%%DATADIR%%/data/asteroids/sounds/explode.wav
+%%DATADIR%%/data/asteroids/sounds/laser.wav
+%%DATADIR%%/data/asteroids/sounds/pop.wav
 %%DATADIR%%/data/bgs/alley/back.png
 %%DATADIR%%/data/bgs/alley/p01.png
 %%DATADIR%%/data/bgs/alley/p02.png
@@ -945,6 +1038,36 @@ bin/paintown
 %%DATADIR%%/data/misc/flash/flash008.png
 %%DATADIR%%/data/misc/flash/flash009.png
 %%DATADIR%%/data/misc/flash/flash010.png
+%%DATADIR%%/data/missile-defend/images/background.png
+%%DATADIR%%/data/missile-defend/images/city1.png
+%%DATADIR%%/data/missile-defend/images/city2.png
+%%DATADIR%%/data/missile-defend/images/closedmoambase.png
+%%DATADIR%%/data/missile-defend/images/crosshair.png
+%%DATADIR%%/data/missile-defend/images/deadcity1.png
+%%DATADIR%%/data/missile-defend/images/deadcity2.png
+%%DATADIR%%/data/missile-defend/images/deadmisslebase.png
+%%DATADIR%%/data/missile-defend/images/fireball.png
+%%DATADIR%%/data/missile-defend/images/hand.png
+%%DATADIR%%/data/missile-defend/images/mdefend.png
+%%DATADIR%%/data/missile-defend/images/missle1.png
+%%DATADIR%%/data/missile-defend/images/missle2.png
+%%DATADIR%%/data/missile-defend/images/missle3.png
+%%DATADIR%%/data/missile-defend/images/missle4.png
+%%DATADIR%%/data/missile-defend/images/missle5.png
+%%DATADIR%%/data/missile-defend/images/misslebase.png
+%%DATADIR%%/data/missile-defend/images/moam.png
+%%DATADIR%%/data/missile-defend/images/moambase.png
+%%DATADIR%%/data/missile-defend/images/moambaseanim1.png
+%%DATADIR%%/data/missile-defend/images/moambaseanim2.png
+%%DATADIR%%/data/missile-defend/images/moambaseanim3.png
+%%DATADIR%%/data/missile-defend/images/moambaseanim4.png
+%%DATADIR%%/data/missile-defend/images/smoke.png
+%%DATADIR%%/data/missile-defend/images/turret.png
+%%DATADIR%%/data/missile-defend/sounds/ding.wav
+%%DATADIR%%/data/missile-defend/sounds/exploded.wav
+%%DATADIR%%/data/missile-defend/sounds/explosion2.wav
+%%DATADIR%%/data/missile-defend/sounds/launch.wav
+%%DATADIR%%/data/missile-defend/sounds/tick.wav
 %%DATADIR%%/data/mugen/chars/kfm/air.test
 %%DATADIR%%/data/mugen/chars/kfm/ending.def
 %%DATADIR%%/data/mugen/chars/kfm/ending.sff
@@ -1032,7 +1155,6 @@ bin/paintown
 %%DATADIR%%/data/music/fall.xm
 %%DATADIR%%/data/music/kajahtaa.xm
 %%DATADIR%%/data/music/kilimanz.mod
-%%DATADIR%%/data/paintown-title.png
 %%DATADIR%%/data/paintown/levels/1.txt
 %%DATADIR%%/data/paintown/levels/10.txt
 %%DATADIR%%/data/paintown/levels/11.txt
@@ -2880,6 +3002,11 @@ bin/paintown
 %%DATADIR%%/data/river-city-ransom/players/alex/walk/1.png
 %%DATADIR%%/data/river-city-ransom/players/alex/walk/2.png
 %%DATADIR%%/data/scripts/paintown.py
+%%DATADIR%%/data/select/back.png
+%%DATADIR%%/data/select/front.png
+%%DATADIR%%/data/select/select0.png
+%%DATADIR%%/data/select/select1.png
+%%DATADIR%%/data/select/selectalt.png
 %%DATADIR%%/data/sounds/beat1.wav
 %%DATADIR%%/data/sounds/beat2.wav
 %%DATADIR%%/data/sounds/beat3.wav
@@ -2935,6 +3062,7 @@ share/icons/hicolor/32x32/apps/paintown.png
 @dirrm %%DATADIR%%/data/sprites/arrows
 @dirrm %%DATADIR%%/data/sprites
 @dirrm %%DATADIR%%/data/sounds
+@dirrm %%DATADIR%%/data/select
 @dirrm %%DATADIR%%/data/scripts
 @dirrm %%DATADIR%%/data/river-city-ransom/players/alex/walk
 @dirrm %%DATADIR%%/data/river-city-ransom/players/alex/upper-cut
@@ -3228,6 +3356,9 @@ share/icons/hicolor/32x32/apps/paintown.png
 @dirrm %%DATADIR%%/data/mugen/chars/kfm
 @dirrm %%DATADIR%%/data/mugen/chars
 @dirrm %%DATADIR%%/data/mugen
+@dirrm %%DATADIR%%/data/missile-defend/sounds
+@dirrm %%DATADIR%%/data/missile-defend/images
+@dirrm %%DATADIR%%/data/missile-defend
 @dirrm %%DATADIR%%/data/misc/flash
 @dirrm %%DATADIR%%/data/misc/chicken
 @dirrm %%DATADIR%%/data/misc/cat/yawn
@@ -3345,5 +3476,13 @@ share/icons/hicolor/32x32/apps/paintown.png
 @dirrm %%DATADIR%%/data/bgs/bar
 @dirrm %%DATADIR%%/data/bgs/alley
 @dirrm %%DATADIR%%/data/bgs
+@dirrm %%DATADIR%%/data/asteroids/sounds
+@dirrm %%DATADIR%%/data/asteroids/small-explode
+@dirrm %%DATADIR%%/data/asteroids/small
+@dirrm %%DATADIR%%/data/asteroids/ships
+@dirrm %%DATADIR%%/data/asteroids/medium
+@dirrm %%DATADIR%%/data/asteroids/large
+@dirrm %%DATADIR%%/data/asteroids/explode
+@dirrm %%DATADIR%%/data/asteroids
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
