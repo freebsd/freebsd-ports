@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	virtualenv
-PORTVERSION=	1.7.2
+PORTVERSION=	1.8.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,6 +16,9 @@ COMMENT=	Virtual Python Environment builder
 
 LICENSE=	MIT
 
+OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
+OPTIONS_DEFINE=	DOCS
+
 PLIST_SUB=	PYVER=${PYTHON_VER} PIPVER=${PIPVER} DISTRIBUTEVER=${DISTRIBUTEVER} \
 		PY2X=${PY2X}
 
@@ -23,37 +26,31 @@ PLIST_SUB=	PYVER=${PYTHON_VER} PIPVER=${PIPVER} DISTRIBUTEVER=${DISTRIBUTEVER} \
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
-PIPVER=	1.1
-DISTRIBUTEVER=	0.6.27
+PIPVER=	1.2
+DISTRIBUTEVER=	0.6.28
 
-.if !defined(NOPORTDOCS)
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-
-post-install:
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/docs && ${INSTALL_DATA} index.txt ${DOCSDIR}/
-.endif
+.include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} >= 320
+.if ${PORT_OPTIONS:MDOCS}
+BUILD_DEPENDS+=	${PKGNAMEPREFIX}sphinx>=1.1.3:${PORTSDIR}/textproc/py-sphinx
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+PYDISTUTILS_BUILD_TARGET+=	build_sphinx
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@cd ${WRKSRC}/build/sphinx/html && ${COPYTREE_SHARE} . ${DOCSDIR}
+.endif
+
+.if ${PYTHON_REL} >= 310
 PY2X=	"@comment "
-# When Python version is 3.2+ we rewrite all the filenames
-# of TMPPLIST that end with .py[co], so that they conform
-# to PEP 3147 (see http://www.python.org/dev/peps/pep-3147/)
-PYMAGICTAG=	${PYTHON_CMD} -c 'import imp; print(imp.get_tag())'
-add-plist-post:
-	@${AWK} '\
-		/\.py[co]$$/ && !($$0 ~ "/" pc "/") {id = match($$0, /\/[^\/]+\.py[co]$$/); if (id != 0) {d = substr($$0, 1, RSTART - 1); dirs[d] = 1}; sub(/\.py[co]$$/,  "." mt "&"); sub(/[^\/]+\.py[co]$$/, pc "/&"); print; next} \
-		/^@dirrm / {d = substr($$0, 8); if (d in dirs) {print $$0 "/" pc}; print $$0; next} \
-		{print} \
-		END {if (sp in dirs) {print "@dirrm " sp "/" pc}} \
-		' \
-		pc="__pycache__" mt="$$(${PYMAGICTAG})" sp="${PYTHON_SITELIBDIR:S,${PYTHONBASE}/,,g}" \
-		${TMPPLIST} > ${TMPPLIST}.pyc_tmp
-	@${MV} ${TMPPLIST}.pyc_tmp ${TMPPLIST}
 .else
 PY2X=	""
+.endif
+
+.if ${PYTHON_REL} >= 320
+.include "${FILESDIR}/py3k-fix-pkg-plist.inc"
 .endif
 
 .include <bsd.port.post.mk>
