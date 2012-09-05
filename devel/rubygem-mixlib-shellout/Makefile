@@ -10,7 +10,7 @@ PORTVERSION=	1.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ndewing@experts-exchange.com
+MAINTAINER=	nickdewing@gmail.com
 COMMENT=	Shell interface that also collects stdout and stderr
 
 USE_RUBY=	yes
