@@ -14,6 +14,10 @@ MASTER_SITES=	SF
 MAINTAINER=	jsa@FreeBSD.org
 COMMENT=	FreeBSD installed ports status and safe update utility
 
+DEPRECATED=	Does not support modern ports features such as MOVED, is lacking upstream and active contributions, and does not support pkgng. \
+		Consider using ports-mgmt/portmaster, ports-mgmt/portupgrade or pkgng.
+EXPIRATION_DATE=2013-01-04
+
 MAN1=		portmanager.1
 MAN3=		libMG.3 MGdbAdd.3 MGdbCreate.3 MGdbDelete.3 \
 		MGdbGetRecordQty.3 MGdbGoTop.3 MGdbSeek.3
