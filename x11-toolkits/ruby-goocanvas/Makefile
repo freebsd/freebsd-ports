@@ -27,8 +27,11 @@ USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 CONFIGURE_ARGS=	--with-pkg-config-dir=${LOCALBASE}/libdata/pkgconfig
 
-.include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
+MASTERDIR=	${.CURDIR}/../../x11/ruby-gnome2
+PKGDIR=		${.CURDIR}
 
+.include "${MASTERDIR}/Makefile.common"
+ 
 WRKSRC=		${RUBY_GNOME_WRKSRC}/goocanvas
 INSTALL_TARGET=	site-install install
 
