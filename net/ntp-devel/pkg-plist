@@ -234,6 +234,7 @@ sbin/sntp
 %%PORTDOCS%%%%DOCSDIR%%/tickadj.html
 %%PORTDOCS%%%%DOCSDIR%%/warp.html
 %%PORTDOCS%%%%DOCSDIR%%/xleave.html
+%%PORTDOCS%%share/doc/sntp/sntp.html
 %%EXAMPLESDIR%%/README
 %%EXAMPLESDIR%%/baldwin.conf
 %%EXAMPLESDIR%%/beauregard.conf
@@ -249,4 +250,5 @@ sbin/sntp
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/drivers/icons
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/drivers
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm share/doc/sntp
 @dirrm %%EXAMPLESDIR%%
