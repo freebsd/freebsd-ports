@@ -16,9 +16,12 @@ COMMENT=	IT, XM, S3M, and MOD player library
 
 USE_GMAKE=	yes
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	ALLEGRO
+ALLEGRO_DESC=	Enable allegro support
 
-.if defined(WITH_ALLEGRO)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MALLEGRO}
 LIB_DEPENDS+=	alleg.42:${PORTSDIR}/devel/allegro
 PLIST_SUB+=	ALLEGRO=""
 MAKE_ARGS=	_PORT_ALLEGRO_CFLAGS="`allegro-config --cflags`"
@@ -43,4 +46,4 @@ pre-configure:
 	@${REINPLACE_CMD} -e "s,@ALLEGRO@,#," ${WRKSRC}/make/config.txt
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
