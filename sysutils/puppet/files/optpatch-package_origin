@@ -1,6 +1,9 @@
---- lib/puppet/provider/package/freebsd.rb.orig	Thu Nov  3 10:58:56 2011
-+++ lib/puppet/provider/package/freebsd.rb	Thu Nov  3 10:59:02 2011
-@@ -1,37 +1,165 @@
+
+$FreeBSD$
+
+--- lib/puppet/provider/package/freebsd.rb.orig
++++ lib/puppet/provider/package/freebsd.rb
+@@ -1,37 +1,163 @@
 -Puppet::Type.type(:package).provide :freebsd, :parent => :openbsd do
 -  desc "The specific form of package management on FreeBSD.  This is an
 -    extremely quirky packaging system, in that it freely mixes between
@@ -16,14 +19,14 @@
 -    :pkgdelete => "/usr/sbin/pkg_delete"
 +Puppet::Type.type(:package).provide :freebsd, :parent => Puppet::Provider::Package do
 +  include Puppet::Util::Execution
- 
++
 +  desc "The specific form of package management on FreeBSD. Resource names must be
 +  specified as the port origin: <port_category>/<port_name>."
 +
 +  commands :pkginfo    => "/usr/sbin/pkg_info",
 +           :pkgadd     => "/usr/sbin/pkg_add",
 +           :pkgdelete  => "/usr/sbin/pkg_delete"
-+
+ 
    confine :operatingsystem => :freebsd
 +  defaultfor :operatingsystem => :freebsd
  
@@ -96,14 +99,12 @@
 +        uri = source.merge "INDEX.bz2"
 +        Puppet.debug "Fetching INDEX: #{uri.inspect}"
 +        begin
-+          open(uri, "r") do |f|
-+            Bzip2::Reader.open(f.path) do |f|
-+              while (line = f.gets)
-+                fields = line.split("|")
-+                pkg_info = self.class.parse_pkg_string(fields[0])
-+                origin = self.class.parse_origin(fields[1])
-+                @@ports_index[origin] = pkg_info
-+              end
++          Bzip2::Reader.open(uri) do |f|
++            while (line = f.gets)
++              fields = line.split("|")
++              pkg_info = self.class.parse_pkg_string(fields[0])
++              origin = self.class.parse_origin(fields[1])
++              @@ports_index[origin] = pkg_info
 +            end
 +          end
 +        rescue IOError, OpenURI::HTTPError, Net::FTPError
@@ -188,7 +189,7 @@
    end
  
    def query
-@@ -44,6 +172,7 @@
+@@ -44,6 +170,7 @@
    end
  
    def uninstall
