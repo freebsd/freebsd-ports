@@ -7,6 +7,7 @@
 
 PORTNAME=	libhtp
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	devel
 #MASTER_SITES=	# This port uses github
 
@@ -22,6 +23,10 @@ ACLOCAL_ARGS=	-Im4
 USE_LDCONFIG=	yes
 USE_GNOME=	pkgconfig gnomehack
 USE_ICONV=	yes
+
+CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}
+CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib \
+		-liconv
 
 pre-configure:
 	@${REINPLACE_CMD} -Ee 's,^(pkgconfigdir = ).*,\1$$(exec_prefix)/libdata/pkgconfig,' ${WRKSRC}/Makefile.am
