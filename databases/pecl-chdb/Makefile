@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	pecl-
 DISTNAME=	lcastelli-${PORTNAME}-v${DISTVERSION}-0-g${DISTVERSION}
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	esarmiento@wayfair.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CHDB extension
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcmph.so:${PORTSDIR}/devel/cmph
