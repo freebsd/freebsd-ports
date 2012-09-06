@@ -1,0 +1,16 @@
+bin/pt_agent
+bin/pt_sflow
+bin/pt_netflow
+bin/pt_thmon
+@unexec if cmp -s %D/etc/packter.conf.sample %D/etc/packter.conf; then rm -f %D/etc/packter.conf; fi
+etc/packter.conf.sample
+@exec [ -f %D/etc/packter.conf ] || cp -p %D/etc/packter.conf.sample %D/etc/packter.conf
+%%PACKTERTC%%%%DATADIR%%/packter_tc/IPTB.pm
+%%PACKTERTC%%%%DATADIR%%/packter_tc/InterTrackMessage.xsd
+%%PACKTERTC%%%%DATADIR%%/packter_tc/btm.conf
+%%PACKTERTC%%%%DATADIR%%/packter_tc/dp.conf
+%%PACKTERTC%%%%DATADIR%%/packter_tc/itm.conf
+%%PACKTERTC%%%%DATADIR%%/packter_tc/packter_tc.pl
+%%PACKTERTC%%%%DATADIR%%/packter_tc/xsd.pl
+@dirrm %%DATADIR%%/packter_tc
+@dirrm %%DATADIR%%
