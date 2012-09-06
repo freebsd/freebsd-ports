@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	icedtea-web
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	java www
 MASTER_SITES=	http://icedtea.classpath.org/download/source/
 
@@ -46,6 +45,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 USE_PKGCONFIG=	yes
 
 CONFIGURE_ARGS+=--with-ecj=no --with-jdk-home="${JAVA_HOME}"
+CONFIGURE_ENV+=	SHELL=${LOCALBASE}/bin/bash
 
 .include <bsd.port.pre.mk>
 
@@ -66,6 +66,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc:${PORTSDIR}/devel/gli
 		${LOCALBASE}/libdata/pkgconfig/gtk+-2.0.pc:${PORTSDIR}/x11-toolkits/gtk20 \
 		${LOCALBASE}/libdata/pkgconfig/mozilla-plugin.pc:${PORTSDIR}/www/libxul
 
+CONFIGURE_ARGS+=--with-gtk=2
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 .else
 CONFIGURE_ARGS+=--disable-plugin
@@ -81,7 +82,8 @@ CONFIGURE_ARGS+=--with-rhino=no
 
 .if ${PORT_OPTIONS:MTEST}
 CONFIGURE_ARGS+=--with-junit=${JAVALIBDIR}/junit.jar
-BUILD_DEPENDS+=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
+BUILD_DEPENDS+=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit \
+		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 .else
 CONFIGURE_ARGS+=--with-junit=no
 .endif
@@ -118,9 +120,11 @@ post-install:
 
 .if ${PORT_OPTIONS:MTEST}
 test:	build
-	@(cd ${WRKSRC}; ${GMAKE} check)
+	@${SED} -e 's|^SHELL = /bin/sh|SHELL = ${LOCALBASE}/bin/bash|' \
+	    ${WRKSRC}/Makefile > ${WRKSRC}/Makefile.test
+	@(cd ${WRKSRC}; ${GMAKE} -f Makefile.test check)
 .if ${PORT_OPTIONS:MPLUGIN}
-	@(cd ${WRKSRC}; ${GMAKE} plugin-tests)
+	@(cd ${WRKSRC}; ${GMAKE} -f Makefile.test plugin-tests)
 .endif
 .endif
 
