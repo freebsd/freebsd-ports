@@ -38,9 +38,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # different actions for different values.
 #
 # ARCH			- The architecture of the target machine, such as would be
-#				  returned by "uname -p".  (Note: Ports should test against
-#				  ARCH, and not the host machine's architecture which is
-#				  MACHINE_ARCH, to enable ports to be cross-built.)
+#				  returned by "uname -p".
 # OPSYS			- Portability clause.  This is the operating system the
 #				  makefile is being used on.  Automatically set to
 #				  "FreeBSD," "NetBSD," or "OpenBSD" as appropriate.
@@ -359,8 +357,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_IMAKE		- If set, this port uses imake.
 # XMKMF			- Set to path of `xmkmf' if not in $PATH
 #				  Default: xmkmf -a
-# USE_XLIB		- If set, this port uses the X libraries. In the USE_LINUX
-#				  case the linux X libraries are referenced.
 # USE_DISPLAY	- If set, this ports requires a (virtual) X11 environment
 #				  setup. If the environment variable DISPLAY Is not set,
 #				  then an extra build dependency on Xvfb is added. Further,
@@ -1191,9 +1187,6 @@ MAINTAINER?=	ports@FreeBSD.org
 .if !defined(ARCH)
 ARCH!=	${UNAME} -p
 .endif
-
-# Kludge for pre-3.0 systems
-MACHINE_ARCH?=	i386
 
 # Get the operating system type
 .if !defined(OPSYS)
@@ -2105,21 +2098,12 @@ IGNORE=	uses unknown USE_BISON construct
 .include "${PORTSDIR}/Mk/bsd.cmake.mk"
 .endif
 
-.if exists(${PORTSDIR}/../Makefile.inc)
-.include "${PORTSDIR}/../Makefile.inc"
+.if exists(${PORTSDIR}/Makefile.inc)
+.include "${PORTSDIR}/Makefile.inc"
 USE_SUBMAKE=	yes
 .endif
 
-.if defined(USE_XLIB)
-.	if defined(USE_LINUX)
-RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-xorg-libs
-.	else
-BUILD_DEPENDS+=	${LOCALBASE}/libdata/xorg/libraries:${X_LIBRARIES_PORT}
-RUN_DEPENDS+=	${LOCALBASE}/libdata/xorg/libraries:${X_LIBRARIES_PORT}
-.	endif
-.endif
-
-.if defined(USE_XLIB) || defined(USE_XORG)
+.if defined(USE_XORG)
 # Add explicit X options to avoid problems with false positives in configure
 .if defined(GNU_CONFIGURE)
 CONFIGURE_ARGS+=--x-libraries=${LOCALBASE}/lib --x-includes=${LOCALBASE}/include
@@ -4333,10 +4317,10 @@ _INSTALL_SEQ=	install-message check-install-conflicts run-depends lib-depends ap
 _INSTALL_SUSEQ= check-umask install-mtree pre-su-install \
 				pre-su-install-script create-users-groups do-install \
 				install-desktop-entries install-license install-rc-script \
-				post-install post-install-script add-plist-info \
-				add-plist-docs add-plist-examples add-plist-data \
-				add-plist-post fix-plist-sequence compress-man \
-				install-ldconfig-file fake-pkg security-check
+				post-install post-install-script add-plist-buildinfo \
+				add-plist-info add-plist-docs add-plist-examples \
+				add-plist-data add-plist-post fix-plist-sequence \
+				compress-man install-ldconfig-file fake-pkg security-check
 _PACKAGE_DEP=	install
 _PACKAGE_SEQ=	package-message pre-package pre-package-script \
 				do-package post-package-script
@@ -5811,6 +5795,13 @@ add-plist-data:
 	@${ECHO_CMD} "@dirrm ${DATADIR:S,^${PREFIX}/,,}" >> ${TMPPLIST}
 .else
 	@${DO_NADA}
+.endif
+.endif
+
+.if defined(PACKAGE_BUILDING)
+.if !target(add-plist-buildinfo)
+add-plist-buildinfo:
+	@${ECHO_CMD} "@comment Build details:  ${BUILDHOST}|${JAIL}|${BUILD}|${PORTSTREE}|${BUILDDATE}" >> ${TMPPLIST}
 .endif
 .endif
 
