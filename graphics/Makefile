@@ -827,6 +827,7 @@
     SUBDIR += py-pillow
     SUBDIR += py-png
     SUBDIR += py-poppler
+    SUBDIR += py-poppler-qt4
     SUBDIR += py-pycha
     SUBDIR += py-pydot
     SUBDIR += py-pyglet
