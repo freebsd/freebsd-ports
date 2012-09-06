@@ -44,6 +44,11 @@ LDFLAGS+=	-L${OPENSSLLIB}
 EXTRA_PATCHES+=	${FILESDIR}/pidfile.patch
 .endif
 
+VSFTPD_OPTIMIZED=	${CFLAGS:M-O}
+.if defined(CFLAGS) && !empty(VSFTPD_OPTIMIZED)
+VSFTPD_NO_OPTIMIZED=	-e "s| -O2 ||"
+.endif
+
 # BROKEN on FreeBSD with undefined reference to `__stack_chk_fail_local'
 LDFLAGS+=	 -lssp_nonshared
 
@@ -58,16 +63,16 @@ do-configure:
 		"s|#undef VSF_BUILD_TCPWRAPPERS|#define VSF_BUILD_TCPWRAPPERS 1|" \
 		${WRKSRC}/builddefs.h
 .endif
-	${REINPLACE_CMD} -e "s|^listen=|#listen=|" \
+	${REINPLACE_CMD} -e "s|^listen=.*|listen=NO|" \
 		-e "s|/etc/vsftpd.conf|${PREFIX}/etc/vsftpd.conf|" \
 		${WRKSRC}/defs.h ${WRKSRC}/vsftpd.conf
 	${REINPLACE_CMD} -e "s|/etc/v|${PREFIX}/etc/v|" \
 		${WRKSRC}/vsftpd.8 ${WRKSRC}/vsftpd.conf.5 ${WRKSRC}/tunables.c
-	${REINPLACE_CMD} \
+	${REINPLACE_CMD} ${VSFTPD_NO_OPTIMIZED} \
 		-e "s|^CC 	=	gcc|CC	= ${CC}|" \
 		-e "s|^CFLAGS	=|CFLAGS	= ${CFLAGS}|" \
-		-e "s|^INSTALL	=|INSTALL	= ${INSTALL_PROGRAM}|" \
-		-e "s|	-Wl,-s| -Wl,-s ${LDFLAGS:S/-rpath=/-Wl,-rpath,/g}|" \
+		-e "s|$$(INSTALL) -m 755=|$${INSTALL_PROGRAM}|" \
+		-e "s|	-Wl,-s| -Wl ${LDFLAGS:S/-rpath=/-Wl,-rpath,/g}|" \
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e '/-lutil/d' ${WRKSRC}/vsf_findlibs.sh
 	@${ECHO_CMD} "secure_chroot_dir=${PREFIX}/share/vsftpd/empty" >> \
