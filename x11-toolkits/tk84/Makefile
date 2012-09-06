@@ -426,13 +426,13 @@ post-install:
 .if !defined(NO_INSTALL_MANPAGES)
 	${MKDIR} ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/../doc/wish.1 ${MANPREFIX}/man/man1/wish${TCL_VER}${THREADS_SUFFIX}.1
-.if !defined(BUILDING_TK_THREADS) && defined(WITH_TK84_MAN)
+.if !defined(BUILDING_TK_THREADS) && defined(WITH_TK84_DOC)
 .for mp in ${MAN3} ${MANN}
 	@${REINPLACE_CMD} -e 's|^.so man.macros|.so ${DATADIR}/man.macros|'	\
 		${WRKSRC}/../doc/${mp}
 .endfor
 	@cd ${WRKSRC} && ${MAKE} install-doc ${MAKE_ENV}
-.endif # !defined(BUILDING_TK_THREADS) && defined(WITH_TK84_MAN)
+.endif # !defined(BUILDING_TK_THREADS) && defined(WITH_TK84_DOC)
 
 .endif # !defined(NO_INSTALL_MANPAGES)
 
