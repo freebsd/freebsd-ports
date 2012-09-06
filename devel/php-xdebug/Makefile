@@ -20,7 +20,6 @@ USE_PHP=	yes
 USE_PHPEXT=	yes
 USE_PHPIZE=	yes
 SUB_FILES=	pkg-message
-DEFAULT_PHP_VER=	5
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
