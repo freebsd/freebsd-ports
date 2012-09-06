@@ -8,15 +8,4 @@ It mainly consists mainly of two programs: a collector, called monitorix, which
 is a Perl daemon that is started automatically like any other system service,
 and a CGI script called monitorix.cgi.
 
-Every time 'monitorix' is started it reads the configuration file from the path
-specified in the command line (using the -c option), and once checked, it
-creates the 'index.html' file that will act as the Monitorix main page.
-
-It also creates a file called '$BASE_DIR/cgi-bin/monitorix.conf.path' that
-includes the absolute path of the configuration file. This file will be read
-by 'monitorix.cgi' to determine the exact location of the configuration file.
-If for any reason it is unable to locate this file, Monitorix will try two
-alternative locations: '/etc/monitorix.conf' and
-'/usr/local/etc/monitorix.conf'.
-
 WWW: http://www.monitorix.org/
