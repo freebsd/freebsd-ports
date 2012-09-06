@@ -92,6 +92,7 @@ bin/mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutoriallines7.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutoriallines8.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutoriallines9.mapyrus
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialpdfgroup.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialpiechart1.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialpolygons1.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialpolygons2.mapyrus
