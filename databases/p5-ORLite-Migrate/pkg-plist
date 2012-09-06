@@ -2,6 +2,7 @@
 %%SITE_PERL%%/ORLite/Migrate.pm
 %%SITE_PERL%%/ORLite/Migrate/Patch.pm
 %%SITE_PERL%%/ORLite/Migrate/Perl.pm
+%%SITE_PERL%%/ORLite/Migrate/Timeline.pm
 @dirrmtry %%SITE_PERL%%/ORLite/Migrate
 @dirrmtry %%SITE_PERL%%/ORLite
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ORLite/Migrate

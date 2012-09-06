@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ORLite-Migrate
-PORTVERSION=	1.07
-PORTREVISION=	1
+PORTVERSION=	1.10
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ADAMK
@@ -29,6 +28,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	YES
 
 MAN3=		ORLite::Migrate.3 \
-		ORLite::Migrate::Perl.3
+		ORLite::Migrate::Perl.3 \
+		ORLite::Migrate::Timeline.3
 
 .include <bsd.port.mk>
