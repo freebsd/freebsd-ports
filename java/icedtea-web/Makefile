@@ -45,7 +45,6 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 USE_PKGCONFIG=	yes
 
 CONFIGURE_ARGS+=--with-ecj=no --with-jdk-home="${JAVA_HOME}"
-CONFIGURE_ENV+=	SHELL=${LOCALBASE}/bin/bash
 
 .include <bsd.port.pre.mk>
 
