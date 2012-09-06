@@ -37,6 +37,10 @@ DATADIR=	${PREFIX}/share/smc
 
 WRKSRC=		${WRKDIR}/smc
 
+PORTDOCS=	controls.html history.html style.css
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/autogen.sh
 
@@ -45,14 +49,12 @@ run-autotools:
 	@${REINPLACE_CMD} -e '/^LIBS =/ s|$$|$$(INTLLIBS)|' \
 		${WRKSRC}/src/Makefile.in
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	controls.html history.html style.css
-
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
+.  for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${DOCSDIR}
-.endfor
+.  endfor
 .endif
 
 .include <bsd.port.mk>
