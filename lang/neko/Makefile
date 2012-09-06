@@ -20,91 +20,70 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USE_AUTOTOOLS=	libtool:env
 USE_GMAKE=	yes
+USE_DOS2UNIX=	yes
+DOS2UNIX_REGEX= .*(Makefile|\.(c|h|neko|nml))$$
 
-OPTIONS=	APACHE13 "Build with mod_neko for Apache 1.3.x" off \
-		APACHE22 "Build with mod_neko for Apache 2.2.x" off \
-		MYSQL4   "Build with MySQL 4.x library" off \
-		MYSQL5   "Build with MySQL 5.x library" off \
-		SQLITE3  "Build with Sqlite 3.x SQL library" off \
-		PCRE     "Build with PCRE library" on \
-		GTK2     "Build with Gtk 2.x UI library" on
+OPTIONS_DEFINE=		APACHE MYSQL SQLITE PCRE GTK2
+OPTIONS_DEFAULT=	PCRE GTK2
 
-.include <bsd.port.pre.mk>
+OPTIONS_SINGLE=		MYSQL
+OPTIONS_SINGLE_MYSQL=	MYSQL4 MYSQL5
+
+MYSQL4_DESC=		Build against MySQL 4.1
+MYSQL5_DESC=		Build against MySQL 5.1
+
+.include <bsd.port.options.mk>
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-LIBKEYNAME=
-
-.if defined(WITH_APACHE13) && defined(WITH_APACHE22)
-IGNORE= option APACHE13 and APACHE22 conflict
-.endif
-
-.if defined(WITH_APACHE13)
-BUILD_DEPENDS+=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
-RUN_DEPENDS+=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
-CFLAGS+=	-I${LOCALBASE}/include/apache
-PLIST_SUB+=	APACHE13=
-.else
 LIBKEYNAME+=	mod_neko mod_tora
-PLIST_SUB+=	APACHE13="@comment "
-.endif
 
-.if defined(WITH_APACHE22)
-BUILD_DEPENDS+=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache22
-RUN_DEPENDS+=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache22
+.if ${PORT_OPTIONS:MAPACHE}
+USE_APACHE=	22
 CFLAGS+=	-I${LOCALBASE}/include/apache22
-PLIST_SUB+=	APACHE22=
+PLIST_SUB+=	APACHE22=""
 .else
 LIBKEYNAME+=	mod_neko2 mod_tora2
 PLIST_SUB+=	APACHE22="@comment "
 .endif
 
-.if defined(WITH_MYSQL4) && defined(WITH_MYSQL5)
-IGNORE= option MYSQL4 and MYSQL5 conflict
-.endif
-
-.if defined(WITH_MYSQL4)
-BUILD_DEPENDS+=	mysql:${PORTSDIR}/databases/mysql41-client
-RUN_DEPENDS+=	mysql:${PORTSDIR}/databases/mysql41-client
+.if ${PORT_OPTIONS:MMYSQL4}
+USE_MYSQL=	41
 CFLAGS+=	-I${LOCALBASE}/include/mysql
-PLIST_SUB+=	MYSQL4=
+PLIST_SUB+=	MYSQL4=""
 .else
 LIBKEYNAME+=	mysql
 PLIST_SUB+=	MYSQL4="@comment "
 .endif
 
-.if defined(WITH_MYSQL5)
-BUILD_DEPENDS+=	mysql:${PORTSDIR}/databases/mysql51-client
-RUN_DEPENDS+=	mysql:${PORTSDIR}/databases/mysql51-client
+.if ${PORT_OPTIONS:MMYSQL5}
+USE_MYSQL=	51
 CFLAGS+=	-I${LOCALBASE}/include/mysql
-PLIST_SUB+=	MYSQL5=
+PLIST_SUB+=	MYSQL5=""
 .else
 LIBKEYNAME+=	mysql5
 PLIST_SUB+=	MYSQL5="@comment "
 .endif
 
-.if defined(WITH_SQLITE3)
-BUILD_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
-RUN_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
-PLIST_SUB+=	SQLITE3=
+.if ${PORT_OPTIONS:MSQLITE}
+USE_SQLITE=	yes
+PLIST_SUB+=	SQLITE3=""
 .else
 LIBKEYNAME+=	sqlite
 PLIST_SUB+=	SQLITE3="@comment "
 .endif
 
-.if defined(WITH_PCRE)
-BUILD_DEPENDS+=	${LOCALBASE}/include/pcre.h:${PORTSDIR}/devel/pcre
-RUN_DEPENDS+=	${LOCALBASE}/include/pcre.h:${PORTSDIR}/devel/pcre
-PLIST_SUB+=	PCRE=
+.if ${PORT_OPTIONS:MPCRE}
+LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
+PLIST_SUB+=	PCRE=""
 .else
 LIBKEYNAME+=	regexp
 PLIST_SUB+=	PCRE="@comment "
 .endif
 
-.if defined(WITH_GTK2)
-BUILD_DEPENDS+=	${LOCALBASE}/include/gtk-2.0:${PORTSDIR}/x11-toolkits/gtk20
-RUN_DEPENDS+=	${LOCALBASE}/include/gtk-2.0:${PORTSDIR}/x11-toolkits/gtk20
-PLIST_SUB+=	GTK2=
+.if ${PORT_OPTIONS:MGTK2}
+USE_GNOME=	gtk20
+PLIST_SUB+=	GTK2=""
 .else
 LIBKEYNAME+=	ui
 PLIST_SUB+=	GTK2="@comment "
@@ -140,24 +119,19 @@ post-patch:
 	    ${WRKSRC}/src/tools/install.neko
 .endfor
 .endif
-.if defined(WITH_APACHE13)
-	@${REINPLACE_CMD} \
-	    -e 's,"/usr/include/apache-1.3","${PREFIX}/include/apache",' \
-	    ${WRKSRC}/src/tools/install.neko
-.endif
-.if defined(WITH_APACHE22)
+.if ${PORT_OPTIONS:MAPACHE}
 	@${REINPLACE_CMD} \
 	    -e 's,"/usr/include/apache2","${PREFIX}/include/apache22",' \
 	    ${WRKSRC}/src/tools/install.neko
 .endif
-.if defined(WITH_GTK2)
+.if ${PORT_OPTIONS:MGTK2}
 	@${REINPLACE_CMD} \
 	    -e 's,"/usr/include/gtk-2.0","${PREFIX}/include/gtk-2.0",' \
 	    ${WRKSRC}/src/tools/install.neko
 	@${REINPLACE_CMD} \
 	    -e 's,NEKO_LINUX,NEKO_BSD,' ${WRKSRC}/libs/ui/ui.c
 .endif
-.if ${ARCH} == "amd64" && defined(WITH_MYSQL4)
+.if ${ARCH} == "amd64" && ${PORT_OPTIONS:MMYSQL4}
 	@${ECHO_CMD}
 	@${ECHO_CMD} "======================================================="
 	@${ECHO_CMD}
@@ -169,7 +143,7 @@ post-patch:
 .endif
 
 post-install:
-.if defined(WITH_APACHE13) || defined(WITH_APACHE22)
+.if ${PORT_OPTIONS:MAPACHE}
 	@${ECHO_CMD}
 	@${ECHO_CMD} "======================================================="
 	@${ECHO_CMD}
@@ -181,4 +155,4 @@ post-install:
 	@${ECHO_CMD}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
