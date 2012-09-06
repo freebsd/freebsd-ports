@@ -771,6 +771,7 @@
     SUBDIR += p5-ZConf-Bookmarks
     SUBDIR += p5-ZeroMQ
     SUBDIR += p5-perl-ldap
+    SUBDIR += packter-agent
     SUBDIR += panoptis
     SUBDIR += paris-traceroute
     SUBDIR += passlogd
