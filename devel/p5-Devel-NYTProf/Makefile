@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Devel-NYTProf
-PORTVERSION=	4.06
+PORTVERSION=	4.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,7 +23,8 @@ PERL_CONFIGURE=	yes
 
 MAN1=	nytprofhtml.1 \
 	nytprofcsv.1 \
-	nytprofcg.1
+	nytprofcg.1 \
+	nytprofmerge.1
 
 MAN3=	Devel::NYTProf.3 \
 	Devel::NYTProf::Apache.3 \
