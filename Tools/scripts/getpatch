@@ -31,7 +31,10 @@
 import argparse
 import re
 import sys
-import urllib2
+if sys.version_info.major == 3:
+    import urllib.request as urllib2
+else:
+    import urllib2
 
 """
 FreeBSD getpatch handles Gnats and Bugzilla patch attachments
