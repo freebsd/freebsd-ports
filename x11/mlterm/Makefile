@@ -33,7 +33,8 @@ OPTIONS=	FRIBIDI	"Use Fribidi for BiDi rendering" off \
 		M17NLIB "m17n library support (experimental)" off \
 		SCIM "SCIM support (experimental)" off \
 		IBUS "IBUS support (experimental)" off \
-		CAIRO "Use Cairo for type engine (experimental)" off
+		CAIRO "Use Cairo for type engine (experimental)" off \
+		SIXEL "Sixel graphics support" off
 
 .include <bsd.port.pre.mk>
 
@@ -94,6 +95,14 @@ PLIST_SUB+=	CAIRO=""
 .else
 CONFIGURE_ARGS+=	--with-type-engines="xcore,xft"
 PLIST_SUB+=	CAIRO="@comment "
+.endif
+
+.if defined(WITH_SIXEL)
+CONFIGURE_ARGS+=	--enable-sixel
+PLIST_SUB+=	SIXEL=""
+.else
+CONFIGURE_ARGS+=	--disable-sixel
+PLIST_SUB+=	SIXEL="@comment "
 .endif
 
 .if ${OSVERSION} >= 900004
