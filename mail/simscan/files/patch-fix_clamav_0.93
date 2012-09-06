@@ -1,6 +1,36 @@
---- configure	2007-10-29 10:14:25.000000000 -0400
-+++ configure	2008-05-02 15:31:51.000000000 -0400
-@@ -4686,6 +4686,14 @@
+--- ./configure.orig	2007-10-29 09:14:25.000000000 -0500
++++ ./configure	2012-06-26 14:20:22.000000000 -0500
+@@ -4682,13 +4682,26 @@
+         clamavdb=""
+         for f in "$CLAMAV_DB" /usr/local/share/clamav /var/lib/clamav
+         do
+-          if test -f "$f/daily.cvd"
++          if test -f "$f/daily.cvd" || test -d "$f/daily.inc"
++          then
++            clamavdb=$f
++            break
++          elif test -f "$f/daily.cld"
++          then
++            clamavdb=$f
++            break
++          elif test -f "$f/daily.inc/daily.info"
+           then
+             clamavdb=$f
+             break
+           fi
+         done
+ 
++	# Default to $f/daily.cld
++	if test "$clamavdb" = ""; then
++		clamavdb="$f/daily.cld"
++	fi
++
+         if test "$clamavdb" = ""
+         then
+           echo "$as_me:$LINENO: result: no" >&5
+--- ./configure.in.orig	2007-10-29 09:13:40.000000000 -0500
++++ ./configure.in	2012-06-26 14:20:02.000000000 -0500
+@@ -622,9 +622,22 @@
            then
              clamavdb=$f
              break
@@ -15,23 +45,14 @@
            fi
          done
  
---- configure.in	2007-10-29 10:13:40.000000000 -0400
-+++ configure.in	2008-05-02 15:31:32.000000000 -0400
-@@ -622,6 +622,14 @@
-           then
-             clamavdb=$f
-             break
-+          elif test -f "$f/daily.cld"
-+          then
-+            clamavdb=$f
-+            break
-+          elif test -f "$f/daily.inc/daily.info"
-+          then
-+            clamavdb=$f
-+            break
-           fi
-         done
- 
++	# Default to $f/daily.cld
++	if test "$clamavdb" = ""; then
++		clamavdb="$f/daily.cld"
++	fi
++
+         if test "$clamavdb" = ""
+         then
+           AC_MSG_RESULT(no)
 --- simscanmk.c	2006-10-10 19:15:17.000000000 -0400
 +++ simscanmk.c	2008-07-07 14:21:46.000000000 -0400
 @@ -123,6 +123,7 @@
