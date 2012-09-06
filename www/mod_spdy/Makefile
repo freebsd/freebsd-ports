@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_spdy
 PORTVERSION=	0.9.2.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.club.kyutech.ac.jp/~masaki/ports/:mod_spdy \
 		${MASTER_SITE_APACHE_HTTPD}:apache22 \
@@ -44,41 +45,33 @@ GYP_DEFINES+=	\
 		system_include_path_execinfo=${LOCALBASE}/include \
 		include_dirs=${LOCALBASE}/include
 
-OPTIONS=	CLANG	"Build with Clang"	on \
-		GCC46	"Build with GCC 4.6+"	off \
-		DEBUG   "Compile with debug symbols and verbose output" off
+OPTIONS_DEFINE=	CLANG DEBUG
+CLANG_DESC=	Build with Clang instead of GCC 4.6+
+DEBUG_DESC=	Compile with debug symbols and verbose output
+
+OPTIONS_DEFAULT=	CLANG
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 900033 || defined(WITH_GCC46)
+.if ${OSVERSION} < 900033 || ! ${PORT_OPTIONS:MCLANG}
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
 
-.if !defined(WITH_GCC46) && !defined(WITH_CLANG)
-IGNORE=	does not compile with base gcc
-.endif
-
-.if defined(WITH_GCC46) && defined(WITH_CLANG)
-IGNORE=	conflicting options (CLANG and GCC46)
-.endif
-
-.if defined(WITH_GCC46)
-USE_GCC?=	4.6+
-.endif
-
-.if defined(WITH_CLANG)
+.if ${PORT_OPTIONS:MCLANG}
 .if ${OSVERSION} < 900033
 BUILD_DEPENDS+=	clang:${PORTSDIR}/lang/clang
 .endif
 CC=	clang
 CXX=	clang++
-CPP=	clang-cpp
 GYP_DEFINES+=	clang=1
+.else
+USE_GCC?=	4.6+
+GYP_DEFINES+=	gcc_version=${CXX:S/g++//}
 .endif
 
-.if !defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 BUILDTYPE=	Release
 .else
 MAKE_ENV+=	V=1
