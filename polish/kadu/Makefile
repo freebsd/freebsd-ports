@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kadu
-PORTVERSION=	0.12.1
+PORTVERSION=	0.12.2
 PORTEPOCH=	1
 CATEGORIES=	polish net-im
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/:kadu \
@@ -91,7 +91,6 @@ post-install:
 	cd gg6_compatible && ${TAR} -zxf ${_DISTDIR}/${GG7_EMOTS_DISTFILE}
 	@cd ${WRKSRC}/varia/themes/emoticons && \
 	${COPYTREE_SHARE} gg6_compatible ${DATADIR}/themes/emoticons
-		
 .endif
 
 .include <bsd.port.mk>
