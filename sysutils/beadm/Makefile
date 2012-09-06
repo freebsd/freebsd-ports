@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	beadm
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/beadm/dist/ \
-		http://mirror.shatow.net/freebsd/${PORTNAME}/
+MASTER_SITES=	SF/beadm/dist/
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Solaris-like utility to manage Boot Environments on ZFS
 
 LICENSE=	BSD
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	vermaden
+GH_COMMIT=	b0cdd0c
+
 NO_BUILD=	YES
-USE_BZIP2=	yes
 
 PLIST_FILES=	sbin/${PORTNAME}
 
