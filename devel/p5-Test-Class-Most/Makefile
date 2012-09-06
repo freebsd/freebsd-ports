@@ -7,9 +7,10 @@
 
 PORTNAME=	Test-Class-Most
 PORTVERSION=	0.06
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/O/OV/OVID
+MASTER_SITE_SUBDIR=	CPAN:OVID
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	5u623l20@gmail.com
@@ -21,6 +22,7 @@ BUILD_DEPENDS=	p5-Test-Class>0:${PORTSDIR}/devel/p5-Test-Class \
 PERL_MODBUILD=	yes
 
 PLIST_FILES=	%%SITE_PERL%%/Test/Class/Most.pm
+PLIST_DIRSTRY=	%%SITE_PERL%%/Test/Class %%SITE_PERL%%/Test
 
 MAN3=		Test::Class::Most.3
 
