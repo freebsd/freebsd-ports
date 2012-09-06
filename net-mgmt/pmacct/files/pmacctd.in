@@ -25,7 +25,7 @@
 name=pmacctd
 rcvar=pmacctd_enable
 
-command=%%PREFIX%%/$name
+command=%%PREFIX%%/sbin/$name
 
 # set defaults
 
