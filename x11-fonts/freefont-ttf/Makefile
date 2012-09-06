@@ -5,22 +5,24 @@
 # $FreeBSD$
 #
 
-PORTNAME=		freefont-ttf
-PORTVERSION=		20100919
-CATEGORIES=		x11-fonts
-MASTER_SITES=		${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	freefont
+PORTNAME=	freefont-ttf
+PORTVERSION=	20120503
+CATEGORIES=	x11-fonts
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=freefont
 
-MAINTAINER=		pawel@FreeBSD.org
-COMMENT=		Free UCS Outline Fonts
+MAINTAINER=	pawel@FreeBSD.org
+COMMENT=	Free UCS Outline Fonts
 
-BUILD_DEPENDS=		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
-			mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
+BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
-LICENSE=		GPLv3
+LICENSE=	GPLv3
 
-WRKSRC=			${WRKDIR}/freefont-${PORTVERSION}
-INSTALLDIR=		${PREFIX}/lib/X11/fonts/${PORTNAME}
+USE_ZIP=	yes
+
+WRKSRC=		${WRKDIR}/freefont-${PORTVERSION}
+INSTALLDIR=	${PREFIX}/lib/X11/fonts/${PORTNAME}
 
 .include <bsd.port.options.mk>
 
