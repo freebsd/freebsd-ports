@@ -7,6 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${DL_JDK_VERSION:S/_/./g}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-sun-
@@ -76,6 +77,7 @@ do-extract:
 post-patch:
 	${REINPLACE_CMD} -i.orig -e 's:^#!/bin/bash:#!/bin/sh:' ${WRKSRC}/bin/jcontrol
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
+	@(cd ${WRKSRC}/include; ${LN} -s linux freebsd)
 
 # XXX: This is missing a "${BRANDELF} -t Linux <executables>".
 
