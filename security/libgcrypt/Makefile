@@ -35,7 +35,10 @@ INFO=	gcrypt
 
 .if ${ARCH} == "powerpc"
 CONFIGURE_ARGS+=	--disable-asm
+.if (${OSVERSION} >= 1000000)
 BROKEN=	will not compile. See pr ports/166388
+.endif
+
 .elif ${ARCH} == "i386"
 .if (${OSVERSION} < 900033)
 CONFIGURE_ARGS+=	--disable-aesni-support
