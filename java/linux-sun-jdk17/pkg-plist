@@ -905,6 +905,7 @@
 %%DEMO%%%%T%%/demo/scripting/jconsole-plugin/jconsole-plugin.jar
 %%DEMO%%%%T%%/demo/scripting/jconsole-plugin/src.zip
 %%T%%/include/classfile_constants.h
+%%T%%/include/freebsd
 %%T%%/include/jawt.h
 %%T%%/include/jdwpTransport.h
 %%T%%/include/jni.h

@@ -3200,6 +3200,7 @@
 %%DEMO%%%%T%%/demo/scripting/jconsole-plugin/src/scripts/sysprops.js
 %%DEMO%%%%T%%/demo/scripting/jconsole-plugin/src/scripts/verbose.js
 %%T%%/include/classfile_constants.h
+%%T%%/include/freebsd
 %%T%%/include/jawt.h
 %%T%%/include/jdwpTransport.h
 %%T%%/include/jni.h

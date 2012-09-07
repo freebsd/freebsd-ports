@@ -7,6 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-sun-
@@ -78,6 +79,7 @@ post-patch:
 	@${REINPLACE_CMD} -i.orig -e 's:^#!/bin/bash:#!/bin/sh:' ${WRKSRC}/${script}
 .endfor
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
+	@(cd ${WRKSRC}/include; ${LN} -s linux freebsd)
 
 do-install:
 	@${MKDIR} ${APP_HOME}
