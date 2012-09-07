@@ -10,18 +10,18 @@ PORTVERSION=	1.8
 CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/galaxis/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Clone of the nifty little Macintosh game
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DNDEBUG"
 ALL_TARGET=	${PORTNAME}
 USE_GMAKE=	yes
 
-MAN6=		galaxis.6
-PLIST_FILES=	bin/galaxis
+MAN6=		${PORTNAME}.6
+PLIST_FILES=	bin/${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/galaxis ${PREFIX}/bin/galaxis
-	${INSTALL_MAN} ${WRKSRC}/galaxis.6 ${MANPREFIX}/man/man6
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6 ${MAN6PREFIX}/man/man6/
 
 .include <bsd.port.mk>
