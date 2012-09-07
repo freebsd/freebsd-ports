@@ -17,7 +17,7 @@ PATCH_SITES=	${MASTER_SITE_DEBIAN:S,%SUBDIR%,pool/main/d/dclock,}
 PATCHFILES=	dclock_2.1.2-8.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 7-segment digital clock with some optional features
 
 USE_IMAKE=	yes
@@ -26,11 +26,13 @@ USE_XORG=	ice sm x11 xext xt
 WRKSRC=		${WRKDIR}/dclock
 MAN1=		dclock.1
 
-OPTIONS=	SOX "Install SoX to play audio" On
+OPTIONS_DEFINE=	SOX
+SOX_DESC=	Install SOX to play audio
+OPTIONS_DEFAULT=	SOX
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_SOX)
+.if ${PORT_OPTIONS:MSOX}
 RUN_DEPENDS+=	play:${PORTSDIR}/audio/sox
 .endif
 
@@ -48,7 +50,7 @@ post-install:
 .for f in bell.wav digital.wav
 	${INSTALL_DATA} ${WRKSRC}/sounds/${f} ${DATADIR}/sounds
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in README TODO
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
