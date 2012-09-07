@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	chattahoochie
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.mammothcheese.ca/
 
