@@ -1,4 +1,5 @@
 bin/atscc
+bin/atsdoc
 bin/atslex
 bin/atslib
 bin/atsopt
@@ -6,6 +7,7 @@ bin/atspack
 %%ATS_LIBDIR%%/INSTALL
 %%ATS_LIBDIR%%/VERSION.txt
 %%ATS_LIBDIR%%/bin/atscc
+%%ATS_LIBDIR%%/bin/atsdoc
 %%ATS_LIBDIR%%/bin/atslex
 %%ATS_LIBDIR%%/bin/atslib
 %%ATS_LIBDIR%%/bin/atsopt
@@ -14,6 +16,7 @@ bin/atspack
 %%ATS_LIBDIR%%/ccomp/%%LIBDIR%%/libats_lex.a
 %%ATS_LIBDIR%%/ccomp/%%LIBDIR%%/libats_mt.a
 %%ATS_LIBDIR%%/ccomp/%%LIBDIR%%/libats_smlbas.a
+%%ATS_LIBDIR%%/ccomp/%%LIBDIR%%/libatsdoc.a
 %%ATS_LIBDIR%%/ccomp/runtime/GCATS/Makefile
 %%ATS_LIBDIR%%/ccomp/runtime/GCATS/README
 %%ATS_LIBDIR%%/ccomp/runtime/GCATS/gc.o
@@ -85,7 +88,6 @@ bin/atspack
 %%ATS_LIBDIR%%/libats/DATS/linbitvec.dats
 %%ATS_LIBDIR%%/libats/DATS/linheap_binomial.dats
 %%ATS_LIBDIR%%/libats/DATS/linmap_avltree.dats
-%%ATS_LIBDIR%%/libats/DATS/linmap_avltree_ngc.dats
 %%ATS_LIBDIR%%/libats/DATS/linmap_rbtree.dats
 %%ATS_LIBDIR%%/libats/DATS/linordset_randbst.dats
 %%ATS_LIBDIR%%/libats/DATS/linqueue_arr.dats
@@ -142,9 +144,7 @@ bin/atspack
 %%ATS_LIBDIR%%/libats/SATS/parworkshop.sats
 %%ATS_LIBDIR%%/libats/SATS/rarray.sats
 %%ATS_LIBDIR%%/libats/SATS/refcount.sats
-%%ATS_LIBDIR%%/libats/SATS/refcountr.sats
 %%ATS_LIBDIR%%/libats/SATS/regexp.sats
-%%ATS_LIBDIR%%/libats/SATS/sobjptr.sats
 %%ATS_LIBDIR%%/libats/SATS/vector.sats
 %%ATS_LIBDIR%%/libats/lex/lexing.dats
 %%ATS_LIBDIR%%/libats/lex/lexing.sats
@@ -184,6 +184,28 @@ bin/atspack
 %%ATS_LIBDIR%%/libats/smlbas/SATS/real.sats
 %%ATS_LIBDIR%%/libats/smlbas/SATS/string.sats
 %%ATS_LIBDIR%%/libats/smlbas/SATS/time.sats
+%%ATS_LIBDIR%%/libatsdoc/CATS/libatsdoc_lexbuf.cats
+%%ATS_LIBDIR%%/libatsdoc/CATS/libatsdoc_location.cats
+%%ATS_LIBDIR%%/libatsdoc/CATS/libatsdoc_reader.cats
+%%ATS_LIBDIR%%/libatsdoc/DATS/libatsdoc_atext.dats
+%%ATS_LIBDIR%%/libatsdoc/DATS/libatsdoc_error.dats
+%%ATS_LIBDIR%%/libatsdoc/DATS/libatsdoc_filename.dats
+%%ATS_LIBDIR%%/libatsdoc/DATS/libatsdoc_lexbuf.dats
+%%ATS_LIBDIR%%/libatsdoc/DATS/libatsdoc_location.dats
+%%ATS_LIBDIR%%/libatsdoc/DATS/libatsdoc_reader.dats
+%%ATS_LIBDIR%%/libatsdoc/DATS/libatsdoc_symbol.dats
+%%ATS_LIBDIR%%/libatsdoc/DATS/libatsdoc_symmap.dats
+%%ATS_LIBDIR%%/libatsdoc/Makefile
+%%ATS_LIBDIR%%/libatsdoc/Makefile_inp
+%%ATS_LIBDIR%%/libatsdoc/SATS/libatsdoc_atext.sats
+%%ATS_LIBDIR%%/libatsdoc/SATS/libatsdoc_error.sats
+%%ATS_LIBDIR%%/libatsdoc/SATS/libatsdoc_filename.sats
+%%ATS_LIBDIR%%/libatsdoc/SATS/libatsdoc_lexbuf.sats
+%%ATS_LIBDIR%%/libatsdoc/SATS/libatsdoc_location.sats
+%%ATS_LIBDIR%%/libatsdoc/SATS/libatsdoc_reader.sats
+%%ATS_LIBDIR%%/libatsdoc/SATS/libatsdoc_symbol.sats
+%%ATS_LIBDIR%%/libatsdoc/SATS/libatsdoc_symmap.sats
+%%ATS_LIBDIR%%/libatsdoc/dynloadall.dats
 %%ATS_LIBDIR%%/libc/CATS/SIMD_v2df.cats
 %%ATS_LIBDIR%%/libc/CATS/complex.cats
 %%ATS_LIBDIR%%/libc/CATS/ctype.cats
@@ -360,7 +382,6 @@ bin/atspack
 %%ATS_LIBDIR%%/prelude/DATS/string.dats
 %%ATS_LIBDIR%%/prelude/DATS/syndef.dats
 %%ATS_LIBDIR%%/prelude/DATS/unsafe.dats
-%%ATS_LIBDIR%%/prelude/DATS/vsubrw.dats
 %%ATS_LIBDIR%%/prelude/HATS/lmacrodef.hats
 %%ATS_LIBDIR%%/prelude/HATS/number.hats
 %%ATS_LIBDIR%%/prelude/HATS/syndef.hats
@@ -425,6 +446,10 @@ bin/atspack
 @dirrm %%ATS_LIBDIR%%/libats/smlbas/SATS
 @dirrm %%ATS_LIBDIR%%/libats/smlbas
 @dirrm %%ATS_LIBDIR%%/libats
+@dirrm %%ATS_LIBDIR%%/libatsdoc/CATS
+@dirrm %%ATS_LIBDIR%%/libatsdoc/DATS
+@dirrm %%ATS_LIBDIR%%/libatsdoc/SATS
+@dirrm %%ATS_LIBDIR%%/libatsdoc
 @dirrm %%ATS_LIBDIR%%/libc/CATS
 @dirrm %%ATS_LIBDIR%%/libc/DATS
 @dirrm %%ATS_LIBDIR%%/libc/HATS

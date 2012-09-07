@@ -1,24 +1,37 @@
---- Makefile.orig	2012-05-18 07:56:24.000000000 +0800
-+++ Makefile	2012-05-23 14:47:29.661831756 +0800
-@@ -92,7 +92,7 @@
+--- Makefile.orig	2012-09-04 11:37:57.000000000 +0800
++++ Makefile	2012-09-06 19:21:24.886921581 +0800
+@@ -59,12 +59,6 @@
+ 	autoheader $<
+ 	touch $@
+ 
+-configure: configure.ac $(SRC_CONFIG_FILES)
+-	aclocal
+-	automake --add-missing --foreign || true
+-	autoconf
+-	touch $(BUILT_CONFIG_FILES)
+-
+ -include config.mk
+ 
+ ######
+@@ -92,7 +86,7 @@
  	cd $(abs_top_srcdir)
  	[ -d $(DESTDIR)/$(bindir) ] || $(MKDIR_P) $(DESTDIR)/$(bindir)
  	$(MKDIR_P) $(DESTDIR)$(ATSNEWHOME)/bin
 -	find ccomp contrib doc libats libc prelude -type d \
-+	find ccomp libats libc prelude -type d \
++	find ccomp libats libatsdoc libc prelude -type d \
  	  -exec $(MKDIR_P) $(DESTDIR)$(ATSNEWHOME)/\{} \; \
  	  -print
  
-@@ -100,7 +100,7 @@
+@@ -100,7 +94,7 @@
  #
  # recursively install all files in the list except .svn control files.
  #
 -	for d in ccomp/runtime contrib doc libats libc prelude; do \
-+	for d in ccomp/runtime libats libc prelude; do \
++	for d in ccomp/runtime libats libatsdoc libc prelude; do \
  	  cd $(abs_top_srcdir) && \
  	  $(INSTALL) -d $(DESTDIR)$(ATSNEWHOME)/"$$d" && \
  	  find "$$d" -name .svn -prune -o -type f \
-@@ -140,6 +140,8 @@
+@@ -140,6 +134,8 @@
  	done
  
  install:: install_files
@@ -27,17 +40,22 @@
  
  ######
  
-@@ -152,8 +154,7 @@
+@@ -151,12 +147,11 @@
+   libfiles_mt \
+   bin/atspack \
    bin/atslex \
+-  libatsdoca \
+-  bin/atsdoc \
    ccomp/runtime/GCATS/gc.o \
    ccomp/runtime/GCATS/gc_mt.o \
--  atsopt1_gc \
+   atsopt1_gc \
 -  contrib
-+  atsopt1_gc
++  libatsdoca \
++  bin/atsdoc
  	@echo "ATS/Anairiats has been built up successfully!"
  	@echo "The value of ATSHOME for this build is \"$(ATSHOME)\"."
  	@echo "The value of ATSHOMERELOC for this build is \"$(ATSHOMERELOC)\"."
-@@ -212,25 +213,25 @@
+@@ -215,25 +210,25 @@
  
  ATSLIB=$(ATSHOMEQ)/bin/atslib
  
@@ -72,5 +90,5 @@
 -	$(ATSLIB) $(ATS_PROOFCHECK) -D_ATS_MULTITHREAD -O2 --libats_mt
 +	$(ATSLIB) $(ATS_PROOFCHECK) -D_ATS_MULTITHREAD -O2 $(CFLAGS) --libats_mt
  
- ###### a lexer for ATS ######
+ libatsdoca: ; $(MAKE) -C libatsdoc
  

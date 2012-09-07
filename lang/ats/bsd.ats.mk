@@ -1,5 +1,5 @@
 ATS_IMPL=	anairiats
-ATS_VER=	0.2.7
+ATS_VER=	0.2.8
 
 ATS_LIBDIR_REL=	lib/ats-${ATS_IMPL}-${ATS_VER}
 ATS_LIBDIR=	${LOCALBASE}/${ATS_LIBDIR_REL}
@@ -16,7 +16,7 @@ FETCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/lang/ats:patch
 BUILD_DEPENDS+=	${LOCALBASE}/bin/atscc:${PORTSDIR}/lang/ats
 
 USE_GMAKE=	yes
-MAKE_ENV+=	ATSHOME=${LOCALBASE}
+MAKE_ENV+=	ATSHOME=${ATS_LIBDIR} ATSHOMERELOC=ATS-${ATS_VER}
 MAKE_ARGS+=	-C contrib/${ATS_CTRB}
 
 ATS_WRKSRC=	cd ${PORTSDIR}/lang/ats; ${MAKE} -V WRKSRC
@@ -27,7 +27,7 @@ do-extract:
 
 pre-build:
 	${SED} -i '' \
-	    -e 's/^ATSCC=\(.*\)/ATSCC=\1 $$(CFLAGS)/' \
+	    -e 's/^ATSCC=\(.*\)/ATSCC=\1 $$(CFLAGS) -IATS./' \
 	    ${BUILD_WRKSRC}/contrib/${ATS_CTRB}/Makefile
 	${LN} -sf ${BUILD_WRKSRC}/contrib ${BUILD_WRKSRC}/contrib/${ATS_CTRB}/
 
@@ -42,7 +42,7 @@ do-install:
 	${COPYTREE_SHARE} . ${ATS_CTRBEXAMPLEDIR}
 	${FIND} ${ATS_CTRBEXAMPLEDIR} -name Makefile \
 	    -exec ${SED} -i '' \
-	                 -e 's|^ATSUSRQ=.*|ATSUSRQ="${LOCALBASE}"|' \
+	                 -e 's|^ATSUSRQ=.*|ATSUSRQ="${ATS_LIBDIR}"|' \
 	                 -e 's|^ATSLIBQ=.*|ATSLIBQ="${ATS_LIBDIR}"|' {} \;
 .endif
 
