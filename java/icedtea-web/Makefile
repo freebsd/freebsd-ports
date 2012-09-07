@@ -8,7 +8,8 @@
 PORTNAME=	icedtea-web
 PORTVERSION=	1.3
 CATEGORIES=	java www
-MASTER_SITES=	http://icedtea.classpath.org/download/source/
+MASTER_SITES=	http://icedtea.wildebeest.org/download/source/ \
+		http://icedtea.classpath.org/download/source/
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	A free Java plug-in and Java Web Start for OpenJDK
@@ -45,6 +46,8 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 USE_PKGCONFIG=	yes
 
 CONFIGURE_ARGS+=--with-ecj=no --with-jdk-home="${JAVA_HOME}"
+
+EXTRACT_AFTER_ARGS=	| ${SETENV} LANG=en_US.UTF-8 ${TAR} -xf -
 
 .include <bsd.port.pre.mk>
 
