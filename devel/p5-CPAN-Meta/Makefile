@@ -19,11 +19,9 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-CPAN-Meta-Requirements>=2.121:${PORTSDIR}/devel/p5-CPAN-Meta-Requirements \
 		p5-CPAN-Meta-YAML>=0.008:${PORTSDIR}/devel/p5-CPAN-Meta-YAML \
-		p5-JSON-PP>=2.27200:${PORTSDIR}/converters/p5-JSON-PP \
 		p5-Parse-CPAN-Meta>=1.44.03:${PORTSDIR}/devel/p5-Parse-CPAN-Meta
 RUN_DEPENDS=	p5-CPAN-Meta-Requirements>=2.121:${PORTSDIR}/devel/p5-CPAN-Meta-Requirements \
 		p5-CPAN-Meta-YAML>=0.008:${PORTSDIR}/devel/p5-CPAN-Meta-YAML \
-		p5-JSON-PP>=2.27200:${PORTSDIR}/converters/p5-JSON-PP \
 		p5-Parse-CPAN-Meta>=1.44.03:${PORTSDIR}/devel/p5-Parse-CPAN-Meta
 
 PERL_CONFIGURE=	yes
@@ -45,6 +43,11 @@ TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
 .if ${PERL_LEVEL} < 501400
 BUILD_DEPENDS+=	p5-version>=0.88:${PORTSDIR}/devel/p5-version
 RUN_DEPENDS+=	p5-version>=0.88:${PORTSDIR}/devel/p5-version
+.endif
+
+.if ${PERL_LEVEL} < 501600
+BUILD_DEPENDS+=	p5-JSON-PP>=2.27200:${PORTSDIR}/converters/p5-JSON-PP
+RUN_DEPENDS+=	p5-JSON-PP>=2.27200:${PORTSDIR}/converters/p5-JSON-PP
 .endif
 
 .include <bsd.port.post.mk>
