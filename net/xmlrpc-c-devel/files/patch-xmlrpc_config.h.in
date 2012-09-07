@@ -1,0 +1,15 @@
+Index: xmlrpc_config.h.in
+===================================================================
+--- xmlrpc_config.h.in	(revision 2387)
++++ xmlrpc_config.h.in	(working copy)
+@@ -26,6 +26,10 @@
+ #ifndef XMLRPC_CONFIG_H_INCLUDED
+ #define XMLRPC_CONFIG_H_INCLUDED
+ 
++#if defined(__FreeBSD__)
++  #include <sys/cdefs.h>
++#endif
++
+ /* We hope to replace xmlrpc_amconfig.h some day with something that 
+    doesn't require a whole special set of software to build, to make
+    Xmlrpc-c approachable by dumber developers.

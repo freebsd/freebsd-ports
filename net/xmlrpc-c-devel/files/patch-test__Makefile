@@ -1,0 +1,23 @@
+--- test/Makefile	(revision 2386)
++++ test/Makefile	(revision 2387)
+@@ -11,8 +11,6 @@
+ 
+ XMLRPC_C_CONFIG = $(BLDDIR)/xmlrpc-c-config.test
+ 
+-LDADD_CLIENT = \
+-  $(shell $(XMLRPC_C_CONFIG) client --ldadd)
+ LDADD_ABYSS_SERVER = \
+   $(shell $(XMLRPC_C_CONFIG) abyss-server --ldadd)
+ LDADD_CGI_SERVER = \
+@@ -43,9 +41,11 @@
+ ifeq ($(MUST_BUILD_CLIENT),yes)
+   TEST_OBJS += client.o
+   LIBXMLRPC_CLIENT_DEP = $(LIBXMLRPC_CLIENT_A)
++  LDADD_CLIENT = $(shell $(XMLRPC_C_CONFIG) client --ldadd)
+ else
+   TEST_OBJS += client_dummy.o
+   LIBXMLRPC_CLIENT_DEP =
++  LDADD_CLIENT =
+ endif
+ 
+ include $(SRCDIR)/common.mk
