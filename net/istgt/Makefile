@@ -7,6 +7,7 @@
 
 PORTNAME=	istgt
 PORTVERSION=	20120901
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.peach.ne.jp/archives/istgt/
 
@@ -28,7 +29,7 @@ PLIST_FILES=	bin/istgt \
 		%%ETCDIR%%/istgt.conf.sample \
 		%%ETCDIR%%/istgt.large.conf.sample \
 		%%ETCDIR%%/istgtcontrol.conf.sample
-PLIST_DIRS=	%%ETCDIR%%
+PLIST_DIRSTRY=	%%ETCDIR%%
 PORTDOCS=	${DOCS:T}
 
 DOCS=		ChangeLog.jp README doc/QUICKSTART doc/QUICKSTART.jp
