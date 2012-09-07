@@ -81,6 +81,9 @@ bin/mapdownloader
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/seznam.py
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/seznam.pyc
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/seznam.pyo
+%%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/stamenMaps.py
+%%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/stamenMaps.pyc
+%%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/stamenMaps.pyo
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/virtualEarth.py
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/virtualEarth.pyc
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/virtualEarth.pyo
@@ -204,24 +207,39 @@ bin/mapdownloader
 %%PYTHON_SITELIBDIR%%/gmapcatcher/pyGPSD/scan.py
 %%PYTHON_SITELIBDIR%%/gmapcatcher/pyGPSD/scan.pyc
 %%PYTHON_SITELIBDIR%%/gmapcatcher/pyGPSD/scan.pyo
-%%PYTHON_SITELIBDIR%%/gmapcatcher/tileFStoMGMaps.py
-%%PYTHON_SITELIBDIR%%/gmapcatcher/tileFStoMGMaps.pyc
-%%PYTHON_SITELIBDIR%%/gmapcatcher/tileFStoMGMaps.pyo
-%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo.py
-%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo.pyc
-%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo.pyo
-%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepoFactory.py
-%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepoFactory.pyc
-%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepoFactory.pyo
-%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepoFS.py
-%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepoFS.pyc
-%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepoFS.pyo
-%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepoMGMaps.py
-%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepoMGMaps.pyc
-%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepoMGMaps.pyo
-%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepoSQLite3.py
-%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepoSQLite3.pyc
-%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepoSQLite3.pyo
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/Factory.py
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/Factory.pyc
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/Factory.pyo
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/__init__.py
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/tileFStoMGMaps.py
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/tileFStoMGMaps.pyc
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/tileFStoMGMaps.pyo
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/tileFStoOSM.py
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/tileFStoOSM.pyc
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/tileFStoOSM.pyo
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/tilesRepo.py
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/tilesRepo.pyc
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/tilesRepo.pyo
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/tilesRepoFS.py
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/tilesRepoFS.pyc
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/tilesRepoFS.pyo
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/tilesRepoFactory.py
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/tilesRepoFactory.pyc
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/tilesRepoFactory.pyo
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/tilesRepoMGMaps.py
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/tilesRepoMGMaps.pyc
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/tilesRepoMGMaps.pyo
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/tilesRepoOSM.py
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/tilesRepoOSM.pyc
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/tilesRepoOSM.pyo
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/tilesRepoRMaps.py
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/tilesRepoRMaps.pyc
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/tilesRepoRMaps.pyo
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/tilesRepoSQLite3.py
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/tilesRepoSQLite3.pyc
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo/tilesRepoSQLite3.pyo
 %%PYTHON_SITELIBDIR%%/gmapcatcher/widChangeTheme.py
 %%PYTHON_SITELIBDIR%%/gmapcatcher/widChangeTheme.pyc
 %%PYTHON_SITELIBDIR%%/gmapcatcher/widChangeTheme.pyo
@@ -249,15 +267,16 @@ share/applications/gmapcatcher.desktop
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 share/pixmaps/gmapcatcher/downloading.png
 share/pixmaps/gmapcatcher/map.png
-share/pixmaps/gmapcatcher/map.svg
 share/pixmaps/gmapcatcher/maps.ico
 share/pixmaps/gmapcatcher/marker.png
 share/pixmaps/gmapcatcher/marker1.png
 share/pixmaps/gmapcatcher/marker_gps.png
+share/pixmaps/gmapcatcher/marker_s.png
 share/pixmaps/gmapcatcher/missing.png
 share/pixmaps/gmapcatcher/setup.bmp
 share/pixmaps/map.png
 @dirrm share/pixmaps/gmapcatcher
+@dirrm %%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo
 @dirrm %%PYTHON_SITELIBDIR%%/gmapcatcher/pyGPSD/nmea/serial
 @dirrm %%PYTHON_SITELIBDIR%%/gmapcatcher/pyGPSD/nmea
 @dirrm %%PYTHON_SITELIBDIR%%/gmapcatcher/pyGPSD
