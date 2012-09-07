@@ -1,4 +1,3 @@
-bin/msgfmt.pl
 %%SITE_PERL%%/Locale/Msgfmt/po.pm
 %%SITE_PERL%%/Locale/Msgfmt/Utils.pm
 %%SITE_PERL%%/Locale/Msgfmt/mo.pm
