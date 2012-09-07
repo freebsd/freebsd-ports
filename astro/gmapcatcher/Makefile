@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	gmapcatcher
-PORTVERSION=	0.7.6.1
-PORTREVISION=	1
+PORTVERSION=	0.7.7.2
 CATEGORIES=	astro geography
 MASTER_SITES=	http://gmapcatcher.googlecode.com/files/
 DISTNAME=	GMapCatcher-${PORTVERSION}
 
 MAINTAINER=	kevlo@FreeBSD.org
-COMMENT=	An offline map viewer
+COMMENT=	Offline map viewer
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
