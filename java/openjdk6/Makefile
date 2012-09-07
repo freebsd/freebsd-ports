@@ -75,7 +75,7 @@ UPDATE_VERSION=	32
 
 # do not depend on devel/apache-ant to avoid circular dependency, but
 # use .tar.bz2 distfile to avoid duplicated downloads
-ANTVERSION=	1.8.3
+ANTVERSION=	1.8.4
 ANTFILE=	apache-ant-${ANTVERSION}-bin.tar.bz2
 
 # rely on bsdtar ability to extract .gz, .bz2 and .zip archives
@@ -131,6 +131,7 @@ MAKE_ENV=	LANG=C LC_ALL=C \
 		ALT_PACKAGE_PATH=${LOCALBASE} \
 		ALT_DROPS_DIR=${DISTDIR} \
 		ANT_HOME=${WRKDIR}/apache-ant-${ANTVERSION} \
+		JAVACMD=${BOOTSTRAPJDKDIR}/bin/java \
 		BUILD_NUMBER=${PORTVERSION} \
 		NO_DOCS=true \
 		MILESTONE=fcs \
