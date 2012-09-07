@@ -1,22 +1,11 @@
---- CMakeLists.txt.orig	2012-02-17 23:41:13.982306000 +0100
-+++ CMakeLists.txt	2012-03-09 15:39:46.949702574 +0100
-@@ -226,7 +226,7 @@
- 	endif(LIBSVN_FOUND)
+--- CMakeLists.txt.orig	2012-08-27 18:14:13.000000000 +0200
++++ CMakeLists.txt	2012-08-27 18:14:52.000000000 +0200
+@@ -225,7 +225,7 @@
+     endif(LIBSVN_FOUND)
  endif(ENABLE_LIBSVN)
  
 -find_package(PLIB REQUIRED puaux pu js fnt)
 +find_package(PLIB REQUIRED puaux pu js fnt net)
- find_package(SimGear 2.6.0 REQUIRED)
  
- if (JPEG_FACTORY)
-@@ -342,7 +342,9 @@
- 	README.OSG
- 	README.SimGear)
- 
--INSTALL(FILES ${INSTALL_DOCS} DESTINATION ${CMAKE_INSTALL_DOCDIR} OPTIONAL)
-+if(NOT NOPORTDOCS)
-+	INSTALL(FILES ${INSTALL_DOCS} DESTINATION ${CMAKE_INSTALL_DOCDIR} OPTIONAL)
-+endif()
- 
- #-----------------------------------------------------------------------------
- ### uninstall target
+ # FlightGear and SimGear versions need to match
+ find_package(SimGear ${FLIGHTGEAR_VERSION} REQUIRED)

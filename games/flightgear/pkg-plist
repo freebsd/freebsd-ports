@@ -6,6 +6,7 @@ bin/fgjs
 bin/metar
 bin/terrasync
 bin/yasim
+bin/yasim-proptest
 bin/GPSsmooth
 bin/MIDGsmooth
 bin/UGsmooth

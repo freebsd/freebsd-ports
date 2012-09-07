@@ -6,52 +6,52 @@
 #
 
 PORTNAME=	flightgear-aircraft
-PORTVERSION=	20120309
+PORTVERSION=	20120830
 CATEGORIES=	games
 # see http://www.flightgear.org/templates.js
-MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/Aircraft-2.6/ \
-		http://ftp.linux.kiev.ua/pub/mirrors/ftp.flightgear.org/flightgear/Aircraft-2.6/ \
-		ftp://ftp.kingmont.com/flightsims/flightgear/Aircraft-2.6/ \
-		ftp://ftp.de.flightgear.org/pub/fgfs/Aircraft-2.6/ \
-		ftp://flightgear.wo0t.de/flightgear-ftp/ftp/Aircraft-2.6/
+MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/Aircraft-2.8/ \
+		http://ftp.linux.kiev.ua/pub/mirrors/ftp.flightgear.org/flightgear/Aircraft-2.8/ \
+		ftp://ftp.kingmont.com/flightsims/flightgear/Aircraft-2.8/ \
+		ftp://ftp.de.flightgear.org/pub/fgfs/Aircraft-2.8/ \
+		ftp://flightgear.wo0t.de/flightgear-ftp/ftp/Aircraft-2.8/
 # Selection of production-ready/well-known planes
 # (planes already included in flightgear-data are excluded)
 # Please contact the MAINTAINER if a plane is missing
-DISTFILES=	737-200_20110713.zip \
-		A-10_20120104.zip \
-		A300_20101217.zip \
-		Alouette-II_20110523.zip \
-		Alphajet_20110228.zip \
-		B-17_20110516.zip \
-		Breguet-XIX_20101217.zip \
-		C130_20101217.zip \
-		Caravelle_20101217.zip \
-		Caudron-G3_20101217.zip \
-		F80C_20110915.zip \
-		Hurricane_20111202.zip \
-		IL-2_20110324.zip \
-		Lightning_20111219.zip \
+DISTFILES=	737-200_20120506.zip \
+		A-10_20120717.zip \
+		A300_20120717.zip \
+		Alouette-II_20120506.zip \
+		Alphajet_20120506.zip \
+		B-17_20120506.zip \
+		Breguet-XIX_20100829.zip \
+		C130_20120717.zip \
+		Caravelle_20120506.zip \
+		Caudron-G3_20120506.zip \
+		F80C_20120717.zip \
+		Hurricane_20120806.zip \
+		IL-2_20110311.zip \
+		Lightning_20120717.zip \
 		Lockheed1049h_1.0.zip \
-		Messerschmitt-P1101_20101217.zip \
-		MirageIII_20110124.zip \
-		PaperAirplane_20110103.zip \
-		Pond-Racer_20101217.zip \
-		R44_20111024.zip \
-		Spitfire_20120217.zip \
-		Stieglitz_20101217.zip \
-		Super-Etendard_20110324.zip \
-		Supermarine-S.6B_20110118.zip \
-		Superwal_20101217.zip \
-		airwaveXtreme150_20101217.zip \
-		asw20_20101217.zip \
-		bf109_20111212.zip \
-		c310_20120117.zip \
-		dhc3_20110411.zip \
-		f16_20120104.zip \
-		harrier_20101217.zip \
-		pa24-250_20110222.zip \
-		tu154_20101217.zip \
-		wrightFlyer1903_20101217.zip
+		Messerschmitt-P1101_20101005.zip \
+		MirageIII_20120222.zip \
+		PaperAirplane_20101229.zip \
+		Pond-Racer_20120506.zip \
+		R44_20120506.zip \
+		Spitfire_20120717.zip \
+		Stieglitz_20091025.zip \
+		Super-Etendard_20120501.zip \
+		Supermarine-S.6B_20110114.zip \
+		Superwal_20100330.zip \
+		airwaveXtreme150_July-2012.zip \
+		asw20_20081019.zip \
+		bf109_20120717.zip \
+		c310_20120307.zip \
+		dhc3_20120506.zip \
+		f16_20120717.zip \
+		harrier_20120717.zip \
+		pa24-250_20120717.zip \
+		tu154_20081221.zip \
+		wrightFlyer1903_20070710.zip
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	martymac@FreeBSD.org

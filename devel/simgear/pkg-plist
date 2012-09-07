@@ -34,7 +34,6 @@ include/simgear/io/HTTPClient.hxx
 include/simgear/io/HTTPRequest.hxx
 include/simgear/magvar/magvar.hxx
 include/simgear/magvar/coremag.hxx
-include/simgear/math/Math.hxx
 include/simgear/math/SGBox.hxx
 include/simgear/math/SGCMath.hxx
 include/simgear/math/SGGeoc.hxx
@@ -84,8 +83,7 @@ include/simgear/props/props.hxx
 include/simgear/props/props_io.hxx
 include/simgear/props/propsfwd.hxx
 include/simgear/props/tiedpropertylist.hxx
-include/simgear/route/route.hxx
-include/simgear/route/waypoint.hxx
+include/simgear/props/vectorPropTemplates.hxx
 include/simgear/serial/serial.hxx
 include/simgear/structure/OSGUtils.hxx
 include/simgear/structure/OSGVersion.hxx
@@ -146,7 +144,6 @@ include/simgear/scene/material/EffectBuilder.hxx
 include/simgear/scene/material/EffectCullVisitor.hxx
 include/simgear/scene/material/EffectGeode.hxx
 include/simgear/scene/material/GLPredicate.hxx
-include/simgear/scene/material/Noise.hxx
 include/simgear/scene/material/Pass.hxx
 include/simgear/scene/material/Technique.hxx
 include/simgear/scene/material/TextureBuilder.hxx
@@ -196,15 +193,17 @@ include/simgear/scene/tgdb/SGTriangleBin.hxx
 include/simgear/scene/tgdb/SGVasiDrawable.hxx
 include/simgear/scene/tgdb/SGVertexArrayBin.hxx
 include/simgear/scene/tgdb/ShaderGeometry.hxx
-include/simgear/scene/tgdb/TileCache.hxx
-include/simgear/scene/tgdb/TileEntry.hxx
 include/simgear/scene/tgdb/TreeBin.hxx
 include/simgear/scene/tgdb/apt_signs.hxx
 include/simgear/scene/tgdb/obj.hxx
 include/simgear/scene/tgdb/pt_lights.hxx
 include/simgear/scene/tgdb/userdata.hxx
+include/simgear/scene/tgdb/SGBuildingBin.hxx
 include/simgear/scene/util/CopyOp.hxx
 include/simgear/scene/util/NodeAndDrawableVisitor.hxx
+include/simgear/scene/util/Noise.hxx
+include/simgear/scene/util/OsgMath.hxx
+include/simgear/scene/util/OsgSingleton.hxx
 include/simgear/scene/util/PrimitiveUtils.hxx
 include/simgear/scene/util/QuadTreeBuilder.hxx
 include/simgear/scene/util/RenderConstants.hxx
@@ -222,7 +221,6 @@ include/simgear/scene/util/SplicingVisitor.hxx
 include/simgear/scene/util/StateAttributeFactory.hxx
 include/simgear/scene/util/UpdateOnceCallback.hxx
 include/simgear/scene/util/VectorArrayAdapter.hxx
-include/simgear/scene/util/PathOptions.hxx
 include/simgear/scene/util/project.hxx
 include/simgear/scene/tsync/terrasync.hxx
 include/simgear/sound/sample_group.hxx
@@ -245,7 +243,6 @@ include/simgear/sound/xmlsound.hxx
 @dirrm include/simgear/scene/material
 @dirrm include/simgear/scene/bvh
 @dirrm include/simgear/scene
-@dirrm include/simgear/route
 @dirrm include/simgear/props
 @dirrm include/simgear/nasal
 @dirrm include/simgear/misc
@@ -260,7 +257,6 @@ include/simgear/sound/xmlsound.hxx
 lib/libsgmisc.a
 lib/libsgscreen.a
 lib/libsgprops.a
-lib/libsgroute.a
 lib/libsgmodel.a
 lib/libsgmath.a
 lib/libsgmaterial.a

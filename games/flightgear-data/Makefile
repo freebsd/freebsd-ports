@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flightgear-data
-PORTVERSION=	2.6.0
+PORTVERSION=	2.8.0
 CATEGORIES=	games
 # see http://www.flightgear.org/templates.js
 MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/Shared/ \
