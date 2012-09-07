@@ -1,9 +1,4 @@
-# New ports collection makefile for:	gbsplay
-# Date created:				25 Jun 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	gbsplay
 PORTVERSION=	0.0.8
@@ -31,16 +26,16 @@ MAN1=		gbsplay.1 gbsinfo.1
 MAN5=		gbsplayrc.5
 PORTDOCS=	COPYRIGHT HISTORY README
 
-OPTIONS=	NAS "NAS sound output" on
+OPTIONS_DEFINE=	NAS
 
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PKGNAMEPREFIX} == ""
 
-.if defined(WITH_NAS)
-LIB_DEPENDS+=	audio.2:${PORTSDIR}/audio/nas
+.if ${PORT_OPTIONS:MNAS}
+LIB_DEPENDS+=	audio:${PORTSDIR}/audio/nas
 .else
 CONFIGURE_ARGS+=	--disable-nas
 .endif
@@ -98,4 +93,4 @@ do-install:
 
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

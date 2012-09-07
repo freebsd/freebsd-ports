@@ -1,9 +1,4 @@
-# New ports collection makefile for:	xmms-gbsplay
-# Date created:				25 Jun 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
 # $FreeBSD$
-#
 
 PKGNAMEPREFIX=	xmms-
 
