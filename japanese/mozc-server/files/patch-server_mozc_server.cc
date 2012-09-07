@@ -1,5 +1,5 @@
---- server/mozc_server.cc.orig	2012-05-29 15:37:00.266961647 +0900
-+++ server/mozc_server.cc	2012-04-02 08:24:24.633727039 +0900
+--- server/mozc_server.cc.orig	2012-09-07 10:21:29.170020927 +0900
++++ server/mozc_server.cc	2012-09-07 10:30:28.034021395 +0900
 @@ -32,6 +32,9 @@
  #ifdef OS_WINDOWS
  #include <windows.h>
@@ -9,8 +9,8 @@
 +#endif
  
  #include "base/base.h"
- #include "base/process.h"
-@@ -49,6 +52,23 @@
+ #include "base/crash_report_util.h"
+@@ -51,6 +54,23 @@
  mozc::SessionServer *g_session_server = NULL;
  }
  
@@ -34,7 +34,7 @@
  namespace mozc {
  namespace {
  
-@@ -127,6 +147,12 @@
+@@ -132,6 +152,12 @@
        return -1;
      }
  

@@ -13,6 +13,8 @@ DATADIR=	${PREFIX}/share/scim-${PORTNAME}
 MASTERDIR=	${.CURDIR}/../../japanese/mozc-server
 PKGMESSAGE=	${.CURDIR}/pkg-message
 
+BROKEN=		Google droped SCIM support from Mozc. This port will be deleted.
+
 BUILD_MOZC_LIST=	scim_mozc
 
 post-install:

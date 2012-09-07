@@ -1,5 +1,5 @@
---- unix/ibus/path_util.cc.orig	2012-05-29 15:36:59.663960777 +0900
-+++ unix/ibus/path_util.cc	2012-01-29 13:49:15.994806248 +0900
+--- unix/ibus/path_util.cc.orig	2012-09-07 10:21:29.112021454 +0900
++++ unix/ibus/path_util.cc	2012-01-29 13:49:15.994806000 +0900
 @@ -30,14 +30,22 @@
  #include "unix/ibus/path_util.h"
  

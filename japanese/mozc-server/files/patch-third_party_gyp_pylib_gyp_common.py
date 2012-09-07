@@ -1,6 +1,6 @@
---- third_party/gyp/pylib/gyp/common.py.orig	2012-05-29 15:36:59.734962050 +0900
-+++ third_party/gyp/pylib/gyp/common.py	2012-05-01 12:46:18.154691389 +0900
-@@ -353,8 +353,10 @@
+--- third_party/gyp/pylib/gyp/common.py.orig	2012-09-07 10:21:29.147021135 +0900
++++ third_party/gyp/pylib/gyp/common.py	2012-09-07 10:30:44.711021503 +0900
+@@ -362,8 +362,10 @@
      'win32': 'win',
      'darwin': 'mac',
      'sunos5': 'solaris',
@@ -10,6 +10,6 @@
 +    'freebsd8': 'linux',
 +    'freebsd9': 'linux',
 +    'freebsd10': 'linux',
+     'freebsd9': 'freebsd',
    }
    flavor = flavors.get(sys.platform, 'linux')
-   return params.get('flavor', flavor)

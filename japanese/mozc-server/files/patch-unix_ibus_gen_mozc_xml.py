@@ -1,14 +1,14 @@
---- unix/ibus/gen_mozc_xml.py.orig	2012-05-29 15:36:59.663960777 +0900
-+++ unix/ibus/gen_mozc_xml.py	2012-01-29 13:49:15.972806246 +0900
-@@ -39,6 +39,7 @@
- 
+--- unix/ibus/gen_mozc_xml.py.orig	2012-09-07 10:21:29.111022215 +0900
++++ unix/ibus/gen_mozc_xml.py	2012-09-07 10:30:26.421021738 +0900
+@@ -40,6 +40,7 @@
  import optparse
+ import os
  import sys
 +import os
  
  # Information to generate <component> part of mozc.xml. %s will be replaced with
  # a product name, 'Mozc' or 'Google Japanese Input'.
-@@ -64,6 +65,24 @@
+@@ -65,6 +66,24 @@
      'rank': '80',
  }
  

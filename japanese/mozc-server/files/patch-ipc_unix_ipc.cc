@@ -1,5 +1,5 @@
---- ipc/unix_ipc.cc.orig	2012-05-29 15:37:10.806961005 +0900
-+++ ipc/unix_ipc.cc	2012-05-29 16:04:46.619961889 +0900
+--- ipc/unix_ipc.cc.orig	2012-09-07 10:21:32.692021977 +0900
++++ ipc/unix_ipc.cc	2012-09-07 10:38:01.136021395 +0900
 @@ -41,7 +41,7 @@
  #include <sys/time.h>
  #include <sys/types.h>
@@ -9,7 +9,7 @@
  #include <sys/ucred.h>
  #endif
  #include <sys/wait.h>
-@@ -124,7 +124,7 @@
+@@ -125,7 +125,7 @@
  bool IsPeerValid(int socket, pid_t *pid) {
    *pid = 0;
  
@@ -18,7 +18,7 @@
    // If the OS is MAC, we should validate the peer by using LOCAL_PEERCRED.
    struct xucred peer_cred;
    socklen_t peer_cred_len = sizeof(struct xucred);
-@@ -146,7 +146,7 @@
+@@ -147,7 +147,7 @@
    *pid = 0;
  #endif
  
@@ -27,7 +27,7 @@
    // On ARM Linux, we do nothing and just return true since the platform
    // sometimes doesn't support the getsockopt(sock, SOL_SOCKET, SO_PEERCRED)
    // system call.
-@@ -309,7 +309,7 @@
+@@ -310,7 +310,7 @@
      address.sun_family = AF_UNIX;
      ::memcpy(address.sun_path, server_address.data(), server_address_length);
      address.sun_path[server_address_length] = '\0';
@@ -36,7 +36,7 @@
      address.sun_len = SUN_LEN(&address);
      const size_t sun_len = sizeof(address);
  #else
-@@ -434,21 +434,21 @@
+@@ -435,21 +435,21 @@
                 SO_REUSEADDR,
                 reinterpret_cast<char *>(&on),
                 sizeof(on));
