@@ -290,7 +290,6 @@
     SUBDIR += hawkvoice
     SUBDIR += herrie
     SUBDIR += hexter
-    SUBDIR += holyshout
     SUBDIR += hs-ALUT
     SUBDIR += hs-OpenAL
     SUBDIR += hs-libmpd
