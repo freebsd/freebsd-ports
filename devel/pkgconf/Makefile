@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pkgconf
-PORTVERSION=	0.8.7
-PORTREVISION=	2
+PORTVERSION=	0.8.8
 CATEGORIES=	devel
 MASTER_SITES=	http://tortois.es/~nenolod/distfiles/ \
 		http://files.etoilebsd.net/pkgconf/
