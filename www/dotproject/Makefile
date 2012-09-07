@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dotproject
-PORTVERSION=	2.1.5
-PORTREVISION=	2
+PORTVERSION=	2.1.6
 CATEGORIES=	www devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/dotProject%20Version%20${PORTVERSION}
 
@@ -26,12 +25,13 @@ OPTIONS_DEFAULT=LDAP
 USE_PHP+=	ldap xml
 .endif
 
+post-extract:
+	@${FIND} ${WRKSRC} -type d -name '.svn' | ${XARGS} ${RM} -rf
+	@${FIND} ${WRKSRC} -type f -name '.cvsignore' -delete
+
 do-install:
 	${MKDIR} ${WWWDIR}
 	${CP} -R ${WRKSRC}/* ${WWWDIR}
-	${RM} ${WWWDIR}/locales/es
-	${RM} ${WWWDIR}/locales/pt_br
-	${MKDIR} ${WWWDIR}/files/temp
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 
 post-install:

@@ -4,7 +4,6 @@ www/dotproject/LICENSE
 www/dotproject/README
 www/dotproject/base.php
 www/dotproject/classes/CustomFields.class.php
-www/dotproject/classes/auth.mysql.class.php
 www/dotproject/classes/authenticator.class.php
 www/dotproject/classes/csscolor.class.php
 www/dotproject/classes/customfieldsparser.class.php
@@ -12,6 +11,7 @@ www/dotproject/classes/date.class.php
 www/dotproject/classes/dp.class.php
 www/dotproject/classes/event_queue.class.php
 www/dotproject/classes/index.html
+www/dotproject/classes/kses.class.php
 www/dotproject/classes/libmail.class.php
 www/dotproject/classes/permissions.class.php
 www/dotproject/classes/query.class.php
@@ -31,6 +31,7 @@ www/dotproject/db/upgrade_211_to_212.sql
 www/dotproject/db/upgrade_212_to_213.sql
 www/dotproject/db/upgrade_213_to_214.sql
 www/dotproject/db/upgrade_214_to_215.sql
+www/dotproject/db/upgrade_215_to_216.sql
 www/dotproject/db/upgrade_21_to_211.sql
 www/dotproject/db/upgrade_21rc1_to_21rc2.sql
 www/dotproject/db/upgrade_21rc2_to_21.sql
@@ -39,6 +40,10 @@ www/dotproject/db/upgrade_contacts_company.php
 www/dotproject/db/upgrade_latest.php
 www/dotproject/db/upgrade_latest.sql
 www/dotproject/db/upgrade_permissions.php
+www/dotproject/files/temp/.htaccess
+www/dotproject/files/temp/index.html
+www/dotproject/files/.htaccess
+www/dotproject/files/index.html
 www/dotproject/fileviewer.php
 www/dotproject/functions/admin_func.php
 www/dotproject/functions/forums_func.php
@@ -1034,7 +1039,6 @@ www/dotproject/modules/links/links.class.php
 www/dotproject/modules/links/projects_tab.links.php
 www/dotproject/modules/links/setup.php
 www/dotproject/modules/links/tasks_tab.links.php
-www/dotproject/modules/projectdesigner/.cvsignore
 www/dotproject/modules/projectdesigner/config.php
 www/dotproject/modules/projectdesigner/configure.php
 www/dotproject/modules/projectdesigner/do_addtasks_aed.php
@@ -1124,9 +1128,6 @@ www/dotproject/modules/projectdesigner/jscalendar/menuarrow.gif
 www/dotproject/modules/projectdesigner/jscalendar/menuarrow2.gif
 www/dotproject/modules/projectdesigner/jscalendar/multiple-dates.html
 www/dotproject/modules/projectdesigner/jscalendar/release-notes.html
-www/dotproject/modules/projectdesigner/jscalendar/simple-1.html
-www/dotproject/modules/projectdesigner/jscalendar/simple-2.html
-www/dotproject/modules/projectdesigner/jscalendar/simple-3.html
 www/dotproject/modules/projectdesigner/jscalendar/skins/aqua/active-bg.gif
 www/dotproject/modules/projectdesigner/jscalendar/skins/aqua/dark-bg.gif
 www/dotproject/modules/projectdesigner/jscalendar/skins/aqua/hover-bg.gif
@@ -1137,8 +1138,6 @@ www/dotproject/modules/projectdesigner/jscalendar/skins/aqua/status-bg.gif
 www/dotproject/modules/projectdesigner/jscalendar/skins/aqua/theme.css
 www/dotproject/modules/projectdesigner/jscalendar/skins/aqua/title-bg.gif
 www/dotproject/modules/projectdesigner/jscalendar/skins/aqua/today-bg.gif
-www/dotproject/modules/projectdesigner/jscalendar/test-position.html
-www/dotproject/modules/projectdesigner/jscalendar/test.php
 www/dotproject/modules/projectdesigner/locales/en.inc
 www/dotproject/modules/projectdesigner/locales/pt.inc
 www/dotproject/modules/projectdesigner/printproject.php
