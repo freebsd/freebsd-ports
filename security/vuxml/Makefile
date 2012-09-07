@@ -86,6 +86,11 @@ validate: tidy
 	fi
 
 tidy: vuln.xml
+	@if [ ! -e ${LOCALBASE}/share/xml/dtd/vuxml/catalog.xml ]; \
+	then \
+		echo "Please install the VuXML port prior to running make validate/tidy."; \
+		exit 1; \
+	fi
 	${SH} ${FILESDIR}/tidy.sh "${FILESDIR}/tidy.xsl" "${VUXML_FILE}" > "${VUXML_FILE}.tidy"
 
 newentry:
