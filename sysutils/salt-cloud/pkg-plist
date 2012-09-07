@@ -1,0 +1,56 @@
+bin/salt-cloud
+%%PYTHON_SITELIBDIR%%/saltcloud/__init__.py
+%%PYTHON_SITELIBDIR%%/saltcloud/__init__.pyc
+%%PYTHON_SITELIBDIR%%/saltcloud/__init__.pyo
+%%PYTHON_SITELIBDIR%%/saltcloud/cli.py
+%%PYTHON_SITELIBDIR%%/saltcloud/cli.pyc
+%%PYTHON_SITELIBDIR%%/saltcloud/cli.pyo
+%%PYTHON_SITELIBDIR%%/saltcloud/cloud.py
+%%PYTHON_SITELIBDIR%%/saltcloud/cloud.pyc
+%%PYTHON_SITELIBDIR%%/saltcloud/cloud.pyo
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/__init__.py
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/__init__.pyc
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/__init__.pyo
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/aws.py
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/aws.pyc
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/aws.pyo
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/gogrid.py
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/gogrid.pyc
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/gogrid.pyo
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/joyent.py
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/joyent.pyc
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/joyent.pyo
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/linode.py
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/linode.pyc
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/linode.pyo
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/rackspace.py
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/rackspace.pyc
+%%PYTHON_SITELIBDIR%%/saltcloud/clouds/rackspace.pyo
+%%PYTHON_SITELIBDIR%%/saltcloud/config.py
+%%PYTHON_SITELIBDIR%%/saltcloud/config.pyc
+%%PYTHON_SITELIBDIR%%/saltcloud/config.pyo
+%%PYTHON_SITELIBDIR%%/saltcloud/deploy/Arch.sh
+%%PYTHON_SITELIBDIR%%/saltcloud/deploy/Fedora.sh
+%%PYTHON_SITELIBDIR%%/saltcloud/deploy/None.sh
+%%PYTHON_SITELIBDIR%%/saltcloud/deploy/RHEL5.sh
+%%PYTHON_SITELIBDIR%%/saltcloud/deploy/RHEL6.sh
+%%PYTHON_SITELIBDIR%%/saltcloud/deploy/Ubuntu.sh
+%%PYTHON_SITELIBDIR%%/saltcloud/libcloudfuncs.py
+%%PYTHON_SITELIBDIR%%/saltcloud/libcloudfuncs.pyc
+%%PYTHON_SITELIBDIR%%/saltcloud/libcloudfuncs.pyo
+%%PYTHON_SITELIBDIR%%/saltcloud/loader.py
+%%PYTHON_SITELIBDIR%%/saltcloud/loader.pyc
+%%PYTHON_SITELIBDIR%%/saltcloud/loader.pyo
+%%PYTHON_SITELIBDIR%%/saltcloud/output.py
+%%PYTHON_SITELIBDIR%%/saltcloud/output.pyc
+%%PYTHON_SITELIBDIR%%/saltcloud/output.pyo
+%%PYTHON_SITELIBDIR%%/saltcloud/utils/__init__.py
+%%PYTHON_SITELIBDIR%%/saltcloud/utils/__init__.pyc
+%%PYTHON_SITELIBDIR%%/saltcloud/utils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/saltcloud/version.py
+%%PYTHON_SITELIBDIR%%/saltcloud/version.pyc
+%%PYTHON_SITELIBDIR%%/saltcloud/version.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/saltcloud/clouds
+@dirrm %%PYTHON_SITELIBDIR%%/saltcloud/deploy
+@dirrm %%PYTHON_SITELIBDIR%%/saltcloud/utils
+@dirrm %%PYTHON_SITELIBDIR%%/saltcloud

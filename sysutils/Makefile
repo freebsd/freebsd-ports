@@ -827,6 +827,7 @@
     SUBDIR += safe-rm
     SUBDIR += safecat
     SUBDIR += salt
+    SUBDIR += salt-cloud
     SUBDIR += samefile
     SUBDIR += samesame
     SUBDIR += sarah
