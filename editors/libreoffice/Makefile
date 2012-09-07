@@ -208,7 +208,7 @@ MANCOMPRESSED=	yes
 #USE_GCC=	4.6+
 #DISTFILES+=	bd30e9cf5523cdfc019b94f5e1d7fd19-cppunit-1.12.1.tar.gz:ext
 #.else
-.if exists(/usr/bin/clang)
+.if exists(/usr/bin/clang) && ${OSVERSION} >= 900014
 CC=	/usr/bin/clang
 CPP=	/usr/bin/clang-cpp
 CXX=	/usr/bin/clang++
