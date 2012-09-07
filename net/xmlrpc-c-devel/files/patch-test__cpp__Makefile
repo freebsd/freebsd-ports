@@ -1,0 +1,21 @@
+--- test/cpp/Makefile	(revision 2386)
++++ test/cpp/Makefile	(revision 2387)
+@@ -16,7 +16,7 @@
+ 
+ XMLRPC_C_CONFIG = $(BLDDIR)/xmlrpc-c-config.test
+ 
+-LIBS := $(shell $(XMLRPC_C_CONFIG) client --ldadd)
++LIBS := 
+ 
+ LIBS += -lpthread
+ 
+@@ -42,6 +42,7 @@
+ ifeq ($(MUST_BUILD_CLIENT),yes)
+   TEST_OBJS += testclient.o
+   CLIENT_LIBS = $(LIBXMLRPC_CLIENTPP_A) $(LIBXMLRPC_CLIENT_A)
++  LIBS += $(shell $(XMLRPC_C_CONFIG) client --ldadd)
+ else
+   TEST_OBJS += testclient_dummy.o
+   CLIENT_LIBS =
+Index: test/Makefile
+===================================================================
