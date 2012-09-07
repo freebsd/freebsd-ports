@@ -1,7 +1,15 @@
 			GALAXIS for UNIX
-	   by Eric S. Raymond <esr@snark.thyrsus.com>
 
-This directory contains curses-based clone of the nifty little Macintosh
-freeware game Galaxis.
+Lifeboats from a crippled interstellar liner are adrift in a
+starfield.  To find them, you can place probes that look in all
+eight compass directions and tell you how many lifeboats they see.
+If you drop a probe directly on a lifeboat it will be revealed
+immediately. Your objective: find the lifeboats as quickly as
+possible, before the stranded passengers run out of oxygen!
+
+This is a UNIX-hosted, curses-based clone of the nifty little
+Macintosh freeware game Galaxis. It doesn't have the super-simple,
+point-and-click interface of the original, but compensates by
+automating away some of the game's simpler deductions.
 
 WWW: http://www.catb.org/~esr/galaxis/
