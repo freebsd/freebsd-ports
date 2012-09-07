@@ -3664,3 +3664,4 @@ www/p5-Xango||2012-08-31|Has expired: Removed from CPAN
 lang/spidermonkey|lang/spidermonkey17|2012-09-01|Moved to allow for addition of the 1.8 development line.
 cad/gtkwave3|cad/gtkwave|2012-09-04|There is only one version of this now
 multimedia/x264-devel||2012-09-07|Has expired: x264 github development makes this port obsolete
+audio/holyshout||2012-09-07|Has expired: upstream has disappeared
