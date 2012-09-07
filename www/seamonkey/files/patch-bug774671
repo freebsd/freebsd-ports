@@ -1,0 +1,15 @@
+--- mozilla/js/src/jsprvtd.h.orig	2012-08-27 06:49:16.000000000 +0200
++++ mozilla/js/src/jsprvtd.h	2012-09-06 22:21:52.000000000 +0200
+@@ -149,9 +149,9 @@
+ class UpvarCookie;
+ 
+ class Proxy;
+-class BaseProxyHandler;
+-class DirectWrapper;
+-class CrossCompartmentWrapper;
++class JS_FRIEND_API(BaseProxyHandler);
++class JS_FRIEND_API(DirectWrapper);
++class JS_FRIEND_API(CrossCompartmentWrapper);
+ 
+ class TempAllocPolicy;
+ class RuntimeAllocPolicy;

@@ -1,21 +1,5 @@
 --- js/src/configure.in.orig	2012-01-29 11:24:33.000000000 +0100
 +++ js/src/configure.in	2012-01-30 23:30:02.051087215 +0100
-@@ -2732,6 +2742,7 @@
-     AC_DEFINE(JS_NUNBOX32)
-     ;;
- sparc*-*)
-+    if test ! "$HAVE_64BIT_OS" ; then
-     NANOJIT_ARCH=Sparc
-     ENABLE_METHODJIT=1
-     ENABLE_MONOIC=1
-@@ -2739,6 +2750,7 @@
-     ENABLE_METHODJIT_TYPED_ARRAY=1
-     AC_DEFINE(JS_CPU_SPARC)
-     AC_DEFINE(JS_NUNBOX32)
-+    fi
-     ;;
- esac
- 
 @@ -5946,6 +5946,7 @@ _EGREP_PATTERN="${_EGREP_PATTERN}dummy_n
   * C++ implementations should define these macros only when __STDC_LIMIT_MACROS
   * is defined before <stdint.h> is included. */

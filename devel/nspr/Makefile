@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=../configure
-CONFIGURE_ARGS=	--disable-debug \
+CONFIGURE_ARGS=	--srcdir=${WRKSRC:H} \
 		--with-pthreads
 CONFIGURE_ENV=	BSD_PTHREAD_LIBS=${PTHREAD_LIBS}
 
@@ -31,8 +31,8 @@ LIBS=		libnspr4.so.1 libplc4.so.1 libplds4.so.1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "arm"
-BROKEN=		Does not compile on arm
+.if !defined(WITH_DEBUG)
+CONFIGURE_ARGS+=--disable-debug
 .endif
 
 post-patch:

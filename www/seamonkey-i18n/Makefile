@@ -1,4 +1,9 @@
+# New ports collection makefile for:	firefox3-i18n
+# Date created:		28 May 2006
+# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
+#
 # $FreeBSD$
+#
 
 PORTNAME=	seamonkey-i18n
 PORTVERSION=	2.12

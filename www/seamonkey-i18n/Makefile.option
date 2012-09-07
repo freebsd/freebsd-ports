@@ -1,4 +1,9 @@
+# New ports collection makefile.option for:    firefox3-i18n
+# Date created:         30 Nov 2008
+# Whom:                 Koji Yokota <yokota@res.otaru-uc.ac.jp>
+#
 # $FreeBSD$
+#
 
 OPTIONS=		LANG_CA "Catalan"               off \
 				LANG_CS "Czech"                 off \

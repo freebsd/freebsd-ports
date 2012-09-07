@@ -560,7 +560,7 @@ cairo_EXTRACT_AFTER_ARGS=	--exclude mozilla*/gfx/cairo
 dbm_EXTRACT_AFTER_ARGS=		--exclude mozilla*/dbm
 
 event_LIB_DEPENDS=	event-2.0:${PORTSDIR}/devel/libevent2
-event_MOZ_OPTIONS=	--with-system-libevent=${LOCALBASE}
+event_MOZ_OPTIONS=	--with-system-libevent
 event_EXTRACT_AFTER_ARGS=	--exclude mozilla*/ipc/chromium/src/third_party/libevent
 
 ffi_LIB_DEPENDS=	ffi:${PORTSDIR}/devel/libffi

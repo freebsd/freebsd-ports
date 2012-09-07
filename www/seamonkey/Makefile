@@ -77,7 +77,6 @@ MOZ_OPTIONS+=	--disable-ldap --disable-mailnews
 .else
 # mail and news desired, but not LDAP
 .if ! ${PORT_OPTIONS:MLDAP}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bridge-bridge.mk
 MOZ_OPTIONS+=	--disable-ldap --enable-mailnews
 .else
 MOZ_OPTIONS+=	--enable-ldap --enable-mailnews

@@ -1,6 +1,10 @@
+# New ports collection makefile.lang for:    firefox3-i18n
+# Date created:         30 Nov 2008
+# Whom:                 Koji Yokota <yokota@res.otaru-uc.ac.jp>
+#
 # $FreeBSD$
 #
-# Currently, the following languages are supported.
+# Currently, the following 22 languages are supported.
 #
 SEAMONKEY_I18N_ALL_=	ca cs de en-GB en-US es-AR es-ES \
 			fi fr hu it ja-JP-mac ja lt nb-NO nl pl \

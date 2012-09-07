@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox
-DISTVERSION=	15.0
+DISTVERSION=	15.0.1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -68,7 +68,6 @@ CFLAGS+=	-mminimal-toc
 
 .if ${PORT_OPTIONS:MPGO}
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
-USE_PYTHON_BUILD=	yes
 USE_DISPLAY=		yes
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 
