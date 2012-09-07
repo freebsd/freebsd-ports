@@ -7,6 +7,7 @@
 
 PORTNAME=	Locale-Msgfmt
 PORTVERSION=	0.15
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +17,6 @@ COMMENT=	Compile .po files to .mo files
 
 PERL_CONFIGURE=	yes
 
-MAN1=		msgfmt.pl.1
 MAN3=		Locale::Msgfmt::Utils.3 \
 		Locale::Msgfmt::mo.3 \
 		Locale::Msgfmt::po.3 \
