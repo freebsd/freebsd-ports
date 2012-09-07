@@ -5798,9 +5798,9 @@ add-plist-data:
 .endif
 .endif
 
-.if defined(PACKAGE_BUILDING)
 .if !target(add-plist-buildinfo)
 add-plist-buildinfo:
+.if defined(PACKAGE_BUILDING)
 	@${ECHO_CMD} "@comment Build details:  ${BUILDHOST}|${JAIL}|${BUILD}|${PORTSTREE}|${BUILDDATE}" >> ${TMPPLIST}
 .endif
 .endif
