@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	flightgear
-PORTVERSION=	2.6.0
-PORTREVISION=	3
+PORTVERSION=	2.8.0
 CATEGORIES=	games
 # see http://www.flightgear.org/templates.js
 MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/Source/ \
@@ -38,18 +37,11 @@ USE_OPENAL=	al alut
 USE_CMAKE=	yes
 CMAKE_ARGS+=	-DJPEG_FACTORY:BOOL=ON \
 		-DFG_DATA_DIR:PATH=${LOCALBASE}/share/${PORTNAME} \
-		-DCMAKE_INSTALL_MANDIR:PATH=${MANPREFIX}/man \
-		-DCMAKE_INSTALL_DOCDIR:PATH=${DOCSDIR}
-
-PORTDOCS=	README README.OSG README.OpenAL README.SimGear README.plib
+		-DCMAKE_INSTALL_MANDIR:PATH=${MANPREFIX}/man
 
 MAN1=	js_demo.1 fgjs.1 gl-info.1 fgfs.1 fgpanel.1 terrasync.1
 
 .include <bsd.port.options.mk>
-
-.if empty(PORT_OPTIONS:MDOCS)
-CMAKE_ARGS+=	-DNOPORTDOCS:BOOL=ON
-.endif
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/utils/js_server/js_server ${PREFIX}/bin
