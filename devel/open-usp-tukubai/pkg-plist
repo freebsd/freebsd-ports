@@ -159,7 +159,7 @@ share/open-usp-tukubai/devel/man/yobi.txt
 share/open-usp-tukubai/devel/man/ysum.txt
 share/open-usp-tukubai/devel/man/zen.txt
 share/open-usp-tukubai/devel/pdf/all.pdf
-@dirrm share/open-usp-tukubai/devel/pdf              
+@dirrm share/open-usp-tukubai/devel/pdf
 @dirrm share/open-usp-tukubai/devel/man
 @dirrm share/open-usp-tukubai/devel/html/COMMON/JS
 @dirrm share/open-usp-tukubai/devel/html/COMMON/IMG
