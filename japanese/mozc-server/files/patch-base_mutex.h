@@ -1,16 +1,14 @@
---- base/mutex.h.orig	2012-05-29 15:36:59.661959825 +0900
-+++ base/mutex.h	2012-05-01 12:46:18.966692632 +0900
-@@ -93,11 +93,11 @@
-     // PTHREAD_MUTEX_RECURSIVE_NP and PTHREAD_MUTEX_RECURSIVE seem to be
-     // variants.  For example, Mac OS X 10.4 had
-     // PTHREAD_MUTEX_RECURSIVE_NP but Mac OS X 10.5 does not
--#ifdef OS_MACOSX
-+#if defined(OS_MACOSX) || defined(__FreeBSD__)
- #define PTHREAD_MUTEX_RECURSIVE_VALUE PTHREAD_MUTEX_RECURSIVE
+--- base/mutex.h.orig	2012-09-07 11:34:00.553021416 +0900
++++ base/mutex.h	2012-09-07 11:36:19.333021260 +0900
+@@ -56,6 +56,11 @@
+ #define MOZC_RW_MUTEX_PTR_ARRAYSIZE 10
  #endif
  
--#ifdef OS_LINUX
-+#if defined(OS_LINUX) && !defined(__FreeBSD__)
- #define PTHREAD_MUTEX_RECURSIVE_VALUE PTHREAD_MUTEX_RECURSIVE_NP
- #endif
- 
++#if defined(__FreeBSD__)
++#define PTHREAD_MUTEX_RECURSIVE_VALUE PTHREAD_MUTEX_RECURSIVE
++#define PTHREAD_MUTEX_RECURSIVE_VALUE PTHREAD_MUTEX_RECURSIVE_NP
++#endif
++
+ class LOCKABLE Mutex {
+  public:
+   Mutex();
