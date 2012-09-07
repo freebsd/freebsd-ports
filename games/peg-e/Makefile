@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	peg-e
-PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTVERSION=	1.1.1
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/peg-e/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -25,7 +24,7 @@ MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} \
-		PREFIX=${PREFIX} -spec ${QMAKESPEC} ${PORTNAME}.pro
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS} \
+		PREFIX=${PREFIX} ${PORTNAME}.pro
 
 .include <bsd.port.mk>
