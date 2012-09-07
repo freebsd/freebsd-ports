@@ -51,6 +51,46 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c1e5f35e-f93d-11e1-b07f-00235a5f2c9a">
+    <topic>emacs -- remote code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>emacs</name>
+	<range><lt>24.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chong Yidong reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2012/08/13/1">
+	  <p>Paul Ling has found a security flaw in the file-local
+	  variables code in GNU Emacs.</p>
+	  <p>When the Emacs user option `enable-local-variables' is
+	  set to `:safe' (the default value is t), Emacs should
+	  automatically refuse to evaluate `eval' forms in file-local
+	  variable sections. Due to the bug, Emacs instead
+	  automatically evaluates such `eval' forms. Thus, if the user
+	  changes the value of `enable-local-variables' to `:safe',
+	  visiting a malicious file can cause automatic execution of
+	  arbitrary Emacs Lisp code with the permissions of the
+	  user.</p>
+	  <p>The bug is present in Emacs 23.2, 23.3, 23.4, and
+	  24.1.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>54969</bid>
+      <cvename>CVE-2012-3479</cvename>
+      <url>https://lists.gnu.org/archive/html/emacs-devel/2012-08/msg00802.html</url>
+      <url>http://debbugs.gnu.org/cgi/bugreport.cgi?bug=12155</url>
+    </references>
+    <dates>
+      <discovery>2012-08-13</discovery>
+      <entry>2012-09-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="30149157-f926-11e1-95cd-001fd0af1a4c">
     <topic>wordpress -- multiple unspecified privilege escalation bugs</topic>
     <affects>
