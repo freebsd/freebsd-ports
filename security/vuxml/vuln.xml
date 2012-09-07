@@ -51,6 +51,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="30149157-f926-11e1-95cd-001fd0af1a4c">
+    <topic>wordpress -- multiple unspecified privilege escalation bugs</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<range><lt>3.4.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Wordpress reports:</p>
+	<blockquote cite="http://wordpress.org/news/2012/09/wordpress-3-4-2/">
+	 <p>Version 3.4.2 also fixes a few security issues and contains some
+	    security hardening. The vulnerabilities included potential
+	    privilege escalation and a bug that affects multisite installs with
+	    untrusted users. These issues were discovered and fixed by the
+	    WordPress security team.</p>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://wordpress.org/news/2012/09/wordpress-3-4-2/</url>
+    </references>
+    <dates>
+      <discovery>2012-09-06</discovery>
+      <entry>2012-09-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4a8a98ab-f745-11e1-8bd8-0022156e8794">
     <topic>moinmoin -- cross-site scripting via RST parser</topic>
     <affects>

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	3.4.1
+PORTVERSION=	3.4.2
 CATEGORIES=	chinese www
 MASTER_SITES=	http://tw.wordpress.org/ \
 		http://mirror.joehorn.idv.tw/wordpress/
@@ -20,7 +20,7 @@ LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_PHP=	mysql pcre xml gd tokenizer
+USE_PHP=	curl gd mysql pcre tokenizer xml zip
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 
