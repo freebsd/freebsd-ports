@@ -14,9 +14,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Designed to write a Makefile for an extension module
 
-BUILD_DEPENDS=	p5-CPAN-Meta>=2.112150:${PORTSDIR}/devel/p5-CPAN-Meta
-RUN_DEPENDS=	p5-CPAN-Meta>=2.112150:${PORTSDIR}/devel/p5-CPAN-Meta
-
 PERL_CONFIGURE=	yes
 
 MAN3=		ExtUtils::Command::MM.3 ExtUtils::Liblist.3 ExtUtils::MM.3 \
@@ -44,6 +41,11 @@ BUILD_DEPENDS+=	p5-ExtUtils-Manifest>=1.58:${PORTSDIR}/devel/p5-ExtUtils-Manifes
 		p5-version>=0.88:${PORTSDIR}/devel/p5-version
 RUN_DEPENDS+=	p5-ExtUtils-Manifest>=1.58:${PORTSDIR}/devel/p5-ExtUtils-Manifest \
 		p5-version>=0.88:${PORTSDIR}/devel/p5-version
+.endif
+
+.if ${PERL_LEVEL} < 501600
+BUILD_DEPENDS+=	p5-CPAN-Meta>=2.112150:${PORTSDIR}/devel/p5-CPAN-Meta
+RUN_DEPENDS+=	p5-CPAN-Meta>=2.112150:${PORTSDIR}/devel/p5-CPAN-Meta
 .endif
 
 post-patch:
