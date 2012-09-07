@@ -1,56 +1,38 @@
-# Ports collection Makefile for:	cutemaze
-# Date created:				2012-04-20
-# Whom:					nemysis@gmx.ch
-#
 # $FreeBSD$
-#
 
 PORTNAME=	cutemaze
 PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/
-EXTRACT_SUFX=	-src.tar.bz2
+DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	nemysis@gmx.ch
-COMMENT=	A simple, top-down game in which mazes are randomly generated
+COMMENT=	Simple, top-down game in which mazes are randomly generated
 
 LICENSE=	GPLv3
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_BZIP2=	yes
 USE_QT4=	moc_build qmake_build rcc_build uic_build iconengines imageformats
 INSTALLS_ICONS=	yes
-
 MAKE_JOBS_SAFE=	yes
 
-PORTDATA=	*
 PORTDOCS=	ChangeLog README
 
 .include <bsd.port.options.mk>
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKEFLAGS}
+		${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX} ${WRKSRC}/${PORTNAME}.pro
 
-do-install:
-# Executable
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-
-# Data
-	${MKDIR} ${DATADIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "preview themes" ${DATADIR})
-
+post-install:
 # Icons
-	${MKDIR} ${PREFIX}/share/icons/oxygen
-.for d in icons
-	(cd ${WRKSRC}/${d} && ${COPYTREE_SHARE} oxygen ${PREFIX}/share/icons/)
-.endfor
+	@(cd ${WRKSRC}/icons && ${COPYTREE_SHARE} oxygen ${PREFIX}/share/icons/)
 
-# Pixmaps and Desktop
+# Pixmaps
 	${INSTALL_DATA} ${WRKSRC}/icons/${PORTNAME}.png ${PREFIX}/share/pixmaps/
-	${MKDIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/icons/${PORTNAME}.desktop \
-		${PREFIX}/share/applications/
 
 # Documentation
 .if ${PORT_OPTIONS:MDOCS}

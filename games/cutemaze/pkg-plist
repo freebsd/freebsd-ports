@@ -1,5 +1,6 @@
 bin/cutemaze
 share/applications/cutemaze.desktop
+share/icons/hicolor/48x48/apps/cutemaze.png
 share/icons/oxygen/16x16/application-exit.png
 share/icons/oxygen/16x16/document-new.png
 share/icons/oxygen/16x16/games-config-options.png
@@ -33,5 +34,8 @@ share/pixmaps/cutemaze.png
 @dirrmtry share/icons/oxygen/22x22
 @dirrmtry share/icons/oxygen/16x16
 @dirrmtry share/icons/oxygen
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 @dirrmtry share/applications
