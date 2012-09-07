@@ -1,9 +1,4 @@
-# New ports collection makefile for:	adplay
-# Date created:				10 August 2004
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	adplay
 PORTVERSION=	1.7
@@ -19,7 +14,7 @@ COMMENT=	AdLib player using adplug library
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	adplug-2.2:${PORTSDIR}/audio/libadplug
+LIB_DEPENDS=	adplug:${PORTSDIR}/audio/libadplug
 
 GNU_CONFIGURE=	yes
 WANT_SDL=	yes
@@ -37,11 +32,11 @@ MAN1=		adplay.1
 PLIST_FILES=	bin/adplay %%DATADIR%%/adplug.db
 PLIST_DIRS=	%%DATADIR%%
 
-OPTIONS=	SDL	"Build with SDL output support"	off
+OPTIONS_DEFINE=	SDL
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	sdl mixer
 .else
 CONFIGURE_ARGS+=	--disable-output-sdl
@@ -58,4 +53,4 @@ do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKDIR}/${DBVERSION}/${DBFILE} ${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
