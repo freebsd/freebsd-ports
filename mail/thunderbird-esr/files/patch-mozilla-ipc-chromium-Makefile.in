@@ -22,7 +22,7 @@
 -# message_pump_libevent.cc includes third_party/libevent/event.h,
 -# which we put in $(DIST), see export rule below
 -LOCAL_INCLUDES += -I$(DIST)
-+LOCAL_INCLUDES += $(filter %/compat, $(MOZ_LIBEVENT_INCLUDES))
++LOCAL_INCLUDES += $(filter %/compat, $(MOZ_LIBEVENT_CFLAGS))
  endif # }
  
  vpath %.cc \

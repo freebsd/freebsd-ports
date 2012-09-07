@@ -31,7 +31,7 @@ USE_LDCONFIG=	${PREFIX}/lib/nss
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 MAKE_ENV=	BSD_LDOPTS="${PTHREAD_LIBS} -L${LOCALBASE}/lib" \
-		BUILD_OPT=1 NSS_ENABLE_ECC=1 NSS_USE_SYSTEM_SQLITE=1
+		NSS_ENABLE_ECC=1 NSS_USE_SYSTEM_SQLITE=1
 ALL_TARGET=	nss_build_all
 CFLAGS+=	-I${LOCALBASE}/include/nspr -L${LOCALBASE}/lib
 
@@ -41,12 +41,17 @@ EXTERNALS=	CVS dbm security/nss/lib/zlib nsprpub security/dbm
 EXTRACT_AFTER_ARGS=| ${TAR} -xf -	\
 	${EXTERNALS:C,^,--exclude ${PORTNAME}-${PORTVERSION}/mozilla/,}
 
-BINS=${DIST}/${OPSYS}${OSREL}_OPT.OBJ
-
 INSTALL_BINS=	certcgi certutil checkcert cmsutil crlutil derdump makepqg \
 		mangle modutil ocspclnt oidcalc p7content p7env p7sign \
 		p7verify pk12util rsaperf shlibsign signtool signver \
 		ssltap strsclnt symkeyutil vfychain vfyserv
+
+.if !defined(WITH_DEBUG)
+MAKE_ENV+=	BUILD_OPT=1
+BINS=		${DIST}/${OPSYS}${OSREL}_OPT.OBJ
+.else
+BINS=		${DIST}/${OPSYS}${OSREL}_DBG.OBJ
+.endif
 
 check regression-test test:
 	cd ${WRKSRC}/tests;	\
@@ -87,15 +92,15 @@ do-install:
 	${MKDIR} ${PREFIX}/include/nss/nss ${PREFIX}/lib/nss
 	${FIND} ${DIST}/public/nss -type l \
 	    	-exec ${INSTALL_DATA} {} ${PREFIX}/include/nss/nss \;
-	${INSTALL_DATA} ${DIST}/FreeBSD${OSREL:C/.$/*/}_OPT.OBJ/lib/*.so.1 \
+	${INSTALL_DATA} ${BINS}/lib/*.so.1 \
 		${PREFIX}/lib/nss
-	${INSTALL_DATA} ${DIST}/FreeBSD${OSREL:C/.$/*/}_OPT.OBJ/lib/libcrmf.a \
+	${INSTALL_DATA} ${BINS}/lib/libcrmf.a \
 	    	${PREFIX}/lib/nss
 .for bin in ${INSTALL_BINS}
-	${INSTALL_PROGRAM} ${DIST}/FreeBSD${OSREL:C/.$/*/}_OPT.OBJ/bin/${bin} \
+	${INSTALL_PROGRAM} ${BINS}/bin/${bin} \
 		${PREFIX}/bin
 .endfor
-	cd ${DIST}/FreeBSD${OSREL:C/.$/*/}_OPT.OBJ/lib && \
+	cd ${BINS}/lib && \
 	    	${TAR} -cf - *.so | ${TAR} --unlink -C ${PREFIX}/lib/nss -xf -
 	${INSTALL_SCRIPT} ${WRKDIR}/nss-config ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKDIR}/nss.pc ${PREFIX}/libdata/pkgconfig
