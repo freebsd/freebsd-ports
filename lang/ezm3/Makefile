@@ -83,6 +83,9 @@ pre-patch:
 	@cd ${WRKSRC} && ${PATCH} ${PATCH_ARGS} < ${WRKDIR}/${f}
 .endfor
 .endif
+.if ${OSVERSION} >= 1000012
+	@${FIND} ${WRKSRC} -name 'malloc.c' -exec truncate -s 0 {} +
+.endif
 
 do-build:
 	@${ECHO_MSG} "This port does everything in the install step."
