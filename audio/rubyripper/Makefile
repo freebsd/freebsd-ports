@@ -18,7 +18,7 @@ LICENSE=	GPLv3
 # cdparanoia is not really required for the build, but the port would not
 # configure without it (ideally, configure script should be fixed instead
 # of forcing this superfluous build dependency)
-BUILD_DEPENDS=	rgettext:${PORTSDIR}/devel/rubygem-gettext \
+BUILD_DEPENDS=	rxgettext:${PORTSDIR}/devel/rubygem-gettext \
 		cdparanoia:${PORTSDIR}/audio/cdparanoia
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
