@@ -39,8 +39,8 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "powerpc" && ${OSVERSION} > 900000
-BROKEN=		Does not compile on powerpc-9
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc
 .endif
 
 .include <bsd.port.post.mk>
