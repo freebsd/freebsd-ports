@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-virtualenv
-# Date created:		2007-10-10
-# Whom:			Nicola Vitale	<nivit@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	virtualenv
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +21,7 @@ PLIST_SUB=	PYVER=${PYTHON_VER} PIPVER=${PIPVER} DISTRIBUTEVER=${DISTRIBUTEVER} \
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
-PIPVER=	1.2
+PIPVER=	1.2.1
 DISTRIBUTEVER=	0.6.28
 
 .include <bsd.port.options.mk>
