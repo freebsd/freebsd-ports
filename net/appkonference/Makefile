@@ -21,4 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/konference
 
 PLIST_FILES=	lib/asterisk/modules/app_konference.so
 
+ONLY_FOR_ARCHS=		amd64 arm i386 ia64
+ONLY_FOR_ARCHS_REASON=	not yet ported to this architecture
+
 .include <bsd.port.mk>
