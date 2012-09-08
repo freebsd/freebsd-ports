@@ -1,0 +1,27 @@
+bin/otr_mackey
+bin/otr_modify
+bin/otr_parse
+bin/otr_readforge
+bin/otr_remac
+bin/otr_sesskeys
+include/libotr/auth.h
+include/libotr/b64.h
+include/libotr/context.h
+include/libotr/dh.h
+include/libotr/mem.h
+include/libotr/message.h
+include/libotr/privkey.h
+include/libotr/privkey-t.h
+include/libotr/proto.h
+include/libotr/serial.h
+include/libotr/sm.h
+include/libotr/tlv.h
+include/libotr/userstate.h
+include/libotr/version.h
+lib/libotr.a
+lib/libotr.la
+lib/libotr.so
+lib/libotr.so.4
+libdata/pkgconfig/libotr.pc
+share/aclocal/libotr.m4
+@dirrm include/libotr
