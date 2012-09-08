@@ -50,6 +50,10 @@ EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch__tools__makeqpf__qpf2.cpp
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 pre-configure:
 	${REINPLACE_CMD} -e 's|^TARGET[[:blank:]]*=[[:blank:]]*|TARGET=${PORTNAME}-qt4|g' \
 		${BUILD_WRKSRC}/${PORTNAME}.pro
