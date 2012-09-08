@@ -44,6 +44,7 @@
     SUBDIR += fcitx-googlepinyin
     SUBDIR += fcitx-libpinyin
     SUBDIR += fcitx-sunpinyin
+    SUBDIR += fcitx-table-extra
     SUBDIR += fcitx-ui-light
     SUBDIR += fireflyttf
     SUBDIR += font-std
