@@ -1,9 +1,4 @@
-# New ports collection makefile for:	grafx2
-# Date created:				23 Feb 2009
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	grafx2
 PORTVERSION=	2.3.1781
@@ -16,8 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A pixelart-oriented bitmap painting program
 
-OPTIONS=	TTF "Enable True Type font support" on \
-		LUA "Enable Lua scripting support" off
+LIB_DEPENDS=	X11:${PORTSDIR}/x11/libX11 \
+		png15:${PORTSDIR}/graphics/png
 
 USE_GMAKE=	yes
 USE_SDL=	sdl image
@@ -26,18 +21,19 @@ MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 CFLAGS+=	-DHAVE_SYS_PARAM_H -DHAVE_SYS_UCRED_H -DHAVE_SYS_MOUNT_H
 
-LIB_DEPENDS=	X11:${PORTSDIR}/x11/libX11 \
-		png15:${PORTSDIR}/graphics/png
+OPTIONS_DEFINE=	TTF LUA
+TTF_DESC=	True Type font support
+OPTIONS_DEFAULT=TTF
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_TTF)
-MAKE_ARGS+=	NOTTF=1
-.else
+.if ${PORT_OPTIONS:MTTF}
 USE_SDL+=	ttf
+.else
+MAKE_ARGS+=	NOTTF=1
 .endif
 
-.if defined(WITH_LUA)
+.if ${PORT_OPTIONS:MLUA}
 USE_PKGCONFIG=	yes
 USE_LUA=	5.1
 .else
@@ -57,4 +53,4 @@ post-patch:
 		-e 's|Extract_path(program_dir, argv0);|strcpy(program_dir,"${PREFIX}/bin/");|' \
 		${WRKSRC}/setup.c
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
