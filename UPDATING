@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120908:
+  AFFECTS: users of irc/bitlbee, irc/irssi-otr, net-im/climm, net-im/mcabber, net/kdenetwork4, security/kopete-otr, security/py-otr
+  AUTHOR: Doug Barton <dougb@FreeBSD.org>
+
+  The libotr library has been bumped in version 4.0.0, and the new version is
+  not compatible with the old.  In order to make it possible for both versions
+  to coexist in the short term the old version has been moved to a new port.
+
+  If you are currently using pidgin-otr:
+  # pkg_delete -f pidgin-otr\*
+
+  Then:
+  # portmaster -o security/libotr3 security/libotr
+  # portmaster -r libotr
+  or
+  # portugrade -o security/libotr3 security/libotr
+  # portugrade -r libotr
+
 20120902:
   AFFECTS: users of math/cantor and math/kalgebra
   AUTHOR: kde@FreeBSD.org
