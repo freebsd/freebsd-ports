@@ -26,8 +26,6 @@ MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64 (includes i386 asm)
-.endif
+ONLY_FOR_ARCHS=	i386 amd64
 
 .include <bsd.port.post.mk>
