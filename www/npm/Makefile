@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	npm
-PORTVERSION=	1.1.49
+PORTVERSION=	1.1.59
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -21,14 +21,14 @@ NO_MANCOMPRESS=	yes
 USE_XZ=		yes
 
 MAN1=		README.1 adduser.1 bin.1 bugs.1 build.1 bundle.1 cache.1 \
-		changelog.1 coding-style.1 completion.1 config.1 deprecate.1 \
-		developers.1 disputes.1 docs.1 edit.1 explore.1 faq.1 \
-		folders.1 help-search.1 help.1 index.1 init.1 install.1 json.1 \
-		link.1 list.1 npm.1 outdated.1 owner.1 pack.1 prefix.1 prune.1 \
-		publish.1 rebuild.1 registry.1 removing-npm.1 restart.1 root.1 \
-		run-script.1 scripts.1 search.1 semver.1 shrinkwrap.1 star.1 \
-		start.1 stop.1 submodule.1 tag.1 test.1 uninstall.1 \
-		unpublish.1 update.1 version.1 view.1 whoami.1
+		changelog.1 coding-style.1 completion.1 config.1 dedupe.1 \
+		deprecate.1 developers.1 disputes.1 docs.1 edit.1 explore.1 \
+		faq.1 folders.1 help-search.1 help.1 index.1 init.1 install.1 \
+		json.1 link.1 list.1 npm.1 outdated.1 owner.1 pack.1 prefix.1 \
+		prune.1 publish.1 rebuild.1 registry.1 removing-npm.1 \
+		restart.1 root.1 run-script.1 scripts.1 search.1 semver.1 \
+		shrinkwrap.1 star.1 start.1 stop.1 submodule.1 tag.1 test.1 \
+		uninstall.1 unpublish.1 update.1 version.1 view.1 whoami.1
 MAN3=		bin.3 bugs.3 commands.3 config.3 deprecate.3 docs.3 edit.3 \
 		explore.3 help-search.3 init.3 install.3 link.3 load.3 ls.3 \
 		npm.3 outdated.3 owner.3 pack.3 prefix.3 prune.3 publish.3 \
