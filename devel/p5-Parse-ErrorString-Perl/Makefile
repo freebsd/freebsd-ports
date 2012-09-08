@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Parse-ErrorString-Perl
-PORTVERSION=	0.13
-PORTREVISION=	1
+PORTVERSION=	0.15
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,6 +22,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	YES
 
 MAN1=		check_perldiag.1
-MAN3=		Parse::ErrorString::Perl.3
+MAN3=		Parse::ErrorString::Perl.3 \
+		Parse::ErrorString::Perl::ErrorItem.3 \
+		Parse::ErrorString::Perl::StackItem.3
 
 .include <bsd.port.mk>
