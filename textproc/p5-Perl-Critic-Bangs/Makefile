@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Perl-Critic-Bangs
-PORTVERSION=	1.06
+PORTVERSION=	1.08
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,6 +27,7 @@ MAN3=	Perl::Critic::Bangs.3 \
 	Perl::Critic::Policy::Bangs::ProhibitNumberedNames.3 \
 	Perl::Critic::Policy::Bangs::ProhibitRefProtoOrProto.3 \
 	Perl::Critic::Policy::Bangs::ProhibitVagueNames.3 \
-	Perl::Critic::Policy::Bangs::ProhibitCommentedOutCode.3
+	Perl::Critic::Policy::Bangs::ProhibitCommentedOutCode.3 \
+	Perl::Critic::Policy::Bangs::ProhibitBitwiseOperators.3
 
 .include <bsd.port.mk>
