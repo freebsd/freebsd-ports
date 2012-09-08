@@ -1,9 +1,4 @@
-# New ports collection makefile for:	uade
-# Date created:				12 Oct 2002
-# Whom:					Martin Blapp <mbr@freebsd.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	uade
 PORTVERSION=	2.13
@@ -15,7 +10,7 @@ MASTER_SITES=	http://zakalwe.fi/uade/uade2/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Unix Amiga Delitracker Emulator
 
-LIB_DEPENDS=	ao.4:${PORTSDIR}/audio/libao
+LIB_DEPENDS=	ao:${PORTSDIR}/audio/libao
 
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
@@ -36,27 +31,28 @@ PORTDOCS=	BUGS PLANS REDUNDANT_REPLAYERS UAE-CREDITS UAE-README \
 		play_loop_state_diagram.dia play_loop_state_diagram.eps \
 		play_loop_state_diagram.txt uade.html
 
-OPTIONS=	TEXT_SCOPE "Audio register debug mode" off \
-		UADEFS "FUSE filesystem" off \
-		XMMS "XMMS plugin" off
+OPTIONS_DEFINE=	TEXTSCOPE FUSE XMMS
 
-.include <bsd.port.pre.mk>
+TEXTSCOPE_DESC=	Audio register debug mode
+XMMS_DESC=	XMMS plugin
 
-.if !defined(WITHOUT_TEXT_SCOPE)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MTEXTSCOPE}
 CONFIGURE_ARGS+=--with-text-scope
 .endif
 
-.if !defined(WITHOUT_UADEFS)
-LIB_DEPENDS+=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
+.if ${PORT_OPTIONS:MFUSE}
+LIB_DEPENDS+=	fuse:${PORTSDIR}/sysutils/fusefs-libs
 MAN1+=		uadefs.1
-PLIST_SUB+=	UADEFS=""
+PLIST_SUB+=	FUSE=""
 .else
 CONFIGURE_ARGS+=--without-uadefs
-PLIST_SUB+=	UADEFS="@comment "
+PLIST_SUB+=	FUSE="@comment "
 .endif
 
-.if !defined(WITHOUT_XMMS)
-LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
+.if ${PORT_OPTIONS:MXMMS}
+LIB_DEPENDS+=	xmms:${PORTSDIR}/multimedia/xmms
 PLIST_SUB+=	XMMS=""
 .else
 CONFIGURE_ARGS+=--without-xmms
@@ -77,4 +73,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

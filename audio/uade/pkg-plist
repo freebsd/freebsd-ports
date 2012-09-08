@@ -1,6 +1,6 @@
 bin/mod2ogg2.sh
 bin/uade123
-%%UADEFS%%bin/uadefs
+%%FUSE%%bin/uadefs
 %%XMMS%%bin/uadexmmsadd
 lib/uade2/uadecore
 %%XMMS%%lib/xmms/Input/libuade2.so
