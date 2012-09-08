@@ -1,16 +1,16 @@
 bin/gen_binary_files
 bin/gen_unigram
 bin/import_interpolation
-include/libpinyin-0.3/chewing_enum.h
-include/libpinyin-0.3/chewing_key.h
-include/libpinyin-0.3/novel_types.h
-include/libpinyin-0.3/pinyin.h
-include/libpinyin-0.3/pinyin_custom2.h
-include/libpinyin-0.3/pinyin_parser2.h
+include/libpinyin-%%VER%%/chewing_enum.h
+include/libpinyin-%%VER%%/chewing_key.h
+include/libpinyin-%%VER%%/novel_types.h
+include/libpinyin-%%VER%%/pinyin.h
+include/libpinyin-%%VER%%/pinyin_custom2.h
+include/libpinyin-%%VER%%/pinyin_parser2.h
 lib/libpinyin.a
 lib/libpinyin.la
 lib/libpinyin.so
-lib/libpinyin.so.0
+lib/libpinyin.so.2
 libdata/pkgconfig/libpinyin.pc
 %%DATADIR%%/data/bigram.db
 %%DATADIR%%/data/gb_char.bin
@@ -19,4 +19,4 @@ libdata/pkgconfig/libpinyin.pc
 %%DATADIR%%/data/pinyin_index.bin
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-@dirrm include/libpinyin-0.3
+@dirrm include/libpinyin-%%VER%%
