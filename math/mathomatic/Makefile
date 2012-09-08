@@ -1,12 +1,7 @@
-# New ports collection makefile for:	Mathomatic
-# Date created:			Tue Mar 22 10:05:25 CET 2005
-# Whom:				Roman Neuhauser <neuhauser@sigpipe.cz>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mathomatic
-PORTVERSION=	16.0.2
+PORTVERSION=	16.0.3
 CATEGORIES=	math
 MASTER_SITES=	http://www.panix.com/~gesslein/ \
 		CRITICAL
