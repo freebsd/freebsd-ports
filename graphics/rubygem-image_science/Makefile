@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	image_science
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.2.3
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
