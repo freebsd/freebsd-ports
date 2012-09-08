@@ -36,6 +36,10 @@ BROKEN=		does not compile on FreeBSD 7.x
 IGNORE=		requires kernel source files
 .endif
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc
+.endif
+
 CMAKE_ARGS+=	-DDOMAIN_STUB:BOOL=OFF
 CMAKE_ARGS+=	-DOPCODE_VERIFICATION:BOOL=OFF
 
