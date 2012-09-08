@@ -7,7 +7,9 @@ bin/otr_sesskeys
 include/libotr/auth.h
 include/libotr/b64.h
 include/libotr/context.h
+include/libotr/context_priv.h
 include/libotr/dh.h
+include/libotr/instag.h
 include/libotr/mem.h
 include/libotr/message.h
 include/libotr/privkey.h
@@ -21,7 +23,7 @@ include/libotr/version.h
 lib/libotr.a
 lib/libotr.la
 lib/libotr.so
-lib/libotr.so.4
+lib/libotr.so.5
 libdata/pkgconfig/libotr.pc
 share/aclocal/libotr.m4
 @dirrm include/libotr
