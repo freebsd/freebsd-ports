@@ -48,4 +48,10 @@ post-install:
 	# Removing useless .la files from ${PREFIX}/lib
 	${RM} -f ${PREFIX}/lib/libdf.la ${PREFIX}/lib/libmfhdf.la
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc
+.endif
+
+.include <bsd.port.post.mk>

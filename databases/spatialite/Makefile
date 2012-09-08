@@ -41,4 +41,8 @@ post-patch:
 BROKEN=		does not build
 .endif
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc: invokes i386 assembler
+.endif
+
 .include <bsd.port.post.mk>
