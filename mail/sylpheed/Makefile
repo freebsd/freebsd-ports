@@ -1,9 +1,4 @@
-# New ports collection makefile for:	sylpheed
-# Date created:                 15 June 2000
-# Whom:                         shigeri <shigeri@m10.alpha-net.ne.jp>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	sylpheed
 PORTVERSION=	3.2.0
@@ -35,17 +30,19 @@ CONFIGURE_ARGS=	--enable-ipv6 \
 
 CONFLICTS=	sylpheed-1.[0-8]* sylpheed-2.[0-9]* sylpheed-gtk2-[0-9]*
 
-OPTIONS=	GPGME		"Enable GnuPG support using GPGME." off \
-		COMPFACE	"Enable X-Face support." off \
-		JPILOT		"Enable JPilot support." off \
-		LDAP		"Enable LDAP support." off \
-		SSL		"Enable OpenSSL support." on \
-		GTKSPELL	"Enable Spell checking support" on \
-		ONIGURUMA	"Enable Oniguruma support" off
+OPTIONS_DEFINE=	GPGME COMPFACE JPILOT LDAP SSL GTKSPELL ONIGURUMA
 
-.include <bsd.port.pre.mk>
+GPGME_DESC=	GnuPG support using GPGME
+COMPFACE_DESC=	X-Face support
+JPILOT_DESC=	JPilot support
+GTKSPELL_DESC=	Spell checking support
+ONIGURUMA_DESC=	Oniguruma support
 
-.if !defined(WITHOUT_SSL)
+OPTIONS_DEFAULT=SSL GTKSPELL
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSSL}
 # we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS+=--enable-ssl
@@ -53,7 +50,7 @@ CONFIGURE_ARGS+=--enable-ssl
 CONFIGURE_ARGS+=--disable-ssl
 .endif
 
-.if defined(WITH_GPGME)
+.if ${PORT_OPTIONS:MGPGME}
 LIB_DEPENDS+=	gpgme:${PORTSDIR}/security/gpgme
 RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg \
 		pinentry-gtk-2:${PORTSDIR}/security/pinentry-gtk2
@@ -62,14 +59,14 @@ CONFIGURE_ARGS+=--enable-gpgme
 CONFIGURE_ARGS+=--disable-gpgme
 .endif
 
-.if defined(WITH_COMPFACE)
+.if ${PORT_OPTIONS:MCOMPFACE}
 LIB_DEPENDS+=	compface:${PORTSDIR}/mail/faces
 CONFIGURE_ARGS+=--enable-compface
 .else
 CONFIGURE_ARGS+=--disable-compface
 .endif
 
-.if defined(WITH_JPILOT)
+.if ${PORT_OPTIONS:MJPILOT}
 LIB_DEPENDS+=	pisock:${PORTSDIR}/palm/pilot-link
 RUN_DEPENDS+=	jpilot:${PORTSDIR}/palm/jpilot
 CONFIGURE_ARGS+=--enable-jpilot
@@ -77,21 +74,21 @@ CONFIGURE_ARGS+=--enable-jpilot
 CONFIGURE_ARGS+=--disable-jpilot
 .endif
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--enable-ldap
 .else
 CONFIGURE_ARGS+=--disable-ldap
 .endif
 
-.if defined(WITH_GTKSPELL)
+.if ${PORT_OPTIONS:MGTKSPELL}
 LIB_DEPENDS+=	gtkspell:${PORTSDIR}/textproc/gtkspell
 CONFIGURE_ARGS+=--enable-gtkspell
 .else
 CONFIGURE_ARGS+=--disable-gtkspell
 .endif
 
-.if defined(WITH_ONIGURUMA)
+.if ${PORT_OPTIONS:MONIGURUMA}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libonig.a:${PORTSDIR}/devel/oniguruma5
 CONFIGURE_ARGS+=--enable-oniguruma
 .else
@@ -140,4 +137,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/sylpheed.png ${PREFIX}/share/pixmaps/
 	@${INSTALL_DATA} ${WRKSRC}/sylpheed.desktop ${PREFIX}/share/applications/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
