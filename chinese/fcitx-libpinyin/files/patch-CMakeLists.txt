@@ -1,0 +1,10 @@
+--- CMakeLists.txt~	2012-07-05 04:14:59.000000000 -0500
++++ CMakeLists.txt	2012-09-04 16:36:28.118990420 -0500
+@@ -9,7 +9,6 @@ FIND_PACKAGE(Gettext REQUIRED)
+ FIND_PACKAGE(Fcitx 4.2.0 REQUIRED)
+ find_package(GLIB2 REQUIRED)
+ find_package(Libpinyin REQUIRED)
+-find_program(WGET wget REQUIRED)
+ find_program(TAR tar REQUIRED)
+ 
+ # uninstall target

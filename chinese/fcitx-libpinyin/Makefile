@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fcitx-libpinyin
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2.0
 CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://cloud.github.com/downloads/fcitx/fcitx-libpinyin/:libpinyin
@@ -18,7 +18,7 @@ MAINTAINER=	lichray@gmail.com
 COMMENT=	The libpinyin support for Fcitx
 
 LIB_DEPENDS=	fcitx-config.4:${PORTSDIR}/chinese/fcitx \
-		pinyin.0:${PORTSDIR}/chinese/libpinyin
+		pinyin.2:${PORTSDIR}/chinese/libpinyin
 
 USE_LDCONFIG=	${PREFIX}/lib/fcitx/
 USE_XZ=		yes
