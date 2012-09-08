@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	IO-Lambda
-PORTVERSION=	1.20
+PORTVERSION=	1.23
 CATEGORIES=	devel perl5 parallel net www databases
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
