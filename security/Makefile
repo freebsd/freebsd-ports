@@ -268,6 +268,7 @@
     SUBDIR += libmcrypt
     SUBDIR += libntlm
     SUBDIR += libotr
+    SUBDIR += libotr3
     SUBDIR += libp11
     SUBDIR += libprelude
     SUBDIR += libpreludedb

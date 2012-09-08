@@ -6,6 +6,7 @@
 
 PORTNAME=	kdenetwork
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -17,7 +18,7 @@ COMMENT=	KDE Network applications
 LIB_DEPENDS=	slp.1:${PORTSDIR}/net/openslp \
 		idn.17:${PORTSDIR}/dns/libidn \
 		qca.2:${PORTSDIR}/devel/qca \
-		otr.4:${PORTSDIR}/security/libotr \
+		otr.4:${PORTSDIR}/security/libotr3 \
 		vncserver.0:${PORTSDIR}/net/libvncserver \
 		msn.0:${PORTSDIR}/net-im/libmsn \
 		gadu.3:${PORTSDIR}/polish/libgadu \

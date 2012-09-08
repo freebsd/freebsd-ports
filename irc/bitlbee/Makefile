@@ -7,6 +7,7 @@
 
 PORTNAME=	bitlbee
 PORTVERSION=	3.0.5
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/ \
 		${MASTER_SITE_LOCAL}
@@ -72,7 +73,7 @@ LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls \
 
 .if defined(WITH_OTR)
 CONFIGURE_ARGS+=--otr=1
-LIB_DEPENDS+=	otr.4:${PORTSDIR}/security/libotr
+LIB_DEPENDS+=	otr.4:${PORTSDIR}/security/libotr3
 .else
 CONFIGURE_ARGS+=--otr=0
 .endif
