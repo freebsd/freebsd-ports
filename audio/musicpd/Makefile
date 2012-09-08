@@ -1,13 +1,7 @@
-# New ports collection Makefile for:	Music Player Daemon
-# Date created:				Thu Oct 02 2003
-# Whom:					Mark Reidel <ports@mark.reidel.info>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	musicpd
-PORTVERSION=	0.16.8
-PORTREVISION=	2
+PORTVERSION=	0.17
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF/${PORTNAME}/mpd/${PORTVERSION}
 DISTNAME=	mpd-${PORTVERSION}
@@ -20,6 +14,7 @@ LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad \
 
 LICENSE=	GPLv2
 
+USE_STAGE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -34,7 +29,7 @@ CFLAGS+=	-I${PREFIX}/include
 MAN1=		${PORTNAME}.1
 MAN5=		${MPDCONF}.5
 
-DOCSDIR?=	${PREFIX}/share/doc/mpd
+DOCSDIR?=	${PREFIX}/share/doc/musicpd
 PORTDOCS=	AUTHORS README COPYING NEWS UPGRADING
 
 SUB_FILES=	pkg-message
@@ -54,7 +49,10 @@ MPDCONF?=	musicpd.conf
 USERS=	${MPDUSER}
 GROUPS=	${MPDGROUP}
 
-PLIST_SUB=	MPDCONF=${MPDCONF}
+PLIST_SUB=	MPDCONF=${MPDCONF} \
+		MPDUSER=${MPDUSER} \
+		MPDDIR=${MPDDIR}   \
+		MPDGROUP=${MPDGROUP}
 SUB_LIST+=	MPDDIR=${MPDDIR} \
 		MPDCONF=${MPDCONF}
 
@@ -255,7 +253,7 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/doc/mpd.1 ${MAN1PREFIX}/man/man1/${PORTNAME}.1
 	@${INSTALL_MAN} ${WRKSRC}/doc/mpd.conf.5 \
 		${MAN5PREFIX}/man/man5/${MPDCONF}.5
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .   for doc in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}/
@@ -269,7 +267,7 @@ post-install:
 			${PREFIX}/etc/${MPDCONF} ; \
 	fi
 	@${MKDIR} ${MPDDIR}
-	@${CHOWN} -R ${MPDUSER}:${MPDGROUP} ${MPDDIR}
+	@${INSTALL} -d -o ${MPDUSER} -g ${MPDGROUP} ${MPDDIR}
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
