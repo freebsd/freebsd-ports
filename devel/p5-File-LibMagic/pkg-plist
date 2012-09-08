@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/File/LibMagic.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/LibMagic/LibMagic.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/LibMagic/LibMagic.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/LibMagic/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/LibMagic/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/LibMagic
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/File
