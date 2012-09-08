@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-nwdiag
-# Date created:		2011-08-07
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	nwdiag
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.0
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -49,6 +44,7 @@ post-install:
 
 x-generate-plist:
 	${ECHO} bin/${PORTNAME} > pkg-plist.new
+	${ECHO} bin/packetdiag >> pkg-plist.new
 	${ECHO} bin/rackdiag >> pkg-plist.new
 	${FIND} ${PYTHON_SITELIBDIR}/${PYEASYINSTALL_EGG} -type f | ${SORT} | \
 	${SED} -e 's,${PYTHON_SITELIBDIR},%%PYTHON_SITELIBDIR%%,' \
