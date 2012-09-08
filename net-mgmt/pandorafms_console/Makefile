@@ -20,7 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/twopi:${PORTSDIR}/graphics/graphviz
 
 OPTIONS=	PGSQL "Use PostgreSQL backend (experimental)" off
 
-USE_APACHE=	22+
+USE_APACHE_RUN=	22+
 USE_PHP=	curl gd gettext json ldap mbstring mysql snmp session \
 		xml zip zlib
 WANT_PHP_WEB=	yes
