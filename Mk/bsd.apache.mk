@@ -405,7 +405,7 @@ IGNORE= ${_ERROR_MSG} use USE_APACHE instead of USE_APACHE_BUILD and USE_APACHE_
 .endif
 
 .if defined(NO_BUILD) && defined(USE_APACHE)
-IGNORE=	If NO_BUILD is used, then USE_APACHE_RUN is sufficient. Please fix your Makefile
+BROKEN=	If NO_BUILD is used, then USE_APACHE_RUN is sufficient. Please fix your Makefile
 .endif
 
 .if defined(AP_PORT_IS_SERVER)

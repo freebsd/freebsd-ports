@@ -24,6 +24,30 @@ you update your ports collection, before attempting any port upgrades.
   # portugrade -r libotr
 
 20120902:
+  AFFECTS: users of www/apache22, www/apache22-event-mpm, www/apache22-itk-mpm, www/apache22-peruser-mpm, www/apache22-worker-mpm
+  AUTHOR: ohauer@FreeBSD.org
+
+  The port use now the options NG framework, this means WITH_xxx
+  directives are no longer valid.
+
+  Additional:
+  - APR only specific options like THREADS, MYSQL, PGSQL, SQLITE,
+    BDB and IPV6 where removed.
+  - PKGNAME has changed from apache-2... to apache22-2...
+  - PROXY is now a MULTI directive which means at last one additional
+    PROXY_(AJP|BALANCER|CONNECT|FTP|HTTP|SCGI) module is required.
+  - CGI is only a valid option for MPM prefork, peruser and itk.
+
+20120902:
+  AFFECTS: users of devel/apr1
+  AUTHOR: ohauer@FreeBSD.org
+
+  APR was updated to 1.4.6 and APR-util was updated to 1.4.1.
+
+  Please rebuild all ports which are using functions from
+  APR/APR-util such as apache, subversion ...
+
+20120902:
   AFFECTS: users of math/cantor and math/kalgebra
   AUTHOR: kde@FreeBSD.org
 
@@ -89,7 +113,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR:  gjb@FreeBSD.org
 
   The sysutils/cfengine* ports have been renamed as follows:
-  
+ 
   o sysutils/cfengine         -> sysutils/cfengine22
   o sysutils/cfengine3-legacy -> sysutils/cfengine32
   o sysutils/cfengine3        -> sysutils/cfengine33
@@ -115,7 +139,7 @@ you update your ports collection, before attempting any port upgrades.
 
   # portmaster -r erlang
   or
-  # portupgrade -r lang/erlang 
+  # portupgrade -r lang/erlang
 
 20120815:
   AFFECTS: users of lang/erlang-lite
