@@ -1,9 +1,4 @@
-# New ports collection makefile for:	recoverjpeg
-# Date created:				25 Sep 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	recoverjpeg
 PORTVERSION=	2.1.1
@@ -20,15 +15,16 @@ GNU_CONFIGURE=	yes
 MANCOMPRESSED=	no
 MAKE_JOBS_SAFE=	yes
 
-# recoverjpeg scripts require many dependencies
-OPTIONS=	SCRIPTS	"Install sort-pictures script" off
-
 PLIST_FILES=	bin/recoverjpeg
 MAN1=		recoverjpeg.1
 
-.include <bsd.port.pre.mk>
+# recoverjpeg scripts require many dependencies
+OPTIONS_DEFINE=	SSCRIPTS
+SSCRIPTS_DESC=	Install sort-pictures script
 
-.if !defined(WITHOUT_SCRIPTS)
+.include <bsd.port.options.mk>
+
+.if  ${PORT_OPTIONS:MSSCRIPTS}
 RUN_DEPENDS=	exif:${PORTSDIR}/graphics/exif \
 		identify:${PORTSDIR}/graphics/ImageMagick
 PLIST_FILES+=	bin/sort-pictures
@@ -37,7 +33,7 @@ MAN1+=		sort-pictures.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-.if !defined(WITHOUT_SCRIPTS)
+.if ${PORT_OPTIONS:MSSCRIPTS}
 .for f in sort-pictures
 	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/bin
 .endfor
@@ -46,4 +42,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${f} ${MANPREFIX}/man/man1
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
