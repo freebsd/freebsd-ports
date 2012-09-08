@@ -45,10 +45,13 @@ MAN1=	gst-feedback-${GST_VERSION}.1 gst-inspect-${GST_VERSION}.1 \
 	gst-typefind-${GST_VERSION}.1 gst-xmlinspect-${GST_VERSION}.1 \
 	gst-xmllaunch-${GST_VERSION}.1
 
+OPTIONS_DEFINE=	LIBCHECK
+LIBCHECK_DESC=	Unit tests support
+
 .include <bsd.port.pre.mk>
 
-.if (exists(${LOCALBASE}/lib/libcheck.a) || defined(WITH_CHECK))
-LIB_DEPENDS+=	check.0:${PORTSDIR}/devel/libcheck
+.if ${PORT_OPTIONS:MCHECK}
+LIB_DEPENDS+=	check:${PORTSDIR}/devel/libcheck
 PLIST_SUB+=	CHECK=""
 .else
 CONFIGURE_ARGS+=--disable-check
