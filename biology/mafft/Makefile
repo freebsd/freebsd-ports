@@ -39,6 +39,10 @@ LN_FILES=	einsi fftns fftnsi ginsi linsi mafft-einsi mafft-fftns \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install on sparc64: depends on thread-local storage
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
 	                  -e 's|^MANDIR = .*$$|MANDIR = $$(MANPREFIX)/man/man1|' \
