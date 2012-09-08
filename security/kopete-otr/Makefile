@@ -7,7 +7,7 @@
 
 PORTNAME=	otr
 PORTVERSION=	0.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security net-im kde
 MASTER_SITES=	http://kopete-otr.follefuder.org/
 PKGNAMEPREFIX=	kopete-
@@ -19,7 +19,7 @@ COMMENT=	Allows deniable private conversations using Kopete
 
 BUILD_DEPENDS=	kopete:${PORTSDIR}/net-im/kopete
 RUN_DEPENDS=	kopete:${PORTSDIR}/net-im/kopete
-LIB_DEPENDS=	otr:${PORTSDIR}/security/libotr
+LIB_DEPENDS=	otr.4:${PORTSDIR}/security/libotr3
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
