@@ -1,12 +1,7 @@
-# New ports collection makefile for:	webob
-# Date created:		2009-02-12
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	webob
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
