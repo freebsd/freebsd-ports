@@ -2,5 +2,4 @@
 %%SITE_PERL%%/CGI/Expand.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Expand
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/CGI
 @dirrmtry %%SITE_PERL%%/CGI
