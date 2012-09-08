@@ -1,0 +1,7 @@
+ScriptTest is a library to help you test your interactive command-line
+applications.
+
+With it you can easily run the command (in a subprocess) and see the
+output (stdout, stderr) and any file modifications.
+
+WWW: http://pythonpaste.org/scripttest/

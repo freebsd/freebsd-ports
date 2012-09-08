@@ -3194,6 +3194,7 @@
     SUBDIR += py-Products.validation
     SUBDIR += py-RPyC
     SUBDIR += py-Record
+    SUBDIR += py-ScriptTest
     SUBDIR += py-SymbolType
     SUBDIR += py-TGScheduler
     SUBDIR += py-ToscaWidgets
