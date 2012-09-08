@@ -48,7 +48,7 @@ USE_ICONV=		yes
 CONFIGURE_ARGS+=	--disable-iconv
 .endif
 
-.if ${PORT_OPTIONS:MOTR}
+.if ${PORT_OPTIONS:MP2P}
 CONFIGURE_ARGS+=	--enable-peer2peer
 .else
 CONFIGURE_ARGS+=	--disable-peer2peer
