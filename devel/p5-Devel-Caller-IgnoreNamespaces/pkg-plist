@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Caller/IgnoreNamespaces/.packlist
+%%SITE_PERL%%/Devel/Caller/IgnoreNamespaces.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Caller/IgnoreNamespaces
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Caller
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
+@dirrmtry %%SITE_PERL%%/Devel/Caller
+@dirrmtry %%SITE_PERL%%/Devel
