@@ -1,9 +1,4 @@
-# New ports collection makefile for: 	xmp
-# Date created:				18 September 1999
-# Whom:					Anders Nordby <anders@fix.no>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xmp
 PORTVERSION=	3.5.0
@@ -25,34 +20,33 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc --disable-arts \
 
 MAN1=		xmp.1
 
-OPTIONS=	ALSA    "ALSA output driver" off \
-		BMP	"BeepMP plugin" off \
-		ESOUND	"EsounD output driver" off \
-		NAS	"Network Audio System ouptut driver" off \
-		PULSEAUDIO	"PulseAudio output driver" off \
-		UNZIP	"Use unzip(1) not bsdtar(1) to read .zip files" on \
-		XMMS	"XMMS plugin" off
+OPTIONS_DEFINE=	ALSA BMP ESOUND NAS PULSEAUDIO UNZIP XMMS
+
+BMP_DESC=	Beep media player plugin
+XMMS_DESC=	XMMS plugin
+
+OPTIONS_DEFAULT=UNZIP
 
 MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
 
-.if defined(WITH_ALSA)
-LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+.if ${PORT_OPTIONS:MALSA}
+LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
 RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
 CONFIGURE_ARGS+=	--enable-alsa
 .else
 CONFIGURE_ARGS+=	--disable-alsa
 .endif
 
-.if defined(WITH_BMP)
-LIB_DEPENDS+=	beep.2:${PORTSDIR}/multimedia/beep-media-player
+.if ${PORT_OPTIONS:MBMP}
+LIB_DEPENDS+=	beep:${PORTSDIR}/multimedia/beep-media-player
 CONFIGURE_ARGS+=	--enable-bmp-plugin
 PLIST_SUB+=	BMP=""
 .else
@@ -60,35 +54,35 @@ CONFIGURE_ARGS+=	--disable-bmp-plugin
 PLIST_SUB+=	BMP="@comment "
 .endif
 
-.if defined(WITH_ESOUND)
+.if ${PORT_OPTIONS:MESOUND}
 USE_GNOME+=	esound
 CONFIGURE_ARGS+=	--enable-esd
 .else
 CONFIGURE_ARGS+=	--disable-esd
 .endif
 
-.if defined(WITH_NAS)
-LIB_DEPENDS+=	audio.2:${PORTSDIR}/audio/nas
+.if ${PORT_OPTIONS:MNAS}
+LIB_DEPENDS+=	audio:${PORTSDIR}/audio/nas
 CONFIGURE_ARGS+=	--enable-nas
 .else
 CONFIGURE_ARGS+=	--disable-nas
 .endif
 
-.if defined(WITH_PULSEAUDIO)
-LIB_DEPENDS+=	pulse-simple.0:${PORTSDIR}/audio/pulseaudio
+.if ${PORT_OPTIONS:MPULSEAUDIO}
+LIB_DEPENDS+=	pulse-simple:${PORTSDIR}/audio/pulseaudio
 CONFIGURE_ARGS+=	--enable-pulseaudio
 .else
 CONFIGURE_ARGS+=	--disable-pulseaudio
 .endif
 
-.if defined(WITH_UNZIP)
+.if ${PORT_OPTIONS:MUNZIP}
 RUN_DEPENDS+=	${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 .else
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src-misc-load.c
 .endif
 
-.if defined(WITH_XMMS)
-LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
+.if ${PORT_OPTIONS:MXMMS}
+LIB_DEPENDS+=	xmms:${PORTSDIR}/multimedia/xmms
 CONFIGURE_ARGS+=	--enable-xmms-plugin
 PLIST_SUB+=	XMMS=""
 .else
@@ -124,4 +118,4 @@ post-install:	.SILENT
 		-or -name *.bak -or -name *.orig )' )
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
