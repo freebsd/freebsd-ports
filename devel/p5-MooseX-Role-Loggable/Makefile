@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-Role-Loggable
-PORTVERSION=	0.008
+PORTVERSION=	0.009
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,6 +24,7 @@ BUILD_DEPENDS=	p5-Log-Dispatchouli>=0:${PORTSDIR}/devel/p5-Log-Dispatchouli \
 		p5-Sys-Syslog>=0.25:${PORTSDIR}/sysutils/p5-Sys-Syslog \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
 PERL_CONFIGURE=	yes
 
