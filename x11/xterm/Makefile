@@ -1,12 +1,8 @@
-# New ports collection makefile for:	xterm
-# Date created:				24.07.2004
-# Whom:					krion
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xterm
 PORTVERSION=	281
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://invisible-island.net/xterm/ \
 		CRITICAL
@@ -20,52 +16,50 @@ CONFLICTS=	x11iraf-[0-9]*
 USE_XORG=	xaw xft
 WANT_GNOME=	desktopfileutils
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=--with-utempter --enable-narrowproto
 
-OPTIONS=	WIDE_CHARS "enable wide-character support" on \
-		LUIT "use LUIT for locale convertion from/to UTF-8" on \
-		256_COLOR "enable 256-color support" off \
-		DEC_LOCATOR "enable DECterm Locator support" off \
-		PCRE "use PCRE for regular-expressions" off \
-		GNOME "include gnome support for .desktop file" off \
-		DABBREV "enable support for dabbrev-expand" off
+CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=	--with-utempter --enable-narrowproto --enable-256-color
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 
+OPTIONS_DEFINE=	WCHAR LUIT DECTERM PCRE GNOME DABBREV
+
+DABBREV_DESC=	Enable support for dabbrev-expand
+DECTERM_DESC=	Enable DECterm Locator support
+LUIT_DESC=	Use LUIT for locale convertion from/to UTF-8
+WCHAR_DESC=	Enable wide-character support
+
+OPTIONS_DEFAULT=WCHAR LUIT
+
 .include <bsd.port.options.mk>
 
-.if defined(WITH_LUIT)
+.if ${PORT_OPTIONS:MLUIT}
 CONFIGURE_ARGS+=	--enable-luit
 BUILD_DEPENDS=	luit:${PORTSDIR}/x11/luit
 .endif
 
-.if defined(WITH_WIDE_CHARS)
+.if ${PORT_OPTIONS:MWCHAR}
 CONFIGURE_ARGS+=	--enable-wide-chars
 .endif
 
-.if defined(WITH_256_COLOR)
-CONFIGURE_ARGS+=	--enable-256-color
-.endif
-
-.if defined(WITH_DEC_LOCATOR)
+.if ${PORT_OPTIONS:MDECTERM}
 CONFIGURE_ARGS+=	--enable-dec-locator
 .endif
 
-.if defined(WITH_PCRE)
+.if ${PORT_OPTIONS:MPCRE}
 CONFIGURE_ARGS+=	--with-pcre
-LIB_DEPENDS=		pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=		pcre:${PORTSDIR}/devel/pcre
 .endif
 
-.if defined(WITH_GNOME)
-USE_GNOME=		desktopfileutils
-PLIST_SUB+=		GNOME=""
-.else
-PLIST_SUB+=		GNOME="@comment "
-.endif
-
-.if defined(WITH_DABBREV)
+.if ${PORT_OPTIONS:MDABBREV}
 CONFIGURE_ARGS+=	--enable-dabbrev
+.endif
+
+.if ${PORT_OPTIONS:MGNOME}
+USE_GNOME=	desktopfileutils
+PLIST_SUB+=	GNOME=""
+.else
+PLIST_SUB+=	GNOME="@comment "
 .endif
 
 MAN1=		resize.1 koi8rxterm.1 uxterm.1 xterm.1
@@ -73,7 +67,7 @@ MAN1=		resize.1 koi8rxterm.1 uxterm.1 xterm.1
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900004
-LIB_DEPENDS+=	utempter.0:${PORTSDIR}/sysutils/libutempter
+LIB_DEPENDS+=	utempter:${PORTSDIR}/sysutils/libutempter
 .endif
 
 post-install:
@@ -82,11 +76,11 @@ post-install:
 .endfor
 	@${MKDIR} ${PREFIX}/share/applications/
 	@${INSTALL_DATA} ${WRKSRC}/xterm.desktop ${PREFIX}/share/applications/
-.if defined(WITH_GNOME)
+.if ${PORT_OPTIONS:MGNOME}
 	@-update-desktop-database
 .endif
 
-.if defined(WITH_WIDE_CHARS)
+.if ${PORT_OPTIONS:MWCHAR}
 	@${CAT} ${PKGMESSAGE}
 .endif
 
