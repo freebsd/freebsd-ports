@@ -1,9 +1,4 @@
-# New ports collection makefile for:	xfce4-notifyd
-# Date created:				22 Oct 2009
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xfce4-notifyd
 PORTVERSION=	0.2.2
@@ -18,7 +13,7 @@ COMMENT=	Visually-appealing notification daemon for Xfce
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+LIB_DEPENDS=	dbus-glib:${PORTSDIR}/devel/dbus-glib \
 		notify:${PORTSDIR}/devel/libnotify
 
 USE_AUTOTOOLS=	libtool
@@ -36,13 +31,14 @@ CONFIGURE_ARGS=	--disable-debug
 CONFLICTS=	notification-daemon-[0-9]* xfce4-notification-daemon-[0-9]* \
 		xfce4-notifyd-0.1*
 
-OPTIONS=	NLS      "Enable Native Language Support"             on
-
 MAN1=	xfce4-notifyd-config.1
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	NLS
+OPTIONS_DEFAULT=NLS
 
-.if !defined(WITHOUT_NLS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	NLS=""
@@ -54,4 +50,4 @@ PLIST_SUB+=	NLS="@comment "
 post-install:
 	@-update-desktop-database
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
