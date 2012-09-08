@@ -57,4 +57,10 @@ post-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKDIR}/pieces/* ${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
+.include <bsd.port.post.mk>

@@ -46,4 +46,10 @@ post-patch:
 post-install:
 	@${RMDIR} ${PREFIX}/share/elementary/examples
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install on sparc64: signal 10
+.endif
+
+.include <bsd.port.post.mk>

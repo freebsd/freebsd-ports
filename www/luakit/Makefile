@@ -36,6 +36,10 @@ OPTIONS=	LUAJIT "Use the Just-In-Time compiler for lua" off
 
 .include <bsd.port.options.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install on sparc64
+.endif
+
 .if defined(WITH_LUAJIT)
 LIB_DEPENDS+=	luajit:${PORTSDIR}/lang/luajit
 CONFIGURE_ARGS+=USE_LUAJIT=1
