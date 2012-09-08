@@ -1,9 +1,4 @@
-# New ports collection makefile for:	xmms-sapplug
-# Date created:				14 Jul 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xmms-sapplug
 DISTVERSION=	0.3f
@@ -29,20 +24,21 @@ WRKSRC=		${WRKDIR}/sapplug-${DISTVERSION}
 
 PLIST_FILES=	lib/xmms/Input/libsap.so
 
-OPTIONS=	OPTIMIZED_CXXFLAGS "use optimized C++ flags" on \
-		OPTIMIZED_CFLAGS   "use optimized C flags"   on
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${CXX:T} != "clang++"
 CXXFLAGS+=	--no-exceptions
 .endif
 
-.if defined(WITH_OPTIMIZED_CXXFLAGS)
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CFLAGS+=	-fpic -DPIC
+.endif
+
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CXXFLAGS+=	-fPIC -fpic -funroll-all-loops -fno-strength-reduce \
 		-finline-functions -fomit-frame-pointer
-.endif
-.if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-fPIC -fpic -funroll-all-loops -fomit-frame-pointer \
 		-fno-strength-reduce
 .endif
@@ -59,4 +55,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
