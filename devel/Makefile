@@ -1703,6 +1703,7 @@
     SUBDIR += p5-Devel-BeginLift
     SUBDIR += p5-Devel-CallChecker
     SUBDIR += p5-Devel-Caller
+    SUBDIR += p5-Devel-Caller-IgnoreNamespaces
     SUBDIR += p5-Devel-Caller-Perl
     SUBDIR += p5-Devel-Callsite
     SUBDIR += p5-Devel-CheckLib
