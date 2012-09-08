@@ -1038,6 +1038,7 @@
     SUBDIR += samba36
     SUBDIR += samba4-devel
     SUBDIR += samba4wins
+    SUBDIR += samplicator
     SUBDIR += sbd
     SUBDIR += scamper
     SUBDIR += scapy
