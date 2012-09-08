@@ -86,6 +86,9 @@ bin/rackdiag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/packetdiag/utils/rst/directives.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/packetdiag/utils/rst/directives.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/packetdiag/utils/rst/directives.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/packetdiag_sphinxhelper.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/packetdiag_sphinxhelper.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/packetdiag_sphinxhelper.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rackdiag/__init__.pyo
