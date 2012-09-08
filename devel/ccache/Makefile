@@ -1,9 +1,4 @@
-# New ports collection makefile for:	ccache
-# Date created:				31/03/2002
-# Whom:					Dominic Marks <d.marks@student.umist.ac.uk>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ccache
 PORTVERSION=	3.1.8
@@ -25,11 +20,12 @@ MAN1=		ccache.1
 
 PORTDOCS=	ccache-howto-freebsd.txt MANUAL.html
 
-OPTIONS=	CLANGLINK	"Create clang compiler links if clang is installed" off \
-		LLVMLINK	"Create llvm compiler links if llvm is installed" off \
-		STATIC		"Statically build ccache" off
+OPTIONS_DEFINE=	CLANGLINK LLVMLINK STATIC
 
-.include <bsd.port.pre.mk>
+CLANGLINK_DESC=	Create clang compiler links if clang is installed
+LLVMLINK_DESC=	Create llvm compiler links if llvm is installed
+
+.include <bsd.port.options.mk>
 
 PLIST_SUB+=	CCLINKDIR="${CCLINKDIR}"
 
@@ -40,15 +36,15 @@ CCACHE_COMPILERS+=	icc icpc
 GNU_COMPILERS+=		34 42 43 44 45 46 47 48
 CCACHE_COMPILERS+=	cc c++ gcc g++ ${GNU_COMPILERS:S|^|gcc|} ${GNU_COMPILERS:S|^|g++|}
 
-.if defined(WITH_CLANGLINK)
+.if ${PORT_OPTIONS:MCLANGLINK}
 CCACHE_COMPILERS+=	clang clang++
 .endif
 
-.if defined(WITH_LLVMLINK)
+.if ${PORT_OPTIONS:MLLVMLINK}
 CCACHE_COMPILERS+=	llvm-gcc llvm-c++ llvm-g++
 .endif
 
-.if defined(WITH_STATIC)
+.if ${PORT_OPTIONS:MSTATIC}
 LDFLAGS+=		"--static"
 .endif
 
@@ -88,8 +84,8 @@ post-install:
 	@${ECHO_CMD} "Creating compiler links..."
 	@${PREFIX}/bin/ccache-update-links -v
 	@${CAT} ${PKGMESSAGE}
-.if defined(WITH_CLANGLINK)
+.if ${PORT_OPTIONS:MCLANGLINK}
 	@${CAT} ${FILESDIR}/pkg-message-clang
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
