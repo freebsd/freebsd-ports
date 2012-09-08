@@ -246,7 +246,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/plugins/konqueror/pacpl.desktop ${KDE4_PREFIX}/share/kde4/services/ServiceMenus
 .endif
 
-.if ${PORT_OPTIONS:MAMAROK)
+.if ${PORT_OPTIONS:MAMAROK}
 	${MKDIR} ${PREFIX}/share/apps/amarok/scripts/transcoding_pacx
 	${INSTALL_DATA} ${WRKSRC}/plugins/amarok/pacx ${PREFIX}/share/apps/amarok/scripts/transcoding_pacx/transcoding_pacx.pl
 	${PERL} -e 'print qq(name = Pacx\ntype = transcode)' > ${PREFIX}/share/apps/amarok/scripts/transcoding_pacx/transcoding_pacx.spec

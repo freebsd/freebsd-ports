@@ -200,7 +200,7 @@ pre-patch:
 		-e 's|libs = getvar|libs = getvar("LDFLAGS").split() + getvar|' \
 		${PATCH_WRKSRC}/Misc/python-config.in > ${WRKDIR}/${PYTHON_VERSION:S/thon/thon-shared/}-config
 
-.if ${PORT_OPTIONS:MFPECTL) && ${ARCH} == i386
+.if ${PORT_OPTIONS:MFPECTL} && ${ARCH} == i386
 	${MKDIR} ${WRKSRC}/Modules
 	${ECHO} "fpectl fpectlmodule.c" >> ${WRKSRC}/Modules/Setup.dist
 .endif
