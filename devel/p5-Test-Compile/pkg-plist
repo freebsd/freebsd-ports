@@ -1,5 +1,7 @@
 %%SITE_PERL%%/Test/Compile.pm
+%%SITE_PERL%%/Test/Compile/Internal.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Compile/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Compile
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Test/Compile
 @dirrmtry %%SITE_PERL%%/Test
