@@ -1,9 +1,4 @@
-# New ports collection makefile for:	notification-daemon
-# Date created:				16 Nov 2007
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	notification-daemon
 PORTVERSION=	0.3.7
@@ -20,8 +15,8 @@ COMMENT=	Port of Gnome's notification-daemon for the Xfce desktop
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
-LIB_DEPENDS=	sexy.2:${PORTSDIR}/x11-toolkits/libsexy \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	sexy:${PORTSDIR}/x11-toolkits/libsexy \
+		dbus-glib:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	dbus-daemon:${PORTSDIR}/devel/dbus
 
 GNU_CONFIGURE=	yes
@@ -39,24 +34,27 @@ CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/xfce4 \
 
 CONFLICTS=	notification-daemon-[0-9]* xfce4-notifyd-[0-9]* notify-osd-[0-9]*
 
-OPTIONS=	GRADIENT "Show a gradient look in the default theme"  off \
-		CLOSE    "Show the close button in the default theme" on  \
-		NLS      "Enable Native Language Support"             on
+OPTIONS_DEFINE=	GRADIENT CLOSE NLS
 
-.include <bsd.port.pre.mk>
+GRADIENT_DESC=	Show a gradient look in the default theme
+CLOSE_DESC=	Show the close button in the default theme
 
-.if !defined(WITHOUT_NLS)
+OPTIONS_DEFAULT=CLOSE NLS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITH_GRADIENT)
+.if ${PORT_OPTIONS:MGRADIENT}
 CONFIGURE_ARGS+=	--enable-gradient-look
 .endif
 
-.if defined(WITHOUT_CLOSE)
+.if ${PORT_OPTIONS:MCLOSE}
 CONFIGURE_ARGS+=	--disable-close-button
 .endif
 
@@ -68,8 +66,8 @@ post-patch:
 		${WRKSRC}/src/themes/bubble/Makefile.in \
 		${WRKSRC}/src/themes/standard/Makefile.am \
 		${WRKSRC}/src/themes/standard/Makefile.in
-.if defined(WITHOUT_NLS)
+.if empty(PORT_OPTIONS:MNLS)
 	@${REINPLACE_CMD} -e 's|\(USE_NLS=\)yes|\1no|' ${WRKSRC}/configure
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
