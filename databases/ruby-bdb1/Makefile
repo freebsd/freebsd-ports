@@ -50,6 +50,7 @@ post-install:
 .endif
 
 .include <bsd.port.pre.mk>
+
 .if ${RUBY_VER} == 1.9
 pre-everything::
 	########################################################
@@ -61,4 +62,9 @@ pre-everything::
 .elif ${RUBY_VER} == 1.8
 post-build: test
 .endif
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install on sparc64 (signal 6)
+.endif
+
 .include <bsd.port.post.mk>

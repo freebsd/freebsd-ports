@@ -52,4 +52,8 @@ CONFIGURE_ARGS+=--enable-vorbis
 CONFIGURE_ARGS+=--disable-vorbis
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not configure on sparc64
+.endif
+
 .include <bsd.port.mk>

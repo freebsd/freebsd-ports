@@ -38,4 +38,10 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_LIB} src/qt/lib/libQtNetwork.so.4 ${PREFIX}/lib/phantomjs/
 	cd ${WRKSRC} && ${INSTALL_LIB} src/qt/lib/libQtCore.so.4 ${PREFIX}/lib/phantomjs/
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not link on sparc64
+.endif
+
+.include <bsd.port.post.mk>

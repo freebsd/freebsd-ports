@@ -57,6 +57,12 @@ CONFIGURE_ARGS+=--enable-stomp-debug
 BROKEN=		does not build when compiled with clang
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 post-install:
 	@if [ ! -f ${PREFIX}/etc/razorback/api.conf ]; then \
 		${CP} -p ${PREFIX}/etc/razorback/api.conf.sample ${PREFIX}/etc/razorback/api.conf ; \
@@ -65,4 +71,4 @@ post-install:
 		${CP} -p ${PREFIX}/etc/razorback/magic.sample ${PREFIX}/etc/razorback/magic ; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

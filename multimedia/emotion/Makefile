@@ -36,6 +36,10 @@ CONFIGURE_ARGS=	--disable-generic-vlc
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install on sparc64: coredump
+.endif
+
 .if defined(WITHOUT_XINE) && defined(WITHOUT_GST)
 IGNORE=	is useless without playback library. Please run 'make config' and choose one of XINE and GST
 .endif

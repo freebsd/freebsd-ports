@@ -70,6 +70,10 @@ WITH_OPENSSL_PORT=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64: gcc core dump
+.endif
+
 .if defined(WITH_TCP_WRAPPERS)
 CONFIGURE_ARGS+=	--enable-tcp-wrapper
 .else

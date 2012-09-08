@@ -24,4 +24,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAKE_JOBS_SAFE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64 (includes i386 asm)
+.endif
+
+.include <bsd.port.post.mk>
