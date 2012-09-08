@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	poudriere
-PORTVERSION=	2.0.99.20120903
+PORTVERSION=	2.0.99.20120908
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://fossil.etoilebsd.net/poudriere/tarball/
 
@@ -10,7 +10,7 @@ COMMENT=	Port build and test system
 
 LICENSE=	BSD
 
-FSL_CHKIN=	abeb0b8b2b
+FSL_CHKIN=	7befeb3094
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz?uuid=${FSL_CHKIN}
 PKGNAMESUFFIX=	-devel
 
@@ -40,17 +40,14 @@ PLIST_DIRS=	share/poudriere \
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_ZSH)
+.if ${PORT_OPTIONS:MZSH}
 PLIST_FILES+=	share/zsh/site-functions/_poudriere
 PLIST_DIRSTRY+=	share/zsh/site-functions
 PLIST_DIRSTRY+=	share/zsh/
 .endif
 
-post-patch:
-	@${FIND} ${WRKSRC} -name "*.orig" -delete
-
 post-install:
-.if defined(WITH_ZSH)
+.if ${PORT_OPTIONS:MZSH}
 	@${MKDIR} ${PREFIX}/share/zsh/site-functions/
 	@${INSTALL_DATA} ${WRKSRC}/zsh-completions ${PREFIX}/share/zsh/site-functions/_poudriere
 .endif
