@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	octave-forge-queueing
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
