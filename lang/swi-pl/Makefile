@@ -43,7 +43,7 @@ PLIST_SUB+=	XPCE_VER=${XPCE_VER}
 
 .include <bsd.port.pre.mk>
 
-.if (${ARCH} == "i386")
+.if (${ARCH} == "i386" || ${ARCH} == "powerpc")
 PLIST_SUB+=	BITS=32
 .else
 PLIST_SUB+=	BITS=64
@@ -51,11 +51,6 @@ PLIST_SUB+=	BITS=64
 
 .if (${ARCH} == "amd64")
 ARCH=		x86_64
-.endif
-
-.if (${ARCH} == "alpha")
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-src-configure \
-		${FILESDIR}/extra-patch-src-Makefile-in
 .endif
 
 post-patch:
