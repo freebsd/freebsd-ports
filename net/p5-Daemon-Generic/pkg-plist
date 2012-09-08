@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Daemon/Generic.pod
 %%SITE_PERL%%/Daemon/Generic.pm
+%%SITE_PERL%%/Daemon/Generic/AnyEvent.pm
 %%SITE_PERL%%/Daemon/Generic/Event.pm
 %%SITE_PERL%%/Daemon/Generic/While1.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Daemon/Generic/.packlist
