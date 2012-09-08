@@ -25,4 +25,10 @@ do-install:
 	${MKDIR} ${PREFIX}/include/b64
 	${INSTALL_DATA} ${WRKSRC}/include/b64/*.h ${PREFIX}/include/b64
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc
+.endif
+
+.include <bsd.port.post.mk>

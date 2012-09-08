@@ -21,6 +21,10 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-8.4.0
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc
+.endif
+
 PG84VER!=	cd ${PORTSDIR}/databases/postgresql84-client && ${MAKE} -V PORTVERSION
 
 post-patch:
