@@ -1,0 +1,12 @@
+PROG	 =	http_post
+SRCS	 =	http_post.c
+
+.ifndef NO_OPENSSL
+CFLAGS	+=	-DUSE_SSL -I${OPENSSLBASE}/include ${OPENSSL_CFLAGS}
+LDFLAGS	+=	-L${OPENSSLBASE}/lib -lssl -lcrypto
+.endif
+
+BINDIR	 =	${PREFIX}/bin
+MANDIR	 =	${PREFIX}/man/man
+
+.include <bsd.prog.mk>

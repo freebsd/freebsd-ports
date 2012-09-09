@@ -337,6 +337,7 @@
     SUBDIR += http-analyze
     SUBDIR += http_get
     SUBDIR += http_load
+    SUBDIR += http_post
     SUBDIR += httpclient
     SUBDIR += httpcore
     SUBDIR += httpgrabber
