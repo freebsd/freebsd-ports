@@ -5,14 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	foolscap
-PORTVERSION=	0.6.3
-PORTREVISION=	1
+PORTVERSION=	0.6.4
 CATEGORIES=	devel python
 MASTER_SITES=	http://foolscap.lothar.com/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kevlo@FreeBSD.org
-COMMENT=	An RPC protocol for Twisted Python
+COMMENT=	RPC protocol for Twisted Python
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
