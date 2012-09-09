@@ -1,14 +1,22 @@
 libexec/nagios/check_email_delivery
 libexec/nagios/check_email_delivery_epn
+libexec/nagios/check_imap_quota
+libexec/nagios/check_imap_quota_epn
 libexec/nagios/check_imap_receive
 libexec/nagios/check_imap_receive_epn
 libexec/nagios/check_smtp_send
 libexec/nagios/check_smtp_send_epn
+libexec/nagios/imap_ssl_cert
+libexec/nagios/imap_ssl_cert_epn
 %%PORTDOCS%%%%DOCSDIR%%/check_email_delivery.html
 %%PORTDOCS%%%%DOCSDIR%%/check_email_delivery.pod
 %%PORTDOCS%%%%DOCSDIR%%/check_imap_receive.html
 %%PORTDOCS%%%%DOCSDIR%%/check_imap_receive.pod
+%%PORTDOCS%%%%DOCSDIR%%/check_imap_quota.html
+%%PORTDOCS%%%%DOCSDIR%%/check_imap_quota.pod
 %%PORTDOCS%%%%DOCSDIR%%/check_smtp_send.html
 %%PORTDOCS%%%%DOCSDIR%%/check_smtp_send.pod
+%%PORTDOCS%%%%DOCSDIR%%/imap_ssl_cert.html
+%%PORTDOCS%%%%DOCSDIR%%/imap_ssl_cert.pod
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry libexec/nagios
