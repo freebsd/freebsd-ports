@@ -7,6 +7,7 @@
 
 PORTNAME=	Crypt-OpenSSL-CA
 PORTVERSION=	0.23
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for OpenSSL CA API
 
+# Note: The Devel::Mallinfo dependency doesn't work on FreeBSD; mallinfo()
+# is a GNU libc function.
 BUILD_DEPENDS=	p5-Convert-ASN1>=0.02:${PORTSDIR}/converters/p5-Convert-ASN1 \
 		p5-Devel-Leak>=0:${PORTSDIR}/devel/p5-Devel-Leak \
-		p5-Devel-Mallinfo>=0:${PORTSDIR}/devel/p5-Devel-Mallinfo \
 		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
 		p5-Inline>=0.4:${PORTSDIR}/devel/p5-Inline \
