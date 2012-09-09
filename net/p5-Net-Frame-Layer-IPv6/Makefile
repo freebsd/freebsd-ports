@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Frame-Layer-IPv6
-PORTVERSION=	1.02
+PORTVERSION=	1.04
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,6 +22,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Net::Frame::Layer::IPv6.3
+MAN3=		Net::Frame::Layer::IPv6.3 \
+		Net::Frame::Layer::IPv6::Fragment.3 \
+		Net::Frame::Layer::IPv6::Routing.3
 
 .include <bsd.port.mk>
