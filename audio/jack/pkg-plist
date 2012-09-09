@@ -73,6 +73,8 @@ libdata/pkgconfig/jack.pc
 %%DOCS%%share/jack-audio-connection-kit/reference/html/control_8h.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/control_8h_source.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/deprecated.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/dir_d611c2c1e1e252f8153c91ce21a161f9.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/dir_3e6ff996e0a05d442d13220a8cf7408f.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/doxygen.css
 %%DOCS%%share/jack-audio-connection-kit/reference/html/doxygen.png
 %%DOCS%%share/jack-audio-connection-kit/reference/html/files.html
