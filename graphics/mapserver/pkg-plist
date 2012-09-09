@@ -6,17 +6,17 @@ bin/shptree
 bin/shptreetst
 bin/shptreevis
 bin/sortshp
-%%WITH_MAPSERV%%www/cgi-bin/mapserv
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/mapscript/mapscript.so
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/mapscript/mapscript.bs
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/mapscript/.packlist
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/mapscript.pm
-%%WITH_PERL%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/perllocal.pod
-%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/mapscript
-%%WITH_PHP%%%%PHP_EXTENSION_DIR%%/php_mapscript.so
-%%WITH_PHP%%@dirrmtry %%PHP_EXTENSION_DIR%%
-%%WITH_PHP%%@dirrmtry etc/php
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/mapscript.py
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/mapscript.pyc
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/_mapscript.so
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/%%MAP_EGG%%.egg-info
+%%MAPSERV%%www/cgi-bin/mapserv
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/mapscript/mapscript.so
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/mapscript/mapscript.bs
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/mapscript/.packlist
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/mapscript.pm
+%%PERL%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/perllocal.pod
+%%PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/mapscript
+%%PHP%%%%PHP_EXTENSION_DIR%%/php_mapscript.so
+%%PHP%%@dirrmtry %%PHP_EXTENSION_DIR%%
+%%PHP%%@dirrmtry etc/php
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/mapscript.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/mapscript.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_mapscript.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%MAP_EGG%%.egg-info
