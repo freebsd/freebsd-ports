@@ -25,13 +25,8 @@ IGNORE_WITH_PHP=5 # known incompatibilities with php-5.4, use 5.3 for now
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 
-.ifdef WITH_DATABASE
-RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
-.endif
-
-.ifdef WITH_LDAP
-USE_PHP+=	ldap
-.endif
+OPTIONS_DEFINE=	DATABASE LDAP
+DATABASE_DESC=	PEAR database support (must also intall a driver)
 
 .ifndef WITHOUT_WWWDIR
 SQUIRRELDIR?=	${PREFIX}/www/${PORTNAME}
@@ -49,15 +44,26 @@ PORTDOCS=	*
 
 CONFLICTS=	squirreloutlook-[0-9]*
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDATABASE}
+RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
+.endif
+
+.if ${PORT_OPTIONS:MLDAP}
+USE_PHP+=	ldap
+.endif
+
 pre-everything::
 	@${ECHO_CMD} "SquirrelMail is installed into ${SQUIRRELDIR}"
 	@${ECHO_CMD} "To use the old location ${PREFIX}/${PORTNAME} define"
 	@${ECHO_CMD} "WITHOUT_WWWDIR when patching or installing"
 	@${ECHO_CMD}
-	@${ECHO_CMD} "Use WITH_LDAP to ensure PHP LDAP support is installed"
-	@${ECHO_CMD} "Use WITH_DATABASE to ensure PEAR framework for database support is installed"
-	@${ECHO_CMD} "   (note that this does not install the database specific PEAR support, e.g. MySQL)"
+.if ${PORT_OPTIONS:MDATABASE}
+	@${ECHO_CMD} "Note that the PEAR database framework still requires you to install a"
+	@${ECHO_CMD} "database-specific PEAR driver, e.g. MySQL."
 	@${ECHO_CMD}
+.endif
 
 post-patch:
 .ifndef PATCH_DEBUG
