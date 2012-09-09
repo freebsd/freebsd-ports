@@ -42,6 +42,25 @@ MAPSERV_DESC=		Mapserv cgi interface support
 
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MMAPSERV}
+USE_APACHE_RUN=		22+
+PLIST_SUB+=		MAPSERV=""
+PLIST_DIRSTRY=		www/cgi-bin
+.else
+PLIST_SUB+=		MAPSERV="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MPYTHON}
+USE_PYTHON=		2.6
+PLIST_SUB+=		PYTHON=""
+MAP_EGG=		MapScript-${PORTVERSION}-${PYTHON_VERSION:S/thon//}
+PLIST_SUB+=		MAP_EGG=${MAP_EGG}
+.else
+PLIST_SUB+=		PYTHON="@comment "
+.endif
+
+.include <bsd.port.pre.mk>
+
 .if ${PORT_OPTIONS:MAGG}
 LIB_DEPENDS+=		agg:${PORTSDIR}/graphics/agg
 CONFIGURE_ARGS+=	--with-agg=${LOCALBASE} --with-freetype=${LOCALBASE}
@@ -108,40 +127,21 @@ RUN_BUILDS=		${BUILD_DEPENDS}
 CONFIGURE_ARGS+=	--with-php=${LOCALBASE}/include/php/
 PHP_EXTENSION_DIR!=	${LOCALBASE}/bin/php-config --extension-dir | ${SED} -e 's,/usr/local/,,'
 PLIST_SUB+=		PHP_EXTENSION_DIR=${PHP_EXTENSION_DIR}
-PLIST_SUB+=		WITH_PHP=""
+PLIST_SUB+=		PHP=""
 .else
-PLIST_SUB+=		WITH_PHP="@comment "
+PLIST_SUB+=		PHP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPERL}
 USE_PERL5=yes
-PLIST_SUB+=		WITH_PERL=""
+PLIST_SUB+=		PERL=""
 .else
-PLIST_SUB+=		WITH_PERL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPYTHON}
-BUILD_DEPENDS+=		${LOCALBASE}/bin/python:${PORTSDIR}/lang/python26
-PLIST_SUB+=		WITH_PYTHON=""
-.include <../../Mk/bsd.python.mk>
-MAP_EGG=		MapScript-${PORTVERSION}-${PYTHON_VERSION:S/thon//}
-PLIST_SUB+=		MAP_EGG=${MAP_EGG}
-.else
-PLIST_SUB+=		WITH_PYTHON="@comment "
+PLIST_SUB+=		PERL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCURL}
 LIB_DEPENDS+=		curl:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-curl=${LOCALBASE}
-.endif
-
-.if ${PORT_OPTIONS:MMAPSERV}
-USE_APACHE=		22+
-.include "${PORTSDIR}/Mk/bsd.apache.mk"
-PLIST_SUB+=		WITH_MAPSERV=""
-PLIST_DIRSTRY=		www/cgi-bin
-.else
-PLIST_SUB+=		WITH_MAPSERV="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFASTCGI}
@@ -156,13 +156,13 @@ CONFIGURE_ARGS+=	--enable-debug
 PROG_FILES=		legend scalebar shp2img shptree shptreetst shptreevis sortshp
 
 post-patch:
-.if defined(WITH_MING)
+.if ${PORT_OPTIONS:MMING}
 	${REINPLACE_CMD} -e 's#with_ming/include#with_ming/include/ming#g' \
 		${WRKSRC}/configure
 .endif
 
 post-build:
-.if defined(WITH_PERL)
+.if ${PORT_OPTIONS:MPERL}
 	(cd ${WRKSRC}/mapscript/perl && ${PERL5} Makefile.PL && make)
 .endif
 
@@ -171,27 +171,27 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
 .endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/shp2mysql.pl ${PREFIX}/bin/shp2mysql
-.if defined(WITH_MAPSERV)
+.if ${PORT_OPTIONS:MMAPSERV}
 	${MKDIR} ${LOCALBASE}/www/cgi-bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/mapserv ${LOCALBASE}/www/cgi-bin/mapserv
 .endif
 
-.if defined(WITH_PHP)
+.if ${PORT_OPTIONS:MPHP}
 	@${MKDIR} ${LOCALBASE}/${PHP_EXTENSION_DIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/mapscript/php/php_mapscript.so ${LOCALBASE}/${PHP_EXTENSION_DIR}/
 .endif
 
-.if defined(WITH_PERL)
+.if ${PORT_OPTIONS:MPERL}
 	(cd ${WRKSRC}/mapscript/perl && make install)
 .endif
 
-.if defined(WITH_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 	(cd ${WRKSRC}/mapscript/python && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py install)
 .endif
 
 post-install:
-.if defined(WITH_PHP)
+.if ${PORT_OPTIONS:MPHP}
 	@${ECHO_MSG} "Please add the line extension=php_mapscript.so to ${LOCALBASE}/etc/php/extensions.ini"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
