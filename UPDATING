@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120909:
+  AFFECTS: users of www/testlink
+  AUTHOR: tota@FreeBSD.org
+
+  Testlink 1.9.4 was released. Before updating, you should read carefully
+  the included README file or go to www.teamst.org (Forum: TestLink 1.9.4
+  News, changes, etc) because this release requires a manual update of the
+  database scheme.
+
 20120908:
   AFFECTS: users of irc/bitlbee, irc/irssi-otr, net-im/climm, net-im/mcabber, net/kdenetwork4, security/kopete-otr, security/py-otr
   AUTHOR: Doug Barton <dougb@FreeBSD.org>
