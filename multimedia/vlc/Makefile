@@ -178,6 +178,10 @@ CONFIGURE_ARGS+=--disable-qt4
 .include <bsd.port.pre.mk>
 
 # OS specific hacks
+.if (${OSVERSION} < 800000)
+BROKEN=		doesn't build on such an old FreeBSD version
+.endif
+
 .if (${OSVERSION} < 800040)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules__misc__inhibit__xdg.c \
 		${FILESDIR}/extra-patch-modules__misc__inhibit__xscreensaver.c
