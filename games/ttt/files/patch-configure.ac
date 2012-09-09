@@ -1,0 +1,10 @@
+--- configure.ac.orig	2011-04-05 05:43:45.000000000 +0200
++++ configure.ac	2012-09-09 04:55:17.000000000 +0200
+@@ -44,6 +44,7 @@
+ AC_PROG_MKDIR_P
+ AC_PROG_SED
+ LT_INIT
++AC_SUBST([LIBTOOL_DEPS])
+ 
+ dnl AC_CHECK_LIB([duma],		[_duma_malloc]		,,AC_MSG_ERROR(missing library))
+ AC_CHECK_LIB([SDL],		[SDL_Init]		,,AC_MSG_ERROR(missing library))

@@ -7,37 +7,52 @@
 
 PORTNAME=	ttt
 PORTVERSION=	2011.04
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/ttt/
+MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/ttt/ \
+		ftp://ftp.billsgames.com/unix/x/ttt/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Simple one or two player Tic Tac Toe game
 
-# net/ttt
-CONFLICTS=	ttt-1*
-NO_LATEST_LINK=	yes
+LICENSE=	GPLv2
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
-
-USE_SDL=	sdl
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	aclocal automake autoheader autoconf
 AUTOMAKE_ARGS=	--add-missing --force
-MAKE_JOBS_SAFE=	yes
+ALL_TARGET=	${PORTNAME}
+USE_SDL=	mixer sdl
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		'/SDL_mixer/d' ${WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e \
-		's|\./images|${DATADIR}/images|g' ${WRKSRC}/src/init.c
+PLIST_FILES=	bin/${PORTNAME} \
+		share/pixmaps/${PORTNAME}.bmp
 
-post-install:
-	@${MKDIR} ${DATADIR}/images
-	${INSTALL_DATA} ${WRKSRC}/images/*.bmp ${DATADIR}/images
+PORTDATA=	*
+PORTDOCS=	README
+
+SUB_FILES=	${PORTNAME}
+
+.include <bsd.port.options.mk>
+
+do-install:
+# Scripts
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
+
+# Executable
+	${MKDIR} ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${DATADIR}
+
+# Data
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "images sounds" ${DATADIR})
+
+# Pixmaps
+	${INSTALL_DATA} ${WRKSRC}/images/program_logo.bmp ${PREFIX}/share/pixmaps/${PORTNAME}.bmp
+
+# Documentation
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
