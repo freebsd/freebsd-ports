@@ -1,0 +1,17 @@
+$FreeBSD$
+
+--- etc/netatalk/Makefile.in.orig	2012-09-03 11:16:51.000000000 -0400
++++ etc/netatalk/Makefile.in	2012-09-03 11:19:41.000000000 -0400
+@@ -62,6 +62,12 @@ sbin_PROGRAMS = netatalk$(EXEEXT)
+ @USE_BUILTIN_LIBEVENT_TRUE@am__append_2 = \
+ @USE_BUILTIN_LIBEVENT_TRUE@	$(top_builddir)/libevent/libevent.la
+ 
++am__append_1 = \
++	       -I%%LOCALBASE%%/include/event2
++
++am__append_2 = \
++	       %%LOCALBASE%%/lib/event2/libevent.la
++
+ subdir = etc/netatalk
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
