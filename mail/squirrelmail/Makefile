@@ -28,11 +28,8 @@ USE_GETTEXT=	yes
 OPTIONS_DEFINE=	DATABASE LDAP
 DATABASE_DESC=	PEAR database support (must also intall a driver)
 
-.ifndef WITHOUT_WWWDIR
+# if you were using WITHOUT_WWWDIR, use SQUIRRELDIR=${PREFIX}/${PORTNAME}
 SQUIRRELDIR?=	${PREFIX}/www/${PORTNAME}
-.else
-SQUIRRELDIR?=	${PREFIX}/${PORTNAME}
-.endif
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION} \
 		SQUIRRELDIR="${SQUIRRELDIR:S,^${PREFIX}/,,}"
@@ -55,10 +52,6 @@ USE_PHP+=	ldap
 .endif
 
 pre-everything::
-	@${ECHO_CMD} "SquirrelMail is installed into ${SQUIRRELDIR}"
-	@${ECHO_CMD} "To use the old location ${PREFIX}/${PORTNAME} define"
-	@${ECHO_CMD} "WITHOUT_WWWDIR when patching or installing"
-	@${ECHO_CMD}
 .if ${PORT_OPTIONS:MDATABASE}
 	@${ECHO_CMD} "Note that the PEAR database framework still requires you to install a"
 	@${ECHO_CMD} "database-specific PEAR driver, e.g. MySQL."
