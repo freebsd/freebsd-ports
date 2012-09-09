@@ -1,22 +1,9 @@
-%%WWWDIR%%/cfg/bugzilla.cfg.php
 %%WWWDIR%%/cfg/const.inc.php
 %%WWWDIR%%/cfg/custom_reports.cfg.php
 %%WWWDIR%%/cfg/custom_reports.cfg.php.example
-%%WWWDIR%%/cfg/eventum.cfg.php
-%%WWWDIR%%/cfg/fogbugz.cfg.php
-%%WWWDIR%%/cfg/gforge.cfg.php
-%%WWWDIR%%/cfg/jira.cfg.php
-%%WWWDIR%%/cfg/jirasoap.cfg.php
-%%WWWDIR%%/cfg/mantis.cfg.php
-%%WWWDIR%%/cfg/polarion.cfg.php
-%%WWWDIR%%/cfg/redmine.cfg.php
 %%WWWDIR%%/cfg/reports.cfg.php
-%%WWWDIR%%/cfg/seapine.cfg.php
 %%WWWDIR%%/cfg/tl_fckeditor_config.js
-%%WWWDIR%%/cfg/trac.cfg.php
-%%WWWDIR%%/cfg/trackplus.cfg.php
 %%WWWDIR%%/cfg/userRightMatrix.php
-%%WWWDIR%%/cfg/youtrack.cfg.php
 %%WWWDIR%%/config.inc.php
 %%WWWDIR%%/custom/README
 %%WWWDIR%%/custom/_cf_radio_head.php
@@ -117,6 +104,8 @@
 %%WWWDIR%%/gui/templates/infoWindow.tpl
 %%WWWDIR%%/gui/templates/input_dimensions.conf
 %%WWWDIR%%/gui/templates/inventory/inventoryView.tpl
+%%WWWDIR%%/gui/templates/issuetrackers/issueTrackerEdit.tpl
+%%WWWDIR%%/gui/templates/issuetrackers/issueTrackerView.tpl
 %%WWWDIR%%/gui/templates/keywords/keywordsAssign.tpl
 %%WWWDIR%%/gui/templates/keywords/keywordsEdit.tpl
 %%WWWDIR%%/gui/templates/keywords/keywordsExport.tpl
@@ -168,6 +157,7 @@
 %%WWWDIR%%/gui/templates/requirements/reqReorder.tpl
 %%WWWDIR%%/gui/templates/requirements/reqSearchForm.tpl
 %%WWWDIR%%/gui/templates/requirements/reqSearchResults.tpl
+%%WWWDIR%%/gui/templates/requirements/reqSpecCompareRevisions.tpl
 %%WWWDIR%%/gui/templates/requirements/reqSpecCopy.tpl
 %%WWWDIR%%/gui/templates/requirements/reqSpecEdit.tpl
 %%WWWDIR%%/gui/templates/requirements/reqSpecListTree.tpl
@@ -175,6 +165,7 @@
 %%WWWDIR%%/gui/templates/requirements/reqSpecSearchForm.tpl
 %%WWWDIR%%/gui/templates/requirements/reqSpecSearchResults.tpl
 %%WWWDIR%%/gui/templates/requirements/reqSpecView.tpl
+%%WWWDIR%%/gui/templates/requirements/reqSpecViewRevision.tpl
 %%WWWDIR%%/gui/templates/requirements/reqTcAssign.tpl
 %%WWWDIR%%/gui/templates/requirements/reqTcBulkAssignment.tpl
 %%WWWDIR%%/gui/templates/requirements/reqViewRevisionRO.tpl
@@ -197,6 +188,9 @@
 %%WWWDIR%%/gui/templates/results/resultsNavigator.tpl
 %%WWWDIR%%/gui/templates/results/resultsReqs.tpl
 %%WWWDIR%%/gui/templates/results/resultsTC.tpl
+%%WWWDIR%%/gui/templates/results/tcCreatedPerUser.tpl
+%%WWWDIR%%/gui/templates/results/tcCreatedPerUserGUI.tpl
+%%WWWDIR%%/gui/templates/results/tcNotRunAnyPlatform.tpl
 %%WWWDIR%%/gui/templates/results/testCasesWithCF.tpl
 %%WWWDIR%%/gui/templates/results/testCasesWithoutTester.tpl
 %%WWWDIR%%/gui/templates/results/testPlanWithCF.tpl
@@ -281,6 +275,7 @@
 %%WWWDIR%%/gui/themes/default/images/door_in.png
 %%WWWDIR%%/gui/themes/default/images/edit-undo.png
 %%WWWDIR%%/gui/themes/default/images/edit_icon.png
+%%WWWDIR%%/gui/themes/default/images/emoticon_tongue.png
 %%WWWDIR%%/gui/themes/default/images/error.gif
 %%WWWDIR%%/gui/themes/default/images/error_triangle.png
 %%WWWDIR%%/gui/themes/default/images/exec_icon.png
@@ -288,6 +283,8 @@
 %%WWWDIR%%/gui/themes/default/images/export_import.png
 %%WWWDIR%%/gui/themes/default/images/favicon.ico
 %%WWWDIR%%/gui/themes/default/images/filter.png
+%%WWWDIR%%/gui/themes/default/images/history.png
+%%WWWDIR%%/gui/themes/default/images/history_small.png
 %%WWWDIR%%/gui/themes/default/images/ico_all_l.gif
 %%WWWDIR%%/gui/themes/default/images/ico_all_r.gif
 %%WWWDIR%%/gui/themes/default/images/ico_l2r.gif
@@ -483,6 +480,12 @@
 %%WWWDIR%%/install/sql/alter_tables/1.9.1/mysql/DB.1.4/stepZ/z_final_step.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.1/postgres/DB.1.4/step1/db_schema_update.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.1/postgres/DB.1.4/stepZ/z_final_step.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql/DB.1.5/step1/db_schema_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql/DB.1.5/stepZ/z_final_step.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.4/mysql/DB.1.5/step1/db_schema_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.4/mysql/DB.1.5/stepZ/z_final_step.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.4/postgres/DB.1.5/step1/db_schema_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.4/postgres/DB.1.5/stepZ/z_final_step.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9/mssql/DB.1.3/step1/db_schema_update.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9/mssql/DB.1.3/stepZ/z_final_step.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9/mysql/DB.1.3/step1/db_schema_update.sql
@@ -497,6 +500,7 @@
 %%WWWDIR%%/install/sql/postgres/testlink_create_default_data.sql
 %%WWWDIR%%/install/sql/postgres/testlink_create_tables.sql
 %%WWWDIR%%/install/sqlParser.class.php
+%%WWWDIR%%/install/util/sysinfo.php
 %%WWWDIR%%/lib/ajax/checkDuplicateName.php
 %%WWWDIR%%/lib/ajax/checkNodeDuplicateName.php
 %%WWWDIR%%/lib/ajax/checkTCaseDuplicateName.php
@@ -504,7 +508,9 @@
 %%WWWDIR%%/lib/ajax/dragdroptprojectnodes.php
 %%WWWDIR%%/lib/ajax/dragdroptreenodes.php
 %%WWWDIR%%/lib/ajax/getUsersWithRight.php
+%%WWWDIR%%/lib/ajax/getissuetrackercfgtemplate.php
 %%WWWDIR%%/lib/ajax/getreqlog.php
+%%WWWDIR%%/lib/ajax/getreqspeclog.php
 %%WWWDIR%%/lib/ajax/getrequirementnodes.php
 %%WWWDIR%%/lib/ajax/gettestcasesummary.php
 %%WWWDIR%%/lib/ajax/gettprojectnodes.php
@@ -528,13 +534,17 @@
 %%WWWDIR%%/lib/api/sample_clients/php/clientAssignRequirements.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientCheckDevKey.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientCreateBuild.php
+%%WWWDIR%%/lib/api/sample_clients/php/clientCreateNTestCases.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientCreateTestCase.php
+%%WWWDIR%%/lib/api/sample_clients/php/clientCreateTestCaseSteps.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientCreateTestPlan.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientCreateTestProject.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientCreateTestSuite.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientDeleteExecution.php
+%%WWWDIR%%/lib/api/sample_clients/php/clientDeleteTestCaseSteps.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientDoesUserExist.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientGetBuilds.php
+%%WWWDIR%%/lib/api/sample_clients/php/clientGetExecCountersByBuild.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientGetFirstLevelTestSuitesForTestProject.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientGetFullPath.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientGetLastExecutionResult.php
@@ -557,6 +567,9 @@
 %%WWWDIR%%/lib/api/sample_clients/php/clientReportTCResultOVERWRITE.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientSample.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientSample2.php
+%%WWWDIR%%/lib/api/sample_clients/php/clientSetTestCaseExecutionType.php
+%%WWWDIR%%/lib/api/sample_clients/php/clientTestSuiteTestCaseStepsManagement.php
+%%WWWDIR%%/lib/api/sample_clients/php/clientUpdateTestCaseCustomFieldDesignValue.php
 %%WWWDIR%%/lib/api/sample_clients/php/clientUploadTestCaseAttachment.php
 %%WWWDIR%%/lib/api/sample_clients/php/css/style.css
 %%WWWDIR%%/lib/api/sample_clients/php/img/icon-foldout.gif
@@ -580,20 +593,6 @@
 %%WWWDIR%%/lib/attachments/attachmentdelete.php
 %%WWWDIR%%/lib/attachments/attachmentdownload.php
 %%WWWDIR%%/lib/attachments/attachmentupload.php
-%%WWWDIR%%/lib/bugtracking/int_bugtracking.php
-%%WWWDIR%%/lib/bugtracking/int_bugzilla.php
-%%WWWDIR%%/lib/bugtracking/int_eventum.php
-%%WWWDIR%%/lib/bugtracking/int_fogbugz.php
-%%WWWDIR%%/lib/bugtracking/int_gforge.php
-%%WWWDIR%%/lib/bugtracking/int_jira.php
-%%WWWDIR%%/lib/bugtracking/int_jirasoap.php
-%%WWWDIR%%/lib/bugtracking/int_mantis.php
-%%WWWDIR%%/lib/bugtracking/int_polarion.php
-%%WWWDIR%%/lib/bugtracking/int_redmine.php
-%%WWWDIR%%/lib/bugtracking/int_seapine.php
-%%WWWDIR%%/lib/bugtracking/int_trac.php
-%%WWWDIR%%/lib/bugtracking/int_trackplus.php
-%%WWWDIR%%/lib/bugtracking/int_youtrack.php
 %%WWWDIR%%/lib/cfields/cfieldsEdit.php
 %%WWWDIR%%/lib/cfields/cfieldsExport.php
 %%WWWDIR%%/lib/cfields/cfieldsImport.php
@@ -612,15 +611,18 @@
 %%WWWDIR%%/lib/execute/getExecNotes.php
 %%WWWDIR%%/lib/functions/assignment_mgr.class.php
 %%WWWDIR%%/lib/functions/attachments.inc.php
-%%WWWDIR%%/lib/functions/build_progress.class.php
 %%WWWDIR%%/lib/functions/cfield_mgr.class.php
 %%WWWDIR%%/lib/functions/code_testing/cfield_mgr.class.test.php
 %%WWWDIR%%/lib/functions/code_testing/dBug.php
+%%WWWDIR%%/lib/functions/code_testing/get_linked_tcversions.testplan.class.test.php
 %%WWWDIR%%/lib/functions/code_testing/requirement_mgr.class.test.php
+%%WWWDIR%%/lib/functions/code_testing/requirement_spec_mgr.class.test.php
 %%WWWDIR%%/lib/functions/code_testing/testcase.class.test.php
 %%WWWDIR%%/lib/functions/code_testing/testplan.class.test.php
+%%WWWDIR%%/lib/functions/code_testing/testplan.getHits.test.php
 %%WWWDIR%%/lib/functions/code_testing/testproject.class.test.php
 %%WWWDIR%%/lib/functions/code_testing/testsuite.class.test.php
+%%WWWDIR%%/lib/functions/code_testing/tlIssueTracker.test.php
 %%WWWDIR%%/lib/functions/code_testing/tree.class.test.php
 %%WWWDIR%%/lib/functions/common.php
 %%WWWDIR%%/lib/functions/configCheck.php
@@ -630,9 +632,12 @@
 %%WWWDIR%%/lib/functions/doAuthorize.php
 %%WWWDIR%%/lib/functions/email_api.php
 %%WWWDIR%%/lib/functions/exec.inc.php
+%%WWWDIR%%/lib/functions/execTreeMenu.inc.php
 %%WWWDIR%%/lib/functions/exec_cfield_mgr.class.php
 %%WWWDIR%%/lib/functions/exttable.class.php
 %%WWWDIR%%/lib/functions/files.inc.php
+%%WWWDIR%%/lib/functions/form_api.php
+%%WWWDIR%%/lib/functions/gpc_api.php
 %%WWWDIR%%/lib/functions/info.inc.php
 %%WWWDIR%%/lib/functions/inputparameter.class.php
 %%WWWDIR%%/lib/functions/inputparameter.inc.php
@@ -652,7 +657,6 @@
 %%WWWDIR%%/lib/functions/requirement_mgr.class.php
 %%WWWDIR%%/lib/functions/requirement_spec_mgr.class.php
 %%WWWDIR%%/lib/functions/requirements.inc.php
-%%WWWDIR%%/lib/functions/results.class.php
 %%WWWDIR%%/lib/functions/roles.inc.php
 %%WWWDIR%%/lib/functions/specview.php
 %%WWWDIR%%/lib/functions/string_api.php
@@ -668,6 +672,7 @@
 %%WWWDIR%%/lib/functions/tlFilterControl.class.php
 %%WWWDIR%%/lib/functions/tlHTMLTable.class.php
 %%WWWDIR%%/lib/functions/tlInventory.class.php
+%%WWWDIR%%/lib/functions/tlIssueTracker.class.php
 %%WWWDIR%%/lib/functions/tlKeyword.class.php
 %%WWWDIR%%/lib/functions/tlPlatform.class.php
 %%WWWDIR%%/lib/functions/tlRequirementFilterControl.class.php
@@ -691,6 +696,31 @@
 %%WWWDIR%%/lib/inventory/getInventory.php
 %%WWWDIR%%/lib/inventory/inventoryView.php
 %%WWWDIR%%/lib/inventory/setInventory.php
+%%WWWDIR%%/lib/issuetrackerintegration/bugzilladbInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/bugzillaxmlrpcInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.bugzillaxmlrpc.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.fogbugz.api.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.fogbugzrestInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.gforgesoapInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.jirasoapInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.redmine-fman.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.redmine.rest.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.tracxmlrpc.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test.youtrackrestInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/code_testing/test2_int_mantissoap.php
+%%WWWDIR%%/lib/issuetrackerintegration/fogbugzdbInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/fogbugzrestInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/gforgesoapInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/issueTrackerInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/jirasoapInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/mantisdbInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/mantissoapInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/redminerestInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/tracxmlrpcInterface.class.php
+%%WWWDIR%%/lib/issuetrackerintegration/youtrackrestInterface.class.php
+%%WWWDIR%%/lib/issuetrackers/issueTrackerCommands.class.php
+%%WWWDIR%%/lib/issuetrackers/issueTrackerEdit.php
+%%WWWDIR%%/lib/issuetrackers/issueTrackerView.php
 %%WWWDIR%%/lib/keywords/keywordsAssign.php
 %%WWWDIR%%/lib/keywords/keywordsEdit.php
 %%WWWDIR%%/lib/keywords/keywordsExport.php
@@ -732,12 +762,14 @@
 %%WWWDIR%%/lib/requirements/reqSearch.php
 %%WWWDIR%%/lib/requirements/reqSearchForm.php
 %%WWWDIR%%/lib/requirements/reqSpecCommands.class.php
+%%WWWDIR%%/lib/requirements/reqSpecCompareRevisions.php
 %%WWWDIR%%/lib/requirements/reqSpecEdit.php
 %%WWWDIR%%/lib/requirements/reqSpecListTree.php
 %%WWWDIR%%/lib/requirements/reqSpecPrint.php
 %%WWWDIR%%/lib/requirements/reqSpecSearch.php
 %%WWWDIR%%/lib/requirements/reqSpecSearchForm.php
 %%WWWDIR%%/lib/requirements/reqSpecView.php
+%%WWWDIR%%/lib/requirements/reqSpecViewRevision.php
 %%WWWDIR%%/lib/requirements/reqTcAssign.php
 %%WWWDIR%%/lib/requirements/reqView.php
 %%WWWDIR%%/lib/requirements/reqViewRevision.php
@@ -748,7 +780,6 @@
 %%WWWDIR%%/lib/results/keywordBarChart.php
 %%WWWDIR%%/lib/results/metricsDashboard.php
 %%WWWDIR%%/lib/results/overallPieChart.php
-%%WWWDIR%%/lib/results/ownerBarChart.php
 %%WWWDIR%%/lib/results/platformPieChart.php
 %%WWWDIR%%/lib/results/printDocOptions.php
 %%WWWDIR%%/lib/results/printDocument.php
@@ -763,6 +794,9 @@
 %%WWWDIR%%/lib/results/resultsNavigator.php
 %%WWWDIR%%/lib/results/resultsReqs.php
 %%WWWDIR%%/lib/results/resultsTC.php
+%%WWWDIR%%/lib/results/tcCreatedPerUser.php
+%%WWWDIR%%/lib/results/tcCreatedPerUserGUI.php
+%%WWWDIR%%/lib/results/tcNotRunAnyPlatform.php
 %%WWWDIR%%/lib/results/testCasesWithCF.php
 %%WWWDIR%%/lib/results/testCasesWithoutTester.php
 %%WWWDIR%%/lib/results/testPlanWithCF.php
@@ -861,8 +895,58 @@
 %%WWWDIR%%/login.php
 %%WWWDIR%%/logout.php
 %%WWWDIR%%/lostPassword.php
-%%WWWDIR%%/sysinfo.php
+%%WWWDIR%%/third_party/Zend/Exception.php
+%%WWWDIR%%/third_party/Zend/Http/Client.php
+%%WWWDIR%%/third_party/Zend/Http/Client/Adapter/Curl.php
+%%WWWDIR%%/third_party/Zend/Http/Client/Adapter/Exception.php
+%%WWWDIR%%/third_party/Zend/Http/Client/Adapter/Interface.php
+%%WWWDIR%%/third_party/Zend/Http/Client/Adapter/Proxy.php
+%%WWWDIR%%/third_party/Zend/Http/Client/Adapter/Socket.php
+%%WWWDIR%%/third_party/Zend/Http/Client/Adapter/Stream.php
+%%WWWDIR%%/third_party/Zend/Http/Client/Adapter/Test.php
+%%WWWDIR%%/third_party/Zend/Http/Client/Exception.php
+%%WWWDIR%%/third_party/Zend/Http/Cookie.php
+%%WWWDIR%%/third_party/Zend/Http/CookieJar.php
+%%WWWDIR%%/third_party/Zend/Http/Exception.php
+%%WWWDIR%%/third_party/Zend/Http/Response.php
+%%WWWDIR%%/third_party/Zend/Http/Response/Stream.php
+%%WWWDIR%%/third_party/Zend/Http/UserAgent.php
+%%WWWDIR%%/third_party/Zend/Http/UserAgent/AbstractDevice.php
+%%WWWDIR%%/third_party/Zend/Http/UserAgent/Bot.php
+%%WWWDIR%%/third_party/Zend/Http/UserAgent/Checker.php
+%%WWWDIR%%/third_party/Zend/Http/UserAgent/Console.php
+%%WWWDIR%%/third_party/Zend/Http/UserAgent/Desktop.php
+%%WWWDIR%%/third_party/Zend/Http/UserAgent/Device.php
+%%WWWDIR%%/third_party/Zend/Http/UserAgent/Email.php
+%%WWWDIR%%/third_party/Zend/Http/UserAgent/Exception.php
+%%WWWDIR%%/third_party/Zend/Http/UserAgent/Features/Adapter.php
+%%WWWDIR%%/third_party/Zend/Http/UserAgent/Features/Adapter/DeviceAtlas.php
+%%WWWDIR%%/third_party/Zend/Http/UserAgent/Features/Adapter/TeraWurfl.php
+%%WWWDIR%%/third_party/Zend/Http/UserAgent/Features/Adapter/WurflApi.php
+%%WWWDIR%%/third_party/Zend/Http/UserAgent/Features/Exception.php
+%%WWWDIR%%/third_party/Zend/Http/UserAgent/Feed.php
+%%WWWDIR%%/third_party/Zend/Http/UserAgent/Mobile.php
+%%WWWDIR%%/third_party/Zend/Http/UserAgent/Offline.php
+%%WWWDIR%%/third_party/Zend/Http/UserAgent/Probe.php
+%%WWWDIR%%/third_party/Zend/Http/UserAgent/Spam.php
+%%WWWDIR%%/third_party/Zend/Http/UserAgent/Storage.php
+%%WWWDIR%%/third_party/Zend/Http/UserAgent/Storage/Exception.php
+%%WWWDIR%%/third_party/Zend/Http/UserAgent/Storage/NonPersistent.php
+%%WWWDIR%%/third_party/Zend/Http/UserAgent/Storage/Session.php
+%%WWWDIR%%/third_party/Zend/Http/UserAgent/Text.php
+%%WWWDIR%%/third_party/Zend/Http/UserAgent/Validator.php
+%%WWWDIR%%/third_party/Zend/Loader.php
+%%WWWDIR%%/third_party/Zend/Loader/Autoloader.php
+%%WWWDIR%%/third_party/Zend/Loader/Autoloader/Interface.php
+%%WWWDIR%%/third_party/Zend/Loader/Autoloader/Resource.php
+%%WWWDIR%%/third_party/Zend/Loader/Exception.php
+%%WWWDIR%%/third_party/Zend/Loader/PluginLoader.php
+%%WWWDIR%%/third_party/Zend/Loader/PluginLoader/Exception.php
+%%WWWDIR%%/third_party/Zend/Loader/PluginLoader/Interface.php
 %%WWWDIR%%/third_party/Zend/Registry.php
+%%WWWDIR%%/third_party/Zend/Uri.php
+%%WWWDIR%%/third_party/Zend/Uri/Exception.php
+%%WWWDIR%%/third_party/Zend/Uri/Http.php
 %%WWWDIR%%/third_party/Zend/Validate.php
 %%WWWDIR%%/third_party/Zend/Validate/Abstract.php
 %%WWWDIR%%/third_party/Zend/Validate/EmailAddress.php
@@ -873,6 +957,42 @@
 %%WWWDIR%%/third_party/Zend/Validate/Hostname/Jp.php
 %%WWWDIR%%/third_party/Zend/Validate/Interface.php
 %%WWWDIR%%/third_party/Zend/Validate/Ip.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Client.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Client/Exception.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Client/FaultException.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Client/HttpException.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Client/IntrospectException.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Client/ServerIntrospection.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Client/ServerProxy.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Exception.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Fault.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Generator/DomDocument.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Generator/GeneratorAbstract.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Generator/XmlWriter.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Request.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Request/Http.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Request/Stdin.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Response.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Response/Http.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Server.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Server/Cache.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Server/Exception.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Server/Fault.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Server/System.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Value.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Value/Array.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Value/Base64.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Value/BigInteger.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Value/Boolean.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Value/Collection.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Value/DateTime.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Value/Double.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Value/Exception.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Value/Integer.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Value/Nil.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Value/Scalar.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Value/String.php
+%%WWWDIR%%/third_party/Zend/XmlRpc/Value/Struct.php
 %%WWWDIR%%/third_party/adodb/adodb-active-record.inc.php
 %%WWWDIR%%/third_party/adodb/adodb-active-recordx.inc.php
 %%WWWDIR%%/third_party/adodb/adodb-csvlib.inc.php
@@ -907,6 +1027,7 @@
 %%WWWDIR%%/third_party/adodb/datadict/datadict-oci8.inc.php
 %%WWWDIR%%/third_party/adodb/datadict/datadict-postgres.inc.php
 %%WWWDIR%%/third_party/adodb/datadict/datadict-sapdb.inc.php
+%%WWWDIR%%/third_party/adodb/datadict/datadict-sqlite.inc.php
 %%WWWDIR%%/third_party/adodb/datadict/datadict-sybase.inc.php
 %%WWWDIR%%/third_party/adodb/docs/docs-active-record.htm
 %%WWWDIR%%/third_party/adodb/docs/docs-adodb.htm
@@ -929,6 +1050,7 @@
 %%WWWDIR%%/third_party/adodb/drivers/adodb-csv.inc.php
 %%WWWDIR%%/third_party/adodb/drivers/adodb-db2.inc.php
 %%WWWDIR%%/third_party/adodb/drivers/adodb-db2oci.inc.php
+%%WWWDIR%%/third_party/adodb/drivers/adodb-db2ora.inc.php
 %%WWWDIR%%/third_party/adodb/drivers/adodb-fbsql.inc.php
 %%WWWDIR%%/third_party/adodb/drivers/adodb-firebird.inc.php
 %%WWWDIR%%/third_party/adodb/drivers/adodb-ibase.inc.php
@@ -969,6 +1091,7 @@
 %%WWWDIR%%/third_party/adodb/drivers/adodb-sapdb.inc.php
 %%WWWDIR%%/third_party/adodb/drivers/adodb-sqlanywhere.inc.php
 %%WWWDIR%%/third_party/adodb/drivers/adodb-sqlite.inc.php
+%%WWWDIR%%/third_party/adodb/drivers/adodb-sqlite3.inc.php
 %%WWWDIR%%/third_party/adodb/drivers/adodb-sqlitepo.inc.php
 %%WWWDIR%%/third_party/adodb/drivers/adodb-sybase.inc.php
 %%WWWDIR%%/third_party/adodb/drivers/adodb-sybase_ase.inc.php
@@ -2968,6 +3091,12 @@
 %%WWWDIR%%/third_party/fckeditor/fckstyles.xml
 %%WWWDIR%%/third_party/fckeditor/fcktemplates.xml
 %%WWWDIR%%/third_party/fckeditor/license.txt
+%%WWWDIR%%/third_party/fogbugz-php-api/README.markdown
+%%WWWDIR%%/third_party/fogbugz-php-api/lib/api.php
+%%WWWDIR%%/third_party/fogbugz-php-api/sample.php
+%%WWWDIR%%/third_party/fogbugz-php-api/test/data/error.xml
+%%WWWDIR%%/third_party/fogbugz-php-api/test/data/login_expected.xml
+%%WWWDIR%%/third_party/fogbugz-php-api/test/fogbugz.php
 %%WWWDIR%%/third_party/pchart/Fonts/GeosansLight.ttf
 %%WWWDIR%%/third_party/pchart/Fonts/MankSans.ttf
 %%WWWDIR%%/third_party/pchart/Fonts/Silkscreen.ttf
@@ -3043,6 +3172,7 @@
 %%WWWDIR%%/third_party/phpxmlrpc/lib/xmlrpc_wrappers.inc
 %%WWWDIR%%/third_party/phpxmlrpc/lib/xmlrpcs.inc
 %%WWWDIR%%/third_party/prototype/prototype.js
+%%WWWDIR%%/third_party/redmine-php-api/lib/redmine-rest-api.php
 %%WWWDIR%%/third_party/smarty/BUGS
 %%WWWDIR%%/third_party/smarty/COPYING.lib
 %%WWWDIR%%/third_party/smarty/ChangeLog
@@ -3589,10 +3719,26 @@
 %%WWWDIR%%/third_party/user_contribution/fakeRemoteExecServer/client4fakeXMLRPCTestRunner.php
 %%WWWDIR%%/third_party/user_contribution/fakeRemoteExecServer/fakeXMLRPCTestRunner.php
 %%WWWDIR%%/third_party/user_contribution/migrate_cf_links.php
+%%WWWDIR%%/third_party/user_contribution/mysql_performance/MySQL_Index_Performance___bogdan_j3e.pdf
+%%WWWDIR%%/third_party/user_contribution/mysql_performance/mysql_index_performance.sql
 %%WWWDIR%%/third_party/user_contribution/reassign_tc_id.php
 %%WWWDIR%%/third_party/xml-rpc/class-IXR.php
+%%WWWDIR%%/third_party/youtrackclient/COPYING
+%%WWWDIR%%/third_party/youtrackclient/README.md
+%%WWWDIR%%/third_party/youtrackclient/build.xml
+%%WWWDIR%%/third_party/youtrackclient/src/connection.php
+%%WWWDIR%%/third_party/youtrackclient/src/youtrackclient.php
+%%WWWDIR%%/third_party/youtrackclient/test/ConnectionTest.php
+%%WWWDIR%%/third_party/youtrackclient/test/YouTrackExceptionTest.php
+%%WWWDIR%%/third_party/youtrackclient/test/YouTrackIssueTest.php
+%%WWWDIR%%/third_party/youtrackclient/test/issue.xml
+%%WWWDIR%%/third_party/youtrackclient/test/requirements.php
 @dirrmtry %%WWWDIR%%/upload_area
+@dirrm %%WWWDIR%%/third_party/youtrackclient/test
+@dirrm %%WWWDIR%%/third_party/youtrackclient/src
+@dirrm %%WWWDIR%%/third_party/youtrackclient
 @dirrm %%WWWDIR%%/third_party/xml-rpc
+@dirrm %%WWWDIR%%/third_party/user_contribution/mysql_performance
 @dirrm %%WWWDIR%%/third_party/user_contribution/fakeRemoteExecServer
 @dirrm %%WWWDIR%%/third_party/user_contribution
 @dirrm %%WWWDIR%%/third_party/tinymce/jscripts/tiny_mce/utils
@@ -3740,6 +3886,8 @@
 @dirrm %%WWWDIR%%/third_party/smarty/demo/configs
 @dirrm %%WWWDIR%%/third_party/smarty/demo
 @dirrm %%WWWDIR%%/third_party/smarty
+@dirrm %%WWWDIR%%/third_party/redmine-php-api/lib
+@dirrm %%WWWDIR%%/third_party/redmine-php-api
 @dirrm %%WWWDIR%%/third_party/prototype
 @dirrm %%WWWDIR%%/third_party/phpxmlrpc/lib
 @dirrm %%WWWDIR%%/third_party/phpxmlrpc
@@ -3752,6 +3900,10 @@
 @dirrm %%WWWDIR%%/third_party/pchart/pChart
 @dirrm %%WWWDIR%%/third_party/pchart/Fonts
 @dirrm %%WWWDIR%%/third_party/pchart
+@dirrm %%WWWDIR%%/third_party/fogbugz-php-api/test/data
+@dirrm %%WWWDIR%%/third_party/fogbugz-php-api/test
+@dirrm %%WWWDIR%%/third_party/fogbugz-php-api/lib
+@dirrm %%WWWDIR%%/third_party/fogbugz-php-api
 @dirrm %%WWWDIR%%/third_party/fckeditor/editor/wsc
 @dirrm %%WWWDIR%%/third_party/fckeditor/editor/skins/silver/images
 @dirrm %%WWWDIR%%/third_party/fckeditor/editor/skins/silver
@@ -3997,8 +4149,27 @@
 @dirrm %%WWWDIR%%/third_party/adodb/cute_icons_for_site
 @dirrm %%WWWDIR%%/third_party/adodb/contrib
 @dirrm %%WWWDIR%%/third_party/adodb
+@dirrm %%WWWDIR%%/third_party/Zend/XmlRpc/Value
+@dirrm %%WWWDIR%%/third_party/Zend/XmlRpc/Server
+@dirrm %%WWWDIR%%/third_party/Zend/XmlRpc/Response
+@dirrm %%WWWDIR%%/third_party/Zend/XmlRpc/Request
+@dirrm %%WWWDIR%%/third_party/Zend/XmlRpc/Generator
+@dirrm %%WWWDIR%%/third_party/Zend/XmlRpc/Client
+@dirrm %%WWWDIR%%/third_party/Zend/XmlRpc
 @dirrm %%WWWDIR%%/third_party/Zend/Validate/Hostname
 @dirrm %%WWWDIR%%/third_party/Zend/Validate
+@dirrm %%WWWDIR%%/third_party/Zend/Uri
+@dirrm %%WWWDIR%%/third_party/Zend/Loader/PluginLoader
+@dirrm %%WWWDIR%%/third_party/Zend/Loader/Autoloader
+@dirrm %%WWWDIR%%/third_party/Zend/Loader
+@dirrm %%WWWDIR%%/third_party/Zend/Http/UserAgent/Storage
+@dirrm %%WWWDIR%%/third_party/Zend/Http/UserAgent/Features/Adapter
+@dirrm %%WWWDIR%%/third_party/Zend/Http/UserAgent/Features
+@dirrm %%WWWDIR%%/third_party/Zend/Http/UserAgent
+@dirrm %%WWWDIR%%/third_party/Zend/Http/Response
+@dirrm %%WWWDIR%%/third_party/Zend/Http/Client/Adapter
+@dirrm %%WWWDIR%%/third_party/Zend/Http/Client
+@dirrm %%WWWDIR%%/third_party/Zend/Http
 @dirrm %%WWWDIR%%/third_party/Zend
 @dirrm %%WWWDIR%%/third_party
 @dirrmtry %%WWWDIR%%/logs
@@ -4028,6 +4199,9 @@
 @dirrm %%WWWDIR%%/lib/platforms
 @dirrm %%WWWDIR%%/lib/plan
 @dirrm %%WWWDIR%%/lib/keywords
+@dirrm %%WWWDIR%%/lib/issuetrackers
+@dirrm %%WWWDIR%%/lib/issuetrackerintegration/code_testing
+@dirrm %%WWWDIR%%/lib/issuetrackerintegration
 @dirrm %%WWWDIR%%/lib/inventory
 @dirrm %%WWWDIR%%/lib/general
 @dirrm %%WWWDIR%%/lib/functions/code_testing
@@ -4035,7 +4209,6 @@
 @dirrm %%WWWDIR%%/lib/execute
 @dirrm %%WWWDIR%%/lib/events
 @dirrm %%WWWDIR%%/lib/cfields
-@dirrm %%WWWDIR%%/lib/bugtracking
 @dirrm %%WWWDIR%%/lib/attachments
 @dirrm %%WWWDIR%%/lib/api/test
 @dirrm %%WWWDIR%%/lib/api/sample_extended_server
@@ -4057,6 +4230,7 @@
 @dirrm %%WWWDIR%%/lib/api
 @dirrm %%WWWDIR%%/lib/ajax
 @dirrm %%WWWDIR%%/lib
+@dirrm %%WWWDIR%%/install/util
 @dirrm %%WWWDIR%%/install/sql/postgres
 @dirrm %%WWWDIR%%/install/sql/mysql
 @dirrm %%WWWDIR%%/install/sql/mssql
@@ -4072,6 +4246,19 @@
 @dirrm %%WWWDIR%%/install/sql/alter_tables/1.9/mssql/DB.1.3/step1
 @dirrm %%WWWDIR%%/install/sql/alter_tables/1.9/mssql/DB.1.3
 @dirrm %%WWWDIR%%/install/sql/alter_tables/1.9/mssql
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.4/postgres/DB.1.5/stepZ
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.4/postgres/DB.1.5/step1
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.4/postgres/DB.1.5
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.4/postgres
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.4/mysql/DB.1.5/stepZ
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.4/mysql/DB.1.5/step1
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.4/mysql/DB.1.5
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.4/mysql
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql/DB.1.5/stepZ
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql/DB.1.5/step1
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql/DB.1.5
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.4
 @dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.1/postgres/DB.1.4/stepZ
 @dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.1/postgres/DB.1.4/step1
 @dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.1/postgres/DB.1.4
@@ -4136,6 +4323,7 @@
 @dirrm %%WWWDIR%%/gui/templates/platforms
 @dirrm %%WWWDIR%%/gui/templates/plan
 @dirrm %%WWWDIR%%/gui/templates/keywords
+@dirrm %%WWWDIR%%/gui/templates/issuetrackers
 @dirrm %%WWWDIR%%/gui/templates/inventory
 @dirrm %%WWWDIR%%/gui/templates/execute
 @dirrm %%WWWDIR%%/gui/templates/events
