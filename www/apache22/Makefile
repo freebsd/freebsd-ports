@@ -47,6 +47,24 @@ WITH_HTTP_PORT?=	80
 MPM_ITK_VERSION?=	20110321-01
 
 .include "${APACHEDIR}/Makefile.options"
+
+# stop users from using old WITH/WITHOUT parameters
+.for opt in ${OPTIONS_DEFINE}
+.  if defined(WITH_${opt}) || defined(WITHOUT_${opt})
+BROKEN=	WITH/WITHOUT parameters are obsolete. \
+	The port use the new options NG framework. Please read\
+	http://wiki.freebsd.org/Ports/Options/OptionsNG
+.  endif
+.endfor
+
+.for cat in ${ALL_MODULES_CATEGORIES}
+.  if defined(WITH_${cat}_MODULES)
+BROKEN=	WITH/WITHOUT_..._MODULES parameters are obsolete. \
+	The port use the new options NG framework. Please read\
+	http://wiki.freebsd.org/Ports/Options/OptionsNG
+.  endif
+.endfor
+
 .include <bsd.port.options.mk>
 .include "${APACHEDIR}/Makefile.doc"
 
