@@ -1,9 +1,4 @@
-# New ports collection makefile for:   ddate
-# Date created:		26 January 2005
-# Whom:			Emanuel Haupt <ehaupt@critical.ch>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ddate
 PORTVERSION=	2.21
@@ -26,21 +21,29 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		ddate.1
 
-OPTIONS=	USFORMAT  "Use US time format" off \
-		PRAISEBOB "Use SubGenius slogans" off \
-		KILLBOB   "Use countdown to X-Day" on
+#OPTIONS=	USFORMAT  "Use US time format" off \
+#		PRAISEBOB "Use SubGenius slogans" off \
+#		KILLBOB   "Use countdown to X-Day" on
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	USFORMAT PRAISEBOB KILLBOB
 
-.if defined(WITH_USFORMAT)
+USFORMAT_DESC=	US time format
+PRAISEBOB_DESC=	SubGenius slogans
+KILLBOB_DESC=	Countdown to X-Day
+
+OPTIONS_DEFAULT=KILLBOB
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MUSFORMAT}
 CFLAGS+=	-DUS_FORMAT=\"1\"
 .endif
 
-.if defined(WITH_PRAISEBOB)
+.if ${PORT_OPTIONS:MPRAISEBOB}
 CFLAGS+=	-DPRAISE_BOB=\"13013\"
 .endif
 
-.if defined(WITH_KILLBOB)
+.if ${PORT_OPTIONS:MKILLBOB}
 CFLAGS+=	-DKILL_BOB=\"13013\"
 .endif
 
@@ -52,4 +55,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/misc-utils/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/misc-utils/ddate.1 ${MANPREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
