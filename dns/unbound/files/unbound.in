@@ -1,5 +1,7 @@
 #!/bin/sh
 #
+# $FreeBSD$
+#
 # unbound freebsd startup rc.d script, modified from the named script.
 # uses the default unbound installation path and pidfile location.
 # copy this to /etc/rc.d/unbound
@@ -18,6 +20,7 @@ rcvar=unbound_enable
 command="%%PREFIX%%/sbin/unbound"
 extra_commands="reload"
 start_precmd="start_precmd"
+reload_precmd="%%PREFIX%%/sbin/unbound-checkconf >/dev/null" 
 
 load_rc_config $name
 
