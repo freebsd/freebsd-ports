@@ -1,23 +1,6 @@
 bin/imgsize
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Size/.packlist
 %%SITE_PERL%%/Image/Size.pm
-%%SITE_PERL%%/auto/Image/Size/autosplit.ix
-%%SITE_PERL%%/auto/Image/Size/bmpsize.al
-%%SITE_PERL%%/auto/Image/Size/emfsize.al
-%%SITE_PERL%%/auto/Image/Size/gifsize.al
-%%SITE_PERL%%/auto/Image/Size/jpegsize.al
-%%SITE_PERL%%/auto/Image/Size/mngsize.al
-%%SITE_PERL%%/auto/Image/Size/pcdsize.al
-%%SITE_PERL%%/auto/Image/Size/pngsize.al
-%%SITE_PERL%%/auto/Image/Size/ppmsize.al
-%%SITE_PERL%%/auto/Image/Size/psdsize.al
-%%SITE_PERL%%/auto/Image/Size/swfmxsize.al
-%%SITE_PERL%%/auto/Image/Size/swfsize.al
-%%SITE_PERL%%/auto/Image/Size/tiffsize.al
-%%SITE_PERL%%/auto/Image/Size/xbmsize.al
-%%SITE_PERL%%/auto/Image/Size/xpmsize.al
-@dirrm %%SITE_PERL%%/auto/Image/Size
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Size
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
-@dirrmtry %%SITE_PERL%%/auto/Image
 @dirrmtry %%SITE_PERL%%/Image
