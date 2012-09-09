@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	check_email_delivery
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1b
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://buhacoff.net/software/check_email_delivery/archive/ \
 		http://mirrors.rit.edu/zi/
@@ -22,7 +22,11 @@ RUN_DEPENDS=	p5-Net-SMTP-TLS>=0:${PORTSDIR}/mail/p5-Net-SMTP-TLS \
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
-DOC_FILES=	check_email_delivery.html check_email_delivery.pod check_imap_receive.html check_imap_receive.pod check_smtp_send.html check_smtp_send.pod
+DOC_FILES=	check_email_delivery.html check_email_delivery.pod \
+		check_imap_receive.html check_imap_receive.pod \
+		check_smtp_send.html check_smtp_send.pod \
+		check_imap_quota.html check_imap_quota.pod \
+		imap_ssl_cert.html imap_ssl_cert.pod
 
 PORTSCOUT=	ignore:1
 
@@ -32,10 +36,14 @@ do-install:
 	@${MKDIR} ${PREFIX}/libexec/nagios
 	${INSTALL_SCRIPT} ${WRKSRC}/check_email_delivery ${PREFIX}/libexec/nagios/
 	${INSTALL_SCRIPT} ${WRKSRC}/check_email_delivery_epn ${PREFIX}/libexec/nagios/
+	${INSTALL_SCRIPT} ${WRKSRC}/check_imap_quota ${PREFIX}/libexec/nagios/
+	${INSTALL_SCRIPT} ${WRKSRC}/check_imap_quota_epn ${PREFIX}/libexec/nagios/
 	${INSTALL_SCRIPT} ${WRKSRC}/check_imap_receive ${PREFIX}/libexec/nagios/
 	${INSTALL_SCRIPT} ${WRKSRC}/check_imap_receive_epn ${PREFIX}/libexec/nagios/
 	${INSTALL_SCRIPT} ${WRKSRC}/check_smtp_send ${PREFIX}/libexec/nagios/
 	${INSTALL_SCRIPT} ${WRKSRC}/check_smtp_send_epn ${PREFIX}/libexec/nagios/
+	${INSTALL_SCRIPT} ${WRKSRC}/imap_ssl_cert ${PREFIX}/libexec/nagios/
+	${INSTALL_SCRIPT} ${WRKSRC}/imap_ssl_cert_epn ${PREFIX}/libexec/nagios/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOC_FILES}
