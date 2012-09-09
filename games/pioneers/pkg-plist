@@ -147,6 +147,12 @@ share/gnome/help/pioneers/C/images/trade.png
 share/gnome/help/pioneers/C/images/wool.png
 share/gnome/help/pioneers/C/legal.xml
 share/gnome/help/pioneers/C/pioneers.xml
+share/icons/hicolor/48x48/apps/pioneers-editor.png
+share/icons/hicolor/48x48/apps/pioneers-server.png
+share/icons/hicolor/48x48/apps/pioneers.png
+share/icons/hicolor/scalable/apps/pioneers-editor.svg
+share/icons/hicolor/scalable/apps/pioneers-server.svg
+share/icons/hicolor/scalable/apps/pioneers.svg
 share/omf/pioneers/pioneers-C.omf
 share/pixmaps/pioneers-editor.png
 share/pixmaps/pioneers-server.png
