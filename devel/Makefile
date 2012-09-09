@@ -3292,6 +3292,7 @@
     SUBDIR += py-geojson
     SUBDIR += py-geotypes
     SUBDIR += py-gevent
+    SUBDIR += py-gevent-zeromq
     SUBDIR += py-gflags
     SUBDIR += py-gitdb
     SUBDIR += py-gitosis
