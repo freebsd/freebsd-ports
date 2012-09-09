@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bugzilla
-PORTVERSION=	3.6.10
-PORTREVISION=	1
+PORTVERSION=	3.6.11
 CATEGORIES=	japanese
 MASTER_SITES=	http://bug-ja.org/releases/3.6/ \
 		LOCAL
@@ -23,12 +22,6 @@ NO_WRKSUBDIR=	yes
 USE_BZIP2=	yes
 
 LANGDIR=	${WWWDIR}/template/ja
-
-post-patch:
-	${REINPLACE_CMD} -i '' -e '/abbrev/d' \
-		${WRKDIR}/default/filterexceptions.pl
-	${REINPLACE_CMD} -i '' -e 's/column.title -%/column.title FILTER html -%/' \
-		${WRKDIR}/default/list/table.html.tmpl
 
 do-install:
 	@-${MKDIR} ${LANGDIR}/default
