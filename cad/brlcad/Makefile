@@ -18,6 +18,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/tnt/jama_lu.h:${PORTSDIR}/math/jama	\
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		rle.1:${PORTSDIR}/graphics/urt
 
+BROKEN=		does not compile
+
 USE_BZIP2=	yes
 USE_GL=		gl glu
 USE_XORG=	x11 xt xi xproto xext inputproto
