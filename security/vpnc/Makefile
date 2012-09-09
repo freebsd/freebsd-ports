@@ -1,9 +1,4 @@
-# New ports collection makefile for:	vpnc
-# Date created:				15 December 2003
-# Whom:					Christian Lackas
-#
 # $FreeBSD$
-#
 
 PORTNAME=	vpnc
 PORTVERSION=	0.5.3
@@ -28,15 +23,18 @@ ALL_TARGET=	all
 PORTDOCS=	README TODO
 MAN8=		vpnc.8
 
-OPTIONS+=	DECRYPT       "cisco-decypt password decrypt utility"      on
-OPTIONS+=	SSL           "OpenSSL certificate support (hybrid only)"  off
-OPTIONS+=	CISCOVERSION  "Mask linux presentation string"             off
-
 MAKE_ENV+=	BINS="${EXTRABUILDS}"
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DECRYPT SSL CISCOVERSION
 
-.if defined(WITH_DECRYPT)
+DECRYPT_DESC=		cisco-decypt password decrypt utility
+CISCOVERSION_DESC=	Mask linux presentation string
+
+OPTIONS_DEFAULT=DECRYPT
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDECRYPT}
 MAN1=		cisco-decrypt.1
 EXTRABUILDS+=	cisco-decrypt
 PLIST_SUB+=	DECRYPT=""
@@ -44,13 +42,13 @@ PLIST_SUB+=	DECRYPT=""
 PLIST_SUB+=	DECRYPT="@comment "
 .endif
 
-.if defined(WITH_SSL)
+.if ${PORT_OPTIONS:MSSL}
 NO_PACKAGE=	binary linked against OpenSSL must not be redistributed
 CFLAGS+=	-DOPENSSL_GPL_VIOLATION
 LDFLAGS+=	-lcrypto
 .endif
 
-.if defined(WITH_CISCOVERSION)
+.if ${PORT_OPTIONS:MCISCOVERSION}
 CFLAGS+=	-DCISCO_PATCH_VERSION
 .endif
 
@@ -61,7 +59,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} -m 751 ${WRKSRC}/vpnc ${PREFIX}/sbin/vpnc
-.if defined(WITH_DECRYPT)
+.if ${PORT_OPTIONS:MDECRYPT}
 	${INSTALL_PROGRAM} ${WRKSRC}/cisco-decrypt ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
 .endif
@@ -77,4 +75,4 @@ do-install:
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
