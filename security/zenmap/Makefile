@@ -17,7 +17,7 @@ MASTER_SITES=	http://nmap.org/dist/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	nmap-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	GUI frontend for the nmap scanning utility
 
 RUN_DEPENDS=	${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap \

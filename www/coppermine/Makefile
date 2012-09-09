@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF/eenemeenemuu.u
 DISTNAME=	cpg${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	A web picture gallery script
 
 OPTIONS_DEFINE=	DOCS IMAGEMAGICK

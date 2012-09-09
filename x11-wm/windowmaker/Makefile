@@ -12,7 +12,7 @@ MASTER_SITES=	http://windowmaker.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	source/release
 DISTNAME=	WindowMaker-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT?=	GNUstep-compliant NeXTstep window manager clone
 
 LIB_DEPENDS=	gif:${PORTSDIR}/graphics/giflib \
