@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Safe-Hole
-PORTVERSION=	0.10
+PORTVERSION=	0.13
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sethk@meowfishies.com
 COMMENT=	Make a hole to the original main compartment in the Safe compartment
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		Safe::Hole.3
 
