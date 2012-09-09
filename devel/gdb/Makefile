@@ -40,10 +40,8 @@ MAN1=	gdb${VER}.1
 ONLY_FOR_ARCHS=	i386 amd64	# untested elsewhere, might work
 
 # Forcing to use readline.6 from ports (newer readline in FreeBSD world is not
-# compatible anymore). Please ignore portlint here.
-LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
-CFLAGS+=	-isystem ${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+# compatible anymore).
+USE_READLINE=	port
 
 OPTIONS_DEFINE=	DEBUG EXPAT PYTHON THREADS GDB_LINK
 GDB_LINK_DESC=	Create the gdb link
