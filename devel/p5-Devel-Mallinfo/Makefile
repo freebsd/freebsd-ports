@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mosconi.rmg@gmail.com.br
 COMMENT=	Perl module of mallinfo() memory statistics and more
 
+DEPRECATED=	Does not work on FreeBSD, mallinfo() is a GNU libc function and is not available on FreeBSD
+EXPIRATION_DATE=	20121008
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Devel::Mallinfo.3
