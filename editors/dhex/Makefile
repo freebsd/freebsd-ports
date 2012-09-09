@@ -1,12 +1,7 @@
-# New ports collection makefile for:	dhex
-# Date created:				23 Jan 2011
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	dhex
-PORTVERSION=	0.67
+PORTVERSION=	0.68
 CATEGORIES=	editors
 MASTER_SITES=	http://www.dettus.net/dhex/ \
 		CRITICAL
