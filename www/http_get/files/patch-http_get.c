@@ -1,9 +1,9 @@
---- http_get.c.orig	Wed Dec 15 19:10:11 2004
-+++ http_get.c	Wed Dec 15 19:10:30 2004
+--- http_get.c.org	2010-06-20 11:20:30.000000000 +0900
++++ http_get.c	2012-09-09 11:24:00.000000000 +0900
 @@ -2,7 +2,9 @@
  **
  ** Originally based on a simple version by Al Globus <globus@nas.nasa.gov>.
- ** Debugged and prettified by Jef Poskanzer <jef@acme.com>.  Also includes
+ ** Debugged and prettified by Jef Poskanzer <jef@mail.acme.com>.  Also includes
 -** ifdefs to handle https via OpenSSL.
 +** ifdefs to handle https via OpenSSL.  -h argument for debugging multihomed
 +** URLs added by Jim Salter.
@@ -11,7 +11,7 @@
  */
  
  #include <unistd.h>
-@@ -35,6 +37,7 @@
+@@ -36,6 +38,7 @@
  static int verbose;
  static int timeout;
  static char* url;
@@ -19,51 +19,48 @@
  
  /* Protocol symbols. */
  #define PROTO_HTTP 0
-@@ -72,6 +75,8 @@
-     user_agent = "http_get";
-     auth_token = (char*) 0;
-     cookie = (char*) 0;
+@@ -79,6 +82,7 @@
+     ncookies = 0;
+     header_name = (char*) 0;
+     header_value = (char*) 0;
 +    force_host = (char*) "[NONE]";
-+
+     verbose = 0;
      while ( argn < argc && argv[argn][0] == '-' && argv[argn][1] != '\0' )
  	{
- 	if ( strcmp( argv[argn], "-v" ) == 0 )
-@@ -81,6 +86,11 @@
+@@ -87,6 +91,11 @@
  	    ++argn;
  	    timeout = atoi( argv[argn] );
  	    }
-+        else if ( strcmp( argv[argn], "-h" ) == 0 && argn + 1 < argc )
-+            {
-+            ++argn;
-+            force_host = argv[argn];
-+            }
++    else if ( strcmp( argv[argn], "-H" ) == 0 && argn + 1 < argc )
++        {
++        ++argn;
++        force_host = argv[argn];
++        }
  	else if ( strcmp( argv[argn], "-r" ) == 0 && argn + 1 < argc )
  	    {
  	    ++argn;
-@@ -127,7 +137,7 @@
+@@ -147,7 +156,7 @@
  static void
  usage()
      {
--    (void) fprintf( stderr, "usage:  %s [-t timeout] [-r referer] [-u user-agent] [-a username:password] url\n", argv0 );
-+    (void) fprintf( stderr, "usage:  %s [-t timeout] [-h force host address] [-r referer] [-u user-agent] [-a username:password] url\n", argv0 );
+-    (void) fprintf( stderr, "usage:  %s [-c cookie] [-t timeout] [-r referer] [-u user-agent] [-a username:password] [-h header value] [-v] url\n", argv0 );
++    (void) fprintf( stderr, "usage:  %s [-c cookie] [-t timeout] [-H force host address] [-r referer] [-u user-agent] [-a username:password] [-h header value] [-v] url\n", argv0 );
      exit( 1 );
      }
  
-@@ -218,7 +228,16 @@
-     int bytes, b, header_state, status;
+@@ -240,7 +249,14 @@
+     int i, bytes, b, header_state, status;
  
      (void) alarm( timeout );
 -    sockfd = open_client_socket( host, port );
-+
-+if ( force_host == "[NONE]" )
-+    {
++    if ( strcmp( force_host, "[NONE]" ) == 0 )
++        {
 +        sockfd = open_client_socket( host, port );
-+    }
-+else
-+    {
++        }
++    else
++        {
 +        sockfd = open_client_socket( force_host, port );
-+    }
-+
++        }
  
  #ifdef USE_SSL
      if ( protocol == PROTO_HTTPS )
