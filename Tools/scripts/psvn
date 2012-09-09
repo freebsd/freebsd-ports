@@ -111,7 +111,7 @@ setprop () {
 			"${SVN}" -q -- propdel fbsd:nokeywords "${_file}"
 			;;
 		1)	# no match
-			"${SVN}" -q -- propset fbsd:nokeywords 1 "${_file}"
+			"${SVN}" -q -- propset fbsd:nokeywords yes "${_file}"
 			"${SVN}" -q -- propdel svn:keywords "${_file}"
 			;;
 		*)	# egrep failed
