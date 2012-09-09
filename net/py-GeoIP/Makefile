@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	GeoIP
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.7
 CATEGORIES=	net python geography
 MASTER_SITES=	http://geolite.maxmind.com/download/geoip/api/python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
