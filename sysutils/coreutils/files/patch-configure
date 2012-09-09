@@ -1,23 +1,23 @@
---- configure.orig	Thu Mar 22 14:20:28 2007
-+++ configure
-@@ -2415,13 +2415,13 @@
-   for ac_prog in mkdir gmkdir; do
+--- configure.orig	2012-08-20 10:14:01.000000000 +0400
++++ configure	2012-09-09 14:04:39.000000000 +0400
+@@ -4369,13 +4369,13 @@ do
+     for ac_prog in mkdir gmkdir; do
  	 for ac_exec_ext in '' $ac_executable_extensions; do
- 	   { test -f "$as_dir/$ac_prog$ac_exec_ext" && $as_test_x "$as_dir/$ac_prog$ac_exec_ext"; } || continue
--	   case `"$as_dir/$ac_prog$ac_exec_ext" --version 2>&1` in #(
+ 	   as_fn_executable_p "$as_dir$ac_prog$ac_exec_ext" || continue
+-	   case `"$as_dir$ac_prog$ac_exec_ext" --version 2>&1` in #(
 -	     'mkdir (GNU coreutils) '* | \
 -	     'mkdir (coreutils) '* | \
 -	     'mkdir (fileutils) '4.1*)
--	       ac_cv_path_mkdir=$as_dir/$ac_prog$ac_exec_ext
+-	       ac_cv_path_mkdir=$as_dir$ac_prog$ac_exec_ext
 -	       break 3;;
 -	   esac
-+#	   case `"$as_dir/$ac_prog$ac_exec_ext" --version 2>&1` in #(
++#	   case `"$as_dir$ac_prog$ac_exec_ext" --version 2>&1` in #(
 +#	     'mkdir (GNU coreutils) '* | \
 +#	     'mkdir (coreutils) '* | \
 +#	     'mkdir (fileutils) '4.1*)
-+#	       ac_cv_path_mkdir=$as_dir/$ac_prog$ac_exec_ext
++#	       ac_cv_path_mkdir=$as_dir$ac_prog$ac_exec_ext
 +#	       break 3;;
 +#	   esac
  	 done
         done
- done
+   done
