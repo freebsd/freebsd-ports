@@ -1,9 +1,4 @@
-# New ports collection makefile for:	HTML-Mason
-# Date created:				31 May 2000
-# Whom:					Denis Shaposhnikov <dsh@vlink.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	HTML-Mason
 PORTVERSION=	1.50
@@ -73,7 +68,7 @@ post-install:
 
 .if ${PORT_OPTIONS:MMODPERL}
 RUN_DEPENDS+=	p5-libapreq2>=0:${PORTSDIR}/www/p5-libapreq2
-USE_APACHE=	22+
+USE_APACHE_RUN=	22+
 .endif
 
 .include <bsd.port.mk>

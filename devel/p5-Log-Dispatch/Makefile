@@ -1,9 +1,4 @@
-# New ports collection makefile for:	devel/p5-Log-Dispatch
-# Date created:				17 May 2001
-# Whom:					Anton Berezin <tobez@tobez.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Log-Dispatch
 PORTVERSION=	2.32
@@ -50,7 +45,7 @@ MAIL_SENDER_DESC=		Mail::Sender support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPACHELOG}
-USE_APACHE=	22+
+USE_APACHE_RUN=	22+
 .endif
 
 .include <bsd.port.pre.mk>

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	wwwstat
-# Date created:			1997-04-02
-# Whom:				Andreas Klemm <andreas@klemm.gtn.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	wwwstat
 PORTVERSION=	2.01
@@ -21,7 +16,7 @@ COMMENT=	Webserver logfile analysis package
 
 MAKE_JOBS_SAFE=	yes
 
-USE_APACHE=	22+
+USE_APACHE_RUN=	22+
 USE_PERL5=	yes
 MAKE_ENV+=	PERL5=${PERL5}
 
