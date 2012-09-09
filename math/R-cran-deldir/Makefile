@@ -1,13 +1,7 @@
-# New ports collection makefile for:	R-cran-deldir
-# Date created:		2011-08-16
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	deldir
-DISTVERSION=	0.0-19
-PORTREVISION=	2
+DISTVERSION=	0.0-20
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
