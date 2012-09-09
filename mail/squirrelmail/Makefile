@@ -31,11 +31,16 @@ DATABASE_DESC=	PEAR database support (must also intall a driver)
 # if you were using WITHOUT_WWWDIR, use SQUIRRELDIR=${PREFIX}/${PORTNAME}
 SQUIRRELDIR?=	${PREFIX}/www/${PORTNAME}
 
+SMUSER?=	${WWWOWN}
+SMGROUP?=	${WWWGRP}
+USERS=		${SMUSER}
+GROUPS=		${SMGROUP}
+
 PLIST_SUB=	PORTVERSION=${PORTVERSION} \
 		SQUIRRELDIR="${SQUIRRELDIR:S,^${PREFIX}/,,}"
 
 SUB_FILES=	pkg-message pkg-install pkg-deinstall
-SUB_LIST=	SQUIRRELDIR=${SQUIRRELDIR}
+SUB_LIST=	SQUIRRELDIR=${SQUIRRELDIR} SMUSER=${SMUSER} SMGROUP=${SMGROUP}
 
 PORTDOCS=	*
 
@@ -109,7 +114,7 @@ do-install:
 .for DIR in class config data functions help images include locale plugins po src themes
 	@${CP} -rpv ${WRKSRC}/${DIR} ${SQUIRRELDIR}
 .endfor
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${SQUIRRELDIR}/data
+	${CHOWN} -R ${SMUSER}:${SMGROUP} ${SQUIRRELDIR}/data
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	@${CP} -Rv ${WRKSRC}/doc/* ${DOCSDIR}
