@@ -15,7 +15,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:squirrelmail \
 		all_locales-1.4.18-20090526${EXTRACT_SUFX}:locales
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	A webmail system which accesses mail over IMAP
 
 USE_PHP=	session mhash gettext mbstring pcre openssl xml
