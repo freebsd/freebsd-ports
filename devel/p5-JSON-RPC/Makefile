@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	JSON-RPC
-PORTVERSION=	1.01
+PORTVERSION=	1.03
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DMAKI
@@ -37,7 +37,8 @@ MAN3=		JSON::RPC.3 \
 		JSON::RPC::Legacy::Server::CGI.3 \
 		JSON::RPC::Legacy::Server::Daemon.3 \
 		JSON::RPC::Parser.3 \
-		JSON::RPC::Procedure.3
+		JSON::RPC::Procedure.3 \
+		JSON::RPC::Test.3
 
 .include <bsd.port.pre.mk>
 
