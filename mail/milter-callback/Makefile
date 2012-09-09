@@ -1,9 +1,4 @@
-# New ports collection makefile for:	milter-callback
-# Date created:				10 Feb 2010
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	milter-callback
 PORTVERSION=	1.5.10
@@ -26,11 +21,12 @@ MAN8=		milter-callback.8
 EXTRACT_AFTER_ARGS=	| (${MKDIR} ${WRKSRC}; ${TAR} -xf - --no-same-owner \
 				--no-same-permissions -C ${WRKSRC})
 
-OPTIONS=	SPF "build with SPF support" off
+OPTIONS_DEFINE=	SPF
+SPF_DESC=	libspf support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_SPF)
+.if ${PORT_OPTIONS:MSPF}
 MAKE_ENV+=	WITH_SPF=yes
 LIB_DEPENDS+=	spf2.3:${PORTSDIR}/mail/libspf2
 .endif
@@ -54,4 +50,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
