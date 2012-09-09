@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	A UNIX rewrite of a game originally based on "Drug Wars"
 
 USE_GETTEXT=	yes

@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.clanlib.org/download/releases-0.8/
 DISTNAME=	ClanLib-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Cross-platform game SDK
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \

@@ -10,7 +10,7 @@ PORTVERSION=	0.9.0
 CATEGORIES=	editors ruby
 MASTER_SITES=	http://diakonos.pist0s.ca/archives/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	A Linux editor for the masses
 
 USE_RUBY=	yes

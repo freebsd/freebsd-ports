@@ -13,7 +13,7 @@ CATEGORIES=	ports-mgmt
 MASTER_SITES=	# http://gauss.cord.edu/homepages/twschulz/demo/
 DISTNAME=	qtpkg
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	A Qt based package removal tool
 CFLAGS+=	${PTHREAD_CFLAGS}
 MAKE_ENV=	LIBS="-lqt-mt ${PTHREAD_LIBS}"

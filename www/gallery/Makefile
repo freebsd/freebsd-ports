@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${LANGPACKS}
 DIST_SUBDIR=	gallery
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	A slick web based photo album written using PHP
 
 RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm \

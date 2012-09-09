@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.analog.cx/ \
 		ftp://ftp.polytechnic.edu.na/pub/analog/ \
 		http://analog.tzone.it/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	An extremely fast program for analysing WWW logfiles
 
 LICENSE=	GPLv2
