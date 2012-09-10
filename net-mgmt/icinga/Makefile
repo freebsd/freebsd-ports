@@ -130,7 +130,7 @@ CONFIGURE_ARGS+=	--enable-pgsql
 .endif
 
 .if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE=	22+
+USE_APACHE_RUN=		22+
 CONFIGURE_ARGS+=	--with-httpd-conf=${LOCALBASE}/${APACHEETCDIR}/extra
 INSTALL_TARGET+=	install-webconf
 PLIST_SUB+=		APACHE=""
