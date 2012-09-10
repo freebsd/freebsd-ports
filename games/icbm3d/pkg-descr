@@ -1,14 +1,16 @@
-   Like the original "Missile Command" and its clones, this game
-places  you  in  control  of  Anti-ICBM weapons which you use to 
-destroy  an  onslaught of missiles (and other nasties) which are 
-dropping onto your nation.
-   The game ends when your cities have all  been  destroyed. You 
-only   gain   replacement   cities  by  acheiving  certain score
-thresholds during each attack (level).
-   The main difference between this game and  Missile Command is
-that ICBM3D, as the name  suggests,  provides  a 3D perspective. 
-You take advantage of X-Window's  3-button mouse to control your
-firing  sight  ("cross-hair")  in  3-dimensions, and change your 
-viewpoint.
+ICBM3D ("Inter-Continental Ballistic Missiles, 3D") is a 3D game of defense.
+
+Like the original "Missile Command" and its clones, this game places you in
+control of Anti-ICBM weapons which you use to destroy an onslaught of
+missiles (and other nasties) which are dropping onto your nation.
+
+The game ends when your cities have all been destroyed. You only gain
+replacement cities by acheiving certain score thresholds during each attack
+(level).
+
+The main difference between this game and Missile Command is that ICBM3D,
+as the name suggests, provides a 3D perspective. You take advantage of
+X-Window's 3-button mouse to control your firing sight ("cross-hair")
+in 3-dimensions, and change your viewpoint.
 
 WWW: http://www.newbreedsoftware.com/icbm3d/
