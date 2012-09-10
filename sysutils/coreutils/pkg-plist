@@ -58,6 +58,7 @@ bin/gprintf
 bin/gptx
 bin/gpwd
 bin/greadlink
+bin/grealpath
 bin/grm
 bin/grmdir
 bin/gruncon
@@ -99,7 +100,7 @@ bin/gwc
 bin/gwho
 bin/gwhoami
 bin/gyes
-lib/coreutils/glibstdbuf.so
+libexec/coreutils/glibstdbuf.so
 %%NLS%%share/locale/af/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/af/LC_TIME/coreutils.mo
 %%NLS%%share/locale/be/LC_MESSAGES/coreutils.mo
@@ -180,7 +181,7 @@ lib/coreutils/glibstdbuf.so
 %%NLS%%share/locale/zh_CN/LC_TIME/coreutils.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/zh_TW/LC_TIME/coreutils.mo
-@dirrm lib/coreutils
+@dirrm libexec/coreutils
 %%NLS%%@dirrmtry share/locale/zh_TW/LC_TIME
 %%NLS%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/zh_CN/LC_TIME

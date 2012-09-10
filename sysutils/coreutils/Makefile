@@ -7,6 +7,7 @@
 
 PORTNAME=	coreutils
 PORTVERSION=	8.19
+PORTREVISION=	1
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -42,7 +43,7 @@ MAN1=	gbasename.1 gcat.1 gchcon.1 gchgrp.1 gchmod.1 gchown.1 gchroot.1 \
 	gid.1 ginstall.1 gjoin.1 gkill.1 glink.1 gln.1 \
 	glogname.1 gls.1 gmd5sum.1 gmkdir.1 gmkfifo.1 gmknod.1 gmktemp.1 \
 	gmv.1 gnice.1 gnl.1 gnohup.1 god.1 gpaste.1 gpathchk.1 gpinky.1 \
-	gpr.1 gprintenv.1 gprintf.1 gptx.1 gpwd.1 greadlink.1 grm.1 \
+	gpr.1 gprintenv.1 gprintf.1 gptx.1 gpwd.1 greadlink.1 grealpath.1 grm.1 \
 	grmdir.1 gruncon.1 gseq.1 gsha1sum.1 gshred.1 gsleep.1 gsort.1 \
 	gsplit.1 gstdbuf.1 gnustat.1 gstty.1 gsum.1 gsync.1 gtac.1 \
 	gtail.1 gtee.1 gtest.1 gtimeout.1 gtouch.1 gtr.1 gtrue.1 gtruncate.1 \
