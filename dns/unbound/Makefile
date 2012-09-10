@@ -7,7 +7,7 @@
 
 PORTNAME=	unbound
 PORTVERSION=	1.4.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -102,7 +102,7 @@ post-install:
 .if ${PORT_OPTIONS:MMUNIN}
 	@${MKDIR} ${PREFIX}/share/munin/plugins
 	@${MKDIR} ${PREFIX}/etc/munin/plugins
-	@${INSTALL_DATA} ${WRKDIR}/unbound-${PORTVERSION}/contrib/unbound_munin_\
+	@${INSTALL_SCRIPT} ${WRKDIR}/unbound-${PORTVERSION}/contrib/unbound_munin_\
 		${PREFIX}/share/munin/plugins/
 	@for i in ${MUNIN_ALL}; do\
 		${LN} -fs ${PREFIX}/share/munin/plugins/unbound_munin_\
