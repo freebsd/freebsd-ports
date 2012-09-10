@@ -51,6 +51,9 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/cslist.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/cslist.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/cslist.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/customtools.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/customtools.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/customtools.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/decorators.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/decorators.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/decorators.pyo
@@ -60,6 +63,9 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/docklog.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/docklog.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/docklog.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/filectxactions.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/filectxactions.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/filectxactions.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/filedata.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/filedata.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/filedata.pyo
@@ -78,6 +84,9 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/fileview.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/fileview.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/fileview.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/graft.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/graft.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/graft.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/graph.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/graph.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/graph.pyo
@@ -336,9 +345,6 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/paths.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/paths.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/paths.pyo
-%%PYTHON_SITELIBDIR%%/tortoisehg/util/prej.py
-%%PYTHON_SITELIBDIR%%/tortoisehg/util/prej.pyc
-%%PYTHON_SITELIBDIR%%/tortoisehg/util/prej.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/settings.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/settings.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/settings.pyo
