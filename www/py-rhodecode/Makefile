@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rhodecode
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.6
 CATEGORIES=	www devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,6 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pylons>=1.0:${PORTSDIR}/www/py-pylons \
 		${PYTHON_PKGNAMEPREFIX}dulwich>=0.8.5:${PORTSDIR}/devel/dulwich \
 		${PYTHON_PKGNAMEPREFIX}docutils>=0.8.1:${PORTSDIR}/textproc/py-docutils \
 		${PYTHON_PKGNAMEPREFIX}bcrypt>=0.2:${PORTSDIR}/security/py-bcrypt \
+		${PYTHON_PKGNAMEPREFIX}PasteScript>=1.6.3:${PORTSDIR}/www/py-pastescript \
 		${LOCALBASE}/bin/hg:${PORTSDIR}/devel/mercurial
 
 USE_PYTHON=	2.6+
@@ -33,22 +34,23 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	RhodeCode
 
-OPTIONS=	LDAP "support authenticate via LDAP" off
-OPTIONS+=	GIT "use GIT cvs support" off
-OPTIONS+=	CELERY "use Celery for better performance" off
+OPTIONS_DEFINE=	LDAP GIT CELERY
 
-.include <bsd.port.pre.mk>
+GIT_DESC=	GIT support
+CELERY_DESC=	Use Celery for better performance
 
-.if defined(WITH_LDAP)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MLDAP}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ldap>=2.4.6:${PORTSDIR}/net/py-ldap2
 .endif
 
-.if defined(WITH_GIT)
+.if ${PORT_OPTIONS:MGIT}
 RUN_DEPENDS+=	${LOCALBASE}/bin/git:${PORTSDIR}/devel/git
 .endif
 
-.if defined(WITH_CELERY)
+.if ${PORT_OPTIONS:MCELERY}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}celery>=2.4.6:${PORTSDIR}/devel/py-celery
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
