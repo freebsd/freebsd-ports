@@ -2,6 +2,7 @@ bin/unnethack
 %%DATADIR%%/nhdat
 %%DATADIR%%/recover
 %%DATADIR%%/unnethack
+@dirrm %%DATADIR%%
 %%VARDIR%%/logfile
 %%VARDIR%%/perm
 %%VARDIR%%/record
