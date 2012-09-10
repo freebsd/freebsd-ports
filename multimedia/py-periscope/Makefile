@@ -18,11 +18,9 @@ EXTRACT_ONLY=	python-${PORTNAME}_${PORTVERSION}.orig${EXTRACT_SUFX}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Subtitles searching module
 
-BROKEN=		does not build
-
 LICENSE=	LGPL3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=3.2.0:${PORTSDIR}/www/py-beautifulsoup
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=3.2.0:${PORTSDIR}/www/py-beautifulsoup32
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USE_GNOME=	desktopfileutils
