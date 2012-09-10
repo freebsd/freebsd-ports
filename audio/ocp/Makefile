@@ -1,9 +1,4 @@
-# New ports collection makefile for:	ocp
-# Date created:				22 April 2005
-# Whom:					Emanuel Haupt <ehaupt@critical.ch>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ocp
 PORTVERSION=	0.1.20
@@ -18,10 +13,10 @@ COMMENT=	The legendary Open Cubic Player
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	id3tag.0:${PORTSDIR}/audio/libid3tag \
-		mad.2:${PORTSDIR}/audio/libmad \
-		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		sidplay.1:${PORTSDIR}/audio/libsidplay
+LIB_DEPENDS=	id3tag:${PORTSDIR}/audio/libid3tag \
+		mad:${PORTSDIR}/audio/libmad \
+		vorbis:${PORTSDIR}/audio/libvorbis \
+		sidplay:${PORTSDIR}/audio/libsidplay
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -56,30 +51,31 @@ PFILES=		configure cpiface/cpianal.c cpiface/cpidots.c \
 		stuff/poutput-dga.c stuff/poutput-keyboard.c \
 		stuff/poutput-vcsa.c stuff/poutput-x11.c
 
-OPTIONS=	ADPLUG "Build with adplug support" on \
-		FLAC   "Build with FLAC support" on \
-		MIDI   "Build with timidity support" on \
-		X11    "Build with X11 support" on \
-		SDL    "Build with SDL support" on
+OPTIONS_DEFINE=	ADPLUG FLAC MIDI X11 SDL
 
-.include <bsd.port.pre.mk>
+ADPLUG_DESC=	adplug support
+MIDI_DESC=	timidity support
 
-.if exists(${TIMIDITY_CFG}) || !defined(WITHOUT_MIDI)
+OPTIONS_DEFAULT=ADPLUG FLAC MIDI X11 SDL
+
+.include <bsd.port.options.mk>
+
+.if exists(${TIMIDITY_CFG}) || ${PORT_OPTIONS:MMIDI}
 RUN_DEPENDS+=	${TIMIDITY_CFG}:${PORTSDIR}/audio/eawpats
 .endif
 
-.if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=	--without-x11
-PLIST_SUB+=		XORG="@comment "
-.else
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=		xxf86dga xxf86vm xpm
 USE_GNOME=		desktopfileutils
 CONFIGURE_ARGS+=	--with-x11=yes
 PLIST_SUB+=		XORG=""
+.else
+CONFIGURE_ARGS+=	--without-x11
+PLIST_SUB+=		XORG="@comment "
 .endif
 
-.if defined(WITH_ADPLUG)
-LIB_DEPENDS+=		adplug-2.2:${PORTSDIR}/audio/libadplug
+.if ${PORT_OPTIONS:MADPLUG}
+LIB_DEPENDS+=		adplug:${PORTSDIR}/audio/libadplug
 CONFIGURE_ARGS+=	--with-adplug
 PLIST_SUB+=		ADPLUG=""
 .else
@@ -87,7 +83,7 @@ PLIST_SUB+=		ADPLUG="@comment "
 CONFIGURE_ARGS+=	--without-adplug
 .endif
 
-.if defined(WITH_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=		sound
 USE_GNOME+=		desktopfileutils
 CONFIGURE_ARGS+=	--with-sdl=yes
@@ -97,14 +93,14 @@ CONFIGURE_ARGS+=	--with-sdl=no
 PLIST_SUB+=		SDL="@comment "
 .endif
 
-.if defined(WITH_SDL) || defined(WITH_X11)
+.if ${PORT_OPTIONS:MSDL} || ${PORT_OPTIONS:MX11}
 PLIST_SUB+=		DESKTOP=""
 .else
 PLIST_SUB+=		DESKTOP="@comment "
 .endif
 
-.if defined(WITH_FLAC)
-LIB_DEPENDS+=		FLAC.10:${PORTSDIR}/audio/flac
+.if ${PORT_OPTIONS:MFLAC}
+LIB_DEPENDS+=		FLAC:${PORTSDIR}/audio/flac
 CONFIGURE_ARGS+=	--with-flac
 PLIST_SUB+=		FLAC=""
 .else
@@ -124,4 +120,4 @@ post-patch:
 		${WRKSRC}/filesel/adb.c \
 		${WRKSRC}/filesel/pfilesel.c
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
