@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	beanstalkc
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ USE_PYDISTUTILS=	easy_install
 
 OPTIONS_DEFINE=	YAML
 OPTIONS_DEFAULT=	YAML
-YAML_DESC=	Support parsing YAML reponses
+YAML_DESC=	Support parsing YAML responses
 
 # bypass infrastructure bug
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
