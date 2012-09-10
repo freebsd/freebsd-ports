@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	taglib
-PORTVERSION=	1.7.2
+PORTVERSION=	1.8
 CATEGORIES=	audio
 MASTER_SITES=	http://cloud.github.com/downloads/taglib/taglib/ \
 		http://developer.kde.org/~wheeler/files/src/
@@ -16,7 +16,6 @@ COMMENT=	Library for manipulating ID3 tags and Ogg comments
 
 LICENSE=	LGPL21 MPL
 LICENSE_COMB=	dual
-LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPL
 LICENSE_FILE_MPL=	${WRKSRC}/COPYING.MPL
 
 OPTIONS_DEFINE=	RCC
