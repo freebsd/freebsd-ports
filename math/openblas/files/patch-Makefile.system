@@ -1,5 +1,5 @@
---- Makefile.system.orig	2012-07-06 23:09:12.000000000 +0900
-+++ Makefile.system	2012-07-12 23:03:26.000000000 +0900
+--- Makefile.system.orig	2012-08-20 17:52:35.000000000 +0900
++++ Makefile.system	2012-08-29 22:42:27.000000000 +0900
 @@ -10,7 +10,7 @@
  endif
  
@@ -9,20 +9,21 @@
  endif
  
  # Default C compiler
-@@ -117,6 +117,8 @@
+@@ -117,6 +117,9 @@
  endif
  
  ifeq ($(OSNAME), FreeBSD)
 +EXTRALIB	+= -lm
++CCOMMON_OPT     += -Wl,-rpath=%%LOCALBASE%%/lib/%%_GCC_BUILD_DEPENDS%%
 +FCOMMON_OPT	+= -Wl,-rpath=%%LOCALBASE%%/lib/%%_GCC_BUILD_DEPENDS%%
  MD5SUM = md5 -r
  endif
  
-@@ -705,15 +707,6 @@
+@@ -714,15 +717,6 @@
  LIBSUFFIX = a
  endif
  
--ifndef DYNAMIC_ARCH
+-ifneq ($(DYNAMIC_ARCH), 1)
 -ifndef SMP
 -LIBNAME		= $(LIBPREFIX)_$(LIBCORE)$(REVISION).$(LIBSUFFIX)
 -LIBNAME_P	= $(LIBPREFIX)_$(LIBCORE)$(REVISION)_p.$(LIBSUFFIX)
@@ -34,15 +35,15 @@
  ifndef SMP
  LIBNAME		= $(LIBPREFIX)$(REVISION).$(LIBSUFFIX)
  LIBNAME_P	= $(LIBPREFIX)$(REVISION)_p.$(LIBSUFFIX)
-@@ -721,7 +714,6 @@
+@@ -730,7 +724,6 @@
  LIBNAME		= $(LIBPREFIX)p$(REVISION).$(LIBSUFFIX)
  LIBNAME_P	= $(LIBPREFIX)p$(REVISION)_p.$(LIBSUFFIX)
  endif
 -endif
  
  
- LIBSONAME    = $(LIBNAME:.$(LIBSUFFIX)=.so)
-@@ -735,7 +727,7 @@
+ LIBDLLNAME   = $(LIBPREFIX).dll
+@@ -744,7 +737,7 @@
  LIBS_P		= $(TOPDIR)/$(LIBNAME_P)
  
  export OSNAME
