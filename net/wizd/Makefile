@@ -19,6 +19,8 @@ LIB_DEPENDS=	dvdread:${PORTSDIR}/multimedia/libdvdread \
 		jpeg:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
+BROKEN=		does not install
+
 NO_WRKSUBDIR=	yes
 USE_DOS2UNIX=	Makefile
 USE_ZIP=	yes
