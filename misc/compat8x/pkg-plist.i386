@@ -5,7 +5,6 @@ lib/compat/liblwres.so.50
 lib/compat/libobjc.so.4
 lib/compat/libopie.so.6
 lib/compat/libpcap.so.7
-lib/compat/libpkg.so.0
 lib/compat/librtld_db.so.1
 lib/compat/libsbuf.so.5
 lib/compat/libtacplus.so.4
