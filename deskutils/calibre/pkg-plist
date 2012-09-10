@@ -18,7 +18,6 @@ bin/lrf2lrs
 bin/lrfviewer
 bin/lrs2lrf
 bin/markdown-calibre
-bin/pdfmanipulate
 bin/web2disk
 etc/bash_completion.d/calibre
 %%PYTHON_SITELIBDIR%%/init_calibre.py
@@ -46,6 +45,7 @@ lib/calibre/calibre/devices/blackberry/__init__.py
 lib/calibre/calibre/devices/blackberry/driver.py
 lib/calibre/calibre/devices/boeye/__init__.py
 lib/calibre/calibre/devices/boeye/driver.py
+lib/calibre/calibre/devices/cli.py
 lib/calibre/calibre/devices/cybook/__init__.py
 lib/calibre/calibre/devices/cybook/driver.py
 lib/calibre/calibre/devices/cybook/t2b.py
@@ -79,28 +79,35 @@ lib/calibre/calibre/devices/kobo/__init__.py
 lib/calibre/calibre/devices/kobo/books.py
 lib/calibre/calibre/devices/kobo/driver.py
 lib/calibre/calibre/devices/kobo/bookmark.py
-lib/calibre/calibre/devices/libusb.py
 lib/calibre/calibre/devices/manager.py
 lib/calibre/calibre/devices/mime.py
 lib/calibre/calibre/devices/misc.py
+lib/calibre/calibre/devices/mtp/books.py
+lib/calibre/calibre/devices/mtp/__init__.py
+lib/calibre/calibre/devices/mtp/driver.py
+lib/calibre/calibre/devices/mtp/test.py
+lib/calibre/calibre/devices/mtp/base.py
+lib/calibre/calibre/devices/mtp/filesystem_cache.py
+lib/calibre/calibre/devices/mtp/unix/__init__.py
+lib/calibre/calibre/devices/mtp/unix/driver.py
+lib/calibre/calibre/devices/mtp/unix/upstream/update.py
+lib/calibre/calibre/devices/mtp/windows/__init__.py
+lib/calibre/calibre/devices/mtp/windows/driver.py
+lib/calibre/calibre/devices/mtp/windows/remote.py
 lib/calibre/calibre/devices/nokia/__init__.py
 lib/calibre/calibre/devices/nokia/driver.py
 lib/calibre/calibre/devices/nook/__init__.py
 lib/calibre/calibre/devices/nook/driver.py
 lib/calibre/calibre/devices/nuut2/__init__.py
 lib/calibre/calibre/devices/nuut2/driver.py
-lib/calibre/calibre/devices/prs500/__init__.py
-lib/calibre/calibre/devices/prs500/books.py
-lib/calibre/calibre/devices/prs500/cli/__init__.py
-lib/calibre/calibre/devices/prs500/cli/main.py
-lib/calibre/calibre/devices/prs500/driver.py
-lib/calibre/calibre/devices/prs500/prstypes.py
 lib/calibre/calibre/devices/prs505/__init__.py
 lib/calibre/calibre/devices/prs505/driver.py
 lib/calibre/calibre/devices/prs505/sony_cache.py
 lib/calibre/calibre/devices/prst1/__init__.py
 lib/calibre/calibre/devices/prst1/driver.py
 lib/calibre/calibre/devices/scanner.py
+lib/calibre/calibre/devices/smart_device_app/__init__.py
+lib/calibre/calibre/devices/smart_device_app/driver.py
 lib/calibre/calibre/devices/sne/__init__.py
 lib/calibre/calibre/devices/sne/driver.py
 lib/calibre/calibre/devices/teclast/__init__.py
@@ -115,6 +122,7 @@ lib/calibre/calibre/devices/usbms/device.py
 lib/calibre/calibre/devices/usbms/deviceconfig.py
 lib/calibre/calibre/devices/usbms/driver.py
 lib/calibre/calibre/devices/usbobserver/test.py
+lib/calibre/calibre/devices/utils.py
 lib/calibre/calibre/db/__init__.py
 lib/calibre/calibre/db/backend.py
 lib/calibre/calibre/db/locking.py
@@ -401,20 +409,10 @@ lib/calibre/calibre/ebooks/pdb/ztxt/reader.py
 lib/calibre/calibre/ebooks/pdb/ztxt/writer.py
 lib/calibre/calibre/ebooks/pdf/__init__.py
 lib/calibre/calibre/ebooks/pdf/from_comic.py
-lib/calibre/calibre/ebooks/pdf/manipulate/__init__.py
-lib/calibre/calibre/ebooks/pdf/manipulate/cli.py
-lib/calibre/calibre/ebooks/pdf/manipulate/crop.py
-lib/calibre/calibre/ebooks/pdf/manipulate/decrypt.py
-lib/calibre/calibre/ebooks/pdf/manipulate/encrypt.py
-lib/calibre/calibre/ebooks/pdf/manipulate/info.py
-lib/calibre/calibre/ebooks/pdf/manipulate/merge.py
-lib/calibre/calibre/ebooks/pdf/manipulate/reverse.py
-lib/calibre/calibre/ebooks/pdf/manipulate/rotate.py
-lib/calibre/calibre/ebooks/pdf/manipulate/split.py
+lib/calibre/calibre/ebooks/pdf/outline_writer.py
 lib/calibre/calibre/ebooks/pdf/pageoptions.py
 lib/calibre/calibre/ebooks/pdf/pdftohtml.py
 lib/calibre/calibre/ebooks/pdf/reflow.py
-lib/calibre/calibre/ebooks/pdf/verify.py
 lib/calibre/calibre/ebooks/pdf/writer.py
 lib/calibre/calibre/ebooks/pml/__init__.py
 lib/calibre/calibre/ebooks/pml/pmlconverter.py
@@ -628,6 +626,7 @@ lib/calibre/calibre/gui2/device.py
 lib/calibre/calibre/gui2/device_drivers/__init__.py
 lib/calibre/calibre/gui2/device_drivers/configwidget.py
 lib/calibre/calibre/gui2/device_drivers/configwidget_ui.py
+lib/calibre/calibre/gui2/device_drivers/mtp_config.py
 lib/calibre/calibre/gui2/dialogs/__init__.py
 lib/calibre/calibre/gui2/dialogs/add_empty_book.py
 lib/calibre/calibre/gui2/dialogs/add_from_isbn.py
@@ -684,6 +683,8 @@ lib/calibre/calibre/gui2/dialogs/search.py
 lib/calibre/calibre/gui2/dialogs/search_item_ui.py
 lib/calibre/calibre/gui2/dialogs/search_ui.py
 lib/calibre/calibre/gui2/dialogs/select_formats.py
+lib/calibre/calibre/gui2/dialogs/smartdevice_ui.py
+lib/calibre/calibre/gui2/dialogs/smartdevice.py
 lib/calibre/calibre/gui2/dialogs/tag_categories.py
 lib/calibre/calibre/gui2/dialogs/tag_categories_ui.py
 lib/calibre/calibre/gui2/dialogs/tag_editor.py
@@ -794,6 +795,7 @@ lib/calibre/calibre/gui2/store/stores/amazon_it_plugin.py
 lib/calibre/calibre/gui2/store/stores/beam_ebooks_de_plugin.py
 lib/calibre/calibre/gui2/store/stores/biblio_plugin.py
 lib/calibre/calibre/gui2/store/stores/ebookpoint_plugin.py
+lib/calibre/calibre/gui2/store/stores/ebooksgratuits_plugin.py
 lib/calibre/calibre/gui2/store/stores/escapemagazine_plugin.py
 lib/calibre/calibre/gui2/store/stores/gandalf_plugin.py
 lib/calibre/calibre/gui2/store/stores/litres_plugin.py
@@ -886,6 +888,7 @@ lib/calibre/calibre/gui2/viewer/dictionary.py
 lib/calibre/calibre/gui2/viewer/documentview.py
 lib/calibre/calibre/gui2/viewer/javascript.py
 lib/calibre/calibre/gui2/viewer/flip.py
+lib/calibre/calibre/gui2/viewer/image_popup.py
 lib/calibre/calibre/gui2/viewer/keys.py
 lib/calibre/calibre/gui2/viewer/main.py
 lib/calibre/calibre/gui2/viewer/main_ui.py
@@ -959,7 +962,6 @@ lib/calibre/calibre/startup.py
 lib/calibre/calibre/test_build.py
 lib/calibre/calibre/trac/__init__.py
 lib/calibre/calibre/trac/bzr_commit_plugin.py
-lib/calibre/calibre/trac/setup.py
 lib/calibre/calibre/translations/__init__.py
 lib/calibre/calibre/translations/dynamic.py
 lib/calibre/calibre/translations/msgfmt.py
@@ -1207,12 +1209,6 @@ lib/calibre/odf/text.py
 lib/calibre/odf/thumbnail.py
 lib/calibre/odf/userfield.py
 lib/calibre/odf/xforms.py
-lib/calibre/pyPdf/__init__.py
-lib/calibre/pyPdf/filters.py
-lib/calibre/pyPdf/generic.py
-lib/calibre/pyPdf/pdf.py
-lib/calibre/pyPdf/utils.py
-lib/calibre/pyPdf/xmp.py
 lib/calibre/qtcurve/test_rendering.py
 lib/calibre/routes/__init__.py
 lib/calibre/routes/base.py
@@ -1340,6 +1336,7 @@ share/gnome/apps/calibre-ebook-viewer.desktop
 %%DATADIR%%/images/devices/itunes.png
 %%DATADIR%%/images/devices/kindle.jpg
 %%DATADIR%%/images/devices/nook.jpg
+%%DATADIR%%/images/devices/galaxy_s3.png
 %%DATADIR%%/images/dialog_error.png
 %%DATADIR%%/images/dialog_information.png
 %%DATADIR%%/images/dialog_question.png
@@ -1482,6 +1479,8 @@ share/gnome/apps/calibre-ebook-viewer.desktop
 %%DATADIR%%/images/drm-unlocked.png
 %%DATADIR%%/images/cover_texture.png
 %%DATADIR%%/images/scroll.png
+%%DATADIR%%/images/dot_green.png
+%%DATADIR%%/images/dot_red.png
 %%DATADIR%%/jacket/stylesheet.css
 %%DATADIR%%/jacket/template.xhtml
 %%DATADIR%%/jquery.simulate.js
@@ -1512,8 +1511,247 @@ share/gnome/apps/calibre-ebook-viewer.desktop
 %%DATADIR%%/viewer/hyphenation.js
 %%DATADIR%%/viewer/images.js
 %%DATADIR%%/viewer/jquery_scrollTo.js
+%%DATADIR%%/viewer/mathjax/extensions/FontWarnings.js
+%%DATADIR%%/viewer/mathjax/extensions/v1.0-warning.js
+%%DATADIR%%/viewer/mathjax/extensions/mml2jax.js
+%%DATADIR%%/viewer/mathjax/extensions/asciimath2jax.js
+%%DATADIR%%/viewer/mathjax/extensions/tex2jax.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/HTML.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/unicode.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/mathchoice.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/begingroup.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/cancel.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/AMSsymbols.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/autoload-all.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/enclose.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/extpfeil.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/color.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/noErrors.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/mhchem.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/noUndefined.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/verb.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/bbox.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/AMSmath.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/newcommand.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/boldsymbol.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/autobold.js
+%%DATADIR%%/viewer/mathjax/extensions/TeX/action.js
+%%DATADIR%%/viewer/mathjax/extensions/toMathML.js
+%%DATADIR%%/viewer/mathjax/extensions/MathZoom.js
+%%DATADIR%%/viewer/mathjax/extensions/MathMenu.js
+%%DATADIR%%/viewer/mathjax/extensions/jsMath2jax.js
+%%DATADIR%%/viewer/mathjax/extensions/MathEvents.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/jax.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/SupplementalArrowsB.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/MiscTechnical.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/MiscMathSymbolsA.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/SupplementalArrowsA.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/MathOperators.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/SpacingModLetters.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/CombDiacritMarks.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/SuppMathOperators.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/Dingbats.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/Latin1Supplement.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/GeneralPunctuation.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/CombDiactForSymbols.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/GeometricShapes.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/Arrows.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/MiscMathSymbolsB.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/BasicLatin.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/LetterlikeSymbols.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/MiscSymbolsAndArrows.js
+%%DATADIR%%/viewer/mathjax/jax/element/mml/optable/GreekAndCoptic.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/autoload/maction.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/autoload/mtable.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/autoload/ms.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/autoload/mglyph.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/autoload/annotation-xml.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/autoload/multiline.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/autoload/menclose.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/autoload/mmultiscripts.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur/Bold/Other.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur/Bold/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur/Bold/PUA.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur/Bold/BasicLatin.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur/Regular/Other.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur/Regular/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur/Regular/PUA.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur/Regular/BasicLatin.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Script/Regular/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Script/Regular/BasicLatin.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size1/Regular/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Typewriter/Regular/Other.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Typewriter/Regular/CombDiacritMarks.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Typewriter/Regular/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Typewriter/Regular/BasicLatin.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Caligraphic/Bold/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Caligraphic/Regular/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Bold/Other.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Bold/CombDiacritMarks.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Bold/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Bold/BasicLatin.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Italic/Other.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Italic/CombDiacritMarks.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Italic/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Italic/BasicLatin.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Regular/Other.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Regular/CombDiacritMarks.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Regular/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Regular/BasicLatin.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Math/BoldItalic/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Math/Italic/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size3/Regular/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size2/Regular/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/fontdata.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size4/Regular/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/MiscTechnical.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/MathOperators.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/SpacingModLetters.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/CombDiacritMarks.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/SuppMathOperators.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/PUA.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/Dingbats.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/Latin1Supplement.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/GeneralPunctuation.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/EnclosedAlphanum.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/BoxDrawing.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/GeometricShapes.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/LatinExtendedA.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/Arrows.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/MiscMathSymbolsB.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/LetterlikeSymbols.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/GreekAndCoptic.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/MiscSymbols.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/fontdata-extra.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/MiscTechnical.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/MiscMathSymbolsA.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/SupplementalArrowsA.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/MathOperators.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/SpacingModLetters.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/CombDiacritMarks.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/SuppMathOperators.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/LatinExtendedB.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/Latin1Supplement.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/GeneralPunctuation.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/CombDiactForSymbols.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/GeometricShapes.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/LatinExtendedA.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/Arrows.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/BasicLatin.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/LetterlikeSymbols.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/GreekAndCoptic.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold/MiscSymbols.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic/MathOperators.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic/CombDiacritMarks.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic/LatinExtendedB.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic/GeneralPunctuation.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic/LatinExtendedA.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic/BasicLatin.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic/LetterlikeSymbols.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic/GreekAndCoptic.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/MathOperators.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/SpacingModLetters.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/CombDiacritMarks.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/SuppMathOperators.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/Main.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/LatinExtendedB.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/GeometricShapes.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/LatinExtendedA.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/BasicLatin.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/LetterlikeSymbols.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/GreekAndCoptic.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular/MiscSymbols.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/config.js
+%%DATADIR%%/viewer/mathjax/jax/output/SVG/jax.js
+%%DATADIR%%/viewer/mathjax/jax/input/AsciiMath/config.js
+%%DATADIR%%/viewer/mathjax/jax/input/AsciiMath/jax.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/v.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/d.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/j.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/x.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/m.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/w.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/n.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/e.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/opf.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/z.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/g.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/h.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/q.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/o.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/y.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/t.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/a.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/p.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/b.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/s.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/fr.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/scr.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/c.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/r.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/l.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/f.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/i.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/k.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/entities/u.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/config.js
+%%DATADIR%%/viewer/mathjax/jax/input/MathML/jax.js
+%%DATADIR%%/viewer/mathjax/jax/input/TeX/config.js
+%%DATADIR%%/viewer/mathjax/jax/input/TeX/jax.js
+%%DATADIR%%/viewer/mathjax/MathJax.js
 %%DATADIR%%/viewer/referencing.js
 @dirrm %%DATADIR%%/viewer/hyphenate
+@dirrm %%DATADIR%%/viewer/mathjax/jax/input/MathML/entities
+@dirrm %%DATADIR%%/viewer/mathjax/jax/input/MathML
+@dirrm %%DATADIR%%/viewer/mathjax/jax/input/AsciiMath
+@dirrm %%DATADIR%%/viewer/mathjax/jax/input/TeX
+@dirrm %%DATADIR%%/viewer/mathjax/jax/input
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Bold
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Italic
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main/Regular
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Main
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS/Regular
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/AMS
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Caligraphic/Bold
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Caligraphic/Regular
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Caligraphic
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Typewriter/Regular
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Typewriter
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Script/Regular
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Script
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size4/Regular
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size4
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size3/Regular
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size3
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size2/Regular
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size2
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Math/Italic
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Math/BoldItalic
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Math
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Bold
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Italic
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif/Regular
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/SansSerif
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size1/Regular
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Size1
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur/Regular
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur/Bold
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Fraktur
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/autoload
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG
+@dirrm %%DATADIR%%/viewer/mathjax/jax/output
+@dirrm %%DATADIR%%/viewer/mathjax/jax/element/mml/optable
+@dirrm %%DATADIR%%/viewer/mathjax/jax/element/mml
+@dirrm %%DATADIR%%/viewer/mathjax/jax/element
+@dirrm %%DATADIR%%/viewer/mathjax/jax
+@dirrm %%DATADIR%%/viewer/mathjax/extensions/TeX
+@dirrm %%DATADIR%%/viewer/mathjax/extensions
+@dirrm %%DATADIR%%/viewer/mathjax
 @dirrm %%DATADIR%%/viewer
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/localization/pykakasi
@@ -1539,7 +1777,6 @@ share/gnome/apps/calibre-ebook-viewer.desktop
 @dirrm lib/calibre/templite
 @dirrm lib/calibre/routes
 @dirrm lib/calibre/qtcurve
-@dirrm lib/calibre/pyPdf
 @dirrm lib/calibre/odf
 @dirrm lib/calibre/chardet
 @dirrm lib/calibre/cherrypy/wsgiserver
@@ -1600,7 +1837,6 @@ share/gnome/apps/calibre-ebook-viewer.desktop
 @dirrm lib/calibre/calibre/ebooks/readability
 @dirrm lib/calibre/calibre/ebooks/rb
 @dirrm lib/calibre/calibre/ebooks/pml
-@dirrm lib/calibre/calibre/ebooks/pdf/manipulate
 @dirrm lib/calibre/calibre/ebooks/pdf
 @dirrm lib/calibre/calibre/ebooks/pdb/ztxt
 @dirrm lib/calibre/calibre/ebooks/pdb/plucker
@@ -1653,13 +1889,16 @@ share/gnome/apps/calibre-ebook-viewer.desktop
 @dirrm lib/calibre/calibre/devices/user_defined
 @dirrm lib/calibre/calibre/devices/teclast
 @dirrm lib/calibre/calibre/devices/sne
+@dirrm lib/calibre/calibre/devices/smart_device_app
 @dirrm lib/calibre/calibre/devices/prs505
-@dirrm lib/calibre/calibre/devices/prs500/cli
-@dirrm lib/calibre/calibre/devices/prs500
 @dirrm lib/calibre/calibre/devices/prst1
 @dirrm lib/calibre/calibre/devices/nuut2
 @dirrm lib/calibre/calibre/devices/nook
 @dirrm lib/calibre/calibre/devices/nokia
+@dirrm lib/calibre/calibre/devices/mtp/unix/upstream
+@dirrm lib/calibre/calibre/devices/mtp/unix
+@dirrm lib/calibre/calibre/devices/mtp/windows
+@dirrm lib/calibre/calibre/devices/mtp
 @dirrm lib/calibre/calibre/devices/kobo
 @dirrm lib/calibre/calibre/devices/kindle
 @dirrm lib/calibre/calibre/devices/jetbook

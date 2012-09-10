@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	calibre
-PORTVERSION=	0.8.61
-PORTREVISION=	1
+PORTVERSION=	0.8.68
 CATEGORIES=	deskutils python
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
@@ -42,6 +41,7 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
 		${PYTHON_PKGNAMEPREFIX}qt4-webkit>=0:${PORTSDIR}/www/py-qt4-webkit \
 		${PYTHON_PKGNAMEPREFIX}qt4-xml>=0:${PORTSDIR}/textproc/py-qt4-xml \
 		${PYTHON_PKGNAMEPREFIX}dbus>=0:${PORTSDIR}/devel/py-dbus \
+		${PYTHON_PKGNAMEPREFIX}netifaces>=0:${PORTSDIR}/net/py-netifaces \
 		pdftohtml:${PORTSDIR}/graphics/poppler-utils \
 		lshal:${PORTSDIR}/sysutils/hal
 
