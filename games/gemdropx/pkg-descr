@@ -1,20 +1,18 @@
-  Gem Drop X is an interesting one-player puzzle game for X-Window.
+"Gem Drop X" is an interesting one-player puzzle game using the
+Simple DirectMedia Layer (SDL) libraries.
 
-  Gem Drop X  is  a  direct  port  of Gem Drop, an Atari 8-bit game
-written in Action! (a very fast C and Pascal-like compiled language
-for the Atari).  The concept of the game Gem Drop is based directly
-on an arcade game for the NeoGeo system called "Magical Drop III"
-by SNK.
+It is a direct port of "Gem Drop," an Atari 8-bit game written in Action!
+(a very fast C- and Pascal-like compiled language for the Atari).
 
-  If you're familiar  with  games like Jewels, Klax, Bust-A-Move or 
-Tetris, this game is similar to them all.  I consider it closest to
-Klax. (Jewels is like a combination of Klax and Tetris. Bust-A-Move
-is the  least  similar, in  my  opinion, but everyone seems to have 
-heard of it more than the others (except Tetris, of course!))
+It was originally ported to X11, using SDL for sound and music.
+Eventually, the Xlib graphics calls were removed and replaced with
+SDL calls.
 
-  The game is played  with YOU at the bottom of the screen.  At the
-top is a random assortment of colored shapes ("gems"). As time goes
-on, more  gems  appear at the very  top of the  screen, pushing the
-rest downwards.  The game is over when the gems reach the bottom.
+The concept of the game "Gem Drop" is based on an arcade game for the
+NeoGeo system called "Magical Drop III" by SNK.
+
+If you're familiar with games like Jewels, Klax, Bust-A-Move or Tetris,
+this game is similar to them all.  I consider it closest to Klax.
+Some people have compared it to "Tetris meets Space Invaders."
 
 WWW: http://www.newbreedsoftware.com/gemdropx/
