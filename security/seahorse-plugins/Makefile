@@ -22,7 +22,7 @@ LIB_DEPENDS=	cryptui.0:${PORTSDIR}/security/seahorse \
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-#USE_GECKO=	libxul
+#USE_GECKO=	libxul19
 USE_GNOME=	gnomehack intlhack gnomeprefix gconf2 gnomedocutils
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
@@ -44,7 +44,7 @@ MAN1=		seahorse-agent.1 seahorse-tool.1
 #.if ${GECKO}=="libxul"
 #CONFIGURE_ARGS+=--with-gecko=libxul-unstable
 #.else
-#CONFIGURE_ARGS+=--with-gecko=${GECKO}
+#CONFIGURE_ARGS+=--with-gecko=${GECKO:S/19//}
 #.endif
 
 .if !defined(WITHOUT_GEDIT)

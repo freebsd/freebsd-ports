@@ -6,12 +6,12 @@ Bug 685258 - Pulse audio backend does not check provided playback and crashes r=
 diff --git a/content/media/nsAudioStream.cpp b/content/media/nsAudioStream.cpp
 --- content/media/nsAudioStream.cpp
 +++ content/media/nsAudioStream.cpp
-@@ -83,7 +83,7 @@ void nsAudioStream::Init(PRInt32 aNumCha
-   mChannels = aNumChannels;
+@@ -429,7 +429,7 @@ nsresult nsNativeAudioStream::Init(PRInt32 aNumChannels, PRInt32 aRate, SampleFo
    mFormat = aFormat;
+ 
    if (sa_stream_create_pcm(reinterpret_cast<sa_stream_t**>(&mAudioHandle),
--                           NULL, 
+-                           NULL,
 +                           "Mozilla",
-                            SA_MODE_WRONLY, 
+                            SA_MODE_WRONLY,
                             SA_PCM_FORMAT_S16_NE,
                             aRate,

@@ -7,7 +7,7 @@
 
 PORTNAME=	chmsee
 PORTVERSION=	1.3.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	chm.0:${PORTSDIR}/misc/chmlib \
 LICENSE=	GPLv2
 
 USE_GNOME=	gnomehier libglade2
-USE_GECKO=	libxul
+USE_GECKO=	libxul19
 USE_GETTEXT=	yes
 USE_CMAKE=	yes
 CMAKE_ARGS=	-DCMAKE_INSTALL_RPATH_USE_LINK_PATH:BOOL=TRUE
@@ -30,8 +30,8 @@ MAN1=		chmsee.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(GECKO) && ${GECKO:Mlibxul}!=""
-GTKMOZEMBED_LIB="${GECKO}-embedding-unstable nspr"
+.if defined(GECKO) && ${GECKO:S/19//:Mlibxul}!=""
+GTKMOZEMBED_LIB="${GECKO:S/19//}-embedding nspr"
 .else
 GTKMOZEMBED_LIB="${GECKO}-gtkmozembed"
 CFLAGS+=	-I${LOCALBASE}/include/${GECKO}/commandhandler \
@@ -45,7 +45,7 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/REQUIRED/s|libxul-.*=1.9.0.999|${GTKMOZEMBED_LIB}|g ; \
-		 /FLAVOUR/s|libxul|${GECKO}|g' ${WRKSRC}/CMakeLists.txt
+		 /FLAVOUR/s|libxul|${GECKO:S/19//}|g' ${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e \
 		's|.desktop.in|.desktop.skel|g' ${WRKSRC}/data/CMakeLists.txt
 

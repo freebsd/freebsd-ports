@@ -388,6 +388,7 @@
     SUBDIR += libmicrohttpd
     SUBDIR += libwww
     SUBDIR += libxul
+    SUBDIR += libxul19
     SUBDIR += lifetype
     SUBDIR += lightsquid
     SUBDIR += lighttpd

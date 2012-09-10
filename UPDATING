@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120910:
+  AFFECTS: users of www/libxul
+  AUTHOR: gecko@FreeBSD.org
+
+  The www/libxul has been updated to 10.0 and the older version 1.9.2
+  has moved to www/libxul19.
+
+  If you want to stay with 1.9.2 please run the following command:
+
+  # portmaster -o www/libxul19 www/libxul
+  or
+  # portupgrade -o www/libxul19 www/libxul
+
 20120909:
   AFFECTS: users of www/testlink
   AUTHOR: tota@FreeBSD.org

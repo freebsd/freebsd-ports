@@ -36,9 +36,8 @@ Gecko_Pre_Include=			bsd.gecko.mk
 
 # Users should use the following syntax:
 #
-# WITH_GECKO= libxul libxul-devel
-#  Use libxul whenever a port supports it, falling back on libxul-devel.
-#  Note: libxul-devel does not exist at the moment!
+# WITH_GECKO= libxul libxul19
+#  Use libxul whenever a port supports it, falling back on libxul19.
 # WITH_GECKO= libxul
 #  Sets your preferred backend. With this example, libxul will always
 #  be chosen, unless the port doesn't support a libxul backend. In that
@@ -48,20 +47,19 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #
 # Ports should use the following:
 #
-# USE_GECKO= libxul libxul-devel
+# USE_GECKO= libxul libxul19
 #  The list of gecko backends that the port supports. Unless the user
 #  overrides it with WITH_GECKO, the first gecko listed in USE_GECKO
 #  will be the default. In the above example, www/libxul will be used
-#  as a gecko backend unless WITH_GECKO=libxul-devel is defined by the
-#  user. Note: libxul-devel does not exist at the moment!
+#  as a gecko backend unless WITH_GECKO=libxul19 is defined by the
+#  user.
 #
-# USE_GECKO= libxul-devel<->libxul
-#  This will sed -e 's/libxul/libxul-devel/' on Makefile.in's and configure 
-#  if ${GECKO}=="libxul-devel"
+# USE_GECKO= libxul19<->libxul
+#  This will sed -e 's/libxul/libxul19/' on Makefile.in's and configure 
+#  if ${GECKO}=="libxul19"
 #
 #  Example:
-#  USE_GECKO= libxul libxul-devel
-#  Note: libxul-devel does not exist at the moment!
+#  USE_GECKO= libxul libxul19
 # 
 #  post-patch:
 #	@${REINPALCE_CMD} -e 's|mozilla-|${GECKO}-|' \
@@ -71,11 +69,10 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #  has been chosen.
 #
 #  Example:
-#  USE_GECKO= libxul libxul-devel
-#  Note: libxul-devel does not exist at the moment!
+#  USE_GECKO= libxul libxul19
 #  
 #  post-patch:
-#  .if ${GECKO}=="libxul-devel"
+#  .if ${GECKO}=="libxul19"
 #	@${REINPLACE_CMD} -e 's|mozilla-|libxul-|' \
 #		${MOZSRC}/configure
 #  .endif

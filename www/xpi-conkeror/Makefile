@@ -7,7 +7,7 @@
 
 PORTNAME=	conkeror
 PORTVERSION=	20090821
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	http://mirror.4bit.ws/ \
 		${MASTER_SITE_LOCAL} \
@@ -18,7 +18,7 @@ MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	A completely keyboard driven browser based on firefox
 
 WRKSRC=	${WRKDIR}/conkeror
-USE_GECKO=	libxul
+USE_GECKO=	libxul19
 
 BUILD_ID=echo -n `whoami`@`hostname`_`date +%s`
 

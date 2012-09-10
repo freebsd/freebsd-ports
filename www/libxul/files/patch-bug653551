@@ -11,14 +11,19 @@ diff --git js/src/configure.in js/src/configure.in
 index 84390cf..d663c46 100644
 --- js/src/configure.in
 +++ js/src/configure.in
-@@ -2471,8 +2471,10 @@ arm*-*)
-     NANOJIT_ARCH=ARM
+@@ -2806,13 +2806,15 @@ arm*-*)
+     AC_DEFINE(JS_NUNBOX32)
      ;;
  sparc*-*)
 +    if test ! "$HAVE_64BIT_OS" ; then
-     ENABLE_JIT=1
      NANOJIT_ARCH=Sparc
+     ENABLE_METHODJIT=1
+     ENABLE_MONOIC=1
+     ENABLE_POLYIC=1
+     ENABLE_METHODJIT_TYPED_ARRAY=1
+     AC_DEFINE(JS_CPU_SPARC)
+     AC_DEFINE(JS_NUNBOX32)
 +    fi
      ;;
- esac
- 
+ mips*-*)
+     ENABLE_METHODJIT=1

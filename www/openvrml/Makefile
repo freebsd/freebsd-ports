@@ -7,7 +7,7 @@
 
 PORTNAME=	openvrml
 PORTVERSION=	0.18.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www graphics
 MASTER_SITES=	SF
 
@@ -39,7 +39,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${JAVA_HOME}/include -I${JAVA_HOME}/include/
 LDFLAGS+=	-L${LOCALBASE}/lib -L${JAVA_HOME}/jre/lib/${ARCH}/client ${PTHREAD_LIBS}
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_GECKO=	libxul
+USE_GECKO=	libxul19
 
 USE_WEBPLUGINS=	native
 WEBPLUGINS_FILES=openvrml.so
@@ -82,11 +82,11 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|$$(libdir)/mozilla/plugins|${WEBPLUGINS_DIR}|'	\
 		${WRKSRC}/src/Makefile.in
 .if ${GECKO} != "firefox"
-	${REINPLACE_CMD} -e "s|FIREFOX_JS|${GECKO:U}_JS|g;s|firefox-js|${GECKO}-js|"	\
+	${REINPLACE_CMD} -e "s|FIREFOX_JS|${GECKO:S/19//:U}_JS|g;s|firefox-js|${GECKO:S/19//}-js|"	\
 		${WRKSRC}/configure
-	${REINPLACE_CMD} -e "s|firefox-plugin|${GECKO}-plugin|g"	\
+	${REINPLACE_CMD} -e "s|firefox-plugin|${GECKO:S/19//}-plugin|g"	\
 		${WRKSRC}/configure
-	${REINPLACE_CMD} -e "s|mozilla-plugin|${GECKO}|g" \
+	${REINPLACE_CMD} -e "s|mozilla-plugin|${GECKO:S/19//}|g" \
 		${WRKSRC}/configure
 	${REINPLACE_CMD} -e "s|boost_thread-mt|boost_thread|g" \
 		${WRKSRC}/configure

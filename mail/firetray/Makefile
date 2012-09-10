@@ -7,7 +7,7 @@
 
 PORTNAME=	firetray
 DISTVERSION=	0.2.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
@@ -20,16 +20,16 @@ PATCH_DEPENDS=	nspr>=4.8:${PORTSDIR}/devel/nspr
 BROKEN=		does not build
 
 USE_ZIP=	yes
-USE_GECKO=	libxul
+USE_GECKO=	libxul19
 USE_SCONS=	yes
 USE_PKGCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
-GECKO_CONFIG=	${LOCALBASE}/bin/pkg-config ${GECKO}
+GECKO_CONFIG=	${LOCALBASE}/bin/pkg-config ${GECKO:S/19//}
 
 BUILD_SH_FLAGS=	--dynamic-linking \
-		--gecko-sdk-bin=`${DIRNAME} ${XPIDL}` \
+		--gecko-sdk-bin=`${DIRNAME} ${XPIDL:S/19//}` \
 		--gecko-sdk-lib=`${GECKO_CONFIG} --variable=sdkdir`/lib \
 		--gecko-sdk-idl=`${GECKO_CONFIG} --variable=idldir` \
 		--gecko-sdk-include=`${GECKO_CONFIG} --variable=includedir`

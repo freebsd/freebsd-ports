@@ -1,0 +1,122 @@
+--- config/autoconf.mk.in~
++++ config/autoconf.mk.in
+@@ -555,6 +555,14 @@ MOZ_LIBNOTIFY_CFLAGS	= @MOZ_LIBNOTIFY_CF
+ MOZ_LIBNOTIFY_LIBS	= @MOZ_LIBNOTIFY_LIBS@
+ MOZ_ENABLE_LIBNOTIFY	= @MOZ_ENABLE_LIBNOTIFY@
+ 
++MOZ_ALSA                = @MOZ_ALSA@
++MOZ_ALSA_LIBS           = @MOZ_ALSA_LIBS@
++MOZ_ALSA_CFLAGS         = @MOZ_ALSA_CFLAGS@
++
++MOZ_PULSEAUDIO          = @MOZ_PULSEAUDIO@
++MOZ_PULSEAUDIO_LIBS     = @MOZ_PULSEAUDIO_LIBS@
++MOZ_PULSEAUDIO_CFLAGS   = @MOZ_PULSEAUDIO_CFLAGS@
++
+ GLIB_CFLAGS	= @GLIB_CFLAGS@
+ GLIB_LIBS	= @GLIB_LIBS@
+ GLIB_GMODULE_LIBS	= @GLIB_GMODULE_LIBS@
+--- configure.in~
++++ configure.in
+@@ -5660,15 +5660,49 @@ dnl ====================================
+ 
+ dnl If using sydneyaudio with Linux, ensure that the alsa library is available
+ if test "$COMPILE_ENVIRONMENT"; then
+-if test -n "$MOZ_SYDNEYAUDIO"; then
++MOZ_ARG_ENABLE_BOOL(alsa,
++[  --enable-alsa          Enable Alsa support],
++MOZ_ALSA=1,
++MOZ_ALSA= MOZ_ALSA_FORCE=$enableval)
++
++if test -n "$MOZ_SYDNEYAUDIO" -a "$MOZ_ALSA_FORCE" != "no"; then
+    case "$target_os" in
+ linux*)
+-      AC_CHECK_LIB(asound, snd_pcm_open,,AC_MSG_ERROR([Ogg support on Linux requires the alsa library]))
++      MOZ_ALSA=1
+       ;;
+    esac
+ fi
++
++if test -n "$MOZ_ALSA"; then
++      PKG_CHECK_MODULES(MOZ_ALSA, alsa, ,
++         [echo "$MOZ_ALSA_PKG_ERRORS"
++          AC_MSG_ERROR([Need alsa for Ogg, Wave or WebM decoding on Linux.  Disable with --disable-ogg --disable-wave --disable-webm.  (On Ubuntu, you might try installing the package libasound2-dev.)])])
++fi
+ fi
+ 
++AC_SUBST(MOZ_ALSA_CFLAGS)
++AC_SUBST(MOZ_ALSA_LIBS)
++AC_SUBST(MOZ_ALSA)
++
++dnl ========================================================
++dnl = Enable PulseAudio
++dnl ========================================================
++
++MOZ_ARG_ENABLE_BOOL(pulseaudio,
++[  --enable-pulseaudio          Enable PulseAudio support],
++MOZ_PULSEAUDIO=1,
++MOZ_PULSEAUDIO=)
++
++if test -n "$MOZ_PULSEAUDIO"; then
++    PKG_CHECK_MODULES(MOZ_PULSEAUDIO, libpulse, ,
++         [echo "$MOZ_PULSEAUDIO_PKG_ERRORS"
++          AC_MSG_ERROR([pulseaudio audio backend requires libpulse package])])
++fi
++
++AC_SUBST(MOZ_PULSEAUDIO_CFLAGS)
++AC_SUBST(MOZ_PULSEAUDIO_LIBS)
++AC_SUBST(MOZ_PULSEAUDIO)
++
+ dnl ========================================================
+ dnl Splashscreen
+ dnl ========================================================
+--- media/libsydneyaudio/src/Makefile.in~
++++ media/libsydneyaudio/src/Makefile.in
+@@ -45,12 +45,6 @@ MODULE		= sydneyaudio
+ LIBRARY_NAME	= sydneyaudio
+ FORCE_STATIC_LIB= 1
+ 
+-ifeq ($(OS_ARCH),Linux)
+-CSRCS		= \
+-		sydney_audio_alsa.c \
+-		$(NULL)
+-endif
+-
+ ifneq (,$(filter WINNT WINCE,$(OS_ARCH)))
+ CSRCS		= \
+ 		sydney_audio_waveapi.c \
+@@ -83,6 +83,18 @@ CSRCS         = \
+               $(NULL)
+ endif
+ 
++ifdef MOZ_ALSA
++CSRCS		= \
++		sydney_audio_alsa.c \
++		$(NULL)
++endif
++
++ifdef MOZ_PULSEAUDIO
++CSRCS		= \
++		sydney_audio_pulseaudio.c \
++		$(NULL)
++endif
++
+ ifeq ($(OS_ARCH),WINNT)
+ OS_LIBS += winmm.lib
+ endif
+--- toolkit/library/libxul-config.mk~
++++ toolkit/library/libxul-config.mk
+@@ -90,6 +90,14 @@ endif
+ LOCAL_INCLUDES += -I$(topsrcdir)/widget/src/os2
+ endif
+ 
++ifdef MOZ_ALSA
++EXTRA_DSO_LDOPTS += $(MOZ_ALSA_LIBS)
++endif
++
++ifdef MOZ_PULSEAUDIO
++EXTRA_DSO_LDOPTS += $(MOZ_PULSEAUDIO_LIBS)
++endif
++
+ # dependent libraries
+ ifdef MOZ_IPC
+ STATIC_LIBS += \
