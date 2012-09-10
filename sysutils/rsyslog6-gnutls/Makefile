@@ -5,8 +5,6 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	2
-
 COMMENT=	GNUTLS module for rsyslog
 MASTERDIR=	${.CURDIR}/../rsyslog6
 
