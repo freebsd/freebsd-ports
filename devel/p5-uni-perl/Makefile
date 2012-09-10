@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	uni-perl
-PORTVERSION=	0.03
-PORTREVISION=	1
+PORTVERSION=	0.91
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MONS
@@ -22,7 +21,5 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
 
 PERL_CONFIGURE=	5.10.0+
-
-MAN3=	uni::perl.3
 
 .include <bsd.port.mk>
