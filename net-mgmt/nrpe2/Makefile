@@ -7,6 +7,7 @@
 
 PORTNAME=	nrpe
 DISTVERSION=	2.13
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/nagios/${PORTNAME}-2.x/${PORTNAME}-${PORTVERSION}
 
@@ -22,14 +23,17 @@ USE_RC_SUBR=	nrpe2
 
 CONFLICTS=	nrpe-1.*
 
-OPTIONS=	SSL "Enable SSL support (disables plain-text server)" off \
-		ARGS "Enable command argument processing **Security Risk**" off
+OPTIONS_DEFINE=	SSL ARGS
+SSL_DESC=	Enable SSL support (disables plain-text server)
+ARGS_DESC=	Enable command argument processing **Security Risk**
 
 GNU_CONFIGURE=	yes
 
 NAGIOSUSER?=	nagios
 NAGIOSGROUP?=	nagios
 NAGIOSDIR?=	/var/spool/nagios
+USERS=		${NAGIOSUSER}
+GROUPS=		${NAGIOSGROUP}
 
 NAGIOSUID=	181
 NAGIOSGID=	${NAGIOSUID}
@@ -56,14 +60,14 @@ SUB_LIST=	PREFIX=${PREFIX} \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_SSL)
+.if ${PORT_OPTIONS:MSSL}
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS+=	--enable-ssl
 .else
 CONFIGURE_ARGS+=	--disable-ssl
 .endif
 
-.if defined(WITH_ARGS)
+.if ${PORT_OPTIONS:MARGS}
 CONFIGURE_ARGS+=	--enable-command-args
 .else
 CONFIGURE_ARGS+=	--disable-command-args
