@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	junit
-PORTVERSION=	4.8.2
+PORTVERSION=	4.10
 CATEGORIES=	java devel
 MASTER_SITES=	http://cloud.github.com/downloads/KentBeck/junit/
 DISTNAME=	${PORTNAME}${PORTVERSION}
