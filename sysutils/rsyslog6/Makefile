@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsyslog
-PORTVERSION=	6.2.2
+PORTVERSION=	6.4.1
 PORTREVISION?=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
@@ -92,10 +92,6 @@ post-install:
 .endif
 
 .ifdef MNAME
-
-.if ${MNAME} == "snmp" && ${ARCH} == "i386" && ${OSVERSION} >= 800000
-BROKEN=		Does not link on i386: can't find symbol snmp_timeout in libnetsnmp
-.endif
 
 CONFIGURE_ARGS+=	--disable-rsyslogd --disable-klog
 
