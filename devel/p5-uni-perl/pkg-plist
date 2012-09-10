@@ -1,10 +1,10 @@
 %%SITE_PERL%%/uni/perl.pm
-%%SITE_PERL%%/uni/perl/blackjack.pm
-%%SITE_PERL%%/uni/perl/hookers.pm
 %%SITE_PERL%%/uni/perl/encodebase.pm
 %%SITE_PERL%%/uni/perl/dumper.pm
 %%SITE_PERL%%/uni/perl/ru.pm
 %%SITE_PERL%%/uni/perl/ua.pm
+%%SITE_PERL%%/uni/perl/utf.pm
+%%SITE_PERL%%/uni/perl/xd.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/uni/perl/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/uni/perl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/uni
