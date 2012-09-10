@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/taglib-config
 include/taglib/aifffile.h
 include/taglib/aiffproperties.h
@@ -30,6 +29,12 @@ include/taglib/id3v2framefactory.h
 include/taglib/id3v2header.h
 include/taglib/id3v2synchdata.h
 include/taglib/id3v2tag.h
+include/taglib/itfile.h
+include/taglib/itproperties.h
+include/taglib/modfile.h
+include/taglib/modfilebase.h
+include/taglib/modproperties.h
+include/taglib/modtag.h
 include/taglib/mp4atom.h
 include/taglib/mp4coverart.h
 include/taglib/mp4file.h
@@ -45,11 +50,14 @@ include/taglib/oggfile.h
 include/taglib/oggflacfile.h
 include/taglib/oggpage.h
 include/taglib/oggpageheader.h
+include/taglib/ownershipframe.h
 include/taglib/popularimeterframe.h
 include/taglib/privateframe.h
 %%RCC%%include/taglib/rccpatch.h
 include/taglib/relativevolumeframe.h
 include/taglib/rifffile.h
+include/taglib/s3mfile.h
+include/taglib/s3mproperties.h
 include/taglib/speexfile.h
 include/taglib/speexproperties.h
 include/taglib/tag.h
@@ -59,12 +67,16 @@ include/taglib/taglib_config.h
 include/taglib/taglib_export.h
 include/taglib/tbytevector.h
 include/taglib/tbytevectorlist.h
+include/taglib/tbytevectorstream.h
 include/taglib/textidentificationframe.h
 include/taglib/tfile.h
+include/taglib/tfilestream.h
+include/taglib/tiostream.h
 include/taglib/tlist.h
 include/taglib/tlist.tcc
 include/taglib/tmap.h
 include/taglib/tmap.tcc
+include/taglib/tpropertymap.h
 include/taglib/trueaudiofile.h
 include/taglib/trueaudioproperties.h
 include/taglib/tstring.h
@@ -81,9 +93,11 @@ include/taglib/wavpackproperties.h
 include/taglib/wavproperties.h
 include/taglib/xingheader.h
 include/taglib/xiphcomment.h
+include/taglib/xmfile.h
+include/taglib/xmproperties.h
 lib/libtag.so
 lib/libtag.so.1
-lib/libtag.so.1.7.2
+lib/libtag.so.1.12.0
 lib/libtag_c.so
 lib/libtag_c.so.0
 lib/libtag_c.so.0.0.0
