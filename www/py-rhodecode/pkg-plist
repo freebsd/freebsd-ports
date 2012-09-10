@@ -34,6 +34,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/config/routing.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/config/routing.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/config/routing.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/config/setup_rhodecode.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/config/setup_rhodecode.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/config/setup_rhodecode.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/__init__.pyo
@@ -130,6 +133,8 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/pt_BR/LC_MESSAGES/rhodecode.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/pt_BR/LC_MESSAGES/rhodecode.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/rhodecode.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/zh_TW/LC_MESSAGES/rhodecode.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/zh_TW/LC_MESSAGES/rhodecode.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/__init__.pyo
@@ -338,6 +343,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/exceptions.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/exceptions.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/exceptions.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/ext_json.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/ext_json.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/ext_json.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/helpers.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/helpers.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/helpers.pyo
@@ -1652,6 +1660,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/changelog/changelog.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/changelog/changelog_details.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/changeset/changeset.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/changeset/changeset_comment_block.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/changeset/changeset_file_comment.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/changeset/changeset_range.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/changeset/diff_block.html
@@ -1665,7 +1674,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/files/file_diff.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/files/files.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/files/files_add.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/files/files_annotate.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/files/files_browser.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/files/files_edit.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/files/files_source.html
@@ -1799,80 +1807,82 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/websetup.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/websetup.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/websetup.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/functional
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/tags
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/summary
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/shortlog
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/settings
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/search
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/journal
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/forks
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/followers
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/files
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/errors
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/email_templates
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/changeset
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/changelog
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/branches
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/bookmarks
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/base
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/users_groups
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/users
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/settings
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/repos_groups
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/repos
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/permissions
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/notifications
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/ldap
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/_data_table
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rcextensions
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/css
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/js
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/images/icons
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/images
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public/css
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/public
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests/functional
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/admin
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/api
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/config/rcextensions
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/config
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/model
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/vcs/utils
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/vcs/conf
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/vcs/backends/hg
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/vcs/backends/git
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/vcs/backends
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/vcs
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/rcmail
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/middleware
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/indexers
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/versions
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/schema
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/versioning/util
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/versioning/templates/script
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/versioning/templates/repository/pylons/versions
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/versioning/templates/repository/pylons
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/versioning/script
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/versioning/templates/repository/default/versions
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/versioning/templates/repository/default
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/versioning/templates/repository/pylons/versions
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/versioning/templates/repository/pylons
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/versioning/templates/repository
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/versioning/templates/script
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/versioning/templates
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/versioning/script
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/versioning
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/changeset/databases
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate/changeset
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/migrate
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/versions
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate/schema
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/dbmigrate
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/indexers
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/vcs/utils
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/vcs/conf
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/vcs/backends/git
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/vcs/backends/hg
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/vcs/backends
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/vcs
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/celerypylons
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/rcmail
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/celerylib
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib/middleware
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/lib
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/zh_TW/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/zh_TW
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/pt_BR/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/pt_BR
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/en/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n/en
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/i18n
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/api
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers/admin
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/controllers
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/config/rcextensions
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/config
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/changeset
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/bookmarks
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/summary
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/_data_table
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/journal
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/errors
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/ldap
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/permissions
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/users
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/notifications
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/users_groups
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/repos
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/repos_groups
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin/settings
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/admin
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/forks
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/settings
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/shortlog
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/files
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/followers
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/email_templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/changelog
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/base
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/search
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/tags
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates/branches
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode/templates
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rhodecode
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/rcextensions
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
