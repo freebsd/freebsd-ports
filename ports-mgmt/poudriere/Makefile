@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	poudriere
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1.0
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://fossil.etoilebsd.net/poudriere/tarball/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}?uuid=${PORTVERSION}
@@ -31,22 +31,20 @@ PLIST_FILES=	etc/poudriere.conf.sample \
 		share/poudriere/bulk.sh \
 		share/poudriere/cron.sh \
 		share/poudriere/queue.sh \
+		share/poudriere/options.sh \
 
 PLIST_DIRS=	share/poudriere
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_ZSH)
+.if ${PORT_OPTIONS:MZSH}
 PLIST_FILES+=	share/zsh/site-functions/_poudriere
 PLIST_DIRSTRY+=	share/zsh/site-functions
 PLIST_DIRSTRY+=	share/zsh/
 .endif
 
-post-patch:
-	@${FIND} ${WRKSRC} -name "*.orig" -delete
-
 post-install:
-.if defined(WITH_ZSH)
+.if ${PORT_OPTIONS:MZSH}
 	@${MKDIR} ${PREFIX}/share/zsh/site-functions/
 	@${INSTALL_DATA} ${WRKSRC}/zsh-completions ${PREFIX}/share/zsh/site-functions/_poudriere
 .endif
