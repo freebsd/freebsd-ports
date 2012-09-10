@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	darktable
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.0.5
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 
@@ -16,11 +15,11 @@ COMMENT=	A virtual lighttable and darkroom for photographers
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	exiv2.12:${PORTSDIR}/graphics/exiv2 \
-		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
-		lensfun.2:${PORTSDIR}/graphics/lensfun \
-		lcms2.2:${PORTSDIR}/graphics/lcms2 \
-		curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	exiv2:${PORTSDIR}/graphics/exiv2 \
+		IlmImf:${PORTSDIR}/graphics/OpenEXR \
+		lensfun:${PORTSDIR}/graphics/lensfun \
+		lcms2:${PORTSDIR}/graphics/lcms2 \
+		curl:${PORTSDIR}/ftp/curl
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	uses SSE extensions
@@ -57,7 +56,7 @@ PLIST_FILES+=	share/darktable/darktablerc
 .endif
 
 .if defined(WITH_GPHOTO)
-LIB_DEPENDS+=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2
+LIB_DEPENDS+=	gphoto2:${PORTSDIR}/graphics/libgphoto2
 PLIST_FILES+=	lib/darktable/plugins/lighttable/libcamera.so \
 		lib/darktable/plugins/lighttable/libcapture.so \
 		lib/darktable/views/libcapture.so
@@ -66,7 +65,7 @@ CMAKE_ARGS+=	-DUSE_CAMERA_SUPPORT:BOOL=OFF
 .endif
 
 .if defined(WITH_FLICKR)
-LIB_DEPENDS+=	flickcurl.0:${PORTSDIR}/www/flickcurl
+LIB_DEPENDS+=	flickcurl:${PORTSDIR}/www/flickcurl
 PLIST_FILES+=	lib/darktable/plugins/imageio/storage/libflickr.so
 .else
 CMAKE_ARGS+=	-DUSE_FLICKR:BOOL=OFF
@@ -85,13 +84,13 @@ CMAKE_ARGS+=	-DBUILD_SLIDESHOW:BOOL=OFF
 .endif
 
 .if defined(WITH_KWALLET)
-LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS+=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 .else
 CMAKE_ARGS+=	-DUSE_KWALLET:BOOL=OFF
 .endif
 
 .if defined(WITH_GKEYRING)
-LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring
+LIB_DEPENDS+=	gnome-keyring:${PORTSDIR}/security/libgnome-keyring
 .else
 CMAKE_ARGS+=	-DUSE_GNOME_KEYRING:BOOL=OFF
 .endif
