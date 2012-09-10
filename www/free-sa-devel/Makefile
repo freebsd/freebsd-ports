@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	free-sa
-PORTVERSION=	2.0.0b5
+PORTVERSION=	2.0.0b5.10
 CATEGORIES=	www
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	free-sa/free-sa-dev/2.0.0b5/
+MASTER_SITE_SUBDIR=	free-sa/free-sa-dev/2.0.0b5p10/
 PKGNAMESUFFIX=	-devel
+DISTNAME=	free-sa-2.0.0b5p10
 
 MAINTAINER=	moiseev@mezonplus.ru
 COMMENT=	Statistic analyzer for daemons log files similar to SARG
@@ -44,13 +45,14 @@ MAKE_ARGS+=	PREFIX="${PREFIX}" \
 		ADDLDFLAGS="${LDFLAGS} -mrelax" \
 		MANDIR="${MANPREFIX}/man"
 
-OPTIONS=	OPTIMIZED_CFLAGS "Build with distribution-recommended CFLAGS"	off \
-		SA_DEBUG "Enable Free-SA debugging (level 1)"	off
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS SA_DEBUG
+OPTIMIZED_CFLAGS_DESC=	Build with distribution-recommended CFLAGS
+SA_DEBUG_DESC=		Enable Free-SA debugging (level 1)
 
 .include <bsd.port.options.mk>
 
 pre-everything::
-.ifndef(WITH_OPTIMIZED_CFLAGS)
+.if empty(PORT_OPTIONS:MOPTIMIZED_CFLAGS)
 	@${ECHO_MSG} ">>> This software is computationally demanding, and users are"
 	@${ECHO_MSG} ">>> advised to employ compiler optimizations when building it."
 	@${ECHO_MSG} ">>> Author of this software have used such flags as"
@@ -60,7 +62,7 @@ pre-everything::
 	@${ECHO_MSG} ">>> For example, 'make WITH_OPTIMIZED_CFLAGS=yes'"
 	@${ECHO_MSG} ">>>"
 .endif
-.ifndef(WITH_SA_DEBUG) && (SA_DEBUG_LEVEL)
+.if empty(PORT_OPTIONS:MSA_DEBUG) && (SA_DEBUG_LEVEL)
 	@${ECHO_MSG} ">>> You can enable Free-SA debugging (level 1) by defining WITH_SA_DEBUG"
 	@${ECHO_MSG} ">>> For example, 'make WITH_SA_DEBUG=yes'"
 	@${ECHO_MSG} ">>> Or for specific level (0-7) you can use SA_DEBUG_LEVEL"
@@ -69,7 +71,7 @@ pre-everything::
 	@${ECHO_MSG} ">>>"
 .endif
 
-.if defined(WITH_SA_DEBUG)
+.if ${PORT_OPTIONS:MSA_DEBUG}
 SA_DEBUG_LEVEL?=	1
 .else
 SA_DEBUG_LEVEL?=	0
@@ -85,7 +87,7 @@ post-patch:
 		-e 's,^include .(GMKPATH)/configs/.(OSTYPE)\.mk,,' \
 		${WRKSRC}/global.mk
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 MAKE_ARGS+=	ADDCFLAGS="${CFLAGS} \
 		-fomit-frame-pointer \
 		-std=c99 \
