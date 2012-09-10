@@ -1,0 +1,12 @@
+This package allows you to install the compat9x libraries on your
+system, so you can use legacy binaries that depend on them.
+
+Ports usage example:
+
+--
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1000009
+LIB_DEPENDS+=	archive.5:${PORTSDIR}/misc/compat9x
+.endif
+--
