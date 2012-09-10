@@ -7,27 +7,46 @@
 
 PORTNAME=	vectoroids
 PORTVERSION=	1.1.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/vectoroids/src/
+MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/vectoroids/src/ \
+		ftp://ftp.billsgames.com/unix/x/vectoroids/src/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A vector-based, pretty, Asteroids clone
+MAINTAINER=	nemysis@gmx.ch
+COMMENT=	Vector-based rock-shooting game similar to Asteroids
 
-USE_SDL=	image mixer sdl
+LICENSE=	GPLv2
+
 USE_GMAKE=	yes
+USE_SDL=	image mixer sdl
+
+PLIST_FILES=	bin/${PORTNAME} \
+		share/pixmaps/${PORTNAME}.png
+
+MAN6=		${PORTNAME}.6
+
+PORTDATA=	*
+PORTDOCS=	CHANGES.txt README.txt
+
+.include <bsd.port.options.mk>
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/vectoroids ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}/images
-	${INSTALL_DATA} ${WRKSRC}/data/images/* ${DATADIR}/images
-	@${MKDIR} ${DATADIR}/music
-	${INSTALL_DATA} ${WRKSRC}/data/music/* ${DATADIR}/music
-	@${MKDIR} ${DATADIR}/sounds
-	${INSTALL_DATA} ${WRKSRC}/data/sounds/* ${DATADIR}/sounds
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}/README
+# Executable
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+
+# Data
+	(cd ${WRKSRC}/data && ${COPYTREE_SHARE} "images music sounds" ${DATADIR})
+
+# Pixmaps
+	${INSTALL_DATA} ${WRKSRC}/data/images/icon.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
+
+# Documentation
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+.  for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.  endfor
 .endif
+	${INSTALL_MAN} ${WRKSRC}/${MAN6} ${MAN6PREFIX}/man/man6
 
 .include <bsd.port.mk>
