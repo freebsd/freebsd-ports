@@ -12,8 +12,8 @@
 -LINK	=	g++
 +CC	?=	gcc
 +CXX	?=	g++
-+CFLAGS	+=	-pipe -Wall -W -DNO_DEBUG -g
-+CXXFLAGS+=	-pipe -Wall -W -DNO_DEBUG -g 
++CFLAGS	?=	-pipe -Wall -W -DNO_DEBUG
++CXXFLAGS?=	-pipe -Wall -W -DNO_DEBUG
 +INCPATH	=	-I${LOCALBASE}/include 
 +LINK	= 	${CXX}
  LFLAGS	=	
