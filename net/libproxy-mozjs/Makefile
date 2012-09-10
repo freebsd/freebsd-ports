@@ -5,7 +5,7 @@
 # $FreeBSD$
 #    $MCom: ports/net/libproxy-mozjs/Makefile,v 1.5 2011/01/12 13:10:53 kwm Exp $
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net www
 PKGNAMESUFFIX=	-mozjs
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	proxy.1:${PORTSDIR}/net/libproxy
 MASTERDIR=	${.CURDIR}/../libproxy
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
-USE_GECKO=	libxul
+USE_GECKO=	libxul19
 
 LIBPROXY_SLAVE=	mozjs
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	hxplugin
 PORTVERSION=	20080318
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www multimedia
 MASTER_SITES=	http://virtual-estates.net/~mi/port-stuff/
 
@@ -17,8 +17,8 @@ COMMENT=	Browser plugin for Real or Helix Players
 USE_BZIP2	 =	yes
 USE_DOS2UNIX	 =	yes
 MAKEFILE	 =	${FILESDIR}/BSDmakefile
-USE_GECKO	 =	libxul
-MAKE_ENV	+=	TOP="${WRKSRC}" GECKO=${GECKO}
+USE_GECKO	 =	libxul19
+MAKE_ENV	+=	TOP="${WRKSRC}" GECKO=${GECKO:S/19//}
 MAKE_JOBS_UNSAFE =	yes
 
 USE_WEBPLUGINS=	native

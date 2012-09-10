@@ -7,7 +7,7 @@
 
 PORTNAME=	gnash
 PORTVERSION=	0.8.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	GNU/${PORTNAME}/${PORTVERSION}/
 
@@ -105,8 +105,8 @@ WEBPLUGINS_FILES=	libgnashplugin.so
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 PLIST_SUB+=	NPAPI=""
 CONFIGURE_ARGS+=--with-npapi-plugindir="${WEBPLUGINS_DIR}"
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libxul/xpidl:${PORTSDIR}/www/libxul
-RUN_DEPENDS+=	${LOCALBASE}/lib/libxul/xpidl:${PORTSDIR}/www/libxul
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libxul/xpidl:${PORTSDIR}/www/libxul19
+RUN_DEPENDS+=	${LOCALBASE}/lib/libxul/xpidl:${PORTSDIR}/www/libxul19
 .else
 PLIST_SUB+=	NPAPI="@comment "
 CONFIGURE_ARGS+=	--disable-npapi

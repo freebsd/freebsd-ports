@@ -8,7 +8,7 @@
 
 PORTNAME=	yelp
 PORTVERSION=	2.30.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -22,7 +22,7 @@ LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 
 CONFLICTS=	yelp-2.31.*
 
-USE_GECKO=	libxul
+USE_GECKO=	libxul19
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_XORG=	ice
@@ -32,8 +32,8 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--with-gecko=${GECKO} \
-		--with-gecko-home=${LOCALBASE}/lib/${GECKO}
+CONFIGURE_ARGS=	--with-gecko=${GECKO:S/19//} \
+		--with-gecko-home=${LOCALBASE}/lib/${GECKO:S/19//}
 MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
 
 GCONF_SCHEMAS=	yelp.schemas
@@ -49,6 +49,11 @@ LDFLAGS+=	-fstack-protector
 
 post-extract:
 	${RM} -f ${WRKSRC}/data/yelp.schemas
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,[-/]unstable,,' \
+		-e 's/ --define-variable=includetype=unstable//' \
+		${WRKSRC}/configure
 
 post-install:
 	@-update-mime-database ${PREFIX}/share/mime

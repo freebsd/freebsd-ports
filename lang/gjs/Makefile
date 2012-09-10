@@ -8,7 +8,7 @@
 
 PORTNAME=	gjs
 PORTVERSION=	0.7.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -19,7 +19,7 @@ COMMENT=	GNOME JavaScript binding
 BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
-USE_GECKO=	libxul
+USE_GECKO=	libxul19
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

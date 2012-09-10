@@ -7,7 +7,7 @@
 
 PORTNAME=	eclipse
 PORTVERSION=	3.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.eclipse.org/technology/linuxtools/eclipse-build/3.7.x_Indigo/:1 \
 		http://download.eclipse.org/tools/orbit/downloads/drops/R20110523182458/repository/plugins/:2 \
@@ -44,7 +44,7 @@ OPTIONS=	TESTS	"Build SDK test suite"	off
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_ANT=	yes
-USE_GECKO=	libxul
+USE_GECKO=	libxul19
 USE_GL=		glu
 USE_GMAKE=	yes
 USE_GNOME=	desktopfileutils gconf2 gtk20 gnomevfs2 libgnome libgnomeui pkgconfig
@@ -118,7 +118,7 @@ ECLIPSE_GENERATED_BUILDSCRIPTS=	eclipse-build-generatedScripts.tar.bz2
 ALL_TARGET=	provision.cvs
 INSTALL_TARGET=	installSDKinDropins
 MAKE_ARGS=	-DbuildOs=freebsd -DbuildArch=${ARCH:C/amd64/x86_64/:C/i386/x86/} -Dprefix=${PREFIX} -Dlocalbase=${LOCALBASE} -Dlabel=${PORTVERSION}
-MAKE_ENV+=	GRE_HOME=${PREFIX}/lib/${GECKO} _JAVA_OPTIONS="-Xmx1024m" JAVA_VENDOR=${JAVA_VENDOR}
+MAKE_ENV+=	GRE_HOME=${PREFIX}/lib/${GECKO:S/19//} _JAVA_OPTIONS="-Xmx1024m" JAVA_VENDOR=${JAVA_VENDOR}
 
 WRKSRC=		${WRKDIR}/${ECLIPSE_BUILD_SRCFILE:C/${EXTRACT_SUFX}//}
 PATCH_STRIP=	-p1
@@ -246,7 +246,7 @@ do-install:
 	@${MKDIR} ${PREFIX}/${DROPINS_DIR}
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${ANT} ${MAKE_ARGS} ${INSTALL_TARGET})
 	@${SED} \
-	  -e "s+%%BROWSER%%+${GECKO}+g" \
+	  -e "s+%%BROWSER%%+${GECKO:S/19//}+g" \
 	  -e "s+%%ECLIPSE_HOME%%+${PORTDESTDIR}+g" \
 	  -e "s+%%JAVA_HOME%%+${JAVA_HOME}+g" \
 	  -e "s+%%JAVA_OS%%+${JAVA_OS}+g" \

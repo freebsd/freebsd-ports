@@ -7,7 +7,7 @@
 
 PORTNAME=	gecko-mediaplayer
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www multimedia gnome
 MASTER_SITES=	GOOGLE_CODE
 
@@ -23,7 +23,7 @@ OPTIONS=	GCONF	"Use Gconf to store preferences"	off \
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	glib20 pkgconfig
-USE_GECKO=	libxul
+USE_GECKO=	libxul19
 USE_WEBPLUGINS=	native
 WEBPLUGINS_FILES=	${PORTNAME}-dvx.so ${PORTNAME}-qt.so ${PORTNAME}-rm.so \
 				${PORTNAME}-wmp.so ${PORTNAME}.so

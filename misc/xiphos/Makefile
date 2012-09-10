@@ -46,7 +46,7 @@ LIB_DEPENDS=		webkitgtk:${PORTSDIR}/www/webkit-gtk2
 
 .if ${PORT_OPTIONS:MLIBXUL}
 WAF_CONFIGURE_ARGS=	--backend=xulrunner
-USE_GECKO=		libxul
+USE_GECKO=		libxul19
 .endif
 
 .if ${PORT_OPTIONS:MGTKHTML}

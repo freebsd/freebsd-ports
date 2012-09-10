@@ -7,6 +7,7 @@
 
 PORTNAME=	vuze
 PORTVERSION=	4.7.0.2
+PORTREVISION=	1
 CATEGORIES=	net-p2p java
 # Moved to x-obsolete, could do with an update
 MASTER_SITES=	SF/azureus/vuze/Vuze_${PORTVERSION:S/.//g}
@@ -35,7 +36,7 @@ USE_ZIP=	yes
 #com/aelitis/azureus/core/networkmanager/impl/TransportHelperFilterStream.java \
 #com/aelitis/azureus/core/networkmanager/impl/TransportHelperFilterTransparent.java
 
-USE_GECKO=	libxul
+USE_GECKO=	libxul19
 
 NO_WRKSUBDIR=	yes
 
@@ -56,7 +57,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE} \
 SUB_FILES=	${PORTNAME}
 SUB_LIST=	LIBDIR="${LOCALBASE}/lib" JARFILE="${JARFILE}" \
 		SWTJAR="${JAVALIBDIR}/${SWT}.jar" JAVA="${LOCALBASE}/bin/java" \
-		GECKO="${GECKO}"
+		GECKO="${GECKO:S/19//}"
 
 DESKTOP_ENTRIES=	"Vuze" \
 			"A full feature BitTorrent client" \

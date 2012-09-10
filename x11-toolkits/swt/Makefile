@@ -7,7 +7,7 @@
 
 PORTNAME=	swt
 DISTVERSION=	3.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits devel java
 #MASTER_SITES=	${MASTER_SITE_ECLIPSE}
 MASTER_SITES=	http://archive.eclipse.org/eclipse/downloads/drops/${MASTER_SITE_SUBDIR}/
@@ -65,7 +65,7 @@ MAKE_GNOME=	make_gnome
 .endif
 
 .if defined(WITH_BROWSER)
-USE_GECKO=	libxul
+USE_GECKO=	libxul19
 PLIST_FILES+=	lib/libswt-xulrunner-gtk-%%BUILD%%.so
 MAKE_MOZILLA=	make_xulrunner
 .endif

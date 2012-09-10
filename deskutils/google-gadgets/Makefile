@@ -7,7 +7,7 @@
 
 PORTNAME=	google-gadgets
 PORTVERSION=	0.11.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	deskutils
 MASTER_SITES=	http://google-gadgets-for-linux.googlecode.com/files/
 DISTNAME=	${PORTNAME}-for-linux-${PORTVERSION}
@@ -64,7 +64,7 @@ LIB_DEPENDS+=	webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2
 .endif
 
 .if defined(WITH_MOZILLA)
-USE_GECKO=	libxul
+USE_GECKO=	libxul19
 .endif
 
 .if defined(WITHOUT_GTKWEBKIT) && defined(WITHOUT_MOZILLA) && defined(WITH_GTK)

@@ -1,0 +1,9 @@
+--- xulrunner/installer/libxul-embedding.pc.in~
++++ xulrunner/installer/libxul-embedding.pc.in
+@@ -6,5 +6,5 @@ idldir=%idldir%
+ Name: libxul-embedding
+ Description: Static library for version-independent embedding of the Mozilla runtime
+ Version: %MOZILLA_VERSION%
+-Libs: -L${sdkdir}/lib -lxpcomglue -ldl
++Libs: -L${sdkdir}/lib -L%%MOZ_LIBDIR%% -lxpcomglue
+ Cflags: -DXPCOM_GLUE -I${includedir} %WCHAR_CFLAGS%

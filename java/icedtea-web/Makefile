@@ -7,6 +7,7 @@
 
 PORTNAME=	icedtea-web
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	java www
 MASTER_SITES=	http://icedtea.wildebeest.org/download/source/ \
 		http://icedtea.classpath.org/download/source/
@@ -67,7 +68,7 @@ PORTDOCS+=	plugin
 
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc:${PORTSDIR}/devel/glib20 \
 		${LOCALBASE}/libdata/pkgconfig/gtk+-2.0.pc:${PORTSDIR}/x11-toolkits/gtk20 \
-		${LOCALBASE}/libdata/pkgconfig/mozilla-plugin.pc:${PORTSDIR}/www/libxul
+		${LOCALBASE}/libdata/pkgconfig/mozilla-plugin.pc:${PORTSDIR}/www/libxul19
 
 CONFIGURE_ARGS+=--with-gtk=2
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
