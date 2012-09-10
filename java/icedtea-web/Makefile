@@ -47,7 +47,7 @@ USE_PKGCONFIG=	yes
 
 CONFIGURE_ARGS+=--with-ecj=no --with-jdk-home="${JAVA_HOME}"
 
-EXTRACT_AFTER_ARGS=	| ${SETENV} LANG=en_US.UTF-8 ${TAR} -xf -
+EXTRACT_AFTER_ARGS=	| ${SETENV} LC_ALL=en_US.UTF-8 ${TAR} -xf -
 
 .include <bsd.port.pre.mk>
 
