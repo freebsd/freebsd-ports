@@ -1,5 +1,5 @@
---- Makefile.orig	2011-12-11 10:39:27.000000000 -0800
-+++ Makefile	2011-12-17 22:41:34.000000000 -0800
+--- Makefile.orig	2012-09-07 07:44:39.000000000 -0700
++++ Makefile	2012-09-07 14:52:09.940335486 -0700
 @@ -4,7 +4,7 @@
  BINDIR:=${PREFIX}/bin
  LIBDIR:=${PREFIX}/lib
@@ -9,3 +9,20 @@
  DYNLINK:=0
  
  # Respect environment variables set by user; does not work with :=
+@@ -14,6 +14,7 @@
+ ifeq (${CC},cc)
+ 	CC=c99
+ endif
++DEPCC=cc
+ 
+ PIANOBAR_DIR=src
+ PIANOBAR_SRC=\
+@@ -119,7 +120,7 @@
+ # build dependency files
+ %.d: %.c
+ 	@set -e; rm -f $@; \
+-			$(CC) -M ${CFLAGS} -I ${LIBPIANO_INCLUDE} -I ${LIBWAITRESS_INCLUDE} \
++			$(DEPCC) -M ${CFLAGS} -I ${LIBPIANO_INCLUDE} -I ${LIBWAITRESS_INCLUDE} \
+ 			${LIBFAAD_CFLAGS} ${LIBMAD_CFLAGS} ${LIBGNUTLS_CFLAGS} \
+ 			${LIBGCRYPT_CFLAGS} ${LIBJSONC_CFLAGS} $< > $@.$$$$; \
+ 			sed '1 s,^.*\.o[ :]*,$*.o $@ : ,g' < $@.$$$$ > $@; \
