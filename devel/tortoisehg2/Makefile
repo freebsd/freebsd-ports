@@ -1,12 +1,7 @@
-# New ports collection makefile for:	tortoisehg2
-# Date created:		7 May 2011
-# Whom:			arrowdodger <6yearold@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	tortoisehg
-PORTVERSION=	2.4.2
+PORTVERSION=	2.5
 CATEGORIES=	devel
 MASTER_SITES=	http://cdn.bitbucket.org/tortoisehg/targz/downloads/
 
@@ -25,8 +20,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=4.8.3:${PORTSDIR}/devel/py-qt4-cor
 		hg:${PORTSDIR}/devel/mercurial \
 		${PYTHON_SITELIBDIR}/iniparse/ini.py:${PORTSDIR}/devel/py-iniparse \
 		pygmentize:${PORTSDIR}/textproc/py-pygments
-
-OPTIONS=	NAUTILUS "Install TortoiseHG Nautilus extension" off
+OPTIONS_DEFINE=	NAUTILUS
+NAUTILUS_DESC=	Install TortoiseHG Nautilus extension
 
 INSTALLS_ICONS=	yes
 
@@ -38,32 +33,33 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_NLS)
-PLIST_SUB+=	NLS="@comment "
-.else
+.if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
 USE_GETTEXT=	yes
+.else
+PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITHOUT_NAUTILUS)
-PLIST_SUB+=	NAUTILUS="@comment "
-.else
+.if ${PORT_OPTIONS:MNAUTILUS}
 PLIST_SUB+=	NAUTILUS=""
+.else
+PLIST_SUB+=	NAUTILUS="@comment "
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/_path/ s|/usr|${PREFIX}|' ${WRKSRC}/${PYSETUP}
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/contrib/tortoisehg.desktop
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/thg
-.if defined(WITHOUT_NLS)
-	@${REINPLACE_CMD} -e 's/^%%NLS%%/# /' ${WRKSRC}/${PYSETUP}
-.else
+.if ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e 's/^%%NLS%%//' ${WRKSRC}/${PYSETUP}
-.endif
-.if defined(WITHOUT_NAUTILUS)
-	@${REINPLACE_CMD} -e 's/^%%NAUTILUS%%/# /' ${WRKSRC}/${PYSETUP}
 .else
+	@${REINPLACE_CMD} -e 's/^%%NLS%%/# /' ${WRKSRC}/${PYSETUP}
+.endif
+.if ${PORT_OPTIONS:MNAUTILUS}
 	@${REINPLACE_CMD} -e 's/^%%NAUTILUS%%//' ${WRKSRC}/${PYSETUP}
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/${PYSETUP}
+.else
+	@${REINPLACE_CMD} -e 's/^%%NAUTILUS%%/# /' ${WRKSRC}/${PYSETUP}
 .endif
 
 post-install:
