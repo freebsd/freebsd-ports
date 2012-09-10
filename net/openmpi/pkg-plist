@@ -160,6 +160,8 @@
 %%MPIDIR%%/lib/openmpi/mca_allocator_bucket.so
 %%MPIDIR%%/lib/openmpi/mca_bml_r2.la
 %%MPIDIR%%/lib/openmpi/mca_bml_r2.so
+%%MPIDIR%%/lib/openmpi/mca_btl_sctp.la
+%%MPIDIR%%/lib/openmpi/mca_btl_sctp.so
 %%MPIDIR%%/lib/openmpi/mca_btl_self.la
 %%MPIDIR%%/lib/openmpi/mca_btl_self.so
 %%MPIDIR%%/lib/openmpi/mca_btl_sm.la
