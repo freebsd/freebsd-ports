@@ -1,14 +1,5 @@
 --- Makefile.orig	2012-07-06 23:09:12.000000000 +0900
-+++ Makefile	2012-07-12 00:25:31.000000000 +0900
-@@ -34,7 +34,7 @@
- 	@echo " OpenBLAS build complete."
- 	@echo
- 	@echo "  OS               ... $(OSNAME)             "
--	@echo "  Architecture     ... $(ARCH)               "
-+	@echo "  Architecture     ... $(ARCH_)               "
- ifndef BINARY64
- 	@echo "  BINARY           ... 32bit                 "
- else
++++ Makefile	2012-08-28 23:16:44.000000000 +0900
 @@ -203,7 +203,7 @@
  netlib : 
  
@@ -32,11 +23,11 @@
  	-@echo "CC          = $(CC)" >> $(NETLIB_LAPACK_DIR)/make.inc
  	-@echo "CFLAGS      = $(CFLAGS)" >> $(NETLIB_LAPACK_DIR)/make.inc
 -	-@echo "ARCH        = $(AR)" >> $(NETLIB_LAPACK_DIR)/make.inc
-+	-@echo "ARCH_        = $(AR)" >> $(NETLIB_LAPACK_DIR)/make.inc
++	-@echo "ARCH_       = $(AR)" >> $(NETLIB_LAPACK_DIR)/make.inc
  	-@echo "ARCHFLAGS   = -ru" >> $(NETLIB_LAPACK_DIR)/make.inc
  	-@echo "RANLIB      = $(RANLIB)" >> $(NETLIB_LAPACK_DIR)/make.inc
  	-@echo "LAPACKLIB   = ../$(LIBNAME)" >> $(NETLIB_LAPACK_DIR)/make.inc
-@@ -237,24 +237,17 @@
+@@ -237,24 +237,19 @@
  	-@cat  make.inc >> $(NETLIB_LAPACK_DIR)/make.inc
  endif
  
@@ -55,6 +46,8 @@
 -	fi
 +	echo $(TAR) zxf $< ;\
 +	$(TAR) zxf $< && (cd $(NETLIB_LAPACK_DIR); $(PATCH) -p1 < ../patch.for_lapack-%%LAPACKVER%%)
++	%%FIND%% $(NETLIB_LAPACK_DIR) -name "Makefile*" -type f|\
++		%%XARGS%% %%REINPLACE_CMD%% -e 's;$$(ARCH);$$(ARCH_);g'
  endif
  endif
  
@@ -66,7 +59,7 @@
  ifndef NOFORTRAN
  #http://stackoverflow.com/questions/7656425/makefile-ifeq-logical-or
  ifeq ($(OSNAME), $(filter $(OSNAME),Darwin NetBSD))
-@@ -278,7 +271,7 @@
+@@ -278,7 +273,7 @@
  	-wget http://www.netlib.org/lapack/timing/timing.tgz
  endif
  
@@ -75,7 +68,7 @@
  ifndef NOFORTRAN
  	(cd $(NETLIB_LAPACK_DIR); $(TAR) zxf ../timing.tgz TIMING)
  	(cd $(NETLIB_LAPACK_DIR)/TIMING; $(TAR) zxf ../../large.tgz )
-@@ -316,4 +309,4 @@
+@@ -316,4 +311,4 @@
  	rm -rf $(NETLIB_LAPACK_DIR) ;\
  	fi
  	@rm -f *.grd Makefile.conf_last config_last.h

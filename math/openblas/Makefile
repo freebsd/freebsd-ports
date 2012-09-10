@@ -1,12 +1,7 @@
-# New ports collection makefile for:    openblas
-# Date created: 17 Feb 2012
-# Whom:         Eijiro Shibusawa <ej-sib@ice.uec.ac.jp>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	openblas
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/${GH_USER}/${GH_PORTNAME}/tarball/${GH_VERSION}/ \
 		NL:lapack,lapack_tmg
@@ -25,9 +20,9 @@ DIST_SUBDIR=	openblas
 FETCH_ARGS=	-pRr
 GH_USER=	xianyi
 GH_PORTNAME=	OpenBLAS
-GH_REVISION=	71d29fa
+GH_REVISION=	48f075c
 GH_VERSION=	v${PORTVERSION}
-LAPACKVER=	3.4.0
+LAPACKVER=	3.4.1
 LAPACK_SRCFILE=	lapack-${LAPACKVER}.tgz
 LARGE_FILE=	large.tgz
 TIMING_FILE=	timing.tgz
@@ -43,7 +38,7 @@ OPENBLAS_FILES=	${OPENBLAS_LIBS:S|$|.so|} ${OPENBLAS_LIBS:S|$|.so.${OPENBLAS_SVE
 PLIST_FILES=	${OPENBLAS_FILES:S|^|lib/|}
 
 MAKE_JOBS_SAFE=	yes
-WRKSRC=		${WRKDIR}/${GH_USER}-${GH_PORTNAME}-4933d61
+WRKSRC=		${WRKDIR}/${GH_USER}-${GH_PORTNAME}-e552452
 
 .if defined(PACKAGE_BUILDING)
 DYNAMIC_ARCH_DEFAULT=	on
@@ -58,8 +53,6 @@ OPTIONS=	DYNAMIC_ARCH	"Support multiple CPU types on i386 and amd64" \
 		AVX		"Support Advanced Vector Extensions (AVX)" off
 
 .include <bsd.port.pre.mk>
-
-BUILDFLAGS+=	NO_LAPACKE=1
 
 .if defined(TARGET_CPU_ARCH)
 BUILDFLAGS+=	TARGET=${TARGET_CPU_ARCH}
@@ -98,9 +91,12 @@ post-extract:
 	cd ${DISTDIR}/${DIST_SUBDIR} ; \
 	${CP} ${LAPACK_SRCFILE} ${LARGE_FILE} ${TIMING_FILE} ${WRKSRC}
 	${MKDIR} ${WRKDIR}/lib
-	${RM} ${WRKSRC}/patch.for_lapack-3.4.0
 
 post-patch:
+	${REINPLACE_CMD} -e "s+%%FIND%%+${FIND}+" \
+	-e "s+%%XARGS%%+${XARGS}+" \
+	-e "s+%%REINPLACE_CMD%%+${REINPLACE_CMD}+" \
+		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e "s+%%FC%%+${FC}+" -e "s+%%CC%%+${CC}+" \
 		${WRKSRC}/Makefile.rule
 	${REINPLACE_CMD} -e "s+%%LAPACKVER%%+${LAPACKVER}+g" \
@@ -120,6 +116,9 @@ post-patch:
 		${WRKSRC}/reference/Makefile
 	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" \
 	-e 's+%%LOCALBASE%%+${LOCALBASE}+' \
+	-e 's+%%FIND%%+${FIND}+' \
+	-e 's+%%XARGS%%+${XARGS}+' \
+	-e 's+%%REINPLACE_CMD%%+${REINPLACE_CMD}+' \
 	-e 's+%%_GCC_BUILD_DEPENDS%%+${_GCC_BUILD_DEPENDS}+' \
 	-e 's+$$(CROSS_SUFFIX)+${LOCALBASE}/bin/+' \
 	-e "s+%%LAPACKVER%%+${LAPACKVER}+g" \
@@ -153,7 +152,7 @@ BENCHMARK_MAXTHREADS?=	${MAXTHREADS}
 .if defined(WITH_OPENMP)
 BENCHMARK_THREADS_FLAG =	OMP_NUM_THREADS=${BENCHMARK_MAXTHREADS}
 .else
-BENCHMARK_THREADS_FLAG =	OPENBLAS__NUM_THREADS=${BENCHMARK_MAXTHREADS}
+BENCHMARK_THREADS_FLAG =	OPENBLAS_NUM_THREADS=${BENCHMARK_MAXTHREADS}
 .endif
 
 benchmark: build
