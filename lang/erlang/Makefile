@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	erlang
-PORTVERSION=	15.b.01
+PORTVERSION=	15.b.02
 PORTEPOCH=	2
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
@@ -43,10 +43,11 @@ SUB_LIST=	TOOLS_VSN=${TOOLS_VSN}
 
 MAKE_JOBS_UNSAFE=yes
 
-OPTIONS_DEFINE=	DOCS GS HIPE JAVA KQUEUE ODBC OPENSSL SCTP SMP THREADS WX DTRACE
+OPTIONS_DEFINE=	GCC46 DOCS GS HIPE JAVA KQUEUE ODBC OPENSSL SCTP SMP THREADS WX DTRACE
 OPTIONS_SINGLE=	ODBC
 OPTIONS_SINGLE_ODBC=	IODBC UNIXODBC
 
+GCC46_DESC=	Use gcc 4.6
 HIPE_DESC=	Build native HiPE compiler
 KQUEUE_DESC=	Enable Kernel Poll (kqueue) support
 SCTP_DESC=	Enable SCTP support
@@ -68,6 +69,10 @@ ERL_RELEASE=	R${PORTVERSION:S/.//g:U}
 # If you run Erlang and get a message resembling "WARNING: number of
 # probes fixed does not match the number of defined probes (54 != 132,
 # respectively)" you probably misconfigured DTrace in some way.
+
+.if ${PORT_OPTIONS:MGCC46}
+USE_GCC?=	4.6+
+.endif
 
 .if ${PORT_OPTIONS:MDTRACE}
 CONFIGURE_ARGS+=--with-dynamic-trace=dtrace
