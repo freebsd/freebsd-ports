@@ -68,6 +68,10 @@ WITH_OPENSSL_PORT=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 800000
+BROKEN=		does not compile on FreeBSD 7.X
+.endif
+
 .if defined(WITH_TCP_WRAPPERS)
 CONFIGURE_ARGS+=	--enable-tcp-wrapper
 .else
