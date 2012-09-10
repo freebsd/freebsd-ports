@@ -53,7 +53,7 @@ RESTRICTED=	Redistribution and commercial download is restricted.  Check ${DG_UR
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE=	22+
+USE_APACHE_RUN=	22+
 .endif
 
 .if ${PORT_OPTIONS:MTRICKLE}
