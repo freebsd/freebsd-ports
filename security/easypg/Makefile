@@ -23,8 +23,8 @@ USE_EMACS=	yes
 
 .include <bsd.port.pre.mk>
 
-.if (${EMACS_PORT_NAME} == "emacs23")
-IGNORE=		easyPG has been part of Emacs 23
+.if (${EMACS_PORT_NAME} == "emacs23") || (${EMACS_PORT_NAME} == "emacs24") || (${EMACS_PORT_NAME} == "emacs-devel")
+IGNORE=		easyPG has been part of Emacs 23 and Emacs 24
 .endif
 
 INFO=	epa
