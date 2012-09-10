@@ -115,6 +115,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	ct_ftp.3 \
 	ct_hooks.3 \
 	ct_master.3 \
+	ct_netconfc.3 \
 	ct_rpc.3 \
 	ct_slave.3 \
 	ct_snmp.3 \
@@ -603,7 +604,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	zlib.3 \
 	zlib_stub.3
 
-MAN4= 	app.4 \
+MAN4=	app.4 \
 	appup.4 \
 	config.4 \
 	diameter_dict.4 \
