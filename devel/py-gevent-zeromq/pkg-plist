@@ -4,6 +4,7 @@
 %%PYTHON_SITELIBDIR%%/gevent_zeromq/core.py
 %%PYTHON_SITELIBDIR%%/gevent_zeromq/core.pyc
 %%PYTHON_SITELIBDIR%%/gevent_zeromq/core.pyo
+%%PYTHON_SITELIBDIR%%/gevent_zeromq/core.so
 %%PYTHON_SITELIBDIR%%/gevent_zeromq/poll.py
 %%PYTHON_SITELIBDIR%%/gevent_zeromq/poll.pyc
 %%PYTHON_SITELIBDIR%%/gevent_zeromq/poll.pyo
