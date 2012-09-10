@@ -22,6 +22,7 @@ USE_JAVA=	yes
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk
 JAVA_VERSION=	1.6+
+USE_PERL5_BUILD=yes
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	PLUGIN RHINO TEST
@@ -91,6 +92,7 @@ CONFIGURE_ARGS+=--with-junit=no
 .endif
 
 post-patch:
+	${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/javac.in
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 	    ${WRKSRC}/launcher/javaws.in
 
