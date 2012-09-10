@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	e16
-PORTVERSION=	1.0.10.001
+PORTVERSION=	1.0.10.002
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	SF/enlightenment/${PORTNAME}/Snapshots/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A very artistic X window manager
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+#BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_XORG=	compositeproto damageproto xextproto x11 xbitmaps xcomposite xdamage \
 		xext xfixes xft xinerama xrandr xrender xxf86vm
