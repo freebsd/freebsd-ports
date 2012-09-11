@@ -157,7 +157,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>moinmoin</name>
-	<range><ge>1.9</ge><lt>1.9.5</lt></range>
+	<range><ge>1.9</ge><lt>1.9.4_1</lt></range>
       </package>
     </affects>
     <description>
@@ -193,6 +193,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2012-09-03</discovery>
       <entry>2012-09-05</entry>
+      <modified>2012-09-11</modified>
     </dates>
   </vuln>
 
