@@ -7,6 +7,6 @@ rtconfig	routing policy analyzer and router configuration tool
 
 peval		a low-level policy evaluation tool
 
-rpslcheck	syntax checks the aut-num policy for an AS 	
+rpslcheck	syntax checks the aut-num policy for an AS
 
 WWW: http://irrtoolset.isc.org/

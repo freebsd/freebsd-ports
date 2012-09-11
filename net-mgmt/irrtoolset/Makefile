@@ -1,12 +1,7 @@
-# New ports collection makefile for:	IRRToolSet
-# Date created:				May 4th 1997
-# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	irrtoolset
-PORTVERSION=	5.0.0
+PORTVERSION=	5.0.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ISC/IRRToolSet/IRRToolSet-${PORTVERSION}
 
