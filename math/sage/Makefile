@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sage
-PORTVERSION=	5.2
+PORTVERSION=	5.3
 CATEGORIES=	math
 MASTER_SITES=	http://boxen.math.washington.edu/home/sagemath/sage-mirror/src/ \
 		http://mirrors.xmission.com/sage/src/ \
@@ -54,8 +54,6 @@ CFLAGS:=	${CFLAGS:C/^-O.*$//}
 FFLAGS:=	${CFLAGS:C/^-O.*$//}
 
 MAKE_ENV+=	SAGE_PORT=yes \
-		SAGE_FORTRAN=${LOCALBASE}/bin/${FC} \
-		SAGE_FORTRAN_LIB=${LOCALBASE}/lib/gcc${GCC_DEFAULT_V}/libgfortran.so \
 		SAGE_ATLAS_LIB=${LOCALBASE}/lib \
 		DOT_SAGE=${WRKSRC}/tmp/.sage \
 		SAGE_FAT_BINARY=yes
