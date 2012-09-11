@@ -6,6 +6,7 @@ CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://fossil.etoilebsd.net/poudriere/tarball/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}?uuid=${PORTVERSION}
 
+# Also maintained by bdrewery@freeBSD.org
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Port build and test system
 
