@@ -1,0 +1,20 @@
+--- ./CMakeLists.txt.orig	2010-03-01 12:40:55.000000000 +0000
++++ ./CMakeLists.txt	2012-09-10 22:29:07.183039461 +0000
+@@ -379,13 +379,15 @@
+ 
+ ELSE(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+ 
+-  SET(INSTALL_SUBDIR_BIN "games" CACHE STRING "Installation subdir for binaries")
++  SET(INSTALL_SUBDIR_BIN "bin" CACHE STRING "Installation subdir for binaries")
+   SET(INSTALL_SUBDIR_SHARE "share/games/supertux2" CACHE STRING "Installation subdir for data")
+   SET(INSTALL_SUBDIR_DOC "share/doc/supertux2" CACHE STRING "Installation subdir for docs")
+ 
+   INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/supertux2.desktop DESTINATION "share/applications")
+ 
+-  INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/images/engine/icons/supertux.png ${CMAKE_CURRENT_SOURCE_DIR}/data/images/engine/icons/supertux.xpm DESTINATION "share/pixmaps/")
++  INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/images/engine/icons/supertux.png DESTINATION "share/pixmaps/" RENAME supertux2.png)
++
++  INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/images/engine/icons/supertux.xpm DESTINATION "share/pixmaps/" RENAME supertux2.xpm)
+ 
+ ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+ ENDIF(WIN32 AND NOT UNIX)
