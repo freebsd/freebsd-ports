@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openvswitch
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 CATEGORIES=	net
 MASTER_SITES=	http://openvswitch.org/releases/
 
@@ -46,8 +46,8 @@ CONFIGURE_ARGS+=--enable-threaded=yes
 AUTOTOOLSFILES=	aclocal.m4
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|1.11.1|%%AUTOMAKE_APIVER%%|g' \
-			  -e 's|2.65|%%AUTOCONF_VERSION%%|g' \
+	@${REINPLACE_CMD} -e 's|1.11.3|%%AUTOMAKE_APIVER%%|g' \
+			  -e 's|2.68|%%AUTOCONF_VERSION%%|g' \
 			  ${WRKSRC}/aclocal.m4
 .if ${PORT_OPTIONS:MTHREADED}
 	@# We can't use EXTRA_PATCHES, since we need to apply this one
@@ -57,5 +57,8 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/vswitchd/vswitch.ovsschema ${PREFIX}/share/openvswitch/
+
+#regression-test: build
+#	@cd ${WRKSRC} && ${GMAKE} check
 
 .include <bsd.port.post.mk>
