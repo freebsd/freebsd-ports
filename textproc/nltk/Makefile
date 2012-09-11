@@ -1,37 +1,20 @@
-# Ports collection makefile for:	nltk
-# Date created:				Oct 30, 2003
-# Whom:					clsung
-#
 # $FreeBSD$
-#
 
 PORTNAME=	nltk
-DISTVERSION=	2.0.1rc1
+PORTVERSION=	2.0.2
 PORTEPOCH=	2
 CATEGORIES=	textproc python
-MASTER_SITES=	GOOGLE_CODE
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Natural language toolkit written in python
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
-		${PYTHON_SITELIBDIR}/yaml/__init__.py:${PORTSDIR}/devel/py-yaml
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
-		${PYTHON_SITELIBDIR}/yaml/__init__.py:${PORTSDIR}/devel/py-yaml
-
 LICENSE=	AL2
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-PYDISTUTILS_EGGINFO=	${PORTNAME}-${DISTVERSION}-py${PYTHON_VER}.egg-info
-USE_PYTHON=	2.5+
-USE_PYDISTUTILS=	yes
-USE_PYTHON_PREFIX=	yes
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>=0:${PORTSDIR}/x11-toolkits/py-tkinter \
+		${PYTHON_PKGNAMEPREFIX}yaml>=3.09:${PORTSDIR}/devel/py-yaml
 
-post-install:
-	@${FIND} ${PYTHON_SITELIBDIR}/nltk ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${PYTHON_SITELIBDIR}/nltk -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+USE_PYTHON=	-2.7
+USE_PYDISTUTILS=	easy_install
 
 .include <bsd.port.mk>
