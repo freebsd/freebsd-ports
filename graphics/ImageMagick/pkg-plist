@@ -103,6 +103,7 @@ include/ImageMagick/magick/morphology.h
 include/ImageMagick/magick/option.h
 include/ImageMagick/magick/paint.h
 include/ImageMagick/magick/pixel.h
+include/ImageMagick/magick/pixel-accessor.h
 include/ImageMagick/magick/policy.h
 include/ImageMagick/magick/prepress.h
 include/ImageMagick/magick/profile.h
@@ -232,6 +233,8 @@ lib/ImageMagick-%%PORTVERSION%%/config/configure.xml
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/ipl.so
 %%JBIG%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/jbig.la
 %%JBIG%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/jbig.so
+%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/jnx.la
+%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/jnx.so
 %%JPEG2000%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/jp2.la
 %%JPEG2000%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/jp2.so
 %%JPEG%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/jpeg.la
@@ -1287,6 +1290,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/api/cache-view.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/cache.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/cipher.html
+%%PORTDOCS%%%%DOCSDIR%%/www/api/channel.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/color.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/colormap.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/colorspace.html
