@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	awesome-vicious
-PORTVERSION=	2.0.4
+PORTVERSION=	2.1.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://git.sysphere.org/vicious/snapshot/
 DISTNAME=	vicious-${PORTVERSION}
