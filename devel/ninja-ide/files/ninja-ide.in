@@ -1,3 +1,0 @@
-#!/bin/sh
-# $FreeBSD$
-%%PYTHON_CMD%% %%DATADIR%%/ninja-ide.py $@
