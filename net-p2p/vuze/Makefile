@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vuze
-PORTVERSION=	4.7.0.2
-PORTREVISION=	1
+PORTVERSION=	4.7.1.2
 CATEGORIES=	net-p2p java
 # Moved to x-obsolete, could do with an update
 MASTER_SITES=	SF/azureus/vuze/Vuze_${PORTVERSION:S/.//g}
@@ -35,8 +34,6 @@ USE_ZIP=	yes
 #org/gudy/azureus2/ui/swt/views/table/impl/TableViewSWTImpl.java \
 #com/aelitis/azureus/core/networkmanager/impl/TransportHelperFilterStream.java \
 #com/aelitis/azureus/core/networkmanager/impl/TransportHelperFilterTransparent.java
-
-USE_GECKO=	libxul19
 
 NO_WRKSUBDIR=	yes
 
