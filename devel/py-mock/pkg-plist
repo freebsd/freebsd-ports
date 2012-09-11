@@ -1,4 +1,0 @@
-%%PYTHON_SITELIBDIR%%/mock.py
-%%PYTHON_SITELIBDIR%%/mock.pyc
-%%PYTHON_SITELIBDIR%%/mock.pyo
-@dirrmtry %%PYTHON_SITELIBDIR%%
