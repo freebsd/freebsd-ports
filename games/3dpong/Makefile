@@ -49,7 +49,7 @@ do-install:
 # Data
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/sounds/*.au ${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/src/${MAN6} ${MAN1PREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/src/${MAN6} ${MAN6PREFIX}/man/man6
 
 # Pixmaps
 	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}.gif ${PREFIX}/share/pixmaps/
