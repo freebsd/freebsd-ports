@@ -1,17 +1,9 @@
-# New ports collection makefile for:	mod_wsgi
-# Date created:				07 April 2008
-# Whom:					Douglas Thrift
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mod_wsgi
-PORTVERSION=	3.3
-PORTREVISION=	2
+PORTVERSION=	3.4
 CATEGORIES=	www python
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
-		http://apt.douglasthrift.net/files/${PORTNAME}/ \
-		http://code.douglasthrift.net/files/${PORTNAME}/
+MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	douglas@douglasthrift.net
