@@ -6,7 +6,7 @@
 
 PORTNAME=	periscope
 PORTVERSION=	0.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ COMMENT=	Subtitles searching module
 
 LICENSE=	LGPL3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=3.2.0:${PORTSDIR}/www/py-beautifulsoup32
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/BeautifulSoup.py:${PORTSDIR}/www/py-beautifulsoup32
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USE_GNOME=	desktopfileutils
