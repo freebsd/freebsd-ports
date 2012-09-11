@@ -7,6 +7,7 @@
 
 PORTNAME=	spatialite
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	databases geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
@@ -34,6 +35,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl| |' ${WRKSRC}/src/Makefile.am
 	@${REINPLACE_CMD} -e 's|-ldl| |' ${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|-ldl| |' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|$$(prefix)/libdata/pkgconfig|' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.pre.mk>
 
