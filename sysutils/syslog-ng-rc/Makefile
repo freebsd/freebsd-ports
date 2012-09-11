@@ -7,6 +7,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.3.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-rc
 MASTER_SITES=	http://packages.madhouse-project.org/syslog-ng/3.3/3.3.6.90/
@@ -47,10 +48,6 @@ SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 		--enable-dynamic-linking
-
-.if defined(WITH_SYS_SSL) && defined(WITH_PORTS_SSL)
-BROKEN=		SYS_SSL and PORTS_SSL are mutually exclusive
-.endif
 
 .if defined(WITH_SYS_SSL) || defined(WITH_PORTS_SSL)
 USE_OPENSSL=		yes
