@@ -7,7 +7,7 @@
 
 PORTNAME=	ndoutils
 PORTVERSION=	1.4b8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/nagios/${PORTNAME}-1.x/${PORTNAME}-${PORTVERSION}
 
@@ -16,8 +16,11 @@ COMMENT=	Keep Nagios perfdata in MySQL or Postgresql database
 
 RUN_DEPENDS=	${LOCALBASE}/bin/nagios:${PORTSDIR}/net-mgmt/nagios
 
-OPTIONS=	MYSQL	"MySQL Backend"		on \
-			PGSQL	"Postgresql Backend"	off
+OPTIONS_MULTI=		BACKEND
+OPTIONS_MULTI_BACKEND=	MYSQL PGSQL
+OPTIONS_DEFAULT=	MYSQL
+MYSQL_DESC=		MySQL backend support
+PGSQL_DESC=		Postgresql backend support
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -27,11 +30,13 @@ CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/ndoutils
 
 CFG_FILES=	misccommands ndo2db ndomod
 
+USE_PERL5=	yes
 USE_RC_SUBR=	ndo2db
 SUB_FILES=	pkg-message
 
 .include <bsd.port.options.mk>
-.if !defined(WITHOUT_MYSQL)
+
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=yes
 CONFIGURE_ARGS+=	--enable-mysql \
 					--with-mysql-lib=${LOCALBASE}/lib/mysql \
@@ -40,17 +45,13 @@ CONFIGURE_ARGS+=	--enable-mysql \
 CONFIGURE_ARGS+=	--disable-mysql
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=yes
 CONFIGURE_ARGS+=	--enable-pgsql \
 					--with-pgsql-lib=${LOCALBASE}/lib/pgsql \
 					--with-pgsql-inc=${LOCALBASE}/include/pgsql
 .else
 CONFIGURE_ARGS+=	--disable-pgsql
-.endif
-
-.if defined(WITHOUT_MYSQL) && defined(WITHOUT_PGSQL)
-IGNORE=	you should define at least 1 of WITH_MYSQL or WITH_PGSQL, WITH_MYSQL=yes is the default
 .endif
 
 .if !defined(NOPORTDOCS)
