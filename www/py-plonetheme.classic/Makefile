@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-plonetheme.classic
-# Date created:				02 January 2012
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	plonetheme.classic
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.3
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,6 +14,6 @@ LICENSE=	GPLv2
 DIST_SUBDIR=	zope
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
-#USE_ZOPE=	yes
+USE_ZIP=	yes
 
 .include <bsd.port.mk>

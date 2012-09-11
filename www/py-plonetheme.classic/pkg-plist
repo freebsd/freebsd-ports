@@ -25,7 +25,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/browser/personal_bar.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/configure.zcml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/profiles/default/cssregistry.xml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/profiles/default/jsregistry.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/profiles/default/metadata.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/profiles/default/skins.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plonetheme/classic/profiles/default/viewlets.xml

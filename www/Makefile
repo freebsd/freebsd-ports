@@ -1539,6 +1539,7 @@
     SUBDIR += py-plone.app.i18n
     SUBDIR += py-plone.app.imaging
     SUBDIR += py-plone.app.iterate
+    SUBDIR += py-plone.app.jquery
     SUBDIR += py-plone.app.jquerytools
     SUBDIR += py-plone.app.kss
     SUBDIR += py-plone.app.layout

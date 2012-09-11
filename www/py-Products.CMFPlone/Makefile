@@ -1,13 +1,7 @@
-# New ports collection makefile for:	py-Products.CMFPlone
-# Date created:				03 January 2012
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Products.CMFPlone
-PORTVERSION=	4.1.5
-PORTREVISION=	1
+PORTVERSION=	4.2.1.1
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -49,14 +43,17 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Acquisition>=0:${PORTSDIR}/devel/py-Acquisit
 		${PYTHON_PKGNAMEPREFIX}Products.TinyMCE>=0:${PORTSDIR}/www/py-Products.TinyMCE \
 		zodb${PYTHON_PKGNAMESUFFIX}>=0:${PORTSDIR}/databases/zodb3 \
 		${PYTHON_PKGNAMEPREFIX}archetypes.kss>=0:${PORTSDIR}/devel/py-archetypes.kss \
+		${PYTHON_PKGNAMEPREFIX}archetypes.querywidget>0:${PORTSDIR}/devel/py-archetypes.querywidget \
 		${PYTHON_PKGNAMEPREFIX}archetypes.referencebrowserwidget>=0:${PORTSDIR}/devel/py-archetypes.referencebrowserwidget \
 		${PYTHON_PKGNAMEPREFIX}borg.localrole>=0:${PORTSDIR}/security/py-borg.localrole \
 		${PYTHON_PKGNAMEPREFIX}five.localsitemanager>=0:${PORTSDIR}/devel/py-five.localsitemanager \
 		${PYTHON_PKGNAMEPREFIX}five.customerize>=0:${PORTSDIR}/devel/py-five.customerize \
 		${PYTHON_PKGNAMEPREFIX}kss-core>=0:${PORTSDIR}/devel/py-kss-core \
 		${PYTHON_PKGNAMEPREFIX}plone.app.blob>=0:${PORTSDIR}/www/py-plone.app.blob \
+		${PYTHON_PKGNAMEPREFIX}plone.app.collection>0:${PORTSDIR}/www/py-plone.app.collection \
 		${PYTHON_PKGNAMEPREFIX}plone.app.contentmenu>=1.1.6:${PORTSDIR}/www/py-plone.app.contentmenu \
 		${PYTHON_PKGNAMEPREFIX}plone.app.content>=0:${PORTSDIR}/www/py-plone.app.content \
+		${PYTHON_PKGNAMEPREFIX}plone.app.contentlisting>0:${PORTSDIR}/www/py-plone.app.contentlisting \
 		${PYTHON_PKGNAMEPREFIX}plone.app.contentrules>=0:${PORTSDIR}/www/py-plone.app.contentrules \
 		${PYTHON_PKGNAMEPREFIX}plone.app.controlpanel>=0:${PORTSDIR}/www/py-plone.app.controlpanel \
 		${PYTHON_PKGNAMEPREFIX}plone.app.customerize>=0:${PORTSDIR}/www/py-plone.app.customerize \
@@ -64,6 +61,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Acquisition>=0:${PORTSDIR}/devel/py-Acquisit
 		${PYTHON_PKGNAMEPREFIX}plone.app.folder>=0:${PORTSDIR}/www/py-plone.app.folder \
 		${PYTHON_PKGNAMEPREFIX}plone.app.form>=0:${PORTSDIR}/www/py-plone.app.form \
 		${PYTHON_PKGNAMEPREFIX}plone.app.i18n>=0:${PORTSDIR}/www/py-plone.app.i18n \
+		${PYTHON_PKGNAMEPREFIX}plone.app.jquery>0:${PORTSDIR}/www/py-plone.app.jquery \
 		${PYTHON_PKGNAMEPREFIX}plone.app.jquerytools>=0:${PORTSDIR}/www/py-plone.app.jquerytools \
 		${PYTHON_PKGNAMEPREFIX}plone.app.kss>=0:${PORTSDIR}/www/py-plone.app.kss \
 		${PYTHON_PKGNAMEPREFIX}plone.app.layout>=1.1.7:${PORTSDIR}/www/py-plone.app.layout \
@@ -115,10 +113,14 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Acquisition>=0:${PORTSDIR}/devel/py-Acquisit
 		${PYTHON_PKGNAMEPREFIX}zope.structuredtext>=0:${PORTSDIR}/textproc/py-zope.structuredtext \
 		${PYTHON_PKGNAMEPREFIX}zope.tal>=0:${PORTSDIR}/textproc/py-zope.tal \
 		${PYTHON_PKGNAMEPREFIX}zope.tales>=0:${PORTSDIR}/devel/py-zope.tales \
-		${PYTHON_PKGNAMEPREFIX}zope.traversing>=0:${PORTSDIR}/devel/py-zope.traversing
+		${PYTHON_PKGNAMEPREFIX}zope.traversing>=0:${PORTSDIR}/devel/py-zope.traversing \
+		${PYTHON_PKGNAMEPREFIX}zope.copypastemove>0:${PORTSDIR}/devel/py-zope.copypastemove \
+		${PYTHON_PKGNAMEPREFIX}zope.app.component>0:${PORTSDIR}/devel/py-zope.app.component \
+		${PYTHON_PKGNAMEPREFIX}zope.app.container>0:${PORTSDIR}/devel/py-zope.app.container \
+		${PYTHON_PKGNAMEPREFIX}zope.app.publisher>0:${PORTSDIR}/devel/py-zope.app.publisher
 
 DIST_SUBDIR=	zope
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
 USE_ZIP=	yes
 

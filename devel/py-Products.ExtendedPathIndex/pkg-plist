@@ -12,15 +12,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ExtendedPathIndex/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ExtendedPathIndex/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ExtendedPathIndex/dtml/addExtendedPathIndex.dtml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ExtendedPathIndex/ptests/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ExtendedPathIndex/ptests/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ExtendedPathIndex/ptests/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ExtendedPathIndex/ptests/testProfiling.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ExtendedPathIndex/ptests/testProfiling.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ExtendedPathIndex/ptests/testProfiling.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ExtendedPathIndex/ptests/testQuery.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ExtendedPathIndex/ptests/testQuery.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ExtendedPathIndex/ptests/testQuery.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ExtendedPathIndex/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ExtendedPathIndex/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ExtendedPathIndex/tests/__init__.pyo
@@ -36,7 +27,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/__init__.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ExtendedPathIndex/www
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ExtendedPathIndex/tests
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ExtendedPathIndex/ptests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ExtendedPathIndex/dtml
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ExtendedPathIndex
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products

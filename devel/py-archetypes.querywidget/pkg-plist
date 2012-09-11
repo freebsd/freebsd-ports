@@ -26,6 +26,15 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/querywidget.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/querywidget.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/skins/querywidget/querywidget.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/templates/date_range_widget.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/templates/date_widget.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/templates/empty_widget.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/templates/multiple_selection_widget.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/templates/reference_widget.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/templates/relative_date_widget.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/templates/relative_path_widget.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/templates/remove_criteria_link.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/templates/string_widget.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/tests/__init__.pyo
@@ -51,6 +60,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/tests/qunit
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/tests/javascripts
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/templates
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/skins/querywidget
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/skins
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/archetypes/querywidget/profiles/default

@@ -1,12 +1,8 @@
-zope.schemas extend the notion of interfaces to detailed descriptions
-of Attributes (but not methods). Every schema is an interface and
-specifies the public fields of an object. A field roughly corresponds
-to an attribute of a python object. But a Field provides space for at
-least a title and a description. It can also constrain its value and
-provide a validation method. Besides you can optionally specify
-characteristics such as its value being read-only or not required.
+Schemas extend the notion of interfaces to detailed descriptions of Attributes
+(but not methods). Every schema is an interface and specifies the public fields
+of an object. A field roughly corresponds to an attribute of a Python object.
+But a Field provides space for at least a title and a description. It can also
+constrain its value and provide a validation method. Besides you can optionally
+specify characteristics such as its value being read-only or not required.
 
-This package is intended to be independently reusable in any Python
-project. It is maintained by the Zope Toolkit project.
-
-WWW: http://www.python.org/pypi/zope.schema
+WWW: http://pypi.python.org/pypi/zope.schema

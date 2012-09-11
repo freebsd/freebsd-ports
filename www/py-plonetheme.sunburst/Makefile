@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-plonetheme.sunburst
-# Date created:				02 January 2012
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	plonetheme.sunburst
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.7
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

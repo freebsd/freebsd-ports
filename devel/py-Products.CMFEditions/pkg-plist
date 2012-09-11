@@ -54,6 +54,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFEditions/browser/diff.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFEditions/browser/diff.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFEditions/browser/edit.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFEditions/browser/utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFEditions/browser/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFEditions/browser/utils.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFEditions/configure.zcml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFEditions/exportimport/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFEditions/exportimport/__init__.pyc
@@ -112,7 +115,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFEditions/skins/CMFEditions/diff_legend.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFEditions/skins/CMFEditions/getVersionDiff.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFEditions/skins/CMFEditions/get_cmfeditions_ftests.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFEditions/skins/CMFEditions/get_macros.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFEditions/skins/CMFEditions/migrateStorage.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFEditions/skins/CMFEditions/revertversion.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFEditions/skins/CMFEditions/saveasnewversion.py
@@ -227,6 +229,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFEditions/www/SillyDemoRetrieveModifierAddForm.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFEditions/www/SkipBlobs.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFEditions/www/SkipParentPointersAddForm.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFEditions/www/SkipRegistryBasesPointersAddForm.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFEditions/www/SkipVersioningOfLargeFilesAndImagesAddForm.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFEditions/www/Skip_z3c_blobfile.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFEditions/www/fieldModifierEditForm.pt

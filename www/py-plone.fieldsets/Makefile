@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-plone.fieldsets
-# Date created:				02 January 2012
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	plone.fieldsets
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

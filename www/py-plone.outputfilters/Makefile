@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-plone.outputfilters
-# Date created:				02 January 2012
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	plone.outputfilters
-PORTVERSION=	1.2
+PORTVERSION=	1.6
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

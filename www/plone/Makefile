@@ -1,12 +1,7 @@
-# New ports collection makefile for:	plone
-# Date created:				25 April 2012
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	plone
-PORTVERSION=	4.1.5
+PORTVERSION=	4.2.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 DISTNAME=	Plone-${PORTVERSION}
@@ -22,7 +17,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Products.CMFPlacefulWorkflow>=0:${PORTSDIR}/
 		${PYTHON_PKGNAMEPREFIX}plone.app.caching>=0:${PORTSDIR}/www/py-plone.app.caching \
 		${PYTHON_PKGNAMEPREFIX}plone.app.iterate>=0:${PORTSDIR}/www/py-plone.app.iterate \
 		${PYTHON_PKGNAMEPREFIX}plone.app.openid>=0:${PORTSDIR}/security/py-plone.app.openid \
-		${PYTHON_PKGNAMEPREFIX}wicked>=0:${PORTSDIR}/textproc/py-wicked
+		${PYTHON_PKGNAMEPREFIX}plone.app.theming>0:${PORTSDIR}/www/py-plone.app.theming \
+		${PYTHON_PKGNAMEPREFIX}wicked>=0:${PORTSDIR}/textproc/py-wicked \
+		${PYTHON_PKGNAMEPREFIX}zope.copypastemove>0:${PORTSDIR}/devel/py-zope.copypastemove \
+		${PYTHON_PKGNAMEPREFIX}zope.app.component>0:${PORTSDIR}/devel/py-zope.app.component \
+		${PYTHON_PKGNAMEPREFIX}zope.app.container>0:${PORTSDIR}/devel/py-zope.app.container \
+		${PYTHON_PKGNAMEPREFIX}zope.app.publisher>0:${PORTSDIR}/devel/py-zope.app.publisher
 
 OPTIONS_DEFINE=	LDAP
 OPTIONS_EXCLUDE=NLS DOCS
