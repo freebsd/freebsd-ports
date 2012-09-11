@@ -18,8 +18,6 @@ LIB_DEPENDS=	gaiagraphics:${PORTSDIR}/graphics/libgaiagraphics \
 		freexl:${PORTSDIR}/textproc/freexl \
 		spatialite:${PORTSDIR}/databases/spatialite
 
-BROKEN=		does not configure
-
 USE_WX=		2.8
 WANT_UNICODE=	yes
 GNU_CONFIGURE=	yes
