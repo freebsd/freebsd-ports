@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S|.|-|g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flow analysis tool used for analyzing Cisco's NetFlow switching
 
-LIB_DEPENDS=	Arts.0:${PORTSDIR}/net-mgmt/arts++
+LIB_DEPENDS=	Arts:${PORTSDIR}/net-mgmt/arts++
 
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
@@ -28,11 +28,12 @@ CONFIGURE_ARGS=	--enable-shared --with-artspp=${LOCALBASE}
 MANL=		cfdases.l cfdifmatrix.l cfdnets.l cfdnexthops.l \
 		cfdportmatrix.l cfdprotos.l cfdtos.l flowdump.l flowwatch.l
 
-OPTIONS=	FLOWSCAN "FlowScan patch" off
+OPTIONS_DEFINE=	FLOWSCAN
+FLOWSCAN_DESC=	FlowScan patch
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_FLOWSCAN)
+.if ${PORT_OPTIONS:MFLOWSCAN}
 PATCH_SITES+=	http://net.doit.wisc.edu/~plonka/cflowd/
 PATCHFILES+=	cflowd-${PORTVERSION:S|.|-|g}-djp.patch
 .endif
@@ -60,4 +61,4 @@ post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/cflowd.sh \
 		${PREFIX}/etc/rc.d/cflowd-base.sh.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
