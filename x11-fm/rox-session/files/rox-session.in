@@ -1,3 +1,7 @@
 #!/bin/sh
+#
+# $FreeBSD$
 
-exec %%PREFIX%%/apps/ROX-Session/AppRun -w < /dev/null
+echo "ROX Session: Starting up..." 
+cd "%%DATADIR%%"
+./AppRun -w < /dev/null

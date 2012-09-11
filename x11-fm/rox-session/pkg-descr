@@ -1,5 +1,7 @@
-ROX-Filer is a simple and easy to use graphical
-file manager for X11. This ports adds session
-management capabilities to ROX-Filer.
+ROX-Session is a simple session manager.
+It loads, runs any programs you asked it to, and then quits when you run it
+a second time (thus ending your session). It does not display any windows
+until you ask it to quit.
 
-WWW: http://rox.sourceforge.net/rox_session.php3
+WWW: http://roscidus.com/desktop/ROX-Session
+WWW: http://rox.sourceforge.net/rox_session.html
