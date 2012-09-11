@@ -56,7 +56,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
         <name>freeradius</name>
-        <range><ge>2.1.10</ge><lt>2.2.0</lt></range>
+        <range><ge>2.1.10</ge><lt>2.1.12_2</lt></range>
       </package>
     </affects>
     <description>
@@ -95,6 +95,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2012-09-10</discovery>
       <entry>2012-09-11</entry>
+      <modified>2012-09-11</modified>
     </dates>
   </vuln>
 
