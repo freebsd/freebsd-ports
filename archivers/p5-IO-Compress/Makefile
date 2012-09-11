@@ -22,14 +22,12 @@ BUILD_DEPENDS=	p5-Compress-Raw-Bzip2>=2.052:${PORTSDIR}/archivers/p5-Compress-Ra
 		p5-Compress-Raw-Zlib>=2.052:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib
 RUN_DEPENDS=	p5-Compress-Raw-Bzip2>=2.052:${PORTSDIR}/archivers/p5-Compress-Raw-Bzip2 \
 		p5-Compress-Raw-Zlib>=2.052:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib
-
 TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
 
 CONFLICTS=	p5-Compress-Zlib-2* p5-IO-Compress-Base-2* p5-IO-Compress-Zlib-2* p5-IO-Compress-Bzip2-2*
 
 PERL_CONFIGURE=	yes
 
-MAN1=		zipdetails.1
 MAN3=		Compress::Zlib.3 \
 		File::GlobMapper.3 \
 		IO::Compress::Base.3 \
@@ -48,4 +46,18 @@ MAN3=		Compress::Zlib.3 \
 		IO::Uncompress::RawInflate.3 \
 		IO::Uncompress::Unzip.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 501600
+PLIST_SUB+=	EXE_FILES="@comment "
+.else
+MAN1+=		zipdetails.1
+PLIST_SUB+=	EXE_FILES=""
+.endif
+
+post-patch:
+.if ${PERL_LEVEL} >= 501600
+	@${REINPLACE_CMD} -e '/EXE_FILES/d' ${WRKSRC}/Makefile.PL
+.endif
+
+.include <bsd.port.post.mk>

@@ -1,4 +1,4 @@
-bin/zipdetails
+%%EXE_FILES%%bin/zipdetails
 %%SITE_PERL%%/Compress/Zlib.pm
 %%SITE_PERL%%/File/GlobMapper.pm
 %%SITE_PERL%%/IO/Compress/Adapter/Bzip2.pm
