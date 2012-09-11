@@ -16,13 +16,18 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Parse META.yml and other similar CPAN metadata files
 
-BUILD_DEPENDS=	p5-CPAN-Meta-YAML>=0.008:${PORTSDIR}/devel/p5-CPAN-Meta-YAML \
-		p5-JSON-PP>=2.27200:${PORTSDIR}/converters/p5-JSON-PP
-RUN_DEPENDS=	p5-CPAN-Meta-YAML>=0.008:${PORTSDIR}/devel/p5-CPAN-Meta-YAML \
-		p5-JSON-PP>=2.27200:${PORTSDIR}/converters/p5-JSON-PP
+BUILD_DEPENDS=	p5-CPAN-Meta-YAML>=0.008:${PORTSDIR}/devel/p5-CPAN-Meta-YAML
+RUN_DEPENDS=	p5-CPAN-Meta-YAML>=0.008:${PORTSDIR}/devel/p5-CPAN-Meta-YAML
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Parse::CPAN::Meta.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501600
+BUILD_DEPENDS+=	p5-JSON-PP>=2.27200:${PORTSDIR}/converters/p5-JSON-PP
+RUN_DEPENDS+=	p5-JSON-PP>=2.27200:${PORTSDIR}/converters/p5-JSON-PP
+.endif
+
+.include <bsd.port.post.mk>
