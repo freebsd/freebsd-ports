@@ -1,9 +1,4 @@
-# Ports collection makefile for:  rsync
-# Date created:			  Sat Aug 3, 1996
-# Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
-#
 # $FreeBSD$
-#
 
 PORTNAME=	rsync
 PORTVERSION=	3.0.9
@@ -38,42 +33,44 @@ PORTDOCS=	NEWS README csprotocol.txt tech_report.tex
 MAN1=		rsync.1
 MAN5=		rsyncd.conf.5
 
-OPTIONS=	POPT_PORT "Use popt from devel/popt instead of bundled one" off \
-		SSH       "Use SSH instead of RSH" on \
-		FLAGS     "File system flags support patch, adds --fileflags" off \
-		ATIMES    "Preserve access times, adds --atimes" off \
-		ACL       "Add backward-compatibility for the --acls option" off \
-		ICONV     "Add iconv support" off \
-		TIMELIMIT "Time limit patch" off \
-		RENAMED   "Add support for renamed file detection" off
+OPTIONS_DEFINE=	POPT_PORT SSH FLAGS ATIMES ACL ICONV TIMELIMIT RENAMED
+POPT_PORT_DESC=	Use popt from devel/popt instead of bundled one
+SSH_DESC=	Use SSH instead of RSH
+FLAGS_DESC=	File system flags support patch, adds --fileflags
+ATIMES_DESC=	Preserve access times, adds --atimes
+ACL_DESC=	Add backward-compatibility for the --acls option
+TIMELIMIT_DESC=	Time limit patch
+RENAMED_DESC=	Add support for renamed file detection
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFAULT=SSH
 
-.if !defined(WITHOUT_TIMELIMIT)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MTIMELIMIT}
 PATCH_STRIP=	-p1
 EXTRA_PATCHES+=	${WRKSRC}/patches/time-limit.diff
-.if defined(WITH_FLAGS)
-IGNORE=		flags and timelimit can't be both enabled at the same time. Please rerun 'make config' and disable one of them
+.if ${PORT_OPTIONS:MFLAGS}
+IGNORE=		flags and timelimit can't be enabled simultaneously. Please rerun 'make config' and disable one of them
 .endif
-.if defined(WITH_ATIMES)
+.if ${PORT_OPTIONS:MATIMES}
 IGNORE=		atimes and timelimit can't be enabled simultaneously. Please rerun 'make config' and disable one of them
 .endif
 .endif
 
-.if !defined(WITHOUT_ATIMES)
+.if ${PORT_OPTIONS:MATIMES}
 PATCH_STRIP=	-p1
 EXTRA_PATCHES+=	${WRKSRC}/patches/atimes.diff
-.if defined(WITH_FLAGS)
+.if ${PORT_OPTIONS:MFLAGS}
 IGNORE=		flags and atimes can't be enabled simultaneously. Please rerun 'make config' and disable one of them
 .endif
 .endif
 
-.if defined(WITH_ICONV) || defined(WITH_FLAGS) || defined(WITH_ACL) || make(makesum) || defined(WITH_TIMELIMIT) || defined(WITH_ATIMES) || defined(WITH_RENAMED)
+.if ${PORT_OPTIONS:MICONV} || ${PORT_OPTIONS:MFLAGS} || ${PORT_OPTIONS:MACL} || make(makesum) || ${PORT_OPTIONS:MTIMELIMIT} || ${PORT_OPTIONS:MATIMES} || ${PORT_OPTIONS:MRENAMED}
 DISTFILES+=	${PORTNAME}-patches-${PORTVERSION}${EXTRACT_SUFX}
 CFLAGS+=	-I${LOCALBASE}/include
 .endif
 
-.if defined(WITH_ICONV)
+.if ${PORT_OPTIONS:MICONV}
 USE_ICONV=	yes
 CONFIGUREDCFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
@@ -84,31 +81,31 @@ CONFIGURE_ENV+=		ac_cv_search_libiconv_open=no
 CONFIGURE_ENV+=		ac_cv_header_iconv_h=no
 .endif
 
-.if defined(WITH_FLAGS)
+.if ${PORT_OPTIONS:MFLAGS}
 PATCH_STRIP=	-p1
 EXTRA_PATCHES+=	${WRKSRC}/patches/fileflags.diff
 .endif
 
-.if defined(WITH_RENAMED)
+.if ${PORT_OPTIONS:MRENAMED}
 PATCH_STRIP=	-p1
 #EXTRA_PATCHES+=	${WRKSRC}/patches/detect-renamed.diff
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-detect-renamed.diff
 .endif
 
-.if defined(WITH_ACL)
+.if ${PORT_OPTIONS:MACL}
 PATCH_STRIP=	-p1
 EXTRA_PATCHES+=	${WRKSRC}/patches/acls.diff
 .endif
 
-.if defined(WITH_POPT_PORT)
-LIB_DEPENDS+=	popt.0:${PORTSDIR}/devel/popt
+.if ${PORT_OPTIONS:MPOPT_PORT}
+LIB_DEPENDS+=	popt:${PORTSDIR}/devel/popt
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 CFLAGS+=	-I${LOCALBASE}/include
 .else
 CONFIGURE_ARGS+=	--with-included-popt
 .endif
 
-.if defined(WITHOUT_SSH)
+.if ${PORT_OPTIONS:MSSH}
 CONFIGURE_ARGS+=	--with-rsh=rsh
 .endif
 
@@ -138,4 +135,4 @@ post-install:
 test: build
 	@cd ${WRKSRC} && ${MAKE} check
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
