@@ -7,20 +7,33 @@
 
 PORTNAME=	defendguin
 PORTVERSION=	0.0.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/defendguin/src/
+MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/defendguin/src/ \
+		ftp://ftp.billsgames.com/unix/x/defendguin/src/ \
+		http://www.newbreedsoftware.com/images/prodicons/:icons
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}.gif:icons
+EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Another shoot-the-Bill game
+MAINTAINER=	nemysis@gmx.ch
+COMMENT=	Your mission is to defend little penguinoids
+
+LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_SDL=	mixer sdl
 
-PLIST_FILES=	bin/defendguin
+PLIST_FILES=	bin/${PORTNAME} \
+		share/pixmaps/${PORTNAME}.gif
 
-MAN6=		defendguin.6
+PORTDATA=	*
+PORTDOCS=	AUTHORS.txt CHANGES.txt README.txt TODO.txt
+
+MAN6=		${PORTNAME}.6
+
+.include <bsd.port.options.mk>
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -DDATA_PREFIX=\"${DATADIR}/\" \
@@ -28,17 +41,24 @@ do-build:
 		`${SDL_CONFIG} --libs` -lSDL_mixer
 
 do-install:
+# Executable
 	${INSTALL_PROGRAM} ${WRKSRC}/defendguin ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/defendguin.6 ${MAN6PREFIX}/man/man6
-	@${MKDIR} ${DATADIR}
-	${TAR} -C ${WRKSRC}/../data -cf - . | \
-		${TAR} -C ${DATADIR} --unlink -xf -
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 
-post-install:
-	@${FIND} ${DATADIR} ! -type d | ${SED} \
-		-e "s,${PREFIX}/,," >> ${TMPPLIST}
-	@${FIND} ${DATADIR} -type d | ${SORT} -r | ${SED} \
-		-e "s,${PREFIX}/,@dirrm ," >> ${TMPPLIST}
+# Manuall
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6 ${MAN6PREFIX}/man/man6
+
+# Data
+	@(cd ${WRKSRC}/../data && ${COPYTREE_SHARE} "images music sounds" ${DATADIR})
+
+# Pixmaps
+	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}.gif ${PREFIX}/share/pixmaps/
+
+# Documentation
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+.  for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/../docs/${f} ${DOCSDIR}
+.  endfor
+.endif
 
 .include <bsd.port.mk>
