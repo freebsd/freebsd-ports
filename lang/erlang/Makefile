@@ -70,6 +70,10 @@ ERL_RELEASE=	R${PORTVERSION:S/.//g:U}
 # probes fixed does not match the number of defined probes (54 != 132,
 # respectively)" you probably misconfigured DTrace in some way.
 
+.if ${ARCH} == "amd64" && ${PORT_OPTIONS:MDTRACE} && ! ${PORT_OPTIONS:MGCC46}
+IGNORE=		DTRACE support on amd64 requires GCC46 option
+.endif
+
 .if ${PORT_OPTIONS:MGCC46}
 USE_GCC?=	4.6+
 .endif
