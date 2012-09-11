@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-plone.app.upgrade
-# Date created:				03 January 2012
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	plone.app.upgrade
-PORTVERSION=	1.1.6
+PORTVERSION=	1.2.1
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -57,6 +52,6 @@ DIST_SUBDIR=	zope
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 USE_ZIP=	yes
-#USE_ZOPE=	yes
+USE_ZOPE=	yes
 
 .include <bsd.port.mk>

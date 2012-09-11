@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-plone.portlets
-# Date created:				25 December 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	plone.portlets
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

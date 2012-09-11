@@ -151,6 +151,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/contentrules/tests/test_action_mail.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/contentrules/tests/test_action_mail.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/contentrules/tests/test_action_mail.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/contentrules/tests/test_action_modify.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/contentrules/tests/test_action_modify.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/contentrules/tests/test_action_modify.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/contentrules/tests/test_action_move.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/contentrules/tests/test_action_move.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/contentrules/tests/test_action_move.pyo

@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-plone.i18n
-# Date created:				02 January 2012
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	plone.i18n
-PORTVERSION=	2.0
+PORTVERSION=	2.0.1
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

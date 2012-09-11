@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-plone.app.layout
-# Date created:				03 January 2012
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	plone.app.layout
-PORTVERSION=	2.2.4
+PORTVERSION=	2.2.7
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -38,8 +33,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.app.viewletmanager>=1.2:${PORTSDIR}/ww
 		${PYTHON_PKGNAMEPREFIX}Products.CMFEditions>=1.2.2:${PORTSDIR}/devel/py-Products.CMFEditions
 
 DIST_SUBDIR=	zope
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
-#USE_ZOPE=	yes
+USE_ZIP=	yes
+USE_ZOPE=	yes
 
 .include <bsd.port.mk>

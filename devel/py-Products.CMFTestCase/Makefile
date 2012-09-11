@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-Products.CMFTestCase
-# Date created:				20 December 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Products.CMFTestCase
-PORTVERSION=	0.9.11
+PORTVERSION=	0.9.12
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.component>=0:${PORTSDIR}/devel/py-zope.
 		zodb${PYTHON_PKGNAMESUFFIX}>=0:${PORTSDIR}/databases/zodb3
 
 DIST_SUBDIR=	zope
-USE_PYTHON=	2.6+
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
 USE_ZIP=	yes
 

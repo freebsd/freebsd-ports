@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-Products.ATContentTypes
-# Date created:				03 January 2012
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Products.ATContentTypes
-PORTVERSION=	2.1.7
+PORTVERSION=	2.1.8
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +15,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}archetypes.referencebrowserwidget>=0:${PORTS
 		${PYTHON_PKGNAMEPREFIX}plone.i18n>=0:${PORTSDIR}/www/py-plone.i18n \
 		${PYTHON_PKGNAMEPREFIX}plone.memoize>=0:${PORTSDIR}/www/py-plone.memoize \
 		${PYTHON_PKGNAMEPREFIX}plone.app.folder>=0:${PORTSDIR}/www/py-plone.app.folder \
-		${PYTHON_PKGNAMEPREFIX}plone.app.layout>=0:${PORTSDIR}/www/py-plone.app.layout \
 		${PYTHON_PKGNAMEPREFIX}zope.component>=0:${PORTSDIR}/devel/py-zope.component \
 		${PYTHON_PKGNAMEPREFIX}zope.i18n>=0:${PORTSDIR}/devel/py-zope.i18n \
 		${PYTHON_PKGNAMEPREFIX}zope.i18nmessageid>=0:${PORTSDIR}/textproc/py-zope.i18nmessageid \
@@ -44,9 +38,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}archetypes.referencebrowserwidget>=0:${PORTS
 		zodb${PYTHON_PKGNAMESUFFIX}>=0:${PORTSDIR}/databases/zodb3
 
 DIST_SUBDIR=	zope
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
 USE_ZIP=	yes
-#USE_ZOPE=	yes
+USE_ZOPE=	yes
 
 .include <bsd.port.mk>

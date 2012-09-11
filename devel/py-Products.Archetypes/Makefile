@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-Products.Archetypes
-# Date created:				02 January 2012
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	Products.Archetypes
-PORTVERSION=	1.7.13
+PORTVERSION=	1.8.3
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -35,7 +30,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.component>=0:${PORTSDIR}/devel/py-zope.
 		${PYTHON_PKGNAMEPREFIX}Products.CMFDefault>=0:${PORTSDIR}/devel/py-Products.CMFDefault \
 		${PYTHON_PKGNAMEPREFIX}Products.CMFFormController>=0:${PORTSDIR}/devel/py-Products.CMFFormController \
 		${PYTHON_PKGNAMEPREFIX}Products.CMFQuickInstallerTool>=0:${PORTSDIR}/devel/py-Products.CMFQuickInstallerTool \
-		${PYTHON_PKGNAMEPREFIX}Products.CMFTestCase>=0:${PORTSDIR}/devel/py-Products.CMFTestCase \
 		${PYTHON_PKGNAMEPREFIX}Products.DCWorkflow>=0:${PORTSDIR}/devel/py-Products.DCWorkflow \
 		${PYTHON_PKGNAMEPREFIX}Products.GenericSetup>=0:${PORTSDIR}/devel/py-Products.GenericSetup \
 		${PYTHON_PKGNAMEPREFIX}Products.Marshall>=0:${PORTSDIR}/devel/py-Products.Marshall \
@@ -54,9 +48,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.component>=0:${PORTSDIR}/devel/py-zope.
 		zodb${PYTHON_PKGNAMESUFFIX}>=0:${PORTSDIR}/databases/zodb3
 
 DIST_SUBDIR=	zope
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
 USE_ZIP=	yes
-#USE_ZOPE=	yes
+USE_ZOPE=	yes
 
 .include <bsd.port.mk>

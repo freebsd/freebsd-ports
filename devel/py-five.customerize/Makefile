@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-five.customerize
-# Date created:				03 January 2012
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	five.customerize
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -34,8 +29,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.portlets>=0:${PORTSDIR}/www/py-plone.p
 		${PYTHON_PKGNAMEPREFIX}Acquisition>=0:${PORTSDIR}/devel/py-Acquisition
 
 DIST_SUBDIR=	zope
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
-#USE_ZOPE=	yes
+USE_ZIP=	yes
+USE_ZOPE=	yes
 
 .include <bsd.port.mk>

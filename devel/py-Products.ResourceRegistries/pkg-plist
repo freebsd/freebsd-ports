@@ -54,6 +54,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ResourceRegistries/interfaces/registries.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ResourceRegistries/interfaces/registries.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ResourceRegistries/interfaces/registries.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ResourceRegistries/interfaces/settings.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ResourceRegistries/interfaces/settings.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ResourceRegistries/interfaces/settings.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ResourceRegistries/interfaces/viewletmanagers.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ResourceRegistries/interfaces/viewletmanagers.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ResourceRegistries/interfaces/viewletmanagers.pyo
@@ -132,6 +135,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ResourceRegistries/utils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ResourceRegistries/utils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ResourceRegistries/utils.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ResourceRegistries/www/bundles.zpt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ResourceRegistries/www/csscomposition.zpt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ResourceRegistries/www/cssconfig.zpt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/ResourceRegistries/www/jscomposition.zpt

@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-plone.app.registry
-# Date created:				03 January 2012
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	plone.app.registry
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +12,7 @@ COMMENT=	Zope 2 and Plone integration for plone.registry
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.registry>=1.0:${PORTSDIR}/www/py-plone.registry \
-		${PYTHON_PKGNAMEPREFIX}plone.supermodel>=1.0:${PORTSDIR}/www/py-plone.supermodel \
+		${PYTHON_PKGNAMEPREFIX}plone.supermodel>=1.1:${PORTSDIR}/www/py-plone.supermodel \
 		${PYTHON_PKGNAMEPREFIX}plone.app.z3cform>=0:${PORTSDIR}/www/py-plone.app.z3cform \
 		${PYTHON_PKGNAMEPREFIX}plone.autoform>=1.0:${PORTSDIR}/www/py-plone.autoform \
 		${PYTHON_PKGNAMEPREFIX}Products.CMFCore>=0:${PORTSDIR}/devel/py-Products.CMFCore \
@@ -29,9 +24,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.registry>=1.0:${PORTSDIR}/www/py-plone
 		${PYTHON_PKGNAMEPREFIX}zope.dottedname>=0:${PORTSDIR}/devel/py-zope.dottedname
 
 DIST_SUBDIR=	zope
-USE_PYTHON=	2.5+
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
-#USE_ZOPE=	yes
+USE_ZIP=	yes
+USE_ZOPE=	yes
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f -name "*.orig" -delete

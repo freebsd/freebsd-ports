@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-plone.subrequest
-# Date created:				25 December 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	plone.subrequest
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.6
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,6 +18,5 @@ DIST_SUBDIR=	zope
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 USE_ZIP=	yes
-#USE_ZOPE=	yes
 
 .include <bsd.port.mk>

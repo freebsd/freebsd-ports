@@ -214,6 +214,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/www/zuPasswd.zpt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/www/zuUsers.zpt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/www/zuWidgets.zpt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/xml/chooser.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/xml/cookieauth.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/xml/delegatepath.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/PluggableAuthService/plugins/xml/domainauth.xml

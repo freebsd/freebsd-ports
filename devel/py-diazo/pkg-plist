@@ -37,6 +37,9 @@ bin/diazorun
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/run.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/run.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/run.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/runtrace.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/runtrace.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/runtrace.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/__init__.pyo
@@ -159,6 +162,10 @@ bin/diazorun
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/esi/rules.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/esi/theme.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/esi/xpaths.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/html-attributes/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/html-attributes/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/html-attributes/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/html-attributes/theme.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/html-xml-lang-2/content.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/html-xml-lang-2/output.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/html-xml-lang-2/rules.xml
@@ -220,14 +227,6 @@ bin/diazorun
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-directives/output.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-directives/rules.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-directives/theme.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-example-modify-attribute/content.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-example-modify-attribute/output.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-example-modify-attribute/rules.xml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-example-modify-attribute/theme.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-example-modify-text/content.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-example-modify-text/output.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-example-modify-text/rules.xml
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-example-modify-text/theme.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/modify-theme/content.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/modify-theme/output.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/modify-theme/rules.xml
@@ -380,6 +379,9 @@ bin/diazorun
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/style-script-quoting-2/output.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/style-script-quoting-2/rules.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/style-script-quoting-2/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/test_trace.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/test_trace.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/test_trace.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/test_wsgi.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/test_wsgi.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/test_wsgi.pyo
@@ -551,6 +553,19 @@ bin/diazorun
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-merge/output.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-merge/rules.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-merge/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-not-content/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-not-content/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-not-content/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-not-content/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-not-path/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-not-path/options.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-not-path/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-not-path/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-not-path/theme.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-not/content.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-not/output.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-not/rules.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-not/theme.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-path/content.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-path/options.cfg
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-path/output.html
@@ -691,6 +706,9 @@ bin/diazorun
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-merge-separator
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-merge
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-path
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-not-path
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-not-content
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-not
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-merge
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-custom-param
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/v1-if-content
@@ -764,8 +782,6 @@ bin/diazorun
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-copy-2
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/multi-copy-1
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/modify-theme
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-example-modify-text
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-example-modify-attribute
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-directives
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/inline-xsl-apply-templates
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/indent-off
@@ -779,6 +795,7 @@ bin/diazorun
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/if-path-1
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/html-xml-lang-2
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/html-xml-lang
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/html-attributes
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/esi
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/entities
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/diazo/tests/empty-xmlns

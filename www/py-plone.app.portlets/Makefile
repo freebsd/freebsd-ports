@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-plone.app.portlets
-# Date created:				03 January 2012
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	plone.app.portlets
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.6
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -51,8 +46,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}five.formlib>=0:${PORTSDIR}/devel/py-five.fo
 		${PYTHON_PKGNAMEPREFIX}feedparser>=0:${PORTSDIR}/textproc/py-feedparser
 
 DIST_SUBDIR=	zope
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
-#USE_ZOPE=	yes
+USE_ZIP=	yes
+USE_ZOPE=	yes
 
 .include <bsd.port.mk>

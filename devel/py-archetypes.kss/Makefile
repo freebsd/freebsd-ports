@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-archetypes.kss
-# Date created:				02 January 2012
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	archetypes.kss
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

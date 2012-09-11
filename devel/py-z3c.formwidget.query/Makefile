@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-z3c.formwidget.query
-# Date created:				23 December 2011
-# Whom:					Ruslan Mahmatkhanov <cvs-src@yandex.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	z3c.formwidget.query
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

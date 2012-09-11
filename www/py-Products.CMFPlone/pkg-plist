@@ -340,8 +340,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_3rdParty/ecmaunit-license.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_3rdParty/ecmaunit.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_3rdParty/event-registration.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_3rdParty/jquery-license.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_3rdParty/jquery.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_3rdParty/jscalendar/ChangeLog
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_3rdParty/jscalendar/README
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_3rdParty/jscalendar/README-Plone
@@ -526,6 +524,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_content/link_view.pt.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_content/newsitem_view.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_content/newsitem_view.pt.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/IEFixes.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/action_icon.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/add_alternative_icon.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/add_icon.gif
@@ -618,11 +617,13 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/group.gif.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/htmlfilter_icon.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/htmlfilter_icon.gif.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/iefixes.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/image_icon.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/image_icon.gif.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/info.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/info.gif.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/info_icon.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/input-label.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/input_background.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/input_background.gif.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/linkOpaque.gif
@@ -710,6 +711,8 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/rtl-site_icon.gif.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/save_icon.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/save_icon.gif.metadata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/search.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/search.pt.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/search_icon.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/search_icon.gif.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_deprecated/selectedTabs.py
@@ -763,13 +766,13 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/form_tabbing.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/formsubmithelpers.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/fullscreenmode.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/input-label.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/jquery-integration.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/jquery.highlightsearchterms.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/js-standards.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/livesearch.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/login.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/mark_special_links.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/modernizr.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/nodeutilities.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/popupforms.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_ecmascript/register_function.js
@@ -863,10 +866,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_forms/member_search_results.pt.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_forms/ownership_form.cpt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_forms/ownership_form.cpt.metadata
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_forms/search.pt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_forms/search.pt.metadata
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_forms/search_form.pt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_forms/search_form.pt.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_forms/select_default_page.cpt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_forms/select_default_page.cpt.metadata
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/skins/plone_forms/select_default_view.cpt
@@ -1490,6 +1489,8 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/test_mails.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/test_mails.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/test_mails.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/test_upgrades1.zcml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/test_upgrades2.zcml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/timeBreadCrumbs.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/timeBreadCrumbs.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFPlone/tests/timeBreadCrumbs.pyo
