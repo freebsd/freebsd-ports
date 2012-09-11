@@ -47,7 +47,7 @@ post-patch:
 		${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in
 
 pre-configure:
-	@cd ${WRKSRC} && ${AUTORECONF}
+	@cd ${WRKSRC} && ${AUTORECONF} --force --install
 
 post-install:
 .if !defined(NOPORTDOCS)
