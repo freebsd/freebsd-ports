@@ -5,30 +5,38 @@
 # $FreeBSD$
 
 PORTNAME=	rox-session
-PORTVERSION=	0.30
-PORTREVISION=	4
+PORTVERSION=	0.40.0
 CATEGORIES=	x11-fm
-MASTER_SITES=	SF/rox/ROX-Session/${PORTVERSION}
-DISTNAME=	rox-session-${PORTVERSION}
+MASTER_SITES=	SF/rox/ROX-Session/${PORTVERSION}/
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A session manager for the ROX desktop
+COMMENT=	Simple session manager for the ROX desktop
 
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer \
 		${LOCALBASE}/lib/ROX-Lib2/python/rox/__init__.py:${PORTSDIR}/devel/py-roxlib
 
-USE_BZIP2=	yes
+WRKSRC=		${WRKDIR}/ROX-Session
+DATADIR=	${PREFIX}/apps/ROX-Session
+
+USE_GNOME=	gtk20 libxml2
+USE_XORG=	x11 xext xtst xxf86vm
 USE_PYTHON=	yes
 
-SUB_FILES=	rox-session rox.desktop
+PORTDOCS=	Changes DBUS-API README
 
-.include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/sbin/gdm)
-WITH_GDM=	yes
+.if !exists(${LOCALBASE}/sbin/gdm)
+OPTIONS_DEFINE=	GDM
+GDM_DESC=	Install GDM login manager
 .endif
 
-.if defined(WITH_GDM)
+SUB_FILES=	${PORTNAME} rox.desktop
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGDM}
 RUN_DEPENDS+=	${LOCALBASE}/sbin/gdm:${PORTSDIR}/x11/gdm
 PLIST_SUB+=	GDM=""
 .else
@@ -36,19 +44,23 @@ PLIST_SUB+=	GDM="@comment "
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -name *.orig | ${XARGS} ${RM}
+	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
 	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
+	@cd ${WRKSRC} && ./AppRun --compile
 
 do-install:
-	@${MKDIR} ${PREFIX}/apps
-	@${CP} -r ${WRKSRC}/ROX-Session ${PREFIX}/apps/
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/apps/ROX-Session
-	@${INSTALL_SCRIPT} ${WRKDIR}/rox-session ${PREFIX}/sbin
-.if defined(WITH_GDM)
-	@${INSTALL_DATA} ${WRKDIR}/rox.desktop ${PREFIX}/etc/dm/Sessions
+	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
+	@cd ${WRKSRC} && ${FIND} . | ${CPIO} -pdmu ${DATADIR}
+	@${MKDIR} ${PREFIX}/share/applications
+	@${INSTALL_DATA} ${WRKDIR}/rox.desktop ${PREFIX}/share/applications
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/Help/${f} ${DOCSDIR}
+.endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
