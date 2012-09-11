@@ -5,6 +5,7 @@ PORTVERSION=	2.1.99.20120911
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://fossil.etoilebsd.net/poudriere/tarball/
 
+# Also maintained by bdrewery@FreeBSD.org
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Port build and test system
 
