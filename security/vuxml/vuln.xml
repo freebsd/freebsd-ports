@@ -51,6 +51,53 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3bbbe3aa-fbeb-11e1-8bd8-0022156e8794">
+    <topic>freeradius -- arbitrary code execution for TLS-based authentication</topic>
+    <affects>
+      <package>
+        <name>freeradius</name>
+        <range><ge>2.1.10</ge><lt>2.2.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>freeRADIUS security team reports:</p>
+        <blockquote cite="http://freeradius.org/security.html">
+          <p>Overflow in EAP-TLS for 2.1.10, 2.1.11 and 2.1.12.</p>
+          <p>The issue was found by Timo Warns, and communicated to
+          security@freeradius.org.  A sample exploit for the issue was
+          included in the notification.</p>
+          <p>The vulnerability was created in commit a368a6f4f4aaf on
+          August 18, 2010.  Vulnerable versions include 2.1.10, 2.1.11,
+          and 2.1.12.  Also anyone running the git "master" branch
+          after August 18, 2010 is vulnerable.</p>
+          <p>All sites using TLS-based EAP methods and the above
+          versions are vulnerable.  The only configuration change which
+          can avoid the issue is to disable EAP-TLS, EAP-TTLS, and
+          PEAP.</p>
+          <p>An external attacker can use this vulnerability to
+          over-write the stack frame of the RADIUS server, and cause
+          it to crash.  In addition, more sophisticated attacks may
+          gain additional privileges on the system running the RADIUS
+          server.</p>
+          <p>This attack does not require local network access to the
+          RADIUS server.  It can be done by an attacker through a WiFi
+          Access Point, so long as the Access Point is configured to
+          use 802.1X authentication with the RADIUS server.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-3547</cvename>
+      <url>http://freeradius.org/security.html</url>
+      <url>http://www.pre-cert.de/advisories/PRE-SA-2012-06.txt</url>
+    </references>
+    <dates>
+      <discovery>2012-09-10</discovery>
+      <entry>2012-09-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c1e5f35e-f93d-11e1-b07f-00235a5f2c9a">
     <topic>emacs -- remote code execution vulnerability</topic>
     <affects>
