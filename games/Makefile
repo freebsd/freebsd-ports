@@ -873,6 +873,7 @@
     SUBDIR += sumwars
     SUBDIR += super_methane_brothers
     SUBDIR += supertux
+    SUBDIR += supertux-devel
     SUBDIR += supertuxkart
     SUBDIR += sxsame
     SUBDIR += syobon
