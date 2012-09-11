@@ -2468,7 +2468,7 @@ new file mode 100644
 index 0000000..c145091
 --- /dev/null
 +++ lib/route-table-bsd.c
-@@ -0,0 +1,129 @@
+@@ -0,0 +1,131 @@
 +/*
 + * Copyright (c) 2012 Ed Maste. All rights reserved.
 + *
@@ -2499,6 +2499,8 @@ index 0000000..c145091
 +
 +#include <string.h>
 +#include <unistd.h>
++
++#include "vlog.h"
 +
 +VLOG_DEFINE_THIS_MODULE(route_table);
 +
