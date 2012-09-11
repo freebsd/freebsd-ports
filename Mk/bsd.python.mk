@@ -501,7 +501,7 @@ PYDISTUTILS_EGGINFODIR?=${PYTHONPREFIX_SITELIBDIR}
 	(defined(INSTALLS_EGGINFO) ||	\
 		(defined(USE_PYDISTUTILS) && \
 		 ${USE_PYDISTUTILS} != "easy_install")) && \
-	 defined(PYTHON_REL) && ${PYTHON_REL} >= 250
+	 defined(PYTHON_REL)
 . for egg in ${PYDISTUTILS_EGGINFO}
 PLIST_FILES+=	${PYDISTUTILS_EGGINFODIR:S;${PREFIX}/;;}/${egg}
 . endfor
@@ -513,7 +513,7 @@ CONFIGURE_ENV+=	PYTHON="${PYTHON_CMD}"
 # Zope-related variables
 .if defined(USE_ZOPE)
 .if ${ZOPE_VERSION} == "2.13"
-ZOPE_PORTSDIR=		${PORTSDIR}/www/zope213
+ZOPE_DEPENDS=	zope213>0:${PORTSDIR}/www/zope213
 .else
 check-makevars::
 	@${ECHO} "Makefile error: bad value for ZOPE_VERSION: ${ZOPE_VERSION}."
@@ -543,7 +543,7 @@ RUN_DEPENDS+=	${PYTHON_CMD}:${PYTHON_PORTSDIR}
 .endif		# ${PYTHON_NO_DEPENDS} == "NO"
 
 .if defined(USE_ZOPE)
-RUN_DEPENDS+=	${ZOPESKELDIR}/bin/zopectl.in:${ZOPE_PORTSDIR}
+RUN_DEPENDS+=	${ZOPE_DEPENDS}
 .endif
 
 # set $PREFIX as Python's one
