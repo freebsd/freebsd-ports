@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-${ARCH}
 DISTNAME=	${PORTNAME}-${ARCH}-${PORTVERSION}
 
 MAINTAINER=	garga@FreeBSD.org
-COMMENT=	A convenience package to install the compat8x libraries
+COMMENT=	A convenience package to install the compat9x libraries
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
