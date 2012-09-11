@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	portbuilder
-DISTVERSION=	0.1.5.2
+DISTVERSION=	0.1.5.3
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://cloud.github.com/downloads/DragonSA/portbuilder/
 
