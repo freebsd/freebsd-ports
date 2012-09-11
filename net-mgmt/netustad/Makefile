@@ -20,19 +20,22 @@ COMMENT=	A Web based admin tool that manages network services
 USE_RC_SUBR=	${PORTNAME}
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-OPTIONS=	SSL "Use netUstad with SSL support" on
+
+OPTIONS_DEFINE=	SSL NLS
+OPTIONS_DEFAULT=SSL
+SSL_DESC=	Use netUstad with SSL support
 
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_SSL)
+.if ${PORT_OPTIONS:MSSL}
 USE_OPENSSL=	yes
 .else
 CONFIGURE_ARGS+=	--without-ssl
 .endif
 
-.if defined(WITHOUT_NLS)
+.if empty(PORT_OPTIONS:MNLS)
 CONFIGURE_ARGS+=	--without-nls
 .endif
 
