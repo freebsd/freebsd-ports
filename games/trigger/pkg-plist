@@ -3,6 +3,14 @@ bin/trigger
 %%DATADIR%%/events/triggercup/bigjump/foliagemap.png
 %%DATADIR%%/events/triggercup/bigjump/heightmap.png
 %%DATADIR%%/events/triggercup/bigjump/jump.level
+%%DATADIR%%/events/triggercup/desertstorm/colormap.jpg
+%%DATADIR%%/events/triggercup/desertstorm/foliagemap.png
+%%DATADIR%%/events/triggercup/desertstorm/heightmap.png
+%%DATADIR%%/events/triggercup/desertstorm/storm.level
+%%DATADIR%%/events/triggercup/lunar/colormap.jpg
+%%DATADIR%%/events/triggercup/lunar/foliagemap.png
+%%DATADIR%%/events/triggercup/lunar/heightmap.png
+%%DATADIR%%/events/triggercup/lunar/lunar.level
 %%DATADIR%%/events/triggercup/monkeybusiness/colormap.jpg
 %%DATADIR%%/events/triggercup/monkeybusiness/foliagemap.png
 %%DATADIR%%/events/triggercup/monkeybusiness/heightmap.png
@@ -16,19 +24,41 @@ bin/trigger
 %%DATADIR%%/events/triggercup/warmup/foliagemap.png
 %%DATADIR%%/events/triggercup/warmup/heightmap.png
 %%DATADIR%%/events/triggercup/warmup/warmup.level
-%%DATADIR%%/maps/desertstorm/colormap.jpg
-%%DATADIR%%/maps/desertstorm/foliagemap.png
-%%DATADIR%%/maps/desertstorm/heightmap.png
-%%DATADIR%%/maps/desertstorm/storm.level
-%%DATADIR%%/maps/lunar/colormap.jpg
-%%DATADIR%%/maps/lunar/foliagemap.png
-%%DATADIR%%/maps/lunar/heightmap.png
-%%DATADIR%%/maps/lunar/lunar.level
+%%DATADIR%%/fonts/crillee.pfb
+%%DATADIR%%/maps/greengrounds/colormap.jpg
+%%DATADIR%%/maps/greengrounds/foliagemap.png
+%%DATADIR%%/maps/greengrounds/greengrounds.level
+%%DATADIR%%/maps/greengrounds/heightmap.png
+%%DATADIR%%/maps/mountainpass/colormap.jpg
+%%DATADIR%%/maps/mountainpass/foliagemap.png
+%%DATADIR%%/maps/mountainpass/heightmap.png
+%%DATADIR%%/maps/mountainpass/mountainpass.level
+%%DATADIR%%/maps/roundhouse/roundhouse-c.jpg
+%%DATADIR%%/maps/roundhouse/roundhouse-f.jpg
+%%DATADIR%%/maps/roundhouse/roundhouse-h.jpg
+%%DATADIR%%/maps/roundhouse/roundhouse.level
 %%DATADIR%%/maps/saharatea/level7-c.jpg
 %%DATADIR%%/maps/saharatea/level7-f.png
 %%DATADIR%%/maps/saharatea/level7-h.png
 %%DATADIR%%/maps/saharatea/level7.level
+%%DATADIR%%/plugins/banana_island.zip
+%%DATADIR%%/plugins/cross_mountain.zip
+%%DATADIR%%/plugins/crosspulp.zip
+%%DATADIR%%/plugins/delta.zip
+%%DATADIR%%/plugins/desert_rush.zip
+%%DATADIR%%/plugins/ghats.zip
+%%DATADIR%%/plugins/helicoil.zip
+%%DATADIR%%/plugins/icypeak.zip
+%%DATADIR%%/plugins/illa.zip
+%%DATADIR%%/plugins/monza.zip
+%%DATADIR%%/plugins/muntaya.zip
+%%DATADIR%%/plugins/rscup.zip
+%%DATADIR%%/plugins/santa.zip
+%%DATADIR%%/plugins/serpentine.zip
 %%DATADIR%%/plugins/snowlevel.zip
+%%DATADIR%%/plugins/snowyhills.zip
+%%DATADIR%%/plugins/tobago.zip
+%%DATADIR%%/plugins/westernchallenge.zip
 %%DATADIR%%/sounds/engine1.wav
 %%DATADIR%%/sounds/evo_sound/clank1.wav
 %%DATADIR%%/sounds/evo_sound/clank3.wav
@@ -40,7 +70,10 @@ bin/trigger
 %%DATADIR%%/textures/detail.jpg
 %%DATADIR%%/textures/dial_gear.png
 %%DATADIR%%/textures/dial_rev.png
-%%DATADIR%%/textures/dial_speed.png
+%%DATADIR%%/textures/dial_speed_hybrid_kph.png
+%%DATADIR%%/textures/dial_speed_hybrid_mph.png
+%%DATADIR%%/textures/dial_speed_kph.png
+%%DATADIR%%/textures/dial_speed_mph.png
 %%DATADIR%%/textures/dust.png
 %%DATADIR%%/textures/gunflare.jpg
 %%DATADIR%%/textures/life_helmet.png
@@ -73,8 +106,6 @@ bin/trigger
 %%DATADIR%%/vehicles/seat/seat_complete.fx
 %%DATADIR%%/vehicles/seat/seat_complete.jpg
 %%DATADIR%%/vehicles/seat/seat_wheel.ase
-%%PORTDOCS%%%%DOCSDIR%%/README-stereo.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
 @dirrm %%DATADIR%%/vehicles/seat
 @dirrm %%DATADIR%%/vehicles/focus
 @dirrm %%DATADIR%%/vehicles/evo
@@ -87,14 +118,17 @@ bin/trigger
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/maps/saharatea
-@dirrm %%DATADIR%%/maps/lunar
-@dirrm %%DATADIR%%/maps/desertstorm
+@dirrm %%DATADIR%%/maps/roundhouse
+@dirrm %%DATADIR%%/maps/mountainpass
+@dirrm %%DATADIR%%/maps/greengrounds
 @dirrm %%DATADIR%%/maps
+@dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/events/triggercup/warmup
 @dirrm %%DATADIR%%/events/triggercup/oldmacdonald
 @dirrm %%DATADIR%%/events/triggercup/monkeybusiness
+@dirrm %%DATADIR%%/events/triggercup/lunar
+@dirrm %%DATADIR%%/events/triggercup/desertstorm
 @dirrm %%DATADIR%%/events/triggercup/bigjump
 @dirrm %%DATADIR%%/events/triggercup
 @dirrm %%DATADIR%%/events
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
