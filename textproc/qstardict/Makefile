@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	qstardict
-PORTVERSION=	0.13.1
-PORTREVISION=	2
+PORTVERSION=	1.0.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://qstardict.ylsoftware.com/files/
 
 MAINTAINER=	makc@FreeBSD.org
-COMMENT=	A StarDict clone written with using Qt4
+COMMENT=	Dictionary program written in Qt4
 
 USE_BZIP2=	yes
 USE_QT4=	gui network xml qmake_build uic_build moc_build rcc_build
@@ -50,11 +49,7 @@ post-patch:
 		${WRKSRC}/plugins/stardict/stardict.cpp
 
 do-configure:
-	cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKE_ARGS}
-
-post-configure:
-	${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
-		's|^CC .*|CC=${CC}|; s|^CXX .*|CXX=${CXX}|; s|^LINK .*|LINK=${CXX}|'
+	cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKE_ARGS} ${QMAKEFLAGS}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
