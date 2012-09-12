@@ -101,11 +101,15 @@ lib/collectd/uptime.so
 lib/collectd/uptime.la
 lib/collectd/uuid.so
 lib/collectd/uuid.la
+%%VIRT%%lib/collectd/libvirt.la
+%%VIRT%%lib/collectd/libvirt.so
+%%WRITE_HTTP%%lib/collectd/write_http.la
+%%WRITE_HTTP%%lib/collectd/write_http.so
+%%XMMS%%lib/collectd/xmms.la
+%%XMMS%%lib/collectd/xmms.so
 include/collectd/client.h
 include/collectd/lcc_features.h
 libdata/pkgconfig/libcollectdclient.pc
-%%XMMS%%lib/collectd/xmms.la
-%%XMMS%%lib/collectd/xmms.so
 %%DATADIR%%/postgresql_default.conf
 %%DATADIR%%/types.db
 @dirrm lib/collectd
