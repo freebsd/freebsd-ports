@@ -3213,6 +3213,7 @@
     SUBDIR += py-archetypes.querywidget
     SUBDIR += py-archetypes.referencebrowserwidget
     SUBDIR += py-archetypes.schemaextender
+    SUBDIR += py-argh
     SUBDIR += py-argparse
     SUBDIR += py-asn1
     SUBDIR += py-asn1-modules
