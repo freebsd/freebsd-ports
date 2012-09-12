@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	trigger
-PORTVERSION=	0.5.2.1
-PORTREVISION=	11
+PORTVERSION=	0.6.0
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}-rally/${PORTNAME}-rally/${PORTNAME}-${PORTVERSION}
-DISTFILES=	trigger-${PORTVERSION}-src${EXTRACT_SUFX} \
-		trigger-${DATAVERSION}-data${EXTRACT_SUFX}
+DISTFILES=	trigger-rally-${PORTVERSION}-src${EXTRACT_SUFX} \
+		trigger-rally-${DATAVERSION}-data${EXTRACT_SUFX}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A rally car racing game
@@ -21,19 +20,21 @@ LIB_DEPENDS=	physfs.1:${PORTSDIR}/devel/physfs
 
 USE_OPENAL=	al alut
 USE_SDL=	sdl image
-USE_GL=		yes
+USE_GL=		glu
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-WRKSRC=		${WRKDIR}/trigger-${PORTVERSION}-src
-DATASRC=	${WRKDIR}/trigger-${DATAVERSION}-data
+WRKSRC=		${WRKDIR}/trigger-rally-${PORTVERSION}-src
+DATASRC=	${WRKDIR}/trigger-rally-${DATAVERSION}-data
 
-DATAVERSION=	0.5.2
+DATAVERSION=	0.6.0
 
 DESKTOP_ENTRIES="Trigger" "Car racing game" "" \
 		"trigger" "" false
+
+PORTDOCS=	README-stereo.txt README.txt
 
 .include <bsd.port.options.mk>
 
@@ -54,20 +55,14 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/trigger ${PREFIX}/bin
 
 	${MKDIR} ${DATADIR}
-.for d in events maps plugins sounds textures vehicles
-	${CP} -R ${DATASRC}/${d} ${DATADIR}
+.for d in events fonts maps plugins sounds textures vehicles
+	cd ${DATASRC} && ${COPYTREE_SHARE} ${d} ${DATADIR}
 .endfor
 	${INSTALL_DATA} ${DATASRC}/trigger.config.defs ${DATADIR}
 
-	-${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/*
-	${FIND} ${DATADIR}/* -type f -exec ${CHMOD} 444 {} \;
-	${FIND} ${DATADIR}/* -type d -exec ${CHMOD} 555 {} \;
-
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-.for f in README-stereo.txt README.txt
-	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
-.endfor
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
