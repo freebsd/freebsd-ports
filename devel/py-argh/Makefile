@@ -12,6 +12,8 @@ COMMENT=	Simple (Python) argparse wrapper
 
 LICENSE=	LGPL3
 
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+
 # Python3 ready (installation tested)
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
