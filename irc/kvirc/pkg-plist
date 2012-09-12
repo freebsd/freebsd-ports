@@ -18,6 +18,7 @@ lib/kvirc/%%VER%%/modules/libkvieditor.so
 lib/kvirc/%%VER%%/modules/libkvieventeditor.so
 lib/kvirc/%%VER%%/modules/libkvifile.so
 lib/kvirc/%%VER%%/modules/libkvifiletransferwindow.so
+lib/kvirc/%%VER%%/modules/libkvifish.so
 lib/kvirc/%%VER%%/modules/libkvihelp.so
 lib/kvirc/%%VER%%/modules/libkvihttp.so
 lib/kvirc/%%VER%%/modules/libkviident.so
@@ -38,9 +39,10 @@ lib/kvirc/%%VER%%/modules/libkviobjects.so
 lib/kvirc/%%VER%%/modules/libkvioptions.so
 %%PERL%%lib/kvirc/%%VER%%/modules/libkviperl.so
 lib/kvirc/%%VER%%/modules/libkviperlcore.so
-%%PYTHON%%lib/kvirc/%%VER%%/modules/libkvipython.so
+lib/kvirc/%%VER%%/modules/libkvipopup.so
 lib/kvirc/%%VER%%/modules/libkvipopupeditor.so
 lib/kvirc/%%VER%%/modules/libkviproxydb.so
+%%PYTHON%%lib/kvirc/%%VER%%/modules/libkvipython.so
 lib/kvirc/%%VER%%/modules/libkvipythoncore.so
 lib/kvirc/%%VER%%/modules/libkviraweditor.so
 lib/kvirc/%%VER%%/modules/libkviregchan.so
@@ -67,11 +69,13 @@ lib/kvirc/%%VER%%/modules/libkvitorrent.so
 lib/kvirc/%%VER%%/modules/libkvitrayicon.so
 lib/kvirc/%%VER%%/modules/libkviupnp.so
 lib/kvirc/%%VER%%/modules/libkviurl.so
+lib/kvirc/%%VER%%/modules/libkviuserlist.so
 lib/kvirc/%%VER%%/modules/libkviwindow.so
 lib/libkvilib.so
 lib/libkvilib.so.4
-lib/libkvilib.so.4.0.4
+lib/libkvilib.so.4.2.0
 share/applications/kvirc.desktop
+%%KDE%%share/apps/kvirc/kvirc.notifyrc
 share/icons/hicolor/128x128/apps/kvirc.png
 share/icons/hicolor/128x128/mimetypes/application-x-kva.png
 share/icons/hicolor/128x128/mimetypes/application-x-kvt.png
@@ -102,6 +106,8 @@ share/icons/hicolor/scalable/mimetypes/application-x-kva.svgz
 share/icons/hicolor/scalable/mimetypes/application-x-kvt.svgz
 share/icons/hicolor/scalable/mimetypes/text-x-kvc.svgz
 share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
+%%KDE%%share/kde4/services/_irc.protocol
+%%KDE%%share/kde4/services/_irc6.protocol
 %%DATADIR%%/%%VER%%/audio/jingle.wav
 %%DATADIR%%/%%VER%%/config/modules/libkvitip.kvc
 %%DATADIR%%/%%VER%%/config/modules/libkvitip_cs.kvc
@@ -109,10 +115,12 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/config/modules/libkvitip_it.kvc
 %%DATADIR%%/%%VER%%/config/modules/libkvitip_pt.kvc
 %%DATADIR%%/%%VER%%/config/modules/libkvitip_ru.kvc
+%%DATADIR%%/%%VER%%/config/modules/libkvitip_uk.kvc
 %%DATADIR%%/%%VER%%/config/serverdb.kvc
 %%DATADIR%%/%%VER%%/config/texticons.kvc
 %%DATADIR%%/%%VER%%/defscript/aliases.kvs
 %%DATADIR%%/%%VER%%/defscript/classes.kvs
+%%DATADIR%%/%%VER%%/defscript/default.kvc
 %%DATADIR%%/%%VER%%/defscript/default.kvs
 %%DATADIR%%/%%VER%%/defscript/events.kvs
 %%DATADIR%%/%%VER%%/defscript/popups.kvs
@@ -141,6 +149,7 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/class_button.html
 %%DATADIR%%/%%VER%%/help/en/class_buttongroup.html
 %%DATADIR%%/%%VER%%/help/en/class_checkbox.html
+%%DATADIR%%/%%VER%%/help/en/class_colordialog.html
 %%DATADIR%%/%%VER%%/help/en/class_combobox.html
 %%DATADIR%%/%%VER%%/help/en/class_datetimeedit.html
 %%DATADIR%%/%%VER%%/help/en/class_dialog.html
@@ -178,7 +187,9 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/class_textbrowser.html
 %%DATADIR%%/%%VER%%/help/en/class_toolbar.html
 %%DATADIR%%/%%VER%%/help/en/class_toolbutton.html
+%%DATADIR%%/%%VER%%/help/en/class_trayicon.html
 %%DATADIR%%/%%VER%%/help/en/class_vbox.html
+%%DATADIR%%/%%VER%%/help/en/class_webview.html
 %%DATADIR%%/%%VER%%/help/en/class_widget.html
 %%DATADIR%%/%%VER%%/help/en/class_window.html
 %%DATADIR%%/%%VER%%/help/en/class_wizard.html
@@ -233,6 +244,7 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/cmd_config.flush.html
 %%DATADIR%%/%%VER%%/help/en/cmd_config.setsection.html
 %%DATADIR%%/%%VER%%/help/en/cmd_config.write.html
+%%DATADIR%%/%%VER%%/help/en/cmd_context.clearqueue.html
 %%DATADIR%%/%%VER%%/help/en/cmd_continue.html
 %%DATADIR%%/%%VER%%/help/en/cmd_ctcp.html
 %%DATADIR%%/%%VER%%/help/en/cmd_dcc.abort.html
@@ -277,6 +289,7 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/cmd_file.rename.html
 %%DATADIR%%/%%VER%%/help/en/cmd_file.rmdir.html
 %%DATADIR%%/%%VER%%/help/en/cmd_file.write.html
+%%DATADIR%%/%%VER%%/help/en/cmd_file.writebytes.html
 %%DATADIR%%/%%VER%%/help/en/cmd_file.writelines.html
 %%DATADIR%%/%%VER%%/help/en/cmd_filetransferwindow.open.html
 %%DATADIR%%/%%VER%%/help/en/cmd_for.html
@@ -366,7 +379,19 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/cmd_perl.destroy.html
 %%DATADIR%%/%%VER%%/help/en/cmd_perl.end.html
 %%DATADIR%%/%%VER%%/help/en/cmd_play.html
+%%DATADIR%%/%%VER%%/help/en/cmd_popup.addepilogue.html
+%%DATADIR%%/%%VER%%/help/en/cmd_popup.addextpopup.html
+%%DATADIR%%/%%VER%%/help/en/cmd_popup.additem.html
+%%DATADIR%%/%%VER%%/help/en/cmd_popup.addlabel.html
+%%DATADIR%%/%%VER%%/help/en/cmd_popup.addprologue.html
+%%DATADIR%%/%%VER%%/help/en/cmd_popup.addseparator.html
+%%DATADIR%%/%%VER%%/help/en/cmd_popup.addsubpopup.html
+%%DATADIR%%/%%VER%%/help/en/cmd_popup.clear.html
+%%DATADIR%%/%%VER%%/help/en/cmd_popup.create.html
+%%DATADIR%%/%%VER%%/help/en/cmd_popup.delitem.html
+%%DATADIR%%/%%VER%%/help/en/cmd_popup.destroy.html
 %%DATADIR%%/%%VER%%/help/en/cmd_popup.html
+%%DATADIR%%/%%VER%%/help/en/cmd_popup.show.html
 %%DATADIR%%/%%VER%%/help/en/cmd_popupeditor.open.html
 %%DATADIR%%/%%VER%%/help/en/cmd_privateimpl.html
 %%DATADIR%%/%%VER%%/help/en/cmd_privmsg.html
@@ -410,6 +435,7 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/cmd_serverdb.setnetworkconnectcommand.html
 %%DATADIR%%/%%VER%%/help/en/cmd_serverdb.setnetworkdescription.html
 %%DATADIR%%/%%VER%%/help/en/cmd_serverdb.setnetworkencoding.html
+%%DATADIR%%/%%VER%%/help/en/cmd_serverdb.setnetworkjoinchannels.html
 %%DATADIR%%/%%VER%%/help/en/cmd_serverdb.setnetworklogincommand.html
 %%DATADIR%%/%%VER%%/help/en/cmd_serverdb.setnetworknickname.html
 %%DATADIR%%/%%VER%%/help/en/cmd_serverdb.setnetworkrealname.html
@@ -418,6 +444,7 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/cmd_serverdb.setserverconnectcommand.html
 %%DATADIR%%/%%VER%%/help/en/cmd_serverdb.setserverdescription.html
 %%DATADIR%%/%%VER%%/help/en/cmd_serverdb.setserverencoding.html
+%%DATADIR%%/%%VER%%/help/en/cmd_serverdb.setserverjoinchannels.html
 %%DATADIR%%/%%VER%%/help/en/cmd_serverdb.setserverlogincommand.html
 %%DATADIR%%/%%VER%%/help/en/cmd_serverdb.setservernickname.html
 %%DATADIR%%/%%VER%%/help/en/cmd_serverdb.setserverrealname.html
@@ -474,6 +501,7 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/cmd_toolbareditor.open.html
 %%DATADIR%%/%%VER%%/help/en/cmd_topic.html
 %%DATADIR%%/%%VER%%/help/en/cmd_torrent.announce.html
+%%DATADIR%%/%%VER%%/help/en/cmd_torrent.detect.html
 %%DATADIR%%/%%VER%%/help/en/cmd_torrent.setclient.html
 %%DATADIR%%/%%VER%%/help/en/cmd_torrent.setfilepriority.html
 %%DATADIR%%/%%VER%%/help/en/cmd_torrent.setmaxdownloadspeed.html
@@ -514,6 +542,7 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/cmd_window.maximize.html
 %%DATADIR%%/%%VER%%/help/en/cmd_window.minimize.html
 %%DATADIR%%/%%VER%%/help/en/cmd_window.restore.html
+%%DATADIR%%/%%VER%%/help/en/cmd_window.savepropertiesasdefault.html
 %%DATADIR%%/%%VER%%/help/en/cmd_window.setbackground.html
 %%DATADIR%%/%%VER%%/help/en/cmd_window.setcryptengine.html
 %%DATADIR%%/%%VER%%/help/en/cmd_window.setinputtext.html
@@ -817,14 +846,14 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/doc_widget_alphabetic_y.html
 %%DATADIR%%/%%VER%%/help/en/doc_widget_alphabetic_z.html
 %%DATADIR%%/%%VER%%/help/en/doc_widget_index_all.html
-%%DATADIR%%/%%VER%%/help/en/doc_window.html
 %%DATADIR%%/%%VER%%/help/en/doc_window_naming_conventions.html
-%%DATADIR%%/%%VER%%/help/en/documentation.4.0.4.5646.tag
+%%DATADIR%%/%%VER%%/help/en/documentation.4.2.0.6190.tag
 %%DATADIR%%/%%VER%%/help/en/event_onaccelkeypressed.html
 %%DATADIR%%/%%VER%%/help/en/event_onaction.html
 %%DATADIR%%/%%VER%%/help/en/event_onban.html
 %%DATADIR%%/%%VER%%/help/en/event_onbanexception.html
 %%DATADIR%%/%%VER%%/help/en/event_onbanexceptionremove.html
+%%DATADIR%%/%%VER%%/help/en/event_onbroadcastnotice.html
 %%DATADIR%%/%%VER%%/help/en/event_onchanadmin.html
 %%DATADIR%%/%%VER%%/help/en/event_onchannellinkclick.html
 %%DATADIR%%/%%VER%%/help/en/event_onchannellinkpopuprequest.html
@@ -875,6 +904,7 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/event_onhostlinkpopuprequest.html
 %%DATADIR%%/%%VER%%/help/en/event_onhttpgetterminated.html
 %%DATADIR%%/%%VER%%/help/en/event_onignoredmessage.html
+%%DATADIR%%/%%VER%%/help/en/event_oninputbarpaste.html
 %%DATADIR%%/%%VER%%/help/en/event_oninvite.html
 %%DATADIR%%/%%VER%%/help/en/event_oninviteexception.html
 %%DATADIR%%/%%VER%%/help/en/event_oninviteexceptionremove.html
@@ -916,6 +946,7 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/event_onmeircop.html
 %%DATADIR%%/%%VER%%/help/en/event_onmejoin.html
 %%DATADIR%%/%%VER%%/help/en/event_onmekick.html
+%%DATADIR%%/%%VER%%/help/en/event_onmemoservnotice.html
 %%DATADIR%%/%%VER%%/help/en/event_onmenickchange.html
 %%DATADIR%%/%%VER%%/help/en/event_onmeop.html
 %%DATADIR%%/%%VER%%/help/en/event_onmepart.html
@@ -959,12 +990,13 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/event_onurl.html
 %%DATADIR%%/%%VER%%/help/en/event_onurllinkclick.html
 %%DATADIR%%/%%VER%%/help/en/event_onurllinkpopuprequest.html
-%%DATADIR%%/%%VER%%/help/en/event_onusermode.html
+%%DATADIR%%/%%VER%%/help/en/event_onusermodechange.html
 %%DATADIR%%/%%VER%%/help/en/event_onuserop.html
 %%DATADIR%%/%%VER%%/help/en/event_onvoice.html
 %%DATADIR%%/%%VER%%/help/en/event_onwallops.html
 %%DATADIR%%/%%VER%%/help/en/event_onwindowactivated.html
 %%DATADIR%%/%%VER%%/help/en/event_onwindowpopuprequest.html
+%%DATADIR%%/%%VER%%/help/en/event_onwindowtitlerequest.html
 %%DATADIR%%/%%VER%%/help/en/fnc_$.html
 %%DATADIR%%/%%VER%%/help/en/fnc_$window.inputtext.html
 %%DATADIR%%/%%VER%%/help/en/fnc_action.exists.html
@@ -972,6 +1004,7 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/fnc_active.html
 %%DATADIR%%/%%VER%%/help/en/fnc_addon.exists.html
 %%DATADIR%%/%%VER%%/help/en/fnc_addon.version.html
+%%DATADIR%%/%%VER%%/help/en/fnc_aliasbody.html
 %%DATADIR%%/%%VER%%/help/en/fnc_array.html
 %%DATADIR%%/%%VER%%/help/en/fnc_ascii.html
 %%DATADIR%%/%%VER%%/help/en/fnc_asciitobase64.html
@@ -983,6 +1016,7 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/fnc_base64toascii.html
 %%DATADIR%%/%%VER%%/help/en/fnc_bool.html
 %%DATADIR%%/%%VER%%/help/en/fnc_boolean.html
+%%DATADIR%%/%%VER%%/help/en/fnc_certificate.html
 %%DATADIR%%/%%VER%%/help/en/fnc_chan.admincount.html
 %%DATADIR%%/%%VER%%/help/en/fnc_chan.bancount.html
 %%DATADIR%%/%%VER%%/help/en/fnc_chan.banexceptioncount.html
@@ -1010,11 +1044,15 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/fnc_chan.isvoice.html
 %%DATADIR%%/%%VER%%/help/en/fnc_chan.key.html
 %%DATADIR%%/%%VER%%/help/en/fnc_chan.limit.html
+%%DATADIR%%/%%VER%%/help/en/fnc_chan.maskcount.html
+%%DATADIR%%/%%VER%%/help/en/fnc_chan.masklist.html
 %%DATADIR%%/%%VER%%/help/en/fnc_chan.matchban.html
 %%DATADIR%%/%%VER%%/help/en/fnc_chan.matchbanexception.html
 %%DATADIR%%/%%VER%%/help/en/fnc_chan.matchinvite.html
+%%DATADIR%%/%%VER%%/help/en/fnc_chan.matchmask.html
 %%DATADIR%%/%%VER%%/help/en/fnc_chan.matchqban.html
 %%DATADIR%%/%%VER%%/help/en/fnc_chan.mode.html
+%%DATADIR%%/%%VER%%/help/en/fnc_chan.modeparam.html
 %%DATADIR%%/%%VER%%/help/en/fnc_chan.name.html
 %%DATADIR%%/%%VER%%/help/en/fnc_chan.opcount.html
 %%DATADIR%%/%%VER%%/help/en/fnc_chan.ownercount.html
@@ -1042,9 +1080,15 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/fnc_config.section.html
 %%DATADIR%%/%%VER%%/help/en/fnc_config.sectionlist.html
 %%DATADIR%%/%%VER%%/help/en/fnc_console.html
+%%DATADIR%%/%%VER%%/help/en/fnc_context.connectionstarttime.html
+%%DATADIR%%/%%VER%%/help/en/fnc_context.getsslcertinfo.html
 %%DATADIR%%/%%VER%%/help/en/fnc_context.html
+%%DATADIR%%/%%VER%%/help/en/fnc_context.lastmessagetime.html
 %%DATADIR%%/%%VER%%/help/en/fnc_context.list.html
 %%DATADIR%%/%%VER%%/help/en/fnc_context.networkname.html
+%%DATADIR%%/%%VER%%/help/en/fnc_context.queuesize.html
+%%DATADIR%%/%%VER%%/help/en/fnc_context.serverdbnetworkname.html
+%%DATADIR%%/%%VER%%/help/en/fnc_context.serverdbserverhostname.html
 %%DATADIR%%/%%VER%%/help/en/fnc_context.serverhostname.html
 %%DATADIR%%/%%VER%%/help/en/fnc_context.serveripaddress.html
 %%DATADIR%%/%%VER%%/help/en/fnc_context.serverisipv6.html
@@ -1058,6 +1102,7 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/fnc_date.html
 %%DATADIR%%/%%VER%%/help/en/fnc_dcc.averagespeed.html
 %%DATADIR%%/%%VER%%/help/en/fnc_dcc.connectiontype.html
+%%DATADIR%%/%%VER%%/help/en/fnc_dcc.getsslcertinfo.html
 %%DATADIR%%/%%VER%%/help/en/fnc_dcc.irccontext.html
 %%DATADIR%%/%%VER%%/help/en/fnc_dcc.isfiledownload.html
 %%DATADIR%%/%%VER%%/help/en/fnc_dcc.isfiletransfer.html
@@ -1088,6 +1133,7 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/fnc_file.allsizes.html
 %%DATADIR%%/%%VER%%/help/en/fnc_file.cwd.html
 %%DATADIR%%/%%VER%%/help/en/fnc_file.digest.html
+%%DATADIR%%/%%VER%%/help/en/fnc_file.diskspace.html
 %%DATADIR%%/%%VER%%/help/en/fnc_file.exists.html
 %%DATADIR%%/%%VER%%/help/en/fnc_file.extractfilename.html
 %%DATADIR%%/%%VER%%/help/en/fnc_file.extractpath.html
@@ -1098,13 +1144,16 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/fnc_file.ls.html
 %%DATADIR%%/%%VER%%/help/en/fnc_file.ps.html
 %%DATADIR%%/%%VER%%/help/en/fnc_file.read.html
+%%DATADIR%%/%%VER%%/help/en/fnc_file.readbytes.html
 %%DATADIR%%/%%VER%%/help/en/fnc_file.readlines.html
 %%DATADIR%%/%%VER%%/help/en/fnc_file.rootdir.html
 %%DATADIR%%/%%VER%%/help/en/fnc_file.size.html
+%%DATADIR%%/%%VER%%/help/en/fnc_file.time.html
 %%DATADIR%%/%%VER%%/help/en/fnc_file.type.html
 %%DATADIR%%/%%VER%%/help/en/fnc_firstconnectedconsole.html
 %%DATADIR%%/%%VER%%/help/en/fnc_flatten.html
 %%DATADIR%%/%%VER%%/help/en/fnc_fmtlink.html
+%%DATADIR%%/%%VER%%/help/en/fnc_gender.html
 %%DATADIR%%/%%VER%%/help/en/fnc_globals.html
 %%DATADIR%%/%%VER%%/help/en/fnc_hash.html
 %%DATADIR%%/%%VER%%/help/en/fnc_hextoascii.html
@@ -1112,8 +1161,10 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/fnc_hptimestamp.html
 %%DATADIR%%/%%VER%%/help/en/fnc_icon.html
 %%DATADIR%%/%%VER%%/help/en/fnc_iconname.html
+%%DATADIR%%/%%VER%%/help/en/fnc_insidealias.html
 %%DATADIR%%/%%VER%%/help/en/fnc_int.html
 %%DATADIR%%/%%VER%%/help/en/fnc_integer.html
+%%DATADIR%%/%%VER%%/help/en/fnc_isbot.html
 %%DATADIR%%/%%VER%%/help/en/fnc_isempty.html
 %%DATADIR%%/%%VER%%/help/en/fnc_iseventenabled.html
 %%DATADIR%%/%%VER%%/help/en/fnc_ismainwindowactive.html
@@ -1130,6 +1181,8 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/fnc_length.html
 %%DATADIR%%/%%VER%%/help/en/fnc_lf.html
 %%DATADIR%%/%%VER%%/help/en/fnc_link.html
+%%DATADIR%%/%%VER%%/help/en/fnc_listtimers.html
+%%DATADIR%%/%%VER%%/help/en/fnc_log.export.html
 %%DATADIR%%/%%VER%%/help/en/fnc_log.file.html
 %%DATADIR%%/%%VER%%/help/en/fnc_mask.hasnumerichost.html
 %%DATADIR%%/%%VER%%/help/en/fnc_mask.host.html
@@ -1202,6 +1255,9 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/fnc_option.html
 %%DATADIR%%/%%VER%%/help/en/fnc_options.isdialog.html
 %%DATADIR%%/%%VER%%/help/en/fnc_perl.isavailable.html
+%%DATADIR%%/%%VER%%/help/en/fnc_popup.currentitemid.html
+%%DATADIR%%/%%VER%%/help/en/fnc_popup.exists.html
+%%DATADIR%%/%%VER%%/help/en/fnc_popup.isempty.html
 %%DATADIR%%/%%VER%%/help/en/fnc_proxydb.hostname.html
 %%DATADIR%%/%%VER%%/help/en/fnc_proxydb.ip.html
 %%DATADIR%%/%%VER%%/help/en/fnc_proxydb.isipv6.html
@@ -1229,6 +1285,7 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/fnc_reguser.matchproperty.html
 %%DATADIR%%/%%VER%%/help/en/fnc_reguser.property.html
 %%DATADIR%%/%%VER%%/help/en/fnc_rsort.html
+%%DATADIR%%/%%VER%%/help/en/fnc_scriptcontextname.html
 %%DATADIR%%/%%VER%%/help/en/fnc_selected.html
 %%DATADIR%%/%%VER%%/help/en/fnc_sentbytes.html
 %%DATADIR%%/%%VER%%/help/en/fnc_serialize.html
@@ -1241,6 +1298,7 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/fnc_serverdb.networkdescription.html
 %%DATADIR%%/%%VER%%/help/en/fnc_serverdb.networkencoding.html
 %%DATADIR%%/%%VER%%/help/en/fnc_serverdb.networkexists.html
+%%DATADIR%%/%%VER%%/help/en/fnc_serverdb.networkjoinchannels.html
 %%DATADIR%%/%%VER%%/help/en/fnc_serverdb.networklogincommand.html
 %%DATADIR%%/%%VER%%/help/en/fnc_serverdb.networkname.html
 %%DATADIR%%/%%VER%%/help/en/fnc_serverdb.networknickname.html
@@ -1253,6 +1311,7 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/fnc_serverdb.serverexists.html
 %%DATADIR%%/%%VER%%/help/en/fnc_serverdb.serverid.html
 %%DATADIR%%/%%VER%%/help/en/fnc_serverdb.serverip.html
+%%DATADIR%%/%%VER%%/help/en/fnc_serverdb.serverjoinchannels.html
 %%DATADIR%%/%%VER%%/help/en/fnc_serverdb.serverlogincommand.html
 %%DATADIR%%/%%VER%%/help/en/fnc_serverdb.servernickname.html
 %%DATADIR%%/%%VER%%/help/en/fnc_serverdb.serverpassword.html
@@ -1269,6 +1328,8 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/fnc_str.contains.html
 %%DATADIR%%/%%VER%%/help/en/fnc_str.digest.html
 %%DATADIR%%/%%VER%%/help/en/fnc_str.equal.html
+%%DATADIR%%/%%VER%%/help/en/fnc_str.evpsign.html
+%%DATADIR%%/%%VER%%/help/en/fnc_str.evpverify.html
 %%DATADIR%%/%%VER%%/help/en/fnc_str.find.html
 %%DATADIR%%/%%VER%%/help/en/fnc_str.findfirst.html
 %%DATADIR%%/%%VER%%/help/en/fnc_str.findlast.html
@@ -1337,7 +1398,6 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/fnc_torrent.filecount.html
 %%DATADIR%%/%%VER%%/help/en/fnc_torrent.filename.html
 %%DATADIR%%/%%VER%%/help/en/fnc_torrent.filepriority.html
-%%DATADIR%%/%%VER%%/help/en/fnc_torrent.list.html
 %%DATADIR%%/%%VER%%/help/en/fnc_torrent.maxdownloadspeed.html
 %%DATADIR%%/%%VER%%/help/en/fnc_torrent.maxuploadspeed.html
 %%DATADIR%%/%%VER%%/help/en/fnc_torrent.name.html
@@ -1357,6 +1417,7 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/fnc_unserialize.html
 %%DATADIR%%/%%VER%%/help/en/fnc_upnp.getexternalipaddress.html
 %%DATADIR%%/%%VER%%/help/en/fnc_upnp.isgatewayavailable.html
+%%DATADIR%%/%%VER%%/help/en/fnc_userlist.selected.html
 %%DATADIR%%/%%VER%%/help/en/fnc_username.html
 %%DATADIR%%/%%VER%%/help/en/fnc_version.html
 %%DATADIR%%/%%VER%%/help/en/fnc_window.activitylevel.html
@@ -1369,6 +1430,8 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/fnc_window.hasoutput.html
 %%DATADIR%%/%%VER%%/help/en/fnc_window.hasuserfocus.html
 %%DATADIR%%/%%VER%%/help/en/fnc_window.highlightlevel.html
+%%DATADIR%%/%%VER%%/help/en/fnc_window.html
+%%DATADIR%%/%%VER%%/help/en/fnc_window.isdocked.html
 %%DATADIR%%/%%VER%%/help/en/fnc_window.ismaximized.html
 %%DATADIR%%/%%VER%%/help/en/fnc_window.isminimized.html
 %%DATADIR%%/%%VER%%/help/en/fnc_window.list.html
@@ -1379,6 +1442,7 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/index.html
 %%DATADIR%%/%%VER%%/help/en/module_config.html
 %%DATADIR%%/%%VER%%/help/en/module_dcc.html
+%%DATADIR%%/%%VER%%/help/en/module_fish.html
 %%DATADIR%%/%%VER%%/help/en/module_lamerizer.html
 %%DATADIR%%/%%VER%%/help/en/module_log.html
 %%DATADIR%%/%%VER%%/help/en/module_mediaplayer.html
@@ -1386,6 +1450,7 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/module_rijndael.html
 %%DATADIR%%/%%VER%%/help/en/module_rot13.html
 %%DATADIR%%/%%VER%%/help/en/module_serverdb.html
+%%DATADIR%%/%%VER%%/help/en/module_torrent.html
 %%DATADIR%%/%%VER%%/help/en/module_url.html
 %%DATADIR%%/%%VER%%/help/en/nohelpavailable.html
 %%DATADIR%%/%%VER%%/help/en/widget_ctcpfloodprotectionoptions.html
@@ -1394,7 +1459,6 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/license/LICENSE-GPLV3
 %%DATADIR%%/%%VER%%/license/LICENSE-OPENSSL
 %%DATADIR%%/%%VER%%/locale/about_bg.mo
-%%DATADIR%%/%%VER%%/locale/about_ca.mo
 %%DATADIR%%/%%VER%%/locale/about_cs.mo
 %%DATADIR%%/%%VER%%/locale/about_de.mo
 %%DATADIR%%/%%VER%%/locale/about_es.mo
@@ -1410,6 +1474,7 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/locale/about_pt_BR.mo
 %%DATADIR%%/%%VER%%/locale/about_ru.mo
 %%DATADIR%%/%%VER%%/locale/about_sr.mo
+%%DATADIR%%/%%VER%%/locale/about_tr.mo
 %%DATADIR%%/%%VER%%/locale/about_uk.mo
 %%DATADIR%%/%%VER%%/locale/addon_de.mo
 %%DATADIR%%/%%VER%%/locale/addon_es.mo
@@ -1419,9 +1484,11 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/locale/addon_ja.mo
 %%DATADIR%%/%%VER%%/locale/addon_pl.mo
 %%DATADIR%%/%%VER%%/locale/addon_pt.mo
+%%DATADIR%%/%%VER%%/locale/addon_pt_BR.mo
 %%DATADIR%%/%%VER%%/locale/addon_ru.mo
+%%DATADIR%%/%%VER%%/locale/addon_tr.mo
+%%DATADIR%%/%%VER%%/locale/addon_uk.mo
 %%DATADIR%%/%%VER%%/locale/dcc_bg.mo
-%%DATADIR%%/%%VER%%/locale/dcc_ca.mo
 %%DATADIR%%/%%VER%%/locale/dcc_cs.mo
 %%DATADIR%%/%%VER%%/locale/dcc_de.mo
 %%DATADIR%%/%%VER%%/locale/dcc_es.mo
@@ -1436,6 +1503,7 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/locale/dcc_pt_BR.mo
 %%DATADIR%%/%%VER%%/locale/dcc_ru.mo
 %%DATADIR%%/%%VER%%/locale/dcc_sr.mo
+%%DATADIR%%/%%VER%%/locale/dcc_tr.mo
 %%DATADIR%%/%%VER%%/locale/dcc_uk.mo
 %%DATADIR%%/%%VER%%/locale/defscript_de.mo
 %%DATADIR%%/%%VER%%/locale/defscript_es.mo
@@ -1445,8 +1513,11 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/locale/defscript_ja.mo
 %%DATADIR%%/%%VER%%/locale/defscript_pl.mo
 %%DATADIR%%/%%VER%%/locale/defscript_pt.mo
+%%DATADIR%%/%%VER%%/locale/defscript_pt_BR.mo
+%%DATADIR%%/%%VER%%/locale/defscript_ru.mo
+%%DATADIR%%/%%VER%%/locale/defscript_tr.mo
+%%DATADIR%%/%%VER%%/locale/defscript_uk.mo
 %%DATADIR%%/%%VER%%/locale/editor_bg.mo
-%%DATADIR%%/%%VER%%/locale/editor_ca.mo
 %%DATADIR%%/%%VER%%/locale/editor_cs.mo
 %%DATADIR%%/%%VER%%/locale/editor_de.mo
 %%DATADIR%%/%%VER%%/locale/editor_es.mo
@@ -1461,9 +1532,9 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/locale/editor_pt_BR.mo
 %%DATADIR%%/%%VER%%/locale/editor_ru.mo
 %%DATADIR%%/%%VER%%/locale/editor_sr.mo
+%%DATADIR%%/%%VER%%/locale/editor_tr.mo
 %%DATADIR%%/%%VER%%/locale/editor_uk.mo
 %%DATADIR%%/%%VER%%/locale/filetransferwindow_bg.mo
-%%DATADIR%%/%%VER%%/locale/filetransferwindow_ca.mo
 %%DATADIR%%/%%VER%%/locale/filetransferwindow_cs.mo
 %%DATADIR%%/%%VER%%/locale/filetransferwindow_de.mo
 %%DATADIR%%/%%VER%%/locale/filetransferwindow_es.mo
@@ -1478,8 +1549,8 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/locale/filetransferwindow_pt_BR.mo
 %%DATADIR%%/%%VER%%/locale/filetransferwindow_ru.mo
 %%DATADIR%%/%%VER%%/locale/filetransferwindow_sr.mo
+%%DATADIR%%/%%VER%%/locale/filetransferwindow_tr.mo
 %%DATADIR%%/%%VER%%/locale/filetransferwindow_uk.mo
-%%DATADIR%%/%%VER%%/locale/kvirc_ca.mo
 %%DATADIR%%/%%VER%%/locale/kvirc_cs.mo
 %%DATADIR%%/%%VER%%/locale/kvirc_de.mo
 %%DATADIR%%/%%VER%%/locale/kvirc_es.mo
@@ -1495,34 +1566,38 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/locale/kvirc_pt_BR.mo
 %%DATADIR%%/%%VER%%/locale/kvirc_ru.mo
 %%DATADIR%%/%%VER%%/locale/kvirc_sr.mo
+%%DATADIR%%/%%VER%%/locale/kvirc_tr.mo
 %%DATADIR%%/%%VER%%/locale/kvirc_uk.mo
 %%DATADIR%%/%%VER%%/locale/kvs_de.mo
 %%DATADIR%%/%%VER%%/locale/kvs_fr.mo
 %%DATADIR%%/%%VER%%/locale/kvs_hu.mo
 %%DATADIR%%/%%VER%%/locale/kvs_it.mo
 %%DATADIR%%/%%VER%%/locale/kvs_ja.mo
+%%DATADIR%%/%%VER%%/locale/kvs_pl.mo
 %%DATADIR%%/%%VER%%/locale/kvs_pt.mo
+%%DATADIR%%/%%VER%%/locale/kvs_pt_BR.mo
 %%DATADIR%%/%%VER%%/locale/kvs_ru.mo
-%%DATADIR%%/%%VER%%/locale/logview_bg.mo
-%%DATADIR%%/%%VER%%/locale/logview_ca.mo
-%%DATADIR%%/%%VER%%/locale/logview_cs.mo
-%%DATADIR%%/%%VER%%/locale/logview_de.mo
-%%DATADIR%%/%%VER%%/locale/logview_es.mo
-%%DATADIR%%/%%VER%%/locale/logview_fi.mo
-%%DATADIR%%/%%VER%%/locale/logview_fr.mo
-%%DATADIR%%/%%VER%%/locale/logview_hr.mo
-%%DATADIR%%/%%VER%%/locale/logview_hu.mo
-%%DATADIR%%/%%VER%%/locale/logview_it.mo
-%%DATADIR%%/%%VER%%/locale/logview_ja.mo
-%%DATADIR%%/%%VER%%/locale/logview_nl.mo
-%%DATADIR%%/%%VER%%/locale/logview_pl.mo
-%%DATADIR%%/%%VER%%/locale/logview_pt.mo
-%%DATADIR%%/%%VER%%/locale/logview_pt_BR.mo
-%%DATADIR%%/%%VER%%/locale/logview_ru.mo
-%%DATADIR%%/%%VER%%/locale/logview_sr.mo
-%%DATADIR%%/%%VER%%/locale/logview_uk.mo
+%%DATADIR%%/%%VER%%/locale/kvs_tr.mo
+%%DATADIR%%/%%VER%%/locale/kvs_uk.mo
+%%DATADIR%%/%%VER%%/locale/log_bg.mo
+%%DATADIR%%/%%VER%%/locale/log_cs.mo
+%%DATADIR%%/%%VER%%/locale/log_de.mo
+%%DATADIR%%/%%VER%%/locale/log_es.mo
+%%DATADIR%%/%%VER%%/locale/log_fi.mo
+%%DATADIR%%/%%VER%%/locale/log_fr.mo
+%%DATADIR%%/%%VER%%/locale/log_hr.mo
+%%DATADIR%%/%%VER%%/locale/log_hu.mo
+%%DATADIR%%/%%VER%%/locale/log_it.mo
+%%DATADIR%%/%%VER%%/locale/log_ja.mo
+%%DATADIR%%/%%VER%%/locale/log_nl.mo
+%%DATADIR%%/%%VER%%/locale/log_pl.mo
+%%DATADIR%%/%%VER%%/locale/log_pt.mo
+%%DATADIR%%/%%VER%%/locale/log_pt_BR.mo
+%%DATADIR%%/%%VER%%/locale/log_ru.mo
+%%DATADIR%%/%%VER%%/locale/log_sr.mo
+%%DATADIR%%/%%VER%%/locale/log_tr.mo
+%%DATADIR%%/%%VER%%/locale/log_uk.mo
 %%DATADIR%%/%%VER%%/locale/mediaplayer_bg.mo
-%%DATADIR%%/%%VER%%/locale/mediaplayer_ca.mo
 %%DATADIR%%/%%VER%%/locale/mediaplayer_cs.mo
 %%DATADIR%%/%%VER%%/locale/mediaplayer_de.mo
 %%DATADIR%%/%%VER%%/locale/mediaplayer_es.mo
@@ -1537,9 +1612,9 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/locale/mediaplayer_pt_BR.mo
 %%DATADIR%%/%%VER%%/locale/mediaplayer_ru.mo
 %%DATADIR%%/%%VER%%/locale/mediaplayer_sr.mo
+%%DATADIR%%/%%VER%%/locale/mediaplayer_tr.mo
 %%DATADIR%%/%%VER%%/locale/mediaplayer_uk.mo
 %%DATADIR%%/%%VER%%/locale/notifier_bg.mo
-%%DATADIR%%/%%VER%%/locale/notifier_ca.mo
 %%DATADIR%%/%%VER%%/locale/notifier_cs.mo
 %%DATADIR%%/%%VER%%/locale/notifier_de.mo
 %%DATADIR%%/%%VER%%/locale/notifier_es.mo
@@ -1555,15 +1630,18 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/locale/notifier_pt_BR.mo
 %%DATADIR%%/%%VER%%/locale/notifier_ru.mo
 %%DATADIR%%/%%VER%%/locale/notifier_sr.mo
+%%DATADIR%%/%%VER%%/locale/notifier_tr.mo
 %%DATADIR%%/%%VER%%/locale/notifier_uk.mo
 %%DATADIR%%/%%VER%%/locale/objects_de.mo
 %%DATADIR%%/%%VER%%/locale/objects_es.mo
 %%DATADIR%%/%%VER%%/locale/objects_fr.mo
 %%DATADIR%%/%%VER%%/locale/objects_it.mo
 %%DATADIR%%/%%VER%%/locale/objects_pt.mo
+%%DATADIR%%/%%VER%%/locale/objects_pt_BR.mo
 %%DATADIR%%/%%VER%%/locale/objects_ru.mo
+%%DATADIR%%/%%VER%%/locale/objects_tr.mo
+%%DATADIR%%/%%VER%%/locale/objects_uk.mo
 %%DATADIR%%/%%VER%%/locale/options_bg.mo
-%%DATADIR%%/%%VER%%/locale/options_ca.mo
 %%DATADIR%%/%%VER%%/locale/options_cs.mo
 %%DATADIR%%/%%VER%%/locale/options_de.mo
 %%DATADIR%%/%%VER%%/locale/options_es.mo
@@ -1579,9 +1657,9 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/locale/options_pt_BR.mo
 %%DATADIR%%/%%VER%%/locale/options_ru.mo
 %%DATADIR%%/%%VER%%/locale/options_sr.mo
+%%DATADIR%%/%%VER%%/locale/options_tr.mo
 %%DATADIR%%/%%VER%%/locale/options_uk.mo
 %%DATADIR%%/%%VER%%/locale/perl_bg.mo
-%%DATADIR%%/%%VER%%/locale/perl_ca.mo
 %%DATADIR%%/%%VER%%/locale/perl_cs.mo
 %%DATADIR%%/%%VER%%/locale/perl_de.mo
 %%DATADIR%%/%%VER%%/locale/perl_es.mo
@@ -1596,24 +1674,28 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/locale/perl_pt_BR.mo
 %%DATADIR%%/%%VER%%/locale/perl_ru.mo
 %%DATADIR%%/%%VER%%/locale/perl_sr.mo
+%%DATADIR%%/%%VER%%/locale/perl_tr.mo
 %%DATADIR%%/%%VER%%/locale/perl_uk.mo
 %%DATADIR%%/%%VER%%/locale/python_de.mo
 %%DATADIR%%/%%VER%%/locale/python_es.mo
 %%DATADIR%%/%%VER%%/locale/python_fr.mo
-%%DATADIR%%/%%VER%%/locale/python_hu.mo
 %%DATADIR%%/%%VER%%/locale/python_it.mo
 %%DATADIR%%/%%VER%%/locale/python_pt.mo
+%%DATADIR%%/%%VER%%/locale/python_pt_BR.mo
 %%DATADIR%%/%%VER%%/locale/python_ru.mo
+%%DATADIR%%/%%VER%%/locale/python_tr.mo
+%%DATADIR%%/%%VER%%/locale/python_uk.mo
 %%DATADIR%%/%%VER%%/locale/register_de.mo
 %%DATADIR%%/%%VER%%/locale/register_es.mo
 %%DATADIR%%/%%VER%%/locale/register_fr.mo
-%%DATADIR%%/%%VER%%/locale/register_hu.mo
 %%DATADIR%%/%%VER%%/locale/register_it.mo
 %%DATADIR%%/%%VER%%/locale/register_pl.mo
 %%DATADIR%%/%%VER%%/locale/register_pt.mo
+%%DATADIR%%/%%VER%%/locale/register_pt_BR.mo
 %%DATADIR%%/%%VER%%/locale/register_ru.mo
+%%DATADIR%%/%%VER%%/locale/register_tr.mo
+%%DATADIR%%/%%VER%%/locale/register_uk.mo
 %%DATADIR%%/%%VER%%/locale/serverdb_bg.mo
-%%DATADIR%%/%%VER%%/locale/serverdb_ca.mo
 %%DATADIR%%/%%VER%%/locale/serverdb_cs.mo
 %%DATADIR%%/%%VER%%/locale/serverdb_de.mo
 %%DATADIR%%/%%VER%%/locale/serverdb_es.mo
@@ -1629,9 +1711,9 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/locale/serverdb_pt_BR.mo
 %%DATADIR%%/%%VER%%/locale/serverdb_ru.mo
 %%DATADIR%%/%%VER%%/locale/serverdb_sr.mo
+%%DATADIR%%/%%VER%%/locale/serverdb_tr.mo
 %%DATADIR%%/%%VER%%/locale/serverdb_uk.mo
 %%DATADIR%%/%%VER%%/locale/sharedfileswindow_bg.mo
-%%DATADIR%%/%%VER%%/locale/sharedfileswindow_ca.mo
 %%DATADIR%%/%%VER%%/locale/sharedfileswindow_cs.mo
 %%DATADIR%%/%%VER%%/locale/sharedfileswindow_de.mo
 %%DATADIR%%/%%VER%%/locale/sharedfileswindow_es.mo
@@ -1646,9 +1728,9 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/locale/sharedfileswindow_pt_BR.mo
 %%DATADIR%%/%%VER%%/locale/sharedfileswindow_ru.mo
 %%DATADIR%%/%%VER%%/locale/sharedfileswindow_sr.mo
+%%DATADIR%%/%%VER%%/locale/sharedfileswindow_tr.mo
 %%DATADIR%%/%%VER%%/locale/sharedfileswindow_uk.mo
 %%DATADIR%%/%%VER%%/locale/theme_bg.mo
-%%DATADIR%%/%%VER%%/locale/theme_ca.mo
 %%DATADIR%%/%%VER%%/locale/theme_cs.mo
 %%DATADIR%%/%%VER%%/locale/theme_de.mo
 %%DATADIR%%/%%VER%%/locale/theme_es.mo
@@ -1663,9 +1745,9 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/locale/theme_pt_BR.mo
 %%DATADIR%%/%%VER%%/locale/theme_ru.mo
 %%DATADIR%%/%%VER%%/locale/theme_sr.mo
+%%DATADIR%%/%%VER%%/locale/theme_tr.mo
 %%DATADIR%%/%%VER%%/locale/theme_uk.mo
 %%DATADIR%%/%%VER%%/locale/torrent_bg.mo
-%%DATADIR%%/%%VER%%/locale/torrent_ca.mo
 %%DATADIR%%/%%VER%%/locale/torrent_cs.mo
 %%DATADIR%%/%%VER%%/locale/torrent_de.mo
 %%DATADIR%%/%%VER%%/locale/torrent_es.mo
@@ -1680,16 +1762,12 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/locale/torrent_pt_BR.mo
 %%DATADIR%%/%%VER%%/locale/torrent_ru.mo
 %%DATADIR%%/%%VER%%/locale/torrent_sr.mo
+%%DATADIR%%/%%VER%%/locale/torrent_tr.mo
 %%DATADIR%%/%%VER%%/locale/torrent_uk.mo
 %%DATADIR%%/%%VER%%/modules/caps/crypt/lamerizer
 %%DATADIR%%/%%VER%%/modules/caps/crypt/rijndael
 %%DATADIR%%/%%VER%%/modules/caps/crypt/rot13
 %%DATADIR%%/%%VER%%/modules/caps/serverimport/mircimport
-%%DATADIR%%/%%VER%%/modules/caps/tool/filetransferwindow
-%%DATADIR%%/%%VER%%/modules/caps/tool/iograph
-%%DATADIR%%/%%VER%%/modules/caps/tool/logview
-%%DATADIR%%/%%VER%%/modules/caps/tool/sharedfileswindow
-%%DATADIR%%/%%VER%%/modules/caps/tool/url
 %%DATADIR%%/%%VER%%/msgcolors/all-black.msgclr
 %%DATADIR%%/%%VER%%/msgcolors/all-gray.msgclr
 %%DATADIR%%/%%VER%%/msgcolors/all-green.msgclr
@@ -1869,6 +1947,7 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/pics/coresmall/kcs_meinviteunexcept.png
 %%DATADIR%%/%%VER%%/pics/coresmall/kcs_meircop.png
 %%DATADIR%%/%%VER%%/pics/coresmall/kcs_mekick.png
+%%DATADIR%%/%%VER%%/pics/coresmall/kcs_memoserv.png
 %%DATADIR%%/%%VER%%/pics/coresmall/kcs_meop.png
 %%DATADIR%%/%%VER%%/pics/coresmall/kcs_message.png
 %%DATADIR%%/%%VER%%/pics/coresmall/kcs_messages.png
@@ -1946,6 +2025,10 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/pics/coresmall/kcs_servernotice.png
 %%DATADIR%%/%%VER%%/pics/coresmall/kcs_serverping.png
 %%DATADIR%%/%%VER%%/pics/coresmall/kcs_servnotice.png
+%%DATADIR%%/%%VER%%/pics/coresmall/kcs_sexbot.png
+%%DATADIR%%/%%VER%%/pics/coresmall/kcs_sexfemale.png
+%%DATADIR%%/%%VER%%/pics/coresmall/kcs_sexircop.png
+%%DATADIR%%/%%VER%%/pics/coresmall/kcs_sexmale.png
 %%DATADIR%%/%%VER%%/pics/coresmall/kcs_sharedfiles.png
 %%DATADIR%%/%%VER%%/pics/coresmall/kcs_showdoubleview.png
 %%DATADIR%%/%%VER%%/pics/coresmall/kcs_showlistview.png
@@ -2025,6 +2108,7 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/pics/kvi_bigicon_connecting.png
 %%DATADIR%%/%%VER%%/pics/kvi_bigicon_disconnected.png
 %%DATADIR%%/%%VER%%/pics/kvi_bigicon_eventeditor.png
+%%DATADIR%%/%%VER%%/pics/kvi_bigicon_filetransfer.png
 %%DATADIR%%/%%VER%%/pics/kvi_bigicon_folder.png
 %%DATADIR%%/%%VER%%/pics/kvi_bigicon_help.png
 %%DATADIR%%/%%VER%%/pics/kvi_bigicon_helpback.png
@@ -2037,6 +2121,7 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/pics/kvi_bigicon_keyboard.png
 %%DATADIR%%/%%VER%%/pics/kvi_bigicon_kvircwww.png
 %%DATADIR%%/%%VER%%/pics/kvi_bigicon_kvs.png
+%%DATADIR%%/%%VER%%/pics/kvi_bigicon_log.png
 %%DATADIR%%/%%VER%%/pics/kvi_bigicon_mailinglist.png
 %%DATADIR%%/%%VER%%/pics/kvi_bigicon_minimizeallwindows.png
 %%DATADIR%%/%%VER%%/pics/kvi_bigicon_networklinks.png
@@ -2051,11 +2136,13 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/pics/kvi_bigicon_regusers.png
 %%DATADIR%%/%%VER%%/pics/kvi_bigicon_remove.png
 %%DATADIR%%/%%VER%%/pics/kvi_bigicon_save.png
+%%DATADIR%%/%%VER%%/pics/kvi_bigicon_sayicon.png
 %%DATADIR%%/%%VER%%/pics/kvi_bigicon_screenshot.png
 %%DATADIR%%/%%VER%%/pics/kvi_bigicon_separator.png
 %%DATADIR%%/%%VER%%/pics/kvi_bigicon_server.png
 %%DATADIR%%/%%VER%%/pics/kvi_bigicon_servers.png
 %%DATADIR%%/%%VER%%/pics/kvi_bigicon_settings.png
+%%DATADIR%%/%%VER%%/pics/kvi_bigicon_sharedfiles.png
 %%DATADIR%%/%%VER%%/pics/kvi_bigicon_socketspy.png
 %%DATADIR%%/%%VER%%/pics/kvi_bigicon_theme.png
 %%DATADIR%%/%%VER%%/pics/kvi_bigicon_themeoptions.png
@@ -2064,6 +2151,7 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/pics/kvi_bigicon_tools.png
 %%DATADIR%%/%%VER%%/pics/kvi_bigicon_trashcan.png
 %%DATADIR%%/%%VER%%/pics/kvi_bigicon_unknown.png
+%%DATADIR%%/%%VER%%/pics/kvi_bigicon_url.png
 %%DATADIR%%/%%VER%%/pics/kvi_bigicon_usermode.png
 %%DATADIR%%/%%VER%%/pics/kvi_bigicon_www.png
 %%DATADIR%%/%%VER%%/pics/kvi_dccfiletransfericons.png
@@ -2074,9 +2162,6 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/pics/kvi_horizontal_left.png
 %%DATADIR%%/%%VER%%/pics/kvi_horizontal_right.png
 %%DATADIR%%/%%VER%%/pics/kvi_httpicons.png
-%%DATADIR%%/%%VER%%/pics/kvi_icon_bot.png
-%%DATADIR%%/%%VER%%/pics/kvi_icon_female.png
-%%DATADIR%%/%%VER%%/pics/kvi_icon_male.png
 %%DATADIR%%/%%VER%%/pics/kvi_icon_refresh.png
 %%DATADIR%%/%%VER%%/pics/kvi_mircimport.png
 %%DATADIR%%/%%VER%%/pics/kvi_setup_label.png
@@ -2151,21 +2236,38 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/pics/notifier_pix_wnd_sx_hl.png
 %%DATADIR%%/%%VER%%/pics/notifier_right.png
 %%DATADIR%%/%%VER%%/pics/notifier_up.png
+%%DATADIR%%/%%VER%%/themes/Aria-1.0.0/kvi_bigicon_actions.png
+%%DATADIR%%/%%VER%%/themes/Aria-1.0.0/kvi_bigicon_codetester.png
+%%DATADIR%%/%%VER%%/themes/Aria-1.0.0/kvi_bigicon_folder.png
+%%DATADIR%%/%%VER%%/themes/Aria-1.0.0/kvi_bigicon_help.png
+%%DATADIR%%/%%VER%%/themes/Aria-1.0.0/kvi_bigicon_identity.png
+%%DATADIR%%/%%VER%%/themes/Aria-1.0.0/kvi_bigicon_keyboard.png
+%%DATADIR%%/%%VER%%/themes/Aria-1.0.0/kvi_bigicon_minimizeallwindows.png
+%%DATADIR%%/%%VER%%/themes/Aria-1.0.0/kvi_bigicon_newirccontext.png
+%%DATADIR%%/%%VER%%/themes/Aria-1.0.0/kvi_bigicon_open.png
+%%DATADIR%%/%%VER%%/themes/Aria-1.0.0/kvi_bigicon_regusers.png
+%%DATADIR%%/%%VER%%/themes/Aria-1.0.0/kvi_bigicon_save.png
+%%DATADIR%%/%%VER%%/themes/Aria-1.0.0/kvi_bigicon_screenshot.png
+%%DATADIR%%/%%VER%%/themes/Aria-1.0.0/kvi_bigicon_settings.png
+%%DATADIR%%/%%VER%%/themes/Aria-1.0.0/kvi_bigicon_theme.png
+%%DATADIR%%/%%VER%%/themes/Aria-1.0.0/kvi_bigicon_themeoptions.png
+%%DATADIR%%/%%VER%%/themes/Aria-1.0.0/kvi_bigicon_tilewindows.png
+%%DATADIR%%/%%VER%%/themes/Aria-1.0.0/kvi_bigicon_tools.png
+%%DATADIR%%/%%VER%%/themes/Aria-1.0.0/kvi_bigicon_trashcan.png
+%%DATADIR%%/%%VER%%/themes/Aria-1.0.0/pixmapGlobalTransparencyBackground.png
+%%DATADIR%%/%%VER%%/themes/Aria-1.0.0/pixmapInputBackground.png
+%%DATADIR%%/%%VER%%/themes/Aria-1.0.0/themedata.kvc
+%%DATADIR%%/%%VER%%/themes/Aria-1.0.0/themeinfo.kvc
 %%DATADIR%%/%%VER%%/themes/MinimalDark-1.0.0/themedata.kvc
 %%DATADIR%%/%%VER%%/themes/MinimalDark-1.0.0/themeinfo.kvc
-%%DATADIR%%/%%VER%%/themes/YellowIRC-1.0.0/pixmapGlobalTransparencyBackground.png
-%%DATADIR%%/%%VER%%/themes/YellowIRC-1.0.0/pixmapInputBackground.png
-%%DATADIR%%/%%VER%%/themes/YellowIRC-1.0.0/themedata.kvc
-%%DATADIR%%/%%VER%%/themes/YellowIRC-1.0.0/themeinfo.kvc
 share/pixmaps/kvirc.png
 %%KDE%%share/mime/packages/kvirc.xml
-@dirrm %%DATADIR%%/%%VER%%/themes/YellowIRC-1.0.0
 @dirrm %%DATADIR%%/%%VER%%/themes/MinimalDark-1.0.0
+@dirrm %%DATADIR%%/%%VER%%/themes/Aria-1.0.0
 @dirrm %%DATADIR%%/%%VER%%/themes
 @dirrm %%DATADIR%%/%%VER%%/pics/coresmall
 @dirrm %%DATADIR%%/%%VER%%/pics
 @dirrm %%DATADIR%%/%%VER%%/msgcolors
-@dirrm %%DATADIR%%/%%VER%%/modules/caps/tool
 @dirrm %%DATADIR%%/%%VER%%/modules/caps/serverimport
 @dirrm %%DATADIR%%/%%VER%%/modules/caps/crypt
 @dirrm %%DATADIR%%/%%VER%%/modules/caps
@@ -2201,7 +2303,12 @@ share/pixmaps/kvirc.png
 %%QT%%@dirrmtry share/icons/hicolor/128x128
 %%QT%%@dirrmtry share/icons/hicolor
 %%QT%%@dirrmtry share/icons
+%%KDE%%@dirrm share/apps/kvirc
 %%QT%%@dirrmtry share/applications
+@dirrmtry man/uk/man1
+@dirrmtry man/uk
+@dirrmtry man/pt/man1
+@dirrmtry man/pt
 @dirrmtry man/it/man1
 @dirrmtry man/it
 @dirrmtry man/fr/man1
