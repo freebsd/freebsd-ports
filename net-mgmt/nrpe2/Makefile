@@ -74,7 +74,7 @@ CONFIGURE_ARGS+=	--disable-command-args
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#/var/run/nrpe.pid#@localstatedir@/nrpe2.pid#g' \
+	@${REINPLACE_CMD} -e 's#/var/run/nrpe.pid#/var/run/nrpe2/nrpe2.pid#g' \
 		-e 's#/usr/lib/nagios/plugins/#${LOCALBASE}/libexec/nagios/#g' \
 		-e 's#/usr/bin/sudo#${LOCALBASE}/bin/sudo#g' \
 		${WRKSRC}/sample-config/nrpe.cfg.in
@@ -90,6 +90,8 @@ do-install:
 
 post-install:
 	@${SH} ${PKGINSTALL} ${DISTNAME} POST-INSTALL
+	@[ -f ${PREFIX}/etc/nrpe.cfg ] || \
+	    ${CP} -p ${PREFIX}/etc/nrpe.cfg-sample ${PREFIX}/etc/nrpe.cfg
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
