@@ -51,7 +51,8 @@ WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
 LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--disable-nls \
+CONFIGURE_ARGS+=--disable-bootstrap \
+		--disable-nls \
 		--libdir=${TARGLIB} \
 		--libexecdir=${LIBEXEC} \
 		--program-suffix=${SUFFIX} \
@@ -60,9 +61,9 @@ CONFIGURE_ARGS+=--disable-nls \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/ \
 		--with-ld=/usr/bin/ld \
 		--with-libiconv-prefix=${LOCALBASE} \
+		--with-pkgversion="FreeBSD Ports Collection" \
 		--with-system-zlib
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
-ALL_TARGET=	bootstrap-lean
 USE_LDCONFIG=	${TARGLIB}
 PLIST_SUB=	GCC_VER=${PORTVERSION:C/(.+)\.[0-9]+/\1/} \
 		GNU_HOST=${CONFIGURE_TARGET} \
