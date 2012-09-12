@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.1.20
+DISTVERSION=	4.1.22
 CATEGORIES=	emulators
-MASTER_SITES=	http://tmp.chruetertee.ch/ \
-		http://freebsd.unixfreunde.de/sources/ \
-		SF/virtualbox.mirror/ \
+MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
+		http://tmp.chruetertee.ch/ \
 		http://disasterarea.chruetertee.ch/ \
 		http://download.virtualbox.org/virtualbox/${VBOX_GUEST_VER}/:guestadditions
 DISTFILES=	VirtualBox-${DISTVERSION}${EXTRACT_SUFX} ${GADISTFILES}
