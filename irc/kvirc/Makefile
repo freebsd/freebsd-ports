@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kvirc
-PORTVERSION=	4.0.4
-PORTREVISION=	3
+PORTVERSION=	4.2.0
 CATEGORIES=	irc kde
 MASTER_SITES=	ftp://ftp.kvirc.de/pub/kvirc/%SUBDIR%/ \
 		http://kvirc.gmake.de/pub/kvirc/%SUBDIR%/ \
@@ -33,14 +32,14 @@ USE_PERL5_BUILD=	yes
 USE_QT4=	moc_build qmake_build rcc_build uic_build \
 		dbus gui network sql xml
 USE_CMAKE=	yes
-CMAKE_ARGS=	-DWITHOUT_ESD=yes -DWITHOUT_DOXYGEN=yes \
+CMAKE_ARGS=	-DWANT_ESD=no -DWANT_DOXYGEN=no \
 		-DMANDIR=${MANPREFIX}
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		kvirc.1
-MANLANG=	"" de fr it
+MANLANG=	"" de fr it pt uk
 
 OPTIONS_DEFINE=	AUDIOFILE GSM PERL PYTHON
 
@@ -91,7 +90,7 @@ CMAKE_ARGS+=	-DWITHOUT_AUDIOFILE=yes
 .if ${PORT_OPTIONS:MGSM}
 LIB_DEPENDS+=	gsm.1:${PORTSDIR}/audio/gsm
 .else
-CMAKE_ARGS+=	-DWITHOUT_GSM=yes
+CMAKE_ARGS+=	-DWANT_GSM=no
 .endif
 
 #scripting support
@@ -99,7 +98,7 @@ CMAKE_ARGS+=	-DWITHOUT_GSM=yes
 USE_PYTHON=	yes
 PLIST_SUB+=	PYTHON=""
 .else
-CMAKE_ARGS+=	-DWITHOUT_PYTHON=yes
+CMAKE_ARGS+=	-DWANT_PYTHON=no
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
@@ -107,7 +106,7 @@ PLIST_SUB+=	PYTHON="@comment "
 USE_PERL5_RUN=	yes
 PLIST_SUB+=	PERL=""
 .else
-CMAKE_ARGS+=	-DWITHOUT_PERL=yes
+CMAKE_ARGS+=	-DWANT_PERL=no
 PLIST_SUB+=	PERL="@comment "
 .endif
 
