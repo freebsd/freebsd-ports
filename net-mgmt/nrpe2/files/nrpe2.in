@@ -21,19 +21,17 @@
 name="nrpe2"
 rcvar=nrpe2_enable
 
+: ${nrpe2_enable=NO}
+: ${nrpe2_configfile=%%PREFIX%%/etc/nrpe.cfg}
+pidfile=${nrpe2_pidfile:-/var/run/nrpe2/nrpe2.pid}
+
 command="%%PREFIX%%/sbin/nrpe2"
 command_args="-d"
 extra_commands="reload"
-
+start_precmd="install -d -o ${nrpe_user:-nagios} ${pidfile%/*}"
 sig_reload=HUP
 
-[ -z "${nrpe2_enable}" ] && nrpe2_enable="NO"
-[ -z "${nrpe2_configfile}" ] && nrpe2_configfile="%%PREFIX%%/etc/nrpe.cfg"
-[ -z "${nrpe2_pidfile}" ] && nrpe2_pidfile="%%NAGIOSDIR%%/nrpe2.pid"
-
 load_rc_config "${name}"
-
-pidfile="${nrpe2_pidfile}"
 
 required_files="${nrpe2_configfile}"
 command_args="${command_args} -c ${nrpe2_configfile}"
