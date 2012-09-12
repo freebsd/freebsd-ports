@@ -1,0 +1,40 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+%%PORTDOCS%%%%DOCSDIR%%/.buildinfo
+%%PORTDOCS%%%%DOCSDIR%%/_modules/index.html
+%%PORTDOCS%%%%DOCSDIR%%/_modules/pathtools/path.html
+%%PORTDOCS%%%%DOCSDIR%%/_modules/pathtools/patterns.html
+%%PORTDOCS%%%%DOCSDIR%%/_sources/api.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/_static/ajax-loader.gif
+%%PORTDOCS%%%%DOCSDIR%%/_static/basic.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/comment-bright.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/comment-close.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/comment.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/default.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/doctools.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/down-pressed.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/down.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/file.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/jquery.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/minus.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/plus.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/pygments.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/searchtools.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/sidebar.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/underscore.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/up-pressed.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/up.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/websupport.js
+%%PORTDOCS%%%%DOCSDIR%%/api.html
+%%PORTDOCS%%%%DOCSDIR%%/genindex.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/objects.inv
+%%PORTDOCS%%%%DOCSDIR%%/py-modindex.html
+%%PORTDOCS%%%%DOCSDIR%%/search.html
+%%PORTDOCS%%%%DOCSDIR%%/searchindex.js
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_static
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_modules/pathtools
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_modules
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
