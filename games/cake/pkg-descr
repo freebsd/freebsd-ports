@@ -2,17 +2,18 @@ Cake is powerful 3D game engine and (as a reference application) map viewer
 for id Software's Quake III Arena maps.  It currently features:
 
     * BSP (+PVS) support
-    * collisions detection (with normal faces + patches)
-    * shaders + textures
-    * lightmaps
-    * vertex deformations
-    * cloudbox + skybox (nearbox and farbox)
-    * volumetric fog
-    * bezier surfaces (with variable LOD)
-    * multiple viewports
-    * console
-    * record/playback demo support (DM3 format not supported)
-    * background music + 3D sounds (not under FreeBSD though)
-    * models
-    * entities (with variable LOD)
-    * zip compressed files (*.pk3)
+    * Collision detection (with normal faces + patches)
+    * Shaders and textures
+    * Lightmaps and models
+    * Vertex deformations
+    * Cloudbox and skybox (nearbox/farbox)
+    * Volumetric fog
+    * Bezier surfaces (with variable LOD)
+    * Multiple viewports
+    * Console
+    * Record/playback demo support (DM3 format not supported)
+    * Background music + 3D sounds (not under FreeBSD though)
+    * Entities (with variable LOD)
+    * ZIP compressed files (*.pk3)
+
+Author: Nicolas Crittin
