@@ -3,6 +3,7 @@ lib/qstardict/plugins/libstardict.so
 lib/qstardict/plugins/libweb.so
 share/applications/qstardict.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 share/pixmaps/qstardict.png
@@ -12,6 +13,7 @@ share/pixmaps/qstardict.png
 %%NLS%%%%DATADIR%%/translations/qstardict-es_ES.qm
 %%NLS%%%%DATADIR%%/translations/qstardict-fr_FR.qm
 %%NLS%%%%DATADIR%%/translations/qstardict-it_IT.qm
+%%NLS%%%%DATADIR%%/translations/qstardict-lt_LT.qm
 %%NLS%%%%DATADIR%%/translations/qstardict-pl_PL.qm
 %%NLS%%%%DATADIR%%/translations/qstardict-pt_BR.qm
 %%NLS%%%%DATADIR%%/translations/qstardict-ru_RU.qm
