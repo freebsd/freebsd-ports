@@ -2,7 +2,7 @@
 
 PORTNAME=	rsync
 PORTVERSION=	3.0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
 		ftp://ftp.samba.org/pub/%SUBDIR%/ \
@@ -106,6 +106,8 @@ CONFIGURE_ARGS+=	--with-included-popt
 .endif
 
 .if ${PORT_OPTIONS:MSSH}
+CONFIGURE_ARGS+=	--with-rsh=ssh
+.else
 CONFIGURE_ARGS+=	--with-rsh=rsh
 .endif
 
