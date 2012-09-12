@@ -1,6 +1,6 @@
 Newt is a windowing toolkit for text mode built from the slang
 library. It allows color text mode applications to easily use
-stackable windows, push buttons, check boxes, radio buttons, lists,   
+stackable windows, push buttons, check boxes, radio buttons, lists,
 entry fields, labels, and displayable text. Scrollbars are supported,
 and forms may be nested to provide extra functionality.
 
@@ -9,4 +9,4 @@ be used from shell scripts similarly to Savio Lam's "dialog". Newt
 provides the textual interface for the Red Hat and Debian boot
 disks.
 
-WWW:	https://fedorahosted.org/newt/
+WWW: https://fedorahosted.org/newt/

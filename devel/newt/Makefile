@@ -1,9 +1,4 @@
-# New ports collection makefile for:	newt
-# Date created:		08 Jan 2000
-# Whom:			Will Andrews <andrews@technologist.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	newt
 PORTVERSION=	0.52.11
@@ -13,7 +8,7 @@ MASTER_SITES=	https://fedorahosted.org/releases/n/e/newt/
 PKGNAMESUFFIX=	${PYTHONSUFFIX}${TCLSUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Not Erik's Windowing Toolkit:  console I/O handling library#'
+COMMENT=	Not Erik's Windowing Toolkit: console I/O handling library
 
 LIB_DEPENDS=	slang:${PORTSDIR}/devel/libslang2 \
 		popt:${PORTSDIR}/devel/popt
@@ -39,8 +34,7 @@ USE_GETTEXT=	yes
 .endif
 .if defined(WITH_PYTHON)
 PYTHONSUFFIX=	-${PYTHON_PKGNAMEPREFIX:S/-//}
-BUILD_DEPENDS+=	${PYDISTUTILS}
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 MAKE_ENV+=	WITH_PYTHON=yes
 PLIST_SUB+=	PYTHONOPT=""	\
 		PYNUM=${PYTHON_VERSION:S/python//}
