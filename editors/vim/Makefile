@@ -88,8 +88,7 @@ MAKE_ARGS+=	CONF_OPT_RUBY="--enable-rubyinterp"
 .endif
 
 .if defined(WITH_TCL)
-USE_TCL=	82+
-USE_TCL_NO_THREADS=	yes
+USE_TCL=	85+
 .endif
 
 .if defined(WITH_LUA)
