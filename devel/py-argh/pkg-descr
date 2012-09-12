@@ -1,0 +1,4 @@
+Argh provides a very simple wrapper for argparse with support for
+hierarchical commands that can be bound to modules or classes.
+
+WWW: http://bitbucket.org/neithere/argh/
