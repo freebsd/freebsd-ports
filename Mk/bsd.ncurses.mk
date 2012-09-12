@@ -63,7 +63,7 @@ PKGARGS=	-c ${DESTDIR}
 .else
 PKGARGS=
 .endif
-NCURSES_INSTALLED!=	${PKG_BIN} ${PKGARGS} which -qo ${LOCALBASE}/lib/libncurses.so
+NCURSES_INSTALLED!=	${PKG_BIN} ${PKGARGS} which -qo ${LOCALBASE}/lib/libncurses.so || :
 .else
 NCURSES_INSTALLED!=	find "${PKG_DBDIR}/" -type f -name "+CONTENTS" -print0 | \
 			xargs -0 grep -l "^lib/libncurses.so." | \
