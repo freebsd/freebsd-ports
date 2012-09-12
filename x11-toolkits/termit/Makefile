@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	termit
-PORTVERSION=	2.9.5
+PORTVERSION=	2.9.6
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	http://cloud.github.com/downloads/nonstop/termit/
 
@@ -34,7 +34,7 @@ USE_XORG=	pixman x11 xau xcomposite xcursor xdamage xdmcp xext xfixes \
 		xi xinerama xrandr xrender
 MAKE_JOBS_SAFE=	yes
 
-CFLAGS+=	-I${LUA_INCDIR}
+CFLAGS+=	-I${LOCALBASE}/include/vte-0.0
 
 MAN1=		${PORTNAME}.1
 
@@ -65,8 +65,8 @@ post-patch:
 	@${REINPLACE_CMD} 's|share/man|man|' ${WRKSRC}/doc/CMakeLists.txt
 	@${REINPLACE_CMD} 's|ADD_SUBDIRECTORY(etc)||' ${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} 's|/etc|${PREFIX}/etc|' ${WRKSRC}/src/lua_conf.c
-	@${REINPLACE_CMD} -e 's|/usr/lib/liblua.a|${LUA_LIBDIR}/liblua.a|' \
-		-e 's|-ldl||' ${WRKSRC}/src/CMakeLists.txt
+	@${REINPLACE_CMD} 's|/usr/lib/liblua.a|${LUA_LIBDIR}/liblua.a|' \
+		${WRKSRC}/src/CMakeLists.txt
 
 post-install:
 	${MKDIR} ${TERMIT_ETC}
