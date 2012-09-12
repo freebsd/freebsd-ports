@@ -1,0 +1,31 @@
+--- ./cppunit/gcc-abi-demangle.patch.orig	2012-07-25 15:22:00.000000000 -0400
++++ ./cppunit/gcc-abi-demangle.patch	2012-08-22 14:35:55.000000000 -0400
+@@ -0,0 +1,28 @@
++--- misc/build/cppunit-1.12.1/src/cppunit/TypeInfoHelper.cpp	2004-02-18 15:45:44.000000000 -0500
+++++ misc/build/cppunit-1.12.1/src/cppunit/TypeInfoHelper.cpp	2012-08-22 14:35:55.000000000 -0400
++@@ -21,10 +21,21 @@
++   int status = 0;
++   char* c_name = 0;
++ 
++-  c_name = abi::__cxa_demangle( info.name(), 0, 0, &status );
++-  
++-  std::string name( c_name );
++-  free( c_name );  
+++  const char* c_origName = info.name();
+++  if(c_origName[0] == '*')
+++      ++c_origName;
+++  c_name = abi::__cxa_demangle( c_origName, 0, 0, &status ); 
+++
+++  std::string name;
+++  if(c_name)
+++  {
+++      name = std::string( c_name );
+++      free( c_name );  
+++  }
+++  else
+++  {
+++      name = std::string( c_origName );
+++  }
++ 
++ #else   // CPPUNIT_HAVE_GCC_ABI_DEMANGLE
++ 

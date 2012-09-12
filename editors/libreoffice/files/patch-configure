@@ -1,5 +1,5 @@
---- ./configure.orig	2012-07-03 07:01:28.000000000 -0400
-+++ ./configure	2012-08-17 14:41:37.000000000 -0400
+--- ./configure.orig	2012-08-08 09:05:10.000000000 -0400
++++ ./configure	2012-09-10 18:59:08.000000000 -0400
 @@ -25612,11 +25612,13 @@
                  { $as_echo "$as_me:$LINENO: checking which hash container mdds shall use" >&5
  $as_echo_n "checking which hash container mdds shall use... " >&6; }
@@ -16,3 +16,14 @@
          { $as_echo "$as_me:$LINENO: result: boost::unordered_map" >&5
  $as_echo "boost::unordered_map" >&6; }
      fi
+@@ -30882,8 +30884,8 @@
+ $as_echo "external" >&6; }
+     # Mac OS builds should get out without extra stuff is the Mac porters'
+     # wish. And pkg-config is although Xcode ships a .pc for openssl
+-    if test "$_os" = "Darwin" -o "$_os" = "NetBSD" -o "$_os" = "OpenBSD" -o \
+-            "$_os" = "DragonFly"; then
++    if test "$_os" = "Darwin" -o "$_os" = "FreeBSD" -o "$_os" = "NetBSD" -o \
++	    "$_os" = "OpenBSD" -o "$_os" = "DragonFly"; then
+         OPENSSL_CFLAGS=
+         OPENSSL_LIBS="-lssl -lcrypto"
+     else

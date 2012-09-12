@@ -7,7 +7,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	0
+PORTREVISION=	1
 
 MASTER_SITE_SUBDIR=	src/${PORTVERSION}/
 MASTER_SITES+=	http://dev-www.libreoffice.org/src/:ext \
@@ -67,7 +67,6 @@ USE_XZ=	yes
 USE_PYTHON=	yes
 USE_QT4=	# empty but required
 #l10n
-INSTALL_TARGET=	distro-pack-install
 
 DIST_SUBDIR=	libreoffice
 WRKSRC=		${WRKDIR}/${PORTNAME}-core-${LOVERSION}
@@ -88,7 +87,6 @@ USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BISON=	build
-USE_OPENSSL=	yes
 WANT_GNOME=	yes
 
 USE_XORG=	xaw xrandr
@@ -107,10 +105,8 @@ SYSTRAY_DESC=	Enable systemtray quickstarter
 WEBDAV_DESC=	Enable webdav protocol
 JAVA_DESC=	Add java support (XML Filters, macros)
 
-CONFIGURE_ENV=		GPERF=${LOCALBASE}/bin/gperf \
-			DMAKE=${LOCALBASE}/bin/dmake \
-			OPENSSL_CFLAGS="-I${OPENSSLINC}" \
-			OPENSSL_LIBS="-L${OPENSSLLIB} -lssl"
+CONFIGURE_ENV=		DMAKE=${LOCALBASE}/bin/dmake \
+			GPERF=${LOCALBASE}/bin/gperf
 
 CONFIGURE_ARGS+=	--with-unix-wrapper="libreoffice" \
 			--disable-fetch-external \
@@ -203,38 +199,6 @@ MAN1=	lobase.1 \
 MANCOMPRESSED=	yes
 
 .include <bsd.port.options.mk>
-
-#.if defined(WITH_GCC)
-#USE_GCC=	4.6+
-#DISTFILES+=	bd30e9cf5523cdfc019b94f5e1d7fd19-cppunit-1.12.1.tar.gz:ext
-#.else
-.if exists(/usr/bin/clang) && ${OSVERSION} >= 900014
-CC=	/usr/bin/clang
-CPP=	/usr/bin/clang-cpp
-CXX=	/usr/bin/clang++
-CXXCPP=	${CPP}
-.else
-# XXX Clang PR13308 (http://llvm.org/bugs/show_bug.cgi?id=13308)
-BUILD_DEPENDS+=	clang-devel>=3.2.r159895:${PORTSDIR}/lang/clang-devel
-USE_BINUTILS=	yes
-CC=	${LOCALBASE}/bin/clang
-CPP=	${CC} -E
-CXX=	${LOCALBASE}/bin/clang++
-CXXCPP=	${CXX} -E
-CONFIGURE_ARGS+=	--with-linker-hash-style=sysv
-.endif
-CONFIGURE_ENV+=		CXXCPP="${CXXCPP}"
-CONFIGURE_ARGS+=	--with-system-cppunit
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libcppunit.so:${PORTSDIR}/devel/cppunit
-#.endif
-
-MAKE_ENV+=	USE_GMAKE=1 DESTDIR=${LODESTDIR}
-
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/db${BDB_VER}
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-# XXX Avoid -rpath pollution from bsd.openssl.mk.
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 
 .if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
@@ -367,6 +331,40 @@ CONFIGURE_ARGS+=	--enable-release-build
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_GCC)
+USE_GCC=	4.6+
+DISTFILES+=	bd30e9cf5523cdfc019b94f5e1d7fd19-cppunit-1.12.1.tar.gz:ext
+CONFIGURE_ENV+=	CXXCPP="${CPP}"
+.else
+.if exists(/usr/bin/clang) && ${OSVERSION} >= 900014
+CC=		/usr/bin/clang
+CPP=		/usr/bin/clang-cpp
+CXX=		/usr/bin/clang++
+CONFIGURE_ENV+=	CXXCPP="${CPP}"
+.else
+# XXX Clang PR13308 (http://llvm.org/bugs/show_bug.cgi?id=13308)
+BUILD_DEPENDS+=	clang-devel>=3.2.r159895:${PORTSDIR}/lang/clang-devel
+USE_BINUTILS=	yes
+CC=		${LOCALBASE}/bin/clang
+CPP=		${CC} -E
+CXX=		${LOCALBASE}/bin/clang++
+CONFIGURE_ENV+=	CXXCPP="${CXX} -E"
+.endif
+CONFIGURE_ARGS+=	--with-system-cppunit
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libcppunit.so:${PORTSDIR}/devel/cppunit
+.endif
+
+.if ${OSVERSION} < 900506
+CONFIGURE_ARGS+=	--with-linker-hash-style=sysv
+.endif
+
+CPPFLAGS=	-I${LOCALBASE}/include -I${LOCALBASE}/include/db${BDB_VER}
+LDFLAGS=	-L${LOCALBASE}/lib
+
+MAKE_ENV+=	ENVCFLAGS="${CFLAGS}" ENVCXXFLAGS="${CXXFLAGS}"
+MAKE_ENV+=	ENVLINKFLAGS="${LDFLAGS}"
+MAKE_ENV+=	USE_GMAKE=1
+
 post-extract:
 	@${MKDIR} ${WRKSRC}/clone
 	@${MKDIR} ${WRKSRC}/src
@@ -389,10 +387,6 @@ post-patch:
 			-e 's#@DB_LIB@#${BDB_LIB_NAME}#' \
 			${WRKSRC}/set_soenv.in
 	@${REINPLACE_CMD} -e 's/sha1sum/sha1/g' ${WRKSRC}/configure
-.if defined(WITH_GCC)
-	@${REINPLACE_CMD} -e "s|^LINKFLAGSDEFS:=|LINKFLAGSDEFS:=-Wl,-rpath=${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}|" \
-		${WRKSRC}/solenv/inc/unxfbsd.mk
-.endif
 .if ${CC} == /usr/bin/clang && ${OSVERSION} < 900506
 #Visibility is broken with clang
 	@${REINPLACE_CMD} -e "s|HAVE_GCC_VISIBILITY_FEATURE=TRUE|HAVE_GCC_VISIBILITY_FEATURE=|g" \
@@ -413,6 +407,10 @@ pre-configure:
 post-configure:
 	@cd ${WRKSRC} && ./bin/create_bootstrap_links
 	@${TOUCH} ${WRKSRC}/src.downloaded
+
+do-install:
+	@cd ${WRKSRC} && ${SETENV} DESTDIR="${LODESTDIR}" \
+	    ${GMAKE} distro-pack-install
 
 post-install:
 	@${RM} -f ${PLISTF} ${PLISTD}
