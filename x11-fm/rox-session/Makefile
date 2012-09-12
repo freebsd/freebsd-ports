@@ -6,6 +6,7 @@
 
 PORTNAME=	rox-session
 PORTVERSION=	0.40.0
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/rox/ROX-Session/${PORTVERSION}/
 
@@ -16,7 +17,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer \
-		${LOCALBASE}/lib/ROX-Lib2/python/rox/__init__.py:${PORTSDIR}/devel/py-roxlib
+		${PYTHON_PKGNAMEPREFIX}roxlib>=0:${PORTSDIR}/devel/py-roxlib \
+		${PYTHON_PKGNAMEPREFIX}dbus>=0:${PORTSDIR}/devel/py-dbus
 
 WRKSRC=		${WRKDIR}/ROX-Session
 DATADIR=	${PREFIX}/apps/ROX-Session
@@ -27,10 +29,8 @@ USE_PYTHON=	yes
 
 PORTDOCS=	Changes DBUS-API README
 
-.if !exists(${LOCALBASE}/sbin/gdm)
 OPTIONS_DEFINE=	GDM
 GDM_DESC=	Install GDM login manager
-.endif
 
 SUB_FILES=	${PORTNAME} rox.desktop
 
@@ -50,12 +50,20 @@ do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
 	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
 	@cd ${WRKSRC} && ./AppRun --compile
+	@${MKDIR} ${WRKSRC}/Messages
+	@cd ${WRKSRC}/src/po && ./dist
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
-	@cd ${WRKSRC} && ${FIND} . | ${CPIO} -pdmu ${DATADIR}
+	@${MKDIR} ${DATADIR}
+	@cd ${WRKSRC} && ${CP} -r .DirIcon AppInfo.xml AppRun \
+		Environment Login Messages Options.xml ROX-Session \
+		ROX-Session.xml RunROX SetupPanel Styles browser images \
+		*.py *.pyc *.pyo ${DATADIR}
+.if ${PORT_OPTIONS:MGDM}
 	@${MKDIR} ${PREFIX}/share/applications
 	@${INSTALL_DATA} ${WRKDIR}/rox.desktop ${PREFIX}/share/applications
+.endif
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
