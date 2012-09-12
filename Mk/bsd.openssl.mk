@@ -106,7 +106,7 @@ PKGARGS=	-c ${DESTDIR}
 .else
 PKGARGS=
 .endif
-OPENSSL_INSTALLED!=	${PKG_BIN} ${PKGARGS} which -qo ${LOCALBASE}/lib/libcrypto.so
+OPENSSL_INSTALLED!=	${PKG_BIN} ${PKGARGS} which -qo ${LOCALBASE}/lib/libcrypto.so || :
 .else
 OPENSSL_INSTALLED!=	find "${PKG_DBDIR}/" -type f -name "+CONTENTS" -print0 | \
 			xargs -0 grep -l "^lib/libssl.so." | \
