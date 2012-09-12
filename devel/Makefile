@@ -3367,6 +3367,7 @@
     SUBDIR += py-ordereddict
     SUBDIR += py-parsedatetime
     SUBDIR += py-parsing
+    SUBDIR += py-pathtools
     SUBDIR += py-pefile
     SUBDIR += py-period
     SUBDIR += py-phpserialize
