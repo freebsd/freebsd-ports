@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	mod_spdy
-PORTVERSION=	0.9.2.2
-PORTREVISION=	1
+PORTVERSION=	0.9.3.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.club.kyutech.ac.jp/~masaki/ports/:mod_spdy \
 		${MASTER_SITE_APACHE_HTTPD}:apache22 \
 		http://www.openssl.org/source/:openssl
 DISTFILES=	mod_spdy_source_${PORTVERSION}.tar.xz:mod_spdy \
 		httpd-2.2.22.tar.gz:apache22 \
-		openssl-1.0.1.tar.gz:openssl
+		openssl-1.0.1c.tar.gz:openssl
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	mod_spdy_source_${PORTVERSION}.tar.xz
 
@@ -91,8 +90,8 @@ post-extract:
 	@${MKDIR} ${WRKSRC}/temp/progress
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/httpd-2.2.22.tar.gz ${WRKSRC}/temp/ && \
 		${TOUCH} ${WRKSRC}/temp/progress/httpd-2.2.22.tar.gz.downloaded
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/openssl-1.0.1.tar.gz ${WRKSRC}/temp/ && \
-		${TOUCH} ${WRKSRC}/temp/progress/openssl-1.0.1.tar.gz.downloaded
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/openssl-1.0.1c.tar.gz ${WRKSRC}/temp/ && \
+		${TOUCH} ${WRKSRC}/temp/progress/openssl-1.0.1c.tar.gz.downloaded
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" \
