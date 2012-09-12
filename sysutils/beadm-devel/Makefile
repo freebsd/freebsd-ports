@@ -1,27 +1,24 @@
-# New ports collection makefile for:	beadm
-# Date created:		26 April 2012
-# Whom:			Bryan Drewery <bryan@shatow.net>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	beadm
-PORTVERSION=	0.8
+PORTVERSION=	0.8.99.20120912
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/beadm/dist/
+MASTER_SITES=	http://github.com/${GH_ACCOUNT}/${PORTNAME}/tarball/${GH_COMMIT}/
+PKGNAMESUFFIX=	-devel
+DISTNAME=	${GH_ACCOUNT}-${PORTNAME}-${GH_COMMIT}
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Solaris-like utility to manage Boot Environments on ZFS
 
 LICENSE=	BSD
 
-USE_GITHUB=	yes
+FETCH_ARGS=	-Fpr
 GH_ACCOUNT=	vermaden
-GH_COMMIT=	b0cdd0c
+GH_COMMIT=	3eb4ac9
 
 NO_BUILD=	YES
 
-CONFLICTS_INSTALL=	beadm-devel-*
+CONFLICTS_INSTALL=	beadm-[0-9]*
 
 PLIST_FILES=	sbin/${PORTNAME}
 
