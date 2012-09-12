@@ -8,8 +8,8 @@
 PORTNAME=	virtualbox-ose
 DISTVERSION=	4.0.16
 CATEGORIES=	emulators kld
-MASTER_SITES=	http://tmp.chruetertee.ch/ \
-		http://freebsd.unixfreunde.de/sources/ \
+MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
+		http://tmp.chruetertee.ch/ \
 		http://disasterarea.chruetertee.ch/
 PKGNAMESUFFIX=	-kmod-legacy
 DISTNAME=	VirtualBox-${DISTVERSION}
