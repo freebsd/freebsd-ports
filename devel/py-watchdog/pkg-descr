@@ -1,0 +1,8 @@
+Python API library and shell utilities to monitor file system events.
+
+Directory monitoring is made easy with
+
+    * A cross-platform API.
+    * A shell tool to run commands in response to directory changes.
+
+WWW: http://github.com/gorakhargosh/watchdog

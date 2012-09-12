@@ -1,0 +1,127 @@
+@comment $FreeBSD$
+bin/watchmedo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/events.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/events.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/events.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/api.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/api.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/api.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/fsevents.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/fsevents.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/fsevents.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/inotify.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/inotify.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/inotify.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/kqueue.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/kqueue.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/kqueue.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/polling.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/polling.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/polling.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/read_directory_changes.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/read_directory_changes.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/read_directory_changes.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/read_directory_changes_async.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/read_directory_changes_async.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/read_directory_changes_async.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/winapi.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/winapi.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/winapi.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/winapi_common.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/winapi_common.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers/winapi_common.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/tricks/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/tricks/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/tricks/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/utils/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/utils/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/utils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/utils/bricks.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/utils/bricks.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/utils/bricks.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/utils/decorators.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/utils/decorators.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/utils/decorators.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/utils/dirsnapshot.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/utils/dirsnapshot.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/utils/dirsnapshot.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/utils/echo.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/utils/echo.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/utils/echo.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/utils/platform.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/utils/platform.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/utils/platform.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/version.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/version.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/version.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/watchmedo.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/watchmedo.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/watchmedo.pyo
+%%PORTDOCS%%%%DOCSDIR%%/.buildinfo
+%%PORTDOCS%%%%DOCSDIR%%/_modules/index.html
+%%PORTDOCS%%%%DOCSDIR%%/_modules/watchdog/events.html
+%%PORTDOCS%%%%DOCSDIR%%/_modules/watchdog/observers.html
+%%PORTDOCS%%%%DOCSDIR%%/_modules/watchdog/observers/api.html
+%%PORTDOCS%%%%DOCSDIR%%/_modules/watchdog/utils.html
+%%PORTDOCS%%%%DOCSDIR%%/_modules/watchdog/utils/dirsnapshot.html
+%%PORTDOCS%%%%DOCSDIR%%/_sources/api.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/hacking.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/installation.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/quickstart.txt
+%%PORTDOCS%%%%DOCSDIR%%/_static/ajax-loader.gif
+%%PORTDOCS%%%%DOCSDIR%%/_static/basic.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/comment-bright.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/comment-close.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/comment.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/default.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/doctools.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/down-pressed.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/down.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/file.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/jquery.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/minus.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/plus.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/pygments.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/searchtools.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/sidebar.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/underscore.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/up-pressed.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/up.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/websupport.js
+%%PORTDOCS%%%%DOCSDIR%%/api.html
+%%PORTDOCS%%%%DOCSDIR%%/genindex.html
+%%PORTDOCS%%%%DOCSDIR%%/hacking.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/installation.html
+%%PORTDOCS%%%%DOCSDIR%%/objects.inv
+%%PORTDOCS%%%%DOCSDIR%%/py-modindex.html
+%%PORTDOCS%%%%DOCSDIR%%/quickstart.html
+%%PORTDOCS%%%%DOCSDIR%%/search.html
+%%PORTDOCS%%%%DOCSDIR%%/searchindex.js
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_static
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_modules/watchdog/utils
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_modules/watchdog/observers
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_modules/watchdog
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/_modules
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/utils
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/tricks
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog/observers
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/watchdog
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
