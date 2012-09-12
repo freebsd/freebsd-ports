@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	1.3.5
+PORTVERSION=	1.3.6
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -33,6 +33,7 @@ OPTIONS_DEFINE=	\
 	HTTP_FLV \
 	HTTP_GEOIP \
 	HTTP_GZIP_STATIC \
+	HTTP_GUNZIP_FILTER \
 	HTTP_IMAGE_FILTER \
 	HTTP_PERL \
 	HTTP_RANDOM_INDEX \
@@ -61,7 +62,6 @@ OPTIONS_DEFINE=	\
 	HTTP_DAV_EXT \
 	HTTP_EVAL \
 	HTTP_FANCYINDEX \
-	HTTP_GUNZIP_FILTER \
 	HTTP_MOGILEFS \
 	HTTP_NOTICE \
 	HTTP_PUSH \
@@ -117,6 +117,7 @@ HTTP_DAV_DESC=			Enable http_webdav module
 HTTP_FLV_DESC=			Enable http_flv module
 HTTP_GEOIP_DESC=		Enable http_geoip module
 HTTP_GZIP_STATIC_DESC=		Enable http_gzip_static module
+HTTP_GUNZIP_FILTER_DESC=	Enable http_gunzip_filter module
 HTTP_IMAGE_FILTER_DESC=		Enable http_image_filter module
 HTTP_MP4_DESC=			Enable http_mp4 module
 HTTP_PERL_DESC=			Enable http_perl module
@@ -146,7 +147,6 @@ HTTP_AUTH_REQ_DESC=		3rd party http_auth_request module
 HTTP_DAV_EXT_DESC=		3rd party webdav_ext module
 HTTP_EVAL_DESC=			3rd party eval module
 HTTP_FANCYINDEX_DESC=		3rd party http_fancyindex module
-HTTP_GUNZIP_FILTER_DESC=	3rd party http_gunzip_filter module
 HTTP_MOGILEFS_DESC=		3rd party mogilefs module
 HTTP_MP4_H264_DESC=		3rd party mp4/h264 module
 HTTP_NOTICE_DESC=		3rd party notice module
@@ -367,13 +367,6 @@ DISTFILES+=	ngx-fancyindex-${NGINX_FANCYINDEX_VERSION}.tar.gz:fancyindex
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx-fancyindex-${NGINX_FANCYINDEX_VERSION}
 .endif
 
-.if ${PORT_OPTIONS:MHTTP_GUNZIP_FILTER}
-NGINX_GUNZIP_FILTER_VERSION=	0.4
-MASTER_SITES+=	http://mdounin.ru/files/:gunzipfilter
-DISTFILES+=	ngx_http_gunzip_filter_module-${NGINX_GUNZIP_FILTER_VERSION}.tar.gz:gunzipfilter
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_gunzip_filter_module-${NGINX_GUNZIP_FILTER_VERSION}
-.endif
-
 .if ${PORT_OPTIONS:MHTTP_FLV}
 CONFIGURE_ARGS+=--with-http_flv_module
 .endif
@@ -385,6 +378,10 @@ LIB_DEPENDS+=	GeoIP:${PORTSDIR}/net/GeoIP
 
 .if ${PORT_OPTIONS:MHTTP_GZIP_STATIC}
 CONFIGURE_ARGS+=--with-http_gzip_static_module
+.endif
+
+.if ${PORT_OPTIONS:MHTTP_GUNZIP_FILTER}
+CONFIGURE_ARGS+=--with-http_gunzip_module
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_IMAGE_FILTER}

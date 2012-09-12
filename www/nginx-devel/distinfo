@@ -1,5 +1,5 @@
-SHA256 (nginx-1.3.5.tar.gz) = 9b0cd90b76dba86cccc8f3442b6adddbde8441fa3f9b6ffb339f0c85c2f8ab44
-SIZE (nginx-1.3.5.tar.gz) = 725169
+SHA256 (nginx-1.3.6.tar.gz) = 9e6e680b75c6db09bf09bb717721dad8b2d7897d8fc54d4cdc8c5af972dd3d5d
+SIZE (nginx-1.3.6.tar.gz) = 728659
 SHA256 (giom-nginx_accept_language_module-02262ce.tar.gz) = 3191f4caa70d9a8942c4f10b6abaaa96af451991d4b5e1e3d7b991376b00bf0c
 SIZE (giom-nginx_accept_language_module-02262ce.tar.gz) = 3398
 SHA256 (nginx-accesskey-2.0.3.tar.gz) = d9e94321e78a02de16c57f3e048fd31059fd8116ed03d6de7180f435c52502b1
@@ -22,8 +22,6 @@ SHA256 (vkholodkov-nginx-eval-module-1.0.3-0-g125fa2e.tar.gz) = 945046c42d973be9
 SIZE (vkholodkov-nginx-eval-module-1.0.3-0-g125fa2e.tar.gz) = 5727
 SHA256 (ngx-fancyindex-0.3.1.tar.gz) = 877e383c6bc06be92abb88f5ac251a165b63feb5f4828d52a554efc19a3f7c7d
 SIZE (ngx-fancyindex-0.3.1.tar.gz) = 13071
-SHA256 (ngx_http_gunzip_filter_module-0.4.tar.gz) = d2bcef58612d1f66f92c7160fc05695b540ffdee45936b1e86a0d4981e09114a
-SIZE (ngx_http_gunzip_filter_module-0.4.tar.gz) = 7432
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
 SIZE (nginx_mogilefs_module-1.0.4.tar.gz) = 11208
 SHA256 (nginx_mod_h264_streaming-2.2.7.tar.gz) = 6d974ba630cef59de1f60996c66b401264a345d25988a76037c2856cec756c19
