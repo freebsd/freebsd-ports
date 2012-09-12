@@ -9,8 +9,8 @@ PORTNAME=	virtualbox-ose
 DISTVERSION=	4.0.16
 PORTREVISION=	2
 CATEGORIES=	emulators
-MASTER_SITES=	http://tmp.chruetertee.ch/ \
-		http://freebsd.unixfreunde.de/sources/ \
+MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
+		http://tmp.chruetertee.ch/ \
 		http://disasterarea.chruetertee.ch/ \
 		http://download.virtualbox.org/virtualbox/${VBOX_GUEST_VER}/:guestadditions
 PKGNAMESUFFIX=	-legacy
