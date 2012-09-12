@@ -7,6 +7,7 @@
 
 PORTNAME=	xerces-c3
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	xerces/c/3/sources
@@ -29,5 +30,8 @@ MAKE_JOBS_UNSAFE=yes
 
 post-install:
 	${LN} -sf libxerces-c-${PORTVERSION:R}.so ${PREFIX}/lib/libxerces-c.so.${PORTVERSION:R:R}
+
+test:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
 .include <bsd.port.mk>
