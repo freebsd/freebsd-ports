@@ -58,3 +58,5 @@ SHA256 (kye/TPsKye.zip) = f65ef0cc8322e153334d39626c577082dd310c08b6ebf075861861
 SIZE (kye/TPsKye.zip) = 10483
 SHA256 (kye/sampler.zip) = 6b5d85e8f8b87298ea927424159ee15c7609fd2e81068e68fd7df60f2c76e4f1
 SIZE (kye/sampler.zip) = 4641
+SHA256 (kye/kye-data_extra_levels.20120818.tar.gz) = 9ddee7e21607c7fe425f24d7aa71e7120c29e885320eb2ed880b0f5a882ea5e4
+SIZE (kye/kye-data_extra_levels.20120818.tar.gz) = 455680
