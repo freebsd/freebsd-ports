@@ -64,7 +64,11 @@ EXTRA_PATCHES=	${FILESDIR}/legacy-patch-nvidia.lib.mk
 
 # Fix recent arbitrary memory access vulnerability in legacy drivers
 .if ${NVVERSION} <= 1905300
+. if ${NVVERSION} == 1731435
+EXTRA_PATCHES+=	${FILESDIR}/security-patch-CVE-2012-4225
+. else
 EXTRA_PATCHES+=	${FILESDIR}/security-patch-CVE-2012-0946
+. endif
 .endif
 
 OPTIONS=	FREEBSD_AGP	"Use FreeBSD AGP GART driver" off \
