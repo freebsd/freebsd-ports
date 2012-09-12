@@ -4046,8 +4046,10 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>nvidia-driver</name>
-	<range><gt>173.14.31_1</gt><lt>295.40</lt></range>
-	<range><ge>100.14.03</ge><lt>173.14.31_1</lt></range>
+	<range><gt>173.14.35</gt><lt>295.71</lt></range>
+	<range><gt>96.43.20_2</gt><lt>173.14.35</lt></range>
+	<range><gt>71.86.15_2</gt><lt>96.43.20_2</lt></range>
+	<range><lt>71.86.15_2</lt></range>
       </package>
     </affects>
     <description>
@@ -4066,14 +4068,26 @@ Note:  Please add new entries to the beginning of this file.
 	    all users with Geforce 8 or newer, G80 Quadro or newer, and all
 	    Tesla GPUs to update their drivers to 295.40 or later.</p>
 	</blockquote>
+        <p>Later, it was additionally discovered that similar exploit could
+          be achieved through remapping of VGA window:</p>
+	<blockquote cite="http://nvidia.custhelp.com/app/answers/detail/a_id/3140">
+	  <p>NVIDIA received notification of a security exploit that uses
+	    NVIDIA UNIX device files to map and program registers to redirect
+	    the VGA window.  Through the VGA window, the exploit can access
+	    any region of physical system memory.  This arbitrary memory
+	    access can be further exploited, for example, to escalate user
+	    privileges.</p>
+	</blockquote>
       </body>
     </description>
     <references>
       <cvename>CVE-2012-0946</cvename>
+      <cvename>CVE-2012-4225</cvename>
     </references>
     <dates>
       <discovery>2012-03-20</discovery>
       <entry>2012-05-10</entry>
+      <modified>2012-09-12</modified>
     </dates>
   </vuln>
 
