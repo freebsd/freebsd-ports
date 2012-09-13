@@ -1,13 +1,8 @@
-# New ports collection makefile for:	ebview-gtk2
-# Date Created:				7 Dec 2003
-# Whom:					<faust@ua.airnet.ne.jp>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ebview
 PORTVERSION=	0.3.6
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	japanese
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-gtk2
@@ -15,7 +10,7 @@ PKGNAMESUFFIX=	-gtk2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Electronic Book Viewer
 
-LIB_DEPENDS=	eb.15:${PORTSDIR}/japanese/eb
+LIB_DEPENDS=	eb:${PORTSDIR}/japanese/eb
 
 CONFLICTS=	ja-ebview-0*
 

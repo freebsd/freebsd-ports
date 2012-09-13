@@ -21,59 +21,8 @@ include/eb/zio.h
 lib/libeb.a
 lib/libeb.la
 lib/libeb.so
-lib/libeb.so.15
+lib/libeb.so.16
 share/aclocal/eb4.m4
-%%DOCSDIR%%/eb-01.html
-%%DOCSDIR%%/eb-02.html
-%%DOCSDIR%%/eb-03.html
-%%DOCSDIR%%/eb-04.html
-%%DOCSDIR%%/eb-05.html
-%%DOCSDIR%%/eb-06.html
-%%DOCSDIR%%/eb-07.html
-%%DOCSDIR%%/eb-08.html
-%%DOCSDIR%%/eb-09.html
-%%DOCSDIR%%/eb-10.html
-%%DOCSDIR%%/eb-11.html
-%%DOCSDIR%%/eb-12.html
-%%DOCSDIR%%/eb-13.html
-%%DOCSDIR%%/eb-14.html
-%%DOCSDIR%%/eb.html
-%%DOCSDIR%%/ebappendix-01.html
-%%DOCSDIR%%/ebappendix-02.html
-%%DOCSDIR%%/ebappendix-03.html
-%%DOCSDIR%%/ebappendix-04.html
-%%DOCSDIR%%/ebappendix.html
-%%DOCSDIR%%/ebfont-01.html
-%%DOCSDIR%%/ebfont-02.html
-%%DOCSDIR%%/ebfont-03.html
-%%DOCSDIR%%/ebfont-04.html
-%%DOCSDIR%%/ebfont.html
-%%DOCSDIR%%/ebinfo-01.html
-%%DOCSDIR%%/ebinfo-02.html
-%%DOCSDIR%%/ebinfo-03.html
-%%DOCSDIR%%/ebinfo-04.html
-%%DOCSDIR%%/ebinfo-05.html
-%%DOCSDIR%%/ebinfo.html
-%%DOCSDIR%%/ebrefile-01.html
-%%DOCSDIR%%/ebrefile-02.html
-%%DOCSDIR%%/ebrefile-03.html
-%%DOCSDIR%%/ebrefile.html
-%%DOCSDIR%%/ebstopcode-01.html
-%%DOCSDIR%%/ebstopcode-02.html
-%%DOCSDIR%%/ebstopcode-03.html
-%%DOCSDIR%%/ebstopcode.html
-%%DOCSDIR%%/ebzip-01.html
-%%DOCSDIR%%/ebzip-02.html
-%%DOCSDIR%%/ebzip-03.html
-%%DOCSDIR%%/ebzip-04.html
-%%DOCSDIR%%/ebzip-05.html
-%%DOCSDIR%%/ebzip-06.html
-%%DOCSDIR%%/ebzip-07.html
-%%DOCSDIR%%/ebzip-08.html
-%%DOCSDIR%%/ebzip-09.html
-%%DOCSDIR%%/ebzip-10.html
-%%DOCSDIR%%/ebzip.html
-@dirrm %%DOCSDIR%%
 %%DATADIR%%/appendix/cencro-1.0/catalog
 %%DATADIR%%/appendix/cencro-1.0/catalog.app
 %%DATADIR%%/appendix/cencro-1.0/cencro.app
@@ -161,6 +110,10 @@ share/aclocal/eb4.m4
 %%DATADIR%%/appendix/heritage-2.2/roget/appendix
 %%DATADIR%%/appendix/heritage-2.2/root.app
 %%DATADIR%%/appendix/heritage-2.2/root/appendix
+%%DATADIR%%/appendix/hyogen-1.0/catalogs
+%%DATADIR%%/appendix/hyogen-1.0/catalogs.app
+%%DATADIR%%/appendix/hyogen-1.0/hyogen.app
+%%DATADIR%%/appendix/hyogen-1.0/hyogen/data/furoku
 %%DATADIR%%/appendix/izumi-2.0/catalog
 %%DATADIR%%/appendix/izumi-2.0/catalog.app
 %%DATADIR%%/appendix/izumi-2.0/file1.app
@@ -301,6 +254,9 @@ share/aclocal/eb4.m4
 @dirrm %%DATADIR%%/appendix/heritage-2.2/roget
 @dirrm %%DATADIR%%/appendix/heritage-2.2/root
 @dirrm %%DATADIR%%/appendix/heritage-2.2
+@dirrm %%DATADIR%%/appendix/hyogen-1.0/hyogen/data
+@dirrm %%DATADIR%%/appendix/hyogen-1.0/hyogen
+@dirrm %%DATADIR%%/appendix/hyogen-1.0
 @dirrm %%DATADIR%%/appendix/izumi-2.0/file1
 @dirrm %%DATADIR%%/appendix/izumi-2.0
 @dirrm %%DATADIR%%/appendix/jitenban-2.4/chiezo/data
@@ -369,5 +325,5 @@ share/aclocal/eb4.m4
 @dirrm %%DATADIR%%/appendix/superdic98-1.0
 @dirrm %%DATADIR%%/appendix
 @dirrm %%DATADIR%%
-share/locale/ja/LC_MESSAGES/eb.mo
-share/locale/ja/LC_MESSAGES/ebutils.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/eb.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/ebutils.mo

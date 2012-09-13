@@ -1,20 +1,15 @@
-# New ports collection makefile for:	ebnetd
-# Date created:			4 Aug 1998
-# Whom:				Motoyuki Kasahara <m-kasahr@sra.co.jp>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ebnetd
 PORTVERSION=	1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	japanese ipv6
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/
 
 MAINTAINER=	yasu@utahime.org
 COMMENT=	Servers for accessing CD-ROM books via TCP/IP
 
-LIB_DEPENDS=	eb.15:${PORTSDIR}/japanese/eb
+LIB_DEPENDS=	eb:${PORTSDIR}/japanese/eb
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${RUNDIR} --with-logdir=${LOGDIR}

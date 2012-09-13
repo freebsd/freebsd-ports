@@ -2,7 +2,4 @@ EB Library is a C library for accessing CD-ROM books.  EB Library
 supports to access CD-ROM books of EB, EBG, EBXA and EPWING formats.
 CD-ROM books of those formats are popular in Japan.
 
--- Motoyuki Kasahara <m-kasahr@sra.co.jp>
--- Kazu TAKAMUNE <takamune2004@yahoo.co.jp>
-
 WWW: http://www.sra.co.jp/people/m-kasahr/eb/
