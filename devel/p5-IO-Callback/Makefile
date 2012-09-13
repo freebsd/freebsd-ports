@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-Callback
-PORTVERSION=	1.08
+PORTVERSION=	1.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,9 @@ COMMENT=	Perl extension to emulate file interface for a code reference
 
 RUN_DEPENDS=	\
 	p5-IO-String>0:${PORTSDIR}/devel/p5-IO-String
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	\
+	${RUN_DEPENDS} \
+	p5-Module-Build>=0.4000:${PORTSDIR}/devel/p5-Module-Build
 TEST_DEPENDS=	\
 	p5-File-Slurp>0:${PORTSDIR}/devel/p5-File-Slurp \
 	p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception \
