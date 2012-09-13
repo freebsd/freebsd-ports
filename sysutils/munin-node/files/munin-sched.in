@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+
+# PROVIDE: munin-sched
+# REQUIRE: DAEMON
+# BEFORE:  cron
+
+#
+# Add the following lines to /etc/rc.conf to enable munin-sched:
+# munin_sched_enable (bool):      Set to "NO" by default.
+#                                Set it to "YES" to enable munin-sched
+# munin_sched_config (path):      Set to "%%PREFIX%%/etc/munin/munin-node.conf" by default.
+#
+
+. /etc/rc.subr
+
+name="munin_sched"
+rcvar=munin_sched_enable
+
+[ -z "$munin_sched_enable" ] && munin_sched_enable="NO"
+[ -z "$munin_sched_config" ] && munin_sched_config="%%PREFIX%%/etc/munin/munin-node.conf"
+
+command="%%PREFIX%%/sbin/munin-sched"
+pidfile=`awk '$1 == "pid_file" { print $2 }' $munin_sched_config`
+
+load_rc_config $name
+run_rc_command "$1"

@@ -1,0 +1,16 @@
+--- ./plugins/node.d.freebsd/iostat.in.orig	2012-07-11 14:14:27.841196443 +0200
++++ ./plugins/node.d.freebsd/iostat.in	2012-07-11 14:14:32.619552027 +0200
+@@ -56,13 +56,11 @@
+     for d in $drives; do
+        echo "${d}_read.label ${d}"
+        echo "${d}_read.type DERIVE"
+-       echo "${d}_read.max 2000"
+        echo "${d}_read.min 0"
+        echo "${d}_read.graph no"
+        echo "${d}_write.label ${d}"
+        echo "${d}_write.info I/O on device ${d}"
+        echo "${d}_write.type DERIVE"
+-       echo "${d}_write.max 2000"
+        echo "${d}_write.min 0"
+        echo "${d}_write.negative ${d}_read"
+     done

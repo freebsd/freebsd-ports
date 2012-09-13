@@ -1,0 +1,155 @@
+diff --git a/master/_bin/munin-cgi-graph.in b/master/_bin/munin-cgi-graph.in
+index dec4aa2..bcfbe90 100755
+--- master/_bin/munin-cgi-graph.in
++++ master/_bin/munin-cgi-graph.in
+@@ -90,7 +90,7 @@ while (new CGI::Fast) {
+     my $pinpoint = undef;
+     my $path = $ENV{PATH_INFO} || "";
+ 
+-    INFO "Request path is $path";
++    DEBUG "Request path is $path";
+ 
+     # The full URL looks like this:
+     # Case 1:
+@@ -133,7 +133,7 @@ while (new CGI::Fast) {
+     my ($dom, $host, $serv, $scale) =
+       $path =~ m#^/(.*)/([^/]+)/([\w-]+)-([\w=,]+)\.png#; ## avoid bug in vim
+ 
+-    INFO "asked for ($dom, $host, $serv, $scale)";
++    DEBUG "asked for ($dom, $host, $serv, $scale)";
+ 
+     if ($scale =~ /pinpoint=(\d+),(\d+)/) {
+ 	    $pinpoint = [ $1, $2, ];
+diff --git a/master/_bin/munin-graph.in b/master/_bin/munin-graph.in
+index fb47333..b8fc0d0 100755
+--- master/_bin/munin-graph.in
++++ master/_bin/munin-graph.in
+@@ -84,7 +84,7 @@ my $nb_request_max = 0;
+ my $graph_fh = new IO::File($config->{dbdir} . "/graphs");
+ while (my $path = <$graph_fh>) {
+     my $pinpoint = undef;
+-    INFO "Request path is $path";
++    DEBUG "Request path is $path";
+ 
+     # The full URL looks like this:
+     # Case 1:
+@@ -126,7 +126,7 @@ while (my $path = <$graph_fh>) {
+     my ($dom, $host, $serv, $scale) =
+       $path =~ m#^/(.*)/([^/]+)/(\w+)-([\w=,]+)\.png#; ## avoid bug in vim
+ 
+-    INFO "asked for ($dom, $host, $serv, $scale)";
++    DEBUG "asked for ($dom, $host, $serv, $scale)";
+ 
+     if ($scale =~ /pinpoint=(\d+),(\d+)/) {
+ 	    $pinpoint = [ $1, $2, ];
+@@ -159,15 +159,8 @@ while (my $path = <$graph_fh>) {
+     }
+ 
+     # Now send it: headers
+-    INFO "X-Munin-Request: $nb_request/$nb_request_max";
++    DEBUG "X-Munin-Request: $nb_request/$nb_request_max";
+ 
+-    my $headers = get_headers_for_file($filename, $graph_ttl);
+-    foreach my $header_name (keys %$headers) {
+-        INFO "$header_name: $headers->{$header_name}";
+-    }
+-
+-    # ... and graph data
+-    # send_graph_data($filename);
+ } continue {
+ 	$nb_request++;
+ 	if ($nb_request_max && $nb_request > $nb_request_max) {
+@@ -179,27 +172,6 @@ while (my $path = <$graph_fh>) {
+ 
+ exit 0;
+ 
+-
+-sub get_headers_for_file {
+-    my ($filename, $graph_ttl) = @_;
+-
+-    # At this time the file exists and should be served
+-    my @stats       = stat ($filename);
+-    my $mtime_epoch = $stats[9];
+-    my $last_modified = get_w3c_date_from_epoch($mtime_epoch);
+-
+-    # "Expires" has to use last modified time as base:
+-    my $graph_next_expires = $mtime_epoch - ($mtime_epoch % $graph_ttl) + $graph_ttl;
+-    my $expires       = get_w3c_date_from_epoch($graph_next_expires);
+-
+-    return {
+-	    "Expires" => $expires,
+-	    "Last-Modified" => $last_modified,
+-	    "Content-Length" => $stats[7],
+-	   };
+-}
+-
+-
+ sub get_w3c_date_from_epoch {
+     my($epoch) = @_;
+     return strftime("%a, %d %b %Y %H:%M:%S GMT", gmtime($epoch));
+diff --git a/master/lib/Munin/Master/GraphOld.pm b/master/lib/Munin/Master/GraphOld.pm
+index 004484d..d2fe3fd 100644
+--- master/lib/Munin/Master/GraphOld.pm
++++ master/lib/Munin/Master/GraphOld.pm
+@@ -1350,7 +1350,7 @@ sub process_service {
+     for my $time (keys %times) {
+         next unless ($draw{$time});
+         my $picfilename = get_picture_filename($service, $time);
+-	INFO "[INFO] Looking into drawing $picfilename";
++	DEBUG "[DEBUG] Looking into drawing $picfilename";
+         (my $picdirname = $picfilename) =~ s/\/[^\/]+$//;
+ 
+         DEBUG "[DEBUG] Picture filename: $picfilename";
+diff --git a/master/lib/Munin/Master/HTMLConfig.pm b/master/lib/Munin/Master/HTMLConfig.pm
+index dfa8b70..bbccffa 100644
+--- master/lib/Munin/Master/HTMLConfig.pm
++++ master/lib/Munin/Master/HTMLConfig.pm
+@@ -473,7 +473,7 @@ sub generate_service_templates {
+ 	    }
+     }
+ 
+-    if ($config->{'graph_strategy'} eq "cgi") {
++    if (munin_get($config, "graph_strategy", "cron") eq "cgi") {
+ 	map { $srv{$_} = $config->{'cgiurl_graph'} . "/" . $imgs{$_} } keys %imgs;
+     } else {
+ 	map { $srv{$_} = $root_path . "/" . $imgs{$_} } keys %imgs;
+@@ -500,7 +500,7 @@ sub generate_service_templates {
+ 	for my $scale (@times) {
+         # Don't try to find the size if cgi is enabled, 
+         # otherwise old data might pollute  
+-        next if ($config->{'graph_strategy'} eq "cgi");
++        next if (munin_get($config, "graph_strategy", "cron") eq "cgi");
+         if (my ($w, $h)
+             = get_png_size(munin_get_picture_filename($service, $scale))) {
+             $srv{"img" . $scale . "width"}  = $w;
+@@ -512,7 +512,7 @@ sub generate_service_templates {
+         $srv{imgweeksum} = "$srv{node}-week-sum.png";
+         $srv{imgyearsum} = "$srv{node}-year-sum.png";
+         for my $scale (["week", "year"]) {
+-            next if ($config->{'graph_strategy'} eq "cgi");
++            next if (munin_get($config, "graph_strategy", "cron") eq "cgi");
+             if (my ($w, $h)
+                 = get_png_size(munin_get_picture_filename($service, $scale, 1)))
+             {
+diff --git a/master/lib/Munin/Master/Logger.pm b/master/lib/Munin/Master/Logger.pm
+index f2f05ca..580357c 100644
+--- master/lib/Munin/Master/Logger.pm
++++ master/lib/Munin/Master/Logger.pm
+@@ -90,7 +90,7 @@ sub logger_open_stderr {
+ 	$logopened = 1;
+     }
+ 
+-    get_logger('')->info("Opened log file");
++    get_logger('')->debug("Opened log file");
+ 
+     # Get perl warnings into the log files
+     $SIG{__WARN__} = \&_warn_catcher;
+@@ -117,7 +117,7 @@ sub logger_open {
+ 	$logopened = 1;
+     }
+ 
+-    get_logger('')->info("Opened log file");
++    get_logger('')->debug("Opened log file");
+ 
+     # Get perl warnings into the log files
+     $SIG{__WARN__} = \&_warn_catcher;
