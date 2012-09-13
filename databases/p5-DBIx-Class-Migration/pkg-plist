@@ -13,6 +13,34 @@ bin/dbic-migration
 %%SITE_PERL%%/DBIx/Class/Migration/Sandbox.pm
 %%SITE_PERL%%/DBIx/Class/Migration/SchemaLoader.pm
 %%SITE_PERL%%/DBIx/Class/Migration/Script.pm
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/databases.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/delete_table_rows.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/diagram.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/downgrade.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/drop_tables.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/dsn.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/dump_all_sets.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/dump_named_sets.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/fixture_sets.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/force_overwrite.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/help.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/includes.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/install.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/install_if_needed.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/install_version_storage.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/make_schema.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/password.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/populate.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/prepare.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/sandbox_class.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/schema_class.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/status.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/target_dir.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/to_version.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/upgrade.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/username.pod
+%%SITE_PERL%%/DBIx/Class/Migration/Script/Help/version.pod
 %%SITE_PERL%%/DBIx/Class/Migration/ShareDirBuilder.pm
 %%SITE_PERL%%/DBIx/Class/Migration/SqliteSandbox.pm
 %%SITE_PERL%%/DBIx/Class/Migration/TargetDirSandboxBuilder.pm
@@ -33,6 +61,8 @@ bin/dbic-migration
 @dirrmtry %%SITE_PERL%%/Test/DBIx/Class
 @dirrmtry %%SITE_PERL%%/Test/DBIx
 @dirrm %%SITE_PERL%%/DBIx/Class/Migration/Tutorial
+@dirrm %%SITE_PERL%%/DBIx/Class/Migration/Script/Help
+@dirrm %%SITE_PERL%%/DBIx/Class/Migration/Script
 @dirrm %%SITE_PERL%%/DBIx/Class/Migration/RunScript/Trait
 @dirrm %%SITE_PERL%%/DBIx/Class/Migration/RunScript
 @dirrm %%SITE_PERL%%/DBIx/Class/Migration
