@@ -16,7 +16,9 @@ MARIADB_CLIENT_SLAVE=	yes
 
 CONFIGURE_ARGS=	--without-server --with-libevent=no
 
-OPTIONS=	THREADSAFE "Build thread-safe client" On
+OPTIONS_DEFINE=		THREADSAFE
+OPTIONS_DEFAULT=	THREADSAFE
+THREADSAFE_DESC=	Build thread-safe client
 
 CONFLICTS=	mysql-client-[0-9]*
 

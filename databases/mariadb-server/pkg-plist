@@ -189,15 +189,12 @@ bin/resolveip
 %%STATIC%%%%BLACKHOLE%%lib/mysql/plugin/ha_blackhole.la
 %%STATIC%%%%BLACKHOLE%%lib/mysql/plugin/ha_blackhole.so
 %%STATIC%%%%BLACKHOLE%%lib/mysql/plugin/ha_blackhole.so.0
-%%STATIC%%%%EXAMPLES%%lib/mysql/plugin/ha_example.a
 %%STATIC%%%%EXAMPLES%%lib/mysql/plugin/ha_example.la
 %%STATIC%%%%EXAMPLES%%lib/mysql/plugin/ha_example.so
 %%STATIC%%%%EXAMPLES%%lib/mysql/plugin/ha_example.so.0
-%%STATIC%%%%EXAMPLES%%lib/mysql/plugin/libdaemon_example.a
 %%STATIC%%%%EXAMPLES%%lib/mysql/plugin/libdaemon_example.la
 %%STATIC%%%%EXAMPLES%%lib/mysql/plugin/libdaemon_example.so
 %%STATIC%%%%EXAMPLES%%lib/mysql/plugin/libdaemon_example.so.0
-%%STATIC%%%%EXAMPLES%%lib/mysql/plugin/mypluglib.a
 %%STATIC%%%%EXAMPLES%%lib/mysql/plugin/mypluglib.la
 %%STATIC%%%%EXAMPLES%%lib/mysql/plugin/mypluglib.so
 %%STATIC%%%%EXAMPLES%%lib/mysql/plugin/mypluglib.so.0
@@ -269,6 +266,7 @@ include/mysql/private/log.h
 include/mysql/private/log_event.h
 include/mysql/private/log_event_old.h
 include/mysql/private/log_slow.h
+include/mysql/private/mem_root_array.h
 include/mysql/private/multi_range_read.h
 include/mysql/private/my_decimal.h
 include/mysql/private/mysql_priv.h
