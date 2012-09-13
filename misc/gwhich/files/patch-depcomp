@@ -1,0 +1,11 @@
+--- depcomp.orig	2012-09-11 08:57:17.000000000 +0200
++++ depcomp	2012-09-11 08:57:24.000000000 +0200
+@@ -98,7 +98,7 @@
+   done
+   
+   # Generate dependency file.
+-  "$@" -MT "$object" -M -MF "$tmpdepfile"
++  "$@" -MT "$object" -MD -MF "$tmpdepfile"
+   stat=$?
+   if test $stat -eq 0; then :
+   else
