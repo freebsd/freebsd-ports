@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ktoblzcheck
-PORTVERSION=	1.39
+PORTVERSION=	1.40
 CATEGORIES=	finance german
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -14,26 +14,24 @@ MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Check bank codes of German banks
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_GNOME=	gnomehack pkgconfig
-USE_GMAKE=	yes
+USE_GNOME=	gnomehack
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		ktoblzcheck.1
 
-OPTIONS=	PYTHON "Install Python bindings" off
+OPTIONS_DEFINE=	PYTHON
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PYTHON)
+.if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	yes
-PLIST_SUB+=	WITH_PYTHON=""
+PLIST_SUB+=	PYTHON=""
 .else
 CONFIGURE_ARGS+=--disable-python
-PLIST_SUB+=	WITH_PYTHON="@comment "
+PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .include <bsd.port.mk>
