@@ -15,10 +15,13 @@ bin/munindoc
 %%SITE_PERL%%/Munin/Node/Configure/PluginList.pm
 %%SITE_PERL%%/Munin/Node/Logger.pm
 %%SITE_PERL%%/Munin/Node/OS.pm
+%%SITE_PERL%%/Munin/Node/ProxySpooler.pm
 %%SITE_PERL%%/Munin/Node/SNMPConfig.pm
 %%SITE_PERL%%/Munin/Node/Server.pm
 %%SITE_PERL%%/Munin/Node/Service.pm
 %%SITE_PERL%%/Munin/Node/Session.pm
+%%SITE_PERL%%/Munin/Node/SpoolReader.pm
+%%SITE_PERL%%/Munin/Node/SpoolWriter.pm
 %%SITE_PERL%%/Munin/Node/Utils.pm
 %%SITE_PERL%%/Munin/Plugin.pm
 %%SITE_PERL%%/Munin/Plugin/Pgsql.pm
@@ -26,6 +29,7 @@ bin/munindoc
 sbin/munin-node
 sbin/munin-node-configure
 sbin/munin-run
+sbin/munin-sched
 %%DATADIR%%/plugins/amavis
 %%DATADIR%%/plugins/apache_accesses
 %%DATADIR%%/plugins/apache_processes
@@ -43,7 +47,6 @@ sbin/munin-run
 %%DATADIR%%/plugins/bind9
 %%DATADIR%%/plugins/bind9_rndc
 %%DATADIR%%/plugins/cmc_tc_sensor_
-%%DATADIR%%/plugins/colour_tester
 %%DATADIR%%/plugins/coretemp
 %%DATADIR%%/plugins/courier_
 %%DATADIR%%/plugins/courier_mta_mailqueue
@@ -57,11 +60,9 @@ sbin/munin-run
 %%DATADIR%%/plugins/dhcpd3
 %%DATADIR%%/plugins/digitemp_
 %%DATADIR%%/plugins/ejabberd_
-%%DATADIR%%/plugins/env
 %%DATADIR%%/plugins/exim_mailqueue
 %%DATADIR%%/plugins/exim_mailqueue_alt
 %%DATADIR%%/plugins/exim_mailstats
-%%DATADIR%%/plugins/extinfo_tester
 %%DATADIR%%/plugins/fail2ban
 %%DATADIR%%/plugins/foldingathome
 %%DATADIR%%/plugins/foldingathome_rank
@@ -71,20 +72,21 @@ sbin/munin-run
 %%DATADIR%%/plugins/freeradius_proxy_acct
 %%DATADIR%%/plugins/freeradius_proxy_auth
 %%DATADIR%%/plugins/haproxy_
+%%DATADIR%%/plugins/haproxy_ng
 %%DATADIR%%/plugins/hddtemp
 %%DATADIR%%/plugins/hddtemp2
 %%DATADIR%%/plugins/hddtemp_smartctl
 %%DATADIR%%/plugins/hddtempd
+%%DATADIR%%/plugins/hp2000_
 %%DATADIR%%/plugins/http_loadtime
-%%DATADIR%%/plugins/id
 %%DATADIR%%/plugins/if_
 %%DATADIR%%/plugins/if_errcoll_
 %%DATADIR%%/plugins/ifx_concurrent_sessions_
 %%DATADIR%%/plugins/iostat
 %%DATADIR%%/plugins/ipac-ng
+%%DATADIR%%/plugins/ipmi_
 %%DATADIR%%/plugins/ipmi_sensor_
 %%DATADIR%%/plugins/ircu
-%%DATADIR%%/plugins/jmx_
 %%DATADIR%%/plugins/load
 %%DATADIR%%/plugins/loggrep
 %%DATADIR%%/plugins/lpstat
@@ -94,7 +96,6 @@ sbin/munin-run
 %%DATADIR%%/plugins/memcached_
 %%DATADIR%%/plugins/memory
 %%DATADIR%%/plugins/mhttping
-%%DATADIR%%/plugins/multigraph_tester
 %%DATADIR%%/plugins/multiping
 %%DATADIR%%/plugins/multips
 %%DATADIR%%/plugins/multips_memory
@@ -126,6 +127,8 @@ sbin/munin-run
 %%DATADIR%%/plugins/open_files
 %%DATADIR%%/plugins/openvpn
 %%DATADIR%%/plugins/perdition
+%%DATADIR%%/plugins/pgbouncer_connections
+%%DATADIR%%/plugins/pgbouncer_requests
 %%DATADIR%%/plugins/ping_
 %%DATADIR%%/plugins/plugin.sh
 %%DATADIR%%/plugins/plugins.history
@@ -134,15 +137,19 @@ sbin/munin-run
 %%DATADIR%%/plugins/postfix_mailqueue
 %%DATADIR%%/plugins/postfix_mailstats
 %%DATADIR%%/plugins/postfix_mailvolume
+%%DATADIR%%/plugins/postgres_autovacuum
 %%DATADIR%%/plugins/postgres_bgwriter
 %%DATADIR%%/plugins/postgres_cache_
 %%DATADIR%%/plugins/postgres_checkpoints
 %%DATADIR%%/plugins/postgres_connections_
 %%DATADIR%%/plugins/postgres_connections_db
 %%DATADIR%%/plugins/postgres_locks_
+%%DATADIR%%/plugins/postgres_oldest_prepared_xact_
+%%DATADIR%%/plugins/postgres_prepared_xacts_
 %%DATADIR%%/plugins/postgres_querylength_
 %%DATADIR%%/plugins/postgres_scans_
 %%DATADIR%%/plugins/postgres_size_
+%%DATADIR%%/plugins/postgres_streaming_
 %%DATADIR%%/plugins/postgres_transactions_
 %%DATADIR%%/plugins/postgres_tuples_
 %%DATADIR%%/plugins/postgres_users
@@ -217,7 +224,6 @@ sbin/munin-run
 %%DATADIR%%/plugins/users
 %%DATADIR%%/plugins/varnish_
 %%DATADIR%%/plugins/vmstat
-%%DATADIR%%/plugins/warning_tester
 %%DATADIR%%/plugins/zimbra_
 @dirrmtry %%DBDIR%%/plugin-state
 @dirrmtry %%DBDIR%%

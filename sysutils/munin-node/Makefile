@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	munin
-PORTVERSION=	1.4.7
+PORTVERSION=	${MUNIN_VERSION}
 CATEGORIES=	sysutils perl5
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION}
+MASTER_SITES=	${MUNIN_SITES}
 PKGNAMESUFFIX=	-node
 
 MAINTAINER=	flo@FreeBSD.org
@@ -27,6 +27,8 @@ RUN_DEPENDS=	p5-Cache-Cache>=0:${PORTSDIR}/devel/p5-Cache-Cache \
 		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
 		bash:${PORTSDIR}/shells/bash
 
+DISTINFO_FILE=	${MUNIN_DISTINFO}
+EXTRA_PATCHES+=	${MUNIN_PATCHES}
 USE_PERL5=	yes
 USE_GMAKE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -40,6 +42,7 @@ INSTALL_TARGET=	install-node-prime install-plugins-prime
 MAN1=		munin-node-configure.1 \
 		munin-node.1 \
 		munin-run.1 \
+		munin-sched.1 \
 		munindoc.1
 MAN3_NODE=	Munin::Node::Config.3 \
 		Munin::Node::Configure::Debug.3 \
@@ -49,10 +52,13 @@ MAN3_NODE=	Munin::Node::Config.3 \
 		Munin::Node::Configure::PluginList.3 \
 		Munin::Node::Logger.3 \
 		Munin::Node::OS.3 \
+		Munin::Node::ProxySpooler.3 \
 		Munin::Node::SNMPConfig.3 \
 		Munin::Node::Server.3 \
 		Munin::Node::Service.3 \
 		Munin::Node::Session.3 \
+		Munin::Node::SpoolReader.3 \
+		Munin::Node::SpoolWriter.3 \
 		Munin::Node::Utils.3
 MAN3_PLUGIN=	Munin::Plugin.3 \
 		Munin::Plugin::Pgsql.3 \
@@ -62,7 +68,7 @@ MAN5=		munin-node.conf.5
 MAN8=		munin.8
 
 SUB_FILES=	pkg-message munin-node-revive.sh
-USE_RC_SUBR=	munin-node
+USE_RC_SUBR=	munin-node munin-sched
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \

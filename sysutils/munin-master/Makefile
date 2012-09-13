@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	munin
-PORTVERSION=	1.4.7
-PORTREVISION=	3
+PORTVERSION=	${MUNIN_VERSION}
 CATEGORIES=	sysutils perl5
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION}
+MASTER_SITES=	${MUNIN_SITES}
 PKGNAMESUFFIX=	-master
 
 MAINTAINER=	flo@FreeBSD.org
@@ -17,22 +16,30 @@ COMMENT=	Collector part of Munin
 
 BUILD_DEPENDS=	p5-Module-Build>=0:${PORTSDIR}/devel/p5-Module-Build \
 		munin-common>=0:${PORTSDIR}/sysutils/munin-common \
-		p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay \
 		rrdtool>=0:${PORTSDIR}/databases/rrdtool \
 		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable \
+		p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm \
 		p5-DateTime-HiRes>=0:${PORTSDIR}/devel/p5-DateTime-HiRes \
+		p5-File-Copy-Recursive>=0:${PORTSDIR}/devel/p5-File-Copy-Recursive \
 		p5-Getopt-Long>=0:${PORTSDIR}/devel/p5-Getopt-Long \
 		p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
+		p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6 \
 		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
+		p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay \
+		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
 		p5-Text-Balanced>=0:${PORTSDIR}/textproc/p5-Text-Balanced
 RUN_DEPENDS=	munin-common>=0:${PORTSDIR}/sysutils/munin-common \
 		rrdtool>=0:${PORTSDIR}/databases/rrdtool \
-		p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay \
+		p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm \
 		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable \
 		p5-DateTime-HiRes>=0:${PORTSDIR}/devel/p5-DateTime-HiRes \
+		p5-File-Copy-Recursive>=0:${PORTSDIR}/devel/p5-File-Copy-Recursive \
 		p5-Getopt-Long>=0:${PORTSDIR}/devel/p5-Getopt-Long \
 		p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
+		p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6 \
 		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
+		p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay \
+		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
 		p5-Text-Balanced>=0:${PORTSDIR}/textproc/p5-Text-Balanced
 
 USE_PERL5=	yes
@@ -41,7 +48,9 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include "${.CURDIR}/../munin-common/munin.mk"
 
-ALL_TARGET=	build-master build-man
+EXTRA_PATCHES=	${MUNIN_PATCHES}
+DISTINFO_FILE=	${MUNIN_DISTINFO}
+ALL_TARGET=	infiles build-master build-man
 INSTALL_TARGET=	install-master-prime
 
 MAN3=		Munin::Master::Config.3 \
@@ -79,6 +88,7 @@ pre-install:
 
 post-install:
 	@${CHOWN} ${USERS}:${GROUPS} ${DBDIR} ${STATEDIR} ${WWWDIR}
+	@${CHOWN} ${WWWOWN} ${DBDIR}/cgi-tmp
 	@${INSTALL_DATA} ${WRKSRC}/build/master/munin.conf \
 		${PREFIX}/etc/munin/munin.conf.sample
 	@(cd ${WRKSRC}/master/blib/libdoc && for man in ${MAN3}; do \

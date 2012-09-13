@@ -1,12 +1,13 @@
 %%SITE_PERL%%/Munin/Common/Config.pm
 %%SITE_PERL%%/Munin/Common/Defaults.pm
+%%SITE_PERL%%/Munin/Common/DictFile.pm
+%%SITE_PERL%%/Munin/Common/SyncDictFile.pm
 %%SITE_PERL%%/Munin/Common/TLS.pm
 %%SITE_PERL%%/Munin/Common/TLSClient.pm
 %%SITE_PERL%%/Munin/Common/TLSServer.pm
 %%SITE_PERL%%/Munin/Common/Timeout.pm
 @dirrm %%SITE_PERL%%/Munin/Common
 @dirrm %%SITE_PERL%%/Munin
-@exec mkdir -p %%LOGDIR%%
-@unexec /bin/rmdir %%LOGDIR%% 2>/dev/null || /usr/bin/true
-@exec mkdir -p %%STATEDIR%%
-@unexec /bin/rmdir %%STATEDIR%% 2>/dev/null || /usr/bin/true
+@exec mkdir -p %%LOGDIR%% %%STATEDIR%% %%SPOOLDIR%%
+@exec chown %%USER%%:%%GROUP%% %%LOGDIR%% %%STATEDIR%% %%SPOOLDIR%%
+@unexec rmdir %%LOGDIR%% %%STATEDIR%% %%SPOOLDIR%% 2>/dev/null || /usr/bin/true

@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	munin
-PORTVERSION=	1.4.7
+PORTVERSION=	${MUNIN_VERSION}
 CATEGORIES=	sysutils perl5
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION}
+MASTER_SITES=	${MUNIN_SITES}
 PKGNAMESUFFIX=	-common
 
 MAINTAINER=	flo@FreeBSD.org
@@ -24,6 +24,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 .include "${.CURDIR}/../munin-common/munin.mk"
 
+USERS=		${MUNIN_USER}
+GROUPS=		${MUNIN_GROUP}
+
 ALL_TARGET=	build-common-prime
 INSTALL_TARGET=	install-common
 
@@ -35,8 +38,8 @@ MAN3=		Munin::Common::Config.3 \
 		Munin::Common::Timeout.3
 
 post-install:
-	@${MKDIR} ${LOGDIR}
-	@${CHOWN} ${USERS}:${GROUPS} ${LOGDIR}
+	@${MKDIR} ${LOGDIR} ${STATEDIR} ${SPOOLDIR}
+	@${CHOWN} ${USERS}:${GROUPS} ${LOGDIR} ${STADEDIR} ${SPOOLDIR}
 	@(cd ${WRKSRC}/common/blib/libdoc && for man in ${MAN3} ; do \
 		${INSTALL_MAN} -C $$man ${PREFIX}/man/man3; \
 	done)
