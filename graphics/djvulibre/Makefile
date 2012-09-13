@@ -7,6 +7,7 @@
 
 PORTNAME=	djvulibre
 PORTVERSION=	3.5.25.3
+PORTREVISION=	1
 CATEGORIES=	graphics www
 MASTER_SITES=	SF/djvu/DjVuLibre/${PORTVERSION:R}
 
@@ -29,6 +30,7 @@ CONFIGURE_ENV=	JPEG_CFLAGS="-I${LOCALBASE}/include" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--enable-threads=pthread --enable-shared
 USE_LDCONFIG=	yes
+CONFLICTS=	djvulibre-nox11-3*
 WRKSRC =	${WRKDIR}/${DISTNAME:R}
 
 OPTIONS_DEFINE =	ANY2DJVU
