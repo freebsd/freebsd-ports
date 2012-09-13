@@ -105,12 +105,16 @@ lib/collectd/uptime.la
 lib/collectd/uptime.so
 lib/collectd/uuid.la
 lib/collectd/uuid.so
+%%VIRT%%lib/collectd/libvirt.la
+%%VIRT%%lib/collectd/libvirt.so
 lib/collectd/write_graphite.so
 lib/collectd/write_graphite.la
 lib/libcollectdclient.la
 lib/libcollectdclient.so
 lib/libcollectdclient.so.0
 libdata/pkgconfig/libcollectdclient.pc
+%%WRITE_HTTP%%lib/collectd/write_http.la
+%%WRITE_HTTP%%lib/collectd/write_http.so
 %%XMMS%%lib/collectd/xmms.la
 %%XMMS%%lib/collectd/xmms.so
 %%DATADIR%%/postgresql_default.conf
