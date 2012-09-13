@@ -13,6 +13,8 @@ MASTER_SITES=	http://diakonos.pist0s.ca/archives/
 MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	A Linux editor for the masses
 
+LICENSE=	MIT
+
 USE_RUBY=	yes
 RUBY_VER=	1.9
 
