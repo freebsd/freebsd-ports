@@ -1,9 +1,4 @@
-# Ports collection makefile for:	splix
-# Date created:				2007-03-30
-# Whom:					Tomas Verbaitis <tomasv@megalogika.lt>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	splix
 PORTVERSION=	2.0.0
@@ -12,9 +7,8 @@ CATEGORIES?=	print
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A set of CUPS printer drivers for Samsung Printer Language printers
+COMMENT=	CUPS printer drivers for Samsung Printer Language printers
 
-LIB_DEPENDS=
 BUILD_DEPENDS=	cups-config:${PORTSDIR}/print/cups-base
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
@@ -43,29 +37,29 @@ DEST_DIR_DELL=	${CUPS_DATA_DIR}/model/dell
 DEST_DIR_SAMSUNG=	${CUPS_DATA_DIR}/model/samsung
 DEST_DIR_XEROX=	${CUPS_DATA_DIR}/model/xerox
 
-THREADS=	2
-WITH_THREADS=	1
-
-OPTIONS=	JBIG "Enable use of JBIG algorithm (pattented)" on \
-		BLACKOPTIM "Enable black correction algorithm" on \
+OPTIONS_DEFINE=	JBIG BLACKOPTIM
+JBIG_DESC=	Enable use of JBIG algorithm (pattented)
+BLACKOPTIM_DESC=	Enable black correction algorithm
+OPTIONS_DEFAULT=	JBIG BLACKOPTIM
 
 .include "bsd.port.options.mk"
 
-.include "bsd.port.pre.mk"
+post-patch:
+	@${REINPLACE_CMD} -e '/^CC.*:= gcc/d' -e '/^CXX.*:= g++/d' \
+		-e 's/make/gmake/' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's/g++/$$(CXX)/' ${WRKSRC}/rules.mk
 
 post-configure:
 
-.if !defined(WITHOUT_JBIG)
+.if ${PORT_OPTIONS:MJBIG}
 PPD_SAMSUNG+=	${PPD_SAMSUNG_JBIG}
 PPD_XEROX+=	${PPD_XEROX_JBIG}
-LIB_DEPENDS=	jbig:${PORTSDIR}/graphics/jbigkit
-.endif
-
-.if defined(WITHOUT_JBIG)
+LIB_DEPENDS+=	jbig:${PORTSDIR}/graphics/jbigkit
+.else
 MAKE_ARGS+=	DISABLE_JBIG=1
 .endif
 
-.if defined(WITHOUT_BLACKOPTIM)
+.if empty(PORT_OPTIONS:MBLACKOPTIM)
 MAKE_ARGS+=	DISABLE_BLACKOPTIM=1
 .endif
 
@@ -85,4 +79,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/optimized/${FILTER} ${BIN_DEST_DIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
