@@ -10,8 +10,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: rm@FreeBSD.org
 
   If you have both sysutils/bacula-server and sysutils/bacula-client
-  installed, you need to pkg_delete sysutils/bacula-server and
-  sysutils/bacula-fd prior to this update.
+  installed, you need to pkg_delete them both prior to this update.
 
 20120910:
   AFFECTS: users of www/libxul
