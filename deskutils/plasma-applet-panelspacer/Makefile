@@ -13,7 +13,7 @@ MASTER_SITES=	http://danakil.free.fr/linux/releases/${PORTNAME}-${PORTVERSION}/
 PKGNAMEPREFIX=	plasma-applet-
 DISTNAME=	${PORTNAME}-plasmoid-${PORTVERSION}
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Panel spacer plasma applet for KDE4
 
 USE_CMAKE=	yes

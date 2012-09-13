@@ -13,7 +13,7 @@ MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
 		http://ftp.uk.musicbrainz.org/pub/musicbrainz/picard/ \
 		http://ftp.osuosl.org/pub/musicbrainz/picard/
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Next generation MusicBrainz Tagger
 
 LICENSE=	GPLv2

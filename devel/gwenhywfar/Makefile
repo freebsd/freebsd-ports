@@ -6,7 +6,7 @@ PORTREVISION?=	3
 CATEGORIES=	devel net security
 MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=01&release=67&file=01&dummy=/
 
-MAINTAINER?=	bsdkaffee@gmail.com
+MAINTAINER?=	jhale@FreeBSD.org
 COMMENT?=	Multi-platform helper library for networking and security applications
 
 LICENSE=	LGPL21

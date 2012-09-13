@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/ \
     		http://uk.musicbrainz.org/pub/musicbrainz/ \
 		http://ftp.osuosl.org/pub/musicbrainz/
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	2nd generation incarnation of the CD Index - audio metadata
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2

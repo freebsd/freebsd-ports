@@ -12,7 +12,7 @@ CATEGORIES=	deskutils kde
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	plasma-applet-
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Weather plasma applet for KDE4
 
 LICENSE=	GPLv2

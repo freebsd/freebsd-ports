@@ -10,7 +10,7 @@ PORTVERSION=	0.9.5
 CATEGORIES=	finance
 MASTER_SITES=	SF
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	OpenSource implementation of the OFX (Open Financial eXchange)
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \

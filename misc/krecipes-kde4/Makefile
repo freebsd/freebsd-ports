@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	misc kde
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Recipe database for KDE4
 
 LICENSE=	GPLv2

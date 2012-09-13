@@ -10,7 +10,7 @@ PORTVERSION=	0.5.2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Duplicate file finder
 
 LICENSE=	ZLIB

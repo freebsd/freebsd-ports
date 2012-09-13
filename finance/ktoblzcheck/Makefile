@@ -10,7 +10,7 @@ PORTVERSION=	1.39
 CATEGORIES=	finance german
 MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Check bank codes of German banks
 
 LICENSE=	GPLv2

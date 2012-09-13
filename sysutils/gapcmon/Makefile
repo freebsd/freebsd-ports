@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Monitor apcupsd with GTK+2 GUI
 
 SUB_FILES=	pkg-message

@@ -6,7 +6,7 @@ PORTREVISION=	3
 CATEGORIES=	finance kde
 MASTER_SITES=	SF/${PORTNAME}2/KMyMoney-KDE4/${PORTVERSION}
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	KDE 4.x-based personal finance manager
 
 LICENSE=	GPLv2

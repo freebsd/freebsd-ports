@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/
 PKGNAMEPREFIX=	plasma-applet-
 DISTNAME=	85564-TeaCooker
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Tea cooker plasma applet for KDE4
 
 USE_CMAKE=	yes

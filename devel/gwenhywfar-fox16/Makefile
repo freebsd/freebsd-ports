@@ -3,7 +3,7 @@
 PORTREVISION=	0
 PKGNAMESUFFIX=	-${SLAVEPORT}
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Gwenhywfar FOX-1.6 support library
 
 MASTERDIR=	${.CURDIR}/../../devel/gwenhywfar

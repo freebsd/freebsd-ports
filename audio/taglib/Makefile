@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://cloud.github.com/downloads/taglib/taglib/ \
 		http://developer.kde.org/~wheeler/files/src/
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Library for manipulating ID3 tags and Ogg comments
 
 LICENSE=	LGPL21 MPL
