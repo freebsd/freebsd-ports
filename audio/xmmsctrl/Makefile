@@ -14,7 +14,7 @@ MASTER_SITES=	http://user.it.uu.se/~adavid/utils/ \
 		http://ftp.nluug.nl/os/Linux/distr/pdaxrom/src/ \
 		http://www.sourcefiles.org/Multimedia/MP3/Tools/Miscellaneous/
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	A small utility to control XMMS from the command line
 
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms

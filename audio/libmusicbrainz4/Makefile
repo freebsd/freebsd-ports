@@ -10,7 +10,7 @@ PORTVERSION=	4.0.3
 CATEGORIES=	audio
 MASTER_SITES=	https://cloud.github.com/downloads/metabrainz/${PORTNAME}/
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	MusicBrainz client library for audio metadata lookup
 
 LICENSE=	LGPL21

@@ -12,7 +12,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}-latest/ \
 		SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Progressive Graphics Format (PGF) library
 
 LICENSE=	LGPL21

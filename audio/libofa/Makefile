@@ -11,7 +11,7 @@ PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	The Open Fingerprint Architecture Library
 
 LICENSE=		APL1 GPLv2

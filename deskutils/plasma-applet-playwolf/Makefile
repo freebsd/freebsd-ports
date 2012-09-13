@@ -12,7 +12,7 @@ CATEGORIES=	deskutils kde
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	plasma-applet-
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Amarok 2.x plasma applet for KDE4
 
 USE_BZIP2=	yes

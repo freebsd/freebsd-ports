@@ -11,7 +11,7 @@ CATEGORIES=	audio kde
 MASTER_SITES=	http://linux.wuertz.org/dists/sid/main/source/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Fullscreen mode for Amarok 2.x
 
 RUN_DEPENDS=	amarok>=2:${PORTSDIR}/audio/amarok-kde4

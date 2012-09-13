@@ -11,7 +11,7 @@ CATEGORIES=	net-p2p java
 MASTER_SITES=	SF/${PORTNAME}/Phex%20Final%20Releases/Phex%203.4.2
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	A Java multi platform and spyware free gnutella client
 
 USE_JAVA=	yes

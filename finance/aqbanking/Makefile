@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=03&release=95&file=01&dummy=/
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Online banking interface and financial data framework
 
 LICENSE=	GPLv2 GPLv3

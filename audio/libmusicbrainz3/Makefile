@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/ \
 		http://uk.musicbrainz.org/pub/musicbrainz/ \
 		http://ftp.osuosl.org/pub/musicbrainz/
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	MusicBrainz client library for audio metadata lookup
 
 LICENSE=	LGPL21

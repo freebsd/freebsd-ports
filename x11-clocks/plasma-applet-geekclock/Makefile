@@ -13,7 +13,7 @@ MASTER_SITES=	http://w2f2.com/projects/${PORTNAME}/
 PKGNAMEPREFIX=	plasma-applet-
 DISTNAME=	geek-clock-plasmoid-${PORTVERSION}-src
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Geeky analog clock plasma applet for KDE4
 
 USE_CMAKE=	yes

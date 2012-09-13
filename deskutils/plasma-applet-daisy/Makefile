@@ -12,7 +12,7 @@ MASTER_SITES=	http://cdlszm.org/downloads/
 PKGNAMEPREFIX=	plasma-applet-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Simple launcher plasma applet for KDE4
 
 LICENSE=	GPLv3

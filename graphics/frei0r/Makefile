@@ -14,7 +14,7 @@ MASTER_SITES?=	http://piksel.no/${PORTNAME}/releases/ \
 		ftp://ftp.dyne.org/${PORTNAME}/releases/ \
 		http://distfiles.macports.org/${PORTNAME}-plugins/
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT?=	Minimalistic plugin API for video effects
 
 .if !defined(BUILDING_FREI0R_METAPORT)

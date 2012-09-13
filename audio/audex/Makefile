@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	audio kde
 MASTER_SITES=	http://kde.maniatek.com/${PORTNAME}/files/
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Audio CD ripping utility for KDE4
 
 LIB_DEPENDS=	cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia \

@@ -13,7 +13,7 @@ MASTER_SITES=	http://users.musicbrainz.org/~matt/ \
 		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	A library for creating MusicBrainz DiscIDs
 
 LICENSE=	LGPL21

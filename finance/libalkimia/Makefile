@@ -12,7 +12,7 @@ CATEGORIES=	finance kde
 MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
 DISTNAME=	137323-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Financial data handling library for KDE4
 
 LICENSE=	LGPL21
