@@ -8,7 +8,7 @@
 
 PORTNAME=	pyzor
 PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail python
 MASTER_SITES=	SF
 
@@ -22,8 +22,8 @@ USE_PYDISTUTILS=	yes
 MAN1=		pyzor.1 pyzord.1
 
 post-patch:
-	${REINPLACE_CMD} -e "s,/usr/bin/python2,${PYTHON_CMD}," \
-		${WRKSRC}/scripts/pyzor ${WRKSRC}/scripts/pyzord
+	${REINPLACE_CMD} -e '1s,^#!/usr/bin/python,#!/usr/bin/env -S python -Wignore::DeprecationWarning,' \
+	${WRKSRC}/scripts/pyzor ${WRKSRC}/scripts/pyzord
 
 post-install:
 	${CHMOD} ${SHAREMODE} ${DOCSDIR}/usage.html
