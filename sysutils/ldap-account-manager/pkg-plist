@@ -1,3 +1,4 @@
+$FreeBSD$
 @unexec if cmp -s %D/%%WWWDIR%%/config/config.cfg %D/%%WWWDIR%%/config/config.cfg_sample; then rm -f %D/%%WWWDIR%%/config/config.cfg; fi
 @exec if [ ! -f %D/%%WWWDIR%%/config/config.cfg ] ; then cp -p %D/%F %B/config.cfg; fi
 @unexec if cmp -s %D/%%WWWDIR%%/config/lam.conf %D/%%WWWDIR%%/config/lam.conf_sample; then rm -f %D/%%WWWDIR%%/config/lam.conf; fi
@@ -814,6 +815,7 @@
 %%WWWDIR%%/graphics/user.png
 %%WWWDIR%%/graphics/up.gif
 %%WWWDIR%%/graphics/uniquegroup.png
+%%WWWDIR%%/graphics/unlocked.png
 %%WWWDIR%%/graphics/undo.png
 %%WWWDIR%%/graphics/uid.png
 %%WWWDIR%%/graphics/tux.png
@@ -842,6 +844,7 @@
 %%WWWDIR%%/graphics/plus.png
 %%WWWDIR%%/graphics/pdf.png
 %%WWWDIR%%/graphics/pass.png
+%%WWWDIR%%/graphics/partiallyLocked.png
 %%WWWDIR%%/graphics/ou.png
 %%WWWDIR%%/graphics/object.png
 %%WWWDIR%%/graphics/o.png

@@ -1,13 +1,7 @@
-# New ports collection makefile for:   	ldap-account-manager
-# Date created:				August, 2nd 2003
-# Whom:                			Clement Laforet <sheepkiller@cultdeadsheep.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ldap-account-manager
-PORTVERSION=	3.7
-PORTREVISION=	1
+PORTVERSION=	3.8
 CATEGORIES=	sysutils www
 MASTER_SITES=	SF/${SHORTNAME}/LAM/${PORTVERSION}
 
