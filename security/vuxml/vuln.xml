@@ -51,6 +51,56 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="178ba4ea-fd40-11e1-b2ae-001fd0af1a4c">
+    <topic>mod_pagespeed -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>mod_pagespeed</name>
+        <range><lt>0.10.22.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Google Reports:</p>
+        <blockquote cite="https://developers.google.com/speed/docs/mod_pagespeed/announce-0.10.22.6">
+          <p>mod_pagespeed 0.10.22.6 is a security update that fixes two
+             critical issues that affect earlier versions:</p>
+          <ul>
+            <li>CVE-2012-4001, a problem with validation of own host name.</li>
+            <li>CVE-2012-4360, a cross-site scripting attack, which affects versions starting from 0.10.19.1.</li>
+          </ul>
+          <p>The effect of the first problem is that it is possible to confuse
+             mod_pagespeed about its own host name, and to trick it into
+             fetching resources from other machines. This could be an issue if
+             the HTTP server has access to machines that are not otherwise
+             publicly visible.</p>
+          <p>The second problem would permit a hostile third party to execute
+             JavaScript in users' browsers in context of the domain running
+             mod_pagespeed, which could permit interception of users' cookies or
+             data on the site.</p>
+          <p>Because of the severity of the two problems, users are strongly
+             encouraged to update immediately.</p>
+          <p>Behavior Changes in the Update:</p>
+          <p>As part of the fix to the first issue, mod_pagespeed will not fetch
+             resources from machines other than localhost if they are not
+             explicitly mentioned in the configuration. This means that if you
+             need resources on the server's domain to be handled by some other
+             system, you'll need to explicitly use ModPagespeedMapOriginDomain
+             or ModPagespeedDomain to authorize that.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-4001</cvename>
+      <cvename>CVE-2012-4360</cvename>
+      <url>https://developers.google.com/speed/docs/mod_pagespeed/announce-0.10.22.6</url>
+    </references>
+    <dates>
+      <discovery>2012-09-12</discovery>
+      <entry>2012-09-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3bbbe3aa-fbeb-11e1-8bd8-0022156e8794">
     <topic>freeradius -- arbitrary code execution for TLS-based authentication</topic>
     <affects>
