@@ -85,14 +85,16 @@ CONFIGURE_ARGS+=	--with-pdf=${LOCALBASE} --with-tiff=${LOCALBASE} --with-png=${L
 .endif
 
 .if ${PORT_OPTIONS:MWMS}
-WITH_CURL=		yes
-CONFIGURE_ARGS+=	--with-wms --with-wmsclient
+LIB_DEPENDS+=		curl:${PORTSDIR}/ftp/curl
+CONFIGURE_ARGS+=	--with-curl=${LOCALBASE} --with-wms --with-wmsclient
 .endif
 
 .if ${PORT_OPTIONS:MWFS}
-WITH_CURL=		yes
-WITH_GDAL=		yes
-CONFIGURE_ARGS+=	--with-wfs --with-wfsclient
+LIB_DEPENDS+=		curl:${PORTSDIR}/ftp/curl \
+			gdal:${PORTSDIR}/graphics/gdal
+CONFIGURE_ARGS+=	--with-wfs --with-wfsclient --with-curl=${LOCALBASE} \
+			--with-gdal=${LOCALBASE}/bin/gdal-config \
+			--with-ogr=${LOCALBASE}/bin/gdal-config
 .endif
 
 .if ${PORT_OPTIONS:MGDAL}
