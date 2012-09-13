@@ -6,10 +6,8 @@
 #
 
 PORTNAME=	ricty
-PORTVERSION=	3.2.0
-PORTREVISION=	2
+PORTVERSION=	3.2.1b
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	https://nodeload.github.com/yascentur/Ricty/tarball/${PORTVERSION}?dummy=/
 PKGNAMEPREFIX=	ja-font-
 
 MAINTAINER=	masaki@club.kyutech.ac.jp
@@ -17,12 +15,17 @@ COMMENT=	Ricty - fonts for programming
 
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 BUILD_DEPENDS=	${LOCALBASE}/${X_FONTSDIR}/OTF/Inconsolata.otf:${PORTSDIR}/x11-fonts/inconsolata-ttf \
-				${LOCALBASE}/${X_FONTSDIR}/TTF/migu-1m-regular.ttf:${PORTSDIR}/japanese/font-migu \
-				${LOCALBASE}/${X_FONTSDIR}/TTF/migu-1m-bold.ttf:${PORTSDIR}/japanese/font-migu \
-				fontforge:${PORTSDIR}/print/fontforge
+		${LOCALBASE}/${X_FONTSDIR}/TTF/migu-1m-regular.ttf:${PORTSDIR}/japanese/font-migu \
+		${LOCALBASE}/${X_FONTSDIR}/TTF/migu-1m-bold.ttf:${PORTSDIR}/japanese/font-migu \
+		fontforge:${PORTSDIR}/print/fontforge
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	yascentur
+GH_COMMIT=	${GH_TAGNAME}
+GH_PROJECT=	Ricty
+GH_TAGNAME=	dfd3637
 
 NO_PACKAGE=	redistribution is not allowed
-FETCH_BEFORE_ARGS=	-o ${DISTNAME}${EXTRACT_SUFX}
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
 SUB_FILES=	pkg-install
@@ -30,8 +33,6 @@ SUB_LIST=	X_FONTSDIR=${PREFIX}/${X_FONTSDIR}
 PLIST_SUB=	X_FONTSDIR=${X_FONTSDIR} \
 		LOCAL_FONTSDIR=${LOCAL_FONTSDIR}
 PORTDOCS=	README.md
-TAG=	b9d8b9c
-WRKSRC=	${WRKDIR}/yascentur-Ricty-${TAG}
 
 LOCAL_FONTSDIR=	share/fonts
 X_FONTSDIR=	lib/X11/fonts
