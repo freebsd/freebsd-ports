@@ -99,8 +99,7 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 # PYTHONPREFIX_LIBDIR		default: ${PREFIX}/lib/${PYTHON_VERSION}
 # PYTHONPREFIX_SITELIBDIR	default: ${PYTHONPREFIX_LIBDIR}/site-packages
 #
-# PYDISTUTILS		- Dependency line for the distutils extension. As of
-#					  Python-2.0, the distutils are in the base distribution.
+# PYGAME			- Dependency line for the Pygame library.
 #
 # PYNUMERIC			- Dependency line for the numeric extension.
 #
@@ -525,7 +524,7 @@ ZOPEPRODUCTDIR?=		Products
 .endif
 
 # Python 3rd-party modules
-PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PYTHON_PORTSDIR}
+PYGAME=		${PYTHON_PKGNAMEPREFIX}game>0:${PORTSDIR}/devel/py-game
 PYNUMERIC=		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
 PYNUMPY=		${PYTHON_SITELIBDIR}/numpy/core/numeric.py:${PORTSDIR}/math/py-numpy
 PYXML=			${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
