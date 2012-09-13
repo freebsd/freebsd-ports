@@ -7,6 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	10.7.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -52,10 +53,19 @@ OPTIONS_DEFAULT= VORBIS ODBC UNIXODBC PGSQL RADIUS SNMP H323 FREETDS JABBER GSM 
 OPTIONS_SINGLE=	ODBC
 OPTIONS_SINGLE_ODBC=	IODBC UNIXODBC
 
+OPTIONS_DEFINE_i386= DAHDI
+OPTIONS_DEFINE_amd64= DAHDI
+OPTIONS_DEFINE_sparc64= DAHDI
+
+OPTIONS_DEFAULT_i386= DAHDI
+OPTIONS_DEFAULT_amd64= DAHDI
+OPTIONS_DEFAULT_sparc64= DAHDI
+
 EXCHANGE_DESC?=	Exchange calendar support
 NEWG711_DESC?=	New G711 Codec
 SRTP_DESC?=	SecureRTP support
 OOH323_DESC?=	ooh323 support
+DAHDI_DESC?=	DAHDI support
 
 ASTERISK_USER?=		asterisk
 ASTERISK_GROUP?=	asterisk
@@ -69,12 +79,6 @@ GROUPS=	${ASTERISK_GROUP} dahdi
 VARDIR=/var
 .else
 VARDIR=${PREFIX}/var
-.endif
-
-.if ${ARCH} == "i386" || ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-OPTIONS_DEFINE+=	DAHDI
-OPTIONS_DEFAULT+=	DAHDI
-DAHDI_DESC?=	DAHDI support
 .endif
 
 SUB_LIST+=	ASTERISK_USER=${ASTERISK_USER}
@@ -149,10 +153,10 @@ CONFIGURE_ARGS+=	--without-postgres
 .if ${PORT_OPTIONS:MMYSQL}
 PLIST_SUB+=	WITH_MYSQL=""
 USE_MYSQL=	yes
-CONFIGURE_ARGS+=	--with-mysql
+CONFIGURE_ARGS+=	--with-mysqlclient
 .else
 PLIST_SUB+=	WITH_MYSQL="@comment "
-CONFIGURE_ARGS+=	--without-mysql
+CONFIGURE_ARGS+=	--without-mysqlclient
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
