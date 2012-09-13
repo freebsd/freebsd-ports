@@ -1,20 +1,15 @@
-# New ports collection makefile for:	ebview
-# Date Created:		28 Jan 2002
-# Whom:			Yoichi NAKAYAMA <yoichi@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ebview
 PORTVERSION=	0.2.1
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	japanese
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Electronic Book Viewer
 
-LIB_DEPENDS=	eb.15:${PORTSDIR}/japanese/eb
+LIB_DEPENDS=	eb:${PORTSDIR}/japanese/eb
 
 CONFLICTS=	ja-ebview-gtk2-*
 

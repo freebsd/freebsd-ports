@@ -1,5 +1,5 @@
-SHA256 (eb/eb-4.4.2.tar.bz2) = 3abb92211e0c04640973a93ece1914da0895486fe784a7dac2ced091c64500d6
-SIZE (eb/eb-4.4.2.tar.bz2) = 505293
+SHA256 (eb/eb-4.4.3.tar.bz2) = abe710a77c6fc3588232977bb2f30a2e69ddfbe9fa8d0b05b0d67d95e36f4b5f
+SIZE (eb/eb-4.4.3.tar.bz2) = 505510
 SHA256 (eb/appendix/cencro-1.0.tar.gz) = 02d7937f4cd0b3bebb23f9d5917a261d382b4f1004b3b49830c64762d58a02e5
 SIZE (eb/appendix/cencro-1.0.tar.gz) = 1666
 SHA256 (eb/appendix/chujiten-2.3.tar.gz) = 07bb4ae37b8e3bfaa219dc243b70db5ccce1e30a574f43e53c083c36f69090ba
@@ -32,6 +32,8 @@ SHA256 (eb/appendix/global-2.0.tar.gz) = 756310bc9434e20e8a5f7043f4acf7085ef8c2c
 SIZE (eb/appendix/global-2.0.tar.gz) = 4034
 SHA256 (eb/appendix/heritage-2.2.tar.gz) = 67974914e27c6874d7520b4c7ce90c56da959631d7edd602a29e902b2ee86997
 SIZE (eb/appendix/heritage-2.2.tar.gz) = 3968
+SHA256 (eb/appendix/hyogen-1.0.tar.gz) = fe2e6fa528c0ba689051ed068182f9554f9c3cbe73972dca27f97c9a2a977ad8
+SIZE (eb/appendix/hyogen-1.0.tar.gz) = 1309
 SHA256 (eb/appendix/izumi-2.0.tar.gz) = be358a301d4f4e51f0c97930baab80960ba84fc32ee3b06095d6b860bc43d0ce
 SIZE (eb/appendix/izumi-2.0.tar.gz) = 984
 SHA256 (eb/appendix/jitenban-2.4.tar.gz) = d02941a6991400bf0dfdb0b075ca0827a30147691347294b674ab7bdbbbd3204
