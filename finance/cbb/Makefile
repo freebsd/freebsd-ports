@@ -6,29 +6,28 @@
 #
 
 PORTNAME=	cbb
-PORTVERSION=	0.8.1
-PORTREVISION=	1
+DISTVERSION=	0.9.5b
 CATEGORIES=	finance deskutils
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-0.8%20%28stable%29/${PORTVERSION}
+MASTER_SITES=	http://download.gna.org/cbb/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kline@thought.org
 COMMENT=	Checkbook balancing tool
 
-RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
+USE_TK=		yes
 
 NO_BUILD=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-perl=${PERL} \
+		--with-wish=${WISH}
+WRKSRC=		${WRKDIR}/${PKGNAME:R}
+PLIST_SUB+=	VERSION=${PORTVERSION:R:R}
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|PERL = /usr/bin/perl|PERL = ${PERL5}|" \
-			-e "s|WISH = /usr/bin/wish|WISH = ${LOCALBASE}/bin/wish8.2|" \
-			-e "s|DESTDIR =||" ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} "s|DESTDIR =||" ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|$$destdir/bin|$$prefix/bin|' \
-			-e 's|$$destdir/lib/cbb|$$prefix/lib/cbb|' \
-			${WRKSRC}/install.pl
-	@${REINPLACE_CMD} -e "s|=wish|=wish8.2|" -e 's|=""wish""|=""wish8.2""|' \
-			${WRKSRC}/configure
+	${REINPLACE_CMD}  -e 's|.aboutwin.frame.a.l6 ||' \
+	    ${WRKSRC}/tcl/help.tcl
+	${REINPLACE_CMD}  -e 's|%4Y%02m%02d|%Y%m%d|' \
+	    ${WRKSRC}/tcl/main.tcl
 
 .include <bsd.port.mk>
