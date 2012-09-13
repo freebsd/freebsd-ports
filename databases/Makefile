@@ -704,6 +704,7 @@
     SUBDIR += py-memcached
     SUBDIR += py-migrate
     SUBDIR += py-mssql
+    SUBDIR += py-mysql2pgsql
     SUBDIR += py-odbc
     SUBDIR += py-oops
     SUBDIR += py-pg8000
