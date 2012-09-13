@@ -16,6 +16,9 @@ DISTNAME=	Guppi-${PORTVERSION}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A plotting program for GNOME
 
+DEPRECATED=	Not developed anymore
+EXPIRATION_DATE=2012-10-13
+
 LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile
 
 USE_BZIP2=	yes
