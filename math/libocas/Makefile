@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libocas
-PORTVERSION=	0.95
+PORTVERSION=	0.96
 CATEGORIES=	math
 MASTER_SITES=	http://cmp.felk.cvut.cz/~xfrancv/ocas/ LOCAL/bf
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}
