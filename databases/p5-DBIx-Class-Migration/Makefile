@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class-Migration
-PORTVERSION=	0.026
+PORTVERSION=	0.030
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -55,6 +55,34 @@ MAN3=	Catalyst::TraitFor::Model::DBIC::Schema::FromMigration.3 \
 	DBIx::Class::Migration::Sandbox.3 \
 	DBIx::Class::Migration::SchemaLoader.3 \
 	DBIx::Class::Migration::Script.3 \
+	DBIx::Class::Migration::Script::Help.3 \
+	DBIx::Class::Migration::Script::Help::databases.3 \
+	DBIx::Class::Migration::Script::Help::delete_table_rows.3 \
+	DBIx::Class::Migration::Script::Help::diagram.3 \
+	DBIx::Class::Migration::Script::Help::downgrade.3 \
+	DBIx::Class::Migration::Script::Help::drop_tables.3 \
+	DBIx::Class::Migration::Script::Help::dsn.3 \
+	DBIx::Class::Migration::Script::Help::dump_all_sets.3 \
+	DBIx::Class::Migration::Script::Help::dump_named_sets.3 \
+	DBIx::Class::Migration::Script::Help::fixture_sets.3 \
+	DBIx::Class::Migration::Script::Help::force_overwrite.3 \
+	DBIx::Class::Migration::Script::Help::help.3 \
+	DBIx::Class::Migration::Script::Help::includes.3 \
+	DBIx::Class::Migration::Script::Help::install.3 \
+	DBIx::Class::Migration::Script::Help::install_if_needed.3 \
+	DBIx::Class::Migration::Script::Help::install_version_storage.3 \
+	DBIx::Class::Migration::Script::Help::make_schema.3 \
+	DBIx::Class::Migration::Script::Help::password.3 \
+	DBIx::Class::Migration::Script::Help::populate.3 \
+	DBIx::Class::Migration::Script::Help::prepare.3 \
+	DBIx::Class::Migration::Script::Help::sandbox_class.3 \
+	DBIx::Class::Migration::Script::Help::schema_class.3 \
+	DBIx::Class::Migration::Script::Help::status.3 \
+	DBIx::Class::Migration::Script::Help::target_dir.3 \
+	DBIx::Class::Migration::Script::Help::to_version.3 \
+	DBIx::Class::Migration::Script::Help::upgrade.3 \
+	DBIx::Class::Migration::Script::Help::username.3 \
+	DBIx::Class::Migration::Script::Help::version.3 \
 	DBIx::Class::Migration::ShareDirBuilder.3 \
 	DBIx::Class::Migration::SqliteSandbox.3 \
 	DBIx::Class::Migration::TargetDirSandboxBuilder.3 \
