@@ -6,22 +6,22 @@
 #
 
 PORTNAME=		yourls
-DISTVERSION=		1.5
+DISTVERSION=		1.5.1
 CATEGORIES=		www
 MASTER_SITES=		${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=		joehorn@gmail.com
 COMMENT=		Your Own URL Shortener
 
+LICENSE=		GPLv3
+
 WRKSRC=			${WRKDIR}/${PORTNAME}
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
-
-LICENSE=		GPLv3
 
 USE_ZIP=		YES
 NO_BUILD=		YES
 
-USE_PHP=		curl json mysql pcre xml
+USE_PHP=		bcmath curl json mysql pcre xml
 
 SUB_LIST+=		PKGNAME=${PKGNAME}
 SUB_FILES+=		pkg-message
