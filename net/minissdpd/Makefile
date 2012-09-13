@@ -1,12 +1,7 @@
-# New ports collection makefile for:	minissdpd
-# Date created:				20 Dec 2009
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	minissdpd
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	net
 MASTER_SITES=	http://miniupnp.free.fr/files/ \
 		CRITICAL
@@ -14,6 +9,7 @@ MASTER_SITES=	http://miniupnp.free.fr/files/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	UPnP IGD discovery speed enhancer
 
+USE_GMAKE=	yes
 USE_RC_SUBR=	minissdpd
 MAKE_JOBS_SAFE=	yes
 
