@@ -1,0 +1,9 @@
+bin/ci
+bin/co
+bin/ident
+bin/merge
+bin/rcs
+bin/rcsclean
+bin/rcsdiff
+bin/rcsmerge
+bin/rlog
