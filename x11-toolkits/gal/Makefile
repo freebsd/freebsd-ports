@@ -15,6 +15,9 @@ DIST_SUBDIR=	gnome
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT=	A collection of widgets taken from GNOME gnumeric and evolution
 
+DEPRECATED=	Developement ceased, and nothing in the ports tree uses it anymore
+EXPIRATION_DATE=	2012-10-13
+
 LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode
 
 USE_BZIP2=	yes
