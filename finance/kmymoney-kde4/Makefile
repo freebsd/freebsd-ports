@@ -1,21 +1,21 @@
 # $FreeBSD$
 
 PORTNAME=	kmymoney
-PORTVERSION=	4.6.2
-PORTREVISION=	3
+PORTVERSION=	4.6.3
 CATEGORIES=	finance kde
 MASTER_SITES=	SF/${PORTNAME}2/KMyMoney-KDE4/${PORTVERSION}
 
 MAINTAINER=	jhale@FreeBSD.org
-COMMENT=	KDE 4.x-based personal finance manager
+COMMENT=	KDE4 personal finance manager
 
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	boost_graph:${PORTSDIR}/devel/boost-libs \
 		alkimia:${PORTSDIR}/finance/libalkimia
 
-OPTIONS_DEFINE=	CALENDAR KBANKING OFX QUOTES
+OPTIONS_DEFINE=	NLS CALENDAR KBANKING OFX QUOTES
 OPTIONS_DEFAULT=CALENDAR
+NO_OPTIONS_SORT=yes
 
 CALENDAR_DESC=	Enable Calendar plugin
 KBANKING_DESC=	Enable KBanking plugin
@@ -29,12 +29,19 @@ USE_QT4=	gui dbus network phonon sql svg xml \
 		qmake_build moc_build rcc_build uic_build
 USE_KDE4=	kdehier kdeprefix automoc4 kdelibs pimlibs sharedmime
 USE_LDCONFIG=	yes
-USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		kmymoney.1
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CMAKE_ARGS+=	-DENABLE_NLS:BOOL=OFF
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .if ${PORT_OPTIONS:MCALENDAR}
 LIB_DEPENDS+=	ical:${PORTSDIR}/devel/libical
