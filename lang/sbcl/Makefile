@@ -5,18 +5,13 @@
 #
 
 PORTNAME=	sbcl
-PORTVERSION=	1.0.57
-PORTREVISION=	1
+PORTVERSION=	1.0.58
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
 		ftp://ftp.SpringDaemons.com/soft/sbcl-binary/:binaries
 DISTFILES=	\
 	${PORTNAME}-${PORTVERSION}-source${EXTRACT_SUFX}
-.if !defined(NOPORTDOCS) || make(makesum)
-DISTFILES+=	\
-	${PORTNAME}-${PORTVERSION}-documentation-html${EXTRACT_SUFX}
-.endif
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A Common Lisp development system derived from the CMU CL system
@@ -24,8 +19,10 @@ COMMENT=	A Common Lisp development system derived from the CMU CL system
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
-OPTIONS=	SBCL "Use installed SBCL binary if available" off \
-		THREADS "Enable experimental threading support" off
+OPTIONS_DEFINE =	SBCL THREADS
+
+SBCL_DESC=	Bootstrap with installed SBCL binary, if available
+THREADS_DESC=	Experimental threading support
 
 CONTRIB_MODULES=	asdf			\
 			asdf-install		\
@@ -51,20 +48,7 @@ ONLY_FOR_ARCHS_REASON=	is a native code compiler, and has not been ported to\
 this architecture yet
 SBCL_HOME=	${PREFIX}/lib/sbcl
 
-.if !defined(NOPORTDOCS)
-MANUALS=	asdf.html sbcl.html
-MODULESDOCS=	asdf/README asdf/README.SBCL	\
-		asdf-install/README 		\
-		sb-aclrepl/README		\
-		sb-bsd-sockets/FAQ sb-bsd-sockets/NEWS \
-		sb-md5/README			\
-		sb-posix/README			\
-		sb-rotate-byte/README		\
-		sb-simple-streams/README
-TEXTDOCS=	BUGS CREDITS COPYING NEWS PRINCIPLES TLA TODO
-.endif
-
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 CFLAGS+=	-fno-omit-frame-pointer
 CPPFLAGS+=	-I. -DSBCL_PREFIX=\\\"\$$(SBCL_PREFIX)\\\"
@@ -84,8 +68,23 @@ MAKE_SH_ARGS?=	--prefix=${PREFIX} --dynamic-space-size=${DYNAMIC_SPACE_SIZE} \
 NM?=	/usr/bin/nm
 NMFLAGS?=	-gp
 
-# If WITH_SBCL is defined, try to use existing "sbcl" first.
-.if !defined(WITH_SBCL) || !exists(${LOCALBASE}/bin/sbcl) || make(makesum)
+.if ${PORT_OPTIONS:MDOCS} || make(makesum)
+DISTFILES+=	\
+	${PORTNAME}-${PORTVERSION}-documentation-html${EXTRACT_SUFX}
+MANUALS=	asdf.html sbcl.html
+MODULESDOCS=	asdf/README asdf/README.SBCL	\
+		asdf-install/README 		\
+		sb-aclrepl/README		\
+		sb-bsd-sockets/FAQ sb-bsd-sockets/NEWS \
+		sb-md5/README			\
+		sb-posix/README			\
+		sb-rotate-byte/README		\
+		sb-simple-streams/README
+TEXTDOCS=	BUGS CREDITS COPYING NEWS PRINCIPLES TLA TODO
+.endif
+
+# If the SBCL option is enabled, try to use existing "sbcl" first:
+.if empty(PORT_OPTIONS:MSBCL) || !exists(${LOCALBASE}/bin/sbcl) || make(makesum)
 BOOT_VERSION=	1.0.31
 
 . if make(makesum)
@@ -110,9 +109,9 @@ ${WRKDIR}/${BOOT_DISTNAME}/output/sbcl.core \
 --disable-debugger --userinit /dev/null --sysinit /dev/null
 MAKE_SH_ARGS+=	--xc-host='${XC_HOST}'
 
-.endif # defined(WITH_SBCL)
+.endif # SBCL
 
-.if defined(WITH_THREADS)
+.if ${PORT_OPTIONS:MTHREADS}
 MAKE_SH_ARGS+=	--with-sb-thread
 .if defined(WITH_FUTEX)
 MAKE_SH_ARGS+=	--with-sb-futex
@@ -153,8 +152,6 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|/usr/local|${PREFIX}|g' \
 		${WRKSRC}/doc/sbcl.1
-	@${REINPLACE_CMD} -e '\|CC?=|s|gcc|${CC}|'  \
-		${WRKSRC}/contrib/asdf-module.mk
 	@${REINPLACE_CMD} -E -e 's!-sbcl-shared!& ${CFLAGS}!' \
 		-e 's!\$$(TEST_FILESTEM|1)_core!$${\1}_core!g' \
 		${WRKSRC}/tests/core.test.sh \
@@ -187,7 +184,7 @@ do-install:
 	(if test -f ${WRKSRC}/contrib/${MOD}/${MOD}.asd; then ${INSTALL_DATA} \
 	    ${WRKSRC}/contrib/${MOD}/${MOD}.asd ${SBCL_HOME}/${MOD}/; fi)
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}/
 	${INSTALL_DATA} ${MANUALS:S,^, ${WRKSRC}/doc/manual/,g} ${DOCSDIR}/
 	${INSTALL_DATA} ${TEXTDOCS:S,^,${WRKSRC}/,g} ${DOCSDIR}/
@@ -209,4 +206,4 @@ bootstrap:
 	    ${WRKDIR}/${NEWBOOTNAME}/binary-distribution.sh ${NEWBOOTNAME})
 	(cd ${WRKDIR}/ && ${BZIP2_CMD} ${NEWBOOTNAME}-binary.tar)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
