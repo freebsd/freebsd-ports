@@ -381,6 +381,7 @@ share/icons/hicolor/24x24/apps/picard.png
 share/icons/hicolor/256x256/apps/picard.png
 share/icons/hicolor/32x32/apps/picard.png
 share/icons/hicolor/48x48/apps/picard.png
+share/locale/da/LC_MESSAGES/picard.mo
 share/locale/de/LC_MESSAGES/picard.mo
 share/locale/en/LC_MESSAGES/picard.mo
 share/locale/en_CA/LC_MESSAGES/picard.mo
