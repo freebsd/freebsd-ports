@@ -424,6 +424,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/Zeilberger/zeilberger.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/Zeilberger/zeilberger_algorithm.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/Zeilberger/zeilberger_linear_algebra.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/aes.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/altsimp/altsimp.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/augmented_lagrangian.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/bitwise/bitwise.lisp
@@ -522,11 +523,11 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/fresnel/readme.txt
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/gentran/convmac.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/gentran/fdata.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/gentran/gentran.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/gentran/global.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/gentran/gtfix.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/gentran/init.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/gentran/intrfc.lisp
-%%DATADIR%%/%%PORTVERSION%%/share/contrib/gentran/local.gtload.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/gentran/lspc.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/gentran/lspfor.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/gentran/lsprat.lisp
@@ -1486,7 +1487,6 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/src/intpol.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/invert.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/irinte.lisp
-%%DATADIR%%/%%PORTVERSION%%/src/kclmac.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/laplac.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/ldisp.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/lesfac.lisp
@@ -1683,7 +1683,6 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/src/rat3e.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/ratmac.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/ratout.lisp
-%%DATADIR%%/%%PORTVERSION%%/src/ratpoi.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/residu.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/result.lisp
 %%DATADIR%%/%%PORTVERSION%%/src/risch.lisp
