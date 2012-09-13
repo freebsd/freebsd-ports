@@ -1,10 +1,8 @@
---- src/intsect.cpp.orig	2011-05-02 20:55:06.000000000 +0900
-+++ src/intsect.cpp	2011-07-24 19:43:40.000000000 +0900
-@@ -12,7 +12,9 @@
- #   include "config.h"
+--- src/intsect.cpp.orig	2011-05-02 13:55:06.000000000 +0200
++++ src/intsect.cpp	2012-09-10 22:33:43.000000000 +0200
+@@ -13,6 +13,7 @@
  #endif
  
-+
  #include <stdlib.h>
 +#include <inttypes.h>
  
