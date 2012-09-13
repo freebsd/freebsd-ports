@@ -102,7 +102,7 @@ CONFIGURE_ARGS+=	--enable-xcb
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ffast-math|${FAST_MATH}|' -e 's|x86_64|amd64|' \
-		${WRKSRC}/configure
+		-e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|[$$](INSTALL_LIB_DIR)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/src/glu/Makefile \
 		${WRKSRC}/src/glw/Makefile \
