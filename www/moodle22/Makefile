@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	moodle
-PORTVERSION=	2.2.4
+PORTVERSION=	2.2.5
 CATEGORIES=	www
 MASTER_SITES=	SF/moodle/Moodle/stable22/
 EXTRACT_SUFX=	.tgz
