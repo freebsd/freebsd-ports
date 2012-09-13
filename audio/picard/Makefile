@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	picard
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	audio python
 MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
 		ftp://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
@@ -18,9 +18,9 @@ COMMENT=	Next generation MusicBrainz Tagger
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	ofa.0:${PORTSDIR}/audio/libofa \
-		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
-		discid.0:${PORTSDIR}/audio/libdiscid
+LIB_DEPENDS=	ofa:${PORTSDIR}/audio/libofa \
+		avcodec:${PORTSDIR}/multimedia/ffmpeg \
+		discid:${PORTSDIR}/audio/libdiscid
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>=0:${PORTSDIR}/audio/py-mutagen \
 		${PYTHON_PKGNAMEPREFIX}qt4-core>=0:${PORTSDIR}/devel/py-qt4-core \
 		${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui \
