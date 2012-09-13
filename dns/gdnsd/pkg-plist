@@ -30,7 +30,7 @@ include/gdnsd-vscf.h
 %%DOCSDIR%%/gdnsd-plugin-weighted.txt
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/gdnsd-plugin-simplefo.pod
-%%DOCSDIR%%/README
+%%DOCSDIR%%/README.md
 %%DOCSDIR%%/gdnsd_geoip_test.txt
 %%DOCSDIR%%/gdnsd-plugin-metafo.pod
 %%DOCSDIR%%/gdnsd-plugin-geoip.txt

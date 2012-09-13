@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gdnsd
-PORTVERSION=	1.6.7
+PORTVERSION=	1.6.8
 CATEGORIES=	dns
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-MASTER_SITES+=	http://gdnsd.scaleengine.net/gdnsd/
+MASTER_SITES=	https://github.com/blblack/gdnsd/downloads/ \
+		http://gdnsd.scaleengine.net/gdnsd/
 
 MAINTAINER=	ports@scaleengine.com
 COMMENT=	Authoritative-only GeoIP-aware DNS server
@@ -18,7 +18,7 @@ LICENSE=	GPLv3
 
 OPTIONS_DEFINE=	GEOIP
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
@@ -31,8 +31,6 @@ MAN8=		gdnsd.8 gdnsd-plugin-simplefo.8 gdnsd-plugin-multifo.8 \
 MANCOMPRESSED=	no
 
 USE_RC_SUBR=	gdnsd
-
-CONFIGURE_ARGS+=	--mandir=${PREFIX}/man
 
 .include <bsd.port.options.mk>
 
