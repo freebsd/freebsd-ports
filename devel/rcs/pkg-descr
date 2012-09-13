@@ -1,0 +1,8 @@
+The Revision Control System (RCS) manages multiple revisions of files.  RCS
+automates the storing, retrieval, logging, identification, and merging of
+revisions.  RCS is useful for text that is revised frequently, including source
+code, programs, documentation, graphics, papers, and form letters.
+
+This port is gnu rcs.
+
+WWW: http://www.gnu.org/software/rcs/
