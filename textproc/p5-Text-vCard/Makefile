@@ -1,12 +1,7 @@
-# New ports collection makefile for:	p5-Text-vCard
-# Date created:				22 Feb 2006
-# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=		Text-vCard
-PORTVERSION=		2.11
+PORTVERSION=		2.12
 CATEGORIES=		textproc perl5
 MASTER_SITES=		CPAN
 PKGNAMEPREFIX=		p5-
