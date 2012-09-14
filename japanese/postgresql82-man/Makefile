@@ -1,9 +1,4 @@
-# New ports collection makefile for:	ja-postgresql-man
-# Date created:				2003/05/20
-# Whom:					nork@FreeBSD.org
-#
 # $FreeBSD$
-#
 
 PORTNAME=	postgresql82
 PORTVERSION=	8.2.4
@@ -17,8 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese online manual pages for PostgreSQL
 
 MANLANG=	ja
-NO_BUILD=	YES
-NO_WRKSUBDIR=	YES
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 MAN1=		clusterdb.1 \
 		createdb.1 \
