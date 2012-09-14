@@ -256,10 +256,6 @@
     SUBDIR += platex-jsclasses
     SUBDIR += platex-otf
     SUBDIR += platex209
-    SUBDIR += postgresql73-man
-    SUBDIR += postgresql74-man
-    SUBDIR += postgresql80-man
-    SUBDIR += postgresql81-man
     SUBDIR += postgresql82-man
     SUBDIR += prime
     SUBDIR += prime-dict
