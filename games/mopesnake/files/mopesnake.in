@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+echo "Master Of Pain (Eating) - Snake: Starting up..."
+cd "%%DATADIR%%"
+./mopesnake.py
