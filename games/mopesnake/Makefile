@@ -1,32 +1,30 @@
-# New Ports collection makefile for:	mopesnake
-# Date created:        2012-05-16
-# Whom:                nemysis@gmx.ch
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mopesnake
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-pc-${DISTVERSION}
 
 MAINTAINER=	nemysis@gmx.ch
-COMMENT=	A classic snake game in which you attempt to eat all the pain
+COMMENT=	Classic snake game in which you attempt to eat all the pain
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>=0:${PORTSDIR}/devel/py-game
 
 USE_ZIP=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/mopesnake \
+PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png
 
 PORTDATA=	*
 PORTDOCS=	TODO.txt index.html
+
+SUB_FILES=	${PORTNAME}
 
 post-patch:
 # Fix path to python interpreter
@@ -34,11 +32,11 @@ post-patch:
 		${WRKSRC}/*.py ${WRKSRC}/mopelib/*.py
 	@(cd ${WRKSRC} && ${RM} *.py.bak mopelib/*py.bak)
 
+.include <bsd.port.options.mk>
+
 do-install:
 # Scripts
-	@${PRINTF} "#!/bin/sh\n\ncd ${DATADIR} &&\
-		./${PORTNAME}.py\n" > ${WRKDIR}/${PORTNAME}.sh
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
 
 # Executable
 	${MKDIR} ${DATADIR}
@@ -52,7 +50,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/version ${DATADIR}
 
 # Documentation
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .  for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
