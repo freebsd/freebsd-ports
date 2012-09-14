@@ -121,8 +121,7 @@ CONFIGURE_ARGS+=	--disable-examples
 .if ${PORT_OPTIONS:MECJ}
 post-patch:
 	@${SED} -e 's|%%ECJ_JAR%%|${DISTDIR}/${ECJ_JAR}|' \
-	    -e 's|%%JAVA_CMD%%|${JAVA_HOME}/bin/java|' < \
-	    ${FILESDIR}/ecj.sh.in > ${WRKDIR}/ecj
+	    -e 's|%%JAVA%%|${JAVA}|' < ${FILESDIR}/ecj.sh.in > ${WRKDIR}/ecj
 	@${CHMOD} 755 ${WRKDIR}/ecj
 .endif
 
