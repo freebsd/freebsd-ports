@@ -23,12 +23,14 @@ USE_GNOME=	glib20 pkgconfig
 USE_RC_SUBR=	${PORTNAME}
 
 OPTIONS_DEFINE=	MYSQL
+OPTIONS_DEFAULT=DAEMON
 OPTIONS_SINGLE=	SERVER
-OPTIONS_SINGLE_SERVER=	JABBER JABBERD EJABBERD
+OPTIONS_SINGLE_SERVER=	JABBER JABBERD EJABBERD DAEMON
 
 JABBER_DESC=	Use with jabberd14 (net-im/jabber)
 JABBERD_DESC=	Use with jabberd 2.x (net-im/jabberd)
 EJABBERD_DESC=	Use with ejabberd (net-im/ejabberd)
+DAEMON_DESC=	Use builtin daemon
 
 SUB_FILES+=	pkg-message README.FreeBSD.jabberd14 \
 		README.FreeBSD.jabberd2 README.FreeBSD.external
@@ -70,7 +72,7 @@ JABBER_USER?=           ejabberd
 JABBER_PIDDIR?=         /var/jabberd/pid
 JABBER_SPOOLDIR?=       /var/spool/jabber
 RUN_DEPENDS+=           ejabberdctl:${PORTSDIR}/net-im/ejabberd
-.else
+.elif ${PORT_OPTIONS:MDAEMON}
 JABBER_REQUIRE?=        DAEMON
 JABBER_USER?=           nobody
 JABBER_PIDDIR?=         /var/run/mu-conference
