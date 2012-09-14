@@ -12,6 +12,7 @@ CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	A GNU project to create a free Java class library
@@ -55,13 +56,26 @@ INFO=		cp-hacking cp-tools cp-vmintegration
 
 CONFLICTS=	sablevm-classpath-*
 
-OPTIONS_DEFINE=	CAIRO GCONF GTK2 QT4
+OPTIONS_DEFINE=	CAIRO ECJ GCONF GTK2 QT4
 OPTIONS_DEFAULT=GTK2
 CAIRO_DESC=	Use Gtk+ Cairo based Graphics2D
+ECJ_DESC=	Build with Eclipse Java Compiler
 GTK2_DESC=	Enable Gtk+ AWT peer
 QT4_DESC=	Enable Qt AWT peer
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MECJ}
+ECJ_VERSION=		4.2
+ECJ_DROPDATE=		201206081400
+ECJ_JAR=		ecj-${ECJ_VERSION}.jar
+ECJ_SUBDIR=		R-${ECJ_VERSION}-${ECJ_DROPDATE}
+MASTER_SITES+=		http://download.eclipse.org/eclipse/downloads/drops4/${ECJ_SUBDIR}/:ecj
+DISTFILES+=		${ECJ_JAR}:ecj
+CONFIGURE_ARGS+=	--with-ecj-jar="${DISTDIR}/${ECJ_JAR}"
+CONFIGURE_ENV+=		PATH="${WRKDIR}:${PATH}"
+MAKE_ENV+=		PATH="${WRKDIR}:${PATH}"
+.endif
 
 .if ${PORT_OPTIONS:MGCONF}
 USE_GNOME+=		gconf2
@@ -102,6 +116,14 @@ PLIST_SUB+=		QT4="@comment "
 EXAMPLESDIR=		${DATADIR}/examples
 .else
 CONFIGURE_ARGS+=	--disable-examples
+.endif
+
+.if ${PORT_OPTIONS:MECJ}
+post-patch:
+	@${SED} -e 's|%%ECJ_JAR%%|${DISTDIR}/${ECJ_JAR}|' \
+	    -e 's|%%JAVA_CMD%%|${JAVA_HOME}/bin/java|' < \
+	    ${FILESDIR}/ecj.sh.in > ${WRKDIR}/ecj
+	@${CHMOD} 755 ${WRKDIR}/ecj
 .endif
 
 .include <bsd.port.mk>

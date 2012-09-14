@@ -1,2 +1,4 @@
 SHA256 (classpath-0.99.tar.gz) = f929297f8ae9b613a1a167e231566861893260651d913ad9b6c11933895fecc8
 SIZE (classpath-0.99.tar.gz) = 11078232
+SHA256 (ecj-4.2.jar) = 9694970ac1f8a4a2774b7f64f6be535dc46e25dbecb71d36007b8af2bdce1001
+SIZE (ecj-4.2.jar) = 1796149
