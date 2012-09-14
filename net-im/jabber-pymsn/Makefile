@@ -21,10 +21,15 @@ COMMENT=	Python MSN-Transport for Jabber
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 
-OPTIONS=	JABBER "Use with jabberd14 (net-im/jabber)" off \
-		JABBERD "Use with jabberd 2.x (net-im/jabberd)" off \
-		EJABBERD "Use with ejabberd (net-im/ejabberd)" off \
-		TWISTED1 "Use old py-twisted 1.x" off
+OPTIONS_DEFINE=	TWISTED1
+OPTIONS_DEFAULT=DAEMON
+OPTIONS_SINGLE=	SERVER
+OPTIONS_SINGLE_SERVER=	JABBER JABBERD EJABBERD DAEMON
+JABBER_DESC=	Use with jabberd14 (net-im/jabber)
+JABBERD_DESC=	Use with jabberd 2.x (net-im/jabberd)
+EJABBERD_DESC=	Use with ejabberd (net-im/ejabberd)
+DAEMON_DESC=	Use builtin daemon
+TWISTED1_DESC=	Use old py-twisted 1.x
 
 NO_BUILD=	yes
 USE_PYTHON=	yes
@@ -38,32 +43,27 @@ INST_DIR=	${PREFIX}/lib/jabber/${PORTNAME}
 
 PORTDOCS=	COPYING README README.jabberd14 README.jabberd2 README.external
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if (defined(WITH_JABBERD) && (defined(WITH_JABBER) || defined(WITH_EJABBERD))) || \
-    defined(WITH_JABBER) && defined(WITH_EJABBERD)
-IGNORE=	options WITH_JABBER, WITH_JABBERD and WITH_EJABBERD are mutually exclusive
-.endif
-
-.if defined(WITH_JABBER)
+.if ${PORT_OPTIONS:MJABBER}
 JABBER_REQUIRE?=	jabber
 JABBER_USER?=		jabber
 JABBER_PIDDIR?=		/var/run/jabberd
 JABBER_SPOOLDIR?=	/var/spool/jabberd
 RUN_DEPENDS+=		jabberd14:${PORTSDIR}/net-im/jabber
-.elif defined(WITH_JABBERD)
+.elif ${PORT_OPTIONS:MJABBERD}
 JABBER_REQUIRE?=	jabberd
 JABBER_USER?=		jabber
 JABBER_PIDDIR?=		/var/jabberd/pid
 JABBER_SPOOLDIR?=	/var/spool/jabber
 RUN_DEPENDS+=		jabberd:${PORTSDIR}/net-im/jabberd
-.elif defined(WITH_EJABBERD)
+.elif ${PORT_OPTIONS:MEJABBERD}
 JABBER_REQUIRE?=	ejabberd
 JABBER_USER?=		ejabberd
 JABBER_PIDDIR?=		/var/jabberd/pid
 JABBER_SPOOLDIR?=	/var/spool/jabber
 RUN_DEPENDS+=		ejabberdctl:${PORTSDIR}/net-im/ejabberd
-.else
+.elif ${PORT_OPTIONS:MDAEMON}
 JABBER_REQUIRE?=	DAEMON
 JABBER_USER?=		nobody
 JABBER_PIDDIR?=		/var/run/pymsn
@@ -73,7 +73,7 @@ JABBER_SPOOLDIR?=	/var/spool/pymsn
 SUB_LIST+=	JABBER_REQUIRE="${JABBER_REQUIRE}" JABBER_PIDDIR="${JABBER_PIDDIR}" \
 		JABBER_SPOOLDIR="${JABBER_SPOOLDIR}"
 
-.if defined(WITH_TWISTED1)
+.if ${PORT_OPTIONS:MTWISTED1}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twisted
 .else
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twistedCore \
@@ -129,4 +129,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
