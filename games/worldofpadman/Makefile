@@ -29,17 +29,17 @@ USE_GMAKE=	yes
 ALL_TARGET=	release
 NO_PACKAGE=	package will be ~600MB; set FORCE_PACKAGE if you really want it
 
-OPTIONS=	CLIENT "Build client" on \
-		CURL "Enable curl support" on \
-		CURL_DLOPEN "Enable dynamic loading of curl" on \
-		GAMELIBS "Build game libraries (when not mandatory)" off \
-		DEDICATED "Build dedicated server" on \
-		MP3 "Enable MP3 support" off \
-		OPENAL "Enable OpenAL (3D sound) support" off \
-		OPENAL_DLOPEN "Enable dynamic loading of OpenAL" off \
-		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		SMP "Build SMP (threaded) client" on \
-		VORBIS "Enable Ogg Vorbis codec support" on
+OPTIONS_DEFINE=	CURL CURL_DLOPEN GAMELIBS MP3 OPENAL OPENAL_DLOPEN OPTIMIZED_CFLAGS VORBIS
+OPTIONS_DEFAULT=	CLIENT CURL CURL_DLOPEN DEDICATED OPTIMIZED_CFLAGS VORBIS SMP
+OPTIONS_MULTI=	MODE
+OPTIONS_MULTI_MODE=	CLIENT DEDICATED SMP
+
+CLIENT_DESC=	Build client
+CURL_DLOPEN_DESC=	Enable dynamic loading of curl
+DEDICATED_DESC=	Build dedicated server
+GAMELIBS_DESC=	Build game libraries (when not mandatory)
+OPENAL_DLOPEN_DESC=	Enable dynamic loading of OpenAL
+SMP_DESC=	Build SMP (threaded) client
 
 MAKE_ENV=	DEFAULT_BASEDIR="${DATADIR}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 
@@ -47,11 +47,6 @@ VM_ARCHS=	amd64 i386 powerpc
 SRC_FILE=	${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED) && \
-    defined(WITHOUT_SMP)
-IGNORE=		needs at least one of CLIENT, DEDICATED and SMP options
-.endif
 
 .for i in ${ARCH}
 .   if ${VM_ARCHS:M${i}} != ""
@@ -63,33 +58,33 @@ HAVE_VM_COMPILED=	yes
 MAKE_ENV+=	HAVE_VM_COMPILED=true
 .endif
 
-.if !defined(WITHOUT_CLIENT) || !defined(WITHOUT_SMP)
+.if empty(${PORT_OPTIONS:MCLIENT}) || !${PORT_OPTIONS:MSMP}
 # curl
-.   if defined(WITH_CURL)
+.if ${PORT_OPTIONS:MCURL}
 LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 MAKE_ENV+=	USE_CURL=1
-.       if defined(WITH_CURL_DLOPEN)
+.	if ${PORT_OPTIONS:MCURL_DLOPEN}
 MAKE_ENV+=	USE_CURL_DLOPEN=1
 .       endif
 .   endif
 # OpenAL
-.   if defined(WITH_OPENAL)
+.    if ${PORT_OPTIONS:MOPENAL}
 USE_OPENAL=	al
 MAKE_ENV+=	USE_OPENAL=1
-.       if defined(WITH_OPENAL_DLOPEN)
+.       if ${PORT_OPTIONS:MOPENAL_DLOPEN}
 MAKE_ENV+=	USE_OPENAL_DLOPEN=1
 .       endif
 .   endif
 # SDL
 USE_SDL=	sdl
 # Vorbis
-.   if defined(WITH_VORBIS)
+.   if ${PORT_OPTIONS:MVORBIS}
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 MAKE_ENV+=	USE_CODEC_VORBIS=1
 .   endif
 .endif
 
-.if !defined(WITHOUT_CLIENT)
+.if ${PORT_OPTIONS:MCLIENT}
 MAKE_ENV+=	BUILD_CLIENT=1
 PLIST_SUB+=	CLIENT=""
 Q3BIN+=		wop
@@ -97,7 +92,7 @@ Q3BIN+=		wop
 PLIST_SUB+=	CLIENT="@comment "
 .endif
 
-.if !defined(WITHOUT_DEDICATED)
+.if ${PORT_OPTIONS:MDEDICATED}
 MAKE_ENV+=	BUILD_SERVER=1
 PLIST_SUB+=	DEDICATED=""
 Q3BIN+=		wopded
@@ -105,23 +100,23 @@ Q3BIN+=		wopded
 PLIST_SUB+=	DEDICATED="@comment "
 .endif
 
-.if defined(WITH_GAMELIBS) || !defined(HAVE_VM_COMPILED)
+.if ${PORT_OPTIONS:MGAMELIBSA} || !defined(HAVE_VM_COMPILED)
 MAKE_ENV+=	BUILD_GAME_SO=1
 PLIST_SUB+=	GAMELIBS=""
 .else
 PLIST_SUB+=	GAMELIBS="@comment "
 .endif
 
-.if defined(WITH_MP3)
+.if ${PORT_OPTIONS:MMP3}
 LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
 MAKE_ENV+=	USE_CODEC_MP3=1
 .endif
 
-.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 MAKE_ENV+=	USE_OPTIMIZED_CFLAGS=1
 .endif
 
-.if !defined(WITHOUT_SMP)
+.if ${PORT_OPTIONS:MSMP}
 MAKE_ENV+=	BUILD_CLIENT_SMP=1
 PLIST_SUB+=	SMP=""
 Q3BIN+=		wop-smp
@@ -152,10 +147,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/build/release/${bin} \
 		${PREFIX}/bin/${bin:S/wop/${PORTNAME}/}
 .endfor
-.if defined(WITH_GAMELIBS) || !defined(HAVE_VM_COMPILED)
+.if ${PORT_OPTIONS:MGAMELIBS} || !defined(HAVE_VM_COMPILED)
 	${INSTALL_PROGRAM} ${WRKSRC}/build/release/baseq3/*.so ${DATADIR}/wop
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${CP} -r ${WRKDIR}/readme/* ${DOCSDIR}
 .endif
