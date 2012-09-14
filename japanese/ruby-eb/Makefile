@@ -1,13 +1,8 @@
-# New ports collection makefile for:	Ruby EB
-# Date created:		6 Sep 2000
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	eb
 PORTVERSION=	2.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese ruby
 MASTER_SITES=	http://rubyeb.sourceforge.net/ \
 		SF/rubyeb/rubyeb/rubyeb-${PORTVERSION}
@@ -17,7 +12,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bind of EB library
 
-LIB_DEPENDS=	eb.15:${PORTSDIR}/japanese/eb
+LIB_DEPENDS=	eb:${PORTSDIR}/japanese/eb
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
