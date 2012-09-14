@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	A GNU project to create a free Java class library
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		${JAVALIBDIR}/antlr.jar:${PORTSDIR}/devel/antlr
 
