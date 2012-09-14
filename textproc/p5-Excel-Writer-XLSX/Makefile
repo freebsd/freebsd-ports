@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Excel-Writer-XLSX
-PORTVERSION=	0.49
+PORTVERSION=	0.50
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JMCNAMARA
@@ -44,6 +44,7 @@ MAN3=		Excel::Writer::XLSX.3 \
 		Excel::Writer::XLSX::Package::Relationships.3 \
 		Excel::Writer::XLSX::Package::SharedStrings.3 \
 		Excel::Writer::XLSX::Package::Styles.3 \
+		Excel::Writer::XLSX::Package::Table.3 \
 		Excel::Writer::XLSX::Package::Theme.3 \
 		Excel::Writer::XLSX::Package::VML.3 \
 		Excel::Writer::XLSX::Package::XMLwriter.3 \
