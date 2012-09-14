@@ -331,6 +331,12 @@ CONFIGURE_ARGS+=	--enable-release-build
 
 .include <bsd.port.pre.mk>
 
+# if compiled with clang on 8.x libreoffice exits with the following error:
+# terminate called after throwing an instance of 'com::sun::star::ucb::InteractiveAugmentedIOException'
+.if ${OSVERSION} < 900000
+WITH_GCC=	yes
+.endif
+
 .if defined(WITH_GCC)
 USE_GCC=	4.6+
 DISTFILES+=	bd30e9cf5523cdfc019b94f5e1d7fd19-cppunit-1.12.1.tar.gz:ext
