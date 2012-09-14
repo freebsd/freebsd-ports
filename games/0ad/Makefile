@@ -1,17 +1,11 @@
-# New ports collection makefile for:    0ad
-# Date created:         13 Jan 2012
-# Whom:                 Guido Falsi <mad@madpilot.net>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	0ad
-DISTVERSION=	alpha.10
-PORTREVISION=	2
+PORTVERSION=	0.0.11
 CATEGORIES=	games
 MASTER_SITES=	SF/zero-ad/releases
-DISTFILES=	${PORTNAME}-${SVNREV}-alpha-unix-build.tar.xz \
-		${PORTNAME}-${SVNREV}-alpha-unix-data.tar.xz
+DISTFILES=	${PORTNAME}-${PORTVERSION}-alpha-unix-build.tar.xz \
+		${PORTNAME}-${PORTVERSION}-alpha-unix-data.tar.xz
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Real-time strategy (RTS) game of ancient warfare
@@ -27,7 +21,7 @@ LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
 		curl:${PORTSDIR}/ftp/curl \
 		gamin-1:${PORTSDIR}/devel/gamin
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${SVNREV}-alpha
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-alpha
 BUILD_WRKSRC=	${WRKSRC}/build/workspaces/gcc
 MAKE_ARGS=	config=release
 USE_GMAKE=	yes
@@ -37,7 +31,7 @@ USE_GNOME=	libxml2 gtk20
 USE_GL=		gl
 USE_OPENAL=	al
 USE_DOS2UNIX=	yes
-DOS2UNIX_REGEX=	.*\.[ch]p{0,2}
+DOS2UNIX_REGEX=	.*\.([ch]p{0,2}|make)
 MAKE_JOBS_SAFE=	yes
 
 USE_WX=		2.8
@@ -46,8 +40,6 @@ WX_UNICODE=	yes
 MAKE_ENV+=	JOBS=${_MAKE_JOBS}
 
 MANUAL_PACKAGE_BUILD=	yes # huge
-
-SVNREV=	r11863
 
 PORTDATA=	*
 
