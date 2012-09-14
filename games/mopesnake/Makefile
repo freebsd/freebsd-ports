@@ -12,7 +12,7 @@ COMMENT=	Classic snake game in which you attempt to eat all the pain
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>=0:${PORTSDIR}/devel/py-game
+RUN_DEPENDS=	${PYGAME}
 
 USE_ZIP=	yes
 USE_PYTHON=	yes

@@ -11,7 +11,7 @@ COMMENT=	A little casual game
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>=0:${PORTSDIR}/devel/py-game \
+RUN_DEPENDS=	${PYGAME} \
 		${PYNUMPY}
 
 USE_BZIP2=	yes

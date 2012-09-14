@@ -15,7 +15,7 @@ COMMENT=	Remake of an old SEGA Dreamcast game called Chu Chu Rocket
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
+RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/"ice ice penguin"
 

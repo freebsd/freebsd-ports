@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.partiallydisassembled.net/nelly/ \
 MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Nelly's Rooftop Garden, physics-based puzzle game
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>=0:${PORTSDIR}/devel/py-game \
+RUN_DEPENDS=	${PYGAME} \
 		${PYTHON_PKGNAMEPREFIX}opengl>=0:${PORTSDIR}/graphics/py-opengl
 
 USE_PYTHON_RUN=	yes
