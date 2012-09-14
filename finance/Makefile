@@ -115,6 +115,7 @@
     SUBDIR += trytond_party
     SUBDIR += trytond_product
     SUBDIR += trytond_purchase
+    SUBDIR += trytond_sale
     SUBDIR += trytond_stock
     SUBDIR += trytond_timesheet
     SUBDIR += venice
