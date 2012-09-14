@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Geo-Coder-Many
-PORTVERSION=	0.28
+PORTVERSION=	0.29
 CATEGORIES=	misc geography perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Module to tie together multiple Geo::Coder::* modules
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Geo-Coder-Bing>=0.10:${PORTSDIR}/misc/p5-Geo-Coder-Bing \
 		p5-Geo-Coder-Google>=0.06:${PORTSDIR}/misc/p5-Geo-Coder-Google \
@@ -27,7 +30,6 @@ BUILD_DEPENDS=	p5-Geo-Coder-Bing>=0.10:${PORTSDIR}/misc/p5-Geo-Coder-Bing \
 		p5-List-MoreUtils>=0.22:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-List-Util-WeightedRoundRobin>=0.4:${PORTSDIR}/misc/p5-List-Util-WeightedRoundRobin
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject \
 		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
