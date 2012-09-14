@@ -25,10 +25,10 @@ USE_FORTRAN=   yes
 RESTRICTED=	NOT DISTRIBUTED FREELY. BUT YOU CAN OBTAIN SOURCE CODE FREELY.
 
 .if !exists(${DISTDIR}/${DISTFILES})
-IGNORE=you must manually get the source distribution from master site. http://www.msg.ameslab.gov/GAMESS/download.html. Please selsect "Source code distribution", and check on "running on Intel compatible PC running Linux". You must have license, and freely obtainable
+IGNORE=you must manually get the source distribution from master site. http://www.msg.ameslab.gov/GAMESS/download.html. Please select "Source code distribution", and check on "running on Intel compatible PC running Linux". You must have license, and freely obtainable
 .endif
 
-MANUAL_PACKAGE_BUILD=You must manually get the source distribution from master site. http://www.msg.ameslab.gov/GAMESS/download.html. Please selsect "Source code distribution", and check on "running on Intel compatible PC running Linux". You must have license, and freely obtainable.
+MANUAL_PACKAGE_BUILD=You must manually get the source distribution from master site. http://www.msg.ameslab.gov/GAMESS/download.html. Please select "Source code distribution", and check on "running on Intel compatible PC running Linux". You must have license, and freely obtainable.
 
 .include <bsd.port.pre.mk>
 
