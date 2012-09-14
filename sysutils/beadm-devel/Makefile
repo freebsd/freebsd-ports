@@ -3,18 +3,17 @@
 PORTNAME=	beadm
 PORTVERSION=	0.8.99.20120913
 CATEGORIES=	sysutils
-MASTER_SITES=	http://github.com/${GH_ACCOUNT}/${PORTNAME}/tarball/${GH_COMMIT}/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${GH_ACCOUNT}-${PORTNAME}-${GH_COMMIT}
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Solaris-like utility to manage Boot Environments on ZFS
 
 LICENSE=	BSD
 
-FETCH_ARGS=	-Fpr
+USE_GITHUB=	yes
 GH_ACCOUNT=	vermaden
 GH_COMMIT=	deb4b4b
+GH_TAGNAME=	${GH_COMMIT}
 
 NO_BUILD=	YES
 
