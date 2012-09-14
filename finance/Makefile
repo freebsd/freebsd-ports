@@ -108,6 +108,7 @@
     SUBDIR += trytond_account_invoice
     SUBDIR += trytond_account_product
     SUBDIR += trytond_calendar
+    SUBDIR += trytond_carrier
     SUBDIR += trytond_company
     SUBDIR += trytond_company_work_time
     SUBDIR += trytond_country
