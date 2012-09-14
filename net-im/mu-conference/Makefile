@@ -14,19 +14,21 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-User Conferencing component for Jabber
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		idn.17:${PORTSDIR}/dns/libidn
-
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
+		idn:${PORTSDIR}/dns/libidn
 
 USE_GNOME=	glib20 pkgconfig
 USE_RC_SUBR=	${PORTNAME}
 
-OPTIONS=	MYSQL "Enable MySQL support" off \
-		JABBER "Use with jabberd14 (net-im/jabber)" off \
-		JABBERD "Use with jabberd 2.x (net-im/jabberd)" off \
-		EJABBERD "Use with ejabberd (net-im/ejabberd)" off
+OPTIONS_DEFINE=	MYSQL
+OPTIONS_SINGLE=	SERVER
+OPTIONS_SINGLE_SERVER=	JABBER JABBERD EJABBERD
+
+JABBER_DESC=	Use with jabberd14 (net-im/jabber)
+JABBERD_DESC=	Use with jabberd 2.x (net-im/jabberd)
+EJABBERD_DESC=	Use with ejabberd (net-im/ejabberd)
 
 SUB_FILES+=	pkg-message README.FreeBSD.jabberd14 \
 		README.FreeBSD.jabberd2 README.FreeBSD.external
@@ -40,7 +42,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 CFLAGS+=	-DHAVE_MYSQL
 LIBS+=		`${LOCALBASE}/bin/mysql_config --libs`
@@ -50,19 +52,19 @@ DOCFILES+=	README.sql mu-conference.sql
 
 MUC_LOGDIR?=	/var/log/mu-conference
 
-.if defined(WITH_JABBER)
+.if ${PORT_OPTIONS:MJABBER}
 JABBER_REQUIRE?=        jabber
 JABBER_USER?=           jabber
 JABBER_PIDDIR?=         /var/run/jabberd
 JABBER_SPOOLDIR?=       /var/spool/jabberd
 RUN_DEPENDS+=           jabberd14:${PORTSDIR}/net-im/jabber
-.elif defined(WITH_JABBERD)
+.elif ${PORT_OPTIONS:MJABBERD}
 JABBER_REQUIRE?=        jabberd
 JABBER_USER?=           jabber
 JABBER_PIDDIR?=         /var/jabberd/pid
 JABBER_SPOOLDIR?=       /var/spool/jabber
 RUN_DEPENDS+=           jabberd:${PORTSDIR}/net-im/jabberd
-.elif defined(WITH_EJABBERD)
+.elif ${PORT_OPTIONS:MEJABBERD}
 JABBER_REQUIRE?=        ejabberd
 JABBER_USER?=           ejabberd
 JABBER_PIDDIR?=         /var/jabberd/pid
