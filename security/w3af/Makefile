@@ -7,6 +7,7 @@
 
 PORTNAME=	w3af
 DISTVERSION=	1.0-rc4
+PORTREVISION=	1
 CATEGORIES=	security python www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTNAME}%20${DISTVERSION}
@@ -22,7 +23,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.1:${PORTSDIR}/devel/py-lxml \
 		${PYTHON_SITELIBDIR}/SOAPpy:${PORTSDIR}/net/py-soappy \
 		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_SITELIBDIR}/fpconst.py:${PORTSDIR}/math/py-fpconst \
-		${PYTHON_SITELIBDIR}/nltk/util.py:${PORTSDIR}/textproc/nltk \
+		nltk>0:${PORTSDIR}/textproc/nltk \
 		${PYTHON_SITELIBDIR}/pyPdf/pdf.py:${PORTSDIR}/print/py-pdf \
 		${PYTHON_SITELIBDIR}/scapy/main.py:${PORTSDIR}/net/scapy \
 		${PYTHON_SITELIBDIR}/wordnet.py:${PORTSDIR}/textproc/py-wordnet \
