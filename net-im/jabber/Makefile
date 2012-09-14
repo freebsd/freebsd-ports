@@ -18,20 +18,17 @@ DIST_SUBDIR=	jabber
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMPP/Jabber server daemon
 
-LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth-hard \
-		popt.0:${PORTSDIR}/devel/popt \
-		idn.17:${PORTSDIR}/dns/libidn \
-		expat.6:${PORTSDIR}/textproc/expat2 \
-		tasn1.4:${PORTSDIR}/security/libtasn1 \
-		gnutls.47:${PORTSDIR}/security/gnutls \
-		gcrypt.18:${PORTSDIR}/security/libgcrypt
-
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS=	IPV6 "Enable IPv6 support" off \
-		MYSQL "Build with MySQL support" off \
-		PGSQL "Build with PostgreSQL support" off
+LIB_DEPENDS=	pth:${PORTSDIR}/devel/pth-hard \
+		popt:${PORTSDIR}/devel/popt \
+		idn:${PORTSDIR}/dns/libidn \
+		expat:${PORTSDIR}/textproc/expat2 \
+		tasn1:${PORTSDIR}/security/libtasn1 \
+		gnutls:${PORTSDIR}/security/gnutls \
+		gcrypt:${PORTSDIR}/security/libgcrypt
+
+OPTIONS_DEFINE= IPV6 MYSQL PGSQL
 
 USE_RC_SUBR=	jabber
 USE_ICONV=	yes
@@ -39,6 +36,7 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	${PREFIX}/lib/jabber
+MAKE_JOBS_UNSAFE=	yes
 
 .if !defined(NO_INSTALL_MANPAGES)
 MAN5=		jabber.xml.5
@@ -73,19 +71,19 @@ SUB_LIST+=	JABBER_USER=${JABBER_USER} JABBER_UID=${JABBER_UID} \
 DOCS=		AUTHORS ChangeLog INSTALL NEWS README README.SQL README.config \
 		README.filespool README.karma README.protocols TODO UPGRADE mysql.sql
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=	--with-postgresql=${LOCALBASE}
 .endif
 
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
@@ -119,4 +117,4 @@ post-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
