@@ -19,6 +19,7 @@
 %%SITE_PERL%%/Excel/Writer/XLSX/Package/Relationships.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Package/SharedStrings.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Package/Styles.pm
+%%SITE_PERL%%/Excel/Writer/XLSX/Package/Table.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Package/Theme.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Package/VML.pm
 %%SITE_PERL%%/Excel/Writer/XLSX/Package/XMLwriter.pm
