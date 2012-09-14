@@ -2,6 +2,7 @@ bin/gappletviewer
 bin/gjavah
 bin/gjar
 bin/gjarsigner
+bin/gjdoc
 bin/gkeytool
 bin/gnative2ascii
 bin/gorbd
@@ -47,147 +48,147 @@ lib/logging.properties
 lib/security/classpath.security
 @dirrm lib/classpath
 @dirrm lib/security
-%%DATADIR%%/examples/Makefile.java2d
-%%DATADIR%%/examples/Makefile.jawt
-%%DATADIR%%/examples/README
-%%DATADIR%%/examples/examples.zip
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/NamingService/Demo.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/Demo.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/DemoServer.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/DemoServant.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/DemoTester.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/DirectTest.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/RequestTest.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/StructureToPass.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/StructureToPassHelper.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/StructureToPassHolder.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/StructureToReturn.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/StructureToReturnHelper.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/StructureToReturnHolder.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/TreeNode.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/TreeNodeHelper.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/TreeNodeHolder.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/WeThrowThisException.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/WeThrowThisExceptionHelper.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/_DemoTesterImplBase.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication/_DemoTesterStub.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/README.html
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/CanvasWorld.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/ChatConstants.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/ClientFrame.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/Demo.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/GameManager.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/GameManagerImpl.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/IorReader.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/OrbStarter.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/Player.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/PlayerImpl.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/PlayingDesk.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/State.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/X5Server.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/_GameManagerImpl_Tie.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/_GameManager_Stub.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/_PlayerImpl_Tie.java
-%%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5/_Player_Stub.java
-%%DATADIR%%/examples/gnu/classpath/examples/awt/AicasGraphicsBenchmark.java
-%%DATADIR%%/examples/gnu/classpath/examples/awt/AnimationApplet.java
-%%DATADIR%%/examples/gnu/classpath/examples/awt/Demo.java
-%%DATADIR%%/examples/gnu/classpath/examples/awt/HintingDemo.java
-%%DATADIR%%/examples/gnu/classpath/examples/datatransfer/Demo.java
-%%DATADIR%%/examples/gnu/classpath/examples/html/Demo.java
-%%DATADIR%%/examples/gnu/classpath/examples/icons/aicas.png
-%%DATADIR%%/examples/gnu/classpath/examples/icons/back.png
-%%DATADIR%%/examples/gnu/classpath/examples/icons/badge.png
-%%DATADIR%%/examples/gnu/classpath/examples/icons/big-fullscreen.png
-%%DATADIR%%/examples/gnu/classpath/examples/icons/big-home.png
-%%DATADIR%%/examples/gnu/classpath/examples/icons/big-warning.png
-%%DATADIR%%/examples/gnu/classpath/examples/icons/palme.gif
-%%DATADIR%%/examples/gnu/classpath/examples/icons/reload.png
-%%DATADIR%%/examples/gnu/classpath/examples/icons/stock-copy.png
-%%DATADIR%%/examples/gnu/classpath/examples/icons/stock-cut.png
-%%DATADIR%%/examples/gnu/classpath/examples/icons/stock-go-back.png
-%%DATADIR%%/examples/gnu/classpath/examples/icons/stock-go-down.png
-%%DATADIR%%/examples/gnu/classpath/examples/icons/stock-go-forward.png
-%%DATADIR%%/examples/gnu/classpath/examples/icons/stock-mic.png
-%%DATADIR%%/examples/gnu/classpath/examples/icons/stock-new.png
-%%DATADIR%%/examples/gnu/classpath/examples/icons/stock-open.png
-%%DATADIR%%/examples/gnu/classpath/examples/icons/stock-paste.png
-%%DATADIR%%/examples/gnu/classpath/examples/icons/stock-quit.png
-%%DATADIR%%/examples/gnu/classpath/examples/icons/stock-save-as.png
-%%DATADIR%%/examples/gnu/classpath/examples/icons/stock-save.png
-%%DATADIR%%/examples/gnu/classpath/examples/icons/stock-spell-check.png
-%%DATADIR%%/examples/gnu/classpath/examples/java2d/J2dBenchmark.java
-%%DATADIR%%/examples/gnu/classpath/examples/java2d/J2dBenchmarkGUI.java
-%%DATADIR%%/examples/gnu/classpath/examples/java2d/JNIOverhead.java
-%%DATADIR%%/examples/gnu/classpath/examples/java2d/bench.c
-%%DATADIR%%/examples/gnu/classpath/examples/java2d/bench.h
-%%DATADIR%%/examples/gnu/classpath/examples/jawt/DemoJAWT.c
-%%DATADIR%%/examples/gnu/classpath/examples/jawt/DemoJAWT.java
-%%DATADIR%%/examples/gnu/classpath/examples/management/TestBeans.java
-%%DATADIR%%/examples/gnu/classpath/examples/management/TestClassLoading.java
-%%DATADIR%%/examples/gnu/classpath/examples/management/TestCompilation.java
-%%DATADIR%%/examples/gnu/classpath/examples/management/TestGarbageCollector.java
-%%DATADIR%%/examples/gnu/classpath/examples/management/TestMemory.java
-%%DATADIR%%/examples/gnu/classpath/examples/management/TestMemoryManager.java
-%%DATADIR%%/examples/gnu/classpath/examples/management/TestMemoryPool.java
-%%DATADIR%%/examples/gnu/classpath/examples/management/TestOS.java
-%%DATADIR%%/examples/gnu/classpath/examples/management/TestRuntime.java
-%%DATADIR%%/examples/gnu/classpath/examples/management/TestThread.java
-%%DATADIR%%/examples/gnu/classpath/examples/midi/Demo.java
-%%DATADIR%%/examples/gnu/classpath/examples/print/Demo.java
-%%DATADIR%%/examples/gnu/classpath/examples/sound/AudioPlayerSample.java
-%%DATADIR%%/examples/gnu/classpath/examples/swing/BrowserEditorKit.java
-%%DATADIR%%/examples/gnu/classpath/examples/swing/ButtonDemo.java
-%%DATADIR%%/examples/gnu/classpath/examples/swing/ComboBoxDemo.java
-%%DATADIR%%/examples/gnu/classpath/examples/swing/Demo.java
-%%DATADIR%%/examples/gnu/classpath/examples/swing/DemoDesktop.java
-%%DATADIR%%/examples/gnu/classpath/examples/swing/DemoFactory.java
-%%DATADIR%%/examples/gnu/classpath/examples/swing/DocumentFilterDemo.java
-%%DATADIR%%/examples/gnu/classpath/examples/swing/FileChooserDemo.java
-%%DATADIR%%/examples/gnu/classpath/examples/swing/HtmlDemo.java
-%%DATADIR%%/examples/gnu/classpath/examples/swing/ListDemo.java
-%%DATADIR%%/examples/gnu/classpath/examples/swing/MetalThemeEditor.java
-%%DATADIR%%/examples/gnu/classpath/examples/swing/MiniDemo.java
-%%DATADIR%%/examples/gnu/classpath/examples/swing/NavigationFilterDemo.java
-%%DATADIR%%/examples/gnu/classpath/examples/swing/ProgressBarDemo.java
-%%DATADIR%%/examples/gnu/classpath/examples/swing/ScrollBarDemo.java
-%%DATADIR%%/examples/gnu/classpath/examples/swing/SliderDemo.java
-%%DATADIR%%/examples/gnu/classpath/examples/swing/SpinnerDemo.java
-%%DATADIR%%/examples/gnu/classpath/examples/swing/TabbedPaneDemo.java
-%%DATADIR%%/examples/gnu/classpath/examples/swing/TableDemo.java
-%%DATADIR%%/examples/gnu/classpath/examples/swing/TextAreaDemo.java
-%%DATADIR%%/examples/gnu/classpath/examples/swing/TextFieldDemo.java
-%%DATADIR%%/examples/gnu/classpath/examples/swing/TreeDemo.java
-%%DATADIR%%/examples/gnu/classpath/examples/swing/forms.html
-%%DATADIR%%/examples/gnu/classpath/examples/swing/frame1.html
-%%DATADIR%%/examples/gnu/classpath/examples/swing/frame2.html
-%%DATADIR%%/examples/gnu/classpath/examples/swing/frame3.html
-%%DATADIR%%/examples/gnu/classpath/examples/swing/frame4.html
-%%DATADIR%%/examples/gnu/classpath/examples/swing/frames.html
-%%DATADIR%%/examples/gnu/classpath/examples/swing/tables.html
-%%DATADIR%%/examples/gnu/classpath/examples/swing/textstyles.html
-%%DATADIR%%/examples/gnu/classpath/examples/swing/welcome.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.java2d
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.jawt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples.zip
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/NamingService/Demo.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/SimpleCommunication/Demo.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/SimpleCommunication/DemoServer.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/SimpleCommunication/communication/DemoServant.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/SimpleCommunication/communication/DemoTester.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/SimpleCommunication/communication/DirectTest.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/SimpleCommunication/communication/RequestTest.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/SimpleCommunication/communication/StructureToPass.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/SimpleCommunication/communication/StructureToPassHelper.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/SimpleCommunication/communication/StructureToPassHolder.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/SimpleCommunication/communication/StructureToReturn.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/SimpleCommunication/communication/StructureToReturnHelper.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/SimpleCommunication/communication/StructureToReturnHolder.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/SimpleCommunication/communication/TreeNode.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/SimpleCommunication/communication/TreeNodeHelper.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/SimpleCommunication/communication/TreeNodeHolder.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/SimpleCommunication/communication/WeThrowThisException.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/SimpleCommunication/communication/WeThrowThisExceptionHelper.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/SimpleCommunication/communication/_DemoTesterImplBase.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/SimpleCommunication/communication/_DemoTesterStub.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/swing/README.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/swing/x5/CanvasWorld.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/swing/x5/ChatConstants.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/swing/x5/ClientFrame.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/swing/x5/Demo.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/swing/x5/GameManager.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/swing/x5/GameManagerImpl.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/swing/x5/IorReader.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/swing/x5/OrbStarter.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/swing/x5/Player.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/swing/x5/PlayerImpl.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/swing/x5/PlayingDesk.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/swing/x5/State.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/swing/x5/X5Server.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/swing/x5/_GameManagerImpl_Tie.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/swing/x5/_GameManager_Stub.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/swing/x5/_PlayerImpl_Tie.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/swing/x5/_Player_Stub.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/awt/AicasGraphicsBenchmark.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/awt/AnimationApplet.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/awt/Demo.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/awt/HintingDemo.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/datatransfer/Demo.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/html/Demo.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/icons/aicas.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/icons/back.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/icons/badge.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/icons/big-fullscreen.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/icons/big-home.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/icons/big-warning.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/icons/palme.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/icons/reload.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/icons/stock-copy.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/icons/stock-cut.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/icons/stock-go-back.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/icons/stock-go-down.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/icons/stock-go-forward.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/icons/stock-mic.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/icons/stock-new.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/icons/stock-open.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/icons/stock-paste.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/icons/stock-quit.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/icons/stock-save-as.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/icons/stock-save.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/icons/stock-spell-check.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/java2d/J2dBenchmark.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/java2d/J2dBenchmarkGUI.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/java2d/JNIOverhead.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/java2d/bench.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/java2d/bench.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/jawt/DemoJAWT.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/jawt/DemoJAWT.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/management/TestBeans.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/management/TestClassLoading.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/management/TestCompilation.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/management/TestGarbageCollector.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/management/TestMemory.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/management/TestMemoryManager.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/management/TestMemoryPool.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/management/TestOS.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/management/TestRuntime.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/management/TestThread.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/midi/Demo.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/print/Demo.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/sound/AudioPlayerSample.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/BrowserEditorKit.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/ButtonDemo.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/ComboBoxDemo.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/Demo.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/DemoDesktop.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/DemoFactory.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/DocumentFilterDemo.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/FileChooserDemo.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/HtmlDemo.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/ListDemo.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/MetalThemeEditor.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/MiniDemo.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/NavigationFilterDemo.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/ProgressBarDemo.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/ScrollBarDemo.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/SliderDemo.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/SpinnerDemo.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/TabbedPaneDemo.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/TableDemo.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/TextAreaDemo.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/TextFieldDemo.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/TreeDemo.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/forms.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/frame1.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/frame2.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/frame3.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/frame4.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/frames.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/tables.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/textstyles.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu/classpath/examples/swing/welcome.html
 %%DATADIR%%/glibj.zip
 %%DATADIR%%/tools.zip
-@dirrm %%DATADIR%%/examples/gnu/classpath/examples/swing
-@dirrm %%DATADIR%%/examples/gnu/classpath/examples/sound
-@dirrm %%DATADIR%%/examples/gnu/classpath/examples/print
-@dirrm %%DATADIR%%/examples/gnu/classpath/examples/midi
-@dirrm %%DATADIR%%/examples/gnu/classpath/examples/management
-@dirrm %%DATADIR%%/examples/gnu/classpath/examples/jawt
-@dirrm %%DATADIR%%/examples/gnu/classpath/examples/java2d
-@dirrm %%DATADIR%%/examples/gnu/classpath/examples/icons
-@dirrm %%DATADIR%%/examples/gnu/classpath/examples/html
-@dirrm %%DATADIR%%/examples/gnu/classpath/examples/datatransfer
-@dirrm %%DATADIR%%/examples/gnu/classpath/examples/awt
-@dirrm %%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing/x5
-@dirrm %%DATADIR%%/examples/gnu/classpath/examples/CORBA/swing
-@dirrm %%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication/communication
-@dirrm %%DATADIR%%/examples/gnu/classpath/examples/CORBA/SimpleCommunication
-@dirrm %%DATADIR%%/examples/gnu/classpath/examples/CORBA/NamingService
-@dirrm %%DATADIR%%/examples/gnu/classpath/examples/CORBA
-@dirrm %%DATADIR%%/examples/gnu/classpath/examples
-@dirrm %%DATADIR%%/examples/gnu/classpath
-@dirrm %%DATADIR%%/examples/gnu
-@dirrm %%DATADIR%%/examples
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/swing
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/sound
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/print
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/midi
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/management
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/jawt
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/java2d
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/icons
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/html
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/datatransfer
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/awt
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/swing/x5
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/swing
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/SimpleCommunication/communication
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/SimpleCommunication
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/CORBA/NamingService
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples/CORBA
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath/examples
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu/classpath
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gnu
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%
