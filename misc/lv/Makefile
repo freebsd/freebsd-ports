@@ -7,7 +7,7 @@
 
 PORTNAME=	lv
 PORTVERSION=	4.51
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	http://www.ff.iij4u.or.jp/~nrt/freeware/
 DISTNAME=	lv451
