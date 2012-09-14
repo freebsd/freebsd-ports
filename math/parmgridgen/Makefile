@@ -7,6 +7,7 @@
 
 PORTNAME=	parmgridgen
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	math science
 MASTER_SITES=	http://www.mgnet.org/mgnet/Codes/parmgridgen/ \
 		http://www-users.cs.umn.edu/~moulitsa/download/ \
@@ -18,7 +19,7 @@ COMMENT=	Library for obtaining a sequence of successive coarse grids
 
 ALL_TARGET=	parallel
 
-LIB_DEPENDS+=	mpi.0:${PORTSDIR}/net/openmpi
+LIB_DEPENDS+=	mpi.1:${PORTSDIR}/net/openmpi
 USE_GMAKE=	yes
 
 post-patch:
