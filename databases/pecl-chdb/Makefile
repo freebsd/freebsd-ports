@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	chdb
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	databases
-MASTER_SITES=	https://github.com/lcastelli/chdb/tarball/${DISTVERSION}/
 PKGNAMEPREFIX=	pecl-
-DISTNAME=	lcastelli-${PORTNAME}-v${DISTVERSION}-0-g${DISTVERSION}
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	ports@FreeBSD.org
@@ -29,9 +27,9 @@ IGNORE_WITH_PHP=5
 
 CFLAGS+=	-L${LOCALBASE}/lib
 
-GITVERSION=	5c9a37d
-FETCH_ARGS=	-pRr
-WRKSRC=		${WRKDIR}/lcastelli-${PORTNAME}-${GITVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	lcastelli
+GH_COMMIT=	169f45d
 
 CONFIGURE_ARGS=	--with-libcmph-dir=${LOCALBASE}/lib
 
