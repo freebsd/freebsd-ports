@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooX-Types-MooseLike
-PORTVERSION=	0.09
+PORTVERSION=	0.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MATEU
@@ -20,7 +20,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Module-Runtime>=0.012:${PORTSDIR}/devel/p5-Module-Runtime \
 		p5-Moo>=0.009016:${PORTSDIR}/devel/p5-Moo \
-		p5-strictures>=1.001001:${PORTSDIR}/devel/p5-strictures
+		p5-Set-Object>=1:${PORTSDIR}/devel/p5-Set-Object
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>=0.003:${PORTSDIR}/devel/p5-Test-Fatal
 
@@ -28,7 +28,8 @@ PERL_CONFIGURE=	yes
 
 MAN3=		MooX::Types::MooseLike.3 \
 		MooX::Types::MooseLike::Base.3 \
-		MooX::Types::MooseLike::Numeric.3
+		MooX::Types::MooseLike::Numeric.3 \
+		MooX::Types::SetObject.3
 
 post-patch:
 	@${REINPLACE_CMD} -e '/NAME/ s|MooX-Types-MooseLike|MooX::Types::MooseLike|' ${WRKSRC}/Makefile.PL
