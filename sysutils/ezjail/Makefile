@@ -1,13 +1,7 @@
-# New ports collection makefile for:   ezjail
-# Date created:        1 September 2005
-# Whom:                erdgeist
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ezjail
-PORTVERSION=	3.2.1
-PORTREVISION=	1
+PORTVERSION=	3.2.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://erdgeist.org/arts/software/ezjail/
 
