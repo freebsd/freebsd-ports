@@ -3,7 +3,13 @@ bin/cmake
 bin/cpack
 bin/ctest
 share/aclocal/cmake.m4
-share/emacs/site-lisp/cmake-mode.el
+%%DATADIR%%/completions/cmake
+%%DATADIR%%/completions/cpack
+%%DATADIR%%/completions/ctest
+%%DATADIR%%/editors/emacs/cmake-mode.el
+%%DATADIR%%/editors/vim/cmake-help.vim
+%%DATADIR%%/editors/vim/cmake-indent.vim
+%%DATADIR%%/editors/vim/cmake-syntax.vim
 %%DATADIR%%/include/cmCPluginAPI.h
 %%DOCSDIR%%/Copyright.txt
 %%DOCSDIR%%/ccmake.docbook
@@ -36,6 +42,7 @@ share/emacs/site-lisp/cmake-mode.el
 %%DOCSDIR%%/ctest.docbook
 %%DOCSDIR%%/ctest.html
 %%DOCSDIR%%/ctest.txt
+share/emacs/site-lisp/cmake-mode.el
 @dirrm %%DOCSDIR%%/cmzlib
 @dirrm %%DOCSDIR%%/cmsys
 @dirrm %%DOCSDIR%%/cmlibarchive
@@ -44,4 +51,8 @@ share/emacs/site-lisp/cmake-mode.el
 @dirrm %%DOCSDIR%%/cmcompress
 @dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/include
+@dirrm %%DATADIR%%/editors/vim
+@dirrm %%DATADIR%%/editors/emacs
+@dirrm %%DATADIR%%/editors
+@dirrm %%DATADIR%%/completions
 @dirrmtry %%DATADIR%%
