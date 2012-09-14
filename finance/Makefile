@@ -114,6 +114,7 @@
     SUBDIR += trytond_currency
     SUBDIR += trytond_party
     SUBDIR += trytond_product
+    SUBDIR += trytond_timesheet
     SUBDIR += venice
     SUBDIR += weberp
     SUBDIR += wmstock
