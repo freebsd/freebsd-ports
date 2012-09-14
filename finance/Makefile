@@ -112,6 +112,7 @@
     SUBDIR += trytond_company_work_time
     SUBDIR += trytond_country
     SUBDIR += trytond_currency
+    SUBDIR += trytond_dashboard
     SUBDIR += trytond_party
     SUBDIR += trytond_product
     SUBDIR += trytond_purchase
