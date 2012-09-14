@@ -1,10 +1,25 @@
 bin/zathura
 include/zathura/document.h
+include/zathura/links.h
 include/zathura/macros.h
+include/zathura/page.h
+include/zathura/plugin-api.h
+include/zathura/types.h
 include/zathura/version.h
-include/zathura/zathura.h
+libdata/pkgconfig/zathura.pc
 share/applications/zathura.desktop
 %%NLS%%share/locale/de/LC_MESSAGES/zathura.mo
-libdata/pkgconfig/zathura.pc
-@dirrmtry share/applications
+%%NLS%%share/locale/eo/LC_MESSAGES/zathura.mo
+%%NLS%%share/locale/es/LC_MESSAGES/zathura.mo
+%%NLS%%share/locale/es_CL/LC_MESSAGES/zathura.mo
+%%NLS%%share/locale/et/LC_MESSAGES/zathura.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/zathura.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/zathura.mo
+%%NLS%%share/locale/ta_IN/LC_MESSAGES/zathura.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/zathura.mo
 @dirrm include/zathura
+@dirrmtry share/applications
+@dirrmtry share/locale/es_CL/LC_MESSAGES
+@dirrmtry share/locale/es_CL
+@dirrmtry share/locale/ta_IN/LC_MESSAGES
+@dirrmtry share/locale/ta_IN
