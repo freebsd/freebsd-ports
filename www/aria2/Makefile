@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aria2
-PORTVERSION=	1.15.1
+PORTVERSION=	1.15.2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 
@@ -14,7 +14,9 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Yet another download tool
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+
+OPTIONS_DEFINE=	DOCS NLS SQLITE
+OPTIONS_DEFAULT=SQLITE
 
 CONFIGURE_ARGS=	--enable-bittorrent --disable-epoll --enable-metalink --enable-threads=pth \
 		--with-libz --with-libxml2 --with-openssl \
@@ -30,9 +32,6 @@ USE_OPENSSL=	yes
 MAN1=		aria2c.1
 MANLANG=	"" ru
 PLIST_FILES=	bin/aria2c
-
-OPTIONS_DEFINE=	DOCS NLS SQLITE
-OPTIONS_DEFAULT=SQLITE
 
 .include <bsd.port.options.mk>
 
