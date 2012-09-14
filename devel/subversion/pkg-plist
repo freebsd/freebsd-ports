@@ -9,6 +9,7 @@ bin/svnsync
 %%ASVN%%bin/asvn
 %%SVNAUTHZ_VALIDATE%%bin/svnauthz-validate
 %%SVNSERVE_WRAPPER%%bin/svnserve.bin
+%%SVNMUCC%%bin/svnmucc
 bin/svnversion
 include/subversion-1/mod_authz_svn.h
 include/subversion-1/mod_dav_svn.h
