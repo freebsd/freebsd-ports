@@ -20,6 +20,8 @@ RUN_DEPENDS=	\
 	rubygem-cool.io>=1.1.0:${PORTSDIR}/devel/rubygem-cool.io \
 	rubygem-http_parser.rb>=0.5.1:${PORTSDIR}/net/rubygem-http_parser.rb
 
+BROKEN=		conflicting dependencies
+
 USE_RUBY=	yes
 RUBY_VER=	1.9
 USE_RUBYGEMS=	yes
