@@ -114,6 +114,7 @@
     SUBDIR += trytond_currency
     SUBDIR += trytond_party
     SUBDIR += trytond_product
+    SUBDIR += trytond_purchase
     SUBDIR += trytond_stock
     SUBDIR += trytond_timesheet
     SUBDIR += venice
