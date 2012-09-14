@@ -5,33 +5,41 @@
 # $FreeBSD$
 
 PORTNAME=	jamvm
-PORTVERSION=	1.5.1
-PORTREVISION=	5
+PORTVERSION=	1.5.4
 CATEGORIES=	java devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/JamVM%20${PORTVERSION}
 
-MAINTAINER=	bkoenig@alpha-tierchen.de
+MAINTAINER=	java@FreeBSD.org
 COMMENT=	A compact Java virtual machine
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	${LOCALBASE}/share/classpath/glibj.zip:${PORTSDIR}/java/classpath
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-classpath-install-dir=${LOCALBASE}
 USE_GMAKE=	yes
+USE_PKGCONFIG=	build
 
-OPTIONS=	FFI "use libffi to call native methods" ON \
-		ZIP "turn-on zip support in the bootstrap loader" ON
+OPTIONS_DEFINE=	FFI ZIP
+OPTIONS_DEFAULT=FFI ZIP
+FFI_DESC=	use libffi to call native methods
+ZIP_DESC=	turn-on zip support in the bootstrap loader
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_FFI)
+.if ${PORT_OPTIONS:MFFI}
 LIB_DEPENDS+=		ffi:${PORTSDIR}/devel/libffi
 CONFIGURE_ARGS+=	--enable-ffi
-LDFLAGS+=	-L${LOCALBASE}/lib
-CFLAGS+=	`pkg-config libffi --cflags`
+FFI_CFLAGS!=	pkgconf libffi --cflags
+FFI_LDFLAGS!=	pkgconf libffi --libs-only-L
+CFLAGS+=	${FFI_CFLAGS}
+LDFLAGS+=	${FFI_LDFLAGS}
+.elif ${ARCH} == "sparc64"
+IGNORE=		for ${ARCH} requires libffi
 .endif
 
-.if defined(WITH_ZIP)
+.if ${PORT_OPTIONS:MZIP}
 BUILD_DEPENDS+=		zip:${PORTSDIR}/archivers/zip
 PLIST_SUB+=		WITH_ZIP="" WITHOUT_ZIP="@comment "
 .else
@@ -39,15 +47,9 @@ CONFIGURE_ARGS+=	--disable-zip
 PLIST_SUB+=		WITH_ZIP="@comment " WITHOUT_ZIP=""
 .endif
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not configure on sparc64
-.endif
+.include <bsd.port.pre.mk>
 
 post-extract:
-	@${MV} ${WRKSRC}/src/arch/x86_64.h ${WRKSRC}/src/arch/amd64.h
 	@${REINPLACE_CMD} -e "s,\(^include_HEADERS = .*\)jni.h\(.*\),\1\2," ${WRKSRC}/src/Makefile.in
-
-post-configure:
-	@${MV} ${WRKSRC}/src/os/bsd/x86_64 ${WRKSRC}/src/os/bsd/amd64
 
 .include <bsd.port.post.mk>

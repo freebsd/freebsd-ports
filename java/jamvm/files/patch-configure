@@ -1,0 +1,11 @@
+--- configure.orig	2009-12-31 13:41:44.000000000 -0500
++++ configure	2012-09-12 20:07:36.000000000 -0400
+@@ -2689,7 +2689,7 @@
+ hppa*-*-linux*) host_cpu=parisc host_os=linux ;;
+ mipsel-*-linux*) host_cpu=mips host_os=linux ;;
+ x86_64-*-openbsd*) host_os=bsd libdl_needed=no ;;
+-x86_64-*-freebsd*) host_os=bsd libdl_needed=no ;;
++amd64-*-freebsd*) host_os=bsd host_cpu=x86_64 libdl_needed=no ;;
+ arm*-*-linux*) host_cpu=arm host_os=linux ;;
+ arm*-*-openbsd*) host_cpu=arm host_os=bsd libdl_needed=no ;;
+ arm*-*-freebsd*) host_cpu=arm host_os=bsd libdl_needed=no ;;
