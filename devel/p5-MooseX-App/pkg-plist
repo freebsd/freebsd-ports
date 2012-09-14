@@ -1,13 +1,13 @@
 %%SITE_PERL%%/MooseX/App.pm
-%%SITE_PERL%%/MooseX/App/Base.pm
 %%SITE_PERL%%/MooseX/App/Command.pm
-%%SITE_PERL%%/MooseX/App/Common.pm
+%%SITE_PERL%%/MooseX/App/Exporter.pm
 %%SITE_PERL%%/MooseX/App/Message/Block.pm
 %%SITE_PERL%%/MooseX/App/Message/BlockColor.pm
 %%SITE_PERL%%/MooseX/App/Message/Envelope.pm
 %%SITE_PERL%%/MooseX/App/Meta/Role/Attribute/Option.pm
 %%SITE_PERL%%/MooseX/App/Meta/Role/Class/Base.pm
 %%SITE_PERL%%/MooseX/App/Meta/Role/Class/Command.pm
+%%SITE_PERL%%/MooseX/App/Meta/Role/Class/Simple.pm
 %%SITE_PERL%%/MooseX/App/Plugin/BashCompletion.pm
 %%SITE_PERL%%/MooseX/App/Plugin/BashCompletion/Command.pm
 %%SITE_PERL%%/MooseX/App/Plugin/BashCompletion/Meta/Class.pm
@@ -17,13 +17,32 @@
 %%SITE_PERL%%/MooseX/App/Plugin/Config/Meta/Class.pm
 %%SITE_PERL%%/MooseX/App/Plugin/ConfigHome.pm
 %%SITE_PERL%%/MooseX/App/Plugin/ConfigHome/Meta/Class.pm
+%%SITE_PERL%%/MooseX/App/Plugin/Env.pm
+%%SITE_PERL%%/MooseX/App/Plugin/Env/Meta/Attribute.pm
+%%SITE_PERL%%/MooseX/App/Plugin/Env/Meta/Class.pm
+%%SITE_PERL%%/MooseX/App/Plugin/Fuzzy.pm
+%%SITE_PERL%%/MooseX/App/Plugin/Fuzzy/Meta/Class.pm
+%%SITE_PERL%%/MooseX/App/Plugin/Version.pm
+%%SITE_PERL%%/MooseX/App/Plugin/Version/Command.pm
+%%SITE_PERL%%/MooseX/App/Plugin/Version/Meta/Class.pm
 %%SITE_PERL%%/MooseX/App/Role.pm
+%%SITE_PERL%%/MooseX/App/Role/Base.pm
+%%SITE_PERL%%/MooseX/App/Role/Common.pm
+%%SITE_PERL%%/MooseX/App/Role/Simple.pm
+%%SITE_PERL%%/MooseX/App/Simple.pm
 %%SITE_PERL%%/MooseX/App/Tutorial.pod
 %%SITE_PERL%%/MooseX/App/Utils.pm
 %%SITE_PERL%%/MooseX/App/WritingPlugins.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/App/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/App
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
+@dirrmtry %%SITE_PERL%%/MooseX/App/Role
+@dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/Version/Meta
+@dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/Version
+@dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/Fuzzy/Meta
+@dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/Fuzzy
+@dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/Env/Meta
+@dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/Env
 @dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/ConfigHome/Meta
 @dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/ConfigHome
 @dirrmtry %%SITE_PERL%%/MooseX/App/Plugin/Config/Meta

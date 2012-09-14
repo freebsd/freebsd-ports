@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-App
-PORTVERSION=	1.05
+PORTVERSION=	1.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -41,7 +41,11 @@ MAN3=		MooseX::App.3 \
 		MooseX::App::Plugin::Color.3 \
 		MooseX::App::Plugin::Config.3 \
 		MooseX::App::Plugin::ConfigHome.3 \
+		MooseX::App::Plugin::Env.3 \
+		MooseX::App::Plugin::Fuzzy.3 \
+		MooseX::App::Plugin::Version.3 \
 		MooseX::App::Role.3 \
+		MooseX::App::Simple.3 \
 		MooseX::App::Tutorial.3 \
 		MooseX::App::WritingPlugins.3
 
