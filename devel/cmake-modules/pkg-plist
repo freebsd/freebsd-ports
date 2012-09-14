@@ -26,6 +26,7 @@
 %%DATADIR%%/Modules/CMakeCXXCompilerABI.cpp
 %%DATADIR%%/Modules/CMakeCXXCompilerId.cpp.in
 %%DATADIR%%/Modules/CMakeCXXInformation.cmake
+%%DATADIR%%/Modules/CMakeClDeps.cmake
 %%DATADIR%%/Modules/CMakeCommonLanguageInclude.cmake
 %%DATADIR%%/Modules/CMakeCompilerABI.h
 %%DATADIR%%/Modules/CMakeConfigurableFile.in
@@ -269,6 +270,7 @@
 %%DATADIR%%/Modules/FindLAPACK.cmake
 %%DATADIR%%/Modules/FindLATEX.cmake
 %%DATADIR%%/Modules/FindLibArchive.cmake
+%%DATADIR%%/Modules/FindLibLZMA.cmake
 %%DATADIR%%/Modules/FindLibXml2.cmake
 %%DATADIR%%/Modules/FindLibXslt.cmake
 %%DATADIR%%/Modules/FindLua50.cmake
@@ -384,6 +386,7 @@
 %%DATADIR%%/Modules/MacroAddFileDependencies.cmake
 %%DATADIR%%/Modules/NSIS.InstallOptions.ini.in
 %%DATADIR%%/Modules/NSIS.template.in
+%%DATADIR%%/Modules/Platform/AIX-GNU-ASM.cmake
 %%DATADIR%%/Modules/Platform/AIX-GNU-C.cmake
 %%DATADIR%%/Modules/Platform/AIX-GNU-CXX.cmake
 %%DATADIR%%/Modules/Platform/AIX-GNU-Fortran.cmake
