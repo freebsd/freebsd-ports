@@ -42,6 +42,7 @@ MAKE_ARGS+=		REQUIRES_RTTI=1
 LIBNAME=		libLLVM-${DISTVERSION:C/\.r[0-9]*//}svn.so
 
 CONFIGURE_ARGS+=	--enable-bindings=none
+CONFIGURE_ARGS+=	--program-suffix=${DISTVERSION:C/\.r[0-9]*//}svn
 
 OPTIONS_DEFINE=	ASSERTS DOCS LTOPLUGIN
 

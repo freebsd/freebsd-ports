@@ -92,7 +92,6 @@ include/llvm/ADT/StringRef.h
 include/llvm/ADT/StringSet.h
 include/llvm/ADT/StringSwitch.h
 include/llvm/ADT/TinyPtrVector.h
-include/llvm/ADT/Trie.h
 include/llvm/ADT/Triple.h
 include/llvm/ADT/Twine.h
 include/llvm/ADT/UniqueVector.h
@@ -141,6 +140,8 @@ include/llvm/Analysis/Passes.h
 include/llvm/Analysis/PathNumbering.h
 include/llvm/Analysis/PathProfileInfo.h
 include/llvm/Analysis/PostDominators.h
+include/llvm/Analysis/ProfileDataLoader.h
+include/llvm/Analysis/ProfileDataTypes.h
 include/llvm/Analysis/ProfileInfo.h
 include/llvm/Analysis/ProfileInfoLoader.h
 include/llvm/Analysis/ProfileInfoTypes.h
@@ -519,6 +520,7 @@ include/llvm/Transforms/Scalar.h
 include/llvm/Transforms/Utils/AddrModeMatcher.h
 include/llvm/Transforms/Utils/BasicBlockUtils.h
 include/llvm/Transforms/Utils/BuildLibCalls.h
+include/llvm/Transforms/Utils/BypassSlowDivision.h
 include/llvm/Transforms/Utils/Cloning.h
 include/llvm/Transforms/Utils/CmpInstAnalysis.h
 include/llvm/Transforms/Utils/CodeExtractor.h
@@ -676,6 +678,7 @@ lib/libprofile_rt.so
 %%PORTDOCS%%%%DOCSDIR%%/html/LangImpl2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/LangImpl3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/LangImpl4.html
+%%PORTDOCS%%%%DOCSDIR%%/html/LangImpl5-cfg.png
 %%PORTDOCS%%%%DOCSDIR%%/html/LangImpl5.html
 %%PORTDOCS%%%%DOCSDIR%%/html/LangImpl6.html
 %%PORTDOCS%%%%DOCSDIR%%/html/LangImpl7.html
