@@ -102,6 +102,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2012-4430</cvename>
       <url>http://www.bacula.org/git/cgit.cgi/bacula/commit/?id=67debcecd3d530c429e817e1d778e79dcd1db905</url>
       <url>https://secunia.com/advisories/50535/</url>
       <url>http://sourceforge.net/projects/bacula/files/bacula/5.2.11/ReleaseNotes/view</url>
