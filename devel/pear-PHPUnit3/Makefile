@@ -25,14 +25,15 @@ PEAR_AUTOINSTALL=	yes
 
 LATEST_LINK=	pear-PHPUnit3
 
-OPTIONS=	PEAR_IMAGE_GRAPHVIZ "PEAR::Image::GraphViz support" off \
-		PEAR_LOG "PEAR::Log support" off \
-		JSON "Enable JSON support" off \
-		PDO "Enable PDO support" off \
-		PDO_SQLITE "Enable PDO_SQLite support" off \
-		TOKENIZER "Enable Tokenizer support" off \
-		PDO_MYSQL "Enable PDO_MySQL support" off \
-		XDEBUG "Enable Xdebug support" off
+OPTIONS_DEFINE=	PEAR_IMAGE_GRAPHVIZ PEAR_LOG JSON PDO PDO_SQLITE TOKENIZER PDO_MYSQL XDEBUG
+PEAR_IMAGE_GRAPHVIZ_DESC=	PEAR::Image::GraphViz support
+PEAR_LOG_DESC=	PEAR::Log support
+JSON_DESC=	Enable JSON support
+PDO_DESC=	Enable PDO support
+PDO_SQLITE_DESC=	Enable PDO_SQLite support
+TOKENIZER_DESC=	Enable Tokenizer support
+PDO_MYSQL_DESC=	Enable PDO_MySQL support
+XDEBUG_DESC=	Enable Xdebug support
 
 DEFAULT_PHP_VER=5
 IGNORE_WITH_PHP=4
@@ -41,35 +42,36 @@ USE_PHP=	dom spl pcre
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_PEAR_LOG)
+.if ${PORT_OPTIONS:MPEAR_LOG}
 RUN_DEPENDS+=	${PEARDIR}/Log/null.php:${PORTSDIR}/sysutils/pear-Log
 .endif
-
-.if defined(WITH_PEAR_IMAGE_GRAPHVIZ)
+   
+.if ${PORT_OPTIONS:MIMAGE_GRAPHVIZ}
+RUN_DEPENDS+=	${PEARDIR}/Log/null.php:${PORTSDIR}/sysutils/pear-Log
 RUN_DEPENDS+=	${PEARDIR}/Image/GraphViz.php:${PORTSDIR}/graphics/pear-Image_GraphViz
 .endif
 
-.if defined(WITH_JSON)
+.if ${PORT_OPTIONS:MJSON}
 USE_PHP+=	json
 .endif
 
-.if defined(WITH_PDO)
+.if ${PORT_OPTIONS:MPDO}
 USE_PHP+=	pdo
 .endif
 
-.if defined(WITH_PDO_MYSQL)
+.if ${PORT_OPTIONS:MPDO_MYSQL}
 USE_PHP+=	pdo_mysql
 .endif
 
-.if defined(WITH_PDO_SQLITE)
+.if ${PORT_OPTIONS:MPDO_SQLITE}
 USE_PHP+=	pdo_sqlite
 .endif
 
-.if defined(WITH_TOKENIZER)
+.if ${PORT_OPTIONS:MTOKENIZER}
 USE_PHP+=	tokenizer
 .endif
 
-.if defined(WITH_XDEBUG)
+.if ${PORT_OPTIONS:MXDEBUG}
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xdebug.so:${PORTSDIR}/devel/php-xdebug
 .endif
 
