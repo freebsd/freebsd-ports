@@ -1,12 +1,12 @@
 # New ports collection makefile for:	py-github
 # Date created:		2012-06-04
-# Whom:			koobs <koobs.freebsd@gmail.com>
+# Whom:			Kubilay Kocak <koobs.freebsd@gmail.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	pygithub
-PORTVERSION=	1.3
+PORTVERSION=	1.7
 CATEGORIES=	devel www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

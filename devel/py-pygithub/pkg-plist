@@ -23,9 +23,15 @@
 %%PYTHON_SITELIBDIR%%/github/CommitStats.py
 %%PYTHON_SITELIBDIR%%/github/CommitStats.pyc
 %%PYTHON_SITELIBDIR%%/github/CommitStats.pyo
+%%PYTHON_SITELIBDIR%%/github/CommitStatus.py
+%%PYTHON_SITELIBDIR%%/github/CommitStatus.pyc
+%%PYTHON_SITELIBDIR%%/github/CommitStatus.pyo
 %%PYTHON_SITELIBDIR%%/github/Comparison.py
 %%PYTHON_SITELIBDIR%%/github/Comparison.pyc
 %%PYTHON_SITELIBDIR%%/github/Comparison.pyo
+%%PYTHON_SITELIBDIR%%/github/ContentFile.py
+%%PYTHON_SITELIBDIR%%/github/ContentFile.pyc
+%%PYTHON_SITELIBDIR%%/github/ContentFile.pyo
 %%PYTHON_SITELIBDIR%%/github/Download.py
 %%PYTHON_SITELIBDIR%%/github/Download.pyc
 %%PYTHON_SITELIBDIR%%/github/Download.pyo
@@ -83,6 +89,9 @@
 %%PYTHON_SITELIBDIR%%/github/Hook.py
 %%PYTHON_SITELIBDIR%%/github/Hook.pyc
 %%PYTHON_SITELIBDIR%%/github/Hook.pyo
+%%PYTHON_SITELIBDIR%%/github/HookDescription.py
+%%PYTHON_SITELIBDIR%%/github/HookDescription.pyc
+%%PYTHON_SITELIBDIR%%/github/HookDescription.pyo
 %%PYTHON_SITELIBDIR%%/github/HookResponse.py
 %%PYTHON_SITELIBDIR%%/github/HookResponse.pyc
 %%PYTHON_SITELIBDIR%%/github/HookResponse.pyo
