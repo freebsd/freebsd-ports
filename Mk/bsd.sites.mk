@@ -1070,7 +1070,6 @@ MASTER_SITE_QMAIL+= \
 .if !defined(IGNORE_MASTER_SITE_QT)
 MASTER_SITE_QT+= \
 	http://releases.qt-project.org/qt4/source/%SUBDIR%/ \
-	http://mi.mirror.garr.it/mirrors/qt/%SUBDIR%/ \
 	ftp://ftp.heanet.ie/mirrors/trolltech/pub/qt/source/%SUBDIR%/ \
 	http://download.qt.nokia.com/qt/source/%SUBDIR%/ \
 	ftp://ftp.trolltech.com/qt/source/%SUBDIR%/
