@@ -22,7 +22,7 @@ USE_QT4=	qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
-#MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_SAFE=	yes
 
 CONFLICTS_BUILD=	ktorrent-2*
 
