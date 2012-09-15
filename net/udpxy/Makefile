@@ -6,23 +6,26 @@
 #
 
 PORTNAME=	udpxy
-PORTVERSION=	1.0.21
+PORTVERSION=	1.0.23
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${RELEASE_MASCOT}-${PORTVERSION:R}
-DISTNAME=	${PORTNAME}.${PORTVERSION}-2-prod
-EXTRACT_SUFX=	.tgz
+DISTNAME=	${PORTNAME}.${PORTVERSION}-0-prod
 
 MAINTAINER=	alex.deiter@gmail.com
 COMMENT=	UDP-to-HTTP multicast traffic relay daemon
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-2
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-0
 USE_RC_SUBR=	udpxy
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 RELEASE_MASCOT=	Chipmunk
-OPTIONS=	RELEASE "No asserts, no debug symbols, verbose mode on"	on \
-		LEAN "No asserts, no debug symbols, verbose mode off" off \
-		DEBUG "Asserts, debug symbols, verbose mode on" off
+
+OPTIONS_SINGLE=	CONF
+OPTIONS_SINGLE_CONF=	RELEASE LEAN DEBUG
+RELEASE_DESC=	No asserts, no debug symbols, verbose on
+LEAN_DESC=	No asserts, no debug symbols, verbose off
+DEBUG_DESC=	Asserts, debug symbols, verbose on
+OPTIONS_DEFAULT=	RELEASE
 
 PLIST_FILES=	sbin/udpxy \
 		sbin/udpxrec
@@ -31,17 +34,15 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/udpxy ${PREFIX}/sbin/
 	@${LN} -s udpxy ${PREFIX}/sbin/udpxrec
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_RELEASE) && defined(WITHOUT_LEAN) && defined(WITHOUT_DEBUG)
+.if ${PORT_OPTIONS:MRELEASE}
 ALL_TARGET=release
-.elif defined(WITH_LEAN) && defined(WITHOUT_RELEASE) && defined(WITHOUT_DEBUG)
+.elif ${PORT_OPTIONS:MLEAN}
 ALL_TARGET=lean
-.elif defined(WITH_DEBUG) && defined(WITHOUT_RELEASE) && defined(WITHOUT_LEAN)
+.elif ${PORT_OPTIONS:MDEBUG}
 ALL_TARGET=debug
 WITH_DEBUG=yes
-.else
-IGNORE=please run 'make config' again and select one build option
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
