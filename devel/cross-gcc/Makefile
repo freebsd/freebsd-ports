@@ -1,9 +1,4 @@
-# New ports collection makefile for:	cross-gcc
-# Date created:		2006-08-10
-# Whom:			Stanislav Sedov <stas@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME?=	gcc
 PORTVERSION=	4.5.2
@@ -149,9 +144,8 @@ OURTARGET=	cross	# to generate a correct index line
 IGNORE=		you should select TGTARCH and TGTABI to build port
 .endif
 
-OPTIONS=	CXX	"Enable C++ language support" on \
-		OBJC	"Enable Objective C support" on \
-		FORTRAN	"Enable Fortran support" off
+OPTIONS_DEFINE=	CXX OBJC FORTRAN
+OPTIONS_DEFAULT=	CXX OBJC
 
 .include <bsd.port.pre.mk>
 
@@ -163,7 +157,7 @@ BROKEN=		Does not link
 
 PKG_ARGS=	-v -c -${COMMENT:Q} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`cd ${PORTSDIR}/devel/cross-binutils && ${MAKE} ${DEPENDS_ARGS} -V PKGNAME`:devel/cross-binutils" ${EXTRA_PKG_ARGS} $${_LATE_PKG_ARGS} -m ${MTREE_FILE} -o ${PKGORIGIN}
 
-.if !defined(WITHOUT_CXX)
+.if ${PORT_OPTIONS:MCXX}
 TGTLANGS:=	"${TGTLANGS},c++"
 PLIST_FILES+=	bin/${OURTARGET}-c++ \
 		bin/${OURTARGET}-g++ \
@@ -171,11 +165,11 @@ PLIST_FILES+=	bin/${OURTARGET}-c++ \
 		${OURTARGET}/bin/g++
 .endif
 
-.if !defined(WITHOUT_OBJC)
+.if ${PORT_OPTIONS:MOBJC}
 TGTLANGS:=	"${TGTLANGS},objc"
 .endif
 
-.if defined(WITH_FORTRAN)
+.if ${PORT_OPTIONS:MFORTRAN}
 TGTLANGS:=	"${TGTLANGS},fortran"
 PLIST_FILES+=	bin/${OURTARGET}-gfortran \
 		${OURTARGET}/bin/gfortran
