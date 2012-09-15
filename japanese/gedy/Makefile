@@ -32,6 +32,12 @@ NO_BUILD=		yes
 
 PLIST_FILES=	bin/${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_DEFAULT_VER} != ${RUBY_VER}
+IGNORE=		requires RUBY_DEFAULT_VER=${RUBY_VER}
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,#! /usr/bin/ruby1.9.3,#!${RUBY},g' \
 			  ${WRKSRC}/${PORTNAME}
@@ -39,4 +45,4 @@ post-patch:
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
