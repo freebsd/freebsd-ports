@@ -1,7 +1,3 @@
-# New ports collection makefile for:	wy60
-# Date created:		2002-06-12
-# Whom:			Christian Weisgerber <naddy@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	wy60

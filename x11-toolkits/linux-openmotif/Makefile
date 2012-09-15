@@ -1,7 +1,3 @@
-# New ports collection makefile for:   linux-openmotif
-# Date created:                2001-09-24
-# Whom:                        Christian Weisgerber <naddy@mips.inka.de>
-#
 # $FreeBSD$
 
 PORTNAME=	openmotif

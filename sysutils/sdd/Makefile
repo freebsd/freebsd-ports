@@ -1,7 +1,3 @@
-# New ports collection makefile for:	sdd
-# Date created:		1999-05-05
-# Whom:			Christian Weisgerber <naddy@mips.rhein-neckar.de>
-#
 # $FreeBSD$
 
 PORTNAME=	sdd

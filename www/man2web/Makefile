@@ -1,9 +1,4 @@
-# New ports collection makefile for:   man2web
-# Date created:                2003-04-19
-# Whom:                        Christian Weisgerber <naddy@freebsd.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	man2web
 PORTVERSION=	0.88

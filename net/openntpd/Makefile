@@ -1,9 +1,4 @@
-# New ports collection makefile for:	openntpd
-# Date created:			2004-07-11
-# Whom:				Christian Weisgerber <naddy@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	openntpd
 PORTVERSION=	4.6

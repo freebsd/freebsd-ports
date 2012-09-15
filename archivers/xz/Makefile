@@ -1,9 +1,4 @@
-# New ports collection makefile for:	xz
-# Date created:		2009-09-16
-# Whom:			naddy
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xz
 PORTVERSION=	5.0.3

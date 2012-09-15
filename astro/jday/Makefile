@@ -1,7 +1,3 @@
-# New ports collection makefile for:   jday
-# Date created:                2000-11-27
-# Whom:                        Christian Weisgerber <naddy@mips.inka.de>
-#
 # $FreeBSD$
 
 PORTNAME=	jday

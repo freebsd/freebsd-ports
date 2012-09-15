@@ -1,9 +1,4 @@
-# New ports collection makefile for:   xmms-xf86audio
-# Date created:        2005-06-16
-# Whom:                Christian Weisgerber <naddy@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xmms-xf86audio
 PORTVERSION=	0.4.4
