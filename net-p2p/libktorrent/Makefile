@@ -13,9 +13,9 @@ MASTER_SITES=	http://ktorrent.org/downloads/${DISTVERSION:C,^1,4,:C,-.*,,}/
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Torrent library split from KTorrent
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
-		qca.2:${PORTSDIR}/devel/qca \
-		boost_thread.4:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
+		qca:${PORTSDIR}/devel/qca \
+		boost_thread:${PORTSDIR}/devel/boost-libs
 
 USE_BZIP2=	yes
 USE_KDE4=	kdelibs kdehier kdeprefix automoc4
