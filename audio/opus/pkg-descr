@@ -1,7 +1,14 @@
-The Opus codec is designed to handle a wide range of interactive
-audio applications, including Voice over IP, videoconferencing,
-in-game chat, and even remote live music performances. It can scale
-from low bit-rate narrowband speech to very high quality stereo
-music.
+Opus is a totally open, royalty-free, highly versatile audio codec.
+It is standardized by the Internet Engineering Task Force (IETF)
+as RFC 6716 which incorporated technology from Skype's SILK codec
+and Xiph.Org's CELT codec.
+
+Opus is designed to handle a wide range of interactive audio
+applications, including Voice over IP, videoconferencing, in-game
+chat, and even live, distributed music performances. It scales from
+low bitrate narrowband speech at 6 kbit/s to very high quality
+stereo music at 510 kbit/s. Opus uses both Linear Prediction (LP)
+and the Modified Discrete Cosine Transform (MDCT) to achieve good
+compression of both speech and music.
 
 WWW: http://opus-codec.org/
