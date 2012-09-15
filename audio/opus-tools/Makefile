@@ -1,12 +1,7 @@
-# New ports collection makefile for:	opus-tools
-# Date created:        2012-07-19
-# Whom:                Christian Weisgerber <naddy@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	opus-tools
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/opus/ \
 		https://ftp.mozilla.org/pub/mozilla.org/opus/
