@@ -13,8 +13,8 @@ MASTER_SITES=	http://ktorrent.org/downloads/${DISTVERSION}/
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	BitTorrent client for KDE
 
-LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib \
-		ktorrent.4:${PORTSDIR}/net-p2p/libktorrent
+LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
+		ktorrent:${PORTSDIR}/net-p2p/libktorrent
 
 USE_BZIP2=	yes
 USE_KDE4=	kdelibs kdehier kdeprefix automoc4 pimlibs workspace
