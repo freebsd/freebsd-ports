@@ -1,7 +1,3 @@
-# New ports collection makefile for:   ksh93
-# Date created:                2000-12-26
-# Whom:                        Christian Weisgerber <naddy@mips.inka.de>
-#
 # $FreeBSD$
 #
 # Make sure that your configuration DOES NOT set ANY gcc-related

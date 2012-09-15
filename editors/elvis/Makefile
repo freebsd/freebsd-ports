@@ -1,9 +1,4 @@
-# New ports collection makefile for:	elvis
-# Date created:		1999-09-01
-# Whom:			Christian Weisgerber <naddy@unix-ag.uni-kl.de>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	elvis
 PORTVERSION=	2.2.0

@@ -1,7 +1,3 @@
-# New ports collection makefile for:	xmms-wavpack
-# Date created:		2009-01-12
-# Whom:			Christian Weisgerber <naddy@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	xmms-wavpack

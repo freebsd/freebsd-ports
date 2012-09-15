@@ -1,7 +1,3 @@
-# New ports collection makefile for:	calcoo
-# Date created:		2002-01-17
-# Whom:			Christian Weisgerber <naddy@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	calcoo

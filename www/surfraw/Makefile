@@ -1,7 +1,3 @@
-# New ports collection makefile for:   surfraw
-# Date created:                2000-08-03
-# Whom:                        Christian Weisgerber <naddy@mips.inka.de>
-#
 # $FreeBSD$
 
 PORTNAME=	surfraw

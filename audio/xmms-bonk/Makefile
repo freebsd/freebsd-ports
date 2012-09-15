@@ -1,7 +1,3 @@
-# New ports collection makefile for:	xmms-bonk
-# Date created:		2002-06-15
-# Whom:			Christian Weisgerber <naddy@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	xmms-bonk

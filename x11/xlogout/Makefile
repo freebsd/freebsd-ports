@@ -1,9 +1,4 @@
-# New ports collection makefile for:   xlogout
-# Date created:                1998-11-06
-# Whom:                        Christian Weisgerber <naddy@mips.rhein-neckar.de>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xlogout
 PORTVERSION=	1.1

@@ -1,9 +1,4 @@
-# New ports collection makefile for:	galculator
-# Date created:			2003-06-26
-# Whom:				Christian Weisgerber <naddy@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	galculator
 PORTVERSION=	1.3.4

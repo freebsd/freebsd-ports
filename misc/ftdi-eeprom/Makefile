@@ -1,9 +1,4 @@
-# New ports collection makefile for:	ftdi-eeprom
-# Date created:		2003-02-15
-# Whom:			Christian Weisgerber <naddy@freebsd.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	ftdi-eeprom
 PORTVERSION=	1.1

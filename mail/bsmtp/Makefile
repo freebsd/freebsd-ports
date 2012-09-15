@@ -1,7 +1,3 @@
-# New ports collection makefile for:   bsmtp
-# Date created:                2000-10-05
-# Whom:                        Christian Weisgerber <naddy@mips.inka.de>
-#
 # $FreeBSD$
 
 PORTNAME=	bsmtp

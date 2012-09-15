@@ -1,9 +1,4 @@
-# New ports collection makefile for:	gcpio
-# Date created:		2010-03-25
-# Whom: 		Christian Weisgerber <naddy@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	cpio
 PORTVERSION=	2.11

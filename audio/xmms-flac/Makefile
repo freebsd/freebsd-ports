@@ -1,9 +1,4 @@
-# New ports collection makefile for:	xmms-flac
-# Date created:		2003-06-10
-# Whom:			Christian Weisgerber <naddy@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xmms-flac
 PORTVERSION=	1.2.1

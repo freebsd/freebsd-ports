@@ -1,7 +1,3 @@
-# New ports collection makefile for:   gtypist
-# Date created:	2001-05-18
-# Whom:		Christian Weisgerber <naddy@mips.inka.de>
-#
 # $FreeBSD$
 
 PORTNAME=	gtypist
