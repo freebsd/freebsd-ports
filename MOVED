@@ -129,7 +129,6 @@ graphics/ascii0|graphics/asciio|2008-04-22|Renamed by delete+add
 misc/kde3-i18n-id||2008-04-25|Has expired: Distfile no longer available, outdated
 net/dhcp-agent||2008-04-25|Has expired: Dhcp-agent has not been updated since 2003, it does not build with guile-1.8, and it is unmaintained
 net/ocaml-netclient||2008-04-25|Has expired: is part of ocaml-net
-net/samplicator||2008-04-25|Has expired: Project has vanished
 graphics/entice||2008-04-25|Has expired: Broken and unmaintained
 security/wpa_supplicant||2008-04-26|Obsolete, newer version in base
 games/glpuzzle|games/jigzo|2008-04-28|Project renamed
