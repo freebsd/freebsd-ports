@@ -927,11 +927,9 @@ MASTER_SITE_OSSP+= \
 MASTER_SITE_PACKETSTORM+= \
 	http://dl.packetstormsecurity.net/%SUBDIR%/ \
 	http://packetstorm.codar.com.br/%SUBDIR%/ \
-	http://packetstorm.crazydog.pt/%SUBDIR%/ \
 	http://packetstorm.igor.onlinedirect.bg/%SUBDIR%/ \
 	http://packetstorm.interhost.co.il/%SUBDIR%/ \
 	http://packetstorm.foofus.com/%SUBDIR%/ \
-	http://packetstorm.linuxsecurity.com/%SUBDIR%/ \
 	http://packetstorm.tacticalflex.com/%SUBDIR%/ \
 	http://packetstorm.unixteacher.org/%SUBDIR%/ \
 	http://packetstorm.wowhacker.com/%SUBDIR%/
