@@ -51,6 +51,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="143f6932-fedb-11e1-ad4a-003067b2972c">
+    <topic>bacula -- Console ACL Bypass</topic>
+    <affects>
+      <package>
+	<name>bacula</name>
+	<range><lt>5.2.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="https://secunia.com/advisories/50535/">
+	  <p>A security issue has been reported in Bacula, which can be
+	  exploited by malicious users to bypass certain security
+	  restrictions.</p>
+	  <p>The security issue is caused due to an error within the implementation
+	  of console ACLs, which can be exploited to gain access to certain
+	  restricted functionality and e.g. dump resources.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.bacula.org/git/cgit.cgi/bacula/commit/?id=67debcecd3d530c429e817e1d778e79dcd1db905</url>
+      <url>https://secunia.com/advisories/50535/</url>
+      <url>http://sourceforge.net/projects/bacula/files/bacula/5.2.11/ReleaseNotes/view</url>
+    </references>
+    <dates>
+      <discovery>2012-09-12</discovery>
+      <entry>2012-09-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="178ba4ea-fd40-11e1-b2ae-001fd0af1a4c">
     <topic>mod_pagespeed -- multiple vulnerabilities</topic>
     <affects>
