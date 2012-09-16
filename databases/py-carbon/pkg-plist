@@ -3,15 +3,15 @@ bin/carbon-cache.py
 bin/carbon-client.py
 bin/carbon-relay.py
 bin/validate-storage-schemas.py
-etc/carbon/rewrite-rules.conf.example
-etc/carbon/carbon.amqp.conf.example
-etc/carbon/carbon.conf.example
-etc/carbon/aggregation-rules.conf.example
-etc/carbon/relay-rules.conf.example
-etc/carbon/storage-schemas.conf.example
-etc/carbon/blacklist.conf.example
-etc/carbon/storage-aggregation.conf.example
-etc/carbon/whitelist.conf.example
+%%ETCDIR%%/rewrite-rules.conf.example
+%%ETCDIR%%/carbon.amqp.conf.example
+%%ETCDIR%%/carbon.conf.example
+%%ETCDIR%%/aggregation-rules.conf.example
+%%ETCDIR%%/relay-rules.conf.example
+%%ETCDIR%%/storage-schemas.conf.example
+%%ETCDIR%%/blacklist.conf.example
+%%ETCDIR%%/storage-aggregation.conf.example
+%%ETCDIR%%/whitelist.conf.example
 %%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_aggregator_plugin.py
 %%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_relay_plugin.py
 %%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_cache_plugin.py
@@ -100,6 +100,6 @@ etc/carbon/whitelist.conf.example
 %%PYTHON_SITELIBDIR%%/carbon/regexlist.py
 %%PYTHON_SITELIBDIR%%/carbon/regexlist.pyc
 %%PYTHON_SITELIBDIR%%/carbon/regexlist.pyo
-@dirrm etc/carbon
+@dirrm %%ETCDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/carbon/aggregator
 @dirrm %%PYTHON_SITELIBDIR%%/carbon

@@ -14,6 +14,4 @@ to /etc/rc.conf, then start it via:
 
 Once started, finish setting up Graphite
 
-
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
