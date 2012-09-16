@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Test/Moose/More.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Moose/More/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Moose/More
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Moose
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Test/Moose
+@dirrmtry %%SITE_PERL%%/Test
