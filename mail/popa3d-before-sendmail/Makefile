@@ -12,9 +12,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 WITH_SMTP_AFTER_POP3=	yes
 MASTERDIR?=	${.CURDIR}/../popa3d
 
-OPTIONS?=	SMTP_AFTER_POP3 "Enable SMTP-after-POP mode" on \
-		STANDALONE_POP3 "Enable standalone server mode" off \
-		SETPROCTITLE "Enable setproctitle mode" off
+OPTIONS_DEFAULT=	SMTP_AFTER_POP3
 
 .if exists(${.CURDIR}/Makefile.local)
 .include "${.CURDIR}/Makefile.local"
