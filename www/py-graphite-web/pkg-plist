@@ -809,7 +809,6 @@ graphite/webapp/content/js/window/window_effects.js
 @dirrm graphite/storage/rrd
 @dirrm graphite/storage/log/webapp
 @dirrm graphite/storage/log
-@dirrm graphite/storage/lists
 @dirrm graphite/storage
 @dirrm graphite
 @dirrm examples
