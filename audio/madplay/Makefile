@@ -30,12 +30,14 @@ ALL_TARGET=	all madtime
 
 MAN1=		abxtest.1 madplay.1
 
-OPTIONS=	NLS "NLS support" on \
-		ESOUND "with esound" on
+OPTIONS_DEFINE=NLS ESOUND
+OPTIONS_DEFAULT=NLS ESOUND
+NO_OPTIONS_SORT=yes
+TCL82_MAN_DESC= Install tcl 8.3 manpages
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=		yes
 PLIST_SUB+=		NLS=""
 .else
@@ -43,7 +45,7 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@comment "
 .endif
 
-.if !defined(WITHOUT_ESOUND)
+.if ${PORT_OPTIONS:MESOUND}
 USE_GNOME+=	esound
 .else
 CONFIGURE_ARGS+=	--without-esd
@@ -52,4 +54,4 @@ CONFIGURE_ARGS+=	--without-esd
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/madtime ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
