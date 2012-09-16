@@ -66,11 +66,12 @@ pre-configure:
 	@${ECHO_CMD} "@exec ${MKDIR} %D/empty" >>${PLIST}
 	@${ECHO_CMD} "@dirrm empty" >>${PLIST}
 .endif
-.if defined(WITH_SMTP_AFTER_POP3) && !defined(WITHOUT_POPAUTH_M4)
+
+.if ${PORT_OPTIONS:MSMTP_AFTER_POP3} && !defined(WITHOUT_POPAUTH_M4)
 	@${ECHO_CMD} "@cwd ${CFDIR}" >>${PLIST}
 	@${ECHO_CMD} "hack/popauth.m4" >>${PLIST}
 .endif
-.if defined(WITH_STANDALONE_POP3)
+.if ${PORT_OPTIONS:MSTANDALONE_POP3}
 	@${REINPLACE_CMD} -e 's|^\(#define POP_STANDALONE\).*|\1 1|' \
 		${WRKSRC}/params.h
 .endif
@@ -89,7 +90,7 @@ do-install:
 	${INSTALL} ${COPY} -o root -g wheel -m 500 \
 	    ${WRKSRC}/popa3d ${PREFIX}/libexec/popa3d
 	${INSTALL_MAN} ${WRKSRC}/popa3d.8 ${MANPREFIX}/man/man8/
-.if defined(WITH_SMTP_AFTER_POP3) && !defined(WITHOUT_POPAUTH_M4)
+.if ${PORT_OPTIONS:MSMTP_AFTER_POP3} && !defined(WITHOUT_POPAUTH_M4)
 	${INSTALL_DATA} ${FILESDIR}/popauth.m4 ${CFDIR}/hack/
 .endif
 
@@ -97,12 +98,12 @@ do-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/DESIGN ${DOCSDIR}/
 	${INSTALL_MAN} ${WRKSRC}/LICENSE ${DOCSDIR}/
-.if defined(WITH_SMTP_AFTER_POP3)
+.if ${PORT_OPTIONS:MSMTP_AFTER_POP3}
 	${INSTALL_DATA} ${FILESDIR}/POPAUTH ${DOCSDIR}/
 .endif
 .endif
 
-.if !defined(WITH_STANDALONE_POP3)
+.if ${PORT_OPTIONS:MSTANDALONE_POP3}
 post-install:
 	@ ${CAT} ${PKGMESSAGE}
 .endif
