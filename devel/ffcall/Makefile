@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.santafe.edu/pub/gnu/
 MASTER_SITES+=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	libs
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Foreign function call libraries
 
 LICENSE=	GPLv2
