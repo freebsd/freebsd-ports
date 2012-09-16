@@ -6,36 +6,43 @@
 #
 
 PORTNAME=	BitchX
-PORTVERSION=	1.1.0.1
-PORTREVISION=	4
+PORTVERSION=	1.2
 CATEGORIES+=	irc
-MASTER_SITES=	SF/bitchx/ircii-pana/ircii-pana-1.1
-DISTNAME=	ircii-pana-1.1-final
+DISTNAME=	BitchX-BitchX${PORTVERSION}-${GH_COMMIT}
 
-MAINTAINER?=	danfe@FreeBSD.org
+MAINTAINER?=	c.petrik.sosa@gmail.com
 COMMENT?=	Feature-rich scriptable IRC client
 
-WRKSRC=		${WRKDIR}/BitchX
-USE_PERL5=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	BitchX
+GH_PROJECT=	BitchX1.2
+GH_TAGNAME=	master
+GH_COMMIT=	a22b86f
+
+USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
-WANT_GNOME=	yes
-USE_GMAKE=	yes
-CONFIGURE_ARGS+=--exec-prefix="${PREFIX}/share" \
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--exec-prefix="${PREFIX}/share" \
 		--bindir="${PREFIX}/bin" \
 		--datadir="${PREFIX}/share" \
 		--libdir="${PREFIX}/share"
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
+USE_GMAKE=	yes
+USE_PERL5=	yes
+WANT_GNOME=	yes
+DOCSDIR=	${PREFIX}/share/bx/help
+PORTDOCS=	*
 
 MAN1=		BitchX.1
 
-OPTIONS=	ESOUND	"Enable EsounD support"			off \
-		GNOME	"Build with legacy GTK/GNOME frontend"	off \
-		IPV6	"Enable IPv6 support"			off \
-		LATIN	"Recommended for an ISO-8859-1 display"	off \
-		PLUGINS	"Build handful of BitchX plugins"	off \
-		SSL	"Enable SSL support"			off \
-		XMMS	"Build XMMS plugin"			off
+OPTIONS_DEFINE=	ESOUND GNOME IPV6 LATIN PLUGINS SSL XMMS
+
+GNOME_DESC=	Legacy GTK/GNOME frontend
+LATIN_DESC=	Recommended for ISO-8859-1 display
+PLUGINS_DESC=	Build handful of BitchX plugins
+XMMS_DESC=	Build XMMS plugin
+
+OPTIONS_DEFAULT=	IPV6 PLUGINS SSL
 
 .include <bsd.port.pre.mk>
 
@@ -43,79 +50,77 @@ OPTIONS=	ESOUND	"Enable EsounD support"			off \
 CFLAGS+=	-fPIC
 .endif
 
-.if defined(WITH_SSL)
-CONFIGURE_ARGS+=--with-ssl
+.if ${PORT_OPTIONS:MIPV6}
+CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
-.if defined(WITH_GNOME)
+.if ${PORT_OPTIONS:MSSL}
+CONFIGURE_ARGS+=	--with-ssl
+.endif
+
+.if ${PORT_OPTIONS:MGNOME} || ${PORT_OPTIONS:MESOUND}
 USE_GNOME=	gnomelibs
-CONFIGURE_ARGS+=--with-gtk
-CFLAGS+=	-I${LOCALBASE}/include/gnome-1.0/
+CONFIGURE_ARGS+=	--with-gtk
+. if ${PORT_OPTIONS:MESOUND}
+USE_GNOME+=	esound
+CONFIGURE_ARGS+=	--enable-sound
+. endif
+CFLAGS+=	-I${LOCALBASE}/include/gnome-1.0
 PLIST_SUB+=	NOGNOME="@comment " GNOME=""
 .else
-CONFIGURE_ARGS+=--without-gtk
+CONFIGURE_ARGS+=	--without-gtk
 PLIST_SUB+=	GNOME="@comment " NOGNOME=""
 .endif
 
-.if (defined(WITH_ESOUND) && defined(WITH_GNOME))
-USE_GNOME+=	esound
-CONFIGURE_ARGS+=--enable-sound
-.endif
-
-.if defined(WITH_XMMS)
-LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
-.endif
-
-.if defined(WITH_IPV6)
-CONFIGURE_ARGS+=--enable-ipv6
-.endif
-
-.if defined(WITH_PLUGINS)
-PLUGINS=\
-abot,acro,arcfour,autocycle,blowfish,encrypt,fserv,hint,pkga,possum,qbx,qmail,scan,wavplay
-CONFIGURE_ARGS+=	--with-plugins=${PLUGINS}
+.if ${PORT_OPTIONS:MPLUGINS}
+PLUGINS=	abot acro aim arcfour autocycle blowfish cavlink cdrom \
+		encrypt europa fserv hint nap nicklist pkga possum qbx \
+		qmail wavplay
 PLIST_SUB+=	PLUGINS=""
 .else
-CONFIGURE_ARGS+=--without-plugins
 PLIST_SUB+=	PLUGINS="@comment "
 .endif
 
-.if defined(WITH_XMMS)
-PLUGINS=	xmms
+.if ${PORT_OPTIONS:MXMMS}
+LIB_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
+PLUGINS+=	xmms
 PLIST_SUB+=	XMMS=""
 .else
 PLIST_SUB+=	XMMS="@comment "
 .endif
-.if (defined(WITH_XMMS) && defined(WITH_PLUGINS))
-PLUGINS=\
-abot,acro,arcfour,autocycle,blowfish,encrypt,fserv,hint,pkga,possum,qbx,qmail,scan,wavplay,xmms
-.endif
 
-.if (defined(WITH_PLUGINS) || defined(WITH_XMMS))
-CONFIGURE_ARGS+=	--with-plugins=${PLUGINS}
+.if !empty(PLUGINS)
+CONFIGURE_ARGS+=	--with-plugins="${PLUGINS:C/\$$/,/g}"
+.else
+CONFIGURE_ARGS+=	--without-plugins
 .endif
 
 pre-patch:
-.if defined(WITH_LATIN)
-	${REINPLACE_CMD} -e 's|#undef LATIN1|#define LATIN1|g' \
+.if ${PORT_OPTIONS:MLATIN}
+	${REINPLACE_CMD} -e 's|#undef LATIN1|#define LATIN1|' \
 		${WRKSRC}/include/config.h
 .endif
 	${REINPLACE_CMD} -e 's|bzip2|true|g' ${WRKSRC}/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/bx/help
-	${TAR} --directory ${WRKSRC}/bitchx-docs -cf - . | \
-		${TAR} --directory ${PREFIX}/share/bx/help -xf -
+.if ${PORT_OPTIONS:MGNOME}
+	${STRIP_CMD} ${PREFIX}/bin/gtkBitchX
 .else
-	@${RMDIR} ${PREFIX}/share/bx/help
-.endif
-.if defined(WITH_GNOME)
-	${STRIP_CMD} ${PREFIX}/bin/gtkBitchX-1.1-final
-.else
-	${STRIP_CMD} ${PREFIX}/bin/BitchX-1.1-final
+	${STRIP_CMD} ${PREFIX}/bin/BitchX
 	${STRIP_CMD} ${PREFIX}/bin/scr-bx
 .endif
-	@${TOUCH} ${PREFIX}/share/bx/plugins/.placeholder
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/bitchx-docs && ${COPYTREE_SHARE} . ${DOCSDIR}
+.endif
+
+# Ensure that `@dirrm share/bx' will be appended last (after PORTDOCS stuff)
+add-plist-post:
+	@${ECHO_CMD} "@dirrm share/bx" >> ${TMPPLIST}
+.if (${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${LINUXBASE} && ${PREFIX} != "/usr")
+	@${ECHO_CMD} "@unexec rmdir %D 2> /dev/null || true" >> ${TMPPLIST}
+.else
+	@${DO_NADA}
+.endif
 
 .include <bsd.port.post.mk>
