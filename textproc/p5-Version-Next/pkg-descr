@@ -1,0 +1,7 @@
+This module provides a simple, correct way to increment a Perl module version
+number.  It does not attempt to guess what the original version number author
+intended, it simply increments in the smallest possible fashion.  Decimals are
+incremented like an odometer.  Dotted decimals are incremented piecewise and
+presented in a standardized way.
+
+WWW: http://search.cpan.org/dist/Version-Next/

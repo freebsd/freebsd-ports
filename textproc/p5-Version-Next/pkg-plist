@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Version/Next.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Version/Next/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Version/Next
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Version
+@dirrmtry %%SITE_PERL%%/Version
