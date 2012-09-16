@@ -2173,6 +2173,7 @@
     SUBDIR += p5-MooseX-Attribute-Chained
     SUBDIR += p5-MooseX-Attribute-ENV
     SUBDIR += p5-MooseX-AttributeHelpers
+    SUBDIR += p5-MooseX-AttributeShortcuts
     SUBDIR += p5-MooseX-AuthorizedMethods
     SUBDIR += p5-MooseX-ChainedAccessors
     SUBDIR += p5-MooseX-ClassAttribute
