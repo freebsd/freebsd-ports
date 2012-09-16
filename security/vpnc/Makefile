@@ -56,6 +56,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/config.c
 	@${REINPLACE_CMD} -e 's|\(/etc/vpnc\)|${PREFIX}\1|' \
 		${WRKSRC}/${MAN8}.template
+	@${REINPLACE_CMD} -e '1s|.*perl|#!${PERL}|' ${WRKSRC}/makeman.pl
 
 do-install:
 	${INSTALL_PROGRAM} -m 751 ${WRKSRC}/vpnc ${PREFIX}/sbin/vpnc
