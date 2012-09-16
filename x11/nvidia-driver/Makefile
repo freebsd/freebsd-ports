@@ -64,11 +64,10 @@ EXTRA_PATCHES=	${FILESDIR}/legacy-patch-nvidia.lib.mk
 
 # Fix recent arbitrary memory access vulnerability in legacy drivers
 .if ${NVVERSION} <= 1905300
-. if ${NVVERSION} == 1731435
-EXTRA_PATCHES+=	${FILESDIR}/security-patch-CVE-2012-4225
-. else
+. if ${NVVERSION} != 1731435
 EXTRA_PATCHES+=	${FILESDIR}/security-patch-CVE-2012-0946
 . endif
+EXTRA_PATCHES+=	${FILESDIR}/security-patch-CVE-2012-4225
 .endif
 
 OPTIONS=	FREEBSD_AGP	"Use FreeBSD AGP GART driver" off \
@@ -111,7 +110,7 @@ post-patch: .SILENT
 		s/int nprot/&, vm_memattr_t *memattr/' \
 			${WRKSRC}/src/nvidia_dev.c
 .endif
-# Catch up legacy drivers with FreeBSD SVN r225617
+# Catch up legacy drivers with FreeBSD src SVN r225617
 .if ${OSVERSION} > 900043 && ${NVVERSION} < 1952200
 	${REINPLACE_CMD} -e '/return/s/ioctl/sys_&/' \
 		${WRKSRC}/src/nvidia_linux.c
@@ -135,7 +134,8 @@ post-patch: .SILENT
 .endif
 	${REINPLACE_CMD} -e '/exists/s/$$/ \&\& !defined(WITHOUT_LINUX)/' \
 		${WRKSRC}/lib/Makefile
-# Do not install VDPAU libraries, they are provided by `multimedia/libvdpau'
+# Do not install VDPAU libraries which are provided by `multimedia/libvdpau'
+# port for a while now
 .if ${NVVERSION} >= 1802900
 	${REINPLACE_CMD} -e '/libvdpau[[:blank:]_][^n]/d ; \
 		s/name libvdpau/&_nvidia/' ${WRKSRC}/lib/Makefile
@@ -158,7 +158,8 @@ post-patch: .SILENT
 		${WRKSRC}/x11/extension/Makefile
 	${REINPLACE_CMD} -e '/LIBDIR/s:lib:&/.nvidia:' \
 		${WRKSRC}/lib/libGL/Makefile
-# Do not execute afterinstall target (prevent automatic module registration)
+# Do not execute afterinstall target (prevent automatic module registration
+# and "smart" installation of conflicting files heuristics)
 	${REINPLACE_CMD} -e 's/afterinstall/dontexecute/' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's/beforeinstall/dontexecute/' \
 		${WRKSRC}/lib/Makefile ${WRKSRC}/src/Makefile
