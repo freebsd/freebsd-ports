@@ -7,7 +7,7 @@
 
 CATEGORIES=	mail
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 WITH_SMTP_AFTER_POP3=	yes
 MASTERDIR?=	${.CURDIR}/../popa3d
