@@ -99,6 +99,7 @@
     SUBDIR += gedy
     SUBDIR += gicq
     SUBDIR += gimp-help
+    SUBDIR += gjiten
     SUBDIR += gorua
     SUBDIR += gqmpeg
     SUBDIR += grep
