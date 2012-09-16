@@ -1,4 +1,4 @@
-$FreeBSD$
+@comment $FreeBSD$
 @unexec if cmp -s %D/%%WWWDIR%%/config/config.cfg %D/%%WWWDIR%%/config/config.cfg_sample; then rm -f %D/%%WWWDIR%%/config/config.cfg; fi
 @exec if [ ! -f %D/%%WWWDIR%%/config/config.cfg ] ; then cp -p %D/%F %B/config.cfg; fi
 @unexec if cmp -s %D/%%WWWDIR%%/config/lam.conf %D/%%WWWDIR%%/config/lam.conf_sample; then rm -f %D/%%WWWDIR%%/config/lam.conf; fi
