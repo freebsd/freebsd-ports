@@ -67,6 +67,7 @@
     SUBDIR += libyahoo2
     SUBDIR += licq
     SUBDIR += licq-console
+    SUBDIR += licq-jabber
     SUBDIR += licq-osd
     SUBDIR += licq-qt-gui
     SUBDIR += linpopup
