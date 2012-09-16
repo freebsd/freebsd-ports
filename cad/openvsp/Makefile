@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	openvsp
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.0
 CATEGORIES=	cad
 MASTER_SITES=	https://nodeload.github.com/OpenVSP/OpenVSP/tarball/OpenVSP_${PORTVERSION}
 
@@ -18,7 +18,7 @@ LIB_DEPENDS+=	fltk:${PORTSDIR}/x11-toolkits/fltk
 LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 
-WRKSRC=		${WRKDIR}/OpenVSP-OpenVSP-fabd23a/src
+WRKSRC=		${WRKDIR}/OpenVSP-OpenVSP-1c0609f/src
 
 USE_CMAKE=	yes
 USE_DOS2UNIX=	yes
