@@ -255,6 +255,7 @@ SMB_DESC?=		SMB protocol support
 SNAPPY_DESC?=		Snappy compression library support
 SNDFILE_DESC?=		libsndfile support
 SNMP_DESC?=		SNMP protocol support
+SOUND_DESC?=		Sound support
 SPANDSP_DESC?=		Spandsp faxing support
 SPEEX_DESC?=		Speex audio format support
 SQL_DESC?=		SQL database backend

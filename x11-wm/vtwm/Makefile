@@ -22,20 +22,20 @@ MAKEFILE=	${FILESDIR}/Makefile.bsd
 
 MAN1=		vtwm.1
 
-OPTIONS=	SOUND "Sound support" on \
-		NLS "Native language support" on
+OPTIONS_DEFINE=	SOUND NLS
+OPTIONS_DEFAULT=	SOUND NLS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_SOUND)
+.if ${PORT_OPTIONS:MSOUND}
 LIB_DEPENDS+=	rplay.1:${PORTSDIR}/audio/rplay
 MAKE_ENV+=	SOUND=yes
 .else
 MAKE_ENV+=	SOUND=no
 .endif
 
-.if defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 CFLAGS+=	-DNO_I18N_SUPPORT
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
