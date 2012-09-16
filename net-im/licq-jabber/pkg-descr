@@ -1,0 +1,6 @@
+Adds support for the Jabber (XMPP) protocol to Licq. Still in early
+development, but capable of sending and receiving messages.
+
+LICENSE: GPL2 or later with execption to link with OpenSSL
+
+WWW: http://www.licq.org/
