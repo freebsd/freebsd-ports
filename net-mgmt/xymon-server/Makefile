@@ -66,17 +66,17 @@ MAN8=	enadis.cgi.8 xymon-mailack.8 xymoncgimsg.cgi.8 xymond.8 \
 	xymond_hostdata.8 xymond_rrd.8 xymond_sample.8 xymonfetch.8 \
 	xymonlaunch.8 xymonproxy.8 msgcache.8 trimhistory.8
 
-OPTIONS=	LDAP	"Enable LDAP support" off \
-		SNMP	"Enable Net-SNMP support" off
+OPTIONS_DEFINE=LDAP NETSNMP
+NETSNMP_DESC=Enable Net-SNMP support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 MAKE_ENV+=	WITH_LDAP=1
 USE_OPENLDAP=	yes
 .endif
 
-.if defined(WITH_NETSNMP)
+.if ${PORT_OPTIONS:MNETSNMP}
 MAKE_ENV+=	WITH_NETSNMP=1
 LIB_DEPENDS+=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 .endif
@@ -109,4 +109,4 @@ post-install:
 		${WWWDIR}/server/etc/${i}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
