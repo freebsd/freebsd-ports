@@ -7,7 +7,7 @@
 
 PORTNAME=	webalizer
 PORTVERSION=	2.23.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/:main \
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/geodb/:geodb \
@@ -34,29 +34,44 @@ CONFLICTS=	geolizer-2*
 WEBALIZER_LANG?=english
 .endif
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	GEOIP GEODB BDB1 BDB WEBALIZER_CONV \
+		FULL_CGI_REFS CLICKABLE_REFERER LARGE_URL
+OPTIONS_DEFAULT=
+NO_OPTIONS_SORT=yes
+GEODB_DESC=Enable Webalizers IP-Database support
+WEBALIZER_CONV_DESC=Use character code convert patch
+FULL_CGI_REFS_DESC=Show full cgi parameters in referers
+CLICKABLE_REFERER_DESC=Make referers clickable
+LARGE_URL_DESC=Enable URLs longer 512 bytes
 
-.if defined(WITH_GEODB) || defined(WITH_GEOIP)|| make(makesum) || defined(FETCH_ALL)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGEODB} || ${PORT_OPTIONS:MGEOIP} || make(makesum) || defined(FETCH_ALL)
 DISTFILES+=	webalizer-flags.tgz:main
 .endif
-.if defined(WITH_GEODB) || make(makesum) || defined(FETCH_ALL)
-DISTFILES+=	webalizer-geodb-20120101.tgz:geodb
+.if ${PORT_OPTIONS:MGEODB} || make(makesum) || defined(FETCH_ALL)
+DISTFILES+=	webalizer-geodb-20120901.tgz:geodb
 .endif
 
+# slave ports override with languages specific gd
 .if !defined(LIB_DEPENDS)
 LIB_DEPENDS=	gd.4:${PORTSDIR}/${GD_PORT}
 .endif
-.if defined(WITH_GEOIP)
+
+.if ${PORT_OPTIONS:MGEOIP}
 LIB_DEPENDS+=	GeoIP.5:${PORTSDIR}/net/GeoIP
 .endif
 
-.if defined(WITH_GEODB)
+.if ${PORT_OPTIONS:MGEODB}
+.if empty(PORT_OPTIONS:MBDB1)
+WITH_BDB=	yes
+.endif
 PLIST_SUB+=	WITH_GEODB=""
 .else
 PLIST_SUB+=	WITH_GEODB="@comment "
 .endif
 
-.if defined(WITH_GEOIP)
+.if ${PORT_OPTIONS:MGEOIP}
 WEBALIZER_SUFFIX=	-geoip
 CONFLICTS+=	${PKGNAMEPREFIX}webalizer-2*
 CONFIGURE_ARGS+=	--enable-geoip \
@@ -66,13 +81,13 @@ CONFIGURE_ARGS+=	--enable-geoip \
 CONFLICTS+=	${PKGNAMEPREFIX}webalizer-geoip-2*
 .endif
 
-.if defined(WITH_GEODB) || defined(WITH_GEOIP)
+.if ${PORT_OPTIONS:MGEODB} || ${PORT_OPTIONS:MGEOIP} 
 PLIST_SUB+=	WITH_GEOIP=""
 .else
 PLIST_SUB+=	WITH_GEOIP="@comment "
 .endif
 
-.if defined(WITH_BDB_VER) || defined(WITH_BDB)
+.if defined(WITH_BDB_VER) || ${PORT_OPTIONS:MBDB}
 USE_BDB=	yes
 INVALID_BDB_VER=	2 3 40
 LDFLAGS+=	-L${BDB_LIB_DIR}
@@ -113,7 +128,7 @@ EXTRA_PATCHES+=		${FILESDIR}/ja-webalizer.conf-dist.patch
 .endif
 .endif
 
-.if defined(WITH_WEBALIZER_CONV)
+.if ${PORT_OPTIONS:MWEBALIZER_CONV}
 USE_ICONV=yes
 # 	The patch file is written by URASHIMA Akira
 #	see http://tyche.pu-toyama.ac.jp/~a-urasim/webalizer/
@@ -123,11 +138,11 @@ CONFIGURE_ENV+=		LIBS="-L${LOCALBASE}/lib -liconv"
 CFLAGS+=		-I${LOCALBASE}/include
 .endif
 
-.if !defined(WITHOUT_WEBALIZER_FULL_CGI_REFS)
+.if ${PORT_OPTIONS:MFULL_CGI_REFS}
 CFLAGS+=	-DUSE_FULL_CGI_REFS
 .endif
 
-.if defined(WITH_WEBALIZER_CLICKABLE_REFERER)
+.if ${PORT_OPTIONS:MCLICKABLE_REFERER}
 CFLAGS+=	-DUSE_CLICKABLE_REFERER
 .endif
 
@@ -137,12 +152,12 @@ pre-configure:
 	${REINPLACE_CMD} \
 		-e "s|webalizer.conf|${PKGNAMEPREFIX}webalizer.conf|" \
 		${WRKSRC}/webalizer.c
-.if defined(WITH_MAXURLH)
+.if ${PORT_OPTIONS:MLARGE_URL}
 	${REINPLACE_CMD} \
 		-e "s|MAXURLH  512 |MAXURLH  2048|" \
 		${WRKSRC}/webalizer.h
 .endif
-.if defined(WITH_BDB_VER) || defined(WITH_BDB)
+.if defined(WITH_BDB_VER) || ${PORT_OPTIONS:MBDB}
 	${REINPLACE_CMD} -e "s|-ldb|-l${BDB_LIB_NAME}|" \
 		${WRKSRC}/configure
 .else
@@ -171,11 +186,11 @@ post-install:
 .for i in ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/${i:S/^${PKGNAMEPREFIX}//} ${PREFIX}/man/man1/${i}
 .endfor
-.if defined(WITH_GEODB) || defined(WITH_GEOIP)
+.if ${PORT_OPTIONS:MGEODB} || ${PORT_OPTIONS:MGEOIP} 
 	${MKDIR} ${PREFIX}/share/geolizer
 	@${INSTALL_DATA} ${WRKDIR}/flags/* ${PREFIX}/share/geolizer/
 .endif
-.if defined(WITH_GEODB)
+.if ${PORT_OPTIONS:MGEODB}
 	@${INSTALL_DATA} ${WRKDIR}/GeoDB.dat ${PREFIX}/share/geolizer/
 .endif
 .if !defined(NOPORTDOCS)
@@ -191,4 +206,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
