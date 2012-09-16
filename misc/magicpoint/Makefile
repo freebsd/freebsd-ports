@@ -24,11 +24,6 @@ WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-vflib --enable-locale
 
-OPTIONS+=	FREETYPE	"With FreeType support"			on \
-		XFT		"With Xft2 support"			on \
-		GIF		"With gif image support"		off \
-		IMLIB		"With Imlib exclusive image processing" off
-
 MAN1=	mgp.1 mgp2ps.1 mgpembed.1 mgpnet.1 xwintoppm.1 xmindpath.1
 
 PORTDOCS=	${DOCS} sample emacs-lisp scripts
@@ -46,9 +41,14 @@ EMACS_LISPS=	mgp-mode.el
 EMACS_LISPS_MGP=COPYING README mgp.el mgp.sty sample.tex
 SAMPLE_SCRIPTS=	eqn2eps.sh tex2eps.sh mgp2html.pl mgp2latex.pl
 
-.include <bsd.port.pre.mk>
 
-.if defined(WITH_FREETYPE)
+OPTIONS_DEFINE=FREETYPE XFT GIF IMLIB
+OPTIONS_DEFAULT=FREETYPE XFT
+NO_OPTIONS_SORT=yes
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MFREETYPE}
 # Only freetype 1.x is supported
 USE_FREETYPE=		yes
 CONFIGURE_ARGS+=	--enable-freetype \
@@ -57,14 +57,14 @@ CONFIGURE_ARGS+=	--enable-freetype \
 CONFIGURE_ARGS+=	--disable-freetype
 .endif
 
-.if defined(WITH_XFT)
+.if ${PORT_OPTIONS:MXFT}
 USE_XORG+=	xft
 CONFIGURE_ARGS+=	--enable-xft2
 .else
 CONFIGURE_ARGS+=	--disable-xft2
 .endif
 
-.if defined(WITH_GIF)
+.if ${PORT_OPTIONS:MGIF}
 LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
 CONFIGURE_ARGS+=	--enable-gif
 CFLAGS+=	-I${LOCALBASE}/include
@@ -72,7 +72,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--disable-gif
 .endif
 
-.if defined(WITH_IMLIB)
+.if ${PORT_OPTIONS:MIMLIB}
 USE_GNOME=	imlib
 CONFIGURE_ARGS+=	--enable-imlib
 .else
@@ -113,4 +113,4 @@ post-install:
 		${INSTALL_SCRIPT} ${SAMPLE_SCRIPTS} ${DOCSDIR}/scripts/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
