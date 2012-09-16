@@ -14,6 +14,10 @@ DISTNAME=	binup-${OPSYS}-${OSREL:C/\..*//}-${PORTVERSION}
 MAINTAINER=	support@bsdupdates.com
 COMMENT=	BSDUpdates system update tool
 
+DEPRECATED=	Upstream disappeared, doesn't work on any supported FreeBSD \
+		versions, use freebsd-update(8) instead
+EXPIRATION_DATE=2012-10-16
+
 ONLY_FOR_ARCHS=	i386
 
 NO_BUILD=	yes
