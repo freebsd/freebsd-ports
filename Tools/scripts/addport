@@ -332,11 +332,17 @@ foreach my $thisdir (@dirs) {
 	my $oldportlist;
 	if ($oldportlist = get('http://people.FreeBSD.org/~crees/removed_ports/index.xml')) {
 		foreach (split("\n", $oldportlist)) {
-			if (/^ +\<port\>$category\/$portname\<removed_date\>([^<]*)/) {
-				$previous_incarnation = $1;
-				$previous_incarnation =~ s,/,-,g;
+			if (/^ +\<port\>$category\/$portname(?:\<removed_revision\>r([0-9]*)\<\/removed_revision\>)?\<removed_date\>([^<]*)/) {
 				print "Found one!\n";
-				print "This port was last alive on $previous_incarnation.\n";
+				if ($1 == "") {
+					$previous_incarnation = $2;
+					$previous_incarnation =~ s,/,-,g;
+					print "This port was last alive on $previous_incarnation.\n";
+					$previous_incarnation = "\{$previous_incarnation\}";
+				} else {
+					$previous_incarnation = $1 - 1;
+					print "The last living revision of this port was r$previous_incarnation.\n";
+				}
 				last;
 			}
 		}
@@ -345,7 +351,7 @@ foreach my $thisdir (@dirs) {
 	}
 	if ($previous_incarnation ne "bogus") {
 		print "Fetching older version... ";
-		system("svn cp -q '$repo/$category/$portname\@{$previous_incarnation}' .");
+		system("svn cp -q '$repo/$category/$portname\@$previous_incarnation' .");
 		print "[DONE]\n";
 		print "Removing irrelevant files and directories... ";
 		my @oldfiles = split("\0", `cd $portname && find . -type f -print0`);
