@@ -7,6 +7,7 @@
 
 PORTNAME=	carbon
 PORTVERSION=	0.9.10
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	http://launchpad.net/graphite/0.9/${PORTVERSION}/+download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
