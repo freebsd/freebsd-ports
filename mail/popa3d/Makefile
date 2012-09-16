@@ -22,21 +22,15 @@ PLIST=		${WRKDIR}/.PLIST.more
 CFLAGS+=	-DPREFIX=${PREFIX}
 UNIQUENAME=	${.CURDIR:T}
 
-OPTIONS?=	SMTP_AFTER_POP3 "Enable SMTP-after-POP mode" off \
-		STANDALONE_POP3 "Enable standalone server mode" off \
-		SETPROCTITLE "Enable setproctitle mode" off
+OPTIONS_DEFINE=	SMTP_AFTER_POP3 STANDALONE_POP3 SETPROCTITLE
+NO_OPTIONS_SORT=yes
+SMTP_AFTER_POP3_DESC=Enable SMTP-after-POP support
+STANDALONE_POP3_DESC=Enable standalone server mode
+SETPROCTITLE_DESC=Enable setproctitle() support
 
 .include <bsd.port.options.mk>
 
-# honor old flags
-.if defined(STANDALONE_POP3)
-WITH_STANDALONE_POP3=	yes
-.endif
-.if defined(SMTP_AFTER_POP3)
-WITH_SMTP_AFTER_POP3=	yes
-.endif
-
-.if defined(WITH_STANDALONE_POP3)
+.if ${PORT_OPTIONS:MSTANDALONE_POP3}
 STANDALONE_SUFFIX=	-standalone
 PLIST_SUB+=	STANDALONE_POP3=""
 CONFLICTS?=	popa3d-0.* popa3d-before-sendmail-0.*
@@ -48,7 +42,7 @@ SUB_FILES=	pkg-message
 PLIST_SUB+=	STANDALONE_POP3="@comment "
 .endif
 
-.if defined(WITH_SMTP_AFTER_POP3)
+.if ${PORT_OPTIONS:MSMTP_AFTER_POP3}
 SMTP_AFTER_POP3_SUFFIX=	-before-sendmail
 EXTRA_PATCHES+=	${FILESDIR}/pop-before-sendmail.patch
 PLIST_SUB+=	SMTP_AFTER_POP3=""
@@ -58,7 +52,7 @@ PLIST_SUB+=	SMTP_AFTER_POP3="@comment "
 CONFLICTS?=	popa3d-standalone-0.* popa3d-before-sendmail-0.*
 .endif
 
-.if defined(WITH_SETPROCTITLE)
+.if ${PORT_OPTIONS:MSETPROCTITLE}
 EXTRA_PATCHES+=	${FILESDIR}/setproctitle.patch
 .endif
 
