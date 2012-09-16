@@ -9,14 +9,12 @@ PORTNAME=	tolkien-ttf
 PORTVERSION=	0.1
 PORTREVISION=	2
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://www.northernstorm.org/distfiles/
+MASTER_SITES=	ftp://92.243.111.213/pub/FreeBSD/distfiles/
 
 MAINTAINER=	obscure9@gmail.com
 COMMENT=	A selection of the best TrueType fonts for JRR Tolkien Languages
 
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-
-BROKEN=		unfetchable
 
 RESTRICTED=	"Shareware. Unlicensed commercial usage/redistribution prohibited."
 
