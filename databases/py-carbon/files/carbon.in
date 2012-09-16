@@ -8,17 +8,21 @@
 #
 # carbon_enable (bool):	Set to NO by default.
 #			Set it to YES to enable it.
-# carbon_conf_dir:	Directory where sabnzbd configuration
-#			data is stored.
-#			Default: /usr/local/sabnzbd
-# carbon_user:	    	The user account sabnzbd daemon runs as what
-#			you want it to be. It uses 'www' user by
-#			default. Do not sets it as empty or it will run
-#			as root.
-# carbon_group:    	The group account sabnzbd daemon runs as what
-#			you want it to be. It uses 'www' group by
-#			default. Do not sets it as empty or it will run
-#			as wheel.
+# carbon_user:		The user account carbon daemon runs as what
+#			you want it to be. It uses 'root' user by
+#			default.
+# carbon_group:		The group account carbon daemon runs as what
+#			you want it to be. It uses 'wheel' group by
+#			default.
+# carbon_debug:		Determines if you want carbon to run in debug
+#			mode, it may be very verbose. It will not run
+#			in debug by default.
+# carbon_logdir:	Directory where carbon logs are stored.
+#			Default: /usr/local/graphite/storage/log
+# carbon_conf:		File where carbon configuration resides
+#			Default: /usr/local/etc/carbon/carbon.conf
+# carbon_pidfile:	Location where carbon should place its pid file
+#			Default: /var/run/carbon.pid
 
 . /etc/rc.subr
 
