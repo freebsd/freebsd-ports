@@ -1,9 +1,5 @@
-# New ports collection makefile for:	paexec
-# Date created:				2008/01/26
-# Whom:					chinsan
-#
+# Created by:				chinsan
 # $FreeBSD$
-#
 
 PORTNAME=	paexec
 PORTVERSION=	0.16.1
@@ -11,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallel executor, distributes tasks over network
 
 LICENSE=	MIT
