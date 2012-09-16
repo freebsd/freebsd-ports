@@ -69,7 +69,7 @@ WITH_TCL=		yes
 USE_PYTHON=		yes
 WITH_PYTHON=		yes
 BUILD_DEPENDS+=		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
-			${LOCALBASE}/lib/tix8.1/Tix.tcl:${PORTSDIR}/x11-toolkits/tix
+			${LOCALBASE}/lib/Tix8.4.3/Tix.tcl:${PORTSDIR}/x11-toolkits/tix
 CONFIGURE_ARGS+=	--with-tkinter
 PLIST_SUB+=		TKINTER=""
 .else
