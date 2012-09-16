@@ -33,16 +33,17 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 MAN1=		x11vnc.1
 PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README README.LibVNCServer TODO
 
-OPTIONS=	NLS "Build with gettext support" on \
-		AVAHI "Enable AVAHI (ZeroConf)" on
+OPTIONS_DEFINE=NLS AVAHI
+OPTIONS_DEFAULT=NLS AVAHI
+NO_OPTIONS_SORT=yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 .endif
 
-.if !defined(WITHOUT_AVAHI)
+.if ${PORT_OPTIONS:MAVAHI}
 LIB_DEPENDS+=	avahi-common:${PORTSDIR}/net/avahi-app
 .else
 CONFIGURE_ARGS+=	--without-avahi
@@ -61,4 +62,4 @@ post-install:
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
