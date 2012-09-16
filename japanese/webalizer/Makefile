@@ -11,8 +11,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 WEBALIZER_LANG=	japanese
 MASTERDIR?=	${.CURDIR}/../../www/webalizer
 
-OPTIONS=	WEBALIZER_CONV "Use character code convert patch" off
-
 .if exists(${.CURDIR}/Makefile.local)
 .include "${.CURDIR}/Makefile.local"
 .endif
