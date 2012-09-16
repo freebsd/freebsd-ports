@@ -32,7 +32,7 @@ OPTIONS_DEFINE=APNG
 OPTIONS_DEFAULT=APNG
 APNG_DESC=Enable Animated PNG support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_DEBUG)
 BROKEN=		Please remove WITH_DEBUG for this port
@@ -83,4 +83,4 @@ post-install:
 	${RM} ${PREFIX}/lib/libpng15.so.15
 	${MV} ${PREFIX}/lib/libpng15.so.15${SOSUFFIX} ${PREFIX}/lib/libpng15.so.15
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
