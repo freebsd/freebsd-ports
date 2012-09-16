@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.feep.net/pub/software/libtar/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	manuelj.munoz@gmail.com
 COMMENT=	A library for manipulating POSIX and GNU tar files
 
 USE_GMAKE=		yes
