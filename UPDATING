@@ -30,6 +30,8 @@ you update your ports collection, before attempting any port upgrades.
   # portmaster -o www/libxul19 www/libxul
   or
   # portupgrade -o www/libxul19 www/libxul
+  or
+  # pkg set -o www/libxul:www/libxul19
 
 20120909:
   AFFECTS: users of www/testlink
@@ -57,6 +59,8 @@ you update your ports collection, before attempting any port upgrades.
   or
   # portugrade -o security/libotr3 security/libotr
   # portugrade -r libotr
+  or
+  # pkg set -o security/libotr:security/libotr3
 
 20120902:
   AFFECTS: users of www/apache22, www/apache22-event-mpm, www/apache22-itk-mpm, www/apache22-peruser-mpm, www/apache22-worker-mpm
@@ -109,6 +113,8 @@ you update your ports collection, before attempting any port upgrades.
   # portmaster -o net/asterisk net/asterisk16
   or
   # portupgrade -o net/asterisk net/asterisk16
+  or
+  # pkg set -o net/asterisk16:net/asterisk
 
   After that you need to update your configuration. Take a look at the following
   URL for the changes between 1.6 and 1.8
