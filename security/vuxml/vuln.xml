@@ -51,6 +51,47 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d846af5b-00f4-11e2-b6d0-00e0814cab4e">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>1.482</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory reports:</p>
+	<blockquote cite="https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2012-09-17">
+	  <p>This advisory announces security vulnerabilities that were found
+	    in Jenkins core and several plugins.</p>
+	  <ol>
+	    <li>The first vulnerability in Jenkins core allows unprivileged
+	      users to insert data into Jenkins master, which can lead to
+	      remote code execution. For this vulnerability to be exploited,
+	      the attacker must have an HTTP access to a Jenkins master, and
+	      he must have a read access to Jenkins.</li>
+	    <li>The second vulnerability in Jenkins core is a cross-site
+	      scripting vulnerability. This allows an attacker to craft an URL
+	      that points to Jenkins, and if a legitimate user clicks this link,
+	      and the attacker will be able to hijack the user session.</li>
+	    <li>The third vulnerability is a cross-site scripting vulnerability
+	      in the Violations plugin</li>
+	    <li>The fourth vulnerability is a cross-site scripting vulnerability
+	      in The Continuous Integration Game plugin</li>
+	  </ol>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2012-09-17</url>
+    </references>
+    <dates>
+      <discovery>2012-09-17</discovery>
+      <entry>2012-09-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="62f36dfd-ff56-11e1-8821-001b2134ef46">
     <topic>vlc -- arbitrary code execution in Real RTSP and MMS support</topic>
     <affects>
