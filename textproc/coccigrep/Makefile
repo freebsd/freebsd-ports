@@ -1,9 +1,9 @@
+# Created by: Pawel Pekala <pawel@freebsd.org>
 # $FreeBSD$
 
 PORTNAME=	coccigrep
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	textproc
-MASTER_SITES=	http://home.regit.org/wp-content/uploads/2011/08/
 
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Semantic grep for the C language
@@ -11,6 +11,11 @@ COMMENT=	Semantic grep for the C language
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	${LOCALBASE}/bin/spatch:${PORTSDIR}/devel/coccinelle
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	regit
+GH_TAGNAME=	v1.11
+GH_COMMIT=	225f8db
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install

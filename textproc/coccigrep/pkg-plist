@@ -6,9 +6,6 @@ bin/coccigrep
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coccigrep/coccigrep.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coccigrep/coccigrep.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coccigrep/coccigrep.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coccigrep/version.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coccigrep/version.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coccigrep/version.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coccigrep/data/deref.cocci
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coccigrep/data/func.cocci
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coccigrep/data/set.cocci
