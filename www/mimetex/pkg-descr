@@ -1,4 +1,4 @@
-MimeTeX, licensed under the gpl, lets you easily embed LaTeX math in
+MimeTeX, licensed under the GPL, lets you easily embed LaTeX math in
 your html pages.  It parses a LaTeX math expression and immediately
 emits the corresponding gif image, rather than the usual TeX dvi.
 And mimeTeX is an entirely separate little program that doesn't
@@ -7,5 +7,4 @@ your site's cgi-bin/ directory, with no other dependencies.
 It's easy to use. Just place an html <img> tag in your document
 wherever you want to see the corresponding LaTeX expression.
 
-Author:	John Forkosh
-WWW:	http://www.forkosh.com/mimetex.html
+WWW: http://www.forkosh.com/mimetex.html
