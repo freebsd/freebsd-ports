@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmnd
-PORTVERSION=	0.4.16
+PORTVERSION=	0.4.17
 CATEGORIES=	net
 MASTER_SITES=	http://www.thregr.org/~wavexx/software/wmnd/releases/
 MASTER_SITE_SUBDIR=	distfiles
