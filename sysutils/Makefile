@@ -649,6 +649,7 @@
     SUBDIR += paicc
     SUBDIR += pam_mount
     SUBDIR += parallel
+    SUBDIR += password-store
     SUBDIR += pax-utils
     SUBDIR += pbimaker
     SUBDIR += pbreg
