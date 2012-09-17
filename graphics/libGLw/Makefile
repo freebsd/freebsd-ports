@@ -20,4 +20,11 @@ do-install:
 	cd ${WRKSRC}/src/glw; ${GMAKE} install
 
 .include "${.CURDIR}/../../graphics/libGL/bsd.mesalib.mk"
-.include <bsd.port.mk>
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "amd64" || ${ARCH} != "i386"
+CONFIGURE_ARGS+=--disable-gallium-intel
+.endif
+
+.include <bsd.port.post.mk>
