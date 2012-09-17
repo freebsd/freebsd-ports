@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	File-Path-Tiny
-PORTVERSION=	0.1
+PORTVERSION=	0.5
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Lightweight File::Path alternative
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
 
