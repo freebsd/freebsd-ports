@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	memcached
-PORTVERSION=	1.4.14
+PORTVERSION=	1.4.15
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_GENTOO}
@@ -15,17 +15,26 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	High-performance distributed memory object cache system
 
-LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1:${PORTSDIR}/devel/libevent
+
+TEST_DEPENDS=	prove:${PORTSDIR}/lang/${PERL_PORT} \
+		git:${PORTSDIR}/devel/git
 
 CONFLICTS=	memcached-1.2*
 
+# Dtrace option disabled until it is fixed upstream
+OPTIONS_DEFINE=	REPCACHED SASL
+DTRACE_DESC=	Enable dtrace probes
+REPCACHED_DESC=	Enable data replication feature
+SASL_DESC=	Enable SASL Authentication
+
 USE_RC_SUBR=	memcached
 SUB_LIST+=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
-GNU_CONFIGURE=	YES
-CONFIGURE_ARGS=	--with-libevent=${LOCALBASE} --program-prefix=
 
-OPTIONS=	REPCACHED	"Enable data replication feature"	off \
-		SASL		"Enable SASL support"			off
+USE_CSTD=	c99
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-libevent=${LOCALBASE} --program-prefix= \
+		--disable-coverage
 
 MAN1=		memcached.1
 
@@ -42,7 +51,18 @@ PORTDOCS=	protocol.txt readme.txt
 CFLAGS+=	-fstack-protector
 .endif
 
-.if defined(WITH_REPCACHED)
+.if ${ARCH} == amd64
+CONFIGURE_ARGS+=	--enable-64bit
+.endif
+
+.if ${PORT_OPTIONS:MDTRACE}
+BROKEN=			DTRACE broken with gcc/clang - reported upstream
+CONFIGURE_ARGS+=	--enable-dtrace
+.else
+CONFIGURE_ARGS+=	--disable-dtrace
+.endif
+
+.if ${PORT_OPTIONS:MREPCACHED}
 PATCH_SITES+=		${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	swills
 PATCH_DIST_STRIP+=	-p1
@@ -50,8 +70,8 @@ PATCHFILES+=		repcached-2.3.1-${PORTVERSION}.patch.gz
 CONFIGURE_ARGS+=	--enable-replication
 .endif
 
-.if defined(WITH_SASL) && !defined(WITHOUT_SASL)
-LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+.if ${PORT_OPTIONS:MSASL} && !defined(WITHOUT_SASL)
+LIB_DEPENDS+=		sasl2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--enable-sasl
 CFLAGS+=		-I${LOCALBASE}/include
 CPPFLAGS+=		${CFLAGS}
@@ -74,7 +94,8 @@ post-install:
 .endfor
 .endif
 
-test:
+regression-test: test
+test: build
 	${MAKE} -C ${WRKSRC} test
 
 .include <bsd.port.post.mk>
