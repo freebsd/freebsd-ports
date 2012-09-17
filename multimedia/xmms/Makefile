@@ -43,22 +43,22 @@ INPUT_PLUGINS=	cdaudio mpg123 tonegen wav
 OUTPUT_PLUGINS=	OSS disk_writer
 VISUALIZATION_PLUGINS=	blur_scope sanalyzer
 
-OPTIONS=	IPV6		"Enable ipv6" on \
-		MIKMOD		"Enable Mikemod Plugin" on \
-		SIMD		"Enable x86 SIMD (3DNow!/MMX)" on \
-		SPEC		"Visualization opengl_spectrum" off \
-		VFILEINFO	"Enable Extended Vorbis Fileinfo" off \
-		VORBIS		"Enable Vorbis Plugin" on
+OPTIONS_DEFINE=	IPV6 MIKMOD SIMD SPEC VFILEINFO VORBIS RUSXMMS_PATCHES
+OPTIONS_DEFAULT=	IPV6 MIKMOD SIMD VORBIS
+SPEC_DESC=	Visualization opengl_spectrum
+VFILEINFO_DESC=	Enable Extended Vorbis Fileinfo
+RUSXMMS_PATCHES_DESC=	Custom IDv3 patches
+
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-.if defined(WITH_RUSXMMS_PATCHES)
+.if ${PORT_OPTIONS:MRUSXMMS_PATCHES}
 ENC_PATCHLEVEL=	41
 DISTFILES+=	RusXMMS2-csa${ENC_PATCHLEVEL}${EXTRACT_SUFX}:enc
 MASTER_SITES+=	SF/rusxmms/rusxmms2/csa41%20%28${PORTVERSION}%29:enc
@@ -68,11 +68,11 @@ LIB_DEPENDS+=	rcc.2:${PORTSDIR}/devel/librcc
 LIB_DEPENDS+=	rcd.1:${PORTSDIR}/devel/librcd
 .endif
 
-.if defined(WITH_VFILEINFO)
+.if ${PORT_OPTIONS:MVFILEINFO}
 CFLAGS+=	-DALL_VORBIS_TAGS
 .endif
 
-.if !defined(WITHOUT_MIKMOD)
+.if ${PORT_OPTIONS:MMIKMOD}
 LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
 INPUT_PLUGINS+=	mikmod
 PLIST_SUB+=	MIKMODPLUGIN:=""
@@ -81,7 +81,7 @@ CONFIGURE_ARGS+=	--disable-mikmod
 PLIST_SUB+=	MIKMODPLUGIN:="@comment "
 .endif
 
-.if !defined(WITHOUT_VORBIS)
+.if ${PORT_OPTIONS:MVORBIS}
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 INPUT_PLUGINS+=	vorbis
 PLIST_SUB+=	VORBISPLUGIN:=""
@@ -100,18 +100,18 @@ PLIST_SUB+=	ESDPLUGIN:="@comment "
 .endif
 
 .if ${ARCH} != "i386"
-WITHOUT_SIMD+=	yes
+${UNIQUENAME}_UNSET+=	SIMD
 .endif
 
-.if !defined(WITHOUT_SIMD)
+.if ${PORT_OPTIONS:MSIMD}
 CONFIGURE_ARGS+=	--enable-simd
 .else
 .if ${ARCH} == "i386"
-BROKEN=	must use option WITH_SIMD on ${ARCH} see pr ports/63456
+BROKEN=	must use option SIMD on ${ARCH} see pr ports/63456
 .endif
 .endif
 
-.if defined(WITH_SPEC)
+.if ${PORT_OPTIONS:MSPEC}
 PLIST_SUB+=	SPEC=""
 VISUALIZATION_PLUGINS+=	opengl_spectrum
 .else
@@ -119,7 +119,7 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-Visualization_Makefile.am
 PLIST_SUB+=	SPEC="@comment "
 .endif
 
-.if defined(WITHOUT_SIMD)
+.if empty(${PORT_OPTIONS:MSIMD})
 post-extract:
 	(cd ${WRKSRC}/Input/mpg123 && ${MV} decode_i586.s decode_i586.S && \
 	  cd ${WRKSRC}/Visualization/blur_scope && ${MV} blur_8.s blur_8.S);
@@ -137,15 +137,15 @@ pre-extract:
 	@${ECHO_MSG} ""
 .endif
 
-.if !defined(WITH_RUSXMMS_PATCHES)
+.if empty(${PORT_OPTIONS:MRUSXMMS_PATCHES})
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You can enable support for ID3v2 tags and CP1251"
-	@${ECHO_MSG} "encoding by defining WITH_RUSXMMS_PATCHES."
+	@${ECHO_MSG} "encoding by setting the RUSXMMS_PATCHES option."
 	@${ECHO_MSG} ""
 .endif
 
 post-patch:
-.if defined(WITH_RUSXMMS_PATCHES)
+.if ${PORT_OPTIONS:MRUSXMMS_PATCHES}
 .  for src in source/rcc.c source/rcc.h source/rcc_langs.h
 	@${INSTALL_DATA} ${WRKDIR}/RusXMMS2/${src} ${WRKSRC}/libxmms
 .  endfor
