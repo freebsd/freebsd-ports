@@ -1,7 +1,4 @@
-# New ports collection makefile for:	jamvm
-# Date created:				31 March 2008
-# Whom:					Bjoern Koenig
-#
+# Created by:	Bjoern Koenig <bkoenig@alpha-tierchen.de>
 # $FreeBSD$
 
 PORTNAME=	jamvm
@@ -31,10 +28,6 @@ ZIP_DESC=	turn-on zip support in the bootstrap loader
 .if ${PORT_OPTIONS:MFFI}
 LIB_DEPENDS+=		ffi:${PORTSDIR}/devel/libffi
 CONFIGURE_ARGS+=	--enable-ffi
-FFI_CFLAGS!=	pkgconf libffi --cflags
-FFI_LDFLAGS!=	pkgconf libffi --libs-only-L
-CFLAGS+=	${FFI_CFLAGS}
-LDFLAGS+=	${FFI_LDFLAGS}
 .elif ${ARCH} == "sparc64"
 IGNORE=		for ${ARCH} requires libffi
 .endif
