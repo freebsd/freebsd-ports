@@ -86,6 +86,12 @@ you update your ports collection, before attempting any port upgrades.
   Please rebuild all ports which are using functions from
   APR/APR-util such as apache, subversion ...
 
+  # portmaster -r apr
+  or
+  # portupgrade -r devel/apr1
+  or
+  # pkg install -fR devel/apr1
+
 20120902:
   AFFECTS: users of math/cantor and math/kalgebra
   AUTHOR: kde@FreeBSD.org
