@@ -1,0 +1,218 @@
+diff --git a/src/password-store.sh b/src/password-store.sh
+index 1553e5b..78c45b8 100755
+--- src/password-store.sh
++++ src/password-store.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/local/bin/bash
+ 
+ # (C) Copyright 2012 Jason A. Donenfeld <Jason@zx2c4.com>. All Rights Reserved.
+ # This is released under the GPLv2+. Please see COPYING for more information.
+@@ -7,10 +7,15 @@ umask 077
+ 
+ PREFIX="${PASSWORD_STORE_DIR:-$HOME/.password-store}"
+ ID="$PREFIX/.gpg-id"
+-GIT="$PREFIX/.git"
++GITDIR="$PREFIX/.git"
+ GPG_OPTS="--quiet --yes --batch"
++GETOPT=/usr/local/bin/getopt
++GPG=gpg2
++GIT=git
++XCLIP=xclip
++BASE64=base64
+ 
+-export GIT_DIR="$GIT"
++export GIT_DIR="$GITDIR"
+ export GIT_WORK_TREE="$PREFIX"
+ 
+ version() {
+@@ -72,12 +77,12 @@ clip() {
+ 	# in shell. There must be a better way to deal with this, but because I'm a dolt,
+ 	# we're going with this for now.
+ 
+-	before="$(xclip -o -selection clipboard | base64)"
+-	echo -n "$1" | xclip -selection clipboard
++	before="$($XCLIP -o -selection clipboard | $BASE64)"
++	echo -n "$1" | $XCLIP -selection clipboard
+ 	(
+ 		sleep 45
+-		now="$(xclip -o -selection clipboard | base64)"
+-		if [[ $now != $(echo -n "$1" | base64) ]]; then
++		now="$($XCLIP -o -selection clipboard | $BASE64)"
++		if [[ $now != $(echo -n "$1" | $BASE64) ]]; then
+ 			before="$now"
+ 		fi
+ 		# It might be nice to programatically check to see if klipper exists,
+@@ -85,7 +90,7 @@ clip() {
+ 		# this works fine. Clipboard managers frequently write their history
+ 		# out in plaintext, so we axe it here.
+ 		qdbus org.kde.klipper /klipper org.kde.klipper.klipper.clearClipboardHistory >/dev/null 2>&1
+-		echo "$before" | base64 -d | xclip -selection clipboard
++		echo "$before" | $BASE64 -d | $XCLIP -selection clipboard
+ 	) & disown
+ 	echo "Copied $2 to clipboard. Will clear in 45 seconds."
+ }
+@@ -134,7 +139,7 @@ case "$command" in
+ 	show|ls|list)
+ 		clip=0
+ 
+-		opts="$(getopt -o c -l clip -n $program -- "$@")"
++		opts="$($GETOPT -o c -l clip -n $program -- "$@")"
+ 		err=$?
+ 		eval set -- "$opts"
+ 		while true; do case $1 in
+@@ -162,9 +167,9 @@ case "$command" in
+ 				exit 1
+ 			fi
+ 			if [ $clip -eq 0 ]; then
+-				exec gpg -q -d --yes --batch "$passfile"
++				exec $GPG -q -d --yes --batch "$passfile"
+ 			else
+-				clip "$(gpg -q -d --yes --batch "$passfile" | head -n 1)" "$path"
++				clip "$($GPG -q -d --yes --batch "$passfile" | head -n 1)" "$path"
+ 			fi
+ 		fi
+ 		;;
+@@ -173,7 +178,7 @@ case "$command" in
+ 		noecho=0
+ 		force=0
+ 
+-		opts="$(getopt -o mnf -l multiline,no-echo,force -n $program -- "$@")"
++		opts="$($GETOPT -o mnf -l multiline,no-echo,force -n $program -- "$@")"
+ 		err=$?
+ 		eval set -- "$opts"
+ 		while true; do case $1 in
+@@ -201,7 +206,7 @@ case "$command" in
+ 		if [[ $ml -eq 1 ]]; then
+ 			echo "Enter contents of $path and press Ctrl+D when finished:"
+ 			echo
+-			cat | gpg -e -r "$ID" -o "$passfile" $GPG_OPTS
++			cat | $GPG -e -r "$ID" -o "$passfile" $GPG_OPTS
+ 		elif [[ $noecho -eq 1 ]]; then
+ 			while true; do
+ 				read -p "Enter password for $path: " -s password
+@@ -209,7 +214,7 @@ case "$command" in
+ 				read -p "Retype password for $path: " -s password_again
+ 				echo
+ 				if [[ $password == $password_again ]]; then
+-					gpg -e -r "$ID" -o "$passfile" $GPG_OPTS <<<"$password"
++					$GPG -e -r "$ID" -o "$passfile" $GPG_OPTS <<<"$password"
+ 					break
+ 				else
+ 					echo "Error: the entered passwords do not match."
+@@ -217,11 +222,11 @@ case "$command" in
+ 			done
+ 		else
+ 			read -p "Enter password for $path: " -e password
+-			gpg -e -r "$ID" -o "$passfile" $GPG_OPTS <<<"$password"
++			$GPG -e -r "$ID" -o "$passfile" $GPG_OPTS <<<"$password"
+ 		fi
+-		if [[ -d $GIT ]]; then
+-			git add "$passfile"
+-			git commit -m "Added given password for $path to store."
++		if [[ -d $GITDIR ]]; then
++			$GIT add "$passfile"
++			$GIT commit -m "Added given password for $path to store."
+ 		fi
+ 		;;
+ 	edit)
+@@ -252,25 +257,25 @@ case "$command" in
+ 
+ 		action="Added"
+ 		if [[ -f $passfile ]]; then
+-			gpg -d -o "$tmp_file" $GPG_OPTS "$passfile" || exit 1
++			$GPG -d -o "$tmp_file" $GPG_OPTS "$passfile" || exit 1
+ 			action="Edited"
+ 		fi
+ 		${EDITOR:-vi} "$tmp_file"
+-		while ! gpg -e -r "$ID" -o "$passfile" $GPG_OPTS "$tmp_file"; do
++		while ! $GPG -e -r "$ID" -o "$passfile" $GPG_OPTS "$tmp_file"; do
+ 			echo "GPG encryption failed. Retrying."
+ 			sleep 1
+ 		done
+ 
+-		if [[ -d $GIT ]]; then
+-			git add "$passfile"
+-			git commit -m "$action password for $path using ${EDITOR:-vi}."
++		if [[ -d $GITDIR ]]; then
++			$GIT add "$passfile"
++			$GIT commit -m "$action password for $path using ${EDITOR:-vi}."
+ 		fi
+ 		;;
+ 	generate)
+ 		clip=0
+ 		symbols="-y"
+ 
+-		opts="$(getopt -o nc -l no-symbols,clip -n $program -- "$@")"
++		opts="$($GETOPT -o nc -l no-symbols,clip -n $program -- "$@")"
+ 		err=$?
+ 		eval set -- "$opts"
+ 		while true; do case $1 in
+@@ -292,10 +297,10 @@ case "$command" in
+ 		mkdir -p -v "$PREFIX/$(dirname "$path")"
+ 		pass="$(pwgen -s $symbols $length 1)"
+ 		passfile="$PREFIX/$path.gpg"
+-		gpg -e -r "$ID" -o "$passfile" $GPG_OPTS <<<"$pass"
+-		if [[ -d $GIT ]]; then
+-			git add "$passfile"
+-			git commit -m "Added generated password for $path to store."
++		$GPG -e -r "$ID" -o "$passfile" $GPG_OPTS <<<"$pass"
++		if [[ -d $GITDIR ]]; then
++			$GIT add "$passfile"
++			$GIT commit -m "Added generated password for $path to store."
+ 		fi
+ 		
+ 		if [ $clip -eq 0 ]; then
+@@ -317,22 +322,45 @@ case "$command" in
+ 			exit 1
+ 		fi
+ 		rm -i -v "$passfile"
+-		if [[ -d $GIT ]] && ! [[ -f $passfile ]]; then
+-			git rm -f "$passfile"
+-			git commit -m "Removed $path from store."
++		if [[ -d $GITDIR ]] && ! [[ -f $passfile ]]; then
++			$GIT rm -f "$passfile"
++			$GIT commit -m "Removed $path from store."
+ 		fi
+ 		;;
+ 	push|pull)
+-		if [[ -d $GIT ]]; then
+-			exec git $command "$@"
++		if [[ -d $GITDIR ]]; then
++			exec $GIT $command "$@"
+ 		else
+ 			echo "Error: the password store is not a git repository."
+ 			exit 1
+ 		fi
+ 		;;
+ 	git)
+-		if [[ $1 == "init" ]] || [[ -d $GIT ]]; then
+-			exec git "$@"
++		if [[ $1 == "init" ]]; then
++			username=$2
++			useremail=$3
++
++			$GIT init
++
++			if [ -z "$username" ]; then
++			    current=$($GIT config user.name)
++			    prompt="Set your git user.name: "
++			    read -e -i "$current" -p "$prompt" username
++                username="${username:-$username}"
++			fi
++			if [ -z "$useremail" ]; then
++			    current=$($GIT config user.email)
++			    prompt="Set your git user.email: "
++			    read -e -i "$current" -p "$prompt" useremail
++                useremail="${useremail:-$useremail}"
++			fi
++			$GIT config user.name "$username"
++			$GIT config user.email "$useremail"
++			echo .gpg-id > $PREFIX/.gitignore
++			$GIT add .
++			$GIT commit -m "Adding existing passwords to the store."
++		elif [[ -d $GITDIR ]]; then
++			exec $GIT "$@"
+ 		else
+ 			echo "Error: the password store is not a git repository."
+ 			exit 1

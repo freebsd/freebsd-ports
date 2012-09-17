@@ -1,0 +1,358 @@
+diff --git a/README b/README
+index 52e23af..273aa27 100644
+--- README
++++ README
+@@ -14,7 +14,6 @@ Please see the man page for documentation and examples.
+ 
+ Depends on:
+ - gpg2
+-- git
+ - xclip
+ - pwgen
+ - tree
+diff --git a/contrib/pass.zsh-completion b/contrib/pass.zsh-completion
+index 5cf8808..cab22e0 100644
+--- contrib/pass.zsh-completion
++++ contrib/pass.zsh-completion
+@@ -27,9 +27,6 @@ _pass () {
+       "generate[Generate a new password using pwgen]" \
+       "edit[Edit a password with \$EDITOR]" \
+       "rm[Remove the password]" \
+-      "push[push the latest changes using git-push(1)]" \
+-      "pull[pull the latest changes using git-pull(1)]" \
+-      "git[Call git]" \
+       "help[Help]"
+     _pass_cmd_show
+   fi
+@@ -75,6 +72,6 @@ _pass_cmd_rm () {
+ }
+ 
+ _get_stored_pwd () {
+-  compadd `find ~/.password-store \( -name .git -o -name .gpg-id \) -prune -o -type f -print | sed 's#.*\.password-store*.##'| sed 's#\.gpg##' | sort`
++  compadd `find ~/.password-store \( -name .gpg-id \) -prune -o -type f -print | sed 's#.*\.password-store*.##'| sed 's#\.gpg##' | sort`
+ 
+ }
+diff --git a/man/pass.1 b/man/pass.1
+index a124c32..c2ff884 100644
+--- man/pass.1
++++ man/pass.1
+@@ -34,13 +34,6 @@ or
+ depending on the type of specifier in ARGS. Otherwise COMMAND must be one of
+ the valid commands listed below.
+ 
+-Several of the commands below rely on or provide additional functionality if
+-the password store directory is also a git repository. If the password store
+-directory is a git repository, all password store modification commands will
+-cause a corresponding git commit. See the \fIEXAMPLES\fP section for an
+-extended description using \fBinit\fP and
+-.BR git (1).
+-
+ The \fBinit\fP command must be run before other commands in order to initialize
+ the password store with the correct gpg key id.
+ 
+@@ -102,19 +95,6 @@ and then restore the clipboard after 45 seconds.
+ Remove the password named \fIpass-name\fP from the password store. This command is
+ alternatively named \fBremove\fP.
+ .TP
+-\fBpush\fP
+-If the password store is a git repository, push the latest changes using
+-.BR git-push (1).
+-.TP
+-\fBpull\fP
+-If the password store is a git repository, pull the latest changes using
+-.BR git-pull (1).
+-.TP
+-\fBgit\fP \fIgit-command-args\fP...
+-If the password store is a git repository, pass \fIgit-command-args\fP as arguments to
+-.BR git (1)
+-using the password store as the git repository.
+-.TP
+ \fBhelp\fP
+ Show usage message.
+ .TP
+@@ -220,10 +200,8 @@ rm: remove regular file \[u2018]/home/zx2c4/.password-store/Business/cheese-whiz
+ .br
+ removed \[u2018]/home/zx2c4/.password-store/Business/cheese-whiz-factory.gpg\[u2019]
+ 
+-.SH EXTENDED GIT EXAMPLE
+-Here, we initialize new password store, create a git repository, and then manipulate and sync passwords. Make note of the arguments to the first call of \fBpass push\fP; consult
+-.BR git-push (1)
+-for more information.
++.SH EXTENDED EXAMPLE
++Here, we initialize new password store, and then manipulate and sync passwords.
+ 
+ .B zx2c4@laptop ~ $ pass init Jason@zx2c4.com 
+ .br
+@@ -231,12 +209,6 @@ mkdir: created directory \[u2018]/home/zx2c4/.password-store\[u2019]
+ .br
+ Password store initialized for Jason@zx2c4.com. 
+ 
+-.B zx2c4@laptop ~ $ pass git init 
+-.br
+-Initialized empty Git repository in /home/zx2c4/.password-store/.git/ 
+-
+-.B zx2c4@laptop ~ $ pass git remote add origin kexec.com:pass-store 
+-
+ .B zx2c4@laptop ~ $ pass generate Amazon/amazonemail@email.com 21 
+ .br
+ mkdir: created directory \[u2018]/home/zx2c4/.password-store/Amazon\[u2019] 
+@@ -251,24 +223,6 @@ The generated password to Amazon/amazonemail@email.com is:
+ .br
+ <5m,_BrZY`antNDxKN<0A 
+ 
+-.B zx2c4@laptop ~ $ pass push -u --all 
+-.br
+-Counting objects: 4, done. 
+-.br
+-Delta compression using up to 2 threads. 
+-.br
+-Compressing objects: 100% (3/3), done. 
+-.br
+-Writing objects: 100% (4/4), 921 bytes, done. 
+-.br
+-Total 4 (delta 0), reused 0 (delta 0) 
+-.br
+-To kexec.com:pass-store 
+-.br
+-* [new branch]      master -> master 
+-.br
+-Branch master set up to track remote branch master from origin. 
+-
+ .B zx2c4@laptop ~ $ pass insert Amazon/otheraccount@email.com 
+ .br
+ Enter password for Amazon/otheraccount@email.com: som3r3a11yb1gp4ssw0rd!!88** 
+@@ -293,20 +247,6 @@ rm 'Amazon/amazonemail@email.com.gpg'
+ .br
+ delete mode 100644 Amazon/amazonemail@email.com.gpg 
+ 
+-.B zx2c4@laptop ~ $ pass push 
+-.br
+-Counting objects: 9, done. 
+-.br
+-Delta compression using up to 2 threads. 
+-.br
+-Compressing objects: 100% (5/5), done. 
+-.br
+-Writing objects: 100% (7/7), 1.25 KiB, done. 
+-.br
+-Total 7 (delta 0), reused 0 (delta 0) 
+-.br
+-To kexec.com:pass-store
+-
+ .SH FILES
+ 
+ .TP
+@@ -320,7 +260,6 @@ be set using the \fBinit\fP command.
+ .SH SEE ALSO
+ .BR gpg (1),
+ .BR pwgen (1),
+-.BR git (1),
+ .BR xclip (1).
+ 
+ .SH AUTHOR
+diff --git a/src/password-store.sh b/src/password-store.sh
+index 1553e5b..6844dc4 100755
+--- src/password-store.sh
++++ src/password-store.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/local/bin/bash
+ 
+ # (C) Copyright 2012 Jason A. Donenfeld <Jason@zx2c4.com>. All Rights Reserved.
+ # This is released under the GPLv2+. Please see COPYING for more information.
+@@ -7,11 +7,11 @@ umask 077
+ 
+ PREFIX="${PASSWORD_STORE_DIR:-$HOME/.password-store}"
+ ID="$PREFIX/.gpg-id"
+-GIT="$PREFIX/.git"
+ GPG_OPTS="--quiet --yes --batch"
+-
+-export GIT_DIR="$GIT"
+-export GIT_WORK_TREE="$PREFIX"
++GETOPT=/usr/local/bin/getopt
++GPG=gpg2
++XCLIP=xclip
++BASE64=base64
+ 
+ version() {
+ 	cat <<_EOF
+@@ -48,13 +48,6 @@ Usage:
+         Optionally put it on the clipboard and clear board after 45 seconds.
+     $program rm pass-name
+         Remove existing password.
+-    $program push
+-        If the password store is a git repository, push the latest changes.
+-    $program pull
+-        If the password store is a git repository, pull the latest changes.
+-    $program git git-command-args...
+-        If the password store is a git repository, execute a git command
+-        specified by git-command-args.
+     $program help
+         Show this text.
+     $program version
+@@ -63,7 +56,7 @@ _EOF
+ }
+ isCommand() {
+ 	case "$1" in
+-		init|ls|list|show|insert|edit|generate|remove|rm|delete|push|pull|git|help|--help|version|--version) return 0 ;;
++		init|ls|list|show|insert|edit|generate|remove|rm|delete|help|--help|version|--version) return 0 ;;
+ 		*) return 1 ;;
+ 	esac
+ }
+@@ -72,12 +65,12 @@ clip() {
+ 	# in shell. There must be a better way to deal with this, but because I'm a dolt,
+ 	# we're going with this for now.
+ 
+-	before="$(xclip -o -selection clipboard | base64)"
+-	echo -n "$1" | xclip -selection clipboard
++	before="$($XCLIP -o -selection clipboard | $BASE64)"
++	echo -n "$1" | $XCLIP -selection clipboard
+ 	(
+ 		sleep 45
+-		now="$(xclip -o -selection clipboard | base64)"
+-		if [[ $now != $(echo -n "$1" | base64) ]]; then
++		now="$($XCLIP -o -selection clipboard | $BASE64)"
++		if [[ $now != $(echo -n "$1" | $BASE64) ]]; then
+ 			before="$now"
+ 		fi
+ 		# It might be nice to programatically check to see if klipper exists,
+@@ -85,7 +78,7 @@ clip() {
+ 		# this works fine. Clipboard managers frequently write their history
+ 		# out in plaintext, so we axe it here.
+ 		qdbus org.kde.klipper /klipper org.kde.klipper.klipper.clearClipboardHistory >/dev/null 2>&1
+-		echo "$before" | base64 -d | xclip -selection clipboard
++		echo "$before" | $BASE64 -d | $XCLIP -selection clipboard
+ 	) & disown
+ 	echo "Copied $2 to clipboard. Will clear in 45 seconds."
+ }
+@@ -134,7 +127,7 @@ case "$command" in
+ 	show|ls|list)
+ 		clip=0
+ 
+-		opts="$(getopt -o c -l clip -n $program -- "$@")"
++		opts="$($GETOPT -o c -l clip -n $program -- "$@")"
+ 		err=$?
+ 		eval set -- "$opts"
+ 		while true; do case $1 in
+@@ -162,9 +155,9 @@ case "$command" in
+ 				exit 1
+ 			fi
+ 			if [ $clip -eq 0 ]; then
+-				exec gpg -q -d --yes --batch "$passfile"
++				exec $GPG -q -d --yes --batch "$passfile"
+ 			else
+-				clip "$(gpg -q -d --yes --batch "$passfile" | head -n 1)" "$path"
++				clip "$($GPG -q -d --yes --batch "$passfile" | head -n 1)" "$path"
+ 			fi
+ 		fi
+ 		;;
+@@ -173,7 +166,7 @@ case "$command" in
+ 		noecho=0
+ 		force=0
+ 
+-		opts="$(getopt -o mnf -l multiline,no-echo,force -n $program -- "$@")"
++		opts="$($GETOPT -o mnf -l multiline,no-echo,force -n $program -- "$@")"
+ 		err=$?
+ 		eval set -- "$opts"
+ 		while true; do case $1 in
+@@ -201,7 +194,7 @@ case "$command" in
+ 		if [[ $ml -eq 1 ]]; then
+ 			echo "Enter contents of $path and press Ctrl+D when finished:"
+ 			echo
+-			cat | gpg -e -r "$ID" -o "$passfile" $GPG_OPTS
++			cat | $GPG -e -r "$ID" -o "$passfile" $GPG_OPTS
+ 		elif [[ $noecho -eq 1 ]]; then
+ 			while true; do
+ 				read -p "Enter password for $path: " -s password
+@@ -209,7 +202,7 @@ case "$command" in
+ 				read -p "Retype password for $path: " -s password_again
+ 				echo
+ 				if [[ $password == $password_again ]]; then
+-					gpg -e -r "$ID" -o "$passfile" $GPG_OPTS <<<"$password"
++					$GPG -e -r "$ID" -o "$passfile" $GPG_OPTS <<<"$password"
+ 					break
+ 				else
+ 					echo "Error: the entered passwords do not match."
+@@ -217,11 +210,7 @@ case "$command" in
+ 			done
+ 		else
+ 			read -p "Enter password for $path: " -e password
+-			gpg -e -r "$ID" -o "$passfile" $GPG_OPTS <<<"$password"
+-		fi
+-		if [[ -d $GIT ]]; then
+-			git add "$passfile"
+-			git commit -m "Added given password for $path to store."
++			$GPG -e -r "$ID" -o "$passfile" $GPG_OPTS <<<"$password"
+ 		fi
+ 		;;
+ 	edit)
+@@ -252,25 +241,20 @@ case "$command" in
+ 
+ 		action="Added"
+ 		if [[ -f $passfile ]]; then
+-			gpg -d -o "$tmp_file" $GPG_OPTS "$passfile" || exit 1
++			$GPG -d -o "$tmp_file" $GPG_OPTS "$passfile" || exit 1
+ 			action="Edited"
+ 		fi
+ 		${EDITOR:-vi} "$tmp_file"
+-		while ! gpg -e -r "$ID" -o "$passfile" $GPG_OPTS "$tmp_file"; do
++		while ! $GPG -e -r "$ID" -o "$passfile" $GPG_OPTS "$tmp_file"; do
+ 			echo "GPG encryption failed. Retrying."
+ 			sleep 1
+ 		done
+-
+-		if [[ -d $GIT ]]; then
+-			git add "$passfile"
+-			git commit -m "$action password for $path using ${EDITOR:-vi}."
+-		fi
+ 		;;
+ 	generate)
+ 		clip=0
+ 		symbols="-y"
+ 
+-		opts="$(getopt -o nc -l no-symbols,clip -n $program -- "$@")"
++		opts="$($GETOPT -o nc -l no-symbols,clip -n $program -- "$@")"
+ 		err=$?
+ 		eval set -- "$opts"
+ 		while true; do case $1 in
+@@ -292,12 +276,7 @@ case "$command" in
+ 		mkdir -p -v "$PREFIX/$(dirname "$path")"
+ 		pass="$(pwgen -s $symbols $length 1)"
+ 		passfile="$PREFIX/$path.gpg"
+-		gpg -e -r "$ID" -o "$passfile" $GPG_OPTS <<<"$pass"
+-		if [[ -d $GIT ]]; then
+-			git add "$passfile"
+-			git commit -m "Added generated password for $path to store."
+-		fi
+-		
++		$GPG -e -r "$ID" -o "$passfile" $GPG_OPTS <<<"$pass"
+ 		if [ $clip -eq 0 ]; then
+ 			echo "The generated password to $path is:"
+ 			echo "$pass"
+@@ -317,26 +296,6 @@ case "$command" in
+ 			exit 1
+ 		fi
+ 		rm -i -v "$passfile"
+-		if [[ -d $GIT ]] && ! [[ -f $passfile ]]; then
+-			git rm -f "$passfile"
+-			git commit -m "Removed $path from store."
+-		fi
+-		;;
+-	push|pull)
+-		if [[ -d $GIT ]]; then
+-			exec git $command "$@"
+-		else
+-			echo "Error: the password store is not a git repository."
+-			exit 1
+-		fi
+-		;;
+-	git)
+-		if [[ $1 == "init" ]] || [[ -d $GIT ]]; then
+-			exec git "$@"
+-		else
+-			echo "Error: the password store is not a git repository."
+-			exit 1
+-		fi
+ 		;;
+ 	*)
+ 		usage
