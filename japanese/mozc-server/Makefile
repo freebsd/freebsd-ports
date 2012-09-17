@@ -7,6 +7,7 @@
 
 PORTNAME=	mozc
 PORTVERSION=	1.6.1187.102
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX?=	ja-
@@ -29,7 +30,9 @@ USE_OPENSSL=	yes
 
 BUILD_MOZC_LIST?=	mozc_server
 
-.if ${BUILD_MOZC_LIST:Mmozc_tool} == "mozc_tool"
+.if ${BUILD_MOZC_LIST:Mmozc_server} == "mozc_server"
+USE_GNOME+=	glib20 gtk20
+.elif ${BUILD_MOZC_LIST:Mmozc_tool} == "mozc_tool"
 USE_QT4+=	gui dbus qmake_build moc_build uic_build rcc_build
 .elif ${BUILD_MOZC_LIST:Mibus_mozc} == "ibus_mozc"
 USE_GNOME+=	glib20 gtk20 pygtk2
@@ -60,10 +63,12 @@ LOCALBASE_REPLACE_FILES=	\
 		unix/ibus/gen_mozc_xml.py \
 		unix/ibus/mozc.xml \
 		unix/ibus/path_util.cc \
+		base/base.gyp \
 		base/util.cc \
 		base/process.cc \
 		gui/about_dialog/about_dialog.cc \
-		handwriting/zinnia_handwriting.cc
+		handwriting/zinnia_handwriting.cc \
+		third_party/gyp/pylib/gyp/generator/make.py
 SSL_REINPLACE_STR=
 .for V in OPENSSL_CFLAGS OPENSSLLIB OPENSSLINC OPENSSL_LDFLAGS
 SSL_REINPLACE_STR+=	-e "s,%%${V}%%,${${V}},"
