@@ -9,7 +9,51 @@ share/icons/hicolor/32x32/apps/tanglet.png
 share/icons/hicolor/48x48/apps/tanglet.png
 share/icons/hicolor/64x64/apps/tanglet.png
 share/icons/hicolor/scalable/apps/tanglet.svg
+share/pixmaps/tanglet.png
 share/pixmaps/tanglet_32.xpm
+share/tanglet/data/cs/dice
+share/tanglet/data/cs/dictionary
+share/tanglet/data/cs/name
+share/tanglet/data/cs/words
+share/tanglet/data/de/README
+share/tanglet/data/de/dice
+share/tanglet/data/de/dictionary
+share/tanglet/data/de/name
+share/tanglet/data/de/words
+share/tanglet/data/en/README
+share/tanglet/data/en/dice
+share/tanglet/data/en/dictionary
+share/tanglet/data/en/name
+share/tanglet/data/en/scowl-word-lists-used
+share/tanglet/data/en/words
+share/tanglet/data/fr/dice
+share/tanglet/data/fr/dictionary
+share/tanglet/data/fr/name
+share/tanglet/data/fr/words
+share/tanglet/data/he/README
+share/tanglet/data/he/dice
+share/tanglet/data/he/dictionary
+share/tanglet/data/he/name
+share/tanglet/data/he/words
+share/tanglet/data/nl/dice
+share/tanglet/data/nl/dictionary
+share/tanglet/data/nl/name
+share/tanglet/data/nl/words
+share/tanglet/translations/tanglet_cs.qm
+share/tanglet/translations/tanglet_de.qm
+share/tanglet/translations/tanglet_en.qm
+share/tanglet/translations/tanglet_fr.qm
+share/tanglet/translations/tanglet_he.qm
+share/tanglet/translations/tanglet_nl.qm
+@dirrm share/tanglet/translations
+@dirrm share/tanglet/data/nl
+@dirrm share/tanglet/data/he
+@dirrm share/tanglet/data/fr
+@dirrm share/tanglet/data/en
+@dirrm share/tanglet/data/de
+@dirrm share/tanglet/data/cs
+@dirrm share/tanglet/data
+@dirrm share/tanglet
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor/64x64/apps
