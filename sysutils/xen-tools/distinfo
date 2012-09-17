@@ -1,2 +1,4 @@
-SHA256 (xen-4.0.1.tar.gz) = 6e6d1d29400db93cb8095e034138aa8748b1bd4cffb4d3fd07af4ba15c918873
-SIZE (xen-4.0.1.tar.gz) = 11909200
+SHA256 (xen-4.1.3.tar.gz) = 178ef186aca2490126aef69ceb41fc509baf89e0d582768cfa33b17fd145c0e4
+SIZE (xen-4.1.3.tar.gz) = 10382132
+SHA256 (felderado-freebsd-xen-tools-scripts-bfb06da.tar.gz) = 58b5c5bb51bccb6843506bbb9c8ce3381ff262e6b221577496468f48226ab038
+SIZE (felderado-freebsd-xen-tools-scripts-bfb06da.tar.gz) = 50775

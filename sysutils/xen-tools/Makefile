@@ -5,14 +5,23 @@
 # $FreeBSD$
 
 PORTNAME=	xen-tools
-PORTVERSION=	4.0.1
+PORTVERSION=	4.1.3
 CATEGORIES=	sysutils
 DISTNAME=	xen-${PORTVERSION}
 
 MAINTAINER=	feld@feld.me
 COMMENT=	Xen tools within FreeBSD domU
 
-MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/
+MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/:xensource \
+		https://github.com/${GIT_ACCOUNT}/${GIT_PROJECT}/tarball/${GIT_VERSION}/:github
+DISTFILES=	xen-${PORTVERSION}.tar.gz:xensource \
+		${GIT_ACCOUNT}-${GIT_PROJECT}-${GIT_VERSION}.tar.gz:github
+
+FETCH_ARGS=	-pRr
+GIT_ACCOUNT=	felderado
+GIT_PROJECT=	freebsd-xen-tools-scripts
+GIT_VERSION=	bfb06da
+GITSRC=		${WRKDIR}/${GIT_ACCOUNT}-${GIT_PROJECT}-${GIT_VERSION}/src/
 
 USE_GMAKE=	yes
 USE_PYTHON=	yes
@@ -30,7 +39,11 @@ PLIST_FILES=	lib/libxenstore.so.3.0 \
 		bin/xenstore-ls \
 		bin/xenstore-read \
 		bin/xenstore-rm \
-		bin/xenstore-write
+		bin/xenstore-write \
+		sbin/xe-daemon \
+		sbin/xe-update-guest-attrs \
+		sbin/xe_wrapper
+
 do-build:
 	cd ${WRKSRC}/tools && ${GMAKE} -C include
 	cd ${WRKSRC}/tools/misc && ${GMAKE} xen-detect
@@ -41,6 +54,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/xenstore/xenstore ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/xenstore/xenstore-control ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/xenstore/libxenstore.so.3.0 ${PREFIX}/lib
+	${INSTALL_SCRIPT} ${GITSRC}/usr/local/sbin/xe-daemon ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${GITSRC}/usr/local/sbin/xe-update-guest-attrs ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${FILESDIR}/xe_wrapper ${PREFIX}/sbin
 
 post-install:
 	${LN} -sf ${PREFIX}/bin/xenstore ${PREFIX}/bin/xenstore-chmod
