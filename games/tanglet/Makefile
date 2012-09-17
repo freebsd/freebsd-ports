@@ -7,55 +7,37 @@
 
 PORTNAME=	tanglet
 PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/
 EXTRACT_SUFX=	-src.tar.bz2
 
 MAINTAINER=	nemysis@gmx.ch
-COMMENT=	Tanglet is a single player word finding game based on Boggle
+COMMENT=	Single player word finding game based on Boggle
 
 LICENSE=	GPLv3
 
 USE_BZIP2=	yes
-USE_QT4=	moc_build qmake_build rcc_build corelib gui iconengines imageformats
+USE_QT4=	moc_build qmake_build rcc_build gui
 INSTALLS_ICONS=	yes
-
 MAKE_JOBS_SAFE=	yes
 
-PORTDATA=	*
 PORTDOCS=	CREDITS ChangeLog
 
 .include <bsd.port.options.mk>
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKEFLAGS}
+		${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX}
 
-do-install:
-# Executable
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-
-# Data
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "data translations" ${DATADIR})
-
-# Icons
-	cd ${WRKSRC}/icons && ${FIND} hicolor -type d -name apps -exec \
-		${MKDIR} ${PREFIX}/share/icons/{} \;
-	cd ${WRKSRC}/icons && ${FIND} hicolor -type f -exec \
-		${INSTALL_DATA} {} ${PREFIX}/share/icons/{} \;
-
-# Pixmaps and Desktop
-	${INSTALL_DATA} ${WRKSRC}/icons/${PORTNAME}_32.xpm ${PREFIX}/share/pixmaps/
-	${MKDIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/icons/${PORTNAME}.desktop ${PREFIX}/share/applications/
+post-install:
+# Pixmaps
+	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${PREFIX}/share/pixmaps/
 
 # Documentation
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-.  for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.  endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
