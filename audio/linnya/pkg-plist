@@ -1,0 +1,138 @@
+bin/linnya
+include/linnya/cox/aud.h
+include/linnya/cox/cox.h
+include/linnya/cox/dbm.h
+include/linnya/cox/eql.h
+include/linnya/cox/gla.h
+include/linnya/cox/lib.h
+include/linnya/cox/log.h
+include/linnya/cox/log.obj.h
+include/linnya/cox/lrc.h
+include/linnya/cox/mbs.h
+include/linnya/cox/mbs.obj.h
+include/linnya/cox/mdh.h
+include/linnya/cox/plm.h
+include/linnya/cox/ppl.h
+include/linnya/cox/pqm.h
+include/linnya/cox/reg.h
+include/linnya/cox/reg.obj.h
+include/linnya/linnya.h
+include/linnya/uix/cfg.h
+include/linnya/uix/dbg.h
+include/linnya/uix/glb.h
+include/linnya/uix/key.h
+include/linnya/uix/pli.h
+include/linnya/uix/sss.h
+include/linnya/uix/thm.h
+include/linnya/uix/uix.h
+include/linnya/uix/win.h
+lib/liblinnyacox.a
+lib/liblinnyacox.la
+lib/liblinnyacox.so
+lib/liblinnyacox.so.0
+lib/liblinnyauix.a
+lib/liblinnyauix.la
+lib/liblinnyauix.so
+lib/liblinnyauix.so.0
+share/applications/linnya.desktop
+share/icons/hicolor/256x256/apps/linnya.png
+share/icons/hicolor/scalable/apps/linnya.svg
+%%DATADIR%%/linnya-uninstall
+%%DATADIR%%/pix/dnc/libdnc.a
+%%DATADIR%%/pix/dnc/libdnc.la
+%%DATADIR%%/pix/dnc/libdnc.so
+%%DATADIR%%/pix/dnc/libdnc.so.0
+%%DATADIR%%/pix/dnc/logo.png
+%%DATADIR%%/pix/dnc/plugin.xml
+%%DATADIR%%/pix/inf/libinf.a
+%%DATADIR%%/pix/inf/libinf.la
+%%DATADIR%%/pix/inf/libinf.so
+%%DATADIR%%/pix/inf/libinf.so.0
+%%DATADIR%%/pix/inf/logo.png
+%%DATADIR%%/pix/inf/plugin.xml
+%%DATADIR%%/pix/lrc/liblrc.a
+%%DATADIR%%/pix/lrc/liblrc.la
+%%DATADIR%%/pix/lrc/liblrc.so
+%%DATADIR%%/pix/lrc/liblrc.so.0
+%%DATADIR%%/pix/lrc/logo.png
+%%DATADIR%%/pix/lrc/plugin.xml
+%%DATADIR%%/pix/opc/libopc.a
+%%DATADIR%%/pix/opc/libopc.la
+%%DATADIR%%/pix/opc/libopc.so
+%%DATADIR%%/pix/opc/libopc.so.0
+%%DATADIR%%/pix/opc/logo.png
+%%DATADIR%%/pix/opc/playing.svg
+%%DATADIR%%/pix/opc/plugin.xml
+%%DATADIR%%/pix/vdo/libvdo.a
+%%DATADIR%%/pix/vdo/libvdo.la
+%%DATADIR%%/pix/vdo/libvdo.so
+%%DATADIR%%/pix/vdo/libvdo.so.0
+%%DATADIR%%/pix/vdo/logo.png
+%%DATADIR%%/pix/vdo/plugin.xml
+%%DATADIR%%/uix/icon/audio.png
+%%DATADIR%%/uix/icon/cd.png
+%%DATADIR%%/uix/icon/default_album.png
+%%DATADIR%%/uix/icon/equalizer.png
+%%DATADIR%%/uix/icon/icon.png
+%%DATADIR%%/uix/icon/key.png
+%%DATADIR%%/uix/icon/lib.png
+%%DATADIR%%/uix/icon/linnya.png
+%%DATADIR%%/uix/icon/null.png
+%%DATADIR%%/uix/icon/plugin.png
+%%DATADIR%%/uix/icon/theme.png
+%%DATADIR%%/uix/theme/default/announcement
+%%DATADIR%%/uix/theme/default/image/bar_seek_background.png
+%%DATADIR%%/uix/theme/default/image/bar_seek_button_hover.png
+%%DATADIR%%/uix/theme/default/image/bar_seek_fill.png
+%%DATADIR%%/uix/theme/default/image/btn_adds_active.png
+%%DATADIR%%/uix/theme/default/image/btn_adds_hover.png
+%%DATADIR%%/uix/theme/default/image/btn_adds_normal.png
+%%DATADIR%%/uix/theme/default/image/btn_conf_active.png
+%%DATADIR%%/uix/theme/default/image/btn_conf_hover.png
+%%DATADIR%%/uix/theme/default/image/btn_conf_normal.png
+%%DATADIR%%/uix/theme/default/image/btn_menu_active.png
+%%DATADIR%%/uix/theme/default/image/btn_menu_hover.png
+%%DATADIR%%/uix/theme/default/image/btn_menu_normal.png
+%%DATADIR%%/uix/theme/default/image/btn_next_active.png
+%%DATADIR%%/uix/theme/default/image/btn_next_hover.png
+%%DATADIR%%/uix/theme/default/image/btn_next_normal.png
+%%DATADIR%%/uix/theme/default/image/btn_play_active.png
+%%DATADIR%%/uix/theme/default/image/btn_play_hover.png
+%%DATADIR%%/uix/theme/default/image/btn_play_normal.png
+%%DATADIR%%/uix/theme/default/image/btn_prev_active.png
+%%DATADIR%%/uix/theme/default/image/btn_prev_hover.png
+%%DATADIR%%/uix/theme/default/image/btn_prev_normal.png
+%%DATADIR%%/uix/theme/default/image/btn_volm_active.png
+%%DATADIR%%/uix/theme/default/image/btn_volm_hover.png
+%%DATADIR%%/uix/theme/default/image/btn_volm_normal.png
+%%DATADIR%%/uix/theme/default/image/null.png
+%%DATADIR%%/uix/theme/default/image/sss_adds_bg.png
+%%DATADIR%%/uix/theme/default/linnya.css
+%%DATADIR%%/uix/theme/default/sssbg/sssbg_1.jpg
+%%DATADIR%%/uix/theme/default/sssbg/sssbg_2.jpg
+share/locale/zh_CN/LC_MESSAGES/linnya.mo
+share/locale/zh_HK/LC_MESSAGES/linnya.mo
+share/locale/zh_TW/LC_MESSAGES/linnya.mo
+@dirrm %%DATADIR%%/uix/theme/default/sssbg
+@dirrm %%DATADIR%%/uix/theme/default/image
+@dirrm %%DATADIR%%/uix/theme/default
+@dirrm %%DATADIR%%/uix/theme
+@dirrm %%DATADIR%%/uix/icon
+@dirrm %%DATADIR%%/uix
+@dirrm %%DATADIR%%/pix/vdo
+@dirrm %%DATADIR%%/pix/opc
+@dirrm %%DATADIR%%/pix/lrc
+@dirrm %%DATADIR%%/pix/inf
+@dirrm %%DATADIR%%/pix/dnc
+@dirrm %%DATADIR%%/pix
+@dirrm %%DATADIR%%
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/256x256/apps
+@dirrmtry share/icons/hicolor/256x256
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications
+@dirrm include/linnya/uix
+@dirrm include/linnya/cox
+@dirrm include/linnya
