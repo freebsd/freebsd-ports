@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-Has-Sugar
-PORTVERSION=	0.0405
+PORTVERSION=	0.05070421
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-Moose>=0.61:${PORTSDIR}/devel/p5-Moose \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean \
 		p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
-		p5-Find-Lib>=0:${PORTSDIR}/devel/p5-Find-Lib
+		p5-Find-Lib>=0:${PORTSDIR}/devel/p5-Find-Lib \
+		p5-Module-Build>=0.4002:${PORTSDIR}/devel/p5-Module-Build
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
