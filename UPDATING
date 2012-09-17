@@ -135,7 +135,7 @@ you update your ports collection, before attempting any port upgrades.
   upgrade itself on FreeBSD 7.x. This has been fixed in 20120820.
   ports-mgmt/portupgrade is not affected. To upgrade, execute the following:
 
-  # cd /usr/ports/ports-mgmt/portupgrade-devel && make deinstall install clean
+  # make -C /usr/ports/ports-mgmt/portupgrade-devel all deinstall install clean
 
 20120817:
   AFFECTS: users of games/unnethack
