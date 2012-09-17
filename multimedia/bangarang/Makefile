@@ -6,7 +6,7 @@
 
 PORTNAME=	bangarang
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -21,7 +21,7 @@ PROJECTHOST=	bangarangissuetracking
 USE_CMAKE=	yes
 USE_GETTEXT=	yes
 USE_QT4=	qmake_build moc_build rcc_build uic_build
-USE_KDE4=	automoc4 kdelibs kdebase kdeprefix
+USE_KDE4=	automoc4 kdelibs kdeprefix
 
 MAKE_JOBS_SAFE=	yes
 
