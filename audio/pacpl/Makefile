@@ -58,7 +58,7 @@ PACPL_PO=	en_US.po
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MKDE4}
-USE_KDE4=	kdebase
+USE_KDE4=	kdehier
 PLIST_SUB+=	KDE4SERVICEMENU="" KDE4_PREFIX="${KDE4_PREFIX}"
 .else
 PLIST_SUB+=	KDE4SERVICEMENU="@comment "
