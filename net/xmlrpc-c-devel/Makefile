@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xmlrpc-c
-PORTVERSION=	1.31.04
+PORTVERSION=	1.31.05
 CATEGORIES=	net
 MASTER_SITES=	LOCAL/garga/xmlrpc-c
 PKGNAMESUFFIX=	-devel
@@ -26,11 +26,12 @@ CPLUSPLUS_DESC=	 Build xmlrpc-c c++ libs and tools
 CONFLICTS=	xmlrpc-epi-0.* xmlrpc-c-[0-9]*
 
 USE_GMAKE=	yes
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
+
+WRKSRC=		${WRKDIR}/advanced
 
 .include <bsd.port.pre.mk>
 
