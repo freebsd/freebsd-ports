@@ -57,7 +57,7 @@ class GetPatch(object):
         if filename.endswith(('.patch', '.txt')):
             filename = filename[:filename.rindex('.')]+'.diff'
         f=open(filename, 'w')
-        f.write(data)
+        f.write(data.decode())
         f.close()
         self.out("[+] %s created" % filename)
 
@@ -79,7 +79,7 @@ class GetPatch(object):
             data = urllib2.urlopen(url).read()
 
             if self.output_stdout:
-                sys.stdout.write(data)
+                sys.stdout.write(data.decode())
             else:
                 self.write(p, data)
 
@@ -107,7 +107,7 @@ class GnatsGetPatch(GetPatch):
             self.out("[-] No patch found")
             sys.exit(1)
 
-        for patchs in re.findall(pattern, data):
+        for patchs in re.findall(pattern, str(data)):
             self.patchs.append({'url': patchs[0], 'name': patchs[1]})
 
 class BzGetPatch(GetPatch):
@@ -155,7 +155,7 @@ class BzGetPatch(GetPatch):
             self.out("[-] No patch found")
             sys.exit(1)
 
-        for i in xrange(nb_urls):
+        for i in range(nb_urls):
             self.patchs.append({'url': urls[i], 'name': names[i]})
 
 def main():
