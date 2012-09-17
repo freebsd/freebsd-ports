@@ -1,3 +1,4 @@
+bin/obspy-mseed-recordanalyzer
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
@@ -10,6 +11,8 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/CHANGELOG.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/LICENSE.TXT
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/README.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/VERSION.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/__init__.py
@@ -26,8 +29,14 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/lib/libmseed.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/lib/libmseed.so
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/msstruct.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/msstruct.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/msstruct.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/msstruct.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/scripts/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/scripts/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/scripts/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/scripts/recordanalyzer.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/scripts/recordanalyzer.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/scripts/recordanalyzer.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/ChangeLog
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/INSTALL
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/Makefile
@@ -35,112 +44,42 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/Makefile.win
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/README
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/README.byteorder
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/parseutils.c
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/libmseed-UsersGuide
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_addselect.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_addselect_comp.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_bigendianhost.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_blktdesc.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_blktlen.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_btime3hptime.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_btime2isotimestr.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_btime2mdtimestr.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_btime2seedtimestr.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_detect.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_doy2md.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_encodingstr.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_errorstr.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_find_reclen.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_freeselections.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_genfactmult.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_gswap.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_gswap2.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_gswap2a.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_gswap3.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_gswap4.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_gswap4a.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_gswap8.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_gswap8a.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_hptime2btime.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_hptime2isotimestr.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_hptime2mdtimestr.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_hptime2seedtimestr.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_intro.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_log.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_log_l.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_loginit.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_loginit_l.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_lookup.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_matchselect.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_md2doy.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_parse_raw.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_printselections.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_ratapprox.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_readmsr.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_readmsr_r.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_readselectionsfile.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_readtracelist_selection
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_readtracelist_timewin.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_readtracelist.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_readtraces.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_readtraces_selection.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_readtraces_timewin.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_recsrcname.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_samplesize.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_seedtimestr2hptime.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_selection.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_splitsrcname.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_srcname.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_strncpclean.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_strncpopen.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_time.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_time2hptime.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_timestr2hptime.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/ms_writemseed.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/msr_addblockette.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/msr_duplicate.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/msr_endtime.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/msr_free.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/msr_free_blktchain.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/msr_host_latency.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/msr_init.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/msr_nomsamprate.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/msr_normalize_header.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/msr_pack.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/msr_pack_header.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/msr_parse.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/msr_print.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/msr_samprate.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/msr_srcname.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/msr_starttime.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/msr_starttime_uc.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/msr_unpack.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/msr_writemseed.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/mst_addmsr.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/mst_addmsrtogroup.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/mst_addspan.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/mst_addtracetogroup.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/mst_findadjacent.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/mst_findmatch.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/mst_free.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/mst_freegroup.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/mst_groupheal.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/mst_groupsort.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/mst_init.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/mst_initgroup.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/mst_pack.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/mst_packgroup.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/mst_printgaplist.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/mst_printsynclist.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/mst_srcname.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/mst_writemseed.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/mst_printtracelist.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/mst_writemseedgroup.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/mstl_addmsr.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/mstl_init.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/mstl_free.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/mstl_printgaplist.3
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/mstl_printsynclist.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc/mstl_printtracelist.3
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/example/Makefile
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/example/Makefile.wat
@@ -166,6 +105,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/pack.c
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/packdata.c
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/packdata.h
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/parseutils.c
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/selection.c
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/steimdata.h
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/tracelist.c
@@ -209,14 +149,16 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/tests/data/encoding/int32_Steim2_littleEndian.mseed
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/tests/data/encoding/smallASCII_bigEndian.mseed
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/tests/data/encoding/smallASCII_littleEndian.mseed
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/tests/data/reclen_1024_without_sequence_numbers.mseed
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/tests/data/fullseed.mseed
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/tests/data/gaps.mseed
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/tests/data/not.mseed
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/tests/data/not2.mseed
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/tests/data/not3.mseed
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/tests/data/not4.mseed
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/tests/data/one_record_already_applied_time_correction.mseed
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/tests/data/one_record_time_corr_applied_but_time_corr_is_zero.mseed
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/tests/data/qualityflags.mseed
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/tests/data/reclen_1024_without_sequence_numbers.mseed
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/tests/data/steim2.mseed
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/tests/data/test.mseed
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/tests/data/timingquality.mseed
@@ -233,16 +175,16 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/util.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/util.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/util.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/LICENSE.TXT
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/lib
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/doc
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/example
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed/matlab
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src/libmseed
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/lib
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/src
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/tests/data/bizarre
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/tests/data/encoding
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/tests/data/bizarre
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/tests/data
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/mseed
