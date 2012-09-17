@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# PROVIDE: xe_daemon
+# REQUIRE: login
+# KEYWORD: nojail shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# xe_daemon_enable (bool): Set to NO by default.
+#       Set it to YES to enable xe_daemon.
+#
+
+. /etc/rc.subr
+
+name=xe_daemon
+rcvar=xe_daemon_enable
+
+command="%%PREFIX%%/sbin/xe_wrapper"
+command_interpreter="/bin/sh -T"
+command_args="%%PREFIX%%/sbin/xe-daemon &"
+
+load_rc_config $name
+
+pidfile="/var/run/xe_wrapper.pid"
+: ${xe_daemon_enable="NO"}
+
+run_rc_command "$1"
