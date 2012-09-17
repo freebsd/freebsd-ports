@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-qt4-engine
 PORTVERSION=	1.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://gtk-qt-engine.googlecode.com/files/
 DISTFILES=	gtk-qt-engine-${PORTVERSION}${EXTRACT_SUFX}
@@ -18,9 +18,9 @@ COMMENT=	GTK-QT Theme Engine allows GTK2 apps to use QT/KDE themes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20
-USE_QT4=	gui moc_build rcc_build uic_build qmake_build
+USE_QT4=	moc_build rcc_build uic_build qmake_build
 USE_CMAKE=	yes
-USE_KDE4=	kdebase kdeprefix automoc4
+USE_KDE4=	kdelibs kdeprefix automoc4
 
 OPTIONS=	LIBBONOBOUI "Install libbonoboui if missing" off
 
