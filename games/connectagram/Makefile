@@ -7,51 +7,37 @@
 
 PORTNAME=	connectagram
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/
-DISTNAME=	${PORTNAME}-${DISTVERSION}-src
+EXTRACT_SUFX=	-src.tar.bz2
 
 MAINTAINER=	nemysis@gmx.ch
 COMMENT=	Word unscrambling game
 
 LICENSE=	GPLv3
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	moc_build qmake_build rcc_build corelib gui iconengines imageformats network
+USE_QT4=	moc_build qmake_build rcc_build gui network
 INSTALLS_ICONS=	yes
-
 MAKE_JOBS_SAFE=	yes
 
-PORTDATA=	*
 PORTDOCS=	ChangeLog
-
-PLIST_FILES=	bin/${PORTNAME} \
-	share/applications/${PORTNAME}.desktop \
-	share/icons/hicolor/48x48/apps/${PORTNAME}.png
-
-PLIST_DIRSTRY=	share/icons/hicolor/48x48/apps \
-	share/icons/hicolor/48x48 \
-	share/icons/hicolor \
-	share/icons \
-	share/applications
-
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKEFLAGS}
 
 .include <bsd.port.options.mk>
 
+do-configure:
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
+		${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX}
+
 post-install:
+# Pixmaps
+	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png ${PREFIX}/share/pixmaps/
+
 # Documentation
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-.  for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.  endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
