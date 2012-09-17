@@ -12,7 +12,7 @@ CATEGORIES=	x11-themes
 MASTER_SITES=	http://gtk-qt-engine.googlecode.com/files/
 DISTFILES=	gtk-qt-engine-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	kris@pcbsd.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	GTK-QT Theme Engine allows GTK2 apps to use QT/KDE themes
 
 USE_BZIP2=	yes
