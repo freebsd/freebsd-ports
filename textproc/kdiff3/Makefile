@@ -7,14 +7,14 @@
 
 PORTNAME=	kdiff3
 PORTVERSION=	0.9.95
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc kde
 MASTER_SITES=	SF
 
 MAINTAINER=	brucec@FreeBSD.org
 COMMENT=	A KDE4 graphical frontend for diff
 
-USE_KDE4=	kdebase kdeprefix kdehier automoc4
+USE_KDE4=	kdelibs libkonq kdeprefix kdehier automoc4
 USE_CMAKE=	yes
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_GETTEXT=	yes
