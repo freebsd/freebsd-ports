@@ -7,6 +7,7 @@
 
 PORTNAME=	pcre
 PORTVERSION=	8.31
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/programming/%SUBDIR%/ \
 		ftp://ftp.fu-berlin.de/unix/misc/%SUBDIR%/ \
@@ -19,10 +20,6 @@ COMMENT=	Perl Compatible Regular Expressions library
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-OPTIONS_DEFINE=		JIT
-OPTIONS_DEFAULT=	JIT
-JIT_DESC=		Enable Just-In-Time compiling support
-
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -32,7 +29,7 @@ CONFIGURE_ARGS=	--enable-utf --enable-unicode-properties \
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MJIT} && ${ARCH} != "sparc64"
+.if ${ARCH} != "sparc64" && ${ARCH} != "ia64"
 CONFIGURE_ARGS+=	--enable-jit
 .else
 CONFIGURE_ARGS+=	--disable-jit
