@@ -271,6 +271,7 @@
     SUBDIR += jcifs
     SUBDIR += jgroups
     SUBDIR += jicmp
+    SUBDIR += jicmp6
     SUBDIR += jpcap
     SUBDIR += jrdesktop
     SUBDIR += jsch
