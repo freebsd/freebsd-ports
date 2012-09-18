@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	haproxy
-DISTVERSION=	1.5-dev11
+DISTVERSION=	1.5-dev12
 CATEGORIES=	net
 MASTER_SITES=	http://haproxy.1wt.eu/download/1.5/src/devel/
 PKGNAMESUFFIX=	-devel
@@ -32,8 +32,8 @@ OPTIONS_DEFAULT=PCRE DPCRE
 
 .include <bsd.port.options.mk>
 
-MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS \
-		CC="${CC}" CFLAGS="${CFLAGS}"
+MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS USE_GETADDRINFO=1 \
+		USE_OPENSSL=1 CC="${CC}" CFLAGS="${CFLAGS}"
 
 .if ${PORT_OPTIONS:MPCRE}
 LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
