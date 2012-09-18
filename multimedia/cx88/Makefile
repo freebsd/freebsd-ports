@@ -1,12 +1,8 @@
-# New ports collection makefile for:   cx88
-# Date created:        7 September 2008
-# Whom:                jah
-#
+# Created-by: jah
 # $FreeBSD$
-#
 
 PORTNAME=	cx88
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	multimedia kld
 MASTER_SITES=	ftp://corona.homeunix.net/ports/cx88/
 
@@ -34,8 +30,6 @@ OPTIONS_DEFAULT=	LINUX_COMPAT
 
 .include <bsd.port.options.mk>
 
-.include <bsd.port.pre.mk>
-
 .if ${PORT_OPTIONS:MDEBUG}
 MAKE_ARGS+=	DIAGNOSTIC=0x7f
 .endif
@@ -56,6 +50,8 @@ MAKE_ARGS+=	-D WITH_HAL
 .endif
 .endif
 
+MAKE_ARGS+=	DEFAULT_XML_CONFIG="${EXAMPLESDIR}/cx88.xml.sample"
+
 .if (${OSVERSION} < 704000) || ((${OSVERSION} >= 800000) && (${OSVERSION} < 801000))
 IGNORE=	requires kernel support for kmem_alloc_attr() (FreeBSD 7.4+, FreeBSD 8.1+)
 .endif
@@ -64,4 +60,4 @@ IGNORE=	requires kernel support for kmem_alloc_attr() (FreeBSD 7.4+, FreeBSD 8.1
 IGNORE=		requires kernel source files
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
