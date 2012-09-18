@@ -1,13 +1,8 @@
-# New ports collection makefile for:	kpovmodeler
-# Date created:		2008-07-31
-# Whom:			Max Brazhnikov <makc@issp.ac.ru>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	kpovmodeler
 PORTVERSION=	${APP_VER}.${EXTRA_VER}
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${EXTRA_VER}/src/extragear
@@ -15,7 +10,7 @@ DISTNAME=	${PORTNAME}-${APP_VER}-kde${EXTRA_VER}
 DIST_SUBDIR=	KDE/extragear
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	A KDE editor/frontend for Povray
+COMMENT=	KDE editor/frontend for Povray
 
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray-meta
 
