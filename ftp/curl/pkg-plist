@@ -9,6 +9,7 @@ include/curl/mprintf.h
 include/curl/multi.h
 include/curl/stdcheaders.h
 include/curl/typecheck-gcc.h
+share/aclocal/libcurl.m4
 @dirrm include/curl
 lib/libcurl.a
 lib/libcurl.la

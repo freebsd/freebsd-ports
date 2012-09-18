@@ -7,6 +7,7 @@
 
 PORTNAME=	curl
 PORTVERSION=	7.24.0
+PORTREVISION=	1
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		LOCAL/sunpoet
@@ -210,6 +211,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/require "valgrind.pm";/d' ${WRKSRC}/tests/runtests.pl
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/docs/libcurl/libcurl.m4 ${PREFIX}/share/aclocal
 .if !defined(BUILDING_HIPHOP)
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/ ${DOCSDIR}/libcurl/
