@@ -494,6 +494,9 @@ bin/trytond
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/wizard/wizard.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/wizard/wizard.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/wizard/wizard.pyo
+@unexec if cmp -s %D/etc/trytond.conf.sample %D/etc/trytond.conf; then rm -f %D/etc/trytond.conf; fi
+etc/trytond.conf.sample
+@exec if [ ! -f %D/etc/trytond.conf ] ; then cp -p %D/%F %B/trytond.conf; fi
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/wizard
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/webdav/locale
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/trytond/webdav
