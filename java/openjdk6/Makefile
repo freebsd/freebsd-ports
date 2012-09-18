@@ -1,9 +1,5 @@
-# New ports collection makefile for:    openjdk6
-# Date created:         2009/2/21
-# Whom:                 Brian Gardner <brian@experts-exchange.com>
-#
+# Created by:	Brian Gardner <brian@experts-exchange.com>
 # $FreeBSD$
-#
 
 PORTNAME=	openjdk6
 PORTVERSION=	b25
@@ -137,8 +133,8 @@ MAKE_ENV=	LANG=C LC_ALL=C \
 		MILESTONE=fcs \
 		JDK_UPDATE_VERSION=${UPDATE_VERSION}
 
-# HotSpot wants CCC instead of CXX.
-MAKE_ENV+=	CCC="${CXX}"
+# HotSpot wants CCC instead of CXX.  Also, HotSpot SA wants GCC.
+MAKE_ENV+=	CCC="${CXX}" GCC="${CC}"
 
 # XXX Turn off -Werror from HotSpot.
 MAKE_ENV+=	WARNINGS_ARE_ERRORS="${WARNINGS_ARE_ERRORS}"
