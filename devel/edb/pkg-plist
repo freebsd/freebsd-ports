@@ -1,0 +1,23 @@
+bin/edb
+libexec/edb/libAnalyzer.so
+libexec/edb/libBinarySearcher.so
+libexec/edb/libBookmarks.so
+libexec/edb/libBreakpointManager.so
+libexec/edb/libCheckVersion.so
+libexec/edb/libDebuggerCore.so
+libexec/edb/libDumpState.so
+libexec/edb/libELFBinaryInfo.so
+libexec/edb/libEnvironment.so
+libexec/edb/libFunctionFinder.so
+libexec/edb/libHardwareBreakpoints.so
+libexec/edb/libHeapAnalyzer.so
+libexec/edb/libOpcodeSearcher.so
+libexec/edb/libROPTool.so
+libexec/edb/libReferences.so
+libexec/edb/libSessionManager.so
+libexec/edb/libStringSearcher.so
+libexec/edb/libSymbolViewer.so
+share/applications/edb.desktop
+share/pixmaps/edb.png
+@dirrmtry share/applications
+@dirrm libexec/edb
