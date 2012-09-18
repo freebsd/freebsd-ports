@@ -9,6 +9,7 @@
     SUBDIR += ORBit2
     SUBDIR += ORBit2-reference
     SUBDIR += R-cran-Defaults
+    SUBDIR += R-cran-Hmisc
     SUBDIR += R-cran-RUnit
     SUBDIR += R-cran-bitops
     SUBDIR += R-cran-caret

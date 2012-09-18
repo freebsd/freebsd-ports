@@ -1,0 +1,7 @@
+The Hmisc library contains many functions useful for data analysis,
+high-level graphics, utility operations, functions for computing sample
+size and power, importing datasets, imputing missing values, advanced
+table making, variable clustering, character string manipulation,
+conversion of S objects to LaTeX code, and recoding variables.
+
+WWW:	http://cran.r-project.org/web/packages/Hmisc/
