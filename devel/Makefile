@@ -364,6 +364,7 @@
     SUBDIR += ecore-ipc
     SUBDIR += ecore-main
     SUBDIR += ecos-tools
+    SUBDIR += edb
     SUBDIR += eet
     SUBDIR += eggdbus
     SUBDIR += egypt
