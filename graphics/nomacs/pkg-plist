@@ -1,0 +1,11 @@
+bin/nomacs
+share/applications/nomacs.desktop
+share/nomacs/translations/nomacs_als.qm
+share/nomacs/translations/nomacs_de.qm
+share/nomacs/translations/nomacs_en.qm
+share/nomacs/translations/nomacs_ru.qm
+share/nomacs/translations/nomacs_zh.qm
+share/pixmaps/nomacs.png
+@dirrm share/nomacs/translations
+@dirrm share/nomacs
+@dirrmtry share/applications
