@@ -114,6 +114,7 @@
     SUBDIR += trytond_country
     SUBDIR += trytond_currency
     SUBDIR += trytond_dashboard
+    SUBDIR += trytond_ldap_authentication
     SUBDIR += trytond_ldap_connection
     SUBDIR += trytond_party
     SUBDIR += trytond_product
