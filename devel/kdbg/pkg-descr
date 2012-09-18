@@ -1,8 +1,8 @@
 KDbg is a graphical user interface to gdb, the GNU debugger,
 to provide an intuitive interface for setting breakpoints,
-inspecting variables, and stepping through code. 
+inspecting variables, and stepping through code.
 
-* Inspection of variable values in a tree structure. 
+* Inspection of variable values in a tree structure.
 * Debugger at your finger tips: The basic debugger functions
   (step, next, run, finish, until, set/clear/enable/disable
   breakpoint) are bound to function keys F5 through F10.
@@ -10,7 +10,7 @@ inspecting variables, and stepping through code.
   search text, set program arguments and environment variables,
   display arbitrary expressions
 * Debugging of core dumps, attaching to running processes is
-  possible. 
+  possible.
 * Conditional breakpoints.
 
 WWW: http://www.kdbg.org/
