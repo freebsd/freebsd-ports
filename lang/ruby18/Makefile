@@ -20,11 +20,12 @@ COMMENT?=	An object-oriented interpreted scripting language
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${RUBY_WRKSRC}
-CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} --enable-shared
-CONFIGURE_ENV=	CFLAGS="-I${OPENSSLINC} ${CFLAGS}" \
+CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} --enable-shared --enable-frame-address
+CONFIGURE_ENV=	CFLAGS="-fwrapv -I${OPENSSLINC} ${CFLAGS}" \
 		LDFLAGS="-L${OPENSSLLIB} ${LDFLAGS}" \
 		LIBS="-L${OPENSSLLIB} ${LDFLAGS}" \
 		CPPFLAGS="-I${OPENSSLINC} ${CPPFLAGS}"
+USE_CSTD=	gnu89
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	aclocal autoconf
