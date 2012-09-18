@@ -11,14 +11,16 @@ CATEGORIES=	devel
 MASTER_SITES=	http://ndevilla.free.fr/iniparser/
 
 MAINTAINER=	kevlo@FreeBSD.org
-COMMENT=	A free stand-alone ini file parsing library
-
-USE_LDCONFIG=	yes
+COMMENT=	Free stand-alone ini file parsing library
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+PLIST_FILES=	include/dictionary.h include/iniparser.h lib/libiniparser.a \
+		lib/libiniparser.so lib/libiniparser.so.0
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE}
