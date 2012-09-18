@@ -238,5 +238,6 @@ pandora:*:956:
 razorback:*:957:
 gnunet:*:958:
 c_icap:*:959:
+trytond:*:960:
 nogroup:*:65533:
 nobody:*:65534:
