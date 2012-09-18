@@ -6,6 +6,7 @@
 
 PORTNAME=	xen-tools
 PORTVERSION=	4.1.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 DISTNAME=	xen-${PORTVERSION}
 
@@ -25,6 +26,7 @@ GITSRC=		${WRKDIR}/${GIT_ACCOUNT}-${GIT_PROJECT}-${GIT_VERSION}/src/
 
 USE_GMAKE=	yes
 USE_PYTHON=	yes
+USE_RC_SUBR=	xe-daemon
 
 ONLY_FOR_ARCHS=		amd64 i386 ia64
 ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than amd64, i386, or ia64"
