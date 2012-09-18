@@ -7,20 +7,21 @@
 
 PORTNAME=	bro
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.bro-ids.org/downloads/archive/
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	System for detecting Network Intruders in real-time
 
-BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
+BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
+		swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	GeoIP:${PORTSDIR}/net/GeoIP
 
 USE_CMAKE=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/build
 BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
 INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
-
 
 OPTIONS_DEFINE=	IPV6 LBL_HF LBL_CF ASSERT
 OPTIONS_DEFAULT=	LBL_HF LBL_CF
