@@ -137,11 +137,18 @@ MAKE_ENV=	LANG=C LC_ALL=C \
 		MILESTONE=fcs \
 		JDK_UPDATE_VERSION=${UPDATE_VERSION}
 
+# HotSpot wants CCC instead of CXX.
+MAKE_ENV+=	CCC="${CXX}"
+
+# XXX Turn off -Werror from HotSpot.
+MAKE_ENV+=	WARNINGS_ARE_ERRORS="${WARNINGS_ARE_ERRORS}"
+
 .if ${PORT_OPTIONS:MDEBUG}
 ALL_TARGET=	debug_build
 OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}-debug
 .else
 OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}
+WARNINGS_ARE_ERRORS?=	-w
 .endif
 
 # disable FASTDEBUG_BUILD by default to improve compile time.
