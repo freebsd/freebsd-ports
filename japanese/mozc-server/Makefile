@@ -28,6 +28,8 @@ USE_ICONV=	yes
 USE_PYTHON=	yes
 USE_OPENSSL=	yes
 
+MAKE_JOBS_SAFE=	yes
+
 BUILD_MOZC_LIST?=	mozc_server
 
 .if ${BUILD_MOZC_LIST:Mmozc_server} == "mozc_server"
@@ -114,7 +116,8 @@ pre-build:
 PLIST_FILES+=	bin/mozc_server
 
 do-build-mozc_server:
-	${BUILD_MOZC_CMD} build -c ${BUILD_MODE} server/server.gyp:mozc_server
+	${BUILD_MOZC_CMD} build -c ${BUILD_MODE} -j ${MAKE_JOBS_NUMBER} \
+		server/server.gyp:mozc_server
 
 do-install-mozc_server:
 	@${INSTALL_PROGRAM} \
@@ -132,7 +135,8 @@ PLIST_FILES+=	bin/mozc_tool \
 PLIST_DIRS+=	${DATADIR_REL}/icons ${DATADIR_REL}
 
 do-build-mozc_tool:
-	${BUILD_MOZC_CMD} build -c ${BUILD_MODE} gui/gui.gyp:mozc_tool
+	${BUILD_MOZC_CMD} build -c ${BUILD_MODE} -j ${MAKE_JOBS_NUMBER} \
+		gui/gui.gyp:mozc_tool
 
 do-install-mozc_tool:
 	@${INSTALL_PROGRAM} \
@@ -171,7 +175,8 @@ PLIST_FILES+=	libexec/ibus-engine-mozc \
 PLIST_DIRS+=	${DATADIR_REL}/icons ${DATADIR_REL}
 
 do-build-ibus_mozc:
-	${BUILD_MOZC_CMD} build -c ${BUILD_MODE} unix/ibus/ibus.gyp:ibus_mozc
+	${BUILD_MOZC_CMD} build -c ${BUILD_MODE} -j ${MAKE_JOBS_NUMBER}
+		unix/ibus/ibus.gyp:ibus_mozc
 
 do-install-ibus_mozc:
 	${INSTALL_PROGRAM} \
@@ -222,7 +227,8 @@ PLIST_FILES+=	lib/fcitx/fcitx-mozc.so \
 PLIST_DIRS+=	${DATADIR_REL}/icon ${DATADIR_REL}
 
 do-build-fcitx_mozc:
-		${BUILD_MOZC_CMD} build -c ${BUILD_MODE} unix/fcitx/fcitx.gyp:fcitx-mozc
+		${BUILD_MOZC_CMD} build -c ${BUILD_MODE} -j ${MAKE_JOBS_NUMBER} \
+			unix/fcitx/fcitx.gyp:fcitx-mozc
 
 do-install-fcitx_mozc:
 	${MKDIR} \
@@ -266,7 +272,7 @@ PLIST_FILES+=	bin/mozc_emacs_helper \
 		${EMACS_VERSION_SITE_LISPDIR}/mozc.elc
 
 do-build-mozc_el:
-	${BUILD_MOZC_CMD} build -c ${BUILD_MODE} \
+	${BUILD_MOZC_CMD} build -c ${BUILD_MODE} -j ${MAKE_JOBS_NUMBER} \
 		unix/emacs/emacs.gyp:mozc_emacs_helper
 	@cd ${WRKSRC}/unix/emacs && \
 		${EMACS_CMD} -batch -q -no-site-file -no-init-file \
