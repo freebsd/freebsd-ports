@@ -20,7 +20,6 @@ lib/kde4/ktwebinterfaceplugin.so
 lib/kde4/ktzeroconfplugin.so
 lib/kde4/plasma_applet_ktorrent.so
 lib/kde4/plasma_engine_ktorrent.so
-lib/libktcore.so
 lib/libktcore.so.%%SHLIB_VER%%
 lib/libktcore.so.%%SHLIB_SHVER%%
 share/applications/kde4/ktorrent.desktop
