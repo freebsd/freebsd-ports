@@ -8,6 +8,7 @@ bin/cx88
 %%EXAMPLESDIR%%/cx88_audio_client.cpp
 %%EXAMPLESDIR%%/hd3k_analog_ubuf.cpp
 %%EXAMPLESDIR%%/hd5k_analog_ubuf.cpp
+etc/rc.d/cx88d
 include/iicdev/iicdev_ioctl.h
 include/cx88/cx88_common_ioctl.h
 include/cx88/cx88_mpeg_ioctl.h
