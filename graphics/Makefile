@@ -69,6 +69,7 @@
     SUBDIR += box
     SUBDIR += boxer
     SUBDIR += bugle
+    SUBDIR += burplex
     SUBDIR += c-a-i-r
     SUBDIR += cadubi
     SUBDIR += cairo
