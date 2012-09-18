@@ -3,7 +3,7 @@
 PORTNAME=	libvdpau
 PORTVERSION=	0.5
 CATEGORIES=	multimedia
-MASTER_SITES=	http://cgit.freedesktop.org/~aplattner/libvdpau/snapshot/
+MASTER_SITES=	http://people.freedesktop.org/~aplattner/vdpau/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VDPAU wrapper and tracing library
