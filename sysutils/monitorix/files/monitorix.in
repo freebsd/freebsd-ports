@@ -30,7 +30,7 @@ monitorix_start()
 	fi
 	echo "Starting ${name}."
 	rc_flags="-c %%PREFIX%%/etc/${name}.conf -p ${pidfile} ${rc_flags}"
-	%%PERL%% %%PREFIX%%/bin/${name} ${rc_flags} ${command_args}
+	/usr/bin/env PATH="$PATH:%%PREFIX%%/sbin:%%PREFIX%%/bin" perl %%PREFIX%%/bin/${name} ${rc_flags} ${command_args}
 }
 
 run_rc_command "$1"
