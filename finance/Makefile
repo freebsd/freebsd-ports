@@ -116,6 +116,7 @@
     SUBDIR += trytond_dashboard
     SUBDIR += trytond_party
     SUBDIR += trytond_product
+    SUBDIR += trytond_product_price_list
     SUBDIR += trytond_project
     SUBDIR += trytond_project_plan
     SUBDIR += trytond_project_revenue
