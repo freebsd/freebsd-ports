@@ -1,7 +1,4 @@
-# New ports collection Makefile for:	freebsd-carddeck-kde4
-# Date created:				2009-02-02
-# Whom:					swhetzel@gmail.com
-#
+# Created by: swhetzel@gmail.com
 # $FreeBSD$
 
 PORTNAME=	freebsd-carddeck
@@ -14,6 +11,9 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	swhetzel@gmail.com
 COMMENT=	FreeBSD themed deck for KDE card games
+
+DEPRECATED=	deck file format is obsolete
+EXPIRATION_DATE=2012-11-19
 
 USE_KDE4=	kdehier kdeprefix
 
