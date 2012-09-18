@@ -1,5 +1,0 @@
-include/dictionary.h
-include/iniparser.h
-lib/libiniparser.a
-lib/libiniparser.so
-lib/libiniparser.so.0
