@@ -14,6 +14,7 @@
     SUBDIR += R-cran-caret
     SUBDIR += R-cran-chron
     SUBDIR += R-cran-foreach
+    SUBDIR += R-cran-gbm
     SUBDIR += R-cran-gsubfn
     SUBDIR += R-cran-iterators
     SUBDIR += R-cran-itertools
