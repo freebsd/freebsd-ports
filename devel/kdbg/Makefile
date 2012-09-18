@@ -6,19 +6,36 @@
 #
 
 PORTNAME=	kdbg
-PORTVERSION=	2.2.0
-PORTREVISION=	3
+PORTVERSION=	2.5.1
 CATEGORIES=	devel kde
 MASTER_SITES=	SF/${PORTNAME}/Source%20Code/${PORTVERSION}
 
 MAINTAINER=	thomas.sander@gmx.de
-COMMENT=	A graphical user interface around gdb using KDE
+COMMENT=	Graphical user interface around gdb using KDE
 
-USE_KDELIBS_VER=	3
-USE_GETTEXT=	yes
-USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
+LICENSE=	GPLv2
+
+USE_CMAKE=	yes
+USE_KDE4=	kdelibs kdeprefix automoc4
+USE_QT_VER=	4
+QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build
 INSTALLS_ICONS=	yes
-CONFIGURE_ARGS=	--with-kde-version=3
+
+OPTIONS_DEFINE=	NLS
+OPTIONS_DEFAULT=NLS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
+.endif
+
+post-patch:
+.if empty(PORT_OPTIONS:MNLS)
+	${REINPLACE_CMD} -e 's|add_subdirectory(po)||g' ${WRKSRC}/CMakeLists.txt
+.endif
 
 .include <bsd.port.mk>
