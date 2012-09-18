@@ -1,12 +1,7 @@
-# New ports collection makefile for:	kwebkitpart
-# Date created:				4 March 2010
-# Whom:					Alberto Villa <avilla@FreeBSD.org>
-#
 # $FreeBSD$
 
 PORTNAME=	kwebkitpart
-PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTVERSION=	1.3.0
 CATEGORIES=	www kde
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	avilla
