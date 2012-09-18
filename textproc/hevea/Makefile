@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hevea
-PORTVERSION=	1.10
+PORTVERSION=	2.00
 CATEGORIES=	textproc
 MASTER_SITES=	http://para.inria.fr/~maranget/hevea/distri/ \
 		ftp://ftp.inria.fr/INRIA/moscova/hevea/

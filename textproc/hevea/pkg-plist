@@ -8,6 +8,7 @@ lib/hevea/amsmath.hva
 lib/hevea/articlecommon.hva
 lib/hevea/babel.hva
 lib/hevea/bookcommon.hva
+lib/hevea/booktabs.hva
 lib/hevea/chapterbib.hva
 lib/hevea/chngcntr.hva
 lib/hevea/comment.hva
@@ -21,6 +22,7 @@ lib/hevea/eurosym.hva
 lib/hevea/figcut.hva
 lib/hevea/french-common.hva
 lib/hevea/german-common.hva
+lib/hevea/hanging.hva
 lib/hevea/hevea.sty
 lib/hevea/html/amsfonts.hva
 lib/hevea/html/amssymb.hva
@@ -35,6 +37,7 @@ lib/hevea/html/fancysection.hva
 lib/hevea/html/fancyvrb.hva
 lib/hevea/html/french.hva
 lib/hevea/html/german.hva
+lib/hevea/html/gif.hva
 lib/hevea/html/graphics.hva
 lib/hevea/html/graphicx.hva
 lib/hevea/html/hevea.hva
@@ -55,6 +58,7 @@ lib/hevea/hyperref.hva
 lib/hevea/ifpdf.hva
 lib/hevea/ifthen.hva
 lib/hevea/imagen
+lib/hevea/import.hva
 lib/hevea/index.hva
 lib/hevea/info/article.hva
 lib/hevea/info/book.hva
@@ -72,8 +76,11 @@ lib/hevea/latexsym.hva
 lib/hevea/listings.hva
 lib/hevea/longtable.hva
 lib/hevea/lstlang1.hva
+lib/hevea/lstlang1.sty
 lib/hevea/lstlang2.hva
+lib/hevea/lstlang2.sty
 lib/hevea/lstlang3.hva
+lib/hevea/lstlang3.sty
 lib/hevea/makeidx.hva
 lib/hevea/mappings/ISO-8859-1.map
 lib/hevea/mappings/ISO-8859-10.map
@@ -142,27 +149,31 @@ lib/hevea/xxdate.exe
 %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/index.html
 %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual-packages.html
 %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual.css
-%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual001.gif
+%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual.haux
+%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual.hind
+%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual.htoc
 %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual001.html
-%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual002.gif
+%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual001.png
 %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual002.html
-%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual003.gif
+%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual002.png
 %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual003.html
-%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual004.gif
+%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual003.png
 %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual004.html
-%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual005.gif
+%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual004.png
 %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual005.html
-%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual006.gif
+%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual005.png
 %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual006.html
-%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual007.gif
+%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual006.png
 %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual007.html
-%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual008.gif
+%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual007.png
 %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual008.html
-%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual009.gif
-%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual010.gif
+%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual008.png
+%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual009.png
 %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual010.html
-%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual011.gif
+%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual010.png
 %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual011.html
+%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual011.png
 %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual012.html
 %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual013.html
 %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual014.html
@@ -200,8 +211,10 @@ lib/hevea/xxdate.exe
 %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/manual048.html
 %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/next_motif.gif
 %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/previous_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/thaihevea.haux
 %%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/thaihevea.html
-%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/thaihevea001.gif
+%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/thaihevea.htoc
+%%PORTDOCS%%%%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual/thaihevea001.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/hevea-%%HEVEAVERSION%%-manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/hevea/text
