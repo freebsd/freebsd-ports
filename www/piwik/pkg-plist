@@ -121,6 +121,7 @@
 %%WWWDIR%%/core/PluginsManager.php
 %%WWWDIR%%/core/ProxyHeaders.php
 %%WWWDIR%%/core/QuickForm2.php
+%%WWWDIR%%/core/RankingQuery.php
 %%WWWDIR%%/core/ReportRenderer.php
 %%WWWDIR%%/core/ReportRenderer/Html.php
 %%WWWDIR%%/core/ReportRenderer/Pdf.php
@@ -226,6 +227,7 @@
 %%WWWDIR%%/core/Updates/1.7.2-rc5.php
 %%WWWDIR%%/core/Updates/1.7.2-rc7.php
 %%WWWDIR%%/core/Updates/1.8.3-b1.php
+%%WWWDIR%%/core/Updates/1.8.4-b1.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/Version.php
 %%WWWDIR%%/core/View.php
@@ -1000,24 +1002,6 @@
 %%WWWDIR%%/misc/cron/archive.sh
 %%WWWDIR%%/misc/cron/archive.windows.ps1
 %%WWWDIR%%/misc/crossdomain.xml
-%%WWWDIR%%/misc/deploy/puppet/modules/piwik/CHANGELOG
-%%WWWDIR%%/misc/deploy/puppet/modules/piwik/LICENSE
-%%WWWDIR%%/misc/deploy/puppet/modules/piwik/Modulefile
-%%WWWDIR%%/misc/deploy/puppet/modules/piwik/README.md
-%%WWWDIR%%/misc/deploy/puppet/modules/piwik/files/etc/php5/conf.d/mysqli.ini
-%%WWWDIR%%/misc/deploy/puppet/modules/piwik/files/etc/php5/conf.d/pdo.ini
-%%WWWDIR%%/misc/deploy/puppet/modules/piwik/files/etc/php5/conf.d/pdo_mysql.ini
-%%WWWDIR%%/misc/deploy/puppet/modules/piwik/manifests/apache.pp
-%%WWWDIR%%/misc/deploy/puppet/modules/piwik/manifests/base.pp
-%%WWWDIR%%/misc/deploy/puppet/modules/piwik/manifests/db.pp
-%%WWWDIR%%/misc/deploy/puppet/modules/piwik/manifests/init.pp
-%%WWWDIR%%/misc/deploy/puppet/modules/piwik/manifests/loganalytics.pp
-%%WWWDIR%%/misc/deploy/puppet/modules/piwik/manifests/nginx.pp
-%%WWWDIR%%/misc/deploy/puppet/modules/piwik/manifests/params.pp
-%%WWWDIR%%/misc/deploy/puppet/modules/piwik/manifests/php.pp
-%%WWWDIR%%/misc/deploy/puppet/modules/piwik/manifests/repo.pp
-%%WWWDIR%%/misc/deploy/puppet/site.pp
-%%WWWDIR%%/misc/deploy/vagrant/precise64/Vagrantfile
 %%WWWDIR%%/misc/download-count.txt
 %%WWWDIR%%/misc/generateDoc.bat
 %%WWWDIR%%/misc/generateDoc.sh
@@ -1114,6 +1098,7 @@
 %%WWWDIR%%/plugins/CoreHome/templates/sparkline.js
 %%WWWDIR%%/plugins/CoreHome/templates/sparkline_footer.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/styles.css
+%%WWWDIR%%/plugins/CoreHome/templates/tooltip.js
 %%WWWDIR%%/plugins/CoreHome/templates/top_bar.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/top_screen.tpl
 %%WWWDIR%%/plugins/CorePluginsAdmin/Controller.php
@@ -1261,15 +1246,13 @@
 %%WWWDIR%%/plugins/Login/Auth.php
 %%WWWDIR%%/plugins/Login/Controller.php
 %%WWWDIR%%/plugins/Login/FormLogin.php
-%%WWWDIR%%/plugins/Login/FormPassword.php
 %%WWWDIR%%/plugins/Login/FormResetPassword.php
 %%WWWDIR%%/plugins/Login/Login.php
 %%WWWDIR%%/plugins/Login/templates/header.tpl
 %%WWWDIR%%/plugins/Login/templates/login.css
+%%WWWDIR%%/plugins/Login/templates/login.js
 %%WWWDIR%%/plugins/Login/templates/login.tpl
-%%WWWDIR%%/plugins/Login/templates/lostPassword.tpl
-%%WWWDIR%%/plugins/Login/templates/passwordchanged.tpl
-%%WWWDIR%%/plugins/Login/templates/passwordsent.tpl
+%%WWWDIR%%/plugins/Login/templates/message.tpl
 %%WWWDIR%%/plugins/MobileMessaging/API.php
 %%WWWDIR%%/plugins/MobileMessaging/APIException.php
 %%WWWDIR%%/plugins/MobileMessaging/Controller.php
@@ -1287,7 +1270,6 @@
 %%WWWDIR%%/plugins/MobileMessaging/templates/ReportParameters.tpl
 %%WWWDIR%%/plugins/MobileMessaging/templates/SMSReport.tpl
 %%WWWDIR%%/plugins/MobileMessaging/templates/Settings.tpl
-%%WWWDIR%%/plugins/Login/templates/resetPassword.tpl
 %%WWWDIR%%/plugins/MultiSites/API.php
 %%WWWDIR%%/plugins/MultiSites/CalculateEvolutionFilter.php
 %%WWWDIR%%/plugins/MultiSites/Controller.php
@@ -1892,6 +1874,7 @@
 %%WWWDIR%%/plugins/UserSettings/images/browsers/AR.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/AV.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/AW.gif
+%%WWWDIR%%/plugins/UserSettings/images/browsers/B2.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/BB.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/BE.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/BP.gif
@@ -1931,6 +1914,7 @@
 %%WWWDIR%%/plugins/UserSettings/images/browsers/OP.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/OW.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/PX.gif
+%%WWWDIR%%/plugins/UserSettings/images/browsers/RK.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/SF.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/SM.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/TI.gif
@@ -1940,6 +1924,7 @@
 %%WWWDIR%%/plugins/UserSettings/images/os/AIX.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/AMI.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/AND.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/BBX.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/BEO.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/BLB.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/BSD.gif
@@ -2098,6 +2083,7 @@
 %%WWWDIR%%/themes/default/images/ok.png
 %%WWWDIR%%/themes/default/images/page_border_grad.png
 %%WWWDIR%%/themes/default/images/plus.png
+%%WWWDIR%%/themes/default/images/plus_blue.png
 %%WWWDIR%%/themes/default/images/refresh.png
 %%WWWDIR%%/themes/default/images/row_evolution.png
 %%WWWDIR%%/themes/default/images/search_bg.png
@@ -2247,17 +2233,6 @@
 @dirrm %%WWWDIR%%/plugins
 @dirrm %%WWWDIR%%/misc/proxy-hide-piwik-url
 @dirrm %%WWWDIR%%/misc/log-analytics
-@dirrm %%WWWDIR%%/misc/deploy/vagrant/precise64
-@dirrm %%WWWDIR%%/misc/deploy/vagrant
-@dirrm %%WWWDIR%%/misc/deploy/puppet/modules/piwik/manifests
-@dirrm %%WWWDIR%%/misc/deploy/puppet/modules/piwik/files/etc/php5/conf.d
-@dirrm %%WWWDIR%%/misc/deploy/puppet/modules/piwik/files/etc/php5
-@dirrm %%WWWDIR%%/misc/deploy/puppet/modules/piwik/files/etc
-@dirrm %%WWWDIR%%/misc/deploy/puppet/modules/piwik/files
-@dirrm %%WWWDIR%%/misc/deploy/puppet/modules/piwik
-@dirrm %%WWWDIR%%/misc/deploy/puppet/modules
-@dirrm %%WWWDIR%%/misc/deploy/puppet
-@dirrm %%WWWDIR%%/misc/deploy
 @dirrm %%WWWDIR%%/misc/cron
 @dirrm %%WWWDIR%%/misc
 @dirrm %%WWWDIR%%/libs/upgradephp
