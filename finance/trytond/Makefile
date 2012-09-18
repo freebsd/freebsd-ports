@@ -7,7 +7,7 @@
 
 PORTNAME=	trytond
 PORTVERSION=	2.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	finance python
 MASTER_SITES=	http://downloads2.tryton.org/${PORTVERSION:R}/
 
@@ -39,8 +39,15 @@ SUB_LIST=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR} \
 		PYEASYINSTALL_EGG=${PYEASYINSTALL_EGG} \
 		PYTHON=${PYTHON_CMD}
 
+PIDDIR?=	/var/run
+LOGDIR?=	/var/log
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PIDDIR%%|${PIDDIR}|g' -e 's|%%LOGDIR%%|${LOGDIR}|g' \
+		${WRKSRC}/etc/${PORTNAME}.conf
 
 .include <bsd.port.options.mk>
 
