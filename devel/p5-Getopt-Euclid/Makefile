@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	Getopt-Euclid
-PORTVERSION=	0.2.3
+PORTVERSION=	0.3.7
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:KGALINSKY
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Executable Uniform Command-Line Interface Descriptions
 
 PERL_MODBUILD=	yes
 
-MAN3=		Getopt::Euclid.3 Getopt::Euclid::HierDemo.3
+MAN3=		Getopt::Euclid.3
 
 .include <bsd.port.pre.mk>
 
