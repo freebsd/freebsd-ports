@@ -373,7 +373,6 @@
     SUBDIR += libmpd
     SUBDIR += libmpdclient
     SUBDIR += libmtp
-    SUBDIR += libmusicbrainz
     SUBDIR += libmusicbrainz3
     SUBDIR += libmusicbrainz4
     SUBDIR += libmusicbrainz5
