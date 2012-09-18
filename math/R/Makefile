@@ -194,7 +194,6 @@ CONFIGURE_ARGS+=	--without-libpng
 .endif
 
 .if ${PORT_OPTIONS:MTCLTK}
-USE_TK_NO_THREADS=	yes
 USE_TK =		84+
 CONFIGURE_ARGS+=	--with-tcltk \
 			--with-tcl-config=${TCL_LIBDIR}/tclConfig.sh \
