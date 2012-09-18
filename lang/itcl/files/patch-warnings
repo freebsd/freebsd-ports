@@ -142,12 +142,23 @@
 +    const char **listv;
  
      cmdName = ckalloc((unsigned)strlen(name)+1);
---- generic/itclInt.h	2008-12-15 15:02:58.000000000 -0500
-+++ generic/itclInt.h	2010-01-24 15:15:06.000000000 -0500
-@@ -207,5 +207,5 @@
+--- generic/itclInt.h.orig	2008-12-15 21:02:58.000000000 +0100
++++ generic/itclInt.h	2012-08-31 16:07:23.000000000 +0200
+@@ -63,7 +63,7 @@
+ #if (TCL_MAJOR_VERSION == 8) && (TCL_MINOR_VERSION < 6)
+ #define ERRORLINE(interp) ((interp)->errorLine)
+ #else
+-#define ERRORLINE(interp) (Tcl_GetErrorLine(interp))
++#define ERRORLINE(interp) (Tcl_GetErrorLine((Tcl_Interp *)interp))
+ #endif
+ 
+ #define ITCL_TCL_PRE_8_5 (TCL_MAJOR_VERSION == 8 && TCL_MINOR_VERSION < 5)
+@@ -206,7 +206,7 @@
+     Tcl_HashEntry entry;
  } ItclVarInHash;
  
 -#define ItclOffset(type, field) ((int) ((char *) &((type *) 0)->field))
 +#define ItclOffset(type, field) ((intptr_t)((char *) &((type *) 0)->field))
  
  #define itclOldRuntime (itclVarFlagOffset!=0)
+ 
