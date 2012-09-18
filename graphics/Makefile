@@ -575,6 +575,7 @@
     SUBDIR += nathive
     SUBDIR += netpbm
     SUBDIR += nip2
+    SUBDIR += nomacs
     SUBDIR += npretty
     SUBDIR += nurbs++
     SUBDIR += nvidia-texture-tools
