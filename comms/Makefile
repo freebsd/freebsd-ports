@@ -39,6 +39,7 @@
     SUBDIR += gammu-devel
     SUBDIR += garmin-utils
     SUBDIR += geoid
+    SUBDIR += ge-x2212
     SUBDIR += ghfaxviewer
     SUBDIR += gkermit
     SUBDIR += gmfsk
