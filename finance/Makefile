@@ -122,6 +122,7 @@
     SUBDIR += trytond_purchase
     SUBDIR += trytond_sale
     SUBDIR += trytond_sale_opportunity
+    SUBDIR += trytond_sale_price_list
     SUBDIR += trytond_stock
     SUBDIR += trytond_timesheet
     SUBDIR += venice
