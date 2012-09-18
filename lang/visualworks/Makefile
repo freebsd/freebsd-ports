@@ -27,128 +27,133 @@ MY_STARTUP_SCRIPT=	visual.sh
 
 RESTRICTED=		Redistribution is probably not permitted
 
-OPTIONS=	ATOOLS		"Advanced Tools"				off \
-		COM		"COM"						off \
-		DLLC		"DLLC Connect"					on \
-		DST		"Distributed Smalltalk"				off \
-		DATABASE	"Database Support"				on \
-		DOTNET		"DotNet Connect"				off \
-		CONTRIBUTED	"Contributed"					off \
-		ARAGON		"Contributed - Aragon"				off \
-		COAST		"Contributed - COAST"				off \
-		DOME		"Contributed - DOME"				off \
-		JUN		"Contributed - Jun 3D Framework"		off \
-		SEASIDE 	"Contributed - Seaside"				on \
-		SILVERMARK	"Contributed - Silvermark"			off \
-		GEMSTONE	"Contributed - GemStone Server and Client"	off \
-		I18N		"Internationalization"				off \
-		OBSOLETE	"Obsolete stuff"				off \
-		OPENTALK	"Opentalk"					off \
-		PLUGIN		"Plugin"					off \
-		PREVIEW		"Preview Technology"				off \
-		STORE		"Store"						on \
-		WEBAPP		"Web Application Framework"			off \
-		WEBSERVICES	"Web Services"					off \
-		VMLINUX		"Virtual Machines for Linux ppc/sparc/x86-64"	off \
-		VMWINDOWS	"Virtual Machines for Windows NT/CEx86/CEarm"	off \
-		VMMAC		"Virtual Machines for Mac OSX/OSXX11/powermac"	off \
-		VMSOLARIS	"Virtual Machine for Solaris"			off \
-		VMAIX		"Virtual Machine for AIX"			off \
-		VMHPUX		"Virtual Machine for HPUX"			off \
-		VMSGI		"Virtual Machine for SGI"			off
+OPTIONS_DEFINE=	ATOOLS COM DLLC DST DATABASE DOTNET CONTRIBUTED ARAGON COAST DOME JUN 3D \
+		SEASIDE SILVERMARK GEMSTONE I18N OBSOLETE OPENTALK PLUGIN PREVIEW STORE  \
+		WEBAPP WEBSERVICES VMLINUX VMWINDOWS VMMAC VMSOLARIS VMAIX VMHPUX VMSGI 
+OPTIONS_DEFAULT=	DLLC DATABASE SEASIDE STORE
+
+ATOOLS_DESC=	Advanced Tools
+COM_DESC=	COM
+DLLC_DESC=	DLLC Connect
+DST_DESC=	Distributed Smalltalk
+DATABASE_DESC=	Database Support
+DOTNET_DESC=	DotNet Connect
+CONTRIBUTED_DESC=	Contributed
+ARAGON_DESC=	Contributed - Aragon
+COAST_DESC=	Contributed - COAST
+DOME_DESC=	Contributed - DOME
+JUN_DESC=	Contributed - Jun 3D Framework
+SEASIDE_DESC=	Contributed - Seaside
+SILVERMARK_DESC=	Contributed - Silvermark
+GEMSTONE_DESC=	Contributed - GemStone Server and Client
+I18N_DESC=	Internationalization
+OBSOLETE_DESC=	Obsolete stuff
+OPENTALK_DESC=	Opentalk
+PLUGIN_DESC=	Plugin
+PREVIEW_DESC=	Preview Technology
+STORE_DESC=	Store
+WEBAPP_DESC=	Web Application Framework
+WEBSERVICES_DESC=	Web Services
+VMLINUX_DESC=	Virtual Machines for Linux ppc/sparc/x86-64
+VMWINDOWS_DESC=	Virtual Machines for Windows NT/CEx86/CEarm
+VMMAC_DESC=	Virtual Machines for Mac OSX/OSXX11/powermac
+VMSOLARIS_DESC=	Virtual Machine for Solaris
+VMAIX_DESC=	Virtual Machine for AIX
+VMHPUX_DESC=	Virtual Machine for HPUX
+VMSGI_DESC=	Virtual Machine for SGI
 
 .include <bsd.port.pre.mk>
 
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_ATOOLS)
+.if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MATOOLS}
 DISTFILES+=	AdvancedTools.tar.gz
 .endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_COM)
+.if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MCOM}
 DISTFILES+=	COM.tar.gz
 .endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_DLLC)
+.if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MDLLC}
 DISTFILES+=	DLLC.tar.gz
 .endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_DST)
+.if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MDST}
 DISTFILES+=	DST.tar.gz
 .endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_DATABASE) || defined(WITH_DOTNET)
+.if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MDATABASE} || ${PORT_OPTIONS:MDOTNET}
 DISTFILES+=	Database.tar.gz
 .endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_CONTRIBUTED)
+.if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MCONTRIBUTED}
 DISTFILES+=	Contributed.tar.gz
 .endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_ARAGON)
+.if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MARAGON}
 DISTFILES+=	CntrbAragon.tar.gz
 .endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_COAST)
+.if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MCOAST}
 DISTFILES+=	CntrbCOAST.tar.gz
 .endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_DOME)
+.if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MDOME}
 DISTFILES+=	CntrbDome.tar.gz
 .endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_JUN)
+.if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MJUN}
 DISTFILES+=	CntrbJun.tar.gz \
 		CntrbHeeg.tar.gz
 .endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_SEASIDE)
+.if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MSEASIDE}
 DISTFILES+=	CntrbSeaside.tar.gz
 .endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_SILVERMARK)
+.if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MSILVERMARK}
 DISTFILES+=	CntrbSilverMark.tar.gz
 .endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_GEMSTONE)
+.if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MGEMSTONE}
 DISTFILES+=	CntrbGemStoneClient.tar.gz \
 		CntrbGemStoneSvrLinux.tar.gz
 .endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_I18N)
+.if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MI18N}
 DISTFILES+=	I18NCatalogs.tar.gz
 .endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_OBSOLETE)
+.if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MOBSOLETE}
 DISTFILES+=	Obsolete.tar.gz
 .endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_OPENTALK)
+.if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MOPENTALK}
 DISTFILES+=	Opentalk.tar.gz
 .endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_PLUGIN)
+.if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MPLUGIN}
 DISTFILES+=	Plugin.tar.gz
 .endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_PREVIEW)
+.if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MPREVIEW}
 DISTFILES+=	Preview.tar.gz
 .endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_STORE)
+.if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MSTORE}
 DISTFILES+=	Store.tar.gz
 .endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_VMAIX)
+.if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MVMAIX}
 DISTFILES+=	VM-AIX.tar.gz
 .endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_VMHPUX)
+.if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MVMHPUX}
 DISTFILES+=	VM-HPUX.tar.gz
 .endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_VMMAC)
+.if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MVMMAC}
 DISTFILES+=	VM-MacOSX.tar.gz \
 		VM-MacOSXX11.tar.gz \
 		VM-Powermac.tar.gz
 .endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_VMSGI)
+.if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MVMSGI}
 DISTFILES+=	VM-SGI.tar.gz
 .endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_VMSOLARIS)
+.if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MVMSOLARIS}
 DISTFILES+=	VM-Solaris.tar.gz
 .endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_VMWINDOWS)
+.if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MVMWINDOWS}
 DISTFILES+=	VM-Windows.tar.gz \
 		VM-WinCEARM.tar.gz \
 		VM-WinCEx86.tar.gz
 .endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_VMLINUX)
+.if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MVMLINUX}
 DISTFILES+=	VM-LinuxPPC.tar.gz \
 		VM-LinuxSPARC.tar.gz \
 		VM-LinuxX86_64.tar.gz
 .endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_WEBAPP)
+.if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MWEBAPP}
 DISTFILES+=	WebApplicationServer.tar.gz
 .endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_WEBSERVICES)
+.if make(makesum) || defined(FETCH_ALL) || ${PORT_OPTIONS:MWEBSERVICES}
 DISTFILES+=	WebServices.tar.gz
 .endif
 
