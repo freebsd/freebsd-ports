@@ -1,27 +1,22 @@
-# New ports collection makefile for:	libvdpau
-# Date created:				2010-09-08
-# Whom:					Anonymous <swell.k@gmail.com>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	libvdpau
-PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTVERSION=	0.5
 CATEGORIES=	multimedia
-MASTER_SITES=	http://people.freedesktop.org/~aplattner/vdpau/
+MASTER_SITES=	http://cgit.freedesktop.org/~aplattner/libvdpau/snapshot/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VDPAU wrapper and tracing library
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USE_AUTOTOOLS=	autoconf:env automake:env libtool:env
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-documentation
 USE_GMAKE=	yes
 USE_XORG=	dri2proto xext
 USE_LDCONFIG=	yes
-
-LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 .include <bsd.port.pre.mk>
 
@@ -33,8 +28,11 @@ CFLAGS+=	-DDEBUG
 INSTALL_TARGET=	install-strip
 .endif
 
-post-patch:	.SILENT
+pre-configure:
+	@cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ./autogen.sh
+
+post-patch:
 	${REINPLACE_CMD} 's|$$(libdir)/\(pkgconfig\)|$$(prefix)/libdata/\1|' \
-		${WRKSRC}/Makefile.in
+		${WRKSRC}/Makefile.am
 
 .include <bsd.port.post.mk>
