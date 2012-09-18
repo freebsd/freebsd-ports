@@ -6,7 +6,7 @@
 
 PORTNAME=	kdenetwork
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -28,7 +28,7 @@ LIB_DEPENDS=	slp.1:${PORTSDIR}/net/openslp \
 		expat.6:${PORTSDIR}/textproc/expat2 \
 		meanwhile.1:${PORTSDIR}/net-im/meanwhile \
 		v4l2.0:${PORTSDIR}/multimedia/libv4l \
-		ktorrent.4:${PORTSDIR}/net-p2p/libktorrent \
+		ktorrent:${PORTSDIR}/net-p2p/libktorrent \
 		jasper.4:${PORTSDIR}/graphics/jasper \
 		boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		gif.5:${PORTSDIR}/graphics/giflib \
