@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	taskwarrior
-DISTVERSION=	2.1.1
+DISTVERSION=	2.1.2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://taskwarrior.org/download/
 DISTNAME=	task-${DISTVERSION}
