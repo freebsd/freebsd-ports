@@ -1,12 +1,7 @@
-# New ports collection makefile for:	beadm
-# Date created:		26 April 2012
-# Whom:			Bryan Drewery <bryan@shatow.net>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	beadm
-PORTVERSION=	0.8
+PORTVERSION=	0.8.1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/beadm/dist/
 
@@ -17,7 +12,7 @@ LICENSE=	BSD
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vermaden
-GH_COMMIT=	b0cdd0c
+GH_COMMIT=	2a0c48a
 
 NO_BUILD=	YES
 
