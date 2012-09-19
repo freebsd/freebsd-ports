@@ -1,7 +1,3 @@
-# New ports collection makefile for:	BIND 9.9.x
-# Date created:				27 January 2012
-# Whom:					dougb
-#
 # $FreeBSD$
 
 # I stay very aware of developments with BIND in general, and with
@@ -11,7 +7,7 @@
 # release you can generally build it cleanly from the source - Doug
 
 PORTNAME=	bind99
-PORTVERSION=	9.9.1.2
+PORTVERSION=	9.9.1.3
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
@@ -20,10 +16,10 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	dougb@FreeBSD.org
-COMMENT=	The BIND DNS suite with updated DNSSEC and DNS64
+COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.9.1-P2
+ISCVERSION=	9.9.1-P3
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -208,7 +204,9 @@ post-patch:
 		${WRKSRC}/bin/named/Makefile.in.Dist > \
 		${WRKSRC}/bin/named/Makefile.in
 
+.if !defined(NOPORTDOCS)
 PORTDOCS=	*
+.endif
 PKGMESSAGE=	${.CURDIR}/../bind97/pkg-message
 PKGINSTALL=	${.CURDIR}/../bind97/pkg-install
 post-install:

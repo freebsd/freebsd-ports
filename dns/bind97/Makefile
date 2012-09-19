@@ -1,12 +1,7 @@
-# New ports collection makefile for:	BIND 9.7.x
-# Date created:				13 December 2009
-# Whom:					dougb
-#
 # $FreeBSD$
-#
 
 PORTNAME?=	bind97
-PORTVERSION=	9.7.6.2
+PORTVERSION=	9.7.6.3
 PORTREVISION?=	0
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
@@ -16,10 +11,10 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	dougb@FreeBSD.org
-COMMENT?=	The BIND DNS suite with updated DNSSEC and threads
+COMMENT?=	BIND DNS suite with updated DNSSEC and threads
 
 # ISC releases things like 9.4.0b3, which our versioning doesn't like
-ISCVERSION=	9.7.6-P2
+ISCVERSION=	9.7.6-P3
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -210,8 +205,9 @@ post-patch:
 		${WRKSRC}/bin/named/Makefile.in.Dist > \
 		${WRKSRC}/bin/named/Makefile.in
 
+.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-
+.endif
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/bin/rndc/rndc.conf \
 		${BIND_DESTETC}/rndc.conf.sample
