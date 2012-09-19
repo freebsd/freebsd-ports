@@ -42,7 +42,13 @@ bin/Kye-edit
 %%PYTHON_SITELIBDIR%%/kye/stbar.py
 %%PYTHON_SITELIBDIR%%/kye/stbar.pyc
 %%PYTHON_SITELIBDIR%%/kye/stbar.pyo
+%%DATADIR%%/images.tar.gz
+%%DATADIR%%/intro.kye
+%%DATADIR%%/quests.kye
+%%DATADIR%%/template.kye
 share/pixmaps/Kye-edit.png
 share/pixmaps/Kye.png
-@dirrmtry share/applications
-@dirrm %%PYTHON_SITELIBDIR%%/kye
+@dirrmtry %%DATADIR%%
+@dirrmtry %%PYTHON_SITELIBDIR%%/kye
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%
