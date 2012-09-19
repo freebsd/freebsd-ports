@@ -1,12 +1,8 @@
-# New ports collection makefile for:	fusefs-ntfs
-# Date created: 			25 July 2006
-# Whom:					Max Khon
+# Created By: Max Khon
 # $FreeBSD$
-#
 
 PORTNAME=	ntfs
-PORTVERSION=	2011.4.12
-PORTREVISION=	1
+PORTVERSION=	2012.1.15
 CATEGORIES=	sysutils
 MASTER_SITES=	http://tuxera.com/opensource/
 PKGNAMEPREFIX=	fusefs-
@@ -16,8 +12,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mount NTFS partitions (read/write) and disk images
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	fusefs-libs>=2.7.2:${PORTSDIR}/sysutils/fusefs-libs
-LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
+LIB_DEPENDS=	fuse:${PORTSDIR}/sysutils/fusefs-libs
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
 CONFLICTS_BUILD=	bonobo-1.*
@@ -31,8 +29,10 @@ CONFIGURE_ARGS=	--exec-prefix=${PREFIX} --disable-mount-helper \
 CPPFLAGS+=	-I${WRKSRC}/include/ntfs-3g/ -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	LOCK "Lock the device when mounting (avoids access)" on \
-		UBLIO "Enable user space cache for improved speed" on
+OPTIONS_DEFINE=	LOCK UBLIO
+OPTIONS_DEFAULT=LOCK UBLIO
+LOCK_DESC=	Lock the device when mounting (avoids access)
+UBLIO_DESC=	Enable user space cache for improved speed
 
 SUB_FILES=	pkg-message
 DOCSDIR=	${PREFIX}/share/doc/ntfs-3g
@@ -42,15 +42,15 @@ MAN8=		mkntfs.8 ntfs-3g.8 ntfs-3g.probe.8 \
 		ntfscluster.8 ntfscmp.8 ntfscp.8 ntfsfix.8 ntfsinfo.8 \
 		ntfslabel.8 ntfsls.8 ntfsprogs.8 ntfsresize.8 ntfsundelete.8
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_LOCK)
+.if ${PORT_OPTIONS:MLOCK}
 CFLAGS+=	-DUSE_LOCK
 .endif
 
-.if defined(WITH_UBLIO)
+.if ${PORT_OPTIONS:MUBLIO}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-ublio
-LIB_DEPENDS+=	ublio.1:${PORTSDIR}/devel/libublio
+LIB_DEPENDS+=	ublio:${PORTSDIR}/devel/libublio
 CFLAGS+=	-DUSE_UBLIO
 .endif
 
@@ -72,4 +72,4 @@ post-install:
 .endif
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
