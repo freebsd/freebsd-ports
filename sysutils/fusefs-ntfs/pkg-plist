@@ -36,6 +36,7 @@ include/ntfs-3g/mst.h
 include/ntfs-3g/ntfstime.h
 include/ntfs-3g/object_id.h
 include/ntfs-3g/param.h
+include/ntfs-3g/realpath.h
 include/ntfs-3g/reparse.h
 include/ntfs-3g/runlist.h
 include/ntfs-3g/security.h
@@ -47,7 +48,7 @@ include/ntfs-3g/xattrs.h
 lib/libntfs-3g.a
 lib/libntfs-3g.la
 lib/libntfs-3g.so
-lib/libntfs-3g.so.81
+lib/libntfs-3g.so.83
 libdata/pkgconfig/libntfs-3g.pc
 sbin/mkntfs
 sbin/ntfsclone

@@ -18,7 +18,7 @@ the FUSE library (a OS independent library to create filesystem drivers), more
 precisely FUSE's library with fuse4bsd's kernel module (port of the kernel
 dependent part of FUSE). For more information see:
 
-NTFS-3G site:	http://ntfs-3g.org/
+NTFS-3G site:	http://www.tuxera.com/community/ntfs-3g-download/
 FUSE site:	http://fuse.sourceforge.net/
 fuse4bsd site:	http://fuse4bsd.creo.hu/
 
