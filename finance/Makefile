@@ -108,6 +108,7 @@
     SUBDIR += trytond_account_be
     SUBDIR += trytond_account_invoice
     SUBDIR += trytond_account_product
+    SUBDIR += trytond_account_stock_anglo_saxon
     SUBDIR += trytond_calendar
     SUBDIR += trytond_carrier
     SUBDIR += trytond_carrier_percentage
