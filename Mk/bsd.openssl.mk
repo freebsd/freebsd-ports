@@ -1,5 +1,5 @@
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.48 2012-04-18 11:38:20 bapt Exp $
+# $FreeBSD$
 # bsd.openssl.mk - Support for OpenSSL based ports.
 #
 # Use of 'USE_OPENSSL=yes' includes this Makefile after bsd.ports.pre.mk
@@ -8,6 +8,7 @@
 #
 # WITH_OPENSSL_BASE=yes	- Use the version in the base system.
 # WITH_OPENSSL_PORT=yes	- Use the port, even if base is up to date
+# WITH_OPENSSL_HACK7=yes - Use not the version in the base system on FreeBSD 7.x
 #
 # USE_OPENSSL_RPATH=yes	- Pass RFLAGS options in CFLAGS,
 #			  needed for ports who don't use LDFLAGS
@@ -37,6 +38,13 @@ WITH_OPENSSL_BASE=yes
 .endif
 .if defined(USE_OPENSSL_PORT) && !defined(WITH_OPENSSL_PORT)
 WITH_OPENSSL_PORT=yes
+.endif
+
+.if defined(WITH_OPENSSL_HACK7)
+.if ${OSVERSION} < 800000
+# the openssl in base of FreeBSD 7.x is too old
+WITH_OPENSSL_PORT?=	yes
+.endif
 .endif
 
 #	if no preference was set, check for an installed base version
