@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	fcitx
-PORTVERSION=	4.2.5
+PORTVERSION=	4.2.6
 CATEGORIES=	chinese x11
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pinyin.tar.gz table.tar.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		pinyin.tar.gz table.tar.gz en_dict-${_DICT_VER}.tar.gz
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -21,7 +22,6 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
 		dbus-1:${PORTSDIR}/devel/dbus \
-		enchant:${PORTSDIR}/textproc/enchant \
 		icuuc:${PORTSDIR}/devel/icu
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
@@ -49,6 +49,8 @@ OPENCC_DESC=	Enable OpenCC for Chinese Transform
 TPUNC_DESC=	Use traditional quotation marks
 
 .include <bsd.port.options.mk>
+
+CMAKE_ARGS+=	-DENABLE_XDGAUTOSTART=OFF -DFORCE_ENCHANT=ON
 
 .if ${PORT_OPTIONS:MGTK2}
 USE_GNOME+=	gtk20
@@ -101,9 +103,12 @@ EXTRA_PATCHES+=	${FILESDIR}/nodocs-doc_CMakeLists.txt
 IGNORE=		code tables are required, undefine NOPORTDATA
 .endif
 
+_DICT_VER=	20120815
+
 post-patch:
 	@${CP} ${_DISTDIR}/pinyin.tar.gz ${WRKSRC}/data
 	@${CP} ${_DISTDIR}/table.tar.gz ${WRKSRC}/data/table
+	@${CP} ${_DISTDIR}/en_dict-${_DICT_VER}.tar.gz ${WRKSRC}/data
 .if ${OSVERSION} < 800067
 # getline() is GNU extension which FreeBSD only recently adopted
 EXTRA_PATCHES+=	${FILESDIR}/getline-src_lib_fcitx-utils_utils.c \

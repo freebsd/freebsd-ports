@@ -23,7 +23,4 @@ To start fcitx with your desktop, just
 	cp %%PREFIX%%/share/applications/fcitx.desktop \
 	    ~/.config/autostart/
 
-if your desktop environment is XDG-compatible. Otherwise, you have to
-make sure fcitx is started AFTER dbus-launch.
-
 ************************************************************************
