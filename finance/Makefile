@@ -138,6 +138,7 @@
     SUBDIR += trytond_project_plan
     SUBDIR += trytond_project_revenue
     SUBDIR += trytond_purchase
+    SUBDIR += trytond_purchase_invoice_line_standalone
     SUBDIR += trytond_sale
     SUBDIR += trytond_sale_opportunity
     SUBDIR += trytond_sale_price_list
