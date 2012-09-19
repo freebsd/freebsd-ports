@@ -1,4 +1,4 @@
-# Created-by: jah
+# Created by: Jason Harmening <jason.harmening@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	cx88
