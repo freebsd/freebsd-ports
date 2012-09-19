@@ -130,6 +130,7 @@
     SUBDIR += trytond_ldap_connection
     SUBDIR += trytond_party
     SUBDIR += trytond_product
+    SUBDIR += trytond_product_cost_history
     SUBDIR += trytond_product_measurements
     SUBDIR += trytond_product_price_list
     SUBDIR += trytond_project
