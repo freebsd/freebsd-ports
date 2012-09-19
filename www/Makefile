@@ -331,6 +331,7 @@
     SUBDIR += html2hdml
     SUBDIR += html2wml
     SUBDIR += htmlcompressor
+    SUBDIR += htmlcxx
     SUBDIR += htmlobject
     SUBDIR += htmlpp
     SUBDIR += httest

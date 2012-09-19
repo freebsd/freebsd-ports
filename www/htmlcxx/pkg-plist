@@ -1,0 +1,30 @@
+bin/htmlcxx
+include/htmlcxx/css/parser.h
+include/htmlcxx/css/parser_pp.h
+include/htmlcxx/html/CharsetConverter.h
+include/htmlcxx/html/Extensions.h
+include/htmlcxx/html/Node.h
+include/htmlcxx/html/ParserDom.h
+include/htmlcxx/html/ParserSax.h
+include/htmlcxx/html/ParserSax.tcc
+include/htmlcxx/html/Uri.h
+include/htmlcxx/html/ci_string.h
+include/htmlcxx/html/tld.h
+include/htmlcxx/html/tree.h
+include/htmlcxx/html/utils.h
+libdata/pkgconfig/htmlcxx.pc
+lib/libcss_parser.la
+lib/libcss_parser.so
+lib/libcss_parser.so.0
+lib/libcss_parser_pp.la
+lib/libcss_parser_pp.so
+lib/libcss_parser_pp.so.0
+lib/libhtmlcxx.la
+lib/libhtmlcxx.so
+lib/libhtmlcxx.so.4
+share/htmlcxx/css/default.css
+@dirrm share/htmlcxx/css
+@dirrm share/htmlcxx
+@dirrm include/htmlcxx/html
+@dirrm include/htmlcxx/css
+@dirrm include/htmlcxx
