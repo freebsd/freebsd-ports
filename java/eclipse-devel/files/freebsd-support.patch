@@ -2,7 +2,7 @@ $FreeBSD$
 
 --- build.orig/eclipse-3.5.2-src/features/org.eclipse.equinox.executable/library/gtk/build.sh	2009-12-23 15:12:32.845944760 -0500
 +++ build/eclipse-3.5.2-src/features/org.eclipse.equinox.executable/library/gtk/build.sh	2009-12-23 15:14:12.389807302 -0500
-@@ -53,6 +53,7 @@
+@@ -54,6 +54,7 @@
  	"Linux")
  		makefile="make_linux.mak"
  		defaultOS="linux"
@@ -10,15 +10,15 @@ $FreeBSD$
  		case $MODEL in
  			"x86_64")
  				defaultOSArch="x86_64"
-@@ -112,6 +113,7 @@
+@@ -115,6 +116,7 @@
  	"SunOS")
  		makefile="make_solaris.mak"
  		defaultOS="solaris"
 +		MAKE=make
- 		[ -d /usr/jdk/jdk1.5.0_01 ] && defaultJavaHome="/usr/jdk/jdk1.5.0_01"
  		OUTPUT_DIR="../../bin/$defaultWS/$defaultOS/$defaultOSArch"
  		#PATH=/usr/ccs/bin:/opt/SUNWspro/bin:$PATH
-@@ -119,6 +121,24 @@
+ 		PATH=/usr/ccs/bin:/export/home/SUNWspro/bin:$PATH
+@@ -138,6 +140,24 @@
  				;;
  		esac
  		;;
@@ -43,7 +43,7 @@ $FreeBSD$
  	*)
  	echo "Unknown OS -- build aborted"
  	;;
-@@ -164,13 +184,13 @@
+@@ -203,13 +223,13 @@
  # If the OS is supported (a makefile exists)
  if [ "$makefile" != "" ]; then
  	if [ "$extraArgs" != "" ]; then
@@ -184,7 +184,7 @@ $FreeBSD$
 +root.freebsd.gtk.x86_64=bin/gtk/freebsd/x86_64,gtk_root
 --- build.orig/eclipse-3.5.2-src/features/org.eclipse.platform/feature.xml	2009-12-23 15:12:32.396160828 -0500
 +++ build/eclipse-3.5.2-src/features/org.eclipse.platform/feature.xml	2009-12-23 15:14:12.390811604 -0500
-@@ -138,6 +138,16 @@
+@@ -167,6 +167,26 @@
           unpack="false"/>
  
     <plugin
@@ -198,10 +198,20 @@ $FreeBSD$
 +   	unpack="false"/>
 +
 +   <plugin
++   	id="org.eclipse.core.net.freebsd.x86_64"
++   	os="freebsd"
++   	arch="x86_64"
++   	download-size="0"
++   	install-size="0"
++   	version="0.0.0"
++   	fragment="true"
++   	unpack="false"/>
++
++   <plugin
           id="org.eclipse.core.resources"
           download-size="0"
           install-size="0"
-@@ -572,6 +582,26 @@
+@@ -548,6 +568,26 @@
           unpack="false"/>
  
     <plugin
@@ -228,26 +238,36 @@ $FreeBSD$
           id="org.eclipse.core.filesystem.solaris.sparc"
           os="solaris"
           arch="sparc"
-@@ -657,6 +687,16 @@
-          unpack="false"/>
+--- build/eclipse-4.2.0-I20120608-1400-src/features/org.eclipse.e4.rcp/feature.xml~	Wed Jul  4 15:54:59 2012
++++ build/eclipse-4.2.0-I20120608-1400-src/features/org.eclipse.e4.rcp/feature.xml	Wed Jul  4 19:20:31 2012
+@@ -471,6 +471,26 @@
+          fragment="true"/>
  
     <plugin
-+         id="org.eclipse.update.core.freebsd"
++         id="org.eclipse.equinox.launcher.gtk.freebsd.x86"
 +         os="freebsd"
++         ws="gtk"
 +         arch="x86"
 +         download-size="0"
 +         install-size="0"
 +         version="0.0.0"
-+         fragment="true"
-+         unpack="false"/>
++         fragment="true"/>
 +
 +   <plugin
-          id="org.eclipse.update.core.win32"
++         id="org.eclipse.equinox.launcher.gtk.freebsd.x86_64"
++         os="freebsd"
++         ws="gtk"
++         arch="x86_64"
++         download-size="0"
++         install-size="0"
++         version="0.0.0"
++         fragment="true"/>
++
++   <plugin
+          id="org.eclipse.equinox.launcher.win32.win32.x86"
           os="win32"
-          download-size="0"
---- build.orig/eclipse-3.5.2-src/features/org.eclipse.rcp/feature.xml	2009-12-23 15:12:32.485514642 -0500
-+++ build/eclipse-3.5.2-src/features/org.eclipse.rcp/feature.xml	2009-12-23 15:14:12.391816744 -0500
-@@ -371,6 +371,28 @@
+          ws="win32"
+@@ -729,6 +749,28 @@
           unpack="false"/>
  
     <plugin
@@ -273,36 +293,9 @@ $FreeBSD$
 +         unpack="false"/>
 +
 +   <plugin
-          id="org.eclipse.swt.gtk.solaris.sparc"
-          os="solaris"
-          ws="gtk"
-@@ -556,6 +578,26 @@
-          fragment="true"/>
- 
-    <plugin
-+         id="org.eclipse.equinox.launcher.gtk.freebsd.x86"
-+         os="freebsd"
-+         ws="gtk"
-+         arch="x86"
-+         download-size="0"
-+         install-size="0"
-+         version="0.0.0"
-+         fragment="true"/>
-+
-+   <plugin
-+         id="org.eclipse.equinox.launcher.gtk.freebsd.x86_64"
-+         os="freebsd"
-+         ws="gtk"
-+         arch="x86_64"
-+         download-size="0"
-+         install-size="0"
-+         version="0.0.0"
-+         fragment="true"/>
-+
-+   <plugin
-          id="org.eclipse.equinox.launcher.gtk.aix.ppc"
-          os="aix"
-          ws="gtk"
+          id="org.eclipse.swt.cocoa.macosx"
+          os="macosx"
+          ws="cocoa"
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.filesystem/natives/unix/freebsd/Makefile	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.core.filesystem/natives/unix/freebsd/Makefile	2009-12-23 15:14:12.391816744 -0500
 @@ -0,0 +1,36 @@
@@ -379,31 +372,6 @@ $FreeBSD$
  			attributes |= EFS.ATTRIBUTE_EXECUTABLE | EFS.ATTRIBUTE_SYMLINK | EFS.ATTRIBUTE_LINK_TARGET;
  		else if (os.equals(Constants.OS_MACOSX) || os.equals(Constants.OS_HPUX) || os.equals(Constants.OS_QNX))
  			attributes |= EFS.ATTRIBUTE_EXECUTABLE;
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.filesystem.freebsd.x86/.project	1969-12-31 19:00:00.000000000 -0500
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.core.filesystem.freebsd.x86/.project	2009-12-23 15:14:12.393823113 -0500
-@@ -0,0 +1,22 @@
-+<?xml version="1.0" encoding="UTF-8"?>
-+<projectDescription>
-+	<name>org.eclipse.core.filesystem.freebsd.x86</name>
-+	<comment></comment>
-+	<projects>
-+	</projects>
-+	<buildSpec>
-+		<buildCommand>
-+			<name>org.eclipse.pde.ManifestBuilder</name>
-+			<arguments>
-+			</arguments>
-+		</buildCommand>
-+		<buildCommand>
-+			<name>org.eclipse.pde.SchemaBuilder</name>
-+			<arguments>
-+			</arguments>
-+		</buildCommand>
-+	</buildSpec>
-+	<natures>
-+		<nature>org.eclipse.pde.PluginNature</nature>
-+	</natures>
-+</projectDescription>
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.filesystem.freebsd.x86/META-INF/MANIFEST.MF	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.core.filesystem.freebsd.x86/META-INF/MANIFEST.MF	2009-12-23 15:14:12.393823113 -0500
 @@ -0,0 +1,9 @@
@@ -411,11 +379,62 @@ $FreeBSD$
 +Bundle-ManifestVersion: 2
 +Bundle-Name: %fragmentName
 +Bundle-SymbolicName: org.eclipse.core.filesystem.freebsd.x86; singleton:=true
-+Bundle-Version: 1.2.0.qualifier
++Bundle-Version: 1.4.0.qualifier
 +Bundle-Vendor: %providerName
-+Fragment-Host: org.eclipse.core.filesystem;bundle-version="[1.1.0,2.0.0)"
++Fragment-Host: org.eclipse.core.filesystem;bundle-version="[1.3.0,2.0.0)"
 +Bundle-Localization: fragment
 +Eclipse-PlatformFilter: (& (osgi.os=freebsd) (osgi.arch=x86))
+--- build.orig/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.core.filesystem.freebsd.x86/pom.xml	1969-12-31 19:00:00.000000000 -0500
++++ build.orig/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.core.filesystem.freebsd.x86/pom.xml	2009-12-23 15:14:12.393823113 -0500
+@@ -0,0 +1,48 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<!--
++  Copyright (c) 2012 Eclipse Foundation.
++  All rights reserved. This program and the accompanying materials
++  are made available under the terms of the Eclipse Distribution License v1.0
++  which accompanies this distribution, and is available at
++  http://www.eclipse.org/org/documents/edl-v10.php
++ 
++  Contributors:
++     Igor Fedorenko - initial implementation
++-->
++
++<project
++  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
++  xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
++  <modelVersion>4.0.0</modelVersion>
++  <parent>
++    <artifactId>eclipse.platform.resources</artifactId>
++    <groupId>eclipse.platform.resources</groupId>
++    <version>3.8.0-SNAPSHOT</version>
++    <relativePath>../../</relativePath>
++  </parent>
++  <groupId>eclipse.platform.resources</groupId>
++  <artifactId>org.eclipse.core.filesystem.freebsd.x86</artifactId>
++  <version>1.4.0-SNAPSHOT</version>
++  <packaging>eclipse-plugin</packaging>
++
++  <build>
++    <plugins>
++      <!-- tycho is not able to automatically determine os/ws/arch of this bundle -->
++      <plugin>
++        <groupId>org.eclipse.tycho</groupId>
++        <artifactId>target-platform-configuration</artifactId>
++        <version>${tycho.version}</version>
++        <configuration>
++          <resolver>p2</resolver>
++          <environments>
++            <environment>
++              <os>freebsd</os>
++              <ws>gtk</ws>
++              <arch>x86</arch>
++            </environment>
++          </environments>
++        </configuration>
++      </plugin>
++    </plugins>
++  </build>
++</project>
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.filesystem.freebsd.x86/about.html	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.core.filesystem.freebsd.x86/about.html	2009-12-23 15:14:12.393823113 -0500
 @@ -0,0 +1,28 @@
@@ -482,31 +501,6 @@ $FreeBSD$
 +###############################################################################
 +fragmentName = Core File System for FreeBSD
 +providerName = Eclipse.org
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.filesystem.freebsd.x86_64/.project	1969-12-31 19:00:00.000000000 -0500
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.core.filesystem.freebsd.x86_64/.project	2009-12-23 15:14:12.394827136 -0500
-@@ -0,0 +1,22 @@
-+<?xml version="1.0" encoding="UTF-8"?>
-+<projectDescription>
-+	<name>org.eclipse.core.filesystem.freebsd.x86_64</name>
-+	<comment></comment>
-+	<projects>
-+	</projects>
-+	<buildSpec>
-+		<buildCommand>
-+			<name>org.eclipse.pde.ManifestBuilder</name>
-+			<arguments>
-+			</arguments>
-+		</buildCommand>
-+		<buildCommand>
-+			<name>org.eclipse.pde.SchemaBuilder</name>
-+			<arguments>
-+			</arguments>
-+		</buildCommand>
-+	</buildSpec>
-+	<natures>
-+		<nature>org.eclipse.pde.PluginNature</nature>
-+	</natures>
-+</projectDescription>
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.filesystem.freebsd.x86_64/META-INF/MANIFEST.MF	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.core.filesystem.freebsd.x86_64/META-INF/MANIFEST.MF	2009-12-23 15:14:12.395831158 -0500
 @@ -0,0 +1,9 @@
@@ -514,9 +508,9 @@ $FreeBSD$
 +Bundle-ManifestVersion: 2
 +Bundle-Name: %fragmentName
 +Bundle-SymbolicName: org.eclipse.core.filesystem.freebsd.x86_64; singleton:=true
-+Bundle-Version: 1.0.100.qualifier
++Bundle-Version: 1.2.0.qualifier
 +Bundle-Vendor: %providerName
-+Fragment-Host: org.eclipse.core.filesystem;bundle-version="[1.1.0,2.0.0)"
++Fragment-Host: org.eclipse.core.filesystem;bundle-version="[1.3.0,2.0.0)"
 +Bundle-Localization: fragment
 +Eclipse-PlatformFilter: (& (osgi.os=freebsd) (osgi.arch=x86_64))
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.filesystem.freebsd.x86_64/about.html	1969-12-31 19:00:00.000000000 -0500
@@ -585,6 +579,68 @@ $FreeBSD$
 +###############################################################################
 +fragmentName = Core File System for FreeBSD
 +providerName = Eclipse.org
+--- build.orig/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.core.filesystem.freebsd.x86_64/pom.xml	1969-12-31 19:00:00.000000000 -0500
++++ build.orig/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.core.filesystem.freebsd.x86_64/pom.xml	2009-12-23 15:14:12.393823113 -0500
+@@ -0,0 +1,48 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<!--
++  Copyright (c) 2012 Eclipse Foundation.
++  All rights reserved. This program and the accompanying materials
++  are made available under the terms of the Eclipse Distribution License v1.0
++  which accompanies this distribution, and is available at
++  http://www.eclipse.org/org/documents/edl-v10.php
++ 
++  Contributors:
++     Igor Fedorenko - initial implementation
++-->
++
++<project
++  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
++  xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
++  <modelVersion>4.0.0</modelVersion>
++  <parent>
++    <artifactId>eclipse.platform.resources</artifactId>
++    <groupId>eclipse.platform.resources</groupId>
++    <version>3.8.0-SNAPSHOT</version>
++    <relativePath>../../</relativePath>
++  </parent>
++  <groupId>eclipse.platform.resources</groupId>
++  <artifactId>org.eclipse.core.filesystem.freebsd.x86_64</artifactId>
++  <version>1.2.0-SNAPSHOT</version>
++  <packaging>eclipse-plugin</packaging>
++
++  <build>
++    <plugins>
++      <!-- tycho is not able to automatically determine os/ws/arch of this bundle -->
++      <plugin>
++        <groupId>org.eclipse.tycho</groupId>
++        <artifactId>target-platform-configuration</artifactId>
++        <version>${tycho.version}</version>
++        <configuration>
++          <resolver>p2</resolver>
++          <environments>
++            <environment>
++              <os>freebsd</os>
++              <ws>gtk</ws>
++              <arch>x86_64</arch>
++            </environment>
++          </environments>
++        </configuration>
++      </plugin>
++    </plugins>
++  </build>
++</project>
+--- build/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.core.net/natives/unix/gnomeproxy.c.orig	Wed Jun 27 15:51:34 2012
++++ build/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.core.net/natives/unix/gnomeproxy.c	Wed Jul 25 19:28:51 2012
+@@ -13,7 +13,7 @@
+ #include <gconf/gconf-value.h>
+ #include <gconf/gconf-client.h>
+ 
+-#ifdef __linux__
++#ifdef __STDC__
+ #include <string.h>
+ #else
+ #include <strings.h>
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.net/natives/unix/freebsd/makefile	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.core.net/natives/unix/freebsd/makefile	2009-12-23 15:22:59.220601471 -0500
 @@ -0,0 +1,46 @@
@@ -610,10 +666,10 @@ $FreeBSD$
 +
 +INCLUDE = -I${LOCALBASE}/include/gconf/2/ -I${LOCALBASE}/include/orbit-2.0/ -I${LOCALBASE}/include/glib-2.0/ \
 +	  -I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/freebsd
-+COMPILER_FLAGS= -O0 -fPIC -g3 -Wall -c -fmessage-length=0 -m32
++COMPILER_FLAGS= -O0 -fPIC -g3 -Wall -c -fmessage-length=0
 +
 +LIBS := -L${LOCALBASE}/lib -lgconf-2 -lORBit-2 -lgthread-2.0 -lgobject-2.0 -lglib-2.0
-+LINKER_FLAGS= -m32
++LINKER_FLAGS=
 +
 +all: link
 +
@@ -634,62 +690,6 @@ $FreeBSD$
 +clean:
 +	-$(RM) $(GNOMEPROXY.O) $(LIB_NAME_FULL)
 +	-@echo " "
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86/.classpath	1969-12-31 19:00:00.000000000 -0500
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86/.classpath	2009-12-23 15:14:12.400851271 -0500
-@@ -0,0 +1,7 @@
-+<?xml version="1.0" encoding="UTF-8"?>
-+<classpath>
-+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.4"/>
-+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
-+	<classpathentry kind="src" path="src"/>
-+	<classpathentry kind="output" path="bin"/>
-+</classpath>
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86/.project	1969-12-31 19:00:00.000000000 -0500
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86/.project	2009-12-23 15:14:12.400851271 -0500
-@@ -0,0 +1,28 @@
-+<?xml version="1.0" encoding="UTF-8"?>
-+<projectDescription>
-+	<name>org.eclipse.core.net.freebsd.x86</name>
-+	<comment></comment>
-+	<projects>
-+	</projects>
-+	<buildSpec>
-+		<buildCommand>
-+			<name>org.eclipse.jdt.core.javabuilder</name>
-+			<arguments>
-+			</arguments>
-+		</buildCommand>
-+		<buildCommand>
-+			<name>org.eclipse.pde.ManifestBuilder</name>
-+			<arguments>
-+			</arguments>
-+		</buildCommand>
-+		<buildCommand>
-+			<name>org.eclipse.pde.SchemaBuilder</name>
-+			<arguments>
-+			</arguments>
-+		</buildCommand>
-+	</buildSpec>
-+	<natures>
-+		<nature>org.eclipse.pde.PluginNature</nature>
-+		<nature>org.eclipse.jdt.core.javanature</nature>
-+	</natures>
-+</projectDescription>
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86/.settings/org.eclipse.jdt.core.prefs	1969-12-31 19:00:00.000000000 -0500
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86/.settings/org.eclipse.jdt.core.prefs	2009-12-23 15:14:12.401856131 -0500
-@@ -0,0 +1,12 @@
-+#Mon Apr 21 14:24:04 CEST 2008
-+eclipse.preferences.version=1
-+org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
-+org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.2
-+org.eclipse.jdt.core.compiler.codegen.unusedLocal=preserve
-+org.eclipse.jdt.core.compiler.compliance=1.4
-+org.eclipse.jdt.core.compiler.debug.lineNumber=generate
-+org.eclipse.jdt.core.compiler.debug.localVariable=generate
-+org.eclipse.jdt.core.compiler.debug.sourceFile=generate
-+org.eclipse.jdt.core.compiler.problem.assertIdentifier=warning
-+org.eclipse.jdt.core.compiler.problem.enumIdentifier=warning
-+org.eclipse.jdt.core.compiler.source=1.3
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86/META-INF/MANIFEST.MF	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86/META-INF/MANIFEST.MF	2009-12-23 15:14:12.401856131 -0500
 @@ -0,0 +1,10 @@
@@ -699,7 +699,7 @@ $FreeBSD$
 +Bundle-Vendor: %providerName
 +Bundle-Localization: fragment
 +Bundle-SymbolicName: org.eclipse.core.net.freebsd.x86;singleton:=true
-+Bundle-Version: 1.1.0.qualifier
++Bundle-Version: 1.1.200.qualifier
 +Fragment-Host: org.eclipse.core.net;bundle-version="1.1.0"
 +Eclipse-PlatformFilter: (& (osgi.os=freebsd) (osgi.arch=x86))
 +Bundle-RequiredExecutionEnvironment: J2SE-1.4
@@ -772,6 +772,54 @@ $FreeBSD$
 +###############################################################################
 +fragmentName = Proxy for FreeBSD
 +providerName = Eclipse.org
+--- build.orig/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.core.net.freebsd.x86/pom.xml
++++ build/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.core.net.freebsd.x86/pom.xml
+@@ -0,0 +1,45 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<!--
++  Copyright (c) 2012 Eclipse Foundation.
++  All rights reserved. This program and the accompanying materials
++  are made available under the terms of the Eclipse Distribution License v1.0
++  which accompanies this distribution, and is available at
++  http://www.eclipse.org/org/documents/edl-v10.php
++ 
++  Contributors:
++     Igor Fedorenko - initial implementation
++-->
++
++<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
++    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
++  <modelVersion>4.0.0</modelVersion>
++  <parent>
++    <artifactId>eclipse.platform.team</artifactId>
++    <groupId>eclipse.platform.team</groupId>
++    <version>3.8.0-SNAPSHOT</version>
++    <relativePath>../../../../</relativePath>
++  </parent>
++  <groupId>eclipse.platform.team</groupId>
++  <artifactId>org.eclipse.core.net.freebsd.x86</artifactId>
++  <version>1.1.200-SNAPSHOT</version>
++  <packaging>eclipse-plugin</packaging>
++
++  <build>
++    <plugins>
++      <plugin>
++        <groupId>org.eclipse.tycho</groupId>
++        <artifactId>target-platform-configuration</artifactId>
++        <configuration>
++          <environments>
++            <environment>
++              <os>freebsd</os>
++              <ws>gtk</ws>
++              <arch>x86</arch>
++            </environment>
++          </environments>
++        </configuration>
++      </plugin>
++    </plugins>
++  </build>
++
++</project>
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86/src/org/eclipse/core/net/ProxyProvider.java	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86/src/org/eclipse/core/net/ProxyProvider.java	2009-12-23 15:14:12.402858757 -0500
 @@ -0,0 +1,16 @@
@@ -791,62 +839,6 @@ $FreeBSD$
 +
 +public class ProxyProvider extends UnixProxyProvider {
 +}
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86_64/.classpath	1969-12-31 19:00:00.000000000 -0500
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86_64/.classpath	2009-12-23 15:14:12.400851271 -0500
-@@ -0,0 +1,7 @@
-+<?xml version="1.0" encoding="UTF-8"?>
-+<classpath>
-+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.4"/>
-+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
-+	<classpathentry kind="src" path="src"/>
-+	<classpathentry kind="output" path="bin"/>
-+</classpath>
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86_64/.project	1969-12-31 19:00:00.000000000 -0500
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86_64/.project	2009-12-23 15:14:12.400851271 -0500
-@@ -0,0 +1,28 @@
-+<?xml version="1.0" encoding="UTF-8"?>
-+<projectDescription>
-+	<name>org.eclipse.core.net.freebsd.x86_64</name>
-+	<comment></comment>
-+	<projects>
-+	</projects>
-+	<buildSpec>
-+		<buildCommand>
-+			<name>org.eclipse.jdt.core.javabuilder</name>
-+			<arguments>
-+			</arguments>
-+		</buildCommand>
-+		<buildCommand>
-+			<name>org.eclipse.pde.ManifestBuilder</name>
-+			<arguments>
-+			</arguments>
-+		</buildCommand>
-+		<buildCommand>
-+			<name>org.eclipse.pde.SchemaBuilder</name>
-+			<arguments>
-+			</arguments>
-+		</buildCommand>
-+	</buildSpec>
-+	<natures>
-+		<nature>org.eclipse.pde.PluginNature</nature>
-+		<nature>org.eclipse.jdt.core.javanature</nature>
-+	</natures>
-+</projectDescription>
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86_64/.settings/org.eclipse.jdt.core.prefs	1969-12-31 19:00:00.000000000 -0500
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86_64/.settings/org.eclipse.jdt.core.prefs	2009-12-23 15:14:12.401856131 -0500
-@@ -0,0 +1,12 @@
-+#Mon Apr 21 14:24:04 CEST 2008
-+eclipse.preferences.version=1
-+org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
-+org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.2
-+org.eclipse.jdt.core.compiler.codegen.unusedLocal=preserve
-+org.eclipse.jdt.core.compiler.compliance=1.4
-+org.eclipse.jdt.core.compiler.debug.lineNumber=generate
-+org.eclipse.jdt.core.compiler.debug.localVariable=generate
-+org.eclipse.jdt.core.compiler.debug.sourceFile=generate
-+org.eclipse.jdt.core.compiler.problem.assertIdentifier=warning
-+org.eclipse.jdt.core.compiler.problem.enumIdentifier=warning
-+org.eclipse.jdt.core.compiler.source=1.3
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86_64/META-INF/MANIFEST.MF	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86_64/META-INF/MANIFEST.MF	2009-12-23 15:14:12.401856131 -0500
 @@ -0,0 +1,10 @@
@@ -929,6 +921,54 @@ $FreeBSD$
 +###############################################################################
 +fragmentName = Proxy for FreeBSD
 +providerName = Eclipse.org
+--- build.orig/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.core.net.freebsd.x86/pom.xml
++++ build/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.core.net.freebsd.x86/pom.xml
+@@ -0,0 +1,45 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<!--
++  Copyright (c) 2012 Eclipse Foundation.
++  All rights reserved. This program and the accompanying materials
++  are made available under the terms of the Eclipse Distribution License v1.0
++  which accompanies this distribution, and is available at
++  http://www.eclipse.org/org/documents/edl-v10.php
++ 
++  Contributors:
++     Igor Fedorenko - initial implementation
++-->
++
++<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
++    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
++  <modelVersion>4.0.0</modelVersion>
++  <parent>
++    <artifactId>eclipse.platform.team</artifactId>
++    <groupId>eclipse.platform.team</groupId>
++    <version>3.8.0-SNAPSHOT</version>
++    <relativePath>../../../../</relativePath>
++  </parent>
++  <groupId>eclipse.platform.team</groupId>
++  <artifactId>org.eclipse.core.net.freebsd.x86_64</artifactId>
++  <version>1.1.0-SNAPSHOT</version>
++  <packaging>eclipse-plugin</packaging>
++
++  <build>
++    <plugins>
++      <plugin>
++        <groupId>org.eclipse.tycho</groupId>
++        <artifactId>target-platform-configuration</artifactId>
++        <configuration>
++          <environments>
++            <environment>
++              <os>freebsd</os>
++              <ws>gtk</ws>
++              <arch>x86_64</arch>
++            </environment>
++          </environments>
++        </configuration>
++      </plugin>
++    </plugins>
++  </build>
++
++</project>
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86_64/src/org/eclipse/core/net/ProxyProvider.java	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86_64/src/org/eclipse/core/net/ProxyProvider.java	2009-12-23 15:14:12.402858757 -0500
 @@ -0,0 +1,16 @@
@@ -979,220 +1019,6 @@ $FreeBSD$
  	 * Constant string (value "unknown") indicating the platform is running on a
  	 * machine running an unknown operating system.
  	 * <p>
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher/fragments/org.eclipse.equinox.launcher.gtk.freebsd.x86_64/.project	1969-12-31 19:00:00.000000000 -0500
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher/fragments/org.eclipse.equinox.launcher.gtk.freebsd.x86_64/.project	2009-12-23 15:14:12.409887194 -0500
-@@ -0,0 +1,22 @@
-+<?xml version="1.0" encoding="UTF-8"?>
-+<projectDescription>
-+	<name>org.eclipse.equinox.launcher.gtk.freebsd.x86_64</name>
-+	<comment></comment>
-+	<projects>
-+	</projects>
-+	<buildSpec>
-+		<buildCommand>
-+			<name>org.eclipse.pde.ManifestBuilder</name>
-+			<arguments>
-+			</arguments>
-+		</buildCommand>
-+		<buildCommand>
-+			<name>org.eclipse.pde.SchemaBuilder</name>
-+			<arguments>
-+			</arguments>
-+		</buildCommand>
-+	</buildSpec>
-+	<natures>
-+		<nature>org.eclipse.pde.PluginNature</nature>
-+	</natures>
-+</projectDescription>
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher/fragments/org.eclipse.equinox.launcher.gtk.freebsd.x86_64/.settings/org.eclipse.pde.core.prefs	1969-12-31 19:00:00.000000000 -0500
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher/fragments/org.eclipse.equinox.launcher.gtk.freebsd.x86_64/.settings/org.eclipse.pde.core.prefs	2009-12-23 15:14:12.409887194 -0500
-@@ -0,0 +1,4 @@
-+#Wed Dec 06 11:46:47 EST 2006
-+eclipse.preferences.version=1
-+pluginProject.extensions=false
-+resolve.requirebundle=false
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher/fragments/org.eclipse.equinox.launcher.gtk.freebsd.x86_64/META-INF/MANIFEST.MF	1969-12-31 19:00:00.000000000 -0500
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher/fragments/org.eclipse.equinox.launcher.gtk.freebsd.x86_64/META-INF/MANIFEST.MF	2009-12-23 15:14:12.409887194 -0500
-@@ -0,0 +1,10 @@
-+Manifest-Version: 1.0
-+Bundle-ManifestVersion: 2
-+Bundle-Name: %pluginName
-+Bundle-Vendor: %providerName
-+Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.freebsd.x86_64;singleton:=true
-+Bundle-Version: 1.1.100.qualifier
-+Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.1.0,1.3.0)"
-+Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=freebsd) (osgi.arch=x86_64))
-+Bundle-Localization: launcher.gtk.freebsd.x86_64
-+Eclipse-BundleShape: dir
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher/fragments/org.eclipse.equinox.launcher.gtk.freebsd.x86_64/about.html	1969-12-31 19:00:00.000000000 -0500
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher/fragments/org.eclipse.equinox.launcher.gtk.freebsd.x86_64/about.html	2009-12-23 15:14:12.410890937 -0500
-@@ -0,0 +1,28 @@
-+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-+<html xmlns="http://www.w3.org/1999/xhtml">
-+<head>
-+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
-+<title>About</title>
-+</head>
-+<body lang="EN-US">
-+<h2>About This Content</h2>
-+
-+<p>June 5, 2006</p>	
-+<h3>License</h3>
-+
-+<p>The Eclipse Foundation makes available all content in this plug-in (&quot;Content&quot;).  
-+Unless otherwise indicated below, the Content is provided to you under the terms and conditions of the
-+Eclipse Public License Version 1.0 (&quot;EPL&quot;).  A copy of the EPL is available 
-+at <a href="http://www.eclipse.org/org/documents/epl-v10.php">http://www.eclipse.org/legal/epl-v10.html</a>.
-+For purposes of the EPL, &quot;Program&quot; will mean the Content.</p>
-+
-+<p>If you did not receive this Content directly from the Eclipse Foundation, the Content is 
-+being redistributed by another party (&quot;Redistributor&quot;) and different terms and conditions may
-+apply to your use of any object code in the Content.  Check the Redistributor&rsquo;s license 
-+that was provided with the Content.  If no such license exists, contact the Redistributor.  Unless otherwise
-+indicated below, the terms and conditions of the EPL still apply to any source code in the Content
-+and such source code may be obtained at <a href="http://www.eclipse.org/">http://www.eclipse.org</a>.</p>
-+
-+</body>
-+</html>
-\ No newline at end of file
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher/fragments/org.eclipse.equinox.launcher.gtk.freebsd.x86_64/build.properties	1969-12-31 19:00:00.000000000 -0500
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher/fragments/org.eclipse.equinox.launcher.gtk.freebsd.x86_64/build.properties	2009-12-23 15:14:12.410890937 -0500
-@@ -0,0 +1,7 @@
-+bin.includes = META-INF/,\
-+               eclipse_*.so,\
-+               launcher.gtk.freebsd.x86_64.properties,\
-+               about.html
-+               
-+customBuildCallbacks=customBuildCallbacks.xml
-+generateSourceBundle=false
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher/fragments/org.eclipse.equinox.launcher.gtk.freebsd.x86_64/customBuildCallbacks.xml	1969-12-31 19:00:00.000000000 -0500
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher/fragments/org.eclipse.equinox.launcher.gtk.freebsd.x86_64/customBuildCallbacks.xml	2009-12-23 15:14:12.410890937 -0500
-@@ -0,0 +1,109 @@
-+<!-- ===================================================================== -->
-+<!-- Custom targets called from a project's generated build.xml            -->
-+<!-- Set customBuildCallbacks=<path/to/this/file> in your build.properties.-->
-+<!-- ===================================================================== -->
-+<project name="Build specific targets and properties" default="noDefault">
-+
-+	<!-- ===================================================================== -->
-+	<!-- Default target                                                        -->
-+	<!-- ===================================================================== -->
-+	<target name="noDefault">
-+		<echo message="This file must be called with explicit targets" />
-+	</target>
-+	
-+	<!-- ===================================================================== -->
-+	<!-- Steps to do before the target build.jars                              -->
-+	<!-- Available parameters :                                                -->
-+	<!--   build.result.folder - folder to contain the build results           -->
-+	<!-- ===================================================================== -->
-+	<target name="pre.build.jars">
-+	</target>
-+
-+	<!-- ===================================================================== -->
-+	<!-- Steps to do after the target build.jars                               -->
-+	<!-- Available parameters :                                                -->
-+	<!--   build.result.folder - folder to contain the build results           -->
-+	<!-- ===================================================================== -->
-+	<target name="post.build.jars">	
-+	</target>
-+	
-+	<!-- ===================================================================== -->
-+	<!-- Steps to do before the target build.sources                           -->
-+	<!-- Available parameters :                                                -->
-+	<!--   build.result.folder - folder to contain the build results           -->
-+	<!-- ===================================================================== -->
-+	<target name="pre.build.sources">
-+	</target>
-+
-+	<!-- ===================================================================== -->
-+	<!-- Steps to do after the target build.sources                            -->
-+	<!-- Available parameters :                                                -->
-+	<!--   build.result.folder - folder to contain the build results           -->
-+	<!-- ===================================================================== -->
-+	<target name="post.build.sources">
-+	</target>
-+	
-+	<target name="pre.gather.bin.parts">
-+	</target>
-+	
-+	<!-- ===================================================================== -->
-+	<!-- Steps to do after the target gather.bin.parts                         -->
-+	<!-- Available parameters :                                                -->
-+	<!--   base.dir - root of the project                                      -->
-+	<!--   build.result.folder - folder containing the build results           -->
-+	<!--   target.folder - destination folder                                  -->
-+	<!-- ===================================================================== -->
-+	<target name="post.gather.bin.parts">
-+		<chmod perm="755" dir="${target.folder}" includes="eclipse_*" />
-+	</target>
-+	
-+	<!-- ===================================================================== -->
-+	<!-- Steps to do before the target gather.sources                          -->
-+	<!-- Available parameters :                                                -->
-+	<!--   destination.temp.folder - destination folder                        -->
-+	<!-- ===================================================================== -->
-+	<target name="pre.gather.sources">
-+	</target>
-+
-+	<!-- ===================================================================== -->
-+	<!-- Steps to do after the target gather.sources                           -->
-+	<!-- Available parameters :                                                -->
-+	<!--   destination.temp.folder - destination folder                        -->
-+	<!-- ===================================================================== -->
-+	<target name="post.gather.sources">
-+	</target>
-+
-+	<!-- ===================================================================== -->
-+	<!-- Steps to do before the target gather.logs                             -->
-+	<!-- Available parameters :                                                -->
-+	<!--   destination.temp.folder - destination folder                        -->
-+	<!-- ===================================================================== -->
-+	<target name="pre.gather.logs">        
-+	</target>
-+
-+	<!-- ===================================================================== -->
-+	<!-- Steps to do after the target gather.logs                              -->
-+	<!-- Available parameters :                                                -->
-+	<!--   destination.temp.folder - destination folder                        -->
-+	<!-- ===================================================================== -->
-+	<target name="post.gather.logs">       
-+	</target>
-+
-+	<!-- ===================================================================== -->
-+	<!-- Steps to do before the target clean                                   -->
-+	<!-- Available parameters :                                                -->
-+	<!--   destination.temp.folder - destination folder                        -->
-+	<!-- ===================================================================== -->
-+	<target name="pre.clean">              
-+	</target>
-+
-+	<!-- ===================================================================== -->
-+	<!-- Steps to do after the target clean                                    -->
-+	<!-- Available parameters :                                                -->
-+	<!--   plugin.destination - final destination of the build                 -->
-+	<!--   build.result.folder - results of the compilation                    -->
-+	<!--   temp.folder - temporary folder                                      -->
-+	<!-- ===================================================================== -->
-+	<target name="post.clean">             
-+	</target>
-+</project>
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher/fragments/org.eclipse.equinox.launcher.gtk.freebsd.x86_64/launcher.gtk.freebsd.x86_64.properties	1969-12-31 19:00:00.000000000 -0500
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher/fragments/org.eclipse.equinox.launcher.gtk.freebsd.x86_64/launcher.gtk.freebsd.x86_64.properties	2009-12-23 15:14:12.411895798 -0500
-@@ -0,0 +1,12 @@
-+###############################################################################
-+# Copyright (c) 2007 IBM Corporation and others.
-+# All rights reserved. This program and the accompanying materials
-+# are made available under the terms of the Eclipse Public License v1.0
-+# which accompanies this distribution, and is available at
-+# http://www.eclipse.org/legal/epl-v10.html
-+# 
-+# Contributors:
-+#     IBM Corporation - initial API and implementation
-+###############################################################################
-+pluginName = Equinox Launcher FreeBSD X86_64 Fragment
-+providerName = Eclipse.org - Equinox
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher/src/org/eclipse/equinox/internal/launcher/Constants.java	2009-01-27 16:24:13.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher/src/org/eclipse/equinox/internal/launcher/Constants.java	2009-12-23 15:14:12.419926302 -0500
 @@ -26,6 +26,7 @@
@@ -1236,31 +1062,6 @@ $FreeBSD$
  		return Constants.OS_UNKNOWN;
  	}
  
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher.gtk.freebsd.x86/.project	1969-12-31 19:00:00.000000000 -0500
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher.gtk.freebsd.x86/.project	2009-12-23 15:14:12.422939766 -0500
-@@ -0,0 +1,22 @@
-+<?xml version="1.0" encoding="UTF-8"?>
-+<projectDescription>
-+	<name>org.eclipse.equinox.launcher.gtk.freebsd.x86</name>
-+	<comment></comment>
-+	<projects>
-+	</projects>
-+	<buildSpec>
-+		<buildCommand>
-+			<name>org.eclipse.pde.ManifestBuilder</name>
-+			<arguments>
-+			</arguments>
-+		</buildCommand>
-+		<buildCommand>
-+			<name>org.eclipse.pde.SchemaBuilder</name>
-+			<arguments>
-+			</arguments>
-+		</buildCommand>
-+	</buildSpec>
-+	<natures>
-+		<nature>org.eclipse.pde.PluginNature</nature>
-+	</natures>
-+</projectDescription>
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher.gtk.freebsd.x86/META-INF/MANIFEST.MF	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher.gtk.freebsd.x86/META-INF/MANIFEST.MF	2009-12-23 15:14:12.422939766 -0500
 @@ -0,0 +1,10 @@
@@ -1269,8 +1070,8 @@ $FreeBSD$
 +Bundle-Name: %pluginName
 +Bundle-Vendor: %providerName
 +Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.freebsd.x86;singleton:=true
-+Bundle-Version: 1.1.100.qualifier
-+Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.1.0,1.3.0)"
++Bundle-Version: 1.1.200.qualifier
++Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.0.0,1.4.0)"
 +Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=freebsd) (osgi.arch=x86))
 +Bundle-Localization: launcher.gtk.freebsd.x86
 +Eclipse-BundleShape: dir
@@ -1308,7 +1109,7 @@ $FreeBSD$
 \ No newline at end of file
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher.gtk.freebsd.x86/build.properties	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher.gtk.freebsd.x86/build.properties	2009-12-23 15:14:12.423942951 -0500
-@@ -0,0 +1,7 @@
+@@ -0,0 +1,8 @@
 +bin.includes = META-INF/,\
 +               eclipse_*.so,\
 +               launcher.gtk.freebsd.x86.properties,\
@@ -1316,6 +1117,7 @@ $FreeBSD$
 +               
 +customBuildCallbacks=customBuildCallbacks.xml
 +generateSourceBundle=false
++binaryTag=v20120511-1552
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher.gtk.freebsd.x86/customBuildCallbacks.xml	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher.gtk.freebsd.x86/customBuildCallbacks.xml	2009-12-23 15:14:12.423942951 -0500
 @@ -0,0 +1,109 @@
@@ -1443,38 +1245,40 @@ $FreeBSD$
 +###############################################################################
 +pluginName = Equinox Launcher FreeBSD X86 Fragment
 +providerName = Eclipse.org - Equinox
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher.gtk.freebsd.x86_64/.project	1969-12-31 19:00:00.000000000 -0500
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher.gtk.freebsd.x86_64/.project	2009-12-23 15:14:12.424946415 -0500
-@@ -0,0 +1,22 @@
+--- build.orig/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.equinox.launcher.gtk.freebsd.x86/pom.xml
++++ build/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.equinox.launcher.gtk.freebsd.x86/pom.xml
+@@ -0,0 +1,31 @@
 +<?xml version="1.0" encoding="UTF-8"?>
-+<projectDescription>
-+	<name>org.eclipse.equinox.launcher.gtk.freebsd.x86_64</name>
-+	<comment></comment>
-+	<projects>
-+	</projects>
-+	<buildSpec>
-+		<buildCommand>
-+			<name>org.eclipse.pde.ManifestBuilder</name>
-+			<arguments>
-+			</arguments>
-+		</buildCommand>
-+		<buildCommand>
-+			<name>org.eclipse.pde.SchemaBuilder</name>
-+			<arguments>
-+			</arguments>
-+		</buildCommand>
-+	</buildSpec>
-+	<natures>
-+		<nature>org.eclipse.pde.PluginNature</nature>
-+	</natures>
-+</projectDescription>
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher.gtk.freebsd.x86_64/.settings/org.eclipse.pde.core.prefs	1969-12-31 19:00:00.000000000 -0500
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher.gtk.freebsd.x86_64/.settings/org.eclipse.pde.core.prefs	2009-12-23 15:14:12.424946415 -0500
-@@ -0,0 +1,4 @@
-+#Wed Dec 06 11:46:47 EST 2006
-+eclipse.preferences.version=1
-+pluginProject.extensions=false
-+resolve.requirebundle=false
++<!--
++  Copyright (c) 2012 Eclipse Foundation.
++  All rights reserved. This program and the accompanying materials
++  are made available under the terms of the Eclipse Distribution License v1.0
++  which accompanies this distribution, and is available at
++  http://www.eclipse.org/org/documents/edl-v10.php
++ 
++  Contributors:
++     Igor Fedorenko - initial implementation
++-->
++
++<project
++  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
++  xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
++  <modelVersion>4.0.0</modelVersion>
++  <parent>
++    <artifactId>launcher-binary-parent</artifactId>
++    <groupId>org.eclipse.equinox.framework</groupId>
++    <version>3.8.0-SNAPSHOT</version>
++    <relativePath>../../launcher-binary-parent</relativePath>
++  </parent>
++  <groupId>org.eclipse.equinox.framework</groupId>
++  <artifactId>org.eclipse.equinox.launcher.gtk.freebsd.x86</artifactId>
++  <version>1.1.200-SNAPSHOT</version>
++  <packaging>eclipse-plugin</packaging>
++
++  <properties>
++    <launcher-binary.version>1500</launcher-binary.version>
++  </properties>
++</project>
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher.gtk.freebsd.x86_64/META-INF/MANIFEST.MF	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher.gtk.freebsd.x86_64/META-INF/MANIFEST.MF	2009-12-23 15:14:12.425950437 -0500
 @@ -0,0 +1,10 @@
@@ -1483,8 +1287,8 @@ $FreeBSD$
 +Bundle-Name: %pluginName
 +Bundle-Vendor: %providerName
 +Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.freebsd.x86_64;singleton:=true
-+Bundle-Version: 1.1.100.qualifier
-+Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.1.0,1.3.0)"
++Bundle-Version: 1.1.200.qualifier
++Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.0.0,1.4.0)"
 +Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=freebsd) (osgi.arch=x86_64))
 +Bundle-Localization: launcher.gtk.freebsd.x86_64
 +Eclipse-BundleShape: dir
@@ -1522,7 +1326,7 @@ $FreeBSD$
 \ No newline at end of file
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher.gtk.freebsd.x86_64/build.properties	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher.gtk.freebsd.x86_64/build.properties	2009-12-23 15:14:12.425950437 -0500
-@@ -0,0 +1,7 @@
+@@ -0,0 +1,8 @@
 +bin.includes = META-INF/,\
 +               eclipse_*.so,\
 +               launcher.gtk.freebsd.x86_64.properties,\
@@ -1530,6 +1334,7 @@ $FreeBSD$
 +               
 +customBuildCallbacks=customBuildCallbacks.xml
 +generateSourceBundle=false
++binaryTag=v20120511-1552
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher.gtk.freebsd.x86_64/customBuildCallbacks.xml	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher.gtk.freebsd.x86_64/customBuildCallbacks.xml	2009-12-23 15:14:12.426954459 -0500
 @@ -0,0 +1,109 @@
@@ -1657,6 +1462,40 @@ $FreeBSD$
 +###############################################################################
 +pluginName = Equinox Launcher FreeBSD X86_64 Fragment
 +providerName = Eclipse.org - Equinox
+--- build.orig/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.equinox.launcher.gtk.freebsd.x86_64/pom.xml
++++ build/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.equinox.launcher.gtk.freebsd.x86_64/pom.xml
+@@ -0,0 +1,31 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<!--
++  Copyright (c) 2012 Eclipse Foundation.
++  All rights reserved. This program and the accompanying materials
++  are made available under the terms of the Eclipse Distribution License v1.0
++  which accompanies this distribution, and is available at
++  http://www.eclipse.org/org/documents/edl-v10.php
++ 
++  Contributors:
++     Igor Fedorenko - initial implementation
++-->
++
++<project
++  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
++  xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
++  <modelVersion>4.0.0</modelVersion>
++  <parent>
++    <artifactId>launcher-binary-parent</artifactId>
++    <groupId>org.eclipse.equinox.framework</groupId>
++    <version>3.8.0-SNAPSHOT</version>
++    <relativePath>../../launcher-binary-parent</relativePath>
++  </parent>
++  <groupId>org.eclipse.equinox.framework</groupId>
++  <artifactId>org.eclipse.equinox.launcher.gtk.freebsd.x86_64</artifactId>
++  <version>1.1.200-SNAPSHOT</version>
++  <packaging>eclipse-plugin</packaging>
++
++  <properties>
++    <launcher-binary.version>1500</launcher-binary.version>
++  </properties>
++</project>
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.equinox.p2.publisher.eclipse/src/org/eclipse/equinox/internal/p2/publisher/eclipse/BrandingIron.java	2009-05-20 00:10:51.000000000 -0400
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.equinox.p2.publisher.eclipse/src/org/eclipse/equinox/internal/p2/publisher/eclipse/BrandingIron.java	2009-12-23 15:14:12.440005914 -0500
 @@ -111,6 +111,8 @@
@@ -1999,169 +1838,6 @@ $FreeBSD$
  	<property name="assemble.org.eclipse.pde.build.container.feature.group.group.group" value="true" />
   	<target name="assemble.org.eclipse.pde.build.container.feature.group.group.group">
   		<ant antfile="${assembleScriptName}" dir="${buildDirectory}">			
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.pde.build/src/org/eclipse/pde/internal/build/BrandingIron.java	2009-08-19 15:25:06.000000000 -0400
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.pde.build/src/org/eclipse/pde/internal/build/BrandingIron.java	2009-12-23 15:14:12.471129495 -0500
-@@ -93,6 +93,8 @@
- 			brandAIX();
- 		else if ("hpux".equals(os)) //$NON-NLS-1$
- 			brandHPUX();
-+		else if ("freebsd".equals(os)) //$NON-NLS-1$
-+			brandFreeBSD();
- 		else
- 			renameLauncher();
- 	}
-@@ -224,6 +226,12 @@
- 		}
- 	}
- 
-+	private void brandFreeBSD() throws Exception {
-+		renameLauncher();
-+		if (brandIcons)
-+			Utils.copy(new File(icons[0]), new File(root, "icon.xpm")); //$NON-NLS-1$
-+	}
-+
- 	private void moveContents(File source, File target) {
- 		if (!source.exists())
- 			return;
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.pde.build/src/org/eclipse/pde/internal/build/ProductFile.java	2009-05-06 16:48:13.000000000 -0400
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.pde.build/src/org/eclipse/pde/internal/build/ProductFile.java	2009-12-23 15:14:12.472135194 -0500
-@@ -29,11 +29,13 @@
- 	private final static SAXParserFactory parserFactory = SAXParserFactory.newInstance();
- 
- 	private static final String PROGRAM_ARGS = "programArgs"; //$NON-NLS-1$
-+	private static final String PROGRAM_ARGS_FREEBSD = "programArgsFre"; //$NON-NLS-1$
- 	private static final String PROGRAM_ARGS_LINUX = "programArgsLin"; //$NON-NLS-1$
- 	private static final String PROGRAM_ARGS_MAC = "programArgsMac"; //$NON-NLS-1$
- 	private static final String PROGRAM_ARGS_SOLARIS = "programArgsSol"; //$NON-NLS-1$
- 	private static final String PROGRAM_ARGS_WIN = "programArgsWin"; //$NON-NLS-1$
- 	private static final String VM_ARGS = "vmArgs"; //$NON-NLS-1$
-+	private static final String VM_ARGS_FREEBSD = "vmArgsFre"; //$NON-NLS-1$
- 	private static final String VM_ARGS_LINUX = "vmArgsLin"; //$NON-NLS-1$
- 	private static final String VM_ARGS_MAC = "vmArgsMac"; //$NON-NLS-1$
- 	private static final String VM_ARGS_SOLARIS = "vmArgsSol"; //$NON-NLS-1$
-@@ -73,17 +75,19 @@
- 	private static final int STATE_PLUGINS = 4;
- 	private static final int STATE_FEATURES = 5;
- 	private static final int STATE_PROGRAM_ARGS = 6;
--	private static final int STATE_PROGRAM_ARGS_LINUX = 7;
--	private static final int STATE_PROGRAM_ARGS_MAC = 8;
--	private static final int STATE_PROGRAM_ARGS_SOLARIS = 9;
--	private static final int STATE_PROGRAM_ARGS_WIN = 10;
--	private static final int STATE_VM_ARGS = 11;
--	private static final int STATE_VM_ARGS_LINUX = 12;
--	private static final int STATE_VM_ARGS_MAC = 13;
--	private static final int STATE_VM_ARGS_SOLARIS = 14;
--	private static final int STATE_VM_ARGS_WIN = 15;
--	private static final int STATE_CONFIG_INI = 16;
--	private static final int STATE_CONFIGURATIONS = 17;
-+	private static final int STATE_PROGRAM_ARGS_FREEBSD = 7;
-+	private static final int STATE_PROGRAM_ARGS_LINUX = 8;
-+	private static final int STATE_PROGRAM_ARGS_MAC = 9;
-+	private static final int STATE_PROGRAM_ARGS_SOLARIS = 10;
-+	private static final int STATE_PROGRAM_ARGS_WIN = 11;
-+	private static final int STATE_VM_ARGS = 12;
-+	private static final int STATE_VM_ARGS_FREEBSD = 13;
-+	private static final int STATE_VM_ARGS_LINUX = 14;
-+	private static final int STATE_VM_ARGS_MAC = 15;
-+	private static final int STATE_VM_ARGS_SOLARIS = 16;
-+	private static final int STATE_VM_ARGS_WIN = 17;
-+	private static final int STATE_CONFIG_INI = 18;
-+	private static final int STATE_CONFIGURATIONS = 19;
- 
- 	private int state = STATE_START;
- 
-@@ -304,6 +308,8 @@
- 			key = VM_ARGS_MAC;
- 		} else if (os.equals(Platform.OS_SOLARIS)) {
- 			key = VM_ARGS_SOLARIS;
-+		} else if (os.equals(Platform.OS_FREEBSD)) {
-+			key = VM_ARGS_FREEBSD;
- 		}
- 
- 		String prefix = launcherArgs.getProperty(VM_ARGS);
-@@ -327,6 +333,8 @@
- 			key = PROGRAM_ARGS_MAC;
- 		} else if (os.equals(Platform.OS_SOLARIS)) {
- 			key = PROGRAM_ARGS_SOLARIS;
-+		} else if (os.equals(Platform.OS_FREEBSD)) {
-+			key = PROGRAM_ARGS_FREEBSD;
- 		}
- 
- 		String prefix = launcherArgs.getProperty(PROGRAM_ARGS);
-@@ -382,6 +390,8 @@
- 					processLinux(attributes);
- 				} else if (Platform.OS_MACOSX.equals(localName)) {
- 					processMac(attributes);
-+				} else if (Platform.OS_FREEBSD.equals(localName)) {
-+					processFreeBSD(attributes);
- 				}
- 				if ("ico".equals(localName)) { //$NON-NLS-1$
- 					processIco(attributes);
-@@ -393,6 +403,8 @@
- 			case STATE_LAUNCHER_ARGS :
- 				if (PROGRAM_ARGS.equals(localName)) {
- 					state = STATE_PROGRAM_ARGS;
-+				} else if (PROGRAM_ARGS_FREEBSD.equals(localName)) {
-+					state = STATE_PROGRAM_ARGS_FREEBSD;
- 				} else if (PROGRAM_ARGS_LINUX.equals(localName)) {
- 					state = STATE_PROGRAM_ARGS_LINUX;
- 				} else if (PROGRAM_ARGS_MAC.equals(localName)) {
-@@ -403,6 +415,8 @@
- 					state = STATE_PROGRAM_ARGS_WIN;
- 				} else if (VM_ARGS.equals(localName)) {
- 					state = STATE_VM_ARGS;
-+				} else if (VM_ARGS.equals(localName)) {
-+					state = STATE_VM_ARGS_FREEBSD;
- 				} else if (VM_ARGS_LINUX.equals(localName)) {
- 					state = STATE_VM_ARGS_LINUX;
- 				} else if (VM_ARGS_MAC.equals(localName)) {
-@@ -455,11 +469,13 @@
- 				break;
- 
- 			case STATE_PROGRAM_ARGS :
-+			case STATE_PROGRAM_ARGS_FREEBSD :
- 			case STATE_PROGRAM_ARGS_LINUX :
- 			case STATE_PROGRAM_ARGS_MAC :
- 			case STATE_PROGRAM_ARGS_SOLARIS :
- 			case STATE_PROGRAM_ARGS_WIN :
- 			case STATE_VM_ARGS :
-+			case STATE_VM_ARGS_FREEBSD :
- 			case STATE_VM_ARGS_LINUX :
- 			case STATE_VM_ARGS_MAC :
- 			case STATE_VM_ARGS_SOLARIS :
-@@ -481,6 +497,9 @@
- 			case STATE_PROGRAM_ARGS :
- 				addLaunchArgumentToMap(PROGRAM_ARGS, String.valueOf(ch, start, length));
- 				break;
-+			case STATE_PROGRAM_ARGS_FREEBSD :
-+				addLaunchArgumentToMap(PROGRAM_ARGS_FREEBSD, String.valueOf(ch, start, length));
-+				break;
- 			case STATE_PROGRAM_ARGS_LINUX :
- 				addLaunchArgumentToMap(PROGRAM_ARGS_LINUX, String.valueOf(ch, start, length));
- 				break;
-@@ -496,6 +515,9 @@
- 			case STATE_VM_ARGS :
- 				addLaunchArgumentToMap(VM_ARGS, String.valueOf(ch, start, length));
- 				break;
-+			case STATE_VM_ARGS_FREEBSD :
-+				addLaunchArgumentToMap(VM_ARGS_FREEBSD, String.valueOf(ch, start, length));
-+				break;
- 			case STATE_VM_ARGS_LINUX :
- 				addLaunchArgumentToMap(VM_ARGS_LINUX, String.valueOf(ch, start, length));
- 				break;
-@@ -622,6 +644,12 @@
- 		iconsMap.put(Platform.OS_WIN32, toArrayRemoveNulls(result));
- 	}
- 
-+	private void processFreeBSD(Attributes attributes) {
-+		String value = attributes.getValue("icon"); //$NON-NLS-1$
-+		if (value != null)
-+			iconsMap.put(Platform.OS_FREEBSD, new String[] {value});
-+	}
-+
- 	private void processLinux(Attributes attributes) {
- 		String value = attributes.getValue("icon"); //$NON-NLS-1$
- 		if (value != null)
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.pde.build/src/org/eclipse/pde/internal/build/Utils.java	2009-05-25 11:45:35.000000000 -0400
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.pde.build/src/org/eclipse/pde/internal/build/Utils.java	2009-12-23 15:14:12.473137540 -0500
 @@ -708,7 +708,7 @@
@@ -2368,6 +2044,66 @@ $FreeBSD$
  
  	void setProgramArguments(String args, int platform);
  
+--- build/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/product/ArgumentsInfo.java~	Fri Aug 24 14:45:20 2012
++++ build/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/product/ArgumentsInfo.java	Tue Aug 28 11:12:30 2012
+@@ -201,12 +201,14 @@
+ 	}
+ 
+ 	public void parse(Node node) {
++		(new Throwable()).printStackTrace();
+ 		NodeList list = node.getChildNodes();
+ 		for (int i = 0; i < list.getLength(); i++) {
+ 			Node child = list.item(i);
+ 			if (child.getNodeType() == Node.ELEMENT_NODE) {
+ 				if (child.getNodeName().equals(P_PROG_ARGS)) {
+ 					fProgramArgs = getText(child);
++					System.err.println(this.getClass().getName() + "#parse: fProgramArgs = " + fProgramArgs);
+ 				} else if (child.getNodeName().equals(P_PROG_ARGS_LIN)) {
+ 					fProgramArgsLin = getText(child);
+ 				} else if (child.getNodeName().equals(P_PROG_ARGS_MAC)) {
+@@ -215,8 +217,12 @@
+ 					fProgramArgsSol = getText(child);
+ 				} else if (child.getNodeName().equals(P_PROG_ARGS_WIN)) {
+ 					fProgramArgsWin = getText(child);
++				} else if (child.getNodeName().equals(P_PROG_ARGS_FRE)) {
++					fProgramArgsFre = getText(child);
++					System.err.println(this.getClass().getName() + "#parse: fProgramArgsFre = " + fProgramArgsFre);
+ 				} else if (child.getNodeName().equals(P_VM_ARGS)) {
+ 					fVMArgs = getText(child);
++					System.err.println(this.getClass().getName() + "#parse: fVMArgs = " + fVMArgs);
+ 				} else if (child.getNodeName().equals(P_VM_ARGS_LIN)) {
+ 					fVMArgsLin = getText(child);
+ 				} else if (child.getNodeName().equals(P_VM_ARGS_MAC)) {
+@@ -225,6 +231,9 @@
+ 					fVMArgsSol = getText(child);
+ 				} else if (child.getNodeName().equals(P_VM_ARGS_WIN)) {
+ 					fVMArgsWin = getText(child);
++				} else if (child.getNodeName().equals(P_VM_ARGS_FRE)) {
++					fVMArgsFre = getText(child);
++					System.err.println(this.getClass().getName() + "#parse: fVMArgsFre = " + fVMArgsFre);
+ 				}
+ 			}
+ 		}
+@@ -256,6 +260,9 @@
+ 		if (fProgramArgsWin.length() > 0) {
+ 			writer.println(indent + "   " + "<" + P_PROG_ARGS_WIN + ">" + getWritableString(fProgramArgsWin) + "</" + P_PROG_ARGS_WIN + ">"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+ 		}
++		if (fProgramArgsFre.length() > 0) {
++			writer.println(indent + "   " + "<" + P_PROG_ARGS_FRE + ">" + getWritableString(fProgramArgsFre) + "</" + P_PROG_ARGS_FRE + ">"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
++		}
+ 		if (fVMArgs.length() > 0) {
+ 			writer.println(indent + "   " + "<" + P_VM_ARGS + ">" + getWritableString(fVMArgs) + "</" + P_VM_ARGS + ">"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+ 		}
+@@ -271,6 +278,9 @@
+ 		if (fVMArgsWin.length() > 0) {
+ 			writer.println(indent + "   " + "<" + P_VM_ARGS_WIN + ">" + getWritableString(fVMArgsWin) + "</" + P_VM_ARGS_WIN + ">"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+ 		}
++		if (fVMArgsFre.length() > 0) {
++			writer.println(indent + "   " + "<" + P_VM_ARGS_FRE + ">" + getWritableString(fVMArgsFre) + "</" + P_VM_ARGS_FRE + ">"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
++		}
+ 		writer.println(indent + "</launcherArgs>"); //$NON-NLS-1$
+ 	}
+ 
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/iproduct/ILauncherInfo.java	2009-05-27 16:25:43.000000000 -0400
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/iproduct/ILauncherInfo.java	2009-12-23 15:14:12.493217711 -0500
 @@ -12,6 +12,8 @@
@@ -2474,6 +2210,41 @@ $FreeBSD$
  	private String fLinPath, fLinUse;
  	private String fMacPath, fMacUse;
  	private String fSolPath, fSolUse;
+@@ -81,6 +81,9 @@
+ 					} else if (child.getNodeName().equals(WIN)) {
+ 						fWinPath = getText(child);
+ 						fWinUse = fWinPath == null ? "default" : "custom"; //$NON-NLS-1$ //$NON-NLS-2$
++					} else if (child.getNodeName().equals(FRE)) {
++						fFrePath = getText(child);
++						fFreUse = fFrePath == null ? "default" : "custom"; //$NON-NLS-1$ //$NON-NLS-2$
+ 					}
+ 				}
+ 			}
+@@ -103,6 +106,10 @@
+ 					fWinPath = fWinPath == null ? fPath : null;
+ 					fWinUse = "custom"; //$NON-NLS-1$
+ 				}
++				if (fFreUse == null) {
++					fFrePath = fFrePath == null ? fPath : null;
++					fFreUse = "custom"; //$NON-NLS-1$
++				}
+ 				// null out things
+ 				fPath = null;
+ 				fUse = "default"; //$NON-NLS-1$
+@@ -162,6 +169,13 @@
+ 			writer.println("</" + WIN + ">"); //$NON-NLS-1$ //$NON-NLS-2$
+ 		}
+ 
++		if (fFrePath != null) {
++			writer.print(indent);
++			writer.print("   <" + FRE + ">"); //$NON-NLS-1$ //$NON-NLS-2$
++			writer.print(getWritableString(fFrePath.trim()));
++			writer.println("</" + FRE + ">"); //$NON-NLS-1$ //$NON-NLS-2$
++		}
++
+ 		writer.print(indent + "</configIni>"); //$NON-NLS-1$
+ 		writer.println();
+ 	}
 @@ -192,6 +194,11 @@
  			fSolUse = use;
  			if (isEditable())
@@ -2516,9 +2287,9 @@ $FreeBSD$
  		}
  		return null;
  	}
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/product/JREInfo.java	2008-03-08 16:54:45.000000000 -0500
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/product/JREInfo.java	2009-12-23 15:14:12.495225197 -0500
-@@ -22,12 +22,14 @@
+--- build/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/product/JREInfo.java.orig	Wed Jun 27 15:39:37 2012
++++ build/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/product/JREInfo.java	Fri Aug 17 15:20:49 2012
+@@ -22,17 +22,20 @@
  
  public class JREInfo extends ProductObject implements IJREInfo {
  
@@ -2533,7 +2304,13 @@ $FreeBSD$
  	private IPath fJVMLin;
  	private IPath fJVMMac;
  	private IPath fJVMSol;
-@@ -49,6 +51,8 @@
+ 	private IPath fJVMWin;
+ 
++	private boolean bIncludeFre;
+ 	private boolean bIncludeLin;
+ 	private boolean bIncludeMac;
+ 	private boolean bIncludeSol;
+@@ -54,6 +57,8 @@
  			return fJVMMac;
  		} else if (Platform.OS_SOLARIS.equals(os)) {
  			return fJVMSol;
@@ -2542,7 +2319,7 @@ $FreeBSD$
  		}
  		return null;
  	}
-@@ -77,6 +81,11 @@
+@@ -82,6 +87,11 @@
  			fJVMSol = jreContainerPath;
  			if (isEditable())
  				firePropertyChanged(JRE_SOL, old, fJVMSol);
@@ -2554,6 +2331,66 @@ $FreeBSD$
  		}
  	}
  
+@@ -118,6 +128,9 @@
+ 				} else if (child.getNodeName().equals(JRE_SOL)) {
+ 					fJVMSol = getPath(child);
+ 					bIncludeSol = include;
++				} else if (child.getNodeName().equals(JRE_FRE)) {
++					fJVMFre = getPath(child);
++					bIncludeFre = include;
+ 				} else if (child.getNodeName().equals(JRE_WIN)) {
+ 					fJVMWin = getPath(child);
+ 					bIncludeWin = include;
+@@ -166,6 +179,12 @@
+ 			writer.print(fJVMSol.toPortableString());
+ 			writer.println("</" + JRE_SOL + ">"); //$NON-NLS-1$ //$NON-NLS-2$
+ 		}
++		if (fJVMFre != null) {
++			writer.print(indent);
++			writer.print("   <" + JRE_FRE + " include=\"" + String.valueOf(bIncludeFre) + "\">"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
++			writer.print(fJVMFre.toPortableString());
++			writer.println("</" + JRE_FRE + ">"); //$NON-NLS-1$ //$NON-NLS-2$
++		}
+ 		if (fJVMWin != null) {
+ 			writer.print(indent);
+ 			writer.print("   <" + JRE_WIN + " include=\"" + String.valueOf(bIncludeWin) + "\">"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+@@ -184,6 +203,8 @@
+ 			return bIncludeMac;
+ 		} else if (Platform.OS_SOLARIS.equals(os)) {
+ 			return bIncludeSol;
++		} else if (Platform.OS_FREEBSD.equals(os)) {
++			return bIncludeFre;
+ 		}
+ 		return false;
+ 	}
+@@ -209,6 +230,11 @@
+ 			bIncludeSol = includeJRE;
+ 			if (isEditable())
+ 				firePropertyChanged(JRE_SOL, old, Boolean.valueOf(bIncludeSol));
++		} else if (Platform.OS_FREEBSD.equals(os)) {
++			Boolean old = Boolean.valueOf(bIncludeFre);
++			bIncludeFre = includeJRE;
++			if (isEditable())
++				firePropertyChanged(JRE_FRE, old, Boolean.valueOf(bIncludeFre));
+ 		}
+ 	}
+ 
+--- build/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.core.runtime.compatibility/src-boot/org/eclipse/core/boot/BootLoader.java~	2012-06-27 15:21:36.000000000 +0200
++++ build/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.core.runtime.compatibility/src-boot/org/eclipse/core/boot/BootLoader.java	2012-08-17 15:26:06.000000000 +0200
+@@ -94,6 +94,13 @@
+ 	public static final String OS_HPUX = "hpux";//$NON-NLS-1$
+ 
+ 	/**
++	 * Constant string (value "freebsd") indicating the platform is running on an
++	 * FreeBSD-based operating system.
++	 * @deprecated Replaced by {@link Platform#OS_FREEBSD}.
++	 */
++	public static final String OS_FREEBSD = "freebsd";//$NON-NLS-1$
++
++	/**
+ 	 * Constant string (value "qnx") indicating the platform is running on a
+ 	 * QNX-based operating system.
+ 	 * @deprecated Replaced by {@link Platform#OS_QNX}.
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/product/LauncherInfo.java	2009-05-27 16:25:26.000000000 -0400
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/product/LauncherInfo.java	2009-12-23 15:14:12.496229220 -0500
 @@ -74,7 +74,9 @@
@@ -2598,21 +2435,14 @@ $FreeBSD$
  }
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.pde.ui/src/org/eclipse/pde/internal/ui/PDEUIMessages.java	2009-05-11 17:05:18.000000000 -0400
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.pde.ui/src/org/eclipse/pde/internal/ui/PDEUIMessages.java	2009-12-23 15:14:12.508277211 -0500
-@@ -921,6 +921,7 @@
- 	public static String LauncherSection_32High;
- 	public static String LauncherSection_48Low;
+@@ -1002,6 +1002,7 @@
  	public static String LauncherSection_48High;
-+	public static String LauncherSection_freebsdLabel;
+ 	public static String LauncherSection_256High;
  	public static String LauncherSection_linuxLabel;
++	public static String LauncherSection_freebsdLabel;
  	public static String LauncherSection_large;
  	public static String LauncherSection_medium;
-@@ -2817,4 +2818,4 @@
- 
- 	public static String VersionDialog_text;
- 
--}
-\ No newline at end of file
-+}
+ 	public static String LauncherSection_small;
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.pde.ui/src/org/eclipse/pde/internal/ui/editor/product/ArgumentsSection.java	2009-05-27 16:38:19.000000000 -0400
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.pde.ui/src/org/eclipse/pde/internal/ui/editor/product/ArgumentsSection.java	2009-12-23 15:14:12.515304810 -0500
 @@ -34,6 +34,7 @@
@@ -2747,14 +2577,14 @@ $FreeBSD$
  		}
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.pde.ui/src/org/eclipse/pde/internal/ui/pderesources.properties	2009-07-14 17:13:10.000000000 -0400
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.pde.ui/src/org/eclipse/pde/internal/ui/pderesources.properties	2009-12-23 15:14:12.520324922 -0500
-@@ -582,6 +582,7 @@
- LauncherSection_32High=32x32 (32-bit):
- LauncherSection_48Low=48x48 (8-bit):
+@@ -621,6 +621,7 @@
  LauncherSection_48High=48x48 (32-bit):
-+LauncherSection_freebsdLabel=A single XPM icon is required:
+ LauncherSection_256High=256x256 (32-bit):
  LauncherSection_linuxLabel=A single XPM icon is required:
++LauncherSection_freebsdLabel=A single XPM icon is required:
  LauncherSection_large=Large:
  LauncherSection_medium=Medium:
+ LauncherSection_small=Small:
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.pde.ui/src/org/eclipse/pde/internal/ui/wizards/product/ProductIntroOperation.java	2009-03-06 17:52:06.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.pde.ui/src/org/eclipse/pde/internal/ui/wizards/product/ProductIntroOperation.java	2009-12-23 15:14:12.521328666 -0500
 @@ -128,7 +128,7 @@
@@ -3003,8 +2833,8 @@ $FreeBSD$
  	}
  	
  	/** OS Constants */
--	public static final boolean IsAIX, IsSunOS, IsLinux, IsHPUX;
-+	public static final boolean IsAIX, IsSunOS, IsLinux, IsHPUX, IsFreeBSD;
+-	public static final boolean IsAIX, IsSunOS, IsLinux, IsHPUX, BIG_ENDIAN;
++	public static final boolean IsAIX, IsSunOS, IsLinux, IsHPUX, IsFreeBSD, BIG_ENDIAN;
  	static {
  		
  		/* Initialize the OS flags and locale constants */
@@ -3019,40 +2849,9 @@ $FreeBSD$
 -		IsAIX = isAIX;  IsSunOS = isSunOS;  IsLinux = isLinux;  IsHPUX = isHPUX;
 +		if (osName.equals ("FreeBSD")) isFreeBSD = true;
 +		IsAIX = isAIX;  IsSunOS = isSunOS;  IsLinux = isLinux;  IsHPUX = isHPUX;  IsFreeBSD = isFreeBSD;
- 	}
- 
- 	/** Constants */
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.swt.gtk.freebsd.x86/.project	1969-12-31 19:00:00.000000000 -0500
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.swt.gtk.freebsd.x86/.project	2009-12-23 15:14:12.578555994 -0500
-@@ -0,0 +1,28 @@
-+<?xml version="1.0" encoding="UTF-8"?>
-+<projectDescription>
-+	<name>org.eclipse.swt.gtk.freebsd.x86</name>
-+	<comment></comment>
-+	<projects>
-+	</projects>
-+	<buildSpec>
-+		<buildCommand>
-+			<name>org.eclipse.pde.ManifestBuilder</name>
-+			<arguments>
-+			</arguments>
-+		</buildCommand>
-+		<buildCommand>
-+			<name>org.eclipse.pde.SchemaBuilder</name>
-+			<arguments>
-+			</arguments>
-+		</buildCommand>
-+		<buildCommand>
-+			<name>org.eclipse.pde.api.tools.apiAnalysisBuilder</name>
-+			<arguments>
-+			</arguments>
-+		</buildCommand>
-+	</buildSpec>
-+	<natures>
-+		<nature>org.eclipse.pde.PluginNature</nature>
-+		<nature>org.eclipse.pde.api.tools.apiAnalysisNature</nature>
-+	</natures>
-+</projectDescription>
+ 		
+ 		byte[] buffer = new byte[4];
+ 		int /*long*/ ptr = OS.malloc(4);
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.swt.gtk.freebsd.x86/META-INF/MANIFEST.MF	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.swt.gtk.freebsd.x86/META-INF/MANIFEST.MF	2009-12-23 15:14:12.578555994 -0500
 @@ -0,0 +1,19 @@
@@ -3061,7 +2860,7 @@ $FreeBSD$
 +Bundle-Name: %fragmentName
 +Bundle-Vendor: %providerName
 +Bundle-SymbolicName: org.eclipse.swt.gtk.freebsd.x86; singleton:=true
-+Bundle-Version: 3.7.1.qualifier
++Bundle-Version: 3.100.0.qualifier
 +Bundle-ManifestVersion: 2
 +Bundle-Localization: fragment
 +Export-Package: 
@@ -4885,7 +4684,7 @@ $FreeBSD$
 +	<property name="targets" value="make_mozilla make_xulrunner make_xpcominit install"/>
 +
 +	<!-- These properties are used by eclipse when exporting as Deployable plugin and fragments -->
-+	<property name="version.suffix" value="3.7.1" />
++	<property name="version.suffix" value="3.100.0" />
 +
 +	<condition property="plugindir" value="../../../eclipse.platform.swt/bundles/org.eclipse.swt" else="${buildDirectory}/plugins/org.eclipse.swt">
 +		<available file="../../../eclipse.platform.swt/bundles/org.eclipse.swt" type="dir"/>
@@ -4908,37 +4707,6 @@ $FreeBSD$
 +###############################################################################
 +fragmentName = Standard Widget Toolkit for GTK 2.0
 +providerName = Eclipse.org
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.swt.gtk.freebsd.x86_64/.project	1969-12-31 19:00:00.000000000 -0500
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.swt.gtk.freebsd.x86_64/.project	2009-12-23 15:14:12.578555994 -0500
-@@ -0,0 +1,28 @@
-+<?xml version="1.0" encoding="UTF-8"?>
-+<projectDescription>
-+	<name>org.eclipse.swt.gtk.freebsd.x86_64</name>
-+	<comment></comment>
-+	<projects>
-+	</projects>
-+	<buildSpec>
-+		<buildCommand>
-+			<name>org.eclipse.pde.ManifestBuilder</name>
-+			<arguments>
-+			</arguments>
-+		</buildCommand>
-+		<buildCommand>
-+			<name>org.eclipse.pde.SchemaBuilder</name>
-+			<arguments>
-+			</arguments>
-+		</buildCommand>
-+		<buildCommand>
-+			<name>org.eclipse.pde.api.tools.apiAnalysisBuilder</name>
-+			<arguments>
-+			</arguments>
-+		</buildCommand>
-+	</buildSpec>
-+	<natures>
-+		<nature>org.eclipse.pde.PluginNature</nature>
-+		<nature>org.eclipse.pde.api.tools.apiAnalysisNature</nature>
-+	</natures>
-+</projectDescription>
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.swt.gtk.freebsd.x86_64/META-INF/MANIFEST.MF	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.swt.gtk.freebsd.x86_64/META-INF/MANIFEST.MF	2009-12-23 15:14:12.584579570 -0500
 @@ -0,0 +1,19 @@
@@ -4947,7 +4715,7 @@ $FreeBSD$
 +Bundle-Name: %fragmentName
 +Bundle-Vendor: %providerName
 +Bundle-SymbolicName: org.eclipse.swt.gtk.freebsd.x86_64; singleton:=true
-+Bundle-Version: 3.7.1.qualifier
++Bundle-Version: 3.100.0.qualifier
 +Bundle-ManifestVersion: 2
 +Bundle-Localization: fragment
 +Export-Package: 
@@ -6771,7 +6539,7 @@ $FreeBSD$
 +	<property name="targets" value="make_mozilla make_xulrunner make_xpcominit install"/>
 +
 +	<!-- These properties are used by eclipse when exporting as Deployable plugin and fragments -->
-+	<property name="version.suffix" value="3.7.1" />
++	<property name="version.suffix" value="3.100.0" />
 +
 +	<condition property="plugindir" value="../../../eclipse.platform.swt/bundles/org.eclipse.swt" else="${buildDirectory}/plugins/org.eclipse.swt">
 +		<available file="../../../eclipse.platform.swt/bundles/org.eclipse.swt" type="dir"/>
@@ -6837,57 +6605,6 @@ $FreeBSD$
  					.equals(Platform.getOS());
  	private static FragmentEntry[] noFragments = new FragmentEntry[0];
  	private static Map table;
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.update.core.freebsd/.classpath	1969-12-31 19:00:00.000000000 -0500
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.update.core.freebsd/.classpath	2009-12-23 15:14:12.607671250 -0500
-@@ -0,0 +1,7 @@
-+<?xml version="1.0" encoding="UTF-8"?>
-+<classpath>
-+	<classpathentry kind="src" path="src"/>
-+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
-+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-+	<classpathentry kind="output" path="bin"/>
-+</classpath>
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.update.core.freebsd/.cvsignore	1969-12-31 19:00:00.000000000 -0500
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.update.core.freebsd/.cvsignore	2009-12-23 15:14:12.607671250 -0500
-@@ -0,0 +1 @@
-+bin
-\ No newline at end of file
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.update.core.freebsd/.project	1969-12-31 19:00:00.000000000 -0500
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.update.core.freebsd/.project	2009-12-23 15:14:12.608675273 -0500
-@@ -0,0 +1,33 @@
-+<?xml version="1.0" encoding="UTF-8"?>
-+<projectDescription>
-+	<name>org.eclipse.update.core.linux</name>
-+	<comment></comment>
-+	<projects>
-+		<project>org.eclipse.core.boot</project>
-+		<project>org.eclipse.core.runtime</project>
-+		<project>org.eclipse.core.runtime.compatibility</project>
-+		<project>org.eclipse.update.configurator</project>
-+		<project>org.eclipse.update.core</project>
-+	</projects>
-+	<buildSpec>
-+		<buildCommand>
-+			<name>org.eclipse.jdt.core.javabuilder</name>
-+			<arguments>
-+			</arguments>
-+		</buildCommand>
-+		<buildCommand>
-+			<name>org.eclipse.pde.ManifestBuilder</name>
-+			<arguments>
-+			</arguments>
-+		</buildCommand>
-+		<buildCommand>
-+			<name>org.eclipse.pde.SchemaBuilder</name>
-+			<arguments>
-+			</arguments>
-+		</buildCommand>
-+	</buildSpec>
-+	<natures>
-+		<nature>org.eclipse.jdt.core.javanature</nature>
-+		<nature>org.eclipse.pde.PluginNature</nature>
-+	</natures>
-+</projectDescription>
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.update.core.freebsd/META-INF/MANIFEST.MF	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.update.core.freebsd/META-INF/MANIFEST.MF	2009-12-23 15:14:12.608675273 -0500
 @@ -0,0 +1,9 @@
@@ -6895,7 +6612,7 @@ $FreeBSD$
 +Bundle-ManifestVersion: 2
 +Bundle-Name: %fragmentNameFreeBSD
 +Bundle-SymbolicName: org.eclipse.update.core.freebsd
-+Bundle-Version: 3.2.100.qualifier
++Bundle-Version: 3.2.300.qualifier
 +Bundle-Vendor: %providerName
 +Fragment-Host: org.eclipse.update.core;bundle-version="[3.0.0,4.0.0)"
 +Bundle-Localization: plugin
@@ -6951,78 +6668,55 @@ $FreeBSD$
 +               META-INF/
 +src.includes = src/,\
 +               about.html
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.update.core.freebsd/src/build.xml	1969-12-31 19:00:00.000000000 -0500
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.update.core.freebsd/src/build.xml	2009-12-23 15:14:12.609679016 -0500
-@@ -0,0 +1,70 @@
+--- build.orig/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.update.core.freebsd/pom.xml
++++ build/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.update.core.freebsd/pom.xml
+@@ -0,0 +1,47 @@
 +<?xml version="1.0" encoding="UTF-8"?>
-+<project name="buildlibrary" default="run" basedir="."> 
-+  
-+  <!-- The properties ${eclipse-home} ${jdk-path} should be passed into this script -->
-+  <!-- Set a meaningful default value for when it is not. -->
-+  <property name="eclipse-home" value="${basedir}/../.."/>
-+  <property name="jdk-path" value="${java.home}"/>
-+  <property name="installArch" value="x86" />
-+  <property name="destination" value="${eclipse-home}/org.eclipse.update.core.freebsd/os/freebsd/${installArch}/"/>
-+  <property name="obj-path" value="${eclipse-home}/org.eclipse.update.core.freebsd/src/"/>
-+  <property name="src-path" value="${eclipse-home}/org.eclipse.update.core.freebsd/src/"/>  
-+  
-+  <!-- sets the properties -->
-+  <property name="library-name" value="libupdate"/>  
-+  <property name="library-platform" value="so"/>    
-+  <property name="library-file" value="${library-name}.${library-platform}"/>
-+  
-+  <!-- This target holds all initialization code that needs to be done for -->
-+  <!-- all tests that are to be run. Initialization for individual tests -->
-+  <!-- should be done within the body of the suite target. -->
-+  <target name="init">
-+    <tstamp/>
-+    <delete>
-+      <fileset dir="${obj-path}" includes="${library-file}"/>
-+      <fileset dir="${obj-path}" includes="${library-name}.o"/>
-+    </delete>
-+  </target>
-+  
-+  <!-- This target holds code to cleanup the testing environment after -->
-+  <!-- after all of the tests have been run. You can use this target to -->
-+  <!-- delete temporary files that have been created. -->
-+  <target name="cleanup">
-+      <delete>
-+      <fileset dir="${obj-path}" includes="${library-file}"/>
-+      <fileset dir="${obj-path}" includes="${library-name}.o"/>
-+    </delete>
-+  </target>
-+  
-+  
-+  <!-- This target runs the build. -->
-+  <target name="run" depends="init,build,cleanup">
-+  </target>
-+  
-+  <!-- This target build the library -->
-+  <target name="build">
-+    <echo message="Building ${library-file}"/>
++<!--
++  Copyright (c) 2012 Eclipse Foundation.
++  All rights reserved. This program and the accompanying materials
++  are made available under the terms of the Eclipse Distribution License v1.0
++  which accompanies this distribution, and is available at
++  http://www.eclipse.org/org/documents/edl-v10.php
++ 
++  Contributors:
++     Igor Fedorenko - initial implementation
++-->
 +
-+    <property name="header-path" value="${jdk-path}/../include"/>
-+    <property name="header-freebsd-path" value="${header-path}/freebsd" />
++<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
++    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
++  <modelVersion>4.0.0</modelVersion>
++  <parent>
++    <artifactId>eclipse.platform</artifactId>
++    <groupId>org.eclipse.platform</groupId>
++    <version>3.8.0-SNAPSHOT</version>
++    <relativePath>../../</relativePath>
++  </parent>
++  <groupId>org.eclipse.platform</groupId>
++  <artifactId>org.eclipse.update.core.freebsd</artifactId>
++  <version>3.2.300-SNAPSHOT</version>
++  <packaging>eclipse-plugin</packaging>
 +
-+	<echo message="gcc -o  ${library-file} -shared -I${src-path} -I${header-freebsd-path} -fPIC ${library-file}"/>
-+
-+    <apply executable="gcc" dest="${eclipse-home}/" parallel="false">
-+      <arg value="-o"/>
-+      <arg value="${library-file}"/>
-+      <arg value="-shared"/>
-+      <arg value="-I${src-path}"/>
-+      <arg value="-I${header-path}"/>      
-+      <arg value="-I${header-freebsd-path}"/>
-+      <arg value="-fPIC"/>
-+	  <srcfile/>
-+      <fileset dir="${src-path}" includes="*.c"/>
-+      <mapper type="glob" from="*.c" to="*.o"/>
-+    </apply>
-+    
-+	<move file="${library-file}" todir="${destination}"/>
-+  </target>
-+  
-+  
++  <build>
++    <plugins>
++      <!-- tycho is not able to automatically determine os/ws/arch of this bundle -->
++      <plugin>
++        <groupId>org.eclipse.tycho</groupId>
++        <artifactId>target-platform-configuration</artifactId>
++        <version>${tycho.version}</version>
++        <configuration>
++          <resolver>p2</resolver>
++          <environments>
++            <environment>
++              <os>freebsd</os>
++              <ws>gtk</ws>
++              <arch>x86</arch>
++            </environment>
++          </environments>
++        </configuration>
++      </plugin>
++    </plugins>
++  </build>
 +</project>
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.update.core.freebsd/src/update.c	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.update.core.freebsd/src/update.c	2009-12-23 15:14:12.610683039 -0500
@@ -7271,6 +6965,79 @@ $FreeBSD$
 +
 +#endif
 +#endif
+--- build.orig/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.update.core.freebsd/src/build.xml
++++ build/eclipse-4.2.0-I20120608-1400-src/plugins/org.eclipse.update.core.freebsd/src/build.xml
+@@ -0,0 +25,70 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project name="buildlibrary" default="run" basedir="."> 
++  
++  <!-- The properties ${eclipse-home} ${jdk-path} should be passed into this script -->
++  <!-- Set a meaningful default value for when it is not. -->
++  <property name="eclipse-home" value="${basedir}/../.."/>
++  <property name="jdk-path" value="${java.home}"/>
++  <property name="installArch" value="x86" />
++  <property name="destination" value="${eclipse-home}/org.eclipse.update.core.freebsd/os/freebsd/${installArch}/"/>
++  <property name="obj-path" value="${eclipse-home}/org.eclipse.update.core.freebsd/src/"/>
++  <property name="src-path" value="${eclipse-home}/org.eclipse.update.core.freebsd/src/"/>  
++  
++  <!-- sets the properties -->
++  <property name="library-name" value="libupdate"/>  
++  <property name="library-platform" value="so"/>    
++  <property name="library-file" value="${library-name}.${library-platform}"/>
++  
++  <!-- This target holds all initialization code that needs to be done for -->
++  <!-- all tests that are to be run. Initialization for individual tests -->
++  <!-- should be done within the body of the suite target. -->
++  <target name="init">
++    <tstamp/>
++    <delete>
++      <fileset dir="${obj-path}" includes="${library-file}"/>
++      <fileset dir="${obj-path}" includes="${library-name}.o"/>
++    </delete>
++  </target>
++  
++  <!-- This target holds code to cleanup the testing environment after -->
++  <!-- after all of the tests have been run. You can use this target to -->
++  <!-- delete temporary files that have been created. -->
++  <target name="cleanup">
++      <delete>
++      <fileset dir="${obj-path}" includes="${library-file}"/>
++      <fileset dir="${obj-path}" includes="${library-name}.o"/>
++    </delete>
++  </target>
++  
++  
++  <!-- This target runs the build. -->
++  <target name="run" depends="init,build,cleanup">
++  </target>
++  
++  <!-- This target build the library -->
++  <target name="build">
++    <echo message="Building ${library-file}"/>
++
++    <property name="header-path" value="${jdk-path}/../include"/>
++    <property name="header-freebsd-path" value="${header-path}/freebsd" />
++
++	<echo message="gcc -o  ${library-file} -shared -I${src-path} -I${header-freebsd-path} -fPIC ${library-file}"/>
++
++    <apply executable="gcc" dest="${eclipse-home}/" parallel="false">
++      <arg value="-o"/>
++      <arg value="${library-file}"/>
++      <arg value="-shared"/>
++      <arg value="-I${src-path}"/>
++      <arg value="-I${header-path}"/>      
++      <arg value="-I${header-freebsd-path}"/>
++      <arg value="-fPIC"/>
++	  <srcfile/>
++      <fileset dir="${src-path}" includes="*.c"/>
++      <mapper type="glob" from="*.c" to="*.o"/>
++    </apply>
++    
++	<move file="${library-file}" todir="${destination}"/>
++  </target>
++  
++  
++</project>
 --- build/eclipse-3.6.1-src/plugins/org.eclipse.equinox.p2.metadata/src/org/eclipse/equinox/internal/p2/metadata/expression/CompoundIterator.java~	Fri Feb 19 13:12:49 2010
 +++ build/eclipse-3.6.1-src/plugins/org.eclipse.equinox.p2.metadata/src/org/eclipse/equinox/internal/p2/metadata/expression/CompoundIterator.java	Wed Oct 20 15:55:11 2010
 @@ -25,7 +25,7 @@
@@ -7343,70 +7110,50 @@ $FreeBSD$
 +}
 --- build/eclipse-3.6.1-src/pluginVersions.properties~	Fri Oct  1 17:18:03 2010
 +++ build/eclipse-3.6.1-src/pluginVersions.properties	Wed Oct 20 20:19:42 2010
-@@ -34,6 +34,7 @@
- org.eclipse.equinox.launcher.motif.hpux.ia64_32,0.0.0=v20110502
- org.eclipse.equinox.http,0.0.0=v20110413
- org.eclipse.swt.gtk.linux.x86_64,0.0.0=v3738a
-+org.eclipse.swt.gtk.freebsd.x86_64,0.0.0=v3738a
- org.eclipse.equinox.p2.ui.admin,0.0.0=v20110502-1955
- org.eclipse.equinox.p2.publisher.eclipse,0.0.0=v20110511
- org.eclipse.equinox.weaving.caching.j9,0.0.0=v20110502
-@@ -52,6 +52,7 @@
- org.eclipse.ui.workbench.texteditor,0.0.0=v20110505-0800
- org.eclipse.ui.examples.multipageeditor,0.0.0=I20110413-1600
- org.eclipse.core.filesystem.linux.x86,0.0.0=v20110423-0524
-+org.eclipse.core.filesystem.freebsd.x86,0.0.0=v20110423-0524
- org.eclipse.equinox.p2.ui.discovery,0.0.0=v20110502-1955
- org.eclipse.ui.examples.javaeditor,0.0.0=v20110524-0800
- org.eclipse.ant.core,0.0.0=v20110511
-@@ -93,6 +94,7 @@
- org.eclipse.core.runtime,0.0.0=v20110110
- org.eclipse.core.resources.win32.x86,0.0.0=v20110423-0524
- org.eclipse.equinox.launcher.gtk.linux.x86_64,0.0.0=v20110505
-+org.eclipse.equinox.launcher.gtk.freebsd.x86_64,0.0.0=v20110505
- org.eclipse.help,0.0.0=v20110426
- org.eclipse.pde.api.tools.ee.j2se15,0.0.0=v20110401-1030
- org.junit4,0.0.0=v20100525
-@@ -135,6 +137,7 @@
- org.eclipse.equinox.p2.ui.importexport,0.0.0=v20110511
- org.eclipse.pde.api.tools.ee.jre11,0.0.0=v20110401-1030
- org.eclipse.core.net.linux.x86_64,0.0.0=I20110331-0827
-+org.eclipse.core.net.freebsd.x86_64,0.0.0=I20110331-0827
- org.eclipse.equinox.jsp.jasper,0.0.0=v20110502
- org.eclipse.pde.api.tools.ee.j2se14,0.0.0=v20110401-1030
- org.eclipse.equinox.p2.ui,0.0.0=v20110601
-@@ -158,6 +161,7 @@
- org.eclipse.swt.gtk.solaris.x86,0.0.0=v3738a
- org.eclipse.pde.ds.ui,0.0.0=v20110516
- org.eclipse.core.net.linux.x86,0.0.0=I20110419-0800
-+org.eclipse.core.net.freebsd.x86,0.0.0=I20110419-0800
- org.eclipse.equinox.p2.console,0.0.0=v20110502-1955
- org.eclipse.equinox.http.jetty,0.0.0=v20110502
- org.eclipse.swt.examples.browser.demos,0.0.0=v3738a
-@@ -175,6 +179,7 @@
- org.eclipse.equinox.launcher.win32.win32.ia64,0.0.0=v20110502
- org.eclipse.swt.examples.browser,0.0.0=v3738a
- org.eclipse.core.filesystem.linux.x86_64,0.0.0=v20110423-0524
-+org.eclipse.core.filesystem.freebsd.x86_64,0.0.0=v20110423-0524
- org.eclipse.equinox.event,0.0.0=v20110502
- org.eclipse.ui.ide,0.0.0=v20110809-1737
- org.eclipse.ui.views.log,0.0.0=v20110404
-@@ -185,6 +190,7 @@
- org.eclipse.equinox.ds,0.0.0=R37x_v20110701
- org.eclipse.equinox.launcher.win32.win32.x86_64,0.0.0=v20110502
- org.eclipse.equinox.launcher.gtk.linux.x86,0.0.0=v20110505
-+org.eclipse.equinox.launcher.gtk.freebsd.x86,0.0.0=v20110505
- org.eclipse.update.core.linux,0.0.0=v20100512
- org.eclipse.core.databinding.property,0.0.0=I20110222-0800
- org.eclipse.ui.examples.propertysheet,0.0.0=I20110413-1600
-@@ -246,6 +247,7 @@
- org.eclipse.swt.examples,0.0.0=v3738a
- org.eclipse.cvs,0.0.0=v20110505-0800
- org.eclipse.swt.gtk.linux.x86,0.0.0=v3738a
-+org.eclipse.swt.gtk.freebsd.x86,0.0.0=v3738a
- org.eclipse.equinox.log,0.0.0=v20110502
- org.eclipse.equinox.jmx.client,0.0.0=v20100503
- org.eclipse.ui.win32,0.0.0=I20100509-0800
+@@ -106,6 +106,8 @@
+ org.eclipse.equinox.launcher.gtk.linux.s390x,0.0.0=v20120522-1822
+ org.eclipse.equinox.launcher.gtk.solaris.x86,0.0.0=v20120522-1813
+ org.eclipse.equinox.launcher.motif.solaris.sparc,0.0.0=v20120522-1813
++org.eclipse.equinox.launcher.gtk.freebsd.x86,0.0.0=v20120522-1813
++org.eclipse.equinox.launcher.gtk.freebsd.x86_64,0.0.0=v20120522-1813
+ org.eclipse.core.runtime,0.0.0=v20120521-2346
+ org.eclipse.core.contenttype,0.0.0=v20120523-2004
+ org.eclipse.core.jobs,0.0.0=v20120521-2346
+@@ -122,6 +124,8 @@
+ org.eclipse.core.filesystem.linux.x86_64,0.0.0=v20120522-1137
+ org.eclipse.core.filesystem.solaris.sparc,0.0.0=v20120522-1137
+ org.eclipse.core.filesystem.aix.ppc,0.0.0=v20110423-0524
++org.eclipse.core.filesystem.freebsd.x86,0.0.0=v20120522-1137
++org.eclipse.core.filesystem.freebsd.x86_64,0.0.0=v20120522-1137
+ org.eclipse.core.boot,0.0.0=v20120523-2004
+ org.eclipse.core.runtime.compatibility,0.0.0=v20120521-2346
+ org.eclipse.core.runtime.compatibility.auth,0.0.0=v20120523-2004
+@@ -306,6 +310,8 @@
+ org.eclipse.swt.win32.win32.ia64,0.0.0=v4233d
+ org.eclipse.swt.gtk.linux.s390,0.0.0=v4233d
+ org.eclipse.swt.gtk.linux.s390x,0.0.0=v4233d
++org.eclipse.swt.gtk.freebsd.x86,0.0.0=v4233d
++org.eclipse.swt.gtk.freebsd.x86_64,0.0.0=v4233d
+ org.eclipse.swt.examples,0.0.0=v4233d
+ org.eclipse.swt.examples.browser,0.0.0=v4233d
+ org.eclipse.swt.examples.browser.demos,0.0.0=v4233d
+@@ -330,6 +336,8 @@
+ org.eclipse.core.net.linux.x86,0.0.0=v20120522-1148
+ org.eclipse.core.net.linux.x86_64,0.0.0=v20120522-1148
+ org.eclipse.core.net.win32.x86_64,0.0.0=v20120522-1148
++org.eclipse.core.net.freebsd.x86,0.0.0=v20120522-1148
++org.eclipse.core.net.freebsd.x86_64,0.0.0=v20120522-1148
+ org.eclipse.ant.optional.junit,0.0.0=v20120530-1214
+ org.eclipse.text,0.0.0=v20120523-1310
+ org.eclipse.jface.text,0.0.0=v20120531-0600
+@@ -372,6 +380,7 @@
+ org.eclipse.update.ui,0.0.0=v20120523-1752
+ org.eclipse.update.core.win32,0.0.0=v20120530-1204
+ org.eclipse.update.core.linux,0.0.0=v20120530-1204
++org.eclipse.update.core.freebsd,0.0.0=v20120530-1204
+ org.eclipse.help,0.0.0=v20120521-2344
+ org.eclipse.help.appserver,0.0.0=v20120521-2344
+ org.eclipse.help.base,0.0.0=v20120521-2344
 --- build/eclipse-3.7.0-src/features/org.eclipse.equinox.executable/feature.xml~	Fri Feb 18 17:56:16 2011
 +++ build/eclipse-3.7.0-src/features/org.eclipse.equinox.executable/feature.xml	Thu Sep 15 11:03:18 2011
 @@ -131,6 +131,26 @@
