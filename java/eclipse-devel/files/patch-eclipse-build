@@ -2,7 +2,16 @@ $FreeBSD$
 
 --- eclipse-build-0.5.0.orig/build.properties	2009-09-30 14:07:21.000000000 -0400
 +++ eclipse-build-0.5.0/build.properties	2009-12-23 16:23:06.355139641 -0500
-@@ -28,7 +28,7 @@
+@@ -11,7 +11,7 @@
+ skipFetch=true
+ individualSourceBundles=true
+ ws=gtk
+-os=linux
++os=freebsd
+ includeLaunchers=true
+ runPackager=true
+ groupConfigurations=true
+@@ -27,7 +27,7 @@
  collectingFolder=eclipse
  archivePrefix=eclipse
  generateFeatureVersionSuffix=true
@@ -53,7 +62,7 @@ $FreeBSD$
 +CDC-1.1/PersonalJava-1.1=%%BOOTCLASSPATH%%
 --- eclipse-build-0.5.0.orig/build.xml	2009-12-23 16:22:44.090824173 -0500
 +++ eclipse-build-0.5.0/build.xml	2009-12-23 16:23:06.357147407 -0500
-@@ -118,11 +118,11 @@
+@@ -121,11 +121,11 @@
  
  	<target name="setLibDir" depends="setLib64Dir">
  		<property name="libDir" value="lib" />
@@ -66,8 +75,8 @@ $FreeBSD$
 +		<echo message="Installation directory will be ${destDir}/${prefix}/${libDir}/%%PORTNAME%%" />
  	</target>
  
- 	<property name="doTests" value="true" />
-@@ -167,8 +167,7 @@
+ 	<target name="bootstrap" unless="bootstrapped">
+@@ -180,8 +180,7 @@
  	<target name="copySource" unless="sdkSourcePresent">
  		<echo message="Copy SDK source (cp -rd --not-target-directory eclipse ${buildDirectory})" />
  		<exec executable="cp" failonerror="true">
@@ -77,111 +86,107 @@ $FreeBSD$
  			<arg value="eclipse" />
  			<arg value="${buildDirectory}" />
  		</exec>
-@@ -309,12 +308,18 @@
- 		<!--
- 		<patch patchfile="${basedir}/patches/eclipse-swt-buildagainstxulrunner.patch" dir="${buildDirectory}" strip="1" />
- 		-->
+@@ -365,32 +364,38 @@
+ 
+ 	<target name="applyPatches" depends="insertBuildId" unless="patch.complete">
+ 		
+-		<patch patchfile="${basedir}/patches/stableUserHome.patch" dir="${buildDirectory}/plugins" strip="1" backups="true"/>
+-		<patch patchfile="${basedir}/patches/doNotRunAsRoot.patch" dir="${buildDirectory}/plugins" strip="1" backups="true"/>
+-		<patch patchfile="${basedir}/patches/pickUpRenamedJars.patch" dir="${buildDirectory}/plugins" strip="1" backups="true"/>
+-		<patch patchfile="${basedir}/patches/populateUpdateSites.patch" dir="${buildDirectory}/plugins" strip="2" backups="true"/>
+-		<patch patchfile="${basedir}/patches/eclipse-p2-uninstall-removed-content.patch" dir="${buildDirectory}/plugins" strip="2" backups="true"/>
++		<patch patchfile="${basedir}/patches/stableUserHome.patch" dir="${buildDirectory}/plugins" strip="1"/>
++		<patch patchfile="${basedir}/patches/doNotRunAsRoot.patch" dir="${buildDirectory}/plugins" strip="1"/>
++		<patch patchfile="${basedir}/patches/pickUpRenamedJars.patch" dir="${buildDirectory}/plugins" strip="1"/>
++		<patch patchfile="${basedir}/patches/populateUpdateSites.patch" dir="${buildDirectory}/plugins" strip="2"/>
++		<patch patchfile="${basedir}/patches/eclipse-p2-uninstall-removed-content.patch" dir="${buildDirectory}/plugins" strip="2"/>
+ 
+ 		<!-- eclipse-build-only patches -->
+ 		
+ 		<patch patchfile="${basedir}/patches/e4-remove-w3c-smil-and-use-geronimo.patch" dir="${buildDirectory}" strip="0" reverse="false"/>
+-		<patch patchfile="${basedir}/patches/nocoreupdate.patch" dir="${buildDirectory}" strip="0" reverse="false" backups="true" />
++		<patch patchfile="${basedir}/patches/nocoreupdate.patch" dir="${buildDirectory}" strip="0" reverse="false" />
+ 
+-		<patch patchfile="${basedir}/patches/eclipse-buildswtnatives.patch" dir="${buildDirectory}" strip="1" backups="true"/>
 -		<patch patchfile="${basedir}/patches/eclipse-addArchesAnd64bitSWT.patch" dir="${buildDirectory}" strip="1" />
++		<patch patchfile="${basedir}/patches/eclipse-buildswtnatives.patch" dir="${buildDirectory}" strip="1"/>
++		<exec executable="${localbase}/bin/gpatch" dir="${buildDirectory}">
++			<arg value="-p1" />
++			<arg value="-i${basedir}/patches/eclipse-addArchesAnd64bitSWT.patch" />
++		</exec>
+ 		<patch patchfile="${basedir}/patches/eclipse-add-archs-filesystem.patch" dir="${buildDirectory}" strip="1" />
+-		<patch patchfile="${basedir}/patches/e4-add-archs-swt.patch" dir="${buildDirectory}" strip="2" backups="true"/>
++		<patch patchfile="${basedir}/patches/e4-add-archs-swt.patch" dir="${buildDirectory}" strip="2"/>
+ 		<patch patchfile="${basedir}/patches/eclipse-add-archs-executable.patch" dir="${buildDirectory}" strip="1" />
+ 		<patch patchfile="${basedir}/patches/s390-correctly-build-executable.patch" dir="${buildDirectory}" strip="1"/>
+ 		<patch patchfile="${basedir}/patches/eclipse-add-archs-net.patch" dir="${buildDirectory}" strip="1" />
+ 		<patch patchfile="${basedir}/patches/eclipse-add-ppc64-sparc64-s390-s390x.patch" dir="${buildDirectory}" strip="1" />
+ 		
+ 		<patch patchfile="${basedir}/patches/fix-gnomeproxy-includes.patch" dir="${buildDirectory}" strip="1" />
+-		<patch patchfile="${basedir}/patches/donotstorebuildlogsinfiles.patch" dir="${buildDirectory}" strip="1" />
 + 		<exec executable="${localbase}/bin/gpatch" dir="${buildDirectory}">
 + 			<arg value="-p1" />
-+ 			<arg value="-i${basedir}/patches/eclipse-addArchesAnd64bitSWT.patch" />
++ 			<arg value="-i${basedir}/patches/donotstorebuildlogsinfiles.patch" />
 + 		</exec>
- 		<patch patchfile="${basedir}/patches/eclipse-add-archs-filesystem.patch" dir="${buildDirectory}" strip="1" />
- 		<patch patchfile="${basedir}/patches/eclipse-add-archs-swt.patch" dir="${buildDirectory}" strip="1" />
- 		<patch patchfile="${basedir}/patches/eclipse-add-archs-executable.patch" dir="${buildDirectory}" strip="1" />
- 		<patch patchfile="${basedir}/patches/eclipse-add-ppc64-sparc64-s390-s390x.patch" dir="${buildDirectory}" strip="1" />
--		<patch patchfile="${basedir}/patches/donotstorebuildlogsinfiles.patch" dir="${buildDirectory}" strip="1" />
-+  		<exec executable="${localbase}/bin/gpatch" dir="${buildDirectory}">
-+  			<arg value="-p1" />
-+  			<arg value="-i${basedir}/patches/donotstorebuildlogsinfiles.patch" />
-+  		</exec>
- 		<patch patchfile="${basedir}/patches/donotsetjavahomeandoptimizeliblocalfile.patch" dir="${buildDirectory}" strip="1" />
+ 
  		<patch patchfile="${basedir}/patches/eclipse-pde.build-add-package-build.patch" dir="${buildDirectory}" strip="1" />
- 		<patch patchfile="${basedir}/patches/gnomeproxy-makefile.patch" dir="${buildDirectory}" strip="1" />
-@@ -337,20 +342,30 @@
- 		</replace>
- 		<patch patchfile="${basedir}/patches/eclipse-core-resources-compilation-profile.patch" dir="${buildDirectory}" strip="0" />
- 		<patch patchfile="${basedir}/patches/eclipse-equinox-util.patch" dir="${buildDirectory}" strip="0" />
--		<patch patchfile="${basedir}/patches/0001-Fix-Program.launch-for-remote-uri-in-the-pure-gio-en.patch" dir="${buildDirectory}/plugins" strip="2" />
-+   		<exec executable="${localbase}/bin/gpatch" dir="${buildDirectory}/plugins">
-+   			<arg value="-p2" />
-+   			<arg value="-i${basedir}/patches/0001-Fix-Program.launch-for-remote-uri-in-the-pure-gio-en.patch" />
-+   		</exec>
- 		<patch patchfile="${basedir}/patches/remove-lucene-dependency.patch" dir="${buildDirectory}" strip="1" />
- 		<patch patchfile="${basedir}/patches/eclipse-equinox-jsp-jasper.patch" dir="${buildDirectory}" strip="0" />
- 		<patch patchfile="${basedir}/patches/eclipse-equinox-http-jetty.patch" dir="${buildDirectory}" strip="0" />
- 		<patch patchfile="${basedir}/patches/eclipse-equinox-http-servlet.patch" dir="${buildDirectory}" strip="0" />
- 		<patch patchfile="${basedir}/patches/eclipse-help-feature.patch" dir="${buildDirectory}" strip="0" />
+ 
+-		<patch patchfile="${basedir}/patches/eclipse-nosourcebundlesfordependencies.patch" dir="${buildDirectory}" strip="2" backups="true"/>
++		<patch patchfile="${basedir}/patches/eclipse-nosourcebundlesfordependencies.patch" dir="${buildDirectory}" strip="2"/>
+ 
+ 		<patch patchfile="${basedir}/patches/eclipse-help-feature-adjust-dependencies.patch" dir="${buildDirectory}" strip="1" />
+ 		<patch patchfile="${basedir}/patches/eclipse-help-fix-webapp-jsp-compilation.patch" dir="${buildDirectory}/plugins" strip="1"/>
+@@ -424,11 +429,16 @@
+ 		<!-- Point (2) implies that you cannot use PDE build.xml, because there is no source folder, so nothing will be compiled -->
+ 		<!-- Point (1) implies that developers will not create a source folder, because they want to ship binaries -->
+ 		<!-- So we have to live with those two patches -->
+-		<patch patchfile="${basedir}/patches/osgi-util.patch" dir="${buildDirectory}" strip="0" backups="true"/>
++		<patch patchfile="${basedir}/patches/osgi-util.patch" dir="${buildDirectory}" strip="0"/>
+ 		<patch patchfile="${basedir}/patches/osgi-services-build.patch" dir="${buildDirectory}" strip="0" />
+ 
  		<patch patchfile="${basedir}/patches/nonRelativeLicense.patch" dir="${buildDirectory}" strip="0" />
-+   		<exec executable="${localbase}/bin/gpatch" dir="${buildDirectory}">
-+   			<arg value="-p2" />
-+   			<arg value="-i${basedir}/patches/freebsd-support.patch" />
-+   		</exec>
- 		<echo file="patch-stamp" />
- 	</target>
  
- 	<target name="applyTestPatches" depends="unpackTests" unless="testspatch.complete">
- 		<patch patchfile="${basedir}/patches/tests-noapttests.patch" dir="${testsBuildDirectory}/features/org.eclipse.sdk.tests" strip="0" />
- 		<patch patchfile="${basedir}/patches/tests-noequinoxregiontests.patch" dir="${testsBuildDirectory}/features/org.eclipse.sdk.tests" strip="0" />
--		<patch patchfile="${basedir}/patches/tests-BZ295666.patch" dir="${testsBuildDirectory}" strip="0" />
-+   		<exec executable="${localbase}/bin/gpatch" dir="${testsBuildDirectory}">
-+   			<arg value="-p0" />
-+   			<arg value="-i${basedir}/patches/tests-BZ295666.patch" />
-+   		</exec>
- 		<patch patchfile="${basedir}/patches/tests-org.eclipse.pde.ui.tests-LocalTargetDefinitionTests.patch" dir="${testsBuildDirectory}/plugins/org.eclipse.pde.ui.tests" strip="0" />
- 		<patch patchfile="${basedir}/patches/tests-nop2discoverytests.patch" dir="${testsBuildDirectory}/features/org.eclipse.sdk.tests" strip="0" />
- 		<patch patchfile="${basedir}/patches/tests-org.eclipse.ant.tests.core.patch" dir="${testsBuildDirectory}/plugins/org.eclipse.ant.tests.core" strip="0" />
-@@ -725,7 +729,7 @@
- 	<target name="provision.sdk" depends="p2prep" unless="provision.sdk.complete">
- 		<echo message="Installing into:  ${provisionDir}" />
- 		<antcall target="provision">
--			<param name="p2.director.installIU" value="org.eclipse.sdk.ide" />
-+			<param name="p2.director.installIU" value="org.eclipse.sdk.ide,org.eclipse.equinox.initializer" />
- 			<param name="profileName" value="SDKProfile" />
- 		</antcall>
++  		<exec executable="${localbase}/bin/gpatch" dir="${buildDirectory}">
++  			<arg value="-p2" />
++  			<arg value="-i${basedir}/patches/freebsd-support.patch" />
++  		</exec>
++
+ 		<!-- jsr14 is practically unusable with java7 -->
+ 		<antcall target="jsr14To15" />
  
-@@ -850,7 +854,8 @@
- 		<!--
- 		<echo message="Calling runtests with (debug, verbose) = (${testSwitches})" />
- 		-->
--		<exec executable="${basedir}/runtests.sh" dir="${basedir}">
-+ 		<exec executable="${localbase}/bin/bash" dir="${basedir}">
-+ 			<arg value="${basedir}/runtests.sh" />
- 			<arg value="-t${timestamp}" />
- 			<arg value="-a${buildArch}" />
- 			<arg value="-o${buildOs}" />
-@@ -1014,33 +1030,29 @@
+@@ -952,34 +962,29 @@
  	<target name="installIntoDestDir">
  		<mkdir dir="${installationDir}" />
-                 <exec executable="rsync" failonerror="true">
--                       <arg value="-vrpl" />
-+                       <arg value="-vrpL" />
-                        <arg value="--exclude=dropins" />
-                        <arg value="${provisionDir}/" />
-                        <arg value="${installationDir}/" />
-                 </exec>
+ 		<exec executable="rsync" failonerror="true">
+-			<arg value="-vrpl" />
++			<arg value="-vrpL" />
+ 			<arg value="--exclude=dropins" />
+ 			<arg value="${provisionDir}/" />
+ 			<arg value="${installationDir}/" />
+ 		</exec>
  
  		<!-- install desktop file -->
 -		<copy file="eclipse.desktop" todir="${destDir}${prefix}/share/applications" />
 -		<!-- install Eclipse Java code formatter launcher -->
 -		<property name="efj" value="${destDir}${prefix}/bin/efj"/>
 -		<copy file="efj.sh" tofile="${efj}" />
-+ 		<copy file="eclipse.desktop" tofile="${destDir}${prefix}/share/applications/%%PORTNAME%%.desktop" />
- 	    <fileset id="equinoxLauncher" dir="${installationDir}/plugins">
- 	      <include name="org.eclipse.equinox.launcher_*.jar" />
- 	    </fileset>
- 	    <property name="launcherJar" refid="equinoxLauncher"/>
+-		<chmod file="${efj}" perm="ugo+rx"/>
++		<copy file="eclipse.desktop" tofile="${destDir}${prefix}/share/applications/%%PORTNAME%%.desktop" />
+ 		<fileset id="equinoxLauncher" dir="${installationDir}/plugins">
+ 			<include name="org.eclipse.equinox.launcher_*.jar" />
+ 		</fileset>
+ 		<property name="launcherJar" refid="equinoxLauncher"/>
 -		<replace file="${efj}" token="@LAUNCHER@" value="${prefix}/${libDir}/eclipse/plugins/${launcherJar}"/>
  		<!-- install icons -->
--		<copy file="${buildDirectory}/plugins/org.eclipse.platform/eclipse.png" tofile="${destDir}${prefix}/share/icons/hicolor/16x16/apps/eclipse.png" />
 -		<copy file="${buildDirectory}/plugins/org.eclipse.platform/eclipse32.png" tofile="${destDir}${prefix}/share/icons/hicolor/32x32/apps/eclipse.png" />
 -		<copy file="${buildDirectory}/plugins/org.eclipse.platform/eclipse48.png" tofile="${destDir}${prefix}/share/icons/hicolor/48x48/apps/eclipse.png" />
-+		<copy file="${buildDirectory}/plugins/org.eclipse.platform/eclipse.png" tofile="${destDir}${prefix}/share/icons/hicolor/16x16/apps/%%PORTNAME%%.png" />
+-		<copy file="${buildDirectory}/plugins/org.eclipse.platform/eclipse256.png" tofile="${destDir}${prefix}/share/icons/hicolor/256x256/apps/eclipse.png" />
 +		<copy file="${buildDirectory}/plugins/org.eclipse.platform/eclipse32.png" tofile="${destDir}${prefix}/share/icons/hicolor/32x32/apps/%%PORTNAME%%.png" />
 +		<copy file="${buildDirectory}/plugins/org.eclipse.platform/eclipse48.png" tofile="${destDir}${prefix}/share/icons/hicolor/48x48/apps/%%PORTNAME%%.png" />
++		<copy file="${buildDirectory}/plugins/org.eclipse.platform/eclipse256.png" tofile="${destDir}${prefix}/share/icons/hicolor/256x256/apps/%%PORTNAME%%.png" />
  		<mkdir dir="${destDir}${prefix}/share/pixmaps" />
--		<symlink link="${destDir}${prefix}/share/pixmaps/eclipse.png" resource="../icons/hicolor/48x48/apps/eclipse.png" overwrite="true"/>
-+		<symlink link="${destDir}${prefix}/share/pixmaps/%%PORTNAME%%.png" resource="../icons/hicolor/48x48/apps/%%PORTNAME%%.png" overwrite="true"/>
+-		<symlink link="${destDir}${prefix}/share/pixmaps/eclipse.png" resource="../icons/hicolor/256x256/apps/eclipse.png" overwrite="true"/>
++		<symlink link="${destDir}${prefix}/share/pixmaps/%%PORTNAME%%.png" resource="../icons/hicolor/256x256/apps/%%PORTNAME%%.png" overwrite="true"/>
  		<!--shared dropins folder for architecture-independent plugins-->
 -		<mkdir dir="${destDir}${prefix}/share/eclipse/dropins" />
 +		<mkdir dir="${destDir}${prefix}/share/%%PORTNAME%%/dropins" />
@@ -192,7 +197,7 @@ $FreeBSD$
  		<!-- Create the "swt.jar" and friends symlinks  -->
  		<fileset dir="${installationDir}/plugins" includes="org.eclipse.swt.gtk.${buildOs}.${buildArch}_*" id="swtjar" />
  		<property name="swtjarpath" refid="swtjar" />
-@@ -1013,7 +1015,7 @@
+@@ -987,7 +992,7 @@
  		<symlink link="${installationDir}/swt-gtk.jar" resource="plugins/${swtjarpath}" overwrite="true"/>
  		<symlink link="${installationDir}/swt.jar" resource="plugins/${swtjarpath}" overwrite="true"/>
  
@@ -200,17 +205,17 @@ $FreeBSD$
 +		<echo append="true" file="${installationDir}/eclipse.ini" message="-Dorg.eclipse.equinox.p2.reconciler.dropins.directory=${prefix}/share/%%PORTNAME%%/dropins" />
  
  		<!-- Extract SWT JNI .so files -->
- 		<java classname="org.eclipse.core.launcher.Main" fork="true" failonerror="true" dir="${destDir}">
-@@ -1039,7 +1041,7 @@
+ 		<antcall target="extractSos">
+@@ -1008,7 +1013,7 @@
  
  		<!-- copy PDE and JDT to dropins -->
-                 <exec executable="rsync" failonerror="true">
--                       <arg value="-vrpl" />
-+                       <arg value="-vrpL" />
-                        <arg value="${provisionDir}/dropins/" />
-                        <arg value="${installationDir}/dropins/" />
-                 </exec>
-@@ -1072,8 +1074,8 @@
+ 		<exec executable="rsync" failonerror="true">
+-			<arg value="-vrpl" />
++			<arg value="-vrpL" />
+ 			<arg value="${provisionDir}/dropins/" />
+ 			<arg value="${installationDir}/dropins/" />
+ 		</exec>
+@@ -1041,8 +1046,8 @@
  			<arg value="s@/@_@g" />
  		</exec>
  		<apply executable="sed" failonerror="true" verbose="true">
@@ -221,7 +226,7 @@ $FreeBSD$
  			<srcfile />
  			<fileset dir="${installationDir}">
  				<include name="metadata/content.xml" />
-@@ -1094,7 +1096,7 @@
+@@ -1063,7 +1068,7 @@
  			</fileset>
  		</apply>
  		<apply executable="sed" failonerror="true" verbose="true">
@@ -230,9 +235,9 @@ $FreeBSD$
  			<arg value="s@${provisionDir}@${installationDir}@g;s@${installationDir}@${prefix}/${libDir}/eclipse@g" />
  			<srcfile />
  			<fileset dir="${installationDir}/${profileDir}">
-@@ -1109,9 +1111,11 @@
+@@ -1078,9 +1083,11 @@
  		</apply>
- 		
+ 
  		<!-- Move config file to /etc -->
 +		<!--
  		<mkdir dir="${destDir}/etc" />
@@ -242,7 +247,7 @@ $FreeBSD$
  
  	</target>
  
-@@ -1156,8 +1164,7 @@
+@@ -1095,8 +1102,7 @@
  
  		<!-- make a copy of the clean platform+CVS installation -->
  		<exec executable="cp" failonerror="true">
@@ -252,7 +257,7 @@ $FreeBSD$
  			<arg value="${provisionDir}" />
  			<arg value="${platformAndCVSInstallation}" />
  		</exec>
-@@ -1173,16 +1180,14 @@
+@@ -1112,16 +1118,14 @@
  			tofile="${jdtInstallation}"/>
  		<!-- make a second copy of the clean JDT installation -->
  		<exec executable="cp" failonerror="true">
@@ -262,7 +267,7 @@ $FreeBSD$
  			<arg value="${jdtInstallation}" />
  			<arg value="${jdtInstallation}.orig" />
  		</exec>
- 		
+ 
  		<!-- restore clean platform+CVS installation -->
  		<exec executable="cp" failonerror="true">
 -			<arg value="-rd" />
@@ -271,8 +276,8 @@ $FreeBSD$
  			<arg value="${platformAndCVSInstallation}" />
  			<arg value="${provisionDir}" />
  		</exec>
-@@ -1199,8 +1204,7 @@
- 		
+@@ -1138,8 +1142,7 @@
+ 
  		<!-- restore clean platform+CVS installation -->
  		<exec executable="cp" failonerror="true">
 -			<arg value="-rd" />
@@ -294,15 +299,14 @@ $FreeBSD$
  if [ "x$zipDeps" != "x" ]; then
 --- eclipse-build-0.5.0.orig/pdebuild.properties	2009-10-01 08:58:04.000000000 -0400
 +++ eclipse-build-0.5.0/pdebuild.properties	2009-12-23 16:23:06.358151430 -0500
-@@ -1,11 +1,11 @@
+@@ -1,10 +1,10 @@
  buildArch=x86
  ws=gtk
 -os=linux
 +os=freebsd
  
- buildId=R3_7_1
- buildTag=R3_7_1
- label=3.7.1
+ buildId=I20120608-1400
+ label=4.2.0-I20120608-1400
 -bootclasspath=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
 +bootclasspath=%%BOOTCLASSPATH%%
  #build.compiler=org.eclipse.jdt.core.JDTCompilerAdapter
@@ -370,35 +374,41 @@ $FreeBSD$
 +Exec=%%PORTNAME%%
  Terminal=false
  Categories=Development;IDE;Java;
---- eclipse-build-5791c48513b4207ab1eec1e00bed4b2186f9aad5/dependencies.properties.orig	Thu Jun 30 16:45:54 2011
-+++ eclipse-build-5791c48513b4207ab1eec1e00bed4b2186f9aad5/dependencies.properties	Thu Jun 30 16:46:18 2011
-@@ -1,5 +1,5 @@
- com.ibm.icu_4.4.2.v20110208.jar=/usr/lib/eclipse/plugins/com.ibm.icu_4.4.2.v20110208.jar:/usr/lib64/eclipse/plugins/com.ibm.icu_4.4.2.v20110208.jar:/usr/share/java/com.ibm.icu-4.4.jar:/usr/share/java/com.ibm.icu.jar:/usr/share/java/icu4j.jar
--com.jcraft.jsch_0.1.41.v200903070017.jar=/usr/share/java/jsch.jar
-+com.jcraft.jsch_0.1.41.v201101211617.jar=/usr/share/java/jsch.jar
- javax.servlet_3.0.0.jar=/usr/share/java/tomcat/tomcat-servlet-3.0-api.jar
- javax.servlet.jsp_2.2.0.jar=/usr/share/java/tomcat/tomcat-jsp-2.2-api.jar
- javax.el_2.2.0.jar=/usr/share/java/tomcat/tomcat-el-2.2-api.jar
-@@ -7,13 +7,13 @@
+--- eclipse-build-5791c48513b4207ab1eec1e00bed4b2186f9aad5/dependencies/dependencies.properties.orig	Thu Jun 30 16:45:54 2011
++++ eclipse-build-5791c48513b4207ab1eec1e00bed4b2186f9aad5/dependencies/dependencies.properties	Thu Jun 30 16:46:18 2011
+@@ -10,7 +10,7 @@
+ javax.servlet_3.0.0.v201112011016.jar=/usr/share/java/tomcat/tomcat-servlet-3.0-api.jar
+ javax.servlet.jsp_2.2.0.v201112011158.jar=/usr/share/java/tomcat/tomcat-jsp-2.2-api.jar
+ javax.el_2.2.0.v201108011116.jar=/usr/share/java/tomcat/tomcat-el-2.2-api.jar
+-javax.xml_1.0.1.v200903091627.jar=/usr/share/java/xml-commons-apis.jar
++javax.xml_1.3.4.v201005080400.jar=/usr/share/java/xml-commons-apis.jar
+ org.apache.batik.css_1.6.0.v201011041432.jar=/usr/share/java/batik/batik-css.jar
+ org.apache.batik.util_1.6.0.v201011041432.jar=/usr/share/java/batik/batik-util.jar
+ org.apache.batik.util.gui_1.6.0.v201011041432.jar=/usr/share/java/batik/batik-gui-util.jar
+@@ -18,7 +18,7 @@
  org.apache.juli_7.0.21.jar=/usr/share/java/tomcat/tomcat-juli.jar
  org.apache.el_7.0.21.jar=/usr/share/java/tomcat/jasper-el.jar
  org.apache.commons.codec_1.3.0.v201101211617.jar=/usr/share/java/commons-codec.jar
 -org.apache.commons.el_1.0.0.v200806031608.jar=/usr/share/java/commons-el.jar
--org.apache.commons.httpclient_3.1.0.v201005080502.jar=/usr/share/java/commons-httpclient.jar
 +org.apache.commons.el_1.0.0.v201101211617.jar=/usr/share/java/commons-el.jar
-+org.apache.commons.httpclient_3.1.0.v201012070820.jar=/usr/share/java/commons-httpclient.jar
+ org.apache.commons.httpclient_3.1.0.v201012070820.jar=/usr/share/java/commons-httpclient.jar
  org.apache.commons.logging_1.0.4.v201101211617.jar=/usr/share/java/commons-logging.jar
- org.apache.jasper_7.0.21.jar=/usr/share/java/tomcat/jasper.jar
- org.apache.lucene.core_2.9.1.v201101211721.jar=/usr/share/java/lucene.jar:/usr/share/java/lucene-core.jar
- org.apache.lucene.analysis_2.9.1.v201101211721.jar=/usr/share/java/lucene-contrib/lucene-analyzers.jar:/usr/share/java/lucene-analyzers.jar
--org.mortbay.jetty.util_6.1.23.v201004211559.jar=/usr/share/java/jetty/jetty-util.jar:/usr/share/java/jetty-util.jar
--org.mortbay.jetty.server_6.1.23.v201004211559.jar=/usr/share/java/jetty/jetty.jar:/usr/share/java/jetty.jar
-+org.mortbay.jetty.util_6.1.23.v201012071420.jar=/usr/share/java/jetty/jetty-util.jar:/usr/share/java/jetty-util.jar
-+org.mortbay.jetty.server_6.1.23.v201012071420.jar=/usr/share/java/jetty/jetty.jar:/usr/share/java/jetty.jar
- org.sat4j.core_2.3.0.v20110329.jar=/usr/share/java/org.sat4j.core.jar:/usr/share/sat4j/org.sat4j.core.jar
- org.sat4j.pb_2.3.0.v20110329.jar=/usr/share/java/org.sat4j.pb.jar:/usr/share/sat4j/org.sat4j.pb.jar
---- eclipse-build-5791c48513b4207ab1eec1e00bed4b2186f9aad5/sdkdependencies.properties.orig	Fri Jul  1 20:12:45 2011
-+++ eclipse-build-5791c48513b4207ab1eec1e00bed4b2186f9aad5/sdkdependencies.properties	Fri Jul  1 20:16:04 2011
+ org.apache.felix.gogo.command_0.8.0.v201108120515.jar=/usr/share/java/felix/org.apache.felix.gogo.command.jar
+--- eclipse-build-7b07d10488eb9d6e2880eac320b09c16d1ae78e3/dependencies/nonosgidependencies.properties~	Thu Jun 28 12:02:14 2012
++++ eclipse-build-7b07d10488eb9d6e2880eac320b09c16d1ae78e3/dependencies/nonosgidependencies.properties	Wed Jul 25 18:03:02 2012
+@@ -20,10 +20,3 @@
+ org.apache.ant_1.8.3.v20120321-1730/lib/ant-swing.jar=/usr/share/java/ant/ant-swing.jar:/usr/share/java/ant-swing.jar
+ org.apache.ant_1.8.3.v20120321-1730/lib/ant-testutil.jar=/usr/share/java/ant/ant-testutil.jar:/usr/share/java/ant-testutil.jar
+ org.apache.ant_1.8.3.v20120321-1730/lib/ant.jar=/usr/share/java/ant.jar
+-#bin folder
+-org.apache.ant_1.8.3.v20120321-1730/bin/ant=/usr/bin/ant
+-org.apache.ant_1.8.3.v20120321-1730/bin/antRun=/usr/bin/antRun
+-org.apache.ant_1.8.3.v20120321-1730/bin/antRun.pl=/usr/bin/antRun.pl
+-org.apache.ant_1.8.3.v20120321-1730/bin/runant.pl=/usr/bin/runant.pl
+-org.apache.ant_1.8.3.v20120321-1730/bin/runant.py=/usr/bin/runant.py
+-org.apache.ant_1.8.3.v20120321-1730/bin/complete-ant-cmd.pl=/usr/bin/complete-ant-cmd.pl
+--- eclipse-build-5791c48513b4207ab1eec1e00bed4b2186f9aad5/dependencies/sdkdependencies.properties.orig	Fri Jul  1 20:12:45 2011
++++ eclipse-build-5791c48513b4207ab1eec1e00bed4b2186f9aad5/dependencies/sdkdependencies.properties	Fri Jul  1 20:16:04 2011
 @@ -1,1 +1,1 @@
 -org.objectweb.asm_3.3.1.v201101071600.jar=/usr/share/java/objectweb-asm/asm-all.jar:/usr/share/java/asm3-all.jar
 +org.objectweb.asm_3.3.1.v201105211655.jar=/usr/share/java/objectweb-asm/asm-all.jar:/usr/share/java/asm3-all.jar
@@ -417,3 +427,67 @@ $FreeBSD$
 +        sed -i .orig 's/javax\.servlet\.jsp_2\.0\.0\.v[0-9]\{12\}/javax\.servlet\.jsp_2\.2\.0/g' ${f}
 +        sed -i .orig 's/org\.apache\.jasper_5\.5\.17\.v[0-9]\{12\}/org\.apache\.jasper_7\.0\.21/g' ${f}
  done
+--- eclipse-build-7b07d10488eb9d6e2880eac320b09c16d1ae78e3/additionalArchs/rename.sh~	Thu Jun 28 12:02:14 2012
++++ eclipse-build-7b07d10488eb9d6e2880eac320b09c16d1ae78e3/additionalArchs/rename.sh	Fri Jun 29 15:04:36 2012
+@@ -4,13 +4,13 @@
+ newArch=$2
+ 
+ moves(){
+-for f in $(find -type d); do
++for f in $(find . -type d); do
+       tofile=$(echo $f | sed "s/$baseArch/$newArch/")
+       if [ $tofile != $f ]; then
+         cp -pfr $f $tofile
+       fi
+     done
+-for f in $(find -type f); do
++for f in $(find . -type f); do
+       tofile=$(echo $f | sed "s/$baseArch/$newArch/")
+       if [ $tofile != $f ]; then
+         cp -pfr $f $tofile
+--- eclipse-build-7b07d10488eb9d6e2880eac320b09c16d1ae78e3/eclipse-build-config/productFiles/platform/p2.inf~	Thu Jun 28 12:02:14 2012
++++ eclipse-build-7b07d10488eb9d6e2880eac320b09c16d1ae78e3/eclipse-build-config/productFiles/platform/p2.inf	Wed Aug  8 13:48:10 2012
+@@ -56,3 +56,20 @@
+ units.3.touchpoint.version=1.0.0
+ units.3.instructions.configure=setProgramProperty(propName:org.eclipse.swt.internal.gtk.useCairo,propValue:true);
+ units.3.instructions.unconfigure=removeProgramProperty(propName:org.eclipse.swt.internal.gtk.useCairo);
++
++requires.4.namespace=org.eclipse.equinox.p2.iu
++requires.4.name=toolingorg.eclipse.configuration.gtk.freebsd.x86_64
++requires.4.filter=(&(osgi.os=freebsd) (osgi.arch=x86_64) (osgi.ws=gtk))
++requires.4.range=[1.0.0,1.0.0]
++requires.4.greedy=true
++
++units.4.id=toolingorg.eclipse.configuration.gtk.freebsd.x86_64
++units.4.version=1.0.0
++units.4.provides.1.namespace=org.eclipse.equinox.p2.iu
++units.4.provides.1.name=toolingorg.eclipse.configuration.gtk.freebsd.x86_64
++units.4.provides.1.version=1.0.0
++units.4.filter=(&(osgi.os=freebsd) (osgi.arch=x86_64) (osgi.ws=gtk))
++units.4.touchpoint.id=org.eclipse.equinox.p2.osgi
++units.4.touchpoint.version=1.0.0
++units.4.instructions.configure=setProgramProperty(propName:org.eclipse.swt.internal.gtk.useCairo,propValue:true);
++units.4.instructions.unconfigure=removeProgramProperty(propName:org.eclipse.swt.internal.gtk.useCairo);
+--- eclipse-build-7b07d10488eb9d6e2880eac320b09c16d1ae78e3/eclipse-build-config/productFiles/platform.sdk/p2.inf~	Thu Jun 28 12:02:14 2012
++++ eclipse-build-7b07d10488eb9d6e2880eac320b09c16d1ae78e3/eclipse-build-config/productFiles/platform.sdk/p2.inf	Wed Aug  8 13:55:04 2012
+@@ -56,3 +56,20 @@
+ units.3.touchpoint.version=1.0.0
+ units.3.instructions.configure=setProgramProperty(propName:org.eclipse.swt.internal.gtk.useCairo,propValue:true);
+ units.3.instructions.unconfigure=removeProgramProperty(propName:org.eclipse.swt.internal.gtk.useCairo);
++
++requires.4.namespace=org.eclipse.equinox.p2.iu
++requires.4.name=toolingorg.eclipse.configuration.gtk.freebsd.x86_64
++requires.4.filter=(&(osgi.os=freebsd) (osgi.arch=x86_64) (osgi.ws=gtk))
++requires.4.range=[1.0.0,1.0.0]
++requires.4.greedy=true
++
++units.4.id=toolingorg.eclipse.configuration.gtk.freebsd.x86_64
++units.4.version=1.0.0
++units.4.provides.1.namespace=org.eclipse.equinox.p2.iu
++units.4.provides.1.name=toolingorg.eclipse.configuration.gtk.freebsd.x86_64
++units.4.provides.1.version=1.0.0
++units.4.filter=(&(osgi.os=freebsd) (osgi.arch=x86_64) (osgi.ws=gtk))
++units.4.touchpoint.id=org.eclipse.equinox.p2.osgi
++units.4.touchpoint.version=1.0.0
++units.4.instructions.configure=setProgramProperty(propName:org.eclipse.swt.internal.gtk.useCairo,propValue:true);
++units.4.instructions.unconfigure=removeProgramProperty(propName:org.eclipse.swt.internal.gtk.useCairo);

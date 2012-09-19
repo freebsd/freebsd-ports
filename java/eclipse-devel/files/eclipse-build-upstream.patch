@@ -17,18 +17,16 @@ Index: build.xml
 ===================================================================
 --- build.xml	(revision 23733)
 +++ build.xml	(working copy)
-@@ -131,7 +131,8 @@
+@@ -137,6 +137,7 @@
  		<ant inheritall="false" antfile="pdebuild.xml">
  			<property name="buildId" value="${buildId}" />
  			<property name="buildArch" value="${buildArch}" />
--			<property name="buildDirectory" value="../../" />
 +			<property name="buildOs" value="${buildOs}" />
-+			<property name="buildDirectory" value="../../" />
+ 			<property name="buildDirectory" value="../../" />
  		</ant>
  	</target>
- 
-@@ -312,7 +313,10 @@
- 		<!-- end eclipse-build-only patches -->
+@@ -406,7 +407,10 @@
+ 		
  		<!-- Only build for one target (bug #293952) -->
  		<copy file="${buildConfigs}/eclipse-build-config/build.properties.in" tofile="${buildConfigs}/eclipse-build-config/build.properties" />
 -		<replace file="${buildConfigs}/eclipse-build-config/build.properties" token="@build_arch@" value="${buildArch}" />
@@ -36,10 +34,10 @@ Index: build.xml
 +			<replacefilter token="@build_arch@" value="${buildArch}" />
 +			<replacefilter token="@build_os@" value="${buildOs}" />
 +		</replace>
- 		<patch patchfile="${basedir}/patches/eclipse-core-resources-compilation-profile.patch" dir="${buildDirectory}" strip="0" />
- 		<patch patchfile="${basedir}/patches/eclipse-equinox-util.patch" dir="${buildDirectory}" strip="0" />
- 		<echo file="patch-stamp" />
-@@ -399,6 +403,7 @@
+ 
+ 
+ 		<!-- This one should be removed when Eclipse bug 369215 is fixed -->
+@@ -563,6 +567,7 @@
  		<!--
  		<ant antfile="build.xml" dir="${eclipse.pdebuild.scripts}">
  			<property name="arch" value="${buildArch}"/>
@@ -47,9 +45,9 @@ Index: build.xml
  			<property name="builder" value="${buildConfig}" />
  		</ant>
  -->
-@@ -462,9 +467,9 @@
+@@ -571,9 +576,9 @@
  
- 	<target name="compile.libgnomeproxy" if="build.libgnomeproxy">
+ 	<target name="compile.libgnomeproxy">
  		<!-- build libgnomeproxy -->
 -		<exec dir="${buildDirectory}/plugins/org.eclipse.core.net/natives/unix/linux" executable="make" failonerror="true" />
 -		<copy file="${buildDirectory}/plugins/org.eclipse.core.net/natives/unix/linux/libgnomeproxy-1.0.0.so" todir="${buildDirectory}/plugins/org.eclipse.core.net.linux.${buildArch}/" />
@@ -60,7 +58,7 @@ Index: build.xml
  	</target>
  
  	<target name="compilelibs" unless="compilelibs.complete">
-@@ -476,16 +481,16 @@
+@@ -585,16 +590,16 @@
  				<include name="**/*.so" />
  			</fileset>
  		</delete>
@@ -80,7 +78,7 @@ Index: build.xml
  		<copy todir="${buildDirectory}/plugins/${launcherfragment}">
  			<fileset dir="${launcherlibs}/library/gtk">
  				<include name="**/*.so" />
-@@ -493,13 +498,13 @@
+@@ -602,8 +607,8 @@
  		</copy>
  
  		<!-- build liblocalfile -->
@@ -91,13 +89,7 @@ Index: build.xml
  		</move>
  		<!-- build libgnomeproxy -->
  		<antcall target="compile.libgnomeproxy" />
- 		<!-- build libupdate -->
--		<ant dir="${buildDirectory}/plugins/org.eclipse.update.core.linux/src" antfile="build.xml" />
-+		<ant dir="${buildDirectory}/plugins/org.eclipse.update.core.${buildOs}/src" antfile="build.xml" />
- 
- 		<echo file="compilelibs-stamp" />
- 	</target>
-@@ -593,7 +598,7 @@
+@@ -699,7 +704,7 @@
  			<arg line="-application org.eclipse.ant.core.antRunner " />
  			<arg line="-buildfile buildConfiguration.xml" />
  			<arg line="-propertyfile ${basedir}/build.properties " />
@@ -106,7 +98,7 @@ Index: build.xml
  			<arg line="-Dreposource=${reposource} " />
  			<arg line="-Dbasedir=${productFiles}/rcpConfig" />
  			<arg line="-DbuildId=${buildId} " />
-@@ -631,6 +636,7 @@
+@@ -743,6 +753,7 @@
  			<arg line="-buildfile publishProduct.xml" />
  			<arg line="-propertyfile ${basedir}/build.properties " />
  			<arg line="-DbuildArch=${buildArch} " />
@@ -114,7 +106,16 @@ Index: build.xml
  			<arg line="-Dreposource=${reposource} " />
  			<arg line="-DbuildConfig=${buildConfig} " />
  			<arg line="-DproductFile=${productFile} " />
-@@ -721,7 +727,7 @@
+@@ -756,7 +761,7 @@
+ 		                 <arg line="-consoleLog" />
+ 			<arg line="-application org.eclipse.equinox.p2.publisher.ProductPublisher " />
+ 		                 <arg line="-flavor tooling" />
+-		                 <arg line="-configs gtk.linux.${buildArch}" />
++		                 <arg line="-configs gtk.${buildOs}.${buildArch}" />
+ 		                 <arg line="-productFile ${productFile}" />
+ 		                 <arg line="-metadataRepository file:${reposource}" />
+ 		                 <arg line="-artifactRepository file:${reposource}" />
+@@ -812,7 +817,7 @@
  			<param name="p2.director.profile" value="${profileName}" />
  			<param name="p2.director.install.path" value="${provisionDir}" />
  			<param name="p2.director.extraArgs" value="-profileProperties org.eclipse.update.install.features=true" />
@@ -123,7 +124,7 @@ Index: build.xml
  			<param name="p2.ws" value="gtk" />
  			<param name="p2.arch" value="${buildArch}" />
  			<param name="p2.repo" value="${reposource}" />
-@@ -750,7 +753,7 @@
+@@ -828,7 +833,7 @@
  			<param name="p2.director.profile" value="${profileName}" />
  			<param name="p2.director.install.path" value="${provisionDir}" />
  			<param name="p2.director.extraArgs" value="-profileProperties org.eclipse.update.install.features=true" />
@@ -132,33 +133,24 @@ Index: build.xml
  			<param name="p2.ws" value="gtk" />
  			<param name="p2.arch" value="${buildArch}" />
  			<param name="p2.repo" value="${reposource}" />
-@@ -800,6 +806,8 @@
- 		-->
- 		<exec executable="${basedir}/runtests.sh" dir="${basedir}">
- 			<arg value="-t${timestamp}" />
-+			<arg value="-a${buildArch}" />
-+			<arg value="-o${buildOs}" />
- 			<arg value="-b ${testsBuildDirectory}" />
- 			<arg value="-p ${provisionDir}" />
- 			<arg value="${testSwitches}" />
-@@ -924,7 +932,7 @@
- 		<property name="startupjarpath" refid="startupjar" />
- 		<symlink link="${installationDir}/startup.jar" resource="plugins/${startupjarpath}" />
+@@ -976,7 +981,7 @@
+ 		<mkdir dir="${destDir}${prefix}/bin" />
+ 		<symlink link="${destDir}${prefix}/bin/eclipse" resource="../${libDir}/eclipse/eclipse" overwrite="true"/>
  		<!-- Create the "swt.jar" and friends symlinks  -->
 -		<fileset dir="${installationDir}/plugins" includes="org.eclipse.swt.gtk.linux.${buildArch}_*" id="swtjar" />
 +		<fileset dir="${installationDir}/plugins" includes="org.eclipse.swt.gtk.${buildOs}.${buildArch}_*" id="swtjar" />
  		<property name="swtjarpath" refid="swtjar" />
- 		<symlink link="${installationDir}/swt-gtk-${label}.jar" resource="plugins/${swtjarpath}" />
- 		<symlink link="${installationDir}/swt-gtk.jar" resource="plugins/${swtjarpath}" />
-@@ -1061,7 +1074,7 @@
-                         <param name="p2.director.profile" value="PlatformProfile" />
-                         <param name="p2.director.install.path" value="${installationDir}" />
-                         <param name="p2.director.extraArgs" value="-purgeHistory" />
+ 		<symlink link="${installationDir}/swt-gtk-${label}.jar" resource="plugins/${swtjarpath}" overwrite="true"/>
+ 		<symlink link="${installationDir}/swt-gtk.jar" resource="plugins/${swtjarpath}" overwrite="true"/>
+@@ -995,7 +1000,7 @@
+ 			<param name="p2.director.profile" value="PlatformProfile" />
+ 			<param name="p2.director.install.path" value="${installationDir}" />
+ 			<param name="p2.director.extraArgs" value="-purgeHistory" />
 -			<param name="p2.os" value="linux" />
 +			<param name="p2.os" value="${buildOs}" />
-                         <param name="p2.ws" value="gtk" />
-                         <param name="p2.arch" value="${buildArch}" />
-                         <param name="p2.repo" value="${installationDir}" />
+ 			<param name="p2.ws" value="gtk" />
+ 			<param name="p2.arch" value="${buildArch}" />
+ 			<param name="p2.repo" value="${installationDir}" />
 Index: pdebuild.xml
 ===================================================================
 --- pdebuild.xml	(revision 23733)
@@ -221,6 +213,19 @@ Index: publishProduct.xml
  			<advice kind="featureVersions" file="${buildDirectory}/finalFeaturesVersions.properties" />
  			<advice kind="pluginVersions" file="${buildDirectory}/finalPluginsVersions.properties" />
  		</p2.publish.product>
+Index: buildTests.xml
+===================================================================
+--- buildTests.xml~	Wed Mar 28 11:50:23 2012
++++ buildTests.xml	Fri Jun 22 10:11:05 2012
+@@ -215,6 +215,8 @@
+ 			-->
+ 			<exec executable="${basedir}/runtests.sh" dir="${basedir}">
+ 				<arg value="-t${timestamp}" />
++				<arg value="-a${buildArch}" />
++				<arg value="-o${buildOs}" />
+ 				<arg value="-b ${testsBuildDirectory}" />
+ 				<arg value="-p ${provisionWithTestsDir}" />
+ 				<arg value="${testSwitches}" />
 Index: runtests.sh
 ===================================================================
 --- runtests.sh	(revision 23733)
