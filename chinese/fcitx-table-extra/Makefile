@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fcitx-table-extra
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DIST_SUBDIR=	fcitx
@@ -14,7 +14,7 @@ DIST_SUBDIR=	fcitx
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Table-based input methods for Fcitx
 
-LIB_DEPENDS=	fcitx-config.4:${PORTSDIR}/chinese/fcitx
+LIB_DEPENDS=	fcitx-config:${PORTSDIR}/chinese/fcitx
 
 USE_XZ=		yes
 USE_GETTEXT=	yes

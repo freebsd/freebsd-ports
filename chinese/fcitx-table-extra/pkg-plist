@@ -1,3 +1,17 @@
+share/fcitx/imicon/cantonhk.png
+share/fcitx/imicon/jyutping.png
+share/fcitx/imicon/quick3.png
+share/fcitx/imicon/quick5.png
+share/fcitx/imicon/quick-classic.png
+share/fcitx/imicon/scj6.png
+share/fcitx/imicon/wu.png
+share/fcitx/imicon/zhengma.png
+share/fcitx/imicon/boshiamy.png
+share/fcitx/imicon/cantonese.png
+share/fcitx/imicon/easy-big.png
+share/fcitx/imicon/array30.png
+share/fcitx/imicon/array30-big.png
+share/fcitx/imicon/stroke5.png
 share/fcitx/table/boshiamy.conf
 share/fcitx/table/zhengma.conf
 share/fcitx/table/cangjie3.conf
