@@ -144,6 +144,7 @@
     SUBDIR += trytond_stock_product_location
     SUBDIR += trytond_stock_split
     SUBDIR += trytond_stock_supply
+    SUBDIR += trytond_stock_supply_day
     SUBDIR += trytond_timesheet
     SUBDIR += venice
     SUBDIR += weberp
