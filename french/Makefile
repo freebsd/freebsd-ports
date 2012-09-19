@@ -32,6 +32,7 @@
     SUBDIR += med
     SUBDIR += mythes
     SUBDIR += php_doc
+    SUBDIR += trytond_account_fr
     SUBDIR += tvdownloader
     SUBDIR += verbiste
 
