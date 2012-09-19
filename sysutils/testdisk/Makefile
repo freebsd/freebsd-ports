@@ -7,6 +7,7 @@
 
 PORTNAME=	testdisk
 PORTVERSION=	6.13
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cgsecurity.org/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
@@ -53,7 +54,7 @@ CONFIGURE_ARGS+=--without-iconv
 #.endif
 
 .if defined(WITH_NTFS3G)
-LIB_DEPENDS+=	ntfs-3g.81:${PORTSDIR}/sysutils/fusefs-ntfs
+LIB_DEPENDS+=	ntfs-3g:${PORTSDIR}/sysutils/fusefs-ntfs
 .else
 CONFIGURE_ARGS+=--without-ntfs3g
 .endif
