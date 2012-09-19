@@ -141,6 +141,7 @@
     SUBDIR += trytond_stock_inventory_location
     SUBDIR += trytond_stock_location_sequence
     SUBDIR += trytond_stock_lot
+    SUBDIR += trytond_stock_product_location
     SUBDIR += trytond_stock_supply
     SUBDIR += trytond_timesheet
     SUBDIR += venice
