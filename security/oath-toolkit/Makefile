@@ -1,12 +1,7 @@
-# New ports collection makefile for:	oath-toolkit
-# Date created:			23 Nov 2011
-# Whom:				Alex Dupre <ale@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	oath-toolkit
-PORTVERSION=	1.12.5
+PORTVERSION=	1.12.6
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
