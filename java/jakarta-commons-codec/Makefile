@@ -1,12 +1,7 @@
-# Ports collection makefile for:	Jakarta Commons Codec
-# Date created:			2 November 2005
-# Whom:				Alex Dupre <ale@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	commons-codec
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	java converters
 MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_SOURCE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S,commons-,,}
@@ -20,7 +15,7 @@ LICENSE=	AL2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
 
 ALL_TARGET=	dist
