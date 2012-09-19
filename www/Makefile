@@ -1918,6 +1918,7 @@
     SUBDIR += transmission-web
     SUBDIR += transmission25-web
     SUBDIR += transproxy
+    SUBDIR += trytond_google_maps
     SUBDIR += tt-rss
     SUBDIR += ttf2eot
     SUBDIR += twig
