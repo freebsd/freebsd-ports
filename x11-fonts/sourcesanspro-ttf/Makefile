@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sourcesanspro-ttf
-PORTVERSION=	1.033
+PORTVERSION=	1.034
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/sourcesans.adobe
 DISTNAME=	SourceSansPro_FontsOnly-${PORTVERSION}
@@ -39,12 +39,12 @@ MKFONTSCL_CMD=	${LOCALBASE}/bin/mkfontscale
 MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
 
 do-build:
-	cd ${WRKSRC}/TTF && ${MKFONTSCL_CMD}
-	cd ${WRKSRC}/TTF && ${MKFONTDIR_CMD}
+	cd ${WRKSRC}/ && ${MKFONTSCL_CMD}
+	cd ${WRKSRC}/ && ${MKFONTDIR_CMD}
 
 do-install:
 	${MKDIR} ${FONTDIR}
-	cd ${WRKSRC}/TTF &&	\
+	cd ${WRKSRC}/ &&	\
 	${INSTALL_DATA} ${INSTDAT} *.ttf ${FONTDIR}
 
 post-install:
