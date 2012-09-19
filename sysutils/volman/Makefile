@@ -7,6 +7,7 @@
 
 PORTNAME=	volman
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cloud.github.com/downloads/jmptbl/volman/
 
