@@ -113,6 +113,7 @@
     SUBDIR += trytond_account_statement
     SUBDIR += trytond_account_stock_anglo_saxon
     SUBDIR += trytond_account_stock_continental
+    SUBDIR += trytond_analytic_account
     SUBDIR += trytond_calendar
     SUBDIR += trytond_carrier
     SUBDIR += trytond_carrier_percentage
