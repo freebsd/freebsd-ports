@@ -82,11 +82,6 @@ XDG_OPEN=		Build with XDG_OPEN as browser
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 800000
-# the openssl in base of FreeBSD 7.x is too old
-WITH_OPENSSL_PORT?=	yes
-.endif
-
 .if defined(CUPS_CLIENT)
 COMMENT2=	Library cups
 INSTALL_WRKSRC=	${WRKSRC}/cups
@@ -138,6 +133,7 @@ LIB_DEPENDS+=		gnutls.47:${PORTSDIR}/security/gnutls
 USE_PKGCONFIG=	yes
 .else
 CONFIGURE_ARGS+=	--disable-gnutls --enable-openssl
+WITH_OPENSSL_HACK7=	yes
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 .endif
 
