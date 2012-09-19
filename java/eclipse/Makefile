@@ -7,7 +7,7 @@
 
 PORTNAME=	eclipse
 PORTVERSION=	3.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.eclipse.org/technology/linuxtools/eclipse-build/3.7.x_Indigo/:1 \
 		http://download.eclipse.org/tools/orbit/downloads/drops/R20110523182458/repository/plugins/:2 \
@@ -245,6 +245,7 @@ do-install:
 	@${MKDIR} ${PORTDESTDIR}
 	@${MKDIR} ${PREFIX}/${DROPINS_DIR}
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${ANT} ${MAKE_ARGS} ${INSTALL_TARGET})
+	@${FIND} ${PORTDESTDIR}/plugins -type f -perm 600 -print0 | ${XARGS} -0 ${CHMOD} 644
 	@${SED} \
 	  -e "s+%%BROWSER%%+${GECKO:S/19//}+g" \
 	  -e "s+%%ECLIPSE_HOME%%+${PORTDESTDIR}+g" \
