@@ -108,6 +108,7 @@
     SUBDIR += trytond_account_be
     SUBDIR += trytond_account_invoice
     SUBDIR += trytond_account_invoice_history
+    SUBDIR += trytond_account_invoice_line_standalone
     SUBDIR += trytond_account_product
     SUBDIR += trytond_account_statement
     SUBDIR += trytond_account_stock_anglo_saxon
