@@ -116,6 +116,7 @@
     SUBDIR += trytond_analytic_account
     SUBDIR += trytond_analytic_invoice
     SUBDIR += trytond_analytic_purchase
+    SUBDIR += trytond_analytic_sale
     SUBDIR += trytond_calendar
     SUBDIR += trytond_carrier
     SUBDIR += trytond_carrier_percentage
