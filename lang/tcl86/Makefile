@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	tcl
-PORTVERSION=	8.6.b.2
-PORTREVISION=	1
+PORTVERSION=	8.6.b.3
 CATEGORIES=	lang
-MASTER_SITES=	SF/tcl/Tcl/8.6b2
-PKGNAMESUFFIX?=		${THREADS_SUFFIX}${PKGNAMESUFFIX2}
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.b.2/b2/}-src
+MASTER_SITES=	SF/tcl/Tcl/8.6b3 \
+		${MASTER_SITE_TCLTK}
+MASTER_SITE_SUBDIR=tcl8_6
+PKGNAMESUFFIX?=	${THREADS_SUFFIX}${PKGNAMESUFFIX2}
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.b.3/b3/}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT?=	Tool Command Language
 
 LICENSE=	BSD
@@ -722,9 +723,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		-e 's|$${TCL_TRIM_DOTS}|$${TCL_TRIM_DOTS}${THREADS_SUFFIX}|g' \
 		-e 's|-ltcl$${TCL_VERSION}|-ltcl$${TCL_VERSION}${THREADS_SUFFIX}|g' \
-		-e 's/-ltcl`echo $${TCL_VERSION} | tr -d .`/-ltcl`echo $${TCL_VERSION} | tr -d .`${THREADS_SUFFIX}/g' \
+		-e 's/-ltcl`echo $${TCL_VERSION} | ${TR} -d .`/-ltcl`echo $${TCL_VERSION} | ${TR} -d .`${THREADS_SUFFIX}/g' \
 		-e 's|-ltclstub$${TCL_VERSION}|-ltclstub$${TCL_VERSION}${THREADS_SUFFIX}|g' \
-		-e 's/-ltclstub`echo $${TCL_VERSION} | tr -d .`/-ltclstub`echo $${TCL_VERSION} | tr -d .`${THREADS_SUFFIX}/g' \
+		-e 's/-ltclstub`echo $${TCL_VERSION} | ${TR} -d .`/-ltclstub`echo $${TCL_VERSION} | ${TR} -d .`${THREADS_SUFFIX}/g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|libtcl$${SHORT_TCL_VER}|libtcl$${SHORT_TCL_VER}${THREADS_SUFFIX}|g' \
 		-e 's|/tclsh$$(VERSION)|/tclsh$$(VERSION)${THREADS_SUFFIX}|g' \

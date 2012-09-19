@@ -1,5 +1,5 @@
---- ../generic/tclPort.h.orig	2011-04-26 17:14:03.000000000 +0200
-+++ ../generic/tclPort.h	2011-08-09 14:25:40.620587462 +0200
+--- ../generic/tclPort.h.orig	2012-06-26 15:59:02.000000000 +0200
++++ ../generic/tclPort.h	2012-09-17 16:29:41.000000000 +0200
 @@ -22,7 +22,7 @@
  #endif
  #include "tcl.h"
@@ -8,4 +8,4 @@
 +#   include "../unix/tclUnixPort.h"
  #endif
  
- #if defined(__CYGWIN__)
+ #if !defined(LLONG_MIN)

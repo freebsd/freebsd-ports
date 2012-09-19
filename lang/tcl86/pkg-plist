@@ -15,6 +15,7 @@ include/tcl%%TCL_VER%%/generic/tclOO.h
 include/tcl%%TCL_VER%%/generic/tclOODecls.h
 include/tcl%%TCL_VER%%/generic/tclOOInt.h
 include/tcl%%TCL_VER%%/generic/tclOOIntDecls.h
+include/tcl%%TCL_VER%%/generic/tclParse.h
 include/tcl%%TCL_VER%%/generic/tclPlatDecls.h
 include/tcl%%TCL_VER%%/generic/tclPort.h
 include/tcl%%TCL_VER%%/generic/tclRegexp.h
@@ -256,6 +257,8 @@ lib/tcl%%TCL_VER%%/tclAppInit.c
 lib/tcl%%TCL_VER%%/tclConfig.sh
 lib/tcl%%TCL_VER%%/tclIndex
 lib/tcl%%TCL_VER%%/tclooConfig.sh
+lib/tcl8/8.6/http-2.8.4.tm
+lib/tcl8/8.5/msgcat-1.5.0.tm
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/CST6CDT
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/CET
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/PST8PDT
@@ -323,6 +326,7 @@ lib/tcl%%TCL_VER%%/tclooConfig.sh
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Africa/Gaborone
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Africa/Harare
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Africa/Johannesburg
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Africa/Juba
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Africa/Kampala
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Africa/Khartoum
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Africa/Kigali
@@ -397,6 +401,7 @@ lib/tcl%%TCL_VER%%/tclooConfig.sh
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Coral_Harbour
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Cordoba
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Costa_Rica
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Creston
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Cuiaba
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Curacao
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Danmarkshavn
@@ -556,6 +561,7 @@ lib/tcl%%TCL_VER%%/tclooConfig.sh
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Dushanbe
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Gaza
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Harbin
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Hebron
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Ho_Chi_Minh
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Hong_Kong
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Hovd
@@ -875,3 +881,8 @@ libdata/pkgconfig/tcl.pc
 @dirrm include/tcl%%TCL_VER%%/unix
 @dirrm include/tcl%%TCL_VER%%/generic
 @dirrm include/tcl%%TCL_VER%%
+@dirrmtry lib/tcl8/%%TCL_VER%%
+@dirrmtry lib/tcl8/8.5
+@dirrmtry lib/tcl8/8.4/platform
+@dirrmtry lib/tcl8/8.4
+@dirrmtry lib/tcl8
