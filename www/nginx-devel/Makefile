@@ -7,6 +7,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.3.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -336,11 +337,12 @@ DISTFILES+=	agentzh-headers-more-nginx-module-v${NGINX_HEADERS_MORE_VERSION}-${G
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-headers-more-nginx-module-${GIT_HEADERS_MORE_VERSION:S/^0-g//}
 .endif
 
-.if ${PORT_OPTIONS:MHTTP_DAV}
+.if ${PORT_OPTIONS:MHTTP_DAV} || defined(USE_HTTP_DAV)
 CONFIGURE_ARGS+=--with-http_dav_module
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_DAV_EXT}
+USE_HTTP_DAV=	yes
 LIB_DEPENDS+=	expat:${PORTSDIR}/textproc/expat2
 NGINX_DAV_EXT_VERSION=	0.0.2
 GIT_DAV_EXT_VERSION=	0-g0e07a3e

@@ -47,7 +47,7 @@ load_rc_config $name
 if [ -n "$2" ]; then
 	profile="$2"
 	if [ "x${nginx_profiles}" != "x" ]; then
-		pidfile="${_pidprefix}.${profile}.pid"
+		pidfile="${_pidprefix}/${profile}.pid"
 		eval nginx_configfile="\${nginx_${profile}_configfile:-}"
 		if [ "x${nginx_configfile}" = "x" ]; then
 			echo "You must define a configuration file (nginx_${profile}_configfile)"
