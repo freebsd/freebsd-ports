@@ -7,6 +7,7 @@
 
 PORTNAME=		tty-clock
 PORTVERSION=		2.0.0
+PORTREVISION=		1
 CATEGORIES=		sysutils
 MASTER_SITES=		http://github.com/xorg62/${PORTNAME}/tarball/
 DISTNAME=		a82fd71
@@ -30,10 +31,4 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tty-clock ${PREFIX}/bin
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 900007
-BROKEN=	Core dumps on FreeBSD 9+
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
