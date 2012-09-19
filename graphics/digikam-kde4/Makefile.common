@@ -1,0 +1,26 @@
+# $FreeBSD$
+#
+# Make sure when DIGIKAM_VER is updated that the following ports are updated:
+#	astro/libkgeomap
+#	graphics/digikam-kde4
+#	graphics/kipi-plugins-kde4
+#	graphics/libkface
+#	net/libkvkontakte
+#	net/libmediawiki
+
+DIGIKAM_VER=	2.9.0
+MASTER_SITES=	SF/digikam/digikam/${DIGIKAM_VER}
+DISTNAME=	digikam-${DIGIKAM_VER}
+
+LICENSE?=	GPLv2
+
+USE_BZIP2=	yes
+USE_CMAKE=	yes
+USE_KDE4+=	automoc4 kdehier kdeprefix kdelibs
+USE_QT4+=	qmake_build moc_build rcc_build uic_build
+USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
+
+WRKSRC?=	${WRKDIR}/${DISTNAME}/extra/${PORTNAME}
+
+DISTINFO_FILE=	${.CURDIR}/../../graphics/digikam-kde4/distinfo
