@@ -1,19 +1,15 @@
-# New ports collection makefile for:	qooxdoo
-# Date created:		2010-12-10
-# Whom:			Nicola Vitale <nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	qooxdoo
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 PORTREVISION=	0
 CATEGORIES=	www devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-current/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-sdk
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A comprehensive and innovative Ajax application framework
+COMMENT=	Comprehensive and innovative Ajax application framework
 
 LICENSE=	LGPL3 EPL
 LICENSE_COMB=	dual
