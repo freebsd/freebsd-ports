@@ -138,6 +138,7 @@
     SUBDIR += trytond_sale_shipment_cost
     SUBDIR += trytond_stock
     SUBDIR += trytond_stock_forecast
+    SUBDIR += trytond_stock_inventory_location
     SUBDIR += trytond_stock_supply
     SUBDIR += trytond_timesheet
     SUBDIR += venice
