@@ -137,6 +137,7 @@
     SUBDIR += trytond_sale_price_list
     SUBDIR += trytond_sale_shipment_cost
     SUBDIR += trytond_stock
+    SUBDIR += trytond_stock_forecast
     SUBDIR += trytond_timesheet
     SUBDIR += venice
     SUBDIR += weberp
