@@ -7,6 +7,7 @@
 
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MUNIN_SITES}
 PKGNAMESUFFIX=	-master
@@ -40,7 +41,9 @@ RUN_DEPENDS=	munin-common>=0:${PORTSDIR}/sysutils/munin-common \
 		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
 		p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
-		p5-Text-Balanced>=0:${PORTSDIR}/textproc/p5-Text-Balanced
+		p5-Text-Balanced>=0:${PORTSDIR}/textproc/p5-Text-Balanced \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
