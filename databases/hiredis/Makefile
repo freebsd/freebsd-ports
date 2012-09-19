@@ -19,9 +19,11 @@ GH_ACCOUNT=	antirez
 GH_TAGNAME=	v${DISTVERSION}
 GH_COMMIT=	0fff0f1
 
-ARCH=
 USE_GMAKE=	yes
 CFLAGS+=	-fPIC
 USE_LDCONFIG=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^REAL_/s/ \$$(ARCH)//' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
