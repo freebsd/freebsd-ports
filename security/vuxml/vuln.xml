@@ -51,6 +51,53 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="53a0ddef-0208-11e2-8afa-0024e830109b">
+    <topic>dns/bind9* -- Several vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>bind99</name>
+	<range><lt>9.9.1.3</lt></range>
+      </package>
+      <package>
+	<name>bind98</name>
+	<range><lt>9.8.3.3</lt></range>
+      </package>
+      <package>
+	<name>bind97</name>
+	<range><lt>9.7.6.3</lt></range>
+      </package>
+      <package>
+	<name>bind96</name>
+	<range><lt>9.6.3.1.ESV.R7.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC reports:</p>
+	<blockquote cite="https://kb.isc.org/article/AA-00788">
+	  <p>Prevents a crash when queried for a record whose RDATA exceeds
+	     65535 bytes.</p>
+	  <p>Prevents a crash when validating caused by using "Bad cache" data
+	     before it has been initialized.</p>
+	  <p>ISC_QUEUE handling for recursive clients was updated to address
+	     a race condition that could cause a memory leak. This rarely
+	     occurred with UDP clients, but could be a significant problem
+	     for a server handling a steady rate of TCP queries.</p>
+	  <p>A condition has been corrected where improper handling of
+	     zero-length RDATA could cause undesirable behavior, including
+	     termination of the named process.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url/>
+    </references>
+    <dates>
+      <discovery>2012-09-12</discovery>
+      <entry>2012-09-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d846af5b-00f4-11e2-b6d0-00e0814cab4e">
     <topic>jenkins -- multiple vulnerabilities</topic>
     <affects>
