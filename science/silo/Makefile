@@ -27,7 +27,6 @@ CONFIGURE_ARGS=	--enable-shared
 USE_LDCONFIG=	yes
 
 USE_QT_VER=	3
-QT_COMPONENTS=	moc uic
 
 .ifdef WITH_PYTHON
 USE_PYTHON=	yes
