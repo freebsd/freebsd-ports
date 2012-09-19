@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	kipi-plugins
-PORTVERSION=	2.7.0
+PORTVERSION=	${DIGIKAM_VER}
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
-MASTER_SITES=	SF/digikam/digikam/${PORTVERSION}
-DISTNAME=	digikam-${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE4 kipi graphics plugins
 
-LICENSE=	GPLv2
+.include "${.CURDIR}/../digikam-kde4/Makefile.common"
 
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 		qjson:${PORTSDIR}/devel/qjson
@@ -36,17 +34,11 @@ MEDIAWIKI_DESC=		Enable MediaWiki plugin
 OPENCV_DESC=		Enable Red Eye Removal plugin
 PIMLIBS_DESC=		Enable Calendar plugins
 
-USE_BZIP2=	yes
-USE_CMAKE=	yes
+USE_PKGCONFIG=	build
 USE_GL=		glu
-USE_KDE4=	automoc4 kdehier kdeprefix kdelibs libkdcraw libkexiv2 libkipi
-USE_QT4=	qmake_build moc_build rcc_build uic_build
-USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
+USE_KDE4+=	libkdcraw libkexiv2 libkipi
 
 CMAKE_ARGS=	-DCMAKE_PREFIX_PATH:PATH=${KDE4_PREFIX}
-
-WRKSRC=		${WRKDIR}/${DISTNAME}/extra/${PORTNAME}
 
 .include <bsd.port.options.mk>
 

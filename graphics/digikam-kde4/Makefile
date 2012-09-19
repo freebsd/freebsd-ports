@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	digikam
-PORTVERSION=	2.7.0
+PORTVERSION=	${DIGIKAM_VER}
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
-MASTER_SITES=	SF
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	An advanced digital photo management application for KDE4
+COMMENT=	KDE4 digital photo management application
 
-LICENSE=	GPLv2
+.include "${.CURDIR}/Makefile.common"
 
 LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 		lcms:${PORTSDIR}/graphics/lcms \
@@ -35,13 +34,9 @@ NO_OPTIONS_SORT=	yes
 GPHOTO2_DESC=		Enable gphoto2 camera support
 PIMLIBS_DESC=		Enable address book support
 
-MAKE_JOBS_SAFE=	yes
-USE_BZIP2=	yes
-USE_KDE4=	automoc4 kdehier kdeprefix kdelibs libkdcraw libkexiv2 libkipi
-USE_QT4=	sql-sqlite3_run \
-		qmake_build moc_build rcc_build uic_build
-USE_CMAKE=	yes
-USE_LDCONFIG=	yes
+USE_PKGCONFIG=	build
+USE_KDE4+=	libkdcraw libkexiv2 libkipi
+USE_QT4+=	sql-sqlite3_run
 
 MAN1=		digitaglinktree.1 \
 		cleanup_digikamdb.1
@@ -85,8 +80,5 @@ post-patch:
 	${LN} -s ../doc ${WRKSRC}/doc
 	${LN} -s ../po ${WRKSRC}/po
 	${RM} ${WRKSRC}/po/*/libkgeomap.po ${WRKSRC}/po/*/kipi*
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

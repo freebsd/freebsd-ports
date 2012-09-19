@@ -6,26 +6,15 @@
 #
 
 PORTNAME=	libkface
-PORTVERSION=	2.7.0
+PORTVERSION=	${DIGIKAM_VER}
 CATEGORIES=	graphics kde
-MASTER_SITES=	SF/digikam/digikam/${PORTVERSION}
-DISTNAME=	digikam-${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE4 library for face recognition
 
-LICENSE=	GPLv2
+.include "${.CURDIR}/../digikam-kde4/Makefile.common"
 
 LIB_DEPENDS=	opencv_legacy:${PORTSDIR}/graphics/opencv
-
-USE_BZIP2=	yes
-USE_CMAKE=	yes
-USE_KDE4=	automoc4 kdehier kdeprefix kdelibs
-USE_QT4=	qmake_build moc_build rcc_build uic_build
-USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
-
-WRKSRC=		${WRKDIR}/${DISTNAME}/extra/${PORTNAME}
 
 post-patch:
 	${REINPLACE_CMD} -e '/pkgconfig/s|$${LIB_INSTALL_DIR}|libdata|' \
