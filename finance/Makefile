@@ -120,6 +120,7 @@
     SUBDIR += trytond_calendar
     SUBDIR += trytond_calendar_classification
     SUBDIR += trytond_calendar_scheduling
+    SUBDIR += trytond_calendar_todo
     SUBDIR += trytond_carrier
     SUBDIR += trytond_carrier_percentage
     SUBDIR += trytond_carrier_weight
