@@ -1,0 +1,8 @@
+--- CMakeLists.txt.orig	2012-09-19 15:09:58.000000000 +0800
++++ CMakeLists.txt	2012-09-19 15:10:32.000000000 +0800
+@@ -33,4 +33,3 @@
+ 
+ add_subdirectory(src)
+ add_subdirectory(po)
+-add_subdirectory(test)
+\ No newline at end of file
