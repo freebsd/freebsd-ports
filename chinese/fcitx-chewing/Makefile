@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fcitx-chewing
-PORTVERSION=	0.1.2
-PORTREVISION=	1
+PORTVERSION=	0.1.3
 CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DIST_SUBDIR=	fcitx
@@ -15,8 +14,8 @@ DIST_SUBDIR=	fcitx
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Chewing support for Fcitx
 
-LIB_DEPENDS=	fcitx-config.4:${PORTSDIR}/chinese/fcitx \
-		chewing.3:${PORTSDIR}/chinese/libchewing
+LIB_DEPENDS=	fcitx-config:${PORTSDIR}/chinese/fcitx \
+		chewing:${PORTSDIR}/chinese/libchewing
 
 USE_XZ=		yes
 USE_GETTEXT=	yes
