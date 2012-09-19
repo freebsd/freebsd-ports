@@ -1,27 +1,19 @@
---- monitorix.orig	2011-05-04 18:19:58.792045586 +0100
-+++ monitorix	2011-05-04 18:46:51.729913889 +0100
-@@ -1654,10 +1654,8 @@
- 		alarm $TIMEOUT;
- 		open(IN, "df -P / |");
- 		while(<IN>) {
--			if(/dev/ && /\//) {
--				($root_disk) = split(' ', $_);
--				last;
--			}
-+			next if /Filesystem/;
-+			($root_disk) = split;
- 		}
- 		close(IN);
- 		alarm 0;
-@@ -1734,9 +1732,8 @@
+--- monitorix.orig	2012-09-19 19:10:51.216974158 +0100
++++ monitorix	2012-09-19 19:32:41.617971604 +0100
+@@ -2293,8 +2293,14 @@
+ 					}
+ 				}
+ 			} elsif($os eq "FreeBSD" || $os eq "OpenBSD" || $os eq "NetBSD") {
+-				$d =~ s/^.*dev\///;	# remove the /dev/ prefix
+-				$d =~ s/^(...).*/\1/;	# get the first 3 chars
++				# remove the /dev/ prefix
++				if ($d =~ s/^.*dev\///) {
++					# not ZFS; get the device name, eg ada0; md0; ad10
++					$d =~ s/^(\D+\d*)\D.*/\1/;	
++				} else {
++					# Just take ZFS pool name
++					$d =~ s,^([^/]*)/.*,\1,;
++				}
  			}
- 		}
- 	} elsif($os eq "FreeBSD") {
--		$root_disk =~ s/^.*dev\///;	# remove the /dev/ prefix
--#		$root_disk =~ s/.*\///;		# removes /dev/
--		$root_disk =~ s/...$//;		# removes part number
-+		$root_disk =~ s/^.dev.//;	# remove the /dev/ prefix
-+		$root_disk =~ s/[sp][0-9][a-z]?$//;	# removes part number
- 	}
- 
- 	# do exists in /proc/diskstats?
+ 			$FS_DEV{$fs} = $d;
+ 			logger("$myself: Detected physical device name for $fs in '$d'.") unless !$opt_d;
