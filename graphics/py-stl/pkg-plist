@@ -4,7 +4,7 @@
 %%PYTHON_SITELIBDIR%%/xform.py
 %%PYTHON_SITELIBDIR%%/xform.pyc
 %%PYTHON_SITELIBDIR%%/xform.pyo
-bin/stl2pdf
+%%STL2PDF%%bin/stl2pdf
 bin/stl2pov
 bin/stl2ps
 bin/stlinfo
