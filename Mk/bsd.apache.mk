@@ -423,6 +423,7 @@ print-closest-mirrors:
 
 .if !target(show-modules)
 show-modules:
+.if !empty(APACHE_MODULES)	
 .for module in ${AVAILABLE_MODULES}
 	@${PRINTF} "%-20s : " ${module}
 .	if ${APACHE_MODULES:M${module}}
@@ -436,6 +437,11 @@ show-modules:
 		@${ECHO_CMD} disabled
 .	endif
 .endfor
+.else
+.for module in ${AVAILABLE_MODULES}
+	@${PRINTF} "%-20s : disabled\n" ${module} 
+.endfor
+.endif
 .endif
 
 .elif defined(AP_PORT_IS_MODULE)
