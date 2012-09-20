@@ -16,8 +16,8 @@ DISTNAME=	bacula-${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	The network backup solution (server)
 
-DEPRECATED=	Doesn't supported upstream for a long time. May contain open \
-		vulnerabilities. Please use sysutils/bacula-server instead
+DEPRECATED=	This port is no longer supported upstream and may contain \
+		vulnerabilities. Please use sysutils/bacula-server instead.
 EXPIRATION_DATE=2012-10-20
 
 CONFLICTS=	bacula-server-devel-[0-9]* \
