@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	freeswitch
-DISTVERSION=	1.2.1
+DISTVERSION=	1.2.3
 CATEGORIES=	net
 MASTER_SITES=	http://files.freeswitch.org/ \
 		http://files.freeswitch.org/downloads/libs/:2 \
 		http://download.zeromq.org/:3
 PKGNAMESUFFIX=	-core-devel
 DISTFILES=	${PORTNAME}-${DISTVERSION}.tar.bz2 \
-		opus-0.9.0.tar.gz:2 \
+		opus-1.0.1.tar.gz:2 \
 		celt-0.10.0.tar.gz:2 \
 		flite-1.5.4-current.tar.bz2:2 \
 		json-c-0.9.tar.gz:2 \

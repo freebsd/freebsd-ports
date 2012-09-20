@@ -60,6 +60,7 @@ include/freeswitch/switch_types.h
 include/freeswitch/switch_utils.h
 include/freeswitch/switch_xml.h
 include/freeswitch/switch_xml_config.h
+include/freeswitch/tpl.h
 %%MODFREETDM%%include/freetdm.h
 %%MODFREETDM%%include/ftdm_declare.h
 %%MODFREETDM%%include/ftdm_dso.h
