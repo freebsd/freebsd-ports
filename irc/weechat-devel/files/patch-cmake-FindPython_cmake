@@ -1,5 +1,5 @@
---- cmake/FindPython.cmake.orig	2012-09-03 15:43:03.205462582 +0100
-+++ cmake/FindPython.cmake	2012-09-03 15:46:06.564072755 +0100
+--- cmake/FindPython.cmake.orig	2012-09-18 20:21:00.000000000 +0100
++++ cmake/FindPython.cmake	2012-09-19 17:28:30.968900751 +0100
 @@ -34,8 +34,7 @@
  ENDIF(PYTHON_FOUND)
  
@@ -10,7 +10,7 @@
    )
  
  IF(PYTHON_EXECUTABLE)
-@@ -60,11 +59,11 @@
+@@ -60,24 +59,12 @@
      )
  
    FIND_LIBRARY(PYTHON_LIBRARY
@@ -19,8 +19,21 @@
      PATHS ${PYTHON_POSSIBLE_LIB_PATH}
      )
  
--  IF(PYTHON_LIBRARY AND PYTHON_INCLUDE_PATH)
-+  IF(0)
-     EXECUTE_PROCESS(
-       COMMAND ${PYTHON_EXECUTABLE} -c "import sys; sys.stdout.write(sys.version[:3])"
-       OUTPUT_VARIABLE PYTHON_VERSION
+   IF(PYTHON_LIBRARY AND PYTHON_INCLUDE_PATH)
+-    EXECUTE_PROCESS(
+-      COMMAND ${PYTHON_EXECUTABLE} -c "import sys; sys.stdout.write(sys.version[:3])"
+-      OUTPUT_VARIABLE PYTHON_VERSION
+-      )
+-    EXECUTE_PROCESS(
+-      COMMAND ${PYTHON_EXECUTABLE} -c "import sys; sys.stdout.write(str(sys.version_info < (2,5)))"
+-      OUTPUT_VARIABLE PYTHON_OLD_VERSION
+-      )
+-    IF(${PYTHON_OLD_VERSION} STREQUAL "True")
+-      MESSAGE("Python >= 2.5 is needed to build python plugin, version found: ${PYTHON_VERSION}")
+-    ELSE()
+-      SET(PYTHON_FOUND TRUE)
+-    ENDIF(${PYTHON_OLD_VERSION} STREQUAL "True")
++    SET(PYTHON_FOUND TRUE)
+   ENDIF(PYTHON_LIBRARY AND PYTHON_INCLUDE_PATH)
+ 
+   MARK_AS_ADVANCED(
