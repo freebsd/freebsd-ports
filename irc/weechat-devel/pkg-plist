@@ -11,6 +11,7 @@ lib/weechat/plugins/xfer.so
 libdata/pkgconfig/weechat.pc
 %%ASPELL%%lib/weechat/plugins/aspell.so
 %%CHARSET%%lib/weechat/plugins/charset.so
+%%GUILE%%lib/weechat/plugins/guile.so
 %%LUA%%lib/weechat/plugins/lua.so
 %%PERL%%lib/weechat/plugins/perl.so
 %%PYTHON%%lib/weechat/plugins/python.so
@@ -39,6 +40,7 @@ libdata/pkgconfig/weechat.pc
 %%DOCUMENTATION%%share/doc/weechat/weechat_scripting.en.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_scripting.fr.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_scripting.it.html
+%%DOCUMENTATION%%share/doc/weechat/weechat_scripting.ja.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_scripting.pl.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_tester.de.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_tester.en.html
