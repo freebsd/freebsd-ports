@@ -18,8 +18,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	poppler-qt4:${PORTSDIR}/graphics/poppler-qt4 \
 		cups:${PORTSDIR}/print/cups-client
 
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib dbus gui moc qmake_build svg xml
+USE_QT4=	corelib dbus gui moc_build qmake_build svg xml
 
 MAN1=		${PORTNAME}.1
 
