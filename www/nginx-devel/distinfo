@@ -6,6 +6,8 @@ SHA256 (nginx-accesskey-2.0.3.tar.gz) = d9e94321e78a02de16c57f3e048fd31059fd8116
 SIZE (nginx-accesskey-2.0.3.tar.gz) = 2632
 SHA256 (samizdatco-nginx-http-auth-digest-bd1c86a.tar.gz) = e223f55fd97e56425e232d8698e024707d1b2ed3714eff7d91a4d1ca76b4cbee
 SIZE (samizdatco-nginx-http-auth-digest-bd1c86a.tar.gz) = 14454
+SHA256 (http_auth_ldap-c2c3d5ea4919.tar.gz) = cecb8a5bbfdc25ff588e13f5a7f724fb2ea0336604e1e50044115910a58e700c
+SIZE (http_auth_ldap-c2c3d5ea4919.tar.gz) 5118
 SHA256 (ngx_http_auth_pam_module-1.2.tar.gz) = 5a85970ba61a99f55a26d2536a11d512b39bbd622f5737d25a9a8c10db81efa9
 SIZE (ngx_http_auth_pam_module-1.2.tar.gz) = 5424
 SHA256 (ngx_http_auth_request_module-0.2.tar.gz) = eea5d0ec02bba93d0b204a034230cc61462b60497cbac6f581d7e008a9262ba4

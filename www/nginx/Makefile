@@ -56,6 +56,7 @@ OPTIONS_DEFINE=	\
 	HTTP_ACCEPT_LANGUAGE \
 	HTTP_ACCESSKEY \
 	HTTP_AUTH_DIGEST \
+	HTTP_AUTH_LDAP \
 	HTTP_AUTH_PAM \
 	HTTP_AUTH_REQ \
 	HTTP_DAV_EXT \
@@ -140,6 +141,7 @@ HEADERS_MORE_DESC=		3rd party headers_more module
 HTTP_ACCEPT_LANGUAGE_DESC=	3rd party accept_language module
 HTTP_ACCESSKEY_DESC=		3rd party http_accesskey module
 HTTP_AUTH_DIGEST_DESC=		3rd party http_authdigest module
+HTTP_AUTH_LDAP_DESC=		3rd party http_auth_ldap module
 HTTP_AUTH_PAM_DESC=		3rd party http_auth_pam module
 HTTP_AUTH_REQ_DESC=		3rd party http_auth_request module
 HTTP_DAV_EXT_DESC=		3rd party webdav_ext module
@@ -290,6 +292,14 @@ FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/samizdatco/nginx-http-auth-digest/tarball/master/:auth_digest
 DISTFILES+=	samizdatco-nginx-http-auth-digest-${GIT_AUTH_DIGEST_VERSION}.tar.gz:auth_digest
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/samizdatco-nginx-http-auth-digest-${GIT_AUTH_DIGEST_VERSION}
+.endif
+
+.if ${PORT_OPTIONS:MHTTP_AUTH_LDAP}
+GIT_HTTP_AUTH_LDAP_VERSION=	c2c3d5ea4919
+MASTER_SITES+=	LOCAL/rm:http_auth_ldap
+DISTFILES+=	http_auth_ldap-${GIT_HTTP_AUTH_LDAP_VERSION}.tar.gz:http_auth_ldap
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/http_auth_ldap-${GIT_HTTP_AUTH_LDAP_VERSION}
+USE_OPENLDAP=	yes
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_PAM}
