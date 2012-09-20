@@ -1,9 +1,6 @@
+bin/mubusy
 bin/mupdf
-bin/mupdfclean
 bin/mudraw
-bin/mupdfextract
-bin/mupdfinfo
-bin/mupdfshow
 include/fitz.h
 include/memento.h
 include/mucbz.h

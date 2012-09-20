@@ -1,11 +1,8 @@
-# New ports collection makefile for:	mupdf
-# Date created:		2009-08-07
-# Whom:			Martin Dieringer <martin.dieringer@gmx.de>
-#
+# Created by: Martin Dieringer <martin.dieringer@gmx.de>
 # $FreeBSD$
 
 PORTNAME=	mupdf
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE \
@@ -16,7 +13,6 @@ MAINTAINER=	lichray@gmail.com
 COMMENT=	Lightweight PDF viewer and toolkit
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
 		jpeg:${PORTSDIR}/graphics/jpeg \
@@ -26,8 +22,8 @@ LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
 USE_GMAKE=	yes
 MAKE_ARGS+=	build=release prefix=${PREFIX} verbose=1 mandir=${PREFIX}/man
 USE_XORG=	x11 xext
-USE_GNOME=	pkgconfig
-MAN1=		mupdf.1 mupdfclean.1 mudraw.1 mupdfshow.1
+USE_PKGCONFIG=	build
+MAN1=		mupdf.1 mubusy.1 mudraw.1
 
 MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
@@ -35,7 +31,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
 OPTIONS_DEFINE=	SCROLL
 OPTIONS_DEFAULT=SCROLL
 
-SCROLL_DESC=	"Build with scroll hacks"
+SCROLL_DESC=	Build with scroll hacks
 
 .include <bsd.port.options.mk>
 
@@ -53,7 +49,7 @@ post-patch:	.SILENT
 	${REINPLACE_CMD} \
 		-e '/install:/,/^$$/ { /-d/d; }' \
 		-e '/install.*bindir)$$/s/install/$$(BSD_INSTALL_PROGRAM)/' \
-		-e '/install.*libdir)$$/s/install/$$(BSD_INSTALL_LIB)/' \
+		-e '/install.*libdir)$$/s/install/$$(BSD_INSTALL_DATA)/' \
 		-e '/install.*incdir)$$/s/install/$$(BSD_INSTALL_DATA)/' \
 		-e '/install.*man1$$/s/install/$$(BSD_INSTALL_MAN)/' \
 		${WRKSRC}/Makefile
@@ -61,5 +57,4 @@ post-patch:	.SILENT
 		-e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/Makerules
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
