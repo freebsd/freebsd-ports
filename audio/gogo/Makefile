@@ -1,9 +1,5 @@
-# New ports collection makefile for:  GOGO-no-coda
-# Date created:        01 July 1999
-# Whom:                Yukihiro Nakai <Nacai@iname.com>
-#
+# Created by: Yukihiro Nakai <Nacai@iname.com>
 # $FreeBSD$
-#
 
 PORTNAME=	gogo
 PORTVERSION=	3.13
@@ -14,6 +10,9 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very fast MP3 encoder using recent x86 processors' features
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

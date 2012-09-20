@@ -16,6 +16,9 @@ EXTRACT_SUFX=		.skz
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Liquid Weather ++ a Superkaramba weather applet
 
+DEPRECATED=		No more public_distfiles
+EXPIRATION_DATE=	2012-10-20
+
 EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 BUILD_DEPENDS=		zip:${PORTSDIR}/archivers/zip
 RUN_DEPENDS=		convert:${PORTSDIR}/graphics/ImageMagick \

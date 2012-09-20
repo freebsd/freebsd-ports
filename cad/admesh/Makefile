@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.varlog.com/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for processing STL triangulated solid meshes
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 FETCH_ARGS?=	-Fpr
 GNU_CONFIGURE=	yes
 

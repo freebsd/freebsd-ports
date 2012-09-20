@@ -17,6 +17,9 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chinese (HKSCS-2001 + CJK A) TrueType fonts
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 RESTRICTED=	No redistribution or commercial use is allowed
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
