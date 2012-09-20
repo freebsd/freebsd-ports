@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://ftp.cs.yorku.ca/pub/wily/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plan9 compatibility libraries
 
+EXPIRATION_DATE=	2012-10-20
+DEPRECATED=	Abandonware, no ports depends on it, and broken on most arches
+
 USE_XORG=	x11 xt ice
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--includedir=${PREFIX}/include/9libs

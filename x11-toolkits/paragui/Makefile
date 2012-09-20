@@ -16,6 +16,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform high-level application framework and GUI library
 
+DEPRECATED=	No more upstream, no ports depending on it
+EXPIRATION_DATE=	2012-10-20
+
 LIB_DEPENDS=	physfs.1:${PORTSDIR}/devel/physfs \
 		expat.6:${PORTSDIR}/textproc/expat2
 
