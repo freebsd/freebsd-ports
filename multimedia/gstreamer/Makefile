@@ -26,6 +26,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack glib20 libxml2 ltverhack ltasneededhack
+USE_PKGCONFIG=	build
 USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-tests \
@@ -50,7 +51,7 @@ LIBCHECK_DESC=	Unit tests support
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MCHECK}
+.if ${PORT_OPTIONS:MLIBCHECK}
 LIB_DEPENDS+=	check:${PORTSDIR}/devel/libcheck
 PLIST_SUB+=	CHECK=""
 .else
