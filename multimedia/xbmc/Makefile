@@ -101,7 +101,7 @@ PLIST_SUB+=	ARCH="x86"
 PLIST_SUB+=	ARCH="x86_64"
 .endif
 
-.if ${PORT_OPTIONS:MAVAHAHI}
+.if ${PORT_OPTIONS:MAVAHI}
 CONFIGURE_ARGS+=	--enable-avahi
 LIB_DEPENDS+=	avahi-common:${PORTSDIR}/net/avahi-app
 .else
