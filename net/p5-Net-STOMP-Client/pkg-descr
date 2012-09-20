@@ -1,0 +1,8 @@
+This module provides an object oriented client interface to interact
+with servers supporting STOMP (Streaming Text Orientated Messaging
+Protocol). It supports the major features of messaging brokers: SSL,
+asynchronous I/O, receipts and transactions.
+
+For details on the protocol see http://stomp.codehaus.org/Protocol.
+
+WWW: http://search.cpan.org/dist/Net-STOMP-Client/
