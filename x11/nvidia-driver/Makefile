@@ -70,11 +70,16 @@ EXTRA_PATCHES+=	${FILESDIR}/security-patch-CVE-2012-0946
 EXTRA_PATCHES+=	${FILESDIR}/security-patch-CVE-2012-4225
 .endif
 
-OPTIONS=	FREEBSD_AGP	"Use FreeBSD AGP GART driver" off \
-		ACPI_PM		"Enable support for ACPI Power Management" off \
-		LINUX		"Build with support for Linux compatibility" on
+OPTIONS_DEFINE=	FREEBSD_AGP ACPI_PM LINUX
+OPTIONS_DEFAULT=	LINUX
+
+FREEBSD_AGP_DESC=	Use FreeBSD AGP GART driver
+ACPI_PM_DESC=		ACPI Power Management support
+LINUX_DESC=		Linux compatibility support
+
 .if ${NVVERSION} >= 1952200
-OPTIONS+=	WBINVD		"Enable heavy-weight cache-flush logic" off
+OPTIONS_DEFINE+=	WBINVD
+WBINVD_DESC=		Flush CPU caches directly with WBINVD
 .endif
 
 .include <bsd.port.pre.mk>
@@ -82,7 +87,7 @@ OPTIONS+=	WBINVD		"Enable heavy-weight cache-flush logic" off
 PLIST_SUB+=	LINUXBASE=${LINUXBASE} SHLIB_VERSION=${PORTVERSION} \
 		MODULESDIR=${MODULESDIR}
 
-.if !defined(WITHOUT_LINUX)
+.if ${PORT_OPTIONS:MLINUX}
 CONFLICTS=	linux[-_]dri-[0-9]* linux-f10-dri-[0-9]*
 USE_LINUX=	yes
 PLIST_SUB+=	LINUX=""
@@ -116,19 +121,19 @@ post-patch: .SILENT
 		${WRKSRC}/src/nvidia_linux.c
 .endif
 # Process OPTIONS
-.if defined(WITH_FREEBSD_AGP)
+.if ${PORT_OPTIONS:MFREEBSD_AGP}
 	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_OS_AGP)/define \1/' \
 		${WRKSRC}/src/nv-freebsd.h
 .endif
-.if defined(WITH_ACPI_PM)
+.if ${PORT_OPTIONS:MACPI_PM}
 	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_ACPI_PM)/define \1/' \
 		${WRKSRC}/src/nv-freebsd.h
 .endif
-.if defined(WITHOUT_LINUX)
+.if ${PORT_OPTIONS:MLINUX}
 	${REINPLACE_CMD} -E 's/define (NV_SUPPORT_LINUX_COMPAT)/undef \1/' \
 		${WRKSRC}/src/nv-freebsd.h
 .endif
-.if defined(WITH_WBINVD)
+.if ${PORT_OPTIONS:MWBINVD}
 	${REINPLACE_CMD} -E 's/undef (NV_USE_WBINVD)/define \1/' \
 		${WRKSRC}/src/nv-freebsd.h
 .endif
