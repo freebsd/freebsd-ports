@@ -2246,17 +2246,11 @@ MAKE_ENV+=	PATH=${LOCALBASE}/libexec/ccache:${PATH}
 PTHREAD_CFLAGS?=
 PTHREAD_LIBS?=		-pthread
 
-.if exists(/usr/bin/fetch)
 FETCH_BINARY?=	/usr/bin/fetch
 FETCH_ARGS?=	-AFpr
 FETCH_REGET?=	1
 .if !defined(DISABLE_SIZE)
 FETCH_BEFORE_ARGS+=	$${CKSIZE:+-S $$CKSIZE}
-.endif
-.else
-FETCH_BINARY?=	/usr/bin/ftp
-FETCH_ARGS?=	-R
-FETCH_REGET?=	0
 .endif
 FETCH_CMD?=		${FETCH_BINARY} ${FETCH_ARGS}
 
@@ -3911,11 +3905,15 @@ do-package: ${TMPPLIST}
 			fi; \
 		fi; \
 	fi
-	@if ${PKG_CMD} -b ${PKGNAME} ${PKGFILE}; then \
+	@TMPPKGFILE=$$(mktemp -t pkg); \
+	trap "${RM} -f $${TMPPKGFILE} $${TMPPKGFILE}${PKG_SUFX}; exit 1" 1 2 3 5 10 13 15; \
+	if ${PKG_CMD} -b ${PKGNAME} $${TMPPKGFILE}; then \
+		${MV} -f $${TMPPKGFILE}${PKG_SUFX} ${PKGFILE}; \
 		if [ -d ${PACKAGES} ]; then \
 			cd ${.CURDIR} && eval ${MAKE} package-links; \
 		fi; \
 	else \
+		${RM} -f $${TMPPKGFILE}; \
 		cd ${.CURDIR} && eval ${MAKE} delete-package; \
 		exit 1; \
 	fi
@@ -6089,8 +6087,8 @@ DEFOPTIONS+=	${opt} "S(${single}): "${${opt}_DESC:Q} on
 .undef opt
 .endif # pre-config
 
-.if !target(config)
-config: pre-config
+.if !target(do-config)
+do-config:
 .if empty(ALL_OPTIONS) && empty(OPTIONS_SINGLE) && empty(OPTIONS_MULTI)
 	@${ECHO_MSG} "===> No options to configure"
 .else
@@ -6141,6 +6139,10 @@ config: pre-config
 	${RM} -f $${TMPOPTIONSFILE}
 	@cd ${.CURDIR} && ${MAKE} sanity-config
 .endif
+.endif # do-config
+
+.if !target(config)
+config: pre-config do-config
 .endif # config
 
 .if !target(config-recursive)
@@ -6155,7 +6157,7 @@ config-recursive:
 config-conditional: pre-config
 .if defined(COMPLETE_OPTIONS_LIST) && !defined(NO_DIALOG)
 .  if !defined(_FILE_COMPLETE_OPTIONS_LIST) || ${COMPLETE_OPTIONS_LIST:O} != ${_FILE_COMPLETE_OPTIONS_LIST:O}
-	@cd ${.CURDIR} && ${MAKE} config;
+	@cd ${.CURDIR} && ${MAKE} do-config;
 .  endif
 .endif
 .endif # config-conditional

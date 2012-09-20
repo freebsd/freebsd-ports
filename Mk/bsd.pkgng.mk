@@ -123,6 +123,7 @@ fake-pkg:
 .else
 	@${PKG_CMD} -l -m ${METADIR} -f ${TMPPLIST}
 .endif
+	@${RM} -rf ${METADIR}
 .else
 	@${DO_NADA}
 .endif
@@ -230,11 +231,16 @@ do-package: ${TMPPLIST}
 			fi; \
 		fi; \
 	fi;
-	@if ${PKG_CREATE} -o ${PKGREPOSITORY} ${PKGNAME}; then \
+	@TMPPKGREPOSITORY=$$(mktemp -dt pkg); \
+	trap "${RM} -rf $${TMPPKGREPOSITORY}; exit 1" 1 2 3 5 10 13 15; \
+	if ${PKG_CREATE} -o $${TMPPKGREPOSITORY} ${PKGNAME}; then \
+		${MV} -f $${TMPPKGREPOSITORY}/${PKGNAME}${PKG_SUFX} ${PKGREPOSITORY}; \
+		${RM} -rf $${TMPPKGREPOSITORY}; \
 		if [ -d ${PACKAGES} ]; then \
 			cd ${.CURDIR} && eval ${MAKE} package-links; \
 		fi; \
 	else \
+		${RM} -rf $${TMPPKGREPOSITORY}; \
 		cd ${.CURDIR} && eval ${MAKE} delete-package; \
 		exit 1; \
 	fi
