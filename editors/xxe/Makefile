@@ -1,26 +1,21 @@
-# New ports collection makefile for:	xxe
-# Date created:		19 February 2005
-# Whom:			Bill Fenner
-#
 # $FreeBSD$
-#
 
 PORTNAME=	xxe
 PORTVERSION=	${XXE_VERSION}
 CATEGORIES=	editors java
 MASTER_SITES=	http://www.xmlmind.net/xmleditor/_download/ \
 		http://www.xmlmind.com/xmleditor/_download/
-PKGNAMESUFFIX=	-perso
+PKGNAMESUFFIX=	-eval
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION:S/./_/g}
 
 MAINTAINER=	dougb@FreeBSD.org
-COMMENT=	A validating XML editor featuring a word processor-like view
+COMMENT=	Validating XML editor featuring a word processor-like view
 
 USE_JAVA=	YES
 JAVA_VERSION=	1.5+
 NO_BUILD=	YES
 
-RESTRICTED=	Licensee may not distribute the Software
+RESTRICTED=	Licensee may not distribute the software, evaluation edition
 
 BINS=		convertdoc csscheck deploywebstart translatexxe xmltool xxe
 
@@ -38,6 +33,9 @@ do-install:
 .for f in ${BINS}
 		@${INSTALL_SCRIPT} ${WRKDIR}/xxe ${PREFIX}/bin/${f}
 .endfor
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include "Makefile.inc"
 
