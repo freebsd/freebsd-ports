@@ -5,4 +5,4 @@
  echo "\n\n<h1>---------------</h1>" >> helpfile.data
  cat $2 >> helpfile.data
 -wish $1/makeHelp.tcl helpfile.data generatedHelp $1
-+wish8.2 $1/makeHelp.tcl helpfile.data generatedHelp $1
++%%WISH%% $1/makeHelp.tcl helpfile.data generatedHelp $1
