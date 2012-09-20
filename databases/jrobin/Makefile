@@ -1,7 +1,4 @@
-# ex:ts=8
-# Ports collection makefile for:	JRobin
-# Date created:			Mar 9, 2005
-# Whom:				ijliao
+# Created by: ijliao
 #
 # $FreeBSD$
 #
@@ -9,7 +6,7 @@
 PORTNAME=	jrobin
 PORTVERSION=	1.5.14
 CATEGORIES=	databases java
-MASTER_SITES=	http://repo.opennms.org/maven2/org/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	SF
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
