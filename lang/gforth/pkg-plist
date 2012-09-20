@@ -158,7 +158,7 @@ lib/gforth/%%PORTVERSION%%/libcc-named/fflib.a
 %%DATADIR%%/%%PORTVERSION%%/kernel/toolsext.fs
 %%DATADIR%%/%%PORTVERSION%%/kernel/vars.fs
 %%DATADIR%%/%%PORTVERSION%%/kernel/xchars.fs
-%%DATADIR%%/%%PORTVERSION%%/kernl64l.fi
+%%DATADIR%%/%%PORTVERSION%%/kernl%%WORDSIZE%%%%BYTEORDER%%.fi
 %%DATADIR%%/%%PORTVERSION%%/lib.fs
 %%DATADIR%%/%%PORTVERSION%%/libcc.fs
 %%DATADIR%%/%%PORTVERSION%%/libffi.fs
