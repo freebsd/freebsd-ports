@@ -14,6 +14,9 @@ MASTER_SITES=	SF/ede/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extended Fast Light Toolkit
 
+DEPRECATED=	Abandonned upstream, no ports depends on it
+EXPIRATION_DATE=	2012-10-20
+
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 

@@ -17,6 +17,9 @@ PKGNAMESUFFIX=	${SFXGL}${SFXGNOME}${SFXGLADE}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Objective Caml interface to gtk+
 
+DEPRECATED=	Abandonned upstream, consider using x11-toolkit/ocaml-lablgtk2
+EXPIRATION_DATE=	2012-10-20
+
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 USE_OCAML=	yes

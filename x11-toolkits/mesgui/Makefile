@@ -14,6 +14,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Make a simple GUI under OpenGL
 
+EXPIRATION_DATE=	2012-10-20
+DEPRECATED=	Abandonned upstream, no ports depends on it
+
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_SDL=	sdl
