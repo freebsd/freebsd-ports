@@ -663,6 +663,7 @@
     SUBDIR += p5-Net-SSH-Expect
     SUBDIR += p5-Net-SSH-Perl
     SUBDIR += p5-Net-SSH2
+    SUBDIR += p5-Net-STOMP-Client
     SUBDIR += p5-Net-Server
     SUBDIR += p5-Net-Server-Coro
     SUBDIR += p5-Net-Server-SS-PreFork
