@@ -13,8 +13,12 @@ MASTER_SITES=	SF/bacula/z-older-releases/bacula/${PORTVERSION}
 PKGNAMESUFFIX?=	-server
 DISTNAME=	bacula-${DISTVERSION}
 
-MAINTAINER=	v.haisman@sh.cvut.cz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	The network backup solution (server)
+
+DEPRECATED=	Doesn't supported upstream for a long time. May contain open \
+		vulnerabilities. Please use sysutils/backula-server instead
+EXPIRATION_DATE=2012-10-20
 
 CONFLICTS=	bacula-server-devel-[0-9]* \
 		bacula-client-devel-[0-9]* \
