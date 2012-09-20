@@ -3664,9 +3664,9 @@ lang/spidermonkey|lang/spidermonkey17|2012-09-01|Moved to allow for addition of 
 cad/gtkwave3|cad/gtkwave|2012-09-04|There is only one version of this now
 multimedia/x264-devel||2012-09-07|Has expired: x264 github development makes this port obsolete
 audio/holyshout||2012-09-07|Has expired: upstream has disappeared
-postgresql73-man||2012-09-13|There no according PostgreSQL version in the tree anymore
-postgresql74-man||2012-09-13|There no according PostgreSQL version in the tree anymore
-postgresql80-man||2012-09-13|There no according PostgreSQL version in the tree anymore
-postgresql81-man||2012-09-13|There no according PostgreSQL version in the tree anymore
+japanese/postgresql73-man||2012-09-13|There no according PostgreSQL version in the tree anymore
+japanese/postgresql74-man||2012-09-13|There no according PostgreSQL version in the tree anymore
+japanese/postgresql80-man||2012-09-13|There no according PostgreSQL version in the tree anymore
+japanese/postgresql81-man||2012-09-13|There no according PostgreSQL version in the tree anymore
 audio/libmusicbrainz||2012-09-18|Has expired: MusicBrainz RDF webservice no longer functions
 net-mgmt/better-cacti-templates|net-mgmt/percona-monitoring-plugins|2012-09-19|Project renamed
