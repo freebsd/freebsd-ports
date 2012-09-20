@@ -14,6 +14,9 @@ MASTER_SITES=	http://matchbox-project.org/sources/matchbox-window-manager/${PORT
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window manager suitable for low-resolution screens
 
+DEPRECATED=	Abandonware, upstream disappeared
+EXPIRATION_DATE=	2012-10-20
+
 LICENSE=	GPLv2
 
 USE_BZIP2=	yes

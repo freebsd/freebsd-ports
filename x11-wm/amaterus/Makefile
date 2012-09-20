@@ -14,6 +14,9 @@ MASTER_SITES=	http://taiyaki.org/amaterus/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK+ window manager
 
+DEPRECATED=	Abandonware, upstream disappeared
+EXPIRATION_DATE=	2012-10-20
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 

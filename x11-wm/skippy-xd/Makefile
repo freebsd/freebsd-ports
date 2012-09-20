@@ -14,6 +14,9 @@ MASTER_SITES=	http://cdn.thegraveyard.org/releases/skippy/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full-screen X11 task-switcher like Apple's Expose
 
+DEPRECATED=	Abandonware, upstream disappeared
+EXPIRATION_DATE=	2012-10-20
+
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
