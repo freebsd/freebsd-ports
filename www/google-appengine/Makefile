@@ -1,12 +1,8 @@
-# New ports collection makefile for:	google-appengine
-# Date created:		2008-04-09
-# Whom:			Nicola Vitale	<nivit@FreeBSD.org>
-#
+# Created by: Nicola Vitale <nivit@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	google-appengine
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 PORTREVISION=	0
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
@@ -19,7 +15,8 @@ LICENSE=	AL2 BSD GPLv2 LGPL21 MIT MPL PSFL
 LICENSE_COMB=	multi
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=${PYTHON_VER}:${PORTSDIR}/databases/py-sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}imaging>=1.1.6_2:${PORTSDIR}/graphics/py-imaging
+		${PYTHON_PKGNAMEPREFIX}imaging>=1.1.6_2:${PORTSDIR}/graphics/py-imaging \
+		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.6:${PORTSDIR}/security/py-pycrypto
 
 PROJECTHOST=	googleappengine
 
@@ -27,14 +24,10 @@ USE_PYTHON=	2.7
 USE_ZIP=	yes
 USE_GETTEXT=	yes
 
-OPTIONS_DEFINE=	DOCS EXAMPLES MYSQL
+OPTIONS_DEFINE=	EXAMPLES MYSQL
 OPTIONS_DEFAULT=	MYSQL
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-DISTFILES+=	${PORTNAME}-docs-${GAEDOCSREL}.zip
-.endif
 
 WRKSRC=	${WRKDIR}/${PORTNAME:S,-,_,}
 
@@ -47,7 +40,6 @@ XARGS_ARGS=	-0
 REINPLACE_ARGS=	-i.bak -e 's,/usr/bin/env python,&${PYTHON_VER},'
 
 GAEDATADIR=	google lib new_project_template tools
-GAEDOCSREL=	20120228
 GAESCRIPTS=	api_server appcfg bulkload_client bulkloader \
 		dev_appserver download_appstats gen_protorpc \
 		google_sql remote_api_shell
@@ -69,17 +61,11 @@ do-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} demos ${EXAMPLESDIR}
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${WRKSRC}/README ${DOCSDIR}
-	cd ${WRKDIR}/google-appengine-docs-${GAEDOCSREL} && ${COPYTREE_SHARE} . ${DOCSDIR}
-.endif
 .for S in ${GAESCRIPTS}
 .  for EXT in py pyc pyo
 	${INSTALL_SCRIPT} ${WRKSRC}/${S}.${EXT} ${DATADIR}
 	${LN} ${LN_OPTS} ${DATADIR}/${S}.${EXT} ${PREFIX}/bin/${S}.${EXT}
 .  endfor
-
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/VERSION ${DATADIR}
 
