@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	jmusic
-# Date created:			Sep 15, 2006
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	jmusic
 PORTVERSION=	1.5
