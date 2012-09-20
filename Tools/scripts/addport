@@ -232,9 +232,7 @@ foreach my $thisdir (@dirs) {
 
 	# Get the category name and make it suitable for use with svn
 	my $category;
-	$_ = `$make -V CATEGORIES`;
-	m/([\w-]+)/;
-	$category = $1;
+	$category = `$make -V PKGCATEGORY`;
 	chomp $category;
 	if ($interactive) {
 		if (prompt("Port $portname will be put in category $category.  OK? " )) {
@@ -271,7 +269,8 @@ foreach my $thisdir (@dirs) {
 		open(MAKEFILE, "Makefile") or die("Can't open Makefile for reading: $!");
 		while(<MAKEFILE>) {
 			chomp;
-			($maintainer) = (m/^MAINTAINER=\s+(\w.*)$/) if (/^MAINTAINER=/);
+			die ("Old style Makefile headers detected") if (/^# (?:[Nn]ew )?[Pp]orts collection [Mm]akefile/);
+			($maintainer) = (m/^# Created by:\s+(\w.*)$/) if (/^# Created by/);
 			($portversion) = (m/^PORTVERSION=\s+(\w.*)$/) if (/^PORTVERSION=/);
 		}
 		close(MAKEFILE);
@@ -293,7 +292,7 @@ foreach my $thisdir (@dirs) {
 		}
 		print AUTOFILL $tmp;
 		print AUTOFILL "PR:		ports/$autofill\n" if ($autofill != -1);
-		print AUTOFILL "Submitted by:	$maintainer" if ($autofill != -1);
+		print AUTOFILL "Submitted by:	$maintainer" if ($maintainer && $autofill != -1);
 		close(AUTOFILL);
 		print "Okay, a commit log message was automatically generated for you.\n";
 		print "Now you will have a chance to edit it to make sure it's OK to use.\n";
