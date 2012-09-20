@@ -51,6 +51,7 @@ OPTIONS_DEFINE=	\
 	MAIL_SSL \
 	WWW \
 	CACHE_PURGE \
+	CTPP2 \
 	ECHO \
 	HEADERS_MORE \
 	HTTP_ACCEPT_LANGUAGE \
@@ -136,6 +137,7 @@ MAIL_SMTP_DESC=			Enable SMTP proxy module
 MAIL_SSL_DESC=			Enable mail_ssl module
 WWW_DESC=			Enable html sample files
 CACHE_PURGE_DESC=		3rd party cache_purge module
+CTPP2_DESC=			3rd party CT++ module
 ECHO_DESC=			3rd party echo module
 HEADERS_MORE_DESC=		3rd party headers_more module
 HTTP_ACCEPT_LANGUAGE_DESC=	3rd party accept_language module
@@ -325,6 +327,14 @@ NGINX_CACHE_PURGE_VERSION=	1.6
 MASTER_SITES+=	http://labs.frickle.com/files/:cache_purge
 DISTFILES+=	ngx_cache_purge-${NGINX_CACHE_PURGE_VERSION}.tar.gz:cache_purge
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_cache_purge-${NGINX_CACHE_PURGE_VERSION}
+.endif
+
+.if ${PORT_OPTIONS:MCTPP2}
+LIB_DEPENDS+=	ctpp2:${PORTSDIR}/textproc/ctpp2
+NGINX_CTPP2_VERSION=	0.5
+MASTER_SITES+=	http://dl.vbart.ru/ngx-ctpp/:ctpp2
+DISTFILES+=	ngx_ctpp2-${NGINX_CTPP2_VERSION}.tar.gz:ctpp2
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_ctpp2-${NGINX_CTPP2_VERSION}
 .endif
 
 .if ${PORT_OPTIONS:MECHO}
