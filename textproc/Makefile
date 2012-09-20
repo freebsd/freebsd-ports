@@ -1429,6 +1429,7 @@
     SUBDIR += uml2svg
     SUBDIR += uncrustify
     SUBDIR += uni2ascii
+    SUBDIR += unoconv
     SUBDIR += unroff
     SUBDIR += unrtf
     SUBDIR += urlview
