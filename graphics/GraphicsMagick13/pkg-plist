@@ -95,7 +95,7 @@ lib/libGraphicsMagick++.so.9
 lib/libGraphicsMagick.a
 lib/libGraphicsMagick.la
 lib/libGraphicsMagick.so
-lib/libGraphicsMagick.so.11
+lib/libGraphicsMagick.so.12
 lib/libGraphicsMagickWand.a
 lib/libGraphicsMagickWand.la
 lib/libGraphicsMagickWand.so
