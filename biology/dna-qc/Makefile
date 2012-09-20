@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A quality control algorithm for DNA sequencing projects
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 NO_WRKSUBDIR=	true
 
 EXAMPLES=	README script.compare script.limits \

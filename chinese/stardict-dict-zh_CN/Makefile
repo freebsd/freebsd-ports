@@ -19,6 +19,9 @@ DIST_SUBDIR=	stardict
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	English-Chinese(S)/Chinese(S)-English dictionaries for StarDict
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 NO_BUILD=	yes
 USE_BZIP2=	yes
 
