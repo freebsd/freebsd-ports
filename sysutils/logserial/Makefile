@@ -1,17 +1,16 @@
-# New ports collection makefile for:	logserial
-# Date created:				25 November 2005
-# Whom:					nastya
-#
+# Created by: nastya <nastya@rsu.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	logserial
 PORTVERSION=	1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.rsu.ru/pub/sysutils/unix/
 
-MAINTAINER=	nastya@rsu.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Daemon logging data from serial port
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
 
 USE_RC_SUBR=	yes
 
