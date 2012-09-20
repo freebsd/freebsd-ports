@@ -1,0 +1,129 @@
+%%XPI_XPIDIR%%/chrome.manifest
+%%XPI_XPIDIR%%/chrome/content/about.xul
+%%XPI_XPIDIR%%/chrome/content/block.html
+%%XPI_XPIDIR%%/chrome/content/cbox-check-dis.gif
+%%XPI_XPIDIR%%/chrome/content/cbox-check.gif
+%%XPI_XPIDIR%%/chrome/content/customize-16x16.gif
+%%XPI_XPIDIR%%/chrome/content/display.png
+%%XPI_XPIDIR%%/chrome/content/ghostery-16x16.png
+%%XPI_XPIDIR%%/chrome/content/ghostery-about.js
+%%XPI_XPIDIR%%/chrome/content/ghostery-about.png
+%%XPI_XPIDIR%%/chrome/content/ghostery-badge.xml
+%%XPI_XPIDIR%%/chrome/content/ghostery-bugs.json
+%%XPI_XPIDIR%%/chrome/content/ghostery-clean.js
+%%XPI_XPIDIR%%/chrome/content/ghostery-click2play.json
+%%XPI_XPIDIR%%/chrome/content/ghostery-common.js
+%%XPI_XPIDIR%%/chrome/content/ghostery-cookiemonster.js
+%%XPI_XPIDIR%%/chrome/content/ghostery-db.js
+%%XPI_XPIDIR%%/chrome/content/ghostery-html-block.js
+%%XPI_XPIDIR%%/chrome/content/ghostery-html-options.js
+%%XPI_XPIDIR%%/chrome/content/ghostery-html-walkthrough.js
+%%XPI_XPIDIR%%/chrome/content/ghostery-lso.js
+%%XPI_XPIDIR%%/chrome/content/ghostery-lsos.json
+%%XPI_XPIDIR%%/chrome/content/ghostery-off-16x16.png
+%%XPI_XPIDIR%%/chrome/content/ghostery-pbl.js
+%%XPI_XPIDIR%%/chrome/content/ghostery-rules.js
+%%XPI_XPIDIR%%/chrome/content/ghostery-scanner.js
+%%XPI_XPIDIR%%/chrome/content/ghostery-silverlight.js
+%%XPI_XPIDIR%%/chrome/content/ghostery-surrogates.json
+%%XPI_XPIDIR%%/chrome/content/ghostery-translator.js
+%%XPI_XPIDIR%%/chrome/content/ghostery-ui.js
+%%XPI_XPIDIR%%/chrome/content/ghostery-uninstaller.js
+%%XPI_XPIDIR%%/chrome/content/ghostery.css
+%%XPI_XPIDIR%%/chrome/content/ghostery.js
+%%XPI_XPIDIR%%/chrome/content/ghostery.png
+%%XPI_XPIDIR%%/chrome/content/ghostery.xul
+%%XPI_XPIDIR%%/chrome/content/ghostery_eula.txt
+%%XPI_XPIDIR%%/chrome/content/help-16x16.png
+%%XPI_XPIDIR%%/chrome/content/images/arrow-hover.png
+%%XPI_XPIDIR%%/chrome/content/images/arrow.png
+%%XPI_XPIDIR%%/chrome/content/images/arrows.gif
+%%XPI_XPIDIR%%/chrome/content/images/down.gif
+%%XPI_XPIDIR%%/chrome/content/images/ghostery-about.png
+%%XPI_XPIDIR%%/chrome/content/images/gradBD.gif
+%%XPI_XPIDIR%%/chrome/content/images/popup/base-short.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/base.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/bg-bottom.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/bg-top.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/chat.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/email.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/ghosty-top.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/pause-long.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/pause-reload.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/pause.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/play.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/questions.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/reload-long.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/reload.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/settings.png
+%%XPI_XPIDIR%%/chrome/content/images/right.gif
+%%XPI_XPIDIR%%/chrome/content/images/s1.gif
+%%XPI_XPIDIR%%/chrome/content/images/sample.png
+%%XPI_XPIDIR%%/chrome/content/images/sample2.png
+%%XPI_XPIDIR%%/chrome/content/images/sample3.png
+%%XPI_XPIDIR%%/chrome/content/images/sample_c2p.png
+%%XPI_XPIDIR%%/chrome/content/images/sample_c2p_button.png
+%%XPI_XPIDIR%%/chrome/content/images/star.png
+%%XPI_XPIDIR%%/chrome/content/includes/jquery-1.7.1.min.js
+%%XPI_XPIDIR%%/chrome/content/includes/jquery.scrollintogreatness-1.0.0.js
+%%XPI_XPIDIR%%/chrome/content/includes/jquery.simplemodal.1.4.1.min.js
+%%XPI_XPIDIR%%/chrome/content/options.html
+%%XPI_XPIDIR%%/chrome/content/options.xul
+%%XPI_XPIDIR%%/chrome/content/popup.html
+%%XPI_XPIDIR%%/chrome/content/share-16x16.png
+%%XPI_XPIDIR%%/chrome/content/transparent-16x16.png
+%%XPI_XPIDIR%%/chrome/content/wizard.html
+%%XPI_XPIDIR%%/chrome/locale/de-DE/ghostery.dtd
+%%XPI_XPIDIR%%/chrome/locale/de-DE/ghostery.properties
+%%XPI_XPIDIR%%/chrome/locale/en-US/ghostery.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-US/ghostery.properties
+%%XPI_XPIDIR%%/chrome/locale/es-ES/ghostery.dtd
+%%XPI_XPIDIR%%/chrome/locale/es-ES/ghostery.properties
+%%XPI_XPIDIR%%/chrome/locale/fr-FR/ghostery.dtd
+%%XPI_XPIDIR%%/chrome/locale/fr-FR/ghostery.properties
+%%XPI_XPIDIR%%/chrome/locale/ja-JP/ghostery.dtd
+%%XPI_XPIDIR%%/chrome/locale/ja-JP/ghostery.properties
+%%XPI_XPIDIR%%/chrome/locale/ru-RU/ghostery.dtd
+%%XPI_XPIDIR%%/chrome/locale/ru-RU/ghostery.properties
+%%XPI_XPIDIR%%/components/ghostery-content-policy.js
+%%XPI_XPIDIR%%/defaults/preferences/defaults.js
+%%XPI_XPIDIR%%/ghostery_eula.txt
+%%XPI_XPIDIR%%/install.rdf
+%%XPI_XPIDIR%%/resource/allow_once.png
+%%XPI_XPIDIR%%/resource/allow_unblock.png
+%%XPI_XPIDIR%%/resource/blocked_redirect.html
+%%XPI_XPIDIR%%/resource/click2play.html
+%%XPI_XPIDIR%%/resource/click2play.png
+%%XPI_XPIDIR%%/resource/font/OpenSans-Bold.eot
+%%XPI_XPIDIR%%/resource/font/OpenSans-Bold.svg
+%%XPI_XPIDIR%%/resource/font/OpenSans-Bold.ttf
+%%XPI_XPIDIR%%/resource/font/OpenSans-Bold.woff
+%%XPI_XPIDIR%%/resource/ghostery-32.png
+%%XPI_XPIDIR%%/resource/ghostery.png
+%%XPI_XPIDIR%%/resource/ghostery_facebook.png
+%%XPI_XPIDIR%%/resource/ghostery_linkedin.png
+%%XPI_XPIDIR%%/resource/ghostery_pinterest.png
+%%XPI_XPIDIR%%/resource/ghostery_plus.png
+%%XPI_XPIDIR%%/resource/ghostery_stumble.png
+%%XPI_XPIDIR%%/resource/ghostery_twitter.png
+%%XPI_XPIDIR%%/resource/ghostery_vkontakte.png
+%%XPI_XPIDIR%%/resource/ghosty_blocked.png
+%%XPI_XPIDIR%%/resource/icon128.png
+%%XPI_XPIDIR%%/resource/rbc_50px.png
+@dirrm %%XPI_XPIDIR%%/resource/font
+@dirrm %%XPI_XPIDIR%%/resource
+@dirrm %%XPI_XPIDIR%%/defaults/preferences
+@dirrm %%XPI_XPIDIR%%/defaults
+@dirrm %%XPI_XPIDIR%%/components
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ru-RU
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ja-JP
+@dirrm %%XPI_XPIDIR%%/chrome/locale/fr-FR
+@dirrm %%XPI_XPIDIR%%/chrome/locale/es-ES
+@dirrm %%XPI_XPIDIR%%/chrome/locale/en-US
+@dirrm %%XPI_XPIDIR%%/chrome/locale/de-DE
+@dirrm %%XPI_XPIDIR%%/chrome/locale
+@dirrm %%XPI_XPIDIR%%/chrome/content/includes
+@dirrm %%XPI_XPIDIR%%/chrome/content/images/popup
+@dirrm %%XPI_XPIDIR%%/chrome/content/images
+@dirrm %%XPI_XPIDIR%%/chrome/content
+@dirrm %%XPI_XPIDIR%%/chrome
