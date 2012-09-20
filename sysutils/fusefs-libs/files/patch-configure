@@ -1,10 +1,11 @@
---- configure.orig	2008-06-05 13:58:44.000000000 -0700
-+++ configure	2008-06-05 14:00:32.000000000 -0700
-@@ -12201,6 +12201,7 @@
- _ACEOF
+--- configure.orig	2012-08-08 11:08:24.244322974 +0200
++++ configure	2012-08-08 11:08:42.304569338 +0200
+@@ -13237,7 +13237,7 @@
  
    fi
-+  LIBICONV=$LTLIBICONV
-   if test "$am_cv_lib_iconv" = yes; then
-     { echo "$as_me:$LINENO: checking how to link with libiconv" >&5
- echo $ECHO_N "checking how to link with libiconv... $ECHO_C" >&6; }
+ 
+-libfuse_libs=$libfuse_libs $LTLIBICONV
++libfuse_libs="$libfuse_libs $LTLIBICONV"
+  if test "$am_cv_func_iconv" = yes; then
+   ICONV_TRUE=
+   ICONV_FALSE='#'

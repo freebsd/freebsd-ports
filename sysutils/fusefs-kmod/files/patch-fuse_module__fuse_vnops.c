@@ -1,5 +1,5 @@
---- fuse_module/fuse_vnops.c.orig	2008-02-05 00:25:57.000000000 -0500
-+++ fuse_module/fuse_vnops.c	2008-10-29 19:21:51.000000000 -0400
+--- ./fuse_module/fuse_vnops.c.orig	2012-09-19 06:04:10.512413490 +0200
++++ ./fuse_module/fuse_vnops.c	2012-09-19 06:20:44.949613892 +0200
 @@ -799,8 +799,11 @@
  	struct vnode *vp = ap->a_vp;
  	struct vattr *vap = ap->a_vap;
@@ -53,6 +53,15 @@
  			if (err)
  				return (err);
  			facp->facc_flags |= FACCESS_VA_VALID;
+@@ -1544,7 +1561,7 @@
+ 	struct fuse_vnode_data *fvdat = VTOFUD(vp);
+ 	uint64_t parentid = fvdat->parent_nid;
+ 	struct componentname *cnp = fvdat->germcnp;
+-	struct fuse_open_in *foi;
++	struct fuse_create_in *foi;
+ 	struct fuse_entry_out *feo;
+ 	struct fuse_mknod_in fmni;
+ 	int err;
 @@ -1929,7 +1946,11 @@
  		 * It will not invalidate pages which are dirty, locked, under
  		 * writeback or mapped into pagetables.") 

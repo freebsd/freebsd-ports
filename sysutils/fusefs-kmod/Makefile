@@ -7,7 +7,7 @@
 
 PORTNAME=	fusefs
 DISTVERSION=	0.3.9-pre1.20080208
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	sysutils kld
 MASTER_SITES=	http://mercurial.creo.hu/repos/fuse4bsd-hg/index.cgi/archive/
 PKGNAMESUFFIX=	-kmod

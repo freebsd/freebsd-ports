@@ -1,3 +1,4 @@
+include/fuse/cuse_lowlevel.h
 include/fuse/fuse.h
 include/fuse/fuse_compat.h
 include/fuse/fuse_common.h
