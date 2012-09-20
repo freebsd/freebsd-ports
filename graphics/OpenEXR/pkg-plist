@@ -1,12 +1,15 @@
+bin/exr2aces
 bin/exrenvmap
 bin/exrheader
 bin/exrmakepreview
 bin/exrmaketiled
+bin/exrmultiview
 bin/exrstdattr
 lib/libIlmImf.a
 lib/libIlmImf.la
 lib/libIlmImf.so
 lib/libIlmImf.so.6
+include/OpenEXR/ImfAcesFile.h
 include/OpenEXR/ImfArray.h
 include/OpenEXR/ImfAttribute.h
 include/OpenEXR/ImfB44Compressor.h
@@ -37,6 +40,7 @@ include/OpenEXR/ImfLineOrder.h
 include/OpenEXR/ImfLineOrderAttribute.h
 include/OpenEXR/ImfLut.h
 include/OpenEXR/ImfMatrixAttribute.h
+include/OpenEXR/ImfMultiView.h
 include/OpenEXR/ImfName.h
 include/OpenEXR/ImfOpaqueAttribute.h
 include/OpenEXR/ImfOutputFile.h
@@ -50,6 +54,7 @@ include/OpenEXR/ImfRgbaFile.h
 include/OpenEXR/ImfRgbaYca.h
 include/OpenEXR/ImfStandardAttributes.h
 include/OpenEXR/ImfStringAttribute.h
+include/OpenEXR/ImfStringVectorAttribute.h
 include/OpenEXR/ImfTestFile.h
 include/OpenEXR/ImfThreading.h
 include/OpenEXR/ImfTileDescription.h
@@ -66,9 +71,10 @@ include/OpenEXR/ImfXdr.h
 include/OpenEXR/OpenEXRConfig.h
 libdata/pkgconfig/OpenEXR.pc
 share/aclocal/openexr.m4
+%%DOCSDIR%%/MultiViewOpenEXR.pdf
+%%DOCSDIR%%/OpenEXRFileLayout.pdf
 %%DOCSDIR%%/ReadingAndWritingImageFiles.pdf
 %%DOCSDIR%%/TechnicalIntroduction.pdf
-%%DOCSDIR%%/OpenEXRFileLayout.pdf
 %%EXAMPLESDIR%%/drawImage.cpp
 %%EXAMPLESDIR%%/drawImage.h
 %%EXAMPLESDIR%%/generalInterfaceExamples.cpp
