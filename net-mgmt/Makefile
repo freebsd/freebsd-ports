@@ -21,7 +21,6 @@
     SUBDIR += arts++
     SUBDIR += aspathtree
     SUBDIR += bandwidthd
-    SUBDIR += better-cacti-templates
     SUBDIR += bgpq
     SUBDIR += bgpq3
     SUBDIR += bigsister
@@ -189,6 +188,7 @@
     SUBDIR += openlldp
     SUBDIR += openvmps
     SUBDIR += ourmon
+    SUBDIR += percona-monitoring-plugins
     SUBDIR += p0f
     SUBDIR += p0f2
     SUBDIR += p5-AnyEvent-SNMP

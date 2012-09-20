@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120919:
+  AFFECTS: users of net-mgmt/better-cacti-templates
+  AUTHOR: Bryan Drewery <bdrewery@FreeBSD.org>
+
+  better-cacti-templates has been renamed as the upstream has merged
+  with Percona Monitoring Plugins.
+
+  Update your port origins as follows:
+
+  # portmaster -o net-mgmt/percona-monitoring-plugins net-mgmt/better-cacti-templates
+  or
+  # portupgrade -fo net-mgmt/percona-monitoring-plugins net-mgmt/better-cacti-templates
+  or
+  # pkg set -o net-mgmt/better-cacti-templates:net-mgmt/percona-monitoring-plugins
+
 20120916:
   AFFECTS: users of german/webalizer2, japanese/webalizer, polish/webalizer2, portuguese/webalizer-pt_BR, portuguese/webalizer-pt_PT, ukrainian/webalizer, www/geolizer, www/webalizer
   AUTHOR: dinoex@FreeBSD.org

@@ -1,19 +1,16 @@
-# New ports collection makefile for:	better-cacti-templates
-# Date created:				Sat Aug 27 2011
-# Whom:					Alexey V. Degtyarev <alexey@renatasystems.org>
-#
+# Created By: Alexey V. Degtyarev <alexey@renatasystems.org>
 # $FreeBSD$
 
-PORTNAME=	better-cacti-templates
-PORTVERSION=	1.1.8
+PORTNAME=	percona-monitoring-plugins
+PORTVERSION=	1.0.1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE:S/better/mysql/}
+MASTER_SITES=	http://www.percona.com/downloads/percona-monitoring-plugins/ \
+		ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 
 MAINTAINER=	alexey@renatasystems.org
-COMMENT=	Better Cacti templates for MySQL, Apache, Memcached, and more
+COMMENT=	Cacti templates for MySQL, Apache, Memcached, and more by Percona
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	cacti>=0:${PORTSDIR}/net-mgmt/cacti \
 		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
@@ -31,7 +28,7 @@ NO_BUILD=	yes
 CACTIDIR?=	share/cacti
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	README Changelog
+PORTDOCS=	Changelog
 .endif
 
 do-install:
@@ -41,16 +38,21 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}/${doc}
 .endfor
 .endif
+
 	${MKDIR} ${PREFIX}/share/cacti/scripts
-	${MKDIR} ${PREFIX}/share/better-cacti-templates
-	cd ${WRKSRC}
-.for dir in definitions misc templates tools
-	cd ${WRKSRC} && ${PAX} -r -w ${dir} \
-		${PREFIX}/share/better-cacti-templates
+	${MKDIR} ${PREFIX}/share/percona-monitoring-plugins
+
+.for dir in definitions misc templates
+	cd ${WRKSRC} && ${PAX} -r -w cacti/${dir} \
+		${PREFIX}/share/percona-monitoring-plugins
 .endfor
+
 .for script in ss_get_by_ssh.php ss_get_mysql_stats.php
-	${INSTALL_DATA} ${WRKSRC}/scripts/${script} \
+	${INSTALL_DATA} ${WRKSRC}/cacti/scripts/${script} \
 		${PREFIX}/share/cacti/scripts/${script}
 .endfor
+
+	${INSTALL_SCRIPT} ${WRKSRC}/cacti/bin/* ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/nagios/bin/* ${PREFIX}/bin
 
 .include <bsd.port.mk>
