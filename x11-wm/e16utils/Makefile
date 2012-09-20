@@ -18,6 +18,9 @@ DISTFILES=	e16menuedit-0.1.tar.gz:src1 \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone menu and keybinding editors for enlightenment 0.16
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
 
 USE_GNOME=	imlib

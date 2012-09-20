@@ -14,6 +14,9 @@ MASTER_SITES=	http://web.cs.mun.ca/~gstarkes/wmaker/dockapps/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockable pager for Window Maker
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 PLIST_FILES=	bin/wmcp
 USE_XORG=	x11 xext xpm
 ALL_TARGET=	clean wmcp

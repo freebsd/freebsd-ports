@@ -13,6 +13,9 @@ MASTER_SITES=	http://solfertje.student.utwente.nl/~dalroi/libdockapp/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standard library for Window Maker dock apps
 
+DEPRECATED=	Abandonware, upstream disappeared
+EXPIRATION_DATE=	2012-10-20
+
 USE_BZIP2=	yes
 USE_XORG=	xext xpm
 USE_AUTOTOOLS=	libtool

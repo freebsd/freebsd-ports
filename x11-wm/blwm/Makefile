@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	arved
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portuguese derivative of qvwm, simplified to conserve resources
 
+DEPRECATED=	Abandonware, upstream disappeared
+EXPIRATION_DATE=	2012-10-20
+
 RUN_DEPENDS=	xsetbg:${PORTSDIR}/x11/xloadimage
 
 MAN1=		blwm.1x

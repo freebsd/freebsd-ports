@@ -16,6 +16,9 @@ DISTNAME=	BadWM-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window manager based on evilwm
 
+DEPRECATED=	Development ceased
+EXPIRATION_DATE=	2012-10-20
+
 USE_XORG=	x11 ice sm xext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
