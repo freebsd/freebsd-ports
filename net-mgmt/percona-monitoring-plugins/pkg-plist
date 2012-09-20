@@ -1,0 +1,45 @@
+bin/pmp-cacti-extract-template
+bin/pmp-cacti-graph-defs
+bin/pmp-cacti-make-hashes
+bin/pmp-cacti-template
+bin/pmp-check-lvm-snapshots
+bin/pmp-check-mysql-deadlocks
+bin/pmp-check-mysql-deleted-files
+bin/pmp-check-mysql-file-privs
+bin/pmp-check-mysql-innodb
+bin/pmp-check-mysql-pidfile
+bin/pmp-check-mysql-processlist
+bin/pmp-check-mysql-replication-delay
+bin/pmp-check-mysql-replication-running
+bin/pmp-check-mysql-status
+bin/pmp-check-mysql-status.~1~
+bin/pmp-check-pt-table-checksum
+bin/pmp-check-unix-memory
+share/cacti/scripts/ss_get_by_ssh.php
+share/cacti/scripts/ss_get_mysql_stats.php
+%%DATADIR%%/cacti/definitions/apache.def
+%%DATADIR%%/cacti/definitions/gnu_linux.def
+%%DATADIR%%/cacti/definitions/jmx.def
+%%DATADIR%%/cacti/definitions/memcached.def
+%%DATADIR%%/cacti/definitions/mongodb.def
+%%DATADIR%%/cacti/definitions/mysql.def
+%%DATADIR%%/cacti/definitions/nginx.def
+%%DATADIR%%/cacti/definitions/openvz.def
+%%DATADIR%%/cacti/definitions/redis.def
+%%DATADIR%%/cacti/misc/jmx-monitor.xml
+%%DATADIR%%/cacti/templates/cacti_host_template_percona_apache_server_ht_0.8.6i-sver1.0.1.xml
+%%DATADIR%%/cacti/templates/cacti_host_template_percona_gnu_linux_server_ht_0.8.6i-sver1.0.1.xml
+%%DATADIR%%/cacti/templates/cacti_host_template_percona_jmx_server_ht_0.8.6i-sver1.0.1.xml
+%%DATADIR%%/cacti/templates/cacti_host_template_percona_memcached_server_ht_0.8.6i-sver1.0.1.xml
+%%DATADIR%%/cacti/templates/cacti_host_template_percona_mongodb_server_ht_0.8.6i-sver1.0.1.xml
+%%DATADIR%%/cacti/templates/cacti_host_template_percona_mysql_server_ht_0.8.6i-sver1.0.1.xml
+%%DATADIR%%/cacti/templates/cacti_host_template_percona_nginx_server_ht_0.8.6i-sver1.0.1.xml
+%%DATADIR%%/cacti/templates/cacti_host_template_percona_openvz_server_ht_0.8.6i-sver1.0.1.xml
+%%DATADIR%%/cacti/templates/cacti_host_template_percona_redis_server_ht_0.8.6i-sver1.0.1.xml
+@dirrm %%DATADIR%%/cacti/templates
+@dirrm %%DATADIR%%/cacti/misc
+@dirrm %%DATADIR%%/cacti/definitions
+@dirrm %%DATADIR%%/cacti
+@dirrm %%DATADIR%%
+@dirrmtry share/cacti/scripts
+@dirrmtry share/cacti

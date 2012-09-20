@@ -3669,3 +3669,4 @@ postgresql74-man||2012-09-13|There no according PostgreSQL version in the tree a
 postgresql80-man||2012-09-13|There no according PostgreSQL version in the tree anymore
 postgresql81-man||2012-09-13|There no according PostgreSQL version in the tree anymore
 audio/libmusicbrainz||2012-09-18|Has expired: MusicBrainz RDF webservice no longer functions
+net-mgmt/better-cacti-templates|net-mgmt/percona-monitoring-plugins|2012-09-19|Project renamed
