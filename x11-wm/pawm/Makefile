@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pawm
-# Date created:				2002-08-22
-# Whom:					trevor
-#
+# Created by: trevor
 # $FreeBSD$
-#
 
 PORTNAME=	pawm
 PORTVERSION=	2.3.0
