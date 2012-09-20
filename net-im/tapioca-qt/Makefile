@@ -22,8 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/build
 
 USE_CMAKE=	yes
 CMAKE_SOURCE_PATH=	..
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib qmake_build uic_build moc_build rcc_build
+USE_QT4=	corelib qmake_build uic_build moc_build rcc_build
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
