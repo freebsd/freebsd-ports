@@ -5,6 +5,7 @@ bin/ices
 %%DATADIR%%/ices-alsa.xml
 %%DATADIR%%/ices-oss.xml
 %%DATADIR%%/ices-playlist.xml
+%%DATADIR%%/ices-roar.xml
 %%DATADIR%%/index.html
 %%DATADIR%%/inputs.html
 %%DATADIR%%/intro.html
