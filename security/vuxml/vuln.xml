@@ -51,6 +51,82 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ec255bd8-02c6-11e2-92d1-000d601460a4">
+    <topic>php5-sqlite -- open_basedir bypass</topic>
+    <affects>
+      <package>
+	<name>php5-sqlite</name>
+	<range><ge>5.2</ge><lt>5.2.17_11</lt></range>
+	<range><ge>5.3</ge><lt>5.3.15</lt></range>
+      </package>
+      <package>
+	<name>php52-sqlite</name>
+	<range><lt>5.2.17_11</lt></range>
+      </package>
+      <package>
+	<name>php53-sqlite</name>
+	<range><lt>5.3.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MITRE CVE team reports:</p>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-3365">
+	  <p>The SQLite functionality in PHP before 5.3.15 allows remote
+	    attackers to bypass the open_basedir protection mechanism via
+	    unspecified vectors.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-3365</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-3365</url>
+    </references>
+    <dates>
+      <discovery>2012-06-14</discovery>
+      <entry>2012-09-19</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9b2a5e88-02b8-11e2-92d1-000d601460a4">
+    <topic>php5 -- Denial of Service in php_date_parse_tzfile()</topic>
+    <affects>
+      <package>
+	<name>php5</name>
+	<range><ge>5.2</ge><lt>5.2.17_11</lt></range>
+	<range><ge>5.3</ge><lt>5.3.9</lt></range>
+      </package>
+      <package>
+	<name>php52</name>
+	<range><lt>5.2.17_11</lt></range>
+      </package>
+      <package>
+	<name>php53</name>
+	<range><lt>5.3.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MITRE CVE team reports:</p>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-0789">
+	  <p>Memory leak in the timezone functionality in PHP before 5.3.9
+	    allows remote attackers to cause a denial of service (memory
+	    consumption) by triggering many strtotime function calls, which are
+	    not properly handled by the php_date_parse_tzfile cache.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-0789</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-0789</url>
+      <url>https://bugs.php.net/bug.php?id=53502</url>
+    </references>
+    <dates>
+      <discovery>2010-12-08</discovery>
+      <entry>2012-09-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="53a0ddef-0208-11e2-8afa-0024e830109b">
     <topic>dns/bind9* -- Several vulnerabilities</topic>
     <affects>
@@ -450,12 +526,13 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>php5</name>
-	<range><ge>5.2</ge><lt>5.3.11</lt></range>
+	<range><ge>5.2</ge><lt>5.2.17_11</lt></range>
+	<range><ge>5.3</ge><lt>5.3.11</lt></range>
 	<range><ge>5.4</ge><lt>5.4.1</lt></range>
       </package>
       <package>
 	<name>php52</name>
-	<range><ge>0</ge></range>
+	<range><lt>5.2.17_11</lt></range>
       </package>
       <package>
 	<name>php53</name>
@@ -485,6 +562,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2011-11-06</discovery>
       <entry>2012-09-05</entry>
+      <modified>2012-09-19</modified>
     </dates>
   </vuln>
 
@@ -14697,6 +14775,11 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>Paths with NULL in them (foo\0bar.txt) are now considered
 	    as invalid (CVE-2006-7243).</p>
 	</blockquote>
+	<blockquote cite="http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/171583">
+	  <p>The php52 backports maintainer reports that this issue is unlikely
+	    to be fixed in 5.2 due to design roadblocks. Users are strongly
+	    encouraged to upgrade as soon as possible.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -14707,6 +14790,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2010-12-10</discovery>
       <entry>2011-01-13</entry>
+      <modified>2012-09-19</modified>
     </dates>
   </vuln>
 
