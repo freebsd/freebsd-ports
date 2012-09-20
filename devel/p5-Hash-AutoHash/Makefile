@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Hash-AutoHash
-PORTVERSION=	1.14
+PORTVERSION=	1.15
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Object-oriented access to real and tied hashes
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Tie-Hash-MultiValue>0:${PORTSDIR}/devel/p5-Tie-Hash-MultiValue
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
