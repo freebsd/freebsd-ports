@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	misc tk
 MASTER_SITES=	http://www.blackie.dk/dotfile/download/
 
-MAINTAINER=	beat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GUI dotfile generator program to create .config files
 
 BUILD_DEPENDS=	formail:${PORTSDIR}/mail/procmail
@@ -22,26 +22,31 @@ NO_BUILD=	yes
 
 MAN1=		dotfile.1
 
-OPTIONS=	JAPANESE "Use Japanese as default language" off
+OPTIONS_DEFINE=	JAPANESE
+JAPANESE_DESC=	Use Japanese as default language
 
-USE_TK=		82
-USE_TK_BUILD=	82
+USE_TK=		yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_JAPANESE)
+.if ${PORT_OPTIONS:MJAPANESE}
 CONFIGURE_ENV+=	LANGUAGE="japanese"
 .endif
 
 post-patch:
-	@${RM} ${WRKSRC}/Modules/english/procmail/configure.orig
-	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/dotfile
+	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g; s|%%WISH%%|wish${TK_VER}|g; \
+		s|%%TCLSH%%|tclsh${TCL_VER}|g" ${WRKSRC}/${CONFIGURE_SCRIPT} \
+		${WRKSRC}/Generator/makeHelp ${WRKSRC}/Modules/english/procmail/${CONFIGURE_SCRIPT}
+	${FIND} ${WRKSRC} \( -name "*.orig" -o -name "*.bak" \) -delete
 
 post-configure:
 	@(cd ${WRKSRC}/Modules/english/procmail && CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
 	INSTALL="${INSTALL} -c -o ${BINOWN} -g ${BINGRP}" \
 	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 	${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
+
+do-install:
+	cd ${WRKSRC} && ${SETENV} LC_ALL=C ${MAKE} install
 
 post-install:
 .ifndef(NOPORTDOCS)

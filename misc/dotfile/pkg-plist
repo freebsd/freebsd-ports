@@ -42,7 +42,6 @@ lib/%%DISTNAME%%/Generator/language.tcl
 lib/%%DISTNAME%%/Generator/load.tcl
 lib/%%DISTNAME%%/Generator/mail.tcl
 lib/%%DISTNAME%%/Generator/makeHelp
-lib/%%DISTNAME%%/Generator/makeHelp.orig
 lib/%%DISTNAME%%/Generator/makeHelp.tcl
 lib/%%DISTNAME%%/Generator/menus.tcl
 lib/%%DISTNAME%%/Generator/parse.tcl
