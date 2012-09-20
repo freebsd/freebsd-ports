@@ -2507,7 +2507,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>php52</name>
-	<range><le>5.2.17_10</le></range>
+	<range><lt>5.2.17_10</lt></range>
       </package>
     </affects>
     <description>
@@ -2526,6 +2526,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2012-07-19</discovery>
       <entry>2012-07-23</entry>
+      <modified>2012-09-19</modified>
     </dates>
   </vuln>
 
