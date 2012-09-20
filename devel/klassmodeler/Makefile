@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}.bsd
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for visually creating and documenting classes
 
+EXPIRATION_DATE=	2012-10-20
+DEPRECATED=	Abandonware, depends on the deprecated wxGTK 2.4
+
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_AUTOTOOLS=	libtool

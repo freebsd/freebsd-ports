@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An image sequence viewer
 
+DEPRECATED=	Abandonware, no more upstream, depends on the deprecated wxGTK 2.4
+EXPIRATION_DATE=	2012-10-20
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_BZIP2=	yes

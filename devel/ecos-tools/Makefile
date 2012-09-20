@@ -16,6 +16,9 @@ DISTNAME=	ecos-tools.${SNAPDATE}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configuration tools for the eCos embedded OS
 
+EXPIRATION_DATE=	2012-10-20
+DEPRECATED=		Depends on an obsolete version of wx, broken with gcc4.2 for long
+
 USE_BZIP2=	yes
 USE_TCL_BUILD=	84
 USE_WX=		2.4
