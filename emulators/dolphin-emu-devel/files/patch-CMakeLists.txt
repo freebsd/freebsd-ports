@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2012-03-07 15:35:35.714613728 +0100
-+++ CMakeLists.txt	2012-03-07 15:46:51.665626357 +0100
-@@ -228,51 +228,81 @@
+--- CMakeLists.txt.orig	2012-09-11 12:52:22.000000000 +0200
++++ CMakeLists.txt	2012-09-18 06:49:30.000000000 +0200
+@@ -249,51 +249,81 @@
  	message("OpenMP parallelization disabled")
  endif()
  
@@ -113,7 +113,7 @@
  
  # Note: We do not need to explicitly check for X11 as it is done in the cmake
  # FindOpenGL module on linux.
-@@ -302,22 +332,29 @@
+@@ -323,22 +353,33 @@
  	check_libav()
  endif()
  
@@ -131,6 +131,10 @@
 +option(DISABLE_PORTAUDIO "Disable PortAudio (mic) support" OFF)
 +if(NOT DISABLE_PORTAUDIO)
 +	include(CheckCXXSourceRuns)
++	include_directories(${CMAKE_INSTALL_PREFIX}/include/portaudio2)
++	link_directories(${CMAKE_INSTALL_PREFIX}/lib/portaudio2)
++	set(CMAKE_REQUIRED_INCLUDES ${CMAKE_INSTALL_PREFIX}/include/portaudio2)
++	set(CMAKE_REQUIRED_FLAGS -L${CMAKE_INSTALL_PREFIX}/lib/portaudio2)
 +	set(CMAKE_REQUIRED_LIBRARIES portaudio)
 +	CHECK_CXX_SOURCE_RUNS(
 +		"#include <portaudio.h>
@@ -156,7 +160,7 @@
  
  option(OPROFILING "Enable profiling" OFF)
  if(OPROFILING)
-@@ -563,10 +600,13 @@
+@@ -602,10 +643,13 @@
  	install(DIRECTORY Data/User/ DESTINATION ${datadir}/user PATTERN)
  	install(DIRECTORY Data/Sys/ DESTINATION ${datadir}/sys PATTERN)
  endif()

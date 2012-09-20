@@ -7,7 +7,6 @@
 
 PORTNAME=	dolphin-emu
 PORTVERSION=	3.0.r${REVDATE}
-PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
@@ -25,15 +24,19 @@ LIB_DEPENDS=	avformat:${PORTSDIR}/multimedia/ffmpeg \
 		lzo2:${PORTSDIR}/archivers/lzo2 \
 		sfml-network:${PORTSDIR}/devel/sfml
 
-REVDATE=	20120307
+REVDATE=	20120912
 
 USE_ICONV=	yes
 USE_GNOME=	pkgconfig
 USE_SDL=	sdl
 USE_OPENAL=	yes
 USE_XORG=	ice xext x11 xrandr
-USE_WX=	2.8
+USE_WX=		2.9+
+WX_UNICODE=	yes
 USE_GL=	gl glew glu
+
+USE_DOS2UNIX=	yes
+DOS2UNIX_REGEX=	.*\.(h|c|cpp)
 
 # XXX Has only been tested with clang and gcc
 .if ${CC} != "clang" && ${CXX} != "clang++"
@@ -43,9 +46,13 @@ USE_GCC=	4.6+
 USE_CMAKE=	yes
 CMAKE_BUILD_TYPE=	Release
 # Disable ao (seems buggy) and ALSA (emulated)
+# XXX ENCODE_FRAMEDUMPS is activated but will fail detecting required libs
+#     (libavcodec, libavformat, libswscale, libavutil) as our version of ffmpeg is currently
+#     too old
 CMAKE_ARGS+=	-DDISABLE_AO:BOOL=ON \
 		-DDISABLE_ALSA:BOOL=ON \
 		-DDISABLE_BLUEZ:BOOL=ON \
+		-DENCODE_FRAMEDUMPS:BOOL=ON \
 		-DCMAKE_INSTALL_RPATH_USE_LINK_PATH:BOOL=ON
 
 SUB_FILES=	pkg-message
@@ -68,8 +75,8 @@ PLIST_SUB+=	NLS="@comment "
 .if ${PORT_OPTIONS:MDEBUG}
 CMAKE_ARGS+=	-DFASTLOG:BOOL=ON
 INSTALL_TARGET=	install
-CFLAGS+=	-ggdb
-CXXFLAGS+=	-ggdb
+CFLAGS+=	-g
+CXXFLAGS+=	-g
 MAKE_ENV+=	VERBOSE=yes
 .endif
 
@@ -88,7 +95,7 @@ CMAKE_ARGS+=	-DDISABLE_PULSEAUDIO:BOOL=ON
 .endif
 
 .if ${PORT_OPTIONS:MPORTAUDIO}
-LIB_DEPENDS+=	portaudio:${PORTSDIR}/audio/portaudio2
+LIB_DEPENDS+=	portaudio.2:${PORTSDIR}/audio/portaudio2
 .else
 CMAKE_ARGS+=	-DDISABLE_PORTAUDIO:BOOL=ON
 .endif

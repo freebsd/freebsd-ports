@@ -1,5 +1,5 @@
---- Source/Core/Common/Src/MemoryUtil.cpp.orig	2011-12-20 19:12:51.735175478 +0100
-+++ Source/Core/Common/Src/MemoryUtil.cpp	2011-12-20 19:22:47.010407665 +0100
+--- Source/Core/Common/Src/MemoryUtil.cpp.orig	2012-09-20 13:12:50.000000000 +0200
++++ Source/Core/Common/Src/MemoryUtil.cpp	2012-09-20 13:12:43.000000000 +0200
 @@ -33,6 +33,13 @@
  #define round_page(x) ((((unsigned long)(x)) + PAGE_MASK) & ~(PAGE_MASK))
  #endif
@@ -31,7 +31,7 @@
 +		limit.rlim_cur = 0x10000000; // 256 MB
 +		limit.rlim_max = 0x10000000;
 +		if(setrlimit(RLIMIT_DATA, &limit) != 0) {
-+			PanicAlert("Failed to lower maximum data segment size");
++		        PanicAlert("Failed to lower maximum data segment size");
 +		}
 +#endif
 +	}
