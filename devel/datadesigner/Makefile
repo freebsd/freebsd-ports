@@ -15,6 +15,9 @@ MASTER_SITES=	SF/dbdesign/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Database Schema Designer
 
+EXPIRATION_DATE=	2012-10-20
+DEPRECATED=	Abandonware, depends on the deprecated wxGTK 2.4
+
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 USE_GNOME=	libxml2 libxslt

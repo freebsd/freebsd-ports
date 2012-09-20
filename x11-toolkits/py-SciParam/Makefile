@@ -19,6 +19,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scientific Parameter Dialogs in wxPython based user interfaces
 
+DEPRECATED=	Depends on the deprecated wx 2.4
+EXPIRATION_DATE=	2012-10-20
+
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

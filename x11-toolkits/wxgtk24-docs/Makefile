@@ -14,6 +14,9 @@ DISTNAME=	wxWindows-${PORTVERSION}-HTML
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	wxWindows documentation in HTML
 
+DEPRECATED=	No more supported upstream, consider using more recent versions
+EXPIRATION_DATE=	2012-10-20
+
 LATEST_LINK=	wxgtk24_doc
 
 NO_BUILD=	YES

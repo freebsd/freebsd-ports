@@ -16,6 +16,9 @@ DISTNAME=	wxGTK-${PORTVERSION}
 MAINTAINER?=	fjoe@FreeBSD.org
 COMMENT?=	The wxWidgets GUI toolkit with GTK+ bindings
 
+DEPRECATED=	Not supported upstream anymore, consider using more recent versions
+EXPIRATION_DATE=	2012-10-20
+
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff

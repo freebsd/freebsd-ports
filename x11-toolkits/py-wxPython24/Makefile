@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME}Src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for the wxWidgets/GTK GUI toolkit
 
+DEPRECATED=	No more supported upstream
+EXPIRATION_DATE=	2012-10-20
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wxPython

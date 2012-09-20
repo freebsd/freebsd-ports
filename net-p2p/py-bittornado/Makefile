@@ -18,6 +18,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT?=	An extended BitTorrent peer-to-peer tool for distributing files
 
+DEPRECATED=	Depends on the deprecated wx 2.4
+EXPIRATION_DATE=	2012-10-20
+
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
 
 CONFLICTS=	py??-*[Bb]it[Tt]ornado-core-[0-9]* py??-*[Bb]it[Tt]orrent*-[0-9]* btqueue-[0-9]*
