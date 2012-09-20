@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	fusefs
-PORTVERSION=	2.7.4
+PORTVERSION=	2.9.1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/fuse/fuse-2.X/${PORTVERSION}
 PKGNAMESUFFIX=	-libs
@@ -20,7 +20,7 @@ CFLAGS+=	${PTHREAD_CFLAGS}
 USE_LDCONFIG=	yes
 USE_PKGCONFIG=	yes
 USE_ICONV=	yes
-CONFIGURE_ARGS=	--disable-kernel-module --prefix=${PREFIX} \
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 TXT_DOCS=	how-fuse-works \
 		kernel.txt
@@ -42,5 +42,9 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/$i ${DOCSDIR}/libs
 .endfor
 .endif
+
+MAN1=	fusermount.1 \
+	ulockmgr_server.1
+MAN8=	mount.fuse.8
 
 .include <bsd.port.mk>
