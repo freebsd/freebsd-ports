@@ -423,6 +423,7 @@ squeezeboxserver-*	audio/squeezeboxserver	Contains non-redistributable
 						firmware, documentation, and
 						images
 sof-*-cdrom-x86.run	games/linux-sof		Redistribution is limited
+speakinghangmanfree*	games/speakinghangman	Licence does not allow redistribution
 speedmgmt*		net/pppoa		Not for redistribution -- see
 						http://www.alcatel.com/consumer-
 						/dsl/disclaimer_lx.htm
