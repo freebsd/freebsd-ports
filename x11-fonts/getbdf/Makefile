@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert any X server font to .bdf format
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 PLIST_FILES=	bin/getbdf
 USE_PERL5_BUILD=yes
 USE_XORG=	x11

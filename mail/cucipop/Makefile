@@ -14,6 +14,9 @@ PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.informatik.rwth-aachen.de/pub/packages/cucipop/
 
+DEPRECATED=	Patches no more availables
+EXPIRATION_DATE=	2012-10-20
+
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/ \
 		ftp://ftp.pasta.cs.uit.no/pub/IPv6/misc/
 PATCHFILES=	cucipop-1.31-v6-20010223.diff.gz

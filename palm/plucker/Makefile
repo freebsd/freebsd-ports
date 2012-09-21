@@ -19,6 +19,9 @@ DISTFILES=	${PORTNAME}_viewer-${PORTVERSION}.tar.bz2 \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An offline HTML viewer for PalmOS devices
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 BUILD_DEPENDS=	ppmtoTbmp:${PORTSDIR}/palm/ppmtoTbmp \
 		convert:${PORTSDIR}/graphics/ImageMagick \
 		ppmtogif:${PORTSDIR}/graphics/netpbm \

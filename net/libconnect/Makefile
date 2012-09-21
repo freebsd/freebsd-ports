@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://ftp.lexa.ru/pub/domestic/snar/	\
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tell programs to which IP-address they should bind
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 .if defined(NOPROFILE)
 PLIST_SUB+=	NOPROFILE="@comment "
 .else

@@ -13,6 +13,9 @@ MASTER_SITES=	http://perl.jonallen.info/attachment/26/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text to PDF converter
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/artistic-2_0.txt
 

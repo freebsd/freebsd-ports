@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.rentech.ru/archives/wtmp-tools/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The tool for editing wtmp files and converting into this format
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 MAN1=		t2w.1
 MANCOMPRESSED=	yes
 

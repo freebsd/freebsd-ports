@@ -13,6 +13,9 @@ MASTER_SITES=	ftp://ftp.heitec.net/pub/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Finds duplicate files in directory trees
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 LIB_DEPENDS=	fcrc.1:${PORTSDIR}/devel/fastcrc
 
 MAN1=		dupfind.1

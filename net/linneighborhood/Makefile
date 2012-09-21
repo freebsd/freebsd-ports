@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.bnro.de/~schmidjo/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ gui for browsing and mounting SMB filesystems
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 RUN_DEPENDS=	smbclient:${PORTSDIR}/${SAMBA_PORT}
 
 SAMBA_PORT?=	net/samba34

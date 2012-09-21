@@ -15,6 +15,9 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility to clean up old backup files of a pdumpfs archive
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 USE_RUBY=	yes
 RUBY_SHEBANG_FILES=	${PROG}
 

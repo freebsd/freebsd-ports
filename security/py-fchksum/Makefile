@@ -16,6 +16,9 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module to find the checksum of files
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/fchksum.so
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

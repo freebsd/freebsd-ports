@@ -14,6 +14,9 @@ MASTER_SITES=	http://mirror.cs.wisc.edu/pub/mirrors/ghost/contrib/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PostScript to Text converter
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 USE_GHOSTSCRIPT_RUN=	yes
 
 MAN1=		pstotext.1

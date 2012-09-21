@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.hick.org/code/skape/memgrep/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to manipulate memory from running processes and core files
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

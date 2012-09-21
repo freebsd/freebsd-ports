@@ -14,6 +14,9 @@ MASTER_SITES=	http://projects.alkaloid.net/e107_files/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Maintain DNS zones using an LDAP directory
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 RUN_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 

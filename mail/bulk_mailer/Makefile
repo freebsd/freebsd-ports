@@ -13,6 +13,9 @@ MASTER_SITES=	ftp://cs.utk.edu/pub/moore/bulk_mailer/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Speeds delivery to mailing lists by sorting & batching addresses
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--cache-file=/dev/null
 

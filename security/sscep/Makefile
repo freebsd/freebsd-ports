@@ -17,6 +17,9 @@ COMMENT=		Simple scep client
 MAKEFILE=		${FILESDIR}/BSDmakefile
 ALL_TARGET=		-j`${SYSCTL} -n hw.ncpu`
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 USE_OPENSSL=		yes
 
 .include <bsd.port.mk>

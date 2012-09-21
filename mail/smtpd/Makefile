@@ -18,6 +18,9 @@ PATCHFILES=	patch-smtpd-2.0-RBL.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Obtuse smtpd/smtpfwdd, part of the Juniper firewall toolkit
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 USE_RC_SUBR=	smtpd
 SUB_FILES=	pkg-message
 SPOOLBASE?=	/var/smtpd

@@ -14,6 +14,9 @@ DISTNAME=	radauth-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nagios plugin for checking radius server
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 NAGIOS_PLUGIN_DIR?=	libexec/nagios
 
 HAS_CONFIGURE=	yes

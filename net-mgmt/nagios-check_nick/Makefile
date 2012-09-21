@@ -13,6 +13,9 @@ PKGNAMEPREFIX=	nagios-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nagios plug-in to check if a nick is on IRC
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/irclib.py:${PORTSDIR}/irc/py-irclib
 
 USE_PYTHON=	yes

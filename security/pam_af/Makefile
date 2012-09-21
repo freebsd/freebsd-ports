@@ -14,6 +14,9 @@ MASTER_SITES=	http://mbsd.msk.ru/dist/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Anti-bruteforce PAM module
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 USE_BZIP2=	yes
 
 MAN8=		pam_af.8 pam_af_tool.8

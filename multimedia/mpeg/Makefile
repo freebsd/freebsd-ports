@@ -15,6 +15,9 @@ DISTNAME=	MPEGv${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PVRG's MPEG video stream encoder
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 WRKSRC=		${WRKDIR}/mpegdir
 MAN1=		mpeg.1
 
