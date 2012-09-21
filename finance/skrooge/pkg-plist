@@ -32,6 +32,7 @@ lib/kde4/skrooge_categories.so
 lib/kde4/skrooge_import_csv.so
 lib/kde4/skrooge_import_gnc.so
 lib/kde4/skrooge_import_gsb.so
+lib/kde4/skrooge_import_json.so
 lib/kde4/skrooge_import_kmy.so
 lib/kde4/skrooge_import_mmb.so
 lib/kde4/skrooge_import_mt940.so
@@ -273,6 +274,9 @@ share/doc/HTML/en/skrooge/zoom_graph.png
 share/doc/HTML/es/skrooge/common
 share/doc/HTML/es/skrooge/index.cache.bz2
 share/doc/HTML/es/skrooge/index.docbook
+share/doc/HTML/fr/skrooge/common
+share/doc/HTML/fr/skrooge/index.cache.bz2
+share/doc/HTML/fr/skrooge/index.docbook
 share/doc/HTML/lt/skrooge/after_mass_update.png
 share/doc/HTML/lt/skrooge/bank_accounts.png
 share/doc/HTML/lt/skrooge/before_mass_update.png
@@ -488,6 +492,7 @@ share/kde4/services/skgdataengine.desktop
 share/kde4/services/skrooge-import-csv.desktop
 share/kde4/services/skrooge-import-gnc.desktop
 share/kde4/services/skrooge-import-gsb.desktop
+share/kde4/services/skrooge-import-json.desktop
 share/kde4/services/skrooge-import-kmy.desktop
 share/kde4/services/skrooge-import-mmb.desktop
 share/kde4/services/skrooge-import-mt940.desktop
@@ -549,8 +554,6 @@ share/locale/ug/LC_MESSAGES/skrooge.mo
 share/locale/uk/LC_MESSAGES/skrooge.mo
 share/locale/zh_CN/LC_MESSAGES/skrooge.mo
 share/locale/zh_TW/LC_MESSAGES/skrooge.mo
-share/mime/application/x-skg.xml
-share/mime/application/x-skgc.xml
 share/mime/packages/x-skg.xml
 @dirrm share/doc/HTML/uk/skrooge
 @dirrm share/doc/HTML/sv/skrooge
@@ -558,6 +561,7 @@ share/mime/packages/x-skg.xml
 @dirrm share/doc/HTML/pt/skrooge
 @dirrm share/doc/HTML/nl/skrooge
 @dirrm share/doc/HTML/lt/skrooge
+@dirrm share/doc/HTML/fr/skrooge
 @dirrm share/doc/HTML/es/skrooge
 @dirrm share/doc/HTML/en/skrooge
 @dirrm share/apps/skrooge_unit
@@ -614,7 +618,7 @@ share/mime/packages/x-skg.xml
 @dirrm share/apps/plasma/plasmoids/adviceapplet-qml/contents/ui
 @dirrm share/apps/plasma/plasmoids/adviceapplet-qml/contents
 @dirrm share/apps/plasma/plasmoids/adviceapplet-qml
-@dirrm share/apps/plasma/plasmoids
+@dirrmtry share/apps/plasma/plasmoids
 @dirrmtry lib/kde4/plugins/grantlee/0.2
 @dirrmtry lib/kde4/plugins/grantlee
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

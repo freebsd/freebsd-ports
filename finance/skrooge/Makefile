@@ -1,28 +1,24 @@
-# New ports collection makefile for:	skrooge
-# Date created:		2009-05-01
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	skrooge
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	finance kde
 MASTER_SITES=	http://skrooge.org/files/
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	A personal finances manager for KDE
+COMMENT=	KDE4 personal finance manager
 
-LIB_DEPENDS=	ofx.5:${PORTSDIR}/finance/libofx \
-		sqlite3:${PORTSDIR}/databases/sqlite3 \
-		qca.2:${PORTSDIR}/devel/qca \
-		grantlee_gui.0:${PORTSDIR}/devel/grantlee
+LIB_DEPENDS=	ofx:${PORTSDIR}/finance/libofx \
+		qca:${PORTSDIR}/devel/qca \
+		grantlee_gui:${PORTSDIR}/devel/grantlee
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
+USE_SQLITE=	yes
 USE_QT4=	qmake_build moc_build uic_build rcc_build \
-		corelib dbus gui script xml sql sql-sqlite3_run
+		dbus gui script xml sql sql-sqlite3_run
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix sharedmime
+USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
