@@ -15,7 +15,7 @@ MASTER_SITES=	http://people.cs.uchicago.edu/~ahiorean/ahwm/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 window manager
 
-DEPRECATED=	Abdonned upstream
+DEPRECATED=	Abandoned upstream
 EXPIRATION_DATE=	2012-10-20
 
 USE_XORG=	x11 xext
