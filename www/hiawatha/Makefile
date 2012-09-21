@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	hiawatha
-PORTVERSION=	8.4
+PORTVERSION=	8.5
 CATEGORIES=	www
 MASTER_SITES=	http://www.hiawatha-webserver.org/files/ \
 		http://www.c-s.li/ports/
 
 MAINTAINER=	cs@FreeBSD.org
-COMMENT=	An advanced and secure webserver for Unix
+COMMENT=	Advanced and secure webserver for Unix
 
 LICENSE=	GPLv2
 
