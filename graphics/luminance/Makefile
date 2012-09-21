@@ -6,57 +6,45 @@
 #
 
 PORTNAME=	luminance
-DISTVERSION=	2.0.1-1
-PORTREVISION=	5
+DISTVERSION=	2.3.0
 CATEGORIES=	graphics
-MASTER_SITES=	SF/qtpfsgui/luminance/${DISTVERSION:S/-1//}/
-DISTNAME=	${PORTNAME}-v${DISTVERSION}
+MASTER_SITES=	SF/qtpfsgui/${PORTNAME}/${DISTVERSION}
+DISTNAME=	${PORTNAME}-hdr-${DISTVERSION}
 
-MAINTAINER=	goffredo@gmail.com
-COMMENT=	An open source workflow for HDR imaging
+MAINTAINER=	h2+fbsdports@fsfe.org
+COMMENT=	Complete open source solution for HDR photography
 
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
-LIB_DEPENDS=	exiv2.12:${PORTSDIR}/graphics/exiv2 \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		fftw3f:${PORTSDIR}/math/fftw3-float \
-		gsl.16:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float \
+		exiv2:${PORTSDIR}/graphics/exiv2 \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		IlmImf:${PORTSDIR}/graphics/OpenEXR \
+		tiff:${PORTSDIR}/graphics/tiff \
+		gsl:${PORTSDIR}/math/gsl \
+		raw_r:${PORTSDIR}/graphics/libraw
 
-USE_QT4=	gui xml webkit imageformats_run linguist_build \
-		moc_build qmake_build rcc_build uic_build
-QMAKE_ARGS=	PREFIX=${PREFIX} DOCDIR=${DOCSDIR} I18NDIR=${DATADIR}/i18n
-MAKE_JOBS_SAFE=	yes
+USE_BZIP2=	yes
+USE_CMAKE=	yes
+USE_QT4=	gui sql webkit xml linguist_build moc_build qmake_build \
+		rcc_build uic_build imageformats_run
 INSTALLS_ICONS=	yes
+MAKE_JOBS_SAFE=	yes
 
-LRELEASE=	${QT_PREFIX}/bin/lrelease-qt4
-
-.include <bsd.port.pre.mk>
+DATADIR=	${PREFIX}/share/${PORTNAME}-hdr
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-hdr
 
 post-patch:
-# FreeBSD has log2() since recently, remove local #define's which conflict
-# with prototypes in /usr/include/math.h (when applicable)
-.if ${OSVERSION} > 802501
-	@${REINPLACE_CMD} -e '/log2/d' ${WRKSRC}/src/arch/freebsd/math.h
-.endif
-	@cd ${WRKSRC}/src && ${REINPLACE_CMD} \
-		-e 's|/usr/share/luminance|${DOCSDIR}|g' \
-		-e 's|/usr/local/share/luminance|${DATADIR}|g' \
-		MainWindow/MainWindow.cpp \
-		Preferences/PreferencesDialog.cpp \
-		TonemappingWindow/TonemappingWindow.cpp \
-		TransplantExif/TransplantExifDialog.cpp
-	@${REINPLACE_CMD} -e 's|%%HELPDIR%%|${DOCSDIR}|g' \
-		${WRKSRC}/src/HelpBrowser/LuminancePaths.cpp
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -E '/INSTALLS/s,help|docs,,g' ${WRKSRC}/project.pro
-.endif
+# Do not install yet another copy of GPL (we use license framework instead)
+# and fix installation path for docs (but not for internal help files)
+	@${REINPLACE_CMD} -e '/LICENSE/d ; \
+		/#info files/s,share/luminance-hdr,${DOCSDIR_REL},' \
+			${WRKSRC}/CMakeLists.txt
+# Allow builds from release distfile to display correct git hash in "About"
+# dialog window
+	@${REINPLACE_CMD} -e \
+		's,@GIT_SHA1@,be5409f2ed028b0a509d3f4cd44a970a09d2ef6c,' \
+			${WRKSRC}/src/Common/GitSHA1.cpp.in
 
-do-configure:
-	@${LRELEASE} ${WRKSRC}/project.pro
-	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKE_ARGS} ${QMAKEFLAGS}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,11 +1,11 @@
---- ./src/HelpBrowser/LuminancePaths.cpp.orig	2009-12-05 19:28:52.000000000 +0300
-+++ ./src/HelpBrowser/LuminancePaths.cpp	2010-11-12 14:20:53.460402688 +0300
-@@ -35,7 +35,7 @@
- 	hf = LocalizedDirPath(QApplication::applicationDirPath() + dirsep + "help" + dirsep );
+--- ./src/HelpBrowser/LuminancePaths.cpp.orig
++++ ./src/HelpBrowser/LuminancePaths.cpp
+@@ -35,8 +35,6 @@ QString LuminancePaths::HelpDir()
+   hf = LocalizedDirPath(QApplication::applicationDirPath() + dirsep + "../Resources/help/en" + dirsep);
+ #elif _WIN32
+   hf = LocalizedDirPath(QApplication::applicationDirPath() + dirsep + "help" + dirsep);
+-#elif __FreeBSD__
+-  hf = LocalizedDirPath("/usr/local/share/doc/luminance-hdr/");
  #else
- //	hf = LocalizedDirPath( PREFIX + dirsep + "share" + dirsep + "fontmatrix" + dirsep + "help" + dirsep );
--	hf = LocalizedDirPath( "/usr" + dirsep + "share" + dirsep + "luminance" + dirsep + "help" + dirsep );
-+        hf = LocalizedDirPath( "%%HELPDIR%%/" );
- #endif
- 	getThis()->LuminancePathsDB["HelpDir"] = hf;
- 
+   //	hf = LocalizedDirPath( PREFIX + dirsep + "share" + dirsep + "fontmatrix" + dirsep + "help" + dirsep );
+   //hf = LocalizedDirPath("usr" + dirsep + "share" + dirsep + "luminance-hdr" + dirsep + "help" + dirsep);

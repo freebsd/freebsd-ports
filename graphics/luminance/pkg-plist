@@ -1,78 +1,101 @@
-bin/luminance
-share/applications/luminance.desktop
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/BUGS
-%%PORTDOCS%%%%DOCSDIR%%/Changelog
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/help/en/README
-%%PORTDOCS%%%%DOCSDIR%%/help/en/additional.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/basics.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/contributing.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/contributing_donating.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/contributing_programming.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/contributing_testing.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/contributing_translating.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/copying_exif.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/creating_hdr.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/creating_hdr_cli.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/creating_hdr_interactive.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/dcraw.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/editing_hdr.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/external.png
-%%PORTDOCS%%%%DOCSDIR%%/help/en/faq.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/features.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/hints.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/images/batch-tmo.png
-%%PORTDOCS%%%%DOCSDIR%%/help/en/images/copy-exif.png
-%%PORTDOCS%%%%DOCSDIR%%/help/en/images/mainwin.jpeg
-%%PORTDOCS%%%%DOCSDIR%%/help/en/images/not-translated-menu-item.png
-%%PORTDOCS%%%%DOCSDIR%%/help/en/images/projectiveTransformationDialog.png
-%%PORTDOCS%%%%DOCSDIR%%/help/en/images/resize.png
-%%PORTDOCS%%%%DOCSDIR%%/help/en/images/tonemapdialog.jpg
-%%PORTDOCS%%%%DOCSDIR%%/help/en/images/translated-menu-item.png
-%%PORTDOCS%%%%DOCSDIR%%/help/en/index.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/manual.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/menu.xml
-%%PORTDOCS%%%%DOCSDIR%%/help/en/news.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/prefs.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/prefs_hdr.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/prefs_tonemapping.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/prefs_tools.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/prefs_ui.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/projective_transformation.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/style.css
-%%PORTDOCS%%%%DOCSDIR%%/help/en/tmap_ref.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/tmap_ref_drago.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/tmap_ref_durand.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/tmap_ref_mantiuk06.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/tonemapping.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/tonemapping_batch.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/tonemapping_cli.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/tonemapping_interactive.html
-%%PORTDOCS%%%%DOCSDIR%%/help/en/workflow.html
-%%PORTDOCS%%%%DOCSDIR%%/help/js/jquery.js
-%%PORTDOCS%%%%DOCSDIR%%/help/js/jquery.jtabs.pack.js
-share/icons/hicolor/32x32/apps/luminance.png
+bin/luminance-hdr
+bin/luminance-hdr-cli
+share/applications/luminance-hdr.desktop
+share/icons/hicolor/48x48/apps/luminance-hdr.png
+%%DATADIR%%/help/en/README
+%%DATADIR%%/help/en/additional.html
+%%DATADIR%%/help/en/basics.html
+%%DATADIR%%/help/en/color_management.html
+%%DATADIR%%/help/en/contributing.html
+%%DATADIR%%/help/en/contributing_donating.html
+%%DATADIR%%/help/en/contributing_programming.html
+%%DATADIR%%/help/en/contributing_testing.html
+%%DATADIR%%/help/en/contributing_translating.html
+%%DATADIR%%/help/en/copying_exif.html
+%%DATADIR%%/help/en/creating_hdr.html
+%%DATADIR%%/help/en/creating_hdr_batch.html
+%%DATADIR%%/help/en/creating_hdr_cli.html
+%%DATADIR%%/help/en/creating_hdr_interactive.html
+%%DATADIR%%/help/en/dcraw.html
+%%DATADIR%%/help/en/editing_hdr.html
+%%DATADIR%%/help/en/external.png
+%%DATADIR%%/help/en/faq.html
+%%DATADIR%%/help/en/features.html
+%%DATADIR%%/help/en/hints.html
+%%DATADIR%%/help/en/images/batch-hdr.png
+%%DATADIR%%/help/en/images/batch-tmo.png
+%%DATADIR%%/help/en/images/color_management.png
+%%DATADIR%%/help/en/images/copy-exif.png
+%%DATADIR%%/help/en/images/cropping_frame.png
+%%DATADIR%%/help/en/images/mainwin.png
+%%DATADIR%%/help/en/images/not-translated-menu-item.png
+%%DATADIR%%/help/en/images/preferences.png
+%%DATADIR%%/help/en/images/prefs-cms.png
+%%DATADIR%%/help/en/images/prefs-ext.png
+%%DATADIR%%/help/en/images/prefs-hdr.png
+%%DATADIR%%/help/en/images/prefs-raw.png
+%%DATADIR%%/help/en/images/prefs-tm.png
+%%DATADIR%%/help/en/images/projectiveTransformationDialog.png
+%%DATADIR%%/help/en/images/resize.png
+%%DATADIR%%/help/en/images/translated-menu-item.png
+%%DATADIR%%/help/en/index.html
+%%DATADIR%%/help/en/manual.html
+%%DATADIR%%/help/en/menu.xml
+%%DATADIR%%/help/en/news.html
+%%DATADIR%%/help/en/prefs.html
+%%DATADIR%%/help/en/prefs_cms.html
+%%DATADIR%%/help/en/prefs_hdr.html
+%%DATADIR%%/help/en/prefs_rawconversion.html
+%%DATADIR%%/help/en/prefs_tonemapping.html
+%%DATADIR%%/help/en/prefs_tools.html
+%%DATADIR%%/help/en/prefs_ui.html
+%%DATADIR%%/help/en/projective_transformation.html
+%%DATADIR%%/help/en/style.css
+%%DATADIR%%/help/en/tmap_ref.html
+%%DATADIR%%/help/en/tmap_ref_drago.html
+%%DATADIR%%/help/en/tmap_ref_durand.html
+%%DATADIR%%/help/en/tmap_ref_mantiuk06.html
+%%DATADIR%%/help/en/tonemapping.html
+%%DATADIR%%/help/en/tonemapping_batch.html
+%%DATADIR%%/help/en/tonemapping_cli.html
+%%DATADIR%%/help/en/tonemapping_interactive.html
+%%DATADIR%%/help/en/workflow.html
+%%DATADIR%%/help/js/jquery.js
+%%DATADIR%%/help/js/jquery.jtabs.pack.js
+@dirrm %%DATADIR%%/help/js
+@dirrm %%DATADIR%%/help/en/images
+@dirrm %%DATADIR%%/help/en
+@dirrm %%DATADIR%%/help
 %%DATADIR%%/i18n/lang_cs.qm
 %%DATADIR%%/i18n/lang_de.qm
 %%DATADIR%%/i18n/lang_es.qm
+%%DATADIR%%/i18n/lang_fi.qm
 %%DATADIR%%/i18n/lang_fr.qm
+%%DATADIR%%/i18n/lang_hi.qm
+%%DATADIR%%/i18n/lang_hu.qm
+%%DATADIR%%/i18n/lang_id.qm
 %%DATADIR%%/i18n/lang_it.qm
 %%DATADIR%%/i18n/lang_pl.qm
+%%DATADIR%%/i18n/lang_ro.qm
 %%DATADIR%%/i18n/lang_ru.qm
+%%DATADIR%%/i18n/lang_sk.qm
 %%DATADIR%%/i18n/lang_tr.qm
+%%DATADIR%%/i18n/lang_zh.qm
+%%DATADIR%%/i18n/qt_cs.qm
+%%DATADIR%%/i18n/qt_de.qm
+%%DATADIR%%/i18n/qt_es.qm
+%%DATADIR%%/i18n/qt_fi.qm
+%%DATADIR%%/i18n/qt_fr.qm
+%%DATADIR%%/i18n/qt_hu.qm
+%%DATADIR%%/i18n/qt_it.qm
+%%DATADIR%%/i18n/qt_pl.qm
+%%DATADIR%%/i18n/qt_ro.qm
+%%DATADIR%%/i18n/qt_ru.qm
+%%DATADIR%%/i18n/qt_tr.qm
+%%DATADIR%%/i18n/qt_zh.qm
 @dirrm %%DATADIR%%/i18n
 @dirrm %%DATADIR%%
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/help/js
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/help/img
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/help/en/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/help/en
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/help
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/Changelog
+%%DOCSDIR%%/README
+@dirrm %%DOCSDIR%%

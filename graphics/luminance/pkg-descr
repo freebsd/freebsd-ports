@@ -3,8 +3,8 @@ aims to provide a workflow for HDR imaging.
 
 Supported features:
 
-  * Create an HDR file from a set of images (formats: JPEG, TIFF 8bit and
-    16bit, RAW) of the same scene taken at different exposure settings
+  * Create an HDR file from a set of images (formats: JPEG, TIFF 8-bit and
+    16-bit, RAW) of the same scene taken at different exposure settings
   * Rotate, resize, and crop HDR images
   * Tonemap HDR images
   * Copy EXIF data between sets of images
@@ -13,8 +13,10 @@ Supported HDR formats (with file extensions):
 
   * OpenEXR (.exr)
   * Radiance RGBE (.hdr)
-  * TIFF formats: 16bit, 32bit (float) and LogLuv (.tiff)
+  * TIFF formats: 16-bit, 32-bit (float) and LogLuv (.tiff)
   * PFS native format (.pfs)
   * Raw image formats (various)
+
+Supported LDR formats: JPEG, PNG, PPM, PBM, TIFF (8-bit).
 
 WWW: http://qtpfsgui.sourceforge.net/
