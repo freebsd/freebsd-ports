@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	apache-openoffice
-PORTVERSION=	3.4.0
-PORTREVISION=	3
+PORTVERSION=	3.4.1
 CATEGORIES=	editors java
-MASTER_SITES=	http://people.apache.org/~jsc/aoo34-rc/rc1/src/ ${MASTER_SITE_LOCAL}:extsrc
-MASTER_SITE_SUBDIR=	maho/openoffice:extsrc
-DISTFILES+=	${OOOSRC} unowinreg.dll ${EXTSRC}
+MASTER_SITES=	ftp://ftp.riken.jp/net/apache/incubator/ooo/3.4.1/source/ \
+		${MASTER_SITE_LOCAL:S@%SUBDIR%@maho/openoffice@}:extsrc
+DISTFILES+=	${OOOSRC} unowinreg.dll ${EXTSRC}:extsrc
 EXTRACT_ONLY=	${OOOSRC} ${EXTSRC}
 
 #de facto maintainer is maho@FreeBSD.org
@@ -70,9 +69,9 @@ FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 .endif
 
 OOOSRC=			aoo-${PORTVERSION}-incubating-src${EXTRACT_SUFX}
-EXTSRC=			ApacheOpenOffice.ext_sources.r${SVNREVISION}${EXTRACT_SUFX}
+EXTSRC=			ApacheOpenOffice.ext_sources.${PORTVERSION}.r${SVNREVISION}${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SVNREVISION=		1327774
+SVNREVISION=		1372282
 INSTALLATION_BASEDIR?=	openoffice-${PORTVERSION}
 EXECBASE?=		openoffice-${PORTVERSION}
 DIST_SUBDIR=		openoffice
@@ -95,9 +94,9 @@ PKGNAMESUFFIX=		-${LANG_SUFFIX}
 
 RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		${JAVALIBDIR}/commons-httpclient.jar:${PORTSDIR}/java/jakarta-commons-httpclient \
-		${JAVALIBDIR}/commons-lang.jar:${PORTSDIR}/java/jakarta-commons-lang \
 		${JAVALIBDIR}/bsh.jar:${PORTSDIR}/lang/bsh \
-		${JAVALIBDIR}/saxon9.jar:${PORTSDIR}/textproc/saxon-devel
+		${JAVALIBDIR}/saxon9.jar:${PORTSDIR}/textproc/saxon-devel \
+		${LOCALBASE}/lib/X11/fonts/ChromeOS/Arimo-Bold.ttf:${PORTSDIR}/x11-fonts/croscorefonts-fonts-ttf
 
 .if defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
@@ -119,7 +118,11 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		hunspell-1.3.0:${PORTSDIR}/textproc/hunspell \
 		poppler-glib.8:${PORTSDIR}/graphics/poppler-glib \
 		rdf.0:${PORTSDIR}/textproc/redland \
-		freetype.9:${PORTSDIR}/print/freetype2
+		textcat.0:${PORTSDIR}/textproc/libtextcat \
+		freetype.9:${PORTSDIR}/print/freetype2 \
+		apr-1.4:${PORTSDIR}/devel/apr1 \
+		CoinMP.7:${PORTSDIR}/math/coinmp \
+		serf-1.0:${PORTSDIR}/www/serf
 
 .if exists(${LOCALBASE}/include/libexttextcat/textcat.h)
 .if exists(${LOCALBASE}/include/textcat.h)
@@ -187,6 +190,9 @@ CONFIGURE_ARGS+=	--enable-verbose \
 			--with-system-libtextcat-data=${LOCALBASE}/share/libtextcat \
 			--with-system-vigra \
 			--with-system-stdlibs \
+			--with-system-apr \
+			--with-system-apr-util \
+			--with-system-coinmp \
 			--with-commons-codec-jar=${JAVALIBDIR}/commons-codec.jar \
 			--with-commons-lang-jar=${JAVALIBDIR}/commons-lang.jar	\
 			--with-commons-httpclient-jar=${JAVALIBDIR}/commons-httpclient.jar \
@@ -204,7 +210,10 @@ CONFIGURE_ARGS+=	--enable-verbose \
 			--with-system-saxon     \
 			--with-saxon-jar=${JAVALIBDIR}/saxon9.jar  \
 			--with-system-beanshell	\
-			--with-beanshell-jar=${JAVALIBDIR}/bsh.jar
+			--with-beanshell-jar=${JAVALIBDIR}/bsh.jar \
+			--without-fonts
+#			--with-system-jpeg
+#			--with-system-serf \
 
 OOOEXTENSIONS+=		minimizer/presentation-minimizer.oxt
 OOOEXTENSIONS+=		presenter/presenter-screen.oxt
@@ -236,7 +245,6 @@ pre-everything::
 post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/unowinreg.dll ${WRKSRC}/external/unowinreg/
 	@${MKDIR} ${WRKSRC}/../ext_sources
-	@${MV} ${WRKDIR}/ooo/ext_sources/* ${WRKSRC}/../ext_sources/
 	@${RM} -rf ${WRKSRC}/l10n
 
 post-patch:
@@ -271,7 +279,7 @@ do-install:
 	@${REINPLACE_CMD} -e 's/^UserInstallation.*$$/USERINSTALLATION/' ${PREFIX}/${INSTALLATION_BASEDIR}/openoffice.org3/program/bootstraprc
 	@${REINPLACE_CMD} -e 's/USERINSTALLATION/UserInstallation=$$SYSUSERCONFIG\/\.openoffice\.org\/3/' ${PREFIX}/${INSTALLATION_BASEDIR}/openoffice.org3/program/bootstraprc
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
-	@cd ${WRKSRC}/solver/3?0/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
+	@cd ${WRKSRC}/solver/3??/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
 
 post-install:
 	@${FIND} ${PREFIX}/${INSTALLATION_BASEDIR} -type d -exec ${CHMOD} 755 {} \;
