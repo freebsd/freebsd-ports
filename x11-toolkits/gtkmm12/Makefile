@@ -15,7 +15,7 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ wrapper for gtk, a x11 graphics library
 
-DEPRECATED=	Abandonned upstream, no more depend on
+DEPRECATED=	Abandoned upstream, no more depending ports
 EXPIRATION_DATE=	2012-10-20
 
 LIB_DEPENDS=	sigc.1:${PORTSDIR}/devel/libsigc++

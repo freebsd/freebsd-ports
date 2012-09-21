@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sf,gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Callback Framework for C++
 
-DEPRECATED=	Abandonned upstream, no more depend on
+DEPRECATED=	Abandoned upstream, no more depending ports
 EXPIRATION_DATE=	2012-10-20
 
 USE_AUTOTOOLS=	libtool
