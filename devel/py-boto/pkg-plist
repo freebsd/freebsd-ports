@@ -5,6 +5,7 @@ bin/cq
 bin/cwutil
 bin/elbadmin
 bin/fetch_file
+bin/glacier
 bin/instance_events
 bin/kill_instance
 bin/launch_instance
@@ -27,6 +28,7 @@ bin/taskadmin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/cwutil
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/elbadmin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/fetch_file
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/glacier
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/instance_events
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/kill_instance
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/launch_instance
@@ -48,6 +50,21 @@ bin/taskadmin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/auth_handler.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/auth_handler.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/auth_handler.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/beanstalk/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/beanstalk/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/beanstalk/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/beanstalk/exception.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/beanstalk/exception.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/beanstalk/exception.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/beanstalk/layer1.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/beanstalk/layer1.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/beanstalk/layer1.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/beanstalk/response.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/beanstalk/response.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/beanstalk/response.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/beanstalk/wrapper.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/beanstalk/wrapper.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/beanstalk/wrapper.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/cacerts/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/cacerts/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/cacerts/__init__.pyo
@@ -362,6 +379,33 @@ bin/taskadmin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/fps/response.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/fps/response.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/fps/response.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/glacier/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/glacier/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/glacier/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/glacier/concurrent.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/glacier/concurrent.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/glacier/concurrent.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/glacier/exceptions.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/glacier/exceptions.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/glacier/exceptions.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/glacier/job.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/glacier/job.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/glacier/job.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/glacier/layer1.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/glacier/layer1.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/glacier/layer1.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/glacier/layer2.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/glacier/layer2.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/glacier/layer2.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/glacier/response.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/glacier/response.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/glacier/response.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/glacier/vault.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/glacier/vault.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/glacier/vault.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/glacier/writer.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/glacier/writer.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/glacier/writer.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/gs/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/gs/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/gs/__init__.pyo
@@ -594,6 +638,9 @@ bin/taskadmin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/s3/connection.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/s3/connection.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/s3/connection.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/s3/cors.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/s3/cors.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/s3/cors.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/s3/deletemarker.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/s3/deletemarker.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/s3/deletemarker.pyo
@@ -615,6 +662,9 @@ bin/taskadmin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/s3/resumable_download_handler.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/s3/resumable_download_handler.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/s3/resumable_download_handler.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/s3/tagging.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/s3/tagging.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/s3/tagging.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/s3/user.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/s3/user.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/s3/user.pyo
@@ -810,6 +860,7 @@ bin/taskadmin
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/manage
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/iam
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/gs
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/glacier
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/fps
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/file
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/emr
@@ -824,6 +875,7 @@ bin/taskadmin
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/cloudfront
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/cloudformation
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/cacerts
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto/beanstalk
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/boto
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
