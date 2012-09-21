@@ -1,5 +1,5 @@
-SHA256 (mod_spdy/mod_spdy_source_0.9.3.1.tar.xz) = fcb1a569e831a1ac06e66f58a9957a6f716e9a4b133306705204433cd145b954
-SIZE (mod_spdy/mod_spdy_source_0.9.3.1.tar.xz) = 5068248
+SHA256 (mod_spdy/mod_spdy_source_0.9.3.2.tar.xz) = e7e5a92ef39355c2905596d3da17816b533e44138721da5b036015bb0004cf78
+SIZE (mod_spdy/mod_spdy_source_0.9.3.2.tar.xz) = 5038360
 SHA256 (mod_spdy/httpd-2.2.22.tar.gz) = 74c1ffffefe1a502339b004ad6488fbd858eb425a05968cd67c05695dbc0fe7c
 SIZE (mod_spdy/httpd-2.2.22.tar.gz) = 7200529
 SHA256 (mod_spdy/openssl-1.0.1c.tar.gz) = 2a9eb3cd4e8b114eb9179c0d3884d61658e7d8e8bf4984798a5f5bd48e325ebe

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_spdy
-PORTVERSION=	0.9.3.1
+PORTVERSION=	0.9.3.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.club.kyutech.ac.jp/~masaki/ports/:mod_spdy \
 		${MASTER_SITE_APACHE_HTTPD}:apache22 \
