@@ -190,6 +190,7 @@
     SUBDIR += lxde-meta
     SUBDIR += lxmenu-data
     SUBDIR += lxpanel
+    SUBDIR += lxrandr
     SUBDIR += menu-cache
     SUBDIR += metalock
     SUBDIR += metisse
