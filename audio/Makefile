@@ -434,6 +434,7 @@
     SUBDIR += lpac
     SUBDIR += lplayer
     SUBDIR += lv2core
+    SUBDIR += lxmusic
     SUBDIR += mac
     SUBDIR += mad
     SUBDIR += madfufw
