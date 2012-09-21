@@ -1,13 +1,7 @@
-# New ports collection makefile for:	mythes
-# Date created:		2011-07-21
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	mythes
-PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTVERSION=	2.3
 CATEGORIES=	french textproc
 MASTER_SITES=	http://www.dicollecte.org/download/fr/
 DISTNAME=	thesaurus-v${PORTVERSION}
