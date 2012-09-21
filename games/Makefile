@@ -705,6 +705,7 @@
     SUBDIR += primateplunge
     SUBDIR += ptkei
     SUBDIR += ptools
+    SUBDIR += puckman
     SUBDIR += pushover
     SUBDIR += pvpgn
     SUBDIR += py-anki
