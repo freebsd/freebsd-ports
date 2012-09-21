@@ -1,12 +1,8 @@
-# New ports collection makefile for:	py-boto
-# Date created:				Aug 26, 2007
-# Whom:					Peter Schuller <peter.schuller@infidyne.com>
-#
+# Created by: Peter Schuller <peter.schuller@infidyne.com>
 # $FreeBSD$
-#
 
 PORTNAME=	boto
-PORTVERSION=	2.5.2
+PORTVERSION=	2.6.0
 CATEGORIES=	devel python
 MASTER_SITES=	GOOGLE_CODE \
 		CHEESESHOP
