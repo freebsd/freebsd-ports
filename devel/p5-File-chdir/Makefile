@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File-chdir
-PORTVERSION=	0.1006
+PORTVERSION=	0.1007
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A more sensible way to change directories
 
-BUILD_DEPENDS=	p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools
-RUN_DEPENDS=	p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
 
