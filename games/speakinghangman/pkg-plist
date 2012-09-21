@@ -1,0 +1,9 @@
+bin/speakinghangman
+%%DATADIR%%/HangmanFree_V1.0.0.jar
+%%DATADIR%%/lib/DeploymentUtilities_V0.3.0.jar
+%%DATADIR%%/lib/HangmanPanel_V1.0.0.jar
+%%DATADIR%%/lib/J2DGameEngine_V0.3.0.jar
+%%DATADIR%%/lib/jl1.0.jar
+share/pixmaps/speakinghangman.png
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%
