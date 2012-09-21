@@ -1,12 +1,8 @@
-# New ports collection makefile for: qlandkartegt
-# Date created:                1 Jun 2009
-# Whom:                        Mykola Dzham <freebsd@levsha.org.ua>
-#
+# Created by: Mykola Dzham <freebsd@levsha.org.ua>
 # $FreeBSD$
-#
 
 PORTNAME=	qlandkartegt
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/QLandkarteGT%20${PORTVERSION}
 
@@ -16,8 +12,8 @@ COMMENT=	The ultimate outdoor aficionado's tool
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	gdal:${PORTSDIR}/graphics/gdal \
-		proj.7:${PORTSDIR}/graphics/proj \
-		gps.20:${PORTSDIR}/astro/gpsd
+		proj:${PORTSDIR}/graphics/proj \
+		gps:${PORTSDIR}/astro/gpsd
 
 USE_CMAKE=	yes
 USE_QT4=	dbus gui opengl network sql xml linguist_build \
