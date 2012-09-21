@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.loria.fr/~rougier/pub/Software/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Funny pets to follow your mouse pointer
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 WRKSRC=		${WRKDIR}/pet-${PORTVERSION}
 
 USE_GNOME=	gtk20

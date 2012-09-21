@@ -14,6 +14,9 @@ DISTNAME=	vb2c-March-1999
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert Visual Basic forms to GTK C code
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	${FILESDIR}/Makefile
 

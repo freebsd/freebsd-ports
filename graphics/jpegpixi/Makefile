@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.zero-based.org/software/jpegpixi/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Useful to correct images from digital camera with CCD defects
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes

@@ -15,6 +15,9 @@ DISTNAME=	ue400dev
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full screen editor
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 NO_CDROM=	"Resale allowed for media cost only"
 
 NO_WRKSUBDIR=	yes

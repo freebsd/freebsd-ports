@@ -15,6 +15,9 @@ PKGNAMEPREFIX=	ocaml-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Type conversion routines for OCaml
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 USE_GMAKE=	yes
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes

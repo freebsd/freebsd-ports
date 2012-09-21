@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet Another Corewars Evolver
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 NO_WRKSUBDIR=	yes

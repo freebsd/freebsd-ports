@@ -16,6 +16,9 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Portlet API (JSR-168)
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 NO_BUILD=	yes

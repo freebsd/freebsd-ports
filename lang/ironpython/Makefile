@@ -15,6 +15,9 @@ DISTNAME=	IronPython-1.0.1-Src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	New Python implementation targeting the .NET
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 

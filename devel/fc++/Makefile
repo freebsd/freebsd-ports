@@ -15,6 +15,9 @@ DISTNAME=	FC++.${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Functional Programming in C++
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 NO_BUILD=	yes
 
 do-install:
