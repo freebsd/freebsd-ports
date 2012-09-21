@@ -3905,15 +3905,11 @@ do-package: ${TMPPLIST}
 			fi; \
 		fi; \
 	fi
-	@TMPPKGFILE=$$(mktemp -t pkg); \
-	trap "${RM} -f $${TMPPKGFILE} $${TMPPKGFILE}${PKG_SUFX}; exit 1" 1 2 3 5 10 13 15; \
-	if ${PKG_CMD} -b ${PKGNAME} $${TMPPKGFILE}; then \
-		${MV} -f $${TMPPKGFILE}${PKG_SUFX} ${PKGFILE}; \
+	@if ${PKG_CMD} -b ${PKGNAME} ${PKGFILE}; then \
 		if [ -d ${PACKAGES} ]; then \
 			cd ${.CURDIR} && eval ${MAKE} package-links; \
 		fi; \
 	else \
-		${RM} -f $${TMPPKGFILE}; \
 		cd ${.CURDIR} && eval ${MAKE} delete-package; \
 		exit 1; \
 	fi
