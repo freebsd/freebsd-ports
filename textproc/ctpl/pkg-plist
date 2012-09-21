@@ -1,0 +1,51 @@
+bin/ctpl
+include/ctpl/ctpl-environ.h
+include/ctpl/ctpl-eval.h
+include/ctpl/ctpl-input-stream.h
+include/ctpl/ctpl-io.h
+include/ctpl/ctpl-lexer-expr.h
+include/ctpl/ctpl-lexer.h
+include/ctpl/ctpl-output-stream.h
+include/ctpl/ctpl-parser.h
+include/ctpl/ctpl-token.h
+include/ctpl/ctpl-value.h
+include/ctpl/ctpl-version.h
+include/ctpl/ctpl.h
+lib/libctpl.a
+lib/libctpl.la
+lib/libctpl.so
+lib/libctpl.so.4
+libdata/pkgconfig/ctpl.pc
+share/gtk-doc/html/ctpl/annotation-glossary.html
+share/gtk-doc/html/ctpl/api-index-deprecated.html
+share/gtk-doc/html/ctpl/api-index-full.html
+share/gtk-doc/html/ctpl/ch01.html
+share/gtk-doc/html/ctpl/ch01s02.html
+share/gtk-doc/html/ctpl/ch01s03.html
+share/gtk-doc/html/ctpl/ch01s05.html
+share/gtk-doc/html/ctpl/ch02.html
+share/gtk-doc/html/ctpl/ctpl-CtplEnviron.html
+share/gtk-doc/html/ctpl/ctpl-CtplEval.html
+share/gtk-doc/html/ctpl/ctpl-CtplInputStream.html
+share/gtk-doc/html/ctpl/ctpl-CtplLexer.html
+share/gtk-doc/html/ctpl/ctpl-CtplLexerExpr.html
+share/gtk-doc/html/ctpl/ctpl-CtplOutputStream.html
+share/gtk-doc/html/ctpl/ctpl-CtplParser.html
+share/gtk-doc/html/ctpl/ctpl-CtplToken.html
+share/gtk-doc/html/ctpl/ctpl-CtplValue.html
+share/gtk-doc/html/ctpl/ctpl-Generic-IO.html
+share/gtk-doc/html/ctpl/ctpl-Version-information.html
+share/gtk-doc/html/ctpl/ctpl.devhelp
+share/gtk-doc/html/ctpl/ctpl.devhelp2
+share/gtk-doc/html/ctpl/environment-description-syntax.html
+share/gtk-doc/html/ctpl/home.png
+share/gtk-doc/html/ctpl/index.html
+share/gtk-doc/html/ctpl/index.sgml
+share/gtk-doc/html/ctpl/left.png
+share/gtk-doc/html/ctpl/right.png
+share/gtk-doc/html/ctpl/style.css
+share/gtk-doc/html/ctpl/up.png
+@dirrm share/gtk-doc/html/ctpl
+@dirrm share/gtk-doc/html
+@dirrm share/gtk-doc
+@dirrm include/ctpl

@@ -85,6 +85,7 @@
     SUBDIR += csv2latex
     SUBDIR += csv2xml
     SUBDIR += csvdiff
+    SUBDIR += ctpl
     SUBDIR += ctpp2
     SUBDIR += cwtext
     SUBDIR += cy-aspell
