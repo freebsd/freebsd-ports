@@ -13,6 +13,9 @@ MASTER_SITES=	http://site.n.ml.org/download/20030428174342/_firetalk/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multi-protocol chat/instant messaging library
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_LDCONFIG=	yes

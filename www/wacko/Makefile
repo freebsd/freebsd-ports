@@ -12,6 +12,9 @@ DISTNAME=	wacko.r4
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small and fast PHP Wikki clone with 30+ languages support
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 USE_BZIP2=	yes
 # The  port supports a number of variables that may be tweaked at build
 # time.

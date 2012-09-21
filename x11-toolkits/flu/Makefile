@@ -15,6 +15,9 @@ DISTNAME=	FLU_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library containing extra widgets for FLTK
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 USE_GL=		gl

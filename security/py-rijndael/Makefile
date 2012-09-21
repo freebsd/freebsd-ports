@@ -16,6 +16,9 @@ DISTNAME=	pyrijndael-v${PORTVERSION:S:.:_:}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pure python implementation of the Rijndael encryption algorithm
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/pyrijndael
 

@@ -16,6 +16,9 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility to back up remote files with pdumpfs and rsync
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 RUN_DEPENDS=	${LOCALBASE}/sbin/pdumpfs:${PORTSDIR}/sysutils/pdumpfs \
 		rsync:${PORTSDIR}/net/rsync
 

@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.bellz.org/flyway/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A VFR/IFR Route Planner for Pilots
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 BUILD_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 RUN_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 

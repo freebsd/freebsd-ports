@@ -17,6 +17,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show disk usage of file sizes and counts sorted by file age
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 ALL_TARGET=	${PORTNAME}
 MAN8=		agef.8
 PLIST_FILES=	bin/agef

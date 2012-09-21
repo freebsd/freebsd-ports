@@ -14,6 +14,9 @@ DISTNAME=	netdump-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RedHat server part of netdump/netconsole package for Linux
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt \
 		glib:${PORTSDIR}/devel/glib20
 

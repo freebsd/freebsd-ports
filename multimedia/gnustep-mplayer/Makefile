@@ -16,6 +16,9 @@ DISTNAME=	Mplayer-0.4-1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep port of MPlayerOSX
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 LICENSE=	GPLv2
 
 USE_GNUSTEP=	yes

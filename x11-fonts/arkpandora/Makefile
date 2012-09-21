@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Arkpandora TrueType fonts
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig \
 		ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig

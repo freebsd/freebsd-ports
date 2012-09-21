@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.usablelabs.com/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A locale for Thai in Thailand, TIS-620 character set
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 

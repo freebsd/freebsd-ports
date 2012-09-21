@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.divineinvasion.net/authforce/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP authentication brute forcer
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
 CONFIGURE_ENV=	LIBS="-lintl"

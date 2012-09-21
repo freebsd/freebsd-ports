@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.enderunix.org/zabit/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Zabit is a content/attachment filter for qmail
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 USE_QMAIL_RUN=	yes
 
 HAS_CONFIGURE=	yes

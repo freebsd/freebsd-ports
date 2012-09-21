@@ -13,6 +13,9 @@ MASTER_SITES=	ftp://ftp.desktopbsd.net/pub/DesktopBSD/Tools/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DesktopBSD tools for easy system configuration
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		fastest_cvsup:${PORTSDIR}/sysutils/fastest_cvsup \

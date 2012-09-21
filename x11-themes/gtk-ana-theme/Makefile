@@ -17,6 +17,9 @@ DISTNAME=	Ana
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clean and white GTK engine
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 LIB_DEPENDS=	rsvg-2:${PORTSDIR}/graphics/librsvg2
 RUN_DEPENDS=	${LOCALBASE}/share/icons/Foxtrot/index.theme:${PORTSDIR}/x11-themes/gnome-themes-extras
 

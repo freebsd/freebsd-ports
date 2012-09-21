@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.rz.uni-karlsruhe.de/~hj28/download.php?file=/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A remote system monitor for unix hosts
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 USE_BZIP2=	YES
 
 GNU_CONFIGURE=	yes

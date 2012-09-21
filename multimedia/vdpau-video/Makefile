@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.splitted-desktop.com/~gbeauchesne/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A VDPAU-based backend for VAAPI
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 

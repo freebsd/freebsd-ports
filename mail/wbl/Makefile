@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.technocage.com/~caskey/wbl/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple tool to manage white/black list on qmail
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
 USE_QMAIL_RUN=	yes

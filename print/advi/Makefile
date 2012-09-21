@@ -16,6 +16,9 @@ MASTER_SITES=	http://gallium.inria.fr/${PORTNAME}/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Active-DVI viewer
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 BUILD_DEPENDS=	${CI_DEPEND}:${PORTSDIR}/graphics/ocaml-images \
 		kpsewhich:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=	gif.5:${PORTSDIR}/graphics/giflib \

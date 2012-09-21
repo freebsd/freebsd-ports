@@ -16,6 +16,9 @@ DISTNAME=	cyrx-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Cyrillic keyboard layout manager for Window Maker
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 USE_XORG=	x11 xpm
 NO_INSTALL_MANPAGES=	yes
 PLIST_FILES=	bin/wmcyrx2

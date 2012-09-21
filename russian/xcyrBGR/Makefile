@@ -16,6 +16,9 @@ MASTER_SITES=	ftp://ftp.slavof.net/pub/FreeBSD/X11/cyrillic/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Bulgarian Cyrillic keyboard layout manager for X11
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 PLIST_FILES=	bin/xcyrBGR
 USE_XORG=	x11 xpm
 NO_INSTALL_MANPAGES=	yes

@@ -15,6 +15,9 @@ MASTER_SITES=	http://mbsd.msk.ru/dist/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create fonts.scale file for use with TrueType font server
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 PLIST_FILES=	bin/ttmkfdir
