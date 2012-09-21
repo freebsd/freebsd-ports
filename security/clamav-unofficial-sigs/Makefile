@@ -1,16 +1,13 @@
-# New ports collection makefile for:	clamav-unofficial-sigs
-# Date created:		2010-03-06
-# Whom:			Marko Njezic <sf@maxempire.com>
-#
+# Created by: Marko Njezic <sf@maxempire.com>
 # $FreeBSD$
-#
 
 PORTNAME=	clamav-unofficial-sigs
 PORTVERSION=	3.7.1
 PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.inetmsg.com/pub/ \
-		http://www.inetmsg.com/pub/archive/
+		http://www.inetmsg.com/pub/archive/ \
+		SF/unofficial-sigs/
 
 MAINTAINER=	sf@maxempire.com
 COMMENT=	Update script for third-party ClamAV databases
