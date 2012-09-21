@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.7.13
+PORTVERSION=	3.7.14
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/ http://www2.sqlite.org/ http://www3.sqlite.org/
-DISTNAME=	sqlite-autoconf-3071300
+DISTNAME=	sqlite-autoconf-3071400
 
 MAINTAINER=	pavelivolkov@googlemail.com
 COMMENT=	An SQL database engine in a C library
