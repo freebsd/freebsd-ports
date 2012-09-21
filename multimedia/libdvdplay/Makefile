@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Portable abstraction library for DVD navigation
 
+DEPRECATED=	No more public_distfiles
+EXPIRATION_DATE=	2012-10-20
+
 LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
 
 USE_AUTOTOOLS=	libtool
