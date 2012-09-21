@@ -1,12 +1,9 @@
-# New ports collection makefile for:	mod_rivet
-# Date created:				June 16, 2010
-# Whom:					Peter Lai <cowbert@gmail.com>
-#
+# Created by: Peter Lai <cowbert@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_rivet
 PORTVERSION=	2.0.5
+PORTREVISION=	1
 CATEGORIES=	www tcl
 MASTER_SITES=		${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	tcl/rivet
@@ -15,7 +12,9 @@ DISTNAME=		rivet-${PORTVERSION}
 MAINTAINER=	cowbert@gmail.com
 COMMENT=	Embeds a Tcl interpreter in the Apache server
 
-LICENSE=		AL2
+LICENSE=	AL2
+
+LIB_DEPENDS=	itcl:${PORTSDIR}/lang/itcl
 
 USE_APACHE=	22+
 USE_TCL=	84+
