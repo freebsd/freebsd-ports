@@ -16,6 +16,9 @@ MASTER_SITE_SUBDIR=${PORTNAME}/stable.pkg/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable interpreter for SCI games, such as the Space Quest series
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 WANT_SDL=	yes

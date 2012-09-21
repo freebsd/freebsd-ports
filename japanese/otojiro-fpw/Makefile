@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.a/a/}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OTOJIRO English - Japanese Dictionary (EPWING V1 format)
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 EXTRACT_DEPENDS=${LOCALBASE}/share/freepwing/fpwutils.mk:${PORTSDIR}/japanese/freepwing
 BUILD_DEPENDS=	${LOCALBASE}/libexec/freepwing/catdump:${PORTSDIR}/japanese/freepwing \
 		${JCODE}:${PORTSDIR}/japanese/p5-Jcode

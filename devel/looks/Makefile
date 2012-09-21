@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S|.|_|g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The JGoodies Looks improve the appearance of your Java applications
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+

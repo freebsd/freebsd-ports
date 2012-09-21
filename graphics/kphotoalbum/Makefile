@@ -13,6 +13,9 @@ MASTER_SITES=		http://www.kphotoalbum.org/data/download/
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Image database for KDE
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 LIB_DEPENDS=		kipi.2:${PORTSDIR}/graphics/libkipi \
 			exiv2.12:${PORTSDIR}/graphics/exiv2 \
 			kdcraw.4:${PORTSDIR}/graphics/libkdcraw

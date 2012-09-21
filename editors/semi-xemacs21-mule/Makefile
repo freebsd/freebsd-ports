@@ -13,6 +13,9 @@ PORTCLASS=	slave
 
 MASTERDIR=	${.CURDIR}/../../editors/semi
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 # emacs port setup
 USE_EMACS=	yes
 EMACS_PORT_NAME=	xemacs21-mule

@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A hexadecimal dump tool which handles Japanese
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 MANLANG=	ja
 MAN1=		hex.1
 PLIST_FILES=	bin/hex

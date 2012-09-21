@@ -14,6 +14,9 @@ MASTER_SITES=	http://jodrell.net/files/unsupported/gresolver/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical DNS query tool using GTK+
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 RUN_DEPENDS=	p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext \
 		p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-Glade2>=0:${PORTSDIR}/x11-toolkits/p5-Glade2 \

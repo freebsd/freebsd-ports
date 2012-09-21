@@ -19,6 +19,9 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple realtime 3DS file previewer based on the Lib3ds Library
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 LIB_DEPENDS=	3ds-1.3:${PORTSDIR}/graphics/lib3ds
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

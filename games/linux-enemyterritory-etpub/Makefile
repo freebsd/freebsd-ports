@@ -18,6 +18,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ET Pub - An Enemy Territory Modification
 
+DEPRECATED=	No more public distfiles (for the .pk3)
+EXPIRATION_DATE=	2012-10-20
+
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 
 USE_ZIP=	yes

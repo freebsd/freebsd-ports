@@ -22,6 +22,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X program to make bottom of screen ripple like a pool of water
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 PLIST_FILES=	bin/xripple
 USE_IMAKE=	yes
 USE_XORG=	x11 xext

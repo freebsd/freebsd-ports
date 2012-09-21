@@ -16,6 +16,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} cupdoc${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Experimental constraint logic programming language
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2012-10-20
+
 WRKSRC=		${WRKDIR}/src
 MAKEFILE=	makefile
 ALL_TARGET=	cup
