@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hunspell
-PORTVERSION=	4.3
+PORTVERSION=	4.6
 CATEGORIES=	french textproc
 MASTER_SITES=	http://www.dicollecte.org/download/fr/
 DISTNAME=	hunspell-fr-moderne-v${PORTVERSION}
