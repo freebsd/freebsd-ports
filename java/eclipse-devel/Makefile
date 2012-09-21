@@ -7,7 +7,7 @@
 
 PORTNAME=	eclipse-devel
 PORTVERSION=	4.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.eclipse.org/technology/linuxtools/eclipse-build/4.2.x/:1 \
 		http://download.eclipse.org/tools/orbit/downloads/drops/R20120119162704/repository/plugins/:2 \
@@ -282,7 +282,9 @@ do-install:
 	@${MKDIR} ${PORTDESTDIR}
 	@${MKDIR} ${PREFIX}/${DROPINS_DIR}
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${ANT} ${MAKE_ARGS} ${INSTALL_TARGET})
-	@${FIND} ${PORTDESTDIR}/plugins -type f -perm 600 -print0 | ${XARGS} -0 ${CHMOD} 644
+.for d in plugins dropins/jdt/plugins
+	@${FIND} ${PORTDESTDIR}/${d} -type f -perm 600 -print0 | ${XARGS} -0 ${CHMOD} 644
+.endfor
 	@${SED} \
 	  -e "s+%%BROWSER%%+${GECKO:S/19//}+g" \
 	  -e "s+%%ECLIPSE_HOME%%+${PORTDESTDIR}+g" \
