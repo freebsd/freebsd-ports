@@ -16,7 +16,7 @@ DISTNAME=	Gtk-Perl-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Imlib module of Gtk-Perl
 
-DEPRECATED=	Abandonned upstream, not used by any ports
+DEPRECATED=	Abandoned upstream, not used by any ports
 EXPIRATION_DATE=	2012-10-20
 
 BUILD_DEPENDS=	p5-XML-Writer>=0:${PORTSDIR}/textproc/p5-XML-Writer \
