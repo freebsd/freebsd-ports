@@ -1,9 +1,5 @@
-# New ports collection makefile for:	e-uae
-# Date created:				Sun Dec  5 15:03:37 CET 2004
-# Whom:					Miguel Mendez <flynn@energyhq.es.eu.org>
-#
+# Created by: Miguel Mendez <flynn@energyhq.es.eu.org>
 # $FreeBSD$
-#
 
 PORTNAME=	e-uae
 DISTVERSION=	0.8.29.w4
@@ -12,7 +8,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://www.rcdrummond.net/uae/${DISTNAME}/
 DISTNAME=	e-uae-0.8.29-WIP4
 
-MAINTAINER=	braddo@tranceaddict.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced version of UAE, the Amiga emulator
 
 CONFLICTS=	uae-[0-9]*
