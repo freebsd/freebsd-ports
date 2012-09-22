@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xcalib
-# Date created:				5 April 2005
-# Whom:					Petr Holub <hopet@ics.muni.cz>
-#
+# Created by: Petr Holub <hopet@ics.muni.cz>
 # $FreeBSD$
-#
 
 PORTNAME=	xcalib
 PORTVERSION=	0.8
@@ -11,7 +7,7 @@ CATEGORIES=	x11 graphics
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
-MAINTAINER=	hopet@ics.muni.cz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program for display calibration of X11-Servers with ICC profiles
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
