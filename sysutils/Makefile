@@ -725,6 +725,7 @@
     SUBDIR += py-danzfs
     SUBDIR += py-drmaa
     SUBDIR += py-filelike
+    SUBDIR += py-glances
     SUBDIR += py-iowait
     SUBDIR += py-nagiosplugin
     SUBDIR += py-psutil
