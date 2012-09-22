@@ -1,9 +1,5 @@
-# New ports collection makefile for:	cherokee
-# Date created:			01 Jun 2002
-# Whom:				silence <oksala@videotron.ca>
-#
+# Whom: silence <oksala@videotron.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	cherokee
 PORTVERSION=	1.2.101
@@ -44,7 +40,7 @@ MASTER_SITES=	http://www.cherokee-project.com/download/1.2/${PORTVERSION}/ \
 # due to site down
 #		http://mirror.apung.web.id/cherokee/1.0/\${PORTVERSION}/ \
 
-MAINTAINER=	dschulz@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extremely fast and flexible web server
 
 USE_GNOME=	gnomehack pkgconfig
