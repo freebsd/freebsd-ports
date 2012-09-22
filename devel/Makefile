@@ -499,6 +499,7 @@
     SUBDIR += gitg
     SUBDIR += gitolite
     SUBDIR += gitolite2
+    SUBDIR += gitphp
     SUBDIR += gittrac
     SUBDIR += gjstest
     SUBDIR += glade2
