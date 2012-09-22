@@ -1,9 +1,5 @@
-# New ports collection makefile for:	kscope
-# Date created:		2004-04-21
-# Whom:			Frank Mayhar <frank@exit.com>
-#
+# Created by: Frank Mayhar <frank@exit.com>
 # $FreeBSD$
-#
 
 PORTNAME=	kscope
 PORTVERSION=	1.6.1
@@ -11,7 +7,7 @@ PORTREVISION=	7
 CATEGORIES=	devel kde
 MASTER_SITES=	SF
 
-MAINTAINER=	frank@exit.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE front-end to Cscope
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
