@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dnspython
-# Date created:				Sun Dec 26 09:58:59 UTC 2004
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-#
+# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	dnspython
 PORTVERSION=	1.9.4
@@ -11,7 +7,7 @@ CATEGORIES=	dns python
 MASTER_SITES=	http://www.dnspython.org/kits/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	greenwood.andy@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A DNS toolkit for Python
 
 USE_PYTHON=		yes
