@@ -1,9 +1,5 @@
-# New ports collection makefile for:	py-karaoke
-# Date created:			8 October 2002
-# Whom:				Elias Mandouvalos <ocean@mail.gr>
-#
+# Created by: Elias Mandouvalos <ocean@mail.gr>
 # $FreeBSD$
-#
 
 PORTNAME=	karaoke
 PORTVERSION=	0.5
@@ -13,7 +9,7 @@ MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pykaraoke-${PORTVERSION}
 
-MAINTAINER=	ocean@mail.gr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python karaoke application (Plays CD+G, MP3+G, OGG+G files)
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
