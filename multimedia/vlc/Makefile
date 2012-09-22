@@ -1,13 +1,9 @@
-# New ports collection makefile for:	vlc
-# Date created:		3rd August 2001
-# Whom:			Brian Somers <brian@FreeBSD.org>
-#
+# Created by: Brian Somers <brian@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	vlc
 DISTVERSION=	2.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/p/-pre/}/ \
@@ -31,13 +27,15 @@ OPTIONS_DEFINE=	A52 AALIB ASS AVAHI CACA DBUS DIRAC DOCS DTS DVDREAD \
 		MUSEPACK NCURSES NLS NOTIFY OPTIMIZED_CFLAGS OGG \
 		PNG PORTAUDIO PROJM PULSEAUDIO QT4 REALAUDIO RUNROOT \
 		SAMBA SCHROED SDL SHOUTCAST SKINS STREAM SPEEX SQLITE SVG \
-		TAGLIB THEORA TREMOR TWOLAME UPNP V4L VAAPI VCD \
-		VORBIS X11 X264 XCB XOSD XVIDEO ZVBI SERVER_ONLY DEBUG \
-		UNSAFE_PLUGINS
+		TAGLIB THEORA TWOLAME UPNP V4L VAAPI VCD \
+		X11 X264 XCB XOSD XVIDEO ZVBI SERVER_ONLY DEBUG \
+		VORBISALT NO_DVD
+OPTIONS_SINGLE=	VORBISALT
+OPTIONS_SINGLE_VORBISALT=	VORBIS TREMOR
 OPTIONS_DEFAULT=A52 AVAHI DBUS DTS DVDREAD DVDNAV FAAD FLAC GLX GNUTLS \
 		HTTPD LUA MAD MATROSKA MPEG2 OGG PNG QT4 REALAUDIO \
 		SDL SKINS STREAM SPEEX TAGLIB THEORA TWOLAME V4L \
-		VCD VORBIS X11 X264 XCB XVIDEO
+		VCD VORBISALT VORBIS X11 X264 XCB XVIDEO
 A52_DESC=	A52 DVD audio decoder
 AALIB_DESC=	Aalib Console Graphics Support
 ASS_DESC=	ASS/SSA subtitle rendering
@@ -84,6 +82,8 @@ XVIDEO_DESC=	X11 video rendering
 ZVBI_DESC=	VBI decoding support
 SERVER_ONLY_DESC=	Only build server parts
 UNSAFE_PLUGINS_DESC=	Install unsafe, unsupported plugins
+VORBISALT_DESC= Vorbis or Tremor audio support
+NO_DVD_DESC=	disable DVD specific features
 
 USE_XZ=		yes
 USE_GMAKE=	yes
@@ -137,19 +137,26 @@ MAN1=		vlc.1 \
 # Use these for batch control of certain types of builds
 
 # Disable DVD specific features
-.if empty(PORT_OPTIONS:MDVD)
-WITHOUT_A52=yes
-WITHOUT_DTS=yes
-WITHOUT_DVDREAD=yes
-WITHOUT_DVDNAV=yes
+.if ${PORT_OPTIONS:MNO_DVD}
+PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
+PORT_OPTIONS:=	${PORT_OPTIONS:NA52}
+PORT_OPTIONS:=	${PORT_OPTIONS:NDVDREAD}
+PORT_OPTIONS:=	${PORT_OPTIONS:NDVDNAV}
 .endif
 
 # Use this to disable all UI and output modules
 .if ${PORT_OPTIONS:MSERVER_ONLY}
-WITHOUT_LUA=yes
-WITHOUT_QT4=yes
-WITH_RUNROOT=yes
-WITHOUT_XCB=yes
+PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
+PORT_OPTIONS:=	${PORT_OPTIONS:NGLX}
+PORT_OPTIONS:=	${PORT_OPTIONS:NLUA}
+PORT_OPTIONS:=	${PORT_OPTIONS:NQT4}
+PORT_OPTIONS:=	${PORT_OPTIONS:NSKINS}
+PORT_OPTIONS:=	${PORT_OPTIONS:NXCB}
+PORT_OPTIONS:=	${PORT_OPTIONS:NXVIDEO}
+.if empty(PORT_OPTIONS:MRUNROOT)
+PORT_OPTIONS+=	RUNROOT
+PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
+.endif
 .endif
 
 # WITH_UNSAFE_PLUGINS
@@ -173,53 +180,6 @@ CONFIGURE_ARGS+=--enable-qt4
 USE_QT4=	gui corelib moc_build rcc_build uic_build
 .else
 CONFIGURE_ARGS+=--disable-qt4
-.endif
-
-.include <bsd.port.pre.mk>
-
-# OS specific hacks
-.if (${OSVERSION} < 800000)
-BROKEN=		doesn't build on such an old FreeBSD version
-.endif
-
-.if (${OSVERSION} < 800040)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules__misc__inhibit__xdg.c \
-		${FILESDIR}/extra-patch-modules__misc__inhibit__xscreensaver.c
-.endif
-
-# base clang in 9.0 builds a corrupted lib/vlc/plugins/gui/libqt4_plugin.so
-.if (${CC:T:Mclang} == "clang") && \
-	(${OSVERSION} >= 900014) && (${OSVERSION} < 900506)
-IGNORE=		base clang version too old, set NO_IGNORE to override
-.endif
-
-.if ${ARCH} == "powerpc64"
-CONFIGURE_ARGS+=--enable-altivec # VLC's config script doesn't know to do this
-.endif
-
-.if ${ARCH} == "i386"
-USE_GCC?=	4.6+ # sse/3dnow detection on i386 needs newer gcc
-.endif
-
-# End OS specific hacks
-
-# User tunables
-
-# Define these to override
-# FreeBSD 9.x uses CAM devices
-.if (${OSVERSION} > 900037)
-WITH_CDROM_DEVICE?=/dev/cd0
-WITH_DVD_DEVICE?=/dev/cd0
-.else
-WITH_CDROM_DEVICE?=/dev/acd0
-WITH_DVD_DEVICE?=/dev/acd0
-.endif
-
-# If you change this value, the dependancy will not be recorded
-.if !defined(WITH_VLC_DEFAULT_FONT)
-WITH_VLC_DEFAULT_FONT=		${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
-WITH_VLC_DEFAULT_MONO_FONT=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/VeraMono.ttf
-RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 .endif
 
 # OPTIONS
@@ -595,9 +555,10 @@ CONFIGURE_ARGS+=--enable-theora
 CONFIGURE_ARGS+=--disable-theora
 .endif
 
-.if ${PORT_OPTIONS:MTREMOR} && !${PORT_OPTIONS:MVORBIS}
+.if ${PORT_OPTIONS:MTREMOR}
 # Tremor is integer based Vorbis subset, using both is redundant
 LIB_DEPENDS+=	vorbisidec:${PORTSDIR}/audio/libtremor
+CONFIGURE_ARGS+=--enable-tremor
 .else
 CONFIGURE_ARGS+=--disable-tremor
 .endif
@@ -688,6 +649,53 @@ LIB_DEPENDS+=	zvbi:${PORTSDIR}/devel/libzvbi
 CONFIGURE_ARGS+=--enable-zvbi
 .else
 CONFIGURE_ARGS+=--disable-zvbi
+.endif
+
+.include <bsd.port.pre.mk>
+
+# OS specific hacks
+.if (${OSVERSION} < 800000)
+BROKEN=		doesn't build on such an old FreeBSD version
+.endif
+
+.if (${OSVERSION} < 800040)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules__misc__inhibit__xdg.c \
+		${FILESDIR}/extra-patch-modules__misc__inhibit__xscreensaver.c
+.endif
+
+# base clang in 9.0 builds a corrupted lib/vlc/plugins/gui/libqt4_plugin.so
+.if (${CC:T:Mclang} == "clang") && \
+	(${OSVERSION} >= 900014) && (${OSVERSION} < 900506)
+IGNORE=		base clang version too old, set NO_IGNORE to override
+.endif
+
+.if ${ARCH} == "powerpc64"
+CONFIGURE_ARGS+=--enable-altivec # VLC's config script doesn't know to do this
+.endif
+
+.if ${ARCH} == "i386"
+USE_GCC?=	4.6+ # sse/3dnow detection on i386 needs newer gcc
+.endif
+
+# End OS specific hacks
+
+# User tunables
+
+# Define these to override
+# FreeBSD 9.x uses CAM devices
+.if (${OSVERSION} > 900037)
+WITH_CDROM_DEVICE?=/dev/cd0
+WITH_DVD_DEVICE?=/dev/cd0
+.else
+WITH_CDROM_DEVICE?=/dev/acd0
+WITH_DVD_DEVICE?=/dev/acd0
+.endif
+
+# If you change this value, the dependancy will not be recorded
+.if !defined(WITH_VLC_DEFAULT_FONT)
+WITH_VLC_DEFAULT_FONT=		${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
+WITH_VLC_DEFAULT_MONO_FONT=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/VeraMono.ttf
+RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 .endif
 
 post-patch:
