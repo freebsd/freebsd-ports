@@ -56,8 +56,8 @@ PLIST_SUB+=	OLD="" NEW="@comment "
 PLIST_SUB+=     INTEL_DRIVER=""
 PLIST_SUB+=     RADEON_DRIVERS=""
 .else
-PLIST_SUB+=     INTEL_DRIVER="@comment"
-PLIST_SUB+=     RADEON_DRIVERS="@comment"
+PLIST_SUB+=     INTEL_DRIVER="@comment "
+PLIST_SUB+=     RADEON_DRIVERS="@comment "
 .endif
 
 pre-patch:
