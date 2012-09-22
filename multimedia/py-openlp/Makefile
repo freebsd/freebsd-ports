@@ -1,12 +1,7 @@
-# New ports collection makefile for:	py-openlp
-# Date created:		2010-01-19
-# Whom:			Thomas Abthorpe <tabthorpe@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	OpenLP
-PORTVERSION=	1.9.11
+PORTVERSION=	1.9.12
 CATEGORIES=	multimedia python
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -45,9 +40,9 @@ QT_LRELEASE=	${LOCALBASE}/bin/lrelease-qt4
 pre-build:
 	@${MKDIR} -p ${WRKSRC}/resources/i18n/qm
 	@set -e; \
-        for TSFILE in ${WRKSRC}/resources/i18n/*.ts; do \
-            ${QT_LRELEASE} $$TSFILE -qm ${WRKSRC}/resources/i18n/qm/`basename $$TSFILE .ts`.qm; \
-        done
+	for TSFILE in ${WRKSRC}/resources/i18n/*.ts; do \
+		${QT_LRELEASE} $$TSFILE -qm ${WRKSRC}/resources/i18n/qm/`basename $$TSFILE .ts`.qm; \
+	done
 
 post-install:
 	@${MKDIR} -p ${PREFIX}/share/openlp/i18n/
@@ -56,7 +51,7 @@ post-install:
 	@${LN} -s ${PREFIX}/bin/openlp.pyw ${PREFIX}/bin/openlp
 	@${CP} ${PYTHON_SITELIBDIR}/${PYEASYINSTALL_EGG}/resources/openlp.desktop ${PREFIX}/share/applications/
 	@set -e; \
-        for SIZE in 16x16 32x32 48x48 64x64 128x128 256x256; do \
+	for SIZE in 16x16 32x32 48x48 64x64 128x128 256x256; do \
 		mkdir -p ${PREFIX}/share/icons/hicolor/$$SIZE/apps && \
 		cp ${PYTHON_SITELIBDIR}/${PYEASYINSTALL_EGG}/resources/images/openlp-logo-$$SIZE.png ${PREFIX}/share/icons/hicolor/$$SIZE/apps/openlp.png; \
 	done
