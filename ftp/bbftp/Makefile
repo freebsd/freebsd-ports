@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bbftp
-# Date created:				6 June 2006
-# Whom:					Petr Holub <hopet@ics.muni.cz>
-#
+# Created by: Petr Holub <hopet@ics.muni.cz>
 # $FreeBSD$
-#
 
 PORTNAME=	bbftp
 PORTVERSION=	3.0.2
@@ -11,7 +7,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	http://doc.in2p3.fr/bbftp/dist/ \
 		http://ftp.riken.go.jp/pub/net/bbftp/
 
-MAINTAINER=	hopet@ics.muni.cz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiple stream file transfer protocol optimized for large files
 
 USE_GMAKE=	yes
