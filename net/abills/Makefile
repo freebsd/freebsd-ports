@@ -1,9 +1,5 @@
-# New ports collection makefile for:	abills
-# Date created:		2 February 2005
-# Whom:			Michael Lednev <liettneff@bk.ru>
-#
+# Created by: Michael Lednev <liettneff@bk.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	abills
 PORTVERSION=	0.53
@@ -13,7 +9,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	liettneff@bk.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Billing system for dialup, VPN, and VoIP management
 
 LICENSE=	GPLv2
