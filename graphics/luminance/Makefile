@@ -5,11 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	luminance
+PORTNAME=	luminance-hdr
 DISTVERSION=	2.3.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/qtpfsgui/${PORTNAME}/${DISTVERSION}
-DISTNAME=	${PORTNAME}-hdr-${DISTVERSION}
 
 MAINTAINER=	h2+fbsdports@fsfe.org
 COMMENT=	Complete open source solution for HDR photography
@@ -32,15 +31,17 @@ USE_QT4=	gui sql webkit xml linguist_build moc_build qmake_build \
 INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
 
-DATADIR=	${PREFIX}/share/${PORTNAME}-hdr
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-hdr
-
 post-patch:
 # Do not install yet another copy of GPL (we use license framework instead)
 # and fix installation path for docs (but not for internal help files)
 	@${REINPLACE_CMD} -e '/LICENSE/d ; \
 		/#info files/s,share/luminance-hdr,${DOCSDIR_REL},' \
 			${WRKSRC}/CMakeLists.txt
+# Point to the right location for program where to look for GPL text
+	@${REINPLACE_CMD} -e 's,LICENSE,${LICENSE}, ; \
+		s,share/doc/luminance-hdr,share/licenses/${PKGNAME},' \
+			${WRKSRC}/src/UI/UMessageBox.cpp
+
 # Allow builds from release distfile to display correct git hash in "About"
 # dialog window
 	@${REINPLACE_CMD} -e \
