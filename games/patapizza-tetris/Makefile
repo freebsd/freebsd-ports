@@ -3,6 +3,7 @@
 
 PORTNAME=	patapizza-tetris
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/patapizza/tetris/downloads/
 DISTNAME=	${PORTNAME:S/patapizza-//}-${DISTVERSION}
