@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	childprocess
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
