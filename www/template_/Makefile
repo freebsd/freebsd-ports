@@ -1,9 +1,5 @@
-# New ports collection makefile for:    template_
-# Date created:         27 Dec 2005
-# Whom:                 Mun-Kyo Seo <munggo@pmy.lv>
-#
+# Created by: Mun-Kyo Seo <munggo@pmy.lv>
 # $FreeBSD$
-#
 
 PORTNAME=	template_
 PORTVERSION=	2.2.3
@@ -11,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.xtac.net/download/?file=
 DISTNAME=	Template_.2.2.3
 
-MAINTAINER=	munggo@pmy.lv
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High performance PHP compiling template engine
 
 WRKSRC=		${WRKDIR}
