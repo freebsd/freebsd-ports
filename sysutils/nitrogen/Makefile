@@ -1,9 +1,5 @@
-# Ports collection makefile for:	nitrogen
-# Date created:				4 July 3007
-# Whom:					Jonathan Liu <Net147@hotmail.com>
-#
+# Created by: Jonathan Liu <Net147@hotmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	nitrogen
 PORTVERSION=	1.5.1
@@ -11,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://projects.l3ib.org/nitrogen/files/
 
-MAINTAINER=	Net147@hotmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Background browser and setter for X windows
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
