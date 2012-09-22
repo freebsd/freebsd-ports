@@ -1,9 +1,5 @@
-# New ports collection makefile for:   tralics
-# Date created:        10 Novemeber 2010
-# Whom:                siasia
-#
+# Created by: siasia
 # $FreeBSD$
-#
 
 PORTNAME=      tralics
 PORTVERSION=   2.13.7
@@ -11,7 +7,7 @@ CATEGORIES=    textproc
 MASTER_SITES=  ftp://ftp-sop.inria.fr/apics/tralics-src/
 DISTNAME=      $(PORTNAME)-src-$(PORTVERSION)
 
-MAINTAINER=    siasiamail@gmail.com
+MAINTAINER=    ports@FreeBSD.org
 COMMENT=       LaTeX to XML translator
 
 NO_INSTALL_MANPAGES=yes
