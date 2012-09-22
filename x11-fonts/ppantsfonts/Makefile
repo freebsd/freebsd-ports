@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ppants-fonts
-# Date created:				06/07/2003
-# Whom:			Dominic Marks <dominic.marks@btinternet.com>
-#
+# Created by: Dominic Marks <dominic.marks@btinternet.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ppantsfonts
 PORTVERSION=	0.7
@@ -12,7 +8,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	http://cus.org.uk/~dom/distfiles/ppants-fonts/
 DISTNAME=	${PORTNAME}-default-${PORTVERSION}
 
-MAINTAINER=	dominic.marks@btinternet.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of small angular fonts
 
 NO_BUILD=	yes

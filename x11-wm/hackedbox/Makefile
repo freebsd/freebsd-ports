@@ -1,10 +1,5 @@
-# New ports collection makefile for:	hackedbox
-# Date created:				2002-05-11
-# Whom:				Dominic Marks <dominic.marks@btinternet.com>
-# based on the blackbox and openbox ports
-#
+# Created by: Dominic Marks <dominic.marks@btinternet.com>
 # $FreeBSD$
-#
 
 PORTNAME=	hackedbox
 PORTVERSION=	0.8.4
@@ -14,7 +9,7 @@ MASTER_SITES=	http://scrudgeware.org/downloads/hackedbox/ \
 		http://www.sourcefiles.org/Window_Managers/ \
 		http://mirror.bytemark.co.uk/freebsd/distfiles/
 
-MAINTAINER=	dominic.marks@btinternet.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hackedbox is a small and fast window manager based on Blackbox
 
 MAN1=		hackedbox.1
