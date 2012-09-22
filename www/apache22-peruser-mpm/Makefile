@@ -7,7 +7,7 @@
 
 MASTERDIR=		${.CURDIR}/../apache22
 
-MAINTAINER=		jille@quis.cx
+MAINTAINER=		ports@FreeBSD.org
 
 WITH_MPM=		peruser
 
