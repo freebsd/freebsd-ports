@@ -1,9 +1,5 @@
-# New ports collection makefile for:	dovecot2-antispam-plugin
-# Date created:		Sat Jan 15 15:46:01 CET 2011
-# Whom:			Denis Shaposhnikov <dsh@bamus.cz>
-#
+# Created by: Denis Shaposhnikov <dsh@bamus.cz>
 # $FreeBSD$
-#
 
 PORTNAME=	dovecot2-antispam-plugin
 PORTVERSION=	20101222
@@ -12,7 +8,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.bamus.cz/distfiles/
 DISTFILES=	dovecot-antispam-plugin-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	dsh@bamus.cz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The dovecot 2.x plugin for spam systems training
 
 BUILD_DEPENDS=	dovecot>=2.0.7:${PORTSDIR}/mail/dovecot2 \

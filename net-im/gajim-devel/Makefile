@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gajim-devel
-# Date created:				Sun Nov 26 16:36:07 MSK 2006
-# Whom:					Denis Shaposhnikov <dsh@vlink.ru>
-#
+# Created by: Denis Shaposhnikov <dsh@vlink.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	gajim
 PORTVERSION=	20101030
@@ -13,7 +9,7 @@ MASTER_SITES=	http://www.bamus.cz/distfiles/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-2010-10-30
 
-MAINTAINER=	dsh@bamus.cz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gajim is a Jabber client based on a plugin system
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus
