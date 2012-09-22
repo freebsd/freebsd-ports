@@ -3670,3 +3670,45 @@ japanese/postgresql80-man||2012-09-13|There no according PostgreSQL version in t
 japanese/postgresql81-man||2012-09-13|There no according PostgreSQL version in the tree anymore
 audio/libmusicbrainz||2012-09-18|Has expired: MusicBrainz RDF webservice no longer functions
 net-mgmt/better-cacti-templates|net-mgmt/percona-monitoring-plugins|2012-09-19|Project renamed
+print/pips3300||2012-09-22|Removed
+print/pips-spr200_210||2012-09-22|Removed
+print/pipsv600||2012-09-22|Removed
+print/pips-spr800||2012-09-22|Removed
+print/pips-sc85_86s||2012-09-22|Removed
+print/pips2200||2012-09-22|Removed
+print/pips880||2012-09-22|Removed
+print/pips940||2012-09-22|Removed
+print/pips730||2012-09-22|Removed
+print/pips900||2012-09-22|Removed
+print/pips820||2012-09-22|Removed
+print/pips740||2012-09-22|Removed
+print/pipsg700||2012-09-22|Removed
+print/pipsv700-cups||2012-09-22|Removed
+print/pipsg900||2012-09-22|Removed
+print/pips-sp2100_2200||2012-09-22|Removed
+print/pips4000||2012-09-22|Removed
+print/pips980||2012-09-22|Removed
+print/pips740-cups||2012-09-22|Removed
+print/pips970-cups||2012-09-22|Removed
+print/pipsv500||2012-09-22|Removed
+print/pips-scx3500_3600s||2012-09-22|Removed
+print/pips-sc65_66s||2012-09-22|Removed
+print/pips970||2012-09-22|Removed
+print/pips750_2000||2012-09-22|Removed
+print/pips780||2012-09-22|Removed
+print/pips-sc84_83s||2012-09-22|Removed
+print/pipsv700||2012-09-22|Removed
+print/pips800||2012-09-22|Removed
+print/pips-sc60s||2012-09-22|Removed
+print/pips3500||2012-09-22|Removed
+print/pips3000||2012-09-22|Removed
+print/pips870||2012-09-22|Removed
+print/pips670||2012-09-22|Removed
+print/pips760||2012-09-22|Removed
+print/pips-sc80s||2012-09-22|Removed
+print/pipsg800||2012-09-22|Removed
+print/pips870-cups||2012-09-22|Removed
+print/pips-spr300_310||2012-09-22|Removed
+print/pips930||2012-09-22|Removed
+print/pips770||2012-09-22|Removed
+www/linuxpluginwrapper||2012-09-22|Has expired: doesn't support ELF symbol versioning, yet.
