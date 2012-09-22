@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_remoteip
-# Date created:		2010-05-11
-# Whom:			Jim Riggs <ports@christianserving.org>
-#
+# Created by: Jim Riggs <ports@christianserving.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_remoteip
 PORTVERSION=	2.3.5.a
@@ -16,7 +12,7 @@ COMMENT=	Replaces the client IP address/hostname with that given by a proxy
 
 MAKE_JOBS_SAFE=	yes
 
-USE_APACHE=	22+
+USE_APACHE=	22
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 

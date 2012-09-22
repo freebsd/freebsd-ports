@@ -1,7 +1,4 @@
-# New ports collection makefile for:	mod_log_sql2-dtc
-# Date created:				2006/11/20
-# Whom:					Marc G. Fournier <scrappy@freebsd.org>
-#
+# Created by: Marc G. Fournier <scrappy@freebsd.org>
 # $FreeBSD$
 
 PORTNAME=	mod_log_sql
@@ -21,7 +18,7 @@ LATEST_LINK=	mod_log_sql2-dtc
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_APACHE=	22+
+USE_APACHE=	22
 CONFIGURE_ARGS+=	--with-apxs=${APXS}
 SSL_PLIST=	""
 PLIST_SUB+=	SSL=${SSL_PLIST}

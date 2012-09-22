@@ -1,7 +1,4 @@
-# New ports collection makefile for:	mod_auth_cookie_mysql2
-# Date created:				Sun Aug 8 2004
-# Whom:					clement
-#
+# Created by: clement
 # $FreeBSD$
 
 PORTNAME=	mod_auth_cookie_mysql2
@@ -18,7 +15,7 @@ COMMENT=	Allows authentication against a MySQL database via a secure cookie
 MAKE_JOBS_SAFE=	yes
 
 USE_MYSQL=	yes
-USE_APACHE=	22+
+USE_APACHE=	22
 
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

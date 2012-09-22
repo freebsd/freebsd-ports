@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_security2
-# Date created:				9 November 2006
-# Whom:					Dominic Mitchell <dom@happygiraffe.net>
-#
+# Created by: Dominic Mitchell <dom@happygiraffe.net>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_security21
 PORTVERSION=	2.1.7
@@ -17,7 +13,7 @@ COMMENT=	An intrusion detection and prevention engine
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	22+
+USE_APACHE=	22
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 AP_EXTRAS+=	-DWITH_LIBXML2

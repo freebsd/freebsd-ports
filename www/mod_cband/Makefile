@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_cband
-# Date created:				Sep 7 2005
-# Whom:					Clement Laforet <clement@FreeBSD.org>
-#
+# Created by: Clement Laforet <clement@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_cband
 PORTVERSION=	0.9.7.5
@@ -20,7 +16,7 @@ COMMENT=	A per-virtualhost bandwidth limiter module for Apache 2
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	22+
+USE_APACHE=	22
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-apxs=${APXS}
 ALL_TARGET=	#

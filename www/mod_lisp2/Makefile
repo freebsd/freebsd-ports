@@ -1,9 +1,5 @@
-# Ports collection makefile for:	mod_lisp2
-# Date created:				Tue Jul 17 2007
-# Whom:					vl
-#
+# Created by: vl
 # $FreeBSD$
-#
 
 PORTNAME=	mod_lisp2
 PORTVERSION=	1.3.1
@@ -16,7 +12,7 @@ COMMENT=	Apache2 module for use with Common Lisp
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	22+
+USE_APACHE=	22
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 

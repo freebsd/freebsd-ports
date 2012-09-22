@@ -1,7 +1,4 @@
-# New ports collection makefile for:	mod_auth_pgsql2
-# Date created:				Mon Oct  6
-# Whom:					Clement Laforet <sheepkiller@cultdeadsheep.org>
-#
+# Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
 # $FreeBSD$
 
 PORTNAME=	mod_auth_pgsql
@@ -16,7 +13,7 @@ COMMENT=	Allows users to use PostgreSQL databases for user authentication
 MAKE_JOBS_SAFE=  yes
 
 USE_PGSQL=	yes
-USE_APACHE=	22+
+USE_APACHE=	22
 
 LATEST_LINK=	mod_auth_pgsql2
 

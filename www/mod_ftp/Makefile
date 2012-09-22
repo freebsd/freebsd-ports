@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_ftp
-# Date created:				June 21, 2011 Oct  5
-# Whom:					Mikhail Teterin <mi@aldan.algebra.com>
-#
+# Created by: Mikhail Teterin <mi@aldan.algebra.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_ftp
 DISTVERSION=	0.9.6-beta
@@ -18,7 +14,7 @@ MAKE_JOBS_SAFE=	yes
 
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
-USE_APACHE=	22+
+USE_APACHE=	22
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=configure.apxs
 CONFIGURE_ENV+=	APXS="${APXS}"

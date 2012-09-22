@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_bw
-# Date created:				Sep 11 2005
-# Whom:					Clement Laforet <clement@FreeBSD.org>
-#
+# Created by: Clement Laforet <clement@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_bw
 PORTVERSION=	0.8
@@ -19,7 +15,7 @@ COMMENT=	Bandwidth and Connection control per Virtual Host or Directory
 MAKE_JOBS_SAFE=  yes
 
 WRKSRC=		${WRKDIR}/mod_bw
-USE_APACHE=	22+
+USE_APACHE=	22
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 

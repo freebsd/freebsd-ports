@@ -1,7 +1,4 @@
-# New ports collection makefile for:	mod_auth_xradius
-# Date created:				1 Jul 2007
-# Whom:					mwlucas
-#
+# Created by: mwlucas
 # $FreeBSD$
 
 PORTNAME=	mod_auth_xradius
@@ -16,7 +13,7 @@ COMMENT=	Enables RADIUS authentication
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	22+
+USE_APACHE=	22
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_auth_mellon
-# Date created:				2010-20-8
-# Whom:					Tom Judge <tom@tomjudge.com>
-#
+# Created by: Tom Judge <tom@tomjudge.com>
 # $FreeBSD$
-#
 
 PORTNAME=		mod_auth_mellon
 PORTVERSION=		0.3.0
@@ -21,7 +17,7 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--with-apxs2=${APXS}
 CONFIGURE_ENV+=		OPENSSL_CFLAGS="-Wall" OPENSSL_LIBS="-lssl"
 
-USE_APACHE=		22+
+USE_APACHE=		22
 
 PLIST_FILES=		${APACHEMODDIR}/mod_auth_mellon.so
 

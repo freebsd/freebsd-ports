@@ -1,7 +1,4 @@
-# New ports collection makefile for:	mod_log_sql2
-# Date created:				2001/11/22
-# Whom:					Clement Laforet <clement@FreeBSD.org>
-#
+# Created by: Clement Laforet <clement@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mod_log_sql
@@ -26,7 +23,7 @@ APACHE2X=	""
 PLIST_SUB+=	SSL=${SSL_PLIST} APACHE2X=${APACHE2X}
 
 USE_MYSQL=	yes
-USE_APACHE=	22+
+USE_APACHE=	22
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql"
 
 .include <bsd.port.pre.mk>

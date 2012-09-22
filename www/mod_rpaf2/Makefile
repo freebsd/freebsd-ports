@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_rpaf2
-# Date created:				Mar 17, 2003
-# Whom:					Clement Laforet <clement@FreeBSD.org>
-#
+# Created by: Clement Laforet <clement@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_rpaf2
 PORTVERSION=	0.6
@@ -17,7 +13,7 @@ COMMENT=	Make proxied requests appear with client IP
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	22+
+USE_APACHE=	22
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SHORTMODNAME=	rpaf

@@ -1,10 +1,5 @@
-# New ports collection makefile for:		mod_mono
-# Date created:					20040828
-# Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
-#
+# Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 # $FreeBSD$
-#   $Id: Makefile,v 1.39 2007/12/13 19:35:47 killfill Exp $
-#
 
 PORTNAME=	mod_mono
 PORTVERSION=	2.10
@@ -21,7 +16,7 @@ BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono \
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono \
 		xsp:${PORTSDIR}/www/xsp
 
-USE_APACHE=	22+
+USE_APACHE=	22
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--man=${PREFIX}/man

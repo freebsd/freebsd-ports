@@ -1,12 +1,5 @@
-# New ports collection makefile for:    mod_auth_kerb
-# Date created:             19 October 2001
-# Whom:                 wollman
-#
+# Created by: wollman
 # $FreeBSD$
-#
-
-
-# Shamelessly stolen from will's mod_auth_any port.
 
 PORTNAME=	mod_auth_kerb
 PORTVERSION=	5.4
@@ -22,7 +15,7 @@ MAKE_JOBS_SAFE=  yes
 
 LATEST_LINK=   mod_auth_kerb2
 
-USE_APACHE=	22+
+USE_APACHE=	22
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

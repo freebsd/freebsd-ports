@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_wsgi
-# Date created:				07 April 2008
-# Whom:					Douglas Thrift
-#
+# Created by: Douglas Thrift
 # $FreeBSD$
-#
 
 PORTNAME=	mod_wsgi
 PORTVERSION=	2.8
@@ -26,7 +22,7 @@ CONFLICTS=	${PKGNAMEPREFIX}mod_wsgi-3.* mod_wsgi-3.*
 
 PROJECTHOST=	modwsgi
 
-USE_APACHE=	22+
+USE_APACHE=	22
 USE_PYTHON=	2.5-2.7
 
 GNU_CONFIGURE=	yes

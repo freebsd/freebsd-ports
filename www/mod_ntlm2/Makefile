@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_ntlm2
-# Date created:	   26 September 2007
-# Whom:		   Alex "lissyara" Keda <admin@lissyara.su>
-#
+# Created by: Alex "lissyara" Keda <admin@lissyara.su>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_ntlm2
 PORTVERSION=	0.1
@@ -22,7 +18,7 @@ SAMBA_PORT?=	net/samba34
 
 MAKE_JOBS_SAFE=	yes
 
-USE_APACHE=	22+
+USE_APACHE=	22
 MAKE_ENV=	APXS=${APXS}
 
 .include <bsd.port.mk>

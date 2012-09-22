@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_limitipconn2
-# Date created:				18 November 2003
-# Whom:					Gea-Suan Lin <gslin@ccca.nctu.edu.tw>
-#
+# Created by: Gea-Suan Lin <gslin@ccca.nctu.edu.tw>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_limitipconn
 PORTVERSION=	0.23
@@ -20,7 +16,7 @@ MAKE_JOBS_SAFE=	yes
 
 LATEST_LINK=	mod_limitipconn2
 
-USE_APACHE=	22+
+USE_APACHE=	22
 USE_BZIP2=	yes
 
 AP_FAST_BUILD=	yes

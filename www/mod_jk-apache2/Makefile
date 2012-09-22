@@ -1,12 +1,8 @@
-# New ports collection makefile for:	mod_jk
-# Date created:				Thu Apr 10 15:14:37 EDT 2003
-# Whom:					Larry Lansing <lansil@fuzzynerd.com>
-#
+# Created by: Larry Lansing <lansil@fuzzynerd.com>
 # $FreeBSD$
-#
 
 MASTERDIR=	${.CURDIR}/../mod_jk
-USE_APACHE=	22+
+USE_APACHE=	22
 PORTREVISION=	2
 PORTEPOCH=	0
 LATEST_LINK=	mod_jk-ap2

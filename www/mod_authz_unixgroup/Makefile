@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_authz_unixgroup
-# Date created:				July 18, 2007
-# Whom:					Will Stacey <will@at.org>
-#
+# Created by: Will Stacey <will@at.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_authz_unixgroup
 PORTVERSION=	1.0.1
@@ -16,7 +12,7 @@ COMMENT=	A unix group access control module for Apache 2.1 and later
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	22+
+USE_APACHE=	22
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SHORTMODNAME=	authz_unixgroup

@@ -1,9 +1,5 @@
-# New ports collection makefile for: scgi
-# Date created:		19 Aug 2002
-# Whom:			Neil Blakey-Milner <nbm@FreeBSD.org>
-#
+# Created by: Neil Blakey-Milner <nbm@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_scgi
 PORTVERSION=	1.12
@@ -20,7 +16,7 @@ MAKE_JOBS_SAFE=	yes
 SCGI_DIR=	apache2
 WRKSRC=		${WRKDIR}/${DISTNAME}/${SCGI_DIR}
 
-USE_APACHE=	22+
+USE_APACHE=	22
 
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

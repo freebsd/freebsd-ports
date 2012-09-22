@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_python
-# Date created:				28 August 2000
-# Whom:					Hye-Shik Chang
-#
+# Created by: Hye-Shik Chang
 # $FreeBSD$
-#
 
 PORTNAME=	mod_python
 PORTVERSION=	3.3.1
@@ -19,7 +15,7 @@ COMMENT=	Apache module that embeds the Python interpreter within the server
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	22+
+USE_APACHE=	22
 USE_PYTHON=	yes
 
 MAKE_ARGS+=	APXS=${APXS}
