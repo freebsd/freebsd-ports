@@ -411,7 +411,6 @@
     SUBDIR += linux-opera
     SUBDIR += linux-opera-devel
     SUBDIR += linux-seamonkey
-    SUBDIR += linuxpluginwrapper
     SUBDIR += lionwiki
     SUBDIR += ljdeps
     SUBDIR += ljdump
