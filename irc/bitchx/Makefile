@@ -1,9 +1,5 @@
-# New ports collection makefile for:	BitchX
-# Date created:				26 Jan 1998
-# Whom:				Jimbo Bahooli <griffin@blackhole.iceworld.org>
-#
+# Created by: Jimbo Bahooli <griffin@blackhole.iceworld.org>
 # $FreeBSD$
-#
 
 PORTNAME=	BitchX
 PORTVERSION=	1.2
@@ -19,14 +15,9 @@ GH_PROJECT=	${PORTNAME}1.2
 GH_TAGNAME=	master
 GH_COMMIT=	a22b86f
 
-USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--exec-prefix="${PREFIX}/share" \
-		--bindir="${PREFIX}/bin" \
-		--datadir="${PREFIX}/share" \
-		--libdir="${PREFIX}/share"
-CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ARGS=	--libdir="${PREFIX}/share"
 USE_GMAKE=	yes
 USE_PERL5=	yes
 WANT_GNOME=	yes
@@ -39,7 +30,7 @@ OPTIONS_DEFINE=	ESOUND GNOME IPV6 LATIN PLUGINS SSL XMMS
 
 GNOME_DESC=	Legacy GTK/GNOME frontend
 LATIN_DESC=	Recommended for ISO-8859-1 display
-PLUGINS_DESC=	Build handful of BitchX plugins
+PLUGINS_DESC=	Build a handful of BitchX plugins
 XMMS_DESC=	Build XMMS plugin
 
 OPTIONS_DEFAULT=	IPV6 PLUGINS SSL
@@ -95,7 +86,7 @@ CONFIGURE_ARGS+=	--with-plugins="${PLUGINS:C/\$$/,/g}"
 CONFIGURE_ARGS+=	--without-plugins
 .endif
 
-pre-patch:
+post-patch:
 .if ${PORT_OPTIONS:MLATIN}
 	${REINPLACE_CMD} -e 's|#undef LATIN1|#define LATIN1|' \
 		${WRKSRC}/include/config.h
