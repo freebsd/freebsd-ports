@@ -1,9 +1,5 @@
-# Ports collection makefile for:	linrename
-# Date created:				December 13 2006
-# Whom:					Jonathan Liu <Net147@hotmail.com>
-#
+# Created by: Jonathan Liu <Net147@hotmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	linrename
 PORTVERSION=	2.12r
@@ -16,7 +12,7 @@ MASTER_SITES=	http://mirror.linux.org.au/pub/linux/utils/util-linux/ \
 MASTER_SITE_SUBDIR=	linux/utils/util-linux
 DISTNAME=	util-linux-${PORTVERSION}
 
-MAINTAINER=	Net147@hotmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rename multiple files using substitution
 
 PLIST_FILES=	bin/linrename
