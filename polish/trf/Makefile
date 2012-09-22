@@ -1,16 +1,12 @@
-# New ports collection makefile for:	trf
-# Date created:		25 September 2003
-# Whom:			Maciek Korzen <eaquer@ceti.pl>
-#
+# Created by: Maciek Korzen <eaquer@ceti.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	trf
 PORTVERSION=	0.4
 CATEGORIES=	polish finance
 MASTER_SITES=	http://korzen.org/soft/trf/
 
-MAINTAINER=	mkorzen@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Billing software for traffic counting working with most Polish ISPs
 
 post-install:

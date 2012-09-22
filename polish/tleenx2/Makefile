@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tleenx2
-# Date created:		25 September 2003
-# Whom:			Maciek Korzen <eaquer@ceti.pl>
-#
+# Created by: Maciek Korzen <eaquer@ceti.pl>
 # $FreeBSD$
-#
 
 PORTNAME=	tleenx2
 PORTVERSION=	20040214
@@ -12,7 +8,7 @@ CATEGORIES=	polish net
 MASTER_SITES=	SF/tleenx/tleenx2/${DISTNAME}
 DISTNAME=	TleenX2-${PORTVERSION}
 
-MAINTAINER=	mkorzen@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client for polish IM service called Tlen.pl
 
 LIB_DEPENDS=	tlen.1:${PORTSDIR}/polish/libtlen
