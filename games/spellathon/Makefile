@@ -1,9 +1,5 @@
-# New ports collection makefile for: spellathon
-# Date created:                7 May 2009
-# Whom:                        girish
-#
+# Created by: girish
 # $FreeBSD$
-#
 
 PORTNAME=	spellathon
 PORTVERSION=	5.79
@@ -11,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 
-MAINTAINER=	girish.rao.dev@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Word game to test your English vocabulary skills
 
 USE_QT4=	gui moc_build qmake_build rcc_build uic_build
