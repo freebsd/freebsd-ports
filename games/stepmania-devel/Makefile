@@ -1,9 +1,5 @@
-# New ports collection makefile for:	stepmania-devel
-# Date created:		16 December 2007
-# Whom:			Brad Allen <braddo@tranceaddict.net>
-#
+# Created by: Brad Allen <braddo@tranceaddict.net>
 # $FreeBSD$
-#
 
 PORTNAME=	stepmania
 PORTVERSION=	20071121
@@ -13,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/OldFiles
 PKGNAMESUFFIX=	-devel
 DISTNAME=	StepMania-CVS-20071121-src
 
-MAINTAINER=	braddo@tranceaddict.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stepmania dance and rhythm game
 
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
