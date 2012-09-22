@@ -1,7 +1,4 @@
-# Ports collection makefile for:   ekg
-# Date created:        24 March 2003
-# Whom:                Jacek Pelka <jacek@combit.com.pl>
-#
+# Created by: Jacek Pelka <jacek@combit.com.pl>
 # $FreeBSD$
 
 PORTNAME=	ekg
@@ -10,7 +7,7 @@ PORTEPOCH=	2
 CATEGORIES=	polish net-im
 MASTER_SITES=	http://ekg.chmurka.net/
 
-MAINTAINER=	bartlomiej@syryjczyk.name
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text-mode Gadu-Gadu client
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
