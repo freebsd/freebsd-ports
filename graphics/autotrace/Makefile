@@ -32,7 +32,7 @@ PSTOEDIT_DESC=	Convert postscript to other formats
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MSETUIDMING}
+.if ${PORT_OPTIONS:MMING}
 LIB_DEPENDS+=	ming.5:${PORTSDIR}/graphics/ming
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/ming
 .endif
