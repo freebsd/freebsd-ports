@@ -1,9 +1,5 @@
-# New ports collection makefile for:    mail/p5-Net-DNSBL-MultiDaemon
-# Date created:                         17 August 2007
-# Whom:                                 Andrew Greenwood <greenwood.andy@gmail.com>
-#
+# Created by: Andrew Greenwood <greenwood.andy@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	Net-DNSBL-MultiDaemon
 PORTVERSION=	0.29
@@ -11,7 +7,7 @@ CATEGORIES=	dns mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	greenwood.andy@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Net::DNSBL::MultiDaemon - multi DNSBL prioritization
 
 BUILD_DEPENDS=	p5-Unix-Syslog>=0:${PORTSDIR}/sysutils/p5-Unix-Syslog \

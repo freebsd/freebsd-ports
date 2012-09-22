@@ -1,9 +1,5 @@
-# New ports collection makefile for:    dynagui
-# Date created:                          5 February 2009
-# Whom:                                 Andrew Greenwood
-#
+# Created by: Andrew Greenwood
 # $FreeBSD$
-#
 
 PORTNAME=	dynagui
 PORTVERSION=	0.4
@@ -12,7 +8,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	dynagui
 
-MAINTAINER=	greenwood.andy@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI frontend to the dynamips router simulator
 
 BUILD_DEPENDS=	dynagen:${PORTSDIR}/emulators/dynagen
