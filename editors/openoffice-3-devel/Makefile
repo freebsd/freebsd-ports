@@ -72,7 +72,7 @@ FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 OOOSRC=			ApacheOpenOffice.r${SVNREVISION}${EXTRACT_SUFX}
 EXTSRC=			ApacheOpenOffice.ext_sources.r${SVNREVISION}${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SVNREVISION=		1386922
+SVNREVISION=		1388426
 INSTALLATION_BASEDIR?=	openoffice-r${SVNREVISION}
 EXECBASE?=		openoffice-r${SVNREVISION}
 DIST_SUBDIR=		openoffice
@@ -189,7 +189,6 @@ CONFIGURE_ARGS+=	--enable-verbose \
 			--with-system-poppler \
 			--with-system-redland \
 			--with-system-libtextcat \
-			--with-system-libtextcat-data=${LOCALBASE}/share/libtextcat \
 			--with-system-vigra \
 			--with-system-stdlibs \
 			--with-system-apr \
