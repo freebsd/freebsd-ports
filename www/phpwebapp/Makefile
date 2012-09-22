@@ -1,17 +1,12 @@
-# ex:ts=8
-# Ports collection makefile for:	phpwebapp
-# Date created:			Jul 1, 2004
-# Whom:				ijliao
-#
+# Created by: ijliao
 # $FreeBSD$
-#
 
 PORTNAME=	phpwebapp
 PORTVERSION=	1.2
 CATEGORIES=	www
 MASTER_SITES=	SF
 
-MAINTAINER=	munggo@pmy.lv
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web application framework
 
 USE_PHP=	yes
