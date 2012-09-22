@@ -1,9 +1,5 @@
-# New ports collection makefile for:   nbd-server
-# Date created:        14 december 2003
-# Whom:                Christian Laursen <xi@borderworlds.dk>
-#
+# Created by: Christian Laursen <xi@borderworlds.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	nbd-server
 PORTVERSION=	2.8.5
@@ -13,7 +9,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF/nbd/nbd/${PORTVERSION}
 DISTNAME=	nbd-${PORTVERSION}
 
-MAINTAINER=	rebehn@ant.uni-bremen.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server for the Linux network block device (nbd)
 
 USE_BZIP2=	yes
