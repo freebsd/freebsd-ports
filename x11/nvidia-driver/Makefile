@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	295.71
-PORTREVISION?=	1			# As a reminder it can be overridden
+DISTVERSION?=	304.43
+PORTREVISION?=	0			# As a reminder it can be overridden
 CATEGORIES=	x11 kld
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
 # MASTER_SITE_SUBDIR has to be set later because it depends on NVVERSION
