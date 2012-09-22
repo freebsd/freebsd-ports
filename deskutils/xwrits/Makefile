@@ -1,9 +1,5 @@
-# New ports collection makefile for:	xwrits
-# Date created:		02 January 2000
-# Whom:			Matt Braithwaite <mab@red-bean.com>
-#
+# Created by: Matt Braithwaite <mab@red-bean.com>
 # $FreeBSD$
-#
 
 PORTNAME=	xwrits
 PORTVERSION=	2.24
@@ -11,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lcdf.org/xwrits/
 
-MAINTAINER=	mab@red-bean.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reminds you to take wrist breaks
 
 GNU_CONFIGURE=	yes

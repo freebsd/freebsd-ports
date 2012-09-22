@@ -1,9 +1,5 @@
-# New ports collection makefile for:   garmin-utils
-# Date created:        4 Oct 2003
-# Whom:                Matthew Braithwaite <mab@red-bean.com>
-#
+# Created by: Matthew Braithwaite <mab@red-bean.com>
 # $FreeBSD$
-#
 
 PORTNAME=	garmin-utils
 PORTVERSION=	2.5
@@ -11,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	comms geography
 MASTER_SITES=	ftp://ftp.snafu.org/pub/
 
-MAINTAINER=	mab@red-bean.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities for Garmin GPS receivers
 
 MAN1=		gardump.1 garload.1
