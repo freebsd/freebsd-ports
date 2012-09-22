@@ -1,9 +1,5 @@
-# New ports collection makefile for:   mod_antiloris
-# Date created:		20 August 2009
-# Whom:			Aleksandar Pejic <alex@vts.su.ac.rs>
-#
+# Created by: Aleksandar Pejic <alex@vts.su.ac.rs>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_antiloris
 PORTVERSION=	0.4
@@ -17,7 +13,7 @@ COMMENT=	Protect Apache 2.x against the Slowloris HTTP DoS attack
 MAKE_JOBS_SAFE=	yes
 
 USE_BZIP2=	yes
-USE_APACHE=	22+
+USE_APACHE=	22
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 AP_EXTRAS+=	-a

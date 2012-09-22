@@ -1,9 +1,5 @@
-# New ports collection makefile for:	suphp
-# Date created:		15 September 2002
-# Whom:			Clement Laforet <sheepkiller@cultdeadsheep.org>
-#
+# Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
 # $FreeBSD$
-#
 
 PORTNAME=	suphp
 PORTVERSION=	0.7.1
@@ -19,7 +15,7 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	aclocal:env automake:env autoconf:env libtool:env
 
 # Maintainer has not tested suPHP 0.6.x on Apache 1.3.
-USE_APACHE=	22+
+USE_APACHE=	22
 CFLAGS+=	-I${LOCALBASE}/include
 USE_CSTD=	gnu89
 USE_PHP=	yes

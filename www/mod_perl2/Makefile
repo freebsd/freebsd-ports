@@ -29,11 +29,6 @@ PERL_CONFIGURE=	yes
 GMAKE=		yes
 USE_CSTD=	gnu89
 
-# Using apxs in this way is problematic if apache2 is installed under a
-# different PREFIX than mod_perl2, because the mod_perl2 installation will
-# use paths returned by apxs to install some components. Fixes welcome.
-CONFIGURE_ARGS=	MP_APXS=${LOCALBASE}/sbin/apxs PREFIX=${PREFIX}
-
 MAN3=		APR.3 APR::Base64.3 APR::Brigade.3 APR::Bucket.3 \
 		APR::BucketAlloc.3 APR::BucketType.3 APR::Const.3 \
 		APR::Date.3 APR::Error.3 APR::Finfo.3 APR::IpSubnet.3 \
@@ -69,6 +64,12 @@ MAN3=		APR.3 APR::Base64.3 APR::Brigade.3 APR::Bucket.3 \
 		APR::ThreadRWLock.3
 
 .include <bsd.port.pre.mk>
+
+# Using apxs in this way is problematic if apache2 is installed under a
+# different PREFIX than mod_perl2, because the mod_perl2 installation will
+# use paths returned by apxs to install some components. Fixes welcome.
+#CONFIGURE_ARGS=	MP_APXS=${LOCALBASE}/sbin/apxs PREFIX=${PREFIX}
+CONFIGURE_ARGS=	PREFIX=${PREFIX} MP_APXS=${APXS} MP_APR_CONFIG=${LOCALBASE}/bin/apr-1-config
 
 .if exists(${LOCALBASE}/include/apr-1/apr.h)
 APR_H=		${LOCALBASE}/include/apr-1/apr.h

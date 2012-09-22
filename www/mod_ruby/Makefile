@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_ruby
-# Date created:			12 Aug 2000
-# Whom:				Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_ruby
 PORTVERSION=	1.3.0
@@ -19,7 +15,7 @@ COMMENT=	An Apache module that embeds Ruby interpreter within
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	22+
+USE_APACHE=	22
 USE_RUBY=	yes
 USE_PERL5_BUILD=	yes
 

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_geoip2
-# Date created:				26 Aug 2005
-# Whom:					Jukka A. Ukkonen <jau@iki.fi>
-#
+# Created by: Jukka A. Ukkonen <jau@iki.fi>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_geoip2
 PORTVERSION=	1.2.7
@@ -25,7 +21,7 @@ CONFLICTS=	mod_geoip-[0-9]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
-USE_APACHE=	22+
+USE_APACHE=	22
 MODULENAME=	mod_geoip
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_musicindex
-# Date created:				Nov 1 2003
-# Whom:					clsung
-#
+# Created by: clsung
 # $FreeBSD$
-#
 
 PORTNAME=	mod_musicindex
 PORTVERSION=	1.3.7
@@ -16,7 +12,7 @@ COMMENT=	Apache module that allows downloading and streaming of audio
 
 LICENSE=	LGPL21
 
-USE_APACHE=	22+
+USE_APACHE=	22
 
 .include <bsd.port.pre.mk>
 

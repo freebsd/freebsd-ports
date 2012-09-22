@@ -1,7 +1,4 @@
-# New ports collection makefile for:	mod_auth_external2
-# Date created:				Fri Oct  10
-# Whom:					Clement Laforet <sheepkiller@cultdeadsheep.org>
-#
+# Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
 # $FreeBSD$
 
 PORTNAME=	mod_auth_external
@@ -16,7 +13,7 @@ COMMENT=	Allows users authentication based on external mechanisms
 
 MAKE_JOBS_SAFE=	yes
 
-USE_APACHE=	22+
+USE_APACHE=	22
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 LATEST_LINK=	mod_auth_external2

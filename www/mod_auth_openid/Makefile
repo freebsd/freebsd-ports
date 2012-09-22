@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_auth_openid
-# Date created:				3 August 2008
-# Whom:					Sutra Zhou <zhoushuqun@gmail.com>
-#
+# Created by: Sutra Zhou <zhoushuqun@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_auth_openid
 PORTVERSION=	0.6
@@ -22,7 +18,7 @@ MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	${APACHEMODDIR}/mod_auth_openid.so
 
-USE_APACHE=	22+
+USE_APACHE=	22
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pcre=${LOCALBASE}

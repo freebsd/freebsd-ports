@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_dosevasive20
-# Date created:				26 Jul 2004
-# Whom:					Xavier Beaudouin <kiwi@oav.net>
-#
+# Created by: Xavier Beaudouin <kiwi@oav.net>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_evasive
 PORTVERSION=	1.10.1
@@ -20,7 +16,7 @@ MAKE_JOBS_SAFE=  yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_APACHE=	22+
+USE_APACHE=	22
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 

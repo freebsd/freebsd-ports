@@ -1,7 +1,4 @@
-# New ports collection makefile for:    apache mod_auth_mysql_another
-# Date created:		2002/04/20
-# Whom:			mbr@freebsd.org
-#
+# Created by: mbr@freebsd.org
 # $FreeBSD$
 
 PORTNAME=	mod_auth_mysql
@@ -17,7 +14,7 @@ COMMENT=	Allows users to use MySQL databases for user authentication
 MAKE_JOBS_SAFE=	yes
 
 USE_MYSQL=	yes
-USE_APACHE=	22+
+USE_APACHE=	22
 
 SHORTMODNAME=	mysql_auth
 AP_FAST_BUILD=	yes

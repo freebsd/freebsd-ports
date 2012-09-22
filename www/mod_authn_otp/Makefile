@@ -1,8 +1,5 @@
-# New ports collection makefile for: ifdepd
-# Date created:         03 05 2012
-# Whom:                 Alexander Hausner <alex@hugo.bmg.gv.at>
+# Created by: Alexander Hausner <alex@hugo.bmg.gv.at>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_authn_otp
 PORTVERSION=	1.1.4
@@ -19,7 +16,7 @@ COMMENT=	Apache module for one-time password authentication
 MAKE_JOBS_SAFE=	yes
 
 HAS_CONFIGURE=	yes
-USE_APACHE=	22+
+USE_APACHE=	22
 
 MAN1=		otptool.1
 

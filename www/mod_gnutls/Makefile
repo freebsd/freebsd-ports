@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_gnutls
-# Date created:		2011-01-19
-# Whom:			Fumiyuki Shimizu <fumifumi@abacustech.jp>
-#
+# Created by: Fumiyuki Shimizu <fumifumi@abacustech.jp>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_gnutls
 PORTVERSION=	0.5.10
@@ -24,7 +20,7 @@ LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_PKGCONFIG=	build
-USE_APACHE=	22+
+USE_APACHE=	22
 GNU_CONFIGURE=	yes
 
 DOCS=		LICENSE NEWS README README.ENV

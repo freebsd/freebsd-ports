@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_auth_tkt
-# Date created:		2 Feb 2011
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
+# Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_auth_tkt
 PORTVERSION=	2.1.0
@@ -15,7 +11,7 @@ MASTER_SITE_SUBDIR=	kuriyama
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Lightweight single-sign-on authentication module for apache
 
-USE_APACHE=	22+
+USE_APACHE=	22
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 AP_FAST_BUILD=	yes
 SRC_FILE=	${PORTNAME}.c sha2.c

@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_memcache_block
-# Date created:				2012-08-21
-# Whom:					Hung-Yi Chen <gaod@hychen.org>
-#
+# Created by: Hung-Yi Chen <gaod@hychen.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_memcache_block
 PORTVERSION=	20120821
@@ -22,7 +18,7 @@ GITVERSION=	7b1fcec
 WRKSRC=		${WRKDIR}/netik-${DISTNAME}
 LATEST_LINK=	mod_memcache_block
 
-USE_APACHE=	22+
+USE_APACHE=	22
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 AP_INC=		${LOCALBASE}/include/libmemcached

@@ -1,7 +1,4 @@
-# New ports collection makefile for:    mod_log_dbd
-# Date created:		2006/01/19
-# Whom:			Brandon Fosdick <bfoz@bfoz.net>
-#
+# Created by: Brandon Fosdick <bfoz@bfoz.net>
 # $FreeBSD$
 
 PORTNAME=	mod_log_dbd
@@ -16,7 +13,7 @@ COMMENT=	Uses APR DBD to store Apache access logs in a database
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	22+
+USE_APACHE=	22
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-apache=${PREFIX}

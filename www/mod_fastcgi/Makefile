@@ -1,9 +1,5 @@
-# New ports collection makefile for:    mod_fastcgi ( in apache )
-# Date created:         14 Jul 2000
-# Whom:                 JunSeon Oh <hollywar@mail.holywar.net>
-#
+# Created by: JunSeon Oh <hollywar@mail.holywar.net>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_fastcgi
 PORTVERSION=	2.4.6
@@ -17,7 +13,7 @@ COMMENT=	A fast-cgi module for Apache
 MAKE_JOBS_SAFE=	yes
 
 CONFLICTS=	apache-contrib-1.*
-USE_APACHE=	22+
+USE_APACHE=	22
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SRC_FILE=	*.c

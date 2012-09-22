@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_log_config-st
-# Date created:				Sun May 2 2004
-# Whom:					Clement Laforet <clement@FreeBSD.org>
-#
+# Created by: Clement Laforet <clement@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_log_config-st
 PORTVERSION=	1.0
@@ -18,7 +14,7 @@ COMMENT=	A modified version of mod_log_config for apache2
 
 MAKE_JOBS_SAFE=	yes
 
-USE_APACHE=	22+
+USE_APACHE=	22
 
 AP_FAST_BUILD=	yes
 SRC_FILE=	mod_log_config.c

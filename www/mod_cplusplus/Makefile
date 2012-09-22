@@ -1,9 +1,5 @@
-# Ports collection makefile for:	mod_cplusplus for Apache 2.x
-# Date created:		Dec 29, 2006
-# Whom:			Michael Durian <durian@shadetreesoftware.com>
-#
+# Created by: Michael Durian <durian@shadetreesoftware.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_cplusplus
 PORTVERSION=	1.5.4
@@ -17,7 +13,7 @@ COMMENT=	Apache module for loading C++ objects as handlers
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	22+
+USE_APACHE=	22
 USE_AUTOTOOLS=	autoconf autoheader libtool automake aclocal
 CFLAGS+=	-I${LOCALBASE}/include
 
