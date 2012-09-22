@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gtk-equinox-engine
-# Date created:		2010-10-23
-# Whom:			Deni Shaposhnikov <dsh@bamus.cz>
-#
+# Created by: Deni Shaposhnikov <dsh@bamus.cz>
 # $FreeBSD$
-#
 
 PORTNAME=	equinox
 PORTVERSION=	1.50
@@ -15,7 +11,7 @@ PKGNAMESUFFIX=	-engine
 DISTFILES=	121881-${PORTNAME}-${PORTVERSION}.tar.gz \
 		140449-${PORTNAME}-themes-${PORTVERSION}.tar.gz
 
-MAINTAINER=	dsh@bamus.cz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Equinox GTK+ 2.x engine and themes
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-themes/gtk-engines2

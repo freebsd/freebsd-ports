@@ -1,9 +1,5 @@
-# New ports collection makefile for:   rst.el
-# Date created:                Sun Aug 20 18:39:03 MSD 2006
-# Whom:                        Denis Shaposhnikov <dsh@vlink.ru>
-#
+# Created by: Denis Shaposhnikov <dsh@vlink.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	rst.el
 PORTVERSION=	6390
@@ -14,7 +10,7 @@ PKGNAMESUFFIX=	-${EMACS_NAME}
 DISTNAME=	rst.el\?revision=${PORTVERSION}
 EXTRACT_SUFX=	# empty
 
-MAINTAINER=	dsh@bamus.cz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ReStructuredText Support for Emacs
 
 USE_EMACS=	yes
