@@ -447,6 +447,7 @@
     SUBDIR += fpc-zlib
     SUBDIR += fpp
     SUBDIR += frama-c
+    SUBDIR += freeocl
     SUBDIR += frink
     SUBDIR += fsmgenerator
     SUBDIR += ftjam
