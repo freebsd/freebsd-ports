@@ -36,8 +36,7 @@ IGNORE=		you must manually fetch the "Linux Install" distribution (${DISTNAME}${
 .endif
 
 .if ${JAVA_PORT_OS} == "native"
-WITH_PLUGINWRAPPER=	yes
-RUN_DEPENDS+=	${LOCALBASE}/lib/pluginwrapper/jai.so:${PORTSDIR}/www/linuxpluginwrapper
+BROKEN=	relies on linuxpluginwrapper
 .endif
 
 .if defined(NOINSTALL_IN_JRE)
@@ -50,14 +49,6 @@ pre-install:
 .if defined(NOINSTALL_IN_JRE)
 SUB_FILES=	pkg-message-jre
 SUB_LIST=	TARGET_DIR=${TARGET_DIR}
-.endif
-.if defined(WITH_PLUGINWRAPPER)
-SUB_FILES=	pkg-message-libmap
-.if defined(NOINSTALL_IN_JRE)
-SUB_LIST=	LIBDIR=${TARGET_DIR}/lib
-.else
-SUB_LIST=	LIBDIR=${JAVA_HOME}/jre/lib/i386
-.endif
 .endif
 
 do-install:
@@ -83,7 +74,7 @@ do-install:
 		@${ECHO_MSG} " [DONE]"
 
 post-install:
-.if defined(NOINSTALL_IN_JRE) || defined(WITH_PLUGINWRAPPER)
+.if defined(NOINSTALL_IN_JRE)
 		@${CAT} ${PKGMESSAGE}
 .endif
 
