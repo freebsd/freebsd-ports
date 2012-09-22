@@ -1,9 +1,5 @@
-# New ports collection makefile for:	molden
-# Date created:		1998-11-14
-# Whom:			rmiya
-#
+# Whom: rmiya
 # $FreeBSD$
-#
 
 PORTNAME=	molden
 PORTVERSION=	4.6
@@ -13,7 +9,7 @@ CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.cmbi.ru.nl/pub/molgraph/molden/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	oivulf@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display molecular orbitals and electron densities in 2D and 3D
 
 USE_XORG=	x11 xmu
