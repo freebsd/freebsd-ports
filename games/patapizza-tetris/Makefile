@@ -12,9 +12,6 @@ COMMENT=	Unofficial clone of the original Tetris game
 
 LICENSE=	GPLv3
 
-OPTIONS_DEFINE=	DATA
-OPTIONS_DEFAULT=DATA
-
 FETCH_ARGS?=	-Fpr
 USE_GMAKE=	yes
 USE_SDL=	sdl image gfx ttf
@@ -27,10 +24,10 @@ PORTDOCS=	README.md
 
 SUB_FILES=	${PORTNAME}.sh
 
-post-patch:
-	${REINPLACE_CMD} -e 's:%%PREFIX%%:${PREFIX}:g' ${WRKSRC}/Makefile
-
 .include <bsd.port.options.mk>
+
+post-patch:
+	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Makefile
 
 do-build:
 	cd ${WRKSRC} && ${CC} -o ${PORTNAME} ${CFLAGS} \
@@ -46,9 +43,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${DATADIR}
 
 # Data
-.if ${PORT_OPTIONS:MDATA}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} images ${DATADIR})
-.endif
 
 # Pixmaps
 	${INSTALL_DATA} ${WRKSRC}/images/logo.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
@@ -56,9 +51,7 @@ do-install:
 # Documentation
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-.  for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.  endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
