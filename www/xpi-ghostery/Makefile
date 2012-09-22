@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	ghostery
-PORTVERSION=	2.8.0.1
-DISTVERSIONSUFFIX=	-sm+fx
+PORTVERSION=	2.8.3
+DISTVERSIONSUFFIX=-fx+sm
 CATEGORIES=	www
 
 MAINTAINER=	mbsd@isgroup.com.ua

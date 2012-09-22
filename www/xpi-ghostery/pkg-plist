@@ -25,6 +25,8 @@
 %%XPI_XPIDIR%%/chrome/content/ghostery-rules.js
 %%XPI_XPIDIR%%/chrome/content/ghostery-scanner.js
 %%XPI_XPIDIR%%/chrome/content/ghostery-silverlight.js
+%%XPI_XPIDIR%%/chrome/content/ghostery-sqlite.js
+%%XPI_XPIDIR%%/chrome/content/ghostery-surrogatedb.js
 %%XPI_XPIDIR%%/chrome/content/ghostery-surrogates.json
 %%XPI_XPIDIR%%/chrome/content/ghostery-translator.js
 %%XPI_XPIDIR%%/chrome/content/ghostery-ui.js
@@ -41,6 +43,7 @@
 %%XPI_XPIDIR%%/chrome/content/images/down.gif
 %%XPI_XPIDIR%%/chrome/content/images/ghostery-about.png
 %%XPI_XPIDIR%%/chrome/content/images/gradBD.gif
+%%XPI_XPIDIR%%/chrome/content/images/panels.png
 %%XPI_XPIDIR%%/chrome/content/images/popup/base-short.png
 %%XPI_XPIDIR%%/chrome/content/images/popup/base.png
 %%XPI_XPIDIR%%/chrome/content/images/popup/bg-bottom.png
@@ -48,6 +51,8 @@
 %%XPI_XPIDIR%%/chrome/content/images/popup/chat.png
 %%XPI_XPIDIR%%/chrome/content/images/popup/email.png
 %%XPI_XPIDIR%%/chrome/content/images/popup/ghosty-top.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/panelarrow-down.png
+%%XPI_XPIDIR%%/chrome/content/images/popup/panelarrow-up.png
 %%XPI_XPIDIR%%/chrome/content/images/popup/pause-long.png
 %%XPI_XPIDIR%%/chrome/content/images/popup/pause-reload.png
 %%XPI_XPIDIR%%/chrome/content/images/popup/pause.png
@@ -67,6 +72,8 @@
 %%XPI_XPIDIR%%/chrome/content/includes/jquery-1.7.1.min.js
 %%XPI_XPIDIR%%/chrome/content/includes/jquery.scrollintogreatness-1.0.0.js
 %%XPI_XPIDIR%%/chrome/content/includes/jquery.simplemodal.1.4.1.min.js
+%%XPI_XPIDIR%%/chrome/content/includes/tiptip/jquery.tipTip.minified.js
+%%XPI_XPIDIR%%/chrome/content/includes/tiptip/tipTip.css
 %%XPI_XPIDIR%%/chrome/content/options.html
 %%XPI_XPIDIR%%/chrome/content/options.xul
 %%XPI_XPIDIR%%/chrome/content/popup.html
@@ -122,6 +129,7 @@
 @dirrm %%XPI_XPIDIR%%/chrome/locale/en-US
 @dirrm %%XPI_XPIDIR%%/chrome/locale/de-DE
 @dirrm %%XPI_XPIDIR%%/chrome/locale
+@dirrm %%XPI_XPIDIR%%/chrome/content/includes/tiptip
 @dirrm %%XPI_XPIDIR%%/chrome/content/includes
 @dirrm %%XPI_XPIDIR%%/chrome/content/images/popup
 @dirrm %%XPI_XPIDIR%%/chrome/content/images
