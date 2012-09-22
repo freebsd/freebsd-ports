@@ -1,6 +1,4 @@
-# Ports collection makefile for:  oggvideotools
-# Date created:                   Sat Feb 28, 2010
-# Whom:                           Jille Timmermans (jille@quis.cx)
+# Created by: Jille Timmermans (jille@quis.cx)
 # $FreeBSD$
 
 PORTNAME=	oggvideotools
@@ -10,7 +8,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	oggvideotools/oggvideotools/${DISTNAME}
 
-MAINTAINER=	jille@quis.cx
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A toolbox for manipulating Ogg video files
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \

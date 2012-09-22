@@ -1,6 +1,4 @@
-# Ports collection makefile for:  tweak
-# Date created:                   Sun Feb 15, 2009
-# Whom:                           Jille Timmermans (jille@quis.cx)
+# Created by: Jille Timmermans (jille@quis.cx)
 # $FreeBSD$
 
 PORTNAME=	tweak
@@ -8,7 +6,7 @@ PORTVERSION=	3.01
 CATEGORIES=	editors
 MASTER_SITES=	http://www.chiark.greenend.org.uk/~sgtatham/${PORTNAME}/
 
-MAINTAINER=	jille@quis.cx
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An efficient hex editor
 
 MAN1=		tweak.1
