@@ -1,5 +1,8 @@
 bin/svnweb-install
 bin/svnweb-server
+%%SITE_PERL%%/SVN/CHANGES.pod
+%%SITE_PERL%%/SVN/CONTRIBUTING.pod
+%%SITE_PERL%%/SVN/UPDATING.pod
 %%SITE_PERL%%/SVN/Web.pm
 %%SITE_PERL%%/SVN/Web/Blame.pm
 %%SITE_PERL%%/SVN/Web/Browse.pm
@@ -58,6 +61,7 @@ bin/svnweb-server
 %%SITE_PERL%%/SVN/Web/View.pm
 %%SITE_PERL%%/SVN/Web/X.pm
 %%SITE_PERL%%/SVN/Web/action.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Web/.packlist
 @dirrm %%SITE_PERL%%/SVN/Web/I18N
 @dirrm %%SITE_PERL%%/SVN/Web/Style/trac
 @dirrm %%SITE_PERL%%/SVN/Web/Style
@@ -65,4 +69,6 @@ bin/svnweb-server
 @dirrm %%SITE_PERL%%/SVN/Web/Template/trac
 @dirrm %%SITE_PERL%%/SVN/Web/Template
 @dirrm %%SITE_PERL%%/SVN/Web
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Web
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN
 @dirrmtry %%SITE_PERL%%/SVN

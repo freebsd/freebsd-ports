@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	SVN-Web
-PORTVERSION=	0.53
-PORTREVISION=	8
+PORTVERSION=	0.61
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -39,12 +38,15 @@ BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		p5-Test-HTML-Tidy>=0:${PORTSDIR}/devel/p5-Test-HTML-Tidy \
 		p5-Test-WWW-Mechanize>=0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	--skip_questions
 
 MAN1=		svnweb-install.1 \
 		svnweb-server.1
-MAN3=		SVN::Web.3 \
+MAN3=		SVN::CHANGES.3 \
+		SVN::CONTRIBUTING.3 \
+		SVN::UPDATING.3 \
+		SVN::Web.3 \
 		SVN::Web::Blame.3 \
 		SVN::Web::Browse.3 \
 		SVN::Web::Checkout.3 \
