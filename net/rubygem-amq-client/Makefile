@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	amq-client
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.4
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
