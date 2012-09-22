@@ -18,6 +18,7 @@
     SUBDIR += bpl+
     SUBDIR += callsign
     SUBDIR += cdr_read
+    SUBDIR += chirp
     SUBDIR += chu
     SUBDIR += comserv
     SUBDIR += conserver
