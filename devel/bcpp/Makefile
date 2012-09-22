@@ -1,9 +1,5 @@
-# New ports collection makefile for:	bcpp
-# Date created:			07 November 2001
-# Whom:				Mike Buchanon <buchanon@msu.edu>
-#
+# Created by: Mike Buchanon <buchanon@msu.edu>
 # $FreeBSD$
-#
 
 PORTNAME=	bcpp
 PORTVERSION=	20050725
@@ -11,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/bcpp/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	buchanon@msu.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility similar to indent for C++ code
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
