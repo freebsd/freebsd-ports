@@ -21,6 +21,8 @@ MAN7=		tags.7
 MAN8=		unfsd.8
 PLIST_FILES=	sbin/unfsd
 
+MAKE_JOBS_UNSAFE=	yes
+
 .if defined(WITH_CLUSTER_EXT)
 CONFIGURE_ARGS+=	--enable-cluster
 .endif
