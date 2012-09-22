@@ -667,6 +667,7 @@
     SUBDIR += paintown
     SUBDIR += palomino
     SUBDIR += passage
+    SUBDIR += patapizza-tetris
     SUBDIR += pathological
     SUBDIR += pcgen
     SUBDIR += pear-Games_Chess
