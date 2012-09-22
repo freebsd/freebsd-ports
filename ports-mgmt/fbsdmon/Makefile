@@ -1,20 +1,16 @@
-# New ports collection makefile for:	fbsdmon
-# Date created:		21 January 2012
-# Whom:			Grzegorz Blach <magik@roorback.net>
-#
+# Created by: Grzegorz Blach <magik@roorback.net>
 # $FreeBSD$
-#
 
 PORTNAME=	fbsdmon
-PORTVERSION=	0.91
+PORTVERSION=	0.92
 CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	http://files.roorback.net/
 
 MAINTAINER=	magik@roorback.net
 COMMENT=	Submit system and ports statistics to fbsdmon.org
 
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
-		jansson.7:${PORTSDIR}/devel/jansson
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
+		jansson:${PORTSDIR}/devel/jansson
 
 SUB_FILES=	600.fbsdmon pkg-message
 USE_RC_SUBR=	fbsdmon
