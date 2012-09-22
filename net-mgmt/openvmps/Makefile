@@ -1,9 +1,5 @@
-# New ports collection makefile for:   openvmps
-# Date created:        6 October 2003
-# Whom:                Craig Boston <craig@yekse.gank.org>
-#
+# Created by: Craig Boston <craig@yekse.gank.org>
 # $FreeBSD$
-#
 
 PORTNAME=	openvmps
 PORTVERSION=	1.3
@@ -12,7 +8,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/vmps/vmpsd/${PORTVERSION}
 DISTNAME=	vmpsd-${PORTVERSION}
 
-MAINTAINER=	craig@yekse.gank.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GPL implementation of the VMPS protocol
 
 WRKSRC=		${WRKDIR}/vmpsd
