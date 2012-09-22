@@ -1,9 +1,5 @@
-# New ports collection makefile for:	tree
-# Date created:		2001/12/24
-# Whom:			Alan Eldridge <alane@FreeBSD.org>
-#
+# Created by: Alan Eldridge <alane@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	tree
 PORTVERSION=	1.5.3
@@ -12,7 +8,7 @@ MASTER_SITES=	ftp://mama.indstate.edu/linux/tree/ \
 		CENKES
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gb@isis.u-strasbg.fr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display a tree-view of directories with optional color or HTML output
 
 MAKE_ENV+=	MKDIR="${MKDIR}"
