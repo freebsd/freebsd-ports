@@ -1,9 +1,5 @@
-# New ports collection makefile for:	barry
-# Date created:				20 Jul 2008
-# Whom:					meitolake@gmail.com
-#
+# Created by: meitolake@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	barry
 PORTVERSION=	0.12
@@ -11,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	palm
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	meitolake@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library for interfacing with the BlackBerry Handheld
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
