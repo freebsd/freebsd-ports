@@ -1,9 +1,5 @@
-# New ports collection makefile for:	grub
-# Whom:					sem@FreeBSD.org
-# Date created:				10 June 2010
-#
+# Created by: sem@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	grub2
 PORTVERSION=	1.98
@@ -12,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/grub/
 DISTNAME=	grub-${PORTVERSION}
 
-MAINTAINER=	rick@lgarchitecture.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiboot boot loader
 
 CONFLICTS=	grub-0*
@@ -36,10 +32,6 @@ MKFONT=		"@comment "
 .endif
 
 PLIST_SUB+=	MKFONT=${MKFONT}
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile on 6.X
-.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
