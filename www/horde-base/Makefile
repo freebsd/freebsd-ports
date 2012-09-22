@@ -78,7 +78,7 @@ RUN_DEPENDS+=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date			\
 		${PEARDIR}/Net/SMTP.php:${PORTSDIR}/net/pear-Net_SMTP   \
 		${PEARDIR}/MDB2/Schema/Validate.php:${PORTSDIR}/databases/pear-MDB2_Schema
 
-CONFLICTS=	horde-2.*
+CONFLICTS=	horde-4*
 
 USE_GETTEXT=	yes
 USE_PHP=	ctype gettext session
