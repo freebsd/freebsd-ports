@@ -10,7 +10,7 @@ PORTREVISION=	9
 CATEGORIES=	astro geography
 MASTER_SITES=	http://freefoote.dview.net/linux/
 
-MAINTAINER=	Iam@LukasMaly.NET
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A gps file gpx correlate exif tag in photos
 
 LIB_DEPENDS=	exiv2.12:${PORTSDIR}/graphics/exiv2 \
