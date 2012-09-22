@@ -1,17 +1,12 @@
-# New ports collection makefile for:	mod_auth_pubtkt
-# Date created:				24 Mar 2009
-# Whom:					Manuel Kasper <mk@neon1.net>
-#
+# Created by: Manuel Kasper <mk@neon1.net>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_auth_pubtkt
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.8
 CATEGORIES=	www
 MASTER_SITES=	https://neon1.net/mod_auth_pubtkt/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
-DISTNAME=	mod_auth_pubtkt-${PORTVERSION}
+DIST_SUBDIR=	apache2
 
 MAINTAINER=	mk@neon1.net
 COMMENT=	An Apache module to provide public key ticket based authentication
@@ -21,7 +16,5 @@ MAKE_JOBS_SAFE=	yes
 USE_APACHE=	22+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--apxs=${APXS}
-
-WRKSRC=	${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.mk>
