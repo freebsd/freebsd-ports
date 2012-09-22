@@ -1,16 +1,12 @@
-# New ports collection makefile for:	serialoverip
-# Date created:		3 September 2006
-# Whom:			Devon H. O'Dell <devon.odell@coyotepoint.com>
-#
+# Created by: Devon H. O'Dell <devon.odell@coyotepoint.com>
 # $FreeBSD$
-#
 
 PORTNAME=	ser2net
 PORTVERSION=	2.5
 CATEGORIES=	comms net
 MASTER_SITES=	SF
 
-MAINTAINER=	devon.odell@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows to access serial ports over IP
 
 GNU_CONFIGURE=	yes
