@@ -12,7 +12,7 @@ PORTREVISION=	11
 CATEGORIES=	x11 gnome
 MASTER_SITES=	SF/multignometerm/multignometerm/mgt-${PORTVERSION}
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome tabbed terminal emulator
 
 INSTALLS_OMF=	yes
@@ -21,6 +21,9 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+DEPRECATED=	depends on deprecated gnome1 things
+EXPIRATION_DATE=	2012-10-20
 
 MAN1=		mgt-helper.1 multi-gnome-terminal.1
 
