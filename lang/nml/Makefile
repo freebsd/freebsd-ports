@@ -1,9 +1,5 @@
-# New ports collection makefile for:	nML
-# Date created:		17 July 2001
-# Whom:			Jaeho Shin <netj@sparcs.kaist.ac.kr>
-#
+# Created by: Jaeho Shin <netj@sparcs.kaist.ac.kr>
 # $FreeBSD$
-#
 
 PORTNAME=	nml
 PORTVERSION=	0.92b
@@ -12,7 +8,7 @@ MASTER_SITES=	http://ropas.snu.ac.kr/n/ \
 		http://sparcs.kaist.ac.kr/~netj/n/ \
 		http://ropas.kaist.ac.kr/n/
 
-MAINTAINER=	netj@sparcs.kaist.ac.kr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dialect/harmony of Standard ML of New Jersey and Objective Caml
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.92
