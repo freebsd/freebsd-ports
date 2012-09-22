@@ -1,9 +1,5 @@
-# New ports collection makefile for:    devel/p5-UI-Dialog
-# Date created:                         22 May 2006
-# Whom:                                 Dmitry Karasik <dmitry@karasik.eu.org>
-#
+# Created by: Dmitry Karasik <dmitry@karasik.eu.org>
 # $FreeBSD$
-#
 
 PORTNAME=	UI-Dialog
 PORTVERSION=	1.08
@@ -12,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KCK
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dmitry@karasik.eu.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl wrapper for the various dialog applications
 
 RUN_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog
