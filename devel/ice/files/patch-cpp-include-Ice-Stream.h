@@ -77,3 +77,14 @@
          }
          v = static_cast<T>(val);
      }
+--- cpp.orig/include/Ice/Stream.h	2011-06-15 21:43:58.000000000 +0200
++++ cpp/include/Ice/Stream.h	2012-09-10 11:43:58.000000000 +0200
+@@ -664,7 +664,7 @@ struct StreamWriter<StreamTraitTypeSequenceBool>
+         outS->writeSize(static_cast<Int>(v.size()));
+         for(typename T::const_iterator p = v.begin(); p != v.end(); ++p)
+         {
+-            outS->write(*p);
++            outS->write(static_cast<bool>(*p));
+         }
+     }
+ };
