@@ -21,7 +21,7 @@
 %%WWWDIR%%/app/call_center/v_call_center_tier.php
 %%WWWDIR%%/app/call_center/v_call_center_tier_delete.php
 %%WWWDIR%%/app/call_center/v_call_center_tier_edit.php
-%%WWWDIR%%/app/call_center/v_cmd.php
+%%WWWDIR%%/app/call_center/cmd.php
 %%WWWDIR%%/app/call_center_active/app_config.php
 %%WWWDIR%%/app/call_center_active/root.php
 %%WWWDIR%%/app/call_center_active/v_call_center_active.php
