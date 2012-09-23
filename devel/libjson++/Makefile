@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libjson++
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cflinux.hu/pub/
 
