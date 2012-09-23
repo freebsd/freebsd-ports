@@ -14,6 +14,9 @@ MASTER_SITES=	SF
 MAINTAINER=	dnelson@allantgroup.com
 COMMENT=	SOund eXchange - universal sound sample translator
 
+LICENSE=	LGPL21 GPLv2
+LICENSE_COMB=	dual
+
 CONFLICTS=	play-[0-9]*
 
 MAN1=		sox.1 soxi.1
@@ -23,9 +26,7 @@ MLINKS=		sox.1 play.1 sox.1 rec.1 sox.1 soxeffect.7
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libltdl
-USE_GNOME=	pkgconfig
-LICENSE_COMB=	dual
-LICENSE=	LGPL21 GPLv2
+USE_PKGCONFIG=	build
 
 # Default LAME to off for packages so we don't end up RESTRICTED
 .if defined(PACKAGE_BUILDING)
@@ -88,7 +89,7 @@ CONFIGURE_ARGS+=	--without-amrwb
 
 .if defined(WITH_FFMPEG)
 CONFIGURE_ARGS+=	--with-ffmpeg
-LIB_DEPENDS+=		avformat:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 .else
 CONFIGURE_ARGS+=	--without-ffmpeg
 .endif
