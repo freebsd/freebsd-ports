@@ -1,6 +1,6 @@
---- relay.c.orig	Mon Jul  8 20:38:24 2002
-+++ relay.c	Wed Mar 10 16:29:40 2004
-@@ -743,6 +743,11 @@
+--- ./relay.c.orig	2012-08-17 20:31:25.000000000 +0200
++++ ./relay.c	2012-09-23 17:27:26.000000000 +0200
+@@ -751,6 +751,11 @@
  relayLoop()
  {
      fd_set readable, readableCopy;
@@ -12,7 +12,7 @@
      int maxFD;
      int i, r;
      int sock;
-@@ -772,6 +777,27 @@
+@@ -780,6 +785,27 @@
  	    continue;
  	}
  
@@ -40,7 +40,7 @@
  	/* Handle session packets first */
  	for (i=0; i<NumInterfaces; i++) {
  	    if (FD_ISSET(Interfaces[i].sessionSock, &readableCopy)) {
-@@ -786,6 +812,7 @@
+@@ -794,6 +820,7 @@
  	    }
  	}
  
@@ -48,7 +48,7 @@
  	/* Handle the session-cleaning process */
  	if (FD_ISSET(CleanPipe[0], &readableCopy)) {
  	    char dummy;
-@@ -805,6 +832,46 @@
+@@ -813,6 +840,46 @@
  *%DESCRIPTION:
  * Receives and processes a discovery packet.
  ***********************************************************************/
@@ -95,7 +95,7 @@
  void
  relayGotDiscoveryPacket(PPPoEInterface const *iface)
  {
-@@ -852,6 +919,7 @@
+@@ -860,6 +927,7 @@
  	       iface->name, (int) packet.code);
      }
  }
@@ -103,7 +103,7 @@
  
  /**********************************************************************
  *%FUNCTION: relayGotSessionPacket
-@@ -862,6 +930,65 @@
+@@ -870,6 +938,65 @@
  *%DESCRIPTION:
  * Receives and processes a session packet.
  ***********************************************************************/
@@ -169,7 +169,7 @@
  void
  relayGotSessionPacket(PPPoEInterface const *iface)
  {
-@@ -928,6 +1055,7 @@
+@@ -936,6 +1063,7 @@
  #endif
      sendPacket(NULL, sh->interface->sessionSock, &packet, size);
  }
