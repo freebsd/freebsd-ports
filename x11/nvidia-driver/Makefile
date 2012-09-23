@@ -102,7 +102,7 @@ IGNORE=		requires fairly recent FreeBSD-STABLE, or FreeBSD-CURRENT
 .endif
 
 .if ${NVVERSION} < 1952200
-LIB_DEPENDS+=	m.3:${PORTSDIR}/misc/compat5x
+LIB_DEPENDS=	m.3:${PORTSDIR}/misc/compat5x
 .endif
 
 post-patch: .SILENT
@@ -129,7 +129,7 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_ACPI_PM)/define \1/' \
 		${WRKSRC}/src/nv-freebsd.h
 .endif
-.if ${PORT_OPTIONS:MLINUX}
+.if ! ${PORT_OPTIONS:MLINUX}
 	${REINPLACE_CMD} -E 's/define (NV_SUPPORT_LINUX_COMPAT)/undef \1/' \
 		${WRKSRC}/src/nv-freebsd.h
 .endif
