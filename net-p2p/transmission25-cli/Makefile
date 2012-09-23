@@ -7,7 +7,7 @@
 
 PORTNAME=	transmission
 PORTVERSION=	2.51
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	net-p2p
 #MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/ \
 MASTER_SITES=	http://transmission.cachefly.net/
@@ -26,7 +26,7 @@ LIB_DEPENDS?=	${GEN_LIB_DEPENDS}
 # General dependencies
 GEN_LIB_DEPENDS=curl.6:${PORTSDIR}/ftp/curl \
 		event-2.0.6:${PORTSDIR}/devel/libevent2
-GEN_RUN_DEPENDS=${LOCALBASE}/share/transmission/web/index.html:${PORTSDIR}/www/transmission-web
+GEN_RUN_DEPENDS=${LOCALBASE}/share/transmission/web/index.html:${PORTSDIR}/www/transmission25-web
 
 USE_GMAKE=	yes
 USE_GNOME?=	pkgconfig
