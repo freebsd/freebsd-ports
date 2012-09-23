@@ -1,12 +1,8 @@
-# New ports collection makefile for: gcstar
-# Date created: 	2007-12-22
-# Whom:         	Dominique Goncalves <dominique.goncalves@gmail.com>
-#
+# Created by: Dominique Goncalves <dominique.goncalves@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	gcstar
-PORTVERSION=	1.6.1
-PORTREVISION=	1
+PORTVERSION=	1.7.0
 CATEGORIES=	misc
 MASTER_SITES=	http://download.gna.org/gcstar/ \
 		http://djdomics.free.fr/distfiles/
@@ -14,7 +10,6 @@ MASTER_SITES=	http://download.gna.org/gcstar/ \
 MAINTAINER=	dominique.goncalves@gmail.com
 COMMENT=	Open source application for managing your collections
 
-USE_GNOME=	desktopfileutils
 RUN_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
 		p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
@@ -39,6 +34,7 @@ RUN_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 MAN1=		gcstar.1
 MANCOMPRESSED=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_GNOME=	desktopfileutils
 USE_PERL5_RUN=	yes
 
 NO_BUILD=	yes
