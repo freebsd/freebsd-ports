@@ -1,0 +1,10 @@
+%%SITE_PERL%%/MogileFS/Network.pm
+%%SITE_PERL%%/MogileFS/Plugin/ZoneLocal.pm
+%%SITE_PERL%%/MogileFS/ReplicationPolicy/HostsPerNetwork.pm
+%%SITE_PERL%%/MogileFS/ReplicationPolicy/MultipleNetworks.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS/Network/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS/Network
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS
+@dirrmtry %%SITE_PERL%%/MogileFS/Plugin
+@dirrmtry %%SITE_PERL%%/MogileFS/ReplicationPolicy
+@dirrmtry %%SITE_PERL%%/MogileFS

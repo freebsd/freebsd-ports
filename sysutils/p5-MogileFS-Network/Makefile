@@ -1,0 +1,33 @@
+# Created by: Mikolaj Golub <trociny@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	MogileFS-Network
+PORTVERSION=	0.06
+CATEGORIES=	sysutils net perl5
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:HACHI
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	trociny@FreeBSD.org
+COMMENT=	Network awareness and extensions for p5-MogileFS-Server
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Net-Netmask>=0:${PORTSDIR}/net-mgmt/p5-Net-Netmask \
+		p5-Net-Patricia>=0:${PORTSDIR}/net/p5-Net-Patricia \
+		p5-MogileFS-Server>=2.50:${PORTSDIR}/sysutils/p5-MogileFS-Server
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
+
+MAN3=		MogileFS::Network.3 \
+		MogileFS::ReplicationPolicy::MultipleNetworks.3
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e '/NAME/ s|MogileFS-Network|MogileFS::Network|' \
+	    ${WRKSRC}/Makefile.PL
+
+.include <bsd.port.post.mk>
