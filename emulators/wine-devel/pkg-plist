@@ -407,6 +407,8 @@ include/wine/windows/msctf.idl
 include/wine/windows/msdadc.h
 include/wine/windows/msdadc.idl
 include/wine/windows/msdaguid.h
+include/wine/windows/msdasc.h
+include/wine/windows/msdasc.idl
 include/wine/windows/mshtmcid.h
 include/wine/windows/mshtmdid.h
 include/wine/windows/mshtmhst.h
@@ -1098,6 +1100,7 @@ lib/wine/fakedlls/msimsg.dll
 lib/wine/fakedlls/msimtf.dll
 lib/wine/fakedlls/msisip.dll
 lib/wine/fakedlls/msisys.ocx
+lib/wine/fakedlls/msls31.dll
 lib/wine/fakedlls/msnet32.dll
 lib/wine/fakedlls/mspatcha.dll
 lib/wine/fakedlls/msrle32.dll
@@ -1614,6 +1617,7 @@ lib/wine/msimsg.dll.so
 lib/wine/msimtf.dll.so
 lib/wine/msisip.dll.so
 lib/wine/msisys.ocx.so
+lib/wine/msls31.dll.so
 lib/wine/msnet32.dll.so
 lib/wine/mspatcha.dll.so
 lib/wine/msrle32.dll.so
