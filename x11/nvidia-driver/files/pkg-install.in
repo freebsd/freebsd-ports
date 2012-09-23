@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 
-PREFIX="${PKG_PREFIX-/usr/local}"
+PREFIX=${PKG_PREFIX-/usr/local}
 
 case $2 in
 POST-INSTALL)
