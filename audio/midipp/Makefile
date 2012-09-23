@@ -1,4 +1,4 @@
-# Chreate by: Hans Petter Selasky <hselasky@FreeBSD.org>
+# Created by: Hans Petter Selasky <hselasky@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	midipp
