@@ -1,9 +1,5 @@
-# New ports collection makefile for:	qsynth
-# Date created:		2007-11-17
-# Whom:			lazyklimm <lazyklimm@gmail.com>
-#
+# Created by: lazyklimm <lazyklimm@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	qsynth
 PORTVERSION=	0.3.4
@@ -11,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
-MAINTAINER=	lazyklimm@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt fluidsynth front-end application
 
 LIB_DEPENDS=	fluidsynth:${PORTSDIR}/audio/fluidsynth
