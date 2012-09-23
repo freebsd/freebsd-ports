@@ -9,15 +9,15 @@ or adding
 
 to your /boot/loader.conf.
 
-If you build this port with WITH_FREEBSD_AGP=yes, make sure you have
+If you build this port with FreeBSD AGP GART driver, make sure you have
 agp.ko kernel module installed and loaded, since nvidia.ko will depend
-on it, or have your kernel compiled with "device agp".  Otherwise the
-NVidia kernel module will not load.  Also, care to specify correct
+on it, or have your kernel compiled with "device agp".  Otherwise, the
+NVidia kernel module will not load.  Also, please set correct value for
 ``Option "NvAGP"'' in ``Device'' section of your X11 configuration file.
 
-When building with Linux compatibility (WITH_LINUX=yes), make sure
-linux.ko is available as well (or have it compiled in kernel).  It can
-be loaded via /boot/loader.conf, or later in boot process if you add
+When building with Linux compatibility support, make sure that linux.ko
+module is available as well (or have it compiled in kernel).  It can be
+loaded via /boot/loader.conf, or later in the boot process if you add
 
 	linux_enable="YES"
 
