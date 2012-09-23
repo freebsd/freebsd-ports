@@ -118,6 +118,10 @@ GYP_DEFINES+=	use_pulseaudio=0
 GYP_DEFINES+=	disable_sse2=1
 .endif
 
+.if ${OSVERSION} < 800069
+IGNORE=	requires libusb 2 API, which is not available on this FreeBSD version
+.endif
+
 .if ${PORT_OPTIONS:MCLANG}
 .if ${OSVERSION} < 900033
 BUILD_DEPENDS+=	clang:${PORTSDIR}/lang/clang
