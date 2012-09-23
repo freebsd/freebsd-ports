@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	usermin
-PORTVERSION=	1.510
-PORTREVISION=	1
+PORTVERSION=	1.520
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/uupdates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf \
@@ -23,11 +22,11 @@ RUN_DEPENDS=	p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay \
 		p5-IO-Tty>=0:${PORTSDIR}/devel/p5-IO-Tty \
 		p5-Authen-PAM>=0:${PORTSDIR}/security/p5-Authen-PAM
 
-FETCH_CMD?=	/usr/bin/fetch -pRr
 NO_BUILD=	yes
 USE_PERL5=	yes
 USE_RC_SUBR=	usermin
 SUB_LIST=	PERL5=${PERL}
+SUB_FILES=	pkg-message
 
 USERMIN_MODULES=
 
