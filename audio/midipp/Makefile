@@ -1,12 +1,8 @@
-# Ports collection makefile for: midipp
-# Date created: 21 June 2011
-# Whom:		Hans Petter Selasky <hselasky@FreeBSD.org>
-#
+# Chreate by: Hans Petter Selasky <hselasky@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	midipp
-PORTVERSION=	1.0.14
+PORTVERSION=	1.0.16
 CATEGORIES=	audio
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://hselasky.homeunix.org:8192/distfiles/
