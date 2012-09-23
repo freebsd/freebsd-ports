@@ -146,7 +146,7 @@ post-patch: .SILENT
 		s/name libvdpau/&_nvidia/' ${WRKSRC}/lib/Makefile
 .endif
 # Do not build any binaries (native nvidia-settings and nvidia-xconfig are
-# provided by corresponding ports) and manuals
+# provided by corresponding ports) and manual pages
 .if ${NVVERSION} < 974600 || ${NVVERSION} >= 1952200
 	${REINPLACE_CMD} -E 's/(extension).*/\1/' ${WRKSRC}/x11/Makefile
 .else
@@ -154,7 +154,7 @@ post-patch: .SILENT
 .endif
 	${REINPLACE_CMD} -e '/bin/d ; /man/d' ${WRKSRC}/x11/Makefile
 # Conditionally install documentation (but you generally want it)
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -E 's/(x11).*/\1/ ; /doc/d' ${WRKSRC}/Makefile
 .endif
 # Adjust installation paths of some conflicting files (shared also between
