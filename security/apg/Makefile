@@ -1,9 +1,5 @@
-# New ports collection makefile for:	apg
-# Date created:		1 September 2000
-# Whom:			roam@FreeBSD.org
-#
+# Created by:	roam@FreeBSD.org
 # $FreeBSD$
-#
 
 PORTNAME=	apg
 PORTVERSION=	2.3.0b

@@ -1,9 +1,5 @@
-Description: Add CrackLib support and conditionalize the build variables.
-Forwarded: no
-Author: Peter Pentchev <roam@FreeBSD.org>,
-	Dominic Marks <dominic_marks@btinternet.com>,
-	Roman Neuhauser <roman@bellavista.cz>
-Last-Update: 2010-12-23
+
+$FreeBSD$
 
 --- Makefile.orig
 +++ Makefile
