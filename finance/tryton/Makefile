@@ -1,12 +1,8 @@
-# New ports collection makefile for:	tryton
-# Date created:				12 August, 2012
-# Whom:					Matthias Petermann<matthias@petermann.it>
-#
+# Created by: Matthias Petermann <matthias@petermann.it>
 # $FreeBSD$
-#
 
 PORTNAME=	tryton
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	finance python
 MASTER_SITES=	http://downloads2.tryton.org/2.4/
 
