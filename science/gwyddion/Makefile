@@ -1,9 +1,5 @@
-# New ports collection makefile for:	gwyddion
-# Date created:				2006-08-06
-# Whom:					Yeti <yeti@gwyddion.net>
-#
+# Created by: Yeti <yeti@gwyddion.net>
 # $FreeBSD$
-#
 
 PORTNAME=	gwyddion
 PORTVERSION=	2.27
@@ -14,7 +10,7 @@ MASTER_SITES=	SF
 PATCH_SITES=	${MASTER_SITES}
 PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
 
-MAINTAINER=	yeti@gwyddion.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A gtk2 based SPM data visualization and analysis tool
 
 LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext \
