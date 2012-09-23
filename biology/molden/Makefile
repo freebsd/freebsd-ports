@@ -1,4 +1,4 @@
-# Whom: Ryo MIYAMOTO <rmiya@cc.hirosaki-u.ac.jp>
+# Created by: Ryo MIYAMOTO <rmiya@cc.hirosaki-u.ac.jp>
 # $FreeBSD$
 
 PORTNAME=	molden
