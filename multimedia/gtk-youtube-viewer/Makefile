@@ -9,6 +9,7 @@ PORTNAME=	gtk-youtube-viewer
 PORTVERSION=	2.0.5
 CATEGORIES=	multimedia
 MASTER_SITES=	GOOGLE_CODE
+PROJECTHOST=	trizen
 
 MAINTAINER=	nemysis@gmx.ch
 COMMENT=	GTK Search and play YouTube videos streaming in MPlayer
@@ -22,15 +23,13 @@ RUN_DEPENDS=	p5-XML-Fast>=0:${PORTSDIR}/net/p5-XML-Fast \
 		p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https \
 		mplayer:${PORTSDIR}/multimedia/mplayer
 
-OPTIONS_DEFINE=	DATA GCAP
+OPTIONS_DEFINE=	GCAP
 GCAP_DESC=	GCAP support
-OPTIONS_DEFAULT=	DATA
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
-PROJECTHOST=	trizen
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png \
@@ -55,14 +54,13 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/youtube-viewer ${DATADIR}
 
 # Data
-.if ${PORT_OPTIONS:MDATA}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "icons lib" ${DATADIR})
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.pl ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.glade ${DATADIR}
-.endif
 
 # Pixmaps and Desktop
 	${INSTALL_DATA} ${WRKSRC}/icons/${PORTNAME}.png ${PREFIX}/share/pixmaps/
+	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${PREFIX}/share/applications/
 
 .include <bsd.port.mk>
