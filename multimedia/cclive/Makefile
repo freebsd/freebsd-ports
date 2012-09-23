@@ -1,12 +1,8 @@
-# Ports collection makefile for:    cclive
-# Date created:		1 February 2009
-# Whom:			Toni Gundogdu <legatvs@gmail.com>
-#
+# Created by: Toni Gundogdu <legatvs@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	cclive
-PORTVERSION=	0.7.9
+PORTVERSION=	0.7.10
 CATEGORIES=	multimedia net
 MASTER_SITES=	SF/${PORTNAME}/0.7 \
 		GOOGLE_CODE
@@ -27,6 +23,7 @@ MAKE_JOBS_SAFE=	yes
 USE_XZ=		yes
 
 MAN1=		cclive.1
-PLIST_FILES=	bin/cclive
+PLIST_FILES=	bin/ccl \
+		bin/cclive
 
 .include <bsd.port.mk>
