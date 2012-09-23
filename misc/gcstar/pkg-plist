@@ -23,7 +23,8 @@ lib/gcstar/GCExtract.pm
 lib/gcstar/GCExtract/GCExtractFilms.pm
 lib/gcstar/GCExtract/GCExtractMusics.pm
 lib/gcstar/GCGenres.pm
-lib/gcstar/GCGraphicComponents.pm
+lib/gcstar/GCGraphicComponents/GCBaseWidgets.pm
+lib/gcstar/GCGraphicComponents/GCDoubleLists.pm
 lib/gcstar/GCImport.pm
 lib/gcstar/GCImport/GCImportAMC.pm
 lib/gcstar/GCImport/GCImportAlexandria.pm
@@ -35,9 +36,12 @@ lib/gcstar/GCImport/GCImportGCfilms.pm
 lib/gcstar/GCImport/GCImportGCstar.pm
 lib/gcstar/GCImport/GCImportList.pm
 lib/gcstar/GCImport/GCImportMyMovies.pm
+lib/gcstar/GCImport/GCImportScanner.pm
 lib/gcstar/GCImport/GCImportTarGz.pm
 lib/gcstar/GCImport/GCImportTellico.pm
+lib/gcstar/GCItemsLists/GCImageListComponents.pm
 lib/gcstar/GCItemsLists/GCImageLists.pm
+lib/gcstar/GCItemsLists/GCListOptions.pm
 lib/gcstar/GCItemsLists/GCTextLists.pm
 lib/gcstar/GCLang.pm
 lib/gcstar/GCLang/AR/GCExport/GCExportCSV.pm
@@ -52,6 +56,7 @@ lib/gcstar/GCLang/AR/GCImport/GCImportCSV.pm
 lib/gcstar/GCLang/AR/GCImport/GCImportFolder.pm
 lib/gcstar/GCLang/AR/GCImport/GCImportGCstar.pm
 lib/gcstar/GCLang/AR/GCImport/GCImportList.pm
+lib/gcstar/GCLang/AR/GCImport/GCImportScanner.pm
 lib/gcstar/GCLang/AR/GCImport/GCImportTellico.pm
 lib/gcstar/GCLang/AR/GCModels/GCTVepisodes.pm
 lib/gcstar/GCLang/AR/GCModels/GCTVseries.pm
@@ -82,6 +87,7 @@ lib/gcstar/GCLang/BG/GCImport/GCImportCSV.pm
 lib/gcstar/GCLang/BG/GCImport/GCImportFolder.pm
 lib/gcstar/GCLang/BG/GCImport/GCImportGCstar.pm
 lib/gcstar/GCLang/BG/GCImport/GCImportList.pm
+lib/gcstar/GCLang/BG/GCImport/GCImportScanner.pm
 lib/gcstar/GCLang/BG/GCImport/GCImportTellico.pm
 lib/gcstar/GCLang/BG/GCModels/GCTVepisodes.pm
 lib/gcstar/GCLang/BG/GCModels/GCTVseries.pm
@@ -112,6 +118,7 @@ lib/gcstar/GCLang/CA/GCImport/GCImportCSV.pm
 lib/gcstar/GCLang/CA/GCImport/GCImportFolder.pm
 lib/gcstar/GCLang/CA/GCImport/GCImportGCstar.pm
 lib/gcstar/GCLang/CA/GCImport/GCImportList.pm
+lib/gcstar/GCLang/CA/GCImport/GCImportScanner.pm
 lib/gcstar/GCLang/CA/GCImport/GCImportTellico.pm
 lib/gcstar/GCLang/CA/GCModels/GCTVepisodes.pm
 lib/gcstar/GCLang/CA/GCModels/GCTVseries.pm
@@ -142,6 +149,7 @@ lib/gcstar/GCLang/CS/GCImport/GCImportCSV.pm
 lib/gcstar/GCLang/CS/GCImport/GCImportFolder.pm
 lib/gcstar/GCLang/CS/GCImport/GCImportGCstar.pm
 lib/gcstar/GCLang/CS/GCImport/GCImportList.pm
+lib/gcstar/GCLang/CS/GCImport/GCImportScanner.pm
 lib/gcstar/GCLang/CS/GCImport/GCImportTellico.pm
 lib/gcstar/GCLang/CS/GCModels/GCTVepisodes.pm
 lib/gcstar/GCLang/CS/GCModels/GCTVseries.pm
@@ -172,6 +180,7 @@ lib/gcstar/GCLang/DE/GCImport/GCImportCSV.pm
 lib/gcstar/GCLang/DE/GCImport/GCImportFolder.pm
 lib/gcstar/GCLang/DE/GCImport/GCImportGCstar.pm
 lib/gcstar/GCLang/DE/GCImport/GCImportList.pm
+lib/gcstar/GCLang/DE/GCImport/GCImportScanner.pm
 lib/gcstar/GCLang/DE/GCImport/GCImportTellico.pm
 lib/gcstar/GCLang/DE/GCModels/GCTVepisodes.pm
 lib/gcstar/GCLang/DE/GCModels/GCTVseries.pm
@@ -202,6 +211,7 @@ lib/gcstar/GCLang/EL/GCImport/GCImportCSV.pm
 lib/gcstar/GCLang/EL/GCImport/GCImportFolder.pm
 lib/gcstar/GCLang/EL/GCImport/GCImportGCstar.pm
 lib/gcstar/GCLang/EL/GCImport/GCImportList.pm
+lib/gcstar/GCLang/EL/GCImport/GCImportScanner.pm
 lib/gcstar/GCLang/EL/GCImport/GCImportTellico.pm
 lib/gcstar/GCLang/EL/GCModels/GCTVepisodes.pm
 lib/gcstar/GCLang/EL/GCModels/GCTVseries.pm
@@ -232,6 +242,7 @@ lib/gcstar/GCLang/EN/GCImport/GCImportCSV.pm
 lib/gcstar/GCLang/EN/GCImport/GCImportFolder.pm
 lib/gcstar/GCLang/EN/GCImport/GCImportGCstar.pm
 lib/gcstar/GCLang/EN/GCImport/GCImportList.pm
+lib/gcstar/GCLang/EN/GCImport/GCImportScanner.pm
 lib/gcstar/GCLang/EN/GCImport/GCImportTellico.pm
 lib/gcstar/GCLang/EN/GCModels/GCTVepisodes.pm
 lib/gcstar/GCLang/EN/GCModels/GCTVseries.pm
@@ -262,6 +273,7 @@ lib/gcstar/GCLang/ES/GCImport/GCImportCSV.pm
 lib/gcstar/GCLang/ES/GCImport/GCImportFolder.pm
 lib/gcstar/GCLang/ES/GCImport/GCImportGCstar.pm
 lib/gcstar/GCLang/ES/GCImport/GCImportList.pm
+lib/gcstar/GCLang/ES/GCImport/GCImportScanner.pm
 lib/gcstar/GCLang/ES/GCImport/GCImportTellico.pm
 lib/gcstar/GCLang/ES/GCModels/GCTVepisodes.pm
 lib/gcstar/GCLang/ES/GCModels/GCTVseries.pm
@@ -292,6 +304,7 @@ lib/gcstar/GCLang/FR/GCImport/GCImportCSV.pm
 lib/gcstar/GCLang/FR/GCImport/GCImportFolder.pm
 lib/gcstar/GCLang/FR/GCImport/GCImportGCstar.pm
 lib/gcstar/GCLang/FR/GCImport/GCImportList.pm
+lib/gcstar/GCLang/FR/GCImport/GCImportScanner.pm
 lib/gcstar/GCLang/FR/GCImport/GCImportTellico.pm
 lib/gcstar/GCLang/FR/GCModels/GCTVepisodes.pm
 lib/gcstar/GCLang/FR/GCModels/GCTVseries.pm
@@ -323,6 +336,7 @@ lib/gcstar/GCLang/GL/GCImport/GCImportCSV.pm
 lib/gcstar/GCLang/GL/GCImport/GCImportFolder.pm
 lib/gcstar/GCLang/GL/GCImport/GCImportGCstar.pm
 lib/gcstar/GCLang/GL/GCImport/GCImportList.pm
+lib/gcstar/GCLang/GL/GCImport/GCImportScanner.pm
 lib/gcstar/GCLang/GL/GCImport/GCImportTellico.pm
 lib/gcstar/GCLang/GL/GCModels/GCTVepisodes.pm
 lib/gcstar/GCLang/GL/GCModels/GCTVseries.pm
@@ -353,6 +367,7 @@ lib/gcstar/GCLang/HU/GCImport/GCImportCSV.pm
 lib/gcstar/GCLang/HU/GCImport/GCImportFolder.pm
 lib/gcstar/GCLang/HU/GCImport/GCImportGCstar.pm
 lib/gcstar/GCLang/HU/GCImport/GCImportList.pm
+lib/gcstar/GCLang/HU/GCImport/GCImportScanner.pm
 lib/gcstar/GCLang/HU/GCImport/GCImportTellico.pm
 lib/gcstar/GCLang/HU/GCModels/GCTVepisodes.pm
 lib/gcstar/GCLang/HU/GCModels/GCTVseries.pm
@@ -383,6 +398,7 @@ lib/gcstar/GCLang/ID/GCImport/GCImportCSV.pm
 lib/gcstar/GCLang/ID/GCImport/GCImportFolder.pm
 lib/gcstar/GCLang/ID/GCImport/GCImportGCstar.pm
 lib/gcstar/GCLang/ID/GCImport/GCImportList.pm
+lib/gcstar/GCLang/ID/GCImport/GCImportScanner.pm
 lib/gcstar/GCLang/ID/GCImport/GCImportTellico.pm
 lib/gcstar/GCLang/ID/GCModels/GCTVepisodes.pm
 lib/gcstar/GCLang/ID/GCModels/GCTVseries.pm
@@ -413,6 +429,7 @@ lib/gcstar/GCLang/IT/GCImport/GCImportCSV.pm
 lib/gcstar/GCLang/IT/GCImport/GCImportFolder.pm
 lib/gcstar/GCLang/IT/GCImport/GCImportGCstar.pm
 lib/gcstar/GCLang/IT/GCImport/GCImportList.pm
+lib/gcstar/GCLang/IT/GCImport/GCImportScanner.pm
 lib/gcstar/GCLang/IT/GCImport/GCImportTellico.pm
 lib/gcstar/GCLang/IT/GCModels/GCTVepisodes.pm
 lib/gcstar/GCLang/IT/GCModels/GCTVseries.pm
@@ -444,6 +461,7 @@ lib/gcstar/GCLang/NL/GCImport/GCImportCSV.pm
 lib/gcstar/GCLang/NL/GCImport/GCImportFolder.pm
 lib/gcstar/GCLang/NL/GCImport/GCImportGCstar.pm
 lib/gcstar/GCLang/NL/GCImport/GCImportList.pm
+lib/gcstar/GCLang/NL/GCImport/GCImportScanner.pm
 lib/gcstar/GCLang/NL/GCImport/GCImportTellico.pm
 lib/gcstar/GCLang/NL/GCModels/GCTVepisodes.pm
 lib/gcstar/GCLang/NL/GCModels/GCTVseries.pm
@@ -474,6 +492,7 @@ lib/gcstar/GCLang/PL/GCImport/GCImportCSV.pm
 lib/gcstar/GCLang/PL/GCImport/GCImportFolder.pm
 lib/gcstar/GCLang/PL/GCImport/GCImportGCstar.pm
 lib/gcstar/GCLang/PL/GCImport/GCImportList.pm
+lib/gcstar/GCLang/PL/GCImport/GCImportScanner.pm
 lib/gcstar/GCLang/PL/GCImport/GCImportTellico.pm
 lib/gcstar/GCLang/PL/GCModels/GCTVepisodes.pm
 lib/gcstar/GCLang/PL/GCModels/GCTVseries.pm
@@ -504,6 +523,7 @@ lib/gcstar/GCLang/PT/GCImport/GCImportCSV.pm
 lib/gcstar/GCLang/PT/GCImport/GCImportFolder.pm
 lib/gcstar/GCLang/PT/GCImport/GCImportGCstar.pm
 lib/gcstar/GCLang/PT/GCImport/GCImportList.pm
+lib/gcstar/GCLang/PT/GCImport/GCImportScanner.pm
 lib/gcstar/GCLang/PT/GCImport/GCImportTellico.pm
 lib/gcstar/GCLang/PT/GCModels/GCTVepisodes.pm
 lib/gcstar/GCLang/PT/GCModels/GCTVseries.pm
@@ -535,6 +555,7 @@ lib/gcstar/GCLang/RO/GCImport/GCImportCSV.pm
 lib/gcstar/GCLang/RO/GCImport/GCImportFolder.pm
 lib/gcstar/GCLang/RO/GCImport/GCImportGCstar.pm
 lib/gcstar/GCLang/RO/GCImport/GCImportList.pm
+lib/gcstar/GCLang/RO/GCImport/GCImportScanner.pm
 lib/gcstar/GCLang/RO/GCImport/GCImportTellico.pm
 lib/gcstar/GCLang/RO/GCModels/GCTVepisodes.pm
 lib/gcstar/GCLang/RO/GCModels/GCTVseries.pm
@@ -565,6 +586,7 @@ lib/gcstar/GCLang/RU/GCImport/GCImportCSV.pm
 lib/gcstar/GCLang/RU/GCImport/GCImportFolder.pm
 lib/gcstar/GCLang/RU/GCImport/GCImportGCstar.pm
 lib/gcstar/GCLang/RU/GCImport/GCImportList.pm
+lib/gcstar/GCLang/RU/GCImport/GCImportScanner.pm
 lib/gcstar/GCLang/RU/GCImport/GCImportTellico.pm
 lib/gcstar/GCLang/RU/GCModels/GCTVepisodes.pm
 lib/gcstar/GCLang/RU/GCModels/GCTVseries.pm
@@ -595,6 +617,7 @@ lib/gcstar/GCLang/SR/GCImport/GCImportCSV.pm
 lib/gcstar/GCLang/SR/GCImport/GCImportFolder.pm
 lib/gcstar/GCLang/SR/GCImport/GCImportGCstar.pm
 lib/gcstar/GCLang/SR/GCImport/GCImportList.pm
+lib/gcstar/GCLang/SR/GCImport/GCImportScanner.pm
 lib/gcstar/GCLang/SR/GCImport/GCImportTellico.pm
 lib/gcstar/GCLang/SR/GCModels/GCTVepisodes.pm
 lib/gcstar/GCLang/SR/GCModels/GCTVseries.pm
@@ -625,6 +648,7 @@ lib/gcstar/GCLang/SV/GCImport/GCImportCSV.pm
 lib/gcstar/GCLang/SV/GCImport/GCImportFolder.pm
 lib/gcstar/GCLang/SV/GCImport/GCImportGCstar.pm
 lib/gcstar/GCLang/SV/GCImport/GCImportList.pm
+lib/gcstar/GCLang/SV/GCImport/GCImportScanner.pm
 lib/gcstar/GCLang/SV/GCImport/GCImportTellico.pm
 lib/gcstar/GCLang/SV/GCModels/GCTVepisodes.pm
 lib/gcstar/GCLang/SV/GCModels/GCTVseries.pm
@@ -655,6 +679,7 @@ lib/gcstar/GCLang/TR/GCImport/GCImportCSV.pm
 lib/gcstar/GCLang/TR/GCImport/GCImportFolder.pm
 lib/gcstar/GCLang/TR/GCImport/GCImportGCstar.pm
 lib/gcstar/GCLang/TR/GCImport/GCImportList.pm
+lib/gcstar/GCLang/TR/GCImport/GCImportScanner.pm
 lib/gcstar/GCLang/TR/GCImport/GCImportTellico.pm
 lib/gcstar/GCLang/TR/GCModels/GCTVepisodes.pm
 lib/gcstar/GCLang/TR/GCModels/GCTVseries.pm
@@ -685,6 +710,7 @@ lib/gcstar/GCLang/UK/GCImport/GCImportCSV.pm
 lib/gcstar/GCLang/UK/GCImport/GCImportFolder.pm
 lib/gcstar/GCLang/UK/GCImport/GCImportGCstar.pm
 lib/gcstar/GCLang/UK/GCImport/GCImportList.pm
+lib/gcstar/GCLang/UK/GCImport/GCImportScanner.pm
 lib/gcstar/GCLang/UK/GCImport/GCImportTellico.pm
 lib/gcstar/GCLang/UK/GCModels/GCTVepisodes.pm
 lib/gcstar/GCLang/UK/GCModels/GCTVseries.pm
@@ -715,6 +741,7 @@ lib/gcstar/GCLang/ZH/GCImport/GCImportCSV.pm
 lib/gcstar/GCLang/ZH/GCImport/GCImportFolder.pm
 lib/gcstar/GCLang/ZH/GCImport/GCImportGCstar.pm
 lib/gcstar/GCLang/ZH/GCImport/GCImportList.pm
+lib/gcstar/GCLang/ZH/GCImport/GCImportScanner.pm
 lib/gcstar/GCLang/ZH/GCImport/GCImportTellico.pm
 lib/gcstar/GCLang/ZH/GCModels/GCTVepisodes.pm
 lib/gcstar/GCLang/ZH/GCModels/GCTVseries.pm
@@ -733,6 +760,37 @@ lib/gcstar/GCLang/ZH/GCModels/GCsoftware.pm
 lib/gcstar/GCLang/ZH/GCModels/GCstamps.pm
 lib/gcstar/GCLang/ZH/GCModels/GCwines.pm
 lib/gcstar/GCLang/ZH/GCstar.pm
+lib/gcstar/GCLang/ZH_CN/GCExport/GCExportCSV.pm
+lib/gcstar/GCLang/ZH_CN/GCExport/GCExportExternal.pm
+lib/gcstar/GCLang/ZH_CN/GCExport/GCExportHTML.pm
+lib/gcstar/GCLang/ZH_CN/GCExport/GCExportPDB.pm
+lib/gcstar/GCLang/ZH_CN/GCExport/GCExportSQL.pm
+lib/gcstar/GCLang/ZH_CN/GCExport/GCExportTarGz.pm
+lib/gcstar/GCLang/ZH_CN/GCExport/GCExportXML.pm
+lib/gcstar/GCLang/ZH_CN/GCImport/GCImportAlexandria.pm
+lib/gcstar/GCLang/ZH_CN/GCImport/GCImportCSV.pm
+lib/gcstar/GCLang/ZH_CN/GCImport/GCImportFolder.pm
+lib/gcstar/GCLang/ZH_CN/GCImport/GCImportGCstar.pm
+lib/gcstar/GCLang/ZH_CN/GCImport/GCImportList.pm
+lib/gcstar/GCLang/ZH_CN/GCImport/GCImportScanner.pm
+lib/gcstar/GCLang/ZH_CN/GCImport/GCImportTellico.pm
+lib/gcstar/GCLang/ZH_CN/GCModels/GCTVepisodes.pm
+lib/gcstar/GCLang/ZH_CN/GCModels/GCTVseries.pm
+lib/gcstar/GCLang/ZH_CN/GCModels/GCboardgames.pm
+lib/gcstar/GCLang/ZH_CN/GCModels/GCbooks.pm
+lib/gcstar/GCLang/ZH_CN/GCModels/GCcoins.pm
+lib/gcstar/GCLang/ZH_CN/GCModels/GCcomics.pm
+lib/gcstar/GCLang/ZH_CN/GCModels/GCfilms.pm
+lib/gcstar/GCLang/ZH_CN/GCModels/GCgames.pm
+lib/gcstar/GCLang/ZH_CN/GCModels/GCgeneric.pm
+lib/gcstar/GCLang/ZH_CN/GCModels/GCminicars.pm
+lib/gcstar/GCLang/ZH_CN/GCModels/GCmusics.pm
+lib/gcstar/GCLang/ZH_CN/GCModels/GCperiodicals.pm
+lib/gcstar/GCLang/ZH_CN/GCModels/GCsmartcards.pm
+lib/gcstar/GCLang/ZH_CN/GCModels/GCsoftware.pm
+lib/gcstar/GCLang/ZH_CN/GCModels/GCstamps.pm
+lib/gcstar/GCLang/ZH_CN/GCModels/GCwines.pm
+lib/gcstar/GCLang/ZH_CN/GCstar.pm
 lib/gcstar/GCMail.pm
 lib/gcstar/GCMainWindow.pm
 lib/gcstar/GCMenu.pm
@@ -786,6 +844,7 @@ lib/gcstar/GCPlugins/GCbooks/GCBol.pm
 lib/gcstar/GCPlugins/GCbooks/GCBuscape.pm
 lib/gcstar/GCPlugins/GCbooks/GCCasadelibro.pm
 lib/gcstar/GCPlugins/GCbooks/GCChapitre.pm
+lib/gcstar/GCPlugins/GCbooks/GCDoubanbook.pm
 lib/gcstar/GCPlugins/GCbooks/GCFnac.pm
 lib/gcstar/GCPlugins/GCbooks/GCFnacPT.pm
 lib/gcstar/GCPlugins/GCbooks/GCISBNdb.pm
@@ -828,6 +887,7 @@ lib/gcstar/GCPlugins/GCfilms/GCDVDEmpire.pm
 lib/gcstar/GCPlugins/GCfilms/GCDVDFr.pm
 lib/gcstar/GCPlugins/GCfilms/GCDVDPost.pm
 lib/gcstar/GCPlugins/GCfilms/GCDicshop.pm
+lib/gcstar/GCPlugins/GCfilms/GCDoubanfilm.pm
 lib/gcstar/GCPlugins/GCfilms/GCFilmAffinityEN.pm
 lib/gcstar/GCPlugins/GCfilms/GCFilmAffinityES.pm
 lib/gcstar/GCPlugins/GCfilms/GCFilmUP.pm
@@ -870,6 +930,7 @@ lib/gcstar/GCPlugins/GCgames/GCTheLegacy.pm
 lib/gcstar/GCPlugins/GCgames/GCgamesAmazonCommon.pm
 lib/gcstar/GCPlugins/GCgames/GCgamesCommon.pm
 lib/gcstar/GCPlugins/GCmusics/GCDiscogs.pm
+lib/gcstar/GCPlugins/GCmusics/GCDoubanmusic.pm
 lib/gcstar/GCPlugins/GCmusics/GCMusicBrainz.pm
 lib/gcstar/GCPlugins/GCmusics/GCmusicsCommon.pm
 lib/gcstar/GCPlugins/GCstar/GCAmazonCommon.pm
@@ -1292,6 +1353,10 @@ share/pixmaps/gcstar.png
 @dirrm lib/gcstar/GCPlugins/GCTVepisodes
 @dirrm lib/gcstar/GCPlugins
 @dirrm lib/gcstar/GCModels
+@dirrm lib/gcstar/GCLang/ZH_CN/GCModels
+@dirrm lib/gcstar/GCLang/ZH_CN/GCImport
+@dirrm lib/gcstar/GCLang/ZH_CN/GCExport
+@dirrm lib/gcstar/GCLang/ZH_CN
 @dirrm lib/gcstar/GCLang/ZH/GCModels
 @dirrm lib/gcstar/GCLang/ZH/GCImport
 @dirrm lib/gcstar/GCLang/ZH/GCExport
@@ -1387,6 +1452,7 @@ share/pixmaps/gcstar.png
 @dirrm lib/gcstar/GCLang
 @dirrm lib/gcstar/GCItemsLists
 @dirrm lib/gcstar/GCImport
+@dirrm lib/gcstar/GCGraphicComponents
 @dirrm lib/gcstar/GCExtract
 @dirrm lib/gcstar/GCExport
 @dirrm lib/gcstar/GCBackend
