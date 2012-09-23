@@ -34,6 +34,7 @@ www/%%PORTNAME%%/icons/arrow.blue.down.png
 www/%%PORTNAME%%/icons/arrow.blue.right.png
 www/%%PORTNAME%%/icons/arrow.yellow.down.png
 www/%%PORTNAME%%/icons/arrow.yellow.right.png
+www/%%PORTNAME%%/icons/cancel.png
 www/%%PORTNAME%%/icons/close.png
 www/%%PORTNAME%%/icons/cursor-line.png
 www/%%PORTNAME%%/icons/cursor-start.png
@@ -65,82 +66,17 @@ www/%%PORTNAME%%/js/profileadmin.js
 www/%%PORTNAME%%/lookup.php
 www/%%PORTNAME%%/navigator.php
 www/%%PORTNAME%%/nfsen.php
-www/%%PORTNAME%%/nfsen.php.orig
 www/%%PORTNAME%%/nfsenutil.php
 www/%%PORTNAME%%/overview.php
 www/%%PORTNAME%%/pic.php
 www/%%PORTNAME%%/process.php
 www/%%PORTNAME%%/profileadmin.php
 www/%%PORTNAME%%/rrdgraph.php
-www/%%PORTNAME%%/doc/AlertArmed.png
-www/%%PORTNAME%%/doc/AlertArmedMultiple.png
-www/%%PORTNAME%%/doc/AlertArmTrigger.png
-www/%%PORTNAME%%/doc/AlertBlocked.png
-www/%%PORTNAME%%/doc/AlertConditions1.png
-www/%%PORTNAME%%/doc/AlertConditions2.png
-www/%%PORTNAME%%/doc/AlertCreateDialoge.png
-www/%%PORTNAME%%/doc/AlertDefinition.png
-www/%%PORTNAME%%/doc/AlertFired.png
-www/%%PORTNAME%%/doc/AlertFiredOnce.png
-www/%%PORTNAME%%/doc/AlertFlow.png
-www/%%PORTNAME%%/doc/AlertInactive.png
-www/%%PORTNAME%%/doc/AlertInfo.png
-www/%%PORTNAME%%/doc/alerting.png
-www/%%PORTNAME%%/doc/AlertList.png
-www/%%PORTNAME%%/doc/AlertTrigger.png
-www/%%PORTNAME%%/doc/Bookmark.png
-www/%%PORTNAME%%/doc/dirstruct.png
-www/%%PORTNAME%%/doc/BSD-license.html
-www/%%PORTNAME%%/doc/BuildingProfile.png
-www/%%PORTNAME%%/doc/ChannelDialog.png
-www/%%PORTNAME%%/doc/cursor_control.png
-www/%%PORTNAME%%/doc/custom-format.png
-www/%%PORTNAME%%/doc/DefaultFilter.png
-www/%%PORTNAME%%/doc/details-graphs.png
-www/%%PORTNAME%%/doc/DisabledSources.png
-www/%%PORTNAME%%/doc/DragHandle.png
-www/%%PORTNAME%%/doc/edit.png
-www/%%PORTNAME%%/doc/ExpandStat.png
-www/%%PORTNAME%%/doc/flows.png
-www/%%PORTNAME%%/doc/index.html
-www/%%PORTNAME%%/doc/linegraph.png
-www/%%PORTNAME%%/doc/Lookup.png
-www/%%PORTNAME%%/doc/Navigating.png
-www/%%PORTNAME%%/doc/Navigating.psd
-www/%%PORTNAME%%/doc/navigation.png
-www/%%PORTNAME%%/doc/NewProfile.png
-www/%%PORTNAME%%/doc/nfsen-dist.conf
-www/%%PORTNAME%%/doc/OutOfData.png
-www/%%PORTNAME%%/doc/overview.png
-www/%%PORTNAME%%/doc/PluginGuide/plugin-alertaction.png
-www/%%PORTNAME%%/doc/PluginGuide/plugin-alertcondition.png
-www/%%PORTNAME%%/doc/PluginGuide/plugin-guide.html
-www/%%PORTNAME%%/doc/PluginGuide/plugins-comm.png
-www/%%PORTNAME%%/doc/PluginGuide/plugins-concept.png
-www/%%PORTNAME%%/doc/PluginGuide/plugins-frontend-flow.png
-www/%%PORTNAME%%/doc/PortTracker.png
-www/%%PORTNAME%%/doc/processing-1.png
-www/%%PORTNAME%%/doc/ProcessingControls.png
-www/%%PORTNAME%%/doc/ProcessingOutput.png
-www/%%PORTNAME%%/doc/ProfileChannels.png
-www/%%PORTNAME%%/doc/ProfileCommit.png
-www/%%PORTNAME%%/doc/ProfileConversion.png
-www/%%PORTNAME%%/doc/ProfileCreated.png
-www/%%PORTNAME%%/doc/ProfileExamples.png
-www/%%PORTNAME%%/doc/selectprofile.png
-www/%%PORTNAME%%/doc/SelectWindow.png
-www/%%PORTNAME%%/doc/stat.png
-www/%%PORTNAME%%/doc/StatSummary.png
-www/%%PORTNAME%%/doc/TimeWindow.png
-www/%%PORTNAME%%/doc/trigger.png
-www/%%PORTNAME%%/doc/WinScale.png
 www/%%PORTNAME%%/conf.php
 www/%%PORTNAME%%/plugins/demoplugin.php
 @dirrm www/%%PORTNAME%%/css
 @dirrm www/%%PORTNAME%%/icons
 @dirrm www/%%PORTNAME%%/js
-@dirrm www/%%PORTNAME%%/doc/PluginGuide
-@dirrm www/%%PORTNAME%%/doc
 @dirrm www/%%PORTNAME%%/plugins
 @dirrm www/%%PORTNAME%%
 @exec mkdir -p %D/var/%%PORTNAME%%/profiles-stat/live/
