@@ -1,4 +1,4 @@
-# Created by:	roam@FreeBSD.org
+# Created by: Peter Pentchev <roam@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	apg
@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.adel.nursat.kz/apg/download/
 MASTER_SITE_SUBDIR=	UNIX/misc
 
 MAINTAINER=	matthew@FreeBSD.org
-COMMENT=	An automated password generator
+COMMENT=	Automated password generator
 
 OPTIONS_DEFINE=	CRACKLIB
 CRACKLIB_DESCR=	CrackLib support for password quality
@@ -39,7 +39,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/apgbfm.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/man/apgd.8 ${MANPREFIX}/man/man8
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/doc/,} ${DOCSDIR}
 .endif
 
