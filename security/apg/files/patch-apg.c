@@ -1,8 +1,5 @@
-Description: Fix a segfault with crypt(3) password encryption.
-Origin: Debian; http://bugs.debian.org/337116
-Forwarded: yes
-Author: Paul Martin <pm@debian.org>
-Last-Update: 2010-12-23
+
+$FreeBSD$
 
 --- apg.c.orig
 +++ apg.c
