@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	playd
-PORTVERSION=	1.22.2
+PORTVERSION=	1.22.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://files.bsdroot.lv/my/FreeBSD/distfiles/
 DISTNAME=	playd.sh-${PORTVERSION}
@@ -23,7 +23,7 @@ MAN1=		playd.1
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/graudeejs-playd-${REV}
-REV=		52bf8eb
+REV=		1e09c80
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/playd.sh ${PREFIX}/bin/playd
