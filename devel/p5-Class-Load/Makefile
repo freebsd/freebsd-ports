@@ -1,12 +1,8 @@
-# New ports collection makefile for:	p5-Class-Load
-# Date created:		2009-10-16
-# Whom:			Andrej Zverev <az@FreeBSD.org>
-#
+# Created by:	Andrej Zverev <az@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	Class-Load
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
