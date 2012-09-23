@@ -1,4 +1,4 @@
-# Created by: girish
+# Created by: Girish <girish.rao.dev@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	spellathon
@@ -20,7 +20,7 @@ post-patch:
 do-install:
 	${INSTALL} ${WRKSRC}/spellathon ${PREFIX}/bin
 	${INSTALL} ${WRKSRC}/spellathon-cl ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
+	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/dict/words.txt ${DATADIR}
 
 .include <bsd.port.mk>

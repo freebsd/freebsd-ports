@@ -1,4 +1,4 @@
-# Whom: rmiya
+# Whom: Ryo MIYAMOTO <rmiya@cc.hirosaki-u.ac.jp>
 # $FreeBSD$
 
 PORTNAME=	molden
@@ -16,7 +16,7 @@ USE_XORG=	x11 xmu
 USE_GL=		glut
 USE_FORTRAN=	yes
 
-RESTRICTED=	free for academic, non profit usage; do not re-distribute source and executable.
+RESTRICTED=	free for academic, non profit usage; do not re-distribute source and executable
 MAKEFILE=	${WRKSRC}/makefile
 
 .if !defined(NOPORTDOCS)
@@ -36,12 +36,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gmolden ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/surf/surf ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 .if !defined(NOPORTDATA)
-	${MKDIR} ${DATADIR}/test
-	${MKDIR} ${DATADIR}/utils
+	@${MKDIR} ${DATADIR}/test ${DATADIR}/utils
 	${INSTALL_DATA} ${WRKSRC}/test/* ${DATADIR}/test
 	${INSTALL_DATA} ${WRKSRC}/utils/* ${DATADIR}/utils
 .endif
