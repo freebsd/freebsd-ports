@@ -1,0 +1,10 @@
+--- kernel/linux_defs.h.orig	2012-09-23 16:06:07.000000000 +0200
++++ kernel/linux_defs.h	2012-09-23 16:06:24.000000000 +0200
+@@ -98,6 +98,7 @@
+ #define	symbol_put(x) __nop
+ #define	EXPORT_SYMBOL(...)
+ #define	EXPORT_SYMBOL_GPL(...)
++#define	MODULE_INFO(...)
+ #define	MODULE_AUTHOR(...)
+ #define	MODULE_DESCRIPTION(...)
+ #define	MODULE_LICENSE(...)
