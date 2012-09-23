@@ -389,7 +389,7 @@ diff()
 
 	diffout=${codir}/diff
 
-	svn diff ports > ${diffout} 2>&1 || :
+	svn diff --no-diff-deleted ports > ${diffout} 2>&1 || :
 
 	read -p "hit <enter> to view svn diff output" dummy
 
