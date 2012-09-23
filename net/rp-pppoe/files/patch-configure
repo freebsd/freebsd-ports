@@ -1,6 +1,6 @@
---- configure.orig	Mon Jul  8 20:38:24 2002
-+++ configure	Wed Mar 10 15:50:51 2004
-@@ -2083,7 +2083,7 @@
+--- ./configure.orig	2012-08-17 20:31:25.000000000 +0200
++++ ./configure	2012-09-23 17:27:26.000000000 +0200
+@@ -4672,7 +4672,7 @@
  
  
  # Determine what targets to build

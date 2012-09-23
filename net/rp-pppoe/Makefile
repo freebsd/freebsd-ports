@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rp-pppoe
-PORTVERSION=	3.10
+PORTVERSION=	3.11
 CATEGORIES=	net
 MASTER_SITES=	http://www.roaringpenguin.com/files/download/
 
@@ -30,7 +30,15 @@ DOC_FILES=	CHANGES HOW-TO-CONNECT KERNEL-MODE-PPPOE LICENSE \
 		PROBLEMS
 SCRIPT_FILES=	pppoe-connect pppoe-init pppoe-setup pppoe-start \
 		pppoe-status pppoe-stop
-.ifndef (NOPORTDOCS)
+
+OPTIONS_DEFINE=	DOCS
+
+# work around "Present But Cannot Be Compiled" issue in GNU configure:
+CFLAGS+=	-include sys/types.h -include sys/socket.h -include netinet/in.h
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 .endif
 
@@ -49,6 +57,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s!/etc/ppp!${PREFIX}/etc/ppp!g" \
 		${WRKSRC}/scripts/${f}
 .endfor
+	@${REINPLACE_CMD} -e "s/\$$^/\$$>/g" ${WRKSRC}/src/Makefile.in
 
 do-install:
 # Binaries
