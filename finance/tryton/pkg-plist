@@ -6,6 +6,19 @@ bin/tryton
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/tryton
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/bg_BG/LC_MESSAGES/tryton.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/ca_ES/LC_MESSAGES/tryton.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/cs_CZ/LC_MESSAGES/tryton.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/de_DE/LC_MESSAGES/tryton.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/es_AR/LC_MESSAGES/tryton.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/es_CO/LC_MESSAGES/tryton.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/es_ES/LC_MESSAGES/tryton.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/fr_FR/LC_MESSAGES/tryton.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/ja_JP/LC_MESSAGES/tryton.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/lt_LT/LC_MESSAGES/tryton.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/nl_NL/LC_MESSAGES/tryton.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/ru_RU/LC_MESSAGES/tryton.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/sl_SI/LC_MESSAGES/tryton.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-attachment-hi.svg
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-attachment.svg
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton/tryton-clear.svg
@@ -391,6 +404,33 @@ share/pixmaps/tryton-icon.png
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tryton
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/tryton
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/sl_SI/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/sl_SI
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/ru_RU/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/ru_RU
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/nl_NL/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/nl_NL
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/lt_LT/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/lt_LT
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/ja_JP/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/ja_JP
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/fr_FR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/fr_FR
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/es_ES/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/es_ES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/es_CO/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/es_CO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/es_AR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/es_AR
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/de_DE/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/de_DE
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/cs_CZ/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/cs_CZ
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/ca_ES/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/ca_ES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/bg_BG/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale/bg_BG
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/locale
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
