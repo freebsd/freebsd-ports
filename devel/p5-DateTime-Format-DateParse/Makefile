@@ -1,12 +1,10 @@
-# New ports collection makefile for:	p5-DateTime-Format-DateParse
-# Date created:				21 Jun 2008
-# Whom:					svysh@pn.sinp.msu.ru
-#
+# Created by: Sergei Vyshenski <svysh@pn.sinp.msu.ru>
 # $FreeBSD$
 #
 
 PORTNAME=	DateTime-Format-DateParse
 PORTVERSION=	0.05
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DateTime
@@ -17,6 +15,7 @@ COMMENT=	This module is a compatibility wrapper around Date::Parse
 
 BUILD_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
 
