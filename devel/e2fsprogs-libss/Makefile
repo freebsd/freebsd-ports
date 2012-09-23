@@ -26,8 +26,6 @@ ALL_TARGET=	subs
 INSTALL_WRKSRC=	${WRKSRC}/lib/ss
 FILESDIR=	${.CURDIR}/files
 
-EXTRA_PATCHES=	${FILESDIR}/patch-lib-ss-Makefile.in
-
 MAN1=	mk_cmds.1
 
 PKGDIR=		${.CURDIR}
