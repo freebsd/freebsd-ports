@@ -1,24 +1,20 @@
-# New ports collection makefile for:    quantis-kmod
-# Date created:                 10 May 2010
-# Whom:                         Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	quantis
-DISTVERSION=	v11.12.13
+DISTVERSION=	v12.09.12
 CATEGORIES=	security kld
 MASTER_SITES=	http://www.idquantique.com/files/products/quantis/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ale
-DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 PKGNAMESUFFIX=	-kmod
+DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Kernel driver for Quantis PCI/PCIe random number generator
 
-LICENSE_COMB=	dual
 LICENSE=	BSD GPLv2
+LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKDIR}/Quantis-${DISTVERSION}/License.txt
 
 USE_ZIP=	yes
