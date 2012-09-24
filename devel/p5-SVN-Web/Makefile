@@ -41,8 +41,7 @@ BUILD_DEPENDS:=	${RUN_DEPENDS} \
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	--skip_questions
 
-MAN1=		svnweb-install.1 \
-		svnweb-server.1
+MAN1=		svnweb-install.1
 MAN3=		SVN::CHANGES.3 \
 		SVN::CONTRIBUTING.3 \
 		SVN::UPDATING.3 \
@@ -50,7 +49,6 @@ MAN3=		SVN::CHANGES.3 \
 		SVN::Web::Blame.3 \
 		SVN::Web::Browse.3 \
 		SVN::Web::Checkout.3 \
-		SVN::Web::ConfigData.3 \
 		SVN::Web::Diff.3 \
 		SVN::Web::DiffParser.3 \
 		SVN::Web::I18N.3 \
