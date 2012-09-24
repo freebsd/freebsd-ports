@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120924:
+  AFFECTS: users of textproc/aspell
+  AUTHOR: bapt@FreeBSD.org
+
+  textproc/aspell no longer installs the english dictionary. If you need it
+  please install textproc/en-aspell.
+
 20120919:
   AFFECTS: users of net-mgmt/better-cacti-templates
   AUTHOR: Bryan Drewery <bdrewery@FreeBSD.org>

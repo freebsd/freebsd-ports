@@ -3713,3 +3713,4 @@ print/pips930||2012-09-22|Removed
 print/pips770||2012-09-22|Removed
 www/linuxpluginwrapper||2012-09-22|Has expired: doesn't support ELF symbol versioning, yet.
 net/fping+ipv6|net/fping|2012-09-24|IPv6 support has been merged
+textproc/aspell-without-dicten|textproc/aspell|2012-09-24|The dictionary is no longer installed with aspell
