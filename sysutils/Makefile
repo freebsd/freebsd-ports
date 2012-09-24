@@ -468,6 +468,7 @@
     SUBDIR += libsunacl
     SUBDIR += libumberlog
     SUBDIR += libutempter
+    SUBDIR += libzeitgeist
     SUBDIR += lineak-defaultplugin
     SUBDIR += lineak-kdeplugins
     SUBDIR += lineak-xosdplugin
