@@ -1,13 +1,8 @@
-# New ports collection makefile for:	quantis
-# Date created:			10 May 2010
-# Whom:				Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	quantis
-DISTVERSION=	v11.12.13
-PORTREVISION=	1
+DISTVERSION=	v12.09.12
 CATEGORIES=	security devel java
 MASTER_SITES=	http://www.idquantique.com/files/products/quantis/ \
 		${MASTER_SITE_LOCAL}
@@ -17,16 +12,20 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Libraries and utilities to access Quantis devices
 
-OPTIONS=	PCI "Enable Quantis PCI support" on \
-		USB "Enable Quantis USB support (FreeBSD >= 8.1)" on \
-		JAVA "Enable Java support" on \
-		COMPAT "Build API v1 compatibility libraries" off \
-		TOOL "Build EasyQuantis application" on \
-		GUI "Build QT4 GUI for EasyQuantis application" on
-
-LICENSE_COMB=	dual
 LICENSE=	BSD GPLv2
+LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/Quantis-${DISTVERSION}/License.txt
+
+OPTIONS_DEFINE=	PCI USB JAVA COMPAT TOOL GUI DOCS EXAMPLES
+OPTIONS_DEFAULT=PCI USB JAVA TOOL GUI
+NO_OPTIONS_SORT=yes
+
+PCI_DESC=	Enable Quantis PCI support
+USB_DESC=	Enable Quantis USB support (FreeBSD >= 8.1)
+JAVA_DESC=	Enable Java support
+COMPAT_DESC=	Build API v1 compatibility libraries
+TOOL_DESC=	Build EasyQuantis application
+GUI_DESC=	Build QT4 GUI for EasyQuantis application
 
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-aqo
@@ -47,17 +46,17 @@ PORTEXAMPLES=	*
 IGNORE=		requires FreeBSD >= 7
 .endif
 
-.if defined(WITH_PCI)
+.if ${PORT_OPTIONS:MPCI}
 RUN_DEPENDS+=	${KMODDIR}/quantis.ko:${PORTSDIR}/security/quantis-kmod
 .else
 CMAKE_ARGS+=	-DDISABLE_QUANTIS_PCI=1
 .endif
 
-.if defined(WITHOUT_USB) || ${OSVERSION} < 801000
+.if empty(PORT_OPTIONS:MUSB) || ${OSVERSION} < 801000
 CMAKE_ARGS+=	-DDISABLE_QUANTIS_USB=1
 .endif
 
-.if defined(WITH_JAVA)
+.if ${PORT_OPTIONS:MJAVA}
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 JAVA_OS=	native
@@ -65,7 +64,7 @@ JAVA_OS=	native
 CMAKE_ARGS+=	-DDISABLE_QUANTIS_JAVA=1
 .endif
 
-.if defined(WITH_COMPAT)
+.if ${PORT_OPTIONS:MCOMPAT}
 CMAKE_ARGS+=	-DENABLE_QUANTIS_COMPAT=1
 
 PLIST_SUB+=	COMPAT=""
@@ -73,11 +72,11 @@ PLIST_SUB+=	COMPAT=""
 PLIST_SUB+=	COMPAT="@comment "
 .endif
 
-.if defined(WITH_TOOL)
+.if ${PORT_OPTIONS:MTOOL}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libboost_date_time.a:${PORTSDIR}/devel/boost-libs
 CXXFLAGS+=	-I${LOCALBASE}/include
 
-. if defined(WITH_GUI)
+. if ${PORT_OPTIONS:MGUI}
 USE_QT4+=	gui moc_build uic_build rcc_build qmake_build
 . else
 CMAKE_ARGS+=	-DDISABLE_EASYQUANTIS_GUI=1
@@ -95,15 +94,15 @@ post-patch:
 		${WRKSRC}/CMake/CompilersFlags.cmake
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/../*.txt ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/../User_Manual.pdf ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@(cd ${WRKSRC}/../Samples; ${COPYTREE_SHARE} . ${EXAMPLESDIR})
-.if defined(WITH_USB) && ${OSVERSION} >= 801000
+.if ${PORT_OPTIONS:MUSB} && ${OSVERSION} >= 801000
 	@${MKDIR} ${EXAMPLESDIR}/devd
 	${INSTALL_DATA} ${FILESDIR}/quantis.conf ${EXAMPLESDIR}/devd
 	@${CAT} ${PKGMESSAGE}
