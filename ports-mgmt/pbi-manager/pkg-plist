@@ -67,4 +67,14 @@ etc/rc.d/pbid
 @dirrm %%DATADIR%%
 @unexec rm /usr/pbi/.pbiwrapper >/dev/null 2>/dev/null
 @unexec rmdir /usr/pbi/.hashdir >/dev/null 2>/dev/null
+@unexec rmdir /usr/pbi/share/applications >/dev/null 2>/dev/null
+@unexec rmdir /usr/pbi/share/desktop-directories >/dev/null 2>/dev/null
+@unexec rmdir /usr/pbi/share/icons/hicolor >/dev/null 2>/dev/null
+@unexec rmdir /usr/pbi/share/icons >/dev/null 2>/dev/null
+@unexec rmdir /usr/pbi/share/mime/packages >/dev/null 2>/dev/null
+@unexec rmdir /usr/pbi/share/mime >/dev/null 2>/dev/null
+@unexec rmdir /usr/pbi/share >/dev/null 2>/dev/null
+@unexec rmdir /usr/pbi/etc/xdg/menus >/dev/null 2>/dev/null
+@unexec rmdir /usr/pbi/etc/xdg >/dev/null 2>/dev/null
+@unexec rmdir /usr/pbi/etc >/dev/null 2>/dev/null
 @unexec rmdir /usr/pbi >/dev/null 2>/dev/null
