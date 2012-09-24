@@ -1,16 +1,12 @@
-# New ports collection makefile for:	zathura-pdf-poppler
-# Date created:				23 April 2012
-# Whom:					Mike Krutov <neko@takino.org>
-#
+# Created by: Mike Krutov <neko@takino.org>
 # $FreeBSD$
-#
 
 PORTNAME=	zathura-pdf-poppler
 PORTVERSION=	0.2.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://pwmt.org/projects/zathura/plugins/download/
 
-MAINTAINER=	neko@takino.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Poppler render PDF plugin for Zathura PDF viewer
 
 LIB_DEPENDS=	poppler-glib:${PORTSDIR}/graphics/poppler-glib

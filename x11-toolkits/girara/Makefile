@@ -1,16 +1,12 @@
-# New ports collection makefile for:	zathura
-# Date created:				23 April 2012
-# Whom:					Mike Krutov <neko@takino.org>
-#
+# Created by: Mike Krutov <neko@takino.org>
 # $FreeBSD$
-#
 
 PORTNAME=	girara
 PORTVERSION=	0.1.3
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	http://pwmt.org/projects/girara/download/
 
-MAINTAINER=	neko@takino.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 Interface Library for Zathura PDF Viewer
 
 USE_GNOME=	glib20 gtk20
