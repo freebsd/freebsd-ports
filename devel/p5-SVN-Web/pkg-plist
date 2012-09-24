@@ -1,5 +1,4 @@
 bin/svnweb-install
-bin/svnweb-server
 %%SITE_PERL%%/SVN/CHANGES.pod
 %%SITE_PERL%%/SVN/CONTRIBUTING.pod
 %%SITE_PERL%%/SVN/UPDATING.pod
@@ -7,7 +6,6 @@ bin/svnweb-server
 %%SITE_PERL%%/SVN/Web/Blame.pm
 %%SITE_PERL%%/SVN/Web/Browse.pm
 %%SITE_PERL%%/SVN/Web/Checkout.pm
-%%SITE_PERL%%/SVN/Web/ConfigData.pm
 %%SITE_PERL%%/SVN/Web/Diff.pm
 %%SITE_PERL%%/SVN/Web/DiffParser.pm
 %%SITE_PERL%%/SVN/Web/I18N.pm
@@ -19,55 +17,12 @@ bin/svnweb-server
 %%SITE_PERL%%/SVN/Web/Log.pm
 %%SITE_PERL%%/SVN/Web/RSS.pm
 %%SITE_PERL%%/SVN/Web/Revision.pm
-%%SITE_PERL%%/SVN/Web/Style/common.css
-%%SITE_PERL%%/SVN/Web/Style/styles-hlb.css
-%%SITE_PERL%%/SVN/Web/Style/trac/browser.css
-%%SITE_PERL%%/SVN/Web/Style/trac/changeset.css
-%%SITE_PERL%%/SVN/Web/Style/trac/code.css
-%%SITE_PERL%%/SVN/Web/Style/trac/diff.css
-%%SITE_PERL%%/SVN/Web/Style/trac/feed-icon-16x16.png
-%%SITE_PERL%%/SVN/Web/Style/trac/file.png
-%%SITE_PERL%%/SVN/Web/Style/trac/filedeny.png
-%%SITE_PERL%%/SVN/Web/Style/trac/folder.png
-%%SITE_PERL%%/SVN/Web/Style/trac/folderdeny.png
-%%SITE_PERL%%/SVN/Web/Style/trac/parent.png
-%%SITE_PERL%%/SVN/Web/Style/trac/svnweb.css
-%%SITE_PERL%%/SVN/Web/Style/trac/text-diff-html.css
-%%SITE_PERL%%/SVN/Web/Style/trac/trac.css
-%%SITE_PERL%%/SVN/Web/Template/plain/browse
-%%SITE_PERL%%/SVN/Web/Template/plain/diff
-%%SITE_PERL%%/SVN/Web/Template/plain/footer
-%%SITE_PERL%%/SVN/Web/Template/plain/header
-%%SITE_PERL%%/SVN/Web/Template/plain/list
-%%SITE_PERL%%/SVN/Web/Template/plain/log
-%%SITE_PERL%%/SVN/Web/Template/plain/revision
-%%SITE_PERL%%/SVN/Web/Template/plain/view
-%%SITE_PERL%%/SVN/Web/Template/plain/x
-%%SITE_PERL%%/SVN/Web/Template/trac/_action_menu
-%%SITE_PERL%%/SVN/Web/Template/trac/_diff
-%%SITE_PERL%%/SVN/Web/Template/trac/_log_msg
-%%SITE_PERL%%/SVN/Web/Template/trac/blame
-%%SITE_PERL%%/SVN/Web/Template/trac/browse
-%%SITE_PERL%%/SVN/Web/Template/trac/diff
-%%SITE_PERL%%/SVN/Web/Template/trac/footer
-%%SITE_PERL%%/SVN/Web/Template/trac/header
-%%SITE_PERL%%/SVN/Web/Template/trac/list
-%%SITE_PERL%%/SVN/Web/Template/trac/log
-%%SITE_PERL%%/SVN/Web/Template/trac/revision
-%%SITE_PERL%%/SVN/Web/Template/trac/rss
-%%SITE_PERL%%/SVN/Web/Template/trac/view
-%%SITE_PERL%%/SVN/Web/Template/trac/x
 %%SITE_PERL%%/SVN/Web/Test.pm
 %%SITE_PERL%%/SVN/Web/View.pm
 %%SITE_PERL%%/SVN/Web/X.pm
 %%SITE_PERL%%/SVN/Web/action.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Web/.packlist
 @dirrm %%SITE_PERL%%/SVN/Web/I18N
-@dirrm %%SITE_PERL%%/SVN/Web/Style/trac
-@dirrm %%SITE_PERL%%/SVN/Web/Style
-@dirrm %%SITE_PERL%%/SVN/Web/Template/plain
-@dirrm %%SITE_PERL%%/SVN/Web/Template/trac
-@dirrm %%SITE_PERL%%/SVN/Web/Template
 @dirrm %%SITE_PERL%%/SVN/Web
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Web
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN
