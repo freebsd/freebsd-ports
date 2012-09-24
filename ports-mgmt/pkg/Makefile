@@ -1,9 +1,4 @@
-# New ports collection makefile for:	pkg
-# Date created:		2012-01-18
-# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	pkg
 DISTVERSION=	1.0
@@ -18,6 +13,7 @@ LICENSE=	BSD
 
 USE_XZ=		yes
 
+MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 MANCOMPRESSED=	yes
 
