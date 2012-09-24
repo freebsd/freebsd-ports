@@ -1,15 +1,11 @@
-# New ports collection makefile for:	drupal6-services
-# Date created:				18 Mar 2010
-# Whom:					whitekid@gmail.com
-#
+# Created by: whitekid@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	services
 DISTVERSION=	6.x-2.2
 CATEGORIES=	www
 
-MAINTAINER=	whitekid@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provide an API for creating drupal web services.
 
 USE_DRUPAL=	yes
