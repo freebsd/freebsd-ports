@@ -1,12 +1,8 @@
-# New ports collection makefile for:	SourceSansPro-ttf
-# Date created:		11 Aug 2012
-# Whom:			Pedro Giffuni
-#
+# Created by: Pedro Giffuni
 # $FreeBSD$
-#
 
 PORTNAME=	sourcesanspro-ttf
-PORTVERSION=	1.034
+PORTVERSION=	1.036
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/sourcesans.adobe
 DISTNAME=	SourceSansPro_FontsOnly-${PORTVERSION}
