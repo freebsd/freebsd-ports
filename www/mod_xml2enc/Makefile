@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_xml2enc
-# Date created:				02 March 2011
-# Whom:					Marin Atanasov Nikolov <dnaeon@gmail.com>
-#
+# Created by: Marin Atanasov Nikolov <dnaeon@gmail.com>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_xml2enc
 PORTVERSION=	1.0.3
@@ -17,7 +13,9 @@ COMMENT=	Apache module for converting encoding before and/or after a filter run
 
 MAKE_JOBS_SAFE=	yes
 
-USE_APACHE=	22+
+# included in apache24
+# http://httpd.apache.org/docs/2.4/mod/mod_xml2enc.html
+USE_APACHE=	22
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SHORTMODNAME=	xml2enc

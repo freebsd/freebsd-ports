@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_fcgid for Apache2
-# Date created:		13 August 2004
-# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
-#
+# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_fcgid
 PORTVERSION=	2.3.6
@@ -32,7 +28,7 @@ PLIST_SUB+=	APACHEMODDIR=${APACHEMODDIR}
 MAKE_ARGS+=	top_dir="${LOCALBASE}/share/apache${APACHE_VERSION}"
 MAKE_ARGS+=	INCLUDES="-I${LOCALBASE}/include/apache${APACHE_VERSION} -I${LOCALBASE}/include/apr-1"
 INSTALL_TARGET=	install-modules-yes
-DOCSDIR=	${PREFIX}/share/doc/apache22/mod
+DOCSDIR=	${PREFIX}/share/doc/apache${APACHE_VERSION}/mod
 
 post-install:
 .if !defined(NOPORTDOCS)

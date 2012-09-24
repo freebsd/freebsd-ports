@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_mod_mysql
-# Date created:				Sun May 2 2004
-# Whom:					Clement Laforet <clement@FreeBSD.org>
-#
+# Created by: Clement Laforet <clement@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_log_mysql
 PORTVERSION=	1.0
@@ -25,7 +21,7 @@ RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_log_config-st.so:${PORTSDIR}/www/
 
 MAKE_JOBS_SAFE=	yes
 
-USE_APACHE=	22+
+USE_APACHE=	22
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 USE_MYSQL=	yes

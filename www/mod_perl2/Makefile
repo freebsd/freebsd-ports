@@ -65,10 +65,13 @@ MAN3=		APR.3 APR::Base64.3 APR::Brigade.3 APR::Bucket.3 \
 
 .include <bsd.port.pre.mk>
 
+.if ${APACHE_VERSION} > 22
+BROKEN=	Does not build with apache24
+.endif
+
 # Using apxs in this way is problematic if apache2 is installed under a
 # different PREFIX than mod_perl2, because the mod_perl2 installation will
 # use paths returned by apxs to install some components. Fixes welcome.
-#CONFIGURE_ARGS=	MP_APXS=${LOCALBASE}/sbin/apxs PREFIX=${PREFIX}
 CONFIGURE_ARGS=	PREFIX=${PREFIX} MP_APXS=${APXS} MP_APR_CONFIG=${LOCALBASE}/bin/apr-1-config
 
 .if exists(${LOCALBASE}/include/apr-1/apr.h)

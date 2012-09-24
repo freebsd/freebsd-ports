@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_pagespeed
-# Date created:		2011-09-27
-# Whom:			Steve Wills <swills@FreeBSD.org>
-#
+# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_pagespeed
 PORTVERSION=	0.10.22.6
@@ -29,7 +25,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
 
 USE_XZ=		yes
 USE_BINUTILS=	yes
-USE_APACHE=	22+
+USE_APACHE=	22
 USE_PYTHON=	2.6+
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
