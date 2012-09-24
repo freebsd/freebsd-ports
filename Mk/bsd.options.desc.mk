@@ -127,6 +127,7 @@ IMAGEMAGICK_DESC?=	ImageMagick support
 IMLIB_DESC?=		imlib image library support
 IMLIB2_DESC?=		imlib2 image library support
 IODBC_DESC?=		ODBC backend via iODBC
+IPV4_DESC?=		IPv4 protocol support
 IPV6_DESC?=		IPv6 protocol support
 JABBER_DESC?=		Jabber support
 JACK_DESC?=		JACK audio server support
