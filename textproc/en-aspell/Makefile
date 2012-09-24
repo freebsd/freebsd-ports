@@ -1,12 +1,9 @@
-# New ports collection makefile for:    en-aspell
-# Date created:                         Fri Sep 17 2004
-# Whom:                                 Serge Gagnon <ser_gagnon@sympatico.ca>
-#
+# Created by: Serge Gagnon <ser_gagnon@sympatico.ca>
 # $FreeBSD$
-#
 
 PORTNAME=	${DICT}-aspell
 DISTVERSION=	6-en-7.1-0
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
