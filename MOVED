@@ -1052,7 +1052,6 @@ math/libgmp4|math/gmp|2010-04-19|Switch to newer performance release
 irc/dircproxy-devel||2010-04-19|Removed
 security/krb5-17||2010-04-25|Deleted: no longer builds with new OpenSSL 1.0; security/krb5 now contains 1.8.1
 www/blogd|www/ephemera|2010-04-26|Port renamed
-net-p2p/qbittorrent||2010-05-01|Old version no longer updated
 audio/py-flac||2010-05-02|Has expired: has been marked IGNORE for past 24 months
 databases/mysql-connector-java50||2010-05-02|Has expired: Old version: please use databases/mysql-connector-java instead
 databases/p5-DBIx-Class-HTML-FormFu||2010-05-02|Has expired: This module is obsoleted by www/p5-HTML-FormFu-Model-DBIC
@@ -1437,7 +1436,7 @@ www/flock||2010-12-31|Has expired: Flock 3 moves from Firefox to Chromium
 www/linux-flock||2010-12-31|Has expired: Flock 3 moves from Firefox to Chromium
 x11-clocks/xtu||2010-12-31|Has expired: Looks like abandonware
 java/tya||2010-12-31|Has expired: looks like abandonware and does not compile with gcc4.2
-net-p2p/qbittorrent-22||2011-01-01|Old version no longer updated
+net-p2p/qbittorrent-22|net-p2p/qbittorrent|2011-01-01|Old version no longer updated. Try net-p2p/qbittorrent
 dns/bind95||2011-01-01|Entered EOL 2010-09 - Update to dns/bind97 or dns/bind96
 www/mozilla|www/seamonkey2|2011-01-01|Unmaintained upstream for years and has security issues
 security/lxnb||2011-01-02|Has expired: Development has ceased, mastersite disappeared
@@ -1506,7 +1505,7 @@ x11-toolkits/py-gnome||2011-01-03|Removed due to x11/libcapplet broke
 www/glibwww||2011-01-04|Removed due to no port depend on it
 math/octave-forge-spanish|math/octave-forge-es|2011-01-13|Replaced by math/octave-forge-es
 devel/cvsnt||2011-01-15|Removed: abandoned upstream
-net-p2p/qbittorrent-23||2011-01-24|Old, no longer updated. Try net-p2p/qbittorrent-26
+net-p2p/qbittorrent-23|net-p2p/qbittorrent|2011-01-24|Old, no longer updated. Try net-p2p/qbittorrent
 dns/staticcharge||2011-01-29|Has expired: abandoned by author
 shells/bash3|shells/bash|2011-01-29|Has expired: Use shells/bash or shells/bash-static instead
 shells/bash3-static|shells/bash-static|2011-01-29|Has expired: Use shells/bash or shells/bash-static instead
@@ -2175,10 +2174,10 @@ games/tnl||2011-06-01|Has expired: Upstream development has ceased, it doesn't w
 net/vnc2swf|deskutils/vnc2flv|2011-06-01|Has expired: Development is now superseded by deskutils/vnc2flv
 mail/postfix24||2011-06-03|Has expired: no further upstream development; please consider upgrading
 www/mod_roaming2||2011-06-04|Has expired: no supported browser and no further upstream development; see PR 73383
-net-p2p/qbittorrent26|net-p2p/qbittorrent-29|2011-06-05|Old version no longer updated
-net-p2p/qbittorrent26-nox11|net-p2p/qbittorrent-29-nox11|2011-06-05|Old version no longer updated
-net-p2p/qbittorrent27|net-p2p/qbittorrent-29|2011-06-05|Old version no longer updated
-net-p2p/qbittorrent27-nox11|net-p2p/qbittorrent-29-nox11|2011-06-05|Old version no longer updated
+net-p2p/qbittorrent26|net-p2p/qbittorrent|2011-06-05|Old version no longer updated. Try net-p2p/qbittorrent
+net-p2p/qbittorrent26-nox11|net-p2p/qbittorrent-nox11|2011-06-05|Old version no longer updated. Try net-p2p/qbittorrent
+net-p2p/qbittorrent27|net-p2p/qbittorrent|2011-06-05|Old version no longer updated. Try net-p2p/qbittorrent
+net-p2p/qbittorrent27-nox11|net-p2p/qbittorrent-nox11|2011-06-05|Old version no longer updated. Try net-p2p/qbittorrent
 www/pubcookie-login-server||2011-06-06|Has expired: Unused by maintainer, needs updates
 databases/mariadb||2011-06-06|Split into databases/mariadb-{client,scripts,server}
 devel/bugzilla2||2011-06-07|Removed: no longer under development
@@ -2866,8 +2865,8 @@ games/phpua-bf||2011-11-01|Has expired: depends on phpua-engine
 graphics/kallery||2011-11-01|Has expired: does not build; last release 20010511
 graphics/gtksee||2011-11-01|Has expired: depends on unfetchable port archivers/bzip; last release 2004
 mail/mailscanner-mrtg||2011-11-01|Has expired: apache13 is deprecated, migrate to 2.2.x+ now
-net-p2p/qbittorrent-28-nox11||2011-11-01|Has expired: please migrate to net-p2p/qbittorrent-29
-net-p2p/qbittorrent-28||2011-11-01|Has expired: please migrate to net-p2p/qbittorrent-29
+net-p2p/qbittorrent-28-nox11|net-p2p/qbittorrent-nox11|2011-11-01|Has expired: please migrate to net-p2p/qbittorrent
+net-p2p/qbittorrent-28|net-p2p/qbittorrent|2011-11-01|Has expired: please migrate to net-p2p/qbittorrent
 net-p2p/dctc-gui-qt||2011-11-01|Removed
 net-p2p/dctc-gui||2011-11-01|Removed
 net-p2p/dctc||2011-11-01|Has expired: No more public distfiles
