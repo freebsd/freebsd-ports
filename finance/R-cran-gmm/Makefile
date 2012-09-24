@@ -1,13 +1,8 @@
-# New ports collection makefile for:	R-cran-gmm
-# Date created:		2011-09-11
-# Whom:			TAKATSU Tomonari <tota@FreeBSD.org>
-#
+# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	gmm
-DISTVERSION=	1.4-2
-PORTREVISION=	1
+DISTVERSION=	1.4-3
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
