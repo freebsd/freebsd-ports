@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_vhost_ldap
-# Date created:				Sep 10 2005
-# Whom:					Clement Laforet <clement@FreeBSD.org>
-#
+# Created by: Clement Laforet <clement@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_vhost_ldap
 PORTVERSION=	1.0
@@ -21,7 +17,7 @@ MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
 USE_OPENLDAP=	yes
 
-USE_APACHE=	22+
+USE_APACHE=	22
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 AP_LIB+=	${LOCALBASE}/lib -lldap

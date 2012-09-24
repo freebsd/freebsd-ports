@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_asn
-# Date created:		24 Apr 2011
-# Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
-#
+# Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_asn
 PORTVERSION=	1.5
@@ -17,7 +13,7 @@ COMMENT=	Look up the AS and network prefix of IP address
 
 LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr1
 
-USE_APACHE=	22+
+USE_APACHE=	22
 AP_FAST_BUILD=	yes
 MANUAL_PACKAGE_BUILD=	devel/apr1 with pgsql option required
 

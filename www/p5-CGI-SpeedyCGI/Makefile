@@ -1,9 +1,5 @@
-# New ports collection makefile for:	CGI-SpeedyCGI
-# Date created:				Sun Mar 10 16:44:06 CET 2002
-# Whom:					Lars Thegler <lars@thegler.dk>
-#
+# Created by: Lars Thegler <lars@thegler.dk>
 # $FreeBSD$
-#
 
 PORTNAME=	CGI-SpeedyCGI
 PORTVERSION=	2.22
@@ -18,17 +14,21 @@ COMMENT=	Speed up perl CGI scripts by running them persistently
 MAKE_JOBS_UNSAFE=	yes
 PERL_CONFIGURE=	yes
 
-OPTIONS=	APACHE "Enable mod_speedycgi" On
+OPTIONS_DEFINE=	APACHE
+OPTIONS_DEFAULT=APACHE
+APACHE_DESC=	Build mod_speedycgi
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_APACHE)
-USE_APACHE=	22+
+.if ${PORT_OPTIONS:MAPACHE}
+USE_APACHE=	22
 PLIST_SUB+=	APACHE=""
 .else
 PLIST_SUB+=	APACHE="@comment "
 CONFIGURE_ENV+=	WITHOUT_APACHE=yes
 .endif
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${PERL} -pi -e 's,apxs -q,${APXS} -q,;' \

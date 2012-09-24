@@ -310,7 +310,7 @@ _APACHE_VERSION_NONSUPPORTED=	${_APACHE_VERSION_MAXIMUM} at most
 .	endif
 
 .	if defined(_APACHE_VERSION_NONSUPPORTED) && !defined(AP_IGNORE_VERSION_CHECK)
-IGNORE=	${_ERROR_MSG} apache${_APACHE_VERSION} is installed (or APACHE_PORT is defined) and port requires apache${_APACHE_VERSION_NONSUPPORTED}
+BROKEN=	${_ERROR_MSG} apache${_APACHE_VERSION} is installed (or APACHE_PORT is defined) and port requires apache${_APACHE_VERSION_NONSUPPORTED}
 .	 endif
 .else 		# defined(_APACHE_VERSION)
 .	for ver in ${APACHE_SUPPORTED_VERSION}

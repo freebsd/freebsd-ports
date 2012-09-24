@@ -1,9 +1,5 @@
-# New ports collection makefile for:   	mod_whatkilledus
-# Date created:        			Thu Nov  4 10:08:27 CET 2010
-# Whom:                			Frank Wall <fw@moov.de>
-#
+# Created by: Frank Wall <fw@moov.de>
 # $FreeBSD$
-#
 
 PORTNAME=	mod_whatkilledus
 PORTVERSION=	2.0
@@ -19,7 +15,7 @@ COMMENT=	Logs a report when a child process crashes
 MAKE_JOBS_SAFE=	yes
 MANUAL_PACKAGE_BUILD=	yes
 
-USE_APACHE=	22+
+USE_APACHE=	22
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SHORTMODNAME=	whatkilledus

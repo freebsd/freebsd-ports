@@ -1,9 +1,5 @@
-# New ports collection makefile for:	mod_spdy
-# Date created:        1 April 2012
-# Whom:                Masaki TAGAWA
-#
+# Created by: Masaki TAGAWA
 # $FreeBSD$
-#
 
 PORTNAME=	mod_spdy
 PORTVERSION=	0.9.3.2
@@ -28,7 +24,7 @@ BUILD_DEPENDS=	greadlink:${PORTSDIR}/sysutils/coreutils \
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 USE_XZ=		yes
-USE_APACHE=	22+
+USE_APACHE=	22
 USE_PYTHON=	2.6+
 USE_GMAKE=	yes
 ONLY_FOR_ARCHS=	amd64 i386
