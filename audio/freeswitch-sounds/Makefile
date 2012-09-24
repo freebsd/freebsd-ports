@@ -97,7 +97,7 @@ SCALE=0.2
 .endif
 
 .for opt in ${ALL_OPTIONS}
-.if $(PORT_OPTIONS:M${opt})
+.if ${PORT_OPTIONS:M${opt}}
 PLIST_SUB+=     ${opt}=""
 .else
 PLIST_SUB+=     ${opt}="@comment "
