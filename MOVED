@@ -3712,3 +3712,4 @@ print/pips-spr300_310||2012-09-22|Removed
 print/pips930||2012-09-22|Removed
 print/pips770||2012-09-22|Removed
 www/linuxpluginwrapper||2012-09-22|Has expired: doesn't support ELF symbol versioning, yet.
+net/fping+ipv6|net/fping|2012-09-24|IPv6 support has been merged
