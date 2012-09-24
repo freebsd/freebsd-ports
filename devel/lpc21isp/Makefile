@@ -1,16 +1,12 @@
-# New ports collection makefile for:	lpc21isp
-# Date created:		2009-01-30
-# Whom:			Steve Franks
-#
+# Created by: Steve Franks
 # $FreeBSD$
-#
 
 PORTNAME=	lpc21isp
 PORTVERSION=	1.64
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	bahamasfranks@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ISP programmer tool for flashing NXP & Analog Devices ARM7 CPUs
 
 USE_GMAKE=	yes

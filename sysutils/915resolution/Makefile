@@ -1,7 +1,4 @@
-# New ports collection makefile for:	915resolution
-# Date created:				30 Apr 2004
-# Whom:					Remington Lang <MrL0Lz@gmail.com>
-#
+# Created by: Remington Lang <MrL0Lz@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	915resolution
@@ -12,7 +9,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ehaupt
 
-MAINTAINER=	bahamasfranks@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Resolution tool for Intel i915 video cards
 
 USE_RC_SUBR=	915resolution

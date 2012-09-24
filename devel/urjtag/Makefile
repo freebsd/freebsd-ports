@@ -1,9 +1,5 @@
-# New ports collection makefile for:	urjtag
-# Date created:		2008-01-05
-# Whom:			Bruce M. Simpson
-#
+# Created by: Bruce M. Simpson
 # $FreeBSD$
-#
 
 PORTNAME=	urjtag
 PORTVERSION=	0.10
@@ -11,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	bahamasfranks@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extended utility to work with JTAG-aware boards
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex

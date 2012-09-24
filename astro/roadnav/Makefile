@@ -1,10 +1,5 @@
-# ex:ts=8
-# Ports collection makefile for:	roadnav
-# Date created:				28 July 2008
-# Whom:					stevef
-#
+# Created by: stevef
 # $FreeBSD$
-#
 
 PORTNAME=	roadnav
 PORTVERSION=	0.19
@@ -12,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	astro geography
 MASTER_SITES=	SF/${PORTNAME}/Roadnav/${PORTVERSION}
 
-MAINTAINER=	bahamasfranks@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3D GPS Mapping program
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libroadnav.a:${PORTSDIR}/astro/libroadnav
