@@ -1,16 +1,12 @@
-# New ports collection makefile for:	drupal6-zeropoint
-# Date created:				25 Feb 2010
-# Whom:					whitekid@gmail.com
-#
+# Created by: whitekid@gmail.com
 # $FreeBSD$
-#
 
 PORTNAME=	zeropoint
 DISTVERSION=	6.x-2.3
 PORTREVISION=	1
 CATEGORIES=	www
 
-MAINTAINER=	whitekid@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The zeropoint drupal theme
 
 USE_PHP=	ctype
