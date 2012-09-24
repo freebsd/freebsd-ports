@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	password-store
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://git.zx2c4.com/password-store/snapshot/
 EXTRACT_SUFX=	.tar.xz
@@ -17,7 +17,7 @@ RUN_DEPENDS=	gnupg>=2:${PORTSDIR}/security/gnupg \
 
 OPTIONS_DEFINE=		GIT XCLIP
 
-GIT_DESC=		Enable git backend
+GIT_DESC=		Enable git storage
 XCLIP_DESC=		Enable xclip feature
 
 .include <bsd.port.options.mk>
@@ -52,6 +52,7 @@ do-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/contrib/pass.bash-completion ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/contrib/pass.zsh-completion ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/contrib/pass.fish-completion ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/man/pass.1 ${MANPREFIX}/man/man1/pass.1
 
 MAN1=	pass.1
@@ -60,7 +61,8 @@ MANCOMPRESSED=	no
 PLIST_FILES=	bin/pass \
 		libexec/pass \
 		share/password-store/pass.bash-completion \
-		share/password-store/pass.zsh-completion
+		share/password-store/pass.zsh-completion \
+		share/password-store/pass.fish-completion
 PLIST_DIRS=	share/password-store
 
 .include <bsd.port.mk>
