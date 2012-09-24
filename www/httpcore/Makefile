@@ -1,12 +1,8 @@
-# Ports collection makefile for:	HttpCore
-# Date created:			11 Jul 2008
-# Whom:				Alex Dupre <ale@FreeBSD.org>
-#
+# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	httpcore
-DISTVERSION=	4.2.1
+DISTVERSION=	4.2.2
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	httpcomponents/${PORTNAME}/binary
