@@ -36,6 +36,7 @@ include/gdcm-%%GDCM_MAJ%%/gdcmBaseRootQuery.h
 include/gdcm-%%GDCM_MAJ%%/gdcmBasicOffsetTable.h
 include/gdcm-%%GDCM_MAJ%%/gdcmBitmap.h
 include/gdcm-%%GDCM_MAJ%%/gdcmBitmapToBitmapFilter.h
+include/gdcm-%%GDCM_MAJ%%/gdcmBoxRegion.h
 include/gdcm-%%GDCM_MAJ%%/gdcmByteBuffer.h
 include/gdcm-%%GDCM_MAJ%%/gdcmByteSwap.h
 include/gdcm-%%GDCM_MAJ%%/gdcmByteSwap.txx
@@ -127,6 +128,7 @@ include/gdcm-%%GDCM_MAJ%%/gdcmImageConverter.h
 include/gdcm-%%GDCM_MAJ%%/gdcmImageFragmentSplitter.h
 include/gdcm-%%GDCM_MAJ%%/gdcmImageHelper.h
 include/gdcm-%%GDCM_MAJ%%/gdcmImageReader.h
+include/gdcm-%%GDCM_MAJ%%/gdcmImageRegionReader.h
 include/gdcm-%%GDCM_MAJ%%/gdcmImageToImageFilter.h
 include/gdcm-%%GDCM_MAJ%%/gdcmImageWriter.h
 include/gdcm-%%GDCM_MAJ%%/gdcmImplementationClassUIDSub.h
@@ -169,6 +171,7 @@ include/gdcm-%%GDCM_MAJ%%/gdcmPDBHeader.h
 include/gdcm-%%GDCM_MAJ%%/gdcmPDFCodec.h
 include/gdcm-%%GDCM_MAJ%%/gdcmPDUFactory.h
 include/gdcm-%%GDCM_MAJ%%/gdcmPDataTFPDU.h
+include/gdcm-%%GDCM_MAJ%%/gdcmPGXCodec.h
 include/gdcm-%%GDCM_MAJ%%/gdcmPNMCodec.h
 include/gdcm-%%GDCM_MAJ%%/gdcmPVRGCodec.h
 include/gdcm-%%GDCM_MAJ%%/gdcmParseException.h
@@ -199,8 +202,11 @@ include/gdcm-%%GDCM_MAJ%%/gdcmQueryStudy.h
 include/gdcm-%%GDCM_MAJ%%/gdcmRAWCodec.h
 include/gdcm-%%GDCM_MAJ%%/gdcmRLECodec.h
 include/gdcm-%%GDCM_MAJ%%/gdcmReader.h
+include/gdcm-%%GDCM_MAJ%%/gdcmRegion.h
 include/gdcm-%%GDCM_MAJ%%/gdcmRescaler.h
+include/gdcm-%%GDCM_MAJ%%/gdcmRoleSelectionSub.h
 include/gdcm-%%GDCM_MAJ%%/gdcmSHA1.h
+include/gdcm-%%GDCM_MAJ%%/gdcmSOPClassExtendedNegociationSub.h
 include/gdcm-%%GDCM_MAJ%%/gdcmSOPClassUIDToIOD.h
 include/gdcm-%%GDCM_MAJ%%/gdcmScanner.h
 include/gdcm-%%GDCM_MAJ%%/gdcmSegment.h
@@ -374,8 +380,8 @@ lib/libsocketxx.so.1.2
 lib/libsocketxx.so
 lib/gdcm-%%GDCM_MAJ%%/GDCMConfig.cmake
 lib/gdcm-%%GDCM_MAJ%%/GDCMConfigVersion.cmake
-lib/gdcm-%%GDCM_MAJ%%/GDCMTargets-release.cmake
 lib/gdcm-%%GDCM_MAJ%%/GDCMTargets.cmake
+lib/gdcm-%%GDCM_MAJ%%/GDCMTargets-release.cmake
 lib/gdcm-%%GDCM_MAJ%%/UseGDCM.cmake
 lib/libgdcmCommon.so
 lib/libgdcmCommon.so.%%GDCM_SO%%
