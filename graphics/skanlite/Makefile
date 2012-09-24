@@ -1,13 +1,7 @@
-# New ports collection makefile for:	skanlite
-# Date created:		2008-09-01
-# Whom:			Max Brazhnikov <makc@FreeBSD.org>
-#
 # $FreeBSD$
-#
 
 PORTNAME=	skanlite
-PORTVERSION=	0.8
-PORTREVISION=	3
+PORTVERSION=	0.9
 CATEGORIES=	graphics kde
 MASTER_SITES=	SF/sanewidget/Skanlite/
 DIST_SUBDIR=	KDE/extragear
@@ -22,5 +16,8 @@ USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes
+
+# Fix build with no-default PREFIX
+CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH=${KDE4_PREFIX}
 
 .include <bsd.port.mk>
