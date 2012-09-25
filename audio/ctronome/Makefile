@@ -1,9 +1,5 @@
-# New ports collection makefile for:	ctronome
-# Date created:		11 August 2010
-# Whom:			Charles Mercadal <mercadal@diablonet.net>
-#
+# Created by: Charles Mercadal <mercadal@diablonet.net>
 # $FreeBSD$
-#
 
 PORTNAME=	ctronome
 PORTVERSION=	0.5.3
@@ -11,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://ctronome.kign.org/source/
 
-MAINTAINER=	mercadal@diablonet.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A programmable console-based metronome
 
 post-patch:
