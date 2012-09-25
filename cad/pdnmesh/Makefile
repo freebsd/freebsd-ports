@@ -1,9 +1,5 @@
-# New ports collection makefile for:	pdnmesh
-# Date created:			25 August 2001
-# Whom:				Sarod Yatawatta <sarod@cs.pdn.ac.lk>
-#
+# Created by: Sarod Yatawatta <sarod@cs.pdn.ac.lk>
 # $FreeBSD$
-#
 
 PORTNAME=	pdnmesh
 PORTVERSION=	0.2.1
@@ -11,7 +7,7 @@ PORTREVISION=	11
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/${PORTVERSION}
 
-MAINTAINER=	sarod@users.sf.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A finite element program
 
 LIB_DEPENDS=	gtkglext:${PORTSDIR}/x11-toolkits/gtkglext
