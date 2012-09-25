@@ -1,5 +1,5 @@
---- ./eventloop.c.orig	2009-12-15 07:18:40.000000000 -0500
-+++ ./eventloop.c	2011-10-14 22:36:47.000000000 -0400
+--- eventloop.c.orig	2010-01-20 18:36:52.000000000 -0800
++++ eventloop.c	2012-09-22 02:25:13.281116126 -0700
 @@ -38,7 +38,9 @@
  static struct pollfd pollfds[MAX_POLLFD];
  static struct pollcb pollcbs[MAX_POLLFD];	
@@ -18,17 +18,25 @@
  int event_signal(int sig)
  {
  	static int first = 1;
-@@ -111,11 +114,17 @@
- 		return -1;
- 	return 0;
- }
+@@ -126,17 +129,25 @@
+ 
+ static int (*ppoll_vec)(struct pollfd *, nfds_t, const struct timespec
+ 			*, const sigset_t *);
 +#endif
  
  void eventloop(void)
  {
++#ifdef __Linux__
+ #if __GLIBC__ == 2 && __GLIBC_MINOR__ >= 5 || __GLIBC__ > 2
+ 	ppoll_vec = ppoll;
+ #endif
+ 	if (!ppoll_vec) 
+ 		ppoll_vec = ppoll_fallback;
++#endif
+ 
  	for (;;) { 
 +#ifdef __Linux__
- 		int n = ppoll(pollfds, max_pollfd, NULL, &event_sigs);
+ 		int n = ppoll_vec(pollfds, max_pollfd, NULL, &event_sigs);
 +#endif
 +#ifdef __FreeBSD__
 +		int n = poll(pollfds, max_pollfd, -1);

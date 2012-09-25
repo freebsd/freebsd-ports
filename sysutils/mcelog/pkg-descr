@@ -4,9 +4,12 @@ produces human-readable output.
 
 This software is heavily patched to work on FreeBSD systems,
 and thus provides an extremely limited subset of features as
-of this writing.  The primary purpose is to provide a way to
-decode MCE output from the FreeBSD kernel into something more
-human-readable using the command 'mcelog --no-dmi --ascii'
+of this writing (for example, daemon mode is not currently
+supported).
+
+The primary purpose is to provide a way to decode MCE output
+from the FreeBSD kernel into something more human-readable
+using the command 'mcelog --no-dmi --ascii'.
 
 FreeBSD conversion patches were originally written by John
 Baldwin <jhb@freebsd.org> and later incorporated into this

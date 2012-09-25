@@ -1,5 +1,5 @@
---- ./server.c.orig	2009-12-15 07:18:40.000000000 -0500
-+++ ./server.c	2011-10-14 22:36:47.000000000 -0400
+--- server.c.orig	2010-01-20 18:36:52.000000000 -0800
++++ server.c	2012-09-22 02:39:04.991117023 -0700
 @@ -101,7 +101,9 @@
  
  static void dispatch_pages(FILE *fh)
@@ -77,3 +77,16 @@
  
  	cc = xalloc(sizeof(struct clientcon));
  	if (register_pollcb(nfd, POLLIN, client_event, cc) < 0) {
+@@ -300,7 +336,12 @@
+ 	sigaction(SIGALRM, &sa, &oldsa);	
+ 	if (sigsetjmp(ping_timeout_ctx, 1) == 0) {
+ 		alarm(initial_ping_timeout);
++#ifdef __Linux__
+ 		if (connect(fd, un, sizeof(struct sockaddr_un)) < 0)
++#endif
++#ifdef __FreeBSD__
++		if (connect(fd, (struct sockaddr *) un, sizeof(struct sockaddr_un)) < 0)
++#endif
+ 			goto cleanup;
+ 		if (write(fd, PAIR("ping\n")) < 0)
+ 			goto cleanup;
