@@ -904,8 +904,6 @@ lib/mono/gac/System.Messaging/4.0.0.0__b03f5f7f11d50a3a/System.Messaging.dll
 lib/mono/gac/System.Messaging/4.0.0.0__b03f5f7f11d50a3a/System.Messaging.dll.mdb
 lib/mono/gac/System.Net.Http.Formatting/4.0.0.0__31bf3856ad364e35/System.Net.Http.Formatting.dll
 lib/mono/gac/System.Net.Http.Formatting/4.0.0.0__31bf3856ad364e35/System.Net.Http.Formatting.dll.mdb
-lib/mono/gac/System.Net.Http/4.0.0.0__b77a5c561934e089/System.Net.Http.dll
-lib/mono/gac/System.Net.Http/4.0.0.0__b77a5c561934e089/System.Net.Http.dll.mdb
 lib/mono/gac/System.Net/3.5.0.0__7cec85d7bea7798e/System.Net.dll
 lib/mono/gac/System.Net/3.5.0.0__7cec85d7bea7798e/System.Net.dll.mdb
 lib/mono/gac/System.Net/4.0.0.0__7cec85d7bea7798e/System.Net.dll
@@ -1307,7 +1305,6 @@ share/mono-2.0/mono/cil/cil-opcodes.xml
 @dirrm lib/mono/gac/System.Numerics
 @dirrm lib/mono/gac/System.Net/4.0.0.0__7cec85d7bea7798e
 @dirrm lib/mono/gac/System.Net/3.5.0.0__7cec85d7bea7798e
-@dirrm lib/mono/gac/System.Net.Http/4.0.0.0__b77a5c561934e089
 @dirrm lib/mono/gac/System.Net.Http.Formatting/4.0.0.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.Net.Http.Formatting
 @dirrm lib/mono/gac/System.Net.Http
@@ -1523,7 +1520,6 @@ share/mono-2.0/mono/cil/cil-opcodes.xml
 @dirrmtry lib/mono/3.5
 @dirrm lib/mono/2.0/MSBuild
 @dirrmtry lib/mono/2.0
-@dirrmtry lib/mono/1.0
 @dirrm lib/mono-source-libs
 @dirrmtry lib/mono
 @dirrm include/mono-2.0/mono/utils
