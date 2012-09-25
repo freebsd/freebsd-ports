@@ -9,7 +9,7 @@ PORTNAME=	zookeeper
 PORTVERSION=	3.3.6
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE}
-MASTER_SITE_SUBDIR=	zookeeper/stable
+MASTER_SITE_SUBDIR=	zookeeper/zookeeper-${PORTVERSION}
 
 MAINTAINER=	gnn@FreeBSD.org
 COMMENT=	A Coordination Service for Distributed Applications
