@@ -310,6 +310,7 @@
     SUBDIR += dbus-qt3
     SUBDIR += dbus-qt4
     SUBDIR += dbus-sharp
+    SUBDIR += dbus-sharp-glib
     SUBDIR += dcmtk
     SUBDIR += dconf
     SUBDIR += ddd
