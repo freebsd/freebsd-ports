@@ -20,12 +20,16 @@ RUN_DEPENDS=	\
 	rubygem-cool.io>=1.1.0:${PORTSDIR}/devel/rubygem-cool.io \
 	rubygem-http_parser.rb>=0.5.1:${PORTSDIR}/net/rubygem-http_parser.rb
 
-BROKEN=		conflicting dependencies
-
 USE_RUBY=	yes
-RUBY_VER=	1.9
+#RUBY_VER=	1.9	# Please set RUBY_DEFAULT_VER=1.9 in /etc/make.conf
 USE_RUBYGEMS=	yes
 PLIST_FILES=	bin/fluent-cat bin/fluent-gem bin/fluentd
 RUBYGEM_AUTOPLIST=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} == "1.8"
+IGNORE=		requires Ruby 1.9, please install this first
+.endif
+
+.include <bsd.port.post.mk>
