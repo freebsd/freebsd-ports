@@ -27,6 +27,7 @@ include/cutter/cutter/cut-helper.h
 include/cutter/cutter/cut-iterated-test.h
 include/cutter/cutter/cut-listener-utils.h
 include/cutter/cutter/cut-listener.h
+include/cutter/cutter/cut-logger.h
 include/cutter/cutter/cut-macros.h
 include/cutter/cutter/cut-main.h
 include/cutter/cutter/cut-module-factory-utils.h
@@ -156,6 +157,7 @@ share/aclocal/cutter.m4
 %%DATADIR%%/stack/test/Makefile.am
 %%DATADIR%%/stack/test/run-test.sh
 %%DATADIR%%/stack/test/test-stack.c
+%%DATADIR%%/ui/gtk-menu.ui
 %%DOCSDIR%%/GCutEgg.html
 %%DOCSDIR%%/GCutEventLoop.html
 %%DOCSDIR%%/GCutProcess.html
@@ -281,6 +283,7 @@ share/aclocal/cutter.m4
 %%DOCSDIR%%/ja/cut-experimental.xml
 %%DOCSDIR%%/ja/cut-features.xml
 %%DOCSDIR%%/ja/cut-helper.xml
+%%DOCSDIR%%/ja/cut-logger.xml
 %%DOCSDIR%%/ja/cut-multi-process.xml
 %%DOCSDIR%%/ja/cut-string-diff-writer.xml
 %%DOCSDIR%%/ja/cut-test-utils.xml
@@ -408,6 +411,8 @@ share/aclocal/cutter.m4
 %%DOCSDIR%%/ja/soupcutter.xml
 %%DOCSDIR%%/ja/start.html
 %%DOCSDIR%%/ja/style.css
+%%DOCSDIR%%/ja/travis-ci-integration.html
+%%DOCSDIR%%/ja/travis-ci.html
 %%DOCSDIR%%/ja/tutorial.html
 %%DOCSDIR%%/ja/up.png
 %%DOCSDIR%%/ja/users.html
@@ -422,6 +427,8 @@ share/aclocal/cutter.m4
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/start.html
 %%DOCSDIR%%/style.css
+%%DOCSDIR%%/travis-ci-integration.html
+%%DOCSDIR%%/travis-ci.html
 %%DOCSDIR%%/tutorial.html
 %%DOCSDIR%%/up.png
 %%DOCSDIR%%/users.html
@@ -430,6 +437,7 @@ share/aclocal/cutter.m4
 %%NLS%%share/locale/ja/LC_MESSAGES/cutter.mo
 @dirrm %%DOCSDIR%%/ja
 @dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/stack/test
 @dirrm %%DATADIR%%/stack/src
 @dirrm %%DATADIR%%/stack/config
