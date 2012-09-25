@@ -1,13 +1,9 @@
-# New ports collection makefile for:	ru-unzip
-# Date created:		4 May 2005
-# Whom:			den
-#
+# Created by: den
 # $FreeBSD$
-#
 
 CATEGORIES=	russian archivers
 
-MAINTAINER=	den@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unzip with CP866 and KOI8-R support
 
 CONFLICTS=	unzip-[0-9]* unzip-iconv-[0-9]* zh-unzip-[0-9]* ko-unzip-[0-9]*
