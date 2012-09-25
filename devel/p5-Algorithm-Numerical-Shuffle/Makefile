@@ -1,9 +1,5 @@
-# New ports collection makefile for:	p5-Algorithm-Numerical-Shuffle
-# Date created:		14 August 2003
-# Whom:	      		andrew@scoop.co.nz
-#
+# Created by: andrew@scoop.co.nz
 # $FreeBSD$
-#
 
 PORTNAME=	Algorithm-Numerical-Shuffle
 PORTVERSION=	1.4
@@ -13,7 +9,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=       Shuffle-${PORTVERSION}
 EXTRACT_SUFX=   .tgz
 
-MAINTAINER=	andrew@scoop.co.nz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shuffle a list
 
 PERL_CONFIGURE=	yes

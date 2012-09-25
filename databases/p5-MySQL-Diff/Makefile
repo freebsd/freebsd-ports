@@ -1,9 +1,5 @@
-# New ports collection makefile for:	MySQL-Diff
-# Date created:	   11 August 2003
-# Whom:		   Andrew McNaughton <andrew@scoop.co.nz>
-#
+# Created by: Andrew McNaughton <andrew@scoop.co.nz>
 # $FreeBSD$
-#
 
 PORTNAME=	MySQL-Diff
 PORTVERSION=	0.43
@@ -11,7 +7,7 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	andrew@scoop.co.nz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module for comparing the table structure of two MySQL databases
 
 BUILD_DEPENDS=	p5-Class-MakeMethods>=0:${PORTSDIR}/devel/p5-Class-MakeMethods \
