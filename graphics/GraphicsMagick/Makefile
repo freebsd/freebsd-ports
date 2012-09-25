@@ -7,7 +7,7 @@
 
 PORTNAME=	GraphicsMagick
 PORTVERSION=	1.1.15
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
@@ -23,14 +23,16 @@ LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2	\
 		fpx.[2-9]:${PORTSDIR}/graphics/libfpx	\
 		jbig:${PORTSDIR}/graphics/jbigkit	\
 		png15:${PORTSDIR}/graphics/png		\
-		wmflite:${PORTSDIR}/graphics/libwmf	\
 		xml2:${PORTSDIR}/textproc/libxml2
 OTHERGRAPHICS=	jasper jpeg lcms tiff
 LIB_DEPENDS+=	${OTHERGRAPHICS:C|(.+)|\1:${PORTSDIR}/graphics/\1|}
 
-OPTIONS=	Q8BIT "Use 8-bit pixels (speed) instead of 16 (quality)" off \
-		X11 "Enable X11 support" on \
-		TESTS "Run bundled self-tests after build" on
+OPTIONS_DEFINE=	Q8BIT TESTS X11 DOCS
+
+Q8BIT_DESC=	Use 8-bit pixels (speed) instead of 16 (quality)
+TESTS_DESC=	Run bundled self-tests after build
+
+OPTIONS_DEFAULT=X11 TESTS DOCS
 
 USE_ICONV=	yes
 USE_AUTOTOOLS=	libtool
@@ -64,9 +66,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 test check:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS} == ""
 # Get rid of the Makefile targets that install the documentation
 # and HTML files into DOCSDIR
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Makefile.in
@@ -76,12 +78,15 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Makefile.in
 CONFIGURE_ARGS+=	--with-windows-font-dir="${WINDOWS_FONT_DIR}"
 .endif
 
-.if !defined(WITH_X11)
+.if ${PORT_OPTIONS:MX11} == ""
 PKGNAMESUFFIX+=	-nox11
 CONFIGURE_ARGS+=--without-x
+LIB_DEPENDS+=	wmflite:${PORTSDIR}/graphics/libwmf-nox11
+.else
+LIB_DEPENDS+=	wmflite:${PORTSDIR}/graphics/libwmf
 .endif
 
-.if defined(WITH_Q8BIT) || defined(WITHOUT_GRAPHICSMAGICK_16BIT_PIXEL)
+.if ${PORT_OPTIONS:MQ8BIT}
 CONFIGURE_ARGS+=	--with-quantum-depth=8
 PLIST_SUB+=		Q=8
 .else
@@ -89,7 +94,7 @@ CONFIGURE_ARGS+=	--with-quantum-depth=16
 PLIST_SUB+=		Q=16
 .endif
 
-.if !defined(WITHOUT_TESTS)
+.if ${PORT_OPTIONS:MTESTS}
 post-build::	test
 .else
 post-build::
@@ -99,4 +104,4 @@ post-build::
 	#
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
