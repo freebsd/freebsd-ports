@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tomboy
-PORTVERSION=	1.6.1
-PORTREVISION=	1
+PORTVERSION=	1.12.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,13 +16,13 @@ COMMENT=	Personal note taking system for the GNOME desktop
 
 LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
 BUILD_DEPENDS=	${LOCALBASE}/lib/mono/gmime-sharp-2.4/gmime-sharp.dll:${PORTSDIR}/mail/gmime24-sharp \
-		${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-glib-1.0.pc:${PORTSDIR}/devel/ndesk-dbus-glib \
+		${LOCALBASE}/libdata/pkgconfig/dbus-sharp-glib-1.0.pc:${PORTSDIR}/devel/dbus-sharp-glib \
 		mautil:${PORTSDIR}/devel/mono-addins
 RUN_DEPENDS=	${LOCALBASE}/lib/mono/gmime-sharp-2.4/gmime-sharp.dll:${PORTSDIR}/mail/gmime24-sharp \
-		${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-glib-1.0.pc:${PORTSDIR}/devel/ndesk-dbus-glib \
+		${LOCALBASE}/libdata/pkgconfig/dbus-sharp-glib-1.0.pc:${PORTSDIR}/devel/dbus-sharp-glib \
 		mautil:${PORTSDIR}/devel/mono-addins
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix gnomedesktopsharp20
 GNU_CONFIGURE=	yes
@@ -62,5 +61,5 @@ post-patch:
 	@${REINPLACE_CMD} 's|gmime-sharp|gmime-sharp-2.4|g' \
 		${WRKSRC}/configure
 
-.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
+.include "${PORTSDIR}/lang/mono/bsd.mono.mk"
 .include <bsd.port.post.mk>
