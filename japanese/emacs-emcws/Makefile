@@ -1,5 +1,9 @@
-# Created by: NAKAJI Hiroyuki <nakaji@jp.freebsd.org>
+# New ports collection makefile for:	GNU emacs
+# Date created:		10 Apr. 2002
+# Whom:			NAKAJI Hiroyuki <nakaji@jp.freebsd.org>
+#
 # $FreeBSD$
+#
 
 PORTNAME=	emcws
 PORTVERSION=	${EMACS_VER}
@@ -18,7 +22,7 @@ PATCH_SITES+=		http://www.nijino.com/ari/emacs/
 PATCHFILES+=		emacs-21.1-fontset.patch emacs-21.2-menu-encode.patch
 .endif
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nakaji@jp.freebsd.org
 COMMENT=	Emacs + Canna + Wnn + Sj3
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
