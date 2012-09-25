@@ -1,12 +1,13 @@
---- ./mcelog.c.orig	2009-12-15 07:18:40.000000000 -0500
-+++ ./mcelog.c	2011-10-14 22:37:22.000000000 -0400
-@@ -20,8 +20,21 @@
+--- mcelog.c.orig	2010-01-20 18:36:52.000000000 -0800
++++ mcelog.c	2012-09-22 02:34:19.182116917 -0700
+@@ -20,9 +20,22 @@
  #define _GNU_SOURCE 1
  #include <sys/fcntl.h>
  #include <sys/ioctl.h>
 +#ifdef __Linux__
  #include <asm/types.h>
  #include <asm/ioctls.h>
+ #include <linux/limits.h>
 +#endif
 +#ifdef __FreeBSD__
 +#include <sys/types.h>
@@ -22,22 +23,22 @@
  #include <stdlib.h>
  #include <stdio.h>
  #include <string.h>
-@@ -57,9 +70,25 @@
+@@ -58,9 +71,25 @@
  #include "yellow.h"
  #include "page.h"
  
 +struct mca_record {
-+        uint64_t        mr_status;
-+        uint64_t        mr_addr;
-+        uint64_t        mr_misc;
-+        uint64_t        mr_tsc;
-+        int             mr_apic_id;
-+        int             mr_bank;
-+        uint64_t        mr_mcg_cap;
-+        uint64_t        mr_mcg_status;
-+        int             mr_cpu_id;
-+        int             mr_cpu_vendor_id;
-+        int             mr_cpu;
++	uint64_t	mr_status;
++	uint64_t	mr_addr;
++	uint64_t	mr_misc;
++	uint64_t	mr_tsc;
++	int		mr_apic_id;
++	int		mr_bank;
++	uint64_t	mr_mcg_cap;
++	uint64_t	mr_mcg_status;
++	int		mr_cpu_id;
++	int		mr_cpu_vendor_id;
++	int		mr_cpu;
 +};
 +
  enum cputype cputype = CPU_GENERIC;	
@@ -48,7 +49,7 @@
  
  int ignore_nodev;
  int filter_bogus = 1;
-@@ -70,12 +99,18 @@
+@@ -71,12 +100,18 @@
  int dump_raw_ascii;
  int daemon_mode;
  static char *inputfile;
@@ -67,7 +68,7 @@
  
  static void check_cpu(void);
  
-@@ -388,6 +423,7 @@
+@@ -393,6 +428,7 @@
  	Wprintf("\n");
  }
  
@@ -75,7 +76,7 @@
  void check_cpu(void)
  { 
  	enum { 
-@@ -455,7 +491,44 @@
+@@ -460,7 +496,45 @@
  	} else
  		Eprintf("warning: Cannot open /proc/cpuinfo\n");
  } 
@@ -92,6 +93,7 @@
 +
 +	if (checked)
 +		return;
++
 +	checked = 1;
 +
 +	do_cpuid(0, regs);
@@ -104,23 +106,23 @@
 +	cpu_id = regs[0];
 +	family = CPUID_TO_FAMILY(cpu_id);
 +	model = CPUID_TO_MODEL(cpu_id);
- 
-+	if (cpu_forced) 
++
++	if (cpu_forced)
 +		;
-+	else if (!strcmp(vendor,"AuthenticAMD") && 
++	else if (!strcmp(vendor,"AuthenticAMD") &&
 +	    (family == 15 || family == 16 || family == 17))
 +		cputype = CPU_K8;
 +	else if (!strcmp(vendor,"GenuineIntel"))
 +		cputype = select_intel_cputype(family, model);
-+	/* Add checks for other CPUs here */	
++	/* Add checks for other CPUs here */
 +}
 +#endif
-+
+ 
 +#ifdef __Linux__
  static char *skipspace(char *s)
  {
  	while (isspace(*s))
-@@ -479,6 +552,7 @@
+@@ -484,6 +558,7 @@
  	}
  	return skipspace(s);
  }
@@ -128,15 +130,15 @@
  
  static void dump_mce_final(struct mce *m, char *symbol, int missing, int recordlen, 
  			   int dseen)
-@@ -501,6 +575,7 @@
- 	if (recordlen < endof_field(struct mce, f)) \
+@@ -507,6 +582,7 @@
  		recordlen = endof_field(struct mce, f)
  
-+#ifdef __Linux__
  /* Decode ASCII input for fatal messages */
++#ifdef __Linux__
  static void decodefatal(FILE *inf)
  {
-@@ -646,6 +721,227 @@
+ 	struct mce m;
+@@ -651,6 +727,227 @@
  	if (data)
  		dump_mce_final(&m, symbol, missing, recordlen, disclaimer_seen);
  }
@@ -364,18 +366,18 @@
  
  static void remove_pidfile(void)
  {
-@@ -686,6 +982,10 @@
+@@ -709,6 +1006,10 @@
  "  mcelog [options] --ascii < log\n"
  "  mcelog [options] --ascii --file log\n"
  "Decode machine check ASCII output from kernel logs\n"
-+#ifdef __FreeBSD__
++#ifdef __FreeBSD_
 +"  mcelog [options] -M vmcore -N kernel\n"
 +"Decode machine check error records from kernel crashdump.\n"
 +#endif
  "Options:\n"  
  "--cpu CPU           Set CPU type CPU to decode (see below for valid types)\n"
  "--cpumhz MHZ        Set CPU Mhz to decode time (output unreliable, not needed on new kernels)\n"
-@@ -866,6 +1166,14 @@
+@@ -889,6 +1190,14 @@
  	case O_CONFIG_FILE:
  		/* parsed in config.c */
  		break;
@@ -390,7 +392,7 @@
  	case 0:
  		break;
  	default:
-@@ -900,8 +1208,10 @@
+@@ -923,8 +1232,10 @@
  
  static void general_setup(void)
  {
@@ -401,7 +403,7 @@
  	config_cred("global", "run-credentials", &runcred);
  	if (config_bool("global", "filter-memory-errors") == 1)
  		filter_memory_errors = 1;
-@@ -924,6 +1234,7 @@
+@@ -947,6 +1258,7 @@
  	}
  }
  
@@ -409,7 +411,7 @@
  static void process(int fd, unsigned recordlen, unsigned loglen, char *buf)
  {	
  	int i; 
-@@ -964,6 +1275,173 @@
+@@ -987,6 +1299,173 @@
  	if (finish)
  		exit(0);
  }
@@ -583,7 +585,7 @@
  
  static void noargs(int ac, char **av)
  {
-@@ -1022,22 +1500,30 @@
+@@ -1045,22 +1524,30 @@
  	char *buf;
  };
  
@@ -607,16 +609,15 @@
  
  	parse_config(av);
  
--	while ((opt = getopt_long(ac, av, "", options, NULL)) != -1) { 
 +#ifdef __FreeBSD__
-+	while ((opt = getopt_long(ac, av, "M:N:", options, NULL)) != -1) {
++	while ((opt = getopt_long(ac, av, "M:N:", options, NULL)) != -1) { 
 +#else
-+	while ((opt = getopt_long(ac, av, "", options, NULL)) != -1) {
+ 	while ((opt = getopt_long(ac, av, "", options, NULL)) != -1) { 
 +#endif
  		if (opt == '?') {
  			usage(); 
  		} else if (combined_modifier(opt) > 0) {
-@@ -1057,13 +1543,21 @@
+@@ -1080,13 +1567,21 @@
  		} else if (opt == 0)
  			break;		    
  	} 
@@ -638,7 +639,7 @@
  	fd = open(logfn, O_RDONLY); 
  	if (fd < 0) {
  		if (ignore_nodev) 
-@@ -1078,24 +1572,39 @@
+@@ -1101,24 +1596,39 @@
  		err("MCE_GET_LOG_LEN");
  
  	d.buf = xalloc(d.recordlen * d.loglen); 

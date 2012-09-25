@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mcelog
-DISTVERSION=	1.0pre2
+DISTVERSION=	1.0pre3
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.kernel.org/pub/linux/utils/cpu/mce/ \
 		http://147.52.159.12/mirrors/ftp.kernel.org/pub/linux/utils/cpu/mce/ \
