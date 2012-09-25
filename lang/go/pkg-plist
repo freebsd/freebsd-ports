@@ -70,7 +70,6 @@ go/doc/articles/wiki/test_view.good
 go/doc/articles/wiki/view.html
 go/doc/cmd.html
 go/doc/code.html
-go/doc/codereview_with_mq.html
 go/doc/codewalk/codewalk.css
 go/doc/codewalk/codewalk.js
 go/doc/codewalk/codewalk.xml
@@ -171,22 +170,6 @@ go/doc/root.html
 go/doc/share.png
 go/doc/sieve.gif
 go/doc/style.css
-go/doc/talks/go_talk-20091030.pdf
-go/doc/talks/go_talk-20100112.html
-go/doc/talks/go_talk-20100121.html
-go/doc/talks/go_talk-20100323.html
-go/doc/talks/gofrontend-gcc-summit-2010.pdf
-go/doc/talks/io2010/balance.go
-go/doc/talks/io2010/decrypt.go
-go/doc/talks/io2010/encrypt.go
-go/doc/talks/io2010/eval1.go
-go/doc/talks/io2010/eval2.go
-go/doc/talks/io2010/talk.pdf
-go/doc/talks/io2011/Real_World_Go.pdf
-go/doc/talks/io2011/Writing_Web_Apps_in_Go.pdf
-go/doc/talks/java-typing.png
-go/doc/talks/slidy.css
-go/doc/talks/slidy.js
 go/doc/tos.html
 go/favicon.ico
 go/include/ar.h
@@ -255,7 +238,9 @@ go/misc/cgo/test/helpers.go
 go/misc/cgo/test/issue1222.go
 go/misc/cgo/test/issue1328.go
 go/misc/cgo/test/issue1560.go
+go/misc/cgo/test/issue1635.go
 go/misc/cgo/test/issue2462.go
+go/misc/cgo/test/issue3945.go
 go/misc/cgo/test/sleep_windows.go
 go/misc/cgo/testso/cgoso.go
 go/misc/cgo/testso/cgoso_c.c
@@ -327,6 +312,7 @@ go/misc/vim/ftdetect/gofiletype.vim
 go/misc/vim/ftplugin/go/fmt.vim
 go/misc/vim/ftplugin/go/godoc.vim
 go/misc/vim/ftplugin/go/import.vim
+go/misc/vim/ftplugin/go/test.sh
 go/misc/vim/indent/go.vim
 go/misc/vim/plugin/godoc.vim
 go/misc/vim/readme.txt
@@ -1147,6 +1133,7 @@ go/src/pkg/compress/bzip2/move_to_front.go
 go/src/pkg/compress/flate/deflate.go
 go/src/pkg/compress/flate/deflate_test.go
 go/src/pkg/compress/flate/flate_test.go
+go/src/pkg/compress/flate/reader_test.go
 go/src/pkg/compress/flate/huffman_bit_writer.go
 go/src/pkg/compress/flate/huffman_code.go
 go/src/pkg/compress/flate/inflate.go
@@ -1207,6 +1194,7 @@ go/src/pkg/crypto/hmac/hmac_test.go
 go/src/pkg/crypto/md5/md5.go
 go/src/pkg/crypto/md5/md5_test.go
 go/src/pkg/crypto/md5/md5block.go
+go/src/pkg/crypto/rand/example_test.go
 go/src/pkg/crypto/rand/rand.go
 go/src/pkg/crypto/rand/rand_test.go
 go/src/pkg/crypto/rand/rand_unix.go
@@ -1908,6 +1896,7 @@ go/src/pkg/net/mail/message.go
 go/src/pkg/net/mail/message_test.go
 go/src/pkg/net/multicast_test.go
 go/src/pkg/net/net.go
+go/src/pkg/net/net_posix.go
 go/src/pkg/net/net_test.go
 go/src/pkg/net/newpollserver.go
 go/src/pkg/net/parse.go
@@ -1982,6 +1971,7 @@ go/src/pkg/os/error_plan9.go
 go/src/pkg/os/error_posix.go
 go/src/pkg/os/error_test.go
 go/src/pkg/os/error_windows.go
+go/src/pkg/os/error_windows_test.go
 go/src/pkg/os/exec.go
 go/src/pkg/os/exec/example_test.go
 go/src/pkg/os/exec/exec.go
@@ -2108,6 +2098,7 @@ go/src/pkg/runtime/cgo/gcc_windows_386.c
 go/src/pkg/runtime/cgo/gcc_windows_amd64.c
 go/src/pkg/runtime/cgo/iscgo.c
 go/src/pkg/runtime/cgo/libcgo.h
+go/src/pkg/runtime/cgo/netbsd.c
 go/src/pkg/runtime/cgocall.c
 go/src/pkg/runtime/cgocall.h
 go/src/pkg/runtime/chan.c
@@ -2279,6 +2270,7 @@ go/src/pkg/runtime/traceback_arm.c
 go/src/pkg/runtime/traceback_x86.c
 go/src/pkg/runtime/type.go
 go/src/pkg/runtime/type.h
+go/src/pkg/runtime/vdso_linux_amd64.c
 go/src/pkg/runtime/vlop_386.s
 go/src/pkg/runtime/vlop_arm.s
 go/src/pkg/runtime/vlrt_386.c
@@ -3180,6 +3172,13 @@ go/test/fixedbugs/bug441.go
 go/test/fixedbugs/bug442.go
 go/test/fixedbugs/bug443.go
 go/test/fixedbugs/bug444.go
+go/test/fixedbugs/bug448.dir/pkg1.go
+go/test/fixedbugs/bug448.dir/pkg2.go
+go/test/fixedbugs/bug445.go
+go/test/fixedbugs/bug447.go
+go/test/fixedbugs/bug448.go
+go/test/fixedbugs/bug449.go
+go/test/fixedbugs/bug450.go
 go/test/float_lit.go
 go/test/floatcmp.go
 go/test/for.go
@@ -3370,6 +3369,7 @@ go/test/zerodivide.go
 @dirrm go/test/safe
 @dirrm go/test/ken
 @dirrm go/test/interface
+@dirrm go/test/fixedbugs/bug448.dir
 @dirrm go/test/fixedbugs/bug424.dir
 @dirrm go/test/fixedbugs/bug415.dir
 @dirrm go/test/fixedbugs/bug414.dir
