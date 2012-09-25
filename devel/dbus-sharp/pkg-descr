@@ -1,3 +1,5 @@
-C# interface to the D-BUS messaging system.
+This is a fork of ndesk-dbus, which is a C# implementation of D-Bus. It's often
+referred to as "managed D-Bus" to avoid confusion with existing bindings (which
+wrap libdbus).
 
-WWW: http://www.freedesktop.org/Software/dbus
+WWW:	http://mono.github.com/dbus-sharp/
