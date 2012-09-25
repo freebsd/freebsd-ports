@@ -1,8 +1,5 @@
-# New ports collection makefile for:	smbnetfs
-# Date created:				06 August 2006
-# Whom:					Denis Barov
+# Created by: Denis Barov
 # $FreeBSD$
-#
 
 PORTNAME=	smbnetfs
 PORTVERSION=	0.5.3
@@ -11,7 +8,7 @@ CATEGORIES=	sysutils net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/SMBNetFS-${PORTVERSION}
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	dindin@freebsd.org.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mount smb shares (Fuse filesystem)
 
 LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs \
