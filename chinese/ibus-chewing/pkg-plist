@@ -1,4 +1,4 @@
-libexec/ibus-engine-chewing
+lib/ibus-engine-chewing
 %%DOCSDIR%%-%%PORTVERSION%%/AUTHORS
 %%DOCSDIR%%-%%PORTVERSION%%/COPYING
 %%DOCSDIR%%-%%PORTVERSION%%/ChangeLog
