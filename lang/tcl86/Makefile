@@ -723,14 +723,15 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		-e 's|$${TCL_TRIM_DOTS}|$${TCL_TRIM_DOTS}${THREADS_SUFFIX}|g' \
 		-e 's|-ltcl$${TCL_VERSION}|-ltcl$${TCL_VERSION}${THREADS_SUFFIX}|g' \
-		-e 's/-ltcl`echo $${TCL_VERSION} | ${TR} -d .`/-ltcl`echo $${TCL_VERSION} | ${TR} -d .`${THREADS_SUFFIX}/g' \
+		-e 's/-ltcl`echo $${TCL_VERSION} | tr -d .`/-ltcl`echo $${TCL_VERSION} | tr -d .`${THREADS_SUFFIX}/g' \
 		-e 's|-ltclstub$${TCL_VERSION}|-ltclstub$${TCL_VERSION}${THREADS_SUFFIX}|g' \
-		-e 's/-ltclstub`echo $${TCL_VERSION} | ${TR} -d .`/-ltclstub`echo $${TCL_VERSION} | ${TR} -d .`${THREADS_SUFFIX}/g' \
+		-e 's/-ltclstub`echo $${TCL_VERSION} | tr -d .`/-ltclstub`echo $${TCL_VERSION} | tr -d .`${THREADS_SUFFIX}/g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|libtcl$${SHORT_TCL_VER}|libtcl$${SHORT_TCL_VER}${THREADS_SUFFIX}|g' \
 		-e 's|/tclsh$$(VERSION)|/tclsh$$(VERSION)${THREADS_SUFFIX}|g' \
 		-e 's|/tclConfig.sh|/tclConfig${THREADS_SUFFIX}.sh|g' \
-		-e 's|"/tclooConfig.sh|"/tclooConfig${THREADS_SUFFIX}.sh|g' \
+		-e 's|$$(CONFIG_INSTALL_DIR)/tclooConfig.sh|$$(CONFIG_INSTALL_DIR)/tclooConfig${THREADS_SUFFIX}.sh|g' \
+		-e '826,828d' \
 		${WRKSRC}/Makefile.in
 .endif
 
@@ -766,11 +767,11 @@ post-install:
 	@cd ${WRKSRC} && ${MAKE} -f Makefile install-tzdata ${MAKE_ENV}
 .endif
 	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/../doc/man.macros ${DATADIR}
 .if !defined(NO_INSTALL_MANPAGES)
 	${MKDIR} ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/../doc/tclsh.1 ${MANPREFIX}/man/man1/tclsh${TCL_VER}${THREADS_SUFFIX}.1
 .if !defined(BUILDING_TCL_THREADS) && defined(WITH_TCL86_MAN)
+	${INSTALL_DATA} ${WRKSRC}/../doc/man.macros ${DATADIR}
 . for mp in ${MAN3} ${MANN}
 	@${REINPLACE_CMD} -e 's|^.so man.macros|.so ${DATADIR}/man.macros|'	\
 		${WRKSRC}/../doc/${mp}
