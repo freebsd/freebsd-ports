@@ -24,10 +24,16 @@ CFLAGS+=	-std=c99 -D_DECLARE_C99_LDBL_MATH
 
 PLIST_FILES=	bin/wrk
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800000
+BROKEN=		does not link on FreeBSD 7.x
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} '1d' ${WRKSRC}/Makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
