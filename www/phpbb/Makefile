@@ -1,9 +1,5 @@
-# New ports collection makefile for:	phpBB
-# Date created:		25 April 2002
-# Whom:	      		Johann Visagie <wjv@FreeBSD.org>
-#
+# Created by: Johann Visagie <wjv@FreeBSD.org>
 # $FreeBSD$
-#
 
 PORTNAME=	phpbb
 PORTVERSION=	2.0.23
@@ -11,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/phpBB%202/phpBB%20v${PORTVERSION}
 DISTNAME=	phpBB-${PORTVERSION}
 
-MAINTAINER=	liukang@cn.freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PHP-based bulletin board / discussion forum system
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear
